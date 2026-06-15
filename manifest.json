@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a1a2e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="日課">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<title>日課ルーティン</title>
+<style>
+  :root {
+    --bg: #0f0f1a;
+    --bg2: #1a1a2e;
+    --bg3: #16213e;
+    --card: #1e1e32;
+    --border: rgba(255,255,255,0.08);
+    --text: #f0f0f5;
+    --muted: rgba(240,240,245,0.45);
+    --hint: rgba(240,240,245,0.25);
+    --accent: #7c6ee0;
+    --accent-light: rgba(124,110,224,0.15);
+    --accent-border: rgba(124,110,224,0.35);
+    --study: #4a9eff;
+    --study-bg: rgba(74,158,255,0.12);
+    --math: #ff6b7a;
+    --math-bg: rgba(255,107,122,0.12);
+    --music: #ffb347;
+    --music-bg: rgba(255,179,71,0.12);
+    --en: #4ecb8d;
+    --en-bg: rgba(78,203,141,0.12);
+    --done-opacity: 0.35;
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  html, body { height: 100%; background: var(--bg); color: var(--text); font-family: -apple-system, 'Helvetica Neue', sans-serif; overscroll-behavior: none; }
+
+  /* Layout */
+  .app { display: flex; flex-direction: column; height: 100dvh; max-width: 480px; margin: 0 auto; }
+
+  /* Header */
+  header { padding: 56px 20px 12px; background: var(--bg2); border-bottom: 0.5px solid var(--border); flex-shrink: 0; }
+  .header-top { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 12px; }
+  h1 { font-size: 22px; font-weight: 700; letter-spacing: -0.5px; }
+  .date-label { font-size: 13px; color: var(--muted); }
+  .progress-wrap { display: flex; align-items: center; gap: 10px; }
+  .progress-bar { flex: 1; height: 3px; background: var(--border); border-radius: 2px; overflow: hidden; }
+  .progress-fill { height: 100%; background: var(--accent); border-radius: 2px; transition: width 0.4s cubic-bezier(.4,0,.2,1); }
+  .progress-count { font-size: 12px; color: var(--muted); min-width: 40px; text-align: right; }
+
+  /* Day tabs */
+  .day-tabs { display: flex; gap: 4px; padding: 12px 20px; background: var(--bg2); overflow-x: auto; scrollbar-width: none; flex-shrink: 0; border-bottom: 0.5px solid var(--border); }
+  .day-tabs::-webkit-scrollbar { display: none; }
+  .tab { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; padding: 8px 10px; border-radius: var(--radius-sm); cursor: pointer; border: 0.5px solid transparent; transition: all 0.2s; min-width: 44px; }
+  .tab .day-name { font-size: 12px; font-weight: 600; color: var(--muted); }
+  .tab .day-dot { width: 5px; height: 5px; border-radius: 50%; background: transparent; margin-top: 4px; transition: background 0.2s; }
+  .tab.has-done .day-dot { background: var(--accent); opacity: 0.5; }
+  .tab.active { background: var(--accent-light); border-color: var(--accent-border); }
+  .tab.active .day-name { color: var(--accent); }
+  .tab.is-today .day-name { color: var(--text); }
+  .tab.is-today.active .day-name { color: var(--accent); }
+
+  /* Task list */
+  .task-list { flex: 1; overflow-y: auto; padding: 16px 20px 32px; scroll-behavior: smooth; }
+  .task-list::-webkit-scrollbar { display: none; }
+
+  .time-section { margin-bottom: 20px; }
+  .time-label { font-size: 11px; font-weight: 600; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+  .time-label::after { content: ''; flex: 1; height: 0.5px; background: var(--border); }
+
+  .task { display: flex; align-items: flex-start; gap: 12px; padding: 13px 14px; background: var(--card); border: 0.5px solid var(--border); border-radius: var(--radius); margin-bottom: 6px; cursor: pointer; transition: opacity 0.25s, transform 0.1s; active-transform: scale(0.98); user-select: none; }
+  .task:active { transform: scale(0.98); }
+  .task.done { opacity: var(--done-opacity); }
+
+  .check { width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,0.2); flex-shrink: 0; margin-top: 1px; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+  .task.done .check { background: var(--accent); border-color: var(--accent); }
+  .check svg { display: none; }
+  .task.done .check svg { display: block; }
+
+  .task-body { flex: 1; min-width: 0; }
+  .task-text { font-size: 14px; line-height: 1.45; font-weight: 500; }
+  .task.done .task-text { text-decoration: line-through; }
+  .task-note { font-size: 12px; color: var(--muted); margin-top: 3px; line-height: 1.4; }
+
+  .tag { font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 20px; flex-shrink: 0; align-self: flex-start; margin-top: 2px; letter-spacing: 0.03em; }
+  .t-jp  { color: var(--study); background: var(--study-bg); }
+  .t-math { color: var(--math); background: var(--math-bg); }
+  .t-music { color: var(--music); background: var(--music-bg); }
+  .t-en  { color: var(--en); background: var(--en-bg); }
+  .t-all { color: var(--muted); background: rgba(255,255,255,0.06); }
+
+  /* Bottom bar */
+  .bottom-bar { padding: 12px 20px; padding-bottom: calc(12px + env(safe-area-inset-bottom)); background: var(--bg2); border-top: 0.5px solid var(--border); flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; }
+  .streak { font-size: 13px; color: var(--muted); }
+  .streak span { color: var(--accent); font-weight: 700; }
+  .reset-btn { font-size: 12px; color: var(--muted); background: none; border: 0.5px solid var(--border); padding: 6px 14px; border-radius: 20px; cursor: pointer; }
+  .reset-btn:active { background: var(--card); }
+
+  /* All done banner */
+  .all-done { display: none; flex-direction: column; align-items: center; justify-content: center; padding: 40px 20px; text-align: center; }
+  .all-done.show { display: flex; }
+  .all-done-emoji { font-size: 48px; margin-bottom: 16px; }
+  .all-done-title { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+  .all-done-sub { font-size: 14px; color: var(--muted); line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="app">
+  <header>
+    <div class="header-top">
+      <h1>日課ルーティン</h1>
+      <span class="date-label" id="date-label"></span>
+    </div>
+    <div class="progress-wrap">
+      <div class="progress-bar"><div class="progress-fill" id="prog-fill" style="width:0%"></div></div>
+      <span class="progress-count" id="prog-count">0 / 0</span>
+    </div>
+  </header>
+
+  <div class="day-tabs" id="day-tabs"></div>
+
+  <div class="task-list" id="task-list"></div>
+
+  <div class="bottom-bar">
+    <div class="streak">連続達成 <span id="streak-count">0</span> 日</div>
+    <button class="reset-btn" onclick="resetDay()">この日をリセット</button>
+  </div>
+</div>
+
+<script>
+const DAYS = ['日','月','火','水','木','金','土'];
+const DAY_KEYS = ['sun','mon','tue','wed','thu','fri','sat'];
+
+const TASKS = {
+  mon: [
+    { time: '🌅 朝・登校前', items: [
+      { text: '漢字を5〜10問解く', note: '現代の国語 P.12-15, 66-113 から少量ずつ', tag: 't-jp', label: '国語' },
+      { text: '古文単語を5〜10語確認', note: 'P.74-156、毎日少量が最重要', tag: 't-jp', label: '国語' },
+    ]},
+    { time: '🌙 夜・就寝前', items: [
+      { text: '提出物を少し進める', note: 'サクシード・Z会ワーク・beワークなど', tag: 't-all', label: '全教科' },
+      { text: 'その日の授業を5分で見直す', note: '理科・社会の暗記系は当日復習が効果的', tag: 't-all', label: '全教科' },
+      { text: '楽典 or 指揮法教程を少し読む', note: '1〜2ページでもOK。毎日継続が大事', tag: 't-music', label: '学指揮' },
+      { text: '指揮の振り方を練習する（5〜10分）', note: '鏡の前で2・3・4拍子の基本パターン', tag: 't-music', label: '学指揮' },
+    ]},
+  ],
+  tue: [
+    { time: '🌅 朝・登校前', items: [
+      { text: '漢字を5〜10問解く', note: '現代の国語 P.12-15, 66-113 から少量ずつ', tag: 't-jp', label: '国語' },
+      { text: '古文単語を5〜10語確認', note: 'P.74-156、毎日少量が最重要', tag: 't-jp', label: '国語' },
+    ]},
+    { time: '🌙 夜・就寝前', items: [
+      { text: '数学の問題集を解く', note: '木曜授業の2日前 → 青チャート例題 or サクシード 1〜2問', tag: 't-math', label: '数学' },
+      { text: '英単語を軽く見る（1周目）', note: 'LEAP 501-1100、流し見でOK。負担をかけない', tag: 't-en', label: '英語' },
+      { text: '提出物を少し進める', note: 'サクシード・Z会ワーク・beワークなど', tag: 't-all', label: '全教科' },
+      { text: '楽典 or 指揮法教程を少し読む', note: '1〜2ページでもOK', tag: 't-music', label: '学指揮' },
+      { text: '指揮の振り方を練習する（5〜10分）', note: '鏡の前で2・3・4拍子の基本パターン', tag: 't-music', label: '学指揮' },
+    ]},
+  ],
+  wed: [
+    { time: '🌅 朝・登校前', items: [
+      { text: '漢字を5〜10問解く', note: '現代の国語 P.12-15, 66-113 から少量ずつ', tag: 't-jp', label: '国語' },
+      { text: '古文単語を5〜10語確認', note: 'P.74-156、毎日少量が最重要', tag: 't-jp', label: '国語' },
+    ]},
+    { time: '🌙 夜・就寝前', items: [
+      { text: '英単語を軽く見る（2周目）', note: '火曜に見たものを再確認。2日で2周完了', tag: 't-en', label: '英語' },
+      { text: '提出物を少し進める', note: 'サクシード・Z会ワーク・beワークなど', tag: 't-all', label: '全教科' },
+      { text: 'その日の授業を5分で見直す', note: '理科・社会の暗記系は当日復習が効果的', tag: 't-all', label: '全教科' },
+      { text: '楽典 or 指揮法教程を少し読む', note: '1〜2ページでもOK', tag: 't-music', label: '学指揮' },
+      { text: '指揮の振り方を練習する（5〜10分）', note: '鏡の前で2・3・4拍子の基本パターン', tag: 't-music', label: '学指揮' },
+    ]},
+  ],
+  thu: [
+    { time: '🌅 朝・登校前', items: [
+      { text: '漢字を5〜10問解く', note: '現代の国語 P.12-15, 66-113 から少量ずつ', tag: 't-jp', label: '国語' },
+      { text: '古文単語を5〜10語確認', note: 'P.74-156、毎日少量が最重要', tag: 't-jp', label: '国語' },
+    ]},
+    { time: '🌙 夜・就寝前', items: [
+      { text: '英語の問題集を解く', note: '土曜授業の2日前 → beワーク or Scramble 1〜2問', tag: 't-en', label: '英語' },
+      { text: '提出物を少し進める', note: 'サクシード・Z会ワーク・beワークなど', tag: 't-all', label: '全教科' },
+      { text: 'その日の授業を5分で見直す', note: '理科・社会の暗記系は当日復習が効果的', tag: 't-all', label: '全教科' },
+      { text: '楽典 or 指揮法教程を少し読む', note: '1〜2ページでもOK', tag: 't-music', label: '学指揮' },
+      { text: '指揮の振り方を練習する（5〜10分）', note: '鏡の前で2・3・4拍子の基本パターン', tag: 't-music', label: '学指揮' },
+    ]},
+  ],
+  fri: [
+    { time: '🌅 朝・登校前', items: [
+      { text: '漢字を5〜10問解く', note: '現代の国語 P.12-15, 66-113 から少量ずつ', tag: 't-jp', label: '国語' },
+      { text: '古文単語を5〜10語確認', note: 'P.74-156、毎日少量が最重要', tag: 't-jp', label: '国語' },
+    ]},
+    { time: '🌙 夜 22:00〜23:00', items: [
+      { text: '英単語を重点的に覚える（1日目）', note: 'LEAP 501-1100、しっかり暗記モード。月曜ECに向けて', tag: 't-en', label: '英語' },
+      { text: '提出物を少し進める', note: 'サクシード・Z会ワーク・beワークなど', tag: 't-all', label: '全教科' },
+      { text: '楽典 or 指揮法教程を少し読む', note: '1〜2ページでもOK', tag: 't-music', label: '学指揮' },
+      { text: '指揮の振り方を練習する（5〜10分）', note: '鏡の前で2・3・4拍子の基本パターン', tag: 't-music', label: '学指揮' },
+    ]},
+  ],
+  sat: [
+    { time: '🌅 朝', items: [
+      { text: '漢字を5〜10問解く', note: '現代の国語 P.12-15, 66-113 から少量ずつ', tag: 't-jp', label: '国語' },
+      { text: '古文単語を5〜10語確認', note: 'P.74-156、毎日少量が最重要', tag: 't-jp', label: '国語' },
+    ]},
+    { time: '🌙 夜 22:00〜23:00', items: [
+      { text: '英単語を重点的に覚える（2日目）', note: '金曜の続き。定着確認しながら進める', tag: 't-en', label: '英語' },
+      { text: '数学 or 提出物をまとめて進める', note: '平日より時間が取れる日。問題集を多めに', tag: 't-math', label: '数学' },
+      { text: '楽典 or 指揮法教程を読む（長めに）', note: '週末は1章分などまとめて読む', tag: 't-music', label: '学指揮' },
+      { text: '指揮の振り方を練習する（10〜15分）', note: '鏡の前でじっくり', tag: 't-music', label: '学指揮' },
+    ]},
+  ],
+  sun: [
+    { time: '🌅 朝', items: [
+      { text: '漢字を5〜10問解く', note: '現代の国語 P.12-15, 66-113 から少量ずつ', tag: 't-jp', label: '国語' },
+      { text: '古文単語を5〜10語確認', note: 'P.74-156、毎日少量が最重要', tag: 't-jp', label: '国語' },
+    ]},
+    { time: '🌙 夜 22:00〜23:00', items: [
+      { text: '英単語を重点的に覚える（3日目・仕上げ）', note: '明日の月曜ECに向けて最終確認', tag: 't-en', label: '英語' },
+      { text: '一週間の提出物の進捗を確認する', note: '遅れているものを把握して翌週に備える', tag: 't-all', label: '全教科' },
+      { text: '楽典 or 指揮法教程を読む（長めに）', note: '週末は1章分などまとめて読む', tag: 't-music', label: '学指揮' },
+      { text: '指揮の振り方を練習する（10〜15分）', note: '鏡の前でじっくり', tag: 't-music', label: '学指揮' },
+    ]},
+  ],
+};
+
+// Storage helpers
+function todayStr() {
+  const d = new Date();
+  return `${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}`;
+}
+function loadState() {
+  try { return JSON.parse(localStorage.getItem('routine_state') || '{}'); } catch { return {}; }
+}
+function saveState(s) { localStorage.setItem('routine_state', JSON.stringify(s)); }
+function loadStreak() { return parseInt(localStorage.getItem('routine_streak') || '0'); }
+function saveStreak(n) { localStorage.setItem('routine_streak', n); }
+function loadLastComplete() { return localStorage.getItem('routine_last_complete') || ''; }
+function saveLastComplete(d) { localStorage.setItem('routine_last_complete', d); }
+
+let state = loadState();
+let currentDay = DAY_KEYS[new Date().getDay()];
+
+function getChecked(dayKey) {
+  return state[dayKey] || {};
+}
+function setChecked(dayKey, idx, val) {
+  if (!state[dayKey]) state[dayKey] = {};
+  state[dayKey][idx] = val;
+  saveState(state);
+}
+
+function allTasks(dayKey) {
+  return TASKS[dayKey].flatMap(s => s.items);
+}
+function doneCount(dayKey) {
+  const checked = getChecked(dayKey);
+  return Object.values(checked).filter(Boolean).length;
+}
+function totalCount(dayKey) { return allTasks(dayKey).length; }
+
+function renderTabs() {
+  const tabs = document.getElementById('day-tabs');
+  const todayIdx = new Date().getDay();
+  tabs.innerHTML = '';
+  DAY_KEYS.forEach((key, i) => {
+    const div = document.createElement('div');
+    div.className = 'tab' +
+      (key === currentDay ? ' active' : '') +
+      (i === todayIdx ? ' is-today' : '') +
+      (doneCount(key) > 0 ? ' has-done' : '');
+    div.innerHTML = `<span class="day-name">${DAYS[i]}</span><div class="day-dot"></div>`;
+    div.onclick = () => { currentDay = key; render(); };
+    tabs.appendChild(div);
+  });
+}
+
+function renderTasks() {
+  const list = document.getElementById('task-list');
+  const checked = getChecked(currentDay);
+  const sections = TASKS[currentDay];
+  let idx = 0;
+  let html = '';
+  sections.forEach(section => {
+    html += `<div class="time-section"><div class="time-label">${section.time}</div>`;
+    section.items.forEach(item => {
+      const i = idx++;
+      const done = !!checked[i];
+      html += `<div class="task${done?' done':''}" onclick="toggleTask(${i})" data-idx="${i}">
+        <div class="check"><svg width="12" height="9" viewBox="0 0 12 9" fill="none"><path d="M1 4L4.5 7.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="task-body">
+          <div class="task-text">${item.text}</div>
+          ${item.note ? `<div class="task-note">${item.note}</div>` : ''}
+        </div>
+        <span class="tag ${item.tag}">${item.label}</span>
+      </div>`;
+    });
+    html += '</div>';
+  });
+  list.innerHTML = html;
+}
+
+function renderProgress() {
+  const done = doneCount(currentDay);
+  const total = totalCount(currentDay);
+  const pct = total ? Math.round(done / total * 100) : 0;
+  document.getElementById('prog-fill').style.width = pct + '%';
+  document.getElementById('prog-count').textContent = `${done} / ${total}`;
+
+  // Streak
+  if (done === total && total > 0) {
+    const today = todayStr();
+    if (loadLastComplete() !== today) {
+      saveLastComplete(today);
+      saveStreak(loadStreak() + 1);
+    }
+  }
+  document.getElementById('streak-count').textContent = loadStreak();
+}
+
+function renderDate() {
+  const d = new Date();
+  const label = `${d.getMonth()+1}/${d.getDate()}（${DAYS[d.getDay()]}）`;
+  document.getElementById('date-label').textContent = label;
+}
+
+function toggleTask(idx) {
+  const checked = getChecked(currentDay);
+  checked[idx] = !checked[idx];
+  state[currentDay] = checked;
+  saveState(state);
+  renderTasks();
+  renderProgress();
+  renderTabs();
+}
+
+function resetDay() {
+  state[currentDay] = {};
+  saveState(state);
+  render();
+}
+
+function render() {
+  renderDate();
+  renderTabs();
+  renderTasks();
+  renderProgress();
+}
+
+render();
+
+// Auto-switch to today on date change
+setInterval(() => {
+  const newDay = DAY_KEYS[new Date().getDay()];
+  if (newDay !== DAY_KEYS[new Date().getDay()]) render();
+}, 60000);
+</script>
+
+<!-- PWA Service Worker -->
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js');
+}
+</script>
+</body>
+</html>
