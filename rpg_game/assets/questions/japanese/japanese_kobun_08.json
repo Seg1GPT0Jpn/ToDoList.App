@@ -1,0 +1,164 @@
+{
+  "setId": "japanese_kobun_08",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "jap_kobun08_001",
+      "category": "knowledge",
+      "prompt": "係助詞「ぞ・なむ・や・か」の結びの活用形は？",
+      "choices": [
+        "終止形",
+        "連体形",
+        "命令形",
+        "已然形"
+      ],
+      "answerIndex": 1,
+      "explanation": "「こそ」の結びだけが已然形。"
+    },
+    {
+      "id": "jap_kobun08_002",
+      "category": "knowledge",
+      "prompt": "係助詞「こそ」の結びの活用形は？",
+      "choices": [
+        "已然形",
+        "未然形",
+        "終止形",
+        "連体形"
+      ],
+      "answerIndex": 0,
+      "explanation": "「花こそ散れ」。"
+    },
+    {
+      "id": "jap_kobun08_003",
+      "category": "knowledge",
+      "prompt": "「こそ〜已然形、」で文が終わらずに続くときの意味は？",
+      "choices": [
+        "逆接（〜けれども）",
+        "強調のみ",
+        "順接",
+        "仮定"
+      ],
+      "answerIndex": 0,
+      "explanation": "係り結びによる逆接。"
+    },
+    {
+      "id": "jap_kobun08_004",
+      "category": "knowledge",
+      "prompt": "「や・か」の係り結びが表す意味は？",
+      "choices": [
+        "詠嘆",
+        "禁止",
+        "強意",
+        "疑問・反語"
+      ],
+      "answerIndex": 3,
+      "explanation": "「ぞ・なむ・こそ」は強意。"
+    },
+    {
+      "id": "jap_kobun08_005",
+      "category": "knowledge",
+      "prompt": "「書きて」が「書いて」になる音便は？",
+      "choices": [
+        "ウ音便",
+        "撥音便",
+        "促音便",
+        "イ音便"
+      ],
+      "answerIndex": 3,
+      "explanation": "「き」が「い」に変わる。"
+    },
+    {
+      "id": "jap_kobun08_006",
+      "category": "knowledge",
+      "prompt": "「あるなり」が「あんなり」→「あなり」となるときの音便は？",
+      "choices": [
+        "撥音便（「ん」が表記されない）",
+        "促音便",
+        "ウ音便",
+        "イ音便"
+      ],
+      "answerIndex": 0,
+      "explanation": "撥音便の無表記。読むときは「あんなり」。"
+    },
+    {
+      "id": "jap_kobun08_007",
+      "category": "thinking",
+      "prompt": "「山里は冬ぞさびしさまさり（　）」の空欄に入る形は？",
+      "choices": [
+        "ける",
+        "けら",
+        "けり",
+        "けれ"
+      ],
+      "answerIndex": 0,
+      "explanation": "係助詞「ぞ」の結びは連体形。（古今和歌集）"
+    },
+    {
+      "id": "jap_kobun08_008",
+      "category": "thinking",
+      "prompt": "「花咲かなむ」の「なむ」は？",
+      "choices": [
+        "ナ変動詞＋む",
+        "願望の終助詞（咲いてほしい）",
+        "強意の係助詞",
+        "完了＋推量"
+      ],
+      "answerIndex": 1,
+      "explanation": "未然形「咲か」についているので願望の終助詞。"
+    },
+    {
+      "id": "jap_kobun08_009",
+      "category": "thinking",
+      "prompt": "「花咲きなむ」の「なむ」は？",
+      "choices": [
+        "ナ変動詞＋む",
+        "係助詞",
+        "願望の終助詞",
+        "完了（強意）「ぬ」の未然形＋推量「む」"
+      ],
+      "answerIndex": 3,
+      "explanation": "連用形「咲き」についている。「きっと咲くだろう」。"
+    },
+    {
+      "id": "jap_kobun08_010",
+      "category": "thinking",
+      "prompt": "「人来ぬ」（連用形「来（き）」＋ぬ）の「ぬ」は？",
+      "choices": [
+        "係助詞",
+        "完了の助動詞「ぬ」の終止形",
+        "打消の助動詞「ず」の連体形",
+        "ナ変動詞の一部"
+      ],
+      "answerIndex": 1,
+      "explanation": "連用形につく「ぬ」は完了。未然形につく「ぬ」は打消「ず」の連体形。"
+    },
+    {
+      "id": "jap_kobun08_011",
+      "category": "thinking",
+      "prompt": "「人来ぬ日」（未然形「来（こ）」＋ぬ）の「ぬ」は？",
+      "choices": [
+        "打消の助動詞「ず」の連体形",
+        "完了の助動詞「ぬ」の終止形",
+        "終助詞",
+        "ナ変動詞"
+      ],
+      "answerIndex": 0,
+      "explanation": "未然形接続で、後に体言「日」が続くので連体形。"
+    },
+    {
+      "id": "jap_kobun08_012",
+      "category": "thinking",
+      "prompt": "「死にけり」の「に」の品詞は？",
+      "choices": [
+        "完了「ぬ」の連用形",
+        "格助詞",
+        "ナ変動詞「死ぬ」の連用形の活用語尾",
+        "断定「なり」の連用形"
+      ],
+      "answerIndex": 2,
+      "explanation": "「死に」で一語の動詞。識別では語の切れ目に注意する。"
+    }
+  ]
+}

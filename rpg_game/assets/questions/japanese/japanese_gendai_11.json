@@ -1,0 +1,164 @@
+{
+  "setId": "japanese_gendai_11",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "jap_gendai11_001",
+      "category": "knowledge",
+      "prompt": "スピーチや報告で、聞き手に伝わりやすい構成として適切なものは？",
+      "choices": [
+        "はじめに結論を述べ、次に理由や具体例を示す",
+        "思いついた順に話す",
+        "理由を長く話し、結論は言わない",
+        "具体例だけを並べる"
+      ],
+      "answerIndex": 0,
+      "explanation": "PREP 法（結論→理由→具体例→結論）など。"
+    },
+    {
+      "id": "jap_gendai11_002",
+      "category": "knowledge",
+      "prompt": "ディスカッションで意見を出し合うとき、批判を控えて自由に出すことを重視する方法は？",
+      "choices": [
+        "要約",
+        "小論文",
+        "ディベート",
+        "ブレーンストーミング"
+      ],
+      "answerIndex": 3,
+      "explanation": "出た意見はあとで整理・評価する。"
+    },
+    {
+      "id": "jap_gendai11_003",
+      "category": "knowledge",
+      "prompt": "賛成と反対に分かれ、決められたルールで議論する方法は？",
+      "choices": [
+        "ブレーンストーミング",
+        "インタビュー",
+        "スピーチ",
+        "ディベート"
+      ],
+      "answerIndex": 3,
+      "explanation": "論理的に考え、根拠を示す力が養われる。"
+    },
+    {
+      "id": "jap_gendai11_004",
+      "category": "knowledge",
+      "prompt": "相手の話に関心をもって耳を傾け、理解しようとする聞き方を何という？",
+      "choices": [
+        "要約",
+        "反論",
+        "推敲",
+        "傾聴"
+      ],
+      "answerIndex": 3,
+      "explanation": "うなずきや、あいづち、確認の質問などを用いる。"
+    },
+    {
+      "id": "jap_gendai11_005",
+      "category": "knowledge",
+      "prompt": "意見文や小論文の基本的な構成は？",
+      "choices": [
+        "起・承・転",
+        "会話・地の文",
+        "題名・作者・本文",
+        "序論・本論・結論"
+      ],
+      "answerIndex": 3,
+      "explanation": "序論で問題提起・主張、本論で根拠、結論で主張をまとめる。"
+    },
+    {
+      "id": "jap_gendai11_006",
+      "category": "knowledge",
+      "prompt": "レポートで、他人の資料や文章を使ったときに必ず示すものは？",
+      "choices": [
+        "書いた日の天気",
+        "自分の感想だけ",
+        "友達の名前",
+        "出典（参考文献）"
+      ],
+      "answerIndex": 3,
+      "explanation": "著者・題名・発行年・出版社やURLなどを示す。"
+    },
+    {
+      "id": "jap_gendai11_007",
+      "category": "knowledge",
+      "prompt": "書いた文章を読み直して、表現や内容をよりよく直すことは？",
+      "choices": [
+        "推敲",
+        "朗読",
+        "校了",
+        "要約"
+      ],
+      "answerIndex": 0,
+      "explanation": "唐の詩人賈島の故事に由来する。"
+    },
+    {
+      "id": "jap_gendai11_008",
+      "category": "knowledge",
+      "prompt": "印刷前などに、文字や表記の誤りを見つけて直すことは？",
+      "choices": [
+        "要約",
+        "推敲",
+        "校正",
+        "編集"
+      ],
+      "answerIndex": 2,
+      "explanation": "推敲は内容や表現をねること、校正は誤字などを直すこと。"
+    },
+    {
+      "id": "jap_gendai11_009",
+      "category": "knowledge",
+      "prompt": "作品などのよい点や問題点を論じて、価値を評価することは？",
+      "choices": [
+        "引用",
+        "朗読",
+        "批評",
+        "要約"
+      ],
+      "answerIndex": 2,
+      "explanation": "根拠を示して評価することが大切。"
+    },
+    {
+      "id": "jap_gendai11_010",
+      "category": "thinking",
+      "prompt": "質疑応答で、質問の意図がよく分からなかったときの対応として最も適切なものは？",
+      "choices": [
+        "答えずに黙る",
+        "「〜ということでしょうか」と確認してから答える",
+        "別の話をする",
+        "分かったふりをして答える"
+      ],
+      "answerIndex": 1,
+      "explanation": "質問を確認することで、的外れな答えを防げる。"
+    },
+    {
+      "id": "jap_gendai11_011",
+      "category": "thinking",
+      "prompt": "プレゼンテーションのスライドの工夫として適切なものは？",
+      "choices": [
+        "文字を絞り、図やグラフで要点を示す",
+        "文字を小さくして情報を増やす",
+        "色を多く使うほどよい",
+        "原稿をすべてスライドに書く"
+      ],
+      "answerIndex": 0,
+      "explanation": "スライドは話を補助するもの。"
+    },
+    {
+      "id": "jap_gendai11_012",
+      "category": "thinking",
+      "prompt": "「私は部活動は必要だと思う。」という意見文の次に来る文として最も適切なものは？",
+      "choices": [
+        "しかし、今日は雨だった。",
+        "なぜなら、仲間と目標に向かって努力する経験ができるからだ。",
+        "たとえば、私は朝ご飯を食べた。",
+        "つまり、部活動は不要だ。"
+      ],
+      "answerIndex": 1,
+      "explanation": "主張の後には、それを支える理由（根拠）を示す。"
+    }
+  ]
+}

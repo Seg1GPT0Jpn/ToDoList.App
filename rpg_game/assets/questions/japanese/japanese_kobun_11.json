@@ -1,0 +1,164 @@
+{
+  "setId": "japanese_kobun_11",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "jap_kobun11_001",
+      "category": "knowledge",
+      "prompt": "「物語の出で来はじめの祖」と呼ばれる、現存最古の物語は？",
+      "choices": [
+        "源氏物語",
+        "平家物語",
+        "伊勢物語",
+        "竹取物語"
+      ],
+      "answerIndex": 3,
+      "explanation": "『源氏物語』の中でこう評されている。"
+    },
+    {
+      "id": "jap_kobun11_002",
+      "category": "knowledge",
+      "prompt": "『源氏物語』の作者は？",
+      "choices": [
+        "和泉式部",
+        "紫式部",
+        "菅原孝標女",
+        "清少納言"
+      ],
+      "answerIndex": 1,
+      "explanation": "平安時代中期、光源氏の生涯などを描いた長編物語。"
+    },
+    {
+      "id": "jap_kobun11_003",
+      "category": "knowledge",
+      "prompt": "随筆『枕草子』の作者は？",
+      "choices": [
+        "鴨長明",
+        "兼好法師",
+        "紫式部",
+        "清少納言"
+      ],
+      "answerIndex": 3,
+      "explanation": "「をかし」の文学と呼ばれる。"
+    },
+    {
+      "id": "jap_kobun11_004",
+      "category": "knowledge",
+      "prompt": "『徒然草』の作者は？",
+      "choices": [
+        "兼好法師",
+        "紀貫之",
+        "松尾芭蕉",
+        "鴨長明"
+      ],
+      "answerIndex": 0,
+      "explanation": "鎌倉時代末期の随筆。"
+    },
+    {
+      "id": "jap_kobun11_005",
+      "category": "knowledge",
+      "prompt": "『方丈記』の作者は？",
+      "choices": [
+        "藤原定家",
+        "鴨長明",
+        "清少納言",
+        "兼好法師"
+      ],
+      "answerIndex": 1,
+      "explanation": "鎌倉時代初期。三大随筆は『枕草子』『方丈記』『徒然草』。"
+    },
+    {
+      "id": "jap_kobun11_006",
+      "category": "knowledge",
+      "prompt": "女性に仮託して、かな文字で書かれた最初の日記文学は？",
+      "choices": [
+        "蜻蛉日記",
+        "紫式部日記",
+        "土佐日記",
+        "更級日記"
+      ],
+      "answerIndex": 2,
+      "explanation": "作者は紀貫之。「男もすなる日記といふものを」。"
+    },
+    {
+      "id": "jap_kobun11_007",
+      "category": "knowledge",
+      "prompt": "「祇園精舎の鐘の声」で始まり、琵琶法師によって語られた軍記物語は？",
+      "choices": [
+        "今昔物語集",
+        "保元物語",
+        "平家物語",
+        "太平記"
+      ],
+      "answerIndex": 2,
+      "explanation": "平家一門の栄華と滅亡を描く。"
+    },
+    {
+      "id": "jap_kobun11_008",
+      "category": "knowledge",
+      "prompt": "醍醐天皇の命によって作られた、最初の勅撰和歌集は？",
+      "choices": [
+        "後撰和歌集",
+        "新古今和歌集",
+        "古今和歌集",
+        "万葉集"
+      ],
+      "answerIndex": 2,
+      "explanation": "仮名序は紀貫之が書いた。"
+    },
+    {
+      "id": "jap_kobun11_009",
+      "category": "knowledge",
+      "prompt": "在原業平をモデルとする「男」の歌を中心にした歌物語は？",
+      "choices": [
+        "伊勢物語",
+        "宇治拾遺物語",
+        "大和物語",
+        "竹取物語"
+      ],
+      "answerIndex": 0,
+      "explanation": "「昔、男ありけり」で始まる章段が多い。"
+    },
+    {
+      "id": "jap_kobun11_010",
+      "category": "knowledge",
+      "prompt": "「月日は百代の過客にして」で始まる紀行文と作者は？",
+      "choices": [
+        "『東関紀行』・作者未詳",
+        "『土佐日記』・紀貫之",
+        "『おくのほそ道』・松尾芭蕉",
+        "『奥の細道』・与謝蕪村"
+      ],
+      "answerIndex": 2,
+      "explanation": "江戸時代の俳諧紀行文。"
+    },
+    {
+      "id": "jap_kobun11_011",
+      "category": "knowledge",
+      "prompt": "平安時代末期の説話集で、「今は昔」で始まる話を多く集めたものは？",
+      "choices": [
+        "十訓抄",
+        "今昔物語集",
+        "古今著聞集",
+        "宇治拾遺物語"
+      ],
+      "answerIndex": 1,
+      "explanation": "インド・中国・日本の説話を収める。"
+    },
+    {
+      "id": "jap_kobun11_012",
+      "category": "thinking",
+      "prompt": "次の作品を成立の古い順に並べたものは？",
+      "choices": [
+        "源氏物語 → 竹取物語 → おくのほそ道 → 徒然草",
+        "竹取物語 → 源氏物語 → 徒然草 → おくのほそ道",
+        "徒然草 → 竹取物語 → 源氏物語 → おくのほそ道",
+        "竹取物語 → 徒然草 → 源氏物語 → おくのほそ道"
+      ],
+      "answerIndex": 1,
+      "explanation": "平安初期 → 平安中期 → 鎌倉末期 → 江戸時代。"
+    }
+  ]
+}

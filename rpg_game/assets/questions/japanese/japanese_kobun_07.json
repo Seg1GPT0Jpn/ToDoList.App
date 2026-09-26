@@ -1,0 +1,164 @@
+{
+  "setId": "japanese_kobun_07",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "jap_kobun07_001",
+      "category": "knowledge",
+      "prompt": "「のたまふ」の意味と敬語の種類は？",
+      "choices": [
+        "おっしゃる（尊敬語）",
+        "申し上げる（謙譲語）",
+        "聞く（謙譲語）",
+        "言います（丁寧語）"
+      ],
+      "answerIndex": 0,
+      "explanation": "「言ふ」の尊敬語。"
+    },
+    {
+      "id": "jap_kobun07_002",
+      "category": "knowledge",
+      "prompt": "「おはす」の意味は？",
+      "choices": [
+        "ございます（丁寧語）",
+        "参上する（謙譲語）",
+        "いらっしゃる（尊敬語）",
+        "差し上げる"
+      ],
+      "answerIndex": 2,
+      "explanation": "「あり・居り・行く・来」の尊敬語。"
+    },
+    {
+      "id": "jap_kobun07_003",
+      "category": "knowledge",
+      "prompt": "「参る」の代表的な意味は？",
+      "choices": [
+        "いらっしゃる",
+        "おっしゃる",
+        "お休みになる",
+        "参上する（謙譲語）"
+      ],
+      "answerIndex": 3,
+      "explanation": "「行く・来」の謙譲語。「召し上がる」（尊敬語）の意味もある。"
+    },
+    {
+      "id": "jap_kobun07_004",
+      "category": "knowledge",
+      "prompt": "「きこゆ」が謙譲語のときの意味は？",
+      "choices": [
+        "お聞きになる",
+        "申し上げる",
+        "聞こえる",
+        "おっしゃる"
+      ],
+      "answerIndex": 1,
+      "explanation": "「言ふ」の謙譲語。補助動詞では「〜申し上げる」。"
+    },
+    {
+      "id": "jap_kobun07_005",
+      "category": "knowledge",
+      "prompt": "補助動詞「侍り」「候ふ」の敬語の種類は？",
+      "choices": [
+        "謙譲語",
+        "丁寧語",
+        "美化語",
+        "尊敬語"
+      ],
+      "answerIndex": 1,
+      "explanation": "本動詞では「お仕えする（謙譲）」の意味もある。"
+    },
+    {
+      "id": "jap_kobun07_006",
+      "category": "knowledge",
+      "prompt": "四段活用の「給ふ」の敬語の種類は？",
+      "choices": [
+        "なし",
+        "尊敬語",
+        "謙譲語",
+        "丁寧語"
+      ],
+      "answerIndex": 1,
+      "explanation": "下二段活用の「給ふ」は謙譲語（会話文・手紙で使う）。"
+    },
+    {
+      "id": "jap_kobun07_007",
+      "category": "knowledge",
+      "prompt": "尊敬語は、だれへの敬意を表す？",
+      "choices": [
+        "聞き手・読み手",
+        "作者自身",
+        "動作をする人（主体）",
+        "動作を受ける人"
+      ],
+      "answerIndex": 2,
+      "explanation": "謙譲語は動作の受け手、丁寧語は聞き手・読み手への敬意。"
+    },
+    {
+      "id": "jap_kobun07_008",
+      "category": "knowledge",
+      "prompt": "地の文で使われた敬語は、だれからの敬意？",
+      "choices": [
+        "読者",
+        "登場人物",
+        "天皇",
+        "作者（語り手）"
+      ],
+      "answerIndex": 3,
+      "explanation": "会話文では話し手からの敬意になる。"
+    },
+    {
+      "id": "jap_kobun07_009",
+      "category": "knowledge",
+      "prompt": "「せ給ふ」「させ給ふ」のような二重敬語が使われるのは、主にどんな人物？",
+      "choices": [
+        "身分の低い人物",
+        "天皇・中宮など、特に身分の高い人物",
+        "動物",
+        "作者自身"
+      ],
+      "answerIndex": 1,
+      "explanation": "最高敬語と呼ばれる。"
+    },
+    {
+      "id": "jap_kobun07_010",
+      "category": "thinking",
+      "prompt": "地の文「かぐや姫、翁に申す」の「申す」が表す敬意は？",
+      "choices": [
+        "翁からかぐや姫への敬意",
+        "かぐや姫から作者への敬意",
+        "作者から翁への敬意",
+        "作者からかぐや姫への敬意"
+      ],
+      "answerIndex": 2,
+      "explanation": "「申す」は謙譲語なので、動作の受け手（翁）への敬意。地の文なので作者から。"
+    },
+    {
+      "id": "jap_kobun07_011",
+      "category": "thinking",
+      "prompt": "「大臣、文を書き給ふ」の「給ふ」が表す敬意は？",
+      "choices": [
+        "作者から大臣への敬意",
+        "作者から文への敬意",
+        "読者から大臣への敬意",
+        "大臣から作者への敬意"
+      ],
+      "answerIndex": 0,
+      "explanation": "尊敬語なので動作の主体（大臣）への敬意。"
+    },
+    {
+      "id": "jap_kobun07_012",
+      "category": "thinking",
+      "prompt": "古文で主語が省略されているとき、敬語が手がかりになる理由は？",
+      "choices": [
+        "手がかりにはならない",
+        "敬語の有無や種類から、身分の高い人物の動作かどうかが分かるから",
+        "敬語がある文には主語がないから",
+        "敬語は主語を必ず表すから"
+      ],
+      "answerIndex": 1,
+      "explanation": "尊敬語がつく動作の主体は、身分の高い人物である可能性が高い。"
+    }
+  ]
+}

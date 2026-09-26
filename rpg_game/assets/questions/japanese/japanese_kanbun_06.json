@@ -1,0 +1,168 @@
+{
+  "setId": "japanese_kanbun_06",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "jap_kanbun06_001",
+      "category": "knowledge",
+      "prompt": "五言絶句の形は？",
+      "choices": [
+        "1 句 7 字・4 句",
+        "1 句 5 字・8 句",
+        "1 句 7 字・8 句",
+        "1 句 5 字・4 句"
+      ],
+      "answerIndex": 3,
+      "explanation": "全部で 20 字。"
+    },
+    {
+      "id": "jap_kanbun06_002",
+      "category": "knowledge",
+      "prompt": "七言律詩の形は？",
+      "choices": [
+        "1 句 7 字・4 句",
+        "1 句 7 字・8 句",
+        "1 句 5 字・8 句",
+        "1 句 5 字・4 句"
+      ],
+      "answerIndex": 1,
+      "explanation": "全部で 56 字。"
+    },
+    {
+      "id": "jap_kanbun06_003",
+      "category": "knowledge",
+      "prompt": "絶句の四つの句の構成は？",
+      "choices": [
+        "起・承・転・結",
+        "序論・本論・結論",
+        "序・破・急",
+        "上・中・下"
+      ],
+      "answerIndex": 0,
+      "explanation": "第三句（転句）で内容が転換する。"
+    },
+    {
+      "id": "jap_kanbun06_004",
+      "category": "knowledge",
+      "prompt": "律詩で、原則として対句にする句は？",
+      "choices": [
+        "第 7・8 句",
+        "第 1・2 句",
+        "すべての句",
+        "第 3・4 句と第 5・6 句"
+      ],
+      "answerIndex": 3,
+      "explanation": "頷聯（がんれん）と頸聯（けいれん）。"
+    },
+    {
+      "id": "jap_kanbun06_005",
+      "category": "knowledge",
+      "prompt": "五言詩の押韻の原則は？",
+      "choices": [
+        "偶数句の末",
+        "各句の最初",
+        "第 1 句だけ",
+        "奇数句の末"
+      ],
+      "answerIndex": 0,
+      "explanation": "七言詩は第 1 句末と偶数句末。"
+    },
+    {
+      "id": "jap_kanbun06_006",
+      "category": "knowledge",
+      "prompt": "「詩仙」と呼ばれた唐の詩人は？",
+      "choices": [
+        "李白",
+        "王維",
+        "白居易",
+        "杜甫"
+      ],
+      "answerIndex": 0,
+      "explanation": "杜甫は「詩聖」と呼ばれる。"
+    },
+    {
+      "id": "jap_kanbun06_007",
+      "category": "thinking",
+      "prompt": "この詩の形式は？",
+      "sentence": "春眠不覚暁　処処聞啼鳥　夜来風雨声　花落知多少",
+      "choices": [
+        "五言絶句",
+        "七言律詩",
+        "七言絶句",
+        "五言律詩"
+      ],
+      "answerIndex": 0,
+      "explanation": "5 字×4 句。孟浩然「春暁」。"
+    },
+    {
+      "id": "jap_kanbun06_008",
+      "category": "thinking",
+      "prompt": "この詩で押韻している字の組み合わせは？",
+      "sentence": "春眠不覚暁　処処聞啼鳥　夜来風雨声　花落知多少",
+      "choices": [
+        "眠・処・声",
+        "春・夜・花",
+        "暁・鳥・少",
+        "覚・聞・知"
+      ],
+      "answerIndex": 2,
+      "explanation": "句末の字で韻をふむ。この詩は第 1 句も押韻している。"
+    },
+    {
+      "id": "jap_kanbun06_009",
+      "category": "thinking",
+      "prompt": "「春眠不レ覚レ暁」の書き下し文は？",
+      "choices": [
+        "春眠暁を覚えず",
+        "春の眠り暁に覚む",
+        "暁を覚え春眠らず",
+        "春眠覚めずして暁"
+      ],
+      "answerIndex": 0,
+      "explanation": "春の眠りは心地よく、夜が明けたのにも気づかない。"
+    },
+    {
+      "id": "jap_kanbun06_010",
+      "category": "thinking",
+      "prompt": "「国破山河在」（杜甫「春望」）が表す心情は？",
+      "choices": [
+        "戦いに勝った誇り",
+        "山や川を旅したい",
+        "国は戦乱で荒れ果てても自然は変わらず、それがかえって悲しい",
+        "国が平和で喜ばしい"
+      ],
+      "answerIndex": 2,
+      "explanation": "国破れて山河在り。人の世のはかなさと、変わらぬ自然の対比。"
+    },
+    {
+      "id": "jap_kanbun06_011",
+      "category": "thinking",
+      "prompt": "この詩で、作者は床の前の月の光を何に見立てている？",
+      "sentence": "牀前看月光　疑是地上霜　挙頭望山月　低頭思故郷",
+      "choices": [
+        "地上の霜",
+        "白い布",
+        "雪",
+        "水"
+      ],
+      "answerIndex": 0,
+      "explanation": "疑ふらくは是れ地上の霜かと。李白「静夜思」。"
+    },
+    {
+      "id": "jap_kanbun06_012",
+      "category": "thinking",
+      "prompt": "上の詩で作者が最後に思っているものは？",
+      "sentence": "牀前看月光　疑是地上霜　挙頭望山月　低頭思故郷",
+      "choices": [
+        "故郷",
+        "霜",
+        "寝台",
+        "月"
+      ],
+      "answerIndex": 0,
+      "explanation": "頭を低れて故郷を思ふ。旅先で故郷を思う望郷の詩。"
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "setId": "japanese_kanbun_07",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "jap_kanbun07_001",
+      "category": "knowledge",
+      "prompt": "「仁」を重んじ、弟子たちとの言行が『論語』にまとめられた思想家は？",
+      "choices": [
+        "孔子",
+        "老子",
+        "韓非子",
+        "墨子"
+      ],
+      "answerIndex": 0,
+      "explanation": "儒家の祖。"
+    },
+    {
+      "id": "jap_kanbun07_002",
+      "category": "knowledge",
+      "prompt": "人の本性は善であるとする「性善説」を説いたのは？",
+      "choices": [
+        "老子",
+        "孟子",
+        "韓非子",
+        "荀子"
+      ],
+      "answerIndex": 1,
+      "explanation": "四端（惻隠・羞悪・辞譲・是非の心）を説いた。"
+    },
+    {
+      "id": "jap_kanbun07_003",
+      "category": "knowledge",
+      "prompt": "人の本性は悪であり、礼による教育が必要だとする「性悪説」を説いたのは？",
+      "choices": [
+        "孔子",
+        "孟子",
+        "荘子",
+        "荀子"
+      ],
+      "answerIndex": 3,
+      "explanation": "「青は藍より出でて藍より青し」も『荀子』。"
+    },
+    {
+      "id": "jap_kanbun07_004",
+      "category": "knowledge",
+      "prompt": "「無為自然」を説いた道家の思想家は？",
+      "choices": [
+        "孔子・孟子",
+        "墨子",
+        "韓非子・商鞅",
+        "老子・荘子"
+      ],
+      "answerIndex": 3,
+      "explanation": "人為を捨て、自然のままに生きることを説いた。"
+    },
+    {
+      "id": "jap_kanbun07_005",
+      "category": "knowledge",
+      "prompt": "法による厳しい統治を説いた法家の思想家は？",
+      "choices": [
+        "韓非子",
+        "荘子",
+        "孟子",
+        "孔子"
+      ],
+      "answerIndex": 0,
+      "explanation": "秦の始皇帝の政治に影響を与えた。"
+    },
+    {
+      "id": "jap_kanbun07_006",
+      "category": "knowledge",
+      "prompt": "「温故知新」の意味は？",
+      "choices": [
+        "古いことを学び直して、新しい知識や見解を得る",
+        "新しいことだけを学ぶ",
+        "昔のことはすぐに忘れる",
+        "古いものを捨てて新しいものを作る"
+      ],
+      "answerIndex": 0,
+      "explanation": "故きを温めて新しきを知る。（論語）"
+    },
+    {
+      "id": "jap_kanbun07_007",
+      "category": "thinking",
+      "prompt": "「学而時習レ之、不二亦説一乎」の意味は？",
+      "choices": [
+        "学んだことを折にふれて復習するのは、なんと喜ばしいことではないか",
+        "学ぶと説明がうまくなる",
+        "復習しなくてもよい",
+        "学ぶことはつらいことだ"
+      ],
+      "answerIndex": 0,
+      "explanation": "学びて時に之を習ふ、亦た説ばしからずや。「説」は「悦」と同じ。（論語）"
+    },
+    {
+      "id": "jap_kanbun07_008",
+      "category": "thinking",
+      "prompt": "「矛盾」の故事の内容として正しいものは？",
+      "choices": [
+        "どんな盾も突き通す矛と、どんな矛も防ぐ盾を同時に売ろうとした",
+        "矛より盾のほうが高く売れた",
+        "矛と盾で戦って引き分けた",
+        "矛と盾を交換した"
+      ],
+      "answerIndex": 0,
+      "explanation": "「子の矛を以て子の盾を陥さば何如」と問われて答えられなかった。（韓非子）"
+    },
+    {
+      "id": "jap_kanbun07_009",
+      "category": "thinking",
+      "prompt": "「矛盾」の話で、商人が答えられなかった理由は？",
+      "choices": [
+        "値段が高すぎたから",
+        "二つの主張が同時に正しいことはありえないから",
+        "矛と盾を持っていなかったから",
+        "言葉が通じなかったから"
+      ],
+      "answerIndex": 1,
+      "explanation": "論理的に両立しないこと＝矛盾。"
+    },
+    {
+      "id": "jap_kanbun07_010",
+      "category": "thinking",
+      "prompt": "「胡蝶の夢」（荘子）が表す考え方として適切なものは？",
+      "choices": [
+        "夢は必ず正夢になる",
+        "夢と現実、自分と他のものの区別は絶対的ではない",
+        "眠りは大切だ",
+        "蝶は人より自由だ"
+      ],
+      "answerIndex": 1,
+      "explanation": "荘周が蝶になった夢を見たのか、蝶が荘周になった夢を見ているのか分からない。"
+    },
+    {
+      "id": "jap_kanbun07_011",
+      "category": "thinking",
+      "prompt": "「朝三暮四」の意味は？",
+      "choices": [
+        "朝早くから働く",
+        "毎日同じことをくり返す",
+        "目先の違いにとらわれて、結果が同じことに気づかない",
+        "朝と夕方で考えが変わる"
+      ],
+      "answerIndex": 2,
+      "explanation": "猿にとちの実を朝三つ・夕方四つと言うと怒り、朝四つ・夕方三つで喜んだ。（列子）"
+    },
+    {
+      "id": "jap_kanbun07_012",
+      "category": "thinking",
+      "prompt": "「過ぎたるは猶ほ及ばざるがごとし」から分かる孔子の考え方は？",
+      "choices": [
+        "足りないことが大切だ",
+        "やりすぎるほどよい",
+        "努力は無駄だ",
+        "何事もほどほど（中庸）が大切だ"
+      ],
+      "answerIndex": 3,
+      "explanation": "極端に走らない「中庸」を重んじた。"
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "setId": "japanese_kobun_01",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "jap_kobun01_001",
+      "category": "knowledge",
+      "prompt": "「いふ」を現代仮名遣いに直すと？",
+      "choices": [
+        "いえ",
+        "いう",
+        "ゆう",
+        "いふ"
+      ],
+      "answerIndex": 1,
+      "explanation": "語中・語尾のハ行は、ワ行（わ・い・う・え・お）で読む。"
+    },
+    {
+      "id": "jap_kobun01_002",
+      "category": "knowledge",
+      "prompt": "「をかし」を現代仮名遣いに直すと？",
+      "choices": [
+        "をかし",
+        "うかし",
+        "おがし",
+        "おかし"
+      ],
+      "answerIndex": 3,
+      "explanation": "「を」は「お」と読む（助詞の「を」を除く）。"
+    },
+    {
+      "id": "jap_kobun01_003",
+      "category": "knowledge",
+      "prompt": "「けふ」を現代仮名遣いに直すと？",
+      "choices": [
+        "きょう",
+        "けう",
+        "きゅう",
+        "けふ"
+      ],
+      "answerIndex": 0,
+      "explanation": "「eu」の音は「ョー（yō）」になる。けふ→けう→きょう。"
+    },
+    {
+      "id": "jap_kobun01_004",
+      "category": "knowledge",
+      "prompt": "「てふてふ」を現代仮名遣いに直すと？",
+      "choices": [
+        "ちょうちょう",
+        "ちゅうちゅう",
+        "ておておう",
+        "てうてう"
+      ],
+      "answerIndex": 0,
+      "explanation": "てふ→てう→ちょう。「蝶々」のこと。"
+    },
+    {
+      "id": "jap_kobun01_005",
+      "category": "knowledge",
+      "prompt": "「ゐなか」を現代仮名遣いに直すと？",
+      "choices": [
+        "ゐなか",
+        "うぃなか",
+        "えなか",
+        "いなか"
+      ],
+      "answerIndex": 3,
+      "explanation": "「ゐ」は「い」、「ゑ」は「え」と読む。"
+    },
+    {
+      "id": "jap_kobun01_006",
+      "category": "knowledge",
+      "prompt": "「まうす」を現代仮名遣いに直すと？",
+      "choices": [
+        "まうす",
+        "みょうす",
+        "むうす",
+        "もうす"
+      ],
+      "answerIndex": 3,
+      "explanation": "「au」の音は「オー（ō）」になる。"
+    },
+    {
+      "id": "jap_kobun01_007",
+      "category": "knowledge",
+      "prompt": "古文単語「をかし」の意味として最も適切なものは？",
+      "choices": [
+        "あやしい",
+        "趣がある・興味深い",
+        "悲しい",
+        "おかしくて笑える"
+      ],
+      "answerIndex": 1,
+      "explanation": "『枕草子』に多く見られる、明るく知的な感動を表す語。"
+    },
+    {
+      "id": "jap_kobun01_008",
+      "category": "knowledge",
+      "prompt": "古文単語「あはれなり」の意味として最も適切なものは？",
+      "choices": [
+        "しみじみと心を動かされる",
+        "腹立たしい",
+        "おもしろくて笑える",
+        "かわいそうだ"
+      ],
+      "answerIndex": 0,
+      "explanation": "『源氏物語』に代表される、しみじみとした情趣を表す語。"
+    },
+    {
+      "id": "jap_kobun01_009",
+      "category": "knowledge",
+      "prompt": "古文単語「いと」の意味は？",
+      "choices": [
+        "いつも",
+        "糸",
+        "とても・たいそう",
+        "すこし"
+      ],
+      "answerIndex": 2,
+      "explanation": "「いと〜ず」の形では「たいして〜ない」。"
+    },
+    {
+      "id": "jap_kobun01_010",
+      "category": "knowledge",
+      "prompt": "古文単語「つとめて」の意味は？",
+      "choices": [
+        "すぐに",
+        "夜ふけ",
+        "早朝・翌朝",
+        "努力して"
+      ],
+      "answerIndex": 2,
+      "explanation": "「冬はつとめて」（枕草子）。"
+    },
+    {
+      "id": "jap_kobun01_011",
+      "category": "knowledge",
+      "prompt": "古文単語「うつくし」の意味は？",
+      "choices": [
+        "りっぱだ",
+        "さびしい",
+        "かわいらしい",
+        "美しい（整っている）"
+      ],
+      "answerIndex": 2,
+      "explanation": "小さいものをいとしく思う気持ちを表す。"
+    },
+    {
+      "id": "jap_kobun01_012",
+      "category": "knowledge",
+      "prompt": "古文単語「ありがたし」の意味は？",
+      "choices": [
+        "ありふれている",
+        "めったにない・珍しい",
+        "感謝している",
+        "当たり前だ"
+      ],
+      "answerIndex": 1,
+      "explanation": "「有り難し」＝存在することが難しい。"
+    }
+  ]
+}

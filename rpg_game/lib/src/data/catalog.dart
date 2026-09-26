@@ -4,6 +4,7 @@ import '../models/stage.dart';
 import '../models/world.dart';
 import '../study/sea_catalog.dart';
 import 'information_catalog.dart';
+import 'japanese_catalog.dart';
 import 'social_catalog.dart';
 import 'route_world.dart';
 import 'science_catalog.dart';
@@ -593,14 +594,6 @@ class RpgCatalog {
 
   static final worlds = <WorldDef>[
     WorldDef(
-      id: 'japanese',
-      name: '言の葉の国',
-      subject: '国語',
-      status: WorldStatus.comingSoon,
-      isFree: false,
-      priceYen: defaultWorldPriceYen,
-    ),
-    WorldDef(
       id: 'math',
       name: '数理の国',
       subject: '数学',
@@ -649,6 +642,21 @@ class RpgCatalog {
           '上の2つの門は地理と倫理、左は日本史、右は世界史、下は政治・経済の道。'
           '地図を読み、歴史をたどり、社会のしくみを考えよう。',
       description: '地理・日本史・世界史・政治経済・倫理の5ルート、85エリア。',
+    ),
+    WorldDef(
+      id: JapaneseCatalog.worldId,
+      name: '言の葉の国',
+      subject: '国語',
+      status: WorldStatus.available,
+      isFree: false,
+      priceYen: defaultWorldPriceYen,
+      stages: JapaneseCatalog.stages,
+      routes: [for (final r in JapaneseCatalog.routes) r.info],
+      hubName: '言の葉の広場',
+      hubSign: 'ここは言の葉の国の「言の葉の広場」。'
+          '上へ進むと現代文、左は古文、右は漢文の道。'
+          '言葉を知り、論理を読み、千年の文章を味わおう。',
+      description: '現代文・古文・漢文の3ルート、32エリア。読解・文法・表現まで。',
     ),
     WorldDef(
       id: InformationCatalog.worldId,

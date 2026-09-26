@@ -1,0 +1,165 @@
+{
+  "setId": "japanese_gendai_08",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "jap_gendai08_001",
+      "category": "knowledge",
+      "prompt": "一般的な原理から、個別の結論を導く推論は？",
+      "choices": [
+        "類推",
+        "帰納",
+        "演繹",
+        "仮説"
+      ],
+      "answerIndex": 2,
+      "explanation": "例：三段論法。"
+    },
+    {
+      "id": "jap_gendai08_002",
+      "category": "knowledge",
+      "prompt": "多くの個別の事例から、一般的な法則を導く推論は？",
+      "choices": [
+        "演繹",
+        "反論",
+        "帰納",
+        "類推"
+      ],
+      "answerIndex": 2,
+      "explanation": "例外が見つかれば崩れることがある。"
+    },
+    {
+      "id": "jap_gendai08_003",
+      "category": "knowledge",
+      "prompt": "主張と根拠を結びつける「なぜその根拠からその主張が言えるのか」の部分は？",
+      "choices": [
+        "例示",
+        "結論",
+        "論拠（理由づけ）",
+        "反論"
+      ],
+      "answerIndex": 2,
+      "explanation": "トゥールミン・モデルではワラントと呼ぶ。"
+    },
+    {
+      "id": "jap_gendai08_004",
+      "category": "knowledge",
+      "prompt": "予想される反対意見を取り上げ、それに答えることを何という？",
+      "choices": [
+        "要約",
+        "例示",
+        "比喩",
+        "反論の想定と再反論"
+      ],
+      "answerIndex": 3,
+      "explanation": "主張の説得力が高まる。"
+    },
+    {
+      "id": "jap_gendai08_005",
+      "category": "knowledge",
+      "prompt": "相手の主張をゆがめて、別の問題にすり替えて攻撃することを何という？",
+      "choices": [
+        "類推",
+        "論点のすり替え",
+        "帰納",
+        "演繹"
+      ],
+      "answerIndex": 1,
+      "explanation": "議論では誤った論法（誤謬）の一つ。"
+    },
+    {
+      "id": "jap_gendai08_006",
+      "category": "thinking",
+      "prompt": "「すべての鳥は卵を産む。ペンギンは鳥である。」から導かれる結論は？",
+      "choices": [
+        "ペンギンは鳥ではない",
+        "卵を産むのは鳥だけだ",
+        "ペンギンは卵を産む",
+        "ペンギンは空を飛ぶ"
+      ],
+      "answerIndex": 2,
+      "explanation": "演繹（三段論法）による推論。"
+    },
+    {
+      "id": "jap_gendai08_007",
+      "category": "thinking",
+      "prompt": "「A ならば B である」が正しいとき、必ず正しいと言えるのは？",
+      "choices": [
+        "A でないならば B でない",
+        "A でも B でもない",
+        "B でないならば A でない",
+        "B ならば A である"
+      ],
+      "answerIndex": 2,
+      "explanation": "対偶は元の命題と真偽が一致する。「逆」「裏」は必ずしも正しくない。"
+    },
+    {
+      "id": "jap_gendai08_008",
+      "category": "thinking",
+      "prompt": "「雨が降ると道がぬれる。道がぬれている。だから雨が降ったはずだ。」の問題点は？",
+      "choices": [
+        "道はぬれない",
+        "ほかの原因（打ち水など）の可能性を考えていない",
+        "問題はない",
+        "雨は降らない"
+      ],
+      "answerIndex": 1,
+      "explanation": "「逆」は必ずしも真ではない。"
+    },
+    {
+      "id": "jap_gendai08_009",
+      "category": "thinking",
+      "prompt": "「多くの人が支持しているから、この意見は正しい」という論法の問題点は？",
+      "choices": [
+        "問題はない",
+        "支持者の多さは、正しさの根拠にはならない",
+        "支持者が少ないから正しい",
+        "根拠が多すぎる"
+      ],
+      "answerIndex": 1,
+      "explanation": "多数派に訴える誤謬。"
+    },
+    {
+      "id": "jap_gendai08_010",
+      "category": "thinking",
+      "prompt": "帰納による結論の弱点として適切なものは？",
+      "choices": [
+        "一般から個別を導く",
+        "必ず正しい結論になる",
+        "調べていない事例に例外があれば、結論が崩れる",
+        "事例を必要としない"
+      ],
+      "answerIndex": 2,
+      "explanation": "事例の数や選び方が大切。"
+    },
+    {
+      "id": "jap_gendai08_011",
+      "category": "thinking",
+      "prompt": "次の主張に対する「反論」として最も適切なものは？",
+      "sentence": "主張：これからは紙の本は必要なく、すべて電子書籍にすべきだ。",
+      "choices": [
+        "電子書籍は軽い",
+        "電子書籍は便利だ",
+        "紙の本には、画面より目が疲れにくく、書きこみもしやすいという利点がある",
+        "本は大切だ"
+      ],
+      "answerIndex": 2,
+      "explanation": "主張の根拠や結論に対して、別の観点から異を唱えるのが反論。"
+    },
+    {
+      "id": "jap_gendai08_012",
+      "category": "thinking",
+      "prompt": "小論文で主張の説得力を高める方法として最も適切なものは？",
+      "choices": [
+        "感情的な言葉を多く使う",
+        "同じ主張をくり返す",
+        "結論を書かない",
+        "根拠となる事実やデータを示し、予想される反論にも答える"
+      ],
+      "answerIndex": 3,
+      "explanation": "主張・根拠・反論への応答をそろえる。"
+    }
+  ]
+}

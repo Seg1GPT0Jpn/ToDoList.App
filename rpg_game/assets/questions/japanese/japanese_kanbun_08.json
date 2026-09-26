@@ -1,0 +1,164 @@
+{
+  "setId": "japanese_kanbun_08",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "jap_kanbun08_001",
+      "category": "knowledge",
+      "prompt": "『史記』の作者は？",
+      "choices": [
+        "司馬光",
+        "班固",
+        "孔子",
+        "司馬遷"
+      ],
+      "answerIndex": 3,
+      "explanation": "前漢の歴史家。紀伝体で書かれた。"
+    },
+    {
+      "id": "jap_kanbun08_002",
+      "category": "knowledge",
+      "prompt": "「本紀」「列伝」など、人物を中心に歴史を記す形式は？",
+      "choices": [
+        "紀事本末体",
+        "編年体",
+        "紀伝体",
+        "随筆"
+      ],
+      "answerIndex": 2,
+      "explanation": "年代順に書くのは編年体。"
+    },
+    {
+      "id": "jap_kanbun08_003",
+      "category": "knowledge",
+      "prompt": "「四面楚歌」の意味は？",
+      "choices": [
+        "四人で歌う",
+        "周りが敵ばかりで、助けがない",
+        "故郷を思う",
+        "四方から歌が聞こえて楽しい"
+      ],
+      "answerIndex": 1,
+      "explanation": "項羽が漢軍に囲まれ、四方から楚の歌が聞こえた故事。（史記）"
+    },
+    {
+      "id": "jap_kanbun08_004",
+      "category": "knowledge",
+      "prompt": "「背水の陣」の意味は？",
+      "choices": [
+        "水を背負って運ぶ",
+        "退路を断って、決死の覚悟で臨む",
+        "有利な場所に陣を置く",
+        "川で戦うのは危険だ"
+      ],
+      "answerIndex": 1,
+      "explanation": "韓信の故事。（史記）"
+    },
+    {
+      "id": "jap_kanbun08_005",
+      "category": "knowledge",
+      "prompt": "「完璧」の由来として正しいものは？",
+      "choices": [
+        "壁を守った兵士の故事",
+        "玉を磨いた職人の故事",
+        "完全な壁を作った故事",
+        "藺相如が「璧（宝玉）」を無事に持ち帰った故事"
+      ],
+      "answerIndex": 3,
+      "explanation": "「璧を完うして帰る」。「壁」と書くのは誤り。（史記）"
+    },
+    {
+      "id": "jap_kanbun08_006",
+      "category": "knowledge",
+      "prompt": "「蛇足」の意味は？",
+      "choices": [
+        "足の速い蛇",
+        "大切な仕上げ",
+        "蛇のように素早い",
+        "余計なつけ足し"
+      ],
+      "answerIndex": 3,
+      "explanation": "蛇の絵に足を描き加えて、酒を飲みそこねた故事。（戦国策）"
+    },
+    {
+      "id": "jap_kanbun08_007",
+      "category": "knowledge",
+      "prompt": "「漁夫の利」の意味は？",
+      "choices": [
+        "努力が報われる",
+        "二者が争っている間に、第三者が利益を得る",
+        "漁師がもうかる",
+        "魚をたくさんとる"
+      ],
+      "answerIndex": 1,
+      "explanation": "しぎとはまぐりが争い、漁師に両方とられた故事。（戦国策）"
+    },
+    {
+      "id": "jap_kanbun08_008",
+      "category": "knowledge",
+      "prompt": "「推敲」の由来となった詩人は？",
+      "choices": [
+        "白居易",
+        "杜甫",
+        "賈島",
+        "李白"
+      ],
+      "answerIndex": 2,
+      "explanation": "「推す」か「敲く」かで迷った故事。文章を練り直す意味。"
+    },
+    {
+      "id": "jap_kanbun08_009",
+      "category": "thinking",
+      "prompt": "「不レ入二虎穴一、不レ得二虎子一」の書き下し文は？",
+      "choices": [
+        "虎子を得ずして虎穴に入らず",
+        "虎穴に入らずんば、虎子を得ず",
+        "虎穴に入らず、虎子を得ず",
+        "虎穴に入りて虎子を得"
+      ],
+      "answerIndex": 1,
+      "explanation": "危険をおかさなければ大きな成果は得られない。（後漢書）"
+    },
+    {
+      "id": "jap_kanbun08_010",
+      "category": "thinking",
+      "prompt": "「臥薪嘗胆」の意味は？",
+      "choices": [
+        "薪の上で寝ると体によい",
+        "目的を果たすために、長い間苦労に耐える",
+        "すぐにあきらめる",
+        "苦い物を食べる健康法"
+      ],
+      "answerIndex": 1,
+      "explanation": "呉王夫差と越王勾践の復讐の故事。"
+    },
+    {
+      "id": "jap_kanbun08_011",
+      "category": "thinking",
+      "prompt": "「蛇足」の話で、最初に描き終えた者が酒を飲めなかった理由は？",
+      "choices": [
+        "酒がなかったから",
+        "描き加えた足のせいで、蛇の絵ではなくなったから",
+        "描くのが遅かったから",
+        "蛇が逃げたから"
+      ],
+      "answerIndex": 1,
+      "explanation": "「蛇固より足無し」と言われ、酒を奪われた。余計なことをして失敗するたとえ。"
+    },
+    {
+      "id": "jap_kanbun08_012",
+      "category": "thinking",
+      "prompt": "漢文を読むときの力として、最も総合的に必要なものは？",
+      "choices": [
+        "返り点と句法をおさえ、故事や思想の背景と結びつけて読む力",
+        "漢字の画数を覚える力",
+        "現代語訳を暗記する力",
+        "中国語の発音"
+      ],
+      "answerIndex": 0,
+      "explanation": "句法の知識と、内容を読み取る力の両方が大切。"
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "setId": "japanese_gendai_10",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "jap_gendai10_001",
+      "category": "knowledge",
+      "prompt": "「ようだ」「みたいだ」などを使ってたとえる表現は？",
+      "choices": [
+        "直喩（明喩）",
+        "倒置法",
+        "隠喩（暗喩）",
+        "擬人法"
+      ],
+      "answerIndex": 0,
+      "explanation": "例：「りんごのような頬」。"
+    },
+    {
+      "id": "jap_gendai10_002",
+      "category": "knowledge",
+      "prompt": "「ようだ」などを使わずにたとえる表現は？",
+      "choices": [
+        "隠喩（暗喩）",
+        "直喩",
+        "対句",
+        "反復法"
+      ],
+      "answerIndex": 0,
+      "explanation": "例：「人生は旅だ」。"
+    },
+    {
+      "id": "jap_gendai10_003",
+      "category": "knowledge",
+      "prompt": "人間でないものを人間のように表す表現は？",
+      "choices": [
+        "直喩",
+        "体言止め",
+        "擬人法",
+        "誇張法"
+      ],
+      "answerIndex": 2,
+      "explanation": "例：「風がささやく」。"
+    },
+    {
+      "id": "jap_gendai10_004",
+      "category": "knowledge",
+      "prompt": "文を名詞（体言）で終える表現は？",
+      "choices": [
+        "体言止め",
+        "倒置法",
+        "反復法",
+        "省略法"
+      ],
+      "answerIndex": 0,
+      "explanation": "余韻や印象を強める。"
+    },
+    {
+      "id": "jap_gendai10_005",
+      "category": "knowledge",
+      "prompt": "ふつうの語順を入れかえて、意味を強める表現は？",
+      "choices": [
+        "倒置法",
+        "対句",
+        "反復法",
+        "直喩"
+      ],
+      "answerIndex": 0,
+      "explanation": "例：「行こう、あの山の向こうへ」。"
+    },
+    {
+      "id": "jap_gendai10_006",
+      "category": "knowledge",
+      "prompt": "同じ言葉や表現をくり返して強調する表現は？",
+      "choices": [
+        "擬人法",
+        "反復法",
+        "倒置法",
+        "対句"
+      ],
+      "answerIndex": 1,
+      "explanation": "例：「遠い、遠い道のり」。"
+    },
+    {
+      "id": "jap_gendai10_007",
+      "category": "knowledge",
+      "prompt": "似た組み立ての語句を並べて、リズムや対比を生む表現は？",
+      "choices": [
+        "体言止め",
+        "反復法",
+        "隠喩",
+        "対句"
+      ],
+      "answerIndex": 3,
+      "explanation": "例：「山は高く、海は深い」。"
+    },
+    {
+      "id": "jap_gendai10_008",
+      "category": "knowledge",
+      "prompt": "「ざあざあ」「きらきら」のように、音や様子を表す言葉は？",
+      "choices": [
+        "隠喩",
+        "擬声語・擬態語（オノマトペ）",
+        "漢語",
+        "反語"
+      ],
+      "answerIndex": 1,
+      "explanation": "音を表すのが擬声語、様子を表すのが擬態語。"
+    },
+    {
+      "id": "jap_gendai10_009",
+      "category": "thinking",
+      "prompt": "次の文に使われている表現技法は？",
+      "sentence": "春の野原で、たんぽぽが笑っている。",
+      "choices": [
+        "直喩",
+        "倒置法",
+        "体言止め",
+        "擬人法"
+      ],
+      "answerIndex": 3,
+      "explanation": "「笑う」は人間の動作。花を人のように表している。"
+    },
+    {
+      "id": "jap_gendai10_010",
+      "category": "thinking",
+      "prompt": "次の文に使われている表現技法は？",
+      "sentence": "君は、ぼくたちのクラスの太陽だ。",
+      "choices": [
+        "直喩",
+        "反復法",
+        "隠喩（暗喩）",
+        "擬人法"
+      ],
+      "answerIndex": 2,
+      "explanation": "「ようだ」を使わずに、君を「太陽」にたとえている。"
+    },
+    {
+      "id": "jap_gendai10_011",
+      "category": "thinking",
+      "prompt": "次の文に使われている表現技法は？",
+      "sentence": "忘れない、あの夏の日を。",
+      "choices": [
+        "体言止め",
+        "擬人法",
+        "倒置法",
+        "対句"
+      ],
+      "answerIndex": 2,
+      "explanation": "「ぼくは忘れない、あの夏の日を」の語順を入れかえて強調している。"
+    },
+    {
+      "id": "jap_gendai10_012",
+      "category": "thinking",
+      "prompt": "「涙が滝のように流れた」の表現の効果は？",
+      "choices": [
+        "悲しくないことを表している",
+        "大げさにたとえて、悲しみや感動の大きさを強調している",
+        "滝の様子を説明している",
+        "涙の量を正確に伝えている"
+      ],
+      "answerIndex": 1,
+      "explanation": "直喩と誇張で、心情の強さを印象づけている。"
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "setId": "japanese_kanbun_05",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "jap_kanbun05_001",
+      "category": "knowledge",
+      "prompt": "「唯」「只」「但」の読みは？",
+      "choices": [
+        "たとひ",
+        "もし",
+        "いはんや",
+        "ただ（〜のみ）"
+      ],
+      "answerIndex": 3,
+      "explanation": "限定を表す。"
+    },
+    {
+      "id": "jap_kanbun05_002",
+      "category": "knowledge",
+      "prompt": "文末の「耳」「已」「爾」の読みは？",
+      "choices": [
+        "なり",
+        "のみ",
+        "や",
+        "かな"
+      ],
+      "answerIndex": 1,
+      "explanation": "限定・強調を表す。"
+    },
+    {
+      "id": "jap_kanbun05_003",
+      "category": "knowledge",
+      "prompt": "「不二唯〜一」の意味は？",
+      "choices": [
+        "ただ〜だけではない（累加）",
+        "〜してはいけない",
+        "ただ〜だけだ",
+        "決して〜ない"
+      ],
+      "answerIndex": 0,
+      "explanation": "唯だに〜のみならず。"
+    },
+    {
+      "id": "jap_kanbun05_004",
+      "category": "knowledge",
+      "prompt": "「如」「若」を「もし」と読むときのはたらきは？",
+      "choices": [
+        "限定",
+        "仮定（もし〜ならば）",
+        "比較",
+        "詠嘆"
+      ],
+      "answerIndex": 1,
+      "explanation": "「如し〜ば」。"
+    },
+    {
+      "id": "jap_kanbun05_005",
+      "category": "knowledge",
+      "prompt": "「縦」を「たとひ」と読むときの意味は？",
+      "choices": [
+        "まして〜はなおさらだ",
+        "ただ〜だけ",
+        "もし〜ならば",
+        "たとえ〜としても"
+      ],
+      "answerIndex": 3,
+      "explanation": "逆接の仮定。「縦ひ〜とも」。"
+    },
+    {
+      "id": "jap_kanbun05_006",
+      "category": "knowledge",
+      "prompt": "「A 且 B、況 C 乎」の意味は？",
+      "choices": [
+        "A でさえ B だ、まして C はなおさらだ",
+        "A ならば C である",
+        "A と C はともに B だ",
+        "A も C も B ではない"
+      ],
+      "answerIndex": 0,
+      "explanation": "A すら且つ B、況んや C をや。抑揚の形。"
+    },
+    {
+      "id": "jap_kanbun05_007",
+      "category": "knowledge",
+      "prompt": "「嗚呼」の読みと意味は？",
+      "choices": [
+        "あに（反語）",
+        "ただ（限定）",
+        "もし（仮定）",
+        "ああ（詠嘆）"
+      ],
+      "answerIndex": 3,
+      "explanation": "文末の「哉」「夫」（かな）も詠嘆を表す。"
+    },
+    {
+      "id": "jap_kanbun05_008",
+      "category": "thinking",
+      "prompt": "「死馬且買レ之、況生者乎」の意味は？",
+      "choices": [
+        "死んだ馬も生きた馬も買わない",
+        "死んだ馬でさえ買うのだから、生きている馬ならなおさら買う",
+        "生きた馬より死んだ馬がよい",
+        "死んだ馬を買ってはいけない"
+      ],
+      "answerIndex": 1,
+      "explanation": "死馬すら且つ之を買ふ、況んや生ける者をや。「隗より始めよ」の故事。（十八史略）"
+    },
+    {
+      "id": "jap_kanbun05_009",
+      "category": "thinking",
+      "prompt": "「先従レ隗始」の故事が表す意味は？",
+      "choices": [
+        "大きなことを始めるには、まず身近なことから始めよ／言い出した者から始めよ",
+        "始める前によく考えよ",
+        "急いで始めよ",
+        "他人に任せるのがよい"
+      ],
+      "answerIndex": 0,
+      "explanation": "郭隗が燕の昭王に、まず自分を優遇すれば、賢者が集まると説いた。（十八史略）"
+    },
+    {
+      "id": "jap_kanbun05_010",
+      "category": "thinking",
+      "prompt": "「学而不レ思則罔」の意味として適切なものは？",
+      "choices": [
+        "学ぶだけで考えないと、物事がはっきりしない",
+        "考えずに学ぶのがよい",
+        "学ぶ必要はない",
+        "考えれば学ばなくてよい"
+      ],
+      "answerIndex": 0,
+      "explanation": "学びて思はざれば則ち罔し。（論語）"
+    },
+    {
+      "id": "jap_kanbun05_011",
+      "category": "thinking",
+      "prompt": "「苟〜」を「いやしくも」と読むときの意味は？",
+      "choices": [
+        "かりにも〜ならば",
+        "ただ〜だけ",
+        "たとえ〜でも",
+        "まして〜なら"
+      ],
+      "answerIndex": 0,
+      "explanation": "仮定を表す。"
+    },
+    {
+      "id": "jap_kanbun05_012",
+      "category": "thinking",
+      "prompt": "「朝聞レ道、夕死可矣」の意味は？",
+      "choices": [
+        "朝に道を聞くと夕方に死ぬ",
+        "夕方に道を聞くべきだ",
+        "朝に正しい道を聞けたなら、その夕方に死んでもかまわない",
+        "朝から晩まで道を歩く"
+      ],
+      "answerIndex": 2,
+      "explanation": "朝に道を聞かば、夕べに死すとも可なり。（論語）"
+    }
+  ]
+}

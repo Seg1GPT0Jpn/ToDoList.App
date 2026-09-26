@@ -1,0 +1,164 @@
+{
+  "setId": "japanese_kanbun_03",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "jap_kanbun03_001",
+      "category": "knowledge",
+      "prompt": "「不」「弗」の読みは？",
+      "choices": [
+        "ず",
+        "なし",
+        "あらず",
+        "なかれ"
+      ],
+      "answerIndex": 0,
+      "explanation": "否定の助動詞「ず」。"
+    },
+    {
+      "id": "jap_kanbun03_002",
+      "category": "knowledge",
+      "prompt": "「無」「莫」の読みは？",
+      "choices": [
+        "ず",
+        "あらず",
+        "なし",
+        "いまだ"
+      ],
+      "answerIndex": 2,
+      "explanation": "存在の否定を表す。"
+    },
+    {
+      "id": "jap_kanbun03_003",
+      "category": "knowledge",
+      "prompt": "「非」の読みは？",
+      "choices": [
+        "あらず",
+        "ず",
+        "なかれ",
+        "なし"
+      ],
+      "answerIndex": 0,
+      "explanation": "「〜に非ず」＝〜ではない。"
+    },
+    {
+      "id": "jap_kanbun03_004",
+      "category": "knowledge",
+      "prompt": "禁止を表す「勿」「毋」の読みは？",
+      "choices": [
+        "なかれ",
+        "あらず",
+        "なし",
+        "ず"
+      ],
+      "answerIndex": 0,
+      "explanation": "「〜すること勿かれ」＝〜してはいけない。"
+    },
+    {
+      "id": "jap_kanbun03_005",
+      "category": "knowledge",
+      "prompt": "「豈〜哉」の読みと意味は？",
+      "choices": [
+        "ただ〜のみ",
+        "なんぞ〜ざる",
+        "あに〜んや（どうして〜だろうか、いや〜ない）",
+        "いまだ〜ず"
+      ],
+      "answerIndex": 2,
+      "explanation": "反語を表す代表的な形。"
+    },
+    {
+      "id": "jap_kanbun03_006",
+      "category": "knowledge",
+      "prompt": "「常不レ〜」（常に〜ず）の意味は？",
+      "choices": [
+        "いつも〜しない（全部否定）",
+        "決して〜しない",
+        "いつも〜するとは限らない",
+        "〜しないことはない"
+      ],
+      "answerIndex": 0,
+      "explanation": "副詞が否定語の前にあると全部否定。"
+    },
+    {
+      "id": "jap_kanbun03_007",
+      "category": "knowledge",
+      "prompt": "「不二常〜一」（常には〜ず）の意味は？",
+      "choices": [
+        "いつも〜しない",
+        "いつも〜するとは限らない（部分否定）",
+        "〜しないことはない",
+        "決して〜しない"
+      ],
+      "answerIndex": 1,
+      "explanation": "否定語が副詞の前にあると部分否定。"
+    },
+    {
+      "id": "jap_kanbun03_008",
+      "category": "knowledge",
+      "prompt": "「無レ不レ〜」の意味は？",
+      "choices": [
+        "〜しないものはない（二重否定・強い肯定）",
+        "〜してはいけない",
+        "〜するものはない",
+        "〜しないこともある"
+      ],
+      "answerIndex": 0,
+      "explanation": "「〜せざるは無し」。"
+    },
+    {
+      "id": "jap_kanbun03_009",
+      "category": "thinking",
+      "prompt": "「己所レ不レ欲、勿レ施二於人一」の意味は？",
+      "choices": [
+        "人のものを欲しがってはいけない",
+        "人に何もしてはいけない",
+        "自分がしてほしくないことは、人にしてはいけない",
+        "自分の欲しいものを人にあげなさい"
+      ],
+      "answerIndex": 2,
+      "explanation": "己の欲せざる所は、人に施すこと勿かれ。（論語）"
+    },
+    {
+      "id": "jap_kanbun03_010",
+      "category": "thinking",
+      "prompt": "「何為不レ去也」の意味は？",
+      "choices": [
+        "立ち去ってはいけない",
+        "立ち去るものはいない",
+        "どうして立ち去らないのか",
+        "なぜ立ち去ったのか"
+      ],
+      "answerIndex": 2,
+      "explanation": "何為れぞ去らざるや。疑問を表す。"
+    },
+    {
+      "id": "jap_kanbun03_011",
+      "category": "thinking",
+      "prompt": "「燕雀安知二鴻鵠之志一哉」の意味として適切なものは？",
+      "choices": [
+        "鳥はみな志をもつ",
+        "つばめは大きな鳥を知っている",
+        "小人物に大人物の志は分からない",
+        "大人物も小人物も同じだ"
+      ],
+      "answerIndex": 2,
+      "explanation": "燕雀安くんぞ鴻鵠の志を知らんや。反語。（史記・陳渉）"
+    },
+    {
+      "id": "jap_kanbun03_012",
+      "category": "thinking",
+      "prompt": "「不レ敢〜」と「敢不レ〜乎」の違いとして正しいものは？",
+      "choices": [
+        "どちらも禁止",
+        "同じ意味",
+        "前者は反語、後者は否定",
+        "前者は「決して〜しない」、後者は「どうして〜しないことがあろうか（必ず〜する）」"
+      ],
+      "answerIndex": 3,
+      "explanation": "語順によって意味が大きく変わる。"
+    }
+  ]
+}
