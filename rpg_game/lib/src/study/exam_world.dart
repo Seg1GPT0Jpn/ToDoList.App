@@ -168,9 +168,8 @@ class ExamWorlds {
           ).enemy;
     EnemyDef scaled(EnemyDef e, int k, {bool boss = false}) {
       final base = curve[(k - 1).clamp(0, 9)].enemy;
-      final hp = hard == null
-          ? base.maxHp
-          : (hard.maxHp * (0.7 + 0.03 * k)).round();
+      final hp =
+          hard == null ? base.maxHp : (hard.maxHp * (0.7 + 0.03 * k)).round();
       return EnemyDef(
         id: 'exam_${plan.id}_$k',
         name: e.name,

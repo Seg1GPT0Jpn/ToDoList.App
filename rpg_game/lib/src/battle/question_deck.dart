@@ -18,8 +18,11 @@ class PresentedQuestion {
 }
 
 /// 問題の山札。全問出し切ったら再シャッフルして続ける（同じ問題が続かないように）。
+///
+/// [weight] を渡すと、重いものほど山札の上に来やすい重みつきシャッフルになる
+/// （苦手な問題が早く出る）。
 class QuestionDeck {
-  QuestionDeck(List<QuizQuestion> questions, {Random? random})
+  QuestionDeck(List<QuizQuestion> questions, {Random? random, this.weight})
       : _questions = List.unmodifiable(questions),
         _random = random ?? Random() {
     if (_questions.isEmpty) {
@@ -30,6 +33,7 @@ class QuestionDeck {
 
   final List<QuizQuestion> _questions;
   final Random _random;
+  final double Function(QuizQuestion)? weight;
   final List<QuizQuestion> _pile = [];
   QuizQuestion? _last;
 
@@ -59,7 +63,19 @@ class QuestionDeck {
         }).add(q);
       }
     }
-    blocks.shuffle(_random);
+    final w = weight;
+    if (w == null) {
+      blocks.shuffle(_random);
+    } else {
+      // 重みつきランダム順（Efraimidis–Spirakis）：key = u^(1/w) の大きい順
+      final keyed = [
+        for (final b in blocks)
+          (b, pow(_random.nextDouble(), 1 / w(b.first).clamp(0.05, 100))),
+      ]..sort((a, b) => b.$2.compareTo(a.$2));
+      blocks
+        ..clear()
+        ..addAll(keyed.map((e) => e.$1));
+    }
     // 直前と同じ問題が続かないようにする
     if (blocks.length > 1 && identical(blocks.first.first, _last)) {
       final tmp = blocks.first;

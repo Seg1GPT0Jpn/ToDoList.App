@@ -1,3 +1,4 @@
+import 'difficulty.dart';
 import 'enemy.dart';
 
 /// ワールド内の1ステージ。
@@ -32,6 +33,9 @@ class StageDef {
 
   /// 画面に出すエリア番号
   int get areaNo => branchOrder ?? order;
+
+  /// エリア名から分かる難易度（数学の基本・標準・応用など）
+  Difficulty? get difficulty => Difficulty.fromTheme(grammarTheme);
 
   final String id;
   final String worldId;

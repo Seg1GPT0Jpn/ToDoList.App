@@ -1,3 +1,5 @@
+import 'difficulty.dart';
+
 /// 問題データの出どころ。
 ///
 /// RPG（課金ワールドを含む）の中身には [original]（自作問題）だけを使う。
@@ -87,6 +89,10 @@ class QuizQuestion {
     this.sentence,
     this.explanation,
     this.passage,
+    this.difficulty,
+    this.hint,
+    this.tags = const [],
+    this.commonMistakes = const [],
   }) {
     if (choices.length != 4) {
       throw ArgumentError('問題 $id: 選択肢は4つ必要です（${choices.length}個）');
@@ -114,6 +120,18 @@ class QuizQuestion {
   /// 長文読解の問題なら、その本文
   final Passage? passage;
 
+  /// 難易度（書かれていなければ null。ステージの難易度を使う）
+  final Difficulty? difficulty;
+
+  /// ヒント（ヒントのカードなどで表示する）
+  final String? hint;
+
+  /// 分類のためのタグ（例：2次関数、最大・最小）
+  final List<String> tags;
+
+  /// よくある間違い（不正解のときに表示する）
+  final List<String> commonMistakes;
+
   String get answer => choices[answerIndex];
 
   /// バトル中に出す短い解説（最初の1文）。全文は復習手帳で読める。
@@ -137,6 +155,11 @@ class QuizQuestion {
         choices: List<String>.from(json['choices'] as List),
         answerIndex: json['answerIndex'] as int,
         explanation: json['explanation'] as String?,
+        difficulty: Difficulty.tryParse(json['difficulty'] as String?),
+        hint: json['hint'] as String?,
+        tags: List<String>.from((json['tags'] as List?) ?? const []),
+        commonMistakes:
+            List<String>.from((json['commonMistakes'] as List?) ?? const []),
         passage: json['passageId'] == null
             ? null
             : (passages[json['passageId']] ??
@@ -152,6 +175,10 @@ class QuizQuestion {
         'answerIndex': answerIndex,
         if (explanation != null) 'explanation': explanation,
         if (passage != null) 'passageId': passage!.id,
+        if (difficulty != null) 'difficulty': difficulty!.name,
+        if (hint != null) 'hint': hint,
+        if (tags.isNotEmpty) 'tags': tags,
+        if (commonMistakes.isNotEmpty) 'commonMistakes': commonMistakes,
       };
 }
 

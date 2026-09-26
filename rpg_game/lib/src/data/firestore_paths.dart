@@ -18,6 +18,13 @@ class RpgFirestorePaths {
   /// users/{uid}/rpg_profile/main
   static const profileCollection = 'rpg_profile';
 
+  /// 学習記録（問題ごとの正誤・復習の予定）: users/{uid}/rpg_learning/main
+  /// 問題 ID と数値だけを入れる。問題文や個人用単語帳の中身は入れない。
+  static const learningCollection = 'rpg_learning';
+
+  /// 冒険の記録（図鑑・実績・称号・デイリークエスト）: users/{uid}/rpg_journal/main
+  static const journalCollection = 'rpg_journal';
+
   /// アカウント削除・バックアップ（account_deletion.dart / data_backup.dart）に
   /// 追加する users/{uid} 配下のサブコレクション。
   static const userSubcollections = [
@@ -25,6 +32,8 @@ class RpgFirestorePaths {
     purchasesCollection,
     battleLogsCollection,
     profileCollection,
+    learningCollection,
+    journalCollection,
   ];
 
   /// 問題セットを Firestore から配信する場合（任意。初期はアプリ同梱の JSON）:
@@ -37,6 +46,10 @@ class RpgFirestorePaths {
       'users/$uid/$progressCollection/$progressDocId';
   static String profileDoc(String uid) =>
       'users/$uid/$profileCollection/$progressDocId';
+  static String learningDoc(String uid) =>
+      'users/$uid/$learningCollection/$progressDocId';
+  static String journalDoc(String uid) =>
+      'users/$uid/$journalCollection/$progressDocId';
   static String purchaseDoc(String uid, String worldId) =>
       'users/$uid/$purchasesCollection/$worldId';
   static String questionSetDoc(String worldId, String setId) =>

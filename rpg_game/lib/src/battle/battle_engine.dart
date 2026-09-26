@@ -142,8 +142,9 @@ class BattleEngine {
     this.handSize = 3,
     Random? random,
     DamageCalculator? damage,
+    double Function(QuizQuestion)? questionWeight,
   })  : _random = random ?? Random(),
-        _deck = QuestionDeck(questions, random: random),
+        _deck = QuestionDeck(questions, random: random, weight: questionWeight),
         _damage = damage ?? DamageCalculator(random: random),
         _armor = enemy.armor,
         _enemyHp = enemy.maxHp {
