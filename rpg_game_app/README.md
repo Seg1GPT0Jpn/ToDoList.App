@@ -64,9 +64,11 @@ school_planner に組み込む前に友達に遊んでもらえるよう、こ�
 
 ```
 cd rpg_game_app
-flutter build web --release
+flutter build web --release --pwa-strategy=none
 firebase deploy --only hosting
 ```
+
+（`--pwa-strategy=none` は、古い版がブラウザに残って更新が反映されない問題を防ぐための指定です）
 
 表示される `https://tsuzuri-quest.web.app` を友達に送れば、スマホ（iPhone も可）や PC のブラウザで遊べます。
 

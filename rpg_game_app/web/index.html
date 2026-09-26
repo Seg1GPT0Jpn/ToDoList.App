@@ -31,6 +31,14 @@
 
   <title>つづりクエスト</title>
   <link rel="manifest" href="manifest.json">
+  <script>
+    // 古い版を覚えてしまう Service Worker を外す（更新がすぐ反映されるように）
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function (rs) {
+        rs.forEach(function (r) { r.unregister(); });
+      });
+    }
+  </script>
 </head>
 <body>
   <!--
