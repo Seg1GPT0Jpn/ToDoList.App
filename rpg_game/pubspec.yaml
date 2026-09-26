@@ -11,3 +11,8 @@ environment:
 
 dev_dependencies:
   test: ^1.24.0
+
+# Flutter アプリから packages/rpg_game/assets/... で読めるようにする
+flutter:
+  assets:
+    - assets/questions/english/
