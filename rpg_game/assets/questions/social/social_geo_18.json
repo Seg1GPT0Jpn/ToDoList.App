@@ -159,6 +159,162 @@
       ],
       "answerIndex": 0,
       "explanation": "自動車の普及で郊外の店に行きやすくなった。"
+    },
+    {
+      "id": "soc_geo18_013",
+      "category": "knowledge",
+      "prompt": "日本の最北端の島は？",
+      "choices": [
+        "南鳥島",
+        "択捉島",
+        "与那国島",
+        "沖ノ鳥島"
+      ],
+      "answerIndex": 1,
+      "explanation": "北方領土の島の一つ。"
+    },
+    {
+      "id": "soc_geo18_014",
+      "category": "knowledge",
+      "prompt": "日本の最南端の島は？",
+      "choices": [
+        "与那国島",
+        "沖ノ鳥島",
+        "択捉島",
+        "南鳥島"
+      ],
+      "answerIndex": 1,
+      "explanation": "波で削られないよう、護岸工事が行われた。"
+    },
+    {
+      "id": "soc_geo18_015",
+      "category": "knowledge",
+      "prompt": "排他的経済水域は、海岸線からどれだけの範囲？",
+      "choices": [
+        "200海里",
+        "12海里",
+        "100海里",
+        "24海里"
+      ],
+      "answerIndex": 0,
+      "explanation": "12海里までは領海。"
+    },
+    {
+      "id": "soc_geo18_016",
+      "category": "knowledge",
+      "prompt": "日本の気候区分で、梅雨がはっきりしない地域は？",
+      "choices": [
+        "関東",
+        "九州",
+        "北海道",
+        "四国"
+      ],
+      "answerIndex": 2,
+      "explanation": "梅雨前線が北海道まで届きにくい。"
+    },
+    {
+      "id": "soc_geo18_017",
+      "category": "knowledge",
+      "prompt": "夏に日本の太平洋側に吹く季節風の向きは？",
+      "choices": [
+        "北東",
+        "南西",
+        "北西",
+        "南東"
+      ],
+      "answerIndex": 3,
+      "explanation": "冬は北西の季節風。"
+    },
+    {
+      "id": "soc_geo18_018",
+      "category": "knowledge",
+      "prompt": "日本で最も長い川は？",
+      "choices": [
+        "利根川",
+        "北上川",
+        "信濃川",
+        "石狩川"
+      ],
+      "answerIndex": 2,
+      "explanation": "長野県では千曲川と呼ばれる。"
+    },
+    {
+      "id": "soc_geo18_019",
+      "category": "knowledge",
+      "prompt": "日本で流域面積が最も広い川は？",
+      "choices": [
+        "木曽川",
+        "淀川",
+        "信濃川",
+        "利根川"
+      ],
+      "answerIndex": 3,
+      "explanation": "関東平野を流れる。"
+    },
+    {
+      "id": "soc_geo18_020",
+      "category": "knowledge",
+      "prompt": "日本アルプスのうち、北アルプスとも呼ばれる山脈は？",
+      "choices": [
+        "木曽山脈",
+        "奥羽山脈",
+        "赤石山脈",
+        "飛騨山脈"
+      ],
+      "answerIndex": 3,
+      "explanation": "中央アルプスは木曽山脈、南アルプスは赤石山脈。"
+    },
+    {
+      "id": "soc_geo18_021",
+      "category": "knowledge",
+      "prompt": "地熱発電の発電量が日本で特に多い県は？",
+      "choices": [
+        "大分県",
+        "埼玉県",
+        "香川県",
+        "千葉県"
+      ],
+      "answerIndex": 0,
+      "explanation": "火山や温泉が多い地域にある。"
+    },
+    {
+      "id": "soc_geo18_022",
+      "category": "knowledge",
+      "prompt": "日本で人口が最も多い都道府県は？",
+      "choices": [
+        "神奈川県",
+        "愛知県",
+        "大阪府",
+        "東京都"
+      ],
+      "answerIndex": 3,
+      "explanation": "三大都市圏に人口が集中している。"
+    },
+    {
+      "id": "soc_geo18_023",
+      "category": "calculation",
+      "prompt": "日本の面積を約38万 km²、人口を約1.24億人とすると、人口密度はおよそ？",
+      "choices": [
+        "約3300人/km²",
+        "約330人/km²",
+        "約33人/km²",
+        "約120人/km²"
+      ],
+      "answerIndex": 1,
+      "explanation": "1億2400万÷38万。"
+    },
+    {
+      "id": "soc_geo18_024",
+      "category": "thinking",
+      "prompt": "日本で米の生産調整（減反）が長く行われてきた理由は？",
+      "choices": [
+        "米が不足していたから",
+        "田んぼが広すぎたから",
+        "食生活の変化で米の消費が減り、生産が余るようになったから",
+        "米の輸出が多すぎたから"
+      ],
+      "answerIndex": 2,
+      "explanation": "2018年に国による生産数量目標の配分は廃止された。"
     }
   ]
 }

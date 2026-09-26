@@ -159,6 +159,162 @@
       ],
       "answerIndex": 2,
       "explanation": "温帯（最寒月 −3〜18℃）で、最暖月 22℃ 以上・年中湿潤。東京など。"
+    },
+    {
+      "id": "soc_geo06_013",
+      "category": "knowledge",
+      "prompt": "高度が 100 m 上がるごとに、気温はおよそ何℃下がる？",
+      "choices": [
+        "約0.6℃",
+        "約1.5℃",
+        "約0.06℃",
+        "約6℃"
+      ],
+      "answerIndex": 0,
+      "explanation": "山地が平地より涼しいのはこのため。"
+    },
+    {
+      "id": "soc_geo06_014",
+      "category": "knowledge",
+      "prompt": "海に近い地域の気候（海洋性気候）の特徴は？",
+      "choices": [
+        "気温の年較差が大きい",
+        "雨が降らない",
+        "一年中寒い",
+        "気温の年較差が小さい"
+      ],
+      "answerIndex": 3,
+      "explanation": "水はあたたまりにくく冷めにくい。"
+    },
+    {
+      "id": "soc_geo06_015",
+      "category": "knowledge",
+      "prompt": "内陸の地域の気候（大陸性気候）の特徴は？",
+      "choices": [
+        "一年中雨が多い",
+        "気温の年較差が小さい",
+        "気温の年較差が大きい",
+        "夏も冬も涼しい"
+      ],
+      "answerIndex": 2,
+      "explanation": "陸はあたたまりやすく冷めやすい。"
+    },
+    {
+      "id": "soc_geo06_016",
+      "category": "knowledge",
+      "prompt": "西岸海洋性気候のケッペンの記号は？",
+      "choices": [
+        "Cfa",
+        "Cfb",
+        "Df",
+        "Cs"
+      ],
+      "answerIndex": 1,
+      "explanation": "偏西風と暖流の影響で、一年を通じて降水がある。"
+    },
+    {
+      "id": "soc_geo06_017",
+      "category": "knowledge",
+      "prompt": "熱帯雨林気候のケッペンの記号は？",
+      "choices": [
+        "Af",
+        "BS",
+        "Aw",
+        "Cfa"
+      ],
+      "answerIndex": 0,
+      "explanation": "一年中高温で雨が多い。"
+    },
+    {
+      "id": "soc_geo06_018",
+      "category": "knowledge",
+      "prompt": "サバナ気候のケッペンの記号は？",
+      "choices": [
+        "BW",
+        "Aw",
+        "Af",
+        "ET"
+      ],
+      "answerIndex": 1,
+      "explanation": "雨季と乾季がはっきりしている。"
+    },
+    {
+      "id": "soc_geo06_019",
+      "category": "knowledge",
+      "prompt": "ステップ気候のケッペンの記号は？",
+      "choices": [
+        "Cs",
+        "BS",
+        "BW",
+        "Dw"
+      ],
+      "answerIndex": 1,
+      "explanation": "砂漠気候（BW）より少し雨が多く、短い草が生える。"
+    },
+    {
+      "id": "soc_geo06_020",
+      "category": "knowledge",
+      "prompt": "ツンドラ気候のケッペンの記号は？",
+      "choices": [
+        "Df",
+        "BW",
+        "ET",
+        "EF"
+      ],
+      "answerIndex": 2,
+      "explanation": "夏に地表の氷がとけ、コケなどが生える。"
+    },
+    {
+      "id": "soc_geo06_021",
+      "category": "knowledge",
+      "prompt": "冬に大陸から吹き出す季節風が、日本海をわたるときに多くの水蒸気をふくむ理由は？",
+      "choices": [
+        "暖流の対馬海流が流れる日本海の上を通るから",
+        "太平洋から吹くから",
+        "山を越えるから",
+        "寒流の上を通るから"
+      ],
+      "answerIndex": 0,
+      "explanation": "その水蒸気が日本海側の雪になる。"
+    },
+    {
+      "id": "soc_geo06_022",
+      "category": "calculation",
+      "prompt": "標高 0 m の地点の気温が 25℃ のとき、同じ時刻の標高 2000 m の地点の気温はおよそ？",
+      "choices": [
+        "5℃",
+        "19℃",
+        "13℃",
+        "23℃"
+      ],
+      "answerIndex": 2,
+      "explanation": "100 m で 0.6℃ 下がるとすると、25−12。"
+    },
+    {
+      "id": "soc_geo06_023",
+      "category": "calculation",
+      "prompt": "年降水量が 150 mm で、最暖月の平均気温が 32℃ の都市。当てはまる気候帯は？",
+      "choices": [
+        "冷帯（D）",
+        "温帯（C）",
+        "乾燥帯（B）",
+        "熱帯（A）"
+      ],
+      "answerIndex": 2,
+      "explanation": "降水量がきわめて少ないので乾燥帯。"
+    },
+    {
+      "id": "soc_geo06_024",
+      "category": "thinking",
+      "prompt": "赤道付近で雨が多い理由は？",
+      "choices": [
+        "下降気流が生じるから",
+        "寒流が流れているから",
+        "標高が高いから",
+        "強い日射で空気があたためられ、上昇気流が生じて雲ができやすいから"
+      ],
+      "answerIndex": 3,
+      "explanation": "このあたりは低圧帯（熱帯収束帯）になる。"
     }
   ]
 }

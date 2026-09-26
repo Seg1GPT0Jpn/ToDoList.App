@@ -159,6 +159,162 @@
       ],
       "answerIndex": 3,
       "explanation": "日付変更線のすぐ西側（日本側）が、世界で最も早く新しい日をむかえる。"
+    },
+    {
+      "id": "soc_geo01_013",
+      "category": "knowledge",
+      "prompt": "赤道の全周の長さは、およそ？",
+      "choices": [
+        "約40万 km",
+        "約4000 km",
+        "約4万 km",
+        "約1万 km"
+      ],
+      "answerIndex": 2,
+      "explanation": "地球の全周は約4万 km。"
+    },
+    {
+      "id": "soc_geo01_014",
+      "category": "knowledge",
+      "prompt": "北極と南極を結び、同じ経度の地点を結んだ線は？",
+      "choices": [
+        "回帰線",
+        "赤道",
+        "経線（子午線）",
+        "緯線"
+      ],
+      "answerIndex": 2,
+      "explanation": "経線はすべて北極と南極で交わる。"
+    },
+    {
+      "id": "soc_geo01_015",
+      "category": "knowledge",
+      "prompt": "北極圏は、およそ北緯何度より北の地域？",
+      "choices": [
+        "約45度",
+        "約66.6度",
+        "約23.4度",
+        "約80度"
+      ],
+      "answerIndex": 1,
+      "explanation": "90−23.4 で求められる。"
+    },
+    {
+      "id": "soc_geo01_016",
+      "category": "knowledge",
+      "prompt": "夏に太陽が一日中沈まない「白夜」が見られるのは？",
+      "choices": [
+        "北極圏や南極圏などの高緯度地域",
+        "日付変更線付近",
+        "赤道付近",
+        "回帰線付近"
+      ],
+      "answerIndex": 0,
+      "explanation": "冬には太陽が昇らない「極夜」になる。"
+    },
+    {
+      "id": "soc_geo01_017",
+      "category": "knowledge",
+      "prompt": "北半球の夏至の日に、太陽が真上（南中高度90度）にくる緯線は？",
+      "choices": [
+        "南回帰線",
+        "北回帰線",
+        "赤道",
+        "北極線"
+      ],
+      "answerIndex": 1,
+      "explanation": "北緯約23.4度。"
+    },
+    {
+      "id": "soc_geo01_018",
+      "category": "calculation",
+      "prompt": "東経120度の地点と東経135度の地点の時差は？",
+      "choices": [
+        "30分",
+        "15時間",
+        "2時間",
+        "1時間"
+      ],
+      "answerIndex": 3,
+      "explanation": "経度差15度で1時間。"
+    },
+    {
+      "id": "soc_geo01_019",
+      "category": "calculation",
+      "prompt": "東京（東経135度）が午前10時のとき、東経90度を標準時とする地点は何時？",
+      "choices": [
+        "午前7時",
+        "午前9時",
+        "午前4時",
+        "午後1時"
+      ],
+      "answerIndex": 0,
+      "explanation": "経度差45度で3時間。西にあるので時刻が遅い。"
+    },
+    {
+      "id": "soc_geo01_020",
+      "category": "calculation",
+      "prompt": "東京（東経135度）が3月1日午後3時のとき、西経120度を標準時とする都市は何日の何時？（サマータイムは考えない）",
+      "choices": [
+        "2月28日午後10時",
+        "3月1日午前8時",
+        "2月28日午前3時",
+        "3月2日午前8時"
+      ],
+      "answerIndex": 0,
+      "explanation": "経度差255度で17時間。東京より17時間遅らせる。"
+    },
+    {
+      "id": "soc_geo01_021",
+      "category": "calculation",
+      "prompt": "東京を午前10時に出発し、12時間かけてロンドン（経度0度）に着いた。現地の時刻は？（サマータイムは考えない）",
+      "choices": [
+        "午後10時",
+        "午後1時",
+        "午前10時",
+        "午前1時"
+      ],
+      "answerIndex": 1,
+      "explanation": "到着は東京時間で午後10時。ロンドンは9時間遅れている。"
+    },
+    {
+      "id": "soc_geo01_022",
+      "category": "calculation",
+      "prompt": "経線にそって緯度1度ぶん進んだときの距離は、およそ？",
+      "choices": [
+        "約40 km",
+        "約111 km",
+        "約360 km",
+        "約11 km"
+      ],
+      "answerIndex": 1,
+      "explanation": "約4万 km÷360。"
+    },
+    {
+      "id": "soc_geo01_023",
+      "category": "thinking",
+      "prompt": "メルカトル図法の特徴として正しいものは？",
+      "choices": [
+        "角度（等角）が正しく航海に使われたが、高緯度ほど面積が大きく表される",
+        "中心からの距離と方位が正しい",
+        "高緯度ほど小さく表される",
+        "面積が正しい"
+      ],
+      "answerIndex": 0,
+      "explanation": "緯線と経線が直角に交わるように描くため。"
+    },
+    {
+      "id": "soc_geo01_024",
+      "category": "thinking",
+      "prompt": "東京から見たブエノスアイレスの方位と距離を調べるのに最も適した地図は？",
+      "choices": [
+        "モルワイデ図法の地図",
+        "メルカトル図法の地図",
+        "東京を中心とした正距方位図法の地図",
+        "日本の地形図"
+      ],
+      "answerIndex": 2,
+      "explanation": "中心からの距離と方位が正しい図法。"
     }
   ]
 }

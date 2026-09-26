@@ -159,6 +159,162 @@
       ],
       "answerIndex": 3,
       "explanation": "フードマイレージ ＝ 輸入量 × 輸送距離。大きいほど輸送の環境負荷が大きい。"
+    },
+    {
+      "id": "soc_geo19_013",
+      "category": "knowledge",
+      "prompt": "1997年に採択され、先進国に温室効果ガスの削減目標を定めた取り決めは？",
+      "choices": [
+        "ワシントン条約",
+        "ラムサール条約",
+        "パリ協定",
+        "京都議定書"
+      ],
+      "answerIndex": 3,
+      "explanation": "パリ協定はすべての国が参加する枠組み。"
+    },
+    {
+      "id": "soc_geo19_014",
+      "category": "knowledge",
+      "prompt": "オゾン層を破壊する原因となった物質は？",
+      "choices": [
+        "窒素",
+        "二酸化炭素",
+        "フロン",
+        "メタン"
+      ],
+      "answerIndex": 2,
+      "explanation": "冷蔵庫やスプレーに使われていた。"
+    },
+    {
+      "id": "soc_geo19_015",
+      "category": "knowledge",
+      "prompt": "砂漠化の人為的な原因として適切なものは？",
+      "choices": [
+        "休耕",
+        "過放牧や過耕作、まきの採りすぎ",
+        "雨が増えること",
+        "植林"
+      ],
+      "answerIndex": 1,
+      "explanation": "サヘルなどで深刻になっている。"
+    },
+    {
+      "id": "soc_geo19_016",
+      "category": "knowledge",
+      "prompt": "地域の住民どうしで助け合って災害に備えることを何という？",
+      "choices": [
+        "公助",
+        "自助",
+        "共助",
+        "互換"
+      ],
+      "answerIndex": 2,
+      "explanation": "自分で守るのは自助、国や自治体の支援は公助。"
+    },
+    {
+      "id": "soc_geo19_017",
+      "category": "knowledge",
+      "prompt": "国や地方自治体による救助や支援を何という？",
+      "choices": [
+        "公助",
+        "減災",
+        "自助",
+        "共助"
+      ],
+      "answerIndex": 0,
+      "explanation": "大災害ではすぐに届かないこともある。"
+    },
+    {
+      "id": "soc_geo19_018",
+      "category": "knowledge",
+      "prompt": "大きな揺れが来る前に、テレビやスマートフォンで知らせるしくみは？",
+      "choices": [
+        "緊急地震速報",
+        "天気予報",
+        "津波警報だけ",
+        "ハザードマップ"
+      ],
+      "answerIndex": 0,
+      "explanation": "震源に近いと間に合わないこともある。"
+    },
+    {
+      "id": "soc_geo19_019",
+      "category": "knowledge",
+      "prompt": "大雨などで、土砂と水が一体となって谷を一気に流れ下る災害は？",
+      "choices": [
+        "液状化",
+        "竜巻",
+        "土石流",
+        "高潮"
+      ],
+      "answerIndex": 2,
+      "explanation": "土砂災害の一つ。"
+    },
+    {
+      "id": "soc_geo19_020",
+      "category": "knowledge",
+      "prompt": "火山の噴火で、高温の火山ガスと火山灰などが高速で流れ下る現象は？",
+      "choices": [
+        "土石流",
+        "溶岩流",
+        "火砕流",
+        "津波"
+      ],
+      "answerIndex": 2,
+      "explanation": "雲仙普賢岳（1991年）で大きな被害が出た。"
+    },
+    {
+      "id": "soc_geo19_021",
+      "category": "knowledge",
+      "prompt": "大雨のときに「いつ・だれが・何をするか」を自分であらかじめ決めておく避難計画は？",
+      "choices": [
+        "防災無線",
+        "緊急地震速報",
+        "ハザードマップ",
+        "マイ・タイムライン"
+      ],
+      "answerIndex": 3,
+      "explanation": "早めの避難行動につながる。"
+    },
+    {
+      "id": "soc_geo19_022",
+      "category": "knowledge",
+      "prompt": "ある国で出た汚染物質が、国境をこえて別の国に被害を与える問題を何という？",
+      "choices": [
+        "過疎",
+        "越境汚染",
+        "南北問題",
+        "食品ロス"
+      ],
+      "answerIndex": 1,
+      "explanation": "酸性雨や大気汚染などで起こる。"
+    },
+    {
+      "id": "soc_geo19_023",
+      "category": "calculation",
+      "prompt": "海面が1年に 3 mm ずつ上昇すると、100年でどれだけ上昇する？",
+      "choices": [
+        "30 cm",
+        "300 cm",
+        "3 m",
+        "3 cm"
+      ],
+      "answerIndex": 0,
+      "explanation": "3 mm×100=300 mm。"
+    },
+    {
+      "id": "soc_geo19_024",
+      "category": "thinking",
+      "prompt": "「減災」の考え方として正しいものは？",
+      "choices": [
+        "災害に備える必要はない",
+        "避難はしなくてよい",
+        "災害を完全に防ぐのではなく、被害をできるだけ小さくする",
+        "災害は必ず防げる"
+      ],
+      "answerIndex": 2,
+      "explanation": "ハード（堤防など）とソフト（避難など）の両方で取り組む。"
     }
   ]
 }

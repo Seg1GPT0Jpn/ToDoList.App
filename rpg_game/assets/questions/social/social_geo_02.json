@@ -159,6 +159,162 @@
       ],
       "answerIndex": 0,
       "explanation": "面積の大きい県が目立ってしまうので、絶対値は階級区分図に向かない。"
+    },
+    {
+      "id": "soc_geo02_013",
+      "category": "knowledge",
+      "prompt": "2万5千分の1の地形図で、計曲線は何 m ごとに引かれる？",
+      "choices": [
+        "20 m",
+        "100 m",
+        "50 m",
+        "10 m"
+      ],
+      "answerIndex": 2,
+      "explanation": "主曲線は10 m ごと。"
+    },
+    {
+      "id": "soc_geo02_014",
+      "category": "knowledge",
+      "prompt": "5万分の1の地形図で、主曲線は何 m ごとに引かれる？",
+      "choices": [
+        "100 m",
+        "10 m",
+        "20 m",
+        "50 m"
+      ],
+      "answerIndex": 2,
+      "explanation": "計曲線は100 m ごと。"
+    },
+    {
+      "id": "soc_geo02_015",
+      "category": "knowledge",
+      "prompt": "地図記号「文」が表すものは？",
+      "choices": [
+        "小・中学校",
+        "図書館",
+        "市役所",
+        "高等学校"
+      ],
+      "answerIndex": 0,
+      "explanation": "高等学校は「文」を丸で囲んだ記号。"
+    },
+    {
+      "id": "soc_geo02_016",
+      "category": "knowledge",
+      "prompt": "2019年に新しくつくられた地図記号は？",
+      "choices": [
+        "風車",
+        "自然災害伝承碑",
+        "老人ホーム",
+        "博物館"
+      ],
+      "answerIndex": 1,
+      "explanation": "過去の災害の教訓を伝える石碑などを表す。"
+    },
+    {
+      "id": "soc_geo02_017",
+      "category": "knowledge",
+      "prompt": "数量の大きさを、円や棒などの図形の大きさで表す統計地図は？",
+      "choices": [
+        "階級区分図",
+        "等値線図",
+        "図形表現図",
+        "流線図"
+      ],
+      "answerIndex": 2,
+      "explanation": "人口などの「数」を表すのに向いている。"
+    },
+    {
+      "id": "soc_geo02_018",
+      "category": "knowledge",
+      "prompt": "点の数や密度で、分布のようすを表す統計地図は？",
+      "choices": [
+        "ドットマップ",
+        "流線図",
+        "等値線図",
+        "階級区分図"
+      ],
+      "answerIndex": 0,
+      "explanation": "1つの点が一定の数量を表す。"
+    },
+    {
+      "id": "soc_geo02_019",
+      "category": "knowledge",
+      "prompt": "日本で地形図を作成・発行している機関は？",
+      "choices": [
+        "国土交通省観光庁",
+        "国土地理院",
+        "総務省統計局",
+        "気象庁"
+      ],
+      "answerIndex": 1,
+      "explanation": "地理院地図も国土地理院が公開している。"
+    },
+    {
+      "id": "soc_geo02_020",
+      "category": "calculation",
+      "prompt": "5万分の1の地形図上で 3 cm の長さは、実際には何 km？",
+      "choices": [
+        "15 km",
+        "1.5 km",
+        "3 km",
+        "0.15 km"
+      ],
+      "answerIndex": 1,
+      "explanation": "3×50000=150000 cm。"
+    },
+    {
+      "id": "soc_geo02_021",
+      "category": "calculation",
+      "prompt": "2万5千分の1の地形図上で、たて 2 cm・横 2 cm の正方形の土地の実際の面積は？",
+      "choices": [
+        "4 km²",
+        "0.5 km²",
+        "0.25 km²",
+        "1 km²"
+      ],
+      "answerIndex": 2,
+      "explanation": "1辺 500 m の正方形。"
+    },
+    {
+      "id": "soc_geo02_022",
+      "category": "calculation",
+      "prompt": "2万5千分の1の地形図で、主曲線の間隔5つ分の高さの差は？",
+      "choices": [
+        "25 m",
+        "100 m",
+        "50 m",
+        "5 m"
+      ],
+      "answerIndex": 2,
+      "explanation": "主曲線は10 m ごと。"
+    },
+    {
+      "id": "soc_geo02_023",
+      "category": "thinking",
+      "prompt": "等高線が、低い方に向かって張り出している部分は？",
+      "choices": [
+        "平地",
+        "崖",
+        "谷",
+        "尾根"
+      ],
+      "answerIndex": 3,
+      "explanation": "高い方に向かって食いこんでいる部分は谷。"
+    },
+    {
+      "id": "soc_geo02_024",
+      "category": "thinking",
+      "prompt": "観光客の国どうしの移動のようすを表すのに最も適した統計地図は？",
+      "choices": [
+        "ドットマップ",
+        "等値線図",
+        "階級区分図",
+        "流線図"
+      ],
+      "answerIndex": 3,
+      "explanation": "移動の向きと量を、矢印の向きと太さで表す。"
     }
   ]
 }

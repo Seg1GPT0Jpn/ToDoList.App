@@ -159,6 +159,162 @@
       ],
       "answerIndex": 3,
       "explanation": "蓄電池や送電網の整備などの対策が進められている。"
+    },
+    {
+      "id": "soc_geo13_013",
+      "category": "knowledge",
+      "prompt": "石炭・石油・天然ガスをまとめて何という？",
+      "choices": [
+        "化石燃料",
+        "再生可能エネルギー",
+        "バイオマス",
+        "レアメタル"
+      ],
+      "answerIndex": 0,
+      "explanation": "大昔の生物の死がいが変化してできた。"
+    },
+    {
+      "id": "soc_geo13_014",
+      "category": "knowledge",
+      "prompt": "産油国が石油の価格や生産量を調整するためにつくった組織は？",
+      "choices": [
+        "OPEC（石油輸出国機構）",
+        "ASEAN",
+        "EU",
+        "WHO"
+      ],
+      "answerIndex": 0,
+      "explanation": "1960年に結成された。"
+    },
+    {
+      "id": "soc_geo13_015",
+      "category": "knowledge",
+      "prompt": "天然ガスを冷やして液体にしたものを何という？",
+      "choices": [
+        "LPG",
+        "LNG（液化天然ガス）",
+        "重油",
+        "ガソリン"
+      ],
+      "answerIndex": 1,
+      "explanation": "体積が小さくなり、船で運びやすい。"
+    },
+    {
+      "id": "soc_geo13_016",
+      "category": "knowledge",
+      "prompt": "日本が原油を最も多く輸入している地域は？",
+      "choices": [
+        "南アメリカ",
+        "ヨーロッパ",
+        "アフリカ南部",
+        "西アジア（サウジアラビアやアラブ首長国連邦など）"
+      ],
+      "answerIndex": 3,
+      "explanation": "原油の輸入は中東への依存度が高い。"
+    },
+    {
+      "id": "soc_geo13_017",
+      "category": "knowledge",
+      "prompt": "日本が液化天然ガスを最も多く輸入している国は？",
+      "choices": [
+        "サウジアラビア",
+        "アメリカ合衆国",
+        "ロシア",
+        "オーストラリア"
+      ],
+      "answerIndex": 3,
+      "explanation": "マレーシアやカタールなどからも輸入している。"
+    },
+    {
+      "id": "soc_geo13_018",
+      "category": "knowledge",
+      "prompt": "鉄鉱石の輸出が特に多い国の組み合わせは？",
+      "choices": [
+        "オーストラリアとブラジル",
+        "フランスとイタリア",
+        "サウジアラビアとイラン",
+        "日本と韓国"
+      ],
+      "answerIndex": 0,
+      "explanation": "日本の鉄鋼業の原料もここから多く輸入。"
+    },
+    {
+      "id": "soc_geo13_019",
+      "category": "knowledge",
+      "prompt": "火山が多く、地熱発電の割合が大きい国は？",
+      "choices": [
+        "オランダ",
+        "サウジアラビア",
+        "アイスランド",
+        "エジプト"
+      ],
+      "answerIndex": 2,
+      "explanation": "地熱は暖房や温室にも利用されている。"
+    },
+    {
+      "id": "soc_geo13_020",
+      "category": "knowledge",
+      "prompt": "発電量にしめる水力発電の割合が特に大きい国は？",
+      "choices": [
+        "サウジアラビア",
+        "フランス",
+        "オランダ",
+        "ノルウェー"
+      ],
+      "answerIndex": 3,
+      "explanation": "山がちで雨や雪が多く、川の水量が豊か。"
+    },
+    {
+      "id": "soc_geo13_021",
+      "category": "knowledge",
+      "prompt": "原料を輸入して製品をつくり、輸出する貿易を何という？",
+      "choices": [
+        "フェアトレード",
+        "中継貿易",
+        "加工貿易",
+        "三角貿易"
+      ],
+      "answerIndex": 2,
+      "explanation": "かつての日本の貿易の特徴。"
+    },
+    {
+      "id": "soc_geo13_022",
+      "category": "knowledge",
+      "prompt": "サトウキビやとうもろこしなど、生物からつくられるエネルギー資源を何という？",
+      "choices": [
+        "シェールオイル",
+        "核燃料",
+        "バイオマス",
+        "化石燃料"
+      ],
+      "answerIndex": 2,
+      "explanation": "燃やしても大気中の二酸化炭素を増やしにくいとされる。"
+    },
+    {
+      "id": "soc_geo13_023",
+      "category": "calculation",
+      "prompt": "ある国の輸出額が80億ドル、輸入額が100億ドルのとき、貿易収支は？",
+      "choices": [
+        "80億ドルの赤字",
+        "20億ドルの黒字",
+        "20億ドルの赤字",
+        "180億ドルの黒字"
+      ],
+      "answerIndex": 2,
+      "explanation": "輸出−輸入=−20。"
+    },
+    {
+      "id": "soc_geo13_024",
+      "category": "thinking",
+      "prompt": "フェアトレードの考え方として正しいものは？",
+      "choices": [
+        "発展途上国の生産者に適正な価格を支払い、生活を支える",
+        "輸入を禁止する",
+        "先進国の農家だけを守る",
+        "できるだけ安く買いたたく"
+      ],
+      "answerIndex": 0,
+      "explanation": "生産者の労働環境の改善にもつながる。"
     }
   ]
 }

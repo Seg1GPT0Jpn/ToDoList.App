@@ -159,6 +159,162 @@
       ],
       "answerIndex": 0,
       "explanation": "運賃が高いので、価値の高いものや急ぐものに向く。"
+    },
+    {
+      "id": "soc_geo14_013",
+      "category": "knowledge",
+      "prompt": "国内で人口が突出して多く、政治・経済が集中している都市を何という？",
+      "choices": [
+        "学園都市",
+        "首位都市（プライメートシティ）",
+        "ニュータウン",
+        "衛星都市"
+      ],
+      "answerIndex": 1,
+      "explanation": "タイのバンコクなどが例。"
+    },
+    {
+      "id": "soc_geo14_014",
+      "category": "knowledge",
+      "prompt": "中心都市と、通勤・通学などで強く結びついた周辺地域をまとめて何という？",
+      "choices": [
+        "都市圏",
+        "過疎地域",
+        "農村",
+        "経済特区"
+      ],
+      "answerIndex": 0,
+      "explanation": "東京大都市圏など。"
+    },
+    {
+      "id": "soc_geo14_015",
+      "category": "knowledge",
+      "prompt": "都心の古い住宅地が再開発され、高所得の人々が移り住む現象を何という？",
+      "choices": [
+        "スプロール現象",
+        "ジェントリフィケーション",
+        "Uターン",
+        "ドーナツ化現象"
+      ],
+      "answerIndex": 1,
+      "explanation": "もとの住民が住み続けにくくなることが問題になる。"
+    },
+    {
+      "id": "soc_geo14_016",
+      "category": "knowledge",
+      "prompt": "大都市の郊外に、計画的につくられた住宅都市を何という？",
+      "choices": [
+        "ゲットー",
+        "CBD",
+        "ニュータウン",
+        "スラム"
+      ],
+      "answerIndex": 2,
+      "explanation": "多摩ニュータウンや千里ニュータウンなど。"
+    },
+    {
+      "id": "soc_geo14_017",
+      "category": "knowledge",
+      "prompt": "郊外の駅などに車をとめ、公共交通で都心に向かうしくみを何という？",
+      "choices": [
+        "パークアンドライド",
+        "モーダルシフト",
+        "ロードプライシング",
+        "カーシェアリング"
+      ],
+      "answerIndex": 0,
+      "explanation": "都心の交通渋滞をやわらげる。"
+    },
+    {
+      "id": "soc_geo14_018",
+      "category": "knowledge",
+      "prompt": "低い床で乗り降りしやすく、環境にもやさしい次世代型の路面電車を何という？",
+      "choices": [
+        "BRT",
+        "LCC",
+        "LRT",
+        "SNS"
+      ],
+      "answerIndex": 2,
+      "explanation": "富山市などで導入されている。"
+    },
+    {
+      "id": "soc_geo14_019",
+      "category": "knowledge",
+      "prompt": "規格の決まった大きな容器で貨物を運び、積みおろしを効率化した船は？",
+      "choices": [
+        "フェリー",
+        "タンカー",
+        "コンテナ船",
+        "漁船"
+      ],
+      "answerIndex": 2,
+      "explanation": "世界の海上貿易を大きく変えた。"
+    },
+    {
+      "id": "soc_geo14_020",
+      "category": "knowledge",
+      "prompt": "自動車が人々の生活に広く普及することを何という？",
+      "choices": [
+        "オートメーション",
+        "インフレーション",
+        "グローバリゼーション",
+        "モータリゼーション"
+      ],
+      "answerIndex": 3,
+      "explanation": "郊外化や公共交通のおとろえにもつながった。"
+    },
+    {
+      "id": "soc_geo14_021",
+      "category": "knowledge",
+      "prompt": "インターネットなどを利用できる人とできない人の間に生まれる格差を何という？",
+      "choices": [
+        "所得の再分配",
+        "経済特区",
+        "南北問題",
+        "デジタルデバイド（情報格差）"
+      ],
+      "answerIndex": 3,
+      "explanation": "国や地域、年齢などによって生まれる。"
+    },
+    {
+      "id": "soc_geo14_022",
+      "category": "knowledge",
+      "prompt": "安い運賃で運航する航空会社を何という？",
+      "choices": [
+        "LCC（格安航空会社）",
+        "OPEC",
+        "LRT",
+        "NGO"
+      ],
+      "answerIndex": 0,
+      "explanation": "観光客の増加にも影響している。"
+    },
+    {
+      "id": "soc_geo14_023",
+      "category": "calculation",
+      "prompt": "総人口100万人のうち、都市に住む人が60万人の国の都市人口率は？",
+      "choices": [
+        "60%",
+        "40%",
+        "6%",
+        "160%"
+      ],
+      "answerIndex": 0,
+      "explanation": "60÷100×100。"
+    },
+    {
+      "id": "soc_geo14_024",
+      "category": "thinking",
+      "prompt": "都市の中心部の気温が周りより高くなるヒートアイランド現象の原因として適切なものは？",
+      "choices": [
+        "緑地が少なく、アスファルトや建物、エアコンなどの排熱が多いから",
+        "標高が高いから",
+        "海風が強いから",
+        "雨が多いから"
+      ],
+      "answerIndex": 0,
+      "explanation": "屋上緑化などの対策が行われている。"
     }
   ]
 }
