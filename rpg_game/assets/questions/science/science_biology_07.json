@@ -211,6 +211,214 @@
       ],
       "answerIndex": 2,
       "explanation": "土壌の発達と、林床の光の弱まりにともなって、優占する植物が入れかわる。"
+    },
+    {
+      "id": "sci_bio07_017",
+      "category": "knowledge",
+      "prompt": "陰生植物の特徴は？",
+      "choices": [
+        "光補償点が低く、弱い光でも生育できる",
+        "光補償点が高い",
+        "光合成をしない",
+        "強い光でないと生育できない"
+      ],
+      "answerIndex": 0,
+      "explanation": "林床など暗い場所で生育できる。"
+    },
+    {
+      "id": "sci_bio07_018",
+      "category": "knowledge",
+      "prompt": "光補償点とは？",
+      "choices": [
+        "光合成速度と呼吸速度が等しくなる光の強さ",
+        "光合成速度が最大になる光の強さ",
+        "光合成が始まる温度",
+        "呼吸が止まる光の強さ"
+      ],
+      "answerIndex": 0,
+      "explanation": "これより弱い光では、有機物が減っていく。"
+    },
+    {
+      "id": "sci_bio07_019",
+      "category": "knowledge",
+      "prompt": "光飽和点とは？",
+      "choices": [
+        "それ以上光を強くしても、光合成速度が増えなくなる光の強さ",
+        "葉が枯れる光の強さ",
+        "呼吸速度が最大になる光の強さ",
+        "光合成速度が0になる光の強さ"
+      ],
+      "answerIndex": 0,
+      "explanation": "陽生植物は光飽和点が高い。"
+    },
+    {
+      "id": "sci_bio07_020",
+      "category": "knowledge",
+      "prompt": "陽樹の例は？",
+      "choices": [
+        "アカマツ",
+        "ブナ",
+        "タブノキ",
+        "スダジイ"
+      ],
+      "answerIndex": 0,
+      "explanation": "陽樹は明るい場所で速く成長する。"
+    },
+    {
+      "id": "sci_bio07_021",
+      "category": "knowledge",
+      "prompt": "陰樹の例は？",
+      "choices": [
+        "アカマツ",
+        "シラカンバ",
+        "コナラ",
+        "スダジイ"
+      ],
+      "answerIndex": 3,
+      "explanation": "陰樹の芽ばえは暗い林床でも育つ。"
+    },
+    {
+      "id": "sci_bio07_022",
+      "category": "knowledge",
+      "prompt": "湖や沼から始まる遷移を何という？",
+      "choices": [
+        "極相",
+        "湿性遷移",
+        "二次遷移",
+        "乾性遷移"
+      ],
+      "answerIndex": 1,
+      "explanation": "土砂がたまって湿原、草原、森林へと移り変わる。"
+    },
+    {
+      "id": "sci_bio07_023",
+      "category": "knowledge",
+      "prompt": "エゾマツやトドマツが優占する、亜寒帯のバイオームは？",
+      "choices": [
+        "硬葉樹林",
+        "照葉樹林",
+        "針葉樹林",
+        "夏緑樹林"
+      ],
+      "answerIndex": 2,
+      "explanation": "北海道の東北部などに見られる。"
+    },
+    {
+      "id": "sci_bio07_024",
+      "category": "knowledge",
+      "prompt": "本州中部の垂直分布で、山地帯（標高およそ700〜1700 m）のバイオームは？",
+      "choices": [
+        "高山草原",
+        "夏緑樹林",
+        "針葉樹林",
+        "照葉樹林"
+      ],
+      "answerIndex": 1,
+      "explanation": "ブナなどが優占する。"
+    },
+    {
+      "id": "sci_bio07_025",
+      "category": "knowledge",
+      "prompt": "沖縄や小笠原などに見られるバイオームは？",
+      "choices": [
+        "亜熱帯多雨林",
+        "ステップ",
+        "夏緑樹林",
+        "ツンドラ"
+      ],
+      "answerIndex": 0,
+      "explanation": "ガジュマルやヘゴなどが見られる。"
+    },
+    {
+      "id": "sci_bio07_026",
+      "category": "knowledge",
+      "prompt": "年降水量がきわめて少なく、植物がまばらなバイオームは？",
+      "choices": [
+        "砂漠",
+        "照葉樹林",
+        "サバンナ",
+        "熱帯多雨林"
+      ],
+      "answerIndex": 0,
+      "explanation": "サボテンなど乾燥に強い植物が見られる。"
+    },
+    {
+      "id": "sci_bio07_027",
+      "category": "knowledge",
+      "prompt": "雨季と乾季がある熱帯で、乾季に落葉する森林は？",
+      "choices": [
+        "夏緑樹林",
+        "照葉樹林",
+        "針葉樹林",
+        "雨緑樹林"
+      ],
+      "answerIndex": 3,
+      "explanation": "チークなどが代表例。"
+    },
+    {
+      "id": "sci_bio07_028",
+      "category": "knowledge",
+      "prompt": "夏に乾燥し、冬に雨が多い地域に見られ、オリーブなどが優占する森林は？",
+      "choices": [
+        "硬葉樹林",
+        "照葉樹林",
+        "針葉樹林",
+        "雨緑樹林"
+      ],
+      "answerIndex": 0,
+      "explanation": "地中海沿岸などに見られる。"
+    },
+    {
+      "id": "sci_bio07_029",
+      "category": "knowledge",
+      "prompt": "熱帯の草原に樹木がまばらに生えるバイオームは？",
+      "choices": [
+        "ステップ",
+        "ツンドラ",
+        "砂漠",
+        "サバンナ"
+      ],
+      "answerIndex": 3,
+      "explanation": "温帯の草原はステップ。"
+    },
+    {
+      "id": "sci_bio07_030",
+      "category": "knowledge",
+      "prompt": "寒帯で、低温のためコケ植物や地衣類が中心となるバイオームは？",
+      "choices": [
+        "ツンドラ",
+        "サバンナ",
+        "針葉樹林",
+        "ステップ"
+      ],
+      "answerIndex": 0,
+      "explanation": "地下に永久凍土がある。"
+    },
+    {
+      "id": "sci_bio07_031",
+      "category": "calculation",
+      "prompt": "ある光の強さで、見かけの光合成速度が8、呼吸速度が2だった。光合成速度は？",
+      "choices": [
+        "16",
+        "6",
+        "10",
+        "4"
+      ],
+      "answerIndex": 2,
+      "explanation": "光合成速度＝見かけの光合成速度＋呼吸速度。"
+    },
+    {
+      "id": "sci_bio07_032",
+      "category": "thinking",
+      "prompt": "日本の大部分で、極相のバイオームが森林になる理由は？",
+      "choices": [
+        "年降水量が十分に多いから",
+        "土壌がないから",
+        "年平均気温が低いから",
+        "風が強いから"
+      ],
+      "answerIndex": 0,
+      "explanation": "降水量が少ない地域では草原や砂漠になる。"
     }
   ]
 }

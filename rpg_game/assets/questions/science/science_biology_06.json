@@ -211,6 +211,214 @@
       ],
       "answerIndex": 1,
       "explanation": "拒絶反応。移植では免疫のはたらきを抑える薬を使う。"
+    },
+    {
+      "id": "sci_bio06_017",
+      "category": "knowledge",
+      "prompt": "自然免疫で食作用を行う代表的な細胞は？",
+      "choices": [
+        "好中球やマクロファージ",
+        "血小板",
+        "赤血球",
+        "形質細胞"
+      ],
+      "answerIndex": 0,
+      "explanation": "樹状細胞も食作用を行う。"
+    },
+    {
+      "id": "sci_bio06_018",
+      "category": "knowledge",
+      "prompt": "獲得免疫で中心的にはたらくリンパ球は？",
+      "choices": [
+        "マクロファージだけ",
+        "好中球と赤血球",
+        "血小板と NK 細胞",
+        "T 細胞と B 細胞"
+      ],
+      "answerIndex": 3,
+      "explanation": "T 細胞は胸腺、B 細胞は骨髄で成熟する。"
+    },
+    {
+      "id": "sci_bio06_019",
+      "category": "knowledge",
+      "prompt": "T 細胞が成熟する器官は？",
+      "choices": [
+        "骨髄",
+        "胸腺",
+        "肝臓",
+        "ひ臓"
+      ],
+      "answerIndex": 1,
+      "explanation": "T 細胞の T は thymus（胸腺）から。"
+    },
+    {
+      "id": "sci_bio06_020",
+      "category": "knowledge",
+      "prompt": "B 細胞が成熟する場所は？",
+      "choices": [
+        "骨髄",
+        "すい臓",
+        "心臓",
+        "胸腺"
+      ],
+      "answerIndex": 0,
+      "explanation": "B 細胞は抗体をつくる細胞のもと。"
+    },
+    {
+      "id": "sci_bio06_021",
+      "category": "knowledge",
+      "prompt": "抗体によって異物を排除する免疫を何という？",
+      "choices": [
+        "体液性免疫",
+        "細胞性免疫",
+        "物理的防御",
+        "自然免疫"
+      ],
+      "answerIndex": 0,
+      "explanation": "抗体は体液中ではたらく。"
+    },
+    {
+      "id": "sci_bio06_022",
+      "category": "knowledge",
+      "prompt": "キラー T 細胞が感染細胞を直接攻撃する免疫を何という？",
+      "choices": [
+        "体液性免疫",
+        "化学的防御",
+        "細胞性免疫",
+        "食作用"
+      ],
+      "answerIndex": 2,
+      "explanation": "移植片の拒絶反応にもかかわる。"
+    },
+    {
+      "id": "sci_bio06_023",
+      "category": "knowledge",
+      "prompt": "抗体が抗原と特異的に結合する反応を何という？",
+      "choices": [
+        "食作用",
+        "拒絶反応",
+        "抗原抗体反応",
+        "炎症"
+      ],
+      "answerIndex": 2,
+      "explanation": "結合した抗原はマクロファージなどに処理されやすくなる。"
+    },
+    {
+      "id": "sci_bio06_024",
+      "category": "knowledge",
+      "prompt": "抗体（免疫グロブリン）の形は？",
+      "choices": [
+        "らせん形",
+        "環状",
+        "球形",
+        "Y字形"
+      ],
+      "answerIndex": 3,
+      "explanation": "先端の部分で抗原と結合する。"
+    },
+    {
+      "id": "sci_bio06_025",
+      "category": "knowledge",
+      "prompt": "ヘルパー T 細胞の主なはたらきは？",
+      "choices": [
+        "B 細胞やキラー T 細胞を活性化する",
+        "血液を固める",
+        "異物を食べる",
+        "抗体をつくる"
+      ],
+      "answerIndex": 0,
+      "explanation": "獲得免疫の司令塔の役割。"
+    },
+    {
+      "id": "sci_bio06_026",
+      "category": "knowledge",
+      "prompt": "ツベルクリン反応は、どの免疫のはたらきを利用した検査？",
+      "choices": [
+        "自然免疫だけ",
+        "物理的防御",
+        "細胞性免疫",
+        "体液性免疫"
+      ],
+      "answerIndex": 2,
+      "explanation": "結核菌に対する記憶があるかを調べる。"
+    },
+    {
+      "id": "sci_bio06_027",
+      "category": "knowledge",
+      "prompt": "ほかの動物につくらせた抗体をふくむ血清を注射して治療する方法は？",
+      "choices": [
+        "抗生物質療法",
+        "血清療法",
+        "予防接種",
+        "臓器移植"
+      ],
+      "answerIndex": 1,
+      "explanation": "ヘビ毒などの治療に使われる。"
+    },
+    {
+      "id": "sci_bio06_028",
+      "category": "knowledge",
+      "prompt": "全身に起こる激しいアレルギー反応を何という？",
+      "choices": [
+        "炎症",
+        "拒絶反応",
+        "自己免疫",
+        "アナフィラキシー"
+      ],
+      "answerIndex": 3,
+      "explanation": "血圧低下などが起こり、命にかかわることがある。"
+    },
+    {
+      "id": "sci_bio06_029",
+      "category": "knowledge",
+      "prompt": "自然免疫で、感染した細胞やがん細胞を攻撃するリンパ球は？",
+      "choices": [
+        "形質細胞",
+        "ヘルパー T 細胞",
+        "B 細胞",
+        "NK 細胞（ナチュラルキラー細胞）"
+      ],
+      "answerIndex": 3,
+      "explanation": "抗原の種類を問わず攻撃する。"
+    },
+    {
+      "id": "sci_bio06_030",
+      "category": "knowledge",
+      "prompt": "けがをした部分が赤くはれて熱をもつ反応を何という？",
+      "choices": [
+        "拒絶反応",
+        "炎症",
+        "抗原抗体反応",
+        "アレルギー"
+      ],
+      "answerIndex": 1,
+      "explanation": "血管が拡張し、食細胞が集まってくる。"
+    },
+    {
+      "id": "sci_bio06_031",
+      "category": "thinking",
+      "prompt": "予防接種と血清療法のちがいとして正しいものは？",
+      "choices": [
+        "予防接種はすぐ効く",
+        "予防接種は自分で抗体をつくらせて記憶を残し、血清療法はすぐ効くが記憶は残らない",
+        "血清療法は記憶が残る",
+        "同じもの"
+      ],
+      "answerIndex": 1,
+      "explanation": "予防は予防接種、緊急の治療は血清療法。"
+    },
+    {
+      "id": "sci_bio06_032",
+      "category": "thinking",
+      "prompt": "HIV に感染すると、さまざまな病気にかかりやすくなる理由は？",
+      "choices": [
+        "ヘルパー T 細胞が減り、B 細胞やキラー T 細胞が活性化されにくくなるから",
+        "抗体が増えすぎるから",
+        "自然免疫が強くなりすぎるから",
+        "赤血球が減るから"
+      ],
+      "answerIndex": 0,
+      "explanation": "ふだんは問題にならない病原体にも感染しやすくなる（日和見感染）。"
     }
   ]
 }

@@ -211,6 +211,214 @@
       ],
       "answerIndex": 1,
       "explanation": "質量保存の法則。容器を開けると酸素が入り、全体は重くなる。"
+    },
+    {
+      "id": "sci_chm06_017",
+      "category": "knowledge",
+      "prompt": "化学反応式の右辺に書くものは？",
+      "choices": [
+        "反応物",
+        "生成物",
+        "溶媒",
+        "触媒"
+      ],
+      "answerIndex": 1,
+      "explanation": "左辺が反応物、右辺が生成物。"
+    },
+    {
+      "id": "sci_chm06_018",
+      "category": "calculation",
+      "prompt": "□H₂ ＋ O₂ → 2H₂O。□に入る係数は？",
+      "choices": [
+        "3",
+        "4",
+        "1",
+        "2"
+      ],
+      "answerIndex": 3,
+      "explanation": "両辺の H の数をそろえる。"
+    },
+    {
+      "id": "sci_chm06_019",
+      "category": "calculation",
+      "prompt": "□Al ＋ 3O₂ → 2Al₂O₃。□に入る係数は？",
+      "choices": [
+        "4",
+        "6",
+        "2",
+        "3"
+      ],
+      "answerIndex": 0,
+      "explanation": "右辺の Al は 2×2=4 個。"
+    },
+    {
+      "id": "sci_chm06_020",
+      "category": "calculation",
+      "prompt": "2C₂H₆ ＋ □O₂ → 4CO₂ ＋ 6H₂O。□に入る係数は？",
+      "choices": [
+        "5",
+        "6",
+        "7",
+        "14"
+      ],
+      "answerIndex": 2,
+      "explanation": "右辺の O は 8+6=14 個。"
+    },
+    {
+      "id": "sci_chm06_021",
+      "category": "calculation",
+      "prompt": "N₂ ＋ 3H₂ → 2NH₃。水素 6.0 mol がすべて反応すると、アンモニアは何 mol できる？",
+      "choices": [
+        "4.0 mol",
+        "6.0 mol",
+        "12 mol",
+        "2.0 mol"
+      ],
+      "answerIndex": 0,
+      "explanation": "H₂:NH₃=3:2。"
+    },
+    {
+      "id": "sci_chm06_022",
+      "category": "calculation",
+      "prompt": "2Mg ＋ O₂ → 2MgO。マグネシウム 2.4 g がすべて反応すると、酸化マグネシウムは何 g できる？（Mg＝24、O＝16）",
+      "choices": [
+        "4.0 g",
+        "2.4 g",
+        "3.2 g",
+        "8.0 g"
+      ],
+      "answerIndex": 0,
+      "explanation": "Mg 0.10 mol から MgO 0.10 mol（式量40）。"
+    },
+    {
+      "id": "sci_chm06_023",
+      "category": "calculation",
+      "prompt": "CH₄ ＋ 2O₂ → CO₂ ＋ 2H₂O。メタン 8.0 g を完全燃焼させると、二酸化炭素は何 g できる？（C＝12、H＝1.0、O＝16）",
+      "choices": [
+        "8.0 g",
+        "11 g",
+        "44 g",
+        "22 g"
+      ],
+      "answerIndex": 3,
+      "explanation": "CH₄ 0.50 mol から CO₂ 0.50 mol。"
+    },
+    {
+      "id": "sci_chm06_024",
+      "category": "calculation",
+      "prompt": "C₃H₈ ＋ 5O₂ → 3CO₂ ＋ 4H₂O。プロパン 1.0 mol を完全燃焼させると、二酸化炭素は標準状態で何 L できる？",
+      "choices": [
+        "22.4 L",
+        "67.2 L",
+        "112 L",
+        "89.6 L"
+      ],
+      "answerIndex": 1,
+      "explanation": "CO₂ は 3.0 mol。"
+    },
+    {
+      "id": "sci_chm06_025",
+      "category": "calculation",
+      "prompt": "Zn ＋ 2HCl → ZnCl₂ ＋ H₂。亜鉛 6.5 g がすべて反応すると、水素は標準状態で何 L 発生する？（Zn＝65）",
+      "choices": [
+        "2.24 L",
+        "22.4 L",
+        "4.48 L",
+        "1.12 L"
+      ],
+      "answerIndex": 0,
+      "explanation": "Zn 0.10 mol から H₂ 0.10 mol。"
+    },
+    {
+      "id": "sci_chm06_026",
+      "category": "calculation",
+      "prompt": "2KClO₃ → 2KCl ＋ 3O₂。塩素酸カリウム 2.0 mol がすべて分解すると、酸素は何 mol できる？",
+      "choices": [
+        "2.0 mol",
+        "3.0 mol",
+        "1.5 mol",
+        "6.0 mol"
+      ],
+      "answerIndex": 1,
+      "explanation": "係数の比 2:3。"
+    },
+    {
+      "id": "sci_chm06_027",
+      "category": "calculation",
+      "prompt": "窒素 1 L と水素 3 L がすべて反応してアンモニアができる。同温・同圧でアンモニアは何 L？",
+      "choices": [
+        "1 L",
+        "3 L",
+        "2 L",
+        "4 L"
+      ],
+      "answerIndex": 2,
+      "explanation": "気体反応の法則：体積比は係数の比 1:3:2。"
+    },
+    {
+      "id": "sci_chm06_028",
+      "category": "knowledge",
+      "prompt": "「同温・同圧で同じ体積の気体には、同じ数の分子がふくまれる」という法則は？",
+      "choices": [
+        "アボガドロの法則",
+        "倍数比例の法則",
+        "質量保存の法則",
+        "ボイルの法則"
+      ],
+      "answerIndex": 0,
+      "explanation": "分子という考え方で気体反応の法則を説明した。"
+    },
+    {
+      "id": "sci_chm06_029",
+      "category": "knowledge",
+      "prompt": "「2種類の元素からなる化合物が複数あるとき、一方の元素の一定量と結びつくもう一方の質量は、簡単な整数比になる」という法則は？",
+      "choices": [
+        "アボガドロの法則",
+        "定比例の法則",
+        "気体反応の法則",
+        "倍数比例の法則"
+      ],
+      "answerIndex": 3,
+      "explanation": "ドルトンが原子説の根拠として発表した。例：CO と CO₂。"
+    },
+    {
+      "id": "sci_chm06_030",
+      "category": "calculation",
+      "prompt": "2H₂ ＋ O₂ → 2H₂O。水素 3.0 mol と酸素 1.0 mol を反応させた。反応せずに残る気体は？",
+      "choices": [
+        "水素 2.0 mol",
+        "水素 1.0 mol",
+        "残らない",
+        "酸素 0.50 mol"
+      ],
+      "answerIndex": 1,
+      "explanation": "酸素 1.0 mol と反応する水素は 2.0 mol。"
+    },
+    {
+      "id": "sci_chm06_031",
+      "category": "calculation",
+      "prompt": "CaCO₃ ＋ 2HCl → CaCl₂ ＋ H₂O ＋ CO₂。炭酸カルシウム 20 g がすべて反応すると、二酸化炭素は何 g 発生する？（CaCO₃＝100、CO₂＝44）",
+      "choices": [
+        "44 g",
+        "20 g",
+        "8.8 g",
+        "4.4 g"
+      ],
+      "answerIndex": 2,
+      "explanation": "CaCO₃ 0.20 mol から CO₂ 0.20 mol。"
+    },
+    {
+      "id": "sci_chm06_032",
+      "category": "thinking",
+      "prompt": "化学反応で質量保存の法則が成り立つ理由は？",
+      "choices": [
+        "気体が出ないから",
+        "反応の前後で原子の組み合わせが変わるだけで、原子の種類と数は変わらないから",
+        "分子の数が変わらないから",
+        "反応で原子が増えるから"
+      ],
+      "answerIndex": 1,
+      "explanation": "分子の数は反応の前後で変わることがある。"
     }
   ]
 }

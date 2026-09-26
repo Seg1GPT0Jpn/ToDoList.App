@@ -211,6 +211,214 @@
       ],
       "answerIndex": 1,
       "explanation": "He（2個）や Ne・Ar（最外殻 8 個）は閉殻・安定な電子配置で、電子をやりとりしにくい。"
+    },
+    {
+      "id": "sci_chm02_017",
+      "category": "knowledge",
+      "prompt": "原子の中心にあり、陽子と中性子からなる部分は？",
+      "choices": [
+        "電子殻",
+        "分子",
+        "原子核",
+        "価電子"
+      ],
+      "answerIndex": 2,
+      "explanation": "原子核のまわりを電子が取り巻いている。"
+    },
+    {
+      "id": "sci_chm02_018",
+      "category": "knowledge",
+      "prompt": "中性子がもつ電荷は？",
+      "choices": [
+        "陽子と同じ大きさの負の電荷",
+        "正の電荷",
+        "負の電荷",
+        "もたない"
+      ],
+      "answerIndex": 3,
+      "explanation": "陽子は正、電子は負の電荷をもつ。"
+    },
+    {
+      "id": "sci_chm02_019",
+      "category": "knowledge",
+      "prompt": "L 殻に入ることができる電子の最大数は？",
+      "choices": [
+        "18個",
+        "8個",
+        "32個",
+        "2個"
+      ],
+      "answerIndex": 1,
+      "explanation": "n 番目の電子殻には最大 2n² 個。"
+    },
+    {
+      "id": "sci_chm02_020",
+      "category": "knowledge",
+      "prompt": "M 殻に入ることができる電子の最大数は？",
+      "choices": [
+        "2個",
+        "8個",
+        "32個",
+        "18個"
+      ],
+      "answerIndex": 3,
+      "explanation": "2×3²。"
+    },
+    {
+      "id": "sci_chm02_021",
+      "category": "knowledge",
+      "prompt": "原子の化学的な性質を決める、最外殻の電子を何という？",
+      "choices": [
+        "価電子",
+        "内殻電子",
+        "中性子",
+        "陽子"
+      ],
+      "answerIndex": 0,
+      "explanation": "貴ガスは価電子の数を0とする。"
+    },
+    {
+      "id": "sci_chm02_022",
+      "category": "knowledge",
+      "prompt": "原子が電子を受け取るとどうなる？",
+      "choices": [
+        "陽イオンになる",
+        "原子番号が変わる",
+        "中性子が増える",
+        "陰イオンになる"
+      ],
+      "answerIndex": 3,
+      "explanation": "負の電荷をもつ電子が増えるので、全体が負になる。"
+    },
+    {
+      "id": "sci_chm02_023",
+      "category": "knowledge",
+      "prompt": "¹H・²H・³H の関係は？",
+      "choices": [
+        "異性体",
+        "同位体",
+        "同素体",
+        "同族体"
+      ],
+      "answerIndex": 1,
+      "explanation": "陽子の数が同じで、中性子の数がちがう。"
+    },
+    {
+      "id": "sci_chm02_024",
+      "category": "knowledge",
+      "prompt": "原子核がこわれて放射線を出し、別の原子に変わる性質を何という？",
+      "choices": [
+        "電気陰性度",
+        "昇華",
+        "放射能",
+        "イオン化"
+      ],
+      "answerIndex": 2,
+      "explanation": "放射線を出す同位体を放射性同位体という。"
+    },
+    {
+      "id": "sci_chm02_025",
+      "category": "knowledge",
+      "prompt": "放射性同位体の半減期とは？",
+      "choices": [
+        "放射線が出始めるまでの時間",
+        "すべてなくなるまでの時間の半分",
+        "その量が半分になるまでにかかる時間",
+        "質量数が半分になる時間"
+      ],
+      "answerIndex": 2,
+      "explanation": "放射性同位体の種類ごとに決まっている。"
+    },
+    {
+      "id": "sci_chm02_026",
+      "category": "calculation",
+      "prompt": "²³Na（原子番号11）の中性子の数は？",
+      "choices": [
+        "11",
+        "23",
+        "12",
+        "34"
+      ],
+      "answerIndex": 2,
+      "explanation": "23−11。"
+    },
+    {
+      "id": "sci_chm02_027",
+      "category": "calculation",
+      "prompt": "カルシウムイオン Ca²⁺（Ca の原子番号20）がもつ電子の数は？",
+      "choices": [
+        "22",
+        "18",
+        "2",
+        "20"
+      ],
+      "answerIndex": 1,
+      "explanation": "2個の電子を失っている。"
+    },
+    {
+      "id": "sci_chm02_028",
+      "category": "calculation",
+      "prompt": "塩化物イオン Cl⁻（Cl の原子番号17）がもつ電子の数は？",
+      "choices": [
+        "18",
+        "17",
+        "35",
+        "16"
+      ],
+      "answerIndex": 0,
+      "explanation": "1個の電子を受け取っている。"
+    },
+    {
+      "id": "sci_chm02_029",
+      "category": "calculation",
+      "prompt": "硫黄（原子番号16）の電子配置は？",
+      "choices": [
+        "K殻2、L殻8、M殻6",
+        "K殻2、L殻6、M殻8",
+        "K殻2、L殻8、M殻8",
+        "K殻8、L殻8"
+      ],
+      "answerIndex": 0,
+      "explanation": "内側の電子殻から順に入る。"
+    },
+    {
+      "id": "sci_chm02_030",
+      "category": "calculation",
+      "prompt": "半減期が5730年の ¹⁴C は、11460年後にははじめの何倍になる？",
+      "choices": [
+        "1/8",
+        "1/4",
+        "1/2",
+        "1/3"
+      ],
+      "answerIndex": 1,
+      "explanation": "半減期2回ぶん：(1/2)²。"
+    },
+    {
+      "id": "sci_chm02_031",
+      "category": "calculation",
+      "prompt": "ホウ素は ¹⁰B が20%、¹¹B が80% である。相対質量を質量数と同じとすると、ホウ素の原子量は？",
+      "choices": [
+        "10.8",
+        "10.2",
+        "11.0",
+        "10.5"
+      ],
+      "answerIndex": 0,
+      "explanation": "10×0.20+11×0.80。"
+    },
+    {
+      "id": "sci_chm02_032",
+      "category": "thinking",
+      "prompt": "ナトリウムイオン Na⁺ とネオン原子 Ne は同じ電子配置だが、性質がちがう。その理由として最も適切なものは？",
+      "choices": [
+        "原子核の陽子の数（正の電荷）がちがうから",
+        "電子殻の数がちがうから",
+        "中性子がないから",
+        "電子の数がちがうから"
+      ],
+      "answerIndex": 0,
+      "explanation": "Na⁺ は陽子11個、Ne は陽子10個。全体の電荷もちがう。"
     }
   ]
 }

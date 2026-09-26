@@ -211,6 +211,214 @@
       ],
       "answerIndex": 3,
       "explanation": "同じ体積なら物質量が同じ。分子量が 28 と 44 なので、CO₂ の方が重い。"
+    },
+    {
+      "id": "sci_chm05_017",
+      "category": "knowledge",
+      "prompt": "物質量の単位は？",
+      "choices": [
+        "g",
+        "L",
+        "mol",
+        "Pa"
+      ],
+      "answerIndex": 2,
+      "explanation": "6.0×10²³ 個の粒子の集まりを 1 mol とする。"
+    },
+    {
+      "id": "sci_chm05_018",
+      "category": "knowledge",
+      "prompt": "分子量の求め方は？",
+      "choices": [
+        "質量数の平均",
+        "分子を構成する原子の原子量の総和",
+        "陽子の数の総和",
+        "原子番号の総和"
+      ],
+      "answerIndex": 1,
+      "explanation": "例：H₂O は 1.0×2+16。"
+    },
+    {
+      "id": "sci_chm05_019",
+      "category": "calculation",
+      "prompt": "酸素 O₂ の分子量は？（O＝16）",
+      "choices": [
+        "8",
+        "48",
+        "16",
+        "32"
+      ],
+      "answerIndex": 3,
+      "explanation": "16×2。"
+    },
+    {
+      "id": "sci_chm05_020",
+      "category": "calculation",
+      "prompt": "二酸化炭素 CO₂ の分子量は？（C＝12、O＝16）",
+      "choices": [
+        "40",
+        "28",
+        "32",
+        "44"
+      ],
+      "answerIndex": 3,
+      "explanation": "12+16×2。"
+    },
+    {
+      "id": "sci_chm05_021",
+      "category": "calculation",
+      "prompt": "硫酸 H₂SO₄ の分子量は？（H＝1.0、S＝32、O＝16）",
+      "choices": [
+        "49",
+        "98",
+        "96",
+        "82"
+      ],
+      "answerIndex": 1,
+      "explanation": "2+32+64。"
+    },
+    {
+      "id": "sci_chm05_022",
+      "category": "calculation",
+      "prompt": "水 36 g の物質量は？（H₂O＝18）",
+      "choices": [
+        "36 mol",
+        "2.0 mol",
+        "18 mol",
+        "0.50 mol"
+      ],
+      "answerIndex": 1,
+      "explanation": "36÷18。"
+    },
+    {
+      "id": "sci_chm05_023",
+      "category": "calculation",
+      "prompt": "1.2×10²⁴ 個の分子の物質量は？",
+      "choices": [
+        "2.0 mol",
+        "1.2 mol",
+        "20 mol",
+        "0.50 mol"
+      ],
+      "answerIndex": 0,
+      "explanation": "1.2×10²⁴÷6.0×10²³。"
+    },
+    {
+      "id": "sci_chm05_024",
+      "category": "calculation",
+      "prompt": "標準状態で 5.6 L の窒素の物質量は？",
+      "choices": [
+        "0.25 mol",
+        "0.50 mol",
+        "5.6 mol",
+        "4.0 mol"
+      ],
+      "answerIndex": 0,
+      "explanation": "5.6÷22.4。"
+    },
+    {
+      "id": "sci_chm05_025",
+      "category": "calculation",
+      "prompt": "アンモニア NH₃ 0.50 mol の質量は？（N＝14、H＝1.0）",
+      "choices": [
+        "17 g",
+        "8.5 g",
+        "7.0 g",
+        "34 g"
+      ],
+      "answerIndex": 1,
+      "explanation": "17×0.50。"
+    },
+    {
+      "id": "sci_chm05_026",
+      "category": "calculation",
+      "prompt": "グルコース C₆H₁₂O₆ の分子量は？（C＝12、H＝1.0、O＝16）",
+      "choices": [
+        "168",
+        "90",
+        "342",
+        "180"
+      ],
+      "answerIndex": 3,
+      "explanation": "72+12+96。"
+    },
+    {
+      "id": "sci_chm05_027",
+      "category": "calculation",
+      "prompt": "グルコース 18 g を水に溶かして 200 mL にした。モル濃度は？（C₆H₁₂O₆＝180）",
+      "choices": [
+        "0.10 mol/L",
+        "5.0 mol/L",
+        "0.50 mol/L",
+        "0.090 mol/L"
+      ],
+      "answerIndex": 2,
+      "explanation": "0.10 mol÷0.200 L。"
+    },
+    {
+      "id": "sci_chm05_028",
+      "category": "calculation",
+      "prompt": "2.0 mol/L の塩化ナトリウム水溶液 50 mL にふくまれる NaCl は何 g？（NaCl＝58.5）",
+      "choices": [
+        "11.7 g",
+        "5.85 g",
+        "2.93 g",
+        "117 g"
+      ],
+      "answerIndex": 1,
+      "explanation": "2.0×0.050=0.10 mol。"
+    },
+    {
+      "id": "sci_chm05_029",
+      "category": "calculation",
+      "prompt": "標準状態で 4.48 L の二酸化炭素の質量は？（CO₂＝44）",
+      "choices": [
+        "0.20 g",
+        "17.6 g",
+        "4.4 g",
+        "8.8 g"
+      ],
+      "answerIndex": 3,
+      "explanation": "0.20 mol×44。"
+    },
+    {
+      "id": "sci_chm05_030",
+      "category": "calculation",
+      "prompt": "質量パーセント濃度20%、密度 1.2 g/mL の水酸化ナトリウム水溶液のモル濃度は？（NaOH＝40）",
+      "choices": [
+        "0.60 mol/L",
+        "12 mol/L",
+        "5.0 mol/L",
+        "6.0 mol/L"
+      ],
+      "answerIndex": 3,
+      "explanation": "1 L は 1200 g、NaOH は 240 g＝6.0 mol。"
+    },
+    {
+      "id": "sci_chm05_031",
+      "category": "calculation",
+      "prompt": "標準状態での密度が 1.25 g/L の気体の分子量は？",
+      "choices": [
+        "1.25",
+        "22.4",
+        "28",
+        "44"
+      ],
+      "answerIndex": 2,
+      "explanation": "1 mol（22.4 L）の質量：1.25×22.4。"
+    },
+    {
+      "id": "sci_chm05_032",
+      "category": "thinking",
+      "prompt": "同じ物質量のマグネシウムとアルミニウムについて正しいものは？",
+      "choices": [
+        "ふくまれる原子の数は同じ",
+        "質量は同じ",
+        "マグネシウムの方が原子の数が多い",
+        "アルミニウムの方が原子の数が多い"
+      ],
+      "answerIndex": 0,
+      "explanation": "物質量が同じなら粒子の数は同じ。質量は原子量によってちがう。"
     }
   ]
 }

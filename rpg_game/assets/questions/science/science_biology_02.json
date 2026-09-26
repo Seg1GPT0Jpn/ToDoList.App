@@ -211,6 +211,214 @@
       ],
       "answerIndex": 0,
       "explanation": "カタラーゼは 2H₂O₂ → 2H₂O ＋ O₂ を進める酵素。加熱すると変性してはたらかない。"
+    },
+    {
+      "id": "sci_bio02_017",
+      "category": "knowledge",
+      "prompt": "異化の例は？",
+      "choices": [
+        "光合成",
+        "呼吸",
+        "タンパク質の合成",
+        "DNA の複製"
+      ],
+      "answerIndex": 1,
+      "explanation": "異化は複雑な物質を分解してエネルギーを取り出す反応。"
+    },
+    {
+      "id": "sci_bio02_018",
+      "category": "knowledge",
+      "prompt": "光合成で発生する気体は？",
+      "choices": [
+        "窒素",
+        "酸素",
+        "二酸化炭素",
+        "水素"
+      ],
+      "answerIndex": 1,
+      "explanation": "水が分解されて酸素が生じる。"
+    },
+    {
+      "id": "sci_bio02_019",
+      "category": "knowledge",
+      "prompt": "ATP にふくまれる、高エネルギーリン酸結合の数は？",
+      "choices": [
+        "1つ",
+        "4つ",
+        "2つ",
+        "3つ"
+      ],
+      "answerIndex": 2,
+      "explanation": "リン酸3つの間の2か所の結合。"
+    },
+    {
+      "id": "sci_bio02_020",
+      "category": "knowledge",
+      "prompt": "ATP を構成する糖は？",
+      "choices": [
+        "リボース",
+        "スクロース",
+        "デオキシリボース",
+        "グルコース"
+      ],
+      "answerIndex": 0,
+      "explanation": "アデニン＋リボース（アデノシン）＋リン酸3つ。"
+    },
+    {
+      "id": "sci_bio02_021",
+      "category": "knowledge",
+      "prompt": "ATP を構成する塩基は？",
+      "choices": [
+        "チミン",
+        "シトシン",
+        "アデニン",
+        "グアニン"
+      ],
+      "answerIndex": 2,
+      "explanation": "ATP の A はアデノシン（アデニン＋リボース）。"
+    },
+    {
+      "id": "sci_bio02_022",
+      "category": "knowledge",
+      "prompt": "光合成の反応全体を表したものとして正しいものは？",
+      "choices": [
+        "有機物＋酸素 → 二酸化炭素＋水",
+        "酸素＋水 → 二酸化炭素",
+        "有機物 → 二酸化炭素＋光",
+        "二酸化炭素＋水＋光エネルギー → 有機物＋酸素"
+      ],
+      "answerIndex": 3,
+      "explanation": "光エネルギーを使って有機物を合成する同化の反応。"
+    },
+    {
+      "id": "sci_bio02_023",
+      "category": "knowledge",
+      "prompt": "動物のように、ほかの生物がつくった有機物を取りこんで生活する生物を何という？",
+      "choices": [
+        "生産者",
+        "独立栄養生物",
+        "従属栄養生物",
+        "化学合成細菌"
+      ],
+      "answerIndex": 2,
+      "explanation": "独立栄養生物は無機物から有機物をつくる。"
+    },
+    {
+      "id": "sci_bio02_024",
+      "category": "knowledge",
+      "prompt": "酵素が作用する相手の物質を何という？",
+      "choices": [
+        "生成物",
+        "補酵素",
+        "基質",
+        "触媒"
+      ],
+      "answerIndex": 2,
+      "explanation": "酵素と基質が結合して、酵素−基質複合体をつくる。"
+    },
+    {
+      "id": "sci_bio02_025",
+      "category": "knowledge",
+      "prompt": "だ液にふくまれるアミラーゼの基質は？",
+      "choices": [
+        "DNA",
+        "タンパク質",
+        "脂肪",
+        "デンプン"
+      ],
+      "answerIndex": 3,
+      "explanation": "デンプンを麦芽糖（マルトース）に分解する。"
+    },
+    {
+      "id": "sci_bio02_026",
+      "category": "knowledge",
+      "prompt": "胃液にふくまれるペプシンの基質は？",
+      "choices": [
+        "脂肪",
+        "デンプン",
+        "セルロース",
+        "タンパク質"
+      ],
+      "answerIndex": 3,
+      "explanation": "ペプシンは強い酸性の胃の中でよくはたらく。"
+    },
+    {
+      "id": "sci_bio02_027",
+      "category": "knowledge",
+      "prompt": "ヒトの体内ではたらく多くの酵素の最適温度は、およそ？",
+      "choices": [
+        "60〜70℃",
+        "0〜5℃",
+        "35〜40℃",
+        "90〜100℃"
+      ],
+      "answerIndex": 2,
+      "explanation": "体温に近い温度でよくはたらく。"
+    },
+    {
+      "id": "sci_bio02_028",
+      "category": "knowledge",
+      "prompt": "酵素が失活する原因として適切なものは？",
+      "choices": [
+        "基質が多すぎること",
+        "高温や強い酸・アルカリで、タンパク質の立体構造が変わること",
+        "反応が終わること",
+        "温度が低いこと"
+      ],
+      "answerIndex": 1,
+      "explanation": "低温では活性が下がるだけで、温度をもどすと回復する。"
+    },
+    {
+      "id": "sci_bio02_029",
+      "category": "calculation",
+      "prompt": "ATP 1 mol の分解で約30 kJ のエネルギーが出るとすると、ATP 10 mol ではおよそ何 kJ？",
+      "choices": [
+        "約3 kJ",
+        "約30 kJ",
+        "約3000 kJ",
+        "約300 kJ"
+      ],
+      "answerIndex": 3,
+      "explanation": "30×10。"
+    },
+    {
+      "id": "sci_bio02_030",
+      "category": "calculation",
+      "prompt": "光合成で二酸化炭素 6 mol が使われたとき、つくられるグルコースは何 mol？",
+      "choices": [
+        "12 mol",
+        "1 mol",
+        "6 mol",
+        "1/6 mol"
+      ],
+      "answerIndex": 1,
+      "explanation": "6CO₂＋12H₂O → C₆H₁₂O₆＋6O₂＋6H₂O。"
+    },
+    {
+      "id": "sci_bio02_031",
+      "category": "calculation",
+      "prompt": "呼吸でグルコース 2 mol を完全に分解するのに必要な酸素は何 mol？",
+      "choices": [
+        "2 mol",
+        "6 mol",
+        "12 mol",
+        "3 mol"
+      ],
+      "answerIndex": 2,
+      "explanation": "グルコース 1 mol に酸素 6 mol。"
+    },
+    {
+      "id": "sci_bio02_032",
+      "category": "thinking",
+      "prompt": "酵素の量が一定のとき、基質の濃度を上げ続けても反応速度がある値以上に上がらない理由は？",
+      "choices": [
+        "温度が下がるから",
+        "酵素が増えるから",
+        "基質が分解されるから",
+        "すべての酵素が基質と結合してはたらいている状態になるから"
+      ],
+      "answerIndex": 3,
+      "explanation": "酵素が「満員」の状態になると、それ以上は速くならない。"
     }
   ]
 }

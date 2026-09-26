@@ -211,6 +211,214 @@
       ],
       "answerIndex": 1,
       "explanation": "[H⁺] が 1/10 になるので pH は 1 大きくなる。ただし何倍うすめても pH 7 を超えて塩基性にはならない。"
+    },
+    {
+      "id": "sci_chm07_017",
+      "category": "knowledge",
+      "prompt": "強塩基はどれ？",
+      "choices": [
+        "水酸化アルミニウム Al(OH)₃",
+        "アンモニア NH₃",
+        "水酸化銅(Ⅱ) Cu(OH)₂",
+        "水酸化ナトリウム NaOH"
+      ],
+      "answerIndex": 3,
+      "explanation": "水に溶けてほぼ完全に電離する。"
+    },
+    {
+      "id": "sci_chm07_018",
+      "category": "knowledge",
+      "prompt": "弱酸はどれ？",
+      "choices": [
+        "塩酸 HCl",
+        "硫酸 H₂SO₄",
+        "酢酸 CH₃COOH",
+        "硝酸 HNO₃"
+      ],
+      "answerIndex": 2,
+      "explanation": "水溶液中で一部しか電離しない。"
+    },
+    {
+      "id": "sci_chm07_019",
+      "category": "knowledge",
+      "prompt": "1価の酸はどれ？",
+      "choices": [
+        "リン酸 H₃PO₄",
+        "シュウ酸 (COOH)₂",
+        "硫酸 H₂SO₄",
+        "硝酸 HNO₃"
+      ],
+      "answerIndex": 3,
+      "explanation": "1分子から出す H⁺ が1個。"
+    },
+    {
+      "id": "sci_chm07_020",
+      "category": "knowledge",
+      "prompt": "水酸化カルシウム Ca(OH)₂ の価数は？",
+      "choices": [
+        "1価",
+        "3価",
+        "4価",
+        "2価"
+      ],
+      "answerIndex": 3,
+      "explanation": "OH⁻ を2個出す。"
+    },
+    {
+      "id": "sci_chm07_021",
+      "category": "knowledge",
+      "prompt": "メチルオレンジは、酸性側（pH 約3.1 以下）で何色？",
+      "choices": [
+        "青色",
+        "無色",
+        "赤色",
+        "黄色"
+      ],
+      "answerIndex": 2,
+      "explanation": "塩基性側では黄色。"
+    },
+    {
+      "id": "sci_chm07_022",
+      "category": "knowledge",
+      "prompt": "BTB 溶液は、中性で何色？",
+      "choices": [
+        "黄色",
+        "無色",
+        "緑色",
+        "青色"
+      ],
+      "answerIndex": 2,
+      "explanation": "酸性で黄色、塩基性で青色。"
+    },
+    {
+      "id": "sci_chm07_023",
+      "category": "knowledge",
+      "prompt": "塩化ナトリウム NaCl の水溶液の性質は？",
+      "choices": [
+        "中性",
+        "場合による",
+        "酸性",
+        "塩基性"
+      ],
+      "answerIndex": 0,
+      "explanation": "強酸と強塩基からできた正塩。"
+    },
+    {
+      "id": "sci_chm07_024",
+      "category": "knowledge",
+      "prompt": "酢酸ナトリウム CH₃COONa の水溶液の性質は？",
+      "choices": [
+        "塩基性",
+        "中性",
+        "場合による",
+        "酸性"
+      ],
+      "answerIndex": 0,
+      "explanation": "弱酸と強塩基からできた塩。"
+    },
+    {
+      "id": "sci_chm07_025",
+      "category": "knowledge",
+      "prompt": "塩化アンモニウム NH₄Cl の水溶液の性質は？",
+      "choices": [
+        "塩基性",
+        "場合による",
+        "中性",
+        "酸性"
+      ],
+      "answerIndex": 3,
+      "explanation": "強酸と弱塩基からできた塩。"
+    },
+    {
+      "id": "sci_chm07_026",
+      "category": "knowledge",
+      "prompt": "中和滴定で、一定体積の溶液を正確にはかりとる器具は？",
+      "choices": [
+        "ホールピペット",
+        "ビュレット",
+        "メスシリンダー",
+        "ビーカー"
+      ],
+      "answerIndex": 0,
+      "explanation": "滴下した量をはかるのはビュレット。"
+    },
+    {
+      "id": "sci_chm07_027",
+      "category": "knowledge",
+      "prompt": "中和滴定で、滴下した溶液の体積をはかる器具は？",
+      "choices": [
+        "ホールピペット",
+        "試験管",
+        "ビュレット",
+        "メスフラスコ"
+      ],
+      "answerIndex": 2,
+      "explanation": "目盛りの読みは液面の底に合わせる。"
+    },
+    {
+      "id": "sci_chm07_028",
+      "category": "calculation",
+      "prompt": "0.0010 mol/L の塩酸（完全に電離）の pH は？",
+      "choices": [
+        "3",
+        "2",
+        "1",
+        "4"
+      ],
+      "answerIndex": 0,
+      "explanation": "[H⁺]=1.0×10⁻³ mol/L。"
+    },
+    {
+      "id": "sci_chm07_029",
+      "category": "calculation",
+      "prompt": "0.010 mol/L の水酸化ナトリウム水溶液（完全に電離）の pH は？（25℃）",
+      "choices": [
+        "2",
+        "12",
+        "13",
+        "10"
+      ],
+      "answerIndex": 1,
+      "explanation": "[OH⁻]=10⁻²、[H⁺]=10⁻¹²。"
+    },
+    {
+      "id": "sci_chm07_030",
+      "category": "calculation",
+      "prompt": "0.20 mol/L の酢酸 20 mL を中和するのに必要な 0.10 mol/L の水酸化ナトリウム水溶液は？",
+      "choices": [
+        "80 mL",
+        "40 mL",
+        "10 mL",
+        "20 mL"
+      ],
+      "answerIndex": 1,
+      "explanation": "酸と塩基の価数×物質量が等しい：0.20×20=0.10×V。"
+    },
+    {
+      "id": "sci_chm07_031",
+      "category": "calculation",
+      "prompt": "濃度のわからない塩酸 10 mL を、0.10 mol/L の NaOH 水溶液で中和すると 12 mL 必要だった。塩酸の濃度は？",
+      "choices": [
+        "1.2 mol/L",
+        "0.12 mol/L",
+        "0.083 mol/L",
+        "0.10 mol/L"
+      ],
+      "answerIndex": 1,
+      "explanation": "0.10×12=c×10。"
+    },
+    {
+      "id": "sci_chm07_032",
+      "category": "thinking",
+      "prompt": "塩酸（強酸）とアンモニア水（弱塩基）の中和滴定に適した指示薬は？",
+      "choices": [
+        "フェノールフタレイン",
+        "BTB だけ",
+        "メチルオレンジ",
+        "どちらも適さない"
+      ],
+      "answerIndex": 2,
+      "explanation": "中和点が弱い酸性側にあるので、酸性側で色が変わる指示薬を使う。"
     }
   ]
 }

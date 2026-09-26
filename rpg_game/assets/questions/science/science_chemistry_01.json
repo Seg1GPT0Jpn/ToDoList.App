@@ -211,6 +211,214 @@
       ],
       "answerIndex": 3,
       "explanation": "石灰水を白くにごらせるのは CO₂。燃やして CO₂ が出たので、もとの物質に炭素が含まれる。"
+    },
+    {
+      "id": "sci_chm01_017",
+      "category": "knowledge",
+      "prompt": "混合物はどれ？",
+      "choices": [
+        "窒素",
+        "二酸化炭素",
+        "空気",
+        "塩化ナトリウム"
+      ],
+      "answerIndex": 2,
+      "explanation": "空気は窒素・酸素などが混ざったもの。"
+    },
+    {
+      "id": "sci_chm01_018",
+      "category": "knowledge",
+      "prompt": "「骨にはカルシウムがふくまれる」のカルシウムは、元素と単体のどちらの意味？",
+      "choices": [
+        "単体",
+        "化合物",
+        "混合物",
+        "元素"
+      ],
+      "answerIndex": 3,
+      "explanation": "物質そのものではなく、成分を表しているので元素。"
+    },
+    {
+      "id": "sci_chm01_019",
+      "category": "knowledge",
+      "prompt": "「酸素は水にわずかに溶ける」の酸素は、元素と単体のどちらの意味？",
+      "choices": [
+        "化合物",
+        "混合物",
+        "元素",
+        "単体"
+      ],
+      "answerIndex": 3,
+      "explanation": "実際の物質（O₂）を表しているので単体。"
+    },
+    {
+      "id": "sci_chm01_020",
+      "category": "knowledge",
+      "prompt": "同素体をもつ元素の組み合わせとして正しいものは？",
+      "choices": [
+        "水素・ヘリウム・窒素",
+        "ナトリウム・カリウム",
+        "硫黄・炭素・酸素・リン",
+        "塩素・フッ素"
+      ],
+      "answerIndex": 2,
+      "explanation": "頭文字で「SCOP（スコップ）」と覚える。"
+    },
+    {
+      "id": "sci_chm01_021",
+      "category": "knowledge",
+      "prompt": "酸素の同素体は？",
+      "choices": [
+        "オゾン O₃",
+        "水 H₂O",
+        "過酸化水素 H₂O₂",
+        "二酸化炭素 CO₂"
+      ],
+      "answerIndex": 0,
+      "explanation": "オゾンは特有のにおいをもつ淡青色の気体。"
+    },
+    {
+      "id": "sci_chm01_022",
+      "category": "knowledge",
+      "prompt": "リンの同素体のうち、空気中で自然発火するため水中に保存するのは？",
+      "choices": [
+        "単斜硫黄",
+        "黄リン（白リン）",
+        "黒鉛",
+        "赤リン"
+      ],
+      "answerIndex": 1,
+      "explanation": "赤リンはマッチの側薬に使われる。"
+    },
+    {
+      "id": "sci_chm01_023",
+      "category": "knowledge",
+      "prompt": "固体が液体にならずに直接気体になる変化を何という？",
+      "choices": [
+        "昇華",
+        "凝縮",
+        "融解",
+        "蒸発"
+      ],
+      "answerIndex": 0,
+      "explanation": "ドライアイスやヨウ素で見られる。"
+    },
+    {
+      "id": "sci_chm01_024",
+      "category": "knowledge",
+      "prompt": "固体が液体になる変化を何という？",
+      "choices": [
+        "融解",
+        "凝固",
+        "昇華",
+        "沸騰"
+      ],
+      "answerIndex": 0,
+      "explanation": "逆の変化は凝固。"
+    },
+    {
+      "id": "sci_chm01_025",
+      "category": "knowledge",
+      "prompt": "温度が高くなると、物質をつくる粒子の熱運動はどうなる？",
+      "choices": [
+        "激しくなる",
+        "変わらない",
+        "おだやかになる",
+        "止まる"
+      ],
+      "answerIndex": 0,
+      "explanation": "絶対零度で熱運動はもっともおだやかになる。"
+    },
+    {
+      "id": "sci_chm01_026",
+      "category": "knowledge",
+      "prompt": "絶対零度はおよそ何℃？",
+      "choices": [
+        "−273℃",
+        "0℃",
+        "−373℃",
+        "−100℃"
+      ],
+      "answerIndex": 0,
+      "explanation": "0 K＝−273℃。"
+    },
+    {
+      "id": "sci_chm01_027",
+      "category": "knowledge",
+      "prompt": "銅をふくむ物質の炎色反応の色は？",
+      "choices": [
+        "橙赤色",
+        "青緑色",
+        "赤紫色",
+        "黄色"
+      ],
+      "answerIndex": 1,
+      "explanation": "Na は黄色、K は赤紫色、Ca は橙赤色。"
+    },
+    {
+      "id": "sci_chm01_028",
+      "category": "knowledge",
+      "prompt": "水溶液に塩化物イオンがふくまれていることを確かめる方法は？",
+      "choices": [
+        "BTB 溶液を加える",
+        "石灰水を加える",
+        "硝酸銀水溶液を加えて白色沈殿ができるか調べる",
+        "炎の中に入れる"
+      ],
+      "answerIndex": 2,
+      "explanation": "塩化銀 AgCl の白色沈殿ができる。"
+    },
+    {
+      "id": "sci_chm01_029",
+      "category": "calculation",
+      "prompt": "27℃ は絶対温度で何 K？",
+      "choices": [
+        "273 K",
+        "300 K",
+        "27 K",
+        "246 K"
+      ],
+      "answerIndex": 1,
+      "explanation": "T=t+273。"
+    },
+    {
+      "id": "sci_chm01_030",
+      "category": "calculation",
+      "prompt": "水 150 g に砂糖 50 g を溶かした水溶液の質量パーセント濃度は？",
+      "choices": [
+        "33%",
+        "50%",
+        "20%",
+        "25%"
+      ],
+      "answerIndex": 3,
+      "explanation": "50÷(150+50)×100。"
+    },
+    {
+      "id": "sci_chm01_031",
+      "category": "calculation",
+      "prompt": "質量パーセント濃度10%の食塩水 200 g にふくまれる食塩は？",
+      "choices": [
+        "20 g",
+        "180 g",
+        "2 g",
+        "10 g"
+      ],
+      "answerIndex": 0,
+      "explanation": "200×0.10。"
+    },
+    {
+      "id": "sci_chm01_032",
+      "category": "thinking",
+      "prompt": "海水から純粋な水を取り出すのに最も適した方法は？",
+      "choices": [
+        "クロマトグラフィー",
+        "ろ過",
+        "再結晶",
+        "蒸留"
+      ],
+      "answerIndex": 3,
+      "explanation": "水を加熱して水蒸気にし、冷やして集める。塩は溶けているのでろ過では分けられない。"
     }
   ]
 }

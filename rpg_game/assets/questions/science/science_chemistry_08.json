@@ -211,6 +211,214 @@
       ],
       "answerIndex": 2,
       "explanation": "H₂ は酸素を受け取り（酸化され）、CuO を還元している。"
+    },
+    {
+      "id": "sci_chm08_017",
+      "category": "knowledge",
+      "prompt": "酸素のやりとりで考えたとき、「酸化された」といえるのは？",
+      "choices": [
+        "酸素を失った",
+        "酸素を受け取った",
+        "水素を受け取った",
+        "電子を受け取った"
+      ],
+      "answerIndex": 1,
+      "explanation": "酸素を受け取る・水素を失う・電子を失うのが酸化。"
+    },
+    {
+      "id": "sci_chm08_018",
+      "category": "knowledge",
+      "prompt": "物質が水素を失う変化は？",
+      "choices": [
+        "酸化",
+        "中和",
+        "電離",
+        "還元"
+      ],
+      "answerIndex": 0,
+      "explanation": "例：H₂S が S になる変化。"
+    },
+    {
+      "id": "sci_chm08_019",
+      "category": "knowledge",
+      "prompt": "電子のやりとりで考えたとき、「還元された」といえるのは？",
+      "choices": [
+        "電子を失った",
+        "酸素を受け取った",
+        "水素を失った",
+        "電子を受け取った"
+      ],
+      "answerIndex": 3,
+      "explanation": "還元されると酸化数が減る。"
+    },
+    {
+      "id": "sci_chm08_020",
+      "category": "knowledge",
+      "prompt": "鉄(Ⅱ)イオン Fe²⁺ が鉄(Ⅲ)イオン Fe³⁺ になる変化は？",
+      "choices": [
+        "酸化",
+        "還元",
+        "中和",
+        "変化なし"
+      ],
+      "answerIndex": 0,
+      "explanation": "電子を1個失い、酸化数が＋2 から＋3 に増える。"
+    },
+    {
+      "id": "sci_chm08_021",
+      "category": "calculation",
+      "prompt": "硫化水素 H₂S の S の酸化数は？",
+      "choices": [
+        "0",
+        "＋2",
+        "＋6",
+        "−2"
+      ],
+      "answerIndex": 3,
+      "explanation": "H を＋1 として：2×(+1)+x=0。"
+    },
+    {
+      "id": "sci_chm08_022",
+      "category": "calculation",
+      "prompt": "硝酸 HNO₃ の N の酸化数は？",
+      "choices": [
+        "＋5",
+        "＋3",
+        "−3",
+        "＋6"
+      ],
+      "answerIndex": 0,
+      "explanation": "(+1)+x+(−2)×3=0。"
+    },
+    {
+      "id": "sci_chm08_023",
+      "category": "calculation",
+      "prompt": "二酸化硫黄 SO₂ の S の酸化数は？",
+      "choices": [
+        "＋2",
+        "＋4",
+        "＋6",
+        "−2"
+      ],
+      "answerIndex": 1,
+      "explanation": "x+(−2)×2=0。"
+    },
+    {
+      "id": "sci_chm08_024",
+      "category": "calculation",
+      "prompt": "酸化マンガン(Ⅳ) MnO₂ の Mn の酸化数は？",
+      "choices": [
+        "＋4",
+        "＋6",
+        "＋7",
+        "＋2"
+      ],
+      "answerIndex": 0,
+      "explanation": "名前の (Ⅳ) が酸化数を表している。"
+    },
+    {
+      "id": "sci_chm08_025",
+      "category": "calculation",
+      "prompt": "酸化銅(Ⅰ) Cu₂O の Cu の酸化数は？",
+      "choices": [
+        "＋2",
+        "0",
+        "＋1",
+        "−1"
+      ],
+      "answerIndex": 2,
+      "explanation": "2x+(−2)=0。"
+    },
+    {
+      "id": "sci_chm08_026",
+      "category": "knowledge",
+      "prompt": "カリウム・ナトリウム・銅・銀のうち、イオン化傾向が最も大きいのは？",
+      "choices": [
+        "ナトリウム",
+        "カリウム",
+        "銅",
+        "銀"
+      ],
+      "answerIndex": 1,
+      "explanation": "K > Na > … > Cu > Ag の順。"
+    },
+    {
+      "id": "sci_chm08_027",
+      "category": "knowledge",
+      "prompt": "常温の水と反応して水素を発生する金属は？",
+      "choices": [
+        "ナトリウム",
+        "鉄",
+        "銅",
+        "銀"
+      ],
+      "answerIndex": 0,
+      "explanation": "イオン化傾向がとても大きい金属（Li, K, Ca, Na）。"
+    },
+    {
+      "id": "sci_chm08_028",
+      "category": "knowledge",
+      "prompt": "希塩酸に溶けない金属は？",
+      "choices": [
+        "鉄",
+        "亜鉛",
+        "マグネシウム",
+        "銅"
+      ],
+      "answerIndex": 3,
+      "explanation": "水素よりイオン化傾向が小さい金属は、希塩酸と反応しない。"
+    },
+    {
+      "id": "sci_chm08_029",
+      "category": "knowledge",
+      "prompt": "ダニエル電池（亜鉛と銅）の正極は？",
+      "choices": [
+        "銅",
+        "硫酸亜鉛水溶液",
+        "亜鉛",
+        "素焼き板"
+      ],
+      "answerIndex": 0,
+      "explanation": "イオン化傾向の小さい方が正極。"
+    },
+    {
+      "id": "sci_chm08_030",
+      "category": "knowledge",
+      "prompt": "鉛蓄電池のように、充電してくり返し使える電池を何という？",
+      "choices": [
+        "燃料電池",
+        "太陽電池",
+        "二次電池",
+        "一次電池"
+      ],
+      "answerIndex": 2,
+      "explanation": "マンガン乾電池などは一次電池。"
+    },
+    {
+      "id": "sci_chm08_031",
+      "category": "knowledge",
+      "prompt": "電気分解で、陽極で起こる反応は？",
+      "choices": [
+        "沈殿反応",
+        "酸化反応",
+        "中和反応",
+        "還元反応"
+      ],
+      "answerIndex": 1,
+      "explanation": "陽極は電子を奪われる極。"
+    },
+    {
+      "id": "sci_chm08_032",
+      "category": "thinking",
+      "prompt": "鉄がさびるのを防ぐ方法として最も適切なものは？",
+      "choices": [
+        "鉄を水にしずめておく",
+        "鉄を細かく砕く",
+        "塗装やめっきで、鉄が空気や水にふれないようにする",
+        "食塩水をかける"
+      ],
+      "answerIndex": 2,
+      "explanation": "さびは鉄が酸素や水と反応する酸化。"
     }
   ]
 }
