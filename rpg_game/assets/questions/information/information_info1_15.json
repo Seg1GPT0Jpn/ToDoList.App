@@ -1,0 +1,167 @@
+{
+  "setId": "information_info1_15",
+  "worldId": "information",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "inf_info115_001",
+      "category": "knowledge",
+      "prompt": "問題を解決するための手順を何という？",
+      "choices": [
+        "ハードウェア",
+        "アルゴリズム",
+        "インタフェース",
+        "プロトコル"
+      ],
+      "answerIndex": 1,
+      "explanation": "プログラムは、アルゴリズムをコンピュータが実行できる形に書いたもの。"
+    },
+    {
+      "id": "inf_info115_002",
+      "category": "knowledge",
+      "prompt": "アルゴリズムの3つの基本構造は？",
+      "choices": [
+        "送信・受信・中継",
+        "順次・分岐・反復",
+        "暗号・復号・認証",
+        "入力・出力・記憶"
+      ],
+      "answerIndex": 1,
+      "explanation": "どんなアルゴリズムも、この3つの組み合わせで表せる。"
+    },
+    {
+      "id": "inf_info115_003",
+      "category": "knowledge",
+      "prompt": "フローチャートで、条件によって処理を分ける記号の形は？",
+      "choices": [
+        "ひし形",
+        "長方形",
+        "角の丸い長方形",
+        "円"
+      ],
+      "answerIndex": 0,
+      "explanation": "長方形は処理、角の丸い長方形（端子）は開始・終了。"
+    },
+    {
+      "id": "inf_info115_004",
+      "category": "knowledge",
+      "prompt": "プログラムで、値を入れておく名前のついた箱を何という？",
+      "choices": [
+        "変数",
+        "関数",
+        "配列だけ",
+        "定数だけ"
+      ],
+      "answerIndex": 0,
+      "explanation": "値を入れることを代入という。"
+    },
+    {
+      "id": "inf_info115_005",
+      "category": "knowledge",
+      "prompt": "関数を呼び出すときに渡す値を何という？",
+      "choices": [
+        "添字",
+        "戻り値",
+        "引数",
+        "変数名"
+      ],
+      "answerIndex": 2,
+      "explanation": "関数が処理の結果として返す値が戻り値。"
+    },
+    {
+      "id": "inf_info115_006",
+      "category": "knowledge",
+      "prompt": "複数の値をまとめて、番号（添字）で取り出せるようにしたものは？",
+      "choices": [
+        "変数",
+        "関数",
+        "配列（リスト）",
+        "条件分岐"
+      ],
+      "answerIndex": 2,
+      "explanation": "多くの言語で、添字は 0 から始まる。"
+    },
+    {
+      "id": "inf_info115_007",
+      "category": "knowledge",
+      "prompt": "プログラムの誤りを見つけて直す作業を何という？",
+      "choices": [
+        "バックアップ",
+        "エンコード",
+        "コンパイル",
+        "デバッグ"
+      ],
+      "answerIndex": 3,
+      "explanation": "誤りのことをバグという。"
+    },
+    {
+      "id": "inf_info115_008",
+      "category": "calculation",
+      "prompt": "次のプログラムを実行した後の x の値は？",
+      "sentence": "x = 3\nx = x + 4\nx = x * 2",
+      "choices": [
+        "7",
+        "14",
+        "10",
+        "11"
+      ],
+      "answerIndex": 1,
+      "explanation": "x ＝ 3 → 3 ＋ 4 ＝ 7 → 7 × 2 ＝ 14。上から順に実行する（順次）。"
+    },
+    {
+      "id": "inf_info115_009",
+      "category": "calculation",
+      "prompt": "次のプログラムを実行した後の s の値は？",
+      "sentence": "s = 0\nfor i in range(1, 6):\n    s = s + i",
+      "choices": [
+        "21",
+        "5",
+        "10",
+        "15"
+      ],
+      "answerIndex": 3,
+      "explanation": "i が 1〜5 の間くり返し、1 ＋ 2 ＋ 3 ＋ 4 ＋ 5 ＝ 15。range(1, 6) は 6 をふくまない。"
+    },
+    {
+      "id": "inf_info115_010",
+      "category": "calculation",
+      "prompt": "a = [5, 8, 2] のとき、a[1] の値は？",
+      "choices": [
+        "エラーになる",
+        "2",
+        "5",
+        "8"
+      ],
+      "answerIndex": 3,
+      "explanation": "添字は 0 から始まるので、a[0] ＝ 5、a[1] ＝ 8、a[2] ＝ 2。"
+    },
+    {
+      "id": "inf_info115_011",
+      "category": "calculation",
+      "prompt": "次のプログラムで表示されるのは？",
+      "sentence": "x = 7\nif x % 2 == 0:\n    print(\"even\")\nelse:\n    print(\"odd\")",
+      "choices": [
+        "何も表示されない",
+        "even",
+        "odd",
+        "7"
+      ],
+      "answerIndex": 2,
+      "explanation": "7 % 2 は 7 を 2 で割った余りで 1。0 ではないので else が実行される。"
+    },
+    {
+      "id": "inf_info115_012",
+      "category": "thinking",
+      "prompt": "同じ処理を 100 回書くかわりに、くり返し（反復）を使う利点は？",
+      "choices": [
+        "バグが必ず 0 になる",
+        "プログラムが短く分かりやすくなり、直すときも 1 か所ですむ",
+        "変数が使えなくなる",
+        "必ず実行が遅くなる"
+      ],
+      "answerIndex": 1,
+      "explanation": "回数を変えたいときも、条件を 1 か所変えるだけですむ。"
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "setId": "information_info1_12",
+  "worldId": "information",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "inf_info112_001",
+      "category": "knowledge",
+      "prompt": "暗号化と復号に同じ鍵を使う方式は？",
+      "choices": [
+        "公開鍵暗号方式",
+        "共通鍵暗号方式",
+        "電子署名",
+        "ハッシュ関数"
+      ],
+      "answerIndex": 1,
+      "explanation": "処理は速いが、鍵を安全に渡す方法が課題になる。"
+    },
+    {
+      "id": "inf_info112_002",
+      "category": "knowledge",
+      "prompt": "公開鍵で暗号化し、ペアの秘密鍵で復号する方式は？",
+      "choices": [
+        "共通鍵暗号方式",
+        "シーザー暗号",
+        "ランレングス",
+        "公開鍵暗号方式"
+      ],
+      "answerIndex": 3,
+      "explanation": "公開鍵は誰に知られてもよい。"
+    },
+    {
+      "id": "inf_info112_003",
+      "category": "knowledge",
+      "prompt": "送信者の本人確認と、データが改ざんされていないことの確認に使うものは？",
+      "choices": [
+        "パケット",
+        "DNS",
+        "電子署名（デジタル署名）",
+        "Cookie"
+      ],
+      "answerIndex": 2,
+      "explanation": "送信者が自分の秘密鍵で署名し、受信者が送信者の公開鍵で確かめる。"
+    },
+    {
+      "id": "inf_info112_004",
+      "category": "knowledge",
+      "prompt": "公開鍵が本当にその持ち主のものであることを、認証局が証明するものは？",
+      "choices": [
+        "パスワード",
+        "電子証明書（デジタル証明書）",
+        "ドメイン名",
+        "MAC アドレス"
+      ],
+      "answerIndex": 1,
+      "explanation": "HTTPS のサイトでは、ブラウザが証明書を確認している。"
+    },
+    {
+      "id": "inf_info112_005",
+      "category": "knowledge",
+      "prompt": "Web などの通信を暗号化するしくみは？",
+      "choices": [
+        "SMTP",
+        "DNS",
+        "LAN",
+        "SSL/TLS"
+      ],
+      "answerIndex": 3,
+      "explanation": "HTTPS は HTTP を SSL/TLS で暗号化したもの。"
+    },
+    {
+      "id": "inf_info112_006",
+      "category": "knowledge",
+      "prompt": "外部からの不正な通信を遮断する仕組みは？",
+      "choices": [
+        "ファイアウォール",
+        "ルータだけ",
+        "Cookie",
+        "ブラウザ"
+      ],
+      "answerIndex": 0,
+      "explanation": "決められた規則にしたがって通信を許可・拒否する。"
+    },
+    {
+      "id": "inf_info112_007",
+      "category": "knowledge",
+      "prompt": "アルファベットを決まった数だけずらす古典的な暗号は？",
+      "choices": [
+        "公開鍵暗号",
+        "ハッシュ",
+        "シーザー暗号",
+        "電子署名"
+      ],
+      "answerIndex": 2,
+      "explanation": "鍵（ずらす数）が分かればすぐ解読できてしまう。"
+    },
+    {
+      "id": "inf_info112_008",
+      "category": "calculation",
+      "prompt": "シーザー暗号で、各文字をアルファベット順に 3 文字後ろにずらす。「CAT」を暗号化すると？",
+      "choices": [
+        "CDW",
+        "ZXQ",
+        "FDW",
+        "DBU"
+      ],
+      "answerIndex": 2,
+      "explanation": "C→F、A→D、T→W。"
+    },
+    {
+      "id": "inf_info112_009",
+      "category": "calculation",
+      "prompt": "3 文字後ろにずらしたシーザー暗号「KHOOR」を復号すると？",
+      "choices": [
+        "HELLO",
+        "WORLD",
+        "NKRRU",
+        "JGNNQ"
+      ],
+      "answerIndex": 0,
+      "explanation": "各文字を 3 文字前に戻す。K→H、H→E、O→L、O→L、R→O。"
+    },
+    {
+      "id": "inf_info112_010",
+      "category": "calculation",
+      "prompt": "10 人が互いに共通鍵暗号で1対1の秘密の通信をする。必要な鍵の数は？",
+      "choices": [
+        "100 個",
+        "10 個",
+        "20 個",
+        "45 個"
+      ],
+      "answerIndex": 3,
+      "explanation": "2 人の組み合わせの数だけ鍵が必要。10 × 9 ÷ 2 ＝ 45 個。"
+    },
+    {
+      "id": "inf_info112_011",
+      "category": "calculation",
+      "prompt": "同じ 10 人が公開鍵暗号を使う場合、必要な鍵の数は？（公開鍵と秘密鍵をそれぞれ数える）",
+      "choices": [
+        "90 個",
+        "45 個",
+        "20 個",
+        "10 個"
+      ],
+      "answerIndex": 2,
+      "explanation": "1 人あたり公開鍵と秘密鍵の 2 個なので 10 × 2 ＝ 20 個。人数が増えても増え方がゆるやか。"
+    },
+    {
+      "id": "inf_info112_012",
+      "category": "thinking",
+      "prompt": "公開鍵暗号方式が、共通鍵暗号方式より便利な点は？",
+      "choices": [
+        "暗号化用の鍵を公開しても安全で、秘密の鍵を相手に渡さなくてよい",
+        "暗号文が短くなる",
+        "鍵が 1 本だけでよい",
+        "処理がいつも速い"
+      ],
+      "answerIndex": 0,
+      "explanation": "実際の通信では、両方を組み合わせて使うことが多い。"
+    }
+  ]
+}

@@ -3,6 +3,7 @@ import '../models/question.dart';
 import '../models/stage.dart';
 import '../models/world.dart';
 import '../study/sea_catalog.dart';
+import 'information_catalog.dart';
 import 'route_world.dart';
 import 'science_catalog.dart';
 
@@ -642,12 +643,15 @@ class RpgCatalog {
       priceYen: defaultWorldPriceYen,
     ),
     WorldDef(
-      id: 'information',
+      id: InformationCatalog.worldId,
       name: '情報の国',
       subject: '情報',
-      status: WorldStatus.comingSoon,
+      status: WorldStatus.available,
       isFree: false,
       priceYen: defaultWorldPriceYen,
+      stages: InformationCatalog.stages,
+      routes: [for (final r in InformationCatalog.routes) r.info],
+      description: '情報Ⅰの7分野・17エリア。情報社会から論理回路まで。',
     ),
   ];
 

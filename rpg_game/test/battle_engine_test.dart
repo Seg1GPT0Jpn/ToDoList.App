@@ -168,8 +168,7 @@ void main() {
 
     test('推奨レベル・正答率7割なら各ステージにおおむね勝てる', () {
       for (final stage in [
-        ...RpgCatalog.englishStages,
-        ...ScienceCatalog.stages,
+        for (final w in RpgCatalog.worlds) ...w.stages,
       ]) {
         var wins = 0;
         for (var seed = 0; seed < 50; seed++) {

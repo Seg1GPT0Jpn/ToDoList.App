@@ -1,0 +1,164 @@
+{
+  "setId": "information_info1_13",
+  "worldId": "information",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "inf_info113_001",
+      "category": "knowledge",
+      "prompt": "身長や点数のように、数値で表され計算に使えるデータは？",
+      "choices": [
+        "質的データ",
+        "メタデータ",
+        "量的データ",
+        "名義尺度"
+      ],
+      "answerIndex": 2,
+      "explanation": "血液型や好きな色のように、分類を表すのが質的データ。"
+    },
+    {
+      "id": "inf_info113_002",
+      "category": "knowledge",
+      "prompt": "血液型や電話番号のように、区別するためだけの尺度は？",
+      "choices": [
+        "比例尺度",
+        "名義尺度",
+        "順序尺度",
+        "間隔尺度"
+      ],
+      "answerIndex": 1,
+      "explanation": "大小や計算に意味がない。"
+    },
+    {
+      "id": "inf_info113_003",
+      "category": "knowledge",
+      "prompt": "成績の順位や「とても良い〜悪い」の5段階評価のように、順序に意味がある尺度は？",
+      "choices": [
+        "名義尺度",
+        "間隔尺度",
+        "順序尺度",
+        "比例尺度"
+      ],
+      "answerIndex": 2,
+      "explanation": "順番はあるが、間隔が等しいとは限らない。"
+    },
+    {
+      "id": "inf_info113_004",
+      "category": "knowledge",
+      "prompt": "摂氏温度や西暦のように、差には意味があるが比には意味がない尺度は？",
+      "choices": [
+        "間隔尺度",
+        "名義尺度",
+        "比例尺度",
+        "順序尺度"
+      ],
+      "answerIndex": 0,
+      "explanation": "0 が「何もない」を表さない。"
+    },
+    {
+      "id": "inf_info113_005",
+      "category": "knowledge",
+      "prompt": "身長や重さのように、0 が「ない」を表し、比にも意味がある尺度は？",
+      "choices": [
+        "間隔尺度",
+        "順序尺度",
+        "名義尺度",
+        "比例尺度"
+      ],
+      "answerIndex": 3,
+      "explanation": "「2 倍の重さ」と言える。"
+    },
+    {
+      "id": "inf_info113_006",
+      "category": "knowledge",
+      "prompt": "データの中で、値が入っていない部分を何という？",
+      "choices": [
+        "中央値",
+        "最頻値",
+        "外れ値",
+        "欠損値"
+      ],
+      "answerIndex": 3,
+      "explanation": "除外する・平均で補うなど、目的に応じて処理する。"
+    },
+    {
+      "id": "inf_info113_007",
+      "category": "knowledge",
+      "prompt": "ほかの値から極端に離れた値を何という？",
+      "choices": [
+        "外れ値",
+        "欠損値",
+        "平均値",
+        "代表値"
+      ],
+      "answerIndex": 0,
+      "explanation": "入力ミスのこともあれば、重要な発見のこともある。"
+    },
+    {
+      "id": "inf_info113_008",
+      "category": "knowledge",
+      "prompt": "誤りや表記のゆれを直して、分析できる形に整える作業は？",
+      "choices": [
+        "エンコード",
+        "データクリーニング",
+        "シミュレーション",
+        "データマイニング"
+      ],
+      "answerIndex": 1,
+      "explanation": "分析の前に欠かせない作業。"
+    },
+    {
+      "id": "inf_info113_009",
+      "category": "knowledge",
+      "prompt": "誰でも自由に使えるように、機械が読みやすい形で公開されたデータは？",
+      "choices": [
+        "個人情報",
+        "オープンデータ",
+        "ビッグデータ",
+        "メタデータ"
+      ],
+      "answerIndex": 1,
+      "explanation": "国や自治体が統計などを公開している。"
+    },
+    {
+      "id": "inf_info113_010",
+      "category": "thinking",
+      "prompt": "「20℃ は 10℃ の 2 倍暑い」とは言えない。その理由は？",
+      "choices": [
+        "温度は名義尺度だから",
+        "温度は量的データではないから",
+        "摂氏温度は間隔尺度で、0℃ が「熱がない」ことを表さないから",
+        "計算を間違えているから"
+      ],
+      "answerIndex": 2,
+      "explanation": "比に意味があるのは比例尺度（絶対温度など）。"
+    },
+    {
+      "id": "inf_info113_011",
+      "category": "thinking",
+      "prompt": "都道府県の欄に「東京都」と「東京」が混ざっていた。集計の前にすべきことは？",
+      "choices": [
+        "表記を統一する",
+        "東京のデータを消す",
+        "そのまま数える",
+        "別の都道府県として数える"
+      ],
+      "answerIndex": 0,
+      "explanation": "表記ゆれがあると、同じものが別々に数えられてしまう。"
+    },
+    {
+      "id": "inf_info113_012",
+      "category": "thinking",
+      "prompt": "テストの点数の欠損値（未受験）を 0 点として平均を計算すると、どうなる？",
+      "choices": [
+        "平均が実際より低くなる",
+        "平均が実際より高くなる",
+        "中央値だけ高くなる",
+        "平均は変わらない"
+      ],
+      "answerIndex": 0,
+      "explanation": "欠損値を 0 として扱うと、本当の傾向とずれる。"
+    }
+  ]
+}

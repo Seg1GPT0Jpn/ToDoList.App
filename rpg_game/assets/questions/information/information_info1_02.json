@@ -1,0 +1,164 @@
+{
+  "setId": "information_info1_02",
+  "worldId": "information",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "inf_info102_001",
+      "category": "knowledge",
+      "prompt": "著作権はいつ発生する？",
+      "choices": [
+        "著作物を創作した時点で自動的に",
+        "出版したとき",
+        "役所に登録したとき",
+        "売れたとき"
+      ],
+      "answerIndex": 0,
+      "explanation": "日本の著作権は登録などの手続きがいらない（無方式主義）。"
+    },
+    {
+      "id": "inf_info102_002",
+      "category": "knowledge",
+      "prompt": "日本の著作権の保護期間は、原則としてどれだけ？",
+      "choices": [
+        "著作者の死後70年",
+        "公表後5年",
+        "著作者の死後10年",
+        "永久"
+      ],
+      "answerIndex": 0,
+      "explanation": "2018年に死後50年から70年に延長された。"
+    },
+    {
+      "id": "inf_info102_003",
+      "category": "knowledge",
+      "prompt": "会社のロゴマークや商品名を保護する権利は？",
+      "choices": [
+        "著作権",
+        "商標権",
+        "特許権",
+        "意匠権"
+      ],
+      "answerIndex": 1,
+      "explanation": "特許権は発明、実用新案権は考案、意匠権はデザインを保護する。"
+    },
+    {
+      "id": "inf_info102_004",
+      "category": "knowledge",
+      "prompt": "産業財産権にふくまれないものは？",
+      "choices": [
+        "意匠権",
+        "商標権",
+        "特許権",
+        "著作権"
+      ],
+      "answerIndex": 3,
+      "explanation": "産業財産権は特許権・実用新案権・意匠権・商標権。登録が必要。"
+    },
+    {
+      "id": "inf_info102_005",
+      "category": "knowledge",
+      "prompt": "自分の顔や姿を無断で撮影・公開されない権利は？",
+      "choices": [
+        "著作権",
+        "特許権",
+        "肖像権",
+        "商標権"
+      ],
+      "answerIndex": 2,
+      "explanation": "誰にでもある権利。有名人の肖像の経済的価値を守るのはパブリシティ権。"
+    },
+    {
+      "id": "inf_info102_006",
+      "category": "knowledge",
+      "prompt": "他人の著作物を「引用」するときの条件として正しくないものは？",
+      "choices": [
+        "出典を明記する",
+        "引用部分を自分の文章より多くする",
+        "引用する必然性がある",
+        "引用部分をかぎかっこ等で区別する"
+      ],
+      "answerIndex": 1,
+      "explanation": "自分の文章が主、引用が従である必要がある。"
+    },
+    {
+      "id": "inf_info102_007",
+      "category": "knowledge",
+      "prompt": "作品を「この条件なら自由に使ってよい」と示すライセンスは？",
+      "choices": [
+        "ファイアウォール",
+        "フィッシング",
+        "クッキー",
+        "クリエイティブ・コモンズ"
+      ],
+      "answerIndex": 3,
+      "explanation": "表示・非営利・改変禁止などの条件を組み合わせて示す。"
+    },
+    {
+      "id": "inf_info102_008",
+      "category": "knowledge",
+      "prompt": "氏名や生年月日など、特定の個人を識別できる情報を何という？",
+      "choices": [
+        "ビッグデータ",
+        "オープンデータ",
+        "個人情報",
+        "メタデータ"
+      ],
+      "answerIndex": 2,
+      "explanation": "個人情報保護法で取り扱いのルールが定められている。"
+    },
+    {
+      "id": "inf_info102_009",
+      "category": "knowledge",
+      "prompt": "新しい発明を保護する権利は？",
+      "choices": [
+        "意匠権",
+        "肖像権",
+        "特許権",
+        "商標権"
+      ],
+      "answerIndex": 2,
+      "explanation": "出願から原則20年保護される。"
+    },
+    {
+      "id": "inf_info102_010",
+      "category": "thinking",
+      "prompt": "友達が写った写真を SNS に投稿する前にすべきことは？",
+      "choices": [
+        "何もしなくてよい",
+        "写っている本人の許可を得る",
+        "画質を上げる",
+        "位置情報を追加する"
+      ],
+      "answerIndex": 1,
+      "explanation": "肖像権やプライバシーの侵害を防ぐため、本人の同意を得る。"
+    },
+    {
+      "id": "inf_info102_011",
+      "category": "thinking",
+      "prompt": "「フリー素材」と書かれた画像を使うときに確認すべきことは？",
+      "choices": [
+        "利用規約（ライセンス）の条件",
+        "画像の色",
+        "ファイルの名前",
+        "作者の年齢"
+      ],
+      "answerIndex": 0,
+      "explanation": "無料でも、商用利用不可・クレジット表記が必要などの条件がある。"
+    },
+    {
+      "id": "inf_info102_012",
+      "category": "thinking",
+      "prompt": "匿名で悪口を投稿することについて正しいものは？",
+      "choices": [
+        "匿名なら絶対にばれない",
+        "削除すれば問題ない",
+        "発信者が特定され、責任を問われることがある",
+        "法律の対象外である"
+      ],
+      "answerIndex": 2,
+      "explanation": "発信者情報開示請求などで特定されることがある。"
+    }
+  ]
+}

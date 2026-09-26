@@ -1,0 +1,164 @@
+{
+  "setId": "information_info1_07",
+  "worldId": "information",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "inf_info107_001",
+      "category": "knowledge",
+      "prompt": "CPU（中央処理装置）の主なはたらきは？",
+      "choices": [
+        "音の入力",
+        "画面への表示",
+        "データの長期保存",
+        "演算と制御"
+      ],
+      "answerIndex": 3,
+      "explanation": "五大装置のうち演算装置と制御装置にあたる。"
+    },
+    {
+      "id": "inf_info107_002",
+      "category": "knowledge",
+      "prompt": "実行中のプログラムやデータを一時的に記憶する装置は？",
+      "choices": [
+        "出力装置",
+        "補助記憶装置",
+        "入力装置",
+        "主記憶装置（メモリ）"
+      ],
+      "answerIndex": 3,
+      "explanation": "電源を切ると内容が消える（揮発性）。"
+    },
+    {
+      "id": "inf_info107_003",
+      "category": "knowledge",
+      "prompt": "電源を切っても内容が残り、データを長く保存する装置は？",
+      "choices": [
+        "主記憶装置",
+        "CPU",
+        "補助記憶装置（SSD・HDD など）",
+        "キャッシュ"
+      ],
+      "answerIndex": 2,
+      "explanation": "メモリより容量は大きいが、読み書きは遅い。"
+    },
+    {
+      "id": "inf_info107_004",
+      "category": "knowledge",
+      "prompt": "コンピュータの五大装置の組み合わせは？",
+      "choices": [
+        "送信・受信・暗号・復号・認証",
+        "CPU・OS・アプリ・メモリ・画面",
+        "入力・出力・記憶・演算・制御",
+        "入力・出力・通信・表示・保存"
+      ],
+      "answerIndex": 2,
+      "explanation": "演算と制御をあわせて CPU という。"
+    },
+    {
+      "id": "inf_info107_005",
+      "category": "knowledge",
+      "prompt": "OS（オペレーティングシステム）の役割は？",
+      "choices": [
+        "Web ページを表示するだけ",
+        "文章を作成する",
+        "電気を作る",
+        "ハードウェアを管理し、アプリケーションが動く土台になる"
+      ],
+      "answerIndex": 3,
+      "explanation": "例：Windows、macOS、Android、iOS、Linux。"
+    },
+    {
+      "id": "inf_info107_006",
+      "category": "knowledge",
+      "prompt": "ソフトウェアはどれ？",
+      "choices": [
+        "マウス",
+        "表計算ソフト",
+        "CPU",
+        "キーボード"
+      ],
+      "answerIndex": 1,
+      "explanation": "目に見える機械の部分がハードウェア、プログラムがソフトウェア。"
+    },
+    {
+      "id": "inf_info107_007",
+      "category": "knowledge",
+      "prompt": "CPU が動作するテンポを表す値を何という？",
+      "choices": [
+        "クロック周波数",
+        "標本化周波数",
+        "解像度",
+        "通信速度"
+      ],
+      "answerIndex": 0,
+      "explanation": "単位は Hz。1秒間に刻む信号の回数。"
+    },
+    {
+      "id": "inf_info107_008",
+      "category": "knowledge",
+      "prompt": "プログラムもデータと同じように記憶装置に入れて実行する方式は？",
+      "choices": [
+        "公開鍵方式",
+        "プログラム内蔵方式（ノイマン型）",
+        "パケット交換方式",
+        "回線交換方式"
+      ],
+      "answerIndex": 1,
+      "explanation": "現在のほとんどのコンピュータがこの方式。"
+    },
+    {
+      "id": "inf_info107_009",
+      "category": "calculation",
+      "prompt": "クロック周波数 2 GHz の CPU は、1秒間に何回の信号を刻む？",
+      "choices": [
+        "20 億回",
+        "200 万回",
+        "2 億回",
+        "2000 回"
+      ],
+      "answerIndex": 0,
+      "explanation": "2 GHz ＝ 2 × 10⁹ Hz ＝ 20 億回。"
+    },
+    {
+      "id": "inf_info107_010",
+      "category": "calculation",
+      "prompt": "クロック周波数 2 GHz の CPU が、1命令を4クロックで実行する。1秒間に何命令？",
+      "choices": [
+        "5 億命令",
+        "8 億命令",
+        "20 億命令",
+        "5000 万命令"
+      ],
+      "answerIndex": 0,
+      "explanation": "2 × 10⁹ ÷ 4 ＝ 5 × 10⁸ ＝ 5 億命令。"
+    },
+    {
+      "id": "inf_info107_011",
+      "category": "thinking",
+      "prompt": "メモリの容量が小さいと、多くのアプリを同時に使ったときに遅くなりやすい理由は？",
+      "choices": [
+        "ネットワークが切れるから",
+        "入りきらない分を遅い補助記憶装置とやりとりするから",
+        "CPU が止まるから",
+        "画面が暗くなるから"
+      ],
+      "answerIndex": 1,
+      "explanation": "メモリに入りきらないと、補助記憶を代わりに使い、読み書きに時間がかかる。"
+    },
+    {
+      "id": "inf_info107_012",
+      "category": "thinking",
+      "prompt": "HDD より SSD の方が読み書きが速い主な理由は？",
+      "choices": [
+        "CPU の中にあるから",
+        "容量が必ず大きいから",
+        "電源が不要だから",
+        "円盤を回すなどの機械的な動きがないから"
+      ],
+      "answerIndex": 3,
+      "explanation": "SSD はフラッシュメモリで電気的に読み書きする。"
+    }
+  ]
+}

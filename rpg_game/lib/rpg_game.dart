@@ -8,6 +8,7 @@ export 'src/battle/question_deck.dart';
 export 'src/data/catalog.dart';
 export 'src/data/science_catalog.dart';
 export 'src/data/route_world.dart';
+export 'src/data/information_catalog.dart';
 export 'src/data/firestore_paths.dart';
 export 'src/data/progress_repository.dart';
 export 'src/data/question_source.dart';

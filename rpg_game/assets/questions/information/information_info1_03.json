@@ -1,0 +1,164 @@
+{
+  "setId": "information_info1_03",
+  "worldId": "information",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "inf_info103_001",
+      "category": "knowledge",
+      "prompt": "情報セキュリティの3要素の組み合わせは？",
+      "choices": [
+        "公開性・匿名性・独占性",
+        "入力・演算・出力",
+        "速度・容量・価格",
+        "機密性・完全性・可用性"
+      ],
+      "answerIndex": 3,
+      "explanation": "CIA（Confidentiality・Integrity・Availability）とも呼ばれる。"
+    },
+    {
+      "id": "inf_info103_002",
+      "category": "knowledge",
+      "prompt": "許可された人だけが情報にアクセスできる性質は？",
+      "choices": [
+        "伝播性",
+        "可用性",
+        "機密性",
+        "完全性"
+      ],
+      "answerIndex": 2,
+      "explanation": "パスワードや暗号化で守る。"
+    },
+    {
+      "id": "inf_info103_003",
+      "category": "knowledge",
+      "prompt": "情報が改ざんされず、正確である性質は？",
+      "choices": [
+        "機密性",
+        "可用性",
+        "複製性",
+        "完全性"
+      ],
+      "answerIndex": 3,
+      "explanation": "電子署名やバックアップなどで守る。"
+    },
+    {
+      "id": "inf_info103_004",
+      "category": "knowledge",
+      "prompt": "必要なときにいつでも情報を使える性質は？",
+      "choices": [
+        "機密性",
+        "可用性",
+        "残存性",
+        "完全性"
+      ],
+      "answerIndex": 1,
+      "explanation": "システムの二重化や停電対策などで守る。"
+    },
+    {
+      "id": "inf_info103_005",
+      "category": "knowledge",
+      "prompt": "知識（パスワード）・所持（スマホ）・生体（指紋）のうち2つ以上を組み合わせる認証は？",
+      "choices": [
+        "多要素認証",
+        "単一認証",
+        "シングルサインオン",
+        "匿名認証"
+      ],
+      "answerIndex": 0,
+      "explanation": "1つが漏れても不正ログインされにくくなる。"
+    },
+    {
+      "id": "inf_info103_006",
+      "category": "knowledge",
+      "prompt": "本物そっくりの偽サイトに誘導して、パスワードなどを盗む手口は？",
+      "choices": [
+        "バックアップ",
+        "ストリーミング",
+        "フィッシング",
+        "キャッシュ"
+      ],
+      "answerIndex": 2,
+      "explanation": "送信元やURLをよく確かめることが大切。"
+    },
+    {
+      "id": "inf_info103_007",
+      "category": "knowledge",
+      "prompt": "人の心理的なすきや油断をついて情報を盗む手口は？",
+      "choices": [
+        "パケット交換",
+        "ファイアウォール",
+        "ソーシャルエンジニアリング",
+        "暗号化"
+      ],
+      "answerIndex": 2,
+      "explanation": "例：電話で上司になりすましてパスワードを聞き出す、画面ののぞき見。"
+    },
+    {
+      "id": "inf_info103_008",
+      "category": "knowledge",
+      "prompt": "ファイルを勝手に暗号化し、元に戻すための身代金を要求するマルウェアは？",
+      "choices": [
+        "ランサムウェア",
+        "スパイウェア",
+        "ファームウェア",
+        "アドウェア"
+      ],
+      "answerIndex": 0,
+      "explanation": "バックアップを取っておくことが有効な対策。"
+    },
+    {
+      "id": "inf_info103_009",
+      "category": "knowledge",
+      "prompt": "マルウェアとは？",
+      "choices": [
+        "OS の一種",
+        "悪意のあるソフトウェアの総称",
+        "ウイルス対策ソフト",
+        "文字コード"
+      ],
+      "answerIndex": 1,
+      "explanation": "コンピュータウイルス・ワーム・トロイの木馬などをまとめた呼び名。"
+    },
+    {
+      "id": "inf_info103_010",
+      "category": "calculation",
+      "prompt": "英小文字（26種類）だけで作る4文字のパスワードは何通り？",
+      "choices": [
+        "26 通り",
+        "104 通り",
+        "456976 通り",
+        "17576 通り"
+      ],
+      "answerIndex": 2,
+      "explanation": "26 × 26 × 26 × 26 ＝ 26⁴ ＝ 456976 通り。"
+    },
+    {
+      "id": "inf_info103_011",
+      "category": "calculation",
+      "prompt": "数字（0〜9）4けたの暗証番号は何通り？",
+      "choices": [
+        "1000 通り",
+        "9999 通り",
+        "40 通り",
+        "10000 通り"
+      ],
+      "answerIndex": 3,
+      "explanation": "10⁴ ＝ 10000 通り。文字の種類や長さを増やすと推測されにくい。"
+    },
+    {
+      "id": "inf_info103_012",
+      "category": "thinking",
+      "prompt": "安全なパスワードの作り方として最も適切なものは？",
+      "choices": [
+        "長く推測されにくいものにし、サービスごとに変える",
+        "短く覚えやすい単語にする",
+        "すべてのサービスで同じにする",
+        "誕生日にする"
+      ],
+      "answerIndex": 0,
+      "explanation": "使い回すと、1つ漏れたときに他のサービスも不正利用される。"
+    }
+  ]
+}

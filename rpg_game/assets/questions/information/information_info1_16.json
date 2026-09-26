@@ -1,0 +1,164 @@
+{
+  "setId": "information_info1_16",
+  "worldId": "information",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "inf_info116_001",
+      "category": "knowledge",
+      "prompt": "先頭から順番に1つずつ調べていく探索は？",
+      "choices": [
+        "線形探索",
+        "挿入ソート",
+        "バブルソート",
+        "二分探索"
+      ],
+      "answerIndex": 0,
+      "explanation": "整列していないデータにも使える。"
+    },
+    {
+      "id": "inf_info116_002",
+      "category": "knowledge",
+      "prompt": "整列したデータの真ん中と比べ、探す範囲を半分ずつにしていく探索は？",
+      "choices": [
+        "線形探索",
+        "二分探索",
+        "選択ソート",
+        "ランレングス"
+      ],
+      "answerIndex": 1,
+      "explanation": "データが多いほど、線形探索よりずっと速い。"
+    },
+    {
+      "id": "inf_info116_003",
+      "category": "knowledge",
+      "prompt": "二分探索を使うための条件は？",
+      "choices": [
+        "データが 10 個以下であること",
+        "データが大きさの順に並んでいること",
+        "データに重複があること",
+        "データが文字であること"
+      ],
+      "answerIndex": 1,
+      "explanation": "並んでいないと、どちら半分にあるか判断できない。"
+    },
+    {
+      "id": "inf_info116_004",
+      "category": "knowledge",
+      "prompt": "となりどうしを比べて、順番が逆なら入れかえることをくり返すソートは？",
+      "choices": [
+        "挿入ソート",
+        "二分探索",
+        "線形探索",
+        "バブルソート"
+      ],
+      "answerIndex": 3,
+      "explanation": "大きい値が泡のように端へ移っていく。"
+    },
+    {
+      "id": "inf_info116_005",
+      "category": "knowledge",
+      "prompt": "すでに並んだ部分に、残りのデータを1つずつ適切な位置へ入れていくソートは？",
+      "choices": [
+        "挿入ソート",
+        "クイックサーチ",
+        "線形探索",
+        "バブルソート"
+      ],
+      "answerIndex": 0,
+      "explanation": "ほとんど整列しているデータに対して速い。"
+    },
+    {
+      "id": "inf_info116_006",
+      "category": "knowledge",
+      "prompt": "アルゴリズムの処理にかかる手間（時間）の目安を何という？",
+      "choices": [
+        "情報量",
+        "通信量",
+        "計算量",
+        "記憶容量"
+      ],
+      "answerIndex": 2,
+      "explanation": "データ数が増えたとき、手間がどう増えるかで比べる。"
+    },
+    {
+      "id": "inf_info116_007",
+      "category": "calculation",
+      "prompt": "1000 個のデータから線形探索で目的の値を探す。最も多い場合の比較回数は？",
+      "choices": [
+        "500 回",
+        "11 回",
+        "10 回",
+        "1000 回"
+      ],
+      "answerIndex": 3,
+      "explanation": "最後にある（または見つからない）場合、全部と比べる。"
+    },
+    {
+      "id": "inf_info116_008",
+      "category": "calculation",
+      "prompt": "整列した 1024 個のデータを二分探索する。最も多い場合の比較回数は？",
+      "choices": [
+        "512 回",
+        "11 回",
+        "1024 回",
+        "10 回"
+      ],
+      "answerIndex": 1,
+      "explanation": "1024 → 512 → … → 1 と半分にするのが 10 回、最後の1個と比べて 11 回（log₂1024 ＋ 1）。"
+    },
+    {
+      "id": "inf_info116_009",
+      "category": "calculation",
+      "prompt": "[5, 3, 8] を昇順にバブルソートする。最初に先頭の 2 つを比べて入れかえると？",
+      "choices": [
+        "[8, 5, 3]",
+        "[3, 5, 8]",
+        "[5, 3, 8]",
+        "[5, 8, 3]"
+      ],
+      "answerIndex": 1,
+      "explanation": "5 > 3 なので入れかえる。この例では、次に 5 と 8 を比べて入れかえずに終わる。"
+    },
+    {
+      "id": "inf_info116_010",
+      "category": "calculation",
+      "prompt": "データ 4, 9, 2, 7 の平均を求めるアルゴリズムの結果は？",
+      "choices": [
+        "22",
+        "9",
+        "4.5",
+        "5.5"
+      ],
+      "answerIndex": 3,
+      "explanation": "合計を順に求めて 22、データ数 4 で割って 5.5。"
+    },
+    {
+      "id": "inf_info116_011",
+      "category": "calculation",
+      "prompt": "5 個のデータをバブルソートするとき、比較の回数は最大で何回？",
+      "choices": [
+        "5 回",
+        "25 回",
+        "4 回",
+        "10 回"
+      ],
+      "answerIndex": 3,
+      "explanation": "n(n − 1) ÷ 2 ＝ 5 × 4 ÷ 2 ＝ 10 回。"
+    },
+    {
+      "id": "inf_info116_012",
+      "category": "thinking",
+      "prompt": "大量の名簿から何度も名前を探すとき、先にソートしておくとよい理由は？",
+      "choices": [
+        "ソートすると名簿が短くなるから",
+        "二分探索が使えて、探す手間が大きく減るから",
+        "線形探索が使えなくなるから",
+        "ソートすると自動で暗号化されるから"
+      ],
+      "answerIndex": 1,
+      "explanation": "一度並べる手間はかかるが、何度も探すなら全体として速くなる。"
+    }
+  ]
+}

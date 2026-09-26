@@ -1,0 +1,164 @@
+{
+  "setId": "information_info1_01",
+  "worldId": "information",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "inf_info101_001",
+      "category": "knowledge",
+      "prompt": "情報を人に伝えても、もとの情報が手もとからなくならない性質は？",
+      "choices": [
+        "複製性",
+        "残存性",
+        "伝播性",
+        "個別性"
+      ],
+      "answerIndex": 1,
+      "explanation": "物と違い、情報は渡しても手もとに残る（残存性）。"
+    },
+    {
+      "id": "inf_info101_002",
+      "category": "knowledge",
+      "prompt": "情報を簡単にそっくりコピーできる性質は？",
+      "choices": [
+        "伝播性",
+        "残存性",
+        "一過性",
+        "複製性"
+      ],
+      "answerIndex": 3,
+      "explanation": "デジタルの情報は劣化せずに何度でも複製できる（複製性）。"
+    },
+    {
+      "id": "inf_info101_003",
+      "category": "knowledge",
+      "prompt": "情報がすばやく広い範囲に広がっていく性質は？",
+      "choices": [
+        "保存性",
+        "複製性",
+        "伝播性",
+        "残存性"
+      ],
+      "answerIndex": 2,
+      "explanation": "ネットワークを通じて、情報は一瞬で広がる（伝播性）。"
+    },
+    {
+      "id": "inf_info101_004",
+      "category": "knowledge",
+      "prompt": "観測や測定で得られた数値や文字そのものを何という？",
+      "choices": [
+        "知恵",
+        "知識",
+        "情報",
+        "データ"
+      ],
+      "answerIndex": 3,
+      "explanation": "データに意味づけしたものが情報、情報を整理・体系化して活用できるようにしたものが知識。"
+    },
+    {
+      "id": "inf_info101_005",
+      "category": "knowledge",
+      "prompt": "データを整理・分析して、目的に役立つ意味をもたせたものは？",
+      "choices": [
+        "メディア",
+        "データ",
+        "情報",
+        "ノイズ"
+      ],
+      "answerIndex": 2,
+      "explanation": "例：気温の数値（データ）→「今日は昨日より暑い」（情報）。"
+    },
+    {
+      "id": "inf_info101_006",
+      "category": "knowledge",
+      "prompt": "家電や車などあらゆるモノがインターネットにつながるしくみは？",
+      "choices": [
+        "AI",
+        "VR",
+        "GPS",
+        "IoT"
+      ],
+      "answerIndex": 3,
+      "explanation": "Internet of Things（モノのインターネット）。"
+    },
+    {
+      "id": "inf_info101_007",
+      "category": "knowledge",
+      "prompt": "情報技術を利用できる人とできない人の間に生まれる格差を何という？",
+      "choices": [
+        "デジタルデバイド",
+        "ビッグデータ",
+        "デジタルタトゥー",
+        "テレワーク"
+      ],
+      "answerIndex": 0,
+      "explanation": "年齢・地域・経済状況などによって生じる。"
+    },
+    {
+      "id": "inf_info101_008",
+      "category": "knowledge",
+      "prompt": "仮想空間と現実空間を高度に融合させた、日本がめざす人間中心の社会は？",
+      "choices": [
+        "Society 4.0",
+        "Web 2.0",
+        "Industry 3.0",
+        "Society 5.0"
+      ],
+      "answerIndex": 3,
+      "explanation": "狩猟1.0・農耕2.0・工業3.0・情報4.0に続く社会として示されている。"
+    },
+    {
+      "id": "inf_info101_009",
+      "category": "knowledge",
+      "prompt": "自分で直接見たり聞いたりして得た情報を何という？",
+      "choices": [
+        "メタデータ",
+        "二次情報",
+        "一次情報",
+        "口コミ"
+      ],
+      "answerIndex": 2,
+      "explanation": "一次情報を加工・編集して伝えたものが二次情報。"
+    },
+    {
+      "id": "inf_info101_010",
+      "category": "thinking",
+      "prompt": "SNS で「拡散希望」の衝撃的な投稿を見た。まずすべきことは？",
+      "choices": [
+        "コメントで賛成する",
+        "すぐに拡散する",
+        "友達だけに送る",
+        "発信元や根拠を確かめる"
+      ],
+      "answerIndex": 3,
+      "explanation": "誤った情報を広めると自分も加害者になりうる。情報の信頼性を確かめてから行動する。"
+    },
+    {
+      "id": "inf_info101_011",
+      "category": "thinking",
+      "prompt": "同じ出来事について、複数の情報源を比べるのはなぜ？",
+      "choices": [
+        "情報を削除するため",
+        "情報を増やして覚えやすくするため",
+        "一番新しい情報だけを選ぶため",
+        "偏りや誤りに気づきやすくするため"
+      ],
+      "answerIndex": 3,
+      "explanation": "情報源ごとに立場や取材方法がちがうので、比べることで信頼性を判断しやすくなる。"
+    },
+    {
+      "id": "inf_info101_012",
+      "category": "thinking",
+      "prompt": "ネットに投稿した写真を削除しても、完全には消えないことがある理由は？",
+      "choices": [
+        "削除ボタンが存在しないから",
+        "写真は自動的に印刷されるから",
+        "すでに複製・保存されて広がっていることがあるから",
+        "サーバがすべて故障するから"
+      ],
+      "answerIndex": 2,
+      "explanation": "複製性と伝播性のため。「デジタルタトゥー」と呼ばれる。"
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "setId": "information_info1_08",
+  "worldId": "information",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "inf_info108_001",
+      "category": "knowledge",
+      "prompt": "温度計の液柱のように、連続的に変化する量の表し方は？",
+      "choices": [
+        "デジタル",
+        "アナログ",
+        "ビット",
+        "バイナリ"
+      ],
+      "answerIndex": 1,
+      "explanation": "数字で区切って表すのがデジタル。"
+    },
+    {
+      "id": "inf_info108_002",
+      "category": "knowledge",
+      "prompt": "とびとびの値（数値）で表す表し方は？",
+      "choices": [
+        "アナログ",
+        "ストリーム",
+        "デジタル",
+        "ベクタ"
+      ],
+      "answerIndex": 2,
+      "explanation": "コンピュータは 0 と 1 の組み合わせで情報を表す。"
+    },
+    {
+      "id": "inf_info108_003",
+      "category": "knowledge",
+      "prompt": "情報量の最小単位は？",
+      "choices": [
+        "バイト",
+        "ビット",
+        "ピクセル",
+        "ヘルツ"
+      ],
+      "answerIndex": 1,
+      "explanation": "0 か 1 の1けたが1ビット。"
+    },
+    {
+      "id": "inf_info108_004",
+      "category": "knowledge",
+      "prompt": "1 バイトは何ビット？",
+      "choices": [
+        "2 ビット",
+        "8 ビット",
+        "10 ビット",
+        "16 ビット"
+      ],
+      "answerIndex": 1,
+      "explanation": "1 B ＝ 8 bit。"
+    },
+    {
+      "id": "inf_info108_005",
+      "category": "knowledge",
+      "prompt": "16 進数で使う記号は？",
+      "choices": [
+        "0 と 1",
+        "A〜Z",
+        "0〜9 と A〜F",
+        "0〜9 だけ"
+      ],
+      "answerIndex": 2,
+      "explanation": "A＝10、B＝11、…、F＝15。"
+    },
+    {
+      "id": "inf_info108_006",
+      "category": "knowledge",
+      "prompt": "世界中の文字を1つの体系で表そうとする文字コードは？",
+      "choices": [
+        "JIS X 0201",
+        "Unicode",
+        "HTML",
+        "ASCII"
+      ],
+      "answerIndex": 1,
+      "explanation": "ASCII は英数字などを 7 ビットで表す。"
+    },
+    {
+      "id": "inf_info108_007",
+      "category": "knowledge",
+      "prompt": "デジタルで情報を扱う利点は？",
+      "choices": [
+        "劣化せずに複製・伝送・加工ができる",
+        "記録するほど美しくなる",
+        "電気を使わない",
+        "必ず情報量が増える"
+      ],
+      "answerIndex": 0,
+      "explanation": "一方、連続的な情報を区切るので、元の情報との誤差が生じる。"
+    },
+    {
+      "id": "inf_info108_008",
+      "category": "calculation",
+      "prompt": "10 進数の 13 を 2 進数で表すと？",
+      "choices": [
+        "1001",
+        "1101",
+        "1011",
+        "1110"
+      ],
+      "answerIndex": 1,
+      "explanation": "13 ＝ 8 ＋ 4 ＋ 1 ＝ 1×2³ ＋ 1×2² ＋ 0×2¹ ＋ 1×2⁰。"
+    },
+    {
+      "id": "inf_info108_009",
+      "category": "calculation",
+      "prompt": "2 進数の 101101 を 10 進数で表すと？",
+      "choices": [
+        "37",
+        "41",
+        "53",
+        "45"
+      ],
+      "answerIndex": 3,
+      "explanation": "32 ＋ 8 ＋ 4 ＋ 1 ＝ 45。"
+    },
+    {
+      "id": "inf_info108_010",
+      "category": "calculation",
+      "prompt": "1 バイト（8 ビット）で表せる情報は何通り？",
+      "choices": [
+        "255 通り",
+        "8 通り",
+        "256 通り",
+        "16 通り"
+      ],
+      "answerIndex": 2,
+      "explanation": "2⁸ ＝ 256 通り（0〜255）。"
+    },
+    {
+      "id": "inf_info108_011",
+      "category": "calculation",
+      "prompt": "16 進数の FF を 10 進数で表すと？",
+      "choices": [
+        "1515",
+        "256",
+        "255",
+        "240"
+      ],
+      "answerIndex": 2,
+      "explanation": "F×16 ＋ F ＝ 15×16 ＋ 15 ＝ 255。"
+    },
+    {
+      "id": "inf_info108_012",
+      "category": "calculation",
+      "prompt": "2 進数の 1111 を 16 進数で表すと？",
+      "choices": [
+        "15",
+        "F",
+        "1F",
+        "E"
+      ],
+      "answerIndex": 1,
+      "explanation": "1111 ＝ 15 ＝ F。2 進数 4 けたが 16 進数 1 けたにあたる。"
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "setId": "information_info1_10",
+  "worldId": "information",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "inf_info110_001",
+      "category": "knowledge",
+      "prompt": "学校や家庭など、限られた範囲のネットワークは？",
+      "choices": [
+        "LAN",
+        "DNS",
+        "WAN",
+        "URL"
+      ],
+      "answerIndex": 0,
+      "explanation": "Local Area Network。"
+    },
+    {
+      "id": "inf_info110_002",
+      "category": "knowledge",
+      "prompt": "離れた LAN どうしを結ぶ広い範囲のネットワークは？",
+      "choices": [
+        "IoT",
+        "WAN",
+        "LAN",
+        "CPU"
+      ],
+      "answerIndex": 1,
+      "explanation": "Wide Area Network。"
+    },
+    {
+      "id": "inf_info110_003",
+      "category": "knowledge",
+      "prompt": "ネットワークでサービスを提供する側のコンピュータは？",
+      "choices": [
+        "サーバ",
+        "クライアント",
+        "ルータ",
+        "ハブ"
+      ],
+      "answerIndex": 0,
+      "explanation": "サービスを受ける側がクライアント。"
+    },
+    {
+      "id": "inf_info110_004",
+      "category": "knowledge",
+      "prompt": "データを小さく分けて送る方式は？",
+      "choices": [
+        "パケット交換方式",
+        "符号化方式",
+        "公開鍵方式",
+        "回線交換方式"
+      ],
+      "answerIndex": 0,
+      "explanation": "分けたデータ（パケット）にはあて先などの情報がつく。"
+    },
+    {
+      "id": "inf_info110_005",
+      "category": "knowledge",
+      "prompt": "ネットワーク上の機器を区別するための番号（住所）は？",
+      "choices": [
+        "URL",
+        "パスワード",
+        "MAC アドレスだけ",
+        "IP アドレス"
+      ],
+      "answerIndex": 3,
+      "explanation": "IPv4 は 32 ビット、IPv6 は 128 ビット。"
+    },
+    {
+      "id": "inf_info110_006",
+      "category": "knowledge",
+      "prompt": "IPv4 アドレスは何ビット？",
+      "choices": [
+        "128 ビット",
+        "8 ビット",
+        "32 ビット",
+        "64 ビット"
+      ],
+      "answerIndex": 2,
+      "explanation": "8 ビットずつ 4 つに区切って 10 進数で書く（例：192.168.0.1）。"
+    },
+    {
+      "id": "inf_info110_007",
+      "category": "knowledge",
+      "prompt": "ドメイン名を IP アドレスに変換するしくみは？",
+      "choices": [
+        "HTTP",
+        "DNS",
+        "LAN",
+        "SMTP"
+      ],
+      "answerIndex": 1,
+      "explanation": "Domain Name System。"
+    },
+    {
+      "id": "inf_info110_008",
+      "category": "knowledge",
+      "prompt": "ネットワーク機器に製造時に割り当てられた固有の番号は？",
+      "choices": [
+        "IP アドレス",
+        "ポート番号",
+        "ドメイン名",
+        "MAC アドレス"
+      ],
+      "answerIndex": 3,
+      "explanation": "48 ビットで表す。"
+    },
+    {
+      "id": "inf_info110_009",
+      "category": "knowledge",
+      "prompt": "ネットワークどうしをつなぎ、パケットの経路を選んで中継する機器は？",
+      "choices": [
+        "モニタ",
+        "プリンタ",
+        "ルータ",
+        "スキャナ"
+      ],
+      "answerIndex": 2,
+      "explanation": "経路選択をルーティングという。"
+    },
+    {
+      "id": "inf_info110_010",
+      "category": "calculation",
+      "prompt": "通信速度 100 Mbps の回線で、50 MB（＝ 400 Mbit）のファイルを送るのにかかる時間は？（ほかの影響は考えない）",
+      "choices": [
+        "0.5 秒",
+        "2 秒",
+        "4 秒",
+        "50 秒"
+      ],
+      "answerIndex": 2,
+      "explanation": "400 Mbit ÷ 100 Mbps ＝ 4 秒。B（バイト）と b（ビット）の違いに注意。"
+    },
+    {
+      "id": "inf_info110_011",
+      "category": "calculation",
+      "prompt": "IPv4 で表せるアドレスの数はおよそ？",
+      "choices": [
+        "約 256",
+        "約 1000 兆",
+        "約 43 億",
+        "約 6.5 万"
+      ],
+      "answerIndex": 2,
+      "explanation": "2³² ≒ 43 億。足りなくなってきたので IPv6（2¹²⁸）が使われる。"
+    },
+    {
+      "id": "inf_info110_012",
+      "category": "thinking",
+      "prompt": "パケット交換方式の利点は？",
+      "choices": [
+        "送る順番に必ず届く",
+        "1 本の回線を多くの通信で共有でき、一部が故障しても別の経路で届く",
+        "データが暗号化される",
+        "必ず 1 本の回線を独占できる"
+      ],
+      "answerIndex": 1,
+      "explanation": "回線交換方式（電話）は通信中に回線を占有する。"
+    }
+  ]
+}

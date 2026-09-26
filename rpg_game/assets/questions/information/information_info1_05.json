@@ -1,0 +1,164 @@
+{
+  "setId": "information_info1_05",
+  "worldId": "information",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "inf_info105_001",
+      "category": "knowledge",
+      "prompt": "情報デザインの目的として最も適切なものは？",
+      "choices": [
+        "情報を目的に合わせて分かりやすく伝えること",
+        "情報を隠すこと",
+        "情報をできるだけ多く詰めこむこと",
+        "見た目を派手にすること"
+      ],
+      "answerIndex": 0,
+      "explanation": "相手や目的を考えて、情報を整理・表現する。"
+    },
+    {
+      "id": "inf_info105_002",
+      "category": "knowledge",
+      "prompt": "製品やサービスの「使いやすさ」を何という？",
+      "choices": [
+        "アクセシビリティ",
+        "セキュリティ",
+        "ユーザビリティ",
+        "トレーサビリティ"
+      ],
+      "answerIndex": 2,
+      "explanation": "目的を効率よく、満足して達成できるかどうか。"
+    },
+    {
+      "id": "inf_info105_003",
+      "category": "knowledge",
+      "prompt": "年齢や障害の有無などにかかわらず、情報やサービスを利用できることを何という？",
+      "choices": [
+        "インタラクティブ",
+        "ユーザビリティ",
+        "アクセシビリティ",
+        "デジタルデバイド"
+      ],
+      "answerIndex": 2,
+      "explanation": "例：画面の読み上げ、文字の拡大、字幕。"
+    },
+    {
+      "id": "inf_info105_004",
+      "category": "knowledge",
+      "prompt": "最初から、できるだけ多くの人が使いやすいように設計する考え方は？",
+      "choices": [
+        "レスポンシブデザイン",
+        "ユニバーサルデザイン",
+        "フラットデザイン",
+        "バリアフリー"
+      ],
+      "answerIndex": 1,
+      "explanation": "バリアフリーは、すでにある障壁を取り除く考え方。"
+    },
+    {
+      "id": "inf_info105_005",
+      "category": "knowledge",
+      "prompt": "利用者と機器・ソフトウェアとの接点（画面やボタンなど）を何という？",
+      "choices": [
+        "プロトコル",
+        "アルゴリズム",
+        "データベース",
+        "ユーザインタフェース"
+      ],
+      "answerIndex": 3,
+      "explanation": "UI と略す。"
+    },
+    {
+      "id": "inf_info105_006",
+      "category": "knowledge",
+      "prompt": "文字を使わずに、図で意味を伝える記号は？",
+      "choices": [
+        "フローチャート",
+        "ヒストグラム",
+        "ピクトグラム",
+        "バーコード"
+      ],
+      "answerIndex": 2,
+      "explanation": "非常口やトイレの案内などに使われる。"
+    },
+    {
+      "id": "inf_info105_007",
+      "category": "knowledge",
+      "prompt": "色の見え方の多様性に配慮した配色を何という？",
+      "choices": [
+        "カラーユニバーサルデザイン",
+        "モノクローム",
+        "グラデーション",
+        "カラーコード"
+      ],
+      "answerIndex": 0,
+      "explanation": "色だけでなく形や模様・文字でも区別できるようにする。"
+    },
+    {
+      "id": "inf_info105_008",
+      "category": "knowledge",
+      "prompt": "情報を「時間の順」に整理するのは、LATCH のどれ？",
+      "choices": [
+        "Time",
+        "Hierarchy",
+        "Location",
+        "Alphabet"
+      ],
+      "answerIndex": 0,
+      "explanation": "LATCH：位置・五十音（アルファベット）・時間・カテゴリー・階層。"
+    },
+    {
+      "id": "inf_info105_009",
+      "category": "knowledge",
+      "prompt": "ボタンのふくらみなど、形から「どう使えばよいか」が分かる性質を何という？",
+      "choices": [
+        "アフォーダンス",
+        "ユーザビリティ",
+        "インタラクション",
+        "アクセシビリティ"
+      ],
+      "answerIndex": 0,
+      "explanation": "例：取っ手を見ると「引けばいい」と分かる。"
+    },
+    {
+      "id": "inf_info105_010",
+      "category": "thinking",
+      "prompt": "非常口の案内がピクトグラムで表されている理由は？",
+      "choices": [
+        "言葉が分からなくても一目で伝わるから",
+        "法律で色が決まっていないから",
+        "かざりとして美しいから",
+        "文字より安く作れるから"
+      ],
+      "answerIndex": 0,
+      "explanation": "外国人や子どもにも、緊急時にすぐ伝わる。"
+    },
+    {
+      "id": "inf_info105_011",
+      "category": "thinking",
+      "prompt": "赤と緑の色だけで「可」と「不可」を区別した表の問題点は？",
+      "choices": [
+        "表が長くなる",
+        "色の区別がつきにくい人には伝わらない",
+        "印刷できない",
+        "文字が大きすぎる"
+      ],
+      "answerIndex": 1,
+      "explanation": "記号や文字を併用すると、誰にでも伝わる。"
+    },
+    {
+      "id": "inf_info105_012",
+      "category": "thinking",
+      "prompt": "Web フォームの入力エラーの表示として最も親切なものは？",
+      "choices": [
+        "入力をすべて消す",
+        "何も表示しない",
+        "「エラー」とだけ表示する",
+        "どの欄がなぜまちがっているかを、その欄の近くに示す"
+      ],
+      "answerIndex": 3,
+      "explanation": "利用者が次に何をすればよいかが分かるように示す。"
+    }
+  ]
+}

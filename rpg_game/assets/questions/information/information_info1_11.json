@@ -1,0 +1,164 @@
+{
+  "setId": "information_info1_11",
+  "worldId": "information",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "inf_info111_001",
+      "category": "knowledge",
+      "prompt": "通信をするための約束事を何という？",
+      "choices": [
+        "プロトコル",
+        "アルゴリズム",
+        "ドメイン",
+        "インタフェース"
+      ],
+      "answerIndex": 0,
+      "explanation": "共通の約束事があるので、違う機器どうしでも通信できる。"
+    },
+    {
+      "id": "inf_info111_002",
+      "category": "knowledge",
+      "prompt": "Web ページのデータをやりとりするプロトコルは？",
+      "choices": [
+        "FTP",
+        "SMTP",
+        "IMAP",
+        "HTTP"
+      ],
+      "answerIndex": 3,
+      "explanation": "HyperText Transfer Protocol。"
+    },
+    {
+      "id": "inf_info111_003",
+      "category": "knowledge",
+      "prompt": "HTTP の通信を暗号化したものは？",
+      "choices": [
+        "HTTPS",
+        "POP",
+        "FTP",
+        "DNS"
+      ],
+      "answerIndex": 0,
+      "explanation": "SSL/TLS で暗号化する。URL が https:// で始まる。"
+    },
+    {
+      "id": "inf_info111_004",
+      "category": "knowledge",
+      "prompt": "電子メールを送信するときのプロトコルは？",
+      "choices": [
+        "IMAP",
+        "POP",
+        "SMTP",
+        "HTTP"
+      ],
+      "answerIndex": 2,
+      "explanation": "受信には POP（端末にダウンロード）や IMAP（サーバで管理）を使う。"
+    },
+    {
+      "id": "inf_info111_005",
+      "category": "knowledge",
+      "prompt": "メールをサーバに残したまま、複数の端末で読めるようにする受信のプロトコルは？",
+      "choices": [
+        "FTP",
+        "SMTP",
+        "IMAP",
+        "POP"
+      ],
+      "answerIndex": 2,
+      "explanation": "POP は基本的に端末へダウンロードして読む。"
+    },
+    {
+      "id": "inf_info111_006",
+      "category": "knowledge",
+      "prompt": "URL「https://www.example.jp/index.html」のドメイン名は？",
+      "choices": [
+        "https",
+        "www.example.jp",
+        "example",
+        "index.html"
+      ],
+      "answerIndex": 1,
+      "explanation": "スキーム（https）・ドメイン名・パス（index.html）からなる。"
+    },
+    {
+      "id": "inf_info111_007",
+      "category": "knowledge",
+      "prompt": "Web ページの文章の構造（見出し・段落など）を表す言語は？",
+      "choices": [
+        "SQL",
+        "Python",
+        "CSS",
+        "HTML"
+      ],
+      "answerIndex": 3,
+      "explanation": "見た目（色・配置）は CSS で指定する。"
+    },
+    {
+      "id": "inf_info111_008",
+      "category": "knowledge",
+      "prompt": "Web ブラウザの中で動き、ページに動きをつけるプログラミング言語は？",
+      "choices": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "SMTP"
+      ],
+      "answerIndex": 2,
+      "explanation": "Java とは別の言語。"
+    },
+    {
+      "id": "inf_info111_009",
+      "category": "knowledge",
+      "prompt": "Web サイトがブラウザに保存させる小さなデータ（ログイン状態の記録など）は？",
+      "choices": [
+        "Cookie",
+        "パケット",
+        "ドメイン",
+        "キャッシュメモリ"
+      ],
+      "answerIndex": 0,
+      "explanation": "便利だが、共用パソコンではログアウトを忘れないようにする。"
+    },
+    {
+      "id": "inf_info111_010",
+      "category": "knowledge",
+      "prompt": "ソフトウェアやデータを、インターネット経由でサービスとして利用する形態は？",
+      "choices": [
+        "クラウド",
+        "オフライン",
+        "スタンドアロン",
+        "ハブ"
+      ],
+      "answerIndex": 0,
+      "explanation": "例：オンラインストレージ、Web メール。"
+    },
+    {
+      "id": "inf_info111_011",
+      "category": "knowledge",
+      "prompt": "TCP/IP の階層モデルで、HTTP やメールのプロトコルがふくまれる層は？",
+      "choices": [
+        "ネットワークインタフェース層",
+        "トランスポート層",
+        "アプリケーション層",
+        "インターネット層"
+      ],
+      "answerIndex": 2,
+      "explanation": "TCP・UDP はトランスポート層、IP はインターネット層。"
+    },
+    {
+      "id": "inf_info111_012",
+      "category": "thinking",
+      "prompt": "Web ページの送受信に TCP が使われる主な理由は？",
+      "choices": [
+        "ドメイン名を調べるから",
+        "暗号化されるから",
+        "最も速いから",
+        "データが正しく順番どおり届いたかを確認し、届かなければ再送するから"
+      ],
+      "answerIndex": 3,
+      "explanation": "信頼性を重視する通信に向いている。"
+    }
+  ]
+}

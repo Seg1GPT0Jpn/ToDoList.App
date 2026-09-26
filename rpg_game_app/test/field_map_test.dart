@@ -148,15 +148,38 @@ void main() {
     FieldMap.english.start,
   );
 
-  final science = RpgCatalog.world(ScienceCatalog.worldId);
-  for (final b in ScienceCatalog.branches) {
-    final map = FieldMap.byId('science_${b.id}');
-    checkRoute(
-      '理の国・${b.name}',
-      map,
-      science.stages.where((s) => s.branch == b.id).toList(),
-      map.spawnFrom('science_hub'),
-    );
+  for (final world in RpgCatalog.worlds.where((w) => w.routes.isNotEmpty)) {
+    for (final r in world.routes) {
+      final map = FieldMap.byId('${world.id}_${r.id}');
+      checkRoute(
+        '${world.name}・${r.name}',
+        map,
+        world.stages.where((s) => s.branch == r.id).toList(),
+        world.routes.length > 1 ? map.spawnFrom('${world.id}_hub') : map.start,
+      );
+    }
+    if (world.routes.length > 1) {
+      test('${world.name}のハブ：すべてのルートの出入口に歩いて行ける', () {
+        final hub = FieldMap.byId('${world.id}_hub');
+        expect(
+          {for (final p in hub.portals.values) p.target},
+          {for (final r in world.routes) '${world.id}_${r.id}'},
+        );
+        final start = hub.start;
+        final seen = <(int, int)>{(start.col, start.row)};
+        final queue = Queue.of([(start.col, start.row)]);
+        while (queue.isNotEmpty) {
+          final (c, rr) = queue.removeFirst();
+          for (final (dc, dr) in [(0, 1), (0, -1), (1, 0), (-1, 0)]) {
+            final n = (c + dc, rr + dr);
+            if (hub.isFloor(n.$1, n.$2) && seen.add(n)) queue.add(n);
+          }
+        }
+        for (final p in hub.portals.keys) {
+          expect(adjacent(seen, p), isTrue, reason: '$p');
+        }
+      });
+    }
   }
 
   group('理の国のスタート地点', () {

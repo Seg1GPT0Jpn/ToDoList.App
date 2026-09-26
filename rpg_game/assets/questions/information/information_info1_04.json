@@ -1,0 +1,164 @@
+{
+  "setId": "information_info1_04",
+  "worldId": "information",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "inf_info104_001",
+      "category": "knowledge",
+      "prompt": "PDCA サイクルの順番として正しいものは？",
+      "choices": [
+        "評価 → 改善 → 計画 → 実行",
+        "計画 → 実行 → 評価 → 改善",
+        "実行 → 計画 → 改善 → 評価",
+        "改善 → 評価 → 実行 → 計画"
+      ],
+      "answerIndex": 1,
+      "explanation": "Plan・Do・Check・Action の頭文字。回すほど改善される。"
+    },
+    {
+      "id": "inf_info104_002",
+      "category": "knowledge",
+      "prompt": "問題解決の最初の段階で行うことは？",
+      "choices": [
+        "報告書を書く",
+        "現状と理想のギャップ（問題）を見つける",
+        "結果を評価する",
+        "解決策を実行する"
+      ],
+      "answerIndex": 1,
+      "explanation": "問題の発見 → 分析・明確化 → 解決策の立案 → 実行 → 評価。"
+    },
+    {
+      "id": "inf_info104_003",
+      "category": "knowledge",
+      "prompt": "物事の本質的な部分を取り出して単純化して表したものは？",
+      "choices": [
+        "シミュレーション",
+        "アルゴリズム",
+        "モデル",
+        "プロトコル"
+      ],
+      "answerIndex": 2,
+      "explanation": "模型・図・数式などで表す。"
+    },
+    {
+      "id": "inf_info104_004",
+      "category": "knowledge",
+      "prompt": "モデルを使って、現実の現象を模擬的に再現してみることは？",
+      "choices": [
+        "モデル化",
+        "エンコード",
+        "シミュレーション",
+        "デバッグ"
+      ],
+      "answerIndex": 2,
+      "explanation": "実際に試すのが難しい・危険・お金がかかる場合に役立つ。"
+    },
+    {
+      "id": "inf_info104_005",
+      "category": "knowledge",
+      "prompt": "「y ＝ 1000 ＋ 500x」のように数式で表したモデルを何という？",
+      "choices": [
+        "数式モデル",
+        "拡大モデル",
+        "実物モデル",
+        "図的モデル"
+      ],
+      "answerIndex": 0,
+      "explanation": "ほかに、図で表す図的モデル、模型などの実物モデルがある。"
+    },
+    {
+      "id": "inf_info104_006",
+      "category": "knowledge",
+      "prompt": "サイコロのように偶然の要素をふくむモデルは？",
+      "choices": [
+        "実物モデル",
+        "確率的モデル",
+        "静的モデル",
+        "確定的モデル"
+      ],
+      "answerIndex": 1,
+      "explanation": "結果が一通りに決まるモデルは確定的モデル。"
+    },
+    {
+      "id": "inf_info104_007",
+      "category": "knowledge",
+      "prompt": "批判せずに、質より量を重視してアイデアを出し合う方法は？",
+      "choices": [
+        "KJ法",
+        "PDCA",
+        "フローチャート",
+        "ブレーンストーミング"
+      ],
+      "answerIndex": 3,
+      "explanation": "出たアイデアを整理するのに KJ 法などを使う。"
+    },
+    {
+      "id": "inf_info104_008",
+      "category": "knowledge",
+      "prompt": "カードに書いたアイデアをグループにまとめて整理する方法は？",
+      "choices": [
+        "KJ法",
+        "ブレーンストーミング",
+        "二分探索",
+        "クロス集計"
+      ],
+      "answerIndex": 0,
+      "explanation": "川喜田二郎が考案した。"
+    },
+    {
+      "id": "inf_info104_009",
+      "category": "calculation",
+      "prompt": "最初 1000 円あり、毎月 500 円ずつ貯金する。6 か月後の貯金額は？（y ＝ 1000 ＋ 500x）",
+      "choices": [
+        "4000 円",
+        "3500 円",
+        "6500 円",
+        "3000 円"
+      ],
+      "answerIndex": 0,
+      "explanation": "y ＝ 1000 ＋ 500 × 6 ＝ 4000 円。"
+    },
+    {
+      "id": "inf_info104_010",
+      "category": "calculation",
+      "prompt": "200 人にアンケートをとり、30 % が「はい」と答えた。「はい」は何人？",
+      "choices": [
+        "600 人",
+        "170 人",
+        "60 人",
+        "30 人"
+      ],
+      "answerIndex": 2,
+      "explanation": "200 × 0.30 ＝ 60 人。"
+    },
+    {
+      "id": "inf_info104_011",
+      "category": "thinking",
+      "prompt": "アンケートの質問文で、回答のかたよりを減らすために気をつけることは？",
+      "choices": [
+        "答えやすいように答えを書いておく",
+        "できるだけ長い文章にする",
+        "特定の答えに誘導しない中立的な言い方にする",
+        "選択肢を1つだけにする"
+      ],
+      "answerIndex": 2,
+      "explanation": "「〜は良いと思いませんか」のような誘導的な質問は避ける。"
+    },
+    {
+      "id": "inf_info104_012",
+      "category": "thinking",
+      "prompt": "シミュレーションの結果が現実と大きくずれた。PDCA ではまず何をする？",
+      "choices": [
+        "モデルの前提や数値を見直して改善する",
+        "結果をそのまま発表する",
+        "シミュレーションをやめる",
+        "現実のデータを消す"
+      ],
+      "answerIndex": 0,
+      "explanation": "評価（Check）して改善（Action）し、次の計画に生かす。"
+    }
+  ]
+}
