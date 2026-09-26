@@ -1,0 +1,216 @@
+{
+  "setId": "science_biology_13",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_bio13_001",
+      "category": "knowledge",
+      "prompt": "真核生物の転写直後の RNA から、イントロンの部分が取り除かれる過程を何という？",
+      "choices": [
+        "翻訳",
+        "複製",
+        "スプライシング",
+        "逆転写"
+      ],
+      "answerIndex": 2,
+      "explanation": "エキソンの部分がつなぎ合わされて mRNA になる。"
+    },
+    {
+      "id": "sci_bio13_002",
+      "category": "knowledge",
+      "prompt": "1 つの遺伝子から、スプライシングのしかたを変えて複数種類の mRNA をつくるしくみは？",
+      "choices": [
+        "フレームシフト",
+        "オペロン",
+        "組換え",
+        "選択的スプライシング"
+      ],
+      "answerIndex": 3,
+      "explanation": "これにより、遺伝子の数より多くの種類のタンパク質がつくられる。"
+    },
+    {
+      "id": "sci_bio13_003",
+      "category": "knowledge",
+      "prompt": "翻訳のとき、アミノ酸をリボソームへ運ぶ RNA は？",
+      "choices": [
+        "mRNA",
+        "DNA",
+        "rRNA",
+        "tRNA（転移 RNA）"
+      ],
+      "answerIndex": 3,
+      "explanation": "tRNA のアンチコドンが mRNA のコドンと相補的に結合する。"
+    },
+    {
+      "id": "sci_bio13_004",
+      "category": "knowledge",
+      "prompt": "翻訳の開始点となるコドンは？",
+      "choices": [
+        "AUG",
+        "UAA",
+        "UGA",
+        "GGG"
+      ],
+      "answerIndex": 0,
+      "explanation": "AUG はメチオニンを指定し、開始コドンとしてはたらく。UAA・UAG・UGA は終止コドン。"
+    },
+    {
+      "id": "sci_bio13_005",
+      "category": "knowledge",
+      "prompt": "転写を行う酵素は？",
+      "choices": [
+        "RNA ポリメラーゼ",
+        "DNA リガーゼ",
+        "制限酵素",
+        "DNA ポリメラーゼ"
+      ],
+      "answerIndex": 0,
+      "explanation": "RNA ポリメラーゼは、遺伝子の上流にあるプロモーターに結合して転写を始める。"
+    },
+    {
+      "id": "sci_bio13_006",
+      "category": "knowledge",
+      "prompt": "原核生物で、関連する複数の遺伝子がまとまって転写調節される単位を何という？",
+      "choices": [
+        "オペロン",
+        "エキソン",
+        "プラスミド",
+        "コドン"
+      ],
+      "answerIndex": 0,
+      "explanation": "例：大腸菌のラクトースオペロン。"
+    },
+    {
+      "id": "sci_bio13_007",
+      "category": "knowledge",
+      "prompt": "オペレーターに結合して、転写をおさえるタンパク質は？",
+      "choices": [
+        "リプレッサー（抑制因子）",
+        "tRNA",
+        "RNA ポリメラーゼ",
+        "インスリン"
+      ],
+      "answerIndex": 0,
+      "explanation": "リプレッサーは調節遺伝子からつくられる。"
+    },
+    {
+      "id": "sci_bio13_008",
+      "category": "knowledge",
+      "prompt": "原核生物の転写と翻訳の特徴として正しいものは？",
+      "choices": [
+        "翻訳は行われない",
+        "スプライシングが必ず起こる",
+        "核膜がないので、転写と翻訳がほぼ同時に進む",
+        "転写は核内、翻訳は細胞質で行う"
+      ],
+      "answerIndex": 2,
+      "explanation": "真核生物では核内で転写とスプライシングが行われ、mRNA が細胞質へ移動して翻訳される。"
+    },
+    {
+      "id": "sci_bio13_009",
+      "category": "knowledge",
+      "prompt": "DNA の塩基が 1 つ挿入されたり欠失したりして、それ以降のコドンの読みわくがずれることを何という？",
+      "choices": [
+        "置換",
+        "組換え",
+        "フレームシフト",
+        "スプライシング"
+      ],
+      "answerIndex": 2,
+      "explanation": "それ以降のアミノ酸が大きく変わり、多くの場合タンパク質ははたらかなくなる。"
+    },
+    {
+      "id": "sci_bio13_010",
+      "category": "knowledge",
+      "prompt": "鎌状赤血球症の原因となる突然変異は？",
+      "choices": [
+        "遺伝子の重複",
+        "染色体の数の変化",
+        "1 塩基の置換",
+        "スプライシングの停止"
+      ],
+      "answerIndex": 2,
+      "explanation": "ヘモグロビン遺伝子の 1 塩基の置換で、アミノ酸が 1 つ（グルタミン酸 → バリン）変わる。"
+    },
+    {
+      "id": "sci_bio13_011",
+      "category": "knowledge",
+      "prompt": "特定の塩基配列を認識して DNA を切断する酵素は？",
+      "choices": [
+        "DNA リガーゼ",
+        "アミラーゼ",
+        "RNA ポリメラーゼ",
+        "制限酵素"
+      ],
+      "answerIndex": 3,
+      "explanation": "切断した DNA 断片を DNA リガーゼでつなぎ、プラスミドなどに組みこむ（遺伝子組換え）。"
+    },
+    {
+      "id": "sci_bio13_012",
+      "category": "knowledge",
+      "prompt": "DNA の特定の領域を短時間で大量に増やす方法は？",
+      "choices": [
+        "電気泳動法",
+        "サンガー法",
+        "PCR 法",
+        "検定交雑"
+      ],
+      "answerIndex": 2,
+      "explanation": "加熱と冷却をくり返し、耐熱性の DNA ポリメラーゼで複製させる。"
+    },
+    {
+      "id": "sci_bio13_013",
+      "category": "calculation",
+      "prompt": "mRNA の 4 種類の塩基で、3 つの並び（コドン）は何通りつくれる？",
+      "choices": [
+        "12 通り",
+        "81 通り",
+        "64 通り",
+        "20 通り"
+      ],
+      "answerIndex": 2,
+      "explanation": "4³ ＝ 64 通り。アミノ酸は 20 種類なので、1 つのアミノ酸に複数のコドンが対応するものがある。"
+    },
+    {
+      "id": "sci_bio13_014",
+      "category": "calculation",
+      "prompt": "PCR で 1 本の二本鎖 DNA を 3 サイクル増幅すると、理論上何本になる？",
+      "choices": [
+        "3 本",
+        "9 本",
+        "8 本",
+        "6 本"
+      ],
+      "answerIndex": 2,
+      "explanation": "1 サイクルごとに 2 倍になるので 2³ ＝ 8 本。"
+    },
+    {
+      "id": "sci_bio13_015",
+      "category": "thinking",
+      "prompt": "大腸菌のラクトースオペロンで、培地にラクトースがあると分解酵素の遺伝子が転写される理由は？",
+      "choices": [
+        "ラクトースの代謝物がリプレッサーに結合し、リプレッサーがオペレーターから離れるから",
+        "ラクトースが RNA ポリメラーゼになるから",
+        "リプレッサーが増えるから",
+        "ラクトースが DNA を切るから"
+      ],
+      "answerIndex": 0,
+      "explanation": "必要なときだけ酵素をつくる、むだのないしくみ。"
+    },
+    {
+      "id": "sci_bio13_016",
+      "category": "thinking",
+      "prompt": "遺伝子のはじめの方で 1 塩基が欠失した場合、1 塩基が置換した場合と比べて影響はどうなることが多い？",
+      "choices": [
+        "必ず影響がない",
+        "小さい",
+        "大きい（読みわくがずれて多くのアミノ酸が変わるため）",
+        "同じ"
+      ],
+      "answerIndex": 2,
+      "explanation": "置換では変わるアミノ酸は多くて 1 つ（変わらないこともある）だが、欠失ではフレームシフトが起こる。"
+    }
+  ]
+}

@@ -1,0 +1,216 @@
+{
+  "setId": "science_chemistry_08",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_chm08_001",
+      "category": "knowledge",
+      "prompt": "「酸化された」といえるのはどれ？",
+      "choices": [
+        "電子を失った",
+        "酸素を失った",
+        "水素を受け取った",
+        "電子を受け取った"
+      ],
+      "answerIndex": 0,
+      "explanation": "酸化＝酸素を受け取る・水素を失う・電子を失う・酸化数が増える。"
+    },
+    {
+      "id": "sci_chm08_002",
+      "category": "knowledge",
+      "prompt": "酸化剤とは？",
+      "choices": [
+        "相手を酸化し、自分は還元される物質",
+        "反応しない物質",
+        "酸素だけのこと",
+        "相手を還元し、自分は酸化される物質"
+      ],
+      "answerIndex": 0,
+      "explanation": "酸化剤は電子を受け取る。例：KMnO₄、H₂O₂、Cl₂。"
+    },
+    {
+      "id": "sci_chm08_003",
+      "category": "knowledge",
+      "prompt": "単体中の原子の酸化数は？",
+      "choices": [
+        "＋2",
+        "−1",
+        "0",
+        "＋1"
+      ],
+      "answerIndex": 2,
+      "explanation": "H₂・O₂・Fe など単体では 0。化合物中の O はふつう −2、H は ＋1。"
+    },
+    {
+      "id": "sci_chm08_004",
+      "category": "knowledge",
+      "prompt": "イオン化傾向が大きい金属ほど、どうなりやすい？",
+      "choices": [
+        "還元されやすい",
+        "陰イオンになりやすい",
+        "反応しにくい",
+        "陽イオンになりやすい（酸化されやすい）"
+      ],
+      "answerIndex": 3,
+      "explanation": "Li > K > Ca > Na > Mg > Al > Zn > Fe > Ni > Sn > Pb > (H₂) > Cu > Hg > Ag > Pt > Au。"
+    },
+    {
+      "id": "sci_chm08_005",
+      "category": "knowledge",
+      "prompt": "金や白金を溶かすことができるのは？",
+      "choices": [
+        "王水（濃塩酸と濃硝酸の混合物）",
+        "濃硫酸だけ",
+        "希塩酸",
+        "水"
+      ],
+      "answerIndex": 0,
+      "explanation": "Pt・Au はイオン化傾向が非常に小さく、王水にしか溶けない。"
+    },
+    {
+      "id": "sci_chm08_006",
+      "category": "knowledge",
+      "prompt": "電池の負極で起こる反応は？",
+      "choices": [
+        "還元反応",
+        "中和反応",
+        "酸化反応（電子を放出）",
+        "何も起こらない"
+      ],
+      "answerIndex": 2,
+      "explanation": "負極で電子が出て導線を流れ、正極で還元反応が起こる。"
+    },
+    {
+      "id": "sci_chm08_007",
+      "category": "knowledge",
+      "prompt": "鉄板に亜鉛をめっきしたもの（トタン）が、傷がついてもさびにくい理由は？",
+      "choices": [
+        "亜鉛の方がイオン化傾向が大きく、先に酸化されるから",
+        "亜鉛が酸素を通さないから",
+        "亜鉛が電気を通さないから",
+        "亜鉛が鉄より硬いから"
+      ],
+      "answerIndex": 0,
+      "explanation": "亜鉛が鉄の代わりに酸化されて、鉄を守る。ブリキ（スズめっき）は傷がつくと鉄が先にさびる。"
+    },
+    {
+      "id": "sci_chm08_008",
+      "category": "knowledge",
+      "prompt": "還元剤はどれ？",
+      "choices": [
+        "水素 H₂",
+        "オゾン O₃",
+        "塩素 Cl₂",
+        "過マンガン酸カリウム KMnO₄"
+      ],
+      "answerIndex": 0,
+      "explanation": "H₂ は相手を還元して自分は酸化される。他の3つは代表的な酸化剤。"
+    },
+    {
+      "id": "sci_chm08_009",
+      "category": "calculation",
+      "prompt": "硫酸 H₂SO₄ の S の酸化数は？",
+      "choices": [
+        "−2",
+        "＋6",
+        "＋4",
+        "＋2"
+      ],
+      "answerIndex": 1,
+      "explanation": "(＋1)×2 ＋ x ＋ (−2)×4 ＝ 0 より x ＝ ＋6。"
+    },
+    {
+      "id": "sci_chm08_010",
+      "category": "calculation",
+      "prompt": "過マンガン酸カリウム KMnO₄ の Mn の酸化数は？",
+      "choices": [
+        "＋4",
+        "＋6",
+        "＋2",
+        "＋7"
+      ],
+      "answerIndex": 3,
+      "explanation": "(＋1) ＋ x ＋ (−2)×4 ＝ 0 より x ＝ ＋7。"
+    },
+    {
+      "id": "sci_chm08_011",
+      "category": "calculation",
+      "prompt": "アンモニア NH₃ の N の酸化数は？",
+      "choices": [
+        "−3",
+        "＋3",
+        "＋5",
+        "0"
+      ],
+      "answerIndex": 0,
+      "explanation": "x ＋ (＋1)×3 ＝ 0 より x ＝ −3。"
+    },
+    {
+      "id": "sci_chm08_012",
+      "category": "calculation",
+      "prompt": "二クロム酸イオン Cr₂O₇²⁻ の Cr の酸化数は？",
+      "choices": [
+        "＋6",
+        "＋3",
+        "＋7",
+        "＋12"
+      ],
+      "answerIndex": 0,
+      "explanation": "2x ＋ (−2)×7 ＝ −2 より x ＝ ＋6。"
+    },
+    {
+      "id": "sci_chm08_013",
+      "category": "calculation",
+      "prompt": "過酸化水素 H₂O₂ の O の酸化数は？",
+      "choices": [
+        "−2",
+        "−1",
+        "＋1",
+        "0"
+      ],
+      "answerIndex": 1,
+      "explanation": "2 × (＋1) ＋ 2x ＝ 0 より x ＝ −1。O が −2 にならない例外。"
+    },
+    {
+      "id": "sci_chm08_014",
+      "category": "calculation",
+      "prompt": "酸化鉄(Ⅲ) Fe₂O₃ の Fe の酸化数は？",
+      "choices": [
+        "＋2",
+        "＋3",
+        "＋6",
+        "−3"
+      ],
+      "answerIndex": 1,
+      "explanation": "2x ＋ (−2)×3 ＝ 0 より x ＝ ＋3。"
+    },
+    {
+      "id": "sci_chm08_015",
+      "category": "thinking",
+      "prompt": "銅線を硝酸銀水溶液に入れると、銅線の表面に銀が出てきた。わかることは？",
+      "choices": [
+        "銀が酸化された",
+        "銀の方が銅よりイオン化傾向が大きい",
+        "銅が還元された",
+        "銅の方が銀よりイオン化傾向が大きい"
+      ],
+      "answerIndex": 3,
+      "explanation": "Cu → Cu²⁺ ＋ 2e⁻（酸化）、Ag⁺ ＋ e⁻ → Ag（還元）。溶液は Cu²⁺ で青くなる。"
+    },
+    {
+      "id": "sci_chm08_016",
+      "category": "thinking",
+      "prompt": "CuO ＋ H₂ → Cu ＋ H₂O の反応で、還元剤としてはたらいているのは？",
+      "choices": [
+        "CuO",
+        "Cu",
+        "H₂",
+        "H₂O"
+      ],
+      "answerIndex": 2,
+      "explanation": "H₂ は酸素を受け取り（酸化され）、CuO を還元している。"
+    }
+  ]
+}

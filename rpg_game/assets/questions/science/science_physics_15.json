@@ -1,0 +1,216 @@
+{
+  "setId": "science_physics_15",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_phy15_001",
+      "category": "knowledge",
+      "prompt": "まっすぐな導線に電流を流したときの磁場の向きを知る方法は？",
+      "choices": [
+        "右ねじの法則",
+        "フレミングの左手の法則",
+        "レンツの法則",
+        "オームの法則"
+      ],
+      "answerIndex": 0,
+      "explanation": "電流の向きに右ねじを進めると、ねじを回す向きが磁場の向き。"
+    },
+    {
+      "id": "sci_phy15_002",
+      "category": "knowledge",
+      "prompt": "磁場の中の電流が受ける力の向きを知る方法は？",
+      "choices": [
+        "ケプラーの法則",
+        "フレミングの左手の法則",
+        "右ねじの法則",
+        "フックの法則"
+      ],
+      "answerIndex": 1,
+      "explanation": "中指＝電流、人さし指＝磁場、親指＝力。"
+    },
+    {
+      "id": "sci_phy15_003",
+      "category": "knowledge",
+      "prompt": "磁場の中を運動する荷電粒子が受ける力を何という？",
+      "choices": [
+        "向心力",
+        "クーロン力",
+        "ローレンツ力",
+        "浮力"
+      ],
+      "answerIndex": 2,
+      "explanation": "大きさは qvB（速度と磁場が垂直のとき）。運動の向きに垂直なので仕事をしない。"
+    },
+    {
+      "id": "sci_phy15_004",
+      "category": "knowledge",
+      "prompt": "誘導起電力の向きについての法則（磁束の変化を妨げる向きに電流が流れる）は？",
+      "choices": [
+        "オームの法則",
+        "レンツの法則",
+        "ファラデーの法則",
+        "クーロンの法則"
+      ],
+      "answerIndex": 1,
+      "explanation": "大きさはファラデーの電磁誘導の法則 V ＝ −N ΔΦ/Δt で、マイナスがレンツの法則を表す。"
+    },
+    {
+      "id": "sci_phy15_005",
+      "category": "knowledge",
+      "prompt": "誘導起電力の大きさを決めるものは？",
+      "choices": [
+        "コイルの質量",
+        "コイルを貫く磁束の単位時間あたりの変化",
+        "磁束の大きさそのもの",
+        "コイルの色"
+      ],
+      "answerIndex": 1,
+      "explanation": "V ＝ N ΔΦ/Δt。磁束が変化しなければ、どんなに強い磁石でも起電力は生じない。"
+    },
+    {
+      "id": "sci_phy15_006",
+      "category": "knowledge",
+      "prompt": "磁束密度の単位は？",
+      "choices": [
+        "F（ファラド）",
+        "H（ヘンリー）",
+        "T（テスラ）",
+        "Wb（ウェーバ）"
+      ],
+      "answerIndex": 2,
+      "explanation": "磁束 Φ（Wb）＝ 磁束密度 B（T）× 面積 S（m²）。"
+    },
+    {
+      "id": "sci_phy15_007",
+      "category": "knowledge",
+      "prompt": "家庭用の交流 100 V の「100 V」は何を表す？",
+      "choices": [
+        "最大値",
+        "瞬間値",
+        "実効値",
+        "平均値"
+      ],
+      "answerIndex": 2,
+      "explanation": "実効値＝最大値 ÷ √2。100 V の交流の最大値は約 141 V。"
+    },
+    {
+      "id": "sci_phy15_008",
+      "category": "knowledge",
+      "prompt": "変圧器（トランス）の一次・二次コイルの電圧の比は？",
+      "choices": [
+        "常に 1",
+        "巻数の比に等しい",
+        "巻数の2乗の比",
+        "巻数の逆比"
+      ],
+      "answerIndex": 1,
+      "explanation": "V₁ : V₂ ＝ N₁ : N₂。電力は（理想的には）変わらない。"
+    },
+    {
+      "id": "sci_phy15_009",
+      "category": "calculation",
+      "prompt": "磁束密度 0.40 T の磁場に垂直な、長さ 0.50 m の導線に 2.0 A の電流を流した。受ける力は？",
+      "choices": [
+        "0.40 N",
+        "4.0 N",
+        "1.6 N",
+        "0.10 N"
+      ],
+      "answerIndex": 0,
+      "explanation": "F ＝ IBL ＝ 2.0 × 0.40 × 0.50 ＝ 0.40 N。"
+    },
+    {
+      "id": "sci_phy15_010",
+      "category": "calculation",
+      "prompt": "電気量 1.6 × 10⁻¹⁹ C の粒子が、磁束密度 0.50 T の磁場に垂直に 1.0 × 10⁶ m/s で入った。ローレンツ力は？",
+      "choices": [
+        "8.0 × 10⁻²⁰ N",
+        "3.2 × 10⁻¹³ N",
+        "1.6 × 10⁻¹³ N",
+        "8.0 × 10⁻¹⁴ N"
+      ],
+      "answerIndex": 3,
+      "explanation": "f ＝ qvB ＝ 1.6×10⁻¹⁹ × 1.0×10⁶ × 0.50 ＝ 8.0 × 10⁻¹⁴ N。"
+    },
+    {
+      "id": "sci_phy15_011",
+      "category": "calculation",
+      "prompt": "巻数 100 のコイルを貫く磁束が、0.10 s 間に 0.020 Wb から 0 に変化した。誘導起電力の大きさは？",
+      "choices": [
+        "200 V",
+        "2.0 V",
+        "20 V",
+        "0.20 V"
+      ],
+      "answerIndex": 2,
+      "explanation": "V ＝ N ΔΦ/Δt ＝ 100 × 0.020 ÷ 0.10 ＝ 20 V。"
+    },
+    {
+      "id": "sci_phy15_012",
+      "category": "calculation",
+      "prompt": "長さ 0.50 m の導体棒が、磁束密度 0.40 T の磁場に垂直に 2.0 m/s で動く。誘導起電力は？",
+      "choices": [
+        "0.40 V",
+        "1.6 V",
+        "0.10 V",
+        "4.0 V"
+      ],
+      "answerIndex": 0,
+      "explanation": "V ＝ vBL ＝ 2.0 × 0.40 × 0.50 ＝ 0.40 V。"
+    },
+    {
+      "id": "sci_phy15_013",
+      "category": "calculation",
+      "prompt": "一次コイル 1000 回、二次コイル 50 回の変圧器の一次側に 100 V をかけた。二次側の電圧は？",
+      "choices": [
+        "5.0 V",
+        "50 V",
+        "2000 V",
+        "0.50 V"
+      ],
+      "answerIndex": 0,
+      "explanation": "V₂ ＝ V₁ × N₂/N₁ ＝ 100 × 50/1000 ＝ 5.0 V。"
+    },
+    {
+      "id": "sci_phy15_014",
+      "category": "calculation",
+      "prompt": "最大値 141 V の交流電圧の実効値はおよそ？",
+      "choices": [
+        "70 V",
+        "141 V",
+        "200 V",
+        "100 V"
+      ],
+      "answerIndex": 3,
+      "explanation": "実効値＝最大値 ÷ √2 ＝ 141 ÷ 1.41 ≒ 100 V。"
+    },
+    {
+      "id": "sci_phy15_015",
+      "category": "thinking",
+      "prompt": "コイルに磁石を近づけたときと遠ざけたときで、流れる誘導電流の向きは？",
+      "choices": [
+        "逆向きになる",
+        "同じ向き",
+        "どちらも流れない",
+        "近づけたときだけ流れる"
+      ],
+      "answerIndex": 0,
+      "explanation": "磁束が増えるときと減るときでは、それを妨げる向きが逆になる（レンツの法則）。"
+    },
+    {
+      "id": "sci_phy15_016",
+      "category": "thinking",
+      "prompt": "IH 調理器が鍋を温めるしくみは？",
+      "choices": [
+        "炎で直接温める",
+        "鍋に静電気をためる",
+        "変化する磁場で鍋の底に渦電流が流れ、ジュール熱が出る",
+        "赤外線だけで温める"
+      ],
+      "answerIndex": 2,
+      "explanation": "コイルの交流で磁場が変化し、電磁誘導で鍋の底に渦電流が生じて発熱する。"
+    }
+  ]
+}

@@ -1,0 +1,216 @@
+{
+  "setId": "science_earth_01",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_ear01_001",
+      "category": "knowledge",
+      "prompt": "地球の形に最も近いものは？",
+      "choices": [
+        "円盤",
+        "赤道方向に少しふくらんだ回転だ円体",
+        "南北に長いだ円体",
+        "完全な球"
+      ],
+      "answerIndex": 1,
+      "explanation": "自転の遠心力で赤道方向がわずかにふくらんでいる。偏平率は約 1/300。"
+    },
+    {
+      "id": "sci_ear01_002",
+      "category": "knowledge",
+      "prompt": "地球の全周（子午線の長さ）はおよそ？",
+      "choices": [
+        "1 万 km",
+        "4000 km",
+        "4 万 km",
+        "40 万 km"
+      ],
+      "answerIndex": 2,
+      "explanation": "メートルは、もともと子午線の長さの 4000 万分の 1 として決められた。"
+    },
+    {
+      "id": "sci_ear01_003",
+      "category": "knowledge",
+      "prompt": "紀元前に、2 地点の太陽の高度の差から地球の大きさを求めた人物は？",
+      "choices": [
+        "コペルニクス",
+        "ガリレイ",
+        "ケプラー",
+        "エラトステネス"
+      ],
+      "answerIndex": 3,
+      "explanation": "シエネとアレクサンドリアでの太陽高度の差（約 7.2°）と距離から全周を求めた。"
+    },
+    {
+      "id": "sci_ear01_004",
+      "category": "knowledge",
+      "prompt": "地球の内部構造を外側から順に並べたものは？",
+      "choices": [
+        "地殻 → マントル → 外核 → 内核",
+        "地殻 → 外核 → マントル → 内核",
+        "外核 → 地殻 → マントル → 内核",
+        "マントル → 地殻 → 内核 → 外核"
+      ],
+      "answerIndex": 0,
+      "explanation": "中心ほど密度が大きい物質が集まっている。"
+    },
+    {
+      "id": "sci_ear01_005",
+      "category": "knowledge",
+      "prompt": "地球の核の主成分は？",
+      "choices": [
+        "ケイ素",
+        "アルミニウム",
+        "水素",
+        "鉄"
+      ],
+      "answerIndex": 3,
+      "explanation": "鉄を主成分とし、ニッケルなどをふくむ。外核は液体、内核は固体。"
+    },
+    {
+      "id": "sci_ear01_006",
+      "category": "knowledge",
+      "prompt": "マントルをつくっている主な岩石は？",
+      "choices": [
+        "玄武岩",
+        "石灰岩",
+        "花こう岩",
+        "かんらん岩"
+      ],
+      "answerIndex": 3,
+      "explanation": "マントルは固体だが、長い時間をかけてゆっくり流動する。"
+    },
+    {
+      "id": "sci_ear01_007",
+      "category": "knowledge",
+      "prompt": "大陸地殻の上部をつくる主な岩石は？",
+      "choices": [
+        "玄武岩だけ",
+        "かんらん岩",
+        "花こう岩質の岩石",
+        "鉄"
+      ],
+      "answerIndex": 2,
+      "explanation": "大陸地殻は厚さ約 30〜60 km。海洋地殻は玄武岩質で厚さ約 5〜10 km。"
+    },
+    {
+      "id": "sci_ear01_008",
+      "category": "knowledge",
+      "prompt": "地殻とマントルの境界を何という？",
+      "choices": [
+        "海溝",
+        "モホロビチッチ不連続面（モホ面）",
+        "グーテンベルク不連続面",
+        "レーマン不連続面"
+      ],
+      "answerIndex": 1,
+      "explanation": "地震波の速さが急に変わることから発見された。"
+    },
+    {
+      "id": "sci_ear01_009",
+      "category": "knowledge",
+      "prompt": "地球の表面をおおう、かたい岩石の層（地殻とマントル最上部）を何という？",
+      "choices": [
+        "リソスフェア",
+        "外核",
+        "アセノスフェア",
+        "成層圏"
+      ],
+      "answerIndex": 0,
+      "explanation": "リソスフェアはプレートにあたる。その下のやわらかい層がアセノスフェア。"
+    },
+    {
+      "id": "sci_ear01_010",
+      "category": "knowledge",
+      "prompt": "地球の核のうち、液体でできているのは？",
+      "choices": [
+        "外核",
+        "マントル",
+        "内核",
+        "地殻"
+      ],
+      "answerIndex": 0,
+      "explanation": "外核は液体の鉄が対流しており、地磁気を生み出していると考えられている。"
+    },
+    {
+      "id": "sci_ear01_011",
+      "category": "knowledge",
+      "prompt": "海洋地殻をつくる主な岩石は？",
+      "choices": [
+        "花こう岩",
+        "砂岩",
+        "玄武岩",
+        "石灰岩"
+      ],
+      "answerIndex": 2,
+      "explanation": "海嶺でマグマが冷えてつくられる。大陸地殻より薄く、密度が大きい。"
+    },
+    {
+      "id": "sci_ear01_012",
+      "category": "calculation",
+      "prompt": "ある2地点で太陽の南中高度が 7.2° ちがい、2 地点の南北の距離が 900 km だった。地球の全周は？",
+      "choices": [
+        "6480 km",
+        "125 km",
+        "45000 km",
+        "9000 km"
+      ],
+      "answerIndex": 2,
+      "explanation": "7.2° が 900 km なので、360° では 900 × 360 ÷ 7.2 ＝ 45000 km。"
+    },
+    {
+      "id": "sci_ear01_013",
+      "category": "calculation",
+      "prompt": "地球の半径を 6400 km とすると、赤道の長さはおよそ？（π ＝ 3.14）",
+      "choices": [
+        "2.0 万 km",
+        "8.0 万 km",
+        "1.3 万 km",
+        "4.0 万 km"
+      ],
+      "answerIndex": 3,
+      "explanation": "2 × 3.14 × 6400 ≒ 40000 km。"
+    },
+    {
+      "id": "sci_ear01_014",
+      "category": "calculation",
+      "prompt": "地球の平均密度は約 5.5 g/cm³、地表の岩石は約 2.7 g/cm³。平均密度は地表の岩石のおよそ何倍？",
+      "choices": [
+        "2 倍",
+        "10 倍",
+        "5 倍",
+        "0.5 倍"
+      ],
+      "answerIndex": 0,
+      "explanation": "5.5 ÷ 2.7 ≒ 2.0。"
+    },
+    {
+      "id": "sci_ear01_015",
+      "category": "thinking",
+      "prompt": "月食のとき、月に映る地球の影がいつも円形であることからわかることは？",
+      "choices": [
+        "地球が自転していること",
+        "月が球形であること",
+        "地球が球形であること",
+        "太陽が大きいこと"
+      ],
+      "answerIndex": 2,
+      "explanation": "どの向きから見ても影が丸いのは、地球が球形だから。"
+    },
+    {
+      "id": "sci_ear01_016",
+      "category": "thinking",
+      "prompt": "地球の平均密度（約 5.5 g/cm³）が地表の岩石（約 2.7 g/cm³）よりずっと大きいことから考えられることは？",
+      "choices": [
+        "内部は水でできている",
+        "内部は空どうである",
+        "地表の岩石はすべて金属である",
+        "内部に密度の大きい物質（鉄の核など）がある"
+      ],
+      "answerIndex": 3,
+      "explanation": "深いところほど、密度の大きい物質が集まっていると考えられる。"
+    }
+  ]
+}

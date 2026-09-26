@@ -6,6 +6,7 @@ export 'src/battle/cards.dart';
 export 'src/battle/damage_calculator.dart';
 export 'src/battle/question_deck.dart';
 export 'src/data/catalog.dart';
+export 'src/data/science_catalog.dart';
 export 'src/data/firestore_paths.dart';
 export 'src/data/progress_repository.dart';
 export 'src/data/question_source.dart';

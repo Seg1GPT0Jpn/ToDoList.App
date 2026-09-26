@@ -1,0 +1,216 @@
+{
+  "setId": "science_physics_05",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_phy05_001",
+      "category": "knowledge",
+      "prompt": "仕事の単位は？",
+      "choices": [
+        "Pa（パスカル）",
+        "N（ニュートン）",
+        "W（ワット）",
+        "J（ジュール）"
+      ],
+      "answerIndex": 3,
+      "explanation": "仕事 W ＝ Fx。1 N の力で 1 m 動かしたときの仕事が 1 J。"
+    },
+    {
+      "id": "sci_phy05_002",
+      "category": "knowledge",
+      "prompt": "仕事率の単位は？",
+      "choices": [
+        "N（ニュートン）",
+        "kg",
+        "J（ジュール）",
+        "W（ワット）"
+      ],
+      "answerIndex": 3,
+      "explanation": "仕事率＝仕事 ÷ 時間。1 s 間に 1 J の仕事をする仕事率が 1 W（＝1 J/s）。"
+    },
+    {
+      "id": "sci_phy05_003",
+      "category": "knowledge",
+      "prompt": "質量 m、速さ v の物体の運動エネルギーは？",
+      "choices": [
+        "mv",
+        "mv²",
+        "½mv",
+        "½mv²"
+      ],
+      "answerIndex": 3,
+      "explanation": "運動エネルギー K ＝ ½mv²。速さが2倍になると4倍になる。"
+    },
+    {
+      "id": "sci_phy05_004",
+      "category": "knowledge",
+      "prompt": "基準面から高さ h にある質量 m の物体の、重力による位置エネルギーは？",
+      "choices": [
+        "mg/h",
+        "½mgh",
+        "mgh",
+        "mh"
+      ],
+      "answerIndex": 2,
+      "explanation": "重力による位置エネルギー U ＝ mgh。基準面の取り方で値が変わる。"
+    },
+    {
+      "id": "sci_phy05_005",
+      "category": "knowledge",
+      "prompt": "ばね定数 k のばねを x だけ伸ばしたときの弾性エネルギーは？",
+      "choices": [
+        "kx",
+        "½kx²",
+        "½kx",
+        "kx²"
+      ],
+      "answerIndex": 1,
+      "explanation": "弾性エネルギー ＝ ½kx²。伸ばすのに必要な仕事（F-x グラフの三角形の面積）に等しい。"
+    },
+    {
+      "id": "sci_phy05_006",
+      "category": "knowledge",
+      "prompt": "力学的エネルギー保存の法則が成り立つ条件は？",
+      "choices": [
+        "重力や弾性力（保存力）だけが仕事をするとき",
+        "物体が水平に動くとき",
+        "摩擦力が仕事をするとき",
+        "物体が止まっているとき"
+      ],
+      "answerIndex": 0,
+      "explanation": "保存力だけが仕事をするとき、運動エネルギー＋位置エネルギーが一定に保たれる。"
+    },
+    {
+      "id": "sci_phy05_007",
+      "category": "knowledge",
+      "prompt": "物体の移動の向きと力の向きが垂直なとき、その力がする仕事は？",
+      "choices": [
+        "負になる",
+        "0",
+        "最大になる",
+        "力の大きさと同じ"
+      ],
+      "answerIndex": 1,
+      "explanation": "W ＝ Fx cosθ で θ ＝ 90° なら cos90° ＝ 0。等速円運動の向心力も仕事をしない。"
+    },
+    {
+      "id": "sci_phy05_008",
+      "category": "knowledge",
+      "prompt": "摩擦のある面を物体がすべると、力学的エネルギーはどうなる？",
+      "choices": [
+        "変わらない",
+        "0 になる",
+        "増える",
+        "減って、その分が熱などに変わる"
+      ],
+      "answerIndex": 3,
+      "explanation": "動摩擦力が負の仕事をするので力学的エネルギーは減少し、熱エネルギーなどになる。"
+    },
+    {
+      "id": "sci_phy05_009",
+      "category": "calculation",
+      "prompt": "10 N の力で物体を力の向きに 3.0 m 動かした。仕事は？",
+      "choices": [
+        "30 J",
+        "13 J",
+        "3.3 J",
+        "0.30 J"
+      ],
+      "answerIndex": 0,
+      "explanation": "W ＝ Fx ＝ 10 × 3.0 ＝ 30 J。"
+    },
+    {
+      "id": "sci_phy05_010",
+      "category": "calculation",
+      "prompt": "質量 2.0 kg の物体が 3.0 m/s で動いている。運動エネルギーは？",
+      "choices": [
+        "3.0 J",
+        "6.0 J",
+        "18 J",
+        "9.0 J"
+      ],
+      "answerIndex": 3,
+      "explanation": "K ＝ ½mv² ＝ ½ × 2.0 × 3.0² ＝ 9.0 J。"
+    },
+    {
+      "id": "sci_phy05_011",
+      "category": "calculation",
+      "prompt": "質量 2.0 kg の物体を 5.0 m 持ち上げた。位置エネルギーの増加は？（g ＝ 9.8 m/s²）",
+      "choices": [
+        "10 J",
+        "20 J",
+        "49 J",
+        "98 J"
+      ],
+      "answerIndex": 3,
+      "explanation": "U ＝ mgh ＝ 2.0 × 9.8 × 5.0 ＝ 98 J。"
+    },
+    {
+      "id": "sci_phy05_012",
+      "category": "calculation",
+      "prompt": "600 J の仕事を 20 s でした。仕事率は？",
+      "choices": [
+        "30 W",
+        "0.033 W",
+        "12000 W",
+        "620 W"
+      ],
+      "answerIndex": 0,
+      "explanation": "P ＝ W/t ＝ 600 ÷ 20 ＝ 30 W。"
+    },
+    {
+      "id": "sci_phy05_013",
+      "category": "calculation",
+      "prompt": "高さ 5.0 m から静かに落とした物体の、床に着く直前の速さはおよそ？（g ＝ 9.8 m/s²、空気抵抗なし）",
+      "choices": [
+        "49 m/s",
+        "9.9 m/s",
+        "98 m/s",
+        "5.0 m/s"
+      ],
+      "answerIndex": 1,
+      "explanation": "mgh ＝ ½mv² より v ＝ √(2gh) ＝ √98 ≒ 9.9 m/s。"
+    },
+    {
+      "id": "sci_phy05_014",
+      "category": "calculation",
+      "prompt": "ばね定数 100 N/m のばねを 0.10 m 縮めた。弾性エネルギーは？",
+      "choices": [
+        "1.0 J",
+        "0.50 J",
+        "5.0 J",
+        "10 J"
+      ],
+      "answerIndex": 1,
+      "explanation": "½kx² ＝ ½ × 100 × 0.10² ＝ 0.50 J。"
+    },
+    {
+      "id": "sci_phy05_015",
+      "category": "thinking",
+      "prompt": "振り子（空気抵抗なし）で、おもりの速さが最大になるのはどこ？",
+      "choices": [
+        "最高点と最下点の真ん中",
+        "左右の最高点",
+        "どこでも同じ",
+        "最下点"
+      ],
+      "answerIndex": 3,
+      "explanation": "位置エネルギーが最小の最下点で、運動エネルギー（速さ）が最大になる。"
+    },
+    {
+      "id": "sci_phy05_016",
+      "category": "thinking",
+      "prompt": "摩擦のないジェットコースターが、出発点と同じ高さの地点を通るときの速さは？（出発時の速さは 0）",
+      "choices": [
+        "出発点の2倍になる",
+        "0 になる",
+        "コースの形によって必ず変わる",
+        "最大になる"
+      ],
+      "answerIndex": 1,
+      "explanation": "力学的エネルギー保存より、同じ高さなら位置エネルギーも同じなので、運動エネルギーも出発時と同じ 0。"
+    }
+  ]
+}

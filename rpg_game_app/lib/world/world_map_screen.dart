@@ -195,11 +195,11 @@ class WorldMapScreen extends StatelessWidget {
 /// 確認用：好きなエリアの敵とすぐに戦う（結果は保存しない）
 Future<void> _pickTrial(BuildContext context) async {
   final services = RpgServices.of(context);
-  final world = RpgCatalog.world(RpgCatalog.englishWorldId);
-  final stage = await showDialog<StageDef>(
+  // 教科 →（理科なら系統）→ エリア の順に選ぶ
+  Future<T?> choose<T>(String title, List<(String, T)> items) => showDialog<T>(
     context: context,
     builder: (c) => SimpleDialog(
-      title: const Text('エリアを選んでバトル（確認用）'),
+      title: Text(title),
       children: [
         const Padding(
           padding: EdgeInsets.fromLTRB(24, 0, 24, 8),
@@ -208,14 +208,33 @@ Future<void> _pickTrial(BuildContext context) async {
             style: TextStyle(fontSize: 12, color: TsuzuriColors.inkSoft),
           ),
         ),
-        for (final s in world.stages)
+        for (final (label, value) in items)
           SimpleDialogOption(
-            onPressed: () => Navigator.pop(c, s),
-            child: Text('${s.order}. ${s.name}（${s.grammarTheme}）'),
+            onPressed: () => Navigator.pop(c, value),
+            child: Text(label),
           ),
       ],
     ),
   );
+
+  final world = await choose('教科を選ぶ（確認用）', [
+    for (final w in RpgCatalog.worlds)
+      if (!w.isComingSoon) ('${w.subject}：${w.name}', w),
+  ]);
+  if (world == null || !context.mounted) return;
+  var stages = world.stages;
+  if (stages.any((s) => s.branch.isNotEmpty)) {
+    final branch = await choose('系統を選ぶ（確認用）', [
+      for (final b in ScienceCatalog.branches)
+        ('${b.name}（${b.basic}・${b.advanced}）', b.id),
+    ]);
+    if (branch == null || !context.mounted) return;
+    stages = stages.where((s) => s.branch == branch).toList();
+  }
+  final stage = await choose('エリアを選んでバトル（確認用）', [
+    for (final s in stages)
+      ('${RpgCatalog.stageLabel(s)}. ${s.name}（${s.grammarTheme}）', s),
+  ]);
   if (stage == null || !context.mounted) return;
   final pool = await services.loadStagePool(stage);
   final progress = await services.repository.load();
@@ -400,9 +419,13 @@ class _WorldCard extends StatelessWidget {
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: Text(
-                          availability == WorldAvailability.ownedComingSoon
-                              ? '解放済み・準備中'
-                              : '準備中',
+                          switch (availability) {
+                            WorldAvailability.ownedComingSoon => '解放済み・準備中',
+                            WorldAvailability.purchasable
+                                when !world.isComingSoon =>
+                              '¥${world.priceYen}で解放（${world.stages.length}エリア）',
+                            _ => '準備中',
+                          },
                           style: const TextStyle(
                             fontSize: 11,
                             color: Colors.grey,

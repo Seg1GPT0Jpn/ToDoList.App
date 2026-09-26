@@ -19,7 +19,19 @@ class StageDef {
     this.vocabLevel = '',
     this.captiveCompanionId,
     this.rewardCardId,
+    this.branch = '',
+    this.branchOrder,
   });
+
+  /// 分かれ道の系統（理科なら physics / chemistry / biology / earth）。
+  /// 解放は同じ系統の1つ前のステージで判定する。英語のように1本道なら空。
+  final String branch;
+
+  /// 系統の中での番号（1始まり）。null なら [order] と同じ
+  final int? branchOrder;
+
+  /// 画面に出すエリア番号
+  int get areaNo => branchOrder ?? order;
 
   final String id;
   final String worldId;

@@ -1,0 +1,216 @@
+{
+  "setId": "science_physics_07",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_phy07_001",
+      "category": "knowledge",
+      "prompt": "セルシウス温度 t（℃）と絶対温度 T（K）の関係は？",
+      "choices": [
+        "T ＝ t",
+        "T ＝ 273t",
+        "T ＝ t − 273",
+        "T ＝ t ＋ 273"
+      ],
+      "answerIndex": 3,
+      "explanation": "絶対零度（−273 ℃）を 0 K とする温度。T ＝ t ＋ 273。"
+    },
+    {
+      "id": "sci_phy07_002",
+      "category": "knowledge",
+      "prompt": "温度が表しているものは？",
+      "choices": [
+        "物体の質量",
+        "物体の体積",
+        "物質をつくる粒子の熱運動の激しさ",
+        "物体がもつ熱量の総量"
+      ],
+      "answerIndex": 2,
+      "explanation": "温度が高いほど粒子の熱運動が激しい。"
+    },
+    {
+      "id": "sci_phy07_003",
+      "category": "knowledge",
+      "prompt": "温度のちがう物体を接触させておくと、やがて同じ温度になる。この状態を何という？",
+      "choices": [
+        "熱平衡",
+        "熱膨張",
+        "熱伝導",
+        "比熱"
+      ],
+      "answerIndex": 0,
+      "explanation": "熱は高温から低温へ移り、やがて温度が等しい熱平衡の状態になる。"
+    },
+    {
+      "id": "sci_phy07_004",
+      "category": "knowledge",
+      "prompt": "比熱とは？",
+      "choices": [
+        "物質 1 g の温度を 1 K 上げるのに必要な熱量",
+        "物質 1 g が持つ熱量",
+        "物体全体の温度を 1 K 上げるのに必要な熱量",
+        "1 K あたりの体積の変化"
+      ],
+      "answerIndex": 0,
+      "explanation": "比熱の単位は J/(g·K)。物体全体についての量は熱容量（J/K）。"
+    },
+    {
+      "id": "sci_phy07_005",
+      "category": "knowledge",
+      "prompt": "質量 m、比熱 c の物体の熱容量 C は？",
+      "choices": [
+        "C ＝ m＋c",
+        "C ＝ c/m",
+        "C ＝ m/c",
+        "C ＝ mc"
+      ],
+      "answerIndex": 3,
+      "explanation": "熱容量 C ＝ mc。熱量 Q ＝ mcΔT ＝ CΔT。"
+    },
+    {
+      "id": "sci_phy07_006",
+      "category": "knowledge",
+      "prompt": "絶対零度はおよそ何 ℃？",
+      "choices": [
+        "−373 ℃",
+        "−273 ℃",
+        "−100 ℃",
+        "0 ℃"
+      ],
+      "answerIndex": 1,
+      "explanation": "絶対零度（0 K）は約 −273 ℃。これより低い温度はない。"
+    },
+    {
+      "id": "sci_phy07_007",
+      "category": "knowledge",
+      "prompt": "熱が自然に移動する向きは？",
+      "choices": [
+        "質量の大きい物体から小さい物体へ",
+        "高温の物体から低温の物体へ",
+        "決まっていない",
+        "低温の物体から高温の物体へ"
+      ],
+      "answerIndex": 1,
+      "explanation": "熱は自然には高温から低温へ移る。逆向きには自然に移らない（不可逆変化）。"
+    },
+    {
+      "id": "sci_phy07_008",
+      "category": "knowledge",
+      "prompt": "氷がとけている間、氷水の温度が 0 ℃ のまま変わらないのはなぜ？",
+      "choices": [
+        "加えた熱が状態変化（融解）に使われるから",
+        "熱が逃げていくから",
+        "氷の比熱が 0 だから",
+        "水の比熱が 0 だから"
+      ],
+      "answerIndex": 0,
+      "explanation": "状態変化の間は、加えた熱（融解熱）が粒子の結びつきを切るのに使われ、温度は一定。"
+    },
+    {
+      "id": "sci_phy07_009",
+      "category": "calculation",
+      "prompt": "27 ℃ は絶対温度で何 K？",
+      "choices": [
+        "273 K",
+        "300 K",
+        "246 K",
+        "27 K"
+      ],
+      "answerIndex": 1,
+      "explanation": "T ＝ 27 ＋ 273 ＝ 300 K。"
+    },
+    {
+      "id": "sci_phy07_010",
+      "category": "calculation",
+      "prompt": "水 100 g の温度を 10 K 上げるのに必要な熱量は？（水の比熱 4.2 J/(g·K)）",
+      "choices": [
+        "1.0 × 10³ J",
+        "4.2 × 10³ J",
+        "4.2 × 10² J",
+        "42 J"
+      ],
+      "answerIndex": 1,
+      "explanation": "Q ＝ mcΔT ＝ 100 × 4.2 × 10 ＝ 4200 J。"
+    },
+    {
+      "id": "sci_phy07_011",
+      "category": "calculation",
+      "prompt": "熱容量 50 J/K の物体の温度を 20 K 上げるのに必要な熱量は？",
+      "choices": [
+        "0.40 J",
+        "70 J",
+        "2.5 J",
+        "1000 J"
+      ],
+      "answerIndex": 3,
+      "explanation": "Q ＝ CΔT ＝ 50 × 20 ＝ 1000 J。"
+    },
+    {
+      "id": "sci_phy07_012",
+      "category": "calculation",
+      "prompt": "比熱 0.39 J/(g·K) の銅 200 g に 780 J の熱を加えた。温度の上昇は？",
+      "choices": [
+        "1.0 K",
+        "4.0 K",
+        "20 K",
+        "10 K"
+      ],
+      "answerIndex": 3,
+      "explanation": "ΔT ＝ Q/(mc) ＝ 780 ÷ (200 × 0.39) ＝ 10 K。"
+    },
+    {
+      "id": "sci_phy07_013",
+      "category": "calculation",
+      "prompt": "80 ℃ の水 100 g と 20 ℃ の水 200 g を混ぜた。熱の出入りが水どうしだけなら、全体の温度は？",
+      "choices": [
+        "60 ℃",
+        "50 ℃",
+        "30 ℃",
+        "40 ℃"
+      ],
+      "answerIndex": 3,
+      "explanation": "100 × (80 − t) ＝ 200 × (t − 20) より t ＝ 40 ℃。"
+    },
+    {
+      "id": "sci_phy07_014",
+      "category": "calculation",
+      "prompt": "1.0 kW のヒーターを 60 s 使ったときに出る熱量は？",
+      "choices": [
+        "6.0 × 10² J",
+        "60 J",
+        "6.0 × 10⁴ J",
+        "1.0 × 10³ J"
+      ],
+      "answerIndex": 2,
+      "explanation": "Q ＝ Pt ＝ 1000 × 60 ＝ 6.0 × 10⁴ J。"
+    },
+    {
+      "id": "sci_phy07_015",
+      "category": "thinking",
+      "prompt": "氷を一定の割合で加熱したときの「温度−時間」グラフで、水平な部分があるのはなぜ？",
+      "choices": [
+        "熱が全部逃げているから",
+        "加熱が止まっているから",
+        "比熱が急に大きくなったから",
+        "状態変化が起きていて温度が変わらないから"
+      ],
+      "answerIndex": 3,
+      "explanation": "融解・沸騰の間は加えた熱が状態変化に使われるので、温度は一定になる。"
+    },
+    {
+      "id": "sci_phy07_016",
+      "category": "thinking",
+      "prompt": "海辺では、昼は海から陸へ風が吹きやすい。海水の性質として関係が深いものは？",
+      "choices": [
+        "比熱が大きく温まりにくい",
+        "熱を通さない",
+        "密度が 0 である",
+        "比熱が小さく温まりやすい"
+      ],
+      "answerIndex": 0,
+      "explanation": "水は比熱が大きく、昼は陸の方が先に温まる。陸上で上昇気流が起き、海から風が吹きこむ。"
+    }
+  ]
+}

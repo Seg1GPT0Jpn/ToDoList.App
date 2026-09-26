@@ -1,0 +1,216 @@
+{
+  "setId": "science_chemistry_14",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_chm14_001",
+      "category": "knowledge",
+      "prompt": "ナトリウムやカリウムを石油（灯油）中に保存する理由は？",
+      "choices": [
+        "光に弱いから",
+        "空気中の酸素や水と反応しやすいから",
+        "重すぎるから",
+        "溶けやすいから"
+      ],
+      "answerIndex": 1,
+      "explanation": "アルカリ金属は反応性が非常に高い。"
+    },
+    {
+      "id": "sci_chm14_002",
+      "category": "knowledge",
+      "prompt": "炎色反応でカリウムが示す色は？",
+      "choices": [
+        "赤紫色",
+        "黄色",
+        "青緑色",
+        "橙赤色"
+      ],
+      "answerIndex": 0,
+      "explanation": "Li 赤、Na 黄、K 赤紫、Ca 橙赤、Sr 紅、Ba 黄緑、Cu 青緑。"
+    },
+    {
+      "id": "sci_chm14_003",
+      "category": "knowledge",
+      "prompt": "酸にも強塩基にも溶ける金属（両性金属）はどれ？",
+      "choices": [
+        "金",
+        "銅",
+        "鉄",
+        "アルミニウム"
+      ],
+      "answerIndex": 3,
+      "explanation": "Al・Zn・Sn・Pb が両性金属。"
+    },
+    {
+      "id": "sci_chm14_004",
+      "category": "knowledge",
+      "prompt": "アルミニウムや鉄を濃硝酸に入れても溶けない理由は？",
+      "choices": [
+        "濃硝酸は酸ではないから",
+        "表面にち密な酸化被膜ができる（不動態）から",
+        "イオン化傾向が小さいから",
+        "温度が低いから"
+      ],
+      "answerIndex": 1,
+      "explanation": "不動態。Al・Fe・Ni で見られる。"
+    },
+    {
+      "id": "sci_chm14_005",
+      "category": "knowledge",
+      "prompt": "Fe³⁺ をふくむ水溶液の色は？",
+      "choices": [
+        "青色",
+        "淡緑色",
+        "黄褐色",
+        "無色"
+      ],
+      "answerIndex": 2,
+      "explanation": "Fe²⁺ は淡緑色、Fe³⁺ は黄褐色、Cu²⁺ は青色。"
+    },
+    {
+      "id": "sci_chm14_006",
+      "category": "knowledge",
+      "prompt": "Ag⁺ をふくむ水溶液に塩酸を加えると、何色の沈殿ができる？",
+      "choices": [
+        "青色",
+        "黒色",
+        "白色（AgCl）",
+        "赤色"
+      ],
+      "answerIndex": 2,
+      "explanation": "AgCl は光で分解して黒くなる（感光性）。"
+    },
+    {
+      "id": "sci_chm14_007",
+      "category": "knowledge",
+      "prompt": "遷移元素の特徴として正しいものは？",
+      "choices": [
+        "非金属である",
+        "すべて気体である",
+        "複数の酸化数をとり、色のついたイオンや化合物が多い",
+        "価電子がすべて 8 個"
+      ],
+      "answerIndex": 2,
+      "explanation": "例：Fe²⁺・Fe³⁺、Cu⁺・Cu²⁺。触媒として使われるものも多い。"
+    },
+    {
+      "id": "sci_chm14_008",
+      "category": "knowledge",
+      "prompt": "溶鉱炉で鉄鉱石（酸化鉄）を還元するのに使われるのは？",
+      "choices": [
+        "酸素",
+        "水素だけ",
+        "塩素",
+        "一酸化炭素（コークス由来）"
+      ],
+      "answerIndex": 3,
+      "explanation": "Fe₂O₃ ＋ 3CO → 2Fe ＋ 3CO₂。できた銑鉄から炭素を減らしたものが鋼。"
+    },
+    {
+      "id": "sci_chm14_009",
+      "category": "knowledge",
+      "prompt": "セッコウの主成分は？",
+      "choices": [
+        "炭酸カルシウム",
+        "酸化アルミニウム",
+        "硫酸カルシウム",
+        "塩化ナトリウム"
+      ],
+      "answerIndex": 2,
+      "explanation": "CaSO₄·2H₂O。焼いた焼きセッコウは水を加えると固まるので、ギプスや建材に使う。"
+    },
+    {
+      "id": "sci_chm14_010",
+      "category": "knowledge",
+      "prompt": "銅を電解精錬するとき、純銅はどちらの極に析出する？",
+      "choices": [
+        "どちらにも出ない",
+        "陰極",
+        "陽極",
+        "両方"
+      ],
+      "answerIndex": 1,
+      "explanation": "粗銅を陽極、純銅を陰極にする。陽極の下には金・銀などが陽極泥としてたまる。"
+    },
+    {
+      "id": "sci_chm14_011",
+      "category": "calculation",
+      "prompt": "Fe₂O₃ 160 g を完全に還元すると、鉄は何 g 得られる？（Fe ＝ 56、O ＝ 16）",
+      "choices": [
+        "160 g",
+        "224 g",
+        "112 g",
+        "56 g"
+      ],
+      "answerIndex": 2,
+      "explanation": "Fe₂O₃ の式量 160 なので 1.0 mol。Fe は 2.0 mol ＝ 112 g。"
+    },
+    {
+      "id": "sci_chm14_012",
+      "category": "calculation",
+      "prompt": "ナトリウム 2.3 g を水と反応させると、水素は何 mol 発生する？（Na ＝ 23、2Na ＋ 2H₂O → 2NaOH ＋ H₂）",
+      "choices": [
+        "1.0 mol",
+        "0.050 mol",
+        "0.10 mol",
+        "0.20 mol"
+      ],
+      "answerIndex": 1,
+      "explanation": "Na 0.10 mol → H₂ はその半分の 0.050 mol。"
+    },
+    {
+      "id": "sci_chm14_013",
+      "category": "calculation",
+      "prompt": "石灰水に CO₂ 0.10 mol を通したら、すべて CaCO₃ になった。沈殿は何 g？（CaCO₃ ＝ 100）",
+      "choices": [
+        "1.0 g",
+        "100 g",
+        "10 g",
+        "4.4 g"
+      ],
+      "answerIndex": 2,
+      "explanation": "Ca(OH)₂ ＋ CO₂ → CaCO₃ ＋ H₂O。CaCO₃ 0.10 mol ＝ 10 g。"
+    },
+    {
+      "id": "sci_chm14_014",
+      "category": "calculation",
+      "prompt": "アルミニウム 27 g が酸素と完全に反応すると、Al₂O₃ は何 mol できる？（Al ＝ 27）",
+      "choices": [
+        "2.0 mol",
+        "1.0 mol",
+        "0.50 mol",
+        "0.25 mol"
+      ],
+      "answerIndex": 2,
+      "explanation": "4Al ＋ 3O₂ → 2Al₂O₃。Al 1.0 mol から Al₂O₃ 0.50 mol。"
+    },
+    {
+      "id": "sci_chm14_015",
+      "category": "thinking",
+      "prompt": "石灰水に CO₂ を通し続けると、いったん白くにごった後、透明になる。その理由は？",
+      "choices": [
+        "CaCO₃ が蒸発するから",
+        "石灰水が中和されて水になるから",
+        "CO₂ が出ていくから",
+        "CaCO₃ が水に溶ける Ca(HCO₃)₂ に変わるから"
+      ],
+      "answerIndex": 3,
+      "explanation": "CaCO₃ ＋ CO₂ ＋ H₂O → Ca(HCO₃)₂。鍾乳洞ができるしくみと同じ反応。"
+    },
+    {
+      "id": "sci_chm14_016",
+      "category": "thinking",
+      "prompt": "Ag⁺ と Cu²⁺ をふくむ水溶液から Ag⁺ だけを沈殿させたい。加えるとよいものは？",
+      "choices": [
+        "希塩酸",
+        "硝酸",
+        "水",
+        "アンモニア水を少量"
+      ],
+      "answerIndex": 0,
+      "explanation": "AgCl は沈殿するが、CuCl₂ は水に溶ける。沈殿をろ過すれば分離できる。"
+    }
+  ]
+}

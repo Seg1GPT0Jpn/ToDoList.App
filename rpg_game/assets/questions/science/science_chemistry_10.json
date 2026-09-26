@@ -1,0 +1,216 @@
+{
+  "setId": "science_chemistry_10",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_chm10_001",
+      "category": "knowledge",
+      "prompt": "気体の水への溶解度は、温度が上がるとふつうどうなる？",
+      "choices": [
+        "0 になる",
+        "大きくなる",
+        "小さくなる",
+        "変わらない"
+      ],
+      "answerIndex": 2,
+      "explanation": "温度が高いと気体分子の熱運動が激しくなり、溶液から逃げやすくなる。"
+    },
+    {
+      "id": "sci_chm10_002",
+      "category": "knowledge",
+      "prompt": "「溶解度の小さい気体では、一定温度で一定量の溶媒に溶ける質量（物質量）は圧力に比例する」という法則は？",
+      "choices": [
+        "ヘンリーの法則",
+        "ヘスの法則",
+        "ラウールの法則",
+        "ボイルの法則"
+      ],
+      "answerIndex": 0,
+      "explanation": "炭酸飲料は高い圧力で CO₂ を溶かしこんでいる。"
+    },
+    {
+      "id": "sci_chm10_003",
+      "category": "knowledge",
+      "prompt": "不揮発性の物質を溶かした溶液の沸点は、純粋な溶媒と比べてどうなる？",
+      "choices": [
+        "変わらない",
+        "高くなる（沸点上昇）",
+        "0 ℃ になる",
+        "低くなる"
+      ],
+      "answerIndex": 1,
+      "explanation": "溶液の蒸気圧が下がる（蒸気圧降下）ため、沸点が上がる。"
+    },
+    {
+      "id": "sci_chm10_004",
+      "category": "knowledge",
+      "prompt": "溶液の凝固点降下度は何に比例する？",
+      "choices": [
+        "溶液の色",
+        "溶質粒子の質量モル濃度",
+        "溶質の分子量",
+        "溶媒の体積"
+      ],
+      "answerIndex": 1,
+      "explanation": "Δt ＝ K_f × m。電解質は電離した後の粒子の数で考える。"
+    },
+    {
+      "id": "sci_chm10_005",
+      "category": "knowledge",
+      "prompt": "溶媒は通すが溶質は通さない膜を何という？",
+      "choices": [
+        "金属膜",
+        "半透膜",
+        "細胞壁",
+        "ろ紙"
+      ],
+      "answerIndex": 1,
+      "explanation": "半透膜をはさんで溶媒が濃い方へ移動しようとする圧力が浸透圧。"
+    },
+    {
+      "id": "sci_chm10_006",
+      "category": "knowledge",
+      "prompt": "コロイド溶液に横から強い光を当てると、光の通り道が見える現象は？",
+      "choices": [
+        "電気泳動",
+        "チンダル現象",
+        "透析",
+        "ブラウン運動"
+      ],
+      "answerIndex": 1,
+      "explanation": "コロイド粒子が光を散乱するため。"
+    },
+    {
+      "id": "sci_chm10_007",
+      "category": "knowledge",
+      "prompt": "疎水コロイドに少量の電解質を加えると沈殿する現象は？",
+      "choices": [
+        "昇華",
+        "透析",
+        "塩析",
+        "凝析"
+      ],
+      "answerIndex": 3,
+      "explanation": "親水コロイドを沈殿させるには多量の電解質が必要（塩析）。"
+    },
+    {
+      "id": "sci_chm10_008",
+      "category": "knowledge",
+      "prompt": "コロイド溶液から小さなイオンなどを取り除くため、半透膜の袋に入れて水にひたす操作は？",
+      "choices": [
+        "再結晶",
+        "抽出",
+        "透析",
+        "蒸留"
+      ],
+      "answerIndex": 2,
+      "explanation": "コロイド粒子は半透膜を通れないが、小さなイオンや分子は通り抜ける。人工透析もこの原理。"
+    },
+    {
+      "id": "sci_chm10_009",
+      "category": "calculation",
+      "prompt": "NaCl 0.20 mol を水に溶かして 500 mL にした。モル濃度は？",
+      "choices": [
+        "0.10 mol/L",
+        "2.5 mol/L",
+        "0.40 mol/L",
+        "0.20 mol/L"
+      ],
+      "answerIndex": 2,
+      "explanation": "0.20 ÷ 0.500 ＝ 0.40 mol/L。"
+    },
+    {
+      "id": "sci_chm10_010",
+      "category": "calculation",
+      "prompt": "グルコース 0.10 mol を水 500 g に溶かした。質量モル濃度は？",
+      "choices": [
+        "0.050 mol/kg",
+        "0.20 mol/kg",
+        "0.10 mol/kg",
+        "5.0 mol/kg"
+      ],
+      "answerIndex": 1,
+      "explanation": "質量モル濃度は溶媒 1 kg あたり。0.10 ÷ 0.500 ＝ 0.20 mol/kg。"
+    },
+    {
+      "id": "sci_chm10_011",
+      "category": "calculation",
+      "prompt": "水のモル沸点上昇 0.52 K·kg/mol。非電解質 0.20 mol/kg の水溶液の沸点上昇度は？",
+      "choices": [
+        "2.6 K",
+        "0.10 K",
+        "0.52 K",
+        "0.26 K"
+      ],
+      "answerIndex": 1,
+      "explanation": "Δt ＝ K_b × m ＝ 0.52 × 0.20 ≒ 0.10 K。"
+    },
+    {
+      "id": "sci_chm10_012",
+      "category": "calculation",
+      "prompt": "水のモル凝固点降下 1.85 K·kg/mol。NaCl 0.10 mol/kg（完全に電離）の水溶液の凝固点降下度は？",
+      "choices": [
+        "0.37 K",
+        "1.85 K",
+        "0.19 K",
+        "0.74 K"
+      ],
+      "answerIndex": 0,
+      "explanation": "NaCl → Na⁺ ＋ Cl⁻ で粒子は 2 倍の 0.20 mol/kg。1.85 × 0.20 ＝ 0.37 K。"
+    },
+    {
+      "id": "sci_chm10_013",
+      "category": "calculation",
+      "prompt": "0.010 mol/L の非電解質水溶液の、300 K での浸透圧は？（R ＝ 8.3 × 10³ Pa·L/(K·mol)）",
+      "choices": [
+        "2.5 × 10² Pa",
+        "2.5 × 10⁴ Pa",
+        "8.3 × 10³ Pa",
+        "2.5 × 10⁶ Pa"
+      ],
+      "answerIndex": 1,
+      "explanation": "ファントホッフの法則 Π ＝ CRT ＝ 0.010 × 8.3×10³ × 300 ≒ 2.5 × 10⁴ Pa。"
+    },
+    {
+      "id": "sci_chm10_014",
+      "category": "calculation",
+      "prompt": "1.0 mol/L の水溶液 100 mL に水を加えて 500 mL にした。モル濃度は？",
+      "choices": [
+        "0.20 mol/L",
+        "5.0 mol/L",
+        "0.10 mol/L",
+        "0.50 mol/L"
+      ],
+      "answerIndex": 0,
+      "explanation": "溶質 0.10 mol は変わらない。0.10 ÷ 0.500 ＝ 0.20 mol/L。"
+    },
+    {
+      "id": "sci_chm10_015",
+      "category": "thinking",
+      "prompt": "雪の日に道路に塩化カルシウムをまく理由は？",
+      "choices": [
+        "雪を溶かす熱を出すからだけ",
+        "道路をかわかすから",
+        "凝固点降下で水が凍りにくくなるから",
+        "沸点が上がるから"
+      ],
+      "answerIndex": 2,
+      "explanation": "水溶液の凝固点は 0 ℃ より低くなるので、路面が凍りにくい。"
+    },
+    {
+      "id": "sci_chm10_016",
+      "category": "thinking",
+      "prompt": "炭酸飲料を温めると泡がたくさん出る理由は？",
+      "choices": [
+        "温度が上がると気体の溶解度が小さくなるから",
+        "糖が分解するから",
+        "水が蒸発するから",
+        "温度が上がると気体の溶解度が大きくなるから"
+      ],
+      "answerIndex": 0,
+      "explanation": "溶けきれなくなった CO₂ が泡となって出てくる。"
+    }
+  ]
+}

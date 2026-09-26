@@ -35,7 +35,16 @@ enum QuestionCategory {
   usage('語法'),
 
   /// 長文読解
-  reading('読解');
+  reading('読解'),
+
+  /// 用語・しくみの知識（理科など）
+  knowledge('知識'),
+
+  /// 計算
+  calculation('計算'),
+
+  /// グラフ・実験の考察
+  thinking('考察');
 
   const QuestionCategory(this.label);
   final String label;

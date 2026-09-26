@@ -1,0 +1,216 @@
+{
+  "setId": "science_chemistry_04",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_chm04_001",
+      "category": "knowledge",
+      "prompt": "金属元素と非金属元素の原子どうしの結合は、ふつう何結合？",
+      "choices": [
+        "イオン結合",
+        "水素結合",
+        "共有結合",
+        "金属結合"
+      ],
+      "answerIndex": 0,
+      "explanation": "金属が陽イオン、非金属が陰イオンになり、静電気的な引力で結びつく。例：NaCl。"
+    },
+    {
+      "id": "sci_chm04_002",
+      "category": "knowledge",
+      "prompt": "非金属元素の原子どうしが電子を出し合って共有する結合は？",
+      "choices": [
+        "共有結合",
+        "金属結合",
+        "配位結合だけ",
+        "イオン結合"
+      ],
+      "answerIndex": 0,
+      "explanation": "例：H₂、H₂O、CO₂。"
+    },
+    {
+      "id": "sci_chm04_003",
+      "category": "knowledge",
+      "prompt": "金属結合で、金属原子を結びつけているものは？",
+      "choices": [
+        "自由電子",
+        "中性子",
+        "陰イオン",
+        "共有電子対だけ"
+      ],
+      "answerIndex": 0,
+      "explanation": "金属原子の価電子が自由電子となって全体を動き回り、陽イオンどうしを結びつける。"
+    },
+    {
+      "id": "sci_chm04_004",
+      "category": "knowledge",
+      "prompt": "一方の原子の非共有電子対を、もう一方と共有してできる結合は？",
+      "choices": [
+        "イオン結合",
+        "配位結合",
+        "水素結合",
+        "金属結合"
+      ],
+      "answerIndex": 1,
+      "explanation": "例：NH₃ ＋ H⁺ → NH₄⁺。できた後はふつうの共有結合と区別できない。"
+    },
+    {
+      "id": "sci_chm04_005",
+      "category": "knowledge",
+      "prompt": "ドライアイス（固体の CO₂）の結晶の種類は？",
+      "choices": [
+        "分子結晶",
+        "イオン結晶",
+        "共有結合の結晶",
+        "金属結晶"
+      ],
+      "answerIndex": 0,
+      "explanation": "分子が分子間力で集まった結晶。やわらかく、融点が低く、昇華しやすいものもある。"
+    },
+    {
+      "id": "sci_chm04_006",
+      "category": "knowledge",
+      "prompt": "ダイヤモンドの結晶の種類は？",
+      "choices": [
+        "共有結合の結晶",
+        "イオン結晶",
+        "金属結晶",
+        "分子結晶"
+      ],
+      "answerIndex": 0,
+      "explanation": "原子がすべて共有結合でつながった結晶で、非常に硬く融点が高い。"
+    },
+    {
+      "id": "sci_chm04_007",
+      "category": "knowledge",
+      "prompt": "イオン結晶が電気を通すのはどんなとき？",
+      "choices": [
+        "融解したときや水溶液にしたとき",
+        "固体のとき",
+        "どんなときも通さない",
+        "どんなときも通す"
+      ],
+      "answerIndex": 0,
+      "explanation": "固体ではイオンが動けないが、融解液や水溶液ではイオンが動けるので電気を通す。"
+    },
+    {
+      "id": "sci_chm04_008",
+      "category": "knowledge",
+      "prompt": "金属が延びたり広がったりする性質（展性・延性）をもつ理由は？",
+      "choices": [
+        "分子間力が弱いから",
+        "原子がすべて共有結合しているから",
+        "自由電子が原子どうしを結びつけ続けるから",
+        "イオンの並びがずれると反発するから"
+      ],
+      "answerIndex": 2,
+      "explanation": "原子の位置がずれても自由電子がつなぎとめるので、割れずに変形できる。"
+    },
+    {
+      "id": "sci_chm04_009",
+      "category": "knowledge",
+      "prompt": "二酸化炭素 CO₂ が無極性分子である理由は？",
+      "choices": [
+        "直線形で、2つの結合の極性が打ち消し合うから",
+        "電子をもたないから",
+        "分子が折れ線形だから",
+        "結合に極性がないから"
+      ],
+      "answerIndex": 0,
+      "explanation": "C＝O 結合には極性があるが、直線形で左右対称なので分子全体では打ち消される。"
+    },
+    {
+      "id": "sci_chm04_010",
+      "category": "knowledge",
+      "prompt": "水 H₂O の分子どうしの間にはたらく、特に強い分子間の引力は？",
+      "choices": [
+        "水素結合",
+        "共有結合",
+        "イオン結合",
+        "金属結合"
+      ],
+      "answerIndex": 0,
+      "explanation": "F・O・N に結合した H が、となりの分子の F・O・N と引き合う。水の沸点が高い理由。"
+    },
+    {
+      "id": "sci_chm04_011",
+      "category": "calculation",
+      "prompt": "水分子 H₂O の共有電子対の数は？",
+      "choices": [
+        "2",
+        "4",
+        "1",
+        "3"
+      ],
+      "answerIndex": 0,
+      "explanation": "O と2つの H がそれぞれ1組ずつ共有。O には非共有電子対も2組ある。"
+    },
+    {
+      "id": "sci_chm04_012",
+      "category": "calculation",
+      "prompt": "窒素分子 N₂ の、原子間の共有電子対の数は？",
+      "choices": [
+        "1",
+        "4",
+        "3",
+        "2"
+      ],
+      "answerIndex": 2,
+      "explanation": "N≡N の三重結合。各 N に非共有電子対が1組ずつ残る。"
+    },
+    {
+      "id": "sci_chm04_013",
+      "category": "calculation",
+      "prompt": "アンモニア分子 NH₃ の非共有電子対の数は？",
+      "choices": [
+        "0",
+        "3",
+        "1",
+        "2"
+      ],
+      "answerIndex": 2,
+      "explanation": "N の価電子 5 個のうち 3 個を H と共有し、残り 2 個が非共有電子対 1 組になる。"
+    },
+    {
+      "id": "sci_chm04_014",
+      "category": "calculation",
+      "prompt": "マグネシウムイオン Mg²⁺ と塩化物イオン Cl⁻ からできる化合物の組成式は？",
+      "choices": [
+        "Mg₂Cl",
+        "MgCl₂",
+        "MgCl",
+        "Mg₂Cl₃"
+      ],
+      "answerIndex": 1,
+      "explanation": "正負の電荷の合計が 0 になるように、Mg²⁺ 1 個に Cl⁻ 2 個。"
+    },
+    {
+      "id": "sci_chm04_015",
+      "category": "thinking",
+      "prompt": "氷が水に浮く理由は？",
+      "choices": [
+        "氷の中に空気が入っているから",
+        "氷は共有結合の結晶だから",
+        "氷の分子の方が軽いから",
+        "水素結合によってすき間の多い結晶構造になり、密度が小さくなるから"
+      ],
+      "answerIndex": 3,
+      "explanation": "多くの物質は固体の方が密度が大きいが、水は例外的に氷の方が密度が小さい。"
+    },
+    {
+      "id": "sci_chm04_016",
+      "category": "thinking",
+      "prompt": "ダイヤモンドは電気を通さないが、黒鉛は電気を通す。その理由は？",
+      "choices": [
+        "黒鉛では各炭素の価電子のうち1個が層にそって動けるから",
+        "黒鉛には水素が含まれるから",
+        "ダイヤモンドはイオン結晶だから",
+        "黒鉛は金属だから"
+      ],
+      "answerIndex": 0,
+      "explanation": "黒鉛の炭素は3個の原子と共有結合し、残る1個の価電子が平面の層を動ける。"
+    }
+  ]
+}

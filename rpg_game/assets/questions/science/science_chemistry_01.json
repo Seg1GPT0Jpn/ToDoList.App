@@ -1,0 +1,216 @@
+{
+  "setId": "science_chemistry_01",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_chm01_001",
+      "category": "knowledge",
+      "prompt": "純物質はどれ？",
+      "choices": [
+        "空気",
+        "海水",
+        "牛乳",
+        "酸素"
+      ],
+      "answerIndex": 3,
+      "explanation": "1種類の物質だけでできているものが純物質。空気・海水・牛乳は混合物。"
+    },
+    {
+      "id": "sci_chm01_002",
+      "category": "knowledge",
+      "prompt": "単体はどれ？",
+      "choices": [
+        "二酸化炭素 CO₂",
+        "酸素 O₂",
+        "塩化ナトリウム NaCl",
+        "水 H₂O"
+      ],
+      "answerIndex": 1,
+      "explanation": "1種類の元素だけでできた純物質が単体。2種類以上の元素からなるものは化合物。"
+    },
+    {
+      "id": "sci_chm01_003",
+      "category": "knowledge",
+      "prompt": "化合物はどれ？",
+      "choices": [
+        "鉄",
+        "空気",
+        "窒素",
+        "水"
+      ],
+      "answerIndex": 3,
+      "explanation": "水 H₂O は水素と酸素の2種類の元素からなる化合物。空気は混合物。"
+    },
+    {
+      "id": "sci_chm01_004",
+      "category": "knowledge",
+      "prompt": "互いに同素体の関係にあるものは？",
+      "choices": [
+        "水と氷",
+        "水素と重水素",
+        "ダイヤモンドと黒鉛",
+        "塩素と塩化水素"
+      ],
+      "answerIndex": 2,
+      "explanation": "同じ元素からなる性質のちがう単体が同素体（C・O・P・S に多い）。水素と重水素は同位体。"
+    },
+    {
+      "id": "sci_chm01_005",
+      "category": "knowledge",
+      "prompt": "ろ過で分けられるものは？",
+      "choices": [
+        "気体の混合物",
+        "液体と、それに溶けない固体",
+        "水に溶けた食塩と水",
+        "沸点のちがう2つの液体"
+      ],
+      "answerIndex": 1,
+      "explanation": "ろ紙の穴より大きい固体の粒子を、液体と分ける方法。"
+    },
+    {
+      "id": "sci_chm01_006",
+      "category": "knowledge",
+      "prompt": "蒸留は何のちがいを利用した分離法？",
+      "choices": [
+        "沸点",
+        "密度",
+        "粒子の大きさ",
+        "溶解度"
+      ],
+      "answerIndex": 0,
+      "explanation": "液体を加熱して出てきた蒸気を冷やし、沸点のちがう成分を分ける。"
+    },
+    {
+      "id": "sci_chm01_007",
+      "category": "knowledge",
+      "prompt": "再結晶は何のちがいを利用した分離法？",
+      "choices": [
+        "昇華しやすさのちがい",
+        "沸点のちがい",
+        "粒子の大きさのちがい",
+        "温度による溶解度のちがい"
+      ],
+      "answerIndex": 3,
+      "explanation": "高温で溶かした溶液を冷やすと、溶解度が小さくなった物質が純粋な結晶として出てくる。"
+    },
+    {
+      "id": "sci_chm01_008",
+      "category": "knowledge",
+      "prompt": "液体空気から窒素と酸素を分けたり、原油からガソリンや灯油を分けたりする方法は？",
+      "choices": [
+        "抽出",
+        "分留（分別蒸留）",
+        "再結晶",
+        "ろ過"
+      ],
+      "answerIndex": 1,
+      "explanation": "沸点のちがう複数の液体の混合物を、蒸留で順に分ける方法を分留という。"
+    },
+    {
+      "id": "sci_chm01_009",
+      "category": "knowledge",
+      "prompt": "ヨウ素と砂の混合物からヨウ素を取り出すのに適した方法は？",
+      "choices": [
+        "分留",
+        "クロマトグラフィー",
+        "ろ過",
+        "昇華法"
+      ],
+      "answerIndex": 3,
+      "explanation": "ヨウ素は加熱すると固体から直接気体になる（昇華）。冷やすと固体に戻る。"
+    },
+    {
+      "id": "sci_chm01_010",
+      "category": "knowledge",
+      "prompt": "ろ紙などに対する吸着のしやすさのちがいで、色素などを分ける方法は？",
+      "choices": [
+        "蒸留",
+        "クロマトグラフィー",
+        "再結晶",
+        "昇華法"
+      ],
+      "answerIndex": 1,
+      "explanation": "成分によって移動する速さがちがうので、しみこむにつれて分かれる。"
+    },
+    {
+      "id": "sci_chm01_011",
+      "category": "knowledge",
+      "prompt": "茶葉にお湯を注いでお茶の成分を取り出す操作は？",
+      "choices": [
+        "蒸留",
+        "抽出",
+        "再結晶",
+        "ろ過"
+      ],
+      "answerIndex": 1,
+      "explanation": "溶媒への溶けやすさのちがいを利用して、目的の物質を溶かし出すのが抽出。"
+    },
+    {
+      "id": "sci_chm01_012",
+      "category": "knowledge",
+      "prompt": "水道水の殺菌に使われている物質は？",
+      "choices": [
+        "窒素",
+        "二酸化炭素",
+        "塩素",
+        "ヘリウム"
+      ],
+      "answerIndex": 2,
+      "explanation": "塩素（またはその化合物）の強い酸化作用で細菌を殺す。化学は安全な水の供給を支えている。"
+    },
+    {
+      "id": "sci_chm01_013",
+      "category": "calculation",
+      "prompt": "水 90 g に塩化ナトリウム 10 g を溶かした。質量パーセント濃度は？",
+      "choices": [
+        "11 %",
+        "9.0 %",
+        "90 %",
+        "10 %"
+      ],
+      "answerIndex": 3,
+      "explanation": "溶質 ÷ 溶液 × 100 ＝ 10 ÷ (90 ＋ 10) × 100 ＝ 10 %。分母は溶液全体。"
+    },
+    {
+      "id": "sci_chm01_014",
+      "category": "calculation",
+      "prompt": "硝酸カリウムの溶解度（水 100 g あたり）は 60 ℃ で 110 g、20 ℃ で 32 g。60 ℃ の飽和溶液 210 g を 20 ℃ に冷やすと、何 g の結晶が出る？",
+      "choices": [
+        "110 g",
+        "32 g",
+        "78 g",
+        "142 g"
+      ],
+      "answerIndex": 2,
+      "explanation": "飽和溶液 210 g は水 100 g ＋ 硝酸カリウム 110 g。20 ℃ では 32 g しか溶けないので 110 − 32 ＝ 78 g が析出。"
+    },
+    {
+      "id": "sci_chm01_015",
+      "category": "thinking",
+      "prompt": "ある物質を炎に入れたら黄色の炎が出た。この物質に含まれている元素は？",
+      "choices": [
+        "炭素",
+        "銅",
+        "ナトリウム",
+        "カリウム"
+      ],
+      "answerIndex": 2,
+      "explanation": "炎色反応。Na は黄、K は赤紫、Cu は青緑。"
+    },
+    {
+      "id": "sci_chm01_016",
+      "category": "thinking",
+      "prompt": "ある物質を燃やして出た気体を石灰水に通すと白くにごった。この物質に含まれている元素は？",
+      "choices": [
+        "塩素",
+        "ナトリウム",
+        "窒素",
+        "炭素"
+      ],
+      "answerIndex": 3,
+      "explanation": "石灰水を白くにごらせるのは CO₂。燃やして CO₂ が出たので、もとの物質に炭素が含まれる。"
+    }
+  ]
+}

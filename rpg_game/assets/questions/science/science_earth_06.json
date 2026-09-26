@@ -1,0 +1,216 @@
+{
+  "setId": "science_earth_06",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_ear06_001",
+      "category": "knowledge",
+      "prompt": "地表付近の大気で、体積の割合が最も大きい成分は？",
+      "choices": [
+        "酸素",
+        "二酸化炭素",
+        "窒素",
+        "アルゴン"
+      ],
+      "answerIndex": 2,
+      "explanation": "窒素 約 78 %、酸素 約 21 %、アルゴン 約 0.9 %、二酸化炭素 約 0.04 %。"
+    },
+    {
+      "id": "sci_ear06_002",
+      "category": "knowledge",
+      "prompt": "大気の層を下から順に並べたものは？",
+      "choices": [
+        "成層圏 → 対流圏 → 熱圏 → 中間圏",
+        "熱圏 → 中間圏 → 成層圏 → 対流圏",
+        "対流圏 → 成層圏 → 中間圏 → 熱圏",
+        "対流圏 → 中間圏 → 成層圏 → 熱圏"
+      ],
+      "answerIndex": 2,
+      "explanation": "気温の変化のしかたで区分される。"
+    },
+    {
+      "id": "sci_ear06_003",
+      "category": "knowledge",
+      "prompt": "雲ができたり雨が降ったりする天気の変化が起こる層は？",
+      "choices": [
+        "成層圏",
+        "対流圏",
+        "中間圏",
+        "熱圏"
+      ],
+      "answerIndex": 1,
+      "explanation": "高さ約 10 km まで。高いほど気温が下がり、対流が起こる。"
+    },
+    {
+      "id": "sci_ear06_004",
+      "category": "knowledge",
+      "prompt": "オゾン層があり、上空ほど気温が上がる層は？",
+      "choices": [
+        "熱圏",
+        "成層圏",
+        "対流圏",
+        "中間圏"
+      ],
+      "answerIndex": 1,
+      "explanation": "オゾンが太陽の紫外線を吸収して大気を温める。"
+    },
+    {
+      "id": "sci_ear06_005",
+      "category": "knowledge",
+      "prompt": "海面の平均的な気圧（1 気圧）はおよそ？",
+      "choices": [
+        "10130 hPa",
+        "1013 hPa",
+        "100 hPa",
+        "760 hPa"
+      ],
+      "answerIndex": 1,
+      "explanation": "1013 hPa ＝ 1.013 × 10⁵ Pa。上空ほど気圧は低い。"
+    },
+    {
+      "id": "sci_ear06_006",
+      "category": "knowledge",
+      "prompt": "空気 1 m³ がふくむことができる水蒸気の最大量を何という？",
+      "choices": [
+        "飽和水蒸気量",
+        "降水量",
+        "湿度",
+        "露点"
+      ],
+      "answerIndex": 0,
+      "explanation": "気温が高いほど大きい。"
+    },
+    {
+      "id": "sci_ear06_007",
+      "category": "knowledge",
+      "prompt": "空気を冷やしていったとき、水蒸気が水滴になり始める温度を何という？",
+      "choices": [
+        "露点",
+        "沸点",
+        "凝固点",
+        "融点"
+      ],
+      "answerIndex": 0,
+      "explanation": "空気中の水蒸気量が多いほど露点は高い。"
+    },
+    {
+      "id": "sci_ear06_008",
+      "category": "knowledge",
+      "prompt": "上昇した空気のかたまりで雲ができるしくみは？",
+      "choices": [
+        "空気が圧縮される",
+        "雨が蒸発する",
+        "断熱膨張で温度が下がり、露点以下になって水蒸気が凝結する",
+        "温度が上がって水蒸気が増える"
+      ],
+      "answerIndex": 2,
+      "explanation": "上空ほど気圧が低いので、上昇した空気は膨張して冷える。"
+    },
+    {
+      "id": "sci_ear06_009",
+      "category": "knowledge",
+      "prompt": "赤道付近で上昇し、緯度 30° 付近で下降する大気の循環を何という？",
+      "choices": [
+        "ハドレー循環",
+        "深層循環",
+        "ジェット気流",
+        "偏西風"
+      ],
+      "answerIndex": 0,
+      "explanation": "地表付近では、30° 付近から赤道へ向かう貿易風が吹く。"
+    },
+    {
+      "id": "sci_ear06_010",
+      "category": "knowledge",
+      "prompt": "日本付近の上空を、西から東へ吹いている風は？",
+      "choices": [
+        "季節風",
+        "極偏東風",
+        "貿易風",
+        "偏西風"
+      ],
+      "answerIndex": 3,
+      "explanation": "中緯度の上空を吹く。天気が西から東へ変わるのはこのため。"
+    },
+    {
+      "id": "sci_ear06_011",
+      "category": "knowledge",
+      "prompt": "海水の塩分（塩類の割合）はおよそ？",
+      "choices": [
+        "約 3.5 %",
+        "約 35 %",
+        "約 10 %",
+        "約 0.35 %"
+      ],
+      "answerIndex": 0,
+      "explanation": "海水 1 kg に約 35 g の塩類。最も多いのは塩化ナトリウム。"
+    },
+    {
+      "id": "sci_ear06_012",
+      "category": "knowledge",
+      "prompt": "日本の太平洋側を北上する暖流は？",
+      "choices": [
+        "親潮（千島海流）",
+        "リマン海流",
+        "カリフォルニア海流",
+        "黒潮（日本海流）"
+      ],
+      "answerIndex": 3,
+      "explanation": "親潮は北から南下する寒流で、栄養塩類が豊富。"
+    },
+    {
+      "id": "sci_ear06_013",
+      "category": "calculation",
+      "prompt": "気温 20 ℃（飽和水蒸気量 17.3 g/m³）の空気が、1 m³ あたり 8.65 g の水蒸気をふくんでいる。湿度は？",
+      "choices": [
+        "17.3 %",
+        "50 %",
+        "8.65 %",
+        "200 %"
+      ],
+      "answerIndex": 1,
+      "explanation": "8.65 ÷ 17.3 × 100 ＝ 50 %。"
+    },
+    {
+      "id": "sci_ear06_014",
+      "category": "calculation",
+      "prompt": "対流圏で気温が 100 m につき 0.65 ℃ 下がるとする。地上 20 ℃ のとき、高さ 1000 m の気温は？",
+      "choices": [
+        "13.5 ℃",
+        "19.35 ℃",
+        "6.5 ℃",
+        "26.5 ℃"
+      ],
+      "answerIndex": 0,
+      "explanation": "1000 m で 6.5 ℃ 下がるので 20 − 6.5 ＝ 13.5 ℃。"
+    },
+    {
+      "id": "sci_ear06_015",
+      "category": "thinking",
+      "prompt": "冷たい飲み物を入れたコップの表面に水滴がつく理由は？",
+      "choices": [
+        "水が蒸発したから",
+        "空気の湿度が下がったから",
+        "コップから水がしみ出たから",
+        "コップのまわりの空気が冷やされて露点以下になったから"
+      ],
+      "answerIndex": 3,
+      "explanation": "冷やされた空気中の水蒸気が凝結して水滴になる。"
+    },
+    {
+      "id": "sci_ear06_016",
+      "category": "thinking",
+      "prompt": "湿った空気が山をこえて風下に吹き降りると、高温で乾燥した風になることがある。この現象は？",
+      "choices": [
+        "フェーン現象",
+        "海陸風",
+        "ヒートアイランド",
+        "エルニーニョ"
+      ],
+      "answerIndex": 0,
+      "explanation": "風上側で雨を降らせて水蒸気を失い、風下では乾燥したまま下降して温度が上がる。"
+    }
+  ]
+}

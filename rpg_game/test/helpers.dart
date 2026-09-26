@@ -3,9 +3,9 @@ import 'dart:math';
 
 import 'package:rpg_game/rpg_game.dart';
 
-QuestionSet loadSet(String setId) => JsonQuestionSource.parse(File(
-        'assets/questions/${setId.startsWith('sea_') ? 'sea' : 'english'}/$setId.json')
-    .readAsStringSync());
+QuestionSet loadSet(String setId) => JsonQuestionSource.parse(
+    File('assets/questions/${setId.split('_').first}/$setId.json')
+        .readAsStringSync());
 
 /// ステージの出題範囲（複数セットをまとめたもの）
 QuestionSet loadStagePool(StageDef stage) => QuestionSet.merge(

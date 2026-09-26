@@ -88,7 +88,7 @@ class _ReviewNotebookScreenState extends State<ReviewNotebookScreen> {
                 for (final (stage, qs) in entries) ...[
                   const SizedBox(height: 16),
                   Text(
-                    'エリア${stage.order}「${stage.name}」（${qs.length}問）',
+                    '${RpgCatalog.stageLabel(stage)}「${stage.name}」（${qs.length}問）',
                     style: serif(15, color: TsuzuriColors.accent),
                   ),
                   const SizedBox(height: 6),

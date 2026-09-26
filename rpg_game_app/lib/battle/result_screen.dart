@@ -129,7 +129,7 @@ class _ResultScreenState extends State<ResultScreen>
             padding: const EdgeInsets.fromLTRB(44, 24, 16, 24),
             children: [
               Text(
-                'ステージ${widget.stage.order}「${widget.stage.name}」',
+                '${RpgCatalog.stageLabel(widget.stage)}「${widget.stage.name}」',
                 style: const TextStyle(color: TsuzuriColors.inkSoft),
               ),
               const SizedBox(height: 16),

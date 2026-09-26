@@ -1,0 +1,216 @@
+{
+  "setId": "science_earth_04",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_ear04_001",
+      "category": "knowledge",
+      "prompt": "マグマのねばりけ（粘性）が大きくなるのは、どんな成分が多いとき？",
+      "choices": [
+        "水素",
+        "鉄",
+        "二酸化ケイ素（SiO₂）",
+        "マグネシウム"
+      ],
+      "answerIndex": 2,
+      "explanation": "SiO₂ が多いマグマは粘性が大きく、温度が低い。白っぽい岩石になる。"
+    },
+    {
+      "id": "sci_ear04_002",
+      "category": "knowledge",
+      "prompt": "粘性の大きいマグマがつくる火山の形と噴火のようすは？",
+      "choices": [
+        "盾状火山をつくり、おだやかな噴火",
+        "溶岩台地をつくる",
+        "噴火しない",
+        "溶岩ドームをつくり、爆発的な噴火をしやすい"
+      ],
+      "answerIndex": 3,
+      "explanation": "例：昭和新山、雲仙普賢岳の溶岩ドーム。"
+    },
+    {
+      "id": "sci_ear04_003",
+      "category": "knowledge",
+      "prompt": "粘性の小さいマグマがつくる、傾斜のゆるやかな火山を何という？",
+      "choices": [
+        "成層火山",
+        "溶岩ドーム",
+        "盾状火山",
+        "カルデラ"
+      ],
+      "answerIndex": 2,
+      "explanation": "例：ハワイのマウナロア。溶岩が流れやすく、おだやかな噴火が多い。"
+    },
+    {
+      "id": "sci_ear04_004",
+      "category": "knowledge",
+      "prompt": "富士山のように、溶岩と火山砕屑物が交互に積み重なった円すい形の火山は？",
+      "choices": [
+        "成層火山",
+        "溶岩台地",
+        "盾状火山",
+        "溶岩ドーム"
+      ],
+      "answerIndex": 0,
+      "explanation": "中間的な粘性のマグマによることが多い。"
+    },
+    {
+      "id": "sci_ear04_005",
+      "category": "knowledge",
+      "prompt": "マグマが地表や地表近くで急に冷えてできた火成岩を何という？",
+      "choices": [
+        "変成岩",
+        "火山岩",
+        "深成岩",
+        "堆積岩"
+      ],
+      "answerIndex": 1,
+      "explanation": "斑晶と、細かい結晶やガラスからなる石基をもつ斑状組織を示す。"
+    },
+    {
+      "id": "sci_ear04_006",
+      "category": "knowledge",
+      "prompt": "マグマが地下深くでゆっくり冷えてできた火成岩を何という？",
+      "choices": [
+        "堆積岩",
+        "凝灰岩",
+        "火山岩",
+        "深成岩"
+      ],
+      "answerIndex": 3,
+      "explanation": "大きな結晶がそろった等粒状組織を示す。"
+    },
+    {
+      "id": "sci_ear04_007",
+      "category": "knowledge",
+      "prompt": "深成岩のうち、白っぽく、石英や長石を多くふくむものは？",
+      "choices": [
+        "安山岩",
+        "玄武岩",
+        "斑れい岩",
+        "花こう岩"
+      ],
+      "answerIndex": 3,
+      "explanation": "深成岩：花こう岩（白）・閃緑岩・斑れい岩（黒）。火山岩：流紋岩・安山岩・玄武岩。"
+    },
+    {
+      "id": "sci_ear04_008",
+      "category": "knowledge",
+      "prompt": "火山岩のうち、黒っぽく、有色鉱物を多くふくむものは？",
+      "choices": [
+        "花こう岩",
+        "玄武岩",
+        "流紋岩",
+        "閃緑岩"
+      ],
+      "answerIndex": 1,
+      "explanation": "SiO₂ が少ない（苦鉄質の）マグマからできる。"
+    },
+    {
+      "id": "sci_ear04_009",
+      "category": "knowledge",
+      "prompt": "無色鉱物はどれ？",
+      "choices": [
+        "かんらん石",
+        "黒雲母",
+        "輝石",
+        "石英"
+      ],
+      "answerIndex": 3,
+      "explanation": "無色鉱物は石英・長石。有色鉱物はかんらん石・輝石・角閃石・黒雲母など。"
+    },
+    {
+      "id": "sci_ear04_010",
+      "category": "knowledge",
+      "prompt": "高温の火山ガスと火山砕屑物が一体となって、山の斜面を高速で流れ下る現象は？",
+      "choices": [
+        "火砕流",
+        "溶岩流",
+        "津波",
+        "土石流"
+      ],
+      "answerIndex": 0,
+      "explanation": "時速 100 km を超えることもあり、非常に危険。"
+    },
+    {
+      "id": "sci_ear04_011",
+      "category": "knowledge",
+      "prompt": "大規模な噴火のあと、火山の中心部が陥没してできた大きなくぼ地を何という？",
+      "choices": [
+        "火口湖",
+        "海溝",
+        "カルデラ",
+        "溶岩ドーム"
+      ],
+      "answerIndex": 2,
+      "explanation": "例：阿蘇山、洞爺湖。"
+    },
+    {
+      "id": "sci_ear04_012",
+      "category": "knowledge",
+      "prompt": "日本列島で、火山が海溝とほぼ平行な帯状に分布し、その海溝側の境界線を何という？",
+      "choices": [
+        "中央構造線",
+        "火山前線（火山フロント）",
+        "森林限界",
+        "海嶺"
+      ],
+      "answerIndex": 1,
+      "explanation": "沈みこんだプレートがある深さに達した場所の上にマグマができるため。"
+    },
+    {
+      "id": "sci_ear04_013",
+      "category": "calculation",
+      "prompt": "ある火成岩の有色鉱物の体積の割合が 30 % だった。この岩石の色指数は？",
+      "choices": [
+        "30",
+        "70",
+        "100",
+        "3.0"
+      ],
+      "answerIndex": 0,
+      "explanation": "色指数は有色鉱物の体積 %。数値が大きいほど黒っぽい。"
+    },
+    {
+      "id": "sci_ear04_014",
+      "category": "calculation",
+      "prompt": "SiO₂ を質量で約 70 % ふくむマグマが地下深くでゆっくり冷えた。できる岩石は？",
+      "choices": [
+        "花こう岩",
+        "玄武岩",
+        "斑れい岩",
+        "安山岩"
+      ],
+      "answerIndex": 0,
+      "explanation": "SiO₂ が多い（ケイ長質）で深成岩なので花こう岩。急に冷えれば流紋岩。"
+    },
+    {
+      "id": "sci_ear04_015",
+      "category": "thinking",
+      "prompt": "火山岩に大きな結晶（斑晶）と細かい部分（石基）があるのはなぜ？",
+      "choices": [
+        "地表で結晶が成長したから",
+        "水の中で冷えたから",
+        "最初から大きさのちがう結晶がふくまれていたから",
+        "地下でゆっくり冷えて斑晶ができ、その後地表付近で急に冷えて石基ができたから"
+      ],
+      "answerIndex": 3,
+      "explanation": "冷え方が2段階だったことを示す。"
+    },
+    {
+      "id": "sci_ear04_016",
+      "category": "thinking",
+      "prompt": "日本の火山が、日本海溝などの海溝から一定の距離をおいて並んでいる理由は？",
+      "choices": [
+        "偶然である",
+        "ホットスポットが並んでいるから",
+        "沈みこんだプレートがある深さに達すると、その上でマグマができるから",
+        "海溝の真上でマグマができるから"
+      ],
+      "answerIndex": 2,
+      "explanation": "そのため、火山前線より海溝側には火山がない。"
+    }
+  ]
+}

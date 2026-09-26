@@ -1,7 +1,7 @@
 import 'dart:collection';
 import 'dart:math';
 
-/// エリアの地方
+/// エリアの地方（床・壁・障害物の見た目）
 enum Region {
   grass('草原エリア'),
   coast('海岸エリア'),
@@ -22,20 +22,34 @@ enum Region {
 
 typedef Cell = ({int col, int row});
 
+/// ほかのマップへの出入口
+typedef Portal = ({String target, String label});
+
 /// フィールドのマップ（1文字 = 1マス）。
 ///
 ///   #  壁      .  床      T  障害物（木・岩など、地方ごとに見た目が変わる）
 ///   ~  水・溶岩  E  ステージの敵（道をふさいでいる）
 ///   P  スタート地点   S  看板   G  ゴール   I  宿（授業）
 ///   C  宝箱（難問1問でレアカード）   W  泉（基礎問題で次のバトルのHPアップ）
+///   O  出入口（ほかのマップへ移動する）
+///
+/// 英語ワールドは1枚、理の国はスタート地点（ハブ）と4系統の計5枚。
+/// 系統のマップは、上へ進む形で作ってから、進む向き（左・右・下）に回転させる。
 class FieldMap {
   FieldMap(
     this.rows, {
-    required this.regions,
+    required this.id,
+    required List<List<Region>> regionGrid,
+    required List<List<int>> areaGrid,
     required this.enemySpots,
-    required this.areaOfRow,
     required this.safeCells,
-  }) : width = rows.first.length {
+    this.areaLabels = const {},
+    this.portals = const {},
+    this.signText = '',
+    this.goalText = 'トロフィーがある。',
+  }) : width = rows.first.length,
+       _region = regionGrid,
+       _area = areaGrid {
     for (final r in rows) {
       if (r.length != width) {
         throw ArgumentError('マップの行の長さがそろっていません: "$r"');
@@ -43,19 +57,28 @@ class FieldMap {
     }
   }
 
+  final String id;
   final List<String> rows;
-
-  /// 行ごとの地方
-  final List<Region> regions;
-
-  /// 行ごとのエリア番号（その部屋の先にいる敵の番号。ゴールの部屋は 21）
-  final List<int> areaOfRow;
+  final List<List<Region>> _region;
+  final List<List<int>> _area;
 
   /// エリア番号（ステージの order）→ 敵の位置
   final Map<int, Cell> enemySpots;
 
-  /// エリアごとの「何かを置いても通り道をふさがない床」（亡霊や捕まった仲間を置く）
+  /// エリアごとの「何かを置いても通り道をふさがない床」（亡霊などを置く）
   final Map<int, List<Cell>> safeCells;
+
+  /// エリア番号 → 画面上部に出す名前（なければ地方の名前）
+  final Map<int, String> areaLabels;
+
+  /// 出入口のマス → 行き先
+  final Map<Cell, Portal> portals;
+
+  /// 看板のメッセージ
+  final String signText;
+
+  /// ゴールのトロフィーの説明
+  final String goalText;
 
   final int width;
   int get height => rows.length;
@@ -65,7 +88,16 @@ class FieldMap {
     return rows[row][col];
   }
 
-  Region regionAt(int row) => regions[row.clamp(0, height - 1)];
+  Region regionAt(int col, int row) =>
+      _region[row.clamp(0, height - 1)][col.clamp(0, width - 1)];
+
+  /// そのマスが属する部屋の番号（その部屋の先にいる敵の番号）
+  int areaAt(int col, int row) =>
+      _area[row.clamp(0, height - 1)][col.clamp(0, width - 1)];
+
+  /// 画面上部に出すエリアの名前
+  String labelAt(int col, int row) =>
+      areaLabels[areaAt(col, row)] ?? regionAt(col, row).label;
 
   /// 地形として通れるか（敵の立ち位置も地面は床。敵の有無はゲーム側で判定する）
   bool isFloor(int col, int row) {
@@ -87,48 +119,256 @@ class FieldMap {
         if (rows[r][c] == ch) (col: c, row: r),
   ];
 
+  /// スタート地点
+  Cell get start => find('P');
+
+  /// [from] のマップから来たときに立つマス（出入口のとなりの床）。なければスタート地点。
+  Cell spawnFrom(String? from) {
+    for (final e in portals.entries) {
+      if (e.value.target != from) continue;
+      for (final (dc, dr) in const [(0, 1), (0, -1), (1, 0), (-1, 0)]) {
+        final c = (col: e.key.col + dc, row: e.key.row + dr);
+        if (isFloor(c.col, c.row) && tileAt(c.col, c.row) != 'E') return c;
+      }
+    }
+    return start;
+  }
+
   /// 倒した敵の待機場所。ゲート横の壁のくぼみに寄るので、通り道をふさがない。
   Cell asideOf(Cell gate) {
-    for (final dc in [1, -1]) {
-      if (tileAt(gate.col + dc, gate.row) == '#') {
-        return (col: gate.col + dc, row: gate.row);
+    for (final (dc, dr) in const [(1, 0), (-1, 0), (0, 1), (0, -1)]) {
+      if (tileAt(gate.col + dc, gate.row + dr) == '#') {
+        return (col: gate.col + dc, row: gate.row + dr);
       }
     }
     return gate;
   }
 
+  /// ゲートをはさんで [asideOf] の反対側の壁（捕まった仲間の檻を置く）
+  Cell cageOf(Cell gate) {
+    final a = asideOf(gate);
+    return (col: gate.col * 2 - a.col, row: gate.row * 2 - a.row);
+  }
+
   /// 宿の位置
   List<Cell> get innSpots => findAll('I');
 
-  /// そのマスの先にいる（次に戦う）敵の番号。上にある一番近いゲートの敵。
+  /// そのマスの先にいる（次に戦う）敵の番号。ゴールの部屋やハブでは null。
   int? enemyAhead(Cell cell) {
-    int? best;
-    int? bestRow;
-    for (final e in enemySpots.entries) {
-      if (e.value.row < cell.row &&
-          (bestRow == null || e.value.row > bestRow)) {
-        best = e.key;
-        bestRow = e.value.row;
-      }
-    }
-    return best;
+    final a = areaAt(cell.col, cell.row);
+    return enemySpots.containsKey(a) ? a : null;
   }
-
-  /// 看板のメッセージ
-  static const signMessages = [
-    'ここは英語ワールド。20のエリアを越えて、最終章の玉座をめざそう。'
-        '魔物に話しかけるとバトル、宿では授業、泉では回復の加護、宝箱には難問とレアカードが待っている。'
-        '寄り道も探検してみよう！',
-  ];
 
   static const _roomRows = 9;
   static const _width = 31;
 
   /// 20エリアの英語ワールド（毎回同じ形になる）。
-  static final english = _build(20);
+  static final english = _build(
+    id: 'english',
+    areas: 20,
+    seed: 2026,
+    roomSeed: 13,
+    regionOf: Region.ofArea,
+    signText:
+        'ここは英語ワールド。20のエリアを越えて、最終章の玉座をめざそう。'
+        '魔物に話しかけるとバトル、宿では授業、泉では回復の加護、宝箱には難問とレアカードが待っている。'
+        '寄り道も探検してみよう！',
+    goalText: '英語ワールドのトロフィー',
+  );
 
-  static FieldMap _build(int areas) {
-    final rnd = Random(2026);
+  static final Map<String, FieldMap> _cache = {};
+
+  /// マップの ID から取り出す（english / science_hub / science_physics など）
+  static FieldMap byId(String id) => _cache.putIfAbsent(id, () {
+    if (id == 'english') return english;
+    if (id == 'science_hub') return _scienceHub();
+    final branch = id.replaceFirst('science_', '');
+    final b = _scienceBranches.firstWhere((b) => b.id == branch);
+    return _scienceBranch(b);
+  });
+
+  /// そのワールドに入ったときの最初のマップ
+  static String firstMapOf(String worldId) =>
+      worldId == 'science' ? 'science_hub' : 'english';
+
+  // ---------------- 理の国 ----------------
+
+  static const _scienceBranches = [
+    (
+      id: 'physics',
+      name: '物理',
+      basic: '物理基礎',
+      adv: '物理',
+      dir: 'up',
+      offset: 0,
+      basicRegion: Region.grass,
+      advRegion: Region.lava,
+    ),
+    (
+      id: 'chemistry',
+      name: '化学',
+      basic: '化学基礎',
+      adv: '化学',
+      dir: 'left',
+      offset: 16,
+      basicRegion: Region.coast,
+      advRegion: Region.cave,
+    ),
+    (
+      id: 'earth',
+      name: '地学',
+      basic: '地学基礎',
+      adv: '地学',
+      dir: 'right',
+      offset: 32,
+      basicRegion: Region.cave,
+      advRegion: Region.lava,
+    ),
+    (
+      id: 'biology',
+      name: '生物',
+      basic: '生物基礎',
+      adv: '生物',
+      dir: 'down',
+      offset: 48,
+      basicRegion: Region.grass,
+      advRegion: Region.coast,
+    ),
+  ];
+
+  /// スタート地点。上下左右の出入口から4系統へ進む。
+  static FieldMap _scienceHub() {
+    const lines = [
+      '#####O#####',
+      '#.........#',
+      '#.T.....T.#',
+      '#....S....#',
+      '#.........#',
+      '#.~.....~.#',
+      'O....P....O',
+      '#.........#',
+      '#.~.....~.#',
+      '#.........#',
+      '#.T.....T.#',
+      '#.........#',
+      '#####O#####',
+    ];
+    final h = lines.length, w = lines.first.length;
+    Cell at(int col, int row) => (col: col, row: row);
+    return FieldMap(
+      lines,
+      id: 'science_hub',
+      regionGrid: List.generate(h, (_) => List.filled(w, Region.grass)),
+      areaGrid: List.generate(h, (_) => List.filled(w, 0)),
+      enemySpots: const {},
+      safeCells: const {},
+      areaLabels: const {0: 'はじまりの実験広場'},
+      portals: {
+        at(5, 0): (target: 'science_physics', label: '物理'),
+        at(0, 6): (target: 'science_chemistry', label: '化学'),
+        at(10, 6): (target: 'science_earth', label: '地学'),
+        at(5, 12): (target: 'science_biology', label: '生物'),
+      },
+      signText:
+          'ここは理の国のはじまりの実験広場。'
+          '上へ進むと物理、左は化学、右は地学、下は生物の道。'
+          'どの道もエリア1〜8が「基礎」、9〜16が発展の科目で、最後に玉座のボスが待っている。',
+    );
+  }
+
+  static FieldMap _scienceBranch(
+    ({
+      String id,
+      String name,
+      String basic,
+      String adv,
+      String dir,
+      int offset,
+      Region basicRegion,
+      Region advRegion,
+    })
+    b,
+  ) {
+    final up = _build(
+      id: 'science_${b.id}',
+      areas: 16,
+      seed: 3000 + b.offset,
+      roomSeed: 5000 + b.offset * 31,
+      regionOf: (k) => k <= 8 ? b.basicRegion : b.advRegion,
+      orderOffset: b.offset,
+      areaLabel: (k) =>
+          k > 16 ? '${b.name}の玉座の先' : '${k <= 8 ? b.basic : b.adv}・エリア$k',
+      backPortal: (target: 'science_hub', label: 'はじまりの広場'),
+      signText:
+          'ここから${b.name}の道。${b.basic}の8エリアを越えると、${b.adv}の8エリアが続く。'
+          'ボスはエリア8と16。宿で授業を受けてから挑もう。',
+      goalText: '${b.name}マスターのトロフィー',
+    );
+    return up._turned(b.dir);
+  }
+
+  /// 上へ進む形のマップを、[dir]（up / down / left / right）へ進む形に向きを変える
+  FieldMap _turned(String dir) {
+    if (dir == 'up') return this;
+    final h = height, w = width;
+    // 新しい座標 → もとの座標
+    final (int nw, int nh, Cell Function(int c, int r) src) = switch (dir) {
+      'down' => (w, h, (c, r) => (col: w - 1 - c, row: h - 1 - r)),
+      'left' => (h, w, (c, r) => (col: r, row: c)),
+      'right' => (h, w, (c, r) => (col: r, row: h - 1 - c)),
+      _ => throw ArgumentError(dir),
+    };
+    final back = <Cell, Cell>{};
+    for (var r = 0; r < nh; r++) {
+      for (var c = 0; c < nw; c++) {
+        back[src(c, r)] = (col: c, row: r);
+      }
+    }
+    Cell to(Cell old) => back[old]!;
+    return FieldMap(
+      [
+        for (var r = 0; r < nh; r++)
+          [for (var c = 0; c < nw; c++) tileAt(src(c, r).col, src(c, r).row)]
+              .join(),
+      ],
+      id: id,
+      regionGrid: [
+        for (var r = 0; r < nh; r++)
+          [for (var c = 0; c < nw; c++) regionAt(src(c, r).col, src(c, r).row)],
+      ],
+      areaGrid: [
+        for (var r = 0; r < nh; r++)
+          [for (var c = 0; c < nw; c++) areaAt(src(c, r).col, src(c, r).row)],
+      ],
+      enemySpots: {for (final e in enemySpots.entries) e.key: to(e.value)},
+      safeCells: {
+        for (final e in safeCells.entries)
+          e.key: [for (final c in e.value) to(c)],
+      },
+      areaLabels: areaLabels,
+      portals: {for (final e in portals.entries) to(e.key): e.value},
+      signText: signText,
+      goalText: goalText,
+    );
+  }
+
+  /// 上へ進む1本道のマップを作る。
+  ///
+  /// 上から：外壁 → ゴールの部屋 → [ゲートn → 部屋n]（n = areas → 1）→ 外壁。
+  /// 敵の番号は orderOffset ＋ n（理の国では系統ごとに 16 ずつずらす）。
+  static FieldMap _build({
+    required String id,
+    required int areas,
+    required int seed,
+    required int roomSeed,
+    required Region Function(int area) regionOf,
+    int orderOffset = 0,
+    String Function(int area)? areaLabel,
+    Portal? backPortal,
+    String signText = '',
+    String goalText = 'トロフィーがある。',
+  }) {
+    final rnd = Random(seed);
     // ゲートの列（左右に大きくずらして、寄り道したくなる形にする）
     final gateCols = [
       for (var n = 1; n <= areas; n++) 3 + rnd.nextInt(_width - 6),
@@ -146,42 +386,60 @@ class FieldMap {
       areaOfRow.add(area);
     }
 
-    // 上から：外壁 → ゴールの部屋 → [ゲートn → 部屋n] (n = 20 → 1) → 外壁
-    add(wall(), Region.lava, areas + 1);
+    final goalArea = orderOffset + areas + 1;
+    add(wall(), regionOf(areas), goalArea);
     final goal = List.filled(_width, '.')
       ..[0] = '#'
       ..[_width - 1] = '#';
-    add(goal.join(), Region.lava, areas + 1);
-    add((List.of(goal)..[_width ~/ 2] = 'G').join(), Region.lava, areas + 1);
-    add(goal.join(), Region.lava, areas + 1);
+    add(goal.join(), regionOf(areas), goalArea);
+    add((List.of(goal)..[_width ~/ 2] = 'G').join(), regionOf(areas), goalArea);
+    add(goal.join(), regionOf(areas), goalArea);
     for (var n = areas; n >= 1; n--) {
-      final region = Region.ofArea(n);
+      final region = regionOf(n);
       final gate = gateCols[n - 1];
-      enemyRows[n] = rows.length;
-      add((wall().split('')..[gate] = 'E').join(), region, n);
+      enemyRows[orderOffset + n] = rows.length;
+      add((wall().split('')..[gate] = 'E').join(), region, orderOffset + n);
       final top = rows.length;
       final room = _Room.generate(
         area: n,
+        seed: roomSeed + n * 97,
         entryCol: n > 1 ? gateCols[n - 2] : _width ~/ 2,
         exitCol: gate,
         isStart: n == 1,
+        withSign: signText.isNotEmpty,
       );
       for (final line in room.lines) {
-        add(line, region, n);
+        add(line, region, orderOffset + n);
       }
-      safe[n] = [for (final c in room.safe) (col: c.col, row: c.row + top)];
+      safe[orderOffset + n] = [
+        for (final c in room.safe) (col: c.col, row: c.row + top),
+      ];
     }
-    add(wall(), Region.grass, 1);
+    final bottom = wall().split('');
+    final portals = <Cell, Portal>{};
+    if (backPortal != null) {
+      bottom[_width ~/ 2] = 'O';
+      portals[(col: _width ~/ 2, row: rows.length)] = backPortal;
+    }
+    add(bottom.join(), regionOf(1), orderOffset + 1);
 
     return FieldMap(
       rows,
-      regions: regions,
-      areaOfRow: areaOfRow,
+      id: id,
+      regionGrid: [for (final r in regions) List.filled(_width, r)],
+      areaGrid: [for (final a in areaOfRow) List.filled(_width, a)],
       enemySpots: {
         for (final e in enemyRows.entries)
-          e.key: (col: gateCols[e.key - 1], row: e.value),
+          e.key: (col: gateCols[e.key - orderOffset - 1], row: e.value),
       },
       safeCells: safe,
+      areaLabels: {
+        if (areaLabel != null)
+          for (var n = 1; n <= areas + 1; n++) orderOffset + n: areaLabel(n),
+      },
+      portals: portals,
+      signText: signText,
+      goalText: goalText,
     );
   }
 }
@@ -205,11 +463,13 @@ class _Room {
 
   static _Room generate({
     required int area,
+    required int seed,
     required int entryCol,
     required int exitCol,
     required bool isStart,
+    bool withSign = true,
   }) {
-    final rnd = Random(area * 97 + 13);
+    final rnd = Random(seed);
     // true = 障害物
     var g = List.generate(
       h,
@@ -356,7 +616,9 @@ class _Room {
       place('P', h - 2, entryCol);
       g[h - 2][entryCol] = false; // P は歩ける
       reachable.add((h - 2, entryCol));
-      if (canBlock(h - 3, entryCol - 2)) place('S', h - 3, entryCol - 2);
+      if (withSign && canBlock(h - 3, entryCol - 2)) {
+        place('S', h - 3, entryCol - 2);
+      }
     }
     // 宿：入口に近い床
     var d = distances();

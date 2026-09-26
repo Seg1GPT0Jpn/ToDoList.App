@@ -1,0 +1,216 @@
+{
+  "setId": "science_physics_03",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_phy03_001",
+      "category": "knowledge",
+      "prompt": "力の単位は？",
+      "choices": [
+        "J（ジュール）",
+        "Pa（パスカル）",
+        "W（ワット）",
+        "N（ニュートン）"
+      ],
+      "answerIndex": 3,
+      "explanation": "1 N は、質量 1 kg の物体に 1 m/s² の加速度を生じさせる力。"
+    },
+    {
+      "id": "sci_phy03_002",
+      "category": "knowledge",
+      "prompt": "質量 m の物体にはたらく重力の大きさは？（g：重力加速度）",
+      "choices": [
+        "g/m",
+        "mg",
+        "m＋g",
+        "m/g"
+      ],
+      "answerIndex": 1,
+      "explanation": "重力の大きさ W ＝ mg。地球上では g ≒ 9.8 m/s²。"
+    },
+    {
+      "id": "sci_phy03_003",
+      "category": "knowledge",
+      "prompt": "ばねの弾性力の大きさ F と伸び x の関係（フックの法則）は？（k：ばね定数）",
+      "choices": [
+        "F ＝ kx",
+        "F ＝ x/k",
+        "F ＝ kx²",
+        "F ＝ k/x"
+      ],
+      "answerIndex": 0,
+      "explanation": "弾性力はばねの伸び（縮み）に比例する。F ＝ kx。"
+    },
+    {
+      "id": "sci_phy03_004",
+      "category": "knowledge",
+      "prompt": "垂直抗力の向きは？",
+      "choices": [
+        "面に平行",
+        "物体が接している面に垂直",
+        "物体の運動の向き",
+        "常に鉛直上向き"
+      ],
+      "answerIndex": 1,
+      "explanation": "垂直抗力は面が物体を押す力で、面に垂直な向き。斜面では鉛直上向きにならない。"
+    },
+    {
+      "id": "sci_phy03_005",
+      "category": "knowledge",
+      "prompt": "静止摩擦力の最大値（最大摩擦力）を表す式は？（μ：静止摩擦係数、N：垂直抗力）",
+      "choices": [
+        "N/μ",
+        "μN²",
+        "μ/N",
+        "μN"
+      ],
+      "answerIndex": 3,
+      "explanation": "最大摩擦力 F₀ ＝ μN。これを超える力で引くと物体はすべり出す。"
+    },
+    {
+      "id": "sci_phy03_006",
+      "category": "knowledge",
+      "prompt": "動摩擦力について正しいものは？",
+      "choices": [
+        "速さによらずほぼ一定の大きさ μ′N",
+        "速いほど大きくなる",
+        "物体が止まっているときに働く",
+        "面の面積に比例する"
+      ],
+      "answerIndex": 0,
+      "explanation": "動摩擦力は F′ ＝ μ′N で、速さや接触面積にはほぼよらない。"
+    },
+    {
+      "id": "sci_phy03_007",
+      "category": "knowledge",
+      "prompt": "水中の物体にはたらく浮力の大きさは？",
+      "choices": [
+        "物体が押しのけた水の重さに等しい",
+        "物体の重さに等しい",
+        "常に 0 である",
+        "水の深さに比例する"
+      ],
+      "answerIndex": 0,
+      "explanation": "アルキメデスの原理。浮力 F ＝ ρVg（ρ：液体の密度、V：水中部分の体積）。"
+    },
+    {
+      "id": "sci_phy03_008",
+      "category": "knowledge",
+      "prompt": "力の三要素とは？",
+      "choices": [
+        "大きさ・質量・時間",
+        "大きさ・向き・作用点",
+        "作用点・時間・距離",
+        "向き・速さ・距離"
+      ],
+      "answerIndex": 1,
+      "explanation": "力は大きさ・向き・作用点で決まる。矢印の長さ・向き・始点で表す。"
+    },
+    {
+      "id": "sci_phy03_009",
+      "category": "calculation",
+      "prompt": "質量 3.0 kg の物体にはたらく重力の大きさは？（g ＝ 9.8 m/s²）",
+      "choices": [
+        "9.8 N",
+        "29.4 N",
+        "0.31 N",
+        "3.0 N"
+      ],
+      "answerIndex": 1,
+      "explanation": "W ＝ mg ＝ 3.0 × 9.8 ＝ 29.4 N。"
+    },
+    {
+      "id": "sci_phy03_010",
+      "category": "calculation",
+      "prompt": "ばね定数 50 N/m のばねを 0.20 m 伸ばすのに必要な力は？",
+      "choices": [
+        "250 N",
+        "10 N",
+        "50 N",
+        "0.0040 N"
+      ],
+      "answerIndex": 1,
+      "explanation": "F ＝ kx ＝ 50 × 0.20 ＝ 10 N。"
+    },
+    {
+      "id": "sci_phy03_011",
+      "category": "calculation",
+      "prompt": "3.0 N と 4.0 N の力が直角にはたらく。合力の大きさは？",
+      "choices": [
+        "12 N",
+        "7.0 N",
+        "1.0 N",
+        "5.0 N"
+      ],
+      "answerIndex": 3,
+      "explanation": "直角なので三平方の定理で √(3.0² ＋ 4.0²) ＝ 5.0 N。"
+    },
+    {
+      "id": "sci_phy03_012",
+      "category": "calculation",
+      "prompt": "水平面上の 4.0 kg の物体。静止摩擦係数 0.50 のとき、最大摩擦力は？（g ＝ 9.8 m/s²）",
+      "choices": [
+        "19.6 N",
+        "2.0 N",
+        "39.2 N",
+        "8.0 N"
+      ],
+      "answerIndex": 0,
+      "explanation": "N ＝ mg ＝ 39.2 N、最大摩擦力＝ μN ＝ 0.50 × 39.2 ＝ 19.6 N。"
+    },
+    {
+      "id": "sci_phy03_013",
+      "category": "calculation",
+      "prompt": "傾き 30° のなめらかな斜面上で、重さ 10 N の物体にはたらく重力の「斜面に平行な成分」は？",
+      "choices": [
+        "20 N",
+        "5.0 N",
+        "8.7 N",
+        "10 N"
+      ],
+      "answerIndex": 1,
+      "explanation": "斜面に平行な成分は W sin30° ＝ 10 × ½ ＝ 5.0 N。垂直な成分は W cos30° ≒ 8.7 N。"
+    },
+    {
+      "id": "sci_phy03_014",
+      "category": "calculation",
+      "prompt": "体積 1.0 × 10⁻³ m³ の物体を水中に全部沈めた。浮力は？（水の密度 1.0 × 10³ kg/m³、g ＝ 9.8 m/s²）",
+      "choices": [
+        "9.8 N",
+        "1.0 N",
+        "98 N",
+        "0.98 N"
+      ],
+      "answerIndex": 0,
+      "explanation": "F ＝ ρVg ＝ 1.0×10³ × 1.0×10⁻³ × 9.8 ＝ 9.8 N。"
+    },
+    {
+      "id": "sci_phy03_015",
+      "category": "thinking",
+      "prompt": "天井から糸でつるされて静止している物体にはたらく力の関係は？",
+      "choices": [
+        "重力と糸の張力がつり合っている",
+        "力は何もはたらいていない",
+        "重力だけがはたらいている",
+        "張力が重力より大きい"
+      ],
+      "answerIndex": 0,
+      "explanation": "静止している＝合力が 0。下向きの重力と上向きの張力が同じ大きさでつり合っている。"
+    },
+    {
+      "id": "sci_phy03_016",
+      "category": "thinking",
+      "prompt": "机の上に置いた本にはたらく「重力」と「垂直抗力」の関係は？",
+      "choices": [
+        "重力の方が必ず大きい",
+        "つり合いの関係（どちらも本にはたらく）",
+        "垂直抗力の方が必ず大きい",
+        "作用・反作用の関係"
+      ],
+      "answerIndex": 1,
+      "explanation": "どちらも本にはたらく力なので「つり合い」。作用・反作用は2つの物体の間で互いにおよぼし合う力。"
+    }
+  ]
+}

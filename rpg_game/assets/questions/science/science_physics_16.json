@@ -1,0 +1,216 @@
+{
+  "setId": "science_physics_16",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_phy16_001",
+      "category": "knowledge",
+      "prompt": "光電効果について正しいものは？",
+      "choices": [
+        "光の色によらず電子が飛び出す",
+        "ある振動数（限界振動数）より小さい光では、どんなに強くても電子は飛び出さない",
+        "光を強くすれば必ず電子が飛び出す",
+        "金属以外でしか起こらない"
+      ],
+      "answerIndex": 1,
+      "explanation": "光子1個のエネルギー hν が仕事関数より小さいと、電子は飛び出せない。光の粒子性の証拠。"
+    },
+    {
+      "id": "sci_phy16_002",
+      "category": "knowledge",
+      "prompt": "振動数 ν の光子1個のエネルギーは？（h：プランク定数）",
+      "choices": [
+        "hν",
+        "h/ν",
+        "ν/h",
+        "hν²"
+      ],
+      "answerIndex": 0,
+      "explanation": "E ＝ hν ＝ hc/λ。波長が短いほどエネルギーが大きい。"
+    },
+    {
+      "id": "sci_phy16_003",
+      "category": "knowledge",
+      "prompt": "質量 m、速さ v の粒子の物質波（ド・ブロイ波）の波長は？",
+      "choices": [
+        "mv/h",
+        "hmv",
+        "h/(mv)",
+        "h/m"
+      ],
+      "answerIndex": 2,
+      "explanation": "λ ＝ h/p。電子線の回折は電子の波動性を示す。"
+    },
+    {
+      "id": "sci_phy16_004",
+      "category": "knowledge",
+      "prompt": "原子核をつくっている粒子は？",
+      "choices": [
+        "中性子と電子",
+        "電子だけ",
+        "陽子と中性子",
+        "陽子と電子"
+      ],
+      "answerIndex": 2,
+      "explanation": "原子核は陽子と中性子（核子）からなり、そのまわりを電子が回る。"
+    },
+    {
+      "id": "sci_phy16_005",
+      "category": "knowledge",
+      "prompt": "α崩壊をすると、原子核の質量数と原子番号はどう変わる？",
+      "choices": [
+        "どちらも変わらない",
+        "質量数が4、原子番号が2減る",
+        "質量数が2、原子番号が4減る",
+        "質量数が変わらず、原子番号が1増える"
+      ],
+      "answerIndex": 1,
+      "explanation": "ヘリウム原子核（質量数4、原子番号2）が出ていく。"
+    },
+    {
+      "id": "sci_phy16_006",
+      "category": "knowledge",
+      "prompt": "β崩壊をすると、原子核の原子番号はどう変わる？",
+      "choices": [
+        "2減る",
+        "1減る",
+        "1増える",
+        "変わらない"
+      ],
+      "answerIndex": 2,
+      "explanation": "中性子が陽子に変わり電子（β線）を出す。質量数は変わらない。"
+    },
+    {
+      "id": "sci_phy16_007",
+      "category": "knowledge",
+      "prompt": "質量とエネルギーの関係を表す式は？",
+      "choices": [
+        "E ＝ mc²",
+        "E ＝ hν²",
+        "E ＝ mgh",
+        "E ＝ ½mv²"
+      ],
+      "answerIndex": 0,
+      "explanation": "アインシュタインの式。核反応で質量が減った分（質量欠損）がエネルギーになる。"
+    },
+    {
+      "id": "sci_phy16_008",
+      "category": "knowledge",
+      "prompt": "太陽の中心で起こっているエネルギーを生む反応は？",
+      "choices": [
+        "化学反応（燃焼）",
+        "核融合",
+        "核分裂",
+        "α崩壊だけ"
+      ],
+      "answerIndex": 1,
+      "explanation": "水素の原子核が融合してヘリウムになり、質量欠損分のエネルギーを出す。"
+    },
+    {
+      "id": "sci_phy16_009",
+      "category": "calculation",
+      "prompt": "半減期 2 日の放射性物質がある。6 日後に残っている割合は？",
+      "choices": [
+        "1/3",
+        "1/8",
+        "1/4",
+        "1/6"
+      ],
+      "answerIndex": 1,
+      "explanation": "6 日は半減期3回分。(1/2)³ ＝ 1/8。"
+    },
+    {
+      "id": "sci_phy16_010",
+      "category": "calculation",
+      "prompt": "²³⁸U（原子番号 92）が α崩壊を1回すると、質量数は？",
+      "choices": [
+        "236",
+        "238",
+        "90",
+        "234"
+      ],
+      "answerIndex": 3,
+      "explanation": "α崩壊で質量数は 4 減る。238 − 4 ＝ 234（原子番号は 90 になる）。"
+    },
+    {
+      "id": "sci_phy16_011",
+      "category": "calculation",
+      "prompt": "振動数 5.0 × 10¹⁴ Hz の光子のエネルギーは？（h ＝ 6.6 × 10⁻³⁴ J·s）",
+      "choices": [
+        "3.3 × 10⁻¹⁹ J",
+        "1.3 × 10⁻⁴⁸ J",
+        "6.6 × 10⁻²⁰ J",
+        "7.6 × 10⁴⁷ J"
+      ],
+      "answerIndex": 0,
+      "explanation": "E ＝ hν ＝ 6.6×10⁻³⁴ × 5.0×10¹⁴ ＝ 3.3 × 10⁻¹⁹ J。"
+    },
+    {
+      "id": "sci_phy16_012",
+      "category": "calculation",
+      "prompt": "仕事関数 2.0 eV の金属に、エネルギー 5.0 eV の光子を当てた。飛び出す電子の運動エネルギーの最大値は？",
+      "choices": [
+        "7.0 eV",
+        "10 eV",
+        "3.0 eV",
+        "2.5 eV"
+      ],
+      "answerIndex": 2,
+      "explanation": "K_max ＝ hν − W ＝ 5.0 − 2.0 ＝ 3.0 eV。"
+    },
+    {
+      "id": "sci_phy16_013",
+      "category": "calculation",
+      "prompt": "質量 1.0 × 10⁻³⁰ kg に相当するエネルギーは？（c ＝ 3.0 × 10⁸ m/s）",
+      "choices": [
+        "3.0 × 10⁻¹⁴ J",
+        "3.0 × 10⁻²² J",
+        "9.0 × 10⁻³⁰ J",
+        "9.0 × 10⁻¹⁴ J"
+      ],
+      "answerIndex": 3,
+      "explanation": "E ＝ mc² ＝ 1.0×10⁻³⁰ × (3.0×10⁸)² ＝ 9.0 × 10⁻¹⁴ J。"
+    },
+    {
+      "id": "sci_phy16_014",
+      "category": "calculation",
+      "prompt": "原子番号 82 の ²¹⁴Pb が β崩壊を1回すると、原子番号は？",
+      "choices": [
+        "80",
+        "83",
+        "82",
+        "81"
+      ],
+      "answerIndex": 1,
+      "explanation": "β崩壊で原子番号は 1 増える。82 ＋ 1 ＝ 83（ビスマス）。質量数は 214 のまま。"
+    },
+    {
+      "id": "sci_phy16_015",
+      "category": "thinking",
+      "prompt": "光電効果で、光の強さだけを2倍にすると、飛び出す電子の運動エネルギーの最大値は？",
+      "choices": [
+        "変わらない（飛び出す電子の数が増える）",
+        "2 倍になる",
+        "0 になる",
+        "1/2 になる"
+      ],
+      "answerIndex": 0,
+      "explanation": "光子1個のエネルギー hν は振動数だけで決まる。強さを上げると光子の数が増え、電子の数が増える。"
+    },
+    {
+      "id": "sci_phy16_016",
+      "category": "thinking",
+      "prompt": "電子線を結晶に当てると、X線と同じような回折の模様ができる。このことからわかるのは？",
+      "choices": [
+        "電子が波の性質をもつこと",
+        "結晶が光を出すこと",
+        "電子が電荷をもたないこと",
+        "X線が粒子であること"
+      ],
+      "answerIndex": 0,
+      "explanation": "回折は波の性質。粒子と考えていた電子にも波動性がある（物質波）。"
+    }
+  ]
+}

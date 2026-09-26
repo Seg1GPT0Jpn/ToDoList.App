@@ -1,0 +1,216 @@
+{
+  "setId": "science_physics_01",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_phy01_001",
+      "category": "knowledge",
+      "prompt": "長さの SI 基本単位は？",
+      "choices": [
+        "mm（ミリメートル）",
+        "m（メートル）",
+        "cm（センチメートル）",
+        "km（キロメートル）"
+      ],
+      "answerIndex": 1,
+      "explanation": "SI（国際単位系）の長さの基本単位は m。質量は kg、時間は s。"
+    },
+    {
+      "id": "sci_phy01_002",
+      "category": "knowledge",
+      "prompt": "「0.0250 m」の有効数字は何けた？",
+      "choices": [
+        "3けた",
+        "4けた",
+        "2けた",
+        "5けた"
+      ],
+      "answerIndex": 0,
+      "explanation": "先頭の 0 は位取りなので数えず、末尾の 0 は測定で得た数字なので数える。2・5・0 の3けた。"
+    },
+    {
+      "id": "sci_phy01_003",
+      "category": "knowledge",
+      "prompt": "「速さ」と「速度」のちがいとして正しいものは？",
+      "choices": [
+        "速度は向きももつ量である",
+        "2つは完全に同じ意味である",
+        "速度は常に正の値である",
+        "速さは向きももつ量である"
+      ],
+      "answerIndex": 0,
+      "explanation": "速度は大きさと向きをもつベクトル、速さはその大きさだけを表すスカラー。"
+    },
+    {
+      "id": "sci_phy01_004",
+      "category": "knowledge",
+      "prompt": "位置の変化（どちら向きにどれだけ移動したか）を表す量は？",
+      "choices": [
+        "加速度",
+        "変位",
+        "速さ",
+        "道のり"
+      ],
+      "answerIndex": 1,
+      "explanation": "変位は「後の位置 − 前の位置」で、向きをもつ。道のりは実際に動いた長さで向きをもたない。"
+    },
+    {
+      "id": "sci_phy01_005",
+      "category": "knowledge",
+      "prompt": "x-t グラフ（位置と時間のグラフ）の傾きが表すものは？",
+      "choices": [
+        "速度",
+        "加速度",
+        "道のり",
+        "変位"
+      ],
+      "answerIndex": 0,
+      "explanation": "x-t グラフの傾き＝単位時間あたりの位置の変化＝速度。"
+    },
+    {
+      "id": "sci_phy01_006",
+      "category": "knowledge",
+      "prompt": "v-t グラフ（速度と時間のグラフ）と t 軸で囲まれた面積が表すものは？",
+      "choices": [
+        "時間",
+        "変位",
+        "加速度",
+        "速度"
+      ],
+      "answerIndex": 1,
+      "explanation": "速度 × 時間 ＝ 変位。v-t グラフの面積は変位を表す（傾きは加速度）。"
+    },
+    {
+      "id": "sci_phy01_007",
+      "category": "knowledge",
+      "prompt": "x-t グラフで、ある瞬間の速度を求めるには？",
+      "choices": [
+        "グラフの面積を求める",
+        "原点とその点を結ぶ直線の長さを読む",
+        "その点での接線の傾きを読む",
+        "その点の縦軸の値を読む"
+      ],
+      "answerIndex": 2,
+      "explanation": "瞬間の速度は x-t グラフの接線の傾き。原点と結んだ直線の傾きはそこまでの平均の速度。"
+    },
+    {
+      "id": "sci_phy01_008",
+      "category": "knowledge",
+      "prompt": "測定における「誤差」とは？",
+      "choices": [
+        "測定値と真の値との差",
+        "目盛りの最小単位",
+        "測定値を2倍したもの",
+        "有効数字のけた数"
+      ],
+      "answerIndex": 0,
+      "explanation": "誤差＝測定値 − 真の値。目盛りの1/10まで目分量で読み、最後の1けたに誤差を含む。"
+    },
+    {
+      "id": "sci_phy01_009",
+      "category": "calculation",
+      "prompt": "36 km/h は何 m/s？",
+      "choices": [
+        "10 m/s",
+        "3.6 m/s",
+        "36 m/s",
+        "100 m/s"
+      ],
+      "answerIndex": 0,
+      "explanation": "36 km/h ＝ 36000 m ÷ 3600 s ＝ 10 m/s。km/h を m/s にするには 3.6 で割る。"
+    },
+    {
+      "id": "sci_phy01_010",
+      "category": "calculation",
+      "prompt": "x 軸上で、物体が位置 2.0 m から位置 −3.0 m へ移動した。変位は？",
+      "choices": [
+        "5.0 m",
+        "1.0 m",
+        "−1.0 m",
+        "−5.0 m"
+      ],
+      "answerIndex": 3,
+      "explanation": "変位＝後の位置 − 前の位置 ＝ (−3.0) − 2.0 ＝ −5.0 m。負の向きに 5.0 m 動いた。"
+    },
+    {
+      "id": "sci_phy01_011",
+      "category": "calculation",
+      "prompt": "100 m を 12.5 s で走ったときの平均の速さは？",
+      "choices": [
+        "12.5 m/s",
+        "1250 m/s",
+        "0.125 m/s",
+        "8.0 m/s"
+      ],
+      "answerIndex": 3,
+      "explanation": "平均の速さ＝道のり ÷ 時間 ＝ 100 ÷ 12.5 ＝ 8.0 m/s。"
+    },
+    {
+      "id": "sci_phy01_012",
+      "category": "calculation",
+      "prompt": "有効数字を考えて 2.4 × 1.25 を計算すると？",
+      "choices": [
+        "3.00",
+        "3",
+        "3.000",
+        "3.0"
+      ],
+      "answerIndex": 3,
+      "explanation": "かけ算・割り算の答えは、有効数字のけた数が最も少ないもの（2.4 の2けた）にそろえる。"
+    },
+    {
+      "id": "sci_phy01_013",
+      "category": "calculation",
+      "prompt": "東へ 20 m/s で走る車 A から、東へ 15 m/s で走る車 B を見たときの速度は？",
+      "choices": [
+        "西向きに 35 m/s",
+        "東向きに 5 m/s",
+        "西向きに 5 m/s",
+        "東向きに 35 m/s"
+      ],
+      "answerIndex": 2,
+      "explanation": "A から見た B の相対速度＝ v_B − v_A ＝ 15 − 20 ＝ −5 m/s（東を正とすると西向き 5 m/s）。"
+    },
+    {
+      "id": "sci_phy01_014",
+      "category": "calculation",
+      "prompt": "速さ 3.0 m/s の等速直線運動で、20 s 間に進む距離は？",
+      "choices": [
+        "6.7 m",
+        "17 m",
+        "23 m",
+        "60 m"
+      ],
+      "answerIndex": 3,
+      "explanation": "等速直線運動では x ＝ vt ＝ 3.0 × 20 ＝ 60 m。"
+    },
+    {
+      "id": "sci_phy01_015",
+      "category": "thinking",
+      "prompt": "x-t グラフが右上がりの直線になった。この物体の運動は？",
+      "choices": [
+        "だんだん遅くなる運動",
+        "静止",
+        "等速直線運動",
+        "等加速度直線運動"
+      ],
+      "answerIndex": 2,
+      "explanation": "傾き（速度）が一定なので等速直線運動。曲線なら速度が変化している。"
+    },
+    {
+      "id": "sci_phy01_016",
+      "category": "thinking",
+      "prompt": "v-t グラフで、グラフが t 軸より下にある時間帯について正しいものは？",
+      "choices": [
+        "止まっている",
+        "負の向きに進んでいる",
+        "加速度が負である",
+        "位置が負である"
+      ],
+      "answerIndex": 1,
+      "explanation": "v < 0 は負の向きに進んでいることを表す。加速度の正負はグラフの傾きで判断する。"
+    }
+  ]
+}

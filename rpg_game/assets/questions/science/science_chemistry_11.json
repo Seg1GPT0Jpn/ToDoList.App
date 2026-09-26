@@ -1,0 +1,216 @@
+{
+  "setId": "science_chemistry_11",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_chm11_001",
+      "category": "knowledge",
+      "prompt": "発熱反応の反応エンタルピー ΔH の符号は？",
+      "choices": [
+        "決まっていない",
+        "負（ΔH < 0）",
+        "正（ΔH > 0）",
+        "0"
+      ],
+      "answerIndex": 1,
+      "explanation": "発熱すると物質のもつエンタルピーが減るので ΔH は負。吸熱反応は正。"
+    },
+    {
+      "id": "sci_chm11_002",
+      "category": "knowledge",
+      "prompt": "「反応エンタルピーは、反応の経路によらず、はじめと終わりの状態だけで決まる」という法則は？",
+      "choices": [
+        "ヘスの法則",
+        "ファラデーの法則",
+        "ヘンリーの法則",
+        "質量保存の法則"
+      ],
+      "answerIndex": 0,
+      "explanation": "直接測れない反応熱も、他の反応式の組み合わせから計算できる。"
+    },
+    {
+      "id": "sci_chm11_003",
+      "category": "knowledge",
+      "prompt": "気体分子の共有結合 1 mol を切るのに必要なエネルギーを何という？",
+      "choices": [
+        "イオン化エネルギー",
+        "活性化エネルギー",
+        "結合エネルギー",
+        "燃焼エンタルピー"
+      ],
+      "answerIndex": 2,
+      "explanation": "反応エンタルピー ≒（切れる結合のエネルギーの和）−（できる結合のエネルギーの和）。"
+    },
+    {
+      "id": "sci_chm11_004",
+      "category": "knowledge",
+      "prompt": "ダニエル電池の負極は？",
+      "choices": [
+        "銅",
+        "白金",
+        "炭素",
+        "亜鉛"
+      ],
+      "answerIndex": 3,
+      "explanation": "イオン化傾向の大きい Zn が Zn²⁺ になって溶け出し、電子を出す。正極では Cu²⁺ が Cu になる。"
+    },
+    {
+      "id": "sci_chm11_005",
+      "category": "knowledge",
+      "prompt": "充電してくり返し使える電池を何という？",
+      "choices": [
+        "二次電池",
+        "一次電池",
+        "燃料電池",
+        "太陽電池"
+      ],
+      "answerIndex": 0,
+      "explanation": "鉛蓄電池・リチウムイオン電池・ニッケル水素電池など。"
+    },
+    {
+      "id": "sci_chm11_006",
+      "category": "knowledge",
+      "prompt": "電気分解で、陰極で起こる反応は？",
+      "choices": [
+        "酸化反応",
+        "中和反応",
+        "何も起こらない",
+        "還元反応"
+      ],
+      "answerIndex": 3,
+      "explanation": "陰極は電源の負極につながり、電子を受け取る反応（還元）が起こる。陽極では酸化。"
+    },
+    {
+      "id": "sci_chm11_007",
+      "category": "knowledge",
+      "prompt": "電子 1 mol がもつ電気量の大きさ（ファラデー定数）は？",
+      "choices": [
+        "1.6 × 10⁻¹⁹ C/mol",
+        "9.65 × 10⁴ C/mol",
+        "6.0 × 10²³ C/mol",
+        "96.5 C/mol"
+      ],
+      "answerIndex": 1,
+      "explanation": "F ＝ 9.65 × 10⁴ C/mol ＝ 電気素量 × アボガドロ定数。"
+    },
+    {
+      "id": "sci_chm11_008",
+      "category": "knowledge",
+      "prompt": "水素と酸素から電気をとり出し、水だけができる電池は？",
+      "choices": [
+        "鉛蓄電池",
+        "ダニエル電池",
+        "燃料電池",
+        "マンガン乾電池"
+      ],
+      "answerIndex": 2,
+      "explanation": "負極で H₂ が酸化され、正極で O₂ が還元される。"
+    },
+    {
+      "id": "sci_chm11_009",
+      "category": "calculation",
+      "prompt": "C ＋ O₂ → CO₂ ΔH ＝ −394 kJ、CO ＋ ½O₂ → CO₂ ΔH ＝ −283 kJ。C ＋ ½O₂ → CO の ΔH は？",
+      "choices": [
+        "−283 kJ",
+        "＋111 kJ",
+        "−111 kJ",
+        "−677 kJ"
+      ],
+      "answerIndex": 2,
+      "explanation": "ヘスの法則：(−394) − (−283) ＝ −111 kJ。"
+    },
+    {
+      "id": "sci_chm11_010",
+      "category": "calculation",
+      "prompt": "結合エネルギー H−H 436、Cl−Cl 243、H−Cl 432（kJ/mol）。H₂ ＋ Cl₂ → 2HCl の ΔH は？",
+      "choices": [
+        "−185 kJ",
+        "−432 kJ",
+        "＋185 kJ",
+        "−247 kJ"
+      ],
+      "answerIndex": 0,
+      "explanation": "切る結合 436 ＋ 243 ＝ 679、できる結合 2 × 432 ＝ 864。ΔH ＝ 679 − 864 ＝ −185 kJ。"
+    },
+    {
+      "id": "sci_chm11_011",
+      "category": "calculation",
+      "prompt": "メタンの燃焼エンタルピーは −890 kJ/mol。メタン 8.0 g を完全燃焼させたときの発熱量は？（CH₄ ＝ 16）",
+      "choices": [
+        "1780 kJ",
+        "445 kJ",
+        "111 kJ",
+        "890 kJ"
+      ],
+      "answerIndex": 1,
+      "explanation": "8.0 g ＝ 0.50 mol。0.50 × 890 ＝ 445 kJ。"
+    },
+    {
+      "id": "sci_chm11_012",
+      "category": "calculation",
+      "prompt": "2.0 A の電流を 9650 s 流した。流れた電子の物質量は？（F ＝ 9.65 × 10⁴ C/mol）",
+      "choices": [
+        "0.20 mol",
+        "0.10 mol",
+        "0.40 mol",
+        "2.0 mol"
+      ],
+      "answerIndex": 0,
+      "explanation": "Q ＝ 2.0 × 9650 ＝ 1.93 × 10⁴ C。÷ 9.65×10⁴ ＝ 0.20 mol。"
+    },
+    {
+      "id": "sci_chm11_013",
+      "category": "calculation",
+      "prompt": "硫酸銅(Ⅱ)水溶液を電気分解し、電子 0.20 mol が流れた。陰極に析出する銅は？（Cu ＝ 64）",
+      "choices": [
+        "6.4 g",
+        "64 g",
+        "12.8 g",
+        "3.2 g"
+      ],
+      "answerIndex": 0,
+      "explanation": "Cu²⁺ ＋ 2e⁻ → Cu。電子 0.20 mol で Cu 0.10 mol ＝ 6.4 g。"
+    },
+    {
+      "id": "sci_chm11_014",
+      "category": "calculation",
+      "prompt": "水の電気分解で電子 0.40 mol が流れた。陰極で発生する水素は標準状態で何 L？",
+      "choices": [
+        "8.96 L",
+        "22.4 L",
+        "4.48 L",
+        "2.24 L"
+      ],
+      "answerIndex": 2,
+      "explanation": "2H⁺ ＋ 2e⁻ → H₂（または 2H₂O ＋ 2e⁻ → H₂ ＋ 2OH⁻）。H₂ 0.20 mol ＝ 4.48 L。"
+    },
+    {
+      "id": "sci_chm11_015",
+      "category": "thinking",
+      "prompt": "ダニエル電池で、導線を流れる電子の向きは？",
+      "choices": [
+        "銅板から亜鉛板へ",
+        "亜鉛板から銅板へ",
+        "交互に入れかわる",
+        "流れない"
+      ],
+      "answerIndex": 1,
+      "explanation": "電子は負極（Zn）から正極（Cu）へ流れる。電流の向きはその逆。"
+    },
+    {
+      "id": "sci_chm11_016",
+      "category": "thinking",
+      "prompt": "鉛蓄電池を放電すると、両極の質量はどうなる？",
+      "choices": [
+        "負極だけ減る",
+        "どちらも減る",
+        "どちらも増える",
+        "変わらない"
+      ],
+      "answerIndex": 2,
+      "explanation": "両極とも水に溶けにくい PbSO₄ が表面につくので、どちらも質量が増える。"
+    }
+  ]
+}

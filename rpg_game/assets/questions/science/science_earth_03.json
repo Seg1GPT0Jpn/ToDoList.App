@@ -1,0 +1,216 @@
+{
+  "setId": "science_earth_03",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_ear03_001",
+      "category": "knowledge",
+      "prompt": "地下で地震が発生した場所を何という？",
+      "choices": [
+        "断層面",
+        "震源",
+        "震央",
+        "震度"
+      ],
+      "answerIndex": 1,
+      "explanation": "震源の真上の地表の点が震央。"
+    },
+    {
+      "id": "sci_ear03_002",
+      "category": "knowledge",
+      "prompt": "P 波について正しいものは？",
+      "choices": [
+        "液体の中は伝わらない",
+        "縦波で、S 波より速い",
+        "横波で、S 波より遅い",
+        "主要動を起こす"
+      ],
+      "answerIndex": 1,
+      "explanation": "P 波（Primary）は最初に届く波で、初期微動を起こす。固体・液体・気体を伝わる。"
+    },
+    {
+      "id": "sci_ear03_003",
+      "category": "knowledge",
+      "prompt": "S 波について正しいものは？",
+      "choices": [
+        "横波で、液体の中は伝わらない",
+        "空気中も伝わる",
+        "縦波で、最も速い",
+        "初期微動を起こす"
+      ],
+      "answerIndex": 0,
+      "explanation": "S 波は主要動を起こす大きなゆれの原因。"
+    },
+    {
+      "id": "sci_ear03_004",
+      "category": "knowledge",
+      "prompt": "P 波が届いてから S 波が届くまでの小さなゆれを何という？",
+      "choices": [
+        "主要動",
+        "余震",
+        "液状化",
+        "初期微動"
+      ],
+      "answerIndex": 3,
+      "explanation": "この時間（初期微動継続時間）は、震源から遠いほど長い。"
+    },
+    {
+      "id": "sci_ear03_005",
+      "category": "knowledge",
+      "prompt": "地震そのものの規模（エネルギーの大きさ）を表すものは？",
+      "choices": [
+        "震度",
+        "震源の深さ",
+        "初期微動継続時間",
+        "マグニチュード"
+      ],
+      "answerIndex": 3,
+      "explanation": "震度は、それぞれの場所でのゆれの強さ。"
+    },
+    {
+      "id": "sci_ear03_006",
+      "category": "knowledge",
+      "prompt": "マグニチュードが 1 大きくなると、地震のエネルギーはおよそ何倍？",
+      "choices": [
+        "約 2 倍",
+        "約 1000 倍",
+        "約 32 倍",
+        "約 10 倍"
+      ],
+      "answerIndex": 2,
+      "explanation": "M が 2 大きいと約 1000 倍（32 × 32）。"
+    },
+    {
+      "id": "sci_ear03_007",
+      "category": "knowledge",
+      "prompt": "日本の震度階級はいくつに分かれている？",
+      "choices": [
+        "7 階級",
+        "8 階級",
+        "10 階級",
+        "12 階級"
+      ],
+      "answerIndex": 2,
+      "explanation": "0・1・2・3・4・5弱・5強・6弱・6強・7 の 10 階級。"
+    },
+    {
+      "id": "sci_ear03_008",
+      "category": "knowledge",
+      "prompt": "地層を左右から押す力（圧縮）によってできる断層は？",
+      "choices": [
+        "横ずれ断層だけ",
+        "逆断層",
+        "正断層",
+        "トランスフォーム断層"
+      ],
+      "answerIndex": 1,
+      "explanation": "上盤がずり上がる。引っ張る力でできるのは正断層（上盤がずり下がる）。"
+    },
+    {
+      "id": "sci_ear03_009",
+      "category": "knowledge",
+      "prompt": "最近の数十万年間にくり返し活動し、今後も活動する可能性がある断層を何という？",
+      "choices": [
+        "不整合",
+        "活断層",
+        "正断層",
+        "褶曲"
+      ],
+      "answerIndex": 1,
+      "explanation": "内陸の直下型地震の原因になる。"
+    },
+    {
+      "id": "sci_ear03_010",
+      "category": "knowledge",
+      "prompt": "地震のゆれで、地下水をふくむ砂の地盤が液体のようになる現象は？",
+      "choices": [
+        "液状化現象",
+        "津波",
+        "地すべり",
+        "隆起"
+      ],
+      "answerIndex": 0,
+      "explanation": "埋立地や川沿いの低地で起こりやすい。"
+    },
+    {
+      "id": "sci_ear03_011",
+      "category": "calculation",
+      "prompt": "初期微動継続時間が 10 秒だった。大森公式の比例定数を 8 km/s とすると、震源までの距離は？",
+      "choices": [
+        "80 km",
+        "8 km",
+        "1.25 km",
+        "800 km"
+      ],
+      "answerIndex": 0,
+      "explanation": "大森公式 D ＝ kT ＝ 8 × 10 ＝ 80 km。"
+    },
+    {
+      "id": "sci_ear03_012",
+      "category": "calculation",
+      "prompt": "P 波の速さ 6 km/s、S 波の速さ 3 km/s のとき、震源から 60 km の地点の初期微動継続時間は？",
+      "choices": [
+        "5 秒",
+        "20 秒",
+        "10 秒",
+        "30 秒"
+      ],
+      "answerIndex": 2,
+      "explanation": "P 波は 10 秒、S 波は 20 秒で届く。差は 10 秒。"
+    },
+    {
+      "id": "sci_ear03_013",
+      "category": "calculation",
+      "prompt": "マグニチュードが 2 大きい地震のエネルギーは、およそ何倍？",
+      "choices": [
+        "約 64 倍",
+        "約 4 倍",
+        "約 1000 倍",
+        "約 100 倍"
+      ],
+      "answerIndex": 2,
+      "explanation": "32 × 32 ≒ 1000 倍。"
+    },
+    {
+      "id": "sci_ear03_014",
+      "category": "calculation",
+      "prompt": "P 波の速さ 6 km/s で、震源から 90 km の地点に P 波が届くまでの時間は？",
+      "choices": [
+        "540 秒",
+        "30 秒",
+        "15 秒",
+        "1.5 秒"
+      ],
+      "answerIndex": 2,
+      "explanation": "90 ÷ 6 ＝ 15 秒。"
+    },
+    {
+      "id": "sci_ear03_015",
+      "category": "thinking",
+      "prompt": "同じ地震で、A 地点の初期微動継続時間は 5 秒、B 地点は 15 秒だった。震源に近いのは？",
+      "choices": [
+        "A 地点",
+        "B 地点",
+        "同じ距離",
+        "わからない"
+      ],
+      "answerIndex": 0,
+      "explanation": "初期微動継続時間は震源距離に比例する。短い方が近い。"
+    },
+    {
+      "id": "sci_ear03_016",
+      "category": "thinking",
+      "prompt": "緊急地震速報が、強いゆれが来る前に出せるのはなぜ？",
+      "choices": [
+        "S 波の方が速いから",
+        "地震を事前に予知しているから",
+        "津波を観測しているから",
+        "速い P 波を観測して、遅れて来る S 波の到着前に知らせるから"
+      ],
+      "answerIndex": 3,
+      "explanation": "震源近くの観測点で P 波をとらえ、震源や規模を推定して各地に伝える。"
+    }
+  ]
+}

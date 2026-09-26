@@ -1,0 +1,216 @@
+{
+  "setId": "science_earth_02",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_ear02_001",
+      "category": "knowledge",
+      "prompt": "プレートが新しくつくられる、海底の大山脈を何という？",
+      "choices": [
+        "トラフ",
+        "海嶺",
+        "海溝",
+        "島弧"
+      ],
+      "answerIndex": 1,
+      "explanation": "マントル物質が上昇してマグマができ、海洋プレートが生まれて両側へ広がる。"
+    },
+    {
+      "id": "sci_ear02_002",
+      "category": "knowledge",
+      "prompt": "海洋プレートが別のプレートの下に沈みこむ深い溝は？",
+      "choices": [
+        "ホットスポット",
+        "海嶺",
+        "海溝",
+        "大陸棚"
+      ],
+      "answerIndex": 2,
+      "explanation": "日本海溝や南海トラフなど。沈みこみ帯では地震や火山活動がさかん。"
+    },
+    {
+      "id": "sci_ear02_003",
+      "category": "knowledge",
+      "prompt": "プレートがすれちがう境界にできる断層を何という？",
+      "choices": [
+        "正断層",
+        "活断層",
+        "逆断層",
+        "トランスフォーム断層"
+      ],
+      "answerIndex": 3,
+      "explanation": "例：北アメリカ西岸のサンアンドレアス断層。"
+    },
+    {
+      "id": "sci_ear02_004",
+      "category": "knowledge",
+      "prompt": "「大陸はかつて一つにまとまっていて、分かれて移動した」という大陸移動説を唱えたのは？",
+      "choices": [
+        "ハッブル",
+        "ケプラー",
+        "ウェゲナー",
+        "ダーウィン"
+      ],
+      "answerIndex": 2,
+      "explanation": "1912 年に提唱。まとまっていた大陸をパンゲアと呼んだ。"
+    },
+    {
+      "id": "sci_ear02_005",
+      "category": "knowledge",
+      "prompt": "プレートの下にある、やわらかく流動しやすい層は？",
+      "choices": [
+        "アセノスフェア",
+        "外核",
+        "地殻",
+        "リソスフェア"
+      ],
+      "answerIndex": 0,
+      "explanation": "プレート（リソスフェア）はこの上を動く。"
+    },
+    {
+      "id": "sci_ear02_006",
+      "category": "knowledge",
+      "prompt": "ハワイ諸島のように、プレートの動きと関係なくマントル深部からマグマが上がってくる場所は？",
+      "choices": [
+        "トランスフォーム断層",
+        "海溝",
+        "ホットスポット",
+        "島弧"
+      ],
+      "answerIndex": 2,
+      "explanation": "ホットスポットの位置はほぼ動かないので、プレートが動くと火山島の列ができる。"
+    },
+    {
+      "id": "sci_ear02_007",
+      "category": "knowledge",
+      "prompt": "日本列島付近にあるプレートの数は？",
+      "choices": [
+        "1 枚",
+        "6 枚",
+        "4 枚",
+        "2 枚"
+      ],
+      "answerIndex": 2,
+      "explanation": "北アメリカ・ユーラシア・太平洋・フィリピン海プレート。"
+    },
+    {
+      "id": "sci_ear02_008",
+      "category": "knowledge",
+      "prompt": "大陸プレートどうしが衝突してできた大山脈の例は？",
+      "choices": [
+        "ヒマラヤ山脈",
+        "ハワイ諸島",
+        "大西洋中央海嶺",
+        "日本海溝"
+      ],
+      "answerIndex": 0,
+      "explanation": "インド亜大陸がユーラシア大陸に衝突して、ヒマラヤ山脈やチベット高原ができた。"
+    },
+    {
+      "id": "sci_ear02_009",
+      "category": "knowledge",
+      "prompt": "プレート全体の厚さはおよそ？",
+      "choices": [
+        "100 km 程度",
+        "1000 km 程度",
+        "6400 km",
+        "1 km 程度"
+      ],
+      "answerIndex": 0,
+      "explanation": "プレートは地殻とマントル最上部からなり、厚さは数十〜100 km 程度。"
+    },
+    {
+      "id": "sci_ear02_010",
+      "category": "knowledge",
+      "prompt": "プレートの運動によって、地震・火山・造山運動などを説明する考え方を何という？",
+      "choices": [
+        "プレートテクトニクス",
+        "アイソスタシー",
+        "地動説",
+        "ビッグバン理論"
+      ],
+      "answerIndex": 0,
+      "explanation": "1960 年代に、大陸移動説や海洋底拡大説をもとに確立された。"
+    },
+    {
+      "id": "sci_ear02_011",
+      "category": "knowledge",
+      "prompt": "海嶺の両側の海底で、岩石の磁気の向き（N・S）が縞模様になっていることから支持された説は？",
+      "choices": [
+        "海洋底拡大説",
+        "天動説",
+        "地向斜説",
+        "大陸固定説"
+      ],
+      "answerIndex": 0,
+      "explanation": "地磁気は過去に何度も逆転しており、海嶺でできた岩石がそのときの向きを記録して両側へ広がった。"
+    },
+    {
+      "id": "sci_ear02_012",
+      "category": "calculation",
+      "prompt": "プレートが 1 年に 5 cm 動くとすると、100 万年で何 km 移動する？",
+      "choices": [
+        "0.5 km",
+        "500 km",
+        "50 km",
+        "5 km"
+      ],
+      "answerIndex": 2,
+      "explanation": "5 cm × 10⁶ ＝ 5 × 10⁶ cm ＝ 50 km。"
+    },
+    {
+      "id": "sci_ear02_013",
+      "category": "calculation",
+      "prompt": "海嶺から 300 km 離れた海底の岩石の年代が 600 万年だった。海洋底が広がる速さ（片側）は？",
+      "choices": [
+        "2 cm/年",
+        "0.5 cm/年",
+        "50 cm/年",
+        "5 cm/年"
+      ],
+      "answerIndex": 3,
+      "explanation": "300 km ＝ 3 × 10⁷ cm。3 × 10⁷ ÷ 6 × 10⁶ ＝ 5 cm/年。"
+    },
+    {
+      "id": "sci_ear02_014",
+      "category": "calculation",
+      "prompt": "南アメリカとアフリカの間の大西洋（幅約 5000 km）が 1 億年かけて広がったとすると、平均の速さは？",
+      "choices": [
+        "5 m/年",
+        "5 cm/年",
+        "50 cm/年",
+        "0.5 cm/年"
+      ],
+      "answerIndex": 1,
+      "explanation": "5000 km ＝ 5 × 10⁸ cm。÷ 10⁸ 年 ＝ 5 cm/年。"
+    },
+    {
+      "id": "sci_ear02_015",
+      "category": "thinking",
+      "prompt": "海嶺から離れるほど、海底の岩石の年代が古くなる。このことからわかることは？",
+      "choices": [
+        "海嶺で海底が沈みこんでいる",
+        "海嶺は最も古い場所である",
+        "海底は動いていない",
+        "海底が海嶺でつくられ、両側に広がっている"
+      ],
+      "answerIndex": 3,
+      "explanation": "海洋底拡大説の証拠の一つ。"
+    },
+    {
+      "id": "sci_ear02_016",
+      "category": "thinking",
+      "prompt": "ハワイ諸島とその先の海山の列は、北西にあるものほど古い。このことからわかることは？",
+      "choices": [
+        "ホットスポットが南東へ動いている",
+        "太平洋プレートが北西の方向へ動いている",
+        "太平洋プレートが南東へ動いている",
+        "プレートは動いていない"
+      ],
+      "answerIndex": 1,
+      "explanation": "ホットスポットの上でできた火山島が、プレートにのって北西へ運ばれていった。"
+    }
+  ]
+}

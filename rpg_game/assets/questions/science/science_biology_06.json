@@ -1,0 +1,216 @@
+{
+  "setId": "science_biology_06",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_bio06_001",
+      "category": "knowledge",
+      "prompt": "病原体を細胞内に取りこんで分解するはたらきを何という？",
+      "choices": [
+        "食作用",
+        "再吸収",
+        "血液凝固",
+        "抗原抗体反応"
+      ],
+      "answerIndex": 0,
+      "explanation": "好中球・マクロファージ・樹状細胞が食作用を行う。"
+    },
+    {
+      "id": "sci_bio06_002",
+      "category": "knowledge",
+      "prompt": "生まれつき備わっていて、侵入した異物をすばやく排除するしくみを何という？",
+      "choices": [
+        "免疫記憶",
+        "自然免疫",
+        "体液性免疫",
+        "獲得免疫"
+      ],
+      "answerIndex": 1,
+      "explanation": "食作用や炎症など。特定の異物だけを見分けるわけではない。"
+    },
+    {
+      "id": "sci_bio06_003",
+      "category": "knowledge",
+      "prompt": "特定の異物を認識して排除し、記憶も残る免疫を何という？",
+      "choices": [
+        "自然免疫",
+        "食作用",
+        "物理的防御",
+        "獲得免疫（適応免疫）"
+      ],
+      "answerIndex": 3,
+      "explanation": "リンパ球（T 細胞・B 細胞）が中心となってはたらく。"
+    },
+    {
+      "id": "sci_bio06_004",
+      "category": "knowledge",
+      "prompt": "免疫が異物として認識する物質を何という？",
+      "choices": [
+        "酵素",
+        "抗体",
+        "ホルモン",
+        "抗原"
+      ],
+      "answerIndex": 3,
+      "explanation": "抗原に結合して無毒化するタンパク質が抗体。"
+    },
+    {
+      "id": "sci_bio06_005",
+      "category": "knowledge",
+      "prompt": "抗体の本体は？",
+      "choices": [
+        "炭水化物",
+        "免疫グロブリン（タンパク質）",
+        "脂肪",
+        "DNA"
+      ],
+      "answerIndex": 1,
+      "explanation": "抗体は Y 字形のタンパク質で、特定の抗原とだけ結合する。"
+    },
+    {
+      "id": "sci_bio06_006",
+      "category": "knowledge",
+      "prompt": "抗体をつくって放出する細胞は？",
+      "choices": [
+        "赤血球",
+        "好中球",
+        "キラー T 細胞",
+        "B 細胞が分化した形質細胞（抗体産生細胞）"
+      ],
+      "answerIndex": 3,
+      "explanation": "ヘルパー T 細胞の助けで B 細胞が増殖・分化し、抗体を産生する（体液性免疫）。"
+    },
+    {
+      "id": "sci_bio06_007",
+      "category": "knowledge",
+      "prompt": "感染した細胞を直接攻撃して破壊するリンパ球は？",
+      "choices": [
+        "血小板",
+        "キラー T 細胞",
+        "形質細胞",
+        "B 細胞"
+      ],
+      "answerIndex": 1,
+      "explanation": "キラー T 細胞による免疫を細胞性免疫という。"
+    },
+    {
+      "id": "sci_bio06_008",
+      "category": "knowledge",
+      "prompt": "取りこんだ異物の情報を T 細胞に伝える（抗原提示する）代表的な細胞は？",
+      "choices": [
+        "形質細胞",
+        "赤血球",
+        "血小板",
+        "樹状細胞"
+      ],
+      "answerIndex": 3,
+      "explanation": "樹状細胞はリンパ節へ移動して抗原提示を行い、獲得免疫を始動させる。"
+    },
+    {
+      "id": "sci_bio06_009",
+      "category": "knowledge",
+      "prompt": "一度かかった病気に、二度目はかかりにくい（かかっても軽くすむ）理由は？",
+      "choices": [
+        "体温が上がるから",
+        "記憶細胞が残っていて、すばやく強い反応が起こるから",
+        "抗原がなくなったから",
+        "自然免疫がなくなったから"
+      ],
+      "answerIndex": 1,
+      "explanation": "免疫記憶による二次応答。"
+    },
+    {
+      "id": "sci_bio06_010",
+      "category": "knowledge",
+      "prompt": "弱毒化した病原体などを接種して、免疫記憶をつくらせる方法は？",
+      "choices": [
+        "輸血",
+        "血清療法",
+        "予防接種（ワクチン）",
+        "臓器移植"
+      ],
+      "answerIndex": 2,
+      "explanation": "ワクチンは発病を予防する。血清療法は他の動物につくらせた抗体を注射する治療法。"
+    },
+    {
+      "id": "sci_bio06_011",
+      "category": "knowledge",
+      "prompt": "花粉など本来無害なものに免疫が過敏に反応し、からだに不都合が生じることを何という？",
+      "choices": [
+        "拒絶反応",
+        "免疫不全",
+        "自己免疫疾患",
+        "アレルギー"
+      ],
+      "answerIndex": 3,
+      "explanation": "急激で全身性のアレルギー反応をアナフィラキシーという。"
+    },
+    {
+      "id": "sci_bio06_012",
+      "category": "knowledge",
+      "prompt": "HIV（ヒト免疫不全ウイルス）が主に感染して破壊する細胞は？",
+      "choices": [
+        "肝細胞",
+        "血小板",
+        "赤血球",
+        "ヘルパー T 細胞"
+      ],
+      "answerIndex": 3,
+      "explanation": "ヘルパー T 細胞が減ると獲得免疫がはたらかなくなり、エイズを発症する。"
+    },
+    {
+      "id": "sci_bio06_013",
+      "category": "knowledge",
+      "prompt": "皮膚の角質層や、涙・だ液にふくまれるリゾチームなどによる防御を何という？",
+      "choices": [
+        "獲得免疫",
+        "物理的・化学的防御",
+        "抗原提示",
+        "細胞性免疫"
+      ],
+      "answerIndex": 1,
+      "explanation": "異物の侵入そのものを防ぐ最初の防御。"
+    },
+    {
+      "id": "sci_bio06_014",
+      "category": "knowledge",
+      "prompt": "自分のからだの成分を異物と認識して攻撃してしまう病気は？",
+      "choices": [
+        "自己免疫疾患",
+        "感染症",
+        "アレルギー",
+        "糖尿病（2型）"
+      ],
+      "answerIndex": 0,
+      "explanation": "例：関節リウマチ、1型糖尿病。"
+    },
+    {
+      "id": "sci_bio06_015",
+      "category": "thinking",
+      "prompt": "同じ抗原が2回目に侵入したときの抗体の量の変化は、1回目と比べてどうなる？",
+      "choices": [
+        "同じ",
+        "まったくつくられない",
+        "より速く、より多くつくられる",
+        "より遅く、少なくつくられる"
+      ],
+      "answerIndex": 2,
+      "explanation": "記憶細胞がすぐに増殖・分化するため（二次応答）。"
+    },
+    {
+      "id": "sci_bio06_016",
+      "category": "thinking",
+      "prompt": "他人から移植した皮膚や臓器が定着しにくい主な理由は？",
+      "choices": [
+        "移植片が自分で分解するから",
+        "キラー T 細胞が移植片を異物として攻撃するから（細胞性免疫）",
+        "血液が届かないから",
+        "抗体がまったくはたらかないから"
+      ],
+      "answerIndex": 1,
+      "explanation": "拒絶反応。移植では免疫のはたらきを抑える薬を使う。"
+    }
+  ]
+}

@@ -1,0 +1,216 @@
+{
+  "setId": "science_earth_16",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_ear16_001",
+      "category": "knowledge",
+      "prompt": "私たちの太陽系がふくまれる銀河を何という？",
+      "choices": [
+        "おとめ座銀河団",
+        "銀河系（天の川銀河）",
+        "マゼラン雲",
+        "アンドロメダ銀河"
+      ],
+      "answerIndex": 1,
+      "explanation": "約 1000 億〜数千億個の恒星からなる。"
+    },
+    {
+      "id": "sci_ear16_002",
+      "category": "knowledge",
+      "prompt": "銀河系の円盤部の直径はおよそ？",
+      "choices": [
+        "約 10 万光年",
+        "約 1 光年",
+        "約 100 億光年",
+        "約 100 光年"
+      ],
+      "answerIndex": 0,
+      "explanation": "中心の膨らんだ部分がバルジ、全体を球状に包む部分がハロー。"
+    },
+    {
+      "id": "sci_ear16_003",
+      "category": "knowledge",
+      "prompt": "太陽系は銀河系のどこにある？",
+      "choices": [
+        "円盤部の、中心から約 2.6〜2.8 万光年の所",
+        "ハローの外側",
+        "銀河系の中心",
+        "銀河系の外"
+      ],
+      "answerIndex": 0,
+      "explanation": "銀河系の中心には巨大なブラックホールがあると考えられている。"
+    },
+    {
+      "id": "sci_ear16_004",
+      "category": "knowledge",
+      "prompt": "球状星団の特徴は？",
+      "choices": [
+        "古い恒星が数十万個集まり、ハローに分布する",
+        "銀河系の外にだけある",
+        "恒星が数十個だけ",
+        "若い恒星が円盤部に集まっている"
+      ],
+      "answerIndex": 0,
+      "explanation": "散開星団は若い恒星が数十〜数百個集まったもので、円盤部にある（例：すばる）。"
+    },
+    {
+      "id": "sci_ear16_005",
+      "category": "knowledge",
+      "prompt": "アンドロメダ銀河までの距離はおよそ？",
+      "choices": [
+        "約 2.5 光年",
+        "約 250 億光年",
+        "約 250 万光年",
+        "約 2.5 万光年"
+      ],
+      "answerIndex": 2,
+      "explanation": "肉眼で見える最も遠い天体の一つ。"
+    },
+    {
+      "id": "sci_ear16_006",
+      "category": "knowledge",
+      "prompt": "数十個の銀河の集まりを銀河群、それより大きな集まりを何という？",
+      "choices": [
+        "恒星系",
+        "星雲",
+        "銀河団",
+        "星団"
+      ],
+      "answerIndex": 2,
+      "explanation": "銀河系は局部銀河群に属する。銀河団がさらに集まって、泡のような大規模構造をつくる。"
+    },
+    {
+      "id": "sci_ear16_007",
+      "category": "knowledge",
+      "prompt": "遠くの銀河ほど速い速さで遠ざかっているという関係を何という？",
+      "choices": [
+        "ケプラーの法則",
+        "ハッブル＝ルメートルの法則",
+        "ボイルの法則",
+        "大森公式"
+      ],
+      "answerIndex": 1,
+      "explanation": "後退速度 ＝ ハッブル定数 × 距離。宇宙が膨張している証拠。"
+    },
+    {
+      "id": "sci_ear16_008",
+      "category": "knowledge",
+      "prompt": "遠ざかる天体からの光の波長が長い方へずれる現象を何という？",
+      "choices": [
+        "青方偏移",
+        "年周視差",
+        "赤方偏移",
+        "光行差"
+      ],
+      "answerIndex": 2,
+      "explanation": "ドップラー効果によるもの。遠ざかる速さが大きいほどずれが大きい。"
+    },
+    {
+      "id": "sci_ear16_009",
+      "category": "knowledge",
+      "prompt": "宇宙のあらゆる方向からほぼ一様にやってくる、約 3 K の放射を何という？",
+      "choices": [
+        "オーロラ",
+        "太陽風",
+        "宇宙背景放射",
+        "X 線バースト"
+      ],
+      "answerIndex": 2,
+      "explanation": "ビッグバン理論の有力な証拠。"
+    },
+    {
+      "id": "sci_ear16_010",
+      "category": "knowledge",
+      "prompt": "ビッグバンから約 38 万年後、電子が原子核にとらえられて光がまっすぐ進めるようになった出来事を何という？",
+      "choices": [
+        "大量絶滅",
+        "超新星爆発",
+        "銀河の衝突",
+        "宇宙の晴れ上がり"
+      ],
+      "answerIndex": 3,
+      "explanation": "このときの光が、今の宇宙背景放射として観測されている。"
+    },
+    {
+      "id": "sci_ear16_011",
+      "category": "knowledge",
+      "prompt": "宇宙の初期につくられた元素は主に何？",
+      "choices": [
+        "水素とヘリウム",
+        "ウランだけ",
+        "鉄と金",
+        "炭素と酸素"
+      ],
+      "answerIndex": 0,
+      "explanation": "炭素より重い元素の多くは、恒星の内部や超新星爆発でつくられた。"
+    },
+    {
+      "id": "sci_ear16_012",
+      "category": "knowledge",
+      "prompt": "光を出さず、重力によってだけ存在がわかる正体不明の物質を何という？",
+      "choices": [
+        "反物質",
+        "ブラックホールだけ",
+        "ダークマター（暗黒物質）",
+        "星間ガス"
+      ],
+      "answerIndex": 2,
+      "explanation": "銀河の回転の速さなどから存在が推定されている。"
+    },
+    {
+      "id": "sci_ear16_013",
+      "category": "calculation",
+      "prompt": "ハッブル定数を 70 km/s/Mpc とすると、100 Mpc 離れた銀河の後退速度は？",
+      "choices": [
+        "0.70 km/s",
+        "70 km/s",
+        "7000 km/s",
+        "170 km/s"
+      ],
+      "answerIndex": 2,
+      "explanation": "v ＝ H₀ × d ＝ 70 × 100 ＝ 7000 km/s。"
+    },
+    {
+      "id": "sci_ear16_014",
+      "category": "calculation",
+      "prompt": "ハッブル定数を 70 km/s/Mpc とすると、後退速度 14000 km/s の銀河までの距離は？",
+      "choices": [
+        "2000 Mpc",
+        "200 Mpc",
+        "980000 Mpc",
+        "20 Mpc"
+      ],
+      "answerIndex": 1,
+      "explanation": "d ＝ v ÷ H₀ ＝ 14000 ÷ 70 ＝ 200 Mpc。"
+    },
+    {
+      "id": "sci_ear16_015",
+      "category": "thinking",
+      "prompt": "遠い銀河ほど赤方偏移が大きいことからわかることは？",
+      "choices": [
+        "宇宙が縮んでいる",
+        "宇宙が膨張している",
+        "光の速さが変わっている",
+        "銀河が止まっている"
+      ],
+      "answerIndex": 1,
+      "explanation": "すべての銀河が互いに遠ざかっている。時間をさかのぼると、宇宙は一点に集まっていた。"
+    },
+    {
+      "id": "sci_ear16_016",
+      "category": "thinking",
+      "prompt": "宇宙背景放射が全方向からほぼ一様にやってくることから考えられることは？",
+      "choices": [
+        "宇宙は膨張していない",
+        "太陽がこの放射を出している",
+        "宇宙の初期は、全体が高温・高密度で一様な状態だった",
+        "地球が宇宙の中心である"
+      ],
+      "answerIndex": 2,
+      "explanation": "膨張によって冷えた、初期宇宙の名残りの光。"
+    }
+  ]
+}

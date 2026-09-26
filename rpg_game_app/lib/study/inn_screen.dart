@@ -29,6 +29,21 @@ class _InnScreenState extends State<InnScreen> {
 
   Future<void> _startPractice() async {
     final services = RpgServices.of(context);
+    final stage = widget.stage;
+    // 理科：そのエリアの単元の問題だけで練習する（ボスでも自分のエリアの問題）
+    if (stage.branch.isNotEmpty) {
+      final own = await services.questions.load(stage.questionSetIds.last);
+      if (!mounted) return;
+      if (own == null || !own.origin.usableInRpg) {
+        setState(() => _error = '練習問題を読み込めませんでした');
+        return;
+      }
+      setState(() {
+        _session = PracticeSession(own.questions, count: practiceCount);
+        _phase = _Phase.practice;
+      });
+      return;
+    }
     final set = await services.loadStagePool(widget.stage);
     if (!mounted) return;
     if (set == null || !set.origin.usableInRpg) {

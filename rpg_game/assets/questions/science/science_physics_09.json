@@ -1,0 +1,216 @@
+{
+  "setId": "science_physics_09",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_phy09_001",
+      "category": "knowledge",
+      "prompt": "水平投射された物体の、水平方向の運動は？",
+      "choices": [
+        "減速運動",
+        "等加速度直線運動",
+        "等速直線運動",
+        "静止"
+      ],
+      "answerIndex": 2,
+      "explanation": "水平方向には力がはたらかないので、初速度のまま等速。"
+    },
+    {
+      "id": "sci_phy09_002",
+      "category": "knowledge",
+      "prompt": "水平投射された物体の、鉛直方向の運動は？",
+      "choices": [
+        "鉛直投げ上げと同じ運動",
+        "等速直線運動",
+        "自由落下と同じ運動",
+        "静止"
+      ],
+      "answerIndex": 2,
+      "explanation": "鉛直方向は初速度 0、加速度 g で、自由落下と同じ。"
+    },
+    {
+      "id": "sci_phy09_003",
+      "category": "knowledge",
+      "prompt": "斜めに投げ上げた物体が最高点にあるとき、速度は？",
+      "choices": [
+        "水平成分だけが残っている",
+        "鉛直成分だけが残っている",
+        "初速度と同じ",
+        "0"
+      ],
+      "answerIndex": 0,
+      "explanation": "最高点では鉛直成分が 0 になり、水平成分（v₀cosθ）だけが残る。"
+    },
+    {
+      "id": "sci_phy09_004",
+      "category": "knowledge",
+      "prompt": "空気抵抗を無視した放物運動の加速度は？",
+      "choices": [
+        "運動の向きに g",
+        "最高点でだけ g",
+        "常に鉛直下向きで大きさ g",
+        "常に 0"
+      ],
+      "answerIndex": 2,
+      "explanation": "重力しかはたらかないので、どこでも加速度は鉛直下向き g。"
+    },
+    {
+      "id": "sci_phy09_005",
+      "category": "knowledge",
+      "prompt": "水平投射された物体の軌跡の形は？",
+      "choices": [
+        "円",
+        "放物線",
+        "だ円",
+        "直線"
+      ],
+      "answerIndex": 1,
+      "explanation": "水平は等速、鉛直は ½gt² なので、y は x の2次式になり放物線を描く。"
+    },
+    {
+      "id": "sci_phy09_006",
+      "category": "knowledge",
+      "prompt": "空気抵抗がないとき、同じ速さで斜めに投げて最も遠くまで届く角度は？",
+      "choices": [
+        "45°",
+        "90°",
+        "30°",
+        "60°"
+      ],
+      "answerIndex": 0,
+      "explanation": "水平到達距離は v₀² sin2θ / g で、sin2θ ＝ 1 の θ ＝ 45° で最大。"
+    },
+    {
+      "id": "sci_phy09_007",
+      "category": "knowledge",
+      "prompt": "速度の合成について正しいものは？",
+      "choices": [
+        "大きい方を選べばよい",
+        "ベクトルとして足し合わせる",
+        "かけ算する",
+        "大きさだけを足せばよい"
+      ],
+      "answerIndex": 1,
+      "explanation": "向きをもつので、平行四辺形の法則（ベクトル和）で合成する。"
+    },
+    {
+      "id": "sci_phy09_008",
+      "category": "knowledge",
+      "prompt": "物体 A から見た物体 B の相対速度は？",
+      "choices": [
+        "v_A × v_B",
+        "v_A − v_B",
+        "v_A ＋ v_B",
+        "v_B − v_A"
+      ],
+      "answerIndex": 3,
+      "explanation": "見る側（A）の速度を引く。v_AB ＝ v_B − v_A。"
+    },
+    {
+      "id": "sci_phy09_009",
+      "category": "calculation",
+      "prompt": "高さ 19.6 m の所から水平に投げた。地面に落ちるまでの時間は？（g ＝ 9.8 m/s²）",
+      "choices": [
+        "2.0 s",
+        "4.0 s",
+        "1.0 s",
+        "19.6 s"
+      ],
+      "answerIndex": 0,
+      "explanation": "鉛直方向は自由落下。19.6 ＝ ½ × 9.8 × t² より t ＝ 2.0 s。"
+    },
+    {
+      "id": "sci_phy09_010",
+      "category": "calculation",
+      "prompt": "前問で、初速度 5.0 m/s で水平に投げたとき、水平に進む距離は？",
+      "choices": [
+        "19.6 m",
+        "5.0 m",
+        "2.5 m",
+        "10 m"
+      ],
+      "answerIndex": 3,
+      "explanation": "水平方向は等速なので x ＝ 5.0 × 2.0 ＝ 10 m。"
+    },
+    {
+      "id": "sci_phy09_011",
+      "category": "calculation",
+      "prompt": "速度の水平成分が 3.0 m/s、鉛直成分が 4.0 m/s のとき、速さは？",
+      "choices": [
+        "5.0 m/s",
+        "1.0 m/s",
+        "7.0 m/s",
+        "12 m/s"
+      ],
+      "answerIndex": 0,
+      "explanation": "√(3.0² ＋ 4.0²) ＝ 5.0 m/s。"
+    },
+    {
+      "id": "sci_phy09_012",
+      "category": "calculation",
+      "prompt": "初速度 20 m/s、水平から 30° 上向きに投げた。初速度の鉛直成分は？",
+      "choices": [
+        "20 m/s",
+        "17 m/s",
+        "10 m/s",
+        "40 m/s"
+      ],
+      "answerIndex": 2,
+      "explanation": "鉛直成分＝ v₀ sin30° ＝ 20 × ½ ＝ 10 m/s（水平成分は v₀ cos30° ≒ 17 m/s）。"
+    },
+    {
+      "id": "sci_phy09_013",
+      "category": "calculation",
+      "prompt": "前問（鉛直成分 10 m/s）で、最高点に達するまでの時間はおよそ？（g ＝ 9.8 m/s²）",
+      "choices": [
+        "2.0 s",
+        "10 s",
+        "1.0 s",
+        "0.50 s"
+      ],
+      "answerIndex": 2,
+      "explanation": "0 ＝ 10 − 9.8t より t ≒ 1.0 s。"
+    },
+    {
+      "id": "sci_phy09_014",
+      "category": "calculation",
+      "prompt": "静水で 4.0 m/s の船が、流れの速さ 3.0 m/s の川を下流に向かって進む。岸から見た速さは？",
+      "choices": [
+        "5.0 m/s",
+        "1.0 m/s",
+        "12 m/s",
+        "7.0 m/s"
+      ],
+      "answerIndex": 3,
+      "explanation": "同じ向きの速度はそのまま足す。4.0 ＋ 3.0 ＝ 7.0 m/s。"
+    },
+    {
+      "id": "sci_phy09_015",
+      "category": "thinking",
+      "prompt": "同じ高さから、Aを静かに落とし、同時にBを水平に投げた。先に地面に着くのは？（空気抵抗なし）",
+      "choices": [
+        "A",
+        "B",
+        "同時",
+        "Bの速さによって変わる"
+      ],
+      "answerIndex": 2,
+      "explanation": "どちらも鉛直方向は自由落下で同じなので、同時に着地する。"
+    },
+    {
+      "id": "sci_phy09_016",
+      "category": "thinking",
+      "prompt": "雨が真上から降っているのに、走ると前から降ってくるように見える理由は？",
+      "choices": [
+        "自分から見た雨の相対速度が前方からの向きになるから",
+        "雨が実際に斜めに降っているから",
+        "重力の向きが変わるから",
+        "走ると雨の速さが0になるから"
+      ],
+      "answerIndex": 0,
+      "explanation": "雨の速度から自分の速度を引いた相対速度は、前から後ろへ向く成分をもつ。"
+    }
+  ]
+}

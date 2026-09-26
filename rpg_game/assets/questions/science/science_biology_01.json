@@ -1,0 +1,216 @@
+{
+  "setId": "science_biology_01",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_bio01_001",
+      "category": "knowledge",
+      "prompt": "すべての生物に共通する特徴として正しくないものは？",
+      "choices": [
+        "遺伝物質として DNA をもつ",
+        "ATP を使ってエネルギーのやりとりをする",
+        "細胞からできている",
+        "光合成を行う"
+      ],
+      "answerIndex": 3,
+      "explanation": "光合成をするのは植物や藻類など一部の生物だけ。ほかの3つはすべての生物に共通。"
+    },
+    {
+      "id": "sci_bio01_002",
+      "category": "knowledge",
+      "prompt": "原核細胞の特徴は？",
+      "choices": [
+        "細胞膜をもたない",
+        "核膜に包まれた核をもたない",
+        "必ずミトコンドリアをもつ",
+        "DNA をもたない"
+      ],
+      "answerIndex": 1,
+      "explanation": "原核細胞は DNA が細胞質基質に存在し、核膜や膜でできた細胞小器官をもたない。"
+    },
+    {
+      "id": "sci_bio01_003",
+      "category": "knowledge",
+      "prompt": "原核生物はどれ？",
+      "choices": [
+        "酵母",
+        "アメーバ",
+        "大腸菌",
+        "ゾウリムシ"
+      ],
+      "answerIndex": 2,
+      "explanation": "細菌（大腸菌・シアノバクテリアなど）は原核生物。酵母・ゾウリムシは真核生物。"
+    },
+    {
+      "id": "sci_bio01_004",
+      "category": "knowledge",
+      "prompt": "呼吸によって ATP を多くつくる細胞小器官は？",
+      "choices": [
+        "液胞",
+        "核",
+        "ミトコンドリア",
+        "葉緑体"
+      ],
+      "answerIndex": 2,
+      "explanation": "ミトコンドリアは有機物を分解して ATP をつくる。動物にも植物にもある。"
+    },
+    {
+      "id": "sci_bio01_005",
+      "category": "knowledge",
+      "prompt": "光合成を行う細胞小器官は？",
+      "choices": [
+        "リボソーム",
+        "ミトコンドリア",
+        "葉緑体",
+        "ゴルジ体"
+      ],
+      "answerIndex": 2,
+      "explanation": "葉緑体は光エネルギーを使って二酸化炭素と水から有機物をつくる。"
+    },
+    {
+      "id": "sci_bio01_006",
+      "category": "knowledge",
+      "prompt": "植物細胞にはあるが、動物細胞にはふつう見られないものは？",
+      "choices": [
+        "核",
+        "細胞壁",
+        "ミトコンドリア",
+        "細胞膜"
+      ],
+      "answerIndex": 1,
+      "explanation": "植物細胞は細胞膜の外側にセルロースを主成分とする細胞壁をもつ。葉緑体や発達した液胞も植物の特徴。"
+    },
+    {
+      "id": "sci_bio01_007",
+      "category": "knowledge",
+      "prompt": "遺伝情報を担う DNA が主に存在する場所（真核細胞）は？",
+      "choices": [
+        "核",
+        "液胞",
+        "細胞壁",
+        "細胞膜"
+      ],
+      "answerIndex": 0,
+      "explanation": "真核細胞では DNA の大部分が核の中にある（ミトコンドリアや葉緑体にもわずかにある）。"
+    },
+    {
+      "id": "sci_bio01_008",
+      "category": "knowledge",
+      "prompt": "細胞の内外を仕切り、物質の出入りを調節する膜は？",
+      "choices": [
+        "細胞膜",
+        "核膜",
+        "液胞膜",
+        "細胞壁"
+      ],
+      "answerIndex": 0,
+      "explanation": "細胞膜は必要な物質を選んで通す性質（選択的透過性）をもつ。"
+    },
+    {
+      "id": "sci_bio01_009",
+      "category": "knowledge",
+      "prompt": "1つの細胞だけで生活している生物を何という？",
+      "choices": [
+        "多細胞生物",
+        "ウイルス",
+        "原生動物だけ",
+        "単細胞生物"
+      ],
+      "answerIndex": 3,
+      "explanation": "ゾウリムシ・ミドリムシ・大腸菌など。"
+    },
+    {
+      "id": "sci_bio01_010",
+      "category": "knowledge",
+      "prompt": "ウイルスが「生物ではない」とされる主な理由は？",
+      "choices": [
+        "タンパク質をもたないから",
+        "非常に大きいから",
+        "DNA や RNA をもたないから",
+        "細胞からできておらず、自分だけでは増えられないから"
+      ],
+      "answerIndex": 3,
+      "explanation": "ウイルスは遺伝物質とタンパク質の殻からなり、他の生物の細胞の中でしか増えられない。"
+    },
+    {
+      "id": "sci_bio01_011",
+      "category": "knowledge",
+      "prompt": "多細胞生物で、同じ形やはたらきの細胞が集まったものを何という？",
+      "choices": [
+        "組織",
+        "器官",
+        "細胞小器官",
+        "個体"
+      ],
+      "answerIndex": 0,
+      "explanation": "細胞 → 組織 → 器官 → 個体 の順に大きなまとまりになる。"
+    },
+    {
+      "id": "sci_bio01_012",
+      "category": "knowledge",
+      "prompt": "「生物のからだは細胞からできている」という細胞説を唱えたのは？",
+      "choices": [
+        "ワトソンとクリック",
+        "シュライデンとシュワン",
+        "ダーウィン",
+        "メンデル"
+      ],
+      "answerIndex": 1,
+      "explanation": "植物はシュライデン、動物はシュワンが提唱した。"
+    },
+    {
+      "id": "sci_bio01_013",
+      "category": "calculation",
+      "prompt": "接眼ミクロメーター 10 目盛りと、対物ミクロメーター（1目盛り 10 μm）4 目盛りが一致した。接眼ミクロメーター1目盛りの長さは？",
+      "choices": [
+        "40 μm",
+        "2.5 μm",
+        "4 μm",
+        "10 μm"
+      ],
+      "answerIndex": 2,
+      "explanation": "4 × 10 μm ＝ 40 μm を 10 目盛りで割って 4 μm。"
+    },
+    {
+      "id": "sci_bio01_014",
+      "category": "calculation",
+      "prompt": "前問の倍率で、ある細胞の長さが接眼ミクロメーター 15 目盛りだった。細胞の長さは？",
+      "choices": [
+        "60 μm",
+        "15 μm",
+        "150 μm",
+        "38 μm"
+      ],
+      "answerIndex": 0,
+      "explanation": "15 × 4 μm ＝ 60 μm。"
+    },
+    {
+      "id": "sci_bio01_015",
+      "category": "thinking",
+      "prompt": "生物が多様であるにもかかわらず、多くの共通性をもつ理由として最も適切なものは？",
+      "choices": [
+        "共通の祖先から進化してきたから",
+        "同じ場所に住んでいるから",
+        "人間が品種改良したから",
+        "偶然に同じ特徴をもったから"
+      ],
+      "answerIndex": 0,
+      "explanation": "共通の祖先がもっていた特徴を受けつぎながら、環境に応じて多様化してきた。"
+    },
+    {
+      "id": "sci_bio01_016",
+      "category": "thinking",
+      "prompt": "ミトコンドリアと葉緑体が独自の DNA をもち、分裂して増えることから考えられることは？",
+      "choices": [
+        "ウイルスが変化したもの",
+        "核から分かれてできた",
+        "細胞膜がくびれてできた",
+        "もとは別の原核生物で、細胞内に共生して取りこまれた"
+      ],
+      "answerIndex": 3,
+      "explanation": "細胞内共生説。好気性細菌がミトコンドリアに、シアノバクテリアが葉緑体になったと考えられている。"
+    }
+  ]
+}

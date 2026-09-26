@@ -1,0 +1,216 @@
+{
+  "setId": "science_earth_15",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_ear15_001",
+      "category": "knowledge",
+      "prompt": "恒星の年周視差から求められるものは？",
+      "choices": [
+        "恒星の年齢",
+        "恒星の質量",
+        "恒星までの距離",
+        "恒星の温度"
+      ],
+      "answerIndex": 2,
+      "explanation": "地球の公転で恒星の見える方向がわずかに変わる。年周視差が小さいほど遠い。"
+    },
+    {
+      "id": "sci_ear15_002",
+      "category": "knowledge",
+      "prompt": "1 等星は 6 等星のおよそ何倍明るい？",
+      "choices": [
+        "1000 倍",
+        "10 倍",
+        "100 倍",
+        "6 倍"
+      ],
+      "answerIndex": 2,
+      "explanation": "5 等級の差で 100 倍と決められている。1 等級の差は約 2.5 倍。"
+    },
+    {
+      "id": "sci_ear15_003",
+      "category": "knowledge",
+      "prompt": "恒星を 10 パーセクの距離に置いたと仮定したときの明るさを表す等級は？",
+      "choices": [
+        "マグニチュード",
+        "見かけの等級",
+        "絶対等級",
+        "色指数"
+      ],
+      "answerIndex": 2,
+      "explanation": "恒星本来の明るさを比べるのに使う。"
+    },
+    {
+      "id": "sci_ear15_004",
+      "category": "knowledge",
+      "prompt": "恒星のスペクトル型を、表面温度が高い順に並べたものは？",
+      "choices": [
+        "M・K・G・F・A・B・O",
+        "A・B・F・G・K・M・O",
+        "G・K・M・O・B・A・F",
+        "O・B・A・F・G・K・M"
+      ],
+      "answerIndex": 3,
+      "explanation": "O 型は青白く高温、M 型は赤く低温。太陽は G 型。"
+    },
+    {
+      "id": "sci_ear15_005",
+      "category": "knowledge",
+      "prompt": "HR 図で、左上から右下にかけて多くの恒星が並ぶ帯を何という？",
+      "choices": [
+        "超新星",
+        "白色矮星",
+        "赤色巨星",
+        "主系列星"
+      ],
+      "answerIndex": 3,
+      "explanation": "中心部で水素の核融合をしている、安定した時期の恒星。太陽もその一つ。"
+    },
+    {
+      "id": "sci_ear15_006",
+      "category": "knowledge",
+      "prompt": "HR 図の左下に位置する、高温だが暗い恒星は？",
+      "choices": [
+        "白色矮星",
+        "原始星",
+        "赤色巨星",
+        "主系列星"
+      ],
+      "answerIndex": 0,
+      "explanation": "半径が小さい（地球くらい）ので、高温でも全体としては暗い。"
+    },
+    {
+      "id": "sci_ear15_007",
+      "category": "knowledge",
+      "prompt": "太陽程度の質量の恒星は、主系列星のあと何になる？",
+      "choices": [
+        "中性子星",
+        "ブラックホール",
+        "原始星",
+        "赤色巨星"
+      ],
+      "answerIndex": 3,
+      "explanation": "中心部の水素がなくなると外層が膨張する。最後は外層を放出して白色矮星になる。"
+    },
+    {
+      "id": "sci_ear15_008",
+      "category": "knowledge",
+      "prompt": "質量が非常に大きい恒星の最期に起こる大爆発を何という？",
+      "choices": [
+        "日食",
+        "核分裂",
+        "フレア",
+        "超新星爆発"
+      ],
+      "answerIndex": 3,
+      "explanation": "あとに中性子星やブラックホールが残る。"
+    },
+    {
+      "id": "sci_ear15_009",
+      "category": "knowledge",
+      "prompt": "星間雲の中で密度の高い部分が収縮して生まれたばかりの恒星を何という？",
+      "choices": [
+        "白色矮星",
+        "原始星",
+        "赤色巨星",
+        "惑星状星雲"
+      ],
+      "answerIndex": 1,
+      "explanation": "中心の温度が上がって水素の核融合が始まると、主系列星になる。"
+    },
+    {
+      "id": "sci_ear15_010",
+      "category": "knowledge",
+      "prompt": "太陽の主系列星としての寿命はおよそ？",
+      "choices": [
+        "約 100 億年",
+        "約 100 万年",
+        "約 1000 億年",
+        "約 1 万年"
+      ],
+      "answerIndex": 0,
+      "explanation": "質量が大きい恒星ほど寿命は短い。"
+    },
+    {
+      "id": "sci_ear15_011",
+      "category": "knowledge",
+      "prompt": "冥王星のように、太陽のまわりを回るが惑星より小さく、軌道付近の他の天体を排除していない天体は？",
+      "choices": [
+        "彗星",
+        "準惑星",
+        "衛星",
+        "恒星"
+      ],
+      "answerIndex": 1,
+      "explanation": "冥王星は 2006 年に準惑星に分類された。"
+    },
+    {
+      "id": "sci_ear15_012",
+      "category": "knowledge",
+      "prompt": "彗星の尾が向いている方向は？",
+      "choices": [
+        "地球の方向",
+        "太陽の方向",
+        "太陽と反対の方向",
+        "進行方向"
+      ],
+      "answerIndex": 2,
+      "explanation": "太陽風や太陽光の圧力で、ガスやちりが太陽と反対側へ吹き流される。"
+    },
+    {
+      "id": "sci_ear15_013",
+      "category": "calculation",
+      "prompt": "年周視差が 0.1″（秒角）の恒星までの距離は？",
+      "choices": [
+        "1 パーセク",
+        "0.1 パーセク",
+        "10 パーセク",
+        "100 パーセク"
+      ],
+      "answerIndex": 2,
+      "explanation": "距離（パーセク）＝ 1 ÷ 年周視差（″）＝ 1 ÷ 0.1 ＝ 10 パーセク（約 32.6 光年）。"
+    },
+    {
+      "id": "sci_ear15_014",
+      "category": "calculation",
+      "prompt": "見かけの等級が 1 等の星と 6 等の星がある。1 等の星は 6 等の星の何倍明るい？",
+      "choices": [
+        "250 倍",
+        "5 倍",
+        "100 倍",
+        "6 倍"
+      ],
+      "answerIndex": 2,
+      "explanation": "5 等級の差で 100 倍。"
+    },
+    {
+      "id": "sci_ear15_015",
+      "category": "calculation",
+      "prompt": "見かけの等級が 1 等級ちがう 2 つの星の明るさの比はおよそ？",
+      "choices": [
+        "100 倍",
+        "5 倍",
+        "2.5 倍",
+        "10 倍"
+      ],
+      "answerIndex": 2,
+      "explanation": "100 の 5 乗根 ≒ 2.5 倍。"
+    },
+    {
+      "id": "sci_ear15_016",
+      "category": "thinking",
+      "prompt": "ベテルギウスは赤く（表面温度が低く）見えるのに、非常に明るい。その理由は？",
+      "choices": [
+        "白色矮星だから",
+        "表面温度が実はとても高いから",
+        "地球にとても近いから",
+        "半径がとても大きいから"
+      ],
+      "answerIndex": 3,
+      "explanation": "恒星の明るさは表面温度と表面積で決まる。ベテルギウスは赤色超巨星。"
+    }
+  ]
+}

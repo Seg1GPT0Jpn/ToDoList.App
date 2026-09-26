@@ -1,0 +1,216 @@
+{
+  "setId": "science_physics_08",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_phy08_001",
+      "category": "knowledge",
+      "prompt": "電流の単位は？",
+      "choices": [
+        "W（ワット）",
+        "V（ボルト）",
+        "Ω（オーム）",
+        "A（アンペア）"
+      ],
+      "answerIndex": 3,
+      "explanation": "1 A は 1 s 間に 1 C の電気量が流れる電流。"
+    },
+    {
+      "id": "sci_phy08_002",
+      "category": "knowledge",
+      "prompt": "オームの法則は？（V：電圧、R：抵抗、I：電流）",
+      "choices": [
+        "V ＝ RI",
+        "V ＝ I/R",
+        "V ＝ R/I",
+        "V ＝ R＋I"
+      ],
+      "answerIndex": 0,
+      "explanation": "電流は電圧に比例し、抵抗に反比例する。V ＝ RI。"
+    },
+    {
+      "id": "sci_phy08_003",
+      "category": "knowledge",
+      "prompt": "電力 P を表す式は？",
+      "choices": [
+        "P ＝ RI",
+        "P ＝ V＋I",
+        "P ＝ VI",
+        "P ＝ V/I"
+      ],
+      "answerIndex": 2,
+      "explanation": "電力は 1 s 間に消費する電気エネルギー。P ＝ VI ＝ RI² ＝ V²/R。"
+    },
+    {
+      "id": "sci_phy08_004",
+      "category": "knowledge",
+      "prompt": "抵抗を直列につないだときの合成抵抗は？",
+      "choices": [
+        "各抵抗の逆数の和",
+        "各抵抗の積",
+        "各抵抗の和",
+        "一番小さい抵抗と同じ"
+      ],
+      "answerIndex": 2,
+      "explanation": "直列では R ＝ R₁ ＋ R₂。並列では 1/R ＝ 1/R₁ ＋ 1/R₂。"
+    },
+    {
+      "id": "sci_phy08_005",
+      "category": "knowledge",
+      "prompt": "発電機が電気をつくる原理は？",
+      "choices": [
+        "静電気",
+        "熱伝導",
+        "光電効果",
+        "電磁誘導"
+      ],
+      "answerIndex": 3,
+      "explanation": "コイルの中の磁場を変化させると電流が流れる（電磁誘導）。"
+    },
+    {
+      "id": "sci_phy08_006",
+      "category": "knowledge",
+      "prompt": "α線の正体は？",
+      "choices": [
+        "ヘリウムの原子核",
+        "電子",
+        "中性子",
+        "電磁波"
+      ],
+      "answerIndex": 0,
+      "explanation": "α線はヘリウム原子核、β線は電子、γ線は波長の短い電磁波。"
+    },
+    {
+      "id": "sci_phy08_007",
+      "category": "knowledge",
+      "prompt": "放射性物質の量が半分になるまでの時間を何という？",
+      "choices": [
+        "減衰時間",
+        "寿命",
+        "周期",
+        "半減期"
+      ],
+      "answerIndex": 3,
+      "explanation": "半減期ごとに放射性原子核の数は半分になる。"
+    },
+    {
+      "id": "sci_phy08_008",
+      "category": "knowledge",
+      "prompt": "再生可能エネルギーにあてはまるものは？",
+      "choices": [
+        "石炭",
+        "天然ガス",
+        "太陽光",
+        "石油"
+      ],
+      "answerIndex": 2,
+      "explanation": "太陽光・風力・水力・地熱などは使っても枯渇しない。化石燃料は限りがある。"
+    },
+    {
+      "id": "sci_phy08_009",
+      "category": "calculation",
+      "prompt": "2.0 Ω の抵抗に 6.0 V の電圧を加えた。流れる電流は？",
+      "choices": [
+        "4.0 A",
+        "3.0 A",
+        "0.33 A",
+        "12 A"
+      ],
+      "answerIndex": 1,
+      "explanation": "I ＝ V/R ＝ 6.0 ÷ 2.0 ＝ 3.0 A。"
+    },
+    {
+      "id": "sci_phy08_010",
+      "category": "calculation",
+      "prompt": "6.0 Ω と 3.0 Ω の抵抗を並列につないだ。合成抵抗は？",
+      "choices": [
+        "9.0 Ω",
+        "2.0 Ω",
+        "18 Ω",
+        "4.5 Ω"
+      ],
+      "answerIndex": 1,
+      "explanation": "1/R ＝ 1/6.0 ＋ 1/3.0 ＝ 1/2.0 より R ＝ 2.0 Ω。"
+    },
+    {
+      "id": "sci_phy08_011",
+      "category": "calculation",
+      "prompt": "2.0 Ω と 3.0 Ω の抵抗を直列につないだ。合成抵抗は？",
+      "choices": [
+        "1.2 Ω",
+        "5.0 Ω",
+        "6.0 Ω",
+        "1.0 Ω"
+      ],
+      "answerIndex": 1,
+      "explanation": "直列は和。2.0 ＋ 3.0 ＝ 5.0 Ω。"
+    },
+    {
+      "id": "sci_phy08_012",
+      "category": "calculation",
+      "prompt": "100 V で 5.0 A の電流が流れる電気器具の消費電力は？",
+      "choices": [
+        "20 W",
+        "0.050 W",
+        "500 W",
+        "105 W"
+      ],
+      "answerIndex": 2,
+      "explanation": "P ＝ VI ＝ 100 × 5.0 ＝ 500 W。"
+    },
+    {
+      "id": "sci_phy08_013",
+      "category": "calculation",
+      "prompt": "1.0 kW の電気器具を 2.0 時間使った。電力量は？",
+      "choices": [
+        "1.0 kWh",
+        "0.50 kWh",
+        "2.0 kWh",
+        "2000 kWh"
+      ],
+      "answerIndex": 2,
+      "explanation": "電力量＝電力 × 時間 ＝ 1.0 kW × 2.0 h ＝ 2.0 kWh。"
+    },
+    {
+      "id": "sci_phy08_014",
+      "category": "calculation",
+      "prompt": "3.0 A の電流が 2.0 s 間流れた。通過した電気量は？",
+      "choices": [
+        "0.67 C",
+        "1.5 C",
+        "6.0 C",
+        "5.0 C"
+      ],
+      "answerIndex": 2,
+      "explanation": "Q ＝ It ＝ 3.0 × 2.0 ＝ 6.0 C。"
+    },
+    {
+      "id": "sci_phy08_015",
+      "category": "thinking",
+      "prompt": "同じ材質の導線で、長さを2倍、断面積を2倍にした。抵抗は？",
+      "choices": [
+        "2倍",
+        "変わらない",
+        "4倍",
+        "1/2"
+      ],
+      "answerIndex": 1,
+      "explanation": "R ＝ ρL/S。長さ2倍で2倍、断面積2倍で1/2倍なので、変わらない。"
+    },
+    {
+      "id": "sci_phy08_016",
+      "category": "thinking",
+      "prompt": "発電所から遠くへ送電するとき、高電圧にする理由は？",
+      "choices": [
+        "導線の抵抗を 0 にするため",
+        "電流を大きくするため",
+        "電流を小さくして、導線で熱として失われる電力（RI²）を減らすため",
+        "感電を防ぐため"
+      ],
+      "answerIndex": 2,
+      "explanation": "同じ電力を送るなら、電圧を高くすると電流が小さくなり、導線での損失 RI² が減る。"
+    }
+  ]
+}

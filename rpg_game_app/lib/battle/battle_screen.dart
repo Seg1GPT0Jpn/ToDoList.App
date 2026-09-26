@@ -854,7 +854,9 @@ class _BattleScreenState extends State<BattleScreen>
   }
 
   Widget _choices(PresentedQuestion q, TurnResult? last) {
-    final reading = q.source.passage != null;
+    // 長文や、選択肢が長い問題（理科の説明文など）は縦に並べて全文を見せる
+    final reading =
+        q.source.passage != null || q.choices.any((c) => c.length > 12);
     Widget choice(int i) {
       // ひらめきの栞で消えた選択肢
       if (last == null && _engine.hiddenChoices.contains(i)) {

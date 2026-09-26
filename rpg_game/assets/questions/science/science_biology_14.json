@@ -1,0 +1,216 @@
+{
+  "setId": "science_biology_14",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_bio14_001",
+      "category": "knowledge",
+      "prompt": "減数分裂の特徴は？",
+      "choices": [
+        "染色体の数が半分の娘細胞が 4 つできる",
+        "体細胞だけで起こる",
+        "DNA が複製されない",
+        "染色体の数が同じ娘細胞が 2 つできる"
+      ],
+      "answerIndex": 0,
+      "explanation": "配偶子（卵・精子）をつくるときに起こる。第一分裂で相同染色体が分かれる。"
+    },
+    {
+      "id": "sci_bio14_002",
+      "category": "knowledge",
+      "prompt": "減数分裂で、相同染色体の間で一部が交換されることを何という？",
+      "choices": [
+        "複製",
+        "乗換え",
+        "転写",
+        "分化"
+      ],
+      "answerIndex": 1,
+      "explanation": "乗換えによって遺伝子の組換えが起こり、配偶子の遺伝的多様性が増す。"
+    },
+    {
+      "id": "sci_bio14_003",
+      "category": "knowledge",
+      "prompt": "同じ染色体上にある遺伝子がいっしょに行動することを何という？",
+      "choices": [
+        "連鎖",
+        "優性",
+        "独立",
+        "分離"
+      ],
+      "answerIndex": 0,
+      "explanation": "連鎖している遺伝子は、独立の法則にしたがわない（乗換えで組換わることはある）。"
+    },
+    {
+      "id": "sci_bio14_004",
+      "category": "knowledge",
+      "prompt": "性染色体上の遺伝子による遺伝を何という？",
+      "choices": [
+        "致死遺伝",
+        "伴性遺伝",
+        "母性遺伝",
+        "中間遺伝"
+      ],
+      "answerIndex": 1,
+      "explanation": "例：ヒトの赤緑色覚の多様性、血友病。X 染色体上に遺伝子がある。"
+    },
+    {
+      "id": "sci_bio14_005",
+      "category": "knowledge",
+      "prompt": "受精卵のはじめのころの体細胞分裂で、細胞が大きくならずに分裂をくり返すことを何という？",
+      "choices": [
+        "分化",
+        "卵割",
+        "減数分裂",
+        "誘導"
+      ],
+      "answerIndex": 1,
+      "explanation": "卵割では割球がしだいに小さくなる。"
+    },
+    {
+      "id": "sci_bio14_006",
+      "category": "knowledge",
+      "prompt": "外胚葉から分化するものは？",
+      "choices": [
+        "消化管の内側",
+        "表皮と神経",
+        "血液",
+        "筋肉と骨"
+      ],
+      "answerIndex": 1,
+      "explanation": "中胚葉 → 筋肉・骨・血管・血液・腎臓など、内胚葉 → 消化管の上皮・肝臓・肺など。"
+    },
+    {
+      "id": "sci_bio14_007",
+      "category": "knowledge",
+      "prompt": "胚のある部分が、隣接する部分にはたらきかけて分化の方向を決めることを何という？",
+      "choices": [
+        "誘導",
+        "減数分裂",
+        "卵割",
+        "乗換え"
+      ],
+      "answerIndex": 0,
+      "explanation": "誘導を起こす部分を形成体（オーガナイザー）という。"
+    },
+    {
+      "id": "sci_bio14_008",
+      "category": "knowledge",
+      "prompt": "イモリの胚で形成体としてはたらく部分は？",
+      "choices": [
+        "原口背唇部",
+        "植物極",
+        "神経板",
+        "動物極"
+      ],
+      "answerIndex": 0,
+      "explanation": "シュペーマンとマンゴルドの移植実験で発見された。"
+    },
+    {
+      "id": "sci_bio14_009",
+      "category": "knowledge",
+      "prompt": "ショウジョウバエで、触角が脚に変わるなど、からだの部分の形が別の部分の形に置きかわる突然変異を起こす遺伝子は？",
+      "choices": [
+        "リプレッサー",
+        "ホメオティック遺伝子",
+        "オペロン",
+        "伴性遺伝子"
+      ],
+      "answerIndex": 1,
+      "explanation": "からだの前後軸にそって、それぞれの部分の形づくりを決める遺伝子群。"
+    },
+    {
+      "id": "sci_bio14_010",
+      "category": "knowledge",
+      "prompt": "発生の過程などで、プログラムされて起こる細胞の死を何という？",
+      "choices": [
+        "壊死",
+        "失活",
+        "変性",
+        "アポトーシス"
+      ],
+      "answerIndex": 3,
+      "explanation": "例：ヒトの手の指の間の細胞が死んで指が分かれる。"
+    },
+    {
+      "id": "sci_bio14_011",
+      "category": "knowledge",
+      "prompt": "体細胞に数種類の遺伝子を導入してつくられた、多能性をもつ幹細胞は？",
+      "choices": [
+        "赤血球",
+        "ES 細胞",
+        "精子",
+        "iPS 細胞"
+      ],
+      "answerIndex": 3,
+      "explanation": "山中伸弥らが作製した人工多能性幹細胞。再生医療への応用が期待されている。"
+    },
+    {
+      "id": "sci_bio14_012",
+      "category": "calculation",
+      "prompt": "Aa と Aa をかけ合わせた子の表現型の比（顕性：潜性）は？",
+      "choices": [
+        "1 : 2 : 1",
+        "9 : 3 : 3 : 1",
+        "1 : 1",
+        "3 : 1"
+      ],
+      "answerIndex": 3,
+      "explanation": "子の遺伝子型は AA : Aa : aa ＝ 1 : 2 : 1。表現型は [A] : [a] ＝ 3 : 1。"
+    },
+    {
+      "id": "sci_bio14_013",
+      "category": "calculation",
+      "prompt": "AaBb どうしをかけ合わせた（2 つの遺伝子は独立）。子のうち aabb の割合は？",
+      "choices": [
+        "9/16",
+        "3/16",
+        "1/4",
+        "1/16"
+      ],
+      "answerIndex": 3,
+      "explanation": "aa は 1/4、bb は 1/4 なので 1/4 × 1/4 ＝ 1/16。"
+    },
+    {
+      "id": "sci_bio14_014",
+      "category": "calculation",
+      "prompt": "検定交雑で、子の表現型が [AB] 45、[ab] 45、[Ab] 5、[aB] 5 となった。組換え価は？",
+      "choices": [
+        "5 %",
+        "45 %",
+        "10 %",
+        "50 %"
+      ],
+      "answerIndex": 2,
+      "explanation": "組換えでできた [Ab] と [aB] の合計 10 ÷ 全体 100 × 100 ＝ 10 %。"
+    },
+    {
+      "id": "sci_bio14_015",
+      "category": "calculation",
+      "prompt": "2n ＝ 8 の生物で、乗換えがないとすると、染色体の組み合わせがちがう配偶子は何通りできる？",
+      "choices": [
+        "4 通り",
+        "16 通り",
+        "256 通り",
+        "8 通り"
+      ],
+      "answerIndex": 1,
+      "explanation": "相同染色体 4 組のそれぞれでどちらが入るかの 2 通りなので 2⁴ ＝ 16 通り。"
+    },
+    {
+      "id": "sci_bio14_016",
+      "category": "thinking",
+      "prompt": "イモリの原口背唇部を別の胚の腹側に移植したら、2 つ目の胚（二次胚）ができた。わかることは？",
+      "choices": [
+        "移植した細胞がすべて自分だけで二次胚になった",
+        "腹側の細胞はすべて死んだ",
+        "原口背唇部は何もしない",
+        "原口背唇部が周囲の細胞を誘導して、からだの構造をつくらせる"
+      ],
+      "answerIndex": 3,
+      "explanation": "二次胚の多くは宿主の細胞からできており、原口背唇部（形成体）の誘導によるもの。"
+    }
+  ]
+}

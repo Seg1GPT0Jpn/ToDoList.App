@@ -1,0 +1,216 @@
+{
+  "setId": "science_chemistry_06",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_chm06_001",
+      "category": "knowledge",
+      "prompt": "化学反応式の係数の比が表すものは？",
+      "choices": [
+        "分子量の比",
+        "質量の比",
+        "反応する物質・生成する物質の物質量の比",
+        "反応の速さの比"
+      ],
+      "answerIndex": 2,
+      "explanation": "係数の比＝物質量の比（気体なら同温同圧での体積の比）。"
+    },
+    {
+      "id": "sci_chm06_002",
+      "category": "knowledge",
+      "prompt": "「化学反応の前後で、物質の質量の総和は変わらない」という法則は？",
+      "choices": [
+        "気体反応の法則",
+        "定比例の法則",
+        "質量保存の法則",
+        "倍数比例の法則"
+      ],
+      "answerIndex": 2,
+      "explanation": "ラボアジエが発見。原子の組み換えが起こるだけで、原子の数は変わらない。"
+    },
+    {
+      "id": "sci_chm06_003",
+      "category": "knowledge",
+      "prompt": "「化合物を構成する元素の質量比は、つねに一定である」という法則は？",
+      "choices": [
+        "定比例の法則",
+        "アボガドロの法則",
+        "ヘスの法則",
+        "質量保存の法則"
+      ],
+      "answerIndex": 0,
+      "explanation": "プルーストが発見。例：水の水素と酸素の質量比は常に 1 : 8。"
+    },
+    {
+      "id": "sci_chm06_004",
+      "category": "knowledge",
+      "prompt": "「気体どうしの反応では、反応・生成する気体の体積は簡単な整数比になる」という法則は？",
+      "choices": [
+        "質量保存の法則",
+        "気体反応の法則",
+        "ボイルの法則",
+        "定比例の法則"
+      ],
+      "answerIndex": 1,
+      "explanation": "ゲーリュサックが発見。係数の比が体積比に等しいことにつながる。"
+    },
+    {
+      "id": "sci_chm06_005",
+      "category": "knowledge",
+      "prompt": "化学反応式の左辺に書くものは？",
+      "choices": [
+        "溶媒",
+        "反応物",
+        "触媒",
+        "生成物"
+      ],
+      "answerIndex": 1,
+      "explanation": "左辺に反応物、右辺に生成物。触媒は反応式に書かない（矢印の上に書くことはある）。"
+    },
+    {
+      "id": "sci_chm06_006",
+      "category": "knowledge",
+      "prompt": "化学反応式で、係数が1のときはどうする？",
+      "choices": [
+        "必ず1と書く",
+        "分数にする",
+        "省略する",
+        "0と書く"
+      ],
+      "answerIndex": 2,
+      "explanation": "係数1は書かない。係数はできるだけ簡単な整数にする。"
+    },
+    {
+      "id": "sci_chm06_007",
+      "category": "knowledge",
+      "prompt": "イオン反応式で成り立っていなければならないことは？",
+      "choices": [
+        "右辺に水が必要",
+        "両辺の分子の数が等しい",
+        "左辺の方が質量が大きい",
+        "両辺の原子の数と電荷の合計が等しい"
+      ],
+      "answerIndex": 3,
+      "explanation": "例：Ag⁺ ＋ Cl⁻ → AgCl。電荷の合計も両辺で等しくする。"
+    },
+    {
+      "id": "sci_chm06_008",
+      "category": "knowledge",
+      "prompt": "化学反応で、反応の前後で変わらないものは？",
+      "choices": [
+        "分子の数",
+        "分子の種類",
+        "物質の性質",
+        "原子の種類と数"
+      ],
+      "answerIndex": 3,
+      "explanation": "原子の組み合わせが変わるだけ。分子の数は変わることがある。"
+    },
+    {
+      "id": "sci_chm06_009",
+      "category": "calculation",
+      "prompt": "CH₄ ＋ □O₂ → CO₂ ＋ 2H₂O。□に入る係数は？",
+      "choices": [
+        "2",
+        "1",
+        "3",
+        "4"
+      ],
+      "answerIndex": 0,
+      "explanation": "右辺の O は 2 ＋ 2 ＝ 4 個。O₂ は 2 個必要。"
+    },
+    {
+      "id": "sci_chm06_010",
+      "category": "calculation",
+      "prompt": "C₃H₈ ＋ □O₂ → 3CO₂ ＋ 4H₂O。□に入る係数は？",
+      "choices": [
+        "5",
+        "7",
+        "4",
+        "3"
+      ],
+      "answerIndex": 0,
+      "explanation": "右辺の O は 3×2 ＋ 4 ＝ 10 個なので、O₂ は 5。"
+    },
+    {
+      "id": "sci_chm06_011",
+      "category": "calculation",
+      "prompt": "2H₂ ＋ O₂ → 2H₂O。水素 4.0 g がすべて反応すると、水は何 g できる？（H ＝ 1.0、O ＝ 16）",
+      "choices": [
+        "72 g",
+        "18 g",
+        "4.0 g",
+        "36 g"
+      ],
+      "answerIndex": 3,
+      "explanation": "H₂ 4.0 g ＝ 2.0 mol → H₂O も 2.0 mol ＝ 2.0 × 18 ＝ 36 g。"
+    },
+    {
+      "id": "sci_chm06_012",
+      "category": "calculation",
+      "prompt": "CH₄ ＋ 2O₂ → CO₂ ＋ 2H₂O。メタン 1.0 mol を完全燃焼させるのに必要な酸素は、標準状態で何 L？",
+      "choices": [
+        "22.4 L",
+        "67.2 L",
+        "11.2 L",
+        "44.8 L"
+      ],
+      "answerIndex": 3,
+      "explanation": "O₂ は 2.0 mol 必要。2.0 × 22.4 ＝ 44.8 L。"
+    },
+    {
+      "id": "sci_chm06_013",
+      "category": "calculation",
+      "prompt": "2H₂ ＋ O₂ → 2H₂O。水素 2.0 mol と酸素 2.0 mol を反応させた。反応せずに残る気体は？",
+      "choices": [
+        "酸素 1.0 mol",
+        "水素 1.0 mol",
+        "酸素 2.0 mol",
+        "何も残らない"
+      ],
+      "answerIndex": 0,
+      "explanation": "水素 2.0 mol と反応する酸素は 1.0 mol。酸素が 2.0 − 1.0 ＝ 1.0 mol 余る。"
+    },
+    {
+      "id": "sci_chm06_014",
+      "category": "calculation",
+      "prompt": "CaCO₃ ＋ 2HCl → CaCl₂ ＋ H₂O ＋ CO₂。炭酸カルシウム 10 g がすべて反応すると、CO₂ は標準状態で何 L 出る？（CaCO₃ ＝ 100）",
+      "choices": [
+        "2.24 L",
+        "4.48 L",
+        "22.4 L",
+        "1.12 L"
+      ],
+      "answerIndex": 0,
+      "explanation": "CaCO₃ 10 g ＝ 0.10 mol → CO₂ 0.10 mol ＝ 0.10 × 22.4 ＝ 2.24 L。"
+    },
+    {
+      "id": "sci_chm06_015",
+      "category": "thinking",
+      "prompt": "一定量の塩酸にマグネシウムを少しずつ加えた。発生した水素の体積のグラフが途中から水平になった理由は？",
+      "choices": [
+        "塩酸がすべて反応してしまったから",
+        "マグネシウムがなくなったから",
+        "水素が水に溶けたから",
+        "温度が下がったから"
+      ],
+      "answerIndex": 0,
+      "explanation": "水平部分では Mg を加えても水素が増えない。反応相手の HCl が使い切られている。"
+    },
+    {
+      "id": "sci_chm06_016",
+      "category": "thinking",
+      "prompt": "密閉した容器の中でスチールウールを燃やした。反応前後で容器全体の質量はどうなる？",
+      "choices": [
+        "減る",
+        "変わらない",
+        "0 になる",
+        "増える"
+      ],
+      "answerIndex": 1,
+      "explanation": "質量保存の法則。容器を開けると酸素が入り、全体は重くなる。"
+    }
+  ]
+}

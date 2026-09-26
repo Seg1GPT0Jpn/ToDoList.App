@@ -1,0 +1,216 @@
+{
+  "setId": "science_physics_14",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_phy14_001",
+      "category": "knowledge",
+      "prompt": "2つの点電荷の間にはたらく静電気力（クーロンの法則）は？",
+      "choices": [
+        "電気量の積に比例し、距離の2乗に反比例する",
+        "距離に比例する",
+        "電気量の和に比例する",
+        "距離によらない"
+      ],
+      "answerIndex": 0,
+      "explanation": "F ＝ k q₁q₂ / r²。同符号ならしりぞけ合い、異符号なら引き合う。"
+    },
+    {
+      "id": "sci_phy14_002",
+      "category": "knowledge",
+      "prompt": "電場（電界）の向きは？",
+      "choices": [
+        "負の電荷が受ける力の向き",
+        "正の電荷が受ける力の向き",
+        "電子が動く向き",
+        "常に下向き"
+      ],
+      "answerIndex": 1,
+      "explanation": "電場 E は、正の電荷 1 C が受ける力で定義する。"
+    },
+    {
+      "id": "sci_phy14_003",
+      "category": "knowledge",
+      "prompt": "電気力線について正しいものは？",
+      "choices": [
+        "正電荷から出て負電荷に入る",
+        "負電荷から出て正電荷に入る",
+        "互いに交わる",
+        "閉じた輪になる"
+      ],
+      "answerIndex": 0,
+      "explanation": "電気力線は交わらず、密なところほど電場が強い。"
+    },
+    {
+      "id": "sci_phy14_004",
+      "category": "knowledge",
+      "prompt": "等電位面と電気力線の関係は？",
+      "choices": [
+        "一致する",
+        "常に平行",
+        "関係はない",
+        "常に垂直に交わる"
+      ],
+      "answerIndex": 3,
+      "explanation": "等電位面に沿って電荷を動かしても仕事をしないので、電場は等電位面に垂直。"
+    },
+    {
+      "id": "sci_phy14_005",
+      "category": "knowledge",
+      "prompt": "電気容量 C のコンデンサーに電圧 V をかけたとき、たまる電気量は？",
+      "choices": [
+        "Q ＝ V/C",
+        "Q ＝ ½CV",
+        "Q ＝ C/V",
+        "Q ＝ CV"
+      ],
+      "answerIndex": 3,
+      "explanation": "Q ＝ CV。電気容量の単位は F（ファラド）。"
+    },
+    {
+      "id": "sci_phy14_006",
+      "category": "knowledge",
+      "prompt": "平行板コンデンサーの電気容量について正しいものは？",
+      "choices": [
+        "面積に反比例する",
+        "極板間隔に比例する",
+        "極板の面積に比例し、極板間隔に反比例する",
+        "電圧に比例する"
+      ],
+      "answerIndex": 2,
+      "explanation": "C ＝ εS/d（ε：誘電率）。"
+    },
+    {
+      "id": "sci_phy14_007",
+      "category": "knowledge",
+      "prompt": "電場の中に置いた導体の内部の電場は？",
+      "choices": [
+        "無限大になる",
+        "0 になる",
+        "外と同じ",
+        "外の電場の2倍になる"
+      ],
+      "answerIndex": 1,
+      "explanation": "導体内の自由電子が移動し（静電誘導）、内部の電場を打ち消す。導体全体が等電位になる。"
+    },
+    {
+      "id": "sci_phy14_008",
+      "category": "knowledge",
+      "prompt": "電位の単位 V（ボルト）を別の単位で表すと？",
+      "choices": [
+        "J/C",
+        "N·m",
+        "A·s",
+        "C/J"
+      ],
+      "answerIndex": 0,
+      "explanation": "1 C の電荷がもつ位置エネルギーが電位。1 V ＝ 1 J/C。"
+    },
+    {
+      "id": "sci_phy14_009",
+      "category": "calculation",
+      "prompt": "2つの点電荷の電気量をどちらも2倍にし、距離も2倍にした。静電気力は何倍？",
+      "choices": [
+        "変わらない（1倍）",
+        "1/4 倍",
+        "2 倍",
+        "4 倍"
+      ],
+      "answerIndex": 0,
+      "explanation": "分子が 2 × 2 ＝ 4 倍、分母が 2² ＝ 4 倍なので、変わらない。"
+    },
+    {
+      "id": "sci_phy14_010",
+      "category": "calculation",
+      "prompt": "強さ 200 V/m の一様な電場で、電場の向きに 0.10 m 離れた2点の電位差は？",
+      "choices": [
+        "0.050 V",
+        "2.0 V",
+        "2000 V",
+        "20 V"
+      ],
+      "answerIndex": 3,
+      "explanation": "V ＝ Ed ＝ 200 × 0.10 ＝ 20 V。"
+    },
+    {
+      "id": "sci_phy14_011",
+      "category": "calculation",
+      "prompt": "2.0 C の電荷を、電位差 5.0 V の2点間で移動させるのに必要な仕事は？",
+      "choices": [
+        "0.40 J",
+        "7.0 J",
+        "10 J",
+        "2.5 J"
+      ],
+      "answerIndex": 2,
+      "explanation": "W ＝ qV ＝ 2.0 × 5.0 ＝ 10 J。"
+    },
+    {
+      "id": "sci_phy14_012",
+      "category": "calculation",
+      "prompt": "電気容量 2.0 μF のコンデンサーに 10 V をかけた。たまる電気量は？",
+      "choices": [
+        "20 C",
+        "2.0 × 10⁻⁶ C",
+        "5.0 × 10⁻⁶ C",
+        "2.0 × 10⁻⁵ C"
+      ],
+      "answerIndex": 3,
+      "explanation": "Q ＝ CV ＝ 2.0×10⁻⁶ × 10 ＝ 2.0 × 10⁻⁵ C。"
+    },
+    {
+      "id": "sci_phy14_013",
+      "category": "calculation",
+      "prompt": "電気容量 2.0 μF のコンデンサーに 10 V をかけた。たくわえられる静電エネルギーは？",
+      "choices": [
+        "2.0 × 10⁻⁵ J",
+        "2.0 × 10⁻⁴ J",
+        "1.0 × 10⁻⁴ J",
+        "1.0 × 10⁻⁵ J"
+      ],
+      "answerIndex": 2,
+      "explanation": "U ＝ ½CV² ＝ ½ × 2.0×10⁻⁶ × 10² ＝ 1.0 × 10⁻⁴ J。"
+    },
+    {
+      "id": "sci_phy14_014",
+      "category": "calculation",
+      "prompt": "2.0 μF のコンデンサー2個を直列につないだ。合成容量は？",
+      "choices": [
+        "2.0 μF",
+        "1.0 μF",
+        "0.50 μF",
+        "4.0 μF"
+      ],
+      "answerIndex": 1,
+      "explanation": "直列は 1/C ＝ 1/C₁ ＋ 1/C₂ ＝ 1/2.0 ＋ 1/2.0 より C ＝ 1.0 μF（並列なら和）。"
+    },
+    {
+      "id": "sci_phy14_015",
+      "category": "thinking",
+      "prompt": "電池につないだまま平行板コンデンサーの極板間隔を2倍にした。電気容量は？",
+      "choices": [
+        "4 倍",
+        "変わらない",
+        "1/2 倍",
+        "2 倍"
+      ],
+      "answerIndex": 2,
+      "explanation": "C ＝ εS/d で d が2倍なので 1/2 倍。電圧は電池で一定なので電気量も 1/2 倍になる。"
+    },
+    {
+      "id": "sci_phy14_016",
+      "category": "thinking",
+      "prompt": "平行板コンデンサーの極板の間に誘電体をはさむと、電気容量は？",
+      "choices": [
+        "大きくなる",
+        "小さくなる",
+        "変わらない",
+        "0 になる"
+      ],
+      "answerIndex": 0,
+      "explanation": "誘電体は誘電分極で電場を弱めるので、同じ電圧でより多くの電荷をためられる（誘電率が大きくなる）。"
+    }
+  ]
+}

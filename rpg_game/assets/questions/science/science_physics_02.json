@@ -1,0 +1,216 @@
+{
+  "setId": "science_physics_02",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_phy02_001",
+      "category": "knowledge",
+      "prompt": "加速度の単位は？",
+      "choices": [
+        "m/s²",
+        "m/s",
+        "m",
+        "N"
+      ],
+      "answerIndex": 0,
+      "explanation": "加速度＝速度の変化 ÷ 時間 なので、(m/s) ÷ s ＝ m/s²。"
+    },
+    {
+      "id": "sci_phy02_002",
+      "category": "knowledge",
+      "prompt": "等加速度直線運動の速度の式は？（v₀：初速度、a：加速度）",
+      "choices": [
+        "v ＝ v₀t ＋ ½at²",
+        "v ＝ at²",
+        "v ＝ v₀ ＋ at",
+        "v ＝ v₀ − ½at"
+      ],
+      "answerIndex": 2,
+      "explanation": "速度は1秒ごとに a ずつ変わるので v ＝ v₀ ＋ at。位置は x ＝ v₀t ＋ ½at²。"
+    },
+    {
+      "id": "sci_phy02_003",
+      "category": "knowledge",
+      "prompt": "自由落下とはどんな運動？",
+      "choices": [
+        "水平に投げた物体の運動",
+        "初速度 0 で重力だけを受けて落ちる運動",
+        "一定の速さで落ちる運動",
+        "空気抵抗で減速しながら落ちる運動"
+      ],
+      "answerIndex": 1,
+      "explanation": "自由落下は初速度 0、加速度 g（約 9.8 m/s²）の等加速度直線運動。"
+    },
+    {
+      "id": "sci_phy02_004",
+      "category": "knowledge",
+      "prompt": "鉛直に投げ上げた物体が最高点に達したとき、速度は？",
+      "choices": [
+        "最大になる",
+        "9.8 m/s",
+        "0",
+        "初速度と同じ"
+      ],
+      "answerIndex": 2,
+      "explanation": "最高点では上向きの速度が 0 になり、そこから落下に転じる。"
+    },
+    {
+      "id": "sci_phy02_005",
+      "category": "knowledge",
+      "prompt": "鉛直に投げ上げた物体の、最高点での加速度は？",
+      "choices": [
+        "鉛直下向きに 9.8 m/s²",
+        "0",
+        "鉛直上向きに 9.8 m/s²",
+        "初速度によって変わる"
+      ],
+      "answerIndex": 0,
+      "explanation": "速度は 0 でも重力は働き続けるので、加速度は常に下向き g。速度 0 と加速度 0 を混同しない。"
+    },
+    {
+      "id": "sci_phy02_006",
+      "category": "knowledge",
+      "prompt": "v-t グラフの傾きが表すものは？",
+      "choices": [
+        "速さ",
+        "変位",
+        "加速度",
+        "時間"
+      ],
+      "answerIndex": 2,
+      "explanation": "傾き＝速度の変化 ÷ 時間＝加速度。面積は変位。"
+    },
+    {
+      "id": "sci_phy02_007",
+      "category": "knowledge",
+      "prompt": "空気抵抗がないとき、同じ高さから同時に落とした鉄球と木の球は？",
+      "choices": [
+        "同時に地面に着く",
+        "木の球が先に着く",
+        "大きい方が先に着く",
+        "鉄球が先に着く"
+      ],
+      "answerIndex": 0,
+      "explanation": "自由落下の加速度 g は質量によらないので、同時に着地する。"
+    },
+    {
+      "id": "sci_phy02_008",
+      "category": "knowledge",
+      "prompt": "物体の速度と加速度が逆向きのとき、物体はどうなる？",
+      "choices": [
+        "だんだん遅くなる",
+        "必ず止まったままになる",
+        "だんだん速くなる",
+        "一定の速さで進む"
+      ],
+      "answerIndex": 0,
+      "explanation": "加速度が速度と逆向きなら減速する。やがて止まり、そのまま加速度が続けば逆向きに動き出す。"
+    },
+    {
+      "id": "sci_phy02_009",
+      "category": "calculation",
+      "prompt": "静止していた物体が 2.0 m/s² で加速した。5.0 s 後の速さは？",
+      "choices": [
+        "7.0 m/s",
+        "2.5 m/s",
+        "25 m/s",
+        "10 m/s"
+      ],
+      "answerIndex": 3,
+      "explanation": "v ＝ v₀ ＋ at ＝ 0 ＋ 2.0 × 5.0 ＝ 10 m/s。"
+    },
+    {
+      "id": "sci_phy02_010",
+      "category": "calculation",
+      "prompt": "静止していた物体が 2.0 m/s² で加速した。5.0 s 間に進む距離は？",
+      "choices": [
+        "25 m",
+        "5.0 m",
+        "50 m",
+        "10 m"
+      ],
+      "answerIndex": 0,
+      "explanation": "x ＝ ½at² ＝ ½ × 2.0 × 5.0² ＝ 25 m。"
+    },
+    {
+      "id": "sci_phy02_011",
+      "category": "calculation",
+      "prompt": "自由落下を始めてから 2.0 s 後の速さは？（g ＝ 9.8 m/s²）",
+      "choices": [
+        "39.2 m/s",
+        "9.8 m/s",
+        "19.6 m/s",
+        "4.9 m/s"
+      ],
+      "answerIndex": 2,
+      "explanation": "v ＝ gt ＝ 9.8 × 2.0 ＝ 19.6 m/s。"
+    },
+    {
+      "id": "sci_phy02_012",
+      "category": "calculation",
+      "prompt": "自由落下で、最初の 2.0 s 間に落ちる距離は？（g ＝ 9.8 m/s²）",
+      "choices": [
+        "9.8 m",
+        "19.6 m",
+        "39.2 m",
+        "4.9 m"
+      ],
+      "answerIndex": 1,
+      "explanation": "y ＝ ½gt² ＝ ½ × 9.8 × 2.0² ＝ 19.6 m。"
+    },
+    {
+      "id": "sci_phy02_013",
+      "category": "calculation",
+      "prompt": "初速度 19.6 m/s で鉛直に投げ上げた。最高点に達するまでの時間は？（g ＝ 9.8 m/s²）",
+      "choices": [
+        "19.6 s",
+        "2.0 s",
+        "1.0 s",
+        "4.0 s"
+      ],
+      "answerIndex": 1,
+      "explanation": "最高点では v ＝ 0。0 ＝ 19.6 − 9.8t より t ＝ 2.0 s。"
+    },
+    {
+      "id": "sci_phy02_014",
+      "category": "calculation",
+      "prompt": "20 m/s で走る車が一定の加速度 −4.0 m/s² でブレーキをかけた。止まるまでに進む距離は？",
+      "choices": [
+        "25 m",
+        "5.0 m",
+        "100 m",
+        "50 m"
+      ],
+      "answerIndex": 3,
+      "explanation": "v² − v₀² ＝ 2ax より 0 − 20² ＝ 2 × (−4.0) × x、x ＝ 50 m。"
+    },
+    {
+      "id": "sci_phy02_015",
+      "category": "thinking",
+      "prompt": "鉛直投げ上げの v-t グラフ（上向きを正）はどうなる？",
+      "choices": [
+        "右下がりの直線で、途中で t 軸を横切る",
+        "上に凸の放物線",
+        "右上がりの直線",
+        "水平な直線"
+      ],
+      "answerIndex": 0,
+      "explanation": "加速度は一定で −g なので傾き −g の直線。t 軸を横切る点が最高点。"
+    },
+    {
+      "id": "sci_phy02_016",
+      "category": "thinking",
+      "prompt": "一定時間ごとに物体の位置を記録したら、間隔が毎回同じ長さずつ広がっていた。この運動は？",
+      "choices": [
+        "だんだん遅くなる運動",
+        "等速直線運動",
+        "等加速度直線運動",
+        "静止"
+      ],
+      "answerIndex": 2,
+      "explanation": "等加速度直線運動では、一定時間ごとの移動距離が一定の割合（aT²）ずつ増える。"
+    }
+  ]
+}

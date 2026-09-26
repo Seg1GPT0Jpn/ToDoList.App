@@ -166,10 +166,15 @@ void main() {
       }
     });
 
-    test('英語以外は準備中', () {
+    test('英語は無料、理科は購入後に遊べる。ほかは準備中', () {
       for (final w in RpgCatalog.worlds) {
         if (w.id == RpgCatalog.englishWorldId) {
           expect(Progression.isWorldPlayable(RpgProgress.initial, w), isTrue);
+        } else if (w.id == ScienceCatalog.worldId) {
+          expect(Progression.isWorldPlayable(RpgProgress.initial, w), isFalse);
+          final bought =
+              RpgProgress.initial.copyWith(purchasedWorldIds: {w.id});
+          expect(Progression.isWorldPlayable(bought, w), isTrue);
         } else {
           expect(w.isComingSoon, isTrue);
           expect(Progression.isWorldPlayable(RpgProgress.initial, w), isFalse);

@@ -3,6 +3,7 @@ import '../models/question.dart';
 import '../models/stage.dart';
 import '../models/world.dart';
 import '../study/sea_catalog.dart';
+import 'science_catalog.dart';
 
 /// ワールド・ステージのマスターデータ。
 ///
@@ -612,12 +613,14 @@ class RpgCatalog {
       description: '品詞・意味・語法の4択で、ノートの魔物たちを倒そう。',
     ),
     WorldDef(
-      id: 'science',
+      id: ScienceCatalog.worldId,
       name: '理の国',
       subject: '理科',
-      status: WorldStatus.comingSoon,
+      status: WorldStatus.available,
       isFree: false,
       priceYen: defaultWorldPriceYen,
+      stages: ScienceCatalog.stages,
+      description: 'スタート地点から上は物理、左は化学、右は地学、下は生物。基礎から発展まで64エリア。',
     ),
     WorldDef(
       id: 'social',
@@ -641,6 +644,16 @@ class RpgCatalog {
         (w) => w.id == id,
         orElse: () => throw ArgumentError('不明なワールドです: $id'),
       );
+
+  /// 画面に出すステージの名前（例：エリア3、物理・エリア3）
+  static String stageLabel(StageDef s) => s.branch.isEmpty
+      ? 'エリア${s.order}'
+      : '${ScienceCatalog.branch(s.branch).name}・エリア${s.areaNo}';
+
+  /// 画面に出す出題範囲（英語は文法と単語、理科は単元と科目）
+  static String themeLabel(StageDef s) => s.branch.isEmpty
+      ? '文法：${s.grammarTheme}／単語：${s.vocabLevel}'
+      : '単元：${s.grammarTheme}（${s.vocabLevel}）';
 
   static StageDef stage(String id) =>
       worlds.expand((w) => w.stages).firstWhere((s) => s.id == id,

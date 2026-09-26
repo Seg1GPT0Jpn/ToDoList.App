@@ -1,0 +1,216 @@
+{
+  "setId": "science_earth_12",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_ear12_001",
+      "category": "knowledge",
+      "prompt": "水蒸気が凝結していない空気のかたまりが上昇するとき、温度はどのくらい下がる？",
+      "choices": [
+        "100 m につき約 3 ℃",
+        "100 m につき約 1 ℃（乾燥断熱減率）",
+        "100 m につき約 0.5 ℃",
+        "変わらない"
+      ],
+      "answerIndex": 1,
+      "explanation": "雲ができている（飽和した）空気では、凝結熱が出るので約 0.5 ℃/100 m（湿潤断熱減率）。"
+    },
+    {
+      "id": "sci_ear12_002",
+      "category": "knowledge",
+      "prompt": "上昇した空気のかたまりの中で、水蒸気の凝結が始まる高さを何という？",
+      "choices": [
+        "雲頂",
+        "圏界面",
+        "凝結高度",
+        "森林限界"
+      ],
+      "answerIndex": 2,
+      "explanation": "雲の底（雲底）の高さにあたる。"
+    },
+    {
+      "id": "sci_ear12_003",
+      "category": "knowledge",
+      "prompt": "太陽放射の強さが最も大きい波長域は？",
+      "choices": [
+        "赤外線",
+        "可視光線",
+        "電波",
+        "X 線"
+      ],
+      "answerIndex": 1,
+      "explanation": "地球放射（地表や大気からの放射）は主に赤外線。"
+    },
+    {
+      "id": "sci_ear12_004",
+      "category": "knowledge",
+      "prompt": "地球全体の熱収支で、熱が余っているのは？",
+      "choices": [
+        "両極",
+        "低緯度",
+        "高緯度",
+        "どこも同じ"
+      ],
+      "answerIndex": 1,
+      "explanation": "低緯度では受ける太陽放射が多く、大気や海洋の流れが高緯度へ熱を運んでいる。"
+    },
+    {
+      "id": "sci_ear12_005",
+      "category": "knowledge",
+      "prompt": "緯度 30° 付近から赤道に向かって吹く東よりの風は？",
+      "choices": [
+        "偏西風",
+        "貿易風",
+        "極偏東風",
+        "季節風"
+      ],
+      "answerIndex": 1,
+      "explanation": "ハドレー循環の地表付近の流れ。転向力で東よりの風になる。"
+    },
+    {
+      "id": "sci_ear12_006",
+      "category": "knowledge",
+      "prompt": "北半球で、動いている物体の向きを右へ曲げるように見えるはたらきを何という？",
+      "choices": [
+        "浮力",
+        "遠心力だけ",
+        "摩擦力",
+        "転向力（コリオリの力）"
+      ],
+      "answerIndex": 3,
+      "explanation": "地球の自転によるみかけの力。南半球では左へ曲げる。"
+    },
+    {
+      "id": "sci_ear12_007",
+      "category": "knowledge",
+      "prompt": "上空で、気圧傾度力と転向力がつり合って等圧線に平行に吹く風を何という？",
+      "choices": [
+        "季節風",
+        "地上風",
+        "地衡風",
+        "海陸風"
+      ],
+      "answerIndex": 2,
+      "explanation": "北半球では、低気圧を左に見て吹く。"
+    },
+    {
+      "id": "sci_ear12_008",
+      "category": "knowledge",
+      "prompt": "地上付近の風が等圧線を横切って低圧側に吹きこむ理由は？",
+      "choices": [
+        "地表との摩擦力がはたらくから",
+        "転向力が強くなるから",
+        "上空の風と同じだから",
+        "気圧差がないから"
+      ],
+      "answerIndex": 0,
+      "explanation": "摩擦で風が弱まり、転向力も弱くなるので、低圧側へ斜めに吹く。"
+    },
+    {
+      "id": "sci_ear12_009",
+      "category": "knowledge",
+      "prompt": "中緯度の上空を西から東へ吹く、特に強い風の帯を何という？",
+      "choices": [
+        "ジェット気流",
+        "貿易風",
+        "やませ",
+        "海風"
+      ],
+      "answerIndex": 0,
+      "explanation": "偏西風の中で特に強い部分。冬に強い。"
+    },
+    {
+      "id": "sci_ear12_010",
+      "category": "knowledge",
+      "prompt": "大陸と海洋の温まり方のちがいによって、季節によって向きが変わる風は？",
+      "choices": [
+        "偏西風",
+        "貿易風",
+        "季節風（モンスーン）",
+        "地衡風"
+      ],
+      "answerIndex": 2,
+      "explanation": "日本では冬は北西、夏は南東の季節風が吹く。"
+    },
+    {
+      "id": "sci_ear12_011",
+      "category": "knowledge",
+      "prompt": "空気のかたまりが上昇しやすく、積乱雲が発達しやすい大気の状態を何という？",
+      "choices": [
+        "不安定",
+        "安定",
+        "中立",
+        "飽和"
+      ],
+      "answerIndex": 0,
+      "explanation": "上空に冷たい空気が入ったり、地表が強く温められたりすると不安定になる。"
+    },
+    {
+      "id": "sci_ear12_012",
+      "category": "knowledge",
+      "prompt": "晴れた日の昼、海岸で海から陸に向かって吹く風は？",
+      "choices": [
+        "陸風",
+        "貿易風",
+        "偏西風",
+        "海風"
+      ],
+      "answerIndex": 3,
+      "explanation": "昼は陸の方が早く温まり、陸上で上昇気流が起こる。夜は逆に陸風が吹く。"
+    },
+    {
+      "id": "sci_ear12_013",
+      "category": "calculation",
+      "prompt": "地上 25 ℃ の空気が、飽和せずに 1000 m 上昇した。温度は？",
+      "choices": [
+        "15 ℃",
+        "5 ℃",
+        "20 ℃",
+        "22 ℃"
+      ],
+      "answerIndex": 0,
+      "explanation": "乾燥断熱減率 1 ℃/100 m で 10 ℃ 下がる。25 − 10 ＝ 15 ℃。"
+    },
+    {
+      "id": "sci_ear12_014",
+      "category": "calculation",
+      "prompt": "地上の気温 20 ℃、露点 12 ℃ の空気が上昇したとき、雲ができ始める高さはおよそ？（凝結高度 ≒ 125 ×（気温 − 露点）m）",
+      "choices": [
+        "125 m",
+        "8 m",
+        "1000 m",
+        "2500 m"
+      ],
+      "answerIndex": 2,
+      "explanation": "125 × (20 − 12) ＝ 1000 m。"
+    },
+    {
+      "id": "sci_ear12_015",
+      "category": "calculation",
+      "prompt": "地上 20 ℃ の空気が高さ 2000 m の山をこえる。1000 m で雲ができ、山頂までは湿潤断熱減率 0.5 ℃/100 m、風下では乾燥断熱減率 1 ℃/100 m で下降する。風下のふもと（0 m）の気温は？",
+      "choices": [
+        "25 ℃",
+        "15 ℃",
+        "30 ℃",
+        "20 ℃"
+      ],
+      "answerIndex": 0,
+      "explanation": "0→1000 m：20 → 10 ℃、1000→2000 m：10 → 5 ℃、下降 2000 m：5 ＋ 20 ＝ 25 ℃。フェーン現象。"
+    },
+    {
+      "id": "sci_ear12_016",
+      "category": "thinking",
+      "prompt": "北半球の上空で、地衡風が吹いているとき、風下を向いて立つと高気圧はどちら側にある？",
+      "choices": [
+        "前方",
+        "左側",
+        "右側",
+        "後方"
+      ],
+      "answerIndex": 2,
+      "explanation": "北半球の地衡風は、高気圧を右に、低気圧を左に見て吹く。"
+    }
+  ]
+}

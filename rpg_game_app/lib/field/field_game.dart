@@ -40,7 +40,15 @@ class FieldGame extends FlameGame with KeyboardEvents {
     required this.onChest,
     required this.onSpring,
     required this.onGhost,
+    required this.onPortal,
+    this.from,
   });
+
+  /// 前にいたマップ（出入口のとなりから始める）。null ならスタート地点から
+  final String? from;
+
+  /// 出入口に入ったとき
+  final void Function(Portal portal) onPortal;
 
   final FieldMap map;
   final WorldDef rpgWorld;
@@ -73,8 +81,8 @@ class FieldGame extends FlameGame with KeyboardEvents {
   /// ダイアログ表示中などは操作を受け付けない
   bool inputLocked = false;
 
-  /// 今いる地方（画面上部の表示用）
-  final region = ValueNotifier<Region>(Region.grass);
+  /// 今いるエリアの名前（画面上部の表示用）
+  late final area = ValueNotifier<String>(map.labelAt(0, 0));
 
   /// 話しかけた直後、同じ方向を押しっぱなしで何度も話しかけないようにする
   Facing? _bumpedDirection;
@@ -100,7 +108,7 @@ class FieldGame extends FlameGame with KeyboardEvents {
     for (final w in map.findAll('W')) {
       world.add(SpringToken(w));
     }
-    player = PlayerToken(map.find('P'));
+    player = PlayerToken(from == null ? map.start : map.spawnFrom(from));
     world.add(player);
     applyProgress(_progress);
     camera.follow(player, snap: true);
@@ -110,9 +118,11 @@ class FieldGame extends FlameGame with KeyboardEvents {
   void onGameResize(Vector2 size) {
     super.onGameResize(size);
     // スマホ縦持ちで横 9 マス程度が見えるように
+    // 小さいマップ（理の国のスタート地点など）は、横幅全体が見えるようにする
+    final across = map.width <= 13 ? map.width : 9;
     camera.viewfinder.zoom = min(
-      size.x / (9 * tileSize),
-      size.y / (11 * tileSize),
+      size.x / (across * tileSize),
+      size.y / (max(11, across + 2) * tileSize),
     );
   }
 
@@ -163,10 +173,9 @@ class FieldGame extends FlameGame with KeyboardEvents {
         existing?.removeFromParent();
         _cages.remove(stage.order);
       } else if (existing == null) {
-        final gate = map.enemySpots[stage.order]!;
-        final aside = map.asideOf(gate);
-        final cell = (col: gate.col * 2 - aside.col, row: gate.row);
-        final token = CageToken(cell);
+        final gate = map.enemySpots[stage.order];
+        if (gate == null) continue;
+        final token = CageToken(map.cageOf(gate));
         _cages[stage.order] = token;
         world.add(token);
       }
@@ -215,8 +224,8 @@ class FieldGame extends FlameGame with KeyboardEvents {
   void update(double dt) {
     super.update(dt);
     _clampCamera();
-    final r = map.regionAt(player.cell.row);
-    if (region.value != r) region.value = r;
+    final label = map.labelAt(player.cell.col, player.cell.row);
+    if (area.value != label) area.value = label;
     final dir = padDirection ?? _keyDirection;
     if (dir != _bumpedDirection) _bumpedDirection = null;
     if (!inputLocked &&
@@ -275,7 +284,7 @@ class FieldGame extends FlameGame with KeyboardEvents {
         return;
       case 'S':
         _bumpedDirection = dir;
-        onMessage(FieldMap.signMessages.first);
+        onMessage(map.signText);
         return;
       case 'C':
         _bumpedDirection = dir;
@@ -292,12 +301,19 @@ class FieldGame extends FlameGame with KeyboardEvents {
         return;
       case 'G':
         _bumpedDirection = dir;
-        final bossCleared = rpgWorld.stages.every(
-          (s) => _progress.clearedStageIds.contains(s.id),
-        );
+        final bossCleared = rpgWorld.stages
+            .where((s) => map.enemySpots.containsKey(s.order))
+            .every((s) => _progress.clearedStageIds.contains(s.id));
         onMessage(
-          bossCleared ? '英語ワールド制覇！ トロフィーがきらきら光っている。' : 'トロフィーがある。…でも、まだ手が届かない。',
+          bossCleared
+              ? '${map.goalText}がきらきら光っている。制覇おめでとう！'
+              : '${map.goalText}がある。…でも、まだ手が届かない。',
         );
+        return;
+      case 'O':
+        _bumpedDirection = dir;
+        final portal = map.portals[target];
+        if (portal != null) onPortal(portal);
         return;
     }
     if (map.isFloor(target.col, target.row)) player.walkTo(target);
@@ -330,7 +346,9 @@ class MapLayer extends PositionComponent {
   void render(ui.Canvas canvas) {
     canvas.drawPicture(_picture);
     // ゴールのトロフィーだけきらめかせる
-    final g = map.find('G');
+    final goals = map.findAll('G');
+    if (goals.isEmpty) return;
+    final g = goals.first;
     final glow = (sin(_t * 3) + 1) / 2;
     canvas.drawCircle(
       Offset((g.col + 0.5) * tileSize, (g.row + 0.5) * tileSize),
@@ -361,44 +379,49 @@ class MapLayer extends PositionComponent {
   };
 
   void _paintMap(ui.Canvas c) {
-    final w = map.width * tileSize;
+    // 床（方眼ノートの目）をマスごとに描く。向きを変えたマップでも地方ごとに色が変わる
+    final crack = ui.Paint()
+      ..color = const ui.Color(0x66FF7A3D)
+      ..strokeWidth = 1;
     for (var r = 0; r < map.height; r++) {
-      final region = map.regionAt(r);
-      final y = r * tileSize;
-      c.drawRect(
-        Rect.fromLTWH(0, y, w, tileSize),
-        ui.Paint()..color = _floor[region]!,
-      );
-      final grid = ui.Paint()
-        ..color = _gridColor[region]!
-        ..strokeWidth = 1;
-      for (var x = 0.0; x <= w; x += tileSize / 2) {
+      for (var col = 0; col < map.width; col++) {
+        final region = map.regionAt(col, r);
+        final x = col * tileSize, y = r * tileSize;
+        c.drawRect(
+          Rect.fromLTWH(x, y, tileSize, tileSize),
+          ui.Paint()..color = _floor[region]!,
+        );
+        final grid = ui.Paint()..color = _gridColor[region]!;
+        c.drawLine(
+          Offset(x, y),
+          Offset(x + tileSize, y),
+          grid..strokeWidth = 1,
+        );
         c.drawLine(
           Offset(x, y),
           Offset(x, y + tileSize),
-          grid..strokeWidth = x % tileSize == 0 ? 1 : 0.4,
+          grid..strokeWidth = 1,
         );
-      }
-      c.drawLine(Offset(0, y), Offset(w, y), grid..strokeWidth = 1);
-      c.drawLine(
-        Offset(0, y + tileSize / 2),
-        Offset(w, y + tileSize / 2),
-        grid..strokeWidth = 0.4,
-      );
-      // 溶岩エリアの床のひび
-      if (region == Region.lava) {
-        final crack = ui.Paint()
-          ..color = const ui.Color(0x66FF7A3D)
-          ..strokeWidth = 1;
-        for (var x = 8.0; x < w; x += 57) {
-          c.drawLine(Offset(x, y + 6), Offset(x + 9, y + 20), crack);
+        c.drawLine(
+          Offset(x, y + tileSize / 2),
+          Offset(x + tileSize, y + tileSize / 2),
+          grid..strokeWidth = 0.4,
+        );
+        c.drawLine(
+          Offset(x + tileSize / 2, y),
+          Offset(x + tileSize / 2, y + tileSize),
+          grid..strokeWidth = 0.4,
+        );
+        // 溶岩エリアの床のひび
+        if (region == Region.lava && (col * 7 + r * 3) % 5 == 0) {
+          c.drawLine(Offset(x + 8, y + 6), Offset(x + 17, y + 20), crack);
         }
       }
     }
     final rnd = Random(7);
     for (var r = 0; r < map.height; r++) {
-      final region = map.regionAt(r);
       for (var col = 0; col < map.width; col++) {
+        final region = map.regionAt(col, r);
         final rect = Rect.fromLTWH(
           col * tileSize,
           r * tileSize,
@@ -416,6 +439,8 @@ class MapLayer extends PositionComponent {
             _sign(c, rect);
           case 'I':
             _inn(c, rect);
+          case 'O':
+            _portal(c, rect, map.portals[(col: col, row: r)]?.label ?? '');
         }
       }
     }
@@ -581,6 +606,38 @@ class MapLayer extends PositionComponent {
         _ink..strokeWidth = 1,
       );
     }
+  }
+
+  /// 出入口：アーチと行き先の札
+  void _portal(ui.Canvas c, Rect r, String label) {
+    c.drawRect(r, ui.Paint()..color = const ui.Color(0xFFFFF3C4));
+    final arch = ui.Path()
+      ..moveTo(r.left + 3, r.bottom)
+      ..lineTo(r.left + 3, r.top + 12)
+      ..arcToPoint(
+        Offset(r.right - 3, r.top + 12),
+        radius: ui.Radius.circular(r.width / 2 - 3),
+      )
+      ..lineTo(r.right - 3, r.bottom);
+    c.drawPath(
+      arch,
+      ui.Paint()
+        ..color = const ui.Color(0xFFB5763B)
+        ..style = ui.PaintingStyle.stroke
+        ..strokeWidth = 4,
+    );
+    final b =
+        ui.ParagraphBuilder(ui.ParagraphStyle(textAlign: ui.TextAlign.center))
+          ..pushStyle(
+            ui.TextStyle(
+              color: const ui.Color(0xFF6D4C41),
+              fontSize: label.length > 3 ? 6 : 9,
+              fontWeight: ui.FontWeight.w900,
+            ),
+          )
+          ..addText(label);
+    final p = b.build()..layout(ui.ParagraphConstraints(width: r.width));
+    c.drawParagraph(p, Offset(r.left, r.center.dy - p.height / 2 + 3));
   }
 
   /// 宿：小さな家と「宿」の看板

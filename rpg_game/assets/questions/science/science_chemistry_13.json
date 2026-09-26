@@ -1,0 +1,216 @@
+{
+  "setId": "science_chemistry_13",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_chm13_001",
+      "category": "knowledge",
+      "prompt": "ハロゲンの単体の酸化力の強さの順は？",
+      "choices": [
+        "F₂ > Cl₂ > Br₂ > I₂",
+        "すべて同じ",
+        "Cl₂ > F₂ > I₂ > Br₂",
+        "I₂ > Br₂ > Cl₂ > F₂"
+      ],
+      "answerIndex": 0,
+      "explanation": "原子番号が小さいほど電子を受け取りやすく、酸化力が強い。"
+    },
+    {
+      "id": "sci_chm13_002",
+      "category": "knowledge",
+      "prompt": "塩素 Cl₂ の色は？",
+      "choices": [
+        "紫色",
+        "赤褐色",
+        "黄緑色",
+        "無色"
+      ],
+      "answerIndex": 2,
+      "explanation": "F₂ は淡黄色、Cl₂ は黄緑色、Br₂ は赤褐色の液体、I₂ は黒紫色の固体。"
+    },
+    {
+      "id": "sci_chm13_003",
+      "category": "knowledge",
+      "prompt": "ガラスを溶かすため、ポリエチレンの容器に保存する酸は？",
+      "choices": [
+        "フッ化水素酸",
+        "塩酸",
+        "硫酸",
+        "硝酸"
+      ],
+      "answerIndex": 0,
+      "explanation": "HF はガラスの主成分 SiO₂ と反応する。ガラスの目盛りつけに使われる。"
+    },
+    {
+      "id": "sci_chm13_004",
+      "category": "knowledge",
+      "prompt": "濃硫酸がもつ性質で、スクロース（砂糖）を黒くするのは？",
+      "choices": [
+        "脱水作用",
+        "揮発性",
+        "還元作用",
+        "中和作用"
+      ],
+      "answerIndex": 0,
+      "explanation": "濃硫酸は有機物から H と O を水として奪い、炭素が残る。"
+    },
+    {
+      "id": "sci_chm13_005",
+      "category": "knowledge",
+      "prompt": "アンモニアを工業的に合成する方法は？",
+      "choices": [
+        "接触法",
+        "ソルベー法",
+        "オストワルト法",
+        "ハーバー・ボッシュ法"
+      ],
+      "answerIndex": 3,
+      "explanation": "N₂ ＋ 3H₂ ⇄ 2NH₃。鉄を主成分とする触媒を使う。"
+    },
+    {
+      "id": "sci_chm13_006",
+      "category": "knowledge",
+      "prompt": "硝酸を工業的につくる方法は？",
+      "choices": [
+        "ハーバー・ボッシュ法",
+        "接触法",
+        "オストワルト法",
+        "アンモニアソーダ法"
+      ],
+      "answerIndex": 2,
+      "explanation": "NH₃ を酸化して NO → NO₂ → HNO₃ にする。硫酸は接触法。"
+    },
+    {
+      "id": "sci_chm13_007",
+      "category": "knowledge",
+      "prompt": "二酸化窒素 NO₂ の色は？",
+      "choices": [
+        "黄緑色",
+        "無色",
+        "赤褐色",
+        "青色"
+      ],
+      "answerIndex": 2,
+      "explanation": "NO は無色で、空気中で酸化されてすぐ赤褐色の NO₂ になる。"
+    },
+    {
+      "id": "sci_chm13_008",
+      "category": "knowledge",
+      "prompt": "半導体として電子部品に使われる元素は？",
+      "choices": [
+        "ヘリウム He",
+        "硫黄 S",
+        "塩素 Cl",
+        "ケイ素 Si"
+      ],
+      "answerIndex": 3,
+      "explanation": "高純度のケイ素は半導体の材料。SiO₂ は石英・水晶・ガラスの主成分。"
+    },
+    {
+      "id": "sci_chm13_009",
+      "category": "knowledge",
+      "prompt": "オゾン O₃ について正しいものは？",
+      "choices": [
+        "無臭で反応しにくい",
+        "窒素の化合物",
+        "酸素の同素体で、強い酸化力をもつ",
+        "金属である"
+      ],
+      "answerIndex": 2,
+      "explanation": "淡青色・特異臭の気体。成層圏のオゾン層は紫外線を吸収する。"
+    },
+    {
+      "id": "sci_chm13_010",
+      "category": "knowledge",
+      "prompt": "空気中で自然発火するため、水中に保存するものは？",
+      "choices": [
+        "黄リン",
+        "赤リン",
+        "ヨウ素",
+        "硫黄"
+      ],
+      "answerIndex": 0,
+      "explanation": "黄リン（白リン）は猛毒で自然発火する。赤リンは比較的安定でマッチ箱の側薬に使う。"
+    },
+    {
+      "id": "sci_chm13_011",
+      "category": "calculation",
+      "prompt": "N₂ 1.0 mol がすべて反応すると、NH₃ は最大何 mol できる？（N₂ ＋ 3H₂ → 2NH₃）",
+      "choices": [
+        "2.0 mol",
+        "0.50 mol",
+        "3.0 mol",
+        "1.0 mol"
+      ],
+      "answerIndex": 0,
+      "explanation": "係数の比 N₂ : NH₃ ＝ 1 : 2。"
+    },
+    {
+      "id": "sci_chm13_012",
+      "category": "calculation",
+      "prompt": "アンモニア 17 g の物質量は？（N ＝ 14、H ＝ 1.0）",
+      "choices": [
+        "17 mol",
+        "2.0 mol",
+        "1.0 mol",
+        "0.50 mol"
+      ],
+      "answerIndex": 2,
+      "explanation": "NH₃ の分子量 17。17 ÷ 17 ＝ 1.0 mol。"
+    },
+    {
+      "id": "sci_chm13_013",
+      "category": "calculation",
+      "prompt": "MnO₂ ＋ 4HCl → MnCl₂ ＋ 2H₂O ＋ Cl₂。HCl 0.40 mol がすべて反応すると、Cl₂ は何 mol 出る？",
+      "choices": [
+        "1.6 mol",
+        "0.10 mol",
+        "0.20 mol",
+        "0.40 mol"
+      ],
+      "answerIndex": 1,
+      "explanation": "係数の比 HCl : Cl₂ ＝ 4 : 1。0.40 ÷ 4 ＝ 0.10 mol。"
+    },
+    {
+      "id": "sci_chm13_014",
+      "category": "calculation",
+      "prompt": "硫黄 32 g を完全燃焼させると、SO₂ は何 g できる？（S ＝ 32、O ＝ 16）",
+      "choices": [
+        "96 g",
+        "48 g",
+        "64 g",
+        "32 g"
+      ],
+      "answerIndex": 2,
+      "explanation": "S ＋ O₂ → SO₂。S 1.0 mol → SO₂ 1.0 mol ＝ 64 g。"
+    },
+    {
+      "id": "sci_chm13_015",
+      "category": "thinking",
+      "prompt": "塩素を集めるのに適した方法は？",
+      "choices": [
+        "どの方法でもよい",
+        "下方置換（空気より重く、水に溶けやすいから）",
+        "水上置換",
+        "上方置換"
+      ],
+      "answerIndex": 1,
+      "explanation": "Cl₂ は分子量 71 で空気（平均 29）より重く、水に溶けるので下方置換。"
+    },
+    {
+      "id": "sci_chm13_016",
+      "category": "thinking",
+      "prompt": "アンモニアを集めるのに適した方法は？",
+      "choices": [
+        "上方置換（空気より軽く、水にとても溶けやすいから）",
+        "どの方法でもよい",
+        "下方置換",
+        "水上置換"
+      ],
+      "answerIndex": 0,
+      "explanation": "NH₃ は分子量 17 で空気より軽く、水に非常によく溶ける。"
+    }
+  ]
+}

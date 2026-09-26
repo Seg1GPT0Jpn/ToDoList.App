@@ -141,8 +141,8 @@ class Progression {
         },
       );
       if (!alreadyCleared) {
-        final next = world.stages.where((s) => s.order == stage.order + 1);
-        if (next.isNotEmpty) unlocked = next.first.id;
+        final next = nextInBranch(world, stage);
+        if (next != null) unlocked = next.id;
         if (stage.rewardCardId != null) {
           newCard = CardDef.byId(stage.rewardCardId!);
           updated = updated.copyWith(deck: [...updated.deck, newCard.id]);
@@ -220,9 +220,28 @@ class Progression {
   static bool isStageUnlocked(
       RpgProgress progress, WorldDef world, StageDef stage) {
     if (!isWorldPlayable(progress, world)) return false;
-    if (stage.order == 1) return true;
-    return world.stages.any((s) =>
-        s.order == stage.order - 1 && progress.clearedStageIds.contains(s.id));
+    final prev = previousInBranch(world, stage);
+    return prev == null || progress.clearedStageIds.contains(prev.id);
+  }
+
+  /// 同じ系統で1つ前のステージ（系統の最初なら null）
+  static StageDef? previousInBranch(WorldDef world, StageDef stage) {
+    StageDef? best;
+    for (final s in world.stages) {
+      if (s.branch != stage.branch || s.order >= stage.order) continue;
+      if (best == null || s.order > best.order) best = s;
+    }
+    return best;
+  }
+
+  /// 同じ系統で1つ次のステージ（系統の最後なら null）
+  static StageDef? nextInBranch(WorldDef world, StageDef stage) {
+    StageDef? best;
+    for (final s in world.stages) {
+      if (s.branch != stage.branch || s.order <= stage.order) continue;
+      if (best == null || s.order < best.order) best = s;
+    }
+    return best;
   }
 
   /// ワールドの中身があり、かつ無料または購入済みか。

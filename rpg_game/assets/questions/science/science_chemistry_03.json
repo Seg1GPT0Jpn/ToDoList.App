@@ -1,0 +1,216 @@
+{
+  "setId": "science_chemistry_03",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_chm03_001",
+      "category": "knowledge",
+      "prompt": "現在の周期表で、元素はどんな順に並んでいる？",
+      "choices": [
+        "原子量の順",
+        "原子番号の順",
+        "発見された順",
+        "アルファベット順"
+      ],
+      "answerIndex": 1,
+      "explanation": "メンデレーエフは原子量の順に並べたが、現在は原子番号順。"
+    },
+    {
+      "id": "sci_chm03_002",
+      "category": "knowledge",
+      "prompt": "同じ族の元素の性質が似ている理由は？",
+      "choices": [
+        "質量数が同じだから",
+        "価電子の数が同じだから",
+        "原子の大きさが同じだから",
+        "中性子の数が同じだから"
+      ],
+      "answerIndex": 1,
+      "explanation": "典型元素では、同じ族は価電子数が等しく、化学的性質が似る。"
+    },
+    {
+      "id": "sci_chm03_003",
+      "category": "knowledge",
+      "prompt": "1族の元素のうち、水素を除いたものを何という？",
+      "choices": [
+        "アルカリ土類金属",
+        "アルカリ金属",
+        "ハロゲン",
+        "貴ガス"
+      ],
+      "answerIndex": 1,
+      "explanation": "Li・Na・K など。価電子1個で、1価の陽イオンになりやすい。"
+    },
+    {
+      "id": "sci_chm03_004",
+      "category": "knowledge",
+      "prompt": "17族の元素をまとめて何という？",
+      "choices": [
+        "貴ガス",
+        "アルカリ金属",
+        "遷移元素",
+        "ハロゲン"
+      ],
+      "answerIndex": 3,
+      "explanation": "F・Cl・Br・I など。価電子7個で、1価の陰イオンになりやすい。"
+    },
+    {
+      "id": "sci_chm03_005",
+      "category": "knowledge",
+      "prompt": "18族の元素をまとめて何という？",
+      "choices": [
+        "アルカリ土類金属",
+        "貴ガス（希ガス）",
+        "典型金属",
+        "ハロゲン"
+      ],
+      "answerIndex": 1,
+      "explanation": "He・Ne・Ar など。安定な電子配置でほとんど反応しない。"
+    },
+    {
+      "id": "sci_chm03_006",
+      "category": "knowledge",
+      "prompt": "3族から12族の元素をまとめて何という？",
+      "choices": [
+        "典型元素",
+        "遷移元素",
+        "ハロゲン",
+        "貴ガス"
+      ],
+      "answerIndex": 1,
+      "explanation": "遷移元素はすべて金属で、となり合う元素どうしの性質が似ている。"
+    },
+    {
+      "id": "sci_chm03_007",
+      "category": "knowledge",
+      "prompt": "原子から電子1個を取り去るのに必要なエネルギーを何という？",
+      "choices": [
+        "電子親和力",
+        "結合エネルギー",
+        "電気陰性度",
+        "イオン化エネルギー"
+      ],
+      "answerIndex": 3,
+      "explanation": "イオン化エネルギーが小さいほど陽イオンになりやすい。貴ガスで大きく、アルカリ金属で小さい。"
+    },
+    {
+      "id": "sci_chm03_008",
+      "category": "knowledge",
+      "prompt": "電気陰性度が最も大きい元素は？",
+      "choices": [
+        "ヘリウム He",
+        "ナトリウム Na",
+        "フッ素 F",
+        "水素 H"
+      ],
+      "answerIndex": 2,
+      "explanation": "電気陰性度は周期表の右上ほど大きい（貴ガスを除く）。F が最大。"
+    },
+    {
+      "id": "sci_chm03_009",
+      "category": "knowledge",
+      "prompt": "金属元素は周期表のどのあたりに多い？",
+      "choices": [
+        "17族だけ",
+        "左側と中央",
+        "右上",
+        "18族だけ"
+      ],
+      "answerIndex": 1,
+      "explanation": "非金属元素は右上に集まっている。水素は左上にあるが非金属。"
+    },
+    {
+      "id": "sci_chm03_010",
+      "category": "knowledge",
+      "prompt": "元素の性質が原子番号とともに周期的に変わることを何という？",
+      "choices": [
+        "定比例の法則",
+        "ヘスの法則",
+        "質量保存の法則",
+        "周期律"
+      ],
+      "answerIndex": 3,
+      "explanation": "価電子の数が周期的に変わることで、性質も周期的に変わる。"
+    },
+    {
+      "id": "sci_chm03_011",
+      "category": "knowledge",
+      "prompt": "ナトリウムとカリウムの共通点は？",
+      "choices": [
+        "陰イオンになりやすい",
+        "水と激しく反応して水素を出す",
+        "常温で気体",
+        "貴ガスである"
+      ],
+      "answerIndex": 1,
+      "explanation": "どちらもアルカリ金属。2Na ＋ 2H₂O → 2NaOH ＋ H₂。"
+    },
+    {
+      "id": "sci_chm03_012",
+      "category": "knowledge",
+      "prompt": "第2周期の元素の原子がもつ電子殻の数は？",
+      "choices": [
+        "1 つ",
+        "2 つ（K殻とL殻）",
+        "3 つ",
+        "8 つ"
+      ],
+      "answerIndex": 1,
+      "explanation": "周期の番号＝電子が入っている電子殻の数。"
+    },
+    {
+      "id": "sci_chm03_013",
+      "category": "calculation",
+      "prompt": "硫黄（原子番号 16）の価電子の数は？",
+      "choices": [
+        "2",
+        "6",
+        "8",
+        "16"
+      ],
+      "answerIndex": 1,
+      "explanation": "K2・L8・M6。16族なので価電子は 6。"
+    },
+    {
+      "id": "sci_chm03_014",
+      "category": "calculation",
+      "prompt": "硫化物イオン S²⁻（S の原子番号 16）の電子の数は？",
+      "choices": [
+        "18",
+        "16",
+        "14",
+        "2"
+      ],
+      "answerIndex": 0,
+      "explanation": "16 ＋ 2 ＝ 18 個。Ar と同じ電子配置。"
+    },
+    {
+      "id": "sci_chm03_015",
+      "category": "thinking",
+      "prompt": "同じ周期で、原子番号が大きくなるほど原子の半径が小さくなる理由は？",
+      "choices": [
+        "陽子が増え、原子核が電子を引きつける力が強くなるから",
+        "中性子が減るから",
+        "電子殻の数が増えるから",
+        "電子が減るから"
+      ],
+      "answerIndex": 0,
+      "explanation": "同じ周期では電子殻の数は同じで、原子核の正電荷が大きくなるほど電子が強く引きつけられる。"
+    },
+    {
+      "id": "sci_chm03_016",
+      "category": "thinking",
+      "prompt": "ナトリウムよりカリウムの方が陽イオンになりやすい理由は？",
+      "choices": [
+        "価電子が多いから",
+        "貴ガスだから",
+        "陽子の数が少ないから",
+        "最外殻が原子核から遠く、電子が離れやすいから"
+      ],
+      "answerIndex": 3,
+      "explanation": "同じ族では下の元素ほど原子半径が大きく、イオン化エネルギーが小さい。"
+    }
+  ]
+}

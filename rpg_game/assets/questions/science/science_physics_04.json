@@ -1,0 +1,216 @@
+{
+  "setId": "science_physics_04",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_phy04_001",
+      "category": "knowledge",
+      "prompt": "「物体に力がはたらかないか、はたらく力がつり合っていれば、静止または等速直線運動を続ける」という法則は？",
+      "choices": [
+        "慣性の法則（運動の第1法則）",
+        "作用・反作用の法則（第3法則）",
+        "フックの法則",
+        "運動方程式（第2法則）"
+      ],
+      "answerIndex": 0,
+      "explanation": "これを慣性の法則という。物体が今の運動を続けようとする性質が慣性。"
+    },
+    {
+      "id": "sci_phy04_002",
+      "category": "knowledge",
+      "prompt": "運動方程式は？（m：質量、a：加速度、F：力）",
+      "choices": [
+        "m ＝ Fa",
+        "F ＝ m/a",
+        "ma ＝ F",
+        "a ＝ mF"
+      ],
+      "answerIndex": 2,
+      "explanation": "運動の第2法則。加速度は力に比例し、質量に反比例する。"
+    },
+    {
+      "id": "sci_phy04_003",
+      "category": "knowledge",
+      "prompt": "作用・反作用の法則について正しいものは？",
+      "choices": [
+        "2つの物体が互いにおよぼし合う、同じ大きさで逆向きの力",
+        "大きさがちがう2つの力",
+        "1つの物体にはたらく2つの力",
+        "物体が静止しているときだけ成り立つ"
+      ],
+      "answerIndex": 0,
+      "explanation": "作用と反作用は別々の物体にはたらく。動いていても常に成り立つ。"
+    },
+    {
+      "id": "sci_phy04_004",
+      "category": "knowledge",
+      "prompt": "1 N とはどんな力？",
+      "choices": [
+        "質量 1 kg の物体にはたらく重力",
+        "質量 1 kg の物体に 1 m/s² の加速度を生じさせる力",
+        "1 m 動かすのに必要な力",
+        "1 s 間はたらく力"
+      ],
+      "answerIndex": 1,
+      "explanation": "ma ＝ F より 1 N ＝ 1 kg·m/s²。1 kg の物体の重力は約 9.8 N。"
+    },
+    {
+      "id": "sci_phy04_005",
+      "category": "knowledge",
+      "prompt": "電車が急に発車すると、乗客が後ろへ倒れそうになる。この現象の原因は？",
+      "choices": [
+        "弾性力",
+        "慣性",
+        "浮力",
+        "摩擦"
+      ],
+      "answerIndex": 1,
+      "explanation": "乗客は静止し続けようとする（慣性）ため、電車だけが前へ進み、後ろへ倒れるように感じる。"
+    },
+    {
+      "id": "sci_phy04_006",
+      "category": "knowledge",
+      "prompt": "質量について正しいものは？",
+      "choices": [
+        "速さによって大きく変わる",
+        "場所によって変わらない",
+        "月面では地球の約1/6になる",
+        "重さと同じ単位 N で表す"
+      ],
+      "answerIndex": 1,
+      "explanation": "質量（kg）は場所によらない。重さ（重力の大きさ、N）は月面では約1/6になる。"
+    },
+    {
+      "id": "sci_phy04_007",
+      "category": "knowledge",
+      "prompt": "慣性の大きさ（動かしにくさ）を表す量は？",
+      "choices": [
+        "体積",
+        "温度",
+        "質量",
+        "速さ"
+      ],
+      "answerIndex": 2,
+      "explanation": "質量が大きいほど、同じ力を加えても加速度が小さく、動かしにくい。"
+    },
+    {
+      "id": "sci_phy04_008",
+      "category": "knowledge",
+      "prompt": "ロケットがガスを後方に噴射して前へ進むのは、主にどの法則によるか？",
+      "choices": [
+        "慣性の法則",
+        "ボイルの法則",
+        "フックの法則",
+        "作用・反作用の法則"
+      ],
+      "answerIndex": 3,
+      "explanation": "ロケットがガスを後ろへ押す（作用）と、ガスがロケットを前へ押す（反作用）。"
+    },
+    {
+      "id": "sci_phy04_009",
+      "category": "calculation",
+      "prompt": "質量 2.0 kg の物体に 6.0 N の力を加えた。加速度は？",
+      "choices": [
+        "4.0 m/s²",
+        "3.0 m/s²",
+        "12 m/s²",
+        "0.33 m/s²"
+      ],
+      "answerIndex": 1,
+      "explanation": "a ＝ F/m ＝ 6.0 ÷ 2.0 ＝ 3.0 m/s²。"
+    },
+    {
+      "id": "sci_phy04_010",
+      "category": "calculation",
+      "prompt": "質量 4.0 kg の物体に 2.5 m/s² の加速度を生じさせる力は？",
+      "choices": [
+        "10 N",
+        "0.63 N",
+        "6.5 N",
+        "1.6 N"
+      ],
+      "answerIndex": 0,
+      "explanation": "F ＝ ma ＝ 4.0 × 2.5 ＝ 10 N。"
+    },
+    {
+      "id": "sci_phy04_011",
+      "category": "calculation",
+      "prompt": "質量 50 kg の人が、上向きに 2.0 m/s² で加速するエレベーターに乗っている。床が人を押す力は？（g ＝ 9.8 m/s²）",
+      "choices": [
+        "390 N",
+        "100 N",
+        "490 N",
+        "590 N"
+      ],
+      "answerIndex": 3,
+      "explanation": "上向きを正として ma ＝ N − mg、N ＝ m(g ＋ a) ＝ 50 × 11.8 ＝ 590 N。"
+    },
+    {
+      "id": "sci_phy04_012",
+      "category": "calculation",
+      "prompt": "なめらかな床の上で、質量 3.0 kg と 2.0 kg の物体を糸でつなぎ、3.0 kg の方を 10 N で引いた。加速度は？",
+      "choices": [
+        "0.50 m/s²",
+        "3.3 m/s²",
+        "5.0 m/s²",
+        "2.0 m/s²"
+      ],
+      "answerIndex": 3,
+      "explanation": "2つをひとまとめに考えて (3.0 ＋ 2.0)a ＝ 10、a ＝ 2.0 m/s²。"
+    },
+    {
+      "id": "sci_phy04_013",
+      "category": "calculation",
+      "prompt": "前問（3.0 kg を 10 N で引き、後ろに 2.0 kg をつないだ）で、間の糸の張力は？",
+      "choices": [
+        "10 N",
+        "6.0 N",
+        "4.0 N",
+        "2.0 N"
+      ],
+      "answerIndex": 2,
+      "explanation": "後ろの 2.0 kg だけで運動方程式を立てると T ＝ 2.0 × 2.0 ＝ 4.0 N。"
+    },
+    {
+      "id": "sci_phy04_014",
+      "category": "calculation",
+      "prompt": "水平面上の 5.0 kg の物体を 30 N で水平に引いた。動摩擦係数 0.20 のとき、加速度はおよそ？（g ＝ 9.8 m/s²）",
+      "choices": [
+        "4.0 m/s²",
+        "6.0 m/s²",
+        "5.8 m/s²",
+        "2.0 m/s²"
+      ],
+      "answerIndex": 0,
+      "explanation": "動摩擦力＝0.20 × 5.0 × 9.8 ≒ 9.8 N。a ＝ (30 − 9.8) ÷ 5.0 ≒ 4.0 m/s²。"
+    },
+    {
+      "id": "sci_phy04_015",
+      "category": "thinking",
+      "prompt": "なめらかな斜面をすべり下りる物体の加速度について正しいものは？",
+      "choices": [
+        "常に g である",
+        "質量が大きいほど小さい",
+        "質量によらず g sinθ である",
+        "質量が大きいほど大きい"
+      ],
+      "answerIndex": 2,
+      "explanation": "ma ＝ mg sinθ より a ＝ g sinθ。質量は約分されて消える。"
+    },
+    {
+      "id": "sci_phy04_016",
+      "category": "thinking",
+      "prompt": "馬が荷車を引くとき、作用・反作用で力の大きさは等しいのに荷車が動き出せる理由は？",
+      "choices": [
+        "荷車の運動は荷車にはたらく力だけで決まり、反作用は馬にはたらくから",
+        "作用と反作用は時間がずれてはたらくから",
+        "馬の力の方が本当は大きいから",
+        "荷車には力がはたらかないから"
+      ],
+      "answerIndex": 0,
+      "explanation": "荷車が受けるのは「馬が引く力」と摩擦など。反作用（荷車が馬を引く力）は馬にはたらくので、荷車の運動には関係しない。"
+    }
+  ]
+}

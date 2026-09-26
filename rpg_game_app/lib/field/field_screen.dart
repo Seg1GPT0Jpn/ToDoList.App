@@ -18,10 +18,22 @@ import 'field_map.dart';
 
 /// ワールドの中を歩き回る画面
 class FieldScreen extends StatefulWidget {
-  const FieldScreen({super.key, required this.world, required this.progress});
+  const FieldScreen({
+    super.key,
+    required this.world,
+    required this.progress,
+    String? mapId,
+    this.from,
+  }) : mapId = mapId ?? '';
 
   final WorldDef world;
   final RpgProgress progress;
+
+  /// 表示するマップ（空ならそのワールドの最初のマップ）
+  final String mapId;
+
+  /// 出入口から来たときの、前のマップ
+  final String? from;
 
   @override
   State<FieldScreen> createState() => _FieldScreenState();
@@ -82,7 +94,13 @@ const _ghostLook = EnemyDef(
 class _FieldScreenState extends State<FieldScreen> with RouteAware {
   late RpgProgress _progress = widget.progress;
   late final FieldGame _game = FieldGame(
-    map: FieldMap.english,
+    map: FieldMap.byId(
+      widget.mapId.isEmpty
+          ? FieldMap.firstMapOf(widget.world.id)
+          : widget.mapId,
+    ),
+    from: widget.from,
+    onPortal: _travel,
     rpgWorld: widget.world,
     progress: widget.progress,
     onEncounter: (stage, cleared) => _open(_EncounterDialog(stage, cleared)),
@@ -174,6 +192,24 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
         ),
         transitionsBuilder: (_, anim, _, child) =>
             _BattleTransition(animation: anim, child: child),
+      ),
+    );
+  }
+
+  /// 出入口を通って別のマップへ移動する
+  void _travel(Portal portal) {
+    _game.inputLocked = true;
+    Navigator.of(context).pushReplacement(
+      PageRouteBuilder<void>(
+        transitionDuration: const Duration(milliseconds: 450),
+        pageBuilder: (_, _, _) => FieldScreen(
+          world: widget.world,
+          progress: _progress,
+          mapId: portal.target,
+          from: _game.map.id,
+        ),
+        transitionsBuilder: (_, a, _, child) =>
+            FadeTransition(opacity: a, child: child),
       ),
     );
   }
@@ -317,10 +353,10 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
                     ),
                     const SizedBox(width: 8),
                     Expanded(
-                      child: ValueListenableBuilder<Region>(
-                        valueListenable: _game.region,
-                        builder: (context, region, _) => _Hud(
-                          title: '${widget.world.name}・${region.label}',
+                      child: ValueListenableBuilder<String>(
+                        valueListenable: _game.area,
+                        builder: (context, area, _) => _Hud(
+                          title: '${widget.world.name}・$area',
                           level: stats.level,
                           exp: _progress.exp,
                           expToNext: PlayerStats.expToNextLevel(stats.level),
@@ -511,7 +547,7 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'ステージ${stage.order}「${stage.name}」',
+                '${RpgCatalog.stageLabel(stage)}「${stage.name}」',
                 style: TextStyle(
                   fontSize: 12,
                   color: Theme.of(context).colorScheme.primary,
@@ -526,7 +562,7 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
               ),
               const SizedBox(height: 4),
               Text(
-                '${enemy.description}\n文法：${stage.grammarTheme}／単語：${stage.vocabLevel}\nHP ${enemy.maxHp}・推奨Lv${stage.recommendedLevel}・1問${stage.timeLimitSeconds}秒'
+                '${enemy.description}\n${RpgCatalog.themeLabel(stage)}\nHP ${enemy.maxHp}・推奨Lv${stage.recommendedLevel}・1問${stage.timeLimitSeconds}秒'
                 '${enemy.weakness != null ? '\n弱点：${enemy.weakness!.label}の問題（ダメージ1.5倍）' : ''}'
                 '${enemy.armor > 0 ? '\n装甲×${enemy.armor}：${enemy.armorCategory!.label}の問題で割れる' : ''}',
                 style: const TextStyle(

@@ -1,3 +1,5 @@
+import 'science_lessons.dart';
+
 /// 宿で受けられる授業（次の敵の文法テーマの要点）。
 class LessonPoint {
   const LessonPoint(this.heading, this.body, this.example);
@@ -25,7 +27,8 @@ class InnLessons {
   const InnLessons._();
 
   static InnLesson forStage(String stageId) =>
-      all.firstWhere((l) => l.stageId == stageId);
+      all.where((l) => l.stageId == stageId).firstOrNull ??
+      ScienceLessons.all.firstWhere((l) => l.stageId == stageId);
 
   static const all = <InnLesson>[
     InnLesson(
