@@ -1,0 +1,213 @@
+{
+  "setId": "english_stage_05",
+  "worldId": "english",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "en05_001",
+      "category": "partOfSpeech",
+      "prompt": "次のうち「副詞」はどれ？",
+      "choices": [
+        "accident",
+        "accidental",
+        "accidentally",
+        "accidents"
+      ],
+      "answerIndex": 2,
+      "explanation": "accidental（形容詞）+ -ly で副詞 accidentally（偶然に）。"
+    },
+    {
+      "id": "en05_002",
+      "category": "partOfSpeech",
+      "prompt": "次のうち「名詞」はどれ？",
+      "choices": [
+        "deep",
+        "deepen",
+        "deeply",
+        "depth"
+      ],
+      "answerIndex": 3,
+      "explanation": "deep の名詞形は depth（深さ）。deepen は「深める」という動詞。"
+    },
+    {
+      "id": "en05_003",
+      "category": "meaning",
+      "prompt": "「compensate」の意味は？",
+      "choices": [
+        "競争する",
+        "補償する",
+        "完成する",
+        "比較する"
+      ],
+      "answerIndex": 1,
+      "explanation": "compensate for 〜 で「〜を償う、補う」。"
+    },
+    {
+      "id": "en05_004",
+      "category": "meaning",
+      "prompt": "「ambiguous」の意味は？",
+      "choices": [
+        "野心的な",
+        "豊富な",
+        "あいまいな",
+        "明白な"
+      ],
+      "answerIndex": 2,
+      "explanation": "ambiguous = あいまいな。野心的な は ambitious なので区別しよう。"
+    },
+    {
+      "id": "en05_005",
+      "category": "meaning",
+      "prompt": "「deteriorate」の意味は？",
+      "choices": [
+        "悪化する",
+        "決定する",
+        "妨げる",
+        "飾る"
+      ],
+      "answerIndex": 0,
+      "explanation": "deteriorate = 悪化する（= get worse）。"
+    },
+    {
+      "id": "en05_006",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "If it (   ) for your help, I would have failed.",
+      "choices": [
+        "were not",
+        "is not",
+        "had not been",
+        "has not been"
+      ],
+      "answerIndex": 2,
+      "explanation": "過去の事実と反対の仮定（仮定法過去完了）なので If it had not been for 〜（〜がなかったら）。"
+    },
+    {
+      "id": "en05_007",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) the weather been fine, we would have gone out.",
+      "choices": [
+        "If",
+        "Had",
+        "Were",
+        "Should"
+      ],
+      "answerIndex": 1,
+      "explanation": "If the weather had been fine の If を省略すると、Had が文頭に出る倒置になる。"
+    },
+    {
+      "id": "en05_008",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "It is high time you (   ) to bed.",
+      "choices": [
+        "go",
+        "will go",
+        "going",
+        "went"
+      ],
+      "answerIndex": 3,
+      "explanation": "It is high time + S + 過去形 で「もう〜してもいいころだ」。"
+    },
+    {
+      "id": "en05_009",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This is the town (   ) I visited last year.",
+      "choices": [
+        "where",
+        "in which",
+        "which",
+        "when"
+      ],
+      "answerIndex": 2,
+      "explanation": "visit は他動詞で目的語が欠けているので関係代名詞 which。where は使えない。"
+    },
+    {
+      "id": "en05_010",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This is the town (   ) I was born.",
+      "choices": [
+        "which",
+        "where",
+        "what",
+        "that"
+      ],
+      "answerIndex": 1,
+      "explanation": "I was born は完全な文なので関係副詞 where（= in which）。"
+    },
+    {
+      "id": "en05_011",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He speaks English as fluently (   ) a native speaker.",
+      "choices": [
+        "than",
+        "like",
+        "so",
+        "as"
+      ],
+      "answerIndex": 3,
+      "explanation": "as + 原級 + as で「〜と同じくらい…」。"
+    },
+    {
+      "id": "en05_012",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The number of students (   ) increasing.",
+      "choices": [
+        "is",
+        "are",
+        "be",
+        "have"
+      ],
+      "answerIndex": 0,
+      "explanation": "the number of 〜（〜の数）は単数扱い。a number of 〜（たくさんの〜）は複数扱い。"
+    },
+    {
+      "id": "en05_013",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) from the plane, the island looked like a heart.",
+      "choices": [
+        "Seeing",
+        "Seen",
+        "To see",
+        "Having seen"
+      ],
+      "answerIndex": 1,
+      "explanation": "島は「見られる」側なので過去分詞で始まる分詞構文（Seen）。"
+    },
+    {
+      "id": "en05_014",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I couldn't make myself (   ) in English.",
+      "choices": [
+        "understand",
+        "to understand",
+        "understanding",
+        "understood"
+      ],
+      "answerIndex": 3,
+      "explanation": "make oneself understood で「自分の言うことを分かってもらう」。自分が「理解される」ので過去分詞。"
+    },
+    {
+      "id": "en05_015",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "No other mountain in Japan is (   ) than Mt. Fuji.",
+      "choices": [
+        "high",
+        "higher",
+        "highest",
+        "the highest"
+      ],
+      "answerIndex": 1,
+      "explanation": "No other + 単数名詞 + 比較級 + than 〜 で、最上級と同じ意味を表す。"
+    }
+  ]
+}

@@ -3,8 +3,10 @@ import 'dart:math';
 
 import 'package:rpg_game/rpg_game.dart';
 
-QuestionSet loadStage01() => JsonQuestionSource.parse(
-    File('assets/questions/english/english_stage_01.json').readAsStringSync());
+QuestionSet loadSet(String setId) => JsonQuestionSource.parse(
+    File('assets/questions/english/$setId.json').readAsStringSync());
+
+QuestionSet loadStage01() => loadSet('english_stage_01');
 
 /// ダメージのブレを 0 にした計算機（期待値をそのまま検証できる）
 DamageCalculator fixedDamage() =>

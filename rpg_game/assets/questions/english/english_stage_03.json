@@ -1,0 +1,210 @@
+{
+  "setId": "english_stage_03",
+  "worldId": "english",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "en03_001",
+      "category": "partOfSpeech",
+      "prompt": "次のうち「名詞」はどれ？",
+      "choices": [
+        "able",
+        "ability",
+        "enable",
+        "ably"
+      ],
+      "answerIndex": 1,
+      "explanation": "able（形容詞）→ ability（名詞）→ enable（可能にする・動詞）→ ably（副詞）。"
+    },
+    {
+      "id": "en03_002",
+      "category": "partOfSpeech",
+      "prompt": "次のうち「副詞」はどれ？",
+      "choices": [
+        "frequent",
+        "frequency",
+        "frequently",
+        "infrequent"
+      ],
+      "answerIndex": 2,
+      "explanation": "形容詞 frequent + -ly で副詞 frequently（しばしば）。frequency は「頻度」という名詞。"
+    },
+    {
+      "id": "en03_003",
+      "category": "partOfSpeech",
+      "prompt": "次のうち「形容詞」はどれ？",
+      "choices": [
+        "economy",
+        "economic",
+        "economize",
+        "economically"
+      ],
+      "answerIndex": 1,
+      "explanation": "-ic は形容詞を作る語尾。economize は「節約する」という動詞。"
+    },
+    {
+      "id": "en03_004",
+      "category": "meaning",
+      "prompt": "「avoid」の意味は？",
+      "choices": [
+        "許す",
+        "避ける",
+        "届く",
+        "要求する"
+      ],
+      "answerIndex": 1,
+      "explanation": "avoid = 避ける。avoid -ing（〜するのを避ける）と動名詞をとる。"
+    },
+    {
+      "id": "en03_005",
+      "category": "meaning",
+      "prompt": "「obvious」の意味は？",
+      "choices": [
+        "複雑な",
+        "慎重な",
+        "明らかな",
+        "退屈な"
+      ],
+      "answerIndex": 2,
+      "explanation": "obvious = 明らかな、明白な。"
+    },
+    {
+      "id": "en03_006",
+      "category": "meaning",
+      "prompt": "「predict」の意味は？",
+      "choices": [
+        "予測する",
+        "保護する",
+        "生産する",
+        "防ぐ"
+      ],
+      "answerIndex": 0,
+      "explanation": "pre-（前に）+ dict（言う）で「予測する」。防ぐ は prevent。"
+    },
+    {
+      "id": "en03_007",
+      "category": "meaning",
+      "prompt": "「opportunity」の意味は？",
+      "choices": [
+        "意見",
+        "機会",
+        "義務",
+        "反対"
+      ],
+      "answerIndex": 1,
+      "explanation": "opportunity = 機会、好機。"
+    },
+    {
+      "id": "en03_008",
+      "category": "meaning",
+      "prompt": "「sufficient」の意味は？",
+      "choices": [
+        "効率的な",
+        "突然の",
+        "繊細な",
+        "十分な"
+      ],
+      "answerIndex": 3,
+      "explanation": "sufficient = 十分な（= enough）。反対は insufficient。"
+    },
+    {
+      "id": "en03_009",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "It took me two hours (   ) this report.",
+      "choices": [
+        "finish",
+        "finishing",
+        "to finish",
+        "finished"
+      ],
+      "answerIndex": 2,
+      "explanation": "It takes + 人 + 時間 + to do で「人が〜するのに（時間が）かかる」。"
+    },
+    {
+      "id": "en03_010",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The man (   ) car was stolen called the police.",
+      "choices": [
+        "who",
+        "whose",
+        "which",
+        "whom"
+      ],
+      "answerIndex": 1,
+      "explanation": "「その男の車」という所有の関係なので whose。"
+    },
+    {
+      "id": "en03_011",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I wish I (   ) speak French.",
+      "choices": [
+        "can",
+        "will",
+        "could",
+        "am able"
+      ],
+      "answerIndex": 2,
+      "explanation": "I wish + 仮定法過去で「〜できればいいのに」。can の過去形 could を使う。"
+    },
+    {
+      "id": "en03_012",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Not only he but also I (   ) tired.",
+      "choices": [
+        "am",
+        "is",
+        "are",
+        "be"
+      ],
+      "answerIndex": 0,
+      "explanation": "not only A but also B が主語のとき、動詞は B（ここでは I）に合わせる。"
+    },
+    {
+      "id": "en03_013",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This problem is too difficult for me (   ).",
+      "choices": [
+        "solve",
+        "solving",
+        "to solve it",
+        "to solve"
+      ],
+      "answerIndex": 3,
+      "explanation": "too 〜 to do の文では、主語（this problem）が solve の目的語になるので it を付けない。"
+    },
+    {
+      "id": "en03_014",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "You had better (   ) a doctor.",
+      "choices": [
+        "see",
+        "to see",
+        "seeing",
+        "seen"
+      ],
+      "answerIndex": 0,
+      "explanation": "had better の後ろは動詞の原形。「〜したほうがよい」。"
+    },
+    {
+      "id": "en03_015",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He was made (   ) the room by his mother.",
+      "choices": [
+        "clean",
+        "cleaning",
+        "cleaned",
+        "to clean"
+      ],
+      "answerIndex": 3,
+      "explanation": "make + 人 + 原形 を受け身にすると be made to do と to が必要になる。"
+    }
+  ]
+}

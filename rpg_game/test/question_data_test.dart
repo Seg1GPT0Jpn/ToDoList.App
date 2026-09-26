@@ -6,33 +6,62 @@ import 'package:test/test.dart';
 import 'helpers.dart';
 
 void main() {
-  group('英語ステージ1の問題データ', () {
-    final set = loadStage01();
+  group('英語ワールドの問題データ', () {
+    for (final stage in RpgCatalog.englishStages) {
+      group(stage.name, () {
+        final set = loadSet(stage.questionSetId);
 
-    test('10〜15問あり、自作（original）である', () {
-      expect(set.questions.length, inInclusiveRange(10, 15));
-      expect(set.origin, QuestionOrigin.original);
-      expect(set.worldId, RpgCatalog.englishWorldId);
+        test('10〜15問あり、自作（original）である', () {
+          expect(set.questions.length, inInclusiveRange(10, 15));
+          expect(set.origin, QuestionOrigin.original);
+          expect(set.worldId, RpgCatalog.englishWorldId);
+          expect(set.setId, stage.questionSetId);
+        });
+
+        test('品詞・意味・語法がすべて含まれる', () {
+          final cats = set.questions.map((q) => q.category).toSet();
+          expect(cats, containsAll(QuestionCategory.values));
+        });
+
+        test('全問に解説があり、語法問題には英文がある', () {
+          for (final q in set.questions) {
+            expect(q.explanation, isNotNull, reason: q.id);
+            if (q.category == QuestionCategory.usage) {
+              expect(q.sentence, contains('(   )'), reason: q.id);
+            }
+          }
+        });
+
+        test('JSON の往復で内容が変わらない', () {
+          final again = QuestionSet.fromJson(set.toJson());
+          expect(again.toJson(), set.toJson());
+        });
+      });
+    }
+
+    final all = [
+      for (final s in RpgCatalog.englishStages)
+        ...loadSet(s.questionSetId).questions,
+    ];
+
+    test('問題IDはワールド全体で重複しない', () {
+      expect(all.map((q) => q.id).toSet().length, all.length);
     });
 
-    test('品詞・意味・語法がすべて含まれる', () {
-      final cats = set.questions.map((q) => q.category).toSet();
-      expect(cats, containsAll(QuestionCategory.values));
+    test('同じ単語の意味を別ステージで重ねて聞いていない', () {
+      final prompts = [
+        for (final q in all)
+          if (q.category == QuestionCategory.meaning) q.prompt,
+      ];
+      expect(prompts.toSet().length, prompts.length);
     });
 
-    test('全問に解説がある', () {
-      for (final q in set.questions) {
-        expect(q.explanation, isNotNull, reason: q.id);
-      }
-    });
-
-    test('JSON の往復で内容が変わらない', () {
-      final again = QuestionSet.fromJson(set.toJson());
-      expect(again.toJson(), set.toJson());
-    });
-
-    test('ステージ1の setId がカタログと一致する', () {
-      expect(set.setId, RpgCatalog.englishStages.first.questionSetId);
+    test('同じ英文を重ねて出題していない', () {
+      final sentences = [
+        for (final q in all)
+          if (q.sentence != null) q.sentence,
+      ];
+      expect(sentences.toSet().length, sentences.length);
     });
   });
 
@@ -96,7 +125,7 @@ void main() {
         return f.existsSync() ? f.readAsStringSync() : null;
       });
       expect(await source.load('english_stage_01'), isNotNull);
-      expect(await source.load('english_stage_02'), isNull);
+      expect(await source.load('english_stage_99'), isNull);
     });
   });
 }

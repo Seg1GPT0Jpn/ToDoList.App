@@ -17,7 +17,7 @@ school_planner とは別の場所で先に作っています。Flutter と Fireb
 
 ```
 rpg_game/
-├─ assets/questions/english/english_stage_01.json   英語ステージ1の自作問題（15問）
+├─ assets/questions/english/english_stage_01〜06.json   英語ワールドの自作問題（各15問・計90問）
 ├─ lib/src/
 │  ├─ battle/        ダメージ計算・出題（山札）・バトルの状態機械
 │  ├─ progression/   経験値・レベルアップ・ステージとワールドの解放判定
@@ -25,7 +25,7 @@ rpg_game/
 │  ├─ data/          ワールド定義（カタログ）・Firestore パス・問題の読み込み・保存先
 │  └─ purchase/      購入導線（mockPurchaseWorld）とロック解除
 ├─ bin/play.dart     ターミナルで遊べるお試し版
-└─ test/             52件のテスト
+└─ test/             74件のテスト
 ```
 
 ### 試し方
@@ -34,7 +34,8 @@ rpg_game/
 cd rpg_game
 dart pub get
 dart test                 # テスト
-dart run bin/play.dart    # ターミナルでステージ1を遊ぶ（1〜4 を入力）
+dart run bin/play.dart          # ターミナルで遊ぶ（ステージ選択 → 1〜4 で回答）
+dart run bin/play.dart --reset  # セーブデータを消して最初から
 ```
 
 ## ゲームのルール
@@ -75,7 +76,18 @@ dart run bin/play.dart    # ターミナルでステージ1を遊ぶ（1〜4 を
 | 6 | 最終章の塔 | 英作文ドラゴン | 200 | 27 | 15秒 | 150 | 8 |
 
 推奨レベルで正答率7割なら、どのステージもおおむね勝てるバランスにしています（テストで確認済み）。
-問題データがあるのは現時点でステージ1だけです。ステージ2以降は `english_stage_0N.json` を追加すれば遊べます。
+
+### 問題データ（全6ステージ・各15問）
+| # | 難しさの目安 | 主な内容 |
+| - | --- | --- |
+| 1 | 中学〜高1 | 基本の品詞語尾、動名詞・仮定法の基本、使役 make |
+| 2 | 高1 | be used to -ing、関係代名詞 which、remember to do、put off |
+| 3 | 高1〜高2 | It takes 〜 to do、whose、I wish、too 〜 to do、受け身の使役 |
+| 4 | 高2 | It is kind of you、Hardly 〜 when の倒置、would rather、未来完了 |
+| 5 | 高2〜高3 | 仮定法過去完了・If の省略、関係副詞、分詞構文、比較 |
+| 6 | 高3（共通テスト〜） | Were it not for、Not until の倒置、要求の that 節、慣用表現 |
+
+問題を足すときは、同じ形式の JSON に追記してください。問題IDの重複や、同じ単語・英文を別ステージで聞いていないかは、テストで自動チェックしています。
 
 ### ワールド
 英語だけが無料で遊べます。国語・数学・理科・地歴公民・情報は「準備中」です。

@@ -1,23 +1,77 @@
-// ターミナルで英語ワールドのステージ1を遊ぶお試し版。
-//   dart run bin/play.dart
+// ターミナルで英語ワールドを遊ぶお試し版。
+//   dart run bin/play.dart          ステージ選択から始める
+//   dart run bin/play.dart --reset  セーブデータを消して最初から
+//
+// 進行状況は .rpg_save.json に保存する（アプリ版では Firestore に保存する部分）。
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:rpg_game/rpg_game.dart';
 
-Future<void> main() async {
+final _saveFile = File('.rpg_save.json');
+
+Future<void> main(List<String> args) async {
+  if (args.contains('--reset') && _saveFile.existsSync()) {
+    _saveFile.deleteSync();
+    stdout.writeln('セーブデータを消しました。\n');
+  }
+
   final source = JsonQuestionSource((id) async {
     final f = File('assets/questions/english/$id.json');
     return f.existsSync() ? f.readAsStringSync() : null;
   });
   final world = RpgCatalog.world(RpgCatalog.englishWorldId);
-  final stage = world.stages.first;
-  final set = await source.load(stage.questionSetId);
-  if (set == null) {
-    stdout.writeln('問題セットが見つかりません');
-    return;
-  }
+  var progress = _load();
 
-  var progress = RpgProgress.initial;
+  while (true) {
+    final stage = _chooseStage(world, progress);
+    if (stage == null) break;
+    final set = await source.load(stage.questionSetId);
+    if (set == null) {
+      stdout.writeln('このステージの問題はまだ準備中です。\n');
+      continue;
+    }
+    progress = _playBattle(world, stage, set, progress);
+    _save(progress);
+  }
+  stdout.writeln('またね！');
+}
+
+StageDef? _chooseStage(WorldDef world, RpgProgress progress) {
+  final stats = PlayerStats.forLevel(progress.level);
+  stdout.writeln('==== ${world.name} ====');
+  stdout.writeln(
+      'Lv${stats.level}  HP ${stats.maxHp} / 攻撃 ${stats.attack} / 防御 ${stats.defense}'
+      '  （次のレベルまで ${PlayerStats.expToNextLevel(progress.level) - progress.exp} EXP）\n');
+  for (final s in world.stages) {
+    final unlocked = Progression.isStageUnlocked(progress, world, s);
+    final cleared = progress.clearedStageIds.contains(s.id);
+    final mark = cleared ? '★' : (unlocked ? '　' : '🔒');
+    stdout.writeln(
+        '$mark ${s.order}. ${s.name}（${s.enemy.name} / 推奨Lv${s.recommendedLevel}）');
+  }
+  while (true) {
+    stdout.write('\n挑戦するステージの番号（q で終了）> ');
+    final input = stdin.readLineSync()?.trim();
+    if (input == null || input == 'q') return null;
+    final n = int.tryParse(input);
+    final matches = world.stages.where((s) => s.order == n);
+    if (matches.isEmpty) {
+      stdout.writeln('1〜${world.stages.length} の番号を入力してください');
+      continue;
+    }
+    final stage = matches.first;
+    if (!Progression.isStageUnlocked(progress, world, stage)) {
+      stdout.writeln('まだ挑戦できません。1つ前のステージをクリアしよう');
+      continue;
+    }
+    stdout.writeln();
+    return stage;
+  }
+}
+
+RpgProgress _playBattle(
+    WorldDef world, StageDef stage, QuestionSet set, RpgProgress progress) {
   final player = PlayerStats.forLevel(progress.level);
   final battle = BattleEngine(
     player: player,
@@ -26,14 +80,14 @@ Future<void> main() async {
     timeLimit: Duration(seconds: stage.timeLimitSeconds),
   );
 
-  stdout.writeln('== ${world.name} / ${stage.name} ==');
-  stdout.writeln(
-      '${stage.enemy.name} があらわれた！（制限時間 ${stage.timeLimitSeconds} 秒）\n');
+  stdout.writeln('== ${stage.order}. ${stage.name} ==');
+  stdout.writeln('${stage.enemy.name} があらわれた！ ${stage.enemy.description}');
+  stdout.writeln('（制限時間 ${stage.timeLimitSeconds} 秒。1〜4 を入力。それ以外は時間切れ扱い）\n');
 
   while (!battle.isOver) {
     final q = battle.currentQuestion;
-    stdout.writeln(
-        'あなた HP ${battle.playerHp}/${player.maxHp}   敵 HP ${battle.enemyHp}/${stage.enemy.maxHp}');
+    stdout.writeln('あなた HP ${battle.playerHp}/${player.maxHp}   '
+        '${stage.enemy.name} HP ${battle.enemyHp}/${stage.enemy.maxHp}');
     stdout.writeln('[${q.source.category.label}] ${q.source.prompt}');
     if (q.source.sentence != null) stdout.writeln('  ${q.source.sentence}');
     for (var i = 0; i < q.choices.length; i++) {
@@ -62,13 +116,37 @@ Future<void> main() async {
   final summary = battle.summary();
   final result = Progression.applyBattle(
       progress: progress, world: world, stage: stage, summary: summary);
-  progress = result.progress;
   stdout.writeln(summary.won ? '${stage.enemy.name} をたおした！' : 'やられてしまった…');
   stdout.writeln('正解 ${summary.correctCount}/${summary.answeredCount}  '
       '最大コンボ ${summary.maxCombo}  経験値 +${result.expResult.expGained}');
   if (result.expResult.leveledUp) {
     final a = result.expResult.after;
+    stdout.writeln('レベルアップ！ Lv${a.level}'
+        '（HP ${a.maxHp} / 攻撃 ${a.attack} / 防御 ${a.defense}）');
+  }
+  if (result.newlyUnlockedStageId != null) {
     stdout.writeln(
-        'レベルアップ！ Lv${a.level}（HP ${a.maxHp} / 攻撃 ${a.attack} / 防御 ${a.defense}）');
+        '「${RpgCatalog.stage(result.newlyUnlockedStageId!).name}」に挑戦できるようになった！');
+  }
+  if (summary.missedQuestions.isNotEmpty) {
+    stdout.writeln('\n― 復習 ―');
+    for (final q in summary.missedQuestions) {
+      stdout.writeln('・${q.sentence ?? q.prompt} → ${q.answer}');
+    }
+  }
+  stdout.writeln();
+  return result.progress;
+}
+
+RpgProgress _load() {
+  if (!_saveFile.existsSync()) return RpgProgress.initial;
+  try {
+    return RpgProgress.fromMap(
+        jsonDecode(_saveFile.readAsStringSync()) as Map<String, dynamic>);
+  } on FormatException {
+    return RpgProgress.initial;
   }
 }
+
+void _save(RpgProgress progress) =>
+    _saveFile.writeAsStringSync(jsonEncode(progress.toMap()));

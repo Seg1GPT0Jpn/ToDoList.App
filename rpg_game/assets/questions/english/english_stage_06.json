@@ -1,0 +1,212 @@
+{
+  "setId": "english_stage_06",
+  "worldId": "english",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "en06_001",
+      "category": "partOfSpeech",
+      "prompt": "次のうち「動詞」はどれ？",
+      "choices": [
+        "sympathy",
+        "sympathetic",
+        "sympathize",
+        "sympathetically"
+      ],
+      "answerIndex": 2,
+      "explanation": "-ize は動詞を作る語尾。sympathize with 〜 で「〜に同情する」。"
+    },
+    {
+      "id": "en06_002",
+      "category": "partOfSpeech",
+      "prompt": "次のうち「形容詞」はどれ？",
+      "choices": [
+        "consider",
+        "considerate",
+        "considerably",
+        "consideration"
+      ],
+      "answerIndex": 1,
+      "explanation": "considerate = 思いやりのある。considerable（かなりの）とは意味が違うので注意。"
+    },
+    {
+      "id": "en06_003",
+      "category": "meaning",
+      "prompt": "「undermine」の意味は？",
+      "choices": [
+        "過小評価する",
+        "強調する",
+        "弱体化させる",
+        "下線を引く"
+      ],
+      "answerIndex": 2,
+      "explanation": "undermine = （徐々に）弱体化させる、損なう。過小評価する は underestimate。"
+    },
+    {
+      "id": "en06_004",
+      "category": "meaning",
+      "prompt": "「substantial」の意味は？",
+      "choices": [
+        "表面的な",
+        "かなりの",
+        "代わりの",
+        "主観的な"
+      ],
+      "answerIndex": 1,
+      "explanation": "substantial = かなりの、相当な。代わりの は substitute。"
+    },
+    {
+      "id": "en06_005",
+      "category": "meaning",
+      "prompt": "「contemporary」の意味は？",
+      "choices": [
+        "一時的な",
+        "永続的な",
+        "伝統的な",
+        "現代の"
+      ],
+      "answerIndex": 3,
+      "explanation": "contemporary = 現代の、同時代の。一時的な は temporary。"
+    },
+    {
+      "id": "en06_006",
+      "category": "meaning",
+      "prompt": "「persuade」の意味は？",
+      "choices": [
+        "説得する",
+        "追求する",
+        "推測する",
+        "主張する"
+      ],
+      "answerIndex": 0,
+      "explanation": "persuade + 人 + to do で「人を説得して〜させる」。"
+    },
+    {
+      "id": "en06_007",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Were it not for water, no living things (   ) exist.",
+      "choices": [
+        "can",
+        "will",
+        "could",
+        "may"
+      ],
+      "answerIndex": 2,
+      "explanation": "Were it not for 〜（= If it were not for 〜）は仮定法過去なので、主節は助動詞の過去形。"
+    },
+    {
+      "id": "en06_008",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Not until he lost his health (   ) its value.",
+      "choices": [
+        "he realized",
+        "did he realize",
+        "he did realize",
+        "realized he"
+      ],
+      "answerIndex": 1,
+      "explanation": "Not until 〜 が文頭に来ると倒置が起こる。「〜して初めて…した」。"
+    },
+    {
+      "id": "en06_009",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The problem is not (   ) difficult as it looks.",
+      "choices": [
+        "such",
+        "too",
+        "so",
+        "very"
+      ],
+      "answerIndex": 2,
+      "explanation": "not so（as）+ 原級 + as 〜 で「〜ほど…ではない」。"
+    },
+    {
+      "id": "en06_010",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "It is essential that every student (   ) the rules.",
+      "choices": [
+        "follow",
+        "follows",
+        "followed",
+        "following"
+      ],
+      "answerIndex": 0,
+      "explanation": "essential や necessary の後の that 節では、動詞は原形（should の省略）になる。"
+    },
+    {
+      "id": "en06_011",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) you need any help, please let me know.",
+      "choices": [
+        "Would",
+        "Should",
+        "Could",
+        "Might"
+      ],
+      "answerIndex": 1,
+      "explanation": "If you should need の If を省略した倒置。「万一〜なら」。"
+    },
+    {
+      "id": "en06_012",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He is the last person (   ) tell a lie.",
+      "choices": [
+        "who",
+        "that",
+        "for",
+        "to"
+      ],
+      "answerIndex": 3,
+      "explanation": "the last person to do で「最も〜しそうにない人」。"
+    },
+    {
+      "id": "en06_013",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I cannot help (   ) when I see this photo.",
+      "choices": [
+        "laugh",
+        "laughing",
+        "to laugh",
+        "laughed"
+      ],
+      "answerIndex": 1,
+      "explanation": "cannot help -ing で「〜せずにはいられない」。"
+    },
+    {
+      "id": "en06_014",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "What do you say (   ) a walk?",
+      "choices": [
+        "to take",
+        "take",
+        "taking",
+        "to taking"
+      ],
+      "answerIndex": 3,
+      "explanation": "What do you say to -ing? で「〜するのはどうですか」。to は前置詞。"
+    },
+    {
+      "id": "en06_015",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "She spent all her money, (   ) made her parents angry.",
+      "choices": [
+        "what",
+        "that",
+        "which",
+        "it"
+      ],
+      "answerIndex": 2,
+      "explanation": "前の文全体を先行詞にする非制限用法の which。カンマの後に that は使えない。"
+    }
+  ]
+}

@@ -170,7 +170,7 @@ void main() {
           final b = BattleEngine(
             player: PlayerStats.forLevel(stage.recommendedLevel),
             enemy: stage.enemy,
-            questions: loadStage01().questions,
+            questions: loadSet(stage.questionSetId).questions,
             timeLimit: Duration(seconds: stage.timeLimitSeconds),
             random: rnd,
           );

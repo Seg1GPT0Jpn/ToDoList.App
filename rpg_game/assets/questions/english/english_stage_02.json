@@ -1,0 +1,210 @@
+{
+  "setId": "english_stage_02",
+  "worldId": "english",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "en02_001",
+      "category": "partOfSpeech",
+      "prompt": "次のうち「名詞」はどれ？",
+      "choices": [
+        "danger",
+        "dangerous",
+        "endanger",
+        "dangerously"
+      ],
+      "answerIndex": 0,
+      "explanation": "danger（名詞）→ dangerous（形容詞）→ endanger（危険にさらす・動詞）→ dangerously（副詞）。"
+    },
+    {
+      "id": "en02_002",
+      "category": "partOfSpeech",
+      "prompt": "次のうち「形容詞」はどれ？",
+      "choices": [
+        "beauty",
+        "beautiful",
+        "beautify",
+        "beautifully"
+      ],
+      "answerIndex": 1,
+      "explanation": "-ful は形容詞を作る語尾。beautify は「美しくする」という動詞。"
+    },
+    {
+      "id": "en02_003",
+      "category": "partOfSpeech",
+      "prompt": "次のうち「動詞」はどれ？",
+      "choices": [
+        "strong",
+        "strength",
+        "strengthen",
+        "strongly"
+      ],
+      "answerIndex": 2,
+      "explanation": "strength（名詞）+ -en で「強くする」という動詞になる。"
+    },
+    {
+      "id": "en02_004",
+      "category": "meaning",
+      "prompt": "「improve」の意味は？",
+      "choices": [
+        "証明する",
+        "改善する",
+        "移動する",
+        "保護する"
+      ],
+      "answerIndex": 1,
+      "explanation": "improve = 改善する、上達する。証明する は prove。"
+    },
+    {
+      "id": "en02_005",
+      "category": "meaning",
+      "prompt": "「certain」の意味は？",
+      "choices": [
+        "危険な",
+        "静かな",
+        "確かな",
+        "高価な"
+      ],
+      "answerIndex": 2,
+      "explanation": "certain = 確かな、確信している。be certain of 〜（〜を確信している）。"
+    },
+    {
+      "id": "en02_006",
+      "category": "meaning",
+      "prompt": "「disappear」の意味は？",
+      "choices": [
+        "消える",
+        "現れる",
+        "失望させる",
+        "反対する"
+      ],
+      "answerIndex": 0,
+      "explanation": "dis- は反対の意味を表す。appear（現れる）→ disappear（消える）。失望させる は disappoint。"
+    },
+    {
+      "id": "en02_007",
+      "category": "meaning",
+      "prompt": "「wisdom」の意味は？",
+      "choices": [
+        "自由",
+        "勇気",
+        "知恵",
+        "富"
+      ],
+      "answerIndex": 2,
+      "explanation": "wisdom = 知恵。形容詞 wise（賢い）の名詞形。"
+    },
+    {
+      "id": "en02_008",
+      "category": "meaning",
+      "prompt": "「employ」の意味は？",
+      "choices": [
+        "楽しむ",
+        "雇う",
+        "空にする",
+        "説明する"
+      ],
+      "answerIndex": 1,
+      "explanation": "employ = 雇う。employer（雇い主）、employee（従業員）もセットで。"
+    },
+    {
+      "id": "en02_009",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He is used to (   ) up early.",
+      "choices": [
+        "get",
+        "getting",
+        "got",
+        "be gotten"
+      ],
+      "answerIndex": 1,
+      "explanation": "be used to -ing で「〜するのに慣れている」。used to do（以前は〜したものだ）と区別しよう。"
+    },
+    {
+      "id": "en02_010",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This is the house (   ) my grandfather built.",
+      "choices": [
+        "where",
+        "which",
+        "what",
+        "who"
+      ],
+      "answerIndex": 1,
+      "explanation": "built の目的語が欠けているので関係代名詞 which。where は後ろが完全な文のときに使う。"
+    },
+    {
+      "id": "en02_011",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I don't know (   ) to do next.",
+      "choices": [
+        "that",
+        "why",
+        "if",
+        "what"
+      ],
+      "answerIndex": 3,
+      "explanation": "what to do で「何をすべきか」。疑問詞 + to 不定詞の形。"
+    },
+    {
+      "id": "en02_012",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "There are (   ) students in the classroom than yesterday.",
+      "choices": [
+        "many",
+        "much",
+        "most",
+        "more"
+      ],
+      "answerIndex": 3,
+      "explanation": "than があるので比較級。many の比較級は more。"
+    },
+    {
+      "id": "en02_013",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "She has (   ) been to Kyoto.",
+      "choices": [
+        "ever",
+        "never",
+        "yet",
+        "still"
+      ],
+      "answerIndex": 1,
+      "explanation": "have never been to 〜 で「〜に行ったことがない」。ever は疑問文・否定文で使う。"
+    },
+    {
+      "id": "en02_014",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Please remember (   ) the door when you leave.",
+      "choices": [
+        "lock",
+        "locking",
+        "to lock",
+        "locked"
+      ],
+      "answerIndex": 2,
+      "explanation": "remember to do は「忘れずに〜する」（これからのこと）。remember -ing は「〜したことを覚えている」。"
+    },
+    {
+      "id": "en02_015",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The meeting was put (   ) until next week.",
+      "choices": [
+        "on",
+        "off",
+        "up",
+        "out"
+      ],
+      "answerIndex": 1,
+      "explanation": "put off で「延期する」（= postpone）。"
+    }
+  ]
+}
