@@ -19,12 +19,16 @@ school_planner とは別の場所で先に作っています。Flutter と Fireb
 rpg_game/
 ├─ assets/questions/english/   英語ワールドの自作問題（エリア1〜15は各24問、18・19は長文）
 ├─ assets/questions/science/   理の国の自作問題（4系統 × 16エリア × 16問 ＝ 1024問）
+├─ assets/questions/social/    時と地の国（社会）5ルート × 計85エリア × 12問 ＝ 1020問
+├─ assets/questions/japanese/  言の葉の国（国語）3ルート × 計32エリア × 12問 ＝ 384問
+├─ assets/questions/math/      数理の国（数学）6ルート × 計90エリア × 10問 ＝ 900問
+├─ assets/questions/information/ 情報の国 1ルート × 17エリア × 12問 ＝ 204問
 ├─ assets/questions/sea/       定期テストの海（学習モード）の問題
 ├─ lib/src/
 │  ├─ battle/        ダメージ計算・出題（山札）・カード・バトルの状態機械
 │  ├─ progression/   経験値・レベルアップ・ステージとワールドの解放判定
-│  ├─ models/        問題・敵・ステージ・ワールド・進行状況
-│  ├─ data/          ワールド定義（英語・理科のカタログ）・Firestore パス・問題の読み込み
+│  ├─ models/        問題・敵・ステージ・ワールド・進行状況・プロフィール（ユーザー名・Google 連携）
+│  ├─ data/          ワールド定義（各教科のカタログ・ルート制ワールドの組み立て）・Firestore パス・問題の読み込み
 │  ├─ study/         宿の授業（英語・理科）・定期テストの海・単語帳
 │  └─ purchase/      購入導線（mockPurchaseWorld）とロック解除
 ├─ bin/play.dart     ターミナルで遊べるお試し版
@@ -137,10 +141,32 @@ dart run bin/play.dart --reset  # セーブデータを消して最初から
 - 問題はすべて自作です。学習指導要領の単元構成と、教えていただいた参考サイトは範囲と難易度の目安にだけ使い、問題文はそこから写していません
 - 有料の買い切りワールド（¥250、テスト中はダミー購入）
 
+### ルート制のワールド（社会・国語・数学・情報）
+
+理科と同じく「教科 → ルート → 分野 → エリア → 問題」の順に分かれています。どのワールドも、スタート地点の広場から上下左右の門（1つの向きに2つまで）を通って各ルートに入ります（`route_world.dart`）。
+
+- `RouteSpec`（ルートの定義）と `RouteArea`（エリアの定義）を並べると、`RouteWorldBuilder` がステージ・敵・報酬カードを組み立てる
+- 強さは英語ワールドと同じ曲線。各ルートの最後はボスで、途中にも中ボスがいる。ボスはそれまでのエリアの問題をまとめて出し、装甲をもつ
+- 敵の弱点は、奇数エリアが `primary`（数学は計算、それ以外は知識）、偶数エリアが `secondary`（考察）
+- カタログ（`social_catalog.dart` など）は問題データと同時に自動生成している
+
+| ワールド | ルート（エリア数） | 内容 |
+| --- | --- | --- |
+| 時と地の国（社会） | 地理（20）・日本史（20）・世界史（20）・政治経済（15）・倫理（10） | 知識だけでなく、資料の読み取りや理由を考える問題も入れた |
+| 言の葉の国（国語） | 現代文（12）・古文（12）・漢文（8） | 自作の短い文章を読む問題、古文単語・助動詞・敬語、句法・漢詩・思想 |
+| 数理の国（数学） | Ⅰ（18）・A（12）・Ⅱ（18）・B（12）・C（15）・Ⅲ（15） | 単元ごとに基本・標準・応用の3エリア。計算中心で、各エリアに「なぜ」を問う問題 |
+| 情報の国（情報） | 情報Ⅰ（17） | 情報Ⅰの7分野（情報社会から論理回路まで） |
+
+- 問題はすべて自作です。教えていただいた参考サイトや単元表は、範囲と難易度の目安にだけ使っています
+- 古文・漢文では、著作権の切れた古典（『徒然草』『論語』など）の短い一節と、自作の古文風の例文を使っています
+
 ### ワールド
-英語は無料で遊べます（全20エリア）。理科（理の国、64エリア）は買い切りで解放します。国語・数学・地歴公民・情報は「準備中」です。
-新しい教科を足すときは、`lib/src/data/catalog.dart` の `status` を `available` に変えてステージを追加し、
-`assets/questions/<worldId>/` に問題セットを置きます。
+英語は無料で遊べます（全20エリア）。理科・社会・国語・数学・情報は、それぞれ買い切り（¥250、テスト中はダミー購入）で解放します。
+新しい教科を足すときは、`lib/src/data/catalog.dart` にワールドを追加し、`assets/questions/<worldId>/` に問題セットを置きます。
+
+### プロフィール（ユーザー名と Google アカウント）
+`PlayerProfile` に、ユーザー名（1〜12文字）と、連携した Google アカウント（メールアドレス・表示名・連携日時）を保存します。
+今の試作アプリでは Google ログインはダミー（メールアドレスを入力するだけ）です。school_planner に組み込むときに Firebase Auth の Google ログインに差し替えます。
 
 ## 守っている制約
 
@@ -163,12 +189,13 @@ dart run bin/play.dart --reset  # セーブデータを消して最初から
 | `users/{uid}/rpg_progress/main` | レベル・経験値・クリア済みステージ・自己ベスト・デッキ・亡霊（間違えた問題の ID）・開けた宝箱・仲間・泉の加護（`RpgProgress.toMap()` に `updatedAt` を追加） | ○ |
 | `users/{uid}/rpg_purchases/{worldId}` | 購入記録（worldId, priceYen, source, orderId, purchasedAt） | ○ |
 | `users/{uid}/rpg_battle_logs/{autoId}` | バトル履歴（任意） | ○ |
+| `users/{uid}/rpg_profile/main` | ユーザー名・Google 連携の情報（`PlayerProfile.toMap()`） | ○ |
 | `rpg_worlds/{worldId}/question_sets/{setId}` | 問題を Firestore から配信する場合のみ（初期はアプリ同梱の JSON で配信） | ×（全ユーザー共通の読み取り専用データ） |
 
-`account_deletion.dart` と `data_backup.dart` には、`RpgFirestorePaths.userSubcollections` の3つを追加してください。
+`account_deletion.dart` と `data_backup.dart` には、`RpgFirestorePaths.userSubcollections` の4つを追加してください。
 
 セキュリティルールの方針:
-- `rpg_progress` と `rpg_battle_logs`: 本人だけが読み書きできる
+- `rpg_progress`・`rpg_battle_logs`・`rpg_profile`: 本人だけが読み書きできる
 - `rpg_purchases`:
   - 本番は本人の読み取りだけを許可し、書き込みは Cloud Functions（購入トークンをサーバーで検証した後）だけにする
   - モック期間中は、本人の書き込みを一時的に許可する
