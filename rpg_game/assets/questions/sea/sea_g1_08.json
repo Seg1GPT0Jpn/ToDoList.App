@@ -1,0 +1,120 @@
+{
+  "setId": "sea_g1_08",
+  "worldId": "sea",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g1_08_01",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Tom is as tall (   ) his father.",
+      "choices": [
+        "than",
+        "so",
+        "as",
+        "like"
+      ],
+      "answerIndex": 2,
+      "explanation": "as + 原級 + as で「〜と同じくらい…」。"
+    },
+    {
+      "id": "sea_g1_08_02",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This book is (   ) than that one.",
+      "choices": [
+        "interesting",
+        "more interesting",
+        "most interesting",
+        "as interesting"
+      ],
+      "answerIndex": 1,
+      "explanation": "than があるので比較級。長い形容詞は more を付ける。"
+    },
+    {
+      "id": "sea_g1_08_03",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Mt. Fuji is the (   ) mountain in Japan.",
+      "choices": [
+        "high",
+        "higher",
+        "highest",
+        "most high"
+      ],
+      "answerIndex": 2,
+      "explanation": "the + 最上級 + in 〜 で「〜の中で最も…」。"
+    },
+    {
+      "id": "sea_g1_08_04",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "She is the best singer (   ) the four.",
+      "choices": [
+        "in",
+        "of",
+        "at",
+        "by"
+      ],
+      "answerIndex": 1,
+      "explanation": "最上級の範囲が「複数の人・物」のときは of、「場所・集団」のときは in。"
+    },
+    {
+      "id": "sea_g1_08_05",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He runs (   ) than I do.",
+      "choices": [
+        "fast",
+        "faster",
+        "fastest",
+        "more fast"
+      ],
+      "answerIndex": 1,
+      "explanation": "than があるので比較級。fast の比較級は faster。"
+    },
+    {
+      "id": "sea_g1_08_06",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This bag is (   ) as big as that one.",
+      "choices": [
+        "two",
+        "double",
+        "twice",
+        "second"
+      ],
+      "answerIndex": 2,
+      "explanation": "倍数 + as 〜 as で「…の〜倍」。2倍は twice。"
+    },
+    {
+      "id": "sea_g1_08_07",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Please speak as slowly as (   ).",
+      "choices": [
+        "possible",
+        "can",
+        "able",
+        "could"
+      ],
+      "answerIndex": 0,
+      "explanation": "as 〜 as possible で「できるだけ〜」（= as 〜 as you can）。"
+    },
+    {
+      "id": "sea_g1_08_08",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Which do you like (   ), tea or coffee?",
+      "choices": [
+        "better",
+        "more",
+        "best",
+        "much"
+      ],
+      "answerIndex": 0,
+      "explanation": "2つのうち「どちらがより好きか」は like 〜 better。"
+    }
+  ]
+}

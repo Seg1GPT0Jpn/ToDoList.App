@@ -1,0 +1,92 @@
+{
+  "setId": "sea_g2_07",
+  "worldId": "sea",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g2_07_01",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "If I (   ) harder, I would have passed.",
+      "choices": [
+        "studied",
+        "had studied",
+        "have studied",
+        "would study"
+      ],
+      "answerIndex": 1,
+      "explanation": "過去の事実と反対（仮定法過去完了）は If + had + 過去分詞。"
+    },
+    {
+      "id": "sea_g2_07_02",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "If I had taken the medicine, I (   ) better now.",
+      "choices": [
+        "would feel",
+        "would have felt",
+        "will feel",
+        "felt"
+      ],
+      "answerIndex": 0,
+      "explanation": "過去の仮定（had taken）＋今の結果（now）は混合仮定法。主節は would + 原形。"
+    },
+    {
+      "id": "sea_g2_07_03",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) I known the truth, I would have told you.",
+      "choices": [
+        "If",
+        "Had",
+        "Were",
+        "Should"
+      ],
+      "answerIndex": 1,
+      "explanation": "If I had known の if を省略すると Had が文頭に出る。"
+    },
+    {
+      "id": "sea_g2_07_04",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He talks as (   ) he knew everything.",
+      "choices": [
+        "when",
+        "if",
+        "that",
+        "because"
+      ],
+      "answerIndex": 1,
+      "explanation": "as if + 仮定法で「まるで〜のように」。"
+    },
+    {
+      "id": "sea_g2_07_05",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I wish I (   ) the concert yesterday.",
+      "choices": [
+        "went to",
+        "have gone to",
+        "had gone to",
+        "go to"
+      ],
+      "answerIndex": 2,
+      "explanation": "過去の事実と反対の願望は I wish + 過去完了。"
+    },
+    {
+      "id": "sea_g2_07_06",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) you need help, call me.",
+      "choices": [
+        "Would",
+        "Should",
+        "Had",
+        "Were"
+      ],
+      "answerIndex": 1,
+      "explanation": "If you should need の if を省略した形。「万一〜なら」。"
+    }
+  ]
+}

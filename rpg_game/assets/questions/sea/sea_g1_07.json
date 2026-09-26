@@ -1,0 +1,120 @@
+{
+  "setId": "sea_g1_07",
+  "worldId": "sea",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g1_07_01",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "English (   ) in many countries.",
+      "choices": [
+        "speaks",
+        "is spoken",
+        "spoke",
+        "is speaking"
+      ],
+      "answerIndex": 1,
+      "explanation": "英語は「話される」側なので受動態（be + 過去分詞）。"
+    },
+    {
+      "id": "sea_g1_07_02",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This temple (   ) 300 years ago.",
+      "choices": [
+        "built",
+        "was built",
+        "is built",
+        "has built"
+      ],
+      "answerIndex": 1,
+      "explanation": "「300年前に建てられた」。過去の受動態は was / were + 過去分詞。"
+    },
+    {
+      "id": "sea_g1_07_03",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The work (   ) already been finished.",
+      "choices": [
+        "is",
+        "has",
+        "was",
+        "have"
+      ],
+      "answerIndex": 1,
+      "explanation": "完了形の受動態は have / has been + 過去分詞。主語が単数なので has。"
+    },
+    {
+      "id": "sea_g1_07_04",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The rules must (   ) by everyone.",
+      "choices": [
+        "follow",
+        "be followed",
+        "followed",
+        "be following"
+      ],
+      "answerIndex": 1,
+      "explanation": "助動詞 + be + 過去分詞 で受動態。"
+    },
+    {
+      "id": "sea_g1_07_05",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The top of the mountain is covered (   ) snow.",
+      "choices": [
+        "by",
+        "with",
+        "in",
+        "of"
+      ],
+      "answerIndex": 1,
+      "explanation": "be covered with 〜 で「〜でおおわれている」。by 以外の前置詞を使う受動態。"
+    },
+    {
+      "id": "sea_g1_07_06",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I was spoken (   ) by a stranger.",
+      "choices": [
+        "by",
+        "with",
+        "to",
+        "at"
+      ],
+      "answerIndex": 2,
+      "explanation": "speak to 〜 を受動態にすると be spoken to by 〜。to を落とさない。"
+    },
+    {
+      "id": "sea_g1_07_07",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "She is interested (   ) Japanese history.",
+      "choices": [
+        "in",
+        "at",
+        "with",
+        "by"
+      ],
+      "answerIndex": 0,
+      "explanation": "be interested in 〜 で「〜に興味がある」。"
+    },
+    {
+      "id": "sea_g1_07_08",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "My bike is (   ) repaired now.",
+      "choices": [
+        "been",
+        "being",
+        "be",
+        "to be"
+      ],
+      "answerIndex": 1,
+      "explanation": "進行形の受動態は be being + 過去分詞「〜されているところだ」。"
+    }
+  ]
+}

@@ -17,3 +17,8 @@ export 'src/models/stage.dart';
 export 'src/models/world.dart';
 export 'src/progression/progression.dart';
 export 'src/purchase/purchase_service.dart';
+export 'src/study/inn_lessons.dart';
+export 'src/study/practice_session.dart';
+export 'src/study/sea_catalog.dart';
+export 'src/study/word_list.dart';
+export 'src/study/word_quiz_builder.dart';

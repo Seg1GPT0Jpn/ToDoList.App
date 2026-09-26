@@ -1,0 +1,92 @@
+{
+  "setId": "sea_g2_12",
+  "worldId": "sea",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g2_12_01",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I had my bike (   ) yesterday.",
+      "choices": [
+        "repair",
+        "repaired",
+        "repairing",
+        "to repair"
+      ],
+      "answerIndex": 1,
+      "explanation": "have + 物 + 過去分詞 で「物を〜してもらう」。"
+    },
+    {
+      "id": "sea_g2_12_02",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I heard someone (   ) my name.",
+      "choices": [
+        "to call",
+        "call",
+        "called",
+        "calls"
+      ],
+      "answerIndex": 1,
+      "explanation": "知覚動詞 hear + O + 原形 で「O が〜するのを聞く」。"
+    },
+    {
+      "id": "sea_g2_12_03",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This medicine will make you (   ) better.",
+      "choices": [
+        "to feel",
+        "feel",
+        "feeling",
+        "felt"
+      ],
+      "answerIndex": 1,
+      "explanation": "使役動詞 make + O + 原形。「この薬を飲めば気分がよくなる」（無生物主語）。"
+    },
+    {
+      "id": "sea_g2_12_04",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The heavy rain prevented us (   ) going out.",
+      "choices": [
+        "to",
+        "from",
+        "of",
+        "with"
+      ],
+      "answerIndex": 1,
+      "explanation": "prevent + O + from -ing で「O が〜するのを妨げる」。"
+    },
+    {
+      "id": "sea_g2_12_05",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "What made you (   ) so?",
+      "choices": [
+        "to think",
+        "think",
+        "thinking",
+        "thought"
+      ],
+      "answerIndex": 1,
+      "explanation": "「何があなたにそう思わせたのか」＝なぜそう思ったのか。make + O + 原形。"
+    },
+    {
+      "id": "sea_g2_12_06",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This road will take you (   ) the station.",
+      "choices": [
+        "at",
+        "to",
+        "for",
+        "on"
+      ],
+      "answerIndex": 1,
+      "explanation": "無生物主語 + take + 人 + to 〜 で「（この道を行けば）〜に着く」。"
+    }
+  ]
+}

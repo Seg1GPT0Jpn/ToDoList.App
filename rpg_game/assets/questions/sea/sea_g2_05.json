@@ -1,0 +1,92 @@
+{
+  "setId": "sea_g2_05",
+  "worldId": "sea",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g2_05_01",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) tired, I went to bed early.",
+      "choices": [
+        "Felt",
+        "Feeling",
+        "To feel",
+        "Feel"
+      ],
+      "answerIndex": 1,
+      "explanation": "「疲れていたので」。主語 I が「感じる」側なので現在分詞。"
+    },
+    {
+      "id": "sea_g2_05_02",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) in simple English, this book is easy to read.",
+      "choices": [
+        "Writing",
+        "Written",
+        "To write",
+        "Write"
+      ],
+      "answerIndex": 1,
+      "explanation": "本は「書かれた」側なので過去分詞で始まる分詞構文。"
+    },
+    {
+      "id": "sea_g2_05_03",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) finished my homework, I went out.",
+      "choices": [
+        "Having",
+        "Had",
+        "Have",
+        "To have"
+      ],
+      "answerIndex": 0,
+      "explanation": "出かける前に宿題を終えていたので、完了形の分詞構文 having + 過去分詞。"
+    },
+    {
+      "id": "sea_g2_05_04",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) knowing what to do, I asked for help.",
+      "choices": [
+        "No",
+        "Never",
+        "Not",
+        "Without"
+      ],
+      "answerIndex": 2,
+      "explanation": "分詞構文の否定は not を分詞の前に置く。"
+    },
+    {
+      "id": "sea_g2_05_05",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) speaking, this plan is too expensive.",
+      "choices": [
+        "General",
+        "Generally",
+        "In general",
+        "Generalized"
+      ],
+      "answerIndex": 1,
+      "explanation": "generally speaking（一般的に言えば）は慣用的な分詞構文。"
+    },
+    {
+      "id": "sea_g2_05_06",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Frankly (   ), I don't agree.",
+      "choices": [
+        "spoken",
+        "speaking",
+        "to speak",
+        "speak"
+      ],
+      "answerIndex": 1,
+      "explanation": "frankly speaking（率直に言えば）。"
+    }
+  ]
+}

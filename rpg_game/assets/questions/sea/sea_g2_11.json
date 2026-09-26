@@ -1,0 +1,92 @@
+{
+  "setId": "sea_g2_11",
+  "worldId": "sea",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g2_11_01",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) he will succeed is certain.",
+      "choices": [
+        "What",
+        "That",
+        "Which",
+        "If"
+      ],
+      "answerIndex": 1,
+      "explanation": "that 節は「〜ということ」で主語になる。"
+    },
+    {
+      "id": "sea_g2_11_02",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The question is (   ) we can finish it in time.",
+      "choices": [
+        "that",
+        "whether",
+        "what",
+        "which"
+      ],
+      "answerIndex": 1,
+      "explanation": "「〜かどうか」は whether。補語になる名詞節。"
+    },
+    {
+      "id": "sea_g2_11_03",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I heard the news (   ) our team had won.",
+      "choices": [
+        "which",
+        "that",
+        "what",
+        "whether"
+      ],
+      "answerIndex": 1,
+      "explanation": "news の内容を説明する同格の that。後ろは完全な文。"
+    },
+    {
+      "id": "sea_g2_11_04",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) she said surprised us.",
+      "choices": [
+        "That",
+        "What",
+        "Which",
+        "It"
+      ],
+      "answerIndex": 1,
+      "explanation": "「彼女が言ったこと」は what。said の目的語が欠けている。"
+    },
+    {
+      "id": "sea_g2_11_05",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Do you know (   ) the museum opens?",
+      "choices": [
+        "what",
+        "what time",
+        "which",
+        "that"
+      ],
+      "answerIndex": 1,
+      "explanation": "「何時に開くか」は what time を使った間接疑問。"
+    },
+    {
+      "id": "sea_g2_11_06",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The idea (   ) the earth is round was new then.",
+      "choices": [
+        "which",
+        "that",
+        "what",
+        "of"
+      ],
+      "answerIndex": 1,
+      "explanation": "idea の内容を説明する同格の that。"
+    }
+  ]
+}

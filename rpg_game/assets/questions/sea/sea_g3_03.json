@@ -1,0 +1,92 @@
+{
+  "setId": "sea_g3_03",
+  "worldId": "sea",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g3_03_01",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Down (   ) the rain.",
+      "choices": [
+        "it came",
+        "came",
+        "did come",
+        "coming"
+      ],
+      "answerIndex": 1,
+      "explanation": "方向を表す副詞が文頭に来ると「動詞 + 主語」の語順になる。"
+    },
+    {
+      "id": "sea_g3_03_02",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Not a single word (   ).",
+      "choices": [
+        "he said",
+        "did he say",
+        "said he",
+        "he did say"
+      ],
+      "answerIndex": 1,
+      "explanation": "否定語句（Not a single word）が文頭に来ると疑問文の語順になる。"
+    },
+    {
+      "id": "sea_g3_03_03",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Were I rich, I (   ) travel around the world.",
+      "choices": [
+        "will",
+        "would",
+        "can",
+        "shall"
+      ],
+      "answerIndex": 1,
+      "explanation": "If I were rich の倒置。仮定法過去なので主節は would。"
+    },
+    {
+      "id": "sea_g3_03_04",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "So tired (   ) that he fell asleep at once.",
+      "choices": [
+        "he was",
+        "was he",
+        "did he",
+        "he did"
+      ],
+      "answerIndex": 1,
+      "explanation": "so 〜 that 構文の so 〜 が文頭に出ると倒置が起こる。"
+    },
+    {
+      "id": "sea_g3_03_05",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Here (   ) the bus.",
+      "choices": [
+        "come",
+        "comes",
+        "coming",
+        "is coming"
+      ],
+      "answerIndex": 1,
+      "explanation": "Here comes 〜 で「ほら〜が来た」。主語が名詞のとき倒置する。"
+    },
+    {
+      "id": "sea_g3_03_06",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Only by working hard (   ) succeed.",
+      "choices": [
+        "you can",
+        "can you",
+        "you will",
+        "do you"
+      ],
+      "answerIndex": 1,
+      "explanation": "Only + 副詞句が文頭に来ると倒置。"
+    }
+  ]
+}

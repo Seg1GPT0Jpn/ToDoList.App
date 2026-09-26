@@ -1,0 +1,120 @@
+{
+  "setId": "sea_g1_09",
+  "worldId": "sea",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g1_09_01",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I have a friend (   ) lives in Kyoto.",
+      "choices": [
+        "who",
+        "which",
+        "whom",
+        "whose"
+      ],
+      "answerIndex": 0,
+      "explanation": "先行詞が人で、関係詞が主語のはたらき（主格）なので who。"
+    },
+    {
+      "id": "sea_g1_09_02",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This is the book (   ) I bought yesterday.",
+      "choices": [
+        "who",
+        "which",
+        "where",
+        "what"
+      ],
+      "answerIndex": 1,
+      "explanation": "先行詞が物で、bought の目的語が欠けている（目的格）ので which。"
+    },
+    {
+      "id": "sea_g1_09_03",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The girl (   ) you met yesterday is my cousin.",
+      "choices": [
+        "whom",
+        "which",
+        "whose",
+        "what"
+      ],
+      "answerIndex": 0,
+      "explanation": "先行詞が人で目的格なので whom（who でも可。省略もできる）。"
+    },
+    {
+      "id": "sea_g1_09_04",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He is the only person (   ) knows the truth.",
+      "choices": [
+        "which",
+        "that",
+        "what",
+        "whom"
+      ],
+      "answerIndex": 1,
+      "explanation": "the only などが付く先行詞には that がよく使われる。"
+    },
+    {
+      "id": "sea_g1_09_05",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I know a boy (   ) father is a pilot.",
+      "choices": [
+        "who",
+        "whose",
+        "which",
+        "whom"
+      ],
+      "answerIndex": 1,
+      "explanation": "「その少年の父親」という所有の関係は whose。"
+    },
+    {
+      "id": "sea_g1_09_06",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This is the park (   ) we play soccer.",
+      "choices": [
+        "which",
+        "where",
+        "when",
+        "who"
+      ],
+      "answerIndex": 1,
+      "explanation": "we play soccer は完全な文。場所が先行詞の関係副詞は where。"
+    },
+    {
+      "id": "sea_g1_09_07",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I remember the day (   ) we first met.",
+      "choices": [
+        "when",
+        "where",
+        "which",
+        "what"
+      ],
+      "answerIndex": 0,
+      "explanation": "時を表す先行詞（the day）の関係副詞は when。"
+    },
+    {
+      "id": "sea_g1_09_08",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The watch (   ) he gave me is expensive.",
+      "choices": [
+        "who",
+        "what",
+        "which",
+        "whose"
+      ],
+      "answerIndex": 2,
+      "explanation": "先行詞は物（the watch）で、gave の目的語が欠けているので which。"
+    }
+  ]
+}

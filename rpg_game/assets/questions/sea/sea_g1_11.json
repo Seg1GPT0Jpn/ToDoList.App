@@ -1,0 +1,120 @@
+{
+  "setId": "sea_g1_11",
+  "worldId": "sea",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g1_11_01",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Hurry up, (   ) you'll miss the bus.",
+      "choices": [
+        "and",
+        "or",
+        "but",
+        "so"
+      ],
+      "answerIndex": 1,
+      "explanation": "命令文, or 〜 で「…しなさい、さもないと〜」。and だと「そうすれば」。"
+    },
+    {
+      "id": "sea_g1_11_02",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I stayed home (   ) I had a cold.",
+      "choices": [
+        "because",
+        "so",
+        "but",
+        "or"
+      ],
+      "answerIndex": 0,
+      "explanation": "理由を表す接続詞 because。"
+    },
+    {
+      "id": "sea_g1_11_03",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "It was raining, (   ) we didn't go out.",
+      "choices": [
+        "so",
+        "because",
+        "if",
+        "though"
+      ],
+      "answerIndex": 0,
+      "explanation": "結果を表す so（だから）。"
+    },
+    {
+      "id": "sea_g1_11_04",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) he is rich, he isn't happy.",
+      "choices": [
+        "Because",
+        "Although",
+        "If",
+        "When"
+      ],
+      "answerIndex": 1,
+      "explanation": "although は「〜だけれども」（譲歩）。"
+    },
+    {
+      "id": "sea_g1_11_05",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Please turn off the lights (   ) you leave the room.",
+      "choices": [
+        "when",
+        "while",
+        "until",
+        "since"
+      ],
+      "answerIndex": 0,
+      "explanation": "「部屋を出るときに」。when は時を表す接続詞。"
+    },
+    {
+      "id": "sea_g1_11_06",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "My mother called me (   ) I was taking a bath.",
+      "choices": [
+        "during",
+        "while",
+        "for",
+        "by"
+      ],
+      "answerIndex": 1,
+      "explanation": "while + 主語 + 動詞 で「〜している間に」。during は前置詞で後ろに名詞をとる。"
+    },
+    {
+      "id": "sea_g1_11_07",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I think (   ) she is right.",
+      "choices": [
+        "what",
+        "which",
+        "that",
+        "if"
+      ],
+      "answerIndex": 2,
+      "explanation": "think の目的語になる that 節（「〜ということ」）。この that は省略されることも多い。"
+    },
+    {
+      "id": "sea_g1_11_08",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I don't know (   ) she will come.",
+      "choices": [
+        "that",
+        "what",
+        "if",
+        "which"
+      ],
+      "answerIndex": 2,
+      "explanation": "「〜かどうか」を表す if（= whether）。"
+    }
+  ]
+}

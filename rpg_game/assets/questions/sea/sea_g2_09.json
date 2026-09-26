@@ -1,0 +1,92 @@
+{
+  "setId": "sea_g2_09",
+  "worldId": "sea",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g2_09_01",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Not (   ) students like math.",
+      "choices": [
+        "every",
+        "any",
+        "all",
+        "no"
+      ],
+      "answerIndex": 2,
+      "explanation": "not all 〜 は「すべてが〜というわけではない」（部分否定）。"
+    },
+    {
+      "id": "sea_g2_09_02",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I can (   ) believe it.",
+      "choices": [
+        "hard",
+        "hardly",
+        "nearly",
+        "almost"
+      ],
+      "answerIndex": 1,
+      "explanation": "hardly は「ほとんど〜ない」。hard は「熱心に・難しい」。"
+    },
+    {
+      "id": "sea_g2_09_03",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "There is no rule (   ) exceptions.",
+      "choices": [
+        "with",
+        "without",
+        "for",
+        "by"
+      ],
+      "answerIndex": 1,
+      "explanation": "no 〜 without … で「…のない〜はない」（二重否定）。"
+    },
+    {
+      "id": "sea_g2_09_04",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "It was not (   ) he came home that I noticed the problem.",
+      "choices": [
+        "when",
+        "before",
+        "since",
+        "until"
+      ],
+      "answerIndex": 3,
+      "explanation": "It is not until 〜 that … で「〜して初めて…」。"
+    },
+    {
+      "id": "sea_g2_09_05",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "No (   ) had I arrived than it began to rain.",
+      "choices": [
+        "later",
+        "sooner",
+        "more",
+        "faster"
+      ],
+      "answerIndex": 1,
+      "explanation": "No sooner had S p.p. than … で「〜するとすぐに…」。"
+    },
+    {
+      "id": "sea_g2_09_06",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "She (   ) goes out on weekends; she usually stays home.",
+      "choices": [
+        "often",
+        "always",
+        "rarely",
+        "sometimes"
+      ],
+      "answerIndex": 2,
+      "explanation": "rarely は「めったに〜ない」。後半の内容と合う。"
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "setId": "sea_g1_01",
+  "worldId": "sea",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g1_01_01",
+      "category": "usage",
+      "prompt": "次の文の文型は？",
+      "sentence": "The baby slept soundly.",
+      "choices": [
+        "第1文型（SV）",
+        "第2文型（SVC）",
+        "第3文型（SVO）",
+        "第5文型（SVOC）"
+      ],
+      "answerIndex": 0,
+      "explanation": "soundly は副詞なので文型の要素にならない。S（The baby）+ V（slept）の第1文型。"
+    },
+    {
+      "id": "sea_g1_01_02",
+      "category": "usage",
+      "prompt": "次の文の文型は？",
+      "sentence": "My sister became a nurse.",
+      "choices": [
+        "第1文型（SV）",
+        "第2文型（SVC）",
+        "第3文型（SVO）",
+        "第4文型（SVOO）"
+      ],
+      "answerIndex": 1,
+      "explanation": "My sister = a nurse の関係が成り立つので、a nurse は補語（C）。第2文型。"
+    },
+    {
+      "id": "sea_g1_01_03",
+      "category": "usage",
+      "prompt": "次の文の文型は？",
+      "sentence": "She showed me her photos.",
+      "choices": [
+        "第3文型（SVO）",
+        "第4文型（SVOO）",
+        "第5文型（SVOC）",
+        "第2文型（SVC）"
+      ],
+      "answerIndex": 1,
+      "explanation": "「me に her photos を見せた」。目的語が2つ（人・物）ある第4文型。"
+    },
+    {
+      "id": "sea_g1_01_04",
+      "category": "usage",
+      "prompt": "次の文の文型は？",
+      "sentence": "We named our dog Max.",
+      "choices": [
+        "第4文型（SVOO）",
+        "第5文型（SVOC）",
+        "第3文型（SVO）",
+        "第1文型（SV）"
+      ],
+      "answerIndex": 1,
+      "explanation": "our dog = Max の関係が成り立つので、Max は補語。第5文型（SVOC）。"
+    },
+    {
+      "id": "sea_g1_01_05",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "There (   ) two cats under the table.",
+      "choices": [
+        "is",
+        "are",
+        "be",
+        "been"
+      ],
+      "answerIndex": 1,
+      "explanation": "There is / are 構文では、後ろの名詞（two cats）に合わせる。複数なので are。"
+    },
+    {
+      "id": "sea_g1_01_06",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "It is dangerous (   ) in this river.",
+      "choices": [
+        "swim",
+        "to swim",
+        "swam",
+        "swum"
+      ],
+      "answerIndex": 1,
+      "explanation": "It は仮の主語で、本当の主語は to swim in this river。"
+    },
+    {
+      "id": "sea_g1_01_07",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "It is true (   ) he won the contest.",
+      "choices": [
+        "that",
+        "what",
+        "which",
+        "if"
+      ],
+      "answerIndex": 0,
+      "explanation": "It is 〜 that … で「…ということは〜だ」。that 以下が本当の主語。"
+    },
+    {
+      "id": "sea_g1_01_08",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "My parents want me (   ) a doctor.",
+      "choices": [
+        "become",
+        "to become",
+        "becoming",
+        "became"
+      ],
+      "answerIndex": 1,
+      "explanation": "want + O + to do で「O に〜してほしい」。"
+    },
+    {
+      "id": "sea_g1_01_09",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I asked her where (   ).",
+      "choices": [
+        "did she live",
+        "she lived",
+        "lived she",
+        "she living"
+      ],
+      "answerIndex": 1,
+      "explanation": "文の中に入った疑問文（wh節）は「疑問詞 + 主語 + 動詞」の語順。"
+    }
+  ]
+}

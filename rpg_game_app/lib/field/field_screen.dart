@@ -5,6 +5,7 @@ import 'package:rpg_game/rpg_game.dart';
 import '../app/services.dart';
 import '../app/theme.dart';
 import '../main.dart' show routeObserver;
+import '../study/inn_screen.dart';
 import '../art/enemy_painter.dart';
 import '../art/hero_painter.dart';
 import '../battle/battle_screen.dart';
@@ -30,6 +31,11 @@ class _EncounterDialog extends _Dialog {
   final bool cleared;
 }
 
+class _InnDialog extends _Dialog {
+  _InnDialog(this.stage);
+  final StageDef stage;
+}
+
 class _MessageDialog extends _Dialog {
   _MessageDialog(this.text);
   final String text;
@@ -43,6 +49,7 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
     progress: widget.progress,
     onEncounter: (stage, cleared) => _open(_EncounterDialog(stage, cleared)),
     onMessage: (text) => _open(_MessageDialog(text)),
+    onInn: (stage) => _open(_InnDialog(stage)),
   );
   _Dialog? _dialog;
   bool _starting = false;
@@ -98,6 +105,11 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
     _starting = false;
     if (set == null) {
       _open(_MessageDialog('このステージの問題はまだ準備中です。'));
+      return;
+    }
+    // RPG には自作の問題だけを使う（取り込んだ市販教材などは使わない）
+    if (!set.origin.usableInRpg) {
+      _open(_MessageDialog('この問題セットは RPG では使えません。'));
       return;
     }
     _close();
@@ -187,6 +199,37 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
         return _MessageBox(
           actions: [FilledButton(onPressed: _close, child: const Text('とじる'))],
           child: Text(text, style: const TextStyle(fontSize: 15, height: 1.6)),
+        );
+      case _InnDialog(:final stage):
+        final lesson = InnLessons.forStage(stage.id);
+        return _MessageBox(
+          actions: [
+            TextButton(onPressed: _close, child: const Text('やめておく')),
+            FilledButton.icon(
+              onPressed: () {
+                _close();
+                _game.inputLocked = true;
+                Navigator.of(context).push(
+                  MaterialPageRoute<void>(
+                    builder: (_) => InnScreen(stage: stage),
+                  ),
+                );
+              },
+              icon: const Icon(Icons.school, size: 18),
+              label: const Text('授業を受ける'),
+            ),
+          ],
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('宿屋', style: serif(16)),
+              const SizedBox(height: 4),
+              Text(
+                '${lesson.teacher}「この先の${stage.enemy.name}は「${lesson.title}」が弱点じゃ。授業を受けていくかね？」',
+                style: const TextStyle(fontSize: 14, height: 1.6),
+              ),
+            ],
+          ),
         );
       case _EncounterDialog(:final stage, :final cleared):
         final enemy = stage.enemy;

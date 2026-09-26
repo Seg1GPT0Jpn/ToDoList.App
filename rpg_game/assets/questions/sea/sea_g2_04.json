@@ -1,0 +1,92 @@
+{
+  "setId": "sea_g2_04",
+  "worldId": "sea",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g2_04_01",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He is proud of (   ) the champion last year.",
+      "choices": [
+        "being",
+        "having been",
+        "to be",
+        "been"
+      ],
+      "answerIndex": 1,
+      "explanation": "「（過去に）チャンピオンだったこと」は完了動名詞 having been。"
+    },
+    {
+      "id": "sea_g2_04_02",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I don't like (   ) treated like a child.",
+      "choices": [
+        "being",
+        "been",
+        "to have",
+        "having"
+      ],
+      "answerIndex": 0,
+      "explanation": "「扱われること」は受動動名詞 being + 過去分詞。"
+    },
+    {
+      "id": "sea_g2_04_03",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "She insisted on (   ) paying the bill.",
+      "choices": [
+        "I",
+        "my",
+        "to me",
+        "mine"
+      ],
+      "answerIndex": 1,
+      "explanation": "動名詞の意味上の主語は所有格で表す。「私が払うことを主張した」。"
+    },
+    {
+      "id": "sea_g2_04_04",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I forgot (   ) the letter yesterday, and it is still in my bag.",
+      "choices": [
+        "posting",
+        "to post",
+        "post",
+        "posted"
+      ],
+      "answerIndex": 1,
+      "explanation": "まだかばんの中にあるので「出すのを忘れた」。forget to do（〜するのを忘れる）。"
+    },
+    {
+      "id": "sea_g2_04_05",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I regret (   ) him about the plan. He told everyone.",
+      "choices": [
+        "to tell",
+        "telling",
+        "tell",
+        "told"
+      ],
+      "answerIndex": 1,
+      "explanation": "regret -ing は「（過去に）〜したことを後悔する」。regret to do は「残念ながら〜する」。"
+    },
+    {
+      "id": "sea_g2_04_06",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This car needs (   ).",
+      "choices": [
+        "washing",
+        "to wash",
+        "washed",
+        "wash"
+      ],
+      "answerIndex": 0,
+      "explanation": "need -ing で「〜される必要がある」（= need to be washed）。"
+    }
+  ]
+}

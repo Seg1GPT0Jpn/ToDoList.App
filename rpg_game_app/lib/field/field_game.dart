@@ -37,12 +37,16 @@ class FieldGame extends FlameGame with KeyboardEvents {
     required this._progress,
     required this.onEncounter,
     required this.onMessage,
+    required this.onInn,
   });
 
   final FieldMap map;
   final WorldDef rpgWorld;
   final void Function(StageDef stage, bool cleared) onEncounter;
   final void Function(String message) onMessage;
+
+  /// 宿に話しかけたとき。引数は宿の先にいる（次に戦う）ステージ
+  final void Function(StageDef nextStage) onInn;
 
   RpgProgress _progress;
   late final PlayerToken player;
@@ -176,6 +180,12 @@ class FieldGame extends FlameGame with KeyboardEvents {
       return;
     }
     switch (map.tileAt(target.col, target.row)) {
+      case 'I':
+        _bumpedDirection = dir;
+        final n = map.enemyAhead(target);
+        final stage = rpgWorld.stages.where((s) => s.order == n).firstOrNull;
+        if (stage != null) onInn(stage);
+        return;
       case 'S':
         _bumpedDirection = dir;
         onMessage(FieldMap.signMessages.first);
@@ -272,6 +282,8 @@ class MapLayer extends PositionComponent {
             _pond(c, rect);
           case 'S':
             _sign(c, rect);
+          case 'I':
+            _inn(c, rect);
         }
       }
     }
@@ -370,6 +382,51 @@ class MapLayer extends PositionComponent {
         _ink..strokeWidth = 1,
       );
     }
+  }
+
+  /// 宿：小さな家と「宿」の看板
+  void _inn(ui.Canvas c, Rect r) {
+    final wall = Rect.fromLTWH(
+      r.left + 4,
+      r.top + 13,
+      r.width - 8,
+      r.height - 15,
+    );
+    c.drawOval(
+      Rect.fromCenter(
+        center: Offset(r.center.dx, r.bottom - 2),
+        width: 28,
+        height: 6,
+      ),
+      ui.Paint()..color = const ui.Color(0x33000000),
+    );
+    c.drawRect(wall, ui.Paint()..color = const ui.Color(0xFFF5E6C8));
+    c.drawRect(wall, _ink..strokeWidth = 1.3);
+    final roof = ui.Path()
+      ..moveTo(r.left + 1, r.top + 14)
+      ..lineTo(r.center.dx, r.top + 2)
+      ..lineTo(r.right - 1, r.top + 14)
+      ..close();
+    c.drawPath(roof, ui.Paint()..color = const ui.Color(0xFFB5523B));
+    c.drawPath(roof, _ink..strokeWidth = 1.3);
+    // 扉
+    c.drawRect(
+      Rect.fromLTWH(r.center.dx - 3, r.bottom - 10, 6, 8),
+      ui.Paint()..color = const ui.Color(0xFF8D6E63),
+    );
+    // 看板「宿」
+    final b =
+        ui.ParagraphBuilder(ui.ParagraphStyle(textAlign: ui.TextAlign.center))
+          ..pushStyle(
+            ui.TextStyle(
+              color: const ui.Color(0xFF6D4C41),
+              fontSize: 8,
+              fontWeight: ui.FontWeight.w900,
+            ),
+          )
+          ..addText('宿');
+    final p = b.build()..layout(ui.ParagraphConstraints(width: r.width));
+    c.drawParagraph(p, Offset(r.left, r.top + 15));
   }
 
   void _trophy(ui.Canvas c, Cell g) {

@@ -1,0 +1,120 @@
+{
+  "setId": "sea_g1_12",
+  "worldId": "sea",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g1_12_01",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This pen is not (   ). It's Ken's.",
+      "choices": [
+        "my",
+        "me",
+        "mine",
+        "I"
+      ],
+      "answerIndex": 2,
+      "explanation": "「私のもの」は所有代名詞 mine。"
+    },
+    {
+      "id": "sea_g1_12_02",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I lost my umbrella, so I have to buy (   ).",
+      "choices": [
+        "it",
+        "one",
+        "that",
+        "this"
+      ],
+      "answerIndex": 1,
+      "explanation": "同じ種類の不特定の物は one。it だと「なくしたその傘」になる。"
+    },
+    {
+      "id": "sea_g1_12_03",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I have two sisters. One is a teacher, and (   ) is a nurse.",
+      "choices": [
+        "other",
+        "another",
+        "the other",
+        "others"
+      ],
+      "answerIndex": 2,
+      "explanation": "2つ（2人）のうち、もう一方は the other。"
+    },
+    {
+      "id": "sea_g1_12_04",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) of the students has a smartphone.",
+      "choices": [
+        "Every",
+        "Each",
+        "All",
+        "Both"
+      ],
+      "answerIndex": 1,
+      "explanation": "each of 〜 は単数扱い（has）。every は of を続けられない。"
+    },
+    {
+      "id": "sea_g1_12_05",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The climate of Japan is milder than (   ) of Canada.",
+      "choices": [
+        "it",
+        "this",
+        "that",
+        "those"
+      ],
+      "answerIndex": 2,
+      "explanation": "同じ名詞（the climate）のくり返しを避ける that。複数なら those。"
+    },
+    {
+      "id": "sea_g1_12_06",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I was born (   ) April 5.",
+      "choices": [
+        "in",
+        "on",
+        "at",
+        "by"
+      ],
+      "answerIndex": 1,
+      "explanation": "特定の日付・曜日の前は on。"
+    },
+    {
+      "id": "sea_g1_12_07",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Finish this work (   ) Friday.",
+      "choices": [
+        "until",
+        "by",
+        "for",
+        "since"
+      ],
+      "answerIndex": 1,
+      "explanation": "「〜までに（期限）」は by。until は「〜までずっと（継続）」。"
+    },
+    {
+      "id": "sea_g1_12_08",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Please help (   ) to the cake.",
+      "choices": [
+        "you",
+        "your",
+        "yourself",
+        "yours"
+      ],
+      "answerIndex": 2,
+      "explanation": "help oneself to 〜 で「〜を自由に取って食べる」。"
+    }
+  ]
+}

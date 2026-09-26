@@ -79,6 +79,17 @@ void main() {
     }
   });
 
+  test('どのエリアにも宿があり、その先の敵を倒す前に立ち寄れる', () {
+    final inns = map.innSpots;
+    expect(inns.length, world.stages.length);
+    final ahead = {for (final inn in inns) map.enemyAhead(inn)};
+    expect(ahead, {for (final s in world.stages) s.order});
+    for (final inn in inns) {
+      final n = map.enemyAhead(inn)!;
+      expect(adjacent(reachable(n), inn), isTrue, reason: 'ステージ$n 手前の宿');
+    }
+  });
+
   test('ボスを倒すとゴールにたどり着ける', () {
     expect(adjacent(reachable(99), map.find('G')), isTrue);
   });

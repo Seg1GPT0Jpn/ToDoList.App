@@ -1,11 +1,19 @@
 /// 問題データの出どころ。
 ///
-/// 課金ゲームの中身には [original]（自作問題）と [userCreated]（利用者が
-/// 自分で作った単語帳）だけを使う。市販教材（LEAP・STEP 等）由来のデータは
-/// 著作権上の理由から、この列挙に値を持たせず、そもそも読み込めないようにしている。
+/// RPG（課金ワールドを含む）の中身には [original]（自作問題）だけを使う。
+/// 市販教材（LEAP など）由来のデータは、利用者が自分の端末に取り込んだものを
+/// パスワード保護された学習モードで使う場合に限り [personalImport] として扱う。
+/// アプリ同梱のデータ（assets）に [personalImport] を入れてはいけない。
 enum QuestionOrigin {
   original,
-  userCreated;
+  userCreated,
+
+  /// 利用者が個人利用のために端末へ取り込んだ単語帳（市販教材を含みうる）。
+  /// RPG・課金コンテンツには使えない。
+  personalImport;
+
+  /// RPG のバトルや宿の授業で使ってよいか
+  bool get usableInRpg => this == original;
 
   static QuestionOrigin parse(String value) {
     for (final origin in values) {

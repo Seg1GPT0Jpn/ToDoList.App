@@ -125,6 +125,20 @@ class Progression {
     );
   }
 
+  /// 宿の授業（練習問題）で得られる経験値：正解1問につき
+  static const expPerTrainingCorrect = 2;
+
+  /// 宿の授業を終えたときの経験値付与
+  static ExpGainResult applyTraining(RpgProgress progress, int correctCount) =>
+      addExp(progress, correctCount * expPerTrainingCorrect);
+
+  /// 定期テストの海の結果を記録する（最高正答率だけ残す）
+  static RpgProgress recordSea(RpgProgress progress, String id, int percent) {
+    final best = progress.seaBest[id];
+    if (best != null && best >= percent) return progress;
+    return progress.copyWith(seaBest: {...progress.seaBest, id: percent});
+  }
+
   /// ステージに挑戦できるか。1つ目のステージか、1つ前をクリア済みなら挑戦できる。
   static bool isStageUnlocked(
       RpgProgress progress, WorldDef world, StageDef stage) {

@@ -4,6 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'app/services.dart';
 import 'app/theme.dart';
 import 'data/prefs_progress_repository.dart';
+import 'study/personal_books.dart';
 import 'world/world_map_screen.dart';
 
 Future<void> main() async {
@@ -12,6 +13,7 @@ Future<void> main() async {
   runApp(
     RpgServices(
       repository: PrefsProgressRepository(prefs),
+      personalBooks: PersonalBooks(prefs),
       child: const TsuzuriQuestApp(),
     ),
   );

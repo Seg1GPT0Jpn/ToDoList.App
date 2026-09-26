@@ -1,0 +1,120 @@
+{
+  "setId": "sea_g1_02",
+  "worldId": "sea",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g1_02_01",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The sun (   ) in the east.",
+      "choices": [
+        "rises",
+        "rose",
+        "is rising",
+        "will rise"
+      ],
+      "answerIndex": 0,
+      "explanation": "いつでも成り立つ事実（真理）は現在形で表す。"
+    },
+    {
+      "id": "sea_g1_02_02",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I (   ) a movie with my friends last Sunday.",
+      "choices": [
+        "see",
+        "saw",
+        "have seen",
+        "am seeing"
+      ],
+      "answerIndex": 1,
+      "explanation": "last Sunday という過去の時点があるので過去形。現在完了は具体的な過去の時点とは使わない。"
+    },
+    {
+      "id": "sea_g1_02_03",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Look at those dark clouds. It (   ) rain.",
+      "choices": [
+        "is going",
+        "goes to",
+        "is going to",
+        "was going to"
+      ],
+      "answerIndex": 2,
+      "explanation": "目の前の根拠（黒い雲）から「〜しそうだ」と予測するときは be going to。"
+    },
+    {
+      "id": "sea_g1_02_04",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Be quiet. The baby (   ) now.",
+      "choices": [
+        "sleeps",
+        "is sleeping",
+        "slept",
+        "has slept"
+      ],
+      "answerIndex": 1,
+      "explanation": "now（今まさに）の動作は現在進行形。"
+    },
+    {
+      "id": "sea_g1_02_05",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "When you called me, I (   ) a bath.",
+      "choices": [
+        "take",
+        "am taking",
+        "was taking",
+        "have taken"
+      ],
+      "answerIndex": 2,
+      "explanation": "過去のある時点（電話があったとき）に進行中だった動作は過去進行形。"
+    },
+    {
+      "id": "sea_g1_02_06",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I (   ) in Osaka since I was ten.",
+      "choices": [
+        "live",
+        "lived",
+        "am living",
+        "have lived"
+      ],
+      "answerIndex": 3,
+      "explanation": "since（〜以来）とともに、過去から今まで続く状態は現在完了（継続）。"
+    },
+    {
+      "id": "sea_g1_02_07",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "She (   ) the piano for two hours, and she is still playing.",
+      "choices": [
+        "played",
+        "plays",
+        "has been playing",
+        "was playing"
+      ],
+      "answerIndex": 2,
+      "explanation": "過去から今まで続き、まだ続いている動作は現在完了進行形。"
+    },
+    {
+      "id": "sea_g1_02_08",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I haven't finished my homework (   ).",
+      "choices": [
+        "yet",
+        "already",
+        "still",
+        "ever"
+      ],
+      "answerIndex": 0,
+      "explanation": "否定文の「まだ〜ない」は yet。already は肯定文で「もう」。"
+    }
+  ]
+}

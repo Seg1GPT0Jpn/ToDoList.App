@@ -37,6 +37,7 @@ class RpgProgress {
     this.clearedStageIds = const {},
     this.stageRecords = const {},
     this.purchasedWorldIds = const {},
+    this.seaBest = const {},
   });
 
   static const initial = RpgProgress();
@@ -55,6 +56,9 @@ class RpgProgress {
   /// 本番では users/{uid}/rpg_purchases から組み立てる（サーバー検証済みのもののみ）。
   final Set<String> purchasedWorldIds;
 
+  /// 定期テストの海：単元・単語帳ごとの最高正答率（0〜100）
+  final Map<String, int> seaBest;
+
   RpgProgress copyWith({
     int? level,
     int? exp,
@@ -62,6 +66,7 @@ class RpgProgress {
     Set<String>? clearedStageIds,
     Map<String, StageRecord>? stageRecords,
     Set<String>? purchasedWorldIds,
+    Map<String, int>? seaBest,
   }) =>
       RpgProgress(
         level: level ?? this.level,
@@ -70,6 +75,7 @@ class RpgProgress {
         clearedStageIds: clearedStageIds ?? this.clearedStageIds,
         stageRecords: stageRecords ?? this.stageRecords,
         purchasedWorldIds: purchasedWorldIds ?? this.purchasedWorldIds,
+        seaBest: seaBest ?? this.seaBest,
       );
 
   factory RpgProgress.fromMap(Map<String, dynamic>? map) {
@@ -88,6 +94,10 @@ class RpgProgress {
       },
       purchasedWorldIds:
           Set<String>.from((map['purchasedWorldIds'] as List?) ?? const []),
+      seaBest: {
+        for (final e in ((map['seaBest'] as Map?) ?? const {}).entries)
+          e.key as String: (e.value as num).toInt(),
+      },
     );
   }
 
@@ -100,5 +110,6 @@ class RpgProgress {
           for (final e in stageRecords.entries) e.key: e.value.toMap(),
         },
         'purchasedWorldIds': purchasedWorldIds.toList()..sort(),
+        'seaBest': seaBest,
       };
 }

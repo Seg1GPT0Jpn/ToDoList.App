@@ -1,0 +1,92 @@
+{
+  "setId": "sea_g3_01",
+  "worldId": "sea",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g3_01_01",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The man (   ) I thought was honest deceived me.",
+      "choices": [
+        "whom",
+        "who",
+        "which",
+        "what"
+      ],
+      "answerIndex": 1,
+      "explanation": "I thought をはさんでも、関係詞は was の主語（主格）なので who。"
+    },
+    {
+      "id": "sea_g3_01_02",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This is the pen with (   ) I wrote the letter.",
+      "choices": [
+        "that",
+        "which",
+        "whom",
+        "what"
+      ],
+      "answerIndex": 1,
+      "explanation": "前置詞 + 関係代名詞。物が先行詞なので which。"
+    },
+    {
+      "id": "sea_g3_01_03",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) you go, I will follow you.",
+      "choices": [
+        "Whatever",
+        "Wherever",
+        "Whoever",
+        "However"
+      ],
+      "answerIndex": 1,
+      "explanation": "wherever は「どこへ〜しても」。"
+    },
+    {
+      "id": "sea_g3_01_04",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "She is not (   ) she used to be.",
+      "choices": [
+        "which",
+        "what",
+        "that",
+        "who"
+      ],
+      "answerIndex": 1,
+      "explanation": "what S used to be で「昔の S」。"
+    },
+    {
+      "id": "sea_g3_01_05",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He has many books, most of (   ) are in English.",
+      "choices": [
+        "them",
+        "which",
+        "that",
+        "what"
+      ],
+      "answerIndex": 1,
+      "explanation": "数量表現 + of which で前の名詞を受ける。them だと文がつながらない。"
+    },
+    {
+      "id": "sea_g3_01_06",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The book (   ) I thought was lost was in my bag.",
+      "choices": [
+        "that",
+        "what",
+        "whom",
+        "where"
+      ],
+      "answerIndex": 0,
+      "explanation": "I thought をはさんだ関係代名詞（主格）。物が先行詞なので that（which も可）。"
+    }
+  ]
+}

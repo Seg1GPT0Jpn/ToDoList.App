@@ -1,0 +1,92 @@
+{
+  "setId": "sea_g3_09",
+  "worldId": "sea",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g3_09_01",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) is known to everyone that smoking is bad.",
+      "choices": [
+        "That",
+        "It",
+        "What",
+        "This"
+      ],
+      "answerIndex": 1,
+      "explanation": "It は形式主語。本当の主語は that 以下。"
+    },
+    {
+      "id": "sea_g3_09_02",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The reason he was absent is (   ) he was sick.",
+      "choices": [
+        "because",
+        "that",
+        "why",
+        "what"
+      ],
+      "answerIndex": 1,
+      "explanation": "The reason is that 〜 で「理由は〜ということだ」。"
+    },
+    {
+      "id": "sea_g3_09_03",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "No matter (   ) hard it is, I'll finish it.",
+      "choices": [
+        "what",
+        "how",
+        "which",
+        "when"
+      ],
+      "answerIndex": 1,
+      "explanation": "no matter how + 形容詞 で「どんなに〜でも」（= however）。"
+    },
+    {
+      "id": "sea_g3_09_04",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Whether you like it (   ) not, you must go.",
+      "choices": [
+        "and",
+        "or",
+        "nor",
+        "but"
+      ],
+      "answerIndex": 1,
+      "explanation": "whether A or not で「A であろうとなかろうと」。"
+    },
+    {
+      "id": "sea_g3_09_05",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "It is not what you say (   ) what you do that matters.",
+      "choices": [
+        "and",
+        "but",
+        "or",
+        "than"
+      ],
+      "answerIndex": 1,
+      "explanation": "It is not A but B that … で「…なのは A ではなく B だ」（強調構文）。"
+    },
+    {
+      "id": "sea_g3_09_06",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This is the same watch (   ) I lost.",
+      "choices": [
+        "than",
+        "as",
+        "like",
+        "so"
+      ],
+      "answerIndex": 1,
+      "explanation": "the same 〜 as … で「…と同じ（種類の）〜」。"
+    }
+  ]
+}

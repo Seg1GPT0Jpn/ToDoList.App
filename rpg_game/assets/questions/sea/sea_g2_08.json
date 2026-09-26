@@ -1,0 +1,92 @@
+{
+  "setId": "sea_g2_08",
+  "worldId": "sea",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g2_08_01",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This room is three times (   ) that one.",
+      "choices": [
+        "larger as",
+        "as larger than",
+        "as large as",
+        "large as"
+      ],
+      "answerIndex": 2,
+      "explanation": "倍数 + as 〜 as で「…の～倍」。"
+    },
+    {
+      "id": "sea_g2_08_02",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The (   ) you read, the more you learn.",
+      "choices": [
+        "most",
+        "more",
+        "much",
+        "many"
+      ],
+      "answerIndex": 1,
+      "explanation": "the + 比較級 〜, the + 比較級 … で「〜すればするほど…」。"
+    },
+    {
+      "id": "sea_g2_08_03",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He is taller than (   ) other boy in his class.",
+      "choices": [
+        "all",
+        "any",
+        "some",
+        "every"
+      ],
+      "answerIndex": 1,
+      "explanation": "比較級 + than any other + 単数名詞 は最上級と同じ意味。"
+    },
+    {
+      "id": "sea_g2_08_04",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "She is (   ) the smartest student in the school.",
+      "choices": [
+        "very",
+        "more",
+        "by far",
+        "so"
+      ],
+      "answerIndex": 2,
+      "explanation": "最上級を強めるのは by far / much。"
+    },
+    {
+      "id": "sea_g2_08_05",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He is no (   ) a child.",
+      "choices": [
+        "more",
+        "longer",
+        "less",
+        "much"
+      ],
+      "answerIndex": 1,
+      "explanation": "no longer で「もはや〜ない」。"
+    },
+    {
+      "id": "sea_g2_08_06",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "It is getting (   ) and colder.",
+      "choices": [
+        "cold",
+        "colder",
+        "coldest",
+        "more cold"
+      ],
+      "answerIndex": 1,
+      "explanation": "比較級 and 比較級 で「ますます〜」。"
+    }
+  ]
+}

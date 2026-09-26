@@ -1,0 +1,92 @@
+{
+  "setId": "sea_g3_08",
+  "worldId": "sea",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g3_08_01",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The bridge (   ) built when I visited the town.",
+      "choices": [
+        "is being",
+        "was being",
+        "has been",
+        "had being"
+      ],
+      "answerIndex": 1,
+      "explanation": "過去のある時点で「建てられている最中だった」。過去進行形の受動態。"
+    },
+    {
+      "id": "sea_g3_08_02",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The letter (   ) sent by the time you get home.",
+      "choices": [
+        "has been",
+        "will have been",
+        "will be being",
+        "is"
+      ],
+      "answerIndex": 1,
+      "explanation": "未来のある時点までに「送られてしまっている」。未来完了の受動態。"
+    },
+    {
+      "id": "sea_g3_08_03",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He (   ) have left; his coat is still here.",
+      "choices": [
+        "must",
+        "can't",
+        "should",
+        "may"
+      ],
+      "answerIndex": 1,
+      "explanation": "コートがまだあるので「出て行ったはずがない」。can't have done。"
+    },
+    {
+      "id": "sea_g3_08_04",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I (   ) in this company for 20 years next April.",
+      "choices": [
+        "will work",
+        "will have worked",
+        "have worked",
+        "work"
+      ],
+      "answerIndex": 1,
+      "explanation": "来年4月の時点での継続なので未来完了。"
+    },
+    {
+      "id": "sea_g3_08_05",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "She said she (   ) the book the week before.",
+      "choices": [
+        "has read",
+        "had read",
+        "reads",
+        "will read"
+      ],
+      "answerIndex": 1,
+      "explanation": "「言った」より前のことなので過去完了（時制の一致）。"
+    },
+    {
+      "id": "sea_g3_08_06",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The room (   ) cleaned yet.",
+      "choices": [
+        "wasn't",
+        "hasn't been",
+        "didn't be",
+        "isn't been"
+      ],
+      "answerIndex": 1,
+      "explanation": "yet（まだ）とともに「まだ掃除されていない」。現在完了の受動態。"
+    }
+  ]
+}

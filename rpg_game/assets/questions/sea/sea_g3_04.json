@@ -1,0 +1,92 @@
+{
+  "setId": "sea_g3_04",
+  "worldId": "sea",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g3_04_01",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "While (   ) in London, I visited the British Museum.",
+      "choices": [
+        "stayed",
+        "staying",
+        "stay",
+        "to stay"
+      ],
+      "answerIndex": 1,
+      "explanation": "While I was staying の I was が省略された形。"
+    },
+    {
+      "id": "sea_g3_04_02",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "If (   ), come with us.",
+      "choices": [
+        "possibly",
+        "possible",
+        "it possible",
+        "possibility"
+      ],
+      "answerIndex": 1,
+      "explanation": "if (it is) possible の it is が省略された形。"
+    },
+    {
+      "id": "sea_g3_04_03",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He is taller than I (   ).",
+      "choices": [
+        "do",
+        "am",
+        "is",
+        "have"
+      ],
+      "answerIndex": 1,
+      "explanation": "than I am (tall) の省略。be動詞の文なので am。"
+    },
+    {
+      "id": "sea_g3_04_04",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "You can go if you want (   ).",
+      "choices": [
+        "it",
+        "to",
+        "so",
+        "that"
+      ],
+      "answerIndex": 1,
+      "explanation": "want to (go) の go を省略した代不定詞。to は残す。"
+    },
+    {
+      "id": "sea_g3_04_05",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Though (   ), he kept working.",
+      "choices": [
+        "tiring",
+        "tired",
+        "to tire",
+        "tire"
+      ],
+      "answerIndex": 1,
+      "explanation": "Though (he was) tired の主語 + be動詞の省略。"
+    },
+    {
+      "id": "sea_g3_04_06",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I'll help you if (   ).",
+      "choices": [
+        "necessity",
+        "necessary",
+        "necessarily",
+        "need"
+      ],
+      "answerIndex": 1,
+      "explanation": "if (it is) necessary の省略。"
+    }
+  ]
+}

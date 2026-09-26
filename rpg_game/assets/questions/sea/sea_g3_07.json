@@ -1,0 +1,92 @@
+{
+  "setId": "sea_g3_07",
+  "worldId": "sea",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g3_07_01",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He is believed (   ) the money.",
+      "choices": [
+        "to steal",
+        "to have stolen",
+        "stealing",
+        "stole"
+      ],
+      "answerIndex": 1,
+      "explanation": "「信じられている（今）」より前に「盗んだ」ので完了不定詞。"
+    },
+    {
+      "id": "sea_g3_07_02",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "She hates (   ) laughed at.",
+      "choices": [
+        "been",
+        "being",
+        "having",
+        "to have"
+      ],
+      "answerIndex": 1,
+      "explanation": "「笑われること」は受動動名詞 being + 過去分詞。"
+    },
+    {
+      "id": "sea_g3_07_03",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I remember (   ) to the zoo when I was a child.",
+      "choices": [
+        "taking",
+        "being taken",
+        "to take",
+        "to be taken"
+      ],
+      "answerIndex": 1,
+      "explanation": "子どもの頃に「連れて行かれた」ことを覚えている。過去のことなので動名詞、受け身なので being taken。"
+    },
+    {
+      "id": "sea_g3_07_04",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The problem seems (   ) solved already.",
+      "choices": [
+        "to be",
+        "to have been",
+        "being",
+        "having been"
+      ],
+      "answerIndex": 1,
+      "explanation": "already（すでに）解決されたので、完了受動不定詞 to have been + 過去分詞。"
+    },
+    {
+      "id": "sea_g3_07_05",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I'm ashamed of (   ) lied to you.",
+      "choices": [
+        "being",
+        "having",
+        "to have",
+        "had"
+      ],
+      "answerIndex": 1,
+      "explanation": "「（過去に）うそをついたこと」は完了動名詞 having + 過去分詞。"
+    },
+    {
+      "id": "sea_g3_07_06",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "There is no (   ) what will happen.",
+      "choices": [
+        "tell",
+        "telling",
+        "to tell",
+        "told"
+      ],
+      "answerIndex": 1,
+      "explanation": "There is no -ing で「〜することはできない」。"
+    }
+  ]
+}

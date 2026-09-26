@@ -1,0 +1,92 @@
+{
+  "setId": "sea_g2_10",
+  "worldId": "sea",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g2_10_01",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Rarely (   ) late for school.",
+      "choices": [
+        "he is",
+        "is he",
+        "does he",
+        "he does"
+      ],
+      "answerIndex": 1,
+      "explanation": "否定語 rarely が文頭に来ると倒置（疑問文の語順）になる。be動詞なので is he。"
+    },
+    {
+      "id": "sea_g2_10_02",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Only then (   ) the truth.",
+      "choices": [
+        "I realized",
+        "did I realize",
+        "realized I",
+        "I did realize"
+      ],
+      "answerIndex": 1,
+      "explanation": "Only 〜 が文頭に来ると倒置が起こる。"
+    },
+    {
+      "id": "sea_g2_10_03",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I like cats. ― So (   ) I.",
+      "choices": [
+        "am",
+        "do",
+        "like",
+        "does"
+      ],
+      "answerIndex": 1,
+      "explanation": "So + 助動詞 + 主語 で「〜もそうだ」。like は一般動詞なので do。"
+    },
+    {
+      "id": "sea_g2_10_04",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "She can't swim. ― Neither (   ) I.",
+      "choices": [
+        "do",
+        "am",
+        "can",
+        "can't"
+      ],
+      "answerIndex": 2,
+      "explanation": "Neither + 助動詞 + 主語 で「〜もそうではない」。can't を受けるので can。"
+    },
+    {
+      "id": "sea_g2_10_05",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "It was Tom (   ) broke the window.",
+      "choices": [
+        "which",
+        "that",
+        "what",
+        "whom"
+      ],
+      "answerIndex": 1,
+      "explanation": "It was 〜 that … の強調構文。「窓を割ったのはトムだった」。"
+    },
+    {
+      "id": "sea_g2_10_06",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I (   ) tell you the truth yesterday.",
+      "choices": [
+        "do",
+        "did",
+        "does",
+        "done"
+      ],
+      "answerIndex": 1,
+      "explanation": "動詞の前の do / does / did は「本当に」と強調する。"
+    }
+  ]
+}

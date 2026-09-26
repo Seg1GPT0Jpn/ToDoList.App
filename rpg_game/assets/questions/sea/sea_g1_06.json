@@ -1,0 +1,120 @@
+{
+  "setId": "sea_g1_06",
+  "worldId": "sea",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g1_06_01",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Look at the (   ) baby.",
+      "choices": [
+        "sleep",
+        "sleeping",
+        "slept",
+        "to sleep"
+      ],
+      "answerIndex": 1,
+      "explanation": "「眠っている赤ちゃん」。1語で名詞を修飾するときは名詞の前に置く。"
+    },
+    {
+      "id": "sea_g1_06_02",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I bought a (   ) car.",
+      "choices": [
+        "use",
+        "using",
+        "used",
+        "to use"
+      ],
+      "answerIndex": 2,
+      "explanation": "「使われた車」＝中古車。車は使われる側なので過去分詞。"
+    },
+    {
+      "id": "sea_g1_06_03",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The man (   ) with Ken is my uncle.",
+      "choices": [
+        "talk",
+        "talking",
+        "talked",
+        "to talk"
+      ],
+      "answerIndex": 1,
+      "explanation": "「ケンと話している男性」。2語以上のまとまりは名詞の後ろから修飾する。"
+    },
+    {
+      "id": "sea_g1_06_04",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This is a picture (   ) by my brother.",
+      "choices": [
+        "paint",
+        "painting",
+        "painted",
+        "to paint"
+      ],
+      "answerIndex": 2,
+      "explanation": "絵は「描かれた」側なので過去分詞。"
+    },
+    {
+      "id": "sea_g1_06_05",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The movie was very (   ).",
+      "choices": [
+        "excited",
+        "exciting",
+        "excite",
+        "to excite"
+      ],
+      "answerIndex": 1,
+      "explanation": "映画は人を「わくわくさせる」側なので -ing 形。"
+    },
+    {
+      "id": "sea_g1_06_06",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I was (   ) at the news.",
+      "choices": [
+        "surprise",
+        "surprising",
+        "surprised",
+        "to surprise"
+      ],
+      "answerIndex": 2,
+      "explanation": "人は「驚かされる」側なので過去分詞 surprised。"
+    },
+    {
+      "id": "sea_g1_06_07",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Please keep the door (   ).",
+      "choices": [
+        "close",
+        "closing",
+        "closed",
+        "to close"
+      ],
+      "answerIndex": 2,
+      "explanation": "keep + O + 過去分詞 で「O を〜された状態にしておく」。"
+    },
+    {
+      "id": "sea_g1_06_08",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He came (   ) toward me.",
+      "choices": [
+        "run",
+        "running",
+        "ran",
+        "to run"
+      ],
+      "answerIndex": 1,
+      "explanation": "come + -ing で「〜しながら来る」。"
+    }
+  ]
+}

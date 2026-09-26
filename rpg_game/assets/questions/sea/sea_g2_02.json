@@ -1,0 +1,92 @@
+{
+  "setId": "sea_g2_02",
+  "worldId": "sea",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g2_02_01",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "You (   ) have told me earlier. I could have helped.",
+      "choices": [
+        "should",
+        "must",
+        "can",
+        "may"
+      ],
+      "answerIndex": 0,
+      "explanation": "should have done で「〜すべきだったのに（しなかった）」。"
+    },
+    {
+      "id": "sea_g2_02_02",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He looks sad. He (   ) have failed the exam.",
+      "choices": [
+        "must",
+        "should",
+        "can't",
+        "would"
+      ],
+      "answerIndex": 0,
+      "explanation": "must have done で「〜したにちがいない」（過去への確信）。"
+    },
+    {
+      "id": "sea_g2_02_03",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "She (   ) have said such a thing. She is always kind.",
+      "choices": [
+        "must",
+        "can't",
+        "should",
+        "need"
+      ],
+      "answerIndex": 1,
+      "explanation": "can't have done で「〜したはずがない」。"
+    },
+    {
+      "id": "sea_g2_02_04",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I (   ) have left my key at school, but I'm not sure.",
+      "choices": [
+        "must",
+        "can't",
+        "might",
+        "should"
+      ],
+      "answerIndex": 2,
+      "explanation": "might have done で「〜したかもしれない」。not sure と合う。"
+    },
+    {
+      "id": "sea_g2_02_05",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "You (   ) have hurried. We have plenty of time.",
+      "choices": [
+        "mustn't",
+        "needn't",
+        "can't",
+        "wouldn't"
+      ],
+      "answerIndex": 1,
+      "explanation": "needn't have done で「〜する必要はなかったのに（してしまった）」。"
+    },
+    {
+      "id": "sea_g2_02_06",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I would rather (   ) at home today.",
+      "choices": [
+        "stay",
+        "to stay",
+        "staying",
+        "stayed"
+      ],
+      "answerIndex": 0,
+      "explanation": "would rather + 動詞の原形 で「むしろ〜したい」。"
+    }
+  ]
+}

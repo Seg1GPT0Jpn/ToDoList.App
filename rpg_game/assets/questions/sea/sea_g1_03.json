@@ -1,0 +1,120 @@
+{
+  "setId": "sea_g1_03",
+  "worldId": "sea",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g1_03_01",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) you swim when you were five?",
+      "choices": [
+        "Can",
+        "Could",
+        "May",
+        "Must"
+      ],
+      "answerIndex": 1,
+      "explanation": "過去（when you were five）の能力は could。"
+    },
+    {
+      "id": "sea_g1_03_02",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "You (   ) not smoke here. It's against the rules.",
+      "choices": [
+        "have",
+        "must",
+        "don't",
+        "would"
+      ],
+      "answerIndex": 1,
+      "explanation": "must not は「〜してはいけない（禁止）」。"
+    },
+    {
+      "id": "sea_g1_03_03",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "It (   ) rain tomorrow, so take an umbrella just in case.",
+      "choices": [
+        "must",
+        "shall",
+        "might",
+        "ought"
+      ],
+      "answerIndex": 2,
+      "explanation": "might は「〜かもしれない」（弱い推量）。just in case（念のため）と合う。"
+    },
+    {
+      "id": "sea_g1_03_04",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "You don't (   ) to come if you are busy.",
+      "choices": [
+        "have",
+        "must",
+        "should",
+        "can"
+      ],
+      "answerIndex": 0,
+      "explanation": "don't have to は「〜する必要はない」。must not（禁止）とは意味が違う。"
+    },
+    {
+      "id": "sea_g1_03_05",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) I carry your bag? ― Yes, please.",
+      "choices": [
+        "Will",
+        "Shall",
+        "Must",
+        "Need"
+      ],
+      "answerIndex": 1,
+      "explanation": "Shall I 〜? は「（私が）〜しましょうか」という申し出。"
+    },
+    {
+      "id": "sea_g1_03_06",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "You (   ) to see a doctor.",
+      "choices": [
+        "should",
+        "must",
+        "ought",
+        "had"
+      ],
+      "answerIndex": 2,
+      "explanation": "ought to do は「〜すべきだ」。to が続くのは ought だけ。"
+    },
+    {
+      "id": "sea_g1_03_07",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) you like some tea?",
+      "choices": [
+        "Will",
+        "Would",
+        "Shall",
+        "Could"
+      ],
+      "answerIndex": 1,
+      "explanation": "Would you like 〜? は「〜はいかがですか」とていねいに勧める表現。"
+    },
+    {
+      "id": "sea_g1_03_08",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) I come tomorrow? ― No, you needn't.",
+      "choices": [
+        "Shall",
+        "Would",
+        "Must",
+        "Could"
+      ],
+      "answerIndex": 2,
+      "explanation": "Must I 〜?（〜しなければなりませんか）への「いいえ」は needn't / don't have to。"
+    }
+  ]
+}

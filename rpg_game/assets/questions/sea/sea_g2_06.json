@@ -1,0 +1,92 @@
+{
+  "setId": "sea_g2_06",
+  "worldId": "sea",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g2_06_01",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I have two brothers, (   ) live in Tokyo.",
+      "choices": [
+        "both of them",
+        "both of whom",
+        "both whom",
+        "who of both"
+      ],
+      "answerIndex": 1,
+      "explanation": "文をつなぐには関係代名詞が必要。数量表現 + of whom の形。"
+    },
+    {
+      "id": "sea_g2_06_02",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This is the house in (   ) he lives.",
+      "choices": [
+        "that",
+        "which",
+        "where",
+        "whom"
+      ],
+      "answerIndex": 1,
+      "explanation": "前置詞の後ろに置ける関係代名詞は which / whom。that は不可。"
+    },
+    {
+      "id": "sea_g2_06_03",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) he said was not true.",
+      "choices": [
+        "That",
+        "Which",
+        "What",
+        "It"
+      ],
+      "answerIndex": 2,
+      "explanation": "what は「〜すること・もの」。What he said が主語。"
+    },
+    {
+      "id": "sea_g2_06_04",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "You can invite (   ) wants to come.",
+      "choices": [
+        "whoever",
+        "whomever",
+        "who",
+        "anyone"
+      ],
+      "answerIndex": 0,
+      "explanation": "whoever は「〜する人は誰でも」。wants の主語なので whoever。"
+    },
+    {
+      "id": "sea_g2_06_05",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "That is (   ) he solved the problem.",
+      "choices": [
+        "what",
+        "how",
+        "which",
+        "the way how"
+      ],
+      "answerIndex": 1,
+      "explanation": "「そのようにして〜」は how（= the way）。the way how とは言わない。"
+    },
+    {
+      "id": "sea_g2_06_06",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He said nothing, (   ) made her angry.",
+      "choices": [
+        "that",
+        "what",
+        "which",
+        "it"
+      ],
+      "answerIndex": 2,
+      "explanation": "前の文全体を先行詞にする非制限用法の which。"
+    }
+  ]
+}

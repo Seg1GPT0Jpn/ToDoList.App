@@ -8,6 +8,7 @@ import '../app/theme.dart';
 import '../art/hero_painter.dart';
 import '../art/paper.dart';
 import '../field/field_screen.dart';
+import '../study/sea_home_screen.dart';
 
 const _subjectIcons = <String, IconData>{
   'japanese': Icons.menu_book,
@@ -169,8 +170,17 @@ class WorldMapScreen extends StatelessWidget {
             ],
           ),
         ),
+        const SizedBox(height: 14),
+        _SeaBanner(
+          onTap: () => Navigator.of(context).push(
+            MaterialPageRoute<void>(
+              builder: (_) =>
+                  SeaHomeScreen(personalBooks: services.personalBooks),
+            ),
+          ),
+        ),
         const SizedBox(height: 16),
-        Text('行き先をえらぶ', style: serif(16)),
+        Text('冒険の行き先をえらぶ', style: serif(16)),
       ],
     );
   }
@@ -424,6 +434,56 @@ class _WorldCard extends StatelessWidget {
           PurchaseOutcome.alreadyOwned => 'すでに解放済みです',
           PurchaseOutcome.notPurchasable => '現在は購入できません',
         }),
+      ),
+    );
+  }
+}
+
+/// 定期テストの海への入口
+class _SeaBanner extends StatelessWidget {
+  const _SeaBanner({required this.onTap});
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      borderRadius: BorderRadius.circular(16),
+      color: const Color(0xFFE6F0F5),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(16),
+        onTap: onTap,
+        child: Container(
+          padding: const EdgeInsets.all(14),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16),
+            border: Border.all(color: const Color(0xFF2F5D7C), width: 1.5),
+          ),
+          child: Row(
+            children: [
+              const Icon(Icons.sailing, size: 36, color: Color(0xFF2F5D7C)),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      '定期テストの海',
+                      style: serif(18, color: const Color(0xFF2F5D7C)),
+                    ),
+                    const Text(
+                      '単元ごとに文法・単語・熟語をチェック',
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: TsuzuriColors.inkSoft,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const Icon(Icons.chevron_right, color: Color(0xFF2F5D7C)),
+            ],
+          ),
+        ),
       ),
     );
   }
