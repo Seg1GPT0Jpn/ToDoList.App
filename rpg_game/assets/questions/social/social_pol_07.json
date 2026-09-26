@@ -159,6 +159,162 @@
       ],
       "answerIndex": 3,
       "explanation": "フィルターバブルやエコーチェンバーと呼ばれる現象に注意する。"
+    },
+    {
+      "id": "soc_pol07_013",
+      "category": "knowledge",
+      "prompt": "一定の年齢以上のすべての国民に選挙権を認める原則は？",
+      "choices": [
+        "平等選挙",
+        "秘密選挙",
+        "直接選挙",
+        "普通選挙"
+      ],
+      "answerIndex": 3,
+      "explanation": "財産や性別などによる制限をしない。"
+    },
+    {
+      "id": "soc_pol07_014",
+      "category": "knowledge",
+      "prompt": "だれに投票したかを知られないようにする原則は？",
+      "choices": [
+        "平等選挙",
+        "直接選挙",
+        "普通選挙",
+        "秘密選挙"
+      ],
+      "answerIndex": 3,
+      "explanation": "自由な意思で投票できるようにする。"
+    },
+    {
+      "id": "soc_pol07_015",
+      "category": "knowledge",
+      "prompt": "1人1票で、票の価値を等しくする原則は？",
+      "choices": [
+        "普通選挙",
+        "直接選挙",
+        "平等選挙",
+        "秘密選挙"
+      ],
+      "answerIndex": 2,
+      "explanation": "一票の格差はこの原則に関わる問題。"
+    },
+    {
+      "id": "soc_pol07_016",
+      "category": "knowledge",
+      "prompt": "有権者が代表者を直接選ぶ原則は？",
+      "choices": [
+        "普通選挙",
+        "間接選挙",
+        "直接選挙",
+        "秘密選挙"
+      ],
+      "answerIndex": 2,
+      "explanation": "アメリカ大統領選挙は形式上、選挙人を通じた間接選挙。"
+    },
+    {
+      "id": "soc_pol07_017",
+      "category": "knowledge",
+      "prompt": "参議院議員の選挙で採用されている制度は？",
+      "choices": [
+        "小選挙区比例代表並立制",
+        "大選挙区制だけ",
+        "比例代表制だけ",
+        "選挙区制と比例代表制"
+      ],
+      "answerIndex": 3,
+      "explanation": "選挙区は原則として都道府県単位。"
+    },
+    {
+      "id": "soc_pol07_018",
+      "category": "knowledge",
+      "prompt": "比例代表制で使われるドント式の計算方法は？",
+      "choices": [
+        "得票数の多い党がすべての議席を得る",
+        "くじで配分する",
+        "得票数を議席数で割る",
+        "各党の得票数を 1, 2, 3 … で割り、商の大きい順に議席を配分する"
+      ],
+      "answerIndex": 3,
+      "explanation": "得票に比例した議席配分になる。"
+    },
+    {
+      "id": "soc_pol07_019",
+      "category": "knowledge",
+      "prompt": "選挙の当日に投票できない人が、選挙期間中に事前に投票できる制度は？",
+      "choices": [
+        "インターネット投票",
+        "期日前投票",
+        "不在者投票だけ",
+        "電子投票"
+      ],
+      "answerIndex": 1,
+      "explanation": "投票しやすくするための制度。"
+    },
+    {
+      "id": "soc_pol07_020",
+      "category": "knowledge",
+      "prompt": "政治資金の流れを公開し、政治献金を規制する法律は？",
+      "choices": [
+        "政治資金規正法",
+        "公職選挙法",
+        "政党助成法",
+        "情報公開法"
+      ],
+      "answerIndex": 0,
+      "explanation": "政治とお金の問題を防ぐためのもの。"
+    },
+    {
+      "id": "soc_pol07_021",
+      "category": "knowledge",
+      "prompt": "選挙運動のルール（戸別訪問の禁止など）を定めた法律は？",
+      "choices": [
+        "国民投票法",
+        "公職選挙法",
+        "地方自治法",
+        "政治資金規正法"
+      ],
+      "answerIndex": 1,
+      "explanation": "2013年からインターネットでの選挙運動も認められた。"
+    },
+    {
+      "id": "soc_pol07_022",
+      "category": "knowledge",
+      "prompt": "複数の政党が協力して内閣をつくることを何という？",
+      "choices": [
+        "一党独裁",
+        "二大政党制",
+        "単独政権",
+        "連立政権"
+      ],
+      "answerIndex": 3,
+      "explanation": "日本では1990年代から多く見られる。"
+    },
+    {
+      "id": "soc_pol07_023",
+      "category": "calculation",
+      "prompt": "定数4の比例代表選挙で、A党6000票、B党3500票、C党1500票。ドント式で配分すると、A党の議席は？",
+      "choices": [
+        "1議席",
+        "2議席",
+        "4議席",
+        "3議席"
+      ],
+      "answerIndex": 3,
+      "explanation": "A：6000, 3000, 2000、B：3500 が上位4つ。"
+    },
+    {
+      "id": "soc_pol07_024",
+      "category": "calculation",
+      "prompt": "定数1の選挙区で、X区の有権者は50万人、Y区は20万人。Y区の一票の重みは、X区の何倍？",
+      "choices": [
+        "1倍",
+        "30倍",
+        "0.4倍",
+        "2.5倍"
+      ],
+      "answerIndex": 3,
+      "explanation": "50÷20。有権者が少ない区ほど一票が重い。"
     }
   ]
 }

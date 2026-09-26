@@ -159,6 +159,162 @@
       ],
       "answerIndex": 3,
       "explanation": "自白の強要を防ぐため。"
+    },
+    {
+      "id": "soc_pol05_013",
+      "category": "knowledge",
+      "prompt": "最高裁判所の長官を任命するのは？",
+      "choices": [
+        "国会",
+        "天皇（内閣の指名にもとづく）",
+        "内閣総理大臣",
+        "国民"
+      ],
+      "answerIndex": 1,
+      "explanation": "そのほかの最高裁判所の裁判官は内閣が任命する。"
+    },
+    {
+      "id": "soc_pol05_014",
+      "category": "knowledge",
+      "prompt": "下級裁判所にあたるものは？",
+      "choices": [
+        "高等・地方・家庭・簡易裁判所",
+        "弾劾裁判所",
+        "最高裁判所だけ",
+        "国際司法裁判所"
+      ],
+      "answerIndex": 0,
+      "explanation": "最高裁判所以外の裁判所。"
+    },
+    {
+      "id": "soc_pol05_015",
+      "category": "knowledge",
+      "prompt": "第二審の判決に不服で、さらに上級の裁判所に訴えることを何という？",
+      "choices": [
+        "控訴",
+        "抗告",
+        "起訴",
+        "上告"
+      ],
+      "answerIndex": 3,
+      "explanation": "第一審から第二審へは控訴。"
+    },
+    {
+      "id": "soc_pol05_016",
+      "category": "knowledge",
+      "prompt": "家庭内の争いや少年事件をあつかう裁判所は？",
+      "choices": [
+        "家庭裁判所",
+        "最高裁判所",
+        "高等裁判所",
+        "簡易裁判所"
+      ],
+      "answerIndex": 0,
+      "explanation": "少年事件は、原則としてまず家庭裁判所に送られる。"
+    },
+    {
+      "id": "soc_pol05_017",
+      "category": "knowledge",
+      "prompt": "刑事裁判で、被疑者を裁判所に訴える（起訴する）のは？",
+      "choices": [
+        "警察官",
+        "裁判官",
+        "弁護人",
+        "検察官"
+      ],
+      "answerIndex": 3,
+      "explanation": "起訴された人は被告人と呼ばれる。"
+    },
+    {
+      "id": "soc_pol05_018",
+      "category": "knowledge",
+      "prompt": "民事裁判で、裁判所に訴えた側を何という？",
+      "choices": [
+        "原告",
+        "被告",
+        "検察官",
+        "被告人"
+      ],
+      "answerIndex": 0,
+      "explanation": "訴えられた側は被告。"
+    },
+    {
+      "id": "soc_pol05_019",
+      "category": "knowledge",
+      "prompt": "取り調べや裁判で、自分に不利なことを言わなくてよい権利は？",
+      "choices": [
+        "拒否権",
+        "請願権",
+        "参政権",
+        "黙秘権"
+      ],
+      "answerIndex": 3,
+      "explanation": "憲法第38条で保障されている。"
+    },
+    {
+      "id": "soc_pol05_020",
+      "category": "knowledge",
+      "prompt": "現行犯の場合を除き、逮捕に必要な令状を出すのは？",
+      "choices": [
+        "内閣総理大臣",
+        "裁判官",
+        "警察官",
+        "検察官"
+      ],
+      "answerIndex": 1,
+      "explanation": "令状主義と呼ばれる。"
+    },
+    {
+      "id": "soc_pol05_021",
+      "category": "knowledge",
+      "prompt": "違憲審査の最終的な判断を下すことから、最高裁判所は何と呼ばれる？",
+      "choices": [
+        "全体の奉仕者",
+        "国権の最高機関",
+        "憲法の番人",
+        "民主主義の学校"
+      ],
+      "answerIndex": 2,
+      "explanation": "すべての裁判所が違憲審査権をもつ。"
+    },
+    {
+      "id": "soc_pol05_022",
+      "category": "knowledge",
+      "prompt": "裁判員裁判で審理されるのは？",
+      "choices": [
+        "最高裁判所の裁判",
+        "重大な刑事事件の第一審",
+        "少年事件だけ",
+        "すべての民事裁判"
+      ],
+      "answerIndex": 1,
+      "explanation": "殺人や強盗致死傷などが対象。"
+    },
+    {
+      "id": "soc_pol05_023",
+      "category": "knowledge",
+      "prompt": "裁判員はどのように選ばれる？",
+      "choices": [
+        "弁護士の中から選ばれる",
+        "裁判官が指名する",
+        "立候補した人から選挙で選ぶ",
+        "18歳以上の有権者から、くじで選ばれる"
+      ],
+      "answerIndex": 3,
+      "explanation": "2023年から18歳・19歳も対象になった。"
+    },
+    {
+      "id": "soc_pol05_024",
+      "category": "thinking",
+      "prompt": "三審制がとられている目的として最も適切なものは？",
+      "choices": [
+        "国民を裁判に参加させるため",
+        "裁判の誤りを防ぎ、人権を守るため",
+        "裁判官を増やすため",
+        "裁判を早く終わらせるため"
+      ],
+      "answerIndex": 1,
+      "explanation": "判決に不服なら上級の裁判所で審理を受けられる。"
     }
   ]
 }

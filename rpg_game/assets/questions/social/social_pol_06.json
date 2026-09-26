@@ -159,6 +159,162 @@
       ],
       "answerIndex": 1,
       "explanation": "議会は首長の不信任を議決でき、首長は議会を解散できる。"
+    },
+    {
+      "id": "soc_pol06_013",
+      "category": "knowledge",
+      "prompt": "市町村長の被選挙権の年齢は？",
+      "choices": [
+        "満25歳以上",
+        "満20歳以上",
+        "満30歳以上",
+        "満18歳以上"
+      ],
+      "answerIndex": 0,
+      "explanation": "都道府県知事は満30歳以上。"
+    },
+    {
+      "id": "soc_pol06_014",
+      "category": "knowledge",
+      "prompt": "地方公共団体の首長の任期は？",
+      "choices": [
+        "6年",
+        "3年",
+        "5年",
+        "4年"
+      ],
+      "answerIndex": 3,
+      "explanation": "地方議会の議員の任期も4年。"
+    },
+    {
+      "id": "soc_pol06_015",
+      "category": "knowledge",
+      "prompt": "地方公共団体が国から独立して、自らの意思で政治を行う原則は？",
+      "choices": [
+        "地方分権",
+        "住民自治",
+        "団体自治",
+        "三権分立"
+      ],
+      "answerIndex": 2,
+      "explanation": "住民自治とあわせて「地方自治の本旨」とされる。"
+    },
+    {
+      "id": "soc_pol06_016",
+      "category": "knowledge",
+      "prompt": "首長の解職請求に必要な署名数は、原則として？",
+      "choices": [
+        "有権者の過半数",
+        "有権者の10分の1以上",
+        "有権者の3分の1以上",
+        "有権者の50分の1以上"
+      ],
+      "answerIndex": 2,
+      "explanation": "署名を集めたあと、住民投票で過半数の同意があれば失職する。"
+    },
+    {
+      "id": "soc_pol06_017",
+      "category": "knowledge",
+      "prompt": "住民が監査を請求するとき、請求先となるのは？",
+      "choices": [
+        "首長",
+        "選挙管理委員会",
+        "裁判所",
+        "監査委員"
+      ],
+      "answerIndex": 3,
+      "explanation": "有権者の50分の1以上の署名が必要。"
+    },
+    {
+      "id": "soc_pol06_018",
+      "category": "knowledge",
+      "prompt": "地方議会の解散請求の請求先は？",
+      "choices": [
+        "議長",
+        "首長",
+        "監査委員",
+        "選挙管理委員会"
+      ],
+      "answerIndex": 3,
+      "explanation": "有権者の3分の1以上の署名が必要（原則）。"
+    },
+    {
+      "id": "soc_pol06_019",
+      "category": "knowledge",
+      "prompt": "首長が、議会の議決に異議があるときに審議のやり直しを求めることを何という？",
+      "choices": [
+        "不信任決議",
+        "再議（拒否権）",
+        "解職請求",
+        "国民審査"
+      ],
+      "answerIndex": 1,
+      "explanation": "議会と首長は互いに抑制し合う。"
+    },
+    {
+      "id": "soc_pol06_020",
+      "category": "knowledge",
+      "prompt": "地方議会が首長に対して行える議決は？",
+      "choices": [
+        "弾劾",
+        "罷免",
+        "解散命令",
+        "不信任決議"
+      ],
+      "answerIndex": 3,
+      "explanation": "不信任決議を受けた首長は、議会を解散することもできる。"
+    },
+    {
+      "id": "soc_pol06_021",
+      "category": "knowledge",
+      "prompt": "国から地方公共団体に支払われ、使い道が決められているお金は？",
+      "choices": [
+        "地方交付税交付金",
+        "地方債",
+        "国庫支出金",
+        "地方税"
+      ],
+      "answerIndex": 2,
+      "explanation": "義務教育や道路整備などに使われる。"
+    },
+    {
+      "id": "soc_pol06_022",
+      "category": "knowledge",
+      "prompt": "地方公共団体が借り入れるお金（借金）を何という？",
+      "choices": [
+        "地方税",
+        "交付金",
+        "国債",
+        "地方債"
+      ],
+      "answerIndex": 3,
+      "explanation": "学校や道路などの建設に使われる。"
+    },
+    {
+      "id": "soc_pol06_023",
+      "category": "knowledge",
+      "prompt": "2000年代に進められた、国庫補助負担金・税源移譲・地方交付税を一体で見直した改革は？",
+      "choices": [
+        "三位一体の改革",
+        "構造改革特区",
+        "郵政民営化",
+        "行政改革"
+      ],
+      "answerIndex": 0,
+      "explanation": "地方の財政の自立をめざした。"
+    },
+    {
+      "id": "soc_pol06_024",
+      "category": "thinking",
+      "prompt": "地方財政で、自主財源（地方税など）の割合が低いことの問題として適切なものは？",
+      "choices": [
+        "選挙が行えなくなる",
+        "国の予算が増える",
+        "住民の負担が大きすぎる",
+        "国からのお金にたよることになり、地域の実情に合った政策を進めにくい"
+      ],
+      "answerIndex": 3,
+      "explanation": "財源の多くが国に左右されてしまう。"
     }
   ]
 }

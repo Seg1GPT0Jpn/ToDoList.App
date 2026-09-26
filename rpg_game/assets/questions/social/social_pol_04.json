@@ -159,6 +159,162 @@
       ],
       "answerIndex": 0,
       "explanation": "アメリカの大統領は議会の解散権をもたず、議会も不信任決議ができない。"
+    },
+    {
+      "id": "soc_pol04_013",
+      "category": "knowledge",
+      "prompt": "国務大臣を任命するのは？",
+      "choices": [
+        "天皇",
+        "内閣総理大臣",
+        "国会",
+        "最高裁判所"
+      ],
+      "answerIndex": 1,
+      "explanation": "任命した国務大臣を罷免することもできる。"
+    },
+    {
+      "id": "soc_pol04_014",
+      "category": "knowledge",
+      "prompt": "国務大臣について、憲法で定められていることは？",
+      "choices": [
+        "全員が国会議員でなければならない",
+        "国会議員であってはならない",
+        "全員が衆議院議員でなければならない",
+        "過半数は国会議員でなければならない"
+      ],
+      "answerIndex": 3,
+      "explanation": "民間人から任命されることもある。"
+    },
+    {
+      "id": "soc_pol04_015",
+      "category": "knowledge",
+      "prompt": "内閣は、行政権の行使について誰に対して連帯して責任を負う？",
+      "choices": [
+        "天皇",
+        "地方公共団体",
+        "国会",
+        "裁判所"
+      ],
+      "answerIndex": 2,
+      "explanation": "議院内閣制のしくみ。"
+    },
+    {
+      "id": "soc_pol04_016",
+      "category": "knowledge",
+      "prompt": "天皇の国事行為に助言と承認を与えるのは？",
+      "choices": [
+        "宮内庁",
+        "最高裁判所",
+        "内閣",
+        "国会"
+      ],
+      "answerIndex": 2,
+      "explanation": "天皇は国政に関する権能をもたない。"
+    },
+    {
+      "id": "soc_pol04_017",
+      "category": "knowledge",
+      "prompt": "最高裁判所の長官を指名するのは？",
+      "choices": [
+        "国会",
+        "内閣",
+        "国民",
+        "天皇"
+      ],
+      "answerIndex": 1,
+      "explanation": "指名にもとづいて天皇が任命する。"
+    },
+    {
+      "id": "soc_pol04_018",
+      "category": "knowledge",
+      "prompt": "条約を締結するのは？",
+      "choices": [
+        "天皇",
+        "国会",
+        "内閣",
+        "外務大臣だけ"
+      ],
+      "answerIndex": 2,
+      "explanation": "条約の承認は国会が行う。"
+    },
+    {
+      "id": "soc_pol04_019",
+      "category": "knowledge",
+      "prompt": "恩赦（刑罰を軽くしたり免除したりすること）を決定するのは？",
+      "choices": [
+        "国会",
+        "検察庁",
+        "内閣",
+        "最高裁判所"
+      ],
+      "answerIndex": 2,
+      "explanation": "天皇が認証する。"
+    },
+    {
+      "id": "soc_pol04_020",
+      "category": "knowledge",
+      "prompt": "憲法で、公務員はどのような存在とされている？",
+      "choices": [
+        "特定の政党の代表者",
+        "天皇の臣下",
+        "一部の国民の代理人",
+        "全体の奉仕者"
+      ],
+      "answerIndex": 3,
+      "explanation": "第15条に定められている。"
+    },
+    {
+      "id": "soc_pol04_021",
+      "category": "knowledge",
+      "prompt": "退職した官僚が、関係の深い企業や団体に再就職することを何という？",
+      "choices": [
+        "行政指導",
+        "天下り",
+        "縦割り行政",
+        "規制緩和"
+      ],
+      "answerIndex": 1,
+      "explanation": "官民の癒着につながると批判される。"
+    },
+    {
+      "id": "soc_pol04_022",
+      "category": "knowledge",
+      "prompt": "国の事業の一部を切り離し、効率的に運営させるための法人を何という？",
+      "choices": [
+        "NPO 法人",
+        "政党",
+        "独立行政法人",
+        "株式会社"
+      ],
+      "answerIndex": 2,
+      "explanation": "国立美術館や大学入試センターなど。"
+    },
+    {
+      "id": "soc_pol04_023",
+      "category": "knowledge",
+      "prompt": "衆議院議員総選挙の後に初めて国会が召集されたとき、内閣はどうする？",
+      "choices": [
+        "参議院を解散する",
+        "衆議院を解散する",
+        "そのまま続ける",
+        "総辞職する"
+      ],
+      "answerIndex": 3,
+      "explanation": "その後、新しい内閣総理大臣が指名される。"
+    },
+    {
+      "id": "soc_pol04_024",
+      "category": "thinking",
+      "prompt": "公正取引委員会などの行政委員会が、内閣からある程度独立している理由は？",
+      "choices": [
+        "政治的な中立や、専門的な判断が必要な仕事をしているから",
+        "地方公共団体の機関だから",
+        "予算がないから",
+        "国会が決めたから"
+      ],
+      "answerIndex": 0,
+      "explanation": "独占禁止法の運用などを公正に行うため。"
     }
   ]
 }
