@@ -28,6 +28,53 @@ flutter run               # Android の実機やエミュレーターをつな�
 - **バトル**: 4択をタップして回答します。制限時間を過ぎると時間切れです
 - **最初からやり直す**: ワールドマップ右上の「︙」→「データをリセット」
 
+## Firebase につなぐ（友達に Web で遊んでもらう）
+
+school_planner に組み込む前に友達に遊んでもらえるよう、このアプリだけで使う Firebase プロジェクトにつなげるようにしてあります。
+
+- Firebase の設定がないとき（`lib/firebase_options.dart` が仮のまま）は、これまでどおり端末の中だけに保存します
+- 設定すると、アカウント画面の「Google アカウントで登録」が本物の Google ログインになります
+  - ログイン中は、冒険の記録（`users/{uid}/rpg_progress/main`）とプロフィール（`users/{uid}/rpg_profile/main`）が Firestore にも保存されます
+  - 別の端末でも、同じ Google アカウントで登録すれば続きから遊べます（クラウドに記録があればそちらを使い、なければ端末の記録をクラウドに上げます）
+- 個人用単語帳（LEAP）はクラウドに送りません。今までどおり端末の中だけです
+
+### 手順（最初の1回だけ・PC で行う）
+
+1. https://console.firebase.google.com で新しいプロジェクトを作る（例：`tsuzuri-quest`。Google アナリティクスは不要）
+2. 「Authentication」→「始める」→「Sign-in method」で **Google** を有効にする（サポートメールに自分のアドレスを選ぶ）
+3. 「Firestore Database」→「データベースを作成」。場所は `asia-northeast1`（東京）、モードは「本番環境モード」
+4. PC にツールを入れてログインする
+   ```
+   npm install -g firebase-tools
+   firebase login
+   dart pub global activate flutterfire_cli
+   ```
+5. 設定ファイルを作る（`lib/firebase_options.dart` が本物に置きかわる）
+   ```
+   cd rpg_game_app
+   flutterfire configure --project=<プロジェクトID> --platforms=web
+   firebase use --add <プロジェクトID>
+   ```
+6. セキュリティルールを反映する（本人だけが自分の記録を読み書きできるルール。`firestore.rules`）
+   ```
+   firebase deploy --only firestore:rules
+   ```
+
+### 公開する（更新するたびに行う）
+
+```
+cd rpg_game_app
+flutter build web --release
+firebase deploy --only hosting
+```
+
+表示される `https://<プロジェクトID>.web.app` を友達に送れば、スマホ（iPhone も可）や PC のブラウザで遊べます。
+
+メモ:
+- `lib/firebase_options.dart` の中身は秘密の情報ではありません（Web アプリの識別子です）。データはセキュリティルールで守っています。コミットしてかまいません
+- 課金はダミーのままなので、友達はどのワールドも無料で解放できます
+- Android アプリで Google ログインを使うには、署名の SHA-1 を Firebase に登録する作業が別に必要です（今回は Web だけ）
+
 ## 定期テストの海（学習モード）
 
 ワールドマップ上部の「定期テストの海」から入ります。ダメージはなく、1問ずつ正解と解説を確認できます。
@@ -90,7 +137,7 @@ flutter run               # Android の実機やエミュレーターをつな�
 
 - 初めて起動したときに、ユーザー名（1〜12文字）を登録します。ワールドマップの上に表示されます
 - ワールドマップ右上の「︙」→「アカウント」で、ユーザー名の変更と Google アカウントの連携・解除ができます
-- 今は Google ログインがダミーです（メールアドレスを入力すると連携したことになります）。school_planner に組み込むときに、Firebase Auth の Google ログインに差し替えます（`lib/account/account_service.dart`）
+- Firebase を設定すると本物の Google ログインになります（`lib/cloud/`）。設定していないときはダミーです（メールアドレスを入力すると連携したことになります）
 
 ## 宿（RPG）
 
@@ -155,7 +202,8 @@ lib/
 ├─ field/      フィールド（Flame のゲーム本体・マップ定義・画面）
 ├─ battle/     バトル画面・結果画面・デッキ画面
 ├─ study/      定期テストの海・宿の授業・復習手帳
-├─ account/    ユーザー名・Google 連携（ダミー）
+├─ account/    ユーザー名・Google 連携
+├─ cloud/      Firebase（Google ログイン・Firestore との同期）
 └─ data/       進行状況の保存（端末内。移植時は Firestore に差し替え）
 ```
 
@@ -163,6 +211,6 @@ lib/
 
 - UI はこの試作では `package:flutter/material.dart` を使っています。school_planner では `material_ui` パッケージと既存の `lib/app/theme.dart` に合わせて書き換えます
 - 保存先（`PrefsProgressRepository`）は、Firestore の `users/{uid}/rpg_progress/main` を読み書きする実装に差し替えます
-- プロフィール（`ProfileRepository`）は `users/{uid}/rpg_profile/main` に、Google ログイン（`MockAccountService`）は Firebase Auth に差し替えます
+- 単体版の同期（`lib/cloud/cloud_sync.dart`）は school_planner と同じパス（`users/{uid}/rpg_progress/main`、`users/{uid}/rpg_profile/main`）を使っています。組み込むときは、school_planner の Firebase プロジェクトと Firestore の仕組みに合わせます
 - 準備中ワールドの購入ダイアログは、デバッグ版でだけ「購入する」ボタンが出ます（ダミー購入）
 - マップの形は `lib/field/field_map.dart` の文字の並びで決まります。敵の配置と進行順がおかしくないかは、テスト（`test/field_map_test.dart`）で自動チェックしています

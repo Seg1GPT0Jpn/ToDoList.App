@@ -6,6 +6,8 @@ import 'account/account_service.dart';
 import 'account/profile_repository.dart';
 import 'app/services.dart';
 import 'app/theme.dart';
+import 'cloud/cloud_sync.dart';
+import 'cloud/firebase_account_service.dart';
 import 'data/prefs_progress_repository.dart';
 import 'study/personal_books.dart';
 import 'world/world_map_screen.dart';
@@ -13,12 +15,18 @@ import 'world/world_map_screen.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final prefs = await SharedPreferences.getInstance();
+  final progress = PrefsProgressRepository(prefs);
+  final profiles = ProfileRepository(prefs);
+  // Firebase の設定があればクラウドと同期する。なければ端末の中だけで動く
+  final cloud = await CloudSync.start(progress: progress, profiles: profiles);
   runApp(
     RpgServices(
-      repository: PrefsProgressRepository(prefs),
+      repository: progress,
       personalBooks: PersonalBooks(prefs),
-      profiles: ProfileRepository(prefs),
-      account: MockAccountService(),
+      profiles: profiles,
+      account: cloud == null
+          ? MockAccountService()
+          : FirebaseAccountService(cloud),
       child: const TsuzuriQuestApp(),
     ),
   );

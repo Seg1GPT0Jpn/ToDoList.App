@@ -68,7 +68,12 @@ class _AccountScreenState extends State<AccountScreen> {
       context: context,
       builder: (c) => AlertDialog(
         title: const Text('Google アカウントの登録を解除しますか？'),
-        content: const Text('この端末の冒険の記録は消えません。'),
+        content: Text(
+          services.account.isReal
+              ? 'ログアウトします。この端末の記録も、クラウドの記録も消えません。'
+                    'もう一度同じ Google アカウントで登録すると、クラウドの続きから遊べます。'
+              : 'この端末の冒険の記録は消えません。',
+        ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(c, false),
@@ -188,8 +193,8 @@ class _AccountScreenState extends State<AccountScreen> {
                   const Padding(
                     padding: EdgeInsets.only(top: 10),
                     child: Text(
-                      '※ いまの試作版では、Google への登録はテスト用のダミーです。'
-                      'school_planner に組み込むときに本物のログイン（Firebase Authentication）につなぎます。',
+                      '※ Firebase が設定されていないため、Google への登録はテスト用のダミーです。'
+                      '設定のしかたは README の「Firebase につなぐ」を見てください。',
                       style: TextStyle(
                         fontSize: 11.5,
                         color: TsuzuriColors.inkSoft,

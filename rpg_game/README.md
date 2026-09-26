@@ -166,7 +166,7 @@ dart run bin/play.dart --reset  # セーブデータを消して最初から
 
 ### プロフィール（ユーザー名と Google アカウント）
 `PlayerProfile` に、ユーザー名（1〜12文字）と、連携した Google アカウント（メールアドレス・表示名・連携日時）を保存します。
-今の試作アプリでは Google ログインはダミー（メールアドレスを入力するだけ）です。school_planner に組み込むときに Firebase Auth の Google ログインに差し替えます。
+試作アプリ（`rpg_game_app`）は、Firebase を設定すると本物の Google ログインと Firestore への保存が使えます（設定しないときはダミー）。手順は `rpg_game_app/README.md` の「Firebase につなぐ」にあります。
 
 ## 守っている制約
 

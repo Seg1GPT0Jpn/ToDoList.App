@@ -4,16 +4,19 @@ import 'dart:convert';
 import 'package:rpg_game/rpg_game.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-/// 端末内に進行状況を保存する（単体アプリ用）。
+/// 端末内に進行状況を保存する。
 ///
-/// school_planner へ移植するときは Firestore 版
-/// （users/{uid}/rpg_progress/main）に差し替える。
+/// Firebase につながっているときは、保存のたびに [onSaved] で
+/// Firestore（users/{uid}/rpg_progress/main）にも書き込む（`CloudSync`）。
 class PrefsProgressRepository implements ProgressRepository {
   PrefsProgressRepository(this._prefs);
 
   static const _key = 'rpg_progress_v1';
   final SharedPreferences _prefs;
   final _controller = StreamController<RpgProgress>.broadcast();
+
+  /// 保存したあとに呼ばれる（クラウドへの書き込み用）
+  Future<void> Function(RpgProgress progress)? onSaved;
 
   RpgProgress _read() {
     final raw = _prefs.getString(_key);
@@ -36,6 +39,12 @@ class PrefsProgressRepository implements ProgressRepository {
 
   @override
   Future<void> save(RpgProgress progress) async {
+    await replaceLocal(progress);
+    await onSaved?.call(progress);
+  }
+
+  /// 端末内だけを書きかえる（クラウドから読み込んだときに使う）
+  Future<void> replaceLocal(RpgProgress progress) async {
     await _prefs.setString(_key, jsonEncode(progress.toMap()));
     _controller.add(progress);
   }
@@ -54,5 +63,6 @@ class PrefsProgressRepository implements ProgressRepository {
   Future<void> reset() async {
     await _prefs.remove(_key);
     _controller.add(RpgProgress.initial);
+    await onSaved?.call(RpgProgress.initial);
   }
 }
