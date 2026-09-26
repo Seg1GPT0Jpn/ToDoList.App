@@ -32,7 +32,10 @@ enum QuestionCategory {
   meaning('意味'),
 
   /// 語法・文法
-  usage('語法');
+  usage('語法'),
+
+  /// 長文読解
+  reading('読解');
 
   const QuestionCategory(this.label);
   final String label;
@@ -45,6 +48,25 @@ enum QuestionCategory {
   }
 }
 
+/// 長文読解の本文。
+class Passage {
+  const Passage(
+      {required this.id, required this.title, required this.paragraphs});
+
+  final String id;
+  final String title;
+  final List<String> paragraphs;
+
+  factory Passage.fromJson(Map<String, dynamic> json) => Passage(
+        id: json['id'] as String,
+        title: json['title'] as String,
+        paragraphs: List<String>.from(json['paragraphs'] as List),
+      );
+
+  Map<String, dynamic> toJson() =>
+      {'id': id, 'title': title, 'paragraphs': paragraphs};
+}
+
 /// 4択クイズの1問。
 class QuizQuestion {
   QuizQuestion({
@@ -55,6 +77,7 @@ class QuizQuestion {
     required this.answerIndex,
     this.sentence,
     this.explanation,
+    this.passage,
   }) {
     if (choices.length != 4) {
       throw ArgumentError('問題 $id: 選択肢は4つ必要です（${choices.length}個）');
@@ -79,9 +102,14 @@ class QuizQuestion {
   final int answerIndex;
   final String? explanation;
 
+  /// 長文読解の問題なら、その本文
+  final Passage? passage;
+
   String get answer => choices[answerIndex];
 
-  factory QuizQuestion.fromJson(Map<String, dynamic> json) => QuizQuestion(
+  factory QuizQuestion.fromJson(Map<String, dynamic> json,
+          {Map<String, Passage> passages = const {}}) =>
+      QuizQuestion(
         id: json['id'] as String,
         category: QuestionCategory.parse(json['category'] as String),
         prompt: json['prompt'] as String,
@@ -89,6 +117,10 @@ class QuizQuestion {
         choices: List<String>.from(json['choices'] as List),
         answerIndex: json['answerIndex'] as int,
         explanation: json['explanation'] as String?,
+        passage: json['passageId'] == null
+            ? null
+            : (passages[json['passageId']] ??
+                (throw FormatException('本文が見つかりません: ${json['passageId']}'))),
       );
 
   Map<String, dynamic> toJson() => {
@@ -99,6 +131,7 @@ class QuizQuestion {
         'choices': choices,
         'answerIndex': answerIndex,
         if (explanation != null) 'explanation': explanation,
+        if (passage != null) 'passageId': passage!.id,
       };
 }
 
@@ -126,21 +159,61 @@ class QuestionSet {
   final int version;
   final List<QuizQuestion> questions;
 
-  factory QuestionSet.fromJson(Map<String, dynamic> json) => QuestionSet(
-        setId: json['setId'] as String,
-        worldId: json['worldId'] as String,
-        origin: QuestionOrigin.parse(json['origin'] as String),
-        version: json['version'] as int,
-        questions: (json['questions'] as List)
-            .map((e) => QuizQuestion.fromJson(e as Map<String, dynamic>))
-            .toList(),
-      );
+  /// このセットに含まれる長文の本文
+  List<Passage> get passages {
+    final seen = <String>{};
+    return [
+      for (final q in questions)
+        if (q.passage != null && seen.add(q.passage!.id)) q.passage!,
+    ];
+  }
+
+  factory QuestionSet.fromJson(Map<String, dynamic> json) {
+    final passages = {
+      for (final p in (json['passages'] as List?) ?? const [])
+        (p as Map<String, dynamic>)['id'] as String: Passage.fromJson(p),
+    };
+    return QuestionSet(
+      setId: json['setId'] as String,
+      worldId: json['worldId'] as String,
+      origin: QuestionOrigin.parse(json['origin'] as String),
+      version: json['version'] as int,
+      questions: (json['questions'] as List)
+          .map((e) => QuizQuestion.fromJson(e as Map<String, dynamic>,
+              passages: passages))
+          .toList(),
+    );
+  }
 
   Map<String, dynamic> toJson() => {
         'setId': setId,
         'worldId': worldId,
         'origin': origin.name,
         'version': version,
+        if (passages.isNotEmpty)
+          'passages': passages.map((p) => p.toJson()).toList(),
         'questions': questions.map((q) => q.toJson()).toList(),
       };
+
+  /// 複数の問題セットを1つにまとめる（エリア16以降の出題範囲用）。
+  /// 出どころが1つでも original 以外なら、まとめたセットもそれに合わせる。
+  static QuestionSet merge(String setId, List<QuestionSet> sets) {
+    final questions = <QuizQuestion>[];
+    final ids = <String>{};
+    for (final s in sets) {
+      for (final q in s.questions) {
+        if (ids.add(q.id)) questions.add(q);
+      }
+    }
+    final origin = sets.every((s) => s.origin == QuestionOrigin.original)
+        ? QuestionOrigin.original
+        : sets.firstWhere((s) => s.origin != QuestionOrigin.original).origin;
+    return QuestionSet(
+      setId: setId,
+      worldId: sets.first.worldId,
+      origin: origin,
+      version: 1,
+      questions: questions,
+    );
+  }
 }

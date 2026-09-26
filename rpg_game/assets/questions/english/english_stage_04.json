@@ -2,137 +2,137 @@
   "setId": "english_stage_04",
   "worldId": "english",
   "origin": "original",
-  "version": 2,
+  "version": 3,
   "questions": [
     {
       "id": "en04_001",
       "category": "meaning",
-      "prompt": "「abandon」の意味は？",
+      "prompt": "「improve」の意味は？",
       "choices": [
-        "採用する",
-        "見捨てる",
-        "吸収する",
-        "延長する"
+        "練習する",
+        "改善する",
+        "守る",
+        "人気のある"
       ],
       "answerIndex": 1,
-      "explanation": "abandon は「見捨てる；（計画などを）断念する」。"
+      "explanation": "improve は「改善する」。"
     },
     {
       "id": "en04_002",
       "category": "meaning",
-      "prompt": "「emphasize」の意味は？",
+      "prompt": "「reduce」の意味は？",
       "choices": [
-        "共感する",
-        "雇う",
-        "強調する",
-        "見積もる"
+        "減らす",
+        "決める",
+        "借りる",
+        "有名な"
       ],
-      "answerIndex": 2,
-      "explanation": "emphasize は「強調する」。名詞は emphasis。"
+      "answerIndex": 0,
+      "explanation": "reduce は「減らす」。"
     },
     {
       "id": "en04_003",
       "category": "meaning",
-      "prompt": "「consequence」の意味は？",
+      "prompt": "「increase」の意味は？",
       "choices": [
-        "良心",
-        "会議",
-        "順序",
-        "結果"
+        "建てる",
+        "増やす",
+        "健康な",
+        "村"
       ],
-      "answerIndex": 3,
-      "explanation": "consequence は「結果、影響」。as a consequence（その結果）。"
+      "answerIndex": 1,
+      "explanation": "increase は「増やす」。"
     },
     {
       "id": "en04_004",
       "category": "meaning",
-      "prompt": "「inevitable」の意味は？",
+      "prompt": "「continue」の意味は？",
       "choices": [
-        "避けられない",
-        "目に見えない",
-        "信じられない",
-        "欠かせない"
+        "続ける",
+        "旅行する",
+        "覚えている",
+        "心配する"
       ],
       "answerIndex": 0,
-      "explanation": "in-（否定）+ evitable（避けられる）で「避けられない」。"
+      "explanation": "continue は「続ける」。"
     },
     {
       "id": "en04_005",
       "category": "meaning",
-      "prompt": "「persuade」の意味は？",
+      "prompt": "「finish」の意味は？",
       "choices": [
-        "追い求める",
-        "推測する",
-        "説得する",
-        "主張する"
+        "心配する",
+        "説明する",
+        "旅行する",
+        "終える"
       ],
-      "answerIndex": 2,
-      "explanation": "persuade + 人 + to do で「人を説得して〜させる」。"
+      "answerIndex": 3,
+      "explanation": "finish は「終える」。"
     },
     {
       "id": "en04_006",
       "category": "meaning",
-      "prompt": "「recognize」の意味は？",
+      "prompt": "「believe」の意味は？",
       "choices": [
-        "推薦する",
-        "認識する",
-        "回復する",
-        "記録する"
+        "信じる",
+        "村",
+        "招待する",
+        "増やす"
       ],
-      "answerIndex": 1,
-      "explanation": "recognize は「（見て）それとわかる、認める」。"
+      "answerIndex": 0,
+      "explanation": "believe は「信じる」。"
     },
     {
       "id": "en04_007",
       "category": "meaning",
-      "prompt": "「significant」の意味は？",
+      "prompt": "「hope」の意味は？",
       "choices": [
-        "類似した",
-        "十分な",
-        "繊細な",
-        "重要な"
+        "望む",
+        "運ぶ",
+        "忘れる",
+        "到着する"
       ],
-      "answerIndex": 3,
-      "explanation": "significant は「重要な、意味のある」。"
+      "answerIndex": 0,
+      "explanation": "hope は「望む」。"
     },
     {
       "id": "en04_008",
       "category": "meaning",
-      "prompt": "「reluctant」の意味は？",
+      "prompt": "「worry」の意味は？",
       "choices": [
-        "気が進まない",
-        "熱心な",
-        "丁寧な",
-        "不安定な"
+        "訪れる",
+        "忘れる",
+        "心配する",
+        "準備する"
       ],
-      "answerIndex": 0,
-      "explanation": "be reluctant to do で「〜するのに気が進まない」。反対の意味は eager。"
+      "answerIndex": 2,
+      "explanation": "worry は「心配する」。"
     },
     {
       "id": "en04_009",
       "category": "meaning",
-      "prompt": "「eventually」の意味は？",
+      "prompt": "「be absent from ～」の意味は？",
       "choices": [
         "すぐに",
-        "結局は",
-        "偶然に",
-        "定期的に"
+        "～に頼る",
+        "～が理由で",
+        "～を欠席する"
       ],
-      "answerIndex": 1,
-      "explanation": "eventually は「最終的には、結局は」。"
+      "answerIndex": 3,
+      "explanation": "be absent from ～ は「～を欠席する」。"
     },
     {
       "id": "en04_010",
       "category": "meaning",
-      "prompt": "「appropriate」の意味は？",
+      "prompt": "「be proud of ～」の意味は？",
       "choices": [
-        "典型的な",
-        "一時的な",
-        "適切な",
-        "正確な"
+        "決心する",
+        "～を誇りに思う",
+        "～に注意を払う",
+        "わざと"
       ],
-      "answerIndex": 2,
-      "explanation": "appropriate は「適切な、ふさわしい」。正確なは accurate。"
+      "answerIndex": 1,
+      "explanation": "be proud of ～ は「～を誇りに思う」。"
     },
     {
       "id": "en04_011",
@@ -164,169 +164,169 @@
       "id": "en04_013",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "You walked for five hours. You (   ) be tired.",
+      "sentence": "It was careless (   ) you to leave the door open.",
       "choices": [
-        "can't",
-        "must",
-        "need",
-        "shall"
+        "for",
+        "to",
+        "with",
+        "of"
       ],
-      "answerIndex": 1,
-      "explanation": "must be 〜 で「〜にちがいない」（確信のある推量）。"
+      "answerIndex": 3,
+      "explanation": "careless など人の性質を表す形容詞のとき、意味上の主語は of 〜 で表す。"
     },
     {
       "id": "en04_014",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "The lights are off. He (   ) be at home.",
+      "sentence": "She seems (   ) ill last week.",
       "choices": [
-        "must",
-        "will",
-        "can't",
-        "shall"
+        "to be",
+        "to have been",
+        "being",
+        "have been"
       ],
-      "answerIndex": 2,
-      "explanation": "can't be 〜 で「〜のはずがない」。must be（〜にちがいない）の反対。"
+      "answerIndex": 1,
+      "explanation": "「今そう見える」のに「病気だった」のは過去のことなので、完了不定詞 to have been。"
     },
     {
       "id": "en04_015",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "(   ) you help me with this bag?",
+      "sentence": "I think it important (   ) your own opinion.",
       "choices": [
-        "Shall",
-        "Must",
-        "May",
-        "Could"
+        "to have",
+        "have",
+        "having",
+        "had"
       ],
-      "answerIndex": 3,
-      "explanation": "Could you 〜? で「〜していただけませんか」とていねいに頼む。"
+      "answerIndex": 0,
+      "explanation": "think it 〜 to do の it は仮の目的語。本当の目的語は to have your own opinion。"
     },
     {
       "id": "en04_016",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "(   ) we go for a walk? ― Sure, let's.",
+      "sentence": "He seems (   ) rich when he was young.",
       "choices": [
-        "Will",
-        "Shall",
-        "Must",
-        "Would"
+        "to be",
+        "to have been",
+        "being",
+        "have been"
       ],
       "answerIndex": 1,
-      "explanation": "Shall we 〜? で「（一緒に）〜しませんか」と誘う。返事の let's がヒント。"
+      "explanation": "「今そう思われる」のに「裕福だった」のは過去なので完了不定詞。"
     },
     {
       "id": "en04_017",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "I (   ) play tennis every Sunday when I was a child.",
+      "sentence": "Everyone wants (   ) by others.",
       "choices": [
-        "use to",
-        "am used to",
-        "used to",
-        "was using"
+        "to love",
+        "loving",
+        "to be loved",
+        "loved"
       ],
       "answerIndex": 2,
-      "explanation": "used to do で「以前はよく〜したものだ（今はしない）」。be used to -ing（〜に慣れている）と区別しよう。"
+      "explanation": "「愛されること」は受動態の不定詞 to be + 過去分詞。"
     },
     {
       "id": "en04_018",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "You (   ) better see a doctor.",
+      "sentence": "The house is said (   ) built 100 years ago.",
       "choices": [
-        "have",
-        "would",
-        "should",
-        "had"
+        "to be",
+        "to have been",
+        "being",
+        "have been"
       ],
-      "answerIndex": 3,
-      "explanation": "had better + 動詞の原形 で「〜したほうがよい」。"
+      "answerIndex": 1,
+      "explanation": "「言われている（今）」より前に「建てられた」ので完了受動不定詞 to have been + 過去分詞。"
     },
     {
       "id": "en04_019",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "I wish I (   ) speak French.",
+      "sentence": "(   ) tell the truth, I don't like him.",
       "choices": [
-        "could",
-        "can",
-        "will",
-        "am able"
+        "For",
+        "To",
+        "In",
+        "By"
       ],
-      "answerIndex": 0,
-      "explanation": "I wish + 仮定法過去で「〜できればいいのに」。can の過去形 could を使う。"
+      "answerIndex": 1,
+      "explanation": "to tell the truth（実を言うと）は独立不定詞。"
     },
     {
       "id": "en04_020",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "If I (   ) you, I would take the train.",
+      "sentence": "It is necessary (   ) you to finish it.",
       "choices": [
-        "am",
-        "were",
-        "will be",
-        "have been"
+        "of",
+        "for",
+        "to",
+        "with"
       ],
       "answerIndex": 1,
-      "explanation": "現在の事実と反対の仮定（仮定法過去）では、be 動詞は主語に関係なく were が基本。"
+      "explanation": "不定詞の意味上の主語はふつう for 〜。人の性質を表す形容詞のときだけ of。"
     },
     {
       "id": "en04_021",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "She talks as if she (   ) everything.",
+      "sentence": "He is, (   ) speak, a walking dictionary.",
       "choices": [
-        "knows",
-        "has known",
-        "knew",
-        "will know"
+        "as to",
+        "so to",
+        "to",
+        "in order to"
       ],
-      "answerIndex": 2,
-      "explanation": "as if + 仮定法過去で「まるで〜であるかのように」。"
+      "answerIndex": 1,
+      "explanation": "so to speak（いわば）は独立不定詞。"
     },
     {
       "id": "en04_022",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "If you (   ) to win the lottery, what would you do?",
+      "sentence": "He is believed (   ) the money.",
       "choices": [
-        "are",
-        "will",
-        "have",
-        "were"
+        "to steal",
+        "to have stolen",
+        "stealing",
+        "stole"
       ],
-      "answerIndex": 3,
-      "explanation": "If S were to do は「万一〜するとしたら」と、起こりそうにない未来を仮定する。"
+      "answerIndex": 1,
+      "explanation": "「信じられている（今）」より前に「盗んだ」ので完了不定詞。"
     },
     {
       "id": "en04_023",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "(   ) I had more free time!",
+      "sentence": "The problem seems (   ) solved already.",
       "choices": [
-        "If only",
-        "Unless",
-        "Even",
-        "As if"
+        "to be",
+        "to have been",
+        "being",
+        "having been"
       ],
-      "answerIndex": 0,
-      "explanation": "If only + 仮定法で「〜でありさえすればなあ」と強い願望を表す。"
+      "answerIndex": 1,
+      "explanation": "already（すでに）解決されたので、完了受動不定詞 to have been + 過去分詞。"
     },
     {
       "id": "en04_024",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "It is high time you (   ) to bed.",
+      "sentence": "He was made (   ) the room by his mother.",
       "choices": [
-        "go",
-        "will go",
-        "going",
-        "went"
+        "clean",
+        "cleaning",
+        "cleaned",
+        "to clean"
       ],
       "answerIndex": 3,
-      "explanation": "It is high time + S + 過去形 で「もう〜してもいいころだ」。"
+      "explanation": "make + 人 + 原形 を受け身にすると be made to do と to が必要になる。"
     }
   ]
 }

@@ -68,7 +68,7 @@ void main() {
   });
 
   group('Progression.applyBattle', () {
-    test('初回ノーミスクリア: 30 × 1.2 = 36 経験値、次ステージ解放', () {
+    test('初回ノーミスクリア: 20 × 1.2 = 24 経験値、次ステージ解放', () {
       final r = Progression.applyBattle(
         progress: RpgProgress.initial,
         world: world,
@@ -76,7 +76,7 @@ void main() {
         summary: winAll(),
       );
       expect(r.firstClear, isTrue);
-      expect(r.expResult.expGained, 36);
+      expect(r.expResult.expGained, 24);
       expect(r.newlyUnlockedStageId, stage2.id);
       expect(r.progress.clearedStageIds, contains(stage1.id));
       expect(r.progress.level, 2);
@@ -90,7 +90,7 @@ void main() {
         stage: stage1,
         summary: winWithOneMiss(),
       );
-      expect(r.expResult.expGained, 30);
+      expect(r.expResult.expGained, 20);
     });
 
     test('2回目以降のクリアは半分、次ステージは再解放扱いにしない', () {
@@ -107,7 +107,7 @@ void main() {
         summary: winWithOneMiss(),
       );
       expect(second.firstClear, isFalse);
-      expect(second.expResult.expGained, 15);
+      expect(second.expResult.expGained, 10);
       expect(second.newlyUnlockedStageId, isNull);
       expect(second.progress.stageRecords[stage1.id]!.clearCount, 2);
     });
@@ -177,8 +177,8 @@ void main() {
       }
     });
 
-    test('英語ワールドは5〜8ステージで、敵がだんだん強くなる', () {
-      expect(world.stages.length, inInclusiveRange(5, 8));
+    test('英語ワールドは20エリアで、敵がだんだん強くなる', () {
+      expect(world.stages.length, 20);
       for (var i = 1; i < world.stages.length; i++) {
         final prev = world.stages[i - 1].enemy;
         final cur = world.stages[i].enemy;

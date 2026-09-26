@@ -97,6 +97,7 @@ class BattleEngine {
     required this.enemy,
     required List<QuizQuestion> questions,
     required this.timeLimit,
+    this.readingTimeLimit,
     Random? random,
     DamageCalculator? damage,
   })  : _deck = QuestionDeck(questions, random: random),
@@ -109,7 +110,14 @@ class BattleEngine {
   final PlayerStats player;
   final EnemyDef enemy;
   final Duration timeLimit;
+
+  /// 長文読解の設問の制限時間（未指定なら [timeLimit]）
+  final Duration? readingTimeLimit;
   final QuestionDeck _deck;
+
+  /// その問題の制限時間
+  Duration limitFor(PresentedQuestion q) =>
+      q.source.passage != null ? (readingTimeLimit ?? timeLimit) : timeLimit;
   final DamageCalculator _damage;
 
   int _playerHp;
@@ -137,14 +145,14 @@ class BattleEngine {
     if (choiceIndex < 0 || choiceIndex >= _current.choices.length) {
       throw RangeError.index(choiceIndex, _current.choices, 'choiceIndex');
     }
-    if (elapsed > timeLimit) return timeout();
+    if (elapsed > limitFor(_current)) return timeout();
     return _resolve(choiceIndex: choiceIndex, elapsed: elapsed);
   }
 
   /// 制限時間切れ。不正解と同じく敵の反撃を受ける。
   TurnResult timeout() {
     _ensureActive();
-    return _resolve(choiceIndex: null, elapsed: timeLimit);
+    return _resolve(choiceIndex: null, elapsed: limitFor(_current));
   }
 
   BattleSummary summary() => BattleSummary(
@@ -168,12 +176,12 @@ class BattleEngine {
       _combo++;
       _correct++;
       _maxCombo = max(_maxCombo, _combo);
-      quick = _damage.isQuick(elapsed, timeLimit);
+      quick = _damage.isQuick(elapsed, limitFor(q));
       toEnemy = _damage.playerAttack(
         attack: player.attack,
         combo: _combo,
         elapsed: elapsed,
-        timeLimit: timeLimit,
+        timeLimit: limitFor(q),
       );
       _enemyHp = max(0, _enemyHp - toEnemy);
     } else {

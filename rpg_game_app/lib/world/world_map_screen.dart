@@ -7,6 +7,7 @@ import '../app/services.dart';
 import '../app/theme.dart';
 import '../art/hero_painter.dart';
 import '../art/paper.dart';
+import '../battle/battle_screen.dart';
 import '../field/field_screen.dart';
 import '../study/sea_home_screen.dart';
 
@@ -101,6 +102,10 @@ class WorldMapScreen extends StatelessWidget {
             PopupMenuButton<String>(
               icon: const Icon(Icons.more_vert, color: TsuzuriColors.inkSoft),
               onSelected: (v) async {
+                if (v == 'trial') {
+                  await _pickTrial(context);
+                  return;
+                }
                 if (v != 'reset') return;
                 final ok = await showDialog<bool>(
                   context: context,
@@ -122,6 +127,7 @@ class WorldMapScreen extends StatelessWidget {
                 if (ok == true) await services.repository.reset();
               },
               itemBuilder: (_) => const [
+                PopupMenuItem(value: 'trial', child: Text('エリアを選んでバトル（確認用）')),
                 PopupMenuItem(value: 'reset', child: Text('データをリセット')),
               ],
             ),
@@ -184,6 +190,47 @@ class WorldMapScreen extends StatelessWidget {
       ],
     );
   }
+}
+
+/// 確認用：好きなエリアの敵とすぐに戦う（結果は保存しない）
+Future<void> _pickTrial(BuildContext context) async {
+  final services = RpgServices.of(context);
+  final world = RpgCatalog.world(RpgCatalog.englishWorldId);
+  final stage = await showDialog<StageDef>(
+    context: context,
+    builder: (c) => SimpleDialog(
+      title: const Text('エリアを選んでバトル（確認用）'),
+      children: [
+        const Padding(
+          padding: EdgeInsets.fromLTRB(24, 0, 24, 8),
+          child: Text(
+            '結果は保存されません。レベルは今のまま戦います。',
+            style: TextStyle(fontSize: 12, color: TsuzuriColors.inkSoft),
+          ),
+        ),
+        for (final s in world.stages)
+          SimpleDialogOption(
+            onPressed: () => Navigator.pop(c, s),
+            child: Text('${s.order}. ${s.name}（${s.grammarTheme}）'),
+          ),
+      ],
+    ),
+  );
+  if (stage == null || !context.mounted) return;
+  final pool = await services.loadStagePool(stage);
+  final progress = await services.repository.load();
+  if (pool == null || !pool.origin.usableInRpg || !context.mounted) return;
+  Navigator.of(context).push(
+    MaterialPageRoute<void>(
+      builder: (_) => BattleScreen(
+        world: world,
+        stage: stage,
+        questions: pool.questions,
+        progress: progress,
+        trial: true,
+      ),
+    ),
+  );
 }
 
 /// その場で足ぶみしている主人公

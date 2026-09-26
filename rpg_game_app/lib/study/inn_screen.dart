@@ -28,22 +28,29 @@ class _InnScreenState extends State<InnScreen> {
   String? _error;
 
   Future<void> _startPractice() async {
-    final set = await RpgServices.of(context).questions
-        .load(widget.stage.questionSetId);
+    final services = RpgServices.of(context);
+    final set = await services.loadStagePool(widget.stage);
     if (!mounted) return;
     if (set == null || !set.origin.usableInRpg) {
       setState(() => _error = '練習問題を読み込めませんでした');
       return;
     }
-    // 授業のテーマ（文法）の問題から出す
-    final grammar = set.questions
-        .where((q) => q.category == QuestionCategory.usage)
-        .toList();
+    // 授業のテーマ（文法）の問題から出す。長文エリアではエリア1〜15の文法問題を使う。
+    bool grammar(QuizQuestion q) =>
+        q.category == QuestionCategory.usage && q.passage == null;
+    var pool = set.questions.where(grammar).toList();
+    if (pool.isEmpty) {
+      final first = RpgCatalog.englishStages.firstWhere((s) => s.order == 16);
+      final all = await services.loadStagePool(first);
+      if (!mounted) return;
+      pool = all?.questions.where(grammar).toList() ?? [];
+    }
+    if (pool.isEmpty) {
+      setState(() => _error = '練習問題を読み込めませんでした');
+      return;
+    }
     setState(() {
-      _session = PracticeSession(
-        grammar.isEmpty ? set.questions : grammar,
-        count: practiceCount,
-      );
+      _session = PracticeSession(pool, count: practiceCount);
       _phase = _Phase.practice;
     });
   }

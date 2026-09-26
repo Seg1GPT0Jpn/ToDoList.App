@@ -1,0 +1,332 @@
+{
+  "setId": "english_stage_12",
+  "worldId": "english",
+  "origin": "original",
+  "version": 3,
+  "questions": [
+    {
+      "id": "en12_001",
+      "category": "meaning",
+      "prompt": "「appropriate」の意味は？",
+      "choices": [
+        "適切な",
+        "有害な",
+        "首尾一貫した",
+        "本来備わっている"
+      ],
+      "answerIndex": 0,
+      "explanation": "appropriate は「適切な」。"
+    },
+    {
+      "id": "en12_002",
+      "category": "meaning",
+      "prompt": "「deteriorate」の意味は？",
+      "choices": [
+        "弱める",
+        "かなりの",
+        "重要な",
+        "悪化する"
+      ],
+      "answerIndex": 3,
+      "explanation": "deteriorate は「悪化する」。"
+    },
+    {
+      "id": "en12_003",
+      "category": "meaning",
+      "prompt": "「resilient」の意味は？",
+      "choices": [
+        "実行可能な",
+        "回復力のある",
+        "有害な",
+        "避けられない"
+      ],
+      "answerIndex": 1,
+      "explanation": "resilient は「回復力のある」。"
+    },
+    {
+      "id": "en12_004",
+      "category": "meaning",
+      "prompt": "「compensate」の意味は？",
+      "choices": [
+        "首尾一貫した",
+        "減少する",
+        "強調する",
+        "埋め合わせる"
+      ],
+      "answerIndex": 3,
+      "explanation": "compensate は「埋め合わせる」。"
+    },
+    {
+      "id": "en12_005",
+      "category": "meaning",
+      "prompt": "「anticipate」の意味は？",
+      "choices": [
+        "もっともらしい",
+        "予想する",
+        "見捨てる",
+        "広く行き渡る"
+      ],
+      "answerIndex": 1,
+      "explanation": "anticipate は「予想する」。"
+    },
+    {
+      "id": "en12_006",
+      "category": "meaning",
+      "prompt": "「contemporary」の意味は？",
+      "choices": [
+        "本来備わっている",
+        "見捨てる",
+        "漠然とした",
+        "現代の"
+      ],
+      "answerIndex": 3,
+      "explanation": "contemporary は「現代の」。"
+    },
+    {
+      "id": "en12_007",
+      "category": "meaning",
+      "prompt": "「undermine」の意味は？",
+      "choices": [
+        "気が進まない",
+        "両立できる",
+        "弱める",
+        "身につける"
+      ],
+      "answerIndex": 2,
+      "explanation": "undermine は「弱める」。"
+    },
+    {
+      "id": "en12_008",
+      "category": "meaning",
+      "prompt": "「substantial」の意味は？",
+      "choices": [
+        "かなりの",
+        "和らげる",
+        "本来備わっている",
+        "手の込んだ"
+      ],
+      "answerIndex": 0,
+      "explanation": "substantial は「かなりの」。"
+    },
+    {
+      "id": "en12_009",
+      "category": "meaning",
+      "prompt": "「make sense」の意味は？",
+      "choices": [
+        "意味をなす",
+        "少なくとも",
+        "～を楽しみに待つ",
+        "～に頼る"
+      ],
+      "answerIndex": 0,
+      "explanation": "make sense は「意味をなす」。"
+    },
+    {
+      "id": "en12_010",
+      "category": "meaning",
+      "prompt": "「pay attention to ～」の意味は？",
+      "choices": [
+        "～を見下す",
+        "～に参加する",
+        "～に注意を払う",
+        "偶然に"
+      ],
+      "answerIndex": 2,
+      "explanation": "pay attention to ～ は「～に注意を払う」。"
+    },
+    {
+      "id": "en12_011",
+      "category": "partOfSpeech",
+      "prompt": "次のうち「動詞」はどれ？",
+      "choices": [
+        "simple",
+        "simply",
+        "simplicity",
+        "simplify"
+      ],
+      "answerIndex": 3,
+      "explanation": "-ify は動詞を作る語尾。simplify = 単純にする。"
+    },
+    {
+      "id": "en12_012",
+      "category": "partOfSpeech",
+      "prompt": "次のうち「副詞」はどれ？",
+      "choices": [
+        "final",
+        "finally",
+        "finalize",
+        "finality"
+      ],
+      "answerIndex": 1,
+      "explanation": "final + -ly で副詞 finally（ついに）。finalize は動詞。"
+    },
+    {
+      "id": "en12_013",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "If it (   ) for your help, I would have failed.",
+      "choices": [
+        "were not",
+        "is not",
+        "has not been",
+        "had not been"
+      ],
+      "answerIndex": 3,
+      "explanation": "過去の事実と反対の仮定（仮定法過去完了）なので If it had not been for 〜（〜がなかったら）。"
+    },
+    {
+      "id": "en12_014",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) the weather been fine, we would have gone out.",
+      "choices": [
+        "If",
+        "Had",
+        "Were",
+        "Should"
+      ],
+      "answerIndex": 1,
+      "explanation": "If the weather had been fine の If を省略すると、Had が文頭に出る倒置になる。"
+    },
+    {
+      "id": "en12_015",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I wish I (   ) harder last year.",
+      "choices": [
+        "studied",
+        "have studied",
+        "had studied",
+        "study"
+      ],
+      "answerIndex": 2,
+      "explanation": "過去（last year）の事実と反対の願望なので I wish + 過去完了。"
+    },
+    {
+      "id": "en12_016",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) your advice, I would have made a big mistake.",
+      "choices": [
+        "With",
+        "For",
+        "By",
+        "Without"
+      ],
+      "answerIndex": 3,
+      "explanation": "Without 〜 で「〜がなかったら」（= If it had not been for 〜）。"
+    },
+    {
+      "id": "en12_017",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Were it not for water, no living things (   ) exist.",
+      "choices": [
+        "can",
+        "will",
+        "may",
+        "could"
+      ],
+      "answerIndex": 3,
+      "explanation": "Were it not for 〜（= If it were not for 〜）は仮定法過去なので、主節は助動詞の過去形。"
+    },
+    {
+      "id": "en12_018",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "If I had taken the medicine, I (   ) better now.",
+      "choices": [
+        "would feel",
+        "would have felt",
+        "will feel",
+        "felt"
+      ],
+      "answerIndex": 0,
+      "explanation": "過去の仮定（had taken）＋今の結果（now）は混合仮定法。主節は would + 原形。"
+    },
+    {
+      "id": "en12_019",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) I known the truth, I would have told you.",
+      "choices": [
+        "If",
+        "Had",
+        "Were",
+        "Should"
+      ],
+      "answerIndex": 1,
+      "explanation": "If I had known の if を省略すると Had が文頭に出る。"
+    },
+    {
+      "id": "en12_020",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I wish I (   ) the concert yesterday.",
+      "choices": [
+        "went to",
+        "have gone to",
+        "had gone to",
+        "go to"
+      ],
+      "answerIndex": 2,
+      "explanation": "過去の事実と反対の願望は I wish + 過去完了。"
+    },
+    {
+      "id": "en12_021",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) you need help, call me.",
+      "choices": [
+        "Would",
+        "Should",
+        "Had",
+        "Were"
+      ],
+      "answerIndex": 1,
+      "explanation": "If you should need の if を省略した形。「万一〜なら」。"
+    },
+    {
+      "id": "en12_022",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "If it had not rained yesterday, the ground (   ) dry now.",
+      "choices": [
+        "would have been",
+        "would be",
+        "will be",
+        "is"
+      ],
+      "answerIndex": 1,
+      "explanation": "過去の仮定 ＋ 今の結果（now）の混合仮定法。"
+    },
+    {
+      "id": "en12_023",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "It's time we (   ) home.",
+      "choices": [
+        "leave",
+        "left",
+        "leaving",
+        "will leave"
+      ],
+      "answerIndex": 1,
+      "explanation": "It's time + S + 過去形 で「もう〜する時間だ」。"
+    },
+    {
+      "id": "en12_024",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) for your help, I would have failed.",
+      "choices": [
+        "If",
+        "Unless",
+        "But",
+        "Without"
+      ],
+      "answerIndex": 2,
+      "explanation": "but for 〜 で「〜がなかったら」（= without）。Without for とは言わない。"
+    }
+  ]
+}

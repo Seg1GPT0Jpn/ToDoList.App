@@ -18,7 +18,11 @@ class BattleScreen extends StatefulWidget {
     required this.stage,
     required this.questions,
     required this.progress,
+    this.trial = false,
   });
+
+  /// 確認用のバトル（結果を保存しない）
+  final bool trial;
 
   final WorldDef world;
   final StageDef stage;
@@ -55,6 +59,7 @@ class _BattleScreenState extends State<BattleScreen>
     enemy: widget.stage.enemy,
     questions: widget.questions,
     timeLimit: Duration(seconds: widget.stage.timeLimitSeconds),
+    readingTimeLimit: Duration(seconds: widget.stage.readingTimeLimitSeconds),
   );
 
   late final _idle = AnimationController(
@@ -127,6 +132,8 @@ class _BattleScreenState extends State<BattleScreen>
     _stopwatch
       ..reset()
       ..start();
+    // 長文の設問は制限時間が長い
+    _timer.duration = _engine.limitFor(_engine.currentQuestion);
     _timer.forward(from: 0);
   }
 
@@ -219,7 +226,7 @@ class _BattleScreenState extends State<BattleScreen>
       stage: widget.stage,
       summary: summary,
     );
-    await services.repository.save(result.progress);
+    if (!widget.trial) await services.repository.save(result.progress);
     if (!mounted) return;
     Navigator.of(context).pushReplacement(
       PageRouteBuilder<void>(
@@ -299,9 +306,15 @@ class _BattleScreenState extends State<BattleScreen>
             child: Column(
               children: [
                 _topBar(),
-                Expanded(flex: 5, child: _enemyArea()),
+                if (q.source.passage != null)
+                  Expanded(flex: 6, child: _readingArea(q.source.passage!))
+                else
+                  Expanded(flex: 5, child: _enemyArea()),
                 _timerBar(),
-                Expanded(flex: 6, child: _questionArea(q)),
+                Expanded(
+                  flex: q.source.passage != null ? 7 : 6,
+                  child: _questionArea(q),
+                ),
                 _playerBar(),
               ],
             ),
@@ -372,7 +385,7 @@ class _BattleScreenState extends State<BattleScreen>
                           dimension: size,
                           child: CustomPaint(
                             painter: _EnemyPainter(
-                              widget.stage.enemy.id,
+                              widget.stage.enemy,
                               _idle.value * 120,
                               flash: hit > 0 && hit < 1 ? (1 - hit) : 0,
                             ),
@@ -416,6 +429,101 @@ class _BattleScreenState extends State<BattleScreen>
     );
   }
 
+  /// 長文の巻物。右上に小さく敵がいて、正解すると攻撃が当たる。
+  Widget _readingArea(Passage passage) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(36, 4, 12, 4),
+      child: Stack(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              color: const Color(0xFFFFF8E7),
+              borderRadius: BorderRadius.circular(12),
+              border: Border.all(color: const Color(0xFFC9A96E), width: 1.5),
+              boxShadow: const [
+                BoxShadow(
+                  color: Color(0x22000000),
+                  blurRadius: 6,
+                  offset: Offset(0, 2),
+                ),
+              ],
+            ),
+            child: Scrollbar(
+              child: ListView(
+                key: PageStorageKey(passage.id),
+                padding: const EdgeInsets.fromLTRB(14, 12, 72, 14),
+                children: [
+                  Text(
+                    '📜 ${passage.title}',
+                    style: serif(15, color: TsuzuriColors.accent),
+                  ),
+                  const SizedBox(height: 8),
+                  for (final (i, p) in passage.paragraphs.indexed)
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 8),
+                      child: Text.rich(
+                        TextSpan(
+                          children: [
+                            TextSpan(
+                              text: '[${i + 1}] ',
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w800,
+                                color: TsuzuriColors.accent,
+                              ),
+                            ),
+                            TextSpan(text: p),
+                          ],
+                        ),
+                        style: const TextStyle(
+                          fontSize: 14,
+                          height: 1.55,
+                          color: TsuzuriColors.ink,
+                        ),
+                      ),
+                    ),
+                ],
+              ),
+            ),
+          ),
+          // 右上の小さな敵（攻撃が当たるとゆれて光る）
+          Positioned(
+            right: 4,
+            top: 4,
+            child: AnimatedBuilder(
+              animation: Listenable.merge([_idle, _enemyHit, _defeat]),
+              builder: (context, _) {
+                final hit = _enemyHit.value;
+                final d = _defeat.value;
+                return Opacity(
+                  opacity: 1 - d,
+                  child: Transform.translate(
+                    offset: Offset(sin(hit * pi * 6) * 6 * (1 - hit), 0),
+                    child: SizedBox.square(
+                      dimension: 64,
+                      child: CustomPaint(
+                        painter: _EnemyPainter(
+                          widget.stage.enemy,
+                          _idle.value * 120,
+                          flash: hit > 0 && hit < 1 ? (1 - hit) : 0,
+                        ),
+                      ),
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
+          for (final p in _popups.where((p) => !p.onPlayer))
+            Align(
+              key: p.key,
+              alignment: const Alignment(0.75, -0.55),
+              child: _PopupText(popup: p),
+            ),
+        ],
+      ),
+    );
+  }
+
   Widget _timerBar() {
     return Padding(
       padding: const EdgeInsets.fromLTRB(40, 4, 16, 4),
@@ -423,7 +531,10 @@ class _BattleScreenState extends State<BattleScreen>
         animation: _timer,
         builder: (_, _) {
           final left = 1 - _timer.value;
-          final secs = (widget.stage.timeLimitSeconds * left).ceil();
+          final limit = _engine.limitFor(
+            _last?.question ?? _engine.currentQuestion,
+          );
+          final secs = (limit.inSeconds * left).ceil();
           return Row(
             children: [
               const Icon(
@@ -546,6 +657,7 @@ class _BattleScreenState extends State<BattleScreen>
   }
 
   Widget _choices(PresentedQuestion q, TurnResult? last) {
+    final reading = q.source.passage != null;
     Widget choice(int i) {
       Color bg = TsuzuriColors.card;
       Color border = TsuzuriColors.accent.withValues(alpha: 0.5);
@@ -588,9 +700,11 @@ class _BattleScreenState extends State<BattleScreen>
                     padding: const EdgeInsets.symmetric(horizontal: 8),
                     child: Text(
                       q.choices[i],
-                      textAlign: TextAlign.center,
+                      textAlign: reading ? TextAlign.left : TextAlign.center,
+                      maxLines: 3,
+                      overflow: TextOverflow.ellipsis,
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: reading ? 13 : 16,
                         fontWeight: FontWeight.w600,
                         color: fg,
                       ),
@@ -604,6 +718,20 @@ class _BattleScreenState extends State<BattleScreen>
       );
     }
 
+    if (reading) {
+      // 長文の選択肢は長いので縦に並べる
+      return Column(
+        children: [
+          for (var i = 0; i < 4; i++)
+            Expanded(
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [choice(i)],
+              ),
+            ),
+        ],
+      );
+    }
     return Column(
       children: [
         Expanded(
@@ -833,8 +961,8 @@ class _PopupText extends StatelessWidget {
 }
 
 class _EnemyPainter extends CustomPainter {
-  _EnemyPainter(this.enemyId, this.t, {this.flash = 0});
-  final String enemyId;
+  _EnemyPainter(this.enemy, this.t, {this.flash = 0});
+  final EnemyDef enemy;
   final double t;
   final double flash;
 
@@ -842,12 +970,12 @@ class _EnemyPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final s = size.shortestSide;
     if (flash <= 0) {
-      paintEnemy(canvas, s, enemyId, t);
+      paintEnemy(canvas, s, enemy.look, t, color: enemy.color);
       return;
     }
     // 攻撃が当たった瞬間に白く光らせる
     canvas.saveLayer(Offset.zero & size, Paint());
-    paintEnemy(canvas, s, enemyId, t);
+    paintEnemy(canvas, s, enemy.look, t, color: enemy.color);
     canvas.drawRect(
       Offset.zero & size,
       Paint()

@@ -13,22 +13,30 @@ Paint _stroke(double w, [Color c = _ink]) => Paint()
   ..strokeCap = StrokeCap.round;
 
 /// 敵を [size] の正方形に描く。[t] は経過秒（待機アニメ用）。
-void paintEnemy(Canvas canvas, double size, String enemyId, double t) {
-  switch (enemyId) {
-    case 'doodle_slime':
-      _slime(canvas, size, t);
-    case 'ink_goblin':
-      _goblin(canvas, size, t);
-    case 'bookmark_bat':
-      _bat(canvas, size, t);
-    case 'dictionary_golem':
-      _golem(canvas, size, t);
-    case 'grammar_knight':
-      _knight(canvas, size, t);
-    case 'essay_dragon':
-      _dragon(canvas, size, t);
+///
+/// [look]（slime / goblin / bat / golem / knight / dragon）で形を、
+/// [color] で体の色を決める。
+void paintEnemy(
+  Canvas canvas,
+  double size,
+  String look,
+  double t, {
+  int? color,
+}) {
+  final c = color == null ? null : Color(color);
+  switch (look) {
+    case 'goblin':
+      _goblin(canvas, size, t, c ?? const Color(0xFF3A3A58));
+    case 'bat':
+      _bat(canvas, size, t, c ?? const Color(0xFF7E57C2));
+    case 'golem':
+      _golem(canvas, size, t, c ?? const Color(0xFFA1887F));
+    case 'knight':
+      _knight(canvas, size, t, c ?? const Color(0xFF6E7F8A));
+    case 'dragon':
+      _dragon(canvas, size, t, c ?? const Color(0xFFB23A48));
     default:
-      _slime(canvas, size, t);
+      _slime(canvas, size, t, c ?? const Color(0xFF9CCB8B));
   }
 }
 
@@ -71,7 +79,7 @@ void _eyes(
 }
 
 /// 落書きスライム：ぷるぷる揺れる、ゆるい線の落書き
-void _slime(Canvas c, double s, double t) {
+void _slime(Canvas c, double s, double t, Color body) {
   _shadow(c, s);
   final squish = sin(t * 5) * 0.06;
   c.save();
@@ -82,7 +90,7 @@ void _slime(Canvas c, double s, double t) {
     ..cubicTo(-s * 0.42, -s * 0.3, -s * 0.2, -s * 0.58, 0, -s * 0.58)
     ..cubicTo(s * 0.22, -s * 0.58, s * 0.42, -s * 0.3, s * 0.36, 0)
     ..close();
-  c.drawPath(p, _fill(const Color(0xFF9CCB8B)));
+  c.drawPath(p, _fill(body));
   // 鉛筆の塗りムラ
   final hatch = _stroke(s * 0.015, const Color(0x3363A35A));
   for (var i = -4; i < 5; i++) {
@@ -117,12 +125,11 @@ void _slime(Canvas c, double s, double t) {
 }
 
 /// インク染みゴブリン：インクのしずく型、とがった耳
-void _goblin(Canvas c, double s, double t) {
+void _goblin(Canvas c, double s, double t, Color body) {
   _shadow(c, s);
   final hop = sin(t * 4).abs() * s * 0.05;
   c.save();
   c.translate(s * 0.5, s * 0.88 - hop);
-  const body = Color(0xFF3A3A58);
   // 耳
   for (final d in [-1.0, 1.0]) {
     final ear = Path()
@@ -163,7 +170,7 @@ void _goblin(Canvas c, double s, double t) {
 }
 
 /// しおりバット：しおりのリボンの翼をぱたぱた
-void _bat(Canvas c, double s, double t) {
+void _bat(Canvas c, double s, double t, Color body) {
   _shadow(c, s, 0.4);
   final flap = sin(t * 10) * 0.45;
   final float = sin(t * 3) * s * 0.04;
@@ -191,7 +198,7 @@ void _bat(Canvas c, double s, double t) {
     c.drawPath(w, _stroke(s * 0.025));
     c.restore();
   }
-  c.drawCircle(Offset.zero, s * 0.17, _fill(const Color(0xFF7E57C2)));
+  c.drawCircle(Offset.zero, s * 0.17, _fill(body));
   // 耳
   for (final d in [-1.0, 1.0]) {
     final ear = Path()
@@ -199,7 +206,7 @@ void _bat(Canvas c, double s, double t) {
       ..lineTo(d * s * 0.12, -s * 0.28)
       ..lineTo(d * s * 0.15, -s * 0.1)
       ..close();
-    c.drawPath(ear, _fill(const Color(0xFF7E57C2)));
+    c.drawPath(ear, _fill(body));
     c.drawPath(ear, _stroke(s * 0.02));
   }
   c.drawCircle(Offset.zero, s * 0.17, _stroke(s * 0.025));
@@ -222,7 +229,7 @@ void _bat(Canvas c, double s, double t) {
 }
 
 /// 辞書ゴーレム：分厚い本が積み重なった巨体
-void _golem(Canvas c, double s, double t) {
+void _golem(Canvas c, double s, double t, Color body) {
   _shadow(c, s, 0.7);
   final sway = sin(t * 1.8) * 0.04;
   c.save();
@@ -289,13 +296,13 @@ void _golem(Canvas c, double s, double t) {
 }
 
 /// 文法ナイト：兜と羽飾り、「A」の盾
-void _knight(Canvas c, double s, double t) {
+void _knight(Canvas c, double s, double t, Color tint) {
   _shadow(c, s, 0.55);
   final breathe = sin(t * 2.2) * s * 0.012;
   c.save();
   c.translate(s * 0.5, s * 0.9);
   const steel = Color(0xFF9AAAB5);
-  const steelDark = Color(0xFF6E7F8A);
+  final steelDark = tint;
   // 体
   final body = RRect.fromRectAndRadius(
     Rect.fromLTWH(-s * 0.2, -s * 0.42 - breathe, s * 0.4, s * 0.4),
@@ -375,12 +382,12 @@ void _knight(Canvas c, double s, double t) {
 }
 
 /// 英作文ドラゴン：罫線入りの紙の翼を持つ主
-void _dragon(Canvas c, double s, double t) {
+void _dragon(Canvas c, double s, double t, Color tint) {
   _shadow(c, s, 0.75);
   final flap = sin(t * 2.5) * 0.15;
   c.save();
   c.translate(s * 0.5, s * 0.9);
-  const scale = Color(0xFFB23A48);
+  final scale = tint;
   // 翼（ノートの紙）
   for (final d in [-1.0, 1.0]) {
     c.save();

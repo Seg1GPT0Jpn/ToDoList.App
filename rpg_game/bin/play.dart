@@ -9,6 +9,7 @@ import 'dart:io';
 import 'package:rpg_game/rpg_game.dart';
 
 final _saveFile = File('.rpg_save.json');
+Passage? _shownPassage;
 
 Future<void> main(List<String> args) async {
   if (args.contains('--reset') && _saveFile.existsSync()) {
@@ -17,7 +18,8 @@ Future<void> main(List<String> args) async {
   }
 
   final source = JsonQuestionSource((id) async {
-    final f = File('assets/questions/english/$id.json');
+    final folder = id.startsWith('sea_') ? 'sea' : 'english';
+    final f = File('assets/questions/$folder/$id.json');
     return f.existsSync() ? f.readAsStringSync() : null;
   });
   final world = RpgCatalog.world(RpgCatalog.englishWorldId);
@@ -26,7 +28,10 @@ Future<void> main(List<String> args) async {
   while (true) {
     final stage = _chooseStage(world, progress);
     if (stage == null) break;
-    final set = await source.load(stage.questionSetId);
+    final sets = [
+      for (final id in stage.questionSetIds) await source.load(id),
+    ].whereType<QuestionSet>().toList();
+    final set = sets.isEmpty ? null : QuestionSet.merge(stage.id, sets);
     if (set == null) {
       stdout.writeln('このステージの問題はまだ準備中です。\n');
       continue;
@@ -78,6 +83,7 @@ RpgProgress _playBattle(
     enemy: stage.enemy,
     questions: set.questions,
     timeLimit: Duration(seconds: stage.timeLimitSeconds),
+    readingTimeLimit: Duration(seconds: stage.readingTimeLimitSeconds),
   );
 
   stdout.writeln('== ${stage.order}. ${stage.name} ==');
@@ -89,6 +95,15 @@ RpgProgress _playBattle(
     final q = battle.currentQuestion;
     stdout.writeln('あなた HP ${battle.playerHp}/${player.maxHp}   '
         '${stage.enemy.name} HP ${battle.enemyHp}/${stage.enemy.maxHp}');
+    final passage = q.source.passage;
+    if (passage != null && passage != _shownPassage) {
+      _shownPassage = passage;
+      stdout.writeln('―― 長文「${passage.title}」 ――');
+      for (final (i, p) in passage.paragraphs.indexed) {
+        stdout.writeln('［${i + 1}］$p');
+      }
+      stdout.writeln();
+    }
     stdout.writeln('[${q.source.category.label}] ${q.source.prompt}');
     if (q.source.sentence != null) stdout.writeln('  ${q.source.sentence}');
     for (var i = 0; i < q.choices.length; i++) {

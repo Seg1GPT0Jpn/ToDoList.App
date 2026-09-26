@@ -2,137 +2,137 @@
   "setId": "english_stage_03",
   "worldId": "english",
   "origin": "original",
-  "version": 2,
+  "version": 3,
   "questions": [
     {
       "id": "en03_001",
       "category": "meaning",
-      "prompt": "「predict」の意味は？",
+      "prompt": "「invite」の意味は？",
       "choices": [
-        "保護する",
-        "予測する",
-        "生産する",
-        "防ぐ"
+        "心配する",
+        "天気",
+        "招待する",
+        "準備する"
       ],
-      "answerIndex": 1,
-      "explanation": "pre-（前に）+ dict（言う）で「予測する」。防ぐは prevent。"
+      "answerIndex": 2,
+      "explanation": "invite は「招待する」。"
     },
     {
       "id": "en03_002",
       "category": "meaning",
-      "prompt": "「obvious」の意味は？",
+      "prompt": "「protect」の意味は？",
       "choices": [
-        "明らかな",
-        "複雑な",
-        "慎重な",
-        "退屈な"
+        "守る",
+        "有名な",
+        "受け取る",
+        "建てる"
       ],
       "answerIndex": 0,
-      "explanation": "obvious は「明らかな、明白な」。"
+      "explanation": "protect は「守る」。"
     },
     {
       "id": "en03_003",
       "category": "meaning",
-      "prompt": "「opportunity」の意味は？",
+      "prompt": "「prepare」の意味は？",
       "choices": [
-        "意見",
-        "義務",
-        "反対",
-        "機会"
+        "必要な",
+        "準備する",
+        "招待する",
+        "貸す"
       ],
-      "answerIndex": 3,
-      "explanation": "opportunity は「機会、好機」。chance とほぼ同じ意味。"
+      "answerIndex": 1,
+      "explanation": "prepare は「準備する」。"
     },
     {
       "id": "en03_004",
       "category": "meaning",
-      "prompt": "「sufficient」の意味は？",
+      "prompt": "「practice」の意味は？",
       "choices": [
-        "効率的な",
-        "突然の",
-        "十分な",
-        "繊細な"
+        "到着する",
+        "訪れる",
+        "似ている",
+        "練習する"
       ],
-      "answerIndex": 2,
-      "explanation": "sufficient は「十分な」（= enough）。反対は insufficient。"
+      "answerIndex": 3,
+      "explanation": "practice は「練習する」。"
     },
     {
       "id": "en03_005",
       "category": "meaning",
-      "prompt": "「reduce」の意味は？",
+      "prompt": "「travel」の意味は？",
       "choices": [
+        "旅行する",
+        "建てる",
         "減らす",
-        "増やす",
-        "断る",
-        "延期する"
+        "招待する"
       ],
       "answerIndex": 0,
-      "explanation": "reduce は「減らす」。反対は increase。"
+      "explanation": "travel は「旅行する」。"
     },
     {
       "id": "en03_006",
       "category": "meaning",
-      "prompt": "「employ」の意味は？",
+      "prompt": "「visit」の意味は？",
       "choices": [
-        "楽しむ",
-        "雇う",
-        "空にする",
-        "説明する"
+        "必要な",
+        "訪れる",
+        "選ぶ",
+        "運ぶ"
       ],
       "answerIndex": 1,
-      "explanation": "employ は「雇う；使う」。employer（雇い主）、employee（従業員）。"
+      "explanation": "visit は「訪れる」。"
     },
     {
       "id": "en03_007",
       "category": "meaning",
-      "prompt": "「disappear」の意味は？",
+      "prompt": "「collect」の意味は？",
       "choices": [
-        "現れる",
-        "失望させる",
-        "消える",
-        "反対する"
+        "覚えている",
+        "人気のある",
+        "集める",
+        "村"
       ],
       "answerIndex": 2,
-      "explanation": "dis- は反対の意味。appear（現れる）→ disappear（消える）。失望させるは disappoint。"
+      "explanation": "collect は「集める」。"
     },
     {
       "id": "en03_008",
       "category": "meaning",
-      "prompt": "「consider」の意味は？",
+      "prompt": "「report」の意味は？",
       "choices": [
-        "支配する",
-        "提案する",
-        "修理する",
-        "よく考える"
+        "人気のある",
+        "終える",
+        "報告する",
+        "静かな"
       ],
-      "answerIndex": 3,
-      "explanation": "consider は「よく考える；〜とみなす」。consider -ing（〜しようかと考える）。"
+      "answerIndex": 2,
+      "explanation": "report は「報告する」。"
     },
     {
       "id": "en03_009",
       "category": "meaning",
-      "prompt": "「patient（形容詞）」の意味は？",
+      "prompt": "「look up ～」の意味は？",
       "choices": [
-        "正直な",
-        "辛抱強い",
-        "臆病な",
-        "活発な"
+        "～を（辞書などで）調べる",
+        "～するとすぐに",
+        "～をあきらめる",
+        "～しさえすれば"
       ],
-      "answerIndex": 1,
-      "explanation": "形容詞の patient は「辛抱強い」。名詞では「患者」の意味になる。"
+      "answerIndex": 0,
+      "explanation": "look up ～ は「～を（辞書などで）調べる」。"
     },
     {
       "id": "en03_010",
       "category": "meaning",
-      "prompt": "「reliable」の意味は？",
+      "prompt": "「get along with ～」の意味は？",
       "choices": [
-        "関連した",
-        "気が進まない",
-        "相対的な",
-        "信頼できる"
+        "偶然に",
+        "～と仲良くやっていく",
+        "～を突き止める",
+        "～の世話をする"
       ],
-      "answerIndex": 3,
-      "explanation": "rely（頼る）+ -able で「信頼できる」。"
+      "answerIndex": 1,
+      "explanation": "get along with ～ は「～と仲良くやっていく」。"
     },
     {
       "id": "en03_011",
@@ -164,169 +164,169 @@
       "id": "en03_013",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "This is the house (   ) my grandfather built.",
+      "sentence": "I want (   ) abroad someday.",
       "choices": [
-        "where",
-        "which",
-        "what",
-        "who"
+        "studying",
+        "to study",
+        "study",
+        "studied"
       ],
       "answerIndex": 1,
-      "explanation": "built の目的語が欠けているので関係代名詞 which。where は後ろが完全な文のときに使う。"
+      "explanation": "want は目的語に to 不定詞をとる。動名詞は不可。"
     },
     {
       "id": "en03_014",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "The man (   ) car was stolen called the police.",
+      "sentence": "He went to the library (   ) for the test.",
       "choices": [
-        "who",
-        "which",
-        "whose",
-        "whom"
+        "studying",
+        "study",
+        "to study",
+        "studied"
       ],
       "answerIndex": 2,
-      "explanation": "「その男の車」という所有の関係なので whose。"
+      "explanation": "「〜するために」（目的）は不定詞の副詞的用法。"
     },
     {
       "id": "en03_015",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "This is the town (   ) I was born.",
+      "sentence": "I have a lot of homework (   ).",
       "choices": [
-        "which",
-        "what",
-        "that",
-        "where"
+        "doing",
+        "to do",
+        "done",
+        "do"
       ],
-      "answerIndex": 3,
-      "explanation": "I was born は完全な文なので関係副詞 where（= in which）。"
+      "answerIndex": 1,
+      "explanation": "「やるべき宿題」。不定詞が後ろから名詞を修飾する（形容詞的用法）。"
     },
     {
       "id": "en03_016",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "This is the museum (   ) we visited last summer.",
+      "sentence": "It is important (   ) breakfast every day.",
       "choices": [
-        "which",
-        "where",
-        "when",
-        "in which"
+        "eat",
+        "to eat",
+        "eaten",
+        "ate"
       ],
-      "answerIndex": 0,
-      "explanation": "visit は他動詞で目的語が欠けているので関係代名詞 which。"
+      "answerIndex": 1,
+      "explanation": "It is 〜 to do の形。It は仮の主語で、本当の主語は to eat breakfast every day。"
     },
     {
       "id": "en03_017",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "(   ) I want now is a little more time.",
+      "sentence": "My dream is (   ) a teacher.",
       "choices": [
-        "That",
-        "Which",
-        "What",
-        "It"
+        "become",
+        "to become",
+        "became",
+        "becomes"
       ],
-      "answerIndex": 2,
-      "explanation": "関係代名詞 what は「〜するもの・こと」で、先行詞を含む。"
+      "answerIndex": 1,
+      "explanation": "「〜すること」は不定詞の名詞的用法。ここでは補語。"
     },
     {
       "id": "en03_018",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "I don't know (   ) he will come tomorrow.",
+      "sentence": "I need something cold (   ).",
       "choices": [
-        "whether",
-        "that",
-        "what",
-        "which"
+        "drink",
+        "to drink",
+        "drinking",
+        "drank"
       ],
-      "answerIndex": 0,
-      "explanation": "「来るかどうか」は whether（= if）。what は後ろに欠けている要素が必要。"
+      "answerIndex": 1,
+      "explanation": "「冷たい飲み物（飲むための冷たいもの）」。不定詞が後ろから名詞を修飾する形容詞的用法。"
     },
     {
       "id": "en03_019",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "Do you know where (   )?",
+      "sentence": "She went to the station (   ) her aunt.",
       "choices": [
-        "does he live",
-        "he lives",
-        "lives he",
-        "he living"
+        "meet",
+        "meeting",
+        "to meet",
+        "met"
       ],
-      "answerIndex": 1,
-      "explanation": "文の中に入った疑問文（間接疑問）は、疑問詞の後ろが「主語 + 動詞」の語順になる。"
+      "answerIndex": 2,
+      "explanation": "「〜するために」（目的）は不定詞の副詞的用法。"
     },
     {
       "id": "en03_020",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "I have an uncle, (   ) lives in Canada.",
+      "sentence": "I was glad (   ) the news.",
       "choices": [
-        "that",
-        "which",
-        "who",
-        "whom"
+        "hear",
+        "to hear",
+        "hearing",
+        "heard"
       ],
-      "answerIndex": 2,
-      "explanation": "人が先行詞で主格なので who。カンマの後ろ（非制限用法）に that は使えない。"
+      "answerIndex": 1,
+      "explanation": "感情を表す形容詞 + to do で「〜して…」（感情の原因）。"
     },
     {
       "id": "en03_021",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "Nobody knows the reason (   ) she left the club.",
+      "sentence": "Please tell me how (   ) this machine.",
       "choices": [
-        "which",
-        "why",
-        "what",
-        "how"
+        "use",
+        "to use",
+        "using",
+        "used"
       ],
       "answerIndex": 1,
-      "explanation": "the reason に続く関係副詞は why。"
+      "explanation": "how to do で「〜のしかた」。疑問詞 + to 不定詞。"
     },
     {
       "id": "en03_022",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "(   ) hard you try, you can't finish it in a day.",
+      "sentence": "He is too young (   ) this movie.",
       "choices": [
-        "However",
-        "Whatever",
-        "Whenever",
-        "Wherever"
+        "to watch",
+        "watching",
+        "watch",
+        "watched"
       ],
       "answerIndex": 0,
-      "explanation": "however + 形容詞・副詞 で「どんなに〜しても」。"
+      "explanation": "too 〜 to do で「〜すぎて…できない」。"
     },
     {
       "id": "en03_023",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "There is no evidence (   ) he stole the money.",
+      "sentence": "She is kind (   ) to help us.",
       "choices": [
-        "which",
-        "what",
-        "whether",
-        "that"
+        "too",
+        "so",
+        "very",
+        "enough"
       ],
       "answerIndex": 3,
-      "explanation": "evidence の内容を説明する同格の that。後ろは完全な文になっている。"
+      "explanation": "形容詞 + enough to do で「…するほど〜だ」。enough は形容詞の後ろに置く。"
     },
     {
       "id": "en03_024",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "Please wait here (   ) I come back.",
+      "sentence": "I saw him (   ) the street.",
       "choices": [
-        "until",
-        "by",
-        "since",
-        "during"
+        "to cross",
+        "crossed",
+        "cross",
+        "crosses"
       ],
-      "answerIndex": 0,
-      "explanation": "「戻ってくるまで（ずっと）」は until。by は「〜までに（期限）」で、接続詞としては使わない。"
+      "answerIndex": 2,
+      "explanation": "知覚動詞 see + O + 動詞の原形（原形不定詞）で「O が〜するのを見る」。"
     }
   ]
 }

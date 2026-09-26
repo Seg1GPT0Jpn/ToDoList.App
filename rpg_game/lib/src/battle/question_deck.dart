@@ -43,15 +43,31 @@ class QuestionDeck {
   }
 
   void _refill() {
-    _pile
-      ..addAll(_questions)
-      ..shuffle(_random);
-    // 山札の切れ目で直前と同じ問題が続かないようにする（draw は末尾から取る）
-    if (_pile.length > 1 && identical(_pile.last, _last)) {
-      final tmp = _pile.first;
-      _pile.first = _pile.last;
-      _pile.last = tmp;
+    // 長文の設問は本文ごとにまとめ、本文の中では順番どおりに出す。
+    // それ以外の問題は1問ずつのまとまりとしてシャッフルする。
+    final blocks = <List<QuizQuestion>>[];
+    final byPassage = <String, List<QuizQuestion>>{};
+    for (final q in _questions) {
+      final p = q.passage;
+      if (p == null) {
+        blocks.add([q]);
+      } else {
+        byPassage.putIfAbsent(p.id, () {
+          final list = <QuizQuestion>[];
+          blocks.add(list);
+          return list;
+        }).add(q);
+      }
     }
+    blocks.shuffle(_random);
+    // 直前と同じ問題が続かないようにする
+    if (blocks.length > 1 && identical(blocks.first.first, _last)) {
+      final tmp = blocks.first;
+      blocks.first = blocks.last;
+      blocks.last = tmp;
+    }
+    // draw は末尾から取るので逆順に積む
+    _pile.addAll([for (final b in blocks) ...b].reversed);
   }
 
   PresentedQuestion _present(QuizQuestion q) {

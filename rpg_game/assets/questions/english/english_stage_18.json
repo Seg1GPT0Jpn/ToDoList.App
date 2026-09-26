@@ -1,0 +1,247 @@
+{
+  "setId": "english_stage_18",
+  "worldId": "english",
+  "origin": "original",
+  "version": 1,
+  "passages": [
+    {
+      "id": "p18_1",
+      "title": "The School Garden",
+      "paragraphs": [
+        "Last spring, the students at Midori High School started a small garden behind the gym. At first, only five students joined the project. They planted tomatoes, cucumbers, and sunflowers, and they took turns watering the plants every morning before class.",
+        "In July, the tomatoes were ready to pick. The students gave some of them to the school cafeteria, and the cooks used them to make a special salad. Many students who had never visited the garden tried the salad and became interested in the project.",
+        "Now more than thirty students take care of the garden. The club leader, Aya, says, \"Growing food takes time and patience, but it also brings people together.\""
+      ]
+    },
+    {
+      "id": "p18_2",
+      "title": "A Message in a Bottle",
+      "paragraphs": [
+        "When Ken was ten years old, he wrote a short letter, put it in a glass bottle, and threw it into the sea near his grandfather's house. In the letter, he wrote his name, his address, and a simple question: \"Where will this bottle go?\"",
+        "For years, nothing happened, and Ken almost forgot about the bottle. Then, when he was sixteen, he received a postcard from a woman in Canada. She had found the bottle on a beach while she was walking her dog.",
+        "Ken and the woman began to exchange emails. She told him about life in her small town, and he told her about his school in Japan. Ken now says that the bottle taught him that the world is both very large and surprisingly small."
+      ]
+    },
+    {
+      "id": "p18_3",
+      "title": "Why We Yawn",
+      "paragraphs": [
+        "Almost everyone yawns several times a day, but scientists still do not fully understand why. One popular idea is that yawning helps to cool the brain. When we open our mouths wide and take a deep breath, cool air may lower the temperature of the blood that goes to the brain.",
+        "Yawning is also contagious. If you see someone yawn, you are likely to yawn too. Interestingly, this happens more often between family members and close friends than between strangers.",
+        "Some researchers think that this shows yawning may be connected to empathy, the ability to understand how other people feel. However, more studies are needed before we can be sure."
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "en18_001",
+      "category": "reading",
+      "prompt": "How many students joined the project at first?",
+      "choices": [
+        "Five",
+        "Ten",
+        "Thirty",
+        "More than thirty"
+      ],
+      "answerIndex": 0,
+      "explanation": "第1段落 At first, only five students joined the project. とある。",
+      "passageId": "p18_1"
+    },
+    {
+      "id": "en18_002",
+      "category": "reading",
+      "prompt": "第1段落の took turns の意味として最も適切なものは？",
+      "choices": [
+        "交代で行った",
+        "急いで行った",
+        "一緒にやめた",
+        "何度も失敗した"
+      ],
+      "answerIndex": 0,
+      "explanation": "take turns -ing は「交代で〜する」。毎朝、順番に水やりをしていた。",
+      "passageId": "p18_1"
+    },
+    {
+      "id": "en18_003",
+      "category": "reading",
+      "prompt": "第2段落の them（the cooks used them）が指すものは？",
+      "choices": [
+        "トマト",
+        "生徒たち",
+        "料理人たち",
+        "ひまわり"
+      ],
+      "answerIndex": 0,
+      "explanation": "直前の文の some of them（= the tomatoes）を受けている。料理人はトマトでサラダを作った。",
+      "passageId": "p18_1"
+    },
+    {
+      "id": "en18_004",
+      "category": "reading",
+      "prompt": "Why did many students become interested in the garden?",
+      "choices": [
+        "They ate a salad made with tomatoes from the garden.",
+        "Their teachers told them to join the club.",
+        "They saw sunflowers from the gym.",
+        "The garden won a prize in July."
+      ],
+      "answerIndex": 0,
+      "explanation": "第2段落最後の文。サラダを食べて、菜園に興味を持った。",
+      "passageId": "p18_1"
+    },
+    {
+      "id": "en18_005",
+      "category": "reading",
+      "prompt": "Aya の言葉が伝えていることとして最も適切なものは？",
+      "choices": [
+        "食べ物を育てるのは時間がかかるが、人を結びつける",
+        "野菜はすぐに育つ",
+        "部活動は少人数のほうがよい",
+        "給食の料理人は忙しい"
+      ],
+      "answerIndex": 0,
+      "explanation": "takes time and patience, but it also brings people together を言いかえたもの。",
+      "passageId": "p18_1"
+    },
+    {
+      "id": "en18_006",
+      "category": "reading",
+      "prompt": "Where did Ken throw the bottle?",
+      "choices": [
+        "Into the sea near his grandfather's house",
+        "Into a river in Canada",
+        "Into the sea near his school",
+        "Into a lake in his town"
+      ],
+      "answerIndex": 0,
+      "explanation": "第1段落 threw it into the sea near his grandfather's house。",
+      "passageId": "p18_2"
+    },
+    {
+      "id": "en18_007",
+      "category": "reading",
+      "prompt": "How old was Ken when he received the postcard?",
+      "choices": [
+        "Ten",
+        "Twelve",
+        "Sixteen",
+        "Twenty"
+      ],
+      "answerIndex": 2,
+      "explanation": "第2段落 when he was sixteen, he received a postcard。",
+      "passageId": "p18_2"
+    },
+    {
+      "id": "en18_008",
+      "category": "reading",
+      "prompt": "第2段落の She が指す人物は？",
+      "choices": [
+        "カナダの女性",
+        "ケンの祖母",
+        "ケンの先生",
+        "ケンの母"
+      ],
+      "answerIndex": 0,
+      "explanation": "直前の a woman in Canada を受けている。",
+      "passageId": "p18_2"
+    },
+    {
+      "id": "en18_009",
+      "category": "reading",
+      "prompt": "本文の内容と合うものは？",
+      "choices": [
+        "ケンは何年もの間、びんのことをほとんど忘れていた",
+        "ケンはすぐに返事を受け取った",
+        "女性は船の上でびんを見つけた",
+        "ケンはカナダに引っ越した"
+      ],
+      "answerIndex": 0,
+      "explanation": "For years, nothing happened, and Ken almost forgot about the bottle. と合う。",
+      "passageId": "p18_2"
+    },
+    {
+      "id": "en18_010",
+      "category": "reading",
+      "prompt": "ケンがびんから学んだこととして最も適切なものは？",
+      "choices": [
+        "世界はとても広いが、意外に近くもある",
+        "手紙は必ず届く",
+        "海はとても汚れている",
+        "外国語を学ぶのは難しい"
+      ],
+      "answerIndex": 0,
+      "explanation": "the world is both very large and surprisingly small の言いかえ。",
+      "passageId": "p18_2"
+    },
+    {
+      "id": "en18_011",
+      "category": "reading",
+      "prompt": "According to one popular idea, what does yawning do?",
+      "choices": [
+        "It helps to cool the brain.",
+        "It makes us sleepy.",
+        "It warms the blood.",
+        "It improves our eyesight."
+      ],
+      "answerIndex": 0,
+      "explanation": "第1段落 One popular idea is that yawning helps to cool the brain.",
+      "passageId": "p18_3"
+    },
+    {
+      "id": "en18_012",
+      "category": "reading",
+      "prompt": "第2段落の contagious の意味として最も適切なものは？",
+      "choices": [
+        "人から人へうつりやすい",
+        "危険な",
+        "静かな",
+        "めずらしい"
+      ],
+      "answerIndex": 0,
+      "explanation": "直後の「人があくびをするのを見ると自分もしやすい」が手がかり。",
+      "passageId": "p18_3"
+    },
+    {
+      "id": "en18_013",
+      "category": "reading",
+      "prompt": "Contagious yawning happens most often between ______.",
+      "choices": [
+        "family members and close friends",
+        "strangers",
+        "teachers and students",
+        "people and animals"
+      ],
+      "answerIndex": 0,
+      "explanation": "第2段落 more often between family members and close friends than between strangers。",
+      "passageId": "p18_3"
+    },
+    {
+      "id": "en18_014",
+      "category": "reading",
+      "prompt": "第3段落の this が指す内容は？",
+      "choices": [
+        "親しい人どうしのほうがあくびがうつりやすいこと",
+        "脳が冷やされること",
+        "深呼吸をすること",
+        "研究がもっと必要なこと"
+      ],
+      "answerIndex": 0,
+      "explanation": "直前の段落の内容（親しい人の間でよく起こること）を受けている。",
+      "passageId": "p18_3"
+    },
+    {
+      "id": "en18_015",
+      "category": "reading",
+      "prompt": "筆者の考えに最も近いものは？",
+      "choices": [
+        "あくびと共感の関係はまだはっきりしていない",
+        "あくびの理由は完全にわかっている",
+        "あくびは体に悪い",
+        "他人のあくびを見てはいけない"
+      ],
+      "answerIndex": 0,
+      "explanation": "more studies are needed before we can be sure（確かめるにはもっと研究が必要）。",
+      "passageId": "p18_3"
+    }
+  ]
+}

@@ -4,6 +4,7 @@ import 'dart:ui' as ui;
 import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flame/game.dart';
+import 'package:flutter/foundation.dart' show ValueNotifier;
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart' show KeyEventResult;
 import 'package:rpg_game/rpg_game.dart';
@@ -58,6 +59,9 @@ class FieldGame extends FlameGame with KeyboardEvents {
 
   /// ダイアログ表示中などは操作を受け付けない
   bool inputLocked = false;
+
+  /// 今いる地方（画面上部の表示用）
+  final region = ValueNotifier<Region>(Region.grass);
 
   /// 話しかけた直後、同じ方向を押しっぱなしで何度も話しかけないようにする
   Facing? _bumpedDirection;
@@ -137,6 +141,8 @@ class FieldGame extends FlameGame with KeyboardEvents {
   void update(double dt) {
     super.update(dt);
     _clampCamera();
+    final r = map.regionAt(player.cell.row);
+    if (region.value != r) region.value = r;
     final dir = padDirection ?? _keyDirection;
     if (dir != _bumpedDirection) _bumpedDirection = null;
     if (!inputLocked &&
@@ -240,32 +246,64 @@ class MapLayer extends PositionComponent {
     _trophy(canvas, g);
   }
 
+  /// 地方ごとの色
+  static const _floor = {
+    Region.grass: ui.Color(0xFFFAF6EE),
+    Region.coast: ui.Color(0xFFF4E7C6),
+    Region.cave: ui.Color(0xFFD6D0C8),
+    Region.lava: ui.Color(0xFF4A3530),
+  };
+  static const _gridColor = {
+    Region.grass: ui.Color(0xFFCFDDEA),
+    Region.coast: ui.Color(0xFFE6D3A6),
+    Region.cave: ui.Color(0xFFBDB5AB),
+    Region.lava: ui.Color(0xFF5E4640),
+  };
+  static const _wallColor = {
+    Region.grass: ui.Color(0xFFD9C7A5),
+    Region.coast: ui.Color(0xFFD9B98A),
+    Region.cave: ui.Color(0xFF7A746E),
+    Region.lava: ui.Color(0xFF2B1D1D),
+  };
+
   void _paintMap(ui.Canvas c) {
     final w = map.width * tileSize;
-    final h = map.height * tileSize;
-    c.drawRect(
-      Rect.fromLTWH(0, 0, w, h),
-      ui.Paint()..color = TsuzuriColors.paper,
-    );
-    final grid = ui.Paint()
-      ..color = TsuzuriColors.gridLine
-      ..strokeWidth = 1;
-    for (var x = 0.0; x <= w; x += tileSize / 2) {
-      c.drawLine(
-        Offset(x, 0),
-        Offset(x, h),
-        grid..strokeWidth = x % tileSize == 0 ? 1 : 0.4,
+    for (var r = 0; r < map.height; r++) {
+      final region = map.regionAt(r);
+      final y = r * tileSize;
+      c.drawRect(
+        Rect.fromLTWH(0, y, w, tileSize),
+        ui.Paint()..color = _floor[region]!,
       );
-    }
-    for (var y = 0.0; y <= h; y += tileSize / 2) {
+      final grid = ui.Paint()
+        ..color = _gridColor[region]!
+        ..strokeWidth = 1;
+      for (var x = 0.0; x <= w; x += tileSize / 2) {
+        c.drawLine(
+          Offset(x, y),
+          Offset(x, y + tileSize),
+          grid..strokeWidth = x % tileSize == 0 ? 1 : 0.4,
+        );
+      }
+      c.drawLine(Offset(0, y), Offset(w, y), grid..strokeWidth = 1);
       c.drawLine(
-        Offset(0, y),
-        Offset(w, y),
-        grid..strokeWidth = y % tileSize == 0 ? 1 : 0.4,
+        Offset(0, y + tileSize / 2),
+        Offset(w, y + tileSize / 2),
+        grid..strokeWidth = 0.4,
       );
+      // 溶岩エリアの床のひび
+      if (region == Region.lava) {
+        final crack = ui.Paint()
+          ..color = const ui.Color(0x66FF7A3D)
+          ..strokeWidth = 1;
+        for (var x = 8.0; x < w; x += 57) {
+          c.drawLine(Offset(x, y + 6), Offset(x + 9, y + 20), crack);
+        }
+      }
     }
     final rnd = Random(7);
     for (var r = 0; r < map.height; r++) {
+      final region = map.regionAt(r);
       for (var col = 0; col < map.width; col++) {
         final rect = Rect.fromLTWH(
           col * tileSize,
@@ -275,11 +313,11 @@ class MapLayer extends PositionComponent {
         );
         switch (map.tileAt(col, r)) {
           case '#':
-            _wall(c, rect, rnd);
+            _wall(c, rect, rnd, region);
           case 'T':
-            _tree(c, rect, rnd);
+            _obstacle(c, rect, rnd, region);
           case '~':
-            _pond(c, rect);
+            _pond(c, rect, region);
           case 'S':
             _sign(c, rect);
           case 'I':
@@ -295,10 +333,12 @@ class MapLayer extends PositionComponent {
     ..strokeWidth = 1.6
     ..strokeCap = ui.StrokeCap.round;
 
-  void _wall(ui.Canvas c, Rect r, Random rnd) {
-    c.drawRect(r, ui.Paint()..color = TsuzuriColors.kraft);
+  void _wall(ui.Canvas c, Rect r, Random rnd, Region region) {
+    c.drawRect(r, ui.Paint()..color = _wallColor[region]!);
     final hatch = ui.Paint()
-      ..color = const ui.Color(0x558D6E63)
+      ..color = region == Region.lava
+          ? const ui.Color(0x55E4572E)
+          : const ui.Color(0x558D6E63)
       ..strokeWidth = 1;
     for (var i = -1; i < 4; i++) {
       final x = r.left + i * 9 + rnd.nextDouble() * 3;
@@ -307,52 +347,117 @@ class MapLayer extends PositionComponent {
     c.drawRect(
       r.deflate(0.5),
       ui.Paint()
-        ..color = const ui.Color(0xFF8D6E63)
+        ..color = region == Region.lava
+            ? const ui.Color(0xFF1A1111)
+            : const ui.Color(0xFF8D6E63)
         ..style = ui.PaintingStyle.stroke
         ..strokeWidth = 1,
     );
   }
 
-  void _tree(ui.Canvas c, Rect r, Random rnd) {
+  void _obstacle(ui.Canvas c, Rect r, Random rnd, Region region) {
     final cx = r.center.dx, cy = r.center.dy;
     c.drawOval(
       Rect.fromCenter(center: Offset(cx, r.bottom - 3), width: 20, height: 6),
       ui.Paint()..color = const ui.Color(0x33000000),
     );
-    c.drawRect(
-      Rect.fromLTWH(cx - 2.5, cy + 2, 5, 11),
-      ui.Paint()..color = const ui.Color(0xFF8D6E63),
-    );
-    final leaf = ui.Paint()..color = const ui.Color(0xFF8CC06B);
-    final blob = ui.Path();
-    for (var i = 0; i < 5; i++) {
-      final a = i / 5 * 2 * pi;
-      blob.addOval(
-        Rect.fromCircle(
-          center: Offset(cx + cos(a) * 6, cy - 3 + sin(a) * 5),
-          radius: 7 + rnd.nextDouble() * 2,
-        ),
-      );
-    }
-    c.drawPath(blob, leaf);
-    c.drawPath(blob, _ink..strokeWidth = 1.2);
-    // 鉛筆の影
-    final hatch = ui.Paint()
-      ..color = const ui.Color(0x44507A3A)
-      ..strokeWidth = 1;
-    for (var i = 0; i < 4; i++) {
-      c.drawLine(
-        Offset(cx + 1 + i * 3, cy + 2),
-        Offset(cx + 5 + i * 3, cy - 6),
-        hatch,
-      );
+    switch (region) {
+      case Region.grass:
+        c.drawRect(
+          Rect.fromLTWH(cx - 2.5, cy + 2, 5, 11),
+          ui.Paint()..color = const ui.Color(0xFF8D6E63),
+        );
+        final blob = ui.Path();
+        for (var i = 0; i < 5; i++) {
+          final a = i / 5 * 2 * pi;
+          blob.addOval(
+            Rect.fromCircle(
+              center: Offset(cx + cos(a) * 6, cy - 3 + sin(a) * 5),
+              radius: 7 + rnd.nextDouble() * 2,
+            ),
+          );
+        }
+        c.drawPath(blob, ui.Paint()..color = const ui.Color(0xFF8CC06B));
+        c.drawPath(blob, _ink..strokeWidth = 1.2);
+      case Region.coast:
+        // ヤシの木
+        final trunk = ui.Path()
+          ..moveTo(cx - 2, r.bottom - 3)
+          ..quadraticBezierTo(cx + 4, cy + 4, cx + 1, cy - 6)
+          ..lineTo(cx + 4, cy - 6)
+          ..quadraticBezierTo(cx + 7, cy + 4, cx + 2, r.bottom - 3)
+          ..close();
+        c.drawPath(trunk, ui.Paint()..color = const ui.Color(0xFFB08968));
+        final leaf = ui.Paint()..color = const ui.Color(0xFF4FA36B);
+        for (final a in [-2.6, -2.0, -1.2, -0.5, 0.2]) {
+          final p = ui.Path()
+            ..moveTo(cx + 2, cy - 7)
+            ..quadraticBezierTo(
+              cx + 2 + cos(a) * 7,
+              cy - 7 + sin(a) * 7 - 3,
+              cx + 2 + cos(a) * 13,
+              cy - 7 + sin(a) * 9 + 4,
+            )
+            ..quadraticBezierTo(
+              cx + 2 + cos(a) * 6,
+              cy - 7 + sin(a) * 5,
+              cx + 2,
+              cy - 7,
+            );
+          c.drawPath(p, leaf);
+          c.drawPath(p, _ink..strokeWidth = 0.8);
+        }
+      case Region.cave:
+        // 岩と水晶
+        final rock = ui.Path()
+          ..moveTo(cx - 11, r.bottom - 4)
+          ..lineTo(cx - 8, cy - 2)
+          ..lineTo(cx - 1, cy - 7)
+          ..lineTo(cx + 8, cy - 3)
+          ..lineTo(cx + 11, r.bottom - 4)
+          ..close();
+        c.drawPath(rock, ui.Paint()..color = const ui.Color(0xFF8E8780));
+        c.drawPath(rock, _ink..strokeWidth = 1.2);
+        final crystal = ui.Path()
+          ..moveTo(cx + 2, cy - 12)
+          ..lineTo(cx + 6, cy - 4)
+          ..lineTo(cx + 2, cy)
+          ..lineTo(cx - 2, cy - 4)
+          ..close();
+        c.drawPath(crystal, ui.Paint()..color = const ui.Color(0xFF9AD1D4));
+        c.drawPath(crystal, _ink..strokeWidth = 0.8);
+      case Region.lava:
+        // 黒曜石のとげ
+        final spike = ui.Path()
+          ..moveTo(cx - 10, r.bottom - 4)
+          ..lineTo(cx - 3, cy - 12)
+          ..lineTo(cx + 1, cy - 2)
+          ..lineTo(cx + 5, cy - 9)
+          ..lineTo(cx + 10, r.bottom - 4)
+          ..close();
+        c.drawPath(spike, ui.Paint()..color = const ui.Color(0xFF1E1414));
+        c.drawPath(
+          spike,
+          ui.Paint()
+            ..color = const ui.Color(0xFFE4572E)
+            ..style = ui.PaintingStyle.stroke
+            ..strokeWidth = 1,
+        );
     }
   }
 
-  void _pond(ui.Canvas c, Rect r) {
-    c.drawRect(r, ui.Paint()..color = const ui.Color(0xFF9EC6E0));
+  void _pond(ui.Canvas c, Rect r, Region region) {
+    final color = switch (region) {
+      Region.grass => const ui.Color(0xFF9EC6E0),
+      Region.coast => const ui.Color(0xFF5FA8CC),
+      Region.cave => const ui.Color(0xFF4F6D7A),
+      Region.lava => const ui.Color(0xFFE4572E),
+    };
+    c.drawRect(r, ui.Paint()..color = color);
     final wave = ui.Paint()
-      ..color = const ui.Color(0xAAFFFFFF)
+      ..color = region == Region.lava
+          ? const ui.Color(0xCCFFD166)
+          : const ui.Color(0xAAFFFFFF)
       ..style = ui.PaintingStyle.stroke
       ..strokeWidth = 1.2;
     for (final y in [r.top + 10, r.top + 22]) {
@@ -449,7 +554,10 @@ class MapLayer extends PositionComponent {
 class EnemyToken extends PositionComponent {
   EnemyToken({required this.stage, required this.home})
     : cell = home,
-      super(size: Vector2.all(tileSize * 1.15), anchor: Anchor.center);
+      super(
+        size: Vector2.all(tileSize * (stage.isBoss ? 1.45 : 1.15)),
+        anchor: Anchor.center,
+      );
 
   final StageDef stage;
   final Cell home;
@@ -468,11 +576,17 @@ class EnemyToken extends PositionComponent {
       canvas.saveLayer(null, ui.Paint()..color = const ui.Color(0xB0FFFFFF));
       canvas.translate(s * 0.1, s * 0.15);
       canvas.scale(0.8);
-      paintEnemy(canvas, s, stage.enemy.id, _t * 0.5);
+      paintEnemy(
+        canvas,
+        s,
+        stage.enemy.look,
+        _t * 0.5,
+        color: stage.enemy.color,
+      );
       canvas.restore();
       _badge(canvas, s, '★', const ui.Color(0xFFF2B84B));
     } else {
-      paintEnemy(canvas, s, stage.enemy.id, _t);
+      paintEnemy(canvas, s, stage.enemy.look, _t, color: stage.enemy.color);
       if (alert) {
         final jump = sin(_t * 8).abs() * 3;
         _badge(canvas, s, '！', TsuzuriColors.stamp, dy: -jump);

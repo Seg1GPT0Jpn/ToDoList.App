@@ -101,8 +101,8 @@ void main() {
       b.answer(b.currentQuestion.correctIndex, elapsed: slow);
       final r = b.answer(wrongIndex(b), elapsed: slow);
       expect(r.correct, isFalse);
-      expect(r.damageToPlayer, 7);
-      expect(b.playerHp, 43);
+      expect(r.damageToPlayer, 6);
+      expect(b.playerHp, 44);
       expect(b.combo, 0);
     });
 
@@ -111,7 +111,7 @@ void main() {
       final r = b.timeout();
       expect(r.timedOut, isTrue);
       expect(r.correct, isFalse);
-      expect(b.playerHp, 43);
+      expect(b.playerHp, 44);
     });
 
     test('制限時間を過ぎた回答は正解でも時間切れ扱い', () {
@@ -144,8 +144,8 @@ void main() {
       final s = b.summary();
       expect(s.won, isFalse);
       expect(b.playerHp, 0);
-      expect(s.answeredCount, 8); // 50 / 7 → 8ターン
-      expect(s.missedQuestions.length, 8);
+      expect(s.answeredCount, 9); // 50 / 6 → 9ターン
+      expect(s.missedQuestions.length, 9);
     });
 
     test('終了後に回答するとエラー', () {
@@ -170,7 +170,8 @@ void main() {
           final b = BattleEngine(
             player: PlayerStats.forLevel(stage.recommendedLevel),
             enemy: stage.enemy,
-            questions: loadSet(stage.questionSetId).questions,
+            questions: loadStagePool(stage).questions,
+            readingTimeLimit: Duration(seconds: stage.readingTimeLimitSeconds),
             timeLimit: Duration(seconds: stage.timeLimitSeconds),
             random: rnd,
           );

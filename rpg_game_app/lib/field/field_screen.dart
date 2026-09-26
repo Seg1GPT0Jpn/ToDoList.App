@@ -100,7 +100,7 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
     if (_starting) return;
     _starting = true;
     final services = RpgServices.of(context);
-    final set = await services.questions.load(stage.questionSetId);
+    final set = await services.loadStagePool(stage);
     if (!mounted) return;
     _starting = false;
     if (set == null) {
@@ -161,12 +161,15 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
                     ),
                     const SizedBox(width: 8),
                     Expanded(
-                      child: _Hud(
-                        title: widget.world.name,
-                        level: stats.level,
-                        exp: _progress.exp,
-                        expToNext: PlayerStats.expToNextLevel(stats.level),
-                        stars: '★ $cleared / ${widget.world.stages.length}',
+                      child: ValueListenableBuilder<Region>(
+                        valueListenable: _game.region,
+                        builder: (context, region, _) => _Hud(
+                          title: '${widget.world.name}・${region.label}',
+                          level: stats.level,
+                          exp: _progress.exp,
+                          expToNext: PlayerStats.expToNextLevel(stats.level),
+                          stars: '★ $cleared / ${widget.world.stages.length}',
+                        ),
                       ),
                     ),
                   ],
@@ -234,7 +237,7 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
       case _EncounterDialog(:final stage, :final cleared):
         final enemy = stage.enemy;
         return _MessageBox(
-          portrait: enemy.id,
+          portrait: enemy,
           actions: [
             TextButton(onPressed: _close, child: const Text('にげる')),
             FilledButton.icon(
@@ -447,7 +450,7 @@ class _MessageBox extends StatelessWidget {
 
   final Widget child;
   final List<Widget> actions;
-  final String? portrait;
+  final EnemyDef? portrait;
 
   @override
   Widget build(BuildContext context) {
@@ -469,7 +472,7 @@ class _MessageBox extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 if (portrait != null) ...[
-                  _EnemyPortrait(enemyId: portrait!),
+                  _EnemyPortrait(enemy: portrait!),
                   const SizedBox(width: 12),
                 ],
                 Expanded(child: child),
@@ -490,8 +493,8 @@ class _MessageBox extends StatelessWidget {
 }
 
 class _EnemyPortrait extends StatefulWidget {
-  const _EnemyPortrait({required this.enemyId});
-  final String enemyId;
+  const _EnemyPortrait({required this.enemy});
+  final EnemyDef enemy;
 
   @override
   State<_EnemyPortrait> createState() => _EnemyPortraitState();
@@ -523,7 +526,7 @@ class _EnemyPortraitState extends State<_EnemyPortrait>
       child: AnimatedBuilder(
         animation: _c,
         builder: (_, _) =>
-            CustomPaint(painter: EnemyArt(widget.enemyId, _c.value * 60)),
+            CustomPaint(painter: EnemyArt(widget.enemy, _c.value * 60)),
       ),
     );
   }
@@ -531,16 +534,16 @@ class _EnemyPortraitState extends State<_EnemyPortrait>
 
 /// 敵の絵を Flutter ウィジェットで描くための CustomPainter
 class EnemyArt extends CustomPainter {
-  EnemyArt(this.enemyId, this.t);
-  final String enemyId;
+  EnemyArt(this.enemy, this.t);
+  final EnemyDef enemy;
   final double t;
 
   @override
   void paint(Canvas canvas, Size size) =>
-      paintEnemy(canvas, size.shortestSide, enemyId, t);
+      paintEnemy(canvas, size.shortestSide, enemy.look, t, color: enemy.color);
 
   @override
-  bool shouldRepaint(EnemyArt old) => old.t != t || old.enemyId != enemyId;
+  bool shouldRepaint(EnemyArt old) => old.t != t || old.enemy != enemy;
 }
 
 /// 画面左下の十字ボタン（押している間歩き続ける）

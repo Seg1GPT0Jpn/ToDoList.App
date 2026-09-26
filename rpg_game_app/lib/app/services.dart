@@ -27,6 +27,18 @@ class RpgServices extends InheritedWidget {
   final QuestionSource questions;
   final WorldUnlockService unlock;
 
+  /// ステージの出題範囲をまとめて読み込む（エリア16以降は複数セット）。
+  /// 1つも読めなければ null。
+  Future<QuestionSet?> loadStagePool(StageDef stage) async {
+    final sets = <QuestionSet>[];
+    for (final id in stage.questionSetIds) {
+      final s = await questions.load(id);
+      if (s != null) sets.add(s);
+    }
+    if (sets.isEmpty) return null;
+    return sets.length == 1 ? sets.first : QuestionSet.merge(stage.id, sets);
+  }
+
   static RpgServices of(BuildContext context) =>
       context.dependOnInheritedWidgetOfExactType<RpgServices>()!;
 
