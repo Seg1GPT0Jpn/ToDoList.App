@@ -165,6 +165,167 @@
       ],
       "answerIndex": 3,
       "explanation": "本文の具体例（画家と子ども）から、筆者の考えを読み取る。"
+    },
+    {
+      "id": "jap_gendai07_013",
+      "category": "knowledge",
+      "prompt": "接続語「ところで」のはたらきは？",
+      "choices": [
+        "前の内容をまとめる",
+        "話題を変える",
+        "前の内容と逆のことを述べる",
+        "前の内容の理由を述べる"
+      ],
+      "answerIndex": 1,
+      "explanation": "転換の接続語。"
+    },
+    {
+      "id": "jap_gendai07_014",
+      "category": "knowledge",
+      "prompt": "接続語「そのうえ」のはたらきは？",
+      "choices": [
+        "前の内容と逆のことを述べる",
+        "前の内容に付け加える",
+        "話題を変える",
+        "例を示す"
+      ],
+      "answerIndex": 1,
+      "explanation": "添加（累加）の接続語。"
+    },
+    {
+      "id": "jap_gendai07_015",
+      "category": "knowledge",
+      "prompt": "接続語「したがって」のはたらきは？",
+      "choices": [
+        "前の内容を理由として結果を述べる",
+        "前の内容を言いかえる",
+        "前の内容の例を示す",
+        "前の内容に反論する"
+      ],
+      "answerIndex": 0,
+      "explanation": "順接の接続語。"
+    },
+    {
+      "id": "jap_gendai07_016",
+      "category": "knowledge",
+      "prompt": "接続語「もっとも」のはたらきは？",
+      "choices": [
+        "前の内容に補足や例外を加える",
+        "話題を変える",
+        "前の内容を強調する",
+        "前の内容の結論を述べる"
+      ],
+      "answerIndex": 0,
+      "explanation": "「もっとも、例外もある」など。"
+    },
+    {
+      "id": "jap_gendai07_017",
+      "category": "knowledge",
+      "prompt": "評論で「〜ではなく、〜である」という形が示すことが多いのは？",
+      "choices": [
+        "結論を先のばしにする",
+        "話題を変える",
+        "具体例を並べる",
+        "一般的な考えを否定して、筆者の主張を示す"
+      ],
+      "answerIndex": 3,
+      "explanation": "対比による主張の提示。"
+    },
+    {
+      "id": "jap_gendai07_018",
+      "category": "calculation",
+      "prompt": "（　）に入る接続語は？",
+      "sentence": "毎日練習を続けた。（　）、大会で優勝できた。",
+      "choices": [
+        "ところで",
+        "たとえば",
+        "しかし",
+        "だから"
+      ],
+      "answerIndex": 3,
+      "explanation": "前が理由、後が結果になっている。"
+    },
+    {
+      "id": "jap_gendai07_019",
+      "category": "calculation",
+      "prompt": "（　）に入る接続語は？",
+      "sentence": "天気予報では晴れだった。（　）、午後から大雨になった。",
+      "choices": [
+        "だから",
+        "ところが",
+        "そのうえ",
+        "つまり"
+      ],
+      "answerIndex": 1,
+      "explanation": "予想に反する結果が続く。"
+    },
+    {
+      "id": "jap_gendai07_020",
+      "category": "calculation",
+      "prompt": "（　）に入る接続語は？",
+      "sentence": "彼は約束の時間に一度も遅れたことがない。（　）、とても信頼できる人だ。",
+      "choices": [
+        "しかし",
+        "なぜなら",
+        "ところで",
+        "つまり"
+      ],
+      "answerIndex": 3,
+      "explanation": "前の内容を言いかえてまとめている。"
+    },
+    {
+      "id": "jap_gendai07_021",
+      "category": "calculation",
+      "prompt": "「これ」が指す内容は？",
+      "sentence": "自分とは異なる意見に耳を傾けることは難しい。しかし、これこそが考えを深める近道である。",
+      "choices": [
+        "自分とは異なる意見に耳を傾けること",
+        "同じ意見の人と話すこと",
+        "自分の意見を持つこと",
+        "議論に勝つこと"
+      ],
+      "answerIndex": 0,
+      "explanation": "直前の内容を指す。"
+    },
+    {
+      "id": "jap_gendai07_022",
+      "category": "calculation",
+      "prompt": "この文章の要旨として適切なものは？",
+      "sentence": "メールは一瞬で届く。便利なのはまちがいない。だが、便せんを選び、言葉を探しながら書く手紙の時間に、私たちは相手のことを深く考えていた。便利さの陰で失われるものにも、目を向けたい。",
+      "choices": [
+        "手紙を書くのは面倒だ",
+        "便利さの陰で失われるものにも目を向けるべきだ",
+        "機械は使わない方がよい",
+        "メールは必ず誤解を生む"
+      ],
+      "answerIndex": 1,
+      "explanation": "筆者は便利さそのものを否定していない。"
+    },
+    {
+      "id": "jap_gendai07_023",
+      "category": "thinking",
+      "prompt": "評論文で、筆者が具体例を示したあとに置くことが多い内容は？",
+      "choices": [
+        "読者への質問だけ",
+        "別の具体例だけ",
+        "無関係な話題",
+        "具体例から導かれる一般的な主張"
+      ],
+      "answerIndex": 3,
+      "explanation": "具体→抽象の流れをつかむ。"
+    },
+    {
+      "id": "jap_gendai07_024",
+      "category": "thinking",
+      "prompt": "段落の関係を読み取るときに、特に手がかりになるものは？",
+      "choices": [
+        "句読点の数",
+        "漢字の数",
+        "段落の文字数",
+        "段落のはじめの接続語や指示語"
+      ],
+      "answerIndex": 3,
+      "explanation": "論の展開をつかむ手がかり。"
     }
   ]
 }

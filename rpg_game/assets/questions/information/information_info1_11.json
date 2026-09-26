@@ -159,6 +159,162 @@
       ],
       "answerIndex": 3,
       "explanation": "信頼性を重視する通信に向いている。"
+    },
+    {
+      "id": "inf_info111_013",
+      "category": "knowledge",
+      "prompt": "インターネットで、データを確実に届けるために順番の管理や再送を行うプロトコルは？",
+      "choices": [
+        "TCP",
+        "HTML",
+        "DNS",
+        "UDP"
+      ],
+      "answerIndex": 0,
+      "explanation": "UDP は確認をしない分、速い。"
+    },
+    {
+      "id": "inf_info111_014",
+      "category": "knowledge",
+      "prompt": "動画のライブ配信などで、多少の欠落より速さを重視するときに使われるプロトコルは？",
+      "choices": [
+        "SMTP",
+        "TCP",
+        "UDP",
+        "POP"
+      ],
+      "answerIndex": 2,
+      "explanation": "確認応答をしない。"
+    },
+    {
+      "id": "inf_info111_015",
+      "category": "knowledge",
+      "prompt": "メールをサーバから受信して端末に保存するプロトコルは？",
+      "choices": [
+        "POP",
+        "SMTP",
+        "HTTP",
+        "FTP"
+      ],
+      "answerIndex": 0,
+      "explanation": "受信後にサーバから削除する設定が多い。"
+    },
+    {
+      "id": "inf_info111_016",
+      "category": "knowledge",
+      "prompt": "メールの宛先で、他の受信者にアドレスが見えないように送る欄は？",
+      "choices": [
+        "From",
+        "CC",
+        "BCC",
+        "To"
+      ],
+      "answerIndex": 2,
+      "explanation": "多数の人に一斉送信するときに使う。"
+    },
+    {
+      "id": "inf_info111_017",
+      "category": "knowledge",
+      "prompt": "Web ページの見た目（色やレイアウト）を指定する言語は？",
+      "choices": [
+        "CSS",
+        "SQL",
+        "HTML",
+        "JavaScript"
+      ],
+      "answerIndex": 0,
+      "explanation": "HTML は構造、CSS は見た目。"
+    },
+    {
+      "id": "inf_info111_018",
+      "category": "knowledge",
+      "prompt": "URL の「https」の部分が表すものは？",
+      "choices": [
+        "国名",
+        "ファイル名",
+        "通信のプロトコル（スキーム）",
+        "サーバ名"
+      ],
+      "answerIndex": 2,
+      "explanation": "「s」は暗号化された通信を示す。"
+    },
+    {
+      "id": "inf_info111_019",
+      "category": "knowledge",
+      "prompt": "TCP/IP の 4 階層モデルのうち、IP が属する層は？",
+      "choices": [
+        "トランスポート層",
+        "インターネット層",
+        "ネットワークインタフェース層",
+        "アプリケーション層"
+      ],
+      "answerIndex": 1,
+      "explanation": "TCP・UDP はトランスポート層。"
+    },
+    {
+      "id": "inf_info111_020",
+      "category": "knowledge",
+      "prompt": "インターネット上で文書どうしをつなぎ、たどれるようにするしくみは？",
+      "choices": [
+        "ファイアウォール",
+        "パケット",
+        "ハイパーリンク（ハイパーテキスト）",
+        "バックアップ"
+      ],
+      "answerIndex": 2,
+      "explanation": "WWW の基本的なしくみ。"
+    },
+    {
+      "id": "inf_info111_021",
+      "category": "knowledge",
+      "prompt": "Web サイトの利用者の操作などを記録し、次に訪れたときに使うための小さなデータは？",
+      "choices": [
+        "Cookie",
+        "IP アドレス",
+        "キャッシュだけ",
+        "ドメイン"
+      ],
+      "answerIndex": 0,
+      "explanation": "ログイン状態の保持などに使われる。"
+    },
+    {
+      "id": "inf_info111_022",
+      "category": "knowledge",
+      "prompt": "インターネット経由でソフトウェアの機能を提供するサービス形態は？",
+      "choices": [
+        "SaaS",
+        "OS",
+        "USB",
+        "LAN"
+      ],
+      "answerIndex": 0,
+      "explanation": "クラウドサービスの一種。"
+    },
+    {
+      "id": "inf_info111_023",
+      "category": "thinking",
+      "prompt": "メールで大勢に連絡するとき、全員のアドレスを To に入れるのが問題になる理由は？",
+      "choices": [
+        "全員のメールアドレスが互いに知られてしまうから",
+        "文字化けするから",
+        "送信できないから",
+        "メールが届かないから"
+      ],
+      "answerIndex": 0,
+      "explanation": "個人情報の漏えいにつながる。"
+    },
+    {
+      "id": "inf_info111_024",
+      "category": "thinking",
+      "prompt": "Web ブラウザが一度読みこんだ画像を保存しておく（キャッシュ）利点は？",
+      "choices": [
+        "セキュリティが強くなる",
+        "画像がきれいになる",
+        "同じページを再び表示するときに速くなる",
+        "通信量が増える"
+      ],
+      "answerIndex": 2,
+      "explanation": "通信量も減らせる。"
     }
   ]
 }

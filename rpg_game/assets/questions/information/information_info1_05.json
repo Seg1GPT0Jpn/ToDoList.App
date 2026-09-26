@@ -159,6 +159,162 @@
       ],
       "answerIndex": 3,
       "explanation": "利用者が次に何をすればよいかが分かるように示す。"
+    },
+    {
+      "id": "inf_info105_013",
+      "category": "knowledge",
+      "prompt": "情報デザインで、情報を目的に合わせて整理する方法の「LATCH」にふくまれないものは？",
+      "choices": [
+        "アルファベット（五十音）",
+        "時間",
+        "重さ",
+        "場所"
+      ],
+      "answerIndex": 2,
+      "explanation": "Location・Alphabet・Time・Category・Hierarchy。"
+    },
+    {
+      "id": "inf_info105_014",
+      "category": "knowledge",
+      "prompt": "情報を「カテゴリー」で整理した例は？",
+      "choices": [
+        "スーパーの売り場を野菜・肉・魚に分ける",
+        "辞書の五十音順",
+        "電車の時刻表",
+        "地図"
+      ],
+      "answerIndex": 0,
+      "explanation": "種類ごとに分類する。"
+    },
+    {
+      "id": "inf_info105_015",
+      "category": "knowledge",
+      "prompt": "情報を「階層（順位）」で整理した例は？",
+      "choices": [
+        "年表",
+        "五十音順の名簿",
+        "売上ランキング",
+        "路線図"
+      ],
+      "answerIndex": 2,
+      "explanation": "大きさや重要度の順。"
+    },
+    {
+      "id": "inf_info105_016",
+      "category": "knowledge",
+      "prompt": "目の不自由な人のために、画面の文字を読み上げるソフトを何という？",
+      "choices": [
+        "コンパイラ",
+        "エディタ",
+        "スクリーンリーダー",
+        "ブラウザ"
+      ],
+      "answerIndex": 2,
+      "explanation": "Web の画像には代替テキストをつける。"
+    },
+    {
+      "id": "inf_info105_017",
+      "category": "knowledge",
+      "prompt": "Web ページの画像に設定し、読み上げソフトで内容を伝えるための文字は？",
+      "choices": [
+        "ファイル名",
+        "URL",
+        "タイトル",
+        "代替テキスト（alt 属性）"
+      ],
+      "answerIndex": 3,
+      "explanation": "アクセシビリティの配慮。"
+    },
+    {
+      "id": "inf_info105_018",
+      "category": "knowledge",
+      "prompt": "文字の大きさや行間を読みやすく整えることで向上するものは？",
+      "choices": [
+        "可読性",
+        "完全性",
+        "可用性",
+        "機密性"
+      ],
+      "answerIndex": 0,
+      "explanation": "読みやすさ。"
+    },
+    {
+      "id": "inf_info105_019",
+      "category": "knowledge",
+      "prompt": "ある物事がどう使えるかを示す手がかり（例：押せそうに見えるボタン）を何という？",
+      "choices": [
+        "シグニファイア",
+        "フォント",
+        "アイコンだけ",
+        "ピクトグラム"
+      ],
+      "answerIndex": 0,
+      "explanation": "アフォーダンスを知覚させる手がかり。"
+    },
+    {
+      "id": "inf_info105_020",
+      "category": "knowledge",
+      "prompt": "情報デザインで、利用者の体験全体をよくすることを何という？",
+      "choices": [
+        "OS",
+        "UX（ユーザーエクスペリエンス）",
+        "CPU",
+        "UI だけ"
+      ],
+      "answerIndex": 1,
+      "explanation": "使う前から使った後まで。"
+    },
+    {
+      "id": "inf_info105_021",
+      "category": "knowledge",
+      "prompt": "東京 2020 オリンピックでも注目された、競技を表す絵文字は？",
+      "choices": [
+        "ピクトグラム",
+        "バーコード",
+        "QR コード",
+        "フォント"
+      ],
+      "answerIndex": 0,
+      "explanation": "1964 年の東京大会で本格的に導入された。"
+    },
+    {
+      "id": "inf_info105_022",
+      "category": "knowledge",
+      "prompt": "案内図で、現在地を「●」などで示すことの効果は？",
+      "choices": [
+        "地図を大きくできる",
+        "色数を減らせる",
+        "文字をなくせる",
+        "利用者が自分の位置と目的地の関係をすぐに理解できる"
+      ],
+      "answerIndex": 3,
+      "explanation": "利用者の視点に立ったデザイン。"
+    },
+    {
+      "id": "inf_info105_023",
+      "category": "thinking",
+      "prompt": "Web サイトのボタンの色だけで状態を示すのではなく、文字やアイコンも添える理由は？",
+      "choices": [
+        "デザインを複雑にするため",
+        "読み込みを速くするため",
+        "色の見え方が異なる人にも情報が伝わるようにするため",
+        "色が足りないから"
+      ],
+      "answerIndex": 2,
+      "explanation": "カラーユニバーサルデザイン。"
+    },
+    {
+      "id": "inf_info105_024",
+      "category": "thinking",
+      "prompt": "スマートフォンのアプリで、よく使う機能を画面の下の方に置く理由として考えられることは？",
+      "choices": [
+        "画面の上は見えないから",
+        "デザインの流行だから",
+        "片手で持ったときに親指が届きやすいから",
+        "上に置くと動かないから"
+      ],
+      "answerIndex": 2,
+      "explanation": "利用者の使い方に合わせたデザイン。"
     }
   ]
 }

@@ -159,6 +159,162 @@
       ],
       "answerIndex": 2,
       "explanation": "生活習慣など、別の要因が両方に影響している可能性がある。"
+    },
+    {
+      "id": "jap_gendai06_013",
+      "category": "knowledge",
+      "prompt": "次のうち「意見」を述べた文は？",
+      "choices": [
+        "図書館は駅から徒歩 5 分にある。",
+        "開館時間は 9 時からだ。",
+        "昨年の利用者は 2 万人だった。",
+        "この町には、もっと図書館が必要だ。"
+      ],
+      "answerIndex": 3,
+      "explanation": "筆者の考えや判断をふくむ。"
+    },
+    {
+      "id": "jap_gendai06_014",
+      "category": "knowledge",
+      "prompt": "文章の中で、筆者が最も言いたいことを何という？",
+      "choices": [
+        "引用",
+        "主張（結論）",
+        "具体例",
+        "序論だけ"
+      ],
+      "answerIndex": 1,
+      "explanation": "根拠や具体例がそれを支える。"
+    },
+    {
+      "id": "jap_gendai06_015",
+      "category": "knowledge",
+      "prompt": "他人の文章を引用するとき、はっきり示す必要があるものは？",
+      "choices": [
+        "出典（著者名・書名など）",
+        "引用した日の天気",
+        "文字数",
+        "自分の住所"
+      ],
+      "answerIndex": 0,
+      "explanation": "引用部分をかぎかっこなどで区別する。"
+    },
+    {
+      "id": "jap_gendai06_016",
+      "category": "knowledge",
+      "prompt": "要約で、まず注目するとよいものは？",
+      "choices": [
+        "会話文だけ",
+        "接続語以外のすべて",
+        "具体例の細部",
+        "各段落の中心文やキーワード"
+      ],
+      "answerIndex": 3,
+      "explanation": "筆者の主張の筋道をとらえる。"
+    },
+    {
+      "id": "jap_gendai06_017",
+      "category": "knowledge",
+      "prompt": "「たとえば」のあとに続く内容は？",
+      "choices": [
+        "反論",
+        "具体例",
+        "要約",
+        "結論"
+      ],
+      "answerIndex": 1,
+      "explanation": "抽象的な主張をわかりやすくする。"
+    },
+    {
+      "id": "jap_gendai06_018",
+      "category": "knowledge",
+      "prompt": "グラフの読み取りで、まず確認すべきことは？",
+      "choices": [
+        "縦軸・横軸の項目と単位",
+        "グラフの大きさ",
+        "タイトルの字体",
+        "色の好み"
+      ],
+      "answerIndex": 0,
+      "explanation": "軸や単位をまちがえると読み取りを誤る。"
+    },
+    {
+      "id": "jap_gendai06_019",
+      "category": "knowledge",
+      "prompt": "二つのデータに関係がある（相関がある）ときに注意すべきことは？",
+      "choices": [
+        "因果関係があるとは限らない",
+        "関係はまったくない",
+        "必ず原因と結果である",
+        "データが誤っている"
+      ],
+      "answerIndex": 0,
+      "explanation": "第三の要因が両方に影響していることもある。"
+    },
+    {
+      "id": "jap_gendai06_020",
+      "category": "knowledge",
+      "prompt": "一次資料の例は？",
+      "choices": [
+        "誰かがまとめた解説記事",
+        "教科書の要約",
+        "当事者が書いた日記や公的な統計",
+        "ネットのまとめサイト"
+      ],
+      "answerIndex": 2,
+      "explanation": "二次資料は一次資料をもとにまとめたもの。"
+    },
+    {
+      "id": "jap_gendai06_021",
+      "category": "calculation",
+      "prompt": "A 市の人口 20 万人のうち図書館利用者 4 万人、B 市の人口 5 万人のうち利用者 2 万人。利用者の割合が高いのは？",
+      "choices": [
+        "A 市",
+        "比べられない",
+        "同じ",
+        "B 市"
+      ],
+      "answerIndex": 3,
+      "explanation": "A は 20 %、B は 40 %。人数だけで比べない。"
+    },
+    {
+      "id": "jap_gendai06_022",
+      "category": "calculation",
+      "prompt": "ある調査で「満足」が 120 人中 30 人。割合は？",
+      "choices": [
+        "30 %",
+        "4 %",
+        "40 %",
+        "25 %"
+      ],
+      "answerIndex": 3,
+      "explanation": "30 ÷ 120 × 100。"
+    },
+    {
+      "id": "jap_gendai06_023",
+      "category": "thinking",
+      "prompt": "アンケート結果を読むとき、回答者の数や選び方を確認する理由は？",
+      "choices": [
+        "回答者の名前を知るため",
+        "数が多いほど必ず正しいから",
+        "グラフを大きくするため",
+        "対象がかたよっていると、全体の傾向を正しく表さないから"
+      ],
+      "answerIndex": 3,
+      "explanation": "標本のかたよりに注意する。"
+    },
+    {
+      "id": "jap_gendai06_024",
+      "category": "thinking",
+      "prompt": "報告文で「〜と思う」をなるべく使わず「〜である」と書く場面は？",
+      "choices": [
+        "調査で確かめた事実を述べるとき",
+        "予想を述べるとき",
+        "自分の感想を述べるとき",
+        "疑問を述べるとき"
+      ],
+      "answerIndex": 0,
+      "explanation": "事実と意見を書き分ける。"
     }
   ]
 }

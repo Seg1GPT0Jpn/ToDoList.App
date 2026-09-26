@@ -159,6 +159,162 @@
       ],
       "answerIndex": 0,
       "explanation": "欠損値を 0 として扱うと、本当の傾向とずれる。"
+    },
+    {
+      "id": "inf_info113_013",
+      "category": "knowledge",
+      "prompt": "データを表形式で管理し、表どうしを関連づけるデータベースは？",
+      "choices": [
+        "画像ファイル",
+        "テキストファイル",
+        "スプレッドシート",
+        "リレーショナルデータベース"
+      ],
+      "answerIndex": 3,
+      "explanation": "SQL で操作する。"
+    },
+    {
+      "id": "inf_info113_014",
+      "category": "knowledge",
+      "prompt": "データベースで、各行を一意に識別するための項目は？",
+      "choices": [
+        "外部キー",
+        "インデックスだけ",
+        "フィールド名",
+        "主キー"
+      ],
+      "answerIndex": 3,
+      "explanation": "学籍番号など、重複しない値。"
+    },
+    {
+      "id": "inf_info113_015",
+      "category": "knowledge",
+      "prompt": "データベースを操作するための言語は？",
+      "choices": [
+        "HTML",
+        "CSS",
+        "SQL",
+        "Python だけ"
+      ],
+      "answerIndex": 2,
+      "explanation": "SELECT 文で検索する。"
+    },
+    {
+      "id": "inf_info113_016",
+      "category": "knowledge",
+      "prompt": "表のデータを「,」で区切って保存するテキスト形式は？",
+      "choices": [
+        "PDF",
+        "CSV",
+        "MP4",
+        "JPEG"
+      ],
+      "answerIndex": 1,
+      "explanation": "多くのソフトで読み書きできる。"
+    },
+    {
+      "id": "inf_info113_017",
+      "category": "knowledge",
+      "prompt": "データを「キーと値」の組で表す、Web でよく使われる形式は？",
+      "choices": [
+        "WAV",
+        "BMP",
+        "JSON",
+        "ZIP"
+      ],
+      "answerIndex": 2,
+      "explanation": "プログラムどうしのデータ交換に使う。"
+    },
+    {
+      "id": "inf_info113_018",
+      "category": "knowledge",
+      "prompt": "SNS の投稿のように、形式が決まっていないデータを何という？",
+      "choices": [
+        "非構造化データ",
+        "順序尺度",
+        "量的データ",
+        "構造化データ"
+      ],
+      "answerIndex": 0,
+      "explanation": "文章や画像、動画など。"
+    },
+    {
+      "id": "inf_info113_019",
+      "category": "knowledge",
+      "prompt": "尺度のうち、身長や体重のように比にも意味があるものは？",
+      "choices": [
+        "名義尺度",
+        "順序尺度",
+        "間隔尺度",
+        "比例尺度"
+      ],
+      "answerIndex": 3,
+      "explanation": "0 が「何もない」を意味する。"
+    },
+    {
+      "id": "inf_info113_020",
+      "category": "knowledge",
+      "prompt": "尺度のうち、アンケートの「とても良い／良い／普通…」は？",
+      "choices": [
+        "間隔尺度",
+        "順序尺度",
+        "比例尺度",
+        "名義尺度"
+      ],
+      "answerIndex": 1,
+      "explanation": "順番に意味があるが、間隔は等しいとは限らない。"
+    },
+    {
+      "id": "inf_info113_021",
+      "category": "knowledge",
+      "prompt": "国や地方公共団体が公開し、だれでも利用できるデータは？",
+      "choices": [
+        "ログデータだけ",
+        "個人データ",
+        "オープンデータ",
+        "秘密データ"
+      ],
+      "answerIndex": 2,
+      "explanation": "二次利用しやすい形式で公開される。"
+    },
+    {
+      "id": "inf_info113_022",
+      "category": "knowledge",
+      "prompt": "データの前処理で、形式をそろえることを何という？",
+      "choices": [
+        "暗号化",
+        "正規化（名寄せ・表記の統一）",
+        "符号化",
+        "圧縮"
+      ],
+      "answerIndex": 1,
+      "explanation": "全角・半角の統一なども。"
+    },
+    {
+      "id": "inf_info113_023",
+      "category": "thinking",
+      "prompt": "欠損値をふくむデータを分析するときの対応として適切なものは？",
+      "choices": [
+        "無視して平均をとる",
+        "データを捨てる",
+        "すべて 0 にする",
+        "欠損の理由を考え、除外するか適切な値で補うかを判断する"
+      ],
+      "answerIndex": 3,
+      "explanation": "安易に 0 を入れると結果がゆがむ。"
+    },
+    {
+      "id": "inf_info113_024",
+      "category": "thinking",
+      "prompt": "「西暦」が間隔尺度とされる理由は？",
+      "choices": [
+        "年の差には意味があるが、0 年が「時間がない」を意味しないから",
+        "順番に意味がないから",
+        "比に意味があるから",
+        "数値でないから"
+      ],
+      "answerIndex": 0,
+      "explanation": "「2000 年は 1000 年の 2 倍」とは言えない。"
     }
   ]
 }

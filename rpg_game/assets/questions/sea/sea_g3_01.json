@@ -87,6 +87,146 @@
       ],
       "answerIndex": 0,
       "explanation": "I thought をはさんだ関係代名詞（主格）。物が先行詞なので that（which も可）。"
+    },
+    {
+      "id": "sea_g3_01_07",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He is the man (   ) I believe is honest.",
+      "choices": [
+        "whom",
+        "whose",
+        "which",
+        "who"
+      ],
+      "answerIndex": 3,
+      "explanation": "連鎖関係詞節：I believe をはさんでも who が主格。"
+    },
+    {
+      "id": "sea_g3_01_08",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This is the house (   ) I was born.",
+      "choices": [
+        "where in",
+        "what",
+        "in which",
+        "which"
+      ],
+      "answerIndex": 2,
+      "explanation": "前置詞 ＋ 関係代名詞 ＝ where。"
+    },
+    {
+      "id": "sea_g3_01_09",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I have two sisters, neither of (   ) lives near me.",
+      "choices": [
+        "whom",
+        "who",
+        "which",
+        "them"
+      ],
+      "answerIndex": 0,
+      "explanation": "前置詞 of の後なので目的格 whom。"
+    },
+    {
+      "id": "sea_g3_01_10",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) comes first will get the prize.",
+      "choices": [
+        "Whatever",
+        "Whichever of",
+        "Whoever",
+        "However"
+      ],
+      "answerIndex": 2,
+      "explanation": "「〜する人はだれでも」。"
+    },
+    {
+      "id": "sea_g3_01_11",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He is not the man (   ) he was ten years ago.",
+      "choices": [
+        "whose",
+        "whom",
+        "that",
+        "who"
+      ],
+      "answerIndex": 2,
+      "explanation": "補語になる関係代名詞 that（what でもよい）。"
+    },
+    {
+      "id": "sea_g3_01_12",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This is the reason (   ) he gave for his absence.",
+      "choices": [
+        "which",
+        "when",
+        "where",
+        "why"
+      ],
+      "answerIndex": 0,
+      "explanation": "gave の目的語が必要なので関係代名詞 which。"
+    },
+    {
+      "id": "sea_g3_01_13",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "There is no one (   ) knows the answer.",
+      "choices": [
+        "where",
+        "whose",
+        "what",
+        "but"
+      ],
+      "answerIndex": 3,
+      "explanation": "否定語の後の but は「〜しない（人）」の意味の関係代名詞。"
+    },
+    {
+      "id": "sea_g3_01_14",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Such people (   ) live near the river must leave.",
+      "choices": [
+        "what",
+        "as",
+        "whose",
+        "that"
+      ],
+      "answerIndex": 1,
+      "explanation": "such ... as の as は関係代名詞。"
+    },
+    {
+      "id": "sea_g3_01_15",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He gave me (   ) money he had.",
+      "choices": [
+        "what little",
+        "that little",
+        "which little",
+        "what few"
+      ],
+      "answerIndex": 0,
+      "explanation": "what little ＋ 名詞「少ないながらもあるすべての〜」。"
+    },
+    {
+      "id": "sea_g3_01_16",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I will give this ticket to (   ) wants it.",
+      "choices": [
+        "who",
+        "whomever",
+        "whoever",
+        "whom"
+      ],
+      "answerIndex": 2,
+      "explanation": "to の後でも、節の中で主語なので whoever。"
     }
   ]
 }

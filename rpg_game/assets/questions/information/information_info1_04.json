@@ -159,6 +159,162 @@
       ],
       "answerIndex": 0,
       "explanation": "評価（Check）して改善（Action）し、次の計画に生かす。"
+    },
+    {
+      "id": "inf_info104_013",
+      "category": "knowledge",
+      "prompt": "問題解決の手順として一般的なものは？",
+      "choices": [
+        "解決案 → 評価だけ",
+        "実行 → 発見 → 評価",
+        "問題の発見 → 問題の明確化 → 解決案の検討 → 実行 → 評価",
+        "評価 → 実行 → 発見"
+      ],
+      "answerIndex": 2,
+      "explanation": "評価をもとに改善につなげる。"
+    },
+    {
+      "id": "inf_info104_014",
+      "category": "knowledge",
+      "prompt": "モデルの分類で、地球儀や模型のように実物の形を表すモデルは？",
+      "choices": [
+        "論理モデル",
+        "図的モデル",
+        "数式モデル",
+        "物理モデル（実物モデル）"
+      ],
+      "answerIndex": 3,
+      "explanation": "数式で表すのは数式モデル。"
+    },
+    {
+      "id": "inf_info104_015",
+      "category": "knowledge",
+      "prompt": "フローチャートや関係図のように、図で表すモデルは？",
+      "choices": [
+        "図的モデル",
+        "物理モデル",
+        "確率モデル",
+        "数式モデル"
+      ],
+      "answerIndex": 0,
+      "explanation": "要素のつながりが見やすい。"
+    },
+    {
+      "id": "inf_info104_016",
+      "category": "knowledge",
+      "prompt": "時間とともに変化する現象を表すモデルを何という？",
+      "choices": [
+        "物理モデル",
+        "実物モデル",
+        "動的モデル",
+        "静的モデル"
+      ],
+      "answerIndex": 2,
+      "explanation": "人口の変化など。"
+    },
+    {
+      "id": "inf_info104_017",
+      "category": "knowledge",
+      "prompt": "不確定な要素をふくまず、結果が一通りに決まるモデルは？",
+      "choices": [
+        "確定モデル",
+        "動的モデル",
+        "確率モデル",
+        "図的モデル"
+      ],
+      "answerIndex": 0,
+      "explanation": "サイコロをふくむようなモデルは確率モデル。"
+    },
+    {
+      "id": "inf_info104_018",
+      "category": "knowledge",
+      "prompt": "アイデアを図で広げていく、中心から放射状に書く発想法は？",
+      "choices": [
+        "PDCA",
+        "マインドマップ",
+        "ブレーンストーミング",
+        "KJ 法"
+      ],
+      "answerIndex": 1,
+      "explanation": "キーワードをつなげていく。"
+    },
+    {
+      "id": "inf_info104_019",
+      "category": "knowledge",
+      "prompt": "トレードオフとは？",
+      "choices": [
+        "交換すること",
+        "一方をよくすると他方が悪くなる関係",
+        "両方が同時によくなる関係",
+        "まったく関係がないこと"
+      ],
+      "answerIndex": 1,
+      "explanation": "価格と品質など。"
+    },
+    {
+      "id": "inf_info104_020",
+      "category": "knowledge",
+      "prompt": "乱数を使って、偶然の要素をふくむ現象をくり返し試す手法は？",
+      "choices": [
+        "二分探索",
+        "モンテカルロ法",
+        "バブルソート",
+        "ランレングス法"
+      ],
+      "answerIndex": 1,
+      "explanation": "確率モデルのシミュレーションに使う。"
+    },
+    {
+      "id": "inf_info104_021",
+      "category": "calculation",
+      "prompt": "毎日 5 % ずつ増える量が今 100 のとき、2 日後はいくつ？",
+      "choices": [
+        "110",
+        "125",
+        "110.25",
+        "105"
+      ],
+      "answerIndex": 2,
+      "explanation": "100 × 1.05²。"
+    },
+    {
+      "id": "inf_info104_022",
+      "category": "calculation",
+      "prompt": "ある店は 1 時間に平均 12 人の客が来て、1 人の会計に 4 分かかる。レジ 1 台のとき、1 時間の会計にかかる時間の合計は？",
+      "choices": [
+        "4 分",
+        "48 分",
+        "12 分",
+        "60 分"
+      ],
+      "answerIndex": 1,
+      "explanation": "12 × 4。余裕は 12 分しかない。"
+    },
+    {
+      "id": "inf_info104_023",
+      "category": "thinking",
+      "prompt": "シミュレーションの結果をそのまま信じず、条件を変えて何度も試す理由は？",
+      "choices": [
+        "モデルの仮定や条件によって結果が大きく変わることがあるから",
+        "グラフを増やすため",
+        "計算を速くするため",
+        "1 回で必ず正しい結果が出るから"
+      ],
+      "answerIndex": 0,
+      "explanation": "結果の信頼性を確かめる。"
+    },
+    {
+      "id": "inf_info104_024",
+      "category": "thinking",
+      "prompt": "問題解決で、解決案を実行したあとに「評価」を行う理由は？",
+      "choices": [
+        "目的が達成できたかを確かめ、次の改善につなげるため",
+        "失敗を隠すため",
+        "記録を消すため",
+        "作業を終わらせるため"
+      ],
+      "answerIndex": 0,
+      "explanation": "PDCA の C（Check）と A（Action）。"
     }
   ]
 }

@@ -159,6 +159,162 @@
       ],
       "answerIndex": 1,
       "explanation": "一度並べる手間はかかるが、何度も探すなら全体として速くなる。"
+    },
+    {
+      "id": "inf_info116_013",
+      "category": "knowledge",
+      "prompt": "線形探索で、目的のデータが見つからない場合に調べる回数は？（n 個のデータ）",
+      "choices": [
+        "1 回",
+        "n/2 回",
+        "log₂n 回",
+        "n 回"
+      ],
+      "answerIndex": 3,
+      "explanation": "最後まで調べる必要がある。"
+    },
+    {
+      "id": "inf_info116_014",
+      "category": "knowledge",
+      "prompt": "選択ソートの考え方は？",
+      "choices": [
+        "残りのデータから最小値を選んで、先頭と交換することをくり返す",
+        "ランダムに並べかえる",
+        "となりどうしを比べて交換する",
+        "真ん中と比べる"
+      ],
+      "answerIndex": 0,
+      "explanation": "比較回数はおよそ n²/2。"
+    },
+    {
+      "id": "inf_info116_015",
+      "category": "knowledge",
+      "prompt": "データを基準値より小さいグループと大きいグループに分けることをくり返す、高速な整列法は？",
+      "choices": [
+        "バブルソート",
+        "線形探索",
+        "クイックソート",
+        "選択ソート"
+      ],
+      "answerIndex": 2,
+      "explanation": "平均的には n log n 程度の手間。"
+    },
+    {
+      "id": "inf_info116_016",
+      "category": "knowledge",
+      "prompt": "アルゴリズムの計算量で、データが 2 倍になると処理時間もおよそ 2 倍になるものは？",
+      "choices": [
+        "O(1)",
+        "O(n)（線形探索など）",
+        "O(log n)",
+        "O(n²)"
+      ],
+      "answerIndex": 1,
+      "explanation": "O(n²) なら約 4 倍。"
+    },
+    {
+      "id": "inf_info116_017",
+      "category": "knowledge",
+      "prompt": "二分探索の計算量は？",
+      "choices": [
+        "O(2ⁿ)",
+        "O(n²)",
+        "O(log n)",
+        "O(n)"
+      ],
+      "answerIndex": 2,
+      "explanation": "1 回ごとに範囲が半分になる。"
+    },
+    {
+      "id": "inf_info116_018",
+      "category": "calculation",
+      "prompt": "整列した 16 個のデータを二分探索するとき、最大何回の比較で見つかる？（目安）",
+      "choices": [
+        "16 回",
+        "4〜5 回",
+        "2 回",
+        "8 回"
+      ],
+      "answerIndex": 1,
+      "explanation": "16 → 8 → 4 → 2 → 1。"
+    },
+    {
+      "id": "inf_info116_019",
+      "category": "calculation",
+      "prompt": "[4, 2, 5, 1] を昇順にバブルソートするとき、1 回目の走査（先頭から最後まで）が終わった後の並びは？",
+      "choices": [
+        "[4, 2, 1, 5]",
+        "[1, 2, 4, 5]",
+        "[2, 4, 1, 5]",
+        "[2, 1, 4, 5]"
+      ],
+      "answerIndex": 2,
+      "explanation": "4と2を交換、4と5はそのまま、5と1を交換。"
+    },
+    {
+      "id": "inf_info116_020",
+      "category": "calculation",
+      "prompt": "4 個のデータをバブルソートするとき、比較の回数の合計は最大何回？",
+      "choices": [
+        "16 回",
+        "6 回",
+        "12 回",
+        "4 回"
+      ],
+      "answerIndex": 1,
+      "explanation": "3 ＋ 2 ＋ 1。"
+    },
+    {
+      "id": "inf_info116_021",
+      "category": "calculation",
+      "prompt": "[7, 3, 9, 1] の中で最大値を見つけるのに必要な比較の回数は？",
+      "choices": [
+        "1 回",
+        "4 回",
+        "6 回",
+        "3 回"
+      ],
+      "answerIndex": 3,
+      "explanation": "n 個なら n − 1 回。"
+    },
+    {
+      "id": "inf_info116_022",
+      "category": "calculation",
+      "prompt": "データが 1000 個から 2000 個になると、O(n²) のアルゴリズムの処理時間はおよそ何倍？",
+      "choices": [
+        "8 倍",
+        "4 倍",
+        "2 倍",
+        "1 倍"
+      ],
+      "answerIndex": 1,
+      "explanation": "(2n)² ＝ 4n²。"
+    },
+    {
+      "id": "inf_info116_023",
+      "category": "thinking",
+      "prompt": "データの量が多いとき、アルゴリズムの選び方が重要になる理由は？",
+      "choices": [
+        "コンピュータが速いので関係ないから",
+        "少ないデータの方が遅いから",
+        "どれも同じ時間だから",
+        "手間の増え方のちがいで、処理時間に大きな差が出るから"
+      ],
+      "answerIndex": 3,
+      "explanation": "計算量の比較が大切。"
+    },
+    {
+      "id": "inf_info116_024",
+      "category": "thinking",
+      "prompt": "二分探索を使う前に並べかえが必要な場合、何度も探すときに有利になる理由は？",
+      "choices": [
+        "並べかえは不要だから",
+        "並べかえると探索が遅くなるから",
+        "一度並べかえれば、その後の探索がそれぞれとても速くなるから",
+        "一度しか探さないから"
+      ],
+      "answerIndex": 2,
+      "explanation": "並べかえの手間を多数の探索で取りもどせる。"
     }
   ]
 }

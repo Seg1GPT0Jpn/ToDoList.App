@@ -159,6 +159,162 @@
       ],
       "answerIndex": 3,
       "explanation": "そのため、幸福度やグリーン GDP などの指標も考えられている。"
+    },
+    {
+      "id": "soc_pol11_013",
+      "category": "knowledge",
+      "prompt": "GDP にふくまれないものは？",
+      "choices": [
+        "国内でのサービスの売上",
+        "家庭内での家事労働",
+        "国内の企業が生産した製品",
+        "国内の公共サービス"
+      ],
+      "answerIndex": 1,
+      "explanation": "市場で取引されない活動はふくまれない。"
+    },
+    {
+      "id": "soc_pol11_014",
+      "category": "knowledge",
+      "prompt": "GDP の「三面等価の原則」とは？",
+      "choices": [
+        "三年間の GDP が等しいこと",
+        "三つの産業の生産額が等しいこと",
+        "生産・分配・支出の三つの面から見た額が等しいこと",
+        "三つの国の GDP が等しいこと"
+      ],
+      "answerIndex": 2,
+      "explanation": "国民所得をとらえる考え方。"
+    },
+    {
+      "id": "soc_pol11_015",
+      "category": "knowledge",
+      "prompt": "ある時点での国全体の資産の蓄積を表すものは？",
+      "choices": [
+        "国富（ストック）",
+        "国民所得",
+        "GDP（フロー）",
+        "経済成長率"
+      ],
+      "answerIndex": 0,
+      "explanation": "GDP は一定期間の流れ（フロー）。"
+    },
+    {
+      "id": "soc_pol11_016",
+      "category": "knowledge",
+      "prompt": "景気循環のうち、設備投資の変動による約 10 年の周期の波は？",
+      "choices": [
+        "キチンの波",
+        "ジュグラーの波",
+        "コンドラチェフの波",
+        "クズネッツの波"
+      ],
+      "answerIndex": 1,
+      "explanation": "キチンは在庫（約 40 か月）、コンドラチェフは技術革新（約 50 年）。"
+    },
+    {
+      "id": "soc_pol11_017",
+      "category": "knowledge",
+      "prompt": "好況期によく見られる状態は？",
+      "choices": [
+        "生産や雇用が増え、物価が上がりやすい",
+        "物価が下がり続ける",
+        "倒産や失業が増える",
+        "在庫が増え続ける"
+      ],
+      "answerIndex": 0,
+      "explanation": "過熱するとインフレにつながる。"
+    },
+    {
+      "id": "soc_pol11_018",
+      "category": "knowledge",
+      "prompt": "物価が上がると、同じ金額のお金で買える量はどうなる？",
+      "choices": [
+        "無限になる",
+        "変わらない",
+        "増える",
+        "減る（お金の価値が下がる）"
+      ],
+      "answerIndex": 3,
+      "explanation": "インフレで貨幣価値が下がる。"
+    },
+    {
+      "id": "soc_pol11_019",
+      "category": "knowledge",
+      "prompt": "持続的な物価下落と景気悪化が悪循環になることは？",
+      "choices": [
+        "デフレスパイラル",
+        "ハイパーインフレ",
+        "スタグフレーション",
+        "バブル"
+      ],
+      "answerIndex": 0,
+      "explanation": "日本では 1990 年代後半から問題になった。"
+    },
+    {
+      "id": "soc_pol11_020",
+      "category": "knowledge",
+      "prompt": "三つの産業のうち、商業・サービス業などをふくむのは？",
+      "choices": [
+        "第 3 次産業",
+        "第 2 次産業",
+        "第 4 次産業",
+        "第 1 次産業"
+      ],
+      "answerIndex": 0,
+      "explanation": "経済が発展すると第 3 次産業の割合が高まる（産業構造の高度化）。"
+    },
+    {
+      "id": "soc_pol11_021",
+      "category": "calculation",
+      "prompt": "名目 GDP が 500 兆円から 510 兆円に増え、物価が 1 % 上がった。実質経済成長率はおよそ？",
+      "choices": [
+        "約 2 %",
+        "約 1 %",
+        "約 3 %",
+        "約 −1 %"
+      ],
+      "answerIndex": 1,
+      "explanation": "名目成長率 2 % − 物価上昇率 1 %。"
+    },
+    {
+      "id": "soc_pol11_022",
+      "category": "calculation",
+      "prompt": "労働力人口 6000 万人、完全失業者 180 万人。完全失業率は？",
+      "choices": [
+        "3 %",
+        "6 %",
+        "0.3 %",
+        "18 %"
+      ],
+      "answerIndex": 0,
+      "explanation": "180 ÷ 6000 × 100。"
+    },
+    {
+      "id": "soc_pol11_023",
+      "category": "thinking",
+      "prompt": "スタグフレーションが政策上むずかしい理由は？",
+      "choices": [
+        "景気対策をするとインフレが進み、インフレ対策をすると景気が悪くなるから",
+        "景気がよすぎるから",
+        "失業がないから",
+        "物価が安定しているから"
+      ],
+      "answerIndex": 0,
+      "explanation": "1970 年代の石油危機のときに起こった。"
+    },
+    {
+      "id": "soc_pol11_024",
+      "category": "thinking",
+      "prompt": "「国民の豊かさ」をはかる指標として GDP 以外に使われるものの例は？",
+      "choices": [
+        "為替相場",
+        "人間開発指数（HDI）",
+        "株価だけ",
+        "国債残高"
+      ],
+      "answerIndex": 1,
+      "explanation": "教育・健康・所得などを組み合わせた指標。"
     }
   ]
 }

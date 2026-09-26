@@ -159,6 +159,162 @@
       ],
       "answerIndex": 0,
       "explanation": "実際の通信では、両方を組み合わせて使うことが多い。"
+    },
+    {
+      "id": "inf_info112_013",
+      "category": "knowledge",
+      "prompt": "共通鍵暗号方式の弱点は？",
+      "choices": [
+        "鍵を安全に相手に渡すのが難しい",
+        "処理がとても遅い",
+        "暗号化できない",
+        "鍵が必要ない"
+      ],
+      "answerIndex": 0,
+      "explanation": "公開鍵暗号と組み合わせて使われる。"
+    },
+    {
+      "id": "inf_info112_014",
+      "category": "knowledge",
+      "prompt": "公開鍵暗号方式で、だれにでも公開してよい鍵は？",
+      "choices": [
+        "共通鍵",
+        "マスターキー",
+        "公開鍵",
+        "秘密鍵"
+      ],
+      "answerIndex": 2,
+      "explanation": "秘密鍵は本人だけが持つ。"
+    },
+    {
+      "id": "inf_info112_015",
+      "category": "knowledge",
+      "prompt": "デジタル署名で、署名の作成に使う鍵は？",
+      "choices": [
+        "共通鍵",
+        "送信者の秘密鍵",
+        "受信者の公開鍵",
+        "送信者の公開鍵"
+      ],
+      "answerIndex": 1,
+      "explanation": "受信者は送信者の公開鍵で検証する。"
+    },
+    {
+      "id": "inf_info112_016",
+      "category": "knowledge",
+      "prompt": "データから一定の長さの値を計算し、改ざんの検出に使う関数は？",
+      "choices": [
+        "乱数関数",
+        "ハッシュ関数",
+        "平均関数",
+        "三角関数"
+      ],
+      "answerIndex": 1,
+      "explanation": "少しでも変わると値が大きく変わる。"
+    },
+    {
+      "id": "inf_info112_017",
+      "category": "knowledge",
+      "prompt": "電子証明書を発行する、信頼された第三者機関は？",
+      "choices": [
+        "ルータ",
+        "認証局（CA）",
+        "DNS サーバ",
+        "プロバイダ"
+      ],
+      "answerIndex": 1,
+      "explanation": "公開鍵の持ち主を証明する。"
+    },
+    {
+      "id": "inf_info112_018",
+      "category": "knowledge",
+      "prompt": "Web サイトの通信が SSL/TLS で暗号化されているとき、ブラウザに表示されるものの例は？",
+      "choices": [
+        "ウイルス警告",
+        "赤い × 印",
+        "鍵のマークや「https」",
+        "広告"
+      ],
+      "answerIndex": 2,
+      "explanation": "ただし偽サイトでも https の場合があるので注意。"
+    },
+    {
+      "id": "inf_info112_019",
+      "category": "calculation",
+      "prompt": "シーザー暗号で、各文字を 2 文字後ろにずらすと「CAT」はどうなる？",
+      "choices": [
+        "DBU",
+        "ACR",
+        "ECV",
+        "EAT"
+      ],
+      "answerIndex": 2,
+      "explanation": "C→E、A→C、T→V。"
+    },
+    {
+      "id": "inf_info112_020",
+      "category": "calculation",
+      "prompt": "1 文字後ろにずらしたシーザー暗号「EPH」を復号すると？",
+      "choices": [
+        "COW",
+        "EGG",
+        "DOG",
+        "FQI"
+      ],
+      "answerIndex": 2,
+      "explanation": "1 文字前に戻す：E→D、P→O、H→G。"
+    },
+    {
+      "id": "inf_info112_021",
+      "category": "calculation",
+      "prompt": "アルファベット 26 文字のシーザー暗号で、考えられるずらし方（鍵）は何通り？（ずらさない場合を除く）",
+      "choices": [
+        "13 通り",
+        "26 通り",
+        "25 通り",
+        "52 通り"
+      ],
+      "answerIndex": 2,
+      "explanation": "総当たりで簡単に解読できる。"
+    },
+    {
+      "id": "inf_info112_022",
+      "category": "calculation",
+      "prompt": "5 人が互いに共通鍵暗号で 1 対 1 の通信をするとき、必要な鍵の数は？",
+      "choices": [
+        "20 個",
+        "10 個",
+        "5 個",
+        "25 個"
+      ],
+      "answerIndex": 1,
+      "explanation": "₅C₂ ＝ 10。"
+    },
+    {
+      "id": "inf_info112_023",
+      "category": "thinking",
+      "prompt": "HTTPS のサイトなら必ず安全とは言えない理由は？",
+      "choices": [
+        "通信は暗号化されていても、相手のサイトそのものが偽物である可能性があるから",
+        "暗号化されていないから",
+        "ブラウザが古いから",
+        "https は危険な印だから"
+      ],
+      "answerIndex": 0,
+      "explanation": "URL のつづりや証明書の内容も確かめる。"
+    },
+    {
+      "id": "inf_info112_024",
+      "category": "thinking",
+      "prompt": "パスワードを、そのままではなくハッシュ値にしてサーバに保存する理由は？",
+      "choices": [
+        "データが漏れても、元のパスワードが直接わからないようにするため",
+        "パスワードを忘れても大丈夫にするため",
+        "ログインを速くするため",
+        "容量を増やすため"
+      ],
+      "answerIndex": 0,
+      "explanation": "ハッシュ値から元に戻すのは困難。"
     }
   ]
 }

@@ -159,6 +159,162 @@
       ],
       "answerIndex": 1,
       "explanation": "1111 ＝ 15 ＝ F。2 進数 4 けたが 16 進数 1 けたにあたる。"
+    },
+    {
+      "id": "inf_info108_013",
+      "category": "knowledge",
+      "prompt": "アナログ量をデジタル量に変換することを何という？",
+      "choices": [
+        "暗号化",
+        "D/A 変換",
+        "A/D 変換",
+        "圧縮"
+      ],
+      "answerIndex": 2,
+      "explanation": "マイクの音を記録するときなど。"
+    },
+    {
+      "id": "inf_info108_014",
+      "category": "knowledge",
+      "prompt": "1 キロバイト（KB）はおよそ何バイト？（10³ として）",
+      "choices": [
+        "1000 バイト",
+        "100 バイト",
+        "100 万バイト",
+        "8 バイト"
+      ],
+      "answerIndex": 0,
+      "explanation": "2¹⁰ ＝ 1024 として扱うこともある。"
+    },
+    {
+      "id": "inf_info108_015",
+      "category": "knowledge",
+      "prompt": "日本語の文字を表すための文字コードの例は？",
+      "choices": [
+        "JPEG",
+        "ASCII だけ",
+        "MP3",
+        "Shift_JIS・UTF-8"
+      ],
+      "answerIndex": 3,
+      "explanation": "ASCII は英数字用。"
+    },
+    {
+      "id": "inf_info108_016",
+      "category": "knowledge",
+      "prompt": "文字コードが送り手と受け手で異なると起こる現象は？",
+      "choices": [
+        "文字化け",
+        "フリーズ",
+        "ウイルス感染",
+        "圧縮"
+      ],
+      "answerIndex": 0,
+      "explanation": "正しい文字コードで読み直す。"
+    },
+    {
+      "id": "inf_info108_017",
+      "category": "knowledge",
+      "prompt": "2 進数で、けたが 1 つ増えると表せる値の数はどうなる？",
+      "choices": [
+        "1 増える",
+        "2 倍になる",
+        "変わらない",
+        "10 倍になる"
+      ],
+      "answerIndex": 1,
+      "explanation": "n ビットで 2ⁿ 通り。"
+    },
+    {
+      "id": "inf_info108_018",
+      "category": "calculation",
+      "prompt": "10 進数の 25 を 2 進数で表すと？",
+      "choices": [
+        "10101",
+        "11010",
+        "11001",
+        "10011"
+      ],
+      "answerIndex": 2,
+      "explanation": "16 + 8 + 1。"
+    },
+    {
+      "id": "inf_info108_019",
+      "category": "calculation",
+      "prompt": "2 進数の 1110 を 10 進数で表すと？",
+      "choices": [
+        "15",
+        "7",
+        "14",
+        "12"
+      ],
+      "answerIndex": 2,
+      "explanation": "8 + 4 + 2。"
+    },
+    {
+      "id": "inf_info108_020",
+      "category": "calculation",
+      "prompt": "10 進数の 255 を 16 進数で表すと？",
+      "choices": [
+        "EF",
+        "F0",
+        "100",
+        "FF"
+      ],
+      "answerIndex": 3,
+      "explanation": "15 × 16 + 15。"
+    },
+    {
+      "id": "inf_info108_021",
+      "category": "calculation",
+      "prompt": "16 進数の 1A を 10 進数で表すと？",
+      "choices": [
+        "20",
+        "26",
+        "16",
+        "110"
+      ],
+      "answerIndex": 1,
+      "explanation": "1 × 16 + 10。"
+    },
+    {
+      "id": "inf_info108_022",
+      "category": "calculation",
+      "prompt": "4 ビットで表せる情報は何通り？",
+      "choices": [
+        "4 通り",
+        "8 通り",
+        "16 通り",
+        "32 通り"
+      ],
+      "answerIndex": 2,
+      "explanation": "2⁴。"
+    },
+    {
+      "id": "inf_info108_023",
+      "category": "calculation",
+      "prompt": "2 進数の 0111 ＋ 0001 を計算すると？",
+      "choices": [
+        "0110",
+        "0112",
+        "1000",
+        "1111"
+      ],
+      "answerIndex": 2,
+      "explanation": "7 ＋ 1 ＝ 8。"
+    },
+    {
+      "id": "inf_info108_024",
+      "category": "thinking",
+      "prompt": "2 進数で負の数を表すときに「2 の補数」を使う利点は？",
+      "choices": [
+        "数が大きくなるから",
+        "引き算を足し算の回路で計算できるから",
+        "文字も表せるから",
+        "計算がいらないから"
+      ],
+      "answerIndex": 1,
+      "explanation": "回路を簡単にできる。"
     }
   ]
 }

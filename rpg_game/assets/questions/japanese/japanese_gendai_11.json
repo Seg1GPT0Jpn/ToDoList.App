@@ -159,6 +159,162 @@
       ],
       "answerIndex": 1,
       "explanation": "主張の後には、それを支える理由（根拠）を示す。"
+    },
+    {
+      "id": "jap_gendai11_013",
+      "category": "knowledge",
+      "prompt": "スピーチで、聞き手を引きつけるための工夫として適切なものは？",
+      "choices": [
+        "下を向いて話す",
+        "原稿を早口で読む",
+        "結論を最後まで言わない",
+        "はじめに問いかけや身近な例を示す"
+      ],
+      "answerIndex": 3,
+      "explanation": "聞き手の関心を引き出す。"
+    },
+    {
+      "id": "jap_gendai11_014",
+      "category": "knowledge",
+      "prompt": "話し合いで、意見を一つにまとめていく話し合いを何という？",
+      "choices": [
+        "即興",
+        "独白",
+        "拡散的な話し合い",
+        "収束的な話し合い"
+      ],
+      "answerIndex": 3,
+      "explanation": "アイデアを広げる段階は拡散的。"
+    },
+    {
+      "id": "jap_gendai11_015",
+      "category": "knowledge",
+      "prompt": "ディベートで、相手の主張の問題点を指摘することを何という？",
+      "choices": [
+        "反駁",
+        "要約",
+        "結論",
+        "立論"
+      ],
+      "answerIndex": 0,
+      "explanation": "立論→質疑→反駁の順に進むことが多い。"
+    },
+    {
+      "id": "jap_gendai11_016",
+      "category": "knowledge",
+      "prompt": "インタビューで、相手が自由に答えられる質問の形式は？",
+      "choices": [
+        "オープン・クエスチョン",
+        "二択の質問",
+        "クローズド・クエスチョン",
+        "誘導質問"
+      ],
+      "answerIndex": 0,
+      "explanation": "「どう思いますか」など。"
+    },
+    {
+      "id": "jap_gendai11_017",
+      "category": "knowledge",
+      "prompt": "レポートの構成として一般的なものは？",
+      "choices": [
+        "序論・本論・結論",
+        "結論だけ",
+        "感想・感想・感想",
+        "起承転結だけ"
+      ],
+      "answerIndex": 0,
+      "explanation": "序論で問い、本論で調査・考察、結論でまとめる。"
+    },
+    {
+      "id": "jap_gendai11_018",
+      "category": "knowledge",
+      "prompt": "参考文献の書き方で、ふつう示す必要がないものは？",
+      "choices": [
+        "著者名",
+        "読んだときの気分",
+        "出版社・発行年",
+        "書名"
+      ],
+      "answerIndex": 1,
+      "explanation": "Web の場合は URL と閲覧日。"
+    },
+    {
+      "id": "jap_gendai11_019",
+      "category": "knowledge",
+      "prompt": "プレゼンテーションで、聞き手に合わせて内容や言葉を選ぶことを何という？",
+      "choices": [
+        "独りよがり",
+        "朗読",
+        "聞き手意識（相手意識）",
+        "暗記"
+      ],
+      "answerIndex": 2,
+      "explanation": "誰に何を伝えるかを考える。"
+    },
+    {
+      "id": "jap_gendai11_020",
+      "category": "knowledge",
+      "prompt": "司会の役割として適切なものは？",
+      "choices": [
+        "反対意見を封じる",
+        "結論を最初に決めてしまう",
+        "自分の意見だけを言う",
+        "話し合いの目的を確認し、発言を整理して進行する"
+      ],
+      "answerIndex": 3,
+      "explanation": "全員が発言できるよう配慮する。"
+    },
+    {
+      "id": "jap_gendai11_021",
+      "category": "knowledge",
+      "prompt": "推敲で確認することとしてあまり重要でないものは？",
+      "choices": [
+        "段落の構成",
+        "字の大きさの好み",
+        "誤字・脱字",
+        "主語と述語のねじれ"
+      ],
+      "answerIndex": 1,
+      "explanation": "内容と表現の正確さを確かめる。"
+    },
+    {
+      "id": "jap_gendai11_022",
+      "category": "calculation",
+      "prompt": "主語と述語がねじれている文は？",
+      "choices": [
+        "私は、医者になって人を助けたい。",
+        "私の夢は、医者になって人を助けることだ。",
+        "夢は医者だ。",
+        "私の夢は、医者になって人を助けたい。"
+      ],
+      "answerIndex": 3,
+      "explanation": "「夢は〜ことだ」と対応させる。"
+    },
+    {
+      "id": "jap_gendai11_023",
+      "category": "thinking",
+      "prompt": "グループで話し合うとき、少数意見を大切にする理由は？",
+      "choices": [
+        "話し合いを長くするため",
+        "結論を出さないため",
+        "見落としていた視点や問題点に気づくきっかけになるから",
+        "多数決をなくすため"
+      ],
+      "answerIndex": 2,
+      "explanation": "よりよい結論につながる。"
+    },
+    {
+      "id": "jap_gendai11_024",
+      "category": "thinking",
+      "prompt": "聞き手に伝わるプレゼンの結論の述べ方として適切なものは？",
+      "choices": [
+        "結論を言わない",
+        "はじめに結論を示し、根拠を述べ、最後にもう一度まとめる",
+        "根拠だけを並べる",
+        "スライドをすべて読み上げる"
+      ],
+      "answerIndex": 1,
+      "explanation": "結論→根拠→結論（PREP）の型など。"
     }
   ]
 }

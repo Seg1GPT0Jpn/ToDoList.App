@@ -162,6 +162,169 @@
       ],
       "answerIndex": 1,
       "explanation": "直喩と誇張で、心情の強さを印象づけている。"
+    },
+    {
+      "id": "jap_gendai10_013",
+      "category": "calculation",
+      "prompt": "次の文に使われている表現技法は？",
+      "sentence": "彼女の笑顔は、ひまわりのように明るかった。",
+      "choices": [
+        "隠喩",
+        "倒置法",
+        "擬人法",
+        "直喩"
+      ],
+      "answerIndex": 3,
+      "explanation": "「〜ように」でたとえている。"
+    },
+    {
+      "id": "jap_gendai10_014",
+      "category": "calculation",
+      "prompt": "次の文に使われている表現技法は？",
+      "sentence": "人生は旅だ。",
+      "choices": [
+        "体言止め",
+        "直喩",
+        "隠喩",
+        "反復"
+      ],
+      "answerIndex": 2,
+      "explanation": "「ようだ」を使わずにたとえている。"
+    },
+    {
+      "id": "jap_gendai10_015",
+      "category": "calculation",
+      "prompt": "次の文に使われている表現技法は？",
+      "sentence": "風が、そっと窓をたたいた。",
+      "choices": [
+        "対句",
+        "擬人法",
+        "倒置法",
+        "直喩"
+      ],
+      "answerIndex": 1,
+      "explanation": "風を人のように表している。"
+    },
+    {
+      "id": "jap_gendai10_016",
+      "category": "calculation",
+      "prompt": "次の文に使われている表現技法は？",
+      "sentence": "夕焼けに染まる、ふるさとの山。",
+      "choices": [
+        "倒置法",
+        "擬人法",
+        "反復",
+        "体言止め"
+      ],
+      "answerIndex": 3,
+      "explanation": "名詞で文を終えている。"
+    },
+    {
+      "id": "jap_gendai10_017",
+      "category": "calculation",
+      "prompt": "次の文に使われている表現技法は？",
+      "sentence": "山は高く、海は深い。",
+      "choices": [
+        "直喩",
+        "反復",
+        "倒置法",
+        "対句"
+      ],
+      "answerIndex": 3,
+      "explanation": "似た組み立ての語句を並べている。"
+    },
+    {
+      "id": "jap_gendai10_018",
+      "category": "calculation",
+      "prompt": "次の文に使われている表現技法は？",
+      "sentence": "走れ、走れ、どこまでも走れ。",
+      "choices": [
+        "反復",
+        "対句",
+        "隠喩",
+        "体言止め"
+      ],
+      "answerIndex": 0,
+      "explanation": "同じ言葉をくり返している。"
+    },
+    {
+      "id": "jap_gendai10_019",
+      "category": "calculation",
+      "prompt": "次の文に使われている表現技法は？",
+      "sentence": "行こう、あの丘の向こうへ。",
+      "choices": [
+        "倒置法",
+        "擬人法",
+        "直喩",
+        "体言止め"
+      ],
+      "answerIndex": 0,
+      "explanation": "ふつうの語順と入れかわっている。"
+    },
+    {
+      "id": "jap_gendai10_020",
+      "category": "knowledge",
+      "prompt": "「ざわざわ」「しーん」のように、ようすや状態を表す言葉は？",
+      "choices": [
+        "擬声語",
+        "外来語",
+        "擬態語",
+        "接続語"
+      ],
+      "answerIndex": 2,
+      "explanation": "音を表す擬声語（擬音語）と区別する。"
+    },
+    {
+      "id": "jap_gendai10_021",
+      "category": "knowledge",
+      "prompt": "文の一部を省略して、余韻を残す表現技法は？",
+      "choices": [
+        "擬人法",
+        "対句法",
+        "省略法",
+        "反復法"
+      ],
+      "answerIndex": 2,
+      "explanation": "「……」などで表すことが多い。"
+    },
+    {
+      "id": "jap_gendai10_022",
+      "category": "knowledge",
+      "prompt": "詩で、同じ音の響きを行のはじめや終わりにそろえることを何という？",
+      "choices": [
+        "押韻（韻をふむ）",
+        "倒置",
+        "擬人法",
+        "体言止め"
+      ],
+      "answerIndex": 0,
+      "explanation": "リズムや心地よさを生む。"
+    },
+    {
+      "id": "jap_gendai10_023",
+      "category": "thinking",
+      "prompt": "「体言止め」を使う効果として適切なものは？",
+      "choices": [
+        "主語をはっきりさせる",
+        "余韻を残したり、印象を強めたりする",
+        "意味をあいまいにする",
+        "文を長くする"
+      ],
+      "answerIndex": 1,
+      "explanation": "俳句や広告の見出しでもよく使われる。"
+    },
+    {
+      "id": "jap_gendai10_024",
+      "category": "thinking",
+      "prompt": "擬人法を使うと表現はどうなる？",
+      "choices": [
+        "物事が生き生きと感じられ、親しみやすくなる",
+        "数値が正確になる",
+        "文が論理的になる",
+        "事実だけが伝わる"
+      ],
+      "answerIndex": 0,
+      "explanation": "人でないものに人の動作や感情をもたせる。"
     }
   ]
 }

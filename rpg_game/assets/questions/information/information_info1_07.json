@@ -159,6 +159,162 @@
       ],
       "answerIndex": 3,
       "explanation": "SSD はフラッシュメモリで電気的に読み書きする。"
+    },
+    {
+      "id": "inf_info107_013",
+      "category": "knowledge",
+      "prompt": "CPU の中で、計算を行う部分は？",
+      "choices": [
+        "演算装置",
+        "出力装置",
+        "記憶装置",
+        "制御装置"
+      ],
+      "answerIndex": 0,
+      "explanation": "制御装置は命令を解読して各装置を動かす。"
+    },
+    {
+      "id": "inf_info107_014",
+      "category": "knowledge",
+      "prompt": "キーボードやマウスは五大装置のどれ？",
+      "choices": [
+        "記憶装置",
+        "出力装置",
+        "演算装置",
+        "入力装置"
+      ],
+      "answerIndex": 3,
+      "explanation": "ディスプレイやプリンタは出力装置。"
+    },
+    {
+      "id": "inf_info107_015",
+      "category": "knowledge",
+      "prompt": "主記憶装置（メインメモリ）の特徴は？",
+      "choices": [
+        "容量が無限",
+        "CPU の中にある",
+        "電源を切っても内容が残る",
+        "読み書きが速いが、電源を切ると内容が消える"
+      ],
+      "answerIndex": 3,
+      "explanation": "揮発性メモリ（RAM）。"
+    },
+    {
+      "id": "inf_info107_016",
+      "category": "knowledge",
+      "prompt": "CPU とメモリの速度差をうめるために、CPU の近くに置かれる高速な記憶装置は？",
+      "choices": [
+        "HDD",
+        "USB メモリ",
+        "DVD",
+        "キャッシュメモリ"
+      ],
+      "answerIndex": 3,
+      "explanation": "よく使うデータを置いておく。"
+    },
+    {
+      "id": "inf_info107_017",
+      "category": "knowledge",
+      "prompt": "文書作成ソフトや表計算ソフトなど、目的に応じて使うソフトウェアは？",
+      "choices": [
+        "デバイスドライバ",
+        "アプリケーションソフトウェア",
+        "BIOS",
+        "OS"
+      ],
+      "answerIndex": 1,
+      "explanation": "OS の上で動く。"
+    },
+    {
+      "id": "inf_info107_018",
+      "category": "knowledge",
+      "prompt": "周辺機器を OS から使えるようにするためのソフトウェアは？",
+      "choices": [
+        "コンパイラ",
+        "ブラウザ",
+        "デバイスドライバ",
+        "ファイアウォール"
+      ],
+      "answerIndex": 2,
+      "explanation": "プリンタなどを動かすのに必要。"
+    },
+    {
+      "id": "inf_info107_019",
+      "category": "knowledge",
+      "prompt": "CPU が 1 秒間に処理する命令の目安になる値は？",
+      "choices": [
+        "クロック周波数",
+        "画素数",
+        "ビットレート",
+        "解像度"
+      ],
+      "answerIndex": 0,
+      "explanation": "単位は Hz（ヘルツ）。"
+    },
+    {
+      "id": "inf_info107_020",
+      "category": "knowledge",
+      "prompt": "複数の処理を同時に行うため、CPU に複数の処理部分をもつものを何という？",
+      "choices": [
+        "シングルコア",
+        "キャッシュ",
+        "マルチコア",
+        "レジスタ"
+      ],
+      "answerIndex": 2,
+      "explanation": "同時に処理できる量が増える。"
+    },
+    {
+      "id": "inf_info107_021",
+      "category": "calculation",
+      "prompt": "1 GHz は何 Hz？",
+      "choices": [
+        "10⁶ Hz",
+        "10³ Hz",
+        "10⁹ Hz",
+        "10¹² Hz"
+      ],
+      "answerIndex": 2,
+      "explanation": "G（ギガ）は 10 億。"
+    },
+    {
+      "id": "inf_info107_022",
+      "category": "calculation",
+      "prompt": "クロック周波数 3 GHz の CPU で、1 クロックの時間は？",
+      "choices": [
+        "3 ナノ秒",
+        "約 0.33 ナノ秒",
+        "約 0.33 秒",
+        "3 ミリ秒"
+      ],
+      "answerIndex": 1,
+      "explanation": "1 ÷ (3 × 10⁹) 秒。"
+    },
+    {
+      "id": "inf_info107_023",
+      "category": "thinking",
+      "prompt": "同じ CPU でも、メモリを増やすとパソコンの動作が速くなることがある理由は？",
+      "choices": [
+        "ネットが速くなるから",
+        "データを遅い補助記憶装置に退避させる回数が減るから",
+        "画面が明るくなるから",
+        "CPU のクロックが上がるから"
+      ],
+      "answerIndex": 1,
+      "explanation": "仮想記憶へのスワップが減る。"
+    },
+    {
+      "id": "inf_info107_024",
+      "category": "thinking",
+      "prompt": "スマートフォンもコンピュータの一種と言える理由は？",
+      "choices": [
+        "入力・出力・記憶・演算・制御の機能をもつから",
+        "画面があるから",
+        "小さいから",
+        "電話ができるから"
+      ],
+      "answerIndex": 0,
+      "explanation": "五大装置の機能をすべてもっている。"
     }
   ]
 }

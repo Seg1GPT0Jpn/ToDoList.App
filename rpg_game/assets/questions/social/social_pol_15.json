@@ -159,6 +159,162 @@
       ],
       "answerIndex": 3,
       "explanation": "後発発展途上国（LDC）への支援が課題。"
+    },
+    {
+      "id": "soc_pol15_013",
+      "category": "knowledge",
+      "prompt": "比較生産費説（比較優位）を唱えた経済学者は？",
+      "choices": [
+        "リカード",
+        "ケインズ",
+        "アダム＝スミス",
+        "リスト"
+      ],
+      "answerIndex": 0,
+      "explanation": "国際分業と自由貿易の利益を説いた。"
+    },
+    {
+      "id": "soc_pol15_014",
+      "category": "knowledge",
+      "prompt": "保護貿易を主張したドイツの経済学者は？",
+      "choices": [
+        "リスト",
+        "リカード",
+        "フリードマン",
+        "マルクス"
+      ],
+      "answerIndex": 0,
+      "explanation": "発展途上の産業を守る必要を説いた。"
+    },
+    {
+      "id": "soc_pol15_015",
+      "category": "knowledge",
+      "prompt": "国際収支のうち、貿易やサービス、所得のやりとりをまとめたものは？",
+      "choices": [
+        "金融収支",
+        "経常収支",
+        "資本移転等収支",
+        "外貨準備"
+      ],
+      "answerIndex": 1,
+      "explanation": "日本は第一次所得収支の黒字が大きい。"
+    },
+    {
+      "id": "soc_pol15_016",
+      "category": "knowledge",
+      "prompt": "海外への投資から得た利子や配当などの収支は？",
+      "choices": [
+        "貿易収支",
+        "サービス収支",
+        "第一次所得収支",
+        "第二次所得収支"
+      ],
+      "answerIndex": 2,
+      "explanation": "日本の経常黒字の中心となっている。"
+    },
+    {
+      "id": "soc_pol15_017",
+      "category": "knowledge",
+      "prompt": "第二次世界大戦後の国際経済体制で、固定相場制を支えたものは？",
+      "choices": [
+        "冷戦体制",
+        "ベルサイユ体制",
+        "ウィーン体制",
+        "ブレトン＝ウッズ体制（IMF・世界銀行）"
+      ],
+      "answerIndex": 3,
+      "explanation": "ドルを基軸通貨とした。"
+    },
+    {
+      "id": "soc_pol15_018",
+      "category": "knowledge",
+      "prompt": "特定の国や地域の間で関税などをなくす協定は？",
+      "choices": [
+        "ODA",
+        "FTA（自由貿易協定）",
+        "IMF",
+        "NGO"
+      ],
+      "answerIndex": 1,
+      "explanation": "より広い分野を対象にするものは EPA。"
+    },
+    {
+      "id": "soc_pol15_019",
+      "category": "knowledge",
+      "prompt": "環太平洋の国々による経済連携協定は？",
+      "choices": [
+        "NAFTA",
+        "ASEAN",
+        "EU",
+        "TPP（CPTPP）"
+      ],
+      "answerIndex": 3,
+      "explanation": "日本も参加している。"
+    },
+    {
+      "id": "soc_pol15_020",
+      "category": "knowledge",
+      "prompt": "発展途上国の中で、資源や工業化で経済成長した国と、そうでない国の格差の問題は？",
+      "choices": [
+        "東西問題",
+        "南南問題",
+        "北北問題",
+        "南北問題"
+      ],
+      "answerIndex": 1,
+      "explanation": "資源をもつ国や新興工業国との差。"
+    },
+    {
+      "id": "soc_pol15_021",
+      "category": "calculation",
+      "prompt": "A 国は機械 1 単位に 10 人、農産物 1 単位に 20 人、B 国は機械 1 単位に 40 人、農産物 1 単位に 30 人が必要。比較優位の考え方で B 国が特化すべきものは？",
+      "choices": [
+        "どちらも生産しない",
+        "機械",
+        "農産物",
+        "両方"
+      ],
+      "answerIndex": 2,
+      "explanation": "B 国内の比較で、農産物の方が機会費用が小さい（30/40 ＜ 20/10）。"
+    },
+    {
+      "id": "soc_pol15_022",
+      "category": "calculation",
+      "prompt": "輸出額 100 兆円、輸入額 95 兆円のとき、貿易収支は？",
+      "choices": [
+        "5 兆円の黒字",
+        "195 兆円の黒字",
+        "0",
+        "5 兆円の赤字"
+      ],
+      "answerIndex": 0,
+      "explanation": "100 − 95。"
+    },
+    {
+      "id": "soc_pol15_023",
+      "category": "thinking",
+      "prompt": "途上国が特定の一次産品の輸出に頼る「モノカルチャー経済」の問題点は？",
+      "choices": [
+        "食料が余る",
+        "国際価格の変動で経済が大きく左右されやすい",
+        "工業が発展する",
+        "輸出が安定する"
+      ],
+      "answerIndex": 1,
+      "explanation": "植民地時代の影響が残る例が多い。"
+    },
+    {
+      "id": "soc_pol15_024",
+      "category": "thinking",
+      "prompt": "フェアトレードの商品を選ぶことの意味として適切なものは？",
+      "choices": [
+        "先進国の企業だけがもうかる",
+        "途上国の生産者に適正な対価が届き、生活や自立を支える",
+        "商品が必ず安くなる",
+        "環境への影響がなくなる"
+      ],
+      "answerIndex": 1,
+      "explanation": "消費者の選択が生産者の生活を支える。"
     }
   ]
 }

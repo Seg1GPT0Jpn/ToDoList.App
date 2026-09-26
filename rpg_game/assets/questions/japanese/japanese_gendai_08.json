@@ -160,6 +160,163 @@
       ],
       "answerIndex": 3,
       "explanation": "主張・根拠・反論への応答をそろえる。"
+    },
+    {
+      "id": "jap_gendai08_013",
+      "category": "knowledge",
+      "prompt": "三段論法の「大前提」にあたるものは？",
+      "choices": [
+        "すべての人は死ぬ",
+        "ソクラテスは死ぬ",
+        "ソクラテスは哲学者である",
+        "ソクラテスは人である"
+      ],
+      "answerIndex": 0,
+      "explanation": "一般的な原理が大前提。"
+    },
+    {
+      "id": "jap_gendai08_014",
+      "category": "knowledge",
+      "prompt": "議論で、相手の主張ではなく人格や経歴を攻撃する誤りを何という？",
+      "choices": [
+        "演繹法",
+        "譲歩",
+        "帰納法",
+        "人身攻撃（論点のすりかえの一種）"
+      ],
+      "answerIndex": 3,
+      "explanation": "主張の正しさとは関係がない。"
+    },
+    {
+      "id": "jap_gendai08_015",
+      "category": "knowledge",
+      "prompt": "「A か B のどちらかしかない」と、ほかの選択肢を無視する誤りは？",
+      "choices": [
+        "類推",
+        "誤った二分法",
+        "三段論法",
+        "帰納"
+      ],
+      "answerIndex": 1,
+      "explanation": "実際には第三の選択肢があることが多い。"
+    },
+    {
+      "id": "jap_gendai08_016",
+      "category": "knowledge",
+      "prompt": "少ない例から、急いで全体の結論を出してしまう誤りは？",
+      "choices": [
+        "譲歩",
+        "早まった一般化",
+        "反証",
+        "演繹"
+      ],
+      "answerIndex": 1,
+      "explanation": "帰納法の注意点。"
+    },
+    {
+      "id": "jap_gendai08_017",
+      "category": "knowledge",
+      "prompt": "議論で自分の主張の根拠を示すときに、最も説得力をもつものは？",
+      "choices": [
+        "うわさ",
+        "多数の人がそう言っていること",
+        "自分の好み",
+        "信頼できるデータや具体的な事実"
+      ],
+      "answerIndex": 3,
+      "explanation": "根拠の質が説得力を左右する。"
+    },
+    {
+      "id": "jap_gendai08_018",
+      "category": "calculation",
+      "prompt": "「A ならば B」が正しいとき、必ず正しいと言えるのは？",
+      "choices": [
+        "「A でないならば B でない」",
+        "どれも言えない",
+        "「B でないならば A でない」",
+        "「B ならば A」"
+      ],
+      "answerIndex": 2,
+      "explanation": "対偶はもとの命題と真偽が一致する。"
+    },
+    {
+      "id": "jap_gendai08_019",
+      "category": "calculation",
+      "prompt": "「この町の人はみんな親切だ。なぜなら、昨日道を教えてくれた人が親切だったからだ」の問題点は？",
+      "choices": [
+        "演繹法を使っている",
+        "反論をふくんでいる",
+        "データが多すぎる",
+        "一人の例から全体を決めつけている"
+      ],
+      "answerIndex": 3,
+      "explanation": "早まった一般化。"
+    },
+    {
+      "id": "jap_gendai08_020",
+      "category": "calculation",
+      "prompt": "「この薬を飲んだら風邪が治った。だから、この薬は風邪に効く」の問題点として適切なものは？",
+      "choices": [
+        "主張がない",
+        "自然に治った可能性など、ほかの原因を考えていない",
+        "演繹法として正しい",
+        "結論が正しい"
+      ],
+      "answerIndex": 1,
+      "explanation": "前後関係を因果関係ととりちがえる誤り。"
+    },
+    {
+      "id": "jap_gendai08_021",
+      "category": "knowledge",
+      "prompt": "反論に対して「確かに〜。しかし〜」と答える書き方を何という？",
+      "choices": [
+        "対比",
+        "譲歩",
+        "列挙",
+        "倒置"
+      ],
+      "answerIndex": 1,
+      "explanation": "相手の主張を一部認めてから自分の主張を述べる。"
+    },
+    {
+      "id": "jap_gendai08_022",
+      "category": "calculation",
+      "prompt": "次の主張に対する「根拠」として最も適切なものは？",
+      "sentence": "主張：高校の始業時間を 30 分遅らせるべきだ。",
+      "choices": [
+        "朝が好きな人が多いから",
+        "校長先生が言ったから",
+        "昔からそうだったから",
+        "授業中の居眠りが減り、テストの平均点も上がったという調査結果"
+      ],
+      "answerIndex": 3,
+      "explanation": "主張を支える客観的な事実。"
+    },
+    {
+      "id": "jap_gendai08_023",
+      "category": "thinking",
+      "prompt": "小論文で反対意見にふれずに書くと、説得力が弱まる理由は？",
+      "choices": [
+        "結論が不要になるから",
+        "文字数が足りなくなるから",
+        "読み手が思いうかべる疑問に答えておらず、一方的な印象を与えるから",
+        "主張がはっきりしすぎるから"
+      ],
+      "answerIndex": 2,
+      "explanation": "反論を想定して答えると説得力が増す。"
+    },
+    {
+      "id": "jap_gendai08_024",
+      "category": "thinking",
+      "prompt": "「論理的な文章」の条件として適切なものは？",
+      "choices": [
+        "感情が強く表れていること",
+        "難しい言葉が多いこと",
+        "長い文が多いこと",
+        "主張と根拠のつながりが明確で、筋道が通っていること"
+      ],
+      "answerIndex": 3,
+      "explanation": "読み手が筋道をたどれることが大切。"
     }
   ]
 }

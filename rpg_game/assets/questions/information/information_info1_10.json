@@ -159,6 +159,162 @@
       ],
       "answerIndex": 1,
       "explanation": "回線交換方式（電話）は通信中に回線を占有する。"
+    },
+    {
+      "id": "inf_info110_013",
+      "category": "knowledge",
+      "prompt": "ネットワークに接続した機器どうしを中継し、LAN の中でデータを届ける機器は？",
+      "choices": [
+        "スイッチ（ハブ）",
+        "ルータ",
+        "プリンタ",
+        "モデム"
+      ],
+      "answerIndex": 0,
+      "explanation": "MAC アドレスを使って転送する。"
+    },
+    {
+      "id": "inf_info110_014",
+      "category": "knowledge",
+      "prompt": "無線で LAN に接続するしくみの一般的な呼び名は？",
+      "choices": [
+        "Bluetooth だけ",
+        "有線 LAN",
+        "Wi-Fi（無線 LAN）",
+        "USB"
+      ],
+      "answerIndex": 2,
+      "explanation": "電波を使う。"
+    },
+    {
+      "id": "inf_info110_015",
+      "category": "knowledge",
+      "prompt": "家庭や学校のネットワークを、インターネットに接続するサービスを提供する事業者は？",
+      "choices": [
+        "印刷会社",
+        "OS メーカー",
+        "インターネットサービスプロバイダ（ISP）",
+        "放送局"
+      ],
+      "answerIndex": 2,
+      "explanation": "回線を通じてインターネットにつなぐ。"
+    },
+    {
+      "id": "inf_info110_016",
+      "category": "knowledge",
+      "prompt": "サーバが提供するサービスを利用する側のコンピュータは？",
+      "choices": [
+        "クライアント",
+        "スイッチ",
+        "ルータ",
+        "サーバ"
+      ],
+      "answerIndex": 0,
+      "explanation": "クライアントサーバ方式。"
+    },
+    {
+      "id": "inf_info110_017",
+      "category": "knowledge",
+      "prompt": "サーバを置かず、対等なコンピュータどうしが直接通信する方式は？",
+      "choices": [
+        "回線交換",
+        "クライアントサーバ",
+        "スター型",
+        "ピア・ツー・ピア（P2P）"
+      ],
+      "answerIndex": 3,
+      "explanation": "ファイル共有などで使われる。"
+    },
+    {
+      "id": "inf_info110_018",
+      "category": "knowledge",
+      "prompt": "電話のように、通信中は回線を占有する方式は？",
+      "choices": [
+        "回線交換方式",
+        "P2P",
+        "パケット交換方式",
+        "ストリーミング"
+      ],
+      "answerIndex": 0,
+      "explanation": "インターネットはパケット交換方式。"
+    },
+    {
+      "id": "inf_info110_019",
+      "category": "knowledge",
+      "prompt": "IPv6 アドレスは何ビット？",
+      "choices": [
+        "64 ビット",
+        "256 ビット",
+        "32 ビット",
+        "128 ビット"
+      ],
+      "answerIndex": 3,
+      "explanation": "IPv4 の枯渇に対応した。"
+    },
+    {
+      "id": "inf_info110_020",
+      "category": "knowledge",
+      "prompt": "ドメイン名「www.example.co.jp」の「jp」が表すものは？",
+      "choices": [
+        "プロトコル",
+        "会社の種類",
+        "国（日本）",
+        "サーバの名前"
+      ],
+      "answerIndex": 2,
+      "explanation": "co は会社などの組織を表す。"
+    },
+    {
+      "id": "inf_info110_021",
+      "category": "calculation",
+      "prompt": "通信速度 10 Mbps の回線で、50 MB のデータを送るのにかかる時間は？（効率 100 %）",
+      "choices": [
+        "40 秒",
+        "4 秒",
+        "5 秒",
+        "50 秒"
+      ],
+      "answerIndex": 0,
+      "explanation": "50 × 8 ＝ 400 Mb。400 ÷ 10。"
+    },
+    {
+      "id": "inf_info110_022",
+      "category": "calculation",
+      "prompt": "通信速度 1 Gbps は何 Mbps？",
+      "choices": [
+        "8 Mbps",
+        "10 Mbps",
+        "100 Mbps",
+        "1000 Mbps"
+      ],
+      "answerIndex": 3,
+      "explanation": "G は M の 1000 倍。"
+    },
+    {
+      "id": "inf_info110_023",
+      "category": "calculation",
+      "prompt": "32 ビットで表せるアドレスの数はおよそ？",
+      "choices": [
+        "約 65000",
+        "約 43 億",
+        "約 1 兆",
+        "約 3200 万"
+      ],
+      "answerIndex": 1,
+      "explanation": "2³² ≒ 4.3 × 10⁹。"
+    },
+    {
+      "id": "inf_info110_024",
+      "category": "thinking",
+      "prompt": "パケット交換方式で、途中の回線が故障しても通信を続けやすい理由は？",
+      "choices": [
+        "回線を占有しているから",
+        "1 本の回線しか使わないから",
+        "パケットごとに別の経路を通って届けることができるから",
+        "パケットを送らないから"
+      ],
+      "answerIndex": 2,
+      "explanation": "経路の選択はルータが行う。"
     }
   ]
 }
