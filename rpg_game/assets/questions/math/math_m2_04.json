@@ -1,0 +1,138 @@
+{
+  "setId": "math_m2_04",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_m204_001",
+      "category": "knowledge",
+      "prompt": "虚数単位 i について、i² の値は？",
+      "choices": [
+        "1",
+        "0",
+        "i",
+        "−1"
+      ],
+      "answerIndex": 3,
+      "explanation": "i は 2乗すると −1 になる数。"
+    },
+    {
+      "id": "mat_m204_002",
+      "category": "calculation",
+      "prompt": "(2+3i)+(1−i) を計算すると？",
+      "choices": [
+        "1+4i",
+        "3+4i",
+        "3+2i",
+        "3−2i"
+      ],
+      "answerIndex": 2,
+      "explanation": "実部どうし、虚部どうしを足す。"
+    },
+    {
+      "id": "mat_m204_003",
+      "category": "calculation",
+      "prompt": "(1+i)(1−i) を計算すると？",
+      "choices": [
+        "0",
+        "2",
+        "1−i²",
+        "2i"
+      ],
+      "answerIndex": 1,
+      "explanation": "1−i²=1−(−1)。"
+    },
+    {
+      "id": "mat_m204_004",
+      "category": "calculation",
+      "prompt": "(1+2i)(3−i) を計算すると？",
+      "choices": [
+        "5+5i",
+        "5+7i",
+        "3−2i",
+        "1+5i"
+      ],
+      "answerIndex": 0,
+      "explanation": "3−i+6i−2i²=3+5i+2。"
+    },
+    {
+      "id": "mat_m204_005",
+      "category": "calculation",
+      "prompt": "√(−4) を i を使って表すと？",
+      "choices": [
+        "−2",
+        "±2",
+        "2i",
+        "4i"
+      ],
+      "answerIndex": 2,
+      "explanation": "√(−4)=√4·i。"
+    },
+    {
+      "id": "mat_m204_006",
+      "category": "calculation",
+      "prompt": "方程式 x²=−9 を解くと？",
+      "choices": [
+        "x=3i",
+        "解なし",
+        "x=±3",
+        "x=±3i"
+      ],
+      "answerIndex": 3,
+      "explanation": "x=±√9·i。"
+    },
+    {
+      "id": "mat_m204_007",
+      "category": "calculation",
+      "prompt": "方程式 x²+2x+5=0 を解くと？",
+      "choices": [
+        "x=−1±2i",
+        "x=−2±i",
+        "x=−1±4i",
+        "x=1±2i"
+      ],
+      "answerIndex": 0,
+      "explanation": "解の公式：(−2±√(4−20))/2。"
+    },
+    {
+      "id": "mat_m204_008",
+      "category": "calculation",
+      "prompt": "2次方程式 x²−5x+3=0 の2つの解の和は？",
+      "choices": [
+        "−3",
+        "3",
+        "5",
+        "−5"
+      ],
+      "answerIndex": 2,
+      "explanation": "解と係数の関係：α+β=−b/a。"
+    },
+    {
+      "id": "mat_m204_009",
+      "category": "calculation",
+      "prompt": "2次方程式 x²−5x+3=0 の2つの解の積は？",
+      "choices": [
+        "3",
+        "−5",
+        "5",
+        "−3"
+      ],
+      "answerIndex": 0,
+      "explanation": "αβ=c/a。"
+    },
+    {
+      "id": "mat_m204_010",
+      "category": "thinking",
+      "prompt": "数の範囲を複素数まで広げる意味は？",
+      "choices": [
+        "整数が使えなくなるから",
+        "実数がなくなるから",
+        "計算を難しくするため",
+        "判別式が負の2次方程式も、解をもつものとして同じように扱えるから"
+      ],
+      "answerIndex": 3,
+      "explanation": "複素数の範囲では、n 次方程式は重解も数えて n 個の解をもつ。"
+    }
+  ]
+}

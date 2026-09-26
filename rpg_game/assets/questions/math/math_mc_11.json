@@ -1,0 +1,138 @@
+{
+  "setId": "math_mc_11",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_mc11_001",
+      "category": "calculation",
+      "prompt": "(1+i)⁸ を計算すると？",
+      "choices": [
+        "16i",
+        "8",
+        "16",
+        "−16"
+      ],
+      "answerIndex": 2,
+      "explanation": "(√2)⁸(cos 2π+i sin 2π)。"
+    },
+    {
+      "id": "mat_mc11_002",
+      "category": "calculation",
+      "prompt": "(1+√3i)³ を計算すると？",
+      "choices": [
+        "8i",
+        "−8i",
+        "8",
+        "−8"
+      ],
+      "answerIndex": 3,
+      "explanation": "2³(cos π+i sin π)。"
+    },
+    {
+      "id": "mat_mc11_003",
+      "category": "calculation",
+      "prompt": "z³=1 の解は？",
+      "choices": [
+        "±1, (1±√3i)/2",
+        "1 のみ",
+        "1, −1, i",
+        "1, (−1±√3i)/2"
+      ],
+      "answerIndex": 3,
+      "explanation": "単位円を3等分する点。"
+    },
+    {
+      "id": "mat_mc11_004",
+      "category": "calculation",
+      "prompt": "z⁴=1 の解は？",
+      "choices": [
+        "1, i",
+        "±1",
+        "±i",
+        "±1, ±i"
+      ],
+      "answerIndex": 3,
+      "explanation": "単位円を4等分する点。"
+    },
+    {
+      "id": "mat_mc11_005",
+      "category": "calculation",
+      "prompt": "点 2 を原点のまわりに π/3 回転した点は？",
+      "choices": [
+        "√3+i",
+        "1+√3i",
+        "2i",
+        "−1+√3i"
+      ],
+      "answerIndex": 1,
+      "explanation": "2(cos π/3+i sin π/3)。"
+    },
+    {
+      "id": "mat_mc11_006",
+      "category": "calculation",
+      "prompt": "|z−1|=2 を満たす点 z の全体は？",
+      "choices": [
+        "点1を中心とする半径2の円",
+        "直線",
+        "原点中心の半径1の円",
+        "点−1を中心とする半径2の円"
+      ],
+      "answerIndex": 0,
+      "explanation": "点1からの距離が2。"
+    },
+    {
+      "id": "mat_mc11_007",
+      "category": "calculation",
+      "prompt": "|z−i|=|z+1| を満たす点 z の全体は？",
+      "choices": [
+        "実軸",
+        "直線 y=x",
+        "点 i を中心とする円",
+        "直線 y=−x"
+      ],
+      "answerIndex": 3,
+      "explanation": "2点 i と −1 を結ぶ線分の垂直二等分線。"
+    },
+    {
+      "id": "mat_mc11_008",
+      "category": "calculation",
+      "prompt": "1/(1−i) を a+bi の形にすると？",
+      "choices": [
+        "1/2",
+        "1+i",
+        "(1−i)/2",
+        "(1+i)/2"
+      ],
+      "answerIndex": 3,
+      "explanation": "分母・分子に 1+i をかける。"
+    },
+    {
+      "id": "mat_mc11_009",
+      "category": "calculation",
+      "prompt": "arg z₁=π/6、arg z₂=π/3 のとき、arg(z₁z₂) は？",
+      "choices": [
+        "π/6",
+        "π/18",
+        "2π/3",
+        "π/2"
+      ],
+      "answerIndex": 3,
+      "explanation": "偏角は足し算。"
+    },
+    {
+      "id": "mat_mc11_010",
+      "category": "thinking",
+      "prompt": "ド・モアブルの定理で n 乗が計算しやすい理由は？",
+      "choices": [
+        "絶対値を n 乗し、偏角を n 倍するだけで済むから",
+        "偏角が0になるから",
+        "展開しなくても必ず1になるから",
+        "n が偶数だけだから"
+      ],
+      "answerIndex": 0,
+      "explanation": "(cos θ+i sin θ)ⁿ=cos nθ+i sin nθ。"
+    }
+  ]
+}

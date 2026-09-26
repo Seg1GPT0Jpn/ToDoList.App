@@ -1,0 +1,138 @@
+{
+  "setId": "math_mc_15",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_mc15_001",
+      "category": "calculation",
+      "prompt": "a=(1, 2)、b=(3, −1) のなす角を θ とするとき、cos θ は？",
+      "choices": [
+        "1/5",
+        "1/√10",
+        "√2/10",
+        "√2/2"
+      ],
+      "answerIndex": 2,
+      "explanation": "a・b=1、|a|=√5、|b|=√10。"
+    },
+    {
+      "id": "mat_mc15_002",
+      "category": "calculation",
+      "prompt": "3点 (1, 0, 0)、(0, 1, 0)、(0, 0, 1) を頂点とする三角形の面積は？",
+      "choices": [
+        "√3/2",
+        "3/2",
+        "√2",
+        "1/2"
+      ],
+      "answerIndex": 0,
+      "explanation": "1辺 √2 の正三角形。"
+    },
+    {
+      "id": "mat_mc15_003",
+      "category": "calculation",
+      "prompt": "楕円 x²/9+y²/4=1 の焦点は？",
+      "choices": [
+        "(±√13, 0)",
+        "(±3, 0)",
+        "(±√5, 0)",
+        "(0, ±√5)"
+      ],
+      "answerIndex": 2,
+      "explanation": "c²=9−4。"
+    },
+    {
+      "id": "mat_mc15_004",
+      "category": "calculation",
+      "prompt": "(1−i)⁴ を計算すると？",
+      "choices": [
+        "4",
+        "4i",
+        "−4i",
+        "−4"
+      ],
+      "answerIndex": 3,
+      "explanation": "(1−i)²=−2i、(−2i)²=−4。"
+    },
+    {
+      "id": "mat_mc15_005",
+      "category": "calculation",
+      "prompt": "|z₁|=2、|z₂|=3 のとき、|z₁z₂| は？",
+      "choices": [
+        "13",
+        "1",
+        "6",
+        "5"
+      ],
+      "answerIndex": 2,
+      "explanation": "絶対値は積になる。"
+    },
+    {
+      "id": "mat_mc15_006",
+      "category": "calculation",
+      "prompt": "x=2cos t、y=2sin t が表す曲線は？",
+      "choices": [
+        "楕円 x²/4+y²=1",
+        "原点中心、半径2の円",
+        "直線 y=x",
+        "原点中心、半径4の円"
+      ],
+      "answerIndex": 1,
+      "explanation": "x²+y²=4。"
+    },
+    {
+      "id": "mat_mc15_007",
+      "category": "calculation",
+      "prompt": "[[1, 1], [0, 1]]⁵ を計算すると？",
+      "choices": [
+        "[[1, 5], [0, 1]]",
+        "[[1, 1], [0, 1]]",
+        "[[5, 5], [0, 5]]",
+        "[[1, 32], [0, 1]]"
+      ],
+      "answerIndex": 0,
+      "explanation": "n 乗すると [[1, n], [0, 1]]。"
+    },
+    {
+      "id": "mat_mc15_008",
+      "category": "calculation",
+      "prompt": "放物線 y²=4x 上の点 (1, 2) と焦点の距離は？",
+      "choices": [
+        "√5",
+        "4",
+        "2",
+        "1"
+      ],
+      "answerIndex": 2,
+      "explanation": "準線 x=−1 までの距離と等しい。"
+    },
+    {
+      "id": "mat_mc15_009",
+      "category": "calculation",
+      "prompt": "極座標 (2, π) を直交座標で表すと？",
+      "choices": [
+        "(2, 0)",
+        "(0, 2)",
+        "(−2, 0)",
+        "(0, −2)"
+      ],
+      "answerIndex": 2,
+      "explanation": "(2cos π, 2sin π)。"
+    },
+    {
+      "id": "mat_mc15_010",
+      "category": "thinking",
+      "prompt": "ベクトル・複素数・行列に共通する便利さは？",
+      "choices": [
+        "回転や移動などの図形の変換を、計算で表せること",
+        "どれも1つの数だけを表すこと",
+        "どれも整数だけを扱うこと",
+        "どれも確率を表すこと"
+      ],
+      "answerIndex": 0,
+      "explanation": "表現を工夫すると、図形の問題を計算で処理できる。"
+    }
+  ]
+}

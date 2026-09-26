@@ -1,0 +1,138 @@
+{
+  "setId": "math_mb_10",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_mb10_001",
+      "category": "calculation",
+      "prompt": "毎日3%ずつ増える量が約2倍になるのは何日後？（72の法則を使う）",
+      "choices": [
+        "約33日後",
+        "約72日後",
+        "約24日後",
+        "約12日後"
+      ],
+      "answerIndex": 2,
+      "explanation": "72÷3=24。"
+    },
+    {
+      "id": "mat_mb10_002",
+      "category": "calculation",
+      "prompt": "年利6%の複利で、お金が約2倍になるのは何年後？（72の法則を使う）",
+      "choices": [
+        "約72年後",
+        "約12年後",
+        "約6年後",
+        "約17年後"
+      ],
+      "answerIndex": 1,
+      "explanation": "72÷6=12。"
+    },
+    {
+      "id": "mat_mb10_003",
+      "category": "calculation",
+      "prompt": "1分間に4Lずつ水を入れるとき、60L 入れるのにかかる時間は？",
+      "choices": [
+        "12分",
+        "240分",
+        "15分",
+        "64分"
+      ],
+      "answerIndex": 2,
+      "explanation": "比例のモデル：60÷4。"
+    },
+    {
+      "id": "mat_mb10_004",
+      "category": "calculation",
+      "prompt": "タクシー料金が「初乗り500円＋1kmごとに300円」のとき、5km の料金は？",
+      "choices": [
+        "2000円",
+        "1500円",
+        "2500円",
+        "1800円"
+      ],
+      "answerIndex": 0,
+      "explanation": "500+300×5。"
+    },
+    {
+      "id": "mat_mb10_005",
+      "category": "calculation",
+      "prompt": "定価2000円の品物を2割引で買うといくら？",
+      "choices": [
+        "400円",
+        "1600円",
+        "1800円",
+        "1980円"
+      ],
+      "answerIndex": 1,
+      "explanation": "2000×0.8。"
+    },
+    {
+      "id": "mat_mb10_006",
+      "category": "calculation",
+      "prompt": "毎年10%ずつ増える人口が今100人のとき、2年後の人口は？",
+      "choices": [
+        "120人",
+        "200人",
+        "121人",
+        "110人"
+      ],
+      "answerIndex": 2,
+      "explanation": "100×1.1²。"
+    },
+    {
+      "id": "mat_mb10_007",
+      "category": "knowledge",
+      "prompt": "数理モデルを使って問題を解く流れとして適切なものは？",
+      "choices": [
+        "数式を先に決めて、現実は見ない",
+        "一度作ったモデルは変えない",
+        "現象を観察し、仮定をおいて数式にし、解いた結果を現実と比べて改善する",
+        "データを集めずに結論を出す"
+      ],
+      "answerIndex": 2,
+      "explanation": "モデル化→数学的処理→解釈→評価・改善。"
+    },
+    {
+      "id": "mat_mb10_008",
+      "category": "calculation",
+      "prompt": "同じ道のりを、行きは時速60km、帰りは時速40km で往復したときの平均の速さは？",
+      "choices": [
+        "時速50km",
+        "時速48km",
+        "時速45km",
+        "時速52km"
+      ],
+      "answerIndex": 1,
+      "explanation": "距離120km なら往復240km を 2+3=5時間。"
+    },
+    {
+      "id": "mat_mb10_009",
+      "category": "calculation",
+      "prompt": "縮尺1/25000の地図で4cmの長さは、実際には何km？",
+      "choices": [
+        "1km",
+        "4km",
+        "0.1km",
+        "10km"
+      ],
+      "answerIndex": 0,
+      "explanation": "4×25000=100000cm。"
+    },
+    {
+      "id": "mat_mb10_010",
+      "category": "thinking",
+      "prompt": "モデル化で「仮定」をおく理由は？",
+      "choices": [
+        "結果をよく見せるため",
+        "現実と同じにするため",
+        "計算を間違えないため",
+        "現実は複雑なので、大切な要素にしぼって扱いやすくするため"
+      ],
+      "answerIndex": 3,
+      "explanation": "仮定が妥当かどうかも後で確かめる。"
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "setId": "math_m2_05",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_m205_001",
+      "category": "calculation",
+      "prompt": "1/(1+i) を a+bi の形にすると？",
+      "choices": [
+        "1/2−i",
+        "(1−i)/2",
+        "(1+i)/2",
+        "1−i"
+      ],
+      "answerIndex": 1,
+      "explanation": "分母・分子に 1−i をかける。"
+    },
+    {
+      "id": "mat_m205_002",
+      "category": "calculation",
+      "prompt": "i³ の値は？",
+      "choices": [
+        "−i",
+        "i",
+        "1",
+        "−1"
+      ],
+      "answerIndex": 0,
+      "explanation": "i²·i=−i。"
+    },
+    {
+      "id": "mat_m205_003",
+      "category": "calculation",
+      "prompt": "2次方程式 x²−3x+1=0 の2つの解を α、β とするとき、α²+β² の値は？",
+      "choices": [
+        "9",
+        "5",
+        "7",
+        "11"
+      ],
+      "answerIndex": 2,
+      "explanation": "(α+β)²−2αβ=9−2。"
+    },
+    {
+      "id": "mat_m205_004",
+      "category": "calculation",
+      "prompt": "P(x)=x³−2x²+3 を x+1 で割った余りは？",
+      "choices": [
+        "2",
+        "6",
+        "0",
+        "−1"
+      ],
+      "answerIndex": 2,
+      "explanation": "剰余の定理：P(−1)=−1−2+3。"
+    },
+    {
+      "id": "mat_m205_005",
+      "category": "calculation",
+      "prompt": "方程式 x³−6x²+11x−6=0 の解は？",
+      "choices": [
+        "x=1, 2, 3",
+        "x=1, 1, 6",
+        "x=2, 3, 6",
+        "x=−1, −2, −3"
+      ],
+      "answerIndex": 0,
+      "explanation": "P(1)=0 から x−1 で割る。(x−1)(x−2)(x−3)。"
+    },
+    {
+      "id": "mat_m205_006",
+      "category": "calculation",
+      "prompt": "2+i と 2−i を解とする2次方程式は？",
+      "choices": [
+        "x²+4x+5=0",
+        "x²−4x+3=0",
+        "x²−2x+5=0",
+        "x²−4x+5=0"
+      ],
+      "answerIndex": 3,
+      "explanation": "和4、積 4−i²=5。"
+    },
+    {
+      "id": "mat_m205_007",
+      "category": "calculation",
+      "prompt": "x²+kx+4=0 が虚数解をもつ k の範囲は？",
+      "choices": [
+        "0<k<4",
+        "k>4",
+        "k<−4, 4<k",
+        "−4<k<4"
+      ],
+      "answerIndex": 3,
+      "explanation": "D=k²−16<0。"
+    },
+    {
+      "id": "mat_m205_008",
+      "category": "calculation",
+      "prompt": "(1+i)² を計算すると？",
+      "choices": [
+        "2",
+        "1+2i",
+        "0",
+        "2i"
+      ],
+      "answerIndex": 3,
+      "explanation": "1+2i+i²=2i。"
+    },
+    {
+      "id": "mat_m205_009",
+      "category": "calculation",
+      "prompt": "x³=1 の虚数解の1つを ω とするとき、ω²+ω+1 の値は？",
+      "choices": [
+        "0",
+        "−1",
+        "3",
+        "1"
+      ],
+      "answerIndex": 0,
+      "explanation": "x³−1=(x−1)(x²+x+1)。ω は x²+x+1=0 の解。"
+    },
+    {
+      "id": "mat_m205_010",
+      "category": "thinking",
+      "prompt": "実数係数の方程式が a+bi を解にもつと、a−bi も解になる理由は？",
+      "choices": [
+        "虚数は必ず2つあるから",
+        "解の公式に ± があるだけだから",
+        "方程式の両辺の共役複素数をとっても、式が成り立つから",
+        "a と b が等しいから"
+      ],
+      "answerIndex": 2,
+      "explanation": "係数が実数なので、共役をとっても方程式は変わらない。"
+    }
+  ]
+}

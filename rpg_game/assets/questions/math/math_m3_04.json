@@ -1,0 +1,138 @@
+{
+  "setId": "math_m3_04",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_m304_001",
+      "category": "calculation",
+      "prompt": "(x⁵)′ は？",
+      "choices": [
+        "x⁴",
+        "x⁶/6",
+        "5x⁵",
+        "5x⁴"
+      ],
+      "answerIndex": 3,
+      "explanation": "(xⁿ)′=nxⁿ⁻¹。"
+    },
+    {
+      "id": "mat_m304_002",
+      "category": "calculation",
+      "prompt": "(sin x)′ は？",
+      "choices": [
+        "cos x",
+        "sin x",
+        "−sin x",
+        "−cos x"
+      ],
+      "answerIndex": 0,
+      "explanation": "三角関数の導関数。"
+    },
+    {
+      "id": "mat_m304_003",
+      "category": "calculation",
+      "prompt": "(cos x)′ は？",
+      "choices": [
+        "cos x",
+        "−cos x",
+        "sin x",
+        "−sin x"
+      ],
+      "answerIndex": 3,
+      "explanation": "符号に注意。"
+    },
+    {
+      "id": "mat_m304_004",
+      "category": "calculation",
+      "prompt": "(eˣ)′ は？",
+      "choices": [
+        "eˣ⁺¹",
+        "xeˣ⁻¹",
+        "e",
+        "eˣ"
+      ],
+      "answerIndex": 3,
+      "explanation": "微分しても変わらない。"
+    },
+    {
+      "id": "mat_m304_005",
+      "category": "calculation",
+      "prompt": "(log x)′ は？（自然対数、x>0）",
+      "choices": [
+        "e/x",
+        "1/x",
+        "log x",
+        "x"
+      ],
+      "answerIndex": 1,
+      "explanation": "対数関数の導関数。"
+    },
+    {
+      "id": "mat_m304_006",
+      "category": "calculation",
+      "prompt": "(√x)′ は？",
+      "choices": [
+        "√x/2",
+        "1/√x",
+        "1/(2√x)",
+        "2√x"
+      ],
+      "answerIndex": 2,
+      "explanation": "x^(1/2) を微分する。"
+    },
+    {
+      "id": "mat_m304_007",
+      "category": "calculation",
+      "prompt": "(1/x)′ は？",
+      "choices": [
+        "−1/x²",
+        "1/x²",
+        "log x",
+        "−1/x"
+      ],
+      "answerIndex": 0,
+      "explanation": "x⁻¹ を微分する。"
+    },
+    {
+      "id": "mat_m304_008",
+      "category": "calculation",
+      "prompt": "{(x²+1)³}′ は？",
+      "choices": [
+        "6x(x²+1)³",
+        "3(x²+1)²",
+        "2x(x²+1)²",
+        "6x(x²+1)²"
+      ],
+      "answerIndex": 3,
+      "explanation": "合成関数の微分：3(x²+1)²·2x。"
+    },
+    {
+      "id": "mat_m304_009",
+      "category": "calculation",
+      "prompt": "(xeˣ)′ は？",
+      "choices": [
+        "(x+1)eˣ",
+        "eˣ",
+        "(x−1)eˣ",
+        "xeˣ"
+      ],
+      "answerIndex": 0,
+      "explanation": "積の微分：eˣ+xeˣ。"
+    },
+    {
+      "id": "mat_m304_010",
+      "category": "thinking",
+      "prompt": "合成関数の微分で「外側の微分×内側の微分」になる理由は？",
+      "choices": [
+        "足し算で計算するから",
+        "外側だけが変化するから",
+        "内側は微分しなくてよいから",
+        "dy/dx=(dy/du)·(du/dx) と、変化の割合がかけ合わさるから"
+      ],
+      "answerIndex": 3,
+      "explanation": "u が変わると y が変わり、x が変わると u が変わる。"
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "setId": "math_mb_04",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_mb04_001",
+      "category": "calculation",
+      "prompt": "a₁=1、aₙ₊₁=aₙ+3 のとき、一般項は？",
+      "choices": [
+        "3n+1",
+        "3n−2",
+        "n+3",
+        "3ⁿ⁻¹"
+      ],
+      "answerIndex": 1,
+      "explanation": "公差3の等差数列。"
+    },
+    {
+      "id": "mat_mb04_002",
+      "category": "calculation",
+      "prompt": "a₁=2、aₙ₊₁=2aₙ のとき、一般項は？",
+      "choices": [
+        "2n",
+        "2ⁿ⁻¹",
+        "n²",
+        "2ⁿ"
+      ],
+      "answerIndex": 3,
+      "explanation": "初項2、公比2の等比数列。"
+    },
+    {
+      "id": "mat_mb04_003",
+      "category": "calculation",
+      "prompt": "a₁=1、aₙ₊₁=aₙ+2 のとき、a₅ は？",
+      "choices": [
+        "11",
+        "10",
+        "7",
+        "9"
+      ],
+      "answerIndex": 3,
+      "explanation": "1, 3, 5, 7, 9。"
+    },
+    {
+      "id": "mat_mb04_004",
+      "category": "calculation",
+      "prompt": "a₁=1、aₙ₊₁=2aₙ+1 のとき、a₃ は？",
+      "choices": [
+        "3",
+        "15",
+        "7",
+        "5"
+      ],
+      "answerIndex": 2,
+      "explanation": "a₂=3、a₃=7。"
+    },
+    {
+      "id": "mat_mb04_005",
+      "category": "calculation",
+      "prompt": "a₁=1、aₙ₊₁=aₙ+n のとき、a₄ は？",
+      "choices": [
+        "6",
+        "4",
+        "10",
+        "7"
+      ],
+      "answerIndex": 3,
+      "explanation": "1, 2, 4, 7。"
+    },
+    {
+      "id": "mat_mb04_006",
+      "category": "knowledge",
+      "prompt": "数学的帰納法の手順として正しいものは？",
+      "choices": [
+        "n=1 で成り立つことと、n=k で成り立てば n=k+1 でも成り立つことを示す",
+        "n=k で成り立つことだけを示す",
+        "大きな n で確かめる",
+        "n=1, 2, 3 で確かめる"
+      ],
+      "answerIndex": 0,
+      "explanation": "2つのステップで、すべての自然数について示す。"
+    },
+    {
+      "id": "mat_mb04_007",
+      "category": "calculation",
+      "prompt": "a₁=a₂=1、aₙ₊₂=aₙ₊₁+aₙ のとき、a₇ は？",
+      "choices": [
+        "13",
+        "8",
+        "11",
+        "21"
+      ],
+      "answerIndex": 0,
+      "explanation": "1, 1, 2, 3, 5, 8, 13（フィボナッチ数列）。"
+    },
+    {
+      "id": "mat_mb04_008",
+      "category": "calculation",
+      "prompt": "a₁=5、aₙ₊₁=aₙ−2 のとき、一般項は？",
+      "choices": [
+        "7−2n",
+        "5−n",
+        "2n+3",
+        "5−2n"
+      ],
+      "answerIndex": 0,
+      "explanation": "5+(n−1)(−2)。"
+    },
+    {
+      "id": "mat_mb04_009",
+      "category": "calculation",
+      "prompt": "a₁=3、aₙ₊₁=(1/3)aₙ のとき、a₃ は？",
+      "choices": [
+        "1",
+        "3",
+        "1/3",
+        "1/9"
+      ],
+      "answerIndex": 2,
+      "explanation": "3, 1, 1/3。"
+    },
+    {
+      "id": "mat_mb04_010",
+      "category": "thinking",
+      "prompt": "数学的帰納法で n=1 のときを確かめる必要がある理由は？",
+      "choices": [
+        "n=1 なら必ず成り立つから",
+        "計算が簡単だから",
+        "n=1 がいちばん大事な値だから",
+        "最初のドミノが倒れないと、次々に倒れるしくみが始まらないから"
+      ],
+      "answerIndex": 3,
+      "explanation": "「k で成り立てば k+1 でも」だけでは出発点がない。"
+    }
+  ]
+}

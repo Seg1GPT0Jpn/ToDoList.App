@@ -1,0 +1,138 @@
+{
+  "setId": "math_m1_16",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_m116_001",
+      "category": "calculation",
+      "prompt": "3, 5, 7, 9, 11 の平均値は？",
+      "choices": [
+        "7",
+        "5",
+        "9",
+        "35"
+      ],
+      "answerIndex": 0,
+      "explanation": "合計35÷5=7。"
+    },
+    {
+      "id": "mat_m116_002",
+      "category": "calculation",
+      "prompt": "2, 3, 5, 8, 9, 10 の中央値は？",
+      "choices": [
+        "5",
+        "8",
+        "6.5",
+        "6"
+      ],
+      "answerIndex": 2,
+      "explanation": "偶数個なので中央2つの平均 (5+8)/2。"
+    },
+    {
+      "id": "mat_m116_003",
+      "category": "calculation",
+      "prompt": "1, 2, 2, 3, 3, 3, 4 の最頻値は？",
+      "choices": [
+        "4",
+        "2.5",
+        "2",
+        "3"
+      ],
+      "answerIndex": 3,
+      "explanation": "最も多く現れる値。"
+    },
+    {
+      "id": "mat_m116_004",
+      "category": "calculation",
+      "prompt": "3, 8, 1, 10, 6 の範囲は？",
+      "choices": [
+        "10",
+        "5",
+        "9",
+        "7"
+      ],
+      "answerIndex": 2,
+      "explanation": "最大値−最小値=10−1。"
+    },
+    {
+      "id": "mat_m116_005",
+      "category": "knowledge",
+      "prompt": "箱ひげ図の「箱」が表す範囲は？",
+      "choices": [
+        "平均値のまわり",
+        "最小値から最大値まで",
+        "第1四分位数から第3四分位数まで",
+        "中央値から最大値まで"
+      ],
+      "answerIndex": 2,
+      "explanation": "箱の長さが四分位範囲。"
+    },
+    {
+      "id": "mat_m116_006",
+      "category": "calculation",
+      "prompt": "第1四分位数が4、第3四分位数が10のとき、四分位範囲は？",
+      "choices": [
+        "7",
+        "3",
+        "6",
+        "14"
+      ],
+      "answerIndex": 2,
+      "explanation": "Q3−Q1=10−4。"
+    },
+    {
+      "id": "mat_m116_007",
+      "category": "knowledge",
+      "prompt": "分散の正の平方根を何という？",
+      "choices": [
+        "相関係数",
+        "四分位範囲",
+        "標準偏差",
+        "平均偏差"
+      ],
+      "answerIndex": 2,
+      "explanation": "単位がもとのデータにそろう。"
+    },
+    {
+      "id": "mat_m116_008",
+      "category": "calculation",
+      "prompt": "2, 4, 6 の分散は？",
+      "choices": [
+        "8/3",
+        "8",
+        "4",
+        "2"
+      ],
+      "answerIndex": 0,
+      "explanation": "平均4、偏差 −2, 0, 2。(4+0+4)/3。"
+    },
+    {
+      "id": "mat_m116_009",
+      "category": "calculation",
+      "prompt": "分散が9のとき、標準偏差は？",
+      "choices": [
+        "9",
+        "81",
+        "3",
+        "4.5"
+      ],
+      "answerIndex": 2,
+      "explanation": "√9=3。"
+    },
+    {
+      "id": "mat_m116_010",
+      "category": "thinking",
+      "prompt": "平均値が同じ2つのデータでも、散らばりを調べる必要がある理由は？",
+      "choices": [
+        "散らばりは平均と同じだから",
+        "データの個数が分からないから",
+        "平均だけでは、データがどれだけばらついているか分からないから",
+        "平均値はいつも間違っているから"
+      ],
+      "answerIndex": 2,
+      "explanation": "分散や四分位範囲などで散らばりを比べる。"
+    }
+  ]
+}

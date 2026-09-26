@@ -1,0 +1,138 @@
+{
+  "setId": "math_m2_02",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_m202_001",
+      "category": "calculation",
+      "prompt": "(x+1/x)⁶ の展開式の定数項は？",
+      "choices": [
+        "15",
+        "1",
+        "6",
+        "20"
+      ],
+      "answerIndex": 3,
+      "explanation": "x の次数が0になるのは ₆C₃。"
+    },
+    {
+      "id": "mat_m202_002",
+      "category": "calculation",
+      "prompt": "x²=a(x−1)²+b(x−1)+c が恒等式のとき、a+b+c の値は？",
+      "choices": [
+        "3",
+        "4",
+        "1",
+        "2"
+      ],
+      "answerIndex": 1,
+      "explanation": "x²=(x−1)²+2(x−1)+1 で a=1, b=2, c=1。"
+    },
+    {
+      "id": "mat_m202_003",
+      "category": "calculation",
+      "prompt": "1/(x(x+1)) を部分分数に分けると？",
+      "choices": [
+        "1/(x+1)−1/x",
+        "1/x−1/(x+1)",
+        "1/x+1/(x+1)",
+        "2/x−1/(x+1)"
+      ],
+      "answerIndex": 1,
+      "explanation": "通分すると (x+1−x)/(x(x+1))。"
+    },
+    {
+      "id": "mat_m202_004",
+      "category": "calculation",
+      "prompt": "x³−2x+3 を x−1 で割った余りは？",
+      "choices": [
+        "3",
+        "0",
+        "2",
+        "−2"
+      ],
+      "answerIndex": 2,
+      "explanation": "剰余の定理：x=1 を代入。"
+    },
+    {
+      "id": "mat_m202_005",
+      "category": "knowledge",
+      "prompt": "a+b+c=0 のときに成り立つ式は？",
+      "choices": [
+        "a²+b²+c²=0",
+        "a³+b³+c³=0",
+        "a³+b³+c³=3abc",
+        "abc=0"
+      ],
+      "answerIndex": 2,
+      "explanation": "a³+b³+c³−3abc=(a+b+c)(…) より。"
+    },
+    {
+      "id": "mat_m202_006",
+      "category": "calculation",
+      "prompt": "a/b=c/d=2 のとき、(a+c)/(b+d) の値は？",
+      "choices": [
+        "4",
+        "1/2",
+        "1",
+        "2"
+      ],
+      "answerIndex": 3,
+      "explanation": "a=2b、c=2d を代入。"
+    },
+    {
+      "id": "mat_m202_007",
+      "category": "calculation",
+      "prompt": "x>0 のとき、4x+9/x の最小値は？",
+      "choices": [
+        "12",
+        "13",
+        "36",
+        "6"
+      ],
+      "answerIndex": 0,
+      "explanation": "2√(4x·9/x)=2√36。等号は x=3/2。"
+    },
+    {
+      "id": "mat_m202_008",
+      "category": "calculation",
+      "prompt": "a>0、b>0 のとき、(a+b)(1/a+1/b) の最小値は？",
+      "choices": [
+        "4",
+        "1",
+        "2",
+        "8"
+      ],
+      "answerIndex": 0,
+      "explanation": "展開すると 2+b/a+a/b≧2+2。"
+    },
+    {
+      "id": "mat_m202_009",
+      "category": "calculation",
+      "prompt": "x/(x−1)−1/(x−1) を計算すると？",
+      "choices": [
+        "1",
+        "(x+1)/(x−1)",
+        "x",
+        "0"
+      ],
+      "answerIndex": 0,
+      "explanation": "(x−1)/(x−1)=1。"
+    },
+    {
+      "id": "mat_m202_010",
+      "category": "thinking",
+      "prompt": "不等式 A≧B を証明するのに、A−B≧0 を示す理由は？",
+      "choices": [
+        "差の符号を調べれば、どちらが大きいかが分かるから",
+        "A と B が等しいから",
+        "引き算は必ず正になるから",
+        "両辺を2乗しなくてよいから"
+      ],
+      "answerIndex": 0,
+      "explanation": "A−B を平方の和などに変形して0以上を示す。"
+    }
+  ]
+}

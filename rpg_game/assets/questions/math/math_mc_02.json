@@ -1,0 +1,138 @@
+{
+  "setId": "math_mc_02",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_mc02_001",
+      "category": "calculation",
+      "prompt": "a=(1, 0) と b=(1, √3) のなす角は？",
+      "choices": [
+        "30°",
+        "60°",
+        "45°",
+        "90°"
+      ],
+      "answerIndex": 1,
+      "explanation": "cos θ=1/(1·2)=1/2。"
+    },
+    {
+      "id": "mat_mc02_002",
+      "category": "calculation",
+      "prompt": "|a|=1、|b|=2、a・b=1 のとき、|a+b| は？",
+      "choices": [
+        "3",
+        "7",
+        "√5",
+        "√7"
+      ],
+      "answerIndex": 3,
+      "explanation": "|a+b|²=1+2·1+4。"
+    },
+    {
+      "id": "mat_mc02_003",
+      "category": "calculation",
+      "prompt": "点 A(a)、B(b) を結ぶ線分 AB を 2:1 に内分する点の位置ベクトルは？",
+      "choices": [
+        "(a+b)/2",
+        "(2a+b)/3",
+        "(a+2b)/3",
+        "2a−b"
+      ],
+      "answerIndex": 2,
+      "explanation": "mb+na を m+n で割る（m:n=2:1）。"
+    },
+    {
+      "id": "mat_mc02_004",
+      "category": "calculation",
+      "prompt": "△ABC の重心 G の位置ベクトルは？",
+      "choices": [
+        "(a+b+c)/3",
+        "(a+b+c)/2",
+        "a+b+c",
+        "(a+b)/2+c"
+      ],
+      "answerIndex": 0,
+      "explanation": "3頂点の位置ベクトルの平均。"
+    },
+    {
+      "id": "mat_mc02_005",
+      "category": "calculation",
+      "prompt": "|a|=3、|b|=4、a・b=6 のとき、a、b で作る三角形の面積は？",
+      "choices": [
+        "3√3",
+        "6",
+        "6√3",
+        "12"
+      ],
+      "answerIndex": 0,
+      "explanation": "½√(|a|²|b|²−(a・b)²)=½√108。"
+    },
+    {
+      "id": "mat_mc02_006",
+      "category": "calculation",
+      "prompt": "(3, 4) と同じ向きの単位ベクトルは？",
+      "choices": [
+        "(4/5, 3/5)",
+        "(3, 4)",
+        "(3/5, 4/5)",
+        "(1, 1)"
+      ],
+      "answerIndex": 2,
+      "explanation": "大きさ5で割る。"
+    },
+    {
+      "id": "mat_mc02_007",
+      "category": "calculation",
+      "prompt": "線分 AB を 2:1 に外分する点の位置ベクトルは？",
+      "choices": [
+        "(a+2b)/3",
+        "2a−b",
+        "−a+2b",
+        "a+2b"
+      ],
+      "answerIndex": 2,
+      "explanation": "(−1·a+2b)/(2−1)。"
+    },
+    {
+      "id": "mat_mc02_008",
+      "category": "knowledge",
+      "prompt": "点 A(a) を通り、方向ベクトルが d の直線のベクトル方程式は？（t は実数）",
+      "choices": [
+        "p=a+td",
+        "p=ta+d",
+        "p・d=0",
+        "|p−a|=t"
+      ],
+      "answerIndex": 0,
+      "explanation": "t を動かすと直線上の点を表す。"
+    },
+    {
+      "id": "mat_mc02_009",
+      "category": "calculation",
+      "prompt": "直線 (x, y)=(1, 2)+t(3, 1) 上で t=2 に対応する点は？",
+      "choices": [
+        "(7, 4)",
+        "(6, 2)",
+        "(4, 3)",
+        "(3, 1)"
+      ],
+      "answerIndex": 0,
+      "explanation": "(1+6, 2+2)。"
+    },
+    {
+      "id": "mat_mc02_010",
+      "category": "thinking",
+      "prompt": "内積を使うとベクトルのなす角が求められる理由は？",
+      "choices": [
+        "a・b=|a||b|cos θ で、成分から計算した内積と大きさから cos θ が分かるから",
+        "大きさだけで角度が決まるから",
+        "内積は角度そのものだから",
+        "ベクトルは必ず直角だから"
+      ],
+      "answerIndex": 0,
+      "explanation": "cos θ=a・b/(|a||b|)。"
+    }
+  ]
+}

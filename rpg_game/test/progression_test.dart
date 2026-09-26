@@ -166,7 +166,7 @@ void main() {
       }
     });
 
-    test('英語は無料、ほかの公開済みワールドは購入後に遊べる。残りは準備中', () {
+    test('英語は無料、ほかの公開済みワールドは購入後に遊べる', () {
       for (final w in RpgCatalog.worlds) {
         if (w.id == RpgCatalog.englishWorldId) {
           expect(Progression.isWorldPlayable(RpgProgress.initial, w), isTrue);

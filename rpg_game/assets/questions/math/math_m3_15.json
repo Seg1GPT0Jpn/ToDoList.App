@@ -1,0 +1,138 @@
+{
+  "setId": "math_m3_15",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_m315_001",
+      "category": "calculation",
+      "prompt": "曲線 y=x²（0≦y≦1）と y 軸で囲まれた部分を y 軸のまわりに回転した立体の体積は？",
+      "choices": [
+        "π/2",
+        "2π/3",
+        "π/3",
+        "π"
+      ],
+      "answerIndex": 0,
+      "explanation": "π∫₀¹ x² dy=π∫₀¹ y dy。"
+    },
+    {
+      "id": "mat_m315_002",
+      "category": "calculation",
+      "prompt": "2曲線 y=sin x、y=cos x（π/4≦x≦5π/4）で囲まれた部分の面積は？",
+      "choices": [
+        "2",
+        "2√2",
+        "4",
+        "√2"
+      ],
+      "answerIndex": 1,
+      "explanation": "∫(sin x−cos x) dx=[−cos x−sin x]。"
+    },
+    {
+      "id": "mat_m315_003",
+      "category": "calculation",
+      "prompt": "x 軸に垂直な平面で切った断面積が S(x)=x²（0≦x≦3）の立体の体積は？",
+      "choices": [
+        "27",
+        "9",
+        "6",
+        "3"
+      ],
+      "answerIndex": 1,
+      "explanation": "∫₀³ x² dx。"
+    },
+    {
+      "id": "mat_m315_004",
+      "category": "calculation",
+      "prompt": "曲線 y=(2/3)x^(3/2)（0≦x≦3）の長さは？",
+      "choices": [
+        "14/3",
+        "8/3",
+        "2√3",
+        "7/3"
+      ],
+      "answerIndex": 0,
+      "explanation": "∫₀³ √(1+x) dx=(2/3)(8−1)。"
+    },
+    {
+      "id": "mat_m315_005",
+      "category": "calculation",
+      "prompt": "lim_{n→∞} (1/n)Σ_{k=1}^{n} e^(k/n) の値は？",
+      "choices": [
+        "e",
+        "1/e",
+        "e−1",
+        "1"
+      ],
+      "answerIndex": 2,
+      "explanation": "∫₀¹ eˣ dx。"
+    },
+    {
+      "id": "mat_m315_006",
+      "category": "thinking",
+      "prompt": "1+1/2+1/3+…+1/n>log(n+1) を示す考え方は？",
+      "choices": [
+        "右辺を微分する",
+        "両辺を2乗する",
+        "n=1 だけを確かめる",
+        "階段状の長方形の面積の和が、y=1/x の下の面積 ∫₁^(n+1) dx/x より大きいことを使う"
+      ],
+      "answerIndex": 3,
+      "explanation": "面積の比較で不等式を示す。"
+    },
+    {
+      "id": "mat_m315_007",
+      "category": "calculation",
+      "prompt": "円 x²+(y−2)²=1 を x 軸のまわりに回転してできる立体（ドーナツ形）の体積は？",
+      "choices": [
+        "4π",
+        "4π²",
+        "8π²",
+        "2π²"
+      ],
+      "answerIndex": 1,
+      "explanation": "パップス・ギュルダンの定理：2π·2×π·1²。"
+    },
+    {
+      "id": "mat_m315_008",
+      "category": "calculation",
+      "prompt": "∫₀^(2π) |sin x| dx の値は？",
+      "choices": [
+        "0",
+        "2π",
+        "2",
+        "4"
+      ],
+      "answerIndex": 3,
+      "explanation": "0〜π で2、π〜2π で2。"
+    },
+    {
+      "id": "mat_m315_009",
+      "category": "calculation",
+      "prompt": "∫₀¹ 1/(1+x²) dx の値は？",
+      "choices": [
+        "1",
+        "π/2",
+        "log 2",
+        "π/4"
+      ],
+      "answerIndex": 3,
+      "explanation": "x=tan θ と置換する。"
+    },
+    {
+      "id": "mat_m315_010",
+      "category": "thinking",
+      "prompt": "定積分で体積を求める考え方に共通することは？",
+      "choices": [
+        "表面積を足すこと",
+        "辺の長さをかけること",
+        "薄く切った断面積を、厚さ方向に足し合わせること",
+        "体積はいつも πr² になること"
+      ],
+      "answerIndex": 2,
+      "explanation": "V=∫S(x) dx。"
+    }
+  ]
+}

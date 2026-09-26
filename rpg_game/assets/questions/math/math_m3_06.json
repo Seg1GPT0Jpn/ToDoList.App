@@ -1,0 +1,138 @@
+{
+  "setId": "math_m3_06",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_m306_001",
+      "category": "calculation",
+      "prompt": "y=xˣ（x>0）の導関数は？",
+      "choices": [
+        "xˣ(log x+1)",
+        "xˣ log x",
+        "x·xˣ⁻¹",
+        "xˣ"
+      ],
+      "answerIndex": 0,
+      "explanation": "対数微分法：log y=x log x。"
+    },
+    {
+      "id": "mat_m306_002",
+      "category": "calculation",
+      "prompt": "x²+y²=25 で定まる y について、dy/dx は？",
+      "choices": [
+        "−x/y",
+        "x/y",
+        "2x",
+        "−y/x"
+      ],
+      "answerIndex": 0,
+      "explanation": "両辺を x で微分：2x+2y·y′=0。"
+    },
+    {
+      "id": "mat_m306_003",
+      "category": "calculation",
+      "prompt": "(log|x|)′ は？",
+      "choices": [
+        "1/x",
+        "−1/x",
+        "|x|",
+        "1/|x|"
+      ],
+      "answerIndex": 0,
+      "explanation": "x<0 でも 1/x になる。"
+    },
+    {
+      "id": "mat_m306_004",
+      "category": "calculation",
+      "prompt": "(x³)″（第2次導関数）は？",
+      "choices": [
+        "6",
+        "x",
+        "6x",
+        "3x²"
+      ],
+      "answerIndex": 2,
+      "explanation": "3x² をもう一度微分。"
+    },
+    {
+      "id": "mat_m306_005",
+      "category": "calculation",
+      "prompt": "(sin x)″ は？",
+      "choices": [
+        "−cos x",
+        "cos x",
+        "−sin x",
+        "sin x"
+      ],
+      "answerIndex": 2,
+      "explanation": "cos x を微分すると −sin x。"
+    },
+    {
+      "id": "mat_m306_006",
+      "category": "calculation",
+      "prompt": "(eˣ sin x)′ は？",
+      "choices": [
+        "eˣ(sin x−cos x)",
+        "eˣ sin x",
+        "eˣ cos x",
+        "eˣ(sin x+cos x)"
+      ],
+      "answerIndex": 3,
+      "explanation": "積の微分。"
+    },
+    {
+      "id": "mat_m306_007",
+      "category": "calculation",
+      "prompt": "e^(2x) の第 n 次導関数は？",
+      "choices": [
+        "2ⁿe^(2x)",
+        "nⁿe^(2x)",
+        "2ne^(2x)",
+        "e^(2x)"
+      ],
+      "answerIndex": 0,
+      "explanation": "微分するたびに2倍。"
+    },
+    {
+      "id": "mat_m306_008",
+      "category": "calculation",
+      "prompt": "(log₂x)′ は？",
+      "choices": [
+        "2/x",
+        "1/(x log 2)",
+        "log 2/x",
+        "1/x"
+      ],
+      "answerIndex": 1,
+      "explanation": "log₂x=log x/log 2。"
+    },
+    {
+      "id": "mat_m306_009",
+      "category": "calculation",
+      "prompt": "{√(1−x²)}′ は？",
+      "choices": [
+        "−x/√(1−x²)",
+        "−2x√(1−x²)",
+        "x/√(1−x²)",
+        "1/(2√(1−x²))"
+      ],
+      "answerIndex": 0,
+      "explanation": "合成関数の微分：−2x/(2√(1−x²))。"
+    },
+    {
+      "id": "mat_m306_010",
+      "category": "thinking",
+      "prompt": "「微分可能なら連続」だが、逆が成り立たない例は？",
+      "choices": [
+        "y=sin x は微分できない",
+        "y=x² は連続でない",
+        "y=1/x は x=0 で連続",
+        "y=|x| は x=0 で連続だが微分可能ではない"
+      ],
+      "answerIndex": 3,
+      "explanation": "左右から近づけたときの傾きが −1 と 1 で一致しない。"
+    }
+  ]
+}

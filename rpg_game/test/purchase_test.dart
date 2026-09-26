@@ -3,7 +3,15 @@ import 'package:test/test.dart';
 
 void main() {
   final english = RpgCatalog.world('english');
-  final math = RpgCatalog.world('math');
+  // 全教科が公開済みになったので、準備中ワールドはテスト用に用意する
+  const comingSoon = WorldDef(
+    id: 'coming_soon',
+    name: '準備中の国',
+    subject: 'テスト',
+    status: WorldStatus.comingSoon,
+    isFree: false,
+    priceYen: 250,
+  );
   const paidReady = WorldDef(
     id: 'paid_ready',
     name: 'テスト',
@@ -28,9 +36,9 @@ void main() {
       repository: repo,
       purchase: (_) async => called = true,
     );
-    expect(service.availabilityOf(RpgProgress.initial, math),
+    expect(service.availabilityOf(RpgProgress.initial, comingSoon),
         WorldAvailability.comingSoon);
-    expect(await service.purchase(math), PurchaseOutcome.notPurchasable);
+    expect(await service.purchase(comingSoon), PurchaseOutcome.notPurchasable);
     expect(called, isFalse);
   });
 
@@ -56,10 +64,10 @@ void main() {
     final repo = InMemoryProgressRepository();
     final service =
         WorldUnlockService(repository: repo, allowComingSoonPurchase: true);
-    expect(await service.purchase(math), PurchaseOutcome.success);
+    expect(await service.purchase(comingSoon), PurchaseOutcome.success);
     final p = await repo.load();
-    expect(service.availabilityOf(p, math), WorldAvailability.ownedComingSoon);
-    expect(Progression.isWorldPlayable(p, math), isFalse);
+    expect(service.availabilityOf(p, comingSoon), WorldAvailability.ownedComingSoon);
+    expect(Progression.isWorldPlayable(p, comingSoon), isFalse);
   });
 
   test('課金はランダム要素を持たない（全ワールドが固定価格の買い切り）', () {

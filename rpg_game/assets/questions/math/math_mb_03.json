@@ -1,0 +1,138 @@
+{
+  "setId": "math_mb_03",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_mb03_001",
+      "category": "calculation",
+      "prompt": "Σ_{k=1}^{n} k·2^(k−1) を計算すると？",
+      "choices": [
+        "2ⁿ−1",
+        "n·2ⁿ",
+        "(n+1)2ⁿ−1",
+        "(n−1)2ⁿ+1"
+      ],
+      "answerIndex": 3,
+      "explanation": "S−2S を計算する。n=2 で 1+4=5 を確かめる。"
+    },
+    {
+      "id": "mat_mb03_002",
+      "category": "calculation",
+      "prompt": "1 | 2, 3 | 4, 5, 6 | … と区切るとき、第 n 群の最初の数は？",
+      "choices": [
+        "n²",
+        "2n−1",
+        "n(n−1)/2+1",
+        "n(n+1)/2"
+      ],
+      "answerIndex": 2,
+      "explanation": "第 n−1 群までに 1+2+…+(n−1) 個ある。"
+    },
+    {
+      "id": "mat_mb03_003",
+      "category": "calculation",
+      "prompt": "同じ群数列で、50 は第何群にある？",
+      "choices": [
+        "第9群",
+        "第11群",
+        "第10群",
+        "第8群"
+      ],
+      "answerIndex": 2,
+      "explanation": "第9群の最後は45、第10群の最後は55。"
+    },
+    {
+      "id": "mat_mb03_004",
+      "category": "calculation",
+      "prompt": "初項50、公差−3の等差数列で、初項からの和が最大となるのは第何項まで？",
+      "choices": [
+        "第16項",
+        "第18項",
+        "第25項",
+        "第17項"
+      ],
+      "answerIndex": 3,
+      "explanation": "第17項は2、第18項は−1。"
+    },
+    {
+      "id": "mat_mb03_005",
+      "category": "calculation",
+      "prompt": "Σ_{k=1}^{20} (3k+1) の値は？",
+      "choices": [
+        "650",
+        "660",
+        "630",
+        "610"
+      ],
+      "answerIndex": 0,
+      "explanation": "3·210+20。"
+    },
+    {
+      "id": "mat_mb03_006",
+      "category": "calculation",
+      "prompt": "1·2+2·3+…+10·11 の値は？",
+      "choices": [
+        "440",
+        "385",
+        "330",
+        "550"
+      ],
+      "answerIndex": 0,
+      "explanation": "n(n+1)(n+2)/3 に n=10。"
+    },
+    {
+      "id": "mat_mb03_007",
+      "category": "calculation",
+      "prompt": "Σ_{k=1}^{n} 1/(√(k+1)+√k) を計算すると？",
+      "choices": [
+        "√(n+1)−1",
+        "1/√(n+1)",
+        "√n",
+        "√(n+1)+1"
+      ],
+      "answerIndex": 0,
+      "explanation": "有理化すると √(k+1)−√k。"
+    },
+    {
+      "id": "mat_mb03_008",
+      "category": "calculation",
+      "prompt": "1+3+3²+…+3^(n−1) を計算すると？",
+      "choices": [
+        "3ⁿ/2",
+        "(3ⁿ⁺¹−1)/2",
+        "3ⁿ−1",
+        "(3ⁿ−1)/2"
+      ],
+      "answerIndex": 3,
+      "explanation": "等比数列の和：(3ⁿ−1)/(3−1)。"
+    },
+    {
+      "id": "mat_mb03_009",
+      "category": "calculation",
+      "prompt": "1, 1/3, 1/5, 1/7, … の第10項は？",
+      "choices": [
+        "1/19",
+        "1/17",
+        "1/21",
+        "1/20"
+      ],
+      "answerIndex": 0,
+      "explanation": "分母は 2n−1。"
+    },
+    {
+      "id": "mat_mb03_010",
+      "category": "thinking",
+      "prompt": "等比数列の和を求めるとき、S−rS を計算する理由は？",
+      "choices": [
+        "1つずらして引くと、間の項がすべて消えるから",
+        "S が0になるから",
+        "公比が1になるから",
+        "項数が2倍になるから"
+      ],
+      "answerIndex": 0,
+      "explanation": "S−rS=a−arⁿ。"
+    }
+  ]
+}

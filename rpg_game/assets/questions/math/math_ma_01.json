@@ -1,0 +1,138 @@
+{
+  "setId": "math_ma_01",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_ma01_001",
+      "category": "calculation",
+      "prompt": "₅P₂ の値は？",
+      "choices": [
+        "25",
+        "10",
+        "60",
+        "20"
+      ],
+      "answerIndex": 3,
+      "explanation": "5×4=20。"
+    },
+    {
+      "id": "mat_ma01_002",
+      "category": "calculation",
+      "prompt": "₅C₂ の値は？",
+      "choices": [
+        "5",
+        "10",
+        "20",
+        "25"
+      ],
+      "answerIndex": 1,
+      "explanation": "₅P₂÷2!=10。"
+    },
+    {
+      "id": "mat_ma01_003",
+      "category": "calculation",
+      "prompt": "4! の値は？",
+      "choices": [
+        "16",
+        "12",
+        "24",
+        "4"
+      ],
+      "answerIndex": 2,
+      "explanation": "4×3×2×1。"
+    },
+    {
+      "id": "mat_ma01_004",
+      "category": "calculation",
+      "prompt": "大小2個のさいころを投げて、目の和が5になる場合は何通り？",
+      "choices": [
+        "6通り",
+        "5通り",
+        "4通り",
+        "3通り"
+      ],
+      "answerIndex": 2,
+      "explanation": "(1,4)(2,3)(3,2)(4,1)。"
+    },
+    {
+      "id": "mat_ma01_005",
+      "category": "calculation",
+      "prompt": "n(A)=10、n(B)=8、n(A∩B)=3 のとき、n(A∪B) は？",
+      "choices": [
+        "18",
+        "15",
+        "21",
+        "13"
+      ],
+      "answerIndex": 1,
+      "explanation": "n(A)+n(B)−n(A∩B)。"
+    },
+    {
+      "id": "mat_ma01_006",
+      "category": "calculation",
+      "prompt": "シャツ3枚とズボン4本から1つずつ選ぶ組み合わせは何通り？",
+      "choices": [
+        "24通り",
+        "81通り",
+        "12通り",
+        "7通り"
+      ],
+      "answerIndex": 2,
+      "explanation": "積の法則：3×4。"
+    },
+    {
+      "id": "mat_ma01_007",
+      "category": "calculation",
+      "prompt": "1から100までの整数のうち、3の倍数は何個？",
+      "choices": [
+        "32個",
+        "30個",
+        "34個",
+        "33個"
+      ],
+      "answerIndex": 3,
+      "explanation": "100÷3=33 余り1。"
+    },
+    {
+      "id": "mat_ma01_008",
+      "category": "calculation",
+      "prompt": "6人から委員長と副委員長を1人ずつ選ぶ方法は何通り？",
+      "choices": [
+        "30通り",
+        "12通り",
+        "36通り",
+        "15通り"
+      ],
+      "answerIndex": 0,
+      "explanation": "役割が区別されるので ₆P₂。"
+    },
+    {
+      "id": "mat_ma01_009",
+      "category": "calculation",
+      "prompt": "₇C₃ の値は？",
+      "choices": [
+        "42",
+        "21",
+        "210",
+        "35"
+      ],
+      "answerIndex": 3,
+      "explanation": "(7×6×5)/(3×2×1)。"
+    },
+    {
+      "id": "mat_ma01_010",
+      "category": "thinking",
+      "prompt": "順列と組合せの違いは？",
+      "choices": [
+        "選んだものの順番を区別するかどうか",
+        "選ぶ個数が多いかどうか",
+        "数字を使うかどうか",
+        "同じものを何回でも選べるかどうか"
+      ],
+      "answerIndex": 0,
+      "explanation": "組合せは順番を区別しないので、順列を r! で割る。"
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "setId": "math_m2_13",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_m213_001",
+      "category": "calculation",
+      "prompt": "2⁻³ の値は？",
+      "choices": [
+        "−6",
+        "−8",
+        "1/6",
+        "1/8"
+      ],
+      "answerIndex": 3,
+      "explanation": "a⁻ⁿ=1/aⁿ。"
+    },
+    {
+      "id": "mat_m213_002",
+      "category": "calculation",
+      "prompt": "8^(1/3) の値は？",
+      "choices": [
+        "2",
+        "8/3",
+        "3",
+        "1/2"
+      ],
+      "answerIndex": 0,
+      "explanation": "³√8=2。"
+    },
+    {
+      "id": "mat_m213_003",
+      "category": "calculation",
+      "prompt": "4^(3/2) の値は？",
+      "choices": [
+        "6",
+        "2",
+        "8",
+        "16"
+      ],
+      "answerIndex": 2,
+      "explanation": "(√4)³=2³。"
+    },
+    {
+      "id": "mat_m213_004",
+      "category": "calculation",
+      "prompt": "a²×a³÷a⁴ を計算すると？",
+      "choices": [
+        "a²",
+        "a",
+        "1",
+        "a⁵"
+      ],
+      "answerIndex": 1,
+      "explanation": "a^(2+3−4)。"
+    },
+    {
+      "id": "mat_m213_005",
+      "category": "calculation",
+      "prompt": "log₂8 の値は？",
+      "choices": [
+        "3",
+        "8",
+        "2",
+        "4"
+      ],
+      "answerIndex": 0,
+      "explanation": "2³=8。"
+    },
+    {
+      "id": "mat_m213_006",
+      "category": "calculation",
+      "prompt": "log₃(1/9) の値は？",
+      "choices": [
+        "−2",
+        "2",
+        "1/2",
+        "−3"
+      ],
+      "answerIndex": 0,
+      "explanation": "3⁻²=1/9。"
+    },
+    {
+      "id": "mat_m213_007",
+      "category": "calculation",
+      "prompt": "log₂3+log₂(4/3) の値は？",
+      "choices": [
+        "1",
+        "log₂7",
+        "4",
+        "2"
+      ],
+      "answerIndex": 3,
+      "explanation": "log₂(3×4/3)=log₂4。"
+    },
+    {
+      "id": "mat_m213_008",
+      "category": "calculation",
+      "prompt": "log₅1 の値は？",
+      "choices": [
+        "5",
+        "0",
+        "−1",
+        "1"
+      ],
+      "answerIndex": 1,
+      "explanation": "5⁰=1。"
+    },
+    {
+      "id": "mat_m213_009",
+      "category": "calculation",
+      "prompt": "2ˣ=16 を満たす x は？",
+      "choices": [
+        "4",
+        "2",
+        "3",
+        "8"
+      ],
+      "answerIndex": 0,
+      "explanation": "16=2⁴。"
+    },
+    {
+      "id": "mat_m213_010",
+      "category": "thinking",
+      "prompt": "a⁰=1 と定める理由は？",
+      "choices": [
+        "a は必ず1だから",
+        "0 は偶数だから",
+        "0乗は計算できないから",
+        "aᵐ÷aᵐ=a^(m−m) という指数法則が成り立つようにするため"
+      ],
+      "answerIndex": 3,
+      "explanation": "aᵐ÷aᵐ=1 なので、a⁰=1 と決めると法則が保たれる。"
+    }
+  ]
+}

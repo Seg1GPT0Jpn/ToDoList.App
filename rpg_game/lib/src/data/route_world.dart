@@ -56,6 +56,7 @@ class RouteSpec {
     required this.info,
     required this.areas,
     this.timeLimitSeconds = 25,
+    this.primary = QuestionCategory.knowledge,
     this.secondary = QuestionCategory.thinking,
     this.armorCategory = QuestionCategory.knowledge,
   });
@@ -63,6 +64,9 @@ class RouteSpec {
   final RouteInfo info;
   final List<RouteArea> areas;
   final int timeLimitSeconds;
+
+  /// 奇数エリアの弱点（数学は calculation）
+  final QuestionCategory primary;
 
   /// 偶数エリアの弱点（計算の多いルートは calculation）
   final QuestionCategory secondary;
@@ -147,9 +151,8 @@ class RouteWorldBuilder {
               maxHp: a.boss ? (_hp[k - 1] * 1.1).round() : _hp[k - 1],
               attack: _atk[k - 1],
               description: a.description,
-              weakness: a.boss
-                  ? r.secondary
-                  : (k.isOdd ? QuestionCategory.knowledge : r.secondary),
+              weakness:
+                  a.boss ? r.secondary : (k.isOdd ? r.primary : r.secondary),
               armorCategory: a.boss ? r.armorCategory : null,
               armor: a.boss ? (k >= 12 ? 3 : 2) : 0,
               introLine: a.intro,

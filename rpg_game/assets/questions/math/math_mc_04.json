@@ -1,0 +1,138 @@
+{
+  "setId": "math_mc_04",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_mc04_001",
+      "category": "calculation",
+      "prompt": "(1, 2, 3)+(2, 0, −1) を計算すると？",
+      "choices": [
+        "(3, 2, 4)",
+        "(−1, 2, 4)",
+        "(2, 0, −3)",
+        "(3, 2, 2)"
+      ],
+      "answerIndex": 3,
+      "explanation": "成分ごとに足す。"
+    },
+    {
+      "id": "mat_mc04_002",
+      "category": "calculation",
+      "prompt": "ベクトル (1, 2, 2) の大きさは？",
+      "choices": [
+        "3",
+        "√5",
+        "5",
+        "9"
+      ],
+      "answerIndex": 0,
+      "explanation": "√(1+4+4)。"
+    },
+    {
+      "id": "mat_mc04_003",
+      "category": "calculation",
+      "prompt": "(1, 2, 3)・(3, 0, −1) の値は？",
+      "choices": [
+        "−3",
+        "3",
+        "0",
+        "6"
+      ],
+      "answerIndex": 2,
+      "explanation": "3+0−3。"
+    },
+    {
+      "id": "mat_mc04_004",
+      "category": "calculation",
+      "prompt": "2点 (1, 0, 2)、(3, 2, 3) の間の距離は？",
+      "choices": [
+        "√5",
+        "9",
+        "5",
+        "3"
+      ],
+      "answerIndex": 3,
+      "explanation": "√(4+4+1)。"
+    },
+    {
+      "id": "mat_mc04_005",
+      "category": "calculation",
+      "prompt": "2点 (2, 4, 6)、(0, 0, 2) の中点は？",
+      "choices": [
+        "(1, 2, 4)",
+        "(2, 4, 4)",
+        "(1, 2, 3)",
+        "(2, 4, 8)"
+      ],
+      "answerIndex": 0,
+      "explanation": "座標の平均。"
+    },
+    {
+      "id": "mat_mc04_006",
+      "category": "knowledge",
+      "prompt": "点 (1, 2, 3) の xy 平面に関して対称な点は？",
+      "choices": [
+        "(1, 2, −3)",
+        "(−1, −2, 3)",
+        "(−1, 2, 3)",
+        "(1, −2, 3)"
+      ],
+      "answerIndex": 0,
+      "explanation": "z 座標の符号が変わる。"
+    },
+    {
+      "id": "mat_mc04_007",
+      "category": "calculation",
+      "prompt": "中心 (1, 0, 0)、半径2の球面の方程式は？",
+      "choices": [
+        "(x−1)²+y²+z²=4",
+        "(x+1)²+y²+z²=4",
+        "x²+y²+z²=4",
+        "(x−1)²+y²+z²=2"
+      ],
+      "answerIndex": 0,
+      "explanation": "(x−a)²+(y−b)²+(z−c)²=r²。"
+    },
+    {
+      "id": "mat_mc04_008",
+      "category": "calculation",
+      "prompt": "(1, 1, 0) と (1, 0, 1) のなす角は？",
+      "choices": [
+        "45°",
+        "30°",
+        "90°",
+        "60°"
+      ],
+      "answerIndex": 3,
+      "explanation": "cos θ=1/(√2·√2)=1/2。"
+    },
+    {
+      "id": "mat_mc04_009",
+      "category": "calculation",
+      "prompt": "(1, 2, 3) と (2, x, 6) が平行のとき、x は？",
+      "choices": [
+        "6",
+        "2",
+        "4",
+        "3"
+      ],
+      "answerIndex": 2,
+      "explanation": "2倍になっている。"
+    },
+    {
+      "id": "mat_mc04_010",
+      "category": "thinking",
+      "prompt": "空間では3つの一次独立なベクトルで、どんなベクトルも表せる理由は？",
+      "choices": [
+        "ベクトルは平面上にしかないから",
+        "内積が0だから",
+        "空間は3次元で、3つの方向を組み合わせればどこへでも行けるから",
+        "2つあれば十分だから"
+      ],
+      "answerIndex": 2,
+      "explanation": "p=sa+tb+uc と表せる。"
+    }
+  ]
+}

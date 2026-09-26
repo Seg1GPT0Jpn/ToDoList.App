@@ -1,0 +1,138 @@
+{
+  "setId": "math_mb_12",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_mb12_001",
+      "category": "calculation",
+      "prompt": "毎年はじめに10万円を積み立て、年利10%の複利で運用する。3年目の終わりの合計は？",
+      "choices": [
+        "36.3万円",
+        "36.41万円",
+        "33万円",
+        "30万円"
+      ],
+      "answerIndex": 1,
+      "explanation": "10(1.1+1.1²+1.1³)=10×3.641。"
+    },
+    {
+      "id": "mat_mb12_002",
+      "category": "calculation",
+      "prompt": "池の魚の数が aₙ₊₁=0.8aₙ+100 で変化するとき、やがて近づく数は？",
+      "choices": [
+        "100",
+        "800",
+        "500",
+        "125"
+      ],
+      "answerIndex": 2,
+      "explanation": "α=0.8α+100 を解く。"
+    },
+    {
+      "id": "mat_mb12_003",
+      "category": "calculation",
+      "prompt": "2ⁿ>1000 となる最小の自然数 n は？",
+      "choices": [
+        "11",
+        "9",
+        "100",
+        "10"
+      ],
+      "answerIndex": 3,
+      "explanation": "2¹⁰=1024。"
+    },
+    {
+      "id": "mat_mb12_004",
+      "category": "calculation",
+      "prompt": "身長が N(170, 6²) に従うとき、182cm 以上の人の割合はおよそ？（P(Z≧2)=0.0228）",
+      "choices": [
+        "約0.2%",
+        "約5%",
+        "約16%",
+        "約2.3%"
+      ],
+      "answerIndex": 3,
+      "explanation": "Z=(182−170)/6=2。"
+    },
+    {
+      "id": "mat_mb12_005",
+      "category": "calculation",
+      "prompt": "標本比率0.5、標本の大きさ100のとき、信頼度95%の信頼区間の片側の幅はおよそ？",
+      "choices": [
+        "0.01",
+        "0.1",
+        "0.2",
+        "0.05"
+      ],
+      "answerIndex": 1,
+      "explanation": "1.96√(0.25/100)=0.098。"
+    },
+    {
+      "id": "mat_mb12_006",
+      "category": "calculation",
+      "prompt": "1人が2人に感染させるモデルで、1世代目が1人のとき、5世代目の新たな感染者数は？",
+      "choices": [
+        "8人",
+        "16人",
+        "10人",
+        "32人"
+      ],
+      "answerIndex": 1,
+      "explanation": "1, 2, 4, 8, 16。"
+    },
+    {
+      "id": "mat_mb12_007",
+      "category": "calculation",
+      "prompt": "平均50点、標準偏差10点のテストで70点の偏差値は？",
+      "choices": [
+        "60",
+        "70",
+        "20",
+        "120"
+      ],
+      "answerIndex": 1,
+      "explanation": "50+10×(70−50)/10。"
+    },
+    {
+      "id": "mat_mb12_008",
+      "category": "calculation",
+      "prompt": "1か月目1000円、以後毎月500円ずつ増やして貯金する。12か月分の合計は？",
+      "choices": [
+        "6500円",
+        "48000円",
+        "45000円",
+        "39000円"
+      ],
+      "answerIndex": 2,
+      "explanation": "等差数列の和：12(1000+6500)/2。"
+    },
+    {
+      "id": "mat_mb12_009",
+      "category": "calculation",
+      "prompt": "確率0.001で100万円が支払われる保険の、支払額の期待値は？",
+      "choices": [
+        "1円",
+        "1000円",
+        "100円",
+        "10000円"
+      ],
+      "answerIndex": 1,
+      "explanation": "1000000×0.001。"
+    },
+    {
+      "id": "mat_mb12_010",
+      "category": "thinking",
+      "prompt": "数学的モデルの結果を現実のデータと比べて見直す理由は？",
+      "choices": [
+        "計算を増やすため",
+        "結果を変えないため",
+        "おいた仮定が現実とずれていれば、モデルを修正する必要があるから",
+        "モデルはいつも正しいから"
+      ],
+      "answerIndex": 2,
+      "explanation": "モデル化は、評価と改善をくり返す。"
+    }
+  ]
+}

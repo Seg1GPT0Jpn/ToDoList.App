@@ -1,0 +1,138 @@
+{
+  "setId": "math_mb_11",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_mb11_001",
+      "category": "knowledge",
+      "prompt": "最小二乗法で求める回帰直線は、どんな直線？",
+      "choices": [
+        "原点を通る直線",
+        "データの点との誤差の2乗の和が最小になる直線",
+        "最大値と最小値を結ぶ直線",
+        "すべての点を通る直線"
+      ],
+      "answerIndex": 1,
+      "explanation": "予測に使う直線。"
+    },
+    {
+      "id": "mat_mb11_002",
+      "category": "calculation",
+      "prompt": "回帰直線が y=2x+1 のとき、x=5 での予測値は？",
+      "choices": [
+        "11",
+        "10",
+        "7",
+        "12"
+      ],
+      "answerIndex": 0,
+      "explanation": "2·5+1。"
+    },
+    {
+      "id": "mat_mb11_003",
+      "category": "calculation",
+      "prompt": "ドント式で定数3議席を配分する。得票は A 党900、B 党500、C 党200。A 党の議席数は？",
+      "choices": [
+        "1議席",
+        "0議席",
+        "2議席",
+        "3議席"
+      ],
+      "answerIndex": 2,
+      "explanation": "900, 500, 450(A÷2) の順に上位3つ。"
+    },
+    {
+      "id": "mat_mb11_004",
+      "category": "calculation",
+      "prompt": "くじ A は1/10の確率で1000円、くじ B は1/2の確率で150円もらえる。期待値が大きいのは？",
+      "choices": [
+        "くじ B（75円）",
+        "同じ",
+        "比べられない",
+        "くじ A（100円）"
+      ],
+      "answerIndex": 3,
+      "explanation": "A：100円、B：75円。"
+    },
+    {
+      "id": "mat_mb11_005",
+      "category": "knowledge",
+      "prompt": "片対数グラフ（縦軸だけ対数目盛り）で、データがほぼ直線に並ぶときの変化は？",
+      "choices": [
+        "変化しない",
+        "一定の変化（1次関数）",
+        "指数関数的な変化",
+        "2次関数的な変化"
+      ],
+      "answerIndex": 2,
+      "explanation": "log y が x の1次式になっている。"
+    },
+    {
+      "id": "mat_mb11_006",
+      "category": "calculation",
+      "prompt": "10, 14, 12, 16 のデータで、最後の3期の移動平均は？",
+      "choices": [
+        "15",
+        "13",
+        "14",
+        "12"
+      ],
+      "answerIndex": 2,
+      "explanation": "(14+12+16)/3。"
+    },
+    {
+      "id": "mat_mb11_007",
+      "category": "calculation",
+      "prompt": "毎年2%ずつ減る量が今1000のとき、3年後はおよそいくつ？（小数点以下切り捨て）",
+      "choices": [
+        "940",
+        "941",
+        "980",
+        "960"
+      ],
+      "answerIndex": 1,
+      "explanation": "1000×0.98³=941.192。"
+    },
+    {
+      "id": "mat_mb11_008",
+      "category": "calculation",
+      "prompt": "30分ごとに2倍に増える細菌は、3時間後に何倍？",
+      "choices": [
+        "32倍",
+        "64倍",
+        "6倍",
+        "12倍"
+      ],
+      "answerIndex": 1,
+      "explanation": "6回2倍になる：2⁶。"
+    },
+    {
+      "id": "mat_mb11_009",
+      "category": "calculation",
+      "prompt": "100万円を年利1%の単利で5年預けると、元利合計は？",
+      "choices": [
+        "110万円",
+        "約105.1万円",
+        "101万円",
+        "105万円"
+      ],
+      "answerIndex": 3,
+      "explanation": "単利なので利息は毎年1万円。"
+    },
+    {
+      "id": "mat_mb11_010",
+      "category": "thinking",
+      "prompt": "回帰直線による予測を、データの範囲から大きく外れた x に使うときに注意する理由は？",
+      "choices": [
+        "y が必ず0になるから",
+        "計算が複雑になるから",
+        "回帰直線が曲がるから",
+        "データの範囲の外では、同じ関係が成り立つとは限らないから"
+      ],
+      "answerIndex": 3,
+      "explanation": "外挿には注意が必要。"
+    }
+  ]
+}

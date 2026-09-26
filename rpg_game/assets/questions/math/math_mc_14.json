@@ -1,0 +1,138 @@
+{
+  "setId": "math_mc_14",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_mc14_001",
+      "category": "calculation",
+      "prompt": "[[1, 2], [3, 4]]·[[5, 6], [7, 8]] を計算すると？",
+      "choices": [
+        "[[19, 43], [22, 50]]",
+        "[[23, 34], [31, 46]]",
+        "[[19, 22], [43, 50]]",
+        "[[5, 12], [21, 32]]"
+      ],
+      "answerIndex": 2,
+      "explanation": "1行目×1列目：5+14=19 など。"
+    },
+    {
+      "id": "mat_mc14_002",
+      "category": "calculation",
+      "prompt": "行列 [[1, 2], [3, 4]] の ad−bc の値は？",
+      "choices": [
+        "−10",
+        "10",
+        "2",
+        "−2"
+      ],
+      "answerIndex": 3,
+      "explanation": "1·4−2·3。"
+    },
+    {
+      "id": "mat_mc14_003",
+      "category": "calculation",
+      "prompt": "行列 [[2, 1], [1, 1]] の逆行列は？",
+      "choices": [
+        "[[1, 1], [1, 2]]",
+        "[[1, −1], [−1, 2]]",
+        "[[2, −1], [−1, 1]]",
+        "[[−1, 1], [1, −2]]"
+      ],
+      "answerIndex": 1,
+      "explanation": "ad−bc=1。[[d, −b], [−c, a]] を1で割る。"
+    },
+    {
+      "id": "mat_mc14_004",
+      "category": "calculation",
+      "prompt": "原点のまわりに90°回転する行列は？",
+      "choices": [
+        "[[1, 0], [0, −1]]",
+        "[[0, 1], [1, 0]]",
+        "[[0, −1], [1, 0]]",
+        "[[−1, 0], [0, −1]]"
+      ],
+      "answerIndex": 2,
+      "explanation": "[[cos θ, −sin θ], [sin θ, cos θ]] で θ=90°。"
+    },
+    {
+      "id": "mat_mc14_005",
+      "category": "calculation",
+      "prompt": "点 (1, 0) を90°回転の行列で移した点は？",
+      "choices": [
+        "(0, −1)",
+        "(−1, 0)",
+        "(1, 1)",
+        "(0, 1)"
+      ],
+      "answerIndex": 3,
+      "explanation": "[[0, −1], [1, 0]]·[[1], [0]]。"
+    },
+    {
+      "id": "mat_mc14_006",
+      "category": "knowledge",
+      "prompt": "各頂点に集まる辺の数が 2, 2, 3, 3 のつながったグラフは一筆書きできる？",
+      "choices": [
+        "できる",
+        "辺による",
+        "頂点による",
+        "できない"
+      ],
+      "answerIndex": 0,
+      "explanation": "奇数の頂点が2個なので、一方から始めて他方で終わる。"
+    },
+    {
+      "id": "mat_mc14_007",
+      "category": "calculation",
+      "prompt": "辺の長さが A−B：3、B−C：2、A−C：6 のとき、A から C への最短経路の長さは？",
+      "choices": [
+        "6",
+        "5",
+        "3",
+        "11"
+      ],
+      "answerIndex": 1,
+      "explanation": "A→B→C で 3+2。"
+    },
+    {
+      "id": "mat_mc14_008",
+      "category": "calculation",
+      "prompt": "頂点が10個の木（閉路のないつながったグラフ）の辺の数は？",
+      "choices": [
+        "45",
+        "10",
+        "11",
+        "9"
+      ],
+      "answerIndex": 3,
+      "explanation": "木の辺の数は頂点の数−1。"
+    },
+    {
+      "id": "mat_mc14_009",
+      "category": "calculation",
+      "prompt": "連立方程式 x+y=4、x−y=2 を行列で解くと？",
+      "choices": [
+        "x=2, y=2",
+        "x=1, y=3",
+        "x=3, y=1",
+        "x=4, y=0"
+      ],
+      "answerIndex": 2,
+      "explanation": "[[1, 1], [1, −1]] の逆行列をかける。"
+    },
+    {
+      "id": "mat_mc14_010",
+      "category": "thinking",
+      "prompt": "問題を図やグラフで表す工夫の意味は？",
+      "choices": [
+        "数式を使わないため",
+        "要素どうしの関係や構造が見えやすくなり、解き方を見つけやすくなるから",
+        "答えを隠すため",
+        "計算を増やすため"
+      ],
+      "answerIndex": 1,
+      "explanation": "例：路線図を頂点と辺のグラフで表す。"
+    }
+  ]
+}

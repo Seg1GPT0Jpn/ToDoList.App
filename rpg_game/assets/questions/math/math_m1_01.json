@@ -1,0 +1,138 @@
+{
+  "setId": "math_m1_01",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_m101_001",
+      "category": "calculation",
+      "prompt": "(x+3)(x+5) を展開すると？",
+      "choices": [
+        "x²+2x+15",
+        "x²+15x+8",
+        "x²+8x+8",
+        "x²+8x+15"
+      ],
+      "answerIndex": 3,
+      "explanation": "(x+a)(x+b)=x²+(a+b)x+ab。a+b=8、ab=15。"
+    },
+    {
+      "id": "mat_m101_002",
+      "category": "calculation",
+      "prompt": "(2x−1)² を展開すると？",
+      "choices": [
+        "4x²−2x+1",
+        "4x²−4x+1",
+        "4x²+1",
+        "2x²−4x+1"
+      ],
+      "answerIndex": 1,
+      "explanation": "(a−b)²=a²−2ab+b²。2·2x·1=4x。"
+    },
+    {
+      "id": "mat_m101_003",
+      "category": "calculation",
+      "prompt": "(a+b)(a−b) を展開すると？",
+      "choices": [
+        "a²−2ab+b²",
+        "a²+2ab−b²",
+        "a²−b²",
+        "a²+b²"
+      ],
+      "answerIndex": 2,
+      "explanation": "和と差の積は2乗の差。"
+    },
+    {
+      "id": "mat_m101_004",
+      "category": "calculation",
+      "prompt": "x²+7x+12 を因数分解すると？",
+      "choices": [
+        "(x+2)(x+6)",
+        "(x−3)(x−4)",
+        "(x+3)(x+4)",
+        "(x+1)(x+12)"
+      ],
+      "answerIndex": 2,
+      "explanation": "積が12、和が7の2数は3と4。"
+    },
+    {
+      "id": "mat_m101_005",
+      "category": "calculation",
+      "prompt": "x²−9 を因数分解すると？",
+      "choices": [
+        "(x+3)²",
+        "(x+9)(x−1)",
+        "(x+3)(x−3)",
+        "(x−3)²"
+      ],
+      "answerIndex": 2,
+      "explanation": "a²−b²=(a+b)(a−b)。"
+    },
+    {
+      "id": "mat_m101_006",
+      "category": "knowledge",
+      "prompt": "単項式 3x²y の次数は？",
+      "choices": [
+        "3",
+        "2",
+        "6",
+        "1"
+      ],
+      "answerIndex": 0,
+      "explanation": "文字の数の合計。x が2個、y が1個で3次。x に着目すると2次。"
+    },
+    {
+      "id": "mat_m101_007",
+      "category": "calculation",
+      "prompt": "(3x²−2x+1)+(x²+5x−4) を計算すると？",
+      "choices": [
+        "4x²+7x−3",
+        "2x²+3x−3",
+        "4x²+3x+5",
+        "4x²+3x−3"
+      ],
+      "answerIndex": 3,
+      "explanation": "同類項どうしをまとめる。"
+    },
+    {
+      "id": "mat_m101_008",
+      "category": "calculation",
+      "prompt": "x²·x³ を計算すると？",
+      "choices": [
+        "x⁹",
+        "2x⁵",
+        "x⁶",
+        "x⁵"
+      ],
+      "answerIndex": 3,
+      "explanation": "指数法則：aᵐ·aⁿ=aᵐ⁺ⁿ。"
+    },
+    {
+      "id": "mat_m101_009",
+      "category": "calculation",
+      "prompt": "(2a)³ を計算すると？",
+      "choices": [
+        "6a³",
+        "8a³",
+        "8a",
+        "2a³"
+      ],
+      "answerIndex": 1,
+      "explanation": "(ab)ⁿ=aⁿbⁿ。2³=8。"
+    },
+    {
+      "id": "mat_m101_010",
+      "category": "thinking",
+      "prompt": "(a+b)² が a²+b² にならない理由として正しいものは？",
+      "choices": [
+        "b² が消えるから",
+        "2乗は足し算に分けられるから",
+        "展開すると 2ab の項が出てくるから",
+        "a と b が同じ数だから"
+      ],
+      "answerIndex": 2,
+      "explanation": "1辺 a+b の正方形の面積には、たて a・横 b の長方形が2つふくまれる。"
+    }
+  ]
+}

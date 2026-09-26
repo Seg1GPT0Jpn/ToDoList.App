@@ -1,0 +1,138 @@
+{
+  "setId": "math_m3_02",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_m302_001",
+      "category": "calculation",
+      "prompt": "lim_{n→∞} (√(n²+n)−n) の値は？",
+      "choices": [
+        "1/2",
+        "0",
+        "∞",
+        "1"
+      ],
+      "answerIndex": 0,
+      "explanation": "有理化して n/(√(n²+n)+n)。"
+    },
+    {
+      "id": "mat_m302_002",
+      "category": "calculation",
+      "prompt": "lim_{x→0} (sin 3x)/x の値は？",
+      "choices": [
+        "1",
+        "0",
+        "3",
+        "1/3"
+      ],
+      "answerIndex": 2,
+      "explanation": "3·(sin 3x)/(3x)。"
+    },
+    {
+      "id": "mat_m302_003",
+      "category": "calculation",
+      "prompt": "lim_{x→0} (1−cos x)/x² の値は？",
+      "choices": [
+        "1",
+        "2",
+        "0",
+        "1/2"
+      ],
+      "answerIndex": 3,
+      "explanation": "1−cos x=2sin²(x/2) と変形。"
+    },
+    {
+      "id": "mat_m302_004",
+      "category": "calculation",
+      "prompt": "lim_{n→∞} (1+1/n)ⁿ の値は？",
+      "choices": [
+        "e",
+        "1",
+        "2",
+        "∞"
+      ],
+      "answerIndex": 0,
+      "explanation": "自然対数の底 e の定義。"
+    },
+    {
+      "id": "mat_m302_005",
+      "category": "calculation",
+      "prompt": "Σ_{n=1}^{∞} (1/3)ⁿ の値は？",
+      "choices": [
+        "1/3",
+        "1/2",
+        "1",
+        "3/2"
+      ],
+      "answerIndex": 1,
+      "explanation": "(1/3)/(1−1/3)。"
+    },
+    {
+      "id": "mat_m302_006",
+      "category": "calculation",
+      "prompt": "0.121212…（12がくり返す）を分数で表すと？",
+      "choices": [
+        "12/100",
+        "6/55",
+        "1/8",
+        "4/33"
+      ],
+      "answerIndex": 3,
+      "explanation": "12/99。"
+    },
+    {
+      "id": "mat_m302_007",
+      "category": "calculation",
+      "prompt": "lim_{x→∞} (2x+1)/(x−1) の値は？",
+      "choices": [
+        "1",
+        "−1",
+        "2",
+        "∞"
+      ],
+      "answerIndex": 2,
+      "explanation": "分母・分子を x で割る。"
+    },
+    {
+      "id": "mat_m302_008",
+      "category": "calculation",
+      "prompt": "lim_{x→−0} 1/x は？",
+      "choices": [
+        "1",
+        "∞",
+        "0",
+        "−∞"
+      ],
+      "answerIndex": 3,
+      "explanation": "x が負の側から0に近づく。"
+    },
+    {
+      "id": "mat_m302_009",
+      "category": "calculation",
+      "prompt": "Σ_{n=1}^{∞} 1/(n(n+1)) の値は？",
+      "choices": [
+        "1/2",
+        "1",
+        "∞",
+        "2"
+      ],
+      "answerIndex": 1,
+      "explanation": "部分和 1−1/(n+1)→1。"
+    },
+    {
+      "id": "mat_m302_010",
+      "category": "thinking",
+      "prompt": "lim_{x→0} (sin x)/x=1 の証明で、はさみうちの原理を使う理由は？",
+      "choices": [
+        "sin x がいつも x と等しいから",
+        "極限が存在しないから",
+        "直接代入すると 0/0 になるので、面積の不等式で上下からはさんで求めるから",
+        "計算が楽だから"
+      ],
+      "answerIndex": 2,
+      "explanation": "cos x<(sin x)/x<1 を使う。"
+    }
+  ]
+}

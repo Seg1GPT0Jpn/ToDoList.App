@@ -1,0 +1,138 @@
+{
+  "setId": "math_mb_07",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_mb07_001",
+      "category": "knowledge",
+      "prompt": "確率変数 X の期待値 E(X) の求め方は？",
+      "choices": [
+        "各値とその確率の積の和",
+        "各値の和",
+        "最大値と最小値の平均",
+        "確率の和"
+      ],
+      "answerIndex": 0,
+      "explanation": "E(X)=Σxₖpₖ。"
+    },
+    {
+      "id": "mat_mb07_002",
+      "category": "calculation",
+      "prompt": "さいころの出る目 X の期待値は？",
+      "choices": [
+        "21",
+        "3",
+        "6",
+        "7/2"
+      ],
+      "answerIndex": 3,
+      "explanation": "(1+…+6)/6。"
+    },
+    {
+      "id": "mat_mb07_003",
+      "category": "calculation",
+      "prompt": "さいころの出る目 X の分散は？",
+      "choices": [
+        "91/6",
+        "35/12",
+        "7/2",
+        "5/2"
+      ],
+      "answerIndex": 1,
+      "explanation": "E(X²)−{E(X)}²=91/6−49/4。"
+    },
+    {
+      "id": "mat_mb07_004",
+      "category": "calculation",
+      "prompt": "E(X)=5 のとき、E(2X+3) は？",
+      "choices": [
+        "8",
+        "13",
+        "10",
+        "16"
+      ],
+      "answerIndex": 1,
+      "explanation": "E(aX+b)=aE(X)+b。"
+    },
+    {
+      "id": "mat_mb07_005",
+      "category": "calculation",
+      "prompt": "V(X)=4 のとき、V(2X+3) は？",
+      "choices": [
+        "8",
+        "16",
+        "11",
+        "19"
+      ],
+      "answerIndex": 1,
+      "explanation": "V(aX+b)=a²V(X)。"
+    },
+    {
+      "id": "mat_mb07_006",
+      "category": "calculation",
+      "prompt": "二項分布 B(10, 1/2) の期待値は？",
+      "choices": [
+        "10",
+        "5",
+        "2.5",
+        "1/2"
+      ],
+      "answerIndex": 1,
+      "explanation": "np。"
+    },
+    {
+      "id": "mat_mb07_007",
+      "category": "calculation",
+      "prompt": "二項分布 B(10, 1/2) の分散は？",
+      "choices": [
+        "√5",
+        "10",
+        "5/2",
+        "5"
+      ],
+      "answerIndex": 2,
+      "explanation": "np(1−p)。"
+    },
+    {
+      "id": "mat_mb07_008",
+      "category": "calculation",
+      "prompt": "二項分布 B(100, 0.3) の標準偏差は？",
+      "choices": [
+        "30",
+        "21",
+        "√21",
+        "√30"
+      ],
+      "answerIndex": 2,
+      "explanation": "√(100·0.3·0.7)。"
+    },
+    {
+      "id": "mat_mb07_009",
+      "category": "knowledge",
+      "prompt": "母集団の一部を取り出して調べる調査を何という？",
+      "choices": [
+        "追跡調査",
+        "国勢調査",
+        "全数調査",
+        "標本調査"
+      ],
+      "answerIndex": 3,
+      "explanation": "取り出した一部を標本という。"
+    },
+    {
+      "id": "mat_mb07_010",
+      "category": "thinking",
+      "prompt": "標本を無作為に抽出する必要がある理由は？",
+      "choices": [
+        "標本を大きくするため",
+        "調査を楽にするため",
+        "母集団を小さくするため",
+        "かたよりのない標本にして、母集団の性質を正しく推測するため"
+      ],
+      "answerIndex": 3,
+      "explanation": "偏った標本からは、母集団について誤った結論が出る。"
+    }
+  ]
+}

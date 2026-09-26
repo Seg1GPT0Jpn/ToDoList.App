@@ -1,0 +1,138 @@
+{
+  "setId": "math_ma_03",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_ma03_001",
+      "category": "calculation",
+      "prompt": "りんご・みかん・かきから合計5個を選ぶ方法は何通り？（選ばない種類があってもよい）",
+      "choices": [
+        "10通り",
+        "21通り",
+        "15通り",
+        "35通り"
+      ],
+      "answerIndex": 1,
+      "explanation": "重複組合せ：○5個と｜2本の並べ方 ₇C₂。"
+    },
+    {
+      "id": "mat_ma03_002",
+      "category": "calculation",
+      "prompt": "x+y+z=6 を満たす正の整数の組 (x, y, z) は何組？",
+      "choices": [
+        "21組",
+        "10組",
+        "28組",
+        "15組"
+      ],
+      "answerIndex": 1,
+      "explanation": "それぞれ1以上なので、6個の間5か所から2か所を選ぶ：₅C₂。"
+    },
+    {
+      "id": "mat_ma03_003",
+      "category": "calculation",
+      "prompt": "6人を2人ずつ A, B, C の3部屋に入れる方法は何通り？",
+      "choices": [
+        "90通り",
+        "30通り",
+        "15通り",
+        "720通り"
+      ],
+      "answerIndex": 0,
+      "explanation": "部屋は区別されるので ₆C₂×₄C₂×₂C₂。"
+    },
+    {
+      "id": "mat_ma03_004",
+      "category": "calculation",
+      "prompt": "1, 1, 2, 2, 3 の5枚から3枚を取り出して並べてできる3桁の整数は何個？",
+      "choices": [
+        "60個",
+        "24個",
+        "12個",
+        "18個"
+      ],
+      "answerIndex": 3,
+      "explanation": "同じ数字2枚をふくむ組 4種×3通り＋すべて異なる {1,2,3} の 3!。"
+    },
+    {
+      "id": "mat_ma03_005",
+      "category": "calculation",
+      "prompt": "男子3人・女子2人が1列に並ぶとき、両端が女子になる並び方は何通り？",
+      "choices": [
+        "12通り",
+        "24通り",
+        "36通り",
+        "6通り"
+      ],
+      "answerIndex": 0,
+      "explanation": "両端の女子 2! × 間の男子 3!。"
+    },
+    {
+      "id": "mat_ma03_006",
+      "category": "calculation",
+      "prompt": "A, B をふくむ5人が1列に並ぶとき、A と B が隣り合う並び方は何通り？",
+      "choices": [
+        "24通り",
+        "48通り",
+        "120通り",
+        "96通り"
+      ],
+      "answerIndex": 1,
+      "explanation": "AB をまとめて4個の並び 4! × AB の入れかえ 2。"
+    },
+    {
+      "id": "mat_ma03_007",
+      "category": "calculation",
+      "prompt": "8人を4人ずつ2組に分ける方法は何通り？（組に区別なし）",
+      "choices": [
+        "70通り",
+        "16通り",
+        "35通り",
+        "140通り"
+      ],
+      "answerIndex": 2,
+      "explanation": "₈C₄÷2!。"
+    },
+    {
+      "id": "mat_ma03_008",
+      "category": "calculation",
+      "prompt": "正八角形の頂点から3つを選んでできる三角形は何個？",
+      "choices": [
+        "56個",
+        "24個",
+        "336個",
+        "48個"
+      ],
+      "answerIndex": 0,
+      "explanation": "₈C₃。"
+    },
+    {
+      "id": "mat_ma03_009",
+      "category": "calculation",
+      "prompt": "1〜5 の数字のカード5枚から3枚を並べてできる3桁の偶数は何個？",
+      "choices": [
+        "24個",
+        "36個",
+        "12個",
+        "30個"
+      ],
+      "answerIndex": 0,
+      "explanation": "一の位は 2 か 4 の2通り、残り 4×3。"
+    },
+    {
+      "id": "mat_ma03_010",
+      "category": "thinking",
+      "prompt": "重複組合せを「○と｜の並べ方」で数えられる理由は？",
+      "choices": [
+        "仕切り｜で区切った○の個数を、それぞれの種類の個数に対応させられるから",
+        "並べ方と選び方はいつも等しいから",
+        "種類の数だけ○があるから",
+        "○と｜は同じものだから"
+      ],
+      "answerIndex": 0,
+      "explanation": "例：○○｜○｜○○ は (2, 1, 2) に対応する。"
+    }
+  ]
+}

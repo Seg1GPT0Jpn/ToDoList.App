@@ -1,0 +1,138 @@
+{
+  "setId": "math_ma_10",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_ma10_001",
+      "category": "calculation",
+      "prompt": "72 を素因数分解すると？",
+      "choices": [
+        "8·9",
+        "2·3·12",
+        "2³·3²",
+        "2²·3³"
+      ],
+      "answerIndex": 2,
+      "explanation": "72=8×9=2³×3²。"
+    },
+    {
+      "id": "mat_ma10_002",
+      "category": "calculation",
+      "prompt": "72 の正の約数の個数は？",
+      "choices": [
+        "12個",
+        "6個",
+        "8個",
+        "10個"
+      ],
+      "answerIndex": 0,
+      "explanation": "(3+1)(2+1)。"
+    },
+    {
+      "id": "mat_ma10_003",
+      "category": "calculation",
+      "prompt": "24 と 36 の最大公約数は？",
+      "choices": [
+        "4",
+        "6",
+        "12",
+        "72"
+      ],
+      "answerIndex": 2,
+      "explanation": "24=2³·3、36=2²·3²。共通部分 2²·3。"
+    },
+    {
+      "id": "mat_ma10_004",
+      "category": "calculation",
+      "prompt": "12 と 18 の最小公倍数は？",
+      "choices": [
+        "216",
+        "36",
+        "6",
+        "72"
+      ],
+      "answerIndex": 1,
+      "explanation": "2²·3²=36。"
+    },
+    {
+      "id": "mat_ma10_005",
+      "category": "calculation",
+      "prompt": "17 を 5 で割った余りは？",
+      "choices": [
+        "5",
+        "1",
+        "2",
+        "3"
+      ],
+      "answerIndex": 2,
+      "explanation": "17=5×3+2。"
+    },
+    {
+      "id": "mat_ma10_006",
+      "category": "knowledge",
+      "prompt": "3 の倍数であるものは？",
+      "choices": [
+        "471",
+        "473",
+        "472",
+        "475"
+      ],
+      "answerIndex": 0,
+      "explanation": "各位の数の和が3の倍数：4+7+1=12。"
+    },
+    {
+      "id": "mat_ma10_007",
+      "category": "calculation",
+      "prompt": "2進法の 1011₍₂₎ を10進法で表すと？",
+      "choices": [
+        "11",
+        "1011",
+        "13",
+        "9"
+      ],
+      "answerIndex": 0,
+      "explanation": "8+0+2+1。"
+    },
+    {
+      "id": "mat_ma10_008",
+      "category": "calculation",
+      "prompt": "10進法の 13 を2進法で表すと？",
+      "choices": [
+        "1001₍₂₎",
+        "1011₍₂₎",
+        "1101₍₂₎",
+        "1110₍₂₎"
+      ],
+      "answerIndex": 2,
+      "explanation": "13=8+4+1。"
+    },
+    {
+      "id": "mat_ma10_009",
+      "category": "calculation",
+      "prompt": "素数でないものは？",
+      "choices": [
+        "89",
+        "97",
+        "91",
+        "83"
+      ],
+      "answerIndex": 2,
+      "explanation": "91=7×13。"
+    },
+    {
+      "id": "mat_ma10_010",
+      "category": "thinking",
+      "prompt": "1 を素数にふくめない理由は？",
+      "choices": [
+        "1は小さすぎるから",
+        "1は奇数ではないから",
+        "1は約数をもたないから",
+        "1を素数とすると、素因数分解が1通りに決まらなくなるから"
+      ],
+      "answerIndex": 3,
+      "explanation": "例：6=2·3=1·2·3=1·1·2·3…となってしまう。"
+    }
+  ]
+}

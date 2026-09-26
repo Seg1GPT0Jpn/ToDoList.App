@@ -1,0 +1,138 @@
+{
+  "setId": "math_m3_09",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_m309_001",
+      "category": "calculation",
+      "prompt": "方程式 log x=kx が異なる2つの実数解をもつ k の範囲は？",
+      "choices": [
+        "k>1/e",
+        "0<k<1/e",
+        "0<k<e",
+        "k<0"
+      ],
+      "answerIndex": 1,
+      "explanation": "k=(log x)/x として、y=(log x)/x と y=k の共有点を考える。"
+    },
+    {
+      "id": "mat_m309_002",
+      "category": "calculation",
+      "prompt": "y=xe^(−x) の変曲点は？",
+      "choices": [
+        "(2, 2/e²)",
+        "(−1, −e)",
+        "(0, 0)",
+        "(1, 1/e)"
+      ],
+      "answerIndex": 0,
+      "explanation": "y″=(x−2)e^(−x)。"
+    },
+    {
+      "id": "mat_m309_003",
+      "category": "calculation",
+      "prompt": "半径 √3 の球に内接する円柱の体積の最大値は？",
+      "choices": [
+        "8π",
+        "2π",
+        "6π",
+        "4π"
+      ],
+      "answerIndex": 3,
+      "explanation": "高さ 2h、半径²=3−h² で V=2π(3−h²)h。h=1 で最大。"
+    },
+    {
+      "id": "mat_m309_004",
+      "category": "calculation",
+      "prompt": "球の体積が毎秒 2cm³ の割合で増えている。半径が1cm のとき、半径の増える速さは？",
+      "choices": [
+        "1/(2π) cm/s",
+        "1/2 cm/s",
+        "2π cm/s",
+        "1/(4π) cm/s"
+      ],
+      "answerIndex": 0,
+      "explanation": "dV/dt=4πr²·dr/dt。"
+    },
+    {
+      "id": "mat_m309_005",
+      "category": "calculation",
+      "prompt": "原点から曲線 y=eˣ に引いた接線の方程式は？",
+      "choices": [
+        "y=x",
+        "y=e²x",
+        "y=ex",
+        "y=x+1"
+      ],
+      "answerIndex": 2,
+      "explanation": "接点 (t, eᵗ) で接線が原点を通る条件から t=1。"
+    },
+    {
+      "id": "mat_m309_006",
+      "category": "calculation",
+      "prompt": "f(x)=x³−3ax が極値をもつ a の条件は？",
+      "choices": [
+        "a<0",
+        "a>0",
+        "a=0",
+        "a≧0"
+      ],
+      "answerIndex": 1,
+      "explanation": "f′(x)=3x²−3a=0 が異なる2つの実数解をもつ。"
+    },
+    {
+      "id": "mat_m309_007",
+      "category": "thinking",
+      "prompt": "x>0 のとき sin x<x となることの示し方は？",
+      "choices": [
+        "グラフが直線だから",
+        "x が1より大きいから",
+        "f(x)=x−sin x が f′(x)=1−cos x≧0 で増加し、f(0)=0 だから",
+        "sin x がいつも負だから"
+      ],
+      "answerIndex": 2,
+      "explanation": "x>0 で f(x)>0。"
+    },
+    {
+      "id": "mat_m309_008",
+      "category": "calculation",
+      "prompt": "y=x+2cos x（0≦x≦π）の最大値は？",
+      "choices": [
+        "π/6+√3",
+        "2",
+        "5π/6−√3",
+        "π−2"
+      ],
+      "answerIndex": 0,
+      "explanation": "y′=1−2sin x=0 で x=π/6、5π/6。端の値と比べる。"
+    },
+    {
+      "id": "mat_m309_009",
+      "category": "calculation",
+      "prompt": "lim_{x→∞} x/eˣ の値は？",
+      "choices": [
+        "1",
+        "∞",
+        "e",
+        "0"
+      ],
+      "answerIndex": 3,
+      "explanation": "指数関数のほうが速く大きくなる。"
+    },
+    {
+      "id": "mat_m309_010",
+      "category": "thinking",
+      "prompt": "方程式の実数解の個数をグラフの共有点で考える利点は？",
+      "choices": [
+        "計算がいらないから",
+        "定数を分離すると、水平な直線を動かすだけで個数が読み取れるから",
+        "解が必ず2つになるから",
+        "微分しなくてよいから"
+      ],
+      "answerIndex": 1,
+      "explanation": "例：f(x)=k の形にする。"
+    }
+  ]
+}

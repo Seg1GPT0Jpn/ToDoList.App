@@ -1,0 +1,138 @@
+{
+  "setId": "math_mc_08",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_mc08_001",
+      "category": "calculation",
+      "prompt": "x=t+1、y=t² が表す曲線の方程式は？",
+      "choices": [
+        "y=(x−1)²",
+        "y=x²+1",
+        "y=(x+1)²",
+        "y=x²−1"
+      ],
+      "answerIndex": 0,
+      "explanation": "t=x−1 を代入。"
+    },
+    {
+      "id": "mat_mc08_002",
+      "category": "calculation",
+      "prompt": "x=cos θ、y=sin θ が表す曲線は？",
+      "choices": [
+        "x²+y²=1",
+        "y=x",
+        "y=x²",
+        "x²−y²=1"
+      ],
+      "answerIndex": 0,
+      "explanation": "cos²θ+sin²θ=1。"
+    },
+    {
+      "id": "mat_mc08_003",
+      "category": "calculation",
+      "prompt": "x=3cos θ、y=2sin θ が表す曲線は？",
+      "choices": [
+        "x²/9+y²/4=1",
+        "x²/4+y²/9=1",
+        "x²+y²=6",
+        "x²/9−y²/4=1"
+      ],
+      "answerIndex": 0,
+      "explanation": "(x/3)²+(y/2)²=1。"
+    },
+    {
+      "id": "mat_mc08_004",
+      "category": "calculation",
+      "prompt": "極座標 (2, π/3) を直交座標で表すと？",
+      "choices": [
+        "(√3, 1)",
+        "(1, √3)",
+        "(2, π/3)",
+        "(1, 2)"
+      ],
+      "answerIndex": 1,
+      "explanation": "(r cos θ, r sin θ)。"
+    },
+    {
+      "id": "mat_mc08_005",
+      "category": "calculation",
+      "prompt": "直交座標 (1, 1) を極座標で表すと？",
+      "choices": [
+        "(√2, π/2)",
+        "(2, π/4)",
+        "(1, π/4)",
+        "(√2, π/4)"
+      ],
+      "answerIndex": 3,
+      "explanation": "r=√2、θ=π/4。"
+    },
+    {
+      "id": "mat_mc08_006",
+      "category": "calculation",
+      "prompt": "極方程式 r=2 を直交座標の方程式にすると？",
+      "choices": [
+        "x²+y²=2",
+        "x=2",
+        "x²+y²=4",
+        "y=2"
+      ],
+      "answerIndex": 2,
+      "explanation": "r²=x²+y²。"
+    },
+    {
+      "id": "mat_mc08_007",
+      "category": "calculation",
+      "prompt": "楕円 x²/4+y²=1 と直線 y=x+k が接するとき、k は？",
+      "choices": [
+        "±1",
+        "±√3",
+        "±2",
+        "±√5"
+      ],
+      "answerIndex": 3,
+      "explanation": "代入して判別式=0：k²=5。"
+    },
+    {
+      "id": "mat_mc08_008",
+      "category": "calculation",
+      "prompt": "サイクロイド x=θ−sin θ、y=1−cos θ で θ=π の点は？",
+      "choices": [
+        "(π, 2)",
+        "(2π, 0)",
+        "(0, 2)",
+        "(π, 0)"
+      ],
+      "answerIndex": 0,
+      "explanation": "sin π=0、cos π=−1。"
+    },
+    {
+      "id": "mat_mc08_009",
+      "category": "calculation",
+      "prompt": "楕円 x²/16+y²/9=1 で囲まれた部分の面積は？",
+      "choices": [
+        "144π",
+        "7π",
+        "25π",
+        "12π"
+      ],
+      "answerIndex": 3,
+      "explanation": "πab=π·4·3。"
+    },
+    {
+      "id": "mat_mc08_010",
+      "category": "thinking",
+      "prompt": "媒介変数表示の利点は？",
+      "choices": [
+        "時間などに合わせて動く点の位置を、x、y それぞれの式で表しやすいから",
+        "曲線が必ず直線になるから",
+        "グラフがかけなくなるから",
+        "方程式が不要になるから"
+      ],
+      "answerIndex": 0,
+      "explanation": "例：サイクロイドは媒介変数で表すと簡単。"
+    }
+  ]
+}

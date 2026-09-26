@@ -1,0 +1,138 @@
+{
+  "setId": "math_mb_01",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_mb01_001",
+      "category": "calculation",
+      "prompt": "初項3、公差4の等差数列の第10項は？",
+      "choices": [
+        "35",
+        "43",
+        "40",
+        "39"
+      ],
+      "answerIndex": 3,
+      "explanation": "aₙ=3+(n−1)·4。"
+    },
+    {
+      "id": "mat_mb01_002",
+      "category": "calculation",
+      "prompt": "初項2、公比3の等比数列の第5項は？",
+      "choices": [
+        "30",
+        "486",
+        "162",
+        "54"
+      ],
+      "answerIndex": 2,
+      "explanation": "2·3⁴。"
+    },
+    {
+      "id": "mat_mb01_003",
+      "category": "calculation",
+      "prompt": "1+2+3+…+100 の値は？",
+      "choices": [
+        "4950",
+        "10100",
+        "5050",
+        "5000"
+      ],
+      "answerIndex": 2,
+      "explanation": "n(n+1)/2=100·101/2。"
+    },
+    {
+      "id": "mat_mb01_004",
+      "category": "calculation",
+      "prompt": "等差数列 3, 7, 11, … の初項から第10項までの和は？",
+      "choices": [
+        "390",
+        "195",
+        "210",
+        "420"
+      ],
+      "answerIndex": 2,
+      "explanation": "10×(3+39)/2。"
+    },
+    {
+      "id": "mat_mb01_005",
+      "category": "calculation",
+      "prompt": "1+2+4+…+2⁹ の値は？",
+      "choices": [
+        "1024",
+        "1023",
+        "512",
+        "2047"
+      ],
+      "answerIndex": 1,
+      "explanation": "(2¹⁰−1)/(2−1)。"
+    },
+    {
+      "id": "mat_mb01_006",
+      "category": "calculation",
+      "prompt": "Σ_{k=1}^{10} k² の値は？",
+      "choices": [
+        "385",
+        "330",
+        "3025",
+        "55"
+      ],
+      "answerIndex": 0,
+      "explanation": "n(n+1)(2n+1)/6=10·11·21/6。"
+    },
+    {
+      "id": "mat_mb01_007",
+      "category": "calculation",
+      "prompt": "Σ_{k=1}^{5} k³ の値は？",
+      "choices": [
+        "15",
+        "225",
+        "125",
+        "55"
+      ],
+      "answerIndex": 1,
+      "explanation": "{n(n+1)/2}²=15²。"
+    },
+    {
+      "id": "mat_mb01_008",
+      "category": "calculation",
+      "prompt": "数列 2, 5, 8, 11, … の一般項は？",
+      "choices": [
+        "2n+1",
+        "3n",
+        "3n+2",
+        "3n−1"
+      ],
+      "answerIndex": 3,
+      "explanation": "初項2、公差3：2+3(n−1)。"
+    },
+    {
+      "id": "mat_mb01_009",
+      "category": "calculation",
+      "prompt": "等比数列で第2項が6、第5項が48のとき、初項は？",
+      "choices": [
+        "1",
+        "6",
+        "2",
+        "3"
+      ],
+      "answerIndex": 3,
+      "explanation": "r³=8 より r=2、a=6/2。"
+    },
+    {
+      "id": "mat_mb01_010",
+      "category": "thinking",
+      "prompt": "等差数列の和が「(初項+末項)×項数÷2」で求められる理由は？",
+      "choices": [
+        "平均が必ず初項になるから",
+        "逆順に並べて足すと、どの組も和が「初項+末項」になるから",
+        "末項が0だから",
+        "項数が必ず偶数だから"
+      ],
+      "answerIndex": 1,
+      "explanation": "ガウスの工夫として知られる。"
+    }
+  ]
+}

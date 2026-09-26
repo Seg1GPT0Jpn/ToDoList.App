@@ -1,0 +1,138 @@
+{
+  "setId": "math_m3_08",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_m308_001",
+      "category": "calculation",
+      "prompt": "y=x²e^(−x) の極大値は？",
+      "choices": [
+        "2/e",
+        "4/e²",
+        "1/e",
+        "0"
+      ],
+      "answerIndex": 1,
+      "explanation": "y′=(2x−x²)e^(−x)、x=2 で極大。"
+    },
+    {
+      "id": "mat_m308_002",
+      "category": "calculation",
+      "prompt": "y=(log x)/x の最大値は？",
+      "choices": [
+        "1/e",
+        "e",
+        "1",
+        "0"
+      ],
+      "answerIndex": 0,
+      "explanation": "y′=(1−log x)/x²=0 で x=e。"
+    },
+    {
+      "id": "mat_m308_003",
+      "category": "thinking",
+      "prompt": "すべての実数 x で eˣ≧1+x が成り立つことの示し方は？",
+      "choices": [
+        "f(x)=eˣ−1−x の最小値が f(0)=0 であることを増減表で示す",
+        "両辺を積分する",
+        "eˣ はいつも正だから",
+        "x=0 を代入するだけ"
+      ],
+      "answerIndex": 0,
+      "explanation": "f′(x)=eˣ−1 で x=0 のとき最小。"
+    },
+    {
+      "id": "mat_m308_004",
+      "category": "calculation",
+      "prompt": "y=x+1/x（x>0）の最小値は？",
+      "choices": [
+        "0",
+        "2",
+        "1",
+        "4"
+      ],
+      "answerIndex": 1,
+      "explanation": "y′=1−1/x²=0 で x=1。"
+    },
+    {
+      "id": "mat_m308_005",
+      "category": "calculation",
+      "prompt": "y=x−2sin x（0≦x≦π）の最小値は？",
+      "choices": [
+        "−2",
+        "π−2",
+        "0",
+        "π/3−√3"
+      ],
+      "answerIndex": 3,
+      "explanation": "y′=1−2cos x=0 で x=π/3。"
+    },
+    {
+      "id": "mat_m308_006",
+      "category": "calculation",
+      "prompt": "曲線 y=x+1/x の漸近線のうち、斜めのものは？",
+      "choices": [
+        "なし",
+        "y=2x",
+        "y=x",
+        "y=x+1"
+      ],
+      "answerIndex": 2,
+      "explanation": "x→∞ で 1/x→0。"
+    },
+    {
+      "id": "mat_m308_007",
+      "category": "calculation",
+      "prompt": "f(x)=x² で、区間 [0, 2] に平均値の定理を使うと、c の値は？",
+      "choices": [
+        "√2",
+        "2",
+        "1/2",
+        "1"
+      ],
+      "answerIndex": 3,
+      "explanation": "(4−0)/(2−0)=2c。"
+    },
+    {
+      "id": "mat_m308_008",
+      "category": "calculation",
+      "prompt": "曲線 y=√x 上の点 (4, 2) における接線の方程式は？",
+      "choices": [
+        "y=x/2",
+        "y=x/4+1",
+        "y=x/4+2",
+        "y=4x−14"
+      ],
+      "answerIndex": 1,
+      "explanation": "傾き 1/(2√4)=1/4。"
+    },
+    {
+      "id": "mat_m308_009",
+      "category": "calculation",
+      "prompt": "x が0に近いとき、sin 0.01 はおよそ？",
+      "choices": [
+        "0.01",
+        "0.1",
+        "1",
+        "0"
+      ],
+      "answerIndex": 0,
+      "explanation": "sin x≒x。"
+    },
+    {
+      "id": "mat_m308_010",
+      "category": "thinking",
+      "prompt": "最大・最小を求めるときに増減表をかく理由は？",
+      "choices": [
+        "導関数を求めなくてよいから",
+        "極値がいつも最大だから",
+        "グラフをかかないため",
+        "極値と区間の端の値を並べて比べ、最大・最小を確実に見つけるため"
+      ],
+      "answerIndex": 3,
+      "explanation": "極大値が最大値とは限らない。"
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "setId": "math_m2_18",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_m218_001",
+      "category": "calculation",
+      "prompt": "放物線 y=x²−2x と x 軸で囲まれた部分の面積は？",
+      "choices": [
+        "2/3",
+        "8/3",
+        "4/3",
+        "1/6"
+      ],
+      "answerIndex": 2,
+      "explanation": "1/6 公式：(2−0)³/6。"
+    },
+    {
+      "id": "mat_m218_002",
+      "category": "calculation",
+      "prompt": "放物線 y=x² と直線 y=x+2 で囲まれた部分の面積は？",
+      "choices": [
+        "9/6",
+        "3",
+        "9/2",
+        "27/2"
+      ],
+      "answerIndex": 2,
+      "explanation": "交点 x=−1, 2。(2−(−1))³/6。"
+    },
+    {
+      "id": "mat_m218_003",
+      "category": "calculation",
+      "prompt": "曲線 y=x³ の接線のうち、傾きが3のものは？",
+      "choices": [
+        "y=3x+1 と y=3x−1",
+        "y=3x−2 と y=3x+2",
+        "y=3x−2 のみ",
+        "y=3x"
+      ],
+      "answerIndex": 1,
+      "explanation": "3x²=3 より接点 x=±1。"
+    },
+    {
+      "id": "mat_m218_004",
+      "category": "calculation",
+      "prompt": "f(x)=x³+ax²+bx が x=1 で極小値 −2 をとるとき、a、b は？",
+      "choices": [
+        "a=−3, b=0",
+        "a=0, b=3",
+        "a=0, b=−3",
+        "a=3, b=0"
+      ],
+      "answerIndex": 2,
+      "explanation": "f′(1)=3+2a+b=0、f(1)=1+a+b=−2。"
+    },
+    {
+      "id": "mat_m218_005",
+      "category": "calculation",
+      "prompt": "1辺6の正方形の四すみから1辺 x の正方形を切りとって箱を作る。容積が最大となるとき、その容積は？",
+      "choices": [
+        "12",
+        "16",
+        "24",
+        "8"
+      ],
+      "answerIndex": 1,
+      "explanation": "V=x(6−2x)²。V′=0 から x=1。"
+    },
+    {
+      "id": "mat_m218_006",
+      "category": "calculation",
+      "prompt": "∫₀³ |x−1| dx の値は？",
+      "choices": [
+        "3",
+        "2",
+        "5/2",
+        "3/2"
+      ],
+      "answerIndex": 2,
+      "explanation": "∫₀¹(1−x)dx+∫₁³(x−1)dx=1/2+2。"
+    },
+    {
+      "id": "mat_m218_007",
+      "category": "calculation",
+      "prompt": "f(x)=x²+2∫₀¹ f(t) dt を満たす f(x) は？",
+      "choices": [
+        "f(x)=x²",
+        "f(x)=x²−2/3",
+        "f(x)=x²+2/3",
+        "f(x)=x²−1/3"
+      ],
+      "answerIndex": 1,
+      "explanation": "∫₀¹f(t)dt=k とおくと k=1/3+2k。"
+    },
+    {
+      "id": "mat_m218_008",
+      "category": "calculation",
+      "prompt": "速度が v(t)=3t²（m/s）で表されるとき、0秒から2秒までに進む距離は？",
+      "choices": [
+        "4 m",
+        "8 m",
+        "12 m",
+        "6 m"
+      ],
+      "answerIndex": 1,
+      "explanation": "∫₀² 3t² dt。"
+    },
+    {
+      "id": "mat_m218_009",
+      "category": "calculation",
+      "prompt": "直線 y=mx（m>0）と放物線 y=x² で囲まれた部分の面積が36のとき、m は？",
+      "choices": [
+        "36",
+        "216",
+        "3",
+        "6"
+      ],
+      "answerIndex": 3,
+      "explanation": "m³/6=36。"
+    },
+    {
+      "id": "mat_m218_010",
+      "category": "thinking",
+      "prompt": "微分と積分が互いに逆の計算であることの意味は？",
+      "choices": [
+        "面積を表す関数を微分すると、もとの関数に戻る",
+        "微分は足し算、積分はかけ算",
+        "微分と積分の答えは同じ",
+        "積分すると必ず0になる"
+      ],
+      "answerIndex": 0,
+      "explanation": "微分積分学の基本定理。"
+    }
+  ]
+}

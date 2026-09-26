@@ -1,0 +1,138 @@
+{
+  "setId": "math_m2_14",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_m214_001",
+      "category": "calculation",
+      "prompt": "log₂12−log₂3 の値は？",
+      "choices": [
+        "2",
+        "3",
+        "log₂9",
+        "4"
+      ],
+      "answerIndex": 0,
+      "explanation": "log₂(12/3)。"
+    },
+    {
+      "id": "mat_m214_002",
+      "category": "calculation",
+      "prompt": "log₄8 の値は？",
+      "choices": [
+        "2/3",
+        "2",
+        "1/2",
+        "3/2"
+      ],
+      "answerIndex": 3,
+      "explanation": "底の変換：log₂8/log₂4=3/2。"
+    },
+    {
+      "id": "mat_m214_003",
+      "category": "calculation",
+      "prompt": "不等式 2ˣ>8 を解くと？",
+      "choices": [
+        "x>8",
+        "x>3",
+        "x<3",
+        "x>4"
+      ],
+      "answerIndex": 1,
+      "explanation": "底2>1 なので、指数の大小がそのまま。"
+    },
+    {
+      "id": "mat_m214_004",
+      "category": "calculation",
+      "prompt": "不等式 log₂x<3 を解くと？",
+      "choices": [
+        "0<x<8",
+        "x<6",
+        "0<x<9",
+        "x<8"
+      ],
+      "answerIndex": 0,
+      "explanation": "真数条件 x>0 も忘れずに。"
+    },
+    {
+      "id": "mat_m214_005",
+      "category": "calculation",
+      "prompt": "方程式 4ˣ−2^(x+1)−8=0 を解くと？",
+      "choices": [
+        "x=−1, 2",
+        "x=1",
+        "x=2",
+        "x=3"
+      ],
+      "answerIndex": 2,
+      "explanation": "2ˣ=t とおくと t²−2t−8=0、t>0 より t=4。"
+    },
+    {
+      "id": "mat_m214_006",
+      "category": "calculation",
+      "prompt": "log₁₀2=0.3010 として、2³⁰ は何桁の数？",
+      "choices": [
+        "30桁",
+        "10桁",
+        "11桁",
+        "9桁"
+      ],
+      "answerIndex": 1,
+      "explanation": "log₁₀2³⁰=9.03。"
+    },
+    {
+      "id": "mat_m214_007",
+      "category": "calculation",
+      "prompt": "log₂3×log₃4 の値は？",
+      "choices": [
+        "1",
+        "2",
+        "12",
+        "3/2"
+      ],
+      "answerIndex": 1,
+      "explanation": "底の変換で log₂4 になる。"
+    },
+    {
+      "id": "mat_m214_008",
+      "category": "knowledge",
+      "prompt": "y=2ˣ と y=log₂x のグラフの関係は？",
+      "choices": [
+        "原点に関して対称",
+        "y 軸に関して対称",
+        "x 軸に関して対称",
+        "直線 y=x に関して対称"
+      ],
+      "answerIndex": 3,
+      "explanation": "互いに逆関数。"
+    },
+    {
+      "id": "mat_m214_009",
+      "category": "calculation",
+      "prompt": "3^(2/3)×3^(4/3) の値は？",
+      "choices": [
+        "3^(8/9)",
+        "9",
+        "27",
+        "3"
+      ],
+      "answerIndex": 1,
+      "explanation": "3^(2/3+4/3)=3²。"
+    },
+    {
+      "id": "mat_m214_010",
+      "category": "thinking",
+      "prompt": "大きな数の桁数を求めるのに常用対数を使う理由は？",
+      "choices": [
+        "底が10の対数しかないから",
+        "桁数は必ず10だから",
+        "計算機が使えないから",
+        "log₁₀N の整数部分から、N が10の何乗くらいかが分かるから"
+      ],
+      "answerIndex": 3,
+      "explanation": "10ⁿ≦N<10ⁿ⁺¹ なら N は n+1 桁。"
+    }
+  ]
+}

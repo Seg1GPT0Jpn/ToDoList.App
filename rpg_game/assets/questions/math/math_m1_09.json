@@ -1,0 +1,138 @@
+{
+  "setId": "math_m1_09",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_m109_001",
+      "category": "calculation",
+      "prompt": "円に内接する四角形 ABCD で A=70° のとき、C は？",
+      "choices": [
+        "110°",
+        "70°",
+        "20°",
+        "140°"
+      ],
+      "answerIndex": 0,
+      "explanation": "円に内接する四角形の対角の和は180°。"
+    },
+    {
+      "id": "mat_m109_002",
+      "category": "calculation",
+      "prompt": "3辺が 3、4、12 の直方体の対角線の長さは？",
+      "choices": [
+        "√153",
+        "19",
+        "13",
+        "12√2"
+      ],
+      "answerIndex": 2,
+      "explanation": "√(9+16+144)=√169=13。"
+    },
+    {
+      "id": "mat_m109_003",
+      "category": "calculation",
+      "prompt": "1辺が2の正四面体の表面積は？",
+      "choices": [
+        "8",
+        "4√3",
+        "√3",
+        "2√3"
+      ],
+      "answerIndex": 1,
+      "explanation": "正三角形1つは (√3/4)·4=√3。それが4つ。"
+    },
+    {
+      "id": "mat_m109_004",
+      "category": "calculation",
+      "prompt": "△ABC で b=2、c=3、A=60° のとき、a の値は？",
+      "choices": [
+        "√13",
+        "√7",
+        "√19",
+        "7"
+      ],
+      "answerIndex": 1,
+      "explanation": "a²=4+9−2·2·3·½=7。"
+    },
+    {
+      "id": "mat_m109_005",
+      "category": "calculation",
+      "prompt": "3辺が 3、4、5 の三角形の内接円の半径は？",
+      "choices": [
+        "1/2",
+        "5/2",
+        "1",
+        "2"
+      ],
+      "answerIndex": 2,
+      "explanation": "S=6、S=r·(3+4+5)/2 より r=1。"
+    },
+    {
+      "id": "mat_m109_006",
+      "category": "calculation",
+      "prompt": "3辺が 3、4、5 の三角形の外接円の半径は？",
+      "choices": [
+        "3",
+        "5/2",
+        "5",
+        "2"
+      ],
+      "answerIndex": 1,
+      "explanation": "直角三角形なので、斜辺が外接円の直径。"
+    },
+    {
+      "id": "mat_m109_007",
+      "category": "calculation",
+      "prompt": "△ABC で AB=3、AC=6、A=120°。A の二等分線と BC の交点を D とするとき、AD の長さは？",
+      "choices": [
+        "2",
+        "3",
+        "√3",
+        "4"
+      ],
+      "answerIndex": 0,
+      "explanation": "△ABD+△ADC=△ABC：½·3·AD·sin60°+½·6·AD·sin60°=½·3·6·sin120°。"
+    },
+    {
+      "id": "mat_m109_008",
+      "category": "calculation",
+      "prompt": "2地点 A、B は 100m 離れている。∠CAB=75°、∠CBA=45° のとき、AC の長さは？",
+      "choices": [
+        "100√3 m",
+        "100√6/3 m",
+        "100√2 m",
+        "50√6 m"
+      ],
+      "answerIndex": 1,
+      "explanation": "∠C=60°。正弦定理：AC=100·sin45°/sin60°。"
+    },
+    {
+      "id": "mat_m109_009",
+      "category": "calculation",
+      "prompt": "△ABC で b=2、c=3、A=60° のとき、面積は？",
+      "choices": [
+        "√3/2",
+        "3",
+        "3√3",
+        "3√3/2"
+      ],
+      "answerIndex": 3,
+      "explanation": "½·2·3·sin60°=3√3/2。"
+    },
+    {
+      "id": "mat_m109_010",
+      "category": "thinking",
+      "prompt": "2辺とその間の角が分かれば、面積が ½bc·sinA で求められる理由は？",
+      "choices": [
+        "sinA がいつも1だから",
+        "c·sinA が、辺 b を底辺としたときの高さになるから",
+        "三角形はすべて直角三角形だから",
+        "b と c が等しいから"
+      ],
+      "answerIndex": 1,
+      "explanation": "頂点 B から辺 AC に下ろした垂線の長さが c·sinA。"
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "setId": "math_m2_12",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_m212_001",
+      "category": "calculation",
+      "prompt": "y=3 sin θ+4 cos θ の最大値は？",
+      "choices": [
+        "5",
+        "4",
+        "12",
+        "7"
+      ],
+      "answerIndex": 0,
+      "explanation": "合成すると 5 sin(θ+α)。"
+    },
+    {
+      "id": "mat_m212_002",
+      "category": "calculation",
+      "prompt": "0≦θ<2π で cos 2θ+sin θ=0 を満たす θ は？",
+      "choices": [
+        "π/2, π/6, 5π/6",
+        "π/2, 7π/6, 11π/6",
+        "7π/6, 11π/6",
+        "π/2"
+      ],
+      "answerIndex": 1,
+      "explanation": "1−2sin²θ+sin θ=0 → (2sin θ+1)(sin θ−1)=0。"
+    },
+    {
+      "id": "mat_m212_003",
+      "category": "calculation",
+      "prompt": "y=sin²θ+cos θ の最大値は？",
+      "choices": [
+        "3/4",
+        "2",
+        "1",
+        "5/4"
+      ],
+      "answerIndex": 3,
+      "explanation": "1−cos²θ+cos θ で、cos θ=1/2 のとき最大。"
+    },
+    {
+      "id": "mat_m212_004",
+      "category": "calculation",
+      "prompt": "0≦θ<2π で 2 sin θ>1 を満たす θ の範囲は？",
+      "choices": [
+        "5π/6<θ<2π",
+        "π/3<θ<2π/3",
+        "0<θ<π/6",
+        "π/6<θ<5π/6"
+      ],
+      "answerIndex": 3,
+      "explanation": "sin θ>1/2。"
+    },
+    {
+      "id": "mat_m212_005",
+      "category": "calculation",
+      "prompt": "α、β が鋭角で tan α=1/2、tan β=1/3 のとき、α+β は？",
+      "choices": [
+        "π/6",
+        "π/4",
+        "π/2",
+        "π/3"
+      ],
+      "answerIndex": 1,
+      "explanation": "tan(α+β)=(1/2+1/3)/(1−1/6)=1。"
+    },
+    {
+      "id": "mat_m212_006",
+      "category": "knowledge",
+      "prompt": "sin²(θ/2) を cos θ で表すと？",
+      "choices": [
+        "cos θ/2",
+        "(1−cos θ)/2",
+        "(1+cos θ)/2",
+        "1−cos θ"
+      ],
+      "answerIndex": 1,
+      "explanation": "半角の公式。"
+    },
+    {
+      "id": "mat_m212_007",
+      "category": "knowledge",
+      "prompt": "sin 3θ を sin θ で表すと？",
+      "choices": [
+        "sin θ−sin³θ",
+        "3 sin θ",
+        "3 sin θ−4 sin³θ",
+        "4 sin³θ−3 sin θ"
+      ],
+      "answerIndex": 2,
+      "explanation": "3倍角の公式。"
+    },
+    {
+      "id": "mat_m212_008",
+      "category": "calculation",
+      "prompt": "sin x+cos x=t のとき、sin x cos x を t で表すと？",
+      "choices": [
+        "t²−1",
+        "(t²−1)/2",
+        "t/2",
+        "(t²+1)/2"
+      ],
+      "answerIndex": 1,
+      "explanation": "t²=1+2 sin x cos x。"
+    },
+    {
+      "id": "mat_m212_009",
+      "category": "calculation",
+      "prompt": "y=sin x−√3 cos x の最小値は？",
+      "choices": [
+        "−2",
+        "−√3",
+        "−1",
+        "−4"
+      ],
+      "answerIndex": 0,
+      "explanation": "2 sin(x−π/3)。"
+    },
+    {
+      "id": "mat_m212_010",
+      "category": "thinking",
+      "prompt": "三角関数の合成が便利な理由は？",
+      "choices": [
+        "計算結果が必ず整数になるから",
+        "sin と cos の和を1つの三角関数にまとめ、最大・最小や方程式を扱いやすくするから",
+        "cos を消せるから",
+        "周期が長くなるから"
+      ],
+      "answerIndex": 1,
+      "explanation": "a sin θ+b cos θ=√(a²+b²) sin(θ+α)。"
+    }
+  ]
+}

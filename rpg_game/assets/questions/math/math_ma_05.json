@@ -1,0 +1,138 @@
+{
+  "setId": "math_ma_05",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_ma05_001",
+      "category": "calculation",
+      "prompt": "さいころを3回投げて、6の目がちょうど1回出る確率は？",
+      "choices": [
+        "5/72",
+        "1/6",
+        "1/2",
+        "25/72"
+      ],
+      "answerIndex": 3,
+      "explanation": "反復試行：₃C₁(1/6)(5/6)²=75/216。"
+    },
+    {
+      "id": "mat_ma05_002",
+      "category": "calculation",
+      "prompt": "コインを4回投げて、表がちょうど2回出る確率は？",
+      "choices": [
+        "1/2",
+        "1/4",
+        "3/8",
+        "1/16"
+      ],
+      "answerIndex": 2,
+      "explanation": "₄C₂/2⁴=6/16。"
+    },
+    {
+      "id": "mat_ma05_003",
+      "category": "calculation",
+      "prompt": "赤玉3個・白玉2個の袋から1個ずつ2回取り出す（戻さない）。1回目が赤のとき、2回目も赤である確率は？",
+      "choices": [
+        "3/10",
+        "2/5",
+        "3/5",
+        "1/2"
+      ],
+      "answerIndex": 3,
+      "explanation": "残り4個のうち赤は2個。"
+    },
+    {
+      "id": "mat_ma05_004",
+      "category": "calculation",
+      "prompt": "同じ袋から1個ずつ2回取り出す（戻さない）とき、2回とも赤である確率は？",
+      "choices": [
+        "1/2",
+        "3/10",
+        "3/5",
+        "9/25"
+      ],
+      "answerIndex": 1,
+      "explanation": "乗法定理：3/5×2/4。"
+    },
+    {
+      "id": "mat_ma05_005",
+      "category": "calculation",
+      "prompt": "さいころを1回投げたときの出る目の期待値は？",
+      "choices": [
+        "21",
+        "7/2",
+        "4",
+        "3"
+      ],
+      "answerIndex": 1,
+      "explanation": "(1+2+…+6)/6。"
+    },
+    {
+      "id": "mat_ma05_006",
+      "category": "calculation",
+      "prompt": "2個のさいころを投げて、目の和が2または12になる確率は？",
+      "choices": [
+        "1/12",
+        "1/18",
+        "1/36",
+        "1/6"
+      ],
+      "answerIndex": 1,
+      "explanation": "互いに排反：1/36+1/36。"
+    },
+    {
+      "id": "mat_ma05_007",
+      "category": "calculation",
+      "prompt": "当たり3本をふくむ10本のくじを、A、B の順に1本ずつ引く（戻さない）。B が当たる確率は？",
+      "choices": [
+        "1/5",
+        "1/3",
+        "3/10",
+        "2/9"
+      ],
+      "answerIndex": 2,
+      "explanation": "順番によらず 3/10。"
+    },
+    {
+      "id": "mat_ma05_008",
+      "category": "calculation",
+      "prompt": "A の命中率が 0.6、B の命中率が 0.5 のとき、少なくとも一方が命中する確率は？（独立）",
+      "choices": [
+        "0.3",
+        "0.8",
+        "0.5",
+        "1.1"
+      ],
+      "answerIndex": 1,
+      "explanation": "1−0.4×0.5。"
+    },
+    {
+      "id": "mat_ma05_009",
+      "category": "calculation",
+      "prompt": "1000円が1本、100円が4本、はずれ15本の計20本のくじ。賞金の期待値は？",
+      "choices": [
+        "1400円",
+        "55円",
+        "70円",
+        "100円"
+      ],
+      "answerIndex": 2,
+      "explanation": "(1000+400)/20。"
+    },
+    {
+      "id": "mat_ma05_010",
+      "category": "thinking",
+      "prompt": "くじを引く順番によって当たる確率が変わらない理由は？",
+      "choices": [
+        "先に引いた人の結果は関係ないから",
+        "何番目に引いても、すべての引き方の中で当たりを引く場合の割合は同じだから",
+        "当たりの数が変わるから",
+        "くじは戻すから"
+      ],
+      "answerIndex": 1,
+      "explanation": "くじ全体の並べ方を考えると、各位置に当たりがくる確率はどれも等しい。"
+    }
+  ]
+}

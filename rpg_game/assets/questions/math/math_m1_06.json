@@ -1,0 +1,138 @@
+{
+  "setId": "math_m1_06",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_m106_001",
+      "category": "calculation",
+      "prompt": "√(7+2√10) の二重根号を外すと？",
+      "choices": [
+        "√5+√2",
+        "√5−√2",
+        "√10+1",
+        "√7+√10"
+      ],
+      "answerIndex": 0,
+      "explanation": "和が7、積が10の2数は5と2。"
+    },
+    {
+      "id": "mat_m106_002",
+      "category": "calculation",
+      "prompt": "√(8−2√15) の二重根号を外すと？",
+      "choices": [
+        "√8−√15",
+        "√5−√3",
+        "√3−√5",
+        "√5+√3"
+      ],
+      "answerIndex": 1,
+      "explanation": "和が8、積が15の2数は5と3。大きい方を前に。"
+    },
+    {
+      "id": "mat_m106_003",
+      "category": "calculation",
+      "prompt": "1/(√2−1) の小数部分は？",
+      "choices": [
+        "√2+1",
+        "2−√2",
+        "√2−1",
+        "√2"
+      ],
+      "answerIndex": 2,
+      "explanation": "1/(√2−1)=√2+1≒2.414 で、整数部分は2。"
+    },
+    {
+      "id": "mat_m106_004",
+      "category": "calculation",
+      "prompt": "|x−1|+|x−3| の最小値は？",
+      "choices": [
+        "4",
+        "2",
+        "1",
+        "0"
+      ],
+      "answerIndex": 1,
+      "explanation": "数直線上で1と3からの距離の和。1≦x≦3 で最小の2。"
+    },
+    {
+      "id": "mat_m106_005",
+      "category": "calculation",
+      "prompt": "不等式 |2x−1|<5 を解くと？",
+      "choices": [
+        "−2<x<3",
+        "−2<x<2",
+        "−3<x<2",
+        "x<3"
+      ],
+      "answerIndex": 0,
+      "explanation": "−5<2x−1<5 → −4<2x<6。"
+    },
+    {
+      "id": "mat_m106_006",
+      "category": "calculation",
+      "prompt": "a<0 のとき、不等式 ax>2 を解くと？",
+      "choices": [
+        "x<2a",
+        "x>a/2",
+        "x<2/a",
+        "x>2/a"
+      ],
+      "answerIndex": 2,
+      "explanation": "負の数 a で割るので向きが変わる。"
+    },
+    {
+      "id": "mat_m106_007",
+      "category": "calculation",
+      "prompt": "連立不等式 2x+3>5x−6、x+4≧2 を満たす整数の個数は？",
+      "choices": [
+        "4個",
+        "3個",
+        "5個",
+        "6個"
+      ],
+      "answerIndex": 2,
+      "explanation": "x<3 と x≧−2 → −2,−1,0,1,2 の5個。"
+    },
+    {
+      "id": "mat_m106_008",
+      "category": "calculation",
+      "prompt": "不等式 x<a を満たす自然数がちょうど3個あるとき、a の範囲は？",
+      "choices": [
+        "3≦a≦4",
+        "3<a≦4",
+        "3≦a<4",
+        "3<a<4"
+      ],
+      "answerIndex": 1,
+      "explanation": "1,2,3 がふくまれ、4 はふくまれない。"
+    },
+    {
+      "id": "mat_m106_009",
+      "category": "calculation",
+      "prompt": "√3=1.732… として、1/(2−√3) の値に最も近いものは？",
+      "choices": [
+        "2.732",
+        "3.732",
+        "0.268",
+        "1.732"
+      ],
+      "answerIndex": 1,
+      "explanation": "1/(2−√3)=2+√3。"
+    },
+    {
+      "id": "mat_m106_010",
+      "category": "thinking",
+      "prompt": "√(7+2√10) の二重根号を外すときの考え方は？",
+      "choices": [
+        "√ を2回かける",
+        "7と10を足す",
+        "和が7、積が10になる2数を見つけ、(√a+√b)² の形にする",
+        "7を2で割る"
+      ],
+      "answerIndex": 2,
+      "explanation": "(√a+√b)²=a+b+2√(ab)。"
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "setId": "math_mc_10",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_mc10_001",
+      "category": "calculation",
+      "prompt": "z=3+4i の絶対値は？",
+      "choices": [
+        "5",
+        "7",
+        "25",
+        "1"
+      ],
+      "answerIndex": 0,
+      "explanation": "√(9+16)。"
+    },
+    {
+      "id": "mat_mc10_002",
+      "category": "calculation",
+      "prompt": "2−3i の共役複素数は？",
+      "choices": [
+        "−2−3i",
+        "−2+3i",
+        "2+3i",
+        "3−2i"
+      ],
+      "answerIndex": 2,
+      "explanation": "虚部の符号を変える。"
+    },
+    {
+      "id": "mat_mc10_003",
+      "category": "calculation",
+      "prompt": "1+i を極形式で表すと？",
+      "choices": [
+        "√2(cos π/2+i sin π/2)",
+        "2(cos π/4+i sin π/4)",
+        "√2(cos π/4+i sin π/4)",
+        "cos π/4+i sin π/4"
+      ],
+      "answerIndex": 2,
+      "explanation": "絶対値 √2、偏角 π/4。"
+    },
+    {
+      "id": "mat_mc10_004",
+      "category": "knowledge",
+      "prompt": "複素数に i をかけると、複素数平面ではどう移る？",
+      "choices": [
+        "原点のまわりに π/2 回転",
+        "原点に関して対称移動",
+        "2倍に拡大",
+        "実軸に関して対称移動"
+      ],
+      "answerIndex": 0,
+      "explanation": "i=cos π/2+i sin π/2。"
+    },
+    {
+      "id": "mat_mc10_005",
+      "category": "calculation",
+      "prompt": "複素数平面上の2点 1+i、4+5i の距離は？",
+      "choices": [
+        "5",
+        "25",
+        "7",
+        "√41"
+      ],
+      "answerIndex": 0,
+      "explanation": "|3+4i|。"
+    },
+    {
+      "id": "mat_mc10_006",
+      "category": "calculation",
+      "prompt": "z=1+2i のとき、z·z̄ の値は？（z̄ は共役）",
+      "choices": [
+        "5",
+        "3",
+        "1+4i",
+        "−3"
+      ],
+      "answerIndex": 0,
+      "explanation": "z·z̄=|z|²。"
+    },
+    {
+      "id": "mat_mc10_007",
+      "category": "calculation",
+      "prompt": "(cos π/6+i sin π/6)² を計算すると？",
+      "choices": [
+        "1/2+(√3/2)i",
+        "−1/2+(√3/2)i",
+        "√3/2+(1/2)i",
+        "i"
+      ],
+      "answerIndex": 0,
+      "explanation": "偏角が2倍：cos π/3+i sin π/3。"
+    },
+    {
+      "id": "mat_mc10_008",
+      "category": "calculation",
+      "prompt": "2+i と 4+3i を結ぶ線分の中点は？",
+      "choices": [
+        "6+4i",
+        "1+i",
+        "2+2i",
+        "3+2i"
+      ],
+      "answerIndex": 3,
+      "explanation": "(z₁+z₂)/2。"
+    },
+    {
+      "id": "mat_mc10_009",
+      "category": "calculation",
+      "prompt": "−1 の偏角は？（0≦θ<2π）",
+      "choices": [
+        "π/2",
+        "3π/2",
+        "0",
+        "π"
+      ],
+      "answerIndex": 3,
+      "explanation": "負の実軸上。"
+    },
+    {
+      "id": "mat_mc10_010",
+      "category": "thinking",
+      "prompt": "複素数の積で「絶対値はかけ算、偏角は足し算」になることの意味は？",
+      "choices": [
+        "かけ算が、拡大と回転を同時に行う操作として図形的に表せる",
+        "複素数はかけ算できない",
+        "偏角は変わらない",
+        "積は必ず実数になる"
+      ],
+      "answerIndex": 0,
+      "explanation": "極形式どうしの積で確かめられる。"
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "setId": "math_mb_08",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_mb08_001",
+      "category": "knowledge",
+      "prompt": "正規分布 N(m, σ²) に従う X を標準化した Z は？",
+      "choices": [
+        "X/σ",
+        "(X−m)/σ",
+        "(X−m)/σ²",
+        "(X+m)/σ"
+      ],
+      "answerIndex": 1,
+      "explanation": "Z は標準正規分布 N(0, 1) に従う。"
+    },
+    {
+      "id": "mat_mb08_002",
+      "category": "calculation",
+      "prompt": "N(50, 10²) に従う X で、X=70 を標準化すると？",
+      "choices": [
+        "7",
+        "2",
+        "20",
+        "0.2"
+      ],
+      "answerIndex": 1,
+      "explanation": "(70−50)/10。"
+    },
+    {
+      "id": "mat_mb08_003",
+      "category": "calculation",
+      "prompt": "標準正規分布で P(−1.96≦Z≦1.96) は約いくつ？",
+      "choices": [
+        "0.99",
+        "0.95",
+        "0.5",
+        "0.68"
+      ],
+      "answerIndex": 1,
+      "explanation": "95% の区間。"
+    },
+    {
+      "id": "mat_mb08_004",
+      "category": "calculation",
+      "prompt": "P(0≦Z≦1)=0.3413 のとき、P(Z≦1) は？",
+      "choices": [
+        "0.6826",
+        "0.3413",
+        "0.1587",
+        "0.8413"
+      ],
+      "answerIndex": 3,
+      "explanation": "0.5+0.3413。"
+    },
+    {
+      "id": "mat_mb08_005",
+      "category": "calculation",
+      "prompt": "母標準偏差10の母集団から大きさ100の標本をとるとき、標本平均の標準偏差は？",
+      "choices": [
+        "100",
+        "0.1",
+        "10",
+        "1"
+      ],
+      "answerIndex": 3,
+      "explanation": "σ/√n=10/10。"
+    },
+    {
+      "id": "mat_mb08_006",
+      "category": "calculation",
+      "prompt": "標本平均60、母標準偏差10、標本の大きさ100のとき、母平均の信頼度95%の信頼区間は？",
+      "choices": [
+        "40.4≦m≦79.6",
+        "58.04≦m≦61.96",
+        "59≦m≦61",
+        "50≦m≦70"
+      ],
+      "answerIndex": 1,
+      "explanation": "60±1.96·10/√100。"
+    },
+    {
+      "id": "mat_mb08_007",
+      "category": "knowledge",
+      "prompt": "確率変数 X、Y について、E(X+Y) は？",
+      "choices": [
+        "E(X)E(Y)",
+        "E(X)+E(Y)",
+        "2E(X)",
+        "E(X)−E(Y)"
+      ],
+      "answerIndex": 1,
+      "explanation": "期待値の和の性質は、独立でなくても成り立つ。"
+    },
+    {
+      "id": "mat_mb08_008",
+      "category": "calculation",
+      "prompt": "X と Y が独立で V(X)=4、V(Y)=9 のとき、V(X+Y) は？",
+      "choices": [
+        "25",
+        "5",
+        "13",
+        "36"
+      ],
+      "answerIndex": 2,
+      "explanation": "独立なら分散も足せる。"
+    },
+    {
+      "id": "mat_mb08_009",
+      "category": "calculation",
+      "prompt": "二項分布 B(400, 1/2) を近似する正規分布は？",
+      "choices": [
+        "N(200, 10²)",
+        "N(200, 20²)",
+        "N(200, 100²)",
+        "N(400, 10²)"
+      ],
+      "answerIndex": 0,
+      "explanation": "平均 np=200、分散 np(1−p)=100。"
+    },
+    {
+      "id": "mat_mb08_010",
+      "category": "thinking",
+      "prompt": "標本の大きさ n を大きくすると信頼区間の幅が狭くなる理由は？",
+      "choices": [
+        "母平均が変わるから",
+        "σ が大きくなるから",
+        "信頼度が下がるから",
+        "標本平均のばらつき σ/√n が小さくなるから"
+      ],
+      "answerIndex": 3,
+      "explanation": "幅は 2×1.96σ/√n。"
+    }
+  ]
+}

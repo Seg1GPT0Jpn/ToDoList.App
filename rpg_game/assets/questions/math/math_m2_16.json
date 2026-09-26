@@ -1,0 +1,138 @@
+{
+  "setId": "math_m2_16",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_m216_001",
+      "category": "calculation",
+      "prompt": "f(x)=x³ の導関数は？",
+      "choices": [
+        "x⁴/4",
+        "x²",
+        "3x²",
+        "3x³"
+      ],
+      "answerIndex": 2,
+      "explanation": "(xⁿ)′=nxⁿ⁻¹。"
+    },
+    {
+      "id": "mat_m216_002",
+      "category": "calculation",
+      "prompt": "f(x)=2x²−3x+1 の導関数は？",
+      "choices": [
+        "2x−3",
+        "4x²−3",
+        "4x−3",
+        "4x+1"
+      ],
+      "answerIndex": 2,
+      "explanation": "項ごとに微分する。"
+    },
+    {
+      "id": "mat_m216_003",
+      "category": "calculation",
+      "prompt": "f(x)=x² の x=3 における微分係数は？",
+      "choices": [
+        "3",
+        "6",
+        "2",
+        "9"
+      ],
+      "answerIndex": 1,
+      "explanation": "f′(x)=2x。"
+    },
+    {
+      "id": "mat_m216_004",
+      "category": "calculation",
+      "prompt": "f(x)=x² で、x が1から3まで変わるときの平均変化率は？",
+      "choices": [
+        "6",
+        "4",
+        "2",
+        "8"
+      ],
+      "answerIndex": 1,
+      "explanation": "(9−1)/(3−1)。"
+    },
+    {
+      "id": "mat_m216_005",
+      "category": "calculation",
+      "prompt": "曲線 y=x² 上の点 (1, 1) における接線の方程式は？",
+      "choices": [
+        "y=x",
+        "y=2x−1",
+        "y=2x+1",
+        "y=2x"
+      ],
+      "answerIndex": 1,
+      "explanation": "傾き 2、y−1=2(x−1)。"
+    },
+    {
+      "id": "mat_m216_006",
+      "category": "calculation",
+      "prompt": "∫x² dx は？（C は積分定数）",
+      "choices": [
+        "x³/3+C",
+        "3x³+C",
+        "2x+C",
+        "x³+C"
+      ],
+      "answerIndex": 0,
+      "explanation": "∫xⁿdx=xⁿ⁺¹/(n+1)+C。"
+    },
+    {
+      "id": "mat_m216_007",
+      "category": "calculation",
+      "prompt": "∫₀² 3x² dx の値は？",
+      "choices": [
+        "8",
+        "4",
+        "12",
+        "6"
+      ],
+      "answerIndex": 0,
+      "explanation": "[x³]₀²=8。"
+    },
+    {
+      "id": "mat_m216_008",
+      "category": "calculation",
+      "prompt": "∫₀¹ (2x+1) dx の値は？",
+      "choices": [
+        "3",
+        "2",
+        "3/2",
+        "1"
+      ],
+      "answerIndex": 1,
+      "explanation": "[x²+x]₀¹。"
+    },
+    {
+      "id": "mat_m216_009",
+      "category": "calculation",
+      "prompt": "f(x)=x³−3x の極大値は？",
+      "choices": [
+        "1",
+        "−2",
+        "2",
+        "0"
+      ],
+      "answerIndex": 2,
+      "explanation": "f′(x)=3x²−3=0、x=−1 で極大。f(−1)=2。"
+    },
+    {
+      "id": "mat_m216_010",
+      "category": "thinking",
+      "prompt": "導関数の符号から関数の増減が分かる理由は？",
+      "choices": [
+        "導関数は関数の値そのものだから",
+        "導関数はいつも正だから",
+        "符号は関係ないから",
+        "導関数は接線の傾きを表し、傾きが正なら増加、負なら減少しているから"
+      ],
+      "answerIndex": 3,
+      "explanation": "f′(x)>0 の区間で増加。"
+    }
+  ]
+}

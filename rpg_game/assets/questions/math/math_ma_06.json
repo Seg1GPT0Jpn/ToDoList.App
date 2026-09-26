@@ -1,0 +1,138 @@
+{
+  "setId": "math_ma_06",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_ma06_001",
+      "category": "calculation",
+      "prompt": "工場 A で全体の60%、B で40%を作る。不良率は A が1%、B が2%。不良品を1個選んだとき、それが B 製である確率は？",
+      "choices": [
+        "2/5",
+        "3/7",
+        "1/2",
+        "4/7"
+      ],
+      "answerIndex": 3,
+      "explanation": "0.4×0.02÷(0.6×0.01+0.4×0.02)=0.008/0.014。"
+    },
+    {
+      "id": "mat_ma06_002",
+      "category": "calculation",
+      "prompt": "コインを5回投げて、表が4回以上出る確率は？",
+      "choices": [
+        "1/32",
+        "3/16",
+        "1/2",
+        "5/32"
+      ],
+      "answerIndex": 1,
+      "explanation": "(₅C₄+₅C₅)/32=6/32。"
+    },
+    {
+      "id": "mat_ma06_003",
+      "category": "calculation",
+      "prompt": "さいころを3個投げて、出た目の最大値が4である確率は？",
+      "choices": [
+        "1/6",
+        "64/216",
+        "27/216",
+        "37/216"
+      ],
+      "answerIndex": 3,
+      "explanation": "最大値4以下 (4/6)³ から 3以下 (3/6)³ を引く。"
+    },
+    {
+      "id": "mat_ma06_004",
+      "category": "calculation",
+      "prompt": "3人が1回じゃんけんをして、あいこになる確率は？",
+      "choices": [
+        "1/3",
+        "2/3",
+        "1/27",
+        "1/9"
+      ],
+      "answerIndex": 0,
+      "explanation": "全員同じ3通り＋全員ちがう6通りで 9/27。"
+    },
+    {
+      "id": "mat_ma06_005",
+      "category": "calculation",
+      "prompt": "赤玉4個・白玉2個から同時に3個取り出すとき、赤2個・白1個である確率は？",
+      "choices": [
+        "2/5",
+        "4/5",
+        "3/5",
+        "1/5"
+      ],
+      "answerIndex": 2,
+      "explanation": "₄C₂×₂C₁/₆C₃=12/20。"
+    },
+    {
+      "id": "mat_ma06_006",
+      "category": "calculation",
+      "prompt": "数直線上の点が、コインの表で +1、裏で −1 動く。4回投げた後に原点にいる確率は？",
+      "choices": [
+        "1/16",
+        "1/2",
+        "3/8",
+        "1/4"
+      ],
+      "answerIndex": 2,
+      "explanation": "表2回・裏2回：₄C₂/16。"
+    },
+    {
+      "id": "mat_ma06_007",
+      "category": "calculation",
+      "prompt": "2個のさいころを投げたときの、目の和の期待値は？",
+      "choices": [
+        "12",
+        "7",
+        "7/2",
+        "6"
+      ],
+      "answerIndex": 1,
+      "explanation": "期待値の和：7/2+7/2。"
+    },
+    {
+      "id": "mat_ma06_008",
+      "category": "calculation",
+      "prompt": "さいころを2回投げて、目の積が偶数になる確率は？",
+      "choices": [
+        "2/3",
+        "1/2",
+        "3/4",
+        "1/4"
+      ],
+      "answerIndex": 2,
+      "explanation": "余事象：両方奇数 1/4。"
+    },
+    {
+      "id": "mat_ma06_009",
+      "category": "calculation",
+      "prompt": "2人が1回じゃんけんをして、A が勝つ確率は？",
+      "choices": [
+        "1/3",
+        "1/9",
+        "1/2",
+        "2/3"
+      ],
+      "answerIndex": 0,
+      "explanation": "9通りのうち3通り。"
+    },
+    {
+      "id": "mat_ma06_010",
+      "category": "thinking",
+      "prompt": "「少なくとも1回〜」の確率で余事象を使う利点は？",
+      "choices": [
+        "確率が大きくなるから",
+        "答えがいつも 1/2 になるから",
+        "「1回も〜ない」の1通りの場合を考えるだけで済み、場合分けが減るから",
+        "計算しなくてよいから"
+      ],
+      "answerIndex": 2,
+      "explanation": "P(少なくとも1回)=1−P(1回もない)。"
+    }
+  ]
+}

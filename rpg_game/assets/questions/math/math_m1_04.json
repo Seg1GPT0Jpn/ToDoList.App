@@ -1,0 +1,138 @@
+{
+  "setId": "math_m1_04",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_m104_001",
+      "category": "knowledge",
+      "prompt": "有理数でないものは？",
+      "choices": [
+        "−5",
+        "√2",
+        "1/7",
+        "0.3"
+      ],
+      "answerIndex": 1,
+      "explanation": "有理数は整数の比で表せる数。√2 は無理数。"
+    },
+    {
+      "id": "mat_m104_002",
+      "category": "calculation",
+      "prompt": "0.333…（3が限りなく続く）を分数で表すと？",
+      "choices": [
+        "1/9",
+        "33/100",
+        "1/3",
+        "3/10"
+      ],
+      "answerIndex": 2,
+      "explanation": "x=0.333… とおくと 10x−x=3 より x=1/3。"
+    },
+    {
+      "id": "mat_m104_003",
+      "category": "calculation",
+      "prompt": "|−5| の値は？",
+      "choices": [
+        "25",
+        "0",
+        "5",
+        "−5"
+      ],
+      "answerIndex": 2,
+      "explanation": "絶対値は原点からの距離。"
+    },
+    {
+      "id": "mat_m104_004",
+      "category": "calculation",
+      "prompt": "√12 を簡単にすると？",
+      "choices": [
+        "6√2",
+        "3√2",
+        "2√3",
+        "4√3"
+      ],
+      "answerIndex": 2,
+      "explanation": "√12=√(4×3)=2√3。"
+    },
+    {
+      "id": "mat_m104_005",
+      "category": "calculation",
+      "prompt": "√2×√8 を計算すると？",
+      "choices": [
+        "2√2",
+        "8",
+        "4",
+        "16"
+      ],
+      "answerIndex": 2,
+      "explanation": "√2×√8=√16=4。"
+    },
+    {
+      "id": "mat_m104_006",
+      "category": "calculation",
+      "prompt": "1/√2 の分母を有理化すると？",
+      "choices": [
+        "√2",
+        "2/√2",
+        "1/2",
+        "√2/2"
+      ],
+      "answerIndex": 3,
+      "explanation": "分母と分子に √2 をかける。"
+    },
+    {
+      "id": "mat_m104_007",
+      "category": "calculation",
+      "prompt": "不等式 2x−3>5 を解くと？",
+      "choices": [
+        "x>4",
+        "x>1",
+        "x<4",
+        "x>8"
+      ],
+      "answerIndex": 0,
+      "explanation": "2x>8 より x>4。"
+    },
+    {
+      "id": "mat_m104_008",
+      "category": "calculation",
+      "prompt": "不等式 −3x≦6 を解くと？",
+      "choices": [
+        "x≧−2",
+        "x≧2",
+        "x≦−2",
+        "x≦2"
+      ],
+      "answerIndex": 0,
+      "explanation": "負の数で割ると不等号の向きが変わる。"
+    },
+    {
+      "id": "mat_m104_009",
+      "category": "calculation",
+      "prompt": "(√3+1)(√3−1) を計算すると？",
+      "choices": [
+        "2√3",
+        "3",
+        "4",
+        "2"
+      ],
+      "answerIndex": 3,
+      "explanation": "(√3)²−1²=3−1=2。"
+    },
+    {
+      "id": "mat_m104_010",
+      "category": "thinking",
+      "prompt": "不等式の両辺に負の数をかけると不等号の向きが変わる理由は？",
+      "choices": [
+        "数直線上で、大小の位置が原点について反対になるから",
+        "決まりとしてそう覚えるだけだから",
+        "負の数は存在しないから",
+        "両辺が等しくなるから"
+      ],
+      "answerIndex": 0,
+      "explanation": "例：2<3 の両辺に −1 をかけると −2>−3。"
+    }
+  ]
+}

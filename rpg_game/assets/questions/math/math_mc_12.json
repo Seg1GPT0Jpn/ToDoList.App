@@ -1,0 +1,138 @@
+{
+  "setId": "math_mc_12",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_mc12_001",
+      "category": "calculation",
+      "prompt": "0 と 2 を2頂点とする正三角形の、残りの頂点は？",
+      "choices": [
+        "1±i",
+        "±√3i",
+        "1±√3i",
+        "2±√3i"
+      ],
+      "answerIndex": 2,
+      "explanation": "2 を原点のまわりに ±π/3 回転。"
+    },
+    {
+      "id": "mat_mc12_002",
+      "category": "knowledge",
+      "prompt": "異なる3点 A(α)、B(β)、C(γ) で、(γ−α)/(β−α) が純虚数のとき、成り立つことは？",
+      "choices": [
+        "三角形が正三角形",
+        "A、B、C が一直線上",
+        "AB=AC",
+        "AB⊥AC"
+      ],
+      "answerIndex": 3,
+      "explanation": "偏角が ±π/2。"
+    },
+    {
+      "id": "mat_mc12_003",
+      "category": "calculation",
+      "prompt": "3点 1、i、2+ki が一直線上にあるとき、実数 k は？",
+      "choices": [
+        "0",
+        "1",
+        "2",
+        "−1"
+      ],
+      "answerIndex": 3,
+      "explanation": "(2+ki−1)/(i−1) が実数となる k。"
+    },
+    {
+      "id": "mat_mc12_004",
+      "category": "calculation",
+      "prompt": "同じ3点で、1 を頂点とする角が直角（AB⊥AC）になるとき、k は？",
+      "choices": [
+        "−1",
+        "2",
+        "0",
+        "1"
+      ],
+      "answerIndex": 3,
+      "explanation": "(1+ki)/(−1+i) が純虚数となる k。"
+    },
+    {
+      "id": "mat_mc12_005",
+      "category": "calculation",
+      "prompt": "z⁶=1 の6つの解の和は？",
+      "choices": [
+        "0",
+        "6",
+        "1",
+        "−1"
+      ],
+      "answerIndex": 0,
+      "explanation": "正六角形の頂点で、つり合う。"
+    },
+    {
+      "id": "mat_mc12_006",
+      "category": "calculation",
+      "prompt": "|z|=1 のとき、z+1/z のとりうる値の範囲は？",
+      "choices": [
+        "−2≦z+1/z≦2（実数）",
+        "0≦z+1/z≦1",
+        "すべての複素数",
+        "1 のみ"
+      ],
+      "answerIndex": 0,
+      "explanation": "z=cos θ+i sin θ で z+1/z=2cos θ。"
+    },
+    {
+      "id": "mat_mc12_007",
+      "category": "calculation",
+      "prompt": "|z|=1 のとき、w=z+2 が描く図形は？",
+      "choices": [
+        "原点中心の半径3の円",
+        "点2を中心とする半径1の円",
+        "点−2を中心とする半径1の円",
+        "直線"
+      ],
+      "answerIndex": 1,
+      "explanation": "|w−2|=1。"
+    },
+    {
+      "id": "mat_mc12_008",
+      "category": "calculation",
+      "prompt": "|z−1|=1 のとき、w=2z が描く図形は？",
+      "choices": [
+        "点1を中心とする半径2の円",
+        "原点中心の半径2の円",
+        "点2を中心とする半径1の円",
+        "点2を中心とする半径2の円"
+      ],
+      "answerIndex": 3,
+      "explanation": "z=w/2 を代入：|w−2|=2。"
+    },
+    {
+      "id": "mat_mc12_009",
+      "category": "calculation",
+      "prompt": "ω=cos(2π/5)+i sin(2π/5) のとき、1+ω+ω²+ω³+ω⁴ は？",
+      "choices": [
+        "−1",
+        "0",
+        "5",
+        "1"
+      ],
+      "answerIndex": 1,
+      "explanation": "ω⁵=1 かつ ω≠1。"
+    },
+    {
+      "id": "mat_mc12_010",
+      "category": "thinking",
+      "prompt": "複素数平面で図形の問題を解く利点は？",
+      "choices": [
+        "角度を考えなくてよいから",
+        "図形がすべて直線になるから",
+        "回転や拡大を複素数のかけ算で表せるから",
+        "長さが求められなくなるから"
+      ],
+      "answerIndex": 2,
+      "explanation": "例：正三角形の頂点を回転で求める。"
+    }
+  ]
+}

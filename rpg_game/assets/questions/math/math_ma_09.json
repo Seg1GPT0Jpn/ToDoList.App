@@ -1,0 +1,138 @@
+{
+  "setId": "math_ma_09",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_ma09_001",
+      "category": "calculation",
+      "prompt": "△ABC で AB=7、BC=8、CA=9。内接円が BC に接する点を D とするとき、BD は？",
+      "choices": [
+        "5",
+        "4",
+        "3.5",
+        "3"
+      ],
+      "answerIndex": 3,
+      "explanation": "BD=(AB+BC−CA)/2。"
+    },
+    {
+      "id": "mat_ma09_002",
+      "category": "calculation",
+      "prompt": "△ABC の重心を G、中線を AM とする。AM=9 のとき AG は？",
+      "choices": [
+        "6",
+        "3",
+        "9",
+        "4.5"
+      ],
+      "answerIndex": 0,
+      "explanation": "AG:GM=2:1。"
+    },
+    {
+      "id": "mat_ma09_003",
+      "category": "calculation",
+      "prompt": "円の2つの弦が点 P で交わり、PA=2、PB=6、PC=3 のとき、PD は？",
+      "choices": [
+        "4",
+        "9",
+        "1",
+        "5"
+      ],
+      "answerIndex": 0,
+      "explanation": "2·6=3·PD。"
+    },
+    {
+      "id": "mat_ma09_004",
+      "category": "calculation",
+      "prompt": "正四面体の頂点・辺・面の数について、v−e+f の値は？",
+      "choices": [
+        "1",
+        "0",
+        "4",
+        "2"
+      ],
+      "answerIndex": 3,
+      "explanation": "4−6+4=2（オイラーの多面体定理）。"
+    },
+    {
+      "id": "mat_ma09_005",
+      "category": "calculation",
+      "prompt": "正八面体の頂点・辺・面の数は？",
+      "choices": [
+        "頂点12・辺6・面8",
+        "頂点6・辺12・面8",
+        "頂点6・辺8・面12",
+        "頂点8・辺12・面6"
+      ],
+      "answerIndex": 1,
+      "explanation": "6−12+8=2。"
+    },
+    {
+      "id": "mat_ma09_006",
+      "category": "calculation",
+      "prompt": "△ABC で AB=6、AC=4、BC=5。∠A の外角の二等分線と直線 BC の交点を E とするとき、CE は？",
+      "choices": [
+        "10",
+        "15",
+        "5",
+        "2"
+      ],
+      "answerIndex": 0,
+      "explanation": "BE:EC=6:4=3:2 で E は C の外側。BE−EC=5 から EC=10。"
+    },
+    {
+      "id": "mat_ma09_007",
+      "category": "calculation",
+      "prompt": "△ABC の辺 BC 上の点 D が BD:DC=2:3 のとき、△ABD と △ADC の面積の比は？",
+      "choices": [
+        "1:1",
+        "4:9",
+        "3:2",
+        "2:3"
+      ],
+      "answerIndex": 3,
+      "explanation": "高さが共通なので底辺の比。"
+    },
+    {
+      "id": "mat_ma09_008",
+      "category": "calculation",
+      "prompt": "半径3と1の2円の中心間の距離が5のとき、共通内接線の接点間の長さは？",
+      "choices": [
+        "√24",
+        "4",
+        "3",
+        "√21"
+      ],
+      "answerIndex": 2,
+      "explanation": "√(5²−(3+1)²)=√9。"
+    },
+    {
+      "id": "mat_ma09_009",
+      "category": "calculation",
+      "prompt": "直径に対する円周角は？",
+      "choices": [
+        "180°",
+        "45°",
+        "90°",
+        "60°"
+      ],
+      "answerIndex": 2,
+      "explanation": "中心角180°の半分。"
+    },
+    {
+      "id": "mat_ma09_010",
+      "category": "thinking",
+      "prompt": "メネラウスの定理を使う利点は？",
+      "choices": [
+        "三角形の面積が必ず分かる",
+        "角度が分かる",
+        "円の半径が分かる",
+        "直線が三角形を横切るとき、辺の比を面積や相似を使わずにまとめて求められる"
+      ],
+      "answerIndex": 3,
+      "explanation": "比をかけ合わせて1になる関係を使う。"
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "setId": "math_m2_03",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_m203_001",
+      "category": "calculation",
+      "prompt": "ₙC₀+ₙC₁+ₙC₂+…+ₙCₙ の値は？",
+      "choices": [
+        "n!",
+        "n²",
+        "2n",
+        "2ⁿ"
+      ],
+      "answerIndex": 3,
+      "explanation": "(1+1)ⁿ を二項定理で展開する。"
+    },
+    {
+      "id": "mat_m203_002",
+      "category": "calculation",
+      "prompt": "(a+b+c)⁵ の展開式における a²bc² の係数は？",
+      "choices": [
+        "60",
+        "20",
+        "30",
+        "10"
+      ],
+      "answerIndex": 2,
+      "explanation": "5!/(2!1!2!)。"
+    },
+    {
+      "id": "mat_m203_003",
+      "category": "calculation",
+      "prompt": "11¹⁰ を 100 で割った余りは？",
+      "choices": [
+        "21",
+        "1",
+        "0",
+        "11"
+      ],
+      "answerIndex": 1,
+      "explanation": "(1+10)¹⁰=1+10·10+(100の倍数)。"
+    },
+    {
+      "id": "mat_m203_004",
+      "category": "calculation",
+      "prompt": "x>0、y>0、xy=16 のとき、x+y の最小値は？",
+      "choices": [
+        "32",
+        "16",
+        "4",
+        "8"
+      ],
+      "answerIndex": 3,
+      "explanation": "x+y≧2√16。等号は x=y=4。"
+    },
+    {
+      "id": "mat_m203_005",
+      "category": "calculation",
+      "prompt": "(x+1)(ax+b)=2x²+5x+3 が恒等式のとき、b の値は？",
+      "choices": [
+        "1",
+        "3",
+        "5",
+        "2"
+      ],
+      "answerIndex": 1,
+      "explanation": "(x+1)(2x+3) となる。"
+    },
+    {
+      "id": "mat_m203_006",
+      "category": "calculation",
+      "prompt": "1/(1·2)+1/(2·3)+…+1/(9·10) の値は？",
+      "choices": [
+        "1/10",
+        "9/10",
+        "10/11",
+        "1"
+      ],
+      "answerIndex": 1,
+      "explanation": "部分分数に分けると 1−1/10。"
+    },
+    {
+      "id": "mat_m203_007",
+      "category": "calculation",
+      "prompt": "a²+b²=1、x²+y²=4 のとき、ax+by の最大値は？",
+      "choices": [
+        "4",
+        "5",
+        "1",
+        "2"
+      ],
+      "answerIndex": 3,
+      "explanation": "コーシー・シュワルツ：(ax+by)²≦(a²+b²)(x²+y²)=4。"
+    },
+    {
+      "id": "mat_m203_008",
+      "category": "calculation",
+      "prompt": "x>0、y>0、x+y=2 のとき、xy の最大値は？",
+      "choices": [
+        "1/2",
+        "2",
+        "4",
+        "1"
+      ],
+      "answerIndex": 3,
+      "explanation": "2=x+y≧2√(xy)。"
+    },
+    {
+      "id": "mat_m203_009",
+      "category": "calculation",
+      "prompt": "二項定理を使って (1.01)⁵ を小数第3位まで求めると？",
+      "choices": [
+        "1.510",
+        "1.051",
+        "1.050",
+        "1.005"
+      ],
+      "answerIndex": 1,
+      "explanation": "1+5·0.01+10·0.0001+…"
+    },
+    {
+      "id": "mat_m203_010",
+      "category": "thinking",
+      "prompt": "相加平均・相乗平均の関係で最小値を求めるとき、等号成立を確かめる理由は？",
+      "choices": [
+        "答えが2つになるから",
+        "計算ミスを防ぐためだけ",
+        "等号となる値が実際に存在しないと、その値は最小値にならないから",
+        "等号はいつも成り立つから"
+      ],
+      "answerIndex": 2,
+      "explanation": "「≧2」でも、2になれなければ最小値は2ではない。"
+    }
+  ]
+}

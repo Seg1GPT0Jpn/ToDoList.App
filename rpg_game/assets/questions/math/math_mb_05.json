@@ -1,0 +1,138 @@
+{
+  "setId": "math_mb_05",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_mb05_001",
+      "category": "calculation",
+      "prompt": "a₁=1、aₙ₊₁=2aₙ+1 のとき、一般項は？",
+      "choices": [
+        "2ⁿ−1",
+        "2ⁿ+1",
+        "3ⁿ⁻¹",
+        "2n−1"
+      ],
+      "answerIndex": 0,
+      "explanation": "aₙ₊₁+1=2(aₙ+1)。aₙ+1=2ⁿ。"
+    },
+    {
+      "id": "mat_mb05_002",
+      "category": "calculation",
+      "prompt": "a₁=2、aₙ₊₁=3aₙ−2 のとき、一般項は？",
+      "choices": [
+        "2·3ⁿ⁻¹",
+        "3ⁿ−1",
+        "3n−1",
+        "3ⁿ⁻¹+1"
+      ],
+      "answerIndex": 3,
+      "explanation": "aₙ₊₁−1=3(aₙ−1)。"
+    },
+    {
+      "id": "mat_mb05_003",
+      "category": "calculation",
+      "prompt": "a₁=1、aₙ₊₁=aₙ+2n のとき、一般項は？",
+      "choices": [
+        "2n−1",
+        "n²−n+1",
+        "n²+1",
+        "n²"
+      ],
+      "answerIndex": 1,
+      "explanation": "階差が 2n なので 1+Σ_{k=1}^{n−1} 2k。"
+    },
+    {
+      "id": "mat_mb05_004",
+      "category": "calculation",
+      "prompt": "漸化式 aₙ₊₁=4aₙ−3 の特性方程式 α=4α−3 の解は？",
+      "choices": [
+        "−1",
+        "4",
+        "3",
+        "1"
+      ],
+      "answerIndex": 3,
+      "explanation": "aₙ₊₁−1=4(aₙ−1) と変形できる。"
+    },
+    {
+      "id": "mat_mb05_005",
+      "category": "calculation",
+      "prompt": "a₁=1、aₙ₊₁=aₙ/(aₙ+1) のとき、一般項は？",
+      "choices": [
+        "1/2ⁿ⁻¹",
+        "1/n",
+        "1/(n+1)",
+        "n"
+      ],
+      "answerIndex": 1,
+      "explanation": "逆数をとると 1/aₙ₊₁=1/aₙ+1。"
+    },
+    {
+      "id": "mat_mb05_006",
+      "category": "knowledge",
+      "prompt": "1+2+…+n=n(n+1)/2 を帰納法で示すとき、n=k から n=k+1 へ進むとき両辺に加える項は？",
+      "choices": [
+        "k",
+        "k+1",
+        "2k",
+        "k(k+1)"
+      ],
+      "answerIndex": 1,
+      "explanation": "左辺に k+1 を足す。"
+    },
+    {
+      "id": "mat_mb05_007",
+      "category": "thinking",
+      "prompt": "3ⁿ−1 がすべての自然数 n で偶数になる理由は？",
+      "choices": [
+        "n が偶数だから",
+        "3ⁿ がいつも偶数だから",
+        "3 が偶数だから",
+        "3ⁿ はいつも奇数で、奇数から1を引くと偶数だから"
+      ],
+      "answerIndex": 3,
+      "explanation": "帰納法でも示せる。"
+    },
+    {
+      "id": "mat_mb05_008",
+      "category": "calculation",
+      "prompt": "a₁=1、a₂=1、aₙ₊₂=aₙ₊₁+2aₙ のとき、a₅ は？",
+      "choices": [
+        "21",
+        "11",
+        "7",
+        "5"
+      ],
+      "answerIndex": 1,
+      "explanation": "1, 1, 3, 5, 11。"
+    },
+    {
+      "id": "mat_mb05_009",
+      "category": "calculation",
+      "prompt": "a₁=1、aₙ₊₁=2aₙ+3ⁿ のとき、a₃ は？",
+      "choices": [
+        "11",
+        "23",
+        "19",
+        "17"
+      ],
+      "answerIndex": 2,
+      "explanation": "a₂=2+3=5、a₃=10+9=19。"
+    },
+    {
+      "id": "mat_mb05_010",
+      "category": "thinking",
+      "prompt": "漸化式を aₙ₊₁−α=p(aₙ−α) と変形する理由は？",
+      "choices": [
+        "計算が長くなるため",
+        "aₙ−α が公比 p の等比数列になり、一般項が求められるから",
+        "等差数列にするため",
+        "α が必ず0になるから"
+      ],
+      "answerIndex": 1,
+      "explanation": "α は特性方程式 α=pα+q の解。"
+    }
+  ]
+}

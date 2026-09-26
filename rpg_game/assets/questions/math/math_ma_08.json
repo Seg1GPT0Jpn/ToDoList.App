@@ -1,0 +1,138 @@
+{
+  "setId": "math_ma_08",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_ma08_001",
+      "category": "knowledge",
+      "prompt": "チェバの定理を表す式は？（D, E, F はそれぞれ BC, CA, AB 上）",
+      "choices": [
+        "(AF/FB)+(BD/DC)+(CE/EA)=1",
+        "AF·BD·CE=1",
+        "(AF/FB)·(BD/DC)·(CE/EA)=0",
+        "(AF/FB)·(BD/DC)·(CE/EA)=1"
+      ],
+      "answerIndex": 3,
+      "explanation": "三角形を一周するように比をかける。"
+    },
+    {
+      "id": "mat_ma08_002",
+      "category": "calculation",
+      "prompt": "チェバの定理で BD:DC=2:3、CE:EA=1:2 のとき、AF:FB は？",
+      "choices": [
+        "3:2",
+        "2:1",
+        "1:3",
+        "3:1"
+      ],
+      "answerIndex": 3,
+      "explanation": "(AF/FB)·(2/3)·(1/2)=1 より AF/FB=3。"
+    },
+    {
+      "id": "mat_ma08_003",
+      "category": "calculation",
+      "prompt": "メネラウスの定理で AF:FB=1:2、BD:DC=3:1 のとき、CE:EA は？（D は BC の延長上）",
+      "choices": [
+        "2:3",
+        "6:1",
+        "3:2",
+        "1:6"
+      ],
+      "answerIndex": 0,
+      "explanation": "(1/2)·(3/1)·(CE/EA)=1 より CE/EA=2/3。"
+    },
+    {
+      "id": "mat_ma08_004",
+      "category": "calculation",
+      "prompt": "半径5と3の2つの円の中心間の距離が8のとき、2円の位置関係は？",
+      "choices": [
+        "2点で交わる",
+        "離れている",
+        "内接する",
+        "外接する"
+      ],
+      "answerIndex": 3,
+      "explanation": "d=r₁+r₂。"
+    },
+    {
+      "id": "mat_ma08_005",
+      "category": "calculation",
+      "prompt": "半径5と3の2つの円の中心間の距離が2のとき、2円の位置関係は？",
+      "choices": [
+        "内接する",
+        "外接する",
+        "2点で交わる",
+        "一方が他方の内部にある（接しない）"
+      ],
+      "answerIndex": 0,
+      "explanation": "d=r₁−r₂。"
+    },
+    {
+      "id": "mat_ma08_006",
+      "category": "calculation",
+      "prompt": "半径5と2の2円の中心間の距離が5のとき、共通外接線の接点間の長さは？",
+      "choices": [
+        "√21",
+        "4",
+        "5",
+        "3"
+      ],
+      "answerIndex": 1,
+      "explanation": "√(5²−(5−2)²)=√16。"
+    },
+    {
+      "id": "mat_ma08_007",
+      "category": "knowledge",
+      "prompt": "定規とコンパスで、線分の中点を作図するには何を作図する？",
+      "choices": [
+        "接線",
+        "線分の垂直二等分線",
+        "角の二等分線",
+        "平行線"
+      ],
+      "answerIndex": 1,
+      "explanation": "両端を中心とする同じ半径の円の交点を結ぶ。"
+    },
+    {
+      "id": "mat_ma08_008",
+      "category": "calculation",
+      "prompt": "立方体の頂点の数 v=8、辺の数 e=12 のとき、面の数 f は？（オイラーの多面体定理）",
+      "choices": [
+        "8",
+        "4",
+        "6",
+        "12"
+      ],
+      "answerIndex": 2,
+      "explanation": "v−e+f=2。"
+    },
+    {
+      "id": "mat_ma08_009",
+      "category": "knowledge",
+      "prompt": "正多面体は何種類ある？",
+      "choices": [
+        "4種類",
+        "無数",
+        "5種類",
+        "6種類"
+      ],
+      "answerIndex": 2,
+      "explanation": "正四面体・正六面体・正八面体・正十二面体・正二十面体。"
+    },
+    {
+      "id": "mat_ma08_010",
+      "category": "thinking",
+      "prompt": "円に内接する四角形の対角の和が180°になる理由は？",
+      "choices": [
+        "四角形の内角の和が360°だから",
+        "対角は等しいから",
+        "対角のそれぞれの円周角に対する中心角の和が360°になるから",
+        "円は丸いから"
+      ],
+      "answerIndex": 2,
+      "explanation": "中心角の半分ずつなので、和は180°。"
+    }
+  ]
+}

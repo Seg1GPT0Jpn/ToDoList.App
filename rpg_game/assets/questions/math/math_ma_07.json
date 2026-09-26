@@ -1,0 +1,138 @@
+{
+  "setId": "math_ma_07",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_ma07_001",
+      "category": "knowledge",
+      "prompt": "三角形の重心は、各中線をどんな比に内分する？",
+      "choices": [
+        "1:1",
+        "1:2",
+        "2:1",
+        "3:1"
+      ],
+      "answerIndex": 2,
+      "explanation": "頂点から重心までが2、重心から辺の中点までが1。"
+    },
+    {
+      "id": "mat_ma07_002",
+      "category": "knowledge",
+      "prompt": "三角形の外心とは？",
+      "choices": [
+        "3辺の垂直二等分線の交点",
+        "3本の垂線の交点",
+        "3本の中線の交点",
+        "3つの内角の二等分線の交点"
+      ],
+      "answerIndex": 0,
+      "explanation": "外接円の中心。"
+    },
+    {
+      "id": "mat_ma07_003",
+      "category": "knowledge",
+      "prompt": "三角形の内心とは？",
+      "choices": [
+        "3本の中線の交点",
+        "3つの内角の二等分線の交点",
+        "3辺の垂直二等分線の交点",
+        "3本の垂線の交点"
+      ],
+      "answerIndex": 1,
+      "explanation": "内接円の中心。"
+    },
+    {
+      "id": "mat_ma07_004",
+      "category": "calculation",
+      "prompt": "△ABC で AB=6、AC=4、BC=5。∠A の二等分線と BC の交点を D とするとき、BD は？",
+      "choices": [
+        "2.5",
+        "3",
+        "2",
+        "4"
+      ],
+      "answerIndex": 1,
+      "explanation": "BD:DC=AB:AC=6:4。BD=5×6/10。"
+    },
+    {
+      "id": "mat_ma07_005",
+      "category": "calculation",
+      "prompt": "中心角が100°の弧に対する円周角は？",
+      "choices": [
+        "80°",
+        "100°",
+        "200°",
+        "50°"
+      ],
+      "answerIndex": 3,
+      "explanation": "円周角は中心角の半分。"
+    },
+    {
+      "id": "mat_ma07_006",
+      "category": "calculation",
+      "prompt": "円に内接する四角形で、1つの角が80°のとき、その対角は？",
+      "choices": [
+        "160°",
+        "80°",
+        "100°",
+        "10°"
+      ],
+      "answerIndex": 2,
+      "explanation": "対角の和は180°。"
+    },
+    {
+      "id": "mat_ma07_007",
+      "category": "knowledge",
+      "prompt": "接線と弦のつくる角は、その角の内部にある弧に対する何に等しい？",
+      "choices": [
+        "直角",
+        "外角",
+        "円周角",
+        "中心角"
+      ],
+      "answerIndex": 2,
+      "explanation": "接弦定理。"
+    },
+    {
+      "id": "mat_ma07_008",
+      "category": "calculation",
+      "prompt": "円の2つの弦 AB、CD が点 P で交わる。PA=3、PB=8、PC=4 のとき、PD は？",
+      "choices": [
+        "5",
+        "6",
+        "32/3",
+        "7"
+      ],
+      "answerIndex": 1,
+      "explanation": "方べきの定理：PA·PB=PC·PD。"
+    },
+    {
+      "id": "mat_ma07_009",
+      "category": "calculation",
+      "prompt": "円外の点 P から接線 PT と、円と A、B で交わる直線を引く。PA=4、PB=9 のとき、PT は？",
+      "choices": [
+        "36",
+        "13/2",
+        "6",
+        "5"
+      ],
+      "answerIndex": 2,
+      "explanation": "PT²=PA·PB=36。"
+    },
+    {
+      "id": "mat_ma07_010",
+      "category": "thinking",
+      "prompt": "三角形の形の板を重心の1点で支えると、つり合う理由は？",
+      "choices": [
+        "重心は最も重い頂点に近いから",
+        "重心はどの中線についても両側の面積が等しくなる点で、重さのつり合う点だから",
+        "重心は外接円の中心だから",
+        "重心は辺の中点だから"
+      ],
+      "answerIndex": 1,
+      "explanation": "重心は「重さの中心」という意味。"
+    }
+  ]
+}

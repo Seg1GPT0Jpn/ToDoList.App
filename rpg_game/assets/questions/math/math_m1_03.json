@@ -1,0 +1,138 @@
+{
+  "setId": "math_m1_03",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_m103_001",
+      "category": "calculation",
+      "prompt": "a+b=5、ab=3 のとき、a²+b² の値は？",
+      "choices": [
+        "31",
+        "25",
+        "16",
+        "19"
+      ],
+      "answerIndex": 3,
+      "explanation": "a²+b²=(a+b)²−2ab=25−6=19。"
+    },
+    {
+      "id": "mat_m103_002",
+      "category": "calculation",
+      "prompt": "a+b=5、ab=3 のとき、a³+b³ の値は？",
+      "choices": [
+        "170",
+        "80",
+        "98",
+        "65"
+      ],
+      "answerIndex": 1,
+      "explanation": "a³+b³=(a+b)³−3ab(a+b)=125−45=80。"
+    },
+    {
+      "id": "mat_m103_003",
+      "category": "calculation",
+      "prompt": "x+1/x=3 のとき、x²+1/x² の値は？",
+      "choices": [
+        "7",
+        "5",
+        "9",
+        "11"
+      ],
+      "answerIndex": 0,
+      "explanation": "(x+1/x)²=x²+2+1/x² より 9−2=7。"
+    },
+    {
+      "id": "mat_m103_004",
+      "category": "calculation",
+      "prompt": "x³−3x²−4x+12 を因数分解すると？",
+      "choices": [
+        "(x−3)(x²+4)",
+        "(x−3)(x−2)²",
+        "(x+3)(x−2)(x+2)",
+        "(x−3)(x−2)(x+2)"
+      ],
+      "answerIndex": 3,
+      "explanation": "x²(x−3)−4(x−3)=(x−3)(x²−4)。"
+    },
+    {
+      "id": "mat_m103_005",
+      "category": "calculation",
+      "prompt": "x²+3xy+2y²+x+3y−2 を因数分解すると？",
+      "choices": [
+        "(x+2y−1)(x+y−2)",
+        "(x+y−1)(x+2y+2)",
+        "(x+2y+1)(x+y−2)",
+        "(x+2y−1)(x+y+2)"
+      ],
+      "answerIndex": 3,
+      "explanation": "x について整理：x²+(3y+1)x+(2y−1)(y+2)。"
+    },
+    {
+      "id": "mat_m103_006",
+      "category": "calculation",
+      "prompt": "(x²+x)²−8(x²+x)+12 を因数分解すると？",
+      "choices": [
+        "(x+2)(x−1)(x+3)(x−2)",
+        "(x+2)(x+1)(x+3)(x+2)",
+        "(x−2)(x+1)(x−3)(x+2)",
+        "(x²+x−2)(x²+x+6)"
+      ],
+      "answerIndex": 0,
+      "explanation": "x²+x=t とおくと (t−2)(t−6)。それぞれをさらに因数分解する。"
+    },
+    {
+      "id": "mat_m103_007",
+      "category": "calculation",
+      "prompt": "a−b=3、ab=2 のとき、a²+b² の値は？",
+      "choices": [
+        "13",
+        "7",
+        "11",
+        "5"
+      ],
+      "answerIndex": 0,
+      "explanation": "a²+b²=(a−b)²+2ab=9+4=13。"
+    },
+    {
+      "id": "mat_m103_008",
+      "category": "calculation",
+      "prompt": "x=√3+1、y=√3−1 のとき、x²+y² の値は？",
+      "choices": [
+        "4",
+        "16",
+        "12",
+        "8"
+      ],
+      "answerIndex": 3,
+      "explanation": "x+y=2√3、xy=2 より (x+y)²−2xy=12−4=8。"
+    },
+    {
+      "id": "mat_m103_009",
+      "category": "knowledge",
+      "prompt": "x³+y³+z³−3xyz を因数分解すると？",
+      "choices": [
+        "(x+y+z)(x²+y²+z²)",
+        "(x+y+z)³",
+        "(x−y−z)(x²+y²+z²+xy+yz+zx)",
+        "(x+y+z)(x²+y²+z²−xy−yz−zx)"
+      ],
+      "answerIndex": 3,
+      "explanation": "有名な因数分解の公式。"
+    },
+    {
+      "id": "mat_m103_010",
+      "category": "thinking",
+      "prompt": "a+b と ab の値だけで a²+b² が求められる理由は？",
+      "choices": [
+        "a と b が整数だから",
+        "a²+b² はいつも0だから",
+        "a²+b² は a と b を入れかえても変わらない対称式で、a+b と ab で表せるから",
+        "a と b が等しいから"
+      ],
+      "answerIndex": 2,
+      "explanation": "対称式は基本対称式 a+b、ab で表すことができる。"
+    }
+  ]
+}

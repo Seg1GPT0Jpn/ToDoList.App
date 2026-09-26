@@ -1,0 +1,138 @@
+{
+  "setId": "math_ma_12",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_ma12_001",
+      "category": "calculation",
+      "prompt": "xy−2x−3y=0 を満たす正の整数の組 (x, y) は何組？",
+      "choices": [
+        "4組",
+        "8組",
+        "6組",
+        "2組"
+      ],
+      "answerIndex": 0,
+      "explanation": "(x−3)(y−2)=6。正の整数になる組を調べる。"
+    },
+    {
+      "id": "mat_ma12_002",
+      "category": "calculation",
+      "prompt": "1/x+1/y=1/2（x≦y）を満たす正の整数の組は何組？",
+      "choices": [
+        "2組",
+        "3組",
+        "4組",
+        "1組"
+      ],
+      "answerIndex": 0,
+      "explanation": "(x−2)(y−2)=4 → (3, 6), (4, 4)。"
+    },
+    {
+      "id": "mat_ma12_003",
+      "category": "calculation",
+      "prompt": "7x+4y=50 を満たす正の整数の組 (x, y) は何組？",
+      "choices": [
+        "2組",
+        "4組",
+        "3組",
+        "1組"
+      ],
+      "answerIndex": 0,
+      "explanation": "(2, 9) と (6, 2)。"
+    },
+    {
+      "id": "mat_ma12_004",
+      "category": "calculation",
+      "prompt": "n を 5 で割ると 3 余るとき、n² を 5 で割った余りは？",
+      "choices": [
+        "3",
+        "4",
+        "1",
+        "9"
+      ],
+      "answerIndex": 1,
+      "explanation": "n≡3 より n²≡9≡4 (mod 5)。"
+    },
+    {
+      "id": "mat_ma12_005",
+      "category": "calculation",
+      "prompt": "√(60n) が自然数となる最小の自然数 n は？",
+      "choices": [
+        "15",
+        "30",
+        "60",
+        "5"
+      ],
+      "answerIndex": 0,
+      "explanation": "60=2²·3·5。3·5 をかければ平方数。"
+    },
+    {
+      "id": "mat_ma12_006",
+      "category": "calculation",
+      "prompt": "12! は末尾に 0 が何個並ぶ？",
+      "choices": [
+        "1個",
+        "12個",
+        "2個",
+        "3個"
+      ],
+      "answerIndex": 2,
+      "explanation": "5の倍数は5と10の2個。"
+    },
+    {
+      "id": "mat_ma12_007",
+      "category": "calculation",
+      "prompt": "3進法の 1201₍₃₎ を10進法で表すと？",
+      "choices": [
+        "37",
+        "43",
+        "46",
+        "1201"
+      ],
+      "answerIndex": 2,
+      "explanation": "27+2·9+0+1。"
+    },
+    {
+      "id": "mat_ma12_008",
+      "category": "calculation",
+      "prompt": "1000 以下の自然数のうち、3 でも 5 でも割り切れない数は何個？",
+      "choices": [
+        "533個",
+        "467個",
+        "400個",
+        "600個"
+      ],
+      "answerIndex": 0,
+      "explanation": "1000−(333+200−66)。"
+    },
+    {
+      "id": "mat_ma12_009",
+      "category": "calculation",
+      "prompt": "連続する3つの整数の積は、いつも何の倍数？",
+      "choices": [
+        "4",
+        "6",
+        "9",
+        "5"
+      ],
+      "answerIndex": 1,
+      "explanation": "2の倍数と3の倍数を必ずふくむ。"
+    },
+    {
+      "id": "mat_ma12_010",
+      "category": "thinking",
+      "prompt": "√2 が無理数であることを背理法で示す流れは？",
+      "choices": [
+        "有理数と仮定して既約分数 p/q とおくと、p も q も偶数になり矛盾する",
+        "√2 が 1.414 だから",
+        "偶数と奇数を足すと奇数になるから",
+        "√2 を計算して割り切れないことを確かめる"
+      ],
+      "answerIndex": 0,
+      "explanation": "「既約」という仮定に矛盾する。"
+    }
+  ]
+}

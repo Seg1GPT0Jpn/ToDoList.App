@@ -1,0 +1,138 @@
+{
+  "setId": "math_m3_11",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_m311_001",
+      "category": "calculation",
+      "prompt": "∫2x(x²+1)³ dx は？",
+      "choices": [
+        "(x²+1)³/3+C",
+        "(x²+1)⁴+C",
+        "(x²+1)⁴/4+C",
+        "x²(x²+1)³+C"
+      ],
+      "answerIndex": 2,
+      "explanation": "置換 u=x²+1、du=2x dx。"
+    },
+    {
+      "id": "mat_m311_002",
+      "category": "calculation",
+      "prompt": "∫xeˣ dx は？",
+      "choices": [
+        "(x+1)eˣ+C",
+        "x²eˣ/2+C",
+        "xeˣ+C",
+        "(x−1)eˣ+C"
+      ],
+      "answerIndex": 3,
+      "explanation": "部分積分：xeˣ−∫eˣdx。"
+    },
+    {
+      "id": "mat_m311_003",
+      "category": "calculation",
+      "prompt": "∫log x dx は？",
+      "choices": [
+        "(log x)²/2+C",
+        "x log x−x+C",
+        "1/x+C",
+        "x log x+C"
+      ],
+      "answerIndex": 1,
+      "explanation": "部分積分：1·log x と見る。"
+    },
+    {
+      "id": "mat_m311_004",
+      "category": "calculation",
+      "prompt": "∫₀^(π/2) sin²x dx の値は？",
+      "choices": [
+        "π/4",
+        "1/2",
+        "1",
+        "π/2"
+      ],
+      "answerIndex": 0,
+      "explanation": "sin²x=(1−cos 2x)/2。"
+    },
+    {
+      "id": "mat_m311_005",
+      "category": "calculation",
+      "prompt": "∫1/(x+1) dx は？",
+      "choices": [
+        "log|x|+1+C",
+        "log|x+1|+C",
+        "(x+1)²/2+C",
+        "−1/(x+1)²+C"
+      ],
+      "answerIndex": 1,
+      "explanation": "分母の微分が分子。"
+    },
+    {
+      "id": "mat_m311_006",
+      "category": "calculation",
+      "prompt": "∫₀¹ xeˣ dx の値は？",
+      "choices": [
+        "1",
+        "e",
+        "0",
+        "e−1"
+      ],
+      "answerIndex": 0,
+      "explanation": "[(x−1)eˣ]₀¹=0−(−1)。"
+    },
+    {
+      "id": "mat_m311_007",
+      "category": "calculation",
+      "prompt": "∫e^(2x) dx は？",
+      "choices": [
+        "2e^(2x)+C",
+        "xe^(2x)+C",
+        "e^(2x)+C",
+        "e^(2x)/2+C"
+      ],
+      "answerIndex": 3,
+      "explanation": "合成関数の微分を逆に使う。"
+    },
+    {
+      "id": "mat_m311_008",
+      "category": "calculation",
+      "prompt": "∫₀¹ √(1−x²) dx の値は？",
+      "choices": [
+        "π/4",
+        "π/2",
+        "1/2",
+        "1"
+      ],
+      "answerIndex": 0,
+      "explanation": "半径1の円の 1/4 の面積。"
+    },
+    {
+      "id": "mat_m311_009",
+      "category": "calculation",
+      "prompt": "∫tan x dx は？",
+      "choices": [
+        "log|sin x|+C",
+        "log|cos x|+C",
+        "1/cos²x+C",
+        "−log|cos x|+C"
+      ],
+      "answerIndex": 3,
+      "explanation": "tan x=sin x/cos x=−(cos x)′/cos x。"
+    },
+    {
+      "id": "mat_m311_010",
+      "category": "thinking",
+      "prompt": "置換積分で、積分区間も一緒に変える理由は？",
+      "choices": [
+        "区間は変えなくてよい",
+        "区間が必ず0から1になるから",
+        "積分する変数が変わるので、新しい変数がとる範囲で積分する必要があるから",
+        "計算を難しくするため"
+      ],
+      "answerIndex": 2,
+      "explanation": "例：x:0→1 のとき u=x²+1 は 1→2。"
+    }
+  ]
+}

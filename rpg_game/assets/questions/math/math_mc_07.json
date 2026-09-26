@@ -1,0 +1,138 @@
+{
+  "setId": "math_mc_07",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_mc07_001",
+      "category": "knowledge",
+      "prompt": "放物線 y²=4px の焦点は？",
+      "choices": [
+        "(4p, 0)",
+        "(p, 0)",
+        "(0, p)",
+        "(−p, 0)"
+      ],
+      "answerIndex": 1,
+      "explanation": "準線は x=−p。"
+    },
+    {
+      "id": "mat_mc07_002",
+      "category": "calculation",
+      "prompt": "放物線 y²=8x の焦点は？",
+      "choices": [
+        "(8, 0)",
+        "(4, 0)",
+        "(0, 2)",
+        "(2, 0)"
+      ],
+      "answerIndex": 3,
+      "explanation": "4p=8 より p=2。"
+    },
+    {
+      "id": "mat_mc07_003",
+      "category": "calculation",
+      "prompt": "放物線 y²=8x の準線は？",
+      "choices": [
+        "x=−8",
+        "x=−2",
+        "y=−2",
+        "x=2"
+      ],
+      "answerIndex": 1,
+      "explanation": "x=−p。"
+    },
+    {
+      "id": "mat_mc07_004",
+      "category": "calculation",
+      "prompt": "楕円 x²/25+y²/9=1 の焦点は？",
+      "choices": [
+        "(0, ±4)",
+        "(±3, 0)",
+        "(±4, 0)",
+        "(±5, 0)"
+      ],
+      "answerIndex": 2,
+      "explanation": "c²=25−9=16。"
+    },
+    {
+      "id": "mat_mc07_005",
+      "category": "calculation",
+      "prompt": "楕円 x²/25+y²/9=1 の長軸の長さは？",
+      "choices": [
+        "5",
+        "6",
+        "10",
+        "8"
+      ],
+      "answerIndex": 2,
+      "explanation": "2a=10。"
+    },
+    {
+      "id": "mat_mc07_006",
+      "category": "calculation",
+      "prompt": "双曲線 x²/9−y²/16=1 の焦点は？",
+      "choices": [
+        "(±√7, 0)",
+        "(±5, 0)",
+        "(0, ±5)",
+        "(±3, 0)"
+      ],
+      "answerIndex": 1,
+      "explanation": "c²=9+16=25。"
+    },
+    {
+      "id": "mat_mc07_007",
+      "category": "calculation",
+      "prompt": "双曲線 x²/9−y²/16=1 の漸近線は？",
+      "choices": [
+        "y=±(3/4)x",
+        "y=±(4/3)x",
+        "y=±x",
+        "y=±(16/9)x"
+      ],
+      "answerIndex": 1,
+      "explanation": "y=±(b/a)x。"
+    },
+    {
+      "id": "mat_mc07_008",
+      "category": "knowledge",
+      "prompt": "楕円の定義として正しいものは？",
+      "choices": [
+        "2つの焦点からの距離の差が一定である点の軌跡",
+        "2つの焦点からの距離の和が一定である点の軌跡",
+        "1点からの距離が一定の点の軌跡",
+        "焦点と準線からの距離が等しい点の軌跡"
+      ],
+      "answerIndex": 1,
+      "explanation": "和なら楕円、差なら双曲線。"
+    },
+    {
+      "id": "mat_mc07_009",
+      "category": "knowledge",
+      "prompt": "双曲線の定義として正しいものは？",
+      "choices": [
+        "2つの焦点からの距離の差が一定である点の軌跡",
+        "焦点と準線からの距離が等しい点の軌跡",
+        "2つの焦点からの距離の和が一定である点の軌跡",
+        "原点からの距離が一定の点の軌跡"
+      ],
+      "answerIndex": 0,
+      "explanation": "差の絶対値が一定。"
+    },
+    {
+      "id": "mat_mc07_010",
+      "category": "thinking",
+      "prompt": "パラボラアンテナが放物線の形をしている理由は？",
+      "choices": [
+        "雨が流れやすいから",
+        "形が美しいから",
+        "材料が少なくて済むから",
+        "軸に平行に入ってきた電波が、反射して焦点に集まるから"
+      ],
+      "answerIndex": 3,
+      "explanation": "放物線の反射の性質。"
+    }
+  ]
+}

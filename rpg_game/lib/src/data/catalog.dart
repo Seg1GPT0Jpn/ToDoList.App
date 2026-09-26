@@ -5,6 +5,7 @@ import '../models/world.dart';
 import '../study/sea_catalog.dart';
 import 'information_catalog.dart';
 import 'japanese_catalog.dart';
+import 'math_catalog.dart';
 import 'social_catalog.dart';
 import 'route_world.dart';
 import 'science_catalog.dart';
@@ -594,14 +595,6 @@ class RpgCatalog {
 
   static final worlds = <WorldDef>[
     WorldDef(
-      id: 'math',
-      name: '数理の国',
-      subject: '数学',
-      status: WorldStatus.comingSoon,
-      isFree: false,
-      priceYen: defaultWorldPriceYen,
-    ),
-    WorldDef(
       id: englishWorldId,
       name: '英語ワールド',
       subject: '英語',
@@ -657,6 +650,21 @@ class RpgCatalog {
           '上へ進むと現代文、左は古文、右は漢文の道。'
           '言葉を知り、論理を読み、千年の文章を味わおう。',
       description: '現代文・古文・漢文の3ルート、32エリア。読解・文法・表現まで。',
+    ),
+    WorldDef(
+      id: MathCatalog.worldId,
+      name: '数理の国',
+      subject: '数学',
+      status: WorldStatus.available,
+      isFree: false,
+      priceYen: defaultWorldPriceYen,
+      stages: MathCatalog.stages,
+      routes: [for (final r in MathCatalog.routes) r.info],
+      hubName: '数理の広場',
+      hubSign: 'ここは数理の国の「数理の広場」。'
+          '上の2つの門は数学Ⅰと数学A、左は数学Ⅱ、右は数学B、下の2つの門は数学Cと数学Ⅲ。'
+          'どの単元も「基本→標準→応用」の3エリア。式を立て、計算し、理由を考えよう。',
+      description: '数学Ⅰ・A・Ⅱ・B・C・Ⅲの6ルート、90エリア。単元ごとに基本・標準・応用。',
     ),
     WorldDef(
       id: InformationCatalog.worldId,

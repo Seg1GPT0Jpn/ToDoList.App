@@ -1,0 +1,138 @@
+{
+  "setId": "math_m2_11",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_m211_001",
+      "category": "calculation",
+      "prompt": "sin75° の値は？",
+      "choices": [
+        "(√3+1)/2",
+        "√3/2",
+        "(√6+√2)/4",
+        "(√6−√2)/4"
+      ],
+      "answerIndex": 2,
+      "explanation": "sin(45°+30°)=sin45°cos30°+cos45°sin30°。"
+    },
+    {
+      "id": "mat_m211_002",
+      "category": "calculation",
+      "prompt": "cos75° の値は？",
+      "choices": [
+        "(√3−1)/2",
+        "1/4",
+        "(√6−√2)/4",
+        "(√6+√2)/4"
+      ],
+      "answerIndex": 2,
+      "explanation": "cos(45°+30°)=cos45°cos30°−sin45°sin30°。"
+    },
+    {
+      "id": "mat_m211_003",
+      "category": "knowledge",
+      "prompt": "sin 2θ を sin θ、cos θ で表すと？",
+      "choices": [
+        "2 sin θ cos θ",
+        "2 sin θ",
+        "sin θ+cos θ",
+        "sin²θ−cos²θ"
+      ],
+      "answerIndex": 0,
+      "explanation": "加法定理で α=β=θ とする。"
+    },
+    {
+      "id": "mat_m211_004",
+      "category": "knowledge",
+      "prompt": "cos 2θ を sin θ だけで表すと？",
+      "choices": [
+        "1−sin²θ",
+        "2sin²θ−1",
+        "2sin θ",
+        "1−2sin²θ"
+      ],
+      "answerIndex": 3,
+      "explanation": "cos 2θ=cos²θ−sin²θ=1−2sin²θ。"
+    },
+    {
+      "id": "mat_m211_005",
+      "category": "calculation",
+      "prompt": "0<θ<π/2 で sin θ=3/5 のとき、sin 2θ の値は？",
+      "choices": [
+        "24/25",
+        "12/25",
+        "6/5",
+        "7/25"
+      ],
+      "answerIndex": 0,
+      "explanation": "cos θ=4/5。2·3/5·4/5。"
+    },
+    {
+      "id": "mat_m211_006",
+      "category": "calculation",
+      "prompt": "sin θ+√3 cos θ を r sin(θ+α) の形にすると？",
+      "choices": [
+        "4 sin(θ+π/3)",
+        "√3 sin(θ+π/3)",
+        "2 sin(θ+π/3)",
+        "2 sin(θ+π/6)"
+      ],
+      "answerIndex": 2,
+      "explanation": "r=√(1+3)=2、cos α=1/2、sin α=√3/2。"
+    },
+    {
+      "id": "mat_m211_007",
+      "category": "calculation",
+      "prompt": "y=sin x+cos x の最大値は？",
+      "choices": [
+        "√2",
+        "2",
+        "1",
+        "√3"
+      ],
+      "answerIndex": 0,
+      "explanation": "√2 sin(x+π/4)。"
+    },
+    {
+      "id": "mat_m211_008",
+      "category": "calculation",
+      "prompt": "y=sin 2x の周期は？",
+      "choices": [
+        "π/2",
+        "π",
+        "2π",
+        "4π"
+      ],
+      "answerIndex": 1,
+      "explanation": "2π÷2。"
+    },
+    {
+      "id": "mat_m211_009",
+      "category": "calculation",
+      "prompt": "0≦θ<2π で sin θ=√3/2 を満たす θ は？",
+      "choices": [
+        "π/3",
+        "π/3, 2π/3",
+        "2π/3, 4π/3",
+        "π/6, 5π/6"
+      ],
+      "answerIndex": 1,
+      "explanation": "単位円で y 座標が √3/2 の点。"
+    },
+    {
+      "id": "mat_m211_010",
+      "category": "thinking",
+      "prompt": "2倍角の公式が加法定理から導ける理由は？",
+      "choices": [
+        "加法定理の α と β をともに θ とおけばよいから",
+        "θ が小さいときだけ成り立つから",
+        "sin と cos が等しいから",
+        "2倍角は別の定理だから"
+      ],
+      "answerIndex": 0,
+      "explanation": "sin(θ+θ)=sin θ cos θ+cos θ sin θ。"
+    }
+  ]
+}

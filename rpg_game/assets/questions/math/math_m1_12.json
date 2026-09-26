@@ -1,0 +1,138 @@
+{
+  "setId": "math_m1_12",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_m112_001",
+      "category": "calculation",
+      "prompt": "2次方程式 x²−2ax+a+2=0 が異なる2つの正の解をもつ a の範囲は？",
+      "choices": [
+        "a>2",
+        "a<−1",
+        "−2<a<−1",
+        "a>0"
+      ],
+      "answerIndex": 0,
+      "explanation": "判別式>0、軸 a>0、f(0)=a+2>0 をすべて満たす。"
+    },
+    {
+      "id": "mat_m112_002",
+      "category": "calculation",
+      "prompt": "y=x²−2ax（0≦x≦2）で、0<a<2 のときの最小値は？",
+      "choices": [
+        "−2a",
+        "4−4a",
+        "−a²",
+        "0"
+      ],
+      "answerIndex": 2,
+      "explanation": "軸 x=a が範囲内なので頂点で最小。"
+    },
+    {
+      "id": "mat_m112_003",
+      "category": "calculation",
+      "prompt": "y=x²−2ax（0≦x≦2）で、a≧2 のときの最小値は？",
+      "choices": [
+        "0",
+        "4+4a",
+        "−a²",
+        "4−4a"
+      ],
+      "answerIndex": 3,
+      "explanation": "軸が範囲の右外なので、右端 x=2 で最小。"
+    },
+    {
+      "id": "mat_m112_004",
+      "category": "calculation",
+      "prompt": "y=x²−4x+3（0≦x≦a）で、a>4 のときの最大値は？",
+      "choices": [
+        "3",
+        "a²−4a+3",
+        "−1",
+        "a²"
+      ],
+      "answerIndex": 1,
+      "explanation": "軸 x=2 から遠いのは右端 x=a（f(a)>f(0)=3）。"
+    },
+    {
+      "id": "mat_m112_005",
+      "category": "calculation",
+      "prompt": "x+y=4 のとき、x²+y² の最小値は？",
+      "choices": [
+        "16",
+        "0",
+        "4",
+        "8"
+      ],
+      "answerIndex": 3,
+      "explanation": "y=4−x を代入：2(x−2)²+8。"
+    },
+    {
+      "id": "mat_m112_006",
+      "category": "calculation",
+      "prompt": "2x+y=3 のとき、2x²+y² の最小値は？",
+      "choices": [
+        "1",
+        "2",
+        "3",
+        "9/2"
+      ],
+      "answerIndex": 2,
+      "explanation": "y=3−2x を代入：6x²−12x+9=6(x−1)²+3。"
+    },
+    {
+      "id": "mat_m112_007",
+      "category": "calculation",
+      "prompt": "放物線 y=x²+ax+b が2点 (1, 0)、(3, 0) を通るとき、a+b の値は？",
+      "choices": [
+        "1",
+        "−7",
+        "7",
+        "−1"
+      ],
+      "answerIndex": 3,
+      "explanation": "y=(x−1)(x−3)=x²−4x+3。"
+    },
+    {
+      "id": "mat_m112_008",
+      "category": "calculation",
+      "prompt": "a>1 のとき、不等式 x²−(a+1)x+a<0 の解は？",
+      "choices": [
+        "−a<x<1",
+        "x<1, a<x",
+        "1<x<a",
+        "a<x<1"
+      ],
+      "answerIndex": 2,
+      "explanation": "(x−1)(x−a)<0。"
+    },
+    {
+      "id": "mat_m112_009",
+      "category": "calculation",
+      "prompt": "ボールの高さが h=20t−5t²（m）で表されるとき、最高の高さは？",
+      "choices": [
+        "15 m",
+        "20 m",
+        "10 m",
+        "40 m"
+      ],
+      "answerIndex": 1,
+      "explanation": "−5(t−2)²+20。"
+    },
+    {
+      "id": "mat_m112_010",
+      "category": "thinking",
+      "prompt": "文字をふくむ2次関数の最大・最小で場合分けが必要な理由は？",
+      "choices": [
+        "答えがいつも2つあるから",
+        "文字は計算できないから",
+        "文字の値によって軸の位置が変わり、定義域との位置関係が変わるから",
+        "グラフがかけないから"
+      ],
+      "answerIndex": 2,
+      "explanation": "軸が定義域の左外・中・右外で分けて考える。"
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "setId": "math_m3_10",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_m310_001",
+      "category": "calculation",
+      "prompt": "∫x³ dx は？（C は積分定数）",
+      "choices": [
+        "x³/3+C",
+        "x⁴/4+C",
+        "3x²+C",
+        "x⁴+C"
+      ],
+      "answerIndex": 1,
+      "explanation": "∫xⁿdx=xⁿ⁺¹/(n+1)+C。"
+    },
+    {
+      "id": "mat_m310_002",
+      "category": "calculation",
+      "prompt": "∫(1/x) dx は？",
+      "choices": [
+        "x+C",
+        "−1/x²+C",
+        "log|x|+C",
+        "1/x²+C"
+      ],
+      "answerIndex": 2,
+      "explanation": "n=−1 のときは対数になる。"
+    },
+    {
+      "id": "mat_m310_003",
+      "category": "calculation",
+      "prompt": "∫eˣ dx は？",
+      "choices": [
+        "xeˣ+C",
+        "eˣ+C",
+        "eˣ⁺¹+C",
+        "e+C"
+      ],
+      "answerIndex": 1,
+      "explanation": "微分してもとに戻る。"
+    },
+    {
+      "id": "mat_m310_004",
+      "category": "calculation",
+      "prompt": "∫cos x dx は？",
+      "choices": [
+        "cos x+C",
+        "−cos x+C",
+        "sin x+C",
+        "−sin x+C"
+      ],
+      "answerIndex": 2,
+      "explanation": "(sin x)′=cos x。"
+    },
+    {
+      "id": "mat_m310_005",
+      "category": "calculation",
+      "prompt": "∫sin x dx は？",
+      "choices": [
+        "sin x+C",
+        "−sin x+C",
+        "−cos x+C",
+        "cos x+C"
+      ],
+      "answerIndex": 2,
+      "explanation": "(−cos x)′=sin x。"
+    },
+    {
+      "id": "mat_m310_006",
+      "category": "calculation",
+      "prompt": "∫₀^π sin x dx の値は？",
+      "choices": [
+        "1",
+        "π",
+        "0",
+        "2"
+      ],
+      "answerIndex": 3,
+      "explanation": "[−cos x]₀^π=1+1。"
+    },
+    {
+      "id": "mat_m310_007",
+      "category": "calculation",
+      "prompt": "∫₁^e (1/x) dx の値は？",
+      "choices": [
+        "e",
+        "e−1",
+        "1",
+        "0"
+      ],
+      "answerIndex": 2,
+      "explanation": "[log x]₁^e。"
+    },
+    {
+      "id": "mat_m310_008",
+      "category": "calculation",
+      "prompt": "∫₀¹ eˣ dx の値は？",
+      "choices": [
+        "1",
+        "e+1",
+        "e−1",
+        "e"
+      ],
+      "answerIndex": 2,
+      "explanation": "[eˣ]₀¹。"
+    },
+    {
+      "id": "mat_m310_009",
+      "category": "calculation",
+      "prompt": "∫√x dx は？",
+      "choices": [
+        "(1/2)x^(−1/2)+C",
+        "(2/3)x^(3/2)+C",
+        "(3/2)x^(3/2)+C",
+        "x√x+C"
+      ],
+      "answerIndex": 1,
+      "explanation": "x^(1/2) の積分。"
+    },
+    {
+      "id": "mat_m310_010",
+      "category": "thinking",
+      "prompt": "不定積分に積分定数 C がつく理由は？",
+      "choices": [
+        "定積分と区別するためだけ",
+        "答えを長くするため",
+        "定数を微分すると0になるので、もとの関数の定数部分が決まらないから",
+        "C は必ず1だから"
+      ],
+      "answerIndex": 2,
+      "explanation": "微分すると同じになる関数は無数にある。"
+    }
+  ]
+}
