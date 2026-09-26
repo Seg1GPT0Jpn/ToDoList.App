@@ -133,6 +133,136 @@
       ],
       "answerIndex": 2,
       "explanation": "1辺 a+b の正方形の面積には、たて a・横 b の長方形が2つふくまれる。"
+    },
+    {
+      "id": "mat_m101_011",
+      "category": "calculation",
+      "prompt": "(x+4)(x−2) を展開すると？",
+      "choices": [
+        "x²+2x+8",
+        "x²−2x−8",
+        "x²+2x−8",
+        "x²+6x−8"
+      ],
+      "answerIndex": 2,
+      "explanation": "(x+a)(x+b)=x²+(a+b)x+ab。a+b=2、ab=−8。"
+    },
+    {
+      "id": "mat_m101_012",
+      "category": "calculation",
+      "prompt": "(3x+2)² を展開すると？",
+      "choices": [
+        "9x²+12x+4",
+        "3x²+12x+4",
+        "9x²+6x+4",
+        "9x²+4"
+      ],
+      "answerIndex": 0,
+      "explanation": "(a+b)²=a²+2ab+b²。2·3x·2=12x。"
+    },
+    {
+      "id": "mat_m101_013",
+      "category": "calculation",
+      "prompt": "(2a+3b)(2a−3b) を展開すると？",
+      "choices": [
+        "2a²−3b²",
+        "4a²−12ab+9b²",
+        "4a²−9b²",
+        "4a²+9b²"
+      ],
+      "answerIndex": 2,
+      "explanation": "(A+B)(A−B)=A²−B²。"
+    },
+    {
+      "id": "mat_m101_014",
+      "category": "calculation",
+      "prompt": "x²−5x+6 を因数分解すると？",
+      "choices": [
+        "(x−1)(x−6)",
+        "(x+2)(x+3)",
+        "(x−2)(x+3)",
+        "(x−2)(x−3)"
+      ],
+      "answerIndex": 3,
+      "explanation": "積が6、和が−5の2数は −2 と −3。"
+    },
+    {
+      "id": "mat_m101_015",
+      "category": "calculation",
+      "prompt": "4x²−25 を因数分解すると？",
+      "choices": [
+        "(2x−5)²",
+        "(4x+5)(x−5)",
+        "(2x+5)(2x−5)",
+        "(2x+5)²"
+      ],
+      "answerIndex": 2,
+      "explanation": "(2x)²−5² と見る。"
+    },
+    {
+      "id": "mat_m101_016",
+      "category": "calculation",
+      "prompt": "x²+6x+9 を因数分解すると？",
+      "choices": [
+        "(x−3)²",
+        "(x+3)²",
+        "(x+9)(x+1)",
+        "(x+3)(x−3)"
+      ],
+      "answerIndex": 1,
+      "explanation": "a²+2ab+b²=(a+b)²。"
+    },
+    {
+      "id": "mat_m101_017",
+      "category": "calculation",
+      "prompt": "3x²−6x を因数分解すると？",
+      "choices": [
+        "3(x−2)",
+        "x(3x+6)",
+        "3x(x+2)",
+        "3x(x−2)"
+      ],
+      "answerIndex": 3,
+      "explanation": "共通因数 3x をくくり出す。"
+    },
+    {
+      "id": "mat_m101_018",
+      "category": "calculation",
+      "prompt": "(x²y)³ を計算すると？",
+      "choices": [
+        "x⁵y³",
+        "x⁶y",
+        "x⁶y³",
+        "3x²y"
+      ],
+      "answerIndex": 2,
+      "explanation": "(aᵐ)ⁿ=aᵐⁿ。x² の3乗は x⁶。"
+    },
+    {
+      "id": "mat_m101_019",
+      "category": "calculation",
+      "prompt": "(5x²−3x+2)−(2x²−x+4) を計算すると？",
+      "choices": [
+        "7x²−4x+6",
+        "3x²−4x−2",
+        "3x²−2x−2",
+        "3x²−2x+6"
+      ],
+      "answerIndex": 2,
+      "explanation": "ひく式の符号をすべて変えてから同類項をまとめる。"
+    },
+    {
+      "id": "mat_m101_020",
+      "category": "knowledge",
+      "prompt": "2x²+3xy−y²+x を x について整理したとき、x の1次の項の係数は？",
+      "choices": [
+        "3",
+        "3y",
+        "1",
+        "3y+1"
+      ],
+      "answerIndex": 3,
+      "explanation": "x をふくむ1次の項は 3xy と x。まとめると (3y+1)x。"
     }
   ]
 }

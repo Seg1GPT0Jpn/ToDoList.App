@@ -133,6 +133,136 @@
       ],
       "answerIndex": 3,
       "explanation": "比をかけ合わせて1になる関係を使う。"
+    },
+    {
+      "id": "mat_ma09_011",
+      "category": "calculation",
+      "prompt": "△ABC で AB=6、BC=7、CA=5。内接円が BC に接する点を D とするとき、BD は？",
+      "choices": [
+        "3.5",
+        "3",
+        "4",
+        "2"
+      ],
+      "answerIndex": 2,
+      "explanation": "BD=(AB+BC−CA)/2。"
+    },
+    {
+      "id": "mat_ma09_012",
+      "category": "calculation",
+      "prompt": "△ABC の重心を G とするとき、△GBC の面積は △ABC の何倍？",
+      "choices": [
+        "1/6",
+        "1/3",
+        "2/3",
+        "1/2"
+      ],
+      "answerIndex": 1,
+      "explanation": "G から BC までの高さは、A からの高さの 1/3。"
+    },
+    {
+      "id": "mat_ma09_013",
+      "category": "calculation",
+      "prompt": "△ABC で、AB を 1:2 に内分する点を D、AC の中点を E とする。△ADE の面積は △ABC の何倍？",
+      "choices": [
+        "2/9",
+        "1/2",
+        "1/6",
+        "1/3"
+      ],
+      "answerIndex": 2,
+      "explanation": "(1/3)×(1/2)。"
+    },
+    {
+      "id": "mat_ma09_014",
+      "category": "calculation",
+      "prompt": "円外の点 P からひいた直線が円と A、B で交わり PA=2、AB=6。別の直線が C、D で交わり PC=4 のとき、PD は？",
+      "choices": [
+        "3",
+        "4",
+        "12",
+        "6"
+      ],
+      "answerIndex": 1,
+      "explanation": "PA·PB=2×8=16=PC·PD。"
+    },
+    {
+      "id": "mat_ma09_015",
+      "category": "calculation",
+      "prompt": "半径8と3の2円の中心間の距離が13のとき、共通外接線の接点間の長さは？",
+      "choices": [
+        "12",
+        "√153",
+        "5",
+        "11"
+      ],
+      "answerIndex": 0,
+      "explanation": "√(13²−5²)。"
+    },
+    {
+      "id": "mat_ma09_016",
+      "category": "calculation",
+      "prompt": "同じ2円（半径8と3、中心間13）の共通内接線の接点間の長さは？",
+      "choices": [
+        "2√3",
+        "12",
+        "√48+1",
+        "4√3"
+      ],
+      "answerIndex": 3,
+      "explanation": "√(13²−11²)=√48。"
+    },
+    {
+      "id": "mat_ma09_017",
+      "category": "calculation",
+      "prompt": "1辺2の立方体で、3つの面の対角線でできる正三角形の1辺の長さは？",
+      "choices": [
+        "2√3",
+        "2",
+        "2√2",
+        "4"
+      ],
+      "answerIndex": 2,
+      "explanation": "面の対角線：√(4+4)。"
+    },
+    {
+      "id": "mat_ma09_018",
+      "category": "calculation",
+      "prompt": "円の直径 AB=10 で、円周上の点 C について AC=6 のとき、BC は？",
+      "choices": [
+        "4",
+        "8",
+        "6",
+        "√136"
+      ],
+      "answerIndex": 1,
+      "explanation": "∠ACB=90°（直径に対する円周角）。"
+    },
+    {
+      "id": "mat_ma09_019",
+      "category": "calculation",
+      "prompt": "接線と弦 AB のつくる角が50°のとき、弦 AB に対する中心角は？",
+      "choices": [
+        "25°",
+        "130°",
+        "50°",
+        "100°"
+      ],
+      "answerIndex": 3,
+      "explanation": "接弦定理で円周角50°、中心角はその2倍。"
+    },
+    {
+      "id": "mat_ma09_020",
+      "category": "thinking",
+      "prompt": "チェバの定理とメネラウスの定理の使い分けは？",
+      "choices": [
+        "円があるときだけメネラウス",
+        "3本の線が1点で交わるときはチェバ、1本の直線が三角形の辺を横切るときはメネラウス",
+        "どちらも同じ場面で使う",
+        "角度を求めるときだけチェバ"
+      ],
+      "answerIndex": 1,
+      "explanation": "図形の形で使い分ける。"
     }
   ]
 }

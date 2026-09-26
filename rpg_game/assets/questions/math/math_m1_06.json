@@ -133,6 +133,136 @@
       ],
       "answerIndex": 2,
       "explanation": "(√a+√b)²=a+b+2√(ab)。"
+    },
+    {
+      "id": "mat_m106_011",
+      "category": "calculation",
+      "prompt": "√(5+2√6) の二重根号を外すと？",
+      "choices": [
+        "√6+1",
+        "√3+√2",
+        "√5+√6",
+        "√3−√2"
+      ],
+      "answerIndex": 1,
+      "explanation": "和5、積6の2数は3と2。"
+    },
+    {
+      "id": "mat_m106_012",
+      "category": "calculation",
+      "prompt": "√(4−√12) の二重根号を外すと？",
+      "choices": [
+        "√3−1",
+        "√3+1",
+        "2−√3",
+        "1−√3"
+      ],
+      "answerIndex": 0,
+      "explanation": "√12=2√3 なので √(4−2√3)。和4、積3の2数は3と1。"
+    },
+    {
+      "id": "mat_m106_013",
+      "category": "calculation",
+      "prompt": "√(9+4√5) の二重根号を外すと？",
+      "choices": [
+        "3+√5",
+        "√5+2",
+        "√9+√20",
+        "√5+√4+1"
+      ],
+      "answerIndex": 1,
+      "explanation": "4√5=2√20。和9、積20の2数は5と4。"
+    },
+    {
+      "id": "mat_m106_014",
+      "category": "calculation",
+      "prompt": "√7 の小数部分を b とするとき、b(b+4) の値は？",
+      "choices": [
+        "7",
+        "11",
+        "√7",
+        "3"
+      ],
+      "answerIndex": 3,
+      "explanation": "2<√7<3 より b=√7−2。(√7−2)(√7+2)=7−4。"
+    },
+    {
+      "id": "mat_m106_015",
+      "category": "calculation",
+      "prompt": "|x−2|+|x+1| の最小値は？",
+      "choices": [
+        "2",
+        "0",
+        "3",
+        "1"
+      ],
+      "answerIndex": 2,
+      "explanation": "数直線上で2と−1からの距離の和。−1≦x≦2 で3。"
+    },
+    {
+      "id": "mat_m106_016",
+      "category": "calculation",
+      "prompt": "不等式 |x−1|≦2x を解くと？",
+      "choices": [
+        "x≧1",
+        "x≧1/3",
+        "1/3≦x≦1",
+        "x≧−1"
+      ],
+      "answerIndex": 1,
+      "explanation": "x≧1 と x<1 で場合分け。x<1 のとき 1−x≦2x より x≧1/3。"
+    },
+    {
+      "id": "mat_m106_017",
+      "category": "calculation",
+      "prompt": "不等式 2x−a>0 の解が x>3 のとき、a の値は？",
+      "choices": [
+        "−6",
+        "6",
+        "3/2",
+        "3"
+      ],
+      "answerIndex": 1,
+      "explanation": "解は x>a/2。a/2=3。"
+    },
+    {
+      "id": "mat_m106_018",
+      "category": "calculation",
+      "prompt": "不等式 3x−1<a を満たす最大の整数が2であるとき、a の範囲は？",
+      "choices": [
+        "6<a≦9",
+        "5<a≦8",
+        "5≦a<8",
+        "2<a≦3"
+      ],
+      "answerIndex": 1,
+      "explanation": "x<(a+1)/3 で、2<(a+1)/3≦3。"
+    },
+    {
+      "id": "mat_m106_019",
+      "category": "calculation",
+      "prompt": "x=√5+1 のとき、x²−2x の値は？",
+      "choices": [
+        "4",
+        "6",
+        "2√5",
+        "5"
+      ],
+      "answerIndex": 0,
+      "explanation": "x²−2x=(x−1)²−1=5−1。"
+    },
+    {
+      "id": "mat_m106_020",
+      "category": "thinking",
+      "prompt": "命題「すべての実数 x について x²≧0」の否定は？",
+      "choices": [
+        "すべての実数 x について x²<0",
+        "すべての実数 x について x²≦0",
+        "ある実数 x について x²<0",
+        "ある実数 x について x²≧0"
+      ],
+      "answerIndex": 2,
+      "explanation": "「すべて」の否定は「ある」、「≧」の否定は「<」。"
     }
   ]
 }

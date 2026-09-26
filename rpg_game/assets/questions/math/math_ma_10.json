@@ -133,6 +133,136 @@
       ],
       "answerIndex": 3,
       "explanation": "例：6=2·3=1·2·3=1·1·2·3…となってしまう。"
+    },
+    {
+      "id": "mat_ma10_011",
+      "category": "calculation",
+      "prompt": "90 を素因数分解すると？",
+      "choices": [
+        "2·3²·5",
+        "2²·3·5",
+        "9·10",
+        "2·5·9"
+      ],
+      "answerIndex": 0,
+      "explanation": "90=2×45=2×3²×5。"
+    },
+    {
+      "id": "mat_ma10_012",
+      "category": "calculation",
+      "prompt": "90 の正の約数の個数は？",
+      "choices": [
+        "8個",
+        "10個",
+        "6個",
+        "12個"
+      ],
+      "answerIndex": 3,
+      "explanation": "(1+1)(2+1)(1+1)。"
+    },
+    {
+      "id": "mat_ma10_013",
+      "category": "calculation",
+      "prompt": "18 と 30 の最大公約数は？",
+      "choices": [
+        "3",
+        "6",
+        "90",
+        "2"
+      ],
+      "answerIndex": 1,
+      "explanation": "18=2·3²、30=2·3·5。"
+    },
+    {
+      "id": "mat_ma10_014",
+      "category": "calculation",
+      "prompt": "8 と 12 の最小公倍数は？",
+      "choices": [
+        "96",
+        "48",
+        "24",
+        "4"
+      ],
+      "answerIndex": 2,
+      "explanation": "2³·3。"
+    },
+    {
+      "id": "mat_ma10_015",
+      "category": "calculation",
+      "prompt": "−7 を 3 で割った余り（0以上3未満）は？",
+      "choices": [
+        "0",
+        "−1",
+        "1",
+        "2"
+      ],
+      "answerIndex": 3,
+      "explanation": "−7=3×(−3)+2。"
+    },
+    {
+      "id": "mat_ma10_016",
+      "category": "knowledge",
+      "prompt": "9 の倍数であるものは？",
+      "choices": [
+        "5384",
+        "5381",
+        "5382",
+        "5383"
+      ],
+      "answerIndex": 2,
+      "explanation": "各位の数の和が9の倍数：5+3+8+2=18。"
+    },
+    {
+      "id": "mat_ma10_017",
+      "category": "calculation",
+      "prompt": "2進法の 11010₍₂₎ を10進法で表すと？",
+      "choices": [
+        "24",
+        "11010",
+        "26",
+        "52"
+      ],
+      "answerIndex": 2,
+      "explanation": "16+8+2。"
+    },
+    {
+      "id": "mat_ma10_018",
+      "category": "calculation",
+      "prompt": "10進法の 20 を2進法で表すと？",
+      "choices": [
+        "11000₍₂₎",
+        "10100₍₂₎",
+        "10110₍₂₎",
+        "10010₍₂₎"
+      ],
+      "answerIndex": 1,
+      "explanation": "20=16+4。"
+    },
+    {
+      "id": "mat_ma10_019",
+      "category": "knowledge",
+      "prompt": "4 の倍数の見分け方は？",
+      "choices": [
+        "下2けたが4の倍数（00をふくむ）",
+        "一の位が偶数",
+        "一の位が4",
+        "各位の和が4の倍数"
+      ],
+      "answerIndex": 0,
+      "explanation": "100 は4の倍数なので、下2けただけ見ればよい。"
+    },
+    {
+      "id": "mat_ma10_020",
+      "category": "calculation",
+      "prompt": "1から30までの素数は何個？",
+      "choices": [
+        "10個",
+        "11個",
+        "12個",
+        "9個"
+      ],
+      "answerIndex": 0,
+      "explanation": "2, 3, 5, 7, 11, 13, 17, 19, 23, 29。"
     }
   ]
 }

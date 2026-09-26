@@ -46,7 +46,7 @@ void main() {
           final set = loadSet(setId);
           expect(set.setId, setId);
           expect(set.origin, QuestionOrigin.original);
-          expect(set.questions.length, inInclusiveRange(10, 16));
+          expect(set.questions.length, inInclusiveRange(10, 40));
           for (final q in set.questions) {
             expect(q.choices.length, 4, reason: q.id);
             expect(q.choices.toSet().length, 4, reason: q.id);

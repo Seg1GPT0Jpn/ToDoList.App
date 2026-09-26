@@ -61,12 +61,12 @@ void main() {
     final allIds = <String>{};
     for (final s in world.stages) {
       final setId = s.questionSetIds.last;
-      test('$setId：16問・自作・4択・解説つき', () {
+      test('$setId：16〜40問・自作・4択・解説つき', () {
         final set = loadSet(setId);
         expect(set.setId, setId);
         expect(set.origin, QuestionOrigin.original);
         expect(set.origin.usableInRpg, isTrue);
-        expect(set.questions.length, 16);
+        expect(set.questions.length, inInclusiveRange(16, 40));
         for (final q in set.questions) {
           expect(q.choices.length, 4, reason: q.id);
           expect(q.choices.toSet().length, 4, reason: q.id);
@@ -96,8 +96,9 @@ void main() {
           counts[q.answerIndex]++;
         }
       }
+      final total = counts.fold<int>(0, (a, b) => a + b);
       for (final c in counts) {
-        expect(c, inInclusiveRange(200, 312), reason: '$counts');
+        expect(c / total, inInclusiveRange(0.2, 0.3), reason: '$counts');
       }
     });
 

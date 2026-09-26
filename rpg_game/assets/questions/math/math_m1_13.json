@@ -133,6 +133,136 @@
       ],
       "answerIndex": 1,
       "explanation": "(x−2)(x−3)>0 → x<2, 3<x。"
+    },
+    {
+      "id": "mat_m113_011",
+      "category": "calculation",
+      "prompt": "2次方程式 x²−7x+10=0 を解くと？",
+      "choices": [
+        "x=2, 5",
+        "x=1, 10",
+        "x=−2, −5",
+        "x=−2, 5"
+      ],
+      "answerIndex": 0,
+      "explanation": "(x−2)(x−5)=0。"
+    },
+    {
+      "id": "mat_m113_012",
+      "category": "calculation",
+      "prompt": "2次方程式 x²−16=0 を解くと？",
+      "choices": [
+        "x=4",
+        "x=16",
+        "x=±4",
+        "x=±8"
+      ],
+      "answerIndex": 2,
+      "explanation": "x²=16。"
+    },
+    {
+      "id": "mat_m113_013",
+      "category": "calculation",
+      "prompt": "2次方程式 3x²−2x−1=0 を解くと？",
+      "choices": [
+        "x=−1, 1/3",
+        "x=3, −1",
+        "x=1, −1/3",
+        "x=1, 1/3"
+      ],
+      "answerIndex": 2,
+      "explanation": "(3x+1)(x−1)=0。"
+    },
+    {
+      "id": "mat_m113_014",
+      "category": "calculation",
+      "prompt": "2次方程式 x²−4x+1=0 を解くと？",
+      "choices": [
+        "x=4±√3",
+        "x=2±√3",
+        "x=2±√5",
+        "x=−2±√3"
+      ],
+      "answerIndex": 1,
+      "explanation": "解の公式（b′ の形）：x=2±√(4−1)。"
+    },
+    {
+      "id": "mat_m113_015",
+      "category": "calculation",
+      "prompt": "x²−6x+9=0 の実数解の個数は？",
+      "choices": [
+        "2個",
+        "0個",
+        "3個",
+        "1個（重解）"
+      ],
+      "answerIndex": 3,
+      "explanation": "D/4=9−9=0。"
+    },
+    {
+      "id": "mat_m113_016",
+      "category": "calculation",
+      "prompt": "2x²+x+1=0 の実数解の個数は？",
+      "choices": [
+        "無数",
+        "1個",
+        "0個",
+        "2個"
+      ],
+      "answerIndex": 2,
+      "explanation": "D=1−8<0。"
+    },
+    {
+      "id": "mat_m113_017",
+      "category": "calculation",
+      "prompt": "不等式 (x+2)(x−3)>0 を解くと？",
+      "choices": [
+        "x<−2, 3<x",
+        "x>3",
+        "−2<x<3",
+        "x<−3, 2<x"
+      ],
+      "answerIndex": 0,
+      "explanation": "グラフが x 軸より上の部分。"
+    },
+    {
+      "id": "mat_m113_018",
+      "category": "calculation",
+      "prompt": "不等式 x²−2x−8≦0 を解くと？",
+      "choices": [
+        "−4≦x≦2",
+        "x≦−2, 4≦x",
+        "−2≦x≦4",
+        "2≦x≦4"
+      ],
+      "answerIndex": 2,
+      "explanation": "(x+2)(x−4)≦0。"
+    },
+    {
+      "id": "mat_m113_019",
+      "category": "calculation",
+      "prompt": "不等式 x²<4x を解くと？",
+      "choices": [
+        "x<0, 4<x",
+        "x<4",
+        "−4<x<0",
+        "0<x<4"
+      ],
+      "answerIndex": 3,
+      "explanation": "x(x−4)<0。"
+    },
+    {
+      "id": "mat_m113_020",
+      "category": "calculation",
+      "prompt": "2次方程式 x²+3x−10=0 の正の解は？",
+      "choices": [
+        "3",
+        "5",
+        "10",
+        "2"
+      ],
+      "answerIndex": 3,
+      "explanation": "(x+5)(x−2)=0。"
     }
   ]
 }

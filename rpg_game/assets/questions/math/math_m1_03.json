@@ -133,6 +133,136 @@
       ],
       "answerIndex": 2,
       "explanation": "対称式は基本対称式 a+b、ab で表すことができる。"
+    },
+    {
+      "id": "mat_m103_011",
+      "category": "calculation",
+      "prompt": "x+y=3、xy=1 のとき、x³+y³ の値は？",
+      "choices": [
+        "18",
+        "27",
+        "9",
+        "24"
+      ],
+      "answerIndex": 0,
+      "explanation": "(x+y)³−3xy(x+y)=27−9。"
+    },
+    {
+      "id": "mat_m103_012",
+      "category": "calculation",
+      "prompt": "x+y=3、xy=1 のとき、x²y+xy² の値は？",
+      "choices": [
+        "9",
+        "6",
+        "1",
+        "3"
+      ],
+      "answerIndex": 3,
+      "explanation": "xy(x+y)=1·3。"
+    },
+    {
+      "id": "mat_m103_013",
+      "category": "calculation",
+      "prompt": "x−1/x=2 のとき、x²+1/x² の値は？",
+      "choices": [
+        "2",
+        "8",
+        "6",
+        "4"
+      ],
+      "answerIndex": 2,
+      "explanation": "(x−1/x)²=x²−2+1/x² より 4+2。"
+    },
+    {
+      "id": "mat_m103_014",
+      "category": "calculation",
+      "prompt": "x=1/(√2−1) のとき、x+1/x の値は？",
+      "choices": [
+        "2√2",
+        "2",
+        "√2",
+        "2√2+2"
+      ],
+      "answerIndex": 0,
+      "explanation": "x=√2+1、1/x=√2−1。"
+    },
+    {
+      "id": "mat_m103_015",
+      "category": "calculation",
+      "prompt": "a+b=4、a²+b²=10 のとき、ab の値は？",
+      "choices": [
+        "3",
+        "3/2",
+        "13",
+        "6"
+      ],
+      "answerIndex": 0,
+      "explanation": "(a+b)²=a²+b²+2ab より 16=10+2ab。"
+    },
+    {
+      "id": "mat_m103_016",
+      "category": "calculation",
+      "prompt": "x⁴+x²+1 を因数分解すると？",
+      "choices": [
+        "(x²+1)²",
+        "(x²+x+1)²",
+        "(x²+x−1)(x²−x+1)",
+        "(x²+x+1)(x²−x+1)"
+      ],
+      "answerIndex": 3,
+      "explanation": "(x²+1)²−x² と変形して、平方の差にする。"
+    },
+    {
+      "id": "mat_m103_017",
+      "category": "calculation",
+      "prompt": "ab+a+b+1 を因数分解すると？",
+      "choices": [
+        "(a−1)(b−1)",
+        "(a+1)(b+1)",
+        "(ab+1)(a+b)",
+        "(a+1)(b−1)"
+      ],
+      "answerIndex": 1,
+      "explanation": "a(b+1)+(b+1) で b+1 をくくる。"
+    },
+    {
+      "id": "mat_m103_018",
+      "category": "calculation",
+      "prompt": "x²−y²+2x+1 を因数分解すると？",
+      "choices": [
+        "(x+y+1)²",
+        "(x+y+1)(x−y+1)",
+        "(x+y−1)(x−y−1)",
+        "(x−y+1)²"
+      ],
+      "answerIndex": 1,
+      "explanation": "(x+1)²−y² と見る。"
+    },
+    {
+      "id": "mat_m103_019",
+      "category": "calculation",
+      "prompt": "2x²+5xy+2y²−x+y−1 を因数分解すると？",
+      "choices": [
+        "(2x−y+1)(x+2y−1)",
+        "(2x+y+1)(x+2y−1)",
+        "(2x+y−1)(x+2y+1)",
+        "(x+y+1)(2x+2y−1)"
+      ],
+      "answerIndex": 1,
+      "explanation": "x について整理：2x²+(5y−1)x+(2y−1)(y+1)。たすきがけ。"
+    },
+    {
+      "id": "mat_m103_020",
+      "category": "knowledge",
+      "prompt": "x+y と xy が分かっているとき、x³+y³ を求めるのに使う式は？",
+      "choices": [
+        "(x+y)²−2xy",
+        "(x+y)(x²+y²)",
+        "(x+y)³−xy",
+        "(x+y)³−3xy(x+y)"
+      ],
+      "answerIndex": 3,
+      "explanation": "x³+y³ は対称式なので、基本対称式 x+y、xy で表せる。"
     }
   ]
 }

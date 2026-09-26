@@ -133,6 +133,136 @@
       ],
       "answerIndex": 3,
       "explanation": "x²+5x が共通に現れるので、x²+5x=t とおいて計算できる。"
+    },
+    {
+      "id": "mat_m102_011",
+      "category": "calculation",
+      "prompt": "(x−1)³ を展開すると？",
+      "choices": [
+        "x³−3x²+3x−1",
+        "x³−1",
+        "x³+3x²+3x−1",
+        "x³−3x²−3x−1"
+      ],
+      "answerIndex": 0,
+      "explanation": "(a−b)³=a³−3a²b+3ab²−b³。"
+    },
+    {
+      "id": "mat_m102_012",
+      "category": "calculation",
+      "prompt": "x³−27 を因数分解すると？",
+      "choices": [
+        "(x−3)(x²+3x+9)",
+        "(x−3)³",
+        "(x−3)(x²−3x+9)",
+        "(x+3)(x²−3x+9)"
+      ],
+      "answerIndex": 0,
+      "explanation": "a³−b³=(a−b)(a²+ab+b²)。"
+    },
+    {
+      "id": "mat_m102_013",
+      "category": "calculation",
+      "prompt": "2x²−5x−3 を因数分解すると？",
+      "choices": [
+        "(2x+3)(x−1)",
+        "(2x−3)(x+1)",
+        "(2x−1)(x+3)",
+        "(2x+1)(x−3)"
+      ],
+      "answerIndex": 3,
+      "explanation": "たすきがけ：2·(−3)+1·1=−5。"
+    },
+    {
+      "id": "mat_m102_014",
+      "category": "calculation",
+      "prompt": "3x²+10x+8 を因数分解すると？",
+      "choices": [
+        "(3x+4)(x+2)",
+        "(3x+8)(x+1)",
+        "(3x+2)(x+4)",
+        "(x+4)(3x−2)"
+      ],
+      "answerIndex": 0,
+      "explanation": "たすきがけ：3·2+4·1=10。"
+    },
+    {
+      "id": "mat_m102_015",
+      "category": "calculation",
+      "prompt": "(a−b+c)² を展開すると？",
+      "choices": [
+        "a²+b²+c²−2ab−2bc+2ca",
+        "a²+b²+c²−2ab+2bc+2ca",
+        "a²+b²+c²+2ab−2bc−2ca",
+        "a²−b²+c²−2ab−2bc+2ca"
+      ],
+      "answerIndex": 0,
+      "explanation": "(a+(−b)+c)² として公式を使う。"
+    },
+    {
+      "id": "mat_m102_016",
+      "category": "calculation",
+      "prompt": "a²−b²−a+b を因数分解すると？",
+      "choices": [
+        "(a−b)(a+b+1)",
+        "(a−b)(a+b−1)",
+        "(a+b)(a−b−1)",
+        "(a−b)²"
+      ],
+      "answerIndex": 1,
+      "explanation": "(a−b)(a+b)−(a−b) で a−b をくくる。"
+    },
+    {
+      "id": "mat_m102_017",
+      "category": "calculation",
+      "prompt": "x²−2xy+y²−9 を因数分解すると？",
+      "choices": [
+        "(x−y+9)(x−y−1)",
+        "(x−y−3)²",
+        "(x+y+3)(x+y−3)",
+        "(x−y+3)(x−y−3)"
+      ],
+      "answerIndex": 3,
+      "explanation": "(x−y)²−3² と見る。"
+    },
+    {
+      "id": "mat_m102_018",
+      "category": "calculation",
+      "prompt": "(x+1)(x+2)(x−1)(x−2) を展開すると？",
+      "choices": [
+        "x⁴−4",
+        "x⁴−5x²−4",
+        "x⁴−5x²+4",
+        "x⁴+5x²+4"
+      ],
+      "answerIndex": 2,
+      "explanation": "(x²−1)(x²−4) と組み合わせる。"
+    },
+    {
+      "id": "mat_m102_019",
+      "category": "calculation",
+      "prompt": "8x³+1 を因数分解すると？",
+      "choices": [
+        "(2x+1)³",
+        "(2x+1)(4x²−2x+1)",
+        "(2x+1)(4x²+2x+1)",
+        "(2x−1)(4x²+2x+1)"
+      ],
+      "answerIndex": 1,
+      "explanation": "(2x)³+1³ と見て a³+b³ の公式。"
+    },
+    {
+      "id": "mat_m102_020",
+      "category": "calculation",
+      "prompt": "x²+4xy+3y² を因数分解すると？",
+      "choices": [
+        "(x+2y)²",
+        "(x−y)(x−3y)",
+        "(x+y)(x+3y)",
+        "(x+y)(x−3y)"
+      ],
+      "answerIndex": 2,
+      "explanation": "積が 3y²、和が 4y の y と 3y。"
     }
   ]
 }

@@ -133,6 +133,136 @@
       ],
       "answerIndex": 1,
       "explanation": "例：「和が2」と「和が7」は同様に確からしくない。"
+    },
+    {
+      "id": "mat_ma04_011",
+      "category": "calculation",
+      "prompt": "さいころを1回投げて、素数の目が出る確率は？",
+      "choices": [
+        "2/3",
+        "1/2",
+        "1/6",
+        "1/3"
+      ],
+      "answerIndex": 1,
+      "explanation": "2, 3, 5 の3通り。"
+    },
+    {
+      "id": "mat_ma04_012",
+      "category": "calculation",
+      "prompt": "コインを3枚投げて、ちょうど2枚が表になる確率は？",
+      "choices": [
+        "3/8",
+        "1/4",
+        "1/2",
+        "1/8"
+      ],
+      "answerIndex": 0,
+      "explanation": "₃C₂/8。"
+    },
+    {
+      "id": "mat_ma04_013",
+      "category": "calculation",
+      "prompt": "2個のさいころを投げて、目の和が4になる確率は？",
+      "choices": [
+        "1/9",
+        "1/18",
+        "1/12",
+        "1/6"
+      ],
+      "answerIndex": 2,
+      "explanation": "(1,3)(2,2)(3,1) の3通り／36通り。"
+    },
+    {
+      "id": "mat_ma04_014",
+      "category": "calculation",
+      "prompt": "赤玉4個・白玉6個から1個取り出すとき、白玉である確率は？",
+      "choices": [
+        "2/3",
+        "1/6",
+        "3/5",
+        "2/5"
+      ],
+      "answerIndex": 2,
+      "explanation": "10個のうち6個。"
+    },
+    {
+      "id": "mat_ma04_015",
+      "category": "calculation",
+      "prompt": "2個のさいころを投げて、少なくとも1個は6の目が出る確率は？",
+      "choices": [
+        "25/36",
+        "11/36",
+        "1/6",
+        "1/3"
+      ],
+      "answerIndex": 1,
+      "explanation": "余事象：どちらも6以外 25/36。"
+    },
+    {
+      "id": "mat_ma04_016",
+      "category": "calculation",
+      "prompt": "1〜20 の番号のカードから1枚引くとき、4の倍数である確率は？",
+      "choices": [
+        "1/20",
+        "3/10",
+        "1/4",
+        "1/5"
+      ],
+      "answerIndex": 2,
+      "explanation": "4, 8, 12, 16, 20 の5枚。"
+    },
+    {
+      "id": "mat_ma04_017",
+      "category": "calculation",
+      "prompt": "2個のさいころを投げて、目の差が2になる確率は？",
+      "choices": [
+        "5/18",
+        "2/9",
+        "1/9",
+        "1/6"
+      ],
+      "answerIndex": 1,
+      "explanation": "(1,3)(2,4)(3,5)(4,6) とその逆で8通り。"
+    },
+    {
+      "id": "mat_ma04_018",
+      "category": "calculation",
+      "prompt": "赤玉3個・白玉2個から同時に2個取り出すとき、色がちがう確率は？",
+      "choices": [
+        "1/2",
+        "3/5",
+        "2/5",
+        "3/10"
+      ],
+      "answerIndex": 1,
+      "explanation": "3×2/₅C₂=6/10。"
+    },
+    {
+      "id": "mat_ma04_019",
+      "category": "calculation",
+      "prompt": "5人がくじで1列に並ぶとき、A と B が隣り合う確率は？",
+      "choices": [
+        "1/2",
+        "1/5",
+        "2/5",
+        "1/10"
+      ],
+      "answerIndex": 2,
+      "explanation": "4!×2/5!=48/120。"
+    },
+    {
+      "id": "mat_ma04_020",
+      "category": "knowledge",
+      "prompt": "事象 A の余事象の確率は？",
+      "choices": [
+        "P(A)",
+        "0",
+        "1−P(A)",
+        "1+P(A)"
+      ],
+      "answerIndex": 2,
+      "explanation": "A が起こらない確率。"
     }
   ]
 }

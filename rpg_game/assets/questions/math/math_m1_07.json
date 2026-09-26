@@ -133,6 +133,136 @@
       ],
       "answerIndex": 1,
       "explanation": "角 θ の隣辺は、角 90°−θ から見ると対辺になる。"
+    },
+    {
+      "id": "mat_m107_011",
+      "category": "knowledge",
+      "prompt": "sin60° の値は？",
+      "choices": [
+        "√3/2",
+        "√2/2",
+        "√3",
+        "1/2"
+      ],
+      "answerIndex": 0,
+      "explanation": "30°・60°・90° の三角形で、60° の対辺は √3、斜辺は2。"
+    },
+    {
+      "id": "mat_m107_012",
+      "category": "knowledge",
+      "prompt": "cos0° の値は？",
+      "choices": [
+        "−1",
+        "1/2",
+        "1",
+        "0"
+      ],
+      "answerIndex": 2,
+      "explanation": "単位円上の点 (1, 0) の x 座標。"
+    },
+    {
+      "id": "mat_m107_013",
+      "category": "knowledge",
+      "prompt": "tan30° の値は？",
+      "choices": [
+        "√3",
+        "1",
+        "1/2",
+        "√3/3"
+      ],
+      "answerIndex": 3,
+      "explanation": "1/√3=√3/3。"
+    },
+    {
+      "id": "mat_m107_014",
+      "category": "calculation",
+      "prompt": "直角三角形で斜辺が8、1つの角が30°のとき、その角のとなりの辺（斜辺でない方）の長さは？",
+      "choices": [
+        "4√3",
+        "16",
+        "4",
+        "8√3"
+      ],
+      "answerIndex": 0,
+      "explanation": "8×cos30°。"
+    },
+    {
+      "id": "mat_m107_015",
+      "category": "calculation",
+      "prompt": "θ が鋭角で cosθ=5/13 のとき、sinθ の値は？",
+      "choices": [
+        "13/12",
+        "12/13",
+        "8/13",
+        "5/12"
+      ],
+      "answerIndex": 1,
+      "explanation": "sin²θ=1−25/169=144/169。"
+    },
+    {
+      "id": "mat_m107_016",
+      "category": "calculation",
+      "prompt": "cos135° の値は？",
+      "choices": [
+        "−√3/2",
+        "−√2/2",
+        "−1/2",
+        "√2/2"
+      ],
+      "answerIndex": 1,
+      "explanation": "cos(180°−45°)=−cos45°。"
+    },
+    {
+      "id": "mat_m107_017",
+      "category": "calculation",
+      "prompt": "sin120° の値は？",
+      "choices": [
+        "−1/2",
+        "−√3/2",
+        "√3/2",
+        "1/2"
+      ],
+      "answerIndex": 2,
+      "explanation": "sin(180°−60°)=sin60°。"
+    },
+    {
+      "id": "mat_m107_018",
+      "category": "calculation",
+      "prompt": "tan150° の値は？",
+      "choices": [
+        "√3/3",
+        "−√3",
+        "−√3/3",
+        "√3"
+      ],
+      "answerIndex": 2,
+      "explanation": "tan(180°−30°)=−tan30°。"
+    },
+    {
+      "id": "mat_m107_019",
+      "category": "calculation",
+      "prompt": "θ が鋭角で tanθ=3/4 のとき、sinθ の値は？",
+      "choices": [
+        "4/5",
+        "3/4",
+        "3/5",
+        "5/3"
+      ],
+      "answerIndex": 2,
+      "explanation": "3:4:5 の直角三角形を考える。"
+    },
+    {
+      "id": "mat_m107_020",
+      "category": "calculation",
+      "prompt": "傾きの角が30°の坂道を100m 進むと、何m 高くなる？",
+      "choices": [
+        "50√3m",
+        "100√3m",
+        "50m",
+        "25m"
+      ],
+      "answerIndex": 2,
+      "explanation": "100×sin30°。"
     }
   ]
 }

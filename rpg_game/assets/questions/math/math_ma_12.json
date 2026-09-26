@@ -133,6 +133,136 @@
       ],
       "answerIndex": 0,
       "explanation": "「既約」という仮定に矛盾する。"
+    },
+    {
+      "id": "mat_ma12_011",
+      "category": "calculation",
+      "prompt": "xy+x−2y=7 を満たす正の整数の組 (x, y) は何組？",
+      "choices": [
+        "4組",
+        "3組",
+        "2組",
+        "1組"
+      ],
+      "answerIndex": 3,
+      "explanation": "(x−2)(y+1)=5 で、y+1≧2 から x−2=1、y+1=5 だけ。"
+    },
+    {
+      "id": "mat_ma12_012",
+      "category": "calculation",
+      "prompt": "1/x+1/y=1/3（x≦y）を満たす正の整数の組は何組？",
+      "choices": [
+        "2組",
+        "1組",
+        "3組",
+        "4組"
+      ],
+      "answerIndex": 0,
+      "explanation": "(x−3)(y−3)=9 → (4, 12), (6, 6)。"
+    },
+    {
+      "id": "mat_ma12_013",
+      "category": "calculation",
+      "prompt": "3x+5y=40 を満たす正の整数の組 (x, y) は何組？",
+      "choices": [
+        "4組",
+        "1組",
+        "3組",
+        "2組"
+      ],
+      "answerIndex": 3,
+      "explanation": "(10, 2) と (5, 5)。"
+    },
+    {
+      "id": "mat_ma12_014",
+      "category": "calculation",
+      "prompt": "n を7で割ると4余るとき、n² を7で割った余りは？",
+      "choices": [
+        "4",
+        "1",
+        "2",
+        "16"
+      ],
+      "answerIndex": 2,
+      "explanation": "n²≡16≡2 (mod 7)。"
+    },
+    {
+      "id": "mat_ma12_015",
+      "category": "calculation",
+      "prompt": "√(126n) が自然数となる最小の自然数 n は？",
+      "choices": [
+        "14",
+        "2",
+        "126",
+        "7"
+      ],
+      "answerIndex": 0,
+      "explanation": "126=2·3²·7。2·7 をかければ平方数。"
+    },
+    {
+      "id": "mat_ma12_016",
+      "category": "calculation",
+      "prompt": "20! は末尾に0が何個並ぶ？",
+      "choices": [
+        "4個",
+        "2個",
+        "5個",
+        "20個"
+      ],
+      "answerIndex": 0,
+      "explanation": "5の倍数は 5, 10, 15, 20 の4個。"
+    },
+    {
+      "id": "mat_ma12_017",
+      "category": "calculation",
+      "prompt": "2進法で表すと5けたになる自然数は何個？",
+      "choices": [
+        "16個",
+        "5個",
+        "31個",
+        "32個"
+      ],
+      "answerIndex": 0,
+      "explanation": "10000₍₂₎=16 から 11111₍₂₎=31 まで。"
+    },
+    {
+      "id": "mat_ma12_018",
+      "category": "calculation",
+      "prompt": "100以下の自然数のうち、2でも3でも割り切れない数は何個？",
+      "choices": [
+        "33個",
+        "17個",
+        "34個",
+        "67個"
+      ],
+      "answerIndex": 0,
+      "explanation": "100−(50+33−16)。"
+    },
+    {
+      "id": "mat_ma12_019",
+      "category": "calculation",
+      "prompt": "和が30、最大公約数が6である2つの自然数 a<b の組は何組？",
+      "choices": [
+        "1組",
+        "3組",
+        "4組",
+        "2組"
+      ],
+      "answerIndex": 3,
+      "explanation": "a=6a′、b=6b′ で a′+b′=5、互いに素：(1, 4), (2, 3)。"
+    },
+    {
+      "id": "mat_ma12_020",
+      "category": "thinking",
+      "prompt": "n²+n+1 が、どんな整数 n でも偶数にならない理由は？",
+      "choices": [
+        "n² がいつも偶数だから",
+        "1 が奇数だから",
+        "n がいつも奇数だから",
+        "n²+n=n(n+1) は必ず偶数なので、1を足すと奇数になるから"
+      ],
+      "answerIndex": 3,
+      "explanation": "連続する2整数の積は偶数。"
     }
   ]
 }

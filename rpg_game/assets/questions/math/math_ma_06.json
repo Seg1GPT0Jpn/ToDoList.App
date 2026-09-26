@@ -133,6 +133,136 @@
       ],
       "answerIndex": 2,
       "explanation": "P(少なくとも1回)=1−P(1回もない)。"
+    },
+    {
+      "id": "mat_ma06_011",
+      "category": "calculation",
+      "prompt": "ある病気の人は全体の1%。検査で陽性になるのは、病気の人の90%、病気でない人の5%。陽性の人が病気である確率は？",
+      "choices": [
+        "9/10",
+        "2/13",
+        "1/100",
+        "1/2"
+      ],
+      "answerIndex": 1,
+      "explanation": "0.009÷(0.009+0.0495)=0.009/0.0585。"
+    },
+    {
+      "id": "mat_ma06_012",
+      "category": "calculation",
+      "prompt": "さいころを3回投げて、出た目の最大値が5である確率は？",
+      "choices": [
+        "1/6",
+        "37/216",
+        "125/216",
+        "61/216"
+      ],
+      "answerIndex": 3,
+      "explanation": "最大値5以下 (5/6)³ から4以下 (4/6)³ を引く。"
+    },
+    {
+      "id": "mat_ma06_013",
+      "category": "calculation",
+      "prompt": "コインを6回投げて、表がちょうど3回出る確率は？",
+      "choices": [
+        "5/16",
+        "3/8",
+        "1/2",
+        "1/4"
+      ],
+      "answerIndex": 0,
+      "explanation": "₆C₃/64=20/64。"
+    },
+    {
+      "id": "mat_ma06_014",
+      "category": "calculation",
+      "prompt": "赤玉2個・白玉2個の袋から1個ずつ取り出す（戻さない）。3回目に初めて赤玉が出る確率は？",
+      "choices": [
+        "1/6",
+        "1/12",
+        "1/4",
+        "1/3"
+      ],
+      "answerIndex": 0,
+      "explanation": "白・白・赤：2/4×1/3×2/2。"
+    },
+    {
+      "id": "mat_ma06_015",
+      "category": "calculation",
+      "prompt": "さいころを n 回投げて1回も6が出ない確率が 1/2 より小さくなる、最小の n は？",
+      "choices": [
+        "6",
+        "3",
+        "4",
+        "5"
+      ],
+      "answerIndex": 2,
+      "explanation": "(5/6)³≒0.58、(5/6)⁴≒0.48。"
+    },
+    {
+      "id": "mat_ma06_016",
+      "category": "calculation",
+      "prompt": "数直線上の点が、コインの表で +2、裏で −1 動く。3回投げた後に位置が3である確率は？",
+      "choices": [
+        "1/2",
+        "3/4",
+        "1/8",
+        "3/8"
+      ],
+      "answerIndex": 3,
+      "explanation": "表2回・裏1回で 4−1=3。₃C₂/8。"
+    },
+    {
+      "id": "mat_ma06_017",
+      "category": "calculation",
+      "prompt": "さいころを2回投げたときの、出た目の大きい方（同じならその目）の期待値は？",
+      "choices": [
+        "161/36",
+        "7/2",
+        "4",
+        "91/36"
+      ],
+      "answerIndex": 0,
+      "explanation": "最大値が k の確率は (2k−1)/36。Σk(2k−1)/36。"
+    },
+    {
+      "id": "mat_ma06_018",
+      "category": "calculation",
+      "prompt": "3人が1回じゃんけんをして、1人だけが勝つ確率は？",
+      "choices": [
+        "2/9",
+        "1/27",
+        "1/9",
+        "1/3"
+      ],
+      "answerIndex": 3,
+      "explanation": "勝つ人3通り×勝つ手3通り＝9通り／27通り。"
+    },
+    {
+      "id": "mat_ma06_019",
+      "category": "calculation",
+      "prompt": "3人が1回じゃんけんをして、2人が勝つ確率は？",
+      "choices": [
+        "1/9",
+        "2/9",
+        "1/3",
+        "2/3"
+      ],
+      "answerIndex": 2,
+      "explanation": "勝つ2人の選び方3通り×勝つ手3通り＝9通り／27通り。"
+    },
+    {
+      "id": "mat_ma06_020",
+      "category": "thinking",
+      "prompt": "条件付き確率 P_A(B) と、P(A∩B) のちがいは？",
+      "choices": [
+        "同じもの",
+        "P_A(B) はいつも P(A∩B) より小さい",
+        "P_A(B) は A が起きたと分かったうえでの B の確率、P(A∩B) は A と B が両方起きる確率",
+        "P(A∩B) は A が起きない確率"
+      ],
+      "answerIndex": 2,
+      "explanation": "P(A∩B)=P(A)×P_A(B)（乗法定理）。"
     }
   ]
 }

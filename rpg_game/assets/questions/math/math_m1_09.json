@@ -133,6 +133,136 @@
       ],
       "answerIndex": 1,
       "explanation": "頂点 B から辺 AC に下ろした垂線の長さが c·sinA。"
+    },
+    {
+      "id": "mat_m109_011",
+      "category": "calculation",
+      "prompt": "0°≦θ≦180° で sinθ+cosθ=√2 のとき、sinθcosθ の値は？",
+      "choices": [
+        "0",
+        "1",
+        "1/2",
+        "√2/2"
+      ],
+      "answerIndex": 2,
+      "explanation": "両辺を2乗：1+2sinθcosθ=2。"
+    },
+    {
+      "id": "mat_m109_012",
+      "category": "calculation",
+      "prompt": "sinθ−cosθ=1/2 のとき、sinθcosθ の値は？",
+      "choices": [
+        "3/4",
+        "−3/8",
+        "3/8",
+        "1/8"
+      ],
+      "answerIndex": 2,
+      "explanation": "2乗して 1−2sinθcosθ=1/4。"
+    },
+    {
+      "id": "mat_m109_013",
+      "category": "calculation",
+      "prompt": "tanθ=2 のとき、(sinθ+cosθ)/(sinθ−cosθ) の値は？",
+      "choices": [
+        "3",
+        "−3",
+        "1/3",
+        "2"
+      ],
+      "answerIndex": 0,
+      "explanation": "分母・分子を cosθ で割ると (tanθ+1)/(tanθ−1)。"
+    },
+    {
+      "id": "mat_m109_014",
+      "category": "calculation",
+      "prompt": "円に内接する四角形 ABCD で AB=3、BC=5、∠B=120° のとき、AC は？",
+      "choices": [
+        "7",
+        "8",
+        "√34",
+        "√19"
+      ],
+      "answerIndex": 0,
+      "explanation": "余弦定理：9+25−2·3·5·cos120°=49。"
+    },
+    {
+      "id": "mat_m109_015",
+      "category": "calculation",
+      "prompt": "3辺が 2、3、6 の直方体の対角線の長さは？",
+      "choices": [
+        "11",
+        "7",
+        "√45",
+        "√13"
+      ],
+      "answerIndex": 1,
+      "explanation": "√(4+9+36)=√49。"
+    },
+    {
+      "id": "mat_m109_016",
+      "category": "calculation",
+      "prompt": "1辺が6の正四面体の高さは？",
+      "choices": [
+        "2√6",
+        "√6",
+        "3√3",
+        "4√2"
+      ],
+      "answerIndex": 0,
+      "explanation": "頂点から底面の重心まで：√(36−(2√3)²)=√24。"
+    },
+    {
+      "id": "mat_m109_017",
+      "category": "calculation",
+      "prompt": "3辺が a=7、b=8、c=3 の △ABC の面積は？",
+      "choices": [
+        "12√3",
+        "6√3",
+        "12",
+        "6"
+      ],
+      "answerIndex": 1,
+      "explanation": "cosA=(64+9−49)/48=1/2 で A=60°。½·8·3·sin60°。"
+    },
+    {
+      "id": "mat_m109_018",
+      "category": "calculation",
+      "prompt": "同じ三角形（3辺 7、8、3）の内接円の半径は？",
+      "choices": [
+        "√3/3",
+        "2√3",
+        "√3",
+        "2√3/3"
+      ],
+      "answerIndex": 3,
+      "explanation": "S=r·s（s=9）より r=6√3/9。"
+    },
+    {
+      "id": "mat_m109_019",
+      "category": "calculation",
+      "prompt": "地点 A から塔の頂上を見上げた角が30°、塔に20m 近づいた B からは45° だった。塔の高さは？",
+      "choices": [
+        "20m",
+        "20(√3+1)m",
+        "10(√3+1)m",
+        "10√3m"
+      ],
+      "answerIndex": 2,
+      "explanation": "高さ h：h√3−h=20。"
+    },
+    {
+      "id": "mat_m109_020",
+      "category": "knowledge",
+      "prompt": "三角形で「2辺とその間の角」が分かっているとき、残りの辺を求めるのに使う定理は？",
+      "choices": [
+        "三平方の定理だけ",
+        "余弦定理",
+        "正弦定理",
+        "中線定理"
+      ],
+      "answerIndex": 1,
+      "explanation": "「1辺と両端の角」なら正弦定理を使う。"
     }
   ]
 }

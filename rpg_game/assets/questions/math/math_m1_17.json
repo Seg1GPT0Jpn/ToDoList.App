@@ -133,6 +133,136 @@
       ],
       "answerIndex": 0,
       "explanation": "箱ひげ図で外れ値を示すときの基準。"
+    },
+    {
+      "id": "mat_m117_011",
+      "category": "calculation",
+      "prompt": "10人の平均が70点のクラスに、80点の1人が加わった。11人の平均はおよそ？",
+      "choices": [
+        "75点",
+        "70点",
+        "約70.9点",
+        "71.5点"
+      ],
+      "answerIndex": 2,
+      "explanation": "(700+80)/11=70.9…。"
+    },
+    {
+      "id": "mat_m117_012",
+      "category": "calculation",
+      "prompt": "分散が16のとき、標準偏差は？",
+      "choices": [
+        "4",
+        "16",
+        "256",
+        "8"
+      ],
+      "answerIndex": 0,
+      "explanation": "√16。"
+    },
+    {
+      "id": "mat_m117_013",
+      "category": "calculation",
+      "prompt": "x の平均が4、分散が3のとき、y=3x−2 の分散は？",
+      "choices": [
+        "7",
+        "9",
+        "27",
+        "25"
+      ],
+      "answerIndex": 2,
+      "explanation": "分散は 3²=9 倍。−2 は関係しない。"
+    },
+    {
+      "id": "mat_m117_014",
+      "category": "calculation",
+      "prompt": "x の標準偏差が2のとき、y=−5x+1 の標準偏差は？",
+      "choices": [
+        "−10",
+        "9",
+        "25",
+        "10"
+      ],
+      "answerIndex": 3,
+      "explanation": "標準偏差は |−5| 倍。"
+    },
+    {
+      "id": "mat_m117_015",
+      "category": "calculation",
+      "prompt": "x² の平均が30、x の平均が5のとき、x の分散は？",
+      "choices": [
+        "5",
+        "55",
+        "30",
+        "25"
+      ],
+      "answerIndex": 0,
+      "explanation": "30−5²。"
+    },
+    {
+      "id": "mat_m117_016",
+      "category": "knowledge",
+      "prompt": "相関係数が 0.95 のとき、どんな相関がある？",
+      "choices": [
+        "強い正の相関",
+        "ほとんど相関がない",
+        "強い負の相関",
+        "弱い正の相関"
+      ],
+      "answerIndex": 0,
+      "explanation": "1 に近いので強い正の相関。"
+    },
+    {
+      "id": "mat_m117_017",
+      "category": "calculation",
+      "prompt": "x と y の共分散が −12、標準偏差がそれぞれ4と5のとき、相関係数は？",
+      "choices": [
+        "0.6",
+        "−0.6",
+        "−0.3",
+        "−2.4"
+      ],
+      "answerIndex": 1,
+      "explanation": "−12/(4·5)。"
+    },
+    {
+      "id": "mat_m117_018",
+      "category": "knowledge",
+      "prompt": "散布図で点がほぼ右下がりの直線上に並んでいるとき、相関係数は？",
+      "choices": [
+        "1 に近い",
+        "2 に近い",
+        "−1 に近い",
+        "0 に近い"
+      ],
+      "answerIndex": 2,
+      "explanation": "強い負の相関。"
+    },
+    {
+      "id": "mat_m117_019",
+      "category": "calculation",
+      "prompt": "第1四分位数20、第3四分位数32のとき、上側の外れ値の基準（Q3+1.5×四分位範囲）は？",
+      "choices": [
+        "44",
+        "50",
+        "52",
+        "38"
+      ],
+      "answerIndex": 1,
+      "explanation": "32+1.5×12。"
+    },
+    {
+      "id": "mat_m117_020",
+      "category": "calculation",
+      "prompt": "平均50、標準偏差10のデータで、65の標準化した値 (x−平均)/標準偏差 は？",
+      "choices": [
+        "6.5",
+        "15",
+        "1.5",
+        "0.65"
+      ],
+      "answerIndex": 2,
+      "explanation": "(65−50)/10。"
     }
   ]
 }
