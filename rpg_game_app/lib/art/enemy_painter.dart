@@ -1,6 +1,8 @@
 import 'dart:math';
 import 'dart:ui';
 
+part 'stationery_painter.dart';
+
 const _ink = Color(0xFF2E2A33);
 const _white = Color(0xFFFFFDF8);
 
@@ -37,6 +39,41 @@ void paintEnemy(
       _dragon(canvas, size, t, c ?? const Color(0xFFB23A48));
     case 'ghost':
       _ghost(canvas, size, t, c ?? const Color(0xFFB9C6E8));
+    // 文房具モンスター
+    case 'eraser':
+      _eraser(canvas, size, t, c ?? const Color(0xFF3F7CC4));
+    case 'crayon':
+      _crayon(canvas, size, t, c ?? const Color(0xFFE0483E));
+    case 'sticky':
+      _sticky(canvas, size, t, c ?? const Color(0xFFF4D35E));
+    case 'pencil':
+      _pencil(canvas, size, t, c ?? const Color(0xFFF2B84B));
+    case 'stubpencil':
+      _pencil(canvas, size, t, c ?? const Color(0xFF6A994E), short: true);
+    case 'pen':
+      _pen(canvas, size, t, c ?? const Color(0xFF2E5AAC));
+    case 'ruler':
+      _ruler(canvas, size, t, c ?? const Color(0xFFBFE3F2));
+    case 'triangle':
+      _triangle(canvas, size, t, c ?? const Color(0xFFB5E3C1));
+    case 'protractor':
+      _protractor(canvas, size, t, c ?? const Color(0xFFCFE8FF));
+    case 'compass':
+      _compass(canvas, size, t, c ?? const Color(0xFF6E7F8A));
+    case 'stapler':
+      _stapler(canvas, size, t, c ?? const Color(0xFFD1495B));
+    case 'marker':
+      _marker(canvas, size, t, c ?? const Color(0xFFF7E14B));
+    case 'page':
+      _page(canvas, size, t, c ?? const Color(0xFFE8A0A8));
+    case 'mechpencil':
+      _mechpencil(canvas, size, t, c ?? const Color(0xFF4A6FA5));
+    case 'scissors':
+      _scissors(canvas, size, t, c ?? const Color(0xFFE07A5F));
+    case 'binder':
+      _binder(canvas, size, t, c ?? const Color(0xFF3D5A80));
+    case 'book':
+      _book(canvas, size, t, c ?? const Color(0xFF8E3B46));
     default:
       _slime(canvas, size, t, c ?? const Color(0xFF9CCB8B));
   }
