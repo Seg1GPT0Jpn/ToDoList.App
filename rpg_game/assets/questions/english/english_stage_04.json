@@ -2,75 +2,36 @@
   "setId": "english_stage_04",
   "worldId": "english",
   "origin": "original",
-  "version": 1,
+  "version": 2,
   "questions": [
     {
       "id": "en04_001",
-      "category": "partOfSpeech",
-      "prompt": "次のうち「動詞」はどれ？",
-      "choices": [
-        "critic",
-        "critical",
-        "criticize",
-        "criticism"
-      ],
-      "answerIndex": 2,
-      "explanation": "-ize は動詞を作る語尾。critic（批評家）と criticism（批判）は名詞、critical は形容詞。"
-    },
-    {
-      "id": "en04_002",
-      "category": "partOfSpeech",
-      "prompt": "次のうち「名詞」はどれ？",
-      "choices": [
-        "responsible",
-        "responsibly",
-        "responsibility",
-        "irresponsible"
-      ],
-      "answerIndex": 2,
-      "explanation": "-ity は名詞を作る語尾。responsibility = 責任。"
-    },
-    {
-      "id": "en04_003",
-      "category": "partOfSpeech",
-      "prompt": "次のうち「形容詞」はどれ？",
-      "choices": [
-        "sense",
-        "sensitive",
-        "sensitively",
-        "sensitivity"
-      ],
-      "answerIndex": 1,
-      "explanation": "-ive は形容詞を作る語尾。sensitive = 敏感な。"
-    },
-    {
-      "id": "en04_004",
       "category": "meaning",
       "prompt": "「abandon」の意味は？",
       "choices": [
         "採用する",
-        "吸収する",
         "見捨てる",
+        "吸収する",
         "延長する"
       ],
-      "answerIndex": 2,
-      "explanation": "abandon = 見捨てる、（計画などを）断念する。"
-    },
-    {
-      "id": "en04_005",
-      "category": "meaning",
-      "prompt": "「reliable」の意味は？",
-      "choices": [
-        "関連した",
-        "信頼できる",
-        "気が進まない",
-        "相対的な"
-      ],
       "answerIndex": 1,
-      "explanation": "rely（頼る）+ -able で「信頼できる」。"
+      "explanation": "abandon は「見捨てる；（計画などを）断念する」。"
     },
     {
-      "id": "en04_006",
+      "id": "en04_002",
+      "category": "meaning",
+      "prompt": "「emphasize」の意味は？",
+      "choices": [
+        "共感する",
+        "雇う",
+        "強調する",
+        "見積もる"
+      ],
+      "answerIndex": 2,
+      "explanation": "emphasize は「強調する」。名詞は emphasis。"
+    },
+    {
+      "id": "en04_003",
       "category": "meaning",
       "prompt": "「consequence」の意味は？",
       "choices": [
@@ -80,10 +41,10 @@
         "結果"
       ],
       "answerIndex": 3,
-      "explanation": "consequence = 結果、影響。as a consequence（その結果）。"
+      "explanation": "consequence は「結果、影響」。as a consequence（その結果）。"
     },
     {
-      "id": "en04_007",
+      "id": "en04_004",
       "category": "meaning",
       "prompt": "「inevitable」の意味は？",
       "choices": [
@@ -96,115 +57,276 @@
       "explanation": "in-（否定）+ evitable（避けられる）で「避けられない」。"
     },
     {
-      "id": "en04_008",
+      "id": "en04_005",
       "category": "meaning",
-      "prompt": "「emphasize」の意味は？",
+      "prompt": "「persuade」の意味は？",
       "choices": [
-        "共感する",
-        "強調する",
-        "雇う",
-        "見積もる"
+        "追い求める",
+        "推測する",
+        "説得する",
+        "主張する"
+      ],
+      "answerIndex": 2,
+      "explanation": "persuade + 人 + to do で「人を説得して〜させる」。"
+    },
+    {
+      "id": "en04_006",
+      "category": "meaning",
+      "prompt": "「recognize」の意味は？",
+      "choices": [
+        "推薦する",
+        "認識する",
+        "回復する",
+        "記録する"
       ],
       "answerIndex": 1,
-      "explanation": "emphasize = 強調する。名詞は emphasis。"
+      "explanation": "recognize は「（見て）それとわかる、認める」。"
+    },
+    {
+      "id": "en04_007",
+      "category": "meaning",
+      "prompt": "「significant」の意味は？",
+      "choices": [
+        "類似した",
+        "十分な",
+        "繊細な",
+        "重要な"
+      ],
+      "answerIndex": 3,
+      "explanation": "significant は「重要な、意味のある」。"
+    },
+    {
+      "id": "en04_008",
+      "category": "meaning",
+      "prompt": "「reluctant」の意味は？",
+      "choices": [
+        "気が進まない",
+        "熱心な",
+        "丁寧な",
+        "不安定な"
+      ],
+      "answerIndex": 0,
+      "explanation": "be reluctant to do で「〜するのに気が進まない」。反対の意味は eager。"
     },
     {
       "id": "en04_009",
-      "category": "usage",
-      "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "It is (   ) of you to help me.",
+      "category": "meaning",
+      "prompt": "「eventually」の意味は？",
       "choices": [
-        "necessary",
-        "easy",
-        "kind",
-        "important"
+        "すぐに",
+        "結局は",
+        "偶然に",
+        "定期的に"
       ],
-      "answerIndex": 2,
-      "explanation": "It is 形容詞 of 人 to do の形は、kind など「人の性質」を表す形容詞のときに使う。"
+      "answerIndex": 1,
+      "explanation": "eventually は「最終的には、結局は」。"
     },
     {
       "id": "en04_010",
-      "category": "usage",
-      "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "(   ) he is young, he is very wise.",
+      "category": "meaning",
+      "prompt": "「appropriate」の意味は？",
       "choices": [
-        "Despite",
-        "Although",
-        "Because of",
-        "However"
+        "典型的な",
+        "一時的な",
+        "適切な",
+        "正確な"
       ],
-      "answerIndex": 1,
-      "explanation": "後ろに文（S + V）が続くので接続詞 Although。despite と because of は前置詞で、後ろに名詞をとる。"
+      "answerIndex": 2,
+      "explanation": "appropriate は「適切な、ふさわしい」。正確なは accurate。"
     },
     {
       "id": "en04_011",
-      "category": "usage",
-      "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "Hardly (   ) the station when the train left.",
+      "category": "partOfSpeech",
+      "prompt": "次のうち「名詞」はどれ？",
       "choices": [
-        "I had reached",
-        "had I reached",
-        "did I reach",
-        "I reached"
+        "responsible",
+        "responsibly",
+        "responsibility",
+        "irresponsible"
       ],
-      "answerIndex": 1,
-      "explanation": "Hardly had S p.p. when 〜 で「〜するとすぐに…」。否定語が文頭に来ると倒置が起こる。"
+      "answerIndex": 2,
+      "explanation": "-ity は名詞を作る語尾。responsibility = 責任。"
     },
     {
       "id": "en04_012",
-      "category": "usage",
-      "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "I'd rather you (   ) home now.",
+      "category": "partOfSpeech",
+      "prompt": "次のうち「動詞」はどれ？",
       "choices": [
-        "go",
-        "going",
-        "went",
-        "will go"
+        "critic",
+        "critical",
+        "criticize",
+        "criticism"
       ],
       "answerIndex": 2,
-      "explanation": "would rather + S + 過去形 で「S に〜してほしい」。仮定法なので過去形になる。"
+      "explanation": "-ize は動詞を作る語尾。critic（批評家）と criticism（批判）は名詞、critical は形容詞。"
     },
     {
       "id": "en04_013",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "By the time you arrive, I (   ) my homework.",
+      "sentence": "You walked for five hours. You (   ) be tired.",
       "choices": [
-        "have finished",
-        "finished",
-        "had finished",
-        "will have finished"
+        "can't",
+        "must",
+        "need",
+        "shall"
       ],
-      "answerIndex": 3,
-      "explanation": "未来のある時点（あなたが着くとき）までの完了なので未来完了。"
+      "answerIndex": 1,
+      "explanation": "must be 〜 で「〜にちがいない」（確信のある推量）。"
     },
     {
       "id": "en04_014",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "She objects to (   ) like a child.",
+      "sentence": "The lights are off. He (   ) be at home.",
       "choices": [
-        "treat",
-        "be treated",
-        "being treated",
-        "treating"
+        "must",
+        "will",
+        "can't",
+        "shall"
       ],
       "answerIndex": 2,
-      "explanation": "object to の to は前置詞なので動名詞をとる。「扱われる」という受け身なので being treated。"
+      "explanation": "can't be 〜 で「〜のはずがない」。must be（〜にちがいない）の反対。"
     },
     {
       "id": "en04_015",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "I have two brothers. One lives in Tokyo, and (   ) lives in Osaka.",
+      "sentence": "(   ) you help me with this bag?",
       "choices": [
-        "another",
-        "other",
-        "the others",
-        "the other"
+        "Shall",
+        "Must",
+        "May",
+        "Could"
       ],
       "answerIndex": 3,
-      "explanation": "2つのうち一方は one、もう一方は the other。"
+      "explanation": "Could you 〜? で「〜していただけませんか」とていねいに頼む。"
+    },
+    {
+      "id": "en04_016",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) we go for a walk? ― Sure, let's.",
+      "choices": [
+        "Will",
+        "Shall",
+        "Must",
+        "Would"
+      ],
+      "answerIndex": 1,
+      "explanation": "Shall we 〜? で「（一緒に）〜しませんか」と誘う。返事の let's がヒント。"
+    },
+    {
+      "id": "en04_017",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I (   ) play tennis every Sunday when I was a child.",
+      "choices": [
+        "use to",
+        "am used to",
+        "used to",
+        "was using"
+      ],
+      "answerIndex": 2,
+      "explanation": "used to do で「以前はよく〜したものだ（今はしない）」。be used to -ing（〜に慣れている）と区別しよう。"
+    },
+    {
+      "id": "en04_018",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "You (   ) better see a doctor.",
+      "choices": [
+        "have",
+        "would",
+        "should",
+        "had"
+      ],
+      "answerIndex": 3,
+      "explanation": "had better + 動詞の原形 で「〜したほうがよい」。"
+    },
+    {
+      "id": "en04_019",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I wish I (   ) speak French.",
+      "choices": [
+        "could",
+        "can",
+        "will",
+        "am able"
+      ],
+      "answerIndex": 0,
+      "explanation": "I wish + 仮定法過去で「〜できればいいのに」。can の過去形 could を使う。"
+    },
+    {
+      "id": "en04_020",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "If I (   ) you, I would take the train.",
+      "choices": [
+        "am",
+        "were",
+        "will be",
+        "have been"
+      ],
+      "answerIndex": 1,
+      "explanation": "現在の事実と反対の仮定（仮定法過去）では、be 動詞は主語に関係なく were が基本。"
+    },
+    {
+      "id": "en04_021",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "She talks as if she (   ) everything.",
+      "choices": [
+        "knows",
+        "has known",
+        "knew",
+        "will know"
+      ],
+      "answerIndex": 2,
+      "explanation": "as if + 仮定法過去で「まるで〜であるかのように」。"
+    },
+    {
+      "id": "en04_022",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "If you (   ) to win the lottery, what would you do?",
+      "choices": [
+        "are",
+        "will",
+        "have",
+        "were"
+      ],
+      "answerIndex": 3,
+      "explanation": "If S were to do は「万一〜するとしたら」と、起こりそうにない未来を仮定する。"
+    },
+    {
+      "id": "en04_023",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) I had more free time!",
+      "choices": [
+        "If only",
+        "Unless",
+        "Even",
+        "As if"
+      ],
+      "answerIndex": 0,
+      "explanation": "If only + 仮定法で「〜でありさえすればなあ」と強い願望を表す。"
+    },
+    {
+      "id": "en04_024",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "It is high time you (   ) to bed.",
+      "choices": [
+        "go",
+        "will go",
+        "going",
+        "went"
+      ],
+      "answerIndex": 3,
+      "explanation": "It is high time + S + 過去形 で「もう〜してもいいころだ」。"
     }
   ]
 }

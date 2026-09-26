@@ -2,23 +2,153 @@
   "setId": "english_stage_02",
   "worldId": "english",
   "origin": "original",
-  "version": 1,
+  "version": 2,
   "questions": [
     {
       "id": "en02_001",
-      "category": "partOfSpeech",
-      "prompt": "次のうち「名詞」はどれ？",
+      "category": "meaning",
+      "prompt": "「avoid」の意味は？",
       "choices": [
-        "danger",
-        "dangerous",
-        "endanger",
-        "dangerously"
+        "許す",
+        "避ける",
+        "届く",
+        "要求する"
       ],
-      "answerIndex": 0,
-      "explanation": "danger（名詞）→ dangerous（形容詞）→ endanger（危険にさらす・動詞）→ dangerously（副詞）。"
+      "answerIndex": 1,
+      "explanation": "avoid は「避ける」。後ろには動名詞をとる（avoid -ing）。"
     },
     {
       "id": "en02_002",
+      "category": "meaning",
+      "prompt": "「allow」の意味は？",
+      "choices": [
+        "断る",
+        "命じる",
+        "許す",
+        "疑う"
+      ],
+      "answerIndex": 2,
+      "explanation": "allow + 人 + to do で「人が〜するのを許す」。"
+    },
+    {
+      "id": "en02_003",
+      "category": "meaning",
+      "prompt": "「suggest」の意味は？",
+      "choices": [
+        "提案する",
+        "主張する",
+        "後悔する",
+        "期待する"
+      ],
+      "answerIndex": 0,
+      "explanation": "suggest は「提案する；それとなく示す」。"
+    },
+    {
+      "id": "en02_004",
+      "category": "meaning",
+      "prompt": "「prepare」の意味は？",
+      "choices": [
+        "修理する",
+        "比べる",
+        "守る",
+        "準備する"
+      ],
+      "answerIndex": 3,
+      "explanation": "prepare for 〜 で「〜の準備をする」。"
+    },
+    {
+      "id": "en02_005",
+      "category": "meaning",
+      "prompt": "「opinion」の意味は？",
+      "choices": [
+        "機会",
+        "意見",
+        "義務",
+        "経験"
+      ],
+      "answerIndex": 1,
+      "explanation": "opinion は「意見」。in my opinion（私の意見では）。"
+    },
+    {
+      "id": "en02_006",
+      "category": "meaning",
+      "prompt": "「purpose」の意味は？",
+      "choices": [
+        "結果",
+        "方法",
+        "目的",
+        "理由"
+      ],
+      "answerIndex": 2,
+      "explanation": "purpose は「目的」。on purpose で「わざと」。"
+    },
+    {
+      "id": "en02_007",
+      "category": "meaning",
+      "prompt": "「ancient」の意味は？",
+      "choices": [
+        "古代の",
+        "現代の",
+        "遠い",
+        "正式な"
+      ],
+      "answerIndex": 0,
+      "explanation": "ancient は「古代の、大昔の」。反対は modern。"
+    },
+    {
+      "id": "en02_008",
+      "category": "meaning",
+      "prompt": "「necessary」の意味は？",
+      "choices": [
+        "可能な",
+        "便利な",
+        "危険な",
+        "必要な"
+      ],
+      "answerIndex": 3,
+      "explanation": "necessary は「必要な」。名詞は necessity。"
+    },
+    {
+      "id": "en02_009",
+      "category": "meaning",
+      "prompt": "「realize」の意味は？",
+      "choices": [
+        "忘れる",
+        "気づく",
+        "信じる",
+        "断る"
+      ],
+      "answerIndex": 1,
+      "explanation": "realize は「気づく、悟る；実現する」。"
+    },
+    {
+      "id": "en02_010",
+      "category": "meaning",
+      "prompt": "「familiar」の意味は？",
+      "choices": [
+        "見慣れない",
+        "珍しい",
+        "なじみのある",
+        "正直な"
+      ],
+      "answerIndex": 2,
+      "explanation": "be familiar with 〜 で「〜をよく知っている」。"
+    },
+    {
+      "id": "en02_011",
+      "category": "partOfSpeech",
+      "prompt": "次のうち「名詞」はどれ？",
+      "choices": [
+        "able",
+        "ability",
+        "enable",
+        "ably"
+      ],
+      "answerIndex": 1,
+      "explanation": "able（形容詞）→ ability（名詞）→ enable（可能にする・動詞）→ ably（副詞）。"
+    },
+    {
+      "id": "en02_012",
       "category": "partOfSpeech",
       "prompt": "次のうち「形容詞」はどれ？",
       "choices": [
@@ -31,180 +161,172 @@
       "explanation": "-ful は形容詞を作る語尾。beautify は「美しくする」という動詞。"
     },
     {
-      "id": "en02_003",
-      "category": "partOfSpeech",
-      "prompt": "次のうち「動詞」はどれ？",
-      "choices": [
-        "strong",
-        "strength",
-        "strengthen",
-        "strongly"
-      ],
-      "answerIndex": 2,
-      "explanation": "strength（名詞）+ -en で「強くする」という動詞になる。"
-    },
-    {
-      "id": "en02_004",
-      "category": "meaning",
-      "prompt": "「improve」の意味は？",
-      "choices": [
-        "証明する",
-        "改善する",
-        "移動する",
-        "保護する"
-      ],
-      "answerIndex": 1,
-      "explanation": "improve = 改善する、上達する。証明する は prove。"
-    },
-    {
-      "id": "en02_005",
-      "category": "meaning",
-      "prompt": "「certain」の意味は？",
-      "choices": [
-        "危険な",
-        "静かな",
-        "確かな",
-        "高価な"
-      ],
-      "answerIndex": 2,
-      "explanation": "certain = 確かな、確信している。be certain of 〜（〜を確信している）。"
-    },
-    {
-      "id": "en02_006",
-      "category": "meaning",
-      "prompt": "「disappear」の意味は？",
-      "choices": [
-        "消える",
-        "現れる",
-        "失望させる",
-        "反対する"
-      ],
-      "answerIndex": 0,
-      "explanation": "dis- は反対の意味を表す。appear（現れる）→ disappear（消える）。失望させる は disappoint。"
-    },
-    {
-      "id": "en02_007",
-      "category": "meaning",
-      "prompt": "「wisdom」の意味は？",
-      "choices": [
-        "自由",
-        "勇気",
-        "知恵",
-        "富"
-      ],
-      "answerIndex": 2,
-      "explanation": "wisdom = 知恵。形容詞 wise（賢い）の名詞形。"
-    },
-    {
-      "id": "en02_008",
-      "category": "meaning",
-      "prompt": "「employ」の意味は？",
-      "choices": [
-        "楽しむ",
-        "雇う",
-        "空にする",
-        "説明する"
-      ],
-      "answerIndex": 1,
-      "explanation": "employ = 雇う。employer（雇い主）、employee（従業員）もセットで。"
-    },
-    {
-      "id": "en02_009",
-      "category": "usage",
-      "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "He is used to (   ) up early.",
-      "choices": [
-        "get",
-        "getting",
-        "got",
-        "be gotten"
-      ],
-      "answerIndex": 1,
-      "explanation": "be used to -ing で「〜するのに慣れている」。used to do（以前は〜したものだ）と区別しよう。"
-    },
-    {
-      "id": "en02_010",
-      "category": "usage",
-      "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "This is the house (   ) my grandfather built.",
-      "choices": [
-        "where",
-        "which",
-        "what",
-        "who"
-      ],
-      "answerIndex": 1,
-      "explanation": "built の目的語が欠けているので関係代名詞 which。where は後ろが完全な文のときに使う。"
-    },
-    {
-      "id": "en02_011",
-      "category": "usage",
-      "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "I don't know (   ) to do next.",
-      "choices": [
-        "that",
-        "why",
-        "if",
-        "what"
-      ],
-      "answerIndex": 3,
-      "explanation": "what to do で「何をすべきか」。疑問詞 + to 不定詞の形。"
-    },
-    {
-      "id": "en02_012",
-      "category": "usage",
-      "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "There are (   ) students in the classroom than yesterday.",
-      "choices": [
-        "many",
-        "much",
-        "most",
-        "more"
-      ],
-      "answerIndex": 3,
-      "explanation": "than があるので比較級。many の比較級は more。"
-    },
-    {
       "id": "en02_013",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "She has (   ) been to Kyoto.",
+      "sentence": "I enjoy (   ) to music.",
       "choices": [
-        "ever",
-        "never",
-        "yet",
-        "still"
+        "to listen",
+        "listen",
+        "listening",
+        "listened"
       ],
-      "answerIndex": 1,
-      "explanation": "have never been to 〜 で「〜に行ったことがない」。ever は疑問文・否定文で使う。"
+      "answerIndex": 2,
+      "explanation": "enjoy は目的語に動名詞だけをとる。to 不定詞は不可。"
     },
     {
       "id": "en02_014",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "Please remember (   ) the door when you leave.",
+      "sentence": "I want (   ) abroad someday.",
       "choices": [
-        "lock",
-        "locking",
-        "to lock",
-        "locked"
+        "studying",
+        "to study",
+        "study",
+        "studied"
       ],
-      "answerIndex": 2,
-      "explanation": "remember to do は「忘れずに〜する」（これからのこと）。remember -ing は「〜したことを覚えている」。"
+      "answerIndex": 1,
+      "explanation": "want は目的語に to 不定詞をとる。動名詞は不可。"
     },
     {
       "id": "en02_015",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "The meeting was put (   ) until next week.",
+      "sentence": "I'm looking forward to (   ) you again.",
       "choices": [
-        "on",
-        "off",
-        "up",
-        "out"
+        "see",
+        "seeing",
+        "saw",
+        "have seen"
       ],
       "answerIndex": 1,
-      "explanation": "put off で「延期する」（= postpone）。"
+      "explanation": "look forward to の to は前置詞。前置詞の後ろは名詞か動名詞。"
+    },
+    {
+      "id": "en02_016",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Please remember (   ) the door when you leave.",
+      "choices": [
+        "locking",
+        "lock",
+        "locked",
+        "to lock"
+      ],
+      "answerIndex": 3,
+      "explanation": "remember to do は「忘れずに〜する（これから）」。remember -ing は「〜したことを覚えている（過去）」。"
+    },
+    {
+      "id": "en02_017",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I remember (   ) him at the party last year.",
+      "choices": [
+        "meeting",
+        "to meet",
+        "meet",
+        "met"
+      ],
+      "answerIndex": 0,
+      "explanation": "last year のことなので「会ったことを覚えている」。過去のことは remember -ing。"
+    },
+    {
+      "id": "en02_018",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He went to the library (   ) for the test.",
+      "choices": [
+        "studying",
+        "study",
+        "to study",
+        "studied"
+      ],
+      "answerIndex": 2,
+      "explanation": "「〜するために」（目的）は不定詞の副詞的用法。"
+    },
+    {
+      "id": "en02_019",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I have a lot of homework (   ).",
+      "choices": [
+        "doing",
+        "to do",
+        "done",
+        "do"
+      ],
+      "answerIndex": 1,
+      "explanation": "「やるべき宿題」。不定詞が後ろから名詞を修飾する（形容詞的用法）。"
+    },
+    {
+      "id": "en02_020",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "It was careless (   ) you to leave the door open.",
+      "choices": [
+        "for",
+        "to",
+        "with",
+        "of"
+      ],
+      "answerIndex": 3,
+      "explanation": "careless など人の性質を表す形容詞のとき、意味上の主語は of 〜 で表す。"
+    },
+    {
+      "id": "en02_021",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) the news, she began to cry.",
+      "choices": [
+        "Heard",
+        "Hearing",
+        "To hear",
+        "Hear"
+      ],
+      "answerIndex": 1,
+      "explanation": "「その知らせを聞いて」。主語 she が「聞く」側なので現在分詞で始まる分詞構文。"
+    },
+    {
+      "id": "en02_022",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The window (   ) by Tom is still open.",
+      "choices": [
+        "broken",
+        "breaking",
+        "broke",
+        "break"
+      ],
+      "answerIndex": 0,
+      "explanation": "窓は「割られた」側なので過去分詞 broken。by Tom と合わせて後ろから修飾。"
+    },
+    {
+      "id": "en02_023",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I heard my name (   ).",
+      "choices": [
+        "calling",
+        "call",
+        "to call",
+        "called"
+      ],
+      "answerIndex": 3,
+      "explanation": "名前は「呼ばれる」側なので、hear + O + 過去分詞。"
+    },
+    {
+      "id": "en02_024",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "She was listening to music with her eyes (   ).",
+      "choices": [
+        "closing",
+        "close",
+        "closed",
+        "to close"
+      ],
+      "answerIndex": 2,
+      "explanation": "with + O + 分詞 で付帯状況。目は「閉じられた」状態なので過去分詞。"
     }
   ]
 }

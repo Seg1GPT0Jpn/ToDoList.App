@@ -2,10 +2,140 @@
   "setId": "english_stage_06",
   "worldId": "english",
   "origin": "original",
-  "version": 1,
+  "version": 2,
   "questions": [
     {
       "id": "en06_001",
+      "category": "meaning",
+      "prompt": "「alleviate」の意味は？",
+      "choices": [
+        "悪化させる",
+        "和らげる",
+        "排除する",
+        "延長する"
+      ],
+      "answerIndex": 1,
+      "explanation": "alleviate は「（苦痛・問題などを）和らげる」。"
+    },
+    {
+      "id": "en06_002",
+      "category": "meaning",
+      "prompt": "「plausible」の意味は？",
+      "choices": [
+        "不可能な",
+        "頑固な",
+        "もっともらしい",
+        "表面的な"
+      ],
+      "answerIndex": 2,
+      "explanation": "plausible は「もっともらしい、妥当に思える」。"
+    },
+    {
+      "id": "en06_003",
+      "category": "meaning",
+      "prompt": "「deliberate」の意味は？",
+      "choices": [
+        "故意の",
+        "偶然の",
+        "寛大な",
+        "臆病な"
+      ],
+      "answerIndex": 0,
+      "explanation": "deliberate は「故意の；慎重な」。副詞 deliberately（わざと）。"
+    },
+    {
+      "id": "en06_004",
+      "category": "meaning",
+      "prompt": "「inherent」の意味は？",
+      "choices": [
+        "一時的な",
+        "外部の",
+        "人工的な",
+        "本来備わっている"
+      ],
+      "answerIndex": 3,
+      "explanation": "inherent は「本来備わっている、固有の」。"
+    },
+    {
+      "id": "en06_005",
+      "category": "meaning",
+      "prompt": "「comprehend」の意味は？",
+      "choices": [
+        "構成する",
+        "理解する",
+        "補う",
+        "比較する"
+      ],
+      "answerIndex": 1,
+      "explanation": "comprehend は「理解する」。名詞は comprehension。"
+    },
+    {
+      "id": "en06_006",
+      "category": "meaning",
+      "prompt": "「hinder」の意味は？",
+      "choices": [
+        "促す",
+        "助ける",
+        "妨げる",
+        "隠す"
+      ],
+      "answerIndex": 2,
+      "explanation": "hinder は「妨げる、じゃまする」。"
+    },
+    {
+      "id": "en06_007",
+      "category": "meaning",
+      "prompt": "「obscure」の意味は？",
+      "choices": [
+        "わかりにくい",
+        "明白な",
+        "有名な",
+        "正確な"
+      ],
+      "answerIndex": 0,
+      "explanation": "obscure は「わかりにくい、不明瞭な；無名の」。"
+    },
+    {
+      "id": "en06_008",
+      "category": "meaning",
+      "prompt": "「compatible」の意味は？",
+      "choices": [
+        "対立する",
+        "無関係な",
+        "比較できる",
+        "両立できる"
+      ],
+      "answerIndex": 3,
+      "explanation": "be compatible with 〜 で「〜と両立できる、相性がよい」。"
+    },
+    {
+      "id": "en06_009",
+      "category": "meaning",
+      "prompt": "「flourish」の意味は？",
+      "choices": [
+        "衰える",
+        "繁栄する",
+        "遅れる",
+        "逃げる"
+      ],
+      "answerIndex": 1,
+      "explanation": "flourish は「繁栄する、栄える」。"
+    },
+    {
+      "id": "en06_010",
+      "category": "meaning",
+      "prompt": "「spontaneous」の意味は？",
+      "choices": [
+        "強制的な",
+        "慎重な",
+        "自発的な",
+        "定期的な"
+      ],
+      "answerIndex": 2,
+      "explanation": "spontaneous は「自発的な、自然に起こる」。"
+    },
+    {
+      "id": "en06_011",
       "category": "partOfSpeech",
       "prompt": "次のうち「動詞」はどれ？",
       "choices": [
@@ -18,7 +148,7 @@
       "explanation": "-ize は動詞を作る語尾。sympathize with 〜 で「〜に同情する」。"
     },
     {
-      "id": "en06_002",
+      "id": "en06_012",
       "category": "partOfSpeech",
       "prompt": "次のうち「形容詞」はどれ？",
       "choices": [
@@ -31,101 +161,161 @@
       "explanation": "considerate = 思いやりのある。considerable（かなりの）とは意味が違うので注意。"
     },
     {
-      "id": "en06_003",
-      "category": "meaning",
-      "prompt": "「undermine」の意味は？",
+      "id": "en06_013",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "No other student in the class runs (   ) than Ken.",
       "choices": [
-        "過小評価する",
-        "強調する",
-        "弱体化させる",
-        "下線を引く"
-      ],
-      "answerIndex": 2,
-      "explanation": "undermine = （徐々に）弱体化させる、損なう。過小評価する は underestimate。"
-    },
-    {
-      "id": "en06_004",
-      "category": "meaning",
-      "prompt": "「substantial」の意味は？",
-      "choices": [
-        "表面的な",
-        "かなりの",
-        "代わりの",
-        "主観的な"
+        "fast",
+        "faster",
+        "fastest",
+        "more fast"
       ],
       "answerIndex": 1,
-      "explanation": "substantial = かなりの、相当な。代わりの は substitute。"
+      "explanation": "No other + 単数名詞 + 比較級 + than 〜 で最上級と同じ意味になる。"
     },
     {
-      "id": "en06_005",
-      "category": "meaning",
-      "prompt": "「contemporary」の意味は？",
+      "id": "en06_014",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Nothing is (   ) important than your health.",
       "choices": [
-        "一時的な",
-        "永続的な",
-        "伝統的な",
-        "現代の"
-      ],
-      "answerIndex": 3,
-      "explanation": "contemporary = 現代の、同時代の。一時的な は temporary。"
-    },
-    {
-      "id": "en06_006",
-      "category": "meaning",
-      "prompt": "「persuade」の意味は？",
-      "choices": [
-        "説得する",
-        "追求する",
-        "推測する",
-        "主張する"
+        "more",
+        "most",
+        "as",
+        "so"
       ],
       "answerIndex": 0,
-      "explanation": "persuade + 人 + to do で「人を説得して〜させる」。"
+      "explanation": "Nothing is 比較級 than 〜 で「〜ほど…なものはない」。"
     },
     {
-      "id": "en06_007",
+      "id": "en06_015",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This bridge is (   ) longer than that one.",
+      "choices": [
+        "very",
+        "more",
+        "much",
+        "most"
+      ],
+      "answerIndex": 2,
+      "explanation": "比較級を強めるのは much / far。very は比較級には使わない。"
+    },
+    {
+      "id": "en06_016",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The (   ) you practice, the better you will play.",
+      "choices": [
+        "most",
+        "more",
+        "much",
+        "many"
+      ],
+      "answerIndex": 1,
+      "explanation": "the + 比較級 〜, the + 比較級 … で「〜すればするほど…」。"
+    },
+    {
+      "id": "en06_017",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He is not so much a scholar (   ) a writer.",
+      "choices": [
+        "than",
+        "but",
+        "so",
+        "as"
+      ],
+      "answerIndex": 3,
+      "explanation": "not so much A as B で「A というよりむしろ B」。"
+    },
+    {
+      "id": "en06_018",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I have no (   ) than 1,000 yen with me.",
+      "choices": [
+        "more",
+        "much",
+        "most",
+        "many"
+      ],
+      "answerIndex": 0,
+      "explanation": "no more than 〜 で「〜しか（ない）」（= only）。"
+    },
+    {
+      "id": "en06_019",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Little (   ) that he was being watched.",
+      "choices": [
+        "he knew",
+        "did he know",
+        "he did know",
+        "knew he"
+      ],
+      "answerIndex": 1,
+      "explanation": "否定の意味をもつ little が文頭に来ると、疑問文と同じ語順の倒置になる。"
+    },
+    {
+      "id": "en06_020",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Never (   ) such a beautiful sunset.",
+      "choices": [
+        "I have seen",
+        "I saw",
+        "saw I",
+        "have I seen"
+      ],
+      "answerIndex": 3,
+      "explanation": "否定語 never が文頭に来ると倒置が起こる。"
+    },
+    {
+      "id": "en06_021",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Only after the exam (   ) how important sleep was.",
+      "choices": [
+        "did I understand",
+        "I understood",
+        "understood I",
+        "I did understand"
+      ],
+      "answerIndex": 0,
+      "explanation": "Only + 副詞句が文頭に来ると、後ろの主節は倒置になる。"
+    },
+    {
+      "id": "en06_022",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "On the top of the hill (   ) an old castle.",
+      "choices": [
+        "it stands",
+        "standing",
+        "stands",
+        "does it stand"
+      ],
+      "answerIndex": 2,
+      "explanation": "場所を表す語句が文頭に来ると「動詞 + 主語」の語順になる。疑問文の形にはならない。"
+    },
+    {
+      "id": "en06_023",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
       "sentence": "Were it not for water, no living things (   ) exist.",
       "choices": [
         "can",
         "will",
-        "could",
-        "may"
+        "may",
+        "could"
       ],
-      "answerIndex": 2,
+      "answerIndex": 3,
       "explanation": "Were it not for 〜（= If it were not for 〜）は仮定法過去なので、主節は助動詞の過去形。"
     },
     {
-      "id": "en06_008",
-      "category": "usage",
-      "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "Not until he lost his health (   ) its value.",
-      "choices": [
-        "he realized",
-        "did he realize",
-        "he did realize",
-        "realized he"
-      ],
-      "answerIndex": 1,
-      "explanation": "Not until 〜 が文頭に来ると倒置が起こる。「〜して初めて…した」。"
-    },
-    {
-      "id": "en06_009",
-      "category": "usage",
-      "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "The problem is not (   ) difficult as it looks.",
-      "choices": [
-        "such",
-        "too",
-        "so",
-        "very"
-      ],
-      "answerIndex": 2,
-      "explanation": "not so（as）+ 原級 + as 〜 で「〜ほど…ではない」。"
-    },
-    {
-      "id": "en06_010",
+      "id": "en06_024",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
       "sentence": "It is essential that every student (   ) the rules.",
@@ -137,76 +327,6 @@
       ],
       "answerIndex": 0,
       "explanation": "essential や necessary の後の that 節では、動詞は原形（should の省略）になる。"
-    },
-    {
-      "id": "en06_011",
-      "category": "usage",
-      "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "(   ) you need any help, please let me know.",
-      "choices": [
-        "Would",
-        "Should",
-        "Could",
-        "Might"
-      ],
-      "answerIndex": 1,
-      "explanation": "If you should need の If を省略した倒置。「万一〜なら」。"
-    },
-    {
-      "id": "en06_012",
-      "category": "usage",
-      "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "He is the last person (   ) tell a lie.",
-      "choices": [
-        "who",
-        "that",
-        "for",
-        "to"
-      ],
-      "answerIndex": 3,
-      "explanation": "the last person to do で「最も〜しそうにない人」。"
-    },
-    {
-      "id": "en06_013",
-      "category": "usage",
-      "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "I cannot help (   ) when I see this photo.",
-      "choices": [
-        "laugh",
-        "laughing",
-        "to laugh",
-        "laughed"
-      ],
-      "answerIndex": 1,
-      "explanation": "cannot help -ing で「〜せずにはいられない」。"
-    },
-    {
-      "id": "en06_014",
-      "category": "usage",
-      "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "What do you say (   ) a walk?",
-      "choices": [
-        "to take",
-        "take",
-        "taking",
-        "to taking"
-      ],
-      "answerIndex": 3,
-      "explanation": "What do you say to -ing? で「〜するのはどうですか」。to は前置詞。"
-    },
-    {
-      "id": "en06_015",
-      "category": "usage",
-      "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "She spent all her money, (   ) made her parents angry.",
-      "choices": [
-        "what",
-        "that",
-        "which",
-        "it"
-      ],
-      "answerIndex": 2,
-      "explanation": "前の文全体を先行詞にする非制限用法の which。カンマの後に that は使えない。"
     }
   ]
 }

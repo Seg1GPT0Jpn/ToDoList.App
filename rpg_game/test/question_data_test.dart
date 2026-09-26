@@ -11,11 +11,16 @@ void main() {
       group(stage.name, () {
         final set = loadSet(stage.questionSetId);
 
-        test('10〜15問あり、自作（original）である', () {
-          expect(set.questions.length, inInclusiveRange(10, 15));
+        test('20〜30問あり、自作（original）である', () {
+          expect(set.questions.length, inInclusiveRange(20, 30));
           expect(set.origin, QuestionOrigin.original);
           expect(set.worldId, RpgCatalog.englishWorldId);
           expect(set.setId, stage.questionSetId);
+        });
+
+        test('文法テーマと単語レベルが設定されている', () {
+          expect(stage.grammarTheme, isNotEmpty);
+          expect(stage.vocabLevel, isNotEmpty);
         });
 
         test('品詞・意味・語法がすべて含まれる', () {

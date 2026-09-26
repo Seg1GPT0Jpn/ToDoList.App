@@ -2,10 +2,140 @@
   "setId": "english_stage_05",
   "worldId": "english",
   "origin": "original",
-  "version": 1,
+  "version": 2,
   "questions": [
     {
       "id": "en05_001",
+      "category": "meaning",
+      "prompt": "「deteriorate」の意味は？",
+      "choices": [
+        "悪化する",
+        "決定する",
+        "妨げる",
+        "飾る"
+      ],
+      "answerIndex": 0,
+      "explanation": "deteriorate は「悪化する」（= get worse）。"
+    },
+    {
+      "id": "en05_002",
+      "category": "meaning",
+      "prompt": "「ambiguous」の意味は？",
+      "choices": [
+        "野心的な",
+        "豊富な",
+        "あいまいな",
+        "明白な"
+      ],
+      "answerIndex": 2,
+      "explanation": "ambiguous は「あいまいな、2通りに解釈できる」。野心的なは ambitious。"
+    },
+    {
+      "id": "en05_003",
+      "category": "meaning",
+      "prompt": "「compensate」の意味は？",
+      "choices": [
+        "競争する",
+        "埋め合わせる",
+        "完成する",
+        "比較する"
+      ],
+      "answerIndex": 1,
+      "explanation": "compensate for 〜 で「〜を償う、埋め合わせる」。"
+    },
+    {
+      "id": "en05_004",
+      "category": "meaning",
+      "prompt": "「anticipate」の意味は？",
+      "choices": [
+        "参加する",
+        "感謝する",
+        "延期する",
+        "予想する"
+      ],
+      "answerIndex": 3,
+      "explanation": "anticipate は「予想する、見越す」。"
+    },
+    {
+      "id": "en05_005",
+      "category": "meaning",
+      "prompt": "「contemporary」の意味は？",
+      "choices": [
+        "一時的な",
+        "永続的な",
+        "現代の",
+        "伝統的な"
+      ],
+      "answerIndex": 2,
+      "explanation": "contemporary は「現代の；同時代の」。一時的なは temporary。"
+    },
+    {
+      "id": "en05_006",
+      "category": "meaning",
+      "prompt": "「undermine」の意味は？",
+      "choices": [
+        "過小評価する",
+        "弱める",
+        "強調する",
+        "下線を引く"
+      ],
+      "answerIndex": 1,
+      "explanation": "undermine は「（徐々に）弱める、損なう」。過小評価するは underestimate。"
+    },
+    {
+      "id": "en05_007",
+      "category": "meaning",
+      "prompt": "「substantial」の意味は？",
+      "choices": [
+        "かなりの",
+        "表面的な",
+        "代わりの",
+        "主観的な"
+      ],
+      "answerIndex": 0,
+      "explanation": "substantial は「かなりの、相当な」。代わりのは substitute。"
+    },
+    {
+      "id": "en05_008",
+      "category": "meaning",
+      "prompt": "「hesitate」の意味は？",
+      "choices": [
+        "急ぐ",
+        "主張する",
+        "感謝する",
+        "ためらう"
+      ],
+      "answerIndex": 3,
+      "explanation": "hesitate to do で「〜するのをためらう」。"
+    },
+    {
+      "id": "en05_009",
+      "category": "meaning",
+      "prompt": "「acquire」の意味は？",
+      "choices": [
+        "要求する",
+        "身につける",
+        "尋ねる",
+        "引退する"
+      ],
+      "answerIndex": 1,
+      "explanation": "acquire は「（知識・技能などを）身につける、獲得する」。要求するは require。"
+    },
+    {
+      "id": "en05_010",
+      "category": "meaning",
+      "prompt": "「vague」の意味は？",
+      "choices": [
+        "鮮やかな",
+        "正確な",
+        "漠然とした",
+        "巨大な"
+      ],
+      "answerIndex": 2,
+      "explanation": "vague は「漠然とした、はっきりしない」。"
+    },
+    {
+      "id": "en05_011",
       "category": "partOfSpeech",
       "prompt": "次のうち「副詞」はどれ？",
       "choices": [
@@ -18,7 +148,7 @@
       "explanation": "accidental（形容詞）+ -ly で副詞 accidentally（偶然に）。"
     },
     {
-      "id": "en05_002",
+      "id": "en05_012",
       "category": "partOfSpeech",
       "prompt": "次のうち「名詞」はどれ？",
       "choices": [
@@ -31,60 +161,105 @@
       "explanation": "deep の名詞形は depth（深さ）。deepen は「深める」という動詞。"
     },
     {
-      "id": "en05_003",
-      "category": "meaning",
-      "prompt": "「compensate」の意味は？",
+      "id": "en05_013",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I have lived in this town (   ) 2015.",
       "choices": [
-        "競争する",
-        "補償する",
-        "完成する",
-        "比較する"
+        "for",
+        "since",
+        "during",
+        "by"
       ],
       "answerIndex": 1,
-      "explanation": "compensate for 〜 で「〜を償う、補う」。"
+      "explanation": "現在完了で「〜以来ずっと」と起点を表すのは since。for は期間（for ten years）。"
     },
     {
-      "id": "en05_004",
-      "category": "meaning",
-      "prompt": "「ambiguous」の意味は？",
+      "id": "en05_014",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "She has (   ) been to Kyoto.",
       "choices": [
-        "野心的な",
-        "豊富な",
-        "あいまいな",
-        "明白な"
+        "ever",
+        "yet",
+        "never",
+        "still"
       ],
       "answerIndex": 2,
-      "explanation": "ambiguous = あいまいな。野心的な は ambitious なので区別しよう。"
+      "explanation": "have never been to 〜 で「〜に行ったことがない」。ever は疑問文で使う。"
     },
     {
-      "id": "en05_005",
-      "category": "meaning",
-      "prompt": "「deteriorate」の意味は？",
+      "id": "en05_015",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "By the time you arrive, I (   ) my homework.",
       "choices": [
-        "悪化する",
-        "決定する",
-        "妨げる",
-        "飾る"
+        "have finished",
+        "finished",
+        "had finished",
+        "will have finished"
+      ],
+      "answerIndex": 3,
+      "explanation": "未来のある時点（あなたが着くとき）までの完了なので未来完了。"
+    },
+    {
+      "id": "en05_016",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "When I got to the station, the train (   ).",
+      "choices": [
+        "had already left",
+        "has already left",
+        "already leaves",
+        "is leaving"
       ],
       "answerIndex": 0,
-      "explanation": "deteriorate = 悪化する（= get worse）。"
+      "explanation": "駅に着いた（過去）より前に出発していたので過去完了。"
     },
     {
-      "id": "en05_006",
+      "id": "en05_017",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He said that he (   ) his wallet the day before.",
+      "choices": [
+        "has lost",
+        "had lost",
+        "loses",
+        "will lose"
+      ],
+      "answerIndex": 1,
+      "explanation": "「言った」より前に財布をなくしているので過去完了（大過去）。"
+    },
+    {
+      "id": "en05_018",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Our teacher told us that water (   ) at 100℃.",
+      "choices": [
+        "boils",
+        "boiled",
+        "had boiled",
+        "was boiling"
+      ],
+      "answerIndex": 0,
+      "explanation": "いつでも成り立つ事実は、時制の一致を受けず現在形のままにするのが基本。"
+    },
+    {
+      "id": "en05_019",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
       "sentence": "If it (   ) for your help, I would have failed.",
       "choices": [
         "were not",
         "is not",
-        "had not been",
-        "has not been"
+        "has not been",
+        "had not been"
       ],
-      "answerIndex": 2,
+      "answerIndex": 3,
       "explanation": "過去の事実と反対の仮定（仮定法過去完了）なので If it had not been for 〜（〜がなかったら）。"
     },
     {
-      "id": "en05_007",
+      "id": "en05_020",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
       "sentence": "(   ) the weather been fine, we would have gone out.",
@@ -98,116 +273,60 @@
       "explanation": "If the weather had been fine の If を省略すると、Had が文頭に出る倒置になる。"
     },
     {
-      "id": "en05_008",
+      "id": "en05_021",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "It is high time you (   ) to bed.",
+      "sentence": "I wish I (   ) harder last year.",
       "choices": [
-        "go",
-        "will go",
-        "going",
-        "went"
-      ],
-      "answerIndex": 3,
-      "explanation": "It is high time + S + 過去形 で「もう〜してもいいころだ」。"
-    },
-    {
-      "id": "en05_009",
-      "category": "usage",
-      "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "This is the town (   ) I visited last year.",
-      "choices": [
-        "where",
-        "in which",
-        "which",
-        "when"
+        "studied",
+        "have studied",
+        "had studied",
+        "study"
       ],
       "answerIndex": 2,
-      "explanation": "visit は他動詞で目的語が欠けているので関係代名詞 which。where は使えない。"
+      "explanation": "過去（last year）の事実と反対の願望なので I wish + 過去完了。"
     },
     {
-      "id": "en05_010",
+      "id": "en05_022",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "This is the town (   ) I was born.",
+      "sentence": "(   ) your advice, I would have made a big mistake.",
       "choices": [
-        "which",
-        "where",
-        "what",
-        "that"
-      ],
-      "answerIndex": 1,
-      "explanation": "I was born は完全な文なので関係副詞 where（= in which）。"
-    },
-    {
-      "id": "en05_011",
-      "category": "usage",
-      "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "He speaks English as fluently (   ) a native speaker.",
-      "choices": [
-        "than",
-        "like",
-        "so",
-        "as"
+        "With",
+        "For",
+        "By",
+        "Without"
       ],
       "answerIndex": 3,
-      "explanation": "as + 原級 + as で「〜と同じくらい…」。"
+      "explanation": "Without 〜 で「〜がなかったら」（= If it had not been for 〜）。"
     },
     {
-      "id": "en05_012",
+      "id": "en05_023",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "The number of students (   ) increasing.",
+      "sentence": "She seems (   ) ill last week.",
       "choices": [
-        "is",
-        "are",
-        "be",
-        "have"
-      ],
-      "answerIndex": 0,
-      "explanation": "the number of 〜（〜の数）は単数扱い。a number of 〜（たくさんの〜）は複数扱い。"
-    },
-    {
-      "id": "en05_013",
-      "category": "usage",
-      "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "(   ) from the plane, the island looked like a heart.",
-      "choices": [
-        "Seeing",
-        "Seen",
-        "To see",
-        "Having seen"
+        "to be",
+        "to have been",
+        "being",
+        "have been"
       ],
       "answerIndex": 1,
-      "explanation": "島は「見られる」側なので過去分詞で始まる分詞構文（Seen）。"
+      "explanation": "「今そう見える」のに「病気だった」のは過去のことなので、完了不定詞 to have been。"
     },
     {
-      "id": "en05_014",
+      "id": "en05_024",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "I couldn't make myself (   ) in English.",
+      "sentence": "I (   ) for two hours when she finally called.",
       "choices": [
-        "understand",
-        "to understand",
-        "understanding",
-        "understood"
+        "have been waiting",
+        "was waited",
+        "am waiting",
+        "had been waiting"
       ],
       "answerIndex": 3,
-      "explanation": "make oneself understood で「自分の言うことを分かってもらう」。自分が「理解される」ので過去分詞。"
-    },
-    {
-      "id": "en05_015",
-      "category": "usage",
-      "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "No other mountain in Japan is (   ) than Mt. Fuji.",
-      "choices": [
-        "high",
-        "higher",
-        "highest",
-        "the highest"
-      ],
-      "answerIndex": 1,
-      "explanation": "No other + 単数名詞 + 比較級 + than 〜 で、最上級と同じ意味を表す。"
+      "explanation": "電話があった（過去）時点までずっと待ち続けていたので、過去完了進行形。"
     }
   ]
 }

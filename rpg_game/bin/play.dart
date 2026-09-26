@@ -82,6 +82,7 @@ RpgProgress _playBattle(
 
   stdout.writeln('== ${stage.order}. ${stage.name} ==');
   stdout.writeln('${stage.enemy.name} があらわれた！ ${stage.enemy.description}');
+  stdout.writeln('（文法: ${stage.grammarTheme} ／ 単語: ${stage.vocabLevel}）');
   stdout.writeln('（制限時間 ${stage.timeLimitSeconds} 秒。1〜4 を入力。それ以外は時間切れ扱い）\n');
 
   while (!battle.isOver) {

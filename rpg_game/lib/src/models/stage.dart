@@ -12,6 +12,8 @@ class StageDef {
     required this.expReward,
     this.timeLimitSeconds = 20,
     this.recommendedLevel = 1,
+    this.grammarTheme = '',
+    this.vocabLevel = '',
   });
 
   final String id;
@@ -31,4 +33,10 @@ class StageDef {
   /// 1問あたりの制限時間（秒）
   final int timeLimitSeconds;
   final int recommendedLevel;
+
+  /// このステージで扱う文法の単元（例: 準動詞）
+  final String grammarTheme;
+
+  /// 単語の難しさの目安（例: 基礎、標準、難関）
+  final String vocabLevel;
 }

@@ -219,7 +219,7 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
               ),
               const SizedBox(height: 4),
               Text(
-                '${enemy.description}\nHP ${enemy.maxHp}・推奨Lv${stage.recommendedLevel}・1問${stage.timeLimitSeconds}秒',
+                '${enemy.description}\n文法：${stage.grammarTheme}／単語：${stage.vocabLevel}\nHP ${enemy.maxHp}・推奨Lv${stage.recommendedLevel}・1問${stage.timeLimitSeconds}秒',
                 style: const TextStyle(
                   fontSize: 12,
                   color: TsuzuriColors.inkSoft,

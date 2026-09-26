@@ -2,23 +2,153 @@
   "setId": "english_stage_03",
   "worldId": "english",
   "origin": "original",
-  "version": 1,
+  "version": 2,
   "questions": [
     {
       "id": "en03_001",
-      "category": "partOfSpeech",
-      "prompt": "次のうち「名詞」はどれ？",
+      "category": "meaning",
+      "prompt": "「predict」の意味は？",
       "choices": [
-        "able",
-        "ability",
-        "enable",
-        "ably"
+        "保護する",
+        "予測する",
+        "生産する",
+        "防ぐ"
       ],
       "answerIndex": 1,
-      "explanation": "able（形容詞）→ ability（名詞）→ enable（可能にする・動詞）→ ably（副詞）。"
+      "explanation": "pre-（前に）+ dict（言う）で「予測する」。防ぐは prevent。"
     },
     {
       "id": "en03_002",
+      "category": "meaning",
+      "prompt": "「obvious」の意味は？",
+      "choices": [
+        "明らかな",
+        "複雑な",
+        "慎重な",
+        "退屈な"
+      ],
+      "answerIndex": 0,
+      "explanation": "obvious は「明らかな、明白な」。"
+    },
+    {
+      "id": "en03_003",
+      "category": "meaning",
+      "prompt": "「opportunity」の意味は？",
+      "choices": [
+        "意見",
+        "義務",
+        "反対",
+        "機会"
+      ],
+      "answerIndex": 3,
+      "explanation": "opportunity は「機会、好機」。chance とほぼ同じ意味。"
+    },
+    {
+      "id": "en03_004",
+      "category": "meaning",
+      "prompt": "「sufficient」の意味は？",
+      "choices": [
+        "効率的な",
+        "突然の",
+        "十分な",
+        "繊細な"
+      ],
+      "answerIndex": 2,
+      "explanation": "sufficient は「十分な」（= enough）。反対は insufficient。"
+    },
+    {
+      "id": "en03_005",
+      "category": "meaning",
+      "prompt": "「reduce」の意味は？",
+      "choices": [
+        "減らす",
+        "増やす",
+        "断る",
+        "延期する"
+      ],
+      "answerIndex": 0,
+      "explanation": "reduce は「減らす」。反対は increase。"
+    },
+    {
+      "id": "en03_006",
+      "category": "meaning",
+      "prompt": "「employ」の意味は？",
+      "choices": [
+        "楽しむ",
+        "雇う",
+        "空にする",
+        "説明する"
+      ],
+      "answerIndex": 1,
+      "explanation": "employ は「雇う；使う」。employer（雇い主）、employee（従業員）。"
+    },
+    {
+      "id": "en03_007",
+      "category": "meaning",
+      "prompt": "「disappear」の意味は？",
+      "choices": [
+        "現れる",
+        "失望させる",
+        "消える",
+        "反対する"
+      ],
+      "answerIndex": 2,
+      "explanation": "dis- は反対の意味。appear（現れる）→ disappear（消える）。失望させるは disappoint。"
+    },
+    {
+      "id": "en03_008",
+      "category": "meaning",
+      "prompt": "「consider」の意味は？",
+      "choices": [
+        "支配する",
+        "提案する",
+        "修理する",
+        "よく考える"
+      ],
+      "answerIndex": 3,
+      "explanation": "consider は「よく考える；〜とみなす」。consider -ing（〜しようかと考える）。"
+    },
+    {
+      "id": "en03_009",
+      "category": "meaning",
+      "prompt": "「patient（形容詞）」の意味は？",
+      "choices": [
+        "正直な",
+        "辛抱強い",
+        "臆病な",
+        "活発な"
+      ],
+      "answerIndex": 1,
+      "explanation": "形容詞の patient は「辛抱強い」。名詞では「患者」の意味になる。"
+    },
+    {
+      "id": "en03_010",
+      "category": "meaning",
+      "prompt": "「reliable」の意味は？",
+      "choices": [
+        "関連した",
+        "気が進まない",
+        "相対的な",
+        "信頼できる"
+      ],
+      "answerIndex": 3,
+      "explanation": "rely（頼る）+ -able で「信頼できる」。"
+    },
+    {
+      "id": "en03_011",
+      "category": "partOfSpeech",
+      "prompt": "次のうち「動詞」はどれ？",
+      "choices": [
+        "wide",
+        "width",
+        "widen",
+        "widely"
+      ],
+      "answerIndex": 2,
+      "explanation": "-en は「〜にする」という動詞を作る語尾。wide → widen（広げる）。"
+    },
+    {
+      "id": "en03_012",
       "category": "partOfSpeech",
       "prompt": "次のうち「副詞」はどれ？",
       "choices": [
@@ -28,183 +158,175 @@
         "infrequent"
       ],
       "answerIndex": 2,
-      "explanation": "形容詞 frequent + -ly で副詞 frequently（しばしば）。frequency は「頻度」という名詞。"
-    },
-    {
-      "id": "en03_003",
-      "category": "partOfSpeech",
-      "prompt": "次のうち「形容詞」はどれ？",
-      "choices": [
-        "economy",
-        "economic",
-        "economize",
-        "economically"
-      ],
-      "answerIndex": 1,
-      "explanation": "-ic は形容詞を作る語尾。economize は「節約する」という動詞。"
-    },
-    {
-      "id": "en03_004",
-      "category": "meaning",
-      "prompt": "「avoid」の意味は？",
-      "choices": [
-        "許す",
-        "避ける",
-        "届く",
-        "要求する"
-      ],
-      "answerIndex": 1,
-      "explanation": "avoid = 避ける。avoid -ing（〜するのを避ける）と動名詞をとる。"
-    },
-    {
-      "id": "en03_005",
-      "category": "meaning",
-      "prompt": "「obvious」の意味は？",
-      "choices": [
-        "複雑な",
-        "慎重な",
-        "明らかな",
-        "退屈な"
-      ],
-      "answerIndex": 2,
-      "explanation": "obvious = 明らかな、明白な。"
-    },
-    {
-      "id": "en03_006",
-      "category": "meaning",
-      "prompt": "「predict」の意味は？",
-      "choices": [
-        "予測する",
-        "保護する",
-        "生産する",
-        "防ぐ"
-      ],
-      "answerIndex": 0,
-      "explanation": "pre-（前に）+ dict（言う）で「予測する」。防ぐ は prevent。"
-    },
-    {
-      "id": "en03_007",
-      "category": "meaning",
-      "prompt": "「opportunity」の意味は？",
-      "choices": [
-        "意見",
-        "機会",
-        "義務",
-        "反対"
-      ],
-      "answerIndex": 1,
-      "explanation": "opportunity = 機会、好機。"
-    },
-    {
-      "id": "en03_008",
-      "category": "meaning",
-      "prompt": "「sufficient」の意味は？",
-      "choices": [
-        "効率的な",
-        "突然の",
-        "繊細な",
-        "十分な"
-      ],
-      "answerIndex": 3,
-      "explanation": "sufficient = 十分な（= enough）。反対は insufficient。"
-    },
-    {
-      "id": "en03_009",
-      "category": "usage",
-      "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "It took me two hours (   ) this report.",
-      "choices": [
-        "finish",
-        "finishing",
-        "to finish",
-        "finished"
-      ],
-      "answerIndex": 2,
-      "explanation": "It takes + 人 + 時間 + to do で「人が〜するのに（時間が）かかる」。"
-    },
-    {
-      "id": "en03_010",
-      "category": "usage",
-      "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "The man (   ) car was stolen called the police.",
-      "choices": [
-        "who",
-        "whose",
-        "which",
-        "whom"
-      ],
-      "answerIndex": 1,
-      "explanation": "「その男の車」という所有の関係なので whose。"
-    },
-    {
-      "id": "en03_011",
-      "category": "usage",
-      "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "I wish I (   ) speak French.",
-      "choices": [
-        "can",
-        "will",
-        "could",
-        "am able"
-      ],
-      "answerIndex": 2,
-      "explanation": "I wish + 仮定法過去で「〜できればいいのに」。can の過去形 could を使う。"
-    },
-    {
-      "id": "en03_012",
-      "category": "usage",
-      "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "Not only he but also I (   ) tired.",
-      "choices": [
-        "am",
-        "is",
-        "are",
-        "be"
-      ],
-      "answerIndex": 0,
-      "explanation": "not only A but also B が主語のとき、動詞は B（ここでは I）に合わせる。"
+      "explanation": "形容詞 frequent + -ly で副詞 frequently（しばしば）。frequency は「頻度」。"
     },
     {
       "id": "en03_013",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "This problem is too difficult for me (   ).",
+      "sentence": "This is the house (   ) my grandfather built.",
       "choices": [
-        "solve",
-        "solving",
-        "to solve it",
-        "to solve"
+        "where",
+        "which",
+        "what",
+        "who"
       ],
-      "answerIndex": 3,
-      "explanation": "too 〜 to do の文では、主語（this problem）が solve の目的語になるので it を付けない。"
+      "answerIndex": 1,
+      "explanation": "built の目的語が欠けているので関係代名詞 which。where は後ろが完全な文のときに使う。"
     },
     {
       "id": "en03_014",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "You had better (   ) a doctor.",
+      "sentence": "The man (   ) car was stolen called the police.",
       "choices": [
-        "see",
-        "to see",
-        "seeing",
-        "seen"
+        "who",
+        "which",
+        "whose",
+        "whom"
       ],
-      "answerIndex": 0,
-      "explanation": "had better の後ろは動詞の原形。「〜したほうがよい」。"
+      "answerIndex": 2,
+      "explanation": "「その男の車」という所有の関係なので whose。"
     },
     {
       "id": "en03_015",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "He was made (   ) the room by his mother.",
+      "sentence": "This is the town (   ) I was born.",
       "choices": [
-        "clean",
-        "cleaning",
-        "cleaned",
-        "to clean"
+        "which",
+        "what",
+        "that",
+        "where"
       ],
       "answerIndex": 3,
-      "explanation": "make + 人 + 原形 を受け身にすると be made to do と to が必要になる。"
+      "explanation": "I was born は完全な文なので関係副詞 where（= in which）。"
+    },
+    {
+      "id": "en03_016",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This is the museum (   ) we visited last summer.",
+      "choices": [
+        "which",
+        "where",
+        "when",
+        "in which"
+      ],
+      "answerIndex": 0,
+      "explanation": "visit は他動詞で目的語が欠けているので関係代名詞 which。"
+    },
+    {
+      "id": "en03_017",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) I want now is a little more time.",
+      "choices": [
+        "That",
+        "Which",
+        "What",
+        "It"
+      ],
+      "answerIndex": 2,
+      "explanation": "関係代名詞 what は「〜するもの・こと」で、先行詞を含む。"
+    },
+    {
+      "id": "en03_018",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I don't know (   ) he will come tomorrow.",
+      "choices": [
+        "whether",
+        "that",
+        "what",
+        "which"
+      ],
+      "answerIndex": 0,
+      "explanation": "「来るかどうか」は whether（= if）。what は後ろに欠けている要素が必要。"
+    },
+    {
+      "id": "en03_019",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Do you know where (   )?",
+      "choices": [
+        "does he live",
+        "he lives",
+        "lives he",
+        "he living"
+      ],
+      "answerIndex": 1,
+      "explanation": "文の中に入った疑問文（間接疑問）は、疑問詞の後ろが「主語 + 動詞」の語順になる。"
+    },
+    {
+      "id": "en03_020",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I have an uncle, (   ) lives in Canada.",
+      "choices": [
+        "that",
+        "which",
+        "who",
+        "whom"
+      ],
+      "answerIndex": 2,
+      "explanation": "人が先行詞で主格なので who。カンマの後ろ（非制限用法）に that は使えない。"
+    },
+    {
+      "id": "en03_021",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Nobody knows the reason (   ) she left the club.",
+      "choices": [
+        "which",
+        "why",
+        "what",
+        "how"
+      ],
+      "answerIndex": 1,
+      "explanation": "the reason に続く関係副詞は why。"
+    },
+    {
+      "id": "en03_022",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) hard you try, you can't finish it in a day.",
+      "choices": [
+        "However",
+        "Whatever",
+        "Whenever",
+        "Wherever"
+      ],
+      "answerIndex": 0,
+      "explanation": "however + 形容詞・副詞 で「どんなに〜しても」。"
+    },
+    {
+      "id": "en03_023",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "There is no evidence (   ) he stole the money.",
+      "choices": [
+        "which",
+        "what",
+        "whether",
+        "that"
+      ],
+      "answerIndex": 3,
+      "explanation": "evidence の内容を説明する同格の that。後ろは完全な文になっている。"
+    },
+    {
+      "id": "en03_024",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Please wait here (   ) I come back.",
+      "choices": [
+        "until",
+        "by",
+        "since",
+        "during"
+      ],
+      "answerIndex": 0,
+      "explanation": "「戻ってくるまで（ずっと）」は until。by は「〜までに（期限）」で、接続詞としては使わない。"
     }
   ]
 }

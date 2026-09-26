@@ -2,133 +2,331 @@
   "setId": "english_stage_01",
   "worldId": "english",
   "origin": "original",
-  "version": 1,
+  "version": 2,
   "questions": [
     {
       "id": "en01_001",
-      "category": "partOfSpeech",
-      "prompt": "次のうち「名詞」はどれ？",
-      "choices": ["decide", "decision", "decisive", "decisively"],
+      "category": "meaning",
+      "prompt": "「borrow」の意味は？",
+      "choices": [
+        "貸す",
+        "借りる",
+        "返す",
+        "盗む"
+      ],
       "answerIndex": 1,
-      "explanation": "-sion は名詞を作る語尾。decide（動詞）→ decision（名詞）→ decisive（形容詞）→ decisively（副詞）。"
+      "explanation": "borrow は「（無料で）借りる」。「貸す」は lend。セットで覚えよう。"
     },
     {
       "id": "en01_002",
-      "category": "partOfSpeech",
-      "prompt": "次のうち「形容詞」はどれ？",
-      "choices": ["care", "careful", "carefully", "carelessness"],
-      "answerIndex": 1,
-      "explanation": "-ful は「〜に満ちた」という形容詞を作る語尾。carefully は副詞、carelessness は名詞。"
+      "category": "meaning",
+      "prompt": "「explain」の意味は？",
+      "choices": [
+        "約束する",
+        "発見する",
+        "説明する",
+        "想像する"
+      ],
+      "answerIndex": 2,
+      "explanation": "explain は「説明する」。explain A to B（A を B に説明する）の形に注意。"
     },
     {
       "id": "en01_003",
-      "category": "partOfSpeech",
-      "prompt": "次のうち「動詞」はどれ？",
-      "choices": ["wide", "width", "widen", "widely"],
-      "answerIndex": 2,
-      "explanation": "-en は「〜にする」という動詞を作る語尾。wide（形容詞）→ widen（広げる）。"
+      "category": "meaning",
+      "prompt": "「receive」の意味は？",
+      "choices": [
+        "送る",
+        "受け取る",
+        "断る",
+        "集める"
+      ],
+      "answerIndex": 1,
+      "explanation": "receive は「受け取る」。名詞は receipt（領収書）。"
     },
     {
       "id": "en01_004",
-      "category": "partOfSpeech",
-      "prompt": "次のうち「副詞」はどれ？",
-      "choices": ["happy", "happiness", "happily", "unhappy"],
-      "answerIndex": 2,
-      "explanation": "形容詞 + -ly で副詞になることが多い。happy → happily。"
+      "category": "meaning",
+      "prompt": "「weather」の意味は？",
+      "choices": [
+        "季節",
+        "温度",
+        "景色",
+        "天気"
+      ],
+      "answerIndex": 3,
+      "explanation": "weather はその日その日の「天気」。長期的な気候は climate。"
     },
     {
       "id": "en01_005",
       "category": "meaning",
-      "prompt": "「enormous」の意味は？",
-      "choices": ["巨大な", "貴重な", "退屈な", "正確な"],
+      "prompt": "「village」の意味は？",
+      "choices": [
+        "村",
+        "都市",
+        "島",
+        "港"
+      ],
       "answerIndex": 0,
-      "explanation": "enormous = 非常に大きい、巨大な。an enormous building（巨大な建物）。"
+      "explanation": "village は「村」。town（町）、city（都市）より小さい。"
     },
     {
       "id": "en01_006",
       "category": "meaning",
-      "prompt": "「reluctant」の意味は？",
-      "choices": ["気が進まない", "熱心な", "丁寧な", "不安定な"],
-      "answerIndex": 0,
-      "explanation": "be reluctant to do で「〜するのに気が進まない」。反対の意味は eager（熱心な）。"
+      "prompt": "「healthy」の意味は？",
+      "choices": [
+        "危険な",
+        "健康な",
+        "裕福な",
+        "退屈な"
+      ],
+      "answerIndex": 1,
+      "explanation": "healthy は「健康な、健全な」。名詞は health。"
     },
     {
       "id": "en01_007",
       "category": "meaning",
-      "prompt": "「reduce」の意味は？",
-      "choices": ["増やす", "減らす", "断る", "延期する"],
-      "answerIndex": 1,
-      "explanation": "reduce = 減らす。reduce costs（費用を減らす）。反対は increase。"
+      "prompt": "「forget」の意味は？",
+      "choices": [
+        "許す",
+        "覚える",
+        "忘れる",
+        "失う"
+      ],
+      "answerIndex": 2,
+      "explanation": "forget は「忘れる」。反対は remember。"
     },
     {
       "id": "en01_008",
       "category": "meaning",
-      "prompt": "「ancient」の意味は？",
-      "choices": ["現代の", "遠い", "古代の", "正式な"],
-      "answerIndex": 2,
-      "explanation": "ancient = 古代の、大昔の。ancient history（古代史）。反対は modern。"
+      "prompt": "「arrive」の意味は？",
+      "choices": [
+        "出発する",
+        "滞在する",
+        "戻る",
+        "到着する"
+      ],
+      "answerIndex": 3,
+      "explanation": "arrive は「到着する」。arrive at / in 〜 の形で使う。"
     },
     {
       "id": "en01_009",
       "category": "meaning",
-      "prompt": "「borrow」の意味は？",
-      "choices": ["貸す", "返す", "盗む", "借りる"],
-      "answerIndex": 3,
-      "explanation": "borrow = 借りる、lend = 貸す。セットで覚えよう。"
+      "prompt": "「enough」の意味は？",
+      "choices": [
+        "十分な",
+        "簡単な",
+        "必要な",
+        "特別な"
+      ],
+      "answerIndex": 0,
+      "explanation": "enough は「十分な」。形容詞・副詞の後ろに置く形（old enough）にも注意。"
     },
     {
       "id": "en01_010",
-      "category": "usage",
-      "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "I'm looking forward to (   ) you again.",
-      "choices": ["see", "seeing", "saw", "have seen"],
+      "category": "meaning",
+      "prompt": "「carry」の意味は？",
+      "choices": [
+        "捕まえる",
+        "運ぶ",
+        "投げる",
+        "押す"
+      ],
       "answerIndex": 1,
-      "explanation": "look forward to の to は前置詞なので、後ろは名詞か動名詞（-ing）になる。"
+      "explanation": "carry は「運ぶ、持ち歩く」。"
     },
     {
       "id": "en01_011",
-      "category": "usage",
-      "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "I have lived in this town (   ) 2015.",
-      "choices": ["since", "for", "during", "by"],
-      "answerIndex": 0,
-      "explanation": "現在完了で「〜以来ずっと」と起点を表すときは since。for は期間（for ten years）に使う。"
+      "category": "partOfSpeech",
+      "prompt": "次のうち「名詞」はどれ？",
+      "choices": [
+        "decide",
+        "decision",
+        "decisive",
+        "decisively"
+      ],
+      "answerIndex": 1,
+      "explanation": "-sion は名詞を作る語尾。decide（動詞）→ decision（名詞）→ decisive（形容詞）→ decisively（副詞）。"
     },
     {
       "id": "en01_012",
-      "category": "usage",
-      "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "Would you mind (   ) the window?",
-      "choices": ["open", "opening", "to open", "opened"],
-      "answerIndex": 1,
-      "explanation": "mind は目的語に動名詞（-ing）をとる動詞。to 不定詞はとらない。"
+      "category": "partOfSpeech",
+      "prompt": "次のうち「副詞」はどれ？",
+      "choices": [
+        "happy",
+        "happiness",
+        "happily",
+        "unhappy"
+      ],
+      "answerIndex": 2,
+      "explanation": "形容詞 + -ly で副詞になることが多い。happy → happily。"
     },
     {
       "id": "en01_013",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "If I (   ) you, I would take the train.",
-      "choices": ["am", "were", "will be", "have been"],
-      "answerIndex": 1,
-      "explanation": "現在の事実と反対の仮定（仮定法過去）では、be 動詞は主語に関係なく were を使うのが基本。"
+      "sentence": "She looks (   ) today.",
+      "choices": [
+        "happily",
+        "happiness",
+        "happy",
+        "to happy"
+      ],
+      "answerIndex": 2,
+      "explanation": "look は後ろに補語（形容詞）をとり「〜に見える」。副詞は補語になれない。"
     },
     {
       "id": "en01_014",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
       "sentence": "My mother made me (   ) my room.",
-      "choices": ["clean", "to clean", "cleaning", "cleaned"],
-      "answerIndex": 0,
-      "explanation": "使役動詞 make は「make + 人 + 動詞の原形」で「人に〜させる」。"
+      "choices": [
+        "to clean",
+        "clean",
+        "cleaning",
+        "cleaned"
+      ],
+      "answerIndex": 1,
+      "explanation": "使役動詞 make は「make + 人 + 動詞の原形」で「人に（むりやり）〜させる」。"
     },
     {
       "id": "en01_015",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "She is good (   ) playing the piano.",
-      "choices": ["at", "in", "on", "for"],
+      "sentence": "Please let me (   ) your bike.",
+      "choices": [
+        "use",
+        "to use",
+        "using",
+        "used"
+      ],
       "answerIndex": 0,
-      "explanation": "be good at 〜 で「〜が得意だ」。at の後ろは名詞か動名詞。"
+      "explanation": "let + 人 + 動詞の原形 で「人に〜させてあげる（許可）」。"
+    },
+    {
+      "id": "en01_016",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I had my hair (   ) yesterday.",
+      "choices": [
+        "cutting",
+        "to cut",
+        "cuts",
+        "cut"
+      ],
+      "answerIndex": 3,
+      "explanation": "have + 物 + 過去分詞 で「物を〜してもらう」。髪は「切られる」側なので過去分詞 cut。"
+    },
+    {
+      "id": "en01_017",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The girl (   ) under the tree is my sister.",
+      "choices": [
+        "sat",
+        "sitting",
+        "sits",
+        "to sit"
+      ],
+      "answerIndex": 1,
+      "explanation": "「木の下に座っている少女」。2語以上で名詞を説明するときは後ろから修飾し、「〜している」は現在分詞。"
+    },
+    {
+      "id": "en01_018",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I read a letter (   ) in English.",
+      "choices": [
+        "writing",
+        "write",
+        "written",
+        "to write"
+      ],
+      "answerIndex": 2,
+      "explanation": "手紙は「書かれた」側なので過去分詞 written が後ろから修飾する。"
+    },
+    {
+      "id": "en01_019",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "It is important (   ) breakfast every day.",
+      "choices": [
+        "eat",
+        "to eat",
+        "eaten",
+        "ate"
+      ],
+      "answerIndex": 1,
+      "explanation": "It is 〜 to do の形。It は仮の主語で、本当の主語は to eat breakfast every day。"
+    },
+    {
+      "id": "en01_020",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He (   ) the room quietly.",
+      "choices": [
+        "entered into",
+        "arrived",
+        "went",
+        "entered"
+      ],
+      "answerIndex": 3,
+      "explanation": "enter は他動詞なので前置詞なしで目的語をとる（enter the room）。arrive と go は at / to などが必要。"
+    },
+    {
+      "id": "en01_021",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "We discussed (   ) plan for the trip.",
+      "choices": [
+        "about the",
+        "on the",
+        "with the",
+        "the"
+      ],
+      "answerIndex": 3,
+      "explanation": "discuss は他動詞。「〜について話し合う」でも about は付けない。"
+    },
+    {
+      "id": "en01_022",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The news made him (   ).",
+      "choices": [
+        "happily",
+        "happy",
+        "to happy",
+        "happiness"
+      ],
+      "answerIndex": 1,
+      "explanation": "make + O + C で「O を C（の状態）にする」。C には形容詞が入る。"
+    },
+    {
+      "id": "en01_023",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "My uncle gave (   ) a watch.",
+      "choices": [
+        "to me",
+        "for me",
+        "me",
+        "my"
+      ],
+      "answerIndex": 2,
+      "explanation": "give + 人 + 物 で「人に物を与える」。to を使うなら gave a watch to me の語順。"
+    },
+    {
+      "id": "en01_024",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I think it important (   ) your own opinion.",
+      "choices": [
+        "to have",
+        "have",
+        "having",
+        "had"
+      ],
+      "answerIndex": 0,
+      "explanation": "think it 〜 to do の it は仮の目的語。本当の目的語は to have your own opinion。"
     }
   ]
 }
