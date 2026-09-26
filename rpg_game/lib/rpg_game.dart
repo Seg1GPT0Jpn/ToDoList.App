@@ -1,0 +1,19 @@
+/// つづりクエスト（仮）— クイズRPGミニゲームのコアロジック。
+library rpg_game;
+
+export 'src/battle/battle_engine.dart';
+export 'src/battle/damage_calculator.dart';
+export 'src/battle/question_deck.dart';
+export 'src/data/catalog.dart';
+export 'src/data/firestore_paths.dart';
+export 'src/data/progress_repository.dart';
+export 'src/data/question_source.dart';
+export 'src/data/user_deck_questions.dart';
+export 'src/models/enemy.dart';
+export 'src/models/player_stats.dart';
+export 'src/models/question.dart';
+export 'src/models/rpg_progress.dart';
+export 'src/models/stage.dart';
+export 'src/models/world.dart';
+export 'src/progression/progression.dart';
+export 'src/purchase/purchase_service.dart';

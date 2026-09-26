@@ -1,0 +1,31 @@
+import 'dart:io';
+import 'dart:math';
+
+import 'package:rpg_game/rpg_game.dart';
+
+QuestionSet loadStage01() => JsonQuestionSource.parse(
+    File('assets/questions/english/english_stage_01.json').readAsStringSync());
+
+/// ダメージのブレを 0 にした計算機（期待値をそのまま検証できる）
+DamageCalculator fixedDamage() =>
+    DamageCalculator(random: Random(1), variance: 0);
+
+BattleEngine newBattle({
+  int level = 1,
+  EnemyDef? enemy,
+  List<QuizQuestion>? questions,
+  int seed = 42,
+}) =>
+    BattleEngine(
+      player: PlayerStats.forLevel(level),
+      enemy: enemy ?? RpgCatalog.englishStages.first.enemy,
+      questions: questions ?? loadStage01().questions,
+      timeLimit: const Duration(seconds: 20),
+      random: Random(seed),
+      damage: fixedDamage(),
+    );
+
+int wrongIndex(BattleEngine b) => (b.currentQuestion.correctIndex + 1) % 4;
+
+const slow = Duration(seconds: 10);
+const fast = Duration(seconds: 2);

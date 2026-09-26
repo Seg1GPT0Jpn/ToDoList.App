@@ -1,0 +1,129 @@
+# つづりクエスト（仮）— クイズRPGミニゲーム コアロジック
+
+つづり（school_planner）に組み込む予定のクイズRPGの **中身（ロジック・問題データ）** です。
+school_planner とは別の場所で先に作っています。Flutter と Firebase には依存しない純 Dart で書いてあり、
+後で `lib/features/rpg_game/` に移植します。
+
+## タイトル案
+
+| 案 | ねらい |
+| --- | --- |
+| **つづりクエスト**（第一候補） | アプリ名「つづり」にそのままつながる |
+| ノートの冒険譚 | 手帳・ノート風のデザインに合わせた名前 |
+| 余白の王国 | ノートの余白に広がる世界、という世界観 |
+| 共通テストRPG | 仮タイトル。目的がすぐ伝わる |
+
+## 今回作ったもの（第一弾）
+
+```
+rpg_game/
+├─ assets/questions/english/english_stage_01.json   英語ステージ1の自作問題（15問）
+├─ lib/src/
+│  ├─ battle/        ダメージ計算・出題（山札）・バトルの状態機械
+│  ├─ progression/   経験値・レベルアップ・ステージとワールドの解放判定
+│  ├─ models/        問題・敵・ステージ・ワールド・進行状況
+│  ├─ data/          ワールド定義（カタログ）・Firestore パス・問題の読み込み・保存先
+│  └─ purchase/      購入導線（mockPurchaseWorld）とロック解除
+├─ bin/play.dart     ターミナルで遊べるお試し版
+└─ test/             52件のテスト
+```
+
+### 試し方
+
+```
+cd rpg_game
+dart pub get
+dart test                 # テスト
+dart run bin/play.dart    # ターミナルでステージ1を遊ぶ（1〜4 を入力）
+```
+
+## ゲームのルール
+
+### バトル（`BattleEngine`）
+- 4択の問題が1問ずつ出る。**正解**するとプレイヤーの攻撃が当たり、**不正解・時間切れ**だと敵の反撃を受ける
+- 敵のHPを0にすると勝ち、自分のHPが0になると負け
+- 問題は山札方式で出す。全問を出し切るまで同じ問題は出ず、出し切ったら混ぜ直す。選択肢の並び順も毎回シャッフルする
+
+### ダメージ（`DamageCalculator`）
+| | 計算式 |
+| --- | --- |
+| 自分の攻撃 | 攻撃力 × (1 + 連続正解ボーナス + すばやさボーナス) |
+| 連続正解ボーナス | 2連続目から +10% ずつ、最大 +50% |
+| すばやさボーナス | 制限時間の1/3以内に答えると +20% |
+| 敵の攻撃 | 敵の攻撃力 − 自分の防御 ÷ 2（最低1） |
+
+ダメージには ±10% のブレがあります。乱数を使うのはここだけで、報酬や課金には使いません。
+
+### 成長（`PlayerStats` / `Progression`）
+- Lv に応じて変化: HP `50 + 8×(Lv−1)`、攻撃 `10 + 2×(Lv−1)`、防御 `2 + (Lv−1)`、最大 Lv 50
+- 次のレベルまでの必要経験値: `20 + 15×(Lv−1)`
+- 勝利時の経験値
+  - 初回クリア: ステージの報酬そのまま
+  - 2回目以降: 報酬の半分
+  - ノーミスでクリア: さらに +20%
+- 敗北時の経験値: 正解1問につき 2（勉強した分は無駄にしない）
+- ステージ1は最初から挑戦できる。2以降は1つ前をクリアすると解放される
+
+### 英語ワールドのステージ
+| # | ステージ | 敵 | HP | 攻撃 | 制限時間 | 報酬 | 推奨Lv |
+| - | --- | --- | - | - | - | - | - |
+| 1 | はじまりの余白 | 落書きスライム | 40 | 8 | 20秒 | 30 | 1 |
+| 2 | にじむ罫線の小道 | インク染みゴブリン | 60 | 11 | 20秒 | 40 | 2 |
+| 3 | しおりの森 | しおりバット | 85 | 14 | 18秒 | 55 | 3 |
+| 4 | 索引の洞窟 | 辞書ゴーレム | 110 | 17 | 18秒 | 70 | 4 |
+| 5 | 文法の城門 | 文法ナイト | 150 | 22 | 15秒 | 90 | 6 |
+| 6 | 最終章の塔 | 英作文ドラゴン | 200 | 27 | 15秒 | 150 | 8 |
+
+推奨レベルで正答率7割なら、どのステージもおおむね勝てるバランスにしています（テストで確認済み）。
+問題データがあるのは現時点でステージ1だけです。ステージ2以降は `english_stage_0N.json` を追加すれば遊べます。
+
+### ワールド
+英語だけが無料で遊べます。国語・数学・理科・地歴公民・情報は「準備中」です。
+新しい教科を足すときは、`lib/src/data/catalog.dart` の `status` を `available` に変えてステージを追加し、
+`assets/questions/<worldId>/` に問題セットを置きます。
+
+## 守っている制約
+
+1. **市販教材（LEAP・STEP）のデータは使わない**
+   - 問題の出どころ（`origin`）には `original`（自作）と `userCreated`（利用者が作った単語帳）しか指定できません。それ以外は読み込み時にエラーになります
+   - 利用者の単語帳から問題を作る `UserDeckQuestionBuilder` は、`isUserCreated: false` のデッキ（インポートした教材など）を受け付けません
+   - アセットに教材名が混ざっていないこともテストで確認しています
+2. **ガチャなどのランダム型課金はない**。課金はワールドごとの固定価格の買い切りだけです
+3. **中身のないものは売らない**。準備中のワールドは、既定では購入できません
+   - 購入ダイアログの動作確認をするときだけ `WorldUnlockService(allowComingSoonPurchase: true)` にしてください
+   - 中身がまだないものを販売すると、Google Play のポリシーや返金対応で問題になりやすいためです
+4. **決済はモック**。`mockPurchaseWorld()` は常に成功を返します。Google Play Billing への差し替え方は、`purchase_service.dart` の `TODO(billing)` に書いてあります
+
+## Firestore の設計（移植時に使う）
+
+`lib/src/data/firestore_paths.dart` にパスを定義してあります。
+
+| パス | 内容 | 削除・バックアップの対象 |
+| --- | --- | --- |
+| `users/{uid}/rpg_progress/main` | レベル・経験値・クリア済みステージ・自己ベスト（`RpgProgress.toMap()` に `updatedAt` を追加） | ○ |
+| `users/{uid}/rpg_purchases/{worldId}` | 購入記録（worldId, priceYen, source, orderId, purchasedAt） | ○ |
+| `users/{uid}/rpg_battle_logs/{autoId}` | バトル履歴（任意） | ○ |
+| `rpg_worlds/{worldId}/question_sets/{setId}` | 問題を Firestore から配信する場合のみ（初期はアプリ同梱の JSON で配信） | ×（全ユーザー共通の読み取り専用データ） |
+
+`account_deletion.dart` と `data_backup.dart` には、`RpgFirestorePaths.userSubcollections` の3つを追加してください。
+
+セキュリティルールの方針:
+- `rpg_progress` と `rpg_battle_logs`: 本人だけが読み書きできる
+- `rpg_purchases`:
+  - 本番は本人の読み取りだけを許可し、書き込みは Cloud Functions（購入トークンをサーバーで検証した後）だけにする
+  - モック期間中は、本人の書き込みを一時的に許可する
+- `rpg_worlds`: ログインユーザーは読み取りだけ
+
+## school_planner への移植手順（次の作業）
+
+1. `lib/src/**` を `lib/features/rpg_game/domain/` 以下にコピーする。`test/` も一緒に移す
+2. `assets/questions/` を移し、`pubspec.yaml` の `assets:` に登録する。読み込みは `rootBundle.loadString` を `JsonQuestionSource` に渡す
+3. `ProgressRepository` の Firestore 版を実装する。`watch()` は `snapshots()` を使い、画面側は StreamBuilder で受ける
+4. 画面を作る（`material_ui` と `lib/app/theme.dart` のこげ茶・生成り色に合わせる）
+   - ワールドマップ
+   - ステージ選択
+   - バトル（タイマー付き）
+   - 結果（経験値・レベルアップの演出）
+5. go_router にルートを追加し、`home_page.dart` に「ゲーム」への導線を1つ追加する
+6. `account_deletion.dart` / `data_backup.dart` に新しいコレクションを追加する
+7. （別タスク）`mockPurchaseWorld` を Google Play Billing に差し替え、Cloud Functions でサーバー検証する

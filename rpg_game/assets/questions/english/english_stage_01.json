@@ -1,0 +1,134 @@
+{
+  "setId": "english_stage_01",
+  "worldId": "english",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "en01_001",
+      "category": "partOfSpeech",
+      "prompt": "次のうち「名詞」はどれ？",
+      "choices": ["decide", "decision", "decisive", "decisively"],
+      "answerIndex": 1,
+      "explanation": "-sion は名詞を作る語尾。decide（動詞）→ decision（名詞）→ decisive（形容詞）→ decisively（副詞）。"
+    },
+    {
+      "id": "en01_002",
+      "category": "partOfSpeech",
+      "prompt": "次のうち「形容詞」はどれ？",
+      "choices": ["care", "careful", "carefully", "carelessness"],
+      "answerIndex": 1,
+      "explanation": "-ful は「〜に満ちた」という形容詞を作る語尾。carefully は副詞、carelessness は名詞。"
+    },
+    {
+      "id": "en01_003",
+      "category": "partOfSpeech",
+      "prompt": "次のうち「動詞」はどれ？",
+      "choices": ["wide", "width", "widen", "widely"],
+      "answerIndex": 2,
+      "explanation": "-en は「〜にする」という動詞を作る語尾。wide（形容詞）→ widen（広げる）。"
+    },
+    {
+      "id": "en01_004",
+      "category": "partOfSpeech",
+      "prompt": "次のうち「副詞」はどれ？",
+      "choices": ["happy", "happiness", "happily", "unhappy"],
+      "answerIndex": 2,
+      "explanation": "形容詞 + -ly で副詞になることが多い。happy → happily。"
+    },
+    {
+      "id": "en01_005",
+      "category": "meaning",
+      "prompt": "「enormous」の意味は？",
+      "choices": ["巨大な", "貴重な", "退屈な", "正確な"],
+      "answerIndex": 0,
+      "explanation": "enormous = 非常に大きい、巨大な。an enormous building（巨大な建物）。"
+    },
+    {
+      "id": "en01_006",
+      "category": "meaning",
+      "prompt": "「reluctant」の意味は？",
+      "choices": ["気が進まない", "熱心な", "丁寧な", "不安定な"],
+      "answerIndex": 0,
+      "explanation": "be reluctant to do で「〜するのに気が進まない」。反対の意味は eager（熱心な）。"
+    },
+    {
+      "id": "en01_007",
+      "category": "meaning",
+      "prompt": "「reduce」の意味は？",
+      "choices": ["増やす", "減らす", "断る", "延期する"],
+      "answerIndex": 1,
+      "explanation": "reduce = 減らす。reduce costs（費用を減らす）。反対は increase。"
+    },
+    {
+      "id": "en01_008",
+      "category": "meaning",
+      "prompt": "「ancient」の意味は？",
+      "choices": ["現代の", "遠い", "古代の", "正式な"],
+      "answerIndex": 2,
+      "explanation": "ancient = 古代の、大昔の。ancient history（古代史）。反対は modern。"
+    },
+    {
+      "id": "en01_009",
+      "category": "meaning",
+      "prompt": "「borrow」の意味は？",
+      "choices": ["貸す", "返す", "盗む", "借りる"],
+      "answerIndex": 3,
+      "explanation": "borrow = 借りる、lend = 貸す。セットで覚えよう。"
+    },
+    {
+      "id": "en01_010",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I'm looking forward to (   ) you again.",
+      "choices": ["see", "seeing", "saw", "have seen"],
+      "answerIndex": 1,
+      "explanation": "look forward to の to は前置詞なので、後ろは名詞か動名詞（-ing）になる。"
+    },
+    {
+      "id": "en01_011",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I have lived in this town (   ) 2015.",
+      "choices": ["since", "for", "during", "by"],
+      "answerIndex": 0,
+      "explanation": "現在完了で「〜以来ずっと」と起点を表すときは since。for は期間（for ten years）に使う。"
+    },
+    {
+      "id": "en01_012",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Would you mind (   ) the window?",
+      "choices": ["open", "opening", "to open", "opened"],
+      "answerIndex": 1,
+      "explanation": "mind は目的語に動名詞（-ing）をとる動詞。to 不定詞はとらない。"
+    },
+    {
+      "id": "en01_013",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "If I (   ) you, I would take the train.",
+      "choices": ["am", "were", "will be", "have been"],
+      "answerIndex": 1,
+      "explanation": "現在の事実と反対の仮定（仮定法過去）では、be 動詞は主語に関係なく were を使うのが基本。"
+    },
+    {
+      "id": "en01_014",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "My mother made me (   ) my room.",
+      "choices": ["clean", "to clean", "cleaning", "cleaned"],
+      "answerIndex": 0,
+      "explanation": "使役動詞 make は「make + 人 + 動詞の原形」で「人に〜させる」。"
+    },
+    {
+      "id": "en01_015",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "She is good (   ) playing the piano.",
+      "choices": ["at", "in", "on", "for"],
+      "answerIndex": 0,
+      "explanation": "be good at 〜 で「〜が得意だ」。at の後ろは名詞か動名詞。"
+    }
+  ]
+}
