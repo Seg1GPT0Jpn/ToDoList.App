@@ -25,8 +25,15 @@ void main() {
     }
   });
 
-  /// 倒した敵（番号 < [upTo]）を通れるものとして、スタートから届くマス
+  /// 番号 < [upTo] の敵を倒した状態（ゲート横にどいている）で、スタートから届くマス
   Set<(int, int)> reachable(int upTo) {
+    final blocked = <(int, int)>{
+      for (final e in map.enemySpots.entries)
+        if (e.key < upTo)
+          (map.asideOf(e.value).col, map.asideOf(e.value).row)
+        else
+          (e.value.col, e.value.row),
+    };
     final start = map.find('P');
     final seen = <(int, int)>{(start.col, start.row)};
     final queue = Queue.of([(start.col, start.row)]);
@@ -34,10 +41,8 @@ void main() {
       final (c, r) = queue.removeFirst();
       for (final (dc, dr) in [(0, 1), (0, -1), (1, 0), (-1, 0)]) {
         final n = (c + dc, r + dr);
-        final t = map.tileAt(n.$1, n.$2);
-        final enemy = int.tryParse(t);
-        final passable =
-            map.isFloor(n.$1, n.$2) || (enemy != null && enemy < upTo);
+        // ゲーム本体と同じく、地形は isFloor、敵の有無は blocked で判定する
+        final passable = !blocked.contains(n) && map.isFloor(n.$1, n.$2);
         if (passable && seen.add(n)) queue.add(n);
       }
     }
@@ -63,6 +68,14 @@ void main() {
           reason: '${s.name} を倒す前に次の敵へ届いてしまう',
         );
       }
+    }
+  });
+
+  test('倒した敵は壁のくぼみに寄り、床をふさがない', () {
+    for (final spot in map.enemySpots.values) {
+      final aside = map.asideOf(spot);
+      expect(aside, isNot(spot));
+      expect(map.tileAt(aside.col, aside.row), '#');
     }
   });
 

@@ -93,19 +93,10 @@ class FieldGame extends FlameGame with KeyboardEvents {
     for (final token in _enemies.values) {
       final cleared = progress.clearedStageIds.contains(token.stage.id);
       token.cleared = cleared;
-      token.cell = cleared ? _asideOf(token.home) : token.home;
+      token.cell = cleared ? map.asideOf(token.home) : token.home;
       token.position = _center(token.cell);
       token.priority = token.cell.row * 10 + 4;
     }
-  }
-
-  /// 倒した敵の待機場所（ゲートの1つ下の段で、空いている横のマス）
-  Cell _asideOf(Cell gate) {
-    for (final dc in [1, -1, 2, -2]) {
-      final c = (col: gate.col + dc, row: gate.row + 1);
-      if (map.isFloor(c.col, c.row)) return c;
-    }
-    return gate;
   }
 
   EnemyToken? _enemyAt(Cell c) {

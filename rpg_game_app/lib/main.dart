@@ -17,6 +17,9 @@ Future<void> main() async {
   );
 }
 
+/// 画面の出入りを知らせる（フィールドがバトルから戻ったことを知るのに使う）
+final routeObserver = RouteObserver<ModalRoute<void>>();
+
 class TsuzuriQuestApp extends StatelessWidget {
   const TsuzuriQuestApp({super.key});
 
@@ -27,6 +30,7 @@ class TsuzuriQuestApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: buildTheme(Brightness.light),
       darkTheme: buildTheme(Brightness.dark),
+      navigatorObservers: [routeObserver],
       home: const WorldMapScreen(),
     );
   }

@@ -4,6 +4,7 @@ import 'package:rpg_game/rpg_game.dart';
 
 import '../app/services.dart';
 import '../app/theme.dart';
+import '../main.dart' show routeObserver;
 import '../art/enemy_painter.dart';
 import '../art/hero_painter.dart';
 import '../battle/battle_screen.dart';
@@ -34,7 +35,7 @@ class _MessageDialog extends _Dialog {
   final String text;
 }
 
-class _FieldScreenState extends State<FieldScreen> {
+class _FieldScreenState extends State<FieldScreen> with RouteAware {
   late RpgProgress _progress = widget.progress;
   late final FieldGame _game = FieldGame(
     map: FieldMap.english,
@@ -46,6 +47,36 @@ class _FieldScreenState extends State<FieldScreen> {
   _Dialog? _dialog;
   bool _starting = false;
 
+  /// キーボード操作用。バトルから戻ったときやダイアログを閉じたときに取り戻す
+  final _focus = FocusNode();
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final route = ModalRoute.of(context);
+    if (route != null) routeObserver.subscribe(this, route);
+  }
+
+  @override
+  void dispose() {
+    routeObserver.unsubscribe(this);
+    _focus.dispose();
+    super.dispose();
+  }
+
+  /// バトル・結果画面を閉じて、フィールドが一番手前に戻ったとき
+  @override
+  void didPopNext() => _refreshAfterBattle();
+
+  Future<void> _refreshAfterBattle() async {
+    final updated = await RpgServices.of(context).repository.load();
+    if (!mounted) return;
+    setState(() => _progress = updated);
+    _game.applyProgress(updated);
+    _game.inputLocked = false;
+    _focus.requestFocus();
+  }
+
   void _open(_Dialog d) {
     _game.inputLocked = true;
     _game.padDirection = null;
@@ -55,6 +86,7 @@ class _FieldScreenState extends State<FieldScreen> {
   void _close() {
     _game.inputLocked = false;
     setState(() => _dialog = null);
+    _focus.requestFocus();
   }
 
   Future<void> _startBattle(StageDef stage) async {
@@ -70,7 +102,9 @@ class _FieldScreenState extends State<FieldScreen> {
     }
     _close();
     _game.inputLocked = true;
-    await Navigator.of(context).push(
+    // 戻ってきたときの処理は didPopNext で行う（結果画面へは差し替えで進むため、
+    // ここで push の完了を待つと結果画面を閉じる前に戻り処理が走ってしまう）
+    Navigator.of(context).push(
       PageRouteBuilder<void>(
         transitionDuration: const Duration(milliseconds: 600),
         pageBuilder: (_, _, _) => BattleScreen(
@@ -83,11 +117,6 @@ class _FieldScreenState extends State<FieldScreen> {
             _BattleTransition(animation: anim, child: child),
       ),
     );
-    final updated = await services.repository.load();
-    if (!mounted) return;
-    setState(() => _progress = updated);
-    _game.applyProgress(updated);
-    _game.inputLocked = false;
   }
 
   @override
@@ -100,7 +129,9 @@ class _FieldScreenState extends State<FieldScreen> {
       backgroundColor: TsuzuriColors.kraft,
       body: Stack(
         children: [
-          Positioned.fill(child: GameWidget(game: _game)),
+          Positioned.fill(
+            child: GameWidget(game: _game, focusNode: _focus),
+          ),
           // 上部の情報バー
           Positioned(
             top: 0,

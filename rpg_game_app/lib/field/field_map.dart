@@ -22,10 +22,11 @@ class FieldMap {
     return rows[row][col];
   }
 
-  /// 地形として通れるか（敵・看板・ゴールは別途判定）
+  /// 地形として通れるか。敵の立ち位置（1〜9）も地面は床で、
+  /// 敵がいるかどうかはゲーム側で別に判定する。
   bool isFloor(int col, int row) {
     final t = tileAt(col, row);
-    return t == '.' || t == 'P';
+    return t == '.' || t == 'P' || int.tryParse(t) != null;
   }
 
   ({int col, int row}) find(String ch) {
@@ -41,6 +42,16 @@ class FieldMap {
     for (var n = 1; n <= 9; n++)
       if (rows.any((r) => r.contains('$n'))) n: find('$n'),
   };
+
+  /// 倒した敵の待機場所。ゲート横の壁のくぼみに寄るので、通り道をふさがない。
+  ({int col, int row}) asideOf(({int col, int row}) gate) {
+    for (final dc in [1, -1]) {
+      if (tileAt(gate.col + dc, gate.row) == '#') {
+        return (col: gate.col + dc, row: gate.row);
+      }
+    }
+    return gate;
+  }
 
   /// 看板のメッセージ（上から順に）
   static const signMessages = ['ここは英語ワールド。道をふさぐ魔物に話しかけると、4択クイズのバトルが始まるよ。'];

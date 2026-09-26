@@ -98,6 +98,22 @@ class _ResultScreenState extends State<ResultScreen>
     final s = widget.summary;
     final won = s.won;
     return Scaffold(
+      // もどるボタンは常に見えるよう画面下に固定する
+      bottomNavigationBar: Container(
+        color: TsuzuriColors.paper,
+        padding: const EdgeInsets.fromLTRB(44, 8, 16, 12),
+        child: SafeArea(
+          top: false,
+          child: FilledButton.icon(
+            onPressed: () => Navigator.of(context).pop(),
+            icon: const Icon(Icons.directions_walk),
+            label: const Padding(
+              padding: EdgeInsets.symmetric(vertical: 12),
+              child: Text('フィールドにもどる', style: TextStyle(fontSize: 16)),
+            ),
+          ),
+        ),
+      ),
       body: NotebookPaper(
         child: SafeArea(
           child: ListView(
@@ -163,15 +179,7 @@ class _ResultScreenState extends State<ResultScreen>
                 const SizedBox(height: 6),
                 for (final q in s.missedQuestions) _review(q),
               ],
-              const SizedBox(height: 24),
-              FilledButton.icon(
-                onPressed: () => Navigator.of(context).pop(),
-                icon: const Icon(Icons.directions_walk),
-                label: const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 12),
-                  child: Text('フィールドにもどる', style: TextStyle(fontSize: 16)),
-                ),
-              ),
+              const SizedBox(height: 16),
             ],
           ),
         ),
