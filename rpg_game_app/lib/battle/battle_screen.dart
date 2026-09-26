@@ -19,10 +19,14 @@ class BattleScreen extends StatefulWidget {
     required this.questions,
     required this.progress,
     this.trial = false,
+    this.ghost = false,
   });
 
   /// 確認用のバトル（結果を保存しない）
   final bool trial;
+
+  /// 亡霊（そのステージで間違えた問題）との再戦
+  final bool ghost;
 
   final WorldDef world;
   final StageDef stage;
@@ -54,13 +58,40 @@ class _Popup {
 class _BattleScreenState extends State<BattleScreen>
     with TickerProviderStateMixin {
   late final PlayerStats _player = PlayerStats.forLevel(widget.progress.level);
+
+  /// 亡霊バトルでは、間違えた問題の数に合わせた弱めの亡霊が相手
+  late final EnemyDef _enemy = widget.ghost
+      ? EnemyDef(
+          id: 'ghost_${widget.stage.id}',
+          name: '${widget.stage.enemy.name}の亡霊',
+          maxHp: max(
+            1,
+            (_player.attack * widget.questions.length * 0.9).round(),
+          ),
+          attack: max(1, (widget.stage.enemy.attack * 0.6).round()),
+          look: 'ghost',
+          introLine: 'あのとき まちがえた問題…おぼえているかな？',
+          defeatLine: 'もう まちがえないね…すっきりした…',
+        )
+      : widget.stage.enemy;
+
   late final BattleEngine _engine = BattleEngine(
     player: _player,
-    enemy: widget.stage.enemy,
+    enemy: _enemy,
     questions: widget.questions,
     timeLimit: Duration(seconds: widget.stage.timeLimitSeconds),
     readingTimeLimit: Duration(seconds: widget.stage.readingTimeLimitSeconds),
+    deck: [for (final id in widget.progress.deck) CardDef.byId(id)],
+    companions: {
+      for (final id in widget.progress.companions) CompanionDef.byId(id).effect,
+    },
+    bonusHpRate: widget.progress.springBuff && !widget.ghost
+        ? Progression.springHpRate
+        : 0,
   );
+
+  /// 敵のセリフ（登場時・撃破時に少しだけ出す）
+  String? _speech;
 
   late final _idle = AnimationController(
     vsync: this,
@@ -103,8 +134,14 @@ class _BattleScreenState extends State<BattleScreen>
     _timer.addStatusListener((s) {
       if (s == AnimationStatus.completed && !_locked) _resolve(null);
     });
+    if (_enemy.introLine.isNotEmpty) _speech = _enemy.introLine;
     _intro.forward().then((_) {
-      if (mounted) _startQuestion();
+      // セリフを読むあいだ少し待ってから1問目
+      Future.delayed(Duration(milliseconds: _speech == null ? 0 : 1400), () {
+        if (!mounted) return;
+        setState(() => _speech = null);
+        _startQuestion();
+      });
     });
   }
 
@@ -135,6 +172,27 @@ class _BattleScreenState extends State<BattleScreen>
     // 長文の設問は制限時間が長い
     _timer.duration = _engine.limitFor(_engine.currentQuestion);
     _timer.forward(from: 0);
+  }
+
+  /// 手札のカードを使う（1問に1枚。回答前だけ）
+  void _useCard(int index) {
+    if (_locked || _engine.pendingCard != null) return;
+    final card = _engine.useCard(index);
+    if (card.effect == CardEffect.time) {
+      // 残り時間を保ったまま、制限時間だけ延ばす
+      final elapsed = _stopwatch.elapsed;
+      final limit = _engine.limitFor(_engine.currentQuestion);
+      _timer.duration = limit;
+      _timer.forward(from: elapsed.inMilliseconds / limit.inMilliseconds);
+    }
+    _popup(
+      _Popup(
+        '${card.name}！',
+        const Color(0xFF6A4BA8),
+        const Alignment(0, -0.35),
+      ),
+    );
+    setState(() {});
   }
 
   void _popup(_Popup p, {Duration after = Duration.zero}) {
@@ -173,19 +231,66 @@ class _BattleScreenState extends State<BattleScreen>
       );
       if (r.quick) {
         _popup(
-          _Popup('すばやい！', const Color(0xFF2E7DB5), const Alignment(-0.6, -0.6)),
+          _Popup(
+            'クリティカル！',
+            const Color(0xFFD64545),
+            const Alignment(-0.6, -0.6),
+          ),
         );
       }
       if (r.combo >= 2) {
+        final rate = DamageCalculator.chainRate(r.combo);
         _popup(
           _Popup(
-            '${r.combo} COMBO!',
+            rate > 1 ? '${r.combo} CHAIN ×$rate' : '${r.combo} CHAIN',
             const Color(0xFFE08A00),
             const Alignment(0.6, -0.75),
           ),
           after: const Duration(milliseconds: 120),
         );
       }
+      if (r.weakness) {
+        _popup(
+          _Popup('弱点！', const Color(0xFF2E9E5B), const Alignment(-0.55, 0.25)),
+          after: const Duration(milliseconds: 200),
+        );
+      }
+      if (r.blocked) {
+        _popup(
+          _Popup(
+            '装甲ではじかれた…',
+            TsuzuriColors.inkSoft,
+            const Alignment(-0.4, 0.3),
+          ),
+          after: const Duration(milliseconds: 200),
+        );
+      }
+      if (r.armorBroken) {
+        _popup(
+          _Popup('装甲が割れた！', const Color(0xFF2E7DB5), const Alignment(0, 0.45)),
+          after: const Duration(milliseconds: 260),
+        );
+      }
+      if (r.healed > 0) {
+        _popup(
+          _Popup(
+            '+${r.healed}',
+            TsuzuriColors.correct,
+            const Alignment(-0.3, 0.84),
+            onPlayer: true,
+          ),
+        );
+      }
+    } else if (r.guarded) {
+      _popup(
+        _Popup(
+          'ガード！',
+          const Color(0xFF2E7DB5),
+          const Alignment(0.1, 0.84),
+          big: true,
+          onPlayer: true,
+        ),
+      );
     } else {
       _playerHit.forward(from: 0);
       _popup(
@@ -197,15 +302,37 @@ class _BattleScreenState extends State<BattleScreen>
           onPlayer: true,
         ),
       );
+      if (r.survived) {
+        _popup(
+          _Popup(
+            'ねこ先生がかばってくれた！',
+            const Color(0xFF6A4BA8),
+            const Alignment(0, 0.6),
+            onPlayer: true,
+          ),
+          after: const Duration(milliseconds: 300),
+        );
+      }
     }
 
     if (_engine.isOver) {
-      if (_engine.phase == BattlePhase.won) {
+      final won = _engine.phase == BattlePhase.won;
+      if (won) {
         Future.delayed(const Duration(milliseconds: 550), () {
           if (mounted) _defeat.forward();
         });
+        if (_enemy.defeatLine.isNotEmpty) {
+          Future.delayed(const Duration(milliseconds: 400), () {
+            if (mounted) setState(() => _speech = _enemy.defeatLine);
+          });
+        }
       }
-      Future.delayed(const Duration(milliseconds: 1900), _finish);
+      Future.delayed(
+        Duration(
+          milliseconds: won && _enemy.defeatLine.isNotEmpty ? 2600 : 1900,
+        ),
+        _finish,
+      );
     } else if (r.correct) {
       Future.delayed(const Duration(milliseconds: 1000), () {
         if (mounted) _startQuestion();
@@ -220,19 +347,30 @@ class _BattleScreenState extends State<BattleScreen>
     final services = RpgServices.of(context);
     final summary = _engine.summary();
     final latest = await services.repository.load();
-    final result = Progression.applyBattle(
-      progress: latest,
-      world: widget.world,
-      stage: widget.stage,
-      summary: summary,
-    );
+    final result = widget.ghost
+        ? StageClearResult(
+            expResult: Progression.applyGhostBattle(latest, summary),
+            firstClear: false,
+            newlyUnlockedStageId: null,
+          )
+        : Progression.applyBattle(
+            progress: latest,
+            world: widget.world,
+            stage: widget.stage,
+            summary: summary,
+          );
     if (!widget.trial) await services.repository.save(result.progress);
     if (!mounted) return;
     Navigator.of(context).pushReplacement(
       PageRouteBuilder<void>(
         transitionDuration: const Duration(milliseconds: 500),
-        pageBuilder: (_, _, _) =>
-            ResultScreen(stage: widget.stage, summary: summary, result: result),
+        pageBuilder: (_, _, _) => ResultScreen(
+          stage: widget.stage,
+          enemy: _enemy,
+          summary: summary,
+          result: result,
+          ghost: widget.ghost,
+        ),
         transitionsBuilder: (_, a, _, child) =>
             FadeTransition(opacity: a, child: child),
       ),
@@ -325,7 +463,7 @@ class _BattleScreenState extends State<BattleScreen>
   }
 
   Widget _topBar() {
-    final enemy = widget.stage.enemy;
+    final enemy = _enemy;
     return Padding(
       padding: const EdgeInsets.fromLTRB(40, 8, 8, 0),
       child: Row(
@@ -340,6 +478,25 @@ class _BattleScreenState extends State<BattleScreen>
                   value: _engine.enemyHp,
                   max: enemy.maxHp,
                   color: const Color(0xFFD9822B),
+                ),
+                const SizedBox(height: 4),
+                Wrap(
+                  spacing: 6,
+                  runSpacing: 4,
+                  children: [
+                    if (enemy.weakness != null)
+                      _Tag(
+                        '弱点：${enemy.weakness!.label}',
+                        const Color(0xFF2E9E5B),
+                      ),
+                    if (_engine.armor > 0 && enemy.armorCategory != null)
+                      _Tag(
+                        '装甲×${_engine.armor}（${enemy.armorCategory!.label}で割れる）',
+                        const Color(0xFF2E7DB5),
+                      ),
+                    if (widget.progress.springBuff && !widget.ghost)
+                      const _Tag('泉の加護 HP+30%', Color(0xFF3B8FB5)),
+                  ],
                 ),
               ],
             ),
@@ -385,7 +542,7 @@ class _BattleScreenState extends State<BattleScreen>
                           dimension: size,
                           child: CustomPaint(
                             painter: _EnemyPainter(
-                              widget.stage.enemy,
+                              _enemy,
                               _idle.value * 120,
                               flash: hit > 0 && hit < 1 ? (1 - hit) : 0,
                             ),
@@ -422,6 +579,11 @@ class _BattleScreenState extends State<BattleScreen>
                 key: p.key,
                 alignment: p.alignment,
                 child: _PopupText(popup: p),
+              ),
+            if (_speech != null)
+              Align(
+                alignment: const Alignment(0, -0.95),
+                child: _SpeechBubble(text: _speech!),
               ),
           ],
         );
@@ -502,7 +664,7 @@ class _BattleScreenState extends State<BattleScreen>
                       dimension: 64,
                       child: CustomPaint(
                         painter: _EnemyPainter(
-                          widget.stage.enemy,
+                          _enemy,
                           _idle.value * 120,
                           flash: hit > 0 && hit < 1 ? (1 - hit) : 0,
                         ),
@@ -593,12 +755,47 @@ class _BattleScreenState extends State<BattleScreen>
           key: ValueKey(q.hashCode),
           children: [
             _questionCard(q),
-            const SizedBox(height: 10),
+            if (!showExplanation &&
+                (_engine.hand.isNotEmpty || _engine.pendingCard != null))
+              _cardHand(),
+            const SizedBox(height: 6),
             Expanded(
               child: showExplanation
                   ? _explanation(q, last)
                   : _choices(q, last),
             ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  /// 手札（回答前にタップすると、この問題に効果がつく）
+  Widget _cardHand() {
+    final pending = _engine.pendingCard;
+    final canUse = !_locked && pending == null && !_engine.isOver;
+    return Padding(
+      padding: const EdgeInsets.only(top: 6),
+      child: SizedBox(
+        height: 34,
+        child: Row(
+          children: [
+            if (pending != null)
+              Expanded(
+                child: _CardChip(card: pending, active: true, onTap: null),
+              )
+            else
+              for (final (i, card) in _engine.hand.indexed)
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 2),
+                    child: _CardChip(
+                      card: card,
+                      active: false,
+                      onTap: canUse ? () => _useCard(i) : null,
+                    ),
+                  ),
+                ),
           ],
         ),
       ),
@@ -659,6 +856,23 @@ class _BattleScreenState extends State<BattleScreen>
   Widget _choices(PresentedQuestion q, TurnResult? last) {
     final reading = q.source.passage != null;
     Widget choice(int i) {
+      // ひらめきの栞で消えた選択肢
+      if (last == null && _engine.hiddenChoices.contains(i)) {
+        return Expanded(
+          child: Padding(
+            padding: const EdgeInsets.all(4),
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(color: const Color(0xFFE0D4C0)),
+              ),
+              child: const Center(
+                child: Text('✕', style: TextStyle(color: Color(0xFFCBBFAA))),
+              ),
+            ),
+          ),
+        );
+      }
       Color bg = TsuzuriColors.card;
       Color border = TsuzuriColors.accent.withValues(alpha: 0.5);
       Color fg = TsuzuriColors.ink;
@@ -786,7 +1000,9 @@ class _BattleScreenState extends State<BattleScreen>
           Expanded(
             child: SingleChildScrollView(
               child: Text(
-                q.source.explanation ?? '',
+                q.source.hasMoreExplanation
+                    ? '${q.source.shortExplanation}\n📓 くわしい解説は復習手帳に書きこんだよ'
+                    : q.source.shortExplanation,
                 style: const TextStyle(
                   fontSize: 13,
                   height: 1.6,
@@ -838,7 +1054,7 @@ class _BattleScreenState extends State<BattleScreen>
               Expanded(
                 child: _HpBar(
                   value: _engine.playerHp,
-                  max: _player.maxHp,
+                  max: _engine.maxHp,
                   color: TsuzuriColors.hp,
                   showNumbers: true,
                 ),
@@ -849,6 +1065,106 @@ class _BattleScreenState extends State<BattleScreen>
       },
     );
   }
+}
+
+/// 小さなラベル（弱点・装甲など）
+class _Tag extends StatelessWidget {
+  const _Tag(this.text, this.color);
+  final String text;
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) => Container(
+    padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 1),
+    decoration: BoxDecoration(
+      color: color.withValues(alpha: 0.12),
+      borderRadius: BorderRadius.circular(10),
+      border: Border.all(color: color.withValues(alpha: 0.6)),
+    ),
+    child: Text(
+      text,
+      style: TextStyle(
+        fontSize: 10.5,
+        color: color,
+        fontWeight: FontWeight.w700,
+      ),
+    ),
+  );
+}
+
+/// 手札のカード
+class _CardChip extends StatelessWidget {
+  const _CardChip({required this.card, required this.active, this.onTap});
+  final CardDef card;
+  final bool active;
+  final VoidCallback? onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final rare = card.rarity == CardRarity.rare;
+    final color = rare ? const Color(0xFF6A4BA8) : TsuzuriColors.accent;
+    return Tooltip(
+      message: card.description,
+      child: Material(
+        color: active
+            ? color.withValues(alpha: 0.18)
+            : (rare ? const Color(0xFFF3EEFB) : TsuzuriColors.card),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8),
+          side: BorderSide(color: color, width: active ? 2 : 1.2),
+        ),
+        child: InkWell(
+          borderRadius: BorderRadius.circular(8),
+          onTap: onTap,
+          child: Center(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 4),
+              child: Text(
+                active ? '${card.name}：${card.description}' : card.name,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                  fontSize: 11.5,
+                  fontWeight: FontWeight.w700,
+                  color: onTap == null && !active
+                      ? color.withValues(alpha: 0.45)
+                      : color,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/// 敵のセリフの吹き出し
+class _SpeechBubble extends StatelessWidget {
+  const _SpeechBubble({required this.text});
+  final String text;
+
+  @override
+  Widget build(BuildContext context) => TweenAnimationBuilder<double>(
+    tween: Tween(begin: 0.6, end: 1),
+    duration: const Duration(milliseconds: 220),
+    curve: Curves.easeOutBack,
+    builder: (_, v, child) => Transform.scale(scale: v, child: child),
+    child: Container(
+      margin: const EdgeInsets.symmetric(horizontal: 12),
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+      decoration: BoxDecoration(
+        color: TsuzuriColors.card,
+        borderRadius: BorderRadius.circular(14),
+        border: Border.all(color: TsuzuriColors.ink, width: 1.4),
+      ),
+      child: Text(
+        text,
+        textAlign: TextAlign.center,
+        style: serif(13.5, color: TsuzuriColors.ink),
+      ),
+    ),
+  );
 }
 
 class _HpBar extends StatelessWidget {

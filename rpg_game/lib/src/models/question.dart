@@ -107,6 +107,17 @@ class QuizQuestion {
 
   String get answer => choices[answerIndex];
 
+  /// バトル中に出す短い解説（最初の1文）。全文は復習手帳で読める。
+  String get shortExplanation {
+    final e = explanation?.trim() ?? '';
+    final end = e.indexOf('。');
+    return end < 0 ? e : e.substring(0, end + 1);
+  }
+
+  /// 解説に2文目以降があるか（復習手帳に続きがある）
+  bool get hasMoreExplanation =>
+      shortExplanation.length < (explanation?.trim().length ?? 0);
+
   factory QuizQuestion.fromJson(Map<String, dynamic> json,
           {Map<String, Passage> passages = const {}}) =>
       QuizQuestion(

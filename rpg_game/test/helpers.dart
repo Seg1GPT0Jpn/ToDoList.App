@@ -17,6 +17,9 @@ QuestionSet loadStage01() => loadSet('english_stage_01');
 DamageCalculator fixedDamage() =>
     DamageCalculator(random: Random(1), variance: 0);
 
+/// 弱点も装甲もない、テスト用の敵
+const testEnemy = EnemyDef(id: 'test', name: 'テスト', maxHp: 40, attack: 7);
+
 BattleEngine newBattle({
   int level = 1,
   EnemyDef? enemy,
@@ -25,7 +28,7 @@ BattleEngine newBattle({
 }) =>
     BattleEngine(
       player: PlayerStats.forLevel(level),
-      enemy: enemy ?? RpgCatalog.englishStages.first.enemy,
+      enemy: enemy ?? testEnemy,
       questions: questions ?? loadStage01().questions,
       timeLimit: const Duration(seconds: 20),
       random: Random(seed),

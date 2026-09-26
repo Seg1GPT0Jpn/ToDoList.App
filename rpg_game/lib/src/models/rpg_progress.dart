@@ -38,7 +38,23 @@ class RpgProgress {
     this.stageRecords = const {},
     this.purchasedWorldIds = const {},
     this.seaBest = const {},
+    this.deck = starterDeck,
+    this.mistakes = const {},
+    this.openedChests = const {},
+    this.companions = const {},
+    this.lostStages = const {},
+    this.springBuff = false,
   });
+
+  /// 最初のデッキ（CardDef.starterDeck と同じ）
+  static const starterDeck = [
+    'power',
+    'power',
+    'heal',
+    'guard',
+    'guard',
+    'hint'
+  ];
 
   static const initial = RpgProgress();
 
@@ -59,6 +75,24 @@ class RpgProgress {
   /// 定期テストの海：単元・単語帳ごとの最高正答率（0〜100）
   final Map<String, int> seaBest;
 
+  /// 知識カードのデッキ（カードIDの並び。同じカードを複数持てる）
+  final List<String> deck;
+
+  /// 間違えたまま残っている問題：問題ID → 出題されたステージID（亡霊になる）
+  final Map<String, String> mistakes;
+
+  /// 開けた宝箱
+  final Set<String> openedChests;
+
+  /// 仲間になったキャラクター
+  final Set<String> companions;
+
+  /// 一度でも負けたステージ（捕まった仲間が現れる）
+  final Set<String> lostStages;
+
+  /// 泉の加護（次のバトルで最大HP +30%）
+  final bool springBuff;
+
   RpgProgress copyWith({
     int? level,
     int? exp,
@@ -67,6 +101,12 @@ class RpgProgress {
     Map<String, StageRecord>? stageRecords,
     Set<String>? purchasedWorldIds,
     Map<String, int>? seaBest,
+    List<String>? deck,
+    Map<String, String>? mistakes,
+    Set<String>? openedChests,
+    Set<String>? companions,
+    Set<String>? lostStages,
+    bool? springBuff,
   }) =>
       RpgProgress(
         level: level ?? this.level,
@@ -76,6 +116,12 @@ class RpgProgress {
         stageRecords: stageRecords ?? this.stageRecords,
         purchasedWorldIds: purchasedWorldIds ?? this.purchasedWorldIds,
         seaBest: seaBest ?? this.seaBest,
+        deck: deck ?? this.deck,
+        mistakes: mistakes ?? this.mistakes,
+        openedChests: openedChests ?? this.openedChests,
+        companions: companions ?? this.companions,
+        lostStages: lostStages ?? this.lostStages,
+        springBuff: springBuff ?? this.springBuff,
       );
 
   factory RpgProgress.fromMap(Map<String, dynamic>? map) {
@@ -98,6 +144,18 @@ class RpgProgress {
         for (final e in ((map['seaBest'] as Map?) ?? const {}).entries)
           e.key as String: (e.value as num).toInt(),
       },
+      deck: map['deck'] == null
+          ? starterDeck
+          : List<String>.from(map['deck'] as List),
+      mistakes: {
+        for (final e in ((map['mistakes'] as Map?) ?? const {}).entries)
+          e.key as String: e.value as String,
+      },
+      openedChests:
+          Set<String>.from((map['openedChests'] as List?) ?? const []),
+      companions: Set<String>.from((map['companions'] as List?) ?? const []),
+      lostStages: Set<String>.from((map['lostStages'] as List?) ?? const []),
+      springBuff: map['springBuff'] as bool? ?? false,
     );
   }
 
@@ -111,5 +169,11 @@ class RpgProgress {
         },
         'purchasedWorldIds': purchasedWorldIds.toList()..sort(),
         'seaBest': seaBest,
+        'deck': deck,
+        'mistakes': mistakes,
+        'openedChests': openedChests.toList()..sort(),
+        'companions': companions.toList()..sort(),
+        'lostStages': lostStages.toList()..sort(),
+        'springBuff': springBuff,
       };
 }

@@ -13,9 +13,17 @@ class ResultScreen extends StatefulWidget {
     required this.stage,
     required this.summary,
     required this.result,
+    this.enemy,
+    this.ghost = false,
   });
 
   final StageDef stage;
+
+  /// 戦った相手（亡霊バトルでは亡霊）。null ならステージの敵
+  final EnemyDef? enemy;
+
+  /// 亡霊との再戦だった
+  final bool ghost;
   final BattleSummary summary;
   final StageClearResult result;
 
@@ -40,6 +48,7 @@ class _ResultScreenState extends State<ResultScreen>
   int _shownLevel = 0;
 
   ExpGainResult get _gain => widget.result.expResult;
+  String get _enemyName => (widget.enemy ?? widget.stage.enemy).name;
 
   @override
   void initState() {
@@ -132,9 +141,9 @@ class _ResultScreenState extends State<ResultScreen>
                 child: Text(
                   won
                       ? (s.isPerfect
-                            ? 'ノーミスで ${widget.stage.enemy.name} をたおした！'
-                            : '${widget.stage.enemy.name} をたおした！')
-                      : '${widget.stage.enemy.name} にやられてしまった…',
+                            ? 'ノーミスで $_enemyName をたおした！'
+                            : '$_enemyName をたおした！')
+                      : '$_enemyName にやられてしまった…',
                   style: serif(17),
                   textAlign: TextAlign.center,
                 ),
@@ -155,6 +164,46 @@ class _ResultScreenState extends State<ResultScreen>
               ),
               const SizedBox(height: 12),
               _card(child: _expPanel()),
+              if (widget.result.newCard case final card?)
+                _notice(
+                  Icons.style,
+                  const Color(0xFF6A4BA8),
+                  'カード「${card.name}」を手に入れた！',
+                  card.description,
+                ),
+              if (widget.result.rescued case final friend?)
+                _notice(
+                  Icons.favorite,
+                  const Color(0xFFD64545),
+                  '${friend.name}を助け出した！ 仲間になった！',
+                  friend.description,
+                ),
+              if (widget.ghost && won)
+                _notice(
+                  Icons.auto_awesome,
+                  const Color(0xFF3B8FB5),
+                  '亡霊が成仏した！',
+                  '正解した問題は復習手帳から消えたよ。',
+                ),
+              if (widget.result.newMistakes > 0)
+                _notice(
+                  Icons.menu_book,
+                  TsuzuriColors.inkSoft,
+                  '亡霊が${widget.result.newMistakes}体うまれた…',
+                  'まちがえた問題はフィールドをさまよっている。話しかけると再戦できるよ。くわしい解説は復習手帳へ。',
+                ),
+              if (!won &&
+                  !widget.ghost &&
+                  widget.stage.captiveCompanionId != null &&
+                  !widget.result.progress.companions.contains(
+                    widget.stage.captiveCompanionId,
+                  ))
+                _notice(
+                  Icons.lock,
+                  TsuzuriColors.wrong,
+                  '${CompanionDef.byId(widget.stage.captiveCompanionId!).name}が捕まっている！',
+                  'リベンジして勝てば助け出せる。仲間になってくれるかも。',
+                ),
               if (widget.result.newlyUnlockedStageId != null) ...[
                 const SizedBox(height: 12),
                 _card(
@@ -290,6 +339,37 @@ class _ResultScreenState extends State<ResultScreen>
       ),
     );
   }
+
+  Widget _notice(
+    IconData icon,
+    Color color,
+    String title,
+    String body,
+  ) => Padding(
+    padding: const EdgeInsets.only(top: 12),
+    child: _card(
+      color: color.withValues(alpha: 0.07),
+      child: Row(
+        children: [
+          Icon(icon, color: color),
+          const SizedBox(width: 10),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: TextStyle(fontWeight: FontWeight.w800, color: color),
+                ),
+                const SizedBox(height: 2),
+                Text(body, style: const TextStyle(fontSize: 12.5, height: 1.5)),
+              ],
+            ),
+          ),
+        ],
+      ),
+    ),
+  );
 
   Widget _card({required Widget child, Color? color}) => Container(
     padding: const EdgeInsets.all(14),

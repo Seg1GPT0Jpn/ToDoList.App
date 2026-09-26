@@ -25,9 +25,18 @@ void main() {
     }
   });
 
-  /// 番号 < [upTo] の敵を倒した状態（ゲート横にどいている）で、スタートから届くマス
-  Set<(int, int)> reachable(int upTo) {
+  /// 亡霊を置く位置（ゲーム本体と同じく、各部屋の safeCells の真ん中）
+  final ghosts = <(int, int)>{
+    for (final cells in map.safeCells.values)
+      if (cells.isNotEmpty)
+        (cells[cells.length ~/ 2].col, cells[cells.length ~/ 2].row),
+  };
+
+  /// 番号 < [upTo] の敵を倒した状態（ゲート横にどいている）で、スタートから届くマス。
+  /// [withGhosts] なら全部屋に亡霊が立っている状態。
+  Set<(int, int)> reachable(int upTo, {bool withGhosts = false}) {
     final blocked = <(int, int)>{
+      if (withGhosts) ...ghosts,
       for (final e in map.enemySpots.entries)
         if (e.key < upTo)
           (map.asideOf(e.value).col, map.asideOf(e.value).row)
@@ -92,5 +101,50 @@ void main() {
 
   test('ボスを倒すとゴールにたどり着ける', () {
     expect(adjacent(reachable(99), map.find('G')), isTrue);
+  });
+
+  test('宝箱は全エリアに1つずつ、泉は2エリアに1つあり、どれも立ち寄れる', () {
+    final chests = map.findAll('C');
+    expect(chests.length, world.stages.length);
+    expect(
+      {for (final c in chests) map.enemyAhead(c)},
+      {for (final s in world.stages) s.order},
+    );
+    expect(map.findAll('W').length, world.stages.length ~/ 2);
+    final all = reachable(99, withGhosts: true);
+    for (final c in [...chests, ...map.findAll('W')]) {
+      expect(adjacent(all, c), isTrue, reason: '$c');
+    }
+  });
+
+  test('全部屋に亡霊がいても、敵・宿・ゴールへの道はふさがれない', () {
+    for (final s in world.stages) {
+      final r = reachable(s.order, withGhosts: true);
+      expect(adjacent(r, map.enemySpots[s.order]!), isTrue, reason: s.name);
+    }
+    final all = reachable(99, withGhosts: true);
+    for (final inn in map.innSpots) {
+      expect(adjacent(all, inn), isTrue);
+    }
+    expect(adjacent(all, map.find('G')), isTrue);
+    for (final g in ghosts) {
+      expect(adjacent(all, (col: g.$1, row: g.$2)), isTrue);
+    }
+  });
+
+  test('捕まった仲間の檻はゲートの反対側の壁に置ける', () {
+    for (final gate in map.enemySpots.values) {
+      final aside = map.asideOf(gate);
+      final cage = (col: gate.col * 2 - aside.col, row: gate.row);
+      expect(map.tileAt(cage.col, cage.row), '#');
+    }
+  });
+
+  test('部屋は毎回同じ形で、ほどよく障害物がある', () {
+    final floors = [
+      for (final r in map.rows) ...r.split('').where((c) => c == '.'),
+    ].length;
+    final total = map.width * map.height;
+    expect(floors / total, inInclusiveRange(0.3, 0.75));
   });
 }

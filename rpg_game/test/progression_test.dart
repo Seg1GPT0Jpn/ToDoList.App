@@ -182,8 +182,11 @@ void main() {
       for (var i = 1; i < world.stages.length; i++) {
         final prev = world.stages[i - 1].enemy;
         final cur = world.stages[i].enemy;
-        expect(cur.maxHp, greaterThan(prev.maxHp));
         expect(cur.attack, greaterThan(prev.attack));
+        // 装甲のある敵は、そのぶん HP が前の敵より低いこともある
+        if (cur.armor == 0 || prev.armor > 0) {
+          expect(cur.maxHp, greaterThan(prev.maxHp));
+        }
         expect(world.stages[i].order, i + 1);
       }
     });

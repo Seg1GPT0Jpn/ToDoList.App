@@ -17,6 +17,8 @@ class StageDef {
     this.recommendedLevel = 1,
     this.grammarTheme = '',
     this.vocabLevel = '',
+    this.captiveCompanionId,
+    this.rewardCardId,
   });
 
   final String id;
@@ -41,6 +43,12 @@ class StageDef {
 
   /// 四天王・ラスボス
   final bool isBoss;
+
+  /// 一度負けると横に捕まって現れ、再戦で勝つと仲間になるキャラクター
+  final String? captiveCompanionId;
+
+  /// 初めて勝ったときにもらえるカード
+  final String? rewardCardId;
 
   /// 初回クリア時の獲得経験値
   final int expReward;

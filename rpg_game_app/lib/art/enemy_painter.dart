@@ -35,6 +35,8 @@ void paintEnemy(
       _knight(canvas, size, t, c ?? const Color(0xFF6E7F8A));
     case 'dragon':
       _dragon(canvas, size, t, c ?? const Color(0xFFB23A48));
+    case 'ghost':
+      _ghost(canvas, size, t, c ?? const Color(0xFFB9C6E8));
     default:
       _slime(canvas, size, t, c ?? const Color(0xFF9CCB8B));
   }
@@ -461,4 +463,48 @@ void _dragon(Canvas c, double s, double t, Color tint) {
     _fill(Color.fromRGBO(255, 150, 50, 0.8)),
   );
   c.restore();
+}
+
+/// 亡霊（間違えた問題のなごり）：ふわふわ浮かぶ半透明のおばけ
+void _ghost(Canvas c, double s, double t, Color body) {
+  final bob = sin(t * 2.2) * s * 0.04;
+  _shadow(c, s, 0.4);
+  final top = s * 0.2 + bob, bottom = s * 0.8 + bob;
+  final path = Path()
+    ..moveTo(s * 0.22, bottom)
+    ..lineTo(s * 0.22, s * 0.45 + bob)
+    ..arcToPoint(
+      Offset(s * 0.78, s * 0.45 + bob),
+      radius: Radius.circular(s * 0.28),
+    )
+    ..lineTo(s * 0.78, bottom);
+  // すそのぎざぎざ（ゆらゆら動く）
+  for (var i = 0; i < 4; i++) {
+    final x0 = s * (0.78 - i * 0.14);
+    final wob = sin(t * 4 + i) * s * 0.02;
+    path.quadraticBezierTo(
+      x0 - s * 0.07,
+      bottom - s * 0.09 + wob,
+      x0 - s * 0.14,
+      bottom,
+    );
+  }
+  path.close();
+  c.drawPath(path, _fill(body.withValues(alpha: 0.85)));
+  c.drawPath(path, _stroke(s * 0.025));
+  _eyes(
+    c,
+    Offset(s * 0.4, top + s * 0.22),
+    Offset(s * 0.6, top + s * 0.22),
+    s,
+    size: 0.06,
+  );
+  // 「？」マーク
+  final b = ParagraphBuilder(ParagraphStyle(textAlign: TextAlign.center))
+    ..pushStyle(
+      TextStyle(color: _ink, fontSize: s * 0.16, fontWeight: FontWeight.w900),
+    )
+    ..addText('?');
+  final p = b.build()..layout(ParagraphConstraints(width: s));
+  c.drawParagraph(p, Offset(0, top + s * 0.3));
 }

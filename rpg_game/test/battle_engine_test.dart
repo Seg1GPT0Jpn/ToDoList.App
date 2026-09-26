@@ -17,22 +17,26 @@ void main() {
           10);
     });
 
-    test('連続正解で10%ずつ上がり、上限は+50%', () {
+    test('3チェインで1.5倍、5チェインで2倍', () {
+      expect(
+          calc.playerAttack(
+              attack: 10, combo: 2, elapsed: slow, timeLimit: limit),
+          10);
       expect(
           calc.playerAttack(
               attack: 10, combo: 3, elapsed: slow, timeLimit: limit),
-          12);
+          15);
       expect(
           calc.playerAttack(
               attack: 10, combo: 99, elapsed: slow, timeLimit: limit),
-          15);
+          20);
     });
 
-    test('制限時間の1/3以内の回答で+20%', () {
+    test('制限時間の1/3以内の回答はクリティカルで1.5倍', () {
       expect(
           calc.playerAttack(
               attack: 10, combo: 1, elapsed: fast, timeLimit: limit),
-          12);
+          15);
     });
 
     test('敵の攻撃は 攻撃力 - 防御/2、最低1', () {
@@ -122,7 +126,7 @@ void main() {
       expect(b.enemyHp, 40);
     });
 
-    test('全問正解（ゆっくり）で4ターンで勝利: 10+11+12+13', () {
+    test('全問正解（ゆっくり）で4ターンで勝利: 10+10+15+15', () {
       final b = newBattle();
       while (!b.isOver) {
         b.answer(b.currentQuestion.correctIndex, elapsed: slow);
@@ -184,7 +188,8 @@ void main() {
           }
           if (b.phase == BattlePhase.won) wins++;
         }
-        expect(wins, greaterThanOrEqualTo(35),
+        // 四天王・ラスボスは手ごわく（6割）、それ以外は7割以上勝てること
+        expect(wins, greaterThanOrEqualTo(stage.isBoss ? 30 : 35),
             reason: '${stage.name}: 50戦中 $wins 勝');
       }
     });

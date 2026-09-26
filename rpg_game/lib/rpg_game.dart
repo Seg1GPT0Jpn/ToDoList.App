@@ -2,6 +2,7 @@
 library rpg_game;
 
 export 'src/battle/battle_engine.dart';
+export 'src/battle/cards.dart';
 export 'src/battle/damage_calculator.dart';
 export 'src/battle/question_deck.dart';
 export 'src/data/catalog.dart';

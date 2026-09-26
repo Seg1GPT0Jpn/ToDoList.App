@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 import 'package:rpg_game/rpg_game.dart';
@@ -9,6 +11,8 @@ import '../study/inn_screen.dart';
 import '../art/enemy_painter.dart';
 import '../art/hero_painter.dart';
 import '../battle/battle_screen.dart';
+import '../battle/deck_screen.dart';
+import '../study/review_notebook_screen.dart';
 import 'field_game.dart';
 import 'field_map.dart';
 
@@ -41,6 +45,40 @@ class _MessageDialog extends _Dialog {
   final String text;
 }
 
+class _ChestDialog extends _Dialog {
+  _ChestDialog(this.stage, this.chestId);
+  final StageDef stage;
+  final String chestId;
+}
+
+class _SpringDialog extends _Dialog {
+  _SpringDialog(this.stage);
+  final StageDef stage;
+}
+
+class _GhostDialog extends _Dialog {
+  _GhostDialog(this.stage, this.count);
+  final StageDef stage;
+  final int count;
+}
+
+/// 宝箱・泉で出す、その場で解く小さなクイズ
+class _QuizDialog extends _Dialog {
+  _QuizDialog(this.title, this.questions, this.onDone);
+  final String title;
+  final List<QuizQuestion> questions;
+  final void Function(int correct) onDone;
+}
+
+/// 亡霊の見た目（ダイアログの絵用）
+const _ghostLook = EnemyDef(
+  id: 'ghost',
+  name: '亡霊',
+  maxHp: 1,
+  attack: 1,
+  look: 'ghost',
+);
+
 class _FieldScreenState extends State<FieldScreen> with RouteAware {
   late RpgProgress _progress = widget.progress;
   late final FieldGame _game = FieldGame(
@@ -50,7 +88,16 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
     onEncounter: (stage, cleared) => _open(_EncounterDialog(stage, cleared)),
     onMessage: (text) => _open(_MessageDialog(text)),
     onInn: (stage) => _open(_InnDialog(stage)),
+    onChest: (stage, id, opened) =>
+        _open(opened ? _MessageDialog('宝箱はもう空っぽだ。') : _ChestDialog(stage, id)),
+    onSpring: (stage) => _open(
+      _progress.springBuff
+          ? _MessageDialog('泉の加護が、もう体をつつんでいる。（次のバトルで最大HP+30%）')
+          : _SpringDialog(stage),
+    ),
+    onGhost: (stage, count) => _open(_GhostDialog(stage, count)),
   );
+  final _random = Random();
   _Dialog? _dialog;
   bool _starting = false;
 
@@ -131,6 +178,115 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
     );
   }
 
+  /// 進行状況を保存して、フィールドにも反映する
+  Future<void> _save(RpgProgress p) async {
+    await RpgServices.of(context).repository.save(p);
+    if (!mounted) return;
+    setState(() => _progress = p);
+    _game.applyProgress(p);
+  }
+
+  /// その先のステージの問題から、条件に合うものを [n] 問えらぶ（長文は除く）
+  Future<List<QuizQuestion>> _pick(
+    StageDef stage,
+    int n,
+    bool Function(QuizQuestion q) where,
+  ) async {
+    final set = await RpgServices.of(context).loadStagePool(stage);
+    if (set == null || !set.origin.usableInRpg) return [];
+    final pool = set.questions.where((q) => q.passage == null).toList();
+    var picked = pool.where(where).toList();
+    if (picked.length < n) picked = pool;
+    picked.shuffle(_random);
+    return picked.take(n).toList();
+  }
+
+  Future<void> _tryChest(StageDef stage, String chestId) async {
+    final qs = await _pick(
+      stage,
+      1,
+      (q) => q.category == QuestionCategory.usage,
+    );
+    if (!mounted || qs.isEmpty) return;
+    _open(
+      _QuizDialog('宝箱の鍵：難問', qs, (correct) async {
+        final (updated, card) = Progression.openChest(
+          _progress,
+          chestId,
+          correct == 1,
+          _random,
+        );
+        await _save(updated);
+        if (!mounted) return;
+        _open(
+          _MessageDialog(
+            card == null
+                ? 'カチッ…鍵が合わなかった。宝箱は砂になって消えてしまった…'
+                : '宝箱が開いた！ レアカード「${card.name}」を手に入れた！\n${card.description}',
+          ),
+        );
+      }),
+    );
+  }
+
+  Future<void> _trySpring(StageDef stage) async {
+    final qs = await _pick(
+      stage,
+      3,
+      (q) => q.category == QuestionCategory.meaning,
+    );
+    if (!mounted || qs.isEmpty) return;
+    _open(
+      _QuizDialog('泉のささやき：基礎の3問', qs, (correct) async {
+        if (correct == qs.length) {
+          await _save(Progression.blessSpring(_progress));
+          if (!mounted) return;
+          _open(_MessageDialog('泉が光った！ 次のバトルで最大HPが30%ふえる。'));
+        } else {
+          _open(_MessageDialog('泉の水がにごってしまった…。全問正解で加護がもらえる。また来よう。'));
+        }
+      }),
+    );
+  }
+
+  Future<void> _startGhost(StageDef stage) async {
+    if (_starting) return;
+    _starting = true;
+    final set = await RpgServices.of(context).loadStagePool(stage);
+    _starting = false;
+    if (!mounted || set == null) return;
+    final ids = {
+      for (final e in _progress.mistakes.entries)
+        if (e.value == stage.id) e.key,
+    };
+    final questions = set.questions.where((q) => ids.contains(q.id)).toList();
+    if (questions.isEmpty) {
+      _open(_MessageDialog('亡霊は消えてしまったようだ。'));
+      return;
+    }
+    _close();
+    _game.inputLocked = true;
+    Navigator.of(context).push(
+      PageRouteBuilder<void>(
+        transitionDuration: const Duration(milliseconds: 600),
+        pageBuilder: (_, _, _) => BattleScreen(
+          world: widget.world,
+          stage: stage,
+          questions: questions,
+          progress: _progress,
+          ghost: true,
+        ),
+        transitionsBuilder: (_, anim, _, child) =>
+            _BattleTransition(animation: anim, child: child),
+      ),
+    );
+  }
+
+  void _openPage(Widget page) {
+    _game.inputLocked = true;
+    Navigator.of(context).push(MaterialPageRoute<void>(builder: (_) => page));
+  }
+
   @override
   Widget build(BuildContext context) {
     final stats = PlayerStats.forLevel(_progress.level);
@@ -177,6 +333,34 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
               ),
             ),
           ),
+          // 復習手帳・デッキ
+          if (_dialog == null)
+            Positioned(
+              right: 10,
+              bottom: 24,
+              child: SafeArea(
+                child: Column(
+                  children: [
+                    _RoundButton(
+                      icon: Icons.menu_book,
+                      tooltip: '復習手帳（${_progress.mistakes.length}）',
+                      onTap: () => _openPage(
+                        ReviewNotebookScreen(
+                          world: widget.world,
+                          progress: _progress,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    _RoundButton(
+                      icon: Icons.style,
+                      tooltip: 'デッキと仲間',
+                      onTap: () => _openPage(DeckScreen(progress: _progress)),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           // 十字ボタン
           if (_dialog == null)
             Positioned(
@@ -234,6 +418,83 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
             ],
           ),
         );
+      case _ChestDialog(:final stage, :final chestId):
+        return _MessageBox(
+          actions: [
+            TextButton(onPressed: _close, child: const Text('やめておく')),
+            FilledButton.icon(
+              onPressed: () => _tryChest(stage, chestId),
+              icon: const Icon(Icons.key, size: 18),
+              label: const Text('鍵をあける'),
+            ),
+          ],
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('宝箱がある！', style: serif(16)),
+              const SizedBox(height: 4),
+              const Text(
+                '鍵は「難問」1問。正解すればレアカードが手に入る。\nでも、まちがえると宝箱は消えてしまう…（1回きり）',
+                style: TextStyle(fontSize: 13.5, height: 1.6),
+              ),
+            ],
+          ),
+        );
+      case _SpringDialog(:final stage):
+        return _MessageBox(
+          actions: [
+            TextButton(onPressed: _close, child: const Text('やめておく')),
+            FilledButton.icon(
+              onPressed: () => _trySpring(stage),
+              icon: const Icon(Icons.water_drop, size: 18),
+              label: const Text('泉の問いに答える'),
+            ),
+          ],
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('ふしぎな泉', style: serif(16)),
+              const SizedBox(height: 4),
+              const Text(
+                '基礎の単語を3問。全問正解すると、次のバトルで最大HPが30%ふえる。\n何度でも挑戦できる。',
+                style: TextStyle(fontSize: 13.5, height: 1.6),
+              ),
+            ],
+          ),
+        );
+      case _GhostDialog(:final stage, :final count):
+        return _MessageBox(
+          portrait: _ghostLook,
+          actions: [
+            TextButton(onPressed: _close, child: const Text('あとで')),
+            FilledButton.icon(
+              onPressed: () => _startGhost(stage),
+              icon: const Icon(Icons.edit, size: 18),
+              label: const Text('再戦する'),
+            ),
+          ],
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('亡霊がさまよっている…', style: serif(16)),
+              const SizedBox(height: 4),
+              Text(
+                '「${stage.name}」でまちがえた$count問のなごり。\n正解すると成仏して、経験値がもらえる。',
+                style: const TextStyle(fontSize: 13.5, height: 1.6),
+              ),
+            ],
+          ),
+        );
+      case _QuizDialog(:final title, :final questions, :final onDone):
+        return _MessageBox(
+          actions: const [],
+          child: _MiniQuiz(
+            key: ObjectKey(d),
+            title: title,
+            questions: questions,
+            onDone: onDone,
+          ),
+        );
       case _EncounterDialog(:final stage, :final cleared):
         final enemy = stage.enemy;
         return _MessageBox(
@@ -265,7 +526,9 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
               ),
               const SizedBox(height: 4),
               Text(
-                '${enemy.description}\n文法：${stage.grammarTheme}／単語：${stage.vocabLevel}\nHP ${enemy.maxHp}・推奨Lv${stage.recommendedLevel}・1問${stage.timeLimitSeconds}秒',
+                '${enemy.description}\n文法：${stage.grammarTheme}／単語：${stage.vocabLevel}\nHP ${enemy.maxHp}・推奨Lv${stage.recommendedLevel}・1問${stage.timeLimitSeconds}秒'
+                '${enemy.weakness != null ? '\n弱点：${enemy.weakness!.label}の問題（ダメージ1.5倍）' : ''}'
+                '${enemy.armor > 0 ? '\n装甲×${enemy.armor}：${enemy.armorCategory!.label}の問題で割れる' : ''}',
                 style: const TextStyle(
                   fontSize: 12,
                   color: TsuzuriColors.inkSoft,
@@ -593,6 +856,112 @@ class _DPad extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+/// 宝箱・泉のミニクイズ（ダイアログの中で解く）
+class _MiniQuiz extends StatefulWidget {
+  const _MiniQuiz({
+    super.key,
+    required this.title,
+    required this.questions,
+    required this.onDone,
+  });
+
+  final String title;
+  final List<QuizQuestion> questions;
+  final void Function(int correct) onDone;
+
+  @override
+  State<_MiniQuiz> createState() => _MiniQuizState();
+}
+
+class _MiniQuizState extends State<_MiniQuiz> {
+  int _index = 0;
+  int _correct = 0;
+  int? _chosen;
+
+  QuizQuestion get _q => widget.questions[_index];
+
+  void _choose(int i) {
+    if (_chosen != null) return;
+    setState(() {
+      _chosen = i;
+      if (i == _q.answerIndex) _correct++;
+    });
+  }
+
+  void _next() {
+    if (_index + 1 < widget.questions.length) {
+      setState(() {
+        _index++;
+        _chosen = null;
+      });
+    } else {
+      widget.onDone(_correct);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final q = _q;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Text(
+          '${widget.title}（${_index + 1}/${widget.questions.length}）',
+          style: serif(15),
+        ),
+        const SizedBox(height: 4),
+        Text(q.prompt, style: const TextStyle(fontSize: 13)),
+        if (q.sentence != null)
+          Padding(
+            padding: const EdgeInsets.only(top: 4),
+            child: Text(q.sentence!, style: serif(15)),
+          ),
+        const SizedBox(height: 8),
+        for (var i = 0; i < q.choices.length; i++)
+          Padding(
+            padding: const EdgeInsets.only(bottom: 6),
+            child: SizedBox(
+              width: double.infinity,
+              child: OutlinedButton(
+                style: OutlinedButton.styleFrom(
+                  backgroundColor: _chosen == null
+                      ? null
+                      : i == q.answerIndex
+                      ? TsuzuriColors.correct.withValues(alpha: 0.2)
+                      : i == _chosen
+                      ? TsuzuriColors.wrong.withValues(alpha: 0.2)
+                      : null,
+                ),
+                onPressed: _chosen == null ? () => _choose(i) : null,
+                child: Text(q.choices[i]),
+              ),
+            ),
+          ),
+        if (_chosen != null) ...[
+          Text(
+            _chosen == q.answerIndex
+                ? '正解！'
+                : '正解は「${q.answer}」。${q.shortExplanation}',
+            style: TextStyle(
+              fontSize: 13,
+              height: 1.5,
+              color: _chosen == q.answerIndex
+                  ? TsuzuriColors.correct
+                  : TsuzuriColors.wrong,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+          Align(
+            alignment: Alignment.centerRight,
+            child: FilledButton(onPressed: _next, child: const Text('つぎへ')),
+          ),
+        ],
+      ],
     );
   }
 }

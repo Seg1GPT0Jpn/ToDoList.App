@@ -16,8 +16,6 @@ import 'field_map.dart';
 
 const double tileSize = 32;
 
-typedef Cell = ({int col, int row});
-
 extension on Facing {
   Cell get delta => switch (this) {
     Facing.up => (col: 0, row: -1),
@@ -39,6 +37,9 @@ class FieldGame extends FlameGame with KeyboardEvents {
     required this.onEncounter,
     required this.onMessage,
     required this.onInn,
+    required this.onChest,
+    required this.onSpring,
+    required this.onGhost,
   });
 
   final FieldMap map;
@@ -49,9 +50,21 @@ class FieldGame extends FlameGame with KeyboardEvents {
   /// 宿に話しかけたとき。引数は宿の先にいる（次に戦う）ステージ
   final void Function(StageDef nextStage) onInn;
 
+  /// 宝箱に話しかけたとき（[chestId] は保存用の ID）
+  final void Function(StageDef nextStage, String chestId, bool opened) onChest;
+
+  /// 泉に話しかけたとき
+  final void Function(StageDef nextStage) onSpring;
+
+  /// 亡霊（そのステージで間違えた問題）に話しかけたとき
+  final void Function(StageDef stage, int count) onGhost;
+
   RpgProgress _progress;
   late final PlayerToken player;
   final Map<int, EnemyToken> _enemies = {};
+  final Map<Cell, ChestToken> _chests = {};
+  final Map<int, GhostToken> _ghosts = {};
+  final Map<int, CageToken> _cages = {};
 
   /// 画面の十字ボタンで押されている方向
   Facing? padDirection;
@@ -79,6 +92,14 @@ class FieldGame extends FlameGame with KeyboardEvents {
       _enemies[e.key] = token;
       world.add(token);
     }
+    for (final c in map.findAll('C')) {
+      final token = ChestToken(c);
+      _chests[c] = token;
+      world.add(token);
+    }
+    for (final w in map.findAll('W')) {
+      world.add(SpringToken(w));
+    }
     player = PlayerToken(map.find('P'));
     world.add(player);
     applyProgress(_progress);
@@ -105,6 +126,59 @@ class FieldGame extends FlameGame with KeyboardEvents {
       token.position = _center(token.cell);
       token.priority = token.cell.row * 10 + 4;
     }
+    for (final e in _chests.entries) {
+      e.value.opened = progress.openedChests.contains(chestIdAt(e.key));
+    }
+    // 亡霊：間違えた問題があるステージごとに1体、そのステージの手前の部屋をさまよう
+    final counts = <String, int>{};
+    for (final stageId in progress.mistakes.values) {
+      counts[stageId] = (counts[stageId] ?? 0) + 1;
+    }
+    for (final stage in rpgWorld.stages) {
+      final n = counts[stage.id] ?? 0;
+      final cells = map.safeCells[stage.order] ?? const [];
+      final existing = _ghosts[stage.order];
+      if (n == 0 || cells.isEmpty) {
+        existing?.removeFromParent();
+        _ghosts.remove(stage.order);
+        continue;
+      }
+      if (existing != null) {
+        existing.count = n;
+      } else {
+        final token = GhostToken(stage, cells[cells.length ~/ 2], n);
+        _ghosts[stage.order] = token;
+        world.add(token);
+      }
+    }
+    // 負けたステージの仲間は、ゲート横の檻に捕まっている
+    for (final stage in rpgWorld.stages) {
+      final captive = stage.captiveCompanionId;
+      final caught =
+          captive != null &&
+          progress.lostStages.contains(stage.id) &&
+          !progress.companions.contains(captive);
+      final existing = _cages[stage.order];
+      if (!caught) {
+        existing?.removeFromParent();
+        _cages.remove(stage.order);
+      } else if (existing == null) {
+        final gate = map.enemySpots[stage.order]!;
+        final aside = map.asideOf(gate);
+        final cell = (col: gate.col * 2 - aside.col, row: gate.row);
+        final token = CageToken(cell);
+        _cages[stage.order] = token;
+        world.add(token);
+      }
+    }
+  }
+
+  /// 宝箱の保存用 ID（その先にいる敵の番号で決まる）
+  String chestIdAt(Cell c) => '${rpgWorld.id}_chest_${map.enemyAhead(c)}';
+
+  StageDef? _stageAhead(Cell c) {
+    final n = map.enemyAhead(c);
+    return rpgWorld.stages.where((s) => s.order == n).firstOrNull;
   }
 
   EnemyToken? _enemyAt(Cell c) {
@@ -179,6 +253,13 @@ class FieldGame extends FlameGame with KeyboardEvents {
       col: player.cell.col + dir.delta.col,
       row: player.cell.row + dir.delta.row,
     );
+    for (final g in _ghosts.values) {
+      if (g.cell == target) {
+        _bumpedDirection = dir;
+        onGhost(g.stage, g.count);
+        return;
+      }
+    }
     final enemy = _enemyAt(target);
     if (enemy != null) {
       _bumpedDirection = dir;
@@ -195,6 +276,19 @@ class FieldGame extends FlameGame with KeyboardEvents {
       case 'S':
         _bumpedDirection = dir;
         onMessage(FieldMap.signMessages.first);
+        return;
+      case 'C':
+        _bumpedDirection = dir;
+        final stage = _stageAhead(target);
+        final id = chestIdAt(target);
+        if (stage != null) {
+          onChest(stage, id, _progress.openedChests.contains(id));
+        }
+        return;
+      case 'W':
+        _bumpedDirection = dir;
+        final stage = _stageAhead(target);
+        if (stage != null) onSpring(stage);
         return;
       case 'G':
         _bumpedDirection = dir;
@@ -676,4 +770,230 @@ class PlayerToken extends PositionComponent {
     walk: _walk,
     moving: moving || _idle < 0.08,
   );
+}
+
+/// 宝箱（開けると空っぽになる）
+class ChestToken extends PositionComponent {
+  ChestToken(this.cell)
+    : super(
+        size: Vector2.all(tileSize),
+        anchor: Anchor.center,
+        position: _center(cell),
+        priority: cell.row * 10 + 3,
+      );
+
+  final Cell cell;
+  bool opened = false;
+  double _t = 0;
+
+  @override
+  void update(double dt) => _t += dt;
+
+  @override
+  void render(ui.Canvas canvas) {
+    final c = canvas;
+    final s = size.x;
+    final ink = ui.Paint()
+      ..color = TsuzuriColors.ink
+      ..style = ui.PaintingStyle.stroke
+      ..strokeWidth = 1.4;
+    c.drawOval(
+      Rect.fromCenter(center: Offset(s / 2, s - 4), width: 24, height: 6),
+      ui.Paint()..color = const ui.Color(0x33000000),
+    );
+    if (!opened) {
+      // きらきら
+      final glow = (sin(_t * 3) + 1) / 2;
+      c.drawCircle(
+        Offset(s / 2, s / 2),
+        s * 0.5,
+        ui.Paint()..color = ui.Color.fromRGBO(255, 214, 90, 0.08 + glow * 0.15),
+      );
+    }
+    final box = Rect.fromLTWH(5, s * 0.45, s - 10, s * 0.4);
+    c.drawRect(box, ui.Paint()..color = const ui.Color(0xFFB5763B));
+    c.drawRect(box, ink);
+    final lid = opened
+        ? Rect.fromLTWH(5, s * 0.22, s - 10, s * 0.14)
+        : Rect.fromLTWH(5, s * 0.3, s - 10, s * 0.17);
+    c.drawRRect(
+      ui.RRect.fromRectAndCorners(
+        lid,
+        topLeft: const ui.Radius.circular(6),
+        topRight: const ui.Radius.circular(6),
+      ),
+      ui.Paint()..color = const ui.Color(0xFFC98A4B),
+    );
+    c.drawRRect(
+      ui.RRect.fromRectAndCorners(
+        lid,
+        topLeft: const ui.Radius.circular(6),
+        topRight: const ui.Radius.circular(6),
+      ),
+      ink,
+    );
+    c.drawRect(
+      Rect.fromCenter(center: Offset(s / 2, s * 0.5), width: 6, height: 7),
+      ui.Paint()..color = const ui.Color(0xFFF2B84B),
+    );
+    if (opened) {
+      c.drawRect(
+        Rect.fromLTWH(8, s * 0.45, s - 16, 4),
+        ui.Paint()..color = const ui.Color(0xFF3A2A1E),
+      );
+    }
+  }
+}
+
+/// 回復の泉（ゆらゆら光る）
+class SpringToken extends PositionComponent {
+  SpringToken(Cell cell)
+    : super(
+        size: Vector2.all(tileSize),
+        anchor: Anchor.center,
+        position: _center(cell),
+        priority: cell.row * 10 + 2,
+      );
+
+  double _t = 0;
+
+  @override
+  void update(double dt) => _t += dt;
+
+  @override
+  void render(ui.Canvas canvas) {
+    final c = canvas;
+    final s = size.x;
+    final rim = Rect.fromCenter(
+      center: Offset(s / 2, s * 0.6),
+      width: s - 4,
+      height: s * 0.62,
+    );
+    c.drawOval(rim, ui.Paint()..color = const ui.Color(0xFFB8B0A2));
+    c.drawOval(rim.deflate(3), ui.Paint()..color = const ui.Color(0xFF7FC8E8));
+    c.drawOval(
+      rim,
+      ui.Paint()
+        ..color = TsuzuriColors.ink
+        ..style = ui.PaintingStyle.stroke
+        ..strokeWidth = 1.4,
+    );
+    // 立ちのぼる光のつぶ
+    for (var i = 0; i < 3; i++) {
+      final p = (_t * 0.6 + i / 3) % 1;
+      c.drawCircle(
+        Offset(s * (0.3 + i * 0.2), s * 0.55 - p * s * 0.5),
+        2.2 * (1 - p),
+        ui.Paint()..color = ui.Color.fromRGBO(255, 255, 255, 0.9 * (1 - p)),
+      );
+    }
+  }
+}
+
+/// 亡霊（そのステージで間違えた問題）。話しかけると再戦できる
+class GhostToken extends PositionComponent {
+  GhostToken(this.stage, this.cell, this.count)
+    : super(
+        size: Vector2.all(tileSize * 1.05),
+        anchor: Anchor.center,
+        position: _center(cell),
+        priority: cell.row * 10 + 4,
+      );
+
+  final StageDef stage;
+  final Cell cell;
+  int count;
+  double _t = Random().nextDouble() * 10;
+
+  @override
+  void update(double dt) => _t += dt;
+
+  @override
+  void render(ui.Canvas canvas) {
+    final c = canvas;
+    final s = size.x;
+    c.saveLayer(null, ui.Paint()..color = const ui.Color(0xD0FFFFFF));
+    paintEnemy(c, s, 'ghost', _t);
+    c.restore();
+    final center = Offset(s * 0.85, s * 0.1);
+    c.drawCircle(center, 8, ui.Paint()..color = const ui.Color(0xFF6A4BA8));
+    final b =
+        ui.ParagraphBuilder(ui.ParagraphStyle(textAlign: ui.TextAlign.center))
+          ..pushStyle(
+            ui.TextStyle(
+              color: const ui.Color(0xFFFFFFFF),
+              fontSize: 9,
+              fontWeight: ui.FontWeight.w900,
+            ),
+          )
+          ..addText('$count');
+    final p = b.build()..layout(const ui.ParagraphConstraints(width: 16));
+    c.drawParagraph(p, center - Offset(8, p.height / 2));
+  }
+}
+
+/// 捕まった仲間の檻（ゲート横の壁ぎわ）
+class CageToken extends PositionComponent {
+  CageToken(Cell cell)
+    : super(
+        size: Vector2.all(tileSize),
+        anchor: Anchor.center,
+        position: _center(cell),
+        priority: cell.row * 10 + 6,
+      );
+
+  double _t = 0;
+
+  @override
+  void update(double dt) => _t += dt;
+
+  @override
+  void render(ui.Canvas canvas) {
+    final c = canvas;
+    final s = size.x;
+    // 中の仲間（小さな妖精の影）
+    final bob = sin(_t * 5) * 1.5;
+    c.drawCircle(
+      Offset(s / 2, s * 0.55 + bob),
+      s * 0.18,
+      ui.Paint()..color = const ui.Color(0xFFF7D9A8),
+    );
+    c.drawCircle(
+      Offset(s * 0.44, s * 0.52 + bob),
+      1.6,
+      ui.Paint()..color = TsuzuriColors.ink,
+    );
+    c.drawCircle(
+      Offset(s * 0.56, s * 0.52 + bob),
+      1.6,
+      ui.Paint()..color = TsuzuriColors.ink,
+    );
+    final bar = ui.Paint()
+      ..color = const ui.Color(0xFF3A3A3A)
+      ..strokeWidth = 2;
+    c.drawRect(
+      Rect.fromLTWH(4, s * 0.2, s - 8, 3),
+      ui.Paint()..color = const ui.Color(0xFF3A3A3A),
+    );
+    for (var x = 6.0; x <= s - 6; x += 5) {
+      c.drawLine(Offset(x, s * 0.2), Offset(x, s * 0.9), bar);
+    }
+    c.drawRect(
+      Rect.fromLTWH(4, s * 0.88, s - 8, 3),
+      ui.Paint()..color = const ui.Color(0xFF3A3A3A),
+    );
+    // 「たすけて」の吹き出し
+    final b =
+        ui.ParagraphBuilder(ui.ParagraphStyle(textAlign: ui.TextAlign.center))
+          ..pushStyle(
+            ui.TextStyle(
+              color: TsuzuriColors.stamp,
+              fontSize: 7,
+              fontWeight: ui.FontWeight.w900,
+            ),
+          )
+          ..addText('たすけて！');
+    final p = b.build()..layout(ui.ParagraphConstraints(width: s * 1.6));
+    c.drawParagraph(p, Offset(-s * 0.3, -2 + bob));
+  }
 }

@@ -1,4 +1,7 @@
+import 'dart:math';
+
 import '../battle/battle_engine.dart';
+import '../battle/cards.dart';
 import '../models/player_stats.dart';
 import '../models/rpg_progress.dart';
 import '../models/stage.dart';
@@ -28,7 +31,19 @@ class StageClearResult {
     required this.expResult,
     required this.firstClear,
     required this.newlyUnlockedStageId,
+    this.newCard,
+    this.rescued,
+    this.newMistakes = 0,
   });
+
+  /// 初クリアでもらったカード
+  final CardDef? newCard;
+
+  /// 助け出した仲間
+  final CompanionDef? rescued;
+
+  /// 新しく亡霊になった（間違えた）問題の数
+  final int newMistakes;
 
   final ExpGainResult expResult;
   final bool firstClear;
@@ -96,8 +111,21 @@ class Progression {
     final alreadyCleared = progress.clearedStageIds.contains(stage.id);
     final gained = expFor(stage, summary, alreadyCleared: alreadyCleared);
 
-    var updated = progress;
+    // 間違えた問題は亡霊として残し、正解した問題は亡霊から外す
+    final mistakes = {...progress.mistakes};
+    var newMistakes = 0;
+    for (final q in summary.missedQuestions) {
+      if (!mistakes.containsKey(q.id)) newMistakes++;
+      mistakes[q.id] = stage.id;
+    }
+    for (final id in summary.correctIds) {
+      if (!summary.missedQuestions.any((q) => q.id == id)) mistakes.remove(id);
+    }
+
+    var updated = progress.copyWith(mistakes: mistakes, springBuff: false);
     String? unlocked;
+    CardDef? newCard;
+    CompanionDef? rescued;
     if (summary.won) {
       final prev = progress.stageRecords[stage.id];
       final better = prev == null || summary.accuracy > prev.bestAccuracy;
@@ -115,15 +143,64 @@ class Progression {
       if (!alreadyCleared) {
         final next = world.stages.where((s) => s.order == stage.order + 1);
         if (next.isNotEmpty) unlocked = next.first.id;
+        if (stage.rewardCardId != null) {
+          newCard = CardDef.byId(stage.rewardCardId!);
+          updated = updated.copyWith(deck: [...updated.deck, newCard.id]);
+        }
       }
+      final captive = stage.captiveCompanionId;
+      if (captive != null &&
+          progress.lostStages.contains(stage.id) &&
+          !progress.companions.contains(captive)) {
+        rescued = CompanionDef.byId(captive);
+        updated =
+            updated.copyWith(companions: {...updated.companions, captive});
+      }
+    } else {
+      updated = updated.copyWith(lostStages: {...updated.lostStages, stage.id});
     }
 
     return StageClearResult(
       expResult: addExp(updated, gained),
       firstClear: summary.won && !alreadyCleared,
       newlyUnlockedStageId: unlocked,
+      newCard: newCard,
+      rescued: rescued,
+      newMistakes: newMistakes,
     );
   }
+
+  /// 亡霊（間違えた問題）との再戦：正解1問につき 8 EXP、全部倒せばさらに 30 EXP。
+  static const expPerGhostCorrect = 8;
+  static const ghostClearBonus = 30;
+
+  static ExpGainResult applyGhostBattle(
+      RpgProgress progress, BattleSummary summary) {
+    final mistakes = {...progress.mistakes};
+    for (final id in summary.correctIds) {
+      if (!summary.missedQuestions.any((q) => q.id == id)) mistakes.remove(id);
+    }
+    final exp = summary.correctCount * expPerGhostCorrect +
+        (summary.won ? ghostClearBonus : 0);
+    return addExp(progress.copyWith(mistakes: mistakes), exp);
+  }
+
+  /// 宝箱：難問1問に正解するとレアカード。失敗すると空っぽになる（1回きり）。
+  static (RpgProgress, CardDef?) openChest(
+      RpgProgress progress, String chestId, bool correct, Random random) {
+    final opened =
+        progress.copyWith(openedChests: {...progress.openedChests, chestId});
+    if (!correct) return (opened, null);
+    final rares = CardDef.rares;
+    final card = rares[random.nextInt(rares.length)];
+    return (opened.copyWith(deck: [...opened.deck, card.id]), card);
+  }
+
+  /// 泉：基礎問題に全問正解すると、次のバトルで最大HP +30%
+  static const springHpRate = 0.3;
+
+  static RpgProgress blessSpring(RpgProgress progress) =>
+      progress.copyWith(springBuff: true);
 
   /// 宿の授業（練習問題）で得られる経験値：正解1問につき
   static const expPerTrainingCorrect = 2;
