@@ -211,6 +211,214 @@
       ],
       "answerIndex": 0,
       "explanation": "薄膜の表と裏で反射した光が、膜の厚さと波長によって強め合ったり弱め合ったりする。"
+    },
+    {
+      "id": "sci_phy13_017",
+      "category": "knowledge",
+      "prompt": "2つの波源からの波が弱め合う条件は？（同位相、m は整数）",
+      "choices": [
+        "経路差 ＝ 0",
+        "経路差 ＝ (m + ½)λ",
+        "経路差 ＝ mλ",
+        "経路差 ＝ 2mλ"
+      ],
+      "answerIndex": 1,
+      "explanation": "半波長の奇数倍のずれで山と谷が重なる。"
+    },
+    {
+      "id": "sci_phy13_018",
+      "category": "knowledge",
+      "prompt": "光が反射するとき、入射角と反射角の関係は？",
+      "choices": [
+        "関係ない",
+        "反射角が2倍",
+        "等しい",
+        "反射角が小さい"
+      ],
+      "answerIndex": 2,
+      "explanation": "反射の法則。"
+    },
+    {
+      "id": "sci_phy13_019",
+      "category": "knowledge",
+      "prompt": "可視光のうち、波長が最も長い色は？",
+      "choices": [
+        "緑",
+        "青",
+        "赤",
+        "紫"
+      ],
+      "answerIndex": 2,
+      "explanation": "赤から紫に向かって波長が短くなる。"
+    },
+    {
+      "id": "sci_phy13_020",
+      "category": "knowledge",
+      "prompt": "救急車が遠ざかるとき、聞こえるサイレンの音は？",
+      "choices": [
+        "聞こえなくなる",
+        "元の音より低い",
+        "変わらない",
+        "元の音より高い"
+      ],
+      "answerIndex": 1,
+      "explanation": "ドップラー効果。"
+    },
+    {
+      "id": "sci_phy13_021",
+      "category": "knowledge",
+      "prompt": "屈折率の大きい物質中では、光の速さはどうなる？",
+      "choices": [
+        "遅くなる",
+        "速くなる",
+        "変わらない",
+        "0になる"
+      ],
+      "answerIndex": 0,
+      "explanation": "v ＝ c/n。"
+    },
+    {
+      "id": "sci_phy13_022",
+      "category": "knowledge",
+      "prompt": "光ファイバーで光が外にもれずに進む理由は？",
+      "choices": [
+        "光が吸収されるから",
+        "光が曲がりにくいから",
+        "全反射をくり返して進むから",
+        "光の速さが0になるから"
+      ],
+      "answerIndex": 2,
+      "explanation": "屈折率の大きい中心部と小さい外側の境界で全反射する。"
+    },
+    {
+      "id": "sci_phy13_023",
+      "category": "calculation",
+      "prompt": "振動数 500 Hz の音源が 20 m/s で観測者に近づく。聞こえる振動数は？（音速 340 m/s）",
+      "choices": [
+        "471 Hz",
+        "520 Hz",
+        "500 Hz",
+        "531 Hz"
+      ],
+      "answerIndex": 3,
+      "explanation": "f′ ＝ 500 × 340/(340 − 20)。"
+    },
+    {
+      "id": "sci_phy13_024",
+      "category": "calculation",
+      "prompt": "観測者が 17 m/s で静止した 340 Hz の音源に近づく。聞こえる振動数は？（音速 340 m/s）",
+      "choices": [
+        "374 Hz",
+        "323 Hz",
+        "340 Hz",
+        "357 Hz"
+      ],
+      "answerIndex": 3,
+      "explanation": "f′ ＝ 340 × (340 + 17)/340。"
+    },
+    {
+      "id": "sci_phy13_025",
+      "category": "calculation",
+      "prompt": "屈折率 2.0 の物質中での光の速さは？（真空中 3.0 × 10⁸ m/s）",
+      "choices": [
+        "1.0 × 10⁸ m/s",
+        "3.0 × 10⁸ m/s",
+        "1.5 × 10⁸ m/s",
+        "6.0 × 10⁸ m/s"
+      ],
+      "answerIndex": 2,
+      "explanation": "c/n。"
+    },
+    {
+      "id": "sci_phy13_026",
+      "category": "calculation",
+      "prompt": "空気中（屈折率 1.0）から入射角 30° で屈折率 √3 の物質に入る光の屈折角は？",
+      "choices": [
+        "30°",
+        "約 17°",
+        "45°",
+        "60°"
+      ],
+      "answerIndex": 1,
+      "explanation": "sin r ＝ sin 30°/√3 ≒ 0.29。"
+    },
+    {
+      "id": "sci_phy13_027",
+      "category": "calculation",
+      "prompt": "ヤングの実験で、L ＝ 2.0 m、d ＝ 1.0 mm、波長 500 nm のとき、明線の間隔は？",
+      "choices": [
+        "0.50 mm",
+        "10 mm",
+        "1.0 mm",
+        "2.0 mm"
+      ],
+      "answerIndex": 2,
+      "explanation": "Δx ＝ Lλ/d ＝ 2.0 × 5.0 × 10⁻⁷ ÷ 1.0 × 10⁻³。"
+    },
+    {
+      "id": "sci_phy13_028",
+      "category": "calculation",
+      "prompt": "回折格子（格子定数 d）で、波長 λ の光の m 次の明線の方向 θ が満たす式は？",
+      "choices": [
+        "d sin θ ＝ mλ",
+        "λ sin θ ＝ md",
+        "d ＝ mλ sin θ",
+        "d cos θ ＝ mλ"
+      ],
+      "answerIndex": 0,
+      "explanation": "隣り合うすき間からの光の経路差が波長の整数倍。"
+    },
+    {
+      "id": "sci_phy13_029",
+      "category": "calculation",
+      "prompt": "同位相の2つの波源からの経路差が 2.0 λ の点では？",
+      "choices": [
+        "強め合う",
+        "弱め合う",
+        "振動しない",
+        "半分だけ強め合う"
+      ],
+      "answerIndex": 0,
+      "explanation": "波長の整数倍なので強め合う。"
+    },
+    {
+      "id": "sci_phy13_030",
+      "category": "calculation",
+      "prompt": "空気中で波長 630 nm の光が屈折率 1.5 の水晶中に入った。水晶中の波長は？",
+      "choices": [
+        "630 nm",
+        "945 nm",
+        "420 nm",
+        "315 nm"
+      ],
+      "answerIndex": 2,
+      "explanation": "λ/n。振動数は変わらない。"
+    },
+    {
+      "id": "sci_phy13_031",
+      "category": "thinking",
+      "prompt": "空が青く見える理由は？",
+      "choices": [
+        "青い光だけが太陽から出ているから",
+        "海の色が映るから",
+        "波長の短い青い光が空気の分子によく散乱されるから",
+        "空気が青い色をしているから"
+      ],
+      "answerIndex": 2,
+      "explanation": "レイリー散乱。夕焼けが赤いのは、長い距離で青が散乱され尽くすため。"
+    },
+    {
+      "id": "sci_phy13_032",
+      "category": "thinking",
+      "prompt": "水たまりに油が浮くと虹色に見える理由は？",
+      "choices": [
+        "油が色を出すから",
+        "薄い膜の表と裏で反射した光が干渉するから",
+        "光が吸収されるから",
+        "光が全反射するから"
+      ],
+      "answerIndex": 1,
+      "explanation": "薄膜干渉。膜の厚さで強め合う色が変わる。"
     }
   ]
 }

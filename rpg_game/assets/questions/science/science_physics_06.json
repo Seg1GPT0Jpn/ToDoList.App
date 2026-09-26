@@ -211,6 +211,214 @@
       ],
       "answerIndex": 1,
       "explanation": "閉じた端では空気が動けないので節、開いた端は腹（厳密には少し外側）になる。"
+    },
+    {
+      "id": "sci_phy06_017",
+      "category": "knowledge",
+      "prompt": "横波とは？",
+      "choices": [
+        "媒質の振動方向が進行方向と同じ波",
+        "媒質がない波",
+        "媒質の振動方向が波の進行方向に垂直な波",
+        "進まない波"
+      ],
+      "answerIndex": 2,
+      "explanation": "弦の波や光（電磁波）は横波。"
+    },
+    {
+      "id": "sci_phy06_018",
+      "category": "knowledge",
+      "prompt": "縦波（疎密波）の例は？",
+      "choices": [
+        "弦を伝わる波",
+        "光",
+        "音波",
+        "水面の波"
+      ],
+      "answerIndex": 2,
+      "explanation": "空気の疎と密が伝わる。"
+    },
+    {
+      "id": "sci_phy06_019",
+      "category": "knowledge",
+      "prompt": "波が1回振動する間に進む距離は？",
+      "choices": [
+        "周期",
+        "振動数",
+        "波長",
+        "振幅"
+      ],
+      "answerIndex": 2,
+      "explanation": "λ ＝ vT。"
+    },
+    {
+      "id": "sci_phy06_020",
+      "category": "knowledge",
+      "prompt": "振幅とは？",
+      "choices": [
+        "1回振動する時間",
+        "振動の中心からの最大のずれ",
+        "山から山までの距離",
+        "1秒間の振動の回数"
+      ],
+      "answerIndex": 1,
+      "explanation": "音では振幅が大きいほど大きな音。"
+    },
+    {
+      "id": "sci_phy06_021",
+      "category": "knowledge",
+      "prompt": "真空中を音が伝わらない理由は？",
+      "choices": [
+        "温度が低いから",
+        "振動を伝える物質（媒質）がないから",
+        "音が速すぎるから",
+        "光に打ち消されるから"
+      ],
+      "answerIndex": 1,
+      "explanation": "音波は媒質の振動が伝わる波。"
+    },
+    {
+      "id": "sci_phy06_022",
+      "category": "knowledge",
+      "prompt": "定常波（定在波）で、まったく振動しない点を何という？",
+      "choices": [
+        "谷",
+        "腹",
+        "節",
+        "山"
+      ],
+      "answerIndex": 2,
+      "explanation": "大きく振動する点は腹。"
+    },
+    {
+      "id": "sci_phy06_023",
+      "category": "calculation",
+      "prompt": "振動数 200 Hz、波長 1.7 m の音の速さは？",
+      "choices": [
+        "201.7 m/s",
+        "340 m/s",
+        "118 m/s",
+        "0.0085 m/s"
+      ],
+      "answerIndex": 1,
+      "explanation": "v ＝ fλ。"
+    },
+    {
+      "id": "sci_phy06_024",
+      "category": "calculation",
+      "prompt": "振動数 50 Hz の波の周期は？",
+      "choices": [
+        "50 s",
+        "2.0 s",
+        "0.20 s",
+        "0.020 s"
+      ],
+      "answerIndex": 3,
+      "explanation": "T ＝ 1 ÷ f。"
+    },
+    {
+      "id": "sci_phy06_025",
+      "category": "calculation",
+      "prompt": "音速 340 m/s のとき、波長 0.85 m の音の振動数は？",
+      "choices": [
+        "0.0025 Hz",
+        "340 Hz",
+        "400 Hz",
+        "289 Hz"
+      ],
+      "answerIndex": 2,
+      "explanation": "f ＝ v ÷ λ。"
+    },
+    {
+      "id": "sci_phy06_026",
+      "category": "calculation",
+      "prompt": "雷の光が見えてから 5.0 s 後に音が聞こえた。雷までの距離は？（音速 340 m/s）",
+      "choices": [
+        "340 m",
+        "3400 m",
+        "68 m",
+        "1700 m"
+      ],
+      "answerIndex": 3,
+      "explanation": "光はほぼ一瞬で届くので、340 × 5.0。"
+    },
+    {
+      "id": "sci_phy06_027",
+      "category": "calculation",
+      "prompt": "気温 25 ℃ の空気中の音速はおよそ？（音速 ＝ 331.5 + 0.6t）",
+      "choices": [
+        "約 340 m/s",
+        "約 356 m/s",
+        "約 346 m/s",
+        "約 331 m/s"
+      ],
+      "answerIndex": 2,
+      "explanation": "331.5 + 15。"
+    },
+    {
+      "id": "sci_phy06_028",
+      "category": "calculation",
+      "prompt": "両端を固定した長さ 0.60 m の弦の基本振動の波長は？",
+      "choices": [
+        "0.60 m",
+        "0.30 m",
+        "1.2 m",
+        "2.4 m"
+      ],
+      "answerIndex": 2,
+      "explanation": "基本振動では弦の長さが半波長。"
+    },
+    {
+      "id": "sci_phy06_029",
+      "category": "calculation",
+      "prompt": "400 Hz と 404 Hz のおんさを同時に鳴らした。1 秒間のうなりの回数は？",
+      "choices": [
+        "4 回",
+        "404 回",
+        "2 回",
+        "8 回"
+      ],
+      "answerIndex": 0,
+      "explanation": "振動数の差。"
+    },
+    {
+      "id": "sci_phy06_030",
+      "category": "calculation",
+      "prompt": "一端を閉じた長さ 0.25 m の管（閉管）の基本振動の波長は？",
+      "choices": [
+        "0.125 m",
+        "0.25 m",
+        "0.50 m",
+        "1.0 m"
+      ],
+      "answerIndex": 3,
+      "explanation": "閉管の基本振動では、管の長さが 1/4 波長。"
+    },
+    {
+      "id": "sci_phy06_031",
+      "category": "thinking",
+      "prompt": "ギターの弦を強く張ると、音が高くなる理由は？",
+      "choices": [
+        "弦が長くなるから",
+        "振幅が大きくなるから",
+        "波長が長くなるから",
+        "弦を伝わる波の速さが大きくなり、振動数が大きくなるから"
+      ],
+      "answerIndex": 3,
+      "explanation": "波長（弦の長さで決まる）は同じで、速さが増すので f ＝ v/λ が増える。"
+    },
+    {
+      "id": "sci_phy06_032",
+      "category": "thinking",
+      "prompt": "音の「音色」のちがいを決めるものは？",
+      "choices": [
+        "波形（ふくまれる振動数の組み合わせ）",
+        "振幅だけ",
+        "音速",
+        "振動数だけ"
+      ],
+      "answerIndex": 0,
+      "explanation": "同じ高さ・大きさでも、楽器ごとに波形がちがう。"
     }
   ]
 }

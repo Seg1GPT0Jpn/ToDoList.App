@@ -133,6 +133,136 @@
       ],
       "answerIndex": 3,
       "explanation": "左右から近づけたときの傾きが −1 と 1 で一致しない。"
+    },
+    {
+      "id": "mat_m306_011",
+      "category": "calculation",
+      "prompt": "y=x^(2x)（x>0）の導関数は？（対数微分法）",
+      "choices": [
+        "2x^(2x)(log x+1)",
+        "2x^(2x)",
+        "x^(2x) log x",
+        "2x·x^(2x−1)"
+      ],
+      "answerIndex": 0,
+      "explanation": "log y=2x log x、y′/y=2log x+2。"
+    },
+    {
+      "id": "mat_m306_012",
+      "category": "calculation",
+      "prompt": "x²/4+y²=1 で定まる y について、dy/dx は？（y≠0）",
+      "choices": [
+        "−x/(4y)",
+        "−4x/y",
+        "x/(4y)",
+        "−x/y"
+      ],
+      "answerIndex": 0,
+      "explanation": "x/2+2yy′=0。"
+    },
+    {
+      "id": "mat_m306_013",
+      "category": "calculation",
+      "prompt": "(log|cos x|)′ は？",
+      "choices": [
+        "−1/tan x",
+        "1/cos x",
+        "tan x",
+        "−tan x"
+      ],
+      "answerIndex": 3,
+      "explanation": "(cos x)′/cos x=−sin x/cos x。"
+    },
+    {
+      "id": "mat_m306_014",
+      "category": "calculation",
+      "prompt": "(x⁴)″ は？",
+      "choices": [
+        "12x³",
+        "24x",
+        "12x²",
+        "4x³"
+      ],
+      "answerIndex": 2,
+      "explanation": "4x³ をもう一度微分。"
+    },
+    {
+      "id": "mat_m306_015",
+      "category": "calculation",
+      "prompt": "(cos x)″ は？",
+      "choices": [
+        "sin x",
+        "cos x",
+        "−cos x",
+        "−sin x"
+      ],
+      "answerIndex": 2,
+      "explanation": "−sin x → −cos x。"
+    },
+    {
+      "id": "mat_m306_016",
+      "category": "calculation",
+      "prompt": "(x log x)′ は？",
+      "choices": [
+        "log x+1",
+        "log x",
+        "x+log x",
+        "1/x"
+      ],
+      "answerIndex": 0,
+      "explanation": "積の微分：1·log x+x·(1/x)。"
+    },
+    {
+      "id": "mat_m306_017",
+      "category": "calculation",
+      "prompt": "sin x の第4次導関数は？",
+      "choices": [
+        "cos x",
+        "−sin x",
+        "sin x",
+        "−cos x"
+      ],
+      "answerIndex": 2,
+      "explanation": "cos、−sin、−cos、sin と4回で元に戻る。"
+    },
+    {
+      "id": "mat_m306_018",
+      "category": "calculation",
+      "prompt": "(log₁₀x)′ は？",
+      "choices": [
+        "log 10/x",
+        "10/x",
+        "1/(x log 10)",
+        "1/x"
+      ],
+      "answerIndex": 2,
+      "explanation": "底の変換：log x/log 10。"
+    },
+    {
+      "id": "mat_m306_019",
+      "category": "calculation",
+      "prompt": "{1/√x}′ は？",
+      "choices": [
+        "−1/(2x√x)",
+        "1/(2√x)",
+        "−2/√x",
+        "−1/(2√x)"
+      ],
+      "answerIndex": 0,
+      "explanation": "x^(−1/2) の微分：−(1/2)x^(−3/2)。"
+    },
+    {
+      "id": "mat_m306_020",
+      "category": "knowledge",
+      "prompt": "f(x)=|x| は x=0 でどうなる？",
+      "choices": [
+        "連続でなく微分可能でもない",
+        "微分可能",
+        "定義されない",
+        "連続だが微分可能でない"
+      ],
+      "answerIndex": 3,
+      "explanation": "右側の傾き1、左側の傾き −1 で一致しない。"
     }
   ]
 }

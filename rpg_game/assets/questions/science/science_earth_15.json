@@ -211,6 +211,214 @@
       ],
       "answerIndex": 3,
       "explanation": "恒星の明るさは表面温度と表面積で決まる。ベテルギウスは赤色超巨星。"
+    },
+    {
+      "id": "sci_ear15_017",
+      "category": "knowledge",
+      "prompt": "恒星の見かけの明るさを表す等級で、数が小さいほど？",
+      "choices": [
+        "暗い",
+        "明るい",
+        "温度が低い",
+        "遠い"
+      ],
+      "answerIndex": 1,
+      "explanation": "1 等星の方が 6 等星より明るい。0 等やマイナスもある。"
+    },
+    {
+      "id": "sci_ear15_018",
+      "category": "knowledge",
+      "prompt": "絶対等級とは？",
+      "choices": [
+        "太陽と比べた大きさ",
+        "恒星を 10 パーセクの距離に置いたときの明るさ",
+        "地球から見た明るさ",
+        "恒星の温度"
+      ],
+      "answerIndex": 1,
+      "explanation": "恒星本来の明るさを比べるための等級。"
+    },
+    {
+      "id": "sci_ear15_019",
+      "category": "knowledge",
+      "prompt": "恒星の色と表面温度の関係は？",
+      "choices": [
+        "黄色が最も高温",
+        "赤いほど高温",
+        "色と温度は関係ない",
+        "青白いほど高温、赤いほど低温"
+      ],
+      "answerIndex": 3,
+      "explanation": "スペクトル型 O B A F G K M の順に温度が低い。"
+    },
+    {
+      "id": "sci_ear15_020",
+      "category": "knowledge",
+      "prompt": "太陽のスペクトル型は？",
+      "choices": [
+        "A 型",
+        "G 型",
+        "M 型",
+        "O 型"
+      ],
+      "answerIndex": 1,
+      "explanation": "表面温度約 5800 K の黄色い星。"
+    },
+    {
+      "id": "sci_ear15_021",
+      "category": "knowledge",
+      "prompt": "HR 図の右上に位置する恒星は？",
+      "choices": [
+        "赤色巨星・超巨星",
+        "白色矮星",
+        "原始星",
+        "主系列星"
+      ],
+      "answerIndex": 0,
+      "explanation": "低温だが大きいので明るい。"
+    },
+    {
+      "id": "sci_ear15_022",
+      "category": "knowledge",
+      "prompt": "主系列星のエネルギー源は？",
+      "choices": [
+        "化学反応",
+        "中心部での水素の核融合",
+        "重力による収縮だけ",
+        "ヘリウムの核分裂"
+      ],
+      "answerIndex": 1,
+      "explanation": "水素がヘリウムに変わるときにエネルギーを出す。"
+    },
+    {
+      "id": "sci_ear15_023",
+      "category": "knowledge",
+      "prompt": "超新星爆発のあとに残るものとして考えられているものは？",
+      "choices": [
+        "主系列星",
+        "中性子星やブラックホール",
+        "白色矮星だけ",
+        "惑星"
+      ],
+      "answerIndex": 1,
+      "explanation": "非常に大きな質量の恒星の最期。"
+    },
+    {
+      "id": "sci_ear15_024",
+      "category": "knowledge",
+      "prompt": "1 パーセクはおよそ何光年？",
+      "choices": [
+        "約 100 光年",
+        "約 1 光年",
+        "約 10 光年",
+        "約 3.26 光年"
+      ],
+      "answerIndex": 3,
+      "explanation": "年周視差 1″ の距離。"
+    },
+    {
+      "id": "sci_ear15_025",
+      "category": "knowledge",
+      "prompt": "質量の大きい主系列星の寿命は、小さいものと比べてどうなる？",
+      "choices": [
+        "長い",
+        "同じ",
+        "短い",
+        "無限"
+      ],
+      "answerIndex": 2,
+      "explanation": "明るく輝くぶん燃料を早く使い切る。"
+    },
+    {
+      "id": "sci_ear15_026",
+      "category": "calculation",
+      "prompt": "年周視差が 0.5″ の恒星までの距離は？",
+      "choices": [
+        "0.5 パーセク",
+        "20 パーセク",
+        "2 パーセク",
+        "5 パーセク"
+      ],
+      "answerIndex": 2,
+      "explanation": "距離（パーセク）＝ 1 ÷ 年周視差（″）。"
+    },
+    {
+      "id": "sci_ear15_027",
+      "category": "calculation",
+      "prompt": "年周視差が 0.2″ の恒星までの距離はおよそ何光年？",
+      "choices": [
+        "約 16 光年",
+        "約 5 光年",
+        "約 65 光年",
+        "約 0.65 光年"
+      ],
+      "answerIndex": 0,
+      "explanation": "5 パーセク × 3.26。"
+    },
+    {
+      "id": "sci_ear15_028",
+      "category": "calculation",
+      "prompt": "等級が 5 等ちがうと、明るさは何倍ちがう？",
+      "choices": [
+        "500 倍",
+        "100 倍",
+        "25 倍",
+        "5 倍"
+      ],
+      "answerIndex": 1,
+      "explanation": "5 等級差で 100 倍と定められている。"
+    },
+    {
+      "id": "sci_ear15_029",
+      "category": "calculation",
+      "prompt": "2 等星は 7 等星の何倍明るい？",
+      "choices": [
+        "2.5 倍",
+        "1000 倍",
+        "100 倍",
+        "5 倍"
+      ],
+      "answerIndex": 2,
+      "explanation": "5 等級の差。"
+    },
+    {
+      "id": "sci_ear15_030",
+      "category": "calculation",
+      "prompt": "明るさが 2.5 倍ちがう 2 つの星の等級の差はおよそ？",
+      "choices": [
+        "約 2.5 等級",
+        "約 5 等級",
+        "約 0.5 等級",
+        "約 1 等級"
+      ],
+      "answerIndex": 3,
+      "explanation": "1 等級で約 2.5 倍。"
+    },
+    {
+      "id": "sci_ear15_031",
+      "category": "thinking",
+      "prompt": "HR 図で同じ表面温度なのに明るさがちがう恒星がある理由は？",
+      "choices": [
+        "大きさ（半径）がちがうから",
+        "距離がちがうから",
+        "色がちがうから",
+        "年齢が同じだから"
+      ],
+      "answerIndex": 0,
+      "explanation": "同じ温度なら、表面積が大きいほど明るい。"
+    },
+    {
+      "id": "sci_ear15_032",
+      "category": "thinking",
+      "prompt": "白色矮星が高温なのに暗い理由は？",
+      "choices": [
+        "エネルギーを出していないから",
+        "遠くにあるから",
+        "半径が非常に小さく、光を出す表面積が小さいから",
+        "赤い色だから"
+      ],
+      "answerIndex": 2,
+      "explanation": "地球くらいの大きさしかない。"
     }
   ]
 }

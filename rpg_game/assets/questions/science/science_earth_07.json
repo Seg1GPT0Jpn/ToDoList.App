@@ -211,6 +211,214 @@
       ],
       "answerIndex": 0,
       "explanation": "氷や雪は太陽光をよく反射する。とけて暗い海面が出ると、吸収する熱が増える（正のフィードバック）。"
+    },
+    {
+      "id": "sci_ear07_017",
+      "category": "knowledge",
+      "prompt": "温室効果ガスにあてはまらないものは？",
+      "choices": [
+        "窒素",
+        "メタン",
+        "水蒸気",
+        "二酸化炭素"
+      ],
+      "answerIndex": 0,
+      "explanation": "窒素は赤外線をほとんど吸収しない。"
+    },
+    {
+      "id": "sci_ear07_018",
+      "category": "knowledge",
+      "prompt": "オゾン層が生物にとって大切な理由は？",
+      "choices": [
+        "雨を降らせるから",
+        "太陽からの有害な紫外線を吸収するから",
+        "酸素をつくるから",
+        "地球をあたためるから"
+      ],
+      "answerIndex": 1,
+      "explanation": "紫外線は DNA を傷つける。"
+    },
+    {
+      "id": "sci_ear07_019",
+      "category": "knowledge",
+      "prompt": "酸性雨の pH の目安は？",
+      "choices": [
+        "5.6 より小さい",
+        "ちょうど 7",
+        "7 より大きい",
+        "9 より大きい"
+      ],
+      "answerIndex": 0,
+      "explanation": "ふつうの雨も CO₂ が溶けて pH 5.6 程度。"
+    },
+    {
+      "id": "sci_ear07_020",
+      "category": "knowledge",
+      "prompt": "ラニーニャ現象とは？",
+      "choices": [
+        "海面水温が高い状態が続く現象",
+        "太平洋赤道域東部の海面水温が平年より低い状態が続く現象",
+        "北極の氷が増える現象",
+        "台風が発生しない現象"
+      ],
+      "answerIndex": 1,
+      "explanation": "エルニーニョ現象と逆の状態。"
+    },
+    {
+      "id": "sci_ear07_021",
+      "category": "knowledge",
+      "prompt": "線状降水帯とは？",
+      "choices": [
+        "発達した積乱雲が次々とできて、同じ場所に強い雨を降らせ続ける帯",
+        "前線の一種",
+        "雪の降る帯",
+        "台風の目"
+      ],
+      "answerIndex": 0,
+      "explanation": "大雨災害の原因になる。"
+    },
+    {
+      "id": "sci_ear07_022",
+      "category": "knowledge",
+      "prompt": "土砂災害のうち、土砂と水が一体となって谷を一気に流れ下るものは？",
+      "choices": [
+        "地すべり",
+        "液状化",
+        "土石流",
+        "がけ崩れ"
+      ],
+      "answerIndex": 2,
+      "explanation": "速度が速く、破壊力が大きい。"
+    },
+    {
+      "id": "sci_ear07_023",
+      "category": "knowledge",
+      "prompt": "高潮の主な原因は？",
+      "choices": [
+        "地震",
+        "月の引力だけ",
+        "台風などの低い気圧と強い風",
+        "火山の噴火"
+      ],
+      "answerIndex": 2,
+      "explanation": "気圧が下がると海面が吸い上げられ、風で吹き寄せられる。"
+    },
+    {
+      "id": "sci_ear07_024",
+      "category": "knowledge",
+      "prompt": "パリ協定の目的は？",
+      "choices": [
+        "オゾン層を回復させること",
+        "海洋汚染を防ぐこと",
+        "世界の平均気温の上昇をおさえること",
+        "酸性雨をなくすこと"
+      ],
+      "answerIndex": 2,
+      "explanation": "産業革命前からの上昇を 2 ℃ より十分低く、1.5 ℃ におさえる努力。"
+    },
+    {
+      "id": "sci_ear07_025",
+      "category": "calculation",
+      "prompt": "大気中の CO₂ 濃度が 1 年に 2.5 ppm ずつ増えると、20 年で何 ppm 増える？",
+      "choices": [
+        "25 ppm",
+        "500 ppm",
+        "50 ppm",
+        "2.5 ppm"
+      ],
+      "answerIndex": 2,
+      "explanation": "2.5 × 20。"
+    },
+    {
+      "id": "sci_ear07_026",
+      "category": "calculation",
+      "prompt": "CO₂ 濃度 400 ppm は何 % にあたる？",
+      "choices": [
+        "0.4 %",
+        "0.04 %",
+        "4 %",
+        "40 %"
+      ],
+      "answerIndex": 1,
+      "explanation": "400 ÷ 1000000 × 100。"
+    },
+    {
+      "id": "sci_ear07_027",
+      "category": "calculation",
+      "prompt": "pH 4 の雨は、pH 6 の雨と比べて水素イオン濃度が何倍？",
+      "choices": [
+        "2 倍",
+        "10 倍",
+        "1/100 倍",
+        "100 倍"
+      ],
+      "answerIndex": 3,
+      "explanation": "pH が 1 小さいと 10 倍。"
+    },
+    {
+      "id": "sci_ear07_028",
+      "category": "calculation",
+      "prompt": "海面が 1 年に 3.6 mm 上昇すると、50 年で何 cm 上昇する？",
+      "choices": [
+        "18 cm",
+        "1.8 cm",
+        "180 cm",
+        "36 cm"
+      ],
+      "answerIndex": 0,
+      "explanation": "3.6 × 50 ＝ 180 mm。"
+    },
+    {
+      "id": "sci_ear07_029",
+      "category": "thinking",
+      "prompt": "都市のヒートアイランド現象の原因として正しくないものは？",
+      "choices": [
+        "緑地や水面が多いこと",
+        "高い建物で風が通りにくい",
+        "エアコンや自動車の排熱",
+        "アスファルトやコンクリートが熱をためる"
+      ],
+      "answerIndex": 0,
+      "explanation": "緑地や水面は蒸発で熱をうばい、気温を下げる。"
+    },
+    {
+      "id": "sci_ear07_030",
+      "category": "thinking",
+      "prompt": "ハザードマップを事前に確認しておく意味は？",
+      "choices": [
+        "天気予報が不要になる",
+        "自分のいる場所の危険と避難場所・経路を知り、すばやく行動できる",
+        "災害が起こらなくなる",
+        "保険料が下がる"
+      ],
+      "answerIndex": 1,
+      "explanation": "災害が起きてから調べるのでは間に合わない。"
+    },
+    {
+      "id": "sci_ear07_031",
+      "category": "thinking",
+      "prompt": "北極の海氷が減ると温暖化が進みやすくなる理由は？",
+      "choices": [
+        "海水が冷えるから",
+        "雲が増えるから",
+        "海氷が CO₂ を出すから",
+        "白い氷が減り、太陽光を吸収する暗い海面が増えるから"
+      ],
+      "answerIndex": 3,
+      "explanation": "反射率（アルベド）が下がり、さらに温まる。"
+    },
+    {
+      "id": "sci_ear07_032",
+      "category": "thinking",
+      "prompt": "緊急時に「自分の身は自分で守る」自助が重要とされる理由は？",
+      "choices": [
+        "行政が何もしないから",
+        "近所の人は助けてくれないから",
+        "避難所がないから",
+        "大災害の直後は、公的な救助がすぐには届かないことが多いから"
+      ],
+      "answerIndex": 3,
+      "explanation": "自助・共助・公助の組み合わせが大切。"
     }
   ]
 }

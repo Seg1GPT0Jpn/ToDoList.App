@@ -211,6 +211,214 @@
       ],
       "answerIndex": 1,
       "explanation": "力学的エネルギー保存より、同じ高さなら位置エネルギーも同じなので、運動エネルギーも出発時と同じ 0。"
+    },
+    {
+      "id": "sci_phy05_017",
+      "category": "knowledge",
+      "prompt": "力 F で物体を力の向きに距離 x 動かしたときの仕事は？",
+      "choices": [
+        "½Fx",
+        "Fx",
+        "Fx²",
+        "F/x"
+      ],
+      "answerIndex": 1,
+      "explanation": "W ＝ Fx（J）。"
+    },
+    {
+      "id": "sci_phy05_018",
+      "category": "knowledge",
+      "prompt": "力の向きと移動の向きが逆のとき、その力がする仕事は？",
+      "choices": [
+        "正",
+        "負",
+        "移動距離によって正にも負にもなる",
+        "0"
+      ],
+      "answerIndex": 1,
+      "explanation": "W ＝ Fx cos 180° ＝ −Fx。摩擦力の仕事など。"
+    },
+    {
+      "id": "sci_phy05_019",
+      "category": "knowledge",
+      "prompt": "仕事の原理とは？",
+      "choices": [
+        "仕事は力に反比例する",
+        "道具を使っても、仕事の量は変わらない",
+        "仕事は時間に比例する",
+        "道具を使うと仕事が減る"
+      ],
+      "answerIndex": 1,
+      "explanation": "力が小さくなるぶん、動かす距離が長くなる。"
+    },
+    {
+      "id": "sci_phy05_020",
+      "category": "knowledge",
+      "prompt": "1 W（ワット）は？",
+      "choices": [
+        "1 kg を 1 m 持ち上げる仕事",
+        "1 N の力で 1 m 動かす仕事",
+        "1 A の電流",
+        "1 秒間に 1 J の仕事をする仕事率"
+      ],
+      "answerIndex": 3,
+      "explanation": "P ＝ W ÷ t。"
+    },
+    {
+      "id": "sci_phy05_021",
+      "category": "knowledge",
+      "prompt": "物体の運動エネルギーの変化と仕事の関係は？",
+      "choices": [
+        "物体がされた仕事の分だけ、運動エネルギーが変化する",
+        "仕事の2倍だけ変化する",
+        "仕事をされると必ず減る",
+        "仕事と運動エネルギーは関係ない"
+      ],
+      "answerIndex": 0,
+      "explanation": "エネルギーの原理：½mv² − ½mv₀² ＝ W。"
+    },
+    {
+      "id": "sci_phy05_022",
+      "category": "knowledge",
+      "prompt": "重力のように、仕事が途中の道すじによらない力を何という？",
+      "choices": [
+        "保存力",
+        "摩擦力",
+        "張力",
+        "抗力"
+      ],
+      "answerIndex": 0,
+      "explanation": "保存力だけが仕事をするとき、力学的エネルギーが保存される。"
+    },
+    {
+      "id": "sci_phy05_023",
+      "category": "calculation",
+      "prompt": "20 N の力で物体を力の向きに 5.0 m 動かした。仕事は？",
+      "choices": [
+        "0.25 J",
+        "100 J",
+        "4.0 J",
+        "25 J"
+      ],
+      "answerIndex": 1,
+      "explanation": "20 × 5.0。"
+    },
+    {
+      "id": "sci_phy05_024",
+      "category": "calculation",
+      "prompt": "質量 4.0 kg、速さ 5.0 m/s の物体の運動エネルギーは？",
+      "choices": [
+        "10 J",
+        "50 J",
+        "100 J",
+        "20 J"
+      ],
+      "answerIndex": 1,
+      "explanation": "½ × 4.0 × 25。"
+    },
+    {
+      "id": "sci_phy05_025",
+      "category": "calculation",
+      "prompt": "質量 3.0 kg の物体が高さ 10 m にある。重力による位置エネルギーは？（g ＝ 9.8 m/s²）",
+      "choices": [
+        "294 J",
+        "98 J",
+        "147 J",
+        "30 J"
+      ],
+      "answerIndex": 0,
+      "explanation": "mgh ＝ 3.0 × 9.8 × 10。"
+    },
+    {
+      "id": "sci_phy05_026",
+      "category": "calculation",
+      "prompt": "1500 J の仕事を 30 s でした。仕事率は？",
+      "choices": [
+        "0.020 W",
+        "45000 W",
+        "50 W",
+        "1530 W"
+      ],
+      "answerIndex": 2,
+      "explanation": "1500 ÷ 30。"
+    },
+    {
+      "id": "sci_phy05_027",
+      "category": "calculation",
+      "prompt": "高さ 20 m から静かに落とした物体の、地面に着く直前の速さは？（g ＝ 9.8 m/s²、空気抵抗なし）",
+      "choices": [
+        "19.8 m/s",
+        "392 m/s",
+        "9.8 m/s",
+        "14 m/s"
+      ],
+      "answerIndex": 0,
+      "explanation": "½v² ＝ gh → v ＝ √392 ≒ 19.8。"
+    },
+    {
+      "id": "sci_phy05_028",
+      "category": "calculation",
+      "prompt": "ばね定数 200 N/m のばねを 0.20 m 伸ばした。弾性エネルギーは？",
+      "choices": [
+        "4.0 J",
+        "8.0 J",
+        "20 J",
+        "40 J"
+      ],
+      "answerIndex": 0,
+      "explanation": "½ × 200 × 0.04。"
+    },
+    {
+      "id": "sci_phy05_029",
+      "category": "calculation",
+      "prompt": "2.0 m/s で動く 1.0 kg の物体が、ばね定数 100 N/m のばねを押し縮めた。最大の縮みは？（摩擦なし）",
+      "choices": [
+        "0.20 m",
+        "0.020 m",
+        "2.0 m",
+        "0.40 m"
+      ],
+      "answerIndex": 0,
+      "explanation": "½ × 1.0 × 4 ＝ ½ × 100 × x²。"
+    },
+    {
+      "id": "sci_phy05_030",
+      "category": "calculation",
+      "prompt": "質量 2.0 kg の物体が 10 m/s から 4.0 m/s に減速した。物体がされた仕事は？",
+      "choices": [
+        "−84 J",
+        "84 J",
+        "−36 J",
+        "−100 J"
+      ],
+      "answerIndex": 0,
+      "explanation": "½·2·16 − ½·2·100 ＝ 16 − 100。"
+    },
+    {
+      "id": "sci_phy05_031",
+      "category": "thinking",
+      "prompt": "振り子のおもりが最高点にあるとき、エネルギーについて正しいものは？",
+      "choices": [
+        "位置エネルギーが0",
+        "力学的エネルギーが0",
+        "運動エネルギーが0で、位置エネルギーが最大",
+        "運動エネルギーが最大"
+      ],
+      "answerIndex": 2,
+      "explanation": "最高点では一瞬止まる。"
+    },
+    {
+      "id": "sci_phy05_032",
+      "category": "thinking",
+      "prompt": "同じ高さまで荷物を運ぶとき、斜面を使っても仕事が減らない理由は？",
+      "choices": [
+        "摩擦がなくなるから",
+        "時間が短くなるから",
+        "必要な力は小さくなるが、動かす距離が長くなるから",
+        "重力がなくなるから"
+      ],
+      "answerIndex": 2,
+      "explanation": "仕事の原理。摩擦があればむしろ仕事は増える。"
     }
   ]
 }

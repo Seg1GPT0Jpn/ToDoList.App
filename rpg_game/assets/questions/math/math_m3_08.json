@@ -133,6 +133,136 @@
       ],
       "answerIndex": 3,
       "explanation": "極大値が最大値とは限らない。"
+    },
+    {
+      "id": "mat_m308_011",
+      "category": "calculation",
+      "prompt": "y=xe^(−x) の最大値は？",
+      "choices": [
+        "0",
+        "1",
+        "e",
+        "1/e"
+      ],
+      "answerIndex": 3,
+      "explanation": "y′=(1−x)e^(−x)=0 → x=1。"
+    },
+    {
+      "id": "mat_m308_012",
+      "category": "calculation",
+      "prompt": "y=(log x)/x の極値をとる x は？",
+      "choices": [
+        "1/e",
+        "1",
+        "e",
+        "e²"
+      ],
+      "answerIndex": 2,
+      "explanation": "y′=(1−log x)/x²=0 → x=e。"
+    },
+    {
+      "id": "mat_m308_013",
+      "category": "calculation",
+      "prompt": "x>0 で log x≦x−1 を示すとき、考える関数は？",
+      "choices": [
+        "f(x)=log x",
+        "f(x)=x−1−log x",
+        "f(x)=x−1",
+        "f(x)=x log x"
+      ],
+      "answerIndex": 1,
+      "explanation": "差をとって、最小値が0以上であることを示す。"
+    },
+    {
+      "id": "mat_m308_014",
+      "category": "calculation",
+      "prompt": "y=4x+1/x（x>0）の最小値は？",
+      "choices": [
+        "4",
+        "2",
+        "5",
+        "1/2"
+      ],
+      "answerIndex": 0,
+      "explanation": "y′=4−1/x²=0 で x=1/2、y=2+2。"
+    },
+    {
+      "id": "mat_m308_015",
+      "category": "calculation",
+      "prompt": "y=x+2cos x（0≦x≦π）の最小値は？",
+      "choices": [
+        "π/6+√3",
+        "π−2",
+        "5π/6−√3",
+        "2"
+      ],
+      "answerIndex": 2,
+      "explanation": "y′=1−2sin x=0 → x=π/6、5π/6。端点 π で π−2≒1.14、5π/6 で約 0.886。"
+    },
+    {
+      "id": "mat_m308_016",
+      "category": "calculation",
+      "prompt": "曲線 y=x+2/x の斜めの漸近線は？",
+      "choices": [
+        "y=x+2",
+        "y=x",
+        "y=0",
+        "y=2x"
+      ],
+      "answerIndex": 1,
+      "explanation": "x→±∞ で 2/x→0。"
+    },
+    {
+      "id": "mat_m308_017",
+      "category": "calculation",
+      "prompt": "f(x)=x³ で、区間 [0, 3] に平均値の定理を使うと、c の値は？",
+      "choices": [
+        "√3",
+        "3/2",
+        "3",
+        "1"
+      ],
+      "answerIndex": 0,
+      "explanation": "(27−0)/3=9=3c²。"
+    },
+    {
+      "id": "mat_m308_018",
+      "category": "calculation",
+      "prompt": "曲線 y=√x 上の点 (1, 1) における接線の方程式は？",
+      "choices": [
+        "y=x/2+1/2",
+        "y=2x−1",
+        "y=x",
+        "y=x/2+1"
+      ],
+      "answerIndex": 0,
+      "explanation": "y′=1/(2√x)、x=1 で 1/2。"
+    },
+    {
+      "id": "mat_m308_019",
+      "category": "calculation",
+      "prompt": "1次の近似式を使うと、log(1.02) はおよそ？",
+      "choices": [
+        "0.002",
+        "0.2",
+        "1.02",
+        "0.02"
+      ],
+      "answerIndex": 3,
+      "explanation": "x が0に近いとき log(1+x)≒x。"
+    },
+    {
+      "id": "mat_m308_020",
+      "category": "thinking",
+      "prompt": "平均値の定理が意味することは？",
+      "choices": [
+        "関数が必ず増加する",
+        "関数の平均値が求められる",
+        "最大値と最小値が等しい",
+        "ある区間で、平均変化率と等しい傾きの接線が区間内のどこかにある"
+      ],
+      "answerIndex": 3,
+      "explanation": "(f(b)−f(a))/(b−a)=f′(c) となる c が a<c<b に存在する。"
     }
   ]
 }

@@ -133,6 +133,136 @@
       ],
       "answerIndex": 0,
       "explanation": "位置ではなく、移動のしかたを表す量。"
+    },
+    {
+      "id": "mat_mc01_011",
+      "category": "calculation",
+      "prompt": "a=(3, −1)、b=(−2, 4) のとき、a+b は？",
+      "choices": [
+        "(1, −5)",
+        "(1, 3)",
+        "(−6, −4)",
+        "(5, −5)"
+      ],
+      "answerIndex": 1,
+      "explanation": "成分ごとにたす。"
+    },
+    {
+      "id": "mat_mc01_012",
+      "category": "calculation",
+      "prompt": "a=(3, −1)、b=(−2, 4) のとき、a−2b は？",
+      "choices": [
+        "(1, −9)",
+        "(−1, 7)",
+        "(7, 7)",
+        "(7, −9)"
+      ],
+      "answerIndex": 3,
+      "explanation": "(3+4, −1−8)。"
+    },
+    {
+      "id": "mat_mc01_013",
+      "category": "calculation",
+      "prompt": "ベクトル (5, 12) の大きさは？",
+      "choices": [
+        "7",
+        "17",
+        "13",
+        "√17"
+      ],
+      "answerIndex": 2,
+      "explanation": "√(25+144)。"
+    },
+    {
+      "id": "mat_mc01_014",
+      "category": "calculation",
+      "prompt": "a=(3, −1)、b=(−2, 4) の内積は？",
+      "choices": [
+        "2",
+        "10",
+        "−2",
+        "−10"
+      ],
+      "answerIndex": 3,
+      "explanation": "3·(−2)+(−1)·4。"
+    },
+    {
+      "id": "mat_mc01_015",
+      "category": "calculation",
+      "prompt": "|a|=4、|b|=3、なす角が90°のとき、a・b は？",
+      "choices": [
+        "7",
+        "12",
+        "0",
+        "1"
+      ],
+      "answerIndex": 2,
+      "explanation": "cos90°=0。"
+    },
+    {
+      "id": "mat_mc01_016",
+      "category": "calculation",
+      "prompt": "a=(2, −3) と b=(x, 6) が平行のとき、x は？",
+      "choices": [
+        "−9",
+        "−4",
+        "4",
+        "9"
+      ],
+      "answerIndex": 1,
+      "explanation": "2·6−(−3)x=0 → x=−4。"
+    },
+    {
+      "id": "mat_mc01_017",
+      "category": "calculation",
+      "prompt": "a=(3, 2) と b=(4, x) が垂直のとき、x は？",
+      "choices": [
+        "−8/3",
+        "6",
+        "−6",
+        "8/3"
+      ],
+      "answerIndex": 2,
+      "explanation": "12+2x=0。"
+    },
+    {
+      "id": "mat_mc01_018",
+      "category": "calculation",
+      "prompt": "A(−1, 3)、B(2, −1) のとき、|AB| は？",
+      "choices": [
+        "7",
+        "5",
+        "25",
+        "√5"
+      ],
+      "answerIndex": 1,
+      "explanation": "AB=(3, −4)。"
+    },
+    {
+      "id": "mat_mc01_019",
+      "category": "calculation",
+      "prompt": "a=(1, 1) と同じ向きで大きさが 3√2 のベクトルは？",
+      "choices": [
+        "(3, 3)",
+        "(3√2, 3√2)",
+        "(6, 6)",
+        "(√2, √2)"
+      ],
+      "answerIndex": 0,
+      "explanation": "(1, 1) の大きさは √2 なので3倍。"
+    },
+    {
+      "id": "mat_mc01_020",
+      "category": "knowledge",
+      "prompt": "a・a と等しいものは？",
+      "choices": [
+        "|a|",
+        "|a|²",
+        "2|a|",
+        "0"
+      ],
+      "answerIndex": 1,
+      "explanation": "自分自身との内積は大きさの2乗。"
     }
   ]
 }

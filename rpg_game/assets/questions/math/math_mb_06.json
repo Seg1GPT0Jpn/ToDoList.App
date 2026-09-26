@@ -133,6 +133,136 @@
       ],
       "answerIndex": 2,
       "explanation": "自然数を1から順にたどるしくみ。"
+    },
+    {
+      "id": "mat_mb06_011",
+      "category": "calculation",
+      "prompt": "a₁=1、a₂=4、aₙ₊₂−5aₙ₊₁+6aₙ=0 のとき、一般項は？",
+      "choices": [
+        "aₙ=2^(n−1)+3^(n−1)−1",
+        "aₙ=2·3^(n−1)−2^(n−1)",
+        "aₙ=3^(n−1)",
+        "aₙ=3ⁿ−2ⁿ"
+      ],
+      "answerIndex": 1,
+      "explanation": "x²−5x+6=0 → 2、3。aₙ=A·2^(n−1)+B·3^(n−1)、A+B=1、2A+3B=4 → A=−1、B=2。"
+    },
+    {
+      "id": "mat_mb06_012",
+      "category": "calculation",
+      "prompt": "Sₙ=2aₙ−3 を満たすとき、一般項は？",
+      "choices": [
+        "aₙ=3ⁿ",
+        "aₙ=2ⁿ",
+        "aₙ=2^(n−1)+2",
+        "aₙ=3·2^(n−1)"
+      ],
+      "answerIndex": 3,
+      "explanation": "a₁=S₁=2a₁−3 → a₁=3。Sₙ₊₁−Sₙ から aₙ₊₁=2aₙ。"
+    },
+    {
+      "id": "mat_mb06_013",
+      "category": "calculation",
+      "prompt": "n 本の直線（どの2本も平行でなく、どの3本も1点で交わらない）の交点の数は？",
+      "choices": [
+        "n²",
+        "n−1",
+        "n(n−1)/2",
+        "2n−1"
+      ],
+      "answerIndex": 2,
+      "explanation": "2本の組み合わせ1つにつき交点1つ：ₙC₂。"
+    },
+    {
+      "id": "mat_mb06_014",
+      "category": "calculation",
+      "prompt": "a₁=1、aₙ₊₁=2aₙ+1 の一般項を使って、a₁₀ は？",
+      "choices": [
+        "1023",
+        "511",
+        "2047",
+        "1024"
+      ],
+      "answerIndex": 0,
+      "explanation": "aₙ=2ⁿ−1。"
+    },
+    {
+      "id": "mat_mb06_015",
+      "category": "calculation",
+      "prompt": "7ⁿ−1 はすべての自然数 n で何の倍数？",
+      "choices": [
+        "6",
+        "5",
+        "7",
+        "8"
+      ],
+      "answerIndex": 0,
+      "explanation": "7≡1（mod 6）なので 7ⁿ≡1。"
+    },
+    {
+      "id": "mat_mb06_016",
+      "category": "calculation",
+      "prompt": "「n≧4 のすべての自然数で n!>2ⁿ」を帰納法で示すとき、最初に確かめる n は？",
+      "choices": [
+        "4",
+        "0",
+        "1",
+        "2"
+      ],
+      "answerIndex": 0,
+      "explanation": "主張が n≧4 についてなので、出発点は n=4（24>16）。"
+    },
+    {
+      "id": "mat_mb06_017",
+      "category": "calculation",
+      "prompt": "p₁=0、pₙ₊₁=(1/2)pₙ+1/4 のとき、lim の値（n を大きくしたとき近づく値）は？",
+      "choices": [
+        "1/2",
+        "1/4",
+        "0",
+        "1"
+      ],
+      "answerIndex": 0,
+      "explanation": "α=α/2+1/4 → α=1/2。pₙ−1/2 は公比 1/2 で0に近づく。"
+    },
+    {
+      "id": "mat_mb06_018",
+      "category": "calculation",
+      "prompt": "ハノイの塔で n 枚の円板を移す最小の手数は？",
+      "choices": [
+        "2n−1",
+        "n²",
+        "2ⁿ",
+        "2ⁿ−1"
+      ],
+      "answerIndex": 3,
+      "explanation": "aₙ₊₁=2aₙ+1、a₁=1 を解く。"
+    },
+    {
+      "id": "mat_mb06_019",
+      "category": "calculation",
+      "prompt": "a₁=1、aₙ₊₁=aₙ+2ⁿ のとき、一般項は？",
+      "choices": [
+        "aₙ=2^(n+1)−3",
+        "aₙ=2ⁿ−1",
+        "aₙ=2ⁿ+1",
+        "aₙ=2^(n−1)"
+      ],
+      "answerIndex": 1,
+      "explanation": "1+Σ_{k=1}^{n−1} 2ᵏ=1+2ⁿ−2。"
+    },
+    {
+      "id": "mat_mb06_020",
+      "category": "thinking",
+      "prompt": "確率の問題で漸化式を作るとき、「n 回目の状態から n+1 回目への移り方」を考える理由は？",
+      "choices": [
+        "回数が有限だから",
+        "確率が常に1だから",
+        "最初の確率がいらなくなるから",
+        "一歩先の確率を今の確率で表せば漸化式になるから"
+      ],
+      "answerIndex": 3,
+      "explanation": "pₙ₊₁ を pₙ で表す式を作れば、漸化式として解ける。"
     }
   ]
 }

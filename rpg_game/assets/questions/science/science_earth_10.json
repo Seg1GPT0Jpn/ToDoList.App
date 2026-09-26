@@ -211,6 +211,214 @@
       ],
       "answerIndex": 1,
       "explanation": "付加体は海溝側に成長していくので、陸側ほど古い。"
+    },
+    {
+      "id": "sci_ear10_017",
+      "category": "knowledge",
+      "prompt": "地層が山のように上に曲がった部分を何という？",
+      "choices": [
+        "背斜",
+        "断層",
+        "向斜",
+        "不整合"
+      ],
+      "answerIndex": 0,
+      "explanation": "下に曲がった部分は向斜。"
+    },
+    {
+      "id": "sci_ear10_018",
+      "category": "knowledge",
+      "prompt": "付加体をつくる岩石として見られるものは？",
+      "choices": [
+        "海洋プレート上のチャートや玄武岩と、陸から来た砂岩・泥岩",
+        "火山灰だけ",
+        "石灰岩だけ",
+        "花こう岩だけ"
+      ],
+      "answerIndex": 0,
+      "explanation": "海底の堆積物がはぎとられ、陸側に押しつけられる。"
+    },
+    {
+      "id": "sci_ear10_019",
+      "category": "knowledge",
+      "prompt": "マグマの熱で周囲の岩石が変化する変成作用を何という？",
+      "choices": [
+        "接触変成作用",
+        "続成作用",
+        "風化",
+        "広域変成作用"
+      ],
+      "answerIndex": 0,
+      "explanation": "ホルンフェルスや大理石ができる。"
+    },
+    {
+      "id": "sci_ear10_020",
+      "category": "knowledge",
+      "prompt": "プレートの沈みこみ帯など広い範囲で、高い温度・圧力でできる変成岩は？",
+      "choices": [
+        "片麻岩・結晶片岩",
+        "チャート",
+        "大理石",
+        "ホルンフェルス"
+      ],
+      "answerIndex": 0,
+      "explanation": "広域変成作用によってできる。"
+    },
+    {
+      "id": "sci_ear10_021",
+      "category": "knowledge",
+      "prompt": "泥岩がマグマの熱で変成してできる、かたく緻密な岩石は？",
+      "choices": [
+        "片麻岩",
+        "ホルンフェルス",
+        "大理石",
+        "凝灰岩"
+      ],
+      "answerIndex": 1,
+      "explanation": "接触変成岩。"
+    },
+    {
+      "id": "sci_ear10_022",
+      "category": "knowledge",
+      "prompt": "扇状地ができやすい場所は？",
+      "choices": [
+        "海岸",
+        "山頂",
+        "川が山地から平地に出るところ",
+        "河口"
+      ],
+      "answerIndex": 2,
+      "explanation": "流れが急にゆるやかになり、土砂が扇形にたまる。"
+    },
+    {
+      "id": "sci_ear10_023",
+      "category": "knowledge",
+      "prompt": "河口付近で運ばれた土砂が堆積してできる地形は？",
+      "choices": [
+        "V 字谷",
+        "三角州",
+        "扇状地",
+        "河岸段丘"
+      ],
+      "answerIndex": 1,
+      "explanation": "流れが遅くなり、細かい土砂がたまる。"
+    },
+    {
+      "id": "sci_ear10_024",
+      "category": "knowledge",
+      "prompt": "日本列島の骨格をつくっている主な構造として正しいものは？",
+      "choices": [
+        "火山だけ",
+        "一枚の大陸",
+        "古い時代から次々に付加した付加体",
+        "深海の堆積物だけ"
+      ],
+      "answerIndex": 2,
+      "explanation": "日本列島の多くは付加体からできている。"
+    },
+    {
+      "id": "sci_ear10_025",
+      "category": "calculation",
+      "prompt": "海岸段丘の面が 10 万年で 50 m 隆起した。平均の隆起速度は 1000 年に何 m？",
+      "choices": [
+        "5 m",
+        "0.05 m",
+        "50 m",
+        "0.5 m"
+      ],
+      "answerIndex": 3,
+      "explanation": "50 ÷ 100（千年単位）。"
+    },
+    {
+      "id": "sci_ear10_026",
+      "category": "calculation",
+      "prompt": "年 2 mm ずつ隆起する土地は、1 万年で何 m 高くなる？",
+      "choices": [
+        "200 m",
+        "2 m",
+        "20 m",
+        "0.2 m"
+      ],
+      "answerIndex": 2,
+      "explanation": "2 mm × 10000 ＝ 20000 mm。"
+    },
+    {
+      "id": "sci_ear10_027",
+      "category": "calculation",
+      "prompt": "河岸段丘が 3 段ある。できた回数から考えて、土地の隆起（または侵食の活発化）は少なくとも何回あった？",
+      "choices": [
+        "6 回",
+        "0 回",
+        "1 回",
+        "3 回"
+      ],
+      "answerIndex": 3,
+      "explanation": "段が1つできるごとに1回。"
+    },
+    {
+      "id": "sci_ear10_028",
+      "category": "calculation",
+      "prompt": "GNSS 観測で、ある地点が 1 年に 4 cm 西へ動いていた。10 年で何 cm？",
+      "choices": [
+        "400 cm",
+        "4 cm",
+        "14 cm",
+        "40 cm"
+      ],
+      "answerIndex": 3,
+      "explanation": "4 × 10。"
+    },
+    {
+      "id": "sci_ear10_029",
+      "category": "thinking",
+      "prompt": "海岸段丘の最も高い段と最も低い段で、できた時代が古いのは？",
+      "choices": [
+        "最も高い段",
+        "最も低い段",
+        "判断できない",
+        "同じ"
+      ],
+      "answerIndex": 0,
+      "explanation": "隆起をくり返すので、高い段ほど古い。"
+    },
+    {
+      "id": "sci_ear10_030",
+      "category": "thinking",
+      "prompt": "リアス海岸が港として利用されやすい理由は？",
+      "choices": [
+        "平野が広いから",
+        "湾が深く入り組み、波がおだやかだから",
+        "川が多いから",
+        "砂浜が広いから"
+      ],
+      "answerIndex": 1,
+      "explanation": "一方で津波が湾の奥で高くなりやすい。"
+    },
+    {
+      "id": "sci_ear10_031",
+      "category": "thinking",
+      "prompt": "大理石が石灰岩からできたことを確かめる方法は？",
+      "choices": [
+        "磁石を近づける",
+        "うすい塩酸をかけて二酸化炭素が出るか調べる",
+        "火であぶる",
+        "水に入れて浮くか調べる"
+      ],
+      "answerIndex": 1,
+      "explanation": "どちらも炭酸カルシウムが主成分。"
+    },
+    {
+      "id": "sci_ear10_032",
+      "category": "thinking",
+      "prompt": "山地で V 字谷ができる理由は？",
+      "choices": [
+        "風がけずるから",
+        "氷河がけずるから",
+        "流れの速い川が谷底を深くけずるから",
+        "断層で割れるから"
+      ],
+      "answerIndex": 2,
+      "explanation": "氷河がけずると U 字谷になる。"
     }
   ]
 }

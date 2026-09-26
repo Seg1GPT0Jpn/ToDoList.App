@@ -133,6 +133,136 @@
       ],
       "answerIndex": 2,
       "explanation": "微分すると同じになる関数は無数にある。"
+    },
+    {
+      "id": "mat_m310_011",
+      "category": "calculation",
+      "prompt": "∫x⁵ dx は？（C は積分定数）",
+      "choices": [
+        "x⁶/6+C",
+        "5x⁴+C",
+        "x⁶+C",
+        "x⁵/5+C"
+      ],
+      "answerIndex": 0,
+      "explanation": "xⁿ⁺¹/(n+1)。"
+    },
+    {
+      "id": "mat_m310_012",
+      "category": "calculation",
+      "prompt": "∫(2/x) dx は？",
+      "choices": [
+        "−2/x²+C",
+        "2x+C",
+        "2log|x|+C",
+        "log|2x|+C"
+      ],
+      "answerIndex": 2,
+      "explanation": "∫1/x dx=log|x|+C。"
+    },
+    {
+      "id": "mat_m310_013",
+      "category": "calculation",
+      "prompt": "∫e^(2x) dx は？",
+      "choices": [
+        "e^(2x)/2+C",
+        "2e^(2x)+C",
+        "e^(x²)+C",
+        "e^(2x)+C"
+      ],
+      "answerIndex": 0,
+      "explanation": "微分すると e^(2x) になるもの。"
+    },
+    {
+      "id": "mat_m310_014",
+      "category": "calculation",
+      "prompt": "∫(sin x+cos x) dx は？",
+      "choices": [
+        "cos x+sin x+C",
+        "−cos x−sin x+C",
+        "−cos x+sin x+C",
+        "cos x−sin x+C"
+      ],
+      "answerIndex": 2,
+      "explanation": "∫sin x dx=−cos x、∫cos x dx=sin x。"
+    },
+    {
+      "id": "mat_m310_015",
+      "category": "calculation",
+      "prompt": "∫1/cos²x dx は？",
+      "choices": [
+        "tan x+C",
+        "sin x+C",
+        "−tan x+C",
+        "1/tan x+C"
+      ],
+      "answerIndex": 0,
+      "explanation": "(tan x)′=1/cos²x。"
+    },
+    {
+      "id": "mat_m310_016",
+      "category": "calculation",
+      "prompt": "∫₀^(π/2) cos x dx の値は？",
+      "choices": [
+        "0",
+        "−1",
+        "1",
+        "π/2"
+      ],
+      "answerIndex": 2,
+      "explanation": "[sin x]₀^(π/2)。"
+    },
+    {
+      "id": "mat_m310_017",
+      "category": "calculation",
+      "prompt": "∫₁^(e²) (1/x) dx の値は？",
+      "choices": [
+        "e²",
+        "e²−1",
+        "1",
+        "2"
+      ],
+      "answerIndex": 3,
+      "explanation": "[log x]₁^(e²)。"
+    },
+    {
+      "id": "mat_m310_018",
+      "category": "calculation",
+      "prompt": "∫₀^(log 2) eˣ dx の値は？",
+      "choices": [
+        "1",
+        "log 2",
+        "e",
+        "2"
+      ],
+      "answerIndex": 0,
+      "explanation": "e^(log 2)−1=2−1。"
+    },
+    {
+      "id": "mat_m310_019",
+      "category": "calculation",
+      "prompt": "∫1/√x dx は？",
+      "choices": [
+        "2√x+C",
+        "log √x+C",
+        "√x/2+C",
+        "−1/(2x√x)+C"
+      ],
+      "answerIndex": 0,
+      "explanation": "x^(−1/2) の不定積分は 2x^(1/2)。"
+    },
+    {
+      "id": "mat_m310_020",
+      "category": "knowledge",
+      "prompt": "定積分 ∫ₐᵇ f(x) dx と ∫ᵇₐ f(x) dx の関係は？",
+      "choices": [
+        "2倍になる",
+        "等しい",
+        "関係がない",
+        "符号が逆になる"
+      ],
+      "answerIndex": 3,
+      "explanation": "積分区間の上下を入れかえると符号が変わる。"
     }
   ]
 }

@@ -133,6 +133,136 @@
       ],
       "answerIndex": 0,
       "explanation": "表現を工夫すると、図形の問題を計算で処理できる。"
+    },
+    {
+      "id": "mat_mc15_011",
+      "category": "calculation",
+      "prompt": "a=(1, 1)、b=(1, −1) のなす角は？",
+      "choices": [
+        "90°",
+        "45°",
+        "0°",
+        "60°"
+      ],
+      "answerIndex": 0,
+      "explanation": "内積 1−1=0。"
+    },
+    {
+      "id": "mat_mc15_012",
+      "category": "calculation",
+      "prompt": "点 (1, 1, 1) と原点の距離は？",
+      "choices": [
+        "3",
+        "√2",
+        "√3",
+        "1"
+      ],
+      "answerIndex": 2,
+      "explanation": "√(1+1+1)。"
+    },
+    {
+      "id": "mat_mc15_013",
+      "category": "calculation",
+      "prompt": "双曲線 x²/4−y²=1 の焦点は？",
+      "choices": [
+        "(±√3, 0)",
+        "(±√5, 0)",
+        "(0, ±√5)",
+        "(±5, 0)"
+      ],
+      "answerIndex": 1,
+      "explanation": "√(4+1)。"
+    },
+    {
+      "id": "mat_mc15_014",
+      "category": "calculation",
+      "prompt": "(1+i)⁴ を計算すると？",
+      "choices": [
+        "4",
+        "−4",
+        "4i",
+        "−4i"
+      ],
+      "answerIndex": 1,
+      "explanation": "(2i)²=−4。"
+    },
+    {
+      "id": "mat_mc15_015",
+      "category": "calculation",
+      "prompt": "|z₁|=3、|z₂|=6 のとき、|z₁/z₂| は？",
+      "choices": [
+        "1/2",
+        "18",
+        "2",
+        "3"
+      ],
+      "answerIndex": 0,
+      "explanation": "絶対値は割り算になる。"
+    },
+    {
+      "id": "mat_mc15_016",
+      "category": "calculation",
+      "prompt": "x=1+cos t、y=sin t が表す曲線は？",
+      "choices": [
+        "中心 (0, 1)、半径1の円",
+        "中心 (1, 0)、半径1の円",
+        "楕円",
+        "原点中心、半径1の円"
+      ],
+      "answerIndex": 1,
+      "explanation": "(x−1)²+y²=1。"
+    },
+    {
+      "id": "mat_mc15_017",
+      "category": "calculation",
+      "prompt": "[[2, 0], [0, 2]]³ を計算すると？",
+      "choices": [
+        "[[8, 8], [8, 8]]",
+        "[[2, 0], [0, 2]]",
+        "[[8, 0], [0, 8]]",
+        "[[6, 0], [0, 6]]"
+      ],
+      "answerIndex": 2,
+      "explanation": "2³ 倍の単位行列。"
+    },
+    {
+      "id": "mat_mc15_018",
+      "category": "calculation",
+      "prompt": "放物線 y²=8x 上の点で、x 座標が3の点と焦点の距離は？",
+      "choices": [
+        "5",
+        "3",
+        "2",
+        "√33"
+      ],
+      "answerIndex": 0,
+      "explanation": "準線 x=−2 までの距離と等しい：3+2。"
+    },
+    {
+      "id": "mat_mc15_019",
+      "category": "calculation",
+      "prompt": "極座標 (3, π/2) を直交座標で表すと？",
+      "choices": [
+        "(3, 0)",
+        "(0, −3)",
+        "(−3, 0)",
+        "(0, 3)"
+      ],
+      "answerIndex": 3,
+      "explanation": "(3cos π/2, 3sin π/2)。"
+    },
+    {
+      "id": "mat_mc15_020",
+      "category": "thinking",
+      "prompt": "図形の問題を、座標・ベクトル・複素数のどれで解くか選ぶときの考え方は？",
+      "choices": [
+        "いつも複素数を使う",
+        "いつも座標を使う",
+        "問題文の最初の言葉で決める",
+        "回転があれば複素数、長さや角があればベクトル、など問題の特徴で使い分ける"
+      ],
+      "answerIndex": 3,
+      "explanation": "回転・相似は複素数、内積が使えるならベクトルが便利。"
     }
   ]
 }

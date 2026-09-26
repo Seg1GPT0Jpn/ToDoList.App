@@ -133,6 +133,136 @@
       ],
       "answerIndex": 2,
       "explanation": "f″>0 なら傾きが増えていく（下に凸）。"
+    },
+    {
+      "id": "mat_m307_011",
+      "category": "calculation",
+      "prompt": "曲線 y=e^(2x) 上の点 (0, 1) における接線の方程式は？",
+      "choices": [
+        "y=2x+1",
+        "y=2x",
+        "y=e²x+1",
+        "y=x+1"
+      ],
+      "answerIndex": 0,
+      "explanation": "y′=2e^(2x)、x=0 で2。"
+    },
+    {
+      "id": "mat_m307_012",
+      "category": "calculation",
+      "prompt": "曲線 y=sin x 上の点 (0, 0) における接線の方程式は？",
+      "choices": [
+        "y=2x",
+        "y=0",
+        "y=−x",
+        "y=x"
+      ],
+      "answerIndex": 3,
+      "explanation": "(sin x)′=cos x、x=0 で1。"
+    },
+    {
+      "id": "mat_m307_013",
+      "category": "calculation",
+      "prompt": "y=eˣ−x の最小値は？",
+      "choices": [
+        "e",
+        "0",
+        "−1",
+        "1"
+      ],
+      "answerIndex": 3,
+      "explanation": "y′=eˣ−1=0 で x=0、y=1。"
+    },
+    {
+      "id": "mat_m307_014",
+      "category": "calculation",
+      "prompt": "y=x log x（x>0）の最小値は？",
+      "choices": [
+        "−1/e",
+        "−1",
+        "0",
+        "−e"
+      ],
+      "answerIndex": 0,
+      "explanation": "y′=log x+1=0 → x=1/e。"
+    },
+    {
+      "id": "mat_m307_015",
+      "category": "calculation",
+      "prompt": "y=x³−3x² の変曲点は？",
+      "choices": [
+        "(1, −2)",
+        "(1, 2)",
+        "(2, −4)",
+        "(0, 0)"
+      ],
+      "answerIndex": 0,
+      "explanation": "y″=6x−6=0 → x=1。"
+    },
+    {
+      "id": "mat_m307_016",
+      "category": "calculation",
+      "prompt": "y=e^(−x²) の変曲点の x 座標は？",
+      "choices": [
+        "0",
+        "±√2",
+        "±1",
+        "±1/√2"
+      ],
+      "answerIndex": 3,
+      "explanation": "y″=(4x²−2)e^(−x²)=0。"
+    },
+    {
+      "id": "mat_m307_017",
+      "category": "calculation",
+      "prompt": "数直線上を動く点の位置が x=t²−4t のとき、速度が0になる t は？",
+      "choices": [
+        "0",
+        "4",
+        "1",
+        "2"
+      ],
+      "answerIndex": 3,
+      "explanation": "v=2t−4=0。"
+    },
+    {
+      "id": "mat_m307_018",
+      "category": "calculation",
+      "prompt": "位置が x=sin t のとき、加速度は？",
+      "choices": [
+        "sin t",
+        "−cos t",
+        "cos t",
+        "−sin t"
+      ],
+      "answerIndex": 3,
+      "explanation": "2回微分する。"
+    },
+    {
+      "id": "mat_m307_019",
+      "category": "calculation",
+      "prompt": "1次の近似式を使うと、e^0.01 はおよそ？",
+      "choices": [
+        "1.1",
+        "0.99",
+        "1.01",
+        "1.001"
+      ],
+      "answerIndex": 2,
+      "explanation": "x が0に近いとき eˣ≒1+x。"
+    },
+    {
+      "id": "mat_m307_020",
+      "category": "knowledge",
+      "prompt": "f″(x)>0 の区間で、曲線 y=f(x) はどうなっている？",
+      "choices": [
+        "減少している",
+        "下に凸",
+        "直線",
+        "上に凸"
+      ],
+      "answerIndex": 1,
+      "explanation": "接線の傾きが増えていく。"
     }
   ]
 }

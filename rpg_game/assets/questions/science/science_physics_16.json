@@ -211,6 +211,214 @@
       ],
       "answerIndex": 0,
       "explanation": "回折は波の性質。粒子と考えていた電子にも波動性がある（物質波）。"
+    },
+    {
+      "id": "sci_phy16_017",
+      "category": "knowledge",
+      "prompt": "光電効果で、金属から電子が飛び出すかどうかを決めるものは？",
+      "choices": [
+        "光を当てる時間",
+        "金属の大きさ",
+        "光の振動数（波長）",
+        "光の強さ"
+      ],
+      "answerIndex": 2,
+      "explanation": "振動数が限界振動数より小さいと、どんなに強い光でも出ない。"
+    },
+    {
+      "id": "sci_phy16_018",
+      "category": "knowledge",
+      "prompt": "光が「粒子」の性質をもつことを示す現象は？",
+      "choices": [
+        "回折",
+        "干渉",
+        "光電効果",
+        "屈折"
+      ],
+      "answerIndex": 2,
+      "explanation": "光子1個のエネルギー hν が電子に与えられる。"
+    },
+    {
+      "id": "sci_phy16_019",
+      "category": "knowledge",
+      "prompt": "同位体（アイソトープ）とは？",
+      "choices": [
+        "中性子の数が同じで、陽子の数がちがう原子",
+        "陽子の数が同じで、中性子の数がちがう原子",
+        "電子の数だけがちがう原子",
+        "質量数が同じ原子"
+      ],
+      "answerIndex": 1,
+      "explanation": "化学的な性質はほぼ同じ。"
+    },
+    {
+      "id": "sci_phy16_020",
+      "category": "knowledge",
+      "prompt": "質量数とは？",
+      "choices": [
+        "電子の数",
+        "陽子の数と中性子の数の和",
+        "陽子の数",
+        "中性子の数"
+      ],
+      "answerIndex": 1,
+      "explanation": "原子番号は陽子の数。"
+    },
+    {
+      "id": "sci_phy16_021",
+      "category": "knowledge",
+      "prompt": "原子核がばらばらの核子より質量が小さくなっている分を何という？",
+      "choices": [
+        "仕事関数",
+        "質量欠損",
+        "結合エネルギー",
+        "半減期"
+      ],
+      "answerIndex": 1,
+      "explanation": "質量欠損 × c² が結合エネルギー。"
+    },
+    {
+      "id": "sci_phy16_022",
+      "category": "knowledge",
+      "prompt": "原子力発電で利用している反応は？",
+      "choices": [
+        "ウランなどの核分裂",
+        "光電効果",
+        "α崩壊",
+        "水素の核融合"
+      ],
+      "answerIndex": 0,
+      "explanation": "重い原子核が分裂するときのエネルギーを利用する。"
+    },
+    {
+      "id": "sci_phy16_023",
+      "category": "knowledge",
+      "prompt": "X 線について正しいものは？",
+      "choices": [
+        "音波の一種",
+        "電子の流れ",
+        "波長の短い電磁波で、物体を透過しやすい",
+        "ヘリウムの原子核"
+      ],
+      "answerIndex": 2,
+      "explanation": "レントゲン写真などに使われる。"
+    },
+    {
+      "id": "sci_phy16_024",
+      "category": "calculation",
+      "prompt": "半減期 5 年の放射性物質が、20 年後に残っている割合は？",
+      "choices": [
+        "1/8",
+        "1/16",
+        "1/4",
+        "1/20"
+      ],
+      "answerIndex": 1,
+      "explanation": "(1/2)⁴。"
+    },
+    {
+      "id": "sci_phy16_025",
+      "category": "calculation",
+      "prompt": "²²⁶Ra（原子番号 88）が α崩壊すると、できる原子核の質量数と原子番号は？",
+      "choices": [
+        "質量数 224、原子番号 86",
+        "質量数 222、原子番号 86",
+        "質量数 222、原子番号 88",
+        "質量数 226、原子番号 87"
+      ],
+      "answerIndex": 1,
+      "explanation": "α崩壊で質量数 −4、原子番号 −2。"
+    },
+    {
+      "id": "sci_phy16_026",
+      "category": "calculation",
+      "prompt": "¹⁴C（原子番号 6）が β崩壊すると、できる原子核は？",
+      "choices": [
+        "¹⁴B（原子番号 5）",
+        "¹³C（原子番号 6）",
+        "¹⁰Be（原子番号 4）",
+        "¹⁴N（原子番号 7）"
+      ],
+      "answerIndex": 3,
+      "explanation": "β崩壊で中性子が陽子に変わり、原子番号 +1。"
+    },
+    {
+      "id": "sci_phy16_027",
+      "category": "calculation",
+      "prompt": "振動数 6.0 × 10¹⁴ Hz の光子のエネルギーは？（h ＝ 6.6 × 10⁻³⁴ J·s）",
+      "choices": [
+        "約 1.1 × 10⁻⁴⁸ J",
+        "約 4.0 × 10⁻¹⁹ J",
+        "約 9.1 × 10⁴⁷ J",
+        "約 4.0 × 10⁻³⁴ J"
+      ],
+      "answerIndex": 1,
+      "explanation": "hν ＝ 6.6 × 10⁻³⁴ × 6.0 × 10¹⁴。"
+    },
+    {
+      "id": "sci_phy16_028",
+      "category": "calculation",
+      "prompt": "仕事関数 2.5 eV の金属に、エネルギー 4.0 eV の光子を当てた。飛び出す電子の運動エネルギーの最大値は？",
+      "choices": [
+        "2.5 eV",
+        "6.5 eV",
+        "1.5 eV",
+        "4.0 eV"
+      ],
+      "answerIndex": 2,
+      "explanation": "4.0 − 2.5。"
+    },
+    {
+      "id": "sci_phy16_029",
+      "category": "calculation",
+      "prompt": "1 eV は何 J？（電気素量 1.6 × 10⁻¹⁹ C）",
+      "choices": [
+        "1.0 J",
+        "1.6 × 10⁻¹⁹ J",
+        "6.3 × 10¹⁸ J",
+        "9.1 × 10⁻³¹ J"
+      ],
+      "answerIndex": 1,
+      "explanation": "電子が 1 V で加速されて得るエネルギー。"
+    },
+    {
+      "id": "sci_phy16_030",
+      "category": "calculation",
+      "prompt": "1.0 × 10⁻³ kg の質量がすべてエネルギーに変わると何 J？（c ＝ 3.0 × 10⁸ m/s）",
+      "choices": [
+        "9.0 × 10¹⁶ J",
+        "3.0 × 10¹¹ J",
+        "3.0 × 10⁵ J",
+        "9.0 × 10¹³ J"
+      ],
+      "answerIndex": 3,
+      "explanation": "E ＝ mc² ＝ 10⁻³ × 9.0 × 10¹⁶。"
+    },
+    {
+      "id": "sci_phy16_031",
+      "category": "thinking",
+      "prompt": "放射線から身を守る3原則として正しい組み合わせは？",
+      "choices": [
+        "温める・冷やす・ぬらす",
+        "距離をとる・時間を短くする・さえぎる",
+        "見る・聞く・さわる",
+        "近づく・長くいる・さえぎらない"
+      ],
+      "answerIndex": 1,
+      "explanation": "線源から離れ、浴びる時間を短くし、遮へい物を置く。"
+    },
+    {
+      "id": "sci_phy16_032",
+      "category": "thinking",
+      "prompt": "電子顕微鏡が光学顕微鏡より細かいものを見られる理由は？",
+      "choices": [
+        "電子が光より遅いから",
+        "レンズが大きいから",
+        "電子に色があるから",
+        "電子の物質波の波長が可視光よりずっと短いから"
+      ],
+      "answerIndex": 3,
+      "explanation": "見分けられる細かさは波長で決まる。"
     }
   ]
 }

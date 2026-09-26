@@ -133,6 +133,136 @@
       ],
       "answerIndex": 3,
       "explanation": "仮定が妥当かどうかも後で確かめる。"
+    },
+    {
+      "id": "mat_mb10_011",
+      "category": "calculation",
+      "prompt": "年利4%の複利で、お金が約2倍になるのは何年後？（72の法則）",
+      "choices": [
+        "約36年後",
+        "約25年後",
+        "約12年後",
+        "約18年後"
+      ],
+      "answerIndex": 3,
+      "explanation": "72÷4=18。"
+    },
+    {
+      "id": "mat_mb10_012",
+      "category": "calculation",
+      "prompt": "毎時2%ずつ増える量が約2倍になるのは何時間後？（72の法則）",
+      "choices": [
+        "約50時間後",
+        "約24時間後",
+        "約72時間後",
+        "約36時間後"
+      ],
+      "answerIndex": 3,
+      "explanation": "72÷2=36。"
+    },
+    {
+      "id": "mat_mb10_013",
+      "category": "calculation",
+      "prompt": "時速4kmで歩くと、6km 進むのにかかる時間は？",
+      "choices": [
+        "1時間20分",
+        "1時間30分",
+        "1時間40分",
+        "2時間"
+      ],
+      "answerIndex": 1,
+      "explanation": "6÷4=1.5時間。"
+    },
+    {
+      "id": "mat_mb10_014",
+      "category": "calculation",
+      "prompt": "携帯料金が「基本料1000円＋1GB あたり500円」のとき、4GB 使うと？",
+      "choices": [
+        "3000円",
+        "2500円",
+        "2000円",
+        "3500円"
+      ],
+      "answerIndex": 0,
+      "explanation": "1000+500×4。"
+    },
+    {
+      "id": "mat_mb10_015",
+      "category": "calculation",
+      "prompt": "定価3000円の品物を3割引で買うといくら？",
+      "choices": [
+        "2000円",
+        "900円",
+        "2100円",
+        "2700円"
+      ],
+      "answerIndex": 2,
+      "explanation": "3000×0.7。"
+    },
+    {
+      "id": "mat_mb10_016",
+      "category": "calculation",
+      "prompt": "毎年20%ずつ増える量が今50のとき、2年後はいくつ？",
+      "choices": [
+        "72",
+        "70",
+        "60",
+        "80"
+      ],
+      "answerIndex": 0,
+      "explanation": "50×1.2²=72。"
+    },
+    {
+      "id": "mat_mb10_017",
+      "category": "calculation",
+      "prompt": "濃度10%の食塩水200g にふくまれる食塩は？",
+      "choices": [
+        "2g",
+        "10g",
+        "20g",
+        "200g"
+      ],
+      "answerIndex": 2,
+      "explanation": "200×0.1。"
+    },
+    {
+      "id": "mat_mb10_018",
+      "category": "calculation",
+      "prompt": "行きは時速30km、帰りは時速60km で同じ道を往復したときの平均の速さは？",
+      "choices": [
+        "時速45km",
+        "時速50km",
+        "時速35km",
+        "時速40km"
+      ],
+      "answerIndex": 3,
+      "explanation": "道のり60km とすると 120km÷(2+1)時間。"
+    },
+    {
+      "id": "mat_mb10_019",
+      "category": "calculation",
+      "prompt": "縮尺1/50000の地図で3cm の長さは、実際には何km？",
+      "choices": [
+        "15km",
+        "150km",
+        "0.15km",
+        "1.5km"
+      ],
+      "answerIndex": 3,
+      "explanation": "3×50000=150000cm。"
+    },
+    {
+      "id": "mat_mb10_020",
+      "category": "thinking",
+      "prompt": "数理モデルで「単純化しすぎる」と起こりやすい問題は？",
+      "choices": [
+        "答えが必ず0になる",
+        "グラフがかけなくなる",
+        "計算ができなくなる",
+        "現実のデータと大きく合わなくなる"
+      ],
+      "answerIndex": 3,
+      "explanation": "大事な要因まで無視すると予測がずれる。結果を現実と比べて見直す。"
     }
   ]
 }

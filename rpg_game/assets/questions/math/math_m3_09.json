@@ -133,6 +133,136 @@
       ],
       "answerIndex": 1,
       "explanation": "例：f(x)=k の形にする。"
+    },
+    {
+      "id": "mat_m309_011",
+      "category": "calculation",
+      "prompt": "方程式 eˣ=kx が異なる2つの実数解をもつ k の範囲は？",
+      "choices": [
+        "k>e",
+        "k=e",
+        "0<k<e",
+        "k<0"
+      ],
+      "answerIndex": 0,
+      "explanation": "k=eˣ/x のグラフ（x>0 で最小値 e）と直線 y=k。"
+    },
+    {
+      "id": "mat_m309_012",
+      "category": "calculation",
+      "prompt": "y=log x/x² の極大値をとる x は？",
+      "choices": [
+        "e",
+        "√e",
+        "1",
+        "e²"
+      ],
+      "answerIndex": 1,
+      "explanation": "y′=(1−2log x)/x³=0 → log x=1/2。"
+    },
+    {
+      "id": "mat_m309_013",
+      "category": "calculation",
+      "prompt": "表面積が一定の円柱で、体積が最大になるときの高さ h と半径 r の関係は？",
+      "choices": [
+        "h=2r",
+        "h=r/2",
+        "h=4r",
+        "h=r"
+      ],
+      "answerIndex": 0,
+      "explanation": "S=2πr²+2πrh 一定で V=πr²h を微分して求める。"
+    },
+    {
+      "id": "mat_m309_014",
+      "category": "calculation",
+      "prompt": "球の半径が毎秒 1cm ずつ増えるとき、半径が2cm の瞬間の体積の増える速さは？",
+      "choices": [
+        "32π/3 cm³/秒",
+        "8π cm³/秒",
+        "16π cm³/秒",
+        "4π cm³/秒"
+      ],
+      "answerIndex": 2,
+      "explanation": "dV/dt=4πr²·dr/dt=16π。"
+    },
+    {
+      "id": "mat_m309_015",
+      "category": "calculation",
+      "prompt": "原点から曲線 y=log x に引いた接線の方程式は？",
+      "choices": [
+        "y=x−1",
+        "y=x",
+        "y=x/e",
+        "y=ex"
+      ],
+      "answerIndex": 2,
+      "explanation": "接点 (a, log a) で log a=1 → a=e、傾き 1/e。"
+    },
+    {
+      "id": "mat_m309_016",
+      "category": "calculation",
+      "prompt": "f(x)=x³+ax が極値をもつ a の条件は？",
+      "choices": [
+        "a>0",
+        "a<0",
+        "a=0",
+        "a≧0"
+      ],
+      "answerIndex": 1,
+      "explanation": "f′=3x²+a=0 が異なる2実数解をもつ。"
+    },
+    {
+      "id": "mat_m309_017",
+      "category": "calculation",
+      "prompt": "x>0 のとき eˣ>1+x+x²/2 を示すとき、考える関数は？",
+      "choices": [
+        "f(x)=1+x",
+        "f(x)=x²/2",
+        "f(x)=eˣ",
+        "f(x)=eˣ−1−x−x²/2"
+      ],
+      "answerIndex": 3,
+      "explanation": "差の関数を2回微分して、f(0)=0 から増加を示す。"
+    },
+    {
+      "id": "mat_m309_018",
+      "category": "calculation",
+      "prompt": "y=sin x+cos x（0≦x≦π）の最小値は？",
+      "choices": [
+        "−1",
+        "0",
+        "1",
+        "−√2"
+      ],
+      "answerIndex": 0,
+      "explanation": "√2 sin(x+π/4)、x+π/4 は π/4〜5π/4。最小は x=π で −1。"
+    },
+    {
+      "id": "mat_m309_019",
+      "category": "calculation",
+      "prompt": "lim_{x→∞} (log x)/x の値は？",
+      "choices": [
+        "1",
+        "e",
+        "∞",
+        "0"
+      ],
+      "answerIndex": 3,
+      "explanation": "x の方が log x よりずっと速く大きくなる。"
+    },
+    {
+      "id": "mat_m309_020",
+      "category": "thinking",
+      "prompt": "「f(x)≧0 がすべての x で成り立つ」を示すときの基本方針は？",
+      "choices": [
+        "f′(x)=0 を解くだけ",
+        "f(0)≧0 を示す",
+        "f(x) の最小値を求めて、それが0以上であることを示す",
+        "f(x) の最大値を求める"
+      ],
+      "answerIndex": 2,
+      "explanation": "増減表で最小値を調べるのが確実。"
     }
   ]
 }

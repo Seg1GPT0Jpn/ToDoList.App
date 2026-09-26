@@ -133,6 +133,136 @@
       ],
       "answerIndex": 0,
       "explanation": "断面積の積分が体積になる。"
+    },
+    {
+      "id": "mat_m313_011",
+      "category": "calculation",
+      "prompt": "曲線 y=e^(−x) と x 軸、直線 x=0、x=1 で囲まれた部分の面積は？",
+      "choices": [
+        "1−1/e",
+        "e−1",
+        "1/e",
+        "1"
+      ],
+      "answerIndex": 0,
+      "explanation": "∫₀¹ e^(−x) dx。"
+    },
+    {
+      "id": "mat_m313_012",
+      "category": "calculation",
+      "prompt": "曲線 y=cos x（0≦x≦π/2）と x 軸、y 軸で囲まれた部分の面積は？",
+      "choices": [
+        "1/2",
+        "1",
+        "π/2",
+        "2"
+      ],
+      "answerIndex": 1,
+      "explanation": "∫₀^(π/2) cos x dx。"
+    },
+    {
+      "id": "mat_m313_013",
+      "category": "calculation",
+      "prompt": "曲線 y=1/x と x 軸、直線 x=1、x=4 で囲まれた部分の面積は？",
+      "choices": [
+        "2 log 2",
+        "3/4",
+        "3",
+        "log 3"
+      ],
+      "answerIndex": 0,
+      "explanation": "log 4=2 log 2。"
+    },
+    {
+      "id": "mat_m313_014",
+      "category": "calculation",
+      "prompt": "y=2x（0≦x≦1）と x 軸の間の部分を x 軸のまわりに回転した立体の体積は？",
+      "choices": [
+        "4π/3",
+        "π/3",
+        "2π/3",
+        "4π"
+      ],
+      "answerIndex": 0,
+      "explanation": "π∫₀¹ 4x² dx。"
+    },
+    {
+      "id": "mat_m313_015",
+      "category": "calculation",
+      "prompt": "y=√x（0≦x≦4）と x 軸の間の部分を x 軸のまわりに回転した立体の体積は？",
+      "choices": [
+        "2π",
+        "4π",
+        "16π",
+        "8π"
+      ],
+      "answerIndex": 3,
+      "explanation": "π∫₀⁴ x dx=π·8。"
+    },
+    {
+      "id": "mat_m313_016",
+      "category": "calculation",
+      "prompt": "半径 r の球の体積を積分で求める式は？",
+      "choices": [
+        "2π∫₀ʳ x dx",
+        "π∫₀ʳ x² dx",
+        "∫₋ᵣʳ (r²−x²) dx",
+        "π∫₋ᵣʳ (r²−x²) dx"
+      ],
+      "answerIndex": 3,
+      "explanation": "断面は半径 √(r²−x²) の円。"
+    },
+    {
+      "id": "mat_m313_017",
+      "category": "calculation",
+      "prompt": "半径2の球の体積は？",
+      "choices": [
+        "8π",
+        "16π/3",
+        "4π",
+        "32π/3"
+      ],
+      "answerIndex": 3,
+      "explanation": "(4/3)π·8。"
+    },
+    {
+      "id": "mat_m313_018",
+      "category": "calculation",
+      "prompt": "速度 v=sin t で動く点の、t=0 から t=π までの位置の変化は？",
+      "choices": [
+        "0",
+        "π",
+        "1",
+        "2"
+      ],
+      "answerIndex": 3,
+      "explanation": "∫₀^π sin t dt。"
+    },
+    {
+      "id": "mat_m313_019",
+      "category": "calculation",
+      "prompt": "曲線 x=cos t、y=sin t（0≦t≦2π）の長さは？",
+      "choices": [
+        "1",
+        "4π",
+        "π",
+        "2π"
+      ],
+      "answerIndex": 3,
+      "explanation": "√(sin²t+cos²t)=1 を 0〜2π で積分。"
+    },
+    {
+      "id": "mat_m313_020",
+      "category": "knowledge",
+      "prompt": "媒介変数表示の曲線 x=f(t)、y=g(t)（a≦t≦b）の長さを表す式は？",
+      "choices": [
+        "∫ₐᵇ y dx",
+        "∫ₐᵇ √((dx/dt)²+(dy/dt)²) dt",
+        "∫ₐᵇ (dx/dt+dy/dt) dt",
+        "π∫ₐᵇ y² dt"
+      ],
+      "answerIndex": 1,
+      "explanation": "微小な長さ √(dx²+dy²) をたし合わせる。"
     }
   ]
 }

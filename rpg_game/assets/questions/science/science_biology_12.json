@@ -211,6 +211,214 @@
       ],
       "answerIndex": 2,
       "explanation": "ルーベンらの実験。チラコイドで水が分解されて O₂ が生じる。"
+    },
+    {
+      "id": "sci_bio12_017",
+      "category": "knowledge",
+      "prompt": "呼吸で、グルコースが最終的に分解されてできる物質は？",
+      "choices": [
+        "デンプン",
+        "エタノール",
+        "二酸化炭素と水",
+        "乳酸"
+      ],
+      "answerIndex": 2,
+      "explanation": "C₆H₁₂O₆ ＋ 6O₂ ＋ 6H₂O → 6CO₂ ＋ 12H₂O。"
+    },
+    {
+      "id": "sci_bio12_018",
+      "category": "knowledge",
+      "prompt": "電子伝達系が行われる場所は？",
+      "choices": [
+        "細胞質基質",
+        "葉緑体のストロマ",
+        "ミトコンドリアの内膜",
+        "ミトコンドリアのマトリックス"
+      ],
+      "answerIndex": 2,
+      "explanation": "酸化的リン酸化で多くの ATP をつくる。"
+    },
+    {
+      "id": "sci_bio12_019",
+      "category": "knowledge",
+      "prompt": "解糖系が行われる場所は？",
+      "choices": [
+        "リボソーム",
+        "細胞質基質",
+        "核",
+        "ミトコンドリアの内膜"
+      ],
+      "answerIndex": 1,
+      "explanation": "酸素を使わずにグルコースをピルビン酸に分解する。"
+    },
+    {
+      "id": "sci_bio12_020",
+      "category": "knowledge",
+      "prompt": "光合成の光化学系でつくられ、カルビン回路で使われる物質は？",
+      "choices": [
+        "ATP と NADPH",
+        "CO₂ と水",
+        "デンプン",
+        "グルコースと酸素"
+      ],
+      "answerIndex": 0,
+      "explanation": "光エネルギーを化学エネルギーに変えたもの。"
+    },
+    {
+      "id": "sci_bio12_021",
+      "category": "knowledge",
+      "prompt": "カルビン回路が行われる場所は？",
+      "choices": [
+        "チラコイド膜",
+        "細胞膜",
+        "葉緑体のストロマ",
+        "ミトコンドリア"
+      ],
+      "answerIndex": 2,
+      "explanation": "CO₂ を固定して有機物をつくる。"
+    },
+    {
+      "id": "sci_bio12_022",
+      "category": "knowledge",
+      "prompt": "光合成で発生する酸素は、どの物質に由来する？",
+      "choices": [
+        "ATP",
+        "グルコース",
+        "水",
+        "二酸化炭素"
+      ],
+      "answerIndex": 2,
+      "explanation": "同位体を使った実験で確かめられた。"
+    },
+    {
+      "id": "sci_bio12_023",
+      "category": "knowledge",
+      "prompt": "乳酸発酵を行う生物の例は？",
+      "choices": [
+        "ヒトの神経細胞",
+        "乳酸菌",
+        "ミドリムシ",
+        "酵母"
+      ],
+      "answerIndex": 1,
+      "explanation": "ヨーグルトづくりに利用される。"
+    },
+    {
+      "id": "sci_bio12_024",
+      "category": "knowledge",
+      "prompt": "CAM 植物の特徴は？",
+      "choices": [
+        "根で光合成する",
+        "夜に気孔を開いて CO₂ を取りこみ、昼に光合成に使う",
+        "昼だけ気孔を開く",
+        "光合成をしない"
+      ],
+      "answerIndex": 1,
+      "explanation": "サボテンやベンケイソウなど、乾燥に適応。"
+    },
+    {
+      "id": "sci_bio12_025",
+      "category": "knowledge",
+      "prompt": "根粒菌が共生する植物は？",
+      "choices": [
+        "イネ科植物",
+        "マメ科植物",
+        "ユリ科植物",
+        "キク科植物"
+      ],
+      "answerIndex": 1,
+      "explanation": "窒素固定をして植物に窒素化合物を与える。"
+    },
+    {
+      "id": "sci_bio12_026",
+      "category": "knowledge",
+      "prompt": "化学合成細菌がエネルギーを得る方法は？",
+      "choices": [
+        "無機物の酸化で出るエネルギーを使う",
+        "他の生物を食べる",
+        "光エネルギーを使う",
+        "発酵だけ"
+      ],
+      "answerIndex": 0,
+      "explanation": "亜硝酸菌・硝酸菌など。"
+    },
+    {
+      "id": "sci_bio12_027",
+      "category": "calculation",
+      "prompt": "呼吸で O₂ を 100 mL 吸収し、CO₂ を 100 mL 放出した。呼吸商は？",
+      "choices": [
+        "2.0",
+        "1.0",
+        "0.8",
+        "0.7"
+      ],
+      "answerIndex": 1,
+      "explanation": "CO₂ ÷ O₂。炭水化物の呼吸商は 1.0。"
+    },
+    {
+      "id": "sci_bio12_028",
+      "category": "calculation",
+      "prompt": "脂肪の呼吸商はおよそ？",
+      "choices": [
+        "1.0",
+        "1.5",
+        "0.7",
+        "0.8"
+      ],
+      "answerIndex": 2,
+      "explanation": "タンパク質は約 0.8。"
+    },
+    {
+      "id": "sci_bio12_029",
+      "category": "calculation",
+      "prompt": "呼吸でグルコース 1 分子から最大でできる ATP はおよそ？",
+      "choices": [
+        "6 分子",
+        "38 分子（約 30〜38）",
+        "100 分子",
+        "2 分子"
+      ],
+      "answerIndex": 1,
+      "explanation": "解糖系 2、クエン酸回路 2、電子伝達系で最大 34。"
+    },
+    {
+      "id": "sci_bio12_030",
+      "category": "calculation",
+      "prompt": "光合成でグルコース 1 分子をつくるときに放出される O₂ は何分子？",
+      "choices": [
+        "6 分子",
+        "12 分子",
+        "1 分子",
+        "3 分子"
+      ],
+      "answerIndex": 0,
+      "explanation": "6CO₂ ＋ 12H₂O → C₆H₁₂O₆ ＋ 6O₂ ＋ 6H₂O。"
+    },
+    {
+      "id": "sci_bio12_031",
+      "category": "thinking",
+      "prompt": "酵母を密閉した容器で育てると、エタノールが増える理由は？",
+      "choices": [
+        "酸素が増えるから",
+        "酸素が不足して、アルコール発酵を行うようになるから",
+        "光合成を始めるから",
+        "エタノールを食べないから"
+      ],
+      "answerIndex": 1,
+      "explanation": "酸素があるときは呼吸を行う。"
+    },
+    {
+      "id": "sci_bio12_032",
+      "category": "thinking",
+      "prompt": "暗い場所に置いた植物を明るい場所に移すと、しばらく CO₂ の吸収量が増えていく理由は？",
+      "choices": [
+        "CO₂ が発生しなくなるから",
+        "光合成の反応が進み、呼吸で出す CO₂ より多くを吸収するようになるから",
+        "呼吸が止まるから",
+        "植物が成長するから"
+      ],
+      "answerIndex": 1,
+      "explanation": "見かけの光合成速度 ＝ 光合成速度 − 呼吸速度。"
     }
   ]
 }

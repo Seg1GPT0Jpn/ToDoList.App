@@ -211,6 +211,214 @@
       ],
       "answerIndex": 0,
       "explanation": "水は比熱が大きく、昼は陸の方が先に温まる。陸上で上昇気流が起き、海から風が吹きこむ。"
+    },
+    {
+      "id": "sci_phy07_017",
+      "category": "knowledge",
+      "prompt": "熱量の単位は？",
+      "choices": [
+        "K（ケルビン）",
+        "W（ワット）",
+        "J（ジュール）",
+        "℃"
+      ],
+      "answerIndex": 2,
+      "explanation": "熱もエネルギーの一種なので J。"
+    },
+    {
+      "id": "sci_phy07_018",
+      "category": "knowledge",
+      "prompt": "物体の温度が上がると、構成する粒子の運動はどうなる？",
+      "choices": [
+        "変わらない",
+        "おだやかになる",
+        "激しくなる",
+        "止まる"
+      ],
+      "answerIndex": 2,
+      "explanation": "温度は熱運動の激しさを表す。"
+    },
+    {
+      "id": "sci_phy07_019",
+      "category": "knowledge",
+      "prompt": "熱の伝わり方で、電磁波によって伝わるものを何という？",
+      "choices": [
+        "対流",
+        "伝導",
+        "放射（ふく射）",
+        "蒸発"
+      ],
+      "answerIndex": 2,
+      "explanation": "太陽の熱が宇宙空間をこえて届くのは放射。"
+    },
+    {
+      "id": "sci_phy07_020",
+      "category": "knowledge",
+      "prompt": "物質が固体から液体に変わるときに吸収する熱を何という？",
+      "choices": [
+        "熱容量",
+        "比熱",
+        "融解熱",
+        "蒸発熱"
+      ],
+      "answerIndex": 2,
+      "explanation": "状態変化の間は温度が変わらない。"
+    },
+    {
+      "id": "sci_phy07_021",
+      "category": "knowledge",
+      "prompt": "熱量の保存とは？",
+      "choices": [
+        "熱はつくれないこと",
+        "温度が変わらないこと",
+        "熱量はいつも増えること",
+        "高温の物体が失った熱量と、低温の物体が得た熱量が等しいこと"
+      ],
+      "answerIndex": 3,
+      "explanation": "外部と熱のやりとりがないとき成り立つ。"
+    },
+    {
+      "id": "sci_phy07_022",
+      "category": "knowledge",
+      "prompt": "比熱が大きい物質の特徴は？",
+      "choices": [
+        "温まりやすく、冷めやすい",
+        "温まりにくく、冷めにくい",
+        "溶けやすい",
+        "沸点が低い"
+      ],
+      "answerIndex": 1,
+      "explanation": "1 g を 1 K 上げるのに多くの熱が必要。"
+    },
+    {
+      "id": "sci_phy07_023",
+      "category": "calculation",
+      "prompt": "−73 ℃ は絶対温度で何 K？",
+      "choices": [
+        "73 K",
+        "346 K",
+        "−200 K",
+        "200 K"
+      ],
+      "answerIndex": 3,
+      "explanation": "−73 + 273。"
+    },
+    {
+      "id": "sci_phy07_024",
+      "category": "calculation",
+      "prompt": "水 200 g の温度を 5.0 K 上げるのに必要な熱量は？（水の比熱 4.2 J/(g·K)）",
+      "choices": [
+        "1000 J",
+        "4200 J",
+        "840 J",
+        "21 J"
+      ],
+      "answerIndex": 1,
+      "explanation": "Q ＝ mcΔT ＝ 200 × 4.2 × 5.0。"
+    },
+    {
+      "id": "sci_phy07_025",
+      "category": "calculation",
+      "prompt": "熱容量 80 J/K の物体に 1600 J の熱を与えた。温度の上昇は？",
+      "choices": [
+        "0.050 K",
+        "20 K",
+        "128000 K",
+        "1680 K"
+      ],
+      "answerIndex": 1,
+      "explanation": "ΔT ＝ Q ÷ C。"
+    },
+    {
+      "id": "sci_phy07_026",
+      "category": "calculation",
+      "prompt": "比熱 0.90 J/(g·K) のアルミニウム 100 g の熱容量は？",
+      "choices": [
+        "9.0 J/K",
+        "111 J/K",
+        "0.90 J/K",
+        "90 J/K"
+      ],
+      "answerIndex": 3,
+      "explanation": "C ＝ mc。"
+    },
+    {
+      "id": "sci_phy07_027",
+      "category": "calculation",
+      "prompt": "60 ℃ の水 100 g と 20 ℃ の水 100 g を混ぜた。全体の温度は？（熱の出入りなし）",
+      "choices": [
+        "80 ℃",
+        "50 ℃",
+        "40 ℃",
+        "30 ℃"
+      ],
+      "answerIndex": 2,
+      "explanation": "同じ質量なので中間の温度。"
+    },
+    {
+      "id": "sci_phy07_028",
+      "category": "calculation",
+      "prompt": "500 W の電熱線を 2.0 分間使った。出る熱量は？",
+      "choices": [
+        "250 J",
+        "60000 J",
+        "1000 J",
+        "6000 J"
+      ],
+      "answerIndex": 1,
+      "explanation": "500 × 120 s。"
+    },
+    {
+      "id": "sci_phy07_029",
+      "category": "calculation",
+      "prompt": "0 ℃ の氷 10 g をすべて 0 ℃ の水にするのに必要な熱量は？（融解熱 334 J/g）",
+      "choices": [
+        "33.4 J",
+        "420 J",
+        "3340 J",
+        "334 J"
+      ],
+      "answerIndex": 2,
+      "explanation": "334 × 10。"
+    },
+    {
+      "id": "sci_phy07_030",
+      "category": "calculation",
+      "prompt": "比熱 4.2 J/(g·K) の水 50 g が 2100 J の熱を得た。温度の上昇は？",
+      "choices": [
+        "20 K",
+        "10 K",
+        "5.0 K",
+        "0.10 K"
+      ],
+      "answerIndex": 1,
+      "explanation": "2100 ÷ (50 × 4.2)。"
+    },
+    {
+      "id": "sci_phy07_031",
+      "category": "thinking",
+      "prompt": "金属のスプーンが木のスプーンより熱く感じやすい理由は？",
+      "choices": [
+        "金属は比熱が大きいから",
+        "金属は熱を伝えやすく、手との間で熱がすばやく移動するから",
+        "金属の温度がいつも高いから",
+        "木は熱を発生するから"
+      ],
+      "answerIndex": 1,
+      "explanation": "同じ温度でも、熱伝導の速さで感じ方が変わる。"
+    },
+    {
+      "id": "sci_phy07_032",
+      "category": "thinking",
+      "prompt": "暖房でエアコンの吹き出し口を下向きにするとよい理由は？",
+      "choices": [
+        "放射で伝わるから",
+        "暖かい空気は軽く上昇するので、下から暖めると対流で部屋全体が暖まるから",
+        "暖かい空気は重いから",
+        "天井が冷えるから"
+      ],
+      "answerIndex": 1,
+      "explanation": "温められた空気は密度が小さくなって上昇する。"
     }
   ]
 }

@@ -133,6 +133,136 @@
       ],
       "answerIndex": 3,
       "explanation": "f′(x)>0 の区間で増加。"
+    },
+    {
+      "id": "mat_m216_011",
+      "category": "calculation",
+      "prompt": "f(x)=x⁴ の導関数は？",
+      "choices": [
+        "x³",
+        "3x⁴",
+        "4x³",
+        "4x⁴"
+      ],
+      "answerIndex": 2,
+      "explanation": "(xⁿ)′=nxⁿ⁻¹。"
+    },
+    {
+      "id": "mat_m216_012",
+      "category": "calculation",
+      "prompt": "f(x)=3x²+5x−2 の導関数は？",
+      "choices": [
+        "6x+5x",
+        "6x",
+        "3x+5",
+        "6x+5"
+      ],
+      "answerIndex": 3,
+      "explanation": "項ごとに微分する。定数は0。"
+    },
+    {
+      "id": "mat_m216_013",
+      "category": "calculation",
+      "prompt": "f(x)=x³ の x=2 における微分係数は？",
+      "choices": [
+        "12",
+        "4",
+        "8",
+        "6"
+      ],
+      "answerIndex": 0,
+      "explanation": "f′(x)=3x²、f′(2)=12。"
+    },
+    {
+      "id": "mat_m216_014",
+      "category": "calculation",
+      "prompt": "f(x)=x³ で、x が0から2まで変わるときの平均変化率は？",
+      "choices": [
+        "8",
+        "2",
+        "4",
+        "6"
+      ],
+      "answerIndex": 2,
+      "explanation": "(8−0)/(2−0)。"
+    },
+    {
+      "id": "mat_m216_015",
+      "category": "calculation",
+      "prompt": "曲線 y=x² 上の点 (2, 4) における接線の傾きは？",
+      "choices": [
+        "1",
+        "4",
+        "8",
+        "2"
+      ],
+      "answerIndex": 1,
+      "explanation": "y′=2x、x=2 で4。"
+    },
+    {
+      "id": "mat_m216_016",
+      "category": "calculation",
+      "prompt": "∫x³ dx は？（C は積分定数）",
+      "choices": [
+        "x³/3+C",
+        "3x²+C",
+        "x⁴/4+C",
+        "x⁴+C"
+      ],
+      "answerIndex": 2,
+      "explanation": "xⁿ の不定積分は xⁿ⁺¹/(n+1)+C。"
+    },
+    {
+      "id": "mat_m216_017",
+      "category": "calculation",
+      "prompt": "∫₁³ 2x dx の値は？",
+      "choices": [
+        "9",
+        "8",
+        "4",
+        "6"
+      ],
+      "answerIndex": 1,
+      "explanation": "[x²]₁³=9−1。"
+    },
+    {
+      "id": "mat_m216_018",
+      "category": "calculation",
+      "prompt": "∫₀² (x²+1) dx の値は？",
+      "choices": [
+        "14/3",
+        "5",
+        "8/3",
+        "10/3"
+      ],
+      "answerIndex": 0,
+      "explanation": "[x³/3+x]₀²=8/3+2。"
+    },
+    {
+      "id": "mat_m216_019",
+      "category": "calculation",
+      "prompt": "f(x)=x²−4x の最小値は？",
+      "choices": [
+        "4",
+        "−4",
+        "0",
+        "−2"
+      ],
+      "answerIndex": 1,
+      "explanation": "f′(x)=2x−4=0 で x=2、f(2)=−4。"
+    },
+    {
+      "id": "mat_m216_020",
+      "category": "knowledge",
+      "prompt": "関数 f(x) が x=a で極値をとるとき、必ず成り立つことは？（微分可能とする）",
+      "choices": [
+        "f(a)=0",
+        "f′(a)>0",
+        "f′(a)=0",
+        "f″(a)=0"
+      ],
+      "answerIndex": 2,
+      "explanation": "極値をとる点では接線が水平。ただし f′(a)=0 でも極値とは限らない。"
     }
   ]
 }

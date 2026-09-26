@@ -211,6 +211,214 @@
       ],
       "answerIndex": 1,
       "explanation": "ダーウィン父子やボイセン・イェンセン、ウェントの実験から、先端でつくられる物質が成長を調節することがわかった。"
+    },
+    {
+      "id": "sci_bio15_017",
+      "category": "knowledge",
+      "prompt": "眼で、光を受け取る細胞がある部分は？",
+      "choices": [
+        "角膜",
+        "虹彩",
+        "水晶体",
+        "網膜"
+      ],
+      "answerIndex": 3,
+      "explanation": "桿体細胞と錐体細胞がある。"
+    },
+    {
+      "id": "sci_bio15_018",
+      "category": "knowledge",
+      "prompt": "色を感じる視細胞は？",
+      "choices": [
+        "桿体細胞",
+        "錐体細胞",
+        "色素細胞",
+        "神経節細胞"
+      ],
+      "answerIndex": 1,
+      "explanation": "明るいところではたらく。"
+    },
+    {
+      "id": "sci_bio15_019",
+      "category": "knowledge",
+      "prompt": "耳で、音の振動を受け取る聴細胞があるのは？",
+      "choices": [
+        "耳小骨",
+        "鼓膜",
+        "半規管",
+        "うずまき管"
+      ],
+      "answerIndex": 3,
+      "explanation": "半規管は回転、前庭は傾きを感じる。"
+    },
+    {
+      "id": "sci_bio15_020",
+      "category": "knowledge",
+      "prompt": "興奮が起こっているとき、細胞膜の内側の電位は？",
+      "choices": [
+        "さらに負になる",
+        "0 のまま",
+        "一時的に正になる",
+        "負のまま変わらない"
+      ],
+      "answerIndex": 2,
+      "explanation": "活動電位。Na⁺ が流入する。"
+    },
+    {
+      "id": "sci_bio15_021",
+      "category": "knowledge",
+      "prompt": "シナプスで、興奮の伝わる向きが一方向に決まっている理由は？",
+      "choices": [
+        "電気が一方向にしか流れないから",
+        "樹状突起がないから",
+        "神経伝達物質は軸索末端からだけ放出されるから",
+        "シナプスが一つしかないから"
+      ],
+      "answerIndex": 2,
+      "explanation": "受け手の細胞には受容体がある。"
+    },
+    {
+      "id": "sci_bio15_022",
+      "category": "knowledge",
+      "prompt": "骨格筋の収縮に必要なイオンで、筋小胞体から放出されるものは？",
+      "choices": [
+        "K⁺",
+        "Ca²⁺",
+        "Na⁺",
+        "Cl⁻"
+      ],
+      "answerIndex": 1,
+      "explanation": "トロポニンに結合して、アクチンとミオシンの結合を可能にする。"
+    },
+    {
+      "id": "sci_bio15_023",
+      "category": "knowledge",
+      "prompt": "経験によって行動が変化することを何という？",
+      "choices": [
+        "走性",
+        "学習",
+        "本能",
+        "反射"
+      ],
+      "answerIndex": 1,
+      "explanation": "慣れ、刷込み、試行錯誤など。"
+    },
+    {
+      "id": "sci_bio15_024",
+      "category": "knowledge",
+      "prompt": "カイコガのメスが出してオスを引きつける物質は？",
+      "choices": [
+        "神経伝達物質",
+        "性フェロモン",
+        "ホルモン",
+        "酵素"
+      ],
+      "answerIndex": 1,
+      "explanation": "同種の他個体に情報を伝える物質。"
+    },
+    {
+      "id": "sci_bio15_025",
+      "category": "knowledge",
+      "prompt": "植物の茎が光の方へ曲がる性質を何という？",
+      "choices": [
+        "重力屈性",
+        "正の光屈性",
+        "接触傾性",
+        "負の光屈性"
+      ],
+      "answerIndex": 1,
+      "explanation": "オーキシンが陰側に多く移動して、陰側がよく伸びる。"
+    },
+    {
+      "id": "sci_bio15_026",
+      "category": "knowledge",
+      "prompt": "植物の根が重力の方向へ伸びる性質は？",
+      "choices": [
+        "負の重力屈性",
+        "光屈性",
+        "正の重力屈性",
+        "水分屈性"
+      ],
+      "answerIndex": 2,
+      "explanation": "茎は負の重力屈性を示す。"
+    },
+    {
+      "id": "sci_bio15_027",
+      "category": "knowledge",
+      "prompt": "長日植物の例は？",
+      "choices": [
+        "キク・アサガオ",
+        "イネ",
+        "アブラナ・ホウレンソウ",
+        "トマト"
+      ],
+      "answerIndex": 2,
+      "explanation": "暗期が一定より短くなると花芽をつける。"
+    },
+    {
+      "id": "sci_bio15_028",
+      "category": "knowledge",
+      "prompt": "花芽形成を促す物質として、葉でつくられて茎頂へ運ばれるものは？",
+      "choices": [
+        "フロリゲン（FT タンパク質）",
+        "アブシシン酸",
+        "エチレン",
+        "オーキシン"
+      ],
+      "answerIndex": 0,
+      "explanation": "日長を葉で感じとる。"
+    },
+    {
+      "id": "sci_bio15_029",
+      "category": "calculation",
+      "prompt": "神経繊維の 2 点 A、B（A から 6 cm）を刺激したら、筋肉の収縮までの時間が 5.0 ミリ秒と 3.0 ミリ秒だった。伝導速度は？",
+      "choices": [
+        "30 m/s",
+        "3 m/s",
+        "2 m/s",
+        "60 m/s"
+      ],
+      "answerIndex": 0,
+      "explanation": "6 cm ÷ 2.0 ミリ秒 ＝ 0.06 m ÷ 0.002 s。"
+    },
+    {
+      "id": "sci_bio15_030",
+      "category": "calculation",
+      "prompt": "有髄神経の伝導速度が 100 m/s のとき、1 m の神経を伝わる時間は？",
+      "choices": [
+        "1 ミリ秒",
+        "0.1 ミリ秒",
+        "10 ミリ秒",
+        "100 ミリ秒"
+      ],
+      "answerIndex": 2,
+      "explanation": "1 ÷ 100 ＝ 0.01 s。"
+    },
+    {
+      "id": "sci_bio15_031",
+      "category": "thinking",
+      "prompt": "暗い部屋に入ると、しばらくして見えるようになる理由は？",
+      "choices": [
+        "桿体細胞の感度が上がる（暗順応）から",
+        "目が慣れて光を出すから",
+        "錐体細胞が増えるから",
+        "瞳孔が小さくなるから"
+      ],
+      "answerIndex": 0,
+      "explanation": "視物質ロドプシンが蓄積していく。"
+    },
+    {
+      "id": "sci_bio15_032",
+      "category": "thinking",
+      "prompt": "短日植物のキクの開花時期を遅らせるために、夜に電灯をつける理由は？",
+      "choices": [
+        "温度を上げるため",
+        "虫を集めるため",
+        "長い暗期を途中で中断して、花芽形成を起こさせないため",
+        "光合成を増やすため"
+      ],
+      "answerIndex": 2,
+      "explanation": "光中断。電照菊として知られる。"
     }
   ]
 }

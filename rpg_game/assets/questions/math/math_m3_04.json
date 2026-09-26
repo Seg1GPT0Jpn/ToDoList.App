@@ -133,6 +133,136 @@
       ],
       "answerIndex": 3,
       "explanation": "u が変わると y が変わり、x が変わると u が変わる。"
+    },
+    {
+      "id": "mat_m304_011",
+      "category": "calculation",
+      "prompt": "(x⁷)′ は？",
+      "choices": [
+        "7x⁷",
+        "7x⁶",
+        "x⁶",
+        "6x⁷"
+      ],
+      "answerIndex": 1,
+      "explanation": "(xⁿ)′=nxⁿ⁻¹。"
+    },
+    {
+      "id": "mat_m304_012",
+      "category": "calculation",
+      "prompt": "(sin x+cos x)′ は？",
+      "choices": [
+        "−cos x−sin x",
+        "sin x−cos x",
+        "cos x−sin x",
+        "cos x+sin x"
+      ],
+      "answerIndex": 2,
+      "explanation": "(sin x)′=cos x、(cos x)′=−sin x。"
+    },
+    {
+      "id": "mat_m304_013",
+      "category": "calculation",
+      "prompt": "(3eˣ)′ は？",
+      "choices": [
+        "3eˣ⁻¹",
+        "3eˣ",
+        "eˣ",
+        "3xeˣ"
+      ],
+      "answerIndex": 1,
+      "explanation": "eˣ は微分しても eˣ。"
+    },
+    {
+      "id": "mat_m304_014",
+      "category": "calculation",
+      "prompt": "(log 3x)′ は？（x>0）",
+      "choices": [
+        "1/(3x)",
+        "3/x",
+        "log 3",
+        "1/x"
+      ],
+      "answerIndex": 3,
+      "explanation": "log 3x=log 3+log x。"
+    },
+    {
+      "id": "mat_m304_015",
+      "category": "calculation",
+      "prompt": "(x√x)′ は？",
+      "choices": [
+        "(1/2)√x",
+        "√x",
+        "3√x",
+        "(3/2)√x"
+      ],
+      "answerIndex": 3,
+      "explanation": "x^(3/2) の微分：(3/2)x^(1/2)。"
+    },
+    {
+      "id": "mat_m304_016",
+      "category": "calculation",
+      "prompt": "(1/x²)′ は？",
+      "choices": [
+        "2/x³",
+        "−1/x³",
+        "−2/x",
+        "−2/x³"
+      ],
+      "answerIndex": 3,
+      "explanation": "x⁻² の微分：−2x⁻³。"
+    },
+    {
+      "id": "mat_m304_017",
+      "category": "calculation",
+      "prompt": "{(2x+1)⁴}′ は？",
+      "choices": [
+        "8(2x+1)³",
+        "2(2x+1)⁴",
+        "8(2x+1)⁴",
+        "4(2x+1)³"
+      ],
+      "answerIndex": 0,
+      "explanation": "4(2x+1)³×2。"
+    },
+    {
+      "id": "mat_m304_018",
+      "category": "calculation",
+      "prompt": "(x² sin x)′ は？",
+      "choices": [
+        "2x sin x+x² cos x",
+        "x² cos x",
+        "2x sin x−x² cos x",
+        "2x cos x"
+      ],
+      "answerIndex": 0,
+      "explanation": "積の微分。"
+    },
+    {
+      "id": "mat_m304_019",
+      "category": "calculation",
+      "prompt": "(e^(3x))′ は？",
+      "choices": [
+        "e^(3x)",
+        "3e^(3x)",
+        "e^(3x)/3",
+        "3xe^(3x)"
+      ],
+      "answerIndex": 1,
+      "explanation": "合成関数の微分。"
+    },
+    {
+      "id": "mat_m304_020",
+      "category": "knowledge",
+      "prompt": "商の微分 (f/g)′ の式は？",
+      "choices": [
+        "(f′g−fg′)/g²",
+        "f′/g′",
+        "(fg′−f′g)/g²",
+        "(f′g+fg′)/g²"
+      ],
+      "answerIndex": 0,
+      "explanation": "分子は「上の微分×下 − 上×下の微分」。"
     }
   ]
 }

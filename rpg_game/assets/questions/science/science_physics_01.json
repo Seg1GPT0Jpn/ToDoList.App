@@ -211,6 +211,214 @@
       ],
       "answerIndex": 1,
       "explanation": "v < 0 は負の向きに進んでいることを表す。加速度の正負はグラフの傾きで判断する。"
+    },
+    {
+      "id": "sci_phy01_017",
+      "category": "knowledge",
+      "prompt": "時間の SI 基本単位は？",
+      "choices": [
+        "ミリ秒（ms）",
+        "秒（s）",
+        "時間（h）",
+        "分（min）"
+      ],
+      "answerIndex": 1,
+      "explanation": "SI 基本単位は m、kg、s、A、K、mol、cd。"
+    },
+    {
+      "id": "sci_phy01_018",
+      "category": "knowledge",
+      "prompt": "「3.00 × 10² m」の有効数字は何けた？",
+      "choices": [
+        "5けた",
+        "1けた",
+        "2けた",
+        "3けた"
+      ],
+      "answerIndex": 3,
+      "explanation": "10 の累乗の前の 3.00 が3けた。"
+    },
+    {
+      "id": "sci_phy01_019",
+      "category": "knowledge",
+      "prompt": "速度が「ベクトル量」であるとは、どういうこと？",
+      "choices": [
+        "大きさと向きをもつ量である",
+        "単位がない量である",
+        "時間によって変わらない量である",
+        "大きさだけをもつ量である"
+      ],
+      "answerIndex": 0,
+      "explanation": "速さ（大きさ）に向きを加えたものが速度。"
+    },
+    {
+      "id": "sci_phy01_020",
+      "category": "knowledge",
+      "prompt": "平均の速度を表す式は？",
+      "choices": [
+        "加速度 × 時間",
+        "変位 ÷ かかった時間",
+        "道のり × 時間",
+        "時間 ÷ 変位"
+      ],
+      "answerIndex": 1,
+      "explanation": "平均の速度は変位を経過時間で割る。平均の速さは道のり÷時間。"
+    },
+    {
+      "id": "sci_phy01_021",
+      "category": "knowledge",
+      "prompt": "x-t グラフが水平な直線のとき、物体はどうなっている？",
+      "choices": [
+        "静止している",
+        "減速している",
+        "等速で動いている",
+        "加速している"
+      ],
+      "answerIndex": 0,
+      "explanation": "時間がたっても位置が変わらない。"
+    },
+    {
+      "id": "sci_phy01_022",
+      "category": "knowledge",
+      "prompt": "等速直線運動の v-t グラフの形は？",
+      "choices": [
+        "右下がりの直線",
+        "原点を通る右上がりの直線",
+        "放物線",
+        "t 軸に平行な直線"
+      ],
+      "answerIndex": 3,
+      "explanation": "速度が一定なので水平な直線。"
+    },
+    {
+      "id": "sci_phy01_023",
+      "category": "calculation",
+      "prompt": "72 km/h は何 m/s？",
+      "choices": [
+        "260 m/s",
+        "72 m/s",
+        "20 m/s",
+        "12 m/s"
+      ],
+      "answerIndex": 2,
+      "explanation": "72 × 1000 ÷ 3600。"
+    },
+    {
+      "id": "sci_phy01_024",
+      "category": "calculation",
+      "prompt": "15 m/s は何 km/h？",
+      "choices": [
+        "54 km/h",
+        "15 km/h",
+        "90 km/h",
+        "4.2 km/h"
+      ],
+      "answerIndex": 0,
+      "explanation": "15 × 3600 ÷ 1000。"
+    },
+    {
+      "id": "sci_phy01_025",
+      "category": "calculation",
+      "prompt": "有効数字を考えて 12.3 + 4.56 を計算すると？",
+      "choices": [
+        "16.860",
+        "17",
+        "16.9",
+        "16.86"
+      ],
+      "answerIndex": 2,
+      "explanation": "足し算・引き算は、末位がいちばん高い位（小数第1位）にそろえる。"
+    },
+    {
+      "id": "sci_phy01_026",
+      "category": "calculation",
+      "prompt": "x 軸上で、位置 −1.0 m から位置 4.0 m まで動いた。変位は？",
+      "choices": [
+        "−5.0 m",
+        "+5.0 m",
+        "+3.0 m",
+        "4.0 m"
+      ],
+      "answerIndex": 1,
+      "explanation": "4.0 − (−1.0)。"
+    },
+    {
+      "id": "sci_phy01_027",
+      "category": "calculation",
+      "prompt": "200 m を 40 s で進み、続けて 100 m を 10 s で進んだ。全体の平均の速さは？",
+      "choices": [
+        "6.0 m/s",
+        "5.0 m/s",
+        "7.5 m/s",
+        "10 m/s"
+      ],
+      "answerIndex": 0,
+      "explanation": "300 m ÷ 50 s。"
+    },
+    {
+      "id": "sci_phy01_028",
+      "category": "calculation",
+      "prompt": "西へ 10 m/s で走る車から、東へ 10 m/s で走る車を見ると、相手の速度は？",
+      "choices": [
+        "東へ 10 m/s",
+        "0 m/s",
+        "東へ 20 m/s",
+        "西へ 20 m/s"
+      ],
+      "answerIndex": 2,
+      "explanation": "相対速度は「相手 − 自分」。東を正とすると 10 −(−10)＝20。"
+    },
+    {
+      "id": "sci_phy01_029",
+      "category": "calculation",
+      "prompt": "一定の速さ 25 m/s で 8.0 s 走った。進んだ距離は？",
+      "choices": [
+        "250 m",
+        "33 m",
+        "200 m",
+        "3.1 m"
+      ],
+      "answerIndex": 2,
+      "explanation": "25 × 8.0。"
+    },
+    {
+      "id": "sci_phy01_030",
+      "category": "calculation",
+      "prompt": "x-t グラフで、2.0 s 間に位置が 10 m から 4.0 m に変わった。平均の速度は？",
+      "choices": [
+        "3.0 m/s",
+        "7.0 m/s",
+        "−6.0 m/s",
+        "−3.0 m/s"
+      ],
+      "answerIndex": 3,
+      "explanation": "(4.0 − 10) ÷ 2.0。"
+    },
+    {
+      "id": "sci_phy01_031",
+      "category": "thinking",
+      "prompt": "同じ道のりを往復して出発点にもどった。このときの変位と平均の速度について正しいものは？",
+      "choices": [
+        "変位も平均の速度も 0 である",
+        "変位は道のりの2倍である",
+        "変位は負になる",
+        "平均の速度は平均の速さと同じである"
+      ],
+      "answerIndex": 0,
+      "explanation": "出発点と到着点が同じなので変位 0。平均の速度も 0 だが、平均の速さは 0 ではない。"
+    },
+    {
+      "id": "sci_phy01_032",
+      "category": "thinking",
+      "prompt": "「有効数字」を考える理由として適切なものは？",
+      "choices": [
+        "数字をきれいに見せるため",
+        "単位を省略するため",
+        "計算を速くするため",
+        "測定値には限られた精度しかなく、計算結果の精度もそれで決まるから"
+      ],
+      "answerIndex": 3,
+      "explanation": "測定のあいまいさを越えた桁まで書いても意味がない。"
     }
   ]
 }

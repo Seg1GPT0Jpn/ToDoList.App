@@ -211,6 +211,214 @@
       ],
       "answerIndex": 2,
       "explanation": "そのため、火山前線より海溝側には火山がない。"
+    },
+    {
+      "id": "sci_ear04_017",
+      "category": "knowledge",
+      "prompt": "マグマの温度が高く、SiO₂ が少ないとき、マグマの性質は？",
+      "choices": [
+        "ねばりけが小さく流れやすい",
+        "爆発的に噴火しやすい",
+        "ねばりけが大きい",
+        "固体になっている"
+      ],
+      "answerIndex": 0,
+      "explanation": "玄武岩質マグマ。"
+    },
+    {
+      "id": "sci_ear04_018",
+      "category": "knowledge",
+      "prompt": "粘性の大きいマグマで起こりやすい噴火は？",
+      "choices": [
+        "おだやかな溶岩の流出",
+        "噴火しない",
+        "爆発的な噴火",
+        "水だけが出る"
+      ],
+      "answerIndex": 2,
+      "explanation": "ガスがぬけにくく、たまって爆発する。"
+    },
+    {
+      "id": "sci_ear04_019",
+      "category": "knowledge",
+      "prompt": "火山砕屑物にあてはまらないものは？",
+      "choices": [
+        "火山弾",
+        "火山灰",
+        "火山れき",
+        "溶岩流"
+      ],
+      "answerIndex": 3,
+      "explanation": "溶岩流は液体のマグマが流れたもの。"
+    },
+    {
+      "id": "sci_ear04_020",
+      "category": "knowledge",
+      "prompt": "等粒状組織をもつ岩石は？",
+      "choices": [
+        "火山岩",
+        "堆積岩",
+        "深成岩",
+        "凝灰岩"
+      ],
+      "answerIndex": 2,
+      "explanation": "ゆっくり冷えて、結晶が大きく育つ。"
+    },
+    {
+      "id": "sci_ear04_021",
+      "category": "knowledge",
+      "prompt": "斑状組織をもつ岩石は？",
+      "choices": [
+        "深成岩",
+        "石灰岩",
+        "火山岩",
+        "チャート"
+      ],
+      "answerIndex": 2,
+      "explanation": "斑晶と石基からなる。"
+    },
+    {
+      "id": "sci_ear04_022",
+      "category": "knowledge",
+      "prompt": "安山岩と同じような成分をもつ深成岩は？",
+      "choices": [
+        "閃緑岩",
+        "花こう岩",
+        "流紋岩",
+        "はんれい岩"
+      ],
+      "answerIndex": 0,
+      "explanation": "玄武岩↔はんれい岩、安山岩↔閃緑岩、流紋岩↔花こう岩。"
+    },
+    {
+      "id": "sci_ear04_023",
+      "category": "knowledge",
+      "prompt": "かんらん石・輝石・角閃石・黒雲母に共通するものは？",
+      "choices": [
+        "炭酸塩鉱物",
+        "無色鉱物",
+        "有色鉱物",
+        "粘土鉱物"
+      ],
+      "answerIndex": 2,
+      "explanation": "鉄やマグネシウムを多くふくみ、黒っぽい。"
+    },
+    {
+      "id": "sci_ear04_024",
+      "category": "knowledge",
+      "prompt": "火山の噴火のようすを大きく左右するマグマの性質は？",
+      "choices": [
+        "色",
+        "におい",
+        "ねばりけ（粘性）",
+        "重さだけ"
+      ],
+      "answerIndex": 2,
+      "explanation": "粘性で火山の形や噴火の激しさが変わる。"
+    },
+    {
+      "id": "sci_ear04_025",
+      "category": "knowledge",
+      "prompt": "マグマだまりとは？",
+      "choices": [
+        "火口にたまった水",
+        "溶岩がたまった平地",
+        "地下でマグマがたまっている場所",
+        "火山灰の層"
+      ],
+      "answerIndex": 2,
+      "explanation": "地下数 km〜十数 km にある。"
+    },
+    {
+      "id": "sci_ear04_026",
+      "category": "knowledge",
+      "prompt": "溶岩ドーム（溶岩円頂丘）をつくるマグマは？",
+      "choices": [
+        "ねばりけの大きいマグマ",
+        "玄武岩質マグマ",
+        "ねばりけの小さいマグマ",
+        "水"
+      ],
+      "answerIndex": 0,
+      "explanation": "昭和新山や雲仙普賢岳の溶岩ドーム。"
+    },
+    {
+      "id": "sci_ear04_027",
+      "category": "calculation",
+      "prompt": "ある岩石で、有色鉱物の体積割合が 45 % だった。無色鉱物の割合は？",
+      "choices": [
+        "45 %",
+        "55 %",
+        "100 %",
+        "5 %"
+      ],
+      "answerIndex": 1,
+      "explanation": "100 − 45。"
+    },
+    {
+      "id": "sci_ear04_028",
+      "category": "calculation",
+      "prompt": "直径 0.05 cm の結晶が、1 年に 0.001 cm ずつ成長するとすると、何年でできる？（単純計算）",
+      "choices": [
+        "0.05 年",
+        "5 年",
+        "500 年",
+        "50 年"
+      ],
+      "answerIndex": 3,
+      "explanation": "0.05 ÷ 0.001。"
+    },
+    {
+      "id": "sci_ear04_029",
+      "category": "calculation",
+      "prompt": "火山灰が 1 時間に 2 mm 積もった。10 時間では何 cm？",
+      "choices": [
+        "20 cm",
+        "2 cm",
+        "0.2 cm",
+        "10 cm"
+      ],
+      "answerIndex": 1,
+      "explanation": "20 mm ＝ 2 cm。"
+    },
+    {
+      "id": "sci_ear04_030",
+      "category": "calculation",
+      "prompt": "溶岩流の速さが 1 分間に 50 m のとき、2 km 先の集落に届くのは約何分後？",
+      "choices": [
+        "約 40 分後",
+        "約 100 分後",
+        "約 4 分後",
+        "約 25 分後"
+      ],
+      "answerIndex": 0,
+      "explanation": "2000 ÷ 50。"
+    },
+    {
+      "id": "sci_ear04_031",
+      "category": "thinking",
+      "prompt": "斑状組織で、斑晶と石基ができる順序は？",
+      "choices": [
+        "同時にできた",
+        "地表で斑晶ができた",
+        "地下でゆっくり冷えて斑晶ができ、地表付近で急に冷えて石基ができた",
+        "石基が先で、斑晶があと"
+      ],
+      "answerIndex": 2,
+      "explanation": "大きな結晶は地下で、細かい部分は噴出後に急冷してできる。"
+    },
+    {
+      "id": "sci_ear04_032",
+      "category": "thinking",
+      "prompt": "火山の恵みとして正しくないものは？",
+      "choices": [
+        "地熱発電ができる",
+        "美しい景観が観光資源になる",
+        "火砕流が発生すること",
+        "温泉が利用できる"
+      ],
+      "answerIndex": 2,
+      "explanation": "火砕流は災害。"
     }
   ]
 }

@@ -211,6 +211,214 @@
       ],
       "answerIndex": 0,
       "explanation": "風上側で雨を降らせて水蒸気を失い、風下では乾燥したまま下降して温度が上がる。"
+    },
+    {
+      "id": "sci_ear06_017",
+      "category": "knowledge",
+      "prompt": "地表付近の大気で、窒素の次に多い成分は？",
+      "choices": [
+        "水蒸気",
+        "アルゴン",
+        "二酸化炭素",
+        "酸素"
+      ],
+      "answerIndex": 3,
+      "explanation": "窒素約 78 %、酸素約 21 %。"
+    },
+    {
+      "id": "sci_ear06_018",
+      "category": "knowledge",
+      "prompt": "対流圏の厚さはおよそ？",
+      "choices": [
+        "約 50 km",
+        "約 11 km",
+        "約 1 km",
+        "約 100 km"
+      ],
+      "answerIndex": 1,
+      "explanation": "緯度によってちがい、赤道で厚く極で薄い。"
+    },
+    {
+      "id": "sci_ear06_019",
+      "category": "knowledge",
+      "prompt": "オーロラが見られるのは主にどの層？",
+      "choices": [
+        "中間圏",
+        "対流圏",
+        "熱圏",
+        "成層圏"
+      ],
+      "answerIndex": 2,
+      "explanation": "高さ 100 km 以上。太陽風の粒子が大気の分子を光らせる。"
+    },
+    {
+      "id": "sci_ear06_020",
+      "category": "knowledge",
+      "prompt": "上空へ行くほど気圧はどうなる？",
+      "choices": [
+        "一度上がってから下がる",
+        "低くなる",
+        "変わらない",
+        "高くなる"
+      ],
+      "answerIndex": 1,
+      "explanation": "上にある空気の重さが減る。"
+    },
+    {
+      "id": "sci_ear06_021",
+      "category": "knowledge",
+      "prompt": "湿度を表す式は？",
+      "choices": [
+        "水蒸気量 ÷ 飽和水蒸気量 × 100",
+        "飽和水蒸気量 ÷ 水蒸気量",
+        "露点 ÷ 気温",
+        "気温 × 水蒸気量"
+      ],
+      "answerIndex": 0,
+      "explanation": "相対湿度（%）。"
+    },
+    {
+      "id": "sci_ear06_022",
+      "category": "knowledge",
+      "prompt": "気温が上がると、飽和水蒸気量はどうなる？",
+      "choices": [
+        "変わらない",
+        "小さくなる",
+        "大きくなる",
+        "0 になる"
+      ],
+      "answerIndex": 2,
+      "explanation": "あたたかい空気ほど多くの水蒸気をふくめる。"
+    },
+    {
+      "id": "sci_ear06_023",
+      "category": "knowledge",
+      "prompt": "日本の太平洋側を南下する寒流は？",
+      "choices": [
+        "リマン海流だけ",
+        "黒潮（日本海流）",
+        "親潮（千島海流）",
+        "対馬海流"
+      ],
+      "answerIndex": 2,
+      "explanation": "栄養分が多く、よい漁場になる。"
+    },
+    {
+      "id": "sci_ear06_024",
+      "category": "knowledge",
+      "prompt": "地球が太陽から受けとったエネルギーを、最終的にどうしている？",
+      "choices": [
+        "海にだけためている",
+        "太陽に返している",
+        "同じ量を赤外線として宇宙へ放出している",
+        "すべてためこんでいる"
+      ],
+      "answerIndex": 2,
+      "explanation": "放射平衡により平均気温がほぼ一定に保たれる。"
+    },
+    {
+      "id": "sci_ear06_025",
+      "category": "calculation",
+      "prompt": "気温 30 ℃（飽和水蒸気量 30.4 g/m³）で、水蒸気量 15.2 g/m³ の空気の湿度は？",
+      "choices": [
+        "15 %",
+        "30 %",
+        "200 %",
+        "50 %"
+      ],
+      "answerIndex": 3,
+      "explanation": "15.2 ÷ 30.4 × 100。"
+    },
+    {
+      "id": "sci_ear06_026",
+      "category": "calculation",
+      "prompt": "水蒸気量 12.8 g/m³ の空気の露点は？（10 ℃ で 9.4、15 ℃ で 12.8、20 ℃ で 17.3 g/m³）",
+      "choices": [
+        "10 ℃",
+        "12.8 ℃",
+        "15 ℃",
+        "20 ℃"
+      ],
+      "answerIndex": 2,
+      "explanation": "飽和水蒸気量が 12.8 になる温度。"
+    },
+    {
+      "id": "sci_ear06_027",
+      "category": "calculation",
+      "prompt": "前問の空気を 10 ℃ まで冷やすと、1 m³ あたり何 g の水滴ができる？",
+      "choices": [
+        "3.4 g",
+        "12.8 g",
+        "22.2 g",
+        "9.4 g"
+      ],
+      "answerIndex": 0,
+      "explanation": "12.8 − 9.4。"
+    },
+    {
+      "id": "sci_ear06_028",
+      "category": "calculation",
+      "prompt": "地上の気温 15 ℃ で、高さ 2000 m の気温は？（100 m につき 0.65 ℃ 下がる）",
+      "choices": [
+        "28 ℃",
+        "2 ℃",
+        "−15 ℃",
+        "13 ℃"
+      ],
+      "answerIndex": 1,
+      "explanation": "15 − 13。"
+    },
+    {
+      "id": "sci_ear06_029",
+      "category": "calculation",
+      "prompt": "高さ 3000 m の山頂の気温が 5 ℃ のとき、ふもと（0 m）の気温は？（100 m につき 0.65 ℃）",
+      "choices": [
+        "約 24.5 ℃",
+        "約 20 ℃",
+        "約 −14.5 ℃",
+        "約 8 ℃"
+      ],
+      "answerIndex": 0,
+      "explanation": "5 + 19.5。"
+    },
+    {
+      "id": "sci_ear06_030",
+      "category": "calculation",
+      "prompt": "海水 1 kg に塩類が 35 g ふくまれる。海水 10 kg には塩類が何 g？",
+      "choices": [
+        "350 g",
+        "3.5 g",
+        "35 g",
+        "3500 g"
+      ],
+      "answerIndex": 0,
+      "explanation": "35 × 10。"
+    },
+    {
+      "id": "sci_ear06_031",
+      "category": "thinking",
+      "prompt": "冬の朝、窓ガラスの内側がくもる理由は？",
+      "choices": [
+        "部屋のあたたかく湿った空気が、冷たいガラスで冷やされて露点以下になるから",
+        "部屋の空気が乾燥しているから",
+        "ガラスから水が出るから",
+        "外の雨がしみこむから"
+      ],
+      "answerIndex": 0,
+      "explanation": "水蒸気が凝結して水滴になる。"
+    },
+    {
+      "id": "sci_ear06_032",
+      "category": "thinking",
+      "prompt": "海が地球の気温の変化をやわらげる理由は？",
+      "choices": [
+        "海は太陽光を反射するから",
+        "海は常に凍っているから",
+        "海は熱を出さないから",
+        "水は比熱が大きく、熱をたくわえやすいから"
+      ],
+      "answerIndex": 3,
+      "explanation": "夏に熱をため、冬に放出する。"
     }
   ]
 }

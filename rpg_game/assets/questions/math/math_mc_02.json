@@ -133,6 +133,136 @@
       ],
       "answerIndex": 0,
       "explanation": "cos θ=a・b/(|a||b|)。"
+    },
+    {
+      "id": "mat_mc02_011",
+      "category": "calculation",
+      "prompt": "a=(1, 1)、b=(0, 1) のなす角は？",
+      "choices": [
+        "60°",
+        "90°",
+        "30°",
+        "45°"
+      ],
+      "answerIndex": 3,
+      "explanation": "cos θ=1/(√2·1)。"
+    },
+    {
+      "id": "mat_mc02_012",
+      "category": "calculation",
+      "prompt": "|a|=2、|b|=3、a・b=−3 のとき、|a−b| は？",
+      "choices": [
+        "√19",
+        "√13",
+        "5",
+        "√7"
+      ],
+      "answerIndex": 0,
+      "explanation": "|a|²−2a・b+|b|²=4+6+9=19。"
+    },
+    {
+      "id": "mat_mc02_013",
+      "category": "calculation",
+      "prompt": "線分 AB の中点 M の位置ベクトルは？",
+      "choices": [
+        "(a−b)/2",
+        "(2a+b)/3",
+        "a+b",
+        "(a+b)/2"
+      ],
+      "answerIndex": 3,
+      "explanation": "1:1 に内分する点。"
+    },
+    {
+      "id": "mat_mc02_014",
+      "category": "calculation",
+      "prompt": "線分 AB を 1:3 に内分する点の位置ベクトルは？",
+      "choices": [
+        "(3a−b)/2",
+        "(a+3b)/4",
+        "(3a+b)/4",
+        "(a+b)/4"
+      ],
+      "answerIndex": 2,
+      "explanation": "(na+mb)/(m+n) で m=1、n=3。"
+    },
+    {
+      "id": "mat_mc02_015",
+      "category": "calculation",
+      "prompt": "|a|=2、|b|=2、a・b=2 のとき、a、b で作る三角形の面積は？",
+      "choices": [
+        "2",
+        "1",
+        "2√3",
+        "√3"
+      ],
+      "answerIndex": 3,
+      "explanation": "½√(|a|²|b|²−(a・b)²)=½√12。"
+    },
+    {
+      "id": "mat_mc02_016",
+      "category": "calculation",
+      "prompt": "(−6, 8) と同じ向きの単位ベクトルは？",
+      "choices": [
+        "(−6/10, 8/100)",
+        "(−1, 1)",
+        "(−3/5, 4/5)",
+        "(3/5, −4/5)"
+      ],
+      "answerIndex": 2,
+      "explanation": "大きさ10で割る。"
+    },
+    {
+      "id": "mat_mc02_017",
+      "category": "calculation",
+      "prompt": "線分 AB を 3:1 に外分する点の位置ベクトルは？",
+      "choices": [
+        "(a−3b)/2",
+        "(a+3b)/4",
+        "(−a+3b)/2",
+        "(3a−b)/2"
+      ],
+      "answerIndex": 2,
+      "explanation": "(−na+mb)/(m−n) で m=3、n=1。"
+    },
+    {
+      "id": "mat_mc02_018",
+      "category": "calculation",
+      "prompt": "点 (2, 1) を通り、法線ベクトルが (3, −1) の直線の方程式は？",
+      "choices": [
+        "3x−y−5=0",
+        "3x−y+5=0",
+        "3x+y−7=0",
+        "x+3y−5=0"
+      ],
+      "answerIndex": 0,
+      "explanation": "3(x−2)−(y−1)=0。"
+    },
+    {
+      "id": "mat_mc02_019",
+      "category": "calculation",
+      "prompt": "直線 (x, y)=(0, 1)+t(2, 3) を x、y の式で表すと？",
+      "choices": [
+        "y=2x+1",
+        "2x−3y+3=0",
+        "3x−2y+2=0",
+        "3x+2y−2=0"
+      ],
+      "answerIndex": 2,
+      "explanation": "x=2t、y=1+3t から t を消去：y=3x/2+1。"
+    },
+    {
+      "id": "mat_mc02_020",
+      "category": "thinking",
+      "prompt": "内積 a・b が負のとき、a と b のなす角について言えることは？",
+      "choices": [
+        "ちょうど 90°",
+        "90° より大きい（鈍角）",
+        "90° より小さい",
+        "0°"
+      ],
+      "answerIndex": 1,
+      "explanation": "a・b=|a||b|cos θ で cos θ<0。"
     }
   ]
 }

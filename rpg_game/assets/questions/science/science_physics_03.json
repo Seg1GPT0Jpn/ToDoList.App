@@ -211,6 +211,214 @@
       ],
       "answerIndex": 1,
       "explanation": "どちらも本にはたらく力なので「つり合い」。作用・反作用は2つの物体の間で互いにおよぼし合う力。"
+    },
+    {
+      "id": "sci_phy03_017",
+      "category": "knowledge",
+      "prompt": "力の合成で、2つの力を2辺とする平行四辺形の対角線が表すものは？",
+      "choices": [
+        "摩擦力",
+        "分力",
+        "反作用",
+        "合力"
+      ],
+      "answerIndex": 3,
+      "explanation": "平行四辺形の法則。"
+    },
+    {
+      "id": "sci_phy03_018",
+      "category": "knowledge",
+      "prompt": "重力の大きさ（重さ）と質量の関係として正しいものは？",
+      "choices": [
+        "どちらも同じ量である",
+        "どちらも変わらない",
+        "重さは場所によって変わるが、質量は変わらない",
+        "質量は場所によって変わるが、重さは変わらない"
+      ],
+      "answerIndex": 2,
+      "explanation": "月面では重さは約 1/6 になるが、質量は同じ。"
+    },
+    {
+      "id": "sci_phy03_019",
+      "category": "knowledge",
+      "prompt": "張力とは？",
+      "choices": [
+        "水が物体をおし上げる力",
+        "面が物体をおす力",
+        "物体どうしがこすれるときの力",
+        "糸やひもが物体を引く力"
+      ],
+      "answerIndex": 3,
+      "explanation": "糸の張力は糸にそって引く向き。"
+    },
+    {
+      "id": "sci_phy03_020",
+      "category": "knowledge",
+      "prompt": "静止摩擦力の大きさについて正しいものは？",
+      "choices": [
+        "いつも最大摩擦力と等しい",
+        "いつも0",
+        "加えた力とつり合うように変わる（最大摩擦力まで）",
+        "物体の速さに比例する"
+      ],
+      "answerIndex": 2,
+      "explanation": "動き出すまでは、外力と同じ大きさになる。"
+    },
+    {
+      "id": "sci_phy03_021",
+      "category": "knowledge",
+      "prompt": "浮力が生じる理由は？",
+      "choices": [
+        "液体が物体を引きつけるから",
+        "物体が軽いから",
+        "液体の圧力が深いほど大きく、上下の面で圧力に差があるから",
+        "空気が押し上げるから"
+      ],
+      "answerIndex": 2,
+      "explanation": "下の面をおし上げる力の方が大きい。"
+    },
+    {
+      "id": "sci_phy03_022",
+      "category": "knowledge",
+      "prompt": "力の単位 N（ニュートン）を基本単位で表すと？",
+      "choices": [
+        "kg·m/s²",
+        "kg/m²",
+        "kg·m/s",
+        "m/s²"
+      ],
+      "answerIndex": 0,
+      "explanation": "F ＝ ma より。"
+    },
+    {
+      "id": "sci_phy03_023",
+      "category": "calculation",
+      "prompt": "質量 60 kg の人にはたらく重力の大きさは？（g ＝ 9.8 m/s²）",
+      "choices": [
+        "60 N",
+        "588 N",
+        "5880 N",
+        "6.1 N"
+      ],
+      "answerIndex": 1,
+      "explanation": "mg ＝ 60 × 9.8。"
+    },
+    {
+      "id": "sci_phy03_024",
+      "category": "calculation",
+      "prompt": "ばね定数 200 N/m のばねに 10 N の力を加えた。伸びは？",
+      "choices": [
+        "20 m",
+        "0.050 m",
+        "0.50 m",
+        "2.0 m"
+      ],
+      "answerIndex": 1,
+      "explanation": "x ＝ F ÷ k。"
+    },
+    {
+      "id": "sci_phy03_025",
+      "category": "calculation",
+      "prompt": "6.0 N と 8.0 N の力が同じ向きにはたらく。合力は？",
+      "choices": [
+        "10 N",
+        "48 N",
+        "2.0 N",
+        "14 N"
+      ],
+      "answerIndex": 3,
+      "explanation": "同じ向きなら足す。"
+    },
+    {
+      "id": "sci_phy03_026",
+      "category": "calculation",
+      "prompt": "6.0 N と 8.0 N の力が直角にはたらく。合力の大きさは？",
+      "choices": [
+        "7.0 N",
+        "10 N",
+        "14 N",
+        "2.0 N"
+      ],
+      "answerIndex": 1,
+      "explanation": "√(36 + 64)。"
+    },
+    {
+      "id": "sci_phy03_027",
+      "category": "calculation",
+      "prompt": "水平面上の 2.0 kg の物体。動摩擦係数 0.30 のとき、すべっている間の動摩擦力は？（g ＝ 9.8 m/s²）",
+      "choices": [
+        "6.5 N",
+        "19.6 N",
+        "0.60 N",
+        "5.9 N"
+      ],
+      "answerIndex": 3,
+      "explanation": "μ′N ＝ 0.30 × 2.0 × 9.8。"
+    },
+    {
+      "id": "sci_phy03_028",
+      "category": "calculation",
+      "prompt": "10 N の力を水平から 60° の向きに加えた。水平方向の分力は？",
+      "choices": [
+        "10 N",
+        "8.7 N",
+        "5.0 N",
+        "6.0 N"
+      ],
+      "answerIndex": 2,
+      "explanation": "10 × cos 60°。"
+    },
+    {
+      "id": "sci_phy03_029",
+      "category": "calculation",
+      "prompt": "傾き 30° の斜面上の重さ 20 N の物体。斜面に垂直な方向の重力の分力は？",
+      "choices": [
+        "20 N",
+        "10 N",
+        "約 12 N",
+        "約 17 N"
+      ],
+      "answerIndex": 3,
+      "explanation": "20 × cos 30° ＝ 20 × 0.87。"
+    },
+    {
+      "id": "sci_phy03_030",
+      "category": "calculation",
+      "prompt": "体積 2.0 × 10⁻³ m³ の物体を水中に全部沈めた。浮力の大きさは？（水の密度 1.0 × 10³ kg/m³、g ＝ 9.8 m/s²）",
+      "choices": [
+        "2.0 N",
+        "19.6 N",
+        "196 N",
+        "9.8 N"
+      ],
+      "answerIndex": 1,
+      "explanation": "ρVg ＝ 1000 × 0.002 × 9.8。"
+    },
+    {
+      "id": "sci_phy03_031",
+      "category": "thinking",
+      "prompt": "2本の糸で物体をつるすとき、2本の糸の間の角度を大きくすると、それぞれの張力はどうなる？",
+      "choices": [
+        "大きくなる",
+        "0になる",
+        "小さくなる",
+        "変わらない"
+      ],
+      "answerIndex": 0,
+      "explanation": "張力の鉛直成分の和で重力を支えるため、角度が広がると張力は大きくなる。"
+    },
+    {
+      "id": "sci_phy03_032",
+      "category": "thinking",
+      "prompt": "机の上の本にはたらく重力の「反作用」はどれ？",
+      "choices": [
+        "本が地球を引く力",
+        "本が机をおす力",
+        "机が本をおす力（垂直抗力）",
+        "机が地球をおす力"
+      ],
+      "answerIndex": 0,
+      "explanation": "重力は「地球が本を引く力」。反作用は「本が地球を引く力」。"
     }
   ]
 }

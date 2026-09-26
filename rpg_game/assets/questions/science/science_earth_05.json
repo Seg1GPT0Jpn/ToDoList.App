@@ -211,6 +211,214 @@
       ],
       "answerIndex": 0,
       "explanation": "不整合は、陸上に出て侵食された時期があったことを示す。"
+    },
+    {
+      "id": "sci_ear05_017",
+      "category": "knowledge",
+      "prompt": "流水のはたらきのうち、土地をけずるはたらきは？",
+      "choices": [
+        "運搬",
+        "侵食",
+        "風化",
+        "堆積"
+      ],
+      "answerIndex": 1,
+      "explanation": "侵食・運搬・堆積が流水の三作用。"
+    },
+    {
+      "id": "sci_ear05_018",
+      "category": "knowledge",
+      "prompt": "岩石が温度変化や水のはたらきで、もろくくずれていく現象は？",
+      "choices": [
+        "変成",
+        "風化",
+        "侵食",
+        "堆積"
+      ],
+      "answerIndex": 1,
+      "explanation": "物理的風化と化学的風化がある。"
+    },
+    {
+      "id": "sci_ear05_019",
+      "category": "knowledge",
+      "prompt": "粒の大きさで分けたとき、砂の大きさは？",
+      "choices": [
+        "1 cm 以上",
+        "1/16 mm 以下",
+        "2 mm 以上",
+        "1/16 mm〜2 mm"
+      ],
+      "answerIndex": 3,
+      "explanation": "れき＞砂＞泥の順。"
+    },
+    {
+      "id": "sci_ear05_020",
+      "category": "knowledge",
+      "prompt": "河口から沖へ向かって堆積する粒の大きさの変化は？",
+      "choices": [
+        "変わらない",
+        "不規則",
+        "しだいに細かくなる",
+        "しだいに大きくなる"
+      ],
+      "answerIndex": 2,
+      "explanation": "大きく重い粒ほど早く沈む。"
+    },
+    {
+      "id": "sci_ear05_021",
+      "category": "knowledge",
+      "prompt": "サンゴの化石が見つかった地層は、どんな環境でできた？",
+      "choices": [
+        "寒い深海",
+        "砂漠",
+        "あたたかく浅いきれいな海",
+        "湖"
+      ],
+      "answerIndex": 2,
+      "explanation": "サンゴは代表的な示相化石。"
+    },
+    {
+      "id": "sci_ear05_022",
+      "category": "knowledge",
+      "prompt": "ビカリアやマンモスが示す地質時代は？",
+      "choices": [
+        "新生代",
+        "古生代",
+        "先カンブリア時代",
+        "中生代"
+      ],
+      "answerIndex": 0,
+      "explanation": "どちらも新生代の示準化石。"
+    },
+    {
+      "id": "sci_ear05_023",
+      "category": "knowledge",
+      "prompt": "示準化石に適した生物の条件は？",
+      "choices": [
+        "数が少ない",
+        "生存期間が長い",
+        "生存期間が短く、広い範囲に多く分布した",
+        "限られた場所にだけいた"
+      ],
+      "answerIndex": 2,
+      "explanation": "時代を細かく特定できる。"
+    },
+    {
+      "id": "sci_ear05_024",
+      "category": "knowledge",
+      "prompt": "泥が固まってできた堆積岩は？",
+      "choices": [
+        "泥岩",
+        "れき岩",
+        "砂岩",
+        "凝灰岩"
+      ],
+      "answerIndex": 0,
+      "explanation": "粒が 1/16 mm 以下。"
+    },
+    {
+      "id": "sci_ear05_025",
+      "category": "knowledge",
+      "prompt": "地層が曲がったり切れたりしていない場合、上下の関係について正しいのは？",
+      "choices": [
+        "上の地層ほど新しい",
+        "下の地層ほど新しい",
+        "色の濃い地層ほど新しい",
+        "厚い地層ほど新しい"
+      ],
+      "answerIndex": 0,
+      "explanation": "地層累重の法則。"
+    },
+    {
+      "id": "sci_ear05_026",
+      "category": "calculation",
+      "prompt": "1000 年に 5 cm ずつ堆積する海底で、厚さ 1 m の地層ができるのにかかる時間は？",
+      "choices": [
+        "5000 年",
+        "20 万年",
+        "2 万年",
+        "2000 年"
+      ],
+      "answerIndex": 2,
+      "explanation": "100 cm ÷ 5 cm × 1000 年。"
+    },
+    {
+      "id": "sci_ear05_027",
+      "category": "calculation",
+      "prompt": "半減期 5730 年の ¹⁴C が、もとの 1/2 に減っていた。およそ何年前のもの？",
+      "choices": [
+        "約 11500 年前",
+        "約 2900 年前",
+        "約 5700 年前",
+        "約 17000 年前"
+      ],
+      "answerIndex": 2,
+      "explanation": "半減期 1 回分。"
+    },
+    {
+      "id": "sci_ear05_028",
+      "category": "calculation",
+      "prompt": "半減期 5730 年の ¹⁴C が、もとの 1/8 に減っていた。およそ何年前のもの？",
+      "choices": [
+        "約 17000 年前",
+        "約 46000 年前",
+        "約 5700 年前",
+        "約 11500 年前"
+      ],
+      "answerIndex": 0,
+      "explanation": "半減期 3 回分：5730 × 3。"
+    },
+    {
+      "id": "sci_ear05_029",
+      "category": "calculation",
+      "prompt": "地層 A（下）、B、C（上）が重なり、C の上面が侵食され、その上に D が不整合に重なる。最も古いのは？",
+      "choices": [
+        "C",
+        "D",
+        "A",
+        "B"
+      ],
+      "answerIndex": 2,
+      "explanation": "下の地層ほど古い。"
+    },
+    {
+      "id": "sci_ear05_030",
+      "category": "calculation",
+      "prompt": "厚さ 30 m の地層が 60 万年かけてできた。平均の堆積速度は 1000 年に何 cm？",
+      "choices": [
+        "0.5 cm",
+        "20 cm",
+        "5 cm",
+        "50 cm"
+      ],
+      "answerIndex": 2,
+      "explanation": "3000 cm ÷ 600（千年）。"
+    },
+    {
+      "id": "sci_ear05_031",
+      "category": "thinking",
+      "prompt": "地層の中に火山灰の層があると、遠く離れた地層の比較に役立つ理由は？",
+      "choices": [
+        "短い期間に広い範囲に降り積もるので、同じ時期の目印になるから",
+        "火山灰はいつも同じ色だから",
+        "化石をふくむから",
+        "侵食されないから"
+      ],
+      "answerIndex": 0,
+      "explanation": "鍵層と呼ばれる。"
+    },
+    {
+      "id": "sci_ear05_032",
+      "category": "thinking",
+      "prompt": "断層が地層 A、B を切り、その上の地層 C は切っていない。断層ができた時期は？",
+      "choices": [
+        "A、B が堆積したあと、C が堆積する前",
+        "A が堆積する前",
+        "判断できない",
+        "C が堆積したあと"
+      ],
+      "answerIndex": 0,
+      "explanation": "切られている地層はそれより古い。"
     }
   ]
 }

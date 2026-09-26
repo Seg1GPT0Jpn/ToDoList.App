@@ -133,6 +133,136 @@
       ],
       "answerIndex": 0,
       "explanation": "sin(θ+θ)=sin θ cos θ+cos θ sin θ。"
+    },
+    {
+      "id": "mat_m211_011",
+      "category": "calculation",
+      "prompt": "sin15° の値は？",
+      "choices": [
+        "(√6−√2)/4",
+        "1/4",
+        "(√3−1)/2",
+        "(√6+√2)/4"
+      ],
+      "answerIndex": 0,
+      "explanation": "sin(45°−30°)=sin45°cos30°−cos45°sin30°。"
+    },
+    {
+      "id": "mat_m211_012",
+      "category": "calculation",
+      "prompt": "tan75° の値は？",
+      "choices": [
+        "2+√3",
+        "2−√3",
+        "1+√3",
+        "√3"
+      ],
+      "answerIndex": 0,
+      "explanation": "tan(45°+30°)=(1+1/√3)/(1−1/√3)。"
+    },
+    {
+      "id": "mat_m211_013",
+      "category": "calculation",
+      "prompt": "cos 2θ を cos θ だけで表すと？",
+      "choices": [
+        "2cos²θ−1",
+        "cos²θ−1",
+        "2cos θ",
+        "1−2cos²θ"
+      ],
+      "answerIndex": 0,
+      "explanation": "cos 2θ=cos²θ−sin²θ=2cos²θ−1。"
+    },
+    {
+      "id": "mat_m211_014",
+      "category": "calculation",
+      "prompt": "tan 2θ を tan θ で表すと？",
+      "choices": [
+        "(1−tan²θ)/2tan θ",
+        "2tan θ/(1−tan²θ)",
+        "2tan θ/(1+tan²θ)",
+        "tan²θ"
+      ],
+      "answerIndex": 1,
+      "explanation": "加法定理で α=β=θ。"
+    },
+    {
+      "id": "mat_m211_015",
+      "category": "calculation",
+      "prompt": "0<θ<π/2 で cos θ=4/5 のとき、cos 2θ の値は？",
+      "choices": [
+        "7/25",
+        "3/5",
+        "−7/25",
+        "24/25"
+      ],
+      "answerIndex": 0,
+      "explanation": "2·16/25−1。"
+    },
+    {
+      "id": "mat_m211_016",
+      "category": "calculation",
+      "prompt": "sin θ+cos θ を r sin(θ+α) の形にすると？",
+      "choices": [
+        "√2 sin(θ+π/3)",
+        "sin(θ+π/2)",
+        "2 sin(θ+π/4)",
+        "√2 sin(θ+π/4)"
+      ],
+      "answerIndex": 3,
+      "explanation": "r=√(1+1)、α=π/4。"
+    },
+    {
+      "id": "mat_m211_017",
+      "category": "calculation",
+      "prompt": "y=√3 sin x+cos x の最大値は？",
+      "choices": [
+        "√3+1",
+        "4",
+        "2",
+        "1"
+      ],
+      "answerIndex": 2,
+      "explanation": "2 sin(x+π/6) の最大値。"
+    },
+    {
+      "id": "mat_m211_018",
+      "category": "calculation",
+      "prompt": "y=cos 3x の周期は？",
+      "choices": [
+        "π/3",
+        "3π",
+        "6π",
+        "2π/3"
+      ],
+      "answerIndex": 3,
+      "explanation": "2π÷3。"
+    },
+    {
+      "id": "mat_m211_019",
+      "category": "calculation",
+      "prompt": "0≦θ<2π で cos θ=−1/2 を満たす θ は？",
+      "choices": [
+        "2π/3、4π/3",
+        "π/3、5π/3",
+        "π/6、11π/6",
+        "2π/3、5π/3"
+      ],
+      "answerIndex": 0,
+      "explanation": "単位円で x 座標が −1/2 の点。"
+    },
+    {
+      "id": "mat_m211_020",
+      "category": "thinking",
+      "prompt": "加法定理 cos(α−β)=cos α cos β+sin α sin β から sin の加法定理を導くときに使うのは？",
+      "choices": [
+        "tan θ=sin θ/cos θ",
+        "sin(−θ)=sin θ",
+        "sin θ=cos(π/2−θ)",
+        "sin²θ+cos²θ=1"
+      ],
+      "answerIndex": 2,
+      "explanation": "sin(α+β)=cos(π/2−α−β) と置きかえる。"
     }
   ]
 }

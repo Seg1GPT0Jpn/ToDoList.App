@@ -133,6 +133,136 @@
       ],
       "answerIndex": 3,
       "explanation": "外挿には注意が必要。"
+    },
+    {
+      "id": "mat_mb11_011",
+      "category": "calculation",
+      "prompt": "回帰直線が y=0.5x+10 のとき、x=40 での予測値は？",
+      "choices": [
+        "30",
+        "50",
+        "20",
+        "40"
+      ],
+      "answerIndex": 0,
+      "explanation": "0.5×40+10。"
+    },
+    {
+      "id": "mat_mb11_012",
+      "category": "calculation",
+      "prompt": "2つの変量の相関係数が −0.9 のとき、散布図の様子は？",
+      "choices": [
+        "右下がりの直線にほぼ並ぶ",
+        "ばらばらで関係がない",
+        "右上がりの直線にほぼ並ぶ",
+        "水平に並ぶ"
+      ],
+      "answerIndex": 0,
+      "explanation": "−1 に近いほど強い負の相関。"
+    },
+    {
+      "id": "mat_mb11_013",
+      "category": "calculation",
+      "prompt": "ドント式で定数4議席を配分する。得票は A 党1200、B 党600、C 党300。A 党の議席は？",
+      "choices": [
+        "3",
+        "2",
+        "4",
+        "1"
+      ],
+      "answerIndex": 0,
+      "explanation": "A：1200、600、400、B：600、300、C：300。大きい順に4つは 1200（A）、600（A）、600（B）、400（A）なので A は3議席。"
+    },
+    {
+      "id": "mat_mb11_014",
+      "category": "calculation",
+      "prompt": "確率 1/5 で 500円、それ以外は0円のくじの期待値は？",
+      "choices": [
+        "100円",
+        "50円",
+        "500円",
+        "400円"
+      ],
+      "answerIndex": 0,
+      "explanation": "500×1/5。"
+    },
+    {
+      "id": "mat_mb11_015",
+      "category": "calculation",
+      "prompt": "両対数グラフでデータがほぼ直線に並ぶとき、x と y の関係は？",
+      "choices": [
+        "y=aˣ の関係",
+        "y=axⁿ（べき乗）の関係",
+        "関係がない",
+        "y=ax+b の関係"
+      ],
+      "answerIndex": 1,
+      "explanation": "log y=n log x+log a の形で直線になる。"
+    },
+    {
+      "id": "mat_mb11_016",
+      "category": "calculation",
+      "prompt": "6, 8, 10, 12, 14 のデータの、最後の3期の移動平均は？",
+      "choices": [
+        "14",
+        "10",
+        "11",
+        "12"
+      ],
+      "answerIndex": 3,
+      "explanation": "(10+12+14)/3。"
+    },
+    {
+      "id": "mat_mb11_017",
+      "category": "calculation",
+      "prompt": "毎年10%ずつ減る量が今200のとき、2年後はいくつ？",
+      "choices": [
+        "162",
+        "180",
+        "164",
+        "160"
+      ],
+      "answerIndex": 0,
+      "explanation": "200×0.9²。"
+    },
+    {
+      "id": "mat_mb11_018",
+      "category": "calculation",
+      "prompt": "20分ごとに2倍に増える細菌は、2時間後に何倍？",
+      "choices": [
+        "32倍",
+        "64倍",
+        "6倍",
+        "12倍"
+      ],
+      "answerIndex": 1,
+      "explanation": "2時間で6回分：2⁶。"
+    },
+    {
+      "id": "mat_mb11_019",
+      "category": "calculation",
+      "prompt": "50万円を年利2%の単利で3年預けると、元利合計は？",
+      "choices": [
+        "53万円",
+        "53.06万円",
+        "51万円",
+        "56万円"
+      ],
+      "answerIndex": 0,
+      "explanation": "単利なので利息は 50×0.02×3=3万円。"
+    },
+    {
+      "id": "mat_mb11_020",
+      "category": "thinking",
+      "prompt": "相関関係があっても因果関係があるとは言えない理由は？",
+      "choices": [
+        "別の共通の要因（第3の変数）が両方に影響していることがあるから",
+        "相関係数は必ず0だから",
+        "散布図がかけないから",
+        "データが少ないと相関が出ないから"
+      ],
+      "answerIndex": 0,
+      "explanation": "例：アイスの売上と水難事故はどちらも気温が高いと増える。"
     }
   ]
 }

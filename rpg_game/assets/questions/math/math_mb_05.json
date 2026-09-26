@@ -133,6 +133,136 @@
       ],
       "answerIndex": 1,
       "explanation": "α は特性方程式 α=pα+q の解。"
+    },
+    {
+      "id": "mat_mb05_011",
+      "category": "calculation",
+      "prompt": "a₁=2、aₙ₊₁=2aₙ−1 のとき、一般項は？",
+      "choices": [
+        "aₙ=2ⁿ−1",
+        "aₙ=2^(n−1)",
+        "aₙ=2ⁿ",
+        "aₙ=2^(n−1)+1"
+      ],
+      "answerIndex": 3,
+      "explanation": "aₙ₊₁−1=2(aₙ−1)。aₙ−1=1·2^(n−1)。"
+    },
+    {
+      "id": "mat_mb05_012",
+      "category": "calculation",
+      "prompt": "a₁=1、aₙ₊₁=3aₙ+2 のとき、一般項は？",
+      "choices": [
+        "aₙ=3^(n−1)+2",
+        "aₙ=2·3^(n−1)−1",
+        "aₙ=3ⁿ−1",
+        "aₙ=2·3ⁿ−1"
+      ],
+      "answerIndex": 1,
+      "explanation": "aₙ₊₁+1=3(aₙ+1)。aₙ+1=2·3^(n−1)。"
+    },
+    {
+      "id": "mat_mb05_013",
+      "category": "calculation",
+      "prompt": "a₁=2、aₙ₊₁=aₙ+3n のとき、一般項は？",
+      "choices": [
+        "aₙ=3n²−3n+2",
+        "aₙ=(3n²−3n+4)/2",
+        "aₙ=(3n²+3n)/2",
+        "aₙ=3n−1"
+      ],
+      "answerIndex": 1,
+      "explanation": "aₙ=2+Σ_{k=1}^{n−1} 3k=2+3n(n−1)/2。"
+    },
+    {
+      "id": "mat_mb05_014",
+      "category": "calculation",
+      "prompt": "漸化式 aₙ₊₁=(1/2)aₙ+3 の特性方程式の解 α は？",
+      "choices": [
+        "2",
+        "−6",
+        "3",
+        "6"
+      ],
+      "answerIndex": 3,
+      "explanation": "α=α/2+3 → α=6。"
+    },
+    {
+      "id": "mat_mb05_015",
+      "category": "calculation",
+      "prompt": "a₁=1、aₙ₊₁=aₙ/(2aₙ+1) のとき、一般項は？",
+      "choices": [
+        "aₙ=2n−1",
+        "aₙ=1/(2n−1)",
+        "aₙ=1/(2n+1)",
+        "aₙ=1/n"
+      ],
+      "answerIndex": 1,
+      "explanation": "逆数をとると 1/aₙ₊₁=1/aₙ+2。1/aₙ=2n−1。"
+    },
+    {
+      "id": "mat_mb05_016",
+      "category": "calculation",
+      "prompt": "1+3+5+…+(2n−1)=n² を帰納法で示すとき、n=k+1 の左辺は？",
+      "choices": [
+        "k²+(2k−1)",
+        "(k+1)²+(2k+1)",
+        "k²+2k",
+        "k²+(2k+1)"
+      ],
+      "answerIndex": 3,
+      "explanation": "仮定の和 k² に、次の奇数 2(k+1)−1=2k+1 を加える。"
+    },
+    {
+      "id": "mat_mb05_017",
+      "category": "calculation",
+      "prompt": "5ⁿ−1 はすべての自然数 n で何の倍数？",
+      "choices": [
+        "5",
+        "4",
+        "6",
+        "3"
+      ],
+      "answerIndex": 1,
+      "explanation": "5ⁿ−1=(5−1)(5^(n−1)+…+1)。帰納法でも示せる。"
+    },
+    {
+      "id": "mat_mb05_018",
+      "category": "calculation",
+      "prompt": "a₁=1、a₂=2、aₙ₊₂=2aₙ₊₁−aₙ のとき、a₁₀ は？",
+      "choices": [
+        "10",
+        "512",
+        "9",
+        "19"
+      ],
+      "answerIndex": 0,
+      "explanation": "aₙ₊₂−aₙ₊₁=aₙ₊₁−aₙ なので等差数列（公差1）。"
+    },
+    {
+      "id": "mat_mb05_019",
+      "category": "calculation",
+      "prompt": "a₁=1、aₙ₊₁=3aₙ+2ⁿ のとき、a₃ は？",
+      "choices": [
+        "19",
+        "21",
+        "13",
+        "17"
+      ],
+      "answerIndex": 0,
+      "explanation": "a₂=3+2=5、a₃=15+4=19。"
+    },
+    {
+      "id": "mat_mb05_020",
+      "category": "thinking",
+      "prompt": "aₙ₊₁=paₙ+q（p≠1）で、特性方程式の解 α を使う理由は？",
+      "choices": [
+        "aₙ−α が公比 p の等比数列になるから",
+        "α が初項になるから",
+        "q を0にできないから",
+        "aₙ が定数になるから"
+      ],
+      "answerIndex": 0,
+      "explanation": "aₙ₊₁−α=p(aₙ−α) と変形でき、等比数列の一般項が使える。"
     }
   ]
 }

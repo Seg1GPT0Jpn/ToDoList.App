@@ -133,6 +133,136 @@
       ],
       "answerIndex": 0,
       "explanation": "(cos θ+i sin θ)ⁿ=cos nθ+i sin nθ。"
+    },
+    {
+      "id": "mat_mc11_011",
+      "category": "calculation",
+      "prompt": "(1−i)⁶ を計算すると？",
+      "choices": [
+        "8i",
+        "−8i",
+        "8",
+        "−8"
+      ],
+      "answerIndex": 0,
+      "explanation": "(1−i)²=−2i、(−2i)³=−8i³=8i。"
+    },
+    {
+      "id": "mat_mc11_012",
+      "category": "calculation",
+      "prompt": "(√3+i)⁶ を計算すると？",
+      "choices": [
+        "−64",
+        "64i",
+        "−64i",
+        "64"
+      ],
+      "answerIndex": 0,
+      "explanation": "2⁶(cos π+i sin π)。"
+    },
+    {
+      "id": "mat_mc11_013",
+      "category": "calculation",
+      "prompt": "z²=i の解は？",
+      "choices": [
+        "±(1−i)/√2",
+        "±1",
+        "±(1+i)/√2",
+        "±i"
+      ],
+      "answerIndex": 2,
+      "explanation": "z=cos(π/4)+i sin(π/4) とその −1 倍。"
+    },
+    {
+      "id": "mat_mc11_014",
+      "category": "calculation",
+      "prompt": "z³=−1 の解のうち実数のものは？",
+      "choices": [
+        "−1",
+        "なし",
+        "0",
+        "1"
+      ],
+      "answerIndex": 0,
+      "explanation": "(−1)³=−1。ほかの2つは虚数。"
+    },
+    {
+      "id": "mat_mc11_015",
+      "category": "calculation",
+      "prompt": "点 1+i を原点のまわりに π/2 回転した点は？",
+      "choices": [
+        "−1+i",
+        "1−i",
+        "−1−i",
+        "i"
+      ],
+      "answerIndex": 0,
+      "explanation": "i(1+i)=i−1。"
+    },
+    {
+      "id": "mat_mc11_016",
+      "category": "calculation",
+      "prompt": "|z+2i|=1 を満たす点 z の全体は？",
+      "choices": [
+        "点 −2 を中心とする半径1の円",
+        "点 2i を中心とする半径1の円",
+        "点 −2i を中心とする半径1の円",
+        "直線"
+      ],
+      "answerIndex": 2,
+      "explanation": "|z−(−2i)|=1。"
+    },
+    {
+      "id": "mat_mc11_017",
+      "category": "calculation",
+      "prompt": "|z−1|=|z−3| を満たす点 z の全体は？",
+      "choices": [
+        "点 2",
+        "円",
+        "直線 x=2（実部が2の直線）",
+        "直線 y=2"
+      ],
+      "answerIndex": 2,
+      "explanation": "1 と 3 を結ぶ線分の垂直二等分線。"
+    },
+    {
+      "id": "mat_mc11_018",
+      "category": "calculation",
+      "prompt": "(2+i)/(2−i) を a+bi の形にすると？",
+      "choices": [
+        "3/5−(4/5)i",
+        "1+i",
+        "3/5+(4/5)i",
+        "1"
+      ],
+      "answerIndex": 2,
+      "explanation": "分母分子に 2+i：(3+4i)/5。"
+    },
+    {
+      "id": "mat_mc11_019",
+      "category": "calculation",
+      "prompt": "|z₁|=2、arg z₁=π/3、|z₂|=3、arg z₂=π/6 のとき、z₁z₂ は？",
+      "choices": [
+        "5i",
+        "6+6i",
+        "6",
+        "6i"
+      ],
+      "answerIndex": 3,
+      "explanation": "絶対値6、偏角 π/2。"
+    },
+    {
+      "id": "mat_mc11_020",
+      "category": "thinking",
+      "prompt": "zⁿ=1 の解が複素数平面上で正 n 角形の頂点になる理由は？",
+      "choices": [
+        "n が偶数だから",
+        "解はすべて絶対値1で、偏角が 2π/n ずつ等しく並ぶから",
+        "解がすべて実数だから",
+        "解の和が1だから"
+      ],
+      "answerIndex": 1,
+      "explanation": "ド・モアブルの定理から zₖ=cos(2kπ/n)+i sin(2kπ/n)。"
     }
   ]
 }

@@ -211,6 +211,214 @@
       ],
       "answerIndex": 0,
       "explanation": "水中生活に適応して魚に似た形になった（収束進化）が、系統的には哺乳類。"
+    },
+    {
+      "id": "sci_bio10_017",
+      "category": "knowledge",
+      "prompt": "3 ドメインのうち、ヒトがふくまれるのは？",
+      "choices": [
+        "アーキア（古細菌）",
+        "細菌（バクテリア）",
+        "ウイルス",
+        "真核生物（ユーカリア）"
+      ],
+      "answerIndex": 3,
+      "explanation": "核膜に包まれた核をもつ。"
+    },
+    {
+      "id": "sci_bio10_018",
+      "category": "knowledge",
+      "prompt": "学名の「二名法」を確立した人物は？",
+      "choices": [
+        "ヘッケル",
+        "リンネ",
+        "メンデル",
+        "ダーウィン"
+      ],
+      "answerIndex": 1,
+      "explanation": "属名＋種小名で表す。"
+    },
+    {
+      "id": "sci_bio10_019",
+      "category": "knowledge",
+      "prompt": "ヒトの学名 Homo sapiens で、Homo は何を表す？",
+      "choices": [
+        "属名",
+        "科名",
+        "目名",
+        "種小名"
+      ],
+      "answerIndex": 0,
+      "explanation": "sapiens が種小名。"
+    },
+    {
+      "id": "sci_bio10_020",
+      "category": "knowledge",
+      "prompt": "同じ属にふくまれる、よく似た種を集めた上の階級は？",
+      "choices": [
+        "界",
+        "種",
+        "科",
+        "ドメイン"
+      ],
+      "answerIndex": 2,
+      "explanation": "種 → 属 → 科 → 目 → 綱 → 門 → 界 → ドメイン。"
+    },
+    {
+      "id": "sci_bio10_021",
+      "category": "knowledge",
+      "prompt": "ウイルスが「生物」とされないことが多い理由は？",
+      "choices": [
+        "小さすぎるから",
+        "動かないから",
+        "DNA をもたないから",
+        "細胞構造をもたず、自分だけでは増えられないから"
+      ],
+      "answerIndex": 3,
+      "explanation": "宿主の細胞を利用して増える。"
+    },
+    {
+      "id": "sci_bio10_022",
+      "category": "knowledge",
+      "prompt": "陸上植物の中で、維管束をもたないなかまは？",
+      "choices": [
+        "裸子植物",
+        "シダ植物",
+        "コケ植物",
+        "被子植物"
+      ],
+      "answerIndex": 2,
+      "explanation": "水の通り道が発達していない。"
+    },
+    {
+      "id": "sci_bio10_023",
+      "category": "knowledge",
+      "prompt": "裸子植物の例は？",
+      "choices": [
+        "ゼニゴケ",
+        "マツ・イチョウ・ソテツ",
+        "サクラ・イネ",
+        "ワラビ・ゼンマイ"
+      ],
+      "answerIndex": 1,
+      "explanation": "胚珠がむき出しになっている。"
+    },
+    {
+      "id": "sci_bio10_024",
+      "category": "knowledge",
+      "prompt": "背骨をもつ動物がふくまれる門は？",
+      "choices": [
+        "脊索動物門",
+        "刺胞動物門",
+        "軟体動物門",
+        "節足動物門"
+      ],
+      "answerIndex": 0,
+      "explanation": "脊椎動物は脊索動物門の中のなかま。"
+    },
+    {
+      "id": "sci_bio10_025",
+      "category": "knowledge",
+      "prompt": "イカやタコ、貝がふくまれるなかまは？",
+      "choices": [
+        "軟体動物",
+        "環形動物",
+        "節足動物",
+        "棘皮動物"
+      ],
+      "answerIndex": 0,
+      "explanation": "外とう膜をもつ。"
+    },
+    {
+      "id": "sci_bio10_026",
+      "category": "knowledge",
+      "prompt": "ウニやヒトデがふくまれるなかまは？",
+      "choices": [
+        "軟体動物",
+        "海綿動物",
+        "刺胞動物",
+        "棘皮動物"
+      ],
+      "answerIndex": 3,
+      "explanation": "新口動物にふくまれる。"
+    },
+    {
+      "id": "sci_bio10_027",
+      "category": "knowledge",
+      "prompt": "光合成を行う原生生物の例は？",
+      "choices": [
+        "ミドリムシ",
+        "ゾウリムシ",
+        "アメーバ",
+        "ヒドラ"
+      ],
+      "answerIndex": 0,
+      "explanation": "葉緑体をもち、べん毛で動く。"
+    },
+    {
+      "id": "sci_bio10_028",
+      "category": "calculation",
+      "prompt": "A と B の塩基配列のちがいが 10 か所、A と C のちがいが 30 か所、B と C のちがいが 30 か所。最も近縁な組み合わせは？",
+      "choices": [
+        "A と B",
+        "A と C",
+        "判断できない",
+        "B と C"
+      ],
+      "answerIndex": 0,
+      "explanation": "ちがいが最も少ない組み合わせ。"
+    },
+    {
+      "id": "sci_bio10_029",
+      "category": "calculation",
+      "prompt": "分類の階級で、「目」の 1 つ上の階級は？",
+      "choices": [
+        "門",
+        "綱",
+        "科",
+        "属"
+      ],
+      "answerIndex": 1,
+      "explanation": "種・属・科・目・綱・門・界・ドメイン。"
+    },
+    {
+      "id": "sci_bio10_030",
+      "category": "calculation",
+      "prompt": "100 塩基の配列で、2 種の間でちがう塩基が 5 か所。一致率は？",
+      "choices": [
+        "50 %",
+        "105 %",
+        "95 %",
+        "5 %"
+      ],
+      "answerIndex": 2,
+      "explanation": "(100 − 5) ÷ 100。"
+    },
+    {
+      "id": "sci_bio10_031",
+      "category": "thinking",
+      "prompt": "見た目が似ていても、別の系統に分類されることがある理由は？",
+      "choices": [
+        "観察がまちがっているから",
+        "同じ祖先だから",
+        "見た目は分類に関係ないから",
+        "似た環境に適応して、別々に似た形になることがあるから（収れん）"
+      ],
+      "answerIndex": 3,
+      "explanation": "DNA や発生のしかたも合わせて系統を判断する。"
+    },
+    {
+      "id": "sci_bio10_032",
+      "category": "thinking",
+      "prompt": "分子系統樹をつくるのに、DNA の塩基配列を使う利点は？",
+      "choices": [
+        "化石がいらないから",
+        "時間がかからないから",
+        "すべての生物が共通にもち、数値でちがいを比べられるから",
+        "見た目で判断できるから"
+      ],
+      "answerIndex": 2,
+      "explanation": "形態では比べにくい遠い生物どうしも比較できる。"
     }
   ]
 }

@@ -211,6 +211,214 @@
       ],
       "answerIndex": 2,
       "explanation": "化学的に分解して原料に戻すのがケミカルリサイクル。溶かして成形し直すのがマテリアルリサイクル、燃やして熱を利用するのがサーマルリサイクル。"
+    },
+    {
+      "id": "sci_chm16_017",
+      "category": "knowledge",
+      "prompt": "PET（ポリエチレンテレフタラート）はどの重合でできる？",
+      "choices": [
+        "縮合重合",
+        "付加重合",
+        "共重合だけ",
+        "開環重合"
+      ],
+      "answerIndex": 0,
+      "explanation": "テレフタル酸とエチレングリコールから水がとれてつながる。"
+    },
+    {
+      "id": "sci_chm16_018",
+      "category": "knowledge",
+      "prompt": "ポリ塩化ビニルの単量体は？",
+      "choices": [
+        "プロピレン",
+        "塩化ビニル",
+        "スチレン",
+        "エチレン"
+      ],
+      "answerIndex": 1,
+      "explanation": "付加重合でできる。"
+    },
+    {
+      "id": "sci_chm16_019",
+      "category": "knowledge",
+      "prompt": "セルロースを構成する単糖は？",
+      "choices": [
+        "フルクトース",
+        "β-グルコース",
+        "ガラクトース",
+        "α-グルコース"
+      ],
+      "answerIndex": 1,
+      "explanation": "デンプンは α-グルコース。"
+    },
+    {
+      "id": "sci_chm16_020",
+      "category": "knowledge",
+      "prompt": "スクロース（ショ糖）を加水分解してできる単糖は？",
+      "choices": [
+        "グルコース 2 分子",
+        "ガラクトースとグルコース",
+        "フルクトース 2 分子",
+        "グルコースとフルクトース"
+      ],
+      "answerIndex": 3,
+      "explanation": "転化糖と呼ばれる。"
+    },
+    {
+      "id": "sci_chm16_021",
+      "category": "knowledge",
+      "prompt": "タンパク質の水溶液に水酸化ナトリウムと硫酸銅(Ⅱ)を加えると赤紫色になる反応は？",
+      "choices": [
+        "ビウレット反応",
+        "キサントプロテイン反応",
+        "ヨウ素デンプン反応",
+        "ニンヒドリン反応"
+      ],
+      "answerIndex": 0,
+      "explanation": "ペプチド結合が 2 つ以上あると呈色する。"
+    },
+    {
+      "id": "sci_chm16_022",
+      "category": "knowledge",
+      "prompt": "アミノ酸の水溶液にニンヒドリンを加えて加熱すると？",
+      "choices": [
+        "黄色になる",
+        "変化しない",
+        "白く濁る",
+        "赤紫〜青紫色になる"
+      ],
+      "answerIndex": 3,
+      "explanation": "アミノ基の検出。"
+    },
+    {
+      "id": "sci_chm16_023",
+      "category": "knowledge",
+      "prompt": "酵素の主成分は？",
+      "choices": [
+        "タンパク質",
+        "核酸",
+        "脂質",
+        "炭水化物"
+      ],
+      "answerIndex": 0,
+      "explanation": "最適温度・最適 pH がある。"
+    },
+    {
+      "id": "sci_chm16_024",
+      "category": "knowledge",
+      "prompt": "加熱すると硬くなり、もとにもどらない合成樹脂を何という？",
+      "choices": [
+        "天然ゴム",
+        "熱硬化性樹脂",
+        "合成繊維",
+        "熱可塑性樹脂"
+      ],
+      "answerIndex": 1,
+      "explanation": "フェノール樹脂などは立体網目構造をもつ。"
+    },
+    {
+      "id": "sci_chm16_025",
+      "category": "knowledge",
+      "prompt": "天然ゴムに硫黄を加えて弾性を高める操作は？",
+      "choices": [
+        "けん化",
+        "加硫",
+        "透析",
+        "再結晶"
+      ],
+      "answerIndex": 1,
+      "explanation": "分子の間に硫黄の橋かけができる。"
+    },
+    {
+      "id": "sci_chm16_026",
+      "category": "knowledge",
+      "prompt": "水を大量に吸収して保持できる高分子（紙おむつなどに使う）は？",
+      "choices": [
+        "吸水性高分子",
+        "導電性高分子",
+        "イオン交換樹脂",
+        "生分解性高分子"
+      ],
+      "answerIndex": 0,
+      "explanation": "ポリアクリル酸ナトリウムなど。"
+    },
+    {
+      "id": "sci_chm16_027",
+      "category": "calculation",
+      "prompt": "重合度 1000 のポリスチレン（単量体 C₈H₈、分子量 104）の分子量は？",
+      "choices": [
+        "1.04 × 10³",
+        "104",
+        "1.04 × 10⁵",
+        "1.04 × 10⁶"
+      ],
+      "answerIndex": 2,
+      "explanation": "104 × 1000。"
+    },
+    {
+      "id": "sci_chm16_028",
+      "category": "calculation",
+      "prompt": "グルコース C₆H₁₂O₆ 180 g をアルコール発酵させると、エタノールは何 mol できる？",
+      "choices": [
+        "6.0 mol",
+        "3.0 mol",
+        "1.0 mol",
+        "2.0 mol"
+      ],
+      "answerIndex": 3,
+      "explanation": "C₆H₁₂O₆ → 2C₂H₅OH ＋ 2CO₂。"
+    },
+    {
+      "id": "sci_chm16_029",
+      "category": "calculation",
+      "prompt": "アミノ酸 4 分子が縮合して直鎖状のペプチドになると、水は何分子とれる？",
+      "choices": [
+        "2 分子",
+        "5 分子",
+        "3 分子",
+        "4 分子"
+      ],
+      "answerIndex": 2,
+      "explanation": "ペプチド結合の数 ＝ アミノ酸の数 − 1。"
+    },
+    {
+      "id": "sci_chm16_030",
+      "category": "calculation",
+      "prompt": "グリシン（分子量 75）2 分子からジペプチドができた。ジペプチドの分子量は？（H₂O ＝ 18）",
+      "choices": [
+        "150",
+        "168",
+        "132",
+        "57"
+      ],
+      "answerIndex": 2,
+      "explanation": "75 × 2 − 18。"
+    },
+    {
+      "id": "sci_chm16_031",
+      "category": "thinking",
+      "prompt": "タンパク質を加熱すると固まって元にもどらない理由は？",
+      "choices": [
+        "ペプチド結合が増えるから",
+        "水が増えるから",
+        "アミノ酸がなくなるから",
+        "立体構造がこわれて変性するから"
+      ],
+      "answerIndex": 3,
+      "explanation": "ゆで卵が生卵にもどらない理由。"
+    },
+    {
+      "id": "sci_chm16_032",
+      "category": "thinking",
+      "prompt": "プラスチックごみの削減で「3R」のうち、最も優先度が高いとされるのは？",
+      "choices": [
+        "リデュース（ごみを減らす）",
+        "リユース",
+        "リサイクル",
+        "どれも同じ"
+      ],
+      "answerIndex": 0,
+      "explanation": "まず出さないことが最も効果的。"
     }
   ]
 }

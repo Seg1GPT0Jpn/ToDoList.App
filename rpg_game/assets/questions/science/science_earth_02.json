@@ -211,6 +211,214 @@
       ],
       "answerIndex": 1,
       "explanation": "ホットスポットの上でできた火山島が、プレートにのって北西へ運ばれていった。"
+    },
+    {
+      "id": "sci_ear02_017",
+      "category": "knowledge",
+      "prompt": "プレートが互いに離れていく境界で見られる地形は？",
+      "choices": [
+        "海嶺・地溝帯",
+        "島弧",
+        "大山脈",
+        "海溝"
+      ],
+      "answerIndex": 0,
+      "explanation": "発散境界。アイスランドやアフリカ大地溝帯など。"
+    },
+    {
+      "id": "sci_ear02_018",
+      "category": "knowledge",
+      "prompt": "プレートが近づく境界を何という？",
+      "choices": [
+        "発散境界",
+        "収束境界",
+        "すれちがう境界",
+        "中立境界"
+      ],
+      "answerIndex": 1,
+      "explanation": "沈みこみ帯や衝突帯。"
+    },
+    {
+      "id": "sci_ear02_019",
+      "category": "knowledge",
+      "prompt": "サンアンドレアス断層（アメリカ）は、どの種類のプレート境界？",
+      "choices": [
+        "トランスフォーム断層（すれちがう境界）",
+        "海嶺",
+        "海溝",
+        "衝突帯"
+      ],
+      "answerIndex": 0,
+      "explanation": "プレートが水平にずれる。"
+    },
+    {
+      "id": "sci_ear02_020",
+      "category": "knowledge",
+      "prompt": "大陸移動説をとなえた人物は？",
+      "choices": [
+        "ニュートン",
+        "ダーウィン",
+        "ハッブル",
+        "ウェゲナー"
+      ],
+      "answerIndex": 3,
+      "explanation": "20 世紀はじめに提唱。当時は原動力を説明できなかった。"
+    },
+    {
+      "id": "sci_ear02_021",
+      "category": "knowledge",
+      "prompt": "プレートが動く原動力として有力な考えは？",
+      "choices": [
+        "風の力",
+        "沈みこむプレート自身の重さで引っぱられる力",
+        "地球の公転",
+        "月の引力"
+      ],
+      "answerIndex": 1,
+      "explanation": "スラブプルと呼ばれる。"
+    },
+    {
+      "id": "sci_ear02_022",
+      "category": "knowledge",
+      "prompt": "日本列島の東側で太平洋プレートが沈みこんでいる海溝は？",
+      "choices": [
+        "南海トラフ",
+        "相模トラフ",
+        "マリアナ海溝だけ",
+        "日本海溝"
+      ],
+      "answerIndex": 3,
+      "explanation": "東北地方の太平洋沖にある。"
+    },
+    {
+      "id": "sci_ear02_023",
+      "category": "knowledge",
+      "prompt": "フィリピン海プレートが沈みこむ、西日本の太平洋側の溝は？",
+      "choices": [
+        "南海トラフ",
+        "日本海溝",
+        "千島海溝",
+        "伊豆・小笠原海溝"
+      ],
+      "answerIndex": 0,
+      "explanation": "くり返し巨大地震を起こしてきた。"
+    },
+    {
+      "id": "sci_ear02_024",
+      "category": "knowledge",
+      "prompt": "海洋プレートが大陸プレートの下に沈みこむ理由は？",
+      "choices": [
+        "海洋プレートの方が厚いから",
+        "海水の重さのため",
+        "大陸プレートが重いから",
+        "海洋プレートの方が密度が大きいから"
+      ],
+      "answerIndex": 3,
+      "explanation": "玄武岩質の海洋地殻は密度が大きい。"
+    },
+    {
+      "id": "sci_ear02_025",
+      "category": "knowledge",
+      "prompt": "大西洋中央海嶺が陸上に現れている島は？",
+      "choices": [
+        "ハワイ島",
+        "アイスランド",
+        "日本列島",
+        "ニュージーランド"
+      ],
+      "answerIndex": 1,
+      "explanation": "島の中をプレート境界が通り、裂け目が見られる。"
+    },
+    {
+      "id": "sci_ear02_026",
+      "category": "calculation",
+      "prompt": "プレートが 1 年に 8 cm 動くとすると、1000 万年で何 km 動く？",
+      "choices": [
+        "800 km",
+        "80 km",
+        "8 km",
+        "8000 km"
+      ],
+      "answerIndex": 0,
+      "explanation": "8 cm × 10⁷ ＝ 8 × 10⁷ cm ＝ 800 km。"
+    },
+    {
+      "id": "sci_ear02_027",
+      "category": "calculation",
+      "prompt": "海嶺から 200 km 離れた海底の岩石が 400 万年前にできた。プレートの動く速さは 1 年に何 cm？",
+      "choices": [
+        "2 cm",
+        "5 cm",
+        "0.5 cm",
+        "50 cm"
+      ],
+      "answerIndex": 1,
+      "explanation": "2 × 10⁷ cm ÷ 4 × 10⁶ 年。"
+    },
+    {
+      "id": "sci_ear02_028",
+      "category": "calculation",
+      "prompt": "ハワイ島から約 600 km 離れた島が約 500 万年前にできた。太平洋プレートの速さはおよそ 1 年に何 cm？",
+      "choices": [
+        "約 5 cm",
+        "約 120 cm",
+        "約 1.2 cm",
+        "約 12 cm"
+      ],
+      "answerIndex": 3,
+      "explanation": "6 × 10⁷ cm ÷ 5 × 10⁶ 年。"
+    },
+    {
+      "id": "sci_ear02_029",
+      "category": "calculation",
+      "prompt": "海嶺の両側に年 3 cm ずつ離れていく（片側）とき、2 つの陸地の距離は 100 万年で何 km 広がる？",
+      "choices": [
+        "300 km",
+        "30 km",
+        "60 km",
+        "3 km"
+      ],
+      "answerIndex": 2,
+      "explanation": "両側で年 6 cm。6 cm × 10⁶。"
+    },
+    {
+      "id": "sci_ear02_030",
+      "category": "calculation",
+      "prompt": "海底の岩石の年代で、最も古いものはおよそ？",
+      "choices": [
+        "約 10 億年前",
+        "約 2 億年前",
+        "約 1 万年前",
+        "約 40 億年前"
+      ],
+      "answerIndex": 1,
+      "explanation": "古い海洋プレートは海溝で沈みこむため、大陸の岩石よりずっと若い。"
+    },
+    {
+      "id": "sci_ear02_031",
+      "category": "thinking",
+      "prompt": "大陸移動説の証拠として正しくないものは？",
+      "choices": [
+        "大陸の上に高い山がある",
+        "大陸をまたいで氷河の跡がつながる",
+        "離れた大陸で同じ種類の化石が見つかる",
+        "南アメリカとアフリカの海岸線の形がよく合う"
+      ],
+      "answerIndex": 0,
+      "explanation": "山の高さは大陸移動の証拠ではない。"
+    },
+    {
+      "id": "sci_ear02_032",
+      "category": "thinking",
+      "prompt": "深発地震面（和達－ベニオフ帯）が海溝から大陸側へ深くなっていくことからわかることは？",
+      "choices": [
+        "大陸プレートが沈みこんでいる",
+        "海洋プレートが斜めに沈みこんでいる",
+        "マントルが上昇している",
+        "プレートは動いていない"
+      ],
+      "answerIndex": 1,
+      "explanation": "地震の震源が沈みこむプレートにそって並ぶ。"
     }
   ]
 }

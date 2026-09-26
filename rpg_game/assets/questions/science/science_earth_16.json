@@ -211,6 +211,214 @@
       ],
       "answerIndex": 2,
       "explanation": "膨張によって冷えた、初期宇宙の名残りの光。"
+    },
+    {
+      "id": "sci_ear16_017",
+      "category": "knowledge",
+      "prompt": "銀河系の中心部にあると考えられている天体は？",
+      "choices": [
+        "超大質量ブラックホール",
+        "太陽",
+        "惑星",
+        "白色矮星"
+      ],
+      "answerIndex": 0,
+      "explanation": "いて座 A* と呼ばれる。"
+    },
+    {
+      "id": "sci_ear16_018",
+      "category": "knowledge",
+      "prompt": "銀河系にある恒星の数はおよそ？",
+      "choices": [
+        "約 100 個",
+        "約 1 億個",
+        "約 1 万個",
+        "約 1000 億〜数千億個"
+      ],
+      "answerIndex": 3,
+      "explanation": "円盤部に多くの恒星が集まっている。"
+    },
+    {
+      "id": "sci_ear16_019",
+      "category": "knowledge",
+      "prompt": "夜空の天の川の正体は？",
+      "choices": [
+        "地球の影",
+        "月の光",
+        "大気中の雲",
+        "銀河系の円盤部を内側から見た、たくさんの恒星"
+      ],
+      "answerIndex": 3,
+      "explanation": "円盤方向を見ると恒星が重なって見える。"
+    },
+    {
+      "id": "sci_ear16_020",
+      "category": "knowledge",
+      "prompt": "散開星団の特徴は？",
+      "choices": [
+        "比較的若い恒星が数十〜数百個集まり、銀河系の円盤部にある",
+        "古い恒星が球状に密集している",
+        "ハローにある",
+        "銀河の外にある"
+      ],
+      "answerIndex": 0,
+      "explanation": "すばる（プレアデス星団）が例。"
+    },
+    {
+      "id": "sci_ear16_021",
+      "category": "knowledge",
+      "prompt": "銀河の形による分類にあてはまらないものは？",
+      "choices": [
+        "不規則銀河",
+        "楕円銀河",
+        "円錐銀河",
+        "渦巻銀河"
+      ],
+      "answerIndex": 2,
+      "explanation": "ハッブルの分類。棒渦巻銀河もある。"
+    },
+    {
+      "id": "sci_ear16_022",
+      "category": "knowledge",
+      "prompt": "銀河系が属する銀河群は？",
+      "choices": [
+        "ペルセウス座銀河団",
+        "局所銀河群",
+        "かみのけ座銀河団",
+        "おとめ座銀河団"
+      ],
+      "answerIndex": 1,
+      "explanation": "アンドロメダ銀河なども属する。"
+    },
+    {
+      "id": "sci_ear16_023",
+      "category": "knowledge",
+      "prompt": "ビッグバン宇宙論の証拠にあてはまらないものは？",
+      "choices": [
+        "宇宙背景放射がある",
+        "遠い銀河ほど速く遠ざかる",
+        "宇宙の水素とヘリウムの割合",
+        "太陽が東から昇る"
+      ],
+      "answerIndex": 3,
+      "explanation": "日周運動は地球の自転による。"
+    },
+    {
+      "id": "sci_ear16_024",
+      "category": "knowledge",
+      "prompt": "宇宙の年齢はおよそ？",
+      "choices": [
+        "約 1 兆年",
+        "約 1 億年",
+        "約 138 億年",
+        "約 46 億年"
+      ],
+      "answerIndex": 2,
+      "explanation": "ハッブル定数や宇宙背景放射の観測から求められた。"
+    },
+    {
+      "id": "sci_ear16_025",
+      "category": "knowledge",
+      "prompt": "最初の恒星や銀河が生まれたのは、ビッグバンからおよそどのくらい後？",
+      "choices": [
+        "38 万年後",
+        "1 秒後",
+        "100 億年後",
+        "数億年後"
+      ],
+      "answerIndex": 3,
+      "explanation": "38 万年後は宇宙の晴れ上がり。"
+    },
+    {
+      "id": "sci_ear16_026",
+      "category": "calculation",
+      "prompt": "ハッブル定数 70 km/s/Mpc のとき、200 Mpc 離れた銀河の後退速度は？",
+      "choices": [
+        "140 km/s",
+        "270 km/s",
+        "14000 km/s",
+        "2900 km/s"
+      ],
+      "answerIndex": 2,
+      "explanation": "v ＝ H × r ＝ 70 × 200。"
+    },
+    {
+      "id": "sci_ear16_027",
+      "category": "calculation",
+      "prompt": "ハッブル定数 70 km/s/Mpc で、後退速度 3500 km/s の銀河までの距離は？",
+      "choices": [
+        "245000 Mpc",
+        "500 Mpc",
+        "50 Mpc",
+        "5 Mpc"
+      ],
+      "answerIndex": 2,
+      "explanation": "3500 ÷ 70。"
+    },
+    {
+      "id": "sci_ear16_028",
+      "category": "calculation",
+      "prompt": "1 Mpc（メガパーセク）はおよそ何光年？",
+      "choices": [
+        "約 3.26 光年",
+        "約 326 万光年",
+        "約 100 万光年",
+        "約 1 億光年"
+      ],
+      "answerIndex": 1,
+      "explanation": "1 パーセク ≒ 3.26 光年の 100 万倍。"
+    },
+    {
+      "id": "sci_ear16_029",
+      "category": "calculation",
+      "prompt": "アンドロメダ銀河（約 250 万光年）の光は、およそ何年前に出た光？",
+      "choices": [
+        "約 250 年前",
+        "約 250 万年前",
+        "約 2.5 億年前",
+        "今出た光"
+      ],
+      "answerIndex": 1,
+      "explanation": "光が 1 年に進む距離が 1 光年。"
+    },
+    {
+      "id": "sci_ear16_030",
+      "category": "calculation",
+      "prompt": "銀河系の直径 10 万光年を、光速で横切るのにかかる時間は？",
+      "choices": [
+        "10 万年",
+        "1 万年",
+        "100 万年",
+        "1000 年"
+      ],
+      "answerIndex": 0,
+      "explanation": "光年の定義から。"
+    },
+    {
+      "id": "sci_ear16_031",
+      "category": "thinking",
+      "prompt": "遠くの銀河を観測することが、宇宙の過去を見ることになる理由は？",
+      "choices": [
+        "望遠鏡が時間を戻すから",
+        "光が届くのに長い時間がかかり、昔に出た光を見ているから",
+        "銀河が止まっているから",
+        "銀河が近づいてくるから"
+      ],
+      "answerIndex": 1,
+      "explanation": "100 億光年先の銀河は、100 億年前の姿。"
+    },
+    {
+      "id": "sci_ear16_032",
+      "category": "thinking",
+      "prompt": "ダークエネルギーが考えられるようになったきっかけは？",
+      "choices": [
+        "星が光っているから",
+        "銀河が回転しているから",
+        "太陽が燃え続けているから",
+        "宇宙の膨張が加速していることが観測でわかったから"
+      ],
+      "answerIndex": 3,
+      "explanation": "遠い超新星の観測から、膨張の加速が見つかった。"
     }
   ]
 }

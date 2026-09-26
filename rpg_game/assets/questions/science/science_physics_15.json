@@ -211,6 +211,214 @@
       ],
       "answerIndex": 2,
       "explanation": "コイルの交流で磁場が変化し、電磁誘導で鍋の底に渦電流が生じて発熱する。"
+    },
+    {
+      "id": "sci_phy15_017",
+      "category": "knowledge",
+      "prompt": "右ねじの法則で、ねじの進む向きを電流の向きにすると、ねじを回す向きは？",
+      "choices": [
+        "磁場の向き",
+        "力の向き",
+        "電子の向き",
+        "電場の向き"
+      ],
+      "answerIndex": 0,
+      "explanation": "まっすぐな電流のまわりに同心円状の磁場ができる。"
+    },
+    {
+      "id": "sci_phy15_018",
+      "category": "knowledge",
+      "prompt": "コイル（ソレノイド）に電流を流したとき、内部の磁場について正しいものは？",
+      "choices": [
+        "渦を巻く",
+        "コイルの外と同じ強さ",
+        "内部では磁場が0",
+        "コイルの軸に平行で、ほぼ一様"
+      ],
+      "answerIndex": 3,
+      "explanation": "巻数と電流が多いほど強い。"
+    },
+    {
+      "id": "sci_phy15_019",
+      "category": "knowledge",
+      "prompt": "磁場中を運動する電子が受けるローレンツ力の向きは？",
+      "choices": [
+        "速度と同じ向き",
+        "速度と磁場の両方に垂直",
+        "磁場と同じ向き",
+        "速度と逆向き"
+      ],
+      "answerIndex": 1,
+      "explanation": "仕事をしないので、速さは変わらない。"
+    },
+    {
+      "id": "sci_phy15_020",
+      "category": "knowledge",
+      "prompt": "ファラデーの電磁誘導の法則で、誘導起電力の大きさは何に比例する？",
+      "choices": [
+        "電流の大きさ",
+        "コイルを貫く磁束の時間変化の割合",
+        "コイルの抵抗",
+        "磁束の大きさそのもの"
+      ],
+      "answerIndex": 1,
+      "explanation": "V ＝ −N ΔΦ/Δt。"
+    },
+    {
+      "id": "sci_phy15_021",
+      "category": "knowledge",
+      "prompt": "交流の周波数 50 Hz とは？",
+      "choices": [
+        "1 秒間に電流の向きが 50 回の周期で変わる",
+        "50 秒で1回変わる",
+        "電流が 50 A",
+        "電圧が 50 V"
+      ],
+      "answerIndex": 0,
+      "explanation": "東日本は 50 Hz、西日本は 60 Hz。"
+    },
+    {
+      "id": "sci_phy15_022",
+      "category": "knowledge",
+      "prompt": "電磁波の速さ（真空中）は？",
+      "choices": [
+        "音の速さ",
+        "光の速さ（約 3.0 × 10⁸ m/s）",
+        "無限大",
+        "電流の速さ"
+      ],
+      "answerIndex": 1,
+      "explanation": "光も電磁波の一種。"
+    },
+    {
+      "id": "sci_phy15_023",
+      "category": "calculation",
+      "prompt": "磁束密度 0.50 T の磁場に垂直な、長さ 0.20 m の導線に 3.0 A の電流を流した。受ける力は？",
+      "choices": [
+        "3.0 N",
+        "0.30 N",
+        "7.5 N",
+        "0.030 N"
+      ],
+      "answerIndex": 1,
+      "explanation": "F ＝ IBl ＝ 3.0 × 0.50 × 0.20。"
+    },
+    {
+      "id": "sci_phy15_024",
+      "category": "calculation",
+      "prompt": "電気量 1.6 × 10⁻¹⁹ C の粒子が、磁束密度 2.0 T の磁場に垂直に 1.0 × 10⁶ m/s で入った。ローレンツ力は？",
+      "choices": [
+        "8.0 × 10⁻¹⁴ N",
+        "3.2 × 10⁻¹⁹ N",
+        "1.6 × 10⁻¹³ N",
+        "3.2 × 10⁻¹³ N"
+      ],
+      "answerIndex": 3,
+      "explanation": "qvB。"
+    },
+    {
+      "id": "sci_phy15_025",
+      "category": "calculation",
+      "prompt": "巻数 50 のコイルを貫く磁束が、0.20 s 間に 0.040 Wb 変化した。誘導起電力の大きさは？",
+      "choices": [
+        "2.0 V",
+        "0.40 V",
+        "10 V",
+        "0.16 V"
+      ],
+      "answerIndex": 2,
+      "explanation": "50 × 0.040 ÷ 0.20。"
+    },
+    {
+      "id": "sci_phy15_026",
+      "category": "calculation",
+      "prompt": "長さ 0.30 m の導体棒が、磁束密度 0.50 T の磁場に垂直に 2.0 m/s で動く。誘導起電力は？",
+      "choices": [
+        "1.2 V",
+        "3.0 V",
+        "0.75 V",
+        "0.30 V"
+      ],
+      "answerIndex": 3,
+      "explanation": "V ＝ vBl。"
+    },
+    {
+      "id": "sci_phy15_027",
+      "category": "calculation",
+      "prompt": "一次コイル 200 回、二次コイル 1000 回の変圧器の一次側に 100 V をかけた。二次側の電圧は？",
+      "choices": [
+        "2000 V",
+        "20 V",
+        "100 V",
+        "500 V"
+      ],
+      "answerIndex": 3,
+      "explanation": "電圧は巻数に比例。"
+    },
+    {
+      "id": "sci_phy15_028",
+      "category": "calculation",
+      "prompt": "実効値 100 V の交流電圧の最大値はおよそ？",
+      "choices": [
+        "200 V",
+        "100 V",
+        "141 V",
+        "71 V"
+      ],
+      "answerIndex": 2,
+      "explanation": "最大値 ＝ 実効値 × √2。"
+    },
+    {
+      "id": "sci_phy15_029",
+      "category": "calculation",
+      "prompt": "実効値 100 V、実効値 2.0 A の交流が抵抗に流れている。消費電力は？",
+      "choices": [
+        "50 W",
+        "200 W",
+        "400 W",
+        "283 W"
+      ],
+      "answerIndex": 1,
+      "explanation": "実効値どうしの積。"
+    },
+    {
+      "id": "sci_phy15_030",
+      "category": "calculation",
+      "prompt": "理想的な変圧器で、一次側 100 V・2.0 A のとき、二次側が 20 V なら二次側の電流は？",
+      "choices": [
+        "40 A",
+        "2.0 A",
+        "0.40 A",
+        "10 A"
+      ],
+      "answerIndex": 3,
+      "explanation": "電力が等しい：100 × 2.0 ＝ 20 × I。"
+    },
+    {
+      "id": "sci_phy15_031",
+      "category": "thinking",
+      "prompt": "発電機のコイルを速く回すほど、大きな電圧が得られる理由は？",
+      "choices": [
+        "磁石が強くなるから",
+        "コイルの抵抗が小さくなるから",
+        "磁束の変化の割合が大きくなるから",
+        "コイルが長くなるから"
+      ],
+      "answerIndex": 2,
+      "explanation": "誘導起電力は磁束の時間変化に比例する。"
+    },
+    {
+      "id": "sci_phy15_032",
+      "category": "thinking",
+      "prompt": "交通系 IC カードが電池なしで動く理由は？",
+      "choices": [
+        "カードに太陽電池があるから",
+        "静電気で動くから",
+        "読み取り機の変化する磁場で、カード内のコイルに電磁誘導の電流が流れるから",
+        "カードが熱を電気に変えるから"
+      ],
+      "answerIndex": 2,
+      "explanation": "非接触で電力とデータを送っている。"
     }
   ]
 }

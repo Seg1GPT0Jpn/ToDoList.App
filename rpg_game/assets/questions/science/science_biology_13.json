@@ -211,6 +211,214 @@
       ],
       "answerIndex": 2,
       "explanation": "置換では変わるアミノ酸は多くて 1 つ（変わらないこともある）だが、欠失ではフレームシフトが起こる。"
+    },
+    {
+      "id": "sci_bio13_017",
+      "category": "knowledge",
+      "prompt": "真核生物で、転写が行われる場所は？",
+      "choices": [
+        "ゴルジ体",
+        "細胞質基質",
+        "核",
+        "リボソーム"
+      ],
+      "answerIndex": 2,
+      "explanation": "mRNA は核膜孔を通って細胞質へ出る。"
+    },
+    {
+      "id": "sci_bio13_018",
+      "category": "knowledge",
+      "prompt": "mRNA のコドンと相補的な塩基配列をもつ、tRNA の部分は？",
+      "choices": [
+        "プロモーター",
+        "エキソン",
+        "アンチコドン",
+        "オペレーター"
+      ],
+      "answerIndex": 2,
+      "explanation": "コドンとアンチコドンが対合して、正しいアミノ酸が並ぶ。"
+    },
+    {
+      "id": "sci_bio13_019",
+      "category": "knowledge",
+      "prompt": "翻訳を終わらせるコドンを何という？",
+      "choices": [
+        "開始コドン",
+        "イントロン",
+        "終止コドン",
+        "アンチコドン"
+      ],
+      "answerIndex": 2,
+      "explanation": "UAA、UAG、UGA。対応するアミノ酸がない。"
+    },
+    {
+      "id": "sci_bio13_020",
+      "category": "knowledge",
+      "prompt": "RNA ポリメラーゼが結合して転写が始まる DNA の領域は？",
+      "choices": [
+        "エキソン",
+        "オペレーター",
+        "ターミネーターのみ",
+        "プロモーター"
+      ],
+      "answerIndex": 3,
+      "explanation": "転写の開始点を決める。"
+    },
+    {
+      "id": "sci_bio13_021",
+      "category": "knowledge",
+      "prompt": "真核生物で、転写を調節するために結合するタンパク質を何という？",
+      "choices": [
+        "ヘモグロビン",
+        "調節タンパク質（転写調節因子）",
+        "アクチン",
+        "ヒストン"
+      ],
+      "answerIndex": 1,
+      "explanation": "特定の遺伝子の発現をオン・オフする。"
+    },
+    {
+      "id": "sci_bio13_022",
+      "category": "knowledge",
+      "prompt": "DNA が巻きついて染色体をつくるタンパク質は？",
+      "choices": [
+        "ヒストン",
+        "ケラチン",
+        "ミオシン",
+        "インスリン"
+      ],
+      "answerIndex": 0,
+      "explanation": "ヌクレオソームをつくる。"
+    },
+    {
+      "id": "sci_bio13_023",
+      "category": "knowledge",
+      "prompt": "遺伝子組換えで、目的の DNA を細胞に運ぶために使う小さな環状 DNA は？",
+      "choices": [
+        "プラスミド",
+        "mRNA",
+        "リボソーム",
+        "ヒストン"
+      ],
+      "answerIndex": 0,
+      "explanation": "ベクターとして使う。"
+    },
+    {
+      "id": "sci_bio13_024",
+      "category": "knowledge",
+      "prompt": "切断した DNA 断片どうしをつなぐ酵素は？",
+      "choices": [
+        "制限酵素",
+        "ペプシン",
+        "RNA ポリメラーゼ",
+        "DNA リガーゼ"
+      ],
+      "answerIndex": 3,
+      "explanation": "組換え DNA をつくるのに使う。"
+    },
+    {
+      "id": "sci_bio13_025",
+      "category": "knowledge",
+      "prompt": "DNA 断片を大きさで分ける方法は？",
+      "choices": [
+        "電気泳動",
+        "遠心分離だけ",
+        "PCR",
+        "再結晶"
+      ],
+      "answerIndex": 0,
+      "explanation": "DNA は負に帯電しているので陽極へ移動し、小さいほど速い。"
+    },
+    {
+      "id": "sci_bio13_026",
+      "category": "knowledge",
+      "prompt": "ゲノム編集の技術の例は？",
+      "choices": [
+        "PCR",
+        "電気泳動",
+        "サンガー法",
+        "CRISPR-Cas9"
+      ],
+      "answerIndex": 3,
+      "explanation": "特定の塩基配列をねらって切断・改変できる。"
+    },
+    {
+      "id": "sci_bio13_027",
+      "category": "calculation",
+      "prompt": "DNA の鋳型鎖の塩基配列が TAC のとき、mRNA のコドンは？",
+      "choices": [
+        "TAC",
+        "AUG",
+        "UAC",
+        "ATG"
+      ],
+      "answerIndex": 1,
+      "explanation": "相補的な塩基：T→A、A→U、C→G。"
+    },
+    {
+      "id": "sci_bio13_028",
+      "category": "calculation",
+      "prompt": "mRNA のコドンが GCU のとき、tRNA のアンチコドンは？",
+      "choices": [
+        "GCU",
+        "CGT",
+        "UCG",
+        "CGA"
+      ],
+      "answerIndex": 3,
+      "explanation": "G↔C、C↔G、U↔A。"
+    },
+    {
+      "id": "sci_bio13_029",
+      "category": "calculation",
+      "prompt": "300 塩基の mRNA（終止コドンを除く）が指定するアミノ酸の数は？",
+      "choices": [
+        "300 個",
+        "150 個",
+        "900 個",
+        "100 個"
+      ],
+      "answerIndex": 3,
+      "explanation": "3 塩基で 1 アミノ酸。"
+    },
+    {
+      "id": "sci_bio13_030",
+      "category": "calculation",
+      "prompt": "PCR で 1 分子の二本鎖 DNA を 10 サイクル増やすと、理論上何分子になる？",
+      "choices": [
+        "1024 分子",
+        "20 分子",
+        "512 分子",
+        "100 分子"
+      ],
+      "answerIndex": 0,
+      "explanation": "2¹⁰。"
+    },
+    {
+      "id": "sci_bio13_031",
+      "category": "thinking",
+      "prompt": "同じ個体の神経細胞と筋細胞で、つくるタンパク質がちがう理由は？",
+      "choices": [
+        "同じ DNA をもつが、発現している遺伝子がちがうから",
+        "筋細胞は DNA をもたないから",
+        "もっている DNA がちがうから",
+        "神経細胞には核がないから"
+      ],
+      "answerIndex": 0,
+      "explanation": "選択的な遺伝子発現によって細胞が分化する。"
+    },
+    {
+      "id": "sci_bio13_032",
+      "category": "thinking",
+      "prompt": "1 塩基が別の塩基に置き換わっても、アミノ酸が変わらないことがある理由は？",
+      "choices": [
+        "すべてのコドンが同じアミノ酸を指定するから",
+        "塩基は変わらないから",
+        "翻訳されないから",
+        "1 つのアミノ酸に複数のコドンが対応しているから"
+      ],
+      "answerIndex": 3,
+      "explanation": "コドンは 64 種類、アミノ酸は 20 種類。"
     }
   ]
 }

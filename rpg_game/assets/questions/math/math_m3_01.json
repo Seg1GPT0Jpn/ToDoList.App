@@ -133,6 +133,136 @@
       ],
       "answerIndex": 0,
       "explanation": "|r|≧1 では rⁿ が0に近づかない（a≠0 なら発散）。"
+    },
+    {
+      "id": "mat_m301_011",
+      "category": "calculation",
+      "prompt": "lim_{n→∞} 3/n² の値は？",
+      "choices": [
+        "1",
+        "3",
+        "0",
+        "∞"
+      ],
+      "answerIndex": 2,
+      "explanation": "分母が限りなく大きくなる。"
+    },
+    {
+      "id": "mat_m301_012",
+      "category": "calculation",
+      "prompt": "lim_{n→∞} (3n−2)/(n+1) の値は？",
+      "choices": [
+        "3",
+        "−2",
+        "1",
+        "∞"
+      ],
+      "answerIndex": 0,
+      "explanation": "分母・分子を n で割ると (3−2/n)/(1+1/n)。"
+    },
+    {
+      "id": "mat_m301_013",
+      "category": "calculation",
+      "prompt": "lim_{n→∞} (n+1)/(n²+1) の値は？",
+      "choices": [
+        "1",
+        "1/2",
+        "0",
+        "∞"
+      ],
+      "answerIndex": 2,
+      "explanation": "分母の次数の方が高い。"
+    },
+    {
+      "id": "mat_m301_014",
+      "category": "calculation",
+      "prompt": "lim_{n→∞} (2/3)ⁿ の値は？",
+      "choices": [
+        "2/3",
+        "∞",
+        "0",
+        "1"
+      ],
+      "answerIndex": 2,
+      "explanation": "|r|<1 なら rⁿ→0。"
+    },
+    {
+      "id": "mat_m301_015",
+      "category": "calculation",
+      "prompt": "lim_{n→∞} (−2)ⁿ は？",
+      "choices": [
+        "−∞",
+        "∞",
+        "振動する（極限はない）",
+        "0"
+      ],
+      "answerIndex": 2,
+      "explanation": "r≦−1 のとき振動する。"
+    },
+    {
+      "id": "mat_m301_016",
+      "category": "calculation",
+      "prompt": "無限等比級数 1+1/3+1/9+… の和は？",
+      "choices": [
+        "3/2",
+        "2",
+        "3",
+        "4/3"
+      ],
+      "answerIndex": 0,
+      "explanation": "a/(1−r)=1/(1−1/3)。"
+    },
+    {
+      "id": "mat_m301_017",
+      "category": "calculation",
+      "prompt": "lim_{x→1} (x²−1)/(x−1) の値は？",
+      "choices": [
+        "2",
+        "∞",
+        "0",
+        "1"
+      ],
+      "answerIndex": 0,
+      "explanation": "約分して x+1 → 2。"
+    },
+    {
+      "id": "mat_m301_018",
+      "category": "calculation",
+      "prompt": "lim_{x→0} (sin 2x)/x の値は？",
+      "choices": [
+        "1/2",
+        "2",
+        "1",
+        "0"
+      ],
+      "answerIndex": 1,
+      "explanation": "2·(sin 2x)/(2x)→2。"
+    },
+    {
+      "id": "mat_m301_019",
+      "category": "calculation",
+      "prompt": "0.333…（3が限りなく続く）を分数で表すと？",
+      "choices": [
+        "1/3",
+        "3/10",
+        "33/100",
+        "3/11"
+      ],
+      "answerIndex": 0,
+      "explanation": "3/10+3/100+…=(3/10)/(1−1/10)=1/3。"
+    },
+    {
+      "id": "mat_m301_020",
+      "category": "knowledge",
+      "prompt": "無限等比級数 a+ar+ar²+…（a≠0）が収束する条件は？",
+      "choices": [
+        "r>1",
+        "r<−1",
+        "r=1",
+        "−1<r<1"
+      ],
+      "answerIndex": 3,
+      "explanation": "|r|<1 のとき和は a/(1−r)。"
     }
   ]
 }

@@ -133,6 +133,136 @@
       ],
       "answerIndex": 1,
       "explanation": "sa+tb=s′a+t′b なら s=s′、t=t′。"
+    },
+    {
+      "id": "mat_mc03_011",
+      "category": "calculation",
+      "prompt": "a、b が一次独立で (s−1)a+(t+2)b=0 のとき、s、t は？",
+      "choices": [
+        "s=0、t=0",
+        "s=1、t=−2",
+        "s=−1、t=2",
+        "s=1、t=2"
+      ],
+      "answerIndex": 1,
+      "explanation": "一次独立なので係数がともに0。"
+    },
+    {
+      "id": "mat_mc03_012",
+      "category": "calculation",
+      "prompt": "|a|=2、|b|=1、|a+b|=√7 のとき、a・b は？",
+      "choices": [
+        "−1",
+        "1",
+        "√7",
+        "2"
+      ],
+      "answerIndex": 1,
+      "explanation": "4+2a・b+1=7。"
+    },
+    {
+      "id": "mat_mc03_013",
+      "category": "calculation",
+      "prompt": "a=(2, 1)、b=(1, 0) のとき、|a+tb| の最小値は？",
+      "choices": [
+        "1",
+        "0",
+        "√5",
+        "2"
+      ],
+      "answerIndex": 0,
+      "explanation": "a+tb=(2+t, 1)。t=−2 で大きさ1。"
+    },
+    {
+      "id": "mat_mc03_014",
+      "category": "calculation",
+      "prompt": "△ABC の重心を G とするとき、GA+GB+GC（ベクトル）は？",
+      "choices": [
+        "3AG",
+        "0",
+        "BC",
+        "AB"
+      ],
+      "answerIndex": 1,
+      "explanation": "重心の性質。位置ベクトルで確かめられる。"
+    },
+    {
+      "id": "mat_mc03_015",
+      "category": "calculation",
+      "prompt": "中心 A(a)、半径3 の円周上の点 P(p) が満たす式は？",
+      "choices": [
+        "p・a=3",
+        "|p−a|=3",
+        "|p|=3",
+        "|p+a|=3"
+      ],
+      "answerIndex": 1,
+      "explanation": "中心からの距離が3。"
+    },
+    {
+      "id": "mat_mc03_016",
+      "category": "calculation",
+      "prompt": "平行四辺形 ABCD で AB=b、AD=d（ベクトル）のとき、BD は？",
+      "choices": [
+        "b−d",
+        "d−b",
+        "(b+d)/2",
+        "b+d"
+      ],
+      "answerIndex": 1,
+      "explanation": "BD=AD−AB。"
+    },
+    {
+      "id": "mat_mc03_017",
+      "category": "calculation",
+      "prompt": "a=(3, 4) の、b=(1, 0) 方向への正射影の長さは？",
+      "choices": [
+        "4",
+        "3",
+        "3/5",
+        "5"
+      ],
+      "answerIndex": 1,
+      "explanation": "a・b/|b|=3/1。"
+    },
+    {
+      "id": "mat_mc03_018",
+      "category": "calculation",
+      "prompt": "OA=(4, 0)、OB=(1, 3) のとき、△OAB の面積は？",
+      "choices": [
+        "4",
+        "12",
+        "3",
+        "6"
+      ],
+      "answerIndex": 3,
+      "explanation": "½|4·3−0·1|。"
+    },
+    {
+      "id": "mat_mc03_019",
+      "category": "calculation",
+      "prompt": "OP=sOA+tOB で、s+t=1、s≧0、t≧0 のとき、点 P の存在範囲は？",
+      "choices": [
+        "△OAB の内部",
+        "線分 AB",
+        "直線 OA",
+        "直線 AB"
+      ],
+      "answerIndex": 1,
+      "explanation": "s+t=1 で直線 AB、s、t≧0 で線分に限られる。"
+    },
+    {
+      "id": "mat_mc03_020",
+      "category": "thinking",
+      "prompt": "三角形の問題で、始点を1つの頂点にそろえてベクトルを表す利点は？",
+      "choices": [
+        "2つの一次独立なベクトルで全体を表せ、係数比較ができるから",
+        "長さがすべて1になるから",
+        "計算がいらなくなるから",
+        "内積が0になるから"
+      ],
+      "answerIndex": 0,
+      "explanation": "AB、AC の2本を基準にすると、平面上の点はすべて一通りに表せる。"
     }
   ]
 }

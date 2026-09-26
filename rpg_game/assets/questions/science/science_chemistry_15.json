@@ -211,6 +211,214 @@
       ],
       "answerIndex": 3,
       "explanation": "不飽和結合（二重・三重結合）をもつ炭化水素は臭素を付加して脱色する。メタン（単結合のみ）では消えない。"
+    },
+    {
+      "id": "sci_chm15_017",
+      "category": "knowledge",
+      "prompt": "アルケンの一般式は？",
+      "choices": [
+        "CₙH₂ₙ",
+        "CₙHₙ",
+        "CₙH₂ₙ₋₂",
+        "CₙH₂ₙ₊₂"
+      ],
+      "answerIndex": 0,
+      "explanation": "二重結合を1つもつ鎖式炭化水素。"
+    },
+    {
+      "id": "sci_chm15_018",
+      "category": "knowledge",
+      "prompt": "アセチレン C₂H₂ がもつ結合は？",
+      "choices": [
+        "二重結合だけ",
+        "イオン結合",
+        "単結合だけ",
+        "三重結合"
+      ],
+      "answerIndex": 3,
+      "explanation": "アルキンの代表。"
+    },
+    {
+      "id": "sci_chm15_019",
+      "category": "knowledge",
+      "prompt": "アルカンに光を当てて塩素と反応させると起こる反応は？",
+      "choices": [
+        "重合反応",
+        "置換反応",
+        "縮合反応",
+        "付加反応"
+      ],
+      "answerIndex": 1,
+      "explanation": "H 原子が Cl 原子に置きかわる。"
+    },
+    {
+      "id": "sci_chm15_020",
+      "category": "knowledge",
+      "prompt": "エタノールを酸化するとできる物質は？",
+      "choices": [
+        "メタノール",
+        "エチレン",
+        "ジエチルエーテルだけ",
+        "アセトアルデヒド、さらに酢酸"
+      ],
+      "answerIndex": 3,
+      "explanation": "第一級アルコールの酸化。"
+    },
+    {
+      "id": "sci_chm15_021",
+      "category": "knowledge",
+      "prompt": "第二級アルコールを酸化してできる物質は？",
+      "choices": [
+        "アルデヒド",
+        "ケトン",
+        "エーテル",
+        "カルボン酸"
+      ],
+      "answerIndex": 1,
+      "explanation": "2-プロパノールを酸化するとアセトンになる。"
+    },
+    {
+      "id": "sci_chm15_022",
+      "category": "knowledge",
+      "prompt": "フェーリング液を還元して赤色の沈殿を生じるのは？",
+      "choices": [
+        "アルコール",
+        "アルデヒド",
+        "エステル",
+        "ケトン"
+      ],
+      "answerIndex": 1,
+      "explanation": "Cu₂O の赤色沈殿。"
+    },
+    {
+      "id": "sci_chm15_023",
+      "category": "knowledge",
+      "prompt": "エステルに水酸化ナトリウム水溶液を加えて加熱する反応は？",
+      "choices": [
+        "エステル化",
+        "けん化",
+        "付加",
+        "酸化"
+      ],
+      "answerIndex": 1,
+      "explanation": "カルボン酸の塩とアルコールができる。"
+    },
+    {
+      "id": "sci_chm15_024",
+      "category": "knowledge",
+      "prompt": "セッケンが油汚れを落とす理由は？",
+      "choices": [
+        "油を固めるから",
+        "親水基と疎水基をもち、油を包みこんで水中に分散させるから",
+        "油を燃やすから",
+        "油と反応して水になるから"
+      ],
+      "answerIndex": 1,
+      "explanation": "ミセルをつくる。"
+    },
+    {
+      "id": "sci_chm15_025",
+      "category": "knowledge",
+      "prompt": "ベンゼンのニトロ化でできる物質は？",
+      "choices": [
+        "フェノール",
+        "安息香酸",
+        "ニトロベンゼン",
+        "アニリン"
+      ],
+      "answerIndex": 2,
+      "explanation": "濃硝酸と濃硫酸を使う。"
+    },
+    {
+      "id": "sci_chm15_026",
+      "category": "knowledge",
+      "prompt": "アニリンの検出に使う反応は？",
+      "choices": [
+        "銀鏡反応",
+        "さらし粉水溶液で赤紫色に呈色",
+        "塩化鉄(Ⅲ)で紫色",
+        "ヨウ素デンプン反応"
+      ],
+      "answerIndex": 1,
+      "explanation": "アニリンは塩基性の芳香族アミン。"
+    },
+    {
+      "id": "sci_chm15_027",
+      "category": "calculation",
+      "prompt": "分子式 C₃H₈O のアルコールの構造異性体はいくつ？",
+      "choices": [
+        "1 つ",
+        "4 つ",
+        "2 つ",
+        "3 つ"
+      ],
+      "answerIndex": 2,
+      "explanation": "1-プロパノールと 2-プロパノール（エーテルを除く）。"
+    },
+    {
+      "id": "sci_chm15_028",
+      "category": "calculation",
+      "prompt": "メタン CH₄ 16 g を完全燃焼させると、CO₂ は何 g できる？（C ＝ 12、O ＝ 16、H ＝ 1）",
+      "choices": [
+        "44 g",
+        "88 g",
+        "16 g",
+        "22 g"
+      ],
+      "answerIndex": 0,
+      "explanation": "CH₄ 1 mol → CO₂ 1 mol。"
+    },
+    {
+      "id": "sci_chm15_029",
+      "category": "calculation",
+      "prompt": "エチレン C₂H₄ 1 mol に付加する臭素 Br₂ は何 mol？",
+      "choices": [
+        "3 mol",
+        "0.5 mol",
+        "2 mol",
+        "1 mol"
+      ],
+      "answerIndex": 3,
+      "explanation": "二重結合 1 つに 1 分子が付加する。"
+    },
+    {
+      "id": "sci_chm15_030",
+      "category": "calculation",
+      "prompt": "C 85.7 %、H 14.3 % の炭化水素の組成式は？（C ＝ 12、H ＝ 1）",
+      "choices": [
+        "CH₄",
+        "CH",
+        "CH₃",
+        "CH₂"
+      ],
+      "answerIndex": 3,
+      "explanation": "C：H ＝ 85.7/12：14.3/1 ≒ 7.14：14.3 ＝ 1：2。"
+    },
+    {
+      "id": "sci_chm15_031",
+      "category": "thinking",
+      "prompt": "フェノールが酸性を示すのに、エタノールが示さない理由は？",
+      "choices": [
+        "フェノールは水に溶けないから",
+        "エタノールはイオン結合だから",
+        "ベンゼン環の影響で、フェノールの O−H が H⁺ を出しやすいから",
+        "エタノールの方が分子量が大きいから"
+      ],
+      "answerIndex": 2,
+      "explanation": "フェノールは弱酸で、NaOH と反応して塩をつくる。"
+    },
+    {
+      "id": "sci_chm15_032",
+      "category": "thinking",
+      "prompt": "酢酸とエタノールからエステルをつくるとき、濃硫酸を加える理由は？",
+      "choices": [
+        "沸騰を防ぐため",
+        "色をつけるため",
+        "触媒としてはたらき、また生じた水を取り除くから",
+        "酢酸を中和するため"
+      ],
+      "answerIndex": 2,
+      "explanation": "エステル化は可逆反応。"
     }
   ]
 }

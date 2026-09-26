@@ -211,6 +211,214 @@
       ],
       "answerIndex": 2,
       "explanation": "同じ電力を送るなら、電圧を高くすると電流が小さくなり、導線での損失 RI² が減る。"
+    },
+    {
+      "id": "sci_phy08_017",
+      "category": "knowledge",
+      "prompt": "電圧の単位は？",
+      "choices": [
+        "W（ワット）",
+        "V（ボルト）",
+        "A（アンペア）",
+        "Ω（オーム）"
+      ],
+      "answerIndex": 1,
+      "explanation": "電流 A、抵抗 Ω、電力 W。"
+    },
+    {
+      "id": "sci_phy08_018",
+      "category": "knowledge",
+      "prompt": "抵抗を並列につないだときの合成抵抗 R は？",
+      "choices": [
+        "R ＝ R₁ + R₂",
+        "R ＝ R₁ − R₂",
+        "1/R ＝ 1/R₁ + 1/R₂",
+        "R ＝ R₁R₂"
+      ],
+      "answerIndex": 2,
+      "explanation": "並列にすると合成抵抗は小さくなる。"
+    },
+    {
+      "id": "sci_phy08_019",
+      "category": "knowledge",
+      "prompt": "電流の向きと電子の流れる向きの関係は？",
+      "choices": [
+        "逆向き",
+        "同じ向き",
+        "関係がない",
+        "垂直"
+      ],
+      "answerIndex": 0,
+      "explanation": "電子は負の電荷をもつので、電流と逆向きに動く。"
+    },
+    {
+      "id": "sci_phy08_020",
+      "category": "knowledge",
+      "prompt": "ジュール熱 Q を表す式は？（V：電圧、I：電流、t：時間）",
+      "choices": [
+        "Q ＝ It",
+        "Q ＝ VIt",
+        "Q ＝ V/I",
+        "Q ＝ V²I"
+      ],
+      "answerIndex": 1,
+      "explanation": "電力 VI に時間をかけたもの。"
+    },
+    {
+      "id": "sci_phy08_021",
+      "category": "knowledge",
+      "prompt": "交流とは？",
+      "choices": [
+        "いつも同じ向きに流れる電流",
+        "向きと大きさが周期的に変わる電流",
+        "流れない電流",
+        "電池から流れる電流"
+      ],
+      "answerIndex": 1,
+      "explanation": "家庭のコンセントは交流。"
+    },
+    {
+      "id": "sci_phy08_022",
+      "category": "knowledge",
+      "prompt": "γ線の正体は？",
+      "choices": [
+        "ヘリウムの原子核",
+        "中性子",
+        "波長の短い電磁波",
+        "電子"
+      ],
+      "answerIndex": 2,
+      "explanation": "α線はヘリウム原子核、β線は電子。"
+    },
+    {
+      "id": "sci_phy08_023",
+      "category": "knowledge",
+      "prompt": "化石燃料を使う火力発電の問題点は？",
+      "choices": [
+        "放射性廃棄物が出る",
+        "天候に左右される",
+        "二酸化炭素を多く出し、資源に限りがある",
+        "発電量が少なすぎる"
+      ],
+      "answerIndex": 2,
+      "explanation": "地球温暖化の原因とされる CO₂ を排出する。"
+    },
+    {
+      "id": "sci_phy08_024",
+      "category": "calculation",
+      "prompt": "10 Ω の抵抗に 0.50 A の電流が流れた。電圧は？",
+      "choices": [
+        "20 V",
+        "0.050 V",
+        "5.0 V",
+        "10.5 V"
+      ],
+      "answerIndex": 2,
+      "explanation": "V ＝ RI。"
+    },
+    {
+      "id": "sci_phy08_025",
+      "category": "calculation",
+      "prompt": "4.0 Ω と 4.0 Ω の抵抗を並列につないだ。合成抵抗は？",
+      "choices": [
+        "2.0 Ω",
+        "16 Ω",
+        "8.0 Ω",
+        "4.0 Ω"
+      ],
+      "answerIndex": 0,
+      "explanation": "1/R ＝ 1/4 + 1/4。"
+    },
+    {
+      "id": "sci_phy08_026",
+      "category": "calculation",
+      "prompt": "5.0 Ω と 15 Ω の抵抗を直列につなぎ、10 V の電源につないだ。流れる電流は？",
+      "choices": [
+        "0.50 A",
+        "0.67 A",
+        "2.0 A",
+        "200 A"
+      ],
+      "answerIndex": 0,
+      "explanation": "合成抵抗 20 Ω。"
+    },
+    {
+      "id": "sci_phy08_027",
+      "category": "calculation",
+      "prompt": "100 V、1200 W のドライヤーに流れる電流は？",
+      "choices": [
+        "120 A",
+        "0.083 A",
+        "1200 A",
+        "12 A"
+      ],
+      "answerIndex": 3,
+      "explanation": "I ＝ P ÷ V。"
+    },
+    {
+      "id": "sci_phy08_028",
+      "category": "calculation",
+      "prompt": "500 W の電子レンジを 3.0 分間使った。電力量は？",
+      "choices": [
+        "9.0 × 10⁴ J",
+        "250 Wh",
+        "1.5 × 10³ Wh",
+        "1500 J"
+      ],
+      "answerIndex": 0,
+      "explanation": "500 × 180 s ＝ 90000 J。"
+    },
+    {
+      "id": "sci_phy08_029",
+      "category": "calculation",
+      "prompt": "0.20 A の電流が 1.0 分間流れた。通過した電気量は？",
+      "choices": [
+        "0.20 C",
+        "12 C",
+        "300 C",
+        "0.0033 C"
+      ],
+      "answerIndex": 1,
+      "explanation": "Q ＝ It ＝ 0.20 × 60。"
+    },
+    {
+      "id": "sci_phy08_030",
+      "category": "calculation",
+      "prompt": "半減期 8 日の放射性物質が、はじめの 1/4 になるのは何日後？",
+      "choices": [
+        "16 日後",
+        "8 日後",
+        "32 日後",
+        "4 日後"
+      ],
+      "answerIndex": 0,
+      "explanation": "半分の半分：8 × 2。"
+    },
+    {
+      "id": "sci_phy08_031",
+      "category": "thinking",
+      "prompt": "家庭の配線で、電気器具が並列につながれている理由は？",
+      "choices": [
+        "どの器具にも同じ電圧がかかり、1つを切ってもほかが使えるから",
+        "電流を小さくするため",
+        "電力を節約するため",
+        "抵抗を大きくするため"
+      ],
+      "answerIndex": 0,
+      "explanation": "直列だと1つ切ると全部止まり、電圧も分かれてしまう。"
+    },
+    {
+      "id": "sci_phy08_032",
+      "category": "thinking",
+      "prompt": "太陽光発電や風力発電の課題として正しいものは？",
+      "choices": [
+        "天候や時間によって発電量が変わりやすい",
+        "二酸化炭素を大量に出す",
+        "放射性廃棄物が出る",
+        "燃料がすぐなくなる"
+      ],
+      "answerIndex": 0,
+      "explanation": "安定供給のため、蓄電や他の電源との組み合わせが必要。"
     }
   ]
 }

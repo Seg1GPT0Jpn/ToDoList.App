@@ -211,6 +211,214 @@
       ],
       "answerIndex": 0,
       "explanation": "誘電体は誘電分極で電場を弱めるので、同じ電圧でより多くの電荷をためられる（誘電率が大きくなる）。"
+    },
+    {
+      "id": "sci_phy14_017",
+      "category": "knowledge",
+      "prompt": "電場の強さ E と、そこに置いた電荷 q が受ける力 F の関係は？",
+      "choices": [
+        "F ＝ q/E",
+        "F ＝ qE",
+        "F ＝ q²E",
+        "F ＝ E/q"
+      ],
+      "answerIndex": 1,
+      "explanation": "電場は +1 C あたりが受ける力。"
+    },
+    {
+      "id": "sci_phy14_018",
+      "category": "knowledge",
+      "prompt": "正の点電荷のまわりの電気力線の向きは？",
+      "choices": [
+        "電荷から外へ出ていく向き",
+        "電荷のまわりを回る向き",
+        "電荷に向かって入る向き",
+        "電気力線はない"
+      ],
+      "answerIndex": 0,
+      "explanation": "正電荷から出て負電荷に入る。"
+    },
+    {
+      "id": "sci_phy14_019",
+      "category": "knowledge",
+      "prompt": "一様な電場 E の中で、電場の向きに距離 d 離れた2点間の電位差 V は？",
+      "choices": [
+        "V ＝ Ed",
+        "V ＝ E²d",
+        "V ＝ E/d",
+        "V ＝ d/E"
+      ],
+      "answerIndex": 0,
+      "explanation": "電場の強さの単位は V/m とも表せる。"
+    },
+    {
+      "id": "sci_phy14_020",
+      "category": "knowledge",
+      "prompt": "コンデンサーにたくわえられる静電エネルギーは？（C：電気容量、V：電圧）",
+      "choices": [
+        "½CV²",
+        "CV²",
+        "½CV",
+        "CV"
+      ],
+      "answerIndex": 0,
+      "explanation": "U ＝ ½QV ＝ ½CV²。"
+    },
+    {
+      "id": "sci_phy14_021",
+      "category": "knowledge",
+      "prompt": "静電誘導とは？",
+      "choices": [
+        "導体に帯電体を近づけると、近い側に反対の電荷が現れる現象",
+        "電荷が消える現象",
+        "絶縁体が電気を通す現象",
+        "電流が磁場を作る現象"
+      ],
+      "answerIndex": 0,
+      "explanation": "導体内の自由電子が移動する。"
+    },
+    {
+      "id": "sci_phy14_022",
+      "category": "knowledge",
+      "prompt": "コンデンサーを並列につないだときの合成容量は？",
+      "choices": [
+        "C₁ − C₂",
+        "C₁C₂",
+        "1/(1/C₁ + 1/C₂)",
+        "C₁ + C₂"
+      ],
+      "answerIndex": 3,
+      "explanation": "並列では容量が足し算になる。"
+    },
+    {
+      "id": "sci_phy14_023",
+      "category": "calculation",
+      "prompt": "強さ 500 N/C の電場の中の、2.0 × 10⁻⁶ C の電荷が受ける力は？",
+      "choices": [
+        "1.0 × 10⁻³ N",
+        "4.0 × 10⁻⁹ N",
+        "500 N",
+        "2.5 × 10⁸ N"
+      ],
+      "answerIndex": 0,
+      "explanation": "qE。"
+    },
+    {
+      "id": "sci_phy14_024",
+      "category": "calculation",
+      "prompt": "2つの点電荷の距離を 1/2 にすると、静電気力は何倍？",
+      "choices": [
+        "1/4倍",
+        "2倍",
+        "4倍",
+        "1/2倍"
+      ],
+      "answerIndex": 2,
+      "explanation": "距離の2乗に反比例。"
+    },
+    {
+      "id": "sci_phy14_025",
+      "category": "calculation",
+      "prompt": "強さ 100 V/m の一様な電場で、電場の向きに 0.20 m 離れた2点の電位差は？",
+      "choices": [
+        "0.0020 V",
+        "20 V",
+        "100 V",
+        "500 V"
+      ],
+      "answerIndex": 1,
+      "explanation": "V ＝ Ed。"
+    },
+    {
+      "id": "sci_phy14_026",
+      "category": "calculation",
+      "prompt": "3.0 C の電荷を電位差 4.0 V の2点間で移動させるのに必要な仕事は？",
+      "choices": [
+        "7.0 J",
+        "0.75 J",
+        "1.3 J",
+        "12 J"
+      ],
+      "answerIndex": 3,
+      "explanation": "W ＝ qV。"
+    },
+    {
+      "id": "sci_phy14_027",
+      "category": "calculation",
+      "prompt": "電気容量 5.0 μF のコンデンサーに 20 V をかけた。たくわえられる電気量は？",
+      "choices": [
+        "2.5 × 10⁻⁷ C",
+        "1.0 × 10⁻⁴ C",
+        "100 C",
+        "4.0 C"
+      ],
+      "answerIndex": 1,
+      "explanation": "Q ＝ CV ＝ 5.0 × 10⁻⁶ × 20。"
+    },
+    {
+      "id": "sci_phy14_028",
+      "category": "calculation",
+      "prompt": "前問のコンデンサーの静電エネルギーは？",
+      "choices": [
+        "5.0 × 10⁻⁵ J",
+        "1.0 × 10⁻⁴ J",
+        "1.0 × 10⁻³ J",
+        "2.0 × 10⁻³ J"
+      ],
+      "answerIndex": 2,
+      "explanation": "½CV² ＝ ½ × 5.0 × 10⁻⁶ × 400。"
+    },
+    {
+      "id": "sci_phy14_029",
+      "category": "calculation",
+      "prompt": "3.0 μF と 6.0 μF のコンデンサーを直列につないだ。合成容量は？",
+      "choices": [
+        "18 μF",
+        "4.5 μF",
+        "2.0 μF",
+        "9.0 μF"
+      ],
+      "answerIndex": 2,
+      "explanation": "1/C ＝ 1/3 + 1/6 ＝ 1/2。"
+    },
+    {
+      "id": "sci_phy14_030",
+      "category": "calculation",
+      "prompt": "平行板コンデンサーの極板の面積を2倍、間隔を2倍にした。電気容量は？",
+      "choices": [
+        "2倍",
+        "4倍",
+        "変わらない",
+        "1/2倍"
+      ],
+      "answerIndex": 2,
+      "explanation": "C ＝ εS/d。"
+    },
+    {
+      "id": "sci_phy14_031",
+      "category": "thinking",
+      "prompt": "雷のときに車の中にいると比較的安全と言われる理由は？",
+      "choices": [
+        "車がゴムでできているから",
+        "車が動いているから",
+        "金属の車体（導体）の表面を電流が流れ、内部には電場がほとんどできないから",
+        "車の中は真空だから"
+      ],
+      "answerIndex": 2,
+      "explanation": "静電しゃへい。導体に囲まれた空間には外の電場が入りこまない。"
+    },
+    {
+      "id": "sci_phy14_032",
+      "category": "thinking",
+      "prompt": "電池につないだまま極板の間に誘電体を入れると、たくわえられる電気量はどうなる？",
+      "choices": [
+        "0になる",
+        "減る",
+        "増える",
+        "変わらない"
+      ],
+      "answerIndex": 2,
+      "explanation": "電圧 V は一定のまま容量 C が大きくなるので Q ＝ CV は増える。"
     }
   ]
 }

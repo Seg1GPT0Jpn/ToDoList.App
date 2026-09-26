@@ -133,6 +133,136 @@
       ],
       "answerIndex": 3,
       "explanation": "複素数の範囲では、n 次方程式は重解も数えて n 個の解をもつ。"
+    },
+    {
+      "id": "mat_m204_011",
+      "category": "calculation",
+      "prompt": "(3+2i)−(1−4i) を計算すると？",
+      "choices": [
+        "2−2i",
+        "2+6i",
+        "4+6i",
+        "2+2i"
+      ],
+      "answerIndex": 1,
+      "explanation": "実部どうし・虚部どうしを計算する。"
+    },
+    {
+      "id": "mat_m204_012",
+      "category": "calculation",
+      "prompt": "(2+i)² を計算すると？",
+      "choices": [
+        "3+2i",
+        "3+4i",
+        "4+4i",
+        "5+4i"
+      ],
+      "answerIndex": 1,
+      "explanation": "4+4i+i²=3+4i。"
+    },
+    {
+      "id": "mat_m204_013",
+      "category": "calculation",
+      "prompt": "i⁴ の値は？",
+      "choices": [
+        "1",
+        "−i",
+        "−1",
+        "i"
+      ],
+      "answerIndex": 0,
+      "explanation": "i²=−1 なので i⁴=(i²)²=1。"
+    },
+    {
+      "id": "mat_m204_014",
+      "category": "calculation",
+      "prompt": "3+4i と共役な複素数は？",
+      "choices": [
+        "−3−4i",
+        "4+3i",
+        "−3+4i",
+        "3−4i"
+      ],
+      "answerIndex": 3,
+      "explanation": "虚部の符号を変える。"
+    },
+    {
+      "id": "mat_m204_015",
+      "category": "calculation",
+      "prompt": "√(−2)×√(−8) の値は？",
+      "choices": [
+        "−4i",
+        "4i",
+        "4",
+        "−4"
+      ],
+      "answerIndex": 3,
+      "explanation": "√2 i×√8 i=4i²=−4。√(16) としないよう注意。"
+    },
+    {
+      "id": "mat_m204_016",
+      "category": "calculation",
+      "prompt": "方程式 x²+4=0 を解くと？",
+      "choices": [
+        "x=±4i",
+        "x=2i",
+        "x=±2i",
+        "x=±2"
+      ],
+      "answerIndex": 2,
+      "explanation": "x²=−4。"
+    },
+    {
+      "id": "mat_m204_017",
+      "category": "calculation",
+      "prompt": "2次方程式 x²−2x+3=0 の判別式 D の値は？",
+      "choices": [
+        "−8",
+        "8",
+        "16",
+        "−4"
+      ],
+      "answerIndex": 0,
+      "explanation": "D=(−2)²−4·1·3=4−12。"
+    },
+    {
+      "id": "mat_m204_018",
+      "category": "calculation",
+      "prompt": "2次方程式 2x²+6x−5=0 の2つの解の和は？",
+      "choices": [
+        "−5/2",
+        "3",
+        "−3",
+        "6"
+      ],
+      "answerIndex": 2,
+      "explanation": "解と係数の関係：−b/a=−6/2。"
+    },
+    {
+      "id": "mat_m204_019",
+      "category": "calculation",
+      "prompt": "2次方程式 2x²+6x−5=0 の2つの解の積は？",
+      "choices": [
+        "−5",
+        "−3",
+        "−5/2",
+        "5/2"
+      ],
+      "answerIndex": 2,
+      "explanation": "c/a=−5/2。"
+    },
+    {
+      "id": "mat_m204_020",
+      "category": "knowledge",
+      "prompt": "2次方程式 ax²+bx+c=0（a、b、c は実数）が異なる2つの虚数解をもつ条件は？",
+      "choices": [
+        "a<0",
+        "b²−4ac=0",
+        "b²−4ac>0",
+        "b²−4ac<0"
+      ],
+      "answerIndex": 3,
+      "explanation": "判別式が負のとき、解は互いに共役な虚数になる。"
     }
   ]
 }

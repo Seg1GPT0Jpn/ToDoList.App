@@ -211,6 +211,214 @@
       ],
       "answerIndex": 0,
       "explanation": "雨の速度から自分の速度を引いた相対速度は、前から後ろへ向く成分をもつ。"
+    },
+    {
+      "id": "sci_phy09_017",
+      "category": "knowledge",
+      "prompt": "斜方投射された物体の水平方向の運動は？",
+      "choices": [
+        "等加速度運動",
+        "静止",
+        "等速直線運動",
+        "減速運動"
+      ],
+      "answerIndex": 2,
+      "explanation": "水平方向には力がはたらかない。"
+    },
+    {
+      "id": "sci_phy09_018",
+      "category": "knowledge",
+      "prompt": "斜方投射された物体の鉛直方向の運動は？",
+      "choices": [
+        "鉛直投げ上げと同じ（加速度 −g）",
+        "自由落下",
+        "加速度 +g",
+        "等速直線運動"
+      ],
+      "answerIndex": 0,
+      "explanation": "初速度の鉛直成分で投げ上げたのと同じ。"
+    },
+    {
+      "id": "sci_phy09_019",
+      "category": "knowledge",
+      "prompt": "水平投射で、地面に着くまでの時間は何で決まる？",
+      "choices": [
+        "水平距離",
+        "物体の質量",
+        "投げた高さ",
+        "初速度の大きさ"
+      ],
+      "answerIndex": 2,
+      "explanation": "鉛直方向は自由落下なので、高さだけで決まる。"
+    },
+    {
+      "id": "sci_phy09_020",
+      "category": "knowledge",
+      "prompt": "物体 A の速度が vA、物体 B の速度が vB のとき、B から見た A の相対速度は？",
+      "choices": [
+        "vA + vB",
+        "vA − vB",
+        "vA × vB",
+        "vB − vA"
+      ],
+      "answerIndex": 1,
+      "explanation": "「見られる物 − 見る人」。"
+    },
+    {
+      "id": "sci_phy09_021",
+      "category": "knowledge",
+      "prompt": "速度の分解で、水平から角 θ で速さ v の速度の水平成分は？",
+      "choices": [
+        "v tan θ",
+        "v sin θ",
+        "v/cos θ",
+        "v cos θ"
+      ],
+      "answerIndex": 3,
+      "explanation": "鉛直成分は v sin θ。"
+    },
+    {
+      "id": "sci_phy09_022",
+      "category": "knowledge",
+      "prompt": "空気抵抗を無視したとき、同じ初速で 30° と 60° に投げた物体の水平到達距離の関係は？",
+      "choices": [
+        "等しい",
+        "比べられない",
+        "60° の方が長い",
+        "30° の方が長い"
+      ],
+      "answerIndex": 0,
+      "explanation": "到達距離は sin 2θ に比例し、sin 60° ＝ sin 120°。"
+    },
+    {
+      "id": "sci_phy09_023",
+      "category": "calculation",
+      "prompt": "高さ 4.9 m の所から水平に投げた。地面に落ちるまでの時間は？（g ＝ 9.8 m/s²）",
+      "choices": [
+        "1.0 s",
+        "4.9 s",
+        "2.0 s",
+        "0.50 s"
+      ],
+      "answerIndex": 0,
+      "explanation": "4.9 ＝ ½ × 9.8 × t²。"
+    },
+    {
+      "id": "sci_phy09_024",
+      "category": "calculation",
+      "prompt": "前問で、初速度 8.0 m/s で投げたときの水平到達距離は？",
+      "choices": [
+        "8.0 m",
+        "39 m",
+        "16 m",
+        "4.0 m"
+      ],
+      "answerIndex": 0,
+      "explanation": "8.0 × 1.0。"
+    },
+    {
+      "id": "sci_phy09_025",
+      "category": "calculation",
+      "prompt": "水平に 10 m/s で投げた物体の、2.0 s 後の速さは？（g ＝ 9.8 m/s²）",
+      "choices": [
+        "約 10 m/s",
+        "約 30 m/s",
+        "約 20 m/s",
+        "約 22 m/s"
+      ],
+      "answerIndex": 3,
+      "explanation": "鉛直成分 19.6 m/s、√(100 + 384) ≒ 22。"
+    },
+    {
+      "id": "sci_phy09_026",
+      "category": "calculation",
+      "prompt": "初速度 20 m/s、水平から 60° 上向きに投げた。初速度の水平成分は？",
+      "choices": [
+        "10 m/s",
+        "12 m/s",
+        "20 m/s",
+        "17 m/s"
+      ],
+      "answerIndex": 0,
+      "explanation": "20 × cos 60°。"
+    },
+    {
+      "id": "sci_phy09_027",
+      "category": "calculation",
+      "prompt": "初速度の鉛直成分 19.6 m/s で斜めに投げた。最高点の高さは？（g ＝ 9.8 m/s²）",
+      "choices": [
+        "19.6 m",
+        "2.0 m",
+        "39.2 m",
+        "9.8 m"
+      ],
+      "answerIndex": 0,
+      "explanation": "19.6² ＝ 2 × 9.8 × h。"
+    },
+    {
+      "id": "sci_phy09_028",
+      "category": "calculation",
+      "prompt": "同じ物体の、投げてから同じ高さにもどるまでの時間は？",
+      "choices": [
+        "8.0 s",
+        "2.0 s",
+        "1.0 s",
+        "4.0 s"
+      ],
+      "answerIndex": 3,
+      "explanation": "最高点まで 2.0 s、その2倍。"
+    },
+    {
+      "id": "sci_phy09_029",
+      "category": "calculation",
+      "prompt": "静水で 5.0 m/s の船が、流れの速さ 3.0 m/s の川を下流に向かって進む。岸から見た速さは？",
+      "choices": [
+        "4.0 m/s",
+        "5.8 m/s",
+        "8.0 m/s",
+        "2.0 m/s"
+      ],
+      "answerIndex": 2,
+      "explanation": "同じ向きなので足す。"
+    },
+    {
+      "id": "sci_phy09_030",
+      "category": "calculation",
+      "prompt": "東へ 30 m/s の電車から、北へ 40 m/s で飛ぶ鳥を見ると、相対速度の大きさは？",
+      "choices": [
+        "50 m/s",
+        "10 m/s",
+        "70 m/s",
+        "35 m/s"
+      ],
+      "answerIndex": 0,
+      "explanation": "相対速度（北へ 40、西へ 30）の大きさ √(1600 + 900)。"
+    },
+    {
+      "id": "sci_phy09_031",
+      "category": "thinking",
+      "prompt": "水平投射の運動を「水平方向」と「鉛直方向」に分けて考えられる理由は？",
+      "choices": [
+        "重力が水平方向にもはたらくから",
+        "速さが一定だから",
+        "2つの方向の運動が互いに影響しない（独立している）から",
+        "軌跡が直線だから"
+      ],
+      "answerIndex": 2,
+      "explanation": "水平は等速、鉛直は自由落下として別々に計算できる。"
+    },
+    {
+      "id": "sci_phy09_032",
+      "category": "thinking",
+      "prompt": "走る電車の中で真上にボールを投げると、ボールは手元にもどる。その理由は？",
+      "choices": [
+        "電車の中は重力がないから",
+        "ボールも投げる前から電車と同じ水平の速度をもっているから",
+        "電車が止まっているから",
+        "空気がボールを押すから"
+      ],
+      "answerIndex": 1,
+      "explanation": "慣性により水平方向の速度が保たれる。"
     }
   ]
 }

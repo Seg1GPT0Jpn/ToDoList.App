@@ -133,6 +133,136 @@
       ],
       "answerIndex": 0,
       "explanation": "等号は a=b のとき。"
+    },
+    {
+      "id": "mat_m201_011",
+      "category": "calculation",
+      "prompt": "(a−b)³ を展開すると？",
+      "choices": [
+        "a³−b³",
+        "a³−3a²b+3ab²−b³",
+        "a³+3a²b−3ab²−b³",
+        "a³−3a²b−3ab²−b³"
+      ],
+      "answerIndex": 1,
+      "explanation": "(a−b)³=a³−3a²b+3ab²−b³。符号が交互に変わる。"
+    },
+    {
+      "id": "mat_m201_012",
+      "category": "calculation",
+      "prompt": "(x+1)⁴ の展開式における x² の係数は？",
+      "choices": [
+        "4",
+        "1",
+        "12",
+        "6"
+      ],
+      "answerIndex": 3,
+      "explanation": "₄C₂=6。"
+    },
+    {
+      "id": "mat_m201_013",
+      "category": "calculation",
+      "prompt": "(x−2)⁵ の展開式における x⁴ の係数は？",
+      "choices": [
+        "−10",
+        "10",
+        "−32",
+        "−5"
+      ],
+      "answerIndex": 0,
+      "explanation": "₅C₁·(−2)=−10。"
+    },
+    {
+      "id": "mat_m201_014",
+      "category": "calculation",
+      "prompt": "(x³+2x−1)÷(x−1) の余りは？",
+      "choices": [
+        "1",
+        "0",
+        "−2",
+        "2"
+      ],
+      "answerIndex": 3,
+      "explanation": "x=1 を代入すると 1+2−1=2（剰余の定理）。"
+    },
+    {
+      "id": "mat_m201_015",
+      "category": "calculation",
+      "prompt": "(2x²+x−1)÷(x+1) の商は？",
+      "choices": [
+        "2x−3",
+        "x−1",
+        "2x+1",
+        "2x−1"
+      ],
+      "answerIndex": 3,
+      "explanation": "2x²+x−1=(x+1)(2x−1)。割り切れる。"
+    },
+    {
+      "id": "mat_m201_016",
+      "category": "calculation",
+      "prompt": "1/(x−1)−1/(x+1) を計算すると？",
+      "choices": [
+        "2/(x²−1)",
+        "0",
+        "−2/(x²−1)",
+        "2x/(x²−1)"
+      ],
+      "answerIndex": 0,
+      "explanation": "通分：{(x+1)−(x−1)}/{(x−1)(x+1)}。"
+    },
+    {
+      "id": "mat_m201_017",
+      "category": "calculation",
+      "prompt": "(x²−4)/(x²+4x+4) を約分すると？",
+      "choices": [
+        "(x−2)/(x+2)",
+        "(x−2)/(x+4)",
+        "−1",
+        "(x+2)/(x−2)"
+      ],
+      "answerIndex": 0,
+      "explanation": "分子 (x+2)(x−2)、分母 (x+2)²。"
+    },
+    {
+      "id": "mat_m201_018",
+      "category": "calculation",
+      "prompt": "x²+ax+2=x²+3x+b が x についての恒等式のとき、a+b は？",
+      "choices": [
+        "5",
+        "6",
+        "3",
+        "1"
+      ],
+      "answerIndex": 0,
+      "explanation": "係数を比べて a=3、b=2。"
+    },
+    {
+      "id": "mat_m201_019",
+      "category": "calculation",
+      "prompt": "a>0 のとき、a+4/a の最小値は？",
+      "choices": [
+        "4",
+        "2",
+        "5",
+        "8"
+      ],
+      "answerIndex": 0,
+      "explanation": "相加平均≧相乗平均：a+4/a≧2√4=4。等号は a=2。"
+    },
+    {
+      "id": "mat_m201_020",
+      "category": "knowledge",
+      "prompt": "等式 A=B を証明する方法として正しくないものは？",
+      "choices": [
+        "A を変形して B を導く",
+        "A−B を計算して0になることを示す",
+        "A と B に同じ数を1つだけ代入して等しいことを示す",
+        "A と B をそれぞれ変形して同じ式にする"
+      ],
+      "answerIndex": 2,
+      "explanation": "1つの値で成り立っても、すべての値で成り立つとは限らない。"
     }
   ]
 }

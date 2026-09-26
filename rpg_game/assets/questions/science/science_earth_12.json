@@ -211,6 +211,214 @@
       ],
       "answerIndex": 2,
       "explanation": "北半球の地衡風は、高気圧を右に、低気圧を左に見て吹く。"
+    },
+    {
+      "id": "sci_ear12_017",
+      "category": "knowledge",
+      "prompt": "乾燥断熱減率はおよそ？",
+      "choices": [
+        "100 m につき約 0.1 ℃",
+        "100 m につき約 0.5 ℃",
+        "100 m につき約 3 ℃",
+        "100 m につき約 1 ℃"
+      ],
+      "answerIndex": 3,
+      "explanation": "飽和していない空気が上昇するときの温度の下がり方。"
+    },
+    {
+      "id": "sci_ear12_018",
+      "category": "knowledge",
+      "prompt": "湿潤断熱減率はおよそ？",
+      "choices": [
+        "100 m につき約 1 ℃",
+        "100 m につき約 0.5 ℃",
+        "0 ℃",
+        "100 m につき約 2 ℃"
+      ],
+      "answerIndex": 1,
+      "explanation": "凝結熱が出るので、乾燥断熱減率より小さい。"
+    },
+    {
+      "id": "sci_ear12_019",
+      "category": "knowledge",
+      "prompt": "地球放射（地球が出す電磁波）の主な波長域は？",
+      "choices": [
+        "X 線",
+        "可視光線だけ",
+        "紫外線",
+        "赤外線"
+      ],
+      "answerIndex": 3,
+      "explanation": "地表の温度に対応した長い波長。"
+    },
+    {
+      "id": "sci_ear12_020",
+      "category": "knowledge",
+      "prompt": "低緯度から高緯度へ熱を運んでいるものは？",
+      "choices": [
+        "地震",
+        "大気の循環と海流",
+        "地磁気",
+        "火山"
+      ],
+      "answerIndex": 1,
+      "explanation": "熱の過不足をならしている。"
+    },
+    {
+      "id": "sci_ear12_021",
+      "category": "knowledge",
+      "prompt": "極付近で冷えて下降し、地上で低緯度側へ吹き出す風は？",
+      "choices": [
+        "極東風",
+        "季節風",
+        "偏西風",
+        "貿易風"
+      ],
+      "answerIndex": 0,
+      "explanation": "極高圧帯から吹き出す東よりの風。"
+    },
+    {
+      "id": "sci_ear12_022",
+      "category": "knowledge",
+      "prompt": "亜熱帯高圧帯ができる緯度はおよそ？",
+      "choices": [
+        "緯度 30° 付近",
+        "赤道付近",
+        "極付近",
+        "緯度 60° 付近"
+      ],
+      "answerIndex": 0,
+      "explanation": "ハドレー循環の下降流がある。"
+    },
+    {
+      "id": "sci_ear12_023",
+      "category": "knowledge",
+      "prompt": "熱帯収束帯（赤道低圧帯）で多い天気は？",
+      "choices": [
+        "雪が多い",
+        "晴天が続く",
+        "乾燥した強風",
+        "強い上昇気流による積乱雲と大雨"
+      ],
+      "answerIndex": 3,
+      "explanation": "貿易風が集まり上昇する。"
+    },
+    {
+      "id": "sci_ear12_024",
+      "category": "knowledge",
+      "prompt": "転向力（コリオリの力）が生じる理由は？",
+      "choices": [
+        "気圧の差があるから",
+        "月の引力があるから",
+        "地球が自転しているから",
+        "地球が公転しているから"
+      ],
+      "answerIndex": 2,
+      "explanation": "北半球では進行方向の右向きに見える。"
+    },
+    {
+      "id": "sci_ear12_025",
+      "category": "knowledge",
+      "prompt": "地衡風の向きは、北半球で等圧線に対してどうなっている？",
+      "choices": [
+        "低圧側を右に見て吹く",
+        "高圧側へ吹く",
+        "等圧線に平行で、高圧側を右に見て吹く",
+        "等圧線に垂直"
+      ],
+      "answerIndex": 2,
+      "explanation": "気圧傾度力と転向力がつり合う。"
+    },
+    {
+      "id": "sci_ear12_026",
+      "category": "calculation",
+      "prompt": "地上 30 ℃ の飽和していない空気が 1500 m 上昇すると、気温は？（乾燥断熱減率 1 ℃/100 m）",
+      "choices": [
+        "15 ℃",
+        "25 ℃",
+        "0 ℃",
+        "28.5 ℃"
+      ],
+      "answerIndex": 0,
+      "explanation": "30 − 15。"
+    },
+    {
+      "id": "sci_ear12_027",
+      "category": "calculation",
+      "prompt": "地上の気温 25 ℃、露点 17 ℃ の空気が上昇したとき、雲ができ始める高さはおよそ？（露点は 100 m で 0.2 ℃ 下がるとする）",
+      "choices": [
+        "800 m",
+        "1700 m",
+        "1000 m",
+        "500 m"
+      ],
+      "answerIndex": 2,
+      "explanation": "1 ℃/100 m と 0.2 ℃/100 m の差 0.8 ℃/100 m で、差 8 ℃ が縮まるのは 1000 m。"
+    },
+    {
+      "id": "sci_ear12_028",
+      "category": "calculation",
+      "prompt": "雲底 1000 m の空気が山頂 2000 m まで上昇した。雲底の気温が 15 ℃ のとき、山頂の気温は？（湿潤断熱減率 0.5 ℃/100 m）",
+      "choices": [
+        "12 ℃",
+        "0 ℃",
+        "5 ℃",
+        "10 ℃"
+      ],
+      "answerIndex": 3,
+      "explanation": "15 − 5。"
+    },
+    {
+      "id": "sci_ear12_029",
+      "category": "calculation",
+      "prompt": "前問の空気が、雲がなくなって山頂から 0 m まで吹き下りた。ふもとの気温は？（乾燥断熱減率 1 ℃/100 m）",
+      "choices": [
+        "20 ℃",
+        "25 ℃",
+        "10 ℃",
+        "30 ℃"
+      ],
+      "answerIndex": 3,
+      "explanation": "10 + 20。フェーン現象。"
+    },
+    {
+      "id": "sci_ear12_030",
+      "category": "calculation",
+      "prompt": "太陽定数が約 1.37 kW/m²。受けた日射の約 30 % を反射するとき、吸収する割合は？",
+      "choices": [
+        "約 50 %",
+        "約 30 %",
+        "約 100 %",
+        "約 70 %"
+      ],
+      "answerIndex": 3,
+      "explanation": "100 − 30。"
+    },
+    {
+      "id": "sci_ear12_031",
+      "category": "thinking",
+      "prompt": "「海風」が昼に吹く理由は？",
+      "choices": [
+        "陸の方が早く温まって上昇気流ができ、気圧が低くなるから",
+        "海の方が温まりやすいから",
+        "夜に冷えるから",
+        "地球が自転しているから"
+      ],
+      "answerIndex": 0,
+      "explanation": "夜は逆に陸の方が冷えて陸風が吹く。"
+    },
+    {
+      "id": "sci_ear12_032",
+      "category": "thinking",
+      "prompt": "北半球の低気圧のまわりで風が反時計回りに吹きこむ理由は？",
+      "choices": [
+        "低気圧が回転しているから",
+        "気圧傾度力で中心に向かう風が、転向力で右にそらされるから",
+        "地球の公転の影響",
+        "南風が強いから"
+      ],
+      "answerIndex": 1,
+      "explanation": "摩擦で等圧線を斜めに横切りながら吹きこむ。"
     }
   ]
 }

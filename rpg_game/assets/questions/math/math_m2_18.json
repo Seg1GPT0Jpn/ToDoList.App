@@ -133,6 +133,136 @@
       ],
       "answerIndex": 0,
       "explanation": "微分積分学の基本定理。"
+    },
+    {
+      "id": "mat_m218_011",
+      "category": "calculation",
+      "prompt": "放物線 y=x²−4x+3 と x 軸で囲まれた部分の面積は？",
+      "choices": [
+        "2/3",
+        "8/3",
+        "4/3",
+        "2"
+      ],
+      "answerIndex": 2,
+      "explanation": "解 1、3。(1/6)(3−1)³=4/3。"
+    },
+    {
+      "id": "mat_m218_012",
+      "category": "calculation",
+      "prompt": "放物線 y=x²−1 と直線 y=x+1 で囲まれた部分の面積は？",
+      "choices": [
+        "4",
+        "8/3",
+        "9/2",
+        "9/4"
+      ],
+      "answerIndex": 2,
+      "explanation": "x²−x−2=0 → x=−1、2。(1/6)·3³=9/2。"
+    },
+    {
+      "id": "mat_m218_013",
+      "category": "calculation",
+      "prompt": "曲線 y=x³−3x の接線のうち、傾きが0のものは？",
+      "choices": [
+        "y=2 と y=−2",
+        "y=0",
+        "y=3 と y=−3",
+        "y=1 と y=−1"
+      ],
+      "answerIndex": 0,
+      "explanation": "y′=3x²−3=0 → x=±1。y=∓2。"
+    },
+    {
+      "id": "mat_m218_014",
+      "category": "calculation",
+      "prompt": "f(x)=x³+ax²+bx+1 が x=−1 で極大、x=3 で極小となるとき、a、b は？",
+      "choices": [
+        "a=3、b=9",
+        "a=−3、b=−9",
+        "a=−3、b=9",
+        "a=3、b=−9"
+      ],
+      "answerIndex": 1,
+      "explanation": "f′=3x²+2ax+b の解が −1、3 → 和2=−2a/3、積−3=b/3。"
+    },
+    {
+      "id": "mat_m218_015",
+      "category": "calculation",
+      "prompt": "周の長さが12の長方形の面積の最大値は？",
+      "choices": [
+        "36",
+        "8",
+        "12",
+        "9"
+      ],
+      "answerIndex": 3,
+      "explanation": "縦 x、横 6−x。x(6−x) は x=3 で最大9。"
+    },
+    {
+      "id": "mat_m218_016",
+      "category": "calculation",
+      "prompt": "∫₀² |x−1| dx の値は？",
+      "choices": [
+        "2",
+        "1/2",
+        "1",
+        "0"
+      ],
+      "answerIndex": 2,
+      "explanation": "2つの三角形（面積 1/2 ずつ）。"
+    },
+    {
+      "id": "mat_m218_017",
+      "category": "calculation",
+      "prompt": "f(x)=3x²−∫₀¹ f(t) dt を満たす f(x) は？",
+      "choices": [
+        "3x²−1",
+        "3x²+1",
+        "3x²+1/2",
+        "3x²−1/2"
+      ],
+      "answerIndex": 3,
+      "explanation": "∫₀¹ f(t) dt=a（定数）とおくと f(x)=3x²−a。a=∫₀¹(3t²−a)dt=1−a より a=1/2。"
+    },
+    {
+      "id": "mat_m218_018",
+      "category": "calculation",
+      "prompt": "x 軸上を動く点の速度が v(t)=2t（m/s）のとき、0秒から3秒までに進む距離は？",
+      "choices": [
+        "18 m",
+        "3 m",
+        "9 m",
+        "6 m"
+      ],
+      "answerIndex": 2,
+      "explanation": "∫₀³ 2t dt=9。"
+    },
+    {
+      "id": "mat_m218_019",
+      "category": "calculation",
+      "prompt": "放物線 y=x² と直線 y=4 で囲まれた部分の面積は？",
+      "choices": [
+        "16/3",
+        "32/3",
+        "16",
+        "8"
+      ],
+      "answerIndex": 1,
+      "explanation": "∫₋₂² (4−x²) dx=32/3。"
+    },
+    {
+      "id": "mat_m218_020",
+      "category": "thinking",
+      "prompt": "「∫ₐᵇ f(x) dx は面積」と言えないことがあるのはどんなとき？",
+      "choices": [
+        "f(x) が負になる区間をふくむとき",
+        "a<b のとき",
+        "f(x) が2次関数のとき",
+        "f(x) が定数のとき"
+      ],
+      "answerIndex": 0,
+      "explanation": "x 軸より下の部分は負として計算されるので、面積は絶対値を考える。"
     }
   ]
 }

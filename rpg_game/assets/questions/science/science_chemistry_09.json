@@ -211,6 +211,214 @@
       ],
       "answerIndex": 2,
       "explanation": "ふつうは分子量が大きいほど沸点が高いが、水は水素結合があるため例外的に高い。"
+    },
+    {
+      "id": "sci_chm09_017",
+      "category": "knowledge",
+      "prompt": "液体が表面だけでなく内部からも気体になる現象は？",
+      "choices": [
+        "凝縮",
+        "昇華",
+        "沸騰",
+        "蒸発"
+      ],
+      "answerIndex": 2,
+      "explanation": "蒸気圧が外圧と等しくなると内部からも気泡が生じる。"
+    },
+    {
+      "id": "sci_chm09_018",
+      "category": "knowledge",
+      "prompt": "気体が液体に変わる変化を何という？",
+      "choices": [
+        "凝固",
+        "蒸発",
+        "凝縮",
+        "融解"
+      ],
+      "answerIndex": 2,
+      "explanation": "冷やしたコップの表面に水滴がつくのも凝縮。"
+    },
+    {
+      "id": "sci_chm09_019",
+      "category": "knowledge",
+      "prompt": "固体を加熱して融解している間、温度が一定になる理由は？",
+      "choices": [
+        "体積が変わらないから",
+        "熱が逃げていくから",
+        "圧力が下がるから",
+        "加えた熱が粒子の結合を切るのに使われるから"
+      ],
+      "answerIndex": 3,
+      "explanation": "融解熱として吸収される。"
+    },
+    {
+      "id": "sci_chm09_020",
+      "category": "knowledge",
+      "prompt": "ボイル・シャルルの法則を表す式は？",
+      "choices": [
+        "PVT ＝ 一定",
+        "PV/T ＝ 一定",
+        "P/VT ＝ 一定",
+        "PT/V ＝ 一定"
+      ],
+      "answerIndex": 1,
+      "explanation": "一定量の気体について成り立つ。"
+    },
+    {
+      "id": "sci_chm09_021",
+      "category": "knowledge",
+      "prompt": "気体定数 R の値として正しいものは？",
+      "choices": [
+        "22.4 L/mol",
+        "6.0 × 10²³ /mol",
+        "8.3 × 10³ Pa·L/(K·mol)",
+        "8.3 Pa·L/(K·mol)"
+      ],
+      "answerIndex": 2,
+      "explanation": "PV ＝ nRT で P を Pa、V を L で表すとき。"
+    },
+    {
+      "id": "sci_chm09_022",
+      "category": "knowledge",
+      "prompt": "実在気体が理想気体に近いふるまいをする条件は？",
+      "choices": [
+        "高温・高圧",
+        "高温・低圧",
+        "低温・低圧",
+        "低温・高圧"
+      ],
+      "answerIndex": 1,
+      "explanation": "分子間力と分子自身の体積の影響が小さくなる。"
+    },
+    {
+      "id": "sci_chm09_023",
+      "category": "knowledge",
+      "prompt": "水の状態図で、固体と液体の境界線（融解曲線）が左上がりになっている理由は？",
+      "choices": [
+        "水は蒸発しやすいから",
+        "水の方が軽いから",
+        "氷の方が水より密度が小さいから",
+        "氷は昇華しないから"
+      ],
+      "answerIndex": 2,
+      "explanation": "圧力を上げると融点が下がる。スケートの説明にも使われる。"
+    },
+    {
+      "id": "sci_chm09_024",
+      "category": "knowledge",
+      "prompt": "ドライアイスが常圧で液体にならずに昇華する理由は？",
+      "choices": [
+        "CO₂ の分子量が大きいから",
+        "CO₂ の三重点の圧力が 1 気圧より高いから",
+        "温度が低すぎるから",
+        "CO₂ は極性分子だから"
+      ],
+      "answerIndex": 1,
+      "explanation": "三重点は約 5.1 × 10⁵ Pa。"
+    },
+    {
+      "id": "sci_chm09_025",
+      "category": "calculation",
+      "prompt": "温度一定で、2.0 × 10⁵ Pa、1.5 L の気体を 3.0 L にすると、圧力は？",
+      "choices": [
+        "0.5 × 10⁵ Pa",
+        "1.0 × 10⁵ Pa",
+        "2.0 × 10⁵ Pa",
+        "4.0 × 10⁵ Pa"
+      ],
+      "answerIndex": 1,
+      "explanation": "P₁V₁ ＝ P₂V₂。"
+    },
+    {
+      "id": "sci_chm09_026",
+      "category": "calculation",
+      "prompt": "圧力一定で、27 ℃ で 6.0 L の気体を −73 ℃ にすると、体積は？",
+      "choices": [
+        "9.0 L",
+        "2.0 L",
+        "16 L",
+        "4.0 L"
+      ],
+      "answerIndex": 3,
+      "explanation": "6.0 × 200/300。"
+    },
+    {
+      "id": "sci_chm09_027",
+      "category": "calculation",
+      "prompt": "0.50 mol の気体が 27 ℃、10 L の容器にある。圧力は？（R ＝ 8.3 × 10³ Pa·L/(K·mol)）",
+      "choices": [
+        "約 1.2 × 10⁵ Pa",
+        "約 2.5 × 10⁵ Pa",
+        "約 1.1 × 10⁴ Pa",
+        "約 6.2 × 10³ Pa"
+      ],
+      "answerIndex": 0,
+      "explanation": "P ＝ nRT/V ＝ 0.50 × 8.3 × 10³ × 300 ÷ 10。"
+    },
+    {
+      "id": "sci_chm09_028",
+      "category": "calculation",
+      "prompt": "全圧 1.0 × 10⁵ Pa の混合気体で、酸素のモル分率が 0.25 のとき、酸素の分圧は？",
+      "choices": [
+        "2.5 × 10⁴ Pa",
+        "7.5 × 10⁴ Pa",
+        "1.0 × 10⁵ Pa",
+        "4.0 × 10⁵ Pa"
+      ],
+      "answerIndex": 0,
+      "explanation": "分圧 ＝ 全圧 × モル分率。"
+    },
+    {
+      "id": "sci_chm09_029",
+      "category": "calculation",
+      "prompt": "27 ℃、1.0 × 10⁵ Pa で 2.49 L の気体の質量が 3.2 g だった。この気体の分子量は？（R ＝ 8.3 × 10³）",
+      "choices": [
+        "32",
+        "28",
+        "64",
+        "16"
+      ],
+      "answerIndex": 0,
+      "explanation": "n ＝ PV/RT ＝ 0.10 mol。3.2 ÷ 0.10。"
+    },
+    {
+      "id": "sci_chm09_030",
+      "category": "calculation",
+      "prompt": "窒素（分子量 28）と酸素（分子量 32）を物質量比 1：1 で混ぜた気体の平均分子量は？",
+      "choices": [
+        "60",
+        "28.8",
+        "30",
+        "29"
+      ],
+      "answerIndex": 2,
+      "explanation": "(28 + 32) ÷ 2。"
+    },
+    {
+      "id": "sci_chm09_031",
+      "category": "thinking",
+      "prompt": "密閉容器の水を加熱し続けても沸騰しないことがある理由は？",
+      "choices": [
+        "温度が上がらないから",
+        "水蒸気が液体にもどらないから",
+        "水がなくなるから",
+        "容器内の圧力が上がり、沸点も上がるから"
+      ],
+      "answerIndex": 3,
+      "explanation": "外圧が大きいほど沸点が高い。"
+    },
+    {
+      "id": "sci_chm09_032",
+      "category": "thinking",
+      "prompt": "エタノール（分子量 46）がジメチルエーテル（同じ分子量）より沸点が高い理由は？",
+      "choices": [
+        "エタノールは無極性だから",
+        "ジメチルエーテルはイオン結合だから",
+        "エタノールの方が分子が大きいから",
+        "エタノールは分子間で水素結合をつくるから"
+      ],
+      "answerIndex": 3,
+      "explanation": "O−H 基どうしで水素結合をつくる。"
     }
   ]
 }

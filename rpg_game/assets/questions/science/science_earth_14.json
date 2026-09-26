@@ -211,6 +211,214 @@
       ],
       "answerIndex": 2,
       "explanation": "右側は危険半円と呼ばれる。左側は風と移動の向きが逆になり、少し弱まる。"
+    },
+    {
+      "id": "sci_ear14_017",
+      "category": "knowledge",
+      "prompt": "北半球の高気圧で、地上付近の風の吹き方は？",
+      "choices": [
+        "反時計回りに吹きこむ",
+        "時計回りに吹きこむ",
+        "時計回りに吹き出す",
+        "風はない"
+      ],
+      "answerIndex": 2,
+      "explanation": "中心には下降気流がある。"
+    },
+    {
+      "id": "sci_ear14_018",
+      "category": "knowledge",
+      "prompt": "低気圧の中心付近で天気が悪くなりやすい理由は？",
+      "choices": [
+        "風が弱いから",
+        "気温が高いから",
+        "下降気流があるから",
+        "上昇気流ができて雲が発生しやすいから"
+      ],
+      "answerIndex": 3,
+      "explanation": "空気が上昇して冷え、水蒸気が凝結する。"
+    },
+    {
+      "id": "sci_ear14_019",
+      "category": "knowledge",
+      "prompt": "温暖前線付近で広い範囲に降る雨の特徴は？",
+      "choices": [
+        "短時間の激しい雨",
+        "雨は降らない",
+        "おだやかな雨が長時間続く",
+        "雪だけ"
+      ],
+      "answerIndex": 2,
+      "explanation": "乱層雲などの層状の雲ができる。"
+    },
+    {
+      "id": "sci_ear14_020",
+      "category": "knowledge",
+      "prompt": "寒冷前線の通過時に見られることは？",
+      "choices": [
+        "風がなくなる",
+        "気温の上昇",
+        "にわか雨や雷、突風、気温の急な低下",
+        "長時間のおだやかな雨"
+      ],
+      "answerIndex": 2,
+      "explanation": "積乱雲が発達しやすい。"
+    },
+    {
+      "id": "sci_ear14_021",
+      "category": "knowledge",
+      "prompt": "寒冷前線が温暖前線に追いついてできる前線は？",
+      "choices": [
+        "梅雨前線",
+        "閉塞前線",
+        "秋雨前線",
+        "停滞前線"
+      ],
+      "answerIndex": 1,
+      "explanation": "温帯低気圧の衰弱期に見られる。"
+    },
+    {
+      "id": "sci_ear14_022",
+      "category": "knowledge",
+      "prompt": "冬に日本海側で雪が多い理由は？",
+      "choices": [
+        "太平洋から湿った風が来るから",
+        "南からの暖かい風のため",
+        "大陸からの季節風が日本海で水蒸気を得て、山地にぶつかって雪を降らせるから",
+        "台風が来るから"
+      ],
+      "answerIndex": 2,
+      "explanation": "太平洋側は乾燥した晴天になりやすい。"
+    },
+    {
+      "id": "sci_ear14_023",
+      "category": "knowledge",
+      "prompt": "移動性高気圧が来る季節は主に？",
+      "choices": [
+        "夏だけ",
+        "春と秋",
+        "冬だけ",
+        "梅雨"
+      ],
+      "answerIndex": 1,
+      "explanation": "天気が周期的に変わる。"
+    },
+    {
+      "id": "sci_ear14_024",
+      "category": "knowledge",
+      "prompt": "台風が日本付近で進路を北東へ変える理由は？",
+      "choices": [
+        "地球の公転のため",
+        "偏西風に流されるから",
+        "貿易風に流されるから",
+        "海流に流されるから"
+      ],
+      "answerIndex": 1,
+      "explanation": "低緯度では貿易風で西へ、中緯度では偏西風で東へ。"
+    },
+    {
+      "id": "sci_ear14_025",
+      "category": "knowledge",
+      "prompt": "台風が上陸すると勢力が弱まる理由は？",
+      "choices": [
+        "陸の方が暑いから",
+        "山に吸収されるから",
+        "エネルギー源の水蒸気の供給が減り、地面との摩擦も大きいから",
+        "雨がやむから"
+      ],
+      "answerIndex": 2,
+      "explanation": "暖かい海からの水蒸気が主なエネルギー源。"
+    },
+    {
+      "id": "sci_ear14_026",
+      "category": "calculation",
+      "prompt": "天気図で、1008 hPa の等圧線から数えて低気圧側に 3 本目の等圧線は何 hPa？（4 hPa ごと）",
+      "choices": [
+        "1020 hPa",
+        "1000 hPa",
+        "1005 hPa",
+        "996 hPa"
+      ],
+      "answerIndex": 3,
+      "explanation": "1008 − 12。"
+    },
+    {
+      "id": "sci_ear14_027",
+      "category": "calculation",
+      "prompt": "台風の中心気圧が 950 hPa、周囲が 1010 hPa。気圧の差は？",
+      "choices": [
+        "1960 hPa",
+        "60 hPa",
+        "950 hPa",
+        "6 hPa"
+      ],
+      "answerIndex": 1,
+      "explanation": "1010 − 950。"
+    },
+    {
+      "id": "sci_ear14_028",
+      "category": "calculation",
+      "prompt": "台風が時速 30 km で進むと、300 km 先に着くのは約何時間後？",
+      "choices": [
+        "約 10 時間後",
+        "約 30 時間後",
+        "約 3 時間後",
+        "約 1 時間後"
+      ],
+      "answerIndex": 0,
+      "explanation": "300 ÷ 30。"
+    },
+    {
+      "id": "sci_ear14_029",
+      "category": "calculation",
+      "prompt": "1 時間に 50 mm の雨が 3 時間続いた。雨量は？",
+      "choices": [
+        "50 mm",
+        "17 mm",
+        "53 mm",
+        "150 mm"
+      ],
+      "answerIndex": 3,
+      "explanation": "50 × 3。"
+    },
+    {
+      "id": "sci_ear14_030",
+      "category": "thinking",
+      "prompt": "寒冷前線の通過で気温が急に下がる理由は？",
+      "choices": [
+        "風が弱まるから",
+        "前線の後ろ側の冷たい空気に入れかわるから",
+        "太陽がかくれるから",
+        "雨が降るから"
+      ],
+      "answerIndex": 1,
+      "explanation": "寒気が暖気の下にもぐりこむ。"
+    },
+    {
+      "id": "sci_ear14_031",
+      "category": "thinking",
+      "prompt": "天気が西から東へ変わりやすい理由は？",
+      "choices": [
+        "太陽が東から昇るから",
+        "上空の偏西風によって、低気圧や高気圧が西から東へ移動するから",
+        "地球が東から西に自転しているから",
+        "海流のため"
+      ],
+      "answerIndex": 1,
+      "explanation": "「夕焼けの翌日は晴れ」などの言い伝えにもつながる。"
+    },
+    {
+      "id": "sci_ear14_032",
+      "category": "thinking",
+      "prompt": "台風の進行方向の右側で風が強くなる理由は？",
+      "choices": [
+        "右側に山があるから",
+        "台風自身の反時計回りの風と、台風を動かす風の向きが重なるから",
+        "右側では雨が降らないから",
+        "右側の方が海が暖かいから"
+      ],
+      "answerIndex": 1,
+      "explanation": "左側では向きが逆になり、少し弱まる。"
     }
   ]
 }

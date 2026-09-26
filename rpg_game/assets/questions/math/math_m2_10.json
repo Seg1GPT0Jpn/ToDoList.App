@@ -133,6 +133,136 @@
       ],
       "answerIndex": 0,
       "explanation": "微分・積分でも公式が簡単になる。"
+    },
+    {
+      "id": "mat_m210_011",
+      "category": "calculation",
+      "prompt": "90° を弧度法で表すと？",
+      "choices": [
+        "π",
+        "2π",
+        "π/2",
+        "π/4"
+      ],
+      "answerIndex": 2,
+      "explanation": "180°=π なので 90°=π/2。"
+    },
+    {
+      "id": "mat_m210_012",
+      "category": "calculation",
+      "prompt": "5π/6 を度数法で表すと？",
+      "choices": [
+        "150°",
+        "165°",
+        "120°",
+        "135°"
+      ],
+      "answerIndex": 0,
+      "explanation": "(5/6)×180°。"
+    },
+    {
+      "id": "mat_m210_013",
+      "category": "calculation",
+      "prompt": "半径3、中心角 2π/3 の扇形の弧の長さは？",
+      "choices": [
+        "6π",
+        "π",
+        "2π",
+        "3π"
+      ],
+      "answerIndex": 2,
+      "explanation": "rθ=3×2π/3。"
+    },
+    {
+      "id": "mat_m210_014",
+      "category": "calculation",
+      "prompt": "半径6、中心角 π/3 の扇形の面積は？",
+      "choices": [
+        "6π",
+        "12π",
+        "3π",
+        "2π"
+      ],
+      "answerIndex": 0,
+      "explanation": "½r²θ=½·36·π/3。"
+    },
+    {
+      "id": "mat_m210_015",
+      "category": "calculation",
+      "prompt": "sin(3π/4) の値は？",
+      "choices": [
+        "√3/2",
+        "1/2",
+        "√2/2",
+        "−√2/2"
+      ],
+      "answerIndex": 2,
+      "explanation": "第2象限で sin は正。"
+    },
+    {
+      "id": "mat_m210_016",
+      "category": "calculation",
+      "prompt": "cos(2π/3) の値は？",
+      "choices": [
+        "−√3/2",
+        "√3/2",
+        "−1/2",
+        "1/2"
+      ],
+      "answerIndex": 2,
+      "explanation": "第2象限で cos は負。"
+    },
+    {
+      "id": "mat_m210_017",
+      "category": "calculation",
+      "prompt": "tan(π/6) の値は？",
+      "choices": [
+        "1",
+        "1/2",
+        "√3",
+        "1/√3"
+      ],
+      "answerIndex": 3,
+      "explanation": "sin/cos=(1/2)/(√3/2)。"
+    },
+    {
+      "id": "mat_m210_018",
+      "category": "calculation",
+      "prompt": "y=cos x の最大値は？",
+      "choices": [
+        "0",
+        "π",
+        "1",
+        "2"
+      ],
+      "answerIndex": 2,
+      "explanation": "−1≦cos x≦1。"
+    },
+    {
+      "id": "mat_m210_019",
+      "category": "calculation",
+      "prompt": "cos(−θ) と等しいものは？",
+      "choices": [
+        "−sin θ",
+        "sin θ",
+        "cos θ",
+        "−cos θ"
+      ],
+      "answerIndex": 2,
+      "explanation": "cos は偶関数。"
+    },
+    {
+      "id": "mat_m210_020",
+      "category": "knowledge",
+      "prompt": "sin²θ+cos²θ の値は？",
+      "choices": [
+        "1",
+        "0",
+        "tan²θ",
+        "2"
+      ],
+      "answerIndex": 0,
+      "explanation": "単位円上の点 (cos θ, sin θ) で三平方の定理。"
     }
   ]
 }

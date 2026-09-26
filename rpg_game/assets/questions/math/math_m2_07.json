@@ -133,6 +133,136 @@
       ],
       "answerIndex": 2,
       "explanation": "平行なら傾きが等しい。"
+    },
+    {
+      "id": "mat_m207_011",
+      "category": "calculation",
+      "prompt": "2点 (−1, 3)、(2, −1) の間の距離は？",
+      "choices": [
+        "√7",
+        "√5",
+        "7",
+        "5"
+      ],
+      "answerIndex": 3,
+      "explanation": "√(3²+4²)=5。"
+    },
+    {
+      "id": "mat_m207_012",
+      "category": "calculation",
+      "prompt": "2点 (−3, 5)、(1, 1) を結ぶ線分の中点は？",
+      "choices": [
+        "(−1, 2)",
+        "(−1, 3)",
+        "(−2, 6)",
+        "(2, 3)"
+      ],
+      "answerIndex": 1,
+      "explanation": "((−3+1)/2, (5+1)/2)。"
+    },
+    {
+      "id": "mat_m207_013",
+      "category": "calculation",
+      "prompt": "点 (2, −1) を通り、傾き −3 の直線の式は？",
+      "choices": [
+        "y=−3x+5",
+        "y=−3x−7",
+        "y=3x−7",
+        "y=−3x+7"
+      ],
+      "answerIndex": 0,
+      "explanation": "y+1=−3(x−2)。"
+    },
+    {
+      "id": "mat_m207_014",
+      "category": "calculation",
+      "prompt": "直線 2x−y+3=0 に平行で、原点を通る直線の式は？",
+      "choices": [
+        "y=−2x",
+        "y=2x+3",
+        "y=2x",
+        "y=x/2"
+      ],
+      "answerIndex": 2,
+      "explanation": "傾きが同じ2で、切片0。"
+    },
+    {
+      "id": "mat_m207_015",
+      "category": "calculation",
+      "prompt": "直線 y=3x−1 に垂直で点 (3, 0) を通る直線の式は？",
+      "choices": [
+        "y=x/3−1",
+        "y=−3x+9",
+        "y=−x/3−1",
+        "y=−x/3+1"
+      ],
+      "answerIndex": 3,
+      "explanation": "傾き −1/3、y=−(x−3)/3。"
+    },
+    {
+      "id": "mat_m207_016",
+      "category": "calculation",
+      "prompt": "中心 (0, 0) で点 (3, 4) を通る円の方程式は？",
+      "choices": [
+        "x²+y²=5",
+        "(x−3)²+(y−4)²=25",
+        "x²+y²=25",
+        "x²+y²=7"
+      ],
+      "answerIndex": 2,
+      "explanation": "半径は √(9+16)=5。"
+    },
+    {
+      "id": "mat_m207_017",
+      "category": "calculation",
+      "prompt": "円 x²+y²+2x−4y−4=0 の半径は？",
+      "choices": [
+        "2",
+        "9",
+        "3",
+        "√5"
+      ],
+      "answerIndex": 2,
+      "explanation": "(x+1)²+(y−2)²=9。"
+    },
+    {
+      "id": "mat_m207_018",
+      "category": "calculation",
+      "prompt": "原点と直線 x+y−4=0 の距離は？",
+      "choices": [
+        "2√2",
+        "4",
+        "2",
+        "√2"
+      ],
+      "answerIndex": 0,
+      "explanation": "|−4|/√2=2√2。"
+    },
+    {
+      "id": "mat_m207_019",
+      "category": "calculation",
+      "prompt": "2点 A(0, 0)、B(6, 3) を結ぶ線分を 2:1 に内分する点は？",
+      "choices": [
+        "(12, 6)",
+        "(3, 3/2)",
+        "(2, 1)",
+        "(4, 2)"
+      ],
+      "answerIndex": 3,
+      "explanation": "((1·0+2·6)/3, (1·0+2·3)/3)。"
+    },
+    {
+      "id": "mat_m207_020",
+      "category": "knowledge",
+      "prompt": "2直線 y=m₁x+n₁、y=m₂x+n₂ が平行（一致しない）であるための条件は？",
+      "choices": [
+        "n₁=n₂",
+        "m₁=m₂ かつ n₁≠n₂",
+        "m₁m₂=−1",
+        "m₁=−m₂"
+      ],
+      "answerIndex": 1,
+      "explanation": "傾きが等しく、切片がちがう。"
     }
   ]
 }

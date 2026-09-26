@@ -211,6 +211,214 @@
       ],
       "answerIndex": 2,
       "explanation": "両極とも水に溶けにくい PbSO₄ が表面につくので、どちらも質量が増える。"
+    },
+    {
+      "id": "sci_chm11_017",
+      "category": "knowledge",
+      "prompt": "吸熱反応の反応エンタルピー ΔH の符号は？",
+      "choices": [
+        "正",
+        "0",
+        "負",
+        "反応によってどちらでもない"
+      ],
+      "answerIndex": 0,
+      "explanation": "周囲から熱を吸収して、系のエンタルピーが増える。"
+    },
+    {
+      "id": "sci_chm11_018",
+      "category": "knowledge",
+      "prompt": "物質 1 mol が完全燃焼するときの反応エンタルピーを何という？",
+      "choices": [
+        "中和エンタルピー",
+        "溶解エンタルピー",
+        "生成エンタルピー",
+        "燃焼エンタルピー"
+      ],
+      "answerIndex": 3,
+      "explanation": "ふつう負の値。"
+    },
+    {
+      "id": "sci_chm11_019",
+      "category": "knowledge",
+      "prompt": "化合物 1 mol がその成分元素の単体から生成するときの反応エンタルピーは？",
+      "choices": [
+        "イオン化エネルギー",
+        "燃焼エンタルピー",
+        "結合エネルギー",
+        "生成エンタルピー"
+      ],
+      "answerIndex": 3,
+      "explanation": "ヘスの法則で反応エンタルピーの計算に使う。"
+    },
+    {
+      "id": "sci_chm11_020",
+      "category": "knowledge",
+      "prompt": "イオン化傾向の大きい金属が電池の何極になる？",
+      "choices": [
+        "陰極",
+        "負極",
+        "正極",
+        "どちらにもならない"
+      ],
+      "answerIndex": 1,
+      "explanation": "電子を放出（酸化）する側が負極。"
+    },
+    {
+      "id": "sci_chm11_021",
+      "category": "knowledge",
+      "prompt": "リチウムイオン電池の特徴は？",
+      "choices": [
+        "液体燃料を入れて使う",
+        "電圧が非常に低い",
+        "軽くて電圧が高く、充電できる",
+        "一度しか使えない"
+      ],
+      "answerIndex": 2,
+      "explanation": "スマートフォンや電気自動車に使われる二次電池。"
+    },
+    {
+      "id": "sci_chm11_022",
+      "category": "knowledge",
+      "prompt": "電気分解で、陽極で起こる反応は？",
+      "choices": [
+        "酸化反応",
+        "中和反応",
+        "沈殿反応",
+        "還元反応"
+      ],
+      "answerIndex": 0,
+      "explanation": "陽極では電子を失う反応が起こる。"
+    },
+    {
+      "id": "sci_chm11_023",
+      "category": "knowledge",
+      "prompt": "NaCl 水溶液を電気分解したとき、陽極で発生する気体は？",
+      "choices": [
+        "ナトリウム",
+        "塩素",
+        "酸素",
+        "水素"
+      ],
+      "answerIndex": 1,
+      "explanation": "Cl⁻ が電子を失って Cl₂ になる。"
+    },
+    {
+      "id": "sci_chm11_024",
+      "category": "knowledge",
+      "prompt": "アルミニウムを工業的につくる方法は？",
+      "choices": [
+        "水素による還元",
+        "酸化アルミニウムの溶融塩電解",
+        "アルミニウム塩水溶液の電気分解",
+        "炭素による還元"
+      ],
+      "answerIndex": 1,
+      "explanation": "イオン化傾向が大きいので、水溶液では水が先に反応する。"
+    },
+    {
+      "id": "sci_chm11_025",
+      "category": "calculation",
+      "prompt": "H₂ ＋ ½O₂ → H₂O(液) ΔH ＝ −286 kJ。水素 4.0 g が燃焼すると何 kJ の熱が出る？（H ＝ 1.0）",
+      "choices": [
+        "143 kJ",
+        "1144 kJ",
+        "572 kJ",
+        "286 kJ"
+      ],
+      "answerIndex": 2,
+      "explanation": "4.0 g ＝ 2.0 mol。286 × 2。"
+    },
+    {
+      "id": "sci_chm11_026",
+      "category": "calculation",
+      "prompt": "結合エネルギー H−H 436、F−F 158、H−F 568 kJ/mol。H₂ ＋ F₂ → 2HF の ΔH は？",
+      "choices": [
+        "+542 kJ",
+        "−542 kJ",
+        "−974 kJ",
+        "−26 kJ"
+      ],
+      "answerIndex": 1,
+      "explanation": "(436 + 158) − 2 × 568。"
+    },
+    {
+      "id": "sci_chm11_027",
+      "category": "calculation",
+      "prompt": "C(黒鉛) ＋ O₂ → CO₂ ΔH ＝ −394 kJ、CO ＋ ½O₂ → CO₂ ΔH ＝ −283 kJ。CO の生成エンタルピーは？",
+      "choices": [
+        "−283 kJ/mol",
+        "−111 kJ/mol",
+        "+111 kJ/mol",
+        "−677 kJ/mol"
+      ],
+      "answerIndex": 1,
+      "explanation": "ヘスの法則：−394 − (−283)。"
+    },
+    {
+      "id": "sci_chm11_028",
+      "category": "calculation",
+      "prompt": "5.0 A の電流を 1930 s 流した。流れた電子の物質量は？（F ＝ 9.65 × 10⁴ C/mol）",
+      "choices": [
+        "0.050 mol",
+        "1.0 mol",
+        "10 mol",
+        "0.10 mol"
+      ],
+      "answerIndex": 3,
+      "explanation": "5.0 × 1930 ＝ 9650 C。"
+    },
+    {
+      "id": "sci_chm11_029",
+      "category": "calculation",
+      "prompt": "硝酸銀水溶液を電気分解し、電子 0.10 mol が流れた。陰極に析出する銀は？（Ag ＝ 108）",
+      "choices": [
+        "10.8 g",
+        "5.4 g",
+        "21.6 g",
+        "1.08 g"
+      ],
+      "answerIndex": 0,
+      "explanation": "Ag⁺ ＋ e⁻ → Ag。0.10 mol。"
+    },
+    {
+      "id": "sci_chm11_030",
+      "category": "calculation",
+      "prompt": "水の電気分解で、陽極から酸素 0.050 mol が発生した。流れた電子は？",
+      "choices": [
+        "0.050 mol",
+        "0.20 mol",
+        "0.10 mol",
+        "0.40 mol"
+      ],
+      "answerIndex": 1,
+      "explanation": "2H₂O → O₂ ＋ 4H⁺ ＋ 4e⁻。"
+    },
+    {
+      "id": "sci_chm11_031",
+      "category": "thinking",
+      "prompt": "燃料電池が注目されている理由は？",
+      "choices": [
+        "充電がいらず永久に使えるから",
+        "二酸化炭素を吸収するから",
+        "反応でできるのが水だけで、エネルギー効率も高いから",
+        "材料がすべて無料だから"
+      ],
+      "answerIndex": 2,
+      "explanation": "ただし水素をつくる過程でのエネルギーや CO₂ にも注意が必要。"
+    },
+    {
+      "id": "sci_chm11_032",
+      "category": "thinking",
+      "prompt": "ボルタ電池ですぐに電圧が下がる主な理由は？",
+      "choices": [
+        "電解液が蒸発するから",
+        "銅が溶けるから",
+        "亜鉛がなくなるから",
+        "正極で発生した水素が銅板をおおうから"
+      ],
+      "answerIndex": 3,
+      "explanation": "分極と呼ばれる。"
     }
   ]
 }

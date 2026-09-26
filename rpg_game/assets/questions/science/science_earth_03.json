@@ -211,6 +211,214 @@
       ],
       "answerIndex": 3,
       "explanation": "震源近くの観測点で P 波をとらえ、震源や規模を推定して各地に伝える。"
+    },
+    {
+      "id": "sci_ear03_017",
+      "category": "knowledge",
+      "prompt": "震源の真上の地表の点を何という？",
+      "choices": [
+        "断層",
+        "震度",
+        "震央",
+        "震源"
+      ],
+      "answerIndex": 2,
+      "explanation": "震央から観測点までの距離は震央距離。"
+    },
+    {
+      "id": "sci_ear03_018",
+      "category": "knowledge",
+      "prompt": "主要動を起こす地震波は？",
+      "choices": [
+        "津波",
+        "S 波",
+        "P 波",
+        "表面波だけ"
+      ],
+      "answerIndex": 1,
+      "explanation": "P 波による初期微動のあと、S 波で大きくゆれる。"
+    },
+    {
+      "id": "sci_ear03_019",
+      "category": "knowledge",
+      "prompt": "P 波と S 波で、速く伝わるのは？",
+      "choices": [
+        "P 波",
+        "場所による",
+        "同じ",
+        "S 波"
+      ],
+      "answerIndex": 0,
+      "explanation": "P 波は 5〜7 km/s、S 波は 3〜4 km/s 程度。"
+    },
+    {
+      "id": "sci_ear03_020",
+      "category": "knowledge",
+      "prompt": "上盤が断層面にそってずり上がる断層は？",
+      "choices": [
+        "正断層",
+        "逆断層",
+        "横ずれ断層",
+        "活断層でない断層"
+      ],
+      "answerIndex": 1,
+      "explanation": "圧縮の力で生じる。"
+    },
+    {
+      "id": "sci_ear03_021",
+      "category": "knowledge",
+      "prompt": "海底の地震で海面が持ち上げられて生じる波は？",
+      "choices": [
+        "波浪",
+        "津波",
+        "高潮",
+        "潮汐"
+      ],
+      "answerIndex": 1,
+      "explanation": "沖では低くても、浅い海岸に近づくと高くなる。"
+    },
+    {
+      "id": "sci_ear03_022",
+      "category": "knowledge",
+      "prompt": "余震とは？",
+      "choices": [
+        "大きな地震のあとに続いて起こる地震",
+        "火山の噴火",
+        "大きな地震の前に起こる地震",
+        "地震のない期間"
+      ],
+      "answerIndex": 0,
+      "explanation": "本震の震源域周辺で多く起こる。"
+    },
+    {
+      "id": "sci_ear03_023",
+      "category": "knowledge",
+      "prompt": "震度は何を表す？",
+      "choices": [
+        "震源の深さ",
+        "断層の長さ",
+        "ある地点でのゆれの強さ",
+        "地震のエネルギー"
+      ],
+      "answerIndex": 2,
+      "explanation": "同じ地震でも場所によって震度はちがう。"
+    },
+    {
+      "id": "sci_ear03_024",
+      "category": "knowledge",
+      "prompt": "プレート境界で起こる巨大地震の例は？",
+      "choices": [
+        "人工地震",
+        "兵庫県南部地震（1995 年）だけ",
+        "東北地方太平洋沖地震（2011 年）",
+        "火山性地震"
+      ],
+      "answerIndex": 2,
+      "explanation": "海溝型地震。兵庫県南部地震は内陸の活断層による。"
+    },
+    {
+      "id": "sci_ear03_025",
+      "category": "calculation",
+      "prompt": "初期微動継続時間が 8 秒のとき、震源距離は？（大森公式 D ＝ 8t）",
+      "choices": [
+        "8 km",
+        "64 km",
+        "16 km",
+        "1 km"
+      ],
+      "answerIndex": 1,
+      "explanation": "8 × 8。"
+    },
+    {
+      "id": "sci_ear03_026",
+      "category": "calculation",
+      "prompt": "P 波の速さ 7 km/s、震源距離 140 km。P 波が届くまでの時間は？",
+      "choices": [
+        "980 秒",
+        "20 秒",
+        "7 秒",
+        "14 秒"
+      ],
+      "answerIndex": 1,
+      "explanation": "140 ÷ 7。"
+    },
+    {
+      "id": "sci_ear03_027",
+      "category": "calculation",
+      "prompt": "P 波の速さ 6 km/s、S 波の速さ 3 km/s。震源距離 60 km での初期微動継続時間は？",
+      "choices": [
+        "20 秒",
+        "30 秒",
+        "5 秒",
+        "10 秒"
+      ],
+      "answerIndex": 3,
+      "explanation": "S 波 20 秒 − P 波 10 秒。"
+    },
+    {
+      "id": "sci_ear03_028",
+      "category": "calculation",
+      "prompt": "マグニチュードが 1 大きいと、エネルギーは約何倍？",
+      "choices": [
+        "約 10 倍",
+        "約 32 倍",
+        "約 1000 倍",
+        "約 2 倍"
+      ],
+      "answerIndex": 1,
+      "explanation": "2 大きいと約 1000 倍。"
+    },
+    {
+      "id": "sci_ear03_029",
+      "category": "calculation",
+      "prompt": "マグニチュード 7 の地震は、マグニチュード 5 の地震の約何倍のエネルギー？",
+      "choices": [
+        "約 1000 倍",
+        "約 100 倍",
+        "約 2 倍",
+        "約 64 倍"
+      ],
+      "answerIndex": 0,
+      "explanation": "2 大きいので 32 × 32 ≒ 1000。"
+    },
+    {
+      "id": "sci_ear03_030",
+      "category": "calculation",
+      "prompt": "A 地点の初期微動継続時間が 4 秒、B 地点が 12 秒。震源距離は B が A の何倍？",
+      "choices": [
+        "3 倍",
+        "8 倍",
+        "同じ",
+        "1/3 倍"
+      ],
+      "answerIndex": 0,
+      "explanation": "震源距離は初期微動継続時間に比例する。"
+    },
+    {
+      "id": "sci_ear03_031",
+      "category": "thinking",
+      "prompt": "同じ規模の地震でも、震源が浅いほど被害が大きくなりやすい理由は？",
+      "choices": [
+        "地表に近く、強いゆれが伝わる範囲が震源の近くに集中するから",
+        "津波が起こらないから",
+        "マグニチュードが大きくなるから",
+        "P 波がなくなるから"
+      ],
+      "answerIndex": 0,
+      "explanation": "ゆれは距離とともに弱まる。"
+    },
+    {
+      "id": "sci_ear03_032",
+      "category": "thinking",
+      "prompt": "海岸で強いゆれを感じたときにとるべき行動は？",
+      "choices": [
+        "家の中で様子を見る",
+        "津波警報を待たずに、すぐ高い所へ避難する",
+        "船で沖に出る",
+        "海のようすを見に行く"
+      ],
+      "answerIndex": 1,
+      "explanation": "津波は数分で到達することもある。"
     }
   ]
 }

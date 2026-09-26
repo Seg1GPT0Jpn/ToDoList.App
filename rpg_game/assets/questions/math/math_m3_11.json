@@ -133,6 +133,136 @@
       ],
       "answerIndex": 2,
       "explanation": "例：x:0→1 のとき u=x²+1 は 1→2。"
+    },
+    {
+      "id": "mat_m311_011",
+      "category": "calculation",
+      "prompt": "∫3x²(x³+1)⁴ dx は？",
+      "choices": [
+        "(x³+1)⁴/4+C",
+        "3(x³+1)⁵+C",
+        "(x³+1)⁵/5+C",
+        "(x³+1)⁵+C"
+      ],
+      "answerIndex": 2,
+      "explanation": "u=x³+1 と置換、du=3x² dx。"
+    },
+    {
+      "id": "mat_m311_012",
+      "category": "calculation",
+      "prompt": "∫x cos x dx は？",
+      "choices": [
+        "−x sin x+cos x+C",
+        "x sin x−cos x+C",
+        "sin x+C",
+        "x sin x+cos x+C"
+      ],
+      "answerIndex": 3,
+      "explanation": "部分積分：x sin x−∫sin x dx。"
+    },
+    {
+      "id": "mat_m311_013",
+      "category": "calculation",
+      "prompt": "∫x log x dx は？",
+      "choices": [
+        "log x−x+C",
+        "(x²/2)log x−x²/4+C",
+        "x² log x+C",
+        "(x²/2)log x+C"
+      ],
+      "answerIndex": 1,
+      "explanation": "部分積分：(x²/2)log x−∫(x/2)dx。"
+    },
+    {
+      "id": "mat_m311_014",
+      "category": "calculation",
+      "prompt": "∫₀^π cos²x dx の値は？",
+      "choices": [
+        "π",
+        "1",
+        "0",
+        "π/2"
+      ],
+      "answerIndex": 3,
+      "explanation": "cos²x=(1+cos 2x)/2。"
+    },
+    {
+      "id": "mat_m311_015",
+      "category": "calculation",
+      "prompt": "∫2x/(x²+1) dx は？",
+      "choices": [
+        "log(x²+1)+C",
+        "1/(x²+1)+C",
+        "x²+C",
+        "2log|x|+C"
+      ],
+      "answerIndex": 0,
+      "explanation": "分子が分母の微分になっている。"
+    },
+    {
+      "id": "mat_m311_016",
+      "category": "calculation",
+      "prompt": "∫₀¹ x·e^(x²) dx の値は？",
+      "choices": [
+        "e/2",
+        "(e−1)/2",
+        "e−1",
+        "1/2"
+      ],
+      "answerIndex": 1,
+      "explanation": "u=x² と置換：½∫₀¹ eᵘ du。"
+    },
+    {
+      "id": "mat_m311_017",
+      "category": "calculation",
+      "prompt": "∫sin 2x dx は？",
+      "choices": [
+        "−2cos 2x+C",
+        "−cos 2x/2+C",
+        "cos 2x/2+C",
+        "−cos 2x+C"
+      ],
+      "answerIndex": 1,
+      "explanation": "微分して sin 2x になるもの。"
+    },
+    {
+      "id": "mat_m311_018",
+      "category": "calculation",
+      "prompt": "∫₀² √(4−x²) dx の値は？",
+      "choices": [
+        "2π",
+        "π/2",
+        "π",
+        "4"
+      ],
+      "answerIndex": 2,
+      "explanation": "半径2の円の 1/4 の面積：4π/4。"
+    },
+    {
+      "id": "mat_m311_019",
+      "category": "calculation",
+      "prompt": "∫1/(x log x) dx は？（x>1）",
+      "choices": [
+        "log(log x)+C",
+        "(log x)²/2+C",
+        "1/log x+C",
+        "log x+C"
+      ],
+      "answerIndex": 0,
+      "explanation": "u=log x と置換。"
+    },
+    {
+      "id": "mat_m311_020",
+      "category": "thinking",
+      "prompt": "部分積分で「微分する側」を選ぶときの目安は？",
+      "choices": [
+        "いつも左側を微分する",
+        "eˣ をいつも微分する側にする",
+        "積分すると複雑になる方を積分する",
+        "微分すると簡単になる方（多項式や log x）を微分する側にする"
+      ],
+      "answerIndex": 3,
+      "explanation": "例：x eˣ なら x を微分、x log x なら log x を微分。"
     }
   ]
 }

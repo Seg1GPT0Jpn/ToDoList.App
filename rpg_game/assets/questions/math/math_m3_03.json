@@ -133,6 +133,136 @@
       ],
       "answerIndex": 1,
       "explanation": "直接求めにくい極限を、不等式ではさんで求める。"
+    },
+    {
+      "id": "mat_m303_011",
+      "category": "calculation",
+      "prompt": "無限等比級数 1+(x−1)+(x−1)²+… が収束する x の範囲は？",
+      "choices": [
+        "0<x<2",
+        "−1<x<1",
+        "x<2",
+        "1<x<2"
+      ],
+      "answerIndex": 0,
+      "explanation": "|x−1|<1。"
+    },
+    {
+      "id": "mat_m303_012",
+      "category": "calculation",
+      "prompt": "lim_{x→0} (e^(2x)−1)/x の値は？",
+      "choices": [
+        "e²",
+        "0",
+        "1",
+        "2"
+      ],
+      "answerIndex": 3,
+      "explanation": "2·(e^(2x)−1)/(2x)→2。"
+    },
+    {
+      "id": "mat_m303_013",
+      "category": "calculation",
+      "prompt": "lim_{x→0} log(1+2x)/x の値は？",
+      "choices": [
+        "1/2",
+        "2",
+        "log 2",
+        "1"
+      ],
+      "answerIndex": 1,
+      "explanation": "2·log(1+2x)/(2x)→2。"
+    },
+    {
+      "id": "mat_m303_014",
+      "category": "calculation",
+      "prompt": "lim_{n→∞} sin(n)/n の値は？",
+      "choices": [
+        "存在しない",
+        "1",
+        "0",
+        "∞"
+      ],
+      "answerIndex": 2,
+      "explanation": "−1/n≦sin(n)/n≦1/n で、はさみうち。"
+    },
+    {
+      "id": "mat_m303_015",
+      "category": "calculation",
+      "prompt": "f(x)=(x²−4)/(x−2)（x≠2）、f(2)=a が x=2 で連続となる a は？",
+      "choices": [
+        "−4",
+        "2",
+        "4",
+        "0"
+      ],
+      "answerIndex": 2,
+      "explanation": "lim_{x→2} (x+2)=4 と一致させる。"
+    },
+    {
+      "id": "mat_m303_016",
+      "category": "calculation",
+      "prompt": "a₁=1、aₙ₊₁=(1/3)aₙ+2 で定まる数列の極限は？",
+      "choices": [
+        "6",
+        "3",
+        "2",
+        "1"
+      ],
+      "answerIndex": 1,
+      "explanation": "α=α/3+2 → α=3。"
+    },
+    {
+      "id": "mat_m303_017",
+      "category": "calculation",
+      "prompt": "lim_{x→∞} (1−1/x)ˣ の値は？",
+      "choices": [
+        "1/e",
+        "e",
+        "1",
+        "0"
+      ],
+      "answerIndex": 0,
+      "explanation": "(1+1/(−x))^(−x) の −1 乗。"
+    },
+    {
+      "id": "mat_m303_018",
+      "category": "calculation",
+      "prompt": "1辺1の正三角形から、各辺の中点を結んだ三角形を作ることをくり返す。すべての三角形の周の長さの和は？",
+      "choices": [
+        "∞",
+        "9/2",
+        "3",
+        "6"
+      ],
+      "answerIndex": 3,
+      "explanation": "周は 3、3/2、3/4、…：3/(1−1/2)=6。"
+    },
+    {
+      "id": "mat_m303_019",
+      "category": "calculation",
+      "prompt": "方程式 x³−2=0 が 1<x<2 に解をもつと言える理由として使う定理は？",
+      "choices": [
+        "ロルの定理",
+        "中間値の定理",
+        "平均値の定理",
+        "三平方の定理"
+      ],
+      "answerIndex": 1,
+      "explanation": "f(1)=−1<0、f(2)=6>0 で f は連続。"
+    },
+    {
+      "id": "mat_m303_020",
+      "category": "knowledge",
+      "prompt": "lim_{n→∞} aₙ=∞ のとき、数列 {aₙ} は何という？",
+      "choices": [
+        "正の無限大に発散する",
+        "収束する",
+        "0 に収束する",
+        "振動する"
+      ],
+      "answerIndex": 0,
+      "explanation": "限りなく大きくなるときは発散。"
     }
   ]
 }

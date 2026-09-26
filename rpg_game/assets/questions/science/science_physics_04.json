@@ -211,6 +211,214 @@
       ],
       "answerIndex": 0,
       "explanation": "荷車が受けるのは「馬が引く力」と摩擦など。反作用（荷車が馬を引く力）は馬にはたらくので、荷車の運動には関係しない。"
+    },
+    {
+      "id": "sci_phy04_017",
+      "category": "knowledge",
+      "prompt": "運動の第1法則（慣性の法則）の内容は？",
+      "choices": [
+        "力がはたらかなければ、静止している物体は静止を続け、動いている物体は等速直線運動を続ける",
+        "作用には反作用がある",
+        "物体は必ず止まる",
+        "力を加えると加速度が生じる"
+      ],
+      "answerIndex": 0,
+      "explanation": "ニュートンの運動の3法則の1つ目。"
+    },
+    {
+      "id": "sci_phy04_018",
+      "category": "knowledge",
+      "prompt": "運動方程式で、加速度の向きは何と同じ？",
+      "choices": [
+        "速度の向き",
+        "物体が動く向きの逆",
+        "重力の向き",
+        "物体にはたらく力の合力の向き"
+      ],
+      "answerIndex": 3,
+      "explanation": "ma ＝ F で a と F は同じ向き。"
+    },
+    {
+      "id": "sci_phy04_019",
+      "category": "knowledge",
+      "prompt": "作用・反作用の2力について正しいものは？",
+      "choices": [
+        "向きが同じ",
+        "大きさがちがう",
+        "別々の物体にはたらく",
+        "同じ物体にはたらく"
+      ],
+      "answerIndex": 2,
+      "explanation": "つり合いの2力は同じ物体にはたらくが、作用・反作用は別の物体。"
+    },
+    {
+      "id": "sci_phy04_020",
+      "category": "knowledge",
+      "prompt": "エレベーターが上向きに加速しているとき、中の人の体重計の値は？",
+      "choices": [
+        "ふだんより小さい",
+        "0",
+        "ふだんより大きい",
+        "変わらない"
+      ],
+      "answerIndex": 2,
+      "explanation": "垂直抗力 N ＝ m(g + a)。"
+    },
+    {
+      "id": "sci_phy04_021",
+      "category": "knowledge",
+      "prompt": "テーブルクロスを素早く引くと、上の食器が残るのはなぜ？",
+      "choices": [
+        "食器が重いから",
+        "摩擦力が大きいから",
+        "食器が慣性によって静止を続けようとするから",
+        "空気が押さえるから"
+      ],
+      "answerIndex": 2,
+      "explanation": "短い時間では摩擦による力積が小さく、食器はほとんど動かない。"
+    },
+    {
+      "id": "sci_phy04_022",
+      "category": "knowledge",
+      "prompt": "物体が等速直線運動をしているとき、はたらく力の合力は？",
+      "choices": [
+        "0",
+        "運動の逆向きに一定",
+        "重力と等しい",
+        "運動の向きに一定"
+      ],
+      "answerIndex": 0,
+      "explanation": "加速度が0なので、合力も0。"
+    },
+    {
+      "id": "sci_phy04_023",
+      "category": "calculation",
+      "prompt": "質量 5.0 kg の物体に 20 N の力を加えた。加速度は？",
+      "choices": [
+        "4.0 m/s²",
+        "0.25 m/s²",
+        "25 m/s²",
+        "100 m/s²"
+      ],
+      "answerIndex": 0,
+      "explanation": "a ＝ F ÷ m。"
+    },
+    {
+      "id": "sci_phy04_024",
+      "category": "calculation",
+      "prompt": "質量 800 kg の車を 1.5 m/s² で加速させるのに必要な力は？",
+      "choices": [
+        "1200 N",
+        "533 N",
+        "800 N",
+        "1.9 N"
+      ],
+      "answerIndex": 0,
+      "explanation": "F ＝ ma。"
+    },
+    {
+      "id": "sci_phy04_025",
+      "category": "calculation",
+      "prompt": "質量 50 kg の人が、下向きに 1.8 m/s² で加速するエレベーターに乗っている。床からの垂直抗力は？（g ＝ 9.8 m/s²）",
+      "choices": [
+        "400 N",
+        "580 N",
+        "90 N",
+        "490 N"
+      ],
+      "answerIndex": 0,
+      "explanation": "N ＝ m(g − a) ＝ 50 × 8.0。"
+    },
+    {
+      "id": "sci_phy04_026",
+      "category": "calculation",
+      "prompt": "なめらかな床の上で、2.0 kg と 3.0 kg の物体を並べ、2.0 kg の側から 10 N でおした。加速度は？",
+      "choices": [
+        "5.0 m/s²",
+        "3.3 m/s²",
+        "2.0 m/s²",
+        "1.0 m/s²"
+      ],
+      "answerIndex": 2,
+      "explanation": "全体で 10 ÷ 5.0。"
+    },
+    {
+      "id": "sci_phy04_027",
+      "category": "calculation",
+      "prompt": "前問で、2.0 kg の物体が 3.0 kg の物体をおす力は？",
+      "choices": [
+        "6.0 N",
+        "4.0 N",
+        "2.0 N",
+        "10 N"
+      ],
+      "answerIndex": 0,
+      "explanation": "3.0 kg の物体の運動方程式：3.0 × 2.0。"
+    },
+    {
+      "id": "sci_phy04_028",
+      "category": "calculation",
+      "prompt": "水平面上の 4.0 kg の物体を 20 N で引いた。動摩擦力が 8.0 N のとき、加速度は？",
+      "choices": [
+        "7.0 m/s²",
+        "3.0 m/s²",
+        "5.0 m/s²",
+        "2.0 m/s²"
+      ],
+      "answerIndex": 1,
+      "explanation": "(20 − 8.0) ÷ 4.0。"
+    },
+    {
+      "id": "sci_phy04_029",
+      "category": "calculation",
+      "prompt": "傾き 30° のなめらかな斜面をすべり下りる物体の加速度は？（g ＝ 9.8 m/s²）",
+      "choices": [
+        "4.9 m/s²",
+        "0 m/s²",
+        "8.5 m/s²",
+        "9.8 m/s²"
+      ],
+      "answerIndex": 0,
+      "explanation": "g sin 30°。"
+    },
+    {
+      "id": "sci_phy04_030",
+      "category": "calculation",
+      "prompt": "質量 2.0 kg の物体を糸でつるし、上向きに 3.0 m/s² で引き上げる。糸の張力は？（g ＝ 9.8 m/s²）",
+      "choices": [
+        "6.0 N",
+        "13.6 N",
+        "19.6 N",
+        "25.6 N"
+      ],
+      "answerIndex": 3,
+      "explanation": "T − mg ＝ ma → T ＝ 2.0 × 12.8。"
+    },
+    {
+      "id": "sci_phy04_031",
+      "category": "thinking",
+      "prompt": "宇宙空間（重力がはたらかない所）で、質量の大きい物体と小さい物体を区別する方法は？",
+      "choices": [
+        "ばねばかりでつるして比べる",
+        "同じ力でおして、加速度の小さい方が質量が大きいと判断する",
+        "区別できない",
+        "手のひらにのせて重さを比べる"
+      ],
+      "answerIndex": 1,
+      "explanation": "重さはなくても慣性（質量）は残る。"
+    },
+    {
+      "id": "sci_phy04_032",
+      "category": "thinking",
+      "prompt": "自動車のシートベルトが必要な理由を慣性で説明すると？",
+      "choices": [
+        "急ブレーキのとき、体は慣性で前へ進み続けようとするから",
+        "重力が大きくなるから",
+        "車が軽くなるから",
+        "体が後ろに引っぱられるから"
+      ],
+      "answerIndex": 0,
+      "explanation": "車だけが減速し、体はそのままの速さで動き続けようとする。"
     }
   ]
 }

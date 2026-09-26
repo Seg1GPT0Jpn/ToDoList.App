@@ -133,6 +133,136 @@
       ],
       "answerIndex": 0,
       "explanation": "S−rS=a−arⁿ。"
+    },
+    {
+      "id": "mat_mb03_011",
+      "category": "calculation",
+      "prompt": "Σ_{k=1}^{n} k·3^(k−1) を S とするとき、S−3S を計算すると出てくる等比数列の和は？",
+      "choices": [
+        "3+3²+…+3ⁿ",
+        "n·3ⁿ",
+        "1+2+…+n",
+        "1+3+3²+…+3^(n−1)"
+      ],
+      "answerIndex": 3,
+      "explanation": "ずらして引くと、係数が1ずつそろって等比数列の和が残る（そこから n·3ⁿ を引く）。"
+    },
+    {
+      "id": "mat_mb03_012",
+      "category": "calculation",
+      "prompt": "1 | 2, 3 | 4, 5, 6 | … と区切るとき、第 n 群の最後の数は？",
+      "choices": [
+        "n²",
+        "(n²−n+2)/2",
+        "2n−1",
+        "n(n+1)/2"
+      ],
+      "answerIndex": 3,
+      "explanation": "第 n 群までに 1+2+…+n=n(n+1)/2 個の数があるので、最後の数はその番号と同じ。"
+    },
+    {
+      "id": "mat_mb03_013",
+      "category": "calculation",
+      "prompt": "奇数の列 1 | 3, 5 | 7, 9, 11 | … と区切るとき、第5群の最初の数は？",
+      "choices": [
+        "21",
+        "25",
+        "19",
+        "23"
+      ],
+      "answerIndex": 0,
+      "explanation": "第4群までに10個。11番目の奇数は 21。"
+    },
+    {
+      "id": "mat_mb03_014",
+      "category": "calculation",
+      "prompt": "初項30、公差−4の等差数列で、初項からの和が最大になるのは第何項まで？",
+      "choices": [
+        "第8項",
+        "第10項",
+        "第9項",
+        "第7項"
+      ],
+      "answerIndex": 0,
+      "explanation": "aₙ=34−4n>0 → n<8.5。第8項（2）までが正。"
+    },
+    {
+      "id": "mat_mb03_015",
+      "category": "calculation",
+      "prompt": "Σ_{k=1}^{10} (2k−1)² の値は？",
+      "choices": [
+        "1000",
+        "385",
+        "1540",
+        "1330"
+      ],
+      "answerIndex": 3,
+      "explanation": "4Σk²−4Σk+10=1540−220+10=1330。"
+    },
+    {
+      "id": "mat_mb03_016",
+      "category": "calculation",
+      "prompt": "1·3+2·4+3·5+…+10·12 の値は？",
+      "choices": [
+        "495",
+        "385",
+        "440",
+        "550"
+      ],
+      "answerIndex": 0,
+      "explanation": "Σk(k+2)=Σk²+2Σk=385+110。"
+    },
+    {
+      "id": "mat_mb03_017",
+      "category": "calculation",
+      "prompt": "Σ_{k=1}^{n} (√(k+2)−√k) を計算すると？",
+      "choices": [
+        "√n",
+        "√(n+2)−√2",
+        "√(n+2)+√(n+1)−√2−1",
+        "√(n+2)−1"
+      ],
+      "answerIndex": 2,
+      "explanation": "1つおきに打ち消し合い、最後の2項と最初の2項が残る。"
+    },
+    {
+      "id": "mat_mb03_018",
+      "category": "calculation",
+      "prompt": "2+2²+2³+…+2ⁿ を計算すると？",
+      "choices": [
+        "2ⁿ−2",
+        "2ⁿ−1",
+        "2^(n+1)−1",
+        "2^(n+1)−2"
+      ],
+      "answerIndex": 3,
+      "explanation": "2(2ⁿ−1)/(2−1)。"
+    },
+    {
+      "id": "mat_mb03_019",
+      "category": "calculation",
+      "prompt": "数列 1, 1/2, 1/4, 1/8, … の第10項は？",
+      "choices": [
+        "1/256",
+        "1/1024",
+        "1/20",
+        "1/512"
+      ],
+      "answerIndex": 3,
+      "explanation": "(1/2)⁹。"
+    },
+    {
+      "id": "mat_mb03_020",
+      "category": "thinking",
+      "prompt": "群数列の問題で、まず「第 n 群の最後の項が全体の何番目か」を求める理由は？",
+      "choices": [
+        "もとの数列の番号に置きかえて一般項が使えるから",
+        "群の数が分かるから",
+        "群の中が等比数列になるから",
+        "和が0になるから"
+      ],
+      "answerIndex": 0,
+      "explanation": "全体の番号が分かれば、もとの数列の一般項にそのまま代入できる。"
     }
   ]
 }

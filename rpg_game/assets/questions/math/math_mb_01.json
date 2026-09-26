@@ -133,6 +133,136 @@
       ],
       "answerIndex": 1,
       "explanation": "ガウスの工夫として知られる。"
+    },
+    {
+      "id": "mat_mb01_011",
+      "category": "calculation",
+      "prompt": "初項10、公差−2の等差数列の第8項は？",
+      "choices": [
+        "−6",
+        "−2",
+        "4",
+        "−4"
+      ],
+      "answerIndex": 3,
+      "explanation": "10+(8−1)(−2)=−4。"
+    },
+    {
+      "id": "mat_mb01_012",
+      "category": "calculation",
+      "prompt": "初項1、公比2の等比数列の第8項は？",
+      "choices": [
+        "128",
+        "64",
+        "256",
+        "16"
+      ],
+      "answerIndex": 0,
+      "explanation": "1·2⁷=128。"
+    },
+    {
+      "id": "mat_mb01_013",
+      "category": "calculation",
+      "prompt": "1+3+5+…+19 の値は？",
+      "choices": [
+        "100",
+        "81",
+        "90",
+        "110"
+      ],
+      "answerIndex": 0,
+      "explanation": "奇数を10個たすと 10²=100。"
+    },
+    {
+      "id": "mat_mb01_014",
+      "category": "calculation",
+      "prompt": "等差数列 5, 8, 11, … の初項から第20項までの和は？",
+      "choices": [
+        "640",
+        "335",
+        "700",
+        "670"
+      ],
+      "answerIndex": 3,
+      "explanation": "末項 5+19·3=62、(5+62)×20÷2=670。"
+    },
+    {
+      "id": "mat_mb01_015",
+      "category": "calculation",
+      "prompt": "3+6+12+…+3·2⁵ の値は？",
+      "choices": [
+        "93",
+        "381",
+        "192",
+        "189"
+      ],
+      "answerIndex": 3,
+      "explanation": "初項3、公比2、6項：3(2⁶−1)=189。"
+    },
+    {
+      "id": "mat_mb01_016",
+      "category": "calculation",
+      "prompt": "Σ_{k=1}^{6} k の値は？",
+      "choices": [
+        "28",
+        "15",
+        "21",
+        "36"
+      ],
+      "answerIndex": 2,
+      "explanation": "6·7/2=21。"
+    },
+    {
+      "id": "mat_mb01_017",
+      "category": "calculation",
+      "prompt": "Σ_{k=1}^{4} k² の値は？",
+      "choices": [
+        "20",
+        "16",
+        "100",
+        "30"
+      ],
+      "answerIndex": 3,
+      "explanation": "1+4+9+16=30。"
+    },
+    {
+      "id": "mat_mb01_018",
+      "category": "calculation",
+      "prompt": "数列 7, 4, 1, −2, … の一般項は？",
+      "choices": [
+        "aₙ=−3n+7",
+        "aₙ=7−3n",
+        "aₙ=10−3n",
+        "aₙ=3n+4"
+      ],
+      "answerIndex": 2,
+      "explanation": "初項7、公差−3：7+(n−1)(−3)=10−3n。"
+    },
+    {
+      "id": "mat_mb01_019",
+      "category": "calculation",
+      "prompt": "等差数列で第3項が11、第7項が23のとき、公差は？",
+      "choices": [
+        "4",
+        "2",
+        "3",
+        "6"
+      ],
+      "answerIndex": 2,
+      "explanation": "4d=23−11=12。"
+    },
+    {
+      "id": "mat_mb01_020",
+      "category": "knowledge",
+      "prompt": "Σ_{k=1}^{n} c（c は定数）は？",
+      "choices": [
+        "c",
+        "nc",
+        "c/n",
+        "n+c"
+      ],
+      "answerIndex": 1,
+      "explanation": "同じ c を n 個たすので nc。"
     }
   ]
 }
