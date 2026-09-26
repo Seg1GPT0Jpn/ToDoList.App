@@ -159,6 +159,162 @@
       ],
       "answerIndex": 2,
       "explanation": "「而」は置き字で読まないが、前の語に「て」をつけて接続を表す。（論語）"
+    },
+    {
+      "id": "jap_kanbun01_013",
+      "category": "knowledge",
+      "prompt": "上中下点を使うのはどんなとき？",
+      "choices": [
+        "返り点がいらないとき",
+        "一二点をはさんで、さらに上に返るとき",
+        "上下点をはさむとき",
+        "すぐ下の一字から返るとき"
+      ],
+      "answerIndex": 1,
+      "explanation": "上下点をはさむときは甲乙点。"
+    },
+    {
+      "id": "jap_kanbun01_014",
+      "category": "knowledge",
+      "prompt": "甲乙点を使うのはどんなとき？",
+      "choices": [
+        "置き字があるとき",
+        "一二点だけで返るとき",
+        "レ点が続くとき",
+        "上下点をはさんで、さらに上に返るとき"
+      ],
+      "answerIndex": 3,
+      "explanation": "返り点は レ → 一二 → 上下 → 甲乙 の順に大きくはさむ。"
+    },
+    {
+      "id": "jap_kanbun01_015",
+      "category": "knowledge",
+      "prompt": "「一レ点」は、どのように読む？",
+      "choices": [
+        "読まない字を示す",
+        "二度読む字を示す",
+        "一二点を先に読む",
+        "レ点で一字返ってから、一二点にしたがって返る"
+      ],
+      "answerIndex": 3,
+      "explanation": "レ点と一点が組み合わさった記号。"
+    },
+    {
+      "id": "jap_kanbun01_016",
+      "category": "thinking",
+      "prompt": "「見レ山」の書き下し文は？",
+      "choices": [
+        "見山す",
+        "見る山",
+        "山を見る",
+        "山見る"
+      ],
+      "answerIndex": 2,
+      "explanation": "レ点で「山」→「見」。"
+    },
+    {
+      "id": "jap_kanbun01_017",
+      "category": "thinking",
+      "prompt": "「聞レ声」の書き下し文は？",
+      "choices": [
+        "声聞く",
+        "聞く声",
+        "声を聞く",
+        "聞声す"
+      ],
+      "answerIndex": 2,
+      "explanation": "レ点で「声」→「聞」。"
+    },
+    {
+      "id": "jap_kanbun01_018",
+      "category": "thinking",
+      "prompt": "「入レ門」の書き下し文は？",
+      "choices": [
+        "入門す",
+        "門を入る",
+        "入る門",
+        "門に入る"
+      ],
+      "answerIndex": 3,
+      "explanation": "送り仮名は文脈から「に」。"
+    },
+    {
+      "id": "jap_kanbun01_019",
+      "category": "thinking",
+      "prompt": "「無レ人」の書き下し文は？",
+      "choices": [
+        "無人",
+        "無き人",
+        "人無く",
+        "人無し"
+      ],
+      "answerIndex": 3,
+      "explanation": "「無」は「なし」と読み、書き下しでは漢字のまま。"
+    },
+    {
+      "id": "jap_kanbun01_020",
+      "category": "thinking",
+      "prompt": "「非レ我」の書き下し文は？",
+      "choices": [
+        "我を非とす",
+        "我非ず",
+        "我に非ず",
+        "非我"
+      ],
+      "answerIndex": 2,
+      "explanation": "「非」は「あらず」。「〜に非ず」の形。"
+    },
+    {
+      "id": "jap_kanbun01_021",
+      "category": "thinking",
+      "prompt": "「有二大志一」を読む順は？",
+      "choices": [
+        "有 → 大 → 志",
+        "志 → 大 → 有",
+        "大 → 有 → 志",
+        "大 → 志 → 有"
+      ],
+      "answerIndex": 3,
+      "explanation": "大志有り。一二点で二字へだてて返る。"
+    },
+    {
+      "id": "jap_kanbun01_022",
+      "category": "thinking",
+      "prompt": "「登二高山一」の書き下し文は？",
+      "choices": [
+        "高山を登る",
+        "高山に登る",
+        "登る高山",
+        "山に高く登る"
+      ],
+      "answerIndex": 1,
+      "explanation": "一二点で「高山」から「登」へ返る。"
+    },
+    {
+      "id": "jap_kanbun01_023",
+      "category": "thinking",
+      "prompt": "「不レ知二其名一」の書き下し文は？",
+      "choices": [
+        "其の名を知る",
+        "其の名を知らず",
+        "知らず其の名",
+        "名を其れ知らず"
+      ],
+      "answerIndex": 1,
+      "explanation": "其 → 名 → 知 → 不 の順に読む。"
+    },
+    {
+      "id": "jap_kanbun01_024",
+      "category": "knowledge",
+      "prompt": "書き下し文で、助詞として読む「之（の）」はどう書く？",
+      "choices": [
+        "書かない",
+        "漢字のまま「之」と書く",
+        "カタカナで「ノ」と書く",
+        "ひらがなで「の」と書く"
+      ],
+      "answerIndex": 3,
+      "explanation": "日本語の助詞・助動詞にあたる字はひらがなにする。"
     }
   ]
 }

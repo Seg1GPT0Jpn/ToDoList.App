@@ -159,6 +159,162 @@
       ],
       "answerIndex": 1,
       "explanation": "尊敬語がつく動作の主体は、身分の高い人物である可能性が高い。"
+    },
+    {
+      "id": "jap_kobun07_013",
+      "category": "knowledge",
+      "prompt": "「たまはる」の意味は？",
+      "choices": [
+        "お与えになる（尊敬語）",
+        "いただく（謙譲語）",
+        "休む",
+        "たまる"
+      ],
+      "answerIndex": 1,
+      "explanation": "「たまふ」（お与えになる）と区別する。"
+    },
+    {
+      "id": "jap_kobun07_014",
+      "category": "knowledge",
+      "prompt": "「つかうまつる」の意味は？",
+      "choices": [
+        "お仕えする・〜して差し上げる（謙譲語）",
+        "お使いになる",
+        "遊ぶ",
+        "作る"
+      ],
+      "answerIndex": 0,
+      "explanation": "「仕ふ」の謙譲語。"
+    },
+    {
+      "id": "jap_kobun07_015",
+      "category": "knowledge",
+      "prompt": "「仰す」の意味は？",
+      "choices": [
+        "申し上げる",
+        "仰ぎ見る",
+        "おっしゃる（尊敬語）",
+        "命令される"
+      ],
+      "answerIndex": 2,
+      "explanation": "「仰せらる」の形でも使われる。"
+    },
+    {
+      "id": "jap_kobun07_016",
+      "category": "knowledge",
+      "prompt": "「召す」の意味として適切なものは？",
+      "choices": [
+        "いただく",
+        "寝る",
+        "お呼びになる・召し上がる（尊敬語）",
+        "参上する"
+      ],
+      "answerIndex": 2,
+      "explanation": "文脈によって意味が変わる。"
+    },
+    {
+      "id": "jap_kobun07_017",
+      "category": "knowledge",
+      "prompt": "「御覧ず」の意味は？",
+      "choices": [
+        "見られる",
+        "見せる",
+        "拝見する",
+        "ご覧になる（尊敬語）"
+      ],
+      "answerIndex": 3,
+      "explanation": "「見る」の尊敬語。"
+    },
+    {
+      "id": "jap_kobun07_018",
+      "category": "knowledge",
+      "prompt": "「大殿籠る」の意味は？",
+      "choices": [
+        "御殿にこもる",
+        "お食べになる",
+        "外出なさる",
+        "おやすみになる（尊敬語）"
+      ],
+      "answerIndex": 3,
+      "explanation": "「寝」の尊敬語。"
+    },
+    {
+      "id": "jap_kobun07_019",
+      "category": "knowledge",
+      "prompt": "「啓す」の意味は？",
+      "choices": [
+        "おっしゃる",
+        "（天皇に）申し上げる",
+        "（中宮・東宮に）申し上げる",
+        "参上する"
+      ],
+      "answerIndex": 2,
+      "explanation": "相手が決まっている絶対敬語。"
+    },
+    {
+      "id": "jap_kobun07_020",
+      "category": "knowledge",
+      "prompt": "「奏す」の意味は？",
+      "choices": [
+        "（天皇・上皇に）申し上げる",
+        "演奏する",
+        "（中宮に）申し上げる",
+        "お呼びになる"
+      ],
+      "answerIndex": 0,
+      "explanation": "相手が決まっている絶対敬語。"
+    },
+    {
+      "id": "jap_kobun07_021",
+      "category": "knowledge",
+      "prompt": "「まうづ」の意味は？",
+      "choices": [
+        "申す",
+        "参上する（謙譲語）",
+        "退出する",
+        "いらっしゃる"
+      ],
+      "answerIndex": 1,
+      "explanation": "「詣づ」。神社や寺にお参りする意味も。"
+    },
+    {
+      "id": "jap_kobun07_022",
+      "category": "knowledge",
+      "prompt": "補助動詞「たてまつる」の意味は？",
+      "choices": [
+        "〜申し上げる（謙譲語）",
+        "〜させる",
+        "〜ます（丁寧語）",
+        "〜なさる（尊敬語）"
+      ],
+      "answerIndex": 0,
+      "explanation": "例：「見たてまつる」＝拝見する。"
+    },
+    {
+      "id": "jap_kobun07_023",
+      "category": "thinking",
+      "prompt": "地の文「帝、かぐや姫を御覧ず」の「御覧ず」が表す敬意は？",
+      "choices": [
+        "作者からかぐや姫への敬意",
+        "作者から帝への敬意",
+        "帝からかぐや姫への敬意",
+        "かぐや姫から帝への敬意"
+      ],
+      "answerIndex": 1,
+      "explanation": "尊敬語なので、動作の主体（帝）への敬意。"
+    },
+    {
+      "id": "jap_kobun07_024",
+      "category": "thinking",
+      "prompt": "会話文の中の丁寧語「侍り」は、だれからだれへの敬意？",
+      "choices": [
+        "聞き手から話し手への敬意",
+        "話し手から動作主への敬意",
+        "話し手から聞き手への敬意",
+        "作者から読者への敬意"
+      ],
+      "answerIndex": 2,
+      "explanation": "丁寧語は聞き手（読み手）への敬意。"
     }
   ]
 }

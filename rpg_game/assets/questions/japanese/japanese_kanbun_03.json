@@ -159,6 +159,162 @@
       ],
       "answerIndex": 3,
       "explanation": "語順によって意味が大きく変わる。"
+    },
+    {
+      "id": "jap_kanbun03_013",
+      "category": "knowledge",
+      "prompt": "「未嘗〜」の読みと意味は？",
+      "choices": [
+        "かつて〜す",
+        "いまだかつて〜ず（今まで一度も〜ない）",
+        "けっして〜なかれ",
+        "いまだ〜ず"
+      ],
+      "answerIndex": 1,
+      "explanation": "経験がないことを強調する。"
+    },
+    {
+      "id": "jap_kanbun03_014",
+      "category": "knowledge",
+      "prompt": "「不必〜」の読みと意味は？",
+      "choices": [
+        "かならずしも〜ず（いつも〜とは限らない）",
+        "〜ざるべからず",
+        "かならず〜す",
+        "かならず〜ず（決して〜ない）"
+      ],
+      "answerIndex": 0,
+      "explanation": "部分否定。"
+    },
+    {
+      "id": "jap_kanbun03_015",
+      "category": "knowledge",
+      "prompt": "「必不〜」の読みと意味は？",
+      "choices": [
+        "かならずしも〜ず",
+        "かならず〜す",
+        "かならず〜ず（決して〜しない）",
+        "〜ざるなし"
+      ],
+      "answerIndex": 2,
+      "explanation": "全部否定。"
+    },
+    {
+      "id": "jap_kanbun03_016",
+      "category": "knowledge",
+      "prompt": "「非不〜」の読みと意味は？",
+      "choices": [
+        "〜ざるにあらず（〜しないのではない）",
+        "〜ざるべからず",
+        "〜ざるなし",
+        "〜にあらず"
+      ],
+      "answerIndex": 0,
+      "explanation": "二重否定で、肯定の意味になる。"
+    },
+    {
+      "id": "jap_kanbun03_017",
+      "category": "knowledge",
+      "prompt": "「莫非〜」の読みと意味は？",
+      "choices": [
+        "〜にあらざるは莫し（〜でないものはない）",
+        "〜に非ず",
+        "〜あらず",
+        "〜莫かれ"
+      ],
+      "answerIndex": 0,
+      "explanation": "二重否定。"
+    },
+    {
+      "id": "jap_kanbun03_018",
+      "category": "knowledge",
+      "prompt": "文頭の「安」を「いづくんぞ」と読むときの意味は？",
+      "choices": [
+        "いつ",
+        "やすらかに",
+        "どこへ",
+        "どうして（疑問・反語）"
+      ],
+      "answerIndex": 3,
+      "explanation": "「安くんぞ〜ん（や）」で反語になることが多い。"
+    },
+    {
+      "id": "jap_kanbun03_019",
+      "category": "knowledge",
+      "prompt": "「孰」の読みと意味は？",
+      "choices": [
+        "いくばく（どれほど）",
+        "たれか（だれが）",
+        "なんぞ（なぜ）",
+        "いづれか（どちらが）"
+      ],
+      "answerIndex": 3,
+      "explanation": "比較や選択の疑問に使う。"
+    },
+    {
+      "id": "jap_kanbun03_020",
+      "category": "knowledge",
+      "prompt": "「幾何」の読みは？",
+      "choices": [
+        "いづくんぞ",
+        "なんぞ",
+        "いかん",
+        "いくばく"
+      ],
+      "answerIndex": 3,
+      "explanation": "「どれほど」という数量の疑問。"
+    },
+    {
+      "id": "jap_kanbun03_021",
+      "category": "knowledge",
+      "prompt": "文末の「〜乎」が反語のとき、ふつうどう読む？",
+      "choices": [
+        "〜のみ",
+        "〜か",
+        "〜なり",
+        "〜ん（や）"
+      ],
+      "answerIndex": 3,
+      "explanation": "推量の「ん」と組み合わせて「〜んや」。"
+    },
+    {
+      "id": "jap_kanbun03_022",
+      "category": "knowledge",
+      "prompt": "「如何」の読みと意味は？",
+      "choices": [
+        "いかん（どうしたらよいか）",
+        "なんぞ（なぜ）",
+        "いづれ（どちら）",
+        "いくばく（どれほど）"
+      ],
+      "answerIndex": 0,
+      "explanation": "手段や処置をたずねる。「何如（いかん）」は状態をたずねる。"
+    },
+    {
+      "id": "jap_kanbun03_023",
+      "category": "thinking",
+      "prompt": "「誰不レ知」の意味として適切なものは？",
+      "choices": [
+        "だれも知らない",
+        "だれが知らないだろうか、いや、だれでも知っている",
+        "だれが知っているのか",
+        "だれかが知らない"
+      ],
+      "answerIndex": 1,
+      "explanation": "誰か知らざらん。反語。"
+    },
+    {
+      "id": "jap_kanbun03_024",
+      "category": "thinking",
+      "prompt": "「豈不レ惜乎」の意味として適切なものは？",
+      "choices": [
+        "惜しむべきではない",
+        "惜しまなくてよい",
+        "どうして惜しいだろうか、惜しくない",
+        "なんと惜しいことではないか"
+      ],
+      "answerIndex": 3,
+      "explanation": "豈に惜しからずや。「豈不〜乎」は詠嘆（または反語）。"
     }
   ]
 }

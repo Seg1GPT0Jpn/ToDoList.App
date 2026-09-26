@@ -159,6 +159,162 @@
       ],
       "answerIndex": 3,
       "explanation": "其の A よりは、寧ろ B せよ。選択の形。"
+    },
+    {
+      "id": "jap_kanbun04_013",
+      "category": "knowledge",
+      "prompt": "使役の「令」の読みは？",
+      "choices": [
+        "べし",
+        "る・らる",
+        "ごとし",
+        "しむ"
+      ],
+      "answerIndex": 3,
+      "explanation": "「A をして B せしむ」。"
+    },
+    {
+      "id": "jap_kanbun04_014",
+      "category": "knowledge",
+      "prompt": "受身の「被」の読みは？",
+      "choices": [
+        "る・らる",
+        "なる",
+        "しむ",
+        "たり"
+      ],
+      "answerIndex": 0,
+      "explanation": "例：「被レ殺」＝殺さる。"
+    },
+    {
+      "id": "jap_kanbun04_015",
+      "category": "knowledge",
+      "prompt": "「為A所B」の書き下しの型は？",
+      "choices": [
+        "A より B なり",
+        "A を B せしむ",
+        "A の B する所と為る",
+        "A と B と"
+      ],
+      "answerIndex": 2,
+      "explanation": "受身を表す。"
+    },
+    {
+      "id": "jap_kanbun04_016",
+      "category": "knowledge",
+      "prompt": "受身を表すとき、「見」の読みは？",
+      "choices": [
+        "る・らる",
+        "みる",
+        "しむ",
+        "あらはる"
+      ],
+      "answerIndex": 0,
+      "explanation": "例：「見レ疑」＝疑はる。"
+    },
+    {
+      "id": "jap_kanbun04_017",
+      "category": "thinking",
+      "prompt": "「使三子路問二之一」の書き下し文は？（子路に問わせた）",
+      "choices": [
+        "子路に之を問ふ",
+        "子路をして之を問はしむ",
+        "子路之を問ふ",
+        "子路之を使ひて問ふ"
+      ],
+      "answerIndex": 1,
+      "explanation": "使役の形。"
+    },
+    {
+      "id": "jap_kanbun04_018",
+      "category": "thinking",
+      "prompt": "「為二人所一レ笑」の書き下し文は？",
+      "choices": [
+        "笑ふ人の為に",
+        "人に笑はしむ",
+        "人を笑ふ所と為す",
+        "人の笑ふ所と為る"
+      ],
+      "answerIndex": 3,
+      "explanation": "人に笑われる。受身の形。"
+    },
+    {
+      "id": "jap_kanbun04_019",
+      "category": "thinking",
+      "prompt": "「不レ如レ学也」の書き下し文は？",
+      "choices": [
+        "学ぶは如かず",
+        "学ばざるが如し",
+        "学ぶに如かざるなり",
+        "学ぶが如くならず"
+      ],
+      "answerIndex": 2,
+      "explanation": "学ぶことには及ばない。"
+    },
+    {
+      "id": "jap_kanbun04_020",
+      "category": "thinking",
+      "prompt": "「青取二之於藍一、而青二於藍一」の書き下し文は？",
+      "choices": [
+        "青は之を藍より取りて、藍よりも青し",
+        "青は藍に之を取りて青からず",
+        "藍は青より取りて青し",
+        "青は藍を取りて青し"
+      ],
+      "answerIndex": 0,
+      "explanation": "（荀子）「於」は比較・起点を表す。"
+    },
+    {
+      "id": "jap_kanbun04_021",
+      "category": "thinking",
+      "prompt": "「良薬苦二於口一」の意味は？",
+      "choices": [
+        "口に苦いものは薬ではない",
+        "よく効く薬は口に苦い",
+        "良い薬は口より苦い",
+        "苦い薬は良い"
+      ],
+      "answerIndex": 1,
+      "explanation": "良薬は口に苦し。ためになる忠告は聞きづらいというたとえ。"
+    },
+    {
+      "id": "jap_kanbun04_022",
+      "category": "knowledge",
+      "prompt": "使役の「教」の読みは？",
+      "choices": [
+        "る",
+        "をしふ（教える）だけ",
+        "しむ",
+        "ごとし"
+      ],
+      "answerIndex": 2,
+      "explanation": "「A をして B せしむ」の形で使役を表す。"
+    },
+    {
+      "id": "jap_kanbun04_023",
+      "category": "knowledge",
+      "prompt": "使役の「遣」の読みは？",
+      "choices": [
+        "しむ",
+        "らる",
+        "なかれ",
+        "つかはす（遣わす）だけ"
+      ],
+      "answerIndex": 0,
+      "explanation": "「使・令・遣・教」はいずれも使役。"
+    },
+    {
+      "id": "jap_kanbun04_024",
+      "category": "thinking",
+      "prompt": "「苛政猛二於虎一」の意味は？",
+      "choices": [
+        "虎が政治を行う",
+        "むごい政治は虎よりも恐ろしい",
+        "虎は政治より強い",
+        "政治は虎のように強くあるべきだ"
+      ],
+      "answerIndex": 1,
+      "explanation": "苛政は虎よりも猛なり。（礼記）"
     }
   ]
 }
