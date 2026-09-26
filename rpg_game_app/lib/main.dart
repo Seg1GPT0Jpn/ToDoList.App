@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'account/account_screen.dart';
+import 'account/account_service.dart';
+import 'account/profile_repository.dart';
 import 'app/services.dart';
 import 'app/theme.dart';
 import 'data/prefs_progress_repository.dart';
@@ -14,6 +17,8 @@ Future<void> main() async {
     RpgServices(
       repository: PrefsProgressRepository(prefs),
       personalBooks: PersonalBooks(prefs),
+      profiles: ProfileRepository(prefs),
+      account: MockAccountService(),
       child: const TsuzuriQuestApp(),
     ),
   );
@@ -33,7 +38,35 @@ class TsuzuriQuestApp extends StatelessWidget {
       theme: buildTheme(Brightness.light),
       darkTheme: buildTheme(Brightness.dark),
       navigatorObservers: [routeObserver],
-      home: const WorldMapScreen(),
+      home: const _FirstRun(child: WorldMapScreen()),
     );
   }
+}
+
+/// はじめての起動で、冒険者の名前を聞く
+class _FirstRun extends StatefulWidget {
+  const _FirstRun({required this.child});
+  final Widget child;
+
+  @override
+  State<_FirstRun> createState() => _FirstRunState();
+}
+
+class _FirstRunState extends State<_FirstRun> {
+  bool _asked = false;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (_asked) return;
+    _asked = true;
+    if (!RpgServices.of(context).profiles.load().hasName) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) askUserName(context);
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) => widget.child;
 }

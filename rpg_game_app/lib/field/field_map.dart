@@ -1,6 +1,8 @@
 import 'dart:collection';
 import 'dart:math';
 
+import 'package:rpg_game/rpg_game.dart';
+
 /// エリアの地方（床・壁・障害物の見た目）
 enum Region {
   grass('草原エリア'),
@@ -178,133 +180,117 @@ class FieldMap {
 
   static final Map<String, FieldMap> _cache = {};
 
-  /// マップの ID から取り出す（english / science_hub / science_physics など）
+  /// マップの ID から取り出す。
+  /// `english`、`<worldId>_hub`（ハブ）、`<worldId>_<ルートID>`（ルートのマップ）
   static FieldMap byId(String id) => _cache.putIfAbsent(id, () {
     if (id == 'english') return english;
-    if (id == 'science_hub') return _scienceHub();
-    final branch = id.replaceFirst('science_', '');
-    final b = _scienceBranches.firstWhere((b) => b.id == branch);
-    return _scienceBranch(b);
+    final sep = id.indexOf('_');
+    final world = RpgCatalog.world(id.substring(0, sep));
+    final rest = id.substring(sep + 1);
+    if (rest == 'hub') return _hub(world);
+    return _route(world, world.route(rest)!);
   });
 
   /// そのワールドに入ったときの最初のマップ
-  static String firstMapOf(String worldId) =>
-      worldId == 'science' ? 'science_hub' : 'english';
+  static String firstMapOf(String worldId) {
+    if (worldId == RpgCatalog.englishWorldId) return 'english';
+    final w = RpgCatalog.world(worldId);
+    return w.routes.length > 1 ? '${w.id}_hub' : '${w.id}_${w.routes.first.id}';
+  }
 
-  // ---------------- 理の国 ----------------
-
-  static const _scienceBranches = [
-    (
-      id: 'physics',
-      name: '物理',
-      basic: '物理基礎',
-      adv: '物理',
-      dir: 'up',
-      offset: 0,
-      basicRegion: Region.grass,
-      advRegion: Region.lava,
-    ),
-    (
-      id: 'chemistry',
-      name: '化学',
-      basic: '化学基礎',
-      adv: '化学',
-      dir: 'left',
-      offset: 16,
-      basicRegion: Region.coast,
-      advRegion: Region.cave,
-    ),
-    (
-      id: 'earth',
-      name: '地学',
-      basic: '地学基礎',
-      adv: '地学',
-      dir: 'right',
-      offset: 32,
-      basicRegion: Region.cave,
-      advRegion: Region.lava,
-    ),
-    (
-      id: 'biology',
-      name: '生物',
-      basic: '生物基礎',
-      adv: '生物',
-      dir: 'down',
-      offset: 48,
-      basicRegion: Region.grass,
-      advRegion: Region.coast,
-    ),
+  static const _palettes = [
+    Region.grass,
+    Region.coast,
+    Region.cave,
+    Region.lava,
   ];
 
-  /// スタート地点。上下左右の出入口から4系統へ進む。
-  static FieldMap _scienceHub() {
-    const lines = [
-      '#####O#####',
+  /// スタート地点のハブ。ルートの向きごとに、辺に出入口を並べる（1辺に2つまで）。
+  static FieldMap _hub(WorldDef world) {
+    final lines = [
+      '###########',
       '#.........#',
       '#.T.....T.#',
       '#....S....#',
       '#.........#',
       '#.~.....~.#',
-      'O....P....O',
+      '#....P....#',
       '#.........#',
       '#.~.....~.#',
       '#.........#',
       '#.T.....T.#',
       '#.........#',
-      '#####O#####',
-    ];
+      '###########',
+    ].map((l) => l.split('')).toList();
     final h = lines.length, w = lines.first.length;
-    Cell at(int col, int row) => (col: col, row: row);
+    final portals = <Cell, Portal>{};
+    for (final dir in const ['up', 'left', 'right', 'down']) {
+      final rs = world.routes.where((r) => r.direction == dir).toList();
+      if (rs.length > 2) throw ArgumentError('1辺の出入口は2つまで: $dir');
+      final slots = rs.length == 1 ? const [0.5] : const [0.3, 0.7];
+      for (final (i, r) in rs.indexed) {
+        final Cell cell = switch (dir) {
+          'up' => (col: (w * slots[i]).floor(), row: 0),
+          'down' => (col: (w * slots[i]).floor(), row: h - 1),
+          'left' => (col: 0, row: (h * slots[i]).floor()),
+          _ => (col: w - 1, row: (h * slots[i]).floor()),
+        };
+        lines[cell.row][cell.col] = 'O';
+        portals[cell] = (target: '${world.id}_${r.id}', label: r.name);
+      }
+    }
     return FieldMap(
-      lines,
-      id: 'science_hub',
+      [for (final l in lines) l.join()],
+      id: '${world.id}_hub',
       regionGrid: List.generate(h, (_) => List.filled(w, Region.grass)),
       areaGrid: List.generate(h, (_) => List.filled(w, 0)),
       enemySpots: const {},
       safeCells: const {},
-      areaLabels: const {0: 'はじまりの実験広場'},
-      portals: {
-        at(5, 0): (target: 'science_physics', label: '物理'),
-        at(0, 6): (target: 'science_chemistry', label: '化学'),
-        at(10, 6): (target: 'science_earth', label: '地学'),
-        at(5, 12): (target: 'science_biology', label: '生物'),
-      },
-      signText:
-          'ここは理の国のはじまりの実験広場。'
-          '上へ進むと物理、左は化学、右は地学、下は生物の道。'
-          'どの道もエリア1〜8が「基礎」、9〜16が発展の科目で、最後に玉座のボスが待っている。',
+      areaLabels: {0: world.hubName},
+      portals: portals,
+      signText: world.hubSign,
     );
   }
 
-  static FieldMap _scienceBranch(
-    ({
-      String id,
-      String name,
-      String basic,
-      String adv,
-      String dir,
-      int offset,
-      Region basicRegion,
-      Region advRegion,
-    })
-    b,
-  ) {
+  /// ルートの1本道。上へ進む形で作ってから、ルートの向きに回転させる。
+  static FieldMap _route(WorldDef world, RouteInfo route) {
+    final stages = world.stages.where((s) => s.branch == route.id).toList();
+    final offset = stages.first.order - 1;
+    final routeIndex = world.routes.indexOf(route);
+    // 分野（section）が変わるごとに地方の見た目を変える
+    final sections = <String>[];
+    for (final s in stages) {
+      if (!sections.contains(s.region)) sections.add(s.region);
+    }
+    Region regionOf(int k) {
+      final s = stages[(k - 1).clamp(0, stages.length - 1)];
+      return _palettes[(routeIndex + sections.indexOf(s.region)) % 4];
+    }
+
+    final bosses = [
+      for (final s in stages)
+        if (s.isBoss) 'エリア${s.areaNo}',
+    ];
+    final hasHub = world.routes.length > 1;
     final up = _build(
-      id: 'science_${b.id}',
-      areas: 16,
-      seed: 3000 + b.offset,
-      roomSeed: 5000 + b.offset * 31,
-      regionOf: (k) => k <= 8 ? b.basicRegion : b.advRegion,
-      orderOffset: b.offset,
-      areaLabel: (k) =>
-          k > 16 ? '${b.name}の玉座の先' : '${k <= 8 ? b.basic : b.adv}・エリア$k',
-      backPortal: (target: 'science_hub', label: 'はじまりの広場'),
+      id: '${world.id}_${route.id}',
+      areas: stages.length,
+      seed: 3000 + offset,
+      roomSeed: 5000 + offset * 31,
+      regionOf: regionOf,
+      orderOffset: offset,
+      areaLabel: (k) => k > stages.length
+          ? '${route.name}の玉座の先'
+          : '${stages[k - 1].region}・エリア$k',
+      backPortal: hasHub
+          ? (target: '${world.id}_hub', label: world.hubName)
+          : null,
       signText:
-          'ここから${b.name}の道。${b.basic}の8エリアを越えると、${b.adv}の8エリアが続く。'
-          'ボスはエリア8と16。宿で授業を受けてから挑もう。',
-      goalText: '${b.name}マスターのトロフィー',
+          'ここから${route.name}の道。${sections.join('、')}を順に進む。'
+          'ボスは${bosses.join('と')}。宿で授業を受けてから挑もう。',
+      goalText: '${route.name}マスターのトロフィー',
     );
-    return up._turned(b.dir);
+    return up._turned(route.direction);
   }
 
   /// 上へ進む形のマップを、[dir]（up / down / left / right）へ進む形に向きを変える

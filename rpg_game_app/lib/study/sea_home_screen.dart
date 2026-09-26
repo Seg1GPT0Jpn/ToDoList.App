@@ -10,16 +10,66 @@ import '../art/paper.dart';
 import 'personal_books.dart';
 import 'sea_quiz_screen.dart';
 
-/// 定期テストの海：単元・単語帳を選ぶ画面
-class SeaHomeScreen extends StatelessWidget {
+/// 定期テストの海：教科を選び、単元・単語帳を選ぶ画面
+class SeaHomeScreen extends StatefulWidget {
   const SeaHomeScreen({super.key, required this.personalBooks});
 
   final PersonalBooks personalBooks;
 
   @override
+  State<SeaHomeScreen> createState() => _SeaHomeScreenState();
+}
+
+class _SeaHomeScreenState extends State<SeaHomeScreen> {
+  /// 選んでいる教科（english / science / social / japanese / math / information）
+  String _subject = 'english';
+
+  static const _subjects = [
+    ('english', '英語'),
+    ('science', '理科'),
+    ('social', '社会'),
+    ('japanese', '国語'),
+    ('math', '数学'),
+    ('information', '情報'),
+  ];
+
+  @override
   Widget build(BuildContext context) {
+    final chooser = SizedBox(
+      height: 44,
+      child: ListView(
+        scrollDirection: Axis.horizontal,
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+        children: [
+          for (final (id, label) in _subjects)
+            Padding(
+              padding: const EdgeInsets.only(right: 6),
+              child: ChoiceChip(
+                label: Text(label),
+                selected: _subject == id,
+                onSelected: (_) => setState(() => _subject = id),
+              ),
+            ),
+        ],
+      ),
+    );
+    final english = _subject == 'english';
+    final world = english ? null : RpgCatalog.world(_subject);
+    final tabs = english
+        ? const [
+            Tab(text: '高1'),
+            Tab(text: '高2'),
+            Tab(text: '高3'),
+            Tab(text: '単語・熟語'),
+            Tab(icon: Icon(Icons.lock_outline, size: 16), text: 'LEAP'),
+          ]
+        : [
+            for (final r in world!.routes) Tab(text: r.name),
+            if (world.routes.isEmpty) const Tab(text: '準備中'),
+          ];
     return DefaultTabController(
-      length: 5,
+      key: ValueKey(_subject),
+      length: tabs.length,
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: const Color(0xFFE6F0F5),
@@ -27,18 +77,20 @@ class SeaHomeScreen extends StatelessWidget {
             '定期テストの海',
             style: serif(19, color: const Color(0xFF2F5D7C)),
           ),
-          bottom: const TabBar(
-            isScrollable: true,
-            tabAlignment: TabAlignment.start,
-            labelColor: Color(0xFF2F5D7C),
-            indicatorColor: Color(0xFF2F5D7C),
-            tabs: [
-              Tab(text: '高1'),
-              Tab(text: '高2'),
-              Tab(text: '高3'),
-              Tab(text: '単語・熟語'),
-              Tab(icon: Icon(Icons.lock_outline, size: 16), text: 'LEAP'),
-            ],
+          bottom: PreferredSize(
+            preferredSize: const Size.fromHeight(44 + 48),
+            child: Column(
+              children: [
+                chooser,
+                TabBar(
+                  isScrollable: true,
+                  tabAlignment: TabAlignment.start,
+                  labelColor: const Color(0xFF2F5D7C),
+                  indicatorColor: const Color(0xFF2F5D7C),
+                  tabs: tabs,
+                ),
+              ],
+            ),
           ),
         ),
         body: NotebookPaper(
@@ -46,19 +98,114 @@ class SeaHomeScreen extends StatelessWidget {
             stream: RpgServices.of(context).repository.watch(),
             builder: (context, snap) {
               final progress = snap.data ?? RpgProgress.initial;
+              if (!english) {
+                return TabBarView(
+                  children: [
+                    for (final r in world!.routes)
+                      _RouteTab(world: world, route: r, progress: progress),
+                    if (world.routes.isEmpty)
+                      const Center(child: Text('この教科は準備中です')),
+                  ],
+                );
+              }
               return TabBarView(
                 children: [
                   _GradeTab(grade: 1, progress: progress),
                   _GradeTab(grade: 2, progress: progress),
                   _GradeTab(grade: 3, progress: progress),
                   _WordsTab(progress: progress),
-                  _LeapTab(books: personalBooks, progress: progress),
+                  _LeapTab(books: widget.personalBooks, progress: progress),
                 ],
               );
             },
           ),
         ),
       ),
+    );
+  }
+}
+
+/// 英語以外の教科：ルートごとに、エリアの単元を練習できる。
+/// RPG と同じ自作問題を使うので、有料の教科はワールドを解放してから使える。
+class _RouteTab extends StatelessWidget {
+  const _RouteTab({
+    required this.world,
+    required this.route,
+    required this.progress,
+  });
+
+  final WorldDef world;
+  final RouteInfo route;
+  final RpgProgress progress;
+
+  Future<void> _open(BuildContext context, StageDef s) async {
+    final setId = s.questionSetIds.last;
+    final set = await RpgServices.of(context).questions.load(setId);
+    if (set == null || !context.mounted) return;
+    Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        builder: (_) => SeaQuizScreen(
+          title: '${route.name} ${s.areaNo}. ${s.grammarTheme}',
+          recordId: setId,
+          questions: set.questions,
+        ),
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final owned = Progression.isWorldPlayable(progress, world);
+    final stages = world.stages.where((s) => s.branch == route.id).toList();
+    return ListView(
+      padding: const EdgeInsets.fromLTRB(40, 12, 12, 24),
+      children: [
+        if (!owned)
+          Card(
+            color: const Color(0xFFFFF8E1),
+            child: Padding(
+              padding: const EdgeInsets.all(14),
+              child: Text(
+                '${world.name}を解放すると、ここで単元ごとに練習できます。'
+                '（ワールドマップの「${world.name}」から解放できます）',
+                style: const TextStyle(height: 1.6),
+              ),
+            ),
+          ),
+        for (final (i, s) in stages.indexed) ...[
+          if (i == 0 || stages[i - 1].region != s.region)
+            Padding(
+              padding: const EdgeInsets.fromLTRB(4, 12, 0, 6),
+              child: Text(
+                s.region,
+                style: serif(15, color: TsuzuriColors.inkSoft),
+              ),
+            ),
+          Card(
+            margin: const EdgeInsets.only(bottom: 8),
+            child: ListTile(
+              enabled: owned,
+              onTap: owned ? () => _open(context, s) : null,
+              leading: CircleAvatar(
+                radius: 15,
+                backgroundColor: const Color(0xFFE6F0F5),
+                child: Text(
+                  '${s.areaNo}',
+                  style: const TextStyle(
+                    fontSize: 12,
+                    color: Color(0xFF2F5D7C),
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+              ),
+              title: Text(s.grammarTheme),
+              trailing: owned
+                  ? _bestBadge(progress.seaBest[s.questionSetIds.last])
+                  : const Icon(Icons.lock_outline, size: 18),
+            ),
+          ),
+        ],
+      ],
     );
   }
 }

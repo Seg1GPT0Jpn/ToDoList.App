@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:rpg_game/rpg_game.dart';
 
+import '../account/account_service.dart';
+import '../account/profile_repository.dart';
 import '../data/prefs_progress_repository.dart';
 import '../study/personal_books.dart';
 
@@ -12,6 +14,8 @@ class RpgServices extends InheritedWidget {
     super.key,
     required this.repository,
     required this.personalBooks,
+    required this.profiles,
+    required this.account,
     required super.child,
   }) : questions = JsonQuestionSource(_loadAsset),
        unlock = WorldUnlockService(
@@ -21,6 +25,10 @@ class RpgServices extends InheritedWidget {
        );
 
   final PrefsProgressRepository repository;
+
+  /// ユーザー名と Google アカウント
+  final ProfileRepository profiles;
+  final AccountService account;
 
   /// パスワード保護の個人用単語帳（LEAP など）
   final PersonalBooks personalBooks;

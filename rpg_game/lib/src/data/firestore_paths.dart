@@ -14,12 +14,17 @@ class RpgFirestorePaths {
   /// バトル履歴（任意・直近のみ）: users/{uid}/rpg_battle_logs/{autoId}
   static const battleLogsCollection = 'rpg_battle_logs';
 
+  /// プロフィール（ユーザー名・連携した Google アカウントの表示情報）:
+  /// users/{uid}/rpg_profile/main
+  static const profileCollection = 'rpg_profile';
+
   /// アカウント削除・バックアップ（account_deletion.dart / data_backup.dart）に
   /// 追加する users/{uid} 配下のサブコレクション。
   static const userSubcollections = [
     progressCollection,
     purchasesCollection,
     battleLogsCollection,
+    profileCollection,
   ];
 
   /// 問題セットを Firestore から配信する場合（任意。初期はアプリ同梱の JSON）:
@@ -30,6 +35,8 @@ class RpgFirestorePaths {
 
   static String progressDoc(String uid) =>
       'users/$uid/$progressCollection/$progressDocId';
+  static String profileDoc(String uid) =>
+      'users/$uid/$profileCollection/$progressDocId';
   static String purchaseDoc(String uid, String worldId) =>
       'users/$uid/$purchasesCollection/$worldId';
   static String questionSetDoc(String worldId, String setId) =>

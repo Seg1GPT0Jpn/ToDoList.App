@@ -3,6 +3,7 @@ import '../models/question.dart';
 import '../models/stage.dart';
 import '../models/world.dart';
 import '../study/sea_catalog.dart';
+import 'route_world.dart';
 import 'science_catalog.dart';
 
 /// ワールド・ステージのマスターデータ。
@@ -622,6 +623,14 @@ class RpgCatalog {
       isFree: false,
       priceYen: defaultWorldPriceYen,
       stages: ScienceCatalog.stages,
+      routes: [
+        for (final b in ScienceCatalog.branches)
+          RouteInfo(b.id, b.name, b.direction),
+      ],
+      hubName: 'はじまりの実験広場',
+      hubSign: 'ここは理の国のはじまりの実験広場。'
+          '上へ進むと物理、左は化学、右は地学、下は生物の道。'
+          'どの道もエリア1〜8が「基礎」、9〜16が発展の科目で、最後に玉座のボスが待っている。',
       description: 'スタート地点から上は物理、左は化学、右は地学、下は生物。基礎から発展まで64エリア。',
     ),
     WorldDef(
@@ -650,7 +659,7 @@ class RpgCatalog {
   /// 画面に出すステージの名前（例：エリア3、物理・エリア3）
   static String stageLabel(StageDef s) => s.branch.isEmpty
       ? 'エリア${s.order}'
-      : '${ScienceCatalog.branch(s.branch).name}・エリア${s.areaNo}';
+      : '${world(s.worldId).route(s.branch)?.name ?? s.branch}・エリア${s.areaNo}';
 
   /// 画面に出す出題範囲（英語は文法と単語、理科は単元と科目）
   static String themeLabel(StageDef s) => s.branch.isEmpty

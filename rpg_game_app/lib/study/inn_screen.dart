@@ -21,7 +21,36 @@ enum _Phase { lesson, practice, result }
 class _InnScreenState extends State<InnScreen> {
   static const practiceCount = 5;
 
-  late final InnLesson lesson = InnLessons.forStage(widget.stage.id);
+  late InnLesson lesson = InnLessons.forStage(widget.stage.id);
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (lesson.points.isEmpty) _buildLessonFromQuestions();
+  }
+
+  /// 手書きの授業がないエリアは、そのエリアの問題の解説から要点を3つ作る
+  Future<void> _buildLessonFromQuestions() async {
+    final set = await RpgServices.of(context).questions
+        .load(widget.stage.questionSetIds.last);
+    if (!mounted || set == null) return;
+    final picks = [
+      ...set.questions.where((q) => q.category == QuestionCategory.knowledge),
+      ...set.questions.where((q) => q.category != QuestionCategory.knowledge),
+    ].where((q) => (q.explanation ?? '').isNotEmpty).take(3);
+    setState(() {
+      lesson = InnLesson(
+        stageId: lesson.stageId,
+        teacher: lesson.teacher,
+        title: lesson.title,
+        points: [
+          for (final q in picks)
+            LessonPoint(q.answer, q.explanation!, q.sentence ?? q.prompt),
+        ],
+      );
+    });
+  }
+
   _Phase _phase = _Phase.lesson;
   PracticeSession? _session;
   ExpGainResult? _gain;

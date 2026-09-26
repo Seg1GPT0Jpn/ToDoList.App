@@ -1,3 +1,4 @@
+import '../data/route_world.dart';
 import 'stage.dart';
 
 /// ワールドの公開状態。
@@ -20,7 +21,19 @@ class WorldDef {
     this.priceYen,
     this.stages = const [],
     this.description = '',
+    this.routes = const [],
+    this.hubName = '',
+    this.hubSign = '',
   });
+
+  /// ルート（2つ以上ならスタート地点のハブから分かれる。1つなら1本道）
+  final List<RouteInfo> routes;
+
+  /// ハブの名前と看板の文
+  final String hubName;
+  final String hubSign;
+
+  RouteInfo? route(String id) => routes.where((r) => r.id == id).firstOrNull;
 
   final String id;
   final String name;

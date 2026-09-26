@@ -1,3 +1,4 @@
+import '../data/catalog.dart';
 import 'science_lessons.dart';
 
 /// 宿で受けられる授業（次の敵の文法テーマの要点）。
@@ -26,9 +27,16 @@ class InnLesson {
 class InnLessons {
   const InnLessons._();
 
+  /// 手書きの授業があればそれ、なければ要点が空の授業（アプリ側で問題から作る）
   static InnLesson forStage(String stageId) =>
       all.where((l) => l.stageId == stageId).firstOrNull ??
-      ScienceLessons.all.firstWhere((l) => l.stageId == stageId);
+      ScienceLessons.all.where((l) => l.stageId == stageId).firstOrNull ??
+      InnLesson(
+        stageId: stageId,
+        teacher: '${RpgCatalog.stage(stageId).name}の宿・先生',
+        title: RpgCatalog.stage(stageId).grammarTheme,
+        points: const [],
+      );
 
   static const all = <InnLesson>[
     InnLesson(

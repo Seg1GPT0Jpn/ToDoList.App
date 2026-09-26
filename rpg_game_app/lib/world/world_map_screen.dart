@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:rpg_game/rpg_game.dart';
 
+import '../account/account_screen.dart';
 import '../app/services.dart';
 import '../app/theme.dart';
 import '../art/hero_painter.dart';
@@ -102,6 +103,14 @@ class WorldMapScreen extends StatelessWidget {
             PopupMenuButton<String>(
               icon: const Icon(Icons.more_vert, color: TsuzuriColors.inkSoft),
               onSelected: (v) async {
+                if (v == 'account') {
+                  await Navigator.of(context).push(
+                    MaterialPageRoute<void>(
+                      builder: (_) => const AccountScreen(),
+                    ),
+                  );
+                  return;
+                }
                 if (v == 'trial') {
                   await _pickTrial(context);
                   return;
@@ -127,6 +136,10 @@ class WorldMapScreen extends StatelessWidget {
                 if (ok == true) await services.repository.reset();
               },
               itemBuilder: (_) => const [
+                PopupMenuItem(
+                  value: 'account',
+                  child: Text('アカウント（名前・Google）'),
+                ),
                 PopupMenuItem(value: 'trial', child: Text('エリアを選んでバトル（確認用）')),
                 PopupMenuItem(value: 'reset', child: Text('データをリセット')),
               ],
@@ -149,7 +162,36 @@ class WorldMapScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Lv${stats.level}  見習い冒険者', style: serif(16)),
+                    StreamBuilder<PlayerProfile>(
+                      stream: services.profiles.watch(),
+                      builder: (context, p) => InkWell(
+                        onTap: () => Navigator.of(context).push(
+                          MaterialPageRoute<void>(
+                            builder: (_) => const AccountScreen(),
+                          ),
+                        ),
+                        child: Row(
+                          children: [
+                            Flexible(
+                              child: Text(
+                                'Lv${stats.level}  ${(p.data ?? services.profiles.load()).displayName}',
+                                overflow: TextOverflow.ellipsis,
+                                style: serif(16),
+                              ),
+                            ),
+                            const SizedBox(width: 4),
+                            Icon(
+                              (p.data ?? services.profiles.load())
+                                      .isGoogleLinked
+                                  ? Icons.verified_user
+                                  : Icons.edit,
+                              size: 15,
+                              color: TsuzuriColors.inkSoft,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                     const SizedBox(height: 6),
                     ClipRRect(
                       borderRadius: BorderRadius.circular(4),
@@ -223,10 +265,9 @@ Future<void> _pickTrial(BuildContext context) async {
   ]);
   if (world == null || !context.mounted) return;
   var stages = world.stages;
-  if (stages.any((s) => s.branch.isNotEmpty)) {
-    final branch = await choose('系統を選ぶ（確認用）', [
-      for (final b in ScienceCatalog.branches)
-        ('${b.name}（${b.basic}・${b.advanced}）', b.id),
+  if (world.routes.length > 1) {
+    final branch = await choose('ルートを選ぶ（確認用）', [
+      for (final r in world.routes) (r.name, r.id),
     ]);
     if (branch == null || !context.mounted) return;
     stages = stages.where((s) => s.branch == branch).toList();
