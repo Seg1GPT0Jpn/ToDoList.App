@@ -1,14 +1,15 @@
 rules_version = '2';
 
 // つづりクエスト（単体版）の Firestore ルール。
-// ログインした本人だけが、自分の進行状況（rpg_progress）とプロフィール（rpg_profile）を読み書きできる。
+// ログインした本人だけが、自分の進行状況（rpg_progress）・プロフィール（rpg_profile）・
+// 学習記録（rpg_learning）・冒険の記録（rpg_journal）を読み書きできる。
 // ほかのコレクション（ほかの人のデータを含む）は、だれも読み書きできない。
 service cloud.firestore {
   match /databases/{database}/documents {
     match /users/{uid}/{collection}/{docId} {
       allow read, write: if request.auth != null
         && request.auth.uid == uid
-        && collection in ['rpg_progress', 'rpg_profile']
+        && collection in ['rpg_progress', 'rpg_profile', 'rpg_learning', 'rpg_journal']
         && docId == 'main';
     }
   }

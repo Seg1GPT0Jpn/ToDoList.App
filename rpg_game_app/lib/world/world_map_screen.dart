@@ -8,9 +8,12 @@ import '../account/account_screen.dart';
 import '../app/services.dart';
 import '../app/theme.dart';
 import '../art/hero_painter.dart';
+import '../audio/music_director.dart';
+import '../audio/music_scope.dart';
 import '../art/paper.dart';
 import '../battle/battle_screen.dart';
 import '../field/field_screen.dart';
+import '../meta/adventure_card.dart';
 import '../study/sea_home_screen.dart';
 import 'promo_code_dialog.dart';
 
@@ -126,7 +129,9 @@ class WorldMapScreen extends StatelessWidget {
                   context: context,
                   builder: (c) => AlertDialog(
                     title: const Text('データをリセット'),
-                    content: const Text('レベル・クリア状況・購入状況をすべて消して、最初からにします。'),
+                    content: const Text(
+                      'レベル・クリア状況・購入状況・学習記録・図鑑をすべて消して、最初からにします。',
+                    ),
                     actions: [
                       TextButton(
                         onPressed: () => Navigator.pop(c, false),
@@ -139,7 +144,10 @@ class WorldMapScreen extends StatelessWidget {
                     ],
                   ),
                 );
-                if (ok == true) await services.repository.reset();
+                if (ok == true) {
+                  await services.repository.reset();
+                  await services.meta.reset();
+                }
               },
               itemBuilder: (_) => [
                 const PopupMenuItem(
@@ -231,11 +239,15 @@ class WorldMapScreen extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 14),
+        AdventureCard(progress: progress),
+        const SizedBox(height: 14),
         _SeaBanner(
           onTap: () => Navigator.of(context).push(
             MaterialPageRoute<void>(
-              builder: (_) =>
-                  SeaHomeScreen(personalBooks: services.personalBooks),
+              builder: (_) => MusicScope(
+                music: 'field_science',
+                child: SeaHomeScreen(personalBooks: services.personalBooks),
+              ),
             ),
           ),
         ),
@@ -388,8 +400,10 @@ class _WorldCard extends StatelessWidget {
           onTap: () => playable
               ? Navigator.of(context).push(
                   MaterialPageRoute<void>(
-                    builder: (_) =>
-                        FieldScreen(world: world, progress: progress),
+                    builder: (_) => MusicScope(
+                      music: MusicDirector.fieldKey(world.id),
+                      child: FieldScreen(world: world, progress: progress),
+                    ),
                   ),
                 )
               : _showLocked(context, availability),

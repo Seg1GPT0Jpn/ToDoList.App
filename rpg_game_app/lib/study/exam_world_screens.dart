@@ -388,6 +388,7 @@ class ExamWorldPlayScreen extends StatelessWidget {
           progress: progress,
           // RPG の進行・経験値は変えない（練習用）
           trial: true,
+          mode: BattleMode.exam,
           onFinished: (summary) {
             if (!summary.won) return;
             final latest = services.examWorlds.byId(plan.id);

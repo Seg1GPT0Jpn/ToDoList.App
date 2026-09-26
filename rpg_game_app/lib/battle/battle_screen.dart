@@ -5,6 +5,8 @@ import 'package:rpg_game/rpg_game.dart';
 
 import '../app/services.dart';
 import '../app/theme.dart';
+import '../app/toast.dart';
+import '../audio/music_director.dart';
 import '../art/enemy_painter.dart';
 import '../art/hero_painter.dart';
 import '../art/paper.dart';
@@ -21,7 +23,12 @@ class BattleScreen extends StatefulWidget {
     this.trial = false,
     this.ghost = false,
     this.onFinished,
+    this.mode,
   });
+
+  /// 記録のしかた（図鑑・クエスト・学習記録）。省略すると
+  /// 亡霊なら [BattleMode.ghost]、確認用なら [BattleMode.trial]、ほかは [BattleMode.rpg]
+  final BattleMode? mode;
 
   /// バトルが終わったときに呼ぶ（試験対策ワールドのクリア記録に使う）
   final void Function(BattleSummary summary)? onFinished;
@@ -79,7 +86,31 @@ class _BattleScreenState extends State<BattleScreen>
         )
       : widget.stage.enemy;
 
+  late final BattleMode _mode =
+      widget.mode ??
+      (widget.ghost
+          ? BattleMode.ghost
+          : widget.trial
+          ? BattleMode.trial
+          : BattleMode.rpg);
+
+  late RpgServices _services;
+  bool _audioStarted = false;
+  late final String _musicKey = widget.stage.isBoss && !widget.ghost
+      ? MusicDirector.boss
+      : MusicDirector.battle;
+
+  /// このバトルでの回答（学習記録に残す）
+  final List<AnswerEvent> _events = [];
+
+  /// ボス登場の演出
+  bool _bossBanner = false;
+
   late final BattleEngine _engine = BattleEngine(
+    // 苦手な問題・復習の日が来た問題ほど出やすくする（確認用のバトルは除く）
+    questionWeight: _mode == BattleMode.trial
+        ? null
+        : AdaptiveWeights.forRecord(_services.meta.record, RpgServices.today()),
     player: _player,
     enemy: _enemy,
     questions: widget.questions,
@@ -150,7 +181,30 @@ class _BattleScreenState extends State<BattleScreen>
   }
 
   @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _services = RpgServices.of(context);
+    if (_audioStarted) return;
+    _audioStarted = true;
+    final music = _services.music;
+    music.enter(_musicKey);
+    if (_musicKey == MusicDirector.boss) {
+      music.se('se_boss_appear');
+      _bossBanner = true;
+      Future.delayed(const Duration(milliseconds: 1500), () {
+        if (mounted) setState(() => _bossBanner = false);
+      });
+    } else {
+      final species = EnemySpeciesCatalog.of(_enemy.look);
+      Future.delayed(const Duration(milliseconds: 350), () {
+        if (mounted) music.se(species.sound);
+      });
+    }
+  }
+
+  @override
   void dispose() {
+    _services.music.leave(_musicKey);
     for (final c in [
       _idle,
       _intro,
@@ -218,6 +272,7 @@ class _BattleScreenState extends State<BattleScreen>
         ? _engine.timeout()
         : _engine.answer(choice, elapsed: _stopwatch.elapsed);
     setState(() => _last = r);
+    _record(r);
 
     if (r.correct) {
       _slash.forward(from: 0);
@@ -345,11 +400,77 @@ class _BattleScreenState extends State<BattleScreen>
     // 不正解・時間切れのときは解説を読んでから「つぎへ」
   }
 
+  /// 回答を学習記録用に取っておき、音を鳴らす
+  void _record(TurnResult r) {
+    final id = r.question.source.id;
+    final setId = _services.questions.setIdOf(id);
+    // 個人用単語帳（LEAP など）の問題は、どのセットにも入っていないので記録しない
+    if (setId != null) {
+      _events.add(
+        AnswerEvent(
+          questionId: id,
+          setId: setId,
+          isCorrect: r.correct,
+          elapsedMs: r.timedOut
+              ? _engine.limitFor(r.question).inMilliseconds
+              : _stopwatch.elapsedMilliseconds,
+        ),
+      );
+    }
+    final music = _services.music;
+    if (r.correct) {
+      music.se(r.quick ? 'se_critical' : 'se_correct');
+      Future.delayed(const Duration(milliseconds: 140), () {
+        music.se(r.blocked ? 'se_block' : 'se_attack');
+      });
+    } else if (r.guarded) {
+      music.se('se_block');
+    } else {
+      music.se('se_wrong');
+      Future.delayed(const Duration(milliseconds: 160), () {
+        music.se('se_damage');
+      });
+    }
+    if (r.healed > 0) music.se('se_heal');
+    music.answer(correct: r.correct, combo: r.combo);
+  }
+
+  /// 学習記録・図鑑・クエスト・実績にバトルの結果を反映する
+  Future<void> _commitMeta(BattleSummary summary, RpgProgress progress) async {
+    final meta = _services.meta;
+    final report = BattleReport(
+      mode: _mode,
+      subject: widget.world.id,
+      enemyId: _enemy.id,
+      look: _enemy.look,
+      isBoss: widget.stage.isBoss,
+      won: summary.won,
+      correct: summary.correctCount,
+      answered: summary.answeredCount,
+      maxCombo: summary.maxCombo,
+      setIds: widget.stage.questionSetIds,
+    );
+    final u = MetaUpdate.apply(
+      record: meta.record,
+      journal: meta.journal,
+      progress: progress,
+      events: _events,
+      report: report,
+      day: RpgServices.today(),
+      subjects: _services.questSubjects(progress),
+    );
+    if (_mode == BattleMode.trial) return;
+    await meta.save(record: u.record, journal: u.journal);
+    if (u.newAchievements.isNotEmpty) _services.music.se('se_achievement');
+    showMetaToast(achievements: u.newAchievements, quests: u.completedQuests);
+  }
+
   Future<void> _finish() async {
     if (!mounted || _finishing) return;
     _finishing = true;
-    final services = RpgServices.of(context);
+    final services = _services;
     final summary = _engine.summary();
+    services.music.jingle(summary.won ? 'victory' : 'defeat');
     final latest = await services.repository.load();
     final result = widget.trial
         // 練習（確認用・定期テストの海・試験対策）では経験値を出さない
@@ -371,6 +492,7 @@ class _BattleScreenState extends State<BattleScreen>
             summary: summary,
           );
     if (!widget.trial) await services.repository.save(result.progress);
+    await _commitMeta(summary, result.progress);
     widget.onFinished?.call(summary);
     if (!mounted) return;
     Navigator.of(context).pushReplacement(
@@ -419,7 +541,9 @@ class _BattleScreenState extends State<BattleScreen>
         animation: _playerHit,
         builder: (context, child) {
           final v = _playerHit.value;
-          final shake = sin(v * pi * 7) * 9 * (1 - v);
+          final shake = MediaQuery.of(context).disableAnimations
+              ? 0.0
+              : sin(v * pi * 7) * 9 * (1 - v);
           return Stack(
             children: [
               Transform.translate(offset: Offset(shake, 0), child: child),
@@ -431,6 +555,7 @@ class _BattleScreenState extends State<BattleScreen>
                     child: _PopupText(popup: p),
                   ),
                 ),
+              if (_bossBanner) const IgnorePointer(child: _BossBanner()),
               // 被ダメージ時の赤いふち
               IgnorePointer(
                 child: Container(
@@ -1014,9 +1139,14 @@ class _BattleScreenState extends State<BattleScreen>
           Expanded(
             child: SingleChildScrollView(
               child: Text(
-                q.source.hasMoreExplanation
-                    ? '${q.source.shortExplanation}\n📓 くわしい解説は復習手帳に書きこんだよ'
-                    : q.source.shortExplanation,
+                [
+                  q.source.hasMoreExplanation
+                      ? '${q.source.shortExplanation}\n📓 くわしい解説は復習手帳に書きこんだよ'
+                      : q.source.shortExplanation,
+                  if (q.source.commonMistakes.isNotEmpty)
+                    '⚠ よくあるまちがい：${q.source.commonMistakes.join('／')}',
+                  if (q.source.hint != null) '💡 ヒント：${q.source.hint}',
+                ].join('\n'),
                 style: const TextStyle(
                   fontSize: 13,
                   height: 1.6,
@@ -1410,4 +1540,40 @@ class _SplashPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(_SplashPainter old) => old.v != v;
+}
+
+/// ボス登場の演出
+class _BossBanner extends StatelessWidget {
+  const _BossBanner();
+
+  @override
+  Widget build(BuildContext context) {
+    final still = MediaQuery.of(context).disableAnimations;
+    return TweenAnimationBuilder<double>(
+      tween: Tween(begin: still ? 1 : 0, end: 1),
+      duration: const Duration(milliseconds: 500),
+      builder: (context, v, _) => Container(
+        color: Colors.black.withValues(alpha: 0.35 * v),
+        alignment: Alignment.center,
+        child: Transform.scale(
+          scale: 0.7 + 0.3 * v,
+          child: Opacity(
+            opacity: v,
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 12),
+              decoration: BoxDecoration(
+                color: const Color(0xFF3A1F1F),
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(color: TsuzuriColors.exp, width: 2),
+              ),
+              child: Text(
+                'BOSS BATTLE',
+                style: serif(26, color: TsuzuriColors.exp),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 }

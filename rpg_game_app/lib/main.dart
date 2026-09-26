@@ -5,9 +5,15 @@ import 'account/account_screen.dart';
 import 'account/account_service.dart';
 import 'account/profile_repository.dart';
 import 'app/services.dart';
+import 'app/settings.dart';
 import 'app/theme.dart';
+import 'app/toast.dart';
+import 'audio/music_director.dart';
+import 'audio/music_scope.dart';
+import 'audio/player_backend.dart';
 import 'cloud/cloud_sync.dart';
 import 'cloud/firebase_account_service.dart';
+import 'data/meta_store.dart';
 import 'data/prefs_progress_repository.dart';
 import 'study/exam_world_store.dart';
 import 'study/personal_books.dart';
@@ -18,10 +24,22 @@ Future<void> main() async {
   final prefs = await SharedPreferences.getInstance();
   final progress = PrefsProgressRepository(prefs);
   final profiles = ProfileRepository(prefs);
+  final meta = MetaStore(prefs);
+  final settings = SettingsStore(prefs);
+  final backend = PlayerBackend();
+  final music = MusicDirector(backend, settings.value);
+  settings.addListener(() => music.applySettings(settings.value));
   // Firebase の設定があればクラウドと同期する。なければ端末の中だけで動く
-  final cloud = await CloudSync.start(progress: progress, profiles: profiles);
+  final cloud = await CloudSync.start(
+    progress: progress,
+    profiles: profiles,
+    meta: meta,
+  );
   runApp(
     RpgServices(
+      meta: meta,
+      settings: settings,
+      music: music,
       repository: progress,
       personalBooks: PersonalBooks(prefs),
       examWorlds: ExamWorldStore(prefs),
@@ -29,7 +47,15 @@ Future<void> main() async {
       account: cloud == null
           ? MockAccountService()
           : FirebaseAccountService(cloud),
-      child: const TsuzuriQuestApp(),
+      child: TsuzuriQuestApp(
+        onUserGesture: () {
+          // ブラウザは、画面にさわるまで音を出させてくれない
+          if (backend.blocked) {
+            backend.blocked = false;
+            music.retry();
+          }
+        },
+      ),
     ),
   );
 }
@@ -38,7 +64,10 @@ Future<void> main() async {
 final routeObserver = RouteObserver<ModalRoute<void>>();
 
 class TsuzuriQuestApp extends StatelessWidget {
-  const TsuzuriQuestApp({super.key});
+  const TsuzuriQuestApp({super.key, this.onUserGesture});
+
+  /// 画面にさわったとき（音の再生を始めなおすのに使う）
+  final VoidCallback? onUserGesture;
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +77,29 @@ class TsuzuriQuestApp extends StatelessWidget {
       theme: buildTheme(Brightness.light),
       darkTheme: buildTheme(Brightness.dark),
       navigatorObservers: [routeObserver],
-      home: const _FirstRun(child: WorldMapScreen()),
+      scaffoldMessengerKey: rootMessengerKey,
+      builder: (context, child) {
+        final settings = RpgServices.of(context).settings;
+        return Listener(
+          onPointerDown: (_) => onUserGesture?.call(),
+          child: ValueListenableBuilder<AppSettings>(
+            valueListenable: settings,
+            builder: (context, s, _) {
+              final mq = MediaQuery.of(context);
+              return MediaQuery(
+                data: mq.copyWith(
+                  textScaler: TextScaler.linear(s.textScale),
+                  disableAnimations: mq.disableAnimations || s.reduceMotion,
+                ),
+                child: child!,
+              );
+            },
+          ),
+        );
+      },
+      home: const _FirstRun(
+        child: MusicScope(music: 'home', child: WorldMapScreen()),
+      ),
     );
   }
 }

@@ -7,6 +7,7 @@ import 'package:flutter/foundation.dart';
 import 'package:rpg_game/rpg_game.dart';
 
 import '../account/profile_repository.dart';
+import '../data/meta_store.dart';
 import '../data/prefs_progress_repository.dart';
 import '../firebase_options.dart';
 
@@ -19,12 +20,13 @@ import '../firebase_options.dart';
 ///
 /// 個人用単語帳（LEAP など）は同期しない。端末の中だけに置く。
 class CloudSync {
-  CloudSync._(this._auth, this._db, this._progress, this._profiles);
+  CloudSync._(this._auth, this._db, this._progress, this._profiles, this._meta);
 
   final FirebaseAuth _auth;
   final FirebaseFirestore _db;
   final PrefsProgressRepository _progress;
   final ProfileRepository _profiles;
+  final MetaStore _meta;
 
   FirebaseAuth get auth => _auth;
 
@@ -33,6 +35,7 @@ class CloudSync {
   static Future<CloudSync?> start({
     required PrefsProgressRepository progress,
     required ProfileRepository profiles,
+    required MetaStore meta,
   }) async {
     try {
       await Firebase.initializeApp(
@@ -47,9 +50,14 @@ class CloudSync {
       FirebaseFirestore.instance,
       progress,
       profiles,
+      meta,
     );
     progress.onSaved = sync._pushProgress;
     profiles.onSaved = sync._pushProfile;
+    meta.onLearningSaved = (r) =>
+        sync._push(RpgFirestorePaths.learningDoc, r.toMap());
+    meta.onJournalSaved = (j) =>
+        sync._push(RpgFirestorePaths.journalDoc, j.toMap());
     // 前回のログインが残っていれば、クラウドの記録を読み込む
     final user = await sync._auth.authStateChanges().first;
     if (user != null) {
@@ -89,6 +97,24 @@ class CloudSync {
       } else {
         await _pushProfile(_profiles.load());
       }
+      final learning = (await _db.doc(RpgFirestorePaths.learningDoc(uid)).get())
+          .data();
+      final journal = (await _db.doc(RpgFirestorePaths.journalDoc(uid)).get())
+          .data();
+      await _meta.replaceLocal(
+        record: learning == null
+            ? null
+            : LearningRecord.fromMap(_plain(learning)),
+        journal: journal == null
+            ? null
+            : PlayerJournal.fromMap(_plain(journal)),
+      );
+      if (learning == null) {
+        await _push(RpgFirestorePaths.learningDoc, _meta.record.toMap());
+      }
+      if (journal == null) {
+        await _push(RpgFirestorePaths.journalDoc, _meta.journal.toMap());
+      }
     } catch (e) {
       debugPrint('クラウドの記録を読み込めませんでした: $e');
     }
@@ -116,6 +142,20 @@ class CloudSync {
       _db
           .doc(RpgFirestorePaths.profileDoc(uid))
           .set({...profile.toMap(), 'updatedAt': FieldValue.serverTimestamp()})
+          .catchError((Object e) => debugPrint('クラウドに保存できませんでした: $e')),
+    );
+  }
+
+  Future<void> _push(
+    String Function(String uid) doc,
+    Map<String, dynamic> data,
+  ) async {
+    final uid = _uid;
+    if (uid == null) return;
+    unawaited(
+      _db
+          .doc(doc(uid))
+          .set({...data, 'updatedAt': FieldValue.serverTimestamp()})
           .catchError((Object e) => debugPrint('クラウドに保存できませんでした: $e')),
     );
   }

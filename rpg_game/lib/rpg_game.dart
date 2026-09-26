@@ -20,6 +20,7 @@ export 'src/learning/adaptive.dart';
 export 'src/learning/learning_record.dart';
 export 'src/learning/question_stat.dart';
 export 'src/learning/review_planner.dart';
+export 'src/learning/review_tower.dart';
 export 'src/meta/achievements.dart';
 export 'src/meta/enemy_species.dart';
 export 'src/meta/journal.dart';

@@ -4,6 +4,8 @@ import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 import 'package:rpg_game/rpg_game.dart';
 
+import '../audio/music_director.dart';
+import '../audio/music_scope.dart';
 import '../app/services.dart';
 import '../app/theme.dart';
 import '../main.dart' show routeObserver;
@@ -202,11 +204,14 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
     Navigator.of(context).pushReplacement(
       PageRouteBuilder<void>(
         transitionDuration: const Duration(milliseconds: 450),
-        pageBuilder: (_, _, _) => FieldScreen(
-          world: widget.world,
-          progress: _progress,
-          mapId: portal.target,
-          from: _game.map.id,
+        pageBuilder: (_, _, _) => MusicScope(
+          music: MusicDirector.fieldKey(widget.world.id),
+          child: FieldScreen(
+            world: widget.world,
+            progress: _progress,
+            mapId: portal.target,
+            from: _game.map.id,
+          ),
         ),
         transitionsBuilder: (_, a, _, child) =>
             FadeTransition(opacity: a, child: child),

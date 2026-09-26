@@ -5,9 +5,12 @@ import 'package:rpg_game/rpg_game.dart';
 
 import '../account/account_service.dart';
 import '../account/profile_repository.dart';
+import '../audio/music_director.dart';
+import '../data/meta_store.dart';
 import '../data/prefs_progress_repository.dart';
 import '../study/exam_world_store.dart';
 import '../study/personal_books.dart';
+import 'settings.dart';
 
 /// 画面から使うサービスの入れ物。
 class RpgServices extends InheritedWidget {
@@ -18,6 +21,9 @@ class RpgServices extends InheritedWidget {
     required this.profiles,
     required this.account,
     required this.examWorlds,
+    required this.meta,
+    required this.settings,
+    required this.music,
     required super.child,
   }) : questions = JsonQuestionSource(_loadAsset),
        unlock = WorldUnlockService(
@@ -38,9 +44,18 @@ class RpgServices extends InheritedWidget {
   /// 作った試験対策ワールド（端末の中に保存）
   final ExamWorldStore examWorlds;
 
+  /// 学習記録と冒険の記録（図鑑・実績・クエスト）
+  final MetaStore meta;
+
+  /// 遊びやすさの設定（音・文字の大きさなど）
+  final SettingsStore settings;
+
+  /// BGM・効果音
+  final MusicDirector music;
+
   /// パスワード保護の個人用単語帳（LEAP など）
   final PersonalBooks personalBooks;
-  final QuestionSource questions;
+  final JsonQuestionSource questions;
   final WorldUnlockService unlock;
 
   /// ステージの出題範囲をまとめて読み込む（エリア16以降は複数セット）。
@@ -54,6 +69,16 @@ class RpgServices extends InheritedWidget {
     if (sets.isEmpty) return null;
     return sets.length == 1 ? sets.first : QuestionSet.merge(stage.id, sets);
   }
+
+  /// デイリークエストで選ぶ教科（持っている、遊べるワールド）
+  Map<String, String> questSubjects(RpgProgress progress) => {
+    for (final w in RpgCatalog.worlds)
+      if (unlock.availabilityOf(progress, w) == WorldAvailability.playable)
+        w.id: w.subject,
+  };
+
+  /// 今日（学習記録の日付の数え方）
+  static int today() => dayNumber(DateTime.now());
 
   static RpgServices of(BuildContext context) =>
       context.dependOnInheritedWidgetOfExactType<RpgServices>()!;

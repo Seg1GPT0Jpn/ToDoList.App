@@ -214,4 +214,26 @@ void main() {
       expect(stages[2].difficulty, Difficulty.advanced);
     });
   });
+
+  group('復習の塔', () {
+    test('正解数で階が上がり、5階ごとに番人が出る', () {
+      expect(ReviewTower.floorOf(0), 1);
+      expect(ReviewTower.floorOf(25), 3);
+      final s = ReviewTower.stage(
+        level: 5,
+        floor: 5,
+        questionCount: 10,
+        worldId: 'english',
+      );
+      expect(s.isBoss, isTrue);
+      final p = PlayerStats.forLevel(5);
+      // 8問正解で倒せる
+      expect(s.enemy.maxHp, p.attack * 8);
+      // 5回まちがえると倒れる
+      expect(
+          (s.enemy.attack - p.defense / 2) * 5, greaterThanOrEqualTo(p.maxHp));
+      expect(
+          EnemySpeciesCatalog.all.map((e) => e.look), contains(s.enemy.look));
+    });
+  });
 }

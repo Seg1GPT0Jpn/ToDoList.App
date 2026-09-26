@@ -34,6 +34,7 @@ Future<void> startSeaBattle(
         questions: questions,
         progress: progress,
         trial: true,
+        mode: BattleMode.sea,
         onFinished: (summary) async {
           if (summary.answeredCount == 0) return;
           final latest = await repo.load();
