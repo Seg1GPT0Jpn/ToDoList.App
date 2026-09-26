@@ -52,9 +52,9 @@ school_planner に組み込む前に友達に遊んでもらえるよう、こ�
 5. 設定ファイルを作る（`lib/firebase_options.dart` が本物に置きかわる）
    ```
    cd rpg_game_app
-   flutterfire configure --project=<プロジェクトID> --platforms=web
-   firebase use --add <プロジェクトID>
+   flutterfire configure --project=tsuzuri-quest --platforms=web
    ```
+   （プロジェクト ID `tsuzuri-quest` は `.firebaserc` に書いてあるので、`firebase use` は不要です）
 6. セキュリティルールを反映する（本人だけが自分の記録を読み書きできるルール。`firestore.rules`）
    ```
    firebase deploy --only firestore:rules
@@ -68,7 +68,7 @@ flutter build web --release
 firebase deploy --only hosting
 ```
 
-表示される `https://<プロジェクトID>.web.app` を友達に送れば、スマホ（iPhone も可）や PC のブラウザで遊べます。
+表示される `https://tsuzuri-quest.web.app` を友達に送れば、スマホ（iPhone も可）や PC のブラウザで遊べます。
 
 メモ:
 - `lib/firebase_options.dart` の中身は秘密の情報ではありません（Web アプリの識別子です）。データはセキュリティルールで守っています。コミットしてかまいません
