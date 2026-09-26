@@ -2,6 +2,7 @@ import '../data/progress_repository.dart';
 import '../models/rpg_progress.dart';
 import '../models/world.dart';
 import '../progression/progression.dart';
+import 'promo_code.dart';
 
 /// ダミーの購入処理。常に成功を返す。
 ///
@@ -34,13 +35,32 @@ enum WorldAvailability {
 
 enum PurchaseOutcome { success, cancelled, notPurchasable, alreadyOwned }
 
+/// プロモーションコードを入力した結果
+enum PromoOutcome {
+  /// 新しく受け取った
+  success,
+
+  /// コードは正しいが、すでに全部持っている
+  alreadyOwned,
+
+  /// コードがちがう
+  invalid,
+}
+
 /// 購入導線とロック解除をまとめる。
 class WorldUnlockService {
   WorldUnlockService({
     required this.repository,
     Future<bool> Function(String worldId)? purchase,
     this.allowComingSoonPurchase = false,
+    this.allowPurchase = true,
   }) : _purchase = purchase ?? mockPurchaseWorld;
+
+  /// 購入ボタンで買えるようにするか。
+  ///
+  /// 本物の決済（Google Play Billing）がまだないので、友達に公開する版では
+  /// false にして、プロモーションコードでだけ受け取れるようにする。
+  final bool allowPurchase;
 
   final ProgressRepository repository;
   final Future<bool> Function(String worldId) _purchase;
@@ -74,10 +94,43 @@ class WorldUnlockService {
       case WorldAvailability.purchasable:
         break;
     }
-    if (world.priceYen == null) return PurchaseOutcome.notPurchasable;
+    if (!allowPurchase || world.priceYen == null) {
+      return PurchaseOutcome.notPurchasable;
+    }
     final ok = await _purchase(world.id);
     if (!ok) return PurchaseOutcome.cancelled;
     await repository.markWorldPurchased(world.id, source: 'mock');
     return PurchaseOutcome.success;
+  }
+
+  /// プロモーションコードで有料ワールドを受け取る。
+  ///
+  /// [worlds] のうち、公開済みの有料ワールドをまとめて解放する。
+  /// 受け取ったワールドは [newlyUnlocked] に入る。
+  Future<PromoOutcome> redeemPromoCode(
+    String code,
+    Iterable<WorldDef> worlds, {
+    List<WorldDef>? newlyUnlocked,
+  }) async {
+    if (!PromoCodes.unlocksAllSubjects(code)) return PromoOutcome.invalid;
+    final progress = await repository.load();
+    final targets = [
+      for (final w in worlds)
+        if (!w.isFree &&
+            !w.isComingSoon &&
+            !Progression.isWorldOwned(progress, w))
+          w,
+    ];
+    if (targets.isEmpty) return PromoOutcome.alreadyOwned;
+    await repository.save(
+      progress.copyWith(
+        purchasedWorldIds: {
+          ...progress.purchasedWorldIds,
+          for (final w in targets) w.id,
+        },
+      ),
+    );
+    newlyUnlocked?.addAll(targets);
+    return PromoOutcome.success;
   }
 }

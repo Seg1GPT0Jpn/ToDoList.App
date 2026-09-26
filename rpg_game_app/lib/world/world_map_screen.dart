@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:rpg_game/rpg_game.dart';
 
@@ -11,6 +12,7 @@ import '../art/paper.dart';
 import '../battle/battle_screen.dart';
 import '../field/field_screen.dart';
 import '../study/sea_home_screen.dart';
+import 'promo_code_dialog.dart';
 
 const _subjectIcons = <String, IconData>{
   'japanese': Icons.menu_book,
@@ -111,6 +113,10 @@ class WorldMapScreen extends StatelessWidget {
                   );
                   return;
                 }
+                if (v == 'promo') {
+                  await showPromoCodeDialog(context);
+                  return;
+                }
                 if (v == 'trial') {
                   await _pickTrial(context);
                   return;
@@ -135,13 +141,19 @@ class WorldMapScreen extends StatelessWidget {
                 );
                 if (ok == true) await services.repository.reset();
               },
-              itemBuilder: (_) => const [
-                PopupMenuItem(
+              itemBuilder: (_) => [
+                const PopupMenuItem(
                   value: 'account',
                   child: Text('アカウント（名前・Google）'),
                 ),
-                PopupMenuItem(value: 'trial', child: Text('エリアを選んでバトル（確認用）')),
-                PopupMenuItem(value: 'reset', child: Text('データをリセット')),
+                const PopupMenuItem(value: 'promo', child: Text('プロモーションコード')),
+                // どのエリアとも戦える確認用メニューは、開発中だけ出す
+                if (kDebugMode)
+                  const PopupMenuItem(
+                    value: 'trial',
+                    child: Text('エリアを選んでバトル（確認用）'),
+                  ),
+                const PopupMenuItem(value: 'reset', child: Text('データをリセット')),
               ],
             ),
           ],
@@ -463,6 +475,12 @@ class _WorldCard extends StatelessWidget {
                           switch (availability) {
                             WorldAvailability.ownedComingSoon => '解放済み・準備中',
                             WorldAvailability.purchasable
+                                when !world.isComingSoon &&
+                                    !RpgServices.of(context)
+                                        .unlock
+                                        .allowPurchase =>
+                              '有料・コードで解放（${world.stages.length}エリア）',
+                            WorldAvailability.purchasable
                                 when !world.isComingSoon =>
                               '¥${world.priceYen}で解放（${world.stages.length}エリア）',
                             _ => '準備中',
@@ -510,6 +528,35 @@ class _WorldCard extends StatelessWidget {
       return;
     }
     final purchasable = availability == WorldAvailability.purchasable;
+    if (purchasable && !services.unlock.allowPurchase) {
+      final useCode = await showDialog<bool>(
+        context: context,
+        builder: (c) => AlertDialog(
+          icon: Icon(_subjectIcons[world.id], size: 36),
+          title: Text('${world.name}はロックされています'),
+          content: Text(
+            '${world.subject}のワールド（${world.stages.length}エリア）は有料です。\n'
+            '購入はまだ準備中です。\n\n'
+            'プロモーションコードを持っている人は、コードを入力すると受け取れます。',
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(c, false),
+              child: const Text('とじる'),
+            ),
+            FilledButton.icon(
+              onPressed: () => Navigator.pop(c, true),
+              icon: const Icon(Icons.card_giftcard),
+              label: const Text('コードを入力'),
+            ),
+          ],
+        ),
+      );
+      if (useCode == true && context.mounted) {
+        await showPromoCodeDialog(context);
+      }
+      return;
+    }
     final buy = await showDialog<bool>(
       context: context,
       builder: (c) => AlertDialog(

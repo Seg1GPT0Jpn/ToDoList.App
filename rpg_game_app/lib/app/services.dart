@@ -22,6 +22,9 @@ class RpgServices extends InheritedWidget {
          repository: repository,
          // 購入ダイアログの動作確認用。リリース版では準備中ワールドは売らない。
          allowComingSoonPurchase: kDebugMode,
+         // 本物の決済がまだないので、公開版（リリースビルド）では購入ボタンで買えない。
+         // 有料ワールドはプロモーションコードでだけ受け取れる。
+         allowPurchase: kDebugMode,
        );
 
   final PrefsProgressRepository repository;

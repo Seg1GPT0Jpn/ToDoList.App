@@ -66,7 +66,8 @@ void main() {
         WorldUnlockService(repository: repo, allowComingSoonPurchase: true);
     expect(await service.purchase(comingSoon), PurchaseOutcome.success);
     final p = await repo.load();
-    expect(service.availabilityOf(p, comingSoon), WorldAvailability.ownedComingSoon);
+    expect(service.availabilityOf(p, comingSoon),
+        WorldAvailability.ownedComingSoon);
     expect(Progression.isWorldPlayable(p, comingSoon), isFalse);
   });
 
