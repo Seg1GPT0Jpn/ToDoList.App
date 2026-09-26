@@ -1,0 +1,164 @@
+{
+  "setId": "social_geo_20",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_geo20_001",
+      "category": "knowledge",
+      "prompt": "実際に現地に出かけて、観察や聞き取りをする調査は？",
+      "choices": [
+        "リモートセンシング",
+        "フィールドワーク（野外調査）",
+        "文献調査だけ",
+        "シミュレーション"
+      ],
+      "answerIndex": 1,
+      "explanation": "事前に仮説を立て、調べることを決めてから行う。"
+    },
+    {
+      "id": "soc_geo20_002",
+      "category": "knowledge",
+      "prompt": "地域調査で、調べる前に「おそらくこうだろう」と考えておく答えは？",
+      "choices": [
+        "仮説",
+        "結論",
+        "引用",
+        "要約"
+      ],
+      "answerIndex": 0,
+      "explanation": "調査の結果、仮説が正しいかどうかを確かめる。"
+    },
+    {
+      "id": "soc_geo20_003",
+      "category": "knowledge",
+      "prompt": "国勢調査はふつう何年ごとに行われる？",
+      "choices": [
+        "1 年",
+        "10 年",
+        "5 年",
+        "20 年"
+      ],
+      "answerIndex": 2,
+      "explanation": "日本に住むすべての人を対象にした人口の調査。"
+    },
+    {
+      "id": "soc_geo20_004",
+      "category": "knowledge",
+      "prompt": "地域の人に直接話を聞く調査方法は？",
+      "choices": [
+        "文献調査",
+        "統計調査",
+        "空中写真の判読",
+        "聞き取り調査"
+      ],
+      "answerIndex": 3,
+      "explanation": "事前にアポイントをとり、質問を準備する。"
+    },
+    {
+      "id": "soc_geo20_005",
+      "category": "knowledge",
+      "prompt": "地域の人口や産業のデータを得るのに適した資料は？",
+      "choices": [
+        "天気予報",
+        "統計資料（国勢調査・経済センサスなど）",
+        "小説",
+        "時刻表だけ"
+      ],
+      "answerIndex": 1,
+      "explanation": "e-Stat などで公開されている。"
+    },
+    {
+      "id": "soc_geo20_006",
+      "category": "knowledge",
+      "prompt": "新旧の地形図を比べると分かることは？",
+      "choices": [
+        "天気",
+        "土地利用や市街地の変化",
+        "住民の名前",
+        "将来の人口"
+      ],
+      "answerIndex": 1,
+      "explanation": "田んぼが住宅地になった、などの変化が読み取れる。"
+    },
+    {
+      "id": "soc_geo20_007",
+      "category": "knowledge",
+      "prompt": "地域の特産品や観光資源を生かして、地域を元気にする取り組みを何という？",
+      "choices": [
+        "地域活性化（地域おこし）",
+        "産業の空洞化",
+        "スプロール",
+        "過疎化"
+      ],
+      "answerIndex": 0,
+      "explanation": "6 次産業化やふるさと納税なども活用されている。"
+    },
+    {
+      "id": "soc_geo20_008",
+      "category": "knowledge",
+      "prompt": "経済・社会・環境のバランスをとり、将来の世代も暮らし続けられる都市を何という？",
+      "choices": [
+        "メガシティ",
+        "スラム",
+        "ゴーストタウン",
+        "持続可能な都市"
+      ],
+      "answerIndex": 3,
+      "explanation": "SDGs の目標 11 にかかわる。"
+    },
+    {
+      "id": "soc_geo20_009",
+      "category": "knowledge",
+      "prompt": "調査結果をまとめて発表するとき、他人の資料を使ったら必ずすることは？",
+      "choices": [
+        "色をつける",
+        "出典を示す",
+        "自分が作ったことにする",
+        "内容を変える"
+      ],
+      "answerIndex": 1,
+      "explanation": "著作権を守り、情報の信頼性を示すため。"
+    },
+    {
+      "id": "soc_geo20_010",
+      "category": "thinking",
+      "prompt": "「駅前の商店街の空き店舗が増えた」理由を調べる。仮説として適切なものは？",
+      "choices": [
+        "空き店舗は増えていない",
+        "郊外に大型店ができ、買い物客が移ったのではないか",
+        "商店街は必要ない",
+        "駅前に人がいないのは当然である"
+      ],
+      "answerIndex": 1,
+      "explanation": "仮説を立てたら、統計や聞き取りで確かめる。"
+    },
+    {
+      "id": "soc_geo20_011",
+      "category": "thinking",
+      "prompt": "調査結果から地域の課題を見つけたあと、最後に行うこととして適切なものは？",
+      "choices": [
+        "解決策を考え、地域の将来像を提案する",
+        "調査をやめる",
+        "結果を捨てる",
+        "仮説だけを発表する"
+      ],
+      "answerIndex": 0,
+      "explanation": "課題の把握 → 要因の考察 → 解決策の提案、の流れ。"
+    },
+    {
+      "id": "soc_geo20_012",
+      "category": "thinking",
+      "prompt": "GIS で「高齢化率」と「バス停の位置」を重ねた。見つけられる課題は？",
+      "choices": [
+        "天気の変化",
+        "高齢者が多いのにバス停から遠い地域（交通弱者）",
+        "外国の人口",
+        "工場の生産額"
+      ],
+      "answerIndex": 1,
+      "explanation": "買い物や通院に困る人が多い地域を見つけ、対策を考えられる。"
+    }
+  ]
+}

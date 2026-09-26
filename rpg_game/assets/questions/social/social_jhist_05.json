@@ -1,0 +1,164 @@
+{
+  "setId": "social_jhist_05",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_jhist05_001",
+      "category": "knowledge",
+      "prompt": "天皇が位をゆずって上皇となったあとも、政治の実権をにぎる政治は？",
+      "choices": [
+        "院政",
+        "摂関政治",
+        "執権政治",
+        "親政"
+      ],
+      "answerIndex": 0,
+      "explanation": "1086 年に白河上皇が始めた。"
+    },
+    {
+      "id": "soc_jhist05_002",
+      "category": "knowledge",
+      "prompt": "院政を始めた上皇は？",
+      "choices": [
+        "後鳥羽上皇",
+        "白河上皇",
+        "鳥羽上皇",
+        "後白河上皇"
+      ],
+      "answerIndex": 1,
+      "explanation": "藤原氏と関係のうすい後三条天皇の子。"
+    },
+    {
+      "id": "soc_jhist05_003",
+      "category": "knowledge",
+      "prompt": "1156 年、天皇家や藤原氏の争いに武士が動員された戦いは？",
+      "choices": [
+        "承久の乱",
+        "壇ノ浦の戦い",
+        "平治の乱",
+        "保元の乱"
+      ],
+      "answerIndex": 3,
+      "explanation": "武士の力が政治を動かすようになった。"
+    },
+    {
+      "id": "soc_jhist05_004",
+      "category": "knowledge",
+      "prompt": "1159 年、平清盛が源義朝を破った戦いは？",
+      "choices": [
+        "平治の乱",
+        "保元の乱",
+        "応仁の乱",
+        "承久の乱"
+      ],
+      "answerIndex": 0,
+      "explanation": "これで平氏が勢力を強めた。"
+    },
+    {
+      "id": "soc_jhist05_005",
+      "category": "knowledge",
+      "prompt": "武士として初めて太政大臣になった人物は？",
+      "choices": [
+        "平清盛",
+        "豊臣秀吉",
+        "足利尊氏",
+        "源頼朝"
+      ],
+      "answerIndex": 0,
+      "explanation": "1167 年。娘を天皇のきさきにするなど、藤原氏と似た政治も行った。"
+    },
+    {
+      "id": "soc_jhist05_006",
+      "category": "knowledge",
+      "prompt": "平清盛が大輪田泊（今の神戸港）を整備して行った貿易は？",
+      "choices": [
+        "南蛮貿易",
+        "日宋貿易",
+        "朱印船貿易",
+        "日明貿易"
+      ],
+      "answerIndex": 1,
+      "explanation": "宋銭が大量に輸入された。"
+    },
+    {
+      "id": "soc_jhist05_007",
+      "category": "knowledge",
+      "prompt": "平氏が信仰し、清盛が社殿を整えた広島県の神社は？",
+      "choices": [
+        "出雲大社",
+        "日光東照宮",
+        "厳島神社",
+        "伊勢神宮"
+      ],
+      "answerIndex": 2,
+      "explanation": "海の上に建つ社殿が有名。"
+    },
+    {
+      "id": "soc_jhist05_008",
+      "category": "knowledge",
+      "prompt": "1185 年、源義経らが平氏をほろぼした戦いは？",
+      "choices": [
+        "壇ノ浦の戦い",
+        "屋島の戦い",
+        "一ノ谷の戦い",
+        "石橋山の戦い"
+      ],
+      "answerIndex": 0,
+      "explanation": "現在の山口県下関市。"
+    },
+    {
+      "id": "soc_jhist05_009",
+      "category": "knowledge",
+      "prompt": "貴族や寺社の私有地で、税をまぬがれるなどの特権をもつものは？",
+      "choices": [
+        "班田",
+        "公領（国衙領）",
+        "荘園",
+        "口分田"
+      ],
+      "answerIndex": 2,
+      "explanation": "有力者に寄進して保護を受けた（寄進地系荘園）。"
+    },
+    {
+      "id": "soc_jhist05_010",
+      "category": "knowledge",
+      "prompt": "東北地方で奥州藤原氏が拠点とし、中尊寺金色堂が建てられた地は？",
+      "choices": [
+        "大宰府",
+        "鎌倉",
+        "多賀城",
+        "平泉"
+      ],
+      "answerIndex": 3,
+      "explanation": "金や馬の産地で栄えた。"
+    },
+    {
+      "id": "soc_jhist05_011",
+      "category": "thinking",
+      "prompt": "平安時代の後半に武士が力をつけた理由として適切なものは？",
+      "choices": [
+        "天皇が武士を禁止したから",
+        "都で農業がさかんになったから",
+        "外国が武士を送りこんだから",
+        "地方の治安が乱れ、土地を守るために武装した者たちが団結したから"
+      ],
+      "answerIndex": 3,
+      "explanation": "源氏・平氏などの武士団が成長した。"
+    },
+    {
+      "id": "soc_jhist05_012",
+      "category": "thinking",
+      "prompt": "平氏政権が短期間で倒れた理由として適切なものは？",
+      "choices": [
+        "都を移さなかったから",
+        "武士を大切にしすぎたから",
+        "朝廷の高い官職を一族で独占し、貴族や他の武士の反発を受けたから",
+        "貿易をまったく行わなかったから"
+      ],
+      "answerIndex": 2,
+      "explanation": "「平家にあらずんば人にあらず」と言われるほどの独占が反感を招いた。"
+    }
+  ]
+}

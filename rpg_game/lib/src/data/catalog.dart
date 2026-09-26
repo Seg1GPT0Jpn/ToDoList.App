@@ -4,6 +4,7 @@ import '../models/stage.dart';
 import '../models/world.dart';
 import '../study/sea_catalog.dart';
 import 'information_catalog.dart';
+import 'social_catalog.dart';
 import 'route_world.dart';
 import 'science_catalog.dart';
 
@@ -635,12 +636,19 @@ class RpgCatalog {
       description: 'スタート地点から上は物理、左は化学、右は地学、下は生物。基礎から発展まで64エリア。',
     ),
     WorldDef(
-      id: 'social',
+      id: SocialCatalog.worldId,
       name: '時と地の国',
-      subject: '地歴公民',
-      status: WorldStatus.comingSoon,
+      subject: '社会',
+      status: WorldStatus.available,
       isFree: false,
       priceYen: defaultWorldPriceYen,
+      stages: SocialCatalog.stages,
+      routes: [for (final r in SocialCatalog.routes) r.info],
+      hubName: '時の交差点',
+      hubSign: 'ここは時と地の国の「時の交差点」。'
+          '上の2つの門は地理と倫理、左は日本史、右は世界史、下は政治・経済の道。'
+          '地図を読み、歴史をたどり、社会のしくみを考えよう。',
+      description: '地理・日本史・世界史・政治経済・倫理の5ルート、85エリア。',
     ),
     WorldDef(
       id: InformationCatalog.worldId,

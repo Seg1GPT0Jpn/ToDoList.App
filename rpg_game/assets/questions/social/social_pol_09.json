@@ -1,0 +1,164 @@
+{
+  "setId": "social_pol_09",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_pol09_001",
+      "category": "knowledge",
+      "prompt": "国家の三要素は？",
+      "choices": [
+        "国会・内閣・裁判所",
+        "言語・宗教・文化",
+        "領域・国民・主権",
+        "軍隊・警察・裁判所"
+      ],
+      "answerIndex": 2,
+      "explanation": "領域は領土・領海・領空からなる。"
+    },
+    {
+      "id": "soc_pol09_002",
+      "category": "knowledge",
+      "prompt": "領海は、海岸線から何海里まで？",
+      "choices": [
+        "24 海里",
+        "3 海里",
+        "12 海里",
+        "200 海里"
+      ],
+      "answerIndex": 2,
+      "explanation": "200 海里までは排他的経済水域（EEZ）。"
+    },
+    {
+      "id": "soc_pol09_003",
+      "category": "knowledge",
+      "prompt": "国家間の合意（条約）や慣習による国際社会のルールは？",
+      "choices": [
+        "国際法",
+        "条例",
+        "判例",
+        "国内法"
+      ],
+      "answerIndex": 0,
+      "explanation": "グロティウスは「国際法の父」と呼ばれる。"
+    },
+    {
+      "id": "soc_pol09_004",
+      "category": "knowledge",
+      "prompt": "国際連合の安全保障理事会の常任理事国にふくまれない国は？",
+      "choices": [
+        "日本",
+        "フランス",
+        "アメリカ",
+        "中国"
+      ],
+      "answerIndex": 0,
+      "explanation": "常任理事国はアメリカ・イギリス・フランス・ロシア・中国の 5 か国。"
+    },
+    {
+      "id": "soc_pol09_005",
+      "category": "knowledge",
+      "prompt": "常任理事国が 1 国でも反対すると、重要な決議ができない権利は？",
+      "choices": [
+        "自衛権",
+        "参政権",
+        "主権",
+        "拒否権"
+      ],
+      "answerIndex": 3,
+      "explanation": "大国一致の原則。冷戦中は安保理が機能しないことが多かった。"
+    },
+    {
+      "id": "soc_pol09_006",
+      "category": "knowledge",
+      "prompt": "国連が紛争地域の停戦監視などを行う活動は？",
+      "choices": [
+        "NGO",
+        "ODA",
+        "WTO",
+        "PKO（平和維持活動）"
+      ],
+      "answerIndex": 3,
+      "explanation": "日本の自衛隊は 1992 年の PKO 協力法から参加している。"
+    },
+    {
+      "id": "soc_pol09_007",
+      "category": "knowledge",
+      "prompt": "国家どうしの紛争を、国際法にもとづいて裁判で解決する国連の機関は？",
+      "choices": [
+        "経済社会理事会",
+        "国際刑事裁判所",
+        "安全保障理事会",
+        "国際司法裁判所"
+      ],
+      "answerIndex": 3,
+      "explanation": "裁判を始めるには当事国の合意が必要。"
+    },
+    {
+      "id": "soc_pol09_008",
+      "category": "knowledge",
+      "prompt": "1968 年に調印された、核兵器をもつ国を増やさないための条約は？",
+      "choices": [
+        "核拡散防止条約（NPT）",
+        "包括的核実験禁止条約",
+        "部分的核実験禁止条約",
+        "核兵器禁止条約"
+      ],
+      "answerIndex": 0,
+      "explanation": "核保有国をアメリカ・ロシア・イギリス・フランス・中国に限定した。"
+    },
+    {
+      "id": "soc_pol09_009",
+      "category": "knowledge",
+      "prompt": "日本の非核三原則の内容は？",
+      "choices": [
+        "もちこまず、使わず、捨てず",
+        "もたず、使わず、話さず",
+        "つくらず、使わず、売らず",
+        "もたず、つくらず、もちこませず"
+      ],
+      "answerIndex": 3,
+      "explanation": "1971 年に国会で決議された。"
+    },
+    {
+      "id": "soc_pol09_010",
+      "category": "knowledge",
+      "prompt": "国連の機関で、難民の保護や支援を行うのは？",
+      "choices": [
+        "WHO",
+        "UNESCO",
+        "UNHCR",
+        "UNICEF"
+      ],
+      "answerIndex": 2,
+      "explanation": "国連難民高等弁務官事務所。日本の緒方貞子が高等弁務官を務めた。"
+    },
+    {
+      "id": "soc_pol09_011",
+      "category": "thinking",
+      "prompt": "安全保障理事会がしばしば機能しないと言われる理由は？",
+      "choices": [
+        "常任理事国の利害が対立すると、拒否権によって決議ができないから",
+        "決議に法的拘束力が一切ないから",
+        "総会がないから",
+        "加盟国が少ないから"
+      ],
+      "answerIndex": 0,
+      "explanation": "安保理改革が議論されている。"
+    },
+    {
+      "id": "soc_pol09_012",
+      "category": "thinking",
+      "prompt": "NGO（非政府組織）が国際協力で果たす役割として適切なものは？",
+      "choices": [
+        "軍事力で紛争を解決する",
+        "国家の枠をこえて、人道支援や環境保護などの活動をきめ細かく行う",
+        "国の代わりに条約を結ぶ",
+        "国連の常任理事国になる"
+      ],
+      "answerIndex": 1,
+      "explanation": "国境なき医師団などが例。"
+    }
+  ]
+}

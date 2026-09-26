@@ -1,0 +1,164 @@
+{
+  "setId": "social_geo_02",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_geo02_001",
+      "category": "knowledge",
+      "prompt": "地図上の長さと実際の距離の比を何という？",
+      "choices": [
+        "等高線",
+        "標高",
+        "縮尺",
+        "方位"
+      ],
+      "answerIndex": 2,
+      "explanation": "2 万 5 千分の 1 なら、地図上の 1 cm が実際の 250 m。"
+    },
+    {
+      "id": "soc_geo02_002",
+      "category": "knowledge",
+      "prompt": "同じ高さの地点を結んだ線は？",
+      "choices": [
+        "等値線だけ",
+        "経線",
+        "等圧線",
+        "等高線"
+      ],
+      "answerIndex": 3,
+      "explanation": "間隔がせまいほど傾斜が急。"
+    },
+    {
+      "id": "soc_geo02_003",
+      "category": "knowledge",
+      "prompt": "2 万 5 千分の 1 地形図で、主曲線は何 m ごとに引かれる？",
+      "choices": [
+        "10 m",
+        "20 m",
+        "50 m",
+        "5 m"
+      ],
+      "answerIndex": 0,
+      "explanation": "5 万分の 1 では 20 m ごと。計曲線は主曲線 5 本ごとの太い線。"
+    },
+    {
+      "id": "soc_geo02_004",
+      "category": "knowledge",
+      "prompt": "人口や生産量などの統計データを地図に表したものは？",
+      "choices": [
+        "統計地図",
+        "海図",
+        "一般図",
+        "地形図"
+      ],
+      "answerIndex": 0,
+      "explanation": "ある目的のために特定の情報を表した地図を主題図という。"
+    },
+    {
+      "id": "soc_geo02_005",
+      "category": "knowledge",
+      "prompt": "地域ごとの割合や密度を、色の濃さで塗り分けた統計地図は？",
+      "choices": [
+        "図形表現図",
+        "階級区分図",
+        "ドットマップ",
+        "流線図"
+      ],
+      "answerIndex": 1,
+      "explanation": "絶対値（人口の数など）を表すのには向かない。"
+    },
+    {
+      "id": "soc_geo02_006",
+      "category": "knowledge",
+      "prompt": "気温や降水量など、同じ値の地点を線で結んだ統計地図は？",
+      "choices": [
+        "階級区分図",
+        "等値線図",
+        "ドットマップ",
+        "カルトグラム"
+      ],
+      "answerIndex": 1,
+      "explanation": "連続的に変化する量を表すのに向く。"
+    },
+    {
+      "id": "soc_geo02_007",
+      "category": "knowledge",
+      "prompt": "人や物の移動の方向と量を、矢印の向きと太さで表した地図は？",
+      "choices": [
+        "流線図",
+        "階級区分図",
+        "等値線図",
+        "段彩図"
+      ],
+      "answerIndex": 0,
+      "explanation": "貿易や人口移動などを表す。"
+    },
+    {
+      "id": "soc_geo02_008",
+      "category": "knowledge",
+      "prompt": "地図記号「卍」が表すものは？",
+      "choices": [
+        "墓地",
+        "神社",
+        "城跡",
+        "寺院"
+      ],
+      "answerIndex": 3,
+      "explanation": "神社は鳥居の形（⛩）。"
+    },
+    {
+      "id": "soc_geo02_009",
+      "category": "calculation",
+      "prompt": "2 万 5 千分の 1 の地形図で 4 cm の長さは、実際には何 m？",
+      "choices": [
+        "100 m",
+        "1000 m",
+        "250 m",
+        "10000 m"
+      ],
+      "answerIndex": 1,
+      "explanation": "4 × 25000 ＝ 100000 cm ＝ 1000 m。"
+    },
+    {
+      "id": "soc_geo02_010",
+      "category": "calculation",
+      "prompt": "5 万分の 1 の地形図で、実際の 2 km は地図上で何 cm？",
+      "choices": [
+        "4 cm",
+        "10 cm",
+        "2 cm",
+        "40 cm"
+      ],
+      "answerIndex": 0,
+      "explanation": "200000 cm ÷ 50000 ＝ 4 cm。"
+    },
+    {
+      "id": "soc_geo02_011",
+      "category": "thinking",
+      "prompt": "等高線の間隔が広いところと狭いところでは、どちらの傾斜が急？",
+      "choices": [
+        "どちらも同じ",
+        "等高線では分からない",
+        "広いところ",
+        "狭いところ"
+      ],
+      "answerIndex": 3,
+      "explanation": "同じ高さの差を短い距離で上るので、急になる。"
+    },
+    {
+      "id": "soc_geo02_012",
+      "category": "thinking",
+      "prompt": "都道府県別の人口「数」を地図で表すのに適した方法は？",
+      "choices": [
+        "図形表現図やドットマップなど、数の大きさが分かる図",
+        "流線図",
+        "階級区分図だけ",
+        "等値線図"
+      ],
+      "answerIndex": 0,
+      "explanation": "面積の大きい県が目立ってしまうので、絶対値は階級区分図に向かない。"
+    }
+  ]
+}

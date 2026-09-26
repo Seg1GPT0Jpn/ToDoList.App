@@ -1,0 +1,164 @@
+{
+  "setId": "social_pol_12",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_pol12_001",
+      "category": "knowledge",
+      "prompt": "日本銀行の三つの役割は？",
+      "choices": [
+        "発券銀行・銀行の銀行・政府の銀行",
+        "商業銀行・投資銀行・政府の銀行",
+        "発券銀行・国民の銀行・企業の銀行",
+        "中央銀行・地方銀行・信用金庫"
+      ],
+      "answerIndex": 0,
+      "explanation": "日本銀行は日本の中央銀行。"
+    },
+    {
+      "id": "soc_pol12_002",
+      "category": "knowledge",
+      "prompt": "日本銀行が行う、通貨の量や金利を調整して景気や物価を安定させる政策は？",
+      "choices": [
+        "財政政策",
+        "所得政策",
+        "産業政策",
+        "金融政策"
+      ],
+      "answerIndex": 3,
+      "explanation": "政府が行う財政政策と区別する。"
+    },
+    {
+      "id": "soc_pol12_003",
+      "category": "knowledge",
+      "prompt": "日本銀行が国債などを売買して市場のお金の量を調整する政策は？",
+      "choices": [
+        "預金準備率操作",
+        "為替介入",
+        "公開市場操作（オペレーション）",
+        "公定歩合操作"
+      ],
+      "answerIndex": 2,
+      "explanation": "現在の金融政策の中心。"
+    },
+    {
+      "id": "soc_pol12_004",
+      "category": "knowledge",
+      "prompt": "不況のとき、日本銀行が国債などを銀行から買う操作は？",
+      "choices": [
+        "売りオペレーション",
+        "増税",
+        "買いオペレーション",
+        "国債の発行"
+      ],
+      "answerIndex": 2,
+      "explanation": "市場のお金が増え、金利が下がり、企業がお金を借りやすくなる。"
+    },
+    {
+      "id": "soc_pol12_005",
+      "category": "knowledge",
+      "prompt": "お金を借りた人が、借りた額に加えて支払うものは？",
+      "choices": [
+        "元金",
+        "税",
+        "利子（利息）",
+        "配当"
+      ],
+      "answerIndex": 2,
+      "explanation": "利子の割合を金利（利子率）という。"
+    },
+    {
+      "id": "soc_pol12_006",
+      "category": "knowledge",
+      "prompt": "企業が株式や債券を発行して、直接お金を集めることを何という？",
+      "choices": [
+        "自己資本",
+        "財政投融資",
+        "直接金融",
+        "間接金融"
+      ],
+      "answerIndex": 2,
+      "explanation": "銀行から借りるのは間接金融。"
+    },
+    {
+      "id": "soc_pol12_007",
+      "category": "knowledge",
+      "prompt": "円とドルなど、異なる通貨を交換する比率は？",
+      "choices": [
+        "株価",
+        "為替相場（為替レート）",
+        "物価指数",
+        "金利"
+      ],
+      "answerIndex": 1,
+      "explanation": "外国為替市場で決まる。"
+    },
+    {
+      "id": "soc_pol12_008",
+      "category": "knowledge",
+      "prompt": "1 ドル＝100 円から 1 ドル＝80 円になった。これは？",
+      "choices": [
+        "円安",
+        "デフレ",
+        "物価上昇",
+        "円高"
+      ],
+      "answerIndex": 3,
+      "explanation": "少ない円で 1 ドルと交換できるので、円の価値が上がった。"
+    },
+    {
+      "id": "soc_pol12_009",
+      "category": "calculation",
+      "prompt": "100 万円を年利 2％ の単利で 3 年間預けた。利息の合計は？",
+      "choices": [
+        "3 万円",
+        "2 万円",
+        "60 万円",
+        "6 万円"
+      ],
+      "answerIndex": 3,
+      "explanation": "100 万 × 0.02 × 3 ＝ 6 万円。"
+    },
+    {
+      "id": "soc_pol12_010",
+      "category": "calculation",
+      "prompt": "1 ドル＝100 円のとき 20 ドルの商品は 2000 円。1 ドル＝125 円になると、何円になる？",
+      "choices": [
+        "2250 円",
+        "2000 円",
+        "1600 円",
+        "2500 円"
+      ],
+      "answerIndex": 3,
+      "explanation": "20 × 125 ＝ 2500 円。円安になると輸入品は高くなる。"
+    },
+    {
+      "id": "soc_pol12_011",
+      "category": "thinking",
+      "prompt": "円高が日本の輸出企業に与える影響として適切なものは？",
+      "choices": [
+        "外国での販売価格が上がり、輸出が不利になる",
+        "影響はない",
+        "輸出が有利になる",
+        "輸入品が高くなる"
+      ],
+      "answerIndex": 0,
+      "explanation": "円高は輸入に有利、円安は輸出に有利。"
+    },
+    {
+      "id": "soc_pol12_012",
+      "category": "thinking",
+      "prompt": "景気が過熱してインフレが進んでいるとき、日本銀行がとる政策として適切なものは？",
+      "choices": [
+        "買いオペレーションでお金を増やす",
+        "減税する",
+        "国債を大量に発行する",
+        "売りオペレーションで市場のお金を減らし、金利を上げる"
+      ],
+      "answerIndex": 3,
+      "explanation": "金融を引きしめて、景気の過熱を抑える。"
+    }
+  ]
+}

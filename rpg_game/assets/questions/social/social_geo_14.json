@@ -1,0 +1,164 @@
+{
+  "setId": "social_geo_14",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_geo14_001",
+      "category": "knowledge",
+      "prompt": "人口が 1000 万人をこえるような巨大都市を何という？",
+      "choices": [
+        "コンパクトシティ",
+        "メガシティ",
+        "衛星都市",
+        "ニュータウン"
+      ],
+      "answerIndex": 1,
+      "explanation": "発展途上国で増えている。"
+    },
+    {
+      "id": "soc_geo14_002",
+      "category": "knowledge",
+      "prompt": "都市の周辺に、住宅や工場が無秩序に広がる現象は？",
+      "choices": [
+        "インナーシティ問題",
+        "ドーナツ化現象",
+        "ジェントリフィケーション",
+        "スプロール現象"
+      ],
+      "answerIndex": 3,
+      "explanation": "道路や下水道の整備が追いつかない。"
+    },
+    {
+      "id": "soc_geo14_003",
+      "category": "knowledge",
+      "prompt": "都心の人口が減り、周辺部の人口が増える現象は？",
+      "choices": [
+        "都心回帰",
+        "過密",
+        "スプロール現象",
+        "ドーナツ化現象"
+      ],
+      "answerIndex": 3,
+      "explanation": "近年は都心回帰の動きも見られる。"
+    },
+    {
+      "id": "soc_geo14_004",
+      "category": "knowledge",
+      "prompt": "都市の中心部に機能を集め、歩いて暮らせるまちをめざす考え方は？",
+      "choices": [
+        "ニュータウン",
+        "コンパクトシティ",
+        "メガロポリス",
+        "スプロール"
+      ],
+      "answerIndex": 1,
+      "explanation": "高齢化や人口減少に対応したまちづくり。"
+    },
+    {
+      "id": "soc_geo14_005",
+      "category": "knowledge",
+      "prompt": "発展途上国の大都市で、不法占拠などによってできた生活環境の悪い地区は？",
+      "choices": [
+        "ニュータウン",
+        "CBD",
+        "衛星都市",
+        "スラム"
+      ],
+      "answerIndex": 3,
+      "explanation": "農村からの急な人口流入が原因。"
+    },
+    {
+      "id": "soc_geo14_006",
+      "category": "knowledge",
+      "prompt": "都市の中心にある、官庁や企業の本社が集まる中心業務地区は？",
+      "choices": [
+        "ニュータウン",
+        "スラム",
+        "郊外",
+        "CBD"
+      ],
+      "answerIndex": 3,
+      "explanation": "Central Business District。"
+    },
+    {
+      "id": "soc_geo14_007",
+      "category": "knowledge",
+      "prompt": "多くの航空路線が集まり、乗りかえの拠点となる空港を何という？",
+      "choices": [
+        "ハブ空港",
+        "ローカル空港",
+        "LCC",
+        "ターミナル駅"
+      ],
+      "answerIndex": 0,
+      "explanation": "自転車の車輪の中心（ハブ）になぞらえた呼び方。"
+    },
+    {
+      "id": "soc_geo14_008",
+      "category": "knowledge",
+      "prompt": "国際貿易で、重く大量の貨物を安く運ぶのに適した交通は？",
+      "choices": [
+        "鉄道",
+        "海上交通（船）",
+        "航空交通",
+        "自動車"
+      ],
+      "answerIndex": 1,
+      "explanation": "原油はタンカー、工業製品はコンテナ船で運ぶ。"
+    },
+    {
+      "id": "soc_geo14_009",
+      "category": "knowledge",
+      "prompt": "海底に敷設され、国際的な情報通信の大部分を支えるものは？",
+      "choices": [
+        "通信衛星だけ",
+        "ラジオ",
+        "海底ケーブル（光ファイバー）",
+        "電話線"
+      ],
+      "answerIndex": 2,
+      "explanation": "大容量のデータを高速で送れる。"
+    },
+    {
+      "id": "soc_geo14_010",
+      "category": "knowledge",
+      "prompt": "人口が減り、地域社会の維持が難しくなることを何という？",
+      "choices": [
+        "都市化",
+        "郊外化",
+        "過密化",
+        "過疎化"
+      ],
+      "answerIndex": 3,
+      "explanation": "日本の山間部や離島で深刻。"
+    },
+    {
+      "id": "soc_geo14_011",
+      "category": "thinking",
+      "prompt": "発展途上国のメガシティで交通渋滞や大気汚染が深刻になる理由は？",
+      "choices": [
+        "工場がないから",
+        "自動車が少ないから",
+        "人口の急増に道路や公共交通の整備が追いつかないから",
+        "人口が減っているから"
+      ],
+      "answerIndex": 2,
+      "explanation": "急速な都市化が都市問題を生む。"
+    },
+    {
+      "id": "soc_geo14_012",
+      "category": "thinking",
+      "prompt": "航空交通で運ばれることが多いのはどんな貨物？",
+      "choices": [
+        "IC など小さく軽く高価なものや、鮮度が大切なもの",
+        "石炭",
+        "原油",
+        "鉄鉱石"
+      ],
+      "answerIndex": 0,
+      "explanation": "運賃が高いので、価値の高いものや急ぐものに向く。"
+    }
+  ]
+}

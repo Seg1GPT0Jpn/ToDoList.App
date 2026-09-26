@@ -1,0 +1,164 @@
+{
+  "setId": "social_geo_10",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_geo10_001",
+      "category": "knowledge",
+      "prompt": "年齢別・男女別の人口構成を表したグラフは？",
+      "choices": [
+        "人口ピラミッド",
+        "散布図",
+        "雨温図",
+        "ハイサーグラフ"
+      ],
+      "answerIndex": 0,
+      "explanation": "出生率や死亡率の変化で形が変わる。"
+    },
+    {
+      "id": "soc_geo10_002",
+      "category": "knowledge",
+      "prompt": "出生率・死亡率ともに高く、すそが広い人口ピラミッドの型は？",
+      "choices": [
+        "富士山型（ピラミッド型）",
+        "星型",
+        "つぼ型",
+        "つりがね型"
+      ],
+      "answerIndex": 0,
+      "explanation": "発展途上国に多い。"
+    },
+    {
+      "id": "soc_geo10_003",
+      "category": "knowledge",
+      "prompt": "少子化が進み、すそがせまくなった人口ピラミッドの型は？",
+      "choices": [
+        "つりがね型",
+        "ひょうたん型",
+        "つぼ型",
+        "富士山型"
+      ],
+      "answerIndex": 2,
+      "explanation": "日本など、少子高齢化が進んだ国に見られる。"
+    },
+    {
+      "id": "soc_geo10_004",
+      "category": "knowledge",
+      "prompt": "多産多死 → 多産少死 → 少産少死 へと変化していくことを何という？",
+      "choices": [
+        "人口移動",
+        "都市化",
+        "人口転換",
+        "人口爆発"
+      ],
+      "answerIndex": 2,
+      "explanation": "経済発展や医療の普及にともなって起こる。"
+    },
+    {
+      "id": "soc_geo10_005",
+      "category": "knowledge",
+      "prompt": "発展途上国で死亡率が急に下がり、人口が急増することを何という？",
+      "choices": [
+        "人口爆発",
+        "人口転換の完了",
+        "過疎化",
+        "少子化"
+      ],
+      "answerIndex": 0,
+      "explanation": "医療や衛生の改善による。"
+    },
+    {
+      "id": "soc_geo10_006",
+      "category": "knowledge",
+      "prompt": "総人口にしめる 65 歳以上の割合が 21％ をこえた社会を何という？",
+      "choices": [
+        "少子社会",
+        "高齢化社会",
+        "超高齢社会",
+        "高齢社会"
+      ],
+      "answerIndex": 2,
+      "explanation": "7％ 超で高齢化社会、14％ 超で高齢社会。日本は 2007 年に超高齢社会になった。"
+    },
+    {
+      "id": "soc_geo10_007",
+      "category": "knowledge",
+      "prompt": "1 人の女性が一生に産む子どもの数の平均を何という？",
+      "choices": [
+        "合計特殊出生率",
+        "平均寿命",
+        "人口増加率",
+        "出生率"
+      ],
+      "answerIndex": 0,
+      "explanation": "人口を維持するには約 2.1 が必要とされる。"
+    },
+    {
+      "id": "soc_geo10_008",
+      "category": "knowledge",
+      "prompt": "紛争や迫害から逃れるため、国外に逃れた人々を何という？",
+      "choices": [
+        "難民",
+        "観光客",
+        "移民",
+        "出稼ぎ労働者"
+      ],
+      "answerIndex": 0,
+      "explanation": "国内で避難している人は国内避難民という。"
+    },
+    {
+      "id": "soc_geo10_009",
+      "category": "calculation",
+      "prompt": "ある国の人口が 5000 万人、面積が 25 万 km² のとき、人口密度は？",
+      "choices": [
+        "200 人/km²",
+        "2000 人/km²",
+        "125 人/km²",
+        "20 人/km²"
+      ],
+      "answerIndex": 0,
+      "explanation": "5000 万 ÷ 25 万 ＝ 200 人/km²。"
+    },
+    {
+      "id": "soc_geo10_010",
+      "category": "calculation",
+      "prompt": "ある町の人口 10000 人のうち、65 歳以上が 2500 人。高齢化率は？",
+      "choices": [
+        "40％",
+        "75％",
+        "25％",
+        "2.5％"
+      ],
+      "answerIndex": 2,
+      "explanation": "2500 ÷ 10000 × 100 ＝ 25％。"
+    },
+    {
+      "id": "soc_geo10_011",
+      "category": "thinking",
+      "prompt": "先進国で少子化が進む理由として適切なものは？",
+      "choices": [
+        "平均寿命が短いから",
+        "医療が発達していないから",
+        "農業の労働力が必要だから",
+        "教育費の増加や晩婚化、仕事と子育ての両立の難しさなど"
+      ],
+      "answerIndex": 3,
+      "explanation": "子育て支援や働き方の見直しなどの対策がとられている。"
+    },
+    {
+      "id": "soc_geo10_012",
+      "category": "thinking",
+      "prompt": "ヨーロッパの多くの国で、外国からの労働者を受け入れてきた理由は？",
+      "choices": [
+        "人口が急増しているから",
+        "国土が広すぎるから",
+        "少子高齢化で労働力が不足しているから",
+        "失業者が多すぎるから"
+      ],
+      "answerIndex": 2,
+      "explanation": "一方で、移民をめぐる社会的な課題も生じている。"
+    }
+  ]
+}

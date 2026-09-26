@@ -1,0 +1,164 @@
+{
+  "setId": "social_pol_10",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_pol10_001",
+      "category": "knowledge",
+      "prompt": "市場で、需要量と供給量が一致するときの価格は？",
+      "choices": [
+        "均衡価格",
+        "独占価格",
+        "管理価格",
+        "公共料金"
+      ],
+      "answerIndex": 0,
+      "explanation": "需要曲線と供給曲線の交点で決まる。"
+    },
+    {
+      "id": "soc_pol10_002",
+      "category": "knowledge",
+      "prompt": "ある商品の価格が上がると、ふつう需要量はどうなる？",
+      "choices": [
+        "0 になる",
+        "増える",
+        "変わらない",
+        "減る"
+      ],
+      "answerIndex": 3,
+      "explanation": "需要曲線は右下がり。"
+    },
+    {
+      "id": "soc_pol10_003",
+      "category": "knowledge",
+      "prompt": "価格が上がると、ふつう供給量はどうなる？",
+      "choices": [
+        "増える",
+        "0 になる",
+        "減る",
+        "変わらない"
+      ],
+      "answerIndex": 0,
+      "explanation": "供給曲線は右上がり。"
+    },
+    {
+      "id": "soc_pol10_004",
+      "category": "knowledge",
+      "prompt": "市場での価格の変化で需要と供給が調整されるはたらきを、アダム＝スミスは何と表現した？",
+      "choices": [
+        "神の手",
+        "有効需要",
+        "鉄の法則",
+        "見えざる手"
+      ],
+      "answerIndex": 3,
+      "explanation": "『国富論（諸国民の富）』で説いた。"
+    },
+    {
+      "id": "soc_pol10_005",
+      "category": "knowledge",
+      "prompt": "少数の企業が市場を支配している状態は？",
+      "choices": [
+        "独占禁止",
+        "完全競争",
+        "自由競争",
+        "寡占"
+      ],
+      "answerIndex": 3,
+      "explanation": "1 社だけなら独占。"
+    },
+    {
+      "id": "soc_pol10_006",
+      "category": "knowledge",
+      "prompt": "独占や不公正な取引を禁止する法律と、それを運用する機関の組み合わせは？",
+      "choices": [
+        "労働基準法・労働基準監督署",
+        "独占禁止法・公正取引委員会",
+        "消費者契約法・消費者庁だけ",
+        "民法・裁判所"
+      ],
+      "answerIndex": 1,
+      "explanation": "カルテル（価格協定）なども禁止している。"
+    },
+    {
+      "id": "soc_pol10_007",
+      "category": "knowledge",
+      "prompt": "市場のしくみにまかせると、公害などの問題が十分に解決されないことを何という？",
+      "choices": [
+        "規模の経済",
+        "市場の均衡",
+        "市場の失敗",
+        "価格の下方硬直性"
+      ],
+      "answerIndex": 2,
+      "explanation": "外部不経済・公共財の供給・独占・情報の非対称性など。"
+    },
+    {
+      "id": "soc_pol10_008",
+      "category": "knowledge",
+      "prompt": "道路や公園のように、市場では十分に供給されにくいものを何という？",
+      "choices": [
+        "奢侈品",
+        "私的財",
+        "中間財",
+        "公共財"
+      ],
+      "answerIndex": 3,
+      "explanation": "政府が税金を使って供給する。"
+    },
+    {
+      "id": "soc_pol10_009",
+      "category": "calculation",
+      "prompt": "ある商品の需要が増えて需要曲線が右に移動した。ほかの条件が同じなら、均衡価格はどうなる？",
+      "choices": [
+        "0 になる",
+        "上がる",
+        "変わらない",
+        "下がる"
+      ],
+      "answerIndex": 1,
+      "explanation": "需要が増えると、同じ価格でも品不足になり、価格が上がる。"
+    },
+    {
+      "id": "soc_pol10_010",
+      "category": "calculation",
+      "prompt": "ある商品の生産技術が進歩して供給曲線が右に移動した。均衡価格はどうなる？",
+      "choices": [
+        "上がる",
+        "需要曲線も必ず動く",
+        "変わらない",
+        "下がる"
+      ],
+      "answerIndex": 3,
+      "explanation": "供給が増えると、価格は下がり、取引量は増える。"
+    },
+    {
+      "id": "soc_pol10_011",
+      "category": "thinking",
+      "prompt": "工場の排煙で近隣住民に健康被害が出ている。これは市場の失敗のうち何にあたる？",
+      "choices": [
+        "公共財",
+        "外部不経済",
+        "情報の非対称性",
+        "独占"
+      ],
+      "answerIndex": 1,
+      "explanation": "市場の外側にいる人に不利益を与えている。政府の規制や課税で対応する。"
+    },
+    {
+      "id": "soc_pol10_012",
+      "category": "thinking",
+      "prompt": "中古車の品質を売り手はよく知っているが、買い手は分からない状況を何という？",
+      "choices": [
+        "比較優位",
+        "外部経済",
+        "情報の非対称性",
+        "寡占"
+      ],
+      "answerIndex": 2,
+      "explanation": "良い品が市場から消えてしまうおそれがある。"
+    }
+  ]
+}

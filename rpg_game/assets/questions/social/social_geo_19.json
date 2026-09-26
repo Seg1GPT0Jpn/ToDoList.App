@@ -1,0 +1,164 @@
+{
+  "setId": "social_geo_19",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_geo19_001",
+      "category": "knowledge",
+      "prompt": "自然災害による被害を予測し、危険な区域や避難場所を示した地図は？",
+      "choices": [
+        "地形図",
+        "海図",
+        "統計地図",
+        "ハザードマップ"
+      ],
+      "answerIndex": 3,
+      "explanation": "市町村が作成・公表している。"
+    },
+    {
+      "id": "soc_geo19_002",
+      "category": "knowledge",
+      "prompt": "海底の地震などで海水が持ち上げられ、陸地に押し寄せる災害は？",
+      "choices": [
+        "津波",
+        "洪水",
+        "高潮",
+        "土石流"
+      ],
+      "answerIndex": 0,
+      "explanation": "「津波てんでんこ」は、各自ですぐに高台へ避難するという教え。"
+    },
+    {
+      "id": "soc_geo19_003",
+      "category": "knowledge",
+      "prompt": "台風などで気圧が下がり、強風で海水が吹き寄せられて海面が上がる現象は？",
+      "choices": [
+        "高潮",
+        "津波",
+        "冷害",
+        "液状化"
+      ],
+      "answerIndex": 0,
+      "explanation": "満潮と重なると被害が大きくなる。"
+    },
+    {
+      "id": "soc_geo19_004",
+      "category": "knowledge",
+      "prompt": "大雨のとき、雨水が下水道などで処理しきれずに都市で起こる浸水は？",
+      "choices": [
+        "外水氾濫",
+        "内水氾濫",
+        "津波",
+        "土石流"
+      ],
+      "answerIndex": 1,
+      "explanation": "川の水があふれる外水氾濫と区別される。"
+    },
+    {
+      "id": "soc_geo19_005",
+      "category": "knowledge",
+      "prompt": "2015 年に国連で採択された、2030 年までの世界共通の目標は？",
+      "choices": [
+        "MDGs",
+        "パリ協定",
+        "京都議定書",
+        "SDGs（持続可能な開発目標）"
+      ],
+      "answerIndex": 3,
+      "explanation": "17 のゴールと 169 のターゲットからなる。"
+    },
+    {
+      "id": "soc_geo19_006",
+      "category": "knowledge",
+      "prompt": "2015 年に採択された、地球温暖化対策の国際的な枠組みは？",
+      "choices": [
+        "パリ協定",
+        "京都議定書",
+        "ラムサール条約",
+        "ワシントン条約"
+      ],
+      "answerIndex": 0,
+      "explanation": "すべての参加国が温室効果ガスの削減目標を出す。"
+    },
+    {
+      "id": "soc_geo19_007",
+      "category": "knowledge",
+      "prompt": "世界で十分な食料を得られず、慢性的な栄養不足が続く状態を何という？",
+      "choices": [
+        "過疎",
+        "都市化",
+        "飢餓",
+        "飽食"
+      ],
+      "answerIndex": 2,
+      "explanation": "一方で、先進国では食品ロスが問題になっている。"
+    },
+    {
+      "id": "soc_geo19_008",
+      "category": "knowledge",
+      "prompt": "まだ食べられるのに捨てられてしまう食品を何という？",
+      "choices": [
+        "食品ロス",
+        "フードマイレージ",
+        "地産地消",
+        "バーチャルウォーター"
+      ],
+      "answerIndex": 0,
+      "explanation": "日本では年間数百万トンにのぼる。"
+    },
+    {
+      "id": "soc_geo19_009",
+      "category": "knowledge",
+      "prompt": "災害時に、自分や家族の身は自分で守ることを何という？",
+      "choices": [
+        "共助",
+        "互助だけ",
+        "自助",
+        "公助"
+      ],
+      "answerIndex": 2,
+      "explanation": "地域で助け合うのが共助、国や自治体の支援が公助。"
+    },
+    {
+      "id": "soc_geo19_010",
+      "category": "knowledge",
+      "prompt": "地震のゆれで、地下水をふくむ砂の地盤が液体のようになる現象は？",
+      "choices": [
+        "液状化現象",
+        "火砕流",
+        "地すべり",
+        "高潮"
+      ],
+      "answerIndex": 0,
+      "explanation": "埋立地などで起こりやすい。"
+    },
+    {
+      "id": "soc_geo19_011",
+      "category": "thinking",
+      "prompt": "ハザードマップを見るときに確認すべきこととして適切なものは？",
+      "choices": [
+        "自宅や学校の危険と、避難場所・避難経路",
+        "お店の営業時間",
+        "鉄道の料金",
+        "観光地の場所"
+      ],
+      "answerIndex": 0,
+      "explanation": "災害の種類ごとに危険な区域や避難場所が異なる。"
+    },
+    {
+      "id": "soc_geo19_012",
+      "category": "thinking",
+      "prompt": "日本でフードマイレージが大きい理由は？",
+      "choices": [
+        "食料をすべて国内で作っているから",
+        "人口が少ないから",
+        "魚を食べないから",
+        "食料の多くを遠い国から輸入しているから"
+      ],
+      "answerIndex": 3,
+      "explanation": "フードマイレージ ＝ 輸入量 × 輸送距離。大きいほど輸送の環境負荷が大きい。"
+    }
+  ]
+}

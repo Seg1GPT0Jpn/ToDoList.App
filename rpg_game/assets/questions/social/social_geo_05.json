@@ -1,0 +1,164 @@
+{
+  "setId": "social_geo_05",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_geo05_001",
+      "category": "knowledge",
+      "prompt": "川が山地から平地に出るところに、土砂が堆積してできる扇形の地形は？",
+      "choices": [
+        "三角州",
+        "三日月湖",
+        "カルスト台地",
+        "扇状地"
+      ],
+      "answerIndex": 3,
+      "explanation": "水はけがよく、果樹園に利用されることが多い。"
+    },
+    {
+      "id": "soc_geo05_002",
+      "category": "knowledge",
+      "prompt": "河口付近に細かい土砂が堆積してできる低く平らな地形は？",
+      "choices": [
+        "三角州",
+        "モレーン",
+        "V 字谷",
+        "扇状地"
+      ],
+      "answerIndex": 0,
+      "explanation": "水田や都市に利用される。ナイル川などが有名。"
+    },
+    {
+      "id": "soc_geo05_003",
+      "category": "knowledge",
+      "prompt": "蛇行していた川の一部が取り残されてできた湖は？",
+      "choices": [
+        "潟湖",
+        "カルデラ湖",
+        "三日月湖（河跡湖）",
+        "氷河湖"
+      ],
+      "answerIndex": 2,
+      "explanation": "石狩川などで見られる。"
+    },
+    {
+      "id": "soc_geo05_004",
+      "category": "knowledge",
+      "prompt": "沈水した谷に海水が入りこんでできた、入り組んだ海岸は？",
+      "choices": [
+        "サンゴ礁",
+        "海岸段丘",
+        "リアス海岸",
+        "砂浜海岸"
+      ],
+      "answerIndex": 2,
+      "explanation": "三陸海岸南部など。良港が多いが津波の被害が大きくなりやすい。"
+    },
+    {
+      "id": "soc_geo05_005",
+      "category": "knowledge",
+      "prompt": "氷河が削ってできた谷に海水が入りこんだ細長い湾は？",
+      "choices": [
+        "エスチュアリー",
+        "リアス海岸",
+        "フィヨルド",
+        "ラグーン"
+      ],
+      "answerIndex": 2,
+      "explanation": "ノルウェーやチリ南部などに見られる。"
+    },
+    {
+      "id": "soc_geo05_006",
+      "category": "knowledge",
+      "prompt": "河口が沈水してラッパ状に広がった地形は？",
+      "choices": [
+        "砂州",
+        "エスチュアリー（三角江）",
+        "フィヨルド",
+        "三角州"
+      ],
+      "answerIndex": 1,
+      "explanation": "テムズ川やラプラタ川など。大きな港ができやすい。"
+    },
+    {
+      "id": "soc_geo05_007",
+      "category": "knowledge",
+      "prompt": "氷河が削ってできた、断面が U 字形の谷は？",
+      "choices": [
+        "天井川",
+        "河岸段丘",
+        "V 字谷",
+        "U 字谷"
+      ],
+      "answerIndex": 3,
+      "explanation": "川が削った谷は V 字形になる。"
+    },
+    {
+      "id": "soc_geo05_008",
+      "category": "knowledge",
+      "prompt": "石灰岩が雨水に溶かされてできる地形は？",
+      "choices": [
+        "氷河地形",
+        "砂丘",
+        "カルスト地形",
+        "火山地形"
+      ],
+      "answerIndex": 2,
+      "explanation": "鍾乳洞やドリーネが見られる。山口県の秋吉台など。"
+    },
+    {
+      "id": "soc_geo05_009",
+      "category": "knowledge",
+      "prompt": "熱帯の浅くきれいな海で、サンゴの骨格が積み重なってできる地形は？",
+      "choices": [
+        "リアス海岸",
+        "サンゴ礁",
+        "砂嘴",
+        "フィヨルド"
+      ],
+      "answerIndex": 1,
+      "explanation": "裾礁・堡礁・環礁がある。"
+    },
+    {
+      "id": "soc_geo05_010",
+      "category": "thinking",
+      "prompt": "扇状地の中央部（扇央）が畑や果樹園に使われることが多い理由は？",
+      "choices": [
+        "水はけがよく、水田に向かないから",
+        "土が粘土質だから",
+        "洪水が起きやすいから",
+        "標高が低いから"
+      ],
+      "answerIndex": 0,
+      "explanation": "川の水が地下にしみこみやすい。扇端では地下水がわき出し集落ができやすい。"
+    },
+    {
+      "id": "soc_geo05_011",
+      "category": "thinking",
+      "prompt": "リアス海岸で津波の被害が大きくなりやすい理由は？",
+      "choices": [
+        "川がないから",
+        "海が浅くならないから",
+        "砂浜が広いから",
+        "湾の奥にいくほど狭くなり、波が高くなるから"
+      ],
+      "answerIndex": 3,
+      "explanation": "一方で、波の穏やかな入り江は養殖や漁港に利用される。"
+    },
+    {
+      "id": "soc_geo05_012",
+      "category": "thinking",
+      "prompt": "天井川ができる理由として正しいものは？",
+      "choices": [
+        "土砂が堆積して川底が上がり、堤防を高くすることをくり返したから",
+        "氷河が削ったから",
+        "川が地下を流れているから",
+        "石灰岩が溶けたから"
+      ],
+      "answerIndex": 0,
+      "explanation": "川底が周囲の土地より高くなり、下をトンネルが通ることもある。"
+    }
+  ]
+}

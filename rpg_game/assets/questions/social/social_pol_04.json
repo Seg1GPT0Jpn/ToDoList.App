@@ -1,0 +1,164 @@
+{
+  "setId": "social_pol_04",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_pol04_001",
+      "category": "knowledge",
+      "prompt": "内閣が国会の信任の上に成り立ち、国会に責任を負う制度は？",
+      "choices": [
+        "三審制",
+        "大統領制",
+        "議院内閣制",
+        "二院制"
+      ],
+      "answerIndex": 2,
+      "explanation": "イギリスで発達した。アメリカは大統領制。"
+    },
+    {
+      "id": "soc_pol04_002",
+      "category": "knowledge",
+      "prompt": "内閣総理大臣を指名するのは？",
+      "choices": [
+        "最高裁判所",
+        "国民の直接選挙",
+        "天皇",
+        "国会"
+      ],
+      "answerIndex": 3,
+      "explanation": "国会が指名し、天皇が任命する。"
+    },
+    {
+      "id": "soc_pol04_003",
+      "category": "knowledge",
+      "prompt": "内閣総理大臣の条件として正しいものは？",
+      "choices": [
+        "最高裁判所の裁判官であること",
+        "衆議院議員に限られる",
+        "国民の投票で選ばれること",
+        "国会議員であり、文民であること"
+      ],
+      "answerIndex": 3,
+      "explanation": "国務大臣はその過半数が国会議員でなければならない。"
+    },
+    {
+      "id": "soc_pol04_004",
+      "category": "knowledge",
+      "prompt": "内閣の方針を決めるための会議は？",
+      "choices": [
+        "両院協議会",
+        "閣議",
+        "公聴会",
+        "委員会"
+      ],
+      "answerIndex": 1,
+      "explanation": "全会一致で決定するのが慣例。"
+    },
+    {
+      "id": "soc_pol04_005",
+      "category": "knowledge",
+      "prompt": "内閣の仕事として正しいものは？",
+      "choices": [
+        "予算を作成して国会に提出する",
+        "法律を制定する",
+        "条例を制定する",
+        "裁判を行う"
+      ],
+      "answerIndex": 0,
+      "explanation": "ほかに外交・条約の締結・政令の制定・最高裁判所長官の指名など。"
+    },
+    {
+      "id": "soc_pol04_006",
+      "category": "knowledge",
+      "prompt": "法律を実施するために内閣が定める命令は？",
+      "choices": [
+        "政令",
+        "判決",
+        "条例",
+        "省令だけ"
+      ],
+      "answerIndex": 0,
+      "explanation": "条例は地方公共団体が定める。"
+    },
+    {
+      "id": "soc_pol04_007",
+      "category": "knowledge",
+      "prompt": "衆議院で内閣不信任案が可決されたとき、内閣は 10 日以内にどうする？",
+      "choices": [
+        "国民投票を行う",
+        "衆議院を解散するか、総辞職する",
+        "参議院を解散する",
+        "最高裁判所に訴える"
+      ],
+      "answerIndex": 1,
+      "explanation": "議院内閣制の特徴。"
+    },
+    {
+      "id": "soc_pol04_008",
+      "category": "knowledge",
+      "prompt": "国の行政事務を分担する省庁のうち、国の財政を担当するのは？",
+      "choices": [
+        "文部科学省",
+        "総務省",
+        "経済産業省",
+        "財務省"
+      ],
+      "answerIndex": 3,
+      "explanation": "予算の編成や税を担当する。"
+    },
+    {
+      "id": "soc_pol04_009",
+      "category": "knowledge",
+      "prompt": "行政機関が、法律で定められた許可や認可を通じて民間の活動に関わる権限を何という？",
+      "choices": [
+        "条例制定権",
+        "違憲審査権",
+        "国政調査権",
+        "許認可権"
+      ],
+      "answerIndex": 3,
+      "explanation": "行政の力が大きくなると、規制緩和が求められることもある。"
+    },
+    {
+      "id": "soc_pol04_010",
+      "category": "knowledge",
+      "prompt": "行政の肥大化をおさえ、効率化するために進められる改革は？",
+      "choices": [
+        "宗教改革",
+        "農地改革",
+        "行政改革",
+        "地租改正"
+      ],
+      "answerIndex": 2,
+      "explanation": "省庁の再編、規制緩和、民営化などが行われてきた。"
+    },
+    {
+      "id": "soc_pol04_011",
+      "category": "thinking",
+      "prompt": "「行政国家」と呼ばれる現代の状況として適切なものは？",
+      "choices": [
+        "行政の役割が大きくなり、専門的な官僚の影響力が強まっている",
+        "行政がまったく働かない",
+        "国会の権限が強まりすぎている",
+        "裁判所が行政を行っている"
+      ],
+      "answerIndex": 0,
+      "explanation": "福祉や経済政策など、国の仕事が増えたため。"
+    },
+    {
+      "id": "soc_pol04_012",
+      "category": "thinking",
+      "prompt": "議院内閣制と大統領制の違いとして適切なものは？",
+      "choices": [
+        "議院内閣制では内閣が議会の信任に基づくが、大統領制では大統領が国民に選ばれ議会から独立している",
+        "議院内閣制では大統領が議会を解散できる",
+        "両者に違いはない",
+        "大統領制では首相が議会で選ばれる"
+      ],
+      "answerIndex": 0,
+      "explanation": "アメリカの大統領は議会の解散権をもたず、議会も不信任決議ができない。"
+    }
+  ]
+}

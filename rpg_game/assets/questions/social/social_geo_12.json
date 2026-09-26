@@ -1,0 +1,164 @@
+{
+  "setId": "social_geo_12",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_geo12_001",
+      "category": "knowledge",
+      "prompt": "工業の立地で、原料の産地の近くに工場が集まるのはどんな工業？",
+      "choices": [
+        "原料が重く、製品になると軽くなる工業（セメントなど）",
+        "製品が重い工業",
+        "IC 工業",
+        "ファッション産業"
+      ],
+      "answerIndex": 0,
+      "explanation": "ウェーバーの工業立地論の考え方。"
+    },
+    {
+      "id": "soc_geo12_002",
+      "category": "knowledge",
+      "prompt": "IC（集積回路）のように、小さく軽く高価な製品の工場が立地しやすいのは？",
+      "choices": [
+        "原料の産地",
+        "大きな港湾",
+        "炭田の近く",
+        "空港や高速道路の近く"
+      ],
+      "answerIndex": 3,
+      "explanation": "航空機やトラックで運んでも輸送費の割合が小さい。"
+    },
+    {
+      "id": "soc_geo12_003",
+      "category": "knowledge",
+      "prompt": "アメリカ合衆国で、北緯 37 度付近より南の新しい工業地域を何という？",
+      "choices": [
+        "コーンベルト",
+        "サンベルト",
+        "スノーベルト",
+        "ラストベルト"
+      ],
+      "answerIndex": 1,
+      "explanation": "先端技術産業が発達している。"
+    },
+    {
+      "id": "soc_geo12_004",
+      "category": "knowledge",
+      "prompt": "アメリカのサンフランシスコ郊外にある、IT 企業が集まる地域は？",
+      "choices": [
+        "デトロイト",
+        "シリコンバレー",
+        "ルール工業地域",
+        "シリコンプレーン"
+      ],
+      "answerIndex": 1,
+      "explanation": "大学や研究機関との結びつきが強い。"
+    },
+    {
+      "id": "soc_geo12_005",
+      "category": "knowledge",
+      "prompt": "発展途上国が、外国企業の工場を誘致するために税などを優遇した地区は？",
+      "choices": [
+        "自治区",
+        "経済特区（輸出加工区）",
+        "保護区",
+        "国立公園"
+      ],
+      "answerIndex": 1,
+      "explanation": "中国の深圳などが有名。"
+    },
+    {
+      "id": "soc_geo12_006",
+      "category": "knowledge",
+      "prompt": "商業・運輸・金融・情報サービスなどの産業は？",
+      "choices": [
+        "第一次産業",
+        "第三次産業",
+        "第六次産業",
+        "第二次産業"
+      ],
+      "answerIndex": 1,
+      "explanation": "先進国では就業者の割合が最も大きい。"
+    },
+    {
+      "id": "soc_geo12_007",
+      "category": "knowledge",
+      "prompt": "農林水産業者が、加工・販売まで行うことを何という？",
+      "choices": [
+        "産業の空洞化",
+        "6 次産業化",
+        "国際分業",
+        "工業化"
+      ],
+      "answerIndex": 1,
+      "explanation": "1 次 × 2 次 × 3 次 ＝ 6 次。"
+    },
+    {
+      "id": "soc_geo12_008",
+      "category": "knowledge",
+      "prompt": "工場が海外に移転し、国内の産業がおとろえることを何という？",
+      "choices": [
+        "都市化",
+        "グローバル化",
+        "過密",
+        "産業の空洞化"
+      ],
+      "answerIndex": 3,
+      "explanation": "1980 年代以降の日本で問題になった。"
+    },
+    {
+      "id": "soc_geo12_009",
+      "category": "knowledge",
+      "prompt": "世界の工場と呼ばれるほど工業生産が多く、「世界の工場」とされる国は？",
+      "choices": [
+        "オーストラリア",
+        "サウジアラビア",
+        "ニュージーランド",
+        "中国"
+      ],
+      "answerIndex": 3,
+      "explanation": "豊富な労働力と経済特区などによって成長した。"
+    },
+    {
+      "id": "soc_geo12_010",
+      "category": "knowledge",
+      "prompt": "観光資源を生かした観光業のうち、自然環境を学び守りながら楽しむ観光は？",
+      "choices": [
+        "マスツーリズム",
+        "ダークツーリズム",
+        "エコツーリズム",
+        "グリーンツーリズムだけ"
+      ],
+      "answerIndex": 2,
+      "explanation": "環境保全と地域の収入を両立させる。"
+    },
+    {
+      "id": "soc_geo12_011",
+      "category": "thinking",
+      "prompt": "先進国の自動車会社が、発展途上国に工場を建てる主な理由は？",
+      "choices": [
+        "輸送費が必ず安いから",
+        "技術者が多いから",
+        "人件費が安く、今後の市場としても期待できるから",
+        "原料が必ずあるから"
+      ],
+      "answerIndex": 2,
+      "explanation": "現地で生産・販売することで、貿易摩擦も避けられる。"
+    },
+    {
+      "id": "soc_geo12_012",
+      "category": "thinking",
+      "prompt": "インドで ICT 産業が発達した理由として適切なものは？",
+      "choices": [
+        "英語を話せる技術者が多く、アメリカと時差があって作業を引きつげるから",
+        "寒冷な気候だから",
+        "人口が少ないから",
+        "石炭が豊富だから"
+      ],
+      "answerIndex": 0,
+      "explanation": "ベンガルールなどに IT 企業が集まる。"
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "setId": "social_pol_08",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_pol08_001",
+      "category": "knowledge",
+      "prompt": "私人どうしの関係（財産や家族など）を定めた法律は？",
+      "choices": [
+        "民法",
+        "憲法",
+        "刑法",
+        "行政法"
+      ],
+      "answerIndex": 0,
+      "explanation": "私法の代表。"
+    },
+    {
+      "id": "soc_pol08_002",
+      "category": "knowledge",
+      "prompt": "国と国民の関係を定めた法律（憲法・刑法など）を何という？",
+      "choices": [
+        "公法",
+        "私法",
+        "国際法",
+        "社会法"
+      ],
+      "answerIndex": 0,
+      "explanation": "民法・商法などは私法、労働法などは社会法。"
+    },
+    {
+      "id": "soc_pol08_003",
+      "category": "knowledge",
+      "prompt": "売買などの契約が成立するのはいつ？",
+      "choices": [
+        "代金を払ったときだけ",
+        "商品を受け取ったときだけ",
+        "申し込みと承諾の意思が合致したとき",
+        "契約書にはんこを押したときだけ"
+      ],
+      "answerIndex": 2,
+      "explanation": "口約束でも契約は成立する。"
+    },
+    {
+      "id": "soc_pol08_004",
+      "category": "knowledge",
+      "prompt": "2022 年から、民法で成年とされる年齢は？",
+      "choices": [
+        "18 歳",
+        "21 歳",
+        "20 歳",
+        "16 歳"
+      ],
+      "answerIndex": 0,
+      "explanation": "親の同意なしにクレジットカードの契約などができるようになった。"
+    },
+    {
+      "id": "soc_pol08_005",
+      "category": "knowledge",
+      "prompt": "訪問販売などで契約した後、一定期間内なら無条件で契約を解除できる制度は？",
+      "choices": [
+        "クーリング・オフ",
+        "セーフガード",
+        "インフォームド・コンセント",
+        "リコール"
+      ],
+      "answerIndex": 0,
+      "explanation": "訪問販売は 8 日以内（書面を受け取った日から）など。"
+    },
+    {
+      "id": "soc_pol08_006",
+      "category": "knowledge",
+      "prompt": "消費者を守るため、不当な勧誘による契約を取り消せることなどを定めた法律は？",
+      "choices": [
+        "製造物責任法",
+        "消費者契約法",
+        "労働基準法",
+        "独占禁止法"
+      ],
+      "answerIndex": 1,
+      "explanation": "製造物責任法（PL 法）は欠陥製品の被害を救済する。"
+    },
+    {
+      "id": "soc_pol08_007",
+      "category": "knowledge",
+      "prompt": "労働時間（原則 1 日 8 時間・週 40 時間）など、労働条件の最低基準を定めた法律は？",
+      "choices": [
+        "労働組合法",
+        "労働関係調整法",
+        "労働基準法",
+        "男女雇用機会均等法"
+      ],
+      "answerIndex": 2,
+      "explanation": "これら 3 つを労働三法という（労働基準法・労働組合法・労働関係調整法）。"
+    },
+    {
+      "id": "soc_pol08_008",
+      "category": "knowledge",
+      "prompt": "労働者が団結して労働組合をつくる権利は？",
+      "choices": [
+        "勤労権",
+        "団結権",
+        "団体交渉権",
+        "団体行動権"
+      ],
+      "answerIndex": 1,
+      "explanation": "労働三権の一つ。"
+    },
+    {
+      "id": "soc_pol08_009",
+      "category": "knowledge",
+      "prompt": "募集・採用・昇進などでの性別による差別を禁止した法律は？",
+      "choices": [
+        "労働基準法",
+        "男女共同参画社会基本法",
+        "育児・介護休業法",
+        "男女雇用機会均等法"
+      ],
+      "answerIndex": 3,
+      "explanation": "1985 年に制定された。"
+    },
+    {
+      "id": "soc_pol08_010",
+      "category": "knowledge",
+      "prompt": "他人に損害を与えた者が、その損害を賠償する責任を負うことを何という？",
+      "choices": [
+        "連帯責任",
+        "不法行為責任",
+        "無過失責任だけ",
+        "刑事責任"
+      ],
+      "answerIndex": 1,
+      "explanation": "民法で定められている。"
+    },
+    {
+      "id": "soc_pol08_011",
+      "category": "thinking",
+      "prompt": "18 歳で成年になったことで注意が必要なことは？",
+      "choices": [
+        "お酒やたばこが許される",
+        "契約がすべて無効になる",
+        "親の同意なしに契約でき、未成年者取消権が使えなくなる",
+        "選挙権がなくなる"
+      ],
+      "answerIndex": 2,
+      "explanation": "飲酒・喫煙・公営ギャンブルは 20 歳のまま。消費者トラブルに注意する。"
+    },
+    {
+      "id": "soc_pol08_012",
+      "category": "thinking",
+      "prompt": "欠陥のある製品で被害を受けたとき、製造業者の過失を証明しなくても損害賠償を求められる根拠となる法律は？",
+      "choices": [
+        "消費者基本法",
+        "製造物責任法（PL 法）",
+        "民事訴訟法",
+        "独占禁止法"
+      ],
+      "answerIndex": 1,
+      "explanation": "無過失責任の考え方を取り入れている。"
+    }
+  ]
+}

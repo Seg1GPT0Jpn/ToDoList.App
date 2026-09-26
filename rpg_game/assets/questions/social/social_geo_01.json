@@ -1,0 +1,164 @@
+{
+  "setId": "social_geo_01",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_geo01_001",
+      "category": "knowledge",
+      "prompt": "赤道を 0 度として、南北をそれぞれ 90 度に分けたものは？",
+      "choices": [
+        "標高",
+        "方位",
+        "経度",
+        "緯度"
+      ],
+      "answerIndex": 3,
+      "explanation": "北半球は北緯、南半球は南緯。"
+    },
+    {
+      "id": "soc_geo01_002",
+      "category": "knowledge",
+      "prompt": "イギリスの旧グリニッジ天文台を通る、経度 0 度の経線は？",
+      "choices": [
+        "赤道",
+        "日付変更線",
+        "回帰線",
+        "本初子午線"
+      ],
+      "answerIndex": 3,
+      "explanation": "ここから東へ東経、西へ西経 180 度まで数える。"
+    },
+    {
+      "id": "soc_geo01_003",
+      "category": "knowledge",
+      "prompt": "日本の標準時子午線は？",
+      "choices": [
+        "東経 125 度",
+        "西経 135 度",
+        "東経 135 度",
+        "東経 140 度"
+      ],
+      "answerIndex": 2,
+      "explanation": "兵庫県明石市などを通る。"
+    },
+    {
+      "id": "soc_geo01_004",
+      "category": "knowledge",
+      "prompt": "地球は 1 日（24 時間）で 360 度自転する。経度何度で 1 時間の時差になる？",
+      "choices": [
+        "24 度",
+        "30 度",
+        "10 度",
+        "15 度"
+      ],
+      "answerIndex": 3,
+      "explanation": "360 ÷ 24 ＝ 15 度。"
+    },
+    {
+      "id": "soc_geo01_005",
+      "category": "knowledge",
+      "prompt": "ほぼ経度 180 度の線にそって引かれ、西から東へこえると日付を 1 日もどす線は？",
+      "choices": [
+        "本初子午線",
+        "赤道",
+        "北回帰線",
+        "日付変更線"
+      ],
+      "answerIndex": 3,
+      "explanation": "東から西へこえるときは日付を 1 日進める。"
+    },
+    {
+      "id": "soc_geo01_006",
+      "category": "knowledge",
+      "prompt": "地球の中心をはさんで反対側の地点を何という？",
+      "choices": [
+        "震央",
+        "対蹠点",
+        "極点",
+        "天頂"
+      ],
+      "answerIndex": 1,
+      "explanation": "緯度は北と南を入れかえ、経度は 180 度からひく。"
+    },
+    {
+      "id": "soc_geo01_007",
+      "category": "knowledge",
+      "prompt": "北緯・南緯 23.4 度付近の緯線を何という？",
+      "choices": [
+        "回帰線",
+        "子午線",
+        "極圏",
+        "赤道"
+      ],
+      "answerIndex": 0,
+      "explanation": "夏至・冬至に太陽が真上にくる緯線。"
+    },
+    {
+      "id": "soc_geo01_008",
+      "category": "calculation",
+      "prompt": "東京（東経 135 度標準）とロンドン（経度 0 度）の時差は？",
+      "choices": [
+        "9 時間",
+        "8 時間",
+        "12 時間",
+        "13.5 時間"
+      ],
+      "answerIndex": 0,
+      "explanation": "135 ÷ 15 ＝ 9 時間。東にある東京の方が時刻が進んでいる。"
+    },
+    {
+      "id": "soc_geo01_009",
+      "category": "calculation",
+      "prompt": "東京が 1 月 1 日午前 9 時のとき、ロンドンは何日の何時？",
+      "choices": [
+        "12 月 31 日午後 6 時",
+        "1 月 1 日午後 0 時",
+        "1 月 1 日午前 0 時",
+        "1 月 1 日午後 6 時"
+      ],
+      "answerIndex": 2,
+      "explanation": "ロンドンは東京より 9 時間遅いので、9 時 − 9 時間 ＝ 0 時。"
+    },
+    {
+      "id": "soc_geo01_010",
+      "category": "calculation",
+      "prompt": "東京（東経 135 度）とニューヨーク（西経 75 度標準）の時差は？",
+      "choices": [
+        "4 時間",
+        "12 時間",
+        "14 時間",
+        "10 時間"
+      ],
+      "answerIndex": 2,
+      "explanation": "経度差 135 ＋ 75 ＝ 210 度。210 ÷ 15 ＝ 14 時間（サマータイムは考えない）。"
+    },
+    {
+      "id": "soc_geo01_011",
+      "category": "calculation",
+      "prompt": "北緯 35 度・東経 140 度の地点の対蹠点は？",
+      "choices": [
+        "南緯 55 度・西経 40 度",
+        "南緯 35 度・東経 40 度",
+        "北緯 35 度・西経 140 度",
+        "南緯 35 度・西経 40 度"
+      ],
+      "answerIndex": 3,
+      "explanation": "緯度は北→南、経度は 180 − 140 ＝ 40 で東→西。"
+    },
+    {
+      "id": "soc_geo01_012",
+      "category": "thinking",
+      "prompt": "東から西へ日付変更線をこえて飛行機で移動した。日付はどうする？",
+      "choices": [
+        "1 日もどす",
+        "2 日進める",
+        "変えない",
+        "1 日進める"
+      ],
+      "answerIndex": 3,
+      "explanation": "日付変更線のすぐ西側（日本側）が、世界で最も早く新しい日をむかえる。"
+    }
+  ]
+}

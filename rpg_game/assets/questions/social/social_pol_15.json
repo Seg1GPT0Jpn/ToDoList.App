@@ -1,0 +1,164 @@
+{
+  "setId": "social_pol_15",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_pol15_001",
+      "category": "knowledge",
+      "prompt": "各国が得意な財の生産に特化して貿易すると、互いに利益を得られるという考え方は？",
+      "choices": [
+        "比較生産費説（比較優位）",
+        "保護貿易論",
+        "絶対王政",
+        "重商主義"
+      ],
+      "answerIndex": 0,
+      "explanation": "リカードが唱えた。"
+    },
+    {
+      "id": "soc_pol15_002",
+      "category": "knowledge",
+      "prompt": "自国の産業を守るために、関税などで輸入を制限する貿易は？",
+      "choices": [
+        "保護貿易",
+        "自由貿易",
+        "加工貿易",
+        "中継貿易"
+      ],
+      "answerIndex": 0,
+      "explanation": "リストは発展途上の産業を守るために保護貿易を主張した。"
+    },
+    {
+      "id": "soc_pol15_003",
+      "category": "knowledge",
+      "prompt": "一国の、一定期間の外国とのお金の受け取りと支払いをまとめたものは？",
+      "choices": [
+        "貿易額だけ",
+        "財政収支",
+        "国家予算",
+        "国際収支"
+      ],
+      "answerIndex": 3,
+      "explanation": "経常収支・資本移転等収支・金融収支などからなる。"
+    },
+    {
+      "id": "soc_pol15_004",
+      "category": "knowledge",
+      "prompt": "為替相場の安定や、国際収支が赤字の国への融資を行う国際機関は？",
+      "choices": [
+        "IMF（国際通貨基金）",
+        "WTO",
+        "IBRD（世界銀行）",
+        "UNCTAD"
+      ],
+      "answerIndex": 0,
+      "explanation": "世界銀行は発展途上国の開発のための融資を行う。"
+    },
+    {
+      "id": "soc_pol15_005",
+      "category": "knowledge",
+      "prompt": "自由貿易を推進し、貿易をめぐる紛争を処理する国際機関は？",
+      "choices": [
+        "WTO（世界貿易機関）",
+        "OPEC",
+        "IMF",
+        "GATT だけ"
+      ],
+      "answerIndex": 0,
+      "explanation": "1995 年に GATT を発展させて発足した。"
+    },
+    {
+      "id": "soc_pol15_006",
+      "category": "knowledge",
+      "prompt": "先進国の政府が発展途上国に行う資金や技術の援助は？",
+      "choices": [
+        "FTA",
+        "ODA（政府開発援助）",
+        "NGO",
+        "PKO"
+      ],
+      "answerIndex": 1,
+      "explanation": "日本は援助額の大きい国の一つ。"
+    },
+    {
+      "id": "soc_pol15_007",
+      "category": "knowledge",
+      "prompt": "発展途上国の生産者の生活を支えるため、農産物などを適正な価格で取引することは？",
+      "choices": [
+        "フェアトレード",
+        "ブロック経済",
+        "セーフガード",
+        "ダンピング"
+      ],
+      "answerIndex": 0,
+      "explanation": "コーヒーやチョコレートなどで行われている。"
+    },
+    {
+      "id": "soc_pol15_008",
+      "category": "knowledge",
+      "prompt": "急な輸入増加から国内産業を守るため、一時的に輸入を制限する措置は？",
+      "choices": [
+        "フェアトレード",
+        "ODA",
+        "セーフガード（緊急輸入制限）",
+        "ダンピング"
+      ],
+      "answerIndex": 2,
+      "explanation": "WTO で認められている。"
+    },
+    {
+      "id": "soc_pol15_009",
+      "category": "calculation",
+      "prompt": "A 国は布 1 単位に 2 人、ワイン 1 単位に 4 人必要。B 国は布 1 単位に 6 人、ワイン 1 単位に 6 人必要。A 国が比較優位をもつのは？",
+      "choices": [
+        "布",
+        "両方",
+        "ワイン",
+        "どちらもない"
+      ],
+      "answerIndex": 0,
+      "explanation": "A 国の布とワインの比は 2：4、B 国は 6：6。A 国は布を相対的に安く（ワイン 0.5 単位分で）つくれる。"
+    },
+    {
+      "id": "soc_pol15_010",
+      "category": "calculation",
+      "prompt": "ある国の輸出額が 80 兆円、輸入額が 90 兆円。貿易収支は？",
+      "choices": [
+        "0",
+        "10 兆円の赤字",
+        "10 兆円の黒字",
+        "170 兆円の黒字"
+      ],
+      "answerIndex": 1,
+      "explanation": "輸出 − 輸入 ＝ 80 − 90 ＝ −10 兆円。"
+    },
+    {
+      "id": "soc_pol15_011",
+      "category": "thinking",
+      "prompt": "自由貿易を進めることの課題として適切なものは？",
+      "choices": [
+        "輸入品が高くなる",
+        "すべての産業が必ず成長する",
+        "外国との交流がなくなる",
+        "国際競争力の弱い国内の産業が打撃を受けることがある"
+      ],
+      "answerIndex": 3,
+      "explanation": "農業などで影響が大きいことがあり、国内の支援策が議論される。"
+    },
+    {
+      "id": "soc_pol15_012",
+      "category": "thinking",
+      "prompt": "発展途上国の中で経済格差が広がる「南南問題」の例として適切なものは？",
+      "choices": [
+        "東西冷戦",
+        "先進国どうしの対立",
+        "先進国と発展途上国の格差",
+        "資源をもつ国や工業化に成功した国と、そうでない後発の国との格差"
+      ],
+      "answerIndex": 3,
+      "explanation": "後発発展途上国（LDC）への支援が課題。"
+    }
+  ]
+}

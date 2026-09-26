@@ -1,0 +1,164 @@
+{
+  "setId": "social_pol_07",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_pol07_001",
+      "category": "knowledge",
+      "prompt": "現在の日本で、選挙権が認められる年齢は？",
+      "choices": [
+        "満 20 歳以上",
+        "満 18 歳以上",
+        "満 25 歳以上",
+        "満 16 歳以上"
+      ],
+      "answerIndex": 1,
+      "explanation": "2016 年から 18 歳以上に引き下げられた。"
+    },
+    {
+      "id": "soc_pol07_002",
+      "category": "knowledge",
+      "prompt": "民主的な選挙の四原則にふくまれないものは？",
+      "choices": [
+        "平等選挙",
+        "普通選挙",
+        "公開選挙",
+        "直接選挙"
+      ],
+      "answerIndex": 2,
+      "explanation": "四原則：普通・平等・直接・秘密選挙。"
+    },
+    {
+      "id": "soc_pol07_003",
+      "category": "knowledge",
+      "prompt": "1 つの選挙区から 1 人を選ぶ選挙制度は？",
+      "choices": [
+        "比例代表制",
+        "大選挙区制",
+        "中選挙区制",
+        "小選挙区制"
+      ],
+      "answerIndex": 3,
+      "explanation": "大政党に有利で、死票が多くなりやすい。"
+    },
+    {
+      "id": "soc_pol07_004",
+      "category": "knowledge",
+      "prompt": "政党の得票数に応じて議席を配分する選挙制度は？",
+      "choices": [
+        "小選挙区制",
+        "大選挙区制",
+        "比例代表制",
+        "全国区制だけ"
+      ],
+      "answerIndex": 2,
+      "explanation": "死票が少ないが、小政党が多くなりやすい。"
+    },
+    {
+      "id": "soc_pol07_005",
+      "category": "knowledge",
+      "prompt": "衆議院議員の選挙で採用されている制度は？",
+      "choices": [
+        "中選挙区制",
+        "小選挙区比例代表並立制",
+        "比例代表制だけ",
+        "大選挙区制だけ"
+      ],
+      "answerIndex": 1,
+      "explanation": "参議院は選挙区と比例代表の組み合わせ。"
+    },
+    {
+      "id": "soc_pol07_006",
+      "category": "knowledge",
+      "prompt": "落選者に投票され、議席に結びつかなかった票を何という？",
+      "choices": [
+        "死票",
+        "浮動票",
+        "白票",
+        "無効票"
+      ],
+      "answerIndex": 0,
+      "explanation": "小選挙区制で多くなりやすい。"
+    },
+    {
+      "id": "soc_pol07_007",
+      "category": "knowledge",
+      "prompt": "選挙区ごとの有権者数の差によって、一票の価値に差が出る問題は？",
+      "choices": [
+        "一票の格差",
+        "政党離れ",
+        "死票",
+        "投票率の低下"
+      ],
+      "answerIndex": 0,
+      "explanation": "最高裁判所が違憲状態と判断したこともある。"
+    },
+    {
+      "id": "soc_pol07_008",
+      "category": "knowledge",
+      "prompt": "政権を担当する政党を何という？",
+      "choices": [
+        "与党",
+        "無党派",
+        "圧力団体",
+        "野党"
+      ],
+      "answerIndex": 0,
+      "explanation": "政権を担当していない政党は野党。"
+    },
+    {
+      "id": "soc_pol07_009",
+      "category": "knowledge",
+      "prompt": "特定の利益の実現をめざして、政党や行政にはたらきかける団体は？",
+      "choices": [
+        "NPO だけ",
+        "政党",
+        "与党",
+        "圧力団体（利益団体）"
+      ],
+      "answerIndex": 3,
+      "explanation": "業界団体や労働組合などがある。"
+    },
+    {
+      "id": "soc_pol07_010",
+      "category": "knowledge",
+      "prompt": "社会の多くの人々がもつ、政治や社会問題についての意見を何という？",
+      "choices": [
+        "世論",
+        "党議",
+        "判例",
+        "公約"
+      ],
+      "answerIndex": 0,
+      "explanation": "マスメディアや SNS が世論の形成に大きく影響する。"
+    },
+    {
+      "id": "soc_pol07_011",
+      "category": "thinking",
+      "prompt": "若い世代の投票率が低いことで起こりうる問題は？",
+      "choices": [
+        "税金がなくなる",
+        "選挙がなくなる",
+        "若い世代の意見が政治に反映されにくくなる",
+        "政治がすべて若い世代に有利になる"
+      ],
+      "answerIndex": 2,
+      "explanation": "高齢者向けの政策が優先されやすくなるという指摘もある（シルバー民主主義）。"
+    },
+    {
+      "id": "soc_pol07_012",
+      "category": "thinking",
+      "prompt": "SNS で政治に関する情報に接するときに気をつけることは？",
+      "choices": [
+        "SNS の情報はすべて正しいこと",
+        "新聞より必ず正確なこと",
+        "情報を確かめなくてよいこと",
+        "自分と似た意見ばかりが表示され、偏った情報に囲まれやすいこと"
+      ],
+      "answerIndex": 3,
+      "explanation": "フィルターバブルやエコーチェンバーと呼ばれる現象に注意する。"
+    }
+  ]
+}

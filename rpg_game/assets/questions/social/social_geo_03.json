@@ -1,0 +1,164 @@
+{
+  "setId": "social_geo_03",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_geo03_001",
+      "category": "knowledge",
+      "prompt": "地理情報をコンピュータで重ね合わせ、分析・表示するシステムは？",
+      "choices": [
+        "DNS",
+        "GIS",
+        "CPU",
+        "GPS"
+      ],
+      "answerIndex": 1,
+      "explanation": "地理情報システム（Geographic Information System）。"
+    },
+    {
+      "id": "soc_geo03_002",
+      "category": "knowledge",
+      "prompt": "人工衛星からの電波で現在地を知るしくみ（アメリカのもの）は？",
+      "choices": [
+        "GPS",
+        "IoT",
+        "LAN",
+        "GIS"
+      ],
+      "answerIndex": 0,
+      "explanation": "日本のみちびきなどもふくめた衛星測位システムの総称が GNSS。"
+    },
+    {
+      "id": "soc_geo03_003",
+      "category": "knowledge",
+      "prompt": "人工衛星や航空機から地表を観測する技術は？",
+      "choices": [
+        "リモートセンシング",
+        "トレース",
+        "フィールドワーク",
+        "ボーリング"
+      ],
+      "answerIndex": 0,
+      "explanation": "植生や気温、災害のようすなどを広く調べられる。"
+    },
+    {
+      "id": "soc_geo03_004",
+      "category": "knowledge",
+      "prompt": "GIS で、道路・建物・土地利用などを別々に重ねる層を何という？",
+      "choices": [
+        "フレーム",
+        "レイヤー",
+        "ピクセル",
+        "パケット"
+      ],
+      "answerIndex": 1,
+      "explanation": "必要なレイヤーを重ねて、関係を読み取る。"
+    },
+    {
+      "id": "soc_geo03_005",
+      "category": "knowledge",
+      "prompt": "国や自治体などが、誰でも自由に使えるように公開したデータは？",
+      "choices": [
+        "ビッグデータだけ",
+        "オープンデータ",
+        "機密情報",
+        "個人情報"
+      ],
+      "answerIndex": 1,
+      "explanation": "GIS で地域を分析するときに活用できる。"
+    },
+    {
+      "id": "soc_geo03_006",
+      "category": "knowledge",
+      "prompt": "国土地理院が Web で公開している地図サービスは？",
+      "choices": [
+        "天気図",
+        "ハザードマップだけ",
+        "地理院地図",
+        "海図"
+      ],
+      "answerIndex": 2,
+      "explanation": "地形図や空中写真、標高などを重ねて見られる。"
+    },
+    {
+      "id": "soc_geo03_007",
+      "category": "knowledge",
+      "prompt": "日本の衛星測位システムで、日本の上空に長くとどまるように飛ぶ衛星は？",
+      "choices": [
+        "だいち",
+        "ひまわり",
+        "はやぶさ",
+        "みちびき（準天頂衛星）"
+      ],
+      "answerIndex": 3,
+      "explanation": "GPS を補って、山やビルの多い日本でも測位の精度を高める。"
+    },
+    {
+      "id": "soc_geo03_008",
+      "category": "knowledge",
+      "prompt": "位置の情報と結びついたデータを何という？",
+      "choices": [
+        "メタデータだけ",
+        "空間情報（地理空間情報）",
+        "音声データ",
+        "暗号データ"
+      ],
+      "answerIndex": 1,
+      "explanation": "住所や緯度経度と、人口・施設などの属性を組み合わせる。"
+    },
+    {
+      "id": "soc_geo03_009",
+      "category": "thinking",
+      "prompt": "「避難所の位置」と「浸水想定区域」のレイヤーを GIS で重ねると分かることは？",
+      "choices": [
+        "浸水のおそれがある避難所",
+        "農産物の生産量",
+        "人口の増え方",
+        "気温の変化"
+      ],
+      "answerIndex": 0,
+      "explanation": "重ねることで、別々の地図では見えない関係が分かる。"
+    },
+    {
+      "id": "soc_geo03_010",
+      "category": "thinking",
+      "prompt": "コンビニの分布と人口密度を重ねて見た。考えられることは？",
+      "choices": [
+        "店の売上がすべて分かる",
+        "店の開店日が分かる",
+        "人口が必ず減る",
+        "人口の多い地域に店が集まっている傾向を確かめられる"
+      ],
+      "answerIndex": 3,
+      "explanation": "ただし、相関は因果関係とは限らない。"
+    },
+    {
+      "id": "soc_geo03_011",
+      "category": "thinking",
+      "prompt": "リモートセンシングが災害時に役立つ理由は？",
+      "choices": [
+        "立ち入れない地域の被害も広く素早く把握できる",
+        "地図が不要になる",
+        "地震を予知できる",
+        "被害を防ぐことができる"
+      ],
+      "answerIndex": 0,
+      "explanation": "衛星画像で浸水範囲や土砂崩れの範囲を確認できる。"
+    },
+    {
+      "id": "soc_geo03_012",
+      "category": "thinking",
+      "prompt": "GIS を使った地域の分析で、まず決めるべきことは？",
+      "choices": [
+        "パソコンの種類",
+        "レイヤーの色",
+        "何を明らかにしたいか（目的）",
+        "地図の用紙の大きさ"
+      ],
+      "answerIndex": 2,
+      "explanation": "目的に合わせて必要なデータを集め、重ねて分析する。"
+    }
+  ]
+}

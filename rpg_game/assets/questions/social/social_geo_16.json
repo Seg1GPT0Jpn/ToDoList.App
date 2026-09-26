@@ -1,0 +1,164 @@
+{
+  "setId": "social_geo_16",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_geo16_001",
+      "category": "knowledge",
+      "prompt": "EU で多くの国が使っている共通通貨は？",
+      "choices": [
+        "フラン",
+        "ユーロ",
+        "ポンド",
+        "ドル"
+      ],
+      "answerIndex": 1,
+      "explanation": "すべての加盟国が使っているわけではない。"
+    },
+    {
+      "id": "soc_geo16_002",
+      "category": "knowledge",
+      "prompt": "2020 年に EU を離脱した国は？",
+      "choices": [
+        "スペイン",
+        "イギリス",
+        "ドイツ",
+        "フランス"
+      ],
+      "answerIndex": 1,
+      "explanation": "ブレグジットと呼ばれる。"
+    },
+    {
+      "id": "soc_geo16_003",
+      "category": "knowledge",
+      "prompt": "EU 域内で、国境での検査なしに行き来できるようにする協定は？",
+      "choices": [
+        "シェンゲン協定",
+        "マーストリヒト条約だけ",
+        "パリ協定",
+        "ワシントン条約"
+      ],
+      "answerIndex": 0,
+      "explanation": "人の移動の自由を実現している。"
+    },
+    {
+      "id": "soc_geo16_004",
+      "category": "knowledge",
+      "prompt": "EU の課題として正しいものは？",
+      "choices": [
+        "域内の移動が禁止されている",
+        "西ヨーロッパと東ヨーロッパの経済格差",
+        "加盟国がどんどん減っている",
+        "共通通貨がない"
+      ],
+      "answerIndex": 1,
+      "explanation": "賃金の安い東ヨーロッパに工場が移り、西からの移住も多い。"
+    },
+    {
+      "id": "soc_geo16_005",
+      "category": "knowledge",
+      "prompt": "ヨーロッパの国際分業で、航空機（エアバス）はどのようにつくられている？",
+      "choices": [
+        "複数の国で部品をつくり、組み立てている",
+        "アメリカでつくっている",
+        "1 つの国だけでつくっている",
+        "アジアでつくっている"
+      ],
+      "answerIndex": 0,
+      "explanation": "水平分業の例。"
+    },
+    {
+      "id": "soc_geo16_006",
+      "category": "knowledge",
+      "prompt": "ロシアの主な輸出品は？",
+      "choices": [
+        "電子機器",
+        "原油・天然ガス",
+        "衣類",
+        "自動車"
+      ],
+      "answerIndex": 1,
+      "explanation": "パイプラインでヨーロッパなどへ送ってきた。"
+    },
+    {
+      "id": "soc_geo16_007",
+      "category": "knowledge",
+      "prompt": "アフリカの多くの国の国境線が直線的な理由は？",
+      "choices": [
+        "植民地時代にヨーロッパの国々が緯線や経線を使って分けたから",
+        "川にそって引いたから",
+        "民族の分布にそって引いたから",
+        "山脈にそって引いたから"
+      ],
+      "answerIndex": 0,
+      "explanation": "民族の分布を無視した国境が、紛争の原因にもなった。"
+    },
+    {
+      "id": "soc_geo16_008",
+      "category": "knowledge",
+      "prompt": "アフリカの国々で、特定の農産物や鉱産資源の輸出に頼る経済を何という？",
+      "choices": [
+        "多角化経済",
+        "モノカルチャー経済",
+        "計画経済",
+        "混合経済"
+      ],
+      "answerIndex": 1,
+      "explanation": "国際価格の変動に経済が左右されやすい。"
+    },
+    {
+      "id": "soc_geo16_009",
+      "category": "knowledge",
+      "prompt": "ガーナやコートジボワールで多く生産されている作物は？",
+      "choices": [
+        "天然ゴム",
+        "バナナ",
+        "カカオ",
+        "コーヒー"
+      ],
+      "answerIndex": 2,
+      "explanation": "チョコレートの原料。"
+    },
+    {
+      "id": "soc_geo16_010",
+      "category": "knowledge",
+      "prompt": "サハラ砂漠の南の縁で、砂漠化が進んでいる地域は？",
+      "choices": [
+        "サヘル",
+        "ステップ",
+        "パンパ",
+        "アウトバック"
+      ],
+      "answerIndex": 0,
+      "explanation": "過放牧や過耕作、干ばつなどが原因。"
+    },
+    {
+      "id": "soc_geo16_011",
+      "category": "thinking",
+      "prompt": "南アフリカ共和国でかつて行われていた人種隔離政策は？",
+      "choices": [
+        "アパルトヘイト",
+        "白豪主義",
+        "多文化主義",
+        "カースト"
+      ],
+      "answerIndex": 0,
+      "explanation": "1991 年に廃止された。"
+    },
+    {
+      "id": "soc_geo16_012",
+      "category": "thinking",
+      "prompt": "アフリカで、携帯電話を使った送金サービスが広く普及した理由として適切なものは？",
+      "choices": [
+        "通信料が高すぎたから",
+        "現金が禁止されたから",
+        "銀行が多すぎたから",
+        "銀行の支店が少なく、固定電話網も整っていなかったから"
+      ],
+      "answerIndex": 3,
+      "explanation": "固定電話を経ずに携帯電話が普及する「リープフロッグ（かえる跳び）」の例。"
+    }
+  ]
+}

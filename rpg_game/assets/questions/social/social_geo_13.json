@@ -1,0 +1,164 @@
+{
+  "setId": "social_geo_13",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_geo13_001",
+      "category": "knowledge",
+      "prompt": "石油の埋蔵量・生産量が特に多い地域は？",
+      "choices": [
+        "西アジア（ペルシア湾岸）",
+        "東南アジア",
+        "西ヨーロッパ",
+        "オセアニア"
+      ],
+      "answerIndex": 0,
+      "explanation": "サウジアラビアなど。OPEC（石油輸出国機構）を結成している。"
+    },
+    {
+      "id": "soc_geo13_002",
+      "category": "knowledge",
+      "prompt": "日本が最も多く石炭や鉄鉱石を輸入している国は？",
+      "choices": [
+        "オーストラリア",
+        "アメリカ合衆国",
+        "ブラジル",
+        "中国"
+      ],
+      "answerIndex": 0,
+      "explanation": "鉄鉱石はブラジルからも多い。"
+    },
+    {
+      "id": "soc_geo13_003",
+      "category": "knowledge",
+      "prompt": "太陽光・風力・地熱など、使っても枯渇しないエネルギーは？",
+      "choices": [
+        "天然ガスだけ",
+        "再生可能エネルギー",
+        "原子力",
+        "化石燃料"
+      ],
+      "answerIndex": 1,
+      "explanation": "発電時に二酸化炭素をほとんど出さない。"
+    },
+    {
+      "id": "soc_geo13_004",
+      "category": "knowledge",
+      "prompt": "地下深くの頁岩層から取り出される天然ガスで、アメリカで生産が急増したものは？",
+      "choices": [
+        "バイオエタノール",
+        "メタンハイドレート",
+        "シェールガス",
+        "LNG"
+      ],
+      "answerIndex": 2,
+      "explanation": "シェール革命と呼ばれる。"
+    },
+    {
+      "id": "soc_geo13_005",
+      "category": "knowledge",
+      "prompt": "スマートフォンなどに使われる、埋蔵量が少なく取り出しにくい金属をまとめて何という？",
+      "choices": [
+        "化石燃料",
+        "ベースメタル",
+        "レアメタル",
+        "貴金属だけ"
+      ],
+      "answerIndex": 2,
+      "explanation": "リチウムやコバルトなど。産出国がかたよっている。"
+    },
+    {
+      "id": "soc_geo13_006",
+      "category": "knowledge",
+      "prompt": "各国が得意な分野の生産に特化して、貿易でお互いに補い合うことは？",
+      "choices": [
+        "産業の空洞化",
+        "保護貿易",
+        "国際分業",
+        "自給自足"
+      ],
+      "answerIndex": 2,
+      "explanation": "垂直分業（原料と製品）と水平分業（製品どうし）がある。"
+    },
+    {
+      "id": "soc_geo13_007",
+      "category": "knowledge",
+      "prompt": "世界各地に生産や販売の拠点をもつ大企業は？",
+      "choices": [
+        "公企業",
+        "多国籍企業",
+        "協同組合",
+        "中小企業"
+      ],
+      "answerIndex": 1,
+      "explanation": "世界の貿易に大きな影響をもつ。"
+    },
+    {
+      "id": "soc_geo13_008",
+      "category": "knowledge",
+      "prompt": "原材料の調達から製造・販売まで、製品が届くまでのつながりを何という？",
+      "choices": [
+        "バリアフリー",
+        "フードマイレージ",
+        "ハブ空港",
+        "サプライチェーン"
+      ],
+      "answerIndex": 3,
+      "explanation": "災害や紛争で一部が止まると、世界中の生産に影響する。"
+    },
+    {
+      "id": "soc_geo13_009",
+      "category": "knowledge",
+      "prompt": "フランスで発電量の割合が特に大きい発電方法は？",
+      "choices": [
+        "原子力発電",
+        "火力発電",
+        "地熱発電",
+        "水力発電"
+      ],
+      "answerIndex": 0,
+      "explanation": "ノルウェーやブラジルは水力の割合が大きい。"
+    },
+    {
+      "id": "soc_geo13_010",
+      "category": "knowledge",
+      "prompt": "国どうしで関税などをなくし、貿易を自由にする協定は？",
+      "choices": [
+        "ODA",
+        "PKO",
+        "FTA（自由貿易協定）",
+        "NGO"
+      ],
+      "answerIndex": 2,
+      "explanation": "投資や人の移動などもふくむものを EPA（経済連携協定）という。"
+    },
+    {
+      "id": "soc_geo13_011",
+      "category": "thinking",
+      "prompt": "日本がエネルギー資源の多くを輸入にたよっている理由は？",
+      "choices": [
+        "人口が少ないから",
+        "輸出が禁止されているから",
+        "国内の化石燃料の埋蔵量が少ないから",
+        "エネルギーを使わないから"
+      ],
+      "answerIndex": 2,
+      "explanation": "日本のエネルギー自給率は 1 割程度と低い。"
+    },
+    {
+      "id": "soc_geo13_012",
+      "category": "thinking",
+      "prompt": "再生可能エネルギーの課題として適切なものは？",
+      "choices": [
+        "日本では使えない",
+        "二酸化炭素を大量に出す",
+        "すぐに枯渇する",
+        "天候によって発電量が変わりやすい"
+      ],
+      "answerIndex": 3,
+      "explanation": "蓄電池や送電網の整備などの対策が進められている。"
+    }
+  ]
+}

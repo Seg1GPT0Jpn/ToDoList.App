@@ -1,0 +1,164 @@
+{
+  "setId": "social_geo_11",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_geo11_001",
+      "category": "knowledge",
+      "prompt": "家族が食べる分を中心に生産する農業は？",
+      "choices": [
+        "プランテーション農業",
+        "商業的農業",
+        "自給的農業",
+        "企業的農業"
+      ],
+      "answerIndex": 2,
+      "explanation": "焼畑農業や遊牧などがふくまれる。"
+    },
+    {
+      "id": "soc_geo11_002",
+      "category": "knowledge",
+      "prompt": "森林を焼いてできた灰を肥料にして作物をつくる農業は？",
+      "choices": [
+        "酪農",
+        "混合農業",
+        "焼畑農業",
+        "園芸農業"
+      ],
+      "answerIndex": 2,
+      "explanation": "熱帯でみられる。数年で土地を移動する。"
+    },
+    {
+      "id": "soc_geo11_003",
+      "category": "knowledge",
+      "prompt": "熱帯で、輸出用の作物を大規模に単一栽培する農業は？",
+      "choices": [
+        "焼畑農業",
+        "地中海式農業",
+        "プランテーション農業",
+        "混合農業"
+      ],
+      "answerIndex": 2,
+      "explanation": "植民地時代にヨーロッパ人が始めた。コーヒー・天然ゴムなど。"
+    },
+    {
+      "id": "soc_geo11_004",
+      "category": "knowledge",
+      "prompt": "作物の栽培と家畜の飼育を組み合わせた、ヨーロッパで発達した農業は？",
+      "choices": [
+        "遊牧",
+        "焼畑農業",
+        "酪農",
+        "混合農業"
+      ],
+      "answerIndex": 3,
+      "explanation": "飼料作物を育てて家畜に与える。"
+    },
+    {
+      "id": "soc_geo11_005",
+      "category": "knowledge",
+      "prompt": "乳牛を飼い、牛乳や乳製品を生産する農業は？",
+      "choices": [
+        "混合農業",
+        "遊牧",
+        "園芸農業",
+        "酪農"
+      ],
+      "answerIndex": 3,
+      "explanation": "冷涼な地域や大都市近郊でさかん。"
+    },
+    {
+      "id": "soc_geo11_006",
+      "category": "knowledge",
+      "prompt": "夏にオリーブやぶどう、冬に小麦をつくる農業は？",
+      "choices": [
+        "プランテーション農業",
+        "地中海式農業",
+        "混合農業",
+        "酪農"
+      ],
+      "answerIndex": 1,
+      "explanation": "夏に乾燥する地中海性気候に合わせた農業。"
+    },
+    {
+      "id": "soc_geo11_007",
+      "category": "knowledge",
+      "prompt": "アメリカ合衆国などで、大型機械を使い広大な土地で大量生産する農業は？",
+      "choices": [
+        "集約的農業",
+        "自給的農業",
+        "企業的農業",
+        "焼畑農業"
+      ],
+      "answerIndex": 2,
+      "explanation": "労働生産性は高いが、土地生産性は比較的低い。"
+    },
+    {
+      "id": "soc_geo11_008",
+      "category": "knowledge",
+      "prompt": "大都市向けに野菜や花などを集約的に栽培する農業は？",
+      "choices": [
+        "企業的牧畜",
+        "遊牧",
+        "焼畑農業",
+        "園芸農業"
+      ],
+      "answerIndex": 3,
+      "explanation": "近郊農業や輸送園芸がある。"
+    },
+    {
+      "id": "soc_geo11_009",
+      "category": "knowledge",
+      "prompt": "農産物の生産から加工・流通・販売までを一体的に手がける巨大企業は？",
+      "choices": [
+        "中小企業",
+        "NPO",
+        "アグリビジネス企業（穀物メジャーなど）",
+        "協同組合だけ"
+      ],
+      "answerIndex": 2,
+      "explanation": "世界の穀物の流通に大きな影響をもつ。"
+    },
+    {
+      "id": "soc_geo11_010",
+      "category": "calculation",
+      "prompt": "ある農家は 10 ha の畑で 50 t の小麦を収穫した。1 ha あたりの収量は？",
+      "choices": [
+        "50 t",
+        "500 t",
+        "5 t",
+        "0.2 t"
+      ],
+      "answerIndex": 2,
+      "explanation": "50 ÷ 10 ＝ 5 t/ha。土地生産性の目安。"
+    },
+    {
+      "id": "soc_geo11_011",
+      "category": "thinking",
+      "prompt": "アジアの季節風地域で稲作がさかんな理由は？",
+      "choices": [
+        "夏に高温多雨で、稲の生育に適しているから",
+        "一年中乾燥しているから",
+        "土地がすべて山地だから",
+        "寒冷だから"
+      ],
+      "answerIndex": 0,
+      "explanation": "人口を支えるため、狭い土地に多くの労働力を使う集約的な稲作が行われる。"
+    },
+    {
+      "id": "soc_geo11_012",
+      "category": "thinking",
+      "prompt": "アメリカの企業的農業で、1 人あたりの生産量が多い理由は？",
+      "choices": [
+        "機械を使わないから",
+        "大型機械を使い、広い農地を少ない人数で耕作するから",
+        "人手を多く使うから",
+        "土地が狭いから"
+      ],
+      "answerIndex": 1,
+      "explanation": "労働生産性が高い。"
+    }
+  ]
+}
