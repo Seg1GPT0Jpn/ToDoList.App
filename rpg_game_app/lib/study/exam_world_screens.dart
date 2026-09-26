@@ -377,11 +377,13 @@ class ExamWorldPlayScreen extends StatelessWidget {
     final pool = await services.loadStagePool(stage);
     final progress = await services.repository.load();
     if (pool == null || !pool.origin.usableInRpg || !context.mounted) return;
+    // 定期テストの海と同じ「とても難しい」強さで戦う
+    final hard = ExamWorlds.build(plan, level: progress.level)[index];
     Navigator.of(context).push(
       MaterialPageRoute<void>(
         builder: (_) => BattleScreen(
           world: RpgCatalog.world(plan.worldId),
-          stage: stage,
+          stage: hard,
           questions: pool.questions,
           progress: progress,
           // RPG の進行・経験値は変えない（練習用）

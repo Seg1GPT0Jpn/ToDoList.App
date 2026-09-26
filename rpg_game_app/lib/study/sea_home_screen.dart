@@ -9,6 +9,7 @@ import '../app/theme.dart';
 import '../art/paper.dart';
 import 'exam_world_screens.dart';
 import 'personal_books.dart';
+import 'sea_battle_launcher.dart';
 import 'sea_quiz_screen.dart';
 
 /// 定期テストの海：教科を選び、単元・単語帳を選ぶ画面
@@ -154,14 +155,13 @@ class _RouteTab extends StatelessWidget {
     final setId = s.questionSetIds.last;
     final set = await RpgServices.of(context).questions.load(setId);
     if (set == null || !context.mounted) return;
-    Navigator.of(context).push(
-      MaterialPageRoute<void>(
-        builder: (_) => SeaQuizScreen(
-          title: '${route.name} ${s.areaNo}. ${s.grammarTheme}',
-          recordId: setId,
-          questions: set.questions,
-        ),
-      ),
+    await startSeaBattle(
+      context,
+      title: '${route.name} ${s.areaNo}. ${s.grammarTheme}',
+      recordId: setId,
+      questions: set.questions,
+      worldId: world.id,
+      normalTimeLimitSeconds: s.timeLimitSeconds,
     );
   }
 
@@ -250,14 +250,13 @@ class _GradeTab extends StatelessWidget {
   Future<void> _open(BuildContext context, SeaUnit unit) async {
     final set = await RpgServices.of(context).questions.load(unit.id);
     if (set == null || !context.mounted) return;
-    Navigator.of(context).push(
-      MaterialPageRoute<void>(
-        builder: (_) => SeaQuizScreen(
-          title: '高$grade ${unit.number}. ${unit.title}',
-          recordId: unit.id,
-          questions: set.questions,
-        ),
-      ),
+    await startSeaBattle(
+      context,
+      title: '高$grade ${unit.number}. ${unit.title}',
+      recordId: unit.id,
+      questions: set.questions,
+      worldId: RpgCatalog.englishWorldId,
+      normalTimeLimitSeconds: 20,
     );
   }
 
@@ -352,16 +351,14 @@ class _WordsTab extends StatelessWidget {
     final list = WordList.fromJson(jsonDecode(raw) as Map<String, dynamic>);
     final set = WordQuizBuilder().build(list, direction: dir);
     if (!context.mounted) return;
-    Navigator.of(context).push(
-      MaterialPageRoute<void>(
-        builder: (_) => SeaQuizScreen(
-          title:
-              '${book.title}（${dir == WordQuizDirection.enToJa ? '英→日' : '日→英'}）',
-          recordId: '${book.id}_${dir.name}',
-          questions: set.questions,
-          count: 20,
-        ),
-      ),
+    await startSeaBattle(
+      context,
+      title:
+          '${book.title}（${dir == WordQuizDirection.enToJa ? '英→日' : '日→英'}）',
+      recordId: '${book.id}_${dir.name}',
+      questions: set.questions,
+      worldId: RpgCatalog.englishWorldId,
+      normalTimeLimitSeconds: 15,
     );
   }
 

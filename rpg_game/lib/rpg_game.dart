@@ -29,6 +29,7 @@ export 'src/purchase/promo_code.dart';
 export 'src/study/exam_world.dart';
 export 'src/study/inn_lessons.dart';
 export 'src/study/practice_session.dart';
+export 'src/study/sea_battle.dart';
 export 'src/study/sea_catalog.dart';
 export 'src/study/word_list.dart';
 export 'src/study/word_quiz_builder.dart';

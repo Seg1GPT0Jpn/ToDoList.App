@@ -351,7 +351,14 @@ class _BattleScreenState extends State<BattleScreen>
     final services = RpgServices.of(context);
     final summary = _engine.summary();
     final latest = await services.repository.load();
-    final result = widget.ghost
+    final result = widget.trial
+        // 練習（確認用・定期テストの海・試験対策）では経験値を出さない
+        ? StageClearResult(
+            expResult: Progression.addExp(latest, 0),
+            firstClear: false,
+            newlyUnlockedStageId: null,
+          )
+        : widget.ghost
         ? StageClearResult(
             expResult: Progression.applyGhostBattle(latest, summary),
             firstClear: false,

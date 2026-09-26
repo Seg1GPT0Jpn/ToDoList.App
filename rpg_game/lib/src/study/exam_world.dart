@@ -2,6 +2,7 @@ import '../data/catalog.dart';
 import '../models/enemy.dart';
 import '../models/stage.dart';
 import '../models/world.dart';
+import 'sea_battle.dart';
 
 /// 試験対策ワールド：試験範囲を入力すると、その範囲のエリアを集めて
 /// 1本道のワールドを作る（定期テストの海の機能）。
@@ -145,7 +146,10 @@ class ExamWorlds {
   /// 敵の強さは元のエリアではなく、ワールドの中の順番で決める
   /// （英語ワールドの曲線をなぞる）。最後に「試験本番」のボスがいて、
   /// 範囲のすべての問題から出題する。
-  static List<StageDef> build(ExamWorldPlan plan) {
+  ///
+  /// [level] を渡すと、定期テストの海と同じ「とても難しい」強さにする
+  /// （エリアが進むほど少しずつ HP が増え、試験本番はさらに強い）。
+  static List<StageDef> build(ExamWorldPlan plan, {int? level}) {
     final world = RpgCatalog.world(plan.worldId);
     final byId = {for (final s in world.stages) s.id: s};
     final picked = [
@@ -153,13 +157,25 @@ class ExamWorlds {
         if (byId[id] != null) byId[id]!,
     ];
     final curve = RpgCatalog.englishStages;
+    final hard = level == null
+        ? null
+        : SeaBattle.stage(
+            id: plan.id,
+            title: plan.title,
+            worldId: plan.worldId,
+            level: level,
+            normalTimeLimitSeconds: 20,
+          ).enemy;
     EnemyDef scaled(EnemyDef e, int k, {bool boss = false}) {
       final base = curve[(k - 1).clamp(0, 9)].enemy;
+      final hp = hard == null
+          ? base.maxHp
+          : (hard.maxHp * (0.7 + 0.03 * k)).round();
       return EnemyDef(
         id: 'exam_${plan.id}_$k',
         name: e.name,
-        maxHp: boss ? (base.maxHp * 1.3).round() : base.maxHp,
-        attack: base.attack,
+        maxHp: boss ? (hp * 1.3).round() : hp,
+        attack: hard?.attack ?? base.attack,
         description: e.description,
         look: e.look,
         color: e.color,
@@ -180,8 +196,12 @@ class ExamWorlds {
           enemy: scaled(picked[i].enemy, i + 1),
           questionSetIds: picked[i].questionSetIds,
           expReward: 0,
-          timeLimitSeconds: picked[i].timeLimitSeconds,
-          readingTimeLimitSeconds: picked[i].readingTimeLimitSeconds,
+          timeLimitSeconds: level == null
+              ? picked[i].timeLimitSeconds
+              : SeaBattle.timeLimit(picked[i].timeLimitSeconds),
+          readingTimeLimitSeconds: level == null
+              ? picked[i].readingTimeLimitSeconds
+              : SeaBattle.timeLimit(picked[i].readingTimeLimitSeconds),
           grammarTheme: picked[i].grammarTheme,
           vocabLevel: picked[i].vocabLevel,
         ),
@@ -219,8 +239,12 @@ class ExamWorlds {
           for (final s in picked) ...s.questionSetIds,
         ].toSet().toList(),
         expReward: 0,
-        timeLimitSeconds: last.timeLimitSeconds,
-        readingTimeLimitSeconds: last.readingTimeLimitSeconds,
+        timeLimitSeconds: level == null
+            ? last.timeLimitSeconds
+            : SeaBattle.timeLimit(last.timeLimitSeconds),
+        readingTimeLimitSeconds: level == null
+            ? last.readingTimeLimitSeconds
+            : SeaBattle.timeLimit(last.readingTimeLimitSeconds),
         grammarTheme: '範囲のまとめ',
         vocabLevel: plan.rangeText,
       ),
