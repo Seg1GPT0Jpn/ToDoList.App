@@ -7,6 +7,7 @@ import 'package:rpg_game/rpg_game.dart';
 import '../app/services.dart';
 import '../app/theme.dart';
 import '../art/paper.dart';
+import 'exam_world_screens.dart';
 import 'personal_books.dart';
 import 'sea_quiz_screen.dart';
 
@@ -77,6 +78,17 @@ class _SeaHomeScreenState extends State<SeaHomeScreen> {
             '定期テストの海',
             style: serif(19, color: const Color(0xFF2F5D7C)),
           ),
+          actions: [
+            TextButton.icon(
+              onPressed: () => Navigator.of(context).push(
+                MaterialPageRoute<void>(
+                  builder: (_) => const ExamWorldListScreen(),
+                ),
+              ),
+              icon: const Icon(Icons.auto_awesome, size: 18),
+              label: const Text('試験対策'),
+            ),
+          ],
           bottom: PreferredSize(
             preferredSize: const Size.fromHeight(44 + 48),
             child: Column(

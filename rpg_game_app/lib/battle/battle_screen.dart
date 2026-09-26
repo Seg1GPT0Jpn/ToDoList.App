@@ -20,7 +20,11 @@ class BattleScreen extends StatefulWidget {
     required this.progress,
     this.trial = false,
     this.ghost = false,
+    this.onFinished,
   });
+
+  /// バトルが終わったときに呼ぶ（試験対策ワールドのクリア記録に使う）
+  final void Function(BattleSummary summary)? onFinished;
 
   /// 確認用のバトル（結果を保存しない）
   final bool trial;
@@ -360,6 +364,7 @@ class _BattleScreenState extends State<BattleScreen>
             summary: summary,
           );
     if (!widget.trial) await services.repository.save(result.progress);
+    widget.onFinished?.call(summary);
     if (!mounted) return;
     Navigator.of(context).pushReplacement(
       PageRouteBuilder<void>(

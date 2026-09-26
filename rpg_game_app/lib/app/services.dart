@@ -6,6 +6,7 @@ import 'package:rpg_game/rpg_game.dart';
 import '../account/account_service.dart';
 import '../account/profile_repository.dart';
 import '../data/prefs_progress_repository.dart';
+import '../study/exam_world_store.dart';
 import '../study/personal_books.dart';
 
 /// 画面から使うサービスの入れ物。
@@ -16,6 +17,7 @@ class RpgServices extends InheritedWidget {
     required this.personalBooks,
     required this.profiles,
     required this.account,
+    required this.examWorlds,
     required super.child,
   }) : questions = JsonQuestionSource(_loadAsset),
        unlock = WorldUnlockService(
@@ -32,6 +34,9 @@ class RpgServices extends InheritedWidget {
   /// ユーザー名と Google アカウント
   final ProfileRepository profiles;
   final AccountService account;
+
+  /// 作った試験対策ワールド（端末の中に保存）
+  final ExamWorldStore examWorlds;
 
   /// パスワード保護の個人用単語帳（LEAP など）
   final PersonalBooks personalBooks;

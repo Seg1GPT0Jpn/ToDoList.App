@@ -9,6 +9,7 @@ import 'app/theme.dart';
 import 'cloud/cloud_sync.dart';
 import 'cloud/firebase_account_service.dart';
 import 'data/prefs_progress_repository.dart';
+import 'study/exam_world_store.dart';
 import 'study/personal_books.dart';
 import 'world/world_map_screen.dart';
 
@@ -23,6 +24,7 @@ Future<void> main() async {
     RpgServices(
       repository: progress,
       personalBooks: PersonalBooks(prefs),
+      examWorlds: ExamWorldStore(prefs),
       profiles: profiles,
       account: cloud == null
           ? MockAccountService()
