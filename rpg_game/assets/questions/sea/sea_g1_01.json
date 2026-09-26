@@ -129,6 +129,174 @@
       ],
       "answerIndex": 1,
       "explanation": "文の中に入った疑問文（wh節）は「疑問詞 + 主語 + 動詞」の語順。"
+    },
+    {
+      "id": "sea_g1_01_10",
+      "category": "usage",
+      "prompt": "次の文の文型は？",
+      "sentence": "The flowers smell sweet.",
+      "choices": [
+        "第1文型（SV）",
+        "第2文型（SVC）",
+        "第4文型（SVOO）",
+        "第3文型（SVO）"
+      ],
+      "answerIndex": 1,
+      "explanation": "smell ＋ 形容詞で「〜のにおいがする」。sweet が補語。"
+    },
+    {
+      "id": "sea_g1_01_11",
+      "category": "usage",
+      "prompt": "次の文の文型は？",
+      "sentence": "He gave his sister a present.",
+      "choices": [
+        "第2文型（SVC）",
+        "第4文型（SVOO）",
+        "第3文型（SVO）",
+        "第1文型（SV）"
+      ],
+      "answerIndex": 1,
+      "explanation": "give ＋ 人 ＋ 物。his sister と a present が目的語。"
+    },
+    {
+      "id": "sea_g1_01_12",
+      "category": "usage",
+      "prompt": "次の文の文型は？",
+      "sentence": "The news made her happy.",
+      "choices": [
+        "第3文型（SVO）",
+        "第5文型（SVOC）",
+        "第2文型（SVC）",
+        "第1文型（SV）"
+      ],
+      "answerIndex": 1,
+      "explanation": "make ＋ O ＋ C で「O を C にする」。her ＝ happy の関係。"
+    },
+    {
+      "id": "sea_g1_01_13",
+      "category": "usage",
+      "prompt": "次の文の文型は？",
+      "sentence": "I found the book easy.",
+      "choices": [
+        "第2文型（SVC）",
+        "第3文型（SVO）",
+        "第5文型（SVOC）",
+        "第1文型（SV）"
+      ],
+      "answerIndex": 2,
+      "explanation": "find ＋ O ＋ C で「O が C だと分かる」。"
+    },
+    {
+      "id": "sea_g1_01_14",
+      "category": "usage",
+      "prompt": "次の文の文型は？",
+      "sentence": "She cooked dinner for us.",
+      "choices": [
+        "第3文型（SVO）",
+        "第4文型（SVOO）",
+        "第2文型（SVC）",
+        "第1文型（SV）"
+      ],
+      "answerIndex": 0,
+      "explanation": "for us は修飾語。目的語は dinner の1つ。"
+    },
+    {
+      "id": "sea_g1_01_15",
+      "category": "usage",
+      "prompt": "次の文の文型は？",
+      "sentence": "My father works in a bank.",
+      "choices": [
+        "第1文型（SV）",
+        "第2文型（SVC）",
+        "第4文型（SVOO）",
+        "第3文型（SVO）"
+      ],
+      "answerIndex": 0,
+      "explanation": "in a bank は修飾語。"
+    },
+    {
+      "id": "sea_g1_01_16",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "There (   ) a lot of water in the bottle.",
+      "choices": [
+        "is",
+        "be",
+        "are",
+        "have"
+      ],
+      "answerIndex": 0,
+      "explanation": "water は数えられない名詞なので単数あつかい。"
+    },
+    {
+      "id": "sea_g1_01_17",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "It is important (   ) us to protect nature.",
+      "choices": [
+        "with",
+        "to",
+        "of",
+        "for"
+      ],
+      "answerIndex": 3,
+      "explanation": "不定詞の意味上の主語は for ＋ 人。"
+    },
+    {
+      "id": "sea_g1_01_18",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "It was kind (   ) you to help me.",
+      "choices": [
+        "at",
+        "of",
+        "for",
+        "to"
+      ],
+      "answerIndex": 1,
+      "explanation": "人の性質を表す形容詞（kind など）のときは of ＋ 人。"
+    },
+    {
+      "id": "sea_g1_01_19",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I found it difficult (   ) the question.",
+      "choices": [
+        "to answer",
+        "answer",
+        "answered",
+        "answers"
+      ],
+      "answerIndex": 0,
+      "explanation": "find it ＋ 形容詞 ＋ to do。it は形式目的語。"
+    },
+    {
+      "id": "sea_g1_01_20",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He told me (   ) the window.",
+      "choices": [
+        "to open",
+        "open",
+        "opening",
+        "opened"
+      ],
+      "answerIndex": 0,
+      "explanation": "tell ＋ 人 ＋ to do「人に〜するように言う」。"
+    },
+    {
+      "id": "sea_g1_01_21",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Please tell me what time (   ).",
+      "choices": [
+        "it is",
+        "it does",
+        "is it",
+        "does it"
+      ],
+      "answerIndex": 0,
+      "explanation": "文の中に入った疑問文（間接疑問）は、主語 ＋ 動詞の語順。"
     }
   ]
 }

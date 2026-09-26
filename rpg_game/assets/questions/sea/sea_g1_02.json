@@ -115,6 +115,174 @@
       ],
       "answerIndex": 0,
       "explanation": "否定文の「まだ〜ない」は yet。already は肯定文で「もう」。"
+    },
+    {
+      "id": "sea_g1_02_09",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Water (   ) at 100℃.",
+      "choices": [
+        "boiled",
+        "has boiled",
+        "boils",
+        "is boiling"
+      ],
+      "answerIndex": 2,
+      "explanation": "変わらない事実は現在形で表す。"
+    },
+    {
+      "id": "sea_g1_02_10",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I (   ) to Kyoto three times so far.",
+      "choices": [
+        "am going",
+        "have been",
+        "have gone",
+        "go"
+      ],
+      "answerIndex": 1,
+      "explanation": "経験は現在完了 have been to。have gone to は「行ってしまった」。"
+    },
+    {
+      "id": "sea_g1_02_11",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "She (   ) her homework when I visited her.",
+      "choices": [
+        "has done",
+        "does",
+        "was doing",
+        "is doing"
+      ],
+      "answerIndex": 2,
+      "explanation": "過去のある時点で進行中の動作は過去進行形。"
+    },
+    {
+      "id": "sea_g1_02_12",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I (   ) Tom yesterday.",
+      "choices": [
+        "met",
+        "meet",
+        "am meeting",
+        "have met"
+      ],
+      "answerIndex": 0,
+      "explanation": "yesterday のような過去を表す語があるときは過去形。現在完了は使えない。"
+    },
+    {
+      "id": "sea_g1_02_13",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "We (   ) each other for ten years.",
+      "choices": [
+        "have known",
+        "are knowing",
+        "know",
+        "knew"
+      ],
+      "answerIndex": 0,
+      "explanation": "状態の継続は現在完了。know は進行形にしない。"
+    },
+    {
+      "id": "sea_g1_02_14",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "My father usually (   ) to work by train.",
+      "choices": [
+        "is going",
+        "goes",
+        "went",
+        "go"
+      ],
+      "answerIndex": 1,
+      "explanation": "習慣は現在形。主語が3人称単数なので goes。"
+    },
+    {
+      "id": "sea_g1_02_15",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "What (   ) you doing at eight last night?",
+      "choices": [
+        "did",
+        "have",
+        "are",
+        "were"
+      ],
+      "answerIndex": 3,
+      "explanation": "過去進行形の疑問文。"
+    },
+    {
+      "id": "sea_g1_02_16",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He has just (   ) lunch.",
+      "choices": [
+        "finishing",
+        "finish",
+        "finishes",
+        "finished"
+      ],
+      "answerIndex": 3,
+      "explanation": "現在完了（完了）：have ＋ 過去分詞。"
+    },
+    {
+      "id": "sea_g1_02_17",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I (   ) my key. I can't open the door.",
+      "choices": [
+        "had lost",
+        "am losing",
+        "lose",
+        "have lost"
+      ],
+      "answerIndex": 3,
+      "explanation": "なくした結果、今も困っている（現在完了の結果）。"
+    },
+    {
+      "id": "sea_g1_02_18",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "It (   ) since this morning.",
+      "choices": [
+        "is raining",
+        "has been raining",
+        "rained",
+        "rains"
+      ],
+      "answerIndex": 1,
+      "explanation": "朝からずっと降り続いている：現在完了進行形。"
+    },
+    {
+      "id": "sea_g1_02_19",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "We'll start when everyone (   ).",
+      "choices": [
+        "arrives",
+        "will arrive",
+        "arriving",
+        "arrived"
+      ],
+      "answerIndex": 0,
+      "explanation": "時を表す副詞節の中では、未来のことも現在形で表す。"
+    },
+    {
+      "id": "sea_g1_02_20",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I (   ) this book yet.",
+      "choices": [
+        "wasn't reading",
+        "won't read",
+        "don't read",
+        "haven't read"
+      ],
+      "answerIndex": 3,
+      "explanation": "yet は現在完了の否定文・疑問文で使う。"
     }
   ]
 }
