@@ -78,7 +78,7 @@ class _SeaQuizScreenState extends State<SeaQuizScreen> {
                       Center(
                         child: Text(
                           '自己ベスト ${_prevBest!}%',
-                          style: const TextStyle(color: TsuzuriColors.inkSoft),
+                          style: TextStyle(color: TsuzuriColors.inkSoft),
                         ),
                       ),
                   ],

@@ -14,7 +14,13 @@ class AppSettings {
     this.textScale = 1.0,
     this.reduceMotion = false,
     this.adaptiveMusic = true,
+    this.theme = 'system',
   });
+
+  /// 画面の明るさ：system（端末に合わせる）・light（ライト）・dark（ダーク）
+  final String theme;
+
+  static const themes = ['system', 'light', 'dark'];
 
   final bool bgm;
   final bool se;
@@ -40,6 +46,7 @@ class AppSettings {
     double? textScale,
     bool? reduceMotion,
     bool? adaptiveMusic,
+    String? theme,
   }) => AppSettings(
     bgm: bgm ?? this.bgm,
     se: se ?? this.se,
@@ -48,6 +55,7 @@ class AppSettings {
     textScale: textScale ?? this.textScale,
     reduceMotion: reduceMotion ?? this.reduceMotion,
     adaptiveMusic: adaptiveMusic ?? this.adaptiveMusic,
+    theme: theme ?? this.theme,
   );
 
   Map<String, dynamic> toMap() => {
@@ -58,6 +66,7 @@ class AppSettings {
     'textScale': textScale,
     'reduceMotion': reduceMotion,
     'adaptiveMusic': adaptiveMusic,
+    'theme': theme,
   };
 
   factory AppSettings.fromMap(Map<String, dynamic> m) {
@@ -70,6 +79,7 @@ class AppSettings {
       textScale: d('textScale', 1.0).clamp(0.8, 1.5),
       reduceMotion: m['reduceMotion'] as bool? ?? false,
       adaptiveMusic: m['adaptiveMusic'] as bool? ?? true,
+      theme: themes.contains(m['theme']) ? m['theme'] as String : 'system',
     );
   }
 }

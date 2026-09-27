@@ -862,10 +862,7 @@ class _BattleScreenState extends State<BattleScreen>
           IconButton(
             tooltip: 'にげる',
             onPressed: _finishing ? null : _confirmFlee,
-            icon: const Icon(
-              Icons.directions_run,
-              color: TsuzuriColors.inkSoft,
-            ),
+            icon: Icon(Icons.directions_run, color: TsuzuriColors.inkSoft),
           ),
         ],
       ),
@@ -1023,7 +1020,7 @@ class _BattleScreenState extends State<BattleScreen>
         children: [
           Container(
             decoration: BoxDecoration(
-              color: const Color(0xFFFFF8E7),
+              color: TsuzuriColors.tint(0xFFFFF8E7),
               borderRadius: BorderRadius.circular(12),
               border: Border.all(color: const Color(0xFFC9A96E), width: 1.5),
               boxShadow: const [
@@ -1052,7 +1049,7 @@ class _BattleScreenState extends State<BattleScreen>
                           children: [
                             TextSpan(
                               text: '[${i + 1}] ',
-                              style: const TextStyle(
+                              style: TextStyle(
                                 fontWeight: FontWeight.w800,
                                 color: TsuzuriColors.accent,
                               ),
@@ -1060,7 +1057,7 @@ class _BattleScreenState extends State<BattleScreen>
                             TextSpan(text: p),
                           ],
                         ),
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 14,
                           height: 1.55,
                           color: TsuzuriColors.ink,
@@ -1123,7 +1120,7 @@ class _BattleScreenState extends State<BattleScreen>
           final secs = (limit.inSeconds * left).ceil();
           return Row(
             children: [
-              const Icon(
+              Icon(
                 Icons.hourglass_bottom,
                 size: 16,
                 color: TsuzuriColors.inkSoft,
@@ -1135,7 +1132,7 @@ class _BattleScreenState extends State<BattleScreen>
                   child: LinearProgressIndicator(
                     value: left,
                     minHeight: 8,
-                    backgroundColor: const Color(0xFFEDE3D1),
+                    backgroundColor: TsuzuriColors.tint(0xFFEDE3D1),
                     color: left < 0.25
                         ? TsuzuriColors.wrong
                         : TsuzuriColors.accent,
@@ -1247,7 +1244,9 @@ class _BattleScreenState extends State<BattleScreen>
                   end: Alignment.topCenter,
                   stops: [v, v],
                   colors: [
-                    armed ? const Color(0xFFFFCDD2) : const Color(0xFFFFE9A8),
+                    armed
+                        ? TsuzuriColors.tint(0xFFFFCDD2)
+                        : TsuzuriColors.tint(0xFFFFE9A8),
                     TsuzuriColors.card,
                   ],
                 ),
@@ -1315,7 +1314,7 @@ class _BattleScreenState extends State<BattleScreen>
       decoration: BoxDecoration(
         color: TsuzuriColors.card,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: const Color(0xFFE0D4C0)),
+        border: Border.all(color: TsuzuriColors.tint(0xFFE0D4C0)),
         boxShadow: const [
           BoxShadow(
             color: Color(0x14000000),
@@ -1335,7 +1334,7 @@ class _BattleScreenState extends State<BattleScreen>
             ),
             child: Text(
               q.source.category.label,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 11,
                 color: TsuzuriColors.accent,
                 fontWeight: FontWeight.w700,
@@ -1345,7 +1344,7 @@ class _BattleScreenState extends State<BattleScreen>
           const SizedBox(height: 6),
           Text(
             q.source.prompt,
-            style: const TextStyle(fontSize: 14, color: TsuzuriColors.inkSoft),
+            style: TextStyle(fontSize: 14, color: TsuzuriColors.inkSoft),
           ),
           if (q.source.sentence != null) ...[
             const SizedBox(height: 6),
@@ -1372,7 +1371,7 @@ class _BattleScreenState extends State<BattleScreen>
             child: DecoratedBox(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: const Color(0xFFE0D4C0)),
+                border: Border.all(color: TsuzuriColors.tint(0xFFE0D4C0)),
               ),
               child: const Center(
                 child: Text('✕', style: TextStyle(color: Color(0xFFCBBFAA))),
@@ -1477,7 +1476,7 @@ class _BattleScreenState extends State<BattleScreen>
       width: double.infinity,
       padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(
-        color: const Color(0xFFFFF4F0),
+        color: TsuzuriColors.tint(0xFFFFF4F0),
         borderRadius: BorderRadius.circular(12),
         border: Border.all(color: TsuzuriColors.wrong.withValues(alpha: 0.5)),
       ),
@@ -1516,7 +1515,7 @@ class _BattleScreenState extends State<BattleScreen>
                     '⚠ よくあるまちがい：${q.source.commonMistakes.join('／')}',
                   if (q.source.hint != null) '💡 ヒント：${q.source.hint}',
                 ].join('\n'),
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 13,
                   height: 1.6,
                   color: TsuzuriColors.ink,
@@ -1621,7 +1620,7 @@ class _CardChip extends StatelessWidget {
       child: Material(
         color: active
             ? color.withValues(alpha: 0.18)
-            : (rare ? const Color(0xFFF3EEFB) : TsuzuriColors.card),
+            : (rare ? TsuzuriColors.tint(0xFFF3EEFB) : TsuzuriColors.card),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
           side: BorderSide(color: color, width: active ? 2 : 1.2),
@@ -1703,7 +1702,7 @@ class _HpBar extends StatelessWidget {
         final c = v < 0.3 ? TsuzuriColors.hpLow : color;
         return Row(
           children: [
-            const Text(
+            Text(
               'HP',
               style: TextStyle(
                 fontSize: 11,
@@ -1716,7 +1715,7 @@ class _HpBar extends StatelessWidget {
               child: Container(
                 height: 12,
                 decoration: BoxDecoration(
-                  color: const Color(0xFFEDE3D1),
+                  color: TsuzuriColors.tint(0xFFEDE3D1),
                   borderRadius: BorderRadius.circular(6),
                   border: Border.all(
                     color: TsuzuriColors.ink.withValues(alpha: 0.6),

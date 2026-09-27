@@ -98,7 +98,7 @@ class WorldMapScreen extends StatelessWidget {
                     'つづりクエスト',
                     style: serif(28, color: TsuzuriColors.accent),
                   ),
-                  const Text(
+                  Text(
                     'ノートの世界を旅して、魔物をクイズでたおそう',
                     style: TextStyle(
                       fontSize: 12,
@@ -109,7 +109,7 @@ class WorldMapScreen extends StatelessWidget {
               ),
             ),
             PopupMenuButton<String>(
-              icon: const Icon(Icons.more_vert, color: TsuzuriColors.inkSoft),
+              icon: Icon(Icons.more_vert, color: TsuzuriColors.inkSoft),
               onSelected: (v) async {
                 if (v == 'account') {
                   await Navigator.of(context).push(
@@ -225,14 +225,14 @@ class WorldMapScreen extends StatelessWidget {
                             progress.exp /
                             PlayerStats.expToNextLevel(stats.level),
                         minHeight: 8,
-                        backgroundColor: const Color(0xFFEDE3D1),
+                        backgroundColor: TsuzuriColors.tint(0xFFEDE3D1),
                         color: TsuzuriColors.exp,
                       ),
                     ),
                     const SizedBox(height: 4),
                     Text(
                       'HP ${stats.maxHp}　攻撃 ${stats.attack}　防御 ${stats.defense}',
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 12,
                         color: TsuzuriColors.inkSoft,
                       ),
@@ -287,7 +287,7 @@ Future<void> _pickTrial(BuildContext context) async {
     builder: (c) => SimpleDialog(
       title: Text(title),
       children: [
-        const Padding(
+        Padding(
           padding: EdgeInsets.fromLTRB(24, 0, 24, 8),
           child: Text(
             '結果は保存されません。レベルは今のまま戦います。',
@@ -413,7 +413,7 @@ class _WorldCard extends StatelessWidget {
         child: Opacity(opacity: v.clamp(0, 1), child: child),
       ),
       child: Material(
-        color: playable ? TsuzuriColors.card : const Color(0xFFF1ECE3),
+        color: playable ? TsuzuriColors.card : TsuzuriColors.tint(0xFFF1ECE3),
         borderRadius: BorderRadius.circular(16),
         child: InkWell(
           borderRadius: BorderRadius.circular(16),
@@ -431,7 +431,7 @@ class _WorldCard extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16),
               border: Border.all(
-                color: playable ? color : const Color(0xFFD8CFC0),
+                color: playable ? color : TsuzuriColors.tint(0xFFD8CFC0),
                 width: playable ? 2 : 1,
               ),
             ),
@@ -678,7 +678,7 @@ class _RealmBanner extends StatelessWidget {
                     Text(realm.title, style: serif(18, color: realm.ink)),
                     Text(
                       subtitle,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 12,
                         color: TsuzuriColors.inkSoft,
                       ),

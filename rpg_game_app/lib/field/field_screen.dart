@@ -970,10 +970,7 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
               const SizedBox(height: 4),
               Text(
                 '${d.page + 1} / ${talk.lines.length}',
-                style: const TextStyle(
-                  fontSize: 11,
-                  color: TsuzuriColors.inkSoft,
-                ),
+                style: TextStyle(fontSize: 11, color: TsuzuriColors.inkSoft),
               ),
             ],
           ),
@@ -1078,7 +1075,7 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
                 '${enemy.armor > 0 ? '\n装甲×${enemy.armor}：${enemy.armorCategory!.label}の問題で割れる' : ''}'
                 '${enemy.effectiveAbility != EnemyAbility.none ? '\n${enemy.effectiveAbility.label}：${enemy.effectiveAbility.description}' : ''}'
                 '${BossRules.of(stage) != BossRule.none ? '\n★${BossRules.of(stage).label}：${BossRules.of(stage).description}' : ''}',
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 12,
                   color: TsuzuriColors.inkSoft,
                   height: 1.5,
@@ -1174,10 +1171,7 @@ class _AreaBanner extends StatelessWidget {
               Text(
                 theme,
                 textAlign: TextAlign.center,
-                style: const TextStyle(
-                  fontSize: 12,
-                  color: TsuzuriColors.inkSoft,
-                ),
+                style: TextStyle(fontSize: 12, color: TsuzuriColors.inkSoft),
               ),
           ],
         ),
@@ -1227,7 +1221,7 @@ class _Hud extends StatelessWidget {
                       child: Text(
                         title,
                         overflow: TextOverflow.ellipsis,
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 12,
                           color: TsuzuriColors.inkSoft,
                         ),
@@ -1249,7 +1243,7 @@ class _Hud extends StatelessWidget {
                   child: LinearProgressIndicator(
                     value: expToNext == 0 ? 0 : exp / expToNext,
                     minHeight: 6,
-                    backgroundColor: const Color(0xFFEDE3D1),
+                    backgroundColor: TsuzuriColors.tint(0xFFEDE3D1),
                     color: TsuzuriColors.exp,
                   ),
                 ),
@@ -1294,7 +1288,7 @@ class _RoundButton extends StatelessWidget {
       message: tooltip,
       child: Material(
         color: TsuzuriColors.card,
-        shape: const CircleBorder(
+        shape: CircleBorder(
           side: BorderSide(color: TsuzuriColors.accent, width: 1.5),
         ),
         child: InkWell(
@@ -1391,7 +1385,7 @@ class _EnemyPortraitState extends State<_EnemyPortrait>
       decoration: BoxDecoration(
         color: TsuzuriColors.paper,
         borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: const Color(0xFFE0D4C0)),
+        border: Border.all(color: TsuzuriColors.tint(0xFFE0D4C0)),
       ),
       child: AnimatedBuilder(
         animation: _c,

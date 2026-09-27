@@ -15,8 +15,9 @@ class NotebookPaper extends StatelessWidget {
 }
 
 class _PaperPainter extends CustomPainter {
-  _PaperPainter(this.gap);
+  _PaperPainter(this.gap) : dark = TsuzuriColors.dark;
   final double gap;
+  final bool dark;
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -37,5 +38,5 @@ class _PaperPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(_PaperPainter old) => old.gap != gap;
+  bool shouldRepaint(_PaperPainter old) => old.gap != gap || old.dark != dark;
 }

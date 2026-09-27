@@ -108,7 +108,7 @@ class _AccountScreenState extends State<AccountScreen> {
               children: [
                 Text('ユーザー名', style: serif(16)),
                 const SizedBox(height: 4),
-                const Text(
+                Text(
                   'ゲームの中で呼ばれる名前です（1〜12文字）。',
                   style: TextStyle(
                     fontSize: 12.5,
@@ -145,7 +145,7 @@ class _AccountScreenState extends State<AccountScreen> {
                 const SizedBox(height: 28),
                 Text('Google アカウント', style: serif(16)),
                 const SizedBox(height: 4),
-                const Text(
+                Text(
                   '登録しておくと、スマホを変えたときなどに冒険の記録を引きつげるようになります。',
                   style: TextStyle(
                     fontSize: 12.5,
@@ -190,7 +190,7 @@ class _AccountScreenState extends State<AccountScreen> {
                   ),
                 ],
                 if (!services.account.isReal)
-                  const Padding(
+                  Padding(
                     padding: EdgeInsets.only(top: 10),
                     child: Text(
                       '※ まだ Firebase が設定されていないため、Google ログインは使えません。'

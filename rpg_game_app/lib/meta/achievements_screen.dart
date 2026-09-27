@@ -40,7 +40,7 @@ class AchievementsScreen extends StatelessWidget {
                   Text(
                     '解除 ${got.length} / ${Achievements.all.length}'
                     '　いまの称号：${meta.journal.title.isEmpty ? 'なし' : meta.journal.title}',
-                    style: const TextStyle(color: TsuzuriColors.inkSoft),
+                    style: TextStyle(color: TsuzuriColors.inkSoft),
                   ),
                   for (final g in AchievementGroup.values) ...[
                     const SizedBox(height: Space.m),
@@ -104,7 +104,7 @@ class _AchievementTile extends StatelessWidget {
                   Text(def.title, style: serif(14)),
                   Text(
                     '${def.description}　${stars(def.rarity)}',
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 12,
                       color: TsuzuriColors.inkSoft,
                     ),
@@ -116,7 +116,7 @@ class _AchievementTile extends StatelessWidget {
                       child: LinearProgressIndicator(
                         value: (value / def.goal).clamp(0, 1),
                         minHeight: 6,
-                        backgroundColor: const Color(0xFFEDE3D1),
+                        backgroundColor: TsuzuriColors.tint(0xFFEDE3D1),
                         color: color,
                       ),
                     ),

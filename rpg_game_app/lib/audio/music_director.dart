@@ -26,6 +26,14 @@ class MusicDirector {
   String? _playing;
   int _layers = 1;
 
+  /// 1つのファイルにした曲（assets/audio/bgm_battle.mp3 など）。
+  /// バトル・ボスの曲をこのファイルで置いたときは、4パートに分けずにそのまま流す
+  /// （自分で作った曲を入れやすくするため）。起動時にアセットの一覧から決める。
+  Set<String> singleTracks = {};
+
+  bool _layered(String key) =>
+      (key == battle || key == boss) && !singleTracks.contains(key);
+
   static const battle = 'battle';
   static const boss = 'boss';
   static const layerNames = ['piano', 'bass', 'drums', 'strings'];
@@ -52,7 +60,7 @@ class MusicDirector {
   int get layers => _layers;
   AppSettings get settings => _settings;
 
-  bool get _isLayered => current == battle || current == boss;
+  bool get _isLayered => current != null && _layered(current!);
 
   Future<void> enter(String key) async {
     _stack.add(key);
@@ -115,7 +123,8 @@ class MusicDirector {
   }
 
   Future<void> _stopPlaying() async {
-    if (_playing == battle || _playing == boss) {
+    final playing = _playing;
+    if (playing != null && _layered(playing)) {
       for (var i = 0; i < 4; i++) {
         await _backend.stop('layer$i');
       }
@@ -131,7 +140,7 @@ class MusicDirector {
     await _stopPlaying();
     _playing = want;
     if (want == null) return;
-    if (want == battle || want == boss) {
+    if (_layered(want)) {
       for (var i = 0; i < 4; i++) {
         await _backend.loop('layer$i', layerAsset(want, i), _layerVolume(i));
       }

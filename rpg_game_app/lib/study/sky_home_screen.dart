@@ -177,7 +177,7 @@ class _SectionTab extends StatelessWidget {
         ),
         if (!owned)
           Card(
-            color: const Color(0xFFFFF8E1),
+            color: TsuzuriColors.tint(0xFFFFF8E1),
             child: Padding(
               padding: const EdgeInsets.all(14),
               child: Text(
@@ -230,10 +230,10 @@ class _BestBadge extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
       decoration: BoxDecoration(
         color: b == null
-            ? const Color(0xFFEDE3D1)
+            ? TsuzuriColors.tint(0xFFEDE3D1)
             : b >= 80
             ? TsuzuriColors.correct.withValues(alpha: 0.15)
-            : const Color(0xFFFFF1D6),
+            : TsuzuriColors.tint(0xFFFFF1D6),
         borderRadius: BorderRadius.circular(20),
       ),
       child: Text(

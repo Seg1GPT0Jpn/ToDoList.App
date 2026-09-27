@@ -308,7 +308,7 @@ class _TextBox extends StatelessWidget {
                 ),
               ),
             if (done)
-              const Positioned(
+              Positioned(
                 right: 12,
                 bottom: 8,
                 child: Icon(

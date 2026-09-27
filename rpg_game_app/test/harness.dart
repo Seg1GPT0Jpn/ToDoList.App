@@ -4,6 +4,7 @@ import 'package:rpg_game_app/account/account_service.dart';
 import 'package:rpg_game_app/account/profile_repository.dart';
 import 'package:rpg_game_app/app/services.dart';
 import 'package:rpg_game_app/app/settings.dart';
+import 'package:rpg_game_app/app/theme.dart';
 import 'package:rpg_game_app/audio/music_director.dart';
 import 'package:rpg_game_app/story/story_player.dart';
 import 'package:rpg_game_app/data/meta_store.dart';
@@ -39,7 +40,10 @@ Future<RpgServices> openScreen(
   Size size = const Size(420, 860),
   bool keepPrefs = false,
   bool story = false,
+  bool dark = false,
+  bool bare = false,
 }) async {
+  TsuzuriColors.dark = dark;
   // 物語の場面の自動再生は、物語のテストでだけ使う
   storyAutoPlay = story;
   tester.view.physicalSize = size;
@@ -62,7 +66,13 @@ Future<RpgServices> openScreen(
         builder: (context) {
           services = RpgServices.of(context);
           RpgServicesHolder.last = services;
-          return MaterialApp(navigatorObservers: [routeObserver], home: page);
+          // bare のときは、画面そのものが MaterialApp（アプリ全体のテスト）
+          if (bare) return page;
+          return MaterialApp(
+            navigatorObservers: [routeObserver],
+            theme: buildTheme(dark ? Brightness.dark : Brightness.light),
+            home: page,
+          );
         },
       ),
     ),

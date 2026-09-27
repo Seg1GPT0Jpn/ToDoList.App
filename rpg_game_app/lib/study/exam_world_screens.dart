@@ -56,7 +56,7 @@ class ExamWorldListScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 if (plans.isEmpty)
-                  const Padding(
+                  Padding(
                     padding: EdgeInsets.only(top: 24),
                     child: Text(
                       'まだワールドがありません。\n右下の「範囲からつくる」から作ってみよう。',
@@ -284,7 +284,7 @@ class _ExamWorldCreateScreenState extends State<ExamWorldCreateScreen> {
                         ),
                   ],
                 ),
-                const Text(
+                Text(
                   '6教科を1つのワールドにまとめられます。🔒 の教科は、RPG でワールドを解放すると使えます。',
                   style: TextStyle(
                     fontSize: 11.5,
@@ -316,7 +316,7 @@ class _ExamWorldCreateScreenState extends State<ExamWorldCreateScreen> {
                 Text('3. 教科ごとの試験範囲', style: serif(15)),
                 const SizedBox(height: 6),
                 if (worlds.isEmpty)
-                  const Text(
+                  Text(
                     'まず教科を選んでください。',
                     style: TextStyle(
                       fontSize: 12,
@@ -638,14 +638,14 @@ class ExamWorldPlayScreen extends StatelessWidget {
                 Text(
                   '${plan.clearedCount} / ${plan.length} クリア　'
                   '※ RPG の進行や経験値には影響しません。何度でも挑戦できます。',
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 11.5,
                     color: TsuzuriColors.inkSoft,
                   ),
                 ),
                 if (plan.completed)
                   Card(
-                    color: const Color(0xFFFFF4D6),
+                    color: TsuzuriColors.tint(0xFFFFF4D6),
                     margin: const EdgeInsets.only(top: 12),
                     child: const Padding(
                       padding: EdgeInsets.all(12),

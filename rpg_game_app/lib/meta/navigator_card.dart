@@ -31,7 +31,7 @@ class NavigatorCard extends StatelessWidget {
       width: double.infinity,
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: const Color(0xFFF3F0FA),
+        color: TsuzuriColors.tint(0xFFF3F0FA),
         borderRadius: BorderRadius.circular(10),
       ),
       child: Column(
@@ -62,7 +62,7 @@ class NavigatorCard extends StatelessWidget {
               padding: const EdgeInsets.only(top: 4),
               child: Text(
                 t,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 11.5,
                   color: TsuzuriColors.inkSoft,
                   height: 1.4,

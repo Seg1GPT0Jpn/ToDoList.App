@@ -38,7 +38,7 @@ class EquipmentScreen extends StatelessWidget {
               children: [
                 Text('連続学習 🔥 $streak 日', style: serif(16)),
                 const SizedBox(height: 4),
-                const Text(
+                Text(
                   '毎日やらなくても大丈夫。続いた日数に応じて、ごほうびがもらえます。',
                   style: TextStyle(fontSize: 12, color: TsuzuriColors.inkSoft),
                 ),
@@ -129,7 +129,7 @@ class EquipmentScreen extends StatelessWidget {
                     ),
                   const SizedBox(height: 10),
                 ],
-                const Text(
+                Text(
                   '装備はレア度をきそうものではなく、学習と結びついた効果をもちます。'
                   '欠片を取りもどした教科の武器は、その教科のバトルで力を発揮します。',
                   style: TextStyle(fontSize: 12, color: TsuzuriColors.inkSoft),

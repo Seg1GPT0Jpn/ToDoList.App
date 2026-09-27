@@ -53,7 +53,7 @@ class AdventureCard extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  const Icon(
+                  Icon(
                     Icons.auto_stories,
                     size: 18,
                     color: TsuzuriColors.accent,
@@ -303,7 +303,7 @@ class _QuestRow extends StatelessWidget {
                   child: LinearProgressIndicator(
                     value: (value / quest.goal).clamp(0, 1),
                     minHeight: 4,
-                    backgroundColor: const Color(0xFFEDE3D1),
+                    backgroundColor: TsuzuriColors.tint(0xFFEDE3D1),
                     color: TsuzuriColors.exp,
                   ),
                 ),
@@ -364,7 +364,7 @@ class _SubjectLevels extends StatelessWidget {
       );
     }
     if (chips.isEmpty) {
-      return const Text(
+      return Text(
         '問題を解くと、教科ごとのレベルがここに出ます（3回続けて正解で「習得」）',
         style: TextStyle(fontSize: 11, color: TsuzuriColors.inkSoft),
       );
@@ -439,7 +439,7 @@ class _DailyChallengeCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: const Color(0xFFFFF4E0),
+        color: TsuzuriColors.tint(0xFFFFF4E0),
         borderRadius: BorderRadius.circular(12),
         border: Border.all(color: const Color(0xFFD9822B), width: 1.5),
       ),
@@ -469,7 +469,7 @@ class _DailyChallengeCard extends StatelessWidget {
                   done
                       ? '今日はたおした！ また明日、別の魔物が現れる'
                       : 'たおすと経験値 ${stage.expReward}（ふつうの3倍）',
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 11.5,
                     color: TsuzuriColors.inkSoft,
                   ),

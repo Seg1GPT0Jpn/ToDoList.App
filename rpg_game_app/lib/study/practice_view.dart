@@ -59,7 +59,7 @@ class _PracticeViewState extends State<PracticeView> {
                   child: LinearProgressIndicator(
                     value: s.answeredCount / s.total,
                     minHeight: 6,
-                    backgroundColor: const Color(0xFFEDE3D1),
+                    backgroundColor: TsuzuriColors.tint(0xFFEDE3D1),
                     color: TsuzuriColors.accent,
                   ),
                 ),
@@ -80,17 +80,14 @@ class _PracticeViewState extends State<PracticeView> {
             decoration: BoxDecoration(
               color: TsuzuriColors.card,
               borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: const Color(0xFFE0D4C0)),
+              border: Border.all(color: TsuzuriColors.tint(0xFFE0D4C0)),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   q.source.prompt,
-                  style: const TextStyle(
-                    fontSize: 14,
-                    color: TsuzuriColors.inkSoft,
-                  ),
+                  style: TextStyle(fontSize: 14, color: TsuzuriColors.inkSoft),
                 ),
                 if (q.source.sentence != null) ...[
                   const SizedBox(height: 6),
@@ -166,7 +163,9 @@ class _PracticeViewState extends State<PracticeView> {
     return Container(
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: ok ? const Color(0xFFEFF7EE) : const Color(0xFFFFF4F0),
+        color: ok
+            ? TsuzuriColors.tint(0xFFEFF7EE)
+            : TsuzuriColors.tint(0xFFFFF4F0),
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
           color: (ok ? TsuzuriColors.correct : TsuzuriColors.wrong).withValues(

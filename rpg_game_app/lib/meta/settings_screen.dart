@@ -78,6 +78,34 @@ class SettingsScreen extends StatelessWidget {
                   ),
                 ),
               ),
+              ListTile(
+                title: const Text('画面の明るさ'),
+                subtitle: Padding(
+                  padding: const EdgeInsets.only(top: Space.s),
+                  child: SegmentedButton<String>(
+                    segments: const [
+                      ButtonSegment(
+                        value: 'system',
+                        icon: Icon(Icons.brightness_auto),
+                        label: Text('端末に合わせる'),
+                      ),
+                      ButtonSegment(
+                        value: 'light',
+                        icon: Icon(Icons.light_mode),
+                        label: Text('ライト'),
+                      ),
+                      ButtonSegment(
+                        value: 'dark',
+                        icon: Icon(Icons.dark_mode),
+                        label: Text('ダーク'),
+                      ),
+                    ],
+                    selected: {s.theme},
+                    onSelectionChanged: (v) =>
+                        store.update(s.copyWith(theme: v.first)),
+                  ),
+                ),
+              ),
               SwitchListTile(
                 title: const Text('動きをへらす'),
                 subtitle: const Text('画面のゆれ・点滅・大きな動きをおさえます'),
@@ -85,7 +113,7 @@ class SettingsScreen extends StatelessWidget {
                 onChanged: (v) => store.update(s.copyWith(reduceMotion: v)),
               ),
               const SizedBox(height: Space.l),
-              const Text(
+              Text(
                 '設定はこの端末だけに保存されます。',
                 style: TextStyle(fontSize: 12, color: TsuzuriColors.inkSoft),
               ),

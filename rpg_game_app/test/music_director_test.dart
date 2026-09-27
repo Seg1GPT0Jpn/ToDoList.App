@@ -113,4 +113,22 @@ void main() {
       }
     }
   });
+
+  test('バトルの曲を1つのファイル（bgm_battle.mp3）で置いたら、4パートに分けずに流す', () async {
+    final log = Log();
+    final m = MusicDirector(log)..singleTracks = {MusicDirector.battle};
+    await m.enter('home');
+    await m.enter(MusicDirector.battle);
+    expect(log.loops['bgm'], 'audio/bgm_battle.mp3');
+    expect(log.loops.keys.where((k) => k.startsWith('layer')), isEmpty);
+    await m.answer(correct: true, combo: 3);
+    expect(log.loops.keys.where((k) => k.startsWith('layer')), isEmpty);
+    // ボスは4パートのまま
+    await m.enter(MusicDirector.boss);
+    expect(log.loops['layer0'], 'audio/bgm_boss_piano.mp3');
+    await m.leave(MusicDirector.boss);
+    expect(log.loops['bgm'], 'audio/bgm_battle.mp3');
+    await m.leave(MusicDirector.battle);
+    expect(log.loops['bgm'], 'audio/bgm_home.mp3');
+  });
 }

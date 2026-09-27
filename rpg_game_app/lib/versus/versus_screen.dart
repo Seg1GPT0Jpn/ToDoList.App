@@ -189,7 +189,7 @@ class _VersusSetupScreenState extends State<VersusSetupScreen> {
                     ],
                   )
                 else if (_opponent == VersusOpponent.online)
-                  const Text(
+                  Text(
                     'ほかの端末の人と、4けたの部屋番号で対戦します。2人とも Google でログインしている必要があります。'
                     '部屋を作る人が教科と問題数を決めます（部屋に入る人の選択は使われません）。',
                     style: TextStyle(
@@ -198,7 +198,7 @@ class _VersusSetupScreenState extends State<VersusSetupScreen> {
                     ),
                   )
                 else
-                  const Text(
+                  Text(
                     '端末を机に置いて、向かい合って遊びます。上の人の画面はさかさまに表示されます。',
                     style: TextStyle(
                       fontSize: 12,
@@ -597,7 +597,7 @@ class _VersusScreenState extends State<VersusScreen>
               child: IconButton(
                 tooltip: 'やめる',
                 onPressed: () => Navigator.of(context).maybePop(),
-                icon: const Icon(Icons.close, color: TsuzuriColors.inkSoft),
+                icon: Icon(Icons.close, color: TsuzuriColors.inkSoft),
               ),
             ),
             if (_match.isOver && _reveal) _resultOverlay(),
@@ -669,7 +669,7 @@ class _VersusScreenState extends State<VersusScreen>
     final last = _last;
     final thinking = !_reveal && !_match.isLocked(side);
     return Container(
-      color: const Color(0xFFF1EBE0),
+      color: TsuzuriColors.tint(0xFFF1EBE0),
       padding: const EdgeInsets.fromLTRB(48, 8, 16, 8),
       child: Row(
         children: [
@@ -757,7 +757,7 @@ class _VersusScreenState extends State<VersusScreen>
       }
     }
     return Container(
-      color: side == 0 ? TsuzuriColors.card : const Color(0xFFFFF6F4),
+      color: side == 0 ? TsuzuriColors.card : TsuzuriColors.tint(0xFFFFF6F4),
       padding: const EdgeInsets.fromLTRB(12, 8, 12, 8),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -846,7 +846,7 @@ class _VersusScreenState extends State<VersusScreen>
         maxLines: 2,
         overflow: TextOverflow.ellipsis,
         textAlign: TextAlign.center,
-        style: const TextStyle(fontSize: 13, color: TsuzuriColors.ink),
+        style: TextStyle(fontSize: 13, color: TsuzuriColors.ink),
       ),
     );
   }

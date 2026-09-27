@@ -13,7 +13,7 @@ class TerrainArt {
   const TerrainArt._();
 
   static final _ink = ui.Paint()
-    ..color = TsuzuriColors.ink
+    ..color = TsuzuriColors.pen
     ..style = ui.PaintingStyle.stroke
     ..strokeWidth = 1.4
     ..strokeCap = ui.StrokeCap.round;

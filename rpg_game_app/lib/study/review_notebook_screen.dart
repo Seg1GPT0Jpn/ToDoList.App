@@ -76,7 +76,7 @@ class _ReviewNotebookScreenState extends State<ReviewNotebookScreen> {
             return ListView(
               padding: const EdgeInsets.fromLTRB(44, 16, 16, 24),
               children: [
-                const Text(
+                Text(
                   'まちがえた問題は、フィールドで「亡霊」になってさまよっている。'
                   'ここで解説を読んでから話しかけて、成仏させよう。',
                   style: TextStyle(
@@ -127,7 +127,7 @@ class _ReviewNotebookScreenState extends State<ReviewNotebookScreen> {
         const SizedBox(height: 4),
         Text(
           '選択肢：${q.choices.join(' / ')}',
-          style: const TextStyle(fontSize: 12.5, color: TsuzuriColors.inkSoft),
+          style: TextStyle(fontSize: 12.5, color: TsuzuriColors.inkSoft),
         ),
         const SizedBox(height: 6),
         Text(

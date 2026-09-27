@@ -407,7 +407,7 @@ class _MockExamScreenState extends State<MockExamScreen> {
                 const SizedBox(width: 8),
                 Text(
                   '（${e.value.$1}/${e.value.$2}問）',
-                  style: const TextStyle(color: TsuzuriColors.inkSoft),
+                  style: TextStyle(color: TsuzuriColors.inkSoft),
                 ),
               ],
             ),

@@ -141,9 +141,9 @@ class _InnScreenState extends State<InnScreen> {
         Container(
           padding: const EdgeInsets.all(12),
           decoration: BoxDecoration(
-            color: const Color(0xFFFFF8E1),
+            color: TsuzuriColors.tint(0xFFFFF8E1),
             borderRadius: BorderRadius.circular(12),
-            border: Border.all(color: const Color(0xFFE8D29A)),
+            border: Border.all(color: TsuzuriColors.tint(0xFFE8D29A)),
           ),
           child: Text(
             '${lesson.teacher}「この先には${widget.stage.enemy.name}が待っておる。'
@@ -159,7 +159,7 @@ class _InnScreenState extends State<InnScreen> {
             decoration: BoxDecoration(
               color: TsuzuriColors.card,
               borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: const Color(0xFFE0D4C0)),
+              border: Border.all(color: TsuzuriColors.tint(0xFFE0D4C0)),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -204,7 +204,7 @@ class _InnScreenState extends State<InnScreen> {
           ),
         ),
         const SizedBox(height: 6),
-        const Text(
+        Text(
           '正解1問につき 2 EXP。何度でも受けられます。',
           textAlign: TextAlign.center,
           style: TextStyle(fontSize: 12, color: TsuzuriColors.inkSoft),
@@ -221,7 +221,7 @@ class _InnScreenState extends State<InnScreen> {
         Container(
           padding: const EdgeInsets.all(12),
           decoration: BoxDecoration(
-            color: const Color(0xFFFFF8E1),
+            color: TsuzuriColors.tint(0xFFFFF8E1),
             borderRadius: BorderRadius.circular(12),
           ),
           child: Text(

@@ -80,7 +80,7 @@ class _ReviewTowerScreenState extends State<ReviewTowerScreen> {
                     PaperCard(
                       child: Row(
                         children: [
-                          const Icon(
+                          Icon(
                             Icons.castle_outlined,
                             size: 40,
                             color: TsuzuriColors.accent,
@@ -94,7 +94,7 @@ class _ReviewTowerScreenState extends State<ReviewTowerScreen> {
                                 Text(
                                   '復習で ${ReviewTower.correctPerFloor} 問正解するごとに1階上へ。'
                                   '5階ごとに塔の番人が待っています。',
-                                  style: const TextStyle(
+                                  style: TextStyle(
                                     fontSize: 12,
                                     color: TsuzuriColors.inkSoft,
                                   ),

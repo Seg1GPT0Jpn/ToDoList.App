@@ -153,7 +153,7 @@ class FieldGame extends FlameGame with KeyboardEvents {
   Facing? _bumpedDirection;
 
   @override
-  ui.Color backgroundColor() => TsuzuriColors.kraft;
+  ui.Color backgroundColor() => TsuzuriColors.penKraft;
 
   @override
   Future<void> onLoad() async {
@@ -606,7 +606,7 @@ class MapLayer extends PositionComponent {
   }
 
   static final _ink = ui.Paint()
-    ..color = TsuzuriColors.ink
+    ..color = TsuzuriColors.pen
     ..style = ui.PaintingStyle.stroke
     ..strokeWidth = 1.6
     ..strokeCap = ui.StrokeCap.round;
@@ -777,7 +777,7 @@ class EnemyToken extends PositionComponent {
     double dy = 0,
   }) {
     final center = Offset(s * 0.82, s * 0.05 + dy);
-    canvas.drawCircle(center, 7, ui.Paint()..color = TsuzuriColors.card);
+    canvas.drawCircle(center, 7, ui.Paint()..color = TsuzuriColors.penPaper);
     canvas.drawCircle(
       center,
       7,
@@ -903,7 +903,7 @@ class ChestToken extends PositionComponent {
     final c = canvas;
     final s = size.x;
     final ink = ui.Paint()
-      ..color = TsuzuriColors.ink
+      ..color = TsuzuriColors.pen
       ..style = ui.PaintingStyle.stroke
       ..strokeWidth = 1.4;
     c.drawOval(
@@ -983,7 +983,7 @@ class SpringToken extends PositionComponent {
     c.drawOval(
       rim,
       ui.Paint()
-        ..color = TsuzuriColors.ink
+        ..color = TsuzuriColors.pen
         ..style = ui.PaintingStyle.stroke
         ..strokeWidth = 1.4,
     );
@@ -1070,12 +1070,12 @@ class CageToken extends PositionComponent {
     c.drawCircle(
       Offset(s * 0.44, s * 0.52 + bob),
       1.6,
-      ui.Paint()..color = TsuzuriColors.ink,
+      ui.Paint()..color = TsuzuriColors.pen,
     );
     c.drawCircle(
       Offset(s * 0.56, s * 0.52 + bob),
       1.6,
-      ui.Paint()..color = TsuzuriColors.ink,
+      ui.Paint()..color = TsuzuriColors.pen,
     );
     final bar = ui.Paint()
       ..color = const ui.Color(0xFF3A3A3A)

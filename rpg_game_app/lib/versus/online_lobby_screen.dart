@@ -250,7 +250,7 @@ class _Notice extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Card(
-    color: const Color(0xFFFFF8E1),
+    color: TsuzuriColors.tint(0xFFFFF8E1),
     child: Padding(
       padding: const EdgeInsets.all(14),
       child: Text(text, style: const TextStyle(height: 1.6)),

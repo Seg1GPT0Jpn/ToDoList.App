@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:rpg_game/rpg_game.dart';
 
+import '../app/theme.dart';
+
 /// 定期テストの海・模擬試験の空の色
 extension RealmStyle on StudyRealm {
   /// 文字・ボタンの色
   Color get ink => switch (this) {
-    StudyRealm.sea => const Color(0xFF2F5D7C),
-    StudyRealm.sky => const Color(0xFF3949AB),
+    StudyRealm.sea => Color(TsuzuriColors.dark ? 0xFF8EC5E8 : 0xFF2F5D7C),
+    StudyRealm.sky => Color(TsuzuriColors.dark ? 0xFFA5B4FC : 0xFF3949AB),
   };
 
   /// 見出しの背景の色
   Color get paper => switch (this) {
-    StudyRealm.sea => const Color(0xFFE6F0F5),
-    StudyRealm.sky => const Color(0xFFE8EAF6),
+    StudyRealm.sea => TsuzuriColors.tint(0xFFE6F0F5),
+    StudyRealm.sky => TsuzuriColors.tint(0xFFE8EAF6),
   };
 
   /// アイコン

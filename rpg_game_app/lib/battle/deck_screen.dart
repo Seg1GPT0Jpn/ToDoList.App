@@ -62,7 +62,7 @@ class _DeckScreenState extends State<DeckScreen> {
               style: serif(16),
             ),
             const SizedBox(height: 4),
-            const Text(
+            Text(
               '持っているカードから10枚まで選んで、バトルに持っていく。'
               'バトルでは3枚を手札に持ち、回答の前にタップするとその問題に効果がつく（1問に1枚）。',
               style: TextStyle(
@@ -123,7 +123,7 @@ class _DeckScreenState extends State<DeckScreen> {
                       : null,
                 ),
             const SizedBox(height: 8),
-            const Text(
+            Text(
               'カードは、ステージの初回クリア・強敵・宝箱（知識の封印）・実績・連続学習で増える。'
               'ガチャはない。',
               style: TextStyle(fontSize: 12, color: TsuzuriColors.inkSoft),
@@ -134,7 +134,7 @@ class _DeckScreenState extends State<DeckScreen> {
               style: serif(16),
             ),
             const SizedBox(height: 4),
-            const Text(
+            Text(
               'ボスに負けると、仲間になるはずの子が檻に捕まってしまう。リベンジして勝てば助け出せて、ずっと力を貸してくれる。',
               style: TextStyle(
                 fontSize: 12.5,
@@ -221,7 +221,7 @@ class _CardRow extends StatelessWidget {
                   ),
                   Text(
                     '${card.type.label}・持っている $owned 枚',
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 11,
                       color: TsuzuriColors.inkSoft,
                     ),

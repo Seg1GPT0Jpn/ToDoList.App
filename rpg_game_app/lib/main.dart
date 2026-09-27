@@ -33,6 +33,17 @@ Future<void> main() async {
   final settings = SettingsStore(prefs);
   final backend = PlayerBackend();
   final music = MusicDirector(backend, settings.value);
+  // バトル・ボスの曲が1つのファイル（bgm_battle.mp3 / bgm_boss.mp3）で置いてあれば、そちらを使う
+  try {
+    final manifest = await AssetManifest.loadFromAssetBundle(rootBundle);
+    final assets = manifest.listAssets().toSet();
+    music.singleTracks = {
+      for (final key in [MusicDirector.battle, MusicDirector.boss])
+        if (assets.contains('assets/${MusicDirector.bgmAsset(key)}')) key,
+    };
+  } catch (_) {
+    // 一覧が読めなければ、これまでどおり4パートで流す
+  }
   settings.addListener(() => music.applySettings(settings.value));
   // Firebase の設定があればクラウドと同期する。なければ端末の中だけで動く
   final cloud = await CloudSync.start(
@@ -71,17 +82,78 @@ Future<void> main() async {
 /// 画面の出入りを知らせる（フィールドがバトルから戻ったことを知るのに使う）
 final routeObserver = RouteObserver<ModalRoute<void>>();
 
-class TsuzuriQuestApp extends StatelessWidget {
+class TsuzuriQuestApp extends StatefulWidget {
   const TsuzuriQuestApp({super.key, this.onUserGesture});
 
   /// 画面にさわったとき（音の再生を始めなおすのに使う）
   final VoidCallback? onUserGesture;
 
   @override
+  State<TsuzuriQuestApp> createState() => _TsuzuriQuestAppState();
+}
+
+class _TsuzuriQuestAppState extends State<TsuzuriQuestApp>
+    with WidgetsBindingObserver {
+  VoidCallback? get onUserGesture => widget.onUserGesture;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  /// 端末のライト・ダークが切りかわったとき
+  @override
+  void didChangePlatformBrightness() => setState(() {});
+
+  /// 設定と端末の設定から、ダークモードで表示するかを決める
+  bool _isDark(AppSettings s) => switch (s.theme) {
+    'dark' => true,
+    'light' => false,
+    _ =>
+      WidgetsBinding.instance.platformDispatcher.platformBrightness ==
+          Brightness.dark,
+  };
+
+  /// 色が切りかわったら、画面をすべて描きなおす（const の部品もふくめて）
+  void _rebuildAll() {
+    void visit(Element e) {
+      e.markNeedsBuild();
+      e.visitChildren(visit);
+    }
+
+    (context as Element).visitChildren(visit);
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final settings = RpgServices.of(context).settings;
+    return ValueListenableBuilder<AppSettings>(
+      valueListenable: settings,
+      builder: (context, s, _) {
+        final dark = _isDark(s);
+        if (dark != TsuzuriColors.dark) {
+          TsuzuriColors.dark = dark;
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            if (mounted) _rebuildAll();
+          });
+        }
+        return _app(dark);
+      },
+    );
+  }
+
+  Widget _app(bool dark) {
     return MaterialApp(
       title: 'つづりクエスト',
       debugShowCheckedModeBanner: false,
+      themeMode: dark ? ThemeMode.dark : ThemeMode.light,
       theme: buildTheme(Brightness.light),
       darkTheme: buildTheme(Brightness.dark),
       navigatorObservers: [routeObserver],

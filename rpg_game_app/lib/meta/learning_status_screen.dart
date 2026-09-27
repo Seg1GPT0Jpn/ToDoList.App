@@ -42,7 +42,7 @@ class LearningStatusScreen extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 6),
-                const Text(
+                Text(
                   '熟練度は、ゲームで勝手に上がる数字ではなく、実際に答えた正答率から計算しています。'
                   '5問以上答えた分野だけ判定します。総合力は、6教科すべての熟練度の平均（答えていない教科は0）。',
                   style: TextStyle(
@@ -90,15 +90,11 @@ class LearningStatusScreen extends StatelessWidget {
 }
 
 class _BigStat extends StatelessWidget {
-  const _BigStat({
-    required this.label,
-    required this.value,
-    this.color = TsuzuriColors.accent,
-  });
+  const _BigStat({required this.label, required this.value, this.color});
 
   final String label;
   final String value;
-  final Color color;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) => Expanded(
@@ -109,12 +105,9 @@ class _BigStat extends StatelessWidget {
           children: [
             Text(
               label,
-              style: const TextStyle(
-                fontSize: 12,
-                color: TsuzuriColors.inkSoft,
-              ),
+              style: TextStyle(fontSize: 12, color: TsuzuriColors.inkSoft),
             ),
-            Text(value, style: serif(26, color: color)),
+            Text(value, style: serif(26, color: color ?? TsuzuriColors.accent)),
           ],
         ),
       ),
@@ -174,7 +167,7 @@ class _SubjectCard extends StatelessWidget {
                 const SizedBox(width: 8),
                 Text(
                   '学習Lv $level',
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontWeight: FontWeight.w800,
                     color: TsuzuriColors.accent,
                   ),

@@ -37,7 +37,7 @@ class BestiaryScreen extends StatelessWidget {
                   sliver: SliverToBoxAdapter(
                     child: Text(
                       '発見 ${found.length} / ${all.length}　討伐 ${beaten.length} / ${all.length}',
-                      style: const TextStyle(color: TsuzuriColors.inkSoft),
+                      style: TextStyle(color: TsuzuriColors.inkSoft),
                     ),
                   ),
                 ),
@@ -135,10 +135,7 @@ class _SpeciesTile extends StatelessWidget {
               if (defeated > 0)
                 Text(
                   '討伐 $defeated',
-                  style: const TextStyle(
-                    fontSize: 10,
-                    color: TsuzuriColors.inkSoft,
-                  ),
+                  style: TextStyle(fontSize: 10, color: TsuzuriColors.inkSoft),
                 ),
             ],
           ),
@@ -198,7 +195,7 @@ class _SpeciesTile extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
-                    color: const Color(0xFFFFF1E6),
+                    color: TsuzuriColors.tint(0xFFFFF1E6),
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Row(
@@ -227,7 +224,7 @@ class _SpeciesTile extends StatelessWidget {
                 const SizedBox(height: Space.s),
                 Text(species.lore, style: const TextStyle(height: 1.6)),
               ] else
-                const Text(
+                Text(
                   '倒すと、くわしい説明が読めるようになります。',
                   style: TextStyle(color: TsuzuriColors.inkSoft),
                 ),

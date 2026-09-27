@@ -56,23 +56,27 @@ class PaperCard extends StatelessWidget {
   const PaperCard({
     super.key,
     required this.child,
-    this.color = TsuzuriColors.card,
-    this.border = TsuzuriColors.accent,
+    this.color,
+    this.border,
     this.padding = const EdgeInsets.all(Space.m),
   });
 
   final Widget child;
-  final Color color;
-  final Color border;
+
+  /// 地の色（なければカードの色）
+  final Color? color;
+
+  /// ふちの色（なければこげ茶）
+  final Color? border;
   final EdgeInsets padding;
 
   @override
   Widget build(BuildContext context) => Container(
     padding: padding,
     decoration: BoxDecoration(
-      color: color,
+      color: color ?? TsuzuriColors.card,
       borderRadius: BorderRadius.circular(Radii.card),
-      border: Border.all(color: border, width: 1.5),
+      border: Border.all(color: border ?? TsuzuriColors.accent, width: 1.5),
     ),
     child: child,
   );

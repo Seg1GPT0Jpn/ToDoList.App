@@ -146,7 +146,7 @@ class _ResultScreenState extends State<ResultScreen>
                 children: [
                   Text(
                     '${RpgCatalog.stageLabel(widget.stage)}「${widget.stage.name}」',
-                    style: const TextStyle(color: TsuzuriColors.inkSoft),
+                    style: TextStyle(color: TsuzuriColors.inkSoft),
                   ),
                   const SizedBox(height: 16),
                   Center(
@@ -223,7 +223,7 @@ class _ResultScreenState extends State<ResultScreen>
                   if (widget.skillAfter case final after? when after.rated) ...[
                     const SizedBox(height: 12),
                     _card(
-                      color: const Color(0xFFEAF4EA),
+                      color: TsuzuriColors.tint(0xFFEAF4EA),
                       child: Row(
                         children: [
                           const Icon(
@@ -249,7 +249,7 @@ class _ResultScreenState extends State<ResultScreen>
                   if (widget.result.newlyUnlockedStageId != null) ...[
                     const SizedBox(height: 12),
                     _card(
-                      color: const Color(0xFFFFF8E1),
+                      color: TsuzuriColors.tint(0xFFFFF8E1),
                       child: Row(
                         children: [
                           const Icon(Icons.lock_open, color: Color(0xFFB8860B)),
@@ -351,7 +351,7 @@ class _ResultScreenState extends State<ResultScreen>
               child: LinearProgressIndicator(
                 value: at.fraction.clamp(0, 1),
                 minHeight: 12,
-                backgroundColor: const Color(0xFFEDE3D1),
+                backgroundColor: TsuzuriColors.tint(0xFFEDE3D1),
                 color: TsuzuriColors.exp,
               ),
             ),
@@ -377,7 +377,7 @@ class _ResultScreenState extends State<ResultScreen>
         children: [
           TextSpan(
             text: '$label ',
-            style: const TextStyle(color: TsuzuriColors.inkSoft),
+            style: TextStyle(color: TsuzuriColors.inkSoft),
           ),
           TextSpan(
             text: '$now',
@@ -432,7 +432,7 @@ class _ResultScreenState extends State<ResultScreen>
     decoration: BoxDecoration(
       color: color ?? TsuzuriColors.card,
       borderRadius: BorderRadius.circular(14),
-      border: Border.all(color: const Color(0xFFE0D4C0)),
+      border: Border.all(color: TsuzuriColors.tint(0xFFE0D4C0)),
     ),
     child: child,
   );
@@ -441,7 +441,7 @@ class _ResultScreenState extends State<ResultScreen>
     padding: const EdgeInsets.symmetric(vertical: 3),
     child: Row(
       children: [
-        Text(label, style: const TextStyle(color: TsuzuriColors.inkSoft)),
+        Text(label, style: TextStyle(color: TsuzuriColors.inkSoft)),
         const Spacer(),
         Text(value, style: const TextStyle(fontWeight: FontWeight.w700)),
       ],

@@ -8,6 +8,7 @@ import '../app/services.dart';
 import '../app/theme.dart';
 import '../art/paper.dart';
 import 'exam_world_screens.dart';
+import 'realm_style.dart';
 import 'personal_books.dart';
 import 'sea_battle_launcher.dart';
 import 'sea_quiz_screen.dart';
@@ -74,11 +75,8 @@ class _SeaHomeScreenState extends State<SeaHomeScreen> {
       length: tabs.length,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: const Color(0xFFE6F0F5),
-          title: Text(
-            '定期テストの海',
-            style: serif(19, color: const Color(0xFF2F5D7C)),
-          ),
+          backgroundColor: TsuzuriColors.tint(0xFFE6F0F5),
+          title: Text('定期テストの海', style: serif(19, color: StudyRealm.sea.ink)),
           actions: [
             TextButton.icon(
               onPressed: () => Navigator.of(context).push(
@@ -98,8 +96,8 @@ class _SeaHomeScreenState extends State<SeaHomeScreen> {
                 TabBar(
                   isScrollable: true,
                   tabAlignment: TabAlignment.start,
-                  labelColor: const Color(0xFF2F5D7C),
-                  indicatorColor: const Color(0xFF2F5D7C),
+                  labelColor: StudyRealm.sea.ink,
+                  indicatorColor: StudyRealm.sea.ink,
                   tabs: tabs,
                 ),
               ],
@@ -174,7 +172,7 @@ class _RouteTab extends StatelessWidget {
       children: [
         if (!owned)
           Card(
-            color: const Color(0xFFFFF8E1),
+            color: TsuzuriColors.tint(0xFFFFF8E1),
             child: Padding(
               padding: const EdgeInsets.all(14),
               child: Text(
@@ -200,12 +198,12 @@ class _RouteTab extends StatelessWidget {
               onTap: owned ? () => _open(context, s) : null,
               leading: CircleAvatar(
                 radius: 15,
-                backgroundColor: const Color(0xFFE6F0F5),
+                backgroundColor: TsuzuriColors.tint(0xFFE6F0F5),
                 child: Text(
                   '${s.areaNo}',
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 12,
-                    color: Color(0xFF2F5D7C),
+                    color: StudyRealm.sea.ink,
                     fontWeight: FontWeight.w700,
                   ),
                 ),
@@ -226,10 +224,10 @@ Widget _bestBadge(int? best) => Container(
   padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
   decoration: BoxDecoration(
     color: best == null
-        ? const Color(0xFFEDE3D1)
+        ? TsuzuriColors.tint(0xFFEDE3D1)
         : best >= 80
         ? TsuzuriColors.correct.withValues(alpha: 0.15)
-        : const Color(0xFFFFF1D6),
+        : TsuzuriColors.tint(0xFFFFF1D6),
     borderRadius: BorderRadius.circular(20),
   ),
   child: Text(
@@ -286,7 +284,7 @@ class _GradeTab extends StatelessWidget {
                       children: [
                         CircleAvatar(
                           radius: 14,
-                          backgroundColor: const Color(0xFF2F5D7C),
+                          backgroundColor: StudyRealm.sea.ink,
                           child: Text(
                             '${u.number}',
                             style: const TextStyle(
@@ -313,14 +311,14 @@ class _GradeTab extends StatelessWidget {
                               vertical: 2,
                             ),
                             decoration: BoxDecoration(
-                              color: const Color(0xFFE6F0F5),
+                              color: TsuzuriColors.tint(0xFFE6F0F5),
                               borderRadius: BorderRadius.circular(6),
                             ),
                             child: Text(
                               t,
-                              style: const TextStyle(
+                              style: TextStyle(
                                 fontSize: 11,
-                                color: Color(0xFF2F5D7C),
+                                color: StudyRealm.sea.ink,
                               ),
                             ),
                           ),
@@ -380,7 +378,7 @@ class _WordsTab extends StatelessWidget {
                   Text(b.title, style: serif(16)),
                   Text(
                     b.description,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 12,
                       color: TsuzuriColors.inkSoft,
                     ),
@@ -464,11 +462,11 @@ class _LeapTabState extends State<_LeapTab> {
     return ListView(
       padding: const EdgeInsets.fromLTRB(40, 24, 16, 24),
       children: [
-        const Icon(Icons.lock, size: 40, color: TsuzuriColors.inkSoft),
+        Icon(Icons.lock, size: 40, color: TsuzuriColors.inkSoft),
         const SizedBox(height: 8),
         Center(child: Text('パスワードを入力してください', style: serif(16))),
         const SizedBox(height: 6),
-        const Text(
+        Text(
           '市販教材の単語を使うモードです。個人の学習用にだけ使ってください。',
           textAlign: TextAlign.center,
           style: TextStyle(fontSize: 12, color: TsuzuriColors.inkSoft),
@@ -505,7 +503,7 @@ class _LeapTabState extends State<_LeapTab> {
       children: [
         Text('LEAP の単語リストを取り込む', style: serif(16)),
         const SizedBox(height: 6),
-        const Text(
+        Text(
           '「番号・英単語・意味」が並んだ一覧（1行に1語、タブ区切り）をそのまま貼り付けてください。'
           'データはこの端末の中にだけ保存され、インターネットには送られません。',
           style: TextStyle(
@@ -605,7 +603,7 @@ class _LeapTabState extends State<_LeapTab> {
           onSelectionChanged: (s) => setState(() => _dir = s.first),
         ),
         const SizedBox(height: 10),
-        const Text(
+        Text(
           '範囲を選ぶと、その中から20問出題します。',
           style: TextStyle(fontSize: 12, color: TsuzuriColors.inkSoft),
         ),
@@ -626,7 +624,7 @@ class _LeapTabState extends State<_LeapTab> {
                               null
                           ? '―'
                           : 'ベスト ${widget.progress.seaBest['leap_${label(c)}_${_dir.name}']}%',
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 10,
                         color: TsuzuriColors.inkSoft,
                       ),

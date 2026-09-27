@@ -150,7 +150,7 @@ class _StoryScreenState extends State<StoryScreen> {
                   ),
                 const SizedBox(height: 12),
                 Card(
-                  color: open ? const Color(0xFFEDE7F6) : null,
+                  color: open ? TsuzuriColors.tint(0xFFEDE7F6) : null,
                   child: Padding(
                     padding: const EdgeInsets.all(14),
                     child: Column(
@@ -184,7 +184,7 @@ class _StoryScreenState extends State<StoryScreen> {
                   style: serif(16),
                 ),
                 const SizedBox(height: 4),
-                const Text(
+                Text(
                   '読んだ場面は、ここで何度でも読み返せます。国に入る・最後のボスに挑む・欠片を取りもどすと、新しい場面が読めます。',
                   style: TextStyle(fontSize: 12, color: TsuzuriColors.inkSoft),
                 ),
