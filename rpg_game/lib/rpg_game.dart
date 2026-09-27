@@ -45,6 +45,7 @@ export 'src/story/npcs.dart';
 export 'src/story/scenes.dart';
 export 'src/story/story.dart';
 export 'src/study/common_test.dart';
+export 'src/study/daily_challenge.dart';
 export 'src/study/exam_world.dart';
 export 'src/study/inn_lessons.dart';
 export 'src/study/practice_session.dart';

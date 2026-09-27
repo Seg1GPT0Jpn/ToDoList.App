@@ -3,6 +3,8 @@ import 'package:rpg_game/rpg_game.dart';
 
 import '../app/services.dart';
 import '../app/theme.dart';
+import '../art/enemy_painter.dart';
+import '../battle/battle_screen.dart';
 import '../study/common_test_screens.dart';
 import '../study/sky_home_screen.dart';
 import '../versus/versus_screen.dart';
@@ -73,6 +75,8 @@ class AdventureCard extends StatelessWidget {
               _NextGoal(progress: progress, due: due),
               const SizedBox(height: Space.s),
               NavigatorCard(record: record, today: today),
+              const SizedBox(height: Space.s),
+              _DailyChallengeCard(progress: progress, day: today),
               const SizedBox(height: Space.s),
               if (quests.isNotEmpty) ...[
                 const Text(
@@ -401,4 +405,103 @@ class _MenuButton extends StatelessWidget {
             label: Text(label),
           );
   }
+}
+
+/// 今日の挑戦状：クリアしたエリアから、日替わりで強化された魔物が1体現れる
+class _DailyChallengeCard extends StatelessWidget {
+  const _DailyChallengeCard({required this.progress, required this.day});
+
+  final RpgProgress progress;
+  final int day;
+
+  Future<void> _start(BuildContext context, StageDef stage) async {
+    final services = RpgServices.of(context);
+    final pool = await services.loadStagePool(stage);
+    final latest = await services.repository.load();
+    if (pool == null || !pool.origin.usableInRpg || !context.mounted) return;
+    await Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        builder: (_) => BattleScreen(
+          world: RpgCatalog.world(stage.worldId),
+          stage: stage,
+          questions: pool.questions,
+          progress: latest,
+        ),
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final stage = DailyChallenge.of(progress, day);
+    if (stage == null) return const SizedBox.shrink();
+    final done = DailyChallenge.done(progress, day);
+    return Container(
+      padding: const EdgeInsets.all(10),
+      decoration: BoxDecoration(
+        color: const Color(0xFFFFF4E0),
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: const Color(0xFFD9822B), width: 1.5),
+      ),
+      child: Row(
+        children: [
+          SizedBox.square(
+            dimension: 48,
+            child: CustomPaint(painter: _LookPainter(stage.enemy)),
+          ),
+          const SizedBox(width: 10),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  '📜 今日の挑戦状',
+                  style: serif(13, color: const Color(0xFFB0601A)),
+                ),
+                Text(
+                  '${stage.enemy.name}（${RpgCatalog.world(stage.worldId).subject}・${stage.enemy.effectiveAbility == EnemyAbility.none ? '能力なし' : stage.enemy.effectiveAbility.label}）',
+                  style: const TextStyle(
+                    fontSize: 12.5,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+                Text(
+                  done
+                      ? '今日はたおした！ また明日、別の魔物が現れる'
+                      : 'たおすと経験値 ${stage.expReward}（ふつうの3倍）',
+                  style: const TextStyle(
+                    fontSize: 11.5,
+                    color: TsuzuriColors.inkSoft,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          FilledButton(
+            style: FilledButton.styleFrom(
+              backgroundColor: const Color(0xFFD9822B),
+              padding: const EdgeInsets.symmetric(horizontal: 12),
+            ),
+            onPressed: done ? null : () => _start(context, stage),
+            child: Text(done ? '達成' : '挑む'),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _LookPainter extends CustomPainter {
+  _LookPainter(this.enemy);
+  final EnemyDef enemy;
+  @override
+  void paint(Canvas canvas, Size size) => paintEnemy(
+    canvas,
+    size.shortestSide,
+    enemy.look,
+    0.5,
+    color: enemy.color,
+  );
+  @override
+  bool shouldRepaint(_LookPainter old) => false;
 }
