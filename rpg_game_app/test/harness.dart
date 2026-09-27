@@ -25,17 +25,23 @@ class SilentAudio implements AudioBackend {
 
 /// 画面を本物と同じサービスの中で開く。開いたあと [frames] × 100ms 進めて、
 /// エラーが出ていないことを確かめる。
+/// 最後に開いた画面のサービス（テストで保存内容を確かめる用）
+class RpgServicesHolder {
+  static RpgServices? last;
+}
+
 Future<RpgServices> openScreen(
   WidgetTester tester,
   Widget page, {
   Map<String, Object> prefs = const {},
   int frames = 10,
   Size size = const Size(420, 860),
+  bool keepPrefs = false,
 }) async {
   tester.view.physicalSize = size;
   tester.view.devicePixelRatio = 1;
   addTearDown(tester.view.reset);
-  SharedPreferences.setMockInitialValues(prefs);
+  if (!keepPrefs) SharedPreferences.setMockInitialValues(prefs);
   final p = await SharedPreferences.getInstance();
   late RpgServices services;
   await tester.pumpWidget(
@@ -51,6 +57,7 @@ Future<RpgServices> openScreen(
       child: Builder(
         builder: (context) {
           services = RpgServices.of(context);
+          RpgServicesHolder.last = services;
           return MaterialApp(navigatorObservers: [routeObserver], home: page);
         },
       ),

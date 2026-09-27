@@ -99,6 +99,15 @@ class _DoorDialog extends _Dialog {
   final Cell cell;
 }
 
+class _NpcDialog extends _Dialog {
+  _NpcDialog(this.talk, this.questKey);
+  final NpcTalk talk;
+
+  /// 頼みごとのごほうびを記録する文字列（頼みごとがなければ null）
+  final String? questKey;
+  int page = 0;
+}
+
 class _WarpDialog extends _Dialog {
   _WarpDialog(this.cell);
   final Cell cell;
@@ -155,6 +164,7 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
     masteredArea: (a) => _mastered.contains(a),
     onDoor: (stage, cell) => _open(_DoorDialog(stage, cell)),
     onWarp: _touchWarp,
+    onNpc: _talkTo,
     onEncounter: (stage, cleared) => _open(_EncounterDialog(stage, cleared)),
     onMessage: (text) => _open(_MessageDialog(text)),
     onInn: (stage) => _open(_InnDialog(stage)),
@@ -212,6 +222,7 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
   @override
   void initState() {
     super.initState();
+    _game.npcHasQuest = _npcHasQuest;
     _game.areaNo.addListener(_onAreaChanged);
   }
 
@@ -428,6 +439,72 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
       if (!mounted) return;
     }
     _open(_WarpDialog(cell));
+  }
+
+  /// そのエリアの小部屋（隠し通路・知識の扉）の宝箱
+  Cell? _nookChest(int area) {
+    for (final e in _game.map.chestKinds.entries) {
+      if (e.value == ChestKind.main) continue;
+      if (_game.map.areaAt(e.key.col, e.key.row) == area) return e.key;
+    }
+    return null;
+  }
+
+  String _questKey(int area) => 'npcq:${_game.map.id}:$area';
+
+  bool _chestDone(String chestId) =>
+      _plan?.openedChests.contains(chestId) ??
+      _progress.openedChests.contains(chestId);
+
+  /// 頼みごとの「！」を出すか（まだごほうびを受け取っていない頼みごとがある）
+  bool _npcHasQuest(Cell cell) {
+    final area = _game.map.areaAt(cell.col, cell.row);
+    if (_nookChest(area) == null) return false;
+    return !_progress.fieldFlags.contains(_questKey(area));
+  }
+
+  /// 住人に話しかけた
+  void _talkTo(StageDef? stage, Cell cell) {
+    if (stage == null) {
+      _open(_NpcDialog(Npcs.storytellerTalk(Story.fragments(_progress)), null));
+      return;
+    }
+    final area = _game.map.areaAt(cell.col, cell.row);
+    final chest = _nookChest(area);
+    final key = _questKey(area);
+    final talk = Npcs.talk(
+      _source(stage),
+      _game.map.terrainAt(cell.col, cell.row),
+      score: _areaScore[area],
+      nookIsSecret: chest == null
+          ? null
+          : _game.map.chestKinds[chest] == ChestKind.secret,
+      nookChestOpened: chest != null && _chestDone(_game.chestIdAt(chest)),
+      questRewarded: _progress.fieldFlags.contains(key),
+    );
+    _open(_NpcDialog(talk, chest == null ? null : key));
+  }
+
+  /// 頼みごとのごほうびを受け取る
+  Future<void> _claimQuest(String key) async {
+    final services = RpgServices.of(context);
+    final latest = await services.repository.load();
+    if (latest.fieldFlags.contains(key)) return;
+    final flagged = latest.copyWith(fieldFlags: {...latest.fieldFlags, key});
+    final plan = _plan;
+    if (plan != null) {
+      // 試験対策ワールドでは経験値ではなく、テスト対策ゲージがたまる
+      await _save(flagged);
+      final p = services.examWorlds.byId(plan.id) ?? plan;
+      await _saveExam(p.addGauge(3));
+      if (!mounted) return;
+      _open(_MessageDialog('お礼に「要点メモ」をもらった！ テスト対策ゲージが 3 たまった。'));
+      return;
+    }
+    final r = Progression.addExp(flagged, Npcs.questExp);
+    await _save(r.progress);
+    if (!mounted) return;
+    _open(_MessageDialog('お礼をもらった！ 経験値 +${Npcs.questExp}'));
   }
 
   /// 出入口を通って別のマップへ移動する
@@ -807,6 +884,44 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
               Text(
                 '扉に文字がきざまれている。「${_source(stage).grammarTheme}」の問いに正解すると開くらしい。\n奥に何かがありそうだ。（何度でも挑戦できる）',
                 style: const TextStyle(fontSize: 13.5, height: 1.6),
+              ),
+            ],
+          ),
+        );
+      case _NpcDialog(:final talk, :final questKey):
+        final last = d.page >= talk.lines.length - 1;
+        return _MessageBox(
+          actions: [
+            if (!last)
+              FilledButton(
+                onPressed: () => setState(() => d.page++),
+                child: const Text('つぎへ'),
+              )
+            else if (talk.questReady && questKey != null)
+              FilledButton.icon(
+                onPressed: () => _claimQuest(questKey),
+                icon: const Icon(Icons.card_giftcard, size: 18),
+                label: const Text('お礼を受け取る'),
+              )
+            else
+              FilledButton(onPressed: _close, child: const Text('とじる')),
+          ],
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(talk.npc.name, style: serif(16)),
+              const SizedBox(height: 4),
+              Text(
+                talk.lines[d.page.clamp(0, talk.lines.length - 1)],
+                style: const TextStyle(fontSize: 14, height: 1.6),
+              ),
+              const SizedBox(height: 4),
+              Text(
+                '${d.page + 1} / ${talk.lines.length}',
+                style: const TextStyle(
+                  fontSize: 11,
+                  color: TsuzuriColors.inkSoft,
+                ),
               ),
             ],
           ),

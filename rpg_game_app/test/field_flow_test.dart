@@ -86,7 +86,7 @@ void main() {
     final g = _game(t);
     final map = g.map;
     final seen = <String>[];
-    for (final ch in ['S', 'I', 'W', 'X', 'C', 'H', 'D', 'M', 'E', 'G']) {
+    for (final ch in ['S', 'N', 'I', 'W', 'X', 'C', 'H', 'D', 'M', 'E', 'G']) {
       final cells = map.findAll(ch);
       if (cells.isEmpty) continue;
       // 最初のエリア付近（下の方）から選ぶ
@@ -101,11 +101,15 @@ void main() {
           await _answerQuiz(t);
         }
       }
+      // 住人の話は最後のページまで読む
+      for (var i = 0; i < 8; i++) {
+        if (!await _press(t, 'つぎへ')) break;
+      }
       expect(t.takeException(), isNull, reason: '「$ch」のダイアログ');
       await _closeAll(t);
       await _frames(t, 5);
     }
-    expect(seen, containsAll(['S', 'I', 'X', 'C', 'E', 'G']));
+    expect(seen, containsAll(['S', 'N', 'I', 'X', 'C', 'E', 'G']));
     // エリア名の見出しを消すタイマーが終わるまで待つ
     await _frames(t, 40);
   });
@@ -176,4 +180,56 @@ void main() {
       await _frames(t, 40);
     });
   }
+
+  testWidgets('住人の頼みごと：奥の宝箱を開けてから話しかけると、お礼がもらえる', (t) async {
+    final services = await openScreen(
+      t,
+      FieldScreen(
+        world: RpgCatalog.world(RpgCatalog.englishWorldId),
+        progress: RpgProgress.initial,
+      ),
+      frames: 20,
+    );
+    final g = _game(t);
+    // エリア1の住人と、同じエリアの奥の宝箱
+    final npc = (g.map.findAll(
+      'N',
+    )..sort((a, b) => b.row.compareTo(a.row))).first;
+    final area = g.map.areaAt(npc.col, npc.row);
+    final chest = g.map.chestKinds.entries
+        .firstWhere(
+          (e) =>
+              e.value != ChestKind.main &&
+              g.map.areaAt(e.key.col, e.key.row) == area,
+        )
+        .key;
+    // 宝箱を開けたことにする
+    final p = await services.repository.load();
+    await services.repository.save(
+      p.copyWith(openedChests: {...p.openedChests, g.chestIdAt(chest)}),
+    );
+    g.applyProgress(await services.repository.load());
+    // 保存した記録でフィールドを開きなおして、住人に話しかける
+    await t.pumpWidget(const SizedBox());
+    await openScreen(
+      t,
+      FieldScreen(
+        world: RpgCatalog.world(RpgCatalog.englishWorldId),
+        progress: await services.repository.load(),
+      ),
+      frames: 20,
+      keepPrefs: true,
+    );
+    final g2 = _game(t);
+    await _bump(t, g2, npc);
+    for (var i = 0; i < 8; i++) {
+      if (!await _press(t, 'つぎへ')) break;
+    }
+    expect(await _press(t, 'お礼を受け取る'), isTrue);
+    await _frames(t, 10);
+    final after = await RpgServicesHolder.last!.repository.load();
+    expect(after.totalExp, greaterThanOrEqualTo(Npcs.questExp));
+    expect(t.takeException(), isNull);
+    await _frames(t, 40);
+  });
 }

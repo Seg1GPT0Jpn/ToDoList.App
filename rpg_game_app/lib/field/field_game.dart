@@ -45,6 +45,7 @@ class FieldGame extends FlameGame with KeyboardEvents {
     required this.onSecret,
     required this.onDoor,
     required this.onWarp,
+    required this.onNpc,
     this.from,
     this.isCleared,
     this.chestOpened,
@@ -66,6 +67,12 @@ class FieldGame extends FlameGame with KeyboardEvents {
 
   /// ワープ石（X）にさわったとき
   final void Function(Cell cell) onWarp;
+
+  /// 住人（N）に話しかけたとき。引数はその先にいるステージ（ハブなら null）
+  final void Function(StageDef? nextStage, Cell cell) onNpc;
+
+  /// 頼みごとの「！」を出す住人
+  bool Function(Cell cell)? npcHasQuest;
 
   /// ステージをクリアしたか（試験対策ワールドでは、ワールドの中の記録で判定する）
   final bool Function(RpgProgress progress, StageDef stage)? isCleared;
@@ -126,6 +133,7 @@ class FieldGame extends FlameGame with KeyboardEvents {
   final Map<Cell, SealToken> _seals = {};
   final Map<Cell, WarpToken> _warps = {};
   final Map<Cell, EnemyToken> _elites = {};
+  final Map<Cell, NpcToken> _npcs = {};
 
   /// 画面の十字ボタンで押されている方向
   Facing? padDirection;
@@ -175,6 +183,17 @@ class FieldGame extends FlameGame with KeyboardEvents {
         world.add(token);
       }
     }
+    for (final c in map.findAll('N')) {
+      final stage = _stageAhead(c);
+      final token = NpcToken(
+        c,
+        color: stage == null
+            ? Npcs.storyteller.color
+            : Npcs.of(map.terrainAt(c.col, c.row)).color,
+      );
+      _npcs[c] = token;
+      world.add(token);
+    }
     for (final c in map.findAll('X')) {
       final token = WarpToken(c);
       _warps[c] = token;
@@ -214,6 +233,9 @@ class FieldGame extends FlameGame with KeyboardEvents {
     }
     for (final e in _warps.entries) {
       e.value.active = progress.fieldFlags.contains(warpKey(map.id, e.key));
+    }
+    for (final e in _npcs.entries) {
+      e.value.quest = npcHasQuest?.call(e.key) ?? false;
     }
     for (final token in _elites.values) {
       final cleared = _cleared(progress, token.stage);
@@ -417,6 +439,10 @@ class FieldGame extends FlameGame with KeyboardEvents {
       case 'X':
         _bumpedDirection = dir;
         onWarp(target);
+        return;
+      case 'N':
+        _bumpedDirection = dir;
+        onNpc(_stageAhead(target), target);
         return;
       case 'I':
         _bumpedDirection = dir;
@@ -1135,4 +1161,33 @@ class LightLayer extends PositionComponent {
       }
     }
   }
+}
+
+/// 住人（NPC）。ゆっくり上下にゆれる
+class NpcToken extends PositionComponent {
+  NpcToken(this.cell, {required this.color})
+    : super(
+        size: Vector2.all(tileSize),
+        position: Vector2(cell.col * tileSize, cell.row * tileSize),
+        priority: cell.row * 10 + 4,
+      );
+
+  final Cell cell;
+  final int color;
+
+  /// 頼みごとの「！」を出すか
+  bool quest = false;
+  double _t = Random().nextDouble() * 5;
+
+  @override
+  void update(double dt) => _t += dt;
+
+  @override
+  void render(ui.Canvas canvas) => TerrainArt.npc(
+    canvas,
+    Rect.fromLTWH(0, 0, tileSize, tileSize),
+    color: color,
+    bob: (sin(_t * 2) + 1) * 0.8,
+    quest: quest,
+  );
 }

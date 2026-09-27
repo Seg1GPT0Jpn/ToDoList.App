@@ -153,6 +153,18 @@ void checkRoute(String name, FieldMap map, List<StageDef> stages, Cell start) {
       }
     });
 
+    test('どのエリアにも住人（NPC）がいて、話しかけられる', () {
+      final npcs = map.findAll('N');
+      expect(
+        {for (final n in npcs) map.enemyAhead(n)},
+        {for (final s in stages) s.order},
+      );
+      final all = reachable(1 << 20, withGhosts: true);
+      for (final n in npcs) {
+        expect(adjacent(all, n), isTrue, reason: '住人 $n');
+      }
+    });
+
     test('どのエリアにもワープ石があり、立ち寄れる', () {
       final warps = map.findAll('X');
       expect(

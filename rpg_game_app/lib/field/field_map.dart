@@ -31,6 +31,7 @@ enum ChestKind {
 ///   H  隠し通路（見た目は障害物。調べると通れるようになる）
 ///   D  知識の扉（問題に正解すると開く）
 ///   X  ワープ石（さわった石どうしを行き来できる）
+///   N  住人（NPC。話しかけると、この先のことや学び方を教えてくれる）
 ///   O  出入口（ほかのマップへ移動する）
 ///
 /// エリアごとに、名前（「ばねの林」「助動詞の関所」など）から地形 [Terrain] が決まり、
@@ -250,7 +251,7 @@ class FieldMap {
       '###########',
       '#.........#',
       '#.T.....T.#',
-      '#....S....#',
+      '#....S.N..#',
       '#.........#',
       '#.~.....~.#',
       '#....P....#',
@@ -861,7 +862,7 @@ class _Room {
       tiles[rr][cc] = ch;
       g[rr][cc] = true;
       reachable.remove((rr, cc));
-      if (const {'I', 'X', 'C', 'W', 'S'}.contains(ch)) {
+      if (const {'I', 'X', 'C', 'W', 'S', 'N'}.contains(ch)) {
         needsAccess.add((rr, cc));
       }
     }
@@ -907,7 +908,7 @@ class _Room {
       }
     }
     // 宿とワープ石：入口に近い床
-    for (final ch in const ['I', 'X']) {
+    for (final ch in const ['I', 'X', 'N']) {
       final d = distances();
       // 入口から2マス以上はなれた床を、近い順に（見つからなければ遠くても置く）
       final cand =

@@ -900,4 +900,71 @@ class TerrainArt {
       ..lineTo(r.left + 15, r.top + 22);
     c.drawPath(path, p);
   }
+
+  /// 住人（NPC）。服の色で見分ける。[talkable] なら頭の上にふきだしを出す
+  static void npc(
+    ui.Canvas c,
+    Rect r, {
+    required int color,
+    double bob = 0,
+    bool quest = false,
+  }) {
+    final cx = r.center.dx, top = r.top + 2 - bob;
+    _shadow(c, r, 16);
+    // 服（すそが広がったローブ）
+    final robe = ui.Path()
+      ..moveTo(cx - 5, top + 13)
+      ..lineTo(cx + 5, top + 13)
+      ..lineTo(cx + 9, r.bottom - 4)
+      ..lineTo(cx - 9, r.bottom - 4)
+      ..close();
+    c.drawPath(robe, _fill(color));
+    c.drawPath(robe, _ink..strokeWidth = 1.1);
+    // 頭
+    c.drawCircle(Offset(cx, top + 8), 6.5, _fill(0xFFFCE3CF));
+    c.drawCircle(Offset(cx, top + 8), 6.5, _ink..strokeWidth = 1.1);
+    // 髪
+    c.drawArc(
+      Rect.fromCircle(center: Offset(cx, top + 8), radius: 6.5),
+      pi,
+      pi,
+      true,
+      _fill(0xFF5D4037),
+    );
+    // 目
+    c.drawCircle(Offset(cx - 2.3, top + 9), 0.9, _fill(0xFF2E2A33));
+    c.drawCircle(Offset(cx + 2.3, top + 9), 0.9, _fill(0xFF2E2A33));
+    // ふきだし（頼みごとがあるときは「！」、ないときは「…」）
+    final bubble = Rect.fromCenter(
+      center: Offset(cx + 10, top - 3),
+      width: 13,
+      height: 10,
+    );
+    c.drawRRect(
+      ui.RRect.fromRectAndRadius(bubble, const ui.Radius.circular(4)),
+      _fill(0xFFFFFDF8),
+    );
+    c.drawRRect(
+      ui.RRect.fromRectAndRadius(bubble, const ui.Radius.circular(4)),
+      _ink..strokeWidth = 0.9,
+    );
+    if (quest) {
+      c.drawLine(
+        Offset(bubble.center.dx, bubble.top + 2),
+        Offset(bubble.center.dx, bubble.bottom - 4),
+        ui.Paint()
+          ..color = const ui.Color(0xFFC62828)
+          ..strokeWidth = 1.6,
+      );
+      c.drawCircle(
+        Offset(bubble.center.dx, bubble.bottom - 2),
+        0.9,
+        _fill(0xFFC62828),
+      );
+    } else {
+      for (final dx in [-3.0, 0.0, 3.0]) {
+        c.drawCircle(bubble.center + Offset(dx, 0), 0.9, _fill(0xFF2E2A33));
+      }
+    }
+  }
 }
