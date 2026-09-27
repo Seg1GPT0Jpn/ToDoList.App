@@ -456,15 +456,26 @@ class _WorldCard extends StatelessWidget {
                     ),
                     const SizedBox(height: 6),
                     if (playable) ...[
-                      Row(
-                        children: [
-                          for (var i = 0; i < world.stages.length; i++)
-                            Icon(
-                              i < cleared ? Icons.star : Icons.star_border,
-                              size: 14,
-                              color: const Color(0xFFE0A800),
-                            ),
-                        ],
+                      // エリア数が多い（数学は90）ので、★は数とバーで表す
+                      Text(
+                        '★ $cleared / ${world.stages.length}',
+                        style: const TextStyle(
+                          fontSize: 12,
+                          color: Color(0xFFB8860B),
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      const SizedBox(height: 2),
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(3),
+                        child: LinearProgressIndicator(
+                          value: world.stages.isEmpty
+                              ? 0
+                              : cleared / world.stages.length,
+                          minHeight: 5,
+                          backgroundColor: TsuzuriColors.gridLine,
+                          color: const Color(0xFFE0A800),
+                        ),
                       ),
                       const SizedBox(height: 4),
                       Text(

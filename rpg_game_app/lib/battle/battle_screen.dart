@@ -1487,7 +1487,8 @@ class _PopupText extends StatelessWidget {
         return Transform.translate(
           offset: Offset(0, -v * 40),
           child: Opacity(
-            opacity: v < 0.7 ? 1 : (1 - (v - 0.7) / 0.3),
+            // 計算の誤差でわずかにマイナスになることがあるので、0〜1 におさめる
+            opacity: (v < 0.7 ? 1.0 : 1 - (v - 0.7) / 0.3).clamp(0.0, 1.0),
             child: Transform.scale(
               scale: 0.4 + pop * 0.6,
               child: Text(
