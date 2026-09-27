@@ -6,6 +6,7 @@ import 'package:rpg_game/rpg_game.dart';
 
 import '../app/services.dart';
 import '../app/theme.dart';
+import '../app/toast.dart';
 import '../art/enemy_painter.dart';
 import '../art/hero_painter.dart';
 import '../art/paper.dart';
@@ -524,11 +525,41 @@ class _VersusScreenState extends State<VersusScreen>
               : 'defeat',
         );
         widget.onFinished?.call(_match);
+        _recordResult();
         setState(() {});
         return;
       }
       _startRound();
     });
+  }
+
+  /// 対戦の記録を残し、実績を解除する
+  Future<void> _recordResult() async {
+    final services = RpgServices.of(context);
+    final p = await services.repository.load();
+    final flags = VersusRecords.after(
+      won: _match.winner == _me,
+      cpu: widget.cpu,
+      online: _online != null,
+    );
+    final next = p.copyWith(fieldFlags: {...p.fieldFlags, ...flags});
+    await services.repository.save(next);
+    final meta = services.meta;
+    final today = RpgServices.today();
+    final unlocked = Achievements.newlyAchieved(
+      AchievementContext(
+        progress: next,
+        record: meta.record,
+        journal: meta.journal,
+        today: today,
+      ),
+    );
+    if (unlocked.isEmpty) return;
+    await meta.save(
+      journal: meta.journal.unlock(unlocked.map((a) => a.id), today),
+    );
+    services.music.se('se_achievement');
+    showMetaToast(achievements: unlocked);
   }
 
   void _rematch() {

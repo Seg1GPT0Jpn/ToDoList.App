@@ -58,6 +58,14 @@ void main() {
       expect(t.takeException(), isNull);
     }
     expect(find.text('あなたの勝ち！'), findsOneWidget);
+    await t.runAsync(
+      () => Future<void>.delayed(const Duration(milliseconds: 50)),
+    );
+    await _frames(t, 2);
+    final services = RpgServicesHolder.last!;
+    final p = await t.runAsync(() => services.repository.load());
+    expect(p!.fieldFlags, contains(VersusRecords.played));
+    expect(services.meta.journal.achievements, contains('versus_played'));
     await t.tap(find.text('もう一度'));
     await _frames(t, 5);
     expect(find.text('あなたの勝ち！'), findsNothing);

@@ -343,3 +343,36 @@ class VersusRoomConfig {
         rounds: (m['rounds'] as num?)?.toInt() ?? 15,
       );
 }
+
+/// 対戦の記録（進行状況の fieldFlags に残す。実績の判定に使う）
+class VersusRecords {
+  const VersusRecords._();
+
+  /// 対戦を最後まで遊んだ
+  static const played = 'vs:played';
+
+  /// CPU の「つよい」以上に勝った
+  static const beatHard = 'vs:beat:hard';
+
+  /// CPU の「達人」に勝った
+  static const beatMaster = 'vs:beat:master';
+
+  /// オンライン対戦で勝った
+  static const onlineWin = 'vs:online:win';
+
+  /// 必殺技を決めた
+  static const specialHit = 'special:hit';
+
+  /// 対戦が終わったときにつける記録
+  static Set<String> after({
+    required bool won,
+    CpuLevel? cpu,
+    bool online = false,
+  }) =>
+      {
+        played,
+        if (won && cpu != null && cpu.index >= CpuLevel.hard.index) beatHard,
+        if (won && cpu == CpuLevel.master) beatMaster,
+        if (won && online) onlineWin,
+      };
+}

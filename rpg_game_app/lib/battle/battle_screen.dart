@@ -671,7 +671,16 @@ class _BattleScreenState extends State<BattleScreen>
             summary: summary,
           );
     if (!widget.trial) await services.repository.save(result.progress);
-    await _commitMeta(summary, result.progress);
+    var saved = result.progress;
+    // 必殺技を決めたことを記録する（実績「必殺の一撃」）
+    if (summary.turns.any((t) => t.special)) {
+      final latestNow = await services.repository.load();
+      saved = latestNow.copyWith(
+        fieldFlags: {...latestNow.fieldFlags, VersusRecords.specialHit},
+      );
+      await services.repository.save(saved);
+    }
+    await _commitMeta(summary, saved);
     widget.onFinished?.call(summary);
     if (!mounted) return;
     Navigator.of(context).pushReplacement(

@@ -1,6 +1,8 @@
 import '../learning/learning_record.dart';
 import '../models/rpg_progress.dart';
+import '../story/scenes.dart';
 import '../story/story.dart';
+import '../versus/versus_match.dart';
 import '../world/elites.dart';
 import 'enemy_species.dart';
 import 'journal.dart';
@@ -370,7 +372,64 @@ class Achievements {
           .where((s) => (c.journal.defeatedLooks[s.look] ?? 0) > 0)
           .length,
     ),
+    AchievementDef(
+      id: 'special_hit',
+      title: '必殺の一撃',
+      description: 'バトルで必殺技を決める',
+      group: AchievementGroup.battle,
+      rarity: Rarity.common,
+      goal: 1,
+      value: (c) => _flag(c, VersusRecords.specialHit),
+    ),
+    AchievementDef(
+      id: 'versus_played',
+      title: '好敵手',
+      description: '対戦モードで、最後まで対戦する',
+      group: AchievementGroup.battle,
+      rarity: Rarity.common,
+      goal: 1,
+      value: (c) => _flag(c, VersusRecords.played),
+    ),
+    AchievementDef(
+      id: 'versus_hard',
+      title: 'はやおし名人',
+      description: '対戦モードで、CPU の「つよい」以上に勝つ',
+      group: AchievementGroup.battle,
+      rarity: Rarity.rare,
+      goal: 1,
+      value: (c) => _flag(c, VersusRecords.beatHard),
+    ),
+    AchievementDef(
+      id: 'versus_master',
+      title: 'はやおしの達人',
+      description: '対戦モードで、CPU の「達人」に勝つ',
+      group: AchievementGroup.battle,
+      rarity: Rarity.epic,
+      goal: 1,
+      value: (c) => _flag(c, VersusRecords.beatMaster),
+    ),
+    AchievementDef(
+      id: 'versus_online',
+      title: 'ネットの向こうの好敵手',
+      description: 'オンライン対戦で勝つ',
+      group: AchievementGroup.battle,
+      rarity: Rarity.rare,
+      goal: 1,
+      value: (c) => _flag(c, VersusRecords.onlineWin),
+    ),
+    AchievementDef(
+      id: 'story_all',
+      title: '物語の語り手',
+      description: '物語の場面をすべて読む',
+      group: AchievementGroup.collection,
+      rarity: Rarity.epic,
+      goal: StoryScenes.all.length,
+      value: (c) => StoryScenes.unlocked(c.progress).length,
+    ),
   ];
+
+  static int _flag(AchievementContext c, String flag) =>
+      c.progress.fieldFlags.contains(flag) ? 1 : 0;
 
   static AchievementDef? byId(String id) {
     for (final a in all) {
