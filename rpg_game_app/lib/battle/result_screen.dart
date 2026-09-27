@@ -51,6 +51,12 @@ class _ResultScreenState extends State<ResultScreen>
     vsync: this,
     duration: const Duration(milliseconds: 900),
   );
+
+  /// 勝ったときの紙吹雪
+  late final _confetti = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 3200),
+  );
   int _shownLevel = 0;
 
   ExpGainResult get _gain => widget.result.expResult;
@@ -64,6 +70,7 @@ class _ResultScreenState extends State<ResultScreen>
     () async {
       await Future<void>.delayed(const Duration(milliseconds: 250));
       if (!mounted) return;
+      if (widget.summary.won) _confetti.forward();
       await _stamp.forward();
       await Future<void>.delayed(const Duration(milliseconds: 250));
       if (mounted && _gain.expGained > 0) _exp.forward();
@@ -75,6 +82,7 @@ class _ResultScreenState extends State<ResultScreen>
     _stamp.dispose();
     _exp.dispose();
     _levelUp.dispose();
+    _confetti.dispose();
     super.dispose();
   }
 
@@ -129,136 +137,157 @@ class _ResultScreenState extends State<ResultScreen>
           ),
         ),
       ),
-      body: NotebookPaper(
-        child: SafeArea(
-          child: ListView(
-            padding: const EdgeInsets.fromLTRB(44, 24, 16, 24),
-            children: [
-              Text(
-                '${RpgCatalog.stageLabel(widget.stage)}「${widget.stage.name}」',
-                style: const TextStyle(color: TsuzuriColors.inkSoft),
-              ),
-              const SizedBox(height: 16),
-              Center(
-                child: _Stamp(controller: _stamp, won: won),
-              ),
-              const SizedBox(height: 8),
-              Center(
-                child: Text(
-                  won
-                      ? (s.isPerfect
-                            ? 'ノーミスで $_enemyName をたおした！'
-                            : '$_enemyName をたおした！')
-                      : '$_enemyName にやられてしまった…',
-                  style: serif(17),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              const SizedBox(height: 20),
-              _card(
-                child: Column(
-                  children: [
-                    _row(
-                      '正解',
-                      '${s.correctCount} / ${s.answeredCount}問（${(s.accuracy * 100).round()}%）',
+      body: Stack(
+        children: [
+          NotebookPaper(
+            child: SafeArea(
+              child: ListView(
+                padding: const EdgeInsets.fromLTRB(44, 24, 16, 24),
+                children: [
+                  Text(
+                    '${RpgCatalog.stageLabel(widget.stage)}「${widget.stage.name}」',
+                    style: const TextStyle(color: TsuzuriColors.inkSoft),
+                  ),
+                  const SizedBox(height: 16),
+                  Center(
+                    child: _Stamp(controller: _stamp, won: won),
+                  ),
+                  const SizedBox(height: 8),
+                  Center(
+                    child: Text(
+                      won
+                          ? (s.isPerfect
+                                ? 'ノーミスで $_enemyName をたおした！'
+                                : '$_enemyName をたおした！')
+                          : '$_enemyName にやられてしまった…',
+                      style: serif(17),
+                      textAlign: TextAlign.center,
                     ),
-                    _row('最大コンボ', '${s.maxCombo}'),
-                    _row('獲得経験値', '+${_gain.expGained} EXP'),
-                    if (widget.result.firstClear) _row('ボーナス', '初回クリア！'),
+                  ),
+                  const SizedBox(height: 20),
+                  _card(
+                    child: Column(
+                      children: [
+                        _row(
+                          '正解',
+                          '${s.correctCount} / ${s.answeredCount}問（${(s.accuracy * 100).round()}%）',
+                        ),
+                        _row('最大コンボ', '${s.maxCombo}'),
+                        _row('獲得経験値', '+${_gain.expGained} EXP'),
+                        if (widget.result.firstClear) _row('ボーナス', '初回クリア！'),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+                  _card(child: _expPanel()),
+                  if (widget.result.newCard case final card?)
+                    _notice(
+                      Icons.style,
+                      const Color(0xFF6A4BA8),
+                      'カード「${card.name}」を手に入れた！',
+                      card.description,
+                    ),
+                  if (widget.result.rescued case final friend?)
+                    _notice(
+                      Icons.favorite,
+                      const Color(0xFFD64545),
+                      '${friend.name}を助け出した！ 仲間になった！',
+                      friend.description,
+                    ),
+                  if (widget.ghost && won)
+                    _notice(
+                      Icons.auto_awesome,
+                      const Color(0xFF3B8FB5),
+                      '亡霊が成仏した！',
+                      '正解した問題は復習手帳から消えたよ。',
+                    ),
+                  if (widget.result.newMistakes > 0)
+                    _notice(
+                      Icons.menu_book,
+                      TsuzuriColors.inkSoft,
+                      '亡霊が${widget.result.newMistakes}体うまれた…',
+                      'まちがえた問題はフィールドをさまよっている。話しかけると再戦できるよ。くわしい解説は復習手帳へ。',
+                    ),
+                  if (!won &&
+                      !widget.ghost &&
+                      widget.stage.captiveCompanionId != null &&
+                      !widget.result.progress.companions.contains(
+                        widget.stage.captiveCompanionId,
+                      ))
+                    _notice(
+                      Icons.lock,
+                      TsuzuriColors.wrong,
+                      '${CompanionDef.byId(widget.stage.captiveCompanionId!).name}が捕まっている！',
+                      'リベンジして勝てば助け出せる。仲間になってくれるかも。',
+                    ),
+                  if (widget.skillAfter case final after? when after.rated) ...[
+                    const SizedBox(height: 12),
+                    _card(
+                      color: const Color(0xFFEAF4EA),
+                      child: Row(
+                        children: [
+                          const Icon(
+                            Icons.insights,
+                            color: TsuzuriColors.correct,
+                          ),
+                          const SizedBox(width: 10),
+                          Expanded(
+                            child: Text(
+                              widget.skillBefore?.rated == true
+                                  ? '${after.field} 熟練度 ${widget.skillBefore!.score} → ${after.score}'
+                                        '${after.score > widget.skillBefore!.score ? '（+${after.score - widget.skillBefore!.score}）' : ''}'
+                                  : '${after.field} 熟練度 ${after.score}（はじめて判定されました）',
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
-                ),
+                  if (widget.result.newlyUnlockedStageId != null) ...[
+                    const SizedBox(height: 12),
+                    _card(
+                      color: const Color(0xFFFFF8E1),
+                      child: Row(
+                        children: [
+                          const Icon(Icons.lock_open, color: Color(0xFFB8860B)),
+                          const SizedBox(width: 10),
+                          Expanded(
+                            child: Text(
+                              '「${RpgCatalog.stage(widget.result.newlyUnlockedStageId!).name}」への道がひらけた！',
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                  if (s.missedQuestions.isNotEmpty) ...[
+                    const SizedBox(height: 20),
+                    Text('ふりかえり', style: serif(16)),
+                    const SizedBox(height: 6),
+                    for (final q in s.missedQuestions) _review(q),
+                  ],
+                  const SizedBox(height: 16),
+                ],
               ),
-              const SizedBox(height: 12),
-              _card(child: _expPanel()),
-              if (widget.result.newCard case final card?)
-                _notice(
-                  Icons.style,
-                  const Color(0xFF6A4BA8),
-                  'カード「${card.name}」を手に入れた！',
-                  card.description,
-                ),
-              if (widget.result.rescued case final friend?)
-                _notice(
-                  Icons.favorite,
-                  const Color(0xFFD64545),
-                  '${friend.name}を助け出した！ 仲間になった！',
-                  friend.description,
-                ),
-              if (widget.ghost && won)
-                _notice(
-                  Icons.auto_awesome,
-                  const Color(0xFF3B8FB5),
-                  '亡霊が成仏した！',
-                  '正解した問題は復習手帳から消えたよ。',
-                ),
-              if (widget.result.newMistakes > 0)
-                _notice(
-                  Icons.menu_book,
-                  TsuzuriColors.inkSoft,
-                  '亡霊が${widget.result.newMistakes}体うまれた…',
-                  'まちがえた問題はフィールドをさまよっている。話しかけると再戦できるよ。くわしい解説は復習手帳へ。',
-                ),
-              if (!won &&
-                  !widget.ghost &&
-                  widget.stage.captiveCompanionId != null &&
-                  !widget.result.progress.companions.contains(
-                    widget.stage.captiveCompanionId,
-                  ))
-                _notice(
-                  Icons.lock,
-                  TsuzuriColors.wrong,
-                  '${CompanionDef.byId(widget.stage.captiveCompanionId!).name}が捕まっている！',
-                  'リベンジして勝てば助け出せる。仲間になってくれるかも。',
-                ),
-              if (widget.skillAfter case final after? when after.rated) ...[
-                const SizedBox(height: 12),
-                _card(
-                  color: const Color(0xFFEAF4EA),
-                  child: Row(
-                    children: [
-                      const Icon(Icons.insights, color: TsuzuriColors.correct),
-                      const SizedBox(width: 10),
-                      Expanded(
-                        child: Text(
-                          widget.skillBefore?.rated == true
-                              ? '${after.field} 熟練度 ${widget.skillBefore!.score} → ${after.score}'
-                                    '${after.score > widget.skillBefore!.score ? '（+${after.score - widget.skillBefore!.score}）' : ''}'
-                              : '${after.field} 熟練度 ${after.score}（はじめて判定されました）',
-                          style: const TextStyle(fontWeight: FontWeight.w700),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-              if (widget.result.newlyUnlockedStageId != null) ...[
-                const SizedBox(height: 12),
-                _card(
-                  color: const Color(0xFFFFF8E1),
-                  child: Row(
-                    children: [
-                      const Icon(Icons.lock_open, color: Color(0xFFB8860B)),
-                      const SizedBox(width: 10),
-                      Expanded(
-                        child: Text(
-                          '「${RpgCatalog.stage(widget.result.newlyUnlockedStageId!).name}」への道がひらけた！',
-                          style: const TextStyle(fontWeight: FontWeight.w700),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-              if (s.missedQuestions.isNotEmpty) ...[
-                const SizedBox(height: 20),
-                Text('ふりかえり', style: serif(16)),
-                const SizedBox(height: 6),
-                for (final q in s.missedQuestions) _review(q),
-              ],
-              const SizedBox(height: 16),
-            ],
+            ),
           ),
-        ),
+          // 勝ったときの紙吹雪
+          IgnorePointer(
+            child: AnimatedBuilder(
+              animation: _confetti,
+              builder: (_, _) => CustomPaint(
+                size: Size.infinite,
+                painter: _ConfettiPainter(_confetti.value),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -484,4 +513,55 @@ class _Stamp extends StatelessWidget {
       ),
     );
   }
+}
+
+/// 勝ったときの紙吹雪（ノートの切れはし・星）
+class _ConfettiPainter extends CustomPainter {
+  _ConfettiPainter(this.v);
+  final double v;
+
+  static const _colors = [
+    Color(0xFFE57373),
+    Color(0xFFF2B84B),
+    Color(0xFF81C784),
+    Color(0xFF64B5F6),
+    Color(0xFFBA68C8),
+  ];
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    if (v <= 0 || v >= 1) return;
+    final rnd = Random(7);
+    final fade = v > 0.8 ? (1 - v) / 0.2 : 1.0;
+    for (var i = 0; i < 70; i++) {
+      final x0 = rnd.nextDouble() * size.width;
+      final delay = rnd.nextDouble() * 0.3;
+      final p = ((v - delay) / (1 - delay)).clamp(0.0, 1.0);
+      if (p <= 0) continue;
+      final y = -20 + p * (size.height * (0.7 + rnd.nextDouble() * 0.5));
+      final x = x0 + sin(p * 8 + i) * 24;
+      final spin = p * 10 + i;
+      canvas.save();
+      canvas.translate(x, y);
+      canvas.rotate(spin);
+      final paint = Paint()
+        ..color = _colors[i % _colors.length].withValues(alpha: fade);
+      if (i % 4 == 0) {
+        canvas.drawCircle(Offset.zero, 3.5, paint);
+      } else {
+        canvas.drawRect(
+          Rect.fromCenter(
+            center: Offset.zero,
+            width: 8,
+            height: 4 + 3 * cos(spin).abs(),
+          ),
+          paint,
+        );
+      }
+      canvas.restore();
+    }
+  }
+
+  @override
+  bool shouldRepaint(_ConfettiPainter old) => old.v != v;
 }

@@ -226,7 +226,15 @@ _Mote _moteOf(Terrain t) => switch (t) {
 /// バトルの背景。ノートに貼った「絵」のように、角を丸めた窓の中に
 /// 地形ごとの空・遠景・地面と、舞う粒（ほたる・泡・雪・火の粉・星など）を描く。
 class BattleBackdropPainter extends CustomPainter {
-  BattleBackdropPainter(this.terrain, this.t, {this.boss = false});
+  BattleBackdropPainter(
+    this.terrain,
+    this.t, {
+    this.boss = false,
+    this.showStage = true,
+  });
+
+  /// 敵の立つ光の輪を描くか
+  final bool showStage;
 
   final Terrain terrain;
 
@@ -294,17 +302,19 @@ class BattleBackdropPainter extends CustomPainter {
       width: w * 0.55,
       height: h * 0.1,
     );
-    canvas.drawOval(
-      stage,
-      Paint()..color = Colors.black.withValues(alpha: 0.12),
-    );
-    canvas.drawOval(
-      stage.deflate(4),
-      Paint()
-        ..color = Colors.white.withValues(alpha: 0.18)
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = 2,
-    );
+    if (showStage) {
+      canvas.drawOval(
+        stage,
+        Paint()..color = Colors.black.withValues(alpha: 0.12),
+      );
+      canvas.drawOval(
+        stage.deflate(4),
+        Paint()
+          ..color = Colors.white.withValues(alpha: 0.18)
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 2,
+      );
+    }
     _motes(canvas, rect, p);
     if (boss) {
       canvas.drawRect(
