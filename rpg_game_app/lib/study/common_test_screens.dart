@@ -24,6 +24,13 @@ class CommonTestRuinsScreen extends StatelessWidget {
 
   Future<void> _start(BuildContext context, RuinsFloor floor) async {
     final services = RpgServices.of(context);
+    // 問題を集めるのに少し時間がかかるので、押したことが分かるようにする
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text('${floor.label}の問いを集めています…'),
+        duration: const Duration(seconds: 2),
+      ),
+    );
     final progress = await services.repository.load();
     final worlds = _playable(progress);
     final picked = CommonTest.stagesFor(
@@ -144,6 +151,9 @@ class _Item {
 
 class _MockExamScreenState extends State<MockExamScreen> {
   final _chosenSubjects = <String>{};
+
+  /// 問題を読みこんでいる
+  bool _loading = false;
   List<_Item>? _items;
   int _index = 0;
   bool _finished = false;
@@ -159,6 +169,7 @@ class _MockExamScreenState extends State<MockExamScreen> {
 
   Future<void> _begin(List<WorldDef> worlds) async {
     final services = RpgServices.of(context);
+    setState(() => _loading = true);
     final rnd = Random();
     final items = <_Item>[];
     for (final w in worlds.where((w) => _chosenSubjects.contains(w.id))) {
@@ -180,7 +191,9 @@ class _MockExamScreenState extends State<MockExamScreen> {
         );
       }
     }
-    if (!mounted || items.isEmpty) return;
+    if (!mounted) return;
+    setState(() => _loading = false);
+    if (items.isEmpty) return;
     setState(() {
       _items = items;
       _index = 0;
@@ -279,12 +292,16 @@ class _MockExamScreenState extends State<MockExamScreen> {
       ),
       const SizedBox(height: 16),
       FilledButton.icon(
-        onPressed: _chosenSubjects.isEmpty ? null : () => _begin(worlds),
+        onPressed: _chosenSubjects.isEmpty || _loading
+            ? null
+            : () => _begin(worlds),
         icon: const Icon(Icons.timer),
         label: Padding(
           padding: const EdgeInsets.symmetric(vertical: 10),
           child: Text(
-            _chosenSubjects.isEmpty
+            _loading
+                ? '問題を集めています…'
+                : _chosenSubjects.isEmpty
                 ? '教科を選んでください'
                 : '模試を始める（${_chosenSubjects.length}教科・${_chosenSubjects.length * MockExam.perSubject}問）',
           ),
