@@ -133,4 +133,25 @@ void main() {
     }
     expect(t.takeException(), isNull);
   });
+
+  testWidgets('60エリアの試験対策ワールドのフィールドも開ける', (t) async {
+    final plan = ExamWorldPlan(
+      id: 'big',
+      title: '学年末',
+      worldId: 'math',
+      stageIds: [
+        for (final w in RpgCatalog.worlds)
+          for (final s in w.stages.where((s) => !s.isBoss).take(10)) s.id,
+      ],
+      createdAt: DateTime(2026),
+    );
+    final sw = Stopwatch()..start();
+    await openScreen(
+      t,
+      FieldScreen.exam(plan: plan, progress: RpgProgress.initial),
+      frames: 30,
+    );
+    // 作るのに時間がかかりすぎない
+    expect(sw.elapsed, lessThan(const Duration(seconds: 20)));
+  });
 }

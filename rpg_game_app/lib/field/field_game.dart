@@ -1111,14 +1111,27 @@ class LightLayer extends PositionComponent {
 
   @override
   void render(ui.Canvas canvas) {
+    // 同じ暗さが横に続くところは、まとめて1つの四角で塗る（大きなマップでも軽く）
     for (var r = 0; r < map.height; r++) {
-      for (var c = 0; c < map.width; c++) {
+      var c = 0;
+      while (c < map.width) {
         final d = darknessOf(map.areaAt(c, r));
-        if (d <= 0) continue;
-        canvas.drawRect(
-          Rect.fromLTWH(c * tileSize, r * tileSize, tileSize, tileSize),
-          ui.Paint()..color = ui.Color.fromRGBO(20, 16, 40, d),
-        );
+        var end = c + 1;
+        while (end < map.width && darknessOf(map.areaAt(end, r)) == d) {
+          end++;
+        }
+        if (d > 0) {
+          canvas.drawRect(
+            Rect.fromLTWH(
+              c * tileSize,
+              r * tileSize,
+              (end - c) * tileSize,
+              tileSize,
+            ),
+            ui.Paint()..color = ui.Color.fromRGBO(20, 16, 40, d),
+          );
+        }
+        c = end;
       }
     }
   }

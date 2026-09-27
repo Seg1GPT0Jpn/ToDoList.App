@@ -128,5 +128,27 @@ void main() {
       expect(back.gauge, 12);
       expect(back.openedChests, {'exam_g_chest_1'});
     });
+
+    test('6教科から60エリアまで集められ、後半の敵も強くなりすぎない', () {
+      expect(ExamWorlds.maxAreas, 60);
+      final all = [
+        for (final w in RpgCatalog.worlds)
+          ...w.stages.where((s) => !s.isBoss).take(10),
+      ];
+      final plan = ExamWorldPlan(
+        id: 'big',
+        title: '学年末',
+        worldId: 'math',
+        stageIds: [for (final s in all.take(60)) s.id],
+        createdAt: DateTime(2026),
+      );
+      expect(plan.stageIds.length, 60);
+      final stages = ExamWorlds.build(plan, level: 20);
+      expect(stages.length, 61);
+      final first = stages.first.enemy.maxHp;
+      final last60 = stages[59].enemy.maxHp;
+      expect(last60, lessThanOrEqualTo(first * 2));
+      expect(plan.worldIds.length, 6);
+    });
   });
 }

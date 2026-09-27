@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import '../data/catalog.dart';
 import '../models/enemy.dart';
 import '../models/stage.dart';
@@ -136,8 +138,8 @@ class ExamWorldPlan {
 class ExamWorlds {
   const ExamWorlds._();
 
-  /// 1つのワールドに集められるエリアの数（6教科をまとめても遊びきれる量）
-  static const maxAreas = 30;
+  /// 1つのワールドに集められるエリアの数（6教科をまとめて、1教科あたり10エリアほど）
+  static const maxAreas = 60;
 
   /// テスト対策ゲージの最大
   static const gaugeMax = 100;
@@ -244,8 +246,10 @@ class ExamWorlds {
           ).enemy;
     EnemyDef scaled(EnemyDef e, int k, {bool boss = false}) {
       final base = curve[(k - 1).clamp(0, 9)].enemy;
-      final hp =
-          hard == null ? base.maxHp : (hard.maxHp * (0.7 + 0.03 * k)).round();
+      final hp = hard == null
+          ? base.maxHp
+          // エリアが進むほど少しずつ強く。60エリアでも強くなりすぎないよう、20で止める
+          : (hard.maxHp * (0.7 + 0.03 * min(k, 20))).round();
       return EnemyDef(
         id: 'exam_${plan.id}_$k',
         name: e.name,

@@ -326,4 +326,19 @@ void main() {
     expect(examMap.bossAreas, contains(examStages.last.order));
     expect(examMap.areaLabels[examStages.last.order], '試験本番');
   });
+
+  // 60エリア（6教科×10）の大きな試験ワールドでも、同じ決まりで歩けるフィールドができる
+  final big = ExamWorldPlan(
+    id: 'big',
+    title: '学年末',
+    worldId: 'math',
+    stageIds: [
+      for (final w in RpgCatalog.worlds)
+        for (final s in w.stages.where((s) => !s.isBoss).take(10)) s.id,
+    ],
+    createdAt: DateTime(2026),
+  );
+  final bigStages = ExamWorlds.build(big);
+  final bigMap = FieldMap.forExam(big, bigStages);
+  checkRoute('試験対策ワールド（60エリア）', bigMap, bigStages, bigMap.start);
 }
