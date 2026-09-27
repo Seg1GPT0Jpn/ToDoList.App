@@ -28,3 +28,5 @@ flutter:
   uses-material-design: true
   assets:
     - assets/audio/
+    # google_fonts はここにある同名のフォントを使い、ネットから取りに行かない
+    - assets/fonts/

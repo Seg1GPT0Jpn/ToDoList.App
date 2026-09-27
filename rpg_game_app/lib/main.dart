@@ -1,4 +1,6 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'account/account_screen.dart';
@@ -21,6 +23,7 @@ import 'world/world_map_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  _registerFontLicenses();
   final prefs = await SharedPreferences.getInstance();
   final progress = PrefsProgressRepository(prefs);
   final profiles = ProfileRepository(prefs);
@@ -130,4 +133,17 @@ class _FirstRunState extends State<_FirstRun> {
 
   @override
   Widget build(BuildContext context) => widget.child;
+}
+
+/// 同梱した Noto フォント（SIL OFL）のライセンスをライセンス画面に載せる。
+void _registerFontLicenses() {
+  LicenseRegistry.addLicense(() async* {
+    for (final (name, file) in [
+      ('Noto Sans JP', 'OFL-NotoSansJP.txt'),
+      ('Noto Serif JP', 'OFL-NotoSerifJP.txt'),
+    ]) {
+      final text = await rootBundle.loadString('assets/fonts/$file');
+      yield LicenseEntryWithLineBreaks([name], text);
+    }
+  });
 }
