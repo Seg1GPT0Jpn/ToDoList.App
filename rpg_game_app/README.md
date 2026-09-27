@@ -75,7 +75,7 @@ firebase deploy --only hosting
 メモ:
 - `lib/firebase_options.dart` の中身は秘密の情報ではありません（Web アプリの識別子です）。データはセキュリティルールで守っています。コミットしてかまいません
 - 公開版（`flutter build web --release`）では購入ボタンが使えません。有料の5教科（理科・社会・国語・数学・情報）は、**プロモーションコード**を入力した人だけが受け取れます（下の「プロモーションコード」）
-- Android アプリで Google ログインを使うには、署名の SHA-1 を Firebase に登録する作業が別に必要です（今回は Web だけ）
+- Android アプリ（Pixel など）で Google ログインを使う手順は、`docs/GOOGLE_LOGIN.md` にまとめました（署名の SHA-1 の登録もふくみます）
 
 ## プロモーションコード
 

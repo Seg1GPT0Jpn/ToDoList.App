@@ -193,8 +193,9 @@ class _AccountScreenState extends State<AccountScreen> {
                   const Padding(
                     padding: EdgeInsets.only(top: 10),
                     child: Text(
-                      '※ Firebase が設定されていないため、Google への登録はテスト用のダミーです。'
-                      '設定のしかたは README の「Firebase につなぐ」を見てください。',
+                      '※ まだ Firebase が設定されていないため、Google ログインは使えません。'
+                      '記録はこの端末の中だけに保存されます。'
+                      'つなぐ手順は docs/GOOGLE_LOGIN.md を見てください。',
                       style: TextStyle(
                         fontSize: 11.5,
                         color: TsuzuriColors.inkSoft,

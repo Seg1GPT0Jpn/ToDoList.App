@@ -5,98 +5,90 @@ typedef GoogleAccount = ({String email, String displayName});
 
 /// Google アカウントでの登録（ログイン）。
 ///
-/// school_planner へ移植するときは、Firebase Authentication の
-/// GoogleAuthProvider（google_sign_in パッケージ）を使う実装に差し替える。
-/// 試作アプリには Firebase の設定ファイルがないため、[MockAccountService] で
-/// 画面の流れだけを確認できるようにしている。
+/// Firebase の設定（lib/firebase_options.dart）があれば [FirebaseAccountService] で
+/// 本物の Google ログインをする。なければ [MockAccountService] が手順を案内する。
 abstract class AccountService {
   /// Google アカウントを選んでもらう。キャンセルなら null
   Future<GoogleAccount?> signInWithGoogle(BuildContext context);
 
   Future<void> signOut();
 
-  /// 本物のログインか（false ならテスト用のダミー）
+  /// 本物のログインか（false なら Firebase が未設定）
   bool get isReal;
 }
 
-/// テスト用のダミー。メールアドレスを入力するだけで「連携した」ことにする。
+/// Firebase が設定されていないとき。
+///
+/// 以前はメールアドレスを入れるだけで「連携した」ことにしていたが、本当につながったと
+/// まちがえやすいので、つなぐための手順を案内するだけにした。
 class MockAccountService implements AccountService {
   @override
   bool get isReal => false;
 
   @override
-  Future<GoogleAccount?> signInWithGoogle(BuildContext context) =>
-      showDialog<GoogleAccount>(
-        context: context,
-        builder: (_) => const _MockGoogleDialog(),
-      );
+  Future<GoogleAccount?> signInWithGoogle(BuildContext context) async {
+    await showDialog<void>(
+      context: context,
+      builder: (_) => const _SetupNeededDialog(),
+    );
+    return null;
+  }
 
   @override
   Future<void> signOut() async {}
 }
 
-class _MockGoogleDialog extends StatefulWidget {
-  const _MockGoogleDialog();
-
-  @override
-  State<_MockGoogleDialog> createState() => _MockGoogleDialogState();
-}
-
-class _MockGoogleDialogState extends State<_MockGoogleDialog> {
-  final _email = TextEditingController();
-  String? _error;
-
-  static final _pattern = RegExp(r'^[^@\s]+@[^@\s]+\.[^@\s]+$');
-
-  @override
-  void dispose() {
-    _email.dispose();
-    super.dispose();
-  }
-
-  void _submit() {
-    final email = _email.text.trim();
-    if (!_pattern.hasMatch(email)) {
-      setState(() => _error = 'メールアドレスの形になっていません');
-      return;
-    }
-    Navigator.pop(context, (email: email, displayName: email.split('@').first));
-  }
+class _SetupNeededDialog extends StatelessWidget {
+  const _SetupNeededDialog();
 
   @override
   Widget build(BuildContext context) {
+    const steps = [
+      'Firebase のサイトでプロジェクトを作り、Authentication の「Google」を有効にする',
+      'Firestore Database を作る（場所は東京 asia-northeast1）',
+      'PC で `flutterfire configure` を実行して、設定ファイル（lib/firebase_options.dart）を作る',
+      'Android で使うときは、署名の SHA-1 を Firebase に登録する',
+      'アプリをビルドし直す',
+    ];
     return AlertDialog(
-      icon: const Icon(Icons.account_circle, size: 36),
-      title: const Text('Google アカウントで登録'),
-      content: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text(
-            '※ テスト用のダミーです。実際に Google にはつながりません。'
-            '本番では Google のログイン画面が開きます。',
-            style: TextStyle(fontSize: 12, height: 1.5),
-          ),
-          const SizedBox(height: 12),
-          TextField(
-            controller: _email,
-            keyboardType: TextInputType.emailAddress,
-            autofocus: true,
-            decoration: InputDecoration(
-              labelText: 'Gmail アドレス',
-              hintText: 'example@gmail.com',
-              errorText: _error,
+      icon: const Icon(Icons.cloud_off, size: 36),
+      title: const Text('Google ログインの準備がまだです'),
+      content: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              'このアプリには、まだ Firebase（Google ログインとクラウド保存のしくみ）の'
+              '設定が入っていません。今は、記録はこの端末の中だけに保存されます。',
+              style: TextStyle(fontSize: 13, height: 1.6),
             ),
-            onSubmitted: (_) => _submit(),
-          ),
-        ],
+            const SizedBox(height: 10),
+            const Text(
+              'つなぐ手順（最初の1回だけ）',
+              style: TextStyle(fontWeight: FontWeight.w700),
+            ),
+            for (final (i, s) in steps.indexed)
+              Padding(
+                padding: const EdgeInsets.only(top: 4),
+                child: Text(
+                  '${i + 1}. $s',
+                  style: const TextStyle(fontSize: 12.5, height: 1.5),
+                ),
+              ),
+            const SizedBox(height: 10),
+            const Text(
+              'くわしい手順は、リポジトリの docs/GOOGLE_LOGIN.md にあります。',
+              style: TextStyle(fontSize: 12, height: 1.5),
+            ),
+          ],
+        ),
       ),
       actions: [
-        TextButton(
+        FilledButton(
           onPressed: () => Navigator.pop(context),
-          child: const Text('やめる'),
+          child: const Text('わかった'),
         ),
-        FilledButton(onPressed: _submit, child: const Text('登録する')),
       ],
     );
   }

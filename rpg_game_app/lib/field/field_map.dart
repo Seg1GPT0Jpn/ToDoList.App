@@ -861,8 +861,9 @@ class _Room {
       tiles[rr][cc] = ch;
       g[rr][cc] = true;
       reachable.remove((rr, cc));
-      if (const {'I', 'X', 'C', 'W', 'S'}.contains(ch))
+      if (const {'I', 'X', 'C', 'W', 'S'}.contains(ch)) {
         needsAccess.add((rr, cc));
+      }
     }
 
     // 入口からの距離
