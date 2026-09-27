@@ -15,7 +15,13 @@ class ResultScreen extends StatefulWidget {
     required this.result,
     this.enemy,
     this.ghost = false,
+    this.skillBefore,
+    this.skillAfter,
   });
+
+  /// このバトルの前と後の、単元の熟練度（学習ステータス）
+  final SkillScore? skillBefore;
+  final SkillScore? skillAfter;
 
   final StageDef stage;
 
@@ -204,6 +210,27 @@ class _ResultScreenState extends State<ResultScreen>
                   '${CompanionDef.byId(widget.stage.captiveCompanionId!).name}が捕まっている！',
                   'リベンジして勝てば助け出せる。仲間になってくれるかも。',
                 ),
+              if (widget.skillAfter case final after? when after.rated) ...[
+                const SizedBox(height: 12),
+                _card(
+                  color: const Color(0xFFEAF4EA),
+                  child: Row(
+                    children: [
+                      const Icon(Icons.insights, color: TsuzuriColors.correct),
+                      const SizedBox(width: 10),
+                      Expanded(
+                        child: Text(
+                          widget.skillBefore?.rated == true
+                              ? '${after.field} 熟練度 ${widget.skillBefore!.score} → ${after.score}'
+                                    '${after.score > widget.skillBefore!.score ? '（+${after.score - widget.skillBefore!.score}）' : ''}'
+                              : '${after.field} 熟練度 ${after.score}（はじめて判定されました）',
+                          style: const TextStyle(fontWeight: FontWeight.w700),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
               if (widget.result.newlyUnlockedStageId != null) ...[
                 const SizedBox(height: 12),
                 _card(

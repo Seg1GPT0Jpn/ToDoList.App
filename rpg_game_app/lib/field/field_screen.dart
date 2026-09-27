@@ -867,7 +867,9 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
               Text(
                 '${enemy.description}\n${RpgCatalog.themeLabel(stage)}\nHP ${enemy.maxHp}・推奨Lv${stage.recommendedLevel}・1問${stage.timeLimitSeconds}秒'
                 '${enemy.weakness != null ? '\n弱点：${enemy.weakness!.label}の問題（ダメージ1.5倍）' : ''}'
-                '${enemy.armor > 0 ? '\n装甲×${enemy.armor}：${enemy.armorCategory!.label}の問題で割れる' : ''}',
+                '${enemy.armor > 0 ? '\n装甲×${enemy.armor}：${enemy.armorCategory!.label}の問題で割れる' : ''}'
+                '${enemy.effectiveAbility != EnemyAbility.none ? '\n${enemy.effectiveAbility.label}：${enemy.effectiveAbility.description}' : ''}'
+                '${BossRules.of(stage) != BossRule.none ? '\n★${BossRules.of(stage).label}：${BossRules.of(stage).description}' : ''}',
                 style: const TextStyle(
                   fontSize: 12,
                   color: TsuzuriColors.inkSoft,

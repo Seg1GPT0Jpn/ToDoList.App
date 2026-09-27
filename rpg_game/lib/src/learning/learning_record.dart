@@ -9,7 +9,11 @@ class AnswerEvent {
     required this.setId,
     required this.isCorrect,
     required this.elapsedMs,
+    this.category,
   });
+
+  /// 問題の種類（文法・意味・読解など。学習ステータスの分野分けに使う）
+  final String? category;
 
   final String questionId;
   final String setId;
@@ -43,6 +47,7 @@ class LearningRecord {
         day: day,
         elapsedMs: e.elapsedMs,
         setId: e.setId,
+        category: e.category,
       );
     }
     return LearningRecord(stats: next, studyDays: {...studyDays, day});

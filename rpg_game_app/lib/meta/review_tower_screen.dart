@@ -19,16 +19,28 @@ class _ReviewTowerScreenState extends State<ReviewTowerScreen> {
   /// null ならすべての教科
   String? _subject;
 
+  /// 選んだ階（null なら、これまでどおりのおまかせ）
+  TowerFloor? _towerFloor;
+
   /// 1回の挑戦で出す問題の数
   static const _size = 10;
 
   Future<List<(ReviewItem, QuizQuestion)>> _load(RpgServices services) async {
-    final plan = ReviewPlanner.plan(
-      services.meta.record,
-      today: RpgServices.today(),
-      limit: _size,
-      subject: _subject,
-    );
+    final f = _towerFloor;
+    final plan = f == null
+        ? ReviewPlanner.plan(
+            services.meta.record,
+            today: RpgServices.today(),
+            limit: _size,
+            subject: _subject,
+          )
+        : ReviewPlanner.planFloor(
+            services.meta.record,
+            f,
+            today: RpgServices.today(),
+            limit: _size,
+            subject: _subject,
+          );
     final out = <(ReviewItem, QuizQuestion)>[];
     for (final item in plan) {
       final set = await services.questions.load(item.setId);
@@ -111,6 +123,38 @@ class _ReviewTowerScreenState extends State<ReviewTowerScreen> {
                           ),
                       ],
                     ),
+                    const SizedBox(height: Space.m),
+                    Text('どの階へ行く？', style: serif(15)),
+                    const SizedBox(height: Space.xs),
+                    _FloorTile(
+                      label: 'おまかせ',
+                      title: '優先度の高い問題から',
+                      description: 'まちがえた・復習の日・時間がかかった問題をまぜて',
+                      count: ReviewPlanner.plan(
+                        meta.record,
+                        today: RpgServices.today(),
+                        limit: _size,
+                        subject: _subject,
+                      ).length,
+                      selected: _towerFloor == null,
+                      onTap: () => setState(() => _towerFloor = null),
+                    ),
+                    for (final f in TowerFloor.values)
+                      _FloorTile(
+                        label: f.floorLabel,
+                        title: f.title,
+                        description: f.description,
+                        count: ReviewPlanner.planFloor(
+                          meta.record,
+                          f,
+                          today: RpgServices.today(),
+                          limit: _size,
+                          subject: _subject,
+                        ).length,
+                        selected: _towerFloor == f,
+                        boss: f == TowerFloor.summit,
+                        onTap: () => setState(() => _towerFloor = f),
+                      ),
                     const SizedBox(height: Space.m),
                     if (snap.connectionState != ConnectionState.done)
                       const Center(child: CircularProgressIndicator())
@@ -202,6 +246,7 @@ class _ReviewTowerScreenState extends State<ReviewTowerScreen> {
             floor: floor,
             questionCount: questions.length,
             worldId: world.id,
+            summit: _towerFloor == TowerFloor.summit,
           ),
           questions: questions,
           progress: progress,
@@ -212,6 +257,58 @@ class _ReviewTowerScreenState extends State<ReviewTowerScreen> {
       ),
     );
     if (mounted) setState(() {});
+  }
+}
+
+class _FloorTile extends StatelessWidget {
+  const _FloorTile({
+    required this.label,
+    required this.title,
+    required this.description,
+    required this.count,
+    required this.selected,
+    required this.onTap,
+    this.boss = false,
+  });
+
+  final String label;
+  final String title;
+  final String description;
+  final int count;
+  final bool selected;
+  final bool boss;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final color = boss ? TsuzuriColors.stamp : TsuzuriColors.accent;
+    return Card(
+      margin: const EdgeInsets.only(bottom: Space.xs),
+      color: selected ? color.withValues(alpha: 0.10) : null,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+        side: BorderSide(
+          color: selected ? color : TsuzuriColors.kraft,
+          width: selected ? 2 : 1,
+        ),
+      ),
+      child: ListTile(
+        dense: true,
+        onTap: count == 0 ? null : onTap,
+        enabled: count > 0,
+        leading: SizedBox(
+          width: 48,
+          child: Text(
+            label,
+            textAlign: TextAlign.center,
+            style: TextStyle(fontWeight: FontWeight.w800, color: color),
+          ),
+        ),
+        title: Text(title),
+        subtitle: Text(description, style: const TextStyle(fontSize: 11.5)),
+        trailing: Text(count == 0 ? 'なし' : '$count問'),
+      ),
+    );
   }
 }
 

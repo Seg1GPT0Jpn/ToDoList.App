@@ -18,6 +18,7 @@ export 'src/data/question_source.dart';
 export 'src/data/user_deck_questions.dart';
 export 'src/learning/adaptive.dart';
 export 'src/learning/learning_record.dart';
+export 'src/learning/proficiency.dart';
 export 'src/learning/question_stat.dart';
 export 'src/learning/review_planner.dart';
 export 'src/learning/review_tower.dart';

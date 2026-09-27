@@ -106,6 +106,19 @@ class _BattleScreenState extends State<BattleScreen>
   /// ボス登場の演出
   bool _bossBanner = false;
 
+  /// 単元の熟練度（試験対策など、もとの単元がはっきりしないバトルでは null）
+  SkillScore? _skillOf(LearningRecord record) {
+    final base = Proficiency.stageOfSet(
+      widget.stage.questionSetIds.isEmpty
+          ? ''
+          : widget.stage.questionSetIds.first,
+    );
+    if (base == null || widget.stage.questionSetIds.length > 1) return null;
+    return Proficiency.ofStage(record, base);
+  }
+
+  late final SkillScore? _skillBefore = _skillOf(_services.meta.record);
+
   late final BattleEngine _engine = BattleEngine(
     // 苦手な問題・復習の日が来た問題ほど出やすくする（確認用のバトルは除く）
     questionWeight: _mode == BattleMode.trial
@@ -170,6 +183,8 @@ class _BattleScreenState extends State<BattleScreen>
   @override
   void initState() {
     super.initState();
+    // バトル前の熟練度を、記録が更新される前に読んでおく
+    _skillBefore;
     _timer.addStatusListener((s) {
       if (s == AnimationStatus.completed && !_locked) _resolve(null);
     });
@@ -461,6 +476,7 @@ class _BattleScreenState extends State<BattleScreen>
         AnswerEvent(
           questionId: id,
           setId: setId,
+          category: r.question.source.category.name,
           isCorrect: r.correct,
           elapsedMs: r.timedOut
               ? _engine.limitFor(r.question).inMilliseconds
@@ -550,6 +566,8 @@ class _BattleScreenState extends State<BattleScreen>
       PageRouteBuilder<void>(
         transitionDuration: const Duration(milliseconds: 500),
         pageBuilder: (_, _, _) => ResultScreen(
+          skillBefore: _skillBefore,
+          skillAfter: _skillOf(services.meta.record),
           stage: widget.stage,
           enemy: _enemy,
           summary: summary,

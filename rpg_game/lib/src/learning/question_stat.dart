@@ -22,7 +22,11 @@ class QuestionStat {
     this.box = 0,
     this.dueDay = 0,
     this.overcome = false,
+    this.category = '',
   });
+
+  /// 問題の種類（QuestionCategory の name。古い記録では空）
+  final String category;
 
   /// どの問題セットの問題か（復習のときに読み込むため）
   final String setId;
@@ -75,6 +79,7 @@ class QuestionStat {
     required int day,
     required int elapsedMs,
     String? setId,
+    String? category,
   }) {
     final newBox = isCorrect ? min(box + 1, maxBox) : 1;
     final newStreak = isCorrect ? streak + 1 : 0;
@@ -91,6 +96,7 @@ class QuestionStat {
       box: newBox,
       dueDay: day + intervals[newBox],
       overcome: nowOvercome,
+      category: category ?? this.category,
     );
   }
 
@@ -106,6 +112,7 @@ class QuestionStat {
         box,
         dueDay,
         overcome ? 1 : 0,
+        if (category.isNotEmpty) category,
       ];
 
   factory QuestionStat.fromList(List<dynamic> v) {
@@ -121,6 +128,7 @@ class QuestionStat {
       box: n(7),
       dueDay: n(8),
       overcome: n(9) == 1,
+      category: v.length > 10 ? v[10] as String : '',
     );
   }
 }

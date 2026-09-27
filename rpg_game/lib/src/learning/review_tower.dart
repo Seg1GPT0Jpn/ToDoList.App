@@ -26,16 +26,17 @@ class ReviewTower {
     required int floor,
     required int questionCount,
     required String worldId,
+    bool summit = false,
   }) {
     final player = PlayerStats.forLevel(level);
     final hits = max(3, (questionCount * 0.8).round());
     return StageDef(
-      id: 'review_tower_$floor',
+      id: summit ? 'review_tower_summit' : 'review_tower_$floor',
       worldId: worldId,
       order: floor,
       name: '復習の塔 $floor 階',
       region: '復習の塔',
-      isBoss: floor % 5 == 0,
+      isBoss: summit || floor % 5 == 0,
       expReward: 0,
       questionSetIds: const [],
       timeLimitSeconds: 25,
@@ -43,7 +44,11 @@ class ReviewTower {
       grammarTheme: '復習',
       enemy: EnemyDef(
         id: 'review_guard_${floor % _looks.length}',
-        name: floor % 5 == 0 ? '塔の番人（$floor 階）' : '忘却のかげ（$floor 階）',
+        name: summit
+            ? '苦手克服の番人'
+            : floor % 5 == 0
+                ? '塔の番人（$floor 階）'
+                : '忘却のかげ（$floor 階）',
         maxHp: player.attack * hits,
         attack: (player.maxHp / 5 + player.defense / 2).ceil(),
         look: _looks[floor % _looks.length],

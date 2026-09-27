@@ -4,6 +4,7 @@ import 'package:rpg_game/rpg_game.dart';
 import '../app/services.dart';
 import '../app/theme.dart';
 import 'achievements_screen.dart';
+import 'learning_status_screen.dart';
 import 'bestiary_screen.dart';
 import 'design.dart';
 import 'review_tower_screen.dart';
@@ -90,6 +91,11 @@ class AdventureCard extends StatelessWidget {
                     label: due > 0 ? '復習の塔（$due）' : '復習の塔',
                     highlight: due > 0,
                     builder: (_) => const ReviewTowerScreen(),
+                  ),
+                  _MenuButton(
+                    icon: Icons.insights,
+                    label: '学習ステータス',
+                    builder: (_) => const LearningStatusScreen(),
                   ),
                   _MenuButton(
                     icon: Icons.pets,
