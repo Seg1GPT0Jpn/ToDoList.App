@@ -3,6 +3,7 @@ import 'dart:math';
 import '../models/enemy.dart';
 import '../models/player_stats.dart';
 import '../models/question.dart';
+import '../story/gear.dart';
 import 'cards.dart';
 import 'damage_calculator.dart';
 import 'question_deck.dart';
@@ -167,6 +168,7 @@ class BattleEngine {
     this.bossRule = BossRule.none,
     this.trialWindow = 5,
     this.trialNeed = 4,
+    this.bonus = BattleBonus.none,
     Random? random,
     DamageCalculator? damage,
     double Function(QuizQuestion)? questionWeight,
@@ -221,6 +223,9 @@ class BattleEngine {
 
   /// ボス戦の特別ルール
   final BossRule bossRule;
+
+  /// 装備と職業の補正
+  final BattleBonus bonus;
 
   /// 試練（[BossRule.trial]）：何問ごとに判定するか、何問正解が必要か
   final int trialWindow;
@@ -328,6 +333,7 @@ class BattleEngine {
     if (companions.contains(CompanionEffect.moreTime)) {
       limit += const Duration(seconds: 3);
     }
+    limit += Duration(seconds: bonus.extraSeconds);
     if (identical(q, _current) && _pending?.effect == CardEffect.time) {
       limit += const Duration(seconds: 10);
     }
@@ -413,6 +419,8 @@ class BattleEngine {
       if (effect == CardEffect.power) extra *= 2;
       if (effect == CardEffect.gamble) extra *= 3;
       if (companions.contains(CompanionEffect.attackUp)) extra *= 1.1;
+      extra *= bonus.attackRate;
+      if (_combo >= 3) extra *= 1 + bonus.chainBonus;
       if (_armor > 0) {
         if (category == enemy.armorCategory) {
           _armor--;
@@ -425,9 +433,10 @@ class BattleEngine {
       final hitsWeakness = enemy.weakness != null && category == enemy.weakness;
       if (!blocked && hitsWeakness) {
         weakness = true;
-        extra *= ability == EnemyAbility.specialist
-            ? 2.5
-            : DamageCalculator.weaknessRate;
+        extra *= (ability == EnemyAbility.specialist
+                ? 2.5
+                : DamageCalculator.weaknessRate) +
+            bonus.weaknessBonus;
       }
       if (effect == CardEffect.focus) extra *= 1.3;
       // 敵の能力
@@ -467,7 +476,7 @@ class BattleEngine {
           break;
       }
       toEnemy = _damage.playerAttack(
-        attack: player.attack,
+        attack: player.attack + bonus.attack,
         combo: _combo,
         elapsed: elapsed,
         timeLimit: limitFor(q),
@@ -496,8 +505,11 @@ class BattleEngine {
         if (effect == CardEffect.power) extra *= 1.5;
         if (effect == CardEffect.gamble) extra *= 2;
         if (companions.contains(CompanionEffect.defenseUp)) extra *= 0.85;
+        extra *= bonus.damageTakenRate;
         toPlayer = _damage.enemyAttack(
-            attack: enemy.attack, defense: player.defense, extra: extra);
+            attack: enemy.attack,
+            defense: player.defense + bonus.defense,
+            extra: extra);
         if (toPlayer >= _playerHp &&
             companions.contains(CompanionEffect.lastStand) &&
             !_lastStandUsed) {

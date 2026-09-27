@@ -1,5 +1,7 @@
 import '../learning/learning_record.dart';
 import '../models/rpg_progress.dart';
+import '../story/story.dart';
+import '../world/elites.dart';
 import 'enemy_species.dart';
 import 'journal.dart';
 
@@ -249,6 +251,104 @@ class Achievements {
       rarity: Rarity.epic,
       goal: 30,
       value: (c) => c.progress.level,
+    ),
+    AchievementDef(
+      id: 'grammar_100',
+      title: '文法ハンター',
+      description: '文法・語法の問題に100問正解する',
+      group: AchievementGroup.learning,
+      rarity: Rarity.rare,
+      goal: 100,
+      value: (c) => c.record.stats.values
+          .where((s) => s.category == 'usage')
+          .fold(0, (a, s) => a + s.correct),
+    ),
+    AchievementDef(
+      id: 'review_500',
+      title: '復習の鬼',
+      description: '復習の塔で500問正解する',
+      group: AchievementGroup.learning,
+      rarity: Rarity.legendary,
+      goal: 500,
+      value: (c) => c.journal.reviewCorrect,
+    ),
+    AchievementDef(
+      id: 'all_subjects',
+      title: '知識の探究者',
+      description: '6教科すべての問題に答える',
+      group: AchievementGroup.learning,
+      rarity: Rarity.rare,
+      goal: 6,
+      value: (c) => {
+        for (final s in c.record.stats.values)
+          if (s.setId.isNotEmpty) LearningRecord.subjectOf(s.setId),
+      }.length,
+    ),
+    AchievementDef(
+      id: 'english_clear',
+      title: '英語の旅人',
+      description: '英語ワールドで「ことばの欠片」を取りもどす',
+      group: AchievementGroup.battle,
+      rarity: Rarity.epic,
+      goal: 1,
+      value: (c) => Story.fragments(c.progress).contains('english') ? 1 : 0,
+    ),
+    AchievementDef(
+      id: 'fragments_6',
+      title: '世界をつなぐ者',
+      description: '6つの知識の欠片をすべて取りもどす',
+      group: AchievementGroup.collection,
+      rarity: Rarity.legendary,
+      goal: 6,
+      value: (c) => Story.fragments(c.progress).length,
+    ),
+    AchievementDef(
+      id: 'world_center',
+      title: '忘却をこえし者',
+      description: '世界の中心で、忘却の魔王をたおす',
+      group: AchievementGroup.battle,
+      rarity: Rarity.legendary,
+      goal: 1,
+      value: (c) =>
+          c.progress.clearedStageIds.contains(Story.centerStageId) ? 1 : 0,
+    ),
+    AchievementDef(
+      id: 'elite_1',
+      title: '強敵ハンター',
+      description: 'フィールドの強敵を1体たおす',
+      group: AchievementGroup.battle,
+      rarity: Rarity.common,
+      goal: 1,
+      value: (c) => c.progress.clearedStageIds.where(Elites.isElite).length,
+    ),
+    AchievementDef(
+      id: 'elite_10',
+      title: '強敵キラー',
+      description: 'フィールドの強敵を10体たおす',
+      group: AchievementGroup.battle,
+      rarity: Rarity.epic,
+      goal: 10,
+      value: (c) => c.progress.clearedStageIds.where(Elites.isElite).length,
+    ),
+    AchievementDef(
+      id: 'explorer_5',
+      title: '探検家',
+      description: '隠し通路や知識の扉を5か所ひらく',
+      group: AchievementGroup.collection,
+      rarity: Rarity.rare,
+      goal: 5,
+      value: (c) =>
+          c.progress.fieldFlags.where((f) => f.startsWith('open:')).length,
+    ),
+    AchievementDef(
+      id: 'warp_10',
+      title: 'ワープの達人',
+      description: 'ワープ石を10個光らせる',
+      group: AchievementGroup.collection,
+      rarity: Rarity.common,
+      goal: 10,
+      value: (c) =>
+          c.progress.fieldFlags.where((f) => f.startsWith('warp:')).length,
     ),
     AchievementDef(
       id: 'bestiary_10',

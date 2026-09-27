@@ -46,7 +46,23 @@ class RpgProgress {
     this.springBuff = false,
     this.fieldFlags = const {},
     this.activeDeck = const [],
+    this.gear = const {},
+    this.equipped = const {},
+    this.job,
+    this.claimedRewards = const {},
   });
+
+  /// ごほうびで手に入れた装備（最初の装備と欠片の装備はふくまない）
+  final Set<String> gear;
+
+  /// 装備しているもの：枠（weapon / armor / accessory）→ 装備 ID
+  final Map<String, String> equipped;
+
+  /// 職業（JobDef の name。null なら冒険者）
+  final String? job;
+
+  /// 受け取った連続学習のごほうび
+  final Set<String> claimedRewards;
 
   /// 最初のデッキ（CardDef.starterDeck と同じ）
   static const starterDeck = [
@@ -130,6 +146,10 @@ class RpgProgress {
     bool? springBuff,
     Set<String>? fieldFlags,
     List<String>? activeDeck,
+    Set<String>? gear,
+    Map<String, String>? equipped,
+    String? job,
+    Set<String>? claimedRewards,
   }) =>
       RpgProgress(
         level: level ?? this.level,
@@ -147,6 +167,10 @@ class RpgProgress {
         springBuff: springBuff ?? this.springBuff,
         fieldFlags: fieldFlags ?? this.fieldFlags,
         activeDeck: activeDeck ?? this.activeDeck,
+        gear: gear ?? this.gear,
+        equipped: equipped ?? this.equipped,
+        job: job ?? this.job,
+        claimedRewards: claimedRewards ?? this.claimedRewards,
       );
 
   factory RpgProgress.fromMap(Map<String, dynamic>? map) {
@@ -183,6 +207,14 @@ class RpgProgress {
       springBuff: map['springBuff'] as bool? ?? false,
       fieldFlags: Set<String>.from((map['fieldFlags'] as List?) ?? const []),
       activeDeck: List<String>.from((map['activeDeck'] as List?) ?? const []),
+      gear: Set<String>.from((map['gear'] as List?) ?? const []),
+      equipped: {
+        for (final e in ((map['equipped'] as Map?) ?? const {}).entries)
+          e.key as String: e.value as String,
+      },
+      job: map['job'] as String?,
+      claimedRewards:
+          Set<String>.from((map['claimedRewards'] as List?) ?? const []),
     );
   }
 
@@ -204,5 +236,9 @@ class RpgProgress {
         'springBuff': springBuff,
         'fieldFlags': fieldFlags.toList()..sort(),
         'activeDeck': activeDeck,
+        'gear': gear.toList()..sort(),
+        'equipped': equipped,
+        if (job != null) 'job': job,
+        'claimedRewards': claimedRewards.toList()..sort(),
       };
 }
