@@ -17,6 +17,7 @@ import 'package:rpg_game_app/study/common_test_screens.dart';
 import 'package:rpg_game_app/data/meta_store.dart';
 import 'package:rpg_game_app/data/prefs_progress_repository.dart';
 import 'package:rpg_game_app/study/exam_world_store.dart';
+import 'package:rpg_game_app/study/sky_home_screen.dart';
 import 'package:rpg_game_app/study/personal_books.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -143,7 +144,8 @@ void main() {
     '装備・職業': const EquipmentScreen(),
     '学習ステータス': const LearningStatusScreen(),
     '共通テスト遺跡': const CommonTestRuinsScreen(),
-    '模試ダンジョン': const MockExamScreen(),
+    '採点模試': const MockExamScreen(),
+    '模擬試験の空': const SkyHomeScreen(),
     'デッキ': const DeckScreen(progress: RpgProgress.initial),
     '復習の塔': const ReviewTowerScreen(),
     '魔物図鑑': const BestiaryScreen(),

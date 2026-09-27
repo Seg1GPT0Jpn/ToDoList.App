@@ -37,11 +37,32 @@ enum Terrain {
   snow('雪原', Layout.open),
   desert('砂漠', Layout.open),
   lava('火山', Layout.dense),
-  castle('城', Layout.grid);
+  castle('城', Layout.grid),
+
+  // ---- 定期テストの海・模擬試験の空の航路（名前からは決まらず、航路の作り方で決まる） ----
+
+  /// 大海原（船で進む）
+  ocean('大海原', Layout.open),
+
+  /// 深海（潜水艦で潜っていく）
+  abyss('深海', Layout.dense),
+
+  /// 雲海（飛行船で進む）
+  cloudSea('雲海', Layout.open),
+
+  /// 宇宙（ロケットで昇っていく）
+  space('宇宙', Layout.dense);
 
   const Terrain(this.label, this.layout);
   final String label;
   final Layout layout;
+
+  /// 乗り物で進む航路の地形か
+  bool get isVoyage =>
+      this == ocean || this == abyss || this == cloudSea || this == space;
+
+  /// 航路の終盤（深海・宇宙）か
+  bool get isDeep => this == abyss || this == space;
 
   /// 名前にふくまれる言葉 → 地形（上から順に探す。長い言葉・特別な言葉を先に）
   static const _keywords = <(String, Terrain)>[

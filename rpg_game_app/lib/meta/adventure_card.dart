@@ -4,6 +4,7 @@ import 'package:rpg_game/rpg_game.dart';
 import '../app/services.dart';
 import '../app/theme.dart';
 import '../study/common_test_screens.dart';
+import '../study/sky_home_screen.dart';
 import 'achievements_screen.dart';
 import 'equipment_screen.dart';
 import 'navigator_card.dart';
@@ -121,9 +122,9 @@ class AdventureCard extends StatelessWidget {
                     builder: (_) => const CommonTestRuinsScreen(),
                   ),
                   _MenuButton(
-                    icon: Icons.timer_outlined,
-                    label: '模試ダンジョン',
-                    builder: (_) => const MockExamScreen(),
+                    icon: Icons.rocket_launch_outlined,
+                    label: '模擬試験の空',
+                    builder: (_) => const SkyHomeScreen(),
                   ),
                   _MenuButton(
                     icon: Icons.insights,

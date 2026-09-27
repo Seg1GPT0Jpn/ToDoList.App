@@ -31,7 +31,10 @@ void main() {
         for (final w in RpgCatalog.worlds)
           for (final s in w.stages) Terrain.of(s),
       };
-      expect(used.length, greaterThanOrEqualTo(Terrain.values.length - 1));
+      final land = Terrain.values.where((t) => !t.isVoyage).length;
+      expect(used.length, greaterThanOrEqualTo(land - 1));
+      // 航路の地形（大海原・深海・雲海・宇宙）は、名前からは決まらない
+      expect(used.where((t) => t.isVoyage), isEmpty);
     });
   });
 

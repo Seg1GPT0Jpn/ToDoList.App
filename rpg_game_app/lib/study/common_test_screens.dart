@@ -9,6 +9,7 @@ import '../app/services.dart';
 import '../app/theme.dart';
 import '../art/paper.dart';
 import '../battle/battle_screen.dart';
+import 'realm_style.dart';
 
 /// 解放ずみの教科のワールド
 List<WorldDef> _playable(RpgProgress p) => [
@@ -132,7 +133,7 @@ class CommonTestRuinsScreen extends StatelessWidget {
   }
 }
 
-/// 🏰 模試ダンジョン：制限時間の中で教科を順に進み、最後に成績と弱点を出す
+/// ⏱ 採点模試（模擬試験の空の中）：制限時間の中で教科を順に進み、最後に成績と弱点を出す
 class MockExamScreen extends StatefulWidget {
   const MockExamScreen({super.key});
 
@@ -252,7 +253,10 @@ class _MockExamScreenState extends State<MockExamScreen> {
   Widget build(BuildContext context) {
     final services = RpgServices.of(context);
     return Scaffold(
-      appBar: AppBar(title: Text('模試ダンジョン', style: serif(18))),
+      appBar: AppBar(
+        backgroundColor: StudyRealm.sky.paper,
+        title: Text('採点模試', style: serif(18, color: StudyRealm.sky.ink)),
+      ),
       body: NotebookPaper(
         child: StreamBuilder<RpgProgress>(
           stream: services.repository.watch(),

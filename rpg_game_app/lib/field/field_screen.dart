@@ -226,10 +226,22 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
     _game.areaNo.addListener(_onAreaChanged);
   }
 
+  /// 前にいたエリアの地形（乗り物を乗りかえたかどうかの判定に使う）
+  Terrain? _lastTerrain;
+
   void _onAreaChanged() {
     final no = _game.areaNo.value;
     final label = _game.map.areaLabels[no];
+    final cell = _game.player.cell;
+    final terrain = _game.map.terrainAt(cell.col, cell.row);
+    final before = _lastTerrain;
+    _lastTerrain = terrain;
     if (label == null || !mounted) return;
+    // 航路の終盤に入った：潜水艦・ロケットに乗りかえる
+    final realm = _plan?.realm;
+    final dive =
+        realm != null && terrain.isDeep && before != null && !before.isDeep;
+    if (dive) RpgServices.of(context).music.se('se_magic');
     final serial = ++_bannerSerial;
     setState(() {
       _banner = label;
@@ -238,10 +250,11 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
         _game.map.areaThemes[no] ?? '',
         if (score != null && score < 60) 'この場所はまだ暗い…（熟練度$score）。練習すると明るくなる',
         if (score != null && score >= 80) '知識の光に照らされている（熟練度$score）',
+        if (dive) realm.diveMessage,
       ].where((t) => t.isNotEmpty).join('\n');
       _bannerBoss = _game.map.bossAreas.contains(no);
     });
-    Future<void>.delayed(const Duration(milliseconds: 2400), () {
+    Future<void>.delayed(Duration(milliseconds: dive ? 4200 : 2400), () {
       if (mounted && serial == _bannerSerial) setState(() => _banner = null);
     });
   }

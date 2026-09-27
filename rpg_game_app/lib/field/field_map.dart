@@ -225,18 +225,26 @@ class FieldMap {
   }
 
   /// 試験対策ワールドのマップ。集めたエリア（6教科を混ぜてよい）と
-  /// 最後の「試験本番」を、同じ組み立て方で1本の冒険にする。
+  /// 最後の「試験本番」を、同じ組み立て方で1本の航路にする。
+  ///
+  /// 定期テストの海は、船で大海原を進み、終盤は潜水艦で深海へ。
+  /// 模擬試験の空は、飛行船で雲海を進み、終盤はロケットで宇宙へ。
   static FieldMap forExam(ExamWorldPlan plan, List<StageDef> stages) {
-    final key = 'exam_${plan.id}_${stages.map((s) => s.id).join(',')}';
+    final realm = plan.realm;
+    final key =
+        'exam_${realm.name}_${plan.id}_${stages.map((s) => s.id).join(',')}';
     return _cache.putIfAbsent(
       key,
       () => _build(
         id: 'exam_${plan.id}',
         stages: stages,
         seed: plan.id.hashCode & 0x7fffffff,
+        terrainOf: (s) => realm.terrainAt(stages.indexOf(s), stages.length),
         signText:
-            '「${plan.title}」の試験ワールド。範囲は${plan.subjectsLabel}。'
-            '一番奥の「試験本番」をめざそう。宝箱や泉の問題に正解すると、テスト対策ゲージがたまる。',
+            '「${plan.title}」の${realm == StudyRealm.sea ? '航海' : '空の旅'}。'
+            '範囲は${plan.subjectsLabel}。${realm.vehicle}で進み、'
+            '最後は${realm.deepVehicle}で${realm.deep.label}の「試験本番」をめざそう。'
+            '宝箱や泉の問題に正解すると、テスト対策ゲージがたまる。',
         goalText: '${plan.title}の合格証',
         label: (s) => s.isBoss
             ? '試験本番'
@@ -382,6 +390,7 @@ class FieldMap {
     required List<StageDef> stages,
     required int seed,
     required String Function(StageDef s) label,
+    Terrain Function(StageDef s)? terrainOf,
     String? goalLabel,
     Portal? backPortal,
     String signText = '',
@@ -389,7 +398,9 @@ class FieldMap {
   }) {
     final rnd = Random(seed);
     final areas = stages.length;
-    Terrain terrainOf(StageDef s) {
+    final override = terrainOf;
+    Terrain terrainAt(StageDef s) {
+      if (override != null) return override(s);
       final t = Terrain.of(s);
       // 「試験本番」など地形の手がかりがないボスは、お城の大広間にする
       if (s.isBoss && t == Terrain.meadow && !s.name.contains('草原')) {
@@ -416,7 +427,7 @@ class FieldMap {
       areaOfRow.add(area);
     }
 
-    final lastTerrain = terrainOf(stages.last);
+    final lastTerrain = terrainAt(stages.last);
     final goalArea = stages.last.order + 1;
     add(wall(), lastTerrain, goalArea);
     final goal = List.filled(_width, '.')
@@ -427,7 +438,7 @@ class FieldMap {
     add(goal.join(), lastTerrain, goalArea);
     for (var k = areas; k >= 1; k--) {
       final stage = stages[k - 1];
-      final terrain = terrainOf(stage);
+      final terrain = terrainAt(stage);
       final gate = gateCols[k - 1];
       enemyRows[stage.order] = rows.length;
       add((wall().split('')..[gate] = 'E').join(), terrain, stage.order);
@@ -458,7 +469,7 @@ class FieldMap {
       bottom[_width ~/ 2] = 'O';
       portals[(col: _width ~/ 2, row: rows.length)] = backPortal;
     }
-    add(bottom.join(), terrainOf(stages.first), stages.first.order);
+    add(bottom.join(), terrainAt(stages.first), stages.first.order);
 
     return FieldMap(
       rows,
@@ -477,8 +488,8 @@ class FieldMap {
       areaThemes: {
         for (final s in stages)
           s.order: s.grammarTheme.isEmpty
-              ? terrainOf(s).label
-              : '${terrainOf(s).label}・${s.grammarTheme}',
+              ? terrainAt(s).label
+              : '${terrainAt(s).label}・${s.grammarTheme}',
       },
       bossAreas: {
         for (final s in stages)
@@ -798,6 +809,9 @@ class _Room {
       Terrain.flower ||
       Terrain.forest ||
       Terrain.snow => 0.35,
+      // 航路：島や雲のかたまりの一部が、うずしお・雷雲・ブラックホールになる
+      Terrain.ocean || Terrain.cloudSea => 0.4,
+      Terrain.abyss || Terrain.space => 0.45,
       _ => 0.0,
     };
     var pond = List.generate(

@@ -12,11 +12,12 @@ import 'package:rpg_game_app/study/exam_world_screens.dart';
 import 'package:rpg_game_app/study/inn_screen.dart';
 import 'package:rpg_game_app/study/review_notebook_screen.dart';
 import 'package:rpg_game_app/study/sea_home_screen.dart';
+import 'package:rpg_game_app/study/sky_home_screen.dart';
 import 'package:rpg_game_app/world/world_map_screen.dart';
 
 import 'harness.dart';
 
-ExamWorldPlan _plan() {
+ExamWorldPlan _plan({StudyRealm realm = StudyRealm.sea}) {
   final picked = ExamWorlds.matchAll({
     'math': '2次関数',
     RpgCatalog.englishWorldId: '関係詞',
@@ -28,11 +29,12 @@ ExamWorldPlan _plan() {
     stageIds: [for (final s in picked) s.id],
     createdAt: DateTime(2026),
     examDate: DateTime.now().add(const Duration(days: 5)),
+    realm: realm,
   );
 }
 
-Map<String, Object> _withPlan() => {
-  'exam_worlds_v1': jsonEncode([_plan().toMap()]),
+Map<String, Object> _withPlan({StudyRealm realm = StudyRealm.sea}) => {
+  'exam_worlds_v1': jsonEncode([_plan(realm: realm).toMap()]),
 };
 
 void main() {
@@ -101,6 +103,60 @@ void main() {
       );
     }
   });
+
+  testWidgets('模擬試験の空（教科・区切りの切りかえ）', (t) async {
+    await openScreen(t, const SkyHomeScreen(), size: const Size(420, 1400));
+    expect(find.textContaining('上級者向け'), findsWidgets);
+    await t.tap(find.widgetWithText(ChoiceChip, '理科'));
+    for (var i = 0; i < 10; i++) {
+      await t.pump(const Duration(milliseconds: 100));
+    }
+    expect(t.takeException(), isNull);
+  });
+
+  testWidgets('模試対策ワールド（空）の一覧・作成・遊ぶ画面', (t) async {
+    final prefs = _withPlan(realm: StudyRealm.sky);
+    await openScreen(
+      t,
+      const ExamWorldListScreen(realm: StudyRealm.sky),
+      prefs: prefs,
+    );
+    expect(find.text('期末'), findsOneWidget);
+    // 海の一覧には、空のワールドは出ない
+    await openScreen(t, const ExamWorldListScreen(), prefs: prefs);
+    expect(find.text('期末'), findsNothing);
+    await openScreen(t, const ExamWorldCreateScreen(realm: StudyRealm.sky));
+    await openScreen(t, const ExamWorldPlayScreen(planId: 'p1'), prefs: prefs);
+    expect(find.textContaining('飛行船で出発する'), findsOneWidget);
+  });
+
+  for (final realm in StudyRealm.values) {
+    testWidgets(
+      '${realm.title}の航路のフィールド（${realm.vehicle}→${realm.deepVehicle}）',
+      (t) async {
+        await openScreen(
+          t,
+          FieldScreen.exam(
+            plan: _plan(realm: realm),
+            progress: RpgProgress.initial,
+          ),
+          prefs: _withPlan(realm: realm),
+          frames: 30,
+        );
+        // 船（飛行船）で少し進んでも落ちない
+        for (final icon in [
+          Icons.keyboard_arrow_up,
+          Icons.keyboard_arrow_left,
+        ]) {
+          await t.drag(find.byIcon(icon).first, Offset.zero);
+          for (var i = 0; i < 5; i++) {
+            await t.pump(const Duration(milliseconds: 100));
+          }
+        }
+        expect(t.takeException(), isNull);
+      },
+    );
+  }
 
   testWidgets('試験対策ワールドのフィールド（6教科ミックス）', (t) async {
     await openScreen(

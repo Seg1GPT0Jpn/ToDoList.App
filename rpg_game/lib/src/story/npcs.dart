@@ -121,6 +121,22 @@ class Npcs {
         name: '城の衛兵ジン',
         greeting: 'この先は王の間。ここまでに学んだことが試されるぞ。',
         color: 0xFF6A4C93),
+    Terrain.ocean: NpcDef(
+        name: '航海士のナギ',
+        greeting: 'いい風だ！ 島と島のあいだの航路を見きわめて進もう。うずしおには近づくなよ。',
+        color: 0xFF1F6F9F),
+    Terrain.abyss: NpcDef(
+        name: '深海探査員のシズク',
+        greeting: 'ここは光のとどかない深海。暗いのは、まだ知らないことが多いしるし。ライトは知識でつくのよ。',
+        color: 0xFF26A69A),
+    Terrain.cloudSea: NpcDef(
+        name: '気球乗りのソラノ',
+        greeting: '雲の上へようこそ！ 雷雲の切れ目に落ちないよう、虹の道を使うといいよ。',
+        color: 0xFF7986CB),
+    Terrain.space: NpcDef(
+        name: '宇宙飛行士のホシノ',
+        greeting: 'ここまで来たら、あとは本番だけ。星をつないで星座をつくるように、知識をつなげよう。',
+        color: 0xFFE0E0E0),
   };
 
   /// ハブ（国のスタート地点）の語り部

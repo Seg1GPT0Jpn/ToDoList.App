@@ -2,6 +2,7 @@ import 'dart:math';
 import 'dart:ui';
 
 part 'stationery_painter.dart';
+part 'voyage_monster_painter.dart';
 
 const _ink = Color(0xFF2E2A33);
 const _white = Color(0xFFFFFDF8);
@@ -74,6 +75,38 @@ void paintEnemy(
       _binder(canvas, size, t, c ?? const Color(0xFF3D5A80));
     case 'book':
       _book(canvas, size, t, c ?? const Color(0xFF8E3B46));
+    // 定期テストの海の魔物
+    case 'jellyfish':
+      _jellyfish(canvas, size, t, c ?? const Color(0xFFB39DDB));
+    case 'crab':
+      _crab(canvas, size, t, c ?? const Color(0xFFE57373));
+    case 'puffer':
+      _puffer(canvas, size, t, c ?? const Color(0xFFFFD54F));
+    case 'shark':
+      _shark(canvas, size, t, c ?? const Color(0xFF78909C));
+    case 'octopus':
+      _octopus(canvas, size, t, c ?? const Color(0xFFD1495B));
+    case 'angler':
+      _angler(canvas, size, t, c ?? const Color(0xFF455A64));
+    case 'squid':
+      _squid(canvas, size, t, c ?? const Color(0xFFEF9A9A));
+    case 'leviathan':
+      _leviathan(canvas, size, t, c ?? const Color(0xFF1F4E79));
+    // 模擬試験の空の魔物
+    case 'cloudling':
+      _cloudling(canvas, size, t, c ?? const Color(0xFF90A4AE));
+    case 'bird':
+      _bird(canvas, size, t, c ?? const Color(0xFF37474F));
+    case 'thunder':
+      _thunder(canvas, size, t, c ?? const Color(0xFFFFCA28));
+    case 'wyvern':
+      _wyvern(canvas, size, t, c ?? const Color(0xFF5C6BC0));
+    case 'meteor':
+      _meteor(canvas, size, t, c ?? const Color(0xFF8D6E63));
+    case 'ufo':
+      _ufo(canvas, size, t, c ?? const Color(0xFF80CBC4));
+    case 'astral':
+      _astral(canvas, size, t, c ?? const Color(0xFF3949AB));
     default:
       _slime(canvas, size, t, c ?? const Color(0xFF9CCB8B));
   }

@@ -12,6 +12,7 @@ import 'package:rpg_game/rpg_game.dart';
 import '../app/theme.dart';
 import '../art/enemy_painter.dart';
 import '../art/hero_painter.dart';
+import '../art/vehicle_painter.dart';
 import 'field_map.dart';
 import 'terrain_art.dart';
 
@@ -207,7 +208,8 @@ class FieldGame extends FlameGame with KeyboardEvents {
       world.add(token);
     }
     if (darknessOf != null) world.add(LightLayer(map, darknessOf!));
-    player = PlayerToken(from == null ? map.start : map.spawnFrom(from));
+    player = PlayerToken(from == null ? map.start : map.spawnFrom(from))
+      ..vehicleAt = (c) => Vehicle.of(map.terrainAt(c.col, c.row));
     world.add(player);
     applyProgress(_progress);
     camera.follow(player, snap: true);
@@ -568,7 +570,13 @@ class MapLayer extends PositionComponent {
           tileSize,
           tileSize,
         );
-        switch (map.tileAt(col, r)) {
+        final tile = map.tileAt(col, r);
+        // 航路では、宿・看板・住人などは小島（雲の台・小さな月）の上にいる
+        if (terrain.isVoyage &&
+            const {'I', 'S', 'N', 'X', 'W', 'G', 'O'}.contains(tile)) {
+          TerrainArt.islet(c, rect, terrain);
+        }
+        switch (tile) {
           case '#':
             TerrainArt.wall(c, rect, rnd, terrain);
           case 'T':
@@ -578,7 +586,7 @@ class MapLayer extends PositionComponent {
           case 'B':
             TerrainArt.bridge(c, rect, terrain);
           case 'R':
-            TerrainArt.carpet(c, rect);
+            TerrainArt.carpet(c, rect, terrain);
           case 'F':
             TerrainArt.decoration(
               c,
@@ -807,6 +815,13 @@ class PlayerToken extends PositionComponent {
   Cell cell;
   Facing facing = Facing.up;
   bool moving = false;
+
+  /// そのマスで乗る乗り物（航路なら船・潜水艦・飛行船・ロケット）
+  Vehicle? Function(Cell cell)? vehicleAt;
+
+  /// 左右どちらを向いているか（上下に動いても、乗り物の向きは変えない）
+  Facing _side = Facing.right;
+  double _t = 0;
   double _walk = 0;
   double _idle = 1;
   late Vector2 _from;
@@ -824,6 +839,8 @@ class PlayerToken extends PositionComponent {
   @override
   void update(double dt) {
     priority = cell.row * 10 + 5;
+    _t += dt;
+    if (facing == Facing.left || facing == Facing.right) _side = facing;
     if (!moving) {
       _idle += dt;
       return;
@@ -836,13 +853,32 @@ class PlayerToken extends PositionComponent {
   }
 
   @override
-  void render(ui.Canvas canvas) => paintHero(
-    canvas,
-    size.x,
-    facing: facing,
-    walk: _walk,
-    moving: moving || _idle < 0.08,
-  );
+  void render(ui.Canvas canvas) {
+    final vehicle = vehicleAt?.call(cell);
+    if (vehicle != null) {
+      // 乗り物は1マスより少し大きく描く
+      final big = size.x * 1.25;
+      canvas.save();
+      canvas.translate((size.x - big) / 2, (size.y - big) / 2 - 2);
+      paintVehicle(
+        canvas,
+        big,
+        vehicle,
+        facing: _side,
+        t: _t,
+        moving: moving || _idle < 0.08,
+      );
+      canvas.restore();
+      return;
+    }
+    paintHero(
+      canvas,
+      size.x,
+      facing: facing,
+      walk: _walk,
+      moving: moving || _idle < 0.08,
+    );
+  }
 }
 
 /// 宝箱（開けると空っぽになる）

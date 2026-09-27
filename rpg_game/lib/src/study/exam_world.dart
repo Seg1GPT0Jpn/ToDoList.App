@@ -4,10 +4,14 @@ import '../data/catalog.dart';
 import '../models/enemy.dart';
 import '../models/stage.dart';
 import '../models/world.dart';
+import 'realm.dart';
 import 'sea_battle.dart';
 
 /// 試験対策ワールド：試験範囲を入力すると、その範囲のエリアを集めて
-/// 1つのワールドを作る（定期テストの海の機能）。
+/// 1つのワールドを作る（定期テストの海・模擬試験の空の機能）。
+///
+/// 定期テストの海では船で海を進み、終盤は潜水艦で深海へ潜っていく。
+/// 模擬試験の空では飛行船で雲の上を進み、終盤はロケットで宇宙へ。空のほうが難しい。
 ///
 /// 6教科（英語・数学・国語・理科・社会・情報）のエリアを1つのワールドに
 /// まとめられる。歩けるフィールドも同じ並びで作られる。
@@ -25,9 +29,13 @@ class ExamWorldPlan {
     this.examDate,
     this.gauge = 0,
     this.openedChests = const {},
+    this.realm = StudyRealm.sea,
   });
 
   final String id;
+
+  /// 海（定期テスト）か空（模擬試験）か
+  final StudyRealm realm;
 
   /// 試験の名前（例：2学期中間テスト）
   final String title;
@@ -101,6 +109,7 @@ class ExamWorldPlan {
         examDate: examDate,
         gauge: (gauge ?? this.gauge).clamp(0, ExamWorlds.gaugeMax),
         openedChests: openedChests ?? this.openedChests,
+        realm: realm,
       );
 
   /// ゲージを [points] ふやした形
@@ -117,6 +126,7 @@ class ExamWorldPlan {
         if (examDate != null) 'examDate': examDate!.toIso8601String(),
         'gauge': gauge,
         if (openedChests.isNotEmpty) 'openedChests': openedChests.toList(),
+        'realm': realm.name,
       };
 
   factory ExamWorldPlan.fromMap(Map<String, dynamic> map) => ExamWorldPlan(
@@ -132,6 +142,7 @@ class ExamWorldPlan {
         gauge: (map['gauge'] as num?)?.toInt() ?? 0,
         openedChests:
             Set<String>.from(map['openedChests'] as List? ?? const []),
+        realm: StudyRealm.parse(map['realm'] as String?),
       );
 }
 
@@ -229,7 +240,11 @@ class ExamWorlds {
   ///
   /// [level] を渡すと、定期テストの海と同じ「とても難しい」強さにする
   /// （エリアが進むほど少しずつ HP が増え、試験本番はさらに強い）。
+  /// 模擬試験の空は、それよりさらに強い。
+  ///
+  /// 敵は海（空）の魔物になる。前半は大海原（雲海）の魔物、終盤は深海（宇宙）の魔物。
   static List<StageDef> build(ExamWorldPlan plan, {int? level}) {
+    final realm = plan.realm;
     final picked = [
       for (final id in plan.stageIds)
         if (stageById(id) != null) stageById(id)!,
@@ -243,26 +258,28 @@ class ExamWorlds {
             worldId: picked.isEmpty ? plan.worldId : picked.first.worldId,
             level: level,
             normalTimeLimitSeconds: 20,
+            realm: realm,
           ).enemy;
+    final total = picked.length + 1;
+    final seed = plan.id.codeUnits.fold<int>(0, (a, c) => (a + c) % 997);
     EnemyDef scaled(EnemyDef e, int k, {bool boss = false}) {
       final base = curve[(k - 1).clamp(0, 9)].enemy;
       final hp = hard == null
           ? base.maxHp
           // エリアが進むほど少しずつ強く。60エリアでも強くなりすぎないよう、20で止める
           : (hard.maxHp * (0.7 + 0.03 * min(k, 20))).round();
-      return EnemyDef(
+      final m = VoyageMonsters.at(realm, k - 1, total, seed: seed, boss: boss);
+      return m.toEnemy(
         id: 'exam_${plan.id}_$k',
-        name: e.name,
         maxHp: boss ? (hp * 1.3).round() : hp,
         attack: hard?.attack ?? base.attack,
-        description: e.description,
-        look: e.look,
-        color: e.color,
         weakness: e.weakness,
-        introLine: e.introLine,
-        defeatLine: e.defeatLine,
+        introLine: boss ? '${plan.title}の範囲、すべてから出題する。準備はいいか！' : null,
       );
     }
+
+    int limit(int seconds) =>
+        level == null ? seconds : SeaBattle.timeLimit(seconds, realm);
 
     final stages = <StageDef>[
       for (var i = 0; i < picked.length; i++)
@@ -271,23 +288,18 @@ class ExamWorlds {
           worldId: picked[i].worldId,
           order: i + 1,
           name: picked[i].name,
-          region: plan.title,
+          region: realm.terrainAt(i, total).label,
           enemy: scaled(picked[i].enemy, i + 1),
           questionSetIds: picked[i].questionSetIds,
           expReward: 0,
-          timeLimitSeconds: level == null
-              ? picked[i].timeLimitSeconds
-              : SeaBattle.timeLimit(picked[i].timeLimitSeconds),
-          readingTimeLimitSeconds: level == null
-              ? picked[i].readingTimeLimitSeconds
-              : SeaBattle.timeLimit(picked[i].readingTimeLimitSeconds),
+          timeLimitSeconds: limit(picked[i].timeLimitSeconds),
+          readingTimeLimitSeconds: limit(picked[i].readingTimeLimitSeconds),
           grammarTheme: picked[i].grammarTheme,
           vocabLevel: picked[i].vocabLevel,
         ),
     ];
     if (picked.isEmpty) return stages;
     final last = picked.last;
-    final lastWorld = RpgCatalog.world(last.worldId);
     final bossK = (picked.length + 1).clamp(1, 10);
     stages.add(
       StageDef(
@@ -295,23 +307,10 @@ class ExamWorlds {
         worldId: last.worldId,
         order: picked.length + 1,
         name: '試験本番',
-        region: plan.title,
+        region: realm.deep.label,
         isBoss: true,
         enemy: scaled(
-          EnemyDef(
-            id: 'boss',
-            name: '範囲の番人',
-            maxHp: 1,
-            attack: 1,
-            look: lastWorld.stages
-                .lastWhere((s) => s.isBoss, orElse: () => last)
-                .enemy
-                .look,
-            color: 0xFF37474F,
-            description: '試験範囲のすべてを知る番人。',
-            introLine: '${plan.title}の範囲、すべてから出題する。準備はいいか！',
-            defeatLine: 'この調子なら、本番も大丈夫だ…',
-          ),
+          const EnemyDef(id: 'boss', name: '', maxHp: 1, attack: 1),
           bossK,
           boss: true,
         ),
@@ -319,12 +318,8 @@ class ExamWorlds {
           for (final s in picked) ...s.questionSetIds,
         ].toSet().toList(),
         expReward: 0,
-        timeLimitSeconds: level == null
-            ? last.timeLimitSeconds
-            : SeaBattle.timeLimit(last.timeLimitSeconds),
-        readingTimeLimitSeconds: level == null
-            ? last.readingTimeLimitSeconds
-            : SeaBattle.timeLimit(last.readingTimeLimitSeconds),
+        timeLimitSeconds: limit(last.timeLimitSeconds),
+        readingTimeLimitSeconds: limit(last.readingTimeLimitSeconds),
         grammarTheme: '範囲のまとめ',
         vocabLevel: plan.rangeText,
       ),

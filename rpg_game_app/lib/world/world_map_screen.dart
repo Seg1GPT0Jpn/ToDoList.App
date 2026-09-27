@@ -14,7 +14,9 @@ import '../art/paper.dart';
 import '../battle/battle_screen.dart';
 import '../field/field_screen.dart';
 import '../meta/adventure_card.dart';
+import '../study/realm_style.dart';
 import '../study/sea_home_screen.dart';
+import '../study/sky_home_screen.dart';
 import 'promo_code_dialog.dart';
 
 const _subjectIcons = <String, IconData>{
@@ -241,12 +243,27 @@ class WorldMapScreen extends StatelessWidget {
         const SizedBox(height: 14),
         AdventureCard(progress: progress),
         const SizedBox(height: 14),
-        _SeaBanner(
+        _RealmBanner(
+          realm: StudyRealm.sea,
+          subtitle: '単元ごとに文法・単語・熟語をチェック。船で進み、最後は潜水艦で深海へ',
           onTap: () => Navigator.of(context).push(
             MaterialPageRoute<void>(
               builder: (_) => MusicScope(
                 music: 'field_science',
                 child: SeaHomeScreen(personalBooks: services.personalBooks),
+              ),
+            ),
+          ),
+        ),
+        const SizedBox(height: 10),
+        _RealmBanner(
+          realm: StudyRealm.sky,
+          subtitle: '海よりさらに難しい上級者向け。飛行船で雲の上へ、最後はロケットで宇宙へ',
+          onTap: () => Navigator.of(context).push(
+            MaterialPageRoute<void>(
+              builder: (_) => const MusicScope(
+                music: 'field_information',
+                child: SkyHomeScreen(),
               ),
             ),
           ),
@@ -622,16 +639,22 @@ class _WorldCard extends StatelessWidget {
   }
 }
 
-/// 定期テストの海への入口
-class _SeaBanner extends StatelessWidget {
-  const _SeaBanner({required this.onTap});
+/// 定期テストの海・模擬試験の空への入口
+class _RealmBanner extends StatelessWidget {
+  const _RealmBanner({
+    required this.realm,
+    required this.subtitle,
+    required this.onTap,
+  });
+  final StudyRealm realm;
+  final String subtitle;
   final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
     return Material(
       borderRadius: BorderRadius.circular(16),
-      color: const Color(0xFFE6F0F5),
+      color: realm.paper,
       child: InkWell(
         borderRadius: BorderRadius.circular(16),
         onTap: onTap,
@@ -639,23 +662,20 @@ class _SeaBanner extends StatelessWidget {
           padding: const EdgeInsets.all(14),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
-            border: Border.all(color: const Color(0xFF2F5D7C), width: 1.5),
+            border: Border.all(color: realm.ink, width: 1.5),
           ),
           child: Row(
             children: [
-              const Icon(Icons.sailing, size: 36, color: Color(0xFF2F5D7C)),
+              Icon(realm.icon, size: 36, color: realm.ink),
               const SizedBox(width: 12),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    Text(realm.title, style: serif(18, color: realm.ink)),
                     Text(
-                      '定期テストの海',
-                      style: serif(18, color: const Color(0xFF2F5D7C)),
-                    ),
-                    const Text(
-                      '単元ごとに文法・単語・熟語をチェック',
-                      style: TextStyle(
+                      subtitle,
+                      style: const TextStyle(
                         fontSize: 12,
                         color: TsuzuriColors.inkSoft,
                       ),
@@ -663,7 +683,7 @@ class _SeaBanner extends StatelessWidget {
                   ],
                 ),
               ),
-              const Icon(Icons.chevron_right, color: Color(0xFF2F5D7C)),
+              Icon(Icons.chevron_right, color: realm.ink),
             ],
           ),
         ),

@@ -4,9 +4,10 @@ import 'package:rpg_game/rpg_game.dart';
 import '../app/services.dart';
 import '../battle/battle_screen.dart';
 
-/// 定期テストの海の単元で、海の魔物とバトルする（とても難しい）。
+/// 定期テストの海（模擬試験の空）の単元で、海（空）の魔物とバトルする（とても難しい）。
 ///
 /// RPG の進行・経験値は変えない。正答率の自己ベストだけを記録する。
+/// 模擬試験の空の記録は [skyRecordId] の ID で、海とは別に残す。
 Future<void> startSeaBattle(
   BuildContext context, {
   required String title,
@@ -14,6 +15,7 @@ Future<void> startSeaBattle(
   required List<QuizQuestion> questions,
   required String worldId,
   required int normalTimeLimitSeconds,
+  StudyRealm realm = StudyRealm.sea,
 }) async {
   final services = RpgServices.of(context);
   final repo = services.repository;
@@ -25,7 +27,9 @@ Future<void> startSeaBattle(
     worldId: worldId,
     level: progress.level,
     normalTimeLimitSeconds: normalTimeLimitSeconds,
+    realm: realm,
   );
+  final bestId = realm == StudyRealm.sea ? recordId : skyRecordId(recordId);
   await Navigator.of(context).push(
     MaterialPageRoute<void>(
       builder: (_) => BattleScreen(
@@ -41,7 +45,7 @@ Future<void> startSeaBattle(
           await repo.save(
             Progression.recordSea(
               latest,
-              recordId,
+              bestId,
               (summary.accuracy * 100).round(),
             ),
           );
@@ -50,3 +54,6 @@ Future<void> startSeaBattle(
     ),
   );
 }
+
+/// 模擬試験の空での自己ベストの ID
+String skyRecordId(String id) => 'sky:$id';

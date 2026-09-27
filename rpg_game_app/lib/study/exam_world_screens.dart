@@ -8,25 +8,27 @@ import '../audio/music_director.dart';
 import '../audio/music_scope.dart';
 import '../battle/battle_screen.dart';
 import '../field/field_screen.dart';
+import 'realm_style.dart';
 
-const _seaBlue = Color(0xFF2F5D7C);
-
-/// 試験対策ワールドの一覧（定期テストの海から入る）
+/// 試験対策ワールドの一覧（定期テストの海・模擬試験の空から入る）
 class ExamWorldListScreen extends StatelessWidget {
-  const ExamWorldListScreen({super.key});
+  const ExamWorldListScreen({super.key, this.realm = StudyRealm.sea});
+
+  /// 海（定期テスト）か空（模擬試験）か
+  final StudyRealm realm;
 
   @override
   Widget build(BuildContext context) {
     final store = RpgServices.of(context).examWorlds;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xFFE6F0F5),
-        title: Text('試験対策ワールド', style: serif(18, color: _seaBlue)),
+        backgroundColor: realm.paper,
+        title: Text(realm.worldLabel, style: serif(18, color: realm.ink)),
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () => Navigator.of(context).push(
           MaterialPageRoute<void>(
-            builder: (_) => const ExamWorldCreateScreen(),
+            builder: (_) => ExamWorldCreateScreen(realm: realm),
           ),
         ),
         icon: const Icon(Icons.auto_awesome),
@@ -36,14 +38,21 @@ class ExamWorldListScreen extends StatelessWidget {
         child: StreamBuilder<List<ExamWorldPlan>>(
           stream: store.watch(),
           builder: (context, snap) {
-            final plans = snap.data ?? store.load();
+            final plans = [
+              for (final p in snap.data ?? store.load())
+                if (p.realm == realm) p,
+            ];
             return ListView(
               padding: const EdgeInsets.fromLTRB(44, 16, 16, 96),
               children: [
-                const Text(
-                  '試験範囲を入力すると、その範囲のエリアを集めたワールドができます。'
-                  '最後には、範囲全部から出題する「試験本番」のボスが待っています。',
-                  style: TextStyle(fontSize: 13, height: 1.6),
+                Text(
+                  '${realm == StudyRealm.sea ? '試験範囲' : '模試の範囲'}を入力すると、'
+                  'その範囲のエリアを集めた航路ができます。'
+                  '${realm.vehicle}で${realm.surface.label}を進み、終盤は'
+                  '${realm.deepVehicle}で${realm.deep.label}へ。'
+                  '最後には、範囲全部から出題する「試験本番」のボスが待っています。'
+                  '${realm == StudyRealm.sky ? '\n※ 模擬試験の空は、定期テストの海よりさらに難しい上級者向けです（2回まちがえると倒れる・制限時間は半分）。' : ''}',
+                  style: const TextStyle(fontSize: 13, height: 1.6),
                 ),
                 const SizedBox(height: 16),
                 if (plans.isEmpty)
@@ -81,8 +90,8 @@ class _PlanCard extends StatelessWidget {
           ),
         ),
         leading: Icon(
-          plan.completed ? Icons.emoji_events : Icons.map_outlined,
-          color: plan.completed ? TsuzuriColors.exp : _seaBlue,
+          plan.completed ? Icons.emoji_events : plan.realm.icon,
+          color: plan.completed ? TsuzuriColors.exp : plan.realm.ink,
         ),
         title: Text(plan.title, style: serif(15)),
         subtitle: Text(
@@ -131,7 +140,10 @@ class _PlanCard extends StatelessWidget {
 
 /// 試験範囲を入力して、ワールドを作る画面
 class ExamWorldCreateScreen extends StatefulWidget {
-  const ExamWorldCreateScreen({super.key});
+  const ExamWorldCreateScreen({super.key, this.realm = StudyRealm.sea});
+
+  /// 海（定期テスト）か空（模擬試験）か
+  final StudyRealm realm;
 
   @override
   State<ExamWorldCreateScreen> createState() => _ExamWorldCreateScreenState();
@@ -221,6 +233,7 @@ class _ExamWorldCreateScreenState extends State<ExamWorldCreateScreen> {
             '${w.subject}：${_ranges[w.id]!.text.trim()}',
       ].join('／'),
       examDate: _examDate,
+      realm: widget.realm,
     );
     await RpgServices.of(context).examWorlds.add(plan);
     if (!mounted) return;
@@ -236,8 +249,11 @@ class _ExamWorldCreateScreenState extends State<ExamWorldCreateScreen> {
     final services = RpgServices.of(context);
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xFFE6F0F5),
-        title: Text('範囲からワールドをつくる', style: serif(17, color: _seaBlue)),
+        backgroundColor: widget.realm.paper,
+        title: Text(
+          '範囲から${widget.realm.worldLabel}をつくる',
+          style: serif(17, color: widget.realm.ink),
+        ),
       ),
       body: NotebookPaper(
         child: StreamBuilder<RpgProgress>(
@@ -387,7 +403,7 @@ class _ExamWorldCreateScreenState extends State<ExamWorldCreateScreen> {
         padding: const EdgeInsets.only(top: 12),
         child: Text(
           '— ${world.subject}（${world.name}）',
-          style: serif(14, color: _seaBlue),
+          style: serif(14, color: widget.realm.ink),
         ),
       ),
     ];
@@ -403,10 +419,10 @@ class _ExamWorldCreateScreenState extends State<ExamWorldCreateScreen> {
             padding: const EdgeInsets.only(top: 8, bottom: 2),
             child: Text(
               h,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 12.5,
                 fontWeight: FontWeight.w700,
-                color: _seaBlue,
+                color: widget.realm.ink,
               ),
             ),
           ),
@@ -509,8 +525,8 @@ class ExamWorldPlayScreen extends StatelessWidget {
         ];
         return Scaffold(
           appBar: AppBar(
-            backgroundColor: const Color(0xFFE6F0F5),
-            title: Text(plan.title, style: serif(18, color: _seaBlue)),
+            backgroundColor: plan.realm.paper,
+            title: Text(plan.title, style: serif(18, color: plan.realm.ink)),
           ),
           body: NotebookPaper(
             child: ListView(
@@ -547,13 +563,13 @@ class ExamWorldPlayScreen extends StatelessWidget {
                     value: plan.gauge / ExamWorlds.gaugeMax,
                     minHeight: 10,
                     backgroundColor: TsuzuriColors.gridLine,
-                    color: _seaBlue,
+                    color: plan.realm.ink,
                   ),
                 ),
                 if (today.isNotEmpty && !plan.completed)
                   Card(
                     margin: const EdgeInsets.only(top: 12),
-                    color: const Color(0xFFE6F0F5),
+                    color: plan.realm.paper,
                     child: Padding(
                       padding: const EdgeInsets.all(12),
                       child: Column(
@@ -572,7 +588,9 @@ class ExamWorldPlayScreen extends StatelessWidget {
                   ),
                 const SizedBox(height: 12),
                 FilledButton.icon(
-                  style: FilledButton.styleFrom(backgroundColor: _seaBlue),
+                  style: FilledButton.styleFrom(
+                    backgroundColor: plan.realm.ink,
+                  ),
                   onPressed: () async {
                     final services = RpgServices.of(context);
                     final progress = await services.repository.load();
@@ -589,15 +607,17 @@ class ExamWorldPlayScreen extends StatelessWidget {
                       ),
                     );
                   },
-                  icon: const Icon(Icons.directions_walk),
-                  label: const Padding(
-                    padding: EdgeInsets.symmetric(vertical: 12),
-                    child: Text('フィールドで冒険する'),
+                  icon: Icon(plan.realm.icon),
+                  label: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 12),
+                    child: Text('${plan.realm.vehicle}で出発する'),
                   ),
                 ),
                 const SizedBox(height: 4),
-                const Text(
-                  '歩いて進むフィールドでも、下の一覧からでも、同じ記録で遊べます。',
+                Text(
+                  '${plan.realm.vehicle}で${plan.realm.surface.label}を進み、終盤は'
+                  '${plan.realm.deepVehicle}で${plan.realm.deep.label}へ。'
+                  '航路でも、下の一覧からでも、同じ記録で遊べます。',
                   style: TextStyle(
                     fontSize: 11.5,
                     color: TsuzuriColors.inkSoft,
@@ -640,6 +660,7 @@ class ExamWorldPlayScreen extends StatelessWidget {
                     cleared: i < plan.clearedCount,
                     open: i <= plan.clearedCount,
                     last: i == stages.length - 1,
+                    realm: plan.realm,
                     onTap: () => _start(context, plan, stages[i], i),
                   ),
               ],
@@ -659,8 +680,10 @@ class _StageNode extends StatelessWidget {
     required this.open,
     required this.last,
     required this.onTap,
+    required this.realm,
   });
 
+  final StudyRealm realm;
   final StageDef stage;
   final int index;
   final bool cleared;
@@ -670,7 +693,7 @@ class _StageNode extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final color = stage.isBoss ? TsuzuriColors.stamp : _seaBlue;
+    final color = stage.isBoss ? TsuzuriColors.stamp : realm.ink;
     return IntrinsicHeight(
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.stretch,

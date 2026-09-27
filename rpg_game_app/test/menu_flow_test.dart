@@ -47,7 +47,7 @@ void main() {
     expect(t.takeException(), isNull);
   });
 
-  testWidgets('模試ダンジョン：英語を選んで全問答えると、結果と弱点が出る', (t) async {
+  testWidgets('採点模試：英語を選んで全問答えると、結果と弱点が出る', (t) async {
     final s = await openScreen(
       t,
       const MockExamScreen(),

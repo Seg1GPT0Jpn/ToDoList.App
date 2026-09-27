@@ -35,6 +35,16 @@ enum EnemyAbility {
         'ruler' || 'compass' || 'triangle' || 'protractor' => specialist,
         'pen' || 'knight' => sturdy,
         'scissors' => chainLock,
+        // 海の魔物
+        'jellyfish' || 'octopus' => disrupt,
+        'crab' => sturdy,
+        'shark' => combo,
+        'squid' => chainLock,
+        // 空の魔物
+        'cloudling' || 'ufo' => disrupt,
+        'bird' => combo,
+        'thunder' => chainLock,
+        'wyvern' || 'meteor' => sturdy,
         _ => none,
       };
 }

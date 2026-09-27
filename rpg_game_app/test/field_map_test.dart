@@ -190,7 +190,12 @@ void checkRoute(String name, FieldMap map, List<StageDef> stages, Cell start) {
             map.enemySpots[s.order]!.row,
           ),
       };
-      expect(kinds.length, greaterThanOrEqualTo(stages.length >= 10 ? 4 : 2));
+      if (kinds.every((k) => k.isVoyage)) {
+        // 航路（海・空）は、前半と終盤の2つの地形だけ
+        expect(kinds.length, 2);
+      } else {
+        expect(kinds.length, greaterThanOrEqualTo(stages.length >= 10 ? 4 : 2));
+      }
     });
 
     test('全部屋に亡霊がいても、敵・宿・ゴールへの道はふさがれない', () {
@@ -353,4 +358,40 @@ void main() {
   final bigStages = ExamWorlds.build(big);
   final bigMap = FieldMap.forExam(big, bigStages);
   checkRoute('試験対策ワールド（60エリア）', bigMap, bigStages, bigMap.start);
+
+  // 航路：海は大海原→深海、空は雲海→宇宙。どちらも同じ決まりで最後まで進める
+  for (final realm in StudyRealm.values) {
+    final voyage = ExamWorldPlan(
+      id: 'voyage_${realm.name}',
+      title: '中間',
+      worldId: 'math',
+      stageIds: [for (final s in picked.take(12)) s.id],
+      createdAt: DateTime(2026),
+      realm: realm,
+    );
+    final vStages = ExamWorlds.build(voyage);
+    final vMap = FieldMap.forExam(voyage, vStages);
+    checkRoute(realm.title, vMap, vStages, vMap.start);
+    test(
+      '${realm.title}：スタートは${realm.surface.label}、ゴールは${realm.deep.label}',
+      () {
+        final start = vMap.start;
+        expect(vMap.terrainAt(start.col, start.row), realm.surface);
+        final goal = vMap.find('G');
+        expect(vMap.terrainAt(goal.col, goal.row), realm.deep);
+        // 一度深くなったら、もう浅いところにはもどらない（下から上へ進む）
+        var deep = false;
+        for (var r = vMap.height - 1; r >= 0; r--) {
+          final t = vMap.terrainAt(0, r);
+          expect(t.isVoyage, isTrue);
+          if (t.isDeep) deep = true;
+          if (deep) expect(t.isDeep, isTrue, reason: '行$r');
+        }
+        // 地形ごとの住人もいる
+        for (final n in vMap.findAll('N')) {
+          expect(Npcs.of(vMap.terrainAt(n.col, n.row)).name, isNotEmpty);
+        }
+      },
+    );
+  }
 }

@@ -6,6 +6,8 @@ import 'package:rpg_game/rpg_game.dart';
 
 import '../app/theme.dart';
 
+part 'voyage_art.dart';
+
 /// 地形ごとのマスの絵（方眼ノートに色鉛筆で描いたような見た目）。
 class TerrainArt {
   const TerrainArt._();
@@ -40,10 +42,15 @@ class TerrainArt {
     Terrain.desert => 0xFFF3DFB0,
     Terrain.lava => 0xFF4A3530,
     Terrain.castle => 0xFFDCD7E0,
+    Terrain.ocean ||
+    Terrain.abyss ||
+    Terrain.cloudSea ||
+    Terrain.space => _Voyage.floor(t),
   });
 
   /// 方眼の線の色
   static ui.Color grid(Terrain t) => switch (t) {
+    _ when t.isVoyage => _Voyage.grid(t),
     Terrain.lava => const ui.Color(0xFF5E4640),
     Terrain.cave || Terrain.workshop => const ui.Color(0xFFBDB5AB),
     Terrain.crystal ||
@@ -60,6 +67,7 @@ class TerrainArt {
 
   /// 床の模様（石だたみ・板の間・砂紋など）
   static void floorDetail(ui.Canvas c, Rect r, Terrain t, int col, int row) {
+    if (t.isVoyage) return _Voyage.floorDetail(c, r, t, col, row);
     final k = (col * 7 + row * 13) % 11;
     switch (t) {
       case Terrain.lava:
@@ -162,6 +170,7 @@ class TerrainArt {
 
   /// 壁の色（外壁・ゲートの壁）
   static void wall(ui.Canvas c, Rect r, Random rnd, Terrain t) {
+    if (t.isVoyage) return _Voyage.wall(c, r, rnd, t);
     final (int base, int hatch, int edge) = switch (t) {
       Terrain.lava => (0xFF2B1D1D, 0x55E4572E, 0xFF1A1111),
       Terrain.cave || Terrain.crystal => (0xFF7A746E, 0x55474038, 0xFF4E4842),
@@ -219,6 +228,8 @@ class TerrainArt {
   static void obstacle(ui.Canvas c, Rect r, Random rnd, Terrain t) {
     final cx = r.center.dx, cy = r.center.dy;
     switch (t) {
+      case Terrain.ocean || Terrain.abyss || Terrain.cloudSea || Terrain.space:
+        _Voyage.obstacle(c, r, rnd, t);
       case Terrain.meadow || Terrain.hill || Terrain.river:
         _shadow(c, r);
         _roundTree(c, r, rnd, 0xFF8CC06B);
@@ -541,6 +552,7 @@ class TerrainArt {
 
   /// 水・溶岩・雲の切れ目
   static void water(ui.Canvas c, Rect r, Terrain t) {
+    if (t.isVoyage) return _Voyage.water(c, r, t);
     final color = switch (t) {
       Terrain.lava => 0xFFE4572E,
       Terrain.cave => 0xFF4F6D7A,
@@ -582,6 +594,7 @@ class TerrainArt {
 
   /// 橋（木の板。雲の上は虹色の板）
   static void bridge(ui.Canvas c, Rect r, Terrain t) {
+    if (t.isVoyage) return _Voyage.bridge(c, r, t);
     water(c, r, t);
     final plank = _fill(t == Terrain.sky ? 0xFFFFF3C4 : 0xFFC8A165);
     final deck = Rect.fromLTWH(r.left, r.top + 3, r.width, r.height - 6);
@@ -597,7 +610,8 @@ class TerrainArt {
   }
 
   /// ボスの間のじゅうたん
-  static void carpet(ui.Canvas c, Rect r) {
+  static void carpet(ui.Canvas c, Rect r, [Terrain? t]) {
+    if (t != null && t.isVoyage) return _Voyage.carpet(c, r, t);
     c.drawRect(r.deflate(2), _fill(0xFFB23A48));
     c.drawRect(
       r.deflate(4),
@@ -617,6 +631,8 @@ class TerrainArt {
       return;
     }
     switch (t) {
+      case Terrain.ocean || Terrain.abyss || Terrain.cloudSea || Terrain.space:
+        _Voyage.decoration(c, r, t);
       case Terrain.meadow || Terrain.hill:
         // 道しるべの石
         final stone = ui.RRect.fromRectAndRadius(
@@ -817,6 +833,9 @@ class TerrainArt {
       ..close();
     c.drawPath(inner, _fill(0xFFFFE082));
   }
+
+  /// 航路で、宿・看板・住人などが乗っている足場
+  static void islet(ui.Canvas c, Rect r, Terrain t) => _Voyage.islet(c, r, t);
 
   /// ワープ石
   static void warpStone(
