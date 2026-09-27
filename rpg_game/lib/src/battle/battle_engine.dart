@@ -46,7 +46,19 @@ class TurnResult {
     this.trialResult,
     this.enemyHealed = 0,
     this.comboKept = false,
+    this.defeated,
+    this.joined,
+    this.backDamage = 0,
   });
+
+  /// ボスの連戦で、このターンに倒したボス（まだ次のボスが残っているとき）
+  final EnemyDef? defeated;
+
+  /// ボスの連戦で、このターンに乱入してきたボス
+  final EnemyDef? joined;
+
+  /// 後ろのボスから受けたダメージ（[damageToPlayer] にふくまれる）
+  final int backDamage;
 
   /// 防御型の守りがこのターンで解けた
   final bool guardBroken;
@@ -157,8 +169,10 @@ class BattleSummary {
 class BattleEngine {
   BattleEngine({
     required this.player,
-    required this.enemy,
+    required EnemyDef enemy,
     required List<QuizQuestion> questions,
+    List<EnemyDef> reinforcements = const [],
+    this.overlapRate = 0.5,
     required this.timeLimit,
     this.readingTimeLimit,
     List<CardDef> deck = const [],
@@ -177,7 +191,8 @@ class BattleEngine {
         _deck = QuestionDeck(questions, random: random, weight: questionWeight),
         _damage = damage ?? DamageCalculator(random: random),
         _armor = enemy.armor,
-        _enemyHp = enemy.maxHp {
+        lineup = List.unmodifiable([enemy, ...reinforcements]) {
+    _hps = [for (final e in lineup) e.maxHp];
     maxHp = (player.maxHp * (1 + bonusHpRate)).round();
     _playerHp = maxHp;
     _drawPile.addAll(deck);
@@ -212,7 +227,34 @@ class BattleEngine {
   }
 
   final PlayerStats player;
-  final EnemyDef enemy;
+
+  /// 戦う相手の並び（ボスの連戦なら2体以上）。先頭から順に前へ出てくる
+  final List<EnemyDef> lineup;
+
+  /// 前のボスの HP がこの割合まで減ると、次のボスが乱入してくる（ボスが重なる）
+  final double overlapRate;
+
+  /// いま前に出ている敵
+  EnemyDef get enemy => lineup[_front];
+
+  /// 前に出ている敵の番号（0始まり）
+  int get front => _front;
+  int _front = 0;
+
+  /// 戦いに加わった敵の数（前の敵をふくむ）
+  int get joinedCount => _joined;
+  int _joined = 1;
+
+  /// 前の敵の後ろに控えている（乱入してきた）敵。いなければ null
+  EnemyDef? get backEnemy => _joined > _front + 1 ? lineup[_front + 1] : null;
+
+  /// 後ろの敵の HP
+  int get backEnemyHp => backEnemy == null ? 0 : _hps[_front + 1];
+
+  /// 倒した敵の数
+  int get defeatedCount => _phase == BattlePhase.won ? lineup.length : _front;
+
+  late final List<int> _hps;
   final Duration timeLimit;
 
   /// 長文読解の設問の制限時間（未指定なら [timeLimit]）
@@ -282,6 +324,9 @@ class BattleEngine {
 
   late final Set<QuestionCategory> _categories;
 
+  /// 後ろのボスの攻撃の強さ（前のボスに対する割合）
+  static const backAttackRate = 0.5;
+
   /// 泉の加護などで増える最大HPの割合（0.3 なら +30%）
   final double bonusHpRate;
   final int handSize;
@@ -292,7 +337,8 @@ class BattleEngine {
   late final int maxHp;
 
   late int _playerHp;
-  int _enemyHp;
+  int get _enemyHp => _hps[_front];
+  set _enemyHp(int v) => _hps[_front] = v;
   int _armor;
   int _combo = 0;
   int _maxCombo = 0;
@@ -405,6 +451,9 @@ class BattleEngine {
     bool? trialResult;
     var enemyHealed = 0;
     var comboKept = false;
+    var backDamage = 0;
+    EnemyDef? defeated;
+    EnemyDef? joined;
     final focusCat = finaleFocus;
     if (effect == CardEffect.focus) _focus = true;
 
@@ -510,6 +559,15 @@ class BattleEngine {
             attack: enemy.attack,
             defense: player.defense + bonus.defense,
             extra: extra);
+        // 乱入してきた後ろのボスも、少し弱めに攻撃してくる
+        final back = backEnemy;
+        if (back != null) {
+          backDamage = _damage.enemyAttack(
+              attack: back.attack,
+              defense: player.defense + bonus.defense,
+              extra: extra * backAttackRate);
+          toPlayer += backDamage;
+        }
         if (toPlayer >= _playerHp &&
             companions.contains(CompanionEffect.lastStand) &&
             !_lastStandUsed) {
@@ -542,10 +600,30 @@ class BattleEngine {
       }
     }
 
+    if (_enemyHp == 0 && _front + 1 < lineup.length) {
+      // ボスの連戦：次のボスが前に出てくる（HP は引き継ぐ）
+      defeated = enemy;
+      _front++;
+      if (_joined < _front + 1) {
+        _joined = _front + 1;
+        joined = enemy;
+      }
+      _armor = enemy.armor;
+      _guardBroken = false;
+      _disruptNext = false;
+      _trialAnswered = 0;
+      _trialCorrect = 0;
+    }
     if (_enemyHp == 0) {
       _phase = BattlePhase.won;
     } else if (_playerHp == 0) {
       _phase = BattlePhase.lost;
+    } else if (_joined == _front + 1 &&
+        _joined < lineup.length &&
+        _enemyHp <= enemy.maxHp * overlapRate) {
+      // 前のボスが弱ってきたら、次のボスが乱入する（ボスが重なる）
+      joined = lineup[_joined];
+      _joined++;
     }
 
     final result = TurnResult(
@@ -573,6 +651,9 @@ class BattleEngine {
       trialResult: trialResult,
       enemyHealed: enemyHealed,
       comboKept: comboKept,
+      defeated: defeated,
+      joined: joined,
+      backDamage: backDamage,
     );
     _turns.add(result);
 

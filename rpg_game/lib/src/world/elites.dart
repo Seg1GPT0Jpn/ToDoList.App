@@ -73,6 +73,8 @@ class BossRules {
   static BossRule of(StageDef stage) {
     if (Elites.isElite(stage.id)) return BossRule.chain3;
     if (!stage.isBoss) return BossRule.none;
+    // 共通テスト遺跡はボスの連戦そのものが特別ルール
+    if (stage.reinforcements.isNotEmpty) return BossRule.none;
     if (stage.id == 'world_center_final') return BossRule.finale;
     if (stage.id.startsWith('exam_') && stage.id.endsWith('_boss')) {
       return BossRule.finale;

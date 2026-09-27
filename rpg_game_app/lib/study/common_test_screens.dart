@@ -84,7 +84,9 @@ class CommonTestRuinsScreen extends StatelessWidget {
               padding: const EdgeInsets.fromLTRB(44, 16, 16, 24),
               children: [
                 Text(
-                  '遺跡の番人をたおすと、上の階層へ進めます。上の階層ほど、'
+                  '各階層は「ボスの連戦」。前のボスが弱ると次のボスが乱入してきて、'
+                  '2体のボスが重なって攻めてきます（HP は最後まで引き継ぎ）。'
+                  'すべてのボスをたおすと、上の階層へ進めます。上の階層ほどボスが多く、'
                   '考察・計算・読解の問題や、教科をまたいだ出題が増えます。\n'
                   '出題する教科：$subjects\n'
                   '※ 問題はすべてオリジナルです（共通テストの過去問ではありません）。',
@@ -122,7 +124,7 @@ class CommonTestRuinsScreen extends StatelessWidget {
           color: cleared ? TsuzuriColors.correct : color,
         ),
         title: Text('${f.label}：${f.title}', style: serif(14, color: color)),
-        subtitle: Text(f.description),
+        subtitle: Text('${f.description}・ボス${CommonTest.bossCount(f)}体の連戦'),
         trailing: open ? const Icon(Icons.play_arrow_rounded) : null,
         onTap: open ? () => _start(context, f) : null,
       ),

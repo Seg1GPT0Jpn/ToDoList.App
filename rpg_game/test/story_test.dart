@@ -121,7 +121,7 @@ void main() {
           CommonTest.stagesFor(RuinsFloor.real, worlds, seed: 3),
           level: 20);
       expect(real.isBoss, isTrue);
-      expect(BossRules.of(real), isNot(BossRule.none));
+      expect(real.reinforcements, isNotEmpty);
     });
 
     test('第3階層からは考察・計算・読解の問題を中心にする', () {

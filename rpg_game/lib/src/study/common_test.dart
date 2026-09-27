@@ -87,13 +87,107 @@ class CommonTest {
     return applied.length >= 12 ? applied : qs;
   }
 
-  /// 階の番人（バトルのステージ）
+  /// その階で戦うボスの数（下の階ほど少ない）
+  static int bossCount(RuinsFloor floor) => const [2, 3, 3, 4, 5][floor.index];
+
+  /// 階のボスたち（登場する順）。前のボスが弱ると、次のボスが乱入してきて
+  /// 2体のボスが重なって戦う。HP は引き継ぐので、最後まで気がぬけない。
+  static List<EnemyDef> guardians(RuinsFloor floor, {required int level}) {
+    final base = 60 + level * 9 + floor.index * 22;
+    final attack = 7 + level ~/ 2 + floor.index * 3;
+    final all = <EnemyDef>[
+      EnemyDef(
+        id: 'ruins_${floor.name}_1',
+        name: switch (floor) {
+          RuinsFloor.basic => '遺跡の見張り',
+          RuinsFloor.standard => '遺跡の門番',
+          RuinsFloor.applied => '思考のゴーレム',
+          RuinsFloor.mixed => '複合のキマイラ',
+          RuinsFloor.real => '開門の番兵',
+        },
+        maxHp: base,
+        attack: attack,
+        look: const [
+          'book',
+          'compass',
+          'golem',
+          'dragon',
+          'knight'
+        ][floor.index],
+        color: 0xFF6D5A3A,
+        description: '共通テスト遺跡の${floor.label}（${floor.title}）を守る。',
+        introLine: 'この階の問いに、すべて答えてみよ。…ひとりでは終わらぬぞ。',
+        defeatLine: 'まだだ…あとは、あいつにまかせる…！',
+      ),
+      EnemyDef(
+        id: 'ruins_${floor.name}_2',
+        name: '石板のゴーレム',
+        maxHp: base,
+        attack: attack,
+        look: 'golem',
+        color: 0xFF8D8170,
+        ability: EnemyAbility.sturdy,
+        description: '古い石板に刻まれた問いから生まれた。とても打たれ強い。',
+        introLine: '石板の問いを、解いてみせよ！',
+        defeatLine: '石板が…割れた…',
+      ),
+      EnemyDef(
+        id: 'ruins_${floor.name}_3',
+        name: '図表の番人',
+        maxHp: base,
+        attack: attack,
+        look: 'protractor',
+        color: 0xFF5B7DB1,
+        ability: EnemyAbility.disrupt,
+        description: 'グラフと表を読ませる番人。まちがえると、長い問題を出してくる。',
+        introLine: 'この図、きちんと読めるかな？',
+        defeatLine: '読み取られてしまったか…',
+      ),
+      EnemyDef(
+        id: 'ruins_${floor.name}_4',
+        name: '分野横断のスフィンクス',
+        maxHp: base,
+        attack: attack,
+        look: 'binder',
+        color: 0xFFB08D57,
+        ability: EnemyAbility.chainLock,
+        description: '教科の壁をこえた問いを出す。続けて正解しないと、ほとんど効かない。',
+        introLine: '教科のさかいめは、ここにはない。',
+        defeatLine: '見事…すべての知識がつながっている…',
+      ),
+    ];
+    final count = bossCount(floor);
+    final bosses = [
+      for (var i = 0; i < count - 1; i++) all[i % all.length],
+      EnemyDef(
+        id: 'ruins_${floor.name}_last',
+        name: switch (floor) {
+          RuinsFloor.basic => '基礎の石像',
+          RuinsFloor.standard => '標準の大石像',
+          RuinsFloor.applied => '考察の賢者像',
+          RuinsFloor.mixed => '複合の巨像',
+          RuinsFloor.real => '本番の守護者',
+        },
+        maxHp: (base * 1.3).round(),
+        attack: attack + 2,
+        look: floor == RuinsFloor.real ? 'dragon' : 'knight',
+        color: floor == RuinsFloor.real ? 0xFF4A3B2A : 0xFF7A6A50,
+        description: '${floor.label}の最後に立ちはだかる、遺跡の主。',
+        introLine: '重なる試練を越えてきたか。最後の問いだ！',
+        defeatLine: 'みごとだ。次の階へ進むがよい。',
+      ),
+    ];
+    return bosses;
+  }
+
+  /// 階のボスの連戦（バトルのステージ）。最初のボスが [StageDef.enemy]、
+  /// 続くボスが [StageDef.reinforcements]。
   static StageDef stage(
     RuinsFloor floor,
     List<StageDef> picked, {
     required int level,
   }) {
-    final hp = 90 + level * 14 + floor.index * 60;
+    final bosses = guardians(floor, level: level);
     return StageDef(
       id: 'ruins_${floor.name}',
       worldId:
@@ -101,30 +195,9 @@ class CommonTest {
       order: floor.index + 1,
       name: '共通テスト遺跡・${floor.label}',
       region: '共通テスト遺跡',
-      isBoss: floor == RuinsFloor.real,
-      enemy: EnemyDef(
-        id: 'ruins_${floor.name}',
-        name: switch (floor) {
-          RuinsFloor.basic => '遺跡の見張り',
-          RuinsFloor.standard => '遺跡の門番',
-          RuinsFloor.applied => '思考のゴーレム',
-          RuinsFloor.mixed => '複合のキマイラ',
-          RuinsFloor.real => '本番の守護者',
-        },
-        maxHp: hp,
-        attack: 8 + level ~/ 2 + floor.index * 3,
-        look: const [
-          'book',
-          'compass',
-          'golem',
-          'binder',
-          'dragon'
-        ][floor.index],
-        color: 0xFF6D5A3A,
-        description: '共通テスト遺跡の${floor.label}（${floor.title}）を守る。',
-        introLine: 'この階の問いに、すべて答えてみよ。',
-        defeatLine: 'みごとだ。次の階へ進むがよい。',
-      ),
+      isBoss: true,
+      enemy: bosses.first,
+      reinforcements: bosses.sublist(1),
       questionSetIds: [for (final s in picked) ...s.questionSetIds],
       expReward: 0,
       timeLimitSeconds: floor == RuinsFloor.real ? 18 : 25,

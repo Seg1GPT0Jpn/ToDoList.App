@@ -22,7 +22,11 @@ class StageDef {
     this.rewardCardId,
     this.branch = '',
     this.branchOrder,
+    this.reinforcements = const [],
   });
+
+  /// ボスの連戦で、[enemy] のあとに続けて現れるボス（前のボスが弱ると乱入してくる）
+  final List<EnemyDef> reinforcements;
 
   /// 分かれ道の系統（理科なら physics / chemistry / biology / earth）。
   /// 解放は同じ系統の1つ前のステージで判定する。英語のように1本道なら空。

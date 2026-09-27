@@ -126,6 +126,8 @@ class _BattleScreenState extends State<BattleScreen>
         : AdaptiveWeights.forRecord(_services.meta.record, RpgServices.today()),
     player: _player,
     enemy: _enemy,
+    // 共通テスト遺跡：ボスが重なって現れる連戦
+    reinforcements: widget.ghost ? const [] : widget.stage.reinforcements,
     questions: widget.questions,
     timeLimit: Duration(seconds: widget.stage.timeLimitSeconds),
     readingTimeLimit: Duration(seconds: widget.stage.readingTimeLimitSeconds),
@@ -175,6 +177,9 @@ class _BattleScreenState extends State<BattleScreen>
     vsync: this,
     duration: const Duration(milliseconds: 900),
   );
+
+  /// ボスの連戦で、たおれていくところを見せているボス（次のボスはそのあと前に出る）
+  EnemyDef? _fallen;
 
   final _stopwatch = Stopwatch();
   final List<_Popup> _popups = [];
@@ -432,6 +437,51 @@ class _BattleScreenState extends State<BattleScreen>
       }
     }
 
+    if (r.defeated != null) {
+      _popup(
+        _Popup(
+          '${r.defeated!.name}をたおした！',
+          TsuzuriColors.stamp,
+          const Alignment(0, -0.1),
+          big: true,
+        ),
+        after: const Duration(milliseconds: 300),
+      );
+      _fallen = r.defeated;
+      Future.delayed(const Duration(milliseconds: 400), () {
+        if (mounted) _defeat.forward(from: 0);
+      });
+      Future.delayed(const Duration(milliseconds: 1400), () {
+        if (!mounted) return;
+        _defeat.reset();
+        setState(() {
+          _fallen = null;
+          if (_engine.enemy.introLine.isNotEmpty) {
+            _speech = _engine.enemy.introLine;
+          }
+        });
+        _intro.forward(from: 0);
+      });
+    }
+    if (r.joined != null && r.defeated == null) {
+      _services.music.se('se_boss_appear');
+      _popup(
+        _Popup(
+          '${r.joined!.name}が乱入してきた！',
+          TsuzuriColors.stamp,
+          const Alignment(0, 0.2),
+          big: true,
+        ),
+        after: const Duration(milliseconds: 450),
+      );
+    }
+    if (r.backDamage > 0) {
+      _popup(
+        _Popup('後ろのボスの追撃！', TsuzuriColors.wrong, const Alignment(0, 0.5)),
+        after: const Duration(milliseconds: 250),
+      );
+    }
+
     if (r.trialResult == false) {
       _popup(
         _Popup(
@@ -449,18 +499,27 @@ class _BattleScreenState extends State<BattleScreen>
         Future.delayed(const Duration(milliseconds: 550), () {
           if (mounted) _defeat.forward();
         });
-        if (_enemy.defeatLine.isNotEmpty) {
+        if (_engine.enemy.defeatLine.isNotEmpty) {
           Future.delayed(const Duration(milliseconds: 400), () {
-            if (mounted) setState(() => _speech = _enemy.defeatLine);
+            if (mounted) setState(() => _speech = _engine.enemy.defeatLine);
           });
         }
       }
       Future.delayed(
         Duration(
-          milliseconds: won && _enemy.defeatLine.isNotEmpty ? 2600 : 1900,
+          milliseconds: won && _engine.enemy.defeatLine.isNotEmpty
+              ? 2600
+              : 1900,
         ),
         _finish,
       );
+    } else if (r.defeated != null) {
+      // 次のボスが前に出てきて、ひとこと言ってから次の問題
+      Future.delayed(const Duration(milliseconds: 2900), () {
+        if (!mounted) return;
+        setState(() => _speech = null);
+        _startQuestion();
+      });
     } else if (r.correct) {
       Future.delayed(const Duration(milliseconds: 1000), () {
         if (mounted) _startQuestion();
@@ -572,7 +631,7 @@ class _BattleScreenState extends State<BattleScreen>
           skillBefore: _skillBefore,
           skillAfter: _skillOf(services.meta.record),
           stage: widget.stage,
-          enemy: _enemy,
+          enemy: _engine.enemy,
           summary: summary,
           result: result,
           ghost: widget.ghost,
@@ -672,7 +731,9 @@ class _BattleScreenState extends State<BattleScreen>
   }
 
   Widget _topBar() {
-    final enemy = _enemy;
+    final enemy = _engine.enemy;
+    final back = _engine.backEnemy;
+    final rush = _engine.lineup.length > 1;
     return Padding(
       padding: const EdgeInsets.fromLTRB(40, 8, 8, 0),
       child: Row(
@@ -722,6 +783,16 @@ class _BattleScreenState extends State<BattleScreen>
                       )
                     else if (_engine.bossRule == BossRule.chain3)
                       const _Tag('3連続正解で大技', TsuzuriColors.stamp),
+                    if (rush)
+                      _Tag(
+                        'ボス連戦 ${_engine.front + 1} / ${_engine.lineup.length}体目',
+                        TsuzuriColors.stamp,
+                      ),
+                    if (back != null)
+                      _Tag(
+                        '後ろに${back.name}（HP ${_engine.backEnemyHp}）',
+                        const Color(0xFF6A4BA8),
+                      ),
                     if (widget.progress.springBuff && !widget.ghost)
                       const _Tag('泉の加護 HP+30%', Color(0xFF3B8FB5)),
                   ],
@@ -746,9 +817,28 @@ class _BattleScreenState extends State<BattleScreen>
     return LayoutBuilder(
       builder: (context, box) {
         final size = min(box.maxWidth * 0.62, box.maxHeight * 0.92);
+        final shown = _fallen ?? _engine.enemy;
+        final back = _fallen == null ? _engine.backEnemy : null;
         return Stack(
           alignment: Alignment.center,
           children: [
+            // 乱入してきたボス（前のボスの後ろに重なって控える）
+            if (back != null)
+              Align(
+                alignment: const Alignment(0.85, -0.6),
+                child: AnimatedBuilder(
+                  animation: _idle,
+                  builder: (context, _) => Opacity(
+                    opacity: 0.8,
+                    child: SizedBox.square(
+                      dimension: size * 0.62,
+                      child: CustomPaint(
+                        painter: _EnemyPainter(back, _idle.value * 120 + 3),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             AnimatedBuilder(
               animation: Listenable.merge([_idle, _intro, _enemyHit, _defeat]),
               builder: (context, _) {
@@ -770,7 +860,7 @@ class _BattleScreenState extends State<BattleScreen>
                           dimension: size,
                           child: CustomPaint(
                             painter: _EnemyPainter(
-                              _enemy,
+                              shown,
                               _idle.value * 120,
                               flash: hit > 0 && hit < 1 ? (1 - hit) : 0,
                             ),
@@ -892,7 +982,7 @@ class _BattleScreenState extends State<BattleScreen>
                       dimension: 64,
                       child: CustomPaint(
                         painter: _EnemyPainter(
-                          _enemy,
+                          _fallen ?? _engine.enemy,
                           _idle.value * 120,
                           flash: hit > 0 && hit < 1 ? (1 - hit) : 0,
                         ),

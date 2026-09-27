@@ -76,6 +76,18 @@ void main() {
     await _play(t, english[15], win: true);
   });
 
+  testWidgets('共通テスト遺跡：ボスが重なる連戦に勝てる（乱入・交代の演出つき）', (t) async {
+    final stage = CommonTest.stage(
+      RuinsFloor.standard,
+      CommonTest.stagesFor(RuinsFloor.standard, [
+        RpgCatalog.world(RpgCatalog.englishWorldId),
+      ], seed: 1),
+      level: 1,
+    );
+    expect(stage.reinforcements.length, 2);
+    await _play(t, stage, win: true);
+  });
+
   testWidgets('強敵にも勝てる', (t) async {
     await _play(t, Elites.of(english[2]), win: true);
   });
