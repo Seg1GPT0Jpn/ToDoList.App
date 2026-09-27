@@ -334,7 +334,19 @@ class _BattleScreenState extends State<BattleScreen>
       Future.delayed(const Duration(milliseconds: 140), () {
         if (mounted) _burst.forward(from: 0);
       });
-      if (r.quick || r.bossBurst) _flash.forward(from: 0);
+      if (r.quick || r.bossBurst || r.special) _flash.forward(from: 0);
+      if (r.special) {
+        _burstColor = const Color(0xFFD64545);
+        _popup(
+          _Popup(
+            '必殺技！',
+            const Color(0xFFD64545),
+            const Alignment(0, 0.05),
+            big: true,
+          ),
+          after: const Duration(milliseconds: 100),
+        );
+      }
       Future.delayed(const Duration(milliseconds: 160), () {
         if (mounted) _enemyHit.forward(from: 0);
       });
@@ -437,6 +449,12 @@ class _BattleScreenState extends State<BattleScreen>
           onPlayer: true,
         ),
       );
+      if (r.specialMissed) {
+        _popup(
+          _Popup('必殺技は空振り…', TsuzuriColors.inkSoft, const Alignment(0, 0.35)),
+          after: const Duration(milliseconds: 200),
+        );
+      }
       if (r.disrupted) {
         _popup(
           _Popup(
@@ -1152,9 +1170,7 @@ class _BattleScreenState extends State<BattleScreen>
           key: ValueKey(q.hashCode),
           children: [
             _questionCard(q),
-            if (!showExplanation &&
-                (_engine.hand.isNotEmpty || _engine.pendingCard != null))
-              _cardHand(),
+            if (!showExplanation) _cardHand(),
             const SizedBox(height: 6),
             Expanded(
               child: showExplanation
@@ -1167,7 +1183,89 @@ class _BattleScreenState extends State<BattleScreen>
     );
   }
 
-  /// 手札（回答前にタップすると、この問題に効果がつく）
+  /// 必殺技を構える
+  void _armSpecial() {
+    if (_locked || !_engine.specialReady) return;
+    _engine.armSpecial();
+    _services.music.se('se_magic');
+    _popup(
+      _Popup(
+        '必殺技の構え！ 次に正解すると${BattleEngine.specialRate}倍！',
+        const Color(0xFFD64545),
+        const Alignment(0, -0.35),
+      ),
+    );
+    setState(() {});
+  }
+
+  /// 必殺技ゲージのボタン
+  Widget _specialButton() {
+    final ready = _engine.specialReady && !_locked;
+    final armed = _engine.specialArmed;
+    final v = _engine.special / 100;
+    return Padding(
+      padding: const EdgeInsets.only(left: 4),
+      child: GestureDetector(
+        onTap: ready ? _armSpecial : null,
+        child: AnimatedBuilder(
+          animation: _idle,
+          builder: (_, _) {
+            final glow = ready || armed
+                ? 0.5 + 0.5 * sin(_idle.value * 120 * 6)
+                : 0.0;
+            return Container(
+              width: 64,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(
+                  color: armed
+                      ? const Color(0xFFD64545)
+                      : ready
+                      ? const Color(0xFFF2B84B)
+                      : TsuzuriColors.kraft,
+                  width: 2,
+                ),
+                boxShadow: [
+                  if (ready || armed)
+                    BoxShadow(
+                      color: const Color(0xFFF2B84B)
+                          .withValues(alpha: 0.5 * glow),
+                      blurRadius: 10,
+                    ),
+                ],
+                gradient: LinearGradient(
+                  begin: Alignment.bottomCenter,
+                  end: Alignment.topCenter,
+                  stops: [v, v],
+                  colors: [
+                    armed ? const Color(0xFFFFCDD2) : const Color(0xFFFFE9A8),
+                    TsuzuriColors.card,
+                  ],
+                ),
+              ),
+              alignment: Alignment.center,
+              child: Text(
+                armed
+                    ? '構え中'
+                    : ready
+                    ? '必殺技！'
+                    : '必殺 ${_engine.special}%',
+                style: TextStyle(
+                  fontSize: 11,
+                  fontWeight: FontWeight.w900,
+                  color: ready || armed
+                      ? const Color(0xFFB23A48)
+                      : TsuzuriColors.inkSoft,
+                ),
+              ),
+            );
+          },
+        ),
+      ),
+    );
+  }
+
+  /// 手札（回答前にタップすると、この問題に効果がつく）と、必殺技ゲージ
   Widget _cardHand() {
     final pending = _engine.pendingCard;
     final canUse = !_locked && pending == null && !_engine.isOver;
@@ -1177,6 +1275,7 @@ class _BattleScreenState extends State<BattleScreen>
         height: 34,
         child: Row(
           children: [
+            if (pending == null && _engine.hand.isEmpty) const Spacer(),
             if (pending != null)
               Expanded(
                 child: _CardChip(card: pending, active: true, onTap: null),
@@ -1193,6 +1292,7 @@ class _BattleScreenState extends State<BattleScreen>
                     ),
                   ),
                 ),
+            _specialButton(),
           ],
         ),
       ),

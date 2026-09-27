@@ -49,7 +49,15 @@ class TurnResult {
     this.defeated,
     this.joined,
     this.backDamage = 0,
+    this.special = false,
+    this.specialMissed = false,
   });
+
+  /// 必殺技が決まった
+  final bool special;
+
+  /// 必殺技を構えていたのに、まちがえて空振りした
+  final bool specialMissed;
 
   /// ボスの連戦で、このターンに倒したボス（まだ次のボスが残っているとき）
   final EnemyDef? defeated;
@@ -327,6 +335,31 @@ class BattleEngine {
   /// 後ろのボスの攻撃の強さ（前のボスに対する割合）
   static const backAttackRate = 0.5;
 
+  /// 必殺技のダメージ倍率
+  static const specialRate = 2.5;
+
+  /// 正解でたまる必殺技ゲージ（すばやい正解はもっとたまる）
+  static const specialGain = 20;
+  static const specialQuickGain = 30;
+
+  /// 必殺技ゲージ（0〜100）。100 で必殺技を構えられる
+  int get special => _special;
+  int _special = 0;
+
+  /// 必殺技を構えられるか
+  bool get specialReady => _special >= 100 && !_specialArmed && !isOver;
+
+  /// 必殺技を構えている（次の正解が必殺技になる）
+  bool get specialArmed => _specialArmed;
+  bool _specialArmed = false;
+
+  /// 必殺技を構える（次の問題に正解すると、ダメージが [specialRate] 倍）
+  void armSpecial() {
+    _ensureActive();
+    if (!specialReady) throw StateError('必殺技ゲージがたまっていません');
+    _specialArmed = true;
+  }
+
   /// 泉の加護などで増える最大HPの割合（0.3 なら +30%）
   final double bonusHpRate;
   final int handSize;
@@ -452,6 +485,8 @@ class BattleEngine {
     var enemyHealed = 0;
     var comboKept = false;
     var backDamage = 0;
+    var specialHit = false;
+    var specialMissed = false;
     EnemyDef? defeated;
     EnemyDef? joined;
     final focusCat = finaleFocus;
@@ -488,6 +523,15 @@ class BattleEngine {
             bonus.weaknessBonus;
       }
       if (effect == CardEffect.focus) extra *= 1.3;
+      if (_specialArmed) {
+        extra *= specialRate;
+        specialHit = true;
+        _specialArmed = false;
+        _special = 0;
+      } else {
+        _special =
+            min(100, _special + (quick ? specialQuickGain : specialGain));
+      }
       // 敵の能力
       switch (ability) {
         case EnemyAbility.guard:
@@ -542,6 +586,12 @@ class BattleEngine {
         comboKept = true;
       } else {
         _combo = 0;
+      }
+      if (_specialArmed) {
+        // 構えていた必殺技は空振り。ゲージはなくなる
+        _specialArmed = false;
+        _special = 0;
+        specialMissed = true;
       }
       if (ability == EnemyAbility.disrupt) {
         _disruptNext = true;
@@ -654,6 +704,8 @@ class BattleEngine {
       defeated: defeated,
       joined: joined,
       backDamage: backDamage,
+      special: specialHit,
+      specialMissed: specialMissed,
     );
     _turns.add(result);
 
