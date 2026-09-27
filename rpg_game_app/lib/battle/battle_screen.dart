@@ -185,8 +185,6 @@ class _BattleScreenState extends State<BattleScreen>
   @override
   void initState() {
     super.initState();
-    // バトル前の熟練度を、記録が更新される前に読んでおく
-    _skillBefore;
     _timer.addStatusListener((s) {
       if (s == AnimationStatus.completed && !_locked) _resolve(null);
     });
@@ -205,6 +203,9 @@ class _BattleScreenState extends State<BattleScreen>
   void didChangeDependencies() {
     super.didChangeDependencies();
     _services = RpgServices.of(context);
+    // バトル前の熟練度を、記録が更新される前に読んでおく
+    // （サービスが使えるようになった直後。initState ではまだ使えない）
+    _skillBefore;
     if (_audioStarted) return;
     _audioStarted = true;
     final music = _services.music;
