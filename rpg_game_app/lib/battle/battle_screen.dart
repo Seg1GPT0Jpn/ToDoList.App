@@ -7,6 +7,7 @@ import '../app/services.dart';
 import '../app/theme.dart';
 import '../app/toast.dart';
 import '../audio/music_director.dart';
+import '../art/battle_backdrop.dart';
 import '../art/enemy_painter.dart';
 import '../art/hero_painter.dart';
 import '../art/paper.dart';
@@ -69,6 +70,9 @@ class _Popup {
 class _BattleScreenState extends State<BattleScreen>
     with TickerProviderStateMixin {
   late final PlayerStats _player = PlayerStats.forLevel(widget.progress.level);
+
+  /// バトルの舞台の地形
+  late final Terrain _terrain = battleTerrainOf(widget.stage);
 
   /// 亡霊バトルでは、間違えた問題の数に合わせた弱めの亡霊が相手
   late final EnemyDef _enemy = widget.ghost
@@ -169,6 +173,21 @@ class _BattleScreenState extends State<BattleScreen>
     vsync: this,
     duration: const Duration(milliseconds: 320),
   );
+
+  /// 当たったときに飛びちる火花
+  late final _burst = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 650),
+  );
+
+  /// 火花の色（クリティカルは金、弱点は緑、ふつうは墨）
+  Color _burstColor = TsuzuriColors.ink;
+
+  /// クリティカルの白い光
+  late final _flash = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 380),
+  );
   late final _playerHit = AnimationController(
     vsync: this,
     duration: const Duration(milliseconds: 480),
@@ -238,6 +257,8 @@ class _BattleScreenState extends State<BattleScreen>
       _timer,
       _enemyHit,
       _slash,
+      _burst,
+      _flash,
       _playerHit,
       _defeat,
     ]) {
@@ -303,6 +324,17 @@ class _BattleScreenState extends State<BattleScreen>
 
     if (r.correct) {
       _slash.forward(from: 0);
+      _burstColor = r.quick
+          ? const Color(0xFFF2B84B)
+          : r.weakness
+          ? const Color(0xFF2E9E5B)
+          : r.blocked
+          ? TsuzuriColors.inkSoft
+          : TsuzuriColors.ink;
+      Future.delayed(const Duration(milliseconds: 140), () {
+        if (mounted) _burst.forward(from: 0);
+      });
+      if (r.quick || r.bossBurst) _flash.forward(from: 0);
       Future.delayed(const Duration(milliseconds: 160), () {
         if (mounted) _enemyHit.forward(from: 0);
       });
@@ -822,6 +854,24 @@ class _BattleScreenState extends State<BattleScreen>
         return Stack(
           alignment: Alignment.center,
           children: [
+            // 地形ごとの舞台（ノートに貼った絵）
+            Positioned.fill(
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(34, 6, 10, 2),
+                child: RepaintBoundary(
+                  child: AnimatedBuilder(
+                    animation: _idle,
+                    builder: (_, _) => CustomPaint(
+                      painter: BattleBackdropPainter(
+                        _terrain,
+                        _idle.value * 120,
+                        boss: widget.stage.isBoss && !widget.ghost,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
             // 乱入してきたボス（前のボスの後ろに重なって控える）
             if (back != null)
               Align(
@@ -880,6 +930,35 @@ class _BattleScreenState extends State<BattleScreen>
                   dimension: size,
                   child: CustomPaint(painter: _SlashPainter(_slash.value)),
                 ),
+              ),
+            ),
+            // 当たったときの火花
+            IgnorePointer(
+              child: AnimatedBuilder(
+                animation: _burst,
+                builder: (_, _) => SizedBox.square(
+                  dimension: size * 1.2,
+                  child: CustomPaint(
+                    painter: _BurstPainter(
+                      _burst.value,
+                      _burstColor,
+                      big: _last?.quick ?? false,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            // クリティカル・大技の白い光
+            IgnorePointer(
+              child: AnimatedBuilder(
+                animation: _flash,
+                builder: (_, _) => _flash.value == 0 || _flash.value == 1
+                    ? const SizedBox.shrink()
+                    : Container(
+                        color: Colors.white.withValues(
+                          alpha: 0.55 * (1 - _flash.value),
+                        ),
+                      ),
               ),
             ),
             // 撃破時のインクしぶき
@@ -1642,6 +1721,73 @@ class _HeroPainter extends CustomPainter {
 }
 
 /// えんぴつで斜めに斬る線
+/// 当たったときに飛びちる火花（星と線）
+class _BurstPainter extends CustomPainter {
+  _BurstPainter(this.v, this.color, {this.big = false});
+  final double v;
+  final Color color;
+  final bool big;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    if (v <= 0 || v >= 1) return;
+    final c = size.center(Offset.zero);
+    final n = big ? 16 : 10;
+    final reach = size.shortestSide * (big ? 0.5 : 0.38);
+    final ease = Curves.easeOutCubic.transform(v);
+    final fade = (1 - v).clamp(0.0, 1.0);
+    for (var i = 0; i < n; i++) {
+      final a = i / n * 2 * pi + (i.isEven ? 0.15 : -0.1);
+      final len = reach * (i.isEven ? 1.0 : 0.72);
+      final start = c + Offset(cos(a), sin(a)) * len * ease * 0.45;
+      final end = c + Offset(cos(a), sin(a)) * len * ease;
+      canvas.drawLine(
+        start,
+        end,
+        Paint()
+          ..color = color.withValues(alpha: fade)
+          ..strokeWidth = big ? 4 : 3
+          ..strokeCap = StrokeCap.round,
+      );
+      if (i % 3 == 0) {
+        _star(
+          canvas,
+          end,
+          (big ? 7 : 5) * fade + 1,
+          color.withValues(alpha: fade),
+        );
+      }
+    }
+    // 中心の輪
+    canvas.drawCircle(
+      c,
+      reach * 0.35 * ease,
+      Paint()
+        ..color = color.withValues(alpha: fade * 0.6)
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 3 * fade + 0.5,
+    );
+  }
+
+  void _star(Canvas canvas, Offset o, double r, Color color) {
+    final p = Path();
+    for (var i = 0; i < 8; i++) {
+      final a = i * pi / 4;
+      final rr = i.isEven ? r : r * 0.4;
+      final pt = o + Offset(cos(a), sin(a)) * rr;
+      if (i == 0) {
+        p.moveTo(pt.dx, pt.dy);
+      } else {
+        p.lineTo(pt.dx, pt.dy);
+      }
+    }
+    canvas.drawPath(p..close(), Paint()..color = color);
+  }
+
+  @override
+  bool shouldRepaint(_BurstPainter old) => old.v != v;
+}
+
 class _SlashPainter extends CustomPainter {
   _SlashPainter(this.v);
   final double v;
