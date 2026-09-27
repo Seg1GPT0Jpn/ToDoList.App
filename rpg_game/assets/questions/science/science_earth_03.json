@@ -345,28 +345,28 @@
     {
       "id": "sci_ear03_027",
       "category": "calculation",
-      "prompt": "P 波の速さ 6 km/s、S 波の速さ 3 km/s。震源距離 60 km での初期微動継続時間は？",
+      "prompt": "P 波の速さ 8 km/s、S 波の速さ 4 km/s とする。初期微動継続時間が 5 秒の地点の震源距離は？",
       "choices": [
-        "20 秒",
-        "30 秒",
-        "5 秒",
-        "10 秒"
+        "80 km",
+        "60 km",
+        "20 km",
+        "40 km"
       ],
       "answerIndex": 3,
-      "explanation": "S 波 20 秒 − P 波 10 秒。"
+      "explanation": "D/4 − D/8 ＝ D/8 ＝ 5 より D ＝ 40 km。"
     },
     {
       "id": "sci_ear03_028",
       "category": "calculation",
-      "prompt": "マグニチュードが 1 大きいと、エネルギーは約何倍？",
+      "prompt": "マグニチュードが 3 大きいと、地震のエネルギーはおよそ何倍？",
       "choices": [
-        "約 10 倍",
-        "約 32 倍",
-        "約 1000 倍",
-        "約 2 倍"
+        "約 96 倍",
+        "約 3 万倍",
+        "約 100 倍",
+        "約 1000 倍"
       ],
       "answerIndex": 1,
-      "explanation": "2 大きいと約 1000 倍。"
+      "explanation": "1 大きいと約 32 倍なので、32 × 32 × 32 ≒ 3 万倍。"
     },
     {
       "id": "sci_ear03_029",

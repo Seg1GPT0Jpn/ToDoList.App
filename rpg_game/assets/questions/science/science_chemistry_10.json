@@ -345,15 +345,15 @@
     {
       "id": "sci_chm10_027",
       "category": "calculation",
-      "prompt": "質量モル濃度 0.10 mol/kg の NaCl 水溶液の凝固点降下度は？（K_f ＝ 1.85 K·kg/mol）",
+      "prompt": "質量モル濃度 0.10 mol/kg の CaCl₂ 水溶液（完全に電離）の凝固点降下度はおよそ？（K_f ＝ 1.85 K·kg/mol）",
       "choices": [
-        "0.74 K",
         "0.37 K",
-        "1.85 K",
-        "0.185 K"
+        "0.56 K",
+        "0.19 K",
+        "1.85 K"
       ],
       "answerIndex": 1,
-      "explanation": "NaCl は 2 つのイオンに電離するので 1.85 × 0.10 × 2。"
+      "explanation": "CaCl₂ → Ca²⁺ ＋ 2Cl⁻ で粒子は 3 倍の 0.30 mol/kg。1.85 × 0.30 ≒ 0.56 K。"
     },
     {
       "id": "sci_chm10_028",

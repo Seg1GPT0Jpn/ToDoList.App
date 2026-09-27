@@ -344,16 +344,16 @@
     },
     {
       "id": "sci_bio13_027",
-      "category": "calculation",
-      "prompt": "DNA の鋳型鎖の塩基配列が TAC のとき、mRNA のコドンは？",
+      "category": "knowledge",
+      "prompt": "DNA の鋳型鎖が「GCA」のとき、転写された mRNA のコドンは？",
       "choices": [
-        "TAC",
-        "AUG",
-        "UAC",
-        "ATG"
+        "GCU",
+        "CGU",
+        "GCA",
+        "CGT"
       ],
       "answerIndex": 1,
-      "explanation": "相補的な塩基：T→A、A→U、C→G。"
+      "explanation": "G→C、C→G、A→U。RNA では T の代わりに U を使う。"
     },
     {
       "id": "sci_bio13_028",
@@ -371,15 +371,15 @@
     {
       "id": "sci_bio13_029",
       "category": "calculation",
-      "prompt": "300 塩基の mRNA（終止コドンを除く）が指定するアミノ酸の数は？",
+      "prompt": "アミノ酸 150 個からなるタンパク質を指定する mRNA の部分（終止コドンを除く）は何塩基？",
       "choices": [
-        "300 個",
-        "150 個",
-        "900 個",
-        "100 個"
+        "300 塩基",
+        "50 塩基",
+        "150 塩基",
+        "450 塩基"
       ],
       "answerIndex": 3,
-      "explanation": "3 塩基で 1 アミノ酸。"
+      "explanation": "1 アミノ酸を 3 塩基（コドン）が指定するので 150 × 3 ＝ 450 塩基。"
     },
     {
       "id": "sci_bio13_030",

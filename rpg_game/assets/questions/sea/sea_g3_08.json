@@ -92,15 +92,15 @@
       "id": "sea_g3_08_07",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "By the time he arrives, we (   ) dinner.",
+      "sentence": "The meeting (   ) by the time we arrived.",
       "choices": [
-        "will have finished",
-        "finish",
-        "finished",
-        "have finished"
+        "had already started",
+        "already starts",
+        "has already started",
+        "will have started"
       ],
       "answerIndex": 0,
-      "explanation": "未来のある時点までの完了は未来完了。"
+      "explanation": "過去のある時点（arrived）までに完了していたことは過去完了。"
     },
     {
       "id": "sea_g3_08_08",
@@ -120,15 +120,15 @@
       "id": "sea_g3_08_09",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "The museum (   ) now.",
+      "sentence": "The letter (   ) by the time I got home.",
       "choices": [
-        "has built",
-        "is being built",
-        "is building",
-        "builds"
+        "had delivered",
+        "had been delivered",
+        "was delivering",
+        "has been delivered"
       ],
       "answerIndex": 1,
-      "explanation": "進行形の受動態。"
+      "explanation": "過去完了の受動態 had been ＋ 過去分詞。手紙は「配達される」側。"
     },
     {
       "id": "sea_g3_08_10",
@@ -148,29 +148,29 @@
       "id": "sea_g3_08_11",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "He is known (   ) everyone in the town.",
+      "sentence": "The baby was taken care (   ) by her aunt.",
       "choices": [
-        "with",
-        "by",
         "for",
-        "to"
+        "to",
+        "with",
+        "of"
       ],
       "answerIndex": 3,
-      "explanation": "be known to「〜に知られている」。"
+      "explanation": "take care of の受動態。of を落とさない。"
     },
     {
       "id": "sea_g3_08_12",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "The mountain is covered (   ) snow.",
+      "sentence": "It is said (   ) he was a spy.",
       "choices": [
-        "in",
-        "by",
-        "with",
-        "of"
+        "what",
+        "if",
+        "that",
+        "which"
       ],
       "answerIndex": 2,
-      "explanation": "be covered with「〜でおおわれている」。"
+      "explanation": "It is said that 〜「〜と言われている」。He is said to have been a spy. とも言える。"
     },
     {
       "id": "sea_g3_08_13",
@@ -204,15 +204,15 @@
       "id": "sea_g3_08_15",
       "category": "usage",
       "prompt": "(   ) に入る最も適切なものは？",
-      "sentence": "I (   ) here for ten years next April.",
+      "sentence": "This time tomorrow, I (   ) over the Pacific.",
       "choices": [
-        "lived",
-        "live",
-        "have lived",
-        "will have lived"
+        "fly",
+        "have flown",
+        "flew",
+        "will be flying"
       ],
       "answerIndex": 3,
-      "explanation": "未来の時点までの継続は未来完了。"
+      "explanation": "未来のある時点で進行中の動作は未来進行形。"
     },
     {
       "id": "sea_g3_08_16",

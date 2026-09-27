@@ -228,15 +228,15 @@
     {
       "id": "mat_mc08_018",
       "category": "calculation",
-      "prompt": "楕円 x²/9+y²/4=1 で囲まれた部分の面積は？",
+      "prompt": "x=cos t、y=sin t で表される曲線の、t=π/4 に対応する点での dy/dx は？",
       "choices": [
-        "36π",
-        "13π",
-        "6π",
-        "9π"
+        "1",
+        "−√2",
+        "−1",
+        "0"
       ],
       "answerIndex": 2,
-      "explanation": "πab=π·3·2。"
+      "explanation": "dy/dx=(dy/dt)/(dx/dt)=cos t/(−sin t)。t=π/4 で −1。"
     },
     {
       "id": "mat_mc08_019",

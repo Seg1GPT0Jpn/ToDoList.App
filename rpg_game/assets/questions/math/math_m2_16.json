@@ -202,15 +202,15 @@
     {
       "id": "mat_m216_016",
       "category": "calculation",
-      "prompt": "∫x³ dx は？（C は積分定数）",
+      "prompt": "∫(3x²−4x+1) dx は？（C は積分定数）",
       "choices": [
-        "x³/3+C",
-        "3x²+C",
-        "x⁴/4+C",
-        "x⁴+C"
+        "x³−4x²+x+C",
+        "6x−4+C",
+        "x³−2x²+x+C",
+        "3x³−2x²+x+C"
       ],
       "answerIndex": 2,
-      "explanation": "xⁿ の不定積分は xⁿ⁺¹/(n+1)+C。"
+      "explanation": "項ごとに積分：x³−2x²+x+C。"
     },
     {
       "id": "mat_m216_017",

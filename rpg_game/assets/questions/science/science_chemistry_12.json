@@ -371,15 +371,15 @@
     {
       "id": "sci_chm12_029",
       "category": "calculation",
-      "prompt": "0.010 mol/L 水酸化ナトリウム水溶液の pH は？（25 ℃）",
+      "prompt": "水のイオン積を 1.0 × 10⁻¹⁴ (mol/L)² とする。[OH⁻] ＝ 1.0 × 10⁻⁵ mol/L の水溶液の pH は？",
       "choices": [
-        "12",
-        "2",
+        "9",
+        "5",
         "14",
         "10"
       ],
       "answerIndex": 0,
-      "explanation": "[OH⁻] ＝ 10⁻²、[H⁺] ＝ 10⁻¹²。"
+      "explanation": "[H⁺] ＝ 1.0×10⁻¹⁴ ÷ 1.0×10⁻⁵ ＝ 1.0 × 10⁻⁹ mol/L なので pH ＝ 9。"
     },
     {
       "id": "sci_chm12_030",

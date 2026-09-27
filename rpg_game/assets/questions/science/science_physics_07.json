@@ -72,15 +72,15 @@
     {
       "id": "sci_phy07_006",
       "category": "knowledge",
-      "prompt": "絶対零度はおよそ何 ℃？",
+      "prompt": "熱容量 C の物体に熱量 Q を与えたときの温度上昇 ΔT は？",
       "choices": [
-        "−373 ℃",
-        "−273 ℃",
-        "−100 ℃",
-        "0 ℃"
+        "Q − C",
+        "Q/C",
+        "QC",
+        "C/Q"
       ],
       "answerIndex": 1,
-      "explanation": "絶対零度（0 K）は約 −273 ℃。これより低い温度はない。"
+      "explanation": "Q ＝ CΔT より ΔT ＝ Q/C。熱容量が大きいほど温まりにくい。"
     },
     {
       "id": "sci_phy07_007",
@@ -111,15 +111,15 @@
     {
       "id": "sci_phy07_009",
       "category": "calculation",
-      "prompt": "27 ℃ は絶対温度で何 K？",
+      "prompt": "400 K は何 ℃？",
       "choices": [
-        "273 K",
-        "300 K",
-        "246 K",
-        "27 K"
+        "673 ℃",
+        "127 ℃",
+        "400 ℃",
+        "−127 ℃"
       ],
       "answerIndex": 1,
-      "explanation": "T ＝ 27 ＋ 273 ＝ 300 K。"
+      "explanation": "t ＝ T − 273 ＝ 400 − 273 ＝ 127 ℃。"
     },
     {
       "id": "sci_phy07_010",
@@ -227,16 +227,16 @@
     },
     {
       "id": "sci_phy07_018",
-      "category": "knowledge",
-      "prompt": "物体の温度が上がると、構成する粒子の運動はどうなる？",
+      "category": "calculation",
+      "prompt": "0 ℃ の氷 10 g をすべて 0 ℃ の水にし、さらに 10 ℃ まで温めるのに必要な熱量の合計は？（融解熱 334 J/g、水の比熱 4.2 J/(g·K)）",
       "choices": [
-        "変わらない",
-        "おだやかになる",
-        "激しくなる",
-        "止まる"
+        "420 J",
+        "3340 J",
+        "3760 J",
+        "4180 J"
       ],
       "answerIndex": 2,
-      "explanation": "温度は熱運動の激しさを表す。"
+      "explanation": "融解に 334 × 10 ＝ 3340 J、温めるのに 10 × 4.2 × 10 ＝ 420 J。合計 3760 J。"
     },
     {
       "id": "sci_phy07_019",

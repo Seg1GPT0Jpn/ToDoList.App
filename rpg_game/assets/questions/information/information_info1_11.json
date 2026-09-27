@@ -267,15 +267,15 @@
     {
       "id": "inf_info111_021",
       "category": "knowledge",
-      "prompt": "Web サイトの利用者の操作などを記録し、次に訪れたときに使うための小さなデータは？",
+      "prompt": "Web ページの場所を示す「https://www.example.jp/」のような文字列を何という？",
       "choices": [
-        "Cookie",
+        "URL",
+        "HTML",
         "IP アドレス",
-        "キャッシュだけ",
-        "ドメイン"
+        "MAC アドレス"
       ],
       "answerIndex": 0,
-      "explanation": "ログイン状態の保持などに使われる。"
+      "explanation": "スキーム（https）、ドメイン名、パスなどからなる。"
     },
     {
       "id": "inf_info111_022",
