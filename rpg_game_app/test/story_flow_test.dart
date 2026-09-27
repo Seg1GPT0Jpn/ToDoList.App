@@ -4,6 +4,7 @@ import 'package:rpg_game/rpg_game.dart';
 import 'package:rpg_game_app/field/field_screen.dart';
 import 'package:rpg_game_app/meta/story_screen.dart';
 import 'package:rpg_game_app/story/story_player.dart';
+import 'package:rpg_game_app/versus/versus_screen.dart';
 
 import 'harness.dart';
 
@@ -74,6 +75,38 @@ void main() {
     }
     await _frames(t, 10);
     expect(find.byType(StoryPlayerScreen), findsNothing);
+    expect(t.takeException(), isNull);
+  });
+
+  testWidgets('物語の画面：ボスの前の場面を読んだ国では、ノイズと早押し勝負ができる', (t) async {
+    final s = await openScreen(
+      t,
+      const StoryScreen(),
+      size: const Size(420, 2600),
+    );
+    expect(find.byTooltip('ノイズと早押し勝負'), findsNothing);
+    await t.runAsync(
+      () => s.repository.save(
+        StoryScenes.markSeen(RpgProgress.initial, StoryScenes.boss('english')),
+      ),
+    );
+    await _frames(t, 5);
+    await t.tap(find.byTooltip('ノイズと早押し勝負'));
+    for (
+      var i = 0;
+      i < 20 && find.byType(VersusScreen).evaluate().isEmpty;
+      i++
+    ) {
+      await t.runAsync(
+        () => Future<void>.delayed(const Duration(milliseconds: 50)),
+      );
+      await t.pump(const Duration(milliseconds: 100));
+    }
+    expect(find.byType(VersusScreen), findsOneWidget);
+    expect(find.text('ノイズ'), findsOneWidget);
+    await _frames(t, 5);
+    await t.tap(find.byIcon(Icons.close));
+    await _frames(t, 10);
     expect(t.takeException(), isNull);
   });
 }

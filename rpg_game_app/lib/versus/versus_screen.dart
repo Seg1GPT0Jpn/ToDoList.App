@@ -10,6 +10,7 @@ import '../app/toast.dart';
 import '../art/enemy_painter.dart';
 import '../art/hero_painter.dart';
 import '../art/paper.dart';
+import '../story/story_player.dart';
 import 'online_lobby_screen.dart';
 import 'online_room.dart';
 
@@ -311,7 +312,11 @@ class VersusScreen extends StatefulWidget {
     this.onFinished,
     this.random,
     this.online,
+    this.rival = false,
   });
+
+  /// 物語のライバル「ノイズ」との勝負（CPU の姿がノイズになる）
+  final bool rival;
 
   /// オンライン対戦のとき、そのつながり
   final OnlineLink? online;
@@ -673,7 +678,9 @@ class _VersusScreenState extends State<VersusScreen>
             child: AnimatedBuilder(
               animation: _idle,
               builder: (_, _) => CustomPaint(
-                painter: widget.cpu == null
+                painter: widget.rival
+                    ? _NoisePainter(_idle.value * 60)
+                    : widget.cpu == null
                     ? _HeroMini(false)
                     : _LookPainter(_cpuLook(widget.cpu!), _idle.value * 60),
               ),
@@ -849,6 +856,8 @@ class _VersusScreenState extends State<VersusScreen>
     final a = _match.players[0], b = _match.players[1];
     final title = w == null
         ? '引き分け！'
+        : widget.rival
+        ? (w == 0 ? 'ノイズに勝った！' : 'ノイズの勝ち…')
         : widget.cpu != null
         ? (w == 0 ? 'あなたの勝ち！' : 'CPU の勝ち…')
         : _online != null
@@ -929,6 +938,16 @@ class _LookPainter extends CustomPainter {
       paintEnemy(canvas, size.shortestSide, look, t);
   @override
   bool shouldRepaint(_LookPainter old) => true;
+}
+
+class _NoisePainter extends CustomPainter {
+  _NoisePainter(this.t);
+  final double t;
+  @override
+  void paint(Canvas canvas, Size size) =>
+      paintNoise(canvas, size.shortestSide, t);
+  @override
+  bool shouldRepaint(_NoisePainter old) => true;
 }
 
 class _HeroMini extends CustomPainter {

@@ -6,6 +6,7 @@ import '../app/theme.dart';
 import '../art/paper.dart';
 import '../battle/battle_screen.dart';
 import '../story/story_player.dart';
+import '../versus/versus_screen.dart';
 
 /// 物語：知識の世界と6つの欠片。6つそろうと「世界の中心」の決戦に挑める
 class StoryScreen extends StatefulWidget {
@@ -18,6 +19,30 @@ class StoryScreen extends StatefulWidget {
 class _StoryScreenState extends State<StoryScreen> {
   /// エピローグをもう見せはじめた
   bool _epilogueShown = false;
+
+  /// 物語のライバル「ノイズ」と、その国の問題で早押し勝負（章が進むほど強い）
+  Future<void> _rivalMatch(BuildContext context, String worldId) async {
+    final services = RpgServices.of(context);
+    final stages = [...RpgCatalog.world(worldId).stages.where((s) => !s.isBoss)]
+      ..shuffle();
+    final setIds = [for (final s in stages.take(4)) s.questionSetIds.first];
+    final questions = await loadVersusQuestions(services, setIds);
+    if (!context.mounted || questions.isEmpty) return;
+    final chapter = StoryScenes.chapterOf(worldId);
+    final level =
+        CpuLevel.values[((chapter - 1) * CpuLevel.values.length) ~/ 6];
+    await Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        builder: (_) => VersusScreen(
+          questions: questions,
+          names: [services.profiles.load().displayName, 'ノイズ'],
+          cpu: level,
+          rounds: 10,
+          rival: true,
+        ),
+      ),
+    );
+  }
 
   Future<void> _challengeCenter(BuildContext context) async {
     final services = RpgServices.of(context);
@@ -108,6 +133,13 @@ class _StoryScreenState extends State<StoryScreen> {
                       title: Text(
                         '${RpgCatalog.world(w.worldId).name}：${got.contains(w.worldId) ? w.fragment : '？？？の欠片'}',
                       ),
+                      trailing: StoryScenes.seen(p, StoryScenes.boss(w.worldId))
+                          ? IconButton(
+                              tooltip: 'ノイズと早押し勝負',
+                              icon: const Icon(Icons.sports_esports),
+                              onPressed: () => _rivalMatch(context, w.worldId),
+                            )
+                          : null,
                       subtitle: Text(
                         got.contains(w.worldId)
                             ? '${w.clearText}\n手に入れた：${w.key}・${GearDef.byId(GearDef.byFragment[w.worldId]!).name}'
