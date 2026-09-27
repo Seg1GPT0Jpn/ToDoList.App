@@ -5,7 +5,10 @@ import '../models/world.dart';
 import 'sea_battle.dart';
 
 /// 試験対策ワールド：試験範囲を入力すると、その範囲のエリアを集めて
-/// 1本道のワールドを作る（定期テストの海の機能）。
+/// 1つのワールドを作る（定期テストの海の機能）。
+///
+/// 6教科（英語・数学・国語・理科・社会・情報）のエリアを1つのワールドに
+/// まとめられる。歩けるフィールドも同じ並びで作られる。
 ///
 /// 問題はすべて RPG と同じ自作問題を使う。遊んでも RPG の進行は変わらない。
 class ExamWorldPlan {
@@ -17,15 +20,53 @@ class ExamWorldPlan {
     required this.createdAt,
     this.rangeText = '',
     this.clearedCount = 0,
+    this.examDate,
+    this.gauge = 0,
+    this.openedChests = const {},
   });
 
   final String id;
 
-  /// 試験の名前（例：2学期中間テスト 数学）
+  /// 試験の名前（例：2学期中間テスト）
   final String title;
 
-  /// 元にした教科のワールド
+  /// 最初に選んだ教科のワールド（古いデータとの互換用）。
+  /// 教科の一覧は [worldIds] を使う。
   final String worldId;
+
+  /// 試験の日（決めていなければ null）
+  final DateTime? examDate;
+
+  /// テスト対策ゲージ（0〜[ExamWorlds.gaugeMax]）。
+  /// エリアのクリア・宝箱・泉の問題に正解するとたまる。
+  final int gauge;
+
+  /// フィールドで開けた宝箱（このワールドの中だけで使う）
+  final Set<String> openedChests;
+
+  /// ふくまれる教科のワールド（ステージの並び順）
+  List<String> get worldIds {
+    final out = <String>[];
+    for (final id in stageIds) {
+      final s = ExamWorlds.stageById(id);
+      if (s != null && !out.contains(s.worldId)) out.add(s.worldId);
+    }
+    return out.isEmpty ? [worldId] : out;
+  }
+
+  /// 画面に出す教科名（例：数学・英語）
+  String get subjectsLabel => [
+        for (final w in worldIds) RpgCatalog.world(w).subject,
+      ].join('・');
+
+  /// 試験まであと何日か（試験日が未設定なら null。当日は 0）
+  int? daysLeft(DateTime today) {
+    final d = examDate;
+    if (d == null) return null;
+    final a = DateTime.utc(today.year, today.month, today.day);
+    final b = DateTime.utc(d.year, d.month, d.day);
+    return b.difference(a).inDays;
+  }
 
   /// 集めたエリア（RPG のステージ ID）。この順に並ぶ
   final List<String> stageIds;
@@ -41,7 +82,13 @@ class ExamWorldPlan {
   int get length => stageIds.length + 1;
   bool get completed => clearedCount >= length;
 
-  ExamWorldPlan copyWith({int? clearedCount, String? title}) => ExamWorldPlan(
+  ExamWorldPlan copyWith({
+    int? clearedCount,
+    String? title,
+    int? gauge,
+    Set<String>? openedChests,
+  }) =>
+      ExamWorldPlan(
         id: id,
         title: title ?? this.title,
         worldId: worldId,
@@ -49,7 +96,13 @@ class ExamWorldPlan {
         createdAt: createdAt,
         rangeText: rangeText,
         clearedCount: clearedCount ?? this.clearedCount,
+        examDate: examDate,
+        gauge: (gauge ?? this.gauge).clamp(0, ExamWorlds.gaugeMax),
+        openedChests: openedChests ?? this.openedChests,
       );
+
+  /// ゲージを [points] ふやした形
+  ExamWorldPlan addGauge(int points) => copyWith(gauge: gauge + points);
 
   Map<String, dynamic> toMap() => {
         'id': id,
@@ -59,6 +112,9 @@ class ExamWorldPlan {
         'rangeText': rangeText,
         'createdAt': createdAt.toIso8601String(),
         'clearedCount': clearedCount,
+        if (examDate != null) 'examDate': examDate!.toIso8601String(),
+        'gauge': gauge,
+        if (openedChests.isNotEmpty) 'openedChests': openedChests.toList(),
       };
 
   factory ExamWorldPlan.fromMap(Map<String, dynamic> map) => ExamWorldPlan(
@@ -70,14 +126,36 @@ class ExamWorldPlan {
         createdAt: DateTime.tryParse(map['createdAt'] as String? ?? '') ??
             DateTime(2000),
         clearedCount: (map['clearedCount'] as num?)?.toInt() ?? 0,
+        examDate: DateTime.tryParse(map['examDate'] as String? ?? ''),
+        gauge: (map['gauge'] as num?)?.toInt() ?? 0,
+        openedChests:
+            Set<String>.from(map['openedChests'] as List? ?? const []),
       );
 }
 
 class ExamWorlds {
   const ExamWorlds._();
 
-  /// 1つのワールドに集められるエリアの数
-  static const maxAreas = 20;
+  /// 1つのワールドに集められるエリアの数（6教科をまとめても遊びきれる量）
+  static const maxAreas = 30;
+
+  /// テスト対策ゲージの最大
+  static const gaugeMax = 100;
+
+  static final Map<String, StageDef> _stages = {
+    for (final w in RpgCatalog.worlds)
+      for (final s in w.stages) s.id: s,
+  };
+
+  /// すべての教科から、ID でステージを探す
+  static StageDef? stageById(String id) => _stages[id];
+
+  /// 教科ごとの試験範囲から、合うエリアを集める（教科の順 → ワールドの並び順）。
+  /// [ranges] は ワールドID → 試験範囲の文章。
+  static List<StageDef> matchAll(Map<String, String> ranges) => [
+        for (final e in ranges.entries)
+          ...match(RpgCatalog.world(e.key), e.value),
+      ];
 
   /// 入力のゆれをそろえる（全角英数字→半角、漢数字の「二次」→「2次」など）
   static String normalize(String s) {
@@ -150,11 +228,9 @@ class ExamWorlds {
   /// [level] を渡すと、定期テストの海と同じ「とても難しい」強さにする
   /// （エリアが進むほど少しずつ HP が増え、試験本番はさらに強い）。
   static List<StageDef> build(ExamWorldPlan plan, {int? level}) {
-    final world = RpgCatalog.world(plan.worldId);
-    final byId = {for (final s in world.stages) s.id: s};
     final picked = [
       for (final id in plan.stageIds)
-        if (byId[id] != null) byId[id]!,
+        if (stageById(id) != null) stageById(id)!,
     ];
     final curve = RpgCatalog.englishStages;
     final hard = level == null
@@ -162,7 +238,7 @@ class ExamWorlds {
         : SeaBattle.stage(
             id: plan.id,
             title: plan.title,
-            worldId: plan.worldId,
+            worldId: picked.isEmpty ? plan.worldId : picked.first.worldId,
             level: level,
             normalTimeLimitSeconds: 20,
           ).enemy;
@@ -188,7 +264,7 @@ class ExamWorlds {
       for (var i = 0; i < picked.length; i++)
         StageDef(
           id: 'exam_${plan.id}_${i + 1}',
-          worldId: world.id,
+          worldId: picked[i].worldId,
           order: i + 1,
           name: picked[i].name,
           region: plan.title,
@@ -207,11 +283,12 @@ class ExamWorlds {
     ];
     if (picked.isEmpty) return stages;
     final last = picked.last;
+    final lastWorld = RpgCatalog.world(last.worldId);
     final bossK = (picked.length + 1).clamp(1, 10);
     stages.add(
       StageDef(
         id: 'exam_${plan.id}_boss',
-        worldId: world.id,
+        worldId: last.worldId,
         order: picked.length + 1,
         name: '試験本番',
         region: plan.title,
@@ -222,7 +299,7 @@ class ExamWorlds {
             name: '範囲の番人',
             maxHp: 1,
             attack: 1,
-            look: world.stages
+            look: lastWorld.stages
                 .lastWhere((s) => s.isBoss, orElse: () => last)
                 .enemy
                 .look,

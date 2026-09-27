@@ -101,18 +101,84 @@ void checkRoute(String name, FieldMap map, List<StageDef> stages, Cell start) {
       }
     });
 
-    test('宝箱は全エリアに1つずつ、泉は2エリアに1つ、どれも立ち寄れる', () {
+    test('奥の宝箱は全エリアに1つずつ、泉は2エリアに1つ、どれも立ち寄れる', () {
       final chests = map.findAll('C');
+      final main = [
+        for (final c in chests)
+          if (map.chestKinds[c] == ChestKind.main) c,
+      ];
       expect(
-        {for (final c in chests) map.enemyAhead(c)},
+        {for (final c in main) map.enemyAhead(c)},
         {for (final s in stages) s.order},
       );
-      expect(chests.length, stages.length);
+      expect(main.length, stages.length);
       expect(map.findAll('W').length, stages.length ~/ 2);
       final all = reachable(1 << 20, withGhosts: true);
-      for (final c in [...chests, ...map.findAll('W')]) {
+      for (final c in [...main, ...map.findAll('W')]) {
         expect(adjacent(all, c), isTrue, reason: '$c');
       }
+    });
+
+    test('隠し通路・知識の扉の奥には宝箱があり、入口には歩いて行ける', () {
+      final all = reachable(1 << 20, withGhosts: true);
+      final entrances = [...map.findAll('H'), ...map.findAll('D')];
+      expect(entrances.length, greaterThanOrEqualTo(stages.length ~/ 2));
+      for (final e in entrances) {
+        expect(adjacent(all, e), isTrue, reason: '入口 $e');
+      }
+      final nookChests = [
+        for (final c in map.findAll('C'))
+          if (map.chestKinds[c] != ChestKind.main) c,
+      ];
+      expect(nookChests.length, entrances.length);
+      for (final c in nookChests) {
+        // 入口を開けると（H・D を床とみなすと）たどり着ける
+        final opened = {...all, for (final e in entrances) (e.col, e.row)};
+        var grew = true;
+        while (grew) {
+          grew = false;
+          for (var r = 0; r < map.height; r++) {
+            for (var col = 0; col < map.width; col++) {
+              if (map.tileAt(col, r) != '.' || opened.contains((col, r))) {
+                continue;
+              }
+              if (adjacent(opened, (col: col, row: r))) {
+                opened.add((col, r));
+                grew = true;
+              }
+            }
+          }
+        }
+        expect(adjacent(opened, c), isTrue, reason: '奥の宝箱 $c');
+      }
+    });
+
+    test('どのエリアにもワープ石があり、立ち寄れる', () {
+      final warps = map.findAll('X');
+      expect(
+        {for (final x in warps) map.enemyAhead(x)},
+        {for (final s in stages) s.order},
+      );
+      final all = reachable(1 << 20, withGhosts: true);
+      for (final x in warps) {
+        expect(adjacent(all, x), isTrue);
+        expect(map.floorNextTo(x), isNotNull);
+      }
+    });
+
+    test('エリアごとに、名前に合った地形とテーマがつく', () {
+      for (final s in stages) {
+        expect(map.areaLabels[s.order], contains(s.name));
+        expect(map.areaThemes[s.order], isNotEmpty);
+      }
+      final kinds = {
+        for (final s in stages)
+          map.terrainAt(
+            map.enemySpots[s.order]!.col,
+            map.enemySpots[s.order]!.row,
+          ),
+      };
+      expect(kinds.length, greaterThanOrEqualTo(stages.length >= 10 ? 4 : 2));
     });
 
     test('全部屋に亡霊がいても、敵・宿・ゴールへの道はふさがれない', () {
@@ -235,5 +301,29 @@ void main() {
         expect(hub.spawnFrom('science_${b.id}'), isNot(hub.start));
       }
     });
+  });
+
+  // 試験対策ワールド：6教科を混ぜたエリアと試験本番で、同じように歩けるフィールドができる
+  final picked = ExamWorlds.matchAll({
+    'math': '2次関数',
+    RpgCatalog.englishWorldId: '関係詞',
+    'japanese': '助動詞',
+    'science': '物質量',
+    'social': '明治維新',
+    'information': 'ネットワーク',
+  });
+  final plan = ExamWorldPlan(
+    id: 'test',
+    title: '期末テスト',
+    worldId: 'math',
+    stageIds: [for (final s in picked.take(12)) s.id],
+    createdAt: DateTime(2026),
+  );
+  final examStages = ExamWorlds.build(plan);
+  final examMap = FieldMap.forExam(plan, examStages);
+  checkRoute('試験対策ワールド（6教科）', examMap, examStages, examMap.start);
+  test('試験対策ワールドの最後は、試験本番のボスの間', () {
+    expect(examMap.bossAreas, contains(examStages.last.order));
+    expect(examMap.areaLabels[examStages.last.order], '試験本番');
   });
 }

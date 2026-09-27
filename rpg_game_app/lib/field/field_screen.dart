@@ -26,10 +26,33 @@ class FieldScreen extends StatefulWidget {
     required this.progress,
     String? mapId,
     this.from,
+    this.exam,
   }) : mapId = mapId ?? '';
+
+  /// 試験対策ワールドのフィールド（6教科を混ぜたエリアを1本の冒険にする）
+  factory FieldScreen.exam({
+    Key? key,
+    required ExamWorldPlan plan,
+    required RpgProgress progress,
+  }) => FieldScreen(
+    key: key,
+    world: WorldDef(
+      id: 'exam_${plan.id}',
+      name: plan.title,
+      subject: plan.subjectsLabel,
+      status: WorldStatus.available,
+      isFree: true,
+      stages: ExamWorlds.build(plan),
+    ),
+    progress: progress,
+    exam: plan,
+  );
 
   final WorldDef world;
   final RpgProgress progress;
+
+  /// 試験対策ワールドのとき、そのプラン
+  final ExamWorldPlan? exam;
 
   /// 表示するマップ（空ならそのワールドの最初のマップ）
   final String mapId;
@@ -70,6 +93,17 @@ class _SpringDialog extends _Dialog {
   final StageDef stage;
 }
 
+class _DoorDialog extends _Dialog {
+  _DoorDialog(this.stage, this.cell);
+  final StageDef stage;
+  final Cell cell;
+}
+
+class _WarpDialog extends _Dialog {
+  _WarpDialog(this.cell);
+  final Cell cell;
+}
+
 class _GhostDialog extends _Dialog {
   _GhostDialog(this.stage, this.count);
   final StageDef stage;
@@ -95,16 +129,30 @@ const _ghostLook = EnemyDef(
 
 class _FieldScreenState extends State<FieldScreen> with RouteAware {
   late RpgProgress _progress = widget.progress;
+
+  /// 試験対策ワールドのプラン（クリア数・ゲージ・開けた宝箱は、ここに記録する）
+  late ExamWorldPlan? _plan = widget.exam;
+  bool get _isExam => widget.exam != null;
+
   late final FieldGame _game = FieldGame(
-    map: FieldMap.byId(
-      widget.mapId.isEmpty
-          ? FieldMap.firstMapOf(widget.world.id)
-          : widget.mapId,
-    ),
+    map: _isExam
+        ? FieldMap.forExam(widget.exam!, widget.world.stages)
+        : FieldMap.byId(
+            widget.mapId.isEmpty
+                ? FieldMap.firstMapOf(widget.world.id)
+                : widget.mapId,
+          ),
     from: widget.from,
     onPortal: _travel,
     rpgWorld: widget.world,
     progress: widget.progress,
+    isCleared: _isExam ? (_, s) => _examCleared(s) : null,
+    chestOpened: _isExam
+        ? (_, id) => _plan?.openedChests.contains(id) ?? false
+        : null,
+    onSecret: _revealSecret,
+    onDoor: (stage, cell) => _open(_DoorDialog(stage, cell)),
+    onWarp: _touchWarp,
     onEncounter: (stage, cleared) => _open(_EncounterDialog(stage, cleared)),
     onMessage: (text) => _open(_MessageDialog(text)),
     onInn: (stage) => _open(_InnDialog(stage)),
@@ -120,6 +168,60 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
   final _random = Random();
   _Dialog? _dialog;
   bool _starting = false;
+
+  /// エリアに入ったときに出す見出し
+  String? _banner;
+  String _bannerTheme = '';
+  bool _bannerBoss = false;
+  int _bannerSerial = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _game.areaNo.addListener(_onAreaChanged);
+  }
+
+  void _onAreaChanged() {
+    final no = _game.areaNo.value;
+    final label = _game.map.areaLabels[no];
+    if (label == null || !mounted) return;
+    final serial = ++_bannerSerial;
+    setState(() {
+      _banner = label;
+      _bannerTheme = _game.map.areaThemes[no] ?? '';
+      _bannerBoss = _game.map.bossAreas.contains(no);
+    });
+    Future<void>.delayed(const Duration(milliseconds: 2400), () {
+      if (mounted && serial == _bannerSerial) setState(() => _banner = null);
+    });
+  }
+
+  /// 試験対策ワールドで、そのステージ（強敵をふくむ）をクリアしたか
+  bool _examCleared(StageDef s) {
+    final plan = _plan;
+    if (plan == null) return false;
+    if (Elites.isElite(s.id)) return plan.openedChests.contains(s.id);
+    return s.order <= plan.clearedCount;
+  }
+
+  /// 試験対策ワールドの記録を保存する
+  Future<void> _saveExam(ExamWorldPlan plan) async {
+    await RpgServices.of(context).examWorlds.update(plan);
+    if (!mounted) return;
+    setState(() => _plan = plan);
+    _game.applyProgress(_progress);
+  }
+
+  /// 宿・宝箱などで使う、もとの教科のエリア（試験対策ワールドのとき）
+  StageDef _source(StageDef stage) {
+    final plan = _plan;
+    if (plan == null) return stage;
+    final base = Elites.baseId(stage.id);
+    final i = widget.world.stages.indexWhere((s) => s.id == base);
+    if (i < 0 || plan.stageIds.isEmpty) return stage;
+    final id = plan.stageIds[i.clamp(0, plan.stageIds.length - 1)];
+    return ExamWorlds.stageById(id) ?? stage;
+  }
 
   /// キーボード操作用。バトルから戻ったときやダイアログを閉じたときに取り戻す
   final _focus = FocusNode();
@@ -143,9 +245,13 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
   void didPopNext() => _refreshAfterBattle();
 
   Future<void> _refreshAfterBattle() async {
-    final updated = await RpgServices.of(context).repository.load();
+    final services = RpgServices.of(context);
+    final updated = await services.repository.load();
     if (!mounted) return;
-    setState(() => _progress = updated);
+    setState(() {
+      _progress = updated;
+      if (_plan != null) _plan = services.examWorlds.byId(_plan!.id) ?? _plan;
+    });
     _game.applyProgress(updated);
     _game.inputLocked = false;
     _focus.requestFocus();
@@ -181,21 +287,106 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
     }
     _close();
     _game.inputLocked = true;
+    final plan = _plan;
     // 戻ってきたときの処理は didPopNext で行う（結果画面へは差し替えで進むため、
     // ここで push の完了を待つと結果画面を閉じる前に戻り処理が走ってしまう）
     Navigator.of(context).push(
       PageRouteBuilder<void>(
         transitionDuration: const Duration(milliseconds: 600),
-        pageBuilder: (_, _, _) => BattleScreen(
-          world: widget.world,
-          stage: stage,
-          questions: set.questions,
-          progress: _progress,
-        ),
+        pageBuilder: (_, _, _) => plan == null
+            ? BattleScreen(
+                world: widget.world,
+                stage: stage,
+                questions: set.questions,
+                progress: _progress,
+              )
+            : _examBattle(plan, stage, set.questions),
         transitionsBuilder: (_, anim, _, child) =>
             _BattleTransition(animation: anim, child: child),
       ),
     );
+  }
+
+  /// 試験対策ワールドのバトル（定期テストの海と同じ「とても難しい」強さ。RPG の進行は変えない）
+  Widget _examBattle(
+    ExamWorldPlan plan,
+    StageDef stage,
+    List<QuizQuestion> questions,
+  ) {
+    final elite = Elites.isElite(stage.id);
+    final index = widget.world.stages.indexWhere(
+      (s) => s.id == Elites.baseId(stage.id),
+    );
+    final hard = ExamWorlds.build(plan, level: _progress.level)[index];
+    final services = RpgServices.of(context);
+    return BattleScreen(
+      world: RpgCatalog.world(hard.worldId),
+      stage: elite ? Elites.of(hard) : hard,
+      questions: questions,
+      progress: _progress,
+      trial: true,
+      mode: BattleMode.exam,
+      onFinished: (summary) {
+        if (!summary.won) return;
+        final latest = services.examWorlds.byId(plan.id);
+        if (latest == null) return;
+        if (elite) {
+          if (latest.openedChests.contains(stage.id)) return;
+          services.examWorlds.update(
+            latest
+                .copyWith(openedChests: {...latest.openedChests, stage.id})
+                .addGauge(5),
+          );
+          return;
+        }
+        if (latest.clearedCount > index) return;
+        services.examWorlds.update(
+          latest
+              .copyWith(clearedCount: index + 1)
+              .addGauge(hard.isBoss ? 15 : 6),
+        );
+      },
+    );
+  }
+
+  /// 隠し通路を調べた
+  Future<void> _revealSecret(Cell cell) async {
+    final key = FieldGame.openKey(_game.map.id, cell);
+    await _save(_progress.copyWith(fieldFlags: {..._progress.fieldFlags, key}));
+    if (!mounted) return;
+    _open(_MessageDialog('よく見ると、ひびが入っている…。押してみると、奥へ続く隠し通路が現れた！'));
+  }
+
+  /// 知識の扉：その先のエリアの問題1問に正解すると開く（まちがえても何度でも挑戦できる）
+  Future<void> _tryDoor(StageDef stage, Cell cell) async {
+    final qs = await _pick(_source(stage), 1, (q) => true);
+    if (!mounted || qs.isEmpty) return;
+    _open(
+      _QuizDialog('知識の扉：${_source(stage).grammarTheme}', qs, (correct) async {
+        if (correct == 1) {
+          final key = FieldGame.openKey(_game.map.id, cell);
+          await _save(
+            _progress.copyWith(fieldFlags: {..._progress.fieldFlags, key}),
+          );
+          if (!mounted) return;
+          _open(_MessageDialog('ゴゴゴ…知識の扉が開いた！'));
+        } else {
+          _open(_MessageDialog('扉はびくともしない…。「封印が強くなった……」\n解説を読んで、もう一度挑戦しよう。'));
+        }
+      }),
+    );
+  }
+
+  /// ワープ石にさわった（はじめてなら記録して、ほかの石へ飛べるようにする）
+  Future<void> _touchWarp(Cell cell) async {
+    final key = FieldGame.warpKey(_game.map.id, cell);
+    if (!_progress.fieldFlags.contains(key)) {
+      await _save(
+        _progress.copyWith(fieldFlags: {..._progress.fieldFlags, key}),
+      );
+      if (!mounted) return;
+    }
+    _open(_WarpDialog(cell));
   }
 
   /// 出入口を通って別のマップへ移動する
@@ -244,13 +435,35 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
 
   Future<void> _tryChest(StageDef stage, String chestId) async {
     final qs = await _pick(
-      stage,
+      _source(stage),
       1,
       (q) => q.category == QuestionCategory.usage,
     );
     if (!mounted || qs.isEmpty) return;
+    final plan = _plan;
+    if (plan != null) {
+      _open(
+        _QuizDialog('知識の封印', qs, (correct) async {
+          final latest =
+              RpgServices.of(context).examWorlds.byId(plan.id) ?? plan;
+          final opened = latest.copyWith(
+            openedChests: {...latest.openedChests, chestId},
+          );
+          await _saveExam(correct == 1 ? opened.addGauge(5) : opened);
+          if (!mounted) return;
+          _open(
+            _MessageDialog(
+              correct == 1
+                  ? '封印がとけた！ 宝箱の中には「要点メモ」。テスト対策ゲージが 5 たまった。'
+                  : '「封印が強くなった……」宝箱は砂になって消えてしまった。解説を読んでおこう。',
+            ),
+          );
+        }),
+      );
+      return;
+    }
     _open(
-      _QuizDialog('宝箱の鍵：難問', qs, (correct) async {
+      _QuizDialog('知識の封印', qs, (correct) async {
         final (updated, card) = Progression.openChest(
           _progress,
           chestId,
@@ -272,7 +485,7 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
 
   Future<void> _trySpring(StageDef stage) async {
     final qs = await _pick(
-      stage,
+      _source(stage),
       3,
       (q) => q.category == QuestionCategory.meaning,
     );
@@ -281,6 +494,12 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
       _QuizDialog('泉のささやき：基礎の3問', qs, (correct) async {
         if (correct == qs.length) {
           await _save(Progression.blessSpring(_progress));
+          final plan = _plan;
+          if (plan != null && mounted) {
+            final latest =
+                RpgServices.of(context).examWorlds.byId(plan.id) ?? plan;
+            await _saveExam(latest.addGauge(2));
+          }
           if (!mounted) return;
           _open(_MessageDialog('泉が光った！ 次のバトルで最大HPが30%ふえる。'));
         } else {
@@ -332,8 +551,13 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
   Widget build(BuildContext context) {
     final stats = PlayerStats.forLevel(_progress.level);
     final cleared = widget.world.stages
-        .where((s) => _progress.clearedStageIds.contains(s.id))
+        .where(
+          (s) => _isExam
+              ? _examCleared(s)
+              : _progress.clearedStageIds.contains(s.id),
+        )
         .length;
+    final plan = _plan;
     return Scaffold(
       backgroundColor: TsuzuriColors.kraft,
       body: Stack(
@@ -365,11 +589,30 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
                           level: stats.level,
                           exp: _progress.exp,
                           expToNext: PlayerStats.expToNextLevel(stats.level),
-                          stars: '★ $cleared / ${widget.world.stages.length}',
+                          stars: plan == null
+                              ? '★ $cleared / ${widget.world.stages.length}'
+                              : '★ $cleared / ${widget.world.stages.length}　対策ゲージ ${plan.gauge}',
                         ),
                       ),
                     ),
                   ],
+                ),
+              ),
+            ),
+          ),
+          // エリアに入ったときの見出し
+          Positioned(
+            top: 90,
+            left: 24,
+            right: 24,
+            child: IgnorePointer(
+              child: AnimatedOpacity(
+                opacity: _banner == null ? 0 : 1,
+                duration: const Duration(milliseconds: 350),
+                child: _AreaBanner(
+                  title: _banner ?? '',
+                  theme: _bannerTheme,
+                  boss: _bannerBoss,
                 ),
               ),
             ),
@@ -429,7 +672,7 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
           child: Text(text, style: const TextStyle(fontSize: 15, height: 1.6)),
         );
       case _InnDialog(:final stage):
-        final lesson = InnLessons.forStage(stage.id);
+        final lesson = InnLessons.forStage(_source(stage).id);
         return _MessageBox(
           actions: [
             TextButton(onPressed: _close, child: const Text('やめておく')),
@@ -439,7 +682,7 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
                 _game.inputLocked = true;
                 Navigator.of(context).push(
                   MaterialPageRoute<void>(
-                    builder: (_) => InnScreen(stage: stage),
+                    builder: (_) => InnScreen(stage: _source(stage)),
                   ),
                 );
               },
@@ -472,11 +715,13 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('宝箱がある！', style: serif(16)),
+              Text('🔒 知識の封印', style: serif(16)),
               const SizedBox(height: 4),
-              const Text(
-                '鍵は「難問」1問。正解すればレアカードが手に入る。\nでも、まちがえると宝箱は消えてしまう…（1回きり）',
-                style: TextStyle(fontSize: 13.5, height: 1.6),
+              Text(
+                _isExam
+                    ? 'この宝箱を開けるには問題に答えよう！\n正解すればテスト対策ゲージがたまる。まちがえると宝箱は消えてしまう…（1回きり）'
+                    : 'この宝箱を開けるには問題に答えよう！\n正解すればレアカードが手に入る。まちがえると「封印が強くなり」、宝箱は消えてしまう…（1回きり）',
+                style: const TextStyle(fontSize: 13.5, height: 1.6),
               ),
             ],
           ),
@@ -500,6 +745,59 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
                 '基礎の単語を3問。全問正解すると、次のバトルで最大HPが30%ふえる。\n何度でも挑戦できる。',
                 style: TextStyle(fontSize: 13.5, height: 1.6),
               ),
+            ],
+          ),
+        );
+      case _DoorDialog(:final stage, :final cell):
+        return _MessageBox(
+          actions: [
+            TextButton(onPressed: _close, child: const Text('やめておく')),
+            FilledButton.icon(
+              onPressed: () => _tryDoor(stage, cell),
+              icon: const Icon(Icons.lock_open, size: 18),
+              label: const Text('問いに答える'),
+            ),
+          ],
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('知識の扉', style: serif(16)),
+              const SizedBox(height: 4),
+              Text(
+                '扉に文字がきざまれている。「${_source(stage).grammarTheme}」の問いに正解すると開くらしい。\n奥に何かがありそうだ。（何度でも挑戦できる）',
+                style: const TextStyle(fontSize: 13.5, height: 1.6),
+              ),
+            ],
+          ),
+        );
+      case _WarpDialog(:final cell):
+        final stones = _game.activeWarps.where((c) => c != cell).toList();
+        return _MessageBox(
+          actions: [FilledButton(onPressed: _close, child: const Text('とじる'))],
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text('ワープ石', style: serif(16)),
+              const SizedBox(height: 4),
+              Text(
+                stones.isEmpty
+                    ? 'ワープ石が青く光った。ほかのエリアのワープ石にもさわると、ここから一瞬で行き来できる。'
+                    : 'どのワープ石へ飛ぶ？',
+                style: const TextStyle(fontSize: 13.5, height: 1.6),
+              ),
+              for (final c in stones)
+                Padding(
+                  padding: const EdgeInsets.only(top: 6),
+                  child: OutlinedButton.icon(
+                    onPressed: () {
+                      _close();
+                      _game.warpTo(c);
+                    },
+                    icon: const Icon(Icons.auto_awesome, size: 16),
+                    label: Text(_game.map.labelAt(c.col, c.row)),
+                  ),
+                ),
             ],
           ),
         );
@@ -615,6 +913,64 @@ class _BattleTransition extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+/// エリアに入ったときに出す見出し（場所の名前と、そこで学ぶこと）
+class _AreaBanner extends StatelessWidget {
+  const _AreaBanner({
+    required this.title,
+    required this.theme,
+    required this.boss,
+  });
+
+  final String title;
+  final String theme;
+  final bool boss;
+
+  @override
+  Widget build(BuildContext context) {
+    final color = boss ? TsuzuriColors.stamp : TsuzuriColors.accent;
+    return Center(
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
+        decoration: BoxDecoration(
+          color: TsuzuriColors.card.withValues(alpha: 0.94),
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: color, width: 2),
+          boxShadow: const [BoxShadow(blurRadius: 8, color: Color(0x33000000))],
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            if (boss)
+              Text(
+                '― ボスの間 ―',
+                style: TextStyle(
+                  fontSize: 11,
+                  fontWeight: FontWeight.w800,
+                  color: color,
+                  letterSpacing: 2,
+                ),
+              ),
+            Text(
+              title,
+              textAlign: TextAlign.center,
+              style: serif(17, color: color),
+            ),
+            if (theme.isNotEmpty)
+              Text(
+                theme,
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  fontSize: 12,
+                  color: TsuzuriColors.inkSoft,
+                ),
+              ),
+          ],
+        ),
       ),
     );
   }

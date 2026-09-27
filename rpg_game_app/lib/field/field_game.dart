@@ -13,6 +13,7 @@ import '../app/theme.dart';
 import '../art/enemy_painter.dart';
 import '../art/hero_painter.dart';
 import 'field_map.dart';
+import 'terrain_art.dart';
 
 const double tileSize = 32;
 
@@ -41,8 +42,45 @@ class FieldGame extends FlameGame with KeyboardEvents {
     required this.onSpring,
     required this.onGhost,
     required this.onPortal,
+    required this.onSecret,
+    required this.onDoor,
+    required this.onWarp,
     this.from,
+    this.isCleared,
+    this.chestOpened,
   });
+
+  /// 隠し通路（H）を調べたとき
+  final void Function(Cell cell) onSecret;
+
+  /// 閉じた知識の扉（D）に話しかけたとき。引数は扉の先にいる（次に戦う）ステージ
+  final void Function(StageDef nextStage, Cell cell) onDoor;
+
+  /// ワープ石（X）にさわったとき
+  final void Function(Cell cell) onWarp;
+
+  /// ステージをクリアしたか（試験対策ワールドでは、ワールドの中の記録で判定する）
+  final bool Function(RpgProgress progress, StageDef stage)? isCleared;
+
+  /// 宝箱を開けたか（試験対策ワールドでは、ワールドの中の記録で判定する）
+  final bool Function(RpgProgress progress, String chestId)? chestOpened;
+
+  /// 隠し通路・扉が開いたことを記録する文字列
+  static String openKey(String mapId, Cell c) =>
+      'open:$mapId:${c.col}:${c.row}';
+
+  /// ワープ石にさわったことを記録する文字列
+  static String warpKey(String mapId, Cell c) =>
+      'warp:$mapId:${c.col}:${c.row}';
+
+  bool _cleared(RpgProgress p, StageDef s) =>
+      isCleared?.call(p, s) ?? p.clearedStageIds.contains(s.id);
+
+  bool _chestOpened(RpgProgress p, String id) =>
+      chestOpened?.call(p, id) ?? p.openedChests.contains(id);
+
+  /// その隠し通路・扉が開いているか
+  bool isOpen(Cell c) => _progress.fieldFlags.contains(openKey(map.id, c));
 
   /// 前にいたマップ（出入口のとなりから始める）。null ならスタート地点から
   final String? from;
@@ -73,6 +111,9 @@ class FieldGame extends FlameGame with KeyboardEvents {
   final Map<Cell, ChestToken> _chests = {};
   final Map<int, GhostToken> _ghosts = {};
   final Map<int, CageToken> _cages = {};
+  final Map<Cell, SealToken> _seals = {};
+  final Map<Cell, WarpToken> _warps = {};
+  final Map<Cell, EnemyToken> _elites = {};
 
   /// 画面の十字ボタンで押されている方向
   Facing? padDirection;
@@ -83,6 +124,9 @@ class FieldGame extends FlameGame with KeyboardEvents {
 
   /// 今いるエリアの名前（画面上部の表示用）
   late final area = ValueNotifier<String>(map.labelAt(0, 0));
+
+  /// 今いるエリアの番号（入ったときの演出用）
+  late final areaNo = ValueNotifier<int>(-1);
 
   /// 話しかけた直後、同じ方向を押しっぱなしで何度も話しかけないようにする
   Facing? _bumpedDirection;
@@ -108,6 +152,29 @@ class FieldGame extends FlameGame with KeyboardEvents {
     for (final w in map.findAll('W')) {
       world.add(SpringToken(w));
     }
+    for (final ch in const ['H', 'D']) {
+      for (final c in map.findAll(ch)) {
+        final token = SealToken(
+          c,
+          door: ch == 'D',
+          terrain: map.terrainAt(c.col, c.row),
+        );
+        _seals[c] = token;
+        world.add(token);
+      }
+    }
+    for (final c in map.findAll('X')) {
+      final token = WarpToken(c);
+      _warps[c] = token;
+      world.add(token);
+    }
+    for (final c in map.findAll('M')) {
+      final base = _stageAhead(c);
+      if (base == null) continue;
+      final token = EnemyToken(stage: Elites.of(base), home: c);
+      _elites[c] = token;
+      world.add(token);
+    }
     player = PlayerToken(from == null ? map.start : map.spawnFrom(from));
     world.add(player);
     applyProgress(_progress);
@@ -129,15 +196,33 @@ class FieldGame extends FlameGame with KeyboardEvents {
   /// 進行状況に合わせて、倒した敵を道の脇へどかす
   void applyProgress(RpgProgress progress) {
     _progress = progress;
+    for (final e in _seals.entries) {
+      e.value.open = progress.fieldFlags.contains(openKey(map.id, e.key));
+    }
+    for (final e in _warps.entries) {
+      e.value.active = progress.fieldFlags.contains(warpKey(map.id, e.key));
+    }
+    for (final token in _elites.values) {
+      final cleared = _cleared(progress, token.stage);
+      token.cleared = cleared;
+      token.position = _center(token.cell);
+      token.priority = token.cell.row * 10 + 4;
+      // 倒した強敵はいなくなる
+      if (cleared) {
+        token.removeFromParent();
+      } else if (token.parent == null) {
+        world.add(token);
+      }
+    }
     for (final token in _enemies.values) {
-      final cleared = progress.clearedStageIds.contains(token.stage.id);
+      final cleared = _cleared(progress, token.stage);
       token.cleared = cleared;
       token.cell = cleared ? map.asideOf(token.home) : token.home;
       token.position = _center(token.cell);
       token.priority = token.cell.row * 10 + 4;
     }
     for (final e in _chests.entries) {
-      e.value.opened = progress.openedChests.contains(chestIdAt(e.key));
+      e.value.opened = _chestOpened(progress, chestIdAt(e.key));
     }
     // 亡霊：間違えた問題があるステージごとに1体、そのステージの手前の部屋をさまよう
     final counts = <String, int>{};
@@ -182,8 +267,32 @@ class FieldGame extends FlameGame with KeyboardEvents {
     }
   }
 
-  /// 宝箱の保存用 ID（その先にいる敵の番号で決まる）
-  String chestIdAt(Cell c) => '${rpgWorld.id}_chest_${map.enemyAhead(c)}';
+  /// 宝箱の保存用 ID（その先にいる敵の番号と、宝箱の種類で決まる）
+  String chestIdAt(Cell c) {
+    final base = '${rpgWorld.id}_chest_${map.enemyAhead(c)}';
+    return switch (map.chestKinds[c]) {
+      ChestKind.secret => '${base}_secret',
+      ChestKind.vault => '${base}_vault',
+      _ => base,
+    };
+  }
+
+  /// ワープ石から別のワープ石へ飛ぶ（その石のとなりに立つ）
+  void warpTo(Cell stone) {
+    final spot = map.floorNextTo(stone);
+    if (spot == null) return;
+    player
+      ..cell = spot
+      ..position = _center(spot)
+      ..facing = Facing.down;
+    camera.follow(player, snap: true);
+  }
+
+  /// さわったことのあるワープ石（エリアの順）
+  List<Cell> get activeWarps => [
+    for (final e in _warps.entries)
+      if (e.value.active) e.key,
+  ]..sort((a, b) => b.row.compareTo(a.row));
 
   StageDef? _stageAhead(Cell c) {
     final n = map.enemyAhead(c);
@@ -194,6 +303,8 @@ class FieldGame extends FlameGame with KeyboardEvents {
     for (final e in _enemies.values) {
       if (e.cell == c) return e;
     }
+    final elite = _elites[c];
+    if (elite != null && !elite.cleared) return elite;
     return null;
   }
 
@@ -226,6 +337,8 @@ class FieldGame extends FlameGame with KeyboardEvents {
     _clampCamera();
     final label = map.labelAt(player.cell.col, player.cell.row);
     if (area.value != label) area.value = label;
+    final no = map.areaAt(player.cell.col, player.cell.row);
+    if (areaNo.value != no) areaNo.value = no;
     final dir = padDirection ?? _keyDirection;
     if (dir != _bumpedDirection) _bumpedDirection = null;
     if (!inputLocked &&
@@ -235,7 +348,7 @@ class FieldGame extends FlameGame with KeyboardEvents {
       _tryStep(dir);
     }
     // 近くにいる敵には「！」を出す
-    for (final e in _enemies.values) {
+    for (final e in [..._enemies.values, ..._elites.values]) {
       final d =
           (e.cell.col - player.cell.col).abs() +
           (e.cell.row - player.cell.row).abs();
@@ -276,6 +389,22 @@ class FieldGame extends FlameGame with KeyboardEvents {
       return;
     }
     switch (map.tileAt(target.col, target.row)) {
+      case 'H' || 'D' when isOpen(target):
+        player.walkTo(target);
+        return;
+      case 'H':
+        _bumpedDirection = dir;
+        onSecret(target);
+        return;
+      case 'D':
+        _bumpedDirection = dir;
+        final stage = _stageAhead(target);
+        if (stage != null) onDoor(stage, target);
+        return;
+      case 'X':
+        _bumpedDirection = dir;
+        onWarp(target);
+        return;
       case 'I':
         _bumpedDirection = dir;
         final n = map.enemyAhead(target);
@@ -291,7 +420,7 @@ class FieldGame extends FlameGame with KeyboardEvents {
         final stage = _stageAhead(target);
         final id = chestIdAt(target);
         if (stage != null) {
-          onChest(stage, id, _progress.openedChests.contains(id));
+          onChest(stage, id, _chestOpened(_progress, id));
         }
         return;
       case 'W':
@@ -303,7 +432,7 @@ class FieldGame extends FlameGame with KeyboardEvents {
         _bumpedDirection = dir;
         final bossCleared = rpgWorld.stages
             .where((s) => map.enemySpots.containsKey(s.order))
-            .every((s) => _progress.clearedStageIds.contains(s.id));
+            .every((s) => _cleared(_progress, s));
         onMessage(
           bossCleared
               ? '${map.goalText}がきらきら光っている。制覇おめでとう！'
@@ -358,40 +487,15 @@ class MapLayer extends PositionComponent {
     _trophy(canvas, g);
   }
 
-  /// 地方ごとの色
-  static const _floor = {
-    Region.grass: ui.Color(0xFFFAF6EE),
-    Region.coast: ui.Color(0xFFF4E7C6),
-    Region.cave: ui.Color(0xFFD6D0C8),
-    Region.lava: ui.Color(0xFF4A3530),
-  };
-  static const _gridColor = {
-    Region.grass: ui.Color(0xFFCFDDEA),
-    Region.coast: ui.Color(0xFFE6D3A6),
-    Region.cave: ui.Color(0xFFBDB5AB),
-    Region.lava: ui.Color(0xFF5E4640),
-  };
-  static const _wallColor = {
-    Region.grass: ui.Color(0xFFD9C7A5),
-    Region.coast: ui.Color(0xFFD9B98A),
-    Region.cave: ui.Color(0xFF7A746E),
-    Region.lava: ui.Color(0xFF2B1D1D),
-  };
-
   void _paintMap(ui.Canvas c) {
-    // 床（方眼ノートの目）をマスごとに描く。向きを変えたマップでも地方ごとに色が変わる
-    final crack = ui.Paint()
-      ..color = const ui.Color(0x66FF7A3D)
-      ..strokeWidth = 1;
+    // 床（方眼ノートの目）をマスごとに描く。地形ごとに色と模様が変わる
     for (var r = 0; r < map.height; r++) {
       for (var col = 0; col < map.width; col++) {
-        final region = map.regionAt(col, r);
+        final terrain = map.terrainAt(col, r);
         final x = col * tileSize, y = r * tileSize;
-        c.drawRect(
-          Rect.fromLTWH(x, y, tileSize, tileSize),
-          ui.Paint()..color = _floor[region]!,
-        );
-        final grid = ui.Paint()..color = _gridColor[region]!;
+        final rect = Rect.fromLTWH(x, y, tileSize, tileSize);
+        c.drawRect(rect, ui.Paint()..color = TerrainArt.floor(terrain));
+        final grid = ui.Paint()..color = TerrainArt.grid(terrain);
         c.drawLine(
           Offset(x, y),
           Offset(x + tileSize, y),
@@ -412,16 +516,13 @@ class MapLayer extends PositionComponent {
           Offset(x + tileSize / 2, y + tileSize),
           grid..strokeWidth = 0.4,
         );
-        // 溶岩エリアの床のひび
-        if (region == Region.lava && (col * 7 + r * 3) % 5 == 0) {
-          c.drawLine(Offset(x + 8, y + 6), Offset(x + 17, y + 20), crack);
-        }
+        TerrainArt.floorDetail(c, rect, terrain, col, r);
       }
     }
     final rnd = Random(7);
     for (var r = 0; r < map.height; r++) {
       for (var col = 0; col < map.width; col++) {
-        final region = map.regionAt(col, r);
+        final terrain = map.terrainAt(col, r);
         final rect = Rect.fromLTWH(
           col * tileSize,
           r * tileSize,
@@ -430,11 +531,22 @@ class MapLayer extends PositionComponent {
         );
         switch (map.tileAt(col, r)) {
           case '#':
-            _wall(c, rect, rnd, region);
+            TerrainArt.wall(c, rect, rnd, terrain);
           case 'T':
-            _obstacle(c, rect, rnd, region);
+            TerrainArt.obstacle(c, rect, rnd, terrain);
           case '~':
-            _pond(c, rect, region);
+            TerrainArt.water(c, rect, terrain);
+          case 'B':
+            TerrainArt.bridge(c, rect, terrain);
+          case 'R':
+            TerrainArt.carpet(c, rect);
+          case 'F':
+            TerrainArt.decoration(
+              c,
+              rect,
+              terrain,
+              boss: map.bossAreas.contains(map.areaAt(col, r)),
+            );
           case 'S':
             _sign(c, rect);
           case 'I':
@@ -451,141 +563,6 @@ class MapLayer extends PositionComponent {
     ..style = ui.PaintingStyle.stroke
     ..strokeWidth = 1.6
     ..strokeCap = ui.StrokeCap.round;
-
-  void _wall(ui.Canvas c, Rect r, Random rnd, Region region) {
-    c.drawRect(r, ui.Paint()..color = _wallColor[region]!);
-    final hatch = ui.Paint()
-      ..color = region == Region.lava
-          ? const ui.Color(0x55E4572E)
-          : const ui.Color(0x558D6E63)
-      ..strokeWidth = 1;
-    for (var i = -1; i < 4; i++) {
-      final x = r.left + i * 9 + rnd.nextDouble() * 3;
-      c.drawLine(Offset(x, r.bottom), Offset(x + 12, r.top), hatch);
-    }
-    c.drawRect(
-      r.deflate(0.5),
-      ui.Paint()
-        ..color = region == Region.lava
-            ? const ui.Color(0xFF1A1111)
-            : const ui.Color(0xFF8D6E63)
-        ..style = ui.PaintingStyle.stroke
-        ..strokeWidth = 1,
-    );
-  }
-
-  void _obstacle(ui.Canvas c, Rect r, Random rnd, Region region) {
-    final cx = r.center.dx, cy = r.center.dy;
-    c.drawOval(
-      Rect.fromCenter(center: Offset(cx, r.bottom - 3), width: 20, height: 6),
-      ui.Paint()..color = const ui.Color(0x33000000),
-    );
-    switch (region) {
-      case Region.grass:
-        c.drawRect(
-          Rect.fromLTWH(cx - 2.5, cy + 2, 5, 11),
-          ui.Paint()..color = const ui.Color(0xFF8D6E63),
-        );
-        final blob = ui.Path();
-        for (var i = 0; i < 5; i++) {
-          final a = i / 5 * 2 * pi;
-          blob.addOval(
-            Rect.fromCircle(
-              center: Offset(cx + cos(a) * 6, cy - 3 + sin(a) * 5),
-              radius: 7 + rnd.nextDouble() * 2,
-            ),
-          );
-        }
-        c.drawPath(blob, ui.Paint()..color = const ui.Color(0xFF8CC06B));
-        c.drawPath(blob, _ink..strokeWidth = 1.2);
-      case Region.coast:
-        // ヤシの木
-        final trunk = ui.Path()
-          ..moveTo(cx - 2, r.bottom - 3)
-          ..quadraticBezierTo(cx + 4, cy + 4, cx + 1, cy - 6)
-          ..lineTo(cx + 4, cy - 6)
-          ..quadraticBezierTo(cx + 7, cy + 4, cx + 2, r.bottom - 3)
-          ..close();
-        c.drawPath(trunk, ui.Paint()..color = const ui.Color(0xFFB08968));
-        final leaf = ui.Paint()..color = const ui.Color(0xFF4FA36B);
-        for (final a in [-2.6, -2.0, -1.2, -0.5, 0.2]) {
-          final p = ui.Path()
-            ..moveTo(cx + 2, cy - 7)
-            ..quadraticBezierTo(
-              cx + 2 + cos(a) * 7,
-              cy - 7 + sin(a) * 7 - 3,
-              cx + 2 + cos(a) * 13,
-              cy - 7 + sin(a) * 9 + 4,
-            )
-            ..quadraticBezierTo(
-              cx + 2 + cos(a) * 6,
-              cy - 7 + sin(a) * 5,
-              cx + 2,
-              cy - 7,
-            );
-          c.drawPath(p, leaf);
-          c.drawPath(p, _ink..strokeWidth = 0.8);
-        }
-      case Region.cave:
-        // 岩と水晶
-        final rock = ui.Path()
-          ..moveTo(cx - 11, r.bottom - 4)
-          ..lineTo(cx - 8, cy - 2)
-          ..lineTo(cx - 1, cy - 7)
-          ..lineTo(cx + 8, cy - 3)
-          ..lineTo(cx + 11, r.bottom - 4)
-          ..close();
-        c.drawPath(rock, ui.Paint()..color = const ui.Color(0xFF8E8780));
-        c.drawPath(rock, _ink..strokeWidth = 1.2);
-        final crystal = ui.Path()
-          ..moveTo(cx + 2, cy - 12)
-          ..lineTo(cx + 6, cy - 4)
-          ..lineTo(cx + 2, cy)
-          ..lineTo(cx - 2, cy - 4)
-          ..close();
-        c.drawPath(crystal, ui.Paint()..color = const ui.Color(0xFF9AD1D4));
-        c.drawPath(crystal, _ink..strokeWidth = 0.8);
-      case Region.lava:
-        // 黒曜石のとげ
-        final spike = ui.Path()
-          ..moveTo(cx - 10, r.bottom - 4)
-          ..lineTo(cx - 3, cy - 12)
-          ..lineTo(cx + 1, cy - 2)
-          ..lineTo(cx + 5, cy - 9)
-          ..lineTo(cx + 10, r.bottom - 4)
-          ..close();
-        c.drawPath(spike, ui.Paint()..color = const ui.Color(0xFF1E1414));
-        c.drawPath(
-          spike,
-          ui.Paint()
-            ..color = const ui.Color(0xFFE4572E)
-            ..style = ui.PaintingStyle.stroke
-            ..strokeWidth = 1,
-        );
-    }
-  }
-
-  void _pond(ui.Canvas c, Rect r, Region region) {
-    final color = switch (region) {
-      Region.grass => const ui.Color(0xFF9EC6E0),
-      Region.coast => const ui.Color(0xFF5FA8CC),
-      Region.cave => const ui.Color(0xFF4F6D7A),
-      Region.lava => const ui.Color(0xFFE4572E),
-    };
-    c.drawRect(r, ui.Paint()..color = color);
-    final wave = ui.Paint()
-      ..color = region == Region.lava
-          ? const ui.Color(0xCCFFD166)
-          : const ui.Color(0xAAFFFFFF)
-      ..style = ui.PaintingStyle.stroke
-      ..strokeWidth = 1.2;
-    for (final y in [r.top + 10, r.top + 22]) {
-      final p = ui.Path()..moveTo(r.left + 4, y);
-      p.quadraticBezierTo(r.left + 10, y - 4, r.left + 16, y);
-      p.quadraticBezierTo(r.left + 22, y + 4, r.left + 28, y);
-      c.drawPath(p, wave);
-    }
-  }
 
   void _sign(ui.Canvas c, Rect r) {
     c.drawRect(
@@ -1053,4 +1030,57 @@ class CageToken extends PositionComponent {
     final p = b.build()..layout(ui.ParagraphConstraints(width: s * 1.6));
     c.drawParagraph(p, Offset(-s * 0.3, -2 + bob));
   }
+}
+
+/// 隠し通路（H）と知識の扉（D）。閉じている間は障害物・扉の絵を上に重ねる
+class SealToken extends PositionComponent {
+  SealToken(this.cell, {required this.door, required this.terrain})
+    : super(
+        size: Vector2.all(tileSize),
+        position: Vector2(cell.col * tileSize, cell.row * tileSize),
+        priority: cell.row * 10 + 3,
+      );
+
+  final Cell cell;
+  final bool door;
+  final Terrain terrain;
+  bool open = false;
+
+  @override
+  void render(ui.Canvas canvas) {
+    final r = Rect.fromLTWH(0, 0, tileSize, tileSize);
+    if (door) {
+      open ? TerrainArt.doorOpen(canvas, r) : TerrainArt.door(canvas, r);
+      return;
+    }
+    if (open) return;
+    // 見た目はまわりと同じ障害物。よく見ると小さなひびがある
+    TerrainArt.obstacle(canvas, r, Random(cell.col * 31 + cell.row), terrain);
+    TerrainArt.crack(canvas, r);
+  }
+}
+
+/// ワープ石
+class WarpToken extends PositionComponent {
+  WarpToken(this.cell)
+    : super(
+        size: Vector2.all(tileSize),
+        position: Vector2(cell.col * tileSize, cell.row * tileSize),
+        priority: cell.row * 10 + 3,
+      );
+
+  final Cell cell;
+  bool active = false;
+  double _t = 0;
+
+  @override
+  void update(double dt) => _t += dt;
+
+  @override
+  void render(ui.Canvas canvas) => TerrainArt.warpStone(
+    canvas,
+    Rect.fromLTWH(0, 0, tileSize, tileSize),
+    active: active,
+    glow: (sin(_t * 2.5) + 1) / 2,
+  );
 }

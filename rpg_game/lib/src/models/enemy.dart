@@ -1,5 +1,33 @@
 import 'question.dart';
 
+/// 敵の特殊能力。敵ごとに戦い方が変わる。
+enum EnemyAbility {
+  /// とくになし
+  none('', ''),
+
+  /// 防御型：弱点の問題に正解するまで、受けるダメージが半分
+  guard('防御型', '弱点の問題に正解するまで、ダメージが半分しか通らない'),
+
+  /// 妨害型：まちがえると、次の問題が難しくなる
+  disrupt('妨害型', 'まちがえると、次の問題がむずかしくなる'),
+
+  /// コンボ型：連続正解するほど、ダメージが大きく伸びる
+  combo('コンボ型', '1問ずつではあまり効かないが、連続正解で一気にくずれる'),
+
+  /// 特化型：弱点の分野にとても弱いが、ほかの分野には強い
+  specialist('特化型', '弱点の問題でダメージ2.5倍、ほかの問題は0.6倍'),
+
+  /// 鉄壁：いつも受けるダメージが少し減る（そのぶんHPは低め）
+  sturdy('鉄壁', '受けるダメージがいつも0.7倍'),
+
+  /// 連続要求：2問続けて正解しないとダメージが通りにくい
+  chainLock('連続要求', '連続正解の2問目からダメージがしっかり通る');
+
+  const EnemyAbility(this.label, this.description);
+  final String label;
+  final String description;
+}
+
 /// 敵キャラクターの定義。
 class EnemyDef {
   const EnemyDef({
@@ -15,7 +43,11 @@ class EnemyDef {
     this.armor = 0,
     this.introLine = '',
     this.defeatLine = '',
+    this.ability = EnemyAbility.none,
   });
+
+  /// 特殊能力
+  final EnemyAbility ability;
 
   final String id;
   final String name;

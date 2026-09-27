@@ -2,6 +2,7 @@ import 'dart:math';
 
 import '../battle/battle_engine.dart';
 import '../battle/cards.dart';
+import '../world/elites.dart';
 import '../models/player_stats.dart';
 import '../models/rpg_progress.dart';
 import '../models/stage.dart';
@@ -116,7 +117,8 @@ class Progression {
     var newMistakes = 0;
     for (final q in summary.missedQuestions) {
       if (!mistakes.containsKey(q.id)) newMistakes++;
-      mistakes[q.id] = stage.id;
+      // 強敵でまちがえた問題は、そのエリアの亡霊になる
+      mistakes[q.id] = Elites.baseId(stage.id);
     }
     for (final id in summary.correctIds) {
       if (!summary.missedQuestions.any((q) => q.id == id)) mistakes.remove(id);
@@ -141,7 +143,8 @@ class Progression {
         },
       );
       if (!alreadyCleared) {
-        final next = nextInBranch(world, stage);
+        final next =
+            Elites.isElite(stage.id) ? null : nextInBranch(world, stage);
         if (next != null) unlocked = next.id;
         if (stage.rewardCardId != null) {
           newCard = CardDef.byId(stage.rewardCardId!);

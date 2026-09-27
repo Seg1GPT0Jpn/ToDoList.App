@@ -72,5 +72,61 @@ void main() {
       expect(back.length, 3);
       expect(back.completed, isFalse);
     });
+
+    test('6教科のエリアを1つのワールドにまとめられる', () {
+      final picked = ExamWorlds.matchAll({
+        'math': '2次関数',
+        RpgCatalog.englishWorldId: '関係詞',
+        'japanese': '助動詞',
+        'science': '化学',
+        'social': '明治維新',
+        'information': 'ネットワーク',
+      });
+      final worlds = {for (final s in picked) s.worldId};
+      expect(worlds.length, 6);
+      final plan = ExamWorldPlan(
+        id: 'mix',
+        title: '期末テスト',
+        worldId: 'math',
+        stageIds: [for (final s in picked.take(ExamWorlds.maxAreas)) s.id],
+        createdAt: DateTime(2026),
+        examDate: DateTime(2026, 10, 15),
+      );
+      expect(plan.worldIds.length, greaterThanOrEqualTo(5));
+      expect(plan.subjectsLabel, contains('数学'));
+      final stages = ExamWorlds.build(plan, level: 10);
+      expect(stages.length, plan.stageIds.length + 1);
+      // 各エリアはもとの教科のワールドのまま（バトルの見た目・宿の授業に使う）
+      for (var i = 0; i < plan.stageIds.length; i++) {
+        expect(
+            stages[i].worldId, ExamWorlds.stageById(plan.stageIds[i])!.worldId);
+      }
+      // 試験本番は、すべての教科の範囲から出題する
+      expect(
+        stages.last.questionSetIds.toSet(),
+        {
+          for (final id in plan.stageIds)
+            ...ExamWorlds.stageById(id)!.questionSetIds,
+        },
+      );
+      expect(plan.daysLeft(DateTime(2026, 10, 8)), 7);
+      expect(plan.daysLeft(DateTime(2026, 10, 15, 23)), 0);
+    });
+
+    test('テスト対策ゲージは 0〜100 の間でたまり、保存しても元にもどる', () {
+      final plan = ExamWorldPlan(
+        id: 'g',
+        title: 't',
+        worldId: 'math',
+        stageIds: const ['math_m1_01'],
+        createdAt: DateTime(2026),
+      );
+      expect(plan.addGauge(30).addGauge(90).gauge, ExamWorlds.gaugeMax);
+      final saved =
+          plan.addGauge(12).copyWith(openedChests: {'exam_g_chest_1'});
+      final back = ExamWorldPlan.fromMap(saved.toMap());
+      expect(back.gauge, 12);
+      expect(back.openedChests, {'exam_g_chest_1'});
+    });
   });
 }

@@ -44,6 +44,7 @@ class RpgProgress {
     this.companions = const {},
     this.lostStages = const {},
     this.springBuff = false,
+    this.fieldFlags = const {},
   });
 
   /// 最初のデッキ（CardDef.starterDeck と同じ）
@@ -93,6 +94,10 @@ class RpgProgress {
   /// 泉の加護（次のバトルで最大HP +30%）
   final bool springBuff;
 
+  /// フィールドで見つけた・開けたもの（隠し通路・知識の扉・ワープ石など）。
+  /// 例：`open:english:12:40`（そのマスの隠し通路・扉が開いた）、`warp:english:3`
+  final Set<String> fieldFlags;
+
   RpgProgress copyWith({
     int? level,
     int? exp,
@@ -107,6 +112,7 @@ class RpgProgress {
     Set<String>? companions,
     Set<String>? lostStages,
     bool? springBuff,
+    Set<String>? fieldFlags,
   }) =>
       RpgProgress(
         level: level ?? this.level,
@@ -122,6 +128,7 @@ class RpgProgress {
         companions: companions ?? this.companions,
         lostStages: lostStages ?? this.lostStages,
         springBuff: springBuff ?? this.springBuff,
+        fieldFlags: fieldFlags ?? this.fieldFlags,
       );
 
   factory RpgProgress.fromMap(Map<String, dynamic>? map) {
@@ -156,6 +163,7 @@ class RpgProgress {
       companions: Set<String>.from((map['companions'] as List?) ?? const []),
       lostStages: Set<String>.from((map['lostStages'] as List?) ?? const []),
       springBuff: map['springBuff'] as bool? ?? false,
+      fieldFlags: Set<String>.from((map['fieldFlags'] as List?) ?? const []),
     );
   }
 
@@ -175,5 +183,6 @@ class RpgProgress {
         'companions': companions.toList()..sort(),
         'lostStages': lostStages.toList()..sort(),
         'springBuff': springBuff,
+        'fieldFlags': fieldFlags.toList()..sort(),
       };
 }
