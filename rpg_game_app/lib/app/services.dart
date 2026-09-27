@@ -10,6 +10,7 @@ import '../data/meta_store.dart';
 import '../data/prefs_progress_repository.dart';
 import '../study/exam_world_store.dart';
 import '../study/personal_books.dart';
+import '../versus/online_room.dart';
 import 'settings.dart';
 
 /// 画面から使うサービスの入れ物。
@@ -24,6 +25,7 @@ class RpgServices extends InheritedWidget {
     required this.meta,
     required this.settings,
     required this.music,
+    this.versusRooms,
     required super.child,
   }) : questions = JsonQuestionSource(_loadAsset),
        unlock = WorldUnlockService(
@@ -52,6 +54,9 @@ class RpgServices extends InheritedWidget {
 
   /// BGM・効果音
   final MusicDirector music;
+
+  /// オンライン対戦の部屋（Firebase の設定がなければ null）
+  final VersusRoomBackend? versusRooms;
 
   /// パスワード保護の個人用単語帳（LEAP など）
   final PersonalBooks personalBooks;

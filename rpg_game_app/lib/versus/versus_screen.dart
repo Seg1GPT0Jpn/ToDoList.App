@@ -9,6 +9,8 @@ import '../app/theme.dart';
 import '../art/enemy_painter.dart';
 import '../art/hero_painter.dart';
 import '../art/paper.dart';
+import 'online_lobby_screen.dart';
+import 'online_room.dart';
 
 /// 対戦の相手
 enum VersusOpponent {
@@ -17,6 +19,40 @@ enum VersusOpponent {
 
   /// CPU
   cpu,
+
+  /// オンライン（部屋番号で、ほかの端末の人と）
+  online,
+}
+
+/// 対戦に使う問題セットを読みこむ（この順番で。長文読解は外す）
+Future<List<QuizQuestion>> loadVersusQuestions(
+  RpgServices services,
+  List<String> setIds,
+) async {
+  final out = <QuizQuestion>[];
+  for (final id in setIds) {
+    final set = await services.questions.load(id);
+    if (set == null || !set.origin.usableInRpg) continue;
+    out.addAll(set.questions.where((q) => q.passage == null));
+  }
+  return out;
+}
+
+/// オンライン対戦のつながり
+class OnlineLink {
+  const OnlineLink({
+    required this.backend,
+    required this.code,
+    required this.localSide,
+    required this.seed,
+  });
+
+  final VersusRoomBackend backend;
+  final String code;
+
+  /// 自分はどちらか（0 = 部屋を作った人、1 = 入った人）
+  final int localSide;
+  final int seed;
 }
 
 /// 対戦モードの準備画面：相手・教科・問題数を選ぶ
@@ -43,29 +79,35 @@ class _VersusSetupScreenState extends State<VersusSetupScreen> {
     super.dispose();
   }
 
-  /// 選んだ教科から、問題を集める（1教科あたり4エリアぶん）
-  Future<List<QuizQuestion>> _collect() async {
-    final services = RpgServices.of(context);
+  /// 選んだ教科から、出題する問題セットを選ぶ（1教科あたり4エリアぶん）
+  List<String> _pickSetIds() {
     final rnd = Random();
-    final out = <QuizQuestion>[];
-    for (final id in _subjects) {
-      final stages = [...RpgCatalog.world(id).stages]..shuffle(rnd);
-      var used = 0;
-      for (final s in stages) {
-        if (used >= 4) break;
-        final pool = await services.loadStagePool(s);
-        if (pool == null || !pool.origin.usableInRpg) continue;
-        // 長文読解は対戦には向かないので外す
-        out.addAll(pool.questions.where((q) => q.passage == null));
-        used++;
-      }
-    }
-    return out;
+    return [
+      for (final id in _subjects)
+        ...([
+          ...RpgCatalog.world(id).stages.where((s) => !s.isBoss),
+        ]..shuffle(rnd)).take(4).map((s) => s.questionSetIds.first),
+    ];
   }
 
   Future<void> _start() async {
+    if (_opponent == VersusOpponent.online) {
+      await Navigator.of(context).push(
+        MaterialPageRoute<void>(
+          builder: (_) => OnlineLobbyScreen(
+            name: _nameA.text.trim().isEmpty ? 'あなた' : _nameA.text.trim(),
+            setIds: _pickSetIds(),
+            rounds: _rounds,
+          ),
+        ),
+      );
+      return;
+    }
     setState(() => _loading = true);
-    final questions = await _collect();
+    final questions = await loadVersusQuestions(
+      RpgServices.of(context),
+      _pickSetIds(),
+    );
     if (!mounted) return;
     setState(() => _loading = false);
     if (questions.isEmpty) return;
@@ -121,6 +163,11 @@ class _VersusSetupScreenState extends State<VersusSetupScreen> {
                       icon: Icon(Icons.people_outline),
                       label: Text('この端末で2人'),
                     ),
+                    ButtonSegment(
+                      value: VersusOpponent.online,
+                      icon: Icon(Icons.public),
+                      label: Text('オンライン'),
+                    ),
                   ],
                   selected: {_opponent},
                   onSelectionChanged: (s) =>
@@ -138,6 +185,15 @@ class _VersusSetupScreenState extends State<VersusSetupScreen> {
                           onSelected: (_) => setState(() => _level = l),
                         ),
                     ],
+                  )
+                else if (_opponent == VersusOpponent.online)
+                  const Text(
+                    'ほかの端末の人と、4けたの部屋番号で対戦します。2人とも Google でログインしている必要があります。'
+                    '部屋を作る人が教科と問題数を決めます（部屋に入る人の選択は使われません）。',
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: TsuzuriColors.inkSoft,
+                    ),
                   )
                 else
                   const Text(
@@ -222,7 +278,13 @@ class _VersusSetupScreenState extends State<VersusSetupScreen> {
                   icon: const Icon(Icons.flash_on),
                   label: Padding(
                     padding: const EdgeInsets.symmetric(vertical: 12),
-                    child: Text(_loading ? '問題を集めています…' : '対戦スタート！'),
+                    child: Text(
+                      _loading
+                          ? '問題を集めています…'
+                          : _opponent == VersusOpponent.online
+                          ? '部屋へ（つくる・入る）'
+                          : '対戦スタート！',
+                    ),
                   ),
                 ),
               ],
@@ -247,7 +309,11 @@ class VersusScreen extends StatefulWidget {
     this.rounds = 15,
     this.onFinished,
     this.random,
+    this.online,
   });
+
+  /// オンライン対戦のとき、そのつながり
+  final OnlineLink? online;
 
   final List<QuizQuestion> questions;
   final List<String> names;
@@ -288,25 +354,88 @@ class _VersusScreenState extends State<VersusScreen>
   /// それぞれが最後に選んだ答え（色をつける）
   final Map<int, int> _picked = {};
 
+  /// オンライン：部屋から届いた出来事のうち、受けとった数と、まだ当てはめていない出来事
+  int _received = 0;
+  final List<VersusEvent> _queue = [];
+  StreamSubscription<OnlineRoom?>? _roomSub;
+
+  /// オンライン：答えを送っている途中
+  bool _sending = false;
+
+  /// オンライン：相手が部屋を出た
+  bool _opponentLeft = false;
+
+  OnlineLink? get _online => widget.online;
+
+  /// 自分の側（下に出す）
+  int get _me => _online?.localSide ?? 0;
+
   @override
   void initState() {
     super.initState();
     _newMatch();
     _timer.addStatusListener((s) {
-      if (s == AnimationStatus.completed && !_reveal && !_match.isOver) {
+      if (s != AnimationStatus.completed || _reveal || _match.isOver) return;
+      final online = _online;
+      if (online == null) {
         _show(_match.timeout());
+      } else if (online.localSide == 0) {
+        // 時間切れは、部屋を作った人がまとめて知らせる
+        _send(VersusEvent.timeout(_match.round));
       }
     });
+    final online = _online;
+    if (online != null) {
+      _roomSub = online.backend.watch(online.code).listen(_onRoom);
+    }
     _startRound();
   }
 
-  void _newMatch() {
-    _match = VersusMatch(
-      questions: widget.questions,
-      names: widget.names,
-      rounds: widget.rounds,
-      random: widget.random,
+  VersusMatch _fresh() => VersusMatch(
+    questions: widget.questions,
+    names: widget.names,
+    rounds: widget.rounds,
+    random: _online == null ? widget.random : Random(_online!.seed),
+  );
+
+  void _onRoom(OnlineRoom? room) {
+    if (!mounted) return;
+    if (room == null || room.closed) {
+      if (!_match.isOver) setState(() => _opponentLeft = true);
+      return;
+    }
+    if (room.events.length > _received) {
+      _queue.addAll(room.events.skip(_received));
+      _received = room.events.length;
+      _drain();
+    }
+  }
+
+  /// 届いた出来事を、結果を見せ終わってから順に当てはめる
+  void _drain() {
+    while (_queue.isNotEmpty && !_reveal && !_match.isOver) {
+      final e = _queue.removeAt(0);
+      final t = _match.apply(e);
+      if (t == null) continue;
+      if (e.choice != null) _picked[e.side] = e.choice!;
+      if (e.side == _me) _sending = false;
+      _show(t);
+    }
+  }
+
+  Future<void> _send(VersusEvent e) async {
+    final online = _online!;
+    if (e.side == _me) setState(() => _sending = true);
+    final ok = await online.backend.send(
+      online.code,
+      e,
+      (before) => VersusEvent.replay(_fresh(), before).accepts(e),
     );
+    if (!ok && mounted) setState(() => _sending = false);
+  }
+
+  void _newMatch() {
+    _match = _fresh();
     _cpu = widget.cpu == null
         ? null
         : VersusCpu(widget.cpu!, random: widget.random);
@@ -314,6 +443,9 @@ class _VersusScreenState extends State<VersusScreen>
 
   @override
   void dispose() {
+    _roomSub?.cancel();
+    final online = _online;
+    if (online != null) online.backend.close(online.code);
     _cpuTimer?.cancel();
     _timer.dispose();
     _idle.dispose();
@@ -332,6 +464,7 @@ class _VersusScreenState extends State<VersusScreen>
     _timer.duration = _match.timeLimit;
     _timer.forward(from: 0);
     _scheduleCpu();
+    if (_online != null) _drain();
   }
 
   void _scheduleCpu() {
@@ -352,6 +485,18 @@ class _VersusScreenState extends State<VersusScreen>
 
   void _answer(int side, int choice) {
     if (_reveal || _match.isOver || _match.isLocked(side)) return;
+    if (_online != null) {
+      if (_sending) return;
+      _send(
+        VersusEvent(
+          round: _match.round,
+          side: side,
+          choice: choice,
+          ms: _stopwatch.elapsedMilliseconds,
+        ),
+      );
+      return;
+    }
     final t = _match.answer(side, choice, elapsed: _stopwatch.elapsed);
     _picked[side] = choice;
     _show(t);
@@ -374,7 +519,9 @@ class _VersusScreenState extends State<VersusScreen>
       if (!mounted) return;
       if (_match.isOver) {
         music.jingle(
-          _match.winner == 0 || widget.cpu == null ? 'victory' : 'defeat',
+          _match.winner == _me || (widget.cpu == null && _online == null)
+              ? 'victory'
+              : 'defeat',
         );
         widget.onFinished?.call(_match);
         setState(() {});
@@ -391,7 +538,7 @@ class _VersusScreenState extends State<VersusScreen>
 
   @override
   Widget build(BuildContext context) {
-    final twoPlayers = widget.cpu == null;
+    final twoPlayers = widget.cpu == null && _online == null;
     return Scaffold(
       backgroundColor: TsuzuriColors.paper,
       body: SafeArea(
@@ -402,10 +549,10 @@ class _VersusScreenState extends State<VersusScreen>
                 Expanded(
                   child: twoPlayers
                       ? RotatedBox(quarterTurns: 2, child: _panel(1))
-                      : _cpuPanel(),
+                      : _cpuPanel(1 - _me),
                 ),
                 _centerBar(),
-                Expanded(flex: twoPlayers ? 1 : 2, child: _panel(0)),
+                Expanded(flex: twoPlayers ? 1 : 2, child: _panel(_me)),
               ],
             ),
             Positioned(
@@ -418,6 +565,7 @@ class _VersusScreenState extends State<VersusScreen>
               ),
             ),
             if (_match.isOver && _reveal) _resultOverlay(),
+            if (_opponentLeft) _leftOverlay(),
           ],
         ),
       ),
@@ -479,11 +627,11 @@ class _VersusScreenState extends State<VersusScreen>
     );
   }
 
-  /// CPU の側（上）：CPU の姿と HP
-  Widget _cpuPanel() {
-    final p = _match.players[1];
+  /// CPU（オンラインでは相手）の側（上）：姿と HP
+  Widget _cpuPanel(int side) {
+    final p = _match.players[side];
     final last = _last;
-    final thinking = !_reveal && !_match.isLocked(1);
+    final thinking = !_reveal && !_match.isLocked(side);
     return Container(
       color: const Color(0xFFF1EBE0),
       padding: const EdgeInsets.fromLTRB(48, 8, 16, 8),
@@ -494,7 +642,9 @@ class _VersusScreenState extends State<VersusScreen>
             child: AnimatedBuilder(
               animation: _idle,
               builder: (_, _) => CustomPaint(
-                painter: _LookPainter(_cpuLook(widget.cpu!), _idle.value * 60),
+                painter: widget.cpu == null
+                    ? _HeroMini(false)
+                    : _LookPainter(_cpuLook(widget.cpu!), _idle.value * 60),
               ),
             ),
           ),
@@ -514,17 +664,17 @@ class _VersusScreenState extends State<VersusScreen>
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  last != null && last.side == 1
+                  last != null && last.side == side
                       ? (last.correct
                             ? '正解！ ${last.damage}ダメージ${last.fast ? '（はやおし）' : ''}'
                             : 'お手つき…')
                       : thinking
-                      ? '考え中…'
+                      ? (widget.cpu == null ? '答えを考えている…' : '考え中…')
                       : '',
                   style: TextStyle(
                     fontSize: 13,
                     fontWeight: FontWeight.w800,
-                    color: last != null && last.side == 1 && last.correct
+                    color: last != null && last.side == side && last.correct
                         ? TsuzuriColors.stamp
                         : TsuzuriColors.inkSoft,
                   ),
@@ -650,7 +800,7 @@ class _VersusScreenState extends State<VersusScreen>
         backgroundColor: bg,
         padding: const EdgeInsets.symmetric(horizontal: 6),
       ),
-      onPressed: locked || _reveal || _match.isOver
+      onPressed: locked || _reveal || _match.isOver || _sending
           ? null
           : () => _answer(side, i),
       child: Text(
@@ -670,6 +820,8 @@ class _VersusScreenState extends State<VersusScreen>
         ? '引き分け！'
         : widget.cpu != null
         ? (w == 0 ? 'あなたの勝ち！' : 'CPU の勝ち…')
+        : _online != null
+        ? (w == _me ? 'あなたの勝ち！' : '${_match.players[w].name}の勝ち…')
         : '${_match.players[w].name}の勝ち！';
     Widget card() => Center(
       child: Container(
@@ -701,8 +853,10 @@ class _VersusScreenState extends State<VersusScreen>
                   onPressed: () => Navigator.of(context).maybePop(),
                   child: const Text('もどる'),
                 ),
-                const SizedBox(width: 12),
-                FilledButton(onPressed: _rematch, child: const Text('もう一度')),
+                if (_online == null) ...[
+                  const SizedBox(width: 12),
+                  FilledButton(onPressed: _rematch, child: const Text('もう一度')),
+                ],
               ],
             ),
           ],
@@ -711,6 +865,28 @@ class _VersusScreenState extends State<VersusScreen>
     );
     return Container(color: const Color(0x66000000), child: card());
   }
+
+  Widget _leftOverlay() => Container(
+    color: const Color(0x66000000),
+    alignment: Alignment.center,
+    child: Card(
+      margin: const EdgeInsets.all(32),
+      child: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text('相手が部屋を出ました', style: serif(18)),
+            const SizedBox(height: 12),
+            FilledButton(
+              onPressed: () => Navigator.of(context).maybePop(),
+              child: const Text('もどる'),
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
 }
 
 class _LookPainter extends CustomPainter {

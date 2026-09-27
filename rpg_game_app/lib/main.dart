@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -14,6 +15,7 @@ import 'audio/music_director.dart';
 import 'audio/music_scope.dart';
 import 'audio/player_backend.dart';
 import 'cloud/cloud_sync.dart';
+import 'cloud/firestore_versus_backend.dart';
 import 'cloud/firebase_account_service.dart';
 import 'data/meta_store.dart';
 import 'data/prefs_progress_repository.dart';
@@ -50,6 +52,9 @@ Future<void> main() async {
       account: cloud == null
           ? MockAccountService()
           : FirebaseAccountService(cloud),
+      versusRooms: cloud == null
+          ? null
+          : FirestoreVersusBackend(cloud.auth, FirebaseFirestore.instance),
       child: TsuzuriQuestApp(
         onUserGesture: () {
           // ブラウザは、画面にさわるまで音を出させてくれない

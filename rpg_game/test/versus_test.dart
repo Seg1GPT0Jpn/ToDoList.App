@@ -104,4 +104,50 @@ void main() {
           anyOf(m.current.correctIndex, _wrong(m)));
     });
   });
+
+  group('オンライン対戦の出来事', () {
+    test('同じ問題・同じシードなら、出来事を当てはめると2台で同じ結果になる', () {
+      VersusMatch fresh() => VersusMatch(
+            questions: loadStage01().questions,
+            names: const ['host', 'guest'],
+            rounds: 6,
+            random: Random(42),
+          );
+      final a = fresh();
+      final events = <VersusEvent>[];
+      // ホストが正解、ゲストがお手つき→ホスト正解、時間切れ…
+      void add(VersusEvent e) {
+        expect(a.accepts(e), isTrue);
+        a.apply(e);
+        events.add(e);
+      }
+
+      add(VersusEvent(
+          round: 1, side: 0, choice: a.current.correctIndex, ms: 900));
+      add(VersusEvent(round: 2, side: 1, choice: _wrong(a), ms: 1200));
+      // 同じ人の2回目の答え・古い問題への答えは受け付けない
+      expect(a.accepts(VersusEvent(round: 2, side: 1, choice: 0)), isFalse);
+      expect(a.accepts(VersusEvent(round: 1, side: 0, choice: 0)), isFalse);
+      add(VersusEvent(
+          round: 2, side: 0, choice: a.current.correctIndex, ms: 3000));
+      add(const VersusEvent.timeout(3));
+      final b = VersusEvent.replay(fresh(), [
+        for (final e in events) VersusEvent.fromMap(e.toMap()),
+      ]);
+      expect(b.round, a.round);
+      expect(
+          [for (final p in b.players) p.hp], [for (final p in a.players) p.hp]);
+      expect(b.current.source.id, a.current.source.id);
+      expect(b.current.choices, a.current.choices);
+    });
+
+    test('部屋の設定は保存しても元にもどる', () {
+      const c =
+          VersusRoomConfig(setIds: ['english_stage_01'], seed: 7, rounds: 10);
+      final d = VersusRoomConfig.fromMap(c.toMap());
+      expect(d.setIds, c.setIds);
+      expect(d.seed, 7);
+      expect(d.rounds, 10);
+    });
+  });
 }

@@ -178,6 +178,19 @@ class VersusMatch {
     return t;
   }
 
+  /// [e] を今の状態で受け付けられるか（オンライン対戦で、先に届いた答えだけを通す）
+  bool accepts(VersusEvent e) =>
+      !isOver &&
+      e.round == _round &&
+      (e.side == -1 || (!_locked.contains(e.side) && e.choice != null));
+
+  /// 記録された出来事を1つ進める（受け付けられないものは null）
+  VersusTurn? apply(VersusEvent e) {
+    if (!accepts(e)) return null;
+    if (e.side == -1) return timeout();
+    return answer(e.side, e.choice!, elapsed: Duration(milliseconds: e.ms));
+  }
+
   /// 時間切れ（だれも正解しなかった）
   VersusTurn timeout() {
     if (isOver) throw StateError('対戦は終わっています');
@@ -249,4 +262,84 @@ class VersusCpu {
         ? q.correctIndex
         : wrong[_random.nextInt(wrong.length)];
   }
+}
+
+/// オンライン対戦で送り合う出来事（答え、または時間切れ）。
+///
+/// 2人とも同じ問題と同じシード（[VersusMatch] の random）から対戦を組み立て、
+/// 出来事を同じ順番で当てはめるので、どちらの端末でも同じ結果になる。
+class VersusEvent {
+  const VersusEvent({
+    required this.round,
+    required this.side,
+    this.choice,
+    this.ms = 0,
+  });
+
+  /// 時間切れ
+  const VersusEvent.timeout(this.round)
+      : side = -1,
+        choice = null,
+        ms = 0;
+
+  /// 何問目の出来事か
+  final int round;
+
+  /// 答えた人（時間切れは -1）
+  final int side;
+  final int? choice;
+
+  /// 出題から答えるまでの時間（ミリ秒）
+  final int ms;
+
+  Map<String, dynamic> toMap() => {
+        'r': round,
+        's': side,
+        if (choice != null) 'c': choice,
+        'ms': ms,
+      };
+
+  factory VersusEvent.fromMap(Map<String, dynamic> m) => VersusEvent(
+        round: (m['r'] as num).toInt(),
+        side: (m['s'] as num).toInt(),
+        choice: (m['c'] as num?)?.toInt(),
+        ms: (m['ms'] as num?)?.toInt() ?? 0,
+      );
+
+  /// これまでの出来事のうち、受け付けられるものだけを当てはめた対戦
+  static VersusMatch replay(
+    VersusMatch fresh,
+    Iterable<VersusEvent> events,
+  ) {
+    for (final e in events) {
+      fresh.apply(e);
+    }
+    return fresh;
+  }
+}
+
+/// オンライン対戦の部屋の設定（部屋を作った人が決める）
+class VersusRoomConfig {
+  const VersusRoomConfig({
+    required this.setIds,
+    required this.seed,
+    required this.rounds,
+  });
+
+  /// 出題に使う問題セット（この順番で読みこむ）
+  final List<String> setIds;
+  final int seed;
+  final int rounds;
+
+  Map<String, dynamic> toMap() => {
+        'setIds': setIds,
+        'seed': seed,
+        'rounds': rounds,
+      };
+
+  factory VersusRoomConfig.fromMap(Map<String, dynamic> m) => VersusRoomConfig(
+        setIds: List<String>.from(m['setIds'] as List? ?? const []),
+        seed: (m['seed'] as num?)?.toInt() ?? 0,
+        rounds: (m['rounds'] as num?)?.toInt() ?? 15,
+      );
 }
