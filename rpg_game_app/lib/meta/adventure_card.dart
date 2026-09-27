@@ -5,6 +5,7 @@ import '../app/services.dart';
 import '../app/theme.dart';
 import '../study/common_test_screens.dart';
 import '../study/sky_home_screen.dart';
+import '../versus/versus_screen.dart';
 import 'achievements_screen.dart';
 import 'equipment_screen.dart';
 import 'navigator_card.dart';
@@ -125,6 +126,11 @@ class AdventureCard extends StatelessWidget {
                     icon: Icons.rocket_launch_outlined,
                     label: '模擬試験の空',
                     builder: (_) => const SkyHomeScreen(),
+                  ),
+                  _MenuButton(
+                    icon: Icons.sports_esports_outlined,
+                    label: '対戦モード',
+                    builder: (_) => const VersusSetupScreen(),
                   ),
                   _MenuButton(
                     icon: Icons.insights,
