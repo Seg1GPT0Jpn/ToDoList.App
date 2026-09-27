@@ -48,7 +48,15 @@ class FieldGame extends FlameGame with KeyboardEvents {
     this.from,
     this.isCleared,
     this.chestOpened,
+    this.darknessOf,
+    this.masteredArea,
   });
+
+  /// エリアの暗さ（0〜1）。学力が低い単元のエリアほど暗い
+  final double Function(int area)? darknessOf;
+
+  /// その単元を身につけたか（熟練度が高いと、隠し通路がひとりでに開く）
+  final bool Function(int area)? masteredArea;
 
   /// 隠し通路（H）を調べたとき
   final void Function(Cell cell) onSecret;
@@ -79,8 +87,12 @@ class FieldGame extends FlameGame with KeyboardEvents {
   bool _chestOpened(RpgProgress p, String id) =>
       chestOpened?.call(p, id) ?? p.openedChests.contains(id);
 
-  /// その隠し通路・扉が開いているか
-  bool isOpen(Cell c) => _progress.fieldFlags.contains(openKey(map.id, c));
+  /// その隠し通路・扉が開いているか。
+  /// 隠し通路は、その単元の熟練度が高くなると、ひとりでに開く（学力で世界が変わる）
+  bool isOpen(Cell c) =>
+      _progress.fieldFlags.contains(openKey(map.id, c)) ||
+      (map.tileAt(c.col, c.row) == 'H' &&
+          (masteredArea?.call(map.areaAt(c.col, c.row)) ?? false));
 
   /// 前にいたマップ（出入口のとなりから始める）。null ならスタート地点から
   final String? from;
@@ -175,6 +187,7 @@ class FieldGame extends FlameGame with KeyboardEvents {
       _elites[c] = token;
       world.add(token);
     }
+    if (darknessOf != null) world.add(LightLayer(map, darknessOf!));
     player = PlayerToken(from == null ? map.start : map.spawnFrom(from));
     world.add(player);
     applyProgress(_progress);
@@ -197,7 +210,7 @@ class FieldGame extends FlameGame with KeyboardEvents {
   void applyProgress(RpgProgress progress) {
     _progress = progress;
     for (final e in _seals.entries) {
-      e.value.open = progress.fieldFlags.contains(openKey(map.id, e.key));
+      e.value.open = isOpen(e.key);
     }
     for (final e in _warps.entries) {
       e.value.active = progress.fieldFlags.contains(warpKey(map.id, e.key));
@@ -1083,4 +1096,30 @@ class WarpToken extends PositionComponent {
     active: active,
     glow: (sin(_t * 2.5) + 1) / 2,
   );
+}
+
+/// 学力で世界が変わる：熟練度の低い単元のエリアは暗く、上がると明るくなる
+class LightLayer extends PositionComponent {
+  LightLayer(this.map, this.darknessOf)
+    : super(
+        size: Vector2(map.width * tileSize, map.height * tileSize),
+        priority: 1 << 20,
+      );
+
+  final FieldMap map;
+  final double Function(int area) darknessOf;
+
+  @override
+  void render(ui.Canvas canvas) {
+    for (var r = 0; r < map.height; r++) {
+      for (var c = 0; c < map.width; c++) {
+        final d = darknessOf(map.areaAt(c, r));
+        if (d <= 0) continue;
+        canvas.drawRect(
+          Rect.fromLTWH(c * tileSize, r * tileSize, tileSize, tileSize),
+          ui.Paint()..color = ui.Color.fromRGBO(20, 16, 40, d),
+        );
+      }
+    }
+  }
 }

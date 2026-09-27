@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rpg_game/rpg_game.dart';
 
+import '../app/practice.dart';
 import '../app/services.dart';
 import '../app/theme.dart';
 import '../art/enemy_painter.dart';
@@ -148,6 +149,22 @@ class _SpeciesTile extends StatelessWidget {
 
   void _detail(BuildContext context) {
     final beaten = defeated > 0;
+    final record = RpgServices.of(context).meta.record;
+    final ability = EnemyAbility.forLook(species.look);
+    final winRate = seen == 0 ? null : (defeated * 100 / seen).round();
+    // この種族が出てくる単元のうち、いちばん苦手なもの
+    final units =
+        [
+            for (final w in RpgCatalog.worlds)
+              for (final st in w.stages)
+                if (st.enemy.look == species.look)
+                  (st, Proficiency.ofStage(record, st)),
+          ].where((e) => e.$2.rated).toList()
+          ..sort((a, b) => a.$2.score.compareTo(b.$2.score));
+    final weakest = units.isEmpty ? null : units.first;
+    final struggling =
+        (winRate != null && seen >= 3 && winRate < 60) ||
+        (weakest != null && weakest.$2.score < 60);
     showDialog<void>(
       context: context,
       builder: (c) => AlertDialog(
@@ -169,6 +186,40 @@ class _SpeciesTile extends StatelessWidget {
               const SizedBox(height: Space.s),
               Text('モチーフ：${species.motif}'),
               Text('出会った回数：$seen　倒した回数：$defeated'),
+              if (winRate != null) Text('勝率：$winRate%'),
+              if (ability != EnemyAbility.none)
+                Text('能力：${ability.label}（${ability.description}）'),
+              if (weakest != null)
+                Text(
+                  '弱点の単元：${RpgCatalog.world(weakest.$1.worldId).subject}・${weakest.$1.grammarTheme}（あなたの熟練度 ${weakest.$2.score}）',
+                ),
+              if (struggling && weakest != null) ...[
+                const SizedBox(height: Space.s),
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFFFF1E6),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Row(
+                    children: [
+                      const Expanded(
+                        child: Text(
+                          'この魔物に苦戦しています。',
+                          style: TextStyle(fontWeight: FontWeight.w700),
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                          startPractice(context, weakest.$1);
+                        },
+                        child: Text('「${weakest.$1.grammarTheme}」を復習'),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
               const SizedBox(height: Space.s),
               if (beaten) ...[
                 Text('性格：${species.personality}'),

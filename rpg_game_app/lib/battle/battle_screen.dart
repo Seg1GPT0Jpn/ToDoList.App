@@ -131,6 +131,8 @@ class _BattleScreenState extends State<BattleScreen>
     readingTimeLimit: Duration(seconds: widget.stage.readingTimeLimitSeconds),
     deck: [for (final id in widget.progress.battleDeck) CardDef.byId(id)],
     bossRule: widget.ghost ? BossRule.none : BossRules.of(widget.stage),
+    // 装備と職業の補正（その教科のバトルで効く装備もある）
+    bonus: Gear.bonusFor(widget.progress, widget.stage.worldId),
     // 復習の塔の番人は「10問中8問」の試練
     trialWindow: widget.stage.id.startsWith('review_tower') ? 10 : 5,
     trialNeed: widget.stage.id.startsWith('review_tower') ? 8 : 4,

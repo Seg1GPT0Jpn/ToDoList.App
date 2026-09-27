@@ -4,7 +4,7 @@ import 'package:rpg_game/rpg_game.dart';
 import '../app/services.dart';
 import '../app/theme.dart';
 import '../art/paper.dart';
-import '../battle/battle_screen.dart';
+import '../app/practice.dart';
 
 /// 学習ステータス：実際の正答率から計算した、分野ごとの熟練度。
 ///
@@ -12,26 +12,6 @@ import '../battle/battle_screen.dart';
 /// 「冒険Lv.35 だけど数学の確率が苦手」がひと目で分かるようにする。
 class LearningStatusScreen extends StatelessWidget {
   const LearningStatusScreen({super.key});
-
-  Future<void> _practice(BuildContext context, StageDef stage) async {
-    final services = RpgServices.of(context);
-    final pool = await services.loadStagePool(stage);
-    final progress = await services.repository.load();
-    if (pool == null || !pool.origin.usableInRpg || !context.mounted) return;
-    Navigator.of(context).push(
-      MaterialPageRoute<void>(
-        builder: (_) => BattleScreen(
-          world: RpgCatalog.world(stage.worldId),
-          stage: stage,
-          questions: pool.questions,
-          progress: progress,
-          // 練習なので RPG の進行は変えない。答えた記録は熟練度に反映される
-          trial: true,
-          mode: BattleMode.review,
-        ),
-      ),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -87,7 +67,7 @@ class LearningStatusScreen extends StatelessWidget {
                           '${stage.name}・${score.attempts}回答えて正答率${score.score}%',
                         ),
                         trailing: TextButton(
-                          onPressed: () => _practice(context, stage),
+                          onPressed: () => startPractice(context, stage),
                           child: const Text('練習'),
                         ),
                       ),

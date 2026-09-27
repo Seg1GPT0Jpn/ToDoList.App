@@ -3,7 +3,11 @@ import 'package:rpg_game/rpg_game.dart';
 
 import '../app/services.dart';
 import '../app/theme.dart';
+import '../study/common_test_screens.dart';
 import 'achievements_screen.dart';
+import 'equipment_screen.dart';
+import 'navigator_card.dart';
+import 'story_screen.dart';
 import 'learning_status_screen.dart';
 import 'bestiary_screen.dart';
 import 'design.dart';
@@ -66,6 +70,8 @@ class AdventureCard extends StatelessWidget {
               const SizedBox(height: Space.s),
               _NextGoal(progress: progress, due: due),
               const SizedBox(height: Space.s),
+              NavigatorCard(record: record, today: today),
+              const SizedBox(height: Space.s),
               if (quests.isNotEmpty) ...[
                 const Text(
                   '今日のクエスト',
@@ -91,6 +97,33 @@ class AdventureCard extends StatelessWidget {
                     label: due > 0 ? '復習の塔（$due）' : '復習の塔',
                     highlight: due > 0,
                     builder: (_) => const ReviewTowerScreen(),
+                  ),
+                  _MenuButton(
+                    icon: Icons.menu_book_outlined,
+                    label: '物語（欠片 ${Story.fragments(progress).length}/6）',
+                    builder: (_) => const StoryScreen(),
+                  ),
+                  _MenuButton(
+                    icon: Icons.shield_outlined,
+                    label: Gear.claimable(progress, record, today).isEmpty
+                        ? '装備・職業'
+                        : '装備・職業（ごほうび！）',
+                    highlight: Gear.claimable(
+                      progress,
+                      record,
+                      today,
+                    ).isNotEmpty,
+                    builder: (_) => const EquipmentScreen(),
+                  ),
+                  _MenuButton(
+                    icon: Icons.account_balance_outlined,
+                    label: '共通テスト遺跡',
+                    builder: (_) => const CommonTestRuinsScreen(),
+                  ),
+                  _MenuButton(
+                    icon: Icons.timer_outlined,
+                    label: '模試ダンジョン',
+                    builder: (_) => const MockExamScreen(),
                   ),
                   _MenuButton(
                     icon: Icons.insights,

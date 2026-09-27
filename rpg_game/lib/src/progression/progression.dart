@@ -143,8 +143,11 @@ class Progression {
         },
       );
       if (!alreadyCleared) {
-        final next =
-            Elites.isElite(stage.id) ? null : nextInBranch(world, stage);
+        // 強敵・世界の中心は、次のエリアの解放には数えない
+        final next = Elites.isElite(stage.id) ||
+                !world.stages.any((s) => s.id == stage.id)
+            ? null
+            : nextInBranch(world, stage);
         if (next != null) unlocked = next.id;
         if (stage.rewardCardId != null) {
           newCard = CardDef.byId(stage.rewardCardId!);

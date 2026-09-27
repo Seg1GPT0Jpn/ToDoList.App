@@ -151,6 +151,8 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
         ? (_, id) => _plan?.openedChests.contains(id) ?? false
         : null,
     onSecret: _revealSecret,
+    darknessOf: (a) => _darkness[a] ?? 0,
+    masteredArea: (a) => _mastered.contains(a),
     onDoor: (stage, cell) => _open(_DoorDialog(stage, cell)),
     onWarp: _touchWarp,
     onEncounter: (stage, cleared) => _open(_EncounterDialog(stage, cleared)),
@@ -175,6 +177,38 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
   bool _bannerBoss = false;
   int _bannerSerial = 0;
 
+  /// エリアの暗さと、身につけた単元のエリア（学力で世界が変わる）
+  final Map<int, double> _darkness = {};
+  final Set<int> _mastered = {};
+  final Map<int, int> _areaScore = {};
+
+  void _updateLight() {
+    final record = RpgServices.of(context).meta.record;
+    for (final stage in widget.world.stages) {
+      final src = _source(stage);
+      // 複数の単元をまとめたエリア（ボスなど）は判定しない
+      if (src.questionSetIds.length > 1) continue;
+      final skill = Proficiency.ofStage(record, src);
+      if (!skill.rated) {
+        _darkness.remove(stage.order);
+        _mastered.remove(stage.order);
+        _areaScore.remove(stage.order);
+        continue;
+      }
+      _areaScore[stage.order] = skill.score;
+      _darkness[stage.order] = skill.score < 60
+          ? 0.38
+          : skill.score < 80
+          ? 0.16
+          : 0;
+      if (skill.score >= 80) {
+        _mastered.add(stage.order);
+      } else {
+        _mastered.remove(stage.order);
+      }
+    }
+  }
+
   @override
   void initState() {
     super.initState();
@@ -188,7 +222,12 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
     final serial = ++_bannerSerial;
     setState(() {
       _banner = label;
-      _bannerTheme = _game.map.areaThemes[no] ?? '';
+      final score = _areaScore[no];
+      _bannerTheme = [
+        _game.map.areaThemes[no] ?? '',
+        if (score != null && score < 60) 'この場所はまだ暗い…（熟練度$score）。練習すると明るくなる',
+        if (score != null && score >= 80) '知識の光に照らされている（熟練度$score）',
+      ].where((t) => t.isNotEmpty).join('\n');
       _bannerBoss = _game.map.bossAreas.contains(no);
     });
     Future<void>.delayed(const Duration(milliseconds: 2400), () {
@@ -231,6 +270,7 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
     super.didChangeDependencies();
     final route = ModalRoute.of(context);
     if (route != null) routeObserver.subscribe(this, route);
+    _updateLight();
   }
 
   @override
@@ -252,6 +292,7 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
       _progress = updated;
       if (_plan != null) _plan = services.examWorlds.byId(_plan!.id) ?? _plan;
     });
+    _updateLight();
     _game.applyProgress(updated);
     _game.inputLocked = false;
     _focus.requestFocus();
