@@ -13,6 +13,7 @@ import '../study/inn_screen.dart';
 import '../art/enemy_painter.dart';
 import '../art/hero_painter.dart';
 import '../battle/battle_screen.dart';
+import '../story/story_player.dart';
 import '../battle/deck_screen.dart';
 import '../study/review_notebook_screen.dart';
 import 'field_game.dart';
@@ -165,7 +166,7 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
     onDoor: (stage, cell) => _open(_DoorDialog(stage, cell)),
     onWarp: _touchWarp,
     onNpc: _talkTo,
-    onEncounter: (stage, cleared) => _open(_EncounterDialog(stage, cleared)),
+    onEncounter: _encounter,
     onMessage: (text) => _open(_MessageDialog(text)),
     onInn: (stage) => _open(_InnDialog(stage)),
     onChest: (stage, id, opened) =>
@@ -224,6 +225,41 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
     super.initState();
     _game.npcHasQuest = _npcHasQuest;
     _game.areaNo.addListener(_onAreaChanged);
+    // はじめて国に入ったときの物語（序章・国の導入）
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      _playStory(StoryScenes.onEnterWorld(_progress, widget.world.id));
+    });
+  }
+
+  bool _storyPlaying = false;
+
+  /// まだ読んでいない物語の場面を見せる（試験対策ワールドでは見せない）
+  Future<void> _playStory(List<StoryScene> scenes) async {
+    if (!storyAutoPlay || _isExam || scenes.isEmpty || _storyPlaying) return;
+    _storyPlaying = true;
+    _game.inputLocked = true;
+    _game.padDirection = null;
+    await playStoryScenes(context, scenes);
+    _storyPlaying = false;
+    if (!mounted) return;
+    final updated = await RpgServices.of(context).repository.load();
+    if (!mounted) return;
+    setState(() => _progress = updated);
+    if (_dialog == null) _game.inputLocked = false;
+    _focus.requestFocus();
+  }
+
+  /// 敵に話しかけたとき。国の最後のボスなら、はじめてのときだけ物語をはさむ
+  Future<void> _encounter(StageDef stage, bool cleared) async {
+    final scene = cleared || _isExam
+        ? null
+        : StoryScenes.beforeFinalBoss(_progress, widget.world.id, stage.id);
+    if (scene != null && storyAutoPlay) {
+      await _playStory([scene]);
+      if (!mounted) return;
+    }
+    _open(_EncounterDialog(stage, cleared));
   }
 
   /// 前にいたエリアの地形（乗り物を乗りかえたかどうかの判定に使う）
@@ -318,8 +354,11 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
     });
     _updateLight();
     _game.applyProgress(updated);
+    if (_storyPlaying) return;
     _game.inputLocked = false;
     _focus.requestFocus();
+    // 欠片を取りもどしたときの物語
+    await _playStory(StoryScenes.onEnterWorld(updated, widget.world.id));
   }
 
   void _open(_Dialog d) {

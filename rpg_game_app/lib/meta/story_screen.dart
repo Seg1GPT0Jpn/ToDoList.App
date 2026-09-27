@@ -5,13 +5,28 @@ import '../app/services.dart';
 import '../app/theme.dart';
 import '../art/paper.dart';
 import '../battle/battle_screen.dart';
+import '../story/story_player.dart';
 
 /// 物語：知識の世界と6つの欠片。6つそろうと「世界の中心」の決戦に挑める
-class StoryScreen extends StatelessWidget {
+class StoryScreen extends StatefulWidget {
   const StoryScreen({super.key});
+
+  @override
+  State<StoryScreen> createState() => _StoryScreenState();
+}
+
+class _StoryScreenState extends State<StoryScreen> {
+  /// エピローグをもう見せはじめた
+  bool _epilogueShown = false;
 
   Future<void> _challengeCenter(BuildContext context) async {
     final services = RpgServices.of(context);
+    final before = await services.repository.load();
+    if (!context.mounted) return;
+    if (!StoryScenes.seen(before, StoryScenes.finaleBefore)) {
+      await playStoryScenes(context, [StoryScenes.finaleBefore]);
+      if (!context.mounted) return;
+    }
     final stage = Story.centerStage();
     final pool = await services.loadStagePool(stage);
     final progress = await services.repository.load();
@@ -38,6 +53,16 @@ class StoryScreen extends StatelessWidget {
         final got = Story.fragments(p);
         final open = Story.centerOpen(p);
         final won = p.clearedStageIds.contains(Story.centerStageId);
+        // 魔王をたおしたら、エピローグを一度だけ見せる
+        if (won &&
+            !_epilogueShown &&
+            !StoryScenes.seen(p, StoryScenes.epilogue)) {
+          _epilogueShown = true;
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            if (mounted) playStoryScenes(context, [StoryScenes.epilogue]);
+          });
+        }
+        final seen = StoryScenes.unlocked(p).map((s) => s.id).toSet();
         return Scaffold(
           appBar: AppBar(title: Text('物語', style: serif(18))),
           body: NotebookPaper(
@@ -57,6 +82,14 @@ class StoryScreen extends StatelessWidget {
                       style: const TextStyle(fontSize: 14, height: 1.7),
                     ),
                   ),
+                const SizedBox(height: 8),
+                OutlinedButton.icon(
+                  onPressed: () => playStoryScenes(context, [
+                    StoryScenes.prologue,
+                  ], replay: seen.contains(StoryScenes.prologue.id)),
+                  icon: const Icon(Icons.auto_stories),
+                  label: const Text('序章「しおりの精」を読む'),
+                ),
                 const SizedBox(height: 16),
                 Text('知識の欠片（${got.length} / 6）', style: serif(16)),
                 const SizedBox(height: 6),
@@ -113,6 +146,34 @@ class StoryScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+                const SizedBox(height: 20),
+                Text(
+                  '物語の回想（${seen.length} / ${StoryScenes.all.length}）',
+                  style: serif(16),
+                ),
+                const SizedBox(height: 4),
+                const Text(
+                  '読んだ場面は、ここで何度でも読み返せます。国に入る・最後のボスに挑む・欠片を取りもどすと、新しい場面が読めます。',
+                  style: TextStyle(fontSize: 12, color: TsuzuriColors.inkSoft),
+                ),
+                const SizedBox(height: 6),
+                for (final s in StoryScenes.all)
+                  ListTile(
+                    dense: true,
+                    contentPadding: EdgeInsets.zero,
+                    leading: Icon(
+                      seen.contains(s.id)
+                          ? Icons.menu_book
+                          : Icons.lock_outline,
+                      color: seen.contains(s.id)
+                          ? Color(s.color)
+                          : TsuzuriColors.inkSoft,
+                    ),
+                    title: Text(seen.contains(s.id) ? s.title : '？？？'),
+                    onTap: seen.contains(s.id)
+                        ? () => playStoryScenes(context, [s], replay: true)
+                        : null,
+                  ),
               ],
             ),
           ),
