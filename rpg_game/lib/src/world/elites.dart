@@ -1,4 +1,5 @@
 import '../battle/cards.dart';
+import '../data/catalog.dart';
 import '../models/enemy.dart';
 import '../models/stage.dart';
 
@@ -55,5 +56,27 @@ class Elites {
       vocabLevel: base.vocabLevel,
       rewardCardId: card.id,
     );
+  }
+}
+
+/// ステージごとのボスの特別ルール
+class BossRules {
+  const BossRules._();
+
+  static final Map<String, StageDef> _lastOfRoute = {
+    for (final w in RpgCatalog.worlds)
+      for (final s in w.stages) '${w.id}/${s.branch}': s,
+  };
+
+  /// 強敵は「3連続正解」、ワールド（ルート）の最後のボスと試験本番は「分野横断の決戦」、
+  /// ほかのボスは「5問中4問の試練」。
+  static BossRule of(StageDef stage) {
+    if (Elites.isElite(stage.id)) return BossRule.chain3;
+    if (!stage.isBoss) return BossRule.none;
+    if (stage.id.startsWith('exam_') && stage.id.endsWith('_boss')) {
+      return BossRule.finale;
+    }
+    final last = _lastOfRoute['${stage.worldId}/${stage.branch}'];
+    return last?.id == stage.id ? BossRule.finale : BossRule.trial;
   }
 }

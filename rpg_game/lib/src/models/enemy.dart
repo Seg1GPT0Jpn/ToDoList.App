@@ -18,12 +18,41 @@ enum EnemyAbility {
   specialist('特化型', '弱点の問題でダメージ2.5倍、ほかの問題は0.6倍'),
 
   /// 鉄壁：いつも受けるダメージが少し減る（そのぶんHPは低め）
-  sturdy('鉄壁', '受けるダメージがいつも0.7倍'),
+  sturdy('鉄壁', '受けるダメージがいつも0.85倍'),
 
   /// 連続要求：2問続けて正解しないとダメージが通りにくい
-  chainLock('連続要求', '連続正解の2問目からダメージがしっかり通る');
+  chainLock('連続要求', '連続正解の2問目からダメージがしっかり通る（1問目は半分）');
 
   const EnemyAbility(this.label, this.description);
+  final String label;
+  final String description;
+
+  /// 見た目（文房具の種類）から決まる能力
+  static EnemyAbility forLook(String look) => switch (look) {
+        'eraser' => guard,
+        'book' || 'page' => disrupt,
+        'pencil' || 'stubpencil' || 'mechpencil' => combo,
+        'ruler' || 'compass' || 'triangle' || 'protractor' => specialist,
+        'pen' || 'knight' => sturdy,
+        'scissors' => chainLock,
+        _ => none,
+      };
+}
+
+/// ボス戦の特別ルール
+enum BossRule {
+  none('', ''),
+
+  /// 中ボス：3問連続で正解するたびに大ダメージ
+  chain3('3連続正解で大ダメージ', '3問続けて正解するたびに、ダメージ2.5倍の大技になる'),
+
+  /// 大ボス：5問ごとに判定。4問以上正解なら大ダメージ、足りなければ回復される
+  trial('5問中4問の試練', 'ふだんのダメージは0.7倍。5問ごとに4問以上正解なら最大HPの25%の大ダメージ、足りないとボスが少し回復する'),
+
+  /// ラスボス：分野をまたいで戦う。HPが減るごとに出題の中心が変わる
+  finale('分野横断の決戦', 'HPが減るごとに出題の中心が「読解→語法・文法→意味・知識→総合」と変わる。中心の分野以外のダメージは半分');
+
+  const BossRule(this.label, this.description);
   final String label;
   final String description;
 }
@@ -46,8 +75,15 @@ class EnemyDef {
     this.ability = EnemyAbility.none,
   });
 
-  /// 特殊能力
+  /// 特殊能力（指定がなければ [effectiveAbility] で見た目から決まる）
   final EnemyAbility ability;
+
+  /// 実際に使う能力。装甲をもつ敵は、装甲がその役目なので能力なし
+  EnemyAbility get effectiveAbility {
+    if (ability != EnemyAbility.none) return ability;
+    if (armor > 0) return EnemyAbility.none;
+    return EnemyAbility.forLook(look);
+  }
 
   final String id;
   final String name;

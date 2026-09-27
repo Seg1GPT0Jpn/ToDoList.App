@@ -46,6 +46,31 @@ class QuestionDeck {
     return _present(q);
   }
 
+  /// 山札の上から [lookahead] 枚を見て、[score] が一番大きい問題を引く
+  /// （苦手な問題・特定の分野の問題を優先したいときに使う）。
+  /// 長文の設問は本文の順番をくずさないよう、先頭にあるときだけ選ぶ。
+  PresentedQuestion drawPreferred(
+    double Function(QuizQuestion q) score, {
+    int lookahead = 8,
+  }) {
+    if (_pile.isEmpty) _refill();
+    var best = _pile.length - 1;
+    var bestScore = score(_pile[best]);
+    for (var i = _pile.length - 2;
+        i >= 0 && i >= _pile.length - lookahead;
+        i--) {
+      if (_pile[i].passage != null) continue;
+      final sc = score(_pile[i]);
+      if (sc > bestScore) {
+        best = i;
+        bestScore = sc;
+      }
+    }
+    final q = _pile.removeAt(best);
+    _last = q;
+    return _present(q);
+  }
+
   void _refill() {
     // 長文の設問は本文ごとにまとめ、本文の中では順番どおりに出す。
     // それ以外の問題は1問ずつのまとまりとしてシャッフルする。

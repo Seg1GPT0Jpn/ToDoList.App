@@ -179,6 +179,7 @@ void main() {
             questions: loadStagePool(stage).questions,
             readingTimeLimit: Duration(seconds: stage.readingTimeLimitSeconds),
             timeLimit: Duration(seconds: stage.timeLimitSeconds),
+            bossRule: BossRules.of(stage),
             random: rnd,
           );
           while (!b.isOver) {

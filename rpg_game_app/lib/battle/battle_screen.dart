@@ -116,7 +116,11 @@ class _BattleScreenState extends State<BattleScreen>
     questions: widget.questions,
     timeLimit: Duration(seconds: widget.stage.timeLimitSeconds),
     readingTimeLimit: Duration(seconds: widget.stage.readingTimeLimitSeconds),
-    deck: [for (final id in widget.progress.deck) CardDef.byId(id)],
+    deck: [for (final id in widget.progress.battleDeck) CardDef.byId(id)],
+    bossRule: widget.ghost ? BossRule.none : BossRules.of(widget.stage),
+    // 復習の塔の番人は「10問中8問」の試練
+    trialWindow: widget.stage.id.startsWith('review_tower') ? 10 : 5,
+    trialNeed: widget.stage.id.startsWith('review_tower') ? 8 : 4,
     companions: {
       for (final id in widget.progress.companions) CompanionDef.byId(id).effect,
     },
@@ -330,6 +334,23 @@ class _BattleScreenState extends State<BattleScreen>
           after: const Duration(milliseconds: 260),
         );
       }
+      if (r.guardBroken) {
+        _popup(
+          _Popup('守りがくずれた！', const Color(0xFF2E7DB5), const Alignment(0, 0.45)),
+          after: const Duration(milliseconds: 260),
+        );
+      }
+      if (r.bossBurst) {
+        _popup(
+          _Popup(
+            r.trialResult == true ? '試練クリア！大技！' : '大技！',
+            TsuzuriColors.stamp,
+            const Alignment(0, -0.05),
+            big: true,
+          ),
+          after: const Duration(milliseconds: 320),
+        );
+      }
       if (r.healed > 0) {
         _popup(
           _Popup(
@@ -361,6 +382,25 @@ class _BattleScreenState extends State<BattleScreen>
           onPlayer: true,
         ),
       );
+      if (r.disrupted) {
+        _popup(
+          _Popup(
+            '次の問題がむずかしくなった…',
+            const Color(0xFF6A4BA8),
+            const Alignment(0, 0.5),
+          ),
+          after: const Duration(milliseconds: 250),
+        );
+      }
+      if (r.comboKept) {
+        _popup(
+          _Popup(
+            'チェインを守った！',
+            const Color(0xFFE08A00),
+            const Alignment(0.6, -0.75),
+          ),
+        );
+      }
       if (r.survived) {
         _popup(
           _Popup(
@@ -372,6 +412,17 @@ class _BattleScreenState extends State<BattleScreen>
           after: const Duration(milliseconds: 300),
         );
       }
+    }
+
+    if (r.trialResult == false) {
+      _popup(
+        _Popup(
+          '試練失敗…ボスが${r.enemyHealed}回復した',
+          TsuzuriColors.inkSoft,
+          const Alignment(0, 0.1),
+        ),
+        after: const Duration(milliseconds: 350),
+      );
     }
 
     if (_engine.isOver) {
@@ -631,6 +682,25 @@ class _BattleScreenState extends State<BattleScreen>
                         '装甲×${_engine.armor}（${enemy.armorCategory!.label}で割れる）',
                         const Color(0xFF2E7DB5),
                       ),
+                    if (_engine.ability != EnemyAbility.none)
+                      _Tag(
+                        _engine.guardUp
+                            ? '${_engine.ability.label}：守り中（弱点で解ける）'
+                            : _engine.ability.label,
+                        const Color(0xFF8D5A3B),
+                      ),
+                    if (_engine.bossRule == BossRule.trial)
+                      _Tag(
+                        '試練 ${_engine.trialAnswered}/${_engine.trialWindow}問（正解${_engine.trialCorrect}・${_engine.trialNeed}問で大技）',
+                        TsuzuriColors.stamp,
+                      )
+                    else if (_engine.bossRule == BossRule.finale)
+                      _Tag(
+                        '決戦：${_engine.finaleFocus?.label ?? '総合'}の問題が中心',
+                        TsuzuriColors.stamp,
+                      )
+                    else if (_engine.bossRule == BossRule.chain3)
+                      const _Tag('3連続正解で大技', TsuzuriColors.stamp),
                     if (widget.progress.springBuff && !widget.ghost)
                       const _Tag('泉の加護 HP+30%', Color(0xFF3B8FB5)),
                   ],

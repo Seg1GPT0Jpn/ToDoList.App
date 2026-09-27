@@ -23,6 +23,25 @@ enum CardEffect {
 
   /// 正解でダメージ3倍。不正解なら受けるダメージ2倍
   gamble,
+
+  /// 学習カード：このバトルの間、苦手な問題が出やすくなる（正解するとダメージ1.3倍）
+  focus,
+
+  /// コンボカード：次に間違えても、チェインが切れない
+  keep,
+}
+
+/// カードの種類（デッキづくりの目安）
+enum CardType {
+  attack('⚔️', '攻撃'),
+  defense('🛡️', '防御'),
+  heal('❤️', '回復'),
+  study('📚', '学習'),
+  combo('🔥', 'コンボ');
+
+  const CardType(this.icon, this.label);
+  final String icon;
+  final String label;
 }
 
 enum CardRarity { common, rare }
@@ -42,6 +61,20 @@ class CardDef {
   final CardEffect effect;
   final String description;
   final CardRarity rarity;
+
+  CardType get type => switch (effect) {
+        CardEffect.power ||
+        CardEffect.critical ||
+        CardEffect.gamble =>
+          CardType.attack,
+        CardEffect.guard => CardType.defense,
+        CardEffect.heal => CardType.heal,
+        CardEffect.hint ||
+        CardEffect.time ||
+        CardEffect.focus =>
+          CardType.study,
+        CardEffect.chain || CardEffect.keep => CardType.combo,
+      };
 
   static const all = <CardDef>[
     CardDef(
@@ -88,6 +121,17 @@ class CardDef {
         effect: CardEffect.gamble,
         description: '正解ならダメージ3倍。不正解だと受けるダメージ2倍',
         rarity: CardRarity.rare),
+    CardDef(
+        id: 'focus',
+        name: '苦手の地図',
+        effect: CardEffect.focus,
+        description: 'このバトルの間、苦手な問題が出やすくなる。正解ならダメージ1.3倍'),
+    CardDef(
+        id: 'keep',
+        name: 'むすびの栞',
+        effect: CardEffect.keep,
+        description: '次に間違えても、チェインが切れない',
+        rarity: CardRarity.rare),
   ];
 
   static CardDef byId(String id) => all.firstWhere((c) => c.id == id);
@@ -104,6 +148,9 @@ class CardDef {
 
   static List<CardDef> get rares =>
       all.where((c) => c.rarity == CardRarity.rare).toList();
+
+  /// バトルに持っていけるカードの枚数（デッキ）
+  static const deckSize = 10;
 }
 
 /// 仲間の常時効果
@@ -159,4 +206,76 @@ class CompanionDef {
   ];
 
   static CompanionDef byId(String id) => all.firstWhere((c) => c.id == id);
+}
+
+/// デッキの型（おまかせで組むとき）
+enum DeckStyle {
+  balanced('バランス型', 'いろいろな種類を少しずつ'),
+  attack('攻撃型', '攻撃カードを多めに。早く倒したいときに'),
+  defense('防御重視', '守りと回復を多めに。ボス戦に'),
+  study('苦手攻略', '学習カードを多めに。苦手な分野を集中して練習');
+
+  const DeckStyle(this.label, this.description);
+  final String label;
+  final String description;
+}
+
+/// デッキづくり
+class DeckBuilder {
+  const DeckBuilder._();
+
+  /// 持っているカード [owned] から、[style] に合わせて [CardDef.deckSize] 枚を選ぶ
+  static List<String> preset(List<String> owned, DeckStyle style) {
+    final priority = switch (style) {
+      DeckStyle.attack => [
+          CardType.attack,
+          CardType.combo,
+          CardType.heal,
+          CardType.study,
+          CardType.defense,
+        ],
+      DeckStyle.defense => [
+          CardType.defense,
+          CardType.heal,
+          CardType.study,
+          CardType.combo,
+          CardType.attack,
+        ],
+      DeckStyle.study => [
+          CardType.study,
+          CardType.heal,
+          CardType.defense,
+          CardType.combo,
+          CardType.attack,
+        ],
+      DeckStyle.balanced => const <CardType>[],
+    };
+    final pool = [...owned];
+    final out = <String>[];
+    if (priority.isEmpty) {
+      // 種類ごとに1枚ずつ順に取っていく
+      var added = true;
+      while (out.length < CardDef.deckSize && added) {
+        added = false;
+        for (final t in CardType.values) {
+          final i = pool.indexWhere((id) => CardDef.byId(id).type == t);
+          if (i >= 0 && out.length < CardDef.deckSize) {
+            out.add(pool.removeAt(i));
+            added = true;
+          }
+        }
+      }
+      return out;
+    }
+    for (final t in priority) {
+      for (final id in [...pool]) {
+        if (out.length >= CardDef.deckSize) break;
+        if (CardDef.byId(id).type == t) {
+          out.add(id);
+          pool.remove(id);
+        }
+      }
+    }
+    return out;
+  }
 }

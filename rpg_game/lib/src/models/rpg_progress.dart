@@ -45,6 +45,7 @@ class RpgProgress {
     this.lostStages = const {},
     this.springBuff = false,
     this.fieldFlags = const {},
+    this.activeDeck = const [],
   });
 
   /// 最初のデッキ（CardDef.starterDeck と同じ）
@@ -98,6 +99,21 @@ class RpgProgress {
   /// 例：`open:english:12:40`（そのマスの隠し通路・扉が開いた）、`warp:english:3`
   final Set<String> fieldFlags;
 
+  /// バトルに持っていくカード（最大 10 枚。[deck] は持っているカード全部）。
+  /// 空なら [deck] から先頭の 10 枚を持っていく。
+  final List<String> activeDeck;
+
+  /// 実際にバトルで使うデッキ（持っていないカードは入れない）
+  List<String> get battleDeck {
+    if (activeDeck.isEmpty) return deck.take(10).toList();
+    final owned = [...deck];
+    final out = <String>[];
+    for (final id in activeDeck) {
+      if (owned.remove(id)) out.add(id);
+    }
+    return out.isEmpty ? deck.take(10).toList() : out;
+  }
+
   RpgProgress copyWith({
     int? level,
     int? exp,
@@ -113,6 +129,7 @@ class RpgProgress {
     Set<String>? lostStages,
     bool? springBuff,
     Set<String>? fieldFlags,
+    List<String>? activeDeck,
   }) =>
       RpgProgress(
         level: level ?? this.level,
@@ -129,6 +146,7 @@ class RpgProgress {
         lostStages: lostStages ?? this.lostStages,
         springBuff: springBuff ?? this.springBuff,
         fieldFlags: fieldFlags ?? this.fieldFlags,
+        activeDeck: activeDeck ?? this.activeDeck,
       );
 
   factory RpgProgress.fromMap(Map<String, dynamic>? map) {
@@ -164,6 +182,7 @@ class RpgProgress {
       lostStages: Set<String>.from((map['lostStages'] as List?) ?? const []),
       springBuff: map['springBuff'] as bool? ?? false,
       fieldFlags: Set<String>.from((map['fieldFlags'] as List?) ?? const []),
+      activeDeck: List<String>.from((map['activeDeck'] as List?) ?? const []),
     );
   }
 
@@ -184,5 +203,6 @@ class RpgProgress {
         'lostStages': lostStages.toList()..sort(),
         'springBuff': springBuff,
         'fieldFlags': fieldFlags.toList()..sort(),
+        'activeDeck': activeDeck,
       };
 }

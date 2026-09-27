@@ -39,7 +39,31 @@ class TurnResult {
     this.healed = 0,
     this.card,
     this.survived = false,
+    this.guardBroken = false,
+    this.disrupted = false,
+    this.bossBurst = false,
+    this.trialResult,
+    this.enemyHealed = 0,
+    this.comboKept = false,
   });
+
+  /// 防御型の守りがこのターンで解けた
+  final bool guardBroken;
+
+  /// 妨害型の力で、次の問題がむずかしくなった
+  final bool disrupted;
+
+  /// ボスの特別ルールで大ダメージ（3連続正解・試練の合格）
+  final bool bossBurst;
+
+  /// 試練（5問ごとの判定）の結果。判定したターンだけ true / false
+  final bool? trialResult;
+
+  /// ボスが回復した量（試練に失敗したとき）
+  final int enemyHealed;
+
+  /// むすびの栞でチェインが切れなかった
+  final bool comboKept;
 
   final PresentedQuestion question;
 
@@ -140,10 +164,14 @@ class BattleEngine {
     this.companions = const {},
     this.bonusHpRate = 0,
     this.handSize = 3,
+    this.bossRule = BossRule.none,
+    this.trialWindow = 5,
+    this.trialNeed = 4,
     Random? random,
     DamageCalculator? damage,
     double Function(QuizQuestion)? questionWeight,
   })  : _random = random ?? Random(),
+        _weight = questionWeight,
         _deck = QuestionDeck(questions, random: random, weight: questionWeight),
         _damage = damage ?? DamageCalculator(random: random),
         _armor = enemy.armor,
@@ -155,7 +183,30 @@ class BattleEngine {
     while (_hand.length < handSize && _drawPile.isNotEmpty) {
       _hand.add(_drawPile.removeLast());
     }
-    _current = _deck.draw();
+    _categories = {for (final q in questions) q.category};
+    _current = _nextQuestion();
+  }
+
+  /// 次の問題を引く。能力・カード・ボスのルールで、引き方が変わる
+  PresentedQuestion _nextQuestion() {
+    final focusCat = finaleFocus;
+    final w = _weight;
+    if (_disruptNext) {
+      _disruptNext = false;
+      // 妨害：苦手な問題・長い問題ほど先に出る
+      return _deck.drawPreferred(
+        (q) =>
+            (w?.call(q) ?? 1) * 2 +
+            (q.prompt.length + (q.sentence?.length ?? 0)) / 60,
+      );
+    }
+    if (focusCat != null) {
+      return _deck.drawPreferred(
+        (q) => (q.category == focusCat ? 10 : 0) + (w?.call(q) ?? 1),
+      );
+    }
+    if (_focus && w != null) return _deck.drawPreferred(w);
+    return _deck.draw();
   }
 
   final PlayerStats player;
@@ -167,6 +218,64 @@ class BattleEngine {
 
   /// 仲間の常時効果
   final Set<CompanionEffect> companions;
+
+  /// ボス戦の特別ルール
+  final BossRule bossRule;
+
+  /// 試練（[BossRule.trial]）：何問ごとに判定するか、何問正解が必要か
+  final int trialWindow;
+  final int trialNeed;
+
+  /// 敵の特殊能力
+  EnemyAbility get ability => enemy.effectiveAbility;
+
+  final double Function(QuizQuestion)? _weight;
+
+  /// 防御型の守りが残っているか
+  bool get guardUp => ability == EnemyAbility.guard && !_guardBroken;
+  bool _guardBroken = false;
+
+  /// 苦手の地図を使ったか（このバトルの間、苦手な問題が出やすい）
+  bool get focusActive => _focus;
+  bool _focus = false;
+
+  /// 妨害型の力で、次の問題がむずかしくなるか
+  bool _disruptNext = false;
+
+  /// 試練の、いまの区切りでの回答数と正解数
+  int get trialAnswered => _trialAnswered;
+  int get trialCorrect => _trialCorrect;
+  int _trialAnswered = 0;
+  int _trialCorrect = 0;
+
+  /// ラスボスの出題の中心（HPが減るごとに変わる）。null なら総合
+  QuestionCategory? get finaleFocus {
+    if (bossRule != BossRule.finale) return null;
+    final rate = _enemyHp / enemy.maxHp;
+    final order = [
+      if (_categories.contains(QuestionCategory.reading))
+        QuestionCategory.reading,
+      if (_categories.contains(QuestionCategory.usage)) QuestionCategory.usage,
+      for (final c in const [
+        QuestionCategory.meaning,
+        QuestionCategory.knowledge,
+        QuestionCategory.calculation,
+        QuestionCategory.thinking,
+      ])
+        if (_categories.contains(c)) c,
+    ];
+    if (order.isEmpty) return null;
+    final phase = rate > 0.75
+        ? 0
+        : rate > 0.5
+            ? 1
+            : rate > 0.25
+                ? 2
+                : 3;
+    return phase >= order.length || phase == 3 ? null : order[phase];
+  }
+
+  late final Set<QuestionCategory> _categories;
 
   /// 泉の加護などで増える最大HPの割合（0.3 なら +30%）
   final double bonusHpRate;
@@ -284,6 +393,14 @@ class BattleEngine {
     var guarded = false;
     var healed = 0;
     var survived = false;
+    var guardBroken = false;
+    var disrupted = false;
+    var bossBurst = false;
+    bool? trialResult;
+    var enemyHealed = 0;
+    var comboKept = false;
+    final focusCat = finaleFocus;
+    if (effect == CardEffect.focus) _focus = true;
 
     if (correct) {
       _combo += effect == CardEffect.chain ? 3 : 1;
@@ -305,9 +422,49 @@ class BattleEngine {
           extra *= DamageCalculator.blockedRate;
         }
       }
-      if (!blocked && enemy.weakness != null && category == enemy.weakness) {
+      final hitsWeakness = enemy.weakness != null && category == enemy.weakness;
+      if (!blocked && hitsWeakness) {
         weakness = true;
-        extra *= DamageCalculator.weaknessRate;
+        extra *= ability == EnemyAbility.specialist
+            ? 2.5
+            : DamageCalculator.weaknessRate;
+      }
+      if (effect == CardEffect.focus) extra *= 1.3;
+      // 敵の能力
+      switch (ability) {
+        case EnemyAbility.guard:
+          if (!_guardBroken) {
+            if (hitsWeakness) {
+              _guardBroken = true;
+              guardBroken = true;
+            } else {
+              extra *= 0.5;
+            }
+          }
+        case EnemyAbility.combo:
+          extra *= min(3.0, 0.5 + 0.4 * (_combo - 1));
+        case EnemyAbility.specialist:
+          if (!hitsWeakness) extra *= 0.6;
+        case EnemyAbility.sturdy:
+          extra *= 0.85;
+        case EnemyAbility.chainLock:
+          if (_combo < 2) extra *= 0.5;
+        case EnemyAbility.disrupt || EnemyAbility.none:
+          break;
+      }
+      // ボスのルール
+      switch (bossRule) {
+        case BossRule.chain3:
+          if (_combo % 3 == 0) {
+            extra *= 2.5;
+            bossBurst = true;
+          }
+        case BossRule.trial:
+          extra *= 0.7;
+        case BossRule.finale:
+          if (focusCat != null && category != focusCat) extra *= 0.5;
+        case BossRule.none:
+          break;
       }
       toEnemy = _damage.playerAttack(
         attack: player.attack,
@@ -323,7 +480,15 @@ class BattleEngine {
         _playerHp += healed;
       }
     } else {
-      _combo = 0;
+      if (effect == CardEffect.keep) {
+        comboKept = true;
+      } else {
+        _combo = 0;
+      }
+      if (ability == EnemyAbility.disrupt) {
+        _disruptNext = true;
+        disrupted = true;
+      }
       if (effect == CardEffect.guard) {
         guarded = true;
       } else {
@@ -341,6 +506,27 @@ class BattleEngine {
           toPlayer = _playerHp - 1;
         }
         _playerHp = max(0, _playerHp - toPlayer);
+      }
+    }
+
+    // 試練：区切りごとに判定する
+    if (bossRule == BossRule.trial && _enemyHp > 0) {
+      _trialAnswered++;
+      if (correct) _trialCorrect++;
+      if (_trialAnswered >= trialWindow) {
+        trialResult = _trialCorrect >= trialNeed;
+        if (trialResult) {
+          final burst = (enemy.maxHp * 0.25).round();
+          toEnemy += burst;
+          _enemyHp = max(0, _enemyHp - burst);
+          bossBurst = true;
+        } else {
+          enemyHealed =
+              min(enemy.maxHp - _enemyHp, (enemy.maxHp * 0.06).round());
+          _enemyHp += enemyHealed;
+        }
+        _trialAnswered = 0;
+        _trialCorrect = 0;
       }
     }
 
@@ -369,6 +555,12 @@ class BattleEngine {
       healed: healed,
       card: card,
       survived: survived,
+      guardBroken: guardBroken,
+      disrupted: disrupted,
+      bossBurst: bossBurst,
+      trialResult: trialResult,
+      enemyHealed: enemyHealed,
+      comboKept: comboKept,
     );
     _turns.add(result);
 
@@ -387,7 +579,7 @@ class BattleEngine {
       _hand.add(_drawPile.removeLast());
     }
 
-    if (!isOver) _current = _deck.draw();
+    if (!isOver) _current = _nextQuestion();
     return result;
   }
 
