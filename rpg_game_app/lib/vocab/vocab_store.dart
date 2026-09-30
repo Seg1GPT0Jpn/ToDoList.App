@@ -59,8 +59,10 @@ class VocabStore {
 
   static Future<List<int>?> _loadAsset(String file) async {
     try {
-      final data = await rootBundle.load('assets/vocab/$file.bin');
-      return data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
+      // ウェブでもそのまま配れるように、暗号文を base64 のテキストで置いている
+      return base64Decode(
+        (await rootBundle.loadString('assets/vocab/$file.txt')).trim(),
+      );
     } catch (_) {
       return null;
     }
