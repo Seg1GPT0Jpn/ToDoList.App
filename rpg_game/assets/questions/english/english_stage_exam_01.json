@@ -1,0 +1,438 @@
+{
+  "setId": "english_stage_exam_01",
+  "worldId": "english",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "en_exam01_001",
+      "category": "meaning",
+      "prompt": "「inevitable」の最も近い意味は？",
+      "choices": [
+        "予測できる",
+        "避けられない",
+        "望ましい",
+        "一時的な"
+      ],
+      "answerIndex": 1,
+      "explanation": "inevitable は「避けられない、必然の」という意味の重要語彙です。"
+    },
+    {
+      "id": "en_exam01_002",
+      "category": "meaning",
+      "prompt": "「substitute」の最も近い意味は？",
+      "choices": [
+        "取り消す",
+        "代わりに使う",
+        "発明する",
+        "延期する"
+      ],
+      "answerIndex": 1,
+      "explanation": "substitute A for B で「Bの代わりにAを使う」などの意味になります。"
+    },
+    {
+      "id": "en_exam01_003",
+      "category": "meaning",
+      "prompt": "「reluctant」の最も近い意味は？",
+      "choices": [
+        "熱心な",
+        "誇らしげな",
+        "寛大な",
+        "気乗りしない"
+      ],
+      "answerIndex": 3,
+      "explanation": "be reluctant to do で「〜するのを嫌がる、気が進まない」という意味です。"
+    },
+    {
+      "id": "en_exam01_004",
+      "category": "meaning",
+      "prompt": "「contemporary」の最も近い意味は？",
+      "choices": [
+        "古代の",
+        "現代の",
+        "永遠の",
+        "原始的な"
+      ],
+      "answerIndex": 1,
+      "explanation": "contemporary は「同時代の、現代の」という意味の形容詞です。"
+    },
+    {
+      "id": "en_exam01_005",
+      "category": "meaning",
+      "prompt": "「comprehend」の最も近い意味は？",
+      "choices": [
+        "競争する",
+        "誤解する",
+        "理解する",
+        "批判する"
+      ],
+      "answerIndex": 2,
+      "explanation": "comprehend は「（十分に）理解する」という意味の動詞です。"
+    },
+    {
+      "id": "en_exam01_006",
+      "category": "meaning",
+      "prompt": "「sustainable」の最も近い意味は？",
+      "choices": [
+        "急激な",
+        "持続可能な",
+        "有害な",
+        "高価な"
+      ],
+      "answerIndex": 1,
+      "explanation": "sustainable society（持続可能な社会）などで頻出の形容詞です。"
+    },
+    {
+      "id": "en_exam01_007",
+      "category": "meaning",
+      "prompt": "「consequence」の最も近い意味は？",
+      "choices": [
+        "原因",
+        "目的",
+        "結果",
+        "機会"
+      ],
+      "answerIndex": 2,
+      "explanation": "consequence は「（ある行動から生じる）結果、影響」を意味します。"
+    },
+    {
+      "id": "en_exam01_008",
+      "category": "meaning",
+      "prompt": "「significant」の最も近い意味は？",
+      "choices": [
+        "危険な",
+        "ささいな",
+        "複雑な",
+        "重要な・重大な"
+      ],
+      "answerIndex": 3,
+      "explanation": "significant は「重要な、意義深い、著しい」という意味です。"
+    },
+    {
+      "id": "en_exam01_009",
+      "category": "meaning",
+      "prompt": "「abundant」の最も近い意味は？",
+      "choices": [
+        "不足している",
+        "豊富な",
+        "貧しい",
+        "危険な"
+      ],
+      "answerIndex": 1,
+      "explanation": "abundant は「豊富な、あり余る」という意味で plentiful と同義です。"
+    },
+    {
+      "id": "en_exam01_010",
+      "category": "meaning",
+      "prompt": "「vulnerable」の最も近い意味は？",
+      "choices": [
+        "強力な",
+        "傷つきやすい・脆弱な",
+        "無神経な",
+        "自信に満ちた"
+      ],
+      "answerIndex": 1,
+      "explanation": "be vulnerable to で「〜に対して脆弱である、影響を受けやすい」の意。"
+    },
+    {
+      "id": "en_exam01_011",
+      "category": "usage",
+      "prompt": "文脈に合う最も適切な熟語は？",
+      "sentence": "We had to (   ) the meeting due to heavy snow.",
+      "choices": [
+        "put on",
+        "look for",
+        "call off",
+        "bring up"
+      ],
+      "answerIndex": 2,
+      "explanation": "call off は「〜を中止する（cancel）」という意味の頻出群動詞です。"
+    },
+    {
+      "id": "en_exam01_012",
+      "category": "usage",
+      "prompt": "文意を成立させる接続表現は？",
+      "sentence": "He studied hard; (   ), he passed the exam easily.",
+      "choices": [
+        "however",
+        "consequently",
+        "otherwise",
+        "nevertheless"
+      ],
+      "answerIndex": 1,
+      "explanation": "一文目が原因、二文目が結果となっているため「その結果（consequently）」が適切。"
+    },
+    {
+      "id": "en_exam01_013",
+      "category": "usage",
+      "prompt": "文脈に合う最も適切な熟語は？",
+      "sentence": "She succeeded in business (   ) her great efforts.",
+      "choices": [
+        "in spite of",
+        "by virtue of",
+        "instead of",
+        "for fear of"
+      ],
+      "answerIndex": 1,
+      "explanation": "by virtue of 〜 は「〜のおかげで、〜の力によって」を意味します。"
+    },
+    {
+      "id": "en_exam01_014",
+      "category": "usage",
+      "prompt": "空欄に入る適切な表現は？",
+      "sentence": "I will never agree, no (   ) what you say.",
+      "choices": [
+        "way",
+        "care",
+        "doubt",
+        "matter"
+      ],
+      "answerIndex": 3,
+      "explanation": "no matter what 〜 で「たとえ何が〜であろうとも」という譲歩構文です。"
+    },
+    {
+      "id": "en_exam01_015",
+      "category": "usage",
+      "prompt": "「〜を当然のことと思う」を表す成句は？",
+      "sentence": "He takes his parents' support (   ).",
+      "choices": [
+        "for sure",
+        "in advance",
+        "for granted",
+        "by chance"
+      ],
+      "answerIndex": 2,
+      "explanation": "take 〜 for granted で「〜を当たり前と思う」という重要定型表現です。"
+    },
+    {
+      "id": "en_exam01_016",
+      "category": "usage",
+      "prompt": "文脈に合う熟語は？",
+      "sentence": "We should (   ) waste to protect our environment.",
+      "choices": [
+        "make up for",
+        "look down on",
+        "do away with",
+        "keep up with"
+      ],
+      "answerIndex": 2,
+      "explanation": "do away with 〜 で「〜を廃止する、なくす」という意味です。"
+    },
+    {
+      "id": "en_exam01_017",
+      "category": "usage",
+      "prompt": "「〜を考慮に入れる」を意味する表現は？",
+      "sentence": "You must take his lack of experience (   ).",
+      "choices": [
+        "in mind",
+        "into account",
+        "at hand",
+        "out of sight"
+      ],
+      "answerIndex": 1,
+      "explanation": "take 〜 into account (＝ take into consideration) で「考慮に入れる」。"
+    },
+    {
+      "id": "en_exam01_018",
+      "category": "usage",
+      "prompt": "「〜のおかげで」を表す前置詞句は？",
+      "sentence": "(   ) the rapid development of AI, translation became much easier.",
+      "choices": [
+        "In contrast to",
+        "In search of",
+        "Thanks to",
+        "In case of"
+      ],
+      "answerIndex": 2,
+      "explanation": "positiveな理由を導く「〜のおかげで」は Thanks to が適しています。"
+    },
+    {
+      "id": "en_exam01_019",
+      "category": "reading",
+      "prompt": "Why is sleep important according to the passage?",
+      "sentence": "Many people think of sleep as merely a period of inactivity. However, scientific research has revealed that our brains are actively consolidating memories and removing toxins while we sleep. Without sufficient rest, cognitive function declines dramatically.",
+      "choices": [
+        "It simply stops all brain activity",
+        "It allows people to avoid work",
+        "It helps the brain process memories and clear waste",
+        "It prevents all physical diseases"
+      ],
+      "answerIndex": 2,
+      "explanation": "本文の「brains are actively consolidating memories and removing toxins」と一致。"
+    },
+    {
+      "id": "en_exam01_020",
+      "category": "reading",
+      "prompt": "What is the main idea of this paragraph?",
+      "sentence": "Remote work has offered employees great flexibility and reduced commuting stress. On the other hand, the blurred boundary between personal life and professional duties often leads to longer working hours and isolation. Thus, maintaining a healthy balance requires intentional boundaries.",
+      "choices": [
+        "Remote work should be completely abandoned",
+        "Remote work has no disadvantages at all",
+        "Employees must work in offices every day",
+        "Remote work has both clear benefits and hidden challenges"
+      ],
+      "answerIndex": 3,
+      "explanation": "前半でメリット（flexibility）、後半でデメリット（isolation等）を挙げ両面を論述。"
+    },
+    {
+      "id": "en_exam01_021",
+      "category": "reading",
+      "prompt": "What is the advantage of plant-based meat mentioned?",
+      "sentence": "As the global population continues to grow, meat production faces severe environmental limits. Plant-based alternatives require significantly less land and produce fewer greenhouse gas emissions, making them a promising solution for future food security.",
+      "choices": [
+        "It is much cheaper than any vegetable",
+        "It completely replaces all agriculture",
+        "It requires more water and land",
+        "It consumes fewer resources and creates less pollution"
+      ],
+      "answerIndex": 3,
+      "explanation": "「require significantly less land and produce fewer greenhouse gas emissions」と合致。"
+    },
+    {
+      "id": "en_exam01_022",
+      "category": "reading",
+      "prompt": "What does the passage say about human memory?",
+      "sentence": "Unlike digital video recorders that store information perfectly, human memory is reconstructive. Every time we recall an event, our brain pieces together fragments, which can be unintentionally altered by our current emotions and knowledge.",
+      "choices": [
+        "Human memory records everything without any error",
+        "Our memories are exactly like computer files",
+        "Old memories are completely deleted after a year",
+        "Human memory can change every time it is recalled"
+      ],
+      "answerIndex": 3,
+      "explanation": "「Every time we recall an event... altered by our current emotions」に対応。"
+    },
+    {
+      "id": "en_exam01_023",
+      "category": "reading",
+      "prompt": "According to the text, why did the company adopt the four-day workweek?",
+      "sentence": "A company introduced a four-day workweek as an experiment. Surprisingly, employees were not only happier but also more productive, as they focused more during working hours and had adequate time to recharge over three-day weekends.",
+      "choices": [
+        "To reduce workers' salaries significantly",
+        "To decrease the total output of the company",
+        "To cope with a sudden shortage of electricity",
+        "To boost productivity and improve employee well-being"
+      ],
+      "answerIndex": 3,
+      "explanation": "従業員の幸福度向上（happier）と生産性向上（more productive）が理由です。"
+    },
+    {
+      "id": "en_exam01_024",
+      "category": "reading",
+      "prompt": "What is the main benefit of urban green spaces?",
+      "sentence": "Urban green spaces do more than just make cities look attractive. They act as natural sponges absorbing rainwater, mitigate the urban heat island effect, and provide crucial mental health benefits for residents who need an escape from crowded streets.",
+      "choices": [
+        "They provide space for building new roads",
+        "They increase the overall temperature of cities",
+        "They replace the need for hospitals",
+        "They enhance environmental health and mental wellness"
+      ],
+      "answerIndex": 3,
+      "explanation": "雨水吸収やヒートアイランド緩和（環境面）、精神衛生（mental health）の向上。"
+    },
+    {
+      "id": "en_exam01_025",
+      "category": "usage",
+      "prompt": "英作文「いくら注意してもしすぎることはない」の英訳として正しいものは？",
+      "choices": [
+        "You must not be careful.",
+        "You cannot be careful.",
+        "You cannot be too careful.",
+        "You are too careful to be safe."
+      ],
+      "answerIndex": 2,
+      "explanation": "cannot ... too 〜 で「いくら〜してもしすぎることはない」という最重要表現。"
+    },
+    {
+      "id": "en_exam01_026",
+      "category": "usage",
+      "prompt": "英作文「駅に着くとすぐに雨が降り始めた」の英訳として正しいものは？",
+      "choices": [
+        "Hardly did I reach the station when it rained.",
+        "As soon as I reached the station, it began to rain.",
+        "Reaching the station, so it began to rain.",
+        "The station reached, it rained."
+      ],
+      "answerIndex": 1,
+      "explanation": "as soon as + 主語 + 動詞 で「〜するとすぐに」を表します。"
+    },
+    {
+      "id": "en_exam01_027",
+      "category": "usage",
+      "prompt": "英作文「健康はお金よりもはるかに貴重だ」の英訳として適切なものは？",
+      "choices": [
+        "Health is very more valuable than money.",
+        "Health is much more valuable than money.",
+        "Health is more much valuable than money.",
+        "Health is as valuable as money."
+      ],
+      "answerIndex": 1,
+      "explanation": "比較級 more valuable を強調する副詞は very ではなく much（または far）です。"
+    },
+    {
+      "id": "en_exam01_028",
+      "category": "usage",
+      "prompt": "英作文「もし昨晩勉強していたら、合格できただろうに」の適切な仮定法は？",
+      "choices": [
+        "If I studied last night, I could pass the exam.",
+        "If I had studied last night, I could have passed the exam.",
+        "If I have studied last night, I could have passed the exam.",
+        "If I had studied last night, I can pass the exam."
+      ],
+      "answerIndex": 1,
+      "explanation": "過去の事実と反対の仮定を表す仮定法過去完了（If + had p.p., S + would/could have p.p.）。"
+    },
+    {
+      "id": "en_exam01_029",
+      "category": "usage",
+      "prompt": "英作文「彼は親切にも私に道を教えてくれた」の英訳として正しいものは？",
+      "choices": [
+        "He was kind to show me the way enough.",
+        "He was too kind to show me the way.",
+        "He was kind enough to show me the way.",
+        "He had kindness enough showing me the way."
+      ],
+      "answerIndex": 2,
+      "explanation": "形容詞 + enough to do で「〜するほど十分に… / 親切にも〜してくれる」。"
+    },
+    {
+      "id": "en_exam01_030",
+      "category": "usage",
+      "prompt": "英作文「彼女は私にその仕事を手伝うように頼んだ」の英訳は？",
+      "choices": [
+        "She asked that I will help her work.",
+        "She asked to me for helping work.",
+        "She asked me to help her with the work.",
+        "She requested me helping the work."
+      ],
+      "answerIndex": 2,
+      "explanation": "ask + 人 + to do で「人に〜するように頼む」、help 人 with 物 で「人の物を手伝う」。"
+    },
+    {
+      "id": "en_exam01_031",
+      "category": "usage",
+      "prompt": "英作文「その知らせを聞いて私たちは大いに驚いた」の英訳は？",
+      "choices": [
+        "We were greatly surprising at the news.",
+        "The news surprised us greatly.",
+        "We surprised to hear the news.",
+        "The news was surprised to us."
+      ],
+      "answerIndex": 1,
+      "explanation": "無生物主語構文「物 + surprise + 人」または「We were surprised at ...」を用います。"
+    },
+    {
+      "id": "en_exam01_032",
+      "category": "usage",
+      "prompt": "英作文「彼が約束を破ったのは明らかだ」の形式主語を用いた英訳は？",
+      "choices": [
+        "It is obvious for him to break his promise.",
+        "It is obvious that he broke his promise.",
+        "That he broke his promise is to be obvious.",
+        "It obvious that he broke his promise."
+      ],
+      "answerIndex": 1,
+      "explanation": "It is + 形容詞 + that節 で「…ということは〜だ」を表す形式主語構文です。"
+    }
+  ]
+}

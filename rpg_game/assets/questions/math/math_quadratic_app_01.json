@@ -1,0 +1,424 @@
+{
+  "setId": "math_quadratic_app_01",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_qapp01_001",
+      "category": "calculation",
+      "prompt": "放物線 y = x² − 2ax + a² + 2a − 3 の頂点の座標は？",
+      "choices": [
+        "(−a, 2a−3)",
+        "(a, 2a−3)",
+        "(a, a²−3)",
+        "(−a, a²−3)"
+      ],
+      "answerIndex": 1,
+      "explanation": "y = (x−a)² + 2a−3 と平方完成できるため、頂点は (a, 2a−3) です。"
+    },
+    {
+      "id": "mat_qapp01_002",
+      "category": "calculation",
+      "prompt": "放物線 y = x² − 2ax + a² + 2a − 3 の頂点が第1象限にあるときの a の範囲は？",
+      "choices": [
+        "a > 0",
+        "a > 3/2",
+        "0 < a < 3/2",
+        "a < 3/2"
+      ],
+      "answerIndex": 1,
+      "explanation": "頂点 (a, 2a−3) について、第1象限の条件は a > 0 かつ 2a−3 > 0。したがって a > 3/2。"
+    },
+    {
+      "id": "mat_qapp01_003",
+      "category": "thinking",
+      "prompt": "a を実数とするとき、放物線 y = x² − 2ax + a + 2 の頂点の軌跡の方程式は？",
+      "choices": [
+        "y = x² − x − 2",
+        "y = −x² + x + 2",
+        "y = −x² − x + 2",
+        "y = x² + x + 2"
+      ],
+      "answerIndex": 1,
+      "explanation": "頂点 (X, Y) は X = a, Y = −a² + a + 2。a を消去して Y = −X² + X + 2。"
+    },
+    {
+      "id": "mat_qapp01_004",
+      "category": "thinking",
+      "prompt": "y = x² − 4x + 1 (0 ≦ x ≦ a, a > 0) の最小値が −3 となる a の範囲は？",
+      "choices": [
+        "a ≦ 2",
+        "a ≧ 2",
+        "0 < a < 2",
+        "a ≧ 4"
+      ],
+      "answerIndex": 1,
+      "explanation": "軸は x = 2。頂点の y 座標が −3 なので、区間に頂点が含まれる条件は a ≧ 2 です。"
+    },
+    {
+      "id": "mat_qapp01_005",
+      "category": "thinking",
+      "prompt": "f(x) = x² − 4x + 1 (0 ≦ x ≦ a, a > 0) の最小値が f(a) となる a の範囲は？",
+      "choices": [
+        "0 < a ≦ 2",
+        "a ≧ 2",
+        "0 < a ≦ 4",
+        "a > 4"
+      ],
+      "answerIndex": 0,
+      "explanation": "軸は x = 2。区間の右端 a が軸より左か軸上（0 < a ≦ 2）なら、区間で単調に減少するので右端 x = a で最小になる。"
+    },
+    {
+      "id": "mat_qapp01_006",
+      "category": "thinking",
+      "prompt": "y = x² − 4x + 1 (0 ≦ x ≦ a, a > 0) の最大値を与える x がただ1つであるための a の条件は？",
+      "choices": [
+        "a = 2",
+        "a ≠ 2",
+        "a ≠ 4",
+        "a = 4"
+      ],
+      "answerIndex": 2,
+      "explanation": "端点 x = 0 と x = 4 で f(0) = f(4) = 1 となり最大値が2箇所になるため、ただ1つとなるのは a ≠ 4 です。"
+    },
+    {
+      "id": "mat_qapp01_007",
+      "category": "thinking",
+      "prompt": "y = −(x−a)² + 3 (0 ≦ x ≦ 2) の最大値が 3 となる a の範囲は？",
+      "choices": [
+        "a ≦ 0",
+        "0 ≦ a ≦ 2",
+        "a ≧ 2",
+        "a = 1"
+      ],
+      "answerIndex": 1,
+      "explanation": "上に凸な放物線の最大値が頂点の y 座標 3 になるのは、軸 x = a が区間 0 ≦ x ≦ 2 内にあるときです。"
+    },
+    {
+      "id": "mat_qapp01_008",
+      "category": "thinking",
+      "prompt": "y = −(x−a)² + 3 (0 ≦ x ≦ 2) の最小値を与える x が x = 0 のみとなる a の範囲は？",
+      "choices": [
+        "a < 1",
+        "a > 1",
+        "a = 1",
+        "a ≧ 2"
+      ],
+      "answerIndex": 1,
+      "explanation": "区間の中央 x = 1 より軸が右側（a > 1）にあれば、左端 x = 0 の方が頂点から遠くなり最小となります。"
+    },
+    {
+      "id": "mat_qapp01_009",
+      "category": "calculation",
+      "prompt": "周の長さが 20 cm である長方形の面積の最大値は？",
+      "choices": [
+        "20 cm²",
+        "24 cm²",
+        "25 cm²",
+        "50 cm²"
+      ],
+      "answerIndex": 2,
+      "explanation": "縦を x とすると横は 10−x。面積 S = x(10−x) = −(x−5)² + 25。x = 5（正方形）のとき最大値 25。"
+    },
+    {
+      "id": "mat_qapp01_010",
+      "category": "calculation",
+      "prompt": "直角をはさむ2辺の長さの和が 12 である直角三角形の面積の最大値は？",
+      "choices": [
+        "9",
+        "16",
+        "18",
+        "36"
+      ],
+      "answerIndex": 2,
+      "explanation": "2辺を x, 12−x とおくと、面積 S = (1/2)x(12−x) = −(1/2)(x−6)² + 18。x = 6 のとき最大値 18。"
+    },
+    {
+      "id": "mat_qapp01_011",
+      "category": "calculation",
+      "prompt": "1個 100 円の品物を 1 円値上げするごとに売上個数が 2 個減る。売上金額を最大にする販売価格は？（当初売上 500 個）",
+      "choices": [
+        "150 円",
+        "175 円",
+        "200 円",
+        "250 円"
+      ],
+      "answerIndex": 1,
+      "explanation": "x 円値上げとすると売上 Y = (100+x)(500−2x) = −2(x−75)² + 61250。x = 75 のとき最大。価格は 175 円。"
+    },
+    {
+      "id": "mat_qapp01_012",
+      "category": "thinking",
+      "prompt": "t = x² − 2x (−1 ≦ x ≦ 2) とおくとき、t のとりうる値の範囲は？",
+      "choices": [
+        "0 ≦ t ≦ 3",
+        "−1 ≦ t ≦ 3",
+        "−1 ≦ t ≦ 0",
+        "−3 ≦ t ≦ 3"
+      ],
+      "answerIndex": 1,
+      "explanation": "t = (x−1)² − 1。x = 1 で最小値 −1、x = −1 で最大値 (−1−1)² − 1 = 3。したがって −1 ≦ t ≦ 3。"
+    },
+    {
+      "id": "mat_qapp01_013",
+      "category": "calculation",
+      "prompt": "関数 y = (x²−2x)² − 2(x²−2x) + 3 (−1 ≦ x ≦ 2) の最小値は？",
+      "choices": [
+        "1",
+        "2",
+        "3",
+        "6"
+      ],
+      "answerIndex": 1,
+      "explanation": "t = x²−2x とおくと −1 ≦ t ≦ 3。y = t² − 2t + 3 = (t−1)² + 2。t = 1 で最小値 2。"
+    },
+    {
+      "id": "mat_qapp01_014",
+      "category": "calculation",
+      "prompt": "関数 y = (x²−2x)² − 2(x²−2x) + 3 (−1 ≦ x ≦ 2) の最大値は？",
+      "choices": [
+        "3",
+        "6",
+        "9",
+        "11"
+      ],
+      "answerIndex": 1,
+      "explanation": "y = (t−1)² + 2 (−1 ≦ t ≦ 3)。軸 t = 1 から等距離の両端 t = −1, 3 で最大値 (−1−1)² + 2 = 6。"
+    },
+    {
+      "id": "mat_qapp01_015",
+      "category": "calculation",
+      "prompt": "実数 x, y が 2x + y = 4 を満たすとき、x² + y² の最小値は？",
+      "choices": [
+        "16/5",
+        "4",
+        "16",
+        "8/5"
+      ],
+      "answerIndex": 0,
+      "explanation": "y = 4−2x を代入して x² + (4−2x)² = 5x² − 16x + 16 = 5(x − 8/5)² + 16/5。x = 8/5 で最小値 16/5。"
+    },
+    {
+      "id": "mat_qapp01_016",
+      "category": "calculation",
+      "prompt": "実数 x, y が x² + y² = 4 を満たすとき、2x + y² の最大値は？",
+      "choices": [
+        "4",
+        "5",
+        "8",
+        "9"
+      ],
+      "answerIndex": 1,
+      "explanation": "y² = 4−x² ≧ 0 より −2 ≦ x ≦ 2。2x + (4−x²) = −(x−1)² + 5。x = 1（範囲内）で最大値 5。"
+    },
+    {
+      "id": "mat_qapp01_017",
+      "category": "calculation",
+      "prompt": "実数 x, y が x² + y² = 4 を満たすとき、2x + y² の最小値は？",
+      "choices": [
+        "−5",
+        "−4",
+        "0",
+        "−8"
+      ],
+      "answerIndex": 1,
+      "explanation": "−(x−1)² + 5 (−2 ≦ x ≦ 2) において、端点 x = −2 を代入すると −(−3)² + 5 = −4。"
+    },
+    {
+      "id": "mat_qapp01_018",
+      "category": "thinking",
+      "prompt": "すべての実数 x に対して 2次不等式 x² + 2kx + k + 2 > 0 が成り立つ k の範囲は？",
+      "choices": [
+        "k < −1, 2 < k",
+        "−1 < k < 2",
+        "−2 < k < 1",
+        "k ≦ −1, 2 ≦ k"
+      ],
+      "answerIndex": 1,
+      "explanation": "下に凸なので判別式 D/4 < 0 が条件。k² − (k+2) < 0 ⇒ (k−2)(k+1) < 0 ⇒ −1 < k < 2。"
+    },
+    {
+      "id": "mat_qapp01_019",
+      "category": "thinking",
+      "prompt": "すべての実数 x に対して kx² + 4x + k − 3 ≦ 0 が成り立つ k の範囲は？",
+      "choices": [
+        "k ≦ −1",
+        "−1 ≦ k ≦ 4",
+        "k ≧ 4",
+        "k < 0"
+      ],
+      "answerIndex": 0,
+      "explanation": "2次不等式より k < 0 かつ D/4 = 4 − k(k−3) ≦ 0 ⇒ k² − 3k − 4 ≧ 0 ⇒ (k−4)(k+1) ≧ 0。k < 0 とあわせて k ≦ −1。"
+    },
+    {
+      "id": "mat_qapp01_020",
+      "category": "thinking",
+      "prompt": "2次方程式 x² − 2ax + a + 6 = 0 が異なる2つの正の解をもつための a の範囲は？",
+      "choices": [
+        "a > −2",
+        "−2 < a < 3",
+        "3 < a",
+        "a < −2, 3 < a"
+      ],
+      "answerIndex": 2,
+      "explanation": "D/4 = a²−a−6 > 0 ⇒ a < −2, 3 < a、軸 a > 0、端点 f(0) = a+6 > 0 ⇒ a > −6。共通範囲は a > 3。"
+    },
+    {
+      "id": "mat_qapp01_021",
+      "category": "thinking",
+      "prompt": "2次方程式 x² − 2ax + a + 6 = 0 が異符号の解をもつための a の範囲は？",
+      "choices": [
+        "a < −6",
+        "a > −6",
+        "−6 < a < 3",
+        "a < −2"
+      ],
+      "answerIndex": 0,
+      "explanation": "異符号の解をもつ条件は f(0) < 0。a + 6 < 0 より a < −6。"
+    },
+    {
+      "id": "mat_qapp01_022",
+      "category": "thinking",
+      "prompt": "2次方程式 x² − 2ax + 4 = 0 がともに 1 より大きい異なる2つの解をもつ a の範囲は？",
+      "choices": [
+        "a > 2",
+        "2 < a < 5/2",
+        "a > 5/2",
+        "a < −2, 2 < a"
+      ],
+      "answerIndex": 1,
+      "explanation": "D/4 = a²−4 > 0 ⇒ a > 2、軸 a > 1、f(1) = 1−2a+4 > 0 ⇒ a < 5/2。共通範囲は 2 < a < 5/2。"
+    },
+    {
+      "id": "mat_qapp01_023",
+      "category": "thinking",
+      "prompt": "2次方程式 x² − ax − 2 = 0 の2解の間に 1 があるための a の条件は？",
+      "choices": [
+        "a < −1",
+        "a > −1",
+        "a > 0",
+        "すべての実数"
+      ],
+      "answerIndex": 1,
+      "explanation": "下に凸の放物線で 1 が解の間にある条件は f(1) < 0。1 − a − 2 < 0 より a > −1。"
+    },
+    {
+      "id": "mat_qapp01_024",
+      "category": "calculation",
+      "prompt": "放物線 y = x² と直線 y = 2x + 3 の2つの交点間の距離は？",
+      "choices": [
+        "4",
+        "2√5",
+        "4√5",
+        "8"
+      ],
+      "answerIndex": 2,
+      "explanation": "x² − 2x − 3 = 0 ⇒ x = −1, 3。交点は (−1, 1), (3, 9)。距離は √(4² + 8²) = √80 = 4√5。"
+    },
+    {
+      "id": "mat_qapp01_025",
+      "category": "calculation",
+      "prompt": "放物線 y = x² − 3x と直線 y = x + k が接するときの k の値は？",
+      "choices": [
+        "−4",
+        "4",
+        "−2",
+        "0"
+      ],
+      "answerIndex": 0,
+      "explanation": "x² − 4x − k = 0 の判別式 D/4 = (−2)² − (−k) = 4 + k = 0 より k = −4。"
+    },
+    {
+      "id": "mat_qapp01_026",
+      "category": "calculation",
+      "prompt": "放物線 y = x² 上の点と直線 y = 2x − 5 の間の最短距離は？",
+      "choices": [
+        "2/√5",
+        "4/√5",
+        "√5",
+        "5"
+      ],
+      "answerIndex": 1,
+      "explanation": "傾き 2 の接線は y = 2x − 1（接点 (1, 1)）。点 (1, 1) と直線 2x − y − 5 = 0 の距離は 4/√5。"
+    },
+    {
+      "id": "mat_qapp01_027",
+      "category": "calculation",
+      "prompt": "直角三角形 ABC (AB=6, BC=8, ∠B=90°) に、2辺が AB, BC 上にある長方形を内接させるとき、長方形の面積の最大値は？",
+      "choices": [
+        "6",
+        "12",
+        "24",
+        "16"
+      ],
+      "answerIndex": 1,
+      "explanation": "長方形の辺を x（BC 方向）とすると、もう一方の辺は 6(8−x)/8。面積 = (3/4)x(8−x) = −(3/4)(x−4)² + 12。x = 4 で最大値 12。"
+    },
+    {
+      "id": "mat_qapp01_028",
+      "category": "thinking",
+      "prompt": "2次関数 f(x) = ax² + bx + c について、すべての実数 x で f(1−x) = f(1+x) が成り立つとき、グラフの軸の方程式は？",
+      "choices": [
+        "x = 0",
+        "x = 1",
+        "x = 2",
+        "x = −1"
+      ],
+      "answerIndex": 1,
+      "explanation": "f(1−x) = f(1+x) は直線 x = 1 に関して線対称であることを示しています。"
+    },
+    {
+      "id": "mat_qapp01_029",
+      "category": "calculation",
+      "prompt": "x ≧ 0, y ≧ 0, x + y = 2 のとき、x² + 2y² の最大値は？",
+      "choices": [
+        "4",
+        "6",
+        "8",
+        "10"
+      ],
+      "answerIndex": 2,
+      "explanation": "y = 2−x (0 ≦ x ≦ 2)。3(x − 4/3)² + 8/3 において、端点 x = 0 で最大値 8。"
+    },
+    {
+      "id": "mat_qapp01_030",
+      "category": "calculation",
+      "prompt": "x ≧ 0, y ≧ 0, x + y = 2 のとき、x² + 2y² の最小値は？",
+      "choices": [
+        "2",
+        "8/3",
+        "3",
+        "4"
+      ],
+      "answerIndex": 1,
+      "explanation": "3(x − 4/3)² + 8/3 (0 ≦ x ≦ 2) より、頂点 x = 4/3 で最小値 8/3。"
+    },
+    {
+      "id": "mat_qapp01_031",
+      "category": "thinking",
+      "prompt": "放物線 y = x² − 2x + c が x 軸の正の部分と負の部分のそれぞれと交わるための c の条件は？",
+      "choices": [
+        "c < 0",
+        "c > 0",
+        "c ≦ 1",
+        "0 < c < 1"
+      ],
+      "answerIndex": 0,
+      "explanation": "異符号の解をもつ条件は端点 f(0) < 0。したがって c < 0。"
+    },
+    {
+      "id": "mat_qapp01_032",
+      "category": "thinking",
+      "prompt": "区間 0 ≦ x ≦ 4 における関数 y = −x² + 2ax (a > 0) の最大値が 9 となる a の値は？",
+      "choices": [
+        "a = 3/2",
+        "a = 9/8",
+        "a = 3",
+        "a = 4"
+      ],
+      "answerIndex": 2,
+      "explanation": "y = −(x−a)² + a²。0 < a ≦ 4 のとき頂点で最大値 a² = 9 より a = 3。"
+    }
+  ]
+}

@@ -58,17 +58,20 @@ class _SeaHomeScreenState extends State<SeaHomeScreen> {
     );
     final english = _subject == 'english';
     final world = english ? null : RpgCatalog.world(_subject);
+    final extras = ExtraSets.of(_subject);
     final tabs = english
         ? const [
             Tab(text: '高1'),
             Tab(text: '高2'),
             Tab(text: '高3'),
             Tab(text: '単語・熟語'),
+            Tab(text: '追加問題'),
             Tab(icon: Icon(Icons.style, size: 16), text: '単語帳練習'),
           ]
         : [
             for (final r in world!.routes) Tab(text: r.name),
             if (world.routes.isEmpty) const Tab(text: '準備中'),
+            if (extras.isNotEmpty) const Tab(text: '追加問題'),
           ];
     return DefaultTabController(
       key: ValueKey(_subject),
@@ -116,6 +119,8 @@ class _SeaHomeScreenState extends State<SeaHomeScreen> {
                       _RouteTab(world: world, route: r, progress: progress),
                     if (world.routes.isEmpty)
                       const Center(child: Text('この教科は準備中です')),
+                    if (extras.isNotEmpty)
+                      _ExtraTab(world: world, sets: extras, progress: progress),
                   ],
                 );
               }
@@ -125,6 +130,7 @@ class _SeaHomeScreenState extends State<SeaHomeScreen> {
                   _GradeTab(grade: 2, progress: progress),
                   _GradeTab(grade: 3, progress: progress),
                   _WordsTab(progress: progress),
+                  _ExtraTab(world: null, sets: extras, progress: progress),
                   VocabHome(books: widget.personalBooks),
                 ],
               );
@@ -215,6 +221,69 @@ class _RouteTab extends StatelessWidget {
             ),
           ),
         ],
+      ],
+    );
+  }
+}
+
+/// 追加問題：ルートに入っていない単元別の問題セット
+class _ExtraTab extends StatelessWidget {
+  const _ExtraTab({
+    required this.world,
+    required this.sets,
+    required this.progress,
+  });
+
+  /// 英語は null（無料で使える）
+  final WorldDef? world;
+  final List<ExtraSet> sets;
+  final RpgProgress progress;
+
+  Future<void> _open(BuildContext context, ExtraSet s) async {
+    final set = await RpgServices.of(context).questions.load(s.id);
+    if (set == null || !context.mounted) return;
+    await startSeaBattle(
+      context,
+      title: '追加問題 ${s.title}',
+      recordId: s.id,
+      questions: set.questions,
+      worldId: world?.id ?? RpgCatalog.englishWorldId,
+      normalTimeLimitSeconds: 30,
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final w = world;
+    final owned = w == null || Progression.isWorldPlayable(progress, w);
+    return ListView(
+      padding: const EdgeInsets.fromLTRB(40, 12, 12, 24),
+      children: [
+        if (!owned)
+          Card(
+            color: TsuzuriColors.tint(0xFFFFF8E1),
+            child: Padding(
+              padding: const EdgeInsets.all(14),
+              child: Text(
+                '${w.name}を解放すると、追加問題も練習できます。',
+                style: const TextStyle(height: 1.6),
+              ),
+            ),
+          ),
+        for (final s in sets)
+          Card(
+            margin: const EdgeInsets.only(bottom: 8),
+            child: ListTile(
+              key: ValueKey('extra-${s.id}'),
+              enabled: owned,
+              onTap: owned ? () => _open(context, s) : null,
+              leading: Icon(Icons.fiber_new, color: StudyRealm.sea.ink),
+              title: Text(s.title),
+              trailing: owned
+                  ? _bestBadge(progress.seaBest[s.id])
+                  : const Icon(Icons.lock_outline, size: 18),
+            ),
+          ),
       ],
     );
   }
