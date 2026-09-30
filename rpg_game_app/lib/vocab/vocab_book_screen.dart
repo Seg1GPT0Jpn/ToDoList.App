@@ -141,7 +141,7 @@ class _VocabBookScreenState extends State<VocabBookScreen> {
     final now = DateTime.now();
     final plan = VocabPlanner.today(book, progress, now);
     final news = plan.where((t) => t.isNew).length;
-    final weeks = VocabCourse.weeks(book);
+    final weeks = VocabCourse.weeks(book, size: _limit ?? 100);
     return ListView(
       padding: const EdgeInsets.fromLTRB(40, 12, 16, 24),
       children: [
@@ -202,7 +202,7 @@ class _VocabBookScreenState extends State<VocabBookScreen> {
         const SizedBox(height: 16),
         Text('コース', style: serif(15)),
         Text(
-          'Week を開くと、その100語を上の問題数・順番で練習できます',
+          'Week を開くと、その${_limit ?? 100}語を上の問題数・順番で練習できます',
           style: TextStyle(fontSize: 11, color: TsuzuriColors.inkSoft),
         ),
         const SizedBox(height: 6),
