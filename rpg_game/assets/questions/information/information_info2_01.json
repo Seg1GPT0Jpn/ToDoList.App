@@ -1,0 +1,398 @@
+{
+  "setId": "information_info2_01",
+  "worldId": "information",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "information_info2_01_001",
+      "category": "knowledge",
+      "prompt": "教師あり学習の例として適切なものは？",
+      "choices": [
+        "「迷惑メールかどうか」のラベル付きデータから判定のしかたを学ぶ",
+        "試行錯誤で報酬が最大になる行動を学ぶ",
+        "データを暗号化する",
+        "ラベルのない購買データを似たグループに分ける"
+      ],
+      "answerIndex": 0,
+      "explanation": "正解（ラベル）がついたデータから、入力と出力の関係を学ぶ。"
+    },
+    {
+      "id": "information_info2_01_002",
+      "category": "knowledge",
+      "prompt": "正解ラベルのないデータを、似たものどうしのグループに分ける手法は？",
+      "choices": [
+        "クラスタリング",
+        "強化学習",
+        "分類（教師あり）",
+        "回帰分析"
+      ],
+      "answerIndex": 0,
+      "explanation": "教師なし学習の代表例。k-means 法など。"
+    },
+    {
+      "id": "information_info2_01_003",
+      "category": "knowledge",
+      "prompt": "試行錯誤をくり返し、得られる報酬が最大になる行動を学ぶ機械学習は？",
+      "choices": [
+        "教師なし学習",
+        "教師あり学習",
+        "強化学習",
+        "ルールベース"
+      ],
+      "answerIndex": 2,
+      "explanation": "ゲームやロボットの制御などに使われる。"
+    },
+    {
+      "id": "information_info2_01_004",
+      "category": "knowledge",
+      "prompt": "過学習（オーバーフィッティング）とは？",
+      "choices": [
+        "訓練データに合わせすぎて、未知のデータで精度が下がること",
+        "学習に時間がかかりすぎること",
+        "学習が足りず、訓練データでも精度が低いこと",
+        "データを増やしすぎること"
+      ],
+      "answerIndex": 0,
+      "explanation": "訓練データの細かいくせまで覚えてしまい、汎化性能が落ちる。"
+    },
+    {
+      "id": "information_info2_01_005",
+      "category": "knowledge",
+      "prompt": "データを訓練用とテスト用に分ける目的は？",
+      "choices": [
+        "データ量を増やすため",
+        "個人情報を守るため",
+        "計算を速くするため",
+        "未知のデータに対する性能を正しく評価するため"
+      ],
+      "answerIndex": 3,
+      "explanation": "学習に使っていないデータで評価しないと、本当の実力がわからない。"
+    },
+    {
+      "id": "information_info2_01_006",
+      "category": "calculation",
+      "prompt": "「陽性」と予測した 100 件のうち、実際に陽性だったのは 80 件だった。適合率は？",
+      "choices": [
+        "20%",
+        "80%",
+        "100%",
+        "125%"
+      ],
+      "answerIndex": 1,
+      "explanation": "適合率 = 陽性と予測した中で本当に陽性だった割合 = 80 ÷ 100。"
+    },
+    {
+      "id": "information_info2_01_007",
+      "category": "calculation",
+      "prompt": "200 件のデータのうち 170 件を正しく分類できた。正解率は？",
+      "choices": [
+        "17%",
+        "30%",
+        "70%",
+        "85%"
+      ],
+      "answerIndex": 3,
+      "explanation": "170 ÷ 200 = 0.85。"
+    },
+    {
+      "id": "information_info2_01_008",
+      "category": "knowledge",
+      "prompt": "回帰分析の決定係数（R²）が表すものは？",
+      "choices": [
+        "データの個数",
+        "回帰式がデータにどれだけ当てはまっているか",
+        "予測値の平均",
+        "相関係数の2倍"
+      ],
+      "answerIndex": 1,
+      "explanation": "0〜1 の値をとり、1 に近いほど当てはまりがよい。"
+    },
+    {
+      "id": "information_info2_01_009",
+      "category": "calculation",
+      "prompt": "回帰式が y = 2.5x + 10 のとき、x = 8 の予測値は？",
+      "choices": [
+        "20",
+        "28",
+        "30",
+        "90"
+      ],
+      "answerIndex": 2,
+      "explanation": "2.5 × 8 + 10 = 30。"
+    },
+    {
+      "id": "information_info2_01_010",
+      "category": "knowledge",
+      "prompt": "回帰分析の「残差」とは？",
+      "choices": [
+        "x と y の積",
+        "実際の値と予測値の差",
+        "データの最大値と最小値の差",
+        "予測値の合計"
+      ],
+      "answerIndex": 1,
+      "explanation": "残差が小さいほど、回帰式がよく当てはまっている。"
+    },
+    {
+      "id": "information_info2_01_011",
+      "category": "knowledge",
+      "prompt": "仮説検定で p 値が有意水準 0.05 より小さかったとき、ふつうどう判断する？",
+      "choices": [
+        "帰無仮説を採択する",
+        "データを取り直す",
+        "必ず対立仮説がまちがいとわかる",
+        "帰無仮説を棄却する"
+      ],
+      "answerIndex": 3,
+      "explanation": "偶然とは考えにくいほどまれな結果なので、帰無仮説を捨てる。"
+    },
+    {
+      "id": "information_info2_01_012",
+      "category": "knowledge",
+      "prompt": "標本調査で無作為抽出を行う目的は？",
+      "choices": [
+        "かたよりのない標本を得るため",
+        "回答者を選びやすくするため",
+        "調査の費用を増やすため",
+        "全数調査と同じ手間にするため"
+      ],
+      "answerIndex": 0,
+      "explanation": "母集団の特徴を正しく推測するには、偏りのない選び方が必要。"
+    },
+    {
+      "id": "information_info2_01_013",
+      "category": "knowledge",
+      "prompt": "テキストマイニングで、文を単語に分けて品詞を判別する処理は？",
+      "choices": [
+        "構文解析",
+        "形態素解析",
+        "暗号化",
+        "正規化"
+      ],
+      "answerIndex": 1,
+      "explanation": "日本語は単語の間に空白がないので、まず単語に区切る必要がある。"
+    },
+    {
+      "id": "information_info2_01_014",
+      "category": "knowledge",
+      "prompt": "文章中で多く出てくる語ほど大きく表示する図は？",
+      "choices": [
+        "ワードクラウド",
+        "樹形図",
+        "散布図",
+        "ヒストグラム"
+      ],
+      "answerIndex": 0,
+      "explanation": "頻出語をひと目でつかむのに使う。"
+    },
+    {
+      "id": "information_info2_01_015",
+      "category": "knowledge",
+      "prompt": "k-means 法は何をする手法？",
+      "choices": [
+        "k 個の変数で回帰する",
+        "k 回くり返してソートする",
+        "k 桁に暗号化する",
+        "データを k 個のグループに分ける"
+      ],
+      "answerIndex": 3,
+      "explanation": "グループの中心を更新しながら、近いデータをまとめていく。"
+    },
+    {
+      "id": "information_info2_01_016",
+      "category": "knowledge",
+      "prompt": "IoT とは？",
+      "choices": [
+        "さまざまなモノがインターネットにつながり、データをやりとりすること",
+        "紙の書類を電子化すること",
+        "人工知能のこと",
+        "インターネットの通信規格の名前"
+      ],
+      "answerIndex": 0,
+      "explanation": "Internet of Things。家電・センサー・車などがネットにつながる。"
+    },
+    {
+      "id": "information_info2_01_017",
+      "category": "knowledge",
+      "prompt": "API とは？",
+      "choices": [
+        "ソフトウェアの機能を外部から利用するための窓口となる仕様",
+        "画像の保存形式",
+        "プログラミング言語の一種",
+        "データベースの表"
+      ],
+      "answerIndex": 0,
+      "explanation": "天気予報や地図などの機能を、ほかのプログラムから呼び出せる。"
+    },
+    {
+      "id": "information_info2_01_018",
+      "category": "knowledge",
+      "prompt": "JSON とは？",
+      "choices": [
+        "暗号化の方式",
+        "プログラミング言語",
+        "データを「キーと値」の組で表す、軽いテキスト形式",
+        "画像の圧縮形式"
+      ],
+      "answerIndex": 2,
+      "explanation": "{\"name\": \"Taro\", \"age\": 16} のように書く。Web の API でよく使われる。"
+    },
+    {
+      "id": "information_info2_01_019",
+      "category": "knowledge",
+      "prompt": "オブジェクト指向で「クラス」と「インスタンス」の関係として正しいものは？",
+      "choices": [
+        "どちらも同じ意味",
+        "クラスは実体、インスタンスは設計図",
+        "クラスは設計図、インスタンスはそれから作られた実体",
+        "インスタンスはクラスの一覧"
+      ],
+      "answerIndex": 2,
+      "explanation": "1つのクラスから、値のちがう多くのインスタンスを作れる。"
+    },
+    {
+      "id": "information_info2_01_020",
+      "category": "knowledge",
+      "prompt": "システムを二重化（冗長化）する主な目的は？",
+      "choices": [
+        "一部が故障してもシステムを止めないため",
+        "データを削除するため",
+        "費用を下げるため",
+        "処理を遅くするため"
+      ],
+      "answerIndex": 0,
+      "explanation": "予備を用意しておき、故障しても切りかえて動かし続ける（可用性を高める）。"
+    },
+    {
+      "id": "information_info2_01_021",
+      "category": "calculation",
+      "prompt": "稼働率 0.9 の装置 2 台を直列につないだシステムの稼働率は？",
+      "choices": [
+        "0.81",
+        "0.9",
+        "0.99",
+        "1.8"
+      ],
+      "answerIndex": 0,
+      "explanation": "直列は両方動く必要があるので 0.9 × 0.9 = 0.81。"
+    },
+    {
+      "id": "information_info2_01_022",
+      "category": "calculation",
+      "prompt": "稼働率 0.9 の装置 2 台を並列につないだシステムの稼働率は？",
+      "choices": [
+        "0.18",
+        "0.81",
+        "0.9",
+        "0.99"
+      ],
+      "answerIndex": 3,
+      "explanation": "両方止まる確率は 0.1 × 0.1 = 0.01。1 − 0.01 = 0.99。"
+    },
+    {
+      "id": "information_info2_01_023",
+      "category": "knowledge",
+      "prompt": "RAID1（ミラーリング）の特徴は？",
+      "choices": [
+        "同じデータを2台のディスクに書き、1台が壊れても使える",
+        "データを圧縮する",
+        "データを分けて書き、速度だけを上げる",
+        "ディスクを1台にまとめる"
+      ],
+      "answerIndex": 0,
+      "explanation": "容量は半分になるが、故障に強い。"
+    },
+    {
+      "id": "information_info2_01_024",
+      "category": "knowledge",
+      "prompt": "クラウドサービスの SaaS とは？",
+      "choices": [
+        "サーバの機器を買うこと",
+        "データを印刷するサービス",
+        "自分でアプリを開発する環境",
+        "ソフトウェアをインターネット経由で利用するサービス"
+      ],
+      "answerIndex": 3,
+      "explanation": "Web メールやオンラインの表計算など。"
+    },
+    {
+      "id": "information_info2_01_025",
+      "category": "knowledge",
+      "prompt": "ビッグデータの特徴「3つの V」に含まれないものは？",
+      "choices": [
+        "Velocity（速度）",
+        "Variety（多様性）",
+        "Vision（展望）",
+        "Volume（量）"
+      ],
+      "answerIndex": 2,
+      "explanation": "量・多様性・発生や更新の速さの3つ。"
+    },
+    {
+      "id": "information_info2_01_026",
+      "category": "knowledge",
+      "prompt": "オープンソースソフトウェアとは？",
+      "choices": [
+        "ソースコードが公開され、改変や再配布ができるソフトウェア",
+        "無料で使えるが中身は非公開のソフトウェア",
+        "企業だけが使えるソフトウェア",
+        "インターネットでしか動かないソフトウェア"
+      ],
+      "answerIndex": 0,
+      "explanation": "ライセンスの条件の範囲で、だれでも改良して共有できる。"
+    },
+    {
+      "id": "information_info2_01_027",
+      "category": "knowledge",
+      "prompt": "アジャイル開発の特徴は？",
+      "choices": [
+        "短い期間で設計・開発・テストをくり返し、少しずつ作る",
+        "仕様を途中で変えられない",
+        "テストを最後に一度だけ行う",
+        "すべての工程を一度ずつ順に進める"
+      ],
+      "answerIndex": 0,
+      "explanation": "変化に強く、利用者の意見を取り入れやすい。"
+    },
+    {
+      "id": "information_info2_01_028",
+      "category": "knowledge",
+      "prompt": "ウォーターフォール型開発の特徴は？",
+      "choices": [
+        "短い期間で何度もくり返す",
+        "利用者が自分で作る",
+        "テストをしない",
+        "要件定義から順に工程を進め、原則として前の工程に戻らない"
+      ],
+      "answerIndex": 3,
+      "explanation": "計画を立てやすいが、途中の仕様変更に弱い。"
+    },
+    {
+      "id": "information_info2_01_029",
+      "category": "knowledge",
+      "prompt": "Git などのバージョン管理システムでできることは？",
+      "choices": [
+        "ファイルを暗号化する",
+        "ファイルの変更履歴を記録し、共同で開発できる",
+        "画像を圧縮する",
+        "プログラムを自動で書く"
+      ],
+      "answerIndex": 1,
+      "explanation": "いつ・だれが・何を変えたかが残り、前の版に戻すこともできる。"
+    },
+    {
+      "id": "information_info2_01_030",
+      "category": "calculation",
+      "prompt": "平均 60 点、標準偏差 10 点のテストで 80 点の人の標準得点（z 値）は？",
+      "choices": [
+        "0.5",
+        "1.33",
+        "2",
+        "20"
+      ],
+      "answerIndex": 2,
+      "explanation": "z = (80 − 60) ÷ 10 = 2。平均から標準偏差 2 つ分上。"
+    }
+  ]
+}

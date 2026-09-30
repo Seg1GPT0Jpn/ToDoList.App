@@ -1,0 +1,423 @@
+{
+  "setId": "science_physics_basic_01",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "science_physics_basic_01_001",
+      "category": "calculation",
+      "prompt": "20 m/s の等速直線運動で、5 秒間に進む距離は？",
+      "choices": [
+        "4 m",
+        "25 m",
+        "100 m",
+        "120 m"
+      ],
+      "answerIndex": 2,
+      "explanation": "距離 = 速さ × 時間 = 20 × 5 = 100 m。"
+    },
+    {
+      "id": "science_physics_basic_01_002",
+      "category": "calculation",
+      "prompt": "静止していた物体が 4 秒後に 20 m/s になった。加速度の大きさは？",
+      "choices": [
+        "0.2 m/s²",
+        "5 m/s²",
+        "16 m/s²",
+        "80 m/s²"
+      ],
+      "answerIndex": 1,
+      "explanation": "a = (20 − 0) ÷ 4 = 5 m/s²。"
+    },
+    {
+      "id": "science_physics_basic_01_003",
+      "category": "calculation",
+      "prompt": "初速度 2 m/s、加速度 3 m/s² の等加速度運動。4 秒後の速さは？",
+      "choices": [
+        "9 m/s",
+        "12 m/s",
+        "14 m/s",
+        "24 m/s"
+      ],
+      "answerIndex": 2,
+      "explanation": "v = v₀ + at = 2 + 3 × 4 = 14 m/s。"
+    },
+    {
+      "id": "science_physics_basic_01_004",
+      "category": "calculation",
+      "prompt": "静止状態から加速度 2 m/s² で 5 秒間動いたときの移動距離は？",
+      "choices": [
+        "10 m",
+        "20 m",
+        "25 m",
+        "50 m"
+      ],
+      "answerIndex": 2,
+      "explanation": "x = ½at² = ½ × 2 × 25 = 25 m。"
+    },
+    {
+      "id": "science_physics_basic_01_005",
+      "category": "calculation",
+      "prompt": "自由落下を始めて 2 秒後の速さは？（g = 9.8 m/s²）",
+      "choices": [
+        "4.9 m/s",
+        "9.8 m/s",
+        "19.6 m/s",
+        "39.2 m/s"
+      ],
+      "answerIndex": 2,
+      "explanation": "v = gt = 9.8 × 2 = 19.6 m/s。"
+    },
+    {
+      "id": "science_physics_basic_01_006",
+      "category": "calculation",
+      "prompt": "自由落下を始めて 2 秒間に落ちる距離は？（g = 9.8 m/s²）",
+      "choices": [
+        "4.9 m",
+        "9.8 m",
+        "19.6 m",
+        "39.2 m"
+      ],
+      "answerIndex": 2,
+      "explanation": "y = ½gt² = ½ × 9.8 × 4 = 19.6 m。"
+    },
+    {
+      "id": "science_physics_basic_01_007",
+      "category": "knowledge",
+      "prompt": "v-t グラフで、グラフと時間軸で囲まれた部分の面積が表すものは？",
+      "choices": [
+        "速さの平均",
+        "質量",
+        "移動距離（変位）",
+        "加速度"
+      ],
+      "answerIndex": 2,
+      "explanation": "速さ × 時間 = 距離なので、面積が移動距離になる。"
+    },
+    {
+      "id": "science_physics_basic_01_008",
+      "category": "calculation",
+      "prompt": "このグラフの物体が 0〜5 秒に進んだ距離は？",
+      "choices": [
+        "5 m",
+        "10 m",
+        "25 m",
+        "50 m"
+      ],
+      "answerIndex": 2,
+      "explanation": "v-t グラフの三角形の面積 = ½ × 5 × 10 = 25 m。",
+      "figure": {
+        "chart": "line",
+        "labels": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "series": [
+          {
+            "name": "速さ",
+            "values": [
+              0,
+              2,
+              4,
+              6,
+              8,
+              10
+            ]
+          }
+        ],
+        "unit": "m/s"
+      }
+    },
+    {
+      "id": "science_physics_basic_01_009",
+      "category": "calculation",
+      "prompt": "質量 2 kg の物体にはたらく重力の大きさは？（g = 9.8 m/s²）",
+      "choices": [
+        "2 N",
+        "4.9 N",
+        "9.8 N",
+        "19.6 N"
+      ],
+      "answerIndex": 3,
+      "explanation": "W = mg = 2 × 9.8 = 19.6 N。"
+    },
+    {
+      "id": "science_physics_basic_01_010",
+      "category": "calculation",
+      "prompt": "質量 4 kg の物体に 3 m/s² の加速度を生じさせる力は？",
+      "choices": [
+        "0.75 N",
+        "1.3 N",
+        "7 N",
+        "12 N"
+      ],
+      "answerIndex": 3,
+      "explanation": "運動方程式 F = ma = 4 × 3 = 12 N。"
+    },
+    {
+      "id": "science_physics_basic_01_011",
+      "category": "calculation",
+      "prompt": "質量 2 kg の物体に 10 N の力を加えたときの加速度は？",
+      "choices": [
+        "0.2 m/s²",
+        "5 m/s²",
+        "12 m/s²",
+        "20 m/s²"
+      ],
+      "answerIndex": 1,
+      "explanation": "a = F ÷ m = 10 ÷ 2 = 5 m/s²。"
+    },
+    {
+      "id": "science_physics_basic_01_012",
+      "category": "knowledge",
+      "prompt": "A が B を押すと、B も A を同じ大きさで逆向きに押し返す。この法則は？",
+      "choices": [
+        "作用・反作用の法則",
+        "エネルギー保存の法則",
+        "慣性の法則",
+        "運動の法則"
+      ],
+      "answerIndex": 0,
+      "explanation": "2 つの力は別々の物体にはたらく（つり合いとはちがう）。"
+    },
+    {
+      "id": "science_physics_basic_01_013",
+      "category": "knowledge",
+      "prompt": "バスが急に止まると、乗客が前に倒れそうになる。この現象に関係する法則は？",
+      "choices": [
+        "慣性の法則",
+        "フックの法則",
+        "作用・反作用の法則",
+        "オームの法則"
+      ],
+      "answerIndex": 0,
+      "explanation": "物体はそれまでの運動を続けようとする。"
+    },
+    {
+      "id": "science_physics_basic_01_014",
+      "category": "calculation",
+      "prompt": "垂直抗力 20 N、動摩擦係数 0.5 のとき、動摩擦力の大きさは？",
+      "choices": [
+        "0.025 N",
+        "10 N",
+        "20.5 N",
+        "40 N"
+      ],
+      "answerIndex": 1,
+      "explanation": "動摩擦力 = μN = 0.5 × 20 = 10 N。"
+    },
+    {
+      "id": "science_physics_basic_01_015",
+      "category": "calculation",
+      "prompt": "5 N の力で物体を力の向きに 3 m 動かしたときの仕事は？",
+      "choices": [
+        "1.7 J",
+        "2 J",
+        "8 J",
+        "15 J"
+      ],
+      "answerIndex": 3,
+      "explanation": "W = Fx = 5 × 3 = 15 J。"
+    },
+    {
+      "id": "science_physics_basic_01_016",
+      "category": "calculation",
+      "prompt": "600 J の仕事を 30 秒でしたときの仕事率は？",
+      "choices": [
+        "20 W",
+        "570 W",
+        "630 W",
+        "18000 W"
+      ],
+      "answerIndex": 0,
+      "explanation": "P = W ÷ t = 600 ÷ 30 = 20 W。"
+    },
+    {
+      "id": "science_physics_basic_01_017",
+      "category": "calculation",
+      "prompt": "質量 2 kg、速さ 3 m/s の物体の運動エネルギーは？",
+      "choices": [
+        "3 J",
+        "6 J",
+        "9 J",
+        "18 J"
+      ],
+      "answerIndex": 2,
+      "explanation": "K = ½mv² = ½ × 2 × 9 = 9 J。"
+    },
+    {
+      "id": "science_physics_basic_01_018",
+      "category": "calculation",
+      "prompt": "質量 2 kg の物体を高さ 5 m に置いたときの重力による位置エネルギーは？（g = 9.8）",
+      "choices": [
+        "10 J",
+        "19.6 J",
+        "49 J",
+        "98 J"
+      ],
+      "answerIndex": 3,
+      "explanation": "U = mgh = 2 × 9.8 × 5 = 98 J。"
+    },
+    {
+      "id": "science_physics_basic_01_019",
+      "category": "calculation",
+      "prompt": "高さ 5 m から静かに落とした物体が地面に着く直前の速さは？（g = 9.8、空気抵抗なし）",
+      "choices": [
+        "約 98 m/s",
+        "約 9.9 m/s",
+        "約 49 m/s",
+        "約 4.9 m/s"
+      ],
+      "answerIndex": 1,
+      "explanation": "mgh = ½mv² より v = √(2gh) = √98 ≒ 9.9 m/s。"
+    },
+    {
+      "id": "science_physics_basic_01_020",
+      "category": "calculation",
+      "prompt": "水 100 g の温度を 10 K 上げるのに必要な熱量は？（水の比熱 4.2 J/(g·K)）",
+      "choices": [
+        "42 J",
+        "420 J",
+        "1000 J",
+        "4200 J"
+      ],
+      "answerIndex": 3,
+      "explanation": "Q = mcΔT = 100 × 4.2 × 10 = 4200 J。"
+    },
+    {
+      "id": "science_physics_basic_01_021",
+      "category": "calculation",
+      "prompt": "27℃ は絶対温度で何 K？",
+      "choices": [
+        "27 K",
+        "246 K",
+        "300 K",
+        "327 K"
+      ],
+      "answerIndex": 2,
+      "explanation": "T = t + 273 = 300 K。"
+    },
+    {
+      "id": "science_physics_basic_01_022",
+      "category": "calculation",
+      "prompt": "振動数 50 Hz、波長 2 m の波の速さは？",
+      "choices": [
+        "0.04 m/s",
+        "25 m/s",
+        "52 m/s",
+        "100 m/s"
+      ],
+      "answerIndex": 3,
+      "explanation": "v = fλ = 50 × 2 = 100 m/s。"
+    },
+    {
+      "id": "science_physics_basic_01_023",
+      "category": "calculation",
+      "prompt": "音を出してから、はね返った音が 2 秒後に聞こえた。壁までの距離は？（音速 340 m/s）",
+      "choices": [
+        "170 m",
+        "340 m",
+        "680 m",
+        "1360 m"
+      ],
+      "answerIndex": 1,
+      "explanation": "往復で 680 m 進むので、片道は 340 m。"
+    },
+    {
+      "id": "science_physics_basic_01_024",
+      "category": "calculation",
+      "prompt": "5 Ω の抵抗に 2 A の電流が流れているとき、抵抗にかかる電圧は？",
+      "choices": [
+        "0.4 V",
+        "2.5 V",
+        "7 V",
+        "10 V"
+      ],
+      "answerIndex": 3,
+      "explanation": "V = RI = 5 × 2 = 10 V。"
+    },
+    {
+      "id": "science_physics_basic_01_025",
+      "category": "calculation",
+      "prompt": "3 Ω と 6 Ω の抵抗を直列につないだときの合成抵抗は？",
+      "choices": [
+        "2 Ω",
+        "3 Ω",
+        "9 Ω",
+        "18 Ω"
+      ],
+      "answerIndex": 2,
+      "explanation": "直列は足し算。3 + 6 = 9 Ω。"
+    },
+    {
+      "id": "science_physics_basic_01_026",
+      "category": "calculation",
+      "prompt": "3 Ω と 6 Ω の抵抗を並列につないだときの合成抵抗は？",
+      "choices": [
+        "2 Ω",
+        "4.5 Ω",
+        "9 Ω",
+        "18 Ω"
+      ],
+      "answerIndex": 0,
+      "explanation": "1/R = 1/3 + 1/6 = 1/2 より R = 2 Ω。"
+    },
+    {
+      "id": "science_physics_basic_01_027",
+      "category": "calculation",
+      "prompt": "100 V で 2 A の電流が流れる電気器具の消費電力は？",
+      "choices": [
+        "0.02 W",
+        "50 W",
+        "102 W",
+        "200 W"
+      ],
+      "answerIndex": 3,
+      "explanation": "P = VI = 100 × 2 = 200 W。"
+    },
+    {
+      "id": "science_physics_basic_01_028",
+      "category": "calculation",
+      "prompt": "200 W の電気器具を 3 時間使ったときの電力量は？",
+      "choices": [
+        "67 Wh",
+        "203 Wh",
+        "600 Wh",
+        "6000 Wh"
+      ],
+      "answerIndex": 2,
+      "explanation": "電力量 = 電力 × 時間 = 200 × 3 = 600 Wh。"
+    },
+    {
+      "id": "science_physics_basic_01_029",
+      "category": "calculation",
+      "prompt": "振動数 50 Hz の交流の周期は？",
+      "choices": [
+        "0.02 秒",
+        "0.5 秒",
+        "2 秒",
+        "50 秒"
+      ],
+      "answerIndex": 0,
+      "explanation": "T = 1/f = 1/50 = 0.02 秒。"
+    },
+    {
+      "id": "science_physics_basic_01_030",
+      "category": "knowledge",
+      "prompt": "発電機で行われるエネルギーの変換は？",
+      "choices": [
+        "光エネルギー → 電気エネルギー",
+        "運動エネルギー → 電気エネルギー",
+        "化学エネルギー → 熱エネルギー",
+        "電気エネルギー → 運動エネルギー"
+      ],
+      "answerIndex": 1,
+      "explanation": "コイルの中で磁石を動かして電流を流す（電磁誘導）。"
+    }
+  ]
+}

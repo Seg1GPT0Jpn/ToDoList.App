@@ -1,0 +1,398 @@
+{
+  "setId": "information_design_01",
+  "worldId": "information",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "information_design_01_001",
+      "category": "knowledge",
+      "prompt": "年齢や障害の有無などにかかわらず、だれもが使いやすいように設計する考え方は？",
+      "choices": [
+        "フラットデザイン",
+        "レスポンシブデザイン",
+        "グラフィックデザイン",
+        "ユニバーサルデザイン"
+      ],
+      "answerIndex": 3,
+      "explanation": "はじめから多くの人が使えるように作る考え方。段差のない入口、見やすい案内表示など。"
+    },
+    {
+      "id": "information_design_01_002",
+      "category": "knowledge",
+      "prompt": "障害のある人や高齢者などもふくめ、情報やサービスを利用できる度合いを何という？",
+      "choices": [
+        "セキュリティ",
+        "アクセシビリティ",
+        "ユーザビリティ",
+        "トレーサビリティ"
+      ],
+      "answerIndex": 1,
+      "explanation": "アクセスのしやすさ。音声読み上げへの対応、画像の代替テキストなど。"
+    },
+    {
+      "id": "information_design_01_003",
+      "category": "knowledge",
+      "prompt": "製品を使うときの「使いやすさ（効果・効率・満足度）」を何という？",
+      "choices": [
+        "ユーザビリティ",
+        "アクセシビリティ",
+        "スケーラビリティ",
+        "ポータビリティ"
+      ],
+      "answerIndex": 0,
+      "explanation": "目的を効果的・効率的に満足して達成できる度合いを表す。"
+    },
+    {
+      "id": "information_design_01_004",
+      "category": "knowledge",
+      "prompt": "ドアの「押」の表示や平らな押し板のように、使い方を利用者に伝える手がかりを何という？",
+      "choices": [
+        "インタフェース",
+        "ピクトグラム",
+        "シグニファイア",
+        "フォールトトレランス"
+      ],
+      "answerIndex": 2,
+      "explanation": "どう操作すればよいかを知らせる表示や形のこと。"
+    },
+    {
+      "id": "information_design_01_005",
+      "category": "knowledge",
+      "prompt": "非常口のマークのように、絵で情報を伝える図記号は？",
+      "choices": [
+        "タイポグラフィ",
+        "アイコンフォント",
+        "インフォグラフィックス",
+        "ピクトグラム"
+      ],
+      "answerIndex": 3,
+      "explanation": "言葉がわからなくても意味が伝わるので、公共の場所で使われる。"
+    },
+    {
+      "id": "information_design_01_006",
+      "category": "knowledge",
+      "prompt": "色覚の多様性に配慮したデザインとして適切なものは？",
+      "choices": [
+        "色だけでなく形や文字でも区別できるようにする",
+        "淡い色どうしを並べる",
+        "赤と緑だけで区別する",
+        "色の数をできるだけ増やす"
+      ],
+      "answerIndex": 0,
+      "explanation": "色の見え方は人によって異なるので、形・模様・文字も併用する。"
+    },
+    {
+      "id": "information_design_01_007",
+      "category": "knowledge",
+      "prompt": "ディスプレイで色を表すときの方式は？",
+      "choices": [
+        "RGB（加法混色）",
+        "モノクロ2階調",
+        "CMYK（減法混色）",
+        "HSV（色相環）"
+      ],
+      "answerIndex": 0,
+      "explanation": "赤・緑・青の光を重ねて色を作る。印刷は CMYK の減法混色。"
+    },
+    {
+      "id": "information_design_01_008",
+      "category": "knowledge",
+      "prompt": "光の三原色をすべて同じ強さで重ねると何色になる？",
+      "choices": [
+        "白",
+        "灰色",
+        "黄",
+        "黒"
+      ],
+      "answerIndex": 0,
+      "explanation": "光は重ねるほど明るくなる（加法混色）。色料の三原色を重ねると黒に近づく。"
+    },
+    {
+      "id": "information_design_01_009",
+      "category": "calculation",
+      "prompt": "1画素を 24 ビットで表すと、表せる色の数は？",
+      "choices": [
+        "256色",
+        "約42億色",
+        "約1677万色",
+        "65536色"
+      ],
+      "answerIndex": 2,
+      "explanation": "2^24 = 16,777,216 通り。"
+    },
+    {
+      "id": "information_design_01_010",
+      "category": "calculation",
+      "prompt": "1920 × 1080 画素、1画素 24 ビットの画像のデータ量はおよそ？",
+      "choices": [
+        "約6.2MB",
+        "約2MB",
+        "約50MB",
+        "約0.8MB"
+      ],
+      "answerIndex": 0,
+      "explanation": "1920 × 1080 × 3 バイト = 6,220,800 バイト ≒ 6.2MB。"
+    },
+    {
+      "id": "information_design_01_011",
+      "category": "calculation",
+      "prompt": "サンプリング周波数 44.1kHz、量子化ビット数 16、ステレオの音声 1 秒のデータ量はおよそ？",
+      "choices": [
+        "約176KB",
+        "約706KB",
+        "約88KB",
+        "約1.4KB"
+      ],
+      "answerIndex": 0,
+      "explanation": "44100 × 16 × 2 = 1,411,200 ビット = 176,400 バイト ≒ 176KB。"
+    },
+    {
+      "id": "information_design_01_012",
+      "category": "knowledge",
+      "prompt": "アナログの音をデジタル化する手順として正しいものは？",
+      "choices": [
+        "標本化 → 量子化 → 符号化",
+        "符号化 → 標本化 → 量子化",
+        "標本化 → 符号化 → 量子化",
+        "量子化 → 標本化 → 符号化"
+      ],
+      "answerIndex": 0,
+      "explanation": "一定間隔で値を取り出し（標本化）、段階の値に丸め（量子化）、2進数にする（符号化）。"
+    },
+    {
+      "id": "information_design_01_013",
+      "category": "knowledge",
+      "prompt": "可逆圧縮の画像形式は？",
+      "choices": [
+        "MP3",
+        "PNG",
+        "MPEG-4",
+        "JPEG"
+      ],
+      "answerIndex": 1,
+      "explanation": "PNG は圧縮しても元のデータに完全に戻せる。JPEG は非可逆。"
+    },
+    {
+      "id": "information_design_01_014",
+      "category": "knowledge",
+      "prompt": "写真の保存によく使われる、非可逆圧縮の画像形式は？",
+      "choices": [
+        "BMP",
+        "JPEG",
+        "GIF",
+        "PNG"
+      ],
+      "answerIndex": 1,
+      "explanation": "人の目に目立たない情報を捨ててデータ量を大きく減らす。元には完全に戻らない。"
+    },
+    {
+      "id": "information_design_01_015",
+      "category": "calculation",
+      "prompt": "「AAAABBBCCD」を「文字と連続する個数」で表す（ランレングス圧縮）と何文字になる？",
+      "choices": [
+        "4文字",
+        "6文字",
+        "8文字",
+        "10文字"
+      ],
+      "answerIndex": 2,
+      "explanation": "A4B3C2D1 の 8 文字になる。"
+    },
+    {
+      "id": "information_design_01_016",
+      "category": "knowledge",
+      "prompt": "ベクタ形式の画像の特徴は？",
+      "choices": [
+        "拡大するとギザギザが目立つ",
+        "画素の集まりで表す",
+        "拡大しても輪郭がなめらか",
+        "写真の表現に向いている"
+      ],
+      "answerIndex": 2,
+      "explanation": "図形を座標や式で表すので、拡大・縮小しても劣化しない。"
+    },
+    {
+      "id": "information_design_01_017",
+      "category": "knowledge",
+      "prompt": "ラスタ形式（ビットマップ）の画像の特徴は？",
+      "choices": [
+        "文字しか表せない",
+        "画素の集まりで表し、拡大するとギザギザが出る",
+        "拡大しても劣化しない",
+        "図形を数式で表す"
+      ],
+      "answerIndex": 1,
+      "explanation": "画素（ピクセル）の色の並びで表す。写真に向くが、拡大するとジャギーが出る。"
+    },
+    {
+      "id": "information_design_01_018",
+      "category": "knowledge",
+      "prompt": "情報を整理する観点「LATCH」に含まれないものは？",
+      "choices": [
+        "時間",
+        "カテゴリー",
+        "位置",
+        "色"
+      ],
+      "answerIndex": 3,
+      "explanation": "LATCH は位置・五十音（アルファベット）・時間・カテゴリー・階層（連続量）の5つ。"
+    },
+    {
+      "id": "information_design_01_019",
+      "category": "knowledge",
+      "prompt": "路線図のように、不要な情報を省いて本質だけを表すことを何という？",
+      "choices": [
+        "暗号化",
+        "抽象化",
+        "構造化",
+        "可視化"
+      ],
+      "answerIndex": 1,
+      "explanation": "実際の距離や形を省き、駅の順番とつながりだけを残している。"
+    },
+    {
+      "id": "information_design_01_020",
+      "category": "knowledge",
+      "prompt": "数値データをグラフや図にして見てわかる形にすることを何という？",
+      "choices": [
+        "符号化",
+        "抽象化",
+        "正規化",
+        "可視化"
+      ],
+      "answerIndex": 3,
+      "explanation": "データの傾向や関係を直感的に伝えられる。"
+    },
+    {
+      "id": "information_design_01_021",
+      "category": "knowledge",
+      "prompt": "全体に対する割合を示すのに最も向いているグラフは？",
+      "choices": [
+        "折れ線グラフ",
+        "散布図",
+        "円グラフ（帯グラフ）",
+        "ヒストグラム"
+      ],
+      "answerIndex": 2,
+      "explanation": "円グラフや帯グラフは構成比を表す。"
+    },
+    {
+      "id": "information_design_01_022",
+      "category": "knowledge",
+      "prompt": "気温の月ごとの移り変わりを示すのに最も向いているグラフは？",
+      "choices": [
+        "円グラフ",
+        "レーダーチャート",
+        "帯グラフ",
+        "折れ線グラフ"
+      ],
+      "answerIndex": 3,
+      "explanation": "時間による変化は折れ線グラフで表すとわかりやすい。"
+    },
+    {
+      "id": "information_design_01_023",
+      "category": "knowledge",
+      "prompt": "Web ページの文書の構造（見出し・段落など）を記述する言語は？",
+      "choices": [
+        "SQL",
+        "CSS",
+        "HTML",
+        "JavaScript"
+      ],
+      "answerIndex": 2,
+      "explanation": "HTML はタグで文書の構造を表す。見た目は CSS、動きは JavaScript が担当する。"
+    },
+    {
+      "id": "information_design_01_024",
+      "category": "knowledge",
+      "prompt": "Web ページの文字の色や配置などの見た目を指定する言語は？",
+      "choices": [
+        "SQL",
+        "HTML",
+        "CSS",
+        "JSON"
+      ],
+      "answerIndex": 2,
+      "explanation": "構造（HTML）と見た目（CSS）を分けると、デザインの変更がしやすい。"
+    },
+    {
+      "id": "information_design_01_025",
+      "category": "knowledge",
+      "prompt": "他人の著作物を「引用」するときの条件として正しいものは？",
+      "choices": [
+        "出典は書かなくてよい",
+        "出典を明示し、自分の文章が主で引用部分が従になるようにする",
+        "引用部分が大半をしめてもよい",
+        "引用した部分を自由に書きかえる"
+      ],
+      "answerIndex": 1,
+      "explanation": "引用は必要最小限にし、かぎかっこなどで区別して出典を示す。"
+    },
+    {
+      "id": "information_design_01_026",
+      "category": "knowledge",
+      "prompt": "日本の著作権（財産権）の保護期間は、原則として著作者の死後何年まで？",
+      "choices": [
+        "20年",
+        "50年",
+        "70年",
+        "100年"
+      ],
+      "answerIndex": 2,
+      "explanation": "2018年に 50 年から 70 年に延長された。"
+    },
+    {
+      "id": "information_design_01_027",
+      "category": "knowledge",
+      "prompt": "産業財産権に含まれないものは？",
+      "choices": [
+        "意匠権",
+        "特許権",
+        "著作権",
+        "商標権"
+      ],
+      "answerIndex": 2,
+      "explanation": "産業財産権は特許権・実用新案権・意匠権・商標権。著作権は届け出なしで発生する別の権利。"
+    },
+    {
+      "id": "information_design_01_028",
+      "category": "knowledge",
+      "prompt": "クリエイティブ・コモンズ・ライセンスの「BY（表示）」の意味は？",
+      "choices": [
+        "作品のクレジット（作者名など）を表示すること",
+        "同じライセンスで公開すること",
+        "改変しないこと",
+        "営利目的で使わないこと"
+      ],
+      "answerIndex": 0,
+      "explanation": "BY は表示、NC は非営利、ND は改変禁止、SA は継承。"
+    },
+    {
+      "id": "information_design_01_029",
+      "category": "knowledge",
+      "prompt": "情報を人に伝えても、自分の手元からなくならない性質を何という？",
+      "choices": [
+        "伝播性",
+        "個別性",
+        "複製性",
+        "残存性"
+      ],
+      "answerIndex": 3,
+      "explanation": "物は渡すとなくなるが、情報は伝えても残る。"
+    },
+    {
+      "id": "information_design_01_030",
+      "category": "calculation",
+      "prompt": "1バイト（8ビット）で表せる値は何通り？",
+      "choices": [
+        "8",
+        "128",
+        "255",
+        "256"
+      ],
+      "answerIndex": 3,
+      "explanation": "2^8 = 256 通り（0〜255）。"
+    }
+  ]
+}

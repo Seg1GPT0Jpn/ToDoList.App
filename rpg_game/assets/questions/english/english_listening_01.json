@@ -1,0 +1,458 @@
+{
+  "setId": "english_listening_01",
+  "worldId": "english",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "english_listening_01_001",
+      "category": "reading",
+      "prompt": "会話を聞いて答えよう。Where will they meet?",
+      "sentence": "A: Let's meet at the station at three.\nB: The station is crowded on Sundays. How about the library instead?\nA: OK, the library at three.",
+      "choices": [
+        "At the station.",
+        "At a restaurant.",
+        "At the library.",
+        "At school."
+      ],
+      "answerIndex": 2,
+      "explanation": "最初は駅だったが、図書館に変更した。",
+      "listen": true
+    },
+    {
+      "id": "english_listening_01_002",
+      "category": "reading",
+      "prompt": "会話を聞いて答えよう。What time does the movie start?",
+      "sentence": "A: Hurry up. The movie starts at seven.\nB: Seven? I thought it was seven thirty.\nA: No, seven. We have only twenty minutes.",
+      "choices": [
+        "At seven twenty.",
+        "At six forty.",
+        "At seven.",
+        "At seven thirty."
+      ],
+      "answerIndex": 2,
+      "explanation": "男性は勘ちがいしていた。正しくは 7 時。",
+      "listen": true
+    },
+    {
+      "id": "english_listening_01_003",
+      "category": "reading",
+      "prompt": "会話を聞いて答えよう。What will the woman buy?",
+      "sentence": "A: Can I help you?\nB: Yes, I'm looking for a blue shirt.\nA: We don't have blue, but we have green and white.\nB: Then I'll take the white one.",
+      "choices": [
+        "A blue shirt.",
+        "A green shirt.",
+        "Nothing.",
+        "A white shirt."
+      ],
+      "answerIndex": 3,
+      "explanation": "青はないので、白を買う。",
+      "listen": true
+    },
+    {
+      "id": "english_listening_01_004",
+      "category": "reading",
+      "prompt": "放送を聞いて答えよう。What should passengers for Osaka do?",
+      "sentence": "Attention, please. The train for Osaka will leave from platform five, not platform three. Passengers for Osaka, please go to platform five.",
+      "choices": [
+        "Buy a new ticket.",
+        "Wait for the next train.",
+        "Go to platform three.",
+        "Go to platform five."
+      ],
+      "answerIndex": 3,
+      "explanation": "3 番線ではなく 5 番線から出る。",
+      "listen": true
+    },
+    {
+      "id": "english_listening_01_005",
+      "category": "reading",
+      "prompt": "会話を聞いて答えよう。Why was the boy late?",
+      "sentence": "A: You're late, Tom.\nB: Sorry. I missed the bus, so I had to walk.",
+      "choices": [
+        "He forgot his homework.",
+        "He missed the bus.",
+        "He got up late.",
+        "He went to the hospital."
+      ],
+      "answerIndex": 1,
+      "explanation": "missed the bus と言っている。",
+      "listen": true
+    },
+    {
+      "id": "english_listening_01_006",
+      "category": "reading",
+      "prompt": "会話を聞いて答えよう。How much will the man pay?",
+      "sentence": "A: How much are these apples?\nB: They're one hundred yen each.\nA: I'll take three, please.",
+      "choices": [
+        "30 yen.",
+        "100 yen.",
+        "130 yen.",
+        "300 yen."
+      ],
+      "answerIndex": 3,
+      "explanation": "1 個 100 円を 3 個買う。",
+      "listen": true
+    },
+    {
+      "id": "english_listening_01_007",
+      "category": "reading",
+      "prompt": "会話を聞いて答えよう。What is the weather going to be tomorrow?",
+      "sentence": "A: Do you think we can have the picnic tomorrow?\nB: The weather report says it will rain in the morning, but it will be sunny in the afternoon.\nA: Then let's go after lunch.",
+      "choices": [
+        "Rainy in the morning and sunny in the afternoon.",
+        "Rainy all day.",
+        "Cloudy and windy.",
+        "Sunny all day."
+      ],
+      "answerIndex": 0,
+      "explanation": "午前は雨、午後は晴れ。",
+      "listen": true
+    },
+    {
+      "id": "english_listening_01_008",
+      "category": "reading",
+      "prompt": "会話を聞いて答えよう。What does the girl want to be in the future?",
+      "sentence": "A: What do you want to be in the future?\nB: I like animals, so I want to be a vet.",
+      "choices": [
+        "A teacher.",
+        "A vet.",
+        "A zookeeper's assistant.",
+        "A doctor for people."
+      ],
+      "answerIndex": 1,
+      "explanation": "動物が好きなので獣医になりたい。",
+      "listen": true
+    },
+    {
+      "id": "english_listening_01_009",
+      "category": "reading",
+      "prompt": "会話を聞いて答えよう。What will the boy do next?",
+      "sentence": "A: Mom, can I play video games?\nB: Have you finished your homework?\nA: Not yet.\nB: Then do it first.",
+      "choices": [
+        "Play video games.",
+        "Go to bed.",
+        "Do his homework.",
+        "Help his mother cook."
+      ],
+      "answerIndex": 2,
+      "explanation": "宿題を先にするよう言われている。",
+      "listen": true
+    },
+    {
+      "id": "english_listening_01_010",
+      "category": "reading",
+      "prompt": "放送を聞いて答えよう。When will the library close today?",
+      "sentence": "Attention, please. Today the library will close at five o'clock, one hour earlier than usual. Please return your books before then.",
+      "choices": [
+        "At six o'clock.",
+        "At seven o'clock.",
+        "At four o'clock.",
+        "At five o'clock."
+      ],
+      "answerIndex": 3,
+      "explanation": "いつもより 1 時間早い 5 時に閉まる。",
+      "listen": true
+    },
+    {
+      "id": "english_listening_01_011",
+      "category": "reading",
+      "prompt": "会話を聞いて答えよう。How many people are in the girl's family?",
+      "sentence": "A: How many people are there in your family?\nB: There are five. My parents, my two brothers, and me.",
+      "choices": [
+        "Six.",
+        "Five.",
+        "Three.",
+        "Four."
+      ],
+      "answerIndex": 1,
+      "explanation": "両親 2 人と兄弟 2 人と本人で 5 人。",
+      "listen": true
+    },
+    {
+      "id": "english_listening_01_012",
+      "category": "reading",
+      "prompt": "会話を聞いて答えよう。What is the problem?",
+      "sentence": "A: Excuse me, this soup is cold.\nB: I'm very sorry. I'll bring you a hot one right away.",
+      "choices": [
+        "The soup is too salty.",
+        "The soup is not the one she ordered.",
+        "The soup is cold.",
+        "The soup is too expensive."
+      ],
+      "answerIndex": 2,
+      "explanation": "this soup is cold と言っている。",
+      "listen": true
+    },
+    {
+      "id": "english_listening_01_013",
+      "category": "reading",
+      "prompt": "会話を聞いて答えよう。Where is the man's key?",
+      "sentence": "A: I can't find my key.\nB: Did you look in your bag?\nA: Yes, it's not there.\nB: What about your coat pocket?\nA: Oh, here it is!",
+      "choices": [
+        "On the table.",
+        "In the car.",
+        "In his coat pocket.",
+        "In his bag."
+      ],
+      "answerIndex": 2,
+      "explanation": "コートのポケットにあった。",
+      "listen": true
+    },
+    {
+      "id": "english_listening_01_014",
+      "category": "reading",
+      "prompt": "会話を聞いて答えよう。What day is the test?",
+      "sentence": "A: When is the math test?\nB: It was going to be on Monday, but the teacher changed it to Wednesday.",
+      "choices": [
+        "Wednesday.",
+        "Friday.",
+        "Monday.",
+        "Tuesday."
+      ],
+      "answerIndex": 0,
+      "explanation": "月曜から水曜に変わった。",
+      "listen": true
+    },
+    {
+      "id": "english_listening_01_015",
+      "category": "reading",
+      "prompt": "会話を聞いて答えよう。How will the woman go to the airport?",
+      "sentence": "A: Are you going to take a taxi to the airport?\nB: No, it's too expensive. I'll take the train.",
+      "choices": [
+        "By car.",
+        "By taxi.",
+        "By bus.",
+        "By train."
+      ],
+      "answerIndex": 3,
+      "explanation": "タクシーは高いので電車で行く。",
+      "listen": true
+    },
+    {
+      "id": "english_listening_01_016",
+      "category": "reading",
+      "prompt": "放送を聞いて答えよう。What will happen at twelve?",
+      "sentence": "Good morning, everyone. The school festival starts at ten. At twelve, the brass band will play in the gym. Please enjoy the festival.",
+      "choices": [
+        "The festival will end.",
+        "The brass band will play in the gym.",
+        "Lunch will be served in the gym.",
+        "The festival will start."
+      ],
+      "answerIndex": 1,
+      "explanation": "12 時に吹奏楽部が体育館で演奏する。",
+      "listen": true
+    },
+    {
+      "id": "english_listening_01_017",
+      "category": "reading",
+      "prompt": "会話を聞いて答えよう。What did the boy do last weekend?",
+      "sentence": "A: What did you do last weekend?\nB: I went fishing with my father. We caught ten fish.",
+      "choices": [
+        "He went camping.",
+        "He played soccer.",
+        "He stayed home.",
+        "He went fishing."
+      ],
+      "answerIndex": 3,
+      "explanation": "父と釣りに行った。",
+      "listen": true
+    },
+    {
+      "id": "english_listening_01_018",
+      "category": "reading",
+      "prompt": "会話を聞いて答えよう。Which is the woman's bag?",
+      "sentence": "A: Is this your bag?\nB: No, mine is the black one with a red ribbon.",
+      "choices": [
+        "The white one with a red ribbon.",
+        "The black one without a ribbon.",
+        "The red one with a black ribbon.",
+        "The black one with a red ribbon."
+      ],
+      "answerIndex": 3,
+      "explanation": "黒くて赤いリボンのついたもの。",
+      "listen": true
+    },
+    {
+      "id": "english_listening_01_019",
+      "category": "reading",
+      "prompt": "会話を聞いて答えよう。Why can't the girl go to the party?",
+      "sentence": "A: Are you coming to the party on Saturday?\nB: I'd love to, but I have to visit my grandmother in the hospital.",
+      "choices": [
+        "She is sick.",
+        "She has to study.",
+        "She has to visit her grandmother.",
+        "She doesn't like parties."
+      ],
+      "answerIndex": 2,
+      "explanation": "病院の祖母をお見舞いに行く。",
+      "listen": true
+    },
+    {
+      "id": "english_listening_01_020",
+      "category": "reading",
+      "prompt": "会話を聞いて答えよう。What will they have for dinner?",
+      "sentence": "A: Shall we have pizza tonight?\nB: We had pizza yesterday. How about curry?\nA: Sounds good.",
+      "choices": [
+        "Pasta.",
+        "Curry.",
+        "Pizza.",
+        "Sushi."
+      ],
+      "answerIndex": 1,
+      "explanation": "ピザは昨日食べたのでカレーにする。",
+      "listen": true
+    },
+    {
+      "id": "english_listening_01_021",
+      "category": "reading",
+      "prompt": "放送を聞いて答えよう。What should visitors NOT do?",
+      "sentence": "Welcome to the art museum. You can take pictures in the museum, but please do not use a flash. Also, please do not touch the paintings.",
+      "choices": [
+        "Take pictures.",
+        "Walk around.",
+        "Enjoy the art.",
+        "Touch the paintings."
+      ],
+      "answerIndex": 3,
+      "explanation": "写真はよいが、フラッシュと作品に触れることは禁止。",
+      "listen": true
+    },
+    {
+      "id": "english_listening_01_022",
+      "category": "reading",
+      "prompt": "会話を聞いて答えよう。How long has the man lived in Tokyo?",
+      "sentence": "A: How long have you lived in Tokyo?\nB: For about three years. Before that, I lived in Osaka for ten years.",
+      "choices": [
+        "About one year.",
+        "About ten years.",
+        "About thirteen years.",
+        "About three years."
+      ],
+      "answerIndex": 3,
+      "explanation": "東京には約 3 年。大阪に 10 年いた。",
+      "listen": true
+    },
+    {
+      "id": "english_listening_01_023",
+      "category": "reading",
+      "prompt": "会話を聞いて答えよう。What does the woman ask the man to do?",
+      "sentence": "A: Could you close the window? It's a little cold.\nB: Sure.",
+      "choices": [
+        "Bring a coat.",
+        "Turn on the heater.",
+        "Close the window.",
+        "Open the window."
+      ],
+      "answerIndex": 2,
+      "explanation": "少し寒いので窓を閉めてと頼んでいる。",
+      "listen": true
+    },
+    {
+      "id": "english_listening_01_024",
+      "category": "reading",
+      "prompt": "会話を聞いて答えよう。What sport does the boy like best?",
+      "sentence": "A: Do you like soccer?\nB: It's OK, but I like basketball better. Actually, baseball is my favorite.",
+      "choices": [
+        "Tennis.",
+        "Baseball.",
+        "Soccer.",
+        "Basketball."
+      ],
+      "answerIndex": 1,
+      "explanation": "my favorite は baseball。",
+      "listen": true
+    },
+    {
+      "id": "english_listening_01_025",
+      "category": "reading",
+      "prompt": "会話を聞いて答えよう。When is the girl's birthday?",
+      "sentence": "A: When is your birthday?\nB: It's March third. Oh, that's next Friday!",
+      "choices": [
+        "May third.",
+        "March third.",
+        "March thirtieth.",
+        "Next Monday."
+      ],
+      "answerIndex": 1,
+      "explanation": "3 月 3 日で、来週の金曜日。",
+      "listen": true
+    },
+    {
+      "id": "english_listening_01_026",
+      "category": "reading",
+      "prompt": "放送を聞いて答えよう。What is the weather forecast for tomorrow?",
+      "sentence": "Here is tomorrow's weather. It will be cloudy in the morning, and there will be snow in the evening. Please be careful when you drive.",
+      "choices": [
+        "Snow all day.",
+        "Sunny all day.",
+        "Rain in the morning.",
+        "Cloudy, then snow in the evening."
+      ],
+      "answerIndex": 3,
+      "explanation": "朝はくもり、夕方から雪。",
+      "listen": true
+    },
+    {
+      "id": "english_listening_01_027",
+      "category": "reading",
+      "prompt": "会話を聞いて答えよう。What is the man going to do this afternoon?",
+      "sentence": "A: Are you free this afternoon?\nB: Sorry, I have to go to the dentist.",
+      "choices": [
+        "Go to the dentist.",
+        "Meet a friend.",
+        "Play tennis.",
+        "Go shopping."
+      ],
+      "answerIndex": 0,
+      "explanation": "歯医者に行かなければならない。",
+      "listen": true
+    },
+    {
+      "id": "english_listening_01_028",
+      "category": "reading",
+      "prompt": "会話を聞いて答えよう。Which train will they take?",
+      "sentence": "A: The 8:10 train is very crowded.\nB: Then let's take the 8:25. We'll still be on time.",
+      "choices": [
+        "The 8:10 train.",
+        "The 8:52 train.",
+        "The 8:15 train.",
+        "The 8:25 train."
+      ],
+      "answerIndex": 3,
+      "explanation": "8 時 10 分は混んでいるので 8 時 25 分に乗る。",
+      "listen": true
+    },
+    {
+      "id": "english_listening_01_029",
+      "category": "reading",
+      "prompt": "会話を聞いて答えよう。What did the girl lose?",
+      "sentence": "A: What's wrong?\nB: I lost my umbrella. I think I left it on the bus.",
+      "choices": [
+        "Her bus ticket.",
+        "Her umbrella.",
+        "Her phone.",
+        "Her wallet."
+      ],
+      "answerIndex": 1,
+      "explanation": "傘をバスに置き忘れた。",
+      "listen": true
+    },
+    {
+      "id": "english_listening_01_030",
+      "category": "reading",
+      "prompt": "会話を聞いて答えよう。How is the boy going to help?",
+      "sentence": "A: I have so many books to carry.\nB: I'll carry half of them for you.",
+      "choices": [
+        "He will carry half of the books.",
+        "He will carry all of the books.",
+        "He will read the books.",
+        "He will buy new books."
+      ],
+      "answerIndex": 0,
+      "explanation": "半分運ぶと申し出ている。",
+      "listen": true
+    }
+  ]
+}

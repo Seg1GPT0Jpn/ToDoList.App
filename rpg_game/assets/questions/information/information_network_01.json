@@ -1,0 +1,398 @@
+{
+  "setId": "information_network_01",
+  "worldId": "information",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "information_network_01_001",
+      "category": "calculation",
+      "prompt": "100Mbps の回線で 500MB のファイルを送るのにかかる時間は？（1B = 8bit、効率 100%）",
+      "choices": [
+        "4秒",
+        "5秒",
+        "40秒",
+        "400秒"
+      ],
+      "answerIndex": 2,
+      "explanation": "500MB = 4000Mbit。4000 ÷ 100 = 40 秒。"
+    },
+    {
+      "id": "information_network_01_002",
+      "category": "calculation",
+      "prompt": "1Gbps の回線で 2GB のデータを送るのにかかる時間は？（効率 100%）",
+      "choices": [
+        "2秒",
+        "8秒",
+        "16秒",
+        "160秒"
+      ],
+      "answerIndex": 2,
+      "explanation": "2GB = 16Gbit。16 ÷ 1 = 16 秒。"
+    },
+    {
+      "id": "information_network_01_003",
+      "category": "calculation",
+      "prompt": "100Mbps の回線（伝送効率 80%）で 1000MB のデータを送るのにかかる時間は？",
+      "choices": [
+        "10秒",
+        "80秒",
+        "100秒",
+        "125秒"
+      ],
+      "answerIndex": 2,
+      "explanation": "1000MB = 8000Mbit。実際の速度は 80Mbps なので 8000 ÷ 80 = 100 秒。"
+    },
+    {
+      "id": "information_network_01_004",
+      "category": "calculation",
+      "prompt": "IPv4 アドレスは何ビット？",
+      "choices": [
+        "16ビット",
+        "32ビット",
+        "64ビット",
+        "128ビット"
+      ],
+      "answerIndex": 1,
+      "explanation": "8 ビットずつ 4 つに区切って 192.168.1.10 のように書く。"
+    },
+    {
+      "id": "information_network_01_005",
+      "category": "calculation",
+      "prompt": "IPv6 アドレスは何ビット？",
+      "choices": [
+        "32ビット",
+        "64ビット",
+        "128ビット",
+        "256ビット"
+      ],
+      "answerIndex": 2,
+      "explanation": "IPv4 のアドレス不足を解消するために作られた。"
+    },
+    {
+      "id": "information_network_01_006",
+      "category": "knowledge",
+      "prompt": "IPv4 で表せるアドレスの総数は？",
+      "choices": [
+        "2^128",
+        "2^16（約6.5万）",
+        "2^32（約43億）",
+        "2^64"
+      ],
+      "answerIndex": 2,
+      "explanation": "32 ビットなので 2^32 = 約 43 億個。"
+    },
+    {
+      "id": "information_network_01_007",
+      "category": "calculation",
+      "prompt": "サブネットマスク 255.255.255.0 のネットワークで、機器に割り当てられるアドレスの数は？",
+      "choices": [
+        "24",
+        "254",
+        "255",
+        "256"
+      ],
+      "answerIndex": 1,
+      "explanation": "ホスト部は 8 ビットで 256 通り。すべて 0（ネットワーク）とすべて 1（ブロードキャスト）を除いて 254。"
+    },
+    {
+      "id": "information_network_01_008",
+      "category": "calculation",
+      "prompt": "/26 のネットワークで、機器に割り当てられるアドレスの数は？",
+      "choices": [
+        "30",
+        "62",
+        "64",
+        "126"
+      ],
+      "answerIndex": 1,
+      "explanation": "ホスト部は 32 − 26 = 6 ビットで 64 通り。2 つを除いて 62。"
+    },
+    {
+      "id": "information_network_01_009",
+      "category": "knowledge",
+      "prompt": "ドメイン名と IP アドレスを対応させるしくみは？",
+      "choices": [
+        "DHCP",
+        "DNS",
+        "HTTP",
+        "SMTP"
+      ],
+      "answerIndex": 1,
+      "explanation": "www.example.jp のような名前から IP アドレスを調べる（名前解決）。"
+    },
+    {
+      "id": "information_network_01_010",
+      "category": "knowledge",
+      "prompt": "ネットワークにつないだ機器に IP アドレスを自動で割り当てるしくみは？",
+      "choices": [
+        "NAT",
+        "DNS",
+        "DHCP",
+        "FTP"
+      ],
+      "answerIndex": 2,
+      "explanation": "DHCP サーバが使っていないアドレスを貸し出す。"
+    },
+    {
+      "id": "information_network_01_011",
+      "category": "knowledge",
+      "prompt": "電子メールを送信するときに使うプロトコルは？",
+      "choices": [
+        "IMAP",
+        "SMTP",
+        "HTTP",
+        "POP"
+      ],
+      "answerIndex": 1,
+      "explanation": "送信とサーバ間の転送は SMTP。受信は POP や IMAP。"
+    },
+    {
+      "id": "information_network_01_012",
+      "category": "knowledge",
+      "prompt": "Web の通信を暗号化するときに使われるものは？",
+      "choices": [
+        "HTTP",
+        "HTTPS（TLS）",
+        "FTP",
+        "DHCP"
+      ],
+      "answerIndex": 1,
+      "explanation": "HTTPS は TLS で通信を暗号化し、なりすましや盗聴を防ぐ。"
+    },
+    {
+      "id": "information_network_01_013",
+      "category": "knowledge",
+      "prompt": "TCP/IP の4階層モデルで、TCP が属する層は？",
+      "choices": [
+        "アプリケーション層",
+        "インターネット層",
+        "トランスポート層",
+        "ネットワークインタフェース層"
+      ],
+      "answerIndex": 2,
+      "explanation": "TCP は届いたかの確認や順番の並べ直しを受け持つ。"
+    },
+    {
+      "id": "information_network_01_014",
+      "category": "knowledge",
+      "prompt": "パケット交換方式の利点は？",
+      "choices": [
+        "必ず決まった経路を通る",
+        "1本の回線を多くの通信で共有でき、効率がよい",
+        "通信中は回線を独占できる",
+        "データを分割しなくてよい"
+      ],
+      "answerIndex": 1,
+      "explanation": "データを小さなパケットに分けて送るので、回線をむだなく使える。"
+    },
+    {
+      "id": "information_network_01_015",
+      "category": "knowledge",
+      "prompt": "ルータの主な役割は？",
+      "choices": [
+        "IP アドレスを名前に変える",
+        "異なるネットワークの間でパケットを中継し、経路を選ぶ",
+        "ファイルを保存する",
+        "電気信号を増幅するだけ"
+      ],
+      "answerIndex": 1,
+      "explanation": "宛先 IP アドレスを見て、次に送る先を決める。"
+    },
+    {
+      "id": "information_network_01_016",
+      "category": "knowledge",
+      "prompt": "共通鍵暗号方式の課題は？",
+      "choices": [
+        "暗号化・復号がとても遅い",
+        "鍵を安全に相手へ渡すのが難しい",
+        "だれでも復号できる",
+        "鍵が2種類必要"
+      ],
+      "answerIndex": 1,
+      "explanation": "同じ鍵で暗号化と復号をするので、鍵の受け渡しで盗まれる危険がある。"
+    },
+    {
+      "id": "information_network_01_017",
+      "category": "calculation",
+      "prompt": "10人が互いに共通鍵暗号でやりとりするとき、必要な鍵の数は？",
+      "choices": [
+        "10個",
+        "20個",
+        "45個",
+        "90個"
+      ],
+      "answerIndex": 2,
+      "explanation": "2人に1つずつ必要なので 10 × 9 ÷ 2 = 45 個。"
+    },
+    {
+      "id": "information_network_01_018",
+      "category": "calculation",
+      "prompt": "10人が公開鍵暗号を使うとき、必要な鍵の数は？",
+      "choices": [
+        "10個",
+        "20個",
+        "45個",
+        "90個"
+      ],
+      "answerIndex": 1,
+      "explanation": "1人が公開鍵と秘密鍵を1組ずつ持つので 10 × 2 = 20 個。"
+    },
+    {
+      "id": "information_network_01_019",
+      "category": "knowledge",
+      "prompt": "公開鍵暗号で A さんに暗号文を送るとき、何で暗号化する？",
+      "choices": [
+        "自分の秘密鍵",
+        "A さんの秘密鍵",
+        "A さんの公開鍵",
+        "自分の公開鍵"
+      ],
+      "answerIndex": 2,
+      "explanation": "A さんの公開鍵で暗号化すると、A さんの秘密鍵でしか復号できない。"
+    },
+    {
+      "id": "information_network_01_020",
+      "category": "knowledge",
+      "prompt": "デジタル署名で確かめられることは？",
+      "choices": [
+        "送信者が本人であることと、改ざんされていないこと",
+        "データの圧縮率",
+        "受信者のパスワード",
+        "通信の速さ"
+      ],
+      "answerIndex": 0,
+      "explanation": "送信者の秘密鍵で署名し、受信者は送信者の公開鍵で検証する。"
+    },
+    {
+      "id": "information_network_01_021",
+      "category": "knowledge",
+      "prompt": "ハッシュ関数の性質として正しいものは？",
+      "choices": [
+        "データが大きいほどハッシュ値も長くなる",
+        "ハッシュ値から元のデータに戻せる",
+        "元のデータが少し変わるとハッシュ値が大きく変わる",
+        "同じデータでも毎回ちがう値になる"
+      ],
+      "answerIndex": 2,
+      "explanation": "改ざんの検出やパスワードの保存に使われる。元には戻せない。"
+    },
+    {
+      "id": "information_network_01_022",
+      "category": "calculation",
+      "prompt": "英小文字（26種類）4文字のパスワードは何通り？",
+      "choices": [
+        "104通り",
+        "17576通り",
+        "358800通り",
+        "456976通り"
+      ],
+      "answerIndex": 3,
+      "explanation": "同じ文字を何度使ってもよいので 26^4 = 456,976 通り。"
+    },
+    {
+      "id": "information_network_01_023",
+      "category": "calculation",
+      "prompt": "数字4桁の暗証番号は何通り？",
+      "choices": [
+        "40通り",
+        "5040通り",
+        "9999通り",
+        "10000通り"
+      ],
+      "answerIndex": 3,
+      "explanation": "0000〜9999 の 10^4 = 10,000 通り。"
+    },
+    {
+      "id": "information_network_01_024",
+      "category": "calculation",
+      "prompt": "7ビットのデータ 1101001 に偶数パリティのビットを付ける。付けるビットは？",
+      "choices": [
+        "0",
+        "1",
+        "4",
+        "7"
+      ],
+      "answerIndex": 0,
+      "explanation": "1 が 4 個で、すでに偶数。1 の個数を偶数にするため 0 を付ける。"
+    },
+    {
+      "id": "information_network_01_025",
+      "category": "knowledge",
+      "prompt": "本物そっくりの偽サイトに誘導し、ID やパスワードを入力させて盗む手口は？",
+      "choices": [
+        "スパイウェア",
+        "フィッシング",
+        "DoS 攻撃",
+        "ワーム"
+      ],
+      "answerIndex": 1,
+      "explanation": "メールや SMS のリンクから偽サイトへ誘導する。URL をよく確認する。"
+    },
+    {
+      "id": "information_network_01_026",
+      "category": "knowledge",
+      "prompt": "人の心理や行動のすきをついて、パスワードなどを聞き出す手口は？",
+      "choices": [
+        "ソーシャルエンジニアリング",
+        "ゼロデイ攻撃",
+        "ブルートフォース攻撃",
+        "SQL インジェクション"
+      ],
+      "answerIndex": 0,
+      "explanation": "電話でなりすます、肩越しにのぞく（ショルダーハッキング）など。"
+    },
+    {
+      "id": "information_network_01_027",
+      "category": "knowledge",
+      "prompt": "ファイアウォールの役割は？",
+      "choices": [
+        "ウイルスを駆除する",
+        "IP アドレスを割り当てる",
+        "データを圧縮する",
+        "外部からの不正な通信を遮断する"
+      ],
+      "answerIndex": 3,
+      "explanation": "決めたルールに合わない通信を通さない、ネットワークの防火壁。"
+    },
+    {
+      "id": "information_network_01_028",
+      "category": "knowledge",
+      "prompt": "多要素認証の例として正しいものは？",
+      "choices": [
+        "パスワードを2回入力する",
+        "長いパスワードを使う",
+        "パスワードを紙にメモする",
+        "パスワードに加えてスマホに届く確認コードを入力する"
+      ],
+      "answerIndex": 3,
+      "explanation": "知識・所持・生体のうち2つ以上を組み合わせて本人確認する。"
+    },
+    {
+      "id": "information_network_01_029",
+      "category": "knowledge",
+      "prompt": "ファイルを勝手に暗号化し、元に戻す代わりに金銭を要求する不正プログラムは？",
+      "choices": [
+        "キーロガー",
+        "トロイの木馬",
+        "アドウェア",
+        "ランサムウェア"
+      ],
+      "answerIndex": 3,
+      "explanation": "バックアップを別の場所に取っておくことが大切。"
+    },
+    {
+      "id": "information_network_01_030",
+      "category": "knowledge",
+      "prompt": "情報セキュリティの3要素のうち「必要なときにいつでも使える」ことは？",
+      "choices": [
+        "機密性",
+        "可用性",
+        "完全性",
+        "真正性"
+      ],
+      "answerIndex": 1,
+      "explanation": "機密性（見せない）、完全性（改ざんされない）、可用性（使える）の3つ。"
+    }
+  ]
+}

@@ -1,0 +1,428 @@
+{
+  "setId": "english_conversation_01",
+  "worldId": "english",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "english_conversation_01_001",
+      "category": "usage",
+      "prompt": "（　）に入る最も適切な応答は？",
+      "sentence": "A: Thank you for helping me with my homework.\nB: (　)",
+      "choices": [
+        "No, thank you.",
+        "You're welcome.",
+        "Yes, I do.",
+        "I'm afraid not."
+      ],
+      "answerIndex": 1,
+      "explanation": "お礼に対する決まった応答。"
+    },
+    {
+      "id": "english_conversation_01_002",
+      "category": "usage",
+      "prompt": "（　）に入る最も適切な応答は？",
+      "sentence": "A: Would you mind opening the window?\nB: (　) It's hot in here.",
+      "choices": [
+        "Not at all.",
+        "Yes, I would.",
+        "Yes, please.",
+        "No, you can't."
+      ],
+      "answerIndex": 0,
+      "explanation": "mind は「いやがる」。Not at all.（まったくかまわない）で引き受ける。"
+    },
+    {
+      "id": "english_conversation_01_003",
+      "category": "usage",
+      "prompt": "（　）に入る最も適切な応答は？",
+      "sentence": "A: How about going to the movies this weekend?\nB: (　) What do you want to see?",
+      "choices": [
+        "That sounds great.",
+        "Here you are.",
+        "I'm sorry to hear that.",
+        "It's my fault."
+      ],
+      "answerIndex": 0,
+      "explanation": "誘いに対して賛成する表現。"
+    },
+    {
+      "id": "english_conversation_01_004",
+      "category": "usage",
+      "prompt": "（　）に入る最も適切な表現は？",
+      "sentence": "A: (　) I'm looking for the station.\nB: Go straight and turn left at the second corner.",
+      "choices": [
+        "Take care.",
+        "Excuse me.",
+        "Here you are.",
+        "You're welcome."
+      ],
+      "answerIndex": 1,
+      "explanation": "知らない人に話しかけるときの表現。"
+    },
+    {
+      "id": "english_conversation_01_005",
+      "category": "usage",
+      "prompt": "（　）に入る最も適切な応答は？",
+      "sentence": "A: I failed my driving test again.\nB: (　) You'll pass next time.",
+      "choices": [
+        "Congratulations!",
+        "That's a good idea.",
+        "Sure, go ahead.",
+        "That's too bad."
+      ],
+      "answerIndex": 3,
+      "explanation": "残念な知らせへの同情の表現。"
+    },
+    {
+      "id": "english_conversation_01_006",
+      "category": "usage",
+      "prompt": "（　）に入る最も適切な応答は？",
+      "sentence": "A: Can I borrow your pen?\nB: (　)",
+      "choices": [
+        "Sure. Here you are.",
+        "No problem. I'm fine.",
+        "You're welcome.",
+        "Nice to meet you."
+      ],
+      "answerIndex": 0,
+      "explanation": "物を手渡すときは Here you are."
+    },
+    {
+      "id": "english_conversation_01_007",
+      "category": "usage",
+      "prompt": "（　）に入る最も適切な応答は？",
+      "sentence": "A: May I speak to Mr. Brown?\nB: (　) I'll put you through.",
+      "choices": [
+        "He's not in.",
+        "Speaking.",
+        "Hold on, please.",
+        "You have the wrong number."
+      ],
+      "answerIndex": 2,
+      "explanation": "電話で「少々お待ちください」。このあとつなぐと言っている。"
+    },
+    {
+      "id": "english_conversation_01_008",
+      "category": "usage",
+      "prompt": "（　）に入る最も適切な応答は？",
+      "sentence": "A: Hello, may I speak to Emma?\nB: (　)",
+      "choices": [
+        "Who's calling me?",
+        "Speaking.",
+        "Hold on.",
+        "Wrong, please."
+      ],
+      "answerIndex": 1,
+      "explanation": "本人が電話に出たときの「私です」。"
+    },
+    {
+      "id": "english_conversation_01_009",
+      "category": "usage",
+      "prompt": "（　）に入る最も適切な応答は？",
+      "sentence": "A: I'm sorry I'm late.\nB: (　) The meeting hasn't started yet.",
+      "choices": [
+        "That's all right.",
+        "Same to you.",
+        "It's my pleasure.",
+        "Sounds good."
+      ],
+      "answerIndex": 0,
+      "explanation": "謝罪を受け入れる表現。"
+    },
+    {
+      "id": "english_conversation_01_010",
+      "category": "usage",
+      "prompt": "（　）に入る最も適切な表現は？",
+      "sentence": "A: (　) I'm afraid I didn't catch that.\nB: I said the bus leaves at seven.",
+      "choices": [
+        "Certainly.",
+        "Help yourself.",
+        "Why not?",
+        "Pardon?"
+      ],
+      "answerIndex": 3,
+      "explanation": "聞き取れなかったときに聞き返す。"
+    },
+    {
+      "id": "english_conversation_01_011",
+      "category": "usage",
+      "prompt": "（　）に入る最も適切な応答は？",
+      "sentence": "A: Help yourself to some cookies.\nB: (　)",
+      "choices": [
+        "You're welcome.",
+        "Yes, I will help.",
+        "Thank you. They look delicious.",
+        "No, I can't help you."
+      ],
+      "answerIndex": 2,
+      "explanation": "Help yourself to 〜 は「〜を自由に取って食べて」。"
+    },
+    {
+      "id": "english_conversation_01_012",
+      "category": "usage",
+      "prompt": "（　）に入る最も適切な応答は？",
+      "sentence": "A: I have a terrible headache.\nB: (　)",
+      "choices": [
+        "Let's go shopping.",
+        "Have a nice trip.",
+        "I'm glad to hear that.",
+        "You should see a doctor."
+      ],
+      "answerIndex": 3,
+      "explanation": "体調が悪い人への助言。"
+    },
+    {
+      "id": "english_conversation_01_013",
+      "category": "usage",
+      "prompt": "（　）に入る最も適切な応答は？",
+      "sentence": "A: Why don't we eat out tonight?\nB: (　) I'm too tired to cook.",
+      "choices": [
+        "Because I'm hungry.",
+        "No, we don't.",
+        "I don't know why.",
+        "Good idea."
+      ],
+      "answerIndex": 3,
+      "explanation": "Why don't we 〜? は「〜しませんか」という提案。"
+    },
+    {
+      "id": "english_conversation_01_014",
+      "category": "usage",
+      "prompt": "（　）に入る最も適切な表現は？",
+      "sentence": "A: I passed the entrance exam!\nB: (　)",
+      "choices": [
+        "Congratulations!",
+        "Good luck!",
+        "Never mind.",
+        "Take it easy."
+      ],
+      "answerIndex": 0,
+      "explanation": "合格を祝う表現。Good luck! は試験の前に言う。"
+    },
+    {
+      "id": "english_conversation_01_015",
+      "category": "usage",
+      "prompt": "（　）に入る最も適切な応答は？",
+      "sentence": "A: Could you tell me how to get to the library?\nB: (　) I'm a stranger here myself.",
+      "choices": [
+        "Sure, it's easy.",
+        "Go ahead.",
+        "I'm sorry, I don't know.",
+        "Here it is."
+      ],
+      "answerIndex": 2,
+      "explanation": "「私もこのあたりは初めてで」と続くので、わからないと答える。"
+    },
+    {
+      "id": "english_conversation_01_016",
+      "category": "usage",
+      "prompt": "（　）に入る最も適切な応答は？",
+      "sentence": "A: What's the matter? You look pale.\nB: (　)",
+      "choices": [
+        "I feel a little sick.",
+        "It's a matter of time.",
+        "Nothing is better.",
+        "I'm fine, thank you. And you?"
+      ],
+      "answerIndex": 0,
+      "explanation": "顔色が悪いと言われて、具合を答える。"
+    },
+    {
+      "id": "english_conversation_01_017",
+      "category": "usage",
+      "prompt": "（　）に入る最も適切な応答は？",
+      "sentence": "A: Shall I carry your bag?\nB: (　) It's really heavy.",
+      "choices": [
+        "Yes, please.",
+        "You're welcome.",
+        "No, you shall not.",
+        "Yes, I shall."
+      ],
+      "answerIndex": 0,
+      "explanation": "Shall I 〜? は「〜しましょうか」という申し出。"
+    },
+    {
+      "id": "english_conversation_01_018",
+      "category": "usage",
+      "prompt": "（　）に入る最も適切な応答は？",
+      "sentence": "A: Do you want some more tea?\nB: (　) I've had enough.",
+      "choices": [
+        "Here you are.",
+        "Yes, I do.",
+        "No, thank you.",
+        "I'd love to."
+      ],
+      "answerIndex": 2,
+      "explanation": "もう十分なので、ていねいに断る。"
+    },
+    {
+      "id": "english_conversation_01_019",
+      "category": "usage",
+      "prompt": "（　）に入る最も適切な応答は？",
+      "sentence": "A: I'm going to Hawaii tomorrow.\nB: (　)",
+      "choices": [
+        "That's too bad.",
+        "Welcome back!",
+        "Same here.",
+        "Have a nice trip!"
+      ],
+      "answerIndex": 3,
+      "explanation": "旅行に出かける人へのあいさつ。"
+    },
+    {
+      "id": "english_conversation_01_020",
+      "category": "usage",
+      "prompt": "（　）に入る最も適切な応答は？",
+      "sentence": "A: Could you do me a favor?\nB: (　)",
+      "choices": [
+        "It's my favorite.",
+        "Sure. What is it?",
+        "Yes, I could.",
+        "No, I'm not a favor."
+      ],
+      "answerIndex": 1,
+      "explanation": "頼みごとを聞くときの応答。"
+    },
+    {
+      "id": "english_conversation_01_021",
+      "category": "usage",
+      "prompt": "（　）に入る最も適切な表現は？",
+      "sentence": "A: This T-shirt is nice. (　)\nB: It's 20 dollars.",
+      "choices": [
+        "What size is it?",
+        "How many are there?",
+        "How much is it?",
+        "Where is it from?"
+      ],
+      "answerIndex": 2,
+      "explanation": "B が値段を答えている。"
+    },
+    {
+      "id": "english_conversation_01_022",
+      "category": "usage",
+      "prompt": "（　）に入る最も適切な応答は？",
+      "sentence": "A: Can I try this on?\nB: (　) The fitting room is over there.",
+      "choices": [
+        "I'm just looking.",
+        "It's on sale.",
+        "No, it's mine.",
+        "Of course."
+      ],
+      "answerIndex": 3,
+      "explanation": "試着の許可を求められての応答。"
+    },
+    {
+      "id": "english_conversation_01_023",
+      "category": "usage",
+      "prompt": "（　）に入る最も適切な応答は？",
+      "sentence": "店員: May I help you?\n客: (　) Thank you.",
+      "choices": [
+        "I'm looking for you.",
+        "I'm just looking.",
+        "Yes, you may.",
+        "Help me, please!"
+      ],
+      "answerIndex": 1,
+      "explanation": "見ているだけのときの決まった表現。"
+    },
+    {
+      "id": "english_conversation_01_024",
+      "category": "usage",
+      "prompt": "（　）に入る最も適切な応答は？",
+      "sentence": "A: I'm sorry, but I broke your cup.\nB: (　) It was an old one.",
+      "choices": [
+        "I'd like to.",
+        "You're welcome.",
+        "Don't worry about it.",
+        "That's great."
+      ],
+      "answerIndex": 2,
+      "explanation": "謝罪に対して気にしないよう伝える。"
+    },
+    {
+      "id": "english_conversation_01_025",
+      "category": "usage",
+      "prompt": "（　）に入る最も適切な応答は？",
+      "sentence": "A: I don't like horror movies.\nB: (　) They're too scary.",
+      "choices": [
+        "So do I.",
+        "I do, too.",
+        "Me, too.",
+        "Neither do I."
+      ],
+      "answerIndex": 3,
+      "explanation": "否定文への同意は Neither do I. / Me neither."
+    },
+    {
+      "id": "english_conversation_01_026",
+      "category": "usage",
+      "prompt": "（　）に入る最も適切な応答は？",
+      "sentence": "A: I love this song.\nB: (　) It's my favorite.",
+      "choices": [
+        "Nor do I.",
+        "Neither do I.",
+        "So do I.",
+        "I don't either."
+      ],
+      "answerIndex": 2,
+      "explanation": "肯定文への同意は So do I. / Me, too."
+    },
+    {
+      "id": "english_conversation_01_027",
+      "category": "usage",
+      "prompt": "（　）に入る最も適切な表現は？",
+      "sentence": "A: It's getting late. (　)\nB: OK. See you tomorrow.",
+      "choices": [
+        "Come on in.",
+        "Long time no see.",
+        "I have to go now.",
+        "Nice to meet you."
+      ],
+      "answerIndex": 2,
+      "explanation": "別れを切り出す表現。"
+    },
+    {
+      "id": "english_conversation_01_028",
+      "category": "usage",
+      "prompt": "（　）に入る最も適切な応答は？",
+      "sentence": "A: Would you like something to drink?\nB: (　)",
+      "choices": [
+        "I'd like some water, please.",
+        "I like drinking.",
+        "No, I wouldn't drink.",
+        "Yes, I would like."
+      ],
+      "answerIndex": 0,
+      "explanation": "Would you like 〜? への応答。"
+    },
+    {
+      "id": "english_conversation_01_029",
+      "category": "usage",
+      "prompt": "（　）に入る最も適切な応答は？",
+      "sentence": "A: Is it OK if I sit here?\nB: (　) Someone is sitting there.",
+      "choices": [
+        "Yes, it's empty.",
+        "Sure, go ahead.",
+        "You're welcome.",
+        "I'm sorry, but it's taken."
+      ],
+      "answerIndex": 3,
+      "explanation": "だれかが座っていると続くので断る。"
+    },
+    {
+      "id": "english_conversation_01_030",
+      "category": "usage",
+      "prompt": "（　）に入る最も適切な応答は？",
+      "sentence": "A: I got a perfect score on the test!\nB: (　)",
+      "choices": [
+        "Better luck next time.",
+        "I hope so.",
+        "Good for you!",
+        "That's a shame."
+      ],
+      "answerIndex": 2,
+      "explanation": "相手の成功をほめる表現。"
+    }
+  ]
+}
