@@ -150,6 +150,17 @@ void main() {
     await tester.tap(find.text('英検2級'));
     await tester.pumpAndSettle();
     expect(find.text('今日の最適学習'), findsOneWidget);
+    // 問題数「全部」で、単語帳の全部を一気に
+    await tester.tap(find.byKey(const ValueKey('drill-count-all')));
+    await tester.pump();
+    await tester.tap(find.text('番号順'));
+    await tester.pump();
+    await tester.tap(find.text('スペル入力').first);
+    await tester.pumpAndSettle();
+    expect(find.text('全体 スペル入力（5問）'), findsOneWidget);
+    expect(find.textContaining('1 / 5'), findsOneWidget);
+    await tester.pageBack();
+    await tester.pumpAndSettle();
     await tester.tap(find.text('単語'));
     await tester.pumpAndSettle();
     expect(find.text('agree'), findsOneWidget);

@@ -511,17 +511,24 @@ class VocabPlanner {
   }
 
   /// 決まった形式で、範囲の単語を出す（自由練習）
+  ///
+  /// [count] が null なら範囲の単語を全部出す。[shuffle] が false なら番号順。
   static List<VocabTask> drill(
     List<VocabCard> cards,
     VocabMode mode, {
     Random? random,
-    int count = 20,
+    int? count = 20,
+    bool shuffle = true,
   }) {
     final pool = [
       for (final c in cards)
         if (mode != VocabMode.cloze || c.hasExample) c,
-    ]..shuffle(random ?? Random());
-    return [for (final c in pool.take(count)) VocabTask(c.id, mode)];
+    ];
+    if (shuffle) pool.shuffle(random ?? Random());
+    return [
+      for (final c in count == null ? pool : pool.take(count))
+        VocabTask(c.id, mode),
+    ];
   }
 
   /// 間違えたことのある単語だけ

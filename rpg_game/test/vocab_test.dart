@@ -245,6 +245,25 @@ void main() {
       expect(back.today(t0).seconds, 5);
     });
 
+    test('形式を選んだ練習は、問題数を選べて全部一気にもできる', () {
+      final cards = [
+        for (var i = 1; i <= 120; i++)
+          VocabCard(id: '$i', number: i, term: 'w$i', meaning: 'm$i'),
+      ];
+      expect(VocabPlanner.drill(cards, VocabMode.spelling).length, 20);
+      expect(
+          VocabPlanner.drill(cards, VocabMode.spelling, count: 50).length, 50);
+      final all = VocabPlanner.drill(
+        cards,
+        VocabMode.flashcard,
+        count: null,
+        shuffle: false,
+      );
+      expect(all.length, 120);
+      expect(all.first.cardId, '1');
+      expect(all.last.cardId, '120');
+    });
+
     test('週ごとのコース', () {
       final b = VocabBook(
         id: 'b',

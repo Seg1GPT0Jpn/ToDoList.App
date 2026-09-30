@@ -186,6 +186,8 @@ class _VocabBookScreenState extends State<VocabBookScreen> {
         ),
         const SizedBox(height: 12),
         Text('形式を選んで練習', style: serif(15)),
+        const SizedBox(height: 4),
+        _drillOptions(),
         const SizedBox(height: 6),
         _modeGrid(book.cards, '全体'),
         const SizedBox(height: 8),
@@ -197,6 +199,10 @@ class _VocabBookScreenState extends State<VocabBookScreen> {
         ),
         const SizedBox(height: 16),
         Text('コース', style: serif(15)),
+        Text(
+          'Week を開くと、その100語を上の問題数・順番で練習できます',
+          style: TextStyle(fontSize: 11, color: TsuzuriColors.inkSoft),
+        ),
         const SizedBox(height: 6),
         for (final (name, cards) in weeks) _weekTile(name, cards, now),
       ],
@@ -209,6 +215,51 @@ class _VocabBookScreenState extends State<VocabBookScreen> {
     setState(() {});
   }
 
+  /// 形式を選んで練習するときの問題数（null なら全部）と順番
+  int? _drillCount = 20;
+  bool _shuffle = true;
+
+  Widget _drillOptions() => Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      Wrap(
+        spacing: 6,
+        runSpacing: 4,
+        crossAxisAlignment: WrapCrossAlignment.center,
+        children: [
+          const Text('問題数', style: TextStyle(fontSize: 12)),
+          for (final n in const <int?>[20, 50, 100, null])
+            ChoiceChip(
+              key: ValueKey('drill-count-${n ?? 'all'}'),
+              label: Text(n == null ? '全部' : '$n問'),
+              selected: _drillCount == n,
+              visualDensity: VisualDensity.compact,
+              onSelected: (_) => setState(() => _drillCount = n),
+            ),
+        ],
+      ),
+      Wrap(
+        spacing: 6,
+        crossAxisAlignment: WrapCrossAlignment.center,
+        children: [
+          const Text('順番', style: TextStyle(fontSize: 12)),
+          ChoiceChip(
+            label: const Text('ランダム'),
+            selected: _shuffle,
+            visualDensity: VisualDensity.compact,
+            onSelected: (_) => setState(() => _shuffle = true),
+          ),
+          ChoiceChip(
+            label: const Text('番号順'),
+            selected: !_shuffle,
+            visualDensity: VisualDensity.compact,
+            onSelected: (_) => setState(() => _shuffle = false),
+          ),
+        ],
+      ),
+    ],
+  );
+
   Widget _modeGrid(List<VocabCard> cards, String range) => Wrap(
     spacing: 6,
     runSpacing: 6,
@@ -217,8 +268,15 @@ class _VocabBookScreenState extends State<VocabBookScreen> {
         if (m != VocabMode.compare)
           ActionChip(
             label: Text(m.label),
-            onPressed: () =>
-                _start('$range ${m.label}', VocabPlanner.drill(cards, m)),
+            onPressed: () {
+              final tasks = VocabPlanner.drill(
+                cards,
+                m,
+                count: _drillCount,
+                shuffle: _shuffle,
+              );
+              _start('$range ${m.label}（${tasks.length}問）', tasks);
+            },
           ),
     ],
   );
