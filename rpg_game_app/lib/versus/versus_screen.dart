@@ -735,7 +735,9 @@ class _VersusScreenState extends State<VersusScreen>
   /// プレイヤーの側：名前・HP・問題・選択肢
   Widget _panel(int side) {
     final p = _match.players[side];
-    final q = _match.current;
+    // 結果を見せている間は、いま答えた問題を出したままにする
+    // （対戦の中ではもう次の問題に進んでいるので、current を出すと次の問題の正解が見えてしまう）
+    final q = _reveal && _last != null ? _last!.question : _match.current;
     final locked = _match.isLocked(side);
     final last = _last;
     final color = side == 0 ? const Color(0xFF3B7DD8) : const Color(0xFFD64545);

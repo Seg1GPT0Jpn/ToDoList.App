@@ -29,6 +29,51 @@ Future<void> _frames(WidgetTester t, int n) async {
 
 void main() {
   onlineTests();
+  testWidgets('答えたあとの結果表示で、次の問題とその正解が見えない', (t) async {
+    final qs = [
+      for (var i = 0; i < 8; i++)
+        QuizQuestion(
+          id: 'english_r$i',
+          category: QuestionCategory.usage,
+          prompt: '問題$i',
+          choices: ['正解$i', 'はずれ$i-a', 'はずれ$i-b', 'はずれ$i-c'],
+          answerIndex: 0,
+        ),
+    ];
+    await openScreen(
+      t,
+      VersusScreen(
+        questions: qs,
+        names: const ['あお', 'あか'],
+        rounds: 5,
+        random: Random(3),
+      ),
+      size: const Size(420, 900),
+      frames: 5,
+    );
+    int shown() {
+      for (var i = 0; i < qs.length; i++) {
+        if (find.text('問題$i').evaluate().isNotEmpty) return i;
+      }
+      return -1;
+    }
+
+    final first = shown();
+    expect(first, isNot(-1));
+    await t.tap(find.widgetWithText(OutlinedButton, '正解$first').first);
+    await _frames(t, 3);
+    // 結果を見せている間：答えた問題のまま
+    expect(shown(), first);
+    expect(find.text('正解$first'), findsWidgets);
+    for (var i = 0; i < qs.length; i++) {
+      if (i != first) expect(find.text('正解$i'), findsNothing);
+    }
+    // しばらくすると次の問題へ
+    await _frames(t, 20);
+    expect(shown(), isNot(first));
+    expect(t.takeException(), isNull);
+  });
+
   testWidgets('対戦の準備画面が開ける', (t) async {
     await openScreen(t, const VersusSetupScreen(), size: const Size(420, 1200));
     expect(find.text('対戦スタート！'), findsOneWidget);
