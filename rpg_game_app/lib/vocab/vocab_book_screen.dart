@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:rpg_game/rpg_game.dart';
 
@@ -217,6 +219,9 @@ class _VocabBookScreenState extends State<VocabBookScreen> {
 
   /// 形式を選んで練習するときの問題数（null なら全部）と順番
   int? _drillCount = 20;
+
+  /// 1回に出せる最大の問題数（EEVI は50問まで）
+  int? get _limit => book.id == 'eevi' ? 50 : null;
   bool _shuffle = true;
 
   Widget _drillOptions() => Column(
@@ -228,7 +233,10 @@ class _VocabBookScreenState extends State<VocabBookScreen> {
         crossAxisAlignment: WrapCrossAlignment.center,
         children: [
           const Text('問題数', style: TextStyle(fontSize: 12)),
-          for (final n in const <int?>[20, 50, 100, null])
+          for (final n
+              in _limit == null
+                  ? const <int?>[20, 50, 100, null]
+                  : const <int?>[20, 50])
             ChoiceChip(
               key: ValueKey('drill-count-${n ?? 'all'}'),
               label: Text(n == null ? '全部' : '$n問'),
@@ -272,7 +280,9 @@ class _VocabBookScreenState extends State<VocabBookScreen> {
               final tasks = VocabPlanner.drill(
                 cards,
                 m,
-                count: _drillCount,
+                count: _limit == null
+                    ? _drillCount
+                    : min(_drillCount ?? _limit!, _limit!),
                 shuffle: _shuffle,
               );
               _start('$range ${m.label}（${tasks.length}問）', tasks);
