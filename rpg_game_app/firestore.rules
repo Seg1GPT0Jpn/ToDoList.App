@@ -14,6 +14,15 @@ service cloud.firestore {
         && docId == 'main';
     }
 
+    // 問題の報告。ログインした人が自分の名前で送るだけ（読むのは管理者が Firebase コンソールで）
+    match /question_reports/{id} {
+      allow create: if request.auth != null
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.keys().hasOnly(['questionId', 'reason', 'note', 'at', 'uid'])
+        && request.resource.data.note is string
+        && request.resource.data.note.size() <= 500;
+    }
+
     // オンライン対戦の部屋（部屋番号 4けた）。ログインした人だけが使える。
     // 作れるのは自分がホストの部屋だけ。更新できるのはホストとゲスト（空いていれば入れる）。
     match /versus_rooms/{code} {

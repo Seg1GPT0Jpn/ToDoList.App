@@ -93,6 +93,9 @@ class QuizQuestion {
     this.hint,
     this.tags = const [],
     this.commonMistakes = const [],
+    this.figure,
+    this.accepted,
+    this.listen = false,
   }) {
     if (choices.length != 4) {
       throw ArgumentError('問題 $id: 選択肢は4つ必要です（${choices.length}個）');
@@ -132,7 +135,43 @@ class QuizQuestion {
   /// よくある間違い（不正解のときに表示する）
   final List<String> commonMistakes;
 
+  /// 図・グラフ（任意）。形式は figure_spec.dart。アプリ側で描く。
+  final Map<String, dynamic>? figure;
+
+  /// 入力で答えられる問題なら、正解として受け付ける答え（正解の選択肢も自動で受け付ける）
+  final List<String>? accepted;
+
+  /// リスニング問題：本文（sentence）を文字で見せず、読み上げて聞かせる
+  final bool listen;
+
+  /// 入力で答えられる問題か
+  bool get isInput => accepted != null;
+
   String get answer => choices[answerIndex];
+
+  /// 入力された答えが正解か（全角・半角、大文字・小文字、空白の違いは無視する）
+  bool matchesInput(String input) {
+    final a = normalizeAnswer(input);
+    if (a.isEmpty) return false;
+    return [answer, ...?accepted].any((s) => normalizeAnswer(s) == a);
+  }
+
+  /// 答えの比較用に、表記の小さな違いをそろえる
+  static String normalizeAnswer(String s) {
+    final b = StringBuffer();
+    for (final r in s.runes) {
+      var c = r;
+      if (c >= 0xFF01 && c <= 0xFF5E) c -= 0xFEE0; // 全角英数字・記号 → 半角
+      if (c == 0x3000 || c == 0x20 || c == 0x09) continue; // 空白
+      if (c == 0x2212 || c == 0x2013 || c == 0x2014) c = 0x2D; // − – — → -
+      b.writeCharCode(c);
+    }
+    var out = b.toString().toLowerCase();
+    while (out.isNotEmpty && '。.、,'.contains(out[out.length - 1])) {
+      out = out.substring(0, out.length - 1);
+    }
+    return out;
+  }
 
   /// バトル中に出す短い解説（最初の1文）。全文は復習手帳で読める。
   String get shortExplanation {
@@ -164,6 +203,9 @@ class QuizQuestion {
             ? null
             : (passages[json['passageId']] ??
                 (throw FormatException('本文が見つかりません: ${json['passageId']}'))),
+        figure: json['figure'] as Map<String, dynamic>?,
+        accepted: (json['accepted'] as List?)?.cast<String>(),
+        listen: json['listen'] as bool? ?? false,
       );
 
   Map<String, dynamic> toJson() => {
@@ -179,6 +221,9 @@ class QuizQuestion {
         if (hint != null) 'hint': hint,
         if (tags.isNotEmpty) 'tags': tags,
         if (commonMistakes.isNotEmpty) 'commonMistakes': commonMistakes,
+        if (figure != null) 'figure': figure,
+        if (accepted != null) 'accepted': accepted,
+        if (listen) 'listen': true,
       };
 }
 

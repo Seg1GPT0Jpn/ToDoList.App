@@ -11,6 +11,9 @@ import '../art/battle_backdrop.dart';
 import '../art/enemy_painter.dart';
 import '../art/hero_painter.dart';
 import '../art/paper.dart';
+import '../quiz/figure_view.dart';
+import '../quiz/question_report.dart';
+import '../vocab/speech.dart';
 import 'result_screen.dart';
 
 /// ターン制クイズバトル
@@ -204,6 +207,10 @@ class _BattleScreenState extends State<BattleScreen>
   final List<_Popup> _popups = [];
   TurnResult? _last;
   bool _locked = true;
+
+  /// 入力問題の入力欄と、答えた文字
+  final _input = TextEditingController();
+  String? _typed;
   bool _finishing = false;
 
   @override
@@ -250,6 +257,7 @@ class _BattleScreenState extends State<BattleScreen>
 
   @override
   void dispose() {
+    _input.dispose();
     _services.music.leave(_musicKey);
     for (final c in [
       _idle,
@@ -271,13 +279,41 @@ class _BattleScreenState extends State<BattleScreen>
     setState(() {
       _last = null;
       _locked = false;
+      _typed = null;
+      _input.clear();
     });
     _stopwatch
       ..reset()
       ..start();
-    // 長文の設問は制限時間が長い
-    _timer.duration = _engine.limitFor(_engine.currentQuestion);
+    final q = _engine.currentQuestion;
+    // 長文の設問は制限時間が長い。入力とリスニングはさらに長くする
+    final limit = _engine.limitFor(q);
+    _timer.duration = q.source.isInput || q.source.listen ? limit * 2 : limit;
     _timer.forward(from: 0);
+    if (q.source.listen) _listen(q);
+  }
+
+  /// リスニング問題の本文を読み上げる
+  void _listen(PresentedQuestion q) {
+    final text = q.source.sentence;
+    if (text == null) return;
+    final japanese = RegExp(r'[\u3040-\u30FF\u4E00-\u9FFF]').hasMatch(text);
+    speaker
+        .speak(
+          text.replaceAll(RegExp(r'^[A-Z]:\s*', multiLine: true), ''),
+          lang: japanese ? 'ja-JP' : 'en-US',
+          rate: 0.45,
+        )
+        .catchError((_) {});
+  }
+
+  /// 入力問題に答える
+  void _submitTyped(PresentedQuestion q) {
+    if (_locked) return;
+    final text = _input.text;
+    _typed = text;
+    final ok = q.source.matchesInput(text);
+    _resolve(ok ? q.correctIndex : (q.correctIndex + 1) % q.choices.length);
   }
 
   /// 手札のカードを使う（1問に1枚。回答前だけ）
@@ -1172,18 +1208,26 @@ class _BattleScreenState extends State<BattleScreen>
             child: child,
           ),
         ),
-        child: Column(
+        child: LayoutBuilder(
           key: ValueKey(q.hashCode),
-          children: [
-            _questionCard(q),
-            if (!showExplanation) _cardHand(),
-            const SizedBox(height: 6),
-            Expanded(
-              child: showExplanation
-                  ? _explanation(q, last)
-                  : _choices(q, last),
-            ),
-          ],
+          builder: (context, box) => Column(
+            children: [
+              // 図や長い本文があっても、選択肢の場所は残す
+              ConstrainedBox(
+                constraints: BoxConstraints(
+                  maxHeight: box.maxHeight * (showExplanation ? 0.35 : 0.5),
+                ),
+                child: SingleChildScrollView(child: _questionCard(q)),
+              ),
+              if (!showExplanation) _cardHand(),
+              const SizedBox(height: 6),
+              Expanded(
+                child: showExplanation
+                    ? _explanation(q, last)
+                    : _choices(q, last),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -1326,31 +1370,88 @@ class _BattleScreenState extends State<BattleScreen>
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-            decoration: BoxDecoration(
-              color: TsuzuriColors.accent.withValues(alpha: 0.1),
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: Text(
-              q.source.category.label,
-              style: TextStyle(
-                fontSize: 11,
-                color: TsuzuriColors.accent,
-                fontWeight: FontWeight.w700,
+          Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                decoration: BoxDecoration(
+                  color: TsuzuriColors.accent.withValues(alpha: 0.1),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Text(
+                  q.source.listen
+                      ? 'リスニング'
+                      : q.source.isInput
+                      ? '${q.source.category.label}・入力'
+                      : q.source.category.label,
+                  style: TextStyle(
+                    fontSize: 11,
+                    color: TsuzuriColors.accent,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
               ),
-            ),
+              const Spacer(),
+              // 答えたあとで、おかしな問題を報告できる
+              if (_last != null)
+                InkWell(
+                  key: const ValueKey('report-question'),
+                  onTap: () => showReportDialog(context, q.source),
+                  child: Padding(
+                    padding: const EdgeInsets.all(2),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(
+                          Icons.flag_outlined,
+                          size: 15,
+                          color: TsuzuriColors.inkSoft,
+                        ),
+                        Text(
+                          '報告',
+                          style: TextStyle(
+                            fontSize: 11,
+                            color: TsuzuriColors.inkSoft,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+            ],
           ),
           const SizedBox(height: 6),
           Text(
             q.source.prompt,
             style: TextStyle(fontSize: 14, color: TsuzuriColors.inkSoft),
           ),
-          if (q.source.sentence != null) ...[
+          if (q.source.figure != null) ...[
+            const SizedBox(height: 4),
+            FigureView(q.source.figure!, height: 130),
+          ],
+          if (q.source.sentence != null && q.source.listen && _last == null)
+            Padding(
+              padding: const EdgeInsets.only(top: 6),
+              child: OutlinedButton.icon(
+                key: const ValueKey('listen-again'),
+                onPressed: () => _listen(q),
+                icon: const Icon(Icons.volume_up),
+                label: const Text('もう一度聞く'),
+              ),
+            )
+          else if (q.source.sentence != null) ...[
             const SizedBox(height: 6),
-            Text(
-              q.source.sentence!,
-              style: serif(17, color: TsuzuriColors.ink),
+            ConstrainedBox(
+              constraints: const BoxConstraints(maxHeight: 150),
+              child: SingleChildScrollView(
+                child: Text(
+                  q.source.sentence!,
+                  style: serif(
+                    q.source.sentence!.length > 80 ? 14 : 17,
+                    color: TsuzuriColors.ink,
+                  ),
+                ),
+              ),
             ),
           ],
         ],
@@ -1359,6 +1460,7 @@ class _BattleScreenState extends State<BattleScreen>
   }
 
   Widget _choices(PresentedQuestion q, TurnResult? last) {
+    if (q.source.isInput) return _inputPane(q, last);
     // 長文や、選択肢が長い問題（理科の説明文など）は縦に並べて全文を見せる
     final reading =
         q.source.passage != null || q.choices.any((c) => c.length > 12);
@@ -1468,6 +1570,77 @@ class _BattleScreenState extends State<BattleScreen>
           ),
         ),
       ],
+    );
+  }
+
+  /// 入力問題：答えを打ちこむ
+  Widget _inputPane(PresentedQuestion q, TurnResult? last) {
+    if (last != null) {
+      return Center(
+        child: Text.rich(
+          TextSpan(
+            children: [
+              if (_typed != null) ...[
+                const TextSpan(text: 'あなたの答え：'),
+                TextSpan(
+                  text: _typed!.isEmpty ? '（なし）' : _typed,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w800,
+                    color: last.correct
+                        ? TsuzuriColors.correct
+                        : TsuzuriColors.wrong,
+                  ),
+                ),
+                const TextSpan(text: '\n'),
+              ],
+              const TextSpan(text: '正解：'),
+              TextSpan(
+                text: q.source.answer,
+                style: const TextStyle(
+                  fontWeight: FontWeight.w800,
+                  color: TsuzuriColors.correct,
+                ),
+              ),
+            ],
+          ),
+          textAlign: TextAlign.center,
+          style: const TextStyle(fontSize: 17, height: 1.6),
+        ),
+      );
+    }
+    return SingleChildScrollView(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          const SizedBox(height: 8),
+          TextField(
+            key: const ValueKey('answer-input'),
+            controller: _input,
+            enabled: !_locked,
+            autofocus: true,
+            textInputAction: TextInputAction.done,
+            onSubmitted: (_) => _submitTyped(q),
+            style: const TextStyle(fontSize: 18),
+            decoration: const InputDecoration(
+              hintText: '答えを入力',
+              border: OutlineInputBorder(),
+            ),
+          ),
+          const SizedBox(height: 8),
+          Row(
+            children: [
+              Expanded(
+                child: FilledButton.icon(
+                  key: const ValueKey('answer-submit'),
+                  onPressed: _locked ? null : () => _submitTyped(q),
+                  icon: const Icon(Icons.check),
+                  label: const Text('答える'),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 

@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:rpg_game/rpg_game.dart';
 
 import '../app/services.dart';
 import '../app/settings.dart';
 import '../app/theme.dart';
 import '../art/paper.dart';
 import 'design.dart';
+import 'reminder.dart';
 
 /// 設定（音・文字の大きさ・動き）
 class SettingsScreen extends StatelessWidget {
@@ -111,6 +114,36 @@ class SettingsScreen extends StatelessWidget {
                 subtitle: const Text('画面のゆれ・点滅・大きな動きをおさえます'),
                 value: s.reduceMotion,
                 onChanged: (v) => store.update(s.copyWith(reduceMotion: v)),
+              ),
+              const SectionTitle('お知らせ'),
+              const ReminderTile(),
+              const SectionTitle('学習レポート'),
+              ListTile(
+                key: const ValueKey('copy-report'),
+                leading: const Icon(Icons.content_copy),
+                title: const Text('学習レポートをコピー'),
+                subtitle: const Text('保護者や先生に、LINE やメールで送れます'),
+                onTap: () async {
+                  final text = StudyReport.text(
+                    services.meta.record,
+                    RpgServices.today(),
+                  );
+                  await Clipboard.setData(ClipboardData(text: text));
+                  if (!context.mounted) return;
+                  showDialog<void>(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      title: const Text('コピーしました'),
+                      content: SingleChildScrollView(child: Text(text)),
+                      actions: [
+                        TextButton(
+                          onPressed: () => Navigator.pop(context),
+                          child: const Text('とじる'),
+                        ),
+                      ],
+                    ),
+                  );
+                },
               ),
               const SizedBox(height: Space.l),
               Text(

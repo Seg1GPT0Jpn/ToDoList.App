@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+
+import '../quiz/figure_view.dart';
+
 import 'package:rpg_game/rpg_game.dart';
 
 import '../app/services.dart';
@@ -124,6 +127,7 @@ class _ReviewNotebookScreenState extends State<ReviewNotebookScreen> {
       children: [
         if (q.sentence != null)
           Text(q.prompt, style: const TextStyle(fontSize: 12.5)),
+        if (q.figure != null) FigureView(q.figure!, height: 120),
         const SizedBox(height: 4),
         Text(
           '選択肢：${q.choices.join(' / ')}',

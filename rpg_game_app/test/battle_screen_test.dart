@@ -19,6 +19,7 @@ import 'package:rpg_game_app/data/prefs_progress_repository.dart';
 import 'package:rpg_game_app/study/exam_world_store.dart';
 import 'package:rpg_game_app/study/sky_home_screen.dart';
 import 'package:rpg_game_app/study/personal_books.dart';
+import 'package:rpg_game_app/vocab/speech.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class _Silent implements AudioBackend {
@@ -70,6 +71,7 @@ Future<void> _open(
   WidgetTester tester,
   StageDef stage, {
   bool trial = false,
+  List<QuizQuestion>? questions,
 }) async {
   SharedPreferences.setMockInitialValues({});
   final prefs = await SharedPreferences.getInstance();
@@ -87,7 +89,7 @@ Future<void> _open(
         home: BattleScreen(
           world: RpgCatalog.world(stage.worldId),
           stage: stage,
-          questions: _questions,
+          questions: questions ?? _questions,
           progress: RpgProgress.initial,
           trial: trial,
         ),
@@ -111,6 +113,57 @@ void main() {
 
   testWidgets('ふつうのバトルが開けて、問題が出る', (tester) async {
     await _open(tester, english.first);
+  });
+
+  testWidgets('入力・図・リスニングの問題に答えて、報告できる', (tester) async {
+    speaker = SilentSpeaker();
+    final qs = [
+      for (var i = 0; i < 8; i++)
+        QuizQuestion(
+          id: 'in$i',
+          category: QuestionCategory.calculation,
+          prompt: '問題$i',
+          sentence: 'Hello.',
+          choices: const ['12', '13', '14', '15'],
+          answerIndex: 0,
+          explanation: '解説。',
+          accepted: const ['十二'],
+          listen: true,
+          figure: const {
+            'w': 100,
+            'h': 60,
+            'items': [
+              {
+                'poly': [10, 50, 90, 50, 50, 10],
+              },
+              {
+                'text': 'A',
+                'at': [50, 5],
+              },
+            ],
+          },
+        ),
+    ];
+    await _open(tester, english.first, questions: qs);
+    expect(find.byKey(const ValueKey('listen-again')), findsOneWidget);
+    expect(find.text('Hello.'), findsNothing);
+    await tester.enterText(find.byKey(const ValueKey('answer-input')), '１２');
+    await tester.testTextInput.receiveAction(TextInputAction.done);
+    await tester.pump(const Duration(milliseconds: 300));
+    expect(find.textContaining('あなたの答え'), findsOneWidget);
+    expect(find.text('Hello.'), findsOneWidget);
+    await tester.tap(find.byKey(const ValueKey('report-question')));
+    for (var i = 0; i < 5; i++) {
+      await tester.pump(const Duration(milliseconds: 100));
+    }
+    await tester.tap(find.byKey(const ValueKey('report-send')));
+    await tester.pump(const Duration(milliseconds: 300));
+    final prefs = await SharedPreferences.getInstance();
+    expect(prefs.getStringList('question_reports'), hasLength(1));
+    for (var i = 0; i < 30; i++) {
+      await tester.pump(const Duration(milliseconds: 100));
+    }
+    expect(tester.takeException(), isNull);
   });
 
   testWidgets('強敵のバトルが開ける', (tester) async {

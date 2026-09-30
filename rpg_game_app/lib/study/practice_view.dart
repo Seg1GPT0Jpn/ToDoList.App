@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+
+import '../quiz/figure_view.dart';
+
 import 'package:rpg_game/rpg_game.dart';
 
 import '../app/theme.dart';
@@ -89,6 +92,7 @@ class _PracticeViewState extends State<PracticeView> {
                   q.source.prompt,
                   style: TextStyle(fontSize: 14, color: TsuzuriColors.inkSoft),
                 ),
+                if (q.source.figure != null) FigureView(q.source.figure!),
                 if (q.source.sentence != null) ...[
                   const SizedBox(height: 6),
                   Text(

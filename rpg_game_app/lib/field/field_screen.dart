@@ -1,5 +1,7 @@
 import 'dart:math';
 
+import '../quiz/figure_view.dart';
+
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 import 'package:rpg_game/rpg_game.dart';
@@ -1517,6 +1519,7 @@ class _MiniQuizState extends State<_MiniQuiz> {
         ),
         const SizedBox(height: 4),
         Text(q.prompt, style: const TextStyle(fontSize: 13)),
+        if (q.figure != null) FigureView(q.figure!, height: 120),
         if (q.sentence != null)
           Padding(
             padding: const EdgeInsets.only(top: 4),

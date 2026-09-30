@@ -1,4 +1,7 @@
 import 'dart:async';
+
+import '../quiz/figure_view.dart';
+
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -787,6 +790,8 @@ class _VersusScreenState extends State<VersusScreen>
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
+                  if (q.source.figure != null)
+                    FigureView(q.source.figure!, height: 110),
                   if (q.source.sentence != null)
                     Text(
                       q.source.sentence!,

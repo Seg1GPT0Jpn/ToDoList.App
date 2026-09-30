@@ -1,4 +1,7 @@
 import 'dart:async';
+
+import '../quiz/figure_view.dart';
+
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -343,6 +346,7 @@ class _MockExamScreenState extends State<MockExamScreen> {
         ),
         const SizedBox(height: 12),
         Text(q.prompt, style: const TextStyle(fontSize: 16, height: 1.6)),
+        if (q.figure != null) FigureView(q.figure!),
         if (q.sentence != null)
           Padding(
             padding: const EdgeInsets.only(top: 8),

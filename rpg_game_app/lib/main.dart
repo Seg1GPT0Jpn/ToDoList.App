@@ -15,6 +15,7 @@ import 'audio/music_director.dart';
 import 'audio/music_scope.dart';
 import 'audio/player_backend.dart';
 import 'cloud/cloud_sync.dart';
+import 'quiz/question_report.dart';
 import 'cloud/firestore_versus_backend.dart';
 import 'cloud/firebase_account_service.dart';
 import 'data/meta_store.dart';
@@ -51,6 +52,19 @@ Future<void> main() async {
     profiles: profiles,
     meta: meta,
   );
+  if (cloud != null) {
+    // 問題の報告は、ログインしていればクラウド（question_reports）にも送る
+    reportSink = ReportSink(
+      upload: (r) async {
+        final uid = cloud.auth.currentUser?.uid;
+        if (uid == null) return;
+        await FirebaseFirestore.instance.collection('question_reports').add({
+          ...r.toJson(),
+          'uid': uid,
+        });
+      },
+    );
+  }
   runApp(
     RpgServices(
       meta: meta,
