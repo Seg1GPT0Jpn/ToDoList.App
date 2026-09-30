@@ -10,6 +10,9 @@ class PersonalBooks {
 
   final SharedPreferences _prefs;
 
+  /// 単語帳練習（VocabStore）も同じ保存先を使う
+  SharedPreferences get prefs => _prefs;
+
   /// TODO(leap-gate): 仮のパスワード。アプリ内に書かれた合言葉なので強い保護ではない。
   /// school_planner の copyright_gate.dart と同じ方式に差し替えること。
   static const leapPassword = 'LEAP';

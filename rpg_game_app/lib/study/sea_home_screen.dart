@@ -11,7 +11,7 @@ import 'exam_world_screens.dart';
 import 'realm_style.dart';
 import 'personal_books.dart';
 import 'sea_battle_launcher.dart';
-import 'sea_quiz_screen.dart';
+import '../vocab/vocab_home.dart';
 
 /// 定期テストの海：教科を選び、単元・単語帳を選ぶ画面
 class SeaHomeScreen extends StatefulWidget {
@@ -64,7 +64,7 @@ class _SeaHomeScreenState extends State<SeaHomeScreen> {
             Tab(text: '高2'),
             Tab(text: '高3'),
             Tab(text: '単語・熟語'),
-            Tab(icon: Icon(Icons.lock_outline, size: 16), text: 'LEAP'),
+            Tab(icon: Icon(Icons.style, size: 16), text: '単語帳練習'),
           ]
         : [
             for (final r in world!.routes) Tab(text: r.name),
@@ -125,7 +125,7 @@ class _SeaHomeScreenState extends State<SeaHomeScreen> {
                   _GradeTab(grade: 2, progress: progress),
                   _GradeTab(grade: 3, progress: progress),
                   _WordsTab(progress: progress),
-                  _LeapTab(books: widget.personalBooks, progress: progress),
+                  VocabHome(books: widget.personalBooks),
                 ],
               );
             },
@@ -414,245 +414,6 @@ class _WordsTab extends StatelessWidget {
               ),
             ),
           ),
-      ],
-    );
-  }
-}
-
-/// LEAP（パスワード保護・端末内に取り込んだ単語帳）
-class _LeapTab extends StatefulWidget {
-  const _LeapTab({required this.books, required this.progress});
-  final PersonalBooks books;
-  final RpgProgress progress;
-
-  @override
-  State<_LeapTab> createState() => _LeapTabState();
-}
-
-class _LeapTabState extends State<_LeapTab> {
-  final _password = TextEditingController();
-  final _paste = TextEditingController();
-  String? _message;
-  WordQuizDirection _dir = WordQuizDirection.enToJa;
-
-  PersonalBooks get books => widget.books;
-
-  @override
-  void dispose() {
-    _password.dispose();
-    _paste.dispose();
-    super.dispose();
-  }
-
-  WordList? get _list {
-    final text = books.leapText;
-    if (text == null) return null;
-    return WordList.parsePasted(listId: 'leap', title: 'LEAP', text: text);
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    if (!books.leapUnlocked) return _gate();
-    final list = _list;
-    if (list == null || list.words.length < 4) return _importer();
-    return _ranges(list);
-  }
-
-  Widget _gate() {
-    return ListView(
-      padding: const EdgeInsets.fromLTRB(40, 24, 16, 24),
-      children: [
-        Icon(Icons.lock, size: 40, color: TsuzuriColors.inkSoft),
-        const SizedBox(height: 8),
-        Center(child: Text('パスワードを入力してください', style: serif(16))),
-        const SizedBox(height: 6),
-        Text(
-          '市販教材の単語を使うモードです。個人の学習用にだけ使ってください。',
-          textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 12, color: TsuzuriColors.inkSoft),
-        ),
-        const SizedBox(height: 16),
-        TextField(
-          controller: _password,
-          obscureText: true,
-          decoration: const InputDecoration(
-            border: OutlineInputBorder(),
-            labelText: 'パスワード',
-          ),
-          onSubmitted: (_) => _unlock(),
-        ),
-        if (_message != null) ...[
-          const SizedBox(height: 8),
-          Text(_message!, style: const TextStyle(color: TsuzuriColors.wrong)),
-        ],
-        const SizedBox(height: 12),
-        FilledButton(onPressed: _unlock, child: const Text('ひらく')),
-      ],
-    );
-  }
-
-  void _unlock() {
-    setState(() {
-      _message = books.tryUnlock(_password.text) ? null : 'パスワードがちがいます';
-    });
-  }
-
-  Widget _importer() {
-    return ListView(
-      padding: const EdgeInsets.fromLTRB(40, 16, 16, 24),
-      children: [
-        Text('LEAP の単語リストを取り込む', style: serif(16)),
-        const SizedBox(height: 6),
-        Text(
-          '「番号・英単語・意味」が並んだ一覧（1行に1語、タブ区切り）をそのまま貼り付けてください。'
-          'データはこの端末の中にだけ保存され、インターネットには送られません。',
-          style: TextStyle(
-            fontSize: 12,
-            height: 1.6,
-            color: TsuzuriColors.inkSoft,
-          ),
-        ),
-        const SizedBox(height: 10),
-        TextField(
-          controller: _paste,
-          maxLines: 10,
-          decoration: const InputDecoration(
-            border: OutlineInputBorder(),
-            hintText: '1\tagree\t[自] ①賛成する ...',
-          ),
-        ),
-        if (_message != null) ...[
-          const SizedBox(height: 8),
-          Text(_message!, style: const TextStyle(color: TsuzuriColors.wrong)),
-        ],
-        const SizedBox(height: 12),
-        FilledButton.icon(
-          onPressed: _import,
-          icon: const Icon(Icons.download),
-          label: const Text('取り込む'),
-        ),
-      ],
-    );
-  }
-
-  Future<void> _import() async {
-    final skipped = <int>[];
-    final list = WordList.parsePasted(
-      listId: 'leap',
-      title: 'LEAP',
-      text: _paste.text,
-      skipped: skipped,
-    );
-    if (list.words.length < 4) {
-      setState(() => _message = '単語を読み取れませんでした。一覧をそのまま貼り付けてください。');
-      return;
-    }
-    await books.saveLeapText(_paste.text);
-    _paste.clear();
-    if (!mounted) return;
-    setState(() => _message = null);
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(
-          '${list.words.length}語を取り込みました'
-          '${skipped.isEmpty ? '' : '（読めなかった行: ${skipped.length}行）'}',
-        ),
-      ),
-    );
-  }
-
-  Widget _ranges(WordList list) {
-    const size = 100;
-    final chunks = <List<WordEntry>>[
-      for (var i = 0; i < list.words.length; i += size)
-        list.words.sublist(i, (i + size).clamp(0, list.words.length)),
-    ];
-    String label(List<WordEntry> c) =>
-        '${c.first.number ?? list.words.indexOf(c.first) + 1}〜${c.last.number ?? list.words.indexOf(c.last) + 1}';
-    return ListView(
-      padding: const EdgeInsets.fromLTRB(40, 12, 12, 24),
-      children: [
-        Row(
-          children: [
-            Expanded(
-              child: Text('LEAP（${list.words.length}語）', style: serif(16)),
-            ),
-            PopupMenuButton<String>(
-              onSelected: (v) async {
-                if (v == 'reimport') {
-                  await books.deleteLeapText();
-                } else if (v == 'lock') {
-                  await books.lock();
-                }
-                setState(() {});
-              },
-              itemBuilder: (_) => const [
-                PopupMenuItem(value: 'reimport', child: Text('取り込み直す')),
-                PopupMenuItem(value: 'lock', child: Text('鍵をかける')),
-              ],
-            ),
-          ],
-        ),
-        const SizedBox(height: 6),
-        SegmentedButton<WordQuizDirection>(
-          segments: const [
-            ButtonSegment(value: WordQuizDirection.enToJa, label: Text('英→日')),
-            ButtonSegment(value: WordQuizDirection.jaToEn, label: Text('日→英')),
-          ],
-          selected: {_dir},
-          onSelectionChanged: (s) => setState(() => _dir = s.first),
-        ),
-        const SizedBox(height: 10),
-        Text(
-          '範囲を選ぶと、その中から20問出題します。',
-          style: TextStyle(fontSize: 12, color: TsuzuriColors.inkSoft),
-        ),
-        const SizedBox(height: 8),
-        Wrap(
-          spacing: 8,
-          runSpacing: 8,
-          children: [
-            for (final c in chunks)
-              ActionChip(
-                label: Column(
-                  children: [
-                    Text(label(c)),
-                    Text(
-                      widget
-                                  .progress
-                                  .seaBest['leap_${label(c)}_${_dir.name}'] ==
-                              null
-                          ? '―'
-                          : 'ベスト ${widget.progress.seaBest['leap_${label(c)}_${_dir.name}']}%',
-                      style: TextStyle(
-                        fontSize: 10,
-                        color: TsuzuriColors.inkSoft,
-                      ),
-                    ),
-                  ],
-                ),
-                onPressed: () {
-                  if (c.isEmpty) return;
-                  final set = WordQuizBuilder().build(
-                    list,
-                    direction: _dir,
-                    only: c,
-                  );
-                  Navigator.of(context).push(
-                    MaterialPageRoute<void>(
-                      builder: (_) => SeaQuizScreen(
-                        title:
-                            'LEAP ${label(c)}（${_dir == WordQuizDirection.enToJa ? '英→日' : '日→英'}）',
-                        recordId: 'leap_${label(c)}_${_dir.name}',
-                        questions: set.questions,
-                        count: 20,
-                      ),
-                    ),
-                  );
-                },
-              ),
-          ],
-        ),
       ],
     );
   }
