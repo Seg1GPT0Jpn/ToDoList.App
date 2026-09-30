@@ -790,14 +790,18 @@ class _VersusScreenState extends State<VersusScreen>
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  if (q.source.figure != null)
-                    FigureView(q.source.figure!, height: 110),
-                  if (q.source.sentence != null)
-                    Text(
-                      q.source.sentence!,
-                      style: const TextStyle(fontSize: 14, height: 1.4),
-                    ),
+                  // 問いかけを先に出して、上が切れて読めなくならないようにする
                   Text(q.source.prompt, style: serif(15)),
+                  if (q.source.figure != null)
+                    FigureView(q.source.figure!, height: 100),
+                  if (q.source.sentence != null)
+                    Padding(
+                      padding: const EdgeInsets.only(top: 4),
+                      child: Text(
+                        q.source.sentence!,
+                        style: const TextStyle(fontSize: 15, height: 1.4),
+                      ),
+                    ),
                 ],
               ),
             ),
@@ -821,7 +825,7 @@ class _VersusScreenState extends State<VersusScreen>
             physics: const NeverScrollableScrollPhysics(),
             mainAxisSpacing: 6,
             crossAxisSpacing: 6,
-            childAspectRatio: 3.4,
+            childAspectRatio: 4.2,
             children: [
               for (var i = 0; i < q.choices.length; i++)
                 _choice(side, i, q, locked),
@@ -853,7 +857,11 @@ class _VersusScreenState extends State<VersusScreen>
         maxLines: 2,
         overflow: TextOverflow.ellipsis,
         textAlign: TextAlign.center,
-        style: TextStyle(fontSize: 13, color: TsuzuriColors.ink),
+        style: TextStyle(
+          fontSize: 15,
+          fontWeight: FontWeight.w600,
+          color: TsuzuriColors.ink,
+        ),
       ),
     );
   }

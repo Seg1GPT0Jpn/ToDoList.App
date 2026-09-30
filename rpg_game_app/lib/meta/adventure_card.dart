@@ -42,11 +42,8 @@ class AdventureCard extends StatelessWidget {
         final qs = journal.quest.day == today
             ? journal.quest
             : QuestState(day: today);
-        final due = ReviewPlanner.plan(
-          record,
-          today: today,
-          limit: 99,
-        ).where((i) => i.reason == 'まちがえた' || i.reason == '復習の日').length;
+        // 学習ナビと同じ数え方（復習の日が来た問題の数）
+        final due = record.stats.values.where((s) => s.isDue(today)).length;
         return PaperCard(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

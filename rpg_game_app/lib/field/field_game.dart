@@ -140,6 +140,34 @@ class FieldGame extends FlameGame with KeyboardEvents {
   Facing? padDirection;
   Facing? _keyDirection;
 
+  /// 短く押しただけの方向（歩いている途中に押されても、次の1歩として必ず進む）
+  Facing? _queued;
+
+  /// 十字ボタン・キーが押された瞬間に呼ぶ。短いタップでも取りこぼさない
+  void press(Facing dir) {
+    _queued = dir;
+    // もう一度押したら、目の前の人や看板にもう一度話しかけられる
+    _bumpedDirection = null;
+  }
+
+  /// 向いている先を調べる（Enter・スペース・「しらべる」ボタン）
+  void interact() {
+    if (inputLocked || player.moving) return;
+    final dir = player.facing;
+    final target = (
+      col: player.cell.col + dir.delta.col,
+      row: player.cell.row + dir.delta.row,
+    );
+    final blocked =
+        !map.isFloor(target.col, target.row) ||
+        _enemyAt(target) != null ||
+        _ghosts.values.any((g) => g.cell == target);
+    // 目の前が何もない床なら歩かない（調べるだけ）
+    if (!blocked) return;
+    _bumpedDirection = null;
+    _tryStep(dir);
+  }
+
   /// ダイアログ表示中などは操作を受け付けない
   bool inputLocked = false;
 
@@ -364,6 +392,15 @@ class FieldGame extends FlameGame with KeyboardEvents {
         keysPressed.contains(LogicalKeyboardKey.keyD)) {
       dir = Facing.right;
     }
+    if (event is KeyDownEvent) {
+      if (event.logicalKey == LogicalKeyboardKey.enter ||
+          event.logicalKey == LogicalKeyboardKey.numpadEnter ||
+          event.logicalKey == LogicalKeyboardKey.space) {
+        interact();
+      } else if (dir != null) {
+        press(dir);
+      }
+    }
     _keyDirection = dir;
     return KeyEventResult.handled;
   }
@@ -376,12 +413,12 @@ class FieldGame extends FlameGame with KeyboardEvents {
     if (area.value != label) area.value = label;
     final no = map.areaAt(player.cell.col, player.cell.row);
     if (areaNo.value != no) areaNo.value = no;
-    final dir = padDirection ?? _keyDirection;
+    final dir = padDirection ?? _keyDirection ?? _queued;
     if (dir != _bumpedDirection) _bumpedDirection = null;
-    if (!inputLocked &&
-        !player.moving &&
-        dir != null &&
-        dir != _bumpedDirection) {
+    if (inputLocked) {
+      _queued = null;
+    } else if (!player.moving && dir != null && dir != _bumpedDirection) {
+      _queued = null;
       _tryStep(dir);
     }
     // 近くにいる敵には「！」を出す

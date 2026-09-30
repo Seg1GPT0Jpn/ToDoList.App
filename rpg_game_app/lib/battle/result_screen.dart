@@ -17,7 +17,11 @@ class ResultScreen extends StatefulWidget {
     this.ghost = false,
     this.skillBefore,
     this.skillAfter,
+    this.backLabel = 'フィールドにもどる',
   });
+
+  /// 下の「もどる」ボタンの文字（どこへ戻るか）
+  final String backLabel;
 
   /// このバトルの前と後の、単元の熟練度（学習ステータス）
   final SkillScore? skillBefore;
@@ -130,9 +134,12 @@ class _ResultScreenState extends State<ResultScreen>
           child: FilledButton.icon(
             onPressed: () => Navigator.of(context).pop(),
             icon: const Icon(Icons.directions_walk),
-            label: const Padding(
-              padding: EdgeInsets.symmetric(vertical: 12),
-              child: Text('フィールドにもどる', style: TextStyle(fontSize: 16)),
+            label: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 12),
+              child: Text(
+                widget.backLabel,
+                style: const TextStyle(fontSize: 16),
+              ),
             ),
           ),
         ),
@@ -266,11 +273,16 @@ class _ResultScreenState extends State<ResultScreen>
                       ),
                     ),
                   ],
-                  if (s.missedQuestions.isNotEmpty) ...[
+                  if (s.turns.isNotEmpty) ...[
                     const SizedBox(height: 20),
-                    Text('ふりかえり', style: serif(16)),
+                    Text('ふりかえり（タップで解説）', style: serif(16)),
                     const SizedBox(height: 6),
-                    for (final q in s.missedQuestions) _review(q),
+                    // まちがえた問題を先に、正解した問題も見直せるように並べる
+                    for (final t in [
+                      ...s.turns.where((t) => !t.correct),
+                      ...s.turns.where((t) => t.correct),
+                    ])
+                      _review(t),
                   ],
                   const SizedBox(height: 16),
                 ],
@@ -448,27 +460,52 @@ class _ResultScreenState extends State<ResultScreen>
     ),
   );
 
-  Widget _review(QuizQuestion q) => Card(
-    margin: const EdgeInsets.only(bottom: 8),
-    child: ExpansionTile(
-      shape: const Border(),
-      title: Text(q.sentence ?? q.prompt, style: const TextStyle(fontSize: 14)),
-      subtitle: Text(
-        '正解：${q.answer}',
-        style: const TextStyle(
-          color: TsuzuriColors.correct,
-          fontWeight: FontWeight.w700,
+  Widget _review(TurnResult t) {
+    final q = t.question.source;
+    final chosen = t.chosenIndex;
+    final mine = t.timedOut || chosen == null
+        ? '時間切れ'
+        : t.question.choices[chosen];
+    return Card(
+      margin: const EdgeInsets.only(bottom: 8),
+      child: ExpansionTile(
+        shape: const Border(),
+        leading: Icon(
+          t.correct ? Icons.check_circle : Icons.cancel,
+          color: t.correct ? TsuzuriColors.correct : TsuzuriColors.wrong,
         ),
+        title: Text(
+          q.sentence == null ? q.prompt : '${q.prompt}\n${q.sentence}',
+          maxLines: 3,
+          overflow: TextOverflow.ellipsis,
+          style: const TextStyle(fontSize: 14),
+        ),
+        subtitle: Text.rich(
+          TextSpan(
+            children: [
+              if (!t.correct)
+                TextSpan(
+                  text: 'あなた：$mine　',
+                  style: const TextStyle(color: TsuzuriColors.wrong),
+                ),
+              TextSpan(
+                text: '正解：${q.answer}',
+                style: const TextStyle(color: TsuzuriColors.correct),
+              ),
+            ],
+          ),
+          style: const TextStyle(fontWeight: FontWeight.w700),
+        ),
+        childrenPadding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
+        children: [
+          Text(
+            q.explanation ?? '',
+            style: const TextStyle(fontSize: 13, height: 1.6),
+          ),
+        ],
       ),
-      childrenPadding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
-      children: [
-        Text(
-          q.explanation ?? '',
-          style: const TextStyle(fontSize: 13, height: 1.6),
-        ),
-      ],
-    ),
-  );
+    );
+  }
 }
 
 /// はんこ風の「勝利」「敗北」

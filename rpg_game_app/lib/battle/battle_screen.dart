@@ -208,6 +208,14 @@ class _BattleScreenState extends State<BattleScreen>
   TurnResult? _last;
   bool _locked = true;
 
+  /// 問題が切りかわった直後の誤タップを防ぐ（最初の 0.3 秒は選択肢を受け付けない）
+  bool get _justStarted =>
+      (_timer.duration ?? Duration.zero) * _timer.value <
+      const Duration(milliseconds: 300);
+
+  /// 1回目のタップで選んだカード（もう一度タップすると使う）
+  int? _armedCard;
+
   /// 入力問題の入力欄と、答えた文字
   final _input = TextEditingController();
   String? _typed;
@@ -280,6 +288,7 @@ class _BattleScreenState extends State<BattleScreen>
       _last = null;
       _locked = false;
       _typed = null;
+      _armedCard = null;
       _input.clear();
     });
     _stopwatch
@@ -314,6 +323,16 @@ class _BattleScreenState extends State<BattleScreen>
     _typed = text;
     final ok = q.source.matchesInput(text);
     _resolve(ok ? q.correctIndex : (q.correctIndex + 1) % q.choices.length);
+  }
+
+  /// カードは1回目のタップで説明を出し、もう一度タップすると使う
+  void _tapCard(int index) {
+    if (_armedCard == index) {
+      setState(() => _armedCard = null);
+      _useCard(index);
+    } else {
+      setState(() => _armedCard = index);
+    }
   }
 
   /// 手札のカードを使う（1問に1枚。回答前だけ）
@@ -690,7 +709,10 @@ class _BattleScreenState extends State<BattleScreen>
     final result = widget.trial
         // 練習（確認用・定期テストの海・試験対策）では経験値を出さない
         ? StageClearResult(
-            expResult: Progression.addExp(latest, 0),
+            expResult: Progression.addExp(
+              latest,
+              Progression.practiceExp(summary, latest.level),
+            ),
             firstClear: false,
             newlyUnlockedStageId: null,
           )
@@ -706,7 +728,7 @@ class _BattleScreenState extends State<BattleScreen>
             stage: widget.stage,
             summary: summary,
           );
-    if (!widget.trial) await services.repository.save(result.progress);
+    await services.repository.save(result.progress);
     var saved = result.progress;
     // 必殺技を決めたことを記録する（実績「必殺の一撃」）
     if (summary.turns.any((t) => t.special)) {
@@ -730,6 +752,13 @@ class _BattleScreenState extends State<BattleScreen>
           summary: summary,
           result: result,
           ghost: widget.ghost,
+          backLabel: switch (_mode) {
+            BattleMode.rpg || BattleMode.ghost => 'フィールドにもどる',
+            BattleMode.sea => '単元の一覧にもどる',
+            BattleMode.review => '復習の塔にもどる',
+            BattleMode.exam => 'ワールドにもどる',
+            BattleMode.trial => 'もどる',
+          },
         ),
         transitionsBuilder: (_, a, _, child) =>
             FadeTransition(opacity: a, child: child),
@@ -738,6 +767,10 @@ class _BattleScreenState extends State<BattleScreen>
   }
 
   Future<void> _confirmFlee() async {
+    // 確認している間は制限時間を止める
+    final running = _timer.isAnimating;
+    _timer.stop();
+    _stopwatch.stop();
     final flee = await showDialog<bool>(
       context: context,
       builder: (context) => AlertDialog(
@@ -755,7 +788,13 @@ class _BattleScreenState extends State<BattleScreen>
         ],
       ),
     );
-    if (flee == true && mounted) Navigator.of(context).pop();
+    if (!mounted) return;
+    if (flee == true) {
+      Navigator.of(context).pop();
+    } else if (running && !_locked) {
+      _stopwatch.start();
+      _timer.forward();
+    }
   }
 
   @override
@@ -1339,8 +1378,9 @@ class _BattleScreenState extends State<BattleScreen>
                     padding: const EdgeInsets.symmetric(horizontal: 2),
                     child: _CardChip(
                       card: card,
-                      active: false,
-                      onTap: canUse ? () => _useCard(i) : null,
+                      active: _armedCard == i,
+                      armed: _armedCard == i,
+                      onTap: canUse ? () => _tapCard(i) : null,
                     ),
                   ),
                 ),
@@ -1517,7 +1557,12 @@ class _BattleScreenState extends State<BattleScreen>
               type: MaterialType.transparency,
               child: InkWell(
                 borderRadius: BorderRadius.circular(12),
-                onTap: _locked ? null : () => _resolve(i),
+                onTap: _locked
+                    ? null
+                    : () {
+                        if (_justStarted) return;
+                        _resolve(i);
+                      },
                 child: Center(
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8),
@@ -1779,9 +1824,17 @@ class _Tag extends StatelessWidget {
 
 /// 手札のカード
 class _CardChip extends StatelessWidget {
-  const _CardChip({required this.card, required this.active, this.onTap});
+  const _CardChip({
+    required this.card,
+    required this.active,
+    this.armed = false,
+    this.onTap,
+  });
   final CardDef card;
   final bool active;
+
+  /// 1回目のタップで選ばれている（もう一度タップで使う）
+  final bool armed;
   final VoidCallback? onTap;
 
   @override
@@ -1790,6 +1843,8 @@ class _CardChip extends StatelessWidget {
     final color = rare ? const Color(0xFF6A4BA8) : TsuzuriColors.accent;
     return Tooltip(
       message: card.description,
+      // 下に出すと選択肢に重なるので、上に出す
+      preferBelow: false,
       child: Material(
         color: active
             ? color.withValues(alpha: 0.18)
@@ -1805,7 +1860,11 @@ class _CardChip extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 4),
               child: Text(
-                active ? '${card.name}：${card.description}' : card.name,
+                armed
+                    ? 'もう一度タップで使う：${card.description}'
+                    : active
+                    ? '${card.name}：${card.description}'
+                    : card.name,
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(

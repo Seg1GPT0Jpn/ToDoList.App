@@ -217,10 +217,10 @@ class VersusMatch {
 
 /// CPU の強さ
 enum CpuLevel {
-  easy('かんたん', 0.55, 6.0, 10.0),
-  normal('ふつう', 0.7, 4.0, 8.0),
-  hard('つよい', 0.85, 2.5, 6.0),
-  master('達人', 0.95, 1.5, 4.0);
+  easy('かんたん', 0.55, 4.0, 7.0),
+  normal('ふつう', 0.7, 2.5, 5.0),
+  hard('つよい', 0.85, 1.5, 3.5),
+  master('達人', 0.95, 1.0, 2.5);
 
   const CpuLevel(this.label, this.accuracy, this.minSeconds, this.maxSeconds);
   final String label;
@@ -244,7 +244,7 @@ class VersusCpu {
   Duration thinkTime(PresentedQuestion q) {
     // 長い問題ほど少し時間がかかる
     final long =
-        (q.source.prompt.length + (q.source.sentence?.length ?? 0)) / 80;
+        (q.source.prompt.length + (q.source.sentence?.length ?? 0)) / 200;
     final s = level.minSeconds +
         _random.nextDouble() * (level.maxSeconds - level.minSeconds) +
         long;

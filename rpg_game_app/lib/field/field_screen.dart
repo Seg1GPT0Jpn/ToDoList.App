@@ -748,8 +748,8 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
                 child: Row(
                   children: [
                     _RoundButton(
-                      icon: Icons.map_outlined,
-                      tooltip: 'ワールドマップへ',
+                      icon: Icons.arrow_back,
+                      tooltip: 'ワールドマップにもどる',
                       onTap: () => Navigator.of(context).pop(),
                     ),
                     const SizedBox(width: 8),
@@ -823,6 +823,24 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
               left: 16,
               bottom: 24,
               child: SafeArea(child: _DPad(game: _game)),
+            ),
+          // しらべる（向いている先の人・看板・宝箱などに話しかける）
+          if (_dialog == null)
+            Positioned(
+              right: 76,
+              bottom: 32,
+              child: SafeArea(
+                child: FloatingActionButton(
+                  key: const ValueKey('field-interact'),
+                  heroTag: null,
+                  tooltip: 'しらべる（Enter・スペース）',
+                  onPressed: _game.interact,
+                  child: const Text(
+                    'しらべる',
+                    style: TextStyle(fontSize: 11, fontWeight: FontWeight.w700),
+                  ),
+                ),
+              ),
             ),
           if (_dialog != null)
             Positioned(
@@ -1420,7 +1438,10 @@ class _DPad extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget button(Facing dir, IconData icon) => Listener(
-      onPointerDown: (_) => game.padDirection = dir,
+      onPointerDown: (_) {
+        game.padDirection = dir;
+        game.press(dir);
+      },
       onPointerUp: (_) {
         if (game.padDirection == dir) game.padDirection = null;
       },

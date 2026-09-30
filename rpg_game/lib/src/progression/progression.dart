@@ -92,6 +92,11 @@ class Progression {
     );
   }
 
+  /// 練習のバトル（海・空・復習の塔・おすすめの練習）で得る経験値。
+  /// 正解した数に応じて、レベルが高くても 0 にならないようにする。
+  static int practiceExp(BattleSummary summary, int level) =>
+      summary.correctCount * (2 + level ~/ 2);
+
   /// バトル結果から獲得経験値を計算する。
   static int expFor(StageDef stage, BattleSummary summary,
       {required bool alreadyCleared}) {

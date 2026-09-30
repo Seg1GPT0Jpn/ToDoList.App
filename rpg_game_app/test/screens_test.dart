@@ -148,6 +148,8 @@ void main() {
           Icons.keyboard_arrow_up,
           Icons.keyboard_arrow_left,
         ]) {
+          // 看板などに話しかけてダイアログが出たら、十字ボタンは消える
+          if (find.byIcon(icon).evaluate().isEmpty) break;
           await t.drag(find.byIcon(icon).first, Offset.zero);
           for (var i = 0; i < 5; i++) {
             await t.pump(const Duration(milliseconds: 100));
@@ -174,6 +176,14 @@ void main() {
       frames: 5,
     );
     for (final key in ['up', 'up', 'left', 'up', 'right', 'right', 'down']) {
+      final icon = switch (key) {
+        'up' => Icons.keyboard_arrow_up,
+        'down' => Icons.keyboard_arrow_down,
+        'left' => Icons.keyboard_arrow_left,
+        _ => Icons.keyboard_arrow_right,
+      };
+      // 看板などに話しかけてダイアログが出たら、十字ボタンは消える
+      if (find.byIcon(icon).evaluate().isEmpty) break;
       await t.drag(
         find.byIcon(switch (key) {
           'up' => Icons.keyboard_arrow_up,
@@ -187,6 +197,7 @@ void main() {
         await t.pump(const Duration(milliseconds: 100));
       }
     }
+    await t.pump(const Duration(seconds: 5));
     expect(t.takeException(), isNull);
   });
 

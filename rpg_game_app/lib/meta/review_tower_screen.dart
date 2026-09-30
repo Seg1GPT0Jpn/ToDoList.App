@@ -92,7 +92,7 @@ class _ReviewTowerScreenState extends State<ReviewTowerScreen> {
                               children: [
                                 Text('いま $floor 階', style: serif(18)),
                                 Text(
-                                  '復習で ${ReviewTower.correctPerFloor} 問正解するごとに1階上へ。'
+                                  '復習で合計 ${ReviewTower.correctPerFloor} 問正解するごとに1階上へ（これまでの正解もふくむ）。'
                                   '5階ごとに塔の番人が待っています。',
                                   style: TextStyle(
                                     fontSize: 12,
@@ -169,7 +169,7 @@ class _ReviewTowerScreenState extends State<ReviewTowerScreen> {
                       )
                     else ...[
                       SectionTitle(
-                        '今回の相手：${items.length} 問',
+                        '今回の相手：最大 ${items.length} 問（8割正解で撃破）',
                         trailing: FilledButton.icon(
                           onPressed: () => _start(context, floor, [
                             for (final (_, q) in items) q,

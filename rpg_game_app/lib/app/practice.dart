@@ -14,7 +14,8 @@ Future<void> startPractice(BuildContext context, StageDef stage) async {
     MaterialPageRoute<void>(
       builder: (_) => BattleScreen(
         world: RpgCatalog.world(stage.worldId),
-        stage: stage,
+        // 高いレベルでも1問で終わらないよう、レベルに合わせた強さにする
+        stage: PracticeBattle.stage(stage, progress.level),
         questions: pool.questions,
         progress: progress,
         trial: true,

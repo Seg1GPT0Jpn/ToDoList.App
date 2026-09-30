@@ -105,3 +105,64 @@ class NavigatorCard extends StatelessWidget {
     );
   }
 }
+
+/// ホームのいちばん上の「今日はまずこれ」ボタン（やることを1つだけ示す）
+class TodayButton extends StatelessWidget {
+  const TodayButton({
+    super.key,
+    required this.record,
+    required this.today,
+    required this.onAdventure,
+  });
+
+  final LearningRecord record;
+  final int today;
+
+  /// おすすめがまだないときは、冒険に出る
+  final VoidCallback onAdventure;
+
+  @override
+  Widget build(BuildContext context) {
+    final r = StudyNavigator.today(record, today: today).firstOrNull;
+    final label = r?.text ?? '英語ワールドで冒険をはじめる';
+    return FilledButton(
+      key: const ValueKey('today-first'),
+      style: FilledButton.styleFrom(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+      ),
+      onPressed: () => r == null
+          ? onAdventure()
+          : r.stage != null
+          ? startPractice(context, r.stage!)
+          : Navigator.of(context).push(
+              MaterialPageRoute<void>(
+                builder: (_) => const ReviewTowerScreen(),
+              ),
+            ),
+      child: Row(
+        children: [
+          const Icon(Icons.play_circle_fill, size: 30),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  '今日はまずこれ',
+                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700),
+                ),
+                Text(
+                  label,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(fontSize: 15, height: 1.3),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

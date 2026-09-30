@@ -25,6 +25,7 @@ class GearDef {
     this.subject,
     this.subjectRate = 0,
     this.extraSeconds = 0,
+    this.level = 0,
   });
 
   final String id;
@@ -44,6 +45,9 @@ class GearDef {
   /// 制限時間がのびる（秒）
   final int extraSeconds;
 
+  /// このレベルになると手に入る（0 はレベルで手に入る装備ではない）
+  final int level;
+
   static const all = <GearDef>[
     GearDef(
       id: 'wood_pen',
@@ -52,6 +56,51 @@ class GearDef {
       description: '攻撃 +2',
       howToGet: '最初から持っている',
       attack: 2,
+    ),
+    GearDef(
+      id: 'silver_pen',
+      name: '銀のペン',
+      slot: GearSlot.weapon,
+      description: '攻撃 +5',
+      howToGet: 'Lv10 になると手に入る',
+      attack: 5,
+      level: 10,
+    ),
+    GearDef(
+      id: 'gold_pen',
+      name: '金のペン',
+      slot: GearSlot.weapon,
+      description: '攻撃 +9',
+      howToGet: 'Lv25 になると手に入る',
+      attack: 9,
+      level: 25,
+    ),
+    GearDef(
+      id: 'star_pen',
+      name: '星のペン',
+      slot: GearSlot.weapon,
+      description: '攻撃 +14',
+      howToGet: 'Lv40 になると手に入る',
+      attack: 14,
+      level: 40,
+    ),
+    GearDef(
+      id: 'leather_cover',
+      name: '革の表紙の鎧',
+      slot: GearSlot.armor,
+      description: '防御 +5',
+      howToGet: 'Lv15 になると手に入る',
+      defense: 5,
+      level: 15,
+    ),
+    GearDef(
+      id: 'hard_cover',
+      name: '上製本の鎧',
+      slot: GearSlot.armor,
+      description: '防御 +10',
+      howToGet: 'Lv35 になると手に入る',
+      defense: 10,
+      level: 35,
     ),
     GearDef(
       id: 'note_armor',
@@ -214,6 +263,8 @@ class Gear {
   /// 持っている装備（最初の装備・欠片の装備・受け取ったごほうびの装備）
   static Set<String> owned(RpgProgress p) => {
         ...GearDef.starter,
+        for (final g in GearDef.all)
+          if (g.level > 0 && p.level >= g.level) g.id,
         for (final w in Story.fragments(p)) GearDef.byFragment[w]!,
         ...p.gear,
       };
@@ -225,11 +276,21 @@ class Gear {
       for (final slot in GearSlot.values)
         if (p.equipped[slot.name] case final id? when have.contains(id))
           GearDef.byId(id)
-        else if (slot == GearSlot.weapon)
-          GearDef.byId('wood_pen')
-        else if (slot == GearSlot.armor)
-          GearDef.byId('note_armor'),
+        // 選んでいなければ、レベルで手に入った一番よい装備をつける
+        else if (slot == GearSlot.weapon || slot == GearSlot.armor)
+          _bestByLevel(p, slot),
     ];
+  }
+
+  static GearDef _bestByLevel(RpgProgress p, GearSlot slot) {
+    var best =
+        GearDef.byId(slot == GearSlot.weapon ? 'wood_pen' : 'note_armor');
+    for (final g in GearDef.all) {
+      if (g.slot == slot && g.level > 0 && p.level >= g.level) {
+        if (g.attack + g.defense > best.attack + best.defense) best = g;
+      }
+    }
+    return best;
   }
 
   /// 受け取れる連続学習のごほうび

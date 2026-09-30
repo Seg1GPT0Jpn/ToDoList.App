@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:rpg_game/rpg_game.dart';
 
+import '../meta/navigator_card.dart';
 import '../account/account_screen.dart';
 import '../app/services.dart';
 import '../app/theme.dart';
@@ -62,15 +63,19 @@ class WorldMapScreen extends StatelessWidget {
                   ),
                   SliverPadding(
                     padding: const EdgeInsets.fromLTRB(40, 8, 12, 24),
-                    sliver: SliverGrid.count(
-                      crossAxisCount: 2,
-                      mainAxisSpacing: 12,
-                      crossAxisSpacing: 12,
-                      childAspectRatio: 0.9,
-                      children: [
+                    // 横に広い画面でもカードが縦に伸びすぎないよう、高さを決めておく
+                    sliver: SliverGrid(
+                      gridDelegate:
+                          const SliverGridDelegateWithMaxCrossAxisExtent(
+                            maxCrossAxisExtent: 260,
+                            mainAxisExtent: 176,
+                            mainAxisSpacing: 12,
+                            crossAxisSpacing: 12,
+                          ),
+                      delegate: SliverChildListDelegate([
                         for (final (i, w) in RpgCatalog.worlds.indexed)
                           _WorldCard(world: w, progress: progress, index: i),
-                      ],
+                      ]),
                     ),
                   ),
                 ],
@@ -242,6 +247,22 @@ class WorldMapScreen extends StatelessWidget {
               ),
             ],
           ),
+        ),
+        const SizedBox(height: 12),
+        TodayButton(
+          record: services.meta.record,
+          today: RpgServices.today(),
+          onAdventure: () {
+            final w = RpgCatalog.world(RpgCatalog.englishWorldId);
+            Navigator.of(context).push(
+              MaterialPageRoute<void>(
+                builder: (_) => MusicScope(
+                  music: MusicDirector.fieldKey(w.id),
+                  child: FieldScreen(world: w, progress: progress),
+                ),
+              ),
+            );
+          },
         ),
         const SizedBox(height: 14),
         AdventureCard(progress: progress),

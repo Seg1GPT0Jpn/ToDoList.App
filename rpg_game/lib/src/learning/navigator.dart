@@ -115,7 +115,7 @@ class StudyNavigator {
       out.add(
         Recommendation(
           text:
-              '${RpgCatalog.world(stage.worldId).subject}・${stage.grammarTheme}を10問（正答率${score.score}%）',
+              '${RpgCatalog.world(stage.worldId).subject}・${stage.grammarTheme}を約10問（正答率${score.score}%）',
           stage: stage,
         ),
       );
