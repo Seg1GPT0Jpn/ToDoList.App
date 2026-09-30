@@ -59,4 +59,4 @@ export 'src/world/terrain.dart';
 export 'src/vocab/fsrs.dart';
 export 'src/vocab/vocab_book.dart';
 export 'src/vocab/vocab_progress.dart';
-export 'src/vocab/vocab_gate.dart';
+export 'src/vocab/vocab_vault.dart';

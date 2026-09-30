@@ -18,51 +18,49 @@ const _words = '''1\tagree\t[自] ①賛成する
 5\tdiscuss\t[他] ～について話し合う''';
 
 Widget _home() => Builder(
-      builder: (c) => Scaffold(
-        body: VocabHome(books: RpgServices.of(c).personalBooks),
-      ),
-    );
+  builder: (c) =>
+      Scaffold(body: VocabHome(books: RpgServices.of(c).personalBooks)),
+);
 
 void main() {
   setUp(() => speaker = SilentSpeaker());
 
-  testWidgets('LEAP・EEVI はパスワード shonanonly で開き、貼り付けて取り込める', (tester) async {
+  testWidgets('名前とパスワードを入れると、取り込まずに単語帳が使える', (tester) async {
+    final sealed = VocabVault.seal('TEST', VocabParser.parse(_words), 'pw-123');
+    VocabStore.assetLoader = (file) async =>
+        file == VocabVault.fileName('TEST') ? sealed : null;
+    addTearDown(() => VocabStore.assetLoader = (_) async => null);
     await openScreen(tester, _home());
-    expect(find.text('LEAP'), findsNothing);
-    await tester.enterText(find.byKey(const ValueKey('vocab-password')), 'LEAP');
-    await tester.tap(find.text('ひらく'));
-    await tester.pump();
-    expect(find.text('パスワードがちがいます'), findsOneWidget);
+    expect(find.text('TEST'), findsNothing);
 
-    await tester.enterText(find.byKey(const ValueKey('vocab-password')), 'shonanonly');
-    await tester.tap(find.text('ひらく'));
-    await tester.pump();
-    expect(find.text('LEAP'), findsOneWidget);
-    expect(find.text('EEVI'), findsOneWidget);
+    Future<void> tryOpen(String name, String pw) async {
+      await tester.enterText(
+        find.byKey(const ValueKey('vocab-book-name')),
+        name,
+      );
+      await tester.enterText(find.byKey(const ValueKey('vocab-password')), pw);
+      await tester.tap(find.text('追加する'));
+      await tester.runAsync(
+        () => Future<void>.delayed(const Duration(milliseconds: 500)),
+      );
+      await tester.pump();
+    }
 
-    // EEVI に STEP の形で取り込む
-    await tester.tap(find.text('EEVI'));
-    await tester.pumpAndSettle();
-    await tester.enterText(
-      find.byKey(const ValueKey('vocab-import-text')),
-      '1\nrise\n■動詞：上がる　■名詞：上昇\n›\n\n2\nraise\n■動詞：～を上げる\n›\n\n'
-      '3\nlie\n■動詞：横たわる\n›\n\n4\nlay\n■動詞：～を横たえる\n›\n\n5\nreach\n■動詞：～に到着する\n›',
-    );
-    await tester.ensureVisible(find.text('取り込む'));
-    await tester.tap(find.text('取り込む'));
-    await tester.pumpAndSettle();
+    await tryOpen('TEST', 'wrong');
+    expect(find.text('名前かパスワードがちがいます'), findsOneWidget);
+    await tryOpen('NOPE', 'pw-123');
+    expect(find.text('名前かパスワードがちがいます'), findsOneWidget);
+
+    await tryOpen('test', 'pw-123');
+    await tester.pump(const Duration(milliseconds: 100));
+    expect(find.text('TEST'), findsOneWidget);
     expect(find.textContaining('5語　'), findsOneWidget);
     final store = VocabStore.of(RpgServicesHolder.last!.personalBooks);
-    expect(store.book('eevi')!.cards.first.meaning, '[動] 上がる [名] 上昇');
-  });
+    expect(store.book('test')!.cards.first.term, 'agree');
 
-  testWidgets('以前の LEAP タブに取り込んだ単語を引きつぐ', (tester) async {
-    await openScreen(
-      tester,
-      _home(),
-      prefs: {'personal_book_leap': _words, 'vocab_unlocked': true},
-    );
-    expect(find.textContaining('5語　'), findsOneWidget);
+    // 隠しても、もう一度開けば学習記録は残る
+    await store.lock();
+    expect(store.visibleBooks.any((b) => b.id == 'test'), isFalse);
   });
 
   testWidgets('練習：新しい単語をめくって評価、4択、スペル（間違えた理由を記録）', (tester) async {
@@ -71,19 +69,21 @@ void main() {
     final book = await store.createBook('自作');
     book.merge(VocabParser.parse(_words));
     final nav = tester.state<NavigatorState>(find.byType(Navigator));
-    nav.push(MaterialPageRoute<void>(
-      builder: (_) => VocabSessionScreen(
-        store: store,
-        book: book,
-        title: '練習',
-        random: Random(1),
-        tasks: const [
-          VocabTask('1', VocabMode.flashcard, isNew: true),
-          VocabTask('2', VocabMode.choiceMeaning),
-          VocabTask('3', VocabMode.spelling),
-        ],
+    nav.push(
+      MaterialPageRoute<void>(
+        builder: (_) => VocabSessionScreen(
+          store: store,
+          book: book,
+          title: '練習',
+          random: Random(1),
+          tasks: const [
+            VocabTask('1', VocabMode.flashcard, isNew: true),
+            VocabTask('2', VocabMode.choiceMeaning),
+            VocabTask('3', VocabMode.spelling),
+          ],
+        ),
       ),
-    ));
+    );
     await tester.pumpAndSettle();
 
     // 1. フラッシュカード
@@ -134,7 +134,9 @@ void main() {
     final store = VocabStore.of(RpgServicesHolder.last!.personalBooks);
     final book = await store.createBook('英検2級');
     book.merge(VocabParser.parse(_words));
-    store.progress(book.id).record(
+    store
+        .progress(book.id)
+        .record(
           cardId: '1',
           skill: VocabSkill.meaning,
           rating: Rating.again,

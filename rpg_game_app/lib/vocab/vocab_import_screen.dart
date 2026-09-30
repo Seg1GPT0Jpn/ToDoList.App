@@ -89,8 +89,8 @@ class _VocabImportScreenState extends State<VocabImportScreen> {
             if (protected) ...[
               const SizedBox(height: 6),
               Text(
-                'この単語帳は市販教材を自分で取り込むための枠です。データはこの端末の中にだけ保存され、'
-                'インターネットやほかの人には送られません。個人の学習用にだけ使ってください。',
+                'この単語帳には、例文や発音記号を足せます。足したものはこの端末の中にだけ保存されます。'
+                '市販教材の単語帳なので、個人の学習用にだけ使ってください。',
                 style: TextStyle(
                   fontSize: 12,
                   height: 1.6,
