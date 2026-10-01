@@ -8,6 +8,7 @@ import '../battle/battle_screen.dart';
 import '../study/common_test_screens.dart';
 import '../study/sky_home_screen.dart';
 import '../versus/versus_screen.dart';
+import '../vocab/word_forest_screen.dart';
 import 'achievements_screen.dart';
 import 'equipment_screen.dart';
 import 'navigator_card.dart';
@@ -100,6 +101,11 @@ class AdventureCard extends StatelessWidget {
                     label: due > 0 ? '復習の塔（$due）' : '復習の塔',
                     highlight: due > 0,
                     builder: (_) => const ReviewTowerScreen(),
+                  ),
+                  _MenuButton(
+                    icon: Icons.forest_outlined,
+                    label: '単語の森',
+                    builder: (_) => const WordForestScreen(),
                   ),
                   _MenuButton(
                     icon: Icons.menu_book_outlined,

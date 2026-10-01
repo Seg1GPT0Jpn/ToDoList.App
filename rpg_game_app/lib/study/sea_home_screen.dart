@@ -424,6 +424,8 @@ class _WordsTab extends StatelessWidget {
     final list = WordList.fromJson(jsonDecode(raw) as Map<String, dynamic>);
     final set = WordQuizBuilder().build(list, direction: dir);
     if (!context.mounted) return;
+    // 答えた記録が学習記録に残るよう、作った問題セットを登録する
+    RpgServices.of(context).questions.adopt(set);
     await startSeaBattle(
       context,
       title:

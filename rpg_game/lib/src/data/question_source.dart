@@ -25,6 +25,16 @@ class JsonQuestionSource implements QuestionSource {
   /// 学習記録（教科ごとの習得数など）に使う。個人用単語帳の問題は入らない。
   String? setIdOf(String questionId) => _owner[questionId];
 
+  /// その場で作った問題セット（単語リストから作った問題など）を登録して、
+  /// 学習記録に残るようにする。自作の問題（original）だけを登録する。
+  void adopt(QuestionSet set) {
+    if (set.origin != QuestionOrigin.original) return;
+    _cache[set.setId] = set;
+    for (final q in set.questions) {
+      _owner[q.id] = set.setId;
+    }
+  }
+
   static QuestionSet parse(String json) =>
       QuestionSet.fromJson(jsonDecode(json) as Map<String, dynamic>);
 
