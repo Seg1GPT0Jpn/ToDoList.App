@@ -6,11 +6,13 @@ import '../app/theme.dart';
 import '../art/enemy_painter.dart';
 import '../battle/battle_screen.dart';
 import '../study/common_test_screens.dart';
+import '../study/comprehensive_exam_screen.dart';
 import '../study/sky_home_screen.dart';
 import '../versus/versus_screen.dart';
 import '../vocab/word_forest_screen.dart';
 import 'achievements_screen.dart';
 import 'equipment_screen.dart';
+import 'growth_screen.dart';
 import 'navigator_card.dart';
 import 'story_screen.dart';
 import 'learning_status_screen.dart';
@@ -135,6 +137,12 @@ class AdventureCard extends StatelessWidget {
                     builder: (_) => const SkyHomeScreen(),
                   ),
                   _MenuButton(
+                    icon: Icons.assignment_outlined,
+                    label: '総合演習',
+                    builder: (_) =>
+                        const ComprehensiveExamScreen(subject: 'math'),
+                  ),
+                  _MenuButton(
                     icon: Icons.sports_esports_outlined,
                     label: '対戦モード',
                     builder: (_) => const VersusSetupScreen(),
@@ -143,6 +151,11 @@ class AdventureCard extends StatelessWidget {
                     icon: Icons.insights,
                     label: '学習ステータス',
                     builder: (_) => const LearningStatusScreen(),
+                  ),
+                  _MenuButton(
+                    icon: Icons.alt_route,
+                    label: '成長と学習ルート',
+                    builder: (_) => const GrowthScreen(),
                   ),
                   _MenuButton(
                     icon: Icons.pets,

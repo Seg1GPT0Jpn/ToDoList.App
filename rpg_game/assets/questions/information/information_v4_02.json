@@ -128,7 +128,7 @@
       "unit": "information.info.computer.media.text",
       "unitLocked": true,
       "category": "thinking",
-      "prompt": "メールの本文が「譁�蟄怜喧縺�」のように読めない文字になる原因として最も考えられるのは？",
+      "prompt": "メールの本文が「縺薙ｓ縺ｫ縺｡縺ｯ」のように読めない文字になる原因として最も考えられるのは？",
       "choices": [
         "画像が多すぎる",
         "パスワードが間違っている",
@@ -136,7 +136,7 @@
         "インターネットが遅い"
       ],
       "answerIndex": 2,
-      "explanation": "文字化け。UTF-8 と Shift_JIS などで、同じビット列が別の文字に解釈されて起こる。",
+      "explanation": "文字化け。UTF-8 と Shift_JIS などで、同じビット列が別の文字に解釈されて起こる（この例は「こんにちは」の UTF-8 を Shift_JIS として読んだもの）。",
       "difficulty": "standard",
       "thinkingLevel": 3
     },
