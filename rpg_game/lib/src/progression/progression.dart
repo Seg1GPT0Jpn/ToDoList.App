@@ -3,6 +3,7 @@ import 'dart:math';
 import '../battle/battle_engine.dart';
 import '../battle/cards.dart';
 import '../world/elites.dart';
+import '../models/enemy.dart';
 import '../models/player_stats.dart';
 import '../models/rpg_progress.dart';
 import '../models/stage.dart';
@@ -245,6 +246,58 @@ class Progression {
     final rares = CardDef.rares;
     final card = rares[random.nextInt(rares.length)];
     return (opened.copyWith(deck: [...opened.deck, card.id]), card);
+  }
+
+  /// 宝箱を開けて、レアカードを [cards] 枚もらう（0 なら空っぽ。どちらも1回きり）
+  static (RpgProgress, List<CardDef>) openChestWith(
+      RpgProgress progress, String chestId, int cards, Random random) {
+    final opened =
+        progress.copyWith(openedChests: {...progress.openedChests, chestId});
+    final rares = CardDef.rares;
+    final got = [
+      for (var i = 0; i < cards; i++) rares[random.nextInt(rares.length)],
+    ];
+    if (got.isEmpty) return (opened, got);
+    return (
+      opened.copyWith(deck: [...opened.deck, for (final c in got) c.id]),
+      got
+    );
+  }
+
+  /// 連続正解の宝箱：正解数からもらえるカードの枚数
+  static int chainChestCards(int correct, int total) =>
+      correct >= total ? 2 : (correct >= total - 1 ? 1 : 0);
+
+  /// 宝箱のミミック（そのエリアの敵より少し強い。倒すとレアカード）
+  static StageDef mimicStage(StageDef base, String chestId) {
+    final e = base.enemy;
+    return StageDef(
+      id: '${base.id}_mimic',
+      worldId: base.worldId,
+      order: base.order,
+      name: '${base.name}の宝箱',
+      region: base.region,
+      branch: base.branch,
+      branchOrder: base.branchOrder,
+      grammarTheme: base.grammarTheme,
+      questionSetIds: base.questionSetIds,
+      expReward: 0,
+      timeLimitSeconds: base.timeLimitSeconds,
+      readingTimeLimitSeconds: base.readingTimeLimitSeconds,
+      recommendedLevel: base.recommendedLevel + 1,
+      enemy: EnemyDef(
+        id: 'mimic_$chestId',
+        name: 'ミミック',
+        look: 'mimic',
+        maxHp: (e.maxHp * 1.2).round(),
+        attack: (e.attack * 1.1).round(),
+        ability: EnemyAbility.mimic,
+        weakness: e.weakness,
+        description: '宝箱のふりをした魔物。最初の1問を落ち着いて答えよう。',
+        introLine: 'ケケケ…宝箱だと思ったか？',
+        defeatLine: 'ちぇっ…中身は持っていけ…',
+      ),
+    );
   }
 
   /// 泉：基礎問題に全問正解すると、次のバトルで最大HP +30%

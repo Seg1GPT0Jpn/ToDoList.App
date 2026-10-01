@@ -66,6 +66,7 @@ export 'src/study/sea_catalog.dart';
 export 'src/study/word_list.dart';
 export 'src/study/word_quiz_builder.dart';
 export 'src/world/elites.dart';
+export 'src/world/notebook_world.dart';
 export 'src/world/terrain.dart';
 export 'src/vocab/fsrs.dart';
 export 'src/vocab/vocab_book.dart';

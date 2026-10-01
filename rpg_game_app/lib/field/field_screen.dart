@@ -155,6 +155,7 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
                 : widget.mapId,
           ),
     from: widget.from,
+    chestVariants: !_isExam,
     onPortal: _travel,
     rpgWorld: widget.world,
     progress: widget.progress,
@@ -506,6 +507,35 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
 
   String _questKey(int area) => 'npcq:${_game.map.id}:$area';
 
+  /// このマップの発見率：宝箱・隠し通路・知識の扉・ワープ石・住人の頼みごとのうち、
+  /// 見つけた（開けた・さわった・かなえた）ものの割合
+  FieldDiscovery _discovery() {
+    final map = _game.map;
+    final flags = _progress.fieldFlags;
+    var found = 0, total = 0;
+    void count(bool f) {
+      total++;
+      if (f) found++;
+    }
+
+    for (final c in map.findAll('C')) {
+      count(_chestDone(_game.chestIdAt(c)));
+    }
+    for (final ch in const ['H', 'D']) {
+      for (final c in map.findAll(ch)) {
+        count(flags.contains(FieldGame.openKey(map.id, c)));
+      }
+    }
+    for (final c in map.findAll('X')) {
+      count(flags.contains(FieldGame.warpKey(map.id, c)));
+    }
+    for (final c in map.findAll('N')) {
+      final area = map.areaAt(c.col, c.row);
+      if (_nookChest(area) != null) count(flags.contains(_questKey(area)));
+    }
+    return FieldDiscovery(found: found, total: total);
+  }
+
   bool _chestDone(String chestId) =>
       _plan?.openedChests.contains(chestId) ??
       _progress.openedChests.contains(chestId);
@@ -608,7 +638,90 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
     return picked.take(n).toList();
   }
 
+  /// 宝箱からカードをもらう（[cards] が 0 なら空っぽ）
+  Future<void> _giveChest(String chestId, int cards, String title) async {
+    final latest = await RpgServices.of(context).repository.load();
+    final (updated, got) = Progression.openChestWith(
+      latest,
+      chestId,
+      cards,
+      _random,
+    );
+    await _save(updated);
+    if (!mounted) return;
+    _open(
+      _MessageDialog(
+        got.isEmpty
+            ? '$title…宝箱は砂になって消えてしまった。解説を読んで、次の宝箱に生かそう。'
+            : '$title 宝箱が開いた！\n${[for (final c in got) 'レアカード「${c.name}」：${c.description}'].join('\n')}',
+      ),
+    );
+  }
+
+  /// 宝箱のミミックと戦う（勝てば中身をもらえる。負けても宝箱は残る）
+  Future<void> _fightMimic(StageDef stage, String chestId) async {
+    if (_starting) return;
+    _starting = true;
+    final services = RpgServices.of(context);
+    final base = _source(stage);
+    final set = await services.loadStagePool(base);
+    _starting = false;
+    if (!mounted || set == null || !set.origin.usableInRpg) return;
+    _close();
+    _game.inputLocked = true;
+    final mimic = Progression.mimicStage(base, chestId);
+    Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        builder: (_) => BattleScreen(
+          world: widget.world,
+          stage: mimic,
+          questions: set.questions,
+          progress: _progress,
+          trial: true,
+          relativePower: true,
+          onFinished: (summary) async {
+            if (!summary.won) return;
+            final latest = await services.repository.load();
+            final (updated, _) = Progression.openChestWith(
+              latest,
+              chestId,
+              1,
+              _random,
+            );
+            await services.repository.save(updated);
+          },
+        ),
+      ),
+    );
+  }
+
   Future<void> _tryChest(StageDef stage, String chestId) async {
+    if (!_isExam) {
+      switch (_game.variantOfChest(chestId)) {
+        case ChestVariant.explore:
+          _close();
+          await _giveChest(chestId, 1, '💮 よく見つけたね！');
+          return;
+        case ChestVariant.mimic:
+          await _fightMimic(stage, chestId);
+          return;
+        case ChestVariant.chain:
+          final qs = await _pick(_source(stage), 3, (q) => true);
+          if (!mounted || qs.isEmpty) return;
+          _open(
+            _QuizDialog('連続正解の宝箱', qs, (correct) async {
+              await _giveChest(
+                chestId,
+                Progression.chainChestCards(correct, qs.length),
+                '⭐ $correct / ${qs.length}問正解！',
+              );
+            }),
+          );
+          return;
+        case ChestVariant.seal:
+          break;
+      }
+    }
     final qs = await _pick(
       _source(stage),
       1,
@@ -765,7 +878,8 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
                           exp: _progress.exp,
                           expToNext: PlayerStats.expToNextLevel(stats.level),
                           stars: plan == null
-                              ? '★ $cleared / ${widget.world.stages.length}'
+                              ? '★ $cleared / ${widget.world.stages.length}　'
+                                    '発見 ${_discovery().percent}%'
                               : '★ $cleared / ${widget.world.stages.length}　対策ゲージ ${plan.gauge}',
                         ),
                       ),
@@ -892,6 +1006,47 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
                 '${lesson.teacher}「この先の${stage.enemy.name}は「${lesson.title}」が弱点じゃ。授業を受けていくかね？」',
                 style: const TextStyle(fontSize: 14, height: 1.6),
               ),
+            ],
+          ),
+        );
+      case _ChestDialog(:final stage, :final chestId)
+          when _game.variantOfChest(chestId) != ChestVariant.seal:
+        final variant = _game.variantOfChest(chestId);
+        return _MessageBox(
+          actions: [
+            TextButton(onPressed: _close, child: const Text('やめておく')),
+            FilledButton.icon(
+              key: const ValueKey('chest-open'),
+              onPressed: () => _tryChest(stage, chestId),
+              icon: Icon(
+                variant == ChestVariant.mimic ? Icons.help_outline : Icons.key,
+                size: 18,
+              ),
+              label: Text(switch (variant) {
+                ChestVariant.chain => '3問に挑戦する',
+                ChestVariant.explore => '開ける',
+                _ => 'そっと開ける',
+              }),
+            ),
+          ],
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(switch (variant) {
+                ChestVariant.chain => '⭐ ${variant.label}',
+                ChestVariant.explore => '💮 ${variant.label}',
+                _ => '❓ ${variant.label}',
+              }, style: serif(16)),
+              const SizedBox(height: 4),
+              Text(switch (variant) {
+                ChestVariant.chain =>
+                  '3問に答えよう。全問正解ならレアカード2枚、2問正解なら1枚。'
+                      '1問以下だと宝箱は消えてしまう…（1回きり）',
+                ChestVariant.explore => '隠し通路を見つけた人へのごほうび。問題なしで開けられる！',
+                _ =>
+                  'なんだか宝箱がかたかた動いている…。開けると、何かが起こりそうだ。'
+                      '（ミミックなら、倒せば中身をもらえる。負けても宝箱は残る）',
+              }, style: const TextStyle(fontSize: 13.5, height: 1.6)),
             ],
           ),
         );

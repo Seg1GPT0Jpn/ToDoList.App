@@ -14,6 +14,7 @@ import '../art/enemy_painter.dart';
 import '../art/hero_painter.dart';
 import '../art/vehicle_painter.dart';
 import 'field_map.dart';
+import 'paper_art.dart';
 import 'terrain_art.dart';
 
 const double tileSize = 32;
@@ -52,7 +53,32 @@ class FieldGame extends FlameGame with KeyboardEvents {
     this.chestOpened,
     this.darknessOf,
     this.masteredArea,
+    this.chestVariants = true,
   });
+
+  /// 宝箱の種類（連続正解・ミミック・探索のごほうび）を使うか。
+  /// 試験対策ワールドでは使わない（ふつうの封印だけ）
+  final bool chestVariants;
+
+  /// 宝箱の種類（宝箱の ID で引く）
+  final Map<String, ChestVariant> _variants = {};
+
+  /// 宝箱の種類（知らない ID ならふつうの封印）
+  ChestVariant variantOfChest(String chestId) =>
+      _variants[chestId] ?? ChestVariant.seal;
+
+  /// そのマスの宝箱の種類
+  ChestVariant chestVariantAt(Cell c) {
+    if (!chestVariants) return ChestVariant.seal;
+    return switch (map.chestKinds[c]) {
+      ChestKind.secret => ChestVariant.explore,
+      ChestKind.vault => ChestVariant.seal,
+      _ => ChestVariant.forMainChest(
+        map.enemyAhead(c) ?? 1,
+        boss: map.bossAreas.contains(map.areaAt(c.col, c.row)),
+      ),
+    };
+  }
 
   /// エリアの暗さ（0〜1）。学力が低い単元のエリアほど暗い
   final double Function(int area)? darknessOf;
@@ -185,7 +211,7 @@ class FieldGame extends FlameGame with KeyboardEvents {
 
   @override
   Future<void> onLoad() async {
-    world.add(MapLayer(map));
+    world.add(MapLayer(map, worldId: rpgWorld.id));
     for (final e in map.enemySpots.entries) {
       final stage = rpgWorld.stages.where((s) => s.order == e.key).firstOrNull;
       if (stage == null) continue;
@@ -194,7 +220,9 @@ class FieldGame extends FlameGame with KeyboardEvents {
       world.add(token);
     }
     for (final c in map.findAll('C')) {
-      final token = ChestToken(c);
+      final variant = chestVariantAt(c);
+      _variants[chestIdAt(c)] = variant;
+      final token = ChestToken(c, variant: variant);
       _chests[c] = token;
       world.add(token);
     }
@@ -529,13 +557,16 @@ class FieldGame extends FlameGame with KeyboardEvents {
 
 /// 地形をまとめて1枚の絵にしておくレイヤー
 class MapLayer extends PositionComponent {
-  MapLayer(this.map)
+  MapLayer(this.map, {this.worldId = ''})
     : super(
         size: Vector2(map.width * tileSize, map.height * tileSize),
         priority: -1,
       );
 
   final FieldMap map;
+
+  /// 教科の国（紙の種類と、余白の手書きの文字が変わる）
+  final String worldId;
   late final ui.Picture _picture;
   double _t = 0;
 
@@ -572,29 +603,30 @@ class MapLayer extends PositionComponent {
         final terrain = map.terrainAt(col, r);
         final x = col * tileSize, y = r * tileSize;
         final rect = Rect.fromLTWH(x, y, tileSize, tileSize);
-        c.drawRect(rect, ui.Paint()..color = TerrainArt.floor(terrain));
-        final grid = ui.Paint()..color = TerrainArt.grid(terrain);
-        c.drawLine(
-          Offset(x, y),
-          Offset(x + tileSize, y),
-          grid..strokeWidth = 1,
+        // 紙の種類（方眼・罫線・原稿用紙・五線譜・製図用紙…）で、床と線が変わる
+        final paper = NotebookWorld.paperOf(terrain, worldId);
+        c.drawRect(
+          rect,
+          ui.Paint()
+            ..color = PaperArt.tintFloor(TerrainArt.floor(terrain), paper),
         );
-        c.drawLine(
-          Offset(x, y),
-          Offset(x, y + tileSize),
-          grid..strokeWidth = 1,
-        );
-        c.drawLine(
-          Offset(x, y + tileSize / 2),
-          Offset(x + tileSize, y + tileSize / 2),
-          grid..strokeWidth = 0.4,
-        );
-        c.drawLine(
-          Offset(x + tileSize / 2, y),
-          Offset(x + tileSize / 2, y + tileSize),
-          grid..strokeWidth = 0.4,
-        );
+        PaperArt.lines(c, rect, paper, TerrainArt.grid(terrain), col, r);
         TerrainArt.floorDetail(c, rect, terrain, col, r);
+        // 紙の上の小物・落書き（通れる床だけ。通行のじゃまはしない）
+        if (map.tileAt(col, r) == '.' && !terrain.isVoyage) {
+          final mark = PaperArt.markAt(col, r, paper, map.id.hashCode);
+          if (mark != null) {
+            PaperArt.mark(
+              c,
+              rect,
+              mark,
+              NotebookWorld.scribblesOf(worldId),
+              col,
+              r,
+              dark: paper == PaperStyle.chalkboard,
+            );
+          }
+        }
       }
     }
     final rnd = Random(7);
@@ -920,7 +952,7 @@ class PlayerToken extends PositionComponent {
 
 /// 宝箱（開けると空っぽになる）
 class ChestToken extends PositionComponent {
-  ChestToken(this.cell)
+  ChestToken(this.cell, {this.variant = ChestVariant.seal})
     : super(
         size: Vector2.all(tileSize),
         anchor: Anchor.center,
@@ -929,16 +961,40 @@ class ChestToken extends PositionComponent {
       );
 
   final Cell cell;
+
+  /// 宝箱の種類（見た目の色と飾りが変わる）
+  final ChestVariant variant;
   bool opened = false;
   double _t = 0;
 
   @override
   void update(double dt) => _t += dt;
 
+  /// 箱とふたの色
+  (ui.Color, ui.Color) get _colors => switch (variant) {
+    ChestVariant.chain => (
+      const ui.Color(0xFF8A929C),
+      const ui.Color(0xFFB8BEC6),
+    ),
+    ChestVariant.explore => (
+      const ui.Color(0xFFC98A00),
+      const ui.Color(0xFFF2B84B),
+    ),
+    ChestVariant.mimic => (
+      const ui.Color(0xFFA06A35),
+      const ui.Color(0xFFBE7E43),
+    ),
+    ChestVariant.seal => (
+      const ui.Color(0xFFB5763B),
+      const ui.Color(0xFFC98A4B),
+    ),
+  };
+
   @override
   void render(ui.Canvas canvas) {
     final c = canvas;
     final s = size.x;
+    final (boxColor, lidColor) = _colors;
     final ink = ui.Paint()
       ..color = TsuzuriColors.pen
       ..style = ui.PaintingStyle.stroke
@@ -957,7 +1013,13 @@ class ChestToken extends PositionComponent {
       );
     }
     final box = Rect.fromLTWH(5, s * 0.45, s - 10, s * 0.4);
-    c.drawRect(box, ui.Paint()..color = const ui.Color(0xFFB5763B));
+    // ミミックは、ときどきふたがかたかた動く
+    final rattle = variant == ChestVariant.mimic && !opened
+        ? (sin(_t * 9) * (sin(_t * 0.8) > 0.7 ? 1.5 : 0))
+        : 0.0;
+    c.save();
+    c.translate(rattle, 0);
+    c.drawRect(box, ui.Paint()..color = boxColor);
     c.drawRect(box, ink);
     final lid = opened
         ? Rect.fromLTWH(5, s * 0.22, s - 10, s * 0.14)
@@ -968,7 +1030,7 @@ class ChestToken extends PositionComponent {
         topLeft: const ui.Radius.circular(6),
         topRight: const ui.Radius.circular(6),
       ),
-      ui.Paint()..color = const ui.Color(0xFFC98A4B),
+      ui.Paint()..color = lidColor,
     );
     c.drawRRect(
       ui.RRect.fromRectAndCorners(
@@ -987,7 +1049,39 @@ class ChestToken extends PositionComponent {
         Rect.fromLTWH(8, s * 0.45, s - 16, 4),
         ui.Paint()..color = const ui.Color(0xFF3A2A1E),
       );
+    } else if (variant == ChestVariant.chain) {
+      // 連続正解の宝箱：3つの星
+      for (var i = 0; i < 3; i++) {
+        c.drawCircle(
+          Offset(s * (0.32 + i * 0.18), s * 0.7),
+          2.2,
+          ui.Paint()..color = const ui.Color(0xFFF2B84B),
+        );
+      }
+    } else if (variant == ChestVariant.explore) {
+      // 探索のごほうび：はなまる
+      c.drawCircle(
+        Offset(s * 0.5, s * 0.7),
+        5,
+        ui.Paint()
+          ..color = const ui.Color(0xFFD64545)
+          ..style = ui.PaintingStyle.stroke
+          ..strokeWidth = 1.2,
+      );
+    } else if (variant == ChestVariant.mimic) {
+      // すき間からのぞく目
+      final peek = (sin(_t * 0.8) + 1) / 2;
+      if (peek > 0.75) {
+        for (final dx in [-5.0, 5.0]) {
+          c.drawCircle(
+            Offset(s / 2 + dx, s * 0.43),
+            1.6,
+            ui.Paint()..color = const ui.Color(0xFFFFF59D),
+          );
+        }
+      }
     }
+    c.restore();
   }
 }
 
