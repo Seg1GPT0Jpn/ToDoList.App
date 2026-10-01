@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "soc_pol03_001",
+      "unit": "social.pol.politics.diet.status",
       "category": "knowledge",
       "prompt": "日本国憲法で「国権の最高機関」「国の唯一の立法機関」とされているのは？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "soc_pol03_002",
+      "unit": "social.pol.politics.diet.status",
       "category": "knowledge",
       "prompt": "衆議院議員の任期は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "soc_pol03_003",
+      "unit": "social.pol.politics.diet.status",
       "category": "knowledge",
       "prompt": "衆議院議員の被選挙権の年齢は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "soc_pol03_004",
+      "unit": "social.pol.politics.diet.power",
       "category": "knowledge",
       "prompt": "毎年 1 月に召集され、主に予算を審議する国会は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "soc_pol03_005",
+      "unit": "social.pol.politics.diet.status",
       "category": "knowledge",
       "prompt": "衆議院の解散・総選挙の後、30 日以内に召集される国会は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "soc_pol03_006",
+      "unit": "social.pol.politics.diet.power",
       "category": "knowledge",
       "prompt": "衆議院の優越が認められているものは？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "soc_pol03_007",
+      "unit": "social.pol.politics.diet.status",
       "category": "knowledge",
       "prompt": "衆議院で可決し参議院で否決された法律案は、衆議院でどうすれば成立する？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "soc_pol03_008",
+      "unit": "social.pol.politics.diet.status",
       "category": "knowledge",
       "prompt": "内閣不信任の決議ができるのは？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "soc_pol03_009",
+      "unit": "social.pol.politics.diet",
       "category": "knowledge",
       "prompt": "国会が、政治に関する調査のために証人を呼んだり記録を求めたりする権限は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "soc_pol03_010",
+      "unit": "social.pol.politics.diet",
       "category": "knowledge",
       "prompt": "裁判官を辞めさせるかどうかを判断するため、国会に設けられる裁判所は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "soc_pol03_011",
+      "unit": "social.pol.politics.diet.status",
       "category": "thinking",
       "prompt": "衆議院の優越が認められている理由は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "soc_pol03_012",
+      "unit": "social.pol.politics.diet.status",
       "category": "thinking",
       "prompt": "国会が二院制をとっている利点として適切なものは？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "soc_pol03_013",
+      "unit": "social.pol.politics.diet.status",
       "category": "knowledge",
       "prompt": "参議院議員の任期は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "soc_pol03_014",
+      "unit": "social.pol.politics.diet.status",
       "category": "knowledge",
       "prompt": "参議院議員の被選挙権の年齢は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "soc_pol03_015",
+      "unit": "social.pol.politics.diet.power",
       "category": "knowledge",
       "prompt": "内閣が必要と認めたとき、またはいずれかの議院の総議員の4分の1以上の要求で召集される国会は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "soc_pol03_016",
+      "unit": "social.pol.politics.diet.status",
       "category": "knowledge",
       "prompt": "衆議院の解散中に緊急の必要があるとき、内閣の求めで開かれるのは？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "soc_pol03_017",
+      "unit": "social.pol.politics.diet.power",
       "category": "knowledge",
       "prompt": "予算の議決のほかに、衆議院の優越が認められているものは？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "soc_pol03_018",
+      "unit": "social.pol.politics.diet.status",
       "category": "knowledge",
       "prompt": "予算などで衆議院と参議院の議決が異なったときに開かれる会議は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "soc_pol03_019",
+      "unit": "social.pol.politics.diet",
       "category": "knowledge",
       "prompt": "国会議員が、国会の会期中は原則として逮捕されない特権は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "soc_pol03_020",
+      "unit": "social.pol.politics.diet.session",
       "category": "knowledge",
       "prompt": "法律案は、本会議の前にどこで詳しく審査される？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "soc_pol03_021",
+      "unit": "social.pol.politics.diet.session",
       "category": "knowledge",
       "prompt": "委員会で、専門家や利害関係者から意見を聞く会は？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "soc_pol03_022",
+      "unit": "social.pol.politics.diet.status",
       "category": "knowledge",
       "prompt": "衆議院議員の定数は？（2022年の改正後）",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "soc_pol03_023",
+      "unit": "social.pol.politics.diet.status",
       "category": "knowledge",
       "prompt": "衆議院で可決した予算を参議院が受け取ってから30日以内に議決しないとき、どうなる？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "soc_pol03_024",
+      "unit": "social.pol.politics.diet.status",
       "category": "thinking",
       "prompt": "国会が「国権の最高機関」とされる理由として適切なものは？",
       "choices": [

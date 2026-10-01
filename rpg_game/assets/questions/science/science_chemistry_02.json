@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "sci_chm02_001",
+      "unit": "science.chemistry.structure.atom.structure",
       "category": "knowledge",
       "prompt": "原子番号が表しているものは？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "sci_chm02_002",
+      "unit": "science.chemistry.structure.atom.structure",
       "category": "knowledge",
       "prompt": "質量数とは？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "sci_chm02_003",
+      "unit": "science.chemistry.structure.atom.structure",
       "category": "knowledge",
       "prompt": "同位体とは？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "sci_chm02_004",
+      "unit": "science.chemistry.structure.atom.structure",
       "category": "knowledge",
       "prompt": "電子の質量は、陽子の質量のおよそ何分の1？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "sci_chm02_005",
+      "unit": "science.chemistry.structure.atom.config",
       "category": "knowledge",
       "prompt": "K 殻に入ることができる電子の最大数は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "sci_chm02_006",
+      "unit": "science.chemistry.structure.atom.config",
       "category": "knowledge",
       "prompt": "貴ガス（希ガス）の原子の価電子の数は、ふつういくつとする？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "sci_chm02_007",
+      "unit": "science.chemistry.structure.atom.structure",
       "category": "knowledge",
       "prompt": "放射性同位体 ¹⁴C が利用されているのは？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "sci_chm02_008",
+      "unit": "science.chemistry.structure.atom.ion",
       "category": "knowledge",
       "prompt": "原子が電子を失うとどうなる？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "sci_chm02_009",
+      "unit": "science.chemistry.structure.atom.structure",
       "category": "calculation",
       "prompt": "³⁵Cl（原子番号 17）の中性子の数は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "sci_chm02_010",
+      "unit": "science.chemistry.structure.atom.structure",
       "category": "calculation",
       "prompt": "ナトリウムイオン Na⁺（Na の原子番号 11）がもつ電子の数は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "sci_chm02_011",
+      "unit": "science.chemistry.structure.atom.config",
       "category": "calculation",
       "prompt": "酸素原子（原子番号 8）の電子配置は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "sci_chm02_012",
+      "unit": "science.chemistry.structure.atom.structure",
       "category": "calculation",
       "prompt": "マグネシウム（原子番号 12）の最外殻電子の数は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "sci_chm02_013",
+      "unit": "science.chemistry.structure.atom.structure",
       "category": "calculation",
       "prompt": "塩素には ³⁵Cl が 75 %、³⁷Cl が 25 % 存在する。相対質量を質量数と同じとすると、塩素の原子量は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "sci_chm02_014",
+      "unit": "science.chemistry.structure.atom.structure",
       "category": "calculation",
       "prompt": "アルミニウムイオン Al³⁺（Al の原子番号 13）の電子の数は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "sci_chm02_015",
+      "unit": "science.chemistry.structure.atom.structure",
       "category": "thinking",
       "prompt": "同位体どうしの化学的性質がほぼ同じである理由は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "sci_chm02_016",
+      "unit": "science.chemistry.structure.atom.config",
       "category": "thinking",
       "prompt": "貴ガスが他の原子とほとんど結びつかない理由は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "sci_chm02_017",
+      "unit": "science.chemistry.structure.atom.structure",
       "category": "knowledge",
       "prompt": "原子の中心にあり、陽子と中性子からなる部分は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "sci_chm02_018",
+      "unit": "science.chemistry.structure.atom.structure",
       "category": "knowledge",
       "prompt": "中性子がもつ電荷は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "sci_chm02_019",
+      "unit": "science.chemistry.structure.atom.config",
       "category": "knowledge",
       "prompt": "L 殻に入ることができる電子の最大数は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "sci_chm02_020",
+      "unit": "science.chemistry.structure.atom",
       "category": "knowledge",
       "prompt": "M 殻に入ることができる電子の最大数は？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "sci_chm02_021",
+      "unit": "science.chemistry.structure.atom.config",
       "category": "knowledge",
       "prompt": "原子の化学的な性質を決める、最外殻の電子を何という？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "sci_chm02_022",
+      "unit": "science.chemistry.structure.atom",
       "category": "knowledge",
       "prompt": "原子が電子を受け取るとどうなる？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "sci_chm02_023",
+      "unit": "science.chemistry.structure.atom.structure",
       "category": "knowledge",
       "prompt": "¹H・²H・³H の関係は？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "sci_chm02_024",
+      "unit": "science.chemistry.structure.atom.structure",
       "category": "knowledge",
       "prompt": "原子核がこわれて放射線を出し、別の原子に変わる性質を何という？",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "sci_chm02_025",
+      "unit": "science.chemistry.structure.atom.structure",
       "category": "knowledge",
       "prompt": "放射性同位体の半減期とは？",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "sci_chm02_026",
+      "unit": "science.chemistry.structure.atom.structure",
       "category": "calculation",
       "prompt": "²³Na（原子番号11）の中性子の数は？",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "sci_chm02_027",
+      "unit": "science.chemistry.structure.atom.structure",
       "category": "calculation",
       "prompt": "カルシウムイオン Ca²⁺（Ca の原子番号20）がもつ電子の数は？",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "sci_chm02_028",
+      "unit": "science.chemistry.structure.atom.structure",
       "category": "calculation",
       "prompt": "塩化物イオン Cl⁻（Cl の原子番号17）がもつ電子の数は？",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "sci_chm02_029",
+      "unit": "science.chemistry.structure.atom.config",
       "category": "calculation",
       "prompt": "硫黄（原子番号16）の電子配置は？",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "sci_chm02_030",
+      "unit": "science.chemistry.structure.atom",
       "category": "calculation",
       "prompt": "半減期が5730年の ¹⁴C は、11460年後にははじめの何倍になる？",
       "choices": [
@@ -396,6 +426,7 @@
     },
     {
       "id": "sci_chm02_031",
+      "unit": "science.chemistry.structure.atom.structure",
       "category": "calculation",
       "prompt": "ホウ素は ¹⁰B が20%、¹¹B が80% である。相対質量を質量数と同じとすると、ホウ素の原子量は？",
       "choices": [
@@ -409,6 +440,7 @@
     },
     {
       "id": "sci_chm02_032",
+      "unit": "science.chemistry.structure.atom.config",
       "category": "thinking",
       "prompt": "ナトリウムイオン Na⁺ とネオン原子 Ne は同じ電子配置だが、性質がちがう。その理由として最も適切なものは？",
       "choices": [

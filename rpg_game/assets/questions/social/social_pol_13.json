@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "soc_pol13_001",
+      "unit": "social.pol.economy.fiscal",
       "category": "knowledge",
       "prompt": "国や地方公共団体が行う経済活動を何という？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "soc_pol13_002",
+      "unit": "social.pol.economy.fiscal.function",
       "category": "knowledge",
       "prompt": "財政の三つの機能は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "soc_pol13_003",
+      "unit": "social.pol.economy.fiscal",
       "category": "knowledge",
       "prompt": "税を納める人と、実際に負担する人が同じ税は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "soc_pol13_004",
+      "unit": "social.pol.economy.fiscal.tax",
       "category": "knowledge",
       "prompt": "消費税のように、納める人と負担する人が異なる税は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "soc_pol13_005",
+      "unit": "social.pol.economy.fiscal.function",
       "category": "knowledge",
       "prompt": "所得が多い人ほど税率が高くなるしくみは？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "soc_pol13_006",
+      "unit": "social.pol.economy.fiscal",
       "category": "knowledge",
       "prompt": "国が財源不足を補うために発行する債券は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "soc_pol13_007",
+      "unit": "social.pol.economy.fiscal",
       "category": "knowledge",
       "prompt": "景気に合わせて政府が税や公共事業を調整する政策は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "soc_pol13_008",
+      "unit": "social.pol.economy.fiscal.tax",
       "category": "knowledge",
       "prompt": "累進課税や社会保障のように、景気を自動的に安定させるしくみは？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "soc_pol13_009",
+      "unit": "social.pol.economy.fiscal.debt",
       "category": "knowledge",
       "prompt": "国の歳出で、最も大きな割合をしめる近年の項目は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "soc_pol13_010",
+      "unit": "social.pol.economy.fiscal.tax",
       "category": "calculation",
       "prompt": "所得 500 万円の人が消費税（10％）で 30 万円を負担した。所得に対する負担の割合は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "soc_pol13_011",
+      "unit": "social.pol.economy.fiscal.tax",
       "category": "thinking",
       "prompt": "消費税に「逆進性」があると言われる理由は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "soc_pol13_012",
+      "unit": "social.pol.economy.fiscal.debt",
       "category": "thinking",
       "prompt": "国債を発行し続けることの問題点として適切なものは？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "soc_pol13_013",
+      "unit": "social.pol.economy.fiscal.function",
       "category": "knowledge",
       "prompt": "財政の機能のうち、道路や警察など市場で供給されにくいものを提供するのは？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "soc_pol13_014",
+      "unit": "social.pol.economy.fiscal",
       "category": "knowledge",
       "prompt": "国の予算で、社会保障費や公共事業費などを出す中心となる会計は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "soc_pol13_015",
+      "unit": "social.pol.economy.fiscal",
       "category": "knowledge",
       "prompt": "国税のうち、最も税収の多い税の一つは？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "soc_pol13_016",
+      "unit": "social.pol.economy.fiscal.debt",
       "category": "knowledge",
       "prompt": "歳入の不足を補うため、財政法の特例として発行される国債は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "soc_pol13_017",
+      "unit": "social.pol.economy.fiscal",
       "category": "knowledge",
       "prompt": "国が使い道を指定して地方公共団体に出すお金は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "soc_pol13_018",
+      "unit": "social.pol.economy.fiscal.debt",
       "category": "knowledge",
       "prompt": "公共事業などに使うために発行される国債は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "soc_pol13_019",
+      "unit": "social.pol.economy.fiscal.debt",
       "category": "knowledge",
       "prompt": "国債の元利払いにあてる費用を何という？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "soc_pol13_020",
+      "unit": "social.pol.economy.fiscal",
       "category": "knowledge",
       "prompt": "国の歳入のうち、税収以外で大きな割合を占めるものは？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "soc_pol13_021",
+      "unit": "social.pol.economy.fiscal.tax",
       "category": "calculation",
       "prompt": "課税所得 400 万円の人の税率が「195 万円以下 5 %、195〜330 万円 10 %、330〜695 万円 20 %」の超過累進課税のとき、所得税額は？（控除は考えない）",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "soc_pol13_022",
+      "unit": "social.pol.economy.fiscal.debt",
       "category": "calculation",
       "prompt": "国の歳出 110 兆円のうち、国債費が 25 兆円。国債費の割合はおよそ？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "soc_pol13_023",
+      "unit": "social.pol.economy.fiscal.function",
       "category": "thinking",
       "prompt": "不況のとき政府がとる財政政策として適切なものは？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "soc_pol13_024",
+      "unit": "social.pol.economy.fiscal.function",
       "category": "thinking",
       "prompt": "プライマリーバランス（基礎的財政収支）の黒字化が目標とされる理由は？",
       "choices": [

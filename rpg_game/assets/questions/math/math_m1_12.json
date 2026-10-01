@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_m112_001",
+      "unit": "math.m1.quad.eqineq.equation",
       "category": "calculation",
       "prompt": "2次方程式 x²−2ax+a+2=0 が異なる2つの正の解をもつ a の範囲は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_m112_002",
+      "unit": "math.m1.quad.maxmin.basic",
       "category": "calculation",
       "prompt": "y=x²−2ax（0≦x≦2）で、0<a<2 のときの最小値は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_m112_003",
+      "unit": "math.m1.quad.maxmin.basic",
       "category": "calculation",
       "prompt": "y=x²−2ax（0≦x≦2）で、a≧2 のときの最小値は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_m112_004",
+      "unit": "math.m1.quad.maxmin.basic",
       "category": "calculation",
       "prompt": "y=x²−4x+3（0≦x≦a）で、a>4 のときの最大値は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_m112_005",
+      "unit": "math.m1.quad.maxmin.basic",
       "category": "calculation",
       "prompt": "x+y=4 のとき、x²+y² の最小値は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_m112_006",
+      "unit": "math.m1.quad.maxmin.basic",
       "category": "calculation",
       "prompt": "2x+y=3 のとき、2x²+y² の最小値は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_m112_007",
+      "unit": "math.m1.quad.graph.determine",
       "category": "calculation",
       "prompt": "放物線 y=x²+ax+b が2点 (1, 0)、(3, 0) を通るとき、a+b の値は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_m112_008",
+      "unit": "math.m1.quad.eqineq.inequality",
       "category": "calculation",
       "prompt": "a>1 のとき、不等式 x²−(a+1)x+a<0 の解は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_m112_009",
+      "unit": "math.m1.quad.maxmin",
       "category": "calculation",
       "prompt": "ボールの高さが h=20t−5t²（m）で表されるとき、最高の高さは？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_m112_010",
+      "unit": "math.m1.quad.maxmin.basic",
       "category": "thinking",
       "prompt": "文字をふくむ2次関数の最大・最小で場合分けが必要な理由は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_m112_011",
+      "unit": "math.m1.quad.maxmin.basic",
       "category": "calculation",
       "prompt": "y=x²−2ax+3（0≦x≦2）で、a<0 のときの最小値は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_m112_012",
+      "unit": "math.m1.quad.maxmin.basic",
       "category": "calculation",
       "prompt": "y=x²−2ax+3（0≦x≦2）で、a≦1 のときの最大値は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_m112_013",
+      "unit": "math.m1.quad.maxmin.basic",
       "category": "calculation",
       "prompt": "実数 x、y が x²+y²=1 を満たすとき、2x+y² の最大値は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_m112_014",
+      "unit": "math.m1.quad.maxmin.basic",
       "category": "calculation",
       "prompt": "x≧0、y≧0、x+2y=4 のとき、xy の最大値は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_m112_015",
+      "unit": "math.m1.quad.maxmin.basic",
       "category": "calculation",
       "prompt": "y=(x²−2x)²−2(x²−2x)+3 の最小値は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_m112_016",
+      "unit": "math.m1.quad.graph.vertex",
       "category": "calculation",
       "prompt": "放物線 y=x²+ax+b が原点を通り、頂点が直線 y=x 上にある（a≠0）とき、a の値は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_m112_017",
+      "unit": "math.m1.quad.maxmin.basic",
       "category": "calculation",
       "prompt": "a>0 のとき、y=x²（a≦x≦a+1）の最小値が4になる a の値は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_m112_018",
+      "unit": "math.m1.quad.maxmin.basic",
       "category": "calculation",
       "prompt": "y=x²−4x+5（t≦x≦t+2）で、0<t<2 のときの最小値は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_m112_019",
+      "unit": "math.m1.quad.maxmin.apply",
       "category": "calculation",
       "prompt": "売値を x 円としたときの利益が P=−2x²+40x−100（円）のとき、利益の最大値は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_m112_020",
+      "unit": "math.m1.quad.maxmin.basic",
       "category": "thinking",
       "prompt": "軸が x=a の下に凸な2次関数の、0≦x≦2 での最大値を場合分けするときの境目は？",
       "choices": [

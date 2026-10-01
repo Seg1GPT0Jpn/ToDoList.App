@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "social_chirisogo_01_001",
+      "unit": "social.geo.map.position.latlon",
       "category": "knowledge",
       "prompt": "緯度 0 度の線を何という？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "social_chirisogo_01_002",
+      "unit": "social.geo.map.position.latlon",
       "category": "knowledge",
       "prompt": "経度 0 度の経線（本初子午線）が通る都市は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "social_chirisogo_01_003",
+      "unit": "social.geo.map.position.latlon",
       "category": "calculation",
       "prompt": "経度が 15 度ちがうと、時差は何時間？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "social_chirisogo_01_004",
+      "unit": "social.geo.map.position.time",
       "category": "calculation",
       "prompt": "日本（東経 135 度を基準）とロンドン（0 度）の時差は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "social_chirisogo_01_005",
+      "unit": "social.geo.map.maps",
       "category": "calculation",
       "prompt": "日本が 1 月 1 日午前 0 時のとき、ロンドンは何日の何時？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "social_chirisogo_01_006",
+      "unit": "social.geo.map.maps.projection",
       "category": "knowledge",
       "prompt": "メルカトル図法の特徴は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "social_chirisogo_01_007",
+      "unit": "social.geo.map.maps.projection",
       "category": "knowledge",
       "prompt": "中心からの距離と方位が正しく表される図法は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "social_chirisogo_01_008",
+      "unit": "social.geo.nature.hazard.prevention",
       "category": "knowledge",
       "prompt": "位置に関する情報を持つデータを重ねて表示・分析するしくみは？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "social_chirisogo_01_009",
+      "unit": "social.geo.nature.hazard.disaster",
       "category": "knowledge",
       "prompt": "災害の起こりやすい場所や避難場所を示した地図は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "social_chirisogo_01_010",
+      "unit": "social.geo.nature.climate.element",
       "category": "thinking",
       "prompt": "この気温のグラフ（月別平均気温）の都市として最も適切なのは？",
       "choices": [
@@ -173,6 +183,7 @@
     },
     {
       "id": "social_chirisogo_01_011",
+      "unit": "social.geo.nature.climate.element",
       "category": "thinking",
       "prompt": "この気温のグラフの都市の気候として最も適切なのは？",
       "choices": [
@@ -223,6 +234,7 @@
     },
     {
       "id": "social_chirisogo_01_012",
+      "unit": "social.geo.nature.climate.element",
       "category": "thinking",
       "prompt": "この月別降水量のグラフの都市の気候として最も適切なのは？（北半球）",
       "choices": [
@@ -268,6 +280,7 @@
     },
     {
       "id": "social_chirisogo_01_013",
+      "unit": "social.geo.nature.climate.element",
       "category": "thinking",
       "prompt": "この気温のグラフの都市として最も適切なのは？",
       "choices": [
@@ -318,6 +331,7 @@
     },
     {
       "id": "social_chirisogo_01_014",
+      "unit": "social.geo.nature.climate",
       "category": "knowledge",
       "prompt": "地中海性気候の地域でさかんな農業は？",
       "choices": [
@@ -331,6 +345,7 @@
     },
     {
       "id": "social_chirisogo_01_015",
+      "unit": "social.geo.map.position.latlon",
       "category": "knowledge",
       "prompt": "西ヨーロッパが高緯度のわりに冬も温暖な理由は？",
       "choices": [
@@ -344,6 +359,7 @@
     },
     {
       "id": "social_chirisogo_01_016",
+      "unit": "social.geo.regions.asia.east",
       "category": "knowledge",
       "prompt": "東アジアや南アジアで、夏と冬で風向きが変わる風は？",
       "choices": [
@@ -357,6 +373,7 @@
     },
     {
       "id": "social_chirisogo_01_017",
+      "unit": "social.geo.nature.landform.large",
       "category": "knowledge",
       "prompt": "日本列島の周辺で接しているプレートの数は？",
       "choices": [
@@ -370,6 +387,7 @@
     },
     {
       "id": "social_chirisogo_01_018",
+      "unit": "social.geo.nature.landform.large",
       "category": "knowledge",
       "prompt": "日本列島がふくまれる造山帯は？",
       "choices": [
@@ -383,6 +401,7 @@
     },
     {
       "id": "social_chirisogo_01_019",
+      "unit": "social.geo.nature.hazard.disaster",
       "category": "knowledge",
       "prompt": "河口付近に土砂が積もってできる地形は？",
       "choices": [
@@ -396,6 +415,7 @@
     },
     {
       "id": "social_chirisogo_01_020",
+      "unit": "social.geo.nature.landform",
       "category": "knowledge",
       "prompt": "川が山地から平地に出るところにできる地形と、その主な利用は？",
       "choices": [
@@ -409,6 +429,7 @@
     },
     {
       "id": "social_chirisogo_01_021",
+      "unit": "social.geo.industry.agriculture.forestry",
       "category": "knowledge",
       "prompt": "入り組んだ海岸線をもち、養殖業がさかんな地形は？",
       "choices": [
@@ -422,6 +443,7 @@
     },
     {
       "id": "social_chirisogo_01_022",
+      "unit": "social.geo.nature.landform.other",
       "category": "knowledge",
       "prompt": "氷河にけずられた谷に海水が入りこんでできた地形は？",
       "choices": [
@@ -435,6 +457,7 @@
     },
     {
       "id": "social_chirisogo_01_023",
+      "unit": "social.geo.nature.climate.koppen",
       "category": "knowledge",
       "prompt": "亜寒帯（冷帯）に広がる針葉樹林を何という？",
       "choices": [
@@ -448,6 +471,7 @@
     },
     {
       "id": "social_chirisogo_01_024",
+      "unit": "social.geo.industry.population.transition",
       "category": "thinking",
       "prompt": "現在の日本の人口ピラミッドの形として最も近いものは？",
       "choices": [
@@ -461,6 +485,7 @@
     },
     {
       "id": "social_chirisogo_01_025",
+      "unit": "social.geo.regions.europe.africa",
       "category": "knowledge",
       "prompt": "第二次世界大戦後、アジアやアフリカなどで急速に人口が増えた現象は？",
       "choices": [
@@ -474,6 +499,7 @@
     },
     {
       "id": "social_chirisogo_01_026",
+      "unit": "social.geo.regions.americas.north",
       "category": "knowledge",
       "prompt": "アメリカに住む、スペイン語を話すラテンアメリカ系の人々を何という？",
       "choices": [
@@ -487,6 +513,7 @@
     },
     {
       "id": "social_chirisogo_01_027",
+      "unit": "social.geo.regions.europe.europe",
       "category": "knowledge",
       "prompt": "EU（ヨーロッパ連合）の多くの国で使われている共通通貨は？",
       "choices": [
@@ -500,6 +527,7 @@
     },
     {
       "id": "social_chirisogo_01_028",
+      "unit": "social.geo.regions.asia.southeast",
       "category": "knowledge",
       "prompt": "東南アジアの国々がつくる地域協力の組織は？",
       "choices": [
@@ -513,6 +541,7 @@
     },
     {
       "id": "social_chirisogo_01_029",
+      "unit": "social.geo.map.maps",
       "category": "knowledge",
       "prompt": "発展途上国の生産者に公正な価格を支払うしくみは？",
       "choices": [
@@ -526,6 +555,7 @@
     },
     {
       "id": "social_chirisogo_01_030",
+      "unit": "social.geo.industry.resource.mineral",
       "category": "knowledge",
       "prompt": "特定の農産物や鉱産資源の輸出に頼る経済を何という？",
       "choices": [
@@ -539,6 +569,7 @@
     },
     {
       "id": "social_chirisogo_01_031",
+      "unit": "social.geo.industry.resource.energy",
       "category": "knowledge",
       "prompt": "火山が多い日本で、特に資源量が多いとされる再生可能エネルギーは？",
       "choices": [

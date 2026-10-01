@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_mc11_001",
+      "unit": "math.mc.curve.complex",
       "category": "calculation",
       "prompt": "(1+i)⁸ を計算すると？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_mc11_002",
+      "unit": "math.mc.curve.complex",
       "category": "calculation",
       "prompt": "(1+√3i)³ を計算すると？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_mc11_003",
+      "unit": "math.mc.curve.complex.figure",
       "category": "calculation",
       "prompt": "z³=1 の解は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_mc11_004",
+      "unit": "math.mc.curve.complex.figure",
       "category": "calculation",
       "prompt": "z⁴=1 の解は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_mc11_005",
+      "unit": "math.mc.curve.complex.polar",
       "category": "calculation",
       "prompt": "点 2 を原点のまわりに π/3 回転した点は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_mc11_006",
+      "unit": "math.mc.curve.complex",
       "category": "calculation",
       "prompt": "|z−1|=2 を満たす点 z の全体は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_mc11_007",
+      "unit": "math.mc.curve.complex.figure",
       "category": "calculation",
       "prompt": "|z−i|=|z+1| を満たす点 z の全体は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_mc11_008",
+      "unit": "math.mc.curve.complex",
       "category": "calculation",
       "prompt": "1/(1−i) を a+bi の形にすると？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_mc11_009",
+      "unit": "math.mc.curve.complex.polar",
       "category": "calculation",
       "prompt": "arg z₁=π/6、arg z₂=π/3 のとき、arg(z₁z₂) は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_mc11_010",
+      "unit": "math.mc.curve.complex.demoivre",
       "category": "thinking",
       "prompt": "ド・モアブルの定理で n 乗が計算しやすい理由は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_mc11_011",
+      "unit": "math.mc.curve.complex",
       "category": "calculation",
       "prompt": "(1−i)⁶ を計算すると？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_mc11_012",
+      "unit": "math.mc.curve.complex",
       "category": "calculation",
       "prompt": "(√3+i)⁶ を計算すると？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_mc11_013",
+      "unit": "math.mc.curve.complex",
       "category": "calculation",
       "prompt": "z²=i の解は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_mc11_014",
+      "unit": "math.mc.curve.complex",
       "category": "calculation",
       "prompt": "z³=−1 の解のうち実数のものは？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_mc11_015",
+      "unit": "math.mc.curve.complex.polar",
       "category": "calculation",
       "prompt": "点 1+i を原点のまわりに π/2 回転した点は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_mc11_016",
+      "unit": "math.mc.curve.complex",
       "category": "calculation",
       "prompt": "|z+2i|=1 を満たす点 z の全体は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_mc11_017",
+      "unit": "math.mc.curve.complex.figure",
       "category": "calculation",
       "prompt": "|z−1|=|z−3| を満たす点 z の全体は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_mc11_018",
+      "unit": "math.mc.curve.complex",
       "category": "calculation",
       "prompt": "(2+i)/(2−i) を a+bi の形にすると？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_mc11_019",
+      "unit": "math.mc.curve.complex.plane",
       "category": "calculation",
       "prompt": "|z₁|=2、arg z₁=π/3、|z₂|=3、arg z₂=π/6 のとき、z₁z₂ は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_mc11_020",
+      "unit": "math.mc.curve.complex.plane",
       "category": "thinking",
       "prompt": "zⁿ=1 の解が複素数平面上で正 n 角形の頂点になる理由は？",
       "choices": [

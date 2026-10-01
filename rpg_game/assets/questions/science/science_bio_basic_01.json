@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "science_bio_basic_01_001",
+      "unit": "science.biology.cell.common.structure",
       "category": "knowledge",
       "prompt": "すべての生物に共通する特徴は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "science_bio_basic_01_002",
+      "unit": "science.biology.cell.common.structure",
       "category": "knowledge",
       "prompt": "原核生物はどれ？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "science_bio_basic_01_003",
+      "unit": "science.biology.cell.common.structure",
       "category": "knowledge",
       "prompt": "呼吸によって ATP をつくる細胞小器官は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "science_bio_basic_01_004",
+      "unit": "science.biology.cell.common.structure",
       "category": "knowledge",
       "prompt": "光合成を行う細胞小器官は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "science_bio_basic_01_005",
+      "unit": "science.biology.cell.energy.atp",
       "category": "knowledge",
       "prompt": "ATP の役割は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "science_bio_basic_01_006",
+      "unit": "science.biology.cell.energy.enzyme",
       "category": "knowledge",
       "prompt": "酵素の性質として正しいものは？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "science_bio_basic_01_007",
+      "unit": "science.biology.cell.dna.structure",
       "category": "knowledge",
       "prompt": "DNA で、塩基 A（アデニン）と対になる塩基は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "science_bio_basic_01_008",
+      "unit": "science.biology.cell.dna.structure",
       "category": "calculation",
       "prompt": "ある DNA で A が全塩基の 30% のとき、G の割合は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "science_bio_basic_01_009",
+      "unit": "science.biology.cell.dna.structure",
       "category": "knowledge",
       "prompt": "DNA の二重らせん構造を提唱したのは？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "science_bio_basic_01_010",
+      "unit": "science.biology.cell.dna.structure",
       "category": "knowledge",
       "prompt": "DNA の遺伝情報を RNA に写しとる過程を何という？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "science_bio_basic_01_011",
+      "unit": "science.biology.cell.dna.structure",
       "category": "knowledge",
       "prompt": "RNA で、DNA のチミン（T）の代わりに使われる塩基は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "science_bio_basic_01_012",
+      "unit": "science.biology.cell.dna.replication",
       "category": "knowledge",
       "prompt": "細胞周期で DNA が複製されるのはどの時期？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "science_bio_basic_01_013",
+      "unit": "science.biology.cell.common.structure",
       "category": "knowledge",
       "prompt": "体細胞分裂で生じた娘細胞の染色体の数は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "science_bio_basic_01_014",
+      "unit": "science.biology.body.homeostasis.fluid",
       "category": "knowledge",
       "prompt": "体内の状態を一定に保とうとするしくみは？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "science_bio_basic_01_015",
+      "unit": "science.biology.body.homeostasis.fluid",
       "category": "knowledge",
       "prompt": "酸素を運ぶ血液の成分は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "science_bio_basic_01_016",
+      "unit": "science.biology.body.homeostasis.fluid",
       "category": "knowledge",
       "prompt": "血液を固める（血液凝固）はたらきに関わる成分は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "science_bio_basic_01_017",
+      "unit": "science.biology.body.nerve.autonomic",
       "category": "knowledge",
       "prompt": "交感神経がはたらくと、心臓の拍動はどうなる？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "science_bio_basic_01_018",
+      "unit": "science.biology.body.nerve.autonomic",
       "category": "knowledge",
       "prompt": "副交感神経がはたらくと、消化管の運動はどうなる？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "science_bio_basic_01_019",
+      "unit": "science.biology.body.nerve.hormone",
       "category": "knowledge",
       "prompt": "血糖値を下げるホルモンは？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "science_bio_basic_01_020",
+      "unit": "science.biology.body.nerve.hormone",
       "category": "knowledge",
       "prompt": "血糖値を上げるホルモンはどれ？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "science_bio_basic_01_021",
+      "unit": "science.biology.body.nerve.hormone",
       "category": "knowledge",
       "prompt": "甲状腺から分泌され、代謝を促進するホルモンは？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "science_bio_basic_01_022",
+      "unit": "science.biology.body.nerve.hormone",
       "category": "knowledge",
       "prompt": "ホルモンの量が増えすぎると、その分泌が抑えられるしくみは？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "science_bio_basic_01_023",
+      "unit": "science.biology.body.immunity.innate",
       "category": "knowledge",
       "prompt": "体内に入った異物を取りこんで分解する（食作用）細胞は？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "science_bio_basic_01_024",
+      "unit": "science.biology.cell.common.structure",
       "category": "knowledge",
       "prompt": "抗体をつくって分泌する細胞は？",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "science_bio_basic_01_025",
+      "unit": "science.biology.body.immunity.disease",
       "category": "knowledge",
       "prompt": "ワクチンが効果を持つ理由は？",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "science_bio_basic_01_026",
+      "unit": "science.biology.body.immunity",
       "category": "knowledge",
       "prompt": "免疫が過剰に反応して、体に不都合が起こることを何という？",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "science_bio_basic_01_027",
+      "unit": "science.biology.ecology.vegetation.succession",
       "category": "knowledge",
       "prompt": "植生の遷移で最後に安定した状態（極相）となる森林の主な樹木は？",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "science_bio_basic_01_028",
+      "unit": "science.biology.ecology.vegetation.biome",
       "category": "knowledge",
       "prompt": "日本の暖温帯（西日本の低地など）に広がるバイオームは？",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "science_bio_basic_01_029",
+      "unit": "science.biology.ecology.ecosystem.structure",
       "category": "knowledge",
       "prompt": "生態系で、光合成によって有機物をつくる生物を何という？",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "science_bio_basic_01_030",
+      "unit": "science.biology.gene.development.animal",
       "category": "knowledge",
       "prompt": "湖や海で栄養塩類が増えすぎ、プランクトンが大量発生する現象は？",
       "choices": [

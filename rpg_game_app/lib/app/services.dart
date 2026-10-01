@@ -27,7 +27,7 @@ class RpgServices extends InheritedWidget {
     required this.music,
     this.versusRooms,
     required super.child,
-  }) : questions = JsonQuestionSource(_loadAsset),
+  }) : questions = JsonQuestionSource(loadQuestionAsset),
        unlock = WorldUnlockService(
          repository: repository,
          // 購入ダイアログの動作確認用。リリース版では準備中ワールドは売らない。
@@ -88,7 +88,8 @@ class RpgServices extends InheritedWidget {
   static RpgServices of(BuildContext context) =>
       context.dependOnInheritedWidgetOfExactType<RpgServices>()!;
 
-  static Future<String?> _loadAsset(String setId) async {
+  /// 同梱の問題ファイル（assets/questions）を読む
+  static Future<String?> loadQuestionAsset(String setId) async {
     final world = setId.split('_').first;
     try {
       return await rootBundle.loadString(

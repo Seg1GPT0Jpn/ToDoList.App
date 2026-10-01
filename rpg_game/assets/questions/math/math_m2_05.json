@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_m205_001",
+      "unit": "math.m2.expr.complex",
       "category": "calculation",
       "prompt": "1/(1+i) を a+bi の形にすると？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_m205_002",
+      "unit": "math.m2.expr.complex.complex",
       "category": "calculation",
       "prompt": "i³ の値は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_m205_003",
+      "unit": "math.m2.expr.complex.vieta",
       "category": "calculation",
       "prompt": "2次方程式 x²−3x+1=0 の2つの解を α、β とするとき、α²+β² の値は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_m205_004",
+      "unit": "math.m2.expr.complex.remainder",
       "category": "calculation",
       "prompt": "P(x)=x³−2x²+3 を x+1 で割った余りは？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_m205_005",
+      "unit": "math.m2.expr.complex",
       "category": "calculation",
       "prompt": "方程式 x³−6x²+11x−6=0 の解は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_m205_006",
+      "unit": "math.m2.expr.complex.complex",
       "category": "calculation",
       "prompt": "2+i と 2−i を解とする2次方程式は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_m205_007",
+      "unit": "math.m2.expr.complex.complex",
       "category": "calculation",
       "prompt": "x²+kx+4=0 が虚数解をもつ k の範囲は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_m205_008",
+      "unit": "math.m2.expr.complex.complex",
       "category": "calculation",
       "prompt": "(1+i)² を計算すると？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_m205_009",
+      "unit": "math.m2.expr.complex.higher",
       "category": "calculation",
       "prompt": "x³=1 の虚数解の1つを ω とするとき、ω²+ω+1 の値は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_m205_010",
+      "unit": "math.m2.expr.complex",
       "category": "thinking",
       "prompt": "実数係数の方程式が a+bi を解にもつと、a−bi も解になる理由は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_m205_011",
+      "unit": "math.m2.expr.complex",
       "category": "calculation",
       "prompt": "(1+2i)/(1−i) を a+bi の形にすると？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_m205_012",
+      "unit": "math.m2.expr.complex.complex",
       "category": "calculation",
       "prompt": "i¹⁰ の値は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_m205_013",
+      "unit": "math.m2.expr.complex.vieta",
       "category": "calculation",
       "prompt": "x²+x+3=0 の2つの解を α、β とするとき、1/α+1/β の値は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_m205_014",
+      "unit": "math.m2.expr.complex.remainder",
       "category": "calculation",
       "prompt": "P(x)=x³+2x−5 を x−2 で割った余りは？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_m205_015",
+      "unit": "math.m2.expr.complex",
       "category": "calculation",
       "prompt": "方程式 x³−7x+6=0 の解は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_m205_016",
+      "unit": "math.m2.expr.complex",
       "category": "calculation",
       "prompt": "1+√3i と 1−√3i を解とする2次方程式は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_m205_017",
+      "unit": "math.m2.expr.complex",
       "category": "calculation",
       "prompt": "x²−2kx+k+2=0 が重解をもつ k の値は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_m205_018",
+      "unit": "math.m2.expr.complex.complex",
       "category": "calculation",
       "prompt": "(1−i)³ を計算すると？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_m205_019",
+      "unit": "math.m2.expr.complex.higher",
       "category": "calculation",
       "prompt": "x³=1 の虚数解の1つを ω とするとき、ω³ の値は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_m205_020",
+      "unit": "math.m2.expr.complex.vieta",
       "category": "thinking",
       "prompt": "2次方程式の解 α、β を求めずに α²+β² を計算できる理由は？",
       "choices": [

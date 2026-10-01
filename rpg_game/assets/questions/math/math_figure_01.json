@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "math_figure_01_001",
+      "unit": "math.ma.geometry.triangle",
       "category": "calculation",
       "prompt": "図の △ABC で ∠A = 50°、∠B = 60° のとき、外角 ∠ACD は？",
       "choices": [
@@ -71,6 +72,7 @@
     },
     {
       "id": "math_figure_01_002",
+      "unit": "math.ma.geometry.triangle",
       "category": "calculation",
       "prompt": "AB = AC の二等辺三角形で ∠A = 40° のとき、∠B は？",
       "choices": [
@@ -84,6 +86,7 @@
     },
     {
       "id": "math_figure_01_003",
+      "unit": "math.ma.geometry.circle.inscribed",
       "category": "calculation",
       "prompt": "図の円 O で、中心角 ∠AOB = 100° のとき、円周角 ∠APB は？",
       "choices": [
@@ -176,6 +179,7 @@
     },
     {
       "id": "math_figure_01_004",
+      "unit": "math.ma.geometry.circle.inscribed",
       "category": "knowledge",
       "prompt": "直径に対する円周角の大きさは？",
       "choices": [
@@ -189,6 +193,7 @@
     },
     {
       "id": "math_figure_01_005",
+      "unit": "math.ma.geometry.circle.inscribed",
       "category": "calculation",
       "prompt": "円に内接する四角形 ABCD で ∠A = 75° のとき、∠C は？",
       "choices": [
@@ -202,6 +207,7 @@
     },
     {
       "id": "math_figure_01_006",
+      "unit": "math.ma.geometry.circle.tangent",
       "category": "calculation",
       "prompt": "円の接線と、接点を通る弦のつくる角が 65° のとき、その角の内部にある弧に対する円周角は？",
       "choices": [
@@ -215,6 +221,7 @@
     },
     {
       "id": "math_figure_01_007",
+      "unit": "math.ma.geometry.circle.power",
       "category": "calculation",
       "prompt": "点 P を通る 2 本の直線が円と A・B、C・D で交わる。PA = 3、PB = 8、PC = 4 のとき PD は？",
       "choices": [
@@ -228,6 +235,7 @@
     },
     {
       "id": "math_figure_01_008",
+      "unit": "math.ma.geometry.circle.tangent",
       "category": "calculation",
       "prompt": "円の外の点 P から引いた 2 本の接線の接点を S・T とする。PS = 5 のとき PT は？",
       "choices": [
@@ -241,6 +249,7 @@
     },
     {
       "id": "math_figure_01_009",
+      "unit": "math.ma.geometry.triangle",
       "category": "calculation",
       "prompt": "直角をはさむ 2 辺が 3 と 4 の直角三角形の斜辺は？",
       "choices": [
@@ -254,6 +263,7 @@
     },
     {
       "id": "math_figure_01_010",
+      "unit": "math.ma.geometry.triangle",
       "category": "calculation",
       "prompt": "直角をはさむ 2 辺が 5 と 12 の直角三角形の斜辺は？",
       "choices": [
@@ -267,6 +277,7 @@
     },
     {
       "id": "math_figure_01_011",
+      "unit": "math.ma.geometry.triangle.bisector",
       "category": "calculation",
       "prompt": "△ABC で AB = 6、AC = 4、BC = 5。∠A の二等分線と BC の交点を D とするとき BD は？",
       "choices": [
@@ -280,6 +291,7 @@
     },
     {
       "id": "math_figure_01_012",
+      "unit": "math.ma.geometry.triangle",
       "category": "calculation",
       "prompt": "△ABC で AB・AC の中点を M・N とする。BC = 10 のとき MN は？",
       "choices": [
@@ -293,6 +305,7 @@
     },
     {
       "id": "math_figure_01_013",
+      "unit": "math.ma.geometry.triangle.centers",
       "category": "calculation",
       "prompt": "△ABC の重心を G、辺 BC の中点を M とする。AM = 9 のとき AG は？",
       "choices": [
@@ -306,6 +319,7 @@
     },
     {
       "id": "math_figure_01_014",
+      "unit": "math.ma.geometry.triangle",
       "category": "calculation",
       "prompt": "相似比が 2 : 3 の 2 つの図形の面積比は？",
       "choices": [
@@ -319,6 +333,7 @@
     },
     {
       "id": "math_figure_01_015",
+      "unit": "math.ma.geometry.triangle",
       "category": "calculation",
       "prompt": "相似比が 2 : 3 の 2 つの立体の体積比は？",
       "choices": [
@@ -332,6 +347,7 @@
     },
     {
       "id": "math_figure_01_016",
+      "unit": "math.ma.geometry.triangle",
       "category": "calculation",
       "prompt": "△ABC で DE ∥ BC（D は AB 上、E は AC 上）。AD = 4、DB = 2、AE = 6 のとき EC は？",
       "choices": [
@@ -345,6 +361,7 @@
     },
     {
       "id": "math_figure_01_017",
+      "unit": "math.ma.geometry.triangle.ceva",
       "category": "calculation",
       "prompt": "△ABC で、チェバの定理を使う。AF : FB = 1 : 2、BD : DC = 3 : 1 のとき CE : EA は？",
       "choices": [
@@ -358,6 +375,7 @@
     },
     {
       "id": "math_figure_01_018",
+      "unit": "math.ma.geometry.triangle.centers",
       "category": "knowledge",
       "prompt": "三角形の内心は何の交点？",
       "choices": [
@@ -371,6 +389,7 @@
     },
     {
       "id": "math_figure_01_019",
+      "unit": "math.ma.geometry.triangle.centers",
       "category": "knowledge",
       "prompt": "三角形の外心は何の交点？",
       "choices": [
@@ -384,6 +403,7 @@
     },
     {
       "id": "math_figure_01_020",
+      "unit": "math.ma.geometry.triangle",
       "category": "knowledge",
       "prompt": "三角形の 3 つの頂点までの距離が等しい点は？",
       "choices": [
@@ -397,6 +417,7 @@
     },
     {
       "id": "math_figure_01_021",
+      "unit": "math.ma.geometry.triangle",
       "category": "calculation",
       "prompt": "正六角形の 1 つの内角は？",
       "choices": [
@@ -410,6 +431,7 @@
     },
     {
       "id": "math_figure_01_022",
+      "unit": "math.ma.geometry.triangle",
       "category": "calculation",
       "prompt": "八角形の内角の和は？",
       "choices": [
@@ -423,6 +445,7 @@
     },
     {
       "id": "math_figure_01_023",
+      "unit": "math.ma.geometry.triangle",
       "category": "knowledge",
       "prompt": "多角形の外角の和は？",
       "choices": [
@@ -436,6 +459,7 @@
     },
     {
       "id": "math_figure_01_024",
+      "unit": "math.ma.geometry.triangle",
       "category": "calculation",
       "prompt": "半径 6、中心角 60° のおうぎ形の弧の長さは？",
       "choices": [
@@ -449,6 +473,7 @@
     },
     {
       "id": "math_figure_01_025",
+      "unit": "math.ma.geometry.triangle",
       "category": "calculation",
       "prompt": "半径 6、中心角 60° のおうぎ形の面積は？",
       "choices": [
@@ -462,6 +487,7 @@
     },
     {
       "id": "math_figure_01_026",
+      "unit": "math.ma.geometry.triangle",
       "category": "calculation",
       "prompt": "1 辺が 2 の正三角形の面積は？",
       "choices": [
@@ -475,6 +501,7 @@
     },
     {
       "id": "math_figure_01_027",
+      "unit": "math.ma.geometry.triangle.sides",
       "category": "thinking",
       "prompt": "3 辺の長さとして、三角形ができる組み合わせは？",
       "choices": [
@@ -488,6 +515,7 @@
     },
     {
       "id": "math_figure_01_028",
+      "unit": "math.ma.geometry.triangle",
       "category": "thinking",
       "prompt": "半径 3 と 5 の 2 つの円の中心間の距離が 8 のとき、2 円の位置関係は？",
       "choices": [
@@ -501,6 +529,7 @@
     },
     {
       "id": "math_figure_01_029",
+      "unit": "math.ma.geometry.circle.tangent",
       "category": "calculation",
       "prompt": "外接する 2 つの円の共通接線の本数は？",
       "choices": [
@@ -514,6 +543,7 @@
     },
     {
       "id": "math_figure_01_030",
+      "unit": "math.ma.geometry.construct.polyhedron",
       "category": "calculation",
       "prompt": "立方体の頂点の数 − 辺の数 + 面の数 は？",
       "choices": [

@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_m115_001",
+      "unit": "math.m1.quad.eqineq.equation",
       "category": "calculation",
       "prompt": "2次方程式 x²−2x+k=0 の2つの解の比が 1:3 のとき、k の値は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_m115_002",
+      "unit": "math.m1.quad.eqineq.discriminant",
       "category": "calculation",
       "prompt": "x²+(a−1)x+a=0 が重解をもつ a の値は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_m115_003",
+      "unit": "math.m1.quad.eqineq.inequality",
       "category": "calculation",
       "prompt": "不等式 x²−ax<0 の解が 0<x<3 のとき、a の値は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_m115_004",
+      "unit": "math.m1.quad.eqineq.inequality",
       "category": "calculation",
       "prompt": "2次不等式 ax²+bx+6>0 の解が −2<x<3 のとき、a の値は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_m115_005",
+      "unit": "math.m1.quad.eqineq",
       "category": "calculation",
       "prompt": "y=x²−2x+m のグラフが x 軸の正の部分と異なる2点で交わる m の範囲は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_m115_006",
+      "unit": "math.m1.quad.eqineq.intersect",
       "category": "calculation",
       "prompt": "放物線 y=x² と直線 y=2x+k が接するとき、k の値は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_m115_007",
+      "unit": "math.m1.quad.eqineq.equation",
       "category": "calculation",
       "prompt": "2次方程式 x²+4x+m=0 が異なる2つの負の解をもつ m の範囲は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_m115_008",
+      "unit": "math.m1.quad.eqineq.always",
       "category": "calculation",
       "prompt": "すべての実数 x で kx²+2x+k>0 となる k の範囲は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_m115_009",
+      "unit": "math.m1.quad.eqineq",
       "category": "calculation",
       "prompt": "縦の長さが横より 3 cm 長い長方形の面積が 40 cm² のとき、横の長さは？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_m115_010",
+      "unit": "math.m1.quad.eqineq.equation",
       "category": "thinking",
       "prompt": "2次方程式の解の配置の問題で、判別式・軸・端点の値を調べる理由は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_m115_011",
+      "unit": "math.m1.quad.eqineq.distribution",
       "category": "calculation",
       "prompt": "x²−2ax+4=0 が1より大きい異なる2つの解をもつ a の範囲は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_m115_012",
+      "unit": "math.m1.quad.eqineq.distribution",
       "category": "calculation",
       "prompt": "x²+(a−3)x+a=0 が異なる2つの正の解をもつ a の範囲は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_m115_013",
+      "unit": "math.m1.quad.eqineq.distribution",
       "category": "calculation",
       "prompt": "x²−ax+a−3=0 が、1より大きい解と1より小さい解を1つずつもつ a の範囲は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_m115_014",
+      "unit": "math.m1.quad.eqineq.inequality",
       "category": "calculation",
       "prompt": "a>2 のとき、不等式 x²−(a+2)x+2a≦0 を解くと？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_m115_015",
+      "unit": "math.m1.quad.eqineq",
       "category": "calculation",
       "prompt": "高さが h=30t−5t²（m）で表されるボールが、25m 以上の高さにあるのは何秒間？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_m115_016",
+      "unit": "math.m1.quad.eqineq.inequality",
       "category": "calculation",
       "prompt": "不等式 x²+ax+b<0 の解が 1<x<4 のとき、a+b の値は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_m115_017",
+      "unit": "math.m1.quad.eqineq",
       "category": "calculation",
       "prompt": "周の長さが20の長方形で、面積が21以上になる縦の長さ x の範囲は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_m115_018",
+      "unit": "math.m1.quad.eqineq",
       "category": "calculation",
       "prompt": "x²−4x+3<0 を満たすすべての x が、x²−ax<0（a>0）を満たす a の範囲は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_m115_019",
+      "unit": "math.m1.quad.eqineq.equation",
       "category": "calculation",
       "prompt": "2次方程式 x²−2(k−1)x+k+5=0 が重解をもつ k の値は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_m115_020",
+      "unit": "math.m1.quad.eqineq",
       "category": "thinking",
       "prompt": "下に凸な2次関数 f(x) で、「ある x で f(x)>0」はどんなときに成り立つ？",
       "choices": [

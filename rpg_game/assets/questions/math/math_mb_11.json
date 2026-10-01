@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_mb11_001",
+      "unit": "math.mb.society.model.model",
       "category": "knowledge",
       "prompt": "最小二乗法で求める回帰直線は、どんな直線？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_mb11_002",
+      "unit": "math.mb.society.model.model",
       "category": "calculation",
       "prompt": "回帰直線が y=2x+1 のとき、x=5 での予測値は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_mb11_003",
+      "unit": "math.mb.society.model.ranking",
       "category": "calculation",
       "prompt": "ドント式で定数3議席を配分する。得票は A 党900、B 党500、C 党200。A 党の議席数は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_mb11_004",
+      "unit": "math.mb.society.model",
       "category": "calculation",
       "prompt": "くじ A は1/10の確率で1000円、くじ B は1/2の確率で150円もらえる。期待値が大きいのは？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_mb11_005",
+      "unit": "math.mb.society.model",
       "category": "knowledge",
       "prompt": "片対数グラフ（縦軸だけ対数目盛り）で、データがほぼ直線に並ぶときの変化は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_mb11_006",
+      "unit": "math.mb.society.model",
       "category": "calculation",
       "prompt": "10, 14, 12, 16 のデータで、最後の3期の移動平均は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_mb11_007",
+      "unit": "math.mb.society.model",
       "category": "calculation",
       "prompt": "毎年2%ずつ減る量が今1000のとき、3年後はおよそいくつ？（小数点以下切り捨て）",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_mb11_008",
+      "unit": "math.mb.society.model",
       "category": "calculation",
       "prompt": "30分ごとに2倍に増える細菌は、3時間後に何倍？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_mb11_009",
+      "unit": "math.mb.society.model.finance",
       "category": "calculation",
       "prompt": "100万円を年利1%の単利で5年預けると、元利合計は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_mb11_010",
+      "unit": "math.mb.society.model.model",
       "category": "thinking",
       "prompt": "回帰直線による予測を、データの範囲から大きく外れた x に使うときに注意する理由は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_mb11_011",
+      "unit": "math.mb.society.model.model",
       "category": "calculation",
       "prompt": "回帰直線が y=0.5x+10 のとき、x=40 での予測値は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_mb11_012",
+      "unit": "math.mb.society.model",
       "category": "calculation",
       "prompt": "2つの変量の相関係数が −0.9 のとき、散布図の様子は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_mb11_013",
+      "unit": "math.mb.society.model.ranking",
       "category": "calculation",
       "prompt": "ドント式で定数4議席を配分する。得票は A 党1200、B 党600、C 党300。A 党の議席は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_mb11_014",
+      "unit": "math.mb.society.model",
       "category": "calculation",
       "prompt": "確率 1/5 で 500円、それ以外は0円のくじの期待値は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_mb11_015",
+      "unit": "math.mb.society.model",
       "category": "calculation",
       "prompt": "両対数グラフでデータがほぼ直線に並ぶとき、x と y の関係は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_mb11_016",
+      "unit": "math.mb.society.model",
       "category": "calculation",
       "prompt": "6, 8, 10, 12, 14 のデータの、最後の3期の移動平均は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_mb11_017",
+      "unit": "math.mb.society.model",
       "category": "calculation",
       "prompt": "毎年10%ずつ減る量が今200のとき、2年後はいくつ？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_mb11_018",
+      "unit": "math.mb.society.model",
       "category": "calculation",
       "prompt": "20分ごとに2倍に増える細菌は、2時間後に何倍？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_mb11_019",
+      "unit": "math.mb.society.model.finance",
       "category": "calculation",
       "prompt": "50万円を年利2%の単利で3年預けると、元利合計は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_mb11_020",
+      "unit": "math.mb.society.model",
       "category": "thinking",
       "prompt": "相関関係があっても因果関係があるとは言えない理由は？",
       "choices": [

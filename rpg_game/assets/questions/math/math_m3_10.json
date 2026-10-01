@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_m310_001",
+      "unit": "math.m3.integ.method",
       "category": "calculation",
       "prompt": "∫x³ dx は？（C は積分定数）",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_m310_002",
+      "unit": "math.m3.integ.method",
       "category": "calculation",
       "prompt": "∫(1/x) dx は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_m310_003",
+      "unit": "math.m3.integ.method",
       "category": "calculation",
       "prompt": "∫eˣ dx は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_m310_004",
+      "unit": "math.m3.integ.method",
       "category": "calculation",
       "prompt": "∫cos x dx は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_m310_005",
+      "unit": "math.m3.integ.method",
       "category": "calculation",
       "prompt": "∫sin x dx は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_m310_006",
+      "unit": "math.m3.integ.method",
       "category": "calculation",
       "prompt": "∫₀^π sin x dx の値は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_m310_007",
+      "unit": "math.m3.integ.method",
       "category": "calculation",
       "prompt": "∫₁^e (1/x) dx の値は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_m310_008",
+      "unit": "math.m3.integ.method",
       "category": "calculation",
       "prompt": "∫₀¹ eˣ dx の値は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_m310_009",
+      "unit": "math.m3.integ.method",
       "category": "calculation",
       "prompt": "∫√x dx は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_m310_010",
+      "unit": "math.m3.integ.method.basic",
       "category": "thinking",
       "prompt": "不定積分に積分定数 C がつく理由は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_m310_011",
+      "unit": "math.m3.integ.method",
       "category": "calculation",
       "prompt": "∫x⁵ dx は？（C は積分定数）",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_m310_012",
+      "unit": "math.m3.integ.method",
       "category": "calculation",
       "prompt": "∫(2/x) dx は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_m310_013",
+      "unit": "math.m3.integ.method",
       "category": "calculation",
       "prompt": "∫e^(2x) dx は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_m310_014",
+      "unit": "math.m3.integ.method",
       "category": "calculation",
       "prompt": "∫(sin x+cos x) dx は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_m310_015",
+      "unit": "math.m3.integ.method",
       "category": "calculation",
       "prompt": "∫1/cos²x dx は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_m310_016",
+      "unit": "math.m3.integ.method",
       "category": "calculation",
       "prompt": "∫₀^(π/2) cos x dx の値は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_m310_017",
+      "unit": "math.m3.integ.method",
       "category": "calculation",
       "prompt": "∫₁^(e²) (1/x) dx の値は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_m310_018",
+      "unit": "math.m3.integ.method",
       "category": "calculation",
       "prompt": "∫₀^(log 2) eˣ dx の値は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_m310_019",
+      "unit": "math.m3.integ.method.basic",
       "category": "calculation",
       "prompt": "∫1/√x dx は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_m310_020",
+      "unit": "math.m3.integ.method.definite",
       "category": "knowledge",
       "prompt": "定積分 ∫ₐᵇ f(x) dx と ∫ᵇₐ f(x) dx の関係は？",
       "choices": [

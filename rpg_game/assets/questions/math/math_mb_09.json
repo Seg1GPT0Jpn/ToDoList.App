@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_mb09_001",
+      "unit": "math.mb.stat.random",
       "category": "calculation",
       "prompt": "コインを400回投げて表が220回出た。表の確率を1/2と仮定したとき、X=220 を標準化した値は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_mb09_002",
+      "unit": "math.mb.stat.infer.test",
       "category": "thinking",
       "prompt": "上の結果で、有意水準5%（両側：|Z|>1.96 で棄却）の判断は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_mb09_003",
+      "unit": "math.mb.stat.infer.sample",
       "category": "calculation",
       "prompt": "400人を調べて240人が賛成だった。標本比率は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_mb09_004",
+      "unit": "math.mb.stat.infer.estimate",
       "category": "calculation",
       "prompt": "上の標本から、母比率 p の信頼度95%の信頼区間を小数第2位まで求めると、おおよそ？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_mb09_005",
+      "unit": "math.mb.stat.infer.sample",
       "category": "calculation",
       "prompt": "信頼区間の幅を半分にするには、標本の大きさを何倍にすればよい？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_mb09_006",
+      "unit": "math.mb.stat.infer.test",
       "category": "knowledge",
       "prompt": "有意水準5%で検定するとは、どういうこと？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_mb09_007",
+      "unit": "math.mb.stat.infer.test",
       "category": "knowledge",
       "prompt": "仮説検定で、否定することを期待して立てる仮説を何という？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_mb09_008",
+      "unit": "math.mb.stat.random.variable",
       "category": "calculation",
       "prompt": "確率密度関数 f(x)=2x（0≦x≦1）の確率変数 X について、P(0≦X≦1/2) は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_mb09_009",
+      "unit": "math.mb.stat.random.variable",
       "category": "calculation",
       "prompt": "同じ確率変数 X の期待値は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_mb09_010",
+      "unit": "math.mb.stat.infer.test",
       "category": "thinking",
       "prompt": "「帰無仮説が棄却されなかった」ことの正しい解釈は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_mb09_011",
+      "unit": "math.mb.stat.random.variable",
       "category": "calculation",
       "prompt": "さいころを 180 回投げて1の目が 45 回出た。1の目の確率を 1/6 と仮定したとき、標準化した値 Z は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_mb09_012",
+      "unit": "math.mb.stat.infer.test",
       "category": "calculation",
       "prompt": "上の結果を有意水準5%（両側：|Z|>1.96 で棄却）で判断すると？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_mb09_013",
+      "unit": "math.mb.stat.infer.sample",
       "category": "calculation",
       "prompt": "100人を調べて30人が「はい」と答えた。標本比率は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_mb09_014",
+      "unit": "math.mb.stat.infer.sample",
       "category": "calculation",
       "prompt": "標本比率 R、標本の大きさ n のとき、母比率の信頼度95%の信頼区間の片側の幅は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_mb09_015",
+      "unit": "math.mb.stat.infer.sample",
       "category": "calculation",
       "prompt": "信頼区間の幅を1/3にするには、標本の大きさを何倍にすればよい？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_mb09_016",
+      "unit": "math.mb.stat.infer.test",
       "category": "knowledge",
       "prompt": "有意水準1%で棄却するときの基準は、5%のときと比べてどうなる？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_mb09_017",
+      "unit": "math.mb.stat.infer.test",
       "category": "knowledge",
       "prompt": "仮説検定で、主張したいことと反対の仮説を何という？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_mb09_018",
+      "unit": "math.mb.stat.random.variable",
       "category": "calculation",
       "prompt": "確率密度関数 f(x)=1/2（0≦x≦2）の確率変数 X について、P(0≦X≦1) は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_mb09_019",
+      "unit": "math.mb.stat.random.variable",
       "category": "calculation",
       "prompt": "同じ X の期待値は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_mb09_020",
+      "unit": "math.mb.stat.infer.test",
       "category": "thinking",
       "prompt": "片側検定を使うのが適切なのはどんなとき？",
       "choices": [

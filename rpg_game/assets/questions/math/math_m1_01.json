@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_m101_001",
+      "unit": "math.m1.numexpr.poly.expand",
       "category": "calculation",
       "prompt": "(x+3)(x+5) を展開すると？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_m101_002",
+      "unit": "math.m1.numexpr.poly.expand",
       "category": "calculation",
       "prompt": "(2x−1)² を展開すると？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_m101_003",
+      "unit": "math.m1.numexpr.poly.expand",
       "category": "calculation",
       "prompt": "(a+b)(a−b) を展開すると？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_m101_004",
+      "unit": "math.m1.numexpr.poly.factor",
       "category": "calculation",
       "prompt": "x²+7x+12 を因数分解すると？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_m101_005",
+      "unit": "math.m1.numexpr.poly.factor",
       "category": "calculation",
       "prompt": "x²−9 を因数分解すると？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_m101_006",
+      "unit": "math.m1.numexpr.poly.arrange",
       "category": "knowledge",
       "prompt": "単項式 3x²y の次数は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_m101_007",
+      "unit": "math.m1.numexpr.poly.arrange",
       "category": "calculation",
       "prompt": "(3x²−2x+1)+(x²+5x−4) を計算すると？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_m101_008",
+      "unit": "math.m1.numexpr.poly",
       "category": "calculation",
       "prompt": "x²·x³ を計算すると？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_m101_009",
+      "unit": "math.m1.numexpr.poly",
       "category": "calculation",
       "prompt": "(2a)³ を計算すると？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_m101_010",
+      "unit": "math.m1.numexpr.poly",
       "category": "thinking",
       "prompt": "(a+b)² が a²+b² にならない理由として正しいものは？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_m101_011",
+      "unit": "math.m1.numexpr.poly.expand",
       "category": "calculation",
       "prompt": "(x+4)(x−2) を展開すると？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_m101_012",
+      "unit": "math.m1.numexpr.poly.expand",
       "category": "calculation",
       "prompt": "(3x+2)² を展開すると？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_m101_013",
+      "unit": "math.m1.numexpr.poly.expand",
       "category": "calculation",
       "prompt": "(2a+3b)(2a−3b) を展開すると？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_m101_014",
+      "unit": "math.m1.numexpr.poly.factor",
       "category": "calculation",
       "prompt": "x²−5x+6 を因数分解すると？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_m101_015",
+      "unit": "math.m1.numexpr.poly.factor",
       "category": "calculation",
       "prompt": "4x²−25 を因数分解すると？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_m101_016",
+      "unit": "math.m1.numexpr.poly.factor",
       "category": "calculation",
       "prompt": "x²+6x+9 を因数分解すると？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_m101_017",
+      "unit": "math.m1.numexpr.poly.factor",
       "category": "calculation",
       "prompt": "3x²−6x を因数分解すると？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_m101_018",
+      "unit": "math.m1.numexpr.poly",
       "category": "calculation",
       "prompt": "(x²y)³ を計算すると？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_m101_019",
+      "unit": "math.m1.numexpr.poly.arrange",
       "category": "calculation",
       "prompt": "(5x²−3x+2)−(2x²−x+4) を計算すると？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_m101_020",
+      "unit": "math.m1.numexpr.poly.arrange",
       "category": "knowledge",
       "prompt": "2x²+3xy−y²+x を x について整理したとき、x の1次の項の係数は？",
       "choices": [

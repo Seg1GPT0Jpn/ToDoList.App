@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_stat01_001",
+      "unit": "math.m1.data.stats.center",
       "category": "knowledge",
       "prompt": "データを小さい順に並べたとき、中央値と同じ値になる四分位数は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_stat01_002",
+      "unit": "math.m1.data.stats.spread",
       "category": "knowledge",
       "prompt": "四分位範囲（IQR）の定義として正しい式は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_stat01_003",
+      "unit": "math.m1.data.stats.spread",
       "category": "knowledge",
       "prompt": "四分位偏差の定義として正しい式は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_stat01_004",
+      "unit": "math.m1.data.stats.spread",
       "category": "calculation",
       "prompt": "データ 3, 5, 8, 12, 15 の第1四分位数（Q₁）は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_stat01_005",
+      "unit": "math.m1.data.stats.spread",
       "category": "calculation",
       "prompt": "データ 3, 5, 8, 12, 15 の第3四分位数（Q₃）は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_stat01_006",
+      "unit": "math.m1.data.stats.spread",
       "category": "calculation",
       "prompt": "データ 2, 4, 6, 8, 10, 12 の四分位範囲は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_stat01_007",
+      "unit": "math.m1.data.stats.spread",
       "category": "thinking",
       "prompt": "箱ひげ図の「箱」の長さが表している統計量は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_stat01_008",
+      "unit": "math.m1.data.stats.spread",
       "category": "thinking",
       "prompt": "箱ひげ図の箱の中に含まれるデータのおよその割合は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_stat01_009",
+      "unit": "math.m1.data.stats.center",
       "category": "knowledge",
       "prompt": "各データの値から平均値を引いた差を何という？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_stat01_010",
+      "unit": "math.m1.data.stats",
       "category": "knowledge",
       "prompt": "すべてのデータの「偏差の合計」は必ずいくつになる？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_stat01_011",
+      "unit": "math.m1.data.stats.variance",
       "category": "knowledge",
       "prompt": "分散の定義として正しいものは？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_stat01_012",
+      "unit": "math.m1.data.stats.variance",
       "category": "calculation",
       "prompt": "データ 2, 4, 6 の分散は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_stat01_013",
+      "unit": "math.m1.data.stats.variance",
       "category": "calculation",
       "prompt": "データ 3, 3, 3, 3, 3 の標準偏差は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_stat01_014",
+      "unit": "math.m1.data.stats.variance",
       "category": "knowledge",
       "prompt": "分散 s² と標準偏差 s の関係として正しい式は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_stat01_015",
+      "unit": "math.m1.data.stats.variance",
       "category": "calculation",
       "prompt": "あるテストの分散が 25 のとき、標準偏差は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_stat01_016",
+      "unit": "math.m1.data.stats.variance",
       "category": "calculation",
       "prompt": "公式「分散 ＝ (2乗の平均) − (平均の2乗)」を用いて、2乗の平均が 34、平均が 5 のデータの分散は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_stat01_017",
+      "unit": "math.m1.data.stats.variance",
       "category": "thinking",
       "prompt": "全員の得点に一律 10 点を加えたとき、得点の標準偏差はどうなる？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_stat01_018",
+      "unit": "math.m1.data.stats.variance",
       "category": "thinking",
       "prompt": "全員の得点を 2 倍にしたとき、得点の分散はどうなる？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_stat01_019",
+      "unit": "math.m1.data.stats.variance",
       "category": "thinking",
       "prompt": "全員の得点を 3 倍にしたとき、得点の標準偏差はどうなる？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_stat01_020",
+      "unit": "math.m1.data.stats.variance",
       "category": "knowledge",
       "prompt": "2つの変量 x, y の共分散の定義は？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "mat_stat01_021",
+      "unit": "math.m1.data.stats.correlation",
       "category": "knowledge",
       "prompt": "相関係数 r の取りうる値の範囲は？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "mat_stat01_022",
+      "unit": "math.m1.data.stats.correlation",
       "category": "knowledge",
       "prompt": "相関係数の定義式として正しいものは？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "mat_stat01_023",
+      "unit": "math.m1.data.stats.correlation",
       "category": "thinking",
       "prompt": "散布図で点が右上がりの直線状に密に並んでいるとき、相関係数はどの値に近い？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "mat_stat01_024",
+      "unit": "math.m1.data.stats.correlation",
       "category": "thinking",
       "prompt": "相関係数が -0.85 である関係を表す散布図の特徴は？",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "mat_stat01_025",
+      "unit": "math.m1.data.stats.correlation",
       "category": "thinking",
       "prompt": "相関係数が 0 に近いとき、2つの変量の関係について言えることは？",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "mat_stat01_026",
+      "unit": "math.m1.data.stats.spread",
       "category": "knowledge",
       "prompt": "外れ値判定でよく用いられる基準で、第3四分位数から四分位範囲の何倍を超えた値とする？",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "mat_stat01_027",
+      "unit": "math.m1.data.stats.variance",
       "category": "calculation",
       "prompt": "変量 x の標準偏差が 4、変量 y の標準偏差が 5、共分散が 10 のとき、相関係数 r は？",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "mat_stat01_028",
+      "unit": "math.m1.data.stats.correlation",
       "category": "thinking",
       "prompt": "全員の身長（cm）をメートル（m）単位に換算（1/100倍）したとき、体重との相関係数はどうなる？",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "mat_stat01_029",
+      "unit": "math.m1.data.stats.correlation",
       "category": "thinking",
       "prompt": "2つの変量に強い正の相関があることから直ちに「因果関係がある」と言えない理由は？",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "mat_stat01_030",
+      "unit": "math.m1.data.stats",
       "category": "knowledge",
       "prompt": "度数分布表において、各階級の度数を全体の度数（総数）で割った割合を何という？",
       "choices": [
@@ -396,6 +426,7 @@
     },
     {
       "id": "mat_stat01_031",
+      "unit": "math.m1.data.stats.spread",
       "category": "calculation",
       "prompt": "データ 10, 20, 30, 40, 50 の範囲（レンジ）は？",
       "choices": [
@@ -409,6 +440,7 @@
     },
     {
       "id": "mat_stat01_032",
+      "unit": "math.m1.data.stats.correlation",
       "category": "thinking",
       "prompt": "y = -2x + 3 という関係がすべてのデータで完全に成り立つとき、相関係数 r は？",
       "choices": [

@@ -10,7 +10,11 @@ class AnswerEvent {
     required this.isCorrect,
     required this.elapsedMs,
     this.category,
+    this.unit,
   });
+
+  /// 学習体系の単元・小単元（QuizQuestion.unit）
+  final String? unit;
 
   /// 問題の種類（文法・意味・読解など。学習ステータスの分野分けに使う）
   final String? category;
@@ -48,9 +52,29 @@ class LearningRecord {
         elapsedMs: e.elapsedMs,
         setId: e.setId,
         category: e.category,
+        unit: e.unit,
       );
     }
     return LearningRecord(stats: next, studyDays: {...studyDays, day});
+  }
+
+  /// 単元が空の記録の問題 ID（マイグレーションで補う対象）
+  Iterable<String> get missingUnits =>
+      stats.entries.where((e) => e.value.unit.isEmpty).map((e) => e.key);
+
+  /// 問題 ID → 単元 の対応で、空の単元を補った記録を返す（古い記録の移行）
+  LearningRecord withUnits(Map<String, String> unitOf) {
+    if (unitOf.isEmpty) return this;
+    var changed = false;
+    final next = Map<String, QuestionStat>.of(stats);
+    for (final e in stats.entries) {
+      final u = unitOf[e.key];
+      if (e.value.unit.isEmpty && u != null && u.isNotEmpty) {
+        next[e.key] = e.value.withUnit(u);
+        changed = true;
+      }
+    }
+    return changed ? LearningRecord(stats: next, studyDays: studyDays) : this;
   }
 
   /// 教科（ワールド ID）。定期テストの海の英語（sea_…）は英語にまとめる

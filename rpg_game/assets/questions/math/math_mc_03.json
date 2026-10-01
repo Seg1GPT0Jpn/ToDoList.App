@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_mc03_001",
+      "unit": "math.mc.vector.plane",
       "category": "calculation",
       "prompt": "a、b が一次独立で sa+tb=2a+3b のとき、s+t は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_mc03_002",
+      "unit": "math.mc.vector.plane",
       "category": "calculation",
       "prompt": "|a|=|b|=1、|a−b|=1 のとき、a・b は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_mc03_003",
+      "unit": "math.mc.vector.plane",
       "category": "calculation",
       "prompt": "a=(1, 2)、b=(1, 1) のとき、|a+tb| の最小値は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_mc03_004",
+      "unit": "math.mc.vector.plane.position",
       "category": "calculation",
       "prompt": "△ABC で、AP+2BP+3CP=0（ベクトル）を満たす点 P の位置ベクトルは？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_mc03_005",
+      "unit": "math.mc.vector.plane.equation",
       "category": "knowledge",
       "prompt": "中心 C(c)、半径 r の円のベクトル方程式は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_mc03_006",
+      "unit": "math.mc.vector.plane",
       "category": "calculation",
       "prompt": "平行四辺形 ABCD で AB=b、AD=d（ベクトル）のとき、AC は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_mc03_007",
+      "unit": "math.mc.vector.plane",
       "category": "calculation",
       "prompt": "a=(2, 1) の b=(1, 3) 方向への正射影の長さ a・b/|b| は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_mc03_008",
+      "unit": "math.mc.vector.plane.figure",
       "category": "calculation",
       "prompt": "OA=(3, 1)、OB=(1, 2) のとき、△OAB の面積は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_mc03_009",
+      "unit": "math.mc.vector.plane.position",
       "category": "knowledge",
       "prompt": "p=sa+tb（a、b は位置ベクトル）が表す点が直線 AB 上にある条件は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_mc03_010",
+      "unit": "math.mc.vector.plane",
       "category": "thinking",
       "prompt": "一次独立なベクトルで表すと係数を比べられる理由は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_mc03_011",
+      "unit": "math.mc.vector.plane",
       "category": "calculation",
       "prompt": "a、b が一次独立で (s−1)a+(t+2)b=0 のとき、s、t は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_mc03_012",
+      "unit": "math.mc.vector.plane",
       "category": "calculation",
       "prompt": "|a|=2、|b|=1、|a+b|=√7 のとき、a・b は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_mc03_013",
+      "unit": "math.mc.vector.plane.operation",
       "category": "calculation",
       "prompt": "a=(2, 1)、b=(1, 0) のとき、|a+tb| の最小値は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_mc03_014",
+      "unit": "math.mc.vector.plane.position",
       "category": "calculation",
       "prompt": "△ABC の重心を G とするとき、GA+GB+GC（ベクトル）は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_mc03_015",
+      "unit": "math.mc.vector.plane",
       "category": "calculation",
       "prompt": "中心 A(a)、半径3 の円周上の点 P(p) が満たす式は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_mc03_016",
+      "unit": "math.mc.vector.plane",
       "category": "calculation",
       "prompt": "平行四辺形 ABCD で AB=b、AD=d（ベクトル）のとき、BD は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_mc03_017",
+      "unit": "math.mc.vector.plane",
       "category": "calculation",
       "prompt": "a=(3, 4) の、b=(1, 0) 方向への正射影の長さは？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_mc03_018",
+      "unit": "math.mc.vector.plane.figure",
       "category": "calculation",
       "prompt": "OA=(4, 0)、OB=(1, 3) のとき、△OAB の面積は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_mc03_019",
+      "unit": "math.mc.vector.plane",
       "category": "calculation",
       "prompt": "OP=sOA+tOB で、s+t=1、s≧0、t≧0 のとき、点 P の存在範囲は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_mc03_020",
+      "unit": "math.mc.vector.plane",
       "category": "thinking",
       "prompt": "三角形の問題で、始点を1つの頂点にそろえてベクトルを表す利点は？",
       "choices": [

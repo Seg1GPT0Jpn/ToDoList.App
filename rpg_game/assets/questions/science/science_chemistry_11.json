@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "sci_chm11_001",
+      "unit": "science.chemistry.equilibrium.energy.enthalpy",
       "category": "knowledge",
       "prompt": "発熱反応の反応エンタルピー ΔH の符号は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "sci_chm11_002",
+      "unit": "science.chemistry.equilibrium.energy.enthalpy",
       "category": "knowledge",
       "prompt": "「反応エンタルピーは、反応の経路によらず、はじめと終わりの状態だけで決まる」という法則は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "sci_chm11_003",
+      "unit": "science.chemistry.equilibrium.energy.enthalpy",
       "category": "knowledge",
       "prompt": "気体分子の共有結合 1 mol を切るのに必要なエネルギーを何という？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "sci_chm11_004",
+      "unit": "science.chemistry.equilibrium.energy.cell",
       "category": "knowledge",
       "prompt": "ダニエル電池の負極は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "sci_chm11_005",
+      "unit": "science.chemistry.equilibrium.energy.cell",
       "category": "knowledge",
       "prompt": "次の電池のうち、一次電池は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "sci_chm11_006",
+      "unit": "science.chemistry.equilibrium.energy.electrolysis",
       "category": "knowledge",
       "prompt": "電気分解で、陰極で起こる反応は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "sci_chm11_007",
+      "unit": "science.chemistry.equilibrium.energy.electrolysis",
       "category": "knowledge",
       "prompt": "電子 1 mol がもつ電気量の大きさ（ファラデー定数）は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "sci_chm11_008",
+      "unit": "science.chemistry.equilibrium.energy.cell",
       "category": "knowledge",
       "prompt": "水素と酸素から電気をとり出し、水だけができる電池は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "sci_chm11_009",
+      "unit": "science.chemistry.equilibrium.energy.enthalpy",
       "category": "calculation",
       "prompt": "C ＋ O₂ → CO₂ ΔH ＝ −394 kJ、CO ＋ ½O₂ → CO₂ ΔH ＝ −283 kJ。C ＋ ½O₂ → CO の ΔH は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "sci_chm11_010",
+      "unit": "science.chemistry.equilibrium.energy.enthalpy",
       "category": "calculation",
       "prompt": "結合エネルギー H−H 436、Cl−Cl 243、H−Cl 432（kJ/mol）。H₂ ＋ Cl₂ → 2HCl の ΔH は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "sci_chm11_011",
+      "unit": "science.chemistry.equilibrium.energy.enthalpy",
       "category": "calculation",
       "prompt": "メタンの燃焼エンタルピーは −890 kJ/mol。メタン 8.0 g を完全燃焼させたときの発熱量は？（CH₄ ＝ 16）",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "sci_chm11_012",
+      "unit": "science.chemistry.equilibrium.energy",
       "category": "calculation",
       "prompt": "2.0 A の電流を 9650 s 流した。流れた電子の物質量は？（F ＝ 9.65 × 10⁴ C/mol）",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "sci_chm11_013",
+      "unit": "science.chemistry.equilibrium.energy.electrolysis",
       "category": "calculation",
       "prompt": "硫酸銅(Ⅱ)水溶液を電気分解し、電子 0.20 mol が流れた。陰極に析出する銅は？（Cu ＝ 64）",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "sci_chm11_014",
+      "unit": "science.chemistry.equilibrium.energy.electrolysis",
       "category": "calculation",
       "prompt": "水の電気分解で電子 0.40 mol が流れた。陰極で発生する水素は標準状態で何 L？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "sci_chm11_015",
+      "unit": "science.chemistry.equilibrium.energy.cell",
       "category": "thinking",
       "prompt": "ダニエル電池で、導線を流れる電子の向きは？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "sci_chm11_016",
+      "unit": "science.chemistry.equilibrium.energy.cell",
       "category": "thinking",
       "prompt": "鉛蓄電池を放電すると、両極の質量はどうなる？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "sci_chm11_017",
+      "unit": "science.chemistry.equilibrium.energy.enthalpy",
       "category": "knowledge",
       "prompt": "吸熱反応の反応エンタルピー ΔH の符号は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "sci_chm11_018",
+      "unit": "science.chemistry.equilibrium.energy.enthalpy",
       "category": "knowledge",
       "prompt": "物質 1 mol が完全燃焼するときの反応エンタルピーを何という？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "sci_chm11_019",
+      "unit": "science.chemistry.equilibrium.energy.enthalpy",
       "category": "knowledge",
       "prompt": "化合物 1 mol がその成分元素の単体から生成するときの反応エンタルピーは？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "sci_chm11_020",
+      "unit": "science.chemistry.equilibrium.energy.cell",
       "category": "knowledge",
       "prompt": "イオン化傾向の大きい金属が電池の何極になる？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "sci_chm11_021",
+      "unit": "science.chemistry.equilibrium.energy.cell",
       "category": "knowledge",
       "prompt": "リチウムイオン電池の特徴は？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "sci_chm11_022",
+      "unit": "science.chemistry.equilibrium.energy.electrolysis",
       "category": "knowledge",
       "prompt": "塩化銅(Ⅱ)水溶液を炭素電極で電気分解したとき、陰極に析出する物質は？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "sci_chm11_023",
+      "unit": "science.chemistry.equilibrium.energy.electrolysis",
       "category": "knowledge",
       "prompt": "NaCl 水溶液を電気分解したとき、陽極で発生する気体は？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "sci_chm11_024",
+      "unit": "science.chemistry.equilibrium.energy",
       "category": "knowledge",
       "prompt": "アルミニウムを工業的につくる方法は？",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "sci_chm11_025",
+      "unit": "science.chemistry.equilibrium.energy.enthalpy",
       "category": "calculation",
       "prompt": "H₂ ＋ ½O₂ → H₂O(液) ΔH ＝ −286 kJ。水素 4.0 g が燃焼すると何 kJ の熱が出る？（H ＝ 1.0）",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "sci_chm11_026",
+      "unit": "science.chemistry.equilibrium.energy.enthalpy",
       "category": "calculation",
       "prompt": "結合エネルギー H−H 436、F−F 158、H−F 568 kJ/mol。H₂ ＋ F₂ → 2HF の ΔH は？",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "sci_chm11_027",
+      "unit": "science.chemistry.equilibrium.energy.enthalpy",
       "category": "calculation",
       "prompt": "C(黒鉛) ＋ O₂ → CO₂ ΔH ＝ −394 kJ、CO ＋ ½O₂ → CO₂ ΔH ＝ −283 kJ。CO の生成エンタルピーは？",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "sci_chm11_028",
+      "unit": "science.chemistry.equilibrium.energy",
       "category": "calculation",
       "prompt": "5.0 A の電流を 1930 s 流した。流れた電子の物質量は？（F ＝ 9.65 × 10⁴ C/mol）",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "sci_chm11_029",
+      "unit": "science.chemistry.equilibrium.energy.electrolysis",
       "category": "calculation",
       "prompt": "硝酸銀水溶液を電気分解し、電子 0.10 mol が流れた。陰極に析出する銀は？（Ag ＝ 108）",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "sci_chm11_030",
+      "unit": "science.chemistry.equilibrium.energy.electrolysis",
       "category": "calculation",
       "prompt": "水の電気分解で、陽極から酸素 0.050 mol が発生した。流れた電子は？",
       "choices": [
@@ -396,6 +426,7 @@
     },
     {
       "id": "sci_chm11_031",
+      "unit": "science.chemistry.equilibrium.energy.cell",
       "category": "thinking",
       "prompt": "燃料電池が注目されている理由は？",
       "choices": [
@@ -409,6 +440,7 @@
     },
     {
       "id": "sci_chm11_032",
+      "unit": "science.chemistry.equilibrium.energy.cell",
       "category": "thinking",
       "prompt": "ボルタ電池ですぐに電圧が下がる主な理由は？",
       "choices": [

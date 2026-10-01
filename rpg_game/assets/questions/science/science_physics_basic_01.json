@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "science_physics_basic_01_001",
+      "unit": "science.physics.mechanics.kinematics.velocity",
       "category": "calculation",
       "prompt": "20 m/s の等速直線運動で、5 秒間に進む距離は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "science_physics_basic_01_002",
+      "unit": "science.physics.mechanics.kinematics.velocity",
       "category": "calculation",
       "prompt": "静止していた物体が 4 秒後に 20 m/s になった。加速度の大きさは？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "science_physics_basic_01_003",
+      "unit": "science.physics.mechanics.kinematics.velocity",
       "category": "calculation",
       "prompt": "初速度 2 m/s、加速度 3 m/s² の等加速度運動。4 秒後の速さは？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "science_physics_basic_01_004",
+      "unit": "science.physics.mechanics.kinematics.velocity",
       "category": "calculation",
       "prompt": "静止状態から加速度 2 m/s² で 5 秒間動いたときの移動距離は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "science_physics_basic_01_005",
+      "unit": "science.physics.mechanics.kinematics.fall",
       "category": "calculation",
       "prompt": "自由落下を始めて 2 秒後の速さは？（g = 9.8 m/s²）",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "science_physics_basic_01_006",
+      "unit": "science.physics.mechanics.kinematics.fall",
       "category": "calculation",
       "prompt": "自由落下を始めて 2 秒間に落ちる距離は？（g = 9.8 m/s²）",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "science_physics_basic_01_007",
+      "unit": "science.physics.mechanics.kinematics.graph",
       "category": "knowledge",
       "prompt": "v-t グラフで、グラフと時間軸で囲まれた部分の面積が表すものは？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "science_physics_basic_01_008",
+      "unit": "science.physics.mechanics.kinematics.graph",
       "category": "calculation",
       "prompt": "このグラフの物体が 0〜5 秒に進んだ距離は？",
       "choices": [
@@ -135,6 +143,7 @@
     },
     {
       "id": "science_physics_basic_01_009",
+      "unit": "science.physics.mechanics.force.kinds",
       "category": "calculation",
       "prompt": "質量 2 kg の物体にはたらく重力の大きさは？（g = 9.8 m/s²）",
       "choices": [
@@ -148,6 +157,7 @@
     },
     {
       "id": "science_physics_basic_01_010",
+      "unit": "science.physics.mechanics.kinematics.velocity",
       "category": "calculation",
       "prompt": "質量 4 kg の物体に 3 m/s² の加速度を生じさせる力は？",
       "choices": [
@@ -161,6 +171,7 @@
     },
     {
       "id": "science_physics_basic_01_011",
+      "unit": "science.physics.mechanics.kinematics.velocity",
       "category": "calculation",
       "prompt": "質量 2 kg の物体に 10 N の力を加えたときの加速度は？",
       "choices": [
@@ -174,6 +185,7 @@
     },
     {
       "id": "science_physics_basic_01_012",
+      "unit": "science.physics.mechanics.force.balance",
       "category": "knowledge",
       "prompt": "A が B を押すと、B も A を同じ大きさで逆向きに押し返す。この法則は？",
       "choices": [
@@ -187,6 +199,7 @@
     },
     {
       "id": "science_physics_basic_01_013",
+      "unit": "science.physics.mechanics.kinematics",
       "category": "knowledge",
       "prompt": "バスが急に止まると、乗客が前に倒れそうになる。この現象に関係する法則は？",
       "choices": [
@@ -200,6 +213,7 @@
     },
     {
       "id": "science_physics_basic_01_014",
+      "unit": "science.physics.mechanics.force.friction",
       "category": "calculation",
       "prompt": "垂直抗力 20 N、動摩擦係数 0.5 のとき、動摩擦力の大きさは？",
       "choices": [
@@ -213,6 +227,7 @@
     },
     {
       "id": "science_physics_basic_01_015",
+      "unit": "science.physics.mechanics.energy.work",
       "category": "calculation",
       "prompt": "5 N の力で物体を力の向きに 3 m 動かしたときの仕事は？",
       "choices": [
@@ -226,6 +241,7 @@
     },
     {
       "id": "science_physics_basic_01_016",
+      "unit": "science.physics.mechanics.energy.work",
       "category": "calculation",
       "prompt": "600 J の仕事を 30 秒でしたときの仕事率は？",
       "choices": [
@@ -239,6 +255,7 @@
     },
     {
       "id": "science_physics_basic_01_017",
+      "unit": "science.physics.mechanics.kinematics.velocity",
       "category": "calculation",
       "prompt": "質量 2 kg、速さ 3 m/s の物体の運動エネルギーは？",
       "choices": [
@@ -252,6 +269,7 @@
     },
     {
       "id": "science_physics_basic_01_018",
+      "unit": "science.physics.mechanics.force.kinds",
       "category": "calculation",
       "prompt": "質量 2 kg の物体を高さ 5 m に置いたときの重力による位置エネルギーは？（g = 9.8）",
       "choices": [
@@ -265,6 +283,7 @@
     },
     {
       "id": "science_physics_basic_01_019",
+      "unit": "science.physics.mechanics.kinematics.velocity",
       "category": "calculation",
       "prompt": "高さ 5 m から静かに落とした物体が地面に着く直前の速さは？（g = 9.8、空気抵抗なし）",
       "choices": [
@@ -278,6 +297,7 @@
     },
     {
       "id": "science_physics_basic_01_020",
+      "unit": "science.physics.thermo.heat.capacity",
       "category": "calculation",
       "prompt": "水 100 g の温度を 10 K 上げるのに必要な熱量は？（水の比熱 4.2 J/(g·K)）",
       "choices": [
@@ -291,6 +311,7 @@
     },
     {
       "id": "science_physics_basic_01_021",
+      "unit": "science.physics.thermo.heat.temperature",
       "category": "calculation",
       "prompt": "27℃ は絶対温度で何 K？",
       "choices": [
@@ -304,6 +325,7 @@
     },
     {
       "id": "science_physics_basic_01_022",
+      "unit": "science.physics.waves.basic.describe",
       "category": "calculation",
       "prompt": "振動数 50 Hz、波長 2 m の波の速さは？",
       "choices": [
@@ -317,6 +339,7 @@
     },
     {
       "id": "science_physics_basic_01_023",
+      "unit": "science.physics.waves.sound.nature",
       "category": "calculation",
       "prompt": "音を出してから、はね返った音が 2 秒後に聞こえた。壁までの距離は？（音速 340 m/s）",
       "choices": [
@@ -330,6 +353,7 @@
     },
     {
       "id": "science_physics_basic_01_024",
+      "unit": "science.physics.em.current.ohm",
       "category": "calculation",
       "prompt": "5 Ω の抵抗に 2 A の電流が流れているとき、抵抗にかかる電圧は？",
       "choices": [
@@ -343,6 +367,7 @@
     },
     {
       "id": "science_physics_basic_01_025",
+      "unit": "science.physics.em.current.ohm",
       "category": "calculation",
       "prompt": "3 Ω と 6 Ω の抵抗を直列につないだときの合成抵抗は？",
       "choices": [
@@ -356,6 +381,7 @@
     },
     {
       "id": "science_physics_basic_01_026",
+      "unit": "science.physics.em.current.ohm",
       "category": "calculation",
       "prompt": "3 Ω と 6 Ω の抵抗を並列につないだときの合成抵抗は？",
       "choices": [
@@ -369,6 +395,7 @@
     },
     {
       "id": "science_physics_basic_01_027",
+      "unit": "science.physics.em.current.charge",
       "category": "calculation",
       "prompt": "100 V で 2 A の電流が流れる電気器具の消費電力は？",
       "choices": [
@@ -382,6 +409,7 @@
     },
     {
       "id": "science_physics_basic_01_028",
+      "unit": "science.physics.em.current.power",
       "category": "calculation",
       "prompt": "200 W の電気器具を 3 時間使ったときの電力量は？",
       "choices": [
@@ -395,6 +423,7 @@
     },
     {
       "id": "science_physics_basic_01_029",
+      "unit": "science.physics.waves.basic.describe",
       "category": "calculation",
       "prompt": "振動数 50 Hz の交流の周期は？",
       "choices": [
@@ -408,6 +437,7 @@
     },
     {
       "id": "science_physics_basic_01_030",
+      "unit": "science.physics.em.current.ac",
       "category": "knowledge",
       "prompt": "発電機で行われるエネルギーの変換は？",
       "choices": [

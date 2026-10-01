@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_qapp01_001",
+      "unit": "math.m1.quad.graph.vertex",
       "category": "calculation",
       "prompt": "放物線 y = x² − 2ax + a² + 2a − 3 の頂点の座標は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_qapp01_002",
+      "unit": "math.m1.quad.graph.vertex",
       "category": "calculation",
       "prompt": "放物線 y = x² − 2ax + a² + 2a − 3 の頂点が第1象限にあるときの a の範囲は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_qapp01_003",
+      "unit": "math.m1.quad.graph.vertex",
       "category": "thinking",
       "prompt": "a を実数とするとき、放物線 y = x² − 2ax + a + 2 の頂点の軌跡の方程式は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_qapp01_004",
+      "unit": "math.m1.quad.maxmin.basic",
       "category": "thinking",
       "prompt": "y = x² − 4x + 1 (0 ≦ x ≦ a, a > 0) の最小値が −3 となる a の範囲は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_qapp01_005",
+      "unit": "math.m1.quad.maxmin.basic",
       "category": "thinking",
       "prompt": "f(x) = x² − 4x + 1 (0 ≦ x ≦ a, a > 0) の最小値が f(a) となる a の範囲は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_qapp01_006",
+      "unit": "math.m1.quad.maxmin.basic",
       "category": "thinking",
       "prompt": "y = x² − 4x + 1 (0 ≦ x ≦ a, a > 0) の最大値を与える x がただ1つであるための a の条件は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_qapp01_007",
+      "unit": "math.m1.quad.maxmin.basic",
       "category": "thinking",
       "prompt": "y = −(x−a)² + 3 (0 ≦ x ≦ 2) の最大値が 3 となる a の範囲は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_qapp01_008",
+      "unit": "math.m1.quad.maxmin.basic",
       "category": "thinking",
       "prompt": "y = −(x−a)² + 3 (0 ≦ x ≦ 2) の最小値を与える x が x = 0 のみとなる a の範囲は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_qapp01_009",
+      "unit": "math.m1.quad.maxmin.apply",
       "category": "calculation",
       "prompt": "周の長さが 20 cm である長方形の面積の最大値は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_qapp01_010",
+      "unit": "math.m1.quad.maxmin.apply",
       "category": "calculation",
       "prompt": "直角をはさむ2辺の長さの和が 12 である直角三角形の面積の最大値は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_qapp01_011",
+      "unit": "math.m1.quad.maxmin.basic",
       "category": "calculation",
       "prompt": "1個 100 円の品物を 1 円値上げするごとに売上個数が 2 個減る。売上金額を最大にする販売価格は？（当初売上 500 個）",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_qapp01_012",
+      "unit": "math.m1.quad.maxmin.basic",
       "category": "thinking",
       "prompt": "t = x² − 2x (−1 ≦ x ≦ 2) とおくとき、t のとりうる値の範囲は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_qapp01_013",
+      "unit": "math.m1.quad.maxmin.basic",
       "category": "calculation",
       "prompt": "関数 y = (x²−2x)² − 2(x²−2x) + 3 (−1 ≦ x ≦ 2) の最小値は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_qapp01_014",
+      "unit": "math.m1.quad.maxmin.basic",
       "category": "calculation",
       "prompt": "関数 y = (x²−2x)² − 2(x²−2x) + 3 (−1 ≦ x ≦ 2) の最大値は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_qapp01_015",
+      "unit": "math.m1.quad.maxmin.basic",
       "category": "calculation",
       "prompt": "実数 x, y が 2x + y = 4 を満たすとき、x² + y² の最小値は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_qapp01_016",
+      "unit": "math.m1.quad.maxmin.basic",
       "category": "calculation",
       "prompt": "実数 x, y が x² + y² = 4 を満たすとき、2x + y² の最大値は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_qapp01_017",
+      "unit": "math.m1.quad.maxmin.basic",
       "category": "calculation",
       "prompt": "実数 x, y が x² + y² = 4 を満たすとき、2x + y² の最小値は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_qapp01_018",
+      "unit": "math.m1.quad.eqineq.inequality",
       "category": "thinking",
       "prompt": "すべての実数 x に対して 2次不等式 x² + 2kx + k + 2 > 0 が成り立つ k の範囲は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_qapp01_019",
+      "unit": "math.m1.quad.eqineq.always",
       "category": "thinking",
       "prompt": "すべての実数 x に対して kx² + 4x + k − 3 ≦ 0 が成り立つ k の範囲は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_qapp01_020",
+      "unit": "math.m1.quad.eqineq.equation",
       "category": "thinking",
       "prompt": "2次方程式 x² − 2ax + a + 6 = 0 が異なる2つの正の解をもつための a の範囲は？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "mat_qapp01_021",
+      "unit": "math.m1.quad.eqineq.equation",
       "category": "thinking",
       "prompt": "2次方程式 x² − 2ax + a + 6 = 0 が異符号の解をもつための a の範囲は？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "mat_qapp01_022",
+      "unit": "math.m1.quad.eqineq.equation",
       "category": "thinking",
       "prompt": "2次方程式 x² − 2ax + 4 = 0 がともに 1 より大きい異なる2つの解をもつ a の範囲は？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "mat_qapp01_023",
+      "unit": "math.m1.quad.eqineq.equation",
       "category": "thinking",
       "prompt": "2次方程式 x² − ax − 2 = 0 の2解の間に 1 があるための a の条件は？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "mat_qapp01_024",
+      "unit": "math.m1.quad.maxmin",
       "category": "calculation",
       "prompt": "放物線 y = x² と直線 y = 2x + 3 の2つの交点間の距離は？",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "mat_qapp01_025",
+      "unit": "math.m1.quad.eqineq.intersect",
       "category": "calculation",
       "prompt": "放物線 y = x² − 3x と直線 y = x + k が接するときの k の値は？",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "mat_qapp01_026",
+      "unit": "math.m1.quad.maxmin",
       "category": "calculation",
       "prompt": "放物線 y = x² 上の点と直線 y = 2x − 5 の間の最短距離は？",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "mat_qapp01_027",
+      "unit": "math.m1.quad.maxmin.basic",
       "category": "calculation",
       "prompt": "直角三角形 ABC (AB=6, BC=8, ∠B=90°) に、2辺が AB, BC 上にある長方形を内接させるとき、長方形の面積の最大値は？",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "mat_qapp01_028",
+      "unit": "math.m1.quad.graph.vertex",
       "category": "thinking",
       "prompt": "2次関数 f(x) = ax² + bx + c について、すべての実数 x で f(1−x) = f(1+x) が成り立つとき、グラフの軸の方程式は？",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "mat_qapp01_029",
+      "unit": "math.m1.quad.maxmin.basic",
       "category": "calculation",
       "prompt": "x ≧ 0, y ≧ 0, x + y = 2 のとき、x² + 2y² の最大値は？",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "mat_qapp01_030",
+      "unit": "math.m1.quad.maxmin.basic",
       "category": "calculation",
       "prompt": "x ≧ 0, y ≧ 0, x + y = 2 のとき、x² + 2y² の最小値は？",
       "choices": [
@@ -396,6 +426,7 @@
     },
     {
       "id": "mat_qapp01_031",
+      "unit": "math.m1.quad.graph.vertex",
       "category": "thinking",
       "prompt": "放物線 y = x² − 2x + c が x 軸の正の部分と負の部分のそれぞれと交わるための c の条件は？",
       "choices": [
@@ -409,6 +440,7 @@
     },
     {
       "id": "mat_qapp01_032",
+      "unit": "math.m1.quad.maxmin.basic",
       "category": "thinking",
       "prompt": "区間 0 ≦ x ≦ 4 における関数 y = −x² + 2ax (a > 0) の最大値が 9 となる a の値は？",
       "choices": [

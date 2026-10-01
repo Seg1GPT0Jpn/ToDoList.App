@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "inf_info112_001",
+      "unit": "information.info.network.crypto.cipher",
       "category": "knowledge",
       "prompt": "暗号化と復号に同じ鍵を使う方式は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "inf_info112_002",
+      "unit": "information.info.network.crypto.cipher",
       "category": "knowledge",
       "prompt": "公開鍵で暗号化し、ペアの秘密鍵で復号する方式は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "inf_info112_003",
+      "unit": "information.info.network.crypto.cipher",
       "category": "knowledge",
       "prompt": "送信者の本人確認と、データが改ざんされていないことの確認に使うものは？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "inf_info112_004",
+      "unit": "information.info.network.crypto.cipher",
       "category": "knowledge",
       "prompt": "公開鍵が本当にその持ち主のものであることを、認証局が証明するものは？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "inf_info112_005",
+      "unit": "information.info.network.crypto.cipher",
       "category": "knowledge",
       "prompt": "Web などの通信を暗号化するしくみは？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "inf_info112_006",
+      "unit": "information.info.network.crypto",
       "category": "knowledge",
       "prompt": "外部からの不正な通信を遮断する仕組みは？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "inf_info112_007",
+      "unit": "information.info.network.crypto.cipher",
       "category": "knowledge",
       "prompt": "アルファベットを決まった数だけずらす古典的な暗号は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "inf_info112_008",
+      "unit": "information.info.network.crypto.cipher",
       "category": "calculation",
       "prompt": "シーザー暗号で、各文字をアルファベット順に 3 文字後ろにずらす。「CAT」を暗号化すると？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "inf_info112_009",
+      "unit": "information.info.network.crypto.cipher",
       "category": "calculation",
       "prompt": "3 文字後ろにずらしたシーザー暗号「KHOOR」を復号すると？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "inf_info112_010",
+      "unit": "information.info.network.crypto.cipher",
       "category": "calculation",
       "prompt": "10 人が互いに共通鍵暗号で1対1の秘密の通信をする。必要な鍵の数は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "inf_info112_011",
+      "unit": "information.info.network.crypto.cipher",
       "category": "calculation",
       "prompt": "同じ 10 人が公開鍵暗号を使う場合、必要な鍵の数は？（公開鍵と秘密鍵をそれぞれ数える）",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "inf_info112_012",
+      "unit": "information.info.network.crypto.cipher",
       "category": "thinking",
       "prompt": "公開鍵暗号方式が、共通鍵暗号方式より便利な点は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "inf_info112_013",
+      "unit": "information.info.network.crypto.cipher",
       "category": "knowledge",
       "prompt": "共通鍵暗号方式の弱点は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "inf_info112_014",
+      "unit": "information.info.network.crypto.cipher",
       "category": "knowledge",
       "prompt": "公開鍵暗号方式で、だれにでも公開してよい鍵は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "inf_info112_015",
+      "unit": "information.info.network.crypto.signature",
       "category": "knowledge",
       "prompt": "デジタル署名で、署名の作成に使う鍵は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "inf_info112_016",
+      "unit": "information.info.network.crypto",
       "category": "knowledge",
       "prompt": "データから一定の長さの値を計算し、改ざんの検出に使う関数は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "inf_info112_017",
+      "unit": "information.info.network.crypto.signature",
       "category": "knowledge",
       "prompt": "電子証明書を発行する、信頼された第三者機関は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "inf_info112_018",
+      "unit": "information.info.network.crypto.cipher",
       "category": "knowledge",
       "prompt": "Web サイトの通信が SSL/TLS で暗号化されているとき、ブラウザに表示されるものの例は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "inf_info112_019",
+      "unit": "information.info.network.crypto.cipher",
       "category": "calculation",
       "prompt": "シーザー暗号で、各文字を 2 文字後ろにずらすと「CAT」はどうなる？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "inf_info112_020",
+      "unit": "information.info.network.crypto.cipher",
       "category": "calculation",
       "prompt": "1 文字後ろにずらしたシーザー暗号「EPH」を復号すると？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "inf_info112_021",
+      "unit": "information.info.network.crypto.cipher",
       "category": "calculation",
       "prompt": "アルファベット 26 文字のシーザー暗号で、考えられるずらし方（鍵）は何通り？（ずらさない場合を除く）",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "inf_info112_022",
+      "unit": "information.info.network.crypto.cipher",
       "category": "calculation",
       "prompt": "5 人が互いに共通鍵暗号で 1 対 1 の通信をするとき、必要な鍵の数は？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "inf_info112_023",
+      "unit": "information.info.network.crypto.tls",
       "category": "thinking",
       "prompt": "HTTPS のサイトなら必ず安全とは言えない理由は？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "inf_info112_024",
+      "unit": "information.info.network.crypto.signature",
       "category": "thinking",
       "prompt": "パスワードを、そのままではなくハッシュ値にしてサーバに保存する理由は？",
       "choices": [

@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "math_trig_figure_01_001",
+      "unit": "math.m1.trig.ratio.define",
       "category": "calculation",
       "prompt": "図の直角三角形で sinθ は？",
       "choices": [
@@ -73,6 +74,7 @@
     },
     {
       "id": "math_trig_figure_01_002",
+      "unit": "math.m1.trig.ratio.define",
       "category": "calculation",
       "prompt": "図の直角三角形で cosθ は？",
       "choices": [
@@ -140,6 +142,7 @@
     },
     {
       "id": "math_trig_figure_01_003",
+      "unit": "math.m1.trig.ratio.define",
       "category": "calculation",
       "prompt": "図の直角三角形で tanθ は？",
       "choices": [
@@ -207,6 +210,7 @@
     },
     {
       "id": "math_trig_figure_01_004",
+      "unit": "math.m1.trig.ratio.define",
       "category": "calculation",
       "prompt": "sin 30° の値は？",
       "choices": [
@@ -220,6 +224,7 @@
     },
     {
       "id": "math_trig_figure_01_005",
+      "unit": "math.m1.trig.ratio.define",
       "category": "calculation",
       "prompt": "cos 60° の値は？",
       "choices": [
@@ -233,6 +238,7 @@
     },
     {
       "id": "math_trig_figure_01_006",
+      "unit": "math.m1.trig.ratio.define",
       "category": "calculation",
       "prompt": "tan 45° の値は？",
       "choices": [
@@ -246,6 +252,7 @@
     },
     {
       "id": "math_trig_figure_01_007",
+      "unit": "math.m1.trig.ratio.define",
       "category": "calculation",
       "prompt": "sin 60° の値は？",
       "choices": [
@@ -259,6 +266,7 @@
     },
     {
       "id": "math_trig_figure_01_008",
+      "unit": "math.m1.trig.ratio.define",
       "category": "calculation",
       "prompt": "cos 45° の値は？",
       "choices": [
@@ -272,6 +280,7 @@
     },
     {
       "id": "math_trig_figure_01_009",
+      "unit": "math.m1.trig.ratio.relation",
       "category": "calculation",
       "prompt": "θ が鋭角で sinθ = 3/5 のとき、cosθ は？",
       "choices": [
@@ -285,6 +294,7 @@
     },
     {
       "id": "math_trig_figure_01_010",
+      "unit": "math.m1.trig.ratio.define",
       "category": "knowledge",
       "prompt": "sin(90° − θ) と等しいものは？",
       "choices": [
@@ -298,6 +308,7 @@
     },
     {
       "id": "math_trig_figure_01_011",
+      "unit": "math.m1.trig.ratio.define",
       "category": "calculation",
       "prompt": "sin 150° の値は？",
       "choices": [
@@ -311,6 +322,7 @@
     },
     {
       "id": "math_trig_figure_01_012",
+      "unit": "math.m1.trig.ratio.define",
       "category": "calculation",
       "prompt": "cos 120° の値は？",
       "choices": [
@@ -324,6 +336,7 @@
     },
     {
       "id": "math_trig_figure_01_013",
+      "unit": "math.m1.trig.ratio.define",
       "category": "calculation",
       "prompt": "tan 135° の値は？",
       "choices": [
@@ -337,6 +350,7 @@
     },
     {
       "id": "math_trig_figure_01_014",
+      "unit": "math.m1.trig.solve.sine",
       "category": "calculation",
       "prompt": "△ABC で a = 6、A = 30° のとき、外接円の半径 R は？",
       "choices": [
@@ -350,6 +364,7 @@
     },
     {
       "id": "math_trig_figure_01_015",
+      "unit": "math.m1.trig.solve",
       "category": "calculation",
       "prompt": "△ABC で a = 2、A = 30°、B = 45° のとき b は？",
       "choices": [
@@ -363,6 +378,7 @@
     },
     {
       "id": "math_trig_figure_01_016",
+      "unit": "math.m1.trig.solve.cosine",
       "category": "calculation",
       "prompt": "△ABC で b = 3、c = 5、A = 60° のとき a は？",
       "choices": [
@@ -376,6 +392,7 @@
     },
     {
       "id": "math_trig_figure_01_017",
+      "unit": "math.m1.trig.ratio.define",
       "category": "calculation",
       "prompt": "△ABC で a = 7、b = 5、c = 3 のとき、角 A は？",
       "choices": [
@@ -389,6 +406,7 @@
     },
     {
       "id": "math_trig_figure_01_018",
+      "unit": "math.m1.trig.solve.area",
       "category": "calculation",
       "prompt": "△ABC で b = 4、c = 5、A = 30° のときの面積は？",
       "choices": [
@@ -402,6 +420,7 @@
     },
     {
       "id": "math_trig_figure_01_019",
+      "unit": "math.m1.trig.solve.area",
       "category": "calculation",
       "prompt": "△ABC で b = 6、c = 8、A = 60° のときの面積は？",
       "choices": [
@@ -415,6 +434,7 @@
     },
     {
       "id": "math_trig_figure_01_020",
+      "unit": "math.m1.trig.solve.area",
       "category": "calculation",
       "prompt": "3 辺が 3、4、5 の三角形の面積は？",
       "choices": [
@@ -428,6 +448,7 @@
     },
     {
       "id": "math_trig_figure_01_021",
+      "unit": "math.m1.trig.solve.solid",
       "category": "calculation",
       "prompt": "木から 20 m はなれた地点で見上げた角（仰角）が 30° のとき、目の高さからの木の高さは？",
       "choices": [
@@ -441,6 +462,7 @@
     },
     {
       "id": "math_trig_figure_01_022",
+      "unit": "math.m1.trig.solve.solid",
       "category": "calculation",
       "prompt": "建物から 15 m はなれた地点で見上げた角が 45° のとき、目の高さからの建物の高さは？",
       "choices": [
@@ -454,6 +476,7 @@
     },
     {
       "id": "math_trig_figure_01_023",
+      "unit": "math.m1.trig.ratio.obtuse",
       "category": "thinking",
       "prompt": "3 辺が 4、5、7 の三角形の形は？",
       "choices": [
@@ -467,6 +490,7 @@
     },
     {
       "id": "math_trig_figure_01_024",
+      "unit": "math.m1.trig.ratio.define",
       "category": "calculation",
       "prompt": "sinA : sinB : sinC = 3 : 5 : 7 のとき、最も大きい角は？",
       "choices": [
@@ -480,6 +504,7 @@
     },
     {
       "id": "math_trig_figure_01_025",
+      "unit": "math.m1.trig.solve.incircle",
       "category": "calculation",
       "prompt": "3 辺が 3、4、5 の三角形の内接円の半径は？",
       "choices": [
@@ -493,6 +518,7 @@
     },
     {
       "id": "math_trig_figure_01_026",
+      "unit": "math.m1.trig.solve.sine",
       "category": "calculation",
       "prompt": "斜辺が 10 の直角三角形の外接円の半径は？",
       "choices": [
@@ -506,6 +532,7 @@
     },
     {
       "id": "math_trig_figure_01_027",
+      "unit": "math.m1.trig.ratio.obtuse",
       "category": "calculation",
       "prompt": "0° ≦ θ ≦ 180° で sinθ = 1/2 となる θ は？",
       "choices": [
@@ -519,6 +546,7 @@
     },
     {
       "id": "math_trig_figure_01_028",
+      "unit": "math.m1.trig.ratio.define",
       "category": "calculation",
       "prompt": "0° ≦ θ ≦ 180° で cosθ = −√3/2 となる θ は？",
       "choices": [
@@ -532,6 +560,7 @@
     },
     {
       "id": "math_trig_figure_01_029",
+      "unit": "math.m1.trig.ratio.define",
       "category": "calculation",
       "prompt": "0° ≦ θ ≦ 180° で tanθ = √3 となる θ は？",
       "choices": [
@@ -545,6 +574,7 @@
     },
     {
       "id": "math_trig_figure_01_030",
+      "unit": "math.m1.trig.solve",
       "category": "calculation",
       "prompt": "AB = AC = 5、BC = 6 の二等辺三角形で cosB は？",
       "choices": [

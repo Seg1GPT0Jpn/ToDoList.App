@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_m306_001",
+      "unit": "math.m3.diff.derivative.explog",
       "category": "calculation",
       "prompt": "y=xˣ（x>0）の導関数は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_m306_002",
+      "unit": "math.m3.diff.derivative",
       "category": "calculation",
       "prompt": "x²+y²=25 で定まる y について、dy/dx は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_m306_003",
+      "unit": "math.m3.diff.derivative",
       "category": "calculation",
       "prompt": "(log|x|)′ は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_m306_004",
+      "unit": "math.m3.diff.derivative.higher",
       "category": "calculation",
       "prompt": "(x³)″（第2次導関数）は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_m306_005",
+      "unit": "math.m3.diff.derivative.trig",
       "category": "calculation",
       "prompt": "(sin x)″ は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_m306_006",
+      "unit": "math.m3.diff.derivative.rule",
       "category": "calculation",
       "prompt": "(eˣ sin x)′ は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_m306_007",
+      "unit": "math.m3.diff.derivative",
       "category": "calculation",
       "prompt": "e^(2x) の第 n 次導関数は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_m306_008",
+      "unit": "math.m3.diff.derivative.explog",
       "category": "calculation",
       "prompt": "(log₂x)′ は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_m306_009",
+      "unit": "math.m3.diff.derivative.chain",
       "category": "calculation",
       "prompt": "{√(1−x²)}′ は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_m306_010",
+      "unit": "math.m3.diff.derivative",
       "category": "thinking",
       "prompt": "「微分可能なら連続」だが、逆が成り立たない例は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_m306_011",
+      "unit": "math.m3.diff.derivative.explog",
       "category": "calculation",
       "prompt": "y=x^(2x)（x>0）の導関数は？（対数微分法）",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_m306_012",
+      "unit": "math.m3.diff.derivative",
       "category": "calculation",
       "prompt": "x²/4+y²=1 で定まる y について、dy/dx は？（y≠0）",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_m306_013",
+      "unit": "math.m3.diff.derivative",
       "category": "calculation",
       "prompt": "(log|cos x|)′ は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_m306_014",
+      "unit": "math.m3.diff.derivative",
       "category": "calculation",
       "prompt": "(x⁴)″ は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_m306_015",
+      "unit": "math.m3.diff.derivative",
       "category": "calculation",
       "prompt": "(cos x)″ は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_m306_016",
+      "unit": "math.m3.diff.derivative.rule",
       "category": "calculation",
       "prompt": "(x log x)′ は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_m306_017",
+      "unit": "math.m3.diff.derivative.trig",
       "category": "calculation",
       "prompt": "sin x の第4次導関数は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_m306_018",
+      "unit": "math.m3.diff.derivative",
       "category": "calculation",
       "prompt": "(log₁₀x)′ は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_m306_019",
+      "unit": "math.m3.diff.derivative",
       "category": "calculation",
       "prompt": "{1/√x}′ は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_m306_020",
+      "unit": "math.m3.diff.derivative",
       "category": "knowledge",
       "prompt": "f(x)=|x| は x=0 でどうなる？",
       "choices": [

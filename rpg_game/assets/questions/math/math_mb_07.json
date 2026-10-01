@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_mb07_001",
+      "unit": "math.mb.stat.random.variable",
       "category": "knowledge",
       "prompt": "確率変数 X の期待値 E(X) の求め方は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_mb07_002",
+      "unit": "math.mb.stat.random.variable",
       "category": "calculation",
       "prompt": "さいころの出る目 X の期待値は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_mb07_003",
+      "unit": "math.mb.stat.random.variable",
       "category": "calculation",
       "prompt": "さいころの出る目 X の分散は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_mb07_004",
+      "unit": "math.mb.stat.random.variable",
       "category": "calculation",
       "prompt": "E(X)=5 のとき、E(2X+3) は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_mb07_005",
+      "unit": "math.mb.stat.random.variable",
       "category": "calculation",
       "prompt": "V(X)=4 のとき、V(2X+3) は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_mb07_006",
+      "unit": "math.mb.stat.random.variable",
       "category": "calculation",
       "prompt": "二項分布 B(10, 1/2) の期待値は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_mb07_007",
+      "unit": "math.mb.stat.random.variable",
       "category": "calculation",
       "prompt": "二項分布 B(10, 1/2) の分散は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_mb07_008",
+      "unit": "math.mb.stat.random.binomial",
       "category": "calculation",
       "prompt": "二項分布 B(100, 0.3) の標準偏差は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_mb07_009",
+      "unit": "math.mb.stat.infer.sample",
       "category": "knowledge",
       "prompt": "母集団の一部を取り出して調べる調査を何という？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_mb07_010",
+      "unit": "math.mb.stat.infer.sample",
       "category": "thinking",
       "prompt": "標本を無作為に抽出する必要がある理由は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_mb07_011",
+      "unit": "math.mb.stat.random.variable",
       "category": "calculation",
       "prompt": "確率変数 X が 0、1、2 をそれぞれ確率 1/4、1/2、1/4 でとるとき、E(X) は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_mb07_012",
+      "unit": "math.mb.stat.random.variable",
       "category": "calculation",
       "prompt": "上の X の分散 V(X) は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_mb07_013",
+      "unit": "math.mb.stat.random.variable",
       "category": "calculation",
       "prompt": "コインを1回投げ、表なら1、裏なら0 とする X の期待値は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_mb07_014",
+      "unit": "math.mb.stat.random.variable",
       "category": "calculation",
       "prompt": "E(X)=2 のとき、E(−3X+1) は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_mb07_015",
+      "unit": "math.mb.stat.random.variable",
       "category": "calculation",
       "prompt": "V(X)=9 のとき、σ(2X−5) は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_mb07_016",
+      "unit": "math.mb.stat.random.variable",
       "category": "calculation",
       "prompt": "二項分布 B(20, 0.4) の期待値は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_mb07_017",
+      "unit": "math.mb.stat.random.variable",
       "category": "calculation",
       "prompt": "二項分布 B(20, 0.4) の分散は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_mb07_018",
+      "unit": "math.mb.stat.random.variable",
       "category": "calculation",
       "prompt": "さいころを 180 回投げるとき、1の目が出る回数 X の期待値は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_mb07_019",
+      "unit": "math.mb.stat.infer.sample",
       "category": "knowledge",
       "prompt": "調べたい集団全体を何という？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_mb07_020",
+      "unit": "math.mb.stat.infer.sample",
       "category": "knowledge",
       "prompt": "全数調査ではなく標本調査を行うのが適している例は？",
       "choices": [

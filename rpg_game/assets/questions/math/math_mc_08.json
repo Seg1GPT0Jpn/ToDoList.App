@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_mc08_001",
+      "unit": "math.mc.curve.conic",
       "category": "calculation",
       "prompt": "x=t+1、y=t² が表す曲線の方程式は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_mc08_002",
+      "unit": "math.mc.curve.conic",
       "category": "calculation",
       "prompt": "x=cos θ、y=sin θ が表す曲線は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_mc08_003",
+      "unit": "math.mc.curve.conic",
       "category": "calculation",
       "prompt": "x=3cos θ、y=2sin θ が表す曲線は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_mc08_004",
+      "unit": "math.mc.curve.param.polar",
       "category": "calculation",
       "prompt": "極座標 (2, π/3) を直交座標で表すと？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_mc08_005",
+      "unit": "math.mc.curve.param.polar",
       "category": "calculation",
       "prompt": "直交座標 (1, 1) を極座標で表すと？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_mc08_006",
+      "unit": "math.mc.curve.param.polar",
       "category": "calculation",
       "prompt": "極方程式 r=2 を直交座標の方程式にすると？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_mc08_007",
+      "unit": "math.mc.curve.conic.ellipse",
       "category": "calculation",
       "prompt": "楕円 x²/4+y²=1 と直線 y=x+k が接するとき、k は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_mc08_008",
+      "unit": "math.mc.curve.param.param",
       "category": "calculation",
       "prompt": "サイクロイド x=θ−sin θ、y=1−cos θ で θ=π の点は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_mc08_009",
+      "unit": "math.mc.curve.conic.ellipse",
       "category": "calculation",
       "prompt": "楕円 x²/16+y²/9=1 で囲まれた部分の面積は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_mc08_010",
+      "unit": "math.mc.curve.param.param",
       "category": "thinking",
       "prompt": "媒介変数表示の利点は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_mc08_011",
+      "unit": "math.mc.curve.conic",
       "category": "calculation",
       "prompt": "x=2t、y=t²−1 が表す曲線の方程式は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_mc08_012",
+      "unit": "math.mc.curve.conic",
       "category": "calculation",
       "prompt": "x=2cos θ、y=2sin θ が表す曲線は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_mc08_013",
+      "unit": "math.mc.curve.conic",
       "category": "calculation",
       "prompt": "x=4cos θ、y=3sin θ が表す曲線は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_mc08_014",
+      "unit": "math.mc.curve.param.polar",
       "category": "calculation",
       "prompt": "極座標 (4, π/6) を直交座標で表すと？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_mc08_015",
+      "unit": "math.mc.curve.param.polar",
       "category": "calculation",
       "prompt": "直交座標 (0, −3) を極座標で表すと？（r>0、0≦θ<2π）",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_mc08_016",
+      "unit": "math.mc.curve.param.polar",
       "category": "calculation",
       "prompt": "極方程式 θ=π/4 を直交座標の方程式にすると？（r は実数全体）",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_mc08_017",
+      "unit": "math.mc.curve.param.polar",
       "category": "calculation",
       "prompt": "極方程式 r cos θ=3 を直交座標の方程式にすると？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_mc08_018",
+      "unit": "math.mc.curve.conic",
       "category": "calculation",
       "prompt": "x=cos t、y=sin t で表される曲線の、t=π/4 に対応する点での dy/dx は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_mc08_019",
+      "unit": "math.mc.curve.complex.figure",
       "category": "calculation",
       "prompt": "x=t+1、y=2t−3 が表す図形は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_mc08_020",
+      "unit": "math.mc.curve.param.param",
       "category": "thinking",
       "prompt": "媒介変数表示された曲線 x=f(t)、y=g(t) で dy/dx を求める式は？",
       "choices": [

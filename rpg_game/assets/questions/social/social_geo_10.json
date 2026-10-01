@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "soc_geo10_001",
+      "unit": "social.geo.industry.population.transition",
       "category": "knowledge",
       "prompt": "年齢別・男女別の人口構成を表したグラフは？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "soc_geo10_002",
+      "unit": "social.geo.industry.population.transition",
       "category": "knowledge",
       "prompt": "出生率・死亡率ともに高く、すそが広い人口ピラミッドの型は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "soc_geo10_003",
+      "unit": "social.geo.industry.population.transition",
       "category": "knowledge",
       "prompt": "少子化が進み、すそがせまくなった人口ピラミッドの型は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "soc_geo10_004",
+      "unit": "social.geo.industry.population",
       "category": "knowledge",
       "prompt": "多産多死 → 多産少死 → 少産少死 へと変化していくことを何という？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "soc_geo10_005",
+      "unit": "social.geo.industry.population.transition",
       "category": "knowledge",
       "prompt": "発展途上国で死亡率が急に下がり、人口が急増することを何という？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "soc_geo10_006",
+      "unit": "social.geo.industry.population",
       "category": "knowledge",
       "prompt": "総人口にしめる 65 歳以上の割合が 21％ をこえた社会を何という？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "soc_geo10_007",
+      "unit": "social.geo.industry.population",
       "category": "knowledge",
       "prompt": "1 人の女性が一生に産む子どもの数の平均を何という？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "soc_geo10_008",
+      "unit": "social.geo.industry.population",
       "category": "knowledge",
       "prompt": "紛争や迫害から逃れるため、国外に逃れた人々を何という？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "soc_geo10_009",
+      "unit": "social.geo.industry.population.distribution",
       "category": "calculation",
       "prompt": "ある国の人口が 5000 万人、面積が 25 万 km² のとき、人口密度は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "soc_geo10_010",
+      "unit": "social.geo.industry.population",
       "category": "calculation",
       "prompt": "ある町の人口 10000 人のうち、65 歳以上が 2500 人。高齢化率は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "soc_geo10_011",
+      "unit": "social.geo.industry.population",
       "category": "thinking",
       "prompt": "先進国で少子化が進む理由として適切なものは？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "soc_geo10_012",
+      "unit": "social.geo.industry.population",
       "category": "thinking",
       "prompt": "ヨーロッパの多くの国で、外国からの労働者を受け入れてきた理由は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "soc_geo10_013",
+      "unit": "social.geo.industry.population",
       "category": "knowledge",
       "prompt": "世界の人口は、2020年代にはおよそ何人？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "soc_geo10_014",
+      "unit": "social.geo.industry.population",
       "category": "knowledge",
       "prompt": "2023年ごろに中国をこえ、人口が世界最多になったとされる国は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "soc_geo10_015",
+      "unit": "social.geo.industry.population",
       "category": "knowledge",
       "prompt": "65歳以上の割合が7%をこえた社会を何という？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "soc_geo10_016",
+      "unit": "social.geo.industry.population",
       "category": "knowledge",
       "prompt": "65歳以上の割合が14%をこえた社会を何という？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "soc_geo10_017",
+      "unit": "social.geo.industry.population",
       "category": "knowledge",
       "prompt": "日本の総人口が減少に転じたのは、いつごろ？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "soc_geo10_018",
+      "unit": "social.geo.industry.population",
       "category": "knowledge",
       "prompt": "出生数から死亡数を引いた人口の増減を何という？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "soc_geo10_019",
+      "unit": "social.geo.industry.population",
       "category": "knowledge",
       "prompt": "転入数から転出数を引いた人口の増減を何という？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "soc_geo10_020",
+      "unit": "social.geo.industry.population.transition",
       "category": "knowledge",
       "prompt": "出生率・死亡率ともに低く、人口がほぼ安定している人口ピラミッドの型は？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "soc_geo10_021",
+      "unit": "social.geo.industry.population",
       "category": "knowledge",
       "prompt": "国の総人口にしめる、都市に住む人口の割合を何という？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "soc_geo10_022",
+      "unit": "social.geo.industry.population.transition",
       "category": "calculation",
       "prompt": "出生率が 20‰（パーミル）、死亡率が 8‰ の国の自然増加率は？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "soc_geo10_023",
+      "unit": "social.geo.industry.population",
       "category": "calculation",
       "prompt": "人口が毎年2%ずつ増える国で、人口が2倍になるのはおよそ何年後？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "soc_geo10_024",
+      "unit": "social.geo.industry.population.problem",
       "category": "thinking",
       "prompt": "中国で長く続いた「一人っ子政策」が社会に与えた影響として適切なものは？",
       "choices": [

@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "sci_phy01_001",
+      "unit": "science.physics.mechanics.kinematics.measure",
       "category": "knowledge",
       "prompt": "長さの SI 基本単位は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "sci_phy01_002",
+      "unit": "science.physics.mechanics.kinematics.measure",
       "category": "knowledge",
       "prompt": "「0.0250 m」の有効数字は何けた？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "sci_phy01_003",
+      "unit": "science.physics.mechanics.kinematics.velocity",
       "category": "knowledge",
       "prompt": "「速さ」と「速度」のちがいとして正しいものは？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "sci_phy01_004",
+      "unit": "science.physics.mechanics.kinematics",
       "category": "knowledge",
       "prompt": "位置の変化（どちら向きにどれだけ移動したか）を表す量は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "sci_phy01_005",
+      "unit": "science.physics.mechanics.kinematics.graph",
       "category": "knowledge",
       "prompt": "x-t グラフ（位置と時間のグラフ）の傾きが表すものは？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "sci_phy01_006",
+      "unit": "science.physics.mechanics.kinematics.graph",
       "category": "knowledge",
       "prompt": "v-t グラフ（速度と時間のグラフ）と t 軸で囲まれた面積が表すものは？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "sci_phy01_007",
+      "unit": "science.physics.mechanics.kinematics.graph",
       "category": "knowledge",
       "prompt": "x-t グラフで、ある瞬間の速度を求めるには？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "sci_phy01_008",
+      "unit": "science.physics.mechanics.kinematics",
       "category": "knowledge",
       "prompt": "測定における「誤差」とは？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "sci_phy01_009",
+      "unit": "science.physics.mechanics.kinematics",
       "category": "calculation",
       "prompt": "36 km/h は何 m/s？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "sci_phy01_010",
+      "unit": "science.physics.mechanics.kinematics",
       "category": "calculation",
       "prompt": "x 軸上で、物体が位置 2.0 m から位置 −3.0 m へ移動した。変位は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "sci_phy01_011",
+      "unit": "science.physics.mechanics.kinematics.velocity",
       "category": "calculation",
       "prompt": "100 m を 12.5 s で走ったときの平均の速さは？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "sci_phy01_012",
+      "unit": "science.physics.mechanics.kinematics.measure",
       "category": "calculation",
       "prompt": "有効数字を考えて 2.4 × 1.25 を計算すると？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "sci_phy01_013",
+      "unit": "science.physics.mechanics.kinematics.velocity",
       "category": "calculation",
       "prompt": "東へ 20 m/s で走る車 A から、東へ 15 m/s で走る車 B を見たときの速度は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "sci_phy01_014",
+      "unit": "science.physics.mechanics.kinematics.velocity",
       "category": "calculation",
       "prompt": "速さ 3.0 m/s の等速直線運動で、20 s 間に進む距離は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "sci_phy01_015",
+      "unit": "science.physics.mechanics.kinematics.graph",
       "category": "thinking",
       "prompt": "x-t グラフが右上がりの直線になった。この物体の運動は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "sci_phy01_016",
+      "unit": "science.physics.mechanics.kinematics.graph",
       "category": "thinking",
       "prompt": "v-t グラフで、グラフが t 軸より下にある時間帯について正しいものは？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "sci_phy01_017",
+      "unit": "science.physics.mechanics.kinematics.measure",
       "category": "knowledge",
       "prompt": "時間の SI 基本単位は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "sci_phy01_018",
+      "unit": "science.physics.mechanics.kinematics.measure",
       "category": "knowledge",
       "prompt": "「3.00 × 10² m」の有効数字は何けた？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "sci_phy01_019",
+      "unit": "science.physics.mechanics.kinematics.velocity",
       "category": "knowledge",
       "prompt": "速度が「ベクトル量」であるとは、どういうこと？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "sci_phy01_020",
+      "unit": "science.physics.mechanics.kinematics.velocity",
       "category": "knowledge",
       "prompt": "平均の速度を表す式は？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "sci_phy01_021",
+      "unit": "science.physics.mechanics.kinematics.graph",
       "category": "knowledge",
       "prompt": "x-t グラフが水平な直線のとき、物体はどうなっている？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "sci_phy01_022",
+      "unit": "science.physics.mechanics.kinematics.graph",
       "category": "knowledge",
       "prompt": "等速直線運動の v-t グラフの形は？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "sci_phy01_023",
+      "unit": "science.physics.mechanics.kinematics",
       "category": "calculation",
       "prompt": "72 km/h は何 m/s？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "sci_phy01_024",
+      "unit": "science.physics.mechanics.kinematics",
       "category": "calculation",
       "prompt": "15 m/s は何 km/h？",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "sci_phy01_025",
+      "unit": "science.physics.mechanics.kinematics.measure",
       "category": "calculation",
       "prompt": "有効数字を考えて 12.3 + 4.56 を計算すると？",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "sci_phy01_026",
+      "unit": "science.physics.mechanics.kinematics",
       "category": "calculation",
       "prompt": "x 軸上で、位置 −1.0 m から位置 4.0 m まで動いた。変位は？",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "sci_phy01_027",
+      "unit": "science.physics.mechanics.kinematics.velocity",
       "category": "calculation",
       "prompt": "200 m を 40 s で進み、続けて 100 m を 10 s で進んだ。全体の平均の速さは？",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "sci_phy01_028",
+      "unit": "science.physics.mechanics.kinematics.velocity",
       "category": "calculation",
       "prompt": "西へ 10 m/s で走る車から、東へ 10 m/s で走る車を見ると、相手の速度は？",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "sci_phy01_029",
+      "unit": "science.physics.mechanics.kinematics.velocity",
       "category": "calculation",
       "prompt": "一定の速さ 25 m/s で 8.0 s 走った。進んだ距離は？",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "sci_phy01_030",
+      "unit": "science.physics.mechanics.kinematics.graph",
       "category": "calculation",
       "prompt": "x-t グラフで、2.0 s 間に位置が 10 m から 4.0 m に変わった。平均の速度は？",
       "choices": [
@@ -396,6 +426,7 @@
     },
     {
       "id": "sci_phy01_031",
+      "unit": "science.physics.mechanics.kinematics.velocity",
       "category": "thinking",
       "prompt": "同じ道のりを往復して出発点にもどった。このときの変位と平均の速度について正しいものは？",
       "choices": [
@@ -409,6 +440,7 @@
     },
     {
       "id": "sci_phy01_032",
+      "unit": "science.physics.mechanics.kinematics.measure",
       "category": "thinking",
       "prompt": "「有効数字」を考える理由として適切なものは？",
       "choices": [

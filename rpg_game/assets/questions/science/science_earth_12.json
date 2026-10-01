@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "sci_ear12_001",
+      "unit": "science.earth.atmos.structure.water",
       "category": "knowledge",
       "prompt": "水蒸気が凝結していない空気のかたまりが上昇するとき、温度はどのくらい下がる？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "sci_ear12_002",
+      "unit": "science.earth.atmos.structure.water",
       "category": "knowledge",
       "prompt": "上昇した空気のかたまりの中で、水蒸気の凝結が始まる高さを何という？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "sci_ear12_003",
+      "unit": "science.earth.atmos.structure.radiation",
       "category": "knowledge",
       "prompt": "太陽放射の強さが最も大きい波長域は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "sci_ear12_004",
+      "unit": "science.earth.atmos.structure.radiation",
       "category": "knowledge",
       "prompt": "地球全体の熱収支で、熱が余っているのは？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "sci_ear12_005",
+      "unit": "science.earth.atmos.circulation.atmos",
       "category": "knowledge",
       "prompt": "緯度 30° 付近から赤道に向かって吹く東よりの風は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "sci_ear12_006",
+      "unit": "science.earth.atmos.structure",
       "category": "knowledge",
       "prompt": "北半球で、動いている物体の向きを右へ曲げるように見えるはたらきを何という？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "sci_ear12_007",
+      "unit": "science.earth.atmos.weather.wind",
       "category": "knowledge",
       "prompt": "上空で、気圧傾度力と転向力がつり合って等圧線に平行に吹く風を何という？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "sci_ear12_008",
+      "unit": "science.earth.atmos.weather.wind",
       "category": "knowledge",
       "prompt": "地上付近の風が等圧線を横切って低圧側に吹きこむ理由は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "sci_ear12_009",
+      "unit": "science.earth.atmos.circulation.atmos",
       "category": "knowledge",
       "prompt": "中緯度の上空を西から東へ吹く、特に強い風の帯を何という？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "sci_ear12_010",
+      "unit": "science.earth.atmos.weather.japan",
       "category": "knowledge",
       "prompt": "大陸と海洋の温まり方のちがいによって、季節によって向きが変わる風は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "sci_ear12_011",
+      "unit": "science.earth.atmos.structure.water",
       "category": "knowledge",
       "prompt": "空気のかたまりが上昇しやすく、積乱雲が発達しやすい大気の状態を何という？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "sci_ear12_012",
+      "unit": "science.earth.atmos.structure",
       "category": "knowledge",
       "prompt": "晴れた日の昼、海岸で海から陸に向かって吹く風は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "sci_ear12_013",
+      "unit": "science.earth.atmos.structure.water",
       "category": "calculation",
       "prompt": "地上 25 ℃ の空気が、飽和せずに 1000 m 上昇した。温度は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "sci_ear12_014",
+      "unit": "science.earth.atmos.structure.water",
       "category": "calculation",
       "prompt": "地上の気温 20 ℃、露点 12 ℃ の空気が上昇したとき、雲ができ始める高さはおよそ？（凝結高度 ≒ 125 ×（気温 − 露点）m）",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "sci_ear12_015",
+      "unit": "science.earth.atmos.structure.water",
       "category": "calculation",
       "prompt": "地上 20 ℃ の空気が高さ 2000 m の山をこえる。1000 m で雲ができ、山頂までは湿潤断熱減率 0.5 ℃/100 m、風下では乾燥断熱減率 1 ℃/100 m で下降する。風下のふもと（0 m）の気温は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "sci_ear12_016",
+      "unit": "science.earth.atmos.weather.wind",
       "category": "thinking",
       "prompt": "北半球の上空で、地衡風が吹いているとき、風下を向いて立つと高気圧はどちら側にある？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "sci_ear12_017",
+      "unit": "science.earth.atmos.structure.water",
       "category": "knowledge",
       "prompt": "乾燥断熱減率はおよそ？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "sci_ear12_018",
+      "unit": "science.earth.atmos.structure.water",
       "category": "knowledge",
       "prompt": "湿潤断熱減率はおよそ？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "sci_ear12_019",
+      "unit": "science.earth.atmos.structure.radiation",
       "category": "knowledge",
       "prompt": "地球放射（地球が出す電磁波）の主な波長域は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "sci_ear12_020",
+      "unit": "science.earth.atmos.structure",
       "category": "knowledge",
       "prompt": "低緯度から高緯度へ熱を運んでいるものは？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "sci_ear12_021",
+      "unit": "science.earth.atmos.structure",
       "category": "knowledge",
       "prompt": "極付近で冷えて下降し、地上で低緯度側へ吹き出す風は？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "sci_ear12_022",
+      "unit": "science.earth.atmos.circulation.atmos",
       "category": "knowledge",
       "prompt": "亜熱帯高圧帯ができる緯度はおよそ？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "sci_ear12_023",
+      "unit": "science.earth.atmos.circulation.atmos",
       "category": "knowledge",
       "prompt": "熱帯収束帯（赤道低圧帯）で多い天気は？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "sci_ear12_024",
+      "unit": "science.earth.atmos.weather.wind",
       "category": "knowledge",
       "prompt": "転向力（コリオリの力）が生じる理由は？",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "sci_ear12_025",
+      "unit": "science.earth.atmos.weather.wind",
       "category": "knowledge",
       "prompt": "地衡風の向きは、北半球で等圧線に対してどうなっている？",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "sci_ear12_026",
+      "unit": "science.earth.atmos.structure.water",
       "category": "calculation",
       "prompt": "地上 30 ℃ の飽和していない空気が 1500 m 上昇すると、気温は？（乾燥断熱減率 1 ℃/100 m）",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "sci_ear12_027",
+      "unit": "science.earth.atmos.structure.water",
       "category": "calculation",
       "prompt": "地上の気温 25 ℃、露点 17 ℃ の空気が上昇したとき、雲ができ始める高さはおよそ？（露点は 100 m で 0.2 ℃ 下がるとする）",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "sci_ear12_028",
+      "unit": "science.earth.atmos.structure.water",
       "category": "calculation",
       "prompt": "雲底 1000 m の空気が山頂 2000 m まで上昇した。雲底の気温が 15 ℃ のとき、山頂の気温は？（湿潤断熱減率 0.5 ℃/100 m）",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "sci_ear12_029",
+      "unit": "science.earth.atmos.structure.water",
       "category": "calculation",
       "prompt": "前問の空気が、雲がなくなって山頂から 0 m まで吹き下りた。ふもとの気温は？（乾燥断熱減率 1 ℃/100 m）",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "sci_ear12_030",
+      "unit": "science.earth.atmos.structure.radiation",
       "category": "calculation",
       "prompt": "太陽定数が約 1.37 kW/m²。受けた日射の約 30 % を反射するとき、吸収する割合は？",
       "choices": [
@@ -396,6 +426,7 @@
     },
     {
       "id": "sci_ear12_031",
+      "unit": "science.earth.atmos.structure",
       "category": "thinking",
       "prompt": "「海風」が昼に吹く理由は？",
       "choices": [
@@ -409,6 +440,7 @@
     },
     {
       "id": "sci_ear12_032",
+      "unit": "science.earth.atmos.weather.wind",
       "category": "thinking",
       "prompt": "北半球の低気圧のまわりで風が反時計回りに吹きこむ理由は？",
       "choices": [

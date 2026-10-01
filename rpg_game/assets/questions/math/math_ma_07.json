@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_ma07_001",
+      "unit": "math.ma.geometry.triangle.centers",
       "category": "knowledge",
       "prompt": "三角形の重心は、各中線をどんな比に内分する？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_ma07_002",
+      "unit": "math.ma.geometry.triangle.centers",
       "category": "knowledge",
       "prompt": "三角形の外心とは？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_ma07_003",
+      "unit": "math.ma.geometry.triangle.centers",
       "category": "knowledge",
       "prompt": "三角形の内心とは？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_ma07_004",
+      "unit": "math.ma.geometry.triangle.bisector",
       "category": "calculation",
       "prompt": "△ABC で AB=6、AC=4、BC=5。∠A の二等分線と BC の交点を D とするとき、BD は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_ma07_005",
+      "unit": "math.ma.geometry.circle.inscribed",
       "category": "calculation",
       "prompt": "中心角が100°の弧に対する円周角は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_ma07_006",
+      "unit": "math.ma.geometry.circle.inscribed",
       "category": "calculation",
       "prompt": "円に内接する四角形で、1つの角が80°のとき、その対角は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_ma07_007",
+      "unit": "math.ma.geometry.circle.tangent",
       "category": "knowledge",
       "prompt": "接線と弦のつくる角は、その角の内部にある弧に対する何に等しい？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_ma07_008",
+      "unit": "math.ma.geometry.circle.power",
       "category": "calculation",
       "prompt": "円の2つの弦 AB、CD が点 P で交わる。PA=3、PB=8、PC=4 のとき、PD は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_ma07_009",
+      "unit": "math.ma.geometry.circle.tangent",
       "category": "calculation",
       "prompt": "円外の点 P から接線 PT と、円と A、B で交わる直線を引く。PA=4、PB=9 のとき、PT は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_ma07_010",
+      "unit": "math.ma.geometry.triangle.centers",
       "category": "thinking",
       "prompt": "三角形の形の板を重心の1点で支えると、つり合う理由は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_ma07_011",
+      "unit": "math.ma.geometry.triangle.centers",
       "category": "knowledge",
       "prompt": "三角形の垂心とは？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_ma07_012",
+      "unit": "math.ma.geometry.triangle.centers",
       "category": "calculation",
       "prompt": "△ABC の重心を G、中線を AM とする。AM=12 のとき、GM は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_ma07_013",
+      "unit": "math.ma.geometry.triangle.bisector",
       "category": "calculation",
       "prompt": "△ABC で AB=8、AC=6、BC=7。∠A の二等分線と BC の交点を D とするとき、BD は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_ma07_014",
+      "unit": "math.ma.geometry.circle.inscribed",
       "category": "calculation",
       "prompt": "中心角が140°の弧に対する円周角は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_ma07_015",
+      "unit": "math.ma.geometry.circle.inscribed",
       "category": "calculation",
       "prompt": "円に内接する四角形 ABCD で ∠A=95° のとき、∠C は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_ma07_016",
+      "unit": "math.ma.geometry.triangle",
       "category": "calculation",
       "prompt": "円の2つの弦 AB、CD が点 P で交わる。PA=4、PB=9、PC=6 のとき、PD は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_ma07_017",
+      "unit": "math.ma.geometry.circle.tangent",
       "category": "calculation",
       "prompt": "円外の点 P から接線 PT と、円と A、B で交わる直線を引く。PA=3、PB=12 のとき、PT は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_ma07_018",
+      "unit": "math.ma.geometry.circle.inscribed",
       "category": "knowledge",
       "prompt": "同じ弧に対する円周角について正しいものは？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_ma07_019",
+      "unit": "math.ma.geometry.triangle",
       "category": "calculation",
       "prompt": "△ABC で AB=5、AC=7、BC=8。内接円が AB に接する点を F とするとき、AF は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_ma07_020",
+      "unit": "math.ma.geometry.triangle.centers",
       "category": "knowledge",
       "prompt": "外心が斜辺の中点にある三角形は？",
       "choices": [

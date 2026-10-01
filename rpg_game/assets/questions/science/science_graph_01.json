@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "science_graph_01_001",
+      "unit": "science.physics.mechanics.force.kinds",
       "category": "calculation",
       "prompt": "ばねにつるすおもりの力と、ばねの伸びの関係のグラフ。5 N の力を加えたときの伸びは？",
       "choices": [
@@ -42,6 +43,7 @@
     },
     {
       "id": "science_graph_01_002",
+      "unit": "science.physics.mechanics.kinematics.graph",
       "category": "calculation",
       "prompt": "このばね（グラフ）のばね定数は？",
       "choices": [
@@ -78,6 +80,7 @@
     },
     {
       "id": "science_graph_01_003",
+      "unit": "science.physics.mechanics.kinematics.graph",
       "category": "calculation",
       "prompt": "この v-t グラフの物体が 0〜4 秒に進んだ距離は？",
       "choices": [
@@ -114,6 +117,7 @@
     },
     {
       "id": "science_graph_01_004",
+      "unit": "science.physics.mechanics.kinematics.velocity",
       "category": "calculation",
       "prompt": "この v-t グラフの物体の加速度は？",
       "choices": [
@@ -150,6 +154,7 @@
     },
     {
       "id": "science_graph_01_005",
+      "unit": "science.chemistry.state.solution.solubility",
       "category": "calculation",
       "prompt": "硝酸カリウムの溶解度曲線（水 100 g に溶ける最大の質量）。60℃ の水 100 g に 100 g 溶かし、20℃ まで冷やすと出てくる結晶は？",
       "choices": [
@@ -184,6 +189,7 @@
     },
     {
       "id": "science_graph_01_006",
+      "unit": "science.physics.mechanics.kinematics.graph",
       "category": "calculation",
       "prompt": "このグラフで、40℃ の水 100 g に溶ける硝酸カリウムの最大の質量は？",
       "choices": [
@@ -218,6 +224,7 @@
     },
     {
       "id": "science_graph_01_007",
+      "unit": "science.physics.mechanics.kinematics.velocity",
       "category": "thinking",
       "prompt": "光の強さと、植物の二酸化炭素の吸収速度のグラフ。光を強くしても吸収速度が増えなくなった理由として最も適切なものは？",
       "choices": [
@@ -256,6 +263,7 @@
     },
     {
       "id": "science_graph_01_008",
+      "unit": "science.physics.mechanics.kinematics.velocity",
       "category": "knowledge",
       "prompt": "このグラフで、吸収速度が 0 になる光の強さ（光合成速度 = 呼吸速度）を何という？",
       "choices": [
@@ -294,6 +302,7 @@
     },
     {
       "id": "science_graph_01_009",
+      "unit": "science.biology.cell.energy.enzyme",
       "category": "thinking",
       "prompt": "温度と酵素の反応速度のグラフ。この酵素の最適温度は？",
       "choices": [
@@ -327,6 +336,7 @@
     },
     {
       "id": "science_graph_01_010",
+      "unit": "science.physics.thermo.heat.temperature",
       "category": "thinking",
       "prompt": "氷を一定の強さで加熱したときの温度変化のグラフ。温度が一定の区間で起こっていることは？",
       "choices": [
@@ -369,6 +379,7 @@
     },
     {
       "id": "science_graph_01_011",
+      "unit": "science.earth.atmos.structure.water",
       "category": "calculation",
       "prompt": "飽和水蒸気量のグラフ。30℃ で水蒸気を 17.3 g/m³ ふくむ空気の露点は？",
       "choices": [
@@ -403,6 +414,7 @@
     },
     {
       "id": "science_graph_01_012",
+      "unit": "science.physics.mechanics.kinematics.graph",
       "category": "calculation",
       "prompt": "このグラフを使うと、30℃ で水蒸気を 17.3 g/m³ ふくむ空気の湿度は約何%？",
       "choices": [
@@ -437,6 +449,7 @@
     },
     {
       "id": "science_graph_01_013",
+      "unit": "science.earth.solid.quake.mechanism",
       "category": "calculation",
       "prompt": "P 波と S 波の到着時間のグラフ（横軸は震源からの距離 km）。震源から 120 km の地点の初期微動継続時間は？",
       "choices": [
@@ -483,6 +496,7 @@
     },
     {
       "id": "science_graph_01_014",
+      "unit": "science.physics.mechanics.kinematics.velocity",
       "category": "calculation",
       "prompt": "このグラフから求めた P 波の速さは？",
       "choices": [
@@ -529,6 +543,7 @@
     },
     {
       "id": "science_graph_01_015",
+      "unit": "science.physics.em.current.ohm",
       "category": "calculation",
       "prompt": "抵抗にかけた電圧と電流のグラフ。この抵抗の大きさは？",
       "choices": [
@@ -565,6 +580,7 @@
     },
     {
       "id": "science_graph_01_016",
+      "unit": "science.physics.em.current.ohm",
       "category": "thinking",
       "prompt": "2 つの抵抗 A・B の電圧と電流のグラフ。抵抗が大きいのは？",
       "choices": [
@@ -611,6 +627,7 @@
     },
     {
       "id": "science_graph_01_017",
+      "unit": "science.chemistry.change.acid.neutral",
       "category": "calculation",
       "prompt": "塩酸に NaOH 水溶液を加えたときの pH のグラフ（横軸は加えた体積 mL）。中和点までに加えた体積は？",
       "choices": [
@@ -655,6 +672,7 @@
     },
     {
       "id": "science_graph_01_018",
+      "unit": "science.chemistry.inorganic.metal.transition",
       "category": "thinking",
       "prompt": "ある金属の体積と質量のグラフ。この金属として最も適切なものは？（密度：アルミニウム 2.7、鉄 7.9、銅 9.0 g/cm³）",
       "choices": [
@@ -689,6 +707,7 @@
     },
     {
       "id": "science_graph_01_019",
+      "unit": "science.physics.mechanics.kinematics.fall",
       "category": "thinking",
       "prompt": "物体が落下するときの時間と落下距離のグラフ。わかることとして正しいものは？",
       "choices": [
@@ -723,6 +742,7 @@
     },
     {
       "id": "science_graph_01_020",
+      "unit": "science.chemistry.inorganic.nonmetal.nitrogen",
       "category": "calculation",
       "prompt": "葉の蒸散の実験。A：何もしない、B：葉の表にワセリン、C：葉の裏にワセリン、D：表と裏にワセリン。葉の裏からの蒸散量は？",
       "choices": [
@@ -752,6 +772,7 @@
     },
     {
       "id": "science_graph_01_021",
+      "unit": "science.physics.mechanics.kinematics",
       "category": "thinking",
       "prompt": "この蒸散の実験の結果からわかることは？",
       "choices": [
@@ -781,6 +802,7 @@
     },
     {
       "id": "science_graph_01_022",
+      "unit": "science.physics.mechanics.kinematics.graph",
       "category": "thinking",
       "prompt": "晴れの日と雨の日の気温の変化のグラフ。晴れの日の特徴は？",
       "choices": [
@@ -827,6 +849,7 @@
     },
     {
       "id": "science_graph_01_023",
+      "unit": "science.chemistry.inorganic.nonmetal.carbon",
       "category": "calculation",
       "prompt": "大気中の二酸化炭素濃度の年平均のグラフ。1 年あたりのおよその増加量は？",
       "choices": [
@@ -863,6 +886,7 @@
     },
     {
       "id": "science_graph_01_024",
+      "unit": "science.physics.thermo.heat.capacity",
       "category": "thinking",
       "prompt": "同じ質量の液体 A・B を同じヒーターで加熱したときの温度変化。比熱が大きいのは？",
       "choices": [
@@ -909,6 +933,7 @@
     },
     {
       "id": "science_graph_01_025",
+      "unit": "science.biology.ecology.population.interaction",
       "category": "thinking",
       "prompt": "被食者と捕食者の個体数の変化のグラフ。わかることとして正しいものは？",
       "choices": [
@@ -958,6 +983,7 @@
     },
     {
       "id": "science_graph_01_026",
+      "unit": "science.physics.mechanics.kinematics",
       "category": "thinking",
       "prompt": "2 つの音の波形 A・B（高さは同じ）。大きい音はどちら？",
       "choices": [
@@ -1016,6 +1042,7 @@
     },
     {
       "id": "science_graph_01_027",
+      "unit": "science.earth.space.solar.planet",
       "category": "thinking",
       "prompt": "太陽系の惑星の平均密度のグラフ。わかることとして正しいものは？",
       "choices": [
@@ -1049,6 +1076,7 @@
     },
     {
       "id": "science_graph_01_028",
+      "unit": "science.physics.mechanics.kinematics.graph",
       "category": "calculation",
       "prompt": "高度と気温のグラフ（対流圏）。1 km 上がるごとに気温はおよそ何℃下がる？",
       "choices": [
@@ -1087,6 +1115,7 @@
     },
     {
       "id": "science_graph_01_029",
+      "unit": "science.physics.mechanics.kinematics.graph",
       "category": "thinking",
       "prompt": "東京での太陽の南中高度のグラフ。南中高度が最も高いのは？",
       "choices": [
@@ -1116,6 +1145,7 @@
     },
     {
       "id": "science_graph_01_030",
+      "unit": "science.physics.mechanics.plane.vector",
       "category": "thinking",
       "prompt": "傾き θ のなめらかな斜面の上の物体（質量 m）。斜面に沿って下向きにはたらく重力の成分は？",
       "choices": [

@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_mb02_001",
+      "unit": "math.mb.seq.sum.sigma",
       "category": "calculation",
       "prompt": "Σ_{k=1}^{n} (2k−1) を計算すると？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_mb02_002",
+      "unit": "math.mb.seq.sum.sigma",
       "category": "calculation",
       "prompt": "Σ_{k=1}^{n} k(k+1) を計算すると？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_mb02_003",
+      "unit": "math.mb.seq.sum.difference",
       "category": "calculation",
       "prompt": "数列 1, 2, 5, 10, 17, … の一般項は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_mb02_004",
+      "unit": "math.mb.seq.arith",
       "category": "calculation",
       "prompt": "初項から第 n 項までの和が Sₙ=n²+n のとき、一般項 aₙ は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_mb02_005",
+      "unit": "math.mb.seq.arith",
       "category": "calculation",
       "prompt": "Sₙ=2ⁿ−1 のとき、一般項 aₙ は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_mb02_006",
+      "unit": "math.mb.seq.sum.sigma",
       "category": "calculation",
       "prompt": "Σ_{k=1}^{n} 1/(k(k+1)) を計算すると？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_mb02_007",
+      "unit": "math.mb.seq.arith.arithmetic",
       "category": "calculation",
       "prompt": "3数 a, 5, 9 がこの順で等差数列のとき、a は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_mb02_008",
+      "unit": "math.mb.seq.arith.geometric",
       "category": "calculation",
       "prompt": "3数 1, x, 9 がこの順で等比数列（x>0）のとき、x は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_mb02_009",
+      "unit": "math.mb.seq.arith",
       "category": "calculation",
       "prompt": "10万円を年利5%の複利で2年預けると、元利合計は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_mb02_010",
+      "unit": "math.mb.seq.sum.sigma",
       "category": "thinking",
       "prompt": "部分分数に分けて和を求める工夫の利点は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_mb02_011",
+      "unit": "math.mb.seq.sum.sigma",
       "category": "calculation",
       "prompt": "Σ_{k=1}^{n} (3k+2) を計算すると？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_mb02_012",
+      "unit": "math.mb.seq.sum.sigma",
       "category": "calculation",
       "prompt": "Σ_{k=1}^{n} (k²−k) を計算すると？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_mb02_013",
+      "unit": "math.mb.seq.sum.difference",
       "category": "calculation",
       "prompt": "数列 2, 3, 5, 8, 12, … の一般項は？（階差数列が 1, 2, 3, 4, …）",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_mb02_014",
+      "unit": "math.mb.seq.arith",
       "category": "calculation",
       "prompt": "Sₙ=3n²−n のとき、一般項 aₙ は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_mb02_015",
+      "unit": "math.mb.seq.arith",
       "category": "calculation",
       "prompt": "Sₙ=3ⁿ−1 のとき、一般項 aₙ は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_mb02_016",
+      "unit": "math.mb.seq.sum.sigma",
       "category": "calculation",
       "prompt": "Σ_{k=1}^{n} 1/((2k−1)(2k+1)) を計算すると？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_mb02_017",
+      "unit": "math.mb.seq.arith.arithmetic",
       "category": "calculation",
       "prompt": "3数 2, x, 14 がこの順で等差数列のとき、x は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_mb02_018",
+      "unit": "math.mb.seq.arith.geometric",
       "category": "calculation",
       "prompt": "3数 2, x, 18 がこの順で等比数列（x>0）のとき、x は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_mb02_019",
+      "unit": "math.mb.seq.arith.arithmetic",
       "category": "calculation",
       "prompt": "毎月1万円ずつ積み立てると、1年で積立額の合計はいくら？（利息なし）",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_mb02_020",
+      "unit": "math.mb.seq.arith",
       "category": "thinking",
       "prompt": "一般項 aₙ を Sₙ から求めるとき、n=1 の場合を別に確かめる理由は？",
       "choices": [

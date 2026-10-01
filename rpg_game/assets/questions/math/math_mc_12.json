@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_mc12_001",
+      "unit": "math.mc.curve.complex.figure",
       "category": "calculation",
       "prompt": "0 と 2 を2頂点とする正三角形の、残りの頂点は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_mc12_002",
+      "unit": "math.mc.curve.complex.polar",
       "category": "knowledge",
       "prompt": "異なる3点 A(α)、B(β)、C(γ) で、(γ−α)/(β−α) が純虚数のとき、成り立つことは？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_mc12_003",
+      "unit": "math.mc.curve.complex.figure",
       "category": "calculation",
       "prompt": "3点 1、i、2+ki が一直線上にあるとき、実数 k は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_mc12_004",
+      "unit": "math.mc.curve.complex",
       "category": "calculation",
       "prompt": "同じ3点で、1 を頂点とする角が直角（AB⊥AC）になるとき、k は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_mc12_005",
+      "unit": "math.mc.curve.complex",
       "category": "calculation",
       "prompt": "z⁶=1 の6つの解の和は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_mc12_006",
+      "unit": "math.mc.curve.complex",
       "category": "calculation",
       "prompt": "|z|=1 のとき、z+1/z のとりうる値の範囲は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_mc12_007",
+      "unit": "math.mc.curve.complex.figure",
       "category": "calculation",
       "prompt": "|z|=1 のとき、w=z+2 が描く図形は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_mc12_008",
+      "unit": "math.mc.curve.complex.figure",
       "category": "calculation",
       "prompt": "|z−1|=1 のとき、w=2z が描く図形は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_mc12_009",
+      "unit": "math.mc.curve.complex",
       "category": "calculation",
       "prompt": "ω=cos(2π/5)+i sin(2π/5) のとき、1+ω+ω²+ω³+ω⁴ は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_mc12_010",
+      "unit": "math.mc.curve.complex.figure",
       "category": "thinking",
       "prompt": "複素数平面で図形の問題を解く利点は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_mc12_011",
+      "unit": "math.mc.curve.complex.figure",
       "category": "calculation",
       "prompt": "0 と 1 を2頂点とする正三角形の、上側の頂点は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_mc12_012",
+      "unit": "math.mc.curve.complex.polar",
       "category": "calculation",
       "prompt": "3点 A(α)、B(β)、C(γ) で (γ−α)/(β−α) が純虚数のとき、∠BAC は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_mc12_013",
+      "unit": "math.mc.curve.complex.figure",
       "category": "calculation",
       "prompt": "3点 0、1+i、2+ki が一直線上にあるとき、実数 k は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_mc12_014",
+      "unit": "math.mc.curve.complex",
       "category": "calculation",
       "prompt": "3点 0、1+2i、a+i が、0 を頂点とする直角をつくるとき、a は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_mc12_015",
+      "unit": "math.mc.curve.complex",
       "category": "calculation",
       "prompt": "z⁴=1 の4つの解の積は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_mc12_016",
+      "unit": "math.mc.curve.complex.figure",
       "category": "calculation",
       "prompt": "|z|=2 のとき、|z−3| の最大値は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_mc12_017",
+      "unit": "math.mc.curve.complex.figure",
       "category": "calculation",
       "prompt": "|z|=1 のとき、w=2z+1 が描く図形は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_mc12_018",
+      "unit": "math.mc.curve.complex.figure",
       "category": "calculation",
       "prompt": "|z|=1 のとき、w=iz が描く図形は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_mc12_019",
+      "unit": "math.mc.curve.complex",
       "category": "calculation",
       "prompt": "z⁵=1 の1でない解の1つを ω とするとき、1+ω+ω²+ω³+ω⁴ の値は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_mc12_020",
+      "unit": "math.mc.curve.complex.figure",
       "category": "thinking",
       "prompt": "「3点が一直線上にある」を複素数で示す方法は？",
       "choices": [

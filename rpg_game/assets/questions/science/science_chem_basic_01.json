@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "science_chem_basic_01_001",
+      "unit": "science.chemistry.structure.atom.structure",
       "category": "knowledge",
       "prompt": "原子番号が表しているものは？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "science_chem_basic_01_002",
+      "unit": "science.chemistry.structure.atom.structure",
       "category": "calculation",
       "prompt": "質量数 12 の炭素原子（原子番号 6）の中性子の数は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "science_chem_basic_01_003",
+      "unit": "science.chemistry.structure.atom.structure",
       "category": "knowledge",
       "prompt": "原子番号が同じで、質量数（中性子の数）がちがう原子どうしを何という？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "science_chem_basic_01_004",
+      "unit": "science.chemistry.structure.life.element",
       "category": "knowledge",
       "prompt": "同素体の組み合わせは？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "science_chem_basic_01_005",
+      "unit": "science.chemistry.structure.atom.config",
       "category": "calculation",
       "prompt": "ナトリウム原子（原子番号 11）の価電子の数は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "science_chem_basic_01_006",
+      "unit": "science.chemistry.structure.atom.ion",
       "category": "calculation",
       "prompt": "マグネシウムイオン Mg²⁺（原子番号 12）の電子の数は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "science_chem_basic_01_007",
+      "unit": "science.chemistry.change.acid.salt",
       "category": "knowledge",
       "prompt": "塩化ナトリウム NaCl の結合は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "science_chem_basic_01_008",
+      "unit": "science.chemistry.structure.bond.covalent",
       "category": "knowledge",
       "prompt": "水分子 H₂O の中の O と H の結合は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "science_chem_basic_01_009",
+      "unit": "science.chemistry.structure.bond.metal",
       "category": "knowledge",
       "prompt": "金属が電気や熱をよく通す理由は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "science_chem_basic_01_010",
+      "unit": "science.chemistry.change.mole.mass",
       "category": "calculation",
       "prompt": "H₂O の分子量は？（H = 1、O = 16）",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "science_chem_basic_01_011",
+      "unit": "science.chemistry.change.mole.mass",
       "category": "calculation",
       "prompt": "CO₂ の分子量は？（C = 12、O = 16）",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "science_chem_basic_01_012",
+      "unit": "science.chemistry.change.mole.mole",
       "category": "calculation",
       "prompt": "水 36 g の物質量は？（H₂O = 18）",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "science_chem_basic_01_013",
+      "unit": "science.chemistry.inorganic.nonmetal.gas",
       "category": "calculation",
       "prompt": "気体 2 mol の標準状態での体積は？（1 mol = 22.4 L）",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "science_chem_basic_01_014",
+      "unit": "science.chemistry.change.mole.mole",
       "category": "knowledge",
       "prompt": "1 mol あたりの粒子の数（アボガドロ定数）は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "science_chem_basic_01_015",
+      "unit": "science.chemistry.change.mole.concentration",
       "category": "calculation",
       "prompt": "食塩 20 g を水 80 g に溶かした水溶液の質量パーセント濃度は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "science_chem_basic_01_016",
+      "unit": "science.chemistry.change.mole.concentration",
       "category": "calculation",
       "prompt": "NaOH 0.2 mol を水に溶かして 500 mL にした水溶液のモル濃度は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "science_chem_basic_01_017",
+      "unit": "science.chemistry.change.equation.write",
       "category": "calculation",
       "prompt": "2H₂ + O₂ → 2H₂O で、H₂ 4 mol が完全に反応するとできる H₂O は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "science_chem_basic_01_018",
+      "unit": "science.chemistry.change.acid.define",
       "category": "knowledge",
       "prompt": "アレーニウスの定義で、酸とは？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "science_chem_basic_01_019",
+      "unit": "science.chemistry.change.acid.ph",
       "category": "knowledge",
       "prompt": "pH 3 の水溶液の性質は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "science_chem_basic_01_020",
+      "unit": "science.chemistry.change.mole.concentration",
       "category": "calculation",
       "prompt": "pH 2 の水溶液の H⁺ の濃度は、pH 4 の水溶液の何倍？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "science_chem_basic_01_021",
+      "unit": "science.chemistry.change.acid.neutral",
       "category": "calculation",
       "prompt": "HCl 1 mol をちょうど中和するのに必要な NaOH は？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "science_chem_basic_01_022",
+      "unit": "science.chemistry.change.acid.define",
       "category": "calculation",
       "prompt": "0.1 mol/L の塩酸 10 mL をちょうど中和するのに必要な 0.1 mol/L の NaOH 水溶液は？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "science_chem_basic_01_023",
+      "unit": "science.chemistry.change.acid.define",
       "category": "knowledge",
       "prompt": "酸化の説明として正しいものは？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "science_chem_basic_01_024",
+      "unit": "science.chemistry.change.redox.oxnum",
       "category": "calculation",
       "prompt": "H₂O の O の酸化数は？",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "science_chem_basic_01_025",
+      "unit": "science.chemistry.change.acid.define",
       "category": "calculation",
       "prompt": "過マンガン酸イオン MnO₄⁻ の Mn の酸化数は？",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "science_chem_basic_01_026",
+      "unit": "science.chemistry.structure.atom.ion",
       "category": "knowledge",
       "prompt": "イオン化傾向が最も大きい金属は？",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "science_chem_basic_01_027",
+      "unit": "science.chemistry.change.redox.cell",
       "category": "knowledge",
       "prompt": "ダニエル電池などで、負極になるのはどちらの金属？",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "science_chem_basic_01_028",
+      "unit": "science.chemistry.structure.life.test",
       "category": "knowledge",
       "prompt": "ナトリウムの炎色反応の色は？",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "science_chem_basic_01_029",
+      "unit": "science.chemistry.structure.life.separation",
       "category": "knowledge",
       "prompt": "海水から純粋な水を取り出すのに適した分離方法は？",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "science_chem_basic_01_030",
+      "unit": "science.chemistry.change.acid.define",
       "category": "knowledge",
       "prompt": "混合物はどれ？",
       "choices": [

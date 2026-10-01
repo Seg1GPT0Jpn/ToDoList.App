@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "sci_phy10_001",
+      "unit": "science.physics.mechanics.rigid.moment",
       "category": "knowledge",
       "prompt": "力のモーメントの大きさは？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "sci_phy10_002",
+      "unit": "science.physics.mechanics.rigid.moment",
       "category": "knowledge",
       "prompt": "剛体が静止し続けるための条件は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "sci_phy10_003",
+      "unit": "science.physics.mechanics.momentum.impulse",
       "category": "knowledge",
       "prompt": "運動量の単位は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "sci_phy10_004",
+      "unit": "science.physics.mechanics.momentum.impulse",
       "category": "knowledge",
       "prompt": "物体が受けた力積と運動量の関係は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "sci_phy10_005",
+      "unit": "science.physics.mechanics.momentum.impulse",
       "category": "knowledge",
       "prompt": "運動量保存の法則が成り立つのはどんなとき？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "sci_phy10_006",
+      "unit": "science.physics.mechanics.momentum.collision",
       "category": "knowledge",
       "prompt": "反発係数（はね返り係数）e ＝ 1 の衝突を何という？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "sci_phy10_007",
+      "unit": "science.physics.mechanics.momentum.collision",
       "category": "knowledge",
       "prompt": "衝突後に2物体が一体となって動く衝突の反発係数は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "sci_phy10_008",
+      "unit": "science.physics.mechanics.force.kinds",
       "category": "knowledge",
       "prompt": "物体の各部分にはたらく重力の合力の作用点を何という？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "sci_phy10_009",
+      "unit": "science.physics.mechanics.rigid.moment",
       "category": "calculation",
       "prompt": "回転軸から 0.50 m の所に、うでと垂直に 20 N の力を加えた。力のモーメントは？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "sci_phy10_010",
+      "unit": "science.physics.mechanics.momentum.impulse",
       "category": "calculation",
       "prompt": "質量 2.0 kg、速さ 3.0 m/s の物体の運動量の大きさは？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "sci_phy10_011",
+      "unit": "science.physics.mechanics.kinematics.velocity",
       "category": "calculation",
       "prompt": "質量 0.10 kg、速さ 20 m/s のボールを 0.050 s で止めた。受けた平均の力の大きさは？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "sci_phy10_012",
+      "unit": "science.physics.mechanics.momentum.collision",
       "category": "calculation",
       "prompt": "質量 2.0 kg、3.0 m/s の物体が、静止していた 1.0 kg の物体に衝突して一体となった。衝突後の速さは？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "sci_phy10_013",
+      "unit": "science.physics.mechanics.momentum.collision",
       "category": "calculation",
       "prompt": "5.0 m/s で壁に垂直にぶつかったボールが 3.0 m/s ではね返った。反発係数は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "sci_phy10_014",
+      "unit": "science.physics.mechanics.force.balance",
       "category": "calculation",
       "prompt": "てこの支点から 0.20 m の所に 30 N の力がかかっている。反対側の 0.60 m の所に何 N の力を加えるとつり合う？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "sci_phy10_015",
+      "unit": "science.physics.mechanics.momentum.impulse",
       "category": "thinking",
       "prompt": "卵をふとんの上に落とすと割れにくい理由は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "sci_phy10_016",
+      "unit": "science.physics.mechanics.momentum.impulse",
       "category": "thinking",
       "prompt": "スケート靴をはいて静止している人が、前方へボールを投げると、人はどうなる？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "sci_phy10_017",
+      "unit": "science.physics.mechanics.kinematics.measure",
       "category": "knowledge",
       "prompt": "力のモーメントの単位は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "sci_phy10_018",
+      "unit": "science.physics.mechanics.momentum.impulse",
       "category": "knowledge",
       "prompt": "運動量を表す式は？（m：質量、v：速度）",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "sci_phy10_019",
+      "unit": "science.physics.mechanics.momentum.impulse",
       "category": "knowledge",
       "prompt": "力積を表す式は？（F：力、Δt：時間）",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "sci_phy10_020",
+      "unit": "science.physics.mechanics.momentum.collision",
       "category": "knowledge",
       "prompt": "弾性衝突（e ＝ 1）で保存されるものは？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "sci_phy10_021",
+      "unit": "science.physics.mechanics.rigid.moment",
       "category": "knowledge",
       "prompt": "剛体にはたらく力のつり合いの条件として、力の合力が0であることのほかに必要なのは？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "sci_phy10_022",
+      "unit": "science.physics.mechanics.rigid.center",
       "category": "knowledge",
       "prompt": "重心の位置について正しいものは？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "sci_phy10_023",
+      "unit": "science.physics.mechanics.rigid.moment",
       "category": "calculation",
       "prompt": "回転軸から 0.40 m の所に、うでと垂直に 50 N の力を加えた。力のモーメントは？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "sci_phy10_024",
+      "unit": "science.physics.mechanics.momentum.impulse",
       "category": "calculation",
       "prompt": "質量 0.50 kg、速さ 10 m/s の物体の運動量の大きさは？",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "sci_phy10_025",
+      "unit": "science.physics.mechanics.momentum.impulse",
       "category": "calculation",
       "prompt": "静止している質量 0.20 kg のボールを打ち、30 m/s にした。ボールが受けた力積の大きさは？",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "sci_phy10_026",
+      "unit": "science.physics.mechanics.momentum",
       "category": "calculation",
       "prompt": "前問で、打っている時間が 0.010 s のとき、平均の力は？",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "sci_phy10_027",
+      "unit": "science.physics.mechanics.momentum.collision",
       "category": "calculation",
       "prompt": "質量 1.0 kg、4.0 m/s の物体が、静止している 1.0 kg の物体に衝突して一体となった。衝突後の速さは？",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "sci_phy10_028",
+      "unit": "science.physics.mechanics.momentum.collision",
       "category": "calculation",
       "prompt": "10 m/s で床に垂直にぶつかったボールが 6.0 m/s ではね返った。反発係数は？",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "sci_phy10_029",
+      "unit": "science.physics.mechanics.force.balance",
       "category": "calculation",
       "prompt": "長さ 1.0 m の軽い棒の左端に 30 N、右端に 20 N のおもりをつるす。支点を左端から何 m の所にすればつり合う？",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "sci_phy10_030",
+      "unit": "science.physics.mechanics.kinematics.velocity",
       "category": "calculation",
       "prompt": "静止していた 60 kg の人と 40 kg の人が、氷の上でおし合った。60 kg の人が 2.0 m/s で動いたとき、40 kg の人の速さは？",
       "choices": [
@@ -396,6 +426,7 @@
     },
     {
       "id": "sci_phy10_031",
+      "unit": "science.physics.mechanics.momentum.collision",
       "category": "thinking",
       "prompt": "エアバッグで衝突時のけがが軽くなる理由は？",
       "choices": [
@@ -409,6 +440,7 @@
     },
     {
       "id": "sci_phy10_032",
+      "unit": "science.physics.mechanics.rigid.moment",
       "category": "thinking",
       "prompt": "ドアノブがちょうつがいから遠い所についている理由は？",
       "choices": [

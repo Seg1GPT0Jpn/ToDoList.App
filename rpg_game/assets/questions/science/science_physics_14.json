@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "sci_phy14_001",
+      "unit": "science.physics.em.field.coulomb",
       "category": "knowledge",
       "prompt": "2つの点電荷の間にはたらく静電気力（クーロンの法則）は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "sci_phy14_002",
+      "unit": "science.physics.em.field.coulomb",
       "category": "knowledge",
       "prompt": "電場（電界）の向きは？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "sci_phy14_003",
+      "unit": "science.physics.em.field.coulomb",
       "category": "knowledge",
       "prompt": "電気力線について正しいものは？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "sci_phy14_004",
+      "unit": "science.physics.em.field.potential",
       "category": "knowledge",
       "prompt": "等電位面と電気力線の関係は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "sci_phy14_005",
+      "unit": "science.physics.em.field.capacitor",
       "category": "knowledge",
       "prompt": "電気容量 C のコンデンサーに電圧 V をかけたとき、たまる電気量は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "sci_phy14_006",
+      "unit": "science.physics.em.field.capacitor",
       "category": "knowledge",
       "prompt": "平行板コンデンサーの電気容量について正しいものは？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "sci_phy14_007",
+      "unit": "science.physics.em.field.coulomb",
       "category": "knowledge",
       "prompt": "電場の中に置いた導体の内部の電場は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "sci_phy14_008",
+      "unit": "science.physics.em.field.potential",
       "category": "knowledge",
       "prompt": "電位の単位 V（ボルト）を別の単位で表すと？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "sci_phy14_009",
+      "unit": "science.physics.em.field",
       "category": "calculation",
       "prompt": "2つの点電荷の電気量をどちらも2倍にし、距離も2倍にした。静電気力は何倍？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "sci_phy14_010",
+      "unit": "science.physics.em.field.coulomb",
       "category": "calculation",
       "prompt": "強さ 200 V/m の一様な電場で、電場の向きに 0.10 m 離れた2点の電位差は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "sci_phy14_011",
+      "unit": "science.physics.em.field.potential",
       "category": "calculation",
       "prompt": "2.0 C の電荷を、電位差 5.0 V の2点間で移動させるのに必要な仕事は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "sci_phy14_012",
+      "unit": "science.physics.em.field.capacitor",
       "category": "calculation",
       "prompt": "電気容量 2.0 μF のコンデンサーに 10 V をかけた。たまる電気量は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "sci_phy14_013",
+      "unit": "science.physics.em.field.capacitor",
       "category": "calculation",
       "prompt": "電気容量 2.0 μF のコンデンサーに 10 V をかけた。たくわえられる静電エネルギーは？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "sci_phy14_014",
+      "unit": "science.physics.em.field.capacitor",
       "category": "calculation",
       "prompt": "2.0 μF のコンデンサー2個を直列につないだ。合成容量は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "sci_phy14_015",
+      "unit": "science.physics.em.field.capacitor",
       "category": "thinking",
       "prompt": "電池につないだまま平行板コンデンサーの極板間隔を2倍にした。電気容量は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "sci_phy14_016",
+      "unit": "science.physics.em.field.capacitor",
       "category": "thinking",
       "prompt": "平行板コンデンサーの極板の間に誘電体をはさむと、電気容量は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "sci_phy14_017",
+      "unit": "science.physics.em.field.coulomb",
       "category": "knowledge",
       "prompt": "電場の強さ E と、そこに置いた電荷 q が受ける力 F の関係は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "sci_phy14_018",
+      "unit": "science.physics.em.field.coulomb",
       "category": "knowledge",
       "prompt": "正の点電荷のまわりの電気力線の向きは？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "sci_phy14_019",
+      "unit": "science.physics.em.field.coulomb",
       "category": "knowledge",
       "prompt": "一様な電場 E の中で、電場の向きに距離 d 離れた2点間の電位差 V は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "sci_phy14_020",
+      "unit": "science.physics.em.field.capacitor",
       "category": "knowledge",
       "prompt": "コンデンサーにたくわえられる静電エネルギーは？（C：電気容量、V：電圧）",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "sci_phy14_021",
+      "unit": "science.physics.em.field",
       "category": "knowledge",
       "prompt": "静電誘導とは？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "sci_phy14_022",
+      "unit": "science.physics.em.field.capacitor",
       "category": "knowledge",
       "prompt": "コンデンサーを並列につないだときの合成容量は？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "sci_phy14_023",
+      "unit": "science.physics.em.field.coulomb",
       "category": "calculation",
       "prompt": "強さ 500 N/C の電場の中の、2.0 × 10⁻⁶ C の電荷が受ける力は？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "sci_phy14_024",
+      "unit": "science.physics.em.field",
       "category": "calculation",
       "prompt": "2つの点電荷の距離を 1/2 にすると、静電気力は何倍？",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "sci_phy14_025",
+      "unit": "science.physics.em.field.coulomb",
       "category": "calculation",
       "prompt": "強さ 100 V/m の一様な電場で、電場の向きに 0.20 m 離れた2点の電位差は？",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "sci_phy14_026",
+      "unit": "science.physics.em.field.potential",
       "category": "calculation",
       "prompt": "3.0 C の電荷を電位差 4.0 V の2点間で移動させるのに必要な仕事は？",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "sci_phy14_027",
+      "unit": "science.physics.em.field.capacitor",
       "category": "calculation",
       "prompt": "電気容量 5.0 μF のコンデンサーに 20 V をかけた。たくわえられる電気量は？",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "sci_phy14_028",
+      "unit": "science.physics.em.field.capacitor",
       "category": "calculation",
       "prompt": "前問のコンデンサーの静電エネルギーは？",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "sci_phy14_029",
+      "unit": "science.physics.em.field.capacitor",
       "category": "calculation",
       "prompt": "3.0 μF と 6.0 μF のコンデンサーを直列につないだ。合成容量は？",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "sci_phy14_030",
+      "unit": "science.physics.em.field.capacitor",
       "category": "calculation",
       "prompt": "平行板コンデンサーの極板の面積を2倍、間隔を2倍にした。電気容量は？",
       "choices": [
@@ -396,6 +426,7 @@
     },
     {
       "id": "sci_phy14_031",
+      "unit": "science.physics.em.field.coulomb",
       "category": "thinking",
       "prompt": "雷のときに車の中にいると比較的安全と言われる理由は？",
       "choices": [
@@ -409,6 +440,7 @@
     },
     {
       "id": "sci_phy14_032",
+      "unit": "science.physics.em.field.capacitor",
       "category": "thinking",
       "prompt": "電池につないだまま極板の間に誘電体を入れると、たくわえられる電気量はどうなる？",
       "choices": [

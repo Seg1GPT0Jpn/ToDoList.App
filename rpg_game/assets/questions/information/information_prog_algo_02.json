@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "inf_prg02_001",
+      "unit": "information.info.programming.program.trace",
       "category": "calculation",
       "prompt": "実行後の y の値は？",
       "sentence": "x = 7\ny = x + 3\nx = y * 2\ny = x - 5",
@@ -20,6 +21,7 @@
     },
     {
       "id": "inf_prg02_002",
+      "unit": "information.info.programming.program.variable",
       "category": "thinking",
       "prompt": "2つの変数 a と b の値を入れ替えようとして、作業用の変数を使わずに次のように書いた。何が起こる？",
       "sentence": "a = b\nb = a",
@@ -34,6 +36,7 @@
     },
     {
       "id": "inf_prg02_003",
+      "unit": "information.info.programming.program.trace",
       "category": "calculation",
       "prompt": "実行後の val の値は？",
       "sentence": "val = 10\nval += 5\nval *= 2\nval //= 4",
@@ -48,6 +51,7 @@
     },
     {
       "id": "inf_prg02_004",
+      "unit": "information.info.programming.program.trace",
       "category": "thinking",
       "prompt": "実行後の rank の値は？",
       "sentence": "score = 75\nif score >= 80:\n    rank = \"A\"\nelif score >= 70:\n    rank = \"B\"\nelse:\n    rank = \"C\"",
@@ -62,6 +66,7 @@
     },
     {
       "id": "inf_prg02_005",
+      "unit": "information.info.programming.program.control",
       "category": "thinking",
       "prompt": "次の条件式の値は？",
       "sentence": "x = 4\ny = 9\n(x % 2 == 0) and (y < 10 and not y % 3 == 0)",
@@ -76,6 +81,7 @@
     },
     {
       "id": "inf_prg02_006",
+      "unit": "information.info.programming.program.trace",
       "category": "calculation",
       "prompt": "実行後の s の値は？",
       "sentence": "s = 0\nfor i in range(2, 9, 3):\n    s += i",
@@ -90,6 +96,7 @@
     },
     {
       "id": "inf_prg02_007",
+      "unit": "information.info.programming.program.control",
       "category": "calculation",
       "prompt": "ループ終了後の count の値は？",
       "sentence": "n = 1\ncount = 0\nwhile n < 20:\n    n = n * 2 + 1\n    count += 1",
@@ -104,6 +111,7 @@
     },
     {
       "id": "inf_prg02_008",
+      "unit": "information.info.programming.program.control",
       "category": "thinking",
       "prompt": "プログラムが終わらなくなる（無限ループ）原因として最も適切なものは？",
       "choices": [
@@ -117,6 +125,7 @@
     },
     {
       "id": "inf_prg02_009",
+      "unit": "information.info.programming.program",
       "category": "calculation",
       "prompt": "sub の中身は？",
       "sentence": "nums = [10, 20, 30, 40, 50]\nsub = nums[1:4]",
@@ -131,6 +140,7 @@
     },
     {
       "id": "inf_prg02_010",
+      "unit": "information.info.programming.program.trace",
       "category": "calculation",
       "prompt": "実行後の scores の合計は？",
       "sentence": "scores = [3, 1, 4, 1, 5]\nscores[1] += 2\nscores.pop(3)",
@@ -145,6 +155,7 @@
     },
     {
       "id": "inf_prg02_011",
+      "unit": "information.info.programming.program.trace",
       "category": "calculation",
       "prompt": "実行後の c の値は？",
       "sentence": "c = 0\nfor i in range(4):\n    for j in range(i):\n        c += 1",
@@ -159,6 +170,7 @@
     },
     {
       "id": "inf_prg02_012",
+      "unit": "information.info.programming.program",
       "category": "calculation",
       "prompt": "grid[2][0] の値は？",
       "sentence": "grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]",
@@ -173,6 +185,7 @@
     },
     {
       "id": "inf_prg02_013",
+      "unit": "information.info.programming.program.trace",
       "category": "calculation",
       "prompt": "実行後の x の値は？",
       "sentence": "x = 5\ndef add_ten(x):\n    x = x + 10\n    return x\ny = add_ten(x)",
@@ -187,6 +200,7 @@
     },
     {
       "id": "inf_prg02_014",
+      "unit": "information.info.programming.program.function",
       "category": "thinking",
       "prompt": "再帰関数で、呼び出しが無限に続く（スタックオーバーフロー）のを防ぐために欠かせないものは？",
       "choices": [
@@ -200,6 +214,7 @@
     },
     {
       "id": "inf_prg02_015",
+      "unit": "information.info.programming.program.variable",
       "category": "thinking",
       "prompt": "リスト data から偶数だけを evens に追加したい。［ ］に入る式は？",
       "sentence": "for x in data:\n    if [   ]:\n        evens.append(x)",
@@ -214,6 +229,7 @@
     },
     {
       "id": "inf_prg02_016",
+      "unit": "information.info.programming.program.variable",
       "category": "thinking",
       "prompt": "長さ N のリスト A を、両端から中央に向かって要素を交換して反転する。交換に使う i の範囲は？",
       "choices": [
@@ -227,6 +243,7 @@
     },
     {
       "id": "inf_prg02_017",
+      "unit": "information.info.programming.algorithm.search",
       "category": "thinking",
       "prompt": "線形探索で、配列の末尾に探す値（番兵）を置いてから探す主な利点は？",
       "choices": [
@@ -240,6 +257,7 @@
     },
     {
       "id": "inf_prg02_018",
+      "unit": "information.info.programming.algorithm.search",
       "category": "calculation",
       "prompt": "昇順の配列から 23 を二分探索する。最初に比べる中央の要素は？（mid = (left + right) // 2）",
       "sentence": "[2, 5, 8, 12, 16, 23, 38, 45, 56]",
@@ -254,6 +272,7 @@
     },
     {
       "id": "inf_prg02_019",
+      "unit": "information.info.programming.algorithm.sort",
       "category": "thinking",
       "prompt": "昇順の選択ソートで、外側のループ1回ごとに行う処理は？",
       "choices": [
@@ -267,6 +286,7 @@
     },
     {
       "id": "inf_prg02_020",
+      "unit": "information.info.programming.algorithm.sort",
       "category": "thinking",
       "prompt": "挿入ソートが特に速く終わるのはどんなデータ？",
       "choices": [
@@ -280,6 +300,7 @@
     },
     {
       "id": "inf_prg02_021",
+      "unit": "information.info.programming.algorithm.sort",
       "category": "thinking",
       "prompt": "「安定なソート」とは？",
       "choices": [
@@ -293,6 +314,7 @@
     },
     {
       "id": "inf_prg02_022",
+      "unit": "information.info.data.manage.open",
       "category": "knowledge",
       "prompt": "オープンデータに求められる条件として適切でないものは？",
       "choices": [
@@ -306,6 +328,7 @@
     },
     {
       "id": "inf_prg02_023",
+      "unit": "information.info.data.manage.database",
       "category": "knowledge",
       "prompt": "分析の前に欠損値や表記ゆれを直す「データクレンジング」の目的は？",
       "choices": [
@@ -319,6 +342,7 @@
     },
     {
       "id": "inf_prg02_024",
+      "unit": "information.info.data.manage.scale",
       "category": "thinking",
       "prompt": "次のうち「質的データ」はどれ？",
       "choices": [
@@ -332,6 +356,7 @@
     },
     {
       "id": "inf_prg02_025",
+      "unit": "information.info.data.analysis.visualize",
       "category": "thinking",
       "prompt": "ヒストグラムで最もよくわかるデータの性質は？",
       "choices": [
@@ -345,6 +370,7 @@
     },
     {
       "id": "inf_prg02_026",
+      "unit": "information.info.data.manage.scale",
       "category": "thinking",
       "prompt": "2つの量的データの関係を見るため、横軸と縦軸にそれぞれの変量をとって点を打ったグラフは？",
       "choices": [
@@ -358,6 +384,7 @@
     },
     {
       "id": "inf_prg02_027",
+      "unit": "information.info.data.analysis.correlation",
       "category": "calculation",
       "prompt": "相関係数が r = −0.82 のとき、2つの変量の関係は？",
       "choices": [
@@ -371,6 +398,7 @@
     },
     {
       "id": "inf_prg02_028",
+      "unit": "information.info.data.analysis.correlation",
       "category": "thinking",
       "prompt": "「アイスの売上が多い日ほど水難事故が多い」という相関の、本当の原因と考えられるものは？",
       "choices": [
@@ -384,6 +412,7 @@
     },
     {
       "id": "inf_prg02_029",
+      "unit": "information.info.data.analysis.correlation",
       "category": "calculation",
       "prompt": "勉強時間 x（時間）と得点 y（点）の回帰直線が y = 6x + 40 のとき、5時間勉強した生徒の予測得点は？",
       "choices": [
@@ -397,6 +426,7 @@
     },
     {
       "id": "inf_prg02_030",
+      "unit": "information.info.data.manage.database",
       "category": "thinking",
       "prompt": "極端に大きな外れ値があるとき、最も強く影響を受ける代表値は？",
       "choices": [
@@ -410,6 +440,7 @@
     },
     {
       "id": "inf_prg02_031",
+      "unit": "information.info.programming.program.variable",
       "category": "knowledge",
       "prompt": "「学年」と「部活動の所属の有無」の関係を調べるのに適した集計方法は？",
       "choices": [
@@ -423,6 +454,7 @@
     },
     {
       "id": "inf_prg02_032",
+      "unit": "information.info.design.design.layout",
       "category": "thinking",
       "prompt": "Web サイトのデザイン A と B で、どちらが購入率が高いかを比べる実験手法は？",
       "choices": [

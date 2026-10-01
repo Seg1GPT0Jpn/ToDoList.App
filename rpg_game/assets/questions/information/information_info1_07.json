@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "inf_info107_001",
+      "unit": "information.info.computer.hardware.components",
       "category": "knowledge",
       "prompt": "CPU（中央処理装置）の主なはたらきは？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "inf_info107_002",
+      "unit": "information.info.computer.hardware",
       "category": "knowledge",
       "prompt": "実行中のプログラムやデータを一時的に記憶する装置は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "inf_info107_003",
+      "unit": "information.info.computer.hardware.components",
       "category": "knowledge",
       "prompt": "電源を切っても内容が残り、データを長く保存する装置は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "inf_info107_004",
+      "unit": "information.info.computer.hardware.components",
       "category": "knowledge",
       "prompt": "コンピュータの五大装置の組み合わせは？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "inf_info107_005",
+      "unit": "information.info.computer.hardware.software",
       "category": "knowledge",
       "prompt": "OS（オペレーティングシステム）の役割は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "inf_info107_006",
+      "unit": "information.info.computer.hardware.software",
       "category": "knowledge",
       "prompt": "ソフトウェアはどれ？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "inf_info107_007",
+      "unit": "information.info.computer.hardware.components",
       "category": "knowledge",
       "prompt": "CPU が動作するテンポを表す値を何という？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "inf_info107_008",
+      "unit": "information.info.computer.hardware",
       "category": "knowledge",
       "prompt": "プログラムもデータと同じように記憶装置に入れて実行する方式は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "inf_info107_009",
+      "unit": "information.info.computer.hardware.cpu",
       "category": "calculation",
       "prompt": "クロック周波数 2 GHz の CPU は、1秒間に何回の信号を刻む？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "inf_info107_010",
+      "unit": "information.info.computer.hardware.cpu",
       "category": "calculation",
       "prompt": "クロック周波数 2 GHz の CPU が、1命令を4クロックで実行する。1秒間に何命令？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "inf_info107_011",
+      "unit": "information.info.computer.hardware.components",
       "category": "thinking",
       "prompt": "メモリの容量が小さいと、多くのアプリを同時に使ったときに遅くなりやすい理由は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "inf_info107_012",
+      "unit": "information.info.computer.hardware.components",
       "category": "thinking",
       "prompt": "HDD より SSD の方が読み書きが速い主な理由は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "inf_info107_013",
+      "unit": "information.info.computer.hardware.components",
       "category": "knowledge",
       "prompt": "CPU の中で、計算を行う部分は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "inf_info107_014",
+      "unit": "information.info.computer.hardware.components",
       "category": "knowledge",
       "prompt": "キーボードやマウスは五大装置のどれ？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "inf_info107_015",
+      "unit": "information.info.computer.hardware.components",
       "category": "knowledge",
       "prompt": "主記憶装置（メインメモリ）の特徴は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "inf_info107_016",
+      "unit": "information.info.computer.hardware.components",
       "category": "knowledge",
       "prompt": "CPU とメモリの速度差をうめるために、CPU の近くに置かれる高速な記憶装置は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "inf_info107_017",
+      "unit": "information.info.computer.hardware.software",
       "category": "knowledge",
       "prompt": "文書作成ソフトや表計算ソフトなど、目的に応じて使うソフトウェアは？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "inf_info107_018",
+      "unit": "information.info.computer.hardware.software",
       "category": "knowledge",
       "prompt": "周辺機器を OS から使えるようにするためのソフトウェアは？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "inf_info107_019",
+      "unit": "information.info.computer.hardware",
       "category": "knowledge",
       "prompt": "GPU の主なはたらきは？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "inf_info107_020",
+      "unit": "information.info.computer.hardware",
       "category": "knowledge",
       "prompt": "複数の処理を同時に行うため、CPU に複数の処理部分をもつものを何という？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "inf_info107_021",
+      "unit": "information.info.computer.hardware",
       "category": "calculation",
       "prompt": "1 GHz は何 Hz？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "inf_info107_022",
+      "unit": "information.info.computer.hardware.cpu",
       "category": "calculation",
       "prompt": "クロック周波数 3 GHz の CPU で、1 クロックの時間は？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "inf_info107_023",
+      "unit": "information.info.computer.hardware.components",
       "category": "knowledge",
       "prompt": "「64 ビット CPU」の「64 ビット」が主に表しているものは？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "inf_info107_024",
+      "unit": "information.info.computer.hardware.components",
       "category": "thinking",
       "prompt": "スマートフォンもコンピュータの一種と言える理由は？",
       "choices": [

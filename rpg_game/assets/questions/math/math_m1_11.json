@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_m111_001",
+      "unit": "math.m1.quad.maxmin.basic",
       "category": "calculation",
       "prompt": "y=x²−4x+1（0≦x≦3）の最小値は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_m111_002",
+      "unit": "math.m1.quad.maxmin.basic",
       "category": "calculation",
       "prompt": "y=x²−4x+1（0≦x≦3）の最大値は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_m111_003",
+      "unit": "math.m1.quad.graph.vertex",
       "category": "calculation",
       "prompt": "頂点が (1, 2) で、点 (0, 5) を通る放物線の式は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_m111_004",
+      "unit": "math.m1.quad.graph.determine",
       "category": "calculation",
       "prompt": "3点 (0, 1)、(1, 2)、(2, 5) を通る放物線の式は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_m111_005",
+      "unit": "math.m1.quad.graph.vertex",
       "category": "calculation",
       "prompt": "軸が x=2 で、2点 (0, 3)、(1, 0) を通る放物線の式は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_m111_006",
+      "unit": "math.m1.quad.maxmin.basic",
       "category": "calculation",
       "prompt": "y=−x²+6x（1≦x≦4）の最大値は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_m111_007",
+      "unit": "math.m1.quad.maxmin.apply",
       "category": "calculation",
       "prompt": "周の長さが20の長方形の面積の最大値は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_m111_008",
+      "unit": "math.m1.quad.maxmin.basic",
       "category": "calculation",
       "prompt": "y=x²+2x+c の最小値が3のとき、c の値は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_m111_009",
+      "unit": "math.m1.quad.graph.move",
       "category": "calculation",
       "prompt": "放物線 y=x²−2x+3 を x 軸に関して対称移動した式は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_m111_010",
+      "unit": "math.m1.quad.maxmin.basic",
       "category": "thinking",
       "prompt": "定義域が限られた2次関数の最大・最小を考えるとき、まず調べることは？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_m111_011",
+      "unit": "math.m1.quad.maxmin.basic",
       "category": "calculation",
       "prompt": "y=x²+2x−1（−2≦x≦1）の最大値は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_m111_012",
+      "unit": "math.m1.quad.maxmin.basic",
       "category": "calculation",
       "prompt": "y=−x²+2x+3（0≦x≦3）の最小値は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_m111_013",
+      "unit": "math.m1.quad.graph.vertex",
       "category": "calculation",
       "prompt": "頂点が (2, −1) で、点 (0, 3) を通る放物線の式は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_m111_014",
+      "unit": "math.m1.quad.graph.vertex",
       "category": "calculation",
       "prompt": "x 軸と (1, 0)、(3, 0) で交わり、点 (0, 6) を通る放物線の式は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_m111_015",
+      "unit": "math.m1.quad.maxmin.basic",
       "category": "calculation",
       "prompt": "y=x²−2ax+a の最小値を a で表すと？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_m111_016",
+      "unit": "math.m1.quad.maxmin.basic",
       "category": "calculation",
       "prompt": "y=2x²−4x+k の最小値が5のとき、k の値は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_m111_017",
+      "unit": "math.m1.quad.graph.move",
       "category": "calculation",
       "prompt": "放物線 y=x²−6x+10 を原点に関して対称移動した式は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_m111_018",
+      "unit": "math.m1.quad.maxmin.apply",
       "category": "calculation",
       "prompt": "長さ40m の柵で、1辺を壁にした長方形の囲いを作る。面積の最大値は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_m111_019",
+      "unit": "math.m1.quad.maxmin.basic",
       "category": "calculation",
       "prompt": "y=−x²+6x−5 の最大値は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_m111_020",
+      "unit": "math.m1.quad.graph.vertex",
       "category": "calculation",
       "prompt": "y=x²+bx+c の頂点が (2, 3) のとき、b+c の値は？",
       "choices": [

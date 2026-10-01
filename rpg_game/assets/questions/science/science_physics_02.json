@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "sci_phy02_001",
+      "unit": "science.physics.mechanics.kinematics.velocity",
       "category": "knowledge",
       "prompt": "加速度の単位は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "sci_phy02_002",
+      "unit": "science.physics.mechanics.kinematics.velocity",
       "category": "knowledge",
       "prompt": "等加速度直線運動の速度の式は？（v₀：初速度、a：加速度）",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "sci_phy02_003",
+      "unit": "science.physics.mechanics.kinematics.fall",
       "category": "knowledge",
       "prompt": "自由落下とはどんな運動？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "sci_phy02_004",
+      "unit": "science.physics.mechanics.kinematics.fall",
       "category": "knowledge",
       "prompt": "鉛直に投げ上げた物体が最高点に達したとき、速度は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "sci_phy02_005",
+      "unit": "science.physics.mechanics.kinematics.velocity",
       "category": "knowledge",
       "prompt": "鉛直に投げ上げた物体の、最高点での加速度は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "sci_phy02_006",
+      "unit": "science.physics.mechanics.kinematics.graph",
       "category": "knowledge",
       "prompt": "v-t グラフの傾きが表すものは？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "sci_phy02_007",
+      "unit": "science.physics.mechanics.kinematics.fall",
       "category": "knowledge",
       "prompt": "空気抵抗がないとき、同じ高さから同時に落とした鉄球と木の球は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "sci_phy02_008",
+      "unit": "science.physics.mechanics.kinematics.velocity",
       "category": "knowledge",
       "prompt": "物体の速度と加速度が逆向きのとき、物体はどうなる？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "sci_phy02_009",
+      "unit": "science.physics.mechanics.kinematics.velocity",
       "category": "calculation",
       "prompt": "静止していた物体が 2.0 m/s² で加速した。5.0 s 後の速さは？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "sci_phy02_010",
+      "unit": "science.physics.mechanics.kinematics",
       "category": "calculation",
       "prompt": "静止していた物体が 2.0 m/s² で加速した。5.0 s 間に進む距離は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "sci_phy02_011",
+      "unit": "science.physics.mechanics.kinematics.fall",
       "category": "calculation",
       "prompt": "自由落下を始めてから 2.0 s 後の速さは？（g ＝ 9.8 m/s²）",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "sci_phy02_012",
+      "unit": "science.physics.mechanics.kinematics.fall",
       "category": "calculation",
       "prompt": "自由落下で、最初の 2.0 s 間に落ちる距離は？（g ＝ 9.8 m/s²）",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "sci_phy02_013",
+      "unit": "science.physics.mechanics.kinematics.fall",
       "category": "calculation",
       "prompt": "初速度 19.6 m/s で鉛直に投げ上げた。最高点に達するまでの時間は？（g ＝ 9.8 m/s²）",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "sci_phy02_014",
+      "unit": "science.physics.mechanics.kinematics.velocity",
       "category": "calculation",
       "prompt": "20 m/s で走る車が一定の加速度 −4.0 m/s² でブレーキをかけた。止まるまでに進む距離は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "sci_phy02_015",
+      "unit": "science.physics.mechanics.kinematics.fall",
       "category": "thinking",
       "prompt": "鉛直投げ上げの v-t グラフ（上向きを正）はどうなる？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "sci_phy02_016",
+      "unit": "science.physics.mechanics.kinematics.accel",
       "category": "thinking",
       "prompt": "一定時間ごとに物体の位置を記録したら、間隔が毎回同じ長さずつ広がっていた。この運動は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "sci_phy02_017",
+      "unit": "science.physics.mechanics.kinematics.velocity",
       "category": "knowledge",
       "prompt": "加速度とは何か？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "sci_phy02_018",
+      "unit": "science.physics.mechanics.kinematics.velocity",
       "category": "knowledge",
       "prompt": "等加速度直線運動の変位の式は？（v₀：初速度、a：加速度）",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "sci_phy02_019",
+      "unit": "science.physics.mechanics.kinematics.accel",
       "category": "knowledge",
       "prompt": "時間をふくまない等加速度運動の式は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "sci_phy02_020",
+      "unit": "science.physics.mechanics.kinematics.velocity",
       "category": "knowledge",
       "prompt": "重力加速度 g の大きさはおよそ？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "sci_phy02_021",
+      "unit": "science.physics.mechanics.kinematics.fall",
       "category": "knowledge",
       "prompt": "鉛直下向きに投げおろした物体の運動は？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "sci_phy02_022",
+      "unit": "science.physics.mechanics.kinematics.graph",
       "category": "knowledge",
       "prompt": "v-t グラフが右下がりの直線（v>0 の部分）のとき、物体は？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "sci_phy02_023",
+      "unit": "science.physics.mechanics.kinematics.velocity",
       "category": "calculation",
       "prompt": "10 m/s で動いていた物体が 4.0 s 後に 30 m/s になった。加速度は？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "sci_phy02_024",
+      "unit": "science.physics.mechanics.kinematics",
       "category": "calculation",
       "prompt": "静止から 3.0 m/s² で加速した。4.0 s 間に進む距離は？",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "sci_phy02_025",
+      "unit": "science.physics.mechanics.kinematics.velocity",
       "category": "calculation",
       "prompt": "静止から一定の加速度で 10 s 間に 50 m 進んだ。加速度は？",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "sci_phy02_026",
+      "unit": "science.physics.mechanics.kinematics.fall",
       "category": "calculation",
       "prompt": "自由落下を始めてから 3.0 s 後の速さは？（g ＝ 9.8 m/s²）",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "sci_phy02_027",
+      "unit": "science.physics.mechanics.kinematics.fall",
       "category": "calculation",
       "prompt": "高さ 44.1 m から自由落下させた。地面に着くまでの時間は？（g ＝ 9.8 m/s²）",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "sci_phy02_028",
+      "unit": "science.physics.mechanics.kinematics.fall",
       "category": "calculation",
       "prompt": "初速度 9.8 m/s で鉛直に投げ上げた。最高点の高さは？（g ＝ 9.8 m/s²）",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "sci_phy02_029",
+      "unit": "science.physics.mechanics.kinematics.fall",
       "category": "calculation",
       "prompt": "初速度 14.7 m/s で鉛直に投げ上げた。投げた点にもどるまでの時間は？（g ＝ 9.8 m/s²）",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "sci_phy02_030",
+      "unit": "science.physics.mechanics.kinematics.velocity",
       "category": "calculation",
       "prompt": "30 m/s で走る車がブレーキをかけ、一定の加速度で 6.0 s で止まった。止まるまでに進んだ距離は？",
       "choices": [
@@ -396,6 +426,7 @@
     },
     {
       "id": "sci_phy02_031",
+      "unit": "science.physics.mechanics.kinematics.velocity",
       "category": "thinking",
       "prompt": "ボールを真上に投げたとき、上昇中と下降中の加速度について正しいものは？",
       "choices": [
@@ -409,6 +440,7 @@
     },
     {
       "id": "sci_phy02_032",
+      "unit": "science.physics.mechanics.kinematics.graph",
       "category": "thinking",
       "prompt": "v-t グラフから「変位」を求めるときの注意として正しいものは？",
       "choices": [

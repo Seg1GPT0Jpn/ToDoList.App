@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_mc10_001",
+      "unit": "math.mc.curve.complex.plane",
       "category": "calculation",
       "prompt": "z=3+4i の絶対値は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_mc10_002",
+      "unit": "math.mc.curve.complex.plane",
       "category": "calculation",
       "prompt": "2−3i の共役複素数は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_mc10_003",
+      "unit": "math.mc.curve.complex.polar",
       "category": "calculation",
       "prompt": "1+i を極形式で表すと？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_mc10_004",
+      "unit": "math.mc.curve.complex.plane",
       "category": "knowledge",
       "prompt": "複素数に i をかけると、複素数平面ではどう移る？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_mc10_005",
+      "unit": "math.mc.curve.complex.plane",
       "category": "calculation",
       "prompt": "複素数平面上の2点 1+i、4+5i の距離は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_mc10_006",
+      "unit": "math.mc.curve.complex.plane",
       "category": "calculation",
       "prompt": "z=1+2i のとき、z·z̄ の値は？（z̄ は共役）",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_mc10_007",
+      "unit": "math.mc.curve.complex.polar",
       "category": "calculation",
       "prompt": "(cos π/6+i sin π/6)² を計算すると？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_mc10_008",
+      "unit": "math.mc.curve.complex",
       "category": "calculation",
       "prompt": "2+i と 4+3i を結ぶ線分の中点は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_mc10_009",
+      "unit": "math.mc.curve.complex.polar",
       "category": "calculation",
       "prompt": "−1 の偏角は？（0≦θ<2π）",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_mc10_010",
+      "unit": "math.mc.curve.complex.polar",
       "category": "thinking",
       "prompt": "複素数の積で「絶対値はかけ算、偏角は足し算」になることの意味は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_mc10_011",
+      "unit": "math.mc.curve.complex.plane",
       "category": "calculation",
       "prompt": "z=−5+12i の絶対値は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_mc10_012",
+      "unit": "math.mc.curve.complex.plane",
       "category": "calculation",
       "prompt": "−1+4i の共役複素数は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_mc10_013",
+      "unit": "math.mc.curve.complex.polar",
       "category": "calculation",
       "prompt": "√3+i を極形式で表すと？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_mc10_014",
+      "unit": "math.mc.curve.complex.plane",
       "category": "calculation",
       "prompt": "複素数 z に −1 をかけると、複素数平面ではどう移る？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_mc10_015",
+      "unit": "math.mc.curve.complex.plane",
       "category": "calculation",
       "prompt": "複素数平面上の2点 −2+i、1+5i の距離は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_mc10_016",
+      "unit": "math.mc.curve.complex",
       "category": "calculation",
       "prompt": "z=3−4i のとき、z·z̄ の値は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_mc10_017",
+      "unit": "math.mc.curve.complex.demoivre",
       "category": "calculation",
       "prompt": "(cos π/4+i sin π/4)⁴ を計算すると？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_mc10_018",
+      "unit": "math.mc.curve.complex",
       "category": "calculation",
       "prompt": "1+2i と 3−4i を結ぶ線分の中点は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_mc10_019",
+      "unit": "math.mc.curve.complex.polar",
       "category": "calculation",
       "prompt": "i の偏角は？（0≦θ<2π）",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_mc10_020",
+      "unit": "math.mc.curve.complex.plane",
       "category": "knowledge",
       "prompt": "z̄（z の共役複素数）は、複素数平面上で z をどう移した点？",
       "choices": [

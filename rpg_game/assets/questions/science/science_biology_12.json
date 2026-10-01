@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "sci_bio12_001",
+      "unit": "science.biology.molecule.metabolism.respiration",
       "category": "knowledge",
       "prompt": "呼吸の最初の段階で、グルコースがピルビン酸に分解される過程は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "sci_bio12_002",
+      "unit": "science.biology.molecule.metabolism.respiration",
       "category": "knowledge",
       "prompt": "クエン酸回路が行われる場所は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "sci_bio12_003",
+      "unit": "science.biology.molecule.metabolism.respiration",
       "category": "knowledge",
       "prompt": "呼吸の過程で、最も多くの ATP がつくられる段階は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "sci_bio12_004",
+      "unit": "science.biology.molecule.metabolism.fermentation",
       "category": "knowledge",
       "prompt": "酵母が酸素のない条件で行う発酵でできる物質は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "sci_bio12_005",
+      "unit": "science.biology.molecule.metabolism.photosynthesis",
       "category": "knowledge",
       "prompt": "光合成で、光エネルギーを吸収して水を分解し、酸素を発生させる場所は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "sci_bio12_006",
+      "unit": "science.biology.molecule.metabolism.photosynthesis",
       "category": "knowledge",
       "prompt": "光合成で、CO₂ を取りこんで有機物をつくる反応系は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "sci_bio12_007",
+      "unit": "science.biology.molecule.metabolism.photosynthesis",
       "category": "knowledge",
       "prompt": "CO₂ をいったん C₄ 化合物として固定し、高温・強光の環境でも効率よく光合成をする植物は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "sci_bio12_008",
+      "unit": "science.biology.molecule.metabolism.respiration",
       "category": "knowledge",
       "prompt": "呼吸の電子伝達系で、最終的に電子を受け取る物質は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "sci_bio12_009",
+      "unit": "science.biology.molecule.metabolism.respiration",
       "category": "knowledge",
       "prompt": "呼吸商（RQ）とは？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "sci_bio12_010",
+      "unit": "science.biology.molecule.metabolism",
       "category": "knowledge",
       "prompt": "筋肉で激しい運動をして酸素が不足したときに起こる反応は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "sci_bio12_011",
+      "unit": "science.biology.molecule.metabolism.chemosynthesis",
       "category": "knowledge",
       "prompt": "空気中の窒素を直接利用してアンモニウムイオンをつくることができる生物は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "sci_bio12_012",
+      "unit": "science.biology.molecule.metabolism.photosynthesis",
       "category": "knowledge",
       "prompt": "光合成の色素のうち、光エネルギーを吸収する中心的な色素は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "sci_bio12_013",
+      "unit": "science.biology.molecule.metabolism.respiration",
       "category": "calculation",
       "prompt": "ある種子の呼吸で、CO₂ を 70 mL 放出し、O₂ を 100 mL 吸収した。呼吸商と、主な呼吸基質として考えられるものは？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "sci_bio12_014",
+      "unit": "science.biology.molecule.metabolism.fermentation",
       "category": "calculation",
       "prompt": "アルコール発酵で、グルコース 1 分子からできるエタノールは何分子？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "sci_bio12_015",
+      "unit": "science.biology.molecule.metabolism.photosynthesis",
       "category": "calculation",
       "prompt": "光合成でグルコース 1 分子をつくるのに必要な CO₂ は何分子？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "sci_bio12_016",
+      "unit": "science.biology.molecule.metabolism.photosynthesis",
       "category": "thinking",
       "prompt": "酸素の同位体 ¹⁸O をふくむ水を植物に与えて光合成させると、¹⁸O をふくむ酸素が発生した。わかることは？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "sci_bio12_017",
+      "unit": "science.biology.molecule.metabolism.respiration",
       "category": "knowledge",
       "prompt": "呼吸で、グルコースが最終的に分解されてできる物質は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "sci_bio12_018",
+      "unit": "science.biology.molecule.metabolism.respiration",
       "category": "knowledge",
       "prompt": "電子伝達系が行われる場所は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "sci_bio12_019",
+      "unit": "science.biology.molecule.metabolism.respiration",
       "category": "knowledge",
       "prompt": "解糖系が行われる場所は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "sci_bio12_020",
+      "unit": "science.biology.molecule.metabolism.photosynthesis",
       "category": "knowledge",
       "prompt": "光合成の光化学系でつくられ、カルビン回路で使われる物質は？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "sci_bio12_021",
+      "unit": "science.biology.molecule.metabolism.photosynthesis",
       "category": "knowledge",
       "prompt": "カルビン回路が行われる場所は？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "sci_bio12_022",
+      "unit": "science.biology.molecule.metabolism.photosynthesis",
       "category": "knowledge",
       "prompt": "光合成で発生する酸素は、どの物質に由来する？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "sci_bio12_023",
+      "unit": "science.biology.molecule.metabolism.fermentation",
       "category": "knowledge",
       "prompt": "乳酸発酵を行う生物の例は？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "sci_bio12_024",
+      "unit": "science.biology.molecule.metabolism",
       "category": "knowledge",
       "prompt": "CAM 植物の特徴は？",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "sci_bio12_025",
+      "unit": "science.biology.molecule.metabolism.chemosynthesis",
       "category": "knowledge",
       "prompt": "根粒菌が共生する植物は？",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "sci_bio12_026",
+      "unit": "science.biology.molecule.metabolism.chemosynthesis",
       "category": "knowledge",
       "prompt": "化学合成細菌がエネルギーを得る方法は？",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "sci_bio12_027",
+      "unit": "science.biology.molecule.metabolism.respiration",
       "category": "calculation",
       "prompt": "呼吸で O₂ を 100 mL 吸収し、CO₂ を 100 mL 放出した。呼吸商は？",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "sci_bio12_028",
+      "unit": "science.biology.molecule.metabolism.respiration",
       "category": "calculation",
       "prompt": "脂肪の呼吸商はおよそ？",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "sci_bio12_029",
+      "unit": "science.biology.molecule.metabolism.respiration",
       "category": "calculation",
       "prompt": "呼吸でグルコース 1 分子から最大でできる ATP はおよそ？",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "sci_bio12_030",
+      "unit": "science.biology.molecule.metabolism.photosynthesis",
       "category": "calculation",
       "prompt": "光合成でグルコース 1 分子をつくるときに放出される O₂ は何分子？",
       "choices": [
@@ -396,6 +426,7 @@
     },
     {
       "id": "sci_bio12_031",
+      "unit": "science.biology.molecule.metabolism.respiration",
       "category": "thinking",
       "prompt": "酵母を密閉した容器で育てると、エタノールが増える理由は？",
       "choices": [
@@ -409,6 +440,7 @@
     },
     {
       "id": "sci_bio12_032",
+      "unit": "science.biology.molecule.metabolism.photosynthesis",
       "category": "thinking",
       "prompt": "暗い場所に置いた植物を明るい場所に移すと、しばらく CO₂ の吸収量が増えていく理由は？",
       "choices": [

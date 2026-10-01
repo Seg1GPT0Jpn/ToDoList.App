@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "sci_bio02_001",
+      "unit": "science.biology.cell.energy.atp",
       "category": "knowledge",
       "prompt": "生体内で起こる化学反応全体を何という？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "sci_bio02_002",
+      "unit": "science.biology.cell.energy.atp",
       "category": "knowledge",
       "prompt": "簡単な物質から複雑な物質を合成し、エネルギーを取りこむ反応は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "sci_bio02_003",
+      "unit": "science.biology.cell.energy.atp",
       "category": "knowledge",
       "prompt": "ATP の正式名称は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "sci_bio02_004",
+      "unit": "science.biology.cell.energy.atp",
       "category": "knowledge",
       "prompt": "ATP がエネルギーを放出するときの変化は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "sci_bio02_005",
+      "unit": "science.biology.cell.energy.enzyme",
       "category": "knowledge",
       "prompt": "酵素の主成分は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "sci_bio02_006",
+      "unit": "science.biology.cell.energy.enzyme",
       "category": "knowledge",
       "prompt": "酵素が特定の物質（基質）にしかはたらかない性質を何という？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "sci_bio02_007",
+      "unit": "science.biology.cell.energy",
       "category": "knowledge",
       "prompt": "植物のように、無機物から有機物をつくって生活する生物を何という？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "sci_bio02_008",
+      "unit": "science.biology.cell.energy.overview",
       "category": "knowledge",
       "prompt": "呼吸で使われる物質と生じる物質の組み合わせは？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "sci_bio02_009",
+      "unit": "science.biology.cell.energy.overview",
       "category": "knowledge",
       "prompt": "光合成の材料となる物質は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "sci_bio02_010",
+      "unit": "science.biology.cell.energy.enzyme",
       "category": "knowledge",
       "prompt": "酵素について正しいものは？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "sci_bio02_011",
+      "unit": "science.biology.cell.energy.atp",
       "category": "knowledge",
       "prompt": "ATP は何の「通貨」にたとえられる？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "sci_bio02_012",
+      "unit": "science.biology.cell.energy.enzyme",
       "category": "knowledge",
       "prompt": "生物のからだで触媒としてはたらき、化学反応を進みやすくするものは？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "sci_bio02_013",
+      "unit": "science.biology.cell.energy.overview",
       "category": "calculation",
       "prompt": "呼吸でグルコース 1 mol が完全に分解されると、二酸化炭素は何 mol できる？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "sci_bio02_014",
+      "unit": "science.biology.cell.energy.overview",
       "category": "calculation",
       "prompt": "呼吸で酸素 3 mol を使ったとき、分解されたグルコースは何 mol？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "sci_bio02_015",
+      "unit": "science.biology.cell.energy.enzyme",
       "category": "thinking",
       "prompt": "酵素の反応速度と温度の関係のグラフで、ある温度を超えると速度が急に下がる理由は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "sci_bio02_016",
+      "unit": "science.biology.cell.energy.enzyme",
       "category": "thinking",
       "prompt": "過酸化水素水に生の肝臓片を入れると泡が出るが、煮た肝臓片では出ない。理由は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "sci_bio02_017",
+      "unit": "science.biology.cell.energy.atp",
       "category": "knowledge",
       "prompt": "異化の例は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "sci_bio02_018",
+      "unit": "science.biology.cell.energy.overview",
       "category": "knowledge",
       "prompt": "光合成で発生する気体は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "sci_bio02_019",
+      "unit": "science.biology.cell.energy.atp",
       "category": "knowledge",
       "prompt": "ATP にふくまれる、高エネルギーリン酸結合の数は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "sci_bio02_020",
+      "unit": "science.biology.cell.energy.atp",
       "category": "knowledge",
       "prompt": "ATP を構成する糖は？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "sci_bio02_021",
+      "unit": "science.biology.cell.energy.atp",
       "category": "knowledge",
       "prompt": "ATP を構成する塩基は？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "sci_bio02_022",
+      "unit": "science.biology.cell.energy.overview",
       "category": "knowledge",
       "prompt": "光合成の反応全体を表したものとして正しいものは？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "sci_bio02_023",
+      "unit": "science.biology.cell.energy",
       "category": "knowledge",
       "prompt": "動物のように、ほかの生物がつくった有機物を取りこんで生活する生物を何という？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "sci_bio02_024",
+      "unit": "science.biology.cell.energy.enzyme",
       "category": "knowledge",
       "prompt": "酵素が作用する相手の物質を何という？",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "sci_bio02_025",
+      "unit": "science.biology.cell.energy.enzyme",
       "category": "knowledge",
       "prompt": "だ液にふくまれるアミラーゼの基質は？",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "sci_bio02_026",
+      "unit": "science.biology.cell.energy.enzyme",
       "category": "knowledge",
       "prompt": "胃液にふくまれるペプシンの基質は？",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "sci_bio02_027",
+      "unit": "science.biology.cell.energy.enzyme",
       "category": "knowledge",
       "prompt": "ヒトの体内ではたらく多くの酵素の最適温度は、およそ？",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "sci_bio02_028",
+      "unit": "science.biology.cell.energy.enzyme",
       "category": "knowledge",
       "prompt": "酵素が失活する原因として適切なものは？",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "sci_bio02_029",
+      "unit": "science.biology.cell.energy.atp",
       "category": "calculation",
       "prompt": "ATP 1 mol の分解で約30 kJ のエネルギーが出るとすると、ATP 10 mol ではおよそ何 kJ？",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "sci_bio02_030",
+      "unit": "science.biology.cell.energy.overview",
       "category": "calculation",
       "prompt": "光合成で二酸化炭素 6 mol が使われたとき、つくられるグルコースは何 mol？",
       "choices": [
@@ -396,6 +426,7 @@
     },
     {
       "id": "sci_bio02_031",
+      "unit": "science.biology.cell.energy.overview",
       "category": "calculation",
       "prompt": "呼吸でグルコース 2 mol を完全に分解するのに必要な酸素は何 mol？",
       "choices": [
@@ -409,6 +440,7 @@
     },
     {
       "id": "sci_bio02_032",
+      "unit": "science.biology.cell.energy.enzyme",
       "category": "thinking",
       "prompt": "酵素の量が一定のとき、基質の濃度を上げ続けても反応速度がある値以上に上がらない理由は？",
       "choices": [

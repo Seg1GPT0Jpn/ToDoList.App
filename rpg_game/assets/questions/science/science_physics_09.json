@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "sci_phy09_001",
+      "unit": "science.physics.mechanics.plane.projectile",
       "category": "knowledge",
       "prompt": "水平投射された物体の、水平方向の運動は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "sci_phy09_002",
+      "unit": "science.physics.mechanics.plane.projectile",
       "category": "knowledge",
       "prompt": "水平投射された物体の、鉛直方向の運動は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "sci_phy09_003",
+      "unit": "science.physics.mechanics.plane.projectile",
       "category": "knowledge",
       "prompt": "斜めに投げ上げた物体が最高点にあるとき、速度は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "sci_phy09_004",
+      "unit": "science.physics.mechanics.plane.projectile",
       "category": "knowledge",
       "prompt": "空気抵抗を無視した放物運動の加速度は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "sci_phy09_005",
+      "unit": "science.physics.mechanics.plane.projectile",
       "category": "knowledge",
       "prompt": "水平投射された物体の軌跡の形は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "sci_phy09_006",
+      "unit": "science.physics.mechanics.plane",
       "category": "knowledge",
       "prompt": "空気抵抗がないとき、同じ速さで斜めに投げて最も遠くまで届く角度は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "sci_phy09_007",
+      "unit": "science.physics.mechanics.plane.vector",
       "category": "knowledge",
       "prompt": "速度の合成について正しいものは？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "sci_phy09_008",
+      "unit": "science.physics.mechanics.plane",
       "category": "knowledge",
       "prompt": "物体 A から見た物体 B の相対速度は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "sci_phy09_009",
+      "unit": "science.physics.mechanics.plane",
       "category": "calculation",
       "prompt": "高さ 19.6 m の所から水平に投げた。地面に落ちるまでの時間は？（g ＝ 9.8 m/s²）",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "sci_phy09_010",
+      "unit": "science.physics.mechanics.plane",
       "category": "calculation",
       "prompt": "前問で、初速度 5.0 m/s で水平に投げたとき、水平に進む距離は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "sci_phy09_011",
+      "unit": "science.physics.mechanics.plane.vector",
       "category": "calculation",
       "prompt": "速度の水平成分が 3.0 m/s、鉛直成分が 4.0 m/s のとき、速さは？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "sci_phy09_012",
+      "unit": "science.physics.mechanics.plane.vector",
       "category": "calculation",
       "prompt": "初速度 20 m/s、水平から 30° 上向きに投げた。初速度の鉛直成分は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "sci_phy09_013",
+      "unit": "science.physics.mechanics.plane.vector",
       "category": "calculation",
       "prompt": "前問（鉛直成分 10 m/s）で、最高点に達するまでの時間はおよそ？（g ＝ 9.8 m/s²）",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "sci_phy09_014",
+      "unit": "science.physics.mechanics.plane",
       "category": "calculation",
       "prompt": "静水で 4.0 m/s の船が、流れの速さ 3.0 m/s の川を下流に向かって進む。岸から見た速さは？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "sci_phy09_015",
+      "unit": "science.physics.mechanics.plane",
       "category": "thinking",
       "prompt": "同じ高さから、Aを静かに落とし、同時にBを水平に投げた。先に地面に着くのは？（空気抵抗なし）",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "sci_phy09_016",
+      "unit": "science.physics.mechanics.plane.vector",
       "category": "thinking",
       "prompt": "雨が真上から降っているのに、走ると前から降ってくるように見える理由は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "sci_phy09_017",
+      "unit": "science.physics.mechanics.plane.projectile",
       "category": "knowledge",
       "prompt": "斜方投射された物体の水平方向の運動は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "sci_phy09_018",
+      "unit": "science.physics.mechanics.plane.projectile",
       "category": "knowledge",
       "prompt": "斜方投射された物体の鉛直方向の運動は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "sci_phy09_019",
+      "unit": "science.physics.mechanics.plane.projectile",
       "category": "knowledge",
       "prompt": "水平投射で、地面に着くまでの時間は何で決まる？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "sci_phy09_020",
+      "unit": "science.physics.mechanics.plane",
       "category": "knowledge",
       "prompt": "物体 A の速度が vA、物体 B の速度が vB のとき、B から見た A の相対速度は？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "sci_phy09_021",
+      "unit": "science.physics.mechanics.plane.vector",
       "category": "knowledge",
       "prompt": "速度の分解で、水平から角 θ で速さ v の速度の水平成分は？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "sci_phy09_022",
+      "unit": "science.physics.mechanics.plane",
       "category": "knowledge",
       "prompt": "空気抵抗を無視したとき、同じ初速で 30° と 60° に投げた物体の水平到達距離の関係は？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "sci_phy09_023",
+      "unit": "science.physics.mechanics.plane",
       "category": "calculation",
       "prompt": "高さ 4.9 m の所から水平に投げた。地面に落ちるまでの時間は？（g ＝ 9.8 m/s²）",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "sci_phy09_024",
+      "unit": "science.physics.mechanics.plane",
       "category": "calculation",
       "prompt": "前問で、初速度 8.0 m/s で投げたときの水平到達距離は？",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "sci_phy09_025",
+      "unit": "science.physics.mechanics.plane.vector",
       "category": "calculation",
       "prompt": "水平に 10 m/s で投げた物体の、2.0 s 後の速さは？（g ＝ 9.8 m/s²）",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "sci_phy09_026",
+      "unit": "science.physics.mechanics.plane.vector",
       "category": "calculation",
       "prompt": "初速度 20 m/s、水平から 60° 上向きに投げた。初速度の水平成分は？",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "sci_phy09_027",
+      "unit": "science.physics.mechanics.plane.vector",
       "category": "calculation",
       "prompt": "初速度の鉛直成分 19.6 m/s で斜めに投げた。最高点の高さは？（g ＝ 9.8 m/s²）",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "sci_phy09_028",
+      "unit": "science.physics.mechanics.plane.projectile",
       "category": "calculation",
       "prompt": "同じ物体の、投げてから同じ高さにもどるまでの時間は？",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "sci_phy09_029",
+      "unit": "science.physics.mechanics.plane",
       "category": "calculation",
       "prompt": "静水で 5.0 m/s の船が、流れの速さ 3.0 m/s の川を下流に向かって進む。岸から見た速さは？",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "sci_phy09_030",
+      "unit": "science.physics.mechanics.plane",
       "category": "calculation",
       "prompt": "東へ 30 m/s の電車から、北へ 40 m/s で飛ぶ鳥を見ると、相対速度の大きさは？",
       "choices": [
@@ -396,6 +426,7 @@
     },
     {
       "id": "sci_phy09_031",
+      "unit": "science.physics.mechanics.plane.projectile",
       "category": "thinking",
       "prompt": "水平投射の運動を「水平方向」と「鉛直方向」に分けて考えられる理由は？",
       "choices": [
@@ -409,6 +440,7 @@
     },
     {
       "id": "sci_phy09_032",
+      "unit": "science.physics.mechanics.plane",
       "category": "thinking",
       "prompt": "走る電車の中で真上にボールを投げると、ボールは手元にもどる。その理由は？",
       "choices": [

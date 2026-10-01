@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "science_earth_basic_01_001",
+      "unit": "science.earth.solid.shape.interior",
       "category": "knowledge",
       "prompt": "地球の内部構造を外側から順に並べたものは？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "science_earth_basic_01_002",
+      "unit": "science.earth.solid.plate.plate",
       "category": "knowledge",
       "prompt": "海洋プレートが大陸プレートの下に沈みこむ場所にできる地形は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "science_earth_basic_01_003",
+      "unit": "science.earth.solid.quake.wave",
       "category": "knowledge",
       "prompt": "地震で最初に届く小さなゆれ（初期微動）を伝える波は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "science_earth_basic_01_004",
+      "unit": "science.earth.solid.quake.mechanism",
       "category": "knowledge",
       "prompt": "初期微動継続時間が長いほど、震源までの距離は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "science_earth_basic_01_005",
+      "unit": "science.earth.solid.quake.scale",
       "category": "knowledge",
       "prompt": "マグニチュードが 1 大きくなると、地震のエネルギーは約何倍？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "science_earth_basic_01_006",
+      "unit": "science.earth.solid.quake.scale",
       "category": "knowledge",
       "prompt": "日本の震度階級はいくつに分かれている？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "science_earth_basic_01_007",
+      "unit": "science.earth.solid.volcano.magma",
       "category": "knowledge",
       "prompt": "マグマのねばりけが大きい火山の特徴は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "science_earth_basic_01_008",
+      "unit": "science.earth.solid.volcano.rock",
       "category": "knowledge",
       "prompt": "玄武岩の特徴は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "science_earth_basic_01_009",
+      "unit": "science.earth.solid.volcano.magma",
       "category": "knowledge",
       "prompt": "マグマが地下深くでゆっくり冷えてできた岩石は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "science_earth_basic_01_010",
+      "unit": "science.earth.history.strata.sediment",
       "category": "knowledge",
       "prompt": "うすい塩酸をかけると二酸化炭素が発生する堆積岩は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "science_earth_basic_01_011",
+      "unit": "science.earth.history.strata.fossil",
       "category": "knowledge",
       "prompt": "三葉虫の化石が見つかった地層の時代は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "science_earth_basic_01_012",
+      "unit": "science.earth.history.life.mesozoic",
       "category": "knowledge",
       "prompt": "アンモナイトが栄えた時代は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "science_earth_basic_01_013",
+      "unit": "science.earth.history.strata.fossil",
       "category": "knowledge",
       "prompt": "サンゴの化石が見つかった地層ができた環境は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "science_earth_basic_01_014",
+      "unit": "science.earth.history.strata.stratum",
       "category": "knowledge",
       "prompt": "地層が逆転していないとき、ふつう古いのはどの層？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "science_earth_basic_01_015",
+      "unit": "science.earth.solid.shape",
       "category": "knowledge",
       "prompt": "地表付近の乾燥した大気で、体積の割合が最も大きい気体は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "science_earth_basic_01_016",
+      "unit": "science.earth.atmos.structure.layer",
       "category": "knowledge",
       "prompt": "対流圏で、高度が 1 km 上がるごとに気温はおよそ何℃下がる？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "science_earth_basic_01_017",
+      "unit": "science.earth.history.life.paleozoic",
       "category": "knowledge",
       "prompt": "紫外線を吸収するオゾン層がある層は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "science_earth_basic_01_018",
+      "unit": "science.earth.atmos.structure.radiation",
       "category": "knowledge",
       "prompt": "代表的な温室効果ガスは？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "science_earth_basic_01_019",
+      "unit": "science.earth.solid.shape",
       "category": "knowledge",
       "prompt": "日本の上空を西から東へ吹く風は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "science_earth_basic_01_020",
+      "unit": "science.earth.solid.shape",
       "category": "knowledge",
       "prompt": "太平洋の赤道付近の東部で、海面水温が平年より高くなる現象は？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "science_earth_basic_01_021",
+      "unit": "science.earth.space.solar.sun",
       "category": "knowledge",
       "prompt": "太陽がエネルギーを生み出しているしくみは？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "science_earth_basic_01_022",
+      "unit": "science.earth.solid.shape",
       "category": "knowledge",
       "prompt": "恒星の表面温度が最も高いのは、何色に見える星？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "science_earth_basic_01_023",
+      "unit": "science.earth.space.universe.expansion",
       "category": "knowledge",
       "prompt": "宇宙が誕生したのは今からおよそ何年前？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "science_earth_basic_01_024",
+      "unit": "science.earth.space.solar.sun",
       "category": "knowledge",
       "prompt": "地球が誕生したのは今からおよそ何年前？",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "science_earth_basic_01_025",
+      "unit": "science.earth.space.solar.planet",
       "category": "knowledge",
       "prompt": "地球型惑星に含まれないものは？",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "science_earth_basic_01_026",
+      "unit": "science.earth.space.solar.planet",
       "category": "knowledge",
       "prompt": "木星型惑星の特徴は？",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "science_earth_basic_01_027",
+      "unit": "science.earth.atmos.weather.front",
       "category": "knowledge",
       "prompt": "梅雨の時期に日本付近にできる前線は？",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "science_earth_basic_01_028",
+      "unit": "science.earth.atmos.weather.typhoon",
       "category": "knowledge",
       "prompt": "台風のもとになるものは？",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "science_earth_basic_01_029",
+      "unit": "science.earth.atmos.environment.climate",
       "category": "knowledge",
       "prompt": "地球温暖化によって起こると考えられていることは？",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "science_earth_basic_01_030",
+      "unit": "science.earth.atmos.environment.disaster",
       "category": "knowledge",
       "prompt": "大雨のときに山の斜面が一気にくずれる災害は？",
       "choices": [

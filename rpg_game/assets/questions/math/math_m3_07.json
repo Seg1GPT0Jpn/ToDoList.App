@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_m307_001",
+      "unit": "math.m3.diff.apply.tangent",
       "category": "calculation",
       "prompt": "曲線 y=eˣ 上の点 (0, 1) における接線の方程式は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_m307_002",
+      "unit": "math.m3.diff.apply.tangent",
       "category": "calculation",
       "prompt": "曲線 y=log x 上の点 (1, 0) における接線の方程式は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_m307_003",
+      "unit": "math.m3.diff.apply",
       "category": "calculation",
       "prompt": "y=x−log x（x>0）の最小値は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_m307_004",
+      "unit": "math.m3.diff.apply",
       "category": "calculation",
       "prompt": "y=xeˣ の極小値は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_m307_005",
+      "unit": "math.m3.diff.apply.graph",
       "category": "calculation",
       "prompt": "y=sin x（0<x<2π）の変曲点は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_m307_006",
+      "unit": "math.m3.diff.apply.graph",
       "category": "calculation",
       "prompt": "y=x³ の変曲点は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_m307_007",
+      "unit": "math.m3.diff.apply.velocity",
       "category": "calculation",
       "prompt": "数直線上を動く点の位置が x=t³−3t のとき、t=2 における速度は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_m307_008",
+      "unit": "math.m3.diff.apply.velocity",
       "category": "calculation",
       "prompt": "同じ点の、t=2 における加速度は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_m307_009",
+      "unit": "math.m3.diff.apply.velocity",
       "category": "calculation",
       "prompt": "1次の近似式を使うと、√1.02 はおよそ？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_m307_010",
+      "unit": "math.m3.diff.apply.graph",
       "category": "thinking",
       "prompt": "第2次導関数の符号でグラフの凹凸が分かる理由は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_m307_011",
+      "unit": "math.m3.diff.apply.tangent",
       "category": "calculation",
       "prompt": "曲線 y=e^(2x) 上の点 (0, 1) における接線の方程式は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_m307_012",
+      "unit": "math.m3.diff.apply.tangent",
       "category": "calculation",
       "prompt": "曲線 y=sin x 上の点 (0, 0) における接線の方程式は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_m307_013",
+      "unit": "math.m3.diff.apply",
       "category": "calculation",
       "prompt": "y=eˣ−x の最小値は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_m307_014",
+      "unit": "math.m3.diff.apply",
       "category": "calculation",
       "prompt": "y=x log x（x>0）の最小値は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_m307_015",
+      "unit": "math.m3.diff.apply.graph",
       "category": "calculation",
       "prompt": "y=x³−3x² の変曲点は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_m307_016",
+      "unit": "math.m3.diff.apply.graph",
       "category": "calculation",
       "prompt": "y=e^(−x²) の変曲点の x 座標は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_m307_017",
+      "unit": "math.m3.diff.apply.velocity",
       "category": "calculation",
       "prompt": "数直線上を動く点の位置が x=t²−4t のとき、速度が0になる t は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_m307_018",
+      "unit": "math.m3.diff.apply.velocity",
       "category": "calculation",
       "prompt": "位置が x=sin t のとき、加速度は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_m307_019",
+      "unit": "math.m3.diff.apply.velocity",
       "category": "calculation",
       "prompt": "1次の近似式を使うと、e^0.01 はおよそ？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_m307_020",
+      "unit": "math.m3.diff.apply.tangent",
       "category": "knowledge",
       "prompt": "f″(x)>0 の区間で、曲線 y=f(x) はどうなっている？",
       "choices": [

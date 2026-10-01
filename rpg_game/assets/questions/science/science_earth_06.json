@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "sci_ear06_001",
+      "unit": "science.earth.atmos.environment.climate",
       "category": "knowledge",
       "prompt": "地表付近の大気で、体積の割合が最も大きい成分は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "sci_ear06_002",
+      "unit": "science.earth.atmos.circulation",
       "category": "knowledge",
       "prompt": "大気の層を下から順に並べたものは？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "sci_ear06_003",
+      "unit": "science.earth.atmos.structure.water",
       "category": "knowledge",
       "prompt": "雲ができたり雨が降ったりする天気の変化が起こる層は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "sci_ear06_004",
+      "unit": "science.earth.atmos.environment.ozone",
       "category": "knowledge",
       "prompt": "オゾン層があり、上空ほど気温が上がる層は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "sci_ear06_005",
+      "unit": "science.earth.atmos.circulation",
       "category": "knowledge",
       "prompt": "海面の平均的な気圧（1 気圧）はおよそ？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "sci_ear06_006",
+      "unit": "science.earth.atmos.circulation",
       "category": "knowledge",
       "prompt": "空気 1 m³ がふくむことができる水蒸気の最大量を何という？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "sci_ear06_007",
+      "unit": "science.earth.atmos.structure.water",
       "category": "knowledge",
       "prompt": "空気を冷やしていったとき、水蒸気が水滴になり始める温度を何という？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "sci_ear06_008",
+      "unit": "science.earth.atmos.structure.water",
       "category": "knowledge",
       "prompt": "上昇した空気のかたまりで雲ができるしくみは？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "sci_ear06_009",
+      "unit": "science.earth.atmos.circulation.atmos",
       "category": "knowledge",
       "prompt": "赤道付近で上昇し、緯度 30° 付近で下降する大気の循環を何という？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "sci_ear06_010",
+      "unit": "science.earth.atmos.circulation",
       "category": "knowledge",
       "prompt": "日本付近の上空を、西から東へ吹いている風は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "sci_ear06_011",
+      "unit": "science.earth.atmos.circulation.ocean",
       "category": "knowledge",
       "prompt": "海水の塩分（塩類の割合）はおよそ？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "sci_ear06_012",
+      "unit": "science.earth.atmos.circulation.ocean",
       "category": "knowledge",
       "prompt": "日本の太平洋側を北上する暖流は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "sci_ear06_013",
+      "unit": "science.earth.atmos.structure.water",
       "category": "calculation",
       "prompt": "気温 20 ℃（飽和水蒸気量 17.3 g/m³）の空気が、1 m³ あたり 8.65 g の水蒸気をふくんでいる。湿度は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "sci_ear06_014",
+      "unit": "science.earth.atmos.structure.layer",
       "category": "calculation",
       "prompt": "対流圏で気温が 100 m につき 0.65 ℃ 下がるとする。地上 20 ℃ のとき、高さ 1000 m の気温は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "sci_ear06_015",
+      "unit": "science.earth.atmos.structure.water",
       "category": "thinking",
       "prompt": "冷たい飲み物を入れたコップの表面に水滴がつく理由は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "sci_ear06_016",
+      "unit": "science.earth.atmos.circulation",
       "category": "thinking",
       "prompt": "湿った空気が山をこえて風下に吹き降りると、高温で乾燥した風になることがある。この現象は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "sci_ear06_017",
+      "unit": "science.earth.atmos.circulation",
       "category": "knowledge",
       "prompt": "地表付近の大気で、窒素の次に多い成分は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "sci_ear06_018",
+      "unit": "science.earth.atmos.structure.layer",
       "category": "knowledge",
       "prompt": "対流圏の厚さはおよそ？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "sci_ear06_019",
+      "unit": "science.earth.atmos.circulation",
       "category": "knowledge",
       "prompt": "オーロラが見られるのは主にどの層？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "sci_ear06_020",
+      "unit": "science.earth.atmos.circulation",
       "category": "knowledge",
       "prompt": "上空へ行くほど気圧はどうなる？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "sci_ear06_021",
+      "unit": "science.earth.atmos.structure.water",
       "category": "knowledge",
       "prompt": "湿度を表す式は？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "sci_ear06_022",
+      "unit": "science.earth.atmos.structure.water",
       "category": "knowledge",
       "prompt": "気温が上がると、飽和水蒸気量はどうなる？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "sci_ear06_023",
+      "unit": "science.earth.atmos.circulation",
       "category": "knowledge",
       "prompt": "日本の太平洋側を南下する寒流は？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "sci_ear06_024",
+      "unit": "science.earth.atmos.circulation",
       "category": "knowledge",
       "prompt": "地球が太陽から受けとったエネルギーを、最終的にどうしている？",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "sci_ear06_025",
+      "unit": "science.earth.atmos.structure.water",
       "category": "calculation",
       "prompt": "気温 30 ℃（飽和水蒸気量 30.4 g/m³）で、水蒸気量 15.2 g/m³ の空気の湿度は？",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "sci_ear06_026",
+      "unit": "science.earth.atmos.structure.water",
       "category": "calculation",
       "prompt": "水蒸気量 12.8 g/m³ の空気の露点は？（10 ℃ で 9.4、15 ℃ で 12.8、20 ℃ で 17.3 g/m³）",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "sci_ear06_027",
+      "unit": "science.earth.atmos.circulation",
       "category": "calculation",
       "prompt": "前問の空気を 10 ℃ まで冷やすと、1 m³ あたり何 g の水滴ができる？",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "sci_ear06_028",
+      "unit": "science.earth.atmos.circulation",
       "category": "calculation",
       "prompt": "地上の気温 15 ℃ で、高さ 2000 m の気温は？（100 m につき 0.65 ℃ 下がる）",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "sci_ear06_029",
+      "unit": "science.earth.atmos.circulation",
       "category": "calculation",
       "prompt": "高さ 3000 m の山頂の気温が 5 ℃ のとき、ふもと（0 m）の気温は？（100 m につき 0.65 ℃）",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "sci_ear06_030",
+      "unit": "science.earth.atmos.circulation",
       "category": "calculation",
       "prompt": "海水 1 kg に塩類が 35 g ふくまれる。海水 10 kg には塩類が何 g？",
       "choices": [
@@ -396,6 +426,7 @@
     },
     {
       "id": "sci_ear06_031",
+      "unit": "science.earth.atmos.structure.water",
       "category": "thinking",
       "prompt": "冬の朝、窓ガラスの内側がくもる理由は？",
       "choices": [
@@ -409,6 +440,7 @@
     },
     {
       "id": "sci_ear06_032",
+      "unit": "science.earth.atmos.circulation",
       "category": "thinking",
       "prompt": "海が地球の気温の変化をやわらげる理由は？",
       "choices": [

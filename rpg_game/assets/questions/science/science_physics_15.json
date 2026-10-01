@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "sci_phy15_001",
+      "unit": "science.physics.em.magnetism.field",
       "category": "knowledge",
       "prompt": "まっすぐな導線に電流を流したときの磁場の向きを知る方法は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "sci_phy15_002",
+      "unit": "science.physics.em.magnetism.field",
       "category": "knowledge",
       "prompt": "磁場の中の電流が受ける力の向きを知る方法は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "sci_phy15_003",
+      "unit": "science.physics.em.magnetism.field",
       "category": "knowledge",
       "prompt": "磁場の中を運動する荷電粒子が受ける力を何という？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "sci_phy15_004",
+      "unit": "science.physics.em.magnetism.induction",
       "category": "knowledge",
       "prompt": "誘導起電力の向きについての法則（磁束の変化を妨げる向きに電流が流れる）は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "sci_phy15_005",
+      "unit": "science.physics.em.magnetism.induction",
       "category": "knowledge",
       "prompt": "誘導起電力の大きさを決めるものは？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "sci_phy15_006",
+      "unit": "science.physics.em.magnetism",
       "category": "knowledge",
       "prompt": "磁束密度の単位は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "sci_phy15_007",
+      "unit": "science.physics.em.magnetism.ac",
       "category": "knowledge",
       "prompt": "家庭用の交流 100 V の「100 V」は何を表す？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "sci_phy15_008",
+      "unit": "science.physics.em.magnetism.inductance",
       "category": "knowledge",
       "prompt": "変圧器（トランス）の一次・二次コイルの電圧の比は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "sci_phy15_009",
+      "unit": "science.physics.em.magnetism.field",
       "category": "calculation",
       "prompt": "磁束密度 0.40 T の磁場に垂直な、長さ 0.50 m の導線に 2.0 A の電流を流した。受ける力は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "sci_phy15_010",
+      "unit": "science.physics.em.magnetism.field",
       "category": "calculation",
       "prompt": "電気量 1.6 × 10⁻¹⁹ C の粒子が、磁束密度 0.50 T の磁場に垂直に 1.0 × 10⁶ m/s で入った。ローレンツ力は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "sci_phy15_011",
+      "unit": "science.physics.em.magnetism.induction",
       "category": "calculation",
       "prompt": "巻数 100 のコイルを貫く磁束が、0.10 s 間に 0.020 Wb から 0 に変化した。誘導起電力の大きさは？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "sci_phy15_012",
+      "unit": "science.physics.em.magnetism.field",
       "category": "calculation",
       "prompt": "長さ 0.50 m の導体棒が、磁束密度 0.40 T の磁場に垂直に 2.0 m/s で動く。誘導起電力は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "sci_phy15_013",
+      "unit": "science.physics.em.magnetism.inductance",
       "category": "calculation",
       "prompt": "一次コイル 1000 回、二次コイル 50 回の変圧器の一次側に 100 V をかけた。二次側の電圧は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "sci_phy15_014",
+      "unit": "science.physics.em.magnetism.ac",
       "category": "calculation",
       "prompt": "最大値 141 V の交流電圧の実効値はおよそ？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "sci_phy15_015",
+      "unit": "science.physics.em.magnetism.inductance",
       "category": "thinking",
       "prompt": "コイルに磁石を近づけたときと遠ざけたときで、流れる誘導電流の向きは？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "sci_phy15_016",
+      "unit": "science.physics.em.magnetism.field",
       "category": "thinking",
       "prompt": "IH 調理器が鍋を温めるしくみは？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "sci_phy15_017",
+      "unit": "science.physics.em.magnetism.field",
       "category": "knowledge",
       "prompt": "右ねじの法則で、ねじの進む向きを電流の向きにすると、ねじを回す向きは？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "sci_phy15_018",
+      "unit": "science.physics.em.magnetism.field",
       "category": "knowledge",
       "prompt": "コイル（ソレノイド）に電流を流したとき、内部の磁場について正しいものは？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "sci_phy15_019",
+      "unit": "science.physics.em.magnetism.field",
       "category": "knowledge",
       "prompt": "磁場中を運動する電子が受けるローレンツ力の向きは？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "sci_phy15_020",
+      "unit": "science.physics.em.magnetism.induction",
       "category": "knowledge",
       "prompt": "ファラデーの電磁誘導の法則で、誘導起電力の大きさは何に比例する？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "sci_phy15_021",
+      "unit": "science.physics.em.magnetism.ac",
       "category": "knowledge",
       "prompt": "交流の周波数 50 Hz とは？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "sci_phy15_022",
+      "unit": "science.physics.em.magnetism.ac",
       "category": "knowledge",
       "prompt": "電磁波の速さ（真空中）は？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "sci_phy15_023",
+      "unit": "science.physics.em.magnetism.field",
       "category": "calculation",
       "prompt": "磁束密度 0.50 T の磁場に垂直な、長さ 0.20 m の導線に 3.0 A の電流を流した。受ける力は？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "sci_phy15_024",
+      "unit": "science.physics.em.magnetism.field",
       "category": "calculation",
       "prompt": "電気量 1.6 × 10⁻¹⁹ C の粒子が、磁束密度 2.0 T の磁場に垂直に 1.0 × 10⁶ m/s で入った。ローレンツ力は？",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "sci_phy15_025",
+      "unit": "science.physics.em.magnetism.induction",
       "category": "calculation",
       "prompt": "巻数 50 のコイルを貫く磁束が、0.20 s 間に 0.040 Wb 変化した。誘導起電力の大きさは？",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "sci_phy15_026",
+      "unit": "science.physics.em.magnetism.field",
       "category": "calculation",
       "prompt": "長さ 0.30 m の導体棒が、磁束密度 0.50 T の磁場に垂直に 2.0 m/s で動く。誘導起電力は？",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "sci_phy15_027",
+      "unit": "science.physics.em.magnetism.inductance",
       "category": "calculation",
       "prompt": "一次コイル 200 回、二次コイル 1000 回の変圧器の一次側に 100 V をかけた。二次側の電圧は？",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "sci_phy15_028",
+      "unit": "science.physics.em.magnetism.ac",
       "category": "calculation",
       "prompt": "実効値 100 V の交流電圧の最大値はおよそ？",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "sci_phy15_029",
+      "unit": "science.physics.em.magnetism.ac",
       "category": "calculation",
       "prompt": "実効値 100 V、実効値 2.0 A の交流が抵抗に流れている。消費電力は？",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "sci_phy15_030",
+      "unit": "science.physics.em.magnetism",
       "category": "calculation",
       "prompt": "理想的な変圧器で、一次側 100 V・2.0 A のとき、二次側が 20 V なら二次側の電流は？",
       "choices": [
@@ -396,6 +426,7 @@
     },
     {
       "id": "sci_phy15_031",
+      "unit": "science.physics.em.magnetism.inductance",
       "category": "thinking",
       "prompt": "発電機のコイルを速く回すほど、大きな電圧が得られる理由は？",
       "choices": [
@@ -409,6 +440,7 @@
     },
     {
       "id": "sci_phy15_032",
+      "unit": "science.physics.em.magnetism",
       "category": "thinking",
       "prompt": "交通系 IC カードが電池なしで動く理由は？",
       "choices": [

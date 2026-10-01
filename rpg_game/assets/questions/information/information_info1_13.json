@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "inf_info113_001",
+      "unit": "information.info.data.manage.database",
       "category": "knowledge",
       "prompt": "身長や点数のように、数値で表され計算に使えるデータは？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "inf_info113_002",
+      "unit": "information.info.data.manage",
       "category": "knowledge",
       "prompt": "血液型や電話番号のように、区別するためだけの尺度は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "inf_info113_003",
+      "unit": "information.info.data.manage",
       "category": "knowledge",
       "prompt": "成績の順位や「とても良い〜悪い」の5段階評価のように、順序に意味がある尺度は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "inf_info113_004",
+      "unit": "information.info.data.manage.database",
       "category": "knowledge",
       "prompt": "摂氏温度や西暦のように、差には意味があるが比には意味がない尺度は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "inf_info113_005",
+      "unit": "information.info.data.manage.database",
       "category": "knowledge",
       "prompt": "身長や重さのように、0 が「ない」を表し、比にも意味がある尺度は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "inf_info113_006",
+      "unit": "information.info.data.manage",
       "category": "knowledge",
       "prompt": "データの中で、値が入っていない部分を何という？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "inf_info113_007",
+      "unit": "information.info.data.manage",
       "category": "knowledge",
       "prompt": "ほかの値から極端に離れた値を何という？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "inf_info113_008",
+      "unit": "information.info.data.manage.database",
       "category": "knowledge",
       "prompt": "誤りや表記のゆれを直して、分析できる形に整える作業は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "inf_info113_009",
+      "unit": "information.info.data.manage",
       "category": "knowledge",
       "prompt": "誰でも自由に使えるように、機械が読みやすい形で公開されたデータは？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "inf_info113_010",
+      "unit": "information.info.data.manage.scale",
       "category": "thinking",
       "prompt": "「20℃ は 10℃ の 2 倍暑い」とは言えない。その理由は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "inf_info113_011",
+      "unit": "information.info.data.manage.database",
       "category": "thinking",
       "prompt": "都道府県の欄に「東京都」と「東京」が混ざっていた。集計の前にすべきことは？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "inf_info113_012",
+      "unit": "information.info.data.manage",
       "category": "thinking",
       "prompt": "テストの点数の欠損値（未受験）を 0 点として平均を計算すると、どうなる？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "inf_info113_013",
+      "unit": "information.info.data.manage.database",
       "category": "knowledge",
       "prompt": "データを表形式で管理し、表どうしを関連づけるデータベースは？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "inf_info113_014",
+      "unit": "information.info.data.manage.database",
       "category": "knowledge",
       "prompt": "データベースで、各行を一意に識別するための項目は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "inf_info113_015",
+      "unit": "information.info.data.manage.database",
       "category": "knowledge",
       "prompt": "データベースを操作するための言語は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "inf_info113_016",
+      "unit": "information.info.data.manage.database",
       "category": "knowledge",
       "prompt": "表のデータを「,」で区切って保存するテキスト形式は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "inf_info113_017",
+      "unit": "information.info.data.manage.database",
       "category": "knowledge",
       "prompt": "データを「キーと値」の組で表す、Web でよく使われる形式は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "inf_info113_018",
+      "unit": "information.info.data.manage",
       "category": "knowledge",
       "prompt": "SNS の投稿のように、形式が決まっていないデータを何という？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "inf_info113_019",
+      "unit": "information.info.data.manage.scale",
       "category": "knowledge",
       "prompt": "アンケートの自由記述欄の回答のように、数値でなく文字や分類で表されるデータは？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "inf_info113_020",
+      "unit": "information.info.data.manage.scale",
       "category": "thinking",
       "prompt": "名義尺度のデータ（例：好きな教科）の代表値として意味があるものは？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "inf_info113_021",
+      "unit": "information.info.data.manage",
       "category": "knowledge",
       "prompt": "個人情報を特定の個人が識別できないように加工し、復元できないようにした情報を何という？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "inf_info113_022",
+      "unit": "information.info.data.manage",
       "category": "knowledge",
       "prompt": "データの前処理で、形式をそろえることを何という？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "inf_info113_023",
+      "unit": "information.info.data.manage",
       "category": "thinking",
       "prompt": "欠損値をふくむデータを分析するときの対応として適切なものは？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "inf_info113_024",
+      "unit": "information.info.data.manage.scale",
       "category": "thinking",
       "prompt": "「西暦」が間隔尺度とされる理由は？",
       "choices": [

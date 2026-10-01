@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "soc_geo02_001",
+      "unit": "social.geo.map.maps",
       "category": "knowledge",
       "prompt": "地図上の長さと実際の距離の比を何という？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "soc_geo02_002",
+      "unit": "social.geo.map.maps",
       "category": "knowledge",
       "prompt": "同じ高さの地点を結んだ線は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "soc_geo02_003",
+      "unit": "social.geo.map.maps.topo",
       "category": "knowledge",
       "prompt": "2 万 5 千分の 1 地形図で、主曲線は何 m ごとに引かれる？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "soc_geo02_004",
+      "unit": "social.geo.map.maps.thematic",
       "category": "knowledge",
       "prompt": "人口や生産量などの統計データを地図に表したものは？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "soc_geo02_005",
+      "unit": "social.geo.map.maps",
       "category": "knowledge",
       "prompt": "地域ごとの割合や密度を、色の濃さで塗り分けた統計地図は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "soc_geo02_006",
+      "unit": "social.geo.map.maps",
       "category": "knowledge",
       "prompt": "気温や降水量など、同じ値の地点を線で結んだ統計地図は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "soc_geo02_007",
+      "unit": "social.geo.map.maps",
       "category": "knowledge",
       "prompt": "人や物の移動の方向と量を、矢印の向きと太さで表した地図は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "soc_geo02_008",
+      "unit": "social.geo.map.maps.topo",
       "category": "knowledge",
       "prompt": "地図記号「卍」が表すものは？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "soc_geo02_009",
+      "unit": "social.geo.map.maps.topo",
       "category": "calculation",
       "prompt": "2 万 5 千分の 1 の地形図で 4 cm の長さは、実際には何 m？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "soc_geo02_010",
+      "unit": "social.geo.map.maps.topo",
       "category": "calculation",
       "prompt": "5 万分の 1 の地形図で、実際の 2 km は地図上で何 cm？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "soc_geo02_011",
+      "unit": "social.geo.map.maps.topo",
       "category": "thinking",
       "prompt": "等高線の間隔が広いところと狭いところでは、どちらの傾斜が急？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "soc_geo02_012",
+      "unit": "social.geo.map.maps.thematic",
       "category": "thinking",
       "prompt": "都道府県別の人口「数」を地図で表すのに適した方法は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "soc_geo02_013",
+      "unit": "social.geo.map.maps.topo",
       "category": "knowledge",
       "prompt": "2万5千分の1の地形図で、計曲線は何 m ごとに引かれる？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "soc_geo02_014",
+      "unit": "social.geo.map.maps.topo",
       "category": "knowledge",
       "prompt": "5万分の1の地形図で、主曲線は何 m ごとに引かれる？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "soc_geo02_015",
+      "unit": "social.geo.map.maps.topo",
       "category": "knowledge",
       "prompt": "地図記号「文」が表すものは？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "soc_geo02_016",
+      "unit": "social.geo.map.maps.topo",
       "category": "knowledge",
       "prompt": "2019年に新しくつくられた地図記号は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "soc_geo02_017",
+      "unit": "social.geo.map.maps",
       "category": "knowledge",
       "prompt": "数量の大きさを、円や棒などの図形の大きさで表す統計地図は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "soc_geo02_018",
+      "unit": "social.geo.map.maps",
       "category": "knowledge",
       "prompt": "点の数や密度で、分布のようすを表す統計地図は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "soc_geo02_019",
+      "unit": "social.geo.map.maps.topo",
       "category": "knowledge",
       "prompt": "日本で地形図を作成・発行している機関は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "soc_geo02_020",
+      "unit": "social.geo.map.maps.topo",
       "category": "calculation",
       "prompt": "5万分の1の地形図上で 3 cm の長さは、実際には何 km？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "soc_geo02_021",
+      "unit": "social.geo.map.maps.topo",
       "category": "calculation",
       "prompt": "2万5千分の1の地形図上で、たて 2 cm・横 2 cm の正方形の土地の実際の面積は？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "soc_geo02_022",
+      "unit": "social.geo.map.maps.topo",
       "category": "calculation",
       "prompt": "2万5千分の1の地形図で、主曲線の間隔5つ分の高さの差は？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "soc_geo02_023",
+      "unit": "social.geo.map.maps.topo",
       "category": "thinking",
       "prompt": "等高線が、低い方に向かって張り出している部分は？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "soc_geo02_024",
+      "unit": "social.geo.map.maps",
       "category": "thinking",
       "prompt": "観光客の国どうしの移動のようすを表すのに最も適した統計地図は？",
       "choices": [

@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "sci_phy03_001",
+      "unit": "science.physics.mechanics.force",
       "category": "knowledge",
       "prompt": "力の単位は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "sci_phy03_002",
+      "unit": "science.physics.mechanics.force.kinds",
       "category": "knowledge",
       "prompt": "質量 m の物体にはたらく重力の大きさは？（g：重力加速度）",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "sci_phy03_003",
+      "unit": "science.physics.mechanics.force.kinds",
       "category": "knowledge",
       "prompt": "ばねの弾性力の大きさ F と伸び x の関係（フックの法則）は？（k：ばね定数）",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "sci_phy03_004",
+      "unit": "science.physics.mechanics.force.kinds",
       "category": "knowledge",
       "prompt": "垂直抗力の向きは？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "sci_phy03_005",
+      "unit": "science.physics.mechanics.force.friction",
       "category": "knowledge",
       "prompt": "静止摩擦力の最大値（最大摩擦力）を表す式は？（μ：静止摩擦係数、N：垂直抗力）",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "sci_phy03_006",
+      "unit": "science.physics.mechanics.force.friction",
       "category": "knowledge",
       "prompt": "動摩擦力について正しいものは？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "sci_phy03_007",
+      "unit": "science.physics.mechanics.force.pressure",
       "category": "knowledge",
       "prompt": "水中の物体にはたらく浮力の大きさは？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "sci_phy03_008",
+      "unit": "science.physics.mechanics.force",
       "category": "knowledge",
       "prompt": "力の三要素とは？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "sci_phy03_009",
+      "unit": "science.physics.mechanics.force.kinds",
       "category": "calculation",
       "prompt": "質量 3.0 kg の物体にはたらく重力の大きさは？（g ＝ 9.8 m/s²）",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "sci_phy03_010",
+      "unit": "science.physics.mechanics.force.kinds",
       "category": "calculation",
       "prompt": "ばね定数 50 N/m のばねを 0.20 m 伸ばすのに必要な力は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "sci_phy03_011",
+      "unit": "science.physics.mechanics.force",
       "category": "calculation",
       "prompt": "3.0 N と 4.0 N の力が直角にはたらく。合力の大きさは？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "sci_phy03_012",
+      "unit": "science.physics.mechanics.force.friction",
       "category": "calculation",
       "prompt": "水平面上の 4.0 kg の物体。静止摩擦係数 0.50 のとき、最大摩擦力は？（g ＝ 9.8 m/s²）",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "sci_phy03_013",
+      "unit": "science.physics.mechanics.force.kinds",
       "category": "calculation",
       "prompt": "傾き 30° のなめらかな斜面上で、重さ 10 N の物体にはたらく重力の「斜面に平行な成分」は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "sci_phy03_014",
+      "unit": "science.physics.mechanics.force.pressure",
       "category": "calculation",
       "prompt": "体積 1.0 × 10⁻³ m³ の物体を水中に全部沈めた。浮力は？（水の密度 1.0 × 10³ kg/m³、g ＝ 9.8 m/s²）",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "sci_phy03_015",
+      "unit": "science.physics.mechanics.force.kinds",
       "category": "thinking",
       "prompt": "天井から糸でつるされて静止している物体にはたらく力の関係は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "sci_phy03_016",
+      "unit": "science.physics.mechanics.force.kinds",
       "category": "thinking",
       "prompt": "机の上に置いた本にはたらく「重力」と「垂直抗力」の関係は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "sci_phy03_017",
+      "unit": "science.physics.mechanics.force.balance",
       "category": "knowledge",
       "prompt": "力の合成で、2つの力を2辺とする平行四辺形の対角線が表すものは？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "sci_phy03_018",
+      "unit": "science.physics.mechanics.force.kinds",
       "category": "knowledge",
       "prompt": "重力の大きさ（重さ）と質量の関係として正しいものは？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "sci_phy03_019",
+      "unit": "science.physics.mechanics.force.kinds",
       "category": "knowledge",
       "prompt": "張力とは？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "sci_phy03_020",
+      "unit": "science.physics.mechanics.force.friction",
       "category": "knowledge",
       "prompt": "静止摩擦力の大きさについて正しいものは？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "sci_phy03_021",
+      "unit": "science.physics.mechanics.force.pressure",
       "category": "knowledge",
       "prompt": "浮力が生じる理由は？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "sci_phy03_022",
+      "unit": "science.physics.mechanics.force",
       "category": "knowledge",
       "prompt": "力の単位 N（ニュートン）を基本単位で表すと？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "sci_phy03_023",
+      "unit": "science.physics.mechanics.force.kinds",
       "category": "calculation",
       "prompt": "質量 60 kg の人にはたらく重力の大きさは？（g ＝ 9.8 m/s²）",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "sci_phy03_024",
+      "unit": "science.physics.mechanics.force.kinds",
       "category": "calculation",
       "prompt": "ばね定数 200 N/m のばねに 10 N の力を加えた。伸びは？",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "sci_phy03_025",
+      "unit": "science.physics.mechanics.force",
       "category": "calculation",
       "prompt": "6.0 N と 8.0 N の力が同じ向きにはたらく。合力は？",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "sci_phy03_026",
+      "unit": "science.physics.mechanics.force",
       "category": "calculation",
       "prompt": "6.0 N と 8.0 N の力が直角にはたらく。合力の大きさは？",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "sci_phy03_027",
+      "unit": "science.physics.mechanics.force.friction",
       "category": "calculation",
       "prompt": "水平面上の 2.0 kg の物体。動摩擦係数 0.30 のとき、すべっている間の動摩擦力は？（g ＝ 9.8 m/s²）",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "sci_phy03_028",
+      "unit": "science.physics.mechanics.force",
       "category": "calculation",
       "prompt": "10 N の力を水平から 60° の向きに加えた。水平方向の分力は？",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "sci_phy03_029",
+      "unit": "science.physics.mechanics.force.kinds",
       "category": "calculation",
       "prompt": "傾き 30° の斜面上の重さ 20 N の物体。斜面に垂直な方向の重力の分力は？",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "sci_phy03_030",
+      "unit": "science.physics.mechanics.force.pressure",
       "category": "calculation",
       "prompt": "体積 2.0 × 10⁻³ m³ の物体を水中に全部沈めた。浮力の大きさは？（水の密度 1.0 × 10³ kg/m³、g ＝ 9.8 m/s²）",
       "choices": [
@@ -396,6 +426,7 @@
     },
     {
       "id": "sci_phy03_031",
+      "unit": "science.physics.mechanics.force.kinds",
       "category": "thinking",
       "prompt": "2本の糸で物体をつるすとき、2本の糸の間の角度を大きくすると、それぞれの張力はどうなる？",
       "choices": [
@@ -409,6 +440,7 @@
     },
     {
       "id": "sci_phy03_032",
+      "unit": "science.physics.mechanics.force.kinds",
       "category": "thinking",
       "prompt": "机の上の本にはたらく重力の「反作用」はどれ？",
       "choices": [

@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "soc_geo06_001",
+      "unit": "social.geo.nature.climate.element",
       "category": "knowledge",
       "prompt": "赤道付近で上昇し、緯度 30 度付近で下降する大気の循環によってできる、雨の少ない気圧帯は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "soc_geo06_002",
+      "unit": "social.geo.nature.climate.koppen",
       "category": "knowledge",
       "prompt": "亜熱帯高圧帯から赤道に向かって吹く東よりの風は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "soc_geo06_003",
+      "unit": "social.geo.nature.climate",
       "category": "knowledge",
       "prompt": "中緯度の上空を西から東へ吹く風は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "soc_geo06_004",
+      "unit": "social.geo.nature.climate",
       "category": "knowledge",
       "prompt": "夏と冬で風向きが大きく変わる風を何という？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "soc_geo06_005",
+      "unit": "social.geo.nature.climate.element",
       "category": "knowledge",
       "prompt": "ケッペンの気候区分で、気温ではなく降水量の少なさで区分される気候帯は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "soc_geo06_006",
+      "unit": "social.geo.nature.climate.koppen",
       "category": "knowledge",
       "prompt": "ケッペンの気候区分で、最も寒い月の平均気温が 18℃ 以上の気候帯は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "soc_geo06_007",
+      "unit": "social.geo.nature.climate.koppen",
       "category": "knowledge",
       "prompt": "冷帯（D）の最も寒い月の平均気温の条件は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "soc_geo06_008",
+      "unit": "social.geo.nature.climate.element",
       "category": "knowledge",
       "prompt": "最も暖かい月でも平均気温が 10℃ 未満の気候帯は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "soc_geo06_009",
+      "unit": "social.geo.nature.climate.koppen",
       "category": "knowledge",
       "prompt": "夏に乾燥し冬に雨が多い温帯の気候は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "soc_geo06_010",
+      "unit": "social.geo.nature.climate",
       "category": "knowledge",
       "prompt": "南北アメリカの西岸など、寒流の影響で雨が少なくなる砂漠を何という？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "soc_geo06_011",
+      "unit": "social.geo.nature.climate.element",
       "category": "thinking",
       "prompt": "同じ緯度でも、ヨーロッパ西部が東アジアより冬に温暖な理由は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "soc_geo06_012",
+      "unit": "social.geo.nature.climate.element",
       "category": "thinking",
       "prompt": "ある都市は、最寒月 5℃・最暖月 26℃ で、夏に降水量が多い。当てはまる気候は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "soc_geo06_013",
+      "unit": "social.geo.nature.climate.element",
       "category": "knowledge",
       "prompt": "高度が 100 m 上がるごとに、気温はおよそ何℃下がる？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "soc_geo06_014",
+      "unit": "social.geo.nature.climate",
       "category": "knowledge",
       "prompt": "海に近い地域の気候（海洋性気候）の特徴は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "soc_geo06_015",
+      "unit": "social.geo.nature.climate",
       "category": "knowledge",
       "prompt": "内陸の地域の気候（大陸性気候）の特徴は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "soc_geo06_016",
+      "unit": "social.geo.nature.climate.koppen",
       "category": "knowledge",
       "prompt": "西岸海洋性気候のケッペンの記号は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "soc_geo06_017",
+      "unit": "social.geo.nature.climate.koppen",
       "category": "knowledge",
       "prompt": "熱帯雨林気候のケッペンの記号は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "soc_geo06_018",
+      "unit": "social.geo.nature.climate.koppen",
       "category": "knowledge",
       "prompt": "サバナ気候のケッペンの記号は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "soc_geo06_019",
+      "unit": "social.geo.nature.climate.koppen",
       "category": "knowledge",
       "prompt": "ステップ気候のケッペンの記号は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "soc_geo06_020",
+      "unit": "social.geo.nature.climate.koppen",
       "category": "knowledge",
       "prompt": "ツンドラ気候のケッペンの記号は？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "soc_geo06_021",
+      "unit": "social.geo.nature.climate.element",
       "category": "knowledge",
       "prompt": "冬に大陸から吹き出す季節風が、日本海をわたるときに多くの水蒸気をふくむ理由は？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "soc_geo06_022",
+      "unit": "social.geo.nature.climate.element",
       "category": "calculation",
       "prompt": "標高 0 m の地点の気温が 25℃ のとき、同じ時刻の標高 2000 m の地点の気温はおよそ？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "soc_geo06_023",
+      "unit": "social.geo.nature.climate.element",
       "category": "calculation",
       "prompt": "年降水量が 150 mm で、最暖月の平均気温が 32℃ の都市。当てはまる気候帯は？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "soc_geo06_024",
+      "unit": "social.geo.nature.climate.koppen",
       "category": "thinking",
       "prompt": "赤道付近で雨が多い理由は？",
       "choices": [

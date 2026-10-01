@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_m314_001",
+      "unit": "math.m3.integ.apply.area",
       "category": "calculation",
       "prompt": "2曲線 y=x² と y=√x で囲まれた部分の面積は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_m314_002",
+      "unit": "math.m3.integ.apply.area",
       "category": "calculation",
       "prompt": "楕円 x²/9+y²/4=1 で囲まれた部分の面積は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_m314_003",
+      "unit": "math.m3.integ.apply.volume",
       "category": "calculation",
       "prompt": "y=sin x（0≦x≦π）と x 軸の間の部分を x 軸のまわりに回転した立体の体積は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_m314_004",
+      "unit": "math.m3.integ.apply.area",
       "category": "calculation",
       "prompt": "曲線 y=eˣ、直線 y=e、y 軸で囲まれた部分の面積は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_m314_005",
+      "unit": "math.m3.integ.apply.length",
       "category": "calculation",
       "prompt": "x=cos t、y=sin t（0≦t≦π）の曲線の長さは？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_m314_006",
+      "unit": "math.m3.integ.apply.length",
       "category": "knowledge",
       "prompt": "サイクロイド x=θ−sin θ、y=1−cos θ の1つの弧（0≦θ≦2π）の長さは？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_m314_007",
+      "unit": "math.m3.integ.apply.distance",
       "category": "calculation",
       "prompt": "速度 v(t)=t−1（0≦t≦2）で動く点の、道のりは？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_m314_008",
+      "unit": "math.m3.integ.apply",
       "category": "calculation",
       "prompt": "同じ点の、t=0 から t=2 までの位置の変化は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_m314_009",
+      "unit": "math.m3.integ.apply.area",
       "category": "calculation",
       "prompt": "曲線 y=log x と x 軸、直線 x=e で囲まれた部分の面積は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_m314_010",
+      "unit": "math.m3.integ.apply.distance",
       "category": "thinking",
       "prompt": "「道のり」と「位置の変化」が異なることがある理由は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_m314_011",
+      "unit": "math.m3.integ.apply.area",
       "category": "calculation",
       "prompt": "2曲線 y=x² と y=x³ で囲まれた部分（0≦x≦1）の面積は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_m314_012",
+      "unit": "math.m3.integ.apply.area",
       "category": "calculation",
       "prompt": "円 x²+y²=4 で囲まれた部分の面積を積分で求めると？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_m314_013",
+      "unit": "math.m3.integ.apply.volume",
       "category": "calculation",
       "prompt": "y=cos x（−π/2≦x≦π/2）と x 軸の間の部分を x 軸のまわりに回転した立体の体積は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_m314_014",
+      "unit": "math.m3.integ.apply.area",
       "category": "calculation",
       "prompt": "曲線 y=log x、x 軸、y 軸、直線 y=1 で囲まれた部分の面積は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_m314_015",
+      "unit": "math.m3.integ.apply.length",
       "category": "calculation",
       "prompt": "x=2cos t、y=2sin t（0≦t≦π/2）の曲線の長さは？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_m314_016",
+      "unit": "math.m3.integ.apply.distance",
       "category": "calculation",
       "prompt": "速度 v(t)=2t−2（0≦t≦3）で動く点の道のりは？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_m314_017",
+      "unit": "math.m3.integ.apply",
       "category": "calculation",
       "prompt": "同じ点の、t=0 から t=3 までの位置の変化は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_m314_018",
+      "unit": "math.m3.integ.apply.volume",
       "category": "calculation",
       "prompt": "y=x²（0≦x≦2）と x 軸の間の部分を x 軸のまわりに回転した立体の体積は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_m314_019",
+      "unit": "math.m3.integ.apply.volume",
       "category": "calculation",
       "prompt": "曲線 y=eˣ（0≦x≦1）と x 軸、直線 x=0、x=1 で囲まれた部分を x 軸のまわりに回転した体積は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_m314_020",
+      "unit": "math.m3.integ.apply.area",
       "category": "thinking",
       "prompt": "2曲線で囲まれた部分の面積を求めるとき、最初にすることは？",
       "choices": [

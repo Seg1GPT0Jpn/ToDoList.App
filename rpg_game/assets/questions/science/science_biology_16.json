@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "sci_bio16_001",
+      "unit": "science.biology.ecology.population.population",
       "category": "knowledge",
       "prompt": "同じ種の個体の集まりで、一定の地域に生活しているものを何という？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "sci_bio16_002",
+      "unit": "science.biology.ecology.population.population",
       "category": "knowledge",
       "prompt": "個体群の成長曲線が S 字形になり、ある値で頭打ちになる。この上限を何という？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "sci_bio16_003",
+      "unit": "science.biology.ecology.population.population",
       "category": "knowledge",
       "prompt": "個体群密度が高くなると、出生率が下がったり死亡率が上がったりすることを何という？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "sci_bio16_004",
+      "unit": "science.biology.ecology.population",
       "category": "knowledge",
       "prompt": "移動する動物の個体数を推定するのに適した方法は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "sci_bio16_005",
+      "unit": "science.biology.ecology.population",
       "category": "knowledge",
       "prompt": "動物が一定の空間を占有し、同種の他の個体の侵入を防ぐ場合、その空間を何という？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "sci_bio16_006",
+      "unit": "science.biology.ecology.population",
       "category": "knowledge",
       "prompt": "同じ資源を利用する 2 種が同じ場所にいると、一方が排除されることを何という？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "sci_bio16_007",
+      "unit": "science.biology.ecology.population.interaction",
       "category": "knowledge",
       "prompt": "生物群集の中で、ある種が必要とする資源や生活環境の要素の範囲を何という？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "sci_bio16_008",
+      "unit": "science.biology.ecology.population.interaction",
       "category": "knowledge",
       "prompt": "イワナとヤマメが、川の上流と下流で分かれて生活するような現象を何という？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "sci_bio16_009",
+      "unit": "science.biology.ecology.population",
       "category": "knowledge",
       "prompt": "アリとアブラムシのように、互いに利益を受ける関係を何という？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "sci_bio16_010",
+      "unit": "science.biology.ecology.population.production",
       "category": "knowledge",
       "prompt": "生態系で、生産者の総生産量から呼吸量を引いたものを何という？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "sci_bio16_011",
+      "unit": "science.biology.ecology.population.interaction",
       "category": "knowledge",
       "prompt": "同じ場所にすむ似た生活をする 2 種が、えさの種類や大きさを変えて共存することを何という？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "sci_bio16_012",
+      "unit": "science.biology.ecology.population.interaction",
       "category": "knowledge",
       "prompt": "捕食者と被食者の個体数を長期間調べると、どんな変化が見られることが多い？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "sci_bio16_013",
+      "unit": "science.biology.ecology.population",
       "category": "calculation",
       "prompt": "池で 50 匹を捕まえて標識をつけて放し、後日 60 匹捕まえたら 10 匹に標識があった。この池の個体数の推定値は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "sci_bio16_014",
+      "unit": "science.biology.ecology.population.production",
       "category": "calculation",
       "prompt": "ある森林で総生産量が 100、呼吸量が 40（同じ単位）だった。純生産量は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "sci_bio16_015",
+      "unit": "science.biology.ecology.vegetation.biome",
       "category": "calculation",
       "prompt": "前問の森林で、被食量が 10、枯死量が 5 だった。成長量は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "sci_bio16_016",
+      "unit": "science.biology.ecology.population.interaction",
       "category": "thinking",
       "prompt": "2 種のゾウリムシを別々に飼うとどちらも増えたが、同じ容器で飼うと一方が絶滅した。理由として最も適切なものは？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "sci_bio16_017",
+      "unit": "science.biology.ecology.population.population",
       "category": "knowledge",
       "prompt": "個体群密度とは？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "sci_bio16_018",
+      "unit": "science.biology.ecology.population.population",
       "category": "knowledge",
       "prompt": "環境収容力とは？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "sci_bio16_019",
+      "unit": "science.biology.ecology.population.population",
       "category": "knowledge",
       "prompt": "生存曲線で、若いうちに多くが死に、残った個体が長生きする型の例は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "sci_bio16_020",
+      "unit": "science.biology.ecology.population",
       "category": "knowledge",
       "prompt": "植物の個体数の推定に適した方法は？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "sci_bio16_021",
+      "unit": "science.biology.ecology.population",
       "category": "knowledge",
       "prompt": "群れをつくる利点として正しいものは？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "sci_bio16_022",
+      "unit": "science.biology.ecology.population.interaction",
       "category": "knowledge",
       "prompt": "寄生の例は？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "sci_bio16_023",
+      "unit": "science.biology.ecology.ecosystem.structure",
       "category": "knowledge",
       "prompt": "生態系で、生物の遺体や排出物を分解する生物は？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "sci_bio16_024",
+      "unit": "science.biology.ecology.ecosystem.structure",
       "category": "knowledge",
       "prompt": "生態系の物質の循環について正しいものは？",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "sci_bio16_025",
+      "unit": "science.biology.ecology.ecosystem.structure",
       "category": "knowledge",
       "prompt": "キーストーン種とは？",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "sci_bio16_026",
+      "unit": "science.biology.ecology.ecosystem.conservation",
       "category": "knowledge",
       "prompt": "外来生物が問題になる理由は？",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "sci_bio16_027",
+      "unit": "science.biology.ecology.ecosystem.conservation",
       "category": "knowledge",
       "prompt": "生物濃縮とは？",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "sci_bio16_028",
+      "unit": "science.biology.ecology.population",
       "category": "calculation",
       "prompt": "池で 40 匹に標識をつけて放し、後日 50 匹捕まえたら 10 匹に標識があった。池の個体数の推定値は？",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "sci_bio16_029",
+      "unit": "science.biology.ecology.population.production",
       "category": "calculation",
       "prompt": "総生産量 200、呼吸量 120 のとき、純生産量は？",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "sci_bio16_030",
+      "unit": "science.biology.ecology.population.production",
       "category": "calculation",
       "prompt": "純生産量 80、被食量 20、枯死量 10 のとき、成長量は？",
       "choices": [
@@ -396,6 +426,7 @@
     },
     {
       "id": "sci_bio16_031",
+      "unit": "science.biology.ecology.population",
       "category": "thinking",
       "prompt": "里山の雑木林を人が手入れしなくなると、生物多様性が下がることがある理由は？",
       "choices": [
@@ -409,6 +440,7 @@
     },
     {
       "id": "sci_bio16_032",
+      "unit": "science.biology.ecology.ecosystem.structure",
       "category": "thinking",
       "prompt": "生産者のエネルギーが、上位の消費者ほど少なくなる理由は？",
       "choices": [

@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "information_dncl_01_001",
+      "unit": "information.info.programming.program.trace",
       "category": "calculation",
       "prompt": "表示される値は？",
       "sentence": "x = 5\ny = x * 3 - 2\n表示する(y)",
@@ -20,6 +21,7 @@
     },
     {
       "id": "information_dncl_01_002",
+      "unit": "information.info.programming.program.trace",
       "category": "calculation",
       "prompt": "表示される値は？（÷ は商の整数部分）",
       "sentence": "x = 17\ny = x ÷ 5\n表示する(y)",
@@ -34,6 +36,7 @@
     },
     {
       "id": "information_dncl_01_003",
+      "unit": "information.info.programming.program.trace",
       "category": "calculation",
       "prompt": "表示される値は？（% は余り）",
       "sentence": "x = 17 % 5\n表示する(x)",
@@ -48,6 +51,7 @@
     },
     {
       "id": "information_dncl_01_004",
+      "unit": "information.info.programming.program.trace",
       "category": "calculation",
       "prompt": "表示される値は？",
       "sentence": "Data = [4, 8, 1, 6]\n表示する(Data[2])",
@@ -62,6 +66,7 @@
     },
     {
       "id": "information_dncl_01_005",
+      "unit": "information.info.programming.program.trace",
       "category": "calculation",
       "prompt": "表示される値は？",
       "sentence": "Data = [4, 8, 1, 6]\n表示する(要素数(Data))",
@@ -76,6 +81,7 @@
     },
     {
       "id": "information_dncl_01_006",
+      "unit": "information.info.programming.program.trace",
       "category": "calculation",
       "prompt": "表示される値は？",
       "sentence": "x = 0\ni を 1 から 5 まで 1 ずつ増やしながら繰り返す:\n  x = x + i\n表示する(x)",
@@ -90,6 +96,7 @@
     },
     {
       "id": "information_dncl_01_007",
+      "unit": "information.info.programming.program.trace",
       "category": "calculation",
       "prompt": "表示される値は？",
       "sentence": "x = 1\nx < 50 の間繰り返す:\n  x = x * 3\n表示する(x)",
@@ -104,6 +111,7 @@
     },
     {
       "id": "information_dncl_01_008",
+      "unit": "information.info.programming.program.trace",
       "category": "thinking",
       "prompt": "表示されるものは？",
       "sentence": "x = 7\nもし x % 2 == 0 ならば:\n  表示する(\"偶数\")\nそうでなければ:\n  表示する(\"奇数\")",
@@ -118,6 +126,7 @@
     },
     {
       "id": "information_dncl_01_009",
+      "unit": "information.info.programming.program.trace",
       "category": "calculation",
       "prompt": "表示される値は？",
       "sentence": "合計 = 0\nData = [3, 7, 2, 9]\ni を 0 から 要素数(Data) - 1 まで 1 ずつ増やしながら繰り返す:\n  合計 = 合計 + Data[i]\n表示する(合計)",
@@ -132,6 +141,7 @@
     },
     {
       "id": "information_dncl_01_010",
+      "unit": "information.info.programming.program.trace",
       "category": "calculation",
       "prompt": "表示される値は？",
       "sentence": "Data = [3, 7, 2, 9, 5]\n最大 = Data[0]\ni を 1 から 4 まで 1 ずつ増やしながら繰り返す:\n  もし Data[i] > 最大 ならば:\n    最大 = Data[i]\n表示する(最大)",
@@ -146,6 +156,7 @@
     },
     {
       "id": "information_dncl_01_011",
+      "unit": "information.info.programming.program.trace",
       "category": "calculation",
       "prompt": "表示される値は？",
       "sentence": "Data = [5, 2, 8]\n個数 = 0\ni を 0 から 2 まで 1 ずつ増やしながら繰り返す:\n  もし Data[i] > 4 ならば:\n    個数 = 個数 + 1\n表示する(個数)",
@@ -160,6 +171,7 @@
     },
     {
       "id": "information_dncl_01_012",
+      "unit": "information.info.programming.program",
       "category": "calculation",
       "prompt": "表示する(i) は何回実行される？",
       "sentence": "i を 10 から 1 まで 3 ずつ減らしながら繰り返す:\n  表示する(i)",
@@ -174,6 +186,7 @@
     },
     {
       "id": "information_dncl_01_013",
+      "unit": "information.info.programming.program.variable",
       "category": "thinking",
       "prompt": "配列 Data の平均を求めたい。［ ］に入る演算子は？",
       "sentence": "平均 = 合計 ［ ］ 要素数(Data)",
@@ -188,6 +201,7 @@
     },
     {
       "id": "information_dncl_01_014",
+      "unit": "information.info.programming.program.trace",
       "category": "calculation",
       "prompt": "表示される値は？",
       "sentence": "回数 = 0\ni を 1 から 3 まで 1 ずつ増やしながら繰り返す:\n  j を 1 から 4 まで 1 ずつ増やしながら繰り返す:\n    回数 = 回数 + 1\n表示する(回数)",
@@ -202,6 +216,7 @@
     },
     {
       "id": "information_dncl_01_015",
+      "unit": "information.info.programming.program.trace",
       "category": "calculation",
       "prompt": "表示される値は？",
       "sentence": "x = 3\ny = 5\nx = y\ny = x\n表示する(x + y)",
@@ -216,6 +231,7 @@
     },
     {
       "id": "information_dncl_01_016",
+      "unit": "information.info.programming.program.trace",
       "category": "calculation",
       "prompt": "実行後の Data は？",
       "sentence": "Data = [1, 2, 3, 4]\nw = Data[1]\nData[1] = Data[3]\nData[3] = w",
@@ -230,6 +246,7 @@
     },
     {
       "id": "information_dncl_01_017",
+      "unit": "information.info.programming.program.trace",
       "category": "calculation",
       "prompt": "表示される値は？",
       "sentence": "Data = [6, 3, 9, 3, 7]\n位置 = -1\ni を 0 から 4 まで 1 ずつ増やしながら繰り返す:\n  もし Data[i] == 3 and 位置 == -1 ならば:\n    位置 = i\n表示する(位置)",
@@ -244,6 +261,7 @@
     },
     {
       "id": "information_dncl_01_018",
+      "unit": "information.info.programming.program.trace",
       "category": "calculation",
       "prompt": "実行後の Data は？",
       "sentence": "Data = [5, 1, 4, 2]\ni を 0 から 2 まで 1 ずつ増やしながら繰り返す:\n  もし Data[i] > Data[i + 1] ならば:\n    w = Data[i]\n    Data[i] = Data[i + 1]\n    Data[i + 1] = w",
@@ -258,6 +276,7 @@
     },
     {
       "id": "information_dncl_01_019",
+      "unit": "information.info.programming.program.trace",
       "category": "calculation",
       "prompt": "表示される値は？",
       "sentence": "x = 2\ni を 1 から 4 まで 1 ずつ増やしながら繰り返す:\n  x = x * 2\n表示する(x)",
@@ -272,6 +291,7 @@
     },
     {
       "id": "information_dncl_01_020",
+      "unit": "information.info.programming.program.trace",
       "category": "calculation",
       "prompt": "表示される値は？",
       "sentence": "n = 12\nc = 0\nn > 1 の間繰り返す:\n  n = n ÷ 2\n  c = c + 1\n表示する(c)",
@@ -286,6 +306,7 @@
     },
     {
       "id": "information_dncl_01_021",
+      "unit": "information.info.programming.program.trace",
       "category": "thinking",
       "prompt": "表示される値は？",
       "sentence": "a = 48\nb = 18\nb != 0 の間繰り返す:\n  r = a % b\n  a = b\n  b = r\n表示する(a)",
@@ -300,6 +321,7 @@
     },
     {
       "id": "information_dncl_01_022",
+      "unit": "information.info.programming.program.variable",
       "category": "knowledge",
       "prompt": "共通テスト用プログラム表記の「要素数(Data)」が表すものは？",
       "choices": [
@@ -313,6 +335,7 @@
     },
     {
       "id": "information_dncl_01_023",
+      "unit": "information.info.programming.program.variable",
       "category": "knowledge",
       "prompt": "共通テスト用プログラム表記で、配列の添字は何から始まる？",
       "choices": [
@@ -326,6 +349,7 @@
     },
     {
       "id": "information_dncl_01_024",
+      "unit": "information.info.programming.program",
       "category": "calculation",
       "prompt": "くり返しは何回行われる？",
       "sentence": "i を 0 から 9 まで 2 ずつ増やしながら繰り返す:\n  表示する(i)",
@@ -340,6 +364,7 @@
     },
     {
       "id": "information_dncl_01_025",
+      "unit": "information.info.programming.program.trace",
       "category": "calculation",
       "prompt": "表示される値は？（÷ は商の整数部分）",
       "sentence": "表示する(10 ÷ 3 * 3)",
@@ -354,6 +379,7 @@
     },
     {
       "id": "information_dncl_01_026",
+      "unit": "information.info.programming.program.trace",
       "category": "thinking",
       "prompt": "表示されるものは？",
       "sentence": "x = 6\nもし x > 3 and x < 5 ならば:\n  表示する(\"A\")\nそうでなくもし x > 5 ならば:\n  表示する(\"B\")\nそうでなければ:\n  表示する(\"C\")",
@@ -368,6 +394,7 @@
     },
     {
       "id": "information_dncl_01_027",
+      "unit": "information.info.programming.program.trace",
       "category": "calculation",
       "prompt": "表示される値は？",
       "sentence": "Data = [2, 4, 6]\n積 = 1\ni を 0 から 2 まで 1 ずつ増やしながら繰り返す:\n  積 = 積 * Data[i]\n表示する(積)",
@@ -382,6 +409,7 @@
     },
     {
       "id": "information_dncl_01_028",
+      "unit": "information.info.programming.program.trace",
       "category": "calculation",
       "prompt": "表示される値は？",
       "sentence": "Table = [[1, 2, 3], [4, 5, 6]]\n表示する(Table[1][2])",
@@ -396,6 +424,7 @@
     },
     {
       "id": "information_dncl_01_029",
+      "unit": "information.info.programming.program.variable",
       "category": "thinking",
       "prompt": "偶数の個数を数えたい。［ ］に入るものは？",
       "sentence": "もし Data[i] % 2 ［ ］ 0 ならば:\n  個数 = 個数 + 1",
@@ -410,6 +439,7 @@
     },
     {
       "id": "information_dncl_01_030",
+      "unit": "information.info.programming.program",
       "category": "thinking",
       "prompt": "このプログラムは何を求めている？",
       "sentence": "m = Data[0]\ni を 1 から 要素数(Data) - 1 まで 1 ずつ増やしながら繰り返す:\n  もし Data[i] < m ならば:\n    m = Data[i]\n表示する(m)",

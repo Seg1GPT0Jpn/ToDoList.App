@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "information_info2_01_001",
+      "unit": "information.info.data.analysis.ml",
       "category": "knowledge",
       "prompt": "教師あり学習の例として適切なものは？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "information_info2_01_002",
+      "unit": "information.info.data.analysis.ml",
       "category": "knowledge",
       "prompt": "正解ラベルのないデータを、似たものどうしのグループに分ける手法は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "information_info2_01_003",
+      "unit": "information.info.data.analysis.ml",
       "category": "knowledge",
       "prompt": "試行錯誤をくり返し、得られる報酬が最大になる行動を学ぶ機械学習は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "information_info2_01_004",
+      "unit": "information.info.data.analysis",
       "category": "knowledge",
       "prompt": "過学習（オーバーフィッティング）とは？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "information_info2_01_005",
+      "unit": "information.info.computer.system.develop",
       "category": "knowledge",
       "prompt": "データを訓練用とテスト用に分ける目的は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "information_info2_01_006",
+      "unit": "information.info.data.analysis",
       "category": "calculation",
       "prompt": "「陽性」と予測した 100 件のうち、実際に陽性だったのは 80 件だった。適合率は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "information_info2_01_007",
+      "unit": "information.info.data.analysis.ml",
       "category": "calculation",
       "prompt": "200 件のデータのうち 170 件を正しく分類できた。正解率は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "information_info2_01_008",
+      "unit": "information.info.data.analysis.correlation",
       "category": "knowledge",
       "prompt": "回帰分析の決定係数（R²）が表すものは？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "information_info2_01_009",
+      "unit": "information.info.data.analysis.correlation",
       "category": "calculation",
       "prompt": "回帰式が y = 2.5x + 10 のとき、x = 8 の予測値は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "information_info2_01_010",
+      "unit": "information.info.data.analysis.correlation",
       "category": "knowledge",
       "prompt": "回帰分析の「残差」とは？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "information_info2_01_011",
+      "unit": "information.info.data.analysis",
       "category": "knowledge",
       "prompt": "仮説検定で p 値が有意水準 0.05 より小さかったとき、ふつうどう判断する？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "information_info2_01_012",
+      "unit": "information.info.data.analysis",
       "category": "knowledge",
       "prompt": "標本調査で無作為抽出を行う目的は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "information_info2_01_013",
+      "unit": "information.info.data.analysis",
       "category": "knowledge",
       "prompt": "テキストマイニングで、文を単語に分けて品詞を判別する処理は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "information_info2_01_014",
+      "unit": "information.info.data.manage.database",
       "category": "knowledge",
       "prompt": "文章中で多く出てくる語ほど大きく表示する図は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "information_info2_01_015",
+      "unit": "information.info.programming.program.control",
       "category": "knowledge",
       "prompt": "k-means 法は何をする手法？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "information_info2_01_016",
+      "unit": "information.info.society.nature.society",
       "category": "knowledge",
       "prompt": "IoT とは？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "information_info2_01_017",
+      "unit": "information.info.data.analysis",
       "category": "knowledge",
       "prompt": "API とは？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "information_info2_01_018",
+      "unit": "information.info.design.design.layout",
       "category": "knowledge",
       "prompt": "JSON とは？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "information_info2_01_019",
+      "unit": "information.info.data.analysis",
       "category": "knowledge",
       "prompt": "オブジェクト指向で「クラス」と「インスタンス」の関係として正しいものは？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "information_info2_01_020",
+      "unit": "information.info.computer.system.reliability",
       "category": "knowledge",
       "prompt": "システムを二重化（冗長化）する主な目的は？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "information_info2_01_021",
+      "unit": "information.info.computer.system.reliability",
       "category": "calculation",
       "prompt": "稼働率 0.9 の装置 2 台を直列につないだシステムの稼働率は？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "information_info2_01_022",
+      "unit": "information.info.computer.system.reliability",
       "category": "calculation",
       "prompt": "稼働率 0.9 の装置 2 台を並列につないだシステムの稼働率は？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "information_info2_01_023",
+      "unit": "information.info.computer.system.reliability",
       "category": "knowledge",
       "prompt": "RAID1（ミラーリング）の特徴は？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "information_info2_01_024",
+      "unit": "information.info.computer.system.cloud",
       "category": "knowledge",
       "prompt": "クラウドサービスの SaaS とは？",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "information_info2_01_025",
+      "unit": "information.info.society.nature.society",
       "category": "knowledge",
       "prompt": "ビッグデータの特徴「3つの V」に含まれないものは？",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "information_info2_01_026",
+      "unit": "information.info.computer.hardware.software",
       "category": "knowledge",
       "prompt": "オープンソースソフトウェアとは？",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "information_info2_01_027",
+      "unit": "information.info.computer.system.develop",
       "category": "knowledge",
       "prompt": "アジャイル開発の特徴は？",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "information_info2_01_028",
+      "unit": "information.info.computer.system.develop",
       "category": "knowledge",
       "prompt": "ウォーターフォール型開発の特徴は？",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "information_info2_01_029",
+      "unit": "information.info.data.analysis",
       "category": "knowledge",
       "prompt": "Git などのバージョン管理システムでできることは？",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "information_info2_01_030",
+      "unit": "information.info.data.analysis.stat",
       "category": "calculation",
       "prompt": "平均 60 点、標準偏差 10 点のテストで 80 点の人の標準得点（z 値）は？",
       "choices": [

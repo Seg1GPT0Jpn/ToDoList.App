@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "math_input_01_001",
+      "unit": "math.m1.numexpr.poly",
       "category": "calculation",
       "prompt": "(−3)² を計算しよう",
       "choices": [
@@ -20,6 +21,7 @@
     },
     {
       "id": "math_input_01_002",
+      "unit": "math.m1.numexpr.poly",
       "category": "calculation",
       "prompt": "−3² を計算しよう",
       "choices": [
@@ -34,6 +36,7 @@
     },
     {
       "id": "math_input_01_003",
+      "unit": "math.m2.explog.exp.rational",
       "category": "calculation",
       "prompt": "2³ × 2² を計算しよう",
       "choices": [
@@ -48,6 +51,7 @@
     },
     {
       "id": "math_input_01_004",
+      "unit": "math.m1.numexpr.poly",
       "category": "calculation",
       "prompt": "12 − 4 × 3 を計算しよう",
       "choices": [
@@ -62,6 +66,7 @@
     },
     {
       "id": "math_input_01_005",
+      "unit": "math.m1.numexpr.poly",
       "category": "calculation",
       "prompt": "(−2)³ を計算しよう",
       "choices": [
@@ -76,6 +81,7 @@
     },
     {
       "id": "math_input_01_006",
+      "unit": "math.m1.numexpr.poly",
       "category": "calculation",
       "prompt": "0.2 × 0.3 を計算しよう",
       "choices": [
@@ -90,6 +96,7 @@
     },
     {
       "id": "math_input_01_007",
+      "unit": "math.m1.numexpr.poly",
       "category": "calculation",
       "prompt": "3/4 + 1/6 を計算しよう（分数は 11/12 のように入力）",
       "choices": [
@@ -104,6 +111,7 @@
     },
     {
       "id": "math_input_01_008",
+      "unit": "math.m1.numexpr.poly",
       "category": "calculation",
       "prompt": "3x − 5 = 10 を解こう。x = ？",
       "choices": [
@@ -120,6 +128,7 @@
     },
     {
       "id": "math_input_01_009",
+      "unit": "math.m1.numexpr.poly",
       "category": "calculation",
       "prompt": "2(x + 3) = x + 10 を解こう。x = ？",
       "choices": [
@@ -136,6 +145,7 @@
     },
     {
       "id": "math_input_01_010",
+      "unit": "math.m1.numexpr.poly.arrange",
       "category": "calculation",
       "prompt": "x² − 5x + 6 = 0 の 2 つの解の和は？",
       "choices": [
@@ -150,6 +160,7 @@
     },
     {
       "id": "math_input_01_011",
+      "unit": "math.m1.numexpr.poly",
       "category": "calculation",
       "prompt": "x² − 5x + 6 = 0 の小さいほうの解は？",
       "choices": [
@@ -166,6 +177,7 @@
     },
     {
       "id": "math_input_01_012",
+      "unit": "math.m1.numexpr.poly",
       "category": "calculation",
       "prompt": "x + y = 10、x − y = 4 のとき x = ？",
       "choices": [
@@ -182,6 +194,7 @@
     },
     {
       "id": "math_input_01_013",
+      "unit": "math.m1.numexpr.poly",
       "category": "calculation",
       "prompt": "x + y = 10、x − y = 4 のとき y = ？",
       "choices": [
@@ -198,6 +211,7 @@
     },
     {
       "id": "math_input_01_014",
+      "unit": "math.m1.numexpr.poly",
       "category": "calculation",
       "prompt": "y = 2x − 3 で x = 4 のときの y は？",
       "choices": [
@@ -212,6 +226,7 @@
     },
     {
       "id": "math_input_01_015",
+      "unit": "math.m1.quad.graph.determine",
       "category": "calculation",
       "prompt": "2 点 (1, 2)、(3, 8) を通る直線の傾きは？",
       "choices": [
@@ -226,6 +241,7 @@
     },
     {
       "id": "math_input_01_016",
+      "unit": "math.m2.explog.log.property",
       "category": "calculation",
       "prompt": "log₂ 8 を計算しよう",
       "choices": [
@@ -240,6 +256,7 @@
     },
     {
       "id": "math_input_01_017",
+      "unit": "math.m2.explog.log.property",
       "category": "calculation",
       "prompt": "log₃ 81 を計算しよう",
       "choices": [
@@ -254,6 +271,7 @@
     },
     {
       "id": "math_input_01_018",
+      "unit": "math.m1.numexpr.poly",
       "category": "calculation",
       "prompt": "2¹⁰ を計算しよう",
       "choices": [
@@ -268,6 +286,7 @@
     },
     {
       "id": "math_input_01_019",
+      "unit": "math.m1.numexpr.poly",
       "category": "calculation",
       "prompt": "5! を計算しよう",
       "choices": [
@@ -282,6 +301,7 @@
     },
     {
       "id": "math_input_01_020",
+      "unit": "math.m1.numexpr.poly",
       "category": "calculation",
       "prompt": "₅C₂ を計算しよう",
       "choices": [
@@ -296,6 +316,7 @@
     },
     {
       "id": "math_input_01_021",
+      "unit": "math.m1.numexpr.poly",
       "category": "calculation",
       "prompt": "₅P₃ を計算しよう",
       "choices": [
@@ -310,6 +331,7 @@
     },
     {
       "id": "math_input_01_022",
+      "unit": "math.mb.seq.arith.arithmetic",
       "category": "calculation",
       "prompt": "初項 3、公差 4 の等差数列の第 10 項は？",
       "choices": [
@@ -324,6 +346,7 @@
     },
     {
       "id": "math_input_01_023",
+      "unit": "math.m1.numexpr.poly",
       "category": "calculation",
       "prompt": "1 + 2 + 3 + … + 100 を計算しよう",
       "choices": [
@@ -338,6 +361,7 @@
     },
     {
       "id": "math_input_01_024",
+      "unit": "math.mb.seq.arith.geometric",
       "category": "calculation",
       "prompt": "初項 2、公比 3 の等比数列の第 5 項は？",
       "choices": [
@@ -352,6 +376,7 @@
     },
     {
       "id": "math_input_01_025",
+      "unit": "math.m1.quad.graph.function",
       "category": "calculation",
       "prompt": "f(x) = x³ のとき f′(2) は？",
       "choices": [
@@ -366,6 +391,7 @@
     },
     {
       "id": "math_input_01_026",
+      "unit": "math.m2.calculus.integ.indefinite",
       "category": "calculation",
       "prompt": "0 から 2 までの定積分 ∫3x² dx を計算しよう",
       "choices": [
@@ -380,6 +406,7 @@
     },
     {
       "id": "math_input_01_027",
+      "unit": "math.m1.trig.ratio.relation",
       "category": "calculation",
       "prompt": "sin²θ + cos²θ の値は？",
       "choices": [
@@ -394,6 +421,7 @@
     },
     {
       "id": "math_input_01_028",
+      "unit": "math.m1.numexpr.real.absolute",
       "category": "calculation",
       "prompt": "−7 の絶対値と 3 の絶対値の和は？",
       "choices": [
@@ -408,6 +436,7 @@
     },
     {
       "id": "math_input_01_029",
+      "unit": "math.m1.quad.maxmin.basic",
       "category": "calculation",
       "prompt": "84 と 36 の最大公約数は？",
       "choices": [
@@ -422,6 +451,7 @@
     },
     {
       "id": "math_input_01_030",
+      "unit": "math.m1.quad.maxmin.basic",
       "category": "calculation",
       "prompt": "12 と 18 の最小公倍数は？",
       "choices": [

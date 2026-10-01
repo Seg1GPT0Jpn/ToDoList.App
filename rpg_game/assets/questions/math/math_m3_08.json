@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_m308_001",
+      "unit": "math.m3.diff.apply",
       "category": "calculation",
       "prompt": "y=x²e^(−x) の極大値は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_m308_002",
+      "unit": "math.m3.diff.apply",
       "category": "calculation",
       "prompt": "y=(log x)/x の最大値は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_m308_003",
+      "unit": "math.m3.diff.apply",
       "category": "thinking",
       "prompt": "すべての実数 x で eˣ≧1+x が成り立つことの示し方は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_m308_004",
+      "unit": "math.m3.diff.apply",
       "category": "calculation",
       "prompt": "y=x+1/x（x>0）の最小値は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_m308_005",
+      "unit": "math.m3.diff.apply",
       "category": "calculation",
       "prompt": "y=x−2sin x（0≦x≦π）の最小値は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_m308_006",
+      "unit": "math.m3.diff.apply.graph",
       "category": "calculation",
       "prompt": "曲線 y=x+1/x の漸近線のうち、斜めのものは？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_m308_007",
+      "unit": "math.m3.diff.apply.meanvalue",
       "category": "calculation",
       "prompt": "f(x)=x² で、区間 [0, 2] に平均値の定理を使うと、c の値は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_m308_008",
+      "unit": "math.m3.diff.apply.tangent",
       "category": "calculation",
       "prompt": "曲線 y=√x 上の点 (4, 2) における接線の方程式は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_m308_009",
+      "unit": "math.m3.diff.apply",
       "category": "calculation",
       "prompt": "x が0に近いとき、sin 0.01 はおよそ？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_m308_010",
+      "unit": "math.m3.diff.apply.graph",
       "category": "thinking",
       "prompt": "最大・最小を求めるときに増減表をかく理由は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_m308_011",
+      "unit": "math.m3.diff.apply",
       "category": "calculation",
       "prompt": "y=xe^(−x) の最大値は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_m308_012",
+      "unit": "math.m3.diff.apply",
       "category": "calculation",
       "prompt": "y=(log x)/x の極値をとる x は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_m308_013",
+      "unit": "math.m3.diff.apply",
       "category": "calculation",
       "prompt": "x>0 で log x≦x−1 を示すとき、考える関数は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_m308_014",
+      "unit": "math.m3.diff.apply",
       "category": "calculation",
       "prompt": "y=4x+1/x（x>0）の最小値は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_m308_015",
+      "unit": "math.m3.diff.apply",
       "category": "calculation",
       "prompt": "y=x+2cos x（0≦x≦π）の最小値は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_m308_016",
+      "unit": "math.m3.diff.apply.graph",
       "category": "calculation",
       "prompt": "曲線 y=x+2/x の斜めの漸近線は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_m308_017",
+      "unit": "math.m3.diff.apply.meanvalue",
       "category": "calculation",
       "prompt": "f(x)=x³ で、区間 [0, 3] に平均値の定理を使うと、c の値は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_m308_018",
+      "unit": "math.m3.diff.apply.tangent",
       "category": "calculation",
       "prompt": "曲線 y=√x 上の点 (1, 1) における接線の方程式は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_m308_019",
+      "unit": "math.m3.diff.apply.velocity",
       "category": "calculation",
       "prompt": "1次の近似式を使うと、log(1.02) はおよそ？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_m308_020",
+      "unit": "math.m3.diff.apply.meanvalue",
       "category": "thinking",
       "prompt": "平均値の定理が意味することは？",
       "choices": [

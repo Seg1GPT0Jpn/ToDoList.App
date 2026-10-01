@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_logic01_001",
+      "unit": "math.m1.logic.set.operation",
       "category": "knowledge",
       "prompt": "全体集合 U の部分集合 A, B について、「A または B」を表す和集合の記号は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_logic01_002",
+      "unit": "math.m1.logic.set.operation",
       "category": "knowledge",
       "prompt": "集合の演算に関する法則 ‾(A ∪ B) = Ā ∩ B̄ を何という？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_logic01_003",
+      "unit": "math.m1.logic.prop.condition",
       "category": "thinking",
       "prompt": "命題「p ⇒ q」の裏（うら）にあたる命題は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_logic01_004",
+      "unit": "math.m1.logic.prop.condition",
       "category": "thinking",
       "prompt": "命題「x = 2 ⇒ x² = 4」の対偶として正しいものは？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_logic01_005",
+      "unit": "math.m1.logic.prop.condition",
       "category": "thinking",
       "prompt": "実数 x について、「x = 2」は「x² = 4」であるための何条件？",
       "choices": [

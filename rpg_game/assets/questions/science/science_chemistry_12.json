@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "sci_chm12_001",
+      "unit": "science.chemistry.equilibrium.rate.rate",
       "category": "knowledge",
       "prompt": "反応速度を大きくする条件として正しくないものは？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "sci_chm12_002",
+      "unit": "science.chemistry.equilibrium.rate",
       "category": "knowledge",
       "prompt": "反応が進むために越えなければならないエネルギーの山を何という？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "sci_chm12_003",
+      "unit": "science.chemistry.equilibrium.rate.rate",
       "category": "knowledge",
       "prompt": "触媒のはたらきとして正しいものは？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "sci_chm12_004",
+      "unit": "science.chemistry.equilibrium.rate.constant",
       "category": "knowledge",
       "prompt": "化学平衡の状態とは？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "sci_chm12_005",
+      "unit": "science.chemistry.equilibrium.rate.constant",
       "category": "knowledge",
       "prompt": "平衡定数 K の値を変える条件は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "sci_chm12_006",
+      "unit": "science.chemistry.equilibrium.rate",
       "category": "knowledge",
       "prompt": "「平衡状態にある系に条件の変化を加えると、その変化をやわらげる向きに平衡が移動する」という原理は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "sci_chm12_007",
+      "unit": "science.chemistry.equilibrium.rate.ionic",
       "category": "knowledge",
       "prompt": "少量の酸や塩基を加えても pH がほとんど変わらない溶液を何という？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "sci_chm12_008",
+      "unit": "science.chemistry.equilibrium.rate",
       "category": "knowledge",
       "prompt": "水に溶けにくい塩について、飽和溶液中のイオンの濃度の積が一定になる値を何という？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "sci_chm12_009",
+      "unit": "science.chemistry.equilibrium.rate.constant",
       "category": "calculation",
       "prompt": "H₂ ＋ I₂ ⇄ 2HI が平衡に達し、[H₂] ＝ [I₂] ＝ 0.10 mol/L、[HI] ＝ 0.80 mol/L だった。平衡定数は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "sci_chm12_010",
+      "unit": "science.chemistry.equilibrium.rate.rate",
       "category": "calculation",
       "prompt": "温度を 10 K 上げるごとに反応速度が 2 倍になる反応がある。温度を 30 K 上げると速度は何倍？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "sci_chm12_011",
+      "unit": "science.chemistry.equilibrium.rate.rate",
       "category": "calculation",
       "prompt": "反応速度式が v ＝ k[A][B] の反応で、A の濃度だけを 2 倍にした。速度は何倍？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "sci_chm12_012",
+      "unit": "science.chemistry.equilibrium.rate.rate",
       "category": "calculation",
       "prompt": "反応速度式が v ＝ k[A]² の反応で、A の濃度を 2 倍にした。速度は何倍？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "sci_chm12_013",
+      "unit": "science.chemistry.equilibrium.rate.ionic",
       "category": "calculation",
       "prompt": "0.10 mol/L 酢酸の電離定数 K_a ＝ 2.7 × 10⁻⁵ mol/L。[H⁺] はおよそ？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "sci_chm12_014",
+      "unit": "science.chemistry.equilibrium.rate.ionic",
       "category": "calculation",
       "prompt": "AgCl の溶解度積は 1.8 × 10⁻¹⁰ (mol/L)²。純水に溶かした飽和溶液の [Ag⁺] はおよそ？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "sci_chm12_015",
+      "unit": "science.chemistry.equilibrium.rate",
       "category": "thinking",
       "prompt": "N₂ ＋ 3H₂ ⇄ 2NH₃（発熱反応）が平衡にある。圧力を上げると平衡はどちらへ移動する？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "sci_chm12_016",
+      "unit": "science.chemistry.equilibrium.rate",
       "category": "thinking",
       "prompt": "前問の平衡で、温度を上げると平衡はどちらへ移動する？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "sci_chm12_017",
+      "unit": "science.chemistry.equilibrium.rate.rate",
       "category": "knowledge",
       "prompt": "反応速度が温度を上げると大きくなる主な理由は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "sci_chm12_018",
+      "unit": "science.chemistry.equilibrium.rate.rate",
       "category": "knowledge",
       "prompt": "触媒を加えても変わらないものは？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "sci_chm12_019",
+      "unit": "science.chemistry.equilibrium.rate.constant",
       "category": "knowledge",
       "prompt": "可逆反応で、正反応と逆反応の速さが等しくなった状態は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "sci_chm12_020",
+      "unit": "science.chemistry.equilibrium.rate.shift",
       "category": "knowledge",
       "prompt": "平衡状態で圧力を上げると、平衡はどちらへ移動する？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "sci_chm12_021",
+      "unit": "science.chemistry.equilibrium.rate.rate",
       "category": "knowledge",
       "prompt": "平衡状態に触媒を加えるとどうなる？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "sci_chm12_022",
+      "unit": "science.chemistry.equilibrium.rate.ionic",
       "category": "knowledge",
       "prompt": "共通イオン効果とは？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "sci_chm12_023",
+      "unit": "science.chemistry.equilibrium.rate",
       "category": "knowledge",
       "prompt": "水のイオン積 K_w の値（25 ℃）は？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "sci_chm12_024",
+      "unit": "science.chemistry.equilibrium.rate.ionic",
       "category": "knowledge",
       "prompt": "酢酸と酢酸ナトリウムの混合水溶液が緩衝液としてはたらく理由は？",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "sci_chm12_025",
+      "unit": "science.chemistry.equilibrium.rate.constant",
       "category": "calculation",
       "prompt": "H₂ ＋ I₂ ⇄ 2HI で、平衡時 [H₂] ＝ [I₂] ＝ 0.10 mol/L、[HI] ＝ 0.70 mol/L のとき、平衡定数は？",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "sci_chm12_026",
+      "unit": "science.chemistry.equilibrium.rate.rate",
       "category": "calculation",
       "prompt": "温度を 10 K 上げるごとに反応速度が 3 倍になる。30 K 上げると何倍？",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "sci_chm12_027",
+      "unit": "science.chemistry.equilibrium.rate.rate",
       "category": "calculation",
       "prompt": "v ＝ k[A][B] で、A の濃度を 3 倍、B の濃度を 2 倍にすると、反応速度は何倍？",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "sci_chm12_028",
+      "unit": "science.chemistry.equilibrium.rate",
       "category": "calculation",
       "prompt": "0.10 mol/L 塩酸の pH は？",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "sci_chm12_029",
+      "unit": "science.chemistry.equilibrium.rate",
       "category": "calculation",
       "prompt": "水のイオン積を 1.0 × 10⁻¹⁴ (mol/L)² とする。[OH⁻] ＝ 1.0 × 10⁻⁵ mol/L の水溶液の pH は？",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "sci_chm12_030",
+      "unit": "science.chemistry.equilibrium.rate.ionic",
       "category": "calculation",
       "prompt": "AgCl の溶解度積 1.6 × 10⁻¹⁰ (mol/L)²。飽和水溶液中の [Ag⁺] は？",
       "choices": [
@@ -396,6 +426,7 @@
     },
     {
       "id": "sci_chm12_031",
+      "unit": "science.chemistry.equilibrium.rate",
       "category": "thinking",
       "prompt": "アンモニアの工業的合成で、低温の方が平衡上は有利なのに約 500 ℃ で行う理由は？",
       "choices": [
@@ -409,6 +440,7 @@
     },
     {
       "id": "sci_chm12_032",
+      "unit": "science.chemistry.equilibrium.rate.rate",
       "category": "thinking",
       "prompt": "ものを冷蔵庫に入れると腐りにくくなる理由を反応速度で説明すると？",
       "choices": [

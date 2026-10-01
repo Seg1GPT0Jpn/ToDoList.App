@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_m313_001",
+      "unit": "math.m3.integ.apply.area",
       "category": "calculation",
       "prompt": "曲線 y=eˣ と x 軸、直線 x=0、x=1 で囲まれた部分の面積は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_m313_002",
+      "unit": "math.m3.integ.apply.area",
       "category": "calculation",
       "prompt": "曲線 y=sin x（0≦x≦π）と x 軸で囲まれた部分の面積は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_m313_003",
+      "unit": "math.m3.integ.apply.area",
       "category": "calculation",
       "prompt": "曲線 y=1/x と x 軸、直線 x=1、x=e で囲まれた部分の面積は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_m313_004",
+      "unit": "math.m3.integ.apply.volume",
       "category": "calculation",
       "prompt": "y=x（0≦x≦1）と x 軸の間の部分を x 軸のまわりに回転した立体の体積は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_m313_005",
+      "unit": "math.m3.integ.apply.volume",
       "category": "calculation",
       "prompt": "y=√x（0≦x≦1）と x 軸の間の部分を x 軸のまわりに回転した立体の体積は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_m313_006",
+      "unit": "math.m3.integ.apply.volume",
       "category": "knowledge",
       "prompt": "底面の半径 r、高さ h の円錐の体積は？（積分で確かめられる）",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_m313_007",
+      "unit": "math.m3.integ.apply.volume",
       "category": "calculation",
       "prompt": "半径3の球の体積は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_m313_008",
+      "unit": "math.m3.integ.apply.distance",
       "category": "calculation",
       "prompt": "速度 v=cos t で動く点の、t=0 から t=π/2 までの位置の変化は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_m313_009",
+      "unit": "math.m3.integ.apply.length",
       "category": "knowledge",
       "prompt": "曲線 y=f(x)（a≦x≦b）の長さを表す式は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_m313_010",
+      "unit": "math.m3.integ.apply.volume",
       "category": "thinking",
       "prompt": "回転体の体積を π∫y² dx で求められる理由は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_m313_011",
+      "unit": "math.m3.integ.apply.area",
       "category": "calculation",
       "prompt": "曲線 y=e^(−x) と x 軸、直線 x=0、x=1 で囲まれた部分の面積は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_m313_012",
+      "unit": "math.m3.integ.apply.area",
       "category": "calculation",
       "prompt": "曲線 y=cos x（0≦x≦π/2）と x 軸、y 軸で囲まれた部分の面積は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_m313_013",
+      "unit": "math.m3.integ.apply.area",
       "category": "calculation",
       "prompt": "曲線 y=1/x と x 軸、直線 x=1、x=4 で囲まれた部分の面積は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_m313_014",
+      "unit": "math.m3.integ.apply.volume",
       "category": "calculation",
       "prompt": "y=2x（0≦x≦1）と x 軸の間の部分を x 軸のまわりに回転した立体の体積は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_m313_015",
+      "unit": "math.m3.integ.apply.volume",
       "category": "calculation",
       "prompt": "y=√x（0≦x≦4）と x 軸の間の部分を x 軸のまわりに回転した立体の体積は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_m313_016",
+      "unit": "math.m3.integ.apply.volume",
       "category": "calculation",
       "prompt": "半径 r の球の体積を積分で求める式は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_m313_017",
+      "unit": "math.m3.integ.apply.volume",
       "category": "calculation",
       "prompt": "半径2の球の体積は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_m313_018",
+      "unit": "math.m3.integ.apply.distance",
       "category": "calculation",
       "prompt": "速度 v=sin t で動く点の、t=0 から t=π までの位置の変化は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_m313_019",
+      "unit": "math.m3.integ.apply.length",
       "category": "calculation",
       "prompt": "曲線 x=cos t、y=sin t（0≦t≦2π）の長さは？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_m313_020",
+      "unit": "math.m3.integ.apply.length",
       "category": "knowledge",
       "prompt": "媒介変数表示の曲線 x=f(t)、y=g(t)（a≦t≦b）の長さを表す式は？",
       "choices": [

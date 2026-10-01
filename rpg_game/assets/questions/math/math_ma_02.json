@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_ma02_001",
+      "unit": "math.ma.prob.count.circular",
       "category": "calculation",
       "prompt": "5人が円形に並ぶ方法は何通り？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_ma02_002",
+      "unit": "math.ma.prob.count",
       "category": "calculation",
       "prompt": "異なる5個の玉で首飾りを作る方法は何通り？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_ma02_003",
+      "unit": "math.ma.prob.count.permutation",
       "category": "calculation",
       "prompt": "a, b, c の3種類の文字を使って（くり返し可）4文字の列を作る方法は何通り？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_ma02_004",
+      "unit": "math.ma.prob.count.permutation",
       "category": "calculation",
       "prompt": "A, A, B, B, C の5文字を1列に並べる方法は何通り？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_ma02_005",
+      "unit": "math.ma.prob.count",
       "category": "calculation",
       "prompt": "0, 1, 2, 3, 4 の数字から異なる3つを使ってできる3桁の整数は何個？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_ma02_006",
+      "unit": "math.ma.prob.count.divide",
       "category": "calculation",
       "prompt": "6人を2人ずつ3組に分ける方法は何通り？（組に区別なし）",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_ma02_007",
+      "unit": "math.ma.prob.count.same",
       "category": "calculation",
       "prompt": "右に3区画、上に2区画進む最短経路は何通り？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_ma02_008",
+      "unit": "math.ma.prob.count.combination",
       "category": "calculation",
       "prompt": "男子4人・女子3人から3人を選ぶとき、女子が少なくとも1人入る選び方は何通り？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_ma02_009",
+      "unit": "math.ma.prob.count.combination",
       "category": "calculation",
       "prompt": "正六角形の対角線の本数は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_ma02_010",
+      "unit": "math.ma.prob.count.permutation",
       "category": "thinking",
       "prompt": "円順列が (n−1)! になる理由は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_ma02_011",
+      "unit": "math.ma.prob.count.circular",
       "category": "calculation",
       "prompt": "6人が円形に並ぶ方法は何通り？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_ma02_012",
+      "unit": "math.ma.prob.count.circular",
       "category": "calculation",
       "prompt": "男子3人・女子3人が、男女交互に円形に並ぶ方法は何通り？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_ma02_013",
+      "unit": "math.ma.prob.count",
       "category": "calculation",
       "prompt": "4種類の文字を使って（くり返し可）3文字の列を作る方法は何通り？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_ma02_014",
+      "unit": "math.ma.prob.count.permutation",
       "category": "calculation",
       "prompt": "B, A, N, A, N, A の6文字を1列に並べる方法は何通り？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_ma02_015",
+      "unit": "math.ma.prob.count",
       "category": "calculation",
       "prompt": "0〜5 の6個の数字から異なる4個を使ってできる4けたの整数は何個？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_ma02_016",
+      "unit": "math.ma.prob.count.divide",
       "category": "calculation",
       "prompt": "9人を3人ずつ3組に分ける方法は何通り？（組に区別なし）",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_ma02_017",
+      "unit": "math.ma.prob.count.same",
       "category": "calculation",
       "prompt": "右に4区画、上に3区画進む最短経路は何通り？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_ma02_018",
+      "unit": "math.ma.prob.count.combination",
       "category": "calculation",
       "prompt": "男子6人・女子4人から男女2人ずつ選ぶ方法は何通り？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_ma02_019",
+      "unit": "math.ma.prob.count.combination",
       "category": "calculation",
       "prompt": "正八角形の対角線の本数は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_ma02_020",
+      "unit": "math.ma.prob.count",
       "category": "calculation",
       "prompt": "A をふくむ5人が1列に並ぶとき、A が先頭にならない並び方は何通り？",
       "choices": [

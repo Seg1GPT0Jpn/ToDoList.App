@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "sci_bio10_001",
+      "unit": "science.biology.evolution.phylogeny.domain",
       "category": "knowledge",
       "prompt": "現在、生物を大きく3つに分ける「3ドメイン説」の3つは？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "sci_bio10_002",
+      "unit": "science.biology.evolution.phylogeny.classification",
       "category": "knowledge",
       "prompt": "学名の「二名法」で、2つ目に書くのは？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "sci_bio10_003",
+      "unit": "science.biology.evolution.phylogeny.classification",
       "category": "knowledge",
       "prompt": "生物の分類の階層を、大きい順に並べたものは？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "sci_bio10_004",
+      "unit": "science.biology.evolution.phylogeny",
       "category": "knowledge",
       "prompt": "生物学での「種」の定義として最もふさわしいものは？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "sci_bio10_005",
+      "unit": "science.biology.evolution.phylogeny.classification",
       "category": "knowledge",
       "prompt": "生物の進化の道すじを枝分かれの図で表したものは？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "sci_bio10_006",
+      "unit": "science.biology.evolution.phylogeny.domain",
       "category": "knowledge",
       "prompt": "キノコやカビ、酵母がふくまれるなかまは？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "sci_bio10_007",
+      "unit": "science.biology.evolution.phylogeny",
       "category": "knowledge",
       "prompt": "種子をつくる植物のうち、胚珠が子房に包まれているものは？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "sci_bio10_008",
+      "unit": "science.biology.evolution.phylogeny",
       "category": "knowledge",
       "prompt": "維管束をもつが、種子をつくらず胞子でふえる植物は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "sci_bio10_009",
+      "unit": "science.biology.evolution.phylogeny",
       "category": "knowledge",
       "prompt": "発生で、原口がそのまま口になる動物を何という？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "sci_bio10_010",
+      "unit": "science.biology.evolution.phylogeny",
       "category": "knowledge",
       "prompt": "新口動物にふくまれるのは？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "sci_bio10_011",
+      "unit": "science.biology.evolution.phylogeny.domain",
       "category": "knowledge",
       "prompt": "アーキア（古細菌）の例は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "sci_bio10_012",
+      "unit": "science.biology.evolution.phylogeny.domain",
       "category": "knowledge",
       "prompt": "真核生物のうち、動物・植物・菌類のいずれにもふくまれないものを何という？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "sci_bio10_013",
+      "unit": "science.biology.evolution.phylogeny",
       "category": "knowledge",
       "prompt": "昆虫やエビ・カニがふくまれるなかまは？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "sci_bio10_014",
+      "unit": "science.biology.evolution.phylogeny",
       "category": "calculation",
       "prompt": "ある遺伝子で、種 A と種 B の塩基配列のちがいは 20 か所、種 A と種 C は 10 か所だった。A と B の分岐が 4000 万年前とすると、A と C の分岐はおよそ何年前？（ちがいは時間に比例するとする）",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "sci_bio10_015",
+      "unit": "science.biology.evolution.phylogeny",
       "category": "thinking",
       "prompt": "2つの種の DNA の塩基配列のちがいが少ないほど、どういえる？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "sci_bio10_016",
+      "unit": "science.biology.evolution.phylogeny.classification",
       "category": "thinking",
       "prompt": "クジラは魚に似た形をしているが、哺乳類に分類される。その根拠として適切なものは？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "sci_bio10_017",
+      "unit": "science.biology.evolution.phylogeny.domain",
       "category": "knowledge",
       "prompt": "3 ドメインのうち、ヒトがふくまれるのは？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "sci_bio10_018",
+      "unit": "science.biology.evolution.phylogeny.classification",
       "category": "knowledge",
       "prompt": "学名の「二名法」を確立した人物は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "sci_bio10_019",
+      "unit": "science.biology.evolution.phylogeny.classification",
       "category": "knowledge",
       "prompt": "ヒトの学名 Homo sapiens で、Homo は何を表す？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "sci_bio10_020",
+      "unit": "science.biology.evolution.phylogeny.domain",
       "category": "knowledge",
       "prompt": "同じ属にふくまれる、よく似た種を集めた上の階級は？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "sci_bio10_021",
+      "unit": "science.biology.evolution.phylogeny.domain",
       "category": "knowledge",
       "prompt": "界の上に置かれる、最も大きな分類の階級は？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "sci_bio10_022",
+      "unit": "science.biology.evolution.phylogeny",
       "category": "knowledge",
       "prompt": "陸上植物の中で、維管束をもたないなかまは？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "sci_bio10_023",
+      "unit": "science.biology.evolution.phylogeny",
       "category": "knowledge",
       "prompt": "裸子植物の例は？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "sci_bio10_024",
+      "unit": "science.biology.evolution.phylogeny",
       "category": "knowledge",
       "prompt": "背骨をもつ動物がふくまれる門は？",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "sci_bio10_025",
+      "unit": "science.biology.evolution.phylogeny",
       "category": "knowledge",
       "prompt": "イカやタコ、貝がふくまれるなかまは？",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "sci_bio10_026",
+      "unit": "science.biology.evolution.phylogeny",
       "category": "knowledge",
       "prompt": "ウニやヒトデがふくまれるなかまは？",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "sci_bio10_027",
+      "unit": "science.biology.evolution.phylogeny",
       "category": "knowledge",
       "prompt": "光合成を行う原生生物の例は？",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "sci_bio10_028",
+      "unit": "science.biology.evolution.phylogeny",
       "category": "calculation",
       "prompt": "A と B の塩基配列のちがいが 10 か所、A と C のちがいが 30 か所、B と C のちがいが 30 か所。最も近縁な組み合わせは？",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "sci_bio10_029",
+      "unit": "science.biology.evolution.phylogeny.classification",
       "category": "calculation",
       "prompt": "分類の階級で、「目」の 1 つ上の階級は？",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "sci_bio10_030",
+      "unit": "science.biology.evolution.phylogeny",
       "category": "calculation",
       "prompt": "100 塩基の配列で、2 種の間でちがう塩基が 5 か所。一致率は？",
       "choices": [
@@ -396,6 +426,7 @@
     },
     {
       "id": "sci_bio10_031",
+      "unit": "science.biology.evolution.phylogeny.classification",
       "category": "thinking",
       "prompt": "見た目が似ていても、別の系統に分類されることがある理由は？",
       "choices": [
@@ -409,6 +440,7 @@
     },
     {
       "id": "sci_bio10_032",
+      "unit": "science.biology.evolution.phylogeny.classification",
       "category": "thinking",
       "prompt": "分子系統樹をつくるのに、DNA の塩基配列を使う利点は？",
       "choices": [

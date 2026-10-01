@@ -1,7 +1,10 @@
+import 'dart:async';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:rpg_game/rpg_game.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'account/account_screen.dart';
@@ -65,6 +68,8 @@ Future<void> main() async {
       },
     );
   }
+  // 古い学習記録に、学習体系の単元を補う（裏で行い、終わったら保存する）
+  unawaited(_migrateUnits(meta));
   runApp(
     RpgServices(
       meta: meta,
@@ -91,6 +96,21 @@ Future<void> main() async {
       ),
     ),
   );
+}
+
+/// 学習記録のマイグレーション：単元が書かれていない古い記録に単元を補う
+Future<void> _migrateUnits(MetaStore meta) async {
+  try {
+    final units = await UnitMigration.unitsFor(
+      meta.record,
+      JsonQuestionSource(RpgServices.loadQuestionAsset),
+    );
+    if (units.isEmpty) return;
+    final migrated = meta.record.withUnits(units);
+    if (!identical(migrated, meta.record)) await meta.save(record: migrated);
+  } catch (e) {
+    debugPrint('学習記録の単元の移行に失敗: $e');
+  }
 }
 
 /// 画面の出入りを知らせる（フィールドがバトルから戻ったことを知るのに使う）

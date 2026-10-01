@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "sci_bio06_001",
+      "unit": "science.biology.body.immunity.innate",
       "category": "knowledge",
       "prompt": "病原体を細胞内に取りこんで分解するはたらきを何という？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "sci_bio06_002",
+      "unit": "science.biology.body.immunity.innate",
       "category": "knowledge",
       "prompt": "生まれつき備わっていて、侵入した異物をすばやく排除するしくみを何という？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "sci_bio06_003",
+      "unit": "science.biology.body.immunity",
       "category": "knowledge",
       "prompt": "特定の異物を認識して排除し、記憶も残る免疫を何という？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "sci_bio06_004",
+      "unit": "science.biology.body.immunity.adaptive",
       "category": "knowledge",
       "prompt": "免疫が異物として認識する物質を何という？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "sci_bio06_005",
+      "unit": "science.biology.body.immunity.adaptive",
       "category": "knowledge",
       "prompt": "抗体の本体は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "sci_bio06_006",
+      "unit": "science.biology.body.immunity.adaptive",
       "category": "knowledge",
       "prompt": "抗体をつくって放出する細胞は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "sci_bio06_007",
+      "unit": "science.biology.body.immunity.adaptive",
       "category": "knowledge",
       "prompt": "感染した細胞を直接攻撃して破壊するリンパ球は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "sci_bio06_008",
+      "unit": "science.biology.body.immunity.adaptive",
       "category": "knowledge",
       "prompt": "取りこんだ異物の情報を T 細胞に伝える（抗原提示する）代表的な細胞は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "sci_bio06_009",
+      "unit": "science.biology.body.immunity",
       "category": "knowledge",
       "prompt": "一度かかった病気に、二度目はかかりにくい（かかっても軽くすむ）理由は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "sci_bio06_010",
+      "unit": "science.biology.body.immunity.disease",
       "category": "knowledge",
       "prompt": "弱毒化した病原体などを接種して、免疫記憶をつくらせる方法は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "sci_bio06_011",
+      "unit": "science.biology.body.immunity.disease",
       "category": "knowledge",
       "prompt": "花粉など本来無害なものに免疫が過敏に反応し、からだに不都合が生じることを何という？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "sci_bio06_012",
+      "unit": "science.biology.body.immunity.adaptive",
       "category": "knowledge",
       "prompt": "HIV（ヒト免疫不全ウイルス）が主に感染して破壊する細胞は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "sci_bio06_013",
+      "unit": "science.biology.body.immunity",
       "category": "knowledge",
       "prompt": "皮膚の角質層や、涙・だ液にふくまれるリゾチームなどによる防御を何という？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "sci_bio06_014",
+      "unit": "science.biology.body.immunity",
       "category": "knowledge",
       "prompt": "自分のからだの成分を異物と認識して攻撃してしまう病気は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "sci_bio06_015",
+      "unit": "science.biology.body.immunity.adaptive",
       "category": "thinking",
       "prompt": "同じ抗原が2回目に侵入したときの抗体の量の変化は、1回目と比べてどうなる？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "sci_bio06_016",
+      "unit": "science.biology.body.immunity",
       "category": "thinking",
       "prompt": "他人から移植した皮膚や臓器が定着しにくい主な理由は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "sci_bio06_017",
+      "unit": "science.biology.body.immunity.innate",
       "category": "knowledge",
       "prompt": "自然免疫で食作用を行う代表的な細胞は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "sci_bio06_018",
+      "unit": "science.biology.body.immunity.adaptive",
       "category": "knowledge",
       "prompt": "獲得免疫で中心的にはたらくリンパ球は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "sci_bio06_019",
+      "unit": "science.biology.body.immunity",
       "category": "knowledge",
       "prompt": "T 細胞が成熟する器官は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "sci_bio06_020",
+      "unit": "science.biology.body.immunity.adaptive",
       "category": "knowledge",
       "prompt": "B 細胞が成熟する場所は？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "sci_bio06_021",
+      "unit": "science.biology.body.immunity.adaptive",
       "category": "knowledge",
       "prompt": "抗体によって異物を排除する免疫を何という？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "sci_bio06_022",
+      "unit": "science.biology.body.immunity",
       "category": "knowledge",
       "prompt": "キラー T 細胞が感染細胞を直接攻撃する免疫を何という？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "sci_bio06_023",
+      "unit": "science.biology.body.immunity.adaptive",
       "category": "knowledge",
       "prompt": "抗体が抗原と特異的に結合する反応を何という？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "sci_bio06_024",
+      "unit": "science.biology.body.immunity.adaptive",
       "category": "knowledge",
       "prompt": "抗体（免疫グロブリン）の形は？",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "sci_bio06_025",
+      "unit": "science.biology.body.immunity.adaptive",
       "category": "knowledge",
       "prompt": "ヘルパー T 細胞の主なはたらきは？",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "sci_bio06_026",
+      "unit": "science.biology.body.immunity",
       "category": "knowledge",
       "prompt": "ツベルクリン反応は、どの免疫のはたらきを利用した検査？",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "sci_bio06_027",
+      "unit": "science.biology.body.immunity.adaptive",
       "category": "knowledge",
       "prompt": "ほかの動物につくらせた抗体をふくむ血清を注射して治療する方法は？",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "sci_bio06_028",
+      "unit": "science.biology.body.immunity.disease",
       "category": "knowledge",
       "prompt": "全身に起こる激しいアレルギー反応を何という？",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "sci_bio06_029",
+      "unit": "science.biology.body.immunity.innate",
       "category": "knowledge",
       "prompt": "自然免疫で、感染した細胞やがん細胞を攻撃するリンパ球は？",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "sci_bio06_030",
+      "unit": "science.biology.body.immunity",
       "category": "knowledge",
       "prompt": "けがをした部分が赤くはれて熱をもつ反応を何という？",
       "choices": [
@@ -396,6 +426,7 @@
     },
     {
       "id": "sci_bio06_031",
+      "unit": "science.biology.body.immunity.disease",
       "category": "thinking",
       "prompt": "予防接種と血清療法のちがいとして正しいものは？",
       "choices": [
@@ -409,6 +440,7 @@
     },
     {
       "id": "sci_bio06_032",
+      "unit": "science.biology.body.immunity",
       "category": "thinking",
       "prompt": "HIV に感染すると、さまざまな病気にかかりやすくなる理由は？",
       "choices": [

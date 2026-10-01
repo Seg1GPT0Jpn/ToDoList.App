@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_m304_001",
+      "unit": "math.m3.diff.derivative",
       "category": "calculation",
       "prompt": "(x⁵)′ は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_m304_002",
+      "unit": "math.m3.diff.derivative",
       "category": "calculation",
       "prompt": "(sin x)′ は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_m304_003",
+      "unit": "math.m3.diff.derivative",
       "category": "calculation",
       "prompt": "(cos x)′ は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_m304_004",
+      "unit": "math.m3.diff.derivative",
       "category": "calculation",
       "prompt": "(eˣ)′ は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_m304_005",
+      "unit": "math.m3.diff.derivative",
       "category": "calculation",
       "prompt": "(log x)′ は？（自然対数、x>0）",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_m304_006",
+      "unit": "math.m3.diff.derivative",
       "category": "calculation",
       "prompt": "(√x)′ は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_m304_007",
+      "unit": "math.m3.diff.derivative",
       "category": "calculation",
       "prompt": "(1/x)′ は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_m304_008",
+      "unit": "math.m3.diff.derivative.chain",
       "category": "calculation",
       "prompt": "{(x²+1)³}′ は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_m304_009",
+      "unit": "math.m3.diff.derivative.rule",
       "category": "calculation",
       "prompt": "(xeˣ)′ は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_m304_010",
+      "unit": "math.m3.diff.derivative.chain",
       "category": "thinking",
       "prompt": "合成関数の微分で「外側の微分×内側の微分」になる理由は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_m304_011",
+      "unit": "math.m3.diff.derivative",
       "category": "calculation",
       "prompt": "(x⁷)′ は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_m304_012",
+      "unit": "math.m3.diff.derivative",
       "category": "calculation",
       "prompt": "(sin x+cos x)′ は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_m304_013",
+      "unit": "math.m3.diff.derivative",
       "category": "calculation",
       "prompt": "(3eˣ)′ は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_m304_014",
+      "unit": "math.m3.diff.derivative.explog",
       "category": "calculation",
       "prompt": "(log 3x)′ は？（x>0）",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_m304_015",
+      "unit": "math.m3.diff.derivative",
       "category": "calculation",
       "prompt": "(x√x)′ は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_m304_016",
+      "unit": "math.m3.diff.derivative",
       "category": "calculation",
       "prompt": "(1/x²)′ は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_m304_017",
+      "unit": "math.m3.diff.derivative",
       "category": "calculation",
       "prompt": "{(2x+1)⁴}′ は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_m304_018",
+      "unit": "math.m3.diff.derivative.rule",
       "category": "calculation",
       "prompt": "(x² sin x)′ は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_m304_019",
+      "unit": "math.m3.diff.derivative.chain",
       "category": "calculation",
       "prompt": "(e^(3x))′ は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_m304_020",
+      "unit": "math.m3.diff.derivative.rule",
       "category": "knowledge",
       "prompt": "商の微分 (f/g)′ の式は？",
       "choices": [

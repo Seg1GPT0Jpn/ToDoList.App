@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "sci_phy13_001",
+      "unit": "science.physics.waves.basic.describe",
       "category": "knowledge",
       "prompt": "2つの波源からの波が強め合う条件は？（経路差を Δl、波長を λ、同位相の波源）",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "sci_phy13_002",
+      "unit": "science.physics.waves.basic.describe",
       "category": "knowledge",
       "prompt": "波が障害物の裏側にまで回りこむ現象は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "sci_phy13_003",
+      "unit": "science.physics.waves.sound.nature",
       "category": "knowledge",
       "prompt": "音源が近づいてくるとき、聞こえる音の高さは？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "sci_phy13_004",
+      "unit": "science.physics.waves.basic.reflection",
       "category": "knowledge",
       "prompt": "屈折の法則は？（n：屈折率、θ：入射角・屈折角）",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "sci_phy13_005",
+      "unit": "science.physics.waves.light.nature",
       "category": "knowledge",
       "prompt": "全反射が起こる条件は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "sci_phy13_006",
+      "unit": "science.physics.waves.basic.reflection",
       "category": "knowledge",
       "prompt": "白色光をプリズムに通すと色に分かれる現象は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "sci_phy13_007",
+      "unit": "science.physics.waves.light.nature",
       "category": "knowledge",
       "prompt": "偏光という現象が起こることからわかる光の性質は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "sci_phy13_008",
+      "unit": "science.physics.waves.light.interference",
       "category": "knowledge",
       "prompt": "ヤングの実験（間隔 d の2つのスリット、スクリーンまでの距離 L）で、明線の間隔は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "sci_phy13_009",
+      "unit": "science.physics.waves.basic.describe",
       "category": "calculation",
       "prompt": "振動数 660 Hz の音源が 10 m/s で近づいてくる。聞こえる振動数は？（音速 340 m/s）",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "sci_phy13_010",
+      "unit": "science.physics.waves.light.interference",
       "category": "calculation",
       "prompt": "ヤングの実験で L ＝ 1.0 m、d ＝ 0.50 mm、波長 5.0 × 10⁻⁷ m。明線の間隔は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "sci_phy13_011",
+      "unit": "science.physics.waves.light.nature",
       "category": "calculation",
       "prompt": "屈折率 1.5 のガラスの中を進む光の速さは？（真空中の光速 3.0 × 10⁸ m/s）",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "sci_phy13_012",
+      "unit": "science.physics.waves.basic.describe",
       "category": "calculation",
       "prompt": "真空中の波長 600 nm の光が、屈折率 1.5 のガラスに入った。ガラス中の波長は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "sci_phy13_013",
+      "unit": "science.physics.waves.light.interference",
       "category": "calculation",
       "prompt": "格子定数 1.2 × 10⁻⁶ m の回折格子で、1次の明線が 30° の方向に見えた。光の波長は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "sci_phy13_014",
+      "unit": "science.physics.waves.basic.describe",
       "category": "calculation",
       "prompt": "同位相の2つの波源からの経路差が、波長の 1.5 倍の点ではどうなる？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "sci_phy13_015",
+      "unit": "science.physics.waves.basic.reflection",
       "category": "thinking",
       "prompt": "プールの底のコインが、実際より浅い所にあるように見える理由は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "sci_phy13_016",
+      "unit": "science.physics.waves.light.interference",
       "category": "thinking",
       "prompt": "シャボン玉が色づいて見える理由は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "sci_phy13_017",
+      "unit": "science.physics.waves.basic.describe",
       "category": "knowledge",
       "prompt": "2つの波源からの波が弱め合う条件は？（同位相、m は整数）",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "sci_phy13_018",
+      "unit": "science.physics.waves.basic.reflection",
       "category": "knowledge",
       "prompt": "光が反射するとき、入射角と反射角の関係は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "sci_phy13_019",
+      "unit": "science.physics.waves.basic.describe",
       "category": "knowledge",
       "prompt": "可視光のうち、波長が最も長い色は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "sci_phy13_020",
+      "unit": "science.physics.waves.sound.doppler",
       "category": "knowledge",
       "prompt": "救急車が遠ざかるとき、聞こえるサイレンの音は？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "sci_phy13_021",
+      "unit": "science.physics.waves.light.nature",
       "category": "knowledge",
       "prompt": "屈折率の大きい物質中では、光の速さはどうなる？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "sci_phy13_022",
+      "unit": "science.physics.waves.light.nature",
       "category": "knowledge",
       "prompt": "光ファイバーで光が外にもれずに進む理由は？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "sci_phy13_023",
+      "unit": "science.physics.waves.basic.describe",
       "category": "calculation",
       "prompt": "振動数 500 Hz の音源が 20 m/s で観測者に近づく。聞こえる振動数は？（音速 340 m/s）",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "sci_phy13_024",
+      "unit": "science.physics.waves.basic.describe",
       "category": "calculation",
       "prompt": "観測者が 17 m/s で静止した 340 Hz の音源に近づく。聞こえる振動数は？（音速 340 m/s）",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "sci_phy13_025",
+      "unit": "science.physics.waves.light.nature",
       "category": "calculation",
       "prompt": "屈折率 2.0 の物質中での光の速さは？（真空中 3.0 × 10⁸ m/s）",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "sci_phy13_026",
+      "unit": "science.physics.waves.basic.reflection",
       "category": "calculation",
       "prompt": "空気中（屈折率 1.0）から入射角 30° で屈折率 √3 の物質に入る光の屈折角は？",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "sci_phy13_027",
+      "unit": "science.physics.waves.light.interference",
       "category": "calculation",
       "prompt": "ヤングの実験で、L ＝ 2.0 m、d ＝ 1.0 mm、波長 500 nm のとき、明線の間隔は？",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "sci_phy13_028",
+      "unit": "science.physics.waves.basic.describe",
       "category": "calculation",
       "prompt": "回折格子（格子定数 d）で、波長 λ の光の m 次の明線の方向 θ が満たす式は？",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "sci_phy13_029",
+      "unit": "science.physics.waves.basic.describe",
       "category": "calculation",
       "prompt": "同位相の2つの波源からの経路差が 2.0 λ の点では？",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "sci_phy13_030",
+      "unit": "science.physics.waves.basic.describe",
       "category": "calculation",
       "prompt": "空気中で波長 630 nm の光が屈折率 1.5 の水晶中に入った。水晶中の波長は？",
       "choices": [
@@ -396,6 +426,7 @@
     },
     {
       "id": "sci_phy13_031",
+      "unit": "science.physics.waves.light",
       "category": "thinking",
       "prompt": "空が青く見える理由は？",
       "choices": [
@@ -409,6 +440,7 @@
     },
     {
       "id": "sci_phy13_032",
+      "unit": "science.physics.waves.light.interference",
       "category": "thinking",
       "prompt": "水たまりに油が浮くと虹色に見える理由は？",
       "choices": [

@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_ma05_001",
+      "unit": "math.ma.prob.probability.repeated",
       "category": "calculation",
       "prompt": "さいころを3回投げて、6の目がちょうど1回出る確率は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_ma05_002",
+      "unit": "math.ma.prob.probability.basic",
       "category": "calculation",
       "prompt": "コインを4回投げて、表がちょうど2回出る確率は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_ma05_003",
+      "unit": "math.ma.prob.probability.basic",
       "category": "calculation",
       "prompt": "赤玉3個・白玉2個の袋から1個ずつ2回取り出す（戻さない）。1回目が赤のとき、2回目も赤である確率は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_ma05_004",
+      "unit": "math.ma.prob.probability.basic",
       "category": "calculation",
       "prompt": "同じ袋から1個ずつ2回取り出す（戻さない）とき、2回とも赤である確率は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_ma05_005",
+      "unit": "math.ma.prob.probability.repeated",
       "category": "calculation",
       "prompt": "さいころを1回投げたときの出る目の期待値は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_ma05_006",
+      "unit": "math.ma.prob.probability.basic",
       "category": "calculation",
       "prompt": "2個のさいころを投げて、目の和が2または12になる確率は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_ma05_007",
+      "unit": "math.ma.prob.probability.basic",
       "category": "calculation",
       "prompt": "当たり3本をふくむ10本のくじを、A、B の順に1本ずつ引く（戻さない）。B が当たる確率は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_ma05_008",
+      "unit": "math.ma.prob.probability.basic",
       "category": "calculation",
       "prompt": "A の命中率が 0.6、B の命中率が 0.5 のとき、少なくとも一方が命中する確率は？（独立）",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_ma05_009",
+      "unit": "math.ma.prob.probability.expected",
       "category": "calculation",
       "prompt": "1000円が1本、100円が4本、はずれ15本の計20本のくじ。賞金の期待値は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_ma05_010",
+      "unit": "math.ma.prob.probability.basic",
       "category": "thinking",
       "prompt": "くじを引く順番によって当たる確率が変わらない理由は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_ma05_011",
+      "unit": "math.ma.prob.probability.basic",
       "category": "calculation",
       "prompt": "さいころを4回投げて、1の目がちょうど2回出る確率は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_ma05_012",
+      "unit": "math.ma.prob.probability.basic",
       "category": "calculation",
       "prompt": "コインを5回投げて、表がちょうど3回出る確率は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_ma05_013",
+      "unit": "math.ma.prob.probability.basic",
       "category": "calculation",
       "prompt": "赤玉5個・白玉3個の袋から1個ずつ2回取り出す（戻さない）。1回目が白のとき、2回目も白である確率は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_ma05_014",
+      "unit": "math.ma.prob.probability.basic",
       "category": "calculation",
       "prompt": "同じ袋から1個ずつ2回取り出す（戻さない）とき、2回とも白である確率は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_ma05_015",
+      "unit": "math.ma.prob.probability.expected",
       "category": "calculation",
       "prompt": "500円が2本、100円が3本、はずれ15本の計20本のくじ。賞金の期待値は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_ma05_016",
+      "unit": "math.ma.prob.probability.basic",
       "category": "calculation",
       "prompt": "A が成功する確率0.7、B が成功する確率0.4 のとき、両方成功する確率は？（独立）",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_ma05_017",
+      "unit": "math.ma.prob.probability.basic",
       "category": "calculation",
       "prompt": "同じ条件で、少なくとも一方が成功する確率は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_ma05_018",
+      "unit": "math.ma.prob.probability.repeated",
       "category": "calculation",
       "prompt": "さいころを1回投げて、出た目の2倍の点数がもらえる。点数の期待値は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_ma05_019",
+      "unit": "math.ma.prob.probability",
       "category": "calculation",
       "prompt": "P(A)=0.5、P(B)=0.4、P(A∩B)=0.2 のとき、P(A∪B) は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_ma05_020",
+      "unit": "math.ma.prob.probability.basic",
       "category": "calculation",
       "prompt": "同じ条件で、A が起こったときに B が起こる条件付き確率は？",
       "choices": [

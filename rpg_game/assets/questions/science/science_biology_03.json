@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "sci_bio03_001",
+      "unit": "science.biology.cell.dna.structure",
       "category": "knowledge",
       "prompt": "DNA の塩基として正しい組み合わせは？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "sci_bio03_002",
+      "unit": "science.biology.cell.dna.structure",
       "category": "knowledge",
       "prompt": "DNA の二重らせんで、アデニン（A）と対になる塩基は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "sci_bio03_003",
+      "unit": "science.biology.cell.dna.structure",
       "category": "knowledge",
       "prompt": "DNA の二重らせん構造を提唱したのは？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "sci_bio03_004",
+      "unit": "science.biology.cell.dna.structure",
       "category": "knowledge",
       "prompt": "ヌクレオチドを構成するものは？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "sci_bio03_005",
+      "unit": "science.biology.cell.dna.structure",
       "category": "knowledge",
       "prompt": "DNA の情報をもとに RNA をつくる過程を何という？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "sci_bio03_006",
+      "unit": "science.biology.cell.dna.expression",
       "category": "knowledge",
       "prompt": "mRNA の情報をもとにタンパク質を合成する過程を何という？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "sci_bio03_007",
+      "unit": "science.biology.cell.dna.structure",
       "category": "knowledge",
       "prompt": "1 つのアミノ酸を指定する mRNA の塩基の並びは何個ずつ？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "sci_bio03_008",
+      "unit": "science.biology.cell.dna.structure",
       "category": "knowledge",
       "prompt": "DNA の複製について正しいものは？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "sci_bio03_009",
+      "unit": "science.biology.cell.dna.replication",
       "category": "knowledge",
       "prompt": "細胞周期のうち、DNA が複製される時期は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "sci_bio03_010",
+      "unit": "science.biology.cell.dna.structure",
       "category": "knowledge",
       "prompt": "ある生物がもつすべての遺伝情報を何という？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "sci_bio03_011",
+      "unit": "science.biology.cell.dna",
       "category": "knowledge",
       "prompt": "多細胞生物の細胞が分化して、形やはたらきがちがう細胞になる理由は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "sci_bio03_012",
+      "unit": "science.biology.cell.dna.structure",
       "category": "knowledge",
       "prompt": "DNA からタンパク質へと遺伝情報が一方向に流れるという考え方を何という？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "sci_bio03_013",
+      "unit": "science.biology.cell.dna.structure",
       "category": "calculation",
       "prompt": "ある二本鎖 DNA でアデニン（A）が全塩基の 30 % のとき、グアニン（G）は何 %？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "sci_bio03_014",
+      "unit": "science.biology.cell.dna.structure",
       "category": "calculation",
       "prompt": "DNA の片方の鎖が「ATGC」のとき、もう片方の鎖の対応する配列は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "sci_bio03_015",
+      "unit": "science.biology.cell.dna.structure",
       "category": "calculation",
       "prompt": "DNA の鋳型鎖が「TAC」のとき、転写された mRNA の配列は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "sci_bio03_016",
+      "unit": "science.biology.cell.dna.structure",
       "category": "calculation",
       "prompt": "アミノ酸を指定する部分が 300 塩基の mRNA からつくられるタンパク質のアミノ酸の数は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "sci_bio03_017",
+      "unit": "science.biology.cell.dna.structure",
       "category": "knowledge",
       "prompt": "RNA の塩基の組み合わせは？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "sci_bio03_018",
+      "unit": "science.biology.cell.dna.structure",
       "category": "knowledge",
       "prompt": "DNA を構成する糖は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "sci_bio03_019",
+      "unit": "science.biology.cell.dna.structure",
       "category": "knowledge",
       "prompt": "DNA の二重らせんで、グアニン（G）と対になる塩基は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "sci_bio03_020",
+      "unit": "science.biology.cell.dna.structure",
       "category": "knowledge",
       "prompt": "遺伝子の本体である物質は？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "sci_bio03_021",
+      "unit": "science.biology.cell.dna.replication",
       "category": "knowledge",
       "prompt": "体細胞分裂の分裂期（M 期）に起こることは？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "sci_bio03_022",
+      "unit": "science.biology.cell.dna.replication",
       "category": "knowledge",
       "prompt": "体細胞分裂で、1つの細胞あたりの DNA 量はどう変化する？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "sci_bio03_023",
+      "unit": "science.biology.cell.dna.structure",
       "category": "knowledge",
       "prompt": "肺炎球菌の形質転換の実験で、R 型菌を S 型菌に変えた物質は？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "sci_bio03_024",
+      "unit": "science.biology.cell.dna.expression",
       "category": "knowledge",
       "prompt": "tRNA のはたらきは？",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "sci_bio03_025",
+      "unit": "science.biology.cell.dna.expression",
       "category": "knowledge",
       "prompt": "mRNA の「m」が表す意味は？",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "sci_bio03_026",
+      "unit": "science.biology.cell.dna.structure",
       "category": "knowledge",
       "prompt": "ヒトのゲノムの塩基対の数は、およそ？",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "sci_bio03_027",
+      "unit": "science.biology.cell.dna.expression",
       "category": "knowledge",
       "prompt": "ヒトのゲノムにふくまれる、タンパク質の情報をもつ遺伝子の数は、およそ？",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "sci_bio03_028",
+      "unit": "science.biology.cell.dna.structure",
       "category": "knowledge",
       "prompt": "DNA の複製が、もとの鎖を1本ずつ受けつぐしくみであることを何という？",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "sci_bio03_029",
+      "unit": "science.biology.cell.dna.structure",
       "category": "calculation",
       "prompt": "ある二本鎖 DNA でグアニン（G）が全塩基の22%のとき、アデニン（A）は何%？",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "sci_bio03_030",
+      "unit": "science.biology.cell.dna.structure",
       "category": "calculation",
       "prompt": "DNA の鋳型鎖が「TACGGA」のとき、転写された mRNA の配列は？",
       "choices": [
@@ -396,6 +426,7 @@
     },
     {
       "id": "sci_bio03_031",
+      "unit": "science.biology.cell.dna.replication",
       "category": "calculation",
       "prompt": "細胞周期が20時間の細胞を観察すると、分裂期（M 期）の細胞が全体の10%だった。M 期の長さは？",
       "choices": [
@@ -409,6 +440,7 @@
     },
     {
       "id": "sci_bio03_032",
+      "unit": "science.biology.cell.dna",
       "category": "thinking",
       "prompt": "ユスリカのだ腺染色体で「パフ」が見られる部分について言えることは？",
       "choices": [

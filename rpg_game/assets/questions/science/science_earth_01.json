@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "sci_ear01_001",
+      "unit": "science.earth.solid.shape",
       "category": "knowledge",
       "prompt": "地球の形に最も近いものは？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "sci_ear01_002",
+      "unit": "science.earth.solid.shape",
       "category": "knowledge",
       "prompt": "地球の全周（子午線の長さ）はおよそ？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "sci_ear01_003",
+      "unit": "science.earth.solid.shape.shape",
       "category": "knowledge",
       "prompt": "紀元前に、2 地点の太陽の高度の差から地球の大きさを求めた人物は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "sci_ear01_004",
+      "unit": "science.earth.solid.shape",
       "category": "knowledge",
       "prompt": "地球の内部構造を外側から順に並べたものは？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "sci_ear01_005",
+      "unit": "science.earth.solid.shape.interior",
       "category": "knowledge",
       "prompt": "地球の核の主成分は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "sci_ear01_006",
+      "unit": "science.earth.solid.shape.interior",
       "category": "knowledge",
       "prompt": "マントルをつくっている主な岩石は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "sci_ear01_007",
+      "unit": "science.earth.solid.shape.interior",
       "category": "knowledge",
       "prompt": "大陸地殻の上部をつくる主な岩石は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "sci_ear01_008",
+      "unit": "science.earth.solid.shape.interior",
       "category": "knowledge",
       "prompt": "地殻とマントルの境界を何という？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "sci_ear01_009",
+      "unit": "science.earth.solid.shape.interior",
       "category": "knowledge",
       "prompt": "地球の表面をおおう、かたい岩石の層（地殻とマントル最上部）を何という？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "sci_ear01_010",
+      "unit": "science.earth.solid.shape.interior",
       "category": "knowledge",
       "prompt": "地球の核のうち、液体でできているのは？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "sci_ear01_011",
+      "unit": "science.earth.solid.shape.interior",
       "category": "knowledge",
       "prompt": "海洋地殻をつくる主な岩石は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "sci_ear01_012",
+      "unit": "science.earth.solid.shape",
       "category": "calculation",
       "prompt": "ある2地点で太陽の南中高度が 7.2° ちがい、2 地点の南北の距離が 900 km だった。地球の全周は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "sci_ear01_013",
+      "unit": "science.earth.solid.shape",
       "category": "calculation",
       "prompt": "地球の半径を 6400 km とすると、赤道の長さはおよそ？（π ＝ 3.14）",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "sci_ear01_014",
+      "unit": "science.earth.solid.shape",
       "category": "calculation",
       "prompt": "地球の平均密度は約 5.5 g/cm³、地表の岩石は約 2.7 g/cm³。平均密度は地表の岩石のおよそ何倍？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "sci_ear01_015",
+      "unit": "science.earth.solid.shape",
       "category": "thinking",
       "prompt": "月食のとき、月に映る地球の影がいつも円形であることからわかることは？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "sci_ear01_016",
+      "unit": "science.earth.solid.shape",
       "category": "thinking",
       "prompt": "地球の平均密度（約 5.5 g/cm³）が地表の岩石（約 2.7 g/cm³）よりずっと大きいことから考えられることは？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "sci_ear01_017",
+      "unit": "science.earth.solid.shape",
       "category": "knowledge",
       "prompt": "地球が完全な球ではなく、赤道方向にややふくらんでいる理由は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "sci_ear01_018",
+      "unit": "science.earth.solid.shape",
       "category": "knowledge",
       "prompt": "地球の赤道半径と極半径の関係は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "sci_ear01_019",
+      "unit": "science.earth.solid.shape",
       "category": "knowledge",
       "prompt": "地球の偏平率はおよそ？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "sci_ear01_020",
+      "unit": "science.earth.solid.shape.interior",
       "category": "knowledge",
       "prompt": "地殻の厚さについて正しいものは？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "sci_ear01_021",
+      "unit": "science.earth.solid.shape.interior",
       "category": "knowledge",
       "prompt": "マントルの深さの範囲はおよそ？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "sci_ear01_022",
+      "unit": "science.earth.solid.shape",
       "category": "knowledge",
       "prompt": "地球の中心の温度はおよそ？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "sci_ear01_023",
+      "unit": "science.earth.solid.shape.interior",
       "category": "knowledge",
       "prompt": "内核が固体である理由として考えられていることは？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "sci_ear01_024",
+      "unit": "science.earth.solid.shape.interior",
       "category": "knowledge",
       "prompt": "モホロビチッチ不連続面が発見された手がかりは？",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "sci_ear01_025",
+      "unit": "science.earth.solid.shape.interior",
       "category": "knowledge",
       "prompt": "リソスフェアの下にある、やわらかい層は？",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "sci_ear01_026",
+      "unit": "science.earth.solid.shape",
       "category": "calculation",
       "prompt": "経度差がなく、緯度が 1° ちがう2地点の距離はおよそ？（地球の全周 40000 km）",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "sci_ear01_027",
+      "unit": "science.earth.solid.shape",
       "category": "calculation",
       "prompt": "同じ経線上の2地点の距離が 555 km、緯度の差が 5° のとき、地球の全周はおよそ？",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "sci_ear01_028",
+      "unit": "science.earth.solid.shape",
       "category": "calculation",
       "prompt": "地球の半径を 6400 km とすると、地球の表面積はおよそ？（π ＝ 3.14）",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "sci_ear01_029",
+      "unit": "science.earth.solid.shape.interior",
       "category": "calculation",
       "prompt": "地球の半径 6400 km に対して、地殻の厚さを 32 km とすると、半径の何 % にあたる？",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "sci_ear01_030",
+      "unit": "science.earth.solid.shape.interior",
       "category": "calculation",
       "prompt": "半径 10 cm の地球儀で、マントルの厚さ（約 2900 km）は何 cm にあたる？（地球の半径 6400 km）",
       "choices": [
@@ -396,6 +426,7 @@
     },
     {
       "id": "sci_ear01_031",
+      "unit": "science.earth.solid.shape",
       "category": "thinking",
       "prompt": "北極付近で緯度 1° の長さが赤道付近よりわずかに長いことからわかることは？",
       "choices": [
@@ -409,6 +440,7 @@
     },
     {
       "id": "sci_ear01_032",
+      "unit": "science.earth.solid.shape",
       "category": "thinking",
       "prompt": "地球内部を直接掘って調べることが難しいのに、内部構造がわかっている主な理由は？",
       "choices": [

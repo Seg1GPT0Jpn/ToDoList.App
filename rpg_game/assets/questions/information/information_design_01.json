@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "information_design_01_001",
+      "unit": "information.info.data.manage.database",
       "category": "knowledge",
       "prompt": "年齢や障害の有無などにかかわらず、だれもが使いやすいように設計する考え方は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "information_design_01_002",
+      "unit": "information.info.computer.media",
       "category": "knowledge",
       "prompt": "障害のある人や高齢者などもふくめ、情報やサービスを利用できる度合いを何という？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "information_design_01_003",
+      "unit": "information.info.programming.algorithm.complexity",
       "category": "knowledge",
       "prompt": "製品を使うときの「使いやすさ（効果・効率・満足度）」を何という？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "information_design_01_004",
+      "unit": "information.info.data.manage.database",
       "category": "knowledge",
       "prompt": "ドアの「押」の表示や平らな押し板のように、使い方を利用者に伝える手がかりを何という？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "information_design_01_005",
+      "unit": "information.info.design.design",
       "category": "knowledge",
       "prompt": "非常口のマークのように、絵で情報を伝える図記号は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "information_design_01_006",
+      "unit": "information.info.design.design.layout",
       "category": "knowledge",
       "prompt": "色覚の多様性に配慮したデザインとして適切なものは？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "information_design_01_007",
+      "unit": "information.info.design.design.layout",
       "category": "knowledge",
       "prompt": "ディスプレイで色を表すときの方式は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "information_design_01_008",
+      "unit": "information.info.design.design.layout",
       "category": "knowledge",
       "prompt": "光の三原色をすべて同じ強さで重ねると何色になる？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "information_design_01_009",
+      "unit": "information.info.data.manage.database",
       "category": "calculation",
       "prompt": "1画素を 24 ビットで表すと、表せる色の数は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "information_design_01_010",
+      "unit": "information.info.computer.media.image",
       "category": "calculation",
       "prompt": "1920 × 1080 画素、1画素 24 ビットの画像のデータ量はおよそ？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "information_design_01_011",
+      "unit": "information.info.computer.media.sound",
       "category": "calculation",
       "prompt": "サンプリング周波数 44.1kHz、量子化ビット数 16、ステレオの音声 1 秒のデータ量はおよそ？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "information_design_01_012",
+      "unit": "information.info.computer.media.sound",
       "category": "knowledge",
       "prompt": "アナログの音をデジタル化する手順として正しいものは？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "information_design_01_013",
+      "unit": "information.info.computer.media.compress",
       "category": "knowledge",
       "prompt": "可逆圧縮の画像形式は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "information_design_01_014",
+      "unit": "information.info.computer.media.compress",
       "category": "knowledge",
       "prompt": "写真の保存によく使われる、非可逆圧縮の画像形式は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "information_design_01_015",
+      "unit": "information.info.computer.media.compress",
       "category": "calculation",
       "prompt": "「AAAABBBCCD」を「文字と連続する個数」で表す（ランレングス圧縮）と何文字になる？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "information_design_01_016",
+      "unit": "information.info.computer.media.image",
       "category": "knowledge",
       "prompt": "ベクタ形式の画像の特徴は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "information_design_01_017",
+      "unit": "information.info.computer.media.image",
       "category": "knowledge",
       "prompt": "ラスタ形式（ビットマップ）の画像の特徴は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "information_design_01_018",
+      "unit": "information.info.network.protocol.tcpip",
       "category": "knowledge",
       "prompt": "情報を整理する観点「LATCH」に含まれないものは？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "information_design_01_019",
+      "unit": "information.info.data.manage.database",
       "category": "knowledge",
       "prompt": "路線図のように、不要な情報を省いて本質だけを表すことを何という？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "information_design_01_020",
+      "unit": "information.info.data.analysis.visualize",
       "category": "knowledge",
       "prompt": "数値データをグラフや図にして見てわかる形にすることを何という？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "information_design_01_021",
+      "unit": "information.info.data.analysis.visualize",
       "category": "knowledge",
       "prompt": "全体に対する割合を示すのに最も向いているグラフは？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "information_design_01_022",
+      "unit": "information.info.data.analysis.visualize",
       "category": "knowledge",
       "prompt": "気温の月ごとの移り変わりを示すのに最も向いているグラフは？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "information_design_01_023",
+      "unit": "information.info.design.design.layout",
       "category": "knowledge",
       "prompt": "Web ページの文書の構造（見出し・段落など）を記述する言語は？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "information_design_01_024",
+      "unit": "information.info.design.design.layout",
       "category": "knowledge",
       "prompt": "Web ページの文字の色や配置などの見た目を指定する言語は？",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "information_design_01_025",
+      "unit": "information.info.society.moral.ip",
       "category": "knowledge",
       "prompt": "他人の著作物を「引用」するときの条件として正しいものは？",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "information_design_01_026",
+      "unit": "information.info.society.moral.ip",
       "category": "knowledge",
       "prompt": "日本の著作権（財産権）の保護期間は、原則として著作者の死後何年まで？",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "information_design_01_027",
+      "unit": "information.info.society.moral.ip",
       "category": "knowledge",
       "prompt": "産業財産権に含まれないものは？",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "information_design_01_028",
+      "unit": "information.info.data.manage.database",
       "category": "knowledge",
       "prompt": "クリエイティブ・コモンズ・ライセンスの「BY（表示）」の意味は？",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "information_design_01_029",
+      "unit": "information.info.design.design",
       "category": "knowledge",
       "prompt": "情報を人に伝えても、自分の手元からなくならない性質を何という？",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "information_design_01_030",
+      "unit": "information.info.computer.digital.binary",
       "category": "calculation",
       "prompt": "1バイト（8ビット）で表せる値は何通り？",
       "choices": [

@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_m214_001",
+      "unit": "math.m2.explog.log.property",
       "category": "calculation",
       "prompt": "log₂12−log₂3 の値は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_m214_002",
+      "unit": "math.m2.explog.log.property",
       "category": "calculation",
       "prompt": "log₄8 の値は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_m214_003",
+      "unit": "math.m2.explog.exp.equation",
       "category": "calculation",
       "prompt": "不等式 2ˣ>8 を解くと？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_m214_004",
+      "unit": "math.m2.explog.exp.equation",
       "category": "calculation",
       "prompt": "不等式 log₂x<3 を解くと？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_m214_005",
+      "unit": "math.m2.explog.exp.equation",
       "category": "calculation",
       "prompt": "方程式 4ˣ−2^(x+1)−8=0 を解くと？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_m214_006",
+      "unit": "math.m2.explog.log.common",
       "category": "calculation",
       "prompt": "log₁₀2=0.3010 として、2³⁰ は何桁の数？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_m214_007",
+      "unit": "math.m2.explog.log.property",
       "category": "calculation",
       "prompt": "log₂3×log₃4 の値は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_m214_008",
+      "unit": "math.m2.explog.exp.function",
       "category": "knowledge",
       "prompt": "y=2ˣ と y=log₂x のグラフの関係は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_m214_009",
+      "unit": "math.m2.explog.log",
       "category": "calculation",
       "prompt": "3^(2/3)×3^(4/3) の値は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_m214_010",
+      "unit": "math.m2.explog.log.common",
       "category": "thinking",
       "prompt": "大きな数の桁数を求めるのに常用対数を使う理由は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_m214_011",
+      "unit": "math.m2.explog.log.property",
       "category": "calculation",
       "prompt": "log₃18−log₃2 の値は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_m214_012",
+      "unit": "math.m2.explog.log.property",
       "category": "calculation",
       "prompt": "log₉27 の値は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_m214_013",
+      "unit": "math.m2.explog.exp.equation",
       "category": "calculation",
       "prompt": "不等式 3ˣ<9 を解くと？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_m214_014",
+      "unit": "math.m2.explog.exp.equation",
       "category": "calculation",
       "prompt": "不等式 log₃x>2 を解くと？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_m214_015",
+      "unit": "math.m2.explog.exp.equation",
       "category": "calculation",
       "prompt": "方程式 9ˣ−4·3ˣ+3=0 を解くと？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_m214_016",
+      "unit": "math.m2.explog.log.common",
       "category": "calculation",
       "prompt": "log₁₀3=0.4771 として、3¹⁰ は何桁の数？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_m214_017",
+      "unit": "math.m2.explog.log.property",
       "category": "calculation",
       "prompt": "log₂5×log₅8 の値は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_m214_018",
+      "unit": "math.m2.explog.exp.function",
       "category": "calculation",
       "prompt": "y=3ˣ のグラフが必ず通る点は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_m214_019",
+      "unit": "math.m2.explog.log",
       "category": "calculation",
       "prompt": "2^(1/2)×2^(3/2) の値は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_m214_020",
+      "unit": "math.m2.explog.log.function",
       "category": "knowledge",
       "prompt": "真数条件とは何か？",
       "choices": [

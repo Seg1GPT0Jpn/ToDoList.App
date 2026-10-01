@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_ma06_001",
+      "unit": "math.ma.prob.probability.basic",
       "category": "calculation",
       "prompt": "工場 A で全体の60%、B で40%を作る。不良率は A が1%、B が2%。不良品を1個選んだとき、それが B 製である確率は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_ma06_002",
+      "unit": "math.ma.prob.probability.basic",
       "category": "calculation",
       "prompt": "コインを5回投げて、表が4回以上出る確率は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_ma06_003",
+      "unit": "math.ma.prob.probability.basic",
       "category": "calculation",
       "prompt": "さいころを3個投げて、出た目の最大値が4である確率は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_ma06_004",
+      "unit": "math.ma.prob.probability.basic",
       "category": "calculation",
       "prompt": "3人が1回じゃんけんをして、あいこになる確率は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_ma06_005",
+      "unit": "math.ma.prob.probability.basic",
       "category": "calculation",
       "prompt": "赤玉4個・白玉2個から同時に3個取り出すとき、赤2個・白1個である確率は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_ma06_006",
+      "unit": "math.ma.prob.probability.basic",
       "category": "calculation",
       "prompt": "数直線上の点が、コインの表で +1、裏で −1 動く。4回投げた後に原点にいる確率は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_ma06_007",
+      "unit": "math.ma.prob.probability.expected",
       "category": "calculation",
       "prompt": "2個のさいころを投げたときの、目の和の期待値は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_ma06_008",
+      "unit": "math.ma.prob.probability.basic",
       "category": "calculation",
       "prompt": "さいころを2回投げて、目の積が偶数になる確率は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_ma06_009",
+      "unit": "math.ma.prob.probability.basic",
       "category": "calculation",
       "prompt": "2人が1回じゃんけんをして、A が勝つ確率は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_ma06_010",
+      "unit": "math.ma.prob.probability.complement",
       "category": "thinking",
       "prompt": "「少なくとも1回〜」の確率で余事象を使う利点は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_ma06_011",
+      "unit": "math.ma.prob.probability.basic",
       "category": "calculation",
       "prompt": "ある病気の人は全体の1%。検査で陽性になるのは、病気の人の90%、病気でない人の5%。陽性の人が病気である確率は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_ma06_012",
+      "unit": "math.ma.prob.probability.basic",
       "category": "calculation",
       "prompt": "さいころを3回投げて、出た目の最大値が5である確率は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_ma06_013",
+      "unit": "math.ma.prob.probability.basic",
       "category": "calculation",
       "prompt": "コインを6回投げて、表がちょうど3回出る確率は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_ma06_014",
+      "unit": "math.ma.prob.probability.basic",
       "category": "calculation",
       "prompt": "赤玉2個・白玉2個の袋から1個ずつ取り出す（戻さない）。3回目に初めて赤玉が出る確率は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_ma06_015",
+      "unit": "math.ma.prob.probability.basic",
       "category": "calculation",
       "prompt": "さいころを n 回投げて1回も6が出ない確率が 1/2 より小さくなる、最小の n は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_ma06_016",
+      "unit": "math.ma.prob.probability.basic",
       "category": "calculation",
       "prompt": "数直線上の点が、コインの表で +2、裏で −1 動く。3回投げた後に位置が3である確率は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_ma06_017",
+      "unit": "math.ma.prob.probability.repeated",
       "category": "calculation",
       "prompt": "さいころを2回投げたときの、出た目の大きい方（同じならその目）の期待値は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_ma06_018",
+      "unit": "math.ma.prob.probability.basic",
       "category": "calculation",
       "prompt": "3人が1回じゃんけんをして、1人だけが勝つ確率は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_ma06_019",
+      "unit": "math.ma.prob.probability.basic",
       "category": "calculation",
       "prompt": "3人が1回じゃんけんをして、2人が勝つ確率は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_ma06_020",
+      "unit": "math.ma.prob.probability.conditional",
       "category": "thinking",
       "prompt": "条件付き確率 P_A(B) と、P(A∩B) のちがいは？",
       "choices": [

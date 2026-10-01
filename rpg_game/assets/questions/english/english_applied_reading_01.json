@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "en_app01_001",
+      "unit": "english.eng.speaking.conversation.function",
       "category": "reading",
       "prompt": "（リスニング対話形式）Where will the speakers meet?",
       "sentence": "M: Shall we meet at the station ticket gate at six?\nW: The gate is always crowded. Why don't we meet at the coffee shop next to the bookstore instead?\nM: Sounds good. See you there.",
@@ -20,6 +21,7 @@
     },
     {
       "id": "en_app01_002",
+      "unit": "english.eng.listening.listening",
       "category": "reading",
       "prompt": "（リスニングアナウンス形式）What should passengers for Denver do?",
       "sentence": "[Airport announcement] Attention, passengers for Flight 302 bound for Denver. Due to a mechanical check, the departure gate has been changed from Gate 4 to Gate 12. Please proceed to Gate 12 immediately.",
@@ -34,6 +36,7 @@
     },
     {
       "id": "en_app01_003",
+      "unit": "english.eng.reading.practical.chart",
       "category": "reading",
       "prompt": "（図表読解）Which fruit had the highest sales in 2025?",
       "sentence": "[Table: Sales Units (2025)]\nApples: 1,200\nBananas: 2,500\nOranges: 1,800\nGrapes: 950",
@@ -48,6 +51,7 @@
     },
     {
       "id": "en_app01_004",
+      "unit": "english.eng.reading.practical.chart",
       "category": "reading",
       "prompt": "（図表読解）Which ticket type is the most cost-effective for a visitor staying 4 days?",
       "sentence": "[Ticket Options]\nSingle Day Pass: $30\n3-Day Pass: $75\n5-Day Pass: $100",
@@ -62,6 +66,7 @@
     },
     {
       "id": "en_app01_005",
+      "unit": "english.eng.reading.practical.multiple",
       "category": "reading",
       "prompt": "（複数英文読解）Why did Alex write the email to Brenda?",
       "sentence": "[Document 1: Notice]\nAnnual picnic scheduled for Saturday is postponed to Sunday due to rain.\n[Document 2: Email from Alex to Brenda]\nHi Brenda, I saw the picnic notice. Since Sunday is my shift at work, I won't be able to make it. Could you take some photos for me?",

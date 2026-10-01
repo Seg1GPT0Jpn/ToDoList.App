@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "sci_phy05_001",
+      "unit": "science.physics.mechanics.energy.work",
       "category": "knowledge",
       "prompt": "仕事の単位は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "sci_phy05_002",
+      "unit": "science.physics.mechanics.energy.work",
       "category": "knowledge",
       "prompt": "仕事率の単位は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "sci_phy05_003",
+      "unit": "science.physics.mechanics.energy.kinetic",
       "category": "knowledge",
       "prompt": "質量 m、速さ v の物体の運動エネルギーは？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "sci_phy05_004",
+      "unit": "science.physics.mechanics.energy.potential",
       "category": "knowledge",
       "prompt": "基準面から高さ h にある質量 m の物体の、重力による位置エネルギーは？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "sci_phy05_005",
+      "unit": "science.physics.mechanics.energy.potential",
       "category": "knowledge",
       "prompt": "ばね定数 k のばねを x だけ伸ばしたときの弾性エネルギーは？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "sci_phy05_006",
+      "unit": "science.physics.mechanics.energy.conservation",
       "category": "knowledge",
       "prompt": "力学的エネルギー保存の法則が成り立つ条件は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "sci_phy05_007",
+      "unit": "science.physics.mechanics.energy.work",
       "category": "knowledge",
       "prompt": "物体の移動の向きと力の向きが垂直なとき、その力がする仕事は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "sci_phy05_008",
+      "unit": "science.physics.mechanics.energy.conservation",
       "category": "knowledge",
       "prompt": "摩擦のある面を物体がすべると、力学的エネルギーはどうなる？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "sci_phy05_009",
+      "unit": "science.physics.mechanics.energy.work",
       "category": "calculation",
       "prompt": "10 N の力で物体を力の向きに 3.0 m 動かした。仕事は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "sci_phy05_010",
+      "unit": "science.physics.mechanics.energy.kinetic",
       "category": "calculation",
       "prompt": "質量 2.0 kg の物体が 3.0 m/s で動いている。運動エネルギーは？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "sci_phy05_011",
+      "unit": "science.physics.mechanics.energy.potential",
       "category": "calculation",
       "prompt": "質量 2.0 kg の物体を 5.0 m 持ち上げた。位置エネルギーの増加は？（g ＝ 9.8 m/s²）",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "sci_phy05_012",
+      "unit": "science.physics.mechanics.energy.work",
       "category": "calculation",
       "prompt": "600 J の仕事を 20 s でした。仕事率は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "sci_phy05_013",
+      "unit": "science.physics.mechanics.energy",
       "category": "calculation",
       "prompt": "高さ 5.0 m から静かに落とした物体の、床に着く直前の速さはおよそ？（g ＝ 9.8 m/s²、空気抵抗なし）",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "sci_phy05_014",
+      "unit": "science.physics.mechanics.energy.potential",
       "category": "calculation",
       "prompt": "ばね定数 100 N/m のばねを 0.10 m 縮めた。弾性エネルギーは？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "sci_phy05_015",
+      "unit": "science.physics.mechanics.energy.kinetic",
       "category": "thinking",
       "prompt": "振り子（空気抵抗なし）で、おもりの速さが最大になるのはどこ？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "sci_phy05_016",
+      "unit": "science.physics.mechanics.energy.conservation",
       "category": "thinking",
       "prompt": "摩擦のないジェットコースターが、出発点と同じ高さの地点を通るときの速さは？（出発時の速さは 0）",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "sci_phy05_017",
+      "unit": "science.physics.mechanics.energy.work",
       "category": "knowledge",
       "prompt": "力 F で物体を力の向きに距離 x 動かしたときの仕事は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "sci_phy05_018",
+      "unit": "science.physics.mechanics.energy.work",
       "category": "knowledge",
       "prompt": "力の向きと移動の向きが逆のとき、その力がする仕事は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "sci_phy05_019",
+      "unit": "science.physics.mechanics.energy.work",
       "category": "knowledge",
       "prompt": "仕事の原理とは？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "sci_phy05_020",
+      "unit": "science.physics.mechanics.energy",
       "category": "knowledge",
       "prompt": "1 W（ワット）は？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "sci_phy05_021",
+      "unit": "science.physics.mechanics.energy.work",
       "category": "knowledge",
       "prompt": "物体の運動エネルギーの変化と仕事の関係は？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "sci_phy05_022",
+      "unit": "science.physics.mechanics.energy.work",
       "category": "knowledge",
       "prompt": "重力のように、仕事が途中の道すじによらない力を何という？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "sci_phy05_023",
+      "unit": "science.physics.mechanics.energy.work",
       "category": "calculation",
       "prompt": "20 N の力で物体を力の向きに 5.0 m 動かした。仕事は？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "sci_phy05_024",
+      "unit": "science.physics.mechanics.energy.kinetic",
       "category": "calculation",
       "prompt": "質量 4.0 kg、速さ 5.0 m/s の物体の運動エネルギーは？",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "sci_phy05_025",
+      "unit": "science.physics.mechanics.energy.potential",
       "category": "calculation",
       "prompt": "質量 3.0 kg の物体が高さ 10 m にある。重力による位置エネルギーは？（g ＝ 9.8 m/s²）",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "sci_phy05_026",
+      "unit": "science.physics.mechanics.energy.work",
       "category": "calculation",
       "prompt": "1500 J の仕事を 30 s でした。仕事率は？",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "sci_phy05_027",
+      "unit": "science.physics.mechanics.energy",
       "category": "calculation",
       "prompt": "高さ 20 m から静かに落とした物体の、地面に着く直前の速さは？（g ＝ 9.8 m/s²、空気抵抗なし）",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "sci_phy05_028",
+      "unit": "science.physics.mechanics.energy.potential",
       "category": "calculation",
       "prompt": "ばね定数 200 N/m のばねを 0.20 m 伸ばした。弾性エネルギーは？",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "sci_phy05_029",
+      "unit": "science.physics.mechanics.energy",
       "category": "calculation",
       "prompt": "2.0 m/s で動く 1.0 kg の物体が、ばね定数 100 N/m のばねを押し縮めた。最大の縮みは？（摩擦なし）",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "sci_phy05_030",
+      "unit": "science.physics.mechanics.energy.work",
       "category": "calculation",
       "prompt": "質量 2.0 kg の物体が 10 m/s から 4.0 m/s に減速した。物体がされた仕事は？",
       "choices": [
@@ -396,6 +426,7 @@
     },
     {
       "id": "sci_phy05_031",
+      "unit": "science.physics.mechanics.energy",
       "category": "thinking",
       "prompt": "振り子のおもりが最高点にあるとき、エネルギーについて正しいものは？",
       "choices": [
@@ -409,6 +440,7 @@
     },
     {
       "id": "sci_phy05_032",
+      "unit": "science.physics.mechanics.energy.work",
       "category": "thinking",
       "prompt": "同じ高さまで荷物を運ぶとき、斜面を使っても仕事が減らない理由は？",
       "choices": [

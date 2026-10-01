@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "information_network_01_001",
+      "unit": "information.info.network.basic",
       "category": "calculation",
       "prompt": "100Mbps の回線で 500MB のファイルを送るのにかかる時間は？（1B = 8bit、効率 100%）",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "information_network_01_002",
+      "unit": "information.info.network.basic",
       "category": "calculation",
       "prompt": "1Gbps の回線で 2GB のデータを送るのにかかる時間は？（効率 100%）",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "information_network_01_003",
+      "unit": "information.info.network.basic",
       "category": "calculation",
       "prompt": "100Mbps の回線（伝送効率 80%）で 1000MB のデータを送るのにかかる時間は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "information_network_01_004",
+      "unit": "information.info.network.basic.address",
       "category": "calculation",
       "prompt": "IPv4 アドレスは何ビット？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "information_network_01_005",
+      "unit": "information.info.network.basic.address",
       "category": "calculation",
       "prompt": "IPv6 アドレスは何ビット？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "information_network_01_006",
+      "unit": "information.info.network.basic.address",
       "category": "knowledge",
       "prompt": "IPv4 で表せるアドレスの総数は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "information_network_01_007",
+      "unit": "information.info.network.basic.address",
       "category": "calculation",
       "prompt": "サブネットマスク 255.255.255.0 のネットワークで、機器に割り当てられるアドレスの数は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "information_network_01_008",
+      "unit": "information.info.network.basic",
       "category": "calculation",
       "prompt": "/26 のネットワークで、機器に割り当てられるアドレスの数は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "information_network_01_009",
+      "unit": "information.info.network.basic.address",
       "category": "knowledge",
       "prompt": "ドメイン名と IP アドレスを対応させるしくみは？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "information_network_01_010",
+      "unit": "information.info.network.basic.address",
       "category": "knowledge",
       "prompt": "ネットワークにつないだ機器に IP アドレスを自動で割り当てるしくみは？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "information_network_01_011",
+      "unit": "information.info.network.protocol.web",
       "category": "knowledge",
       "prompt": "電子メールを送信するときに使うプロトコルは？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "information_network_01_012",
+      "unit": "information.info.network.crypto.cipher",
       "category": "knowledge",
       "prompt": "Web の通信を暗号化するときに使われるものは？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "information_network_01_013",
+      "unit": "information.info.network.protocol.tcpip",
       "category": "knowledge",
       "prompt": "TCP/IP の4階層モデルで、TCP が属する層は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "information_network_01_014",
+      "unit": "information.info.network.protocol.tcpip",
       "category": "knowledge",
       "prompt": "パケット交換方式の利点は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "information_network_01_015",
+      "unit": "information.info.network.basic.structure",
       "category": "knowledge",
       "prompt": "ルータの主な役割は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "information_network_01_016",
+      "unit": "information.info.network.crypto.cipher",
       "category": "knowledge",
       "prompt": "共通鍵暗号方式の課題は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "information_network_01_017",
+      "unit": "information.info.network.crypto.cipher",
       "category": "calculation",
       "prompt": "10人が互いに共通鍵暗号でやりとりするとき、必要な鍵の数は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "information_network_01_018",
+      "unit": "information.info.network.crypto.cipher",
       "category": "calculation",
       "prompt": "10人が公開鍵暗号を使うとき、必要な鍵の数は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "information_network_01_019",
+      "unit": "information.info.network.crypto.cipher",
       "category": "knowledge",
       "prompt": "公開鍵暗号で A さんに暗号文を送るとき、何で暗号化する？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "information_network_01_020",
+      "unit": "information.info.network.crypto.signature",
       "category": "knowledge",
       "prompt": "デジタル署名で確かめられることは？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "information_network_01_021",
+      "unit": "information.info.network.crypto.signature",
       "category": "knowledge",
       "prompt": "ハッシュ関数の性質として正しいものは？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "information_network_01_022",
+      "unit": "information.info.network.basic",
       "category": "calculation",
       "prompt": "英小文字（26種類）4文字のパスワードは何通り？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "information_network_01_023",
+      "unit": "information.info.network.basic",
       "category": "calculation",
       "prompt": "数字4桁の暗証番号は何通り？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "information_network_01_024",
+      "unit": "information.info.network.protocol.error",
       "category": "calculation",
       "prompt": "7ビットのデータ 1101001 に偶数パリティのビットを付ける。付けるビットは？",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "information_network_01_025",
+      "unit": "information.info.network.protocol.web",
       "category": "knowledge",
       "prompt": "本物そっくりの偽サイトに誘導し、ID やパスワードを入力させて盗む手口は？",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "information_network_01_026",
+      "unit": "information.info.network.basic",
       "category": "knowledge",
       "prompt": "人の心理や行動のすきをついて、パスワードなどを聞き出す手口は？",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "information_network_01_027",
+      "unit": "information.info.network.basic",
       "category": "knowledge",
       "prompt": "ファイアウォールの役割は？",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "information_network_01_028",
+      "unit": "information.info.network.basic",
       "category": "knowledge",
       "prompt": "多要素認証の例として正しいものは？",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "information_network_01_029",
+      "unit": "information.info.network.crypto.cipher",
       "category": "knowledge",
       "prompt": "ファイルを勝手に暗号化し、元に戻す代わりに金銭を要求する不正プログラムは？",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "information_network_01_030",
+      "unit": "information.info.network.basic",
       "category": "knowledge",
       "prompt": "情報セキュリティの3要素のうち「必要なときにいつでも使える」ことは？",
       "choices": [

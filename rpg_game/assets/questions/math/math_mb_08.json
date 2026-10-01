@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_mb08_001",
+      "unit": "math.mb.stat.random.normal",
       "category": "knowledge",
       "prompt": "正規分布 N(m, σ²) に従う X を標準化した Z は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_mb08_002",
+      "unit": "math.mb.stat.random",
       "category": "calculation",
       "prompt": "N(50, 10²) に従う X で、X=70 を標準化すると？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_mb08_003",
+      "unit": "math.mb.stat.random.normal",
       "category": "calculation",
       "prompt": "標準正規分布で P(−1.96≦Z≦1.96) は約いくつ？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_mb08_004",
+      "unit": "math.mb.stat.random",
       "category": "calculation",
       "prompt": "P(0≦Z≦1)=0.3413 のとき、P(Z≦1) は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_mb08_005",
+      "unit": "math.mb.stat.infer.sample",
       "category": "calculation",
       "prompt": "母標準偏差10の母集団から大きさ100の標本をとるとき、標本平均の標準偏差は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_mb08_006",
+      "unit": "math.mb.stat.infer.sample",
       "category": "calculation",
       "prompt": "標本平均60、母標準偏差10、標本の大きさ100のとき、母平均の信頼度95%の信頼区間は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_mb08_007",
+      "unit": "math.mb.stat.random.variable",
       "category": "knowledge",
       "prompt": "確率変数 X、Y について、E(X+Y) は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_mb08_008",
+      "unit": "math.mb.stat.random.variable",
       "category": "calculation",
       "prompt": "X と Y が独立で V(X)=4、V(Y)=9 のとき、V(X+Y) は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_mb08_009",
+      "unit": "math.mb.stat.random.binomial",
       "category": "calculation",
       "prompt": "二項分布 B(400, 1/2) を近似する正規分布は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_mb08_010",
+      "unit": "math.mb.stat.infer.sample",
       "category": "thinking",
       "prompt": "標本の大きさ n を大きくすると信頼区間の幅が狭くなる理由は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_mb08_011",
+      "unit": "math.mb.stat.random.normal",
       "category": "calculation",
       "prompt": "N(60, 5²) に従う X で、X=70 を標準化すると？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_mb08_012",
+      "unit": "math.mb.stat.random.normal",
       "category": "calculation",
       "prompt": "標準正規分布で P(Z≧0) は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_mb08_013",
+      "unit": "math.mb.stat.random",
       "category": "calculation",
       "prompt": "P(0≦Z≦2)=0.4772 のとき、P(Z≧2) は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_mb08_014",
+      "unit": "math.mb.stat.random",
       "category": "calculation",
       "prompt": "P(0≦Z≦1)=0.3413 のとき、P(−1≦Z≦1) は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_mb08_015",
+      "unit": "math.mb.stat.infer.sample",
       "category": "calculation",
       "prompt": "母標準偏差20の母集団から大きさ400の標本をとるとき、標本平均の標準偏差は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_mb08_016",
+      "unit": "math.mb.stat.infer.sample",
       "category": "calculation",
       "prompt": "母平均 m、母標準偏差 σ の母集団から大きさ n の標本をとるとき、標本平均の期待値は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_mb08_017",
+      "unit": "math.mb.stat.random.variable",
       "category": "calculation",
       "prompt": "X と Y が独立で E(X)=2、E(Y)=3 のとき、E(XY) は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_mb08_018",
+      "unit": "math.mb.stat.random.variable",
       "category": "calculation",
       "prompt": "X と Y が独立で V(X)=1、V(Y)=4 のとき、V(X−Y) は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_mb08_019",
+      "unit": "math.mb.stat.random.normal",
       "category": "calculation",
       "prompt": "B(100, 1/2) を近似する正規分布は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_mb08_020",
+      "unit": "math.mb.stat.infer.estimate",
       "category": "thinking",
       "prompt": "母平均の信頼度95%の信頼区間の正しい意味は？",
       "choices": [

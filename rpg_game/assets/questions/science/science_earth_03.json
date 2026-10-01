@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "sci_ear03_001",
+      "unit": "science.earth.solid.quake.mechanism",
       "category": "knowledge",
       "prompt": "地下で地震が発生した場所を何という？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "sci_ear03_002",
+      "unit": "science.earth.solid.quake.wave",
       "category": "knowledge",
       "prompt": "P 波について正しいものは？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "sci_ear03_003",
+      "unit": "science.earth.solid.quake",
       "category": "knowledge",
       "prompt": "S 波について正しいものは？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "sci_ear03_004",
+      "unit": "science.earth.solid.quake.mechanism",
       "category": "knowledge",
       "prompt": "P 波が届いてから S 波が届くまでの小さなゆれを何という？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "sci_ear03_005",
+      "unit": "science.earth.solid.quake.scale",
       "category": "knowledge",
       "prompt": "地震そのものの規模（エネルギーの大きさ）を表すものは？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "sci_ear03_006",
+      "unit": "science.earth.solid.quake.scale",
       "category": "knowledge",
       "prompt": "マグニチュードが 1 大きくなると、地震のエネルギーはおよそ何倍？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "sci_ear03_007",
+      "unit": "science.earth.solid.quake.scale",
       "category": "knowledge",
       "prompt": "日本の震度階級はいくつに分かれている？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "sci_ear03_008",
+      "unit": "science.earth.solid.quake.mechanism",
       "category": "knowledge",
       "prompt": "地層を左右から押す力（圧縮）によってできる断層は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "sci_ear03_009",
+      "unit": "science.earth.solid.quake.mechanism",
       "category": "knowledge",
       "prompt": "最近の数十万年間にくり返し活動し、今後も活動する可能性がある断層を何という？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "sci_ear03_010",
+      "unit": "science.earth.solid.quake",
       "category": "knowledge",
       "prompt": "地震のゆれで、地下水をふくむ砂の地盤が液体のようになる現象は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "sci_ear03_011",
+      "unit": "science.earth.solid.quake.wave",
       "category": "calculation",
       "prompt": "初期微動継続時間が 10 秒だった。大森公式の比例定数を 8 km/s とすると、震源までの距離は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "sci_ear03_012",
+      "unit": "science.earth.solid.quake.mechanism",
       "category": "calculation",
       "prompt": "P 波の速さ 6 km/s、S 波の速さ 3 km/s のとき、震源から 60 km の地点の初期微動継続時間は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "sci_ear03_013",
+      "unit": "science.earth.solid.quake.scale",
       "category": "calculation",
       "prompt": "マグニチュードが 2 大きい地震のエネルギーは、およそ何倍？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "sci_ear03_014",
+      "unit": "science.earth.solid.quake.mechanism",
       "category": "calculation",
       "prompt": "P 波の速さ 6 km/s で、震源から 90 km の地点に P 波が届くまでの時間は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "sci_ear03_015",
+      "unit": "science.earth.solid.quake.mechanism",
       "category": "thinking",
       "prompt": "同じ地震で、A 地点の初期微動継続時間は 5 秒、B 地点は 15 秒だった。震源に近いのは？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "sci_ear03_016",
+      "unit": "science.earth.solid.quake.disaster",
       "category": "thinking",
       "prompt": "緊急地震速報が、強いゆれが来る前に出せるのはなぜ？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "sci_ear03_017",
+      "unit": "science.earth.solid.quake.mechanism",
       "category": "knowledge",
       "prompt": "震源の真上の地表の点を何という？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "sci_ear03_018",
+      "unit": "science.earth.solid.quake.wave",
       "category": "knowledge",
       "prompt": "主要動を起こす地震波は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "sci_ear03_019",
+      "unit": "science.earth.solid.quake",
       "category": "knowledge",
       "prompt": "P 波と S 波で、速く伝わるのは？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "sci_ear03_020",
+      "unit": "science.earth.solid.quake.mechanism",
       "category": "knowledge",
       "prompt": "上盤が断層面にそってずり上がる断層は？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "sci_ear03_021",
+      "unit": "science.earth.solid.quake",
       "category": "knowledge",
       "prompt": "海底の地震で海面が持ち上げられて生じる波は？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "sci_ear03_022",
+      "unit": "science.earth.solid.quake.mechanism",
       "category": "knowledge",
       "prompt": "余震とは？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "sci_ear03_023",
+      "unit": "science.earth.solid.quake.scale",
       "category": "knowledge",
       "prompt": "震度は何を表す？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "sci_ear03_024",
+      "unit": "science.earth.solid.quake.mechanism",
       "category": "knowledge",
       "prompt": "プレート境界で起こる巨大地震の例は？",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "sci_ear03_025",
+      "unit": "science.earth.solid.quake.wave",
       "category": "calculation",
       "prompt": "初期微動継続時間が 8 秒のとき、震源距離は？（大森公式 D ＝ 8t）",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "sci_ear03_026",
+      "unit": "science.earth.solid.quake.mechanism",
       "category": "calculation",
       "prompt": "P 波の速さ 7 km/s、震源距離 140 km。P 波が届くまでの時間は？",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "sci_ear03_027",
+      "unit": "science.earth.solid.quake.mechanism",
       "category": "calculation",
       "prompt": "P 波の速さ 8 km/s、S 波の速さ 4 km/s とする。初期微動継続時間が 5 秒の地点の震源距離は？",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "sci_ear03_028",
+      "unit": "science.earth.solid.quake.scale",
       "category": "calculation",
       "prompt": "マグニチュードが 3 大きいと、地震のエネルギーはおよそ何倍？",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "sci_ear03_029",
+      "unit": "science.earth.solid.quake.scale",
       "category": "calculation",
       "prompt": "マグニチュード 7 の地震は、マグニチュード 5 の地震の約何倍のエネルギー？",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "sci_ear03_030",
+      "unit": "science.earth.solid.quake.mechanism",
       "category": "calculation",
       "prompt": "A 地点の初期微動継続時間が 4 秒、B 地点が 12 秒。震源距離は B が A の何倍？",
       "choices": [
@@ -396,6 +426,7 @@
     },
     {
       "id": "sci_ear03_031",
+      "unit": "science.earth.solid.quake.mechanism",
       "category": "thinking",
       "prompt": "同じ規模の地震でも、震源が浅いほど被害が大きくなりやすい理由は？",
       "choices": [
@@ -409,6 +440,7 @@
     },
     {
       "id": "sci_ear03_032",
+      "unit": "science.earth.solid.quake.disaster",
       "category": "thinking",
       "prompt": "海岸で強いゆれを感じたときにとるべき行動は？",
       "choices": [

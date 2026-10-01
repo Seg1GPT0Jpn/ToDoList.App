@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "sci_bio14_001",
+      "unit": "science.biology.gene.development",
       "category": "knowledge",
       "prompt": "減数分裂の特徴は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "sci_bio14_002",
+      "unit": "science.biology.gene.development.inheritance",
       "category": "knowledge",
       "prompt": "減数分裂で、相同染色体の間で一部が交換されることを何という？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "sci_bio14_003",
+      "unit": "science.biology.gene.development.inheritance",
       "category": "knowledge",
       "prompt": "同じ染色体上にある遺伝子がいっしょに行動することを何という？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "sci_bio14_004",
+      "unit": "science.biology.gene.development.inheritance",
       "category": "knowledge",
       "prompt": "性染色体上の遺伝子による遺伝を何という？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "sci_bio14_005",
+      "unit": "science.biology.gene.development.animal",
       "category": "knowledge",
       "prompt": "受精卵のはじめのころの体細胞分裂で、細胞が大きくならずに分裂をくり返すことを何という？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "sci_bio14_006",
+      "unit": "science.biology.gene.development.animal",
       "category": "knowledge",
       "prompt": "外胚葉から分化するものは？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "sci_bio14_007",
+      "unit": "science.biology.gene.development.animal",
       "category": "knowledge",
       "prompt": "胚のある部分が、隣接する部分にはたらきかけて分化の方向を決めることを何という？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "sci_bio14_008",
+      "unit": "science.biology.gene.development.animal",
       "category": "knowledge",
       "prompt": "イモリの胚で形成体としてはたらく部分は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "sci_bio14_009",
+      "unit": "science.biology.gene.development.inheritance",
       "category": "knowledge",
       "prompt": "ショウジョウバエで、触角が脚に変わるなど、からだの部分の形が別の部分の形に置きかわる突然変異を起こす遺伝子は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "sci_bio14_010",
+      "unit": "science.biology.gene.development.animal",
       "category": "knowledge",
       "prompt": "発生の過程などで、プログラムされて起こる細胞の死を何という？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "sci_bio14_011",
+      "unit": "science.biology.gene.development.inheritance",
       "category": "knowledge",
       "prompt": "体細胞に数種類の遺伝子を導入してつくられた、多能性をもつ幹細胞は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "sci_bio14_012",
+      "unit": "science.biology.gene.development.inheritance",
       "category": "calculation",
       "prompt": "Aa と Aa をかけ合わせた子の表現型の比（顕性：潜性）は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "sci_bio14_013",
+      "unit": "science.biology.gene.development.inheritance",
       "category": "calculation",
       "prompt": "AaBb どうしをかけ合わせた（2 つの遺伝子は独立）。子のうち aabb の割合は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "sci_bio14_014",
+      "unit": "science.biology.gene.development.inheritance",
       "category": "calculation",
       "prompt": "検定交雑で、子の表現型が [AB] 45、[ab] 45、[Ab] 5、[aB] 5 となった。組換え価は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "sci_bio14_015",
+      "unit": "science.biology.gene.development",
       "category": "calculation",
       "prompt": "2n ＝ 8 の生物で、乗換えがないとすると、染色体の組み合わせがちがう配偶子は何通りできる？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "sci_bio14_016",
+      "unit": "science.biology.gene.development.animal",
       "category": "thinking",
       "prompt": "イモリの原口背唇部を別の胚の腹側に移植したら、2 つ目の胚（二次胚）ができた。わかることは？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "sci_bio14_017",
+      "unit": "science.biology.gene.development",
       "category": "knowledge",
       "prompt": "減数分裂でできる細胞の染色体数は、もとの細胞と比べてどうなる？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "sci_bio14_018",
+      "unit": "science.biology.gene.development",
       "category": "knowledge",
       "prompt": "減数分裂の第一分裂で分かれるものは？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "sci_bio14_019",
+      "unit": "science.biology.gene.development",
       "category": "knowledge",
       "prompt": "相同染色体どうしが並んで対合したものを何という？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "sci_bio14_020",
+      "unit": "science.biology.gene.development",
       "category": "knowledge",
       "prompt": "哺乳類の性決定で、オスになる性染色体の組み合わせは？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "sci_bio14_021",
+      "unit": "science.biology.gene.development",
       "category": "knowledge",
       "prompt": "ウニの受精で、ほかの精子が入るのを防ぐためにできる膜は？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "sci_bio14_022",
+      "unit": "science.biology.gene.development.animal",
       "category": "knowledge",
       "prompt": "中胚葉から分化するものは？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "sci_bio14_023",
+      "unit": "science.biology.gene.development.animal",
       "category": "knowledge",
       "prompt": "原腸胚で、内部に新しくできる空所は？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "sci_bio14_024",
+      "unit": "science.biology.gene.development.animal",
       "category": "knowledge",
       "prompt": "眼の形成で、眼杯が表皮にはたらきかけて誘導するものは？",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "sci_bio14_025",
+      "unit": "science.biology.gene.development.animal",
       "category": "knowledge",
       "prompt": "ES 細胞（胚性幹細胞）は何からつくられる？",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "sci_bio14_026",
+      "unit": "science.biology.gene.development.inheritance",
       "category": "knowledge",
       "prompt": "植物の花の形成で、がく・花弁・おしべ・めしべを決める遺伝子のモデルは？",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "sci_bio14_027",
+      "unit": "science.biology.gene.development",
       "category": "calculation",
       "prompt": "AaBb（独立）どうしをかけ合わせた子の表現型の比は？",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "sci_bio14_028",
+      "unit": "science.biology.gene.development.inheritance",
       "category": "calculation",
       "prompt": "AaBb を aabb と検定交雑した（独立）。子の表現型の比は？",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "sci_bio14_029",
+      "unit": "science.biology.gene.development.inheritance",
       "category": "calculation",
       "prompt": "検定交雑で [AB] 40、[Ab] 10、[aB] 10、[ab] 40 だった。組換え価は？",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "sci_bio14_030",
+      "unit": "science.biology.gene.development",
       "category": "calculation",
       "prompt": "2n ＝ 6 の生物で、乗換えがないとすると、配偶子の染色体の組み合わせは何通り？",
       "choices": [
@@ -396,6 +426,7 @@
     },
     {
       "id": "sci_bio14_031",
+      "unit": "science.biology.gene.development.inheritance",
       "category": "thinking",
       "prompt": "赤緑色覚の多様性にかかわる遺伝子は X 染色体上にある潜性遺伝子である。その形質が男性に多く現れる理由は？",
       "choices": [
@@ -409,6 +440,7 @@
     },
     {
       "id": "sci_bio14_032",
+      "unit": "science.biology.gene.development.technology",
       "category": "thinking",
       "prompt": "iPS 細胞が再生医療で期待される理由は？",
       "choices": [

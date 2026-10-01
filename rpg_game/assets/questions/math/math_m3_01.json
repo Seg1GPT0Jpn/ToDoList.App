@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_m301_001",
+      "unit": "math.m3.limit.seq.limit",
       "category": "calculation",
       "prompt": "lim_{n→∞} 1/n の値は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_m301_002",
+      "unit": "math.m3.limit.seq.limit",
       "category": "calculation",
       "prompt": "lim_{n→∞} (2n+1)/(n+3) の値は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_m301_003",
+      "unit": "math.m3.limit.seq.limit",
       "category": "calculation",
       "prompt": "lim_{n→∞} (n²+1)/(2n²−n) の値は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_m301_004",
+      "unit": "math.m3.limit.seq.limit",
       "category": "calculation",
       "prompt": "lim_{n→∞} (1/2)ⁿ の値は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_m301_005",
+      "unit": "math.m3.limit.seq.limit",
       "category": "calculation",
       "prompt": "lim_{n→∞} 3ⁿ は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_m301_006",
+      "unit": "math.m3.limit.seq.series",
       "category": "calculation",
       "prompt": "無限等比級数 1+1/2+1/4+… の和は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_m301_007",
+      "unit": "math.m3.limit.func.function",
       "category": "calculation",
       "prompt": "lim_{x→2} (x²−4)/(x−2) の値は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_m301_008",
+      "unit": "math.m3.limit.func.function",
       "category": "calculation",
       "prompt": "lim_{x→0} (sin x)/x の値は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_m301_009",
+      "unit": "math.m3.limit.seq.series",
       "category": "calculation",
       "prompt": "0.999…（9が限りなく続く）と等しい数は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_m301_010",
+      "unit": "math.m3.limit.seq.series",
       "category": "thinking",
       "prompt": "無限等比級数が |r|<1 のときに収束する理由は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_m301_011",
+      "unit": "math.m3.limit.seq.limit",
       "category": "calculation",
       "prompt": "lim_{n→∞} 3/n² の値は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_m301_012",
+      "unit": "math.m3.limit.seq.limit",
       "category": "calculation",
       "prompt": "lim_{n→∞} (3n−2)/(n+1) の値は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_m301_013",
+      "unit": "math.m3.limit.seq.limit",
       "category": "calculation",
       "prompt": "lim_{n→∞} (n+1)/(n²+1) の値は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_m301_014",
+      "unit": "math.m3.limit.seq.limit",
       "category": "calculation",
       "prompt": "lim_{n→∞} (2/3)ⁿ の値は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_m301_015",
+      "unit": "math.m3.limit.seq.limit",
       "category": "calculation",
       "prompt": "lim_{n→∞} (−2)ⁿ は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_m301_016",
+      "unit": "math.m3.limit.seq.series",
       "category": "calculation",
       "prompt": "無限等比級数 1+1/3+1/9+… の和は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_m301_017",
+      "unit": "math.m3.limit.func.function",
       "category": "calculation",
       "prompt": "lim_{x→1} (x²−1)/(x−1) の値は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_m301_018",
+      "unit": "math.m3.limit.func.function",
       "category": "calculation",
       "prompt": "lim_{x→0} (sin 2x)/x の値は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_m301_019",
+      "unit": "math.m3.limit.seq.limit",
       "category": "calculation",
       "prompt": "lim_{n→∞} (√(n+1)−√n) の値は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_m301_020",
+      "unit": "math.m3.limit.seq.series",
       "category": "knowledge",
       "prompt": "無限等比級数 a+ar+ar²+…（a≠0）が収束する条件は？",
       "choices": [

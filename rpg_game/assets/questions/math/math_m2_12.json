@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_m212_001",
+      "unit": "math.m2.trigfunc.addition.maxmin",
       "category": "calculation",
       "prompt": "y=3 sin θ+4 cos θ の最大値は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_m212_002",
+      "unit": "math.m2.trigfunc.general.radian",
       "category": "calculation",
       "prompt": "0≦θ<2π で cos 2θ+sin θ=0 を満たす θ は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_m212_003",
+      "unit": "math.m2.trigfunc.addition.maxmin",
       "category": "calculation",
       "prompt": "y=sin²θ+cos θ の最大値は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_m212_004",
+      "unit": "math.m2.trigfunc.general.radian",
       "category": "calculation",
       "prompt": "0≦θ<2π で 2 sin θ>1 を満たす θ の範囲は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_m212_005",
+      "unit": "math.m2.trigfunc.addition",
       "category": "calculation",
       "prompt": "α、β が鋭角で tan α=1/2、tan β=1/3 のとき、α+β は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_m212_006",
+      "unit": "math.m2.trigfunc.addition.double",
       "category": "knowledge",
       "prompt": "sin²(θ/2) を cos θ で表すと？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_m212_007",
+      "unit": "math.m2.trigfunc.addition",
       "category": "knowledge",
       "prompt": "sin 3θ を sin θ で表すと？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_m212_008",
+      "unit": "math.m2.trigfunc.addition",
       "category": "calculation",
       "prompt": "sin x+cos x=t のとき、sin x cos x を t で表すと？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_m212_009",
+      "unit": "math.m2.trigfunc.addition.maxmin",
       "category": "calculation",
       "prompt": "y=sin x−√3 cos x の最小値は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_m212_010",
+      "unit": "math.m2.trigfunc.addition.synthesis",
       "category": "thinking",
       "prompt": "三角関数の合成が便利な理由は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_m212_011",
+      "unit": "math.m2.trigfunc.addition.maxmin",
       "category": "calculation",
       "prompt": "y=5 sin θ−12 cos θ の最大値は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_m212_012",
+      "unit": "math.m2.trigfunc.general.radian",
       "category": "calculation",
       "prompt": "0≦θ<2π で 2cos²θ−cos θ−1=0 を満たす θ は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_m212_013",
+      "unit": "math.m2.trigfunc.addition.maxmin",
       "category": "calculation",
       "prompt": "y=cos 2θ+2 sin θ の最大値は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_m212_014",
+      "unit": "math.m2.trigfunc.general.radian",
       "category": "calculation",
       "prompt": "0≦θ<2π で cos θ<1/2 を満たす θ の範囲は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_m212_015",
+      "unit": "math.m2.trigfunc.addition",
       "category": "calculation",
       "prompt": "tan α=2、tan β=3 のとき、tan(α+β) の値は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_m212_016",
+      "unit": "math.m2.trigfunc.addition.double",
       "category": "calculation",
       "prompt": "cos²(θ/2) を cos θ で表すと？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_m212_017",
+      "unit": "math.m2.trigfunc.addition",
       "category": "calculation",
       "prompt": "cos 3θ を cos θ で表すと？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_m212_018",
+      "unit": "math.m2.trigfunc.addition",
       "category": "calculation",
       "prompt": "sin x−cos x=1/2 のとき、sin x cos x の値は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_m212_019",
+      "unit": "math.m2.trigfunc.general.radian",
       "category": "calculation",
       "prompt": "0≦x≦π のとき、y=sin x+√3 cos x の最小値は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_m212_020",
+      "unit": "math.m2.trigfunc.general.equation",
       "category": "thinking",
       "prompt": "三角方程式で sin と cos が混ざっているときの方針として適切なのは？",
       "choices": [

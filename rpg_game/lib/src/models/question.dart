@@ -1,3 +1,4 @@
+import '../curriculum/question_meta.dart';
 import 'difficulty.dart';
 
 /// 問題データの出どころ。
@@ -96,6 +97,18 @@ class QuizQuestion {
     this.figure,
     this.accepted,
     this.listen = false,
+    this.unit,
+    this.unitLocked = false,
+    this.thinkingLevel,
+    this.axes,
+    this.sourceKind = QuestionSourceKind.original,
+    this.targetGrade,
+    this.phase,
+    this.estimatedSeconds,
+    this.related = const [],
+    this.combines = const [],
+    this.steps,
+    this.guidance,
   }) {
     if (choices.length != 4) {
       throw ArgumentError('問題 $id: 選択肢は4つ必要です（${choices.length}個）');
@@ -143,6 +156,45 @@ class QuizQuestion {
 
   /// リスニング問題：本文（sentence）を文字で見せず、読み上げて聞かせる
   final bool listen;
+
+  // ---- 学習体系での位置と、学習上の属性（すべて省略できる） ----
+
+  /// 学習体系の単元・小単元の ID（例：math.m1.quad.maxmin.param）。
+  /// tool/curriculum/assign.py が問題文から自動で書き込む
+  final String? unit;
+
+  /// [unit] を手で決めた（自動の振り分けで書きかえない）
+  final bool unitLocked;
+
+  /// 思考レベル（書かれていなければ [QuestionProfiler] が推定する）
+  final ThinkingLevel? thinkingLevel;
+
+  /// 難しさの種類（知識・計算・読解・思考・初見・記述・時間）
+  final DifficultyAxes? axes;
+
+  /// 出典の種類（オリジナル・本番形式・改題・練習・過去問）
+  final QuestionSourceKind sourceKind;
+
+  /// 対象学年（'1'・'2-3' など。なければ学習体系から決まる）
+  final String? targetGrade;
+
+  /// 学習の段階（定期テスト〜東大レベル）
+  final LearningPhase? phase;
+
+  /// 解くのにかかる時間の目安（秒）
+  final int? estimatedSeconds;
+
+  /// 関連する問題の ID（類題・前の段階の問題）
+  final List<String> related;
+
+  /// この問題で組み合わせて使う、ほかの単元の ID（複合問題）
+  final List<String> combines;
+
+  /// 答えに至るまでの思考の段階数
+  final int? steps;
+
+  /// 誘導への依存度（0：誘導なし 〜 5：小問で細かく誘導）
+  final int? guidance;
 
   /// 入力で答えられる問題か
   bool get isInput => accepted != null;
@@ -206,10 +258,27 @@ class QuizQuestion {
         figure: json['figure'] as Map<String, dynamic>?,
         accepted: (json['accepted'] as List?)?.cast<String>(),
         listen: json['listen'] as bool? ?? false,
+        unit: json['unit'] as String?,
+        unitLocked: json['unitLocked'] as bool? ?? false,
+        thinkingLevel: ThinkingLevel.tryParse(json['thinkingLevel']),
+        axes: json['axes'] == null
+            ? null
+            : DifficultyAxes.fromJson(
+                Map<String, dynamic>.from(json['axes'] as Map)),
+        sourceKind: QuestionSourceKind.parse(json['sourceKind'] as String?),
+        targetGrade: json['targetGrade']?.toString(),
+        phase: LearningPhase.tryParse(json['phase'] as String?),
+        estimatedSeconds: (json['estimatedSeconds'] as num?)?.toInt(),
+        related: List<String>.from((json['related'] as List?) ?? const []),
+        combines: List<String>.from((json['combines'] as List?) ?? const []),
+        steps: (json['steps'] as num?)?.toInt(),
+        guidance: (json['guidance'] as num?)?.toInt(),
       );
 
   Map<String, dynamic> toJson() => {
         'id': id,
+        if (unit != null) 'unit': unit,
+        if (unitLocked) 'unitLocked': true,
         'category': category.name,
         'prompt': prompt,
         if (sentence != null) 'sentence': sentence,
@@ -224,6 +293,17 @@ class QuizQuestion {
         if (figure != null) 'figure': figure,
         if (accepted != null) 'accepted': accepted,
         if (listen) 'listen': true,
+        if (thinkingLevel != null) 'thinkingLevel': thinkingLevel!.number,
+        if (axes != null) 'axes': axes!.toJson(),
+        if (sourceKind != QuestionSourceKind.original)
+          'sourceKind': sourceKind.name,
+        if (targetGrade != null) 'targetGrade': targetGrade,
+        if (phase != null) 'phase': phase!.name,
+        if (estimatedSeconds != null) 'estimatedSeconds': estimatedSeconds,
+        if (related.isNotEmpty) 'related': related,
+        if (combines.isNotEmpty) 'combines': combines,
+        if (steps != null) 'steps': steps,
+        if (guidance != null) 'guidance': guidance,
       };
 }
 

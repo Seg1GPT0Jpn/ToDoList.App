@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_mb01_001",
+      "unit": "math.mb.seq.arith.arithmetic",
       "category": "calculation",
       "prompt": "初項3、公差4の等差数列の第10項は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_mb01_002",
+      "unit": "math.mb.seq.arith.geometric",
       "category": "calculation",
       "prompt": "初項2、公比3の等比数列の第5項は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_mb01_003",
+      "unit": "math.mb.seq.arith",
       "category": "calculation",
       "prompt": "1+2+3+…+100 の値は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_mb01_004",
+      "unit": "math.mb.seq.arith.arithmetic",
       "category": "calculation",
       "prompt": "等差数列 3, 7, 11, … の初項から第10項までの和は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_mb01_005",
+      "unit": "math.mb.seq.arith",
       "category": "calculation",
       "prompt": "1+2+4+…+2⁹ の値は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_mb01_006",
+      "unit": "math.mb.seq.sum.sigma",
       "category": "calculation",
       "prompt": "Σ_{k=1}^{10} k² の値は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_mb01_007",
+      "unit": "math.mb.seq.sum.sigma",
       "category": "calculation",
       "prompt": "Σ_{k=1}^{5} k³ の値は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_mb01_008",
+      "unit": "math.mb.seq.arith",
       "category": "calculation",
       "prompt": "数列 2, 5, 8, 11, … の一般項は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_mb01_009",
+      "unit": "math.mb.seq.arith.geometric",
       "category": "calculation",
       "prompt": "等比数列で第2項が6、第5項が48のとき、初項は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_mb01_010",
+      "unit": "math.mb.seq.arith.arithmetic",
       "category": "thinking",
       "prompt": "等差数列の和が「(初項+末項)×項数÷2」で求められる理由は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_mb01_011",
+      "unit": "math.mb.seq.arith.arithmetic",
       "category": "calculation",
       "prompt": "初項10、公差−2の等差数列の第8項は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_mb01_012",
+      "unit": "math.mb.seq.arith.geometric",
       "category": "calculation",
       "prompt": "初項1、公比2の等比数列の第8項は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_mb01_013",
+      "unit": "math.mb.seq.arith",
       "category": "calculation",
       "prompt": "1+3+5+…+19 の値は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_mb01_014",
+      "unit": "math.mb.seq.arith.arithmetic",
       "category": "calculation",
       "prompt": "等差数列 5, 8, 11, … の初項から第20項までの和は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_mb01_015",
+      "unit": "math.mb.seq.arith",
       "category": "calculation",
       "prompt": "3+6+12+…+3·2⁵ の値は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_mb01_016",
+      "unit": "math.mb.seq.sum.sigma",
       "category": "calculation",
       "prompt": "Σ_{k=1}^{6} k の値は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_mb01_017",
+      "unit": "math.mb.seq.sum.sigma",
       "category": "calculation",
       "prompt": "Σ_{k=1}^{4} k² の値は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_mb01_018",
+      "unit": "math.mb.seq.arith",
       "category": "calculation",
       "prompt": "数列 7, 4, 1, −2, … の一般項は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_mb01_019",
+      "unit": "math.mb.seq.arith.arithmetic",
       "category": "calculation",
       "prompt": "等差数列で第3項が11、第7項が23のとき、公差は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_mb01_020",
+      "unit": "math.mb.seq.sum.sigma",
       "category": "knowledge",
       "prompt": "Σ_{k=1}^{n} c（c は定数）は？",
       "choices": [

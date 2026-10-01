@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "sci_ear14_001",
+      "unit": "science.earth.atmos.weather.wind",
       "category": "knowledge",
       "prompt": "北半球の高気圧の中心付近で見られることは？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "sci_ear14_002",
+      "unit": "science.earth.atmos.weather.wind",
       "category": "knowledge",
       "prompt": "北半球の低気圧で、地上付近の風はどう吹く？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "sci_ear14_003",
+      "unit": "science.earth.atmos.weather.front",
       "category": "knowledge",
       "prompt": "寒冷前線付近で発達しやすく、短時間に強い雨を降らせる雲は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "sci_ear14_004",
+      "unit": "science.earth.atmos.weather.front",
       "category": "knowledge",
       "prompt": "寒冷前線が通過した後の天気の変化は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "sci_ear14_005",
+      "unit": "science.earth.atmos.weather.front",
       "category": "knowledge",
       "prompt": "温暖前線が通過した後の天気の変化は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "sci_ear14_006",
+      "unit": "science.earth.atmos.weather.front",
       "category": "knowledge",
       "prompt": "梅雨の時期に日本付近にとどまる前線は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "sci_ear14_007",
+      "unit": "science.earth.atmos.weather.typhoon",
       "category": "knowledge",
       "prompt": "台風とは？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "sci_ear14_008",
+      "unit": "science.earth.atmos.weather.typhoon",
       "category": "knowledge",
       "prompt": "台風のエネルギー源は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "sci_ear14_009",
+      "unit": "science.earth.atmos.weather.wind",
       "category": "knowledge",
       "prompt": "日本の冬によく見られる気圧配置は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "sci_ear14_010",
+      "unit": "science.earth.atmos.weather.wind",
       "category": "knowledge",
       "prompt": "日本の夏に日本付近をおおう高気圧は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "sci_ear14_011",
+      "unit": "science.earth.atmos.weather.front",
       "category": "knowledge",
       "prompt": "温帯低気圧がもつものは？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "sci_ear14_012",
+      "unit": "science.earth.atmos.weather.typhoon",
       "category": "knowledge",
       "prompt": "台風の中心付近で、風が弱く晴れ間が見えることがある部分を何という？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "sci_ear14_013",
+      "unit": "science.earth.atmos.weather",
       "category": "knowledge",
       "prompt": "天気図の等圧線は、ふつう何 hPa ごとに引かれる？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "sci_ear14_014",
+      "unit": "science.earth.atmos.weather.wind",
       "category": "calculation",
       "prompt": "天気図で、1000 hPa の等圧線から高気圧の中心へ向かって 3 本目の等圧線は何 hPa？（4 hPa ごと）",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "sci_ear14_015",
+      "unit": "science.earth.atmos.weather.front",
       "category": "thinking",
       "prompt": "ある地点で、急に強い雨が降って気温が下がり、風向が南よりから北よりに変わった。何が通過した？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "sci_ear14_016",
+      "unit": "science.earth.atmos.weather.typhoon",
       "category": "thinking",
       "prompt": "台風の進行方向に向かって右側で、特に風が強くなる理由は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "sci_ear14_017",
+      "unit": "science.earth.atmos.weather.wind",
       "category": "knowledge",
       "prompt": "北半球の高気圧で、地上付近の風の吹き方は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "sci_ear14_018",
+      "unit": "science.earth.atmos.weather.wind",
       "category": "knowledge",
       "prompt": "低気圧の中心付近で天気が悪くなりやすい理由は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "sci_ear14_019",
+      "unit": "science.earth.atmos.weather.front",
       "category": "knowledge",
       "prompt": "温暖前線付近で広い範囲に降る雨の特徴は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "sci_ear14_020",
+      "unit": "science.earth.atmos.weather.front",
       "category": "knowledge",
       "prompt": "寒冷前線の通過時に見られることは？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "sci_ear14_021",
+      "unit": "science.earth.atmos.weather.front",
       "category": "knowledge",
       "prompt": "寒冷前線が温暖前線に追いついてできる前線は？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "sci_ear14_022",
+      "unit": "science.earth.atmos.weather",
       "category": "knowledge",
       "prompt": "冬に日本海側で雪が多い理由は？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "sci_ear14_023",
+      "unit": "science.earth.atmos.weather.wind",
       "category": "knowledge",
       "prompt": "移動性高気圧が来る季節は主に？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "sci_ear14_024",
+      "unit": "science.earth.atmos.weather.typhoon",
       "category": "knowledge",
       "prompt": "台風が日本付近で進路を北東へ変える理由は？",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "sci_ear14_025",
+      "unit": "science.earth.atmos.weather.typhoon",
       "category": "knowledge",
       "prompt": "台風が上陸すると勢力が弱まる理由は？",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "sci_ear14_026",
+      "unit": "science.earth.atmos.weather.wind",
       "category": "calculation",
       "prompt": "天気図で、1008 hPa の等圧線から数えて低気圧側に 3 本目の等圧線は何 hPa？（4 hPa ごと）",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "sci_ear14_027",
+      "unit": "science.earth.atmos.weather.typhoon",
       "category": "calculation",
       "prompt": "台風の中心気圧が 950 hPa、周囲が 1010 hPa。気圧の差は？",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "sci_ear14_028",
+      "unit": "science.earth.atmos.weather.typhoon",
       "category": "calculation",
       "prompt": "台風が時速 30 km で進むと、300 km 先に着くのは約何時間後？",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "sci_ear14_029",
+      "unit": "science.earth.atmos.weather",
       "category": "calculation",
       "prompt": "1 時間に 50 mm の雨が 3 時間続いた。雨量は？",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "sci_ear14_030",
+      "unit": "science.earth.atmos.weather.front",
       "category": "thinking",
       "prompt": "寒冷前線の通過で気温が急に下がる理由は？",
       "choices": [
@@ -396,6 +426,7 @@
     },
     {
       "id": "sci_ear14_031",
+      "unit": "science.earth.atmos.weather",
       "category": "thinking",
       "prompt": "天気が西から東へ変わりやすい理由は？",
       "choices": [
@@ -409,6 +440,7 @@
     },
     {
       "id": "sci_ear14_032",
+      "unit": "science.earth.atmos.weather.front",
       "category": "knowledge",
       "prompt": "梅雨前線をつくる、北のオホーツク海気団とぶつかる南の気団は？",
       "choices": [

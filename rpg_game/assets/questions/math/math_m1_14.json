@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_m114_001",
+      "unit": "math.m1.quad.eqineq.discriminant",
       "category": "calculation",
       "prompt": "x²+2x+k=0 が異なる2つの実数解をもつ k の範囲は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_m114_002",
+      "unit": "math.m1.quad.eqineq.intersect",
       "category": "calculation",
       "prompt": "y=x²−kx+4 のグラフが x 軸に接するとき、k の値は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_m114_003",
+      "unit": "math.m1.quad.eqineq.inequality",
       "category": "calculation",
       "prompt": "不等式 x²+2x+3>0 の解は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_m114_004",
+      "unit": "math.m1.quad.eqineq.inequality",
       "category": "calculation",
       "prompt": "不等式 x²−4x+4≦0 の解は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_m114_005",
+      "unit": "math.m1.quad.eqineq.inequality",
       "category": "calculation",
       "prompt": "連立不等式 x²−3x−4<0、x²−4>0 を解くと？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_m114_006",
+      "unit": "math.m1.quad.eqineq.always",
       "category": "calculation",
       "prompt": "すべての実数 x で x²−mx+m>0 となる m の範囲は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_m114_007",
+      "unit": "math.m1.quad.eqineq.intersect",
       "category": "calculation",
       "prompt": "放物線 y=x²−2x+2 と直線 y=x+2 の共有点は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_m114_008",
+      "unit": "math.m1.quad.eqineq.inequality",
       "category": "calculation",
       "prompt": "不等式 −x²+x+6≧0 を解くと？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_m114_009",
+      "unit": "math.m1.quad.eqineq.equation",
       "category": "calculation",
       "prompt": "2次方程式 x²−6x+k=0 の1つの解が2のとき、もう1つの解は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_m114_010",
+      "unit": "math.m1.quad.eqineq.discriminant",
       "category": "thinking",
       "prompt": "判別式 D<0 のとき、2次関数のグラフと x 軸の関係は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_m114_011",
+      "unit": "math.m1.quad.eqineq.discriminant",
       "category": "calculation",
       "prompt": "x²−4x+k=0 が重解をもつとき、k の値は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_m114_012",
+      "unit": "math.m1.quad.eqineq.discriminant",
       "category": "calculation",
       "prompt": "x²+kx+9=0 が実数解をもたない k の範囲は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_m114_013",
+      "unit": "math.m1.quad.eqineq.inequality",
       "category": "calculation",
       "prompt": "不等式 x²−2x+3<0 の解は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_m114_014",
+      "unit": "math.m1.quad.eqineq.inequality",
       "category": "calculation",
       "prompt": "不等式 x²+6x+9>0 の解は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_m114_015",
+      "unit": "math.m1.quad.eqineq.inequality",
       "category": "calculation",
       "prompt": "連立不等式 x²−x−6≦0、x²−1>0 を解くと？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_m114_016",
+      "unit": "math.m1.quad.eqineq.intersect",
       "category": "calculation",
       "prompt": "y=x²+2mx+4 のグラフが x 軸と共有点をもたない m の範囲は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_m114_017",
+      "unit": "math.m1.quad.eqineq.intersect",
       "category": "calculation",
       "prompt": "放物線 y=x² と直線 y=−x+6 の共有点の x 座標は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_m114_018",
+      "unit": "math.m1.quad.eqineq.inequality",
       "category": "calculation",
       "prompt": "不等式 2x²−5x+2≧0 を解くと？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_m114_019",
+      "unit": "math.m1.quad.eqineq",
       "category": "calculation",
       "prompt": "x²−5x+k=0 の1つの解が3のとき、もう1つの解は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_m114_020",
+      "unit": "math.m1.quad.eqineq.always",
       "category": "calculation",
       "prompt": "すべての実数 x で ax²+4x+a>0 となる a の範囲は？",
       "choices": [

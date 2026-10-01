@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_m103_001",
+      "unit": "math.m1.numexpr.poly",
       "category": "calculation",
       "prompt": "a+b=5、ab=3 のとき、a²+b² の値は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_m103_002",
+      "unit": "math.m1.numexpr.poly",
       "category": "calculation",
       "prompt": "a+b=5、ab=3 のとき、a³+b³ の値は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_m103_003",
+      "unit": "math.m1.numexpr.poly",
       "category": "calculation",
       "prompt": "x+1/x=3 のとき、x²+1/x² の値は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_m103_004",
+      "unit": "math.m1.numexpr.poly.factor",
       "category": "calculation",
       "prompt": "x³−3x²−4x+12 を因数分解すると？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_m103_005",
+      "unit": "math.m1.numexpr.poly.factor",
       "category": "calculation",
       "prompt": "x²+3xy+2y²+x+3y−2 を因数分解すると？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_m103_006",
+      "unit": "math.m1.numexpr.poly.factor",
       "category": "calculation",
       "prompt": "(x²+x)²−8(x²+x)+12 を因数分解すると？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_m103_007",
+      "unit": "math.m1.numexpr.poly",
       "category": "calculation",
       "prompt": "a−b=3、ab=2 のとき、a²+b² の値は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_m103_008",
+      "unit": "math.m1.numexpr.poly.symmetric",
       "category": "calculation",
       "prompt": "x=√3+1、y=√3−1 のとき、x²+y² の値は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_m103_009",
+      "unit": "math.m1.numexpr.poly.factor",
       "category": "knowledge",
       "prompt": "x³+y³+z³−3xyz を因数分解すると？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_m103_010",
+      "unit": "math.m1.numexpr.poly.symmetric",
       "category": "thinking",
       "prompt": "a+b と ab の値だけで a²+b² が求められる理由は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_m103_011",
+      "unit": "math.m1.numexpr.poly.symmetric",
       "category": "calculation",
       "prompt": "x+y=3、xy=1 のとき、x³+y³ の値は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_m103_012",
+      "unit": "math.m1.numexpr.poly.symmetric",
       "category": "calculation",
       "prompt": "x+y=3、xy=1 のとき、x²y+xy² の値は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_m103_013",
+      "unit": "math.m1.numexpr.poly",
       "category": "calculation",
       "prompt": "x−1/x=2 のとき、x²+1/x² の値は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_m103_014",
+      "unit": "math.m1.numexpr.poly",
       "category": "calculation",
       "prompt": "x=1/(√2−1) のとき、x+1/x の値は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_m103_015",
+      "unit": "math.m1.numexpr.poly",
       "category": "calculation",
       "prompt": "a+b=4、a²+b²=10 のとき、ab の値は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_m103_016",
+      "unit": "math.m1.numexpr.poly.factor",
       "category": "calculation",
       "prompt": "x⁴+x²+1 を因数分解すると？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_m103_017",
+      "unit": "math.m1.numexpr.poly.factor",
       "category": "calculation",
       "prompt": "ab+a+b+1 を因数分解すると？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_m103_018",
+      "unit": "math.m1.numexpr.poly.factor",
       "category": "calculation",
       "prompt": "x²−y²+2x+1 を因数分解すると？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_m103_019",
+      "unit": "math.m1.numexpr.poly.factor",
       "category": "calculation",
       "prompt": "2x²+5xy+2y²−x+y−1 を因数分解すると？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_m103_020",
+      "unit": "math.m1.numexpr.poly.symmetric",
       "category": "knowledge",
       "prompt": "x+y と xy が分かっているとき、x³+y³ を求めるのに使う式は？",
       "choices": [

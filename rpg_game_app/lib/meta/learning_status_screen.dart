@@ -5,6 +5,7 @@ import '../app/services.dart';
 import '../app/theme.dart';
 import '../art/paper.dart';
 import '../app/practice.dart';
+import 'curriculum_map_screen.dart';
 
 /// 学習ステータス：実際の正答率から計算した、分野ごとの熟練度。
 ///
@@ -49,6 +50,24 @@ class LearningStatusScreen extends StatelessWidget {
                     fontSize: 12,
                     color: TsuzuriColors.inkSoft,
                     height: 1.5,
+                  ),
+                ),
+                const SizedBox(height: 10),
+                Card(
+                  child: ListTile(
+                    key: const ValueKey('open-curriculum-map'),
+                    leading: Icon(
+                      Icons.map_outlined,
+                      color: TsuzuriColors.accent,
+                    ),
+                    title: const Text('学びの地図'),
+                    subtitle: const Text('教科→科目→分野→単元→小単元ごとの進みぐあいと、単元ごとの練習'),
+                    trailing: const Icon(Icons.chevron_right),
+                    onTap: () => Navigator.of(context).push(
+                      MaterialPageRoute<void>(
+                        builder: (_) => const CurriculumMapScreen(),
+                      ),
+                    ),
                   ),
                 ),
                 if (weak.isNotEmpty) ...[

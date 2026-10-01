@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "soc_geo03_001",
+      "unit": "social.geo.map.gis.gis",
       "category": "knowledge",
       "prompt": "地理情報をコンピュータで重ね合わせ、分析・表示するシステムは？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "soc_geo03_002",
+      "unit": "social.geo.map.gis.remote",
       "category": "knowledge",
       "prompt": "人工衛星からの電波で現在地を知るしくみ（アメリカのもの）は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "soc_geo03_003",
+      "unit": "social.geo.map.gis.remote",
       "category": "knowledge",
       "prompt": "人工衛星や航空機から地表を観測する技術は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "soc_geo03_004",
+      "unit": "social.geo.map.gis.gis",
       "category": "knowledge",
       "prompt": "GIS で、道路・建物・土地利用などを別々に重ねる層を何という？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "soc_geo03_005",
+      "unit": "social.geo.map.gis.gis",
       "category": "knowledge",
       "prompt": "国や自治体などが、誰でも自由に使えるように公開したデータは？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "soc_geo03_006",
+      "unit": "social.geo.map.gis",
       "category": "knowledge",
       "prompt": "国土地理院が Web で公開している地図サービスは？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "soc_geo03_007",
+      "unit": "social.geo.map.gis.remote",
       "category": "knowledge",
       "prompt": "日本の衛星測位システムで、日本の上空に長くとどまるように飛ぶ衛星は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "soc_geo03_008",
+      "unit": "social.geo.map.gis",
       "category": "knowledge",
       "prompt": "位置の情報と結びついたデータを何という？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "soc_geo03_009",
+      "unit": "social.geo.map.gis.gis",
       "category": "thinking",
       "prompt": "「避難所の位置」と「浸水想定区域」のレイヤーを GIS で重ねると分かることは？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "soc_geo03_010",
+      "unit": "social.geo.map.gis",
       "category": "thinking",
       "prompt": "コンビニの分布と人口密度を重ねて見た。考えられることは？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "soc_geo03_011",
+      "unit": "social.geo.map.gis.remote",
       "category": "thinking",
       "prompt": "リモートセンシングが災害時に役立つ理由は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "soc_geo03_012",
+      "unit": "social.geo.map.gis.gis",
       "category": "thinking",
       "prompt": "GIS を使った地域の分析で、まず決めるべきことは？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "soc_geo03_013",
+      "unit": "social.geo.map.gis.remote",
       "category": "knowledge",
       "prompt": "GPS やみちびきなど、人工衛星を使って位置を知るシステムをまとめて何という？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "soc_geo03_014",
+      "unit": "social.geo.map.gis",
       "category": "knowledge",
       "prompt": "デジタル地図の利点として適切なものは？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "soc_geo03_015",
+      "unit": "social.geo.map.gis",
       "category": "knowledge",
       "prompt": "人口などの統計を、1 km 四方などの網の目状の区画ごとにまとめたデータは？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "soc_geo03_016",
+      "unit": "social.geo.map.gis",
       "category": "knowledge",
       "prompt": "災害の危険をさまざまな地図に重ねて見られる「重ねるハザードマップ」を公開している国の機関は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "soc_geo03_017",
+      "unit": "social.geo.map.gis",
       "category": "knowledge",
       "prompt": "道路や建物を、点・線・面の座標で表すデータの形式は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "soc_geo03_018",
+      "unit": "social.geo.map.gis",
       "category": "knowledge",
       "prompt": "少しずつずらして撮った2枚の空中写真を並べて、地形を立体的に見ることを何という？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "soc_geo03_019",
+      "unit": "social.geo.map.gis",
       "category": "knowledge",
       "prompt": "スマートフォンの位置情報の集まりのような、量が多く種類もさまざまなデータを何という？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "soc_geo03_020",
+      "unit": "social.geo.map.gis.remote",
       "category": "knowledge",
       "prompt": "人工衛星の画像で植物の分布を調べるときに使われる、植物がよく反射する光は？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "soc_geo03_021",
+      "unit": "social.geo.map.gis.remote",
       "category": "knowledge",
       "prompt": "カーナビや地図アプリで現在地を表示するのに使われている技術は？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "soc_geo03_022",
+      "unit": "social.geo.map.gis",
       "category": "calculation",
       "prompt": "1 km 四方のメッシュの中に 2500 人が住んでいる。人口密度は？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "soc_geo03_023",
+      "unit": "social.geo.map.gis.gis",
       "category": "thinking",
       "prompt": "GIS を使って新しいコンビニの出店場所を考えるとき、重ねるとよいデータは？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "soc_geo03_024",
+      "unit": "social.geo.map.gis",
       "category": "thinking",
       "prompt": "個人の位置情報のデータを使うときに注意すべきことは？",
       "choices": [

@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "sci_bio05_001",
+      "unit": "science.biology.body.homeostasis",
       "category": "knowledge",
       "prompt": "ヘモグロビンをふくみ、酸素を運ぶ血球は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "sci_bio05_002",
+      "unit": "science.biology.body.homeostasis.fluid",
       "category": "knowledge",
       "prompt": "血液凝固にかかわる血球は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "sci_bio05_003",
+      "unit": "science.biology.body.homeostasis.fluid",
       "category": "knowledge",
       "prompt": "血液の液体成分で、栄養分や老廃物を運ぶのは？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "sci_bio05_004",
+      "unit": "science.biology.body.homeostasis.fluid",
       "category": "knowledge",
       "prompt": "体内環境を一定に保とうとする性質を何という？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "sci_bio05_005",
+      "unit": "science.biology.body.homeostasis.organ",
       "category": "knowledge",
       "prompt": "タンパク質の分解で生じた有害なアンモニアを、尿素に変える器官は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "sci_bio05_006",
+      "unit": "science.biology.body.homeostasis.organ",
       "category": "knowledge",
       "prompt": "腎臓で、血しょうがろ過されて原尿ができる部分は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "sci_bio05_007",
+      "unit": "science.biology.body.homeostasis.glucose",
       "category": "knowledge",
       "prompt": "血糖値を下げるはたらきをもつホルモンは？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "sci_bio05_008",
+      "unit": "science.biology.body.homeostasis.glucose",
       "category": "knowledge",
       "prompt": "すい臓のランゲルハンス島 A 細胞から分泌され、血糖値を上げるホルモンは？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "sci_bio05_009",
+      "unit": "science.biology.body.homeostasis.organ",
       "category": "knowledge",
       "prompt": "腎臓の集合管で水の再吸収を促進するホルモンは？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "sci_bio05_010",
+      "unit": "science.biology.body.homeostasis.temperature",
       "category": "knowledge",
       "prompt": "寒いときに体温を保つしくみとして正しいものは？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "sci_bio05_011",
+      "unit": "science.biology.body.homeostasis.fluid",
       "category": "knowledge",
       "prompt": "血液・組織液・リンパ液をまとめて何という？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "sci_bio05_012",
+      "unit": "science.biology.body.homeostasis.glucose",
       "category": "knowledge",
       "prompt": "インスリンのはたらきが不十分で、血糖値が高い状態が続く病気は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "sci_bio05_013",
+      "unit": "science.biology.body.homeostasis.organ",
       "category": "calculation",
       "prompt": "イヌリン（ろ過されるが再吸収されない物質）の濃度が、血しょうで 0.10 mg/mL、尿で 12 mg/mL だった。濃縮率は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "sci_bio05_014",
+      "unit": "science.biology.body.homeostasis.organ",
       "category": "calculation",
       "prompt": "前問で尿が 1 分間に 1.0 mL つくられるとき、1 分間につくられる原尿の量は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "sci_bio05_015",
+      "unit": "science.biology.body.homeostasis.glucose",
       "category": "thinking",
       "prompt": "食事をして血糖値が上がったとき、まず起こることは？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "sci_bio05_016",
+      "unit": "science.biology.body.homeostasis",
       "category": "thinking",
       "prompt": "ヘモグロビンは、肺では酸素と結びつき、組織では酸素を離す。組織で離しやすい理由は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "sci_bio05_017",
+      "unit": "science.biology.body.homeostasis",
       "category": "knowledge",
       "prompt": "白血球の主なはたらきは？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "sci_bio05_018",
+      "unit": "science.biology.body.homeostasis",
       "category": "knowledge",
       "prompt": "ヒトの成熟した赤血球について正しいものは？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "sci_bio05_019",
+      "unit": "science.biology.body.homeostasis.fluid",
       "category": "knowledge",
       "prompt": "血液凝固のときにつくられる繊維状のタンパク質は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "sci_bio05_020",
+      "unit": "science.biology.body.homeostasis.fluid",
       "category": "knowledge",
       "prompt": "血液を試験管に入れて置いておくと、上澄みの液体と沈殿に分かれる。沈殿（血ぺい）の正体は？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "sci_bio05_021",
+      "unit": "science.biology.body.homeostasis.organ",
       "category": "knowledge",
       "prompt": "肝臓のはたらきとして誤っているものは？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "sci_bio05_022",
+      "unit": "science.biology.body.homeostasis.organ",
       "category": "knowledge",
       "prompt": "腎臓で尿をつくる構造上の単位を何という？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "sci_bio05_023",
+      "unit": "science.biology.body.homeostasis.organ",
       "category": "knowledge",
       "prompt": "原尿から、水やグルコースなどが再吸収される部分は？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "sci_bio05_024",
+      "unit": "science.biology.body.homeostasis.organ",
       "category": "knowledge",
       "prompt": "健康なヒトの尿に、ほとんどふくまれないものは？",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "sci_bio05_025",
+      "unit": "science.biology.body.homeostasis.temperature",
       "category": "knowledge",
       "prompt": "体温が上がりすぎたときに起こる調節は？",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "sci_bio05_026",
+      "unit": "science.biology.body.homeostasis.glucose",
       "category": "knowledge",
       "prompt": "ヒトの血糖値（空腹時）はおよそ？",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "sci_bio05_027",
+      "unit": "science.biology.body.homeostasis",
       "category": "knowledge",
       "prompt": "組織液の一部がリンパ管に入ったものを何という？",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "sci_bio05_028",
+      "unit": "science.biology.body.homeostasis.fluid",
       "category": "knowledge",
       "prompt": "血しょうにふくまれ、からだを流れる主なタンパク質は？",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "sci_bio05_029",
+      "unit": "science.biology.body.homeostasis.organ",
       "category": "calculation",
       "prompt": "1日につくられる原尿が180 L、尿が1.5 L のとき、原尿の水のうち再吸収された割合はおよそ？",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "sci_bio05_030",
+      "unit": "science.biology.body.homeostasis.fluid",
       "category": "calculation",
       "prompt": "ある物質の濃度が、血しょうで 0.3 mg/mL、尿で 21 mg/mL だった。濃縮率は？",
       "choices": [
@@ -396,6 +426,7 @@
     },
     {
       "id": "sci_bio05_031",
+      "unit": "science.biology.body.homeostasis.organ",
       "category": "calculation",
       "prompt": "原尿が 150 mL つくられ、尿が 1 mL できた。尿素の濃度は原尿で 0.3 mg/mL、尿で 20 mg/mL。再吸収された尿素は何 mg？",
       "choices": [
@@ -409,6 +440,7 @@
     },
     {
       "id": "sci_bio05_032",
+      "unit": "science.biology.body.homeostasis.glucose",
       "category": "thinking",
       "prompt": "糖尿病の人の尿にグルコースが出る理由は？",
       "choices": [

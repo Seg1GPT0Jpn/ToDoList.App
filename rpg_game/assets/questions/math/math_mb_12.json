@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_mb12_001",
+      "unit": "math.mb.society.model.finance",
       "category": "calculation",
       "prompt": "毎年はじめに10万円を積み立て、年利10%の複利で運用する。3年目の終わりの合計は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_mb12_002",
+      "unit": "math.mb.society.model",
       "category": "calculation",
       "prompt": "池の魚の数が aₙ₊₁=0.8aₙ+100 で変化するとき、やがて近づく数は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_mb12_003",
+      "unit": "math.mb.society.model",
       "category": "calculation",
       "prompt": "2ⁿ>1000 となる最小の自然数 n は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_mb12_004",
+      "unit": "math.mb.society.model",
       "category": "calculation",
       "prompt": "身長が N(170, 6²) に従うとき、182cm 以上の人の割合はおよそ？（P(Z≧2)=0.0228）",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_mb12_005",
+      "unit": "math.mb.society.model",
       "category": "calculation",
       "prompt": "標本比率0.5、標本の大きさ100のとき、信頼度95%の信頼区間の片側の幅はおよそ？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_mb12_006",
+      "unit": "math.mb.society.model.model",
       "category": "calculation",
       "prompt": "1人が2人に感染させるモデルで、1世代目が1人のとき、5世代目の新たな感染者数は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_mb12_007",
+      "unit": "math.mb.society.model",
       "category": "calculation",
       "prompt": "平均50点、標準偏差10点のテストで70点の偏差値は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_mb12_008",
+      "unit": "math.mb.society.model",
       "category": "calculation",
       "prompt": "1か月目1000円、以後毎月500円ずつ増やして貯金する。12か月分の合計は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_mb12_009",
+      "unit": "math.mb.society.model",
       "category": "calculation",
       "prompt": "確率0.001で100万円が支払われる保険の、支払額の期待値は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_mb12_010",
+      "unit": "math.mb.society.model.model",
       "category": "thinking",
       "prompt": "数学的モデルの結果を現実のデータと比べて見直す理由は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_mb12_011",
+      "unit": "math.mb.society.model.finance",
       "category": "calculation",
       "prompt": "毎年はじめに10万円を積み立て、年利10%の複利で運用する。2年目の終わりの合計は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_mb12_012",
+      "unit": "math.mb.society.model",
       "category": "calculation",
       "prompt": "aₙ₊₁=0.5aₙ+40 で変化する量は、やがていくつに近づく？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_mb12_013",
+      "unit": "math.mb.society.model",
       "category": "calculation",
       "prompt": "3ⁿ>1000 となる最小の自然数 n は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_mb12_014",
+      "unit": "math.mb.society.model",
       "category": "calculation",
       "prompt": "身長が N(160, 5²) に従うとき、170cm 以上の人の割合は？（P(0≦Z≦2)=0.4772）",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_mb12_015",
+      "unit": "math.mb.society.model",
       "category": "calculation",
       "prompt": "標本比率0.5、標本の大きさ400 のとき、信頼度95%の信頼区間の片側の幅は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_mb12_016",
+      "unit": "math.mb.society.model.model",
       "category": "calculation",
       "prompt": "1人が3人に感染させるモデルで、1世代目が1人のとき、4世代目の新たな感染者は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_mb12_017",
+      "unit": "math.mb.society.model",
       "category": "calculation",
       "prompt": "平均60点、標準偏差8点のテストで76点の偏差値は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_mb12_018",
+      "unit": "math.mb.society.model",
       "category": "calculation",
       "prompt": "1か月目500円、以後毎月300円ずつ増やして貯金する。10か月分の合計は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_mb12_019",
+      "unit": "math.mb.society.model",
       "category": "calculation",
       "prompt": "確率0.01で50万円が支払われる保険の、支払額の期待値は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_mb12_020",
+      "unit": "math.mb.society.model",
       "category": "thinking",
       "prompt": "「平均的な人」の値として平均値より中央値を使うほうがよい場面は？",
       "choices": [

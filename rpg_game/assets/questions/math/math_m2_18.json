@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_m218_001",
+      "unit": "math.m2.calculus.integ.area",
       "category": "calculation",
       "prompt": "放物線 y=x²−2x と x 軸で囲まれた部分の面積は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_m218_002",
+      "unit": "math.m2.calculus.integ.area",
       "category": "calculation",
       "prompt": "放物線 y=x² と直線 y=x+2 で囲まれた部分の面積は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_m218_003",
+      "unit": "math.m2.calculus.diff.tangent",
       "category": "calculation",
       "prompt": "曲線 y=x³ の接線のうち、傾きが3のものは？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_m218_004",
+      "unit": "math.m2.calculus.apply.extremum",
       "category": "calculation",
       "prompt": "f(x)=x³+ax²+bx が x=1 で極小値 −2 をとるとき、a、b は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_m218_005",
+      "unit": "math.m2.calculus.apply.maxmin",
       "category": "calculation",
       "prompt": "1辺6の正方形の四すみから1辺 x の正方形を切りとって箱を作る。容積が最大となるとき、その容積は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_m218_006",
+      "unit": "math.m2.calculus.integ.indefinite",
       "category": "calculation",
       "prompt": "∫₀³ |x−1| dx の値は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_m218_007",
+      "unit": "math.m2.calculus.integ.indefinite",
       "category": "calculation",
       "prompt": "f(x)=x²+2∫₀¹ f(t) dt を満たす f(x) は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_m218_008",
+      "unit": "math.m2.calculus.integ.indefinite",
       "category": "calculation",
       "prompt": "速度が v(t)=3t²（m/s）で表されるとき、0秒から2秒までに進む距離は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_m218_009",
+      "unit": "math.m2.calculus.integ.area",
       "category": "calculation",
       "prompt": "直線 y=mx（m>0）と放物線 y=x² で囲まれた部分の面積が36のとき、m は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_m218_010",
+      "unit": "math.m2.calculus.diff.derivative",
       "category": "thinking",
       "prompt": "微分と積分が互いに逆の計算であることの意味は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_m218_011",
+      "unit": "math.m2.calculus.integ.area",
       "category": "calculation",
       "prompt": "放物線 y=x²−4x+3 と x 軸で囲まれた部分の面積は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_m218_012",
+      "unit": "math.m2.calculus.integ.area",
       "category": "calculation",
       "prompt": "放物線 y=x²−1 と直線 y=x+1 で囲まれた部分の面積は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_m218_013",
+      "unit": "math.m2.calculus.diff.tangent",
       "category": "calculation",
       "prompt": "曲線 y=x³−3x の接線のうち、傾きが0のものは？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_m218_014",
+      "unit": "math.m2.calculus.apply.extremum",
       "category": "calculation",
       "prompt": "f(x)=x³+ax²+bx+1 が x=−1 で極大、x=3 で極小となるとき、a、b は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_m218_015",
+      "unit": "math.m2.calculus.apply.maxmin",
       "category": "calculation",
       "prompt": "周の長さが12の長方形の面積の最大値は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_m218_016",
+      "unit": "math.m2.calculus.integ.indefinite",
       "category": "calculation",
       "prompt": "∫₀² |x−1| dx の値は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_m218_017",
+      "unit": "math.m2.calculus.integ.indefinite",
       "category": "calculation",
       "prompt": "f(x)=3x²−∫₀¹ f(t) dt を満たす f(x) は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_m218_018",
+      "unit": "math.m2.calculus.integ.indefinite",
       "category": "calculation",
       "prompt": "x 軸上を動く点の速度が v(t)=2t（m/s）のとき、0秒から3秒までに進む距離は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_m218_019",
+      "unit": "math.m2.calculus.integ.area",
       "category": "calculation",
       "prompt": "放物線 y=x² と直線 y=4 で囲まれた部分の面積は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_m218_020",
+      "unit": "math.m2.calculus.integ.area",
       "category": "thinking",
       "prompt": "「∫ₐᵇ f(x) dx は面積」と言えないことがあるのはどんなとき？",
       "choices": [

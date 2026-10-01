@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "sci_chm01_001",
+      "unit": "science.chemistry.structure.life",
       "category": "knowledge",
       "prompt": "純物質はどれ？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "sci_chm01_002",
+      "unit": "science.chemistry.structure.life.element",
       "category": "knowledge",
       "prompt": "単体はどれ？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "sci_chm01_003",
+      "unit": "science.chemistry.structure.life.element",
       "category": "knowledge",
       "prompt": "化合物はどれ？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "sci_chm01_004",
+      "unit": "science.chemistry.structure.life.element",
       "category": "knowledge",
       "prompt": "互いに同素体の関係にあるものは？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "sci_chm01_005",
+      "unit": "science.chemistry.structure.life.separation",
       "category": "knowledge",
       "prompt": "ろ過で分けられるものは？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "sci_chm01_006",
+      "unit": "science.chemistry.structure.life.separation",
       "category": "knowledge",
       "prompt": "蒸留は何のちがいを利用した分離法？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "sci_chm01_007",
+      "unit": "science.chemistry.structure.life.separation",
       "category": "knowledge",
       "prompt": "再結晶は何のちがいを利用した分離法？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "sci_chm01_008",
+      "unit": "science.chemistry.structure.life.separation",
       "category": "knowledge",
       "prompt": "液体空気から窒素と酸素を分けたり、原油からガソリンや灯油を分けたりする方法は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "sci_chm01_009",
+      "unit": "science.chemistry.structure.life.separation",
       "category": "knowledge",
       "prompt": "ヨウ素と砂の混合物からヨウ素を取り出すのに適した方法は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "sci_chm01_010",
+      "unit": "science.chemistry.structure.life",
       "category": "knowledge",
       "prompt": "ろ紙などに対する吸着のしやすさのちがいで、色素などを分ける方法は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "sci_chm01_011",
+      "unit": "science.chemistry.structure.life.separation",
       "category": "knowledge",
       "prompt": "茶葉にお湯を注いでお茶の成分を取り出す操作は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "sci_chm01_012",
+      "unit": "science.chemistry.structure.life.element",
       "category": "knowledge",
       "prompt": "水道水の殺菌に使われている物質は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "sci_chm01_013",
+      "unit": "science.chemistry.structure.life",
       "category": "calculation",
       "prompt": "水 90 g に塩化ナトリウム 10 g を溶かした。質量パーセント濃度は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "sci_chm01_014",
+      "unit": "science.chemistry.structure.life",
       "category": "calculation",
       "prompt": "硝酸カリウムの溶解度（水 100 g あたり）は 60 ℃ で 110 g、20 ℃ で 32 g。60 ℃ の飽和溶液 210 g を 20 ℃ に冷やすと、何 g の結晶が出る？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "sci_chm01_015",
+      "unit": "science.chemistry.structure.life.element",
       "category": "thinking",
       "prompt": "ある物質を炎に入れたら黄色の炎が出た。この物質に含まれている元素は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "sci_chm01_016",
+      "unit": "science.chemistry.structure.life.element",
       "category": "thinking",
       "prompt": "ある物質を燃やして出た気体を石灰水に通すと白くにごった。この物質に含まれている元素は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "sci_chm01_017",
+      "unit": "science.chemistry.structure.life",
       "category": "knowledge",
       "prompt": "混合物はどれ？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "sci_chm01_018",
+      "unit": "science.chemistry.structure.life.element",
       "category": "knowledge",
       "prompt": "「骨にはカルシウムがふくまれる」のカルシウムは、元素と単体のどちらの意味？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "sci_chm01_019",
+      "unit": "science.chemistry.structure.life.element",
       "category": "knowledge",
       "prompt": "「酸素は水にわずかに溶ける」の酸素は、元素と単体のどちらの意味？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "sci_chm01_020",
+      "unit": "science.chemistry.structure.life.element",
       "category": "knowledge",
       "prompt": "同素体をもつ元素の組み合わせとして正しいものは？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "sci_chm01_021",
+      "unit": "science.chemistry.structure.life.element",
       "category": "knowledge",
       "prompt": "酸素の同素体は？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "sci_chm01_022",
+      "unit": "science.chemistry.structure.life.element",
       "category": "knowledge",
       "prompt": "リンの同素体のうち、空気中で自然発火するため水中に保存するのは？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "sci_chm01_023",
+      "unit": "science.chemistry.structure.life",
       "category": "knowledge",
       "prompt": "固体が液体にならずに直接気体になる変化を何という？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "sci_chm01_024",
+      "unit": "science.chemistry.structure.life",
       "category": "knowledge",
       "prompt": "固体が液体になる変化を何という？",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "sci_chm01_025",
+      "unit": "science.chemistry.structure.life.heat",
       "category": "knowledge",
       "prompt": "温度が高くなると、物質をつくる粒子の熱運動はどうなる？",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "sci_chm01_026",
+      "unit": "science.chemistry.structure.life",
       "category": "knowledge",
       "prompt": "絶対零度はおよそ何℃？",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "sci_chm01_027",
+      "unit": "science.chemistry.structure.life.test",
       "category": "knowledge",
       "prompt": "銅をふくむ物質の炎色反応の色は？",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "sci_chm01_028",
+      "unit": "science.chemistry.structure.life.test",
       "category": "knowledge",
       "prompt": "水溶液に塩化物イオンがふくまれていることを確かめる方法は？",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "sci_chm01_029",
+      "unit": "science.chemistry.structure.life",
       "category": "calculation",
       "prompt": "27℃ は絶対温度で何 K？",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "sci_chm01_030",
+      "unit": "science.chemistry.structure.life",
       "category": "calculation",
       "prompt": "水 150 g に砂糖 50 g を溶かした水溶液の質量パーセント濃度は？",
       "choices": [
@@ -396,6 +426,7 @@
     },
     {
       "id": "sci_chm01_031",
+      "unit": "science.chemistry.structure.life",
       "category": "calculation",
       "prompt": "質量パーセント濃度10%の食塩水 200 g にふくまれる食塩は？",
       "choices": [
@@ -409,6 +440,7 @@
     },
     {
       "id": "sci_chm01_032",
+      "unit": "science.chemistry.structure.life.separation",
       "category": "thinking",
       "prompt": "海水から純粋な水を取り出すのに最も適した方法は？",
       "choices": [

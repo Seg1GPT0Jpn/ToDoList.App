@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "jap_gendai08_001",
+      "unit": "japanese.gendai.logical.argument.fallacy",
       "category": "knowledge",
       "prompt": "一般的な原理から、個別の結論を導く推論は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "jap_gendai08_002",
+      "unit": "japanese.gendai.logical.argument.fallacy",
       "category": "knowledge",
       "prompt": "多くの個別の事例から、一般的な法則を導く推論は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "jap_gendai08_003",
+      "unit": "japanese.gendai.logical.argument",
       "category": "knowledge",
       "prompt": "主張と根拠を結びつける「なぜその根拠からその主張が言えるのか」の部分は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "jap_gendai08_004",
+      "unit": "japanese.gendai.logical.argument",
       "category": "knowledge",
       "prompt": "予想される反対意見を取り上げ、それに答えることを何という？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "jap_gendai08_005",
+      "unit": "japanese.gendai.logical.argument",
       "category": "knowledge",
       "prompt": "相手の主張をゆがめて、別の問題にすり替えて攻撃することを何という？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "jap_gendai08_006",
+      "unit": "japanese.gendai.logical.argument.deduction",
       "category": "thinking",
       "prompt": "「すべての鳥は卵を産む。ペンギンは鳥である。」から導かれる結論は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "jap_gendai08_007",
+      "unit": "japanese.gendai.logical.argument",
       "category": "thinking",
       "prompt": "「A ならば B である」が正しいとき、必ず正しいと言えるのは？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "jap_gendai08_008",
+      "unit": "japanese.gendai.logical.argument",
       "category": "thinking",
       "prompt": "「雨が降ると道がぬれる。道がぬれている。だから雨が降ったはずだ。」の問題点は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "jap_gendai08_009",
+      "unit": "japanese.gendai.logical.argument",
       "category": "thinking",
       "prompt": "「多くの人が支持しているから、この意見は正しい」という論法の問題点は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "jap_gendai08_010",
+      "unit": "japanese.gendai.logical.argument.deduction",
       "category": "thinking",
       "prompt": "帰納による結論の弱点として適切なものは？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "jap_gendai08_011",
+      "unit": "japanese.gendai.logical.argument.fallacy",
       "category": "thinking",
       "prompt": "次の主張に対する「反論」として最も適切なものは？",
       "sentence": "主張：これからは紙の本は必要なく、すべて電子書籍にすべきだ。",
@@ -150,6 +161,7 @@
     },
     {
       "id": "jap_gendai08_012",
+      "unit": "japanese.gendai.logical.argument.fallacy",
       "category": "thinking",
       "prompt": "小論文で主張の説得力を高める方法として最も適切なものは？",
       "choices": [
@@ -163,6 +175,7 @@
     },
     {
       "id": "jap_gendai08_013",
+      "unit": "japanese.gendai.logical.argument.deduction",
       "category": "knowledge",
       "prompt": "三段論法の「大前提」にあたるものは？",
       "choices": [
@@ -176,6 +189,7 @@
     },
     {
       "id": "jap_gendai08_014",
+      "unit": "japanese.gendai.logical.argument.fallacy",
       "category": "knowledge",
       "prompt": "議論で、相手の主張ではなく人格や経歴を攻撃する誤りを何という？",
       "choices": [
@@ -189,6 +203,7 @@
     },
     {
       "id": "jap_gendai08_015",
+      "unit": "japanese.gendai.logical.argument.fallacy",
       "category": "knowledge",
       "prompt": "「A か B のどちらかしかない」と、ほかの選択肢を無視する誤りは？",
       "choices": [
@@ -202,6 +217,7 @@
     },
     {
       "id": "jap_gendai08_016",
+      "unit": "japanese.gendai.logical.argument.fallacy",
       "category": "knowledge",
       "prompt": "少ない例から、急いで全体の結論を出してしまう誤りは？",
       "choices": [
@@ -215,6 +231,7 @@
     },
     {
       "id": "jap_gendai08_017",
+      "unit": "japanese.gendai.logical.argument",
       "category": "knowledge",
       "prompt": "議論で自分の主張の根拠を示すときに、最も説得力をもつものは？",
       "choices": [
@@ -228,6 +245,7 @@
     },
     {
       "id": "jap_gendai08_018",
+      "unit": "japanese.gendai.logical.argument",
       "category": "thinking",
       "prompt": "「すべての A は B である」が正しいとき、必ず正しいと言えるのは？",
       "choices": [
@@ -241,6 +259,7 @@
     },
     {
       "id": "jap_gendai08_019",
+      "unit": "japanese.gendai.logical.argument",
       "category": "calculation",
       "prompt": "「この町の人はみんな親切だ。なぜなら、昨日道を教えてくれた人が親切だったからだ」の問題点は？",
       "choices": [
@@ -254,6 +273,7 @@
     },
     {
       "id": "jap_gendai08_020",
+      "unit": "japanese.gendai.logical.argument.fallacy",
       "category": "calculation",
       "prompt": "「この薬を飲んだら風邪が治った。だから、この薬は風邪に効く」の問題点として適切なものは？",
       "choices": [
@@ -267,6 +287,7 @@
     },
     {
       "id": "jap_gendai08_021",
+      "unit": "japanese.gendai.logical.argument.fallacy",
       "category": "knowledge",
       "prompt": "反論に対して「確かに〜。しかし〜」と答える書き方を何という？",
       "choices": [
@@ -280,6 +301,7 @@
     },
     {
       "id": "jap_gendai08_022",
+      "unit": "japanese.gendai.logical.argument",
       "category": "calculation",
       "prompt": "次の主張に対する「根拠」として最も適切なものは？",
       "sentence": "主張：高校の始業時間を 30 分遅らせるべきだ。",
@@ -294,6 +316,7 @@
     },
     {
       "id": "jap_gendai08_023",
+      "unit": "japanese.gendai.logical.argument.fallacy",
       "category": "thinking",
       "prompt": "小論文で反対意見にふれずに書くと、説得力が弱まる理由は？",
       "choices": [
@@ -307,6 +330,7 @@
     },
     {
       "id": "jap_gendai08_024",
+      "unit": "japanese.gendai.logical.argument",
       "category": "thinking",
       "prompt": "「論理的な文章」の条件として適切なものは？",
       "choices": [

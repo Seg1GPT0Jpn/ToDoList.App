@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "en_exam01_001",
+      "unit": "english.eng.vocab.basic.meaning",
       "category": "meaning",
       "prompt": "「inevitable」の最も近い意味は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "en_exam01_002",
+      "unit": "english.eng.vocab.basic.meaning",
       "category": "meaning",
       "prompt": "「substitute」の最も近い意味は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "en_exam01_003",
+      "unit": "english.eng.vocab.basic.meaning",
       "category": "meaning",
       "prompt": "「reluctant」の最も近い意味は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "en_exam01_004",
+      "unit": "english.eng.vocab.basic.meaning",
       "category": "meaning",
       "prompt": "「contemporary」の最も近い意味は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "en_exam01_005",
+      "unit": "english.eng.vocab.basic.meaning",
       "category": "meaning",
       "prompt": "「comprehend」の最も近い意味は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "en_exam01_006",
+      "unit": "english.eng.vocab.basic.meaning",
       "category": "meaning",
       "prompt": "「sustainable」の最も近い意味は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "en_exam01_007",
+      "unit": "english.eng.vocab.basic.meaning",
       "category": "meaning",
       "prompt": "「consequence」の最も近い意味は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "en_exam01_008",
+      "unit": "english.eng.vocab.basic.meaning",
       "category": "meaning",
       "prompt": "「significant」の最も近い意味は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "en_exam01_009",
+      "unit": "english.eng.vocab.basic.meaning",
       "category": "meaning",
       "prompt": "「abundant」の最も近い意味は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "en_exam01_010",
+      "unit": "english.eng.vocab.basic.meaning",
       "category": "meaning",
       "prompt": "「vulnerable」の最も近い意味は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "en_exam01_011",
+      "unit": "english.eng.vocab.idiom.idiom",
       "category": "usage",
       "prompt": "文脈に合う最も適切な熟語は？",
       "sentence": "We had to (   ) the meeting due to heavy snow.",
@@ -150,6 +161,7 @@
     },
     {
       "id": "en_exam01_012",
+      "unit": "english.eng.reading.practical.chart",
       "category": "usage",
       "prompt": "文意を成立させる接続表現は？",
       "sentence": "He studied hard; (   ), he passed the exam easily.",
@@ -164,6 +176,7 @@
     },
     {
       "id": "en_exam01_013",
+      "unit": "english.eng.vocab.idiom.idiom",
       "category": "usage",
       "prompt": "文脈に合う最も適切な熟語は？",
       "sentence": "She succeeded in business (   ) her great efforts.",
@@ -178,6 +191,7 @@
     },
     {
       "id": "en_exam01_014",
+      "unit": "english.eng.reading.practical.chart",
       "category": "usage",
       "prompt": "空欄に入る適切な表現は？",
       "sentence": "I will never agree, no (   ) what you say.",
@@ -192,6 +206,7 @@
     },
     {
       "id": "en_exam01_015",
+      "unit": "english.eng.reading.practical.chart",
       "category": "usage",
       "prompt": "「〜を当然のことと思う」を表す成句は？",
       "sentence": "He takes his parents' support (   ).",
@@ -206,6 +221,7 @@
     },
     {
       "id": "en_exam01_016",
+      "unit": "english.eng.vocab.idiom.idiom",
       "category": "usage",
       "prompt": "文脈に合う熟語は？",
       "sentence": "We should (   ) waste to protect our environment.",
@@ -220,6 +236,7 @@
     },
     {
       "id": "en_exam01_017",
+      "unit": "english.eng.vocab.basic.meaning",
       "category": "usage",
       "prompt": "「〜を考慮に入れる」を意味する表現は？",
       "sentence": "You must take his lack of experience (   ).",
@@ -234,6 +251,7 @@
     },
     {
       "id": "en_exam01_018",
+      "unit": "english.eng.grammar.adjadv.preposition",
       "category": "usage",
       "prompt": "「〜のおかげで」を表す前置詞句は？",
       "sentence": "(   ) the rapid development of AI, translation became much easier.",
@@ -248,6 +266,7 @@
     },
     {
       "id": "en_exam01_019",
+      "unit": "english.eng.reading.passage.detail",
       "category": "reading",
       "prompt": "Why is sleep important according to the passage?",
       "sentence": "Many people think of sleep as merely a period of inactivity. However, scientific research has revealed that our brains are actively consolidating memories and removing toxins while we sleep. Without sufficient rest, cognitive function declines dramatically.",
@@ -262,6 +281,7 @@
     },
     {
       "id": "en_exam01_020",
+      "unit": "english.eng.exam.advanced",
       "category": "reading",
       "prompt": "What is the main idea of this paragraph?",
       "sentence": "Remote work has offered employees great flexibility and reduced commuting stress. On the other hand, the blurred boundary between personal life and professional duties often leads to longer working hours and isolation. Thus, maintaining a healthy balance requires intentional boundaries.",
@@ -276,6 +296,7 @@
     },
     {
       "id": "en_exam01_021",
+      "unit": "english.eng.exam.advanced",
       "category": "reading",
       "prompt": "What is the advantage of plant-based meat mentioned?",
       "sentence": "As the global population continues to grow, meat production faces severe environmental limits. Plant-based alternatives require significantly less land and produce fewer greenhouse gas emissions, making them a promising solution for future food security.",
@@ -290,6 +311,7 @@
     },
     {
       "id": "en_exam01_022",
+      "unit": "english.eng.exam.advanced",
       "category": "reading",
       "prompt": "What does the passage say about human memory?",
       "sentence": "Unlike digital video recorders that store information perfectly, human memory is reconstructive. Every time we recall an event, our brain pieces together fragments, which can be unintentionally altered by our current emotions and knowledge.",
@@ -304,6 +326,7 @@
     },
     {
       "id": "en_exam01_023",
+      "unit": "english.eng.exam.advanced",
       "category": "reading",
       "prompt": "According to the text, why did the company adopt the four-day workweek?",
       "sentence": "A company introduced a four-day workweek as an experiment. Surprisingly, employees were not only happier but also more productive, as they focused more during working hours and had adequate time to recharge over three-day weekends.",
@@ -318,6 +341,7 @@
     },
     {
       "id": "en_exam01_024",
+      "unit": "english.eng.exam.advanced",
       "category": "reading",
       "prompt": "What is the main benefit of urban green spaces?",
       "sentence": "Urban green spaces do more than just make cities look attractive. They act as natural sponges absorbing rainwater, mitigate the urban heat island effect, and provide crucial mental health benefits for residents who need an escape from crowded streets.",
@@ -332,6 +356,7 @@
     },
     {
       "id": "en_exam01_025",
+      "unit": "english.eng.reading.intensive.structure",
       "category": "usage",
       "prompt": "英作文「いくら注意してもしすぎることはない」の英訳として正しいものは？",
       "choices": [
@@ -345,6 +370,7 @@
     },
     {
       "id": "en_exam01_026",
+      "unit": "english.eng.reading.intensive.structure",
       "category": "usage",
       "prompt": "英作文「駅に着くとすぐに雨が降り始めた」の英訳として正しいものは？",
       "choices": [
@@ -358,6 +384,7 @@
     },
     {
       "id": "en_exam01_027",
+      "unit": "english.eng.reading.intensive.structure",
       "category": "usage",
       "prompt": "英作文「健康はお金よりもはるかに貴重だ」の英訳として適切なものは？",
       "choices": [
@@ -371,6 +398,7 @@
     },
     {
       "id": "en_exam01_028",
+      "unit": "english.eng.grammar.tense.perfect",
       "category": "usage",
       "prompt": "英作文「もし昨晩勉強していたら、合格できただろうに」の適切な仮定法は？",
       "choices": [
@@ -384,6 +412,7 @@
     },
     {
       "id": "en_exam01_029",
+      "unit": "english.eng.reading.intensive.structure",
       "category": "usage",
       "prompt": "英作文「彼は親切にも私に道を教えてくれた」の英訳として正しいものは？",
       "choices": [
@@ -397,6 +426,7 @@
     },
     {
       "id": "en_exam01_030",
+      "unit": "english.eng.reading.intensive.structure",
       "category": "usage",
       "prompt": "英作文「彼女は私にその仕事を手伝うように頼んだ」の英訳は？",
       "choices": [
@@ -410,6 +440,7 @@
     },
     {
       "id": "en_exam01_031",
+      "unit": "english.eng.reading.intensive.structure",
       "category": "usage",
       "prompt": "英作文「その知らせを聞いて私たちは大いに驚いた」の英訳は？",
       "choices": [
@@ -423,6 +454,7 @@
     },
     {
       "id": "en_exam01_032",
+      "unit": "english.eng.structure.complex.subject",
       "category": "usage",
       "prompt": "英作文「彼が約束を破ったのは明らかだ」の形式主語を用いた英訳は？",
       "choices": [

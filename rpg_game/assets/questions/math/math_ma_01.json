@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_ma01_001",
+      "unit": "math.ma.prob.count",
       "category": "calculation",
       "prompt": "₅P₂ の値は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_ma01_002",
+      "unit": "math.ma.prob.count.permutation",
       "category": "calculation",
       "prompt": "₅C₂ の値は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_ma01_003",
+      "unit": "math.ma.prob.count",
       "category": "calculation",
       "prompt": "4! の値は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_ma01_004",
+      "unit": "math.ma.prob.count",
       "category": "calculation",
       "prompt": "大小2個のさいころを投げて、目の和が5になる場合は何通り？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_ma01_005",
+      "unit": "math.ma.prob.count.principle",
       "category": "calculation",
       "prompt": "n(A)=10、n(B)=8、n(A∩B)=3 のとき、n(A∪B) は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_ma01_006",
+      "unit": "math.ma.prob.count.combination",
       "category": "calculation",
       "prompt": "シャツ3枚とズボン4本から1つずつ選ぶ組み合わせは何通り？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_ma01_007",
+      "unit": "math.ma.prob.count",
       "category": "calculation",
       "prompt": "1から100までの整数のうち、3の倍数は何個？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_ma01_008",
+      "unit": "math.ma.prob.count.combination",
       "category": "calculation",
       "prompt": "6人から委員長と副委員長を1人ずつ選ぶ方法は何通り？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_ma01_009",
+      "unit": "math.ma.prob.count",
       "category": "calculation",
       "prompt": "₇C₃ の値は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_ma01_010",
+      "unit": "math.ma.prob.count.permutation",
       "category": "thinking",
       "prompt": "順列と組合せの違いは？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_ma01_011",
+      "unit": "math.ma.prob.count",
       "category": "calculation",
       "prompt": "₆P₃ の値は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_ma01_012",
+      "unit": "math.ma.prob.count.permutation",
       "category": "calculation",
       "prompt": "₆C₃ の値は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_ma01_013",
+      "unit": "math.ma.prob.count.combination",
       "category": "calculation",
       "prompt": "₈C₆ の値は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_ma01_014",
+      "unit": "math.ma.prob.count",
       "category": "calculation",
       "prompt": "大小2個のさいころを投げて、目の和が10以上になる場合は何通り？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_ma01_015",
+      "unit": "math.ma.prob.count",
       "category": "calculation",
       "prompt": "1から50までの整数のうち、4の倍数は何個？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_ma01_016",
+      "unit": "math.ma.prob.count",
       "category": "calculation",
       "prompt": "1から100までの整数のうち、3または5の倍数は何個？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_ma01_017",
+      "unit": "math.ma.prob.count.combination",
       "category": "calculation",
       "prompt": "5人から3人を選ぶ方法は何通り？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_ma01_018",
+      "unit": "math.ma.prob.count.combination",
       "category": "calculation",
       "prompt": "5人から班長・副班長・書記を1人ずつ選ぶ方法は何通り？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_ma01_019",
+      "unit": "math.ma.prob.count",
       "category": "calculation",
       "prompt": "1, 2, 3 の数字を1回ずつ使ってできる3けたの整数は何個？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_ma01_020",
+      "unit": "math.ma.prob.count",
       "category": "calculation",
       "prompt": "大・中・小3個のさいころを投げるとき、目の出方は全部で何通り？",
       "choices": [

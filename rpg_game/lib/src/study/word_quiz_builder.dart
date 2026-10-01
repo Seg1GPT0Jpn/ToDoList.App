@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import '../curriculum/curriculum.dart';
 import '../models/question.dart';
 import 'word_list.dart';
 
@@ -62,6 +63,7 @@ class WordQuizBuilder {
         choices: choices,
         answerIndex: choices.indexOf(answer),
         explanation: '${w.term}：${w.meaning}',
+        unit: Curriculum.unitForGeneratedSet(list.listId),
       ));
     }
     return QuestionSet(

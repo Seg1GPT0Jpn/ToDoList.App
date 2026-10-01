@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_m305_001",
+      "unit": "math.m3.diff.derivative.rule",
       "category": "calculation",
       "prompt": "(tan x)′ は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_m305_002",
+      "unit": "math.m3.diff.derivative.chain",
       "category": "calculation",
       "prompt": "(sin 2x)′ は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_m305_003",
+      "unit": "math.m3.diff.derivative",
       "category": "calculation",
       "prompt": "{x/(x+1)}′ は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_m305_004",
+      "unit": "math.m3.diff.derivative",
       "category": "calculation",
       "prompt": "{log(x²+1)}′ は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_m305_005",
+      "unit": "math.m3.diff.derivative.chain",
       "category": "calculation",
       "prompt": "(e^(−x²))′ は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_m305_006",
+      "unit": "math.m3.diff.derivative",
       "category": "calculation",
       "prompt": "(2ˣ)′ は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_m305_007",
+      "unit": "math.m3.diff.derivative.rule",
       "category": "calculation",
       "prompt": "(x sin x)′ は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_m305_008",
+      "unit": "math.m3.diff.derivative",
       "category": "calculation",
       "prompt": "x=t²、y=t³ のとき、dy/dx は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_m305_009",
+      "unit": "math.m3.diff.derivative.chain",
       "category": "calculation",
       "prompt": "(sin³x)′ は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_m305_010",
+      "unit": "math.m3.diff.derivative.explog",
       "category": "thinking",
       "prompt": "対数微分法が便利な場面は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_m305_011",
+      "unit": "math.m3.diff.derivative",
       "category": "calculation",
       "prompt": "(1/tan x)′ は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_m305_012",
+      "unit": "math.m3.diff.derivative",
       "category": "calculation",
       "prompt": "(cos 3x)′ は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_m305_013",
+      "unit": "math.m3.diff.derivative",
       "category": "calculation",
       "prompt": "{(x−1)/(x+1)}′ は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_m305_014",
+      "unit": "math.m3.diff.derivative",
       "category": "calculation",
       "prompt": "{log(2x+1)}′ は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_m305_015",
+      "unit": "math.m3.diff.derivative",
       "category": "calculation",
       "prompt": "(e^(x²))′ は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_m305_016",
+      "unit": "math.m3.diff.derivative",
       "category": "calculation",
       "prompt": "(3ˣ)′ は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_m305_017",
+      "unit": "math.m3.diff.derivative.rule",
       "category": "calculation",
       "prompt": "(eˣ cos x)′ は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_m305_018",
+      "unit": "math.m3.diff.derivative",
       "category": "calculation",
       "prompt": "x=2t+1、y=t² のとき、dy/dx は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_m305_019",
+      "unit": "math.m3.diff.derivative",
       "category": "calculation",
       "prompt": "(cos²x)′ は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_m305_020",
+      "unit": "math.m3.diff.derivative.chain",
       "category": "thinking",
       "prompt": "y=√(x²+1) を微分するとき、合成関数の微分を使う理由は？",
       "choices": [

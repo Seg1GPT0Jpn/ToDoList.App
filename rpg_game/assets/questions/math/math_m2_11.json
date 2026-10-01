@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_m211_001",
+      "unit": "math.m2.trigfunc.addition",
       "category": "calculation",
       "prompt": "sin75° の値は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_m211_002",
+      "unit": "math.m2.trigfunc.addition",
       "category": "calculation",
       "prompt": "cos75° の値は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_m211_003",
+      "unit": "math.m2.trigfunc.addition.addition",
       "category": "knowledge",
       "prompt": "sin 2θ を sin θ、cos θ で表すと？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_m211_004",
+      "unit": "math.m2.trigfunc.addition",
       "category": "knowledge",
       "prompt": "cos 2θ を sin θ だけで表すと？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_m211_005",
+      "unit": "math.m2.trigfunc.general.radian",
       "category": "calculation",
       "prompt": "0<θ<π/2 で sin θ=3/5 のとき、sin 2θ の値は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_m211_006",
+      "unit": "math.m2.trigfunc.addition",
       "category": "calculation",
       "prompt": "sin θ+√3 cos θ を r sin(θ+α) の形にすると？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_m211_007",
+      "unit": "math.m2.trigfunc.addition.maxmin",
       "category": "calculation",
       "prompt": "y=sin x+cos x の最大値は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_m211_008",
+      "unit": "math.m2.trigfunc.general.graph",
       "category": "calculation",
       "prompt": "y=sin 2x の周期は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_m211_009",
+      "unit": "math.m2.trigfunc.general.radian",
       "category": "calculation",
       "prompt": "0≦θ<2π で sin θ=√3/2 を満たす θ は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_m211_010",
+      "unit": "math.m2.trigfunc.addition.addition",
       "category": "thinking",
       "prompt": "2倍角の公式が加法定理から導ける理由は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_m211_011",
+      "unit": "math.m2.trigfunc.addition",
       "category": "calculation",
       "prompt": "sin15° の値は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_m211_012",
+      "unit": "math.m2.trigfunc.addition",
       "category": "calculation",
       "prompt": "tan75° の値は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_m211_013",
+      "unit": "math.m2.trigfunc.addition",
       "category": "calculation",
       "prompt": "cos 2θ を cos θ だけで表すと？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_m211_014",
+      "unit": "math.m2.trigfunc.addition.addition",
       "category": "calculation",
       "prompt": "tan 2θ を tan θ で表すと？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_m211_015",
+      "unit": "math.m2.trigfunc.general.radian",
       "category": "calculation",
       "prompt": "0<θ<π/2 で cos θ=4/5 のとき、cos 2θ の値は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_m211_016",
+      "unit": "math.m2.trigfunc.general.radian",
       "category": "calculation",
       "prompt": "sin θ+cos θ を r sin(θ+α) の形にすると？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_m211_017",
+      "unit": "math.m2.trigfunc.addition.maxmin",
       "category": "calculation",
       "prompt": "y=√3 sin x+cos x の最大値は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_m211_018",
+      "unit": "math.m2.trigfunc.general.graph",
       "category": "calculation",
       "prompt": "y=cos 3x の周期は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_m211_019",
+      "unit": "math.m2.trigfunc.general.radian",
       "category": "calculation",
       "prompt": "0≦θ<2π で cos θ=−1/2 を満たす θ は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_m211_020",
+      "unit": "math.m2.trigfunc.addition.addition",
       "category": "thinking",
       "prompt": "加法定理 cos(α−β)=cos α cos β+sin α sin β から sin の加法定理を導くときに使うのは？",
       "choices": [

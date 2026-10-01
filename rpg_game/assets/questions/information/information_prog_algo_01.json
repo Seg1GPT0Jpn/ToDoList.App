@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "inf_algo01_001",
+      "unit": "information.info.programming.program.trace",
       "category": "calculation",
       "prompt": "プログラム実行後の a の値は？",
       "sentence": "a = 10\nb = 3\na = a % b",
@@ -20,6 +21,7 @@
     },
     {
       "id": "inf_algo01_002",
+      "unit": "information.info.programming.program.trace",
       "category": "calculation",
       "prompt": "プログラム実行後の total の値は？",
       "sentence": "total = 0\nfor i in range(1, 5):\n    total += i",
@@ -34,6 +36,7 @@
     },
     {
       "id": "inf_algo01_003",
+      "unit": "information.info.programming.program.trace",
       "category": "calculation",
       "prompt": "実行後に出力される値は？",
       "sentence": "x = 5\nif x >= 5 and x < 10:\n    print(\"A\")\nelse:\n    print(\"B\")",
@@ -48,6 +51,7 @@
     },
     {
       "id": "inf_algo01_004",
+      "unit": "information.info.programming.program.trace",
       "category": "calculation",
       "prompt": "実行後の s の値は？",
       "sentence": "s = 0\ni = 1\nwhile i <= 4:\n    s += i\n    i += 2",
@@ -62,6 +66,7 @@
     },
     {
       "id": "inf_algo01_005",
+      "unit": "information.info.programming.program.trace",
       "category": "calculation",
       "prompt": "実行後に表示される要素は？",
       "sentence": "fruits = [\"apple\", \"banana\", \"cherry\"]\nprint(fruits[1])",
@@ -76,6 +81,7 @@
     },
     {
       "id": "inf_algo01_006",
+      "unit": "information.info.programming.program.variable",
       "category": "calculation",
       "prompt": "実行後の配列 arr の要素数は？",
       "sentence": "arr = [10, 20]\narr.append(30)\narr.append(40)",
@@ -90,6 +96,7 @@
     },
     {
       "id": "inf_algo01_007",
+      "unit": "information.info.programming.program.function",
       "category": "calculation",
       "prompt": "関数呼び出し `calc(4, 5)` の戻り値は？",
       "sentence": "def calc(a, b):\n    return a * 2 + b",
@@ -104,6 +111,7 @@
     },
     {
       "id": "inf_algo01_008",
+      "unit": "information.info.programming.program.function",
       "category": "calculation",
       "prompt": "関数呼び出し `fact(4)` の戻り値は？",
       "sentence": "def fact(n):\n    if n <= 1:\n        return 1\n    return n * fact(n - 1)",
@@ -118,6 +126,7 @@
     },
     {
       "id": "inf_algo01_009",
+      "unit": "information.info.programming.program.variable",
       "category": "thinking",
       "prompt": "2つの変数 x と y の値を入れ替える正しい処理は？（t は作業用変数）",
       "choices": [
@@ -131,6 +140,7 @@
     },
     {
       "id": "inf_algo01_010",
+      "unit": "information.info.programming.algorithm.basic",
       "category": "knowledge",
       "prompt": "アルゴリズムの基本三構造（構造化定理）に含まれないものは？",
       "choices": [
@@ -144,6 +154,7 @@
     },
     {
       "id": "inf_algo01_011",
+      "unit": "information.info.programming.algorithm.search",
       "category": "calculation",
       "prompt": "要素数 64 のソート済み配列から二分探索を行うとき、最大比較回数は？",
       "choices": [
@@ -157,6 +168,7 @@
     },
     {
       "id": "inf_algo01_012",
+      "unit": "information.info.programming.algorithm.search",
       "category": "thinking",
       "prompt": "二分探索法（バイナリサーチ）を適用するための必須前提条件は？",
       "choices": [
@@ -170,6 +182,7 @@
     },
     {
       "id": "inf_algo01_013",
+      "unit": "information.info.programming.algorithm.search",
       "category": "knowledge",
       "prompt": "線形探索法（リニアサーチ）の計算量（時間計算量）を O 記法で表すと？",
       "choices": [
@@ -183,6 +196,7 @@
     },
     {
       "id": "inf_algo01_014",
+      "unit": "information.info.programming.program.control",
       "category": "knowledge",
       "prompt": "隣り合う要素の大小を比較して入れ替えを繰り返すソートアルゴリズムは？",
       "choices": [
@@ -196,6 +210,7 @@
     },
     {
       "id": "inf_algo01_015",
+      "unit": "information.info.programming.algorithm.sort",
       "category": "calculation",
       "prompt": "配列 [5, 2, 8, 3] を昇順にバブルソートする際、1回目の走査完了後の並びは？",
       "choices": [
@@ -209,6 +224,7 @@
     },
     {
       "id": "inf_algo01_016",
+      "unit": "information.info.programming.algorithm.sort",
       "category": "knowledge",
       "prompt": "基準値（ピボット）を選び、それより小さい要素と大きい要素に分割して再帰的に整列するアルゴリズムは？",
       "choices": [
@@ -222,6 +238,7 @@
     },
     {
       "id": "inf_algo01_017",
+      "unit": "information.info.programming.algorithm.basic",
       "category": "knowledge",
       "prompt": "データを二等分に分割し、それぞれを整列してから統合するアルゴリズムは？",
       "choices": [
@@ -235,6 +252,7 @@
     },
     {
       "id": "inf_algo01_018",
+      "unit": "information.info.programming.algorithm.structure",
       "category": "knowledge",
       "prompt": "後入れ先出し（LIFO: Last In First Out）の特徴をもつデータ構造は？",
       "choices": [
@@ -248,6 +266,7 @@
     },
     {
       "id": "inf_algo01_019",
+      "unit": "information.info.programming.algorithm.structure",
       "category": "knowledge",
       "prompt": "先入れ先出し（FIFO: First In First Out）の特徴をもつデータ構造は？",
       "choices": [
@@ -261,6 +280,7 @@
     },
     {
       "id": "inf_algo01_020",
+      "unit": "information.info.programming.algorithm.structure",
       "category": "calculation",
       "prompt": "空のスタックに対し、push(10) → push(20) → pop() → push(30) の順に操作したとき、直後に pop() で取り出される値は？",
       "choices": [
@@ -274,6 +294,7 @@
     },
     {
       "id": "inf_algo01_021",
+      "unit": "information.info.programming.algorithm.structure",
       "category": "calculation",
       "prompt": "空のキューに対し、enq(A) → enq(B) → deq() → enq(C) の順に操作したとき、直後に deq() で取り出される要素は？",
       "choices": [
@@ -287,6 +308,7 @@
     },
     {
       "id": "inf_algo01_022",
+      "unit": "information.info.programming.algorithm.structure",
       "category": "knowledge",
       "prompt": "各ノードが最大2つの子ノードをもつ木構造を何という？",
       "choices": [
@@ -300,6 +322,7 @@
     },
     {
       "id": "inf_algo01_023",
+      "unit": "information.info.programming.algorithm.search",
       "category": "thinking",
       "prompt": "二分探索木において、あるノードの「左の子ノード」がもつ値の条件は？",
       "choices": [
@@ -313,6 +336,7 @@
     },
     {
       "id": "inf_algo01_024",
+      "unit": "information.info.programming.algorithm.search",
       "category": "knowledge",
       "prompt": "キーからハッシュ値を計算して格納位置を決定する、高速な探索を可能にするデータ構造は？",
       "choices": [
@@ -326,6 +350,7 @@
     },
     {
       "id": "inf_algo01_025",
+      "unit": "information.info.programming.program",
       "category": "knowledge",
       "prompt": "ハッシュ法において、異なるキーが同じハッシュ値を生成してしまう現象を何という？",
       "choices": [
@@ -339,6 +364,7 @@
     },
     {
       "id": "inf_algo01_026",
+      "unit": "information.info.programming.algorithm.basic",
       "category": "knowledge",
       "prompt": "2つの整数の最大公約数を、割り算の余りを繰り返して求める有名なアルゴリズムは？",
       "choices": [
@@ -352,6 +378,7 @@
     },
     {
       "id": "inf_algo01_027",
+      "unit": "information.info.programming.program",
       "category": "calculation",
       "prompt": "ユークリッドの互除法を用いて、72 と 27 の最大公約数を求めると？",
       "choices": [
@@ -365,6 +392,7 @@
     },
     {
       "id": "inf_algo01_028",
+      "unit": "information.info.programming.algorithm.basic",
       "category": "knowledge",
       "prompt": "素数を小さい順に効率よく探索する、倍数をふるい落としていくアルゴリズムは？",
       "choices": [
@@ -378,6 +406,7 @@
     },
     {
       "id": "inf_algo01_029",
+      "unit": "information.info.programming.algorithm.basic",
       "category": "knowledge",
       "prompt": "グラフ理論において、2ノード間の最短経路を求める代表的なアルゴリズムは？",
       "choices": [
@@ -391,6 +420,7 @@
     },
     {
       "id": "inf_algo01_030",
+      "unit": "information.info.programming.algorithm.basic",
       "category": "knowledge",
       "prompt": "文字の出現頻度に応じて可変長の符号を割り当てる、可逆データ圧縮アルゴリズムは？",
       "choices": [
@@ -404,6 +434,7 @@
     },
     {
       "id": "inf_algo01_031",
+      "unit": "information.info.programming.program.control",
       "category": "thinking",
       "prompt": "乱数を用いたシミュレーションを繰り返すことで近似解を求める手法は？",
       "choices": [
@@ -417,6 +448,7 @@
     },
     {
       "id": "inf_algo01_032",
+      "unit": "information.info.programming.algorithm.complexity",
       "category": "thinking",
       "prompt": "アルゴリズムの実行効率を評価する際、処理時間だけでなく消費するメモリ空間を表す指標は？",
       "choices": [

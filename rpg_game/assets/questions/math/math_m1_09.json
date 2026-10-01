@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_m109_001",
+      "unit": "math.m1.trig.solve",
       "category": "calculation",
       "prompt": "円に内接する四角形 ABCD で A=70° のとき、C は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_m109_002",
+      "unit": "math.m1.trig.solve",
       "category": "calculation",
       "prompt": "3辺が 3、4、12 の直方体の対角線の長さは？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_m109_003",
+      "unit": "math.m1.trig.solve.area",
       "category": "calculation",
       "prompt": "1辺が2の正四面体の表面積は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_m109_004",
+      "unit": "math.m1.trig.solve",
       "category": "calculation",
       "prompt": "△ABC で b=2、c=3、A=60° のとき、a の値は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_m109_005",
+      "unit": "math.m1.trig.solve.incircle",
       "category": "calculation",
       "prompt": "3辺が 3、4、5 の三角形の内接円の半径は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_m109_006",
+      "unit": "math.m1.trig.solve.sine",
       "category": "calculation",
       "prompt": "3辺が 3、4、5 の三角形の外接円の半径は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_m109_007",
+      "unit": "math.m1.trig.solve",
       "category": "calculation",
       "prompt": "△ABC で AB=3、AC=6、A=120°。A の二等分線と BC の交点を D とするとき、AD の長さは？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_m109_008",
+      "unit": "math.m1.trig.solve.sine",
       "category": "calculation",
       "prompt": "2地点 A、B は 100m 離れている。∠CAB=75°、∠CBA=45° のとき、AC の長さは？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_m109_009",
+      "unit": "math.m1.trig.solve.area",
       "category": "calculation",
       "prompt": "△ABC で b=2、c=3、A=60° のとき、面積は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_m109_010",
+      "unit": "math.m1.trig.solve.area",
       "category": "thinking",
       "prompt": "2辺とその間の角が分かれば、面積が ½bc·sinA で求められる理由は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_m109_011",
+      "unit": "math.m1.trig.ratio.relation",
       "category": "calculation",
       "prompt": "0°≦θ≦180° で sinθ+cosθ=√2 のとき、sinθcosθ の値は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_m109_012",
+      "unit": "math.m1.trig.ratio.relation",
       "category": "calculation",
       "prompt": "sinθ−cosθ=1/2 のとき、sinθcosθ の値は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_m109_013",
+      "unit": "math.m1.trig.ratio.relation",
       "category": "calculation",
       "prompt": "tanθ=2 のとき、(sinθ+cosθ)/(sinθ−cosθ) の値は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_m109_014",
+      "unit": "math.m1.trig.solve.cosine",
       "category": "calculation",
       "prompt": "円に内接する四角形 ABCD で AB=3、BC=5、∠B=120° のとき、AC は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_m109_015",
+      "unit": "math.m1.trig.solve",
       "category": "calculation",
       "prompt": "3辺が 2、3、6 の直方体の対角線の長さは？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_m109_016",
+      "unit": "math.m1.trig.solve.solid",
       "category": "calculation",
       "prompt": "1辺が6の正四面体の高さは？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_m109_017",
+      "unit": "math.m1.trig.solve.area",
       "category": "calculation",
       "prompt": "3辺が a=7、b=8、c=3 の △ABC の面積は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_m109_018",
+      "unit": "math.m1.trig.solve.incircle",
       "category": "calculation",
       "prompt": "同じ三角形（3辺 7、8、3）の内接円の半径は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_m109_019",
+      "unit": "math.m1.trig.solve.solid",
       "category": "calculation",
       "prompt": "地点 A から塔の頂上を見上げた角が30°、塔に20m 近づいた B からは45° だった。塔の高さは？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_m109_020",
+      "unit": "math.m1.trig.solve.sine",
       "category": "knowledge",
       "prompt": "三角形で「2辺とその間の角」が分かっているとき、残りの辺を求めるのに使う定理は？",
       "choices": [

@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "inf_info104_001",
+      "unit": "information.info.society.problem.process",
       "category": "knowledge",
       "prompt": "PDCA サイクルの順番として正しいものは？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "inf_info104_002",
+      "unit": "information.info.society.problem.process",
       "category": "knowledge",
       "prompt": "問題解決の最初の段階で行うことは？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "inf_info104_003",
+      "unit": "information.info.society.problem",
       "category": "knowledge",
       "prompt": "物事の本質的な部分を取り出して単純化して表したものは？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "inf_info104_004",
+      "unit": "information.info.society.problem.model",
       "category": "knowledge",
       "prompt": "モデルを使って、現実の現象を模擬的に再現してみることは？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "inf_info104_005",
+      "unit": "information.info.society.problem.model",
       "category": "knowledge",
       "prompt": "「y ＝ 1000 ＋ 500x」のように数式で表したモデルを何という？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "inf_info104_006",
+      "unit": "information.info.society.problem.model",
       "category": "knowledge",
       "prompt": "サイコロのように偶然の要素をふくむモデルは？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "inf_info104_007",
+      "unit": "information.info.society.problem",
       "category": "knowledge",
       "prompt": "批判せずに、質より量を重視してアイデアを出し合う方法は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "inf_info104_008",
+      "unit": "information.info.society.problem",
       "category": "knowledge",
       "prompt": "カードに書いたアイデアをグループにまとめて整理する方法は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "inf_info104_009",
+      "unit": "information.info.society.problem",
       "category": "calculation",
       "prompt": "最初 1000 円あり、毎月 500 円ずつ貯金する。6 か月後の貯金額は？（y ＝ 1000 ＋ 500x）",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "inf_info104_010",
+      "unit": "information.info.society.problem",
       "category": "calculation",
       "prompt": "200 人にアンケートをとり、30 % が「はい」と答えた。「はい」は何人？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "inf_info104_011",
+      "unit": "information.info.society.problem",
       "category": "thinking",
       "prompt": "アンケートの質問文で、回答のかたよりを減らすために気をつけることは？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "inf_info104_012",
+      "unit": "information.info.society.problem.model",
       "category": "thinking",
       "prompt": "シミュレーションの結果が現実と大きくずれた。PDCA ではまず何をする？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "inf_info104_013",
+      "unit": "information.info.society.problem.process",
       "category": "knowledge",
       "prompt": "問題解決の手順として一般的なものは？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "inf_info104_014",
+      "unit": "information.info.society.problem.model",
       "category": "knowledge",
       "prompt": "モデルの分類で、地球儀や模型のように実物の形を表すモデルは？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "inf_info104_015",
+      "unit": "information.info.society.problem.model",
       "category": "knowledge",
       "prompt": "フローチャートや関係図のように、図で表すモデルは？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "inf_info104_016",
+      "unit": "information.info.society.problem.model",
       "category": "knowledge",
       "prompt": "時間とともに変化する現象を表すモデルを何という？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "inf_info104_017",
+      "unit": "information.info.society.problem.model",
       "category": "knowledge",
       "prompt": "不確定な要素をふくまず、結果が一通りに決まるモデルは？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "inf_info104_018",
+      "unit": "information.info.society.problem",
       "category": "knowledge",
       "prompt": "アイデアを図で広げていく、中心から放射状に書く発想法は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "inf_info104_019",
+      "unit": "information.info.society.problem",
       "category": "knowledge",
       "prompt": "トレードオフとは？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "inf_info104_020",
+      "unit": "information.info.society.problem.model",
       "category": "knowledge",
       "prompt": "乱数を使って、偶然の要素をふくむ現象をくり返し試す手法は？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "inf_info104_021",
+      "unit": "information.info.society.problem",
       "category": "calculation",
       "prompt": "毎日 5 % ずつ増える量が今 100 のとき、2 日後はいくつ？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "inf_info104_022",
+      "unit": "information.info.society.problem",
       "category": "calculation",
       "prompt": "ある店は 1 時間に平均 12 人の客が来て、1 人の会計に 4 分かかる。レジ 1 台のとき、1 時間の会計にかかる時間の合計は？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "inf_info104_023",
+      "unit": "information.info.society.problem.model",
       "category": "thinking",
       "prompt": "シミュレーションの結果をそのまま信じず、条件を変えて何度も試す理由は？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "inf_info104_024",
+      "unit": "information.info.society.problem.process",
       "category": "thinking",
       "prompt": "問題解決で、解決案を実行したあとに「評価」を行う理由は？",
       "choices": [

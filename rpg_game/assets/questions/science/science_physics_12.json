@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "sci_phy12_001",
+      "unit": "science.physics.thermo.gas.law",
       "category": "knowledge",
       "prompt": "温度が一定のとき、一定量の気体の圧力と体積の関係（ボイルの法則）は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "sci_phy12_002",
+      "unit": "science.physics.thermo.gas.law",
       "category": "knowledge",
       "prompt": "圧力が一定のとき、一定量の気体の体積と絶対温度の関係（シャルルの法則）は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "sci_phy12_003",
+      "unit": "science.physics.thermo.gas.law",
       "category": "knowledge",
       "prompt": "理想気体の状態方程式は？（n：物質量、R：気体定数）",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "sci_phy12_004",
+      "unit": "science.physics.thermo.gas.kinetic",
       "category": "knowledge",
       "prompt": "理想気体の内部エネルギーは何で決まる？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "sci_phy12_005",
+      "unit": "science.physics.thermo.gas.kinetic",
       "category": "knowledge",
       "prompt": "熱力学第1法則は？（ΔU：内部エネルギーの変化、Q：吸収した熱、W：外からされた仕事）",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "sci_phy12_006",
+      "unit": "science.physics.thermo.gas.first",
       "category": "knowledge",
       "prompt": "外部と熱のやりとりがない状態変化を何という？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "sci_phy12_007",
+      "unit": "science.physics.thermo.gas.first",
       "category": "knowledge",
       "prompt": "等温変化で変わらないものは？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "sci_phy12_008",
+      "unit": "science.physics.thermo.gas",
       "category": "knowledge",
       "prompt": "熱機関の効率について正しいものは？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "sci_phy12_009",
+      "unit": "science.physics.thermo.gas.law",
       "category": "calculation",
       "prompt": "温度一定で、一定量の気体の圧力を2倍にした。体積は何倍？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "sci_phy12_010",
+      "unit": "science.physics.thermo.gas",
       "category": "calculation",
       "prompt": "圧力一定で、300 K で 2.0 L の気体を 450 K にした。体積は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "sci_phy12_011",
+      "unit": "science.physics.thermo.gas",
       "category": "calculation",
       "prompt": "1.0 mol の理想気体が 300 K、体積 0.025 m³ にある。圧力はおよそ？（R ＝ 8.3 J/(mol·K)）",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "sci_phy12_012",
+      "unit": "science.physics.thermo.gas.kinetic",
       "category": "calculation",
       "prompt": "気体が 500 J の熱を吸収し、外部に 200 J の仕事をした。内部エネルギーの変化は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "sci_phy12_013",
+      "unit": "science.physics.thermo.gas.cycle",
       "category": "calculation",
       "prompt": "熱機関が 1000 J の熱を吸収し、300 J の仕事をした。熱効率は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "sci_phy12_014",
+      "unit": "science.physics.thermo.gas.first",
       "category": "calculation",
       "prompt": "圧力 1.0 × 10⁵ Pa を保ったまま、気体の体積が 2.0 × 10⁻³ m³ 増えた。気体が外にした仕事は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "sci_phy12_015",
+      "unit": "science.physics.thermo.gas.first",
       "category": "thinking",
       "prompt": "空気のかたまりが上昇して断熱膨張すると、温度はどうなる？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "sci_phy12_016",
+      "unit": "science.physics.thermo.gas.first",
       "category": "thinking",
       "prompt": "自転車の空気入れで勢いよく空気を圧縮すると、筒が温かくなる。その理由は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "sci_phy12_017",
+      "unit": "science.physics.thermo.gas.law",
       "category": "knowledge",
       "prompt": "ボイル・シャルルの法則は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "sci_phy12_018",
+      "unit": "science.physics.thermo.gas.kinetic",
       "category": "knowledge",
       "prompt": "気体の圧力が生じる理由は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "sci_phy12_019",
+      "unit": "science.physics.thermo.gas.first",
       "category": "knowledge",
       "prompt": "定積変化で、気体が外部にする仕事は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "sci_phy12_020",
+      "unit": "science.physics.thermo.gas",
       "category": "knowledge",
       "prompt": "気体が膨張するとき、外部にする仕事は？（圧力一定）",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "sci_phy12_021",
+      "unit": "science.physics.thermo.gas.cycle",
       "category": "knowledge",
       "prompt": "熱力学第2法則の内容として正しいものは？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "sci_phy12_022",
+      "unit": "science.physics.thermo.gas.first",
       "category": "knowledge",
       "prompt": "断熱圧縮すると、気体の温度はどうなる？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "sci_phy12_023",
+      "unit": "science.physics.thermo.gas.law",
       "category": "calculation",
       "prompt": "温度一定で、気体の体積を 1/3 にした。圧力は何倍？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "sci_phy12_024",
+      "unit": "science.physics.thermo.gas.law",
       "category": "calculation",
       "prompt": "圧力一定で、300 K で 6.0 L の気体の体積を 8.0 L にするには、温度を何 K にすればよい？",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "sci_phy12_025",
+      "unit": "science.physics.thermo.gas",
       "category": "calculation",
       "prompt": "体積一定で、300 K の気体を 600 K にした。圧力は何倍？",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "sci_phy12_026",
+      "unit": "science.physics.thermo.gas",
       "category": "calculation",
       "prompt": "2.0 mol の理想気体が 300 K、体積 0.050 m³ にある。圧力は？（R ＝ 8.3 J/(mol·K)）",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "sci_phy12_027",
+      "unit": "science.physics.thermo.gas.kinetic",
       "category": "calculation",
       "prompt": "気体に 800 J の熱を与え、気体は外部に 300 J の仕事をした。内部エネルギーの変化は？",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "sci_phy12_028",
+      "unit": "science.physics.thermo.gas.kinetic",
       "category": "calculation",
       "prompt": "断熱変化で、気体が外部から 200 J の仕事をされた。内部エネルギーの変化は？",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "sci_phy12_029",
+      "unit": "science.physics.thermo.gas.cycle",
       "category": "calculation",
       "prompt": "熱効率 0.25 の熱機関が 400 J の仕事をした。吸収した熱量は？",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "sci_phy12_030",
+      "unit": "science.physics.thermo.gas",
       "category": "calculation",
       "prompt": "圧力 2.0 × 10⁵ Pa 一定で、体積が 1.0 × 10⁻³ m³ 増えた。気体がした仕事は？",
       "choices": [
@@ -396,6 +426,7 @@
     },
     {
       "id": "sci_phy12_031",
+      "unit": "science.physics.thermo.gas.law",
       "category": "thinking",
       "prompt": "高い山の上でお菓子の袋がふくらむ理由は？",
       "choices": [
@@ -409,6 +440,7 @@
     },
     {
       "id": "sci_phy12_032",
+      "unit": "science.physics.thermo.gas",
       "category": "thinking",
       "prompt": "冷蔵庫が中を冷やせるのに、熱力学第2法則に反しない理由は？",
       "choices": [

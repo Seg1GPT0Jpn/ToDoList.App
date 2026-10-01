@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_ma09_001",
+      "unit": "math.ma.geometry.triangle",
       "category": "calculation",
       "prompt": "△ABC で AB=7、BC=8、CA=9。内接円が BC に接する点を D とするとき、BD は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_ma09_002",
+      "unit": "math.ma.geometry.triangle.centers",
       "category": "calculation",
       "prompt": "△ABC の重心を G、中線を AM とする。AM=9 のとき AG は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_ma09_003",
+      "unit": "math.ma.geometry.triangle",
       "category": "calculation",
       "prompt": "円の2つの弦が点 P で交わり、PA=2、PB=6、PC=3 のとき、PD は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_ma09_004",
+      "unit": "math.ma.geometry.construct.polyhedron",
       "category": "calculation",
       "prompt": "正四面体の頂点・辺・面の数について、v−e+f の値は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_ma09_005",
+      "unit": "math.ma.geometry.triangle",
       "category": "calculation",
       "prompt": "正八面体の頂点・辺・面の数は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_ma09_006",
+      "unit": "math.ma.geometry.triangle.bisector",
       "category": "calculation",
       "prompt": "△ABC で AB=6、AC=4、BC=5。∠A の外角の二等分線と直線 BC の交点を E とするとき、CE は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_ma09_007",
+      "unit": "math.ma.geometry.triangle",
       "category": "calculation",
       "prompt": "△ABC の辺 BC 上の点 D が BD:DC=2:3 のとき、△ABD と △ADC の面積の比は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_ma09_008",
+      "unit": "math.ma.geometry.circle.tangent",
       "category": "calculation",
       "prompt": "半径3と1の2円の中心間の距離が5のとき、共通内接線の接点間の長さは？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_ma09_009",
+      "unit": "math.ma.geometry.circle.inscribed",
       "category": "calculation",
       "prompt": "直径に対する円周角は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_ma09_010",
+      "unit": "math.ma.geometry.triangle.ceva",
       "category": "thinking",
       "prompt": "メネラウスの定理を使う利点は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_ma09_011",
+      "unit": "math.ma.geometry.triangle",
       "category": "calculation",
       "prompt": "△ABC で AB=6、BC=7、CA=5。内接円が BC に接する点を D とするとき、BD は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_ma09_012",
+      "unit": "math.ma.geometry.triangle.centers",
       "category": "calculation",
       "prompt": "△ABC の重心を G とするとき、△GBC の面積は △ABC の何倍？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_ma09_013",
+      "unit": "math.ma.geometry.triangle",
       "category": "calculation",
       "prompt": "△ABC で、AB を 1:2 に内分する点を D、AC の中点を E とする。△ADE の面積は △ABC の何倍？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_ma09_014",
+      "unit": "math.ma.geometry.triangle",
       "category": "calculation",
       "prompt": "円外の点 P からひいた直線が円と A、B で交わり PA=2、AB=6。別の直線が C、D で交わり PC=4 のとき、PD は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_ma09_015",
+      "unit": "math.ma.geometry.circle.tangent",
       "category": "calculation",
       "prompt": "半径8と3の2円の中心間の距離が13のとき、共通外接線の接点間の長さは？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_ma09_016",
+      "unit": "math.ma.geometry.circle.tangent",
       "category": "calculation",
       "prompt": "同じ2円（半径8と3、中心間13）の共通内接線の接点間の長さは？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_ma09_017",
+      "unit": "math.ma.geometry.circle.inscribed",
       "category": "calculation",
       "prompt": "1辺2の立方体で、3つの面の対角線でできる正三角形の1辺の長さは？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_ma09_018",
+      "unit": "math.ma.geometry.circle.inscribed",
       "category": "calculation",
       "prompt": "円の直径 AB=10 で、円周上の点 C について AC=6 のとき、BC は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_ma09_019",
+      "unit": "math.ma.geometry.circle.tangent",
       "category": "calculation",
       "prompt": "接線と弦 AB のつくる角が50°のとき、弦 AB に対する中心角は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_ma09_020",
+      "unit": "math.ma.geometry.triangle.ceva",
       "category": "thinking",
       "prompt": "チェバの定理とメネラウスの定理の使い分けは？",
       "choices": [

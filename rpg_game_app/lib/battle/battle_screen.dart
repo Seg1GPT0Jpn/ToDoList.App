@@ -648,6 +648,7 @@ class _BattleScreenState extends State<BattleScreen>
           questionId: id,
           setId: setId,
           category: r.question.source.category.name,
+          unit: r.question.source.unit,
           isCorrect: r.correct,
           elapsedMs: r.timedOut
               ? _engine.limitFor(r.question).inMilliseconds

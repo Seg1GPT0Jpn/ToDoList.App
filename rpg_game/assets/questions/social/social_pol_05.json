@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "soc_pol05_001",
+      "unit": "social.pol.politics.court.trial",
       "category": "knowledge",
       "prompt": "一つの事件について 3 回まで裁判を受けられるしくみは？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "soc_pol05_002",
+      "unit": "social.pol.politics.court.trial",
       "category": "knowledge",
       "prompt": "第一審の判決に不服で、上級の裁判所に訴えることを何という？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "soc_pol05_003",
+      "unit": "social.pol.politics.court.independence",
       "category": "knowledge",
       "prompt": "法律などが憲法に違反していないかを判断する権限は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "soc_pol05_004",
+      "unit": "social.pol.politics.court",
       "category": "knowledge",
       "prompt": "私人どうしの争い（お金の貸し借りなど）を解決する裁判は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "soc_pol05_005",
+      "unit": "social.pol.politics.court",
       "category": "knowledge",
       "prompt": "犯罪について、有罪か無罪か、刑罰を決める裁判は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "soc_pol05_006",
+      "unit": "social.pol.politics.court.trial",
       "category": "knowledge",
       "prompt": "2009 年に始まった、国民が刑事裁判に参加する制度は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "soc_pol05_007",
+      "unit": "social.pol.politics.court.independence",
       "category": "knowledge",
       "prompt": "最高裁判所の裁判官がふさわしいかどうかを国民が判断する制度は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "soc_pol05_008",
+      "unit": "social.pol.politics.court",
       "category": "knowledge",
       "prompt": "裁判官が、ほかの権力から圧力を受けずに裁判を行うことを何という？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "soc_pol05_009",
+      "unit": "social.pol.politics.court",
       "category": "knowledge",
       "prompt": "「疑わしきは被告人の利益に」という原則を何という？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "soc_pol05_010",
+      "unit": "social.pol.politics.court",
       "category": "knowledge",
       "prompt": "犯罪と刑罰は、あらかじめ法律で定めておかなければならないという原則は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "soc_pol05_011",
+      "unit": "social.pol.politics.court.citizen",
       "category": "thinking",
       "prompt": "裁判員制度が導入された目的として適切なものは？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "soc_pol05_012",
+      "unit": "social.pol.politics.court",
       "category": "thinking",
       "prompt": "冤罪を防ぐために取り組まれていることとして適切なものは？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "soc_pol05_013",
+      "unit": "social.pol.politics.court.independence",
       "category": "knowledge",
       "prompt": "最高裁判所の長官を任命するのは？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "soc_pol05_014",
+      "unit": "social.pol.politics.court.independence",
       "category": "knowledge",
       "prompt": "下級裁判所にあたるものは？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "soc_pol05_015",
+      "unit": "social.pol.politics.court.trial",
       "category": "knowledge",
       "prompt": "第二審の判決に不服で、さらに上級の裁判所に訴えることを何という？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "soc_pol05_016",
+      "unit": "social.pol.politics.court",
       "category": "knowledge",
       "prompt": "家庭内の争いや少年事件をあつかう裁判所は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "soc_pol05_017",
+      "unit": "social.pol.politics.court.trial",
       "category": "knowledge",
       "prompt": "刑事裁判で、被疑者を裁判所に訴える（起訴する）のは？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "soc_pol05_018",
+      "unit": "social.pol.politics.court.trial",
       "category": "knowledge",
       "prompt": "民事裁判で、裁判所に訴えた側を何という？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "soc_pol05_019",
+      "unit": "social.pol.politics.court",
       "category": "knowledge",
       "prompt": "取り調べや裁判で、自分に不利なことを言わなくてよい権利は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "soc_pol05_020",
+      "unit": "social.pol.politics.court",
       "category": "knowledge",
       "prompt": "現行犯の場合を除き、逮捕に必要な令状を出すのは？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "soc_pol05_021",
+      "unit": "social.pol.politics.court.review",
       "category": "knowledge",
       "prompt": "違憲審査の最終的な判断を下すことから、最高裁判所は何と呼ばれる？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "soc_pol05_022",
+      "unit": "social.pol.politics.court.citizen",
       "category": "knowledge",
       "prompt": "裁判員裁判で審理されるのは？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "soc_pol05_023",
+      "unit": "social.pol.politics.court.citizen",
       "category": "knowledge",
       "prompt": "裁判員はどのように選ばれる？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "soc_pol05_024",
+      "unit": "social.pol.politics.court.trial",
       "category": "thinking",
       "prompt": "三審制がとられている目的として最も適切なものは？",
       "choices": [

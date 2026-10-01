@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_m102_001",
+      "unit": "math.m1.numexpr.poly.expand",
       "category": "calculation",
       "prompt": "(x+2)³ を展開すると？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_m102_002",
+      "unit": "math.m1.numexpr.poly.factor",
       "category": "calculation",
       "prompt": "x³+8 を因数分解すると？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_m102_003",
+      "unit": "math.m1.numexpr.poly.factor",
       "category": "calculation",
       "prompt": "6x²+x−2 を因数分解すると？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_m102_004",
+      "unit": "math.m1.numexpr.poly.expand",
       "category": "calculation",
       "prompt": "(x+y+1)² を展開すると？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_m102_005",
+      "unit": "math.m1.numexpr.poly.factor",
       "category": "calculation",
       "prompt": "x²−y²+4y−4 を因数分解すると？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_m102_006",
+      "unit": "math.m1.numexpr.poly.factor",
       "category": "calculation",
       "prompt": "x⁴−16 をできるところまで因数分解すると？（係数は有理数の範囲）",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_m102_007",
+      "unit": "math.m1.numexpr.poly.expand",
       "category": "calculation",
       "prompt": "(a+b+c)(a+b−c) を展開すると？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_m102_008",
+      "unit": "math.m1.numexpr.poly.factor",
       "category": "calculation",
       "prompt": "x²+xy−2y² を因数分解すると？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_m102_009",
+      "unit": "math.m1.numexpr.poly.expand",
       "category": "calculation",
       "prompt": "(x−1)(x+1)(x²+1) を展開すると？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_m102_010",
+      "unit": "math.m1.numexpr.poly.expand",
       "category": "thinking",
       "prompt": "(x+1)(x+2)(x+3)(x+4) を展開するときのうまい組み合わせは？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_m102_011",
+      "unit": "math.m1.numexpr.poly.expand",
       "category": "calculation",
       "prompt": "(x−1)³ を展開すると？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_m102_012",
+      "unit": "math.m1.numexpr.poly.factor",
       "category": "calculation",
       "prompt": "x³−27 を因数分解すると？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_m102_013",
+      "unit": "math.m1.numexpr.poly.factor",
       "category": "calculation",
       "prompt": "2x²−5x−3 を因数分解すると？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_m102_014",
+      "unit": "math.m1.numexpr.poly.factor",
       "category": "calculation",
       "prompt": "3x²+10x+8 を因数分解すると？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_m102_015",
+      "unit": "math.m1.numexpr.poly.expand",
       "category": "calculation",
       "prompt": "(a−b+c)² を展開すると？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_m102_016",
+      "unit": "math.m1.numexpr.poly.factor",
       "category": "calculation",
       "prompt": "a²−b²−a+b を因数分解すると？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_m102_017",
+      "unit": "math.m1.numexpr.poly.factor",
       "category": "calculation",
       "prompt": "x²−2xy+y²−9 を因数分解すると？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_m102_018",
+      "unit": "math.m1.numexpr.poly.expand",
       "category": "calculation",
       "prompt": "(x+1)(x+2)(x−1)(x−2) を展開すると？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_m102_019",
+      "unit": "math.m1.numexpr.poly.factor",
       "category": "calculation",
       "prompt": "8x³+1 を因数分解すると？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_m102_020",
+      "unit": "math.m1.numexpr.poly.factor",
       "category": "calculation",
       "prompt": "x²+4xy+3y² を因数分解すると？",
       "choices": [

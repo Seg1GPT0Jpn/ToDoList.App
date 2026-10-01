@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "soc_geo19_001",
+      "unit": "social.geo.nature.hazard.disaster",
       "category": "knowledge",
       "prompt": "自然災害による被害を予測し、危険な区域や避難場所を示した地図は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "soc_geo19_002",
+      "unit": "social.geo.nature.hazard.disaster",
       "category": "knowledge",
       "prompt": "海底の地震などで海水が持ち上げられ、陸地に押し寄せる災害は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "soc_geo19_003",
+      "unit": "social.geo.nature.hazard.disaster",
       "category": "knowledge",
       "prompt": "台風などで気圧が下がり、強風で海水が吹き寄せられて海面が上がる現象は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "soc_geo19_004",
+      "unit": "social.geo.urban.city.function",
       "category": "knowledge",
       "prompt": "大雨のとき、雨水が下水道などで処理しきれずに都市で起こる浸水は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "soc_geo19_005",
+      "unit": "social.geo.japan.global",
       "category": "knowledge",
       "prompt": "2015 年に国連で採択された、2030 年までの世界共通の目標は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "soc_geo19_006",
+      "unit": "social.geo.japan.global.environment",
       "category": "knowledge",
       "prompt": "2015 年に採択された、地球温暖化対策の国際的な枠組みは？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "soc_geo19_007",
+      "unit": "social.geo.japan.global",
       "category": "knowledge",
       "prompt": "世界で十分な食料を得られず、慢性的な栄養不足が続く状態を何という？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "soc_geo19_008",
+      "unit": "social.geo.japan.global",
       "category": "knowledge",
       "prompt": "まだ食べられるのに捨てられてしまう食品を何という？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "soc_geo19_009",
+      "unit": "social.geo.nature.hazard.disaster",
       "category": "knowledge",
       "prompt": "災害時に、自分や家族の身は自分で守ることを何という？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "soc_geo19_010",
+      "unit": "social.geo.nature.hazard.disaster",
       "category": "knowledge",
       "prompt": "地震のゆれで、地下水をふくむ砂の地盤が液体のようになる現象は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "soc_geo19_011",
+      "unit": "social.geo.nature.hazard.prevention",
       "category": "thinking",
       "prompt": "ハザードマップを見るときに確認すべきこととして適切なものは？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "soc_geo19_012",
+      "unit": "social.geo.japan.global.food",
       "category": "thinking",
       "prompt": "日本でフードマイレージが大きい理由は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "soc_geo19_013",
+      "unit": "social.geo.japan.global",
       "category": "knowledge",
       "prompt": "1997年に採択され、先進国に温室効果ガスの削減目標を定めた取り決めは？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "soc_geo19_014",
+      "unit": "social.geo.japan.global",
       "category": "knowledge",
       "prompt": "オゾン層を破壊する原因となった物質は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "soc_geo19_015",
+      "unit": "social.geo.japan.global.environment",
       "category": "knowledge",
       "prompt": "砂漠化の人為的な原因として適切なものは？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "soc_geo19_016",
+      "unit": "social.geo.nature.hazard.disaster",
       "category": "knowledge",
       "prompt": "地域の住民どうしで助け合って災害に備えることを何という？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "soc_geo19_017",
+      "unit": "social.geo.nature.hazard.disaster",
       "category": "knowledge",
       "prompt": "国や地方自治体による救助や支援を何という？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "soc_geo19_018",
+      "unit": "social.geo.japan.global",
       "category": "knowledge",
       "prompt": "大きな揺れが来る前に、テレビやスマートフォンで知らせるしくみは？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "soc_geo19_019",
+      "unit": "social.geo.nature.hazard.disaster",
       "category": "knowledge",
       "prompt": "大雨などで、土砂と水が一体となって谷を一気に流れ下る災害は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "soc_geo19_020",
+      "unit": "social.geo.nature.hazard.disaster",
       "category": "knowledge",
       "prompt": "火山の噴火で、高温の火山ガスと火山灰などが高速で流れ下る現象は？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "soc_geo19_021",
+      "unit": "social.geo.nature.hazard.prevention",
       "category": "knowledge",
       "prompt": "大雨のときに「いつ・だれが・何をするか」を自分であらかじめ決めておく避難計画は？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "soc_geo19_022",
+      "unit": "social.geo.map.position.territory",
       "category": "knowledge",
       "prompt": "ある国で出た汚染物質が、国境をこえて別の国に被害を与える問題を何という？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "soc_geo19_023",
+      "unit": "social.geo.japan.global",
       "category": "calculation",
       "prompt": "海面が1年に 3 mm ずつ上昇すると、100年でどれだけ上昇する？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "soc_geo19_024",
+      "unit": "social.geo.nature.hazard.prevention",
       "category": "thinking",
       "prompt": "「減災」の考え方として正しいものは？",
       "choices": [

@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "sci_ear05_001",
+      "unit": "science.earth.history.strata.stratum",
       "category": "knowledge",
       "prompt": "「地層が逆転していなければ、下の地層ほど古い」という法則は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "sci_ear05_002",
+      "unit": "science.earth.history.strata.stratum",
       "category": "knowledge",
       "prompt": "地層が堆積したあと、いったん陸上に出て侵食され、再び沈んで堆積した上下の地層の関係は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "sci_ear05_003",
+      "unit": "science.earth.history.strata.fossil",
       "category": "knowledge",
       "prompt": "地層ができた時代を知る手がかりになる化石を何という？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "sci_ear05_004",
+      "unit": "science.earth.history.strata.stratum",
       "category": "knowledge",
       "prompt": "その地層ができた当時の環境を知る手がかりになる化石を何という？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "sci_ear05_005",
+      "unit": "science.earth.history.strata.age",
       "category": "knowledge",
       "prompt": "三葉虫が栄えた地質時代は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "sci_ear05_006",
+      "unit": "science.earth.history.strata.age",
       "category": "knowledge",
       "prompt": "アンモナイトや恐竜が栄えた地質時代は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "sci_ear05_007",
+      "unit": "science.earth.history.strata.stratum",
       "category": "knowledge",
       "prompt": "遠く離れた地層どうしを対比するのに役立つ、広い範囲に同時に堆積した特徴的な層を何という？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "sci_ear05_008",
+      "unit": "science.earth.history.strata.sediment",
       "category": "knowledge",
       "prompt": "粒の大きさが 2 mm 以上のれきが固まってできた堆積岩は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "sci_ear05_009",
+      "unit": "science.earth.history.strata.sediment",
       "category": "knowledge",
       "prompt": "塩酸をかけると二酸化炭素の泡が出る堆積岩は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "sci_ear05_010",
+      "unit": "science.earth.history.strata.sediment",
       "category": "knowledge",
       "prompt": "放散虫の殻などが集まってできた、非常にかたい堆積岩は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "sci_ear05_011",
+      "unit": "science.earth.history.strata",
       "category": "knowledge",
       "prompt": "火山灰などが堆積してできた岩石は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "sci_ear05_012",
+      "unit": "science.earth.history.strata",
       "category": "knowledge",
       "prompt": "恐竜などが大量絶滅したのはいつ？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "sci_ear05_013",
+      "unit": "science.earth.history.strata",
       "category": "calculation",
       "prompt": "放射性元素がもとの 1/4 に減っていた。半減期が 7 億年なら、岩石ができてから何年たった？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "sci_ear05_014",
+      "unit": "science.earth.history.strata.stratum",
       "category": "calculation",
       "prompt": "1 年に 0.5 mm ずつ泥がたまる湖で、厚さ 1 m の地層ができるのにかかる年数は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "sci_ear05_015",
+      "unit": "science.earth.history.strata.stratum",
       "category": "thinking",
       "prompt": "1 つの地層の中で、下から上へ粒が細かくなっている（級化層理）。わかることは？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "sci_ear05_016",
+      "unit": "science.earth.history.strata.stratum",
       "category": "thinking",
       "prompt": "地層 A の上に不整合面があり、その上に地層 B がある。起こった順として正しいものは？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "sci_ear05_017",
+      "unit": "science.earth.history.strata.sediment",
       "category": "knowledge",
       "prompt": "流水のはたらきのうち、土地をけずるはたらきは？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "sci_ear05_018",
+      "unit": "science.earth.history.strata.sediment",
       "category": "knowledge",
       "prompt": "岩石が温度変化や水のはたらきで、もろくくずれていく現象は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "sci_ear05_019",
+      "unit": "science.earth.history.strata",
       "category": "knowledge",
       "prompt": "粒の大きさで分けたとき、砂の大きさは？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "sci_ear05_020",
+      "unit": "science.earth.history.strata",
       "category": "knowledge",
       "prompt": "河口から沖へ向かって堆積する粒の大きさの変化は？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "sci_ear05_021",
+      "unit": "science.earth.history.strata.fossil",
       "category": "knowledge",
       "prompt": "サンゴの化石が見つかった地層は、どんな環境でできた？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "sci_ear05_022",
+      "unit": "science.earth.history.strata.age",
       "category": "knowledge",
       "prompt": "ビカリアやマンモスが示す地質時代は？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "sci_ear05_023",
+      "unit": "science.earth.history.strata.fossil",
       "category": "knowledge",
       "prompt": "示準化石に適した生物の条件は？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "sci_ear05_024",
+      "unit": "science.earth.history.strata.sediment",
       "category": "knowledge",
       "prompt": "泥が固まってできた堆積岩は？",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "sci_ear05_025",
+      "unit": "science.earth.history.strata.stratum",
       "category": "knowledge",
       "prompt": "地層が曲がったり切れたりしていない場合、上下の関係について正しいのは？",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "sci_ear05_026",
+      "unit": "science.earth.history.strata.stratum",
       "category": "calculation",
       "prompt": "1000 年に 5 cm ずつ堆積する海底で、厚さ 1 m の地層ができるのにかかる時間は？",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "sci_ear05_027",
+      "unit": "science.earth.history.strata",
       "category": "calculation",
       "prompt": "半減期 5730 年の ¹⁴C が、もとの 1/2 に減っていた。およそ何年前のもの？",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "sci_ear05_028",
+      "unit": "science.earth.history.strata",
       "category": "calculation",
       "prompt": "半減期 5730 年の ¹⁴C が、もとの 1/8 に減っていた。およそ何年前のもの？",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "sci_ear05_029",
+      "unit": "science.earth.history.strata.stratum",
       "category": "calculation",
       "prompt": "地層 A（下）、B、C（上）が重なり、C の上面が侵食され、その上に D が不整合に重なる。最も古いのは？",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "sci_ear05_030",
+      "unit": "science.earth.history.strata.stratum",
       "category": "calculation",
       "prompt": "厚さ 30 m の地層が 60 万年かけてできた。平均の堆積速度は 1000 年に何 cm？",
       "choices": [
@@ -396,6 +426,7 @@
     },
     {
       "id": "sci_ear05_031",
+      "unit": "science.earth.history.strata.stratum",
       "category": "thinking",
       "prompt": "地層の中に火山灰の層があると、遠く離れた地層の比較に役立つ理由は？",
       "choices": [
@@ -409,6 +440,7 @@
     },
     {
       "id": "sci_ear05_032",
+      "unit": "science.earth.history.strata.stratum",
       "category": "thinking",
       "prompt": "断層が地層 A、B を切り、その上の地層 C は切っていない。断層ができた時期は？",
       "choices": [

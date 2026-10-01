@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_mc13_001",
+      "unit": "math.mc.express.express.matrix",
       "category": "calculation",
       "prompt": "行列 [[1, 2], [3, 4]]+[[0, 1], [1, 0]] を計算すると？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_mc13_002",
+      "unit": "math.mc.express.express.matrix",
       "category": "knowledge",
       "prompt": "行列 [[1, 0], [0, 1]] を何という？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_mc13_003",
+      "unit": "math.mc.express.express",
       "category": "calculation",
       "prompt": "[[2, 0], [0, 3]] と列ベクトル [[1], [1]] の積は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_mc13_004",
+      "unit": "math.mc.express.express.chart",
       "category": "knowledge",
       "prompt": "一筆書きができるグラフの条件は？（つながったグラフ）",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_mc13_005",
+      "unit": "math.mc.express.express.network",
       "category": "calculation",
       "prompt": "5つの頂点のどの2つも辺で結んだグラフ（完全グラフ）の辺の数は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_mc13_006",
+      "unit": "math.mc.express.express.chart",
       "category": "knowledge",
       "prompt": "項目を多い順に並べた棒グラフと、累積比率の折れ線を組み合わせた図は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_mc13_007",
+      "unit": "math.mc.express.express.chart",
       "category": "knowledge",
       "prompt": "複数の項目のバランスを比べるのに向いたグラフは？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_mc13_008",
+      "unit": "math.mc.express.express.network",
       "category": "calculation",
       "prompt": "頂点 A、B、C で辺が A−B、B−C だけのグラフ。隣接行列の A の行は？（列の順は A、B、C）",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_mc13_009",
+      "unit": "math.mc.express.express",
       "category": "calculation",
       "prompt": "[[1, 1], [1, 0]]² を計算すると？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_mc13_010",
+      "unit": "math.mc.express.express.matrix",
       "category": "thinking",
       "prompt": "行列を使うと便利な場面は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_mc13_011",
+      "unit": "math.mc.express.express.matrix",
       "category": "calculation",
       "prompt": "行列 [[2, 1], [0, 3]]−[[1, 1], [1, 1]] を計算すると？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_mc13_012",
+      "unit": "math.mc.express.express",
       "category": "calculation",
       "prompt": "2×[[1, −1], [0, 2]] を計算すると？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_mc13_013",
+      "unit": "math.mc.express.express",
       "category": "calculation",
       "prompt": "[[1, 2], [0, 1]] と列ベクトル [[3], [1]] の積は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_mc13_014",
+      "unit": "math.mc.express.express.network",
       "category": "calculation",
       "prompt": "頂点の次数が 2, 2, 2, 2 のつながったグラフは一筆書きできる？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_mc13_015",
+      "unit": "math.mc.express.express.network",
       "category": "calculation",
       "prompt": "4つの頂点のどの2つも辺で結んだグラフの辺の数は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_mc13_016",
+      "unit": "math.mc.express.express.chart",
       "category": "knowledge",
       "prompt": "全体に対する割合を表すのに向いたグラフは？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_mc13_017",
+      "unit": "math.mc.express.express.chart",
       "category": "knowledge",
       "prompt": "時間とともに変わる量の変化を表すのに向いたグラフは？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_mc13_018",
+      "unit": "math.mc.express.express.network",
       "category": "calculation",
       "prompt": "頂点 A、B、C で辺が A−B、A−C、B−C のグラフ。頂点 A の次数は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_mc13_019",
+      "unit": "math.mc.express.express",
       "category": "calculation",
       "prompt": "[[0, 1], [1, 0]]² を計算すると？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_mc13_020",
+      "unit": "math.mc.express.express.chart",
       "category": "thinking",
       "prompt": "データをグラフにするときの注意として適切なのは？",
       "choices": [

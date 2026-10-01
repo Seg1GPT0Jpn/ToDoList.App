@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "sci_chm09_001",
+      "unit": "science.chemistry.state.gas",
       "category": "knowledge",
       "prompt": "気体が液体を経ずに直接固体になる変化は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "sci_chm09_002",
+      "unit": "science.chemistry.state.gas.vapor",
       "category": "knowledge",
       "prompt": "液体の蒸気圧は、温度が上がるとどうなる？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "sci_chm09_003",
+      "unit": "science.chemistry.state.gas.vapor",
       "category": "knowledge",
       "prompt": "液体が沸騰するのはどんなとき？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "sci_chm09_004",
+      "unit": "science.chemistry.state.gas.vapor",
       "category": "knowledge",
       "prompt": "高い山の上で水の沸点が 100 ℃ より低くなる理由は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "sci_chm09_005",
+      "unit": "science.chemistry.state.gas.vapor",
       "category": "knowledge",
       "prompt": "分子間力が大きい物質ほど、沸点はどうなる？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "sci_chm09_006",
+      "unit": "science.chemistry.state.gas.real",
       "category": "knowledge",
       "prompt": "理想気体とは？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "sci_chm09_007",
+      "unit": "science.chemistry.state.gas.mixture",
       "category": "knowledge",
       "prompt": "気体の混合物で、各成分気体の分圧の和は何に等しい？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "sci_chm09_008",
+      "unit": "science.chemistry.state.gas.vapor",
       "category": "knowledge",
       "prompt": "物質の三態が共存する温度・圧力の点を何という？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "sci_chm09_009",
+      "unit": "science.chemistry.state.gas.law",
       "category": "calculation",
       "prompt": "1.0 × 10⁵ Pa で 3.0 L の気体を、温度一定で 1.5 × 10⁵ Pa にした。体積は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "sci_chm09_010",
+      "unit": "science.chemistry.state.gas.law",
       "category": "calculation",
       "prompt": "27 ℃ で 3.0 L の気体を、圧力一定で 127 ℃ にした。体積は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "sci_chm09_011",
+      "unit": "science.chemistry.state.gas",
       "category": "calculation",
       "prompt": "0.20 mol の気体が 300 K で 8.3 L の容器に入っている。圧力は？（R ＝ 8.3 × 10³ Pa·L/(K·mol)）",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "sci_chm09_012",
+      "unit": "science.chemistry.state.gas.mixture",
       "category": "calculation",
       "prompt": "窒素と酸素の物質量の比が 4 : 1 の混合気体の全圧が 1.0 × 10⁵ Pa。酸素の分圧は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "sci_chm09_013",
+      "unit": "science.chemistry.state.gas",
       "category": "calculation",
       "prompt": "窒素 80 %、酸素 20 %（物質量の割合）の空気の平均分子量は？（N₂ ＝ 28、O₂ ＝ 32）",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "sci_chm09_014",
+      "unit": "science.chemistry.state.gas",
       "category": "calculation",
       "prompt": "標準状態で 5.6 L の気体の質量が 11 g だった。この気体の分子量は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "sci_chm09_015",
+      "unit": "science.chemistry.state.gas.vapor",
       "category": "thinking",
       "prompt": "圧力鍋を使うと食材が早く煮える理由は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "sci_chm09_016",
+      "unit": "science.chemistry.state.gas.vapor",
       "category": "thinking",
       "prompt": "水（分子量 18）の沸点が、硫化水素 H₂S（分子量 34）より高い理由は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "sci_chm09_017",
+      "unit": "science.chemistry.state.gas.vapor",
       "category": "knowledge",
       "prompt": "液体が表面だけでなく内部からも気体になる現象は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "sci_chm09_018",
+      "unit": "science.chemistry.state.gas",
       "category": "knowledge",
       "prompt": "気体が液体に変わる変化を何という？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "sci_chm09_019",
+      "unit": "science.chemistry.state.gas",
       "category": "knowledge",
       "prompt": "固体を加熱して融解している間、温度が一定になる理由は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "sci_chm09_020",
+      "unit": "science.chemistry.state.gas.law",
       "category": "knowledge",
       "prompt": "ボイル・シャルルの法則を表す式は？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "sci_chm09_021",
+      "unit": "science.chemistry.state.gas",
       "category": "knowledge",
       "prompt": "気体定数 R の値として正しいものは？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "sci_chm09_022",
+      "unit": "science.chemistry.state.gas.real",
       "category": "knowledge",
       "prompt": "実在気体が理想気体に近いふるまいをする条件は？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "sci_chm09_023",
+      "unit": "science.chemistry.state.gas.vapor",
       "category": "knowledge",
       "prompt": "水の状態図で、固体と液体の境界線（融解曲線）が左上がりになっている理由は？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "sci_chm09_024",
+      "unit": "science.chemistry.state.gas",
       "category": "knowledge",
       "prompt": "ドライアイスが常圧で液体にならずに昇華する理由は？",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "sci_chm09_025",
+      "unit": "science.chemistry.state.gas",
       "category": "calculation",
       "prompt": "温度一定で、2.0 × 10⁵ Pa、1.5 L の気体を 3.0 L にすると、圧力は？",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "sci_chm09_026",
+      "unit": "science.chemistry.state.gas",
       "category": "calculation",
       "prompt": "圧力一定で、27 ℃ で 6.0 L の気体を −73 ℃ にすると、体積は？",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "sci_chm09_027",
+      "unit": "science.chemistry.state.gas",
       "category": "calculation",
       "prompt": "0.50 mol の気体が 27 ℃、10 L の容器にある。圧力は？（R ＝ 8.3 × 10³ Pa·L/(K·mol)）",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "sci_chm09_028",
+      "unit": "science.chemistry.state.gas.mixture",
       "category": "calculation",
       "prompt": "全圧 1.0 × 10⁵ Pa の混合気体で、酸素のモル分率が 0.25 のとき、酸素の分圧は？",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "sci_chm09_029",
+      "unit": "science.chemistry.state.gas",
       "category": "calculation",
       "prompt": "27 ℃、1.0 × 10⁵ Pa で 2.49 L の気体の質量が 3.2 g だった。この気体の分子量は？（R ＝ 8.3 × 10³）",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "sci_chm09_030",
+      "unit": "science.chemistry.state.gas",
       "category": "calculation",
       "prompt": "窒素（分子量 28）と酸素（分子量 32）を物質量比 1：1 で混ぜた気体の平均分子量は？",
       "choices": [
@@ -396,6 +426,7 @@
     },
     {
       "id": "sci_chm09_031",
+      "unit": "science.chemistry.state.gas.vapor",
       "category": "thinking",
       "prompt": "密閉容器の水を加熱し続けても沸騰しないことがある理由は？",
       "choices": [
@@ -409,6 +440,7 @@
     },
     {
       "id": "sci_chm09_032",
+      "unit": "science.chemistry.state.gas.vapor",
       "category": "thinking",
       "prompt": "エタノール（分子量 46）がジメチルエーテル（同じ分子量）より沸点が高い理由は？",
       "choices": [

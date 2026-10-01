@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "jap_ron01_001",
+      "unit": "japanese.gendai.logical.hyoron.reference",
       "category": "thinking",
       "prompt": "（ ）に入る接続語として最も適切なものは？",
       "sentence": "科学の進歩は生活を豊かにした。（ ）、地球環境の破壊という深刻な代償ももたらした。",
@@ -20,6 +21,7 @@
     },
     {
       "id": "jap_ron01_002",
+      "unit": "japanese.gendai.logical.hyoron.reference",
       "category": "thinking",
       "prompt": "（ ）に入る接続語として最も適切なものは？",
       "sentence": "彼は多読家である。（ ）、毎月三十冊以上の本を読破している。",
@@ -34,6 +36,7 @@
     },
     {
       "id": "jap_ron01_003",
+      "unit": "japanese.gendai.logical.hyoron.reference",
       "category": "thinking",
       "prompt": "（ ）に入る接続語として最も適切なものは？",
       "sentence": "外出を控えるべきだ。（ ）、外は猛烈な暴風雨だからである。",
@@ -48,6 +51,7 @@
     },
     {
       "id": "jap_ron01_004",
+      "unit": "japanese.gendai.logical.hyoron.claim",
       "category": "thinking",
       "prompt": "筆者が最も主張したいことは？",
       "sentence": "読書は単なる知識の蓄積ではない。未知の思考に出会い、自分自身の価値観を根底から揺さぶられる対話のプロセスなのだ。",
@@ -62,6 +66,7 @@
     },
     {
       "id": "jap_ron01_005",
+      "unit": "japanese.gendai.logical.hyoron.reference",
       "category": "thinking",
       "prompt": "（ ）に入る接続語として最も適切なものは？",
       "sentence": "睡眠不足は集中力を奪う。（ ）、免疫力の低下も引き起こす。",
@@ -76,6 +81,7 @@
     },
     {
       "id": "jap_ron01_006",
+      "unit": "japanese.gendai.logical.argument.fallacy",
       "category": "knowledge",
       "prompt": "一般的に信じられている説を提示した後に批判・否定して自説を導く評論の論法は？",
       "choices": [
@@ -89,6 +95,7 @@
     },
     {
       "id": "jap_ron01_007",
+      "unit": "japanese.gendai.logical.hyoron.claim",
       "category": "thinking",
       "prompt": "筆者の考えと合致するものは？",
       "sentence": "近代人は自然を支配の対象と見なしてきた。だが、自然は人間が管理し尽くせるほど単純ではない。私たちは自然の循環の一部に過ぎないのだ。",
@@ -103,6 +110,7 @@
     },
     {
       "id": "jap_ron01_008",
+      "unit": "japanese.gendai.logical.hyoron.structure",
       "category": "thinking",
       "prompt": "（ ）に入る言葉として最も適切なものは？",
       "sentence": "規則を守ることは重要だ。しかし（ ）、規則の形式にとらわれて本来の目的を見失っては本末転倒である。",
@@ -117,6 +125,7 @@
     },
     {
       "id": "jap_ron01_009",
+      "unit": "japanese.gendai.logical.hyoron.claim",
       "category": "thinking",
       "prompt": "この文章の要旨として適切なものは？",
       "sentence": "言葉はコミュニケーションの道具であると同時に、私たちの思考の枠組みそのものを規定している。私たちは母語の構造の外に出て世界を見ることはできない。",
@@ -131,6 +140,7 @@
     },
     {
       "id": "jap_ron01_010",
+      "unit": "japanese.gendai.logical.hyoron.claim",
       "category": "knowledge",
       "prompt": "「確かに〜。しかし…」という論法の主な効果は？",
       "choices": [
@@ -144,6 +154,7 @@
     },
     {
       "id": "jap_ron01_011",
+      "unit": "japanese.gendai.logical.hyoron.reference",
       "category": "thinking",
       "prompt": "（ ）に入る接続語として最も適切なものは？",
       "sentence": "予算が大幅に超過した。（ ）、計画の中止を決断せざるを得ない。",
@@ -158,6 +169,7 @@
     },
     {
       "id": "jap_ron01_012",
+      "unit": "japanese.gendai.logical.hyoron.claim",
       "category": "thinking",
       "prompt": "筆者が伝えたい結論は？",
       "sentence": "個性の伸長が叫ばれる現代だが、伝統的な型の習得を軽視してはならない。型破りな独創性は、型を徹底して身につけた後にこそ生まれるからだ。",
@@ -172,6 +184,7 @@
     },
     {
       "id": "jap_ron01_013",
+      "unit": "japanese.gendai.logical.hyoron.structure",
       "category": "thinking",
       "prompt": "この段落の論理関係として適切なものは？",
       "sentence": "日本の美意識は「引き算」に特徴がある。たとえば枯山水の庭園は、水を使わずに水流を表現する。",
@@ -186,6 +199,7 @@
     },
     {
       "id": "jap_ron01_014",
+      "unit": "japanese.gendai.logical.hyoron.claim",
       "category": "thinking",
       "prompt": "筆者が最も強調している点は？",
       "sentence": "効率化によって節約された時間は、新たな仕事で埋め尽くされる。私たちは効率を追うあまり、何のために時間を生み出しているのかという目的を喪失している。",
@@ -200,6 +214,7 @@
     },
     {
       "id": "jap_ron01_015",
+      "unit": "japanese.gendai.logical.hyoron.structure",
       "category": "knowledge",
       "prompt": "複数の個別の事実から共通する一般的な法則を導き出す論理展開は？",
       "choices": [
@@ -213,6 +228,7 @@
     },
     {
       "id": "jap_ron01_016",
+      "unit": "japanese.gendai.logical.hyoron.structure",
       "category": "knowledge",
       "prompt": "一般的な前提や原理に個別の事例を当てはめて結論を導く論理展開は？",
       "choices": [
@@ -226,6 +242,7 @@
     },
     {
       "id": "jap_ron01_017",
+      "unit": "japanese.gendai.logical.hyoron.reference",
       "category": "thinking",
       "prompt": "（ ）に入る接続語として最も適切なものは？",
       "sentence": "彼は決して怠けていたわけではない。（ ）、人一倍の努力を重ねていたのだ。",
@@ -240,6 +257,7 @@
     },
     {
       "id": "jap_ron01_018",
+      "unit": "japanese.gendai.logical.argument.fallacy",
       "category": "thinking",
       "prompt": "筆者が批判している対象は？",
       "sentence": "多様性の尊重とは、単に異なる意見を放置することではない。対立する意見と誠実に向き合い、対話を通じて合意を模索する態度こそが不可欠なのだ。",
@@ -254,6 +272,7 @@
     },
     {
       "id": "jap_ron01_019",
+      "unit": "japanese.gendai.logical.hyoron.reference",
       "category": "thinking",
       "prompt": "（ ）に入る接続語として最も適切なものは？",
       "sentence": "全員が賛成した。（ ）、一人だけ浮かない表情の者がいた。",
@@ -268,6 +287,7 @@
     },
     {
       "id": "jap_ron01_020",
+      "unit": "japanese.gendai.logical.hyoron.structure",
       "category": "thinking",
       "prompt": "「パラドックス（逆説）」の例として最もふさわしい記述は？",
       "choices": [
@@ -281,6 +301,7 @@
     },
     {
       "id": "jap_ron01_021",
+      "unit": "japanese.gendai.logical.hyoron.claim",
       "category": "thinking",
       "prompt": "筆者の考えとして最も適切なものは？",
       "sentence": "アートの役割は心地よい慰めを与えることだけではない。鑑賞者の既存の常識を破壊し、世界を見る視座を更新することにこそ真の力がある。",
@@ -295,6 +316,7 @@
     },
     {
       "id": "jap_ron01_022",
+      "unit": "japanese.gendai.logical.hyoron.reference",
       "category": "thinking",
       "prompt": "（ ）に入る接続語として最も適切なものは？",
       "sentence": "現地調査を行った。（ ）、予想外の発見があった。",
@@ -309,6 +331,7 @@
     },
     {
       "id": "jap_ron01_023",
+      "unit": "japanese.gendai.logical.hyoron.claim",
       "category": "thinking",
       "prompt": "「二律背反（アンチノミー）」にあたる状況として最も適切なものは？",
       "choices": [
@@ -322,6 +345,7 @@
     },
     {
       "id": "jap_ron01_024",
+      "unit": "japanese.gendai.logical.hyoron.claim",
       "category": "thinking",
       "prompt": "筆者が述べている要旨は？",
       "sentence": "都市の魅力は整然とした計画性だけにあるのではない。路地裏の雑多さや偶然の出会いといった「予期せぬ余白」が、街に豊かな生命力を吹き込んでいる。",
@@ -336,6 +360,7 @@
     },
     {
       "id": "jap_ron01_025",
+      "unit": "japanese.gendai.logical.hyoron.reference",
       "category": "thinking",
       "prompt": "（ ）に入る接続語として最も適切なものは？",
       "sentence": "締め切りは明日である。（ ）、今夜は徹夜せざるを得ない。",
@@ -350,6 +375,7 @@
     },
     {
       "id": "jap_ron01_026",
+      "unit": "japanese.gendai.logical.hyoron.structure",
       "category": "knowledge",
       "prompt": "正・反・合の三段階で対立を止揚（アウフヘーベン）し、高い次元へ発展させる論理は？",
       "choices": [
@@ -363,6 +389,7 @@
     },
     {
       "id": "jap_ron01_027",
+      "unit": "japanese.gendai.logical.hyoron.claim",
       "category": "thinking",
       "prompt": "筆者の主張として合致するものは？",
       "sentence": "情報化社会において重要なのは、どれだけ多くの情報を集めたかではない。氾濫するノイズの中から、自分にとって真に意味のある文脈を紡ぎ出す力である。",
@@ -377,6 +404,7 @@
     },
     {
       "id": "jap_ron01_028",
+      "unit": "japanese.gendai.logical.hyoron.reference",
       "category": "thinking",
       "prompt": "（ ）に入る接続語として最も適切なものは？",
       "sentence": "肉体を鍛えるべきだ。（ ）精神の修養も怠ってはならない。",
@@ -391,6 +419,7 @@
     },
     {
       "id": "jap_ron01_029",
+      "unit": "japanese.gendai.logical.hyoron.structure",
       "category": "thinking",
       "prompt": "この文章の「対比関係」を正しく捉えたものは？",
       "sentence": "西欧の建築が石を積み上げて自然を遮断するのに対し、日本の伝統建築は木と紙を用い、外部の自然を室内に取り込もうとする。",
@@ -405,6 +434,7 @@
     },
     {
       "id": "jap_ron01_030",
+      "unit": "japanese.gendai.logical.hyoron.claim",
       "category": "thinking",
       "prompt": "筆者が結論で言いたいことは？",
       "sentence": "失敗を回避しようとする無難な選択の積み重ねが、組織全体の硬直化と創造性の衰退を招く。リスクを恐れずに挑戦する文化こそが、生存のための条件なのだ。",
@@ -419,6 +449,7 @@
     },
     {
       "id": "jap_ron01_031",
+      "unit": "japanese.gendai.logical.hyoron.reference",
       "category": "thinking",
       "prompt": "（ ）に入る接続語として最も適切なものは？",
       "sentence": "彼の提案は革新的だ。（ ）、実現には莫大な予算と期間を要する。",
@@ -433,6 +464,7 @@
     },
     {
       "id": "jap_ron01_032",
+      "unit": "japanese.gendai.logical.hyoron",
       "category": "thinking",
       "prompt": "「主客合一」の意味として最も適切なものは？",
       "choices": [

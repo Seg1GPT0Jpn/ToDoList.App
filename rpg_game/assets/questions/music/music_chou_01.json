@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mus_chou01_001",
+      "unit": "music.theory.key.signature.mechanism",
       "category": "knowledge",
       "prompt": "幹音だけでできている長調は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mus_chou01_002",
+      "unit": "music.theory.key.signature.minor",
       "category": "knowledge",
       "prompt": "幹音だけでできている短調は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mus_chou01_003",
+      "unit": "music.theory.key.signature.mechanism",
       "category": "knowledge",
       "prompt": "ある調の音階にふくまれる派生音を、まとめて示すものを何という？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mus_chou01_004",
+      "unit": "music.theory.key.signature.mechanism",
       "category": "knowledge",
       "prompt": "調号によって決まる、その調の音階の各音を何という？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mus_chou01_005",
+      "unit": "music.theory.key.signature.mechanism",
       "category": "knowledge",
       "prompt": "調号は、五線のどこに書く？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mus_chou01_006",
+      "unit": "music.theory.key.signature.minor",
       "category": "calculation",
       "prompt": "調号のつき方で単純にできる調の数は、長調と短調をあわせていくつ？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mus_chou01_007",
+      "unit": "music.theory.key.signature.minor",
       "category": "calculation",
       "prompt": "実際に高さのちがう調は、長調と短調をあわせていくつ？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mus_chou01_008",
+      "unit": "music.theory.key.signature.minor",
       "category": "knowledge",
       "prompt": "長調・短調それぞれにある、異名同音の調の数は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mus_chou01_009",
+      "unit": "music.theory.key.signature.mechanism",
       "category": "knowledge",
       "prompt": "調号の♯が1個増えるごとに、主音はどう移る？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mus_chou01_010",
+      "unit": "music.theory.key.signature.mechanism",
       "category": "knowledge",
       "prompt": "調号の♭が1個増えるごとに、主音はどう移る？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mus_chou01_011",
+      "unit": "music.theory.key.signature.sharp",
       "category": "knowledge",
       "prompt": "調号の♯で、1番目につく音は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mus_chou01_012",
+      "unit": "music.theory.key.signature.flat",
       "category": "knowledge",
       "prompt": "調号の♭で、1番目につく音は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mus_chou01_013",
+      "unit": "music.theory.key.signature.mechanism",
       "category": "knowledge",
       "prompt": "調号の♯で、3番目につく音は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mus_chou01_014",
+      "unit": "music.theory.key.signature.mechanism",
       "category": "knowledge",
       "prompt": "調号の♭で、3番目につく音は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mus_chou01_015",
+      "unit": "music.theory.key.signature.minor",
       "category": "knowledge",
       "prompt": "ある長調と同じ調号をもつ短調の主音は、長調の主音からどれだけはなれている？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mus_chou01_016",
+      "unit": "music.theory.key.signature.mechanism",
       "category": "knowledge",
       "prompt": "調号をもつ調で、同じ音名の音はオクターブがちがってもどうなる？",
       "choices": [

@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_m201_001",
+      "unit": "math.m2.expr.proof.binomial",
       "category": "calculation",
       "prompt": "(a+b)³ を展開すると？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_m201_002",
+      "unit": "math.m2.expr.proof.binomial",
       "category": "calculation",
       "prompt": "(x+1)⁵ の展開式における x³ の係数は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_m201_003",
+      "unit": "math.m2.expr.proof.binomial",
       "category": "calculation",
       "prompt": "(x+2)⁴ の展開式における x² の係数は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_m201_004",
+      "unit": "math.m2.expr.proof.division",
       "category": "calculation",
       "prompt": "(x²+3x+5)÷(x+1) の商と余りは？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_m201_005",
+      "unit": "math.m2.expr.proof",
       "category": "calculation",
       "prompt": "1/x+1/(x+1) を計算すると？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_m201_006",
+      "unit": "math.m2.expr.proof",
       "category": "calculation",
       "prompt": "(x²−1)/(x+1) を約分すると？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_m201_007",
+      "unit": "math.m2.expr.proof.identity",
       "category": "calculation",
       "prompt": "ax+b=3x+2 が x についての恒等式となる a、b は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_m201_008",
+      "unit": "math.m2.expr.proof.inequality",
       "category": "calculation",
       "prompt": "a>0 のとき、a+1/a の最小値は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_m201_009",
+      "unit": "math.m2.expr.proof.binomial",
       "category": "calculation",
       "prompt": "(2x−1)³ の展開式における x の係数は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_m201_010",
+      "unit": "math.m2.expr.proof.inequality",
       "category": "thinking",
       "prompt": "a>0、b>0 のとき (a+b)/2≧√(ab) が成り立つ理由は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_m201_011",
+      "unit": "math.m2.expr.proof",
       "category": "calculation",
       "prompt": "(a−b)³ を展開すると？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_m201_012",
+      "unit": "math.m2.expr.proof.binomial",
       "category": "calculation",
       "prompt": "(x+1)⁴ の展開式における x² の係数は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_m201_013",
+      "unit": "math.m2.expr.proof.binomial",
       "category": "calculation",
       "prompt": "(x−2)⁵ の展開式における x⁴ の係数は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_m201_014",
+      "unit": "math.m2.expr.proof",
       "category": "calculation",
       "prompt": "(x³+2x−1)÷(x−1) の余りは？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_m201_015",
+      "unit": "math.m2.expr.proof.division",
       "category": "calculation",
       "prompt": "(2x²+x−1)÷(x+1) の商は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_m201_016",
+      "unit": "math.m2.expr.proof",
       "category": "calculation",
       "prompt": "1/(x−1)−1/(x+1) を計算すると？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_m201_017",
+      "unit": "math.m2.expr.proof",
       "category": "calculation",
       "prompt": "(x²−4)/(x²+4x+4) を約分すると？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_m201_018",
+      "unit": "math.m2.expr.proof.identity",
       "category": "calculation",
       "prompt": "x²+ax+2=x²+3x+b が x についての恒等式のとき、a+b は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_m201_019",
+      "unit": "math.m2.expr.proof.inequality",
       "category": "calculation",
       "prompt": "a>0 のとき、a+4/a の最小値は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_m201_020",
+      "unit": "math.m2.expr.proof.equality",
       "category": "knowledge",
       "prompt": "等式 A=B を証明する方法として正しくないものは？",
       "choices": [

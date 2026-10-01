@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "inf_info114_001",
+      "unit": "information.info.data.analysis.stat",
       "category": "knowledge",
       "prompt": "データを小さい順に並べたとき、真ん中にくる値は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "inf_info114_002",
+      "unit": "information.info.data.analysis",
       "category": "knowledge",
       "prompt": "データの中で最も多く現れる値は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "inf_info114_003",
+      "unit": "information.info.data.analysis.stat",
       "category": "knowledge",
       "prompt": "分散や標準偏差が表しているものは？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "inf_info114_004",
+      "unit": "information.info.data.analysis.stat",
       "category": "knowledge",
       "prompt": "箱ひげ図で表す 5 つの値にふくまれないものは？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "inf_info114_005",
+      "unit": "information.info.data.analysis.correlation",
       "category": "knowledge",
       "prompt": "相関係数がとる値の範囲は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "inf_info114_006",
+      "unit": "information.info.data.analysis.correlation",
       "category": "knowledge",
       "prompt": "2 つの量的データの関係を点で表した図は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "inf_info114_007",
+      "unit": "information.info.data.analysis",
       "category": "knowledge",
       "prompt": "2 つの質的データ（例：学年と部活動）の関係を表にまとめる方法は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "inf_info114_008",
+      "unit": "information.info.data.analysis.correlation",
       "category": "knowledge",
       "prompt": "散布図の点のなるべく近くを通るように引き、予測に使う直線は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "inf_info114_009",
+      "unit": "information.info.data.analysis.stat",
       "category": "calculation",
       "prompt": "データ 3, 5, 7, 9, 11 の平均値は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "inf_info114_010",
+      "unit": "information.info.data.analysis.stat",
       "category": "calculation",
       "prompt": "データ 2, 4, 4, 5, 10 の中央値は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "inf_info114_011",
+      "unit": "information.info.data.analysis.stat",
       "category": "calculation",
       "prompt": "データ 2, 4, 6 の分散は？（分散 ＝ 偏差の 2 乗の平均）",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "inf_info114_012",
+      "unit": "information.info.data.analysis.correlation",
       "category": "thinking",
       "prompt": "アイスクリームの売上と水の事故の件数に正の相関があった。正しい考え方は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "inf_info114_013",
+      "unit": "information.info.data.analysis",
       "category": "knowledge",
       "prompt": "データの最大値と最小値の差を何という？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "inf_info114_014",
+      "unit": "information.info.data.analysis.stat",
       "category": "knowledge",
       "prompt": "第 3 四分位数と第 1 四分位数の差を何という？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "inf_info114_015",
+      "unit": "information.info.data.analysis.stat",
       "category": "knowledge",
       "prompt": "分散の正の平方根を何という？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "inf_info114_016",
+      "unit": "information.info.data.analysis.correlation",
       "category": "knowledge",
       "prompt": "相関係数が −0.9 のとき、2 つのデータの関係は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "inf_info114_017",
+      "unit": "information.info.data.analysis.stat",
       "category": "thinking",
       "prompt": "データ 1, 2, 3, 4, 100 について正しいものは？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "inf_info114_018",
+      "unit": "information.info.data.analysis.correlation",
       "category": "knowledge",
       "prompt": "回帰直線を使ってできることは？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "inf_info114_019",
+      "unit": "information.info.data.analysis.stat",
       "category": "calculation",
       "prompt": "データ 3, 7, 8, 10, 12 の中央値は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "inf_info114_020",
+      "unit": "information.info.data.analysis.stat",
       "category": "calculation",
       "prompt": "データ 2, 4, 6, 8 の中央値は？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "inf_info114_021",
+      "unit": "information.info.data.analysis.stat",
       "category": "calculation",
       "prompt": "データ 1, 2, 2, 3, 7 の平均値は？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "inf_info114_022",
+      "unit": "information.info.data.analysis.stat",
       "category": "calculation",
       "prompt": "データ 1, 3, 5 の分散は？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "inf_info114_023",
+      "unit": "information.info.data.analysis.correlation",
       "category": "calculation",
       "prompt": "回帰直線 y ＝ 2x ＋ 5 で、x ＝ 10 のときの予測値は？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "inf_info114_024",
+      "unit": "information.info.data.analysis.stat",
       "category": "thinking",
       "prompt": "箱ひげ図が、平均値だけよりデータの特徴をつかみやすい理由は？",
       "choices": [

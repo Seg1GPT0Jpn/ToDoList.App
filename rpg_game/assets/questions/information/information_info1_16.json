@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "inf_info116_001",
+      "unit": "information.info.programming.algorithm.search",
       "category": "knowledge",
       "prompt": "先頭から順番に1つずつ調べていく探索は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "inf_info116_002",
+      "unit": "information.info.programming.algorithm.search",
       "category": "knowledge",
       "prompt": "整列したデータの真ん中と比べ、探す範囲を半分ずつにしていく探索は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "inf_info116_003",
+      "unit": "information.info.programming.algorithm.search",
       "category": "knowledge",
       "prompt": "二分探索を使うための条件は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "inf_info116_004",
+      "unit": "information.info.programming.algorithm.sort",
       "category": "knowledge",
       "prompt": "となりどうしを比べて、順番が逆なら入れかえることをくり返すソートは？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "inf_info116_005",
+      "unit": "information.info.programming.algorithm.sort",
       "category": "knowledge",
       "prompt": "すでに並んだ部分に、残りのデータを1つずつ適切な位置へ入れていくソートは？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "inf_info116_006",
+      "unit": "information.info.programming.algorithm.basic",
       "category": "knowledge",
       "prompt": "アルゴリズムの処理にかかる手間（時間）の目安を何という？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "inf_info116_007",
+      "unit": "information.info.programming.algorithm.search",
       "category": "calculation",
       "prompt": "1000 個のデータから線形探索で目的の値を探す。最も多い場合の比較回数は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "inf_info116_008",
+      "unit": "information.info.programming.algorithm.search",
       "category": "calculation",
       "prompt": "整列した 1024 個のデータを二分探索する。最も多い場合の比較回数は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "inf_info116_009",
+      "unit": "information.info.programming.algorithm.sort",
       "category": "calculation",
       "prompt": "[5, 3, 8] を昇順にバブルソートする。最初に先頭の 2 つを比べて入れかえると？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "inf_info116_010",
+      "unit": "information.info.programming.algorithm.basic",
       "category": "calculation",
       "prompt": "データ 4, 9, 2, 7 の平均を求めるアルゴリズムの結果は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "inf_info116_011",
+      "unit": "information.info.programming.algorithm.sort",
       "category": "calculation",
       "prompt": "5 個のデータをバブルソートするとき、比較の回数は最大で何回？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "inf_info116_012",
+      "unit": "information.info.programming.algorithm.sort",
       "category": "thinking",
       "prompt": "大量の名簿から何度も名前を探すとき、先にソートしておくとよい理由は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "inf_info116_013",
+      "unit": "information.info.programming.algorithm.search",
       "category": "knowledge",
       "prompt": "線形探索で、目的のデータが見つからない場合に調べる回数は？（n 個のデータ）",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "inf_info116_014",
+      "unit": "information.info.programming.algorithm.sort",
       "category": "knowledge",
       "prompt": "選択ソートの考え方は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "inf_info116_015",
+      "unit": "information.info.programming.algorithm.sort",
       "category": "knowledge",
       "prompt": "データを基準値より小さいグループと大きいグループに分けることをくり返す、高速な整列法は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "inf_info116_016",
+      "unit": "information.info.programming.algorithm.basic",
       "category": "knowledge",
       "prompt": "アルゴリズムの計算量で、データが 2 倍になると処理時間もおよそ 2 倍になるものは？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "inf_info116_017",
+      "unit": "information.info.programming.algorithm.search",
       "category": "knowledge",
       "prompt": "二分探索の計算量は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "inf_info116_018",
+      "unit": "information.info.programming.algorithm.search",
       "category": "calculation",
       "prompt": "整列した 16 個のデータを二分探索するとき、最大何回の比較で見つかる？（目安）",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "inf_info116_019",
+      "unit": "information.info.programming.algorithm.sort",
       "category": "calculation",
       "prompt": "[4, 2, 5, 1] を昇順にバブルソートするとき、1 回目の走査（先頭から最後まで）が終わった後の並びは？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "inf_info116_020",
+      "unit": "information.info.programming.algorithm.sort",
       "category": "calculation",
       "prompt": "4 個のデータをバブルソートするとき、比較の回数の合計は最大何回？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "inf_info116_021",
+      "unit": "information.info.programming.algorithm",
       "category": "calculation",
       "prompt": "[7, 3, 9, 1] の中で最大値を見つけるのに必要な比較の回数は？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "inf_info116_022",
+      "unit": "information.info.programming.algorithm.basic",
       "category": "calculation",
       "prompt": "データが 1000 個から 2000 個になると、O(n²) のアルゴリズムの処理時間はおよそ何倍？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "inf_info116_023",
+      "unit": "information.info.programming.algorithm.basic",
       "category": "thinking",
       "prompt": "データの量が多いとき、アルゴリズムの選び方が重要になる理由は？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "inf_info116_024",
+      "unit": "information.info.programming.algorithm.sort",
       "category": "thinking",
       "prompt": "[3, 8, 1] を昇順に選択ソートする。1 回目の交換のあとの並びは？",
       "choices": [

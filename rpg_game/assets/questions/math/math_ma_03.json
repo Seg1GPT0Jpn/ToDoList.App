@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_ma03_001",
+      "unit": "math.ma.prob.count.combination",
       "category": "calculation",
       "prompt": "りんご・みかん・かきから合計5個を選ぶ方法は何通り？（選ばない種類があってもよい）",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_ma03_002",
+      "unit": "math.ma.prob.count.combination",
       "category": "calculation",
       "prompt": "x+y+z=6 を満たす正の整数の組 (x, y, z) は何組？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_ma03_003",
+      "unit": "math.ma.prob.count.combination",
       "category": "calculation",
       "prompt": "6人を2人ずつ A, B, C の3部屋に入れる方法は何通り？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_ma03_004",
+      "unit": "math.ma.prob.count.permutation",
       "category": "calculation",
       "prompt": "1, 1, 2, 2, 3 の5枚から3枚を取り出して並べてできる3桁の整数は何個？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_ma03_005",
+      "unit": "math.ma.prob.count",
       "category": "calculation",
       "prompt": "男子3人・女子2人が1列に並ぶとき、両端が女子になる並び方は何通り？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_ma03_006",
+      "unit": "math.ma.prob.count",
       "category": "calculation",
       "prompt": "A, B をふくむ5人が1列に並ぶとき、A と B が隣り合う並び方は何通り？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_ma03_007",
+      "unit": "math.ma.prob.count.divide",
       "category": "calculation",
       "prompt": "8人を4人ずつ2組に分ける方法は何通り？（組に区別なし）",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_ma03_008",
+      "unit": "math.ma.prob.count.combination",
       "category": "calculation",
       "prompt": "正八角形の頂点から3つを選んでできる三角形は何個？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_ma03_009",
+      "unit": "math.ma.prob.count.permutation",
       "category": "calculation",
       "prompt": "1〜5 の数字のカード5枚から3枚を並べてできる3桁の偶数は何個？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_ma03_010",
+      "unit": "math.ma.prob.count.permutation",
       "category": "thinking",
       "prompt": "重複組合せを「○と｜の並べ方」で数えられる理由は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_ma03_011",
+      "unit": "math.ma.prob.count.permutation",
       "category": "calculation",
       "prompt": "x+y+z=8 を満たす0以上の整数の組 (x, y, z) は何組？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_ma03_012",
+      "unit": "math.ma.prob.count.combination",
       "category": "calculation",
       "prompt": "4種類の果物から合計5個を選ぶ方法は何通り？（選ばない種類があってもよい）",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_ma03_013",
+      "unit": "math.ma.prob.count.divide",
       "category": "calculation",
       "prompt": "7人を3人と4人の2組に分ける方法は何通り？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_ma03_014",
+      "unit": "math.ma.prob.count.combination",
       "category": "calculation",
       "prompt": "7人を A 部屋に2人、B 部屋に2人、C 部屋に3人入れる方法は何通り？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_ma03_015",
+      "unit": "math.ma.prob.count.permutation",
       "category": "calculation",
       "prompt": "男子4人・女子3人が1列に並ぶとき、女子どうしが隣り合わない並び方は何通り？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_ma03_016",
+      "unit": "math.ma.prob.count",
       "category": "calculation",
       "prompt": "男子4人・女子3人が1列に並ぶとき、女子3人がすべて隣り合う並び方は何通り？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_ma03_017",
+      "unit": "math.ma.prob.count.permutation",
       "category": "calculation",
       "prompt": "1〜5 のカードから3枚を並べてできる3けたの整数のうち、3の倍数は何個？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_ma03_018",
+      "unit": "math.ma.prob.count",
       "category": "calculation",
       "prompt": "正六角形の3つの頂点を結んでできる三角形のうち、正六角形と辺を共有しないものは何個？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_ma03_019",
+      "unit": "math.ma.prob.count.permutation",
       "category": "calculation",
       "prompt": "a, a, b, c, d の5文字を1列に並べる方法は何通り？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_ma03_020",
+      "unit": "math.ma.prob.count",
       "category": "calculation",
       "prompt": "5段の階段を、1段または2段ずつ上る方法は何通り？",
       "choices": [

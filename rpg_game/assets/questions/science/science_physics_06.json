@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "sci_phy06_001",
+      "unit": "science.physics.waves.basic.kinds",
       "category": "knowledge",
       "prompt": "音波はどの種類の波？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "sci_phy06_002",
+      "unit": "science.physics.waves.basic.describe",
       "category": "knowledge",
       "prompt": "振動数の単位は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "sci_phy06_003",
+      "unit": "science.physics.waves.basic.describe",
       "category": "knowledge",
       "prompt": "波の速さ v、振動数 f、波長 λ の関係は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "sci_phy06_004",
+      "unit": "science.physics.waves.basic.describe",
       "category": "knowledge",
       "prompt": "周期 T と振動数 f の関係は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "sci_phy06_005",
+      "unit": "science.physics.waves.sound.nature",
       "category": "knowledge",
       "prompt": "音の高さを決めるものは？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "sci_phy06_006",
+      "unit": "science.physics.waves.sound.nature",
       "category": "knowledge",
       "prompt": "音の大きさを決めるものは？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "sci_phy06_007",
+      "unit": "science.physics.waves.sound.nature",
       "category": "knowledge",
       "prompt": "空気中を伝わる音の速さについて正しいものは？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "sci_phy06_008",
+      "unit": "science.physics.waves.basic.describe",
       "category": "knowledge",
       "prompt": "同じ振動数の音源が共鳴（共振）するとは？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "sci_phy06_009",
+      "unit": "science.physics.waves.basic.describe",
       "category": "calculation",
       "prompt": "振動数 500 Hz、波長 0.68 m の音の速さは？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "sci_phy06_010",
+      "unit": "science.physics.waves.basic.describe",
       "category": "calculation",
       "prompt": "周期 0.020 s の波の振動数は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "sci_phy06_011",
+      "unit": "science.physics.waves.basic.describe",
       "category": "calculation",
       "prompt": "音速 340 m/s のとき、振動数 680 Hz の音の波長は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "sci_phy06_012",
+      "unit": "science.physics.waves.sound.beat",
       "category": "calculation",
       "prompt": "440 Hz と 443 Hz のおんさを同時に鳴らした。1 s 間のうなりの回数は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "sci_phy06_013",
+      "unit": "science.physics.waves.sound.nature",
       "category": "calculation",
       "prompt": "気温 15 ℃ の空気中の音速はおよそ？（音速 ＝ 331.5 ＋ 0.6t）",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "sci_phy06_014",
+      "unit": "science.physics.waves.sound.string",
       "category": "calculation",
       "prompt": "両端を固定した長さ 0.50 m の弦の、基本振動の波長は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "sci_phy06_015",
+      "unit": "science.physics.waves.sound",
       "category": "thinking",
       "prompt": "打ち上げ花火が見えてから、少し遅れて音が聞こえる理由は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "sci_phy06_016",
+      "unit": "science.physics.waves.sound.column",
       "category": "thinking",
       "prompt": "一端を閉じた管（閉管）で共鳴しているとき、閉じた端はどうなっている？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "sci_phy06_017",
+      "unit": "science.physics.waves.basic.kinds",
       "category": "knowledge",
       "prompt": "横波とは？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "sci_phy06_018",
+      "unit": "science.physics.waves.basic.kinds",
       "category": "knowledge",
       "prompt": "縦波（疎密波）の例は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "sci_phy06_019",
+      "unit": "science.physics.waves.sound",
       "category": "knowledge",
       "prompt": "波が1回振動する間に進む距離は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "sci_phy06_020",
+      "unit": "science.physics.waves.sound",
       "category": "knowledge",
       "prompt": "振幅とは？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "sci_phy06_021",
+      "unit": "science.physics.waves.sound",
       "category": "knowledge",
       "prompt": "真空中を音が伝わらない理由は？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "sci_phy06_022",
+      "unit": "science.physics.waves.basic.superposition",
       "category": "knowledge",
       "prompt": "定常波（定在波）で、まったく振動しない点を何という？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "sci_phy06_023",
+      "unit": "science.physics.waves.basic.describe",
       "category": "calculation",
       "prompt": "振動数 200 Hz、波長 1.7 m の音の速さは？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "sci_phy06_024",
+      "unit": "science.physics.waves.basic.describe",
       "category": "calculation",
       "prompt": "振動数 50 Hz の波の周期は？",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "sci_phy06_025",
+      "unit": "science.physics.waves.basic.describe",
       "category": "calculation",
       "prompt": "音速 340 m/s のとき、波長 0.85 m の音の振動数は？",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "sci_phy06_026",
+      "unit": "science.physics.waves.sound.nature",
       "category": "calculation",
       "prompt": "雷の光が見えてから 5.0 s 後に音が聞こえた。雷までの距離は？（音速 340 m/s）",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "sci_phy06_027",
+      "unit": "science.physics.waves.sound.nature",
       "category": "calculation",
       "prompt": "気温 25 ℃ の空気中の音速はおよそ？（音速 ＝ 331.5 + 0.6t）",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "sci_phy06_028",
+      "unit": "science.physics.waves.sound.string",
       "category": "calculation",
       "prompt": "両端を固定した長さ 0.60 m の弦の基本振動の波長は？",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "sci_phy06_029",
+      "unit": "science.physics.waves.sound.beat",
       "category": "calculation",
       "prompt": "400 Hz と 404 Hz のおんさを同時に鳴らした。1 秒間のうなりの回数は？",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "sci_phy06_030",
+      "unit": "science.physics.waves.sound.string",
       "category": "calculation",
       "prompt": "一端を閉じた長さ 0.25 m の管（閉管）の基本振動の波長は？",
       "choices": [
@@ -396,6 +426,7 @@
     },
     {
       "id": "sci_phy06_031",
+      "unit": "science.physics.waves.sound.string",
       "category": "thinking",
       "prompt": "ギターの弦を強く張ると、音が高くなる理由は？",
       "choices": [
@@ -409,6 +440,7 @@
     },
     {
       "id": "sci_phy06_032",
+      "unit": "science.physics.waves.sound.nature",
       "category": "thinking",
       "prompt": "音の「音色」のちがいを決めるものは？",
       "choices": [

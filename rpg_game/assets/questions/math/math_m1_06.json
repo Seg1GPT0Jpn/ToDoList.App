@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_m106_001",
+      "unit": "math.m1.numexpr.real.sqrt",
       "category": "calculation",
       "prompt": "√(7+2√10) の二重根号を外すと？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_m106_002",
+      "unit": "math.m1.numexpr.real.sqrt",
       "category": "calculation",
       "prompt": "√(8−2√15) の二重根号を外すと？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_m106_003",
+      "unit": "math.m1.numexpr.real.sqrt",
       "category": "calculation",
       "prompt": "1/(√2−1) の小数部分は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_m106_004",
+      "unit": "math.m1.numexpr.ineq1.absineq",
       "category": "calculation",
       "prompt": "|x−1|+|x−3| の最小値は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_m106_005",
+      "unit": "math.m1.numexpr.ineq1",
       "category": "calculation",
       "prompt": "不等式 |2x−1|<5 を解くと？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_m106_006",
+      "unit": "math.m1.numexpr.ineq1.property",
       "category": "calculation",
       "prompt": "a<0 のとき、不等式 ax>2 を解くと？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_m106_007",
+      "unit": "math.m1.numexpr.ineq1.system",
       "category": "calculation",
       "prompt": "連立不等式 2x+3>5x−6、x+4≧2 を満たす整数の個数は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_m106_008",
+      "unit": "math.m1.numexpr.ineq1.apply",
       "category": "calculation",
       "prompt": "不等式 x<a を満たす自然数がちょうど3個あるとき、a の範囲は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_m106_009",
+      "unit": "math.m1.numexpr.real.sqrt",
       "category": "calculation",
       "prompt": "√3=1.732… として、1/(2−√3) の値に最も近いものは？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_m106_010",
+      "unit": "math.m1.numexpr.real.sqrt",
       "category": "thinking",
       "prompt": "√(7+2√10) の二重根号を外すときの考え方は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_m106_011",
+      "unit": "math.m1.numexpr.real.sqrt",
       "category": "calculation",
       "prompt": "√(5+2√6) の二重根号を外すと？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_m106_012",
+      "unit": "math.m1.numexpr.real.sqrt",
       "category": "calculation",
       "prompt": "√(4−√12) の二重根号を外すと？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_m106_013",
+      "unit": "math.m1.numexpr.real.sqrt",
       "category": "calculation",
       "prompt": "√(9+4√5) の二重根号を外すと？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_m106_014",
+      "unit": "math.m1.numexpr.real.sqrt",
       "category": "calculation",
       "prompt": "√7 の小数部分を b とするとき、b(b+4) の値は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_m106_015",
+      "unit": "math.m1.numexpr.ineq1.absineq",
       "category": "calculation",
       "prompt": "|x−2|+|x+1| の最小値は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_m106_016",
+      "unit": "math.m1.numexpr.ineq1.absineq",
       "category": "calculation",
       "prompt": "不等式 |x−1|≦2x を解くと？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_m106_017",
+      "unit": "math.m1.numexpr.ineq1",
       "category": "calculation",
       "prompt": "不等式 2x−a>0 の解が x>3 のとき、a の値は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_m106_018",
+      "unit": "math.m1.numexpr.real.numbers",
       "category": "calculation",
       "prompt": "不等式 3x−1<a を満たす最大の整数が2であるとき、a の範囲は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_m106_019",
+      "unit": "math.m1.numexpr.real.sqrt",
       "category": "calculation",
       "prompt": "x=√5+1 のとき、x²−2x の値は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_m106_020",
+      "unit": "math.m1.numexpr.real.numbers",
       "category": "thinking",
       "prompt": "命題「すべての実数 x について x²≧0」の否定は？",
       "choices": [

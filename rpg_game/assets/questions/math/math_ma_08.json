@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_ma08_001",
+      "unit": "math.ma.geometry.triangle.ceva",
       "category": "knowledge",
       "prompt": "チェバの定理を表す式は？（D, E, F はそれぞれ BC, CA, AB 上）",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_ma08_002",
+      "unit": "math.ma.geometry.triangle.ceva",
       "category": "calculation",
       "prompt": "チェバの定理で BD:DC=2:3、CE:EA=1:2 のとき、AF:FB は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_ma08_003",
+      "unit": "math.ma.geometry.triangle.ceva",
       "category": "calculation",
       "prompt": "メネラウスの定理で AF:FB=1:2、BD:DC=3:1 のとき、CE:EA は？（D は BC の延長上）",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_ma08_004",
+      "unit": "math.ma.geometry.circle.two",
       "category": "calculation",
       "prompt": "半径5と3の2つの円の中心間の距離が8のとき、2円の位置関係は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_ma08_005",
+      "unit": "math.ma.geometry.circle.two",
       "category": "calculation",
       "prompt": "半径5と3の2つの円の中心間の距離が2のとき、2円の位置関係は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_ma08_006",
+      "unit": "math.ma.geometry.circle.tangent",
       "category": "calculation",
       "prompt": "半径5と2の2円の中心間の距離が5のとき、共通外接線の接点間の長さは？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_ma08_007",
+      "unit": "math.ma.geometry.construct.construction",
       "category": "knowledge",
       "prompt": "定規とコンパスで、線分の中点を作図するには何を作図する？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_ma08_008",
+      "unit": "math.ma.geometry.construct.polyhedron",
       "category": "calculation",
       "prompt": "立方体の頂点の数 v=8、辺の数 e=12 のとき、面の数 f は？（オイラーの多面体定理）",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_ma08_009",
+      "unit": "math.ma.geometry.construct.polyhedron",
       "category": "knowledge",
       "prompt": "正多面体は何種類ある？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_ma08_010",
+      "unit": "math.ma.geometry.circle.inscribed",
       "category": "thinking",
       "prompt": "円に内接する四角形の対角の和が180°になる理由は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_ma08_011",
+      "unit": "math.ma.geometry.triangle.ceva",
       "category": "calculation",
       "prompt": "チェバの定理で AF:FB=2:3、BD:DC=1:2 のとき、CE:EA は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_ma08_012",
+      "unit": "math.ma.geometry.triangle.ceva",
       "category": "calculation",
       "prompt": "メネラウスの定理で AF:FB=1:1、BD:DC=2:1 のとき、CE:EA は？（D は BC の延長上）",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_ma08_013",
+      "unit": "math.ma.geometry.circle.two",
       "category": "calculation",
       "prompt": "半径4と2の2つの円の中心間の距離が7のとき、2円の位置関係は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_ma08_014",
+      "unit": "math.ma.geometry.circle.two",
       "category": "calculation",
       "prompt": "半径4と2の2つの円の中心間の距離が3のとき、2円の位置関係は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_ma08_015",
+      "unit": "math.ma.geometry.circle.two",
       "category": "calculation",
       "prompt": "半径6と2の2つの円の中心間の距離が3のとき、2円の位置関係は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_ma08_016",
+      "unit": "math.ma.geometry.circle.tangent",
       "category": "calculation",
       "prompt": "半径6と2の2円の中心間の距離が8のとき、共通外接線の接点間の長さは？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_ma08_017",
+      "unit": "math.ma.geometry.construct.polyhedron",
       "category": "calculation",
       "prompt": "正十二面体は頂点が20、辺が30。面の数は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_ma08_018",
+      "unit": "math.ma.geometry.construct.polyhedron",
       "category": "calculation",
       "prompt": "正二十面体は面が20、辺が30。頂点の数は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_ma08_019",
+      "unit": "math.ma.geometry.triangle",
       "category": "knowledge",
       "prompt": "正八面体の面は、どんな形？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_ma08_020",
+      "unit": "math.ma.geometry.triangle",
       "category": "calculation",
       "prompt": "AB=AC=5、BC=6 の二等辺三角形の外接円の半径は？",
       "choices": [

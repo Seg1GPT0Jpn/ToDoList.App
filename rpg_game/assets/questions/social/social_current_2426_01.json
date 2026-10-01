@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "soc_curr01_001",
+      "unit": "social.geo.nature.hazard.disaster",
       "category": "knowledge",
       "prompt": "2024年1月1日に石川県能登地方で発生した最大震度7の地震の正式名称は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "soc_curr01_002",
+      "unit": "social.whist.ancient.china.qinhan",
       "category": "knowledge",
       "prompt": "2024年7月に発行された新紙幣で、1万円札の肖像に選ばれた「近代日本経済の父」は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "soc_curr01_003",
+      "unit": "social.whist.ancient.china.qinhan",
       "category": "knowledge",
       "prompt": "2024年7月発行の新紙幣で、5千円札の肖像となった女子英学塾創設者は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "soc_curr01_004",
+      "unit": "social.whist.ancient.china.qinhan",
       "category": "knowledge",
       "prompt": "2024年7月発行の新紙幣で、千円札の肖像となったペスト菌発見などの細菌学者は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "soc_curr01_005",
+      "unit": "social.geo.urban.city.function",
       "category": "knowledge",
       "prompt": "2024年夏に第33回夏季オリンピック競技大会が開催された都市は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "soc_curr01_006",
+      "unit": "social.pol.world.intl.issues",
       "category": "knowledge",
       "prompt": "2025年に「いのち輝く未来社会のデザイン」をテーマに開催された国際博覧会（万博）の開催地は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "soc_curr01_007",
+      "unit": "social.pol.politics.cabinet.cabinet",
       "category": "knowledge",
       "prompt": "2024年10月に就任した日本の第102代内閣総理大臣は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "soc_curr01_008",
+      "unit": "social.geo.regions.americas.north",
       "category": "knowledge",
       "prompt": "2024年11月のアメリカ合衆国大統領選挙で勝利し、返り咲きを果たした人物は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "soc_curr01_009",
+      "unit": "social.pol.politics.diet.status",
       "category": "knowledge",
       "prompt": "2024年10月の衆議院議員総選挙で生じた国会勢力の大きな変化は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "soc_curr01_010",
+      "unit": "social.whist.medieval.china.song",
       "category": "knowledge",
       "prompt": "2024年に成立した政治資金規正法の改正で、パーティ券購入者の公開基準額はどう引き下げられた？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "soc_curr01_011",
+      "unit": "social.pol.world.intl.issues",
       "category": "knowledge",
       "prompt": "2024年12月に現行の健康保険証の新規発行が原則停止され、移行されたカードは？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "soc_curr01_012",
+      "unit": "social.pol.economy.macro.price",
       "category": "thinking",
       "prompt": "物価高対策として議論された、所得税が生じる年収の壁（「103万円の壁」）の見直しの主な狙いは？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "soc_curr01_013",
+      "unit": "social.pol.economy.finance.boj",
       "category": "knowledge",
       "prompt": "日本銀行が2024年3月に解除を決めた、2016年から続けていた金融政策は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "soc_curr01_014",
+      "unit": "social.pol.economy.global.exchange",
       "category": "thinking",
       "prompt": "2024年に一時1ドル＝160円台まで進行した円安が日本国内の経済に与えた影響として正しいものは？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "soc_curr01_015",
+      "unit": "social.jhist.medieval.sengoku.culture",
       "category": "thinking",
       "prompt": "2024年4月から運送業・建設業・医師などに時間外労働の上限規制が適用されたことで生じる物流の課題は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "soc_curr01_016",
+      "unit": "social.pol.economy.welfare.system",
       "category": "thinking",
       "prompt": "2025年にいわゆる「団塊の世代」全員が到達し、医療・介護費の急増が懸念される年齢区分は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "soc_curr01_017",
+      "unit": "social.geo.industry.population.transition",
       "category": "knowledge",
       "prompt": "厚生労働省が公表した2023年の日本の合計特殊出生率として過去最低を記録した数値は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "soc_curr01_018",
+      "unit": "social.pol.economy.welfare.pension",
       "category": "knowledge",
       "prompt": "少子化対策の財源確保のため、公的医療保険料に上乗せして徴収される制度は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "soc_curr01_019",
+      "unit": "social.pol.economy.market.firm",
       "category": "knowledge",
       "prompt": "温室効果ガス排出枠を企業間で売買する制度（GX推進法に基づく）を何という？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "soc_curr01_020",
+      "unit": "social.pol.politics.diet.session",
       "category": "knowledge",
       "prompt": "2024年7月、ユネスコの世界遺産委員会で世界文化遺産への登録が決まった新潟県の鉱山遺跡は？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "soc_curr01_021",
+      "unit": "social.whist.medieval.china.song",
       "category": "knowledge",
       "prompt": "2024年3月に北陸新幹線が延伸開業した区間は？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "soc_curr01_022",
+      "unit": "social.geo.urban.transport.transport",
       "category": "thinking",
       "prompt": "急速な訪日外国人旅行者の増加により、交通混雑やマナー違反などが生じる現象を何という？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "soc_curr01_023",
+      "unit": "social.geo.regions.europe.russia",
       "category": "knowledge",
       "prompt": "2024年3月にスウェーデンが加盟し、32カ国体制となった欧州主体の軍事同盟は？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "soc_curr01_024",
+      "unit": "social.geo.industry.agriculture.crops",
       "category": "thinking",
       "prompt": "2024年に台湾や米国などで先端半導体工場の新設が進められている国際的な背景は？",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "soc_curr01_025",
+      "unit": "social.pol.world.intl.issues",
       "category": "thinking",
       "prompt": "生成AIの普及に伴い、G7主導でまとめられたAIの国際指針・行動規範の枠組みは？",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "soc_curr01_026",
+      "unit": "social.eth.issues.issues.information",
       "category": "knowledge",
       "prompt": "2024年にEU（欧州連合）で世界初となる包括的な法規制として可決・成立した法律は？",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "soc_curr01_027",
+      "unit": "social.geo.regions.americas.latin",
       "category": "knowledge",
       "prompt": "2024年にブラジルで開催されたG20首脳会議の主要テーマの一つは？",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "soc_curr01_028",
+      "unit": "social.geo.regions.asia.west",
       "category": "knowledge",
       "prompt": "2024年1月にエジプト・エチオピア・イラン・UAEが新たに加わり拡大した新興国グループは？",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "soc_curr01_029",
+      "unit": "social.eth.issues.issues.culture",
       "category": "knowledge",
       "prompt": "2024年にノーベル平和賞を受賞した、被爆者の体験を世界に伝えてきた日本の団体は？",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "soc_curr01_030",
+      "unit": "social.whist.contemporary.ww2.asia",
       "category": "thinking",
       "prompt": "2024年に国際司法裁判所（ICJ）がイスラエルのパレスチナ占領地に関する勧告的意見で示した内容は？",
       "choices": [
@@ -396,6 +426,7 @@
     },
     {
       "id": "soc_curr01_031",
+      "unit": "social.geo.japan.global.environment",
       "category": "knowledge",
       "prompt": "地球温暖化対策の国際枠組みCOP29（2024年開催）で焦点となった主な議題は？",
       "choices": [
@@ -409,6 +440,7 @@
     },
     {
       "id": "soc_curr01_032",
+      "unit": "social.jhist.ancient.nara.ritsuryo",
       "category": "thinking",
       "prompt": "近年重要視される「サプライチェーンにおける人権デューデリジェンス」とは？",
       "choices": [

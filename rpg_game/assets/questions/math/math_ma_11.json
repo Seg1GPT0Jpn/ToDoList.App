@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_ma11_001",
+      "unit": "math.ma.integer.divisor.divisor",
       "category": "calculation",
       "prompt": "ユークリッドの互除法で、391 と 299 の最大公約数を求めると？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_ma11_002",
+      "unit": "math.ma.integer.divisor",
       "category": "calculation",
       "prompt": "3x+5y=1 を満たす整数の組の1つは？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_ma11_003",
+      "unit": "math.ma.integer.euclid.diophantine",
       "category": "calculation",
       "prompt": "3x+5y=1 のすべての整数解は？（k は整数）",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_ma11_004",
+      "unit": "math.ma.integer.divisor.remainder",
       "category": "calculation",
       "prompt": "2¹⁰ を 3 で割った余りは？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_ma11_005",
+      "unit": "math.ma.integer.divisor.divisor",
       "category": "calculation",
       "prompt": "7¹⁰⁰ の一の位の数は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_ma11_006",
+      "unit": "math.ma.integer.base.nary",
       "category": "calculation",
       "prompt": "5進法の 234₍₅₎ を10進法で表すと？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_ma11_007",
+      "unit": "math.ma.integer.base.nary",
       "category": "calculation",
       "prompt": "2進法の小数 0.1₍₂₎ を10進法で表すと？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_ma11_008",
+      "unit": "math.ma.integer.divisor.divisor",
       "category": "calculation",
       "prompt": "12 の正の約数の総和は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_ma11_009",
+      "unit": "math.ma.integer.divisor",
       "category": "thinking",
       "prompt": "連続する2つの整数の積 n(n+1) がいつも偶数である理由は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_ma11_010",
+      "unit": "math.ma.integer.divisor.divisor",
       "category": "thinking",
       "prompt": "互除法で最大公約数が求められる理由は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_ma11_011",
+      "unit": "math.ma.integer.divisor.divisor",
       "category": "calculation",
       "prompt": "ユークリッドの互除法で、221 と 169 の最大公約数を求めると？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_ma11_012",
+      "unit": "math.ma.integer.divisor",
       "category": "calculation",
       "prompt": "5x+3y=1 を満たす整数の組の1つは？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_ma11_013",
+      "unit": "math.ma.integer.euclid.diophantine",
       "category": "calculation",
       "prompt": "5x+3y=1 のすべての整数解は？（k は整数）",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_ma11_014",
+      "unit": "math.ma.integer.divisor.remainder",
       "category": "calculation",
       "prompt": "3¹⁰ を 4 で割った余りは？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_ma11_015",
+      "unit": "math.ma.integer.divisor",
       "category": "calculation",
       "prompt": "2¹⁰⁰ の一の位の数は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_ma11_016",
+      "unit": "math.ma.integer.base.nary",
       "category": "calculation",
       "prompt": "3進法の 212₍₃₎ を10進法で表すと？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_ma11_017",
+      "unit": "math.ma.integer.base.nary",
       "category": "calculation",
       "prompt": "10進法の 50 を5進法で表すと？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_ma11_018",
+      "unit": "math.ma.integer.divisor.divisor",
       "category": "calculation",
       "prompt": "36 の正の約数の総和は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_ma11_019",
+      "unit": "math.ma.integer.divisor.divisor",
       "category": "calculation",
       "prompt": "2つの自然数の最大公約数が12、最小公倍数が180。一方が36のとき、もう一方は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_ma11_020",
+      "unit": "math.ma.integer.divisor.divisor",
       "category": "thinking",
       "prompt": "連続する3つの整数の和が、いつも3の倍数になる理由は？",
       "choices": [

@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "sci_chm14_001",
+      "unit": "science.chemistry.inorganic.metal.alkali",
       "category": "knowledge",
       "prompt": "炭酸水素ナトリウム NaHCO₃ を加熱したときに発生する気体は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "sci_chm14_002",
+      "unit": "science.chemistry.inorganic.metal.alkali",
       "category": "knowledge",
       "prompt": "炎色反応でカリウムが示す色は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "sci_chm14_003",
+      "unit": "science.chemistry.inorganic.metal.amphoteric",
       "category": "knowledge",
       "prompt": "酸にも強塩基にも溶ける金属（両性金属）はどれ？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "sci_chm14_004",
+      "unit": "science.chemistry.inorganic.metal.amphoteric",
       "category": "knowledge",
       "prompt": "アルミニウムや鉄を濃硝酸に入れても溶けない理由は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "sci_chm14_005",
+      "unit": "science.chemistry.inorganic.metal",
       "category": "knowledge",
       "prompt": "Fe³⁺ をふくむ水溶液の色は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "sci_chm14_006",
+      "unit": "science.chemistry.inorganic.metal.separation",
       "category": "knowledge",
       "prompt": "Ag⁺ をふくむ水溶液に塩酸を加えると、何色の沈殿ができる？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "sci_chm14_007",
+      "unit": "science.chemistry.inorganic.metal.transition",
       "category": "knowledge",
       "prompt": "遷移元素の特徴として正しいものは？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "sci_chm14_008",
+      "unit": "science.chemistry.inorganic.metal.transition",
       "category": "knowledge",
       "prompt": "溶鉱炉で鉄鉱石（酸化鉄）を還元するのに使われるのは？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "sci_chm14_009",
+      "unit": "science.chemistry.inorganic.metal",
       "category": "knowledge",
       "prompt": "セッコウの主成分は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "sci_chm14_010",
+      "unit": "science.chemistry.inorganic.metal.transition",
       "category": "knowledge",
       "prompt": "銅を電解精錬するとき、純銅はどちらの極に析出する？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "sci_chm14_011",
+      "unit": "science.chemistry.inorganic.metal.transition",
       "category": "calculation",
       "prompt": "Fe₂O₃ 160 g を完全に還元すると、鉄は何 g 得られる？（Fe ＝ 56、O ＝ 16）",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "sci_chm14_012",
+      "unit": "science.chemistry.inorganic.metal.alkali",
       "category": "calculation",
       "prompt": "ナトリウム 2.3 g を水と反応させると、水素は何 mol 発生する？（Na ＝ 23、2Na ＋ 2H₂O → 2NaOH ＋ H₂）",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "sci_chm14_013",
+      "unit": "science.chemistry.inorganic.metal.separation",
       "category": "calculation",
       "prompt": "石灰水に CO₂ 0.10 mol を通したら、すべて CaCO₃ になった。沈殿は何 g？（CaCO₃ ＝ 100）",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "sci_chm14_014",
+      "unit": "science.chemistry.inorganic.metal.amphoteric",
       "category": "calculation",
       "prompt": "アルミニウム 27 g が酸素と完全に反応すると、Al₂O₃ は何 mol できる？（Al ＝ 27）",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "sci_chm14_015",
+      "unit": "science.chemistry.inorganic.metal",
       "category": "thinking",
       "prompt": "石灰水に CO₂ を通し続けると、いったん白くにごった後、透明になる。その理由は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "sci_chm14_016",
+      "unit": "science.chemistry.inorganic.metal.separation",
       "category": "thinking",
       "prompt": "Ag⁺ と Cu²⁺ をふくむ水溶液から Ag⁺ だけを沈殿させたい。加えるとよいものは？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "sci_chm14_017",
+      "unit": "science.chemistry.inorganic.metal",
       "category": "knowledge",
       "prompt": "アルカリ金属の単体が水と反応すると発生する気体は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "sci_chm14_018",
+      "unit": "science.chemistry.inorganic.metal.alkali",
       "category": "knowledge",
       "prompt": "炎色反応でナトリウムが示す色は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "sci_chm14_019",
+      "unit": "science.chemistry.inorganic.metal.alkali",
       "category": "knowledge",
       "prompt": "水酸化ナトリウムを空気中に放置すると表面がぬれてくる現象は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "sci_chm14_020",
+      "unit": "science.chemistry.inorganic.metal.alkali",
       "category": "knowledge",
       "prompt": "炭酸ナトリウムをつくる工業的方法は？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "sci_chm14_021",
+      "unit": "science.chemistry.inorganic.metal",
       "category": "knowledge",
       "prompt": "鍾乳洞ができる反応に関係する物質は？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "sci_chm14_022",
+      "unit": "science.chemistry.inorganic.metal",
       "category": "knowledge",
       "prompt": "ステンレス鋼にふくまれ、さびにくくする金属は？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "sci_chm14_023",
+      "unit": "science.chemistry.inorganic.metal.separation",
       "category": "knowledge",
       "prompt": "Cu²⁺ をふくむ水溶液に少量のアンモニア水を加えるとできる沈殿の色は？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "sci_chm14_024",
+      "unit": "science.chemistry.inorganic.metal",
       "category": "knowledge",
       "prompt": "Fe²⁺ をふくむ水溶液の色は？",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "sci_chm14_025",
+      "unit": "science.chemistry.inorganic.metal.transition",
       "category": "thinking",
       "prompt": "ブリキ（鉄にスズをめっきしたもの）に傷がつくと、かえって鉄がさびやすくなる理由は？",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "sci_chm14_026",
+      "unit": "science.chemistry.inorganic.metal",
       "category": "calculation",
       "prompt": "Fe₂O₃ ＋ 3CO → 2Fe ＋ 3CO₂ で、Fe 112 g を得るのに必要な Fe₂O₃ は？（Fe ＝ 56、O ＝ 16）",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "sci_chm14_027",
+      "unit": "science.chemistry.inorganic.metal.alkali",
       "category": "calculation",
       "prompt": "カルシウム 4.0 g を水と反応させると、発生する水素は何 mol？（Ca ＝ 40）",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "sci_chm14_028",
+      "unit": "science.chemistry.inorganic.metal.alkali",
       "category": "calculation",
       "prompt": "炭酸カルシウム 10 g に十分な塩酸を加えると、CO₂ は何 mol 発生する？（CaCO₃ ＝ 100）",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "sci_chm14_029",
+      "unit": "science.chemistry.inorganic.metal.amphoteric",
       "category": "calculation",
       "prompt": "アルミニウム 5.4 g を十分な塩酸と反応させると、発生する水素は何 mol？（Al ＝ 27）",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "sci_chm14_030",
+      "unit": "science.chemistry.inorganic.metal.transition",
       "category": "calculation",
       "prompt": "銅 6.4 g が完全に酸化されて CuO になると、何 g になる？（Cu ＝ 64、O ＝ 16）",
       "choices": [
@@ -396,6 +426,7 @@
     },
     {
       "id": "sci_chm14_031",
+      "unit": "science.chemistry.inorganic.metal.separation",
       "category": "thinking",
       "prompt": "Ag⁺、Cu²⁺、Fe³⁺ をふくむ水溶液に、まず塩酸を加えて沈殿させられるイオンは？",
       "choices": [
@@ -409,6 +440,7 @@
     },
     {
       "id": "sci_chm14_032",
+      "unit": "science.chemistry.inorganic.metal",
       "category": "thinking",
       "prompt": "金や白金が装飾品に使われる理由の一つは？",
       "choices": [

@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_m208_001",
+      "unit": "math.m2.coord.circles.line",
       "category": "calculation",
       "prompt": "円 x²+y²=5 上の点 (1, 2) における接線の方程式は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_m208_002",
+      "unit": "math.m2.coord.circles.equation",
       "category": "calculation",
       "prompt": "円 x²+y²=4 と直線 y=x+k が接するとき、k の値は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_m208_003",
+      "unit": "math.m2.coord.locus.locus",
       "category": "calculation",
       "prompt": "2点 (0, 0)、(4, 0) から等距離にある点の軌跡は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_m208_004",
+      "unit": "math.m2.coord.locus.region",
       "category": "knowledge",
       "prompt": "不等式 x²+y²<4 の表す領域は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_m208_005",
+      "unit": "math.m2.coord.lines.point",
       "category": "calculation",
       "prompt": "3点 (0, 0)、(3, 0)、(0, 6) を頂点とする三角形の重心は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_m208_006",
+      "unit": "math.m2.coord.lines",
       "category": "calculation",
       "prompt": "円 (x−1)²+y²=4 と x 軸の交点の x 座標は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_m208_007",
+      "unit": "math.m2.coord.lines",
       "category": "calculation",
       "prompt": "点 (3, 1) の、直線 y=x に関して対称な点は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_m208_008",
+      "unit": "math.m2.coord.locus.region",
       "category": "knowledge",
       "prompt": "不等式 y>x² の表す領域は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_m208_009",
+      "unit": "math.m2.coord.circles.two",
       "category": "calculation",
       "prompt": "2円 x²+y²=1 と (x−3)²+y²=4 の位置関係は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_m208_010",
+      "unit": "math.m2.coord.locus.locus",
       "category": "thinking",
       "prompt": "軌跡を求めた後、「逆に」条件を満たすかを確かめる理由は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_m208_011",
+      "unit": "math.m2.coord.circles.line",
       "category": "calculation",
       "prompt": "円 x²+y²=10 上の点 (3, 1) における接線の方程式は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_m208_012",
+      "unit": "math.m2.coord.circles.line",
       "category": "calculation",
       "prompt": "円 x²+y²=1 と直線 y=2x+k が共有点をもつ k の範囲は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_m208_013",
+      "unit": "math.m2.coord.circles.equation",
       "category": "calculation",
       "prompt": "点 (1, 2) から等距離にある点の集まりで、距離が3のものは？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_m208_014",
+      "unit": "math.m2.coord.locus.region",
       "category": "calculation",
       "prompt": "不等式 y≦−x+2 の表す領域は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_m208_015",
+      "unit": "math.m2.coord.lines.point",
       "category": "calculation",
       "prompt": "3点 (1, 2)、(4, 6)、(7, −2) を頂点とする三角形の重心は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_m208_016",
+      "unit": "math.m2.coord.circles.equation",
       "category": "calculation",
       "prompt": "円 x²+y²−6x=0 の中心と半径は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_m208_017",
+      "unit": "math.m2.coord.lines",
       "category": "calculation",
       "prompt": "点 (2, 5) の、x 軸に関して対称な点は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_m208_018",
+      "unit": "math.m2.coord.locus.region",
       "category": "calculation",
       "prompt": "不等式 (x−1)²+y²≧1 の表す領域は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_m208_019",
+      "unit": "math.m2.coord.circles.two",
       "category": "calculation",
       "prompt": "2円 x²+y²=4 と (x−5)²+y²=9 の位置関係は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_m208_020",
+      "unit": "math.m2.coord.locus.locus",
       "category": "thinking",
       "prompt": "点 P と点 A の中点 M の軌跡を求めるとき、P の座標を M の座標で表す理由は？",
       "choices": [

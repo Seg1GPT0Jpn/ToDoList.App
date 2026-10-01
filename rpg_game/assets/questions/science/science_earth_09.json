@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "sci_ear09_001",
+      "unit": "science.earth.solid.shape.interior",
       "category": "knowledge",
       "prompt": "マントルと外核の境界を何という？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "sci_ear09_002",
+      "unit": "science.earth.solid.shape.interior",
       "category": "knowledge",
       "prompt": "内核の存在を発見した人物は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "sci_ear09_003",
+      "unit": "science.earth.solid.shape.interior",
       "category": "knowledge",
       "prompt": "S 波が外核を伝わらないことからわかることは？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "sci_ear09_004",
+      "unit": "science.earth.solid.shape.interior",
       "category": "knowledge",
       "prompt": "震央からの角距離が約 103°〜143° の範囲で P 波が届きにくい領域を何という？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "sci_ear09_005",
+      "unit": "science.earth.solid.deform.heat",
       "category": "knowledge",
       "prompt": "地球内部の熱の源として考えられているものは？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "sci_ear09_006",
+      "unit": "science.earth.solid.deform.heat",
       "category": "knowledge",
       "prompt": "地下の温度は、深くなるにつれてどのくらい上がる？（地表付近の平均）",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "sci_ear09_007",
+      "unit": "science.earth.solid.shape.interior",
       "category": "knowledge",
       "prompt": "マントルの中で、高温の物質がゆっくり上昇する大規模な流れを何という？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "sci_ear09_008",
+      "unit": "science.earth.solid.quake",
       "category": "knowledge",
       "prompt": "地震波の速さの分布を調べて、地球内部の温度のちがいなどを立体的に調べる方法は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "sci_ear09_009",
+      "unit": "science.earth.solid.shape.interior",
       "category": "knowledge",
       "prompt": "地殻が、密度の大きいマントルの上に浮かんでつり合っているという考え方は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "sci_ear09_010",
+      "unit": "science.earth.solid.deform",
       "category": "knowledge",
       "prompt": "地磁気が生まれる原因と考えられているものは？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "sci_ear09_011",
+      "unit": "science.earth.solid.deform",
       "category": "knowledge",
       "prompt": "過去の地磁気について正しいものは？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "sci_ear09_012",
+      "unit": "science.earth.solid.plate.plate",
       "category": "knowledge",
       "prompt": "地下から地表へ流れ出る熱の量を何という？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "sci_ear09_013",
+      "unit": "science.earth.solid.shape.interior",
       "category": "knowledge",
       "prompt": "マントル全体が、長い時間をかけてゆっくり動く流れを何という？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "sci_ear09_014",
+      "unit": "science.earth.solid.deform.heat",
       "category": "calculation",
       "prompt": "地表の温度が 15 ℃、地温勾配が 100 m につき 3 ℃ のとき、深さ 2 km の温度は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "sci_ear09_015",
+      "unit": "science.earth.solid.shape.interior",
       "category": "thinking",
       "prompt": "震央から約 103° 以上離れた地点では S 波が観測されない。わかることは？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "sci_ear09_016",
+      "unit": "science.earth.solid.deform.orogeny",
       "category": "thinking",
       "prompt": "氷河期にあった厚い氷床がとけたスカンジナビア半島は、今も少しずつ隆起している。説明するものは？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "sci_ear09_017",
+      "unit": "science.earth.solid.shape.interior",
       "category": "knowledge",
       "prompt": "P 波は液体の外核を伝わるか？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "sci_ear09_018",
+      "unit": "science.earth.solid.deform",
       "category": "knowledge",
       "prompt": "P 波のシャドーゾーンができる理由は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "sci_ear09_019",
+      "unit": "science.earth.solid.shape.interior",
       "category": "knowledge",
       "prompt": "外核と内核の境界の深さはおよそ？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "sci_ear09_020",
+      "unit": "science.earth.solid.shape.interior",
       "category": "knowledge",
       "prompt": "マントルの上部と下部の境界はおよそどの深さ？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "sci_ear09_021",
+      "unit": "science.earth.solid.deform.heat",
       "category": "knowledge",
       "prompt": "地下の岩石中にふくまれる放射性元素の崩壊は、地球内部に何をもたらす？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "sci_ear09_022",
+      "unit": "science.earth.solid.deform.heat",
       "category": "knowledge",
       "prompt": "アイソスタシーとは？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "sci_ear09_023",
+      "unit": "science.earth.solid.plate.hotspot",
       "category": "knowledge",
       "prompt": "プルームテクトニクスで、アフリカや南太平洋の下にある大規模な上昇流を何という？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "sci_ear09_024",
+      "unit": "science.earth.solid.deform",
       "category": "knowledge",
       "prompt": "地磁気が逆転してきた証拠は？",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "sci_ear09_025",
+      "unit": "science.earth.solid.deform",
       "category": "knowledge",
       "prompt": "地球の磁場が生物にとって大切な理由は？",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "sci_ear09_026",
+      "unit": "science.earth.solid.deform.heat",
       "category": "calculation",
       "prompt": "地温勾配が 100 m につき 3 ℃ のとき、地表 15 ℃ で深さ 1000 m の温度は？",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "sci_ear09_027",
+      "unit": "science.earth.solid.deform.heat",
       "category": "calculation",
       "prompt": "地温勾配が 1 km につき 25 ℃ のとき、深さ 4 km の温度は地表より何 ℃ 高い？",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "sci_ear09_028",
+      "unit": "science.earth.solid.shape.interior",
       "category": "calculation",
       "prompt": "地球の半径 6400 km のうち、核（半径約 3500 km）の半径の割合はおよそ？",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "sci_ear09_029",
+      "unit": "science.earth.solid.deform.heat",
       "category": "calculation",
       "prompt": "ある地点の地殻熱流量が 60 mW/m²。1 km² あたりでは何 kW？",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "sci_ear09_030",
+      "unit": "science.earth.solid.shape.interior",
       "category": "calculation",
       "prompt": "密度 2.7 の地殻が密度 3.3 のマントルに浮いている。高さ 3 km の山の下の「根」の深さの単純計算での比は？（山の高さ：根 ＝ 0.6：2.7）",
       "choices": [
@@ -396,6 +426,7 @@
     },
     {
       "id": "sci_ear09_031",
+      "unit": "science.earth.solid.shape.interior",
       "category": "thinking",
       "prompt": "「S 波が外核を通らない」ことが、外核が液体である根拠になる理由は？",
       "choices": [
@@ -409,6 +440,7 @@
     },
     {
       "id": "sci_ear09_032",
+      "unit": "science.earth.solid.shape.interior",
       "category": "knowledge",
       "prompt": "外核がある深さの範囲はおよそ？",
       "choices": [

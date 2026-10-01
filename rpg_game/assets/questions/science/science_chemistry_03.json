@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "sci_chm03_001",
+      "unit": "science.chemistry.structure.periodic.law",
       "category": "knowledge",
       "prompt": "現在の周期表で、元素はどんな順に並んでいる？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "sci_chm03_002",
+      "unit": "science.chemistry.structure.periodic.law",
       "category": "knowledge",
       "prompt": "同じ族の元素の性質が似ている理由は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "sci_chm03_003",
+      "unit": "science.chemistry.structure.periodic.law",
       "category": "knowledge",
       "prompt": "1族の元素のうち、水素を除いたものを何という？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "sci_chm03_004",
+      "unit": "science.chemistry.structure.periodic.law",
       "category": "knowledge",
       "prompt": "17族の元素をまとめて何という？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "sci_chm03_005",
+      "unit": "science.chemistry.structure.periodic.law",
       "category": "knowledge",
       "prompt": "18族の元素をまとめて何という？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "sci_chm03_006",
+      "unit": "science.chemistry.structure.periodic.law",
       "category": "knowledge",
       "prompt": "3族から12族の元素をまとめて何という？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "sci_chm03_007",
+      "unit": "science.chemistry.structure.periodic.property",
       "category": "knowledge",
       "prompt": "原子から電子1個を取り去るのに必要なエネルギーを何という？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "sci_chm03_008",
+      "unit": "science.chemistry.structure.periodic.law",
       "category": "knowledge",
       "prompt": "電気陰性度が最も大きい元素は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "sci_chm03_009",
+      "unit": "science.chemistry.structure.periodic.property",
       "category": "knowledge",
       "prompt": "金属元素は周期表のどのあたりに多い？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "sci_chm03_010",
+      "unit": "science.chemistry.structure.periodic",
       "category": "knowledge",
       "prompt": "元素の性質が原子番号とともに周期的に変わることを何という？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "sci_chm03_011",
+      "unit": "science.chemistry.structure.periodic.property",
       "category": "knowledge",
       "prompt": "ナトリウムとカリウムの共通点は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "sci_chm03_012",
+      "unit": "science.chemistry.structure.periodic",
       "category": "knowledge",
       "prompt": "第2周期の元素の原子がもつ電子殻の数は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "sci_chm03_013",
+      "unit": "science.chemistry.structure.periodic.law",
       "category": "calculation",
       "prompt": "硫黄（原子番号 16）の価電子の数は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "sci_chm03_014",
+      "unit": "science.chemistry.structure.periodic",
       "category": "calculation",
       "prompt": "硫化物イオン S²⁻（S の原子番号 16）の電子の数は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "sci_chm03_015",
+      "unit": "science.chemistry.structure.periodic",
       "category": "thinking",
       "prompt": "同じ周期で、原子番号が大きくなるほど原子の半径が小さくなる理由は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "sci_chm03_016",
+      "unit": "science.chemistry.structure.periodic.law",
       "category": "thinking",
       "prompt": "ナトリウムよりカリウムの方が陽イオンになりやすい理由は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "sci_chm03_017",
+      "unit": "science.chemistry.structure.periodic.law",
       "category": "knowledge",
       "prompt": "周期表の横の行を何という？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "sci_chm03_018",
+      "unit": "science.chemistry.structure.periodic.law",
       "category": "knowledge",
       "prompt": "2族の元素の価電子の数は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "sci_chm03_019",
+      "unit": "science.chemistry.structure.periodic.law",
       "category": "knowledge",
       "prompt": "典型元素にあたるのは、何族の元素？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "sci_chm03_020",
+      "unit": "science.chemistry.structure.periodic.law",
       "category": "knowledge",
       "prompt": "陽性（陽イオンへのなりやすさ）が強い元素は、周期表のどのあたりにある？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "sci_chm03_021",
+      "unit": "science.chemistry.structure.periodic",
       "category": "knowledge",
       "prompt": "原子が電子1個を受け取って陰イオンになるときに放出されるエネルギーを何という？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "sci_chm03_022",
+      "unit": "science.chemistry.structure.periodic.property",
       "category": "knowledge",
       "prompt": "第1イオン化エネルギーが最も大きい元素は？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "sci_chm03_023",
+      "unit": "science.chemistry.structure.periodic.property",
       "category": "knowledge",
       "prompt": "ハロゲンの単体のうち、常温で液体のものは？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "sci_chm03_024",
+      "unit": "science.chemistry.structure.periodic.property",
       "category": "knowledge",
       "prompt": "空気中に最も多くふくまれる貴ガスは？",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "sci_chm03_025",
+      "unit": "science.chemistry.structure.periodic.law",
       "category": "knowledge",
       "prompt": "元素を原子量の順に並べ、性質が周期的に変わることから周期表を発表したのは？",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "sci_chm03_026",
+      "unit": "science.chemistry.structure.periodic.property",
       "category": "knowledge",
       "prompt": "金属元素の性質として正しいものは？",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "sci_chm03_027",
+      "unit": "science.chemistry.structure.periodic.property",
       "category": "knowledge",
       "prompt": "非金属元素は、周期表のどのあたりに多い？",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "sci_chm03_028",
+      "unit": "science.chemistry.structure.periodic.property",
       "category": "knowledge",
       "prompt": "アルカリ金属の単体を石油（灯油）の中に保存する理由は？",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "sci_chm03_029",
+      "unit": "science.chemistry.structure.periodic.law",
       "category": "calculation",
       "prompt": "カルシウム（原子番号20）は、周期表の第何周期・何族？",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "sci_chm03_030",
+      "unit": "science.chemistry.structure.periodic.law",
       "category": "calculation",
       "prompt": "塩素（原子番号17）は、周期表の第何周期・何族？",
       "choices": [
@@ -396,6 +426,7 @@
     },
     {
       "id": "sci_chm03_031",
+      "unit": "science.chemistry.structure.periodic.law",
       "category": "calculation",
       "prompt": "マグネシウム（原子番号12）と同じ族で、1つ下の周期の元素の原子番号は？",
       "choices": [
@@ -409,6 +440,7 @@
     },
     {
       "id": "sci_chm03_032",
+      "unit": "science.chemistry.structure.periodic.law",
       "category": "thinking",
       "prompt": "フッ素の電気陰性度が最も大きい理由として最も適切なものは？",
       "choices": [

@@ -23,7 +23,18 @@ class QuestionStat {
     this.dueDay = 0,
     this.overcome = false,
     this.category = '',
+    this.unit = '',
+    this.first = 0,
   });
+
+  /// 学習体系の単元・小単元（古い記録では空。読み込むときに補う）
+  final String unit;
+
+  /// 初めて答えたときの結果（0：不明＝古い記録、1：正解、2：不正解）
+  final int first;
+
+  /// 初めて答えたときに正解したか（古い記録では null）
+  bool? get firstTryCorrect => first == 0 ? null : first == 1;
 
   /// 問題の種類（QuestionCategory の name。古い記録では空）
   final String category;
@@ -80,6 +91,7 @@ class QuestionStat {
     required int elapsedMs,
     String? setId,
     String? category,
+    String? unit,
   }) {
     final newBox = isCorrect ? min(box + 1, maxBox) : 1;
     final newStreak = isCorrect ? streak + 1 : 0;
@@ -97,8 +109,27 @@ class QuestionStat {
       dueDay: day + intervals[newBox],
       overcome: nowOvercome,
       category: category ?? this.category,
+      unit: (unit == null || unit.isEmpty) ? this.unit : unit,
+      first: attempts == 0 ? (isCorrect ? 1 : 2) : first,
     );
   }
+
+  /// 単元だけを補った記録（古い記録のマイグレーション用）
+  QuestionStat withUnit(String unit) => QuestionStat(
+        setId: setId,
+        attempts: attempts,
+        correct: correct,
+        streak: streak,
+        missStreak: missStreak,
+        lastDay: lastDay,
+        totalMs: totalMs,
+        box: box,
+        dueDay: dueDay,
+        overcome: overcome,
+        category: category,
+        unit: unit,
+        first: first,
+      );
 
   /// 保存用の短い形（問題数が増えても小さく保つ）
   List<Object> toList() => [
@@ -112,7 +143,9 @@ class QuestionStat {
         box,
         dueDay,
         overcome ? 1 : 0,
-        if (category.isNotEmpty) category,
+        if (category.isNotEmpty || unit.isNotEmpty || first != 0) category,
+        if (unit.isNotEmpty || first != 0) unit,
+        if (first != 0) first,
       ];
 
   factory QuestionStat.fromList(List<dynamic> v) {
@@ -129,6 +162,8 @@ class QuestionStat {
       dueDay: n(8),
       overcome: n(9) == 1,
       category: v.length > 10 ? v[10] as String : '',
+      unit: v.length > 11 ? v[11] as String : '',
+      first: n(12),
     );
   }
 }

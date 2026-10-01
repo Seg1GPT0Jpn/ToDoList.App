@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "sci_chm06_001",
+      "unit": "science.chemistry.change.equation.write",
       "category": "knowledge",
       "prompt": "化学反応式の係数の比が表すものは？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "sci_chm06_002",
+      "unit": "science.chemistry.change.equation",
       "category": "knowledge",
       "prompt": "「化学反応の前後で、物質の質量の総和は変わらない」という法則は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "sci_chm06_003",
+      "unit": "science.chemistry.change.equation",
       "category": "knowledge",
       "prompt": "「化合物を構成する元素の質量比は、つねに一定である」という法則は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "sci_chm06_004",
+      "unit": "science.chemistry.change.equation.write",
       "category": "knowledge",
       "prompt": "「気体どうしの反応では、反応・生成する気体の体積は簡単な整数比になる」という法則は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "sci_chm06_005",
+      "unit": "science.chemistry.change.equation.write",
       "category": "knowledge",
       "prompt": "化学反応式の左辺に書くものは？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "sci_chm06_006",
+      "unit": "science.chemistry.change.equation.write",
       "category": "knowledge",
       "prompt": "化学反応式で、係数が1のときはどうする？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "sci_chm06_007",
+      "unit": "science.chemistry.change.equation",
       "category": "knowledge",
       "prompt": "イオン反応式で成り立っていなければならないことは？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "sci_chm06_008",
+      "unit": "science.chemistry.change.equation",
       "category": "knowledge",
       "prompt": "化学反応で、反応の前後で変わらないものは？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "sci_chm06_009",
+      "unit": "science.chemistry.change.equation.write",
       "category": "calculation",
       "prompt": "CH₄ ＋ □O₂ → CO₂ ＋ 2H₂O。□に入る係数は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "sci_chm06_010",
+      "unit": "science.chemistry.change.equation.write",
       "category": "calculation",
       "prompt": "C₃H₈ ＋ □O₂ → 3CO₂ ＋ 4H₂O。□に入る係数は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "sci_chm06_011",
+      "unit": "science.chemistry.change.equation",
       "category": "calculation",
       "prompt": "2H₂ ＋ O₂ → 2H₂O。水素 4.0 g がすべて反応すると、水は何 g できる？（H ＝ 1.0、O ＝ 16）",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "sci_chm06_012",
+      "unit": "science.chemistry.change.equation",
       "category": "calculation",
       "prompt": "CH₄ ＋ 2O₂ → CO₂ ＋ 2H₂O。メタン 1.0 mol を完全燃焼させるのに必要な酸素は、標準状態で何 L？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "sci_chm06_013",
+      "unit": "science.chemistry.change.equation",
       "category": "calculation",
       "prompt": "2H₂ ＋ O₂ → 2H₂O。水素 2.0 mol と酸素 2.0 mol を反応させた。反応せずに残る気体は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "sci_chm06_014",
+      "unit": "science.chemistry.change.equation",
       "category": "calculation",
       "prompt": "CaCO₃ ＋ 2HCl → CaCl₂ ＋ H₂O ＋ CO₂。炭酸カルシウム 10 g がすべて反応すると、CO₂ は標準状態で何 L 出る？（CaCO₃ ＝ 100）",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "sci_chm06_015",
+      "unit": "science.chemistry.change.equation",
       "category": "thinking",
       "prompt": "一定量の塩酸にマグネシウムを少しずつ加えた。発生した水素の体積のグラフが途中から水平になった理由は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "sci_chm06_016",
+      "unit": "science.chemistry.change.equation",
       "category": "thinking",
       "prompt": "密閉した容器の中でスチールウールを燃やした。反応前後で容器全体の質量はどうなる？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "sci_chm06_017",
+      "unit": "science.chemistry.change.equation.write",
       "category": "knowledge",
       "prompt": "化学反応式の右辺に書くものは？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "sci_chm06_018",
+      "unit": "science.chemistry.change.equation.write",
       "category": "calculation",
       "prompt": "□H₂ ＋ O₂ → 2H₂O。□に入る係数は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "sci_chm06_019",
+      "unit": "science.chemistry.change.equation.write",
       "category": "calculation",
       "prompt": "□Al ＋ 3O₂ → 2Al₂O₃。□に入る係数は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "sci_chm06_020",
+      "unit": "science.chemistry.change.equation.write",
       "category": "calculation",
       "prompt": "2C₂H₆ ＋ □O₂ → 4CO₂ ＋ 6H₂O。□に入る係数は？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "sci_chm06_021",
+      "unit": "science.chemistry.change.equation",
       "category": "calculation",
       "prompt": "N₂ ＋ 3H₂ → 2NH₃。水素 6.0 mol がすべて反応すると、アンモニアは何 mol できる？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "sci_chm06_022",
+      "unit": "science.chemistry.change.equation",
       "category": "calculation",
       "prompt": "2Mg ＋ O₂ → 2MgO。マグネシウム 2.4 g がすべて反応すると、酸化マグネシウムは何 g できる？（Mg＝24、O＝16）",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "sci_chm06_023",
+      "unit": "science.chemistry.change.equation",
       "category": "calculation",
       "prompt": "CH₄ ＋ 2O₂ → CO₂ ＋ 2H₂O。メタン 8.0 g を完全燃焼させると、二酸化炭素は何 g できる？（C＝12、H＝1.0、O＝16）",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "sci_chm06_024",
+      "unit": "science.chemistry.change.equation",
       "category": "calculation",
       "prompt": "C₃H₈ ＋ 5O₂ → 3CO₂ ＋ 4H₂O。プロパン 1.0 mol を完全燃焼させると、二酸化炭素は標準状態で何 L できる？",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "sci_chm06_025",
+      "unit": "science.chemistry.change.equation",
       "category": "calculation",
       "prompt": "Zn ＋ 2HCl → ZnCl₂ ＋ H₂。亜鉛 6.5 g がすべて反応すると、水素は標準状態で何 L 発生する？（Zn＝65）",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "sci_chm06_026",
+      "unit": "science.chemistry.change.equation.write",
       "category": "calculation",
       "prompt": "2KClO₃ → 2KCl ＋ 3O₂。塩素酸カリウム 2.0 mol がすべて分解すると、酸素は何 mol できる？",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "sci_chm06_027",
+      "unit": "science.chemistry.change.equation.write",
       "category": "calculation",
       "prompt": "窒素 1 L と水素 3 L がすべて反応してアンモニアができる。同温・同圧でアンモニアは何 L？",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "sci_chm06_028",
+      "unit": "science.chemistry.change.equation",
       "category": "knowledge",
       "prompt": "「同温・同圧で同じ体積の気体には、同じ数の分子がふくまれる」という法則は？",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "sci_chm06_029",
+      "unit": "science.chemistry.change.equation",
       "category": "knowledge",
       "prompt": "「2種類の元素からなる化合物が複数あるとき、一方の元素の一定量と結びつくもう一方の質量は、簡単な整数比になる」という法則は？",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "sci_chm06_030",
+      "unit": "science.chemistry.change.equation",
       "category": "calculation",
       "prompt": "2H₂ ＋ O₂ → 2H₂O。水素 3.0 mol と酸素 1.0 mol を反応させた。反応せずに残る気体は？",
       "choices": [
@@ -396,6 +426,7 @@
     },
     {
       "id": "sci_chm06_031",
+      "unit": "science.chemistry.change.equation",
       "category": "calculation",
       "prompt": "CaCO₃ ＋ 2HCl → CaCl₂ ＋ H₂O ＋ CO₂。炭酸カルシウム 20 g がすべて反応すると、二酸化炭素は何 g 発生する？（CaCO₃＝100、CO₂＝44）",
       "choices": [
@@ -409,6 +440,7 @@
     },
     {
       "id": "sci_chm06_032",
+      "unit": "science.chemistry.change.equation",
       "category": "thinking",
       "prompt": "化学反応で質量保存の法則が成り立つ理由は？",
       "choices": [

@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "sci_phy16_001",
+      "unit": "science.physics.atom.quantum.photo",
       "category": "knowledge",
       "prompt": "光電効果について正しいものは？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "sci_phy16_002",
+      "unit": "science.physics.atom.quantum.photo",
       "category": "knowledge",
       "prompt": "振動数 ν の光子1個のエネルギーは？（h：プランク定数）",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "sci_phy16_003",
+      "unit": "science.physics.atom.quantum.wave",
       "category": "knowledge",
       "prompt": "質量 m、速さ v の粒子の物質波（ド・ブロイ波）の波長は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "sci_phy16_004",
+      "unit": "science.physics.atom.quantum.electron",
       "category": "knowledge",
       "prompt": "原子核をつくっている粒子は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "sci_phy16_005",
+      "unit": "science.physics.atom.nucleus.decay",
       "category": "knowledge",
       "prompt": "α崩壊をすると、原子核の質量数と原子番号はどう変わる？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "sci_phy16_006",
+      "unit": "science.physics.atom.nucleus.decay",
       "category": "knowledge",
       "prompt": "β崩壊をすると、原子核の原子番号はどう変わる？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "sci_phy16_007",
+      "unit": "science.physics.atom.nucleus.reaction",
       "category": "knowledge",
       "prompt": "質量とエネルギーの関係を表す式は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "sci_phy16_008",
+      "unit": "science.physics.atom.nucleus.reaction",
       "category": "knowledge",
       "prompt": "太陽の中心で起こっているエネルギーを生む反応は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "sci_phy16_009",
+      "unit": "science.physics.atom.nucleus.decay",
       "category": "calculation",
       "prompt": "半減期 2 日の放射性物質がある。6 日後に残っている割合は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "sci_phy16_010",
+      "unit": "science.physics.atom.nucleus.decay",
       "category": "calculation",
       "prompt": "²³⁸U（原子番号 92）が α崩壊を1回すると、質量数は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "sci_phy16_011",
+      "unit": "science.physics.atom.quantum.photo",
       "category": "calculation",
       "prompt": "振動数 5.0 × 10¹⁴ Hz の光子のエネルギーは？（h ＝ 6.6 × 10⁻³⁴ J·s）",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "sci_phy16_012",
+      "unit": "science.physics.atom.quantum.photo",
       "category": "calculation",
       "prompt": "仕事関数 2.0 eV の金属に、エネルギー 5.0 eV の光子を当てた。飛び出す電子の運動エネルギーの最大値は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "sci_phy16_013",
+      "unit": "science.physics.atom.nucleus",
       "category": "calculation",
       "prompt": "質量 1.0 × 10⁻³⁰ kg に相当するエネルギーは？（c ＝ 3.0 × 10⁸ m/s）",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "sci_phy16_014",
+      "unit": "science.physics.atom.nucleus.decay",
       "category": "calculation",
       "prompt": "原子番号 82 の ²¹⁴Pb が β崩壊を1回すると、原子番号は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "sci_phy16_015",
+      "unit": "science.physics.atom.quantum.photo",
       "category": "thinking",
       "prompt": "光電効果で、光の強さだけを2倍にすると、飛び出す電子の運動エネルギーの最大値は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "sci_phy16_016",
+      "unit": "science.physics.atom.quantum.electron",
       "category": "thinking",
       "prompt": "電子線を結晶に当てると、X線と同じような回折の模様ができる。このことからわかるのは？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "sci_phy16_017",
+      "unit": "science.physics.atom.quantum.electron",
       "category": "knowledge",
       "prompt": "光電効果で、金属から電子が飛び出すかどうかを決めるものは？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "sci_phy16_018",
+      "unit": "science.physics.atom.quantum.electron",
       "category": "knowledge",
       "prompt": "光が「粒子」の性質をもつことを示す現象は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "sci_phy16_019",
+      "unit": "science.physics.atom.nucleus",
       "category": "knowledge",
       "prompt": "同位体（アイソトープ）とは？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "sci_phy16_020",
+      "unit": "science.physics.atom.nucleus",
       "category": "knowledge",
       "prompt": "原子番号 Z、質量数 A の原子核にふくまれる中性子の数は？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "sci_phy16_021",
+      "unit": "science.physics.atom.nucleus.reaction",
       "category": "knowledge",
       "prompt": "原子核がばらばらの核子より質量が小さくなっている分を何という？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "sci_phy16_022",
+      "unit": "science.physics.atom.nucleus",
       "category": "knowledge",
       "prompt": "原子力発電で利用している反応は？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "sci_phy16_023",
+      "unit": "science.physics.atom.nucleus",
       "category": "knowledge",
       "prompt": "X 線について正しいものは？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "sci_phy16_024",
+      "unit": "science.physics.atom.nucleus.decay",
       "category": "calculation",
       "prompt": "半減期 5 年の放射性物質が、20 年後に残っている割合は？",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "sci_phy16_025",
+      "unit": "science.physics.atom.nucleus.decay",
       "category": "calculation",
       "prompt": "²²⁶Ra（原子番号 88）が α崩壊すると、できる原子核の質量数と原子番号は？",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "sci_phy16_026",
+      "unit": "science.physics.atom.nucleus.decay",
       "category": "calculation",
       "prompt": "¹⁴C（原子番号 6）が β崩壊すると、できる原子核は？",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "sci_phy16_027",
+      "unit": "science.physics.atom.quantum.photo",
       "category": "calculation",
       "prompt": "振動数 6.0 × 10¹⁴ Hz の光子のエネルギーは？（h ＝ 6.6 × 10⁻³⁴ J·s）",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "sci_phy16_028",
+      "unit": "science.physics.atom.quantum.photo",
       "category": "calculation",
       "prompt": "仕事関数 2.5 eV の金属に、エネルギー 4.0 eV の光子を当てた。飛び出す電子の運動エネルギーの最大値は？",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "sci_phy16_029",
+      "unit": "science.physics.atom.quantum.electron",
       "category": "calculation",
       "prompt": "1 eV は何 J？（電気素量 1.6 × 10⁻¹⁹ C）",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "sci_phy16_030",
+      "unit": "science.physics.atom.nucleus",
       "category": "calculation",
       "prompt": "1.0 × 10⁻³ kg の質量がすべてエネルギーに変わると何 J？（c ＝ 3.0 × 10⁸ m/s）",
       "choices": [
@@ -396,6 +426,7 @@
     },
     {
       "id": "sci_phy16_031",
+      "unit": "science.physics.atom.nucleus.decay",
       "category": "thinking",
       "prompt": "放射線から身を守る3原則として正しい組み合わせは？",
       "choices": [
@@ -409,6 +440,7 @@
     },
     {
       "id": "sci_phy16_032",
+      "unit": "science.physics.atom.quantum.electron",
       "category": "thinking",
       "prompt": "電子顕微鏡が光学顕微鏡より細かいものを見られる理由は？",
       "choices": [

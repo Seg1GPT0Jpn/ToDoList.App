@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "sci_phy11_001",
+      "unit": "science.physics.mechanics.circular.circular",
       "category": "knowledge",
       "prompt": "等速円運動をする物体の加速度の向きは？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "sci_phy11_002",
+      "unit": "science.physics.mechanics.circular.circular",
       "category": "knowledge",
       "prompt": "質量 m、速さ v、半径 r の等速円運動に必要な向心力の大きさは？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "sci_phy11_003",
+      "unit": "science.physics.mechanics.circular.circular",
       "category": "knowledge",
       "prompt": "角速度 ω と周期 T の関係は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "sci_phy11_004",
+      "unit": "science.physics.mechanics.circular.circular",
       "category": "knowledge",
       "prompt": "ばね振り子の周期について正しいものは？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "sci_phy11_005",
+      "unit": "science.physics.mechanics.circular.circular",
       "category": "knowledge",
       "prompt": "単振り子（ふれはばが小さいとき）の周期は何で決まる？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "sci_phy11_006",
+      "unit": "science.physics.mechanics.circular.shm",
       "category": "knowledge",
       "prompt": "単振動を起こす復元力の特徴は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "sci_phy11_007",
+      "unit": "science.physics.mechanics.circular.gravity",
       "category": "knowledge",
       "prompt": "万有引力の大きさについて正しいものは？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "sci_phy11_008",
+      "unit": "science.physics.mechanics.circular.gravity",
       "category": "knowledge",
       "prompt": "ケプラーの第3法則は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "sci_phy11_009",
+      "unit": "science.physics.mechanics.circular.circular",
       "category": "calculation",
       "prompt": "半径 2.0 m の円周上を 4.0 m/s で等速円運動している。向心加速度の大きさは？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "sci_phy11_010",
+      "unit": "science.physics.mechanics.circular.circular",
       "category": "calculation",
       "prompt": "質量 0.50 kg の物体が、半径 0.50 m、角速度 4.0 rad/s で等速円運動している。向心力の大きさは？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "sci_phy11_011",
+      "unit": "science.physics.mechanics.circular.circular",
       "category": "calculation",
       "prompt": "周期 2.0 s の等速円運動の角速度は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "sci_phy11_012",
+      "unit": "science.physics.mechanics.circular.gravity",
       "category": "calculation",
       "prompt": "2物体の間の距離を2倍にすると、万有引力の大きさは何倍？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "sci_phy11_013",
+      "unit": "science.physics.mechanics.circular.circular",
       "category": "calculation",
       "prompt": "ばね振り子のおもりの質量を4倍にすると、周期は何倍？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "sci_phy11_014",
+      "unit": "science.physics.mechanics.circular.shm",
       "category": "calculation",
       "prompt": "振幅 0.10 m、角振動数 5.0 rad/s の単振動の、最大の速さは？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "sci_phy11_015",
+      "unit": "science.physics.mechanics.circular.inertial",
       "category": "thinking",
       "prompt": "車がカーブを曲がるとき、乗っている人が外側へ押しつけられるように感じる理由は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "sci_phy11_016",
+      "unit": "science.physics.mechanics.circular.gravity",
       "category": "thinking",
       "prompt": "地球を回る人工衛星の中で、宇宙飛行士が浮いて見える理由は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "sci_phy11_017",
+      "unit": "science.physics.mechanics.circular.circular",
       "category": "knowledge",
       "prompt": "等速円運動の速度の向きは？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "sci_phy11_018",
+      "unit": "science.physics.mechanics.circular.circular",
       "category": "knowledge",
       "prompt": "等速円運動の速さ v、半径 r、角速度 ω の関係は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "sci_phy11_019",
+      "unit": "science.physics.mechanics.circular.circular",
       "category": "knowledge",
       "prompt": "単振り子の周期を表す式は？（l：糸の長さ）",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "sci_phy11_020",
+      "unit": "science.physics.mechanics.circular.circular",
       "category": "knowledge",
       "prompt": "ばね振り子の周期を表す式は？（m：質量、k：ばね定数）",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "sci_phy11_021",
+      "unit": "science.physics.mechanics.circular.gravity",
       "category": "knowledge",
       "prompt": "万有引力の法則は？（G：万有引力定数）",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "sci_phy11_022",
+      "unit": "science.physics.mechanics.circular.gravity",
       "category": "knowledge",
       "prompt": "ケプラーの第2法則（面積速度一定）から分かることは？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "sci_phy11_023",
+      "unit": "science.physics.mechanics.circular.circular",
       "category": "calculation",
       "prompt": "半径 0.50 m の円周上を、周期 2.0 s で等速円運動している。速さは？（π ＝ 3.14）",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "sci_phy11_024",
+      "unit": "science.physics.mechanics.circular.circular",
       "category": "calculation",
       "prompt": "質量 2.0 kg の物体が半径 1.0 m、速さ 3.0 m/s で等速円運動する。向心力の大きさは？",
       "choices": [
@@ -318,6 +342,7 @@
     },
     {
       "id": "sci_phy11_025",
+      "unit": "science.physics.mechanics.circular.circular",
       "category": "calculation",
       "prompt": "角速度 4.0 rad/s で半径 0.50 m の等速円運動をする物体の加速度の大きさは？",
       "choices": [
@@ -331,6 +356,7 @@
     },
     {
       "id": "sci_phy11_026",
+      "unit": "science.physics.mechanics.circular.circular",
       "category": "calculation",
       "prompt": "1 分間に 30 回転する円板の周期は？",
       "choices": [
@@ -344,6 +370,7 @@
     },
     {
       "id": "sci_phy11_027",
+      "unit": "science.physics.mechanics.circular.circular",
       "category": "calculation",
       "prompt": "単振り子の糸の長さを4倍にすると、周期は何倍？",
       "choices": [
@@ -357,6 +384,7 @@
     },
     {
       "id": "sci_phy11_028",
+      "unit": "science.physics.mechanics.circular.circular",
       "category": "calculation",
       "prompt": "ばね定数を4倍にすると、ばね振り子の周期は何倍？",
       "choices": [
@@ -370,6 +398,7 @@
     },
     {
       "id": "sci_phy11_029",
+      "unit": "science.physics.mechanics.circular.gravity",
       "category": "calculation",
       "prompt": "2物体の質量をどちらも2倍にすると、万有引力は何倍？（距離は同じ）",
       "choices": [
@@ -383,6 +412,7 @@
     },
     {
       "id": "sci_phy11_030",
+      "unit": "science.physics.mechanics.circular.shm",
       "category": "calculation",
       "prompt": "振幅 0.20 m、角振動数 10 rad/s の単振動の、速さの最大値は？",
       "choices": [
@@ -396,6 +426,7 @@
     },
     {
       "id": "sci_phy11_031",
+      "unit": "science.physics.mechanics.circular.circular",
       "category": "thinking",
       "prompt": "洗濯機の脱水で水が外へ飛んでいく理由は？",
       "choices": [
@@ -409,6 +440,7 @@
     },
     {
       "id": "sci_phy11_032",
+      "unit": "science.physics.mechanics.circular.circular",
       "category": "thinking",
       "prompt": "静止衛星（地球の自転と同じ周期で回る衛星）の軌道について正しいものは？",
       "choices": [

@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_mc14_001",
+      "unit": "math.mc.express.express",
       "category": "calculation",
       "prompt": "[[1, 2], [3, 4]]·[[5, 6], [7, 8]] を計算すると？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_mc14_002",
+      "unit": "math.mc.express.express.matrix",
       "category": "calculation",
       "prompt": "行列 [[1, 2], [3, 4]] の ad−bc の値は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_mc14_003",
+      "unit": "math.mc.express.express.matrix",
       "category": "calculation",
       "prompt": "行列 [[2, 1], [1, 1]] の逆行列は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_mc14_004",
+      "unit": "math.mc.express.express.matrix",
       "category": "calculation",
       "prompt": "原点のまわりに90°回転する行列は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_mc14_005",
+      "unit": "math.mc.express.express.matrix",
       "category": "calculation",
       "prompt": "点 (1, 0) を90°回転の行列で移した点は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_mc14_006",
+      "unit": "math.mc.express.express.network",
       "category": "knowledge",
       "prompt": "各頂点に集まる辺の数が 2, 2, 3, 3 のつながったグラフは一筆書きできる？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_mc14_007",
+      "unit": "math.mc.express.express.network",
       "category": "calculation",
       "prompt": "辺の長さが A−B：3、B−C：2、A−C：6 のとき、A から C への最短経路の長さは？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_mc14_008",
+      "unit": "math.mc.express.express.network",
       "category": "calculation",
       "prompt": "頂点が10個の木（閉路のないつながったグラフ）の辺の数は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_mc14_009",
+      "unit": "math.mc.express.express.matrix",
       "category": "calculation",
       "prompt": "連立方程式 x+y=4、x−y=2 を行列で解くと？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_mc14_010",
+      "unit": "math.mc.express.express.chart",
       "category": "thinking",
       "prompt": "問題を図やグラフで表す工夫の意味は？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_mc14_011",
+      "unit": "math.mc.express.express",
       "category": "calculation",
       "prompt": "[[1, 0], [2, 1]]·[[1, 3], [0, 1]] を計算すると？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_mc14_012",
+      "unit": "math.mc.express.express.matrix",
       "category": "calculation",
       "prompt": "行列 [[3, 1], [5, 2]] の ad−bc の値は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_mc14_013",
+      "unit": "math.mc.express.express.matrix",
       "category": "calculation",
       "prompt": "行列 [[3, 1], [5, 2]] の逆行列は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_mc14_014",
+      "unit": "math.mc.express.express.chart",
       "category": "calculation",
       "prompt": "x 軸に関する対称移動を表す行列は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_mc14_015",
+      "unit": "math.mc.express.express.matrix",
       "category": "calculation",
       "prompt": "点 (2, 3) を行列 [[0, −1], [1, 0]] で移した点は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_mc14_016",
+      "unit": "math.mc.express.express.network",
       "category": "calculation",
       "prompt": "頂点の次数が 1, 2, 2, 3 のつながったグラフは一筆書きできる？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_mc14_017",
+      "unit": "math.mc.express.express.network",
       "category": "calculation",
       "prompt": "辺の長さが A−B：2、B−D：4、A−C：5、C−D：2 のとき、A から D への最短の長さは？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_mc14_018",
+      "unit": "math.mc.express.express.network",
       "category": "calculation",
       "prompt": "頂点が6個の木の辺の数は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_mc14_019",
+      "unit": "math.mc.express.express.matrix",
       "category": "calculation",
       "prompt": "連立方程式 2x+y=5、x+y=3 の解は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_mc14_020",
+      "unit": "math.mc.express.express.matrix",
       "category": "thinking",
       "prompt": "行列の積 AB と BA について言えることは？",
       "choices": [

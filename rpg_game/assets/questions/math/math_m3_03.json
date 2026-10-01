@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_m303_001",
+      "unit": "math.m3.limit.seq.series",
       "category": "calculation",
       "prompt": "無限級数 x+x(1−x)+x(1−x)²+… が収束する x の範囲は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_m303_002",
+      "unit": "math.m3.limit.func.function",
       "category": "calculation",
       "prompt": "lim_{x→0} (eˣ−1)/x の値は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_m303_003",
+      "unit": "math.m3.limit.func.function",
       "category": "calculation",
       "prompt": "lim_{x→0} log(1+x)/x の値は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_m303_004",
+      "unit": "math.m3.limit.seq.limit",
       "category": "calculation",
       "prompt": "lim_{n→∞} (−1)ⁿ は？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_m303_005",
+      "unit": "math.m3.limit.func.continuity",
       "category": "calculation",
       "prompt": "f(x)=(x²−1)/(x−1)（x≠1）、f(1)=a が x=1 で連続となる a は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_m303_006",
+      "unit": "math.m3.limit.seq.limit",
       "category": "calculation",
       "prompt": "a₁=0、aₙ₊₁=(1/2)aₙ+1 で定まる数列の極限は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_m303_007",
+      "unit": "math.m3.limit.func.function",
       "category": "calculation",
       "prompt": "lim_{x→∞} (1+2/x)ˣ の値は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_m303_008",
+      "unit": "math.m3.limit.seq",
       "category": "calculation",
       "prompt": "面積1の正方形の各辺の中点を結んで次の正方形を作ることをくり返す。すべての正方形の面積の和は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_m303_009",
+      "unit": "math.m3.limit.seq",
       "category": "thinking",
       "prompt": "方程式 x³+x−1=0 が 0<x<1 に解をもつと言える理由は？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_m303_010",
+      "unit": "math.m3.limit.seq.limit",
       "category": "thinking",
       "prompt": "はさみうちの原理とは？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_m303_011",
+      "unit": "math.m3.limit.seq.series",
       "category": "calculation",
       "prompt": "無限等比級数 1+(x−1)+(x−1)²+… が収束する x の範囲は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_m303_012",
+      "unit": "math.m3.limit.func.function",
       "category": "calculation",
       "prompt": "lim_{x→0} (e^(2x)−1)/x の値は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_m303_013",
+      "unit": "math.m3.limit.func.function",
       "category": "calculation",
       "prompt": "lim_{x→0} log(1+2x)/x の値は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_m303_014",
+      "unit": "math.m3.limit.seq.limit",
       "category": "calculation",
       "prompt": "lim_{n→∞} sin(n)/n の値は？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_m303_015",
+      "unit": "math.m3.limit.func.continuity",
       "category": "calculation",
       "prompt": "f(x)=(x²−4)/(x−2)（x≠2）、f(2)=a が x=2 で連続となる a は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_m303_016",
+      "unit": "math.m3.limit.seq.limit",
       "category": "calculation",
       "prompt": "a₁=1、aₙ₊₁=(1/3)aₙ+2 で定まる数列の極限は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_m303_017",
+      "unit": "math.m3.limit.func.function",
       "category": "calculation",
       "prompt": "lim_{x→∞} (1−1/x)ˣ の値は？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_m303_018",
+      "unit": "math.m3.limit.seq",
       "category": "calculation",
       "prompt": "1辺1の正三角形から、各辺の中点を結んだ三角形を作ることをくり返す。すべての三角形の周の長さの和は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_m303_019",
+      "unit": "math.m3.limit.func.continuity",
       "category": "calculation",
       "prompt": "方程式 x³−2=0 が 1<x<2 に解をもつと言える理由として使う定理は？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_m303_020",
+      "unit": "math.m3.limit.seq.limit",
       "category": "knowledge",
       "prompt": "lim_{n→∞} aₙ=∞ のとき、数列 {aₙ} は何という？",
       "choices": [

@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "inf_info108_001",
+      "unit": "information.info.computer.digital",
       "category": "knowledge",
       "prompt": "温度計の液柱のように、連続的に変化する量の表し方は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "inf_info108_002",
+      "unit": "information.info.computer.digital",
       "category": "knowledge",
       "prompt": "とびとびの値（数値）で表す表し方は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "inf_info108_003",
+      "unit": "information.info.computer.digital.amount",
       "category": "knowledge",
       "prompt": "情報量の最小単位は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "inf_info108_004",
+      "unit": "information.info.computer.digital.binary",
       "category": "knowledge",
       "prompt": "1 バイトは何ビット？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "inf_info108_005",
+      "unit": "information.info.computer.digital",
       "category": "knowledge",
       "prompt": "16 進数で使う記号は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "inf_info108_006",
+      "unit": "information.info.computer.digital.binary",
       "category": "knowledge",
       "prompt": "世界中の文字を1つの体系で表そうとする文字コードは？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "inf_info108_007",
+      "unit": "information.info.computer.digital",
       "category": "knowledge",
       "prompt": "デジタルで情報を扱う利点は？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "inf_info108_008",
+      "unit": "information.info.computer.digital",
       "category": "calculation",
       "prompt": "10 進数の 13 を 2 進数で表すと？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "inf_info108_009",
+      "unit": "information.info.computer.digital",
       "category": "calculation",
       "prompt": "2 進数の 101101 を 10 進数で表すと？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "inf_info108_010",
+      "unit": "information.info.computer.digital.binary",
       "category": "calculation",
       "prompt": "1 バイト（8 ビット）で表せる情報は何通り？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "inf_info108_011",
+      "unit": "information.info.computer.digital",
       "category": "calculation",
       "prompt": "16 進数の FF を 10 進数で表すと？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "inf_info108_012",
+      "unit": "information.info.computer.digital",
       "category": "calculation",
       "prompt": "2 進数の 1111 を 16 進数で表すと？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "inf_info108_013",
+      "unit": "information.info.computer.digital",
       "category": "knowledge",
       "prompt": "アナログ量をデジタル量に変換することを何という？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "inf_info108_014",
+      "unit": "information.info.computer.digital.binary",
       "category": "knowledge",
       "prompt": "1 キロバイト（KB）はおよそ何バイト？（10³ として）",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "inf_info108_015",
+      "unit": "information.info.computer.digital",
       "category": "knowledge",
       "prompt": "日本語の文字を表すための文字コードの例は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "inf_info108_016",
+      "unit": "information.info.computer.digital",
       "category": "knowledge",
       "prompt": "文字コードが送り手と受け手で異なると起こる現象は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "inf_info108_017",
+      "unit": "information.info.computer.digital.binary",
       "category": "knowledge",
       "prompt": "2 進数で、けたが 1 つ増えると表せる値の数はどうなる？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "inf_info108_018",
+      "unit": "information.info.computer.digital",
       "category": "calculation",
       "prompt": "10 進数の 25 を 2 進数で表すと？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "inf_info108_019",
+      "unit": "information.info.computer.digital",
       "category": "calculation",
       "prompt": "2 進数の 1110 を 10 進数で表すと？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "inf_info108_020",
+      "unit": "information.info.computer.digital",
       "category": "calculation",
       "prompt": "10 進数の 255 を 16 進数で表すと？",
       "choices": [
@@ -266,6 +286,7 @@
     },
     {
       "id": "inf_info108_021",
+      "unit": "information.info.computer.digital",
       "category": "calculation",
       "prompt": "16 進数の 1A を 10 進数で表すと？",
       "choices": [
@@ -279,6 +300,7 @@
     },
     {
       "id": "inf_info108_022",
+      "unit": "information.info.computer.digital.binary",
       "category": "calculation",
       "prompt": "4 ビットで表せる情報は何通り？",
       "choices": [
@@ -292,6 +314,7 @@
     },
     {
       "id": "inf_info108_023",
+      "unit": "information.info.computer.digital",
       "category": "calculation",
       "prompt": "2 進数の 0111 ＋ 0001 を計算すると？",
       "choices": [
@@ -305,6 +328,7 @@
     },
     {
       "id": "inf_info108_024",
+      "unit": "information.info.computer.digital.calc",
       "category": "thinking",
       "prompt": "2 進数で負の数を表すときに「2 の補数」を使う利点は？",
       "choices": [

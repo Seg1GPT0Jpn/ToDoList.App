@@ -6,6 +6,7 @@
   "questions": [
     {
       "id": "mat_mc15_001",
+      "unit": "math.mc.express.express",
       "category": "calculation",
       "prompt": "a=(1, 2)、b=(3, −1) のなす角を θ とするとき、cos θ は？",
       "choices": [
@@ -19,6 +20,7 @@
     },
     {
       "id": "mat_mc15_002",
+      "unit": "math.mc.express.express.network",
       "category": "calculation",
       "prompt": "3点 (1, 0, 0)、(0, 1, 0)、(0, 0, 1) を頂点とする三角形の面積は？",
       "choices": [
@@ -32,6 +34,7 @@
     },
     {
       "id": "mat_mc15_003",
+      "unit": "math.mc.express.express",
       "category": "calculation",
       "prompt": "楕円 x²/9+y²/4=1 の焦点は？",
       "choices": [
@@ -45,6 +48,7 @@
     },
     {
       "id": "mat_mc15_004",
+      "unit": "math.mc.express.express",
       "category": "calculation",
       "prompt": "(1−i)⁴ を計算すると？",
       "choices": [
@@ -58,6 +62,7 @@
     },
     {
       "id": "mat_mc15_005",
+      "unit": "math.mc.express.express",
       "category": "calculation",
       "prompt": "|z₁|=2、|z₂|=3 のとき、|z₁z₂| は？",
       "choices": [
@@ -71,6 +76,7 @@
     },
     {
       "id": "mat_mc15_006",
+      "unit": "math.mc.express.express.chart",
       "category": "calculation",
       "prompt": "x=2cos t、y=2sin t が表す曲線は？",
       "choices": [
@@ -84,6 +90,7 @@
     },
     {
       "id": "mat_mc15_007",
+      "unit": "math.mc.express.express",
       "category": "calculation",
       "prompt": "[[1, 1], [0, 1]]⁵ を計算すると？",
       "choices": [
@@ -97,6 +104,7 @@
     },
     {
       "id": "mat_mc15_008",
+      "unit": "math.mc.express.express",
       "category": "calculation",
       "prompt": "放物線 y²=4x 上の点 (1, 2) と焦点の距離は？",
       "choices": [
@@ -110,6 +118,7 @@
     },
     {
       "id": "mat_mc15_009",
+      "unit": "math.mc.express.express.chart",
       "category": "calculation",
       "prompt": "極座標 (2, π) を直交座標で表すと？",
       "choices": [
@@ -123,6 +132,7 @@
     },
     {
       "id": "mat_mc15_010",
+      "unit": "math.mc.express.express.matrix",
       "category": "thinking",
       "prompt": "ベクトル・複素数・行列に共通する便利さは？",
       "choices": [
@@ -136,6 +146,7 @@
     },
     {
       "id": "mat_mc15_011",
+      "unit": "math.mc.express.express",
       "category": "calculation",
       "prompt": "a=(1, 1)、b=(1, −1) のなす角は？",
       "choices": [
@@ -149,6 +160,7 @@
     },
     {
       "id": "mat_mc15_012",
+      "unit": "math.mc.express.express",
       "category": "calculation",
       "prompt": "点 (1, 1, 1) と原点の距離は？",
       "choices": [
@@ -162,6 +174,7 @@
     },
     {
       "id": "mat_mc15_013",
+      "unit": "math.mc.express.express",
       "category": "calculation",
       "prompt": "双曲線 x²/4−y²=1 の焦点は？",
       "choices": [
@@ -175,6 +188,7 @@
     },
     {
       "id": "mat_mc15_014",
+      "unit": "math.mc.express.express",
       "category": "calculation",
       "prompt": "(1+i)⁴ を計算すると？",
       "choices": [
@@ -188,6 +202,7 @@
     },
     {
       "id": "mat_mc15_015",
+      "unit": "math.mc.express.express",
       "category": "calculation",
       "prompt": "|z₁|=3、|z₂|=6 のとき、|z₁/z₂| は？",
       "choices": [
@@ -201,6 +216,7 @@
     },
     {
       "id": "mat_mc15_016",
+      "unit": "math.mc.express.express.chart",
       "category": "calculation",
       "prompt": "x=1+cos t、y=sin t が表す曲線は？",
       "choices": [
@@ -214,6 +230,7 @@
     },
     {
       "id": "mat_mc15_017",
+      "unit": "math.mc.express.express.matrix",
       "category": "calculation",
       "prompt": "[[2, 0], [0, 2]]³ を計算すると？",
       "choices": [
@@ -227,6 +244,7 @@
     },
     {
       "id": "mat_mc15_018",
+      "unit": "math.mc.express.express",
       "category": "calculation",
       "prompt": "放物線 y²=8x 上の点で、x 座標が3の点と焦点の距離は？",
       "choices": [
@@ -240,6 +258,7 @@
     },
     {
       "id": "mat_mc15_019",
+      "unit": "math.mc.express.express.chart",
       "category": "calculation",
       "prompt": "極座標 (3, π/2) を直交座標で表すと？",
       "choices": [
@@ -253,6 +272,7 @@
     },
     {
       "id": "mat_mc15_020",
+      "unit": "math.mc.express.express.chart",
       "category": "thinking",
       "prompt": "図形の問題を、座標・ベクトル・複素数のどれで解くか選ぶときの考え方は？",
       "choices": [
