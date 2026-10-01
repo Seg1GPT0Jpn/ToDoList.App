@@ -15,7 +15,7 @@ total = 0
 for name in sorted(os.listdir(os.path.join(here, 'src'))):
     if not name.endswith('.txt'):
         continue
-    deck, secs, seen = None, [], set()
+    deck, secs, seen, dup = None, [], set(), 0
     for no, line in enumerate(open(os.path.join(here, 'src', name), encoding='utf-8'), 1):
         line = line.strip()
         if not line or line.startswith('#'):
@@ -36,7 +36,8 @@ for name in sorted(os.listdir(os.path.join(here, 'src'))):
         if mm:
             t, r = mm.group(1), mm.group(2)
         if t in seen:
-            sys.exit(f'{name}:{no}: 用語が重複: {t}')
+            dup += 1
+            continue
         seen.add(t)
         c = {'t': t, 'm': m}
         if r:
@@ -57,5 +58,5 @@ for name in sorted(os.listdir(os.path.join(here, 'src'))):
     total += n
     json.dump(deck, open(os.path.join(out_dir, deck['id'] + '.json'), 'w', encoding='utf-8'),
               ensure_ascii=False, separators=(',', ':'))
-    print(f"{deck['id']}: {n}枚 / {len(deck['sections'])}章")
+    print(f"{deck['id']}: {n}枚 / {len(deck['sections'])}章" + (f"（重複{dup}件は省略）" if dup else ''))
 print('合計', total)
