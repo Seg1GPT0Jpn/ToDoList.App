@@ -190,7 +190,8 @@ class Progression {
         updated =
             updated.copyWith(companions: {...updated.companions, captive});
       }
-    } else {
+    } else if (!summary.escaped) {
+      // 逃げられたとき（レア型）は、負けとは数えない
       updated = updated.copyWith(lostStages: {...updated.lostStages, stage.id});
     }
 

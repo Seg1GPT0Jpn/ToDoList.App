@@ -21,7 +21,28 @@ enum EnemyAbility {
   sturdy('鉄壁', '受けるダメージがいつも0.85倍'),
 
   /// 連続要求：2問続けて正解しないとダメージが通りにくい
-  chainLock('連続要求', '連続正解の2問目からダメージがしっかり通る（1問目は半分）');
+  chainLock('連続要求', '連続正解の2問目からダメージがしっかり通る（1問目は半分）'),
+
+  /// 通常型：とくに能力をもたない（見た目からの能力も使わない）
+  normal('通常型', 'とくになし。基本どおりに正解を重ねれば倒せる'),
+
+  /// 高HP型：ダメージが通りにくいが、攻撃は弱い
+  tank('高HP型', '体がかたく、受けるダメージが0.75倍。そのかわり攻撃は0.8倍と弱い'),
+
+  /// 回避型：じっくり考えた答えはかわされる
+  evasive('回避型', '制限時間の半分をこえた正解はかわされる（3連続正解中はかわせない）'),
+
+  /// コンボ妨害型：3連続正解になると、コンボを切ってくる
+  comboBreaker('コンボ妨害型', '3連続正解になるたびにチェインを断ち切る（むすびの栞で防げる）'),
+
+  /// 連続出現型：3体の群れで、次々と現れる
+  swarm('連続出現型', '3体の群れ。1体が弱ると次が乱入してくる'),
+
+  /// ミミック型：宝箱のふりをして、最初の問題で不意打ちしてくる
+  mimic('ミミック型', '最初の問題をまちがえると、不意打ちで2倍のダメージ'),
+
+  /// レア型：めったに出会えない。6問のうちに倒さないと逃げてしまう
+  rare('レア型', '6問答えるうちに倒さないと逃げてしまう。倒せば経験値が多い');
 
   const EnemyAbility(this.label, this.description);
   final String label;
@@ -45,6 +66,31 @@ enum EnemyAbility {
         'bird' => combo,
         'thunder' => chainLock,
         'wyvern' || 'meteor' => sturdy,
+        // v4 で増えた文房具
+        'notebook' => tank,
+        'pencilcase' => swarm,
+        'glue' => chainLock,
+        'tape' || 'correction' => comboBreaker,
+        'clip' => evasive,
+        'pushpin' || 'calculator' => specialist,
+        'sharpener' => guard,
+        'brush' || 'inkpot' => disrupt,
+        // v4 で増えた海の魔物
+        'ray' || 'seahorse' => evasive,
+        'turtle' || 'whale' => tank,
+        'starfish' => swarm,
+        'eel' => combo,
+        'ammonite' => guard,
+        'urchin' => sturdy,
+        // v4 で増えた空の魔物
+        'angel' => specialist,
+        'owl' => disrupt,
+        'phoenix' => tank,
+        'pegasus' || 'balloon' => evasive,
+        'kite' => comboBreaker,
+        'griffin' => guard,
+        'rainbow' => chainLock,
+        'mimic' => mimic,
         _ => none,
       };
 }
@@ -88,12 +134,40 @@ class EnemyDef {
   /// 特殊能力（指定がなければ [effectiveAbility] で見た目から決まる）
   final EnemyAbility ability;
 
-  /// 実際に使う能力。装甲をもつ敵は、装甲がその役目なので能力なし
+  /// 実際に使う能力。装甲をもつ敵は、装甲がその役目なので能力なし。
+  /// [EnemyAbility.normal] を指定すると、見た目からの能力も使わない
   EnemyAbility get effectiveAbility {
+    if (ability == EnemyAbility.normal) return EnemyAbility.none;
     if (ability != EnemyAbility.none) return ability;
     if (armor > 0) return EnemyAbility.none;
     return EnemyAbility.forLook(look);
   }
+
+  /// 一部だけ変えた敵（群れの1体など）
+  EnemyDef copyWith({
+    String? id,
+    String? name,
+    int? maxHp,
+    int? attack,
+    EnemyAbility? ability,
+    String? introLine,
+    String? defeatLine,
+  }) =>
+      EnemyDef(
+        id: id ?? this.id,
+        name: name ?? this.name,
+        maxHp: maxHp ?? this.maxHp,
+        attack: attack ?? this.attack,
+        description: description,
+        look: look,
+        color: color,
+        weakness: weakness,
+        armorCategory: armorCategory,
+        armor: armor,
+        introLine: introLine ?? this.introLine,
+        defeatLine: defeatLine ?? this.defeatLine,
+        ability: ability ?? this.ability,
+      );
 
   final String id;
   final String name;

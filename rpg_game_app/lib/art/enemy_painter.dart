@@ -3,6 +3,7 @@ import 'dart:ui';
 
 part 'stationery_painter.dart';
 part 'voyage_monster_painter.dart';
+part 'monster_painter_v4.dart';
 
 const _ink = Color(0xFF2E2A33);
 const _white = Color(0xFFFFFDF8);
@@ -105,6 +106,63 @@ void paintEnemy(
       _meteor(canvas, size, t, c ?? const Color(0xFF8D6E63));
     case 'ufo':
       _ufo(canvas, size, t, c ?? const Color(0xFF80CBC4));
+    // v4 で増えたモンスター
+    case 'notebook':
+      _notebook(canvas, size, t, c ?? const Color(0xFF3F7CC4));
+    case 'pencilcase':
+      _pencilcase(canvas, size, t, c ?? const Color(0xFFE07A5F));
+    case 'glue':
+      _glue(canvas, size, t, c ?? const Color(0xFF5B9A5B));
+    case 'tape':
+      _tape(canvas, size, t, c ?? const Color(0xFFA7D3E8));
+    case 'clip':
+      _clip(canvas, size, t, c ?? const Color(0xFFB8BEC6));
+    case 'pushpin':
+      _pushpin(canvas, size, t, c ?? const Color(0xFFD64545));
+    case 'sharpener':
+      _sharpener(canvas, size, t, c ?? const Color(0xFF7E57C2));
+    case 'brush':
+      _brush(canvas, size, t, c ?? const Color(0xFF8D6E63));
+    case 'correction':
+      _correction(canvas, size, t, c ?? const Color(0xFF26A69A));
+    case 'inkpot':
+      _inkpot(canvas, size, t, c ?? const Color(0xFF283593));
+    case 'calculator':
+      _calculator(canvas, size, t, c ?? const Color(0xFF546E7A));
+    case 'ray':
+      _ray(canvas, size, t, c ?? const Color(0xFF5C8FB0));
+    case 'turtle':
+      _turtle(canvas, size, t, c ?? const Color(0xFF6B9A5B));
+    case 'whale':
+      _whale(canvas, size, t, c ?? const Color(0xFF3F6C9C));
+    case 'seahorse':
+      _seahorse(canvas, size, t, c ?? const Color(0xFFF2A65A));
+    case 'starfish':
+      _starfish(canvas, size, t, c ?? const Color(0xFFEF8A62));
+    case 'eel':
+      _eel(canvas, size, t, c ?? const Color(0xFF6D8B4E));
+    case 'ammonite':
+      _ammonite(canvas, size, t, c ?? const Color(0xFFC9A27E));
+    case 'urchin':
+      _urchin(canvas, size, t, c ?? const Color(0xFF5E4B8B));
+    case 'angel':
+      _angel(canvas, size, t, c ?? const Color(0xFFE3F2FD));
+    case 'owl':
+      _owl(canvas, size, t, c ?? const Color(0xFF8D6E63));
+    case 'phoenix':
+      _phoenix(canvas, size, t, c ?? const Color(0xFFD64545));
+    case 'pegasus':
+      _pegasus(canvas, size, t, c ?? const Color(0xFFF5F5F5));
+    case 'balloon':
+      _balloon(canvas, size, t, c ?? const Color(0xFFEF5350));
+    case 'kite':
+      _kite(canvas, size, t, c ?? const Color(0xFFFFB74D));
+    case 'griffin':
+      _griffin(canvas, size, t, c ?? const Color(0xFFC9A066));
+    case 'rainbow':
+      _rainbow(canvas, size, t, c ?? const Color(0xFF7986CB));
+    case 'mimic':
+      _mimic(canvas, size, t, c ?? const Color(0xFFB07A3E));
     case 'astral':
       _astral(canvas, size, t, c ?? const Color(0xFF3949AB));
     default:

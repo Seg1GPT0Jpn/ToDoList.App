@@ -12,9 +12,8 @@ void main() {
   testWidgets('バトル：冒険Lvの下に、その科目の習熟Lvが出る', (t) async {
     final world = RpgCatalog.world('math');
     final stage = world.stages.first;
-    final progress = Mastery.migrate(
-      const RpgProgress(level: 30),
-    ).copyWith(masteryExp: {'math.m1': Mastery.expForLevel(4)});
+    final progress = Mastery.migrate(const RpgProgress(level: 30))
+        .copyWith(masteryExp: {'math.m1': Mastery.expForLevel(4)});
     await openScreen(
       t,
       BattleScreen(

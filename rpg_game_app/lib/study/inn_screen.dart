@@ -83,9 +83,7 @@ class _InnScreenState extends State<InnScreen> {
     }
     // 授業のテーマ（文法）の問題から出す。長文エリアではエリア1〜15の文法問題を使う。
     bool grammar(QuizQuestion q) =>
-        q.category == QuestionCategory.usage &&
-        q.passage == null &&
-        q.isChoice;
+        q.category == QuestionCategory.usage && q.passage == null && q.isChoice;
     var pool = set.questions.where(grammar).toList();
     if (pool.isEmpty) {
       final first = RpgCatalog.englishStages.firstWhere((s) => s.order == 16);

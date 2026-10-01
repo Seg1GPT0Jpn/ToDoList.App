@@ -7,6 +7,9 @@ const knownLooks = {
   'eraser', 'crayon', 'sticky', 'pencil', 'stubpencil', 'pen', 'ruler',
   'triangle', 'protractor', 'compass', 'stapler', 'marker', 'page',
   'mechpencil', 'scissors', 'binder', 'book',
+  // v4 で増えた文房具
+  'notebook', 'pencilcase', 'glue', 'tape', 'clip', 'pushpin', 'sharpener',
+  'brush', 'correction', 'inkpot', 'calculator',
 };
 
 void main() {

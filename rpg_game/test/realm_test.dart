@@ -93,7 +93,7 @@ void main() {
     test('海・空の魔物はすべて図鑑にのっている', () {
       final known = {for (final s in EnemySpeciesCatalog.all) s.look};
       expect(known, containsAll(VoyageMonsters.looks));
-      expect(VoyageMonsters.looks.length, 15);
+      expect(VoyageMonsters.looks.length, 31);
     });
 
     test('保存しても海か空かは元にもどる（古いデータは海）', () {

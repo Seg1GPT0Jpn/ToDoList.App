@@ -166,6 +166,8 @@ class _ResultScreenState extends State<ResultScreen>
                           ? (s.isPerfect
                                 ? 'ノーミスで $_enemyName をたおした！'
                                 : '$_enemyName をたおした！')
+                          : s.escaped
+                          ? '$_enemyName に逃げられてしまった…（負けには数えない）'
                           : '$_enemyName にやられてしまった…',
                       style: serif(17),
                       textAlign: TextAlign.center,
@@ -230,6 +232,7 @@ class _ResultScreenState extends State<ResultScreen>
                       'まちがえた問題はフィールドをさまよっている。話しかけると再戦できるよ。くわしい解説は復習手帳へ。',
                     ),
                   if (!won &&
+                      !s.escaped &&
                       !widget.ghost &&
                       widget.stage.captiveCompanionId != null &&
                       !widget.result.progress.companions.contains(

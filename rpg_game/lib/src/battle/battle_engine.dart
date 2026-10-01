@@ -19,6 +19,9 @@ enum BattlePhase {
 
   /// 敗北（プレイヤーのHPが0）
   lost,
+
+  /// 敵に逃げられた（レア型）
+  escaped,
 }
 
 /// 1ターン（1問）の結果。UI はこれを見て演出を出す。
@@ -56,7 +59,23 @@ class TurnResult {
     this.challenge = false,
     this.deepThought = false,
     this.credit = 0,
+    this.evaded = false,
+    this.comboBroken = false,
+    this.ambush = false,
+    this.escaped = false,
   });
+
+  /// 回避型に正解をかわされた
+  final bool evaded;
+
+  /// コンボ妨害型にチェインを断ち切られた
+  final bool comboBroken;
+
+  /// ミミック型の不意打ちを受けた
+  final bool ambush;
+
+  /// レア型に逃げられた（このターンでバトル終了）
+  final bool escaped;
 
   /// 得点の割合（正解なら1。4択以外の問題では部分点のこともある）
   final double credit;
@@ -153,7 +172,11 @@ class BattleSummary {
     required this.remainingHp,
     required this.maxHp,
     required this.turns,
+    this.escaped = false,
   });
+
+  /// レア型に逃げられた
+  final bool escaped;
 
   final bool won;
   final int correctCount;
@@ -217,7 +240,7 @@ class BattleEngine {
         _deck = QuestionDeck(questions, random: random, weight: questionWeight),
         _damage = damage ?? DamageCalculator(random: random),
         _armor = enemy.armor,
-        lineup = List.unmodifiable([enemy, ...reinforcements]) {
+        lineup = List.unmodifiable(_buildLineup(enemy, reinforcements)) {
     _hps = [for (final e in lineup) e.maxHp];
     maxHp = (player.maxHp * (1 + bonusHpRate)).round();
     _playerHp = maxHp;
@@ -229,6 +252,34 @@ class BattleEngine {
     _categories = {for (final q in questions) q.category};
     _current = _nextQuestion();
   }
+
+  /// 戦う相手の並び。連続出現型は、HP を3つに分けた3体の群れになる
+  static List<EnemyDef> _buildLineup(
+      EnemyDef enemy, List<EnemyDef> reinforcements) {
+    if (enemy.effectiveAbility != EnemyAbility.swarm ||
+        reinforcements.isNotEmpty) {
+      return [enemy, ...reinforcements];
+    }
+    const marks = ['A', 'B', 'C'];
+    return [
+      for (final (i, m) in marks.indexed)
+        enemy.copyWith(
+          id: '${enemy.id}_$m',
+          name: '${enemy.name}$m',
+          maxHp: max(1, (enemy.maxHp / marks.length).ceil()),
+          // 群れの1体ずつは、ふつうの敵として戦う
+          ability: EnemyAbility.normal,
+          introLine: i == 0 ? enemy.introLine : 'まだまだいるぞ！',
+          defeatLine: i == marks.length - 1 ? enemy.defeatLine : '',
+        ),
+    ];
+  }
+
+  /// レア型が逃げるまでの回答数
+  static const rareTurns = 6;
+
+  /// 回避型が正解をかわす、制限時間に対する割合
+  static const evadeRatio = 0.5;
 
   /// 次の問題を引く。能力・カード・ボスのルールで、引き方が変わる
   PresentedQuestion _nextQuestion() {
@@ -502,6 +553,7 @@ class BattleEngine {
 
   BattleSummary summary() => BattleSummary(
         won: _phase == BattlePhase.won,
+        escaped: _phase == BattlePhase.escaped,
         correctCount: _correct,
         answeredCount: _turns.length,
         maxCombo: _maxCombo,
@@ -542,6 +594,10 @@ class BattleEngine {
     var specialMissed = false;
     var challenge = false;
     var deepThought = false;
+    var evaded = false;
+    var comboBroken = false;
+    var ambush = false;
+    var escaped = false;
     EnemyDef? defeated;
     EnemyDef? joined;
     final focusCat = finaleFocus;
@@ -616,7 +672,20 @@ class BattleEngine {
           extra *= 0.85;
         case EnemyAbility.chainLock:
           if (_combo < 2) extra *= 0.5;
-        case EnemyAbility.disrupt || EnemyAbility.none:
+        case EnemyAbility.tank:
+          extra *= 0.75;
+        case EnemyAbility.evasive:
+          // じっくり考えた答えはかわされる（3連続正解中は、勢いでかわせない）
+          if (!quick && _combo < 3 && elapsed > limitFor(q) * evadeRatio) {
+            evaded = true;
+          }
+        case EnemyAbility.disrupt ||
+              EnemyAbility.none ||
+              EnemyAbility.normal ||
+              EnemyAbility.comboBreaker ||
+              EnemyAbility.swarm ||
+              EnemyAbility.mimic ||
+              EnemyAbility.rare:
           break;
       }
       // ボスのルール
@@ -641,7 +710,16 @@ class BattleEngine {
         forceCritical: forceCritical,
         extra: extra,
       );
+      if (evaded) toEnemy = 0;
       _enemyHp = max(0, _enemyHp - toEnemy);
+      // コンボ妨害型：3連続正解になると、チェインを断ち切る
+      if (ability == EnemyAbility.comboBreaker &&
+          _combo >= 3 &&
+          effect != CardEffect.keep &&
+          _enemyHp > 0) {
+        _combo = 0;
+        comboBroken = true;
+      }
       if (effect == CardEffect.heal) {
         healed = min(maxHp - _playerHp, (maxHp * 0.3).round());
         _playerHp += healed;
@@ -677,6 +755,12 @@ class BattleEngine {
         guarded = true;
       } else {
         var extra = partial ? 0.5 : 1.0;
+        if (ability == EnemyAbility.tank) extra *= 0.8;
+        // ミミック型：最初の問題をまちがえると不意打ち
+        if (ability == EnemyAbility.mimic && _turns.isEmpty) {
+          extra *= 2;
+          ambush = true;
+        }
         if (effect == CardEffect.power) extra *= 1.5;
         if (effect == CardEffect.gamble) extra *= 2;
         if (companions.contains(CompanionEffect.defenseUp)) extra *= 0.85;
@@ -744,6 +828,10 @@ class BattleEngine {
       _phase = BattlePhase.won;
     } else if (_playerHp == 0) {
       _phase = BattlePhase.lost;
+    } else if (ability == EnemyAbility.rare && _turns.length + 1 >= rareTurns) {
+      // レア型：倒しきれないうちに逃げてしまう
+      _phase = BattlePhase.escaped;
+      escaped = true;
     } else if (_joined == _front + 1 &&
         _joined < lineup.length &&
         _enemyHp <= enemy.maxHp * overlapRate) {
@@ -785,6 +873,10 @@ class BattleEngine {
       specialMissed: specialMissed,
       challenge: challenge,
       deepThought: deepThought,
+      evaded: evaded,
+      comboBroken: comboBroken,
+      ambush: ambush,
+      escaped: escaped,
     );
     _turns.add(result);
 

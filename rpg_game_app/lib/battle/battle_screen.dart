@@ -485,6 +485,26 @@ class _BattleScreenState extends State<BattleScreen>
           after: const Duration(milliseconds: 200),
         );
       }
+      if (r.evaded) {
+        _popup(
+          _Popup(
+            'かわされた！ すばやく答えよう',
+            TsuzuriColors.inkSoft,
+            const Alignment(0, 0.3),
+          ),
+          after: const Duration(milliseconds: 200),
+        );
+      }
+      if (r.comboBroken) {
+        _popup(
+          _Popup(
+            'チェインを切られた！',
+            const Color(0xFF6A4BA8),
+            const Alignment(0.5, -0.6),
+          ),
+          after: const Duration(milliseconds: 320),
+        );
+      }
       if (r.challenge) {
         _popup(
           _Popup(
@@ -583,6 +603,16 @@ class _BattleScreenState extends State<BattleScreen>
           onPlayer: true,
         ),
       );
+      if (r.ambush) {
+        _popup(
+          _Popup(
+            'ミミックの不意打ち！',
+            const Color(0xFFB07A3E),
+            const Alignment(0, 0.4),
+          ),
+          after: const Duration(milliseconds: 150),
+        );
+      }
       if (r.specialMissed) {
         _popup(
           _Popup('必殺技は空振り…', TsuzuriColors.inkSoft, const Alignment(0, 0.35)),
@@ -679,6 +709,16 @@ class _BattleScreenState extends State<BattleScreen>
 
     if (_engine.isOver) {
       final won = _engine.phase == BattlePhase.won;
+      if (r.escaped) {
+        _popup(
+          _Popup(
+            '${_engine.enemy.name}は逃げていった…',
+            TsuzuriColors.inkSoft,
+            const Alignment(0, -0.2),
+            big: true,
+          ),
+        );
+      }
       if (won) {
         Future.delayed(const Duration(milliseconds: 550), () {
           if (mounted) _defeat.forward();

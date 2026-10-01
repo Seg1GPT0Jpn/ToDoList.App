@@ -79,7 +79,9 @@ void main() {
       Scaffold(
         body: TermCardsTab(
           world: science,
-          progress: RpgProgress.initial.copyWith(purchasedWorldIds: {'science'}),
+          progress: RpgProgress.initial.copyWith(
+            purchasedWorldIds: {'science'},
+          ),
         ),
       ),
       frames: 20,
