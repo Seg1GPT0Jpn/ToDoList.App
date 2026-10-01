@@ -1,5 +1,7 @@
 import '../models/enemy.dart';
+import '../models/rpg_progress.dart';
 import '../models/stage.dart';
+import 'lore.dart';
 import '../world/terrain.dart';
 import 'story.dart';
 
@@ -20,6 +22,26 @@ class NpcDef {
   final int color;
 }
 
+/// 住人の役割（世界観とゲームのしくみをつなぐ）
+enum NpcRole {
+  lore('語り手', '国の歴史と、ここで学ぶ理由を語る'),
+  tutor('先生', 'この単元の学び方のコツを教える'),
+  quest('頼みごと', '探しものを頼み、見つけるとお礼をくれる'),
+  review('復習係', 'まちがえた問題や、復習の日が来た問題を知らせる'),
+  scout('見張り', 'この先のボスの手ごわさを教える'),
+  merchant('道具屋', 'カード・装備・仲間の使い方を教える');
+
+  const NpcRole(this.label, this.description);
+  final String label;
+  final String description;
+
+  /// エリアの番号で決まる役割（小部屋があるエリアは頼みごと）
+  static NpcRole forArea(int area, {required bool hasNook}) {
+    if (hasNook) return quest;
+    return const [lore, tutor, review, scout, merchant][area % 5];
+  }
+}
+
 /// NPC との会話の中身
 class NpcTalk {
   const NpcTalk({
@@ -27,6 +49,7 @@ class NpcTalk {
     required this.lines,
     this.questReady = false,
     this.questDone = false,
+    this.role = NpcRole.lore,
   });
 
   final NpcDef npc;
@@ -37,6 +60,9 @@ class NpcTalk {
 
   /// 頼みごとのごほうびを受け取りずみ
   final bool questDone;
+
+  /// 住人の役割
+  final NpcRole role;
 }
 
 /// フィールドの住人たち。エリアの地形ごとに1人ずついて、
@@ -159,8 +185,13 @@ class Npcs {
     bool? nookIsSecret,
     bool nookChestOpened = false,
     bool questRewarded = false,
+    int area = 0,
+    RpgProgress? progress,
+    int dueReviews = 0,
+    int ghosts = 0,
   }) {
     final npc = of(terrain);
+    final role = NpcRole.forArea(area, hasNook: nookIsSecret != null);
     final e = stage.enemy;
     final ability = e.effectiveAbility;
     final lines = <String>[
@@ -184,6 +215,7 @@ class Npcs {
             '「${stage.grammarTheme}」はもうばっちりだね（熟練度$score）！ 光に照らされて、隠れていた道も見えるはずだよ。',
         },
     ];
+    lines.addAll(_roleLines(role, stage, area, progress, dueReviews, ghosts));
     var ready = false;
     if (nookIsSecret != null) {
       final where = nookIsSecret ? 'ひびの入った岩（隠し通路）' : '知識の扉';
@@ -202,7 +234,94 @@ class Npcs {
       lines: lines,
       questReady: ready,
       questDone: questRewarded,
+      role: role,
     );
+  }
+
+  /// 学び方のコツ（教科ごと）
+  static const tips = <String, List<String>>{
+    'english': [
+      '単語は「見て意味がわかる」だけでなく「日本語から英語が出る」まで練習するといいよ。',
+      '長い英文は、まず動詞を探して、主語と動詞のセットで区切って読むんだ。',
+      '文法問題でまちがえたら、正しい文を声に出して3回読むと、耳でも覚えられるよ。',
+    ],
+    'math': [
+      '公式は丸暗記より、一度自分で導いてみると忘れにくいよ。',
+      '解けなかった問題は、解説を読んだあと、何も見ずにもう一度解いてみよう。',
+      '場合分けが出たら、「どこで答えが変わるか」の境目を先に探すんだ。',
+    ],
+    'science': [
+      '用語を覚えるときは、「何のために・どんなしくみで」をセットにするといいよ。',
+      '計算問題は、単位をそろえてから式を立てるだけで、まちがいがぐっと減るよ。',
+      'グラフの問題では、軸が何を表しているかを最初に確かめよう。',
+    ],
+    'social': [
+      '年号は、前後のできごととセットで「流れ」として覚えるといいよ。',
+      '地理は、地図を思いうかべながら覚えると忘れにくいんだ。',
+      '用語を覚えたら、「なぜ起きたか」「その結果どうなったか」を一言で言えるか試してごらん。',
+    ],
+    'japanese': [
+      '評論は、「しかし」「つまり」のあとに筆者の言いたいことが来ることが多いよ。',
+      '古文は、まず主語がだれかを考えるんだ。敬語が手がかりになるよ。',
+      '漢文の句法は、書き下し文を声に出して読むと、すっと覚えられるよ。',
+    ],
+    'information': [
+      'プログラムは、変数の値を表にして1行ずつ追いかける（トレース）とまちがえないよ。',
+      '2進数は、右から1・2・4・8…の重みを書いてから計算しよう。',
+      '用語は、身近な例（スマホ・SNS）に当てはめて考えると覚えやすいよ。',
+    ],
+    'music': [
+      '音程は、鍵盤の絵を思いうかべて、半音の数を数えるといいよ。',
+      '調号は、♯なら「ファドソレラミシ」、♭なら「シミラレソドファ」の順につくよ。',
+    ],
+  };
+
+  static List<String> _roleLines(
+    NpcRole role,
+    StageDef stage,
+    int area,
+    RpgProgress? progress,
+    int dueReviews,
+    int ghosts,
+  ) {
+    final lore = Lore.of(stage.worldId);
+    switch (role) {
+      case NpcRole.lore:
+        if (lore == null) return const [];
+        return [
+          '【語り手】${lore.forgotten}',
+          lore.whyLearn,
+        ];
+      case NpcRole.tutor:
+        final t = tips[stage.worldId] ?? tips['english']!;
+        return ['【先生】${t[area % t.length]}'];
+      case NpcRole.review:
+        return [
+          if (dueReviews > 0)
+            '【復習係】復習の日が来た問題が$dueReviews問あるよ。ホームの「復習の塔」で片づけると、忘れにくくなるんだ。'
+          else
+            '【復習係】いまは復習の日が来た問題はないみたい。えらいね！',
+          if (ghosts > 0) 'このエリアには、まちがえた問題の亡霊が$ghosts体さまよってる。話しかけると再戦できるよ。',
+        ];
+      case NpcRole.scout:
+        final boss = progress == null ? null : Lore.nextBoss(progress, stage);
+        if (boss == null) {
+          return ['【見張り】この道のボスは、もう倒したみたいだね。たいしたもんだ。'];
+        }
+        return [
+          '【見張り】この道の先には「${boss.enemy.name}」がいる。${boss.name}で待ちかまえているよ。',
+          if (lore != null)
+            stage.order <= boss.order - 4 ? lore.midBossNote : lore.bossNote,
+          'ボスは装甲を持っている。装甲を割る種類の問題を、先に練習しておくといいよ。',
+        ];
+      case NpcRole.merchant:
+        return [
+          '【道具屋】宝箱のレアカードはデッキに入れて使えるよ。「むすびの栞」はチェインを切る魔物に効くんだ。',
+          '装備は、その教科のバトルで効くものもある。ホームの「装備」から付けかえてごらん。',
+        ];
+      case NpcRole.quest:
+        return const [];
+    }
   }
 
   /// 語り部の話（集めた欠片の数で変わる）

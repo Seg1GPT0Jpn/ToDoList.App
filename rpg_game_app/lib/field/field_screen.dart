@@ -565,6 +565,12 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
           : _game.map.chestKinds[chest] == ChestKind.secret,
       nookChestOpened: chest != null && _chestDone(_game.chestIdAt(chest)),
       questRewarded: _progress.fieldFlags.contains(key),
+      area: area,
+      progress: _progress,
+      dueReviews: RpgServices.of(context).meta.record.stats.values
+          .where((st) => st.isDue(RpgServices.today()))
+          .length,
+      ghosts: _progress.mistakes.values.where((id) => id == stage.id).length,
     );
     _open(_NpcDialog(talk, chest == null ? null : key));
   }
@@ -1139,7 +1145,12 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(talk.npc.name, style: serif(16)),
+              Text(
+                talk.npc == Npcs.storyteller
+                    ? talk.npc.name
+                    : '${talk.npc.name}（${talk.role.label}）',
+                style: serif(16),
+              ),
               const SizedBox(height: 4),
               Text(
                 talk.lines[d.page.clamp(0, talk.lines.length - 1)],

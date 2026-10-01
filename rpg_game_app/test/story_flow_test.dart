@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:rpg_game/rpg_game.dart';
@@ -108,5 +110,29 @@ void main() {
     await t.tap(find.byIcon(Icons.close));
     await _frames(t, 10);
     expect(t.takeException(), isNull);
+  });
+
+  testWidgets('物語の画面：国の物語とストーリーアーカイブ', (t) async {
+    final math = RpgCatalog.world('math').stages;
+    final p = RpgProgress(clearedStageIds: {math.first.id});
+    await openScreen(
+      t,
+      const StoryScreen(),
+      prefs: {'rpg_progress_v1': jsonEncode(p.toMap())},
+    );
+    await t.scrollUntilVisible(
+      find.byKey(const ValueKey('nation-math')),
+      300,
+      scrollable: find.byType(Scrollable).first,
+    );
+    await t.tap(find.byKey(const ValueKey('nation-math')));
+    await t.pumpAndSettle();
+    expect(find.textContaining('証明の建築家エウクレイア'), findsOneWidget);
+    await t.scrollUntilVisible(
+      find.byKey(const ValueKey('archive-math_0')),
+      300,
+      scrollable: find.byType(Scrollable).first,
+    );
+    expect(find.textContaining('カズ族の子どもは'), findsOneWidget);
   });
 }

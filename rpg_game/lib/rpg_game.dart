@@ -51,6 +51,7 @@ export 'src/purchase/purchase_service.dart';
 export 'src/purchase/promo_code.dart';
 export 'src/story/gear.dart';
 export 'src/versus/versus_match.dart';
+export 'src/story/lore.dart';
 export 'src/story/npcs.dart';
 export 'src/story/scenes.dart';
 export 'src/story/story.dart';

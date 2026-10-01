@@ -206,11 +206,114 @@ class _StoryScreenState extends State<StoryScreen> {
                         ? () => playStoryScenes(context, [s], replay: true)
                         : null,
                   ),
+                const SizedBox(height: 20),
+                Text('6つの国の物語', style: serif(16)),
+                const SizedBox(height: 4),
+                for (final n in Lore.nations) _NationCard(lore: n, progress: p),
+                const SizedBox(height: 16),
+                _ArchiveSection(entries: Lore.archive(p)),
               ],
             ),
           ),
         );
       },
+    );
+  }
+}
+
+/// 国の設定（国民・守護者・忘却された理由・学ぶ理由）。国に入ると読める
+class _NationCard extends StatelessWidget {
+  const _NationCard({required this.lore, required this.progress});
+
+  final NationLore lore;
+  final RpgProgress progress;
+
+  @override
+  Widget build(BuildContext context) {
+    final world = RpgCatalog.world(lore.worldId);
+    final visited = Lore.progressOf(progress, lore.worldId) > 0;
+    Widget item(String label, String text) => Padding(
+      padding: const EdgeInsets.only(bottom: 8),
+      child: Text.rich(
+        TextSpan(
+          children: [
+            TextSpan(
+              text: '$label　',
+              style: TextStyle(
+                fontWeight: FontWeight.w800,
+                color: TsuzuriColors.accent,
+              ),
+            ),
+            TextSpan(text: text),
+          ],
+        ),
+        style: const TextStyle(fontSize: 13, height: 1.6),
+      ),
+    );
+    return Card(
+      key: ValueKey('nation-${lore.worldId}'),
+      margin: const EdgeInsets.only(bottom: 8),
+      child: ExpansionTile(
+        shape: const Border(),
+        leading: Icon(
+          visited ? Icons.flag : Icons.lock_outline,
+          color: visited ? TsuzuriColors.accent : TsuzuriColors.inkSoft,
+        ),
+        title: Text(world.name, style: serif(15)),
+        subtitle: Text(
+          visited ? '「${lore.motto}」' : 'この国のエリアを1つクリアすると読める',
+          style: const TextStyle(fontSize: 12),
+        ),
+        childrenPadding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
+        children: visited
+            ? [
+                item('国', lore.land),
+                item('国民', lore.people),
+                item('守護者', '${lore.guardian}。${lore.guardianNote}'),
+                item('忘却', lore.forgotten),
+                item('学ぶ理由', lore.whyLearn),
+                item('伏線', '${lore.midBossNote}\n${lore.bossNote}'),
+              ]
+            : const [],
+      ),
+    );
+  }
+}
+
+/// ストーリーアーカイブ：進むと読める短い物語
+class _ArchiveSection extends StatelessWidget {
+  const _ArchiveSection({required this.entries});
+
+  final List<ArchiveEntry> entries;
+
+  @override
+  Widget build(BuildContext context) {
+    final read = entries.where((e) => e.unlocked).length;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text('ストーリーアーカイブ（$read / ${entries.length}）', style: serif(16)),
+        const SizedBox(height: 4),
+        for (final e in entries)
+          ListTile(
+            key: ValueKey('archive-${e.id}'),
+            dense: true,
+            contentPadding: EdgeInsets.zero,
+            leading: Icon(
+              e.unlocked ? Icons.history_edu : Icons.lock_outline,
+              color: e.unlocked ? TsuzuriColors.accent : TsuzuriColors.inkSoft,
+            ),
+            title: Text(e.title),
+            subtitle: Text(
+              e.unlocked ? e.text : e.hint,
+              style: TextStyle(
+                fontSize: 12.5,
+                height: 1.5,
+                color: e.unlocked ? null : TsuzuriColors.inkSoft,
+              ),
+            ),
+          ),
+      ],
     );
   }
 }
