@@ -8,6 +8,7 @@ import 'common_test_screens.dart';
 import 'exam_world_screens.dart';
 import 'realm_style.dart';
 import 'sea_battle_launcher.dart';
+import 'term_cards.dart';
 
 /// 模擬試験の空：定期テストの海と対になる、もっと難しい学習モード。
 ///
@@ -45,6 +46,12 @@ class _SkyHomeScreenState extends State<SkyHomeScreen> {
   Widget build(BuildContext context) {
     final world = RpgCatalog.world(_subject);
     final sections = _sections(world);
+    final english = world.id == RpgCatalog.englishWorldId;
+    final cards = TermDecks.of(world.id).isNotEmpty;
+    final extraTabs = [
+      if (english) const Tab(text: 'LEAP・EEVI'),
+      if (cards) const Tab(text: '暗記カード'),
+    ];
     final chooser = SizedBox(
       height: 44,
       child: ListView(
@@ -66,7 +73,7 @@ class _SkyHomeScreenState extends State<SkyHomeScreen> {
     );
     return DefaultTabController(
       key: ValueKey(_subject),
-      length: sections.length,
+      length: sections.length + extraTabs.length,
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: _realm.paper,
@@ -99,7 +106,10 @@ class _SkyHomeScreenState extends State<SkyHomeScreen> {
                   tabAlignment: TabAlignment.start,
                   labelColor: _realm.ink,
                   indicatorColor: _realm.ink,
-                  tabs: [for (final (name, _) in sections) Tab(text: name)],
+                  tabs: [
+                    for (final (name, _) in sections) Tab(text: name),
+                    ...extraTabs,
+                  ],
                 ),
               ],
             ),
@@ -118,6 +128,22 @@ class _SkyHomeScreenState extends State<SkyHomeScreen> {
                       name: name,
                       stages: stages,
                       progress: progress,
+                    ),
+                  if (english)
+                    ListView(
+                      padding: const EdgeInsets.fromLTRB(40, 12, 12, 24),
+                      children: [
+                        VocabBookQuizSection(
+                          progress: progress,
+                          realm: StudyRealm.sky,
+                        ),
+                      ],
+                    ),
+                  if (cards)
+                    TermCardsTab(
+                      world: world,
+                      progress: progress,
+                      realm: StudyRealm.sky,
                     ),
                 ],
               );

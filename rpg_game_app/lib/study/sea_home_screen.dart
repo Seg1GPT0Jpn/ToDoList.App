@@ -11,6 +11,7 @@ import 'exam_world_screens.dart';
 import 'realm_style.dart';
 import 'personal_books.dart';
 import 'sea_battle_launcher.dart';
+import 'term_cards.dart';
 import '../vocab/vocab_home.dart';
 
 /// 定期テストの海：教科を選び、単元・単語帳を選ぶ画面
@@ -73,6 +74,8 @@ class _SeaHomeScreenState extends State<SeaHomeScreen> {
             for (final r in world!.routes) Tab(text: r.name),
             if (world.routes.isEmpty) const Tab(text: '準備中'),
             if (extras.isNotEmpty) const Tab(text: '追加問題'),
+            if (TermDecks.of(world.id).isNotEmpty)
+              const Tab(icon: Icon(Icons.style, size: 16), text: '暗記カード'),
           ];
     return DefaultTabController(
       key: ValueKey(_subject),
@@ -122,6 +125,8 @@ class _SeaHomeScreenState extends State<SeaHomeScreen> {
                       const Center(child: Text('この教科は準備中です')),
                     if (extras.isNotEmpty)
                       _ExtraTab(world: world, sets: extras, progress: progress),
+                    if (TermDecks.of(world.id).isNotEmpty)
+                      TermCardsTab(world: world, progress: progress),
                   ],
                 );
               }
@@ -435,6 +440,10 @@ class _WordsTab extends StatelessWidget {
     return ListView(
       padding: const EdgeInsets.fromLTRB(40, 12, 12, 24),
       children: [
+        Text('LEAP・EEVI', style: serif(15, color: TsuzuriColors.inkSoft)),
+        const SizedBox(height: 8),
+        VocabBookQuizSection(progress: progress),
+        const SizedBox(height: 12),
         Text('1回20問（ランダム）', style: serif(15, color: TsuzuriColors.inkSoft)),
         const SizedBox(height: 8),
         for (final b in SeaCatalog.wordBooks)
