@@ -216,6 +216,9 @@ class _BattleScreenState extends State<BattleScreen>
   /// 1回目のタップで選んだカード（もう一度タップすると使う）
   int? _armedCard;
 
+  /// リスニング問題を文字で表示している（音が出せないとき）
+  bool _showListenText = false;
+
   /// 入力問題の入力欄と、答えた文字
   final _input = TextEditingController();
   String? _typed;
@@ -289,6 +292,7 @@ class _BattleScreenState extends State<BattleScreen>
       _locked = false;
       _typed = null;
       _armedCard = null;
+      _showListenText = false;
       _input.clear();
     });
     _stopwatch
@@ -1469,14 +1473,29 @@ class _BattleScreenState extends State<BattleScreen>
             const SizedBox(height: 4),
             FigureView(q.source.figure!, height: 130),
           ],
-          if (q.source.sentence != null && q.source.listen && _last == null)
+          if (q.source.sentence != null &&
+              q.source.listen &&
+              _last == null &&
+              !_showListenText)
             Padding(
               padding: const EdgeInsets.only(top: 6),
-              child: OutlinedButton.icon(
-                key: const ValueKey('listen-again'),
-                onPressed: () => _listen(q),
-                icon: const Icon(Icons.volume_up),
-                label: const Text('もう一度聞く'),
+              child: Wrap(
+                spacing: 6,
+                children: [
+                  OutlinedButton.icon(
+                    key: const ValueKey('listen-again'),
+                    onPressed: () => _listen(q),
+                    icon: const Icon(Icons.volume_up),
+                    label: const Text('もう一度聞く'),
+                  ),
+                  // 音が出せない場所では、文字で読んで答えられる
+                  TextButton.icon(
+                    key: const ValueKey('listen-as-text'),
+                    onPressed: () => setState(() => _showListenText = true),
+                    icon: const Icon(Icons.volume_off, size: 16),
+                    label: const Text('音が出せない：文字で読む'),
+                  ),
+                ],
               ),
             )
           else if (q.source.sentence != null) ...[

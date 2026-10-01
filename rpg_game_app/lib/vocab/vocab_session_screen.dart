@@ -75,7 +75,28 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
     super.dispose();
   }
 
+  /// 音が出せない環境のために、この回のリスニングをすべて飛ばす
+  bool _skipListening = false;
+
+  /// とばしたリスニングの数
+  int _skipped = 0;
+
+  /// リスニングを記録せずにとばす（[all] ならこの回のリスニングをすべて）
+  void _skip({bool all = false}) {
+    speaker.stop();
+    setState(() {
+      if (all) _skipListening = true;
+      _skipped++;
+      _index++;
+      _prepare();
+    });
+  }
+
   void _prepare() {
+    while (_skipListening && !_done && _task.mode == VocabMode.listening) {
+      _skipped++;
+      _index++;
+    }
     if (_done) return;
     _shownAt = DateTime.now();
     _wasCorrect = null;
@@ -364,6 +385,25 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
             textAlign: TextAlign.center,
             style: TextStyle(color: TsuzuriColors.inkSoft, fontSize: 12),
           ),
+          // 音が出せない場所（図書館・授業中など）では、記録せずにとばせる
+          if (_wasCorrect == null)
+            Wrap(
+              alignment: WrapAlignment.center,
+              spacing: 4,
+              children: [
+                TextButton.icon(
+                  key: const ValueKey('vocab-skip-listening'),
+                  onPressed: _skip,
+                  icon: const Icon(Icons.volume_off, size: 16),
+                  label: const Text('音が出せない：とばす'),
+                ),
+                TextButton(
+                  key: const ValueKey('vocab-skip-all-listening'),
+                  onPressed: () => _skip(all: true),
+                  child: const Text('この回のリスニングをすべてとばす'),
+                ),
+              ],
+            ),
         ];
       case VocabMode.cloze:
         return [
@@ -610,7 +650,8 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
         const SizedBox(height: 12),
         Center(
           child: Text(
-            '$_answered問　正答率 $pct%　${secs ~/ 60}分${secs % 60}秒　+$_xp XP',
+            '$_answered問　正答率 $pct%　${secs ~/ 60}分${secs % 60}秒　+$_xp XP'
+            '${_skipped > 0 ? '\n（リスニング $_skipped 問をとばしました）' : ''}',
             style: TextStyle(color: TsuzuriColors.inkSoft),
           ),
         ),

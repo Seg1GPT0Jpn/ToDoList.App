@@ -129,6 +129,39 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
+  testWidgets('音が出せないときは、リスニングを記録せずにとばせる', (tester) async {
+    await openScreen(tester, const SizedBox());
+    final store = VocabStore.of(RpgServicesHolder.last!.personalBooks);
+    final book = await store.createBook('自作');
+    book.merge(VocabParser.parse(_words));
+    final nav = tester.state<NavigatorState>(find.byType(Navigator));
+    nav.push(
+      MaterialPageRoute<void>(
+        builder: (_) => VocabSessionScreen(
+          store: store,
+          book: book,
+          title: '練習',
+          random: Random(1),
+          tasks: const [
+            VocabTask('1', VocabMode.listening),
+            VocabTask('2', VocabMode.listening),
+            VocabTask('3', VocabMode.listening),
+          ],
+        ),
+      ),
+    );
+    await tester.pumpAndSettle();
+    await tester.tap(find.byKey(const ValueKey('vocab-skip-listening')));
+    await tester.pumpAndSettle();
+    expect(find.text('2 / 3'), findsOneWidget);
+    await tester.tap(find.byKey(const ValueKey('vocab-skip-all-listening')));
+    await tester.pumpAndSettle();
+    expect(find.text('おつかれさま！'), findsOneWidget);
+    expect(find.textContaining('リスニング 3 問をとばしました'), findsOneWidget);
+    // とばした問題は記録しない
+    expect(store.progress(book.id).cards, isEmpty);
+  });
+
   testWidgets('単語帳の画面：学習・単語・分析のタブが開ける', (tester) async {
     await openScreen(tester, _home());
     final store = VocabStore.of(RpgServicesHolder.last!.personalBooks);
