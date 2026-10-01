@@ -25,7 +25,20 @@ class QuestionStat {
     this.category = '',
     this.unit = '',
     this.first = 0,
+    this.profile = 0,
+    this.gapTried = 0,
+    this.gapCorrect = 0,
   });
+
+  /// 問題の性質（[AnswerProfile] を数にしたもの。0：不明＝古い記録）
+  final int profile;
+
+  /// 間をあけて（[retentionGapDays] 日以上たってから）答えた回数と、そのうち正解した回数。
+  /// 「覚えた内容が残っているか（定着）」を測る
+  final int gapTried;
+  final int gapCorrect;
+
+  static const retentionGapDays = 3;
 
   /// 学習体系の単元・小単元（古い記録では空。読み込むときに補う）
   final String unit;
@@ -92,7 +105,9 @@ class QuestionStat {
     String? setId,
     String? category,
     String? unit,
+    int? profile,
   }) {
+    final gap = attempts > 0 && day - lastDay >= retentionGapDays;
     final newBox = isCorrect ? min(box + 1, maxBox) : 1;
     final newStreak = isCorrect ? streak + 1 : 0;
     // 2回以上まちがえた問題を3回連続で正解したら「苦手克服」
@@ -111,6 +126,9 @@ class QuestionStat {
       category: category ?? this.category,
       unit: (unit == null || unit.isEmpty) ? this.unit : unit,
       first: attempts == 0 ? (isCorrect ? 1 : 2) : first,
+      profile: (profile == null || profile == 0) ? this.profile : profile,
+      gapTried: gapTried + (gap ? 1 : 0),
+      gapCorrect: gapCorrect + (gap && isCorrect ? 1 : 0),
     );
   }
 
@@ -129,24 +147,37 @@ class QuestionStat {
         category: category,
         unit: unit,
         first: first,
+        profile: profile,
+        gapTried: gapTried,
+        gapCorrect: gapCorrect,
       );
 
   /// 保存用の短い形（問題数が増えても小さく保つ）
-  List<Object> toList() => [
-        setId,
-        attempts,
-        correct,
-        streak,
-        missStreak,
-        lastDay,
-        totalMs,
-        box,
-        dueDay,
-        overcome ? 1 : 0,
-        if (category.isNotEmpty || unit.isNotEmpty || first != 0) category,
-        if (unit.isNotEmpty || first != 0) unit,
-        if (first != 0) first,
-      ];
+  List<Object> toList() {
+    final out = <Object>[
+      setId,
+      attempts,
+      correct,
+      streak,
+      missStreak,
+      lastDay,
+      totalMs,
+      box,
+      dueDay,
+      overcome ? 1 : 0,
+      category,
+      unit,
+      first,
+      profile,
+      gapTried,
+      gapCorrect,
+    ];
+    // 後ろの、まだ使っていない項目は省く（古い形と同じ長さに保つ）
+    while (out.length > 10 && (out.last == 0 || out.last == '')) {
+      out.removeLast();
+    }
+    return out;
+  }
 
   factory QuestionStat.fromList(List<dynamic> v) {
     int n(int i) => i < v.length ? (v[i] as num).toInt() : 0;
@@ -164,6 +195,9 @@ class QuestionStat {
       category: v.length > 10 ? v[10] as String : '',
       unit: v.length > 11 ? v[11] as String : '',
       first: n(12),
+      profile: n(13),
+      gapTried: n(14),
+      gapCorrect: n(15),
     );
   }
 }

@@ -764,6 +764,10 @@ class _BattleScreenState extends State<BattleScreen>
           setId: setId,
           category: r.question.source.category.name,
           unit: r.question.source.unit,
+          profile: AnswerProfile.of(
+            r.question.source,
+            sea: setId.startsWith('sea_'),
+          ).code,
           isCorrect: r.correct,
           elapsedMs: r.timedOut
               ? _engine.limitFor(r.question).inMilliseconds

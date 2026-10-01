@@ -11,7 +11,11 @@ class AnswerEvent {
     required this.elapsedMs,
     this.category,
     this.unit,
+    this.profile,
   });
+
+  /// 問題の性質（[AnswerProfile.code]。成長の見える化に使う）
+  final int? profile;
 
   /// 学習体系の単元・小単元（QuizQuestion.unit）
   final String? unit;
@@ -53,6 +57,7 @@ class LearningRecord {
         setId: e.setId,
         category: e.category,
         unit: e.unit,
+        profile: e.profile,
       );
     }
     return LearningRecord(stats: next, studyDays: {...studyDays, day});

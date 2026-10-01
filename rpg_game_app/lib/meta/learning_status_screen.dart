@@ -5,7 +5,9 @@ import '../app/services.dart';
 import '../app/theme.dart';
 import '../art/paper.dart';
 import '../app/practice.dart';
+import '../study/comprehensive_exam_screen.dart';
 import 'curriculum_map_screen.dart';
+import 'growth_screen.dart';
 import 'design.dart';
 
 /// 学習ステータス：実際の正答率から計算した、分野ごとの熟練度。
@@ -69,6 +71,40 @@ class LearningStatusScreen extends StatelessWidget {
                     onTap: () => Navigator.of(context).push(
                       MaterialPageRoute<void>(
                         builder: (_) => const CurriculumMapScreen(),
+                      ),
+                    ),
+                  ),
+                ),
+                Card(
+                  child: ListTile(
+                    key: const ValueKey('open-growth'),
+                    leading: Icon(Icons.alt_route, color: TsuzuriColors.accent),
+                    title: const Text('成長と学習ルート'),
+                    subtitle: const Text('初見正答率・応用・定着、学習の段階、苦手からさかのぼるルート、複合弱点'),
+                    trailing: const Icon(Icons.chevron_right),
+                    onTap: () => Navigator.of(context).push(
+                      MaterialPageRoute<void>(
+                        builder: (_) => const GrowthScreen(),
+                      ),
+                    ),
+                  ),
+                ),
+                Card(
+                  child: ListTile(
+                    key: const ValueKey('open-exam-from-status'),
+                    leading: Icon(
+                      Icons.assignment_outlined,
+                      color: TsuzuriColors.stamp,
+                    ),
+                    title: const Text('総合演習'),
+                    subtitle: const Text(
+                      '3部構成・配点・制限時間つきの教科ごとの演習。分野・思考の種類ごとに分析',
+                    ),
+                    trailing: const Icon(Icons.chevron_right),
+                    onTap: () => Navigator.of(context).push(
+                      MaterialPageRoute<void>(
+                        builder: (_) =>
+                            const ComprehensiveExamScreen(subject: 'math'),
                       ),
                     ),
                   ),

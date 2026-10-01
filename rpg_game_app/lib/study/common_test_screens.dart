@@ -246,6 +246,7 @@ class _MockExamScreenState extends State<MockExamScreen> {
             setId: it.setId,
             category: it.question.category.name,
             unit: it.question.unit,
+            profile: AnswerProfile.of(it.question).code,
             isCorrect: it.chosen == it.answer,
             elapsedMs: it.ms,
           ),

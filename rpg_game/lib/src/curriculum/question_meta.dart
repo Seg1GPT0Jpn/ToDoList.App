@@ -301,3 +301,57 @@ class QuestionProfiler {
     );
   }
 }
+
+/// 学習記録に残す、問題の性質（思考レベル・初見度・学習の段階）。
+///
+/// 成長の見える化（応用問題・初見問題の正答率、段階ごとの到達）に使う。
+/// 保存するときは [code] の1つの数にまとめる。
+class AnswerProfile {
+  const AnswerProfile({
+    required this.thinking,
+    required this.novel,
+    required this.phase,
+  });
+
+  /// 思考レベル（1〜8）
+  final int thinking;
+
+  /// 初見の度合いが高い問題（難しさの軸「初見」が2以上）
+  final bool novel;
+  final LearningPhase phase;
+
+  /// 応用問題（複合問題＝思考レベル4以上）
+  bool get applied => thinking >= 4;
+
+  /// 1つの数にまとめた形（下位4ビット：思考レベル、16：初見、32の倍数：段階）
+  int get code => thinking.clamp(1, 8) | (novel ? 16 : 0) | (phase.number << 5);
+
+  /// [code] から戻す（0 や壊れた値は null）
+  static AnswerProfile? decode(int code) {
+    final t = code & 15;
+    final p = code >> 5;
+    if (t < 1 || t > 8 || p < 1 || p > LearningPhase.values.length) return null;
+    return AnswerProfile(
+      thinking: t,
+      novel: code & 16 != 0,
+      phase: LearningPhase.values[p - 1],
+    );
+  }
+
+  factory AnswerProfile.of(
+    QuizQuestion q, {
+    Difficulty? fallbackDifficulty,
+    bool sea = false,
+  }) {
+    final p = QuestionProfiler.of(
+      q,
+      fallbackDifficulty: fallbackDifficulty,
+      sea: sea,
+    );
+    return AnswerProfile(
+      thinking: p.thinking.number,
+      novel: p.axes.novelty >= 2,
+      phase: p.phase,
+    );
+  }
+}
