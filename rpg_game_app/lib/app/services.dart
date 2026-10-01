@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
@@ -88,17 +90,39 @@ class RpgServices extends InheritedWidget {
   static RpgServices of(BuildContext context) =>
       context.dependOnInheritedWidgetOfExactType<RpgServices>()!;
 
-  /// 同梱の問題ファイル（assets/questions）を読む
+  /// 同梱の問題を読む。問題は教科ごとに1つのファイル
+  /// （packages/rpg_game/assets/question_bundles/<教科>.json）にまとめてあり、
+  /// 教科ごとに1回だけ読んで覚えておく。
   static Future<String?> loadQuestionAsset(String setId) async {
     final world = setId.split('_').first;
+    final bundle = await (_bundles[world] ??= _loadBundle(world));
+    // 読めなかったときは覚えず、次にもう一度読みにいく（通信の一時的な失敗など）
+    if (bundle == null) _bundles.remove(world);
+    final set = bundle?[setId];
+    return set == null ? null : jsonEncode(set);
+  }
+
+  static final Map<String, Future<Map<String, dynamic>?>> _bundles = {};
+
+  static Future<Map<String, dynamic>?> _loadBundle(String world) async {
     try {
-      return await rootBundle.loadString(
-        'packages/rpg_game/assets/questions/$world/$setId.json',
+      // loadString は大きなファイルを別の isolate で文字に直すので、
+      // ここではバイト列を読んでその場で直す（1MB 未満なので一瞬）
+      final data = await rootBundle.load(
+        'packages/rpg_game/assets/question_bundles/$world.json',
       );
+      final raw = utf8.decode(
+        data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes),
+      );
+      return jsonDecode(raw) as Map<String, dynamic>;
     } on FlutterError {
       return null;
     }
   }
+
+  /// 読み込んだ教科のまとめファイルを忘れる（テスト用）
+  @visibleForTesting
+  static void clearQuestionBundles() => _bundles.clear();
 
   @override
   bool updateShouldNotify(RpgServices oldWidget) =>

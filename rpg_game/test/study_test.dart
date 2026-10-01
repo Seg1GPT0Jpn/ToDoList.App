@@ -110,6 +110,18 @@ void main() {
           .whereType<File>()
           .where((f) => f.path.endsWith('.json'))) {
         final json = jsonDecode(f.readAsStringSync()) as Map<String, dynamic>;
+        if (f.path.contains('question_bundles')) {
+          // 教科ごとのまとめファイル：中の問題セットを1つずつ確かめる
+          expect(json, isNotEmpty, reason: f.path);
+          for (final e in json.entries) {
+            expect(
+              (e.value as Map)['origin'],
+              'original',
+              reason: '${f.path} の ${e.key}',
+            );
+          }
+          continue;
+        }
         expect(json['origin'], 'original', reason: f.path);
       }
     });

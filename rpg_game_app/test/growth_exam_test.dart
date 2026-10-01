@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:rpg_game/rpg_game.dart';
 import 'package:rpg_game_app/meta/growth_screen.dart';
@@ -67,8 +66,6 @@ void main() {
   });
 
   testWidgets('総合演習：始めて答え、採点すると分析と記録が残る', (t) async {
-    // ほかのテストのフェイクの時間の中で始めたアセットの読み込みを持ちこさない
-    rootBundle.clear();
     final services = await openScreen(
       t,
       const ComprehensiveExamScreen(subject: 'math'),

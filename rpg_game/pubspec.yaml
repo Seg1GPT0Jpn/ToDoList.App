@@ -15,14 +15,8 @@ dev_dependencies:
 # Flutter アプリから packages/rpg_game/assets/... で読めるようにする
 flutter:
   assets:
-    - assets/questions/english/
-    - assets/questions/sea/
-    - assets/questions/science/
-    - assets/questions/information/
-    - assets/questions/social/
-    - assets/questions/japanese/
-    - assets/questions/math/
-    - assets/questions/music/
+    # 問題は教科ごとにまとめたファイルだけを同梱する（tool/bundle_questions.py で作る）
+    - assets/question_bundles/
     - assets/cards/
     - assets/words/
 dependencies:

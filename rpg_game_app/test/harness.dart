@@ -50,6 +50,8 @@ Future<RpgServices> openScreen(
   tester.view.devicePixelRatio = 1;
   addTearDown(tester.view.reset);
   if (!keepPrefs) SharedPreferences.setMockInitialValues(prefs);
+  // ほかのテスト（フェイクの時間）で始めた問題の読み込みを持ちこさない
+  RpgServices.clearQuestionBundles();
   final p = await SharedPreferences.getInstance();
   late RpgServices services;
   await tester.pumpWidget(

@@ -291,6 +291,16 @@ def main():
           f'（{matched * 100 // max(total, 1)}%）/ 書きかえ {changed} 問')
     if check and changed:
         sys.exit('assign.py を実行して問題ファイルを更新してください')
+    if not check:
+        # アプリが読む、教科ごとのまとめファイルも作り直す
+        import importlib.util
+        spec = importlib.util.spec_from_file_location(
+            'bundle_questions',
+            os.path.join(os.path.dirname(os.path.abspath(__file__)), '..',
+                         'bundle_questions.py'))
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        mod.main()
     if report:
         for n in ids.values():
             if n.level == 'sub' or (n.level == 'unit'):
