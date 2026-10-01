@@ -355,6 +355,8 @@ Future<void> _pickTrial(BuildContext context) async {
         questions: pool.questions,
         progress: progress,
         trial: true,
+        // 確認用でも、エリアの敵は決まった HP なので、科目の習熟で強さを決める
+        relativePower: true,
       ),
     ),
   );

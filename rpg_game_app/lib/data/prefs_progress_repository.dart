@@ -18,7 +18,10 @@ class PrefsProgressRepository implements ProgressRepository {
   /// 保存したあとに呼ばれる（クラウドへの書き込み用）
   Future<void> Function(RpgProgress progress)? onSaved;
 
-  RpgProgress _read() {
+  /// 読み込むときに、古いセーブデータを今の形に移行する（科目ごとの習熟など）
+  RpgProgress _read() => Mastery.migrate(_readRaw());
+
+  RpgProgress _readRaw() {
     final raw = _prefs.getString(_key);
     if (raw == null) return RpgProgress.initial;
     try {

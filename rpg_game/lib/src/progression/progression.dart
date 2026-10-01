@@ -7,6 +7,7 @@ import '../models/player_stats.dart';
 import '../models/rpg_progress.dart';
 import '../models/stage.dart';
 import '../models/world.dart';
+import 'mastery.dart';
 
 /// 経験値付与の結果。結果画面のレベルアップ演出に使う。
 class ExpGainResult {
@@ -35,7 +36,22 @@ class StageClearResult {
     this.newCard,
     this.rescued,
     this.newMistakes = 0,
+    this.learningBonusExp = 0,
+    this.masteryCourse,
+    this.masteryBefore = 0,
+    this.masteryAfter = 0,
   });
+
+  /// 学びのボーナス（難しい問題・苦手な単元への正解）でふえた経験値
+  final int learningBonusExp;
+
+  /// 習熟がふえた科目（なければ null）と、そのバトルの前後の習熟Lv
+  final String? masteryCourse;
+  final int masteryBefore;
+  final int masteryAfter;
+
+  bool get masteryLeveledUp =>
+      masteryCourse != null && masteryAfter > masteryBefore;
 
   /// 初クリアでもらったカード
   final CardDef? newCard;
@@ -108,14 +124,22 @@ class Progression {
   }
 
   /// バトル終了後の進行状況を計算する（勝敗どちらでも呼ぶ）。
+  ///
+  /// 経験値は冒険Lv（全体）と、そのエリアの科目の習熟の両方に入る。
+  /// 難しい問題・苦手な単元（[weakUnits]）への正解には、学びのボーナスがつく。
   static StageClearResult applyBattle({
     required RpgProgress progress,
     required WorldDef world,
     required StageDef stage,
     required BattleSummary summary,
+    Set<String> weakUnits = const {},
   }) {
+    progress = Mastery.migrate(progress);
     final alreadyCleared = progress.clearedStageIds.contains(stage.id);
-    final gained = expFor(stage, summary, alreadyCleared: alreadyCleared);
+    final learningBonus =
+        LearningBonus.bonusExp(summary, weakUnits: weakUnits);
+    final gained =
+        expFor(stage, summary, alreadyCleared: alreadyCleared) + learningBonus;
 
     // 間違えた問題は亡霊として残し、正解した問題は亡霊から外す
     final mistakes = {...progress.mistakes};
@@ -171,7 +195,12 @@ class Progression {
       updated = updated.copyWith(lostStages: {...updated.lostStages, stage.id});
     }
 
+    updated = Mastery.add(updated, Mastery.courseOfStage(stage), gained);
     return StageClearResult(
+      learningBonusExp: learningBonus,
+      masteryBefore: Mastery.levelForStage(progress, stage),
+      masteryAfter: Mastery.levelForStage(updated, stage),
+      masteryCourse: Mastery.courseOfStage(stage),
       expResult: addExp(updated, gained),
       firstClear: summary.won && !alreadyCleared,
       newlyUnlockedStageId: unlocked,
@@ -193,7 +222,18 @@ class Progression {
     }
     final exp = summary.correctCount * expPerGhostCorrect +
         (summary.won ? ghostClearBonus : 0);
-    return addExp(progress.copyWith(mistakes: mistakes), exp);
+    final updated = Mastery.addByAnswers(
+        Mastery.migrate(progress).copyWith(mistakes: mistakes), summary, exp);
+    return addExp(updated, exp);
+  }
+
+  /// 練習のバトル（海・空・復習の塔・単元の練習など）の経験値。
+  /// 冒険Lvと、正解した問題の科目の習熟に入る。
+  static ExpGainResult applyPractice(
+      RpgProgress progress, BattleSummary summary) {
+    final exp = practiceExp(summary, progress.level);
+    return addExp(
+        Mastery.addByAnswers(Mastery.migrate(progress), summary, exp), exp);
   }
 
   /// 宝箱：難問1問に正解するとレアカード。失敗すると空っぽになる（1回きり）。
@@ -216,9 +256,13 @@ class Progression {
   /// 宿の授業（練習問題）で得られる経験値：正解1問につき
   static const expPerTrainingCorrect = 2;
 
-  /// 宿の授業を終えたときの経験値付与
-  static ExpGainResult applyTraining(RpgProgress progress, int correctCount) =>
-      addExp(progress, correctCount * expPerTrainingCorrect);
+  /// 宿の授業を終えたときの経験値付与（[stage] の科目の習熟にも入る）
+  static ExpGainResult applyTraining(RpgProgress progress, int correctCount,
+      {StageDef? stage}) {
+    final exp = correctCount * expPerTrainingCorrect;
+    final course = stage == null ? null : Mastery.courseOfStage(stage);
+    return addExp(Mastery.add(Mastery.migrate(progress), course, exp), exp);
+  }
 
   /// 定期テストの海の結果を記録する（最高正答率だけ残す）
   static RpgProgress recordSea(RpgProgress progress, String id, int percent) {

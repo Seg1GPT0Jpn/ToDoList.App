@@ -102,7 +102,11 @@ class _InnScreenState extends State<InnScreen> {
   Future<void> _finish() async {
     final repo = RpgServices.of(context).repository;
     final p = await repo.load();
-    final gain = Progression.applyTraining(p, _session!.correctCount);
+    final gain = Progression.applyTraining(
+      p,
+      _session!.correctCount,
+      stage: widget.stage,
+    );
     await repo.save(gain.progress);
     if (!mounted) return;
     setState(() {

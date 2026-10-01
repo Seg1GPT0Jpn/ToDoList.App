@@ -44,6 +44,7 @@ export 'src/models/figure_spec.dart';
 export 'src/models/rpg_progress.dart';
 export 'src/models/stage.dart';
 export 'src/models/world.dart';
+export 'src/progression/mastery.dart';
 export 'src/progression/progression.dart';
 export 'src/purchase/purchase_service.dart';
 export 'src/purchase/promo_code.dart';

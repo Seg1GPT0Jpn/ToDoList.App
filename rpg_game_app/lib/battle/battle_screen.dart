@@ -28,7 +28,13 @@ class BattleScreen extends StatefulWidget {
     this.ghost = false,
     this.onFinished,
     this.mode,
+    this.relativePower,
   });
+
+  /// 強さを「冒険Lv＋その科目の習熟Lv」と敵の推奨レベルの差で決めるか
+  /// （決まった HP をもつ RPG のエリアの敵向け）。省略すると、亡霊・練習以外で使う。
+  /// 練習のバトルは敵の HP がレベルに合わせて決まるので、使わない。
+  final bool? relativePower;
 
   /// 記録のしかた（図鑑・クエスト・学習記録）。省略すると
   /// 亡霊なら [BattleMode.ghost]、確認用なら [BattleMode.trial]、ほかは [BattleMode.rpg]
@@ -72,7 +78,29 @@ class _Popup {
 
 class _BattleScreenState extends State<BattleScreen>
     with TickerProviderStateMixin {
-  late final PlayerStats _player = PlayerStats.forLevel(widget.progress.level);
+  /// 冒険Lvと科目の習熟Lvから強さを決めるバトルか
+  late final bool _relative =
+      widget.relativePower ?? (!widget.trial && !widget.ghost);
+
+  /// このバトルでの主人公の能力値。RPG のエリアでは、攻撃は科目の習熟Lvを中心に
+  /// 「戦闘Lv」と敵の推奨レベルの差で決まる（ほかの科目でレベルを上げても、
+  /// 新しい科目の最初の敵を1問で倒せない）。HP・守りは冒険Lvで決まる。
+  late final PlayerStats _player = _relative
+      ? BattlePower.forStage(widget.progress, widget.stage)
+      : PlayerStats.forLevel(widget.progress.level);
+
+  /// 科目の習熟Lv（科目に属さないバトルでは null）
+  late final int? _masteryLevel = Mastery.courseOfStage(widget.stage) == null
+      ? null
+      : Mastery.levelForStage(widget.progress, widget.stage);
+
+  /// 苦手な単元（正答率が低い単元。その問題に正解すると「苦手に挑戦」のボーナス）
+  late final Set<String> _weakUnits = {
+    for (final p in CurriculumProgress.of(
+      _services.meta.record,
+    ).weakest(limit: 10))
+      if ((p.accuracy ?? 100) < 70) p.node.id,
+  };
 
   /// バトルの舞台の地形
   late final Terrain _terrain = battleTerrainOf(widget.stage);
@@ -141,7 +169,13 @@ class _BattleScreenState extends State<BattleScreen>
     deck: [for (final id in widget.progress.battleDeck) CardDef.byId(id)],
     bossRule: widget.ghost ? BossRule.none : BossRules.of(widget.stage),
     // 装備と職業の補正（その教科のバトルで効く装備もある）
-    bonus: Gear.bonusFor(widget.progress, widget.stage.worldId),
+    bonus: _relative
+        ? BattlePower.bonusForStage(
+            Gear.bonusFor(widget.progress, widget.stage.worldId),
+            widget.progress,
+          )
+        : Gear.bonusFor(widget.progress, widget.stage.worldId),
+    weakUnits: _weakUnits,
     // 復習の塔の番人は「10問中8問」の試練
     trialWindow: widget.stage.id.startsWith('review_tower') ? 10 : 5,
     trialNeed: widget.stage.id.startsWith('review_tower') ? 8 : 4,
@@ -444,6 +478,26 @@ class _BattleScreenState extends State<BattleScreen>
           after: const Duration(milliseconds: 200),
         );
       }
+      if (r.challenge) {
+        _popup(
+          _Popup(
+            '苦手に挑戦！',
+            const Color(0xFFD9822B),
+            const Alignment(0.55, 0.15),
+          ),
+          after: const Duration(milliseconds: 240),
+        );
+      }
+      if (r.deepThought) {
+        _popup(
+          _Popup(
+            '難問ボーナス！',
+            const Color(0xFF8E4BBF),
+            const Alignment(0.5, -0.05),
+          ),
+          after: const Duration(milliseconds: 280),
+        );
+      }
       if (r.blocked) {
         _popup(
           _Popup(
@@ -714,10 +768,7 @@ class _BattleScreenState extends State<BattleScreen>
     final result = widget.trial
         // 練習（確認用・定期テストの海・試験対策）では経験値を出さない
         ? StageClearResult(
-            expResult: Progression.addExp(
-              latest,
-              Progression.practiceExp(summary, latest.level),
-            ),
+            expResult: Progression.applyPractice(latest, summary),
             firstClear: false,
             newlyUnlockedStageId: null,
           )
@@ -732,6 +783,7 @@ class _BattleScreenState extends State<BattleScreen>
             world: widget.world,
             stage: widget.stage,
             summary: summary,
+            weakUnits: _weakUnits,
           );
     await services.repository.save(result.progress);
     var saved = result.progress;
@@ -1799,7 +1851,23 @@ class _BattleScreenState extends State<BattleScreen>
                 ),
               ),
               const SizedBox(width: 10),
-              Text('Lv${_player.level}', style: serif(15)),
+              Column(
+                key: const ValueKey('battle-level'),
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Lv${_player.level}', style: serif(15)),
+                  if (_masteryLevel != null)
+                    Text(
+                      '${Mastery.courseName(Mastery.courseOfStage(widget.stage)!)}'
+                      ' 習熟Lv$_masteryLevel',
+                      style: TextStyle(
+                        fontSize: 10,
+                        color: TsuzuriColors.inkSoft,
+                      ),
+                    ),
+                ],
+              ),
               const SizedBox(width: 12),
               Expanded(
                 child: _HpBar(

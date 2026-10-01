@@ -6,6 +6,7 @@ import '../app/theme.dart';
 import '../art/paper.dart';
 import '../app/practice.dart';
 import 'curriculum_map_screen.dart';
+import 'design.dart';
 
 /// 学習ステータス：実際の正答率から計算した、分野ごとの熟練度。
 ///
@@ -52,6 +53,8 @@ class LearningStatusScreen extends StatelessWidget {
                     height: 1.5,
                   ),
                 ),
+                const SizedBox(height: 10),
+                _MasteryCard(progress: progress),
                 const SizedBox(height: 10),
                 Card(
                   child: ListTile(
@@ -235,6 +238,66 @@ class _SubjectCard extends StatelessWidget {
                     ),
                   ],
                 ),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/// 科目ごとの習熟Lv（戦いの強さに効く）。冒険Lvとは別にふえる
+class _MasteryCard extends StatelessWidget {
+  const _MasteryCard({required this.progress});
+
+  final RpgProgress progress;
+
+  @override
+  Widget build(BuildContext context) {
+    final courses = [
+      for (final e in progress.masteryExp.entries)
+        if (e.value > 0 && Curriculum.tryNode(e.key) != null)
+          (e.key, Mastery.levelFor(e.value)),
+    ]..sort((a, b) => b.$2.compareTo(a.$2));
+    return Card(
+      key: const ValueKey('mastery-card'),
+      child: Padding(
+        padding: const EdgeInsets.all(12),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('科目の習熟Lv', style: serif(15)),
+            const SizedBox(height: 4),
+            Text(
+              '冒険Lvは体の強さ（HP・守り）、習熟Lvはその科目での攻撃の強さ。'
+              'ほかの科目を進めても、まだ学んでいない科目の敵はかんたんには倒せない。',
+              style: TextStyle(
+                fontSize: 11.5,
+                height: 1.5,
+                color: TsuzuriColors.inkSoft,
+              ),
+            ),
+            const SizedBox(height: 8),
+            if (courses.isEmpty)
+              Text(
+                'まだありません。エリアで戦うと、その科目の習熟がたまります。',
+                style: TextStyle(fontSize: 12.5, color: TsuzuriColors.inkSoft),
+              )
+            else
+              Wrap(
+                spacing: 8,
+                runSpacing: 6,
+                children: [
+                  for (final (course, level) in courses)
+                    Chip(
+                      avatar: Icon(
+                        subjectIcons[course.split('.').first] ?? Icons.school,
+                        size: 16,
+                        color: subjectColors[course.split('.').first],
+                      ),
+                      label: Text('${Mastery.courseName(course)} Lv$level'),
+                    ),
+                ],
               ),
           ],
         ),

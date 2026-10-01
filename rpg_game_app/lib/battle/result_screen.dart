@@ -181,12 +181,26 @@ class _ResultScreenState extends State<ResultScreen>
                         ),
                         _row('最大コンボ', '${s.maxCombo}'),
                         _row('獲得経験値', '+${_gain.expGained} EXP'),
+                        if (widget.result.learningBonusExp > 0)
+                          _row(
+                            '学びのボーナス',
+                            '+${widget.result.learningBonusExp} EXP（難問・苦手への正解）',
+                          ),
                         if (widget.result.firstClear) _row('ボーナス', '初回クリア！'),
                       ],
                     ),
                   ),
                   const SizedBox(height: 12),
                   _card(child: _expPanel()),
+                  if (widget.result.masteryLeveledUp)
+                    _notice(
+                      Icons.school,
+                      const Color(0xFF2E7DB5),
+                      '${Mastery.courseName(widget.result.masteryCourse!)}の習熟が'
+                          'Lv${widget.result.masteryAfter}に上がった！',
+                      'この科目の敵に、より大きなダメージを与えられる。'
+                          '習熟Lvは、その科目で戦うと上がる。',
+                    ),
                   if (widget.result.newCard case final card?)
                     _notice(
                       Icons.style,

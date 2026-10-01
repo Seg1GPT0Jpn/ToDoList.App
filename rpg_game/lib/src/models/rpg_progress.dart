@@ -50,7 +50,17 @@ class RpgProgress {
     this.equipped = const {},
     this.job,
     this.claimedRewards = const {},
+    this.masteryExp = const {},
+    this.masteryVersion = 0,
   });
+
+  /// 科目ごとの習熟の経験値（学習体系の科目 ID → 累計）。
+  /// その科目のバトルで得た経験値がたまる。冒険Lv（全体）とは別に、
+  /// 科目ごとの「習熟Lv」になり、その科目の戦いの強さに効く。
+  final Map<String, int> masteryExp;
+
+  /// 習熟のデータの版（0 は習熟ができる前のセーブデータ。読み込み時に移行する）
+  final int masteryVersion;
 
   /// ごほうびで手に入れた装備（最初の装備と欠片の装備はふくまない）
   final Set<String> gear;
@@ -150,6 +160,8 @@ class RpgProgress {
     Map<String, String>? equipped,
     String? job,
     Set<String>? claimedRewards,
+    Map<String, int>? masteryExp,
+    int? masteryVersion,
   }) =>
       RpgProgress(
         level: level ?? this.level,
@@ -171,6 +183,8 @@ class RpgProgress {
         equipped: equipped ?? this.equipped,
         job: job ?? this.job,
         claimedRewards: claimedRewards ?? this.claimedRewards,
+        masteryExp: masteryExp ?? this.masteryExp,
+        masteryVersion: masteryVersion ?? this.masteryVersion,
       );
 
   factory RpgProgress.fromMap(Map<String, dynamic>? map) {
@@ -215,6 +229,11 @@ class RpgProgress {
       job: map['job'] as String?,
       claimedRewards:
           Set<String>.from((map['claimedRewards'] as List?) ?? const []),
+      masteryExp: {
+        for (final e in ((map['masteryExp'] as Map?) ?? const {}).entries)
+          e.key as String: (e.value as num).toInt(),
+      },
+      masteryVersion: (map['masteryVersion'] as num?)?.toInt() ?? 0,
     );
   }
 
@@ -240,5 +259,7 @@ class RpgProgress {
         'equipped': equipped,
         if (job != null) 'job': job,
         'claimedRewards': claimedRewards.toList()..sort(),
+        'masteryExp': masteryExp,
+        'masteryVersion': masteryVersion,
       };
 }

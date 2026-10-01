@@ -3,6 +3,7 @@ import 'dart:math';
 import '../models/enemy.dart';
 import '../models/player_stats.dart';
 import '../models/question.dart';
+import '../progression/mastery.dart';
 import '../story/gear.dart';
 import 'cards.dart';
 import 'damage_calculator.dart';
@@ -51,7 +52,15 @@ class TurnResult {
     this.backDamage = 0,
     this.special = false,
     this.specialMissed = false,
+    this.challenge = false,
+    this.deepThought = false,
   });
+
+  /// 苦手な単元の問題に正解した（苦手への挑戦ボーナス）
+  final bool challenge;
+
+  /// 思考レベル4以上の問題に正解した（難問ボーナス）
+  final bool deepThought;
 
   /// 必殺技が決まった
   final bool special;
@@ -194,6 +203,7 @@ class BattleEngine {
     Random? random,
     DamageCalculator? damage,
     double Function(QuizQuestion)? questionWeight,
+    this.weakUnits = const {},
   })  : _random = random ?? Random(),
         _weight = questionWeight,
         _deck = QuestionDeck(questions, random: random, weight: questionWeight),
@@ -276,6 +286,9 @@ class BattleEngine {
 
   /// 装備と職業の補正
   final BattleBonus bonus;
+
+  /// 苦手な単元（単元か小単元の ID）。その問題に正解するとダメージが増える
+  final Set<String> weakUnits;
 
   /// 試練（[BossRule.trial]）：何問ごとに判定するか、何問正解が必要か
   final int trialWindow;
@@ -487,6 +500,8 @@ class BattleEngine {
     var backDamage = 0;
     var specialHit = false;
     var specialMissed = false;
+    var challenge = false;
+    var deepThought = false;
     EnemyDef? defeated;
     EnemyDef? joined;
     final focusCat = finaleFocus;
@@ -523,6 +538,16 @@ class BattleEngine {
             bonus.weaknessBonus;
       }
       if (effect == CardEffect.focus) extra *= 1.3;
+      // 学びのボーナス：難しい問題・苦手な単元への挑戦ほど有利
+      final thinking = LearningBonus.thinkingRate(q.source);
+      if (thinking > 1) {
+        extra *= thinking;
+        deepThought = true;
+      }
+      if (LearningBonus.isWeak(q.source, weakUnits)) {
+        extra *= LearningBonus.weakRate;
+        challenge = true;
+      }
       if (_specialArmed) {
         extra *= specialRate;
         specialHit = true;
@@ -706,6 +731,8 @@ class BattleEngine {
       backDamage: backDamage,
       special: specialHit,
       specialMissed: specialMissed,
+      challenge: challenge,
+      deepThought: deepThought,
     );
     _turns.add(result);
 
