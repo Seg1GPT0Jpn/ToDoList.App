@@ -166,9 +166,10 @@ void main() {
       }
     });
 
-    test('英語は無料、ほかの公開済みワールドは購入後に遊べる', () {
+    test('英語と番外編は無料、ほかの公開済みワールドは購入後に遊べる', () {
       for (final w in RpgCatalog.worlds) {
-        if (w.id == RpgCatalog.englishWorldId) {
+        if (w.isFree) {
+          // 英語と番外編（音楽の虹）は無料
           expect(Progression.isWorldPlayable(RpgProgress.initial, w), isTrue);
         } else if (!w.isComingSoon) {
           expect(Progression.isWorldPlayable(RpgProgress.initial, w), isFalse);

@@ -28,6 +28,7 @@ const _subjectIcons = <String, IconData>{
   'science': Icons.science_outlined,
   'social': Icons.public,
   'information': Icons.memory,
+  'music': Icons.music_note,
 };
 
 const _subjectColors = <String, Color>{
@@ -37,6 +38,7 @@ const _subjectColors = <String, Color>{
   'science': Color(0xFF8E6BBF),
   'social': Color(0xFFD9822B),
   'information': Color(0xFF4A8C8C),
+  'music': Color(0xFFD45D8C),
 };
 
 /// ワールドマップ（教科ごとの国を選ぶ）

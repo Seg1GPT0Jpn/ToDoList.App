@@ -1,0 +1,216 @@
+{
+  "setId": "music_chou_10",
+  "worldId": "music",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mus_chou10_001",
+      "category": "knowledge",
+      "prompt": "中世のローマ教会で、古代ギリシャの旋法をもとに定められた旋法を何という？",
+      "choices": [
+        "全音音階",
+        "十二音技法",
+        "教会旋法",
+        "日本旋法"
+      ],
+      "answerIndex": 2,
+      "explanation": "当時の教会音楽に用いられた。"
+    },
+    {
+      "id": "mus_chou10_002",
+      "category": "knowledge",
+      "prompt": "中世初期の教会旋法に含まれないものは？",
+      "choices": [
+        "エオリア",
+        "ドリア",
+        "リディア",
+        "フリギア"
+      ],
+      "answerIndex": 0,
+      "explanation": "初期はドリア・フリギア・リディア・ミクソリディア。エオリアとイオニアは16世紀に加わった。"
+    },
+    {
+      "id": "mus_chou10_003",
+      "category": "knowledge",
+      "prompt": "16世紀に加えられた教会旋法の組み合わせは？",
+      "choices": [
+        "ロクリアとドリア",
+        "ドリアとフリギア",
+        "リディアとミクソリディア",
+        "エオリアとイオニア"
+      ],
+      "answerIndex": 3,
+      "explanation": "これで正格・変格あわせて12種類になったとされる。"
+    },
+    {
+      "id": "mus_chou10_004",
+      "category": "calculation",
+      "prompt": "16世紀に整えられた教会旋法は、正格・変格あわせて何種類？",
+      "choices": [
+        "8種類",
+        "24種類",
+        "12種類",
+        "7種類"
+      ],
+      "answerIndex": 2,
+      "explanation": "初期の8種類に、エオリアとイオニアの正格・変格が加わって12種類。"
+    },
+    {
+      "id": "mus_chou10_005",
+      "category": "knowledge",
+      "prompt": "教会旋法で、今日の長・短音階の「主音」にあたる役割の音は？",
+      "choices": [
+        "属音",
+        "終止音",
+        "導音",
+        "支配音"
+      ],
+      "answerIndex": 1,
+      "explanation": "終止音と支配音が、主音・属音の役割を果たす。"
+    },
+    {
+      "id": "mus_chou10_006",
+      "category": "knowledge",
+      "prompt": "教会旋法で、今日の「属音」にあたる役割の音は？",
+      "choices": [
+        "導音",
+        "支配音",
+        "終止音",
+        "下属音"
+      ],
+      "answerIndex": 1,
+      "explanation": "正格と変格は終止音が同じで、支配音が異なる。"
+    },
+    {
+      "id": "mus_chou10_007",
+      "category": "knowledge",
+      "prompt": "正格旋法と変格旋法でちがうのは？",
+      "choices": [
+        "使う楽器",
+        "音の数",
+        "終止音",
+        "支配音"
+      ],
+      "answerIndex": 3,
+      "explanation": "終止音は同じで、支配音が異なる。"
+    },
+    {
+      "id": "mus_chou10_008",
+      "category": "thinking",
+      "prompt": "ピアノの白鍵だけで「レ」から1オクターブ上の「レ」まで弾いた音階は、何旋法？",
+      "choices": [
+        "ミクソリディア旋法",
+        "リディア旋法",
+        "ドリア旋法",
+        "イオニア旋法"
+      ],
+      "answerIndex": 2,
+      "explanation": "レから始まる白鍵の音階はドリア旋法。"
+    },
+    {
+      "id": "mus_chou10_009",
+      "category": "thinking",
+      "prompt": "ピアノの白鍵だけで「ミ」から1オクターブ上の「ミ」まで弾いた音階は、何旋法？",
+      "choices": [
+        "ロクリア旋法",
+        "フリギア旋法",
+        "エオリア旋法",
+        "ミクソリディア旋法"
+      ],
+      "answerIndex": 1,
+      "explanation": "ミから始まる白鍵の音階はフリギア旋法。"
+    },
+    {
+      "id": "mus_chou10_010",
+      "category": "thinking",
+      "prompt": "ピアノの白鍵だけで「ファ」から1オクターブ上の「ファ」まで弾いた音階は、何旋法？",
+      "choices": [
+        "リディア旋法",
+        "ミクソリディア旋法",
+        "フリギア旋法",
+        "エオリア旋法"
+      ],
+      "answerIndex": 0,
+      "explanation": "ファから始まる白鍵の音階はリディア旋法。"
+    },
+    {
+      "id": "mus_chou10_011",
+      "category": "thinking",
+      "prompt": "ピアノの白鍵だけで「ソ」から1オクターブ上の「ソ」まで弾いた音階は、何旋法？",
+      "choices": [
+        "ミクソリディア旋法",
+        "エオリア旋法",
+        "リディア旋法",
+        "ドリア旋法"
+      ],
+      "answerIndex": 0,
+      "explanation": "ソから始まる白鍵の音階はミクソリディア旋法。"
+    },
+    {
+      "id": "mus_chou10_012",
+      "category": "thinking",
+      "prompt": "ピアノの白鍵だけで「ラ」から1オクターブ上の「ラ」まで弾いた音階は、何旋法？",
+      "choices": [
+        "ロクリア旋法",
+        "エオリア旋法",
+        "ミクソリディア旋法",
+        "イオニア旋法"
+      ],
+      "answerIndex": 1,
+      "explanation": "ラから始まる白鍵の音階はエオリア旋法。"
+    },
+    {
+      "id": "mus_chou10_013",
+      "category": "thinking",
+      "prompt": "ピアノの白鍵だけで「ド」から1オクターブ上の「ド」まで弾いた音階は、何旋法？",
+      "choices": [
+        "ドリア旋法",
+        "イオニア旋法",
+        "ミクソリディア旋法",
+        "フリギア旋法"
+      ],
+      "answerIndex": 1,
+      "explanation": "ドから始まる白鍵の音階はイオニア旋法。"
+    },
+    {
+      "id": "mus_chou10_014",
+      "category": "thinking",
+      "prompt": "ピアノの白鍵だけで「シ」から1オクターブ上の「シ」まで弾いた音階は、何旋法？",
+      "choices": [
+        "フリギア旋法",
+        "リディア旋法",
+        "イオニア旋法",
+        "ロクリア旋法"
+      ],
+      "answerIndex": 3,
+      "explanation": "シから始まる白鍵の音階はロクリア旋法。"
+    },
+    {
+      "id": "mus_chou10_015",
+      "category": "knowledge",
+      "prompt": "イオニア旋法と同じ音の並びの音階は？",
+      "choices": [
+        "自然短音階",
+        "全音音階",
+        "和声短音階",
+        "長音階"
+      ],
+      "answerIndex": 3,
+      "explanation": "ドから白鍵で並べたイオニア＝長音階。"
+    },
+    {
+      "id": "mus_chou10_016",
+      "category": "knowledge",
+      "prompt": "エオリア旋法と同じ音の並びの音階は？",
+      "choices": [
+        "陰音階",
+        "自然短音階",
+        "長音階",
+        "旋律短音階"
+      ],
+      "answerIndex": 1,
+      "explanation": "ラから白鍵で並べたエオリア＝自然短音階。"
+    }
+  ]
+}

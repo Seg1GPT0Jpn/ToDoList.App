@@ -1,0 +1,216 @@
+{
+  "setId": "music_waon_01",
+  "worldId": "music",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mus_waon01_001",
+      "category": "knowledge",
+      "prompt": "高さのちがう2つ以上の音が同時に響いたときの合成した音を何という？",
+      "choices": [
+        "音程",
+        "旋律",
+        "和音",
+        "音階"
+      ],
+      "answerIndex": 2,
+      "explanation": "和音（コード）。"
+    },
+    {
+      "id": "mus_waon01_002",
+      "category": "knowledge",
+      "prompt": "ある音の上に3度ずつ2つの音を積み重ねた和音を何という？",
+      "choices": [
+        "四和音",
+        "九の和音",
+        "七の和音",
+        "三和音"
+      ],
+      "answerIndex": 3,
+      "explanation": "3度＋3度の積み重ね。"
+    },
+    {
+      "id": "mus_waon01_003",
+      "category": "knowledge",
+      "prompt": "三和音の上にさらに3度の音を1つ積んだ和音を何という？",
+      "choices": [
+        "増三和音",
+        "七の和音",
+        "三和音",
+        "九の和音"
+      ],
+      "answerIndex": 1,
+      "explanation": "根音から7度の音をふくむので七の和音。"
+    },
+    {
+      "id": "mus_waon01_004",
+      "category": "knowledge",
+      "prompt": "和音のいちばん下の基準になる音を何という？",
+      "choices": [
+        "第三音",
+        "主音",
+        "第五音",
+        "根音"
+      ],
+      "answerIndex": 3,
+      "explanation": "三和音は 根音・第三音・第五音 でできている。"
+    },
+    {
+      "id": "mus_waon01_005",
+      "category": "knowledge",
+      "prompt": "第三音・第五音・第七音という名前の由来は？",
+      "choices": [
+        "音階の第Ⅲ・Ⅴ・Ⅶ音だから",
+        "根音からそれぞれ3度・5度・7度の位置にあるから",
+        "3番目・5番目・7番目に弾くから",
+        "3拍目・5拍目・7拍目に鳴るから"
+      ],
+      "answerIndex": 1,
+      "explanation": "根音からの度数が名前になっている。"
+    },
+    {
+      "id": "mus_waon01_006",
+      "category": "knowledge",
+      "prompt": "ふつう用いられる三和音の種類はいくつ？",
+      "choices": [
+        "3種類",
+        "2種類",
+        "4種類",
+        "7種類"
+      ],
+      "answerIndex": 2,
+      "explanation": "長三和音・短三和音・減三和音・増三和音。"
+    },
+    {
+      "id": "mus_waon01_007",
+      "category": "knowledge",
+      "prompt": "音階の第Ⅰ音の上につくった三和音を何とよぶ？",
+      "choices": [
+        "第一和音",
+        "Ⅰ度の和音",
+        "主音の和音",
+        "根音和音"
+      ],
+      "answerIndex": 1,
+      "explanation": "Ⅰ、Ⅱ、…とローマ数字で表す。"
+    },
+    {
+      "id": "mus_waon01_008",
+      "category": "knowledge",
+      "prompt": "音階の第Ⅴ音の上につくった七の和音の表し方は？",
+      "choices": [
+        "Ⅴ⁵",
+        "Ⅴ７",
+        "Ⅶ⁵",
+        "７Ⅴ"
+      ],
+      "answerIndex": 1,
+      "explanation": "Ⅰ７、Ⅱ７…のように書く。"
+    },
+    {
+      "id": "mus_waon01_009",
+      "category": "calculation",
+      "prompt": "C を根音とする長三和音の第五音は？",
+      "choices": [
+        "G",
+        "Es",
+        "C",
+        "E"
+      ],
+      "answerIndex": 0,
+      "explanation": "C の長三和音は C・E・G。"
+    },
+    {
+      "id": "mus_waon01_010",
+      "category": "calculation",
+      "prompt": "F を根音とする長三和音の第三音は？",
+      "choices": [
+        "C",
+        "A",
+        "As",
+        "F"
+      ],
+      "answerIndex": 1,
+      "explanation": "F の長三和音は F・A・C。"
+    },
+    {
+      "id": "mus_waon01_011",
+      "category": "calculation",
+      "prompt": "A を根音とする短三和音の第三音は？",
+      "choices": [
+        "A",
+        "E",
+        "Ces",
+        "C"
+      ],
+      "answerIndex": 3,
+      "explanation": "A の短三和音は A・C・E。"
+    },
+    {
+      "id": "mus_waon01_012",
+      "category": "calculation",
+      "prompt": "D を根音とする短三和音の第五音は？",
+      "choices": [
+        "D",
+        "A",
+        "F",
+        "Fes"
+      ],
+      "answerIndex": 1,
+      "explanation": "D の短三和音は D・F・A。"
+    },
+    {
+      "id": "mus_waon01_013",
+      "category": "calculation",
+      "prompt": "G を根音とする長三和音の第三音は？",
+      "choices": [
+        "G",
+        "H",
+        "D",
+        "B"
+      ],
+      "answerIndex": 1,
+      "explanation": "G の長三和音は G・H・D。"
+    },
+    {
+      "id": "mus_waon01_014",
+      "category": "calculation",
+      "prompt": "E を根音とする短三和音の第五音は？",
+      "choices": [
+        "Ges",
+        "E",
+        "H",
+        "G"
+      ],
+      "answerIndex": 2,
+      "explanation": "E の短三和音は E・G・H。"
+    },
+    {
+      "id": "mus_waon01_015",
+      "category": "calculation",
+      "prompt": "B を根音とする長三和音の第三音は？",
+      "choices": [
+        "F",
+        "D",
+        "Des",
+        "B"
+      ],
+      "answerIndex": 1,
+      "explanation": "B の長三和音は B・D・F。"
+    },
+    {
+      "id": "mus_waon01_016",
+      "category": "calculation",
+      "prompt": "H を根音とする減三和音の第五音は？",
+      "choices": [
+        "Des",
+        "H",
+        "D",
+        "F"
+      ],
+      "answerIndex": 3,
+      "explanation": "H の減三和音は H・D・F。"
+    }
+  ]
+}

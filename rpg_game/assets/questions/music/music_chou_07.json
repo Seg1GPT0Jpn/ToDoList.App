@@ -1,0 +1,242 @@
+{
+  "setId": "music_chou_07",
+  "worldId": "music",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mus_chou07_001",
+      "category": "knowledge",
+      "prompt": "ある音から1オクターブ上の同じ名前の音まで、決まった秩序で並べた音列を何という？",
+      "choices": [
+        "旋律",
+        "音階",
+        "音程",
+        "和音"
+      ],
+      "answerIndex": 1,
+      "explanation": "音階では各音を Ⅰ〜Ⅶ のローマ数字で表す。"
+    },
+    {
+      "id": "mus_chou07_002",
+      "category": "knowledge",
+      "prompt": "長音階で、短2度（半音）になっているのはどこ？",
+      "choices": [
+        "Ⅱ・Ⅲ間とⅤ・Ⅵ間",
+        "Ⅰ・Ⅱ間とⅣ・Ⅴ間",
+        "Ⅲ・Ⅳ間とⅦ・Ⅰ間",
+        "Ⅵ・Ⅶ間とⅦ・Ⅰ間"
+      ],
+      "answerIndex": 2,
+      "explanation": "長音階は 全・全・半・全・全・全・半。"
+    },
+    {
+      "id": "mus_chou07_003",
+      "category": "knowledge",
+      "prompt": "長音階のⅠ・Ⅱ・Ⅲ・Ⅳのような、4つの音からなる音列を何という？",
+      "choices": [
+        "ペンタトニック",
+        "テトラコード",
+        "トライアド",
+        "オクターブ"
+      ],
+      "answerIndex": 1,
+      "explanation": "長音階は同じ形のテトラコード2つを長2度でつないだもの。"
+    },
+    {
+      "id": "mus_chou07_004",
+      "category": "knowledge",
+      "prompt": "長音階で、Ⅳ・Ⅴの間の音程は？",
+      "choices": [
+        "完全4度",
+        "短3度",
+        "短2度",
+        "長2度"
+      ],
+      "answerIndex": 3,
+      "explanation": "2つのテトラコードは長2度でつながる。"
+    },
+    {
+      "id": "mus_chou07_005",
+      "category": "knowledge",
+      "prompt": "音階の第Ⅰ音を何という？",
+      "choices": [
+        "導音",
+        "下属音",
+        "属音",
+        "主音"
+      ],
+      "answerIndex": 3,
+      "explanation": "音階の起点で、最も重要な音。"
+    },
+    {
+      "id": "mus_chou07_006",
+      "category": "knowledge",
+      "prompt": "音階の第Ⅴ音を何という？",
+      "choices": [
+        "中音",
+        "主音",
+        "属音",
+        "下属音"
+      ],
+      "answerIndex": 2,
+      "explanation": "主音の完全5度上にあり、主音を主音らしくする力をもつ。"
+    },
+    {
+      "id": "mus_chou07_007",
+      "category": "knowledge",
+      "prompt": "音階の第Ⅳ音を何という？",
+      "choices": [
+        "属音",
+        "下属音",
+        "上主音",
+        "導音"
+      ],
+      "answerIndex": 1,
+      "explanation": "主音の完全5度下にあたる音（主音をはさんで属音と対称の位置）。"
+    },
+    {
+      "id": "mus_chou07_008",
+      "category": "knowledge",
+      "prompt": "長音階の第Ⅶ音を何という？",
+      "choices": [
+        "中音",
+        "導音",
+        "下属音",
+        "属音"
+      ],
+      "answerIndex": 1,
+      "explanation": "主音に進もうとする性格をもつ音。"
+    },
+    {
+      "id": "mus_chou07_009",
+      "category": "knowledge",
+      "prompt": "属音は主音からみてどの位置にある？",
+      "choices": [
+        "完全5度上",
+        "完全4度上",
+        "長3度上",
+        "完全5度下"
+      ],
+      "answerIndex": 0,
+      "explanation": "属音は主音の上方完全5度。"
+    },
+    {
+      "id": "mus_chou07_010",
+      "category": "knowledge",
+      "prompt": "下属音という名前の由来として正しいものは？",
+      "choices": [
+        "主音のすぐ下にあるから",
+        "主音の下方完全5度にあり、属音と対称の位置にあるから",
+        "属音より下の音だから",
+        "和音の下にあるから"
+      ],
+      "answerIndex": 1,
+      "explanation": "主音を中心に、属音と対称の位置にある。"
+    },
+    {
+      "id": "mus_chou07_011",
+      "category": "knowledge",
+      "prompt": "長音階のⅥを臨時記号で半音低くして使う音階は？",
+      "choices": [
+        "和声短音階",
+        "自然短音階",
+        "和声長音階",
+        "旋律短音階"
+      ],
+      "answerIndex": 2,
+      "explanation": "この音階による長調を Molldur（独）という。"
+    },
+    {
+      "id": "mus_chou07_012",
+      "category": "knowledge",
+      "prompt": "長音階で、導音と主音の音程は？",
+      "choices": [
+        "長2度",
+        "完全4度",
+        "短2度",
+        "増2度"
+      ],
+      "answerIndex": 2,
+      "explanation": "Ⅶ→Ⅰは半音。だから主音に進もうとする力が強い。"
+    },
+    {
+      "id": "mus_chou07_013",
+      "category": "calculation",
+      "prompt": "D dur の音階の第Ⅱ音は？",
+      "choices": [
+        "E",
+        "D",
+        "Fis",
+        "Eis"
+      ],
+      "answerIndex": 0,
+      "explanation": "D dur：D・E・Fis・G・A・H・Cis。"
+    },
+    {
+      "id": "mus_chou07_014",
+      "category": "calculation",
+      "prompt": "B dur の音階の第Ⅲ音は？",
+      "choices": [
+        "Dis",
+        "B",
+        "D",
+        "C"
+      ],
+      "answerIndex": 2,
+      "explanation": "B dur：B・C・D・Es・F・G・A。"
+    },
+    {
+      "id": "mus_chou07_015",
+      "category": "calculation",
+      "prompt": "A dur の音階の第Ⅴ音は？",
+      "choices": [
+        "E",
+        "A",
+        "Eis",
+        "H"
+      ],
+      "answerIndex": 0,
+      "explanation": "A dur：A・H・Cis・D・E・Fis・Gis。"
+    },
+    {
+      "id": "mus_chou07_016",
+      "category": "calculation",
+      "prompt": "Es dur の音階の第Ⅵ音は？",
+      "choices": [
+        "F",
+        "Es",
+        "Cis",
+        "C"
+      ],
+      "answerIndex": 3,
+      "explanation": "Es dur：Es・F・G・As・B・C・D。"
+    },
+    {
+      "id": "mus_chou07_017",
+      "category": "calculation",
+      "prompt": "E dur の音階の第Ⅳ音は？",
+      "choices": [
+        "A",
+        "E",
+        "Ais",
+        "Fis"
+      ],
+      "answerIndex": 0,
+      "explanation": "E dur：E・Fis・Gis・A・H・Cis・Dis。"
+    },
+    {
+      "id": "mus_chou07_018",
+      "category": "calculation",
+      "prompt": "F dur の音階の第Ⅶ音は？",
+      "choices": [
+        "E",
+        "G",
+        "Eis",
+        "F"
+      ],
+      "answerIndex": 0,
+      "explanation": "F dur：F・G・A・B・C・D・E。"
+    }
+  ]
+}

@@ -1,0 +1,229 @@
+{
+  "setId": "music_chou_11",
+  "worldId": "music",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mus_chou11_001",
+      "category": "knowledge",
+      "prompt": "日本の伝統音楽の2つの大きな分類は？",
+      "choices": [
+        "民謡と演歌",
+        "雅楽と俗楽",
+        "声明と雅楽",
+        "能楽と狂言"
+      ],
+      "answerIndex": 1,
+      "explanation": "雅楽は宮廷の音楽、俗楽は庶民の音楽。"
+    },
+    {
+      "id": "mus_chou11_002",
+      "category": "knowledge",
+      "prompt": "雅楽で有名な音階は？",
+      "choices": [
+        "民謡音階",
+        "陽音階",
+        "陰音階",
+        "律音階"
+      ],
+      "answerIndex": 3,
+      "explanation": "律音階は ド・レ・ファ・ソ・ラ・ド。"
+    },
+    {
+      "id": "mus_chou11_003",
+      "category": "knowledge",
+      "prompt": "律音階を五線譜の音で表すと？",
+      "choices": [
+        "ド・レ・ファ・ソ・ラ",
+        "ド・レ♭・ファ・ソ・ラ♭",
+        "ラ・ド・レ・ミ・ソ",
+        "ド・レ・ミ・ソ・ラ"
+      ],
+      "answerIndex": 0,
+      "explanation": "雅楽で使われる律音階。"
+    },
+    {
+      "id": "mus_chou11_004",
+      "category": "knowledge",
+      "prompt": "陽音階を五線譜の音で表すと？",
+      "choices": [
+        "ド・レ・ミ・ソ・ラ",
+        "ド・レ♭・ファ・ソ・ラ♭",
+        "ド・ミ・ファ・ソ・シ",
+        "ド・レ・ファ・ソ・シ♭"
+      ],
+      "answerIndex": 3,
+      "explanation": "俗楽で有名な陽音階。"
+    },
+    {
+      "id": "mus_chou11_005",
+      "category": "knowledge",
+      "prompt": "陰音階を五線譜の音で表すと？",
+      "choices": [
+        "ド・レ♭・ファ・ソ・ラ♭",
+        "ド・レ・ファ・ソ・シ♭",
+        "ド・ミ・ファ・ソ・シ",
+        "ド・レ・ミ・ソ・ラ"
+      ],
+      "answerIndex": 0,
+      "explanation": "都節音階ともよばれる。"
+    },
+    {
+      "id": "mus_chou11_006",
+      "category": "knowledge",
+      "prompt": "陰音階の別名は？",
+      "choices": [
+        "琉球音階",
+        "都節音階",
+        "律音階",
+        "民謡音階"
+      ],
+      "answerIndex": 1,
+      "explanation": "「さくらさくら」などに使われる。"
+    },
+    {
+      "id": "mus_chou11_007",
+      "category": "knowledge",
+      "prompt": "陽音階から発展し、民謡に合わせて作り直された音階は？",
+      "choices": [
+        "民謡音階",
+        "都節音階",
+        "全音音階",
+        "律音階"
+      ],
+      "answerIndex": 0,
+      "explanation": "ラ・ド・レ・ミ・ソ・ラ。"
+    },
+    {
+      "id": "mus_chou11_008",
+      "category": "knowledge",
+      "prompt": "「さくらさくら」や「荒城の月」に使われている音階は？",
+      "choices": [
+        "民謡音階",
+        "都節音階（陰音階）",
+        "ヨナ抜き音階",
+        "琉球音階"
+      ],
+      "answerIndex": 1,
+      "explanation": "都節音階のもの悲しい響き。"
+    },
+    {
+      "id": "mus_chou11_009",
+      "category": "knowledge",
+      "prompt": "沖縄（琉球）音階は、西洋の音階（ドレミファソラシ）からどの音を抜いた音階？",
+      "choices": [
+        "レとソ",
+        "ミとシ",
+        "レとラ",
+        "ファとシ"
+      ],
+      "answerIndex": 2,
+      "explanation": "ド・ミ・ファ・ソ・シ。明るい南国らしい響き。"
+    },
+    {
+      "id": "mus_chou11_010",
+      "category": "knowledge",
+      "prompt": "5つの音からなる音階をまとめて何という？",
+      "choices": [
+        "十二音音階",
+        "全音音階",
+        "七音音階",
+        "五音音階"
+      ],
+      "answerIndex": 3,
+      "explanation": "ペンタトニック。日本の音階の多くが五音音階。"
+    },
+    {
+      "id": "mus_chou11_011",
+      "category": "knowledge",
+      "prompt": "となりあう音がすべて全音のへだたりの音階は？",
+      "choices": [
+        "全音音階",
+        "和声短音階",
+        "五音音階",
+        "半音階"
+      ],
+      "answerIndex": 0,
+      "explanation": "ド・レ・ミ・ファ♯・ソ♯・ラ♯。"
+    },
+    {
+      "id": "mus_chou11_012",
+      "category": "calculation",
+      "prompt": "全音音階は、どの音から始めても実際にふくまれる音の組み合わせは何通り？",
+      "choices": [
+        "12通り",
+        "1通り",
+        "2通り",
+        "6通り"
+      ],
+      "answerIndex": 2,
+      "explanation": "すべて全音なので、2種類しかない。"
+    },
+    {
+      "id": "mus_chou11_013",
+      "category": "knowledge",
+      "prompt": "全音音階を使って多くの名曲を残した作曲家は？",
+      "choices": [
+        "バッハ",
+        "ベートーヴェン",
+        "モーツァルト",
+        "ドビュッシー"
+      ],
+      "answerIndex": 3,
+      "explanation": "印象派の作曲家。"
+    },
+    {
+      "id": "mus_chou11_014",
+      "category": "knowledge",
+      "prompt": "中国音階（ド・レ・ミ・ソ・ラ）で、ドの音を何という？",
+      "choices": [
+        "宮",
+        "角",
+        "徴",
+        "商"
+      ],
+      "answerIndex": 0,
+      "explanation": "ドから 宮・商・角・徴・羽。"
+    },
+    {
+      "id": "mus_chou11_015",
+      "category": "knowledge",
+      "prompt": "中国音階でラの音を何という？",
+      "choices": [
+        "羽",
+        "商",
+        "徴",
+        "宮"
+      ],
+      "answerIndex": 0,
+      "explanation": "宮（ド）・商（レ）・角（ミ）・徴（ソ）・羽（ラ）。"
+    },
+    {
+      "id": "mus_chou11_016",
+      "category": "knowledge",
+      "prompt": "長音階からⅣとⅦを抜いた音階を何という？",
+      "choices": [
+        "ニロ抜き音階",
+        "律音階",
+        "ヨナ抜き音階",
+        "都節音階"
+      ],
+      "answerIndex": 2,
+      "explanation": "ファとシ（4番目と7番目）を抜く。スコットランドの音階ともいわれる。"
+    },
+    {
+      "id": "mus_chou11_017",
+      "category": "knowledge",
+      "prompt": "ヨナ抜き音階は、どこの国の民謡に多く見られる音階ともいわれる？",
+      "choices": [
+        "スコットランド",
+        "ロシア",
+        "イタリア",
+        "スペイン"
+      ],
+      "answerIndex": 0,
+      "explanation": "スコットランド民謡にはこの音階によるものが多い。"
+    }
+  ]
+}

@@ -1,0 +1,216 @@
+{
+  "setId": "music_yougo_04",
+  "worldId": "music",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mus_yougo04_001",
+      "category": "knowledge",
+      "prompt": "記号「staccato」の意味は？",
+      "choices": [
+        "なめらかに",
+        "その音符（休符）をほどよくのばす",
+        "終わり",
+        "音を短く切って"
+      ],
+      "answerIndex": 3,
+      "explanation": "staccato＝音を短く切って。"
+    },
+    {
+      "id": "mus_yougo04_002",
+      "category": "knowledge",
+      "prompt": "記号「tenuto」の意味は？",
+      "choices": [
+        "音を短く切って",
+        "音の長さを十分に保って",
+        "和音を分散して演奏する",
+        "終わり"
+      ],
+      "answerIndex": 1,
+      "explanation": "tenuto＝音の長さを十分に保って。"
+    },
+    {
+      "id": "mus_yougo04_003",
+      "category": "knowledge",
+      "prompt": "「なめらかに」という意味の記号は？",
+      "choices": [
+        "fermata（フェルマータ）",
+        "staccato",
+        "arpeggio",
+        "legato"
+      ],
+      "answerIndex": 3,
+      "explanation": "legato＝なめらかに。"
+    },
+    {
+      "id": "mus_yougo04_004",
+      "category": "knowledge",
+      "prompt": "記号「fermata（フェルマータ）」の意味は？",
+      "choices": [
+        "前と同じように",
+        "その音符（休符）をほどよくのばす",
+        "1オクターブ高く演奏する",
+        "𝄋（セーニョ）の記号にもどる"
+      ],
+      "answerIndex": 1,
+      "explanation": "fermata（フェルマータ）＝その音符（休符）をほどよくのばす。"
+    },
+    {
+      "id": "mus_yougo04_005",
+      "category": "knowledge",
+      "prompt": "記号「D.C.（ダ・カーポ）」の意味は？",
+      "choices": [
+        "なめらかに",
+        "曲のはじめにもどる",
+        "和音を分散して演奏する",
+        "その音符（休符）をほどよくのばす"
+      ],
+      "answerIndex": 1,
+      "explanation": "D.C.（ダ・カーポ）＝曲のはじめにもどる。"
+    },
+    {
+      "id": "mus_yougo04_006",
+      "category": "knowledge",
+      "prompt": "「𝄋（セーニョ）の記号にもどる」という意味の記号は？",
+      "choices": [
+        "8va",
+        "D.C.（ダ・カーポ）",
+        "tenuto",
+        "D.S.（ダル・セーニョ）"
+      ],
+      "answerIndex": 3,
+      "explanation": "D.S.（ダル・セーニョ）＝𝄋（セーニョ）の記号にもどる。"
+    },
+    {
+      "id": "mus_yougo04_007",
+      "category": "knowledge",
+      "prompt": "記号「Fine」の意味は？",
+      "choices": [
+        "音の長さを十分に保って",
+        "𝄋（セーニョ）の記号にもどる",
+        "音を短く切って",
+        "終わり"
+      ],
+      "answerIndex": 3,
+      "explanation": "Fine＝終わり。"
+    },
+    {
+      "id": "mus_yougo04_008",
+      "category": "knowledge",
+      "prompt": "記号「simile」の意味は？",
+      "choices": [
+        "前と同じように",
+        "終わり",
+        "音を短く切って",
+        "和音を分散して演奏する"
+      ],
+      "answerIndex": 0,
+      "explanation": "simile＝前と同じように。"
+    },
+    {
+      "id": "mus_yougo04_009",
+      "category": "knowledge",
+      "prompt": "「1オクターブ高く演奏する」という意味の記号は？",
+      "choices": [
+        "fermata（フェルマータ）",
+        "8va",
+        "legato",
+        "D.S.（ダル・セーニョ）"
+      ],
+      "answerIndex": 1,
+      "explanation": "8va＝1オクターブ高く演奏する。"
+    },
+    {
+      "id": "mus_yougo04_010",
+      "category": "knowledge",
+      "prompt": "記号「arpeggio」の意味は？",
+      "choices": [
+        "𝄋（セーニョ）の記号にもどる",
+        "なめらかに",
+        "和音を分散して演奏する",
+        "終わり"
+      ],
+      "answerIndex": 2,
+      "explanation": "arpeggio＝和音を分散して演奏する。"
+    },
+    {
+      "id": "mus_yougo04_011",
+      "category": "knowledge",
+      "prompt": "同じ高さの2つの音をつないで、1つの音のようにのばす弧線は？",
+      "choices": [
+        "タイ",
+        "アクセント",
+        "スラー",
+        "テヌート"
+      ],
+      "answerIndex": 0,
+      "explanation": "タイは同じ高さの音をつなぐ。"
+    },
+    {
+      "id": "mus_yougo04_012",
+      "category": "knowledge",
+      "prompt": "高さのちがう2つ以上の音につけ、なめらかに演奏させる弧線は？",
+      "choices": [
+        "フェルマータ",
+        "クレッシェンド",
+        "スラー",
+        "タイ"
+      ],
+      "answerIndex": 2,
+      "explanation": "スラーは高さのちがう音をなめらかに。"
+    },
+    {
+      "id": "mus_yougo04_013",
+      "category": "knowledge",
+      "prompt": "D.C. や D.S. でもどったあと、「to Coda」から飛ぶ先は？",
+      "choices": [
+        "Coda（コーダ）",
+        "1番かっこ",
+        "曲のはじめ",
+        "Fine"
+      ],
+      "answerIndex": 0,
+      "explanation": "𝄌（コーダマーク）へ飛んで、終わりの部分を演奏する。"
+    },
+    {
+      "id": "mus_yougo04_014",
+      "category": "knowledge",
+      "prompt": "くり返したとき、2回目には演奏をとばす部分を示すのは？",
+      "choices": [
+        "フェルマータ",
+        "2番かっこ",
+        "Fine",
+        "1番かっこ"
+      ],
+      "answerIndex": 3,
+      "explanation": "2回目は1番かっこをとばして2番かっこへ進む。"
+    },
+    {
+      "id": "mus_yougo04_015",
+      "category": "knowledge",
+      "prompt": "その音を目立たせて、強調して演奏させる記号「＞」を何という？",
+      "choices": [
+        "アクセント",
+        "スタッカート",
+        "デクレッシェンド",
+        "テヌート"
+      ],
+      "answerIndex": 0,
+      "explanation": "アクセントはその音を強調する。"
+    },
+    {
+      "id": "mus_yougo04_016",
+      "category": "knowledge",
+      "prompt": "息つぎの場所を示す記号は？",
+      "choices": [
+        "ブレス記号",
+        "フェルマータ",
+        "トリル",
+        "セーニョ"
+      ],
+      "answerIndex": 0,
+      "explanation": "「V」や「,」で示す。"
+    }
+  ]
+}

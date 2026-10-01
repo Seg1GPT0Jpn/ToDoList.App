@@ -1,0 +1,216 @@
+{
+  "setId": "music_fu_01",
+  "worldId": "music",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mus_fu01_001",
+      "category": "knowledge",
+      "prompt": "高音部のパートに主に使われる音部記号は？",
+      "choices": [
+        "ヘ音記号",
+        "アルト記号",
+        "ト音記号",
+        "ハ音記号"
+      ],
+      "answerIndex": 2,
+      "explanation": "ト音記号は高音部に使われ、ピアノの右手やヴァイオリンなど多くの楽器で使う。"
+    },
+    {
+      "id": "mus_fu01_002",
+      "category": "knowledge",
+      "prompt": "低音部のパートに主に使われる音部記号は？",
+      "choices": [
+        "テノール記号",
+        "ト音記号",
+        "ハ音記号",
+        "ヘ音記号"
+      ],
+      "answerIndex": 3,
+      "explanation": "ヘ音記号は低音部。ピアノの左手やベースなど、下から支えるパートに使う。"
+    },
+    {
+      "id": "mus_fu01_003",
+      "category": "knowledge",
+      "prompt": "主に中音部のパートに使われる音部記号は？",
+      "choices": [
+        "ト音記号",
+        "反復記号",
+        "ハ音記号",
+        "ヘ音記号"
+      ],
+      "answerIndex": 2,
+      "explanation": "ハ音記号は中音部に使われる。"
+    },
+    {
+      "id": "mus_fu01_004",
+      "category": "knowledge",
+      "prompt": "ハ音記号が今でもよく使われる、オーケストラの楽器は？",
+      "choices": [
+        "ヴァイオリン",
+        "ヴィオラ",
+        "コントラバス",
+        "フルート"
+      ],
+      "answerIndex": 1,
+      "explanation": "ヴィオラの楽譜はハ音記号（アルト譜表）で書かれる。"
+    },
+    {
+      "id": "mus_fu01_005",
+      "category": "knowledge",
+      "prompt": "ト音記号の書き始め（渦の中心）の音は、イタリア語の音名で？",
+      "choices": [
+        "ファ",
+        "ド",
+        "ラ",
+        "ソ"
+      ],
+      "answerIndex": 3,
+      "explanation": "ト音記号はG（ソ）の位置を示す記号。"
+    },
+    {
+      "id": "mus_fu01_006",
+      "category": "knowledge",
+      "prompt": "ヘ音記号の書き始めの丸い部分の音は、イタリア語の音名で？",
+      "choices": [
+        "ミ",
+        "ド",
+        "ファ",
+        "ソ"
+      ],
+      "answerIndex": 2,
+      "explanation": "ヘ音記号はF（ファ）の位置を示す。"
+    },
+    {
+      "id": "mus_fu01_007",
+      "category": "knowledge",
+      "prompt": "ハ音記号の真ん中の部分が示す音は、イタリア語の音名で？",
+      "choices": [
+        "レ",
+        "ソ",
+        "ド",
+        "ファ"
+      ],
+      "answerIndex": 2,
+      "explanation": "ハ音記号はC（ド）の位置を示す。"
+    },
+    {
+      "id": "mus_fu01_008",
+      "category": "knowledge",
+      "prompt": "アルファベットの G が形を変えてできた音部記号は？",
+      "choices": [
+        "ト音記号",
+        "シャープ",
+        "ハ音記号",
+        "ヘ音記号"
+      ],
+      "answerIndex": 0,
+      "explanation": "ト音記号は G の字が変化した形。"
+    },
+    {
+      "id": "mus_fu01_009",
+      "category": "knowledge",
+      "prompt": "アルファベットの F が形を変えてできた音部記号は？",
+      "choices": [
+        "ト音記号",
+        "ハ音記号",
+        "ヘ音記号",
+        "フェルマータ"
+      ],
+      "answerIndex": 2,
+      "explanation": "ヘ音記号は F の字が変化した形。"
+    },
+    {
+      "id": "mus_fu01_010",
+      "category": "knowledge",
+      "prompt": "アルファベットの C が形を変えてできた音部記号は？",
+      "choices": [
+        "ハ音記号",
+        "ト音記号",
+        "ヘ音記号",
+        "ナチュラル"
+      ],
+      "answerIndex": 0,
+      "explanation": "ハ音記号は C の字が変化した形。"
+    },
+    {
+      "id": "mus_fu01_011",
+      "category": "knowledge",
+      "prompt": "音部記号の基本の種類はいくつ？",
+      "choices": [
+        "4つ",
+        "2つ",
+        "5つ",
+        "3つ"
+      ],
+      "answerIndex": 3,
+      "explanation": "ト音記号・ヘ音記号・ハ音記号の3つ。"
+    },
+    {
+      "id": "mus_fu01_012",
+      "category": "knowledge",
+      "prompt": "ピアノの左手のパートで主に使われる音部記号は？",
+      "choices": [
+        "ハ音記号",
+        "アルト記号",
+        "ヘ音記号",
+        "ト音記号"
+      ],
+      "answerIndex": 2,
+      "explanation": "低い音を受け持つので、ふつうヘ音記号を使う。"
+    },
+    {
+      "id": "mus_fu01_013",
+      "category": "knowledge",
+      "prompt": "ヴァイオリンの楽譜で使われる音部記号は？",
+      "choices": [
+        "テノール記号",
+        "ハ音記号",
+        "ヘ音記号",
+        "ト音記号"
+      ],
+      "answerIndex": 3,
+      "explanation": "高い音域の楽器なのでト音記号。"
+    },
+    {
+      "id": "mus_fu01_014",
+      "category": "knowledge",
+      "prompt": "チェロやコントラバスの楽譜で主に使われる音部記号は？",
+      "choices": [
+        "ト音記号",
+        "ハ音記号",
+        "全音符",
+        "ヘ音記号"
+      ],
+      "answerIndex": 3,
+      "explanation": "低音の弦楽器はヘ音記号で書くのがふつう。"
+    },
+    {
+      "id": "mus_fu01_015",
+      "category": "thinking",
+      "prompt": "音部記号を書く目的として最も適切なものは？",
+      "choices": [
+        "曲の調を決める",
+        "五線のどの位置がどの高さの音かを決める",
+        "曲の強弱を決める",
+        "曲の速さを決める"
+      ],
+      "answerIndex": 1,
+      "explanation": "音部記号がないと、五線上の音の高さが決まらない。"
+    },
+    {
+      "id": "mus_fu01_016",
+      "category": "knowledge",
+      "prompt": "ト音記号と、その渦が巻きつく線の関係として正しいものは？",
+      "choices": [
+        "渦の中心が下から2番目の線（第2線）にあり、そこがソ",
+        "渦の中心が第3線にあり、そこがド",
+        "渦の中心が第4線にあり、そこがファ",
+        "渦の中心が第1線にあり、そこがミ"
+      ],
+      "answerIndex": 0,
+      "explanation": "ト音記号は第2線を G（ソ）と決める。"
+    }
+  ]
+}

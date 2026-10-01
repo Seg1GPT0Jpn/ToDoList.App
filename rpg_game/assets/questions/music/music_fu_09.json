@@ -1,0 +1,242 @@
+{
+  "setId": "music_fu_09",
+  "worldId": "music",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mus_fu09_001",
+      "category": "calculation",
+      "prompt": "G と、その上の A の音程は？",
+      "choices": [
+        "長2度",
+        "増2度",
+        "短2度",
+        "減2度"
+      ],
+      "answerIndex": 0,
+      "explanation": "G→A は幹音で数えて2度、半音2個分なので長2度。"
+    },
+    {
+      "id": "mus_fu09_002",
+      "category": "calculation",
+      "prompt": "F と、その上の H の音程は？",
+      "choices": [
+        "長3度",
+        "完全5度",
+        "増4度",
+        "完全4度"
+      ],
+      "answerIndex": 2,
+      "explanation": "F→H は幹音で数えて4度、半音6個分なので増4度。"
+    },
+    {
+      "id": "mus_fu09_003",
+      "category": "calculation",
+      "prompt": "H と、その上の F の音程は？",
+      "choices": [
+        "増5度",
+        "完全4度",
+        "長6度",
+        "減5度"
+      ],
+      "answerIndex": 3,
+      "explanation": "H→F は幹音で数えて5度、半音6個分なので減5度。"
+    },
+    {
+      "id": "mus_fu09_004",
+      "category": "calculation",
+      "prompt": "G と、その上の E の音程は？",
+      "choices": [
+        "短6度",
+        "長6度",
+        "完全5度",
+        "減6度"
+      ],
+      "answerIndex": 1,
+      "explanation": "G→E は幹音で数えて6度、半音9個分なので長6度。"
+    },
+    {
+      "id": "mus_fu09_005",
+      "category": "calculation",
+      "prompt": "A と、その上の E の音程は？",
+      "choices": [
+        "長6度",
+        "増5度",
+        "完全4度",
+        "完全5度"
+      ],
+      "answerIndex": 3,
+      "explanation": "A→E は幹音で数えて5度、半音7個分なので完全5度。"
+    },
+    {
+      "id": "mus_fu09_006",
+      "category": "calculation",
+      "prompt": "G と、その上の F の音程は？",
+      "choices": [
+        "長7度",
+        "増7度",
+        "短7度",
+        "長6度"
+      ],
+      "answerIndex": 2,
+      "explanation": "G→F は幹音で数えて7度、半音10個分なので短7度。"
+    },
+    {
+      "id": "mus_fu09_007",
+      "category": "calculation",
+      "prompt": "Ges と、その上の As の音程は？",
+      "choices": [
+        "減2度",
+        "増2度",
+        "完全1度",
+        "長2度"
+      ],
+      "answerIndex": 3,
+      "explanation": "Ges→As は幹音で数えて2度、半音2個分なので長2度。"
+    },
+    {
+      "id": "mus_fu09_008",
+      "category": "calculation",
+      "prompt": "Ges と、その上の Es の音程は？",
+      "choices": [
+        "完全5度",
+        "長6度",
+        "短6度",
+        "長7度"
+      ],
+      "answerIndex": 1,
+      "explanation": "Ges→Es は幹音で数えて6度、半音9個分なので長6度。"
+    },
+    {
+      "id": "mus_fu09_009",
+      "category": "calculation",
+      "prompt": "Fis と、その上の Ces の音程は？",
+      "choices": [
+        "完全5度",
+        "完全4度",
+        "重減5度",
+        "長6度"
+      ],
+      "answerIndex": 2,
+      "explanation": "Fis→Ces は幹音で数えて5度、半音5個分なので重減5度。"
+    },
+    {
+      "id": "mus_fu09_010",
+      "category": "calculation",
+      "prompt": "His と、その上の H の音程は？",
+      "choices": [
+        "増8度",
+        "短7度",
+        "完全8度",
+        "減8度"
+      ],
+      "answerIndex": 3,
+      "explanation": "His→H は8度。完全8度より半音狭いので減8度。"
+    },
+    {
+      "id": "mus_fu09_011",
+      "category": "calculation",
+      "prompt": "Cis と、その上の E の音程は？",
+      "choices": [
+        "短3度",
+        "増3度",
+        "減3度",
+        "長2度"
+      ],
+      "answerIndex": 0,
+      "explanation": "Cis→E は幹音で数えて3度、半音3個分なので短3度。"
+    },
+    {
+      "id": "mus_fu09_012",
+      "category": "calculation",
+      "prompt": "Fis と、その上の Es の音程は？",
+      "choices": [
+        "増7度",
+        "減7度",
+        "長7度",
+        "短7度"
+      ],
+      "answerIndex": 1,
+      "explanation": "Fis→Es は幹音で数えて7度、半音9個分なので減7度。"
+    },
+    {
+      "id": "mus_fu09_013",
+      "category": "calculation",
+      "prompt": "As と、その上の E の音程は？",
+      "choices": [
+        "減5度",
+        "完全4度",
+        "完全5度",
+        "増5度"
+      ],
+      "answerIndex": 3,
+      "explanation": "As→E は幹音で数えて5度、半音8個分なので増5度。"
+    },
+    {
+      "id": "mus_fu09_014",
+      "category": "calculation",
+      "prompt": "Ces と、その上の G の音程は？",
+      "choices": [
+        "減5度",
+        "増5度",
+        "長6度",
+        "完全5度"
+      ],
+      "answerIndex": 1,
+      "explanation": "Ces→G は幹音で数えて5度、半音8個分なので増5度。"
+    },
+    {
+      "id": "mus_fu09_015",
+      "category": "calculation",
+      "prompt": "F と、その上の Cis の音程は？",
+      "choices": [
+        "減5度",
+        "完全4度",
+        "長6度",
+        "増5度"
+      ],
+      "answerIndex": 3,
+      "explanation": "F→Cis は幹音で数えて5度、半音8個分なので増5度。"
+    },
+    {
+      "id": "mus_fu09_016",
+      "category": "calculation",
+      "prompt": "Ais と、その上の F の音程は？",
+      "choices": [
+        "減6度",
+        "増6度",
+        "完全5度",
+        "長7度"
+      ],
+      "answerIndex": 0,
+      "explanation": "Ais→F は幹音で数えて6度、半音7個分なので減6度。"
+    },
+    {
+      "id": "mus_fu09_017",
+      "category": "calculation",
+      "prompt": "B と、その上の Des の音程は？",
+      "choices": [
+        "短3度",
+        "完全4度",
+        "増3度",
+        "長3度"
+      ],
+      "answerIndex": 0,
+      "explanation": "B→Des は幹音で数えて3度、半音3個分なので短3度。"
+    },
+    {
+      "id": "mus_fu09_018",
+      "category": "calculation",
+      "prompt": "G と、その上の As の音程は？",
+      "choices": [
+        "増2度",
+        "短2度",
+        "長2度",
+        "減2度"
+      ],
+      "answerIndex": 1,
+      "explanation": "G→As は幹音で数えて2度、半音1個分なので短2度。"
+    }
+  ]
+}

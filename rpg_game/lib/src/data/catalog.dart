@@ -4,6 +4,7 @@ import '../models/stage.dart';
 import '../models/world.dart';
 import '../study/sea_catalog.dart';
 import 'information_catalog.dart';
+import 'music_catalog.dart';
 import 'japanese_catalog.dart';
 import 'math_catalog.dart';
 import 'social_catalog.dart';
@@ -676,6 +677,20 @@ class RpgCatalog {
       stages: InformationCatalog.stages,
       routes: [for (final r in InformationCatalog.routes) r.info],
       description: '情報Ⅰの7分野・17エリア。情報社会から論理回路まで。',
+    ),
+    // 番外編：楽典（音部記号〜和音の終止形）と音楽用語・コードネーム
+    WorldDef(
+      id: MusicCatalog.worldId,
+      name: '音楽の虹',
+      subject: '音楽',
+      status: WorldStatus.available,
+      isFree: true,
+      stages: MusicCatalog.stages,
+      routes: [for (final r in MusicCatalog.routes) r.info],
+      hubName: '虹のはじまりの広場',
+      hubSign: 'ここは番外編・音楽の虹。上へ進むと譜と音の道、左は調と音階の道、'
+          '右は和音の道、下は音楽用語の道。それぞれの道の最後に玉座のボスが待っている。',
+      description: '番外編（無料）。楽典と音楽用語の4つの道・42エリア。',
     ),
   ];
 

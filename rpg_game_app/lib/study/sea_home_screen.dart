@@ -34,6 +34,7 @@ class _SeaHomeScreenState extends State<SeaHomeScreen> {
     ('japanese', '国語'),
     ('math', '数学'),
     ('information', '情報'),
+    ('music', '音楽'),
   ];
 
   @override

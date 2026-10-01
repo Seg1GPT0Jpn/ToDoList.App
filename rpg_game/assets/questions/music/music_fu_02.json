@@ -1,0 +1,242 @@
+{
+  "setId": "music_fu_02",
+  "worldId": "music",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mus_fu02_001",
+      "category": "knowledge",
+      "prompt": "ト音記号が使われる譜表を何という？",
+      "choices": [
+        "ト音譜表",
+        "テノール譜表",
+        "アルト譜表",
+        "ヘ音譜表"
+      ],
+      "answerIndex": 0,
+      "explanation": "ト音記号を書いた譜表がト音譜表。"
+    },
+    {
+      "id": "mus_fu02_002",
+      "category": "knowledge",
+      "prompt": "ヘ音記号が使われる譜表を何という？",
+      "choices": [
+        "ヘ音譜表",
+        "アルト譜表",
+        "大譜表",
+        "ト音譜表"
+      ],
+      "answerIndex": 0,
+      "explanation": "ヘ音記号を書いた譜表がヘ音譜表。"
+    },
+    {
+      "id": "mus_fu02_003",
+      "category": "knowledge",
+      "prompt": "ハ音記号の真ん中を第3線に置いた譜表は？",
+      "choices": [
+        "ソプラノ譜表",
+        "テノール譜表",
+        "大譜表",
+        "アルト譜表"
+      ],
+      "answerIndex": 3,
+      "explanation": "ハ音記号が通常使われる譜表はアルト譜表。"
+    },
+    {
+      "id": "mus_fu02_004",
+      "category": "knowledge",
+      "prompt": "ハ音記号の真ん中が五線の上から2番目（第4線）に移った譜表は？",
+      "choices": [
+        "テノール譜表",
+        "ト音譜表",
+        "アルト譜表",
+        "バス譜表"
+      ],
+      "answerIndex": 0,
+      "explanation": "第4線をドとするのがテノール譜表。チェロやファゴットの高い音域で使う。"
+    },
+    {
+      "id": "mus_fu02_005",
+      "category": "knowledge",
+      "prompt": "ト音譜表とヘ音譜表をつなげた、ピアノの楽譜で使う譜表は？",
+      "choices": [
+        "総譜",
+        "アルト譜表",
+        "大譜表",
+        "小譜表"
+      ],
+      "answerIndex": 2,
+      "explanation": "2段をかっこでつないだものを大譜表という。"
+    },
+    {
+      "id": "mus_fu02_006",
+      "category": "knowledge",
+      "prompt": "ト音譜表で、中央ド（C3）の位置は？",
+      "choices": [
+        "第1線",
+        "下第1線",
+        "上第1線",
+        "第3間"
+      ],
+      "answerIndex": 1,
+      "explanation": "中央ドはト音譜表の下に1本線を足した位置。"
+    },
+    {
+      "id": "mus_fu02_007",
+      "category": "knowledge",
+      "prompt": "ヘ音譜表で、中央ド（C3）の位置は？",
+      "choices": [
+        "第5線",
+        "下第1線",
+        "第4間",
+        "上第1線"
+      ],
+      "answerIndex": 3,
+      "explanation": "中央ドはヘ音譜表の上に1本線を足した位置。"
+    },
+    {
+      "id": "mus_fu02_008",
+      "category": "knowledge",
+      "prompt": "アルト譜表で、中央ドの位置は？",
+      "choices": [
+        "第4線",
+        "第3線",
+        "第2線",
+        "下第1線"
+      ],
+      "answerIndex": 1,
+      "explanation": "アルト譜表はハ音記号の真ん中＝第3線がド。"
+    },
+    {
+      "id": "mus_fu02_009",
+      "category": "knowledge",
+      "prompt": "テノール譜表で、中央ドの位置は？",
+      "choices": [
+        "第4線",
+        "第5線",
+        "第3線",
+        "第1線"
+      ],
+      "answerIndex": 0,
+      "explanation": "テノール譜表はハ音記号の真ん中＝第4線がド。"
+    },
+    {
+      "id": "mus_fu02_010",
+      "category": "knowledge",
+      "prompt": "ト音譜表の第1線（いちばん下の線）の音は？",
+      "choices": [
+        "ファ",
+        "ソ",
+        "ミ",
+        "レ"
+      ],
+      "answerIndex": 2,
+      "explanation": "下から ミ（第1線）・ファ（第1間）・ソ（第2線）…。"
+    },
+    {
+      "id": "mus_fu02_011",
+      "category": "knowledge",
+      "prompt": "ト音譜表の第3線の音は？",
+      "choices": [
+        "ラ",
+        "シ",
+        "ド",
+        "ソ"
+      ],
+      "answerIndex": 1,
+      "explanation": "第2線がソ、第2間がラ、第3線がシ。"
+    },
+    {
+      "id": "mus_fu02_012",
+      "category": "knowledge",
+      "prompt": "ト音譜表の第3間の音は？",
+      "choices": [
+        "ド",
+        "シ",
+        "レ",
+        "ラ"
+      ],
+      "answerIndex": 0,
+      "explanation": "第3線シの1つ上の間がド。"
+    },
+    {
+      "id": "mus_fu02_013",
+      "category": "knowledge",
+      "prompt": "ト音譜表の第5線（いちばん上の線）の音は？",
+      "choices": [
+        "ソ",
+        "ミ",
+        "レ",
+        "ファ"
+      ],
+      "answerIndex": 3,
+      "explanation": "第4線レ、第4間ミ、第5線ファ。"
+    },
+    {
+      "id": "mus_fu02_014",
+      "category": "knowledge",
+      "prompt": "ト音譜表の第2間の音は？",
+      "choices": [
+        "ソ",
+        "シ",
+        "ラ",
+        "ファ"
+      ],
+      "answerIndex": 2,
+      "explanation": "第2線ソのすぐ上の間がラ。"
+    },
+    {
+      "id": "mus_fu02_015",
+      "category": "knowledge",
+      "prompt": "ヘ音譜表の第4線の音は？",
+      "choices": [
+        "ファ",
+        "レ",
+        "ミ",
+        "ソ"
+      ],
+      "answerIndex": 0,
+      "explanation": "ヘ音記号の2つの点ではさまれた第4線がファ。"
+    },
+    {
+      "id": "mus_fu02_016",
+      "category": "knowledge",
+      "prompt": "ヘ音譜表の第1線（いちばん下の線）の音は？",
+      "choices": [
+        "ミ",
+        "ファ",
+        "ラ",
+        "ソ"
+      ],
+      "answerIndex": 3,
+      "explanation": "ヘ音譜表は下から ソ・ラ・シ・ド・レ・ミ・ファ・ソ・ラ。"
+    },
+    {
+      "id": "mus_fu02_017",
+      "category": "knowledge",
+      "prompt": "ヘ音譜表の第5線（いちばん上の線）の音は？",
+      "choices": [
+        "ソ",
+        "ファ",
+        "シ",
+        "ラ"
+      ],
+      "answerIndex": 3,
+      "explanation": "第4線ファ、第4間ソ、第5線ラ。"
+    },
+    {
+      "id": "mus_fu02_018",
+      "category": "knowledge",
+      "prompt": "ヘ音譜表の第3線の音は？",
+      "choices": [
+        "ミ",
+        "レ",
+        "ド",
+        "シ"
+      ],
+      "answerIndex": 1,
+      "explanation": "第2線シ、第2間ド、第3線レ。"
+    }
+  ]
+}

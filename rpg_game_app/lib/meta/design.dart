@@ -30,6 +30,7 @@ const subjectColors = <String, Color>{
   'science': Color(0xFF8E6BBF),
   'social': Color(0xFFD9822B),
   'information': Color(0xFF4A8C8C),
+  'music': Color(0xFFD45D8C),
 };
 
 const subjectIcons = <String, IconData>{
@@ -39,6 +40,7 @@ const subjectIcons = <String, IconData>{
   'science': Icons.science_outlined,
   'social': Icons.public,
   'information': Icons.memory,
+  'music': Icons.music_note,
 };
 
 /// レア度の色（色だけに頼らず、★の数でも見分けられるようにする）

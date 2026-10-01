@@ -10,6 +10,7 @@ abstract final class StudyReport {
     'japanese': '国語',
     'math': '数学',
     'information': '情報',
+    'music': '音楽',
   };
 
   static String _pct(int c, int a) =>

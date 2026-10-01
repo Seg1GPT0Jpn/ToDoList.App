@@ -24,6 +24,18 @@ void main() {
     }
   });
 
+  test('番外編・音楽の虹：4つの道・30エリア以上、各エリア15問以上', () {
+    final w = RpgCatalog.world('music');
+    expect(w.isFree, isTrue);
+    expect(w.routes, hasLength(4));
+    expect(w.stages.length, greaterThanOrEqualTo(30));
+    for (final s in w.stages) {
+      final f = File('assets/questions/music/${s.questionSetIds.last}.json');
+      final set = JsonQuestionSource.parse(f.readAsStringSync());
+      expect(set.questions.length, greaterThanOrEqualTo(15), reason: s.id);
+    }
+  });
+
   test('入力の答えは全角・半角・大文字小文字・空白の違いを無視する', () {
     final q = QuizQuestion(
       id: 'x',

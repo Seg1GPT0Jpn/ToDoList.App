@@ -1,0 +1,242 @@
+{
+  "setId": "music_yougo_06",
+  "worldId": "music",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mus_yougo06_001",
+      "category": "knowledge",
+      "prompt": "コードネーム「C7」の構成音は？",
+      "choices": [
+        "C・E・G・B♭",
+        "C・E・G・A",
+        "C・E♭・G・B♭",
+        "C・E・G・B"
+      ],
+      "answerIndex": 0,
+      "explanation": "7 は根音から短7度の音を加える（属七の和音と同じ形）。"
+    },
+    {
+      "id": "mus_yougo06_002",
+      "category": "knowledge",
+      "prompt": "コードネーム「CM7」（Cmaj7）の構成音は？",
+      "choices": [
+        "C・E・G・B",
+        "C・E・G・B♭",
+        "C・E♭・G・B",
+        "C・E・G♯・B"
+      ],
+      "answerIndex": 0,
+      "explanation": "M7 は長7度の音を加える。"
+    },
+    {
+      "id": "mus_yougo06_003",
+      "category": "knowledge",
+      "prompt": "コードネームの「sus4」が表す和音は？",
+      "choices": [
+        "第三音の代わりに完全4度の音を使う和音",
+        "4度ずつ重ねた和音",
+        "第五音を半音上げた和音",
+        "4つの音でできた和音"
+      ],
+      "answerIndex": 0,
+      "explanation": "Csus4＝C・F・G。"
+    },
+    {
+      "id": "mus_yougo06_004",
+      "category": "knowledge",
+      "prompt": "属七の和音と同じ形のコードは？",
+      "choices": [
+        "7（セブンス）",
+        "m7（マイナーセブンス）",
+        "dim7",
+        "M7（メジャーセブンス）"
+      ],
+      "answerIndex": 0,
+      "explanation": "G7 は C dur の属七の和音。"
+    },
+    {
+      "id": "mus_yougo06_005",
+      "category": "calculation",
+      "prompt": "コードネーム「Gm7」の構成音は？（英語音名）",
+      "choices": [
+        "G・B♭・D・F",
+        "G・B・D・F",
+        "G・B・D・F♯",
+        "G・B♭・D♭・F♭"
+      ],
+      "answerIndex": 0,
+      "explanation": "Gm7：G・B♭・D・F。"
+    },
+    {
+      "id": "mus_yougo06_006",
+      "category": "calculation",
+      "prompt": "F・A・C・E の和音のコードネームは？（英語音名）",
+      "choices": [
+        "F7",
+        "Fdim7",
+        "Fm7",
+        "FM7"
+      ],
+      "answerIndex": 3,
+      "explanation": "根音 F のM7なので FM7。"
+    },
+    {
+      "id": "mus_yougo06_007",
+      "category": "calculation",
+      "prompt": "コードネーム「F7」の構成音は？（英語音名）",
+      "choices": [
+        "F・A♭・C・E♭",
+        "F・A・C・E",
+        "F・A・C・E♭",
+        "F・A♭・C♭・E𝄫"
+      ],
+      "answerIndex": 2,
+      "explanation": "F7：F・A・C・E♭。"
+    },
+    {
+      "id": "mus_yougo06_008",
+      "category": "calculation",
+      "prompt": "G・B♭・D♭・F♭ の和音のコードネームは？（英語音名）",
+      "choices": [
+        "Gdim7",
+        "Gm7",
+        "G7",
+        "GM7"
+      ],
+      "answerIndex": 0,
+      "explanation": "根音 G のdim7なので Gdim7。"
+    },
+    {
+      "id": "mus_yougo06_009",
+      "category": "calculation",
+      "prompt": "コードネーム「E♭sus4」の構成音は？（英語音名）",
+      "choices": [
+        "E♭・G・B♭・D",
+        "E♭・G・B♭・D♭",
+        "E♭・A♭・B♭",
+        "E♭・G♭・B♭・D♭"
+      ],
+      "answerIndex": 2,
+      "explanation": "E♭sus4：E♭・A♭・B♭。"
+    },
+    {
+      "id": "mus_yougo06_010",
+      "category": "calculation",
+      "prompt": "E♭・G・B♭・C の和音のコードネームは？（英語音名）",
+      "choices": [
+        "E♭7",
+        "E♭6",
+        "E♭M7",
+        "E♭m7"
+      ],
+      "answerIndex": 1,
+      "explanation": "根音 E♭ の6なので E♭6。"
+    },
+    {
+      "id": "mus_yougo06_011",
+      "category": "calculation",
+      "prompt": "コードネーム「A♭sus4」の構成音は？（英語音名）",
+      "choices": [
+        "A♭・D♭・E♭",
+        "A♭・C・E♭・G",
+        "A♭・C♭・E♭・G♭",
+        "A♭・C・E♭・G♭"
+      ],
+      "answerIndex": 0,
+      "explanation": "A♭sus4：A♭・D♭・E♭。"
+    },
+    {
+      "id": "mus_yougo06_012",
+      "category": "calculation",
+      "prompt": "C・E♭・G・B♭ の和音のコードネームは？（英語音名）",
+      "choices": [
+        "CM7",
+        "Cm7",
+        "C7",
+        "Cdim7"
+      ],
+      "answerIndex": 1,
+      "explanation": "根音 C のm7なので Cm7。"
+    },
+    {
+      "id": "mus_yougo06_013",
+      "category": "calculation",
+      "prompt": "コードネーム「EM7」の構成音は？（英語音名）",
+      "choices": [
+        "E・G・B♭・D♭",
+        "E・G♯・B・D♯",
+        "E・G♯・B・D",
+        "E・G・B・D"
+      ],
+      "answerIndex": 1,
+      "explanation": "EM7：E・G♯・B・D♯。"
+    },
+    {
+      "id": "mus_yougo06_014",
+      "category": "calculation",
+      "prompt": "E・G・B・D の和音のコードネームは？（英語音名）",
+      "choices": [
+        "Em7",
+        "EM7",
+        "Edim7",
+        "E7"
+      ],
+      "answerIndex": 0,
+      "explanation": "根音 E のm7なので Em7。"
+    },
+    {
+      "id": "mus_yougo06_015",
+      "category": "calculation",
+      "prompt": "コードネーム「A7」の構成音は？（英語音名）",
+      "choices": [
+        "A・C♯・E・G♯",
+        "A・C・E♭・G♭",
+        "A・C・E・G",
+        "A・C♯・E・G"
+      ],
+      "answerIndex": 3,
+      "explanation": "A7：A・C♯・E・G。"
+    },
+    {
+      "id": "mus_yougo06_016",
+      "category": "calculation",
+      "prompt": "D・G・A の和音のコードネームは？（英語音名）",
+      "choices": [
+        "Dsus4",
+        "Dm7",
+        "DM7",
+        "D7"
+      ],
+      "answerIndex": 0,
+      "explanation": "根音 D のsus4なので Dsus4。"
+    },
+    {
+      "id": "mus_yougo06_017",
+      "category": "calculation",
+      "prompt": "コードネーム「Gsus4」の構成音は？（英語音名）",
+      "choices": [
+        "G・C・D",
+        "G・B・D・F",
+        "G・B♭・D・F",
+        "G・B・D・F♯"
+      ],
+      "answerIndex": 0,
+      "explanation": "Gsus4：G・C・D。"
+    },
+    {
+      "id": "mus_yougo06_018",
+      "category": "calculation",
+      "prompt": "B♭・D・F・A の和音のコードネームは？（英語音名）",
+      "choices": [
+        "B♭M7",
+        "B♭7",
+        "B♭dim7",
+        "B♭m7"
+      ],
+      "answerIndex": 0,
+      "explanation": "根音 B♭ のM7なので B♭M7。"
+    }
+  ]
+}

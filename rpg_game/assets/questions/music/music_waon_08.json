@@ -1,0 +1,216 @@
+{
+  "setId": "music_waon_08",
+  "worldId": "music",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mus_waon08_001",
+      "category": "knowledge",
+      "prompt": "フレーズの区切りや曲の終わりにみられる、和音の決まった進行を何という？",
+      "choices": [
+        "反復",
+        "変奏",
+        "終止（カデンツ）",
+        "転調"
+      ],
+      "answerIndex": 2,
+      "explanation": "聴き手に「終わった」「まだ続く」と感じさせる。"
+    },
+    {
+      "id": "mus_waon08_002",
+      "category": "knowledge",
+      "prompt": "属和音（ⅤまたはⅤ７）から主和音（Ⅰ）に進んで終わる形は？",
+      "choices": [
+        "正格終止（完全終止）",
+        "変格終止",
+        "偽終止",
+        "半終止"
+      ],
+      "answerIndex": 0,
+      "explanation": "もっとも強い解決感。D→T。"
+    },
+    {
+      "id": "mus_waon08_003",
+      "category": "knowledge",
+      "prompt": "フレーズの途中で属和音（Ⅴ）で終わる形は？",
+      "choices": [
+        "偽終止",
+        "正格終止",
+        "半終止",
+        "変格終止"
+      ],
+      "answerIndex": 2,
+      "explanation": "まだ続く感じを持たせる。"
+    },
+    {
+      "id": "mus_waon08_004",
+      "category": "knowledge",
+      "prompt": "下属和音（Ⅳ）から主和音（Ⅰ）に進んで終わる形は？",
+      "choices": [
+        "偽終止",
+        "正格終止",
+        "変格終止",
+        "半終止"
+      ],
+      "answerIndex": 2,
+      "explanation": "S→T。賛美歌の最後でよく使われる。"
+    },
+    {
+      "id": "mus_waon08_005",
+      "category": "knowledge",
+      "prompt": "変格終止の別名は？",
+      "choices": [
+        "アーメン終止",
+        "カデンツァ",
+        "完全終止",
+        "ドリア終止"
+      ],
+      "answerIndex": 0,
+      "explanation": "賛美歌の最後の「アーメン」でよく使われるため。"
+    },
+    {
+      "id": "mus_waon08_006",
+      "category": "knowledge",
+      "prompt": "属和音から主和音に進むと見せかけて、主にⅥに進む形は？",
+      "choices": [
+        "半終止",
+        "偽終止",
+        "変格終止",
+        "正格終止"
+      ],
+      "answerIndex": 1,
+      "explanation": "聴き手の予想を裏切る効果がある。"
+    },
+    {
+      "id": "mus_waon08_007",
+      "category": "knowledge",
+      "prompt": "偽終止で、属和音のあとに進むことが多い和音は？",
+      "choices": [
+        "Ⅰ",
+        "Ⅱ",
+        "Ⅵ",
+        "Ⅳ"
+      ],
+      "answerIndex": 2,
+      "explanation": "Ⅵ度の和音に進んで段落をつける。"
+    },
+    {
+      "id": "mus_waon08_008",
+      "category": "knowledge",
+      "prompt": "もっとも強い解決感と安定感をもち、曲の最後によく使われる終止は？",
+      "choices": [
+        "変格終止",
+        "偽終止",
+        "正格終止",
+        "半終止"
+      ],
+      "answerIndex": 2,
+      "explanation": "Ⅴ（Ⅴ７）→Ⅰ。"
+    },
+    {
+      "id": "mus_waon08_009",
+      "category": "thinking",
+      "prompt": "C dur で、和音が［G・H・D］→［C・E・G］と進んで段落がついた。この終止は？",
+      "choices": [
+        "偽終止",
+        "半終止",
+        "変格終止",
+        "正格終止"
+      ],
+      "answerIndex": 3,
+      "explanation": "Ⅴ→Ⅰ なので正格終止。"
+    },
+    {
+      "id": "mus_waon08_010",
+      "category": "thinking",
+      "prompt": "G dur で、和音が［C・E・G］→［G・H・D］と進んで段落がついた。この終止は？",
+      "choices": [
+        "半終止",
+        "偽終止",
+        "正格終止",
+        "変格終止"
+      ],
+      "answerIndex": 3,
+      "explanation": "Ⅳ→Ⅰ なので変格終止。"
+    },
+    {
+      "id": "mus_waon08_011",
+      "category": "thinking",
+      "prompt": "F dur で、和音が［C・E・G］→［D・F・A］と進んで段落がついた。この終止は？",
+      "choices": [
+        "半終止",
+        "変格終止",
+        "偽終止",
+        "正格終止"
+      ],
+      "answerIndex": 2,
+      "explanation": "Ⅴ→Ⅵ なので偽終止。"
+    },
+    {
+      "id": "mus_waon08_012",
+      "category": "thinking",
+      "prompt": "D dur で、和音が［E・G・H］→［A・Cis・E］と進んで段落がついた。この終止は？",
+      "choices": [
+        "変格終止",
+        "正格終止",
+        "半終止",
+        "偽終止"
+      ],
+      "answerIndex": 2,
+      "explanation": "Ⅱ→Ⅴ なので半終止。"
+    },
+    {
+      "id": "mus_waon08_013",
+      "category": "thinking",
+      "prompt": "B dur で、和音が［F・A・C］→［B・D・F］と進んで段落がついた。この終止は？",
+      "choices": [
+        "半終止",
+        "偽終止",
+        "正格終止",
+        "変格終止"
+      ],
+      "answerIndex": 2,
+      "explanation": "Ⅴ→Ⅰ なので正格終止。"
+    },
+    {
+      "id": "mus_waon08_014",
+      "category": "thinking",
+      "prompt": "A dur で、和音が［D・Fis・A］→［A・Cis・E］と進んで段落がついた。この終止は？",
+      "choices": [
+        "偽終止",
+        "変格終止",
+        "半終止",
+        "正格終止"
+      ],
+      "answerIndex": 1,
+      "explanation": "Ⅳ→Ⅰ なので変格終止。"
+    },
+    {
+      "id": "mus_waon08_015",
+      "category": "thinking",
+      "prompt": "Es dur で、和音が［B・D・F］→［C・Es・G］と進んで段落がついた。この終止は？",
+      "choices": [
+        "半終止",
+        "正格終止",
+        "偽終止",
+        "変格終止"
+      ],
+      "answerIndex": 2,
+      "explanation": "Ⅴ→Ⅵ なので偽終止。"
+    },
+    {
+      "id": "mus_waon08_016",
+      "category": "thinking",
+      "prompt": "E dur で、和音が［Fis・A・Cis］→［H・Dis・Fis］と進んで段落がついた。この終止は？",
+      "choices": [
+        "正格終止",
+        "変格終止",
+        "半終止",
+        "偽終止"
+      ],
+      "answerIndex": 2,
+      "explanation": "Ⅱ→Ⅴ なので半終止。"
+    }
+  ]
+}
