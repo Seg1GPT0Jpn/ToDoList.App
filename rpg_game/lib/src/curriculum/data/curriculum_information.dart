@@ -2,8 +2,7 @@
 
 import '../curriculum.dart';
 
-const informationCurriculum =
-CurriculumNode(
+const informationCurriculum = CurriculumNode(
   id: 'information',
   name: '情報',
   level: CurriculumLevel.subject,
@@ -65,7 +64,15 @@ CurriculumNode(
                   id: 'information.info.society.moral.ip',
                   name: '知的財産権（著作権・産業財産権）',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['著作権', '知的財産', '産業財産', '特許', '商標', 'クリエイティブ・コモンズ', '引用'],
+                  keywords: [
+                    '著作権',
+                    '知的財産',
+                    '産業財産',
+                    '特許',
+                    '商標',
+                    'クリエイティブ・コモンズ',
+                    '引用'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'information.info.society.moral.privacy',
@@ -77,7 +84,14 @@ CurriculumNode(
                   id: 'information.info.society.moral.moral',
                   name: '情報モラルとネット上のトラブル',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['情報モラル', 'SNS', '炎上', 'ネットいじめ', 'フィルタリング', 'デジタルタトゥー'],
+                  keywords: [
+                    '情報モラル',
+                    'SNS',
+                    '炎上',
+                    'ネットいじめ',
+                    'フィルタリング',
+                    'デジタルタトゥー'
+                  ],
                 ),
               ],
             ),
@@ -92,13 +106,29 @@ CurriculumNode(
                   id: 'information.info.society.security.threat',
                   name: '脅威（マルウェア・フィッシング・ソーシャルエンジニアリング）',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['マルウェア', 'ウイルス', 'フィッシング', '不正アクセス', 'ランサム', 'ソーシャルエンジニアリング', '心理的なすき'],
+                  keywords: [
+                    'マルウェア',
+                    'ウイルス',
+                    'フィッシング',
+                    '不正アクセス',
+                    'ランサム',
+                    'ソーシャルエンジニアリング',
+                    '心理的なすき'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'information.info.society.security.measure',
                   name: '対策（認証・パスワード・アップデート）',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['パスワード', '認証', '二要素', '多要素', 'ファイアウォール', 'アップデート', 'バックアップ'],
+                  keywords: [
+                    'パスワード',
+                    '認証',
+                    '二要素',
+                    '多要素',
+                    'ファイアウォール',
+                    'アップデート',
+                    'バックアップ'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'information.info.society.security.law',
@@ -169,7 +199,13 @@ CurriculumNode(
                   id: 'information.info.design.design.ui',
                   name: 'ユーザインタフェースとユニバーサルデザイン',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['UI', 'ユーザインタフェース', 'ユニバーサル', 'アクセシビリティ', 'ユーザビリティ'],
+                  keywords: [
+                    'UI',
+                    'ユーザインタフェース',
+                    'ユニバーサル',
+                    'アクセシビリティ',
+                    'ユーザビリティ'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'information.info.design.design.layout',
@@ -259,7 +295,15 @@ CurriculumNode(
                   id: 'information.info.computer.hardware.components',
                   name: 'コンピュータの構成要素',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['CPU', 'メモリ', '主記憶', '補助記憶', '入力装置', '出力装置', '五大装置'],
+                  keywords: [
+                    'CPU',
+                    'メモリ',
+                    '主記憶',
+                    '補助記憶',
+                    '入力装置',
+                    '出力装置',
+                    '五大装置'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'information.info.computer.hardware.cpu',
@@ -430,7 +474,17 @@ CurriculumNode(
                   id: 'information.info.network.basic.address',
                   name: 'IPアドレス・サブネット・DNS',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['IPアドレス', 'ドメイン', 'DNS', 'サブネット', 'ネットマスク', 'IPv4', 'IPv6', 'MACアドレス', 'DHCP'],
+                  keywords: [
+                    'IPアドレス',
+                    'ドメイン',
+                    'DNS',
+                    'サブネット',
+                    'ネットマスク',
+                    'IPv4',
+                    'IPv6',
+                    'MACアドレス',
+                    'DHCP'
+                  ],
                 ),
               ],
             ),
@@ -452,7 +506,15 @@ CurriculumNode(
                   id: 'information.info.network.protocol.web',
                   name: 'Webとメールのしくみ',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['HTTP', 'URL', 'Web', 'メール', 'SMTP', 'POP', 'IMAP'],
+                  keywords: [
+                    'HTTP',
+                    'URL',
+                    'Web',
+                    'メール',
+                    'SMTP',
+                    'POP',
+                    'IMAP'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'information.info.network.protocol.error',
@@ -554,7 +616,16 @@ CurriculumNode(
                   id: 'information.info.data.analysis.ml',
                   name: '機械学習とデータサイエンス（情報Ⅱ）',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['機械学習', 'データサイエンス', '学習データ', 'クラスタ', '正解ラベル', '教師あり', '教師なし', '正解率'],
+                  keywords: [
+                    '機械学習',
+                    'データサイエンス',
+                    '学習データ',
+                    'クラスタ',
+                    '正解ラベル',
+                    '教師あり',
+                    '教師なし',
+                    '正解率'
+                  ],
                 ),
               ],
             ),

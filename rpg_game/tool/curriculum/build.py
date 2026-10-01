@@ -9,6 +9,8 @@
 """
 import os
 import re
+import shutil
+import subprocess
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -43,6 +45,13 @@ class Node:
         for c in self.children:
             yield from c.all()
 
+
+
+def dart_format(paths):
+    """生成した Dart を dart format で整える（dart がなければそのまま）。"""
+    dart = shutil.which('dart')
+    if dart:
+        subprocess.run([dart, 'format', *paths], capture_output=True)
 
 def parse_attrs(parts, where):
     attrs = {}
@@ -224,6 +233,7 @@ def main():
     with open(os.path.join(OUT, 'curriculum_all.dart'), 'w',
               encoding='utf-8') as f:
         f.write('\n'.join(lines) + '\n')
+    dart_format([OUT])
     counts = {}
     for n in ids.values():
         counts[n.level] = counts.get(n.level, 0) + 1

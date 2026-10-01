@@ -2,8 +2,7 @@
 
 import '../curriculum.dart';
 
-const mathCurriculum =
-CurriculumNode(
+const mathCurriculum = CurriculumNode(
   id: 'math',
   name: '数学',
   level: CurriculumLevel.subject,
@@ -75,7 +74,16 @@ CurriculumNode(
                   id: 'math.m1.numexpr.real.numbers',
                   name: '数の分類（有理数・無理数）',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['有理数', '無理数', '循環小数', '実数', '自然数', '整数', '分数で表す', '0.333'],
+                  keywords: [
+                    '有理数',
+                    '無理数',
+                    '循環小数',
+                    '実数',
+                    '自然数',
+                    '整数',
+                    '分数で表す',
+                    '0.333'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'math.m1.numexpr.real.absolute',
@@ -340,7 +348,15 @@ CurriculumNode(
                   id: 'math.m1.trig.ratio.relation',
                   name: '三角比の相互関係',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['sin²', 'cos²', '相互関係', '1+tan', 'sinθcosθ', 'sinθ+cosθ', 'sinθ−cosθ'],
+                  keywords: [
+                    'sin²',
+                    'cos²',
+                    '相互関係',
+                    '1+tan',
+                    'sinθcosθ',
+                    'sinθ+cosθ',
+                    'sinθ−cosθ'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'math.m1.trig.ratio.obtuse',

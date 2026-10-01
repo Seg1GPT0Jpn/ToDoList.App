@@ -12,6 +12,8 @@ map.txt の「問題セット → 範囲（とその範囲で手がかりがな�
 import json
 import os
 import re
+import shutil
+import subprocess
 import sys
 
 from build import load_all
@@ -20,6 +22,13 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 QDIR = os.path.join(HERE, '..', '..', 'assets', 'questions')
 ASCII_RE = re.compile(r'^[A-Za-z0-9 .\-+/\'~²³^_]+$')
 
+
+
+def dart_format(paths):
+    """生成した Dart を dart format で整える（dart がなければそのまま）。"""
+    dart = shutil.which('dart')
+    if dart:
+        subprocess.run([dart, 'format', *paths], capture_output=True)
 
 def load_map():
     """map.txt を読む。1行＝「セットID 範囲 [既定の単元|-] [種類:範囲:既定の単元 ...]」。
@@ -215,6 +224,7 @@ def write_index(counts, unit_sets, ids, check):
             sys.exit('curriculum_index.dart が古い。assign.py を実行してください')
         with open(INDEX, 'w', encoding='utf-8') as f:
             f.write(out)
+        dart_format([INDEX])
 
 
 def main():

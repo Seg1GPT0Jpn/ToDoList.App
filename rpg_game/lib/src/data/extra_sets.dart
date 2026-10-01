@@ -13,6 +13,13 @@ class ExtraSet {
 
 abstract final class ExtraSets {
   static const all = [
+    // 4択以外の出題形式（記述・並べ替え・誘導・数値入力など）の練習
+    ExtraSet('math', 'math_formats_01', '記述・証明・誘導・数値入力'),
+    ExtraSet('english', 'english_formats_01', '並べかえ・和訳・英作文・論理の読解'),
+    ExtraSet('science', 'science_formats_01', '計算・考察の記述・誘導'),
+    ExtraSet('social', 'social_formats_01', '年代順・論述・資料の読み取り'),
+    ExtraSet('japanese', 'japanese_formats_01', '要約・構成・係り結び'),
+    ExtraSet('information', 'information_formats_01', 'トレース・計算・記述'),
     ExtraSet('english', 'english_stage_exam_01', '語彙・熟語・英作文・長文'),
     ExtraSet('english', 'english_applied_reading_01', 'リスニング・図表・複数の英文'),
     ExtraSet('science', 'science_physics_rlc_01', '電磁気・交流・RLC 回路'),

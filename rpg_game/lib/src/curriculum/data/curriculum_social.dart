@@ -2,8 +2,7 @@
 
 import '../curriculum.dart';
 
-const socialCurriculum =
-CurriculumNode(
+const socialCurriculum = CurriculumNode(
   id: 'social',
   name: '社会',
   level: CurriculumLevel.subject,
@@ -127,19 +126,45 @@ CurriculumNode(
                   id: 'social.geo.nature.landform.river',
                   name: '河川がつくる地形（扇状地・三角州・氾濫原）',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['扇状地', '三角州', '氾濫原', '自然堤防', '後背湿地', '河岸段丘', 'V字谷'],
+                  keywords: [
+                    '扇状地',
+                    '三角州',
+                    '氾濫原',
+                    '自然堤防',
+                    '後背湿地',
+                    '河岸段丘',
+                    'V字谷'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'social.geo.nature.landform.coast',
                   name: '海岸の地形（リアス・フィヨルド・砂州）',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['リアス', 'フィヨルド', '砂州', '砂嘴', '海岸段丘', '沈水', '離水', 'エスチュアリー'],
+                  keywords: [
+                    'リアス',
+                    'フィヨルド',
+                    '砂州',
+                    '砂嘴',
+                    '海岸段丘',
+                    '沈水',
+                    '離水',
+                    'エスチュアリー'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'social.geo.nature.landform.other',
                   name: '氷河・乾燥・カルスト・サンゴ礁の地形',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['氷河', 'カール', 'モレーン', 'カルスト', 'ドリーネ', 'サンゴ礁', 'ワジ', '砂丘'],
+                  keywords: [
+                    '氷河',
+                    'カール',
+                    'モレーン',
+                    'カルスト',
+                    'ドリーネ',
+                    'サンゴ礁',
+                    'ワジ',
+                    '砂丘'
+                  ],
                 ),
               ],
             ),
@@ -160,7 +185,26 @@ CurriculumNode(
                   id: 'social.geo.nature.climate.koppen',
                   name: 'ケッペンの気候区分',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['ケッペン', 'Af', 'Aw', 'BW', 'BS', 'Cfa', 'Cfb', 'Cs', 'Cw', 'Df', 'Dw', 'ET', 'EF', '熱帯', '乾燥帯', '温帯', '冷帯', '寒帯'],
+                  keywords: [
+                    'ケッペン',
+                    'Af',
+                    'Aw',
+                    'BW',
+                    'BS',
+                    'Cfa',
+                    'Cfb',
+                    'Cs',
+                    'Cw',
+                    'Df',
+                    'Dw',
+                    'ET',
+                    'EF',
+                    '熱帯',
+                    '乾燥帯',
+                    '温帯',
+                    '冷帯',
+                    '寒帯'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'social.geo.nature.climate.graph',
@@ -188,7 +232,15 @@ CurriculumNode(
                   id: 'social.geo.nature.soil.soil',
                   name: '土壌（ラトソル・ポドゾル・チェルノーゼムなど）',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['ラトソル', 'ポドゾル', 'チェルノーゼム', 'テラロッサ', 'テラローシャ', 'レグール', '土壌'],
+                  keywords: [
+                    'ラトソル',
+                    'ポドゾル',
+                    'チェルノーゼム',
+                    'テラロッサ',
+                    'テラローシャ',
+                    'レグール',
+                    '土壌'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'social.geo.nature.soil.life',
@@ -321,13 +373,31 @@ CurriculumNode(
                   id: 'social.geo.industry.agriculture.types',
                   name: 'いろいろな農業（混合・酪農・園芸・地中海式・プランテーション）',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['混合農業', '酪農', '園芸', '地中海式', 'プランテーション', '焼畑', '遊牧', 'オアシス'],
+                  keywords: [
+                    '混合農業',
+                    '酪農',
+                    '園芸',
+                    '地中海式',
+                    'プランテーション',
+                    '焼畑',
+                    '遊牧',
+                    'オアシス'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'social.geo.industry.agriculture.crops',
                   name: '主な作物と統計',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['米', '小麦', 'とうもろこし', '大豆', 'コーヒー', 'カカオ', '茶', '生産量'],
+                  keywords: [
+                    '米',
+                    '小麦',
+                    'とうもろこし',
+                    '大豆',
+                    'コーヒー',
+                    'カカオ',
+                    '茶',
+                    '生産量'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'social.geo.industry.agriculture.forestry',
@@ -387,7 +457,17 @@ CurriculumNode(
                   id: 'social.geo.industry.resource.trade',
                   name: '貿易と経済圏',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['貿易', '輸出', '輸入', 'EU', 'ASEAN', 'USMCA', '経済圏', 'FTA', 'EPA'],
+                  keywords: [
+                    '貿易',
+                    '輸出',
+                    '輸入',
+                    'EU',
+                    'ASEAN',
+                    'USMCA',
+                    '経済圏',
+                    'FTA',
+                    'EPA'
+                  ],
                 ),
               ],
             ),
@@ -416,13 +496,27 @@ CurriculumNode(
                   id: 'social.geo.urban.city.function',
                   name: '都市の機能と構造',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['都市', 'CBD', '中心業務地区', '首位都市', 'プライメートシティ', 'メガロポリス'],
+                  keywords: [
+                    '都市',
+                    'CBD',
+                    '中心業務地区',
+                    '首位都市',
+                    'プライメートシティ',
+                    'メガロポリス'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'social.geo.urban.city.problem',
                   name: '都市問題と再開発',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['都市問題', 'スラム', 'スプロール', 'ドーナツ化', 'ジェントリフィケーション', '再開発'],
+                  keywords: [
+                    '都市問題',
+                    'スラム',
+                    'スプロール',
+                    'ドーナツ化',
+                    'ジェントリフィケーション',
+                    '再開発'
+                  ],
                 ),
               ],
             ),
@@ -472,7 +566,15 @@ CurriculumNode(
                   id: 'social.geo.regions.asia.southeast',
                   name: '東南アジア',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['東南アジア', 'ASEAN', 'タイ', 'インドネシア', 'ベトナム', 'マレーシア', 'フィリピン'],
+                  keywords: [
+                    '東南アジア',
+                    'ASEAN',
+                    'タイ',
+                    'インドネシア',
+                    'ベトナム',
+                    'マレーシア',
+                    'フィリピン'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'social.geo.regions.asia.south',
@@ -573,7 +675,17 @@ CurriculumNode(
                   id: 'social.geo.japan.japan.region',
                   name: '日本の各地方',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['北海道', '東北', '関東', '中部', '近畿', '中国', '四国', '九州', '沖縄'],
+                  keywords: [
+                    '北海道',
+                    '東北',
+                    '関東',
+                    '中部',
+                    '近畿',
+                    '中国',
+                    '四国',
+                    '九州',
+                    '沖縄'
+                  ],
                 ),
               ],
             ),
@@ -695,13 +807,32 @@ CurriculumNode(
                   id: 'social.jhist.ancient.kofun.asuka',
                   name: '推古朝と聖徳太子',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['推古', '聖徳太子', '厩戸', '冠位十二階', '憲法十七条', '遣隋使', '飛鳥文化', '法隆寺'],
+                  keywords: [
+                    '推古',
+                    '聖徳太子',
+                    '厩戸',
+                    '冠位十二階',
+                    '憲法十七条',
+                    '遣隋使',
+                    '飛鳥文化',
+                    '法隆寺'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'social.jhist.ancient.kofun.taika',
                   name: '大化改新と律令国家の形成',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['大化', '乙巳の変', '中大兄', '白村江', '壬申の乱', '天武', '持統', '藤原京', '白鳳'],
+                  keywords: [
+                    '大化',
+                    '乙巳の変',
+                    '中大兄',
+                    '白村江',
+                    '壬申の乱',
+                    '天武',
+                    '持統',
+                    '藤原京',
+                    '白鳳'
+                  ],
                 ),
               ],
             ),
@@ -735,7 +866,17 @@ CurriculumNode(
                   id: 'social.jhist.ancient.nara.tenpyo',
                   name: '天平文化と仏教',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['天平', '東大寺', '大仏', '正倉院', '古事記', '日本書紀', '万葉集', '鑑真', '行基'],
+                  keywords: [
+                    '天平',
+                    '東大寺',
+                    '大仏',
+                    '正倉院',
+                    '古事記',
+                    '日本書紀',
+                    '万葉集',
+                    '鑑真',
+                    '行基'
+                  ],
                 ),
               ],
             ),
@@ -751,7 +892,17 @@ CurriculumNode(
                   id: 'social.jhist.ancient.heian.early',
                   name: '平安遷都と律令の再建',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['平安京', '桓武', '坂上田村麻呂', '蝦夷', '嵯峨', '蔵人', '検非違使', '最澄', '空海'],
+                  keywords: [
+                    '平安京',
+                    '桓武',
+                    '坂上田村麻呂',
+                    '蝦夷',
+                    '嵯峨',
+                    '蔵人',
+                    '検非違使',
+                    '最澄',
+                    '空海'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'social.jhist.ancient.heian.regency',
@@ -769,7 +920,16 @@ CurriculumNode(
                   id: 'social.jhist.ancient.heian.local',
                   name: '地方政治の変化と武士の台頭',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['受領', '荘園', '寄進', '武士', '平将門', '藤原純友', '前九年', '後三年'],
+                  keywords: [
+                    '受領',
+                    '荘園',
+                    '寄進',
+                    '武士',
+                    '平将門',
+                    '藤原純友',
+                    '前九年',
+                    '後三年'
+                  ],
                 ),
               ],
             ),
@@ -861,7 +1021,17 @@ CurriculumNode(
                   id: 'social.jhist.medieval.mongol.culture',
                   name: '鎌倉文化と鎌倉新仏教',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['鎌倉文化', '浄土宗', '浄土真宗', '日蓮', '禅宗', '運慶', '方丈記', '徒然草', '平家物語'],
+                  keywords: [
+                    '鎌倉文化',
+                    '浄土宗',
+                    '浄土真宗',
+                    '日蓮',
+                    '禅宗',
+                    '運慶',
+                    '方丈記',
+                    '徒然草',
+                    '平家物語'
+                  ],
                 ),
               ],
             ),
@@ -917,7 +1087,18 @@ CurriculumNode(
                   id: 'social.jhist.medieval.sengoku.culture',
                   name: '室町文化（北山・東山）',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['北山文化', '東山文化', '金閣', '銀閣', '能', '狂言', '書院造', '水墨画', '雪舟', '連歌'],
+                  keywords: [
+                    '北山文化',
+                    '東山文化',
+                    '金閣',
+                    '銀閣',
+                    '能',
+                    '狂言',
+                    '書院造',
+                    '水墨画',
+                    '雪舟',
+                    '連歌'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'social.jhist.medieval.sengoku.trade',
@@ -1027,7 +1208,16 @@ CurriculumNode(
                   id: 'social.jhist.early_modern.society.kasei',
                   name: '化政文化と学問（国学・蘭学）',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['化政', '葛飾北斎', '歌川広重', '国学', '本居宣長', '蘭学', '杉田玄白', '伊能忠敬'],
+                  keywords: [
+                    '化政',
+                    '葛飾北斎',
+                    '歌川広重',
+                    '国学',
+                    '本居宣長',
+                    '蘭学',
+                    '杉田玄白',
+                    '伊能忠敬'
+                  ],
                 ),
               ],
             ),
@@ -1215,7 +1405,15 @@ CurriculumNode(
                   id: 'social.jhist.modern.taisho.democracy',
                   name: '大正デモクラシーと政党内閣',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['大正デモクラシー', '護憲', '原敬', '政党内閣', '普通選挙', '吉野作造', '民本主義'],
+                  keywords: [
+                    '大正デモクラシー',
+                    '護憲',
+                    '原敬',
+                    '政党内閣',
+                    '普通選挙',
+                    '吉野作造',
+                    '民本主義'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'social.jhist.modern.taisho.movement',
@@ -1419,7 +1617,18 @@ CurriculumNode(
                   id: 'social.whist.ancient.china.qinhan',
                   name: '秦・漢',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['秦', '始皇帝', '郡県制', '漢', '劉邦', '武帝', '郡国制', '王莽', '張騫', '紙'],
+                  keywords: [
+                    '秦',
+                    '始皇帝',
+                    '郡県制',
+                    '漢',
+                    '劉邦',
+                    '武帝',
+                    '郡国制',
+                    '王莽',
+                    '張騫',
+                    '紙'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'social.whist.ancient.china.nanbei',
@@ -1440,7 +1649,14 @@ CurriculumNode(
                   id: 'social.whist.ancient.greece.polis',
                   name: 'ポリスの成立とアテネ・スパルタ',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['ポリス', 'アテネ', 'スパルタ', 'ソロン', 'ペイシストラトス', 'クレイステネス'],
+                  keywords: [
+                    'ポリス',
+                    'アテネ',
+                    'スパルタ',
+                    'ソロン',
+                    'ペイシストラトス',
+                    'クレイステネス'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'social.whist.ancient.greece.war',
@@ -1458,7 +1674,14 @@ CurriculumNode(
                   id: 'social.whist.ancient.greece.culture',
                   name: 'ギリシア文化',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['ギリシア文化', 'ソクラテス', 'プラトン', 'アリストテレス', 'ホメロス', 'パルテノン'],
+                  keywords: [
+                    'ギリシア文化',
+                    'ソクラテス',
+                    'プラトン',
+                    'アリストテレス',
+                    'ホメロス',
+                    'パルテノン'
+                  ],
                 ),
               ],
             ),
@@ -1480,7 +1703,14 @@ CurriculumNode(
                   id: 'social.whist.ancient.rome.empire',
                   name: 'ローマ帝国',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['帝政', 'アウグストゥス', 'パクス=ロマーナ', '五賢帝', 'ディオクレティアヌス', 'コンスタンティヌス'],
+                  keywords: [
+                    '帝政',
+                    'アウグストゥス',
+                    'パクス=ロマーナ',
+                    '五賢帝',
+                    'ディオクレティアヌス',
+                    'コンスタンティヌス'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'social.whist.ancient.rome.christianity',
@@ -1567,7 +1797,15 @@ CurriculumNode(
                   id: 'social.whist.medieval.europe.late',
                   name: '中世後期の変化（百年戦争・黒死病）',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['百年戦争', '黒死病', 'ペスト', 'バラ戦争', '教会大分裂', 'ジャックリー', 'ワット=タイラー'],
+                  keywords: [
+                    '百年戦争',
+                    '黒死病',
+                    'ペスト',
+                    'バラ戦争',
+                    '教会大分裂',
+                    'ジャックリー',
+                    'ワット=タイラー'
+                  ],
                 ),
               ],
             ),
@@ -1594,7 +1832,14 @@ CurriculumNode(
                   id: 'social.whist.medieval.islam.dynasties',
                   name: 'イスラーム諸王朝の分立',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['ファーティマ', 'セルジューク', 'アイユーブ', 'マムルーク', '後ウマイヤ', 'ガズナ'],
+                  keywords: [
+                    'ファーティマ',
+                    'セルジューク',
+                    'アイユーブ',
+                    'マムルーク',
+                    '後ウマイヤ',
+                    'ガズナ'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'social.whist.medieval.islam.culture',
@@ -1634,7 +1879,16 @@ CurriculumNode(
                   id: 'social.whist.medieval.china.culture',
                   name: '唐・宋の文化',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['唐詩', '李白', '杜甫', '朱子学', '宋学', '木版印刷', '羅針盤', '火薬'],
+                  keywords: [
+                    '唐詩',
+                    '李白',
+                    '杜甫',
+                    '朱子学',
+                    '宋学',
+                    '木版印刷',
+                    '羅針盤',
+                    '火薬'
+                  ],
                 ),
               ],
             ),
@@ -1686,7 +1940,15 @@ CurriculumNode(
                   id: 'social.whist.early_modern.renaissance.renaissance',
                   name: 'ルネサンス',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['ルネサンス', 'レオナルド', 'ミケランジェロ', 'ラファエロ', '人文主義', '活版印刷', 'グーテンベルク'],
+                  keywords: [
+                    'ルネサンス',
+                    'レオナルド',
+                    'ミケランジェロ',
+                    'ラファエロ',
+                    '人文主義',
+                    '活版印刷',
+                    'グーテンベルク'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'social.whist.early_modern.renaissance.reformation',
@@ -1759,7 +2021,14 @@ CurriculumNode(
                   id: 'social.whist.early_modern.absolutism.east',
                   name: 'プロイセン・オーストリア・ロシアの台頭',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['フリードリヒ', 'マリア=テレジア', '七年戦争', 'ピョートル', 'エカチェリーナ', '啓蒙専制'],
+                  keywords: [
+                    'フリードリヒ',
+                    'マリア=テレジア',
+                    '七年戦争',
+                    'ピョートル',
+                    'エカチェリーナ',
+                    '啓蒙専制'
+                  ],
                 ),
               ],
             ),
@@ -1792,7 +2061,14 @@ CurriculumNode(
                   id: 'social.whist.early_modern.asia.safavid',
                   name: 'サファヴィー朝とムガル帝国',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['サファヴィー', 'アッバース1世', 'ムガル', 'アクバル', 'タージ=マハル', 'シク教'],
+                  keywords: [
+                    'サファヴィー',
+                    'アッバース1世',
+                    'ムガル',
+                    'アクバル',
+                    'タージ=マハル',
+                    'シク教'
+                  ],
                 ),
               ],
             ),
@@ -1816,7 +2092,15 @@ CurriculumNode(
                   id: 'social.whist.modern.revolution.enlight',
                   name: '科学革命と啓蒙思想',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['啓蒙', 'ロック', 'モンテスキュー', 'ルソー', 'ヴォルテール', 'ニュートン', '科学革命'],
+                  keywords: [
+                    '啓蒙',
+                    'ロック',
+                    'モンテスキュー',
+                    'ルソー',
+                    'ヴォルテール',
+                    'ニュートン',
+                    '科学革命'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'social.whist.modern.revolution.america',
@@ -1828,7 +2112,14 @@ CurriculumNode(
                   id: 'social.whist.modern.revolution.france',
                   name: 'フランス革命',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['フランス革命', 'バスティーユ', '人権宣言', 'ジャコバン', 'ロベスピエール', 'テルミドール'],
+                  keywords: [
+                    'フランス革命',
+                    'バスティーユ',
+                    '人権宣言',
+                    'ジャコバン',
+                    'ロベスピエール',
+                    'テルミドール'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'social.whist.modern.revolution.napoleon',
@@ -1861,7 +2152,14 @@ CurriculumNode(
                   id: 'social.whist.modern.industrial.society',
                   name: '資本主義と社会問題・社会主義',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['資本主義', '労働問題', '社会主義', 'マルクス', 'オーウェン', 'チャーティスト'],
+                  keywords: [
+                    '資本主義',
+                    '労働問題',
+                    '社会主義',
+                    'マルクス',
+                    'オーウェン',
+                    'チャーティスト'
+                  ],
                 ),
               ],
             ),
@@ -1877,13 +2175,27 @@ CurriculumNode(
                   id: 'social.whist.modern.nation.vienna',
                   name: 'ウィーン体制とその動揺',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['ウィーン会議', 'メッテルニヒ', '七月革命', '二月革命', '1848年', 'ウィーン体制'],
+                  keywords: [
+                    'ウィーン会議',
+                    'メッテルニヒ',
+                    '七月革命',
+                    '二月革命',
+                    '1848年',
+                    'ウィーン体制'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'social.whist.modern.nation.unify',
                   name: 'イタリアとドイツの統一',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['イタリア統一', 'ガリバルディ', 'カヴール', 'ドイツ統一', 'ビスマルク', '鉄血政策'],
+                  keywords: [
+                    'イタリア統一',
+                    'ガリバルディ',
+                    'カヴール',
+                    'ドイツ統一',
+                    'ビスマルク',
+                    '鉄血政策'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'social.whist.modern.nation.america',
@@ -1923,13 +2235,30 @@ CurriculumNode(
                   id: 'social.whist.modern.imperialism.china',
                   name: '清の動揺と変革（アヘン戦争〜辛亥革命）',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['アヘン戦争', '南京条約', '太平天国', '洋務運動', '変法', '義和団', '辛亥革命', '孫文'],
+                  keywords: [
+                    'アヘン戦争',
+                    '南京条約',
+                    '太平天国',
+                    '洋務運動',
+                    '変法',
+                    '義和団',
+                    '辛亥革命',
+                    '孫文'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'social.whist.modern.imperialism.asia',
                   name: 'インド・東南アジア・西アジアの変容',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['インド大反乱', 'インド帝国', '東インド会社', 'タンジマート', 'ミドハト', 'イラン立憲革命', 'フィリピン'],
+                  keywords: [
+                    'インド大反乱',
+                    'インド帝国',
+                    '東インド会社',
+                    'タンジマート',
+                    'ミドハト',
+                    'イラン立憲革命',
+                    'フィリピン'
+                  ],
                 ),
               ],
             ),
@@ -1965,13 +2294,28 @@ CurriculumNode(
                   id: 'social.whist.contemporary.ww1.versailles',
                   name: 'ヴェルサイユ体制と国際協調',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['ヴェルサイユ', '国際連盟', 'ワシントン会議', 'ロカルノ', '不戦条約', '十四か条'],
+                  keywords: [
+                    'ヴェルサイユ',
+                    '国際連盟',
+                    'ワシントン会議',
+                    'ロカルノ',
+                    '不戦条約',
+                    '十四か条'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'social.whist.contemporary.ww1.depression',
                   name: '世界恐慌とファシズム',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['世界恐慌', 'ニューディール', 'ブロック経済', 'ファシズム', 'ナチ', 'ヒトラー', 'ムッソリーニ'],
+                  keywords: [
+                    '世界恐慌',
+                    'ニューディール',
+                    'ブロック経済',
+                    'ファシズム',
+                    'ナチ',
+                    'ヒトラー',
+                    'ムッソリーニ'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'social.whist.contemporary.ww1.asia',
@@ -1993,7 +2337,14 @@ CurriculumNode(
                   id: 'social.whist.contemporary.ww2.war',
                   name: '第二次世界大戦',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['第二次世界大戦', 'ポーランド侵攻', '独ソ戦', 'ノルマンディー', 'ホロコースト', 'ヤルタ'],
+                  keywords: [
+                    '第二次世界大戦',
+                    'ポーランド侵攻',
+                    '独ソ戦',
+                    'ノルマンディー',
+                    'ホロコースト',
+                    'ヤルタ'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'social.whist.contemporary.ww2.un',
@@ -2005,13 +2356,28 @@ CurriculumNode(
                   id: 'social.whist.contemporary.ww2.coldwar',
                   name: '冷戦の始まり',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['冷戦', 'トルーマン', 'マーシャル', 'NATO', 'ワルシャワ', 'ベルリン封鎖', '鉄のカーテン'],
+                  keywords: [
+                    '冷戦',
+                    'トルーマン',
+                    'マーシャル',
+                    'NATO',
+                    'ワルシャワ',
+                    'ベルリン封鎖',
+                    '鉄のカーテン'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'social.whist.contemporary.ww2.asia',
                   name: 'アジア諸国の独立と朝鮮戦争',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['中華人民共和国', '朝鮮戦争', 'インド独立', 'インドネシア', 'ベトナム', 'パレスチナ'],
+                  keywords: [
+                    '中華人民共和国',
+                    '朝鮮戦争',
+                    'インド独立',
+                    'インドネシア',
+                    'ベトナム',
+                    'パレスチナ'
+                  ],
                 ),
               ],
             ),
@@ -2039,13 +2405,28 @@ CurriculumNode(
                   id: 'social.whist.contemporary.global.end',
                   name: '冷戦の終結とソ連の解体',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['ゴルバチョフ', 'ペレストロイカ', 'ベルリンの壁', 'マルタ', 'ソ連解体', '東欧革命'],
+                  keywords: [
+                    'ゴルバチョフ',
+                    'ペレストロイカ',
+                    'ベルリンの壁',
+                    'マルタ',
+                    'ソ連解体',
+                    '東欧革命'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'social.whist.contemporary.global.today',
                   name: 'グローバル化と地域紛争',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['グローバル化', 'EU', 'テロ', '地域紛争', '湾岸戦争', '同時多発', '中東'],
+                  keywords: [
+                    'グローバル化',
+                    'EU',
+                    'テロ',
+                    '地域紛争',
+                    '湾岸戦争',
+                    '同時多発',
+                    '中東'
+                  ],
                 ),
               ],
             ),
@@ -2079,7 +2460,15 @@ CurriculumNode(
                   id: 'social.pol.politics.principle.democracy',
                   name: '民主政治の原理（社会契約・権力分立）',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['社会契約', '権力分立', '法の支配', 'ホッブズ', 'ロック', 'ルソー', 'モンテスキュー'],
+                  keywords: [
+                    '社会契約',
+                    '権力分立',
+                    '法の支配',
+                    'ホッブズ',
+                    'ロック',
+                    'ルソー',
+                    'モンテスキュー'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'social.pol.politics.principle.systems',
@@ -2302,7 +2691,15 @@ CurriculumNode(
                   id: 'social.pol.politics.law.labor',
                   name: '労働基本権と労働法',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['労働三法', '労働基準法', '労働組合', '労働三権', '団結権', '団体交渉', '争議'],
+                  keywords: [
+                    '労働三法',
+                    '労働基準法',
+                    '労働組合',
+                    '労働三権',
+                    '団結権',
+                    '団体交渉',
+                    '争議'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'social.pol.politics.law.work',
@@ -2384,7 +2781,15 @@ CurriculumNode(
                   id: 'social.pol.economy.market.failure',
                   name: '市場の失敗と独占',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['市場の失敗', '独占', '寡占', '外部不経済', '公共財', 'カルテル', '独占禁止法'],
+                  keywords: [
+                    '市場の失敗',
+                    '独占',
+                    '寡占',
+                    '外部不経済',
+                    '公共財',
+                    'カルテル',
+                    '独占禁止法'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'social.pol.economy.market.firm',
@@ -2462,7 +2867,14 @@ CurriculumNode(
                   id: 'social.pol.economy.fiscal.function',
                   name: '財政の機能',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['財政', '資源配分', '所得の再分配', '景気の安定', 'ビルトイン・スタビライザー', 'フィスカル'],
+                  keywords: [
+                    '財政',
+                    '資源配分',
+                    '所得の再分配',
+                    '景気の安定',
+                    'ビルトイン・スタビライザー',
+                    'フィスカル'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'social.pol.economy.fiscal.tax',
@@ -2602,7 +3014,14 @@ CurriculumNode(
                   id: 'social.eth.self.adolescence.period',
                   name: '青年期の特徴（第二の誕生・心理的離乳）',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['青年期', '第二の誕生', '心理的離乳', 'マージナル・マン', 'モラトリアム', '第二反抗期'],
+                  keywords: [
+                    '青年期',
+                    '第二の誕生',
+                    '心理的離乳',
+                    'マージナル・マン',
+                    'モラトリアム',
+                    '第二反抗期'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'social.eth.self.adolescence.identity',
@@ -2643,7 +3062,15 @@ CurriculumNode(
                   id: 'social.eth.origin.greek.nature',
                   name: '自然哲学とソフィスト',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['自然哲学', 'タレス', 'ヘラクレイトス', 'デモクリトス', 'ピタゴラス', 'ソフィスト', 'プロタゴラス'],
+                  keywords: [
+                    '自然哲学',
+                    'タレス',
+                    'ヘラクレイトス',
+                    'デモクリトス',
+                    'ピタゴラス',
+                    'ソフィスト',
+                    'プロタゴラス'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'social.eth.origin.greek.socrates',
@@ -2682,7 +3109,14 @@ CurriculumNode(
                   id: 'social.eth.origin.religion.christianity',
                   name: 'キリスト教',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['キリスト教', 'イエス', 'アガペー', 'パウロ', 'アウグスティヌス', 'トマス=アクィナス'],
+                  keywords: [
+                    'キリスト教',
+                    'イエス',
+                    'アガペー',
+                    'パウロ',
+                    'アウグスティヌス',
+                    'トマス=アクィナス'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'social.eth.origin.religion.islam',
@@ -2709,7 +3143,17 @@ CurriculumNode(
                   id: 'social.eth.origin.east.confucian',
                   name: '孔子と儒家（孟子・荀子・朱子・王陽明）',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['孔子', '仁', '礼', '孟子', '性善説', '荀子', '性悪説', '朱子', '王陽明'],
+                  keywords: [
+                    '孔子',
+                    '仁',
+                    '礼',
+                    '孟子',
+                    '性善説',
+                    '荀子',
+                    '性悪説',
+                    '朱子',
+                    '王陽明'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'social.eth.origin.east.taoism',
@@ -2773,13 +3217,30 @@ CurriculumNode(
                   id: 'social.eth.japan.modern.kokugaku',
                   name: '国学と民衆の思想',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['国学', '本居宣長', 'もののあはれ', '賀茂真淵', '石田梅岩', '安藤昌益', '二宮尊徳'],
+                  keywords: [
+                    '国学',
+                    '本居宣長',
+                    'もののあはれ',
+                    '賀茂真淵',
+                    '石田梅岩',
+                    '安藤昌益',
+                    '二宮尊徳'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'social.eth.japan.modern.meiji',
                   name: '近代日本の思想',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['福沢諭吉', '中江兆民', '内村鑑三', '夏目漱石', '西田幾多郎', '和辻哲郎', '柳田国男', '幸徳秋水'],
+                  keywords: [
+                    '福沢諭吉',
+                    '中江兆民',
+                    '内村鑑三',
+                    '夏目漱石',
+                    '西田幾多郎',
+                    '和辻哲郎',
+                    '柳田国男',
+                    '幸徳秋水'
+                  ],
                 ),
               ],
             ),
@@ -2802,13 +3263,30 @@ CurriculumNode(
                   id: 'social.eth.western.modern.renaissance',
                   name: 'ルネサンスと宗教改革の思想',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['ピコ', 'エラスムス', 'マキャヴェリ', 'ルター', 'カルヴァン', 'モラリスト', 'モンテーニュ', 'パスカル'],
+                  keywords: [
+                    'ピコ',
+                    'エラスムス',
+                    'マキャヴェリ',
+                    'ルター',
+                    'カルヴァン',
+                    'モラリスト',
+                    'モンテーニュ',
+                    'パスカル'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'social.eth.western.modern.science',
                   name: '経験論と合理論',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['ベーコン', '帰納法', 'イドラ', 'デカルト', '演繹法', '我思う', 'スピノザ'],
+                  keywords: [
+                    'ベーコン',
+                    '帰納法',
+                    'イドラ',
+                    'デカルト',
+                    '演繹法',
+                    '我思う',
+                    'スピノザ'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'social.eth.western.modern.kant',
@@ -2869,7 +3347,16 @@ CurriculumNode(
                   id: 'social.eth.western.contemporary.modern',
                   name: '現代のヒューマニズムと思想（フランクフルト学派・構造主義など）',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['フランクフルト', 'ハーバーマス', '構造主義', 'レヴィ=ストロース', 'フーコー', 'ロールズ', 'シュヴァイツァー', 'ガンディー'],
+                  keywords: [
+                    'フランクフルト',
+                    'ハーバーマス',
+                    '構造主義',
+                    'レヴィ=ストロース',
+                    'フーコー',
+                    'ロールズ',
+                    'シュヴァイツァー',
+                    'ガンディー'
+                  ],
                 ),
               ],
             ),
@@ -2892,7 +3379,15 @@ CurriculumNode(
                   id: 'social.eth.issues.issues.bio',
                   name: '生命倫理',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['生命倫理', '脳死', '臓器移植', 'クローン', '安楽死', 'インフォームド・コンセント', 'QOL'],
+                  keywords: [
+                    '生命倫理',
+                    '脳死',
+                    '臓器移植',
+                    'クローン',
+                    '安楽死',
+                    'インフォームド・コンセント',
+                    'QOL'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'social.eth.issues.issues.environment',

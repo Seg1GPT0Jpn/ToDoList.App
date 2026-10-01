@@ -130,7 +130,9 @@ class _ReviewNotebookScreenState extends State<ReviewNotebookScreen> {
         if (q.figure != null) FigureView(q.figure!, height: 120),
         const SizedBox(height: 4),
         Text(
-          '選択肢：${q.choices.join(' / ')}',
+          q.choices.isEmpty
+              ? '形式：${q.format.label}'
+              : '選択肢：${q.choices.join(' / ')}',
           style: TextStyle(fontSize: 12.5, color: TsuzuriColors.inkSoft),
         ),
         const SizedBox(height: 6),

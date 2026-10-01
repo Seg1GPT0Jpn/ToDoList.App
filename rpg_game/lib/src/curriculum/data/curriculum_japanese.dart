@@ -2,8 +2,7 @@
 
 import '../curriculum.dart';
 
-const japaneseCurriculum =
-CurriculumNode(
+const japaneseCurriculum = CurriculumNode(
   id: 'japanese',
   name: '国語',
   level: CurriculumLevel.subject,
@@ -500,7 +499,18 @@ CurriculumNode(
                   id: 'japanese.kobun.grammar.yogen.verb',
                   name: '動詞の活用',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['動詞', '四段', '上一段', '下一段', '上二段', '下二段', 'カ変', 'サ変', 'ナ変', 'ラ変'],
+                  keywords: [
+                    '動詞',
+                    '四段',
+                    '上一段',
+                    '下一段',
+                    '上二段',
+                    '下二段',
+                    'カ変',
+                    'サ変',
+                    'ナ変',
+                    'ラ変'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'japanese.kobun.grammar.yogen.adjective',
@@ -687,7 +697,18 @@ CurriculumNode(
                   id: 'japanese.kobun.reading.history.works',
                   name: '作品と作者',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['作品', '作者', '源氏物語', '枕草子', '徒然草', '方丈記', '土佐日記', '平家物語', '竹取物語', '伊勢物語'],
+                  keywords: [
+                    '作品',
+                    '作者',
+                    '源氏物語',
+                    '枕草子',
+                    '徒然草',
+                    '方丈記',
+                    '土佐日記',
+                    '平家物語',
+                    '竹取物語',
+                    '伊勢物語'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'japanese.kobun.reading.history.genre',
@@ -765,7 +786,18 @@ CurriculumNode(
                   id: 'japanese.kanbun.kundoku.saidoku.saidoku',
                   name: '再読文字',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['再読文字', '未', '将', '且', '当', '応', '宜', '須', '猶', '盍'],
+                  keywords: [
+                    '再読文字',
+                    '未',
+                    '将',
+                    '且',
+                    '当',
+                    '応',
+                    '宜',
+                    '須',
+                    '猶',
+                    '盍'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'japanese.kanbun.kundoku.saidoku.words',

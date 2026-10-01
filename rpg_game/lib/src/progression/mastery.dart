@@ -224,7 +224,8 @@ abstract final class LearningBonus {
 
   /// バトルの正解から得られる、学びのボーナス経験値
   /// （思考レベル4以上の正解：レベル−3 ×3、苦手な単元の正解：+3）
-  static int bonusExp(BattleSummary summary, {Set<String> weakUnits = const {}}) {
+  static int bonusExp(BattleSummary summary,
+      {Set<String> weakUnits = const {}}) {
     var exp = 0;
     final seen = <String>{};
     for (final t in summary.turns) {

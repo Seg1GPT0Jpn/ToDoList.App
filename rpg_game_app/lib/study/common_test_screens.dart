@@ -183,7 +183,9 @@ class _MockExamScreenState extends State<MockExamScreen> {
       for (final s in MockExam.stagesFor(w, seed: rnd.nextInt(1 << 20))) {
         final set = await services.loadStagePool(s);
         if (set == null || !set.origin.usableInRpg) continue;
-        for (final q in set.questions.where((q) => q.passage == null)) {
+        for (final q in set.questions.where(
+          (q) => q.passage == null && q.isChoice,
+        )) {
           pool.add((services.questions.setIdOf(q.id) ?? s.questionSetId, q));
         }
       }

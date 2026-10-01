@@ -3,6 +3,7 @@ import 'dart:math';
 import '../models/enemy.dart';
 import '../models/player_stats.dart';
 import '../models/question.dart';
+import '../models/question_format.dart';
 import '../progression/mastery.dart';
 import '../story/gear.dart';
 import 'cards.dart';
@@ -54,7 +55,14 @@ class TurnResult {
     this.specialMissed = false,
     this.challenge = false,
     this.deepThought = false,
+    this.credit = 0,
   });
+
+  /// 得点の割合（正解なら1。4択以外の問題では部分点のこともある）
+  final double credit;
+
+  /// 部分点（まちがいだが、半分以上は合っていた）
+  bool get partial => !correct && credit >= BattleEngine.partialCreditMin;
 
   /// 苦手な単元の問題に正解した（苦手への挑戦ボーナス）
   final bool challenge;
@@ -422,6 +430,8 @@ class BattleEngine {
   Duration limitFor(PresentedQuestion q) {
     var limit =
         q.source.passage != null ? (readingTimeLimit ?? timeLimit) : timeLimit;
+    // 答え方に手間がかかる形式ほど長くする（入力・リスニング・並べ替え・記述など）
+    limit = limit * formatTimeFactor(q.source);
     if (companions.contains(CompanionEffect.moreTime)) {
       limit += const Duration(seconds: 3);
     }
@@ -461,6 +471,29 @@ class BattleEngine {
     return _resolve(choiceIndex: choiceIndex, elapsed: elapsed);
   }
 
+  /// 出題形式による制限時間の倍率
+  static double formatTimeFactor(QuizQuestion q) => switch (q.format) {
+        QuestionFormat.choice => q.isInput || q.listen ? 2 : 1,
+        QuestionFormat.trueFalse => 1,
+        QuestionFormat.multiSelect => 1.5,
+        QuestionFormat.order || QuestionFormat.numeric => 2,
+        QuestionFormat.cloze => 1.0 + q.cloze!.blanks.length,
+        QuestionFormat.multiStep => 1.0 * q.subQuestions.length,
+        QuestionFormat.written => 6,
+      };
+
+  /// 4択以外の問題（正誤・並べ替え・記述など）を、採点した結果で回答する。
+  /// まちがいでも部分点が半分以上あれば、少しだけダメージを与え、受けるダメージも半分になる。
+  TurnResult answerGraded(Grade grade, {required Duration elapsed}) {
+    _ensureActive();
+    if (elapsed > limitFor(_current)) return timeout();
+    return _resolve(choiceIndex: null, elapsed: elapsed, graded: grade);
+  }
+
+  /// 部分点でダメージを与えるのに必要な割合と、そのときのダメージの割合
+  static const partialCreditMin = 0.5;
+  static const partialDamageRate = 0.5;
+
   /// 制限時間切れ。不正解と同じく敵の反撃を受ける。
   TurnResult timeout() {
     _ensureActive();
@@ -477,11 +510,18 @@ class BattleEngine {
         turns: turns,
       );
 
-  TurnResult _resolve({required int? choiceIndex, required Duration elapsed}) {
+  TurnResult _resolve({
+    required int? choiceIndex,
+    required Duration elapsed,
+    Grade? graded,
+  }) {
     final q = _current;
     final card = _pending;
     final effect = card?.effect;
-    final correct = choiceIndex != null && q.isCorrect(choiceIndex);
+    final correct =
+        graded?.correct ?? (choiceIndex != null && q.isCorrect(choiceIndex));
+    final partial =
+        !correct && graded != null && graded.credit >= partialCreditMin;
     var toEnemy = 0;
     var toPlayer = 0;
     var quick = false;
@@ -622,10 +662,21 @@ class BattleEngine {
         _disruptNext = true;
         disrupted = true;
       }
+      if (partial) {
+        // 部分点：考え方の一部は合っていた。小さなダメージを与える
+        toEnemy = _damage.playerAttack(
+          attack: player.attack + bonus.attack,
+          combo: 1,
+          elapsed: limitFor(q),
+          timeLimit: limitFor(q),
+          extra: bonus.attackRate * graded.credit * partialDamageRate,
+        );
+        _enemyHp = max(0, _enemyHp - toEnemy);
+      }
       if (effect == CardEffect.guard) {
         guarded = true;
       } else {
-        var extra = 1.0;
+        var extra = partial ? 0.5 : 1.0;
         if (effect == CardEffect.power) extra *= 1.5;
         if (effect == CardEffect.gamble) extra *= 2;
         if (companions.contains(CompanionEffect.defenseUp)) extra *= 0.85;
@@ -705,7 +756,8 @@ class BattleEngine {
       question: q,
       chosenIndex: choiceIndex,
       correct: correct,
-      timedOut: choiceIndex == null,
+      timedOut: choiceIndex == null && graded == null,
+      credit: correct ? 1 : (graded?.credit ?? 0),
       quick: correct && quick,
       damageToEnemy: toEnemy,
       damageToPlayer: toPlayer,

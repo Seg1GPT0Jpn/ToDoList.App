@@ -14,6 +14,7 @@ import '../art/paper.dart';
 import '../quiz/figure_view.dart';
 import '../quiz/question_report.dart';
 import '../vocab/speech.dart';
+import 'format_answer.dart';
 import 'result_screen.dart';
 
 /// ターン制クイズバトル
@@ -256,6 +257,9 @@ class _BattleScreenState extends State<BattleScreen>
   /// 入力問題の入力欄と、答えた文字
   final _input = TextEditingController();
   String? _typed;
+
+  /// 4択以外の問題に答えた結果（自分の答えと採点）
+  FormatResponse? _response;
   bool _finishing = false;
 
   @override
@@ -325,6 +329,7 @@ class _BattleScreenState extends State<BattleScreen>
       _last = null;
       _locked = false;
       _typed = null;
+      _response = null;
       _armedCard = null;
       _showListenText = false;
       _input.clear();
@@ -333,9 +338,8 @@ class _BattleScreenState extends State<BattleScreen>
       ..reset()
       ..start();
     final q = _engine.currentQuestion;
-    // 長文の設問は制限時間が長い。入力とリスニングはさらに長くする
-    final limit = _engine.limitFor(q);
-    _timer.duration = q.source.isInput || q.source.listen ? limit * 2 : limit;
+    // 長文の設問は制限時間が長い。入力・リスニング・並べ替え・記述などはさらに長い
+    _timer.duration = _engine.limitFor(q);
     _timer.forward(from: 0);
     if (q.source.listen) _listen(q);
   }
@@ -404,12 +408,15 @@ class _BattleScreenState extends State<BattleScreen>
     });
   }
 
-  void _resolve(int? choice) {
+  void _resolve(int? choice, {FormatResponse? response}) {
     if (_locked) return;
     _locked = true;
     _timer.stop();
     _stopwatch.stop();
-    final r = choice == null
+    _response = response;
+    final r = response != null
+        ? _engine.answerGraded(response.grade, elapsed: _stopwatch.elapsed)
+        : choice == null
         ? _engine.timeout()
         : _engine.answer(choice, elapsed: _stopwatch.elapsed);
     setState(() => _last = r);
@@ -552,6 +559,20 @@ class _BattleScreenState extends State<BattleScreen>
         ),
       );
     } else {
+      if (r.partial) {
+        // 部分点：考え方の一部は合っていた
+        Future.delayed(const Duration(milliseconds: 160), () {
+          if (mounted) _enemyHit.forward(from: 0);
+        });
+        _popup(
+          _Popup(
+            '部分点 ${(r.credit * 100).round()}%  ${r.damageToEnemy}',
+            const Color(0xFF2E7DB5),
+            const Alignment(0.25, -0.2),
+          ),
+          after: const Duration(milliseconds: 120),
+        );
+      }
       _playerHit.forward(from: 0);
       _popup(
         _Popup(
@@ -1448,6 +1469,10 @@ class _BattleScreenState extends State<BattleScreen>
     );
   }
 
+  /// 問題の思考レベル（書かれていなければ推定）
+  ThinkingLevel? _thinkingOf(QuizQuestion q) =>
+      q.thinkingLevel ?? QuestionProfiler.of(q).thinking;
+
   Widget _questionCard(PresentedQuestion q) {
     return Container(
       width: double.infinity,
@@ -1478,6 +1503,8 @@ class _BattleScreenState extends State<BattleScreen>
                 child: Text(
                   q.source.listen
                       ? 'リスニング'
+                      : !q.source.isChoice
+                      ? '${q.source.category.label}・${q.source.format == QuestionFormat.written ? q.source.written!.kindLabel : q.source.format.label}'
                       : q.source.isInput
                       ? '${q.source.category.label}・入力'
                       : q.source.category.label,
@@ -1488,6 +1515,33 @@ class _BattleScreenState extends State<BattleScreen>
                   ),
                 ),
               ),
+              // 思考レベル4以上の問題は、正解すると「難問ボーナス」
+              if (_thinkingOf(q.source) case final t? when t.number >= 4)
+                Padding(
+                  padding: const EdgeInsets.only(left: 6),
+                  child: Tooltip(
+                    message: '${t.description}（正解で難問ボーナス）',
+                    child: Container(
+                      key: const ValueKey('thinking-badge'),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 7,
+                        vertical: 2,
+                      ),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFF8E4BBF).withValues(alpha: 0.12),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Text(
+                        '思考Lv${t.number} ${t.label}',
+                        style: const TextStyle(
+                          fontSize: 11,
+                          color: Color(0xFF8E4BBF),
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
               const Spacer(),
               // 答えたあとで、おかしな問題を報告できる
               if (_last != null)
@@ -1572,6 +1626,23 @@ class _BattleScreenState extends State<BattleScreen>
   }
 
   Widget _choices(PresentedQuestion q, TurnResult? last) {
+    if (!q.source.isChoice) {
+      if (last != null) return _formatResult(q, last);
+      return FormatAnswerPane(
+        key: ValueKey('format-${q.source.id}'),
+        question: q.source,
+        locked: _locked,
+        onSubmit: (r) {
+          if (_justStarted) return;
+          _resolve(null, response: r);
+        },
+        // 記述で模範解答を見たら、時間を止める（自己採点の時間は数えない）
+        onReveal: () {
+          _timer.stop();
+          _stopwatch.stop();
+        },
+      );
+    }
     if (q.source.isInput) return _inputPane(q, last);
     // 長文や、選択肢が長い問題（理科の説明文など）は縦に並べて全文を見せる
     final reading =
@@ -1690,6 +1761,49 @@ class _BattleScreenState extends State<BattleScreen>
     );
   }
 
+  /// 4択以外の問題に正解したあと：自分の答えと採点
+  Widget _formatResult(PresentedQuestion q, TurnResult last) {
+    final res = _response;
+    return SingleChildScrollView(
+      child: Text.rich(
+        TextSpan(
+          children: [
+            if (res != null) ...[
+              const TextSpan(text: 'あなたの答え：'),
+              TextSpan(
+                text: res.yourAnswer.isEmpty ? '（なし）' : res.yourAnswer,
+                style: TextStyle(
+                  fontWeight: FontWeight.w800,
+                  color: last.correct
+                      ? TsuzuriColors.correct
+                      : TsuzuriColors.wrong,
+                ),
+              ),
+              if (res.grade.detail.isNotEmpty)
+                TextSpan(
+                  text: '\n${res.grade.detail}',
+                  style: TextStyle(fontSize: 13, color: TsuzuriColors.inkSoft),
+                ),
+              const TextSpan(text: '\n'),
+            ],
+            TextSpan(
+              text: q.source.format == QuestionFormat.written ? '模範解答：' : '正解：',
+            ),
+            TextSpan(
+              text: q.source.answer,
+              style: const TextStyle(
+                fontWeight: FontWeight.w800,
+                color: TsuzuriColors.correct,
+              ),
+            ),
+          ],
+        ),
+        textAlign: TextAlign.center,
+        style: const TextStyle(fontSize: 16, height: 1.6),
+      ),
+    );
+  }
+
   /// 入力問題：答えを打ちこむ
   Widget _inputPane(PresentedQuestion q, TurnResult? last) {
     if (last != null) {
@@ -1774,9 +1888,23 @@ class _BattleScreenState extends State<BattleScreen>
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            last.timedOut ? '時間切れ…' : 'ざんねん！',
+            last.timedOut
+                ? '時間切れ…'
+                : last.partial
+                ? 'おしい！ 部分点 ${(last.credit * 100).round()}%'
+                : 'ざんねん！',
             style: serif(15, color: TsuzuriColors.wrong),
           ),
+          if (_response case final res?) ...[
+            const SizedBox(height: 4),
+            Text(
+              'あなたの答え：${res.yourAnswer.isEmpty ? '（なし）' : res.yourAnswer}'
+              '${res.grade.detail.isEmpty ? '' : '（${res.grade.detail}）'}',
+              maxLines: 3,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(fontSize: 13, color: TsuzuriColors.inkSoft),
+            ),
+          ],
           const SizedBox(height: 6),
           Text.rich(
             TextSpan(

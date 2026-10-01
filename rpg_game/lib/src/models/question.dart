@@ -1,5 +1,6 @@
 import '../curriculum/question_meta.dart';
 import 'difficulty.dart';
+import 'question_format.dart';
 
 /// 問題データの出どころ。
 ///
@@ -85,8 +86,16 @@ class QuizQuestion {
     required this.id,
     required this.category,
     required this.prompt,
-    required this.choices,
-    required this.answerIndex,
+    this.choices = const [],
+    this.answerIndex = 0,
+    this.format = QuestionFormat.choice,
+    this.truth,
+    this.multiSelect,
+    this.order,
+    this.numeric,
+    this.cloze,
+    this.subQuestions = const [],
+    this.written,
     this.sentence,
     this.explanation,
     this.passage,
@@ -110,6 +119,10 @@ class QuizQuestion {
     this.steps,
     this.guidance,
   }) {
+    if (format != QuestionFormat.choice) {
+      _checkSpec();
+      return;
+    }
     if (choices.length != 4) {
       throw ArgumentError('問題 $id: 選択肢は4つ必要です（${choices.length}個）');
     }
@@ -120,6 +133,42 @@ class QuizQuestion {
       throw ArgumentError('問題 $id: 選択肢が重複しています');
     }
   }
+
+  void _checkSpec() {
+    final ok = switch (format) {
+      QuestionFormat.choice => true,
+      QuestionFormat.trueFalse => truth != null,
+      QuestionFormat.multiSelect => multiSelect != null,
+      QuestionFormat.order => order != null,
+      QuestionFormat.numeric => numeric != null,
+      QuestionFormat.cloze => cloze != null,
+      QuestionFormat.multiStep => subQuestions.length >= 2 &&
+          subQuestions.every((s) => s.format == QuestionFormat.choice),
+      QuestionFormat.written => written != null,
+    };
+    if (!ok) {
+      throw ArgumentError('問題 $id: ${format.label}の中身がありません');
+    }
+  }
+
+  // ---- 出題形式（4択以外） ----
+
+  /// 出題形式（書かれていなければ4択。accepted があれば入力でも答えられる）
+  final QuestionFormat format;
+
+  /// 正誤：[sentence]（または問い）の内容が正しいか
+  final bool? truth;
+  final MultiSelectSpec? multiSelect;
+  final OrderSpec? order;
+  final NumericSpec? numeric;
+  final ClozeSpec? cloze;
+
+  /// 段階問題（誘導）：順に答える小問（それぞれ4択）
+  final List<QuizQuestion> subQuestions;
+  final WrittenSpec? written;
+
+  /// 4択（入力式をふくむ）の問題か。4択しか出せない画面（対戦・宝箱など）はこれだけを使う
+  bool get isChoice => format == QuestionFormat.choice;
 
   final String id;
   final QuestionCategory category;
@@ -199,7 +248,24 @@ class QuizQuestion {
   /// 入力で答えられる問題か
   bool get isInput => accepted != null;
 
-  String get answer => choices[answerIndex];
+  /// 正解を1行で表したもの（記述は模範解答）
+  String get answer => switch (format) {
+        QuestionFormat.choice => choices[answerIndex],
+        QuestionFormat.trueFalse => truth! ? '正しい（○）' : '誤り（×）',
+        QuestionFormat.multiSelect => [
+            for (final i in multiSelect!.correct.toList()..sort())
+              multiSelect!.options[i],
+          ].join('・'),
+        QuestionFormat.order => order!.items.join(order!.joiner),
+        QuestionFormat.numeric => numeric!.display,
+        QuestionFormat.cloze => [
+            for (var i = 0; i < cloze!.blanks.length; i++)
+              '(${i + 1}) ${cloze!.blanks[i].first}',
+          ].join('　'),
+        QuestionFormat.multiStep =>
+          [for (final s in subQuestions) s.answer].join(' → '),
+        QuestionFormat.written => written!.modelAnswer,
+      };
 
   /// 入力された答えが正解か（全角・半角、大文字・小文字、空白の違いは無視する）
   bool matchesInput(String input) {
@@ -243,8 +309,39 @@ class QuizQuestion {
         category: QuestionCategory.parse(json['category'] as String),
         prompt: json['prompt'] as String,
         sentence: json['sentence'] as String?,
-        choices: List<String>.from(json['choices'] as List),
-        answerIndex: json['answerIndex'] as int,
+        choices: List<String>.from((json['choices'] as List?) ?? const []),
+        answerIndex: (json['answerIndex'] as num?)?.toInt() ?? 0,
+        format: QuestionFormat.parse(json['format'] as String?),
+        truth: json['truth'] as bool?,
+        multiSelect: json['multiSelect'] == null
+            ? null
+            : MultiSelectSpec.fromJson(
+                Map<String, dynamic>.from(json['multiSelect'] as Map)),
+        order: json['order'] == null
+            ? null
+            : OrderSpec.fromJson(
+                Map<String, dynamic>.from(json['order'] as Map)),
+        numeric: json['numeric'] == null
+            ? null
+            : NumericSpec.fromJson(
+                Map<String, dynamic>.from(json['numeric'] as Map)),
+        cloze: json['cloze'] == null
+            ? null
+            : ClozeSpec.fromJson(
+                Map<String, dynamic>.from(json['cloze'] as Map)),
+        subQuestions: [
+          for (final (i, s)
+              in ((json['subQuestions'] as List?) ?? const []).indexed)
+            QuizQuestion.fromJson({
+              'id': '${json['id']}_s${i + 1}',
+              'category': json['category'],
+              ...Map<String, dynamic>.from(s as Map),
+            }),
+        ],
+        written: json['written'] == null
+            ? null
+            : WrittenSpec.fromJson(
+                Map<String, dynamic>.from(json['written'] as Map)),
         explanation: json['explanation'] as String?,
         difficulty: Difficulty.tryParse(json['difficulty'] as String?),
         hint: json['hint'] as String?,
@@ -280,10 +377,25 @@ class QuizQuestion {
         if (unit != null) 'unit': unit,
         if (unitLocked) 'unitLocked': true,
         'category': category.name,
+        if (format != QuestionFormat.choice) 'format': format.name,
         'prompt': prompt,
         if (sentence != null) 'sentence': sentence,
-        'choices': choices,
-        'answerIndex': answerIndex,
+        if (format == QuestionFormat.choice) 'choices': choices,
+        if (format == QuestionFormat.choice) 'answerIndex': answerIndex,
+        if (truth != null) 'truth': truth,
+        if (multiSelect != null) 'multiSelect': multiSelect!.toJson(),
+        if (order != null) 'order': order!.toJson(),
+        if (numeric != null) 'numeric': numeric!.toJson(),
+        if (cloze != null) 'cloze': cloze!.toJson(),
+        if (subQuestions.isNotEmpty)
+          'subQuestions': [
+            for (final s in subQuestions)
+              {
+                for (final e in s.toJson().entries)
+                  if (e.key != 'id' && e.key != 'category') e.key: e.value,
+              },
+          ],
+        if (written != null) 'written': written!.toJson(),
         if (explanation != null) 'explanation': explanation,
         if (passage != null) 'passageId': passage!.id,
         if (difficulty != null) 'difficulty': difficulty!.name,

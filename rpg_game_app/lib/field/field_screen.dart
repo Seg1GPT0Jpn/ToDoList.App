@@ -598,7 +598,10 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
   ) async {
     final set = await RpgServices.of(context).loadStagePool(stage);
     if (set == null || !set.origin.usableInRpg) return [];
-    final pool = set.questions.where((q) => q.passage == null).toList();
+    // 宝箱・扉・泉の問題は4択だけ（長文・記述などは出さない）
+    final pool = set.questions
+        .where((q) => q.passage == null && q.isChoice)
+        .toList();
     var picked = pool.where(where).toList();
     if (picked.length < n) picked = pool;
     picked.shuffle(_random);

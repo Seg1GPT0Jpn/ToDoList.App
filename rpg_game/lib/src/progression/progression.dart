@@ -136,8 +136,7 @@ class Progression {
   }) {
     progress = Mastery.migrate(progress);
     final alreadyCleared = progress.clearedStageIds.contains(stage.id);
-    final learningBonus =
-        LearningBonus.bonusExp(summary, weakUnits: weakUnits);
+    final learningBonus = LearningBonus.bonusExp(summary, weakUnits: weakUnits);
     final gained =
         expFor(stage, summary, alreadyCleared: alreadyCleared) + learningBonus;
 

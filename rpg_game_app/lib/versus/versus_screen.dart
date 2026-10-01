@@ -38,7 +38,7 @@ Future<List<QuizQuestion>> loadVersusQuestions(
   for (final id in setIds) {
     final set = await services.questions.load(id);
     if (set == null || !set.origin.usableInRpg) continue;
-    out.addAll(set.questions.where((q) => q.passage == null));
+    out.addAll(set.questions.where((q) => q.passage == null && q.isChoice));
   }
   return out;
 }

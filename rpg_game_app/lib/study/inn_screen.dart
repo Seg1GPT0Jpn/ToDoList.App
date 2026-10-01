@@ -63,7 +63,9 @@ class _InnScreenState extends State<InnScreen> {
     if (stage.branch.isNotEmpty) {
       final own = await services.questions.load(stage.questionSetIds.last);
       if (!mounted) return;
-      if (own == null || !own.origin.usableInRpg) {
+      if (own == null ||
+          !own.origin.usableInRpg ||
+          !own.questions.any((q) => q.isChoice)) {
         setState(() => _error = '練習問題を読み込めませんでした');
         return;
       }
@@ -81,7 +83,9 @@ class _InnScreenState extends State<InnScreen> {
     }
     // 授業のテーマ（文法）の問題から出す。長文エリアではエリア1〜15の文法問題を使う。
     bool grammar(QuizQuestion q) =>
-        q.category == QuestionCategory.usage && q.passage == null;
+        q.category == QuestionCategory.usage &&
+        q.passage == null &&
+        q.isChoice;
     var pool = set.questions.where(grammar).toList();
     if (pool.isEmpty) {
       final first = RpgCatalog.englishStages.firstWhere((s) => s.order == 16);

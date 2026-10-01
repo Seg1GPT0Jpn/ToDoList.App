@@ -2,8 +2,7 @@
 
 import '../curriculum.dart';
 
-const scienceCurriculum =
-CurriculumNode(
+const scienceCurriculum = CurriculumNode(
   id: 'science',
   name: '理科',
   level: CurriculumLevel.subject,
@@ -746,7 +745,15 @@ CurriculumNode(
                   id: 'science.chemistry.structure.periodic.property',
                   name: '典型元素・遷移元素と金属・非金属',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['典型元素', '遷移元素', '金属元素', '非金属', 'アルカリ金属', 'ハロゲン', '貴ガス'],
+                  keywords: [
+                    '典型元素',
+                    '遷移元素',
+                    '金属元素',
+                    '非金属',
+                    'アルカリ金属',
+                    'ハロゲン',
+                    '貴ガス'
+                  ],
                 ),
               ],
             ),
@@ -1128,7 +1135,15 @@ CurriculumNode(
                   id: 'science.chemistry.inorganic.metal.alkali',
                   name: 'アルカリ金属と2族元素',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['ナトリウム', 'カリウム', 'カルシウム', 'アンモニアソーダ', 'ソルベー', 'マグネシウム', 'アルカリ土類'],
+                  keywords: [
+                    'ナトリウム',
+                    'カリウム',
+                    'カルシウム',
+                    'アンモニアソーダ',
+                    'ソルベー',
+                    'マグネシウム',
+                    'アルカリ土類'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'science.chemistry.inorganic.metal.amphoteric',
@@ -1203,7 +1218,15 @@ CurriculumNode(
                   id: 'science.chemistry.organic.aliphatic.hydrocarbon',
                   name: '炭化水素（アルカン・アルケン・アルキン）',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['アルカン', 'アルケン', 'アルキン', 'メタン', 'エチレン', 'アセチレン', '付加'],
+                  keywords: [
+                    'アルカン',
+                    'アルケン',
+                    'アルキン',
+                    'メタン',
+                    'エチレン',
+                    'アセチレン',
+                    '付加'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'science.chemistry.organic.aliphatic.alcohol',
@@ -1277,7 +1300,15 @@ CurriculumNode(
                   id: 'science.chemistry.organic.polymer.synthetic',
                   name: '合成高分子（繊維・樹脂・ゴム）',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['ナイロン', 'ポリエチレン', '付加重合', '縮合重合', '樹脂', 'ゴム', '繊維'],
+                  keywords: [
+                    'ナイロン',
+                    'ポリエチレン',
+                    '付加重合',
+                    '縮合重合',
+                    '樹脂',
+                    'ゴム',
+                    '繊維'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'science.chemistry.organic.polymer.sugar',
@@ -2062,7 +2093,17 @@ CurriculumNode(
                   id: 'science.earth.history.strata.sediment',
                   name: '風化・侵食と堆積岩',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['堆積岩', '礫岩', '砂岩', '泥岩', '石灰岩', 'チャート', '凝灰岩', '風化', '侵食'],
+                  keywords: [
+                    '堆積岩',
+                    '礫岩',
+                    '砂岩',
+                    '泥岩',
+                    '石灰岩',
+                    'チャート',
+                    '凝灰岩',
+                    '風化',
+                    '侵食'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'science.earth.history.strata.fossil',
@@ -2074,7 +2115,15 @@ CurriculumNode(
                   id: 'science.earth.history.strata.age',
                   name: '地質時代と年代測定',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['地質時代', '古生代', '中生代', '新生代', '先カンブリア', '放射年代', '相対年代'],
+                  keywords: [
+                    '地質時代',
+                    '古生代',
+                    '中生代',
+                    '新生代',
+                    '先カンブリア',
+                    '放射年代',
+                    '相対年代'
+                  ],
                 ),
               ],
             ),
@@ -2171,7 +2220,19 @@ CurriculumNode(
                   id: 'science.earth.atmos.circulation.ocean',
                   name: '海洋の構造と海流・潮汐',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['海流', '黒潮', '親潮', '表層', '深層', '混合層', '水温躍層', '潮汐', '大潮', '満ち引き', '塩分'],
+                  keywords: [
+                    '海流',
+                    '黒潮',
+                    '親潮',
+                    '表層',
+                    '深層',
+                    '混合層',
+                    '水温躍層',
+                    '潮汐',
+                    '大潮',
+                    '満ち引き',
+                    '塩分'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'science.earth.atmos.circulation.interaction',

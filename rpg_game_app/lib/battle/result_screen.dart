@@ -477,9 +477,12 @@ class _ResultScreenState extends State<ResultScreen>
   Widget _review(TurnResult t) {
     final q = t.question.source;
     final chosen = t.chosenIndex;
-    final mine = t.timedOut || chosen == null
+    final mine = t.timedOut
         ? '時間切れ'
-        : t.question.choices[chosen];
+        : chosen != null && chosen < t.question.choices.length
+        ? t.question.choices[chosen]
+        // 4択以外の問題：得点の割合
+        : '得点 ${(t.credit * 100).round()}%';
     return Card(
       margin: const EdgeInsets.only(bottom: 8),
       child: ExpansionTile(

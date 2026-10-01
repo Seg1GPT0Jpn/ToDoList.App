@@ -20,8 +20,9 @@ class PracticeAnswer {
 class PracticeSession {
   PracticeSession(List<QuizQuestion> questions, {int? count, Random? random})
       : _random = random ?? Random() {
-    if (questions.isEmpty) throw ArgumentError('問題がありません');
-    final picked = [...questions]..shuffle(_random);
+    // 練習（宿の授業・定期テストの海の小テスト）は4択（入力式をふくむ）だけ
+    final picked = [...questions.where((q) => q.isChoice)]..shuffle(_random);
+    if (picked.isEmpty) throw ArgumentError('問題がありません');
     final n = count == null ? picked.length : min(count, picked.length);
     final deck = QuestionDeck(picked.take(n).toList(), random: _random);
     _queue = [for (var i = 0; i < n; i++) deck.draw()];

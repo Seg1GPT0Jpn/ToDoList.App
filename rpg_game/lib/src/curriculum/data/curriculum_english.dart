@@ -2,8 +2,7 @@
 
 import '../curriculum.dart';
 
-const englishCurriculum =
-CurriculumNode(
+const englishCurriculum = CurriculumNode(
   id: 'english',
   name: '英語',
   level: CurriculumLevel.subject,
@@ -102,7 +101,15 @@ CurriculumNode(
                   id: 'english.eng.vocab.idiom.phrasal',
                   name: '句動詞',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['句動詞', 'look', 'take', 'get', 'put', 'come', 'give'],
+                  keywords: [
+                    '句動詞',
+                    'look',
+                    'take',
+                    'get',
+                    'put',
+                    'come',
+                    'give'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'english.eng.vocab.idiom.idiom',
@@ -220,13 +227,24 @@ CurriculumNode(
                   id: 'english.eng.grammar.auxiliary.perfect',
                   name: '助動詞＋have＋過去分詞',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['have p.p.', 'should have', 'must have', 'may have', 'cannot have'],
+                  keywords: [
+                    'have p.p.',
+                    'should have',
+                    'must have',
+                    'may have',
+                    'cannot have'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'english.eng.grammar.auxiliary.idiom',
                   name: '助動詞を使った慣用表現',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['had better', 'would rather', 'may well', 'used to'],
+                  keywords: [
+                    'had better',
+                    'would rather',
+                    'may well',
+                    'used to'
+                  ],
                 ),
               ],
             ),
@@ -276,7 +294,13 @@ CurriculumNode(
                   id: 'english.eng.grammar.infinitive.construction',
                   name: '不定詞を使った構文',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['too', 'enough', 'in order to', 'so as to', 'seem to'],
+                  keywords: [
+                    'too',
+                    'enough',
+                    'in order to',
+                    'so as to',
+                    'seem to'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'english.eng.grammar.infinitive.causative',
@@ -310,7 +334,13 @@ CurriculumNode(
                   id: 'english.eng.grammar.gerund.idiom',
                   name: '動名詞を使った慣用表現',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['look forward to', 'be used to', 'There is no', 'feel like', 'cannot help'],
+                  keywords: [
+                    'look forward to',
+                    'be used to',
+                    'There is no',
+                    'feel like',
+                    'cannot help'
+                  ],
                 ),
               ],
             ),
@@ -375,7 +405,13 @@ CurriculumNode(
                   id: 'english.eng.grammar.comparison.idiom',
                   name: '比較の慣用表現',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['the 比較級', 'no more', 'no less', 'not so much', '倍'],
+                  keywords: [
+                    'the 比較級',
+                    'no more',
+                    'no less',
+                    'not so much',
+                    '倍'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'english.eng.grammar.comparison.latin',
@@ -455,7 +491,14 @@ CurriculumNode(
                   id: 'english.eng.grammar.subjunctive.advanced',
                   name: 'if の省略・without・倒置の仮定法',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['Without', 'But for', '倒置', 'Were', 'Had', 'should'],
+                  keywords: [
+                    'Without',
+                    'But for',
+                    '倒置',
+                    'Were',
+                    'Had',
+                    'should'
+                  ],
                 ),
               ],
             ),
@@ -476,7 +519,13 @@ CurriculumNode(
                   id: 'english.eng.grammar.conj.subordinate',
                   name: '従位接続詞',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['although', 'though', 'unless', 'while', 'as long as'],
+                  keywords: [
+                    'although',
+                    'though',
+                    'unless',
+                    'while',
+                    'as long as'
+                  ],
                 ),
                 CurriculumNode(
                   id: 'english.eng.grammar.conj.noun',
@@ -557,7 +606,12 @@ CurriculumNode(
                   id: 'english.eng.grammar.negation.idiom',
                   name: '否定の慣用表現',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['far from', 'anything but', 'by no means', 'cannot ~ too'],
+                  keywords: [
+                    'far from',
+                    'anything but',
+                    'by no means',
+                    'cannot ~ too'
+                  ],
                 ),
               ],
             ),
@@ -794,7 +848,14 @@ CurriculumNode(
                   id: 'english.eng.speaking.conversation.function',
                   name: '依頼・提案・許可の表現',
                   level: CurriculumLevel.subUnit,
-                  keywords: ['依頼', '提案', '許可', 'Would you', 'Shall we', 'Why don\'t'],
+                  keywords: [
+                    '依頼',
+                    '提案',
+                    '許可',
+                    'Would you',
+                    'Shall we',
+                    'Why don\'t'
+                  ],
                 ),
               ],
             ),
