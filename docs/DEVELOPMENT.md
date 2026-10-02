@@ -83,7 +83,7 @@ firebase deploy --only hosting --project <プロジェクトID>
 
 ## 6. 守るルール
 
-- 市販教材（LEAP・STEP など）の内容を RPG の問題に使わない。LEAP・EEVI は端末内の学習モードだけで扱う
+- 市販教材（LEAP・STEP など）の内容を RPG の問題に使わない。LEAP・EEVI・つづ単は、名前とパスワードで開く単語帳（`rpg_game/tool/vocab_seal.dart` で暗号化して `assets/vocab/` に置く）だけで扱う
 - パスワードや市販教材の本文をコミットしない。プロモーションコードはハッシュ値だけを保存する
 - ガチャ・ランダム型の課金は作らない
 - 変更したら `dart analyze`・`flutter analyze`・両方のテストを通してからコミットする
