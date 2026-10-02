@@ -81,7 +81,9 @@ class Proficiency {
   /// 1問の記録が、どの教科のどの分野か
   static (String subject, String field)? fieldOf(QuestionStat stat) {
     final setId = stat.setId;
-    if (setId.startsWith('words_')) return (RpgCatalog.englishWorldId, '単語');
+    if (setId.startsWith('words_') || setId.startsWith('tsuzutan_')) {
+      return (RpgCatalog.englishWorldId, '単語');
+    }
     if (setId.startsWith('idioms_')) return (RpgCatalog.englishWorldId, '熟語');
     final subject = LearningRecord.subjectOf(setId);
     if (subject == RpgCatalog.englishWorldId) {

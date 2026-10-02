@@ -45,21 +45,59 @@ void main() {
 
   group('定期テストの海：単語帳', () {
     for (final book in SeaCatalog.wordBooks) {
-      test('${book.title}: 40語・自作・4択が作れる', () {
+      test('${book.title}: 自作・4択が作れる', () {
         final list = loadWords(book.id);
         expect(list.listId, book.id);
         expect(list.origin, QuestionOrigin.original);
-        expect(list.words.length, 40);
+        final tsuzutan =
+            Tsuzutan.lists.where((l) => l.id == book.id).firstOrNull;
+        expect(list.words.length, tsuzutan?.count ?? 40);
         for (final dir in WordQuizDirection.values) {
           final set =
               WordQuizBuilder(random: Random(1)).build(list, direction: dir);
-          expect(set.questions.length, 40);
+          expect(set.questions.length, list.words.length);
           for (final q in set.questions) {
             expect(q.choices.toSet().length, 4);
           }
         }
       });
     }
+  });
+
+  group('つづ単（公開版）', () {
+    final all = [for (final l in Tsuzutan.lists) loadWords(l.id)];
+    test('全語に意味・例文・訳・豆知識があり、語の重複がない', () {
+      final terms = <String>{};
+      for (final list in all) {
+        for (final w in list.words) {
+          expect(terms.add(w.term.toLowerCase()), isTrue, reason: w.term);
+          expect(w.meaning, isNotEmpty, reason: w.term);
+          expect(w.example, isNotEmpty, reason: w.term);
+          expect(w.exampleJa, isNotEmpty, reason: w.term);
+          expect(w.note, isNotEmpty, reason: w.term);
+        }
+      }
+      expect(terms.length, 5584);
+    });
+
+    test('一覧（tsuzutan_lists.g.dart）が単語ファイルとそろっている', () {
+      for (var i = 0; i < all.length; i++) {
+        expect(all[i].words.length, Tsuzutan.lists[i].count);
+        expect(all[i].words.first.term, Tsuzutan.lists[i].first);
+      }
+    });
+
+    test('RPG のバトルに混ぜる単語問題が作れて、単元が付く', () {
+      final sets = Tsuzutan.battleSets(all.take(2).toList(),
+          count: 10, random: Random(3));
+      final qs = [for (final s in sets) ...s.questions];
+      expect(qs, isNotEmpty);
+      for (final q in qs) {
+        expect(q.choices.toSet().length, 4);
+        expect(q.unit, startsWith('english.eng.vocab.'));
+        expect(q.explanation, contains('💡'));
+      }
+    });
   });
 
   group('貼り付けた単語リストの読み取り', () {

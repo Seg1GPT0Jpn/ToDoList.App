@@ -135,7 +135,7 @@ class _SeaHomeScreenState extends State<SeaHomeScreen> {
                   _GradeTab(grade: 1, progress: progress),
                   _GradeTab(grade: 2, progress: progress),
                   _GradeTab(grade: 3, progress: progress),
-                  _WordsTab(progress: progress),
+                  WordBooksTab(progress: progress),
                   _ExtraTab(world: null, sets: extras, progress: progress),
                   VocabHome(books: widget.personalBooks),
                 ],
@@ -409,17 +409,25 @@ class _GradeTab extends StatelessWidget {
   }
 }
 
-class _WordsTab extends StatelessWidget {
-  const _WordsTab({required this.progress});
+/// 単語帳の4択（定期テストの海・模擬試験の空）
+class WordBooksTab extends StatelessWidget {
+  const WordBooksTab({
+    super.key,
+    required this.progress,
+    this.realm = StudyRealm.sea,
+  });
   final RpgProgress progress;
+  final StudyRealm realm;
 
   Future<void> _open(
     BuildContext context,
     SeaWordBook book,
     WordQuizDirection dir,
   ) async {
-    final raw = await rootBundle.loadString(
-      'packages/rpg_game/assets/words/${book.id}.json',
+    final raw = utf8.decode(
+      (await rootBundle.load('packages/rpg_game/assets/words/${book.id}.json'))
+          .buffer
+          .asUint8List(),
     );
     final list = WordList.fromJson(jsonDecode(raw) as Map<String, dynamic>);
     final set = WordQuizBuilder().build(list, direction: dir);
@@ -434,6 +442,7 @@ class _WordsTab extends StatelessWidget {
       questions: set.questions,
       worldId: RpgCatalog.englishWorldId,
       normalTimeLimitSeconds: 15,
+      realm: realm,
     );
   }
 
@@ -442,9 +451,9 @@ class _WordsTab extends StatelessWidget {
     return ListView(
       padding: const EdgeInsets.fromLTRB(40, 12, 12, 24),
       children: [
-        Text('LEAP・EEVI', style: serif(15, color: TsuzuriColors.inkSoft)),
+        Text('パスワードで開いた単語帳', style: serif(15, color: TsuzuriColors.inkSoft)),
         const SizedBox(height: 8),
-        VocabBookQuizSection(progress: progress),
+        VocabBookQuizSection(progress: progress, realm: realm),
         const SizedBox(height: 12),
         Text('1回20問（ランダム）', style: serif(15, color: TsuzuriColors.inkSoft)),
         const SizedBox(height: 8),

@@ -74,6 +74,7 @@ export 'src/world/elites.dart';
 export 'src/world/notebook_world.dart';
 export 'src/world/terrain.dart';
 export 'src/vocab/fsrs.dart';
+export 'src/vocab/tsuzutan.dart';
 export 'src/vocab/vocab_book.dart';
 export 'src/vocab/vocab_progress.dart';
 export 'src/vocab/vocab_vault.dart';

@@ -1429,62 +1429,271 @@ const curriculumQuestionCounts = <String, int>{
 
 /// 単元・小単元に直接属する問題が入っている問題セット
 const curriculumUnitSets = <String, List<String>>{
-  'english.eng.vocab.basic.meaning': ['english_stage_01', 'english_stage_02', 'english_stage_03', 'english_stage_04', 'english_stage_05', 'english_stage_06', 'english_stage_exam_01'],
-  'english.eng.vocab.basic.pos': ['english_stage_01', 'english_stage_02', 'english_stage_03', 'english_stage_04', 'english_stage_05', 'english_stage_06', 'english_stage_07', 'english_stage_08', 'english_stage_09', 'english_stage_10', 'english_stage_11', 'english_stage_12', 'english_stage_13', 'english_stage_14', 'english_stage_15'],
-  'english.eng.vocab.standard.meaning': ['english_stage_07', 'english_stage_08', 'english_stage_09', 'english_stage_10', 'english_stage_11', 'english_stage_12', 'english_stage_13'],
+  'english.eng.vocab.basic.meaning': [
+    'english_stage_01',
+    'english_stage_02',
+    'english_stage_03',
+    'english_stage_04',
+    'english_stage_05',
+    'english_stage_06',
+    'english_stage_exam_01'
+  ],
+  'english.eng.vocab.basic.pos': [
+    'english_stage_01',
+    'english_stage_02',
+    'english_stage_03',
+    'english_stage_04',
+    'english_stage_05',
+    'english_stage_06',
+    'english_stage_07',
+    'english_stage_08',
+    'english_stage_09',
+    'english_stage_10',
+    'english_stage_11',
+    'english_stage_12',
+    'english_stage_13',
+    'english_stage_14',
+    'english_stage_15'
+  ],
+  'english.eng.vocab.standard.meaning': [
+    'english_stage_07',
+    'english_stage_08',
+    'english_stage_09',
+    'english_stage_10',
+    'english_stage_11',
+    'english_stage_12',
+    'english_stage_13'
+  ],
   'english.eng.vocab.standard.derivation': ['english_v4_02'],
-  'english.eng.vocab.advanced.meaning': ['english_stage_14', 'english_stage_15'],
+  'english.eng.vocab.advanced.meaning': [
+    'english_stage_14',
+    'english_stage_15'
+  ],
   'english.eng.vocab.advanced.abstract': ['english_v4_02'],
   'english.eng.vocab.idiom.phrasal': ['english_stage_13'],
-  'english.eng.vocab.idiom.idiom': ['english_stage_01', 'english_stage_02', 'english_stage_03', 'english_stage_04', 'english_stage_05', 'english_stage_06', 'english_stage_07', 'english_stage_08', 'english_stage_09', 'english_stage_10', 'english_stage_11', 'english_stage_12', 'english_stage_13', 'english_stage_14', 'english_stage_15', 'english_stage_exam_01'],
+  'english.eng.vocab.idiom.idiom': [
+    'english_stage_01',
+    'english_stage_02',
+    'english_stage_03',
+    'english_stage_04',
+    'english_stage_05',
+    'english_stage_06',
+    'english_stage_07',
+    'english_stage_08',
+    'english_stage_09',
+    'english_stage_10',
+    'english_stage_11',
+    'english_stage_12',
+    'english_stage_13',
+    'english_stage_14',
+    'english_stage_15',
+    'english_stage_exam_01'
+  ],
   'english.eng.vocab.idiom.collocation': ['english_stage_07'],
   'english.eng.vocab.synonym.synonym': ['english_v4_01'],
   'english.eng.vocab.synonym.usage': ['english_stage_06'],
   'english.eng.grammar.sentence': ['sea_g1_01'],
   'english.eng.grammar.sentence.pattern': ['english_stage_01', 'sea_g1_01'],
   'english.eng.grammar.sentence.verb': ['english_stage_01'],
-  'english.eng.grammar.tense': ['english_stage_01', 'sea_g1_02', 'sea_g2_01', 'sea_g3_08'],
-  'english.eng.grammar.tense.simple': ['english_stage_01', 'sea_g1_02', 'sea_g2_01', 'sea_g3_08'],
-  'english.eng.grammar.tense.progressive': ['english_stage_01', 'sea_g1_02', 'sea_g3_08'],
-  'english.eng.grammar.tense.perfect': ['english_stage_01', 'english_stage_exam_01', 'sea_g1_02', 'sea_g2_01', 'sea_g3_07', 'sea_g3_08'],
+  'english.eng.grammar.tense': [
+    'english_stage_01',
+    'sea_g1_02',
+    'sea_g2_01',
+    'sea_g3_08'
+  ],
+  'english.eng.grammar.tense.simple': [
+    'english_stage_01',
+    'sea_g1_02',
+    'sea_g2_01',
+    'sea_g3_08'
+  ],
+  'english.eng.grammar.tense.progressive': [
+    'english_stage_01',
+    'sea_g1_02',
+    'sea_g3_08'
+  ],
+  'english.eng.grammar.tense.perfect': [
+    'english_stage_01',
+    'english_stage_exam_01',
+    'sea_g1_02',
+    'sea_g2_01',
+    'sea_g3_07',
+    'sea_g3_08'
+  ],
   'english.eng.grammar.tense.agreement': ['english_v4_02'],
-  'english.eng.grammar.auxiliary': ['english_stage_02', 'sea_g1_03', 'sea_g2_02'],
-  'english.eng.grammar.auxiliary.basic': ['english_stage_02', 'sea_g1_03', 'sea_g2_02', 'sea_g3_07', 'sea_g3_08'],
+  'english.eng.grammar.auxiliary': [
+    'english_stage_02',
+    'sea_g1_03',
+    'sea_g2_02'
+  ],
+  'english.eng.grammar.auxiliary.basic': [
+    'english_stage_02',
+    'sea_g1_03',
+    'sea_g2_02',
+    'sea_g3_07',
+    'sea_g3_08'
+  ],
   'english.eng.grammar.auxiliary.perfect': ['english_v4_02'],
-  'english.eng.grammar.auxiliary.idiom': ['english_stage_02', 'sea_g1_03', 'sea_g2_02'],
+  'english.eng.grammar.auxiliary.idiom': [
+    'english_stage_02',
+    'sea_g1_03',
+    'sea_g2_02'
+  ],
   'english.eng.grammar.passive': ['sea_g1_07'],
   'english.eng.grammar.passive.basic': ['sea_g1_07', 'sea_g3_07', 'sea_g3_08'],
   'english.eng.grammar.passive.advanced': ['english_v4_02'],
-  'english.eng.grammar.infinitive': ['english_stage_03', 'english_stage_04', 'sea_g1_04', 'sea_g2_03', 'sea_g3_07'],
-  'english.eng.grammar.infinitive.usage': ['english_stage_03', 'sea_g1_04', 'sea_g2_03'],
-  'english.eng.grammar.infinitive.subject': ['english_stage_04', 'sea_g1_12', 'sea_g2_03'],
-  'english.eng.grammar.infinitive.construction': ['english_stage_03', 'sea_g1_04', 'sea_g2_03'],
-  'english.eng.grammar.infinitive.causative': ['english_stage_01', 'english_stage_03', 'english_stage_04', 'sea_g1_04', 'sea_g2_03', 'sea_g3_07', 'sea_g3_08'],
+  'english.eng.grammar.infinitive': [
+    'english_stage_03',
+    'english_stage_04',
+    'sea_g1_04',
+    'sea_g2_03',
+    'sea_g3_07'
+  ],
+  'english.eng.grammar.infinitive.usage': [
+    'english_stage_03',
+    'sea_g1_04',
+    'sea_g2_03'
+  ],
+  'english.eng.grammar.infinitive.subject': [
+    'english_stage_04',
+    'sea_g1_12',
+    'sea_g2_03'
+  ],
+  'english.eng.grammar.infinitive.construction': [
+    'english_stage_03',
+    'sea_g1_04',
+    'sea_g2_03'
+  ],
+  'english.eng.grammar.infinitive.causative': [
+    'english_stage_01',
+    'english_stage_03',
+    'english_stage_04',
+    'sea_g1_04',
+    'sea_g2_03',
+    'sea_g3_07',
+    'sea_g3_08'
+  ],
   'english.eng.grammar.gerund': ['english_stage_05', 'sea_g1_05', 'sea_g2_04'],
-  'english.eng.grammar.gerund.usage': ['english_stage_05', 'sea_g1_05', 'sea_g2_04', 'sea_g3_07'],
-  'english.eng.grammar.gerund.contrast': ['english_formats_01', 'english_stage_05', 'sea_g1_05', 'sea_g2_04', 'sea_g3_07'],
-  'english.eng.grammar.gerund.idiom': ['english_formats_01', 'sea_g1_05', 'sea_g2_04', 'sea_g3_07'],
+  'english.eng.grammar.gerund.usage': [
+    'english_stage_05',
+    'sea_g1_05',
+    'sea_g2_04',
+    'sea_g3_07'
+  ],
+  'english.eng.grammar.gerund.contrast': [
+    'english_formats_01',
+    'english_stage_05',
+    'sea_g1_05',
+    'sea_g2_04',
+    'sea_g3_07'
+  ],
+  'english.eng.grammar.gerund.idiom': [
+    'english_formats_01',
+    'sea_g1_05',
+    'sea_g2_04',
+    'sea_g3_07'
+  ],
   'english.eng.grammar.participle': ['english_stage_06', 'sea_g1_06'],
-  'english.eng.grammar.participle.modifier': ['english_stage_06', 'sea_g1_06', 'sea_g3_07', 'sea_g3_08'],
+  'english.eng.grammar.participle.modifier': [
+    'english_stage_06',
+    'sea_g1_06',
+    'sea_g3_07',
+    'sea_g3_08'
+  ],
   'english.eng.grammar.participle.complement': ['english_stage_01'],
-  'english.eng.grammar.construction': ['english_stage_07', 'sea_g2_05', 'sea_g3_06'],
-  'english.eng.grammar.construction.basic': ['english_stage_07', 'sea_g2_05', 'sea_g3_06'],
-  'english.eng.grammar.construction.advanced': ['english_stage_07', 'sea_g2_05', 'sea_g3_06'],
+  'english.eng.grammar.construction': [
+    'english_stage_07',
+    'sea_g2_05',
+    'sea_g3_06'
+  ],
+  'english.eng.grammar.construction.basic': [
+    'english_stage_07',
+    'sea_g2_05',
+    'sea_g3_06'
+  ],
+  'english.eng.grammar.construction.advanced': [
+    'english_stage_07',
+    'sea_g2_05',
+    'sea_g3_06'
+  ],
   'english.eng.grammar.comparison': ['sea_g1_08', 'sea_g2_08'],
-  'english.eng.grammar.comparison.basic': ['english_stage_08', 'sea_g1_08', 'sea_g2_08'],
-  'english.eng.grammar.comparison.idiom': ['english_stage_08', 'sea_g1_08', 'sea_g2_08'],
+  'english.eng.grammar.comparison.basic': [
+    'english_stage_08',
+    'sea_g1_08',
+    'sea_g2_08'
+  ],
+  'english.eng.grammar.comparison.idiom': [
+    'english_stage_08',
+    'sea_g1_08',
+    'sea_g2_08'
+  ],
   'english.eng.grammar.comparison.latin': ['english_v4_02'],
-  'english.eng.grammar.relative': ['english_stage_09', 'english_stage_10', 'sea_g1_09', 'sea_g2_06', 'sea_g3_01'],
-  'english.eng.grammar.relative.pronoun': ['english_stage_09', 'english_stage_10', 'sea_g1_09', 'sea_g2_06', 'sea_g3_01'],
-  'english.eng.grammar.relative.adverb': ['english_stage_09', 'english_stage_10', 'sea_g1_09', 'sea_g2_06'],
-  'english.eng.grammar.relative.nonrestrictive': ['english_stage_09', 'sea_g2_06'],
-  'english.eng.grammar.relative.what': ['english_stage_10', 'sea_g1_09', 'sea_g2_06', 'sea_g3_01'],
-  'english.eng.grammar.relative.compound': ['english_stage_10', 'sea_g2_06', 'sea_g3_01'],
-  'english.eng.grammar.subjunctive': ['english_stage_11', 'english_stage_12', 'sea_g1_10', 'sea_g2_07', 'sea_g3_02'],
-  'english.eng.grammar.subjunctive.past': ['english_formats_01', 'english_stage_11', 'english_stage_12', 'sea_g1_10', 'sea_g2_07', 'sea_g3_02'],
-  'english.eng.grammar.subjunctive.pastperfect': ['english_stage_12', 'sea_g2_07', 'sea_g3_02'],
-  'english.eng.grammar.subjunctive.wish': ['english_stage_11', 'sea_g2_07', 'sea_g3_02'],
-  'english.eng.grammar.subjunctive.advanced': ['english_stage_12', 'sea_g1_10', 'sea_g2_07', 'sea_g3_02'],
+  'english.eng.grammar.relative': [
+    'english_stage_09',
+    'english_stage_10',
+    'sea_g1_09',
+    'sea_g2_06',
+    'sea_g3_01'
+  ],
+  'english.eng.grammar.relative.pronoun': [
+    'english_stage_09',
+    'english_stage_10',
+    'sea_g1_09',
+    'sea_g2_06',
+    'sea_g3_01'
+  ],
+  'english.eng.grammar.relative.adverb': [
+    'english_stage_09',
+    'english_stage_10',
+    'sea_g1_09',
+    'sea_g2_06'
+  ],
+  'english.eng.grammar.relative.nonrestrictive': [
+    'english_stage_09',
+    'sea_g2_06'
+  ],
+  'english.eng.grammar.relative.what': [
+    'english_stage_10',
+    'sea_g1_09',
+    'sea_g2_06',
+    'sea_g3_01'
+  ],
+  'english.eng.grammar.relative.compound': [
+    'english_stage_10',
+    'sea_g2_06',
+    'sea_g3_01'
+  ],
+  'english.eng.grammar.subjunctive': [
+    'english_stage_11',
+    'english_stage_12',
+    'sea_g1_10',
+    'sea_g2_07',
+    'sea_g3_02'
+  ],
+  'english.eng.grammar.subjunctive.past': [
+    'english_formats_01',
+    'english_stage_11',
+    'english_stage_12',
+    'sea_g1_10',
+    'sea_g2_07',
+    'sea_g3_02'
+  ],
+  'english.eng.grammar.subjunctive.pastperfect': [
+    'english_stage_12',
+    'sea_g2_07',
+    'sea_g3_02'
+  ],
+  'english.eng.grammar.subjunctive.wish': [
+    'english_stage_11',
+    'sea_g2_07',
+    'sea_g3_02'
+  ],
+  'english.eng.grammar.subjunctive.advanced': [
+    'english_stage_12',
+    'sea_g1_10',
+    'sea_g2_07',
+    'sea_g3_02'
+  ],
   'english.eng.grammar.conj': ['sea_g1_11', 'sea_g2_11'],
   'english.eng.grammar.conj.coordinate': ['sea_g1_11', 'sea_g1_12'],
   'english.eng.grammar.conj.subordinate': ['sea_g1_11'],
@@ -1495,31 +1704,82 @@ const curriculumUnitSets = <String, List<String>>{
   'english.eng.grammar.pronoun.article': ['english_v4_02'],
   'english.eng.grammar.adjadv.adjective': ['english_v4_01', 'sea_g1_12'],
   'english.eng.grammar.adjadv.adverb': ['english_v4_01'],
-  'english.eng.grammar.adjadv.preposition': ['english_stage_exam_01', 'english_v4_01', 'sea_g1_12'],
+  'english.eng.grammar.adjadv.preposition': [
+    'english_stage_exam_01',
+    'english_v4_01',
+    'sea_g1_12'
+  ],
   'english.eng.grammar.negation': ['sea_g2_09'],
   'english.eng.grammar.negation.partial': ['sea_g2_09'],
   'english.eng.grammar.negation.idiom': ['sea_g2_09'],
-  'english.eng.structure.special': ['english_stage_13', 'sea_g2_10', 'sea_g3_03', 'sea_g3_04', 'sea_g3_05'],
-  'english.eng.structure.special.inversion': ['english_stage_13', 'sea_g2_10', 'sea_g3_03'],
-  'english.eng.structure.special.emphasis': ['english_stage_13', 'sea_g2_10', 'sea_g3_05'],
+  'english.eng.structure.special': [
+    'english_stage_13',
+    'sea_g2_10',
+    'sea_g3_03',
+    'sea_g3_04',
+    'sea_g3_05'
+  ],
+  'english.eng.structure.special.inversion': [
+    'english_stage_13',
+    'sea_g2_10',
+    'sea_g3_03'
+  ],
+  'english.eng.structure.special.emphasis': [
+    'english_stage_13',
+    'sea_g2_10',
+    'sea_g3_05'
+  ],
   'english.eng.structure.special.ellipsis': ['english_stage_13', 'sea_g3_04'],
   'english.eng.structure.special.apposition': ['sea_g3_05'],
-  'english.eng.structure.complex': ['english_stage_14', 'english_stage_15', 'sea_g2_12', 'sea_g3_09'],
-  'english.eng.structure.complex.subject': ['english_stage_15', 'english_stage_exam_01', 'sea_g3_09'],
+  'english.eng.structure.complex': [
+    'english_stage_14',
+    'english_stage_15',
+    'sea_g2_12',
+    'sea_g3_09'
+  ],
+  'english.eng.structure.complex.subject': [
+    'english_stage_15',
+    'english_stage_exam_01',
+    'sea_g3_09'
+  ],
   'english.eng.structure.complex.nested': ['english_stage_15', 'sea_g3_09'],
   'english.eng.structure.complex.inanimate': ['english_stage_14', 'sea_g2_12'],
   'english.eng.structure.order': ['english_order_01'],
   'english.eng.structure.order.order': ['english_formats_01'],
-  'english.eng.reading.intensive.structure': ['english_formats_01', 'english_stage_exam_01', 'english_v4_01'],
+  'english.eng.reading.intensive.structure': [
+    'english_formats_01',
+    'english_stage_exam_01',
+    'english_v4_01'
+  ],
   'english.eng.reading.intensive.reference': ['english_v4_01'],
-  'english.eng.reading.passage': ['english_long_01', 'english_stage_18', 'english_stage_19'],
-  'english.eng.reading.passage.detail': ['english_long_01', 'english_stage_18', 'english_stage_19', 'english_stage_exam_01'],
+  'english.eng.reading.passage': [
+    'english_long_01',
+    'english_stage_18',
+    'english_stage_19'
+  ],
+  'english.eng.reading.passage.detail': [
+    'english_long_01',
+    'english_stage_18',
+    'english_stage_19',
+    'english_stage_exam_01'
+  ],
   'english.eng.reading.passage.main': ['english_stage_18', 'english_stage_19'],
-  'english.eng.reading.passage.logic': ['english_formats_01', 'english_stage_18', 'english_stage_19'],
+  'english.eng.reading.passage.logic': [
+    'english_formats_01',
+    'english_stage_18',
+    'english_stage_19'
+  ],
   'english.eng.reading.passage.inference': ['english_v4_02'],
   'english.eng.reading.practical.notice': ['english_v4_01'],
-  'english.eng.reading.practical.chart': ['english_applied_reading_01', 'english_stage_exam_01', 'english_v4_01'],
-  'english.eng.reading.practical.multiple': ['english_applied_reading_01', 'english_v4_01'],
+  'english.eng.reading.practical.chart': [
+    'english_applied_reading_01',
+    'english_stage_exam_01',
+    'english_v4_01'
+  ],
+  'english.eng.reading.practical.multiple': [
+    'english_applied_reading_01',
+    'english_v4_01'
+  ],
   'english.eng.listening.listening': ['english_applied_reading_01'],
   'english.eng.listening.listening.short': ['english_listening_01'],
   'english.eng.listening.listening.long': ['english_v4_02'],
@@ -1529,23 +1789,63 @@ const curriculumUnitSets = <String, List<String>>{
   'english.eng.speaking.conversation.function': ['english_applied_reading_01'],
   'english.eng.speaking.pron.sound': ['english_pron_01'],
   'english.eng.speaking.pron.accent': ['english_pron_01'],
-  'english.eng.writing.sentence.translate': ['english_formats_01', 'english_v4_01'],
+  'english.eng.writing.sentence.translate': [
+    'english_formats_01',
+    'english_v4_01'
+  ],
   'english.eng.writing.sentence.error': ['english_v4_01'],
   'english.eng.writing.essay.opinion': ['english_v4_01'],
   'english.eng.writing.essay.summary': ['english_v4_01'],
   'english.eng.exam.common.reading': ['english_v4_01'],
   'english.eng.exam.advanced': ['english_stage_exam_01'],
   'english.eng.exam.advanced.synthesis': ['english_v4_01'],
-  'science.physics.mechanics.kinematics': ['science_graph_01', 'science_physics_01', 'science_physics_02', 'science_physics_basic_01'],
-  'science.physics.mechanics.kinematics.measure': ['science_physics_01', 'science_physics_10'],
-  'science.physics.mechanics.kinematics.velocity': ['science_graph_01', 'science_physics_01', 'science_physics_02', 'science_physics_10', 'science_physics_basic_01'],
+  'science.physics.mechanics.kinematics': [
+    'science_graph_01',
+    'science_physics_01',
+    'science_physics_02',
+    'science_physics_basic_01'
+  ],
+  'science.physics.mechanics.kinematics.measure': [
+    'science_physics_01',
+    'science_physics_10'
+  ],
+  'science.physics.mechanics.kinematics.velocity': [
+    'science_graph_01',
+    'science_physics_01',
+    'science_physics_02',
+    'science_physics_10',
+    'science_physics_basic_01'
+  ],
   'science.physics.mechanics.kinematics.accel': ['science_physics_02'],
-  'science.physics.mechanics.kinematics.graph': ['science_graph_01', 'science_physics_01', 'science_physics_02', 'science_physics_basic_01'],
-  'science.physics.mechanics.kinematics.fall': ['science_formats_01', 'science_graph_01', 'science_physics_02', 'science_physics_basic_01'],
+  'science.physics.mechanics.kinematics.graph': [
+    'science_graph_01',
+    'science_physics_01',
+    'science_physics_02',
+    'science_physics_basic_01'
+  ],
+  'science.physics.mechanics.kinematics.fall': [
+    'science_formats_01',
+    'science_graph_01',
+    'science_physics_02',
+    'science_physics_basic_01'
+  ],
   'science.physics.mechanics.force': ['science_physics_03'],
-  'science.physics.mechanics.force.kinds': ['science_formats_01', 'science_graph_01', 'science_physics_03', 'science_physics_10', 'science_physics_basic_01'],
-  'science.physics.mechanics.force.balance': ['science_physics_03', 'science_physics_10', 'science_physics_basic_01'],
-  'science.physics.mechanics.force.friction': ['science_physics_03', 'science_physics_basic_01'],
+  'science.physics.mechanics.force.kinds': [
+    'science_formats_01',
+    'science_graph_01',
+    'science_physics_03',
+    'science_physics_10',
+    'science_physics_basic_01'
+  ],
+  'science.physics.mechanics.force.balance': [
+    'science_physics_03',
+    'science_physics_10',
+    'science_physics_basic_01'
+  ],
+  'science.physics.mechanics.force.friction': [
+    'science_physics_03',
+    'science_physics_basic_01'
+  ],
   'science.physics.mechanics.force.pressure': ['science_physics_03'],
   'science.physics.mechanics.newton': ['science_physics_04'],
   'science.physics.mechanics.newton.laws': ['science_physics_04'],
@@ -1553,26 +1853,49 @@ const curriculumUnitSets = <String, List<String>>{
   'science.physics.mechanics.newton.system': ['science_physics_04'],
   'science.physics.mechanics.newton.resistance': ['science_v4_02'],
   'science.physics.mechanics.energy': ['science_physics_05'],
-  'science.physics.mechanics.energy.work': ['science_physics_05', 'science_physics_basic_01'],
+  'science.physics.mechanics.energy.work': [
+    'science_physics_05',
+    'science_physics_basic_01'
+  ],
   'science.physics.mechanics.energy.kinetic': ['science_physics_05'],
   'science.physics.mechanics.energy.potential': ['science_physics_05'],
   'science.physics.mechanics.energy.conservation': ['science_physics_05'],
   'science.physics.mechanics.plane': ['science_physics_09'],
-  'science.physics.mechanics.plane.vector': ['science_graph_01', 'science_physics_09'],
+  'science.physics.mechanics.plane.vector': [
+    'science_graph_01',
+    'science_physics_09'
+  ],
   'science.physics.mechanics.plane.projectile': ['science_physics_09'],
-  'science.physics.mechanics.rigid.moment': ['science_physics_10', 'science_v4_01'],
-  'science.physics.mechanics.rigid.center': ['science_physics_10', 'science_v4_01'],
+  'science.physics.mechanics.rigid.moment': [
+    'science_physics_10',
+    'science_v4_01'
+  ],
+  'science.physics.mechanics.rigid.center': [
+    'science_physics_10',
+    'science_v4_01'
+  ],
   'science.physics.mechanics.momentum': ['science_physics_10'],
   'science.physics.mechanics.momentum.impulse': ['science_physics_10'],
   'science.physics.mechanics.momentum.conservation': ['science_v4_02'],
   'science.physics.mechanics.momentum.collision': ['science_physics_10'],
   'science.physics.mechanics.circular.circular': ['science_physics_11'],
   'science.physics.mechanics.circular.inertial': ['science_physics_11'],
-  'science.physics.mechanics.circular.shm': ['science_physics_11', 'science_v4_01'],
+  'science.physics.mechanics.circular.shm': [
+    'science_physics_11',
+    'science_v4_01'
+  ],
   'science.physics.mechanics.circular.gravity': ['science_physics_11'],
   'science.physics.thermo.heat': ['science_physics_07'],
-  'science.physics.thermo.heat.temperature': ['science_graph_01', 'science_physics_07', 'science_physics_basic_01'],
-  'science.physics.thermo.heat.capacity': ['science_graph_01', 'science_physics_07', 'science_physics_basic_01'],
+  'science.physics.thermo.heat.temperature': [
+    'science_graph_01',
+    'science_physics_07',
+    'science_physics_basic_01'
+  ],
+  'science.physics.thermo.heat.capacity': [
+    'science_graph_01',
+    'science_physics_07',
+    'science_physics_basic_01'
+  ],
   'science.physics.thermo.heat.state': ['science_v4_02'],
   'science.physics.thermo.heat.conversion': ['science_physics_07'],
   'science.physics.thermo.gas': ['science_physics_12'],
@@ -1580,12 +1903,20 @@ const curriculumUnitSets = <String, List<String>>{
   'science.physics.thermo.gas.kinetic': ['science_physics_12'],
   'science.physics.thermo.gas.first': ['science_physics_12'],
   'science.physics.thermo.gas.cycle': ['science_physics_12', 'science_v4_01'],
-  'science.physics.waves.basic.describe': ['science_physics_06', 'science_physics_13', 'science_physics_basic_01'],
+  'science.physics.waves.basic.describe': [
+    'science_physics_06',
+    'science_physics_13',
+    'science_physics_basic_01'
+  ],
   'science.physics.waves.basic.kinds': ['science_physics_06'],
   'science.physics.waves.basic.superposition': ['science_physics_06'],
   'science.physics.waves.basic.reflection': ['science_physics_13'],
   'science.physics.waves.sound': ['science_physics_06'],
-  'science.physics.waves.sound.nature': ['science_physics_06', 'science_physics_13', 'science_physics_basic_01'],
+  'science.physics.waves.sound.nature': [
+    'science_physics_06',
+    'science_physics_13',
+    'science_physics_basic_01'
+  ],
   'science.physics.waves.sound.string': ['science_physics_06'],
   'science.physics.waves.sound.column': ['science_physics_06'],
   'science.physics.waves.sound.beat': ['science_physics_06'],
@@ -1593,23 +1924,58 @@ const curriculumUnitSets = <String, List<String>>{
   'science.physics.waves.light': ['science_physics_13'],
   'science.physics.waves.light.nature': ['science_physics_13'],
   'science.physics.waves.light.lens': ['science_v4_02'],
-  'science.physics.waves.light.interference': ['science_physics_13', 'science_v4_01'],
+  'science.physics.waves.light.interference': [
+    'science_physics_13',
+    'science_v4_01'
+  ],
   'science.physics.em.current': ['science_physics_08'],
-  'science.physics.em.current.charge': ['science_physics_08', 'science_physics_basic_01', 'science_physics_rlc_01'],
-  'science.physics.em.current.ohm': ['science_graph_01', 'science_physics_08', 'science_physics_basic_01'],
-  'science.physics.em.current.power': ['science_physics_08', 'science_physics_basic_01', 'science_physics_rlc_01'],
-  'science.physics.em.current.ac': ['science_physics_08', 'science_physics_basic_01', 'science_physics_rlc_01'],
+  'science.physics.em.current.charge': [
+    'science_physics_08',
+    'science_physics_basic_01',
+    'science_physics_rlc_01'
+  ],
+  'science.physics.em.current.ohm': [
+    'science_graph_01',
+    'science_physics_08',
+    'science_physics_basic_01'
+  ],
+  'science.physics.em.current.power': [
+    'science_physics_08',
+    'science_physics_basic_01',
+    'science_physics_rlc_01'
+  ],
+  'science.physics.em.current.ac': [
+    'science_physics_08',
+    'science_physics_basic_01',
+    'science_physics_rlc_01'
+  ],
   'science.physics.em.field': ['science_physics_14'],
   'science.physics.em.field.coulomb': ['science_physics_14'],
   'science.physics.em.field.potential': ['science_physics_14'],
-  'science.physics.em.field.capacitor': ['science_physics_14', 'science_physics_rlc_01'],
+  'science.physics.em.field.capacitor': [
+    'science_physics_14',
+    'science_physics_rlc_01'
+  ],
   'science.physics.em.field.circuit': ['science_v4_02'],
   'science.physics.em.magnetism': ['science_physics_15'],
-  'science.physics.em.magnetism.field': ['science_physics_15', 'science_physics_rlc_01'],
+  'science.physics.em.magnetism.field': [
+    'science_physics_15',
+    'science_physics_rlc_01'
+  ],
   'science.physics.em.magnetism.force': ['science_v4_02'],
-  'science.physics.em.magnetism.induction': ['science_physics_15', 'science_physics_rlc_01', 'science_v4_01'],
-  'science.physics.em.magnetism.inductance': ['science_physics_15', 'science_physics_rlc_01'],
-  'science.physics.em.magnetism.ac': ['science_physics_15', 'science_physics_rlc_01'],
+  'science.physics.em.magnetism.induction': [
+    'science_physics_15',
+    'science_physics_rlc_01',
+    'science_v4_01'
+  ],
+  'science.physics.em.magnetism.inductance': [
+    'science_physics_15',
+    'science_physics_rlc_01'
+  ],
+  'science.physics.em.magnetism.ac': [
+    'science_physics_15',
+    'science_physics_rlc_01'
+  ],
   'science.physics.atom.quantum.electron': ['science_physics_16'],
   'science.physics.atom.quantum.photo': ['science_physics_16'],
   'science.physics.atom.quantum.xray': ['science_v4_02'],
@@ -1620,39 +1986,97 @@ const curriculumUnitSets = <String, List<String>>{
   'science.physics.atom.nucleus.reaction': ['science_physics_16'],
   'science.physics.atom.nucleus.particle': ['science_v4_02'],
   'science.chemistry.structure.life': ['science_chemistry_01'],
-  'science.chemistry.structure.life.separation': ['science_chem_basic_01', 'science_chemistry_01'],
-  'science.chemistry.structure.life.element': ['science_chem_basic_01', 'science_chemistry_01'],
-  'science.chemistry.structure.life.test': ['science_chem_basic_01', 'science_chemistry_01'],
+  'science.chemistry.structure.life.separation': [
+    'science_chem_basic_01',
+    'science_chemistry_01'
+  ],
+  'science.chemistry.structure.life.element': [
+    'science_chem_basic_01',
+    'science_chemistry_01'
+  ],
+  'science.chemistry.structure.life.test': [
+    'science_chem_basic_01',
+    'science_chemistry_01'
+  ],
   'science.chemistry.structure.life.heat': ['science_chemistry_01'],
   'science.chemistry.structure.atom': ['science_chemistry_02'],
-  'science.chemistry.structure.atom.structure': ['science_chem_basic_01', 'science_chemistry_02'],
-  'science.chemistry.structure.atom.config': ['science_chem_basic_01', 'science_chemistry_02'],
-  'science.chemistry.structure.atom.ion': ['science_chem_basic_01', 'science_chemistry_02'],
+  'science.chemistry.structure.atom.structure': [
+    'science_chem_basic_01',
+    'science_chemistry_02'
+  ],
+  'science.chemistry.structure.atom.config': [
+    'science_chem_basic_01',
+    'science_chemistry_02'
+  ],
+  'science.chemistry.structure.atom.ion': [
+    'science_chem_basic_01',
+    'science_chemistry_02'
+  ],
   'science.chemistry.structure.periodic': ['science_chemistry_03'],
   'science.chemistry.structure.periodic.law': ['science_chemistry_03'],
   'science.chemistry.structure.periodic.property': ['science_chemistry_03'],
   'science.chemistry.structure.bond': ['science_chemistry_04'],
   'science.chemistry.structure.bond.ionic': ['science_chemistry_04'],
-  'science.chemistry.structure.bond.covalent': ['science_chem_basic_01', 'science_chemistry_04'],
+  'science.chemistry.structure.bond.covalent': [
+    'science_chem_basic_01',
+    'science_chemistry_04'
+  ],
   'science.chemistry.structure.bond.polarity': ['science_chemistry_04'],
   'science.chemistry.structure.bond.intermolecular': ['science_chemistry_04'],
-  'science.chemistry.structure.bond.metal': ['science_chem_basic_01', 'science_chemistry_04'],
+  'science.chemistry.structure.bond.metal': [
+    'science_chem_basic_01',
+    'science_chemistry_04'
+  ],
   'science.chemistry.change.mole': ['science_chemistry_05'],
-  'science.chemistry.change.mole.mass': ['science_chem_basic_01', 'science_chemistry_05'],
-  'science.chemistry.change.mole.mole': ['science_chem_basic_01', 'science_chemistry_05'],
-  'science.chemistry.change.mole.concentration': ['science_chem_basic_01', 'science_chemistry_05'],
+  'science.chemistry.change.mole.mass': [
+    'science_chem_basic_01',
+    'science_chemistry_05'
+  ],
+  'science.chemistry.change.mole.mole': [
+    'science_chem_basic_01',
+    'science_chemistry_05'
+  ],
+  'science.chemistry.change.mole.concentration': [
+    'science_chem_basic_01',
+    'science_chemistry_05'
+  ],
   'science.chemistry.change.equation': ['science_chemistry_06'],
-  'science.chemistry.change.equation.write': ['science_chem_basic_01', 'science_chemistry_06', 'science_formats_01'],
+  'science.chemistry.change.equation.write': [
+    'science_chem_basic_01',
+    'science_chemistry_06',
+    'science_formats_01'
+  ],
   'science.chemistry.change.equation.quantity': ['science_v4_02'],
-  'science.chemistry.change.acid.define': ['science_chem_basic_01', 'science_chemistry_07'],
-  'science.chemistry.change.acid.ph': ['science_chem_basic_01', 'science_chemistry_07'],
-  'science.chemistry.change.acid.neutral': ['science_chem_basic_01', 'science_chemistry_07', 'science_formats_01', 'science_graph_01'],
-  'science.chemistry.change.acid.salt': ['science_chem_basic_01', 'science_chemistry_07'],
+  'science.chemistry.change.acid.define': [
+    'science_chem_basic_01',
+    'science_chemistry_07'
+  ],
+  'science.chemistry.change.acid.ph': [
+    'science_chem_basic_01',
+    'science_chemistry_07'
+  ],
+  'science.chemistry.change.acid.neutral': [
+    'science_chem_basic_01',
+    'science_chemistry_07',
+    'science_formats_01',
+    'science_graph_01'
+  ],
+  'science.chemistry.change.acid.salt': [
+    'science_chem_basic_01',
+    'science_chemistry_07'
+  ],
   'science.chemistry.change.redox': ['science_chemistry_08'],
-  'science.chemistry.change.redox.oxnum': ['science_chem_basic_01', 'science_chemistry_08', 'science_formats_01'],
+  'science.chemistry.change.redox.oxnum': [
+    'science_chem_basic_01',
+    'science_chemistry_08',
+    'science_formats_01'
+  ],
   'science.chemistry.change.redox.agent': ['science_v4_02'],
   'science.chemistry.change.redox.ionization': ['science_chemistry_08'],
-  'science.chemistry.change.redox.cell': ['science_chem_basic_01', 'science_chemistry_08'],
+  'science.chemistry.change.redox.cell': [
+    'science_chem_basic_01',
+    'science_chemistry_08'
+  ],
   'science.chemistry.state.gas': ['science_chemistry_09'],
   'science.chemistry.state.gas.vapor': ['science_chemistry_09'],
   'science.chemistry.state.gas.law': ['science_chemistry_09', 'science_v4_01'],
@@ -1660,7 +2084,10 @@ const curriculumUnitSets = <String, List<String>>{
   'science.chemistry.state.gas.real': ['science_chemistry_09'],
   'science.chemistry.state.gas.crystal': ['science_v4_02'],
   'science.chemistry.state.solution': ['science_chemistry_10'],
-  'science.chemistry.state.solution.solubility': ['science_chemistry_10', 'science_graph_01'],
+  'science.chemistry.state.solution.solubility': [
+    'science_chemistry_10',
+    'science_graph_01'
+  ],
   'science.chemistry.state.solution.colligative': ['science_chemistry_10'],
   'science.chemistry.state.solution.colloid': ['science_chemistry_10'],
   'science.chemistry.equilibrium.energy': ['science_chemistry_11'],
@@ -1671,31 +2098,61 @@ const curriculumUnitSets = <String, List<String>>{
   'science.chemistry.equilibrium.rate': ['science_chemistry_12'],
   'science.chemistry.equilibrium.rate.rate': ['science_chemistry_12'],
   'science.chemistry.equilibrium.rate.constant': ['science_chemistry_12'],
-  'science.chemistry.equilibrium.rate.shift': ['science_chemistry_12', 'science_v4_01'],
-  'science.chemistry.equilibrium.rate.ionic': ['science_chemistry_12', 'science_v4_01'],
+  'science.chemistry.equilibrium.rate.shift': [
+    'science_chemistry_12',
+    'science_v4_01'
+  ],
+  'science.chemistry.equilibrium.rate.ionic': [
+    'science_chemistry_12',
+    'science_v4_01'
+  ],
   'science.chemistry.inorganic.nonmetal': ['science_chemistry_13'],
   'science.chemistry.inorganic.nonmetal.halogen': ['science_chemistry_13'],
   'science.chemistry.inorganic.nonmetal.oxygen': ['science_chemistry_13'],
-  'science.chemistry.inorganic.nonmetal.nitrogen': ['science_chemistry_13', 'science_graph_01'],
-  'science.chemistry.inorganic.nonmetal.carbon': ['science_chemistry_13', 'science_graph_01'],
+  'science.chemistry.inorganic.nonmetal.nitrogen': [
+    'science_chemistry_13',
+    'science_graph_01'
+  ],
+  'science.chemistry.inorganic.nonmetal.carbon': [
+    'science_chemistry_13',
+    'science_graph_01'
+  ],
   'science.chemistry.inorganic.nonmetal.gas': ['science_chem_basic_01'],
   'science.chemistry.inorganic.metal': ['science_chemistry_14'],
   'science.chemistry.inorganic.metal.alkali': ['science_chemistry_14'],
   'science.chemistry.inorganic.metal.amphoteric': ['science_chemistry_14'],
-  'science.chemistry.inorganic.metal.transition': ['science_chemistry_14', 'science_graph_01'],
+  'science.chemistry.inorganic.metal.transition': [
+    'science_chemistry_14',
+    'science_graph_01'
+  ],
   'science.chemistry.inorganic.metal.separation': ['science_chemistry_14'],
   'science.chemistry.inorganic.metal.industry': ['science_v4_02'],
   'science.chemistry.organic.basic.feature': ['science_v4_01'],
-  'science.chemistry.organic.basic.analysis': ['science_chemistry_15', 'science_v4_01'],
-  'science.chemistry.organic.basic.isomer': ['science_chemistry_15', 'science_v4_01'],
+  'science.chemistry.organic.basic.analysis': [
+    'science_chemistry_15',
+    'science_v4_01'
+  ],
+  'science.chemistry.organic.basic.isomer': [
+    'science_chemistry_15',
+    'science_v4_01'
+  ],
   'science.chemistry.organic.aliphatic.hydrocarbon': ['science_chemistry_15'],
   'science.chemistry.organic.aliphatic.alcohol': ['science_chemistry_15'],
   'science.chemistry.organic.aliphatic.carbonyl': ['science_chemistry_15'],
   'science.chemistry.organic.aliphatic.acid': ['science_chemistry_15'],
   'science.chemistry.organic.aliphatic.fat': ['science_chemistry_15'],
-  'science.chemistry.organic.aromatic.benzene': ['science_chemistry_15', 'science_v4_01'],
-  'science.chemistry.organic.aromatic.phenol': ['science_chemistry_15', 'science_v4_01'],
-  'science.chemistry.organic.aromatic.amine': ['science_chemistry_15', 'science_v4_01'],
+  'science.chemistry.organic.aromatic.benzene': [
+    'science_chemistry_15',
+    'science_v4_01'
+  ],
+  'science.chemistry.organic.aromatic.phenol': [
+    'science_chemistry_15',
+    'science_v4_01'
+  ],
+  'science.chemistry.organic.aromatic.amine': [
+    'science_chemistry_15',
+    'science_v4_01'
+  ],
   'science.chemistry.organic.aromatic.separation': ['science_v4_01'],
   'science.chemistry.organic.polymer': ['science_chemistry_16'],
   'science.chemistry.organic.polymer.synthetic': ['science_chemistry_16'],
@@ -1705,41 +2162,102 @@ const curriculumUnitSets = <String, List<String>>{
   'science.chemistry.organic.polymer.role': ['science_chemistry_16'],
   'science.biology.cell.common': ['science_biology_01'],
   'science.biology.cell.common.common': ['science_biology_01'],
-  'science.biology.cell.common.structure': ['science_bio_basic_01', 'science_biology_01'],
+  'science.biology.cell.common.structure': [
+    'science_bio_basic_01',
+    'science_biology_01'
+  ],
   'science.biology.cell.common.kinds': ['science_v4_02'],
   'science.biology.cell.common.microscope': ['science_biology_01'],
   'science.biology.cell.energy': ['science_biology_02'],
-  'science.biology.cell.energy.atp': ['science_bio_basic_01', 'science_biology_02'],
-  'science.biology.cell.energy.enzyme': ['science_bio_basic_01', 'science_biology_02', 'science_graph_01'],
-  'science.biology.cell.energy.overview': ['science_biology_02', 'science_formats_01'],
+  'science.biology.cell.energy.atp': [
+    'science_bio_basic_01',
+    'science_biology_02'
+  ],
+  'science.biology.cell.energy.enzyme': [
+    'science_bio_basic_01',
+    'science_biology_02',
+    'science_graph_01'
+  ],
+  'science.biology.cell.energy.overview': [
+    'science_biology_02',
+    'science_formats_01'
+  ],
   'science.biology.cell.dna': ['science_biology_03'],
-  'science.biology.cell.dna.structure': ['science_bio_basic_01', 'science_biology_03'],
-  'science.biology.cell.dna.replication': ['science_bio_basic_01', 'science_biology_03', 'science_formats_01'],
-  'science.biology.cell.dna.expression': ['science_biology_03', 'science_v4_01'],
+  'science.biology.cell.dna.structure': [
+    'science_bio_basic_01',
+    'science_biology_03'
+  ],
+  'science.biology.cell.dna.replication': [
+    'science_bio_basic_01',
+    'science_biology_03',
+    'science_formats_01'
+  ],
+  'science.biology.cell.dna.expression': [
+    'science_biology_03',
+    'science_v4_01'
+  ],
   'science.biology.body.nerve': ['science_biology_04'],
-  'science.biology.body.nerve.autonomic': ['science_bio_basic_01', 'science_biology_04'],
-  'science.biology.body.nerve.hormone': ['science_bio_basic_01', 'science_biology_04'],
+  'science.biology.body.nerve.autonomic': [
+    'science_bio_basic_01',
+    'science_biology_04'
+  ],
+  'science.biology.body.nerve.hormone': [
+    'science_bio_basic_01',
+    'science_biology_04'
+  ],
   'science.biology.body.nerve.feedback': ['science_v4_02'],
   'science.biology.body.homeostasis': ['science_biology_05'],
-  'science.biology.body.homeostasis.fluid': ['science_bio_basic_01', 'science_biology_05'],
-  'science.biology.body.homeostasis.glucose': ['science_biology_05', 'science_v4_01'],
+  'science.biology.body.homeostasis.fluid': [
+    'science_bio_basic_01',
+    'science_biology_05'
+  ],
+  'science.biology.body.homeostasis.glucose': [
+    'science_biology_05',
+    'science_v4_01'
+  ],
   'science.biology.body.homeostasis.temperature': ['science_biology_05'],
   'science.biology.body.homeostasis.organ': ['science_biology_05'],
-  'science.biology.body.immunity': ['science_bio_basic_01', 'science_biology_06'],
-  'science.biology.body.immunity.innate': ['science_bio_basic_01', 'science_biology_06'],
+  'science.biology.body.immunity': [
+    'science_bio_basic_01',
+    'science_biology_06'
+  ],
+  'science.biology.body.immunity.innate': [
+    'science_bio_basic_01',
+    'science_biology_06'
+  ],
   'science.biology.body.immunity.adaptive': ['science_biology_06'],
-  'science.biology.body.immunity.disease': ['science_bio_basic_01', 'science_biology_06'],
+  'science.biology.body.immunity.disease': [
+    'science_bio_basic_01',
+    'science_biology_06'
+  ],
   'science.biology.ecology.vegetation': ['science_biology_07'],
   'science.biology.ecology.vegetation.vegetation': ['science_biology_07'],
-  'science.biology.ecology.vegetation.succession': ['science_bio_basic_01', 'science_biology_07'],
-  'science.biology.ecology.vegetation.biome': ['science_bio_basic_01', 'science_biology_07', 'science_biology_16'],
+  'science.biology.ecology.vegetation.succession': [
+    'science_bio_basic_01',
+    'science_biology_07'
+  ],
+  'science.biology.ecology.vegetation.biome': [
+    'science_bio_basic_01',
+    'science_biology_07',
+    'science_biology_16'
+  ],
   'science.biology.ecology.ecosystem': ['science_biology_08'],
-  'science.biology.ecology.ecosystem.structure': ['science_bio_basic_01', 'science_biology_08', 'science_biology_16'],
+  'science.biology.ecology.ecosystem.structure': [
+    'science_bio_basic_01',
+    'science_biology_08',
+    'science_biology_16'
+  ],
   'science.biology.ecology.ecosystem.cycle': ['science_v4_02'],
-  'science.biology.ecology.ecosystem.conservation': ['science_biology_08', 'science_biology_16'],
+  'science.biology.ecology.ecosystem.conservation': [
+    'science_biology_08',
+    'science_biology_16'
+  ],
   'science.biology.ecology.population': ['science_biology_16'],
   'science.biology.ecology.population.population': ['science_biology_16'],
-  'science.biology.ecology.population.interaction': ['science_biology_16', 'science_graph_01'],
+  'science.biology.ecology.population.interaction': [
+    'science_biology_16',
+    'science_graph_01'
+  ],
   'science.biology.ecology.population.production': ['science_biology_16'],
   'science.biology.evolution.origin': ['science_biology_09'],
   'science.biology.evolution.origin.origin': ['science_biology_09'],
@@ -1764,7 +2282,10 @@ const curriculumUnitSets = <String, List<String>>{
   'science.biology.gene.expression.regulation': ['science_biology_13'],
   'science.biology.gene.development': ['science_biology_14'],
   'science.biology.gene.development.inheritance': ['science_biology_14'],
-  'science.biology.gene.development.animal': ['science_bio_basic_01', 'science_biology_14'],
+  'science.biology.gene.development.animal': [
+    'science_bio_basic_01',
+    'science_biology_14'
+  ],
   'science.biology.gene.development.plant': ['science_v4_02'],
   'science.biology.gene.development.technology': ['science_biology_14'],
   'science.biology.response.animal': ['science_biology_15'],
@@ -1778,67 +2299,163 @@ const curriculumUnitSets = <String, List<String>>{
   'science.biology.response.plant.tropism': ['science_biology_15'],
   'science.earth.solid.shape': ['science_earth_01', 'science_earth_basic_01'],
   'science.earth.solid.shape.shape': ['science_earth_01'],
-  'science.earth.solid.shape.interior': ['science_earth_01', 'science_earth_09', 'science_earth_basic_01'],
+  'science.earth.solid.shape.interior': [
+    'science_earth_01',
+    'science_earth_09',
+    'science_earth_basic_01'
+  ],
   'science.earth.solid.plate': ['science_earth_02'],
-  'science.earth.solid.plate.plate': ['science_earth_02', 'science_earth_09', 'science_earth_basic_01'],
+  'science.earth.solid.plate.plate': [
+    'science_earth_02',
+    'science_earth_09',
+    'science_earth_basic_01'
+  ],
   'science.earth.solid.plate.history': ['science_earth_02'],
   'science.earth.solid.plate.hotspot': ['science_earth_09'],
   'science.earth.solid.quake': ['science_earth_03', 'science_earth_09'],
-  'science.earth.solid.quake.mechanism': ['science_earth_03', 'science_earth_basic_01', 'science_graph_01'],
-  'science.earth.solid.quake.scale': ['science_earth_03', 'science_earth_basic_01'],
-  'science.earth.solid.quake.wave': ['science_earth_03', 'science_earth_basic_01', 'science_formats_01'],
+  'science.earth.solid.quake.mechanism': [
+    'science_earth_03',
+    'science_earth_basic_01',
+    'science_graph_01'
+  ],
+  'science.earth.solid.quake.scale': [
+    'science_earth_03',
+    'science_earth_basic_01'
+  ],
+  'science.earth.solid.quake.wave': [
+    'science_earth_03',
+    'science_earth_basic_01',
+    'science_formats_01'
+  ],
   'science.earth.solid.quake.disaster': ['science_earth_03'],
   'science.earth.solid.volcano': ['science_earth_04'],
-  'science.earth.solid.volcano.magma': ['science_earth_04', 'science_earth_basic_01'],
-  'science.earth.solid.volcano.rock': ['science_earth_04', 'science_earth_basic_01'],
+  'science.earth.solid.volcano.magma': [
+    'science_earth_04',
+    'science_earth_basic_01'
+  ],
+  'science.earth.solid.volcano.rock': [
+    'science_earth_04',
+    'science_earth_basic_01'
+  ],
   'science.earth.solid.volcano.mineral': ['science_earth_04'],
   'science.earth.solid.deform': ['science_earth_09', 'science_earth_10'],
-  'science.earth.solid.deform.orogeny': ['science_earth_09', 'science_earth_10'],
+  'science.earth.solid.deform.orogeny': [
+    'science_earth_09',
+    'science_earth_10'
+  ],
   'science.earth.solid.deform.metamorphic': ['science_earth_10'],
   'science.earth.solid.deform.heat': ['science_earth_09'],
   'science.earth.history.strata': ['science_earth_05'],
-  'science.earth.history.strata.stratum': ['science_earth_05', 'science_earth_basic_01'],
-  'science.earth.history.strata.sediment': ['science_earth_05', 'science_earth_basic_01'],
-  'science.earth.history.strata.fossil': ['science_earth_05', 'science_earth_basic_01'],
+  'science.earth.history.strata.stratum': [
+    'science_earth_05',
+    'science_earth_basic_01'
+  ],
+  'science.earth.history.strata.sediment': [
+    'science_earth_05',
+    'science_earth_basic_01'
+  ],
+  'science.earth.history.strata.fossil': [
+    'science_earth_05',
+    'science_earth_basic_01'
+  ],
   'science.earth.history.strata.age': ['science_earth_05'],
   'science.earth.history.life': ['science_earth_11'],
   'science.earth.history.life.early': ['science_earth_11'],
-  'science.earth.history.life.paleozoic': ['science_earth_11', 'science_earth_basic_01'],
-  'science.earth.history.life.mesozoic': ['science_earth_11', 'science_earth_basic_01'],
+  'science.earth.history.life.paleozoic': [
+    'science_earth_11',
+    'science_earth_basic_01'
+  ],
+  'science.earth.history.life.mesozoic': [
+    'science_earth_11',
+    'science_earth_basic_01'
+  ],
   'science.earth.history.life.extinction': ['science_earth_11'],
   'science.earth.history.life.japan': ['science_v4_02'],
   'science.earth.atmos.structure': ['science_earth_12'],
-  'science.earth.atmos.structure.layer': ['science_earth_06', 'science_earth_basic_01'],
-  'science.earth.atmos.structure.radiation': ['science_earth_12', 'science_earth_basic_01'],
-  'science.earth.atmos.structure.water': ['science_earth_06', 'science_earth_12', 'science_graph_01'],
+  'science.earth.atmos.structure.layer': [
+    'science_earth_06',
+    'science_earth_basic_01'
+  ],
+  'science.earth.atmos.structure.radiation': [
+    'science_earth_12',
+    'science_earth_basic_01'
+  ],
+  'science.earth.atmos.structure.water': [
+    'science_earth_06',
+    'science_earth_12',
+    'science_graph_01'
+  ],
   'science.earth.atmos.circulation': ['science_earth_06', 'science_earth_13'],
-  'science.earth.atmos.circulation.atmos': ['science_earth_06', 'science_earth_12'],
-  'science.earth.atmos.circulation.ocean': ['science_earth_06', 'science_earth_13'],
+  'science.earth.atmos.circulation.atmos': [
+    'science_earth_06',
+    'science_earth_12'
+  ],
+  'science.earth.atmos.circulation.ocean': [
+    'science_earth_06',
+    'science_earth_13'
+  ],
   'science.earth.atmos.circulation.interaction': ['science_earth_13'],
   'science.earth.atmos.weather': ['science_earth_14'],
   'science.earth.atmos.weather.wind': ['science_earth_12', 'science_earth_14'],
-  'science.earth.atmos.weather.front': ['science_earth_14', 'science_earth_basic_01'],
-  'science.earth.atmos.weather.typhoon': ['science_earth_14', 'science_earth_basic_01'],
+  'science.earth.atmos.weather.front': [
+    'science_earth_14',
+    'science_earth_basic_01'
+  ],
+  'science.earth.atmos.weather.typhoon': [
+    'science_earth_14',
+    'science_earth_basic_01'
+  ],
   'science.earth.atmos.weather.japan': ['science_earth_12'],
   'science.earth.atmos.environment': ['science_earth_07'],
-  'science.earth.atmos.environment.climate': ['science_earth_06', 'science_earth_07', 'science_earth_basic_01'],
-  'science.earth.atmos.environment.ozone': ['science_earth_06', 'science_earth_07'],
-  'science.earth.atmos.environment.disaster': ['science_earth_07', 'science_earth_basic_01'],
+  'science.earth.atmos.environment.climate': [
+    'science_earth_06',
+    'science_earth_07',
+    'science_earth_basic_01'
+  ],
+  'science.earth.atmos.environment.ozone': [
+    'science_earth_06',
+    'science_earth_07'
+  ],
+  'science.earth.atmos.environment.disaster': [
+    'science_earth_07',
+    'science_earth_basic_01'
+  ],
   'science.earth.space.solar': ['science_earth_08'],
-  'science.earth.space.solar.sun': ['science_earth_08', 'science_earth_15', 'science_earth_basic_01'],
-  'science.earth.space.solar.planet': ['science_earth_08', 'science_earth_15', 'science_earth_basic_01', 'science_graph_01'],
+  'science.earth.space.solar.sun': [
+    'science_earth_08',
+    'science_earth_15',
+    'science_earth_basic_01'
+  ],
+  'science.earth.space.solar.planet': [
+    'science_earth_08',
+    'science_earth_15',
+    'science_earth_basic_01',
+    'science_graph_01'
+  ],
   'science.earth.space.solar.origin': ['science_v4_02'],
   'science.earth.space.solar.motion': ['science_earth_08'],
   'science.earth.space.star': ['science_earth_15'],
-  'science.earth.space.star.brightness': ['science_earth_08', 'science_earth_15', 'science_formats_01'],
+  'science.earth.space.star.brightness': [
+    'science_earth_08',
+    'science_earth_15',
+    'science_formats_01'
+  ],
   'science.earth.space.star.hr': ['science_earth_15'],
   'science.earth.space.star.evolution': ['science_earth_15'],
   'science.earth.space.universe': ['science_earth_16'],
   'science.earth.space.universe.galaxy': ['science_earth_16'],
-  'science.earth.space.universe.expansion': ['science_earth_08', 'science_earth_16', 'science_earth_basic_01'],
+  'science.earth.space.universe.expansion': [
+    'science_earth_08',
+    'science_earth_16',
+    'science_earth_basic_01'
+  ],
   'social.geo.map.position': ['social_geo_01'],
   'social.geo.map.position.latlon': ['social_chirisogo_01', 'social_geo_01'],
-  'social.geo.map.position.time': ['social_chirisogo_01', 'social_formats_01', 'social_geo_01'],
+  'social.geo.map.position.time': [
+    'social_chirisogo_01',
+    'social_formats_01',
+    'social_geo_01'
+  ],
   'social.geo.map.position.territory': ['social_geo_19'],
   'social.geo.map.maps': ['social_chirisogo_01', 'social_geo_02'],
   'social.geo.map.maps.projection': ['social_chirisogo_01'],
@@ -1847,21 +2464,38 @@ const curriculumUnitSets = <String, List<String>>{
   'social.geo.map.gis': ['social_geo_03'],
   'social.geo.map.gis.gis': ['social_geo_03'],
   'social.geo.map.gis.remote': ['social_geo_03'],
-  'social.geo.nature.landform': ['social_chirisogo_01', 'social_geo_04', 'social_geo_05'],
+  'social.geo.nature.landform': [
+    'social_chirisogo_01',
+    'social_geo_04',
+    'social_geo_05'
+  ],
   'social.geo.nature.landform.large': ['social_chirisogo_01', 'social_geo_04'],
   'social.geo.nature.landform.river': ['social_geo_05'],
   'social.geo.nature.landform.coast': ['social_geo_05'],
   'social.geo.nature.landform.other': ['social_chirisogo_01', 'social_geo_05'],
   'social.geo.nature.climate': ['social_chirisogo_01', 'social_geo_06'],
   'social.geo.nature.climate.element': ['social_chirisogo_01', 'social_geo_06'],
-  'social.geo.nature.climate.koppen': ['social_chirisogo_01', 'social_formats_01', 'social_geo_06', 'social_v4_01'],
+  'social.geo.nature.climate.koppen': [
+    'social_chirisogo_01',
+    'social_formats_01',
+    'social_geo_06',
+    'social_v4_01'
+  ],
   'social.geo.nature.climate.graph': ['social_v4_02'],
   'social.geo.nature.soil': ['social_geo_07'],
   'social.geo.nature.soil.vegetation': ['social_geo_07'],
   'social.geo.nature.soil.soil': ['social_geo_07'],
   'social.geo.nature.soil.life': ['social_geo_07'],
-  'social.geo.nature.hazard.disaster': ['social_chirisogo_01', 'social_current_2426_01', 'social_geo_04', 'social_geo_19'],
-  'social.geo.nature.hazard.prevention': ['social_chirisogo_01', 'social_geo_19'],
+  'social.geo.nature.hazard.disaster': [
+    'social_chirisogo_01',
+    'social_current_2426_01',
+    'social_geo_04',
+    'social_geo_19'
+  ],
+  'social.geo.nature.hazard.prevention': [
+    'social_chirisogo_01',
+    'social_geo_19'
+  ],
   'social.geo.culture.religion': ['social_geo_08'],
   'social.geo.culture.religion.world': ['social_geo_08'],
   'social.geo.culture.religion.life': ['social_geo_08'],
@@ -1870,26 +2504,51 @@ const curriculumUnitSets = <String, List<String>>{
   'social.geo.culture.ethnic.conflict': ['social_v4_02'],
   'social.geo.industry.population': ['social_geo_10'],
   'social.geo.industry.population.distribution': ['social_geo_10'],
-  'social.geo.industry.population.transition': ['social_chirisogo_01', 'social_current_2426_01', 'social_geo_10', 'social_v4_01'],
+  'social.geo.industry.population.transition': [
+    'social_chirisogo_01',
+    'social_current_2426_01',
+    'social_geo_10',
+    'social_v4_01'
+  ],
   'social.geo.industry.population.problem': ['social_geo_10'],
   'social.geo.industry.agriculture': ['social_geo_11'],
   'social.geo.industry.agriculture.condition': ['social_geo_11'],
   'social.geo.industry.agriculture.types': ['social_geo_11'],
-  'social.geo.industry.agriculture.crops': ['social_current_2426_01', 'social_geo_11', 'social_rekishisogo_01'],
+  'social.geo.industry.agriculture.crops': [
+    'social_current_2426_01',
+    'social_geo_11',
+    'social_rekishisogo_01'
+  ],
   'social.geo.industry.agriculture.forestry': ['social_chirisogo_01'],
   'social.geo.industry.manufacturing': ['social_geo_12'],
-  'social.geo.industry.manufacturing.location': ['social_geo_12', 'social_v4_01'],
+  'social.geo.industry.manufacturing.location': [
+    'social_geo_12',
+    'social_v4_01'
+  ],
   'social.geo.industry.manufacturing.change': ['social_v4_02'],
   'social.geo.industry.manufacturing.tertiary': ['social_geo_12'],
   'social.geo.industry.resource': ['social_geo_13'],
-  'social.geo.industry.resource.energy': ['social_chirisogo_01', 'social_geo_13'],
-  'social.geo.industry.resource.mineral': ['social_chirisogo_01', 'social_geo_13'],
+  'social.geo.industry.resource.energy': [
+    'social_chirisogo_01',
+    'social_geo_13'
+  ],
+  'social.geo.industry.resource.mineral': [
+    'social_chirisogo_01',
+    'social_geo_13'
+  ],
   'social.geo.industry.resource.trade': ['social_geo_13'],
   'social.geo.urban.city': ['social_geo_14'],
   'social.geo.urban.city.village': ['social_v4_02'],
-  'social.geo.urban.city.function': ['social_current_2426_01', 'social_geo_14', 'social_geo_19'],
+  'social.geo.urban.city.function': [
+    'social_current_2426_01',
+    'social_geo_14',
+    'social_geo_19'
+  ],
   'social.geo.urban.city.problem': ['social_geo_14'],
-  'social.geo.urban.transport.transport': ['social_current_2426_01', 'social_geo_14'],
+  'social.geo.urban.transport.transport': [
+    'social_current_2426_01',
+    'social_geo_14'
+  ],
   'social.geo.urban.transport.communication': ['social_geo_14'],
   'social.geo.regions.asia': ['social_geo_15'],
   'social.geo.regions.asia.east': ['social_chirisogo_01', 'social_geo_15'],
@@ -1897,19 +2556,38 @@ const curriculumUnitSets = <String, List<String>>{
   'social.geo.regions.asia.south': ['social_geo_15'],
   'social.geo.regions.asia.west': ['social_current_2426_01', 'social_geo_15'],
   'social.geo.regions.europe': ['social_geo_16'],
-  'social.geo.regions.europe.europe': ['social_chirisogo_01', 'social_geo_16', 'social_rekishisogo_01'],
-  'social.geo.regions.europe.russia': ['social_current_2426_01', 'social_geo_16', 'social_rekishisogo_01'],
+  'social.geo.regions.europe.europe': [
+    'social_chirisogo_01',
+    'social_geo_16',
+    'social_rekishisogo_01'
+  ],
+  'social.geo.regions.europe.russia': [
+    'social_current_2426_01',
+    'social_geo_16',
+    'social_rekishisogo_01'
+  ],
   'social.geo.regions.europe.africa': ['social_chirisogo_01', 'social_geo_16'],
   'social.geo.regions.americas': ['social_geo_17'],
-  'social.geo.regions.americas.north': ['social_chirisogo_01', 'social_current_2426_01', 'social_geo_17', 'social_rekishisogo_01'],
-  'social.geo.regions.americas.latin': ['social_current_2426_01', 'social_geo_17'],
+  'social.geo.regions.americas.north': [
+    'social_chirisogo_01',
+    'social_current_2426_01',
+    'social_geo_17',
+    'social_rekishisogo_01'
+  ],
+  'social.geo.regions.americas.latin': [
+    'social_current_2426_01',
+    'social_geo_17'
+  ],
   'social.geo.regions.americas.oceania': ['social_geo_17'],
   'social.geo.japan.japan': ['social_geo_18'],
   'social.geo.japan.japan.nature': ['social_geo_18'],
   'social.geo.japan.japan.industry': ['social_geo_18'],
   'social.geo.japan.japan.region': ['social_geo_18', 'social_rekishisogo_01'],
   'social.geo.japan.global': ['social_geo_19'],
-  'social.geo.japan.global.environment': ['social_current_2426_01', 'social_geo_19'],
+  'social.geo.japan.global.environment': [
+    'social_current_2426_01',
+    'social_geo_19'
+  ],
   'social.geo.japan.global.food': ['social_geo_19'],
   'social.geo.japan.global.sdgs': ['social_kokyo_01'],
   'social.geo.japan.survey': ['social_geo_20'],
@@ -1924,7 +2602,10 @@ const curriculumUnitSets = <String, List<String>>{
   'social.jhist.ancient.kofun.asuka': ['social_jhist_02'],
   'social.jhist.ancient.kofun.taika': ['social_jhist_02'],
   'social.jhist.ancient.nara': ['social_formats_01', 'social_jhist_03'],
-  'social.jhist.ancient.nara.ritsuryo': ['social_current_2426_01', 'social_jhist_03'],
+  'social.jhist.ancient.nara.ritsuryo': [
+    'social_current_2426_01',
+    'social_jhist_03'
+  ],
   'social.jhist.ancient.nara.heijo': ['social_jhist_03'],
   'social.jhist.ancient.nara.land': ['social_jhist_03'],
   'social.jhist.ancient.nara.tenpyo': ['social_jhist_03'],
@@ -1952,7 +2633,10 @@ const curriculumUnitSets = <String, List<String>>{
   'social.jhist.medieval.sengoku': ['social_jhist_09'],
   'social.jhist.medieval.sengoku.onin': ['social_jhist_09'],
   'social.jhist.medieval.sengoku.daimyo': ['social_jhist_09'],
-  'social.jhist.medieval.sengoku.culture': ['social_current_2426_01', 'social_jhist_09'],
+  'social.jhist.medieval.sengoku.culture': [
+    'social_current_2426_01',
+    'social_jhist_09'
+  ],
   'social.jhist.medieval.sengoku.trade': ['social_rekishisogo_01'],
   'social.jhist.early_modern.shokuho': ['social_jhist_10'],
   'social.jhist.early_modern.shokuho.europe': ['social_jhist_10'],
@@ -1974,7 +2658,10 @@ const curriculumUnitSets = <String, List<String>>{
   'social.jhist.early_modern.reform.kansei': ['social_jhist_13'],
   'social.jhist.early_modern.reform.tenpo': ['social_jhist_13'],
   'social.jhist.early_modern.bakumatsu': ['social_jhist_14'],
-  'social.jhist.early_modern.bakumatsu.open': ['social_jhist_14', 'social_rekishisogo_01'],
+  'social.jhist.early_modern.bakumatsu.open': [
+    'social_jhist_14',
+    'social_rekishisogo_01'
+  ],
   'social.jhist.early_modern.bakumatsu.politics': ['social_jhist_14'],
   'social.jhist.early_modern.bakumatsu.fall': ['social_jhist_14'],
   'social.jhist.modern.meiji': ['social_jhist_15'],
@@ -1984,29 +2671,57 @@ const curriculumUnitSets = <String, List<String>>{
   'social.jhist.modern.meiji.diplomacy': ['social_v4_02'],
   'social.jhist.modern.constitution': ['social_jhist_16'],
   'social.jhist.modern.constitution.movement': ['social_jhist_16'],
-  'social.jhist.modern.constitution.constitution': ['social_jhist_16', 'social_rekishisogo_01'],
+  'social.jhist.modern.constitution.constitution': [
+    'social_jhist_16',
+    'social_rekishisogo_01'
+  ],
   'social.jhist.modern.constitution.diet': ['social_jhist_16'],
   'social.jhist.modern.wars': ['social_jhist_17'],
-  'social.jhist.modern.wars.treaty': ['social_jhist_17', 'social_rekishisogo_01'],
+  'social.jhist.modern.wars.treaty': [
+    'social_jhist_17',
+    'social_rekishisogo_01'
+  ],
   'social.jhist.modern.wars.sino': ['social_jhist_17', 'social_rekishisogo_01'],
-  'social.jhist.modern.wars.russo': ['social_jhist_17', 'social_rekishisogo_01'],
+  'social.jhist.modern.wars.russo': [
+    'social_jhist_17',
+    'social_rekishisogo_01'
+  ],
   'social.jhist.modern.wars.industry': ['social_jhist_17'],
   'social.jhist.modern.taisho': ['social_jhist_18'],
-  'social.jhist.modern.taisho.war': ['social_jhist_18', 'social_rekishisogo_01'],
+  'social.jhist.modern.taisho.war': [
+    'social_jhist_18',
+    'social_rekishisogo_01'
+  ],
   'social.jhist.modern.taisho.democracy': ['social_jhist_18'],
   'social.jhist.modern.taisho.movement': ['social_jhist_18'],
   'social.jhist.modern.showa': ['social_jhist_19'],
-  'social.jhist.modern.showa.crisis': ['social_jhist_19', 'social_rekishisogo_01'],
+  'social.jhist.modern.showa.crisis': [
+    'social_jhist_19',
+    'social_rekishisogo_01'
+  ],
   'social.jhist.modern.showa.manchuria': ['social_jhist_19'],
   'social.jhist.modern.showa.war': ['social_jhist_19'],
   'social.jhist.modern.showa.pacific': ['social_jhist_19'],
   'social.jhist.contemporary.postwar': ['social_jhist_20'],
   'social.jhist.contemporary.postwar.occupation': ['social_jhist_20'],
   'social.jhist.contemporary.postwar.constitution': ['social_jhist_20'],
-  'social.jhist.contemporary.postwar.independence': ['social_jhist_20', 'social_rekishisogo_01'],
-  'social.jhist.contemporary.growth.growth': ['social_jhist_20', 'social_rekishisogo_01', 'social_v4_01'],
-  'social.jhist.contemporary.growth.diplomacy': ['social_jhist_20', 'social_v4_01'],
-  'social.jhist.contemporary.growth.bubble': ['social_jhist_20', 'social_v4_01'],
+  'social.jhist.contemporary.postwar.independence': [
+    'social_jhist_20',
+    'social_rekishisogo_01'
+  ],
+  'social.jhist.contemporary.growth.growth': [
+    'social_jhist_20',
+    'social_rekishisogo_01',
+    'social_v4_01'
+  ],
+  'social.jhist.contemporary.growth.diplomacy': [
+    'social_jhist_20',
+    'social_v4_01'
+  ],
+  'social.jhist.contemporary.growth.bubble': [
+    'social_jhist_20',
+    'social_v4_01'
+  ],
   'social.whist.ancient.orient': ['social_whist_01'],
   'social.whist.ancient.orient.meso': ['social_whist_01'],
   'social.whist.ancient.orient.egypt': ['social_whist_01'],
@@ -2018,7 +2733,10 @@ const curriculumUnitSets = <String, List<String>>{
   'social.whist.ancient.india.empire': ['social_whist_02'],
   'social.whist.ancient.china': ['social_whist_03'],
   'social.whist.ancient.china.yinzhou': ['social_whist_03'],
-  'social.whist.ancient.china.qinhan': ['social_current_2426_01', 'social_whist_03'],
+  'social.whist.ancient.china.qinhan': [
+    'social_current_2426_01',
+    'social_whist_03'
+  ],
   'social.whist.ancient.china.nanbei': ['social_v4_02'],
   'social.whist.ancient.greece': ['social_whist_04'],
   'social.whist.ancient.greece.polis': ['social_whist_04'],
@@ -2047,7 +2765,11 @@ const curriculumUnitSets = <String, List<String>>{
   'social.whist.medieval.china': ['social_whist_08'],
   'social.whist.medieval.china.sui': ['social_whist_08'],
   'social.whist.medieval.china.tang': ['social_v4_02'],
-  'social.whist.medieval.china.song': ['social_current_2426_01', 'social_kokyo_01', 'social_whist_08'],
+  'social.whist.medieval.china.song': [
+    'social_current_2426_01',
+    'social_kokyo_01',
+    'social_whist_08'
+  ],
   'social.whist.medieval.china.culture': ['social_v4_02'],
   'social.whist.medieval.mongol': ['social_whist_09'],
   'social.whist.medieval.mongol.empire': ['social_whist_09'],
@@ -2071,13 +2793,28 @@ const curriculumUnitSets = <String, List<String>>{
   'social.whist.early_modern.asia.qing': ['social_whist_13'],
   'social.whist.early_modern.asia.ottoman': ['social_whist_13'],
   'social.whist.early_modern.asia.safavid': ['social_whist_13'],
-  'social.whist.modern.revolution': ['social_rekishisogo_01', 'social_whist_14'],
+  'social.whist.modern.revolution': [
+    'social_rekishisogo_01',
+    'social_whist_14'
+  ],
   'social.whist.modern.revolution.enlight': ['social_whist_14'],
-  'social.whist.modern.revolution.america': ['social_kokyo_01', 'social_rekishisogo_01', 'social_whist_14'],
-  'social.whist.modern.revolution.france': ['social_formats_01', 'social_rekishisogo_01', 'social_whist_14'],
+  'social.whist.modern.revolution.america': [
+    'social_kokyo_01',
+    'social_rekishisogo_01',
+    'social_whist_14'
+  ],
+  'social.whist.modern.revolution.france': [
+    'social_formats_01',
+    'social_rekishisogo_01',
+    'social_whist_14'
+  ],
   'social.whist.modern.revolution.napoleon': ['social_whist_14'],
   'social.whist.modern.industrial': ['social_whist_15'],
-  'social.whist.modern.industrial.britain': ['social_formats_01', 'social_rekishisogo_01', 'social_whist_15'],
+  'social.whist.modern.industrial.britain': [
+    'social_formats_01',
+    'social_rekishisogo_01',
+    'social_whist_15'
+  ],
   'social.whist.modern.industrial.spread': ['social_whist_15'],
   'social.whist.modern.industrial.society': ['social_whist_15'],
   'social.whist.modern.nation': ['social_whist_16'],
@@ -2093,23 +2830,39 @@ const curriculumUnitSets = <String, List<String>>{
   'social.whist.contemporary.ww1': ['social_whist_18'],
   'social.whist.contemporary.ww1.war': ['social_whist_18'],
   'social.whist.contemporary.ww1.russia': ['social_whist_18'],
-  'social.whist.contemporary.ww1.versailles': ['social_rekishisogo_01', 'social_whist_18'],
+  'social.whist.contemporary.ww1.versailles': [
+    'social_rekishisogo_01',
+    'social_whist_18'
+  ],
   'social.whist.contemporary.ww1.depression': ['social_whist_18'],
   'social.whist.contemporary.ww1.asia': ['social_v4_02'],
   'social.whist.contemporary.ww2': ['social_whist_19'],
-  'social.whist.contemporary.ww2.war': ['social_rekishisogo_01', 'social_whist_19'],
-  'social.whist.contemporary.ww2.un': ['social_kokyo_01', 'social_rekishisogo_01', 'social_whist_19'],
+  'social.whist.contemporary.ww2.war': [
+    'social_rekishisogo_01',
+    'social_whist_19'
+  ],
+  'social.whist.contemporary.ww2.un': [
+    'social_kokyo_01',
+    'social_rekishisogo_01',
+    'social_whist_19'
+  ],
   'social.whist.contemporary.ww2.coldwar': ['social_whist_19'],
   'social.whist.contemporary.ww2.asia': ['social_current_2426_01'],
   'social.whist.contemporary.global': ['social_whist_20'],
   'social.whist.contemporary.global.third': ['social_whist_20'],
   'social.whist.contemporary.global.cold': ['social_whist_20'],
-  'social.whist.contemporary.global.end': ['social_rekishisogo_01', 'social_whist_20'],
+  'social.whist.contemporary.global.end': [
+    'social_rekishisogo_01',
+    'social_whist_20'
+  ],
   'social.whist.contemporary.global.today': ['social_whist_20'],
   'social.pol.politics.principle': ['social_kokyo_01', 'social_pol_01'],
   'social.pol.politics.principle.democracy': ['social_v4_02'],
   'social.pol.politics.principle.systems': ['social_pol_01'],
-  'social.pol.politics.principle.constitution': ['social_kokyo_01', 'social_pol_01'],
+  'social.pol.politics.principle.constitution': [
+    'social_kokyo_01',
+    'social_pol_01'
+  ],
   'social.pol.politics.principle.pacifism': ['social_pol_01'],
   'social.pol.politics.rights': ['social_pol_02'],
   'social.pol.politics.rights.freedom': ['social_pol_02'],
@@ -2118,11 +2871,21 @@ const curriculumUnitSets = <String, List<String>>{
   'social.pol.politics.rights.new': ['social_pol_02'],
   'social.pol.politics.rights.cases': ['social_pol_02'],
   'social.pol.politics.diet': ['social_pol_03'],
-  'social.pol.politics.diet.status': ['social_current_2426_01', 'social_kokyo_01', 'social_pol_03'],
+  'social.pol.politics.diet.status': [
+    'social_current_2426_01',
+    'social_kokyo_01',
+    'social_pol_03'
+  ],
   'social.pol.politics.diet.power': ['social_formats_01', 'social_pol_03'],
-  'social.pol.politics.diet.session': ['social_current_2426_01', 'social_pol_03'],
+  'social.pol.politics.diet.session': [
+    'social_current_2426_01',
+    'social_pol_03'
+  ],
   'social.pol.politics.cabinet': ['social_pol_04'],
-  'social.pol.politics.cabinet.cabinet': ['social_current_2426_01', 'social_pol_04'],
+  'social.pol.politics.cabinet.cabinet': [
+    'social_current_2426_01',
+    'social_pol_04'
+  ],
   'social.pol.politics.cabinet.admin': ['social_kokyo_01', 'social_pol_04'],
   'social.pol.politics.court': ['social_pol_05'],
   'social.pol.politics.court.independence': ['social_pol_05'],
@@ -2134,7 +2897,11 @@ const curriculumUnitSets = <String, List<String>>{
   'social.pol.politics.local.petition': ['social_pol_06'],
   'social.pol.politics.local.finance': ['social_pol_06'],
   'social.pol.politics.election': ['social_pol_07'],
-  'social.pol.politics.election.system': ['social_kokyo_01', 'social_pol_07', 'social_rekishisogo_01'],
+  'social.pol.politics.election.system': [
+    'social_kokyo_01',
+    'social_pol_07',
+    'social_rekishisogo_01'
+  ],
   'social.pol.politics.election.party': ['social_pol_07'],
   'social.pol.politics.election.opinion': ['social_pol_07'],
   'social.pol.politics.law': ['social_pol_08'],
@@ -2149,7 +2916,11 @@ const curriculumUnitSets = <String, List<String>>{
   'social.pol.world.intl.issues': ['social_current_2426_01', 'social_pol_09'],
   'social.pol.economy.market': ['social_pol_10'],
   'social.pol.economy.market.system': ['social_v4_02'],
-  'social.pol.economy.market.mechanism': ['social_formats_01', 'social_kokyo_01', 'social_pol_10'],
+  'social.pol.economy.market.mechanism': [
+    'social_formats_01',
+    'social_kokyo_01',
+    'social_pol_10'
+  ],
   'social.pol.economy.market.failure': ['social_pol_10', 'social_v4_01'],
   'social.pol.economy.market.firm': ['social_current_2426_01', 'social_pol_10'],
   'social.pol.economy.macro': ['social_pol_11'],
@@ -2165,15 +2936,24 @@ const curriculumUnitSets = <String, List<String>>{
   'social.pol.economy.fiscal.tax': ['social_kokyo_01', 'social_pol_13'],
   'social.pol.economy.fiscal.debt': ['social_pol_13'],
   'social.pol.economy.welfare': ['social_pol_14'],
-  'social.pol.economy.welfare.system': ['social_current_2426_01', 'social_pol_14'],
-  'social.pol.economy.welfare.pension': ['social_current_2426_01', 'social_pol_14'],
+  'social.pol.economy.welfare.system': [
+    'social_current_2426_01',
+    'social_pol_14'
+  ],
+  'social.pol.economy.welfare.pension': [
+    'social_current_2426_01',
+    'social_pol_14'
+  ],
   'social.pol.economy.welfare.aging': ['social_pol_14'],
   'social.pol.economy.japan.history': ['social_rekishisogo_01', 'social_v4_01'],
   'social.pol.economy.japan.issues': ['social_v4_01'],
   'social.pol.economy.global': ['social_pol_15'],
   'social.pol.economy.global.trade': ['social_pol_15'],
   'social.pol.economy.global.balance': ['social_pol_15'],
-  'social.pol.economy.global.exchange': ['social_current_2426_01', 'social_pol_15'],
+  'social.pol.economy.global.exchange': [
+    'social_current_2426_01',
+    'social_pol_15'
+  ],
   'social.pol.economy.global.system': ['social_pol_15'],
   'social.pol.economy.global.region': ['social_v4_02'],
   'social.pol.economy.global.north': ['social_pol_15'],
@@ -2209,7 +2989,11 @@ const curriculumUnitSets = <String, List<String>>{
   'social.eth.western.modern.kant': ['social_eth_07'],
   'social.eth.western.social': ['social_eth_08'],
   'social.eth.western.social.contract': ['social_eth_08'],
-  'social.eth.western.social.utility': ['social_eth_08', 'social_formats_01', 'social_kokyo_01'],
+  'social.eth.western.social.utility': [
+    'social_eth_08',
+    'social_formats_01',
+    'social_kokyo_01'
+  ],
   'social.eth.western.social.socialism': ['social_v4_02'],
   'social.eth.western.contemporary': ['social_eth_09'],
   'social.eth.western.contemporary.existential': ['social_eth_09'],
@@ -2218,9 +3002,15 @@ const curriculumUnitSets = <String, List<String>>{
   'social.eth.issues.issues': ['social_eth_10'],
   'social.eth.issues.issues.bio': ['social_eth_10'],
   'social.eth.issues.issues.environment': ['social_eth_10'],
-  'social.eth.issues.issues.information': ['social_current_2426_01', 'social_eth_10'],
+  'social.eth.issues.issues.information': [
+    'social_current_2426_01',
+    'social_eth_10'
+  ],
   'social.eth.issues.issues.culture': ['social_current_2426_01'],
-  'japanese.gendai.kanji.read.common': ['japanese_gendai_01', 'japanese_kanji_01'],
+  'japanese.gendai.kanji.read.common': [
+    'japanese_gendai_01',
+    'japanese_kanji_01'
+  ],
   'japanese.gendai.kanji.read.difficult': ['japanese_v4_02'],
   'japanese.gendai.kanji.write': ['japanese_gendai_02'],
   'japanese.gendai.kanji.write.write': ['japanese_v4_02'],
@@ -2229,65 +3019,138 @@ const curriculumUnitSets = <String, List<String>>{
   'japanese.gendai.vocab.idiom.yoji': ['japanese_gendai_03'],
   'japanese.gendai.vocab.idiom.kanyo': ['japanese_v4_02'],
   'japanese.gendai.vocab.idiom.jukugo': ['japanese_v4_02'],
-  'japanese.gendai.vocab.meaning.meaning': ['japanese_gendai_04', 'japanese_reading_comp_01'],
+  'japanese.gendai.vocab.meaning.meaning': [
+    'japanese_gendai_04',
+    'japanese_reading_comp_01'
+  ],
   'japanese.gendai.vocab.meaning.antonym': ['japanese_gendai_04'],
   'japanese.gendai.vocab.meaning.critical': ['japanese_gendai_04'],
-  'japanese.gendai.language.grammar': ['japanese_gendai_05', 'japanese_keigo_01'],
+  'japanese.gendai.language.grammar': [
+    'japanese_gendai_05',
+    'japanese_keigo_01'
+  ],
   'japanese.gendai.language.grammar.grammar': ['japanese_v4_02'],
-  'japanese.gendai.language.grammar.keigo': ['japanese_formats_01', 'japanese_gendai_05', 'japanese_keigo_01'],
+  'japanese.gendai.language.grammar.keigo': [
+    'japanese_formats_01',
+    'japanese_gendai_05',
+    'japanese_keigo_01'
+  ],
   'japanese.gendai.language.grammar.usage': ['japanese_v4_02'],
   'japanese.gendai.language.info': ['japanese_gendai_06'],
-  'japanese.gendai.language.info.claim': ['japanese_gendai_06', 'japanese_reading_comp_01'],
+  'japanese.gendai.language.info.claim': [
+    'japanese_gendai_06',
+    'japanese_reading_comp_01'
+  ],
   'japanese.gendai.language.info.organize': ['japanese_gendai_06'],
   'japanese.gendai.language.info.cite': ['japanese_gendai_06'],
   'japanese.gendai.language.literature': ['japanese_bungakushi_01'],
   'japanese.gendai.language.literature.modern': ['japanese_bungakushi_01'],
-  'japanese.gendai.language.literature.contemporary': ['japanese_bungakushi_01'],
+  'japanese.gendai.language.literature.contemporary': [
+    'japanese_bungakushi_01'
+  ],
   'japanese.gendai.logical.hyoron': ['japanese_ronri_01'],
-  'japanese.gendai.logical.hyoron.structure': ['japanese_gendai_07', 'japanese_ronri_01', 'japanese_v4_01'],
-  'japanese.gendai.logical.hyoron.claim': ['japanese_gendai_07', 'japanese_ronri_01'],
-  'japanese.gendai.logical.hyoron.reference': ['japanese_formats_01', 'japanese_gendai_07', 'japanese_ronri_01'],
+  'japanese.gendai.logical.hyoron.structure': [
+    'japanese_gendai_07',
+    'japanese_ronri_01',
+    'japanese_v4_01'
+  ],
+  'japanese.gendai.logical.hyoron.claim': [
+    'japanese_gendai_07',
+    'japanese_ronri_01'
+  ],
+  'japanese.gendai.logical.hyoron.reference': [
+    'japanese_formats_01',
+    'japanese_gendai_07',
+    'japanese_ronri_01'
+  ],
   'japanese.gendai.logical.hyoron.paraphrase': ['japanese_v4_02'],
   'japanese.gendai.logical.argument': ['japanese_gendai_08'],
   'japanese.gendai.logical.argument.deduction': ['japanese_gendai_08'],
-  'japanese.gendai.logical.argument.fallacy': ['japanese_gendai_08', 'japanese_ronri_01', 'japanese_v4_01'],
+  'japanese.gendai.logical.argument.fallacy': [
+    'japanese_gendai_08',
+    'japanese_ronri_01',
+    'japanese_v4_01'
+  ],
   'japanese.gendai.logical.practical': ['japanese_practical_01'],
-  'japanese.gendai.logical.practical.document': ['japanese_practical_01', 'japanese_reading_comp_01'],
+  'japanese.gendai.logical.practical.document': [
+    'japanese_practical_01',
+    'japanese_reading_comp_01'
+  ],
   'japanese.gendai.logical.practical.multiple': ['japanese_practical_01'],
   'japanese.gendai.logical.essay.essay': ['japanese_v4_01'],
   'japanese.gendai.literary.novel': ['japanese_gendai_09', 'japanese_novel_01'],
-  'japanese.gendai.literary.novel.emotion': ['japanese_gendai_09', 'japanese_novel_01', 'japanese_reading_comp_01'],
-  'japanese.gendai.literary.novel.scene': ['japanese_gendai_09', 'japanese_novel_01'],
-  'japanese.gendai.literary.novel.theme': ['japanese_gendai_09', 'japanese_novel_01'],
+  'japanese.gendai.literary.novel.emotion': [
+    'japanese_gendai_09',
+    'japanese_novel_01',
+    'japanese_reading_comp_01'
+  ],
+  'japanese.gendai.literary.novel.scene': [
+    'japanese_gendai_09',
+    'japanese_novel_01'
+  ],
+  'japanese.gendai.literary.novel.theme': [
+    'japanese_gendai_09',
+    'japanese_novel_01'
+  ],
   'japanese.gendai.literary.rhetoric': ['japanese_gendai_10'],
   'japanese.gendai.literary.rhetoric.figure': ['japanese_gendai_10'],
   'japanese.gendai.literary.rhetoric.poem': ['japanese_gendai_10'],
   'japanese.gendai.express.speak': ['japanese_gendai_11'],
   'japanese.gendai.express.speak.speech': ['japanese_gendai_11'],
-  'japanese.gendai.express.speak.writing': ['japanese_formats_01', 'japanese_gendai_11'],
+  'japanese.gendai.express.speak.writing': [
+    'japanese_formats_01',
+    'japanese_gendai_11'
+  ],
   'japanese.gendai.express.summary': ['japanese_gendai_12'],
-  'japanese.gendai.express.summary.summary': ['japanese_formats_01', 'japanese_gendai_12'],
-  'japanese.gendai.express.summary.essay': ['japanese_gendai_12', 'japanese_v4_01'],
+  'japanese.gendai.express.summary.summary': [
+    'japanese_formats_01',
+    'japanese_gendai_12'
+  ],
+  'japanese.gendai.express.summary.essay': [
+    'japanese_gendai_12',
+    'japanese_v4_01'
+  ],
   'japanese.kobun.word.kana.kana': ['japanese_kobun_01'],
   'japanese.kobun.word.word.basic': ['japanese_kobun_01', 'japanese_kobun_02'],
   'japanese.kobun.word.word.ikogo': ['japanese_v4_02'],
-  'japanese.kobun.word.word.important': ['japanese_formats_01', 'japanese_kobun_01', 'japanese_reading_comp_01'],
+  'japanese.kobun.word.word.important': [
+    'japanese_formats_01',
+    'japanese_kobun_01',
+    'japanese_reading_comp_01'
+  ],
   'japanese.kobun.grammar.yogen': ['japanese_kobun_03'],
   'japanese.kobun.grammar.yogen.verb': ['japanese_kobun_03'],
   'japanese.kobun.grammar.yogen.adjective': ['japanese_kobun_03'],
   'japanese.kobun.grammar.jodoshi': ['japanese_kobun_05'],
-  'japanese.kobun.grammar.jodoshi.past': ['japanese_kobun_04', 'japanese_kobun_05'],
-  'japanese.kobun.grammar.jodoshi.guess': ['japanese_kobun_04', 'japanese_kobun_05', 'japanese_v4_01'],
+  'japanese.kobun.grammar.jodoshi.past': [
+    'japanese_kobun_04',
+    'japanese_kobun_05'
+  ],
+  'japanese.kobun.grammar.jodoshi.guess': [
+    'japanese_kobun_04',
+    'japanese_kobun_05',
+    'japanese_v4_01'
+  ],
   'japanese.kobun.grammar.jodoshi.passive': ['japanese_kobun_05'],
-  'japanese.kobun.grammar.jodoshi.negative': ['japanese_kobun_04', 'japanese_kobun_05'],
+  'japanese.kobun.grammar.jodoshi.negative': [
+    'japanese_kobun_04',
+    'japanese_kobun_05'
+  ],
   'japanese.kobun.grammar.jodoshi.assert': ['japanese_kobun_05'],
   'japanese.kobun.grammar.joshi': ['japanese_kobun_06'],
   'japanese.kobun.grammar.joshi.case': ['japanese_kobun_06'],
-  'japanese.kobun.grammar.joshi.kakari': ['japanese_formats_01', 'japanese_kobun_06', 'japanese_v4_01'],
+  'japanese.kobun.grammar.joshi.kakari': [
+    'japanese_formats_01',
+    'japanese_kobun_06',
+    'japanese_v4_01'
+  ],
   'japanese.kobun.grammar.joshi.final': ['japanese_kobun_06'],
   'japanese.kobun.grammar.keigo': ['japanese_kobun_07'],
   'japanese.kobun.grammar.keigo.kinds': ['japanese_kobun_07'],
-  'japanese.kobun.grammar.keigo.direction': ['japanese_kobun_07', 'japanese_v4_01'],
+  'japanese.kobun.grammar.keigo.direction': [
+    'japanese_kobun_07',
+    'japanese_v4_01'
+  ],
   'japanese.kobun.grammar.discern': ['japanese_kobun_08'],
   'japanese.kobun.grammar.discern.nari': ['japanese_kobun_08'],
   'japanese.kobun.grammar.discern.onbin': ['japanese_kobun_08'],
@@ -2296,7 +3159,10 @@ const curriculumUnitSets = <String, List<String>>{
   'japanese.kobun.reading.reading.translate': ['japanese_v4_02'],
   'japanese.kobun.reading.reading.content': ['japanese_kobun_09'],
   'japanese.kobun.reading.waka': ['japanese_kobun_10'],
-  'japanese.kobun.reading.waka.rhetoric': ['japanese_kobun_10', 'japanese_v4_01'],
+  'japanese.kobun.reading.waka.rhetoric': [
+    'japanese_kobun_10',
+    'japanese_v4_01'
+  ],
   'japanese.kobun.reading.waka.poem': ['japanese_kobun_10'],
   'japanese.kobun.reading.history': ['japanese_kobun_11'],
   'japanese.kobun.reading.history.works': ['japanese_kobun_11'],
@@ -2307,11 +3173,17 @@ const curriculumUnitSets = <String, List<String>>{
   'japanese.kanbun.kundoku.basic.kaeriten': ['japanese_kanbun_01'],
   'japanese.kanbun.kundoku.basic.kakikudashi': ['japanese_kanbun_01'],
   'japanese.kanbun.kundoku.saidoku': ['japanese_kanbun_02'],
-  'japanese.kanbun.kundoku.saidoku.saidoku': ['japanese_formats_01', 'japanese_kanbun_02'],
+  'japanese.kanbun.kundoku.saidoku.saidoku': [
+    'japanese_formats_01',
+    'japanese_kanbun_02'
+  ],
   'japanese.kanbun.kundoku.saidoku.words': ['japanese_kanbun_02'],
   'japanese.kanbun.kuho.negation': ['japanese_kanbun_03'],
   'japanese.kanbun.kuho.negation.negation': ['japanese_kanbun_03'],
-  'japanese.kanbun.kuho.negation.question': ['japanese_kanbun_03', 'japanese_v4_01'],
+  'japanese.kanbun.kuho.negation.question': [
+    'japanese_kanbun_03',
+    'japanese_v4_01'
+  ],
   'japanese.kanbun.kuho.causative': ['japanese_kanbun_04'],
   'japanese.kanbun.kuho.causative.causative': ['japanese_kanbun_04'],
   'japanese.kanbun.kuho.causative.passive': ['japanese_kanbun_04'],
@@ -2354,36 +3226,125 @@ const curriculumUnitSets = <String, List<String>>{
   'math.m1.logic.prop.converse': ['math_v4_01'],
   'math.m1.logic.prop.contradiction': ['math_formats_01', 'math_v4_01'],
   'math.m1.quad.graph.function': ['math_input_01'],
-  'math.m1.quad.graph.vertex': ['math_m1_10', 'math_m1_11', 'math_m1_12', 'math_quadratic_app_01'],
+  'math.m1.quad.graph.vertex': [
+    'math_m1_10',
+    'math_m1_11',
+    'math_m1_12',
+    'math_quadratic_app_01'
+  ],
   'math.m1.quad.graph.move': ['math_m1_10', 'math_m1_11'],
   'math.m1.quad.graph.determine': ['math_input_01', 'math_m1_11', 'math_m1_12'],
   'math.m1.quad.maxmin': ['math_m1_10', 'math_m1_12', 'math_quadratic_app_01'],
-  'math.m1.quad.maxmin.basic': ['math_formats_01', 'math_input_01', 'math_m1_11', 'math_m1_12', 'math_quadratic_app_01'],
+  'math.m1.quad.maxmin.basic': [
+    'math_formats_01',
+    'math_input_01',
+    'math_m1_11',
+    'math_m1_12',
+    'math_quadratic_app_01'
+  ],
   'math.m1.quad.maxmin.param': ['math_formats_01', 'math_v4_01'],
-  'math.m1.quad.maxmin.apply': ['math_m1_11', 'math_m1_12', 'math_quadratic_app_01'],
+  'math.m1.quad.maxmin.apply': [
+    'math_m1_11',
+    'math_m1_12',
+    'math_quadratic_app_01'
+  ],
   'math.m1.quad.eqineq': ['math_m1_13', 'math_m1_14', 'math_m1_15'],
-  'math.m1.quad.eqineq.equation': ['math_m1_12', 'math_m1_13', 'math_m1_14', 'math_m1_15', 'math_quadratic_app_01'],
-  'math.m1.quad.eqineq.discriminant': ['math_m1_13', 'math_m1_14', 'math_m1_15'],
-  'math.m1.quad.eqineq.intersect': ['math_m1_14', 'math_m1_15', 'math_quadratic_app_01'],
-  'math.m1.quad.eqineq.inequality': ['math_m1_12', 'math_m1_13', 'math_m1_14', 'math_m1_15', 'math_quadratic_app_01'],
-  'math.m1.quad.eqineq.always': ['math_m1_14', 'math_m1_15', 'math_quadratic_app_01'],
+  'math.m1.quad.eqineq.equation': [
+    'math_m1_12',
+    'math_m1_13',
+    'math_m1_14',
+    'math_m1_15',
+    'math_quadratic_app_01'
+  ],
+  'math.m1.quad.eqineq.discriminant': [
+    'math_m1_13',
+    'math_m1_14',
+    'math_m1_15'
+  ],
+  'math.m1.quad.eqineq.intersect': [
+    'math_m1_14',
+    'math_m1_15',
+    'math_quadratic_app_01'
+  ],
+  'math.m1.quad.eqineq.inequality': [
+    'math_m1_12',
+    'math_m1_13',
+    'math_m1_14',
+    'math_m1_15',
+    'math_quadratic_app_01'
+  ],
+  'math.m1.quad.eqineq.always': [
+    'math_m1_14',
+    'math_m1_15',
+    'math_quadratic_app_01'
+  ],
   'math.m1.quad.eqineq.distribution': ['math_m1_15'],
   'math.m1.trig.ratio': ['math_m1_07'],
-  'math.m1.trig.ratio.define': ['math_m1_07', 'math_m1_08', 'math_trig_figure_01'],
-  'math.m1.trig.ratio.relation': ['math_input_01', 'math_m1_07', 'math_m1_08', 'math_m1_09', 'math_trig_figure_01'],
+  'math.m1.trig.ratio.define': [
+    'math_m1_07',
+    'math_m1_08',
+    'math_trig_figure_01'
+  ],
+  'math.m1.trig.ratio.relation': [
+    'math_input_01',
+    'math_m1_07',
+    'math_m1_08',
+    'math_m1_09',
+    'math_trig_figure_01'
+  ],
   'math.m1.trig.ratio.obtuse': ['math_m1_08', 'math_trig_figure_01'],
   'math.m1.trig.ratio.equation': ['math_v4_02'],
   'math.m1.trig.solve': ['math_m1_08', 'math_m1_09', 'math_trig_figure_01'],
-  'math.m1.trig.solve.sine': ['math_m1_08', 'math_m1_09', 'math_trig_figure_01'],
-  'math.m1.trig.solve.cosine': ['math_m1_08', 'math_m1_09', 'math_trig_figure_01'],
-  'math.m1.trig.solve.area': ['math_m1_08', 'math_m1_09', 'math_trig_figure_01'],
+  'math.m1.trig.solve.sine': [
+    'math_m1_08',
+    'math_m1_09',
+    'math_trig_figure_01'
+  ],
+  'math.m1.trig.solve.cosine': [
+    'math_m1_08',
+    'math_m1_09',
+    'math_trig_figure_01'
+  ],
+  'math.m1.trig.solve.area': [
+    'math_m1_08',
+    'math_m1_09',
+    'math_trig_figure_01'
+  ],
   'math.m1.trig.solve.incircle': ['math_m1_09', 'math_trig_figure_01'],
-  'math.m1.trig.solve.solid': ['math_m1_07', 'math_m1_09', 'math_trig_figure_01'],
-  'math.m1.data.stats': ['math_m1_16', 'math_m1_17', 'math_m1_18', 'math_m1_stat_01'],
-  'math.m1.data.stats.center': ['math_m1_16', 'math_m1_17', 'math_m1_18', 'math_m1_stat_01'],
-  'math.m1.data.stats.spread': ['math_m1_16', 'math_m1_17', 'math_m1_18', 'math_m1_stat_01'],
-  'math.m1.data.stats.variance': ['math_m1_16', 'math_m1_17', 'math_m1_18', 'math_m1_stat_01'],
-  'math.m1.data.stats.correlation': ['math_m1_17', 'math_m1_18', 'math_m1_stat_01'],
+  'math.m1.trig.solve.solid': [
+    'math_m1_07',
+    'math_m1_09',
+    'math_trig_figure_01'
+  ],
+  'math.m1.data.stats': [
+    'math_m1_16',
+    'math_m1_17',
+    'math_m1_18',
+    'math_m1_stat_01'
+  ],
+  'math.m1.data.stats.center': [
+    'math_m1_16',
+    'math_m1_17',
+    'math_m1_18',
+    'math_m1_stat_01'
+  ],
+  'math.m1.data.stats.spread': [
+    'math_m1_16',
+    'math_m1_17',
+    'math_m1_18',
+    'math_m1_stat_01'
+  ],
+  'math.m1.data.stats.variance': [
+    'math_m1_16',
+    'math_m1_17',
+    'math_m1_18',
+    'math_m1_stat_01'
+  ],
+  'math.m1.data.stats.correlation': [
+    'math_m1_17',
+    'math_m1_18',
+    'math_m1_stat_01'
+  ],
   'math.m1.data.stats.transform': ['math_m1_17'],
   'math.m1.data.stats.hypothesis': ['math_m1_18'],
   'math.ma.prob.count': ['math_ma_01', 'math_ma_02', 'math_ma_03'],
@@ -2395,27 +3356,67 @@ const curriculumUnitSets = <String, List<String>>{
   'math.ma.prob.count.divide': ['math_ma_02', 'math_ma_03'],
   'math.ma.prob.probability': ['math_ma_05'],
   'math.ma.prob.probability.basic': ['math_ma_04', 'math_ma_05', 'math_ma_06'],
-  'math.ma.prob.probability.complement': ['math_formats_01', 'math_ma_04', 'math_ma_06'],
+  'math.ma.prob.probability.complement': [
+    'math_formats_01',
+    'math_ma_04',
+    'math_ma_06'
+  ],
   'math.ma.prob.probability.independent': ['math_v4_02'],
   'math.ma.prob.probability.repeated': ['math_ma_05', 'math_ma_06'],
   'math.ma.prob.probability.conditional': ['math_ma_06', 'math_v4_01'],
   'math.ma.prob.probability.expected': ['math_ma_05', 'math_ma_06'],
-  'math.ma.geometry.triangle': ['math_figure_01', 'math_ma_07', 'math_ma_08', 'math_ma_09'],
-  'math.ma.geometry.triangle.bisector': ['math_figure_01', 'math_ma_07', 'math_ma_09'],
-  'math.ma.geometry.triangle.centers': ['math_figure_01', 'math_ma_07', 'math_ma_09'],
-  'math.ma.geometry.triangle.ceva': ['math_figure_01', 'math_ma_08', 'math_ma_09'],
+  'math.ma.geometry.triangle': [
+    'math_figure_01',
+    'math_ma_07',
+    'math_ma_08',
+    'math_ma_09'
+  ],
+  'math.ma.geometry.triangle.bisector': [
+    'math_figure_01',
+    'math_ma_07',
+    'math_ma_09'
+  ],
+  'math.ma.geometry.triangle.centers': [
+    'math_figure_01',
+    'math_ma_07',
+    'math_ma_09'
+  ],
+  'math.ma.geometry.triangle.ceva': [
+    'math_figure_01',
+    'math_ma_08',
+    'math_ma_09'
+  ],
   'math.ma.geometry.triangle.sides': ['math_figure_01'],
-  'math.ma.geometry.circle.inscribed': ['math_figure_01', 'math_ma_07', 'math_ma_08', 'math_ma_09'],
-  'math.ma.geometry.circle.tangent': ['math_figure_01', 'math_ma_07', 'math_ma_08', 'math_ma_09'],
+  'math.ma.geometry.circle.inscribed': [
+    'math_figure_01',
+    'math_ma_07',
+    'math_ma_08',
+    'math_ma_09'
+  ],
+  'math.ma.geometry.circle.tangent': [
+    'math_figure_01',
+    'math_ma_07',
+    'math_ma_08',
+    'math_ma_09'
+  ],
   'math.ma.geometry.circle.power': ['math_figure_01', 'math_ma_07'],
   'math.ma.geometry.circle.two': ['math_ma_08'],
   'math.ma.geometry.construct.construction': ['math_ma_08', 'math_v4_01'],
   'math.ma.geometry.construct.space': ['math_v4_01'],
-  'math.ma.geometry.construct.polyhedron': ['math_figure_01', 'math_ma_08', 'math_ma_09', 'math_v4_01'],
+  'math.ma.geometry.construct.polyhedron': [
+    'math_figure_01',
+    'math_ma_08',
+    'math_ma_09',
+    'math_v4_01'
+  ],
   'math.ma.integer.divisor': ['math_ma_10', 'math_ma_11', 'math_ma_12'],
   'math.ma.integer.divisor.divisor': ['math_ma_10', 'math_ma_11', 'math_ma_12'],
   'math.ma.integer.divisor.gcd': ['math_v4_02'],
-  'math.ma.integer.divisor.remainder': ['math_ma_10', 'math_ma_11', 'math_ma_12'],
+  'math.ma.integer.divisor.remainder': [
+    'math_ma_10',
+    'math_ma_11',
+    'math_ma_12'
+  ],
   'math.ma.integer.euclid.euclid': ['math_v4_01'],
   'math.ma.integer.euclid.diophantine': ['math_ma_11', 'math_v4_01'],
   'math.ma.integer.euclid.nonlinear': ['math_v4_01'],
@@ -2426,7 +3427,13 @@ const curriculumUnitSets = <String, List<String>>{
   'math.m2.expr.proof.division': ['math_m2_01'],
   'math.m2.expr.proof.identity': ['math_m2_01', 'math_m2_02', 'math_m2_03'],
   'math.m2.expr.proof.equality': ['math_m2_01', 'math_m2_02'],
-  'math.m2.expr.proof.inequality': ['math_formats_01', 'math_m2_01', 'math_m2_02', 'math_m2_03', 'math_v4_01'],
+  'math.m2.expr.proof.inequality': [
+    'math_formats_01',
+    'math_m2_01',
+    'math_m2_02',
+    'math_m2_03',
+    'math_v4_01'
+  ],
   'math.m2.expr.complex': ['math_m2_04', 'math_m2_05', 'math_m2_06'],
   'math.m2.expr.complex.complex': ['math_m2_04', 'math_m2_05'],
   'math.m2.expr.complex.discriminant': ['math_m2_04'],
@@ -2452,13 +3459,23 @@ const curriculumUnitSets = <String, List<String>>{
   'math.m2.trigfunc.addition.addition': ['math_formats_01', 'math_m2_11'],
   'math.m2.trigfunc.addition.double': ['math_m2_12'],
   'math.m2.trigfunc.addition.synthesis': ['math_m2_12'],
-  'math.m2.trigfunc.addition.maxmin': ['math_m2_10', 'math_m2_11', 'math_m2_12'],
+  'math.m2.trigfunc.addition.maxmin': [
+    'math_m2_10',
+    'math_m2_11',
+    'math_m2_12'
+  ],
   'math.m2.explog.exp': ['math_m2_13'],
   'math.m2.explog.exp.rational': ['math_input_01', 'math_m2_13'],
   'math.m2.explog.exp.function': ['math_m2_14'],
   'math.m2.explog.exp.equation': ['math_m2_14', 'math_m2_15'],
   'math.m2.explog.log': ['math_m2_14', 'math_m2_15'],
-  'math.m2.explog.log.property': ['math_formats_01', 'math_input_01', 'math_m2_13', 'math_m2_14', 'math_m2_15'],
+  'math.m2.explog.log.property': [
+    'math_formats_01',
+    'math_input_01',
+    'math_m2_13',
+    'math_m2_14',
+    'math_m2_15'
+  ],
   'math.m2.explog.log.base': ['math_v4_02'],
   'math.m2.explog.log.function': ['math_m2_14'],
   'math.m2.explog.log.common': ['math_m2_14', 'math_m2_15'],
@@ -2469,13 +3486,28 @@ const curriculumUnitSets = <String, List<String>>{
   'math.m2.calculus.apply.extremum': ['math_m2_16', 'math_m2_17', 'math_m2_18'],
   'math.m2.calculus.apply.maxmin': ['math_m2_16', 'math_m2_17', 'math_m2_18'],
   'math.m2.calculus.apply.equation': ['math_m2_17', 'math_v4_01'],
-  'math.m2.calculus.integ.indefinite': ['math_input_01', 'math_m2_16', 'math_m2_17', 'math_m2_18'],
+  'math.m2.calculus.integ.indefinite': [
+    'math_input_01',
+    'math_m2_16',
+    'math_m2_17',
+    'math_m2_18'
+  ],
   'math.m2.calculus.integ.definite': ['math_v4_02'],
   'math.m2.calculus.integ.area': ['math_m2_17', 'math_m2_18'],
   'math.m2.calculus.integ.function': ['math_v4_02'],
   'math.mb.seq.arith': ['math_mb_01', 'math_mb_02', 'math_mb_03'],
-  'math.mb.seq.arith.arithmetic': ['math_input_01', 'math_mb_01', 'math_mb_02', 'math_mb_03'],
-  'math.mb.seq.arith.geometric': ['math_input_01', 'math_mb_01', 'math_mb_02', 'math_mb_03'],
+  'math.mb.seq.arith.arithmetic': [
+    'math_input_01',
+    'math_mb_01',
+    'math_mb_02',
+    'math_mb_03'
+  ],
+  'math.mb.seq.arith.geometric': [
+    'math_input_01',
+    'math_mb_01',
+    'math_mb_02',
+    'math_mb_03'
+  ],
   'math.mb.seq.arith.mean': ['math_v4_02'],
   'math.mb.seq.sum.sigma': ['math_mb_01', 'math_mb_02', 'math_mb_03'],
   'math.mb.seq.sum.difference': ['math_mb_02'],
@@ -2484,7 +3516,12 @@ const curriculumUnitSets = <String, List<String>>{
   'math.mb.seq.recur': ['math_mb_04', 'math_mb_05', 'math_mb_06'],
   'math.mb.seq.recur.basic': ['math_mb_04', 'math_mb_05', 'math_mb_06'],
   'math.mb.seq.recur.linear': ['math_mb_05', 'math_v4_01'],
-  'math.mb.seq.recur.induction': ['math_formats_01', 'math_mb_04', 'math_mb_05', 'math_mb_06'],
+  'math.mb.seq.recur.induction': [
+    'math_formats_01',
+    'math_mb_04',
+    'math_mb_05',
+    'math_mb_06'
+  ],
   'math.mb.stat.random': ['math_mb_08', 'math_mb_09'],
   'math.mb.stat.random.variable': ['math_mb_07', 'math_mb_08', 'math_mb_09'],
   'math.mb.stat.random.linear': ['math_v4_02'],
@@ -2497,12 +3534,38 @@ const curriculumUnitSets = <String, List<String>>{
   'math.mb.society.model.model': ['math_mb_10', 'math_mb_11', 'math_mb_12'],
   'math.mb.society.model.finance': ['math_mb_10', 'math_mb_11', 'math_mb_12'],
   'math.mb.society.model.ranking': ['math_mb_11'],
-  'math.mc.vector.plane': ['math_mc_01', 'math_mc_02', 'math_mc_03', 'math_vector_figure_01'],
-  'math.mc.vector.plane.operation': ['math_mc_01', 'math_mc_02', 'math_mc_03', 'math_vector_figure_01'],
-  'math.mc.vector.plane.inner': ['math_mc_01', 'math_mc_02', 'math_vector_figure_01'],
-  'math.mc.vector.plane.position': ['math_mc_02', 'math_mc_03', 'math_vector_figure_01'],
-  'math.mc.vector.plane.figure': ['math_mc_02', 'math_mc_03', 'math_vector_figure_01'],
-  'math.mc.vector.plane.equation': ['math_mc_02', 'math_mc_03', 'math_vector_figure_01'],
+  'math.mc.vector.plane': [
+    'math_mc_01',
+    'math_mc_02',
+    'math_mc_03',
+    'math_vector_figure_01'
+  ],
+  'math.mc.vector.plane.operation': [
+    'math_mc_01',
+    'math_mc_02',
+    'math_mc_03',
+    'math_vector_figure_01'
+  ],
+  'math.mc.vector.plane.inner': [
+    'math_mc_01',
+    'math_mc_02',
+    'math_vector_figure_01'
+  ],
+  'math.mc.vector.plane.position': [
+    'math_mc_02',
+    'math_mc_03',
+    'math_vector_figure_01'
+  ],
+  'math.mc.vector.plane.figure': [
+    'math_mc_02',
+    'math_mc_03',
+    'math_vector_figure_01'
+  ],
+  'math.mc.vector.plane.equation': [
+    'math_mc_02',
+    'math_mc_03',
+    'math_vector_figure_01'
+  ],
   'math.mc.vector.space': ['math_mc_04', 'math_mc_05', 'math_mc_06'],
   'math.mc.vector.space.coord': ['math_mc_04', 'math_mc_06'],
   'math.mc.vector.space.vector': ['math_mc_04', 'math_mc_05'],
@@ -2519,7 +3582,13 @@ const curriculumUnitSets = <String, List<String>>{
   'math.mc.curve.complex.plane': ['math_mc_10', 'math_mc_11'],
   'math.mc.curve.complex.polar': ['math_mc_10', 'math_mc_11', 'math_mc_12'],
   'math.mc.curve.complex.demoivre': ['math_mc_10', 'math_mc_11'],
-  'math.mc.curve.complex.figure': ['math_mc_08', 'math_mc_09', 'math_mc_11', 'math_mc_12', 'math_v4_01'],
+  'math.mc.curve.complex.figure': [
+    'math_mc_08',
+    'math_mc_09',
+    'math_mc_11',
+    'math_mc_12',
+    'math_v4_01'
+  ],
   'math.mc.express.express': ['math_mc_13', 'math_mc_14', 'math_mc_15'],
   'math.mc.express.express.chart': ['math_mc_13', 'math_mc_14', 'math_mc_15'],
   'math.mc.express.express.matrix': ['math_mc_13', 'math_mc_14', 'math_mc_15'],
@@ -2553,16 +3622,30 @@ const curriculumUnitSets = <String, List<String>>{
   'math.m3.integ.method.limit': ['math_m3_12'],
   'math.m3.integ.apply': ['math_m3_14', 'math_m3_15'],
   'math.m3.integ.apply.area': ['math_m3_13', 'math_m3_14', 'math_m3_15'],
-  'math.m3.integ.apply.volume': ['math_m3_13', 'math_m3_14', 'math_m3_15', 'math_v4_01'],
+  'math.m3.integ.apply.volume': [
+    'math_m3_13',
+    'math_m3_14',
+    'math_m3_15',
+    'math_v4_01'
+  ],
   'math.m3.integ.apply.length': ['math_m3_13', 'math_m3_14', 'math_m3_15'],
   'math.m3.integ.apply.distance': ['math_m3_13', 'math_m3_14'],
   'information.info.society.nature': ['information_info1_01'],
   'information.info.society.nature.nature': ['information_info1_01'],
   'information.info.society.nature.media': ['information_info1_01'],
-  'information.info.society.nature.society': ['information_info1_01', 'information_info2_01'],
+  'information.info.society.nature.society': [
+    'information_info1_01',
+    'information_info2_01'
+  ],
   'information.info.society.moral': ['information_info1_02'],
-  'information.info.society.moral.ip': ['information_design_01', 'information_info1_02'],
-  'information.info.society.moral.privacy': ['information_formats_01', 'information_info1_02'],
+  'information.info.society.moral.ip': [
+    'information_design_01',
+    'information_info1_02'
+  ],
+  'information.info.society.moral.privacy': [
+    'information_formats_01',
+    'information_info1_02'
+  ],
   'information.info.society.moral.moral': ['information_v4_02'],
   'information.info.society.security': ['information_info1_03'],
   'information.info.society.security.threat': ['information_info1_03'],
@@ -2572,75 +3655,243 @@ const curriculumUnitSets = <String, List<String>>{
   'information.info.society.problem.process': ['information_info1_04'],
   'information.info.society.problem.model': ['information_info1_04'],
   'information.info.design.communication.form': ['information_v4_01'],
-  'information.info.design.design': ['information_design_01', 'information_info1_05', 'information_info1_06'],
-  'information.info.design.design.principle': ['information_info1_05', 'information_info1_06'],
+  'information.info.design.design': [
+    'information_design_01',
+    'information_info1_05',
+    'information_info1_06'
+  ],
+  'information.info.design.design.principle': [
+    'information_info1_05',
+    'information_info1_06'
+  ],
   'information.info.design.design.ui': ['information_info1_05'],
-  'information.info.design.design.layout': ['information_design_01', 'information_info1_05', 'information_info1_06', 'information_info2_01', 'information_prog_algo_02'],
+  'information.info.design.design.layout': [
+    'information_design_01',
+    'information_info1_05',
+    'information_info1_06',
+    'information_info2_01',
+    'information_prog_algo_02'
+  ],
   'information.info.computer.digital': ['information_info1_08'],
-  'information.info.computer.digital.binary': ['information_design_01', 'information_formats_01', 'information_info1_08'],
+  'information.info.computer.digital.binary': [
+    'information_design_01',
+    'information_formats_01',
+    'information_info1_08'
+  ],
   'information.info.computer.digital.calc': ['information_info1_08'],
   'information.info.computer.digital.amount': ['information_info1_08'],
-  'information.info.computer.media': ['information_design_01', 'information_info1_09'],
+  'information.info.computer.media': [
+    'information_design_01',
+    'information_info1_09'
+  ],
   'information.info.computer.media.text': ['information_v4_02'],
-  'information.info.computer.media.image': ['information_design_01', 'information_formats_01', 'information_info1_09'],
-  'information.info.computer.media.sound': ['information_design_01', 'information_info1_09'],
-  'information.info.computer.media.compress': ['information_design_01', 'information_info1_09'],
+  'information.info.computer.media.image': [
+    'information_design_01',
+    'information_formats_01',
+    'information_info1_09'
+  ],
+  'information.info.computer.media.sound': [
+    'information_design_01',
+    'information_info1_09'
+  ],
+  'information.info.computer.media.compress': [
+    'information_design_01',
+    'information_info1_09'
+  ],
   'information.info.computer.hardware': ['information_info1_07'],
   'information.info.computer.hardware.components': ['information_info1_07'],
   'information.info.computer.hardware.cpu': ['information_info1_07'],
-  'information.info.computer.hardware.software': ['information_info1_07', 'information_info2_01'],
-  'information.info.computer.system.reliability': ['information_info2_01', 'information_v4_01'],
-  'information.info.computer.system.cloud': ['information_info2_01', 'information_v4_01'],
-  'information.info.computer.system.develop': ['information_info2_01', 'information_v4_01'],
+  'information.info.computer.hardware.software': [
+    'information_info1_07',
+    'information_info2_01'
+  ],
+  'information.info.computer.system.reliability': [
+    'information_info2_01',
+    'information_v4_01'
+  ],
+  'information.info.computer.system.cloud': [
+    'information_info2_01',
+    'information_v4_01'
+  ],
+  'information.info.computer.system.develop': [
+    'information_info2_01',
+    'information_v4_01'
+  ],
   'information.info.computer.logic': ['information_info1_17'],
-  'information.info.computer.logic.gate': ['information_formats_01', 'information_info1_17'],
+  'information.info.computer.logic.gate': [
+    'information_formats_01',
+    'information_info1_17'
+  ],
   'information.info.computer.logic.adder': ['information_info1_17'],
   'information.info.programming.algorithm': ['information_info1_16'],
-  'information.info.programming.algorithm.basic': ['information_info1_15', 'information_info1_16', 'information_prog_algo_01'],
-  'information.info.programming.algorithm.search': ['information_formats_01', 'information_info1_16', 'information_prog_algo_01', 'information_prog_algo_02', 'information_v4_01'],
-  'information.info.programming.algorithm.sort': ['information_info1_16', 'information_prog_algo_01', 'information_prog_algo_02', 'information_v4_01'],
-  'information.info.programming.algorithm.complexity': ['information_design_01', 'information_prog_algo_01', 'information_v4_01'],
-  'information.info.programming.algorithm.structure': ['information_prog_algo_01'],
-  'information.info.programming.program': ['information_dncl_01', 'information_info1_15', 'information_prog_algo_01', 'information_prog_algo_02'],
-  'information.info.programming.program.variable': ['information_dncl_01', 'information_info1_15', 'information_prog_algo_01', 'information_prog_algo_02'],
-  'information.info.programming.program.control': ['information_info2_01', 'information_prog_algo_01', 'information_prog_algo_02'],
-  'information.info.programming.program.function': ['information_info1_15', 'information_prog_algo_01', 'information_prog_algo_02'],
-  'information.info.programming.program.trace': ['information_dncl_01', 'information_formats_01', 'information_info1_15', 'information_prog_algo_01', 'information_prog_algo_02', 'information_v4_01'],
-  'information.info.network.basic': ['information_info1_10', 'information_network_01'],
-  'information.info.network.basic.structure': ['information_info1_10', 'information_network_01'],
-  'information.info.network.basic.address': ['information_formats_01', 'information_info1_10', 'information_network_01'],
+  'information.info.programming.algorithm.basic': [
+    'information_info1_15',
+    'information_info1_16',
+    'information_prog_algo_01'
+  ],
+  'information.info.programming.algorithm.search': [
+    'information_formats_01',
+    'information_info1_16',
+    'information_prog_algo_01',
+    'information_prog_algo_02',
+    'information_v4_01'
+  ],
+  'information.info.programming.algorithm.sort': [
+    'information_info1_16',
+    'information_prog_algo_01',
+    'information_prog_algo_02',
+    'information_v4_01'
+  ],
+  'information.info.programming.algorithm.complexity': [
+    'information_design_01',
+    'information_prog_algo_01',
+    'information_v4_01'
+  ],
+  'information.info.programming.algorithm.structure': [
+    'information_prog_algo_01'
+  ],
+  'information.info.programming.program': [
+    'information_dncl_01',
+    'information_info1_15',
+    'information_prog_algo_01',
+    'information_prog_algo_02'
+  ],
+  'information.info.programming.program.variable': [
+    'information_dncl_01',
+    'information_info1_15',
+    'information_prog_algo_01',
+    'information_prog_algo_02'
+  ],
+  'information.info.programming.program.control': [
+    'information_info2_01',
+    'information_prog_algo_01',
+    'information_prog_algo_02'
+  ],
+  'information.info.programming.program.function': [
+    'information_info1_15',
+    'information_prog_algo_01',
+    'information_prog_algo_02'
+  ],
+  'information.info.programming.program.trace': [
+    'information_dncl_01',
+    'information_formats_01',
+    'information_info1_15',
+    'information_prog_algo_01',
+    'information_prog_algo_02',
+    'information_v4_01'
+  ],
+  'information.info.network.basic': [
+    'information_info1_10',
+    'information_network_01'
+  ],
+  'information.info.network.basic.structure': [
+    'information_info1_10',
+    'information_network_01'
+  ],
+  'information.info.network.basic.address': [
+    'information_formats_01',
+    'information_info1_10',
+    'information_network_01'
+  ],
   'information.info.network.protocol': ['information_info1_11'],
-  'information.info.network.protocol.tcpip': ['information_design_01', 'information_info1_11', 'information_network_01'],
-  'information.info.network.protocol.web': ['information_info1_11', 'information_network_01'],
+  'information.info.network.protocol.tcpip': [
+    'information_design_01',
+    'information_info1_11',
+    'information_network_01'
+  ],
+  'information.info.network.protocol.web': [
+    'information_info1_11',
+    'information_network_01'
+  ],
   'information.info.network.protocol.error': ['information_network_01'],
   'information.info.network.crypto': ['information_info1_12'],
-  'information.info.network.crypto.cipher': ['information_formats_01', 'information_info1_12', 'information_network_01'],
-  'information.info.network.crypto.signature': ['information_info1_12', 'information_network_01', 'information_v4_01'],
+  'information.info.network.crypto.cipher': [
+    'information_formats_01',
+    'information_info1_12',
+    'information_network_01'
+  ],
+  'information.info.network.crypto.signature': [
+    'information_info1_12',
+    'information_network_01',
+    'information_v4_01'
+  ],
   'information.info.network.crypto.tls': ['information_info1_12'],
   'information.info.data.manage': ['information_info1_13'],
-  'information.info.data.manage.scale': ['information_info1_13', 'information_prog_algo_02'],
-  'information.info.data.manage.database': ['information_data_db_01', 'information_design_01', 'information_info1_13', 'information_info2_01', 'information_prog_algo_02'],
+  'information.info.data.manage.scale': [
+    'information_info1_13',
+    'information_prog_algo_02'
+  ],
+  'information.info.data.manage.database': [
+    'information_data_db_01',
+    'information_design_01',
+    'information_info1_13',
+    'information_info2_01',
+    'information_prog_algo_02'
+  ],
   'information.info.data.manage.open': ['information_prog_algo_02'],
-  'information.info.data.analysis': ['information_info1_14', 'information_info2_01'],
-  'information.info.data.analysis.stat': ['information_info1_14', 'information_info2_01'],
-  'information.info.data.analysis.correlation': ['information_info1_14', 'information_info2_01', 'information_prog_algo_02', 'information_v4_01'],
-  'information.info.data.analysis.visualize': ['information_design_01', 'information_prog_algo_02'],
-  'information.info.data.analysis.ml': ['information_data_db_01', 'information_info2_01'],
+  'information.info.data.analysis': [
+    'information_info1_14',
+    'information_info2_01'
+  ],
+  'information.info.data.analysis.stat': [
+    'information_info1_14',
+    'information_info2_01'
+  ],
+  'information.info.data.analysis.correlation': [
+    'information_info1_14',
+    'information_info2_01',
+    'information_prog_algo_02',
+    'information_v4_01'
+  ],
+  'information.info.data.analysis.visualize': [
+    'information_design_01',
+    'information_prog_algo_02'
+  ],
+  'information.info.data.analysis.ml': [
+    'information_data_db_01',
+    'information_info2_01'
+  ],
   'music.theory.notation.clef.clef': ['music_fu_01', 'music_fu_02'],
   'music.theory.notation.clef.staff': ['music_fu_02'],
   'music.theory.notation.name': ['music_fu_05'],
-  'music.theory.notation.name.natural': ['music_fu_03', 'music_fu_04', 'music_fu_05'],
+  'music.theory.notation.name.natural': [
+    'music_fu_03',
+    'music_fu_04',
+    'music_fu_05'
+  ],
   'music.theory.notation.name.accidental': ['music_fu_05'],
-  'music.theory.notation.interval.basic': ['music_fu_06', 'music_fu_07', 'music_fu_08', 'music_fu_09', 'music_fu_12'],
+  'music.theory.notation.interval.basic': [
+    'music_fu_06',
+    'music_fu_07',
+    'music_fu_08',
+    'music_fu_09',
+    'music_fu_12'
+  ],
   'music.theory.notation.interval.natural': ['music_fu_06', 'music_fu_12'],
   'music.theory.notation.rhythm.note': ['music_fu_10', 'music_fu_11'],
   'music.theory.notation.rhythm.meter': ['music_fu_11'],
-  'music.theory.key.signature.mechanism': ['music_chou_01', 'music_chou_02', 'music_chou_03'],
-  'music.theory.key.signature.sharp': ['music_chou_01', 'music_chou_02', 'music_chou_04'],
-  'music.theory.key.signature.flat': ['music_chou_01', 'music_chou_03', 'music_chou_04'],
+  'music.theory.key.signature.mechanism': [
+    'music_chou_01',
+    'music_chou_02',
+    'music_chou_03'
+  ],
+  'music.theory.key.signature.sharp': [
+    'music_chou_01',
+    'music_chou_02',
+    'music_chou_04'
+  ],
+  'music.theory.key.signature.flat': [
+    'music_chou_01',
+    'music_chou_03',
+    'music_chou_04'
+  ],
   'music.theory.key.signature.minor': ['music_chou_01', 'music_chou_04'],
   'music.theory.key.relation': ['music_chou_05'],
-  'music.theory.key.relation.parallel': ['music_chou_05', 'music_chou_06', 'music_chou_12'],
+  'music.theory.key.relation.parallel': [
+    'music_chou_05',
+    'music_chou_06',
+    'music_chou_12'
+  ],
   'music.theory.key.relation.dominant': ['music_chou_06', 'music_chou_12'],
   'music.theory.key.scale': ['music_chou_07', 'music_chou_08'],
   'music.theory.key.scale.major': ['music_chou_07'],
@@ -2650,7 +3901,13 @@ const curriculumUnitSets = <String, List<String>>{
   'music.theory.key.world.mode': ['music_chou_10'],
   'music.theory.key.world.ethnic': ['music_chou_11'],
   'music.theory.harmony.triad': ['music_waon_01'],
-  'music.theory.harmony.triad.basic': ['music_waon_01', 'music_waon_02', 'music_waon_05', 'music_waon_06', 'music_waon_10'],
+  'music.theory.harmony.triad.basic': [
+    'music_waon_01',
+    'music_waon_02',
+    'music_waon_05',
+    'music_waon_06',
+    'music_waon_10'
+  ],
   'music.theory.harmony.triad.seventh': ['music_waon_06'],
   'music.theory.harmony.degree': ['music_waon_03', 'music_waon_04'],
   'music.theory.harmony.degree.major': ['music_waon_03'],
@@ -2658,15 +3915,31 @@ const curriculumUnitSets = <String, List<String>>{
   'music.theory.harmony.function': ['music_waon_08'],
   'music.theory.harmony.function.function': ['music_waon_07', 'music_waon_09'],
   'music.theory.harmony.function.cadence': ['music_waon_08', 'music_waon_09'],
-  'music.theory.terms.expression': ['music_yougo_01', 'music_yougo_02', 'music_yougo_08'],
+  'music.theory.terms.expression': [
+    'music_yougo_01',
+    'music_yougo_02',
+    'music_yougo_08'
+  ],
   'music.theory.terms.expression.tempo': ['music_yougo_01', 'music_yougo_08'],
-  'music.theory.terms.expression.dynamics': ['music_yougo_01', 'music_yougo_02', 'music_yougo_03', 'music_yougo_08'],
-  'music.theory.terms.expression.expression': ['music_yougo_03', 'music_yougo_08'],
+  'music.theory.terms.expression.dynamics': [
+    'music_yougo_01',
+    'music_yougo_02',
+    'music_yougo_03',
+    'music_yougo_08'
+  ],
+  'music.theory.terms.expression.expression': [
+    'music_yougo_03',
+    'music_yougo_08'
+  ],
   'music.theory.terms.performance': ['music_yougo_04'],
   'music.theory.terms.performance.articulation': ['music_yougo_04'],
   'music.theory.terms.performance.repeat': ['music_yougo_04'],
   'music.theory.terms.chord': ['music_yougo_06'],
-  'music.theory.terms.chord.triad': ['music_yougo_05', 'music_yougo_06', 'music_yougo_08'],
+  'music.theory.terms.chord.triad': [
+    'music_yougo_05',
+    'music_yougo_06',
+    'music_yougo_08'
+  ],
   'music.theory.terms.chord.seventh': ['music_yougo_06'],
   'music.theory.terms.instrument.instrument': ['music_yougo_07'],
   'music.theory.terms.instrument.voice': ['music_yougo_07'],

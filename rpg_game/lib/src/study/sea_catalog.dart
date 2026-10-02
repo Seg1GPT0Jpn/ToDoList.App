@@ -1,3 +1,5 @@
+import '../vocab/tsuzutan.dart';
+
 /// 定期テストの海：文法の単元。
 class SeaUnit {
   const SeaUnit({
@@ -254,7 +256,7 @@ class SeaCatalog {
     ]),
   ];
 
-  static const wordBooks = <SeaWordBook>[
+  static const baseWordBooks = <SeaWordBook>[
     SeaWordBook(
         id: 'words_basic', title: '単語・基礎', description: '高1前半レベルの基本語 40語'),
     SeaWordBook(
@@ -266,4 +268,8 @@ class SeaCatalog {
     SeaWordBook(
         id: 'idioms_basic', title: '熟語', description: 'よく出る熟語・イディオム 40個'),
   ];
+
+  /// 定期テストの海・模擬試験の空に並べる単語帳（自作の4冊＋つづ単）
+  static List<SeaWordBook> get wordBooks =>
+      [...baseWordBooks, ...Tsuzutan.seaBooks];
 }

@@ -25,7 +25,7 @@
 | `progression/` | 経験値・レベル・科目の習熟・宝箱 |
 | `story/` | 物語・6つの国・住人・装備 |
 | `study/` | 定期テストの海・模擬試験の空・共通テスト遺跡・総合演習・試験ワールド |
-| `vocab/` | 単語帳・単語の森 |
+| `vocab/` | 単語帳・単語の森・つづ単（公開版）の一覧 |
 | `world/` | フィールドの地形・ノートの紙と落書き |
 | `versus/` | 対戦モード |
 
@@ -84,6 +84,7 @@ firebase deploy --only hosting --project <プロジェクトID>
 ## 6. 守るルール
 
 - 市販教材（LEAP・STEP など）の内容を RPG の問題に使わない。LEAP・EEVI・つづ単は、名前とパスワードで開く単語帳（`rpg_game/tool/vocab_seal.dart` で暗号化して `assets/vocab/` に置く）だけで扱う
+- つづ単の公開版（`assets/words/tsuzutan_*.json`）は意味・例文・豆知識がすべて自作。RPG・海・空・単語の森で使う。単語ファイルを直したら `python3 rpg_game/tool/tsuzutan_index.py` で一覧を作り直す
 - パスワードや市販教材の本文をコミットしない。プロモーションコードはハッシュ値だけを保存する
 - ガチャ・ランダム型の課金は作らない
 - 変更したら `dart analyze`・`flutter analyze`・両方のテストを通してからコミットする

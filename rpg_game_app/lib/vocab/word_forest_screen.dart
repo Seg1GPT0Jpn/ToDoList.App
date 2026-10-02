@@ -11,7 +11,7 @@ import '../art/paper.dart';
 import '../battle/battle_screen.dart';
 import '../meta/design.dart';
 
-/// 単語の森で使う単語リスト（すべて自作。市販教材の単語は使わない）
+/// 単語の森で最初に読む単語リスト（すべて自作）
 const wordForestLists = [
   'words_basic',
   'words_standard',
@@ -19,10 +19,14 @@ const wordForestLists = [
   'idioms_basic',
 ];
 
+/// 選んだときに読むつづ単（公開版：意味・例文・豆知識はすべて自作）の一覧
+final _tsuzutanTitles = {for (final l in Tsuzutan.lists) l.id: l.title};
+
 Future<WordList> loadWordList(String id) async {
-  final raw = await rootBundle.loadString(
-    'packages/rpg_game/assets/words/$id.json',
-  );
+  // バイト列を読んでその場で文字に直す（loadString は大きいファイルを
+  // 別の isolate で直すうえ、結果を覚えておくので使わない）
+  final data = await rootBundle.load('packages/rpg_game/assets/words/$id.json');
+  final raw = utf8.decode(data.buffer.asUint8List());
   return WordList.fromJson(jsonDecode(raw) as Map<String, dynamic>);
 }
 
@@ -55,6 +59,18 @@ class _WordForestScreenState extends State<WordForestScreen> {
       _error = '単語リストを読み込めませんでした';
     }
     if (mounted) setState(() {});
+  }
+
+  /// つづ単は選んだときに読む（全部で 1.5MB あるので最初には読まない）
+  Future<void> _select(String id) async {
+    if (!_lists.containsKey(id)) {
+      try {
+        _lists[id] = await loadWordList(id);
+      } catch (_) {
+        return;
+      }
+    }
+    if (mounted) setState(() => _selected = id);
   }
 
   Future<void> _battle(WordList list, {required bool tower}) async {
@@ -138,6 +154,26 @@ class _WordForestScreenState extends State<WordForestScreen> {
                                     setState(() => _selected = id),
                               ),
                         ],
+                      ),
+                      const SizedBox(height: Space.s),
+                      // つづ単（29冊）は選択欄にまとめる
+                      DropdownButton<String>(
+                        key: const ValueKey('wordlist-tsuzutan'),
+                        isExpanded: true,
+                        hint: const Text('つづ単から選ぶ'),
+                        value: _tsuzutanTitles.containsKey(_selected)
+                            ? _selected
+                            : null,
+                        items: [
+                          for (final l in Tsuzutan.lists)
+                            DropdownMenuItem(
+                              value: l.id,
+                              child: Text('${l.title}（${l.description}）'),
+                            ),
+                        ],
+                        onChanged: (id) {
+                          if (id != null) _select(id);
+                        },
                       ),
                       const SizedBox(height: Space.m),
                       PaperCard(

@@ -85,7 +85,7 @@ class LearningRecord {
   /// 教科（ワールド ID）。定期テストの海の英語（sea_…）は英語にまとめる
   static String subjectOf(String setId) {
     final w = setId.split('_').first;
-    return w == 'sea' ? 'english' : w;
+    return w == 'sea' || w == 'tsuzutan' ? 'english' : w;
   }
 
   Iterable<QuestionStat> _of(String? subject) => subject == null

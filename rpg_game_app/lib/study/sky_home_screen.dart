@@ -8,6 +8,7 @@ import 'common_test_screens.dart';
 import 'exam_world_screens.dart';
 import 'realm_style.dart';
 import 'sea_battle_launcher.dart';
+import 'sea_home_screen.dart';
 import 'term_cards.dart';
 
 /// 模擬試験の空：定期テストの海と対になる、もっと難しい学習モード。
@@ -49,7 +50,7 @@ class _SkyHomeScreenState extends State<SkyHomeScreen> {
     final english = world.id == RpgCatalog.englishWorldId;
     final cards = TermDecks.of(world.id).isNotEmpty;
     final extraTabs = [
-      if (english) const Tab(text: 'LEAP・EEVI'),
+      if (english) const Tab(text: '単語'),
       if (cards) const Tab(text: '暗記カード'),
     ];
     final chooser = SizedBox(
@@ -130,15 +131,7 @@ class _SkyHomeScreenState extends State<SkyHomeScreen> {
                       progress: progress,
                     ),
                   if (english)
-                    ListView(
-                      padding: const EdgeInsets.fromLTRB(40, 12, 12, 24),
-                      children: [
-                        VocabBookQuizSection(
-                          progress: progress,
-                          realm: StudyRealm.sky,
-                        ),
-                      ],
-                    ),
+                    WordBooksTab(progress: progress, realm: StudyRealm.sky),
                   if (cards)
                     TermCardsTab(
                       world: world,

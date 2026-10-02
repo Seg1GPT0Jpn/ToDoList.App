@@ -62,7 +62,12 @@ class WordQuizBuilder {
             : '「${w.shortMeaning}」を表す英語は？',
         choices: choices,
         answerIndex: choices.indexOf(answer),
-        explanation: '${w.term}：${w.meaning}',
+        explanation: [
+          '${w.term}：${w.meaning}',
+          if (w.example.isNotEmpty) '例）${w.example}',
+          if (w.exampleJa.isNotEmpty) '　${w.exampleJa}',
+          if (w.note.isNotEmpty) '💡 ${w.note}',
+        ].join('\n'),
         unit: Curriculum.unitForGeneratedSet(list.listId),
       ));
     }

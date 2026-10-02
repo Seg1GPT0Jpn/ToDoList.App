@@ -14,13 +14,13 @@ class TermCard {
   });
 
   factory TermCard.fromJson(Map<String, dynamic> j, String section) => TermCard(
-    term: j['t'] as String,
-    reading: j['r'] as String? ?? '',
-    meaning: j['m'] as String,
-    related: [...?(j['rel'] as List?)?.cast<String>()],
-    trivia: j['tr'] as String? ?? '',
-    section: section,
-  );
+        term: j['t'] as String,
+        reading: j['r'] as String? ?? '',
+        meaning: j['m'] as String,
+        related: [...?(j['rel'] as List?)?.cast<String>()],
+        trivia: j['tr'] as String? ?? '',
+        section: section,
+      );
 
   /// 用語の名称
   final String term;
@@ -41,12 +41,12 @@ class TermCard {
   final String section;
 
   Map<String, dynamic> toJson() => {
-    't': term,
-    if (reading.isNotEmpty) 'r': reading,
-    'm': meaning,
-    if (related.isNotEmpty) 'rel': related,
-    if (trivia.isNotEmpty) 'tr': trivia,
-  };
+        't': term,
+        if (reading.isNotEmpty) 'r': reading,
+        'm': meaning,
+        if (related.isNotEmpty) 'rel': related,
+        if (trivia.isNotEmpty) 'tr': trivia,
+      };
 }
 
 /// 教科ごとの暗記カードの束（物理・日本史など）。
@@ -59,15 +59,15 @@ class TermDeck {
   });
 
   factory TermDeck.fromJson(Map<String, dynamic> j) => TermDeck(
-    id: j['id'] as String,
-    worldId: j['worldId'] as String,
-    title: j['title'] as String,
-    cards: [
-      for (final s in j['sections'] as List)
-        for (final c in (s as Map)['cards'] as List)
-          TermCard.fromJson(c as Map<String, dynamic>, s['name'] as String),
-    ],
-  );
+        id: j['id'] as String,
+        worldId: j['worldId'] as String,
+        title: j['title'] as String,
+        cards: [
+          for (final s in j['sections'] as List)
+            for (final c in (s as Map)['cards'] as List)
+              TermCard.fromJson(c as Map<String, dynamic>, s['name'] as String),
+        ],
+      );
 
   final String id;
 
@@ -78,12 +78,14 @@ class TermDeck {
 
   /// 章の名前（出てくる順）
   List<String> get sections => [
-    for (final (i, c) in cards.indexed)
-      if (i == 0 || cards[i - 1].section != c.section) c.section,
-  ];
+        for (final (i, c) in cards.indexed)
+          if (i == 0 || cards[i - 1].section != c.section) c.section,
+      ];
 
-  List<TermCard> inSection(String name) =>
-      [for (final c in cards) if (c.section == name) c];
+  List<TermCard> inSection(String name) => [
+        for (final c in cards)
+          if (c.section == name) c
+      ];
 }
 
 /// アプリに入っている暗記カードの一覧。
@@ -111,8 +113,10 @@ class TermDecks {
     TermDeckInfo('politics', 'social', '政治・経済'),
   ];
 
-  static List<TermDeckInfo> of(String worldId) =>
-      [for (final d in all) if (d.worldId == worldId) d];
+  static List<TermDeckInfo> of(String worldId) => [
+        for (final d in all)
+          if (d.worldId == worldId) d
+      ];
 }
 
 /// 暗記カードの問題の向き
@@ -187,9 +191,7 @@ class TermQuizBuilder {
     return QuizQuestion(
       id: 'card_${deck.id}_${toTerm ? 't' : 'm'}_$idx',
       category: toTerm ? QuestionCategory.knowledge : QuestionCategory.meaning,
-      prompt: toTerm
-          ? '次の説明にあてはまる用語は？'
-          : '「${c.term}」の説明として正しいものは？',
+      prompt: toTerm ? '次の説明にあてはまる用語は？' : '「${c.term}」の説明として正しいものは？',
       sentence: toTerm ? c.meaning : null,
       choices: choices,
       answerIndex: choices.indexOf(answer),

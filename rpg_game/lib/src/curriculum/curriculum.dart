@@ -169,6 +169,9 @@ class Curriculum {
     'words_standard': 'english.eng.vocab.standard.meaning',
     'words_advanced': 'english.eng.vocab.advanced.meaning',
     'idioms_basic': 'english.eng.vocab.idiom.idiom',
+    'tsuzutan_1': 'english.eng.vocab.basic.meaning',
+    'tsuzutan_2': 'english.eng.vocab.standard.meaning',
+    'tsuzutan_3': 'english.eng.vocab.advanced.meaning',
   };
 
   /// 「数学Ⅰ ＞ 2次関数 ＞ 最大・最小」のような表示（教科は省く）

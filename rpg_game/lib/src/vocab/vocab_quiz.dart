@@ -51,9 +51,7 @@ class VocabQuizBuilder {
         QuizQuestion(
           id: 'vocab_${book.id}_${enToJa ? 'e' : 'j'}_${c.id}',
           category: QuestionCategory.meaning,
-          prompt: enToJa
-              ? '「${c.term}」の意味は？'
-              : '「${c.shortMeaning}」を表す英語は？',
+          prompt: enToJa ? '「${c.term}」の意味は？' : '「${c.shortMeaning}」を表す英語は？',
           choices: choices,
           answerIndex: choices.indexOf(answer),
           explanation: '${c.term}：${c.meaning}',

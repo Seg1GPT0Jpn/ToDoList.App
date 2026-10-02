@@ -6,6 +6,9 @@ class WordEntry {
     required this.term,
     required this.meaning,
     this.number,
+    this.example = '',
+    this.exampleJa = '',
+    this.note = '',
   });
 
   /// 通し番号（取り込んだ一覧にあれば）
@@ -14,6 +17,11 @@ class WordEntry {
 
   /// 意味（取り込んだ一覧の説明をそのまま保持）
   final String meaning;
+
+  /// 例文とその訳、覚えるための豆知識（なければ空）
+  final String example;
+  final String exampleJa;
+  final String note;
 
   static final _pos = RegExp(r'^\s*\[([^\]]+)\]');
   static final _senseMark = RegExp('[①②③④⑤⑥⑦⑧⑨⑩]');
@@ -37,12 +45,18 @@ class WordEntry {
         number: (json['number'] as num?)?.toInt(),
         term: json['term'] as String,
         meaning: json['meaning'] as String,
+        example: json['example'] as String? ?? '',
+        exampleJa: json['exampleJa'] as String? ?? '',
+        note: json['note'] as String? ?? '',
       );
 
   Map<String, dynamic> toJson() => {
         if (number != null) 'number': number,
         'term': term,
         'meaning': meaning,
+        if (example.isNotEmpty) 'example': example,
+        if (exampleJa.isNotEmpty) 'exampleJa': exampleJa,
+        if (note.isNotEmpty) 'note': note,
       };
 }
 
