@@ -108,8 +108,11 @@ class FirestoreVersusBackend implements VersusRoomBackend {
         if (data == null) return false;
         final room = OnlineRoom.fromMap(data);
         if (room.closed || !accepts(room.events)) return false;
+        // arrayUnion は同じ中身の出来事をまとめてしまうので、配列ごと書きこむ
         tx.update(_doc(code), {
-          'events': FieldValue.arrayUnion([event.toMap()]),
+          'events': [
+            for (final e in [...room.events, event]) e.toMap(),
+          ],
         });
         return true;
       });

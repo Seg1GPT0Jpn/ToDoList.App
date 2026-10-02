@@ -213,6 +213,41 @@ void onlineTests() {
     expect(t.takeException(), isNull);
   });
 
+  testWidgets('オンライン：ホストの画面が止まっていても、ゲストが時間切れを知らせて次へ進む', (t) async {
+    final hub = MemoryRoomHub();
+    final host = MemoryVersusBackend(hub, userId: 'host');
+    final guest = MemoryVersusBackend(hub, userId: 'guest');
+    const config = VersusRoomConfig(setIds: [], seed: 5, rounds: 5);
+    final code = await host.create(config, 'ホスト');
+    await guest.join(code, 'ゲスト');
+    await openScreen(
+      t,
+      VersusScreen(
+        questions: _qs,
+        names: const ['ホスト', 'ゲスト'],
+        rounds: 5,
+        online: OnlineLink(backend: guest, code: code, localSide: 1, seed: 5),
+      ),
+      size: const Size(420, 900),
+      frames: 3,
+    );
+    // 制限時間（15秒）＋ゲストの待ち時間（2秒）がすぎる
+    await _frames(t, 180);
+    final events = hub.rooms[code]!.events;
+    expect(events.length, 1);
+    expect(events.single.side, -1);
+    expect(events.single.round, 1);
+    // 2問目に進み、ゲストが答えられる
+    await _frames(t, 20);
+    await t.tap(find.widgetWithText(OutlinedButton, 'せいかい').first);
+    await _frames(t, 3);
+    expect(hub.rooms[code]!.events.last.side, 1);
+    expect(hub.rooms[code]!.events.last.round, 2);
+    await t.runAsync(() => host.close(code));
+    await _frames(t, 30);
+    expect(t.takeException(), isNull);
+  });
+
   testWidgets('オンライン：部屋をつくると番号が出て、相手が入ると対戦がはじまる', (t) async {
     final hub = MemoryRoomHub();
     final host = MemoryVersusBackend(hub, userId: 'host');

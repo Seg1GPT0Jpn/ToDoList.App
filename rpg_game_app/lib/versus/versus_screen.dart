@@ -388,14 +388,20 @@ class _VersusScreenState extends State<VersusScreen>
       final online = _online;
       if (online == null) {
         _show(_match.timeout());
-      } else if (online.localSide == 0) {
-        // 時間切れは、部屋を作った人がまとめて知らせる
-        _send(VersusEvent.timeout(_match.round));
+      } else {
+        // 時間切れは部屋を作った人が知らせる。部屋を作った人の画面が止まっていても
+        // 進むように、入った人も少し遅れて知らせる（先に届いた1つだけが通る）
+        _sendTimeout(
+          _match.round,
+          online.localSide == 0 ? Duration.zero : _guestGrace,
+        );
       }
     });
     final online = _online;
     if (online != null) {
-      _roomSub = online.backend.watch(online.code).listen(_onRoom);
+      _roomSub = online.backend
+          .watch(online.code)
+          .listen(_onRoom, onError: (Object _) {});
     }
     _startRound();
   }
@@ -424,23 +430,48 @@ class _VersusScreenState extends State<VersusScreen>
   void _drain() {
     while (_queue.isNotEmpty && !_reveal && !_match.isOver) {
       final e = _queue.removeAt(0);
+      // 自分の答えが届いたら、通っても通らなくても次の入力を受け付ける
+      if (e.side == _me) _sending = false;
       final t = _match.apply(e);
       if (t == null) continue;
       if (e.choice != null) _picked[e.side] = e.choice!;
-      if (e.side == _me) _sending = false;
       _show(t);
     }
   }
 
-  Future<void> _send(VersusEvent e) async {
+  /// 入った人が時間切れを知らせるまでの、追加の待ち時間
+  static const _guestGrace = Duration(seconds: 2);
+
+  /// 送るのに失敗したときに、もう一度ためす回数
+  static const _retries = 3;
+
+  Future<bool> _send(VersusEvent e) async {
     final online = _online!;
     if (e.side == _me) setState(() => _sending = true);
-    final ok = await online.backend.send(
-      online.code,
-      e,
-      (before) => VersusEvent.replay(_fresh(), before).accepts(e),
-    );
-    if (!ok && mounted) setState(() => _sending = false);
+    var ok = false;
+    try {
+      ok = await online.backend
+          .send(
+            online.code,
+            e,
+            (before) => VersusEvent.replay(_fresh(), before).accepts(e),
+          )
+          .timeout(const Duration(seconds: 10), onTimeout: () => false);
+    } catch (_) {
+      ok = false;
+    }
+    if (!ok && mounted && e.side == _me) setState(() => _sending = false);
+    return ok;
+  }
+
+  /// [round] 問目の時間切れを知らせる。まだその問題のままなら、失敗してもやり直す
+  Future<void> _sendTimeout(int round, Duration delay) async {
+    for (var i = 0; i <= _retries; i++) {
+      await Future<void>.delayed(i == 0 ? delay : const Duration(seconds: 1));
+      if (!mounted || _match.isOver || _match.round != round) return;
+      if (_queue.any((e) => e.round == round && e.side == -1)) return;
+      if (await _send(VersusEvent.timeout(round))) return;
+    }
   }
 
   void _newMatch() {
