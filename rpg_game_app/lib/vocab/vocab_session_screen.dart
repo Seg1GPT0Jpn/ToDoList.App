@@ -546,6 +546,13 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
                   style: TextStyle(color: TsuzuriColors.inkSoft, fontSize: 12),
                 ),
             ],
+            if (c.note.isNotEmpty) ...[
+              const SizedBox(height: 6),
+              Text(
+                '💡 ${c.note}',
+                style: TextStyle(color: TsuzuriColors.inkSoft, fontSize: 12),
+              ),
+            ],
           ],
         ),
       ),

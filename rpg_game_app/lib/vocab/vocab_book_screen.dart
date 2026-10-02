@@ -483,6 +483,10 @@ class _VocabBookScreenState extends State<VocabBookScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(c.meaning),
+              if (c.note.isNotEmpty) ...[
+                const SizedBox(height: 6),
+                Text('💡 ${c.note}', style: const TextStyle(fontSize: 12)),
+              ],
               const SizedBox(height: 8),
               TextField(
                 controller: pron,

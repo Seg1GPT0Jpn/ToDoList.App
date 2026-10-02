@@ -8,6 +8,7 @@ class VocabCard {
     this.pron = '',
     this.example = '',
     this.exampleJa = '',
+    this.note = '',
   });
 
   /// 単語帳の中で一意な ID（番号があれば番号、なければ単語）
@@ -26,6 +27,9 @@ class VocabCard {
   /// 例文と、その訳（あれば）
   final String example;
   final String exampleJa;
+
+  /// 覚えるための豆知識（語源・使い分けなど。なければ空）
+  final String note;
 
   bool get hasExample => example.isNotEmpty && clozeOf(example, term) != null;
 
@@ -82,20 +86,188 @@ class VocabCard {
     return m == null ? null : example.substring(m.$1, m.$2);
   }
 
+  static final _slot = RegExp(
+    r"^(one's|oneself|A|B|sb|sth|someone|something|somebody|doing|.+の|\.\.\.|…)$",
+  );
+
+  /// よく出る不規則動詞の活用形（穴埋めで例文の中から見つけるため）
+  static const _irregular = {
+    'be': 'is|are|am|was|were|been|being',
+    'bear': 'bore|borne|born',
+    'beat': 'beaten',
+    'become': 'became',
+    'begin': 'began|begun',
+    'bend': 'bent',
+    'bind': 'bound',
+    'bite': 'bit|bitten',
+    'bleed': 'bled',
+    'blow': 'blew|blown',
+    'break': 'broke|broken',
+    'breed': 'bred',
+    'bring': 'brought',
+    'build': 'built',
+    'burst': 'burst',
+    'buy': 'bought',
+    'catch': 'caught',
+    'choose': 'chose|chosen',
+    'cling': 'clung',
+    'come': 'came',
+    'creep': 'crept',
+    'deal': 'dealt',
+    'dig': 'dug',
+    'do': 'did|done|does',
+    'draw': 'drew|drawn',
+    'drink': 'drank|drunk',
+    'drive': 'drove|driven',
+    'dwell': 'dwelt',
+    'eat': 'ate|eaten',
+    'fall': 'fell|fallen',
+    'feed': 'fed',
+    'feel': 'felt',
+    'fight': 'fought',
+    'find': 'found',
+    'flee': 'fled',
+    'fly': 'flew|flown|flies',
+    'forbid': 'forbade|forbidden',
+    'forget': 'forgot|forgotten',
+    'forgive': 'forgave|forgiven',
+    'freeze': 'froze|frozen',
+    'get': 'got|gotten',
+    'give': 'gave|given',
+    'go': 'went|gone|goes',
+    'grind': 'ground',
+    'grow': 'grew|grown',
+    'hang': 'hung',
+    'have': 'had|has',
+    'hear': 'heard',
+    'hide': 'hid|hidden',
+    'hold': 'held',
+    'keep': 'kept',
+    'know': 'knew|known',
+    'lay': 'laid',
+    'lead': 'led',
+    'lean': 'leant',
+    'leap': 'leapt',
+    'leave': 'left',
+    'lend': 'lent',
+    'lie': 'lay|lain|lying',
+    'lose': 'lost',
+    'make': 'made',
+    'mean': 'meant',
+    'meet': 'met',
+    'mislead': 'misled',
+    'overcome': 'overcame',
+    'overtake': 'overtook|overtaken',
+    'pay': 'paid',
+    'ride': 'rode|ridden',
+    'ring': 'rang|rung',
+    'rise': 'rose|risen',
+    'run': 'ran',
+    'say': 'said',
+    'see': 'saw|seen',
+    'seek': 'sought',
+    'sell': 'sold',
+    'send': 'sent',
+    'shake': 'shook|shaken',
+    'shine': 'shone',
+    'shoot': 'shot',
+    'shrink': 'shrank|shrunk',
+    'sing': 'sang|sung',
+    'sink': 'sank|sunk',
+    'sit': 'sat',
+    'sleep': 'slept',
+    'slide': 'slid',
+    'speak': 'spoke|spoken',
+    'spend': 'spent',
+    'spin': 'spun',
+    'spring': 'sprang|sprung',
+    'stand': 'stood',
+    'steal': 'stole|stolen',
+    'stick': 'stuck',
+    'sting': 'stung',
+    'stride': 'strode',
+    'strike': 'struck',
+    'strive': 'strove|striven',
+    'swear': 'swore|sworn',
+    'sweep': 'swept',
+    'swim': 'swam|swum',
+    'swing': 'swung',
+    'take': 'took|taken',
+    'teach': 'taught',
+    'tear': 'tore|torn',
+    'tell': 'told',
+    'think': 'thought',
+    'throw': 'threw|thrown',
+    'undergo': 'underwent|undergone',
+    'undertake': 'undertook|undertaken',
+    'wake': 'woke|woken',
+    'wear': 'wore|worn',
+    'weave': 'wove|woven',
+    'weep': 'wept',
+    'win': 'won',
+    'withdraw': 'withdrew|withdrawn',
+    'withstand': 'withstood',
+    'write': 'wrote|written',
+  };
+
+  /// 語尾が変わる（-ed / -ing / -s / y→ied など）ことと不規則な活用を考えた、1語ぶんの正規表現
+  static String _wordPattern(String w) {
+    final lower = w.toLowerCase();
+    // 4文字の語も、y / e で終わるなら外して探す（deny → denied、hide → hiding）
+    final stem = lower.length > 4 ||
+            (lower.length == 4 && RegExp(r'[ye]$').hasMatch(lower))
+        ? lower.substring(0, lower.length - 1)
+        : lower;
+    final forms = ['${RegExp.escape(stem)}[a-z]*'];
+    final irr = _irregular[lower];
+    if (irr != null) forms.add(irr);
+    return '(?:${forms.join('|')})';
+  }
+
+  static const _particles = {
+    'up',
+    'out',
+    'in',
+    'off',
+    'down',
+    'away',
+    'over',
+    'on',
+    'back',
+    'around'
+  };
+
   static (int, int)? _clozeMatch(String example, String term) {
     final base = term.replaceAll(RegExp(r'[～~〜()（）]'), '').trim();
     if (base.isEmpty) return null;
     if (base.contains(' ')) {
       final i = example.toLowerCase().indexOf(base.toLowerCase());
-      return i < 0 ? null : (i, i + base.length);
+      if (i >= 0) return (i, i + base.length);
+      // 熟語：最初の語は活用してよく、one's / A などの部分には別の語が入ってよい
+      final parts = base.split(RegExp(r'\s+'));
+      final pattern = StringBuffer();
+      for (var k = 0; k < parts.length; k++) {
+        final w = parts[k];
+        if (k == 1 && parts.length == 2 && _particles.contains(w)) {
+          // rough him up / see you out のように、目的語が間に入ってよい
+          pattern.write(r"(?:\s+[\w'’-]+){0,2}\s+");
+        } else if (k > 0) {
+          pattern.write(r'\s+');
+        }
+        if (_slot.hasMatch(w) || (k > 0 && w == 'do')) {
+          pattern.write(r"[\w'’-]+(?:\s+[\w'’-]+){0,2}");
+        } else if (k == 0 && (w.length > 2 || _irregular.containsKey(w))) {
+          pattern.write(_wordPattern(w));
+        } else {
+          pattern.write(RegExp.escape(w));
+        }
+      }
+      final m =
+          RegExp('\\b$pattern\\b', caseSensitive: false).firstMatch(example);
+      return m == null ? null : (m.start, m.end);
     }
-    // 語尾が変わる（-ed / -ing / -s / y→ied など）ことを考えて、語幹で探す
-    final stem = base.length > 4 ? base.substring(0, base.length - 1) : base;
-    final re = RegExp(
-      '\\b${RegExp.escape(stem)}[a-z]*\\b',
-      caseSensitive: false,
-    );
-    final m = re.firstMatch(example);
+    final m = RegExp('\\b${_wordPattern(base)}\\b', caseSensitive: false)
+        .firstMatch(example);
     return m == null ? null : (m.start, m.end);
   }
 
@@ -111,6 +283,7 @@ class VocabCard {
           {String? pron,
           String? example,
           String? exampleJa,
+          String? note,
           String? meaning}) =>
       VocabCard(
         id: id,
@@ -120,6 +293,7 @@ class VocabCard {
         pron: pron ?? this.pron,
         example: example ?? this.example,
         exampleJa: exampleJa ?? this.exampleJa,
+        note: note ?? this.note,
       );
 
   factory VocabCard.fromJson(Map<String, dynamic> j) => VocabCard(
@@ -130,6 +304,7 @@ class VocabCard {
         pron: j['p'] as String? ?? '',
         example: j['e'] as String? ?? '',
         exampleJa: j['ej'] as String? ?? '',
+        note: j['nt'] as String? ?? '',
       );
 
   Map<String, dynamic> toJson() => {
@@ -140,6 +315,7 @@ class VocabCard {
         if (pron.isNotEmpty) 'p': pron,
         if (example.isNotEmpty) 'e': example,
         if (exampleJa.isNotEmpty) 'ej': exampleJa,
+        if (note.isNotEmpty) 'nt': note,
       };
 }
 
