@@ -14,11 +14,15 @@ Future<void> _frames(WidgetTester t, int n) async {
 
 void main() {
   testWidgets('設定で「ダーク」にすると、アプリ全体がダークモードの色になる', (t) async {
+    // 名前があればはじめてのログイン画面は出ない
+    final first = await openScreen(t, const SizedBox(), frames: 1);
+    await first.profiles.save(first.profiles.load().copyWith(userName: 'つづり'));
     final s = await openScreen(
       t,
       const TsuzuriQuestApp(),
       frames: 20,
       bare: true,
+      keepPrefs: true,
     );
     expect(TsuzuriColors.dark, isFalse);
     expect(find.byType(WorldMapScreen), findsOneWidget);

@@ -7,9 +7,9 @@ import 'package:flutter/services.dart';
 import 'package:rpg_game/rpg_game.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'account/account_screen.dart';
 import 'account/account_service.dart';
 import 'account/profile_repository.dart';
+import 'account/welcome_screen.dart';
 import 'app/services.dart';
 import 'app/settings.dart';
 import 'app/theme.dart';
@@ -231,7 +231,7 @@ class _TsuzuriQuestAppState extends State<TsuzuriQuestApp>
   }
 }
 
-/// はじめての起動で、冒険者の名前を聞く
+/// はじめての起動で、ログイン画面（Google／ログインせずにはじめる）を出す
 class _FirstRun extends StatefulWidget {
   const _FirstRun({required this.child});
   final Widget child;
@@ -248,9 +248,16 @@ class _FirstRunState extends State<_FirstRun> {
     super.didChangeDependencies();
     if (_asked) return;
     _asked = true;
-    if (!RpgServices.of(context).profiles.load().hasName) {
+    final p = RpgServices.of(context).profiles.load();
+    if (!p.hasName && !p.isGoogleLinked) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
-        if (mounted) askUserName(context);
+        if (!mounted) return;
+        Navigator.of(context).push(
+          MaterialPageRoute<void>(
+            fullscreenDialog: true,
+            builder: (_) => const WelcomeScreen(),
+          ),
+        );
       });
     }
   }

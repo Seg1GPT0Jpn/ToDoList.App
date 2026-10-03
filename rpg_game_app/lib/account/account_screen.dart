@@ -4,6 +4,7 @@ import 'package:rpg_game/rpg_game.dart';
 import '../app/services.dart';
 import '../app/theme.dart';
 import '../art/paper.dart';
+import 'account_service.dart';
 
 /// アカウント：ユーザー名の変更と、Google アカウントの登録（連携）
 class AccountScreen extends StatefulWidget {
@@ -39,25 +40,10 @@ class _AccountScreenState extends State<AccountScreen> {
   }
 
   Future<void> _linkGoogle() async {
-    final services = RpgServices.of(context);
-    final account = await services.account.signInWithGoogle(context);
+    final account = await linkGoogleAccount(context);
     if (account == null) return;
-    final p = services.profiles.load();
-    await services.profiles.save(
-      p.copyWith(
-        googleEmail: account.email,
-        googleDisplayName: account.displayName,
-        linkedAt: DateTime.now(),
-        // 名前がまだなければ Google の名前を仮に使う（あとで変えられる）
-        userName: p.hasName
-            ? null
-            : account.displayName.characters
-                  .take(PlayerProfile.maxNameLength)
-                  .toString(),
-      ),
-    );
     if (!mounted) return;
-    _name.text = services.profiles.load().userName;
+    _name.text = RpgServices.of(context).profiles.load().userName;
     ScaffoldMessenger.of(context)
         .showSnackBar(SnackBar(content: Text('${account.email} を登録しました')));
   }
@@ -256,6 +242,28 @@ Future<void> askUserName(BuildContext context) async {
       ),
     ),
   );
-  controller.dispose();
+  // 閉じるアニメーション中も TextField が使うので、ここでは dispose しない
   if (name != null) await repo.save(repo.load().copyWith(userName: name));
+}
+
+/// Google でログインして、プロフィールに登録する。キャンセルなら null
+Future<GoogleAccount?> linkGoogleAccount(BuildContext context) async {
+  final services = RpgServices.of(context);
+  final account = await services.account.signInWithGoogle(context);
+  if (account == null) return null;
+  final p = services.profiles.load();
+  await services.profiles.save(
+    p.copyWith(
+      googleEmail: account.email,
+      googleDisplayName: account.displayName,
+      linkedAt: DateTime.now(),
+      // 名前がまだなければ Google の名前を仮に使う（あとで変えられる）
+      userName: p.hasName
+          ? null
+          : account.displayName.characters
+                .take(PlayerProfile.maxNameLength)
+                .toString(),
+    ),
+  );
+  return account;
 }
