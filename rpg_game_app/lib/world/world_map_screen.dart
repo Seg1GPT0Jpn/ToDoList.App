@@ -184,7 +184,7 @@ class WorldMapScreen extends StatelessWidget {
                   child: Text('アカウント（名前・Google）'),
                 ),
                 const PopupMenuItem(value: 'promo', child: Text('プロモーションコード')),
-                if (services.purchaseService != null)
+                if (services.purchaseService?.isAvailable == true)
                   const PopupMenuItem(
                     value: 'restore',
                     child: Text('Google Playの購入を復元'),
