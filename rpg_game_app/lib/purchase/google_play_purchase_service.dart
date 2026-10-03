@@ -19,7 +19,8 @@ class GooglePlayPurchaseService {
     FirebaseFunctions? functions,
     FirebaseAuth? auth,
   })  : _store = store ?? InAppPurchase.instance,
-        _functions = functions ?? FirebaseFunctions.instance,
+        _functions = functions ??
+            FirebaseFunctions.instanceFor(region: 'asia-northeast1'),
         _auth = auth ?? FirebaseAuth.instance,
         _onVerified = onVerified;
 
@@ -184,6 +185,14 @@ class GooglePlayPurchaseService {
         continue;
       }
 
+      try {
+        await _onVerified(worldId);
+      } catch (e) {
+        debugPrint('購入済みワールドの保存に失敗しました: $e');
+        _completePending(worldId, false);
+        continue;
+      }
+
       if (purchase.pendingCompletePurchase) {
         try {
           await _store.completePurchase(purchase);
@@ -192,9 +201,7 @@ class GooglePlayPurchaseService {
         }
       }
 
-      try {
-        await _onVerified(worldId);
-        _completePending(worldId, true);
+      _completePending(worldId, true);
       } catch (e) {
         debugPrint('購入済みワールドの保存に失敗しました: $e');
         _completePending(worldId, false);
