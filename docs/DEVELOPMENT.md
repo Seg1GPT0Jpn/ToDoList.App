@@ -85,11 +85,11 @@ flutter run -d chrome                               # ブラウザで起動
 ```
 cd rpg_game_app
 flutter build web --release --pwa-strategy=none
-firebase deploy --only hosting --project tsuzuri-quest-junior
+firebase deploy --only hosting --project tsuzuri-quest-junior-26426
 ```
 
 - アプリ ID は `com.kazu.tsuzuri_quest_junior`（Android）・`com.kazu.tsuzuriQuestJunior`（iOS）
-- `.firebaserc` は新しいプロジェクト `tsuzuri-quest-junior` を指している。`lib/firebase_options.dart` は
+- `.firebaserc` は新しいプロジェクト `tsuzuri-quest-junior-26426` を指している。`lib/firebase_options.dart` は
   まだ仮（Firebase なしで動き、記録は端末の中だけ）。Firebase で高校版とは別のプロジェクトを作り、
   `flutterfire configure` で作り直す（手順は `docs/GOOGLE_LOGIN.md`）
 
