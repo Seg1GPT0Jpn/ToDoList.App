@@ -14,6 +14,14 @@ service cloud.firestore {
         && docId == 'main';
     }
 
+    // Google Play の購入権利。
+    // クライアントからは書き込めず、Cloud Functions（Admin SDK）だけが作成・更新する。
+    match /users/{uid}/rpg_purchases/{worldId} {
+      allow read: if request.auth != null
+        && request.auth.uid == uid;
+      allow write: if false;
+    }
+
     // 問題の報告。ログインした人が自分の名前で送るだけ（読むのは管理者が Firebase コンソールで）
     match /question_reports/{id} {
       allow create: if request.auth != null
