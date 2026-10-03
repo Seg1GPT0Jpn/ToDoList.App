@@ -1,0 +1,288 @@
+{
+  "setId": "math_mb_02",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_mb02_001",
+      "unit": "math.mb.seq.sum.sigma",
+      "category": "calculation",
+      "prompt": "Σ_{k=1}^{n} (2k−1) を計算すると？",
+      "choices": [
+        "n²",
+        "n(n+1)",
+        "2n²",
+        "n²−1"
+      ],
+      "answerIndex": 0,
+      "explanation": "2·n(n+1)/2−n。"
+    },
+    {
+      "id": "mat_mb02_002",
+      "unit": "math.mb.seq.sum.sigma",
+      "category": "calculation",
+      "prompt": "Σ_{k=1}^{n} k(k+1) を計算すると？",
+      "choices": [
+        "n(n+1)(n+2)/3",
+        "n²(n+1)/2",
+        "n(n+1)/2",
+        "n(n+1)(2n+1)/6"
+      ],
+      "answerIndex": 0,
+      "explanation": "Σk²+Σk をまとめる。"
+    },
+    {
+      "id": "mat_mb02_003",
+      "unit": "math.mb.seq.sum.difference",
+      "category": "calculation",
+      "prompt": "数列 1, 2, 5, 10, 17, … の一般項は？",
+      "choices": [
+        "2n−1",
+        "n²+1",
+        "n²−2n+2",
+        "n²−n+1"
+      ],
+      "answerIndex": 2,
+      "explanation": "階差数列は 1, 3, 5, 7, …（2k−1）。aₙ=1+(n−1)²。"
+    },
+    {
+      "id": "mat_mb02_004",
+      "unit": "math.mb.seq.arith",
+      "category": "calculation",
+      "prompt": "初項から第 n 項までの和が Sₙ=n²+n のとき、一般項 aₙ は？",
+      "choices": [
+        "2n",
+        "n²",
+        "2n+1",
+        "n+1"
+      ],
+      "answerIndex": 0,
+      "explanation": "aₙ=Sₙ−Sₙ₋₁（n≧2）、a₁=S₁=2 も一致。"
+    },
+    {
+      "id": "mat_mb02_005",
+      "unit": "math.mb.seq.arith",
+      "category": "calculation",
+      "prompt": "Sₙ=2ⁿ−1 のとき、一般項 aₙ は？",
+      "choices": [
+        "2ⁿ⁻¹",
+        "2ⁿ−1",
+        "2ⁿ",
+        "n"
+      ],
+      "answerIndex": 0,
+      "explanation": "Sₙ−Sₙ₋₁=2ⁿ⁻¹、a₁=1 も一致。"
+    },
+    {
+      "id": "mat_mb02_006",
+      "unit": "math.mb.seq.sum.sigma",
+      "category": "calculation",
+      "prompt": "Σ_{k=1}^{n} 1/(k(k+1)) を計算すると？",
+      "choices": [
+        "(n+1)/n",
+        "1/(n+1)",
+        "n/(n+1)",
+        "1"
+      ],
+      "answerIndex": 2,
+      "explanation": "1/k−1/(k+1) の和で、途中が消える。"
+    },
+    {
+      "id": "mat_mb02_007",
+      "unit": "math.mb.seq.arith.arithmetic",
+      "category": "calculation",
+      "prompt": "3数 a, 5, 9 がこの順で等差数列のとき、a は？",
+      "choices": [
+        "3",
+        "4",
+        "2",
+        "1"
+      ],
+      "answerIndex": 3,
+      "explanation": "2·5=a+9。"
+    },
+    {
+      "id": "mat_mb02_008",
+      "unit": "math.mb.seq.arith.geometric",
+      "category": "calculation",
+      "prompt": "3数 1, x, 9 がこの順で等比数列（x>0）のとき、x は？",
+      "choices": [
+        "5",
+        "9",
+        "3",
+        "4.5"
+      ],
+      "answerIndex": 2,
+      "explanation": "x²=1·9。"
+    },
+    {
+      "id": "mat_mb02_009",
+      "unit": "math.mb.seq.arith",
+      "category": "calculation",
+      "prompt": "10万円を年利5%の複利で2年預けると、元利合計は？",
+      "choices": [
+        "110000円",
+        "115000円",
+        "105000円",
+        "110250円"
+      ],
+      "answerIndex": 3,
+      "explanation": "100000×1.05²。"
+    },
+    {
+      "id": "mat_mb02_010",
+      "unit": "math.mb.seq.sum.sigma",
+      "category": "thinking",
+      "prompt": "部分分数に分けて和を求める工夫の利点は？",
+      "choices": [
+        "等比数列になるから",
+        "すべての項が0になるから",
+        "項数が増えるから",
+        "となりあう項が打ち消し合い、最初と最後だけが残るから"
+      ],
+      "answerIndex": 3,
+      "explanation": "例：Σ(1/k−1/(k+1))=1−1/(n+1)。"
+    },
+    {
+      "id": "mat_mb02_011",
+      "unit": "math.mb.seq.sum.sigma",
+      "category": "calculation",
+      "prompt": "Σ_{k=1}^{n} (3k+2) を計算すると？",
+      "choices": [
+        "n(3n+7)/2",
+        "3n²+2n",
+        "(3n+7)/2",
+        "n(3n+1)/2"
+      ],
+      "answerIndex": 0,
+      "explanation": "3·n(n+1)/2+2n=n(3n+7)/2。"
+    },
+    {
+      "id": "mat_mb02_012",
+      "unit": "math.mb.seq.sum.sigma",
+      "category": "calculation",
+      "prompt": "Σ_{k=1}^{n} (k²−k) を計算すると？",
+      "choices": [
+        "n(n−1)/2",
+        "(n−1)n(n+1)/3",
+        "n(n+1)(2n+1)/6",
+        "n²(n−1)/2"
+      ],
+      "answerIndex": 1,
+      "explanation": "n(n+1)(2n+1)/6−n(n+1)/2=n(n+1)(n−1)/3。"
+    },
+    {
+      "id": "mat_mb02_013",
+      "unit": "math.mb.seq.sum.difference",
+      "category": "calculation",
+      "prompt": "数列 2, 3, 5, 8, 12, … の一般項は？（階差数列が 1, 2, 3, 4, …）",
+      "choices": [
+        "aₙ=n²−n+2",
+        "aₙ=n+1",
+        "aₙ=(n²−n+4)/2",
+        "aₙ=(n²+n)/2"
+      ],
+      "answerIndex": 2,
+      "explanation": "aₙ=2+Σ_{k=1}^{n−1} k=2+n(n−1)/2。"
+    },
+    {
+      "id": "mat_mb02_014",
+      "unit": "math.mb.seq.arith",
+      "category": "calculation",
+      "prompt": "Sₙ=3n²−n のとき、一般項 aₙ は？",
+      "choices": [
+        "aₙ=6n−4",
+        "aₙ=6n+2",
+        "aₙ=6n−1",
+        "aₙ=3n−1"
+      ],
+      "answerIndex": 0,
+      "explanation": "aₙ=Sₙ−Sₙ₋₁=6n−4。n=1 でも S₁=2 と一致。"
+    },
+    {
+      "id": "mat_mb02_015",
+      "unit": "math.mb.seq.arith",
+      "category": "calculation",
+      "prompt": "Sₙ=3ⁿ−1 のとき、一般項 aₙ は？",
+      "choices": [
+        "aₙ=3ⁿ",
+        "aₙ=2·3^(n−1)",
+        "aₙ=2·3ⁿ",
+        "aₙ=3^(n−1)"
+      ],
+      "answerIndex": 1,
+      "explanation": "n≧2 で Sₙ−Sₙ₋₁=2·3^(n−1)。a₁=2 もこの式に合う。"
+    },
+    {
+      "id": "mat_mb02_016",
+      "unit": "math.mb.seq.sum.sigma",
+      "category": "calculation",
+      "prompt": "Σ_{k=1}^{n} 1/((2k−1)(2k+1)) を計算すると？",
+      "choices": [
+        "2n/(2n+1)",
+        "n/(n+1)",
+        "1/(2n+1)",
+        "n/(2n+1)"
+      ],
+      "answerIndex": 3,
+      "explanation": "½(1/(2k−1)−1/(2k+1)) の和で ½(1−1/(2n+1))。"
+    },
+    {
+      "id": "mat_mb02_017",
+      "unit": "math.mb.seq.arith.arithmetic",
+      "category": "calculation",
+      "prompt": "3数 2, x, 14 がこの順で等差数列のとき、x は？",
+      "choices": [
+        "6",
+        "8",
+        "10",
+        "7"
+      ],
+      "answerIndex": 1,
+      "explanation": "2x=2+14。"
+    },
+    {
+      "id": "mat_mb02_018",
+      "unit": "math.mb.seq.arith.geometric",
+      "category": "calculation",
+      "prompt": "3数 2, x, 18 がこの順で等比数列（x>0）のとき、x は？",
+      "choices": [
+        "8",
+        "9",
+        "10",
+        "6"
+      ],
+      "answerIndex": 3,
+      "explanation": "x²=2·18=36。"
+    },
+    {
+      "id": "mat_mb02_019",
+      "unit": "math.mb.seq.arith.arithmetic",
+      "category": "calculation",
+      "prompt": "毎月1万円ずつ積み立てると、1年で積立額の合計はいくら？（利息なし）",
+      "choices": [
+        "13万円",
+        "10万円",
+        "6万円",
+        "12万円"
+      ],
+      "answerIndex": 3,
+      "explanation": "等差数列ではなく、同じ額の和：1×12。"
+    },
+    {
+      "id": "mat_mb02_020",
+      "unit": "math.mb.seq.arith",
+      "category": "thinking",
+      "prompt": "一般項 aₙ を Sₙ から求めるとき、n=1 の場合を別に確かめる理由は？",
+      "choices": [
+        "n=1 では数列がないから",
+        "計算を楽にするため",
+        "S₁ が必ず0だから",
+        "aₙ=Sₙ−Sₙ₋₁ は n≧2 でしか使えないから"
+      ],
+      "answerIndex": 3,
+      "explanation": "S₀ は定義されていないので、a₁=S₁ として別に調べる。"
+    }
+  ]
+}

@@ -1,0 +1,344 @@
+{
+  "setId": "japanese_kanbun_04",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "jap_kanbun04_001",
+      "unit": "japanese.kanbun.kuho.causative.causative",
+      "category": "knowledge",
+      "prompt": "使役を表す字は？",
+      "choices": [
+        "使・令・遣・教",
+        "唯・只・但",
+        "如・若・縦",
+        "見・被・為・所"
+      ],
+      "answerIndex": 0,
+      "explanation": "「A をして B せしむ」＝A に B させる。"
+    },
+    {
+      "id": "jap_kanbun04_002",
+      "unit": "japanese.kanbun.kuho.causative.passive",
+      "category": "knowledge",
+      "prompt": "受身を表す字は？",
+      "choices": [
+        "見・被・為・所",
+        "豈・安",
+        "使・令・遣",
+        "如・若"
+      ],
+      "answerIndex": 0,
+      "explanation": "「る・らる」と読む。「為 A 所 B」＝A の B する所と為る。"
+    },
+    {
+      "id": "jap_kanbun04_003",
+      "unit": "japanese.kanbun.kuho.causative",
+      "category": "knowledge",
+      "prompt": "「A 不レ如レB」の意味は？",
+      "choices": [
+        "A は B よりよい",
+        "A は B と同じだ",
+        "A は B に及ばない",
+        "A は B ではない"
+      ],
+      "answerIndex": 2,
+      "explanation": "A は B に如かず。"
+    },
+    {
+      "id": "jap_kanbun04_004",
+      "unit": "japanese.kanbun.kuho.causative",
+      "category": "knowledge",
+      "prompt": "「莫レ如レA」の意味は？",
+      "choices": [
+        "A でないほうがよい",
+        "A のようではない",
+        "A が一番だ（A に及ぶものはない）",
+        "A を好まない"
+      ],
+      "answerIndex": 2,
+      "explanation": "A に如くは莫し。最上級を表す。"
+    },
+    {
+      "id": "jap_kanbun04_005",
+      "unit": "japanese.kanbun.kuho.causative.compare",
+      "category": "knowledge",
+      "prompt": "「寧 A、無 B」の意味は？",
+      "choices": [
+        "A も B もよい",
+        "むしろ A のほうがよい、B はしないほうがよい",
+        "A でなければ B",
+        "A すれば B になる"
+      ],
+      "answerIndex": 1,
+      "explanation": "選択を表す。"
+    },
+    {
+      "id": "jap_kanbun04_006",
+      "unit": "japanese.kanbun.kuho.causative.passive",
+      "category": "thinking",
+      "prompt": "「百聞不レ如二一見一」の意味は？",
+      "choices": [
+        "百回聞けば一回見たのと同じ",
+        "聞くことも見ることも大切だ",
+        "百回聞くことは、一回見ることに及ばない",
+        "一回見るより百回聞くほうがよい"
+      ],
+      "answerIndex": 2,
+      "explanation": "百聞は一見に如かず。（漢書）"
+    },
+    {
+      "id": "jap_kanbun04_007",
+      "unit": "japanese.kanbun.kuho.causative.causative",
+      "category": "thinking",
+      "prompt": "「天帝使三我長二百獣一」の書き下し文は？",
+      "choices": [
+        "天帝我をして百獣に長たらしむ",
+        "天帝百獣に長たらしむ我を",
+        "天帝我を使ひて百獣に長たり",
+        "天帝我に百獣の長を使ふ"
+      ],
+      "answerIndex": 0,
+      "explanation": "使役の形。「虎の威を借る狐」の故事。（戦国策）"
+    },
+    {
+      "id": "jap_kanbun04_008",
+      "unit": "japanese.kanbun.kuho.causative.passive",
+      "category": "thinking",
+      "prompt": "「虎の威を借る狐」の故事が表す意味は？",
+      "choices": [
+        "他人の権力をかさに着ていばる者",
+        "動物を大切にする心",
+        "強い者に立ち向かう勇気",
+        "知恵で危機を切り抜ける賢さ"
+      ],
+      "answerIndex": 0,
+      "explanation": "狐は虎の後ろを歩き、ほかの獣が虎を恐れて逃げたのを自分の力と見せた。"
+    },
+    {
+      "id": "jap_kanbun04_009",
+      "unit": "japanese.kanbun.kuho.causative.compare",
+      "category": "thinking",
+      "prompt": "「霜葉紅二於二月花一」の意味は？",
+      "choices": [
+        "霜の葉は二月に赤くなる",
+        "二月の花は霜の葉より赤い",
+        "霜で色づいた葉は、二月の花よりも赤い",
+        "霜の葉と二月の花は同じ赤さだ"
+      ],
+      "answerIndex": 2,
+      "explanation": "霜葉は二月の花よりも紅なり。「於」は比較。（杜牧「山行」）"
+    },
+    {
+      "id": "jap_kanbun04_010",
+      "unit": "japanese.kanbun.kuho.causative.compare",
+      "category": "thinking",
+      "prompt": "「寧為二鶏口一、無レ為二牛後一」の意味は？",
+      "choices": [
+        "鶏は牛に勝てない",
+        "大きな組織の後ろにつくより、小さな組織の長になるほうがよい",
+        "牛の後ろについていけば安全だ",
+        "鶏より牛のほうが大切だ"
+      ],
+      "answerIndex": 1,
+      "explanation": "寧ろ鶏口と為るも、牛後と為る無かれ。（史記）"
+    },
+    {
+      "id": "jap_kanbun04_011",
+      "unit": "japanese.kanbun.kuho.causative.passive",
+      "category": "thinking",
+      "prompt": "「信而見レ疑」の意味は？",
+      "choices": [
+        "誠実であるのに疑われる",
+        "信じて疑わない",
+        "疑いを見て信じる",
+        "信じさせて疑わせる"
+      ],
+      "answerIndex": 0,
+      "explanation": "信にして疑はる。「見」は受身。（史記）"
+    },
+    {
+      "id": "jap_kanbun04_012",
+      "unit": "japanese.kanbun.kuho.causative.compare",
+      "category": "thinking",
+      "prompt": "「与二其 A一、寧 B」の意味は？",
+      "choices": [
+        "A と B の両方がよい",
+        "A しなければ B できない",
+        "A も B もよくない",
+        "A よりは、むしろ B のほうがよい"
+      ],
+      "answerIndex": 3,
+      "explanation": "其の A よりは、寧ろ B せよ。選択の形。"
+    },
+    {
+      "id": "jap_kanbun04_013",
+      "unit": "japanese.kanbun.kuho.causative.causative",
+      "category": "knowledge",
+      "prompt": "使役の「令」の読みは？",
+      "choices": [
+        "べし",
+        "る・らる",
+        "ごとし",
+        "しむ"
+      ],
+      "answerIndex": 3,
+      "explanation": "「A をして B せしむ」。"
+    },
+    {
+      "id": "jap_kanbun04_014",
+      "unit": "japanese.kanbun.kuho.causative.passive",
+      "category": "knowledge",
+      "prompt": "受身の「被」の読みは？",
+      "choices": [
+        "る・らる",
+        "なる",
+        "しむ",
+        "たり"
+      ],
+      "answerIndex": 0,
+      "explanation": "例：「被レ殺」＝殺さる。"
+    },
+    {
+      "id": "jap_kanbun04_015",
+      "unit": "japanese.kanbun.kuho.causative.passive",
+      "category": "knowledge",
+      "prompt": "「為A所B」の書き下しの型は？",
+      "choices": [
+        "A より B なり",
+        "A を B せしむ",
+        "A の B する所と為る",
+        "A と B と"
+      ],
+      "answerIndex": 2,
+      "explanation": "受身を表す。"
+    },
+    {
+      "id": "jap_kanbun04_016",
+      "unit": "japanese.kanbun.kuho.causative.passive",
+      "category": "knowledge",
+      "prompt": "受身を表すとき、「見」の読みは？",
+      "choices": [
+        "る・らる",
+        "みる",
+        "しむ",
+        "あらはる"
+      ],
+      "answerIndex": 0,
+      "explanation": "例：「見レ疑」＝疑はる。"
+    },
+    {
+      "id": "jap_kanbun04_017",
+      "unit": "japanese.kanbun.kuho.causative.causative",
+      "category": "thinking",
+      "prompt": "「使三子路問二之一」の書き下し文は？（子路に問わせた）",
+      "choices": [
+        "子路に之を問ふ",
+        "子路をして之を問はしむ",
+        "子路之を問ふ",
+        "子路之を使ひて問ふ"
+      ],
+      "answerIndex": 1,
+      "explanation": "使役の形。"
+    },
+    {
+      "id": "jap_kanbun04_018",
+      "unit": "japanese.kanbun.kuho.causative.passive",
+      "category": "thinking",
+      "prompt": "「為二人所一レ笑」の書き下し文は？",
+      "choices": [
+        "笑ふ人の為に",
+        "人に笑はしむ",
+        "人を笑ふ所と為す",
+        "人の笑ふ所と為る"
+      ],
+      "answerIndex": 3,
+      "explanation": "人に笑われる。受身の形。"
+    },
+    {
+      "id": "jap_kanbun04_019",
+      "unit": "japanese.kanbun.kuho.causative",
+      "category": "thinking",
+      "prompt": "「不レ如レ学也」の書き下し文は？",
+      "choices": [
+        "学ぶは如かず",
+        "学ばざるが如し",
+        "学ぶに如かざるなり",
+        "学ぶが如くならず"
+      ],
+      "answerIndex": 2,
+      "explanation": "学ぶことには及ばない。"
+    },
+    {
+      "id": "jap_kanbun04_020",
+      "unit": "japanese.kanbun.kuho.causative.compare",
+      "category": "thinking",
+      "prompt": "「青取二之於藍一、而青二於藍一」の書き下し文は？",
+      "choices": [
+        "青は之を藍より取りて、藍よりも青し",
+        "青は藍に之を取りて青からず",
+        "藍は青より取りて青し",
+        "青は藍を取りて青し"
+      ],
+      "answerIndex": 0,
+      "explanation": "（荀子）「於」は比較・起点を表す。"
+    },
+    {
+      "id": "jap_kanbun04_021",
+      "unit": "japanese.kanbun.kuho.causative",
+      "category": "thinking",
+      "prompt": "「良薬苦二於口一」の意味は？",
+      "choices": [
+        "口に苦いものは薬ではない",
+        "よく効く薬は口に苦い",
+        "良い薬は口より苦い",
+        "苦い薬は良い"
+      ],
+      "answerIndex": 1,
+      "explanation": "良薬は口に苦し。ためになる忠告は聞きづらいというたとえ。"
+    },
+    {
+      "id": "jap_kanbun04_022",
+      "unit": "japanese.kanbun.kuho.causative.causative",
+      "category": "knowledge",
+      "prompt": "使役の「教」の読みは？",
+      "choices": [
+        "る",
+        "をしふ（教える）だけ",
+        "しむ",
+        "ごとし"
+      ],
+      "answerIndex": 2,
+      "explanation": "「A をして B せしむ」の形で使役を表す。"
+    },
+    {
+      "id": "jap_kanbun04_023",
+      "unit": "japanese.kanbun.kuho.causative.causative",
+      "category": "knowledge",
+      "prompt": "使役の「遣」の読みは？",
+      "choices": [
+        "しむ",
+        "らる",
+        "なかれ",
+        "つかはす（遣わす）だけ"
+      ],
+      "answerIndex": 0,
+      "explanation": "「使・令・遣・教」はいずれも使役。"
+    },
+    {
+      "id": "jap_kanbun04_024",
+      "unit": "japanese.kanbun.kuho.causative",
+      "category": "thinking",
+      "prompt": "「苛政猛二於虎一」の意味は？",
+      "choices": [
+        "虎が政治を行う",
+        "むごい政治は虎よりも恐ろしい",
+        "虎は政治より強い",
+        "政治は虎のように強くあるべきだ"
+      ],
+      "answerIndex": 1,
+      "explanation": "苛政は虎よりも猛なり。（礼記）"
+    }
+  ]
+}

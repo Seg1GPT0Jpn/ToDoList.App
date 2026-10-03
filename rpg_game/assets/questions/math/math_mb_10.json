@@ -1,0 +1,288 @@
+{
+  "setId": "math_mb_10",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_mb10_001",
+      "unit": "math.mb.society.model",
+      "category": "calculation",
+      "prompt": "毎日3%ずつ増える量が約2倍になるのは何日後？（72の法則を使う）",
+      "choices": [
+        "約33日後",
+        "約72日後",
+        "約24日後",
+        "約12日後"
+      ],
+      "answerIndex": 2,
+      "explanation": "72÷3=24。"
+    },
+    {
+      "id": "mat_mb10_002",
+      "unit": "math.mb.society.model.finance",
+      "category": "calculation",
+      "prompt": "年利6%の複利で、お金が約2倍になるのは何年後？（72の法則を使う）",
+      "choices": [
+        "約72年後",
+        "約12年後",
+        "約6年後",
+        "約17年後"
+      ],
+      "answerIndex": 1,
+      "explanation": "72÷6=12。"
+    },
+    {
+      "id": "mat_mb10_003",
+      "unit": "math.mb.society.model.model",
+      "category": "calculation",
+      "prompt": "1分間に4Lずつ水を入れるとき、60L 入れるのにかかる時間は？",
+      "choices": [
+        "12分",
+        "240分",
+        "15分",
+        "64分"
+      ],
+      "answerIndex": 2,
+      "explanation": "比例のモデル：60÷4。"
+    },
+    {
+      "id": "mat_mb10_004",
+      "unit": "math.mb.society.model",
+      "category": "calculation",
+      "prompt": "タクシー料金が「初乗り500円＋1kmごとに300円」のとき、5km の料金は？",
+      "choices": [
+        "2000円",
+        "1500円",
+        "2500円",
+        "1800円"
+      ],
+      "answerIndex": 0,
+      "explanation": "500+300×5。"
+    },
+    {
+      "id": "mat_mb10_005",
+      "unit": "math.mb.society.model",
+      "category": "calculation",
+      "prompt": "定価2000円の品物を2割引で買うといくら？",
+      "choices": [
+        "400円",
+        "1600円",
+        "1800円",
+        "1980円"
+      ],
+      "answerIndex": 1,
+      "explanation": "2000×0.8。"
+    },
+    {
+      "id": "mat_mb10_006",
+      "unit": "math.mb.society.model",
+      "category": "calculation",
+      "prompt": "毎年10%ずつ増える人口が今100人のとき、2年後の人口は？",
+      "choices": [
+        "120人",
+        "200人",
+        "121人",
+        "110人"
+      ],
+      "answerIndex": 2,
+      "explanation": "100×1.1²。"
+    },
+    {
+      "id": "mat_mb10_007",
+      "unit": "math.mb.society.model.model",
+      "category": "knowledge",
+      "prompt": "数理モデルを使って問題を解く流れとして適切なものは？",
+      "choices": [
+        "数式を先に決めて、現実は見ない",
+        "一度作ったモデルは変えない",
+        "現象を観察し、仮定をおいて数式にし、解いた結果を現実と比べて改善する",
+        "データを集めずに結論を出す"
+      ],
+      "answerIndex": 2,
+      "explanation": "モデル化→数学的処理→解釈→評価・改善。"
+    },
+    {
+      "id": "mat_mb10_008",
+      "unit": "math.mb.society.model",
+      "category": "calculation",
+      "prompt": "同じ道のりを、行きは時速60km、帰りは時速40km で往復したときの平均の速さは？",
+      "choices": [
+        "時速50km",
+        "時速48km",
+        "時速45km",
+        "時速52km"
+      ],
+      "answerIndex": 1,
+      "explanation": "距離120km なら往復240km を 2+3=5時間。"
+    },
+    {
+      "id": "mat_mb10_009",
+      "unit": "math.mb.society.model",
+      "category": "calculation",
+      "prompt": "縮尺1/25000の地図で4cmの長さは、実際には何km？",
+      "choices": [
+        "1km",
+        "4km",
+        "0.1km",
+        "10km"
+      ],
+      "answerIndex": 0,
+      "explanation": "4×25000=100000cm。"
+    },
+    {
+      "id": "mat_mb10_010",
+      "unit": "math.mb.society.model.model",
+      "category": "thinking",
+      "prompt": "モデル化で「仮定」をおく理由は？",
+      "choices": [
+        "結果をよく見せるため",
+        "現実と同じにするため",
+        "計算を間違えないため",
+        "現実は複雑なので、大切な要素にしぼって扱いやすくするため"
+      ],
+      "answerIndex": 3,
+      "explanation": "仮定が妥当かどうかも後で確かめる。"
+    },
+    {
+      "id": "mat_mb10_011",
+      "unit": "math.mb.society.model.finance",
+      "category": "calculation",
+      "prompt": "年利4%の複利で、お金が約2倍になるのは何年後？（72の法則）",
+      "choices": [
+        "約36年後",
+        "約25年後",
+        "約12年後",
+        "約18年後"
+      ],
+      "answerIndex": 3,
+      "explanation": "72÷4=18。"
+    },
+    {
+      "id": "mat_mb10_012",
+      "unit": "math.mb.society.model",
+      "category": "calculation",
+      "prompt": "毎時2%ずつ増える量が約2倍になるのは何時間後？（72の法則）",
+      "choices": [
+        "約50時間後",
+        "約24時間後",
+        "約72時間後",
+        "約36時間後"
+      ],
+      "answerIndex": 3,
+      "explanation": "72÷2=36。"
+    },
+    {
+      "id": "mat_mb10_013",
+      "unit": "math.mb.society.model",
+      "category": "calculation",
+      "prompt": "時速4kmで歩くと、6km 進むのにかかる時間は？",
+      "choices": [
+        "1時間20分",
+        "1時間30分",
+        "1時間40分",
+        "2時間"
+      ],
+      "answerIndex": 1,
+      "explanation": "6÷4=1.5時間。"
+    },
+    {
+      "id": "mat_mb10_014",
+      "unit": "math.mb.society.model",
+      "category": "calculation",
+      "prompt": "携帯料金が「基本料1000円＋1GB あたり500円」のとき、4GB 使うと？",
+      "choices": [
+        "3000円",
+        "2500円",
+        "2000円",
+        "3500円"
+      ],
+      "answerIndex": 0,
+      "explanation": "1000+500×4。"
+    },
+    {
+      "id": "mat_mb10_015",
+      "unit": "math.mb.society.model",
+      "category": "calculation",
+      "prompt": "定価3000円の品物を3割引で買うといくら？",
+      "choices": [
+        "2000円",
+        "900円",
+        "2100円",
+        "2700円"
+      ],
+      "answerIndex": 2,
+      "explanation": "3000×0.7。"
+    },
+    {
+      "id": "mat_mb10_016",
+      "unit": "math.mb.society.model",
+      "category": "calculation",
+      "prompt": "毎年20%ずつ増える量が今50のとき、2年後はいくつ？",
+      "choices": [
+        "72",
+        "70",
+        "60",
+        "80"
+      ],
+      "answerIndex": 0,
+      "explanation": "50×1.2²=72。"
+    },
+    {
+      "id": "mat_mb10_017",
+      "unit": "math.mb.society.model",
+      "category": "calculation",
+      "prompt": "濃度10%の食塩水200g にふくまれる食塩は？",
+      "choices": [
+        "2g",
+        "10g",
+        "20g",
+        "200g"
+      ],
+      "answerIndex": 2,
+      "explanation": "200×0.1。"
+    },
+    {
+      "id": "mat_mb10_018",
+      "unit": "math.mb.society.model",
+      "category": "calculation",
+      "prompt": "行きは時速30km、帰りは時速60km で同じ道を往復したときの平均の速さは？",
+      "choices": [
+        "時速45km",
+        "時速50km",
+        "時速35km",
+        "時速40km"
+      ],
+      "answerIndex": 3,
+      "explanation": "道のり60km とすると 120km÷(2+1)時間。"
+    },
+    {
+      "id": "mat_mb10_019",
+      "unit": "math.mb.society.model",
+      "category": "calculation",
+      "prompt": "縮尺1/50000の地図で3cm の長さは、実際には何km？",
+      "choices": [
+        "15km",
+        "150km",
+        "0.15km",
+        "1.5km"
+      ],
+      "answerIndex": 3,
+      "explanation": "3×50000=150000cm。"
+    },
+    {
+      "id": "mat_mb10_020",
+      "unit": "math.mb.society.model.model",
+      "category": "thinking",
+      "prompt": "数理モデルで「単純化しすぎる」と起こりやすい問題は？",
+      "choices": [
+        "答えが必ず0になる",
+        "グラフがかけなくなる",
+        "計算ができなくなる",
+        "現実のデータと大きく合わなくなる"
+      ],
+      "answerIndex": 3,
+      "explanation": "大事な要因まで無視すると予測がずれる。結果を現実と比べて見直す。"
+    }
+  ]
+}

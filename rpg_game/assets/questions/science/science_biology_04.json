@@ -1,0 +1,456 @@
+{
+  "setId": "science_biology_04",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_bio04_001",
+      "unit": "science.biology.body.nerve",
+      "category": "knowledge",
+      "prompt": "中枢神経系にあたるものは？",
+      "choices": [
+        "脳と脊髄",
+        "感覚神経と運動神経",
+        "交感神経と副交感神経",
+        "自律神経と体性神経"
+      ],
+      "answerIndex": 0,
+      "explanation": "中枢神経系は脳と脊髄。そこから出る神経が末しょう神経系。"
+    },
+    {
+      "id": "sci_bio04_002",
+      "unit": "science.biology.body.nerve.autonomic",
+      "category": "knowledge",
+      "prompt": "自分の意思とは関係なく、内臓などのはたらきを調節する神経は？",
+      "choices": [
+        "中枢神経系",
+        "運動神経",
+        "自律神経系",
+        "体性神経系"
+      ],
+      "answerIndex": 2,
+      "explanation": "自律神経系は交感神経と副交感神経からなり、多くの器官で反対のはたらきをする。"
+    },
+    {
+      "id": "sci_bio04_003",
+      "unit": "science.biology.body.nerve.autonomic",
+      "category": "knowledge",
+      "prompt": "交感神経がはたらいたときの変化は？",
+      "choices": [
+        "消化管の運動がさかんになる",
+        "瞳孔が小さくなる",
+        "心臓の拍動が遅くなる",
+        "心臓の拍動が速くなる"
+      ],
+      "answerIndex": 3,
+      "explanation": "交感神経は活動・緊張時にはたらく。心拍数増加、瞳孔拡大、消化管の運動抑制。"
+    },
+    {
+      "id": "sci_bio04_004",
+      "unit": "science.biology.body.nerve.autonomic",
+      "category": "knowledge",
+      "prompt": "副交感神経がはたらいたときの変化は？",
+      "choices": [
+        "気管支が広がる",
+        "心臓の拍動が速くなる",
+        "血圧が上がる",
+        "消化管の運動がさかんになる"
+      ],
+      "answerIndex": 3,
+      "explanation": "副交感神経は休息時にはたらく。"
+    },
+    {
+      "id": "sci_bio04_005",
+      "unit": "science.biology.body.nerve.autonomic",
+      "category": "knowledge",
+      "prompt": "自律神経系と内分泌系の最高中枢は？",
+      "choices": [
+        "延髄",
+        "大脳",
+        "間脳の視床下部",
+        "小脳"
+      ],
+      "answerIndex": 2,
+      "explanation": "視床下部は体温・血糖値・水分量などを調節する中枢。"
+    },
+    {
+      "id": "sci_bio04_006",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "ホルモンについて正しいものは？",
+      "choices": [
+        "内分泌腺から血液中に分泌され、特定の標的器官にはたらく",
+        "すべての細胞に同じようにはたらく",
+        "導管を通って体外に出される",
+        "神経を伝わって運ばれる"
+      ],
+      "answerIndex": 0,
+      "explanation": "標的細胞だけが、そのホルモンの受容体をもっている。"
+    },
+    {
+      "id": "sci_bio04_007",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "甲状腺から分泌され、代謝を促進するホルモンは？",
+      "choices": [
+        "チロキシン",
+        "インスリン",
+        "グルカゴン",
+        "バソプレシン"
+      ],
+      "answerIndex": 0,
+      "explanation": "チロキシンは全身の細胞の代謝（呼吸など）を活発にする。"
+    },
+    {
+      "id": "sci_bio04_008",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "多くのホルモンの分泌を調節するホルモンを出している内分泌腺は？",
+      "choices": [
+        "脳下垂体",
+        "すい臓",
+        "副腎",
+        "甲状腺"
+      ],
+      "answerIndex": 0,
+      "explanation": "脳下垂体前葉は甲状腺刺激ホルモンなどを分泌し、他の内分泌腺をコントロールする。"
+    },
+    {
+      "id": "sci_bio04_009",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "最終的につくられた物質や結果が、はじめの段階にもどって作用を調節するしくみを何という？",
+      "choices": [
+        "発生",
+        "免疫",
+        "フィードバック",
+        "反射"
+      ],
+      "answerIndex": 2,
+      "explanation": "結果が出すぎたら抑える（負のフィードバック）ことで、ホルモン量が一定に保たれる。"
+    },
+    {
+      "id": "sci_bio04_010",
+      "unit": "science.biology.body.nerve",
+      "category": "knowledge",
+      "prompt": "呼吸運動や心臓の拍動の中枢がある部分は？",
+      "choices": [
+        "小脳",
+        "延髄",
+        "中脳",
+        "大脳"
+      ],
+      "answerIndex": 1,
+      "explanation": "延髄が損傷すると生命の維持が難しくなる。"
+    },
+    {
+      "id": "sci_bio04_011",
+      "unit": "science.biology.body.nerve",
+      "category": "knowledge",
+      "prompt": "からだの平衡を保ち、運動を調節する中枢は？",
+      "choices": [
+        "脊髄",
+        "延髄",
+        "間脳",
+        "小脳"
+      ],
+      "answerIndex": 3,
+      "explanation": "小脳は筋肉の運動を調節し、からだのバランスを保つ。"
+    },
+    {
+      "id": "sci_bio04_012",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "副腎髄質から分泌され、血糖値を上げるホルモンは？",
+      "choices": [
+        "インスリン",
+        "チロキシン",
+        "バソプレシン",
+        "アドレナリン"
+      ],
+      "answerIndex": 3,
+      "explanation": "交感神経の刺激で分泌され、グリコーゲンの分解を促進する。"
+    },
+    {
+      "id": "sci_bio04_013",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "神経系による調節と比べたホルモンによる調節の特徴は？",
+      "choices": [
+        "特定の筋肉だけにはたらく",
+        "効果がすぐ現れ、すぐ消える",
+        "効果が現れるのは遅いが、長く続く",
+        "意識してコントロールできる"
+      ],
+      "answerIndex": 2,
+      "explanation": "神経は速く局所的、ホルモンは血液で全身に運ばれ、ゆっくり持続的にはたらく。"
+    },
+    {
+      "id": "sci_bio04_014",
+      "unit": "science.biology.body.nerve.autonomic",
+      "category": "thinking",
+      "prompt": "激しい運動をした直後、心拍数が上がっている。主にはたらいている神経は？",
+      "choices": [
+        "運動神経だけ",
+        "感覚神経",
+        "交感神経",
+        "副交感神経"
+      ],
+      "answerIndex": 2,
+      "explanation": "交感神経が心臓の拍動を速め、筋肉へ多くの酸素を送る。"
+    },
+    {
+      "id": "sci_bio04_015",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "thinking",
+      "prompt": "血液中のチロキシンが多くなりすぎたとき、どうなる？",
+      "choices": [
+        "視床下部や脳下垂体がはたらきを弱め、甲状腺刺激ホルモンが減る",
+        "インスリンが増える",
+        "何も変化しない",
+        "甲状腺刺激ホルモンが増える"
+      ],
+      "answerIndex": 0,
+      "explanation": "負のフィードバックで分泌が抑えられ、チロキシン量が一定に保たれる。"
+    },
+    {
+      "id": "sci_bio04_016",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "thinking",
+      "prompt": "甲状腺を取り除いた動物で、脳下垂体から分泌される甲状腺刺激ホルモンはどうなる？",
+      "choices": [
+        "減る",
+        "増える",
+        "変わらない",
+        "0 になる"
+      ],
+      "answerIndex": 1,
+      "explanation": "チロキシンによる負のフィードバックがなくなるので、甲状腺刺激ホルモンの分泌が増える。"
+    },
+    {
+      "id": "sci_bio04_017",
+      "unit": "science.biology.body.nerve",
+      "category": "knowledge",
+      "prompt": "末梢神経系を大きく2つに分けると？",
+      "choices": [
+        "大脳と小脳",
+        "交感神経と副交感神経だけ",
+        "脳と脊髄",
+        "体性神経系と自律神経系"
+      ],
+      "answerIndex": 3,
+      "explanation": "体性神経系は感覚神経と運動神経。"
+    },
+    {
+      "id": "sci_bio04_018",
+      "unit": "science.biology.body.nerve.autonomic",
+      "category": "knowledge",
+      "prompt": "交感神経がはたらくと、ひとみ（瞳孔）はどうなる？",
+      "choices": [
+        "拡大する",
+        "縮小する",
+        "変わらない",
+        "閉じる"
+      ],
+      "answerIndex": 0,
+      "explanation": "緊張したときや暗いところでは瞳孔が開く。"
+    },
+    {
+      "id": "sci_bio04_019",
+      "unit": "science.biology.body.nerve.autonomic",
+      "category": "knowledge",
+      "prompt": "副交感神経がはたらいたときの心臓の拍動は？",
+      "choices": [
+        "変わらない",
+        "遅くなる",
+        "速くなる",
+        "止まる"
+      ],
+      "answerIndex": 1,
+      "explanation": "リラックスしたときにはたらく。"
+    },
+    {
+      "id": "sci_bio04_020",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "脳下垂体前葉から分泌され、からだの成長を促進するホルモンは？",
+      "choices": [
+        "インスリン",
+        "バソプレシン",
+        "成長ホルモン",
+        "アドレナリン"
+      ],
+      "answerIndex": 2,
+      "explanation": "タンパク質の合成や骨の成長を促進する。"
+    },
+    {
+      "id": "sci_bio04_021",
+      "unit": "science.biology.body.nerve",
+      "category": "knowledge",
+      "prompt": "バソプレシンを分泌する部分は？",
+      "choices": [
+        "脳下垂体後葉",
+        "副腎皮質",
+        "脳下垂体前葉",
+        "甲状腺"
+      ],
+      "answerIndex": 0,
+      "explanation": "バソプレシンは視床下部の神経分泌細胞でつくられ、後葉から分泌される。"
+    },
+    {
+      "id": "sci_bio04_022",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "副腎皮質から分泌され、タンパク質からの糖の合成を促して血糖値を上げるホルモンは？",
+      "choices": [
+        "グルカゴン",
+        "チロキシン",
+        "アドレナリン",
+        "糖質コルチコイド"
+      ],
+      "answerIndex": 3,
+      "explanation": "副腎髄質からはアドレナリンが分泌される。"
+    },
+    {
+      "id": "sci_bio04_023",
+      "unit": "science.biology.body.nerve",
+      "category": "knowledge",
+      "prompt": "大脳の主なはたらきは？",
+      "choices": [
+        "記憶・思考・判断や随意運動",
+        "からだの平衡の保持",
+        "呼吸・心拍の調節",
+        "体温の調節だけ"
+      ],
+      "answerIndex": 0,
+      "explanation": "呼吸・心拍は延髄、平衡は小脳。"
+    },
+    {
+      "id": "sci_bio04_024",
+      "unit": "science.biology.body.nerve.autonomic",
+      "category": "knowledge",
+      "prompt": "間脳（視床下部）の主なはたらきは？",
+      "choices": [
+        "体温や血糖値など、体内環境の調節",
+        "瞳孔の反射だけ",
+        "言語の理解",
+        "からだの平衡の保持"
+      ],
+      "answerIndex": 0,
+      "explanation": "自律神経系と内分泌系の中枢。"
+    },
+    {
+      "id": "sci_bio04_025",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "視床下部で、ホルモンを分泌する神経細胞を何という？",
+      "choices": [
+        "神経分泌細胞",
+        "感覚細胞",
+        "ランゲルハンス島",
+        "形質細胞"
+      ],
+      "answerIndex": 0,
+      "explanation": "神経系と内分泌系をつなぐはたらきをもつ。"
+    },
+    {
+      "id": "sci_bio04_026",
+      "unit": "science.biology.body.nerve.autonomic",
+      "category": "knowledge",
+      "prompt": "交感神経の末端から分泌される主な神経伝達物質は？",
+      "choices": [
+        "インスリン",
+        "チロキシン",
+        "ノルアドレナリン",
+        "アセチルコリン"
+      ],
+      "answerIndex": 2,
+      "explanation": "副交感神経の末端からはアセチルコリン。"
+    },
+    {
+      "id": "sci_bio04_027",
+      "unit": "science.biology.body.nerve.autonomic",
+      "category": "knowledge",
+      "prompt": "副交感神経の末端から分泌される主な神経伝達物質は？",
+      "choices": [
+        "グルカゴン",
+        "アセチルコリン",
+        "アドレナリン",
+        "ノルアドレナリン"
+      ],
+      "answerIndex": 1,
+      "explanation": "心臓の拍動をおさえるなどのはたらき。"
+    },
+    {
+      "id": "sci_bio04_028",
+      "unit": "science.biology.body.nerve.autonomic",
+      "category": "knowledge",
+      "prompt": "心臓の拍動のリズムをつくる部分（ペースメーカー）は？",
+      "choices": [
+        "洞房結節（右心房）",
+        "延髄",
+        "大動脈",
+        "左心室"
+      ],
+      "answerIndex": 0,
+      "explanation": "自律神経はこのリズムを速くしたり遅くしたりする。"
+    },
+    {
+      "id": "sci_bio04_029",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "甲状腺刺激ホルモンの分泌を促すホルモンを出すのは？",
+      "choices": [
+        "副腎",
+        "すい臓",
+        "甲状腺",
+        "視床下部"
+      ],
+      "answerIndex": 3,
+      "explanation": "視床下部 → 脳下垂体前葉 → 甲状腺、と順に調節される。"
+    },
+    {
+      "id": "sci_bio04_030",
+      "unit": "science.biology.body.nerve.autonomic",
+      "category": "thinking",
+      "prompt": "緊張すると口の中が乾きやすいのはなぜ？",
+      "choices": [
+        "インスリンが増えるから",
+        "交感神経がはたらき、だ液の分泌がおさえられるから",
+        "体温が下がるから",
+        "副交感神経がはたらくから"
+      ],
+      "answerIndex": 1,
+      "explanation": "交感神経は消化にかかわるはたらきをおさえる。"
+    },
+    {
+      "id": "sci_bio04_031",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "thinking",
+      "prompt": "寒いときに甲状腺からのチロキシンの分泌が増えると、からだにどんな変化が起こる？",
+      "choices": [
+        "代謝がさかんになり、発熱量が増える",
+        "血糖値が下がる",
+        "心拍が遅くなる",
+        "汗が多く出る"
+      ],
+      "answerIndex": 0,
+      "explanation": "体温を保つための調節。"
+    },
+    {
+      "id": "sci_bio04_032",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "thinking",
+      "prompt": "体内環境の調節に、自律神経とホルモンの両方がはたらく利点は？",
+      "choices": [
+        "調節がいつも遅くなるから",
+        "すばやい調節と、持続する調節を組み合わせられるから",
+        "エネルギーを使わないから",
+        "どちらか一方は不要だから"
+      ],
+      "answerIndex": 1,
+      "explanation": "神経はすばやく、ホルモンはゆっくり長く効く。"
+    }
+  ]
+}

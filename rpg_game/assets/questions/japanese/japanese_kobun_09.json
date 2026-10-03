@@ -1,0 +1,365 @@
+{
+  "setId": "japanese_kobun_09",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "jap_kobun09_001",
+      "unit": "japanese.kobun.reading.reading.subject",
+      "category": "knowledge",
+      "prompt": "古文で主語が省略されやすい理由として適切なものは？",
+      "choices": [
+        "文脈や敬語から、読み手が判断できると考えられたから",
+        "主語は必ず作者だから",
+        "主語を書く決まりがなかったから",
+        "紙が高かったから"
+      ],
+      "answerIndex": 0,
+      "explanation": "省略された主語を補いながら読むのが古文読解の基本。"
+    },
+    {
+      "id": "jap_kobun09_002",
+      "unit": "japanese.kobun.reading.reading.subject",
+      "category": "knowledge",
+      "prompt": "接続助詞「て」の前後で、主語はどうなりやすい？",
+      "choices": [
+        "同じままのことが多い",
+        "必ず省略される",
+        "作者になる",
+        "必ず変わる"
+      ],
+      "answerIndex": 0,
+      "explanation": "「を・に・ど・ば」の後は主語が変わりやすい。"
+    },
+    {
+      "id": "jap_kobun09_003",
+      "unit": "japanese.kobun.reading.reading",
+      "category": "knowledge",
+      "prompt": "「〜とて」の意味として適切なものは？",
+      "choices": [
+        "〜なので",
+        "〜ならば",
+        "〜けれども",
+        "〜と言って・〜と思って"
+      ],
+      "answerIndex": 3,
+      "explanation": "会話や心中の言葉の終わりを示すことが多い。"
+    },
+    {
+      "id": "jap_kobun09_004",
+      "unit": "japanese.kobun.reading.reading",
+      "category": "thinking",
+      "prompt": "「つれづれなるままに」の「つれづれなり」の意味は？",
+      "sentence": "つれづれなるままに、日暮らし、硯にむかひて、心にうつりゆくよしなしごとを、そこはかとなく書きつくれば、あやしうこそものぐるほしけれ。",
+      "choices": [
+        "することがなく退屈なようす",
+        "連れ立っているようす",
+        "いそがしいようす",
+        "悲しいようす"
+      ],
+      "answerIndex": 0,
+      "explanation": "『徒然草』の書き出し。"
+    },
+    {
+      "id": "jap_kobun09_005",
+      "unit": "japanese.kobun.reading.reading",
+      "category": "thinking",
+      "prompt": "「やうやう」の意味は？",
+      "sentence": "春はあけぼの。やうやう白くなりゆく山ぎは、すこしあかりて、紫だちたる雲のほそくたなびきたる。",
+      "choices": [
+        "少しも",
+        "ようやく終わって",
+        "急に",
+        "しだいに・だんだん"
+      ],
+      "answerIndex": 3,
+      "explanation": "『枕草子』第一段。夜明けの空がしだいに白くなっていく。"
+    },
+    {
+      "id": "jap_kobun09_006",
+      "unit": "japanese.kobun.reading.reading",
+      "category": "thinking",
+      "prompt": "この文章に表れている考え方は？",
+      "sentence": "ゆく河の流れは絶えずして、しかも、もとの水にあらず。",
+      "choices": [
+        "川の水はいつも同じだ",
+        "すべてのものは移り変わり、とどまらない（無常観）",
+        "水は大切にすべきだ",
+        "自然は変わらない"
+      ],
+      "answerIndex": 1,
+      "explanation": "『方丈記』の書き出し。仏教の無常観を表す。"
+    },
+    {
+      "id": "jap_kobun09_007",
+      "unit": "japanese.kobun.reading.reading",
+      "category": "thinking",
+      "prompt": "「竹取の翁」がしていたこととして適切なものは？",
+      "sentence": "今は昔、竹取の翁といふ者ありけり。野山にまじりて竹を取りつつ、よろづのことに使ひけり。",
+      "choices": [
+        "田畑を耕していた",
+        "野山で竹を取って、さまざまなものに使っていた",
+        "都で役人をしていた",
+        "海で魚をとっていた"
+      ],
+      "answerIndex": 1,
+      "explanation": "『竹取物語』の冒頭。「よろづのこと」＝いろいろなこと。"
+    },
+    {
+      "id": "jap_kobun09_008",
+      "unit": "japanese.kobun.reading.reading.content",
+      "category": "thinking",
+      "prompt": "師が「二つの矢を持つな」と言った理由として適切なものは？",
+      "sentence": "ある人、弓射ることを習ふに、もろ矢をたばさみて的に向かふ。師のいはく、「初心の人、二つの矢を持つことなかれ。後の矢を頼みて、はじめの矢になほざりの心あり。」",
+      "choices": [
+        "後の矢をあてにして、最初の矢をいいかげんに射るから",
+        "的が一つしかないから",
+        "二本の矢は高価だから",
+        "矢が重いから"
+      ],
+      "answerIndex": 0,
+      "explanation": "『徒然草』の一節。「なほざり」＝いいかげん。"
+    },
+    {
+      "id": "jap_kobun09_009",
+      "unit": "japanese.kobun.reading.reading",
+      "category": "thinking",
+      "prompt": "「京にありわびて」の意味として最も適切なものは？",
+      "sentence": "昔、男ありけり。京にありわびて、東の方へ行きけり。",
+      "choices": [
+        "都に住みたくて",
+        "都にあやまって",
+        "都を楽しんで",
+        "都に住みづらくなって"
+      ],
+      "answerIndex": 3,
+      "explanation": "「〜わぶ」＝〜しづらくなる、〜しかねる。（創作例文）"
+    },
+    {
+      "id": "jap_kobun09_010",
+      "unit": "japanese.kobun.reading.reading.subject",
+      "category": "thinking",
+      "prompt": "この文章で「行きけり」の主語は？",
+      "sentence": "昔、男ありけり。京にありわびて、東の方へ行きけり。",
+      "choices": [
+        "京",
+        "東の方",
+        "男",
+        "作者"
+      ],
+      "answerIndex": 2,
+      "explanation": "「て」でつながっているので、主語は前と同じ「男」。（創作例文）"
+    },
+    {
+      "id": "jap_kobun09_011",
+      "unit": "japanese.kobun.reading.reading",
+      "category": "thinking",
+      "prompt": "「かれ」がした行動は？",
+      "sentence": "秋の夕暮れ、ある家より琴の音聞こゆ。かれ、いとゆかしくて、門のもとにしばし立ちとまりけり。",
+      "choices": [
+        "琴の音にひかれて、門のそばに立ち止まった",
+        "琴をひいた",
+        "門を閉めた",
+        "家に帰った"
+      ],
+      "answerIndex": 0,
+      "explanation": "「ゆかしくて」＝聞きたくて。（創作例文）"
+    },
+    {
+      "id": "jap_kobun09_012",
+      "unit": "japanese.kobun.reading.reading",
+      "category": "thinking",
+      "prompt": "この文章の「をかし」から分かる筆者の気持ちは？",
+      "sentence": "秋の空に、雁の連なりて渡るを見るは、いとをかし。",
+      "choices": [
+        "雁がいなくてさびしい",
+        "雁が列をなして飛ぶ様子を趣深く思っている",
+        "雁をこわがっている",
+        "雁を食べたいと思っている"
+      ],
+      "answerIndex": 1,
+      "explanation": "「をかし」は明るく知的な感動。（創作例文）"
+    },
+    {
+      "id": "jap_kobun09_013",
+      "unit": "japanese.kobun.reading.reading",
+      "category": "thinking",
+      "prompt": "「もと光る竹」の意味は？",
+      "sentence": "その竹の中に、もと光る竹なむ一筋ありける。",
+      "choices": [
+        "昔光った竹",
+        "根もとが光る竹",
+        "もともと光っている竹",
+        "元気な竹"
+      ],
+      "answerIndex": 1,
+      "explanation": "『竹取物語』。「もと」は根もと。"
+    },
+    {
+      "id": "jap_kobun09_014",
+      "unit": "japanese.kobun.reading.reading",
+      "category": "knowledge",
+      "prompt": "上の文の「なむ〜ける」は、何という表現？",
+      "sentence": "その竹の中に、もと光る竹なむ一筋ありける。",
+      "choices": [
+        "係り結び（結びは連体形）",
+        "反実仮想",
+        "二重敬語",
+        "枕詞"
+      ],
+      "answerIndex": 0,
+      "explanation": "係助詞「なむ」の結びで、「けり」が連体形「ける」になっている。"
+    },
+    {
+      "id": "jap_kobun09_015",
+      "unit": "japanese.kobun.reading.reading",
+      "category": "thinking",
+      "prompt": "この文の意味として適切なものは？",
+      "sentence": "花は盛りに、月はくまなきをのみ見るものかは。",
+      "choices": [
+        "花と月は同時に見るものだ",
+        "花は満開のとき、月は満月のときだけ見ればよい",
+        "花は満開のときだけ、月はかげりのないときだけを見るものだろうか、いやそうではない",
+        "花も月も見る必要はない"
+      ],
+      "answerIndex": 2,
+      "explanation": "『徒然草』。「かは」は反語。"
+    },
+    {
+      "id": "jap_kobun09_016",
+      "unit": "japanese.kobun.reading.reading",
+      "category": "thinking",
+      "prompt": "「月のころはさらなり」の意味は？",
+      "sentence": "夏は夜。月のころはさらなり。",
+      "choices": [
+        "月のころは新しい",
+        "月のころはもう終わった",
+        "月のころはさらに暗い",
+        "月のころは言うまでもない（趣がある）"
+      ],
+      "answerIndex": 3,
+      "explanation": "『枕草子』第一段。"
+    },
+    {
+      "id": "jap_kobun09_017",
+      "unit": "japanese.kobun.reading.reading",
+      "category": "thinking",
+      "prompt": "「言ふべきにもあらず」の意味は？",
+      "sentence": "冬はつとめて。雪の降りたるは言ふべきにもあらず。",
+      "choices": [
+        "言うことができない",
+        "言うはずがない",
+        "言うまでもない",
+        "言ってはいけない"
+      ],
+      "answerIndex": 2,
+      "explanation": "『枕草子』。雪の降った早朝の趣は言うまでもない。"
+    },
+    {
+      "id": "jap_kobun09_018",
+      "unit": "japanese.kobun.reading.reading",
+      "category": "thinking",
+      "prompt": "「うたかた」の意味は？",
+      "sentence": "よどみに浮かぶうたかたは、かつ消えかつ結びて、久しくとどまりたるためしなし。",
+      "choices": [
+        "水の泡",
+        "川の石",
+        "一瞬の夢",
+        "歌の形"
+      ],
+      "answerIndex": 0,
+      "explanation": "『方丈記』。はかない人の世のたとえ。"
+    },
+    {
+      "id": "jap_kobun09_019",
+      "unit": "japanese.kobun.reading.reading",
+      "category": "thinking",
+      "prompt": "「諸行無常」の意味は？",
+      "sentence": "祇園精舎の鐘の声、諸行無常の響きあり。",
+      "choices": [
+        "鐘の音が美しい",
+        "この世のすべてのものは移り変わり、とどまることがない",
+        "行いがすべてだ",
+        "仏の教えは永遠だ"
+      ],
+      "answerIndex": 1,
+      "explanation": "『平家物語』の冒頭。"
+    },
+    {
+      "id": "jap_kobun09_020",
+      "unit": "japanese.kobun.reading.reading",
+      "category": "thinking",
+      "prompt": "「おごれる人も久しからず」の意味は？",
+      "sentence": "おごれる人も久しからず、ただ春の夜の夢のごとし。",
+      "choices": [
+        "思い上がった人も、その栄華は長く続かない",
+        "えらい人は長く続く",
+        "久しぶりに人と会う",
+        "おごってくれる人は長生きする"
+      ],
+      "answerIndex": 0,
+      "explanation": "『平家物語』。平家の栄華と滅亡をふまえる。"
+    },
+    {
+      "id": "jap_kobun09_021",
+      "unit": "japanese.kobun.reading.reading",
+      "category": "thinking",
+      "prompt": "「消えなましものを」の意味は？",
+      "sentence": "白玉か何ぞと人の問ひしとき露と答へて消えなましものを",
+      "choices": [
+        "消えてしまえばよかったのに",
+        "消えないでほしい",
+        "もう消えてしまった",
+        "消えてしまうだろう"
+      ],
+      "answerIndex": 0,
+      "explanation": "『伊勢物語』。「まし」は反実仮想。"
+    },
+    {
+      "id": "jap_kobun09_022",
+      "unit": "japanese.kobun.reading.reading.subject",
+      "category": "thinking",
+      "prompt": "この文で「持て帰りぬ」の主語は？",
+      "sentence": "翁、いとうれしくて、家に持て帰りぬ。",
+      "choices": [
+        "翁",
+        "竹",
+        "家",
+        "作者"
+      ],
+      "answerIndex": 0,
+      "explanation": "「て」でつながっているので、主語は前と同じ翁。（創作例文）"
+    },
+    {
+      "id": "jap_kobun09_023",
+      "unit": "japanese.kobun.reading.reading",
+      "category": "thinking",
+      "prompt": "この文の意味として適切なものは？",
+      "sentence": "雨降りければ、え行かず。",
+      "choices": [
+        "雨が降っても行った",
+        "雨が降ったので、行くことができなかった",
+        "雨が降らなかったので行かなかった",
+        "雨が降るなら行かない"
+      ],
+      "answerIndex": 1,
+      "explanation": "「已然形＋ば」は確定条件、「え〜ず」は不可能。（創作例文）"
+    },
+    {
+      "id": "jap_kobun09_024",
+      "unit": "japanese.kobun.reading.reading",
+      "category": "thinking",
+      "prompt": "この文から分かる人物の様子は？",
+      "sentence": "かの人の文を見るに、涙のこぼるるを、え止めず。",
+      "choices": [
+        "手紙を書いて泣いた",
+        "手紙を読んで、涙を止められなかった",
+        "涙を止めて手紙を読んだ",
+        "手紙を読まなかった"
+      ],
+      "answerIndex": 1,
+      "explanation": "「え止めず」＝止めることができない。（創作例文）"
+    }
+  ]
+}

@@ -1,0 +1,288 @@
+{
+  "setId": "math_ma_03",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_ma03_001",
+      "unit": "math.ma.prob.count.combination",
+      "category": "calculation",
+      "prompt": "りんご・みかん・かきから合計5個を選ぶ方法は何通り？（選ばない種類があってもよい）",
+      "choices": [
+        "10通り",
+        "21通り",
+        "15通り",
+        "35通り"
+      ],
+      "answerIndex": 1,
+      "explanation": "重複組合せ：○5個と｜2本の並べ方 ₇C₂。"
+    },
+    {
+      "id": "mat_ma03_002",
+      "unit": "math.ma.prob.count.combination",
+      "category": "calculation",
+      "prompt": "x+y+z=6 を満たす正の整数の組 (x, y, z) は何組？",
+      "choices": [
+        "21組",
+        "10組",
+        "28組",
+        "15組"
+      ],
+      "answerIndex": 1,
+      "explanation": "それぞれ1以上なので、6個の間5か所から2か所を選ぶ：₅C₂。"
+    },
+    {
+      "id": "mat_ma03_003",
+      "unit": "math.ma.prob.count.combination",
+      "category": "calculation",
+      "prompt": "6人を2人ずつ A, B, C の3部屋に入れる方法は何通り？",
+      "choices": [
+        "90通り",
+        "30通り",
+        "15通り",
+        "720通り"
+      ],
+      "answerIndex": 0,
+      "explanation": "部屋は区別されるので ₆C₂×₄C₂×₂C₂。"
+    },
+    {
+      "id": "mat_ma03_004",
+      "unit": "math.ma.prob.count.permutation",
+      "category": "calculation",
+      "prompt": "1, 1, 2, 2, 3 の5枚から3枚を取り出して並べてできる3桁の整数は何個？",
+      "choices": [
+        "60個",
+        "24個",
+        "12個",
+        "18個"
+      ],
+      "answerIndex": 3,
+      "explanation": "同じ数字2枚をふくむ組 4種×3通り＋すべて異なる {1,2,3} の 3!。"
+    },
+    {
+      "id": "mat_ma03_005",
+      "unit": "math.ma.prob.count",
+      "category": "calculation",
+      "prompt": "男子3人・女子2人が1列に並ぶとき、両端が女子になる並び方は何通り？",
+      "choices": [
+        "12通り",
+        "24通り",
+        "36通り",
+        "6通り"
+      ],
+      "answerIndex": 0,
+      "explanation": "両端の女子 2! × 間の男子 3!。"
+    },
+    {
+      "id": "mat_ma03_006",
+      "unit": "math.ma.prob.count",
+      "category": "calculation",
+      "prompt": "A, B をふくむ5人が1列に並ぶとき、A と B が隣り合う並び方は何通り？",
+      "choices": [
+        "24通り",
+        "48通り",
+        "120通り",
+        "96通り"
+      ],
+      "answerIndex": 1,
+      "explanation": "AB をまとめて4個の並び 4! × AB の入れかえ 2。"
+    },
+    {
+      "id": "mat_ma03_007",
+      "unit": "math.ma.prob.count.divide",
+      "category": "calculation",
+      "prompt": "8人を4人ずつ2組に分ける方法は何通り？（組に区別なし）",
+      "choices": [
+        "70通り",
+        "16通り",
+        "35通り",
+        "140通り"
+      ],
+      "answerIndex": 2,
+      "explanation": "₈C₄÷2!。"
+    },
+    {
+      "id": "mat_ma03_008",
+      "unit": "math.ma.prob.count.combination",
+      "category": "calculation",
+      "prompt": "正八角形の頂点から3つを選んでできる三角形は何個？",
+      "choices": [
+        "56個",
+        "24個",
+        "336個",
+        "48個"
+      ],
+      "answerIndex": 0,
+      "explanation": "₈C₃。"
+    },
+    {
+      "id": "mat_ma03_009",
+      "unit": "math.ma.prob.count.permutation",
+      "category": "calculation",
+      "prompt": "1〜5 の数字のカード5枚から3枚を並べてできる3桁の偶数は何個？",
+      "choices": [
+        "24個",
+        "36個",
+        "12個",
+        "30個"
+      ],
+      "answerIndex": 0,
+      "explanation": "一の位は 2 か 4 の2通り、残り 4×3。"
+    },
+    {
+      "id": "mat_ma03_010",
+      "unit": "math.ma.prob.count.permutation",
+      "category": "thinking",
+      "prompt": "重複組合せを「○と｜の並べ方」で数えられる理由は？",
+      "choices": [
+        "仕切り｜で区切った○の個数を、それぞれの種類の個数に対応させられるから",
+        "並べ方と選び方はいつも等しいから",
+        "種類の数だけ○があるから",
+        "○と｜は同じものだから"
+      ],
+      "answerIndex": 0,
+      "explanation": "例：○○｜○｜○○ は (2, 1, 2) に対応する。"
+    },
+    {
+      "id": "mat_ma03_011",
+      "unit": "math.ma.prob.count.permutation",
+      "category": "calculation",
+      "prompt": "x+y+z=8 を満たす0以上の整数の組 (x, y, z) は何組？",
+      "choices": [
+        "21組",
+        "36組",
+        "45組",
+        "28組"
+      ],
+      "answerIndex": 2,
+      "explanation": "○8個と｜2本の並べ方 ₁₀C₂。"
+    },
+    {
+      "id": "mat_ma03_012",
+      "unit": "math.ma.prob.count.combination",
+      "category": "calculation",
+      "prompt": "4種類の果物から合計5個を選ぶ方法は何通り？（選ばない種類があってもよい）",
+      "choices": [
+        "56通り",
+        "126通り",
+        "20通り",
+        "35通り"
+      ],
+      "answerIndex": 0,
+      "explanation": "○5個と｜3本：₈C₃。"
+    },
+    {
+      "id": "mat_ma03_013",
+      "unit": "math.ma.prob.count.divide",
+      "category": "calculation",
+      "prompt": "7人を3人と4人の2組に分ける方法は何通り？",
+      "choices": [
+        "35通り",
+        "21通り",
+        "140通り",
+        "70通り"
+      ],
+      "answerIndex": 0,
+      "explanation": "₇C₃（人数がちがうので組は区別できる）。"
+    },
+    {
+      "id": "mat_ma03_014",
+      "unit": "math.ma.prob.count.combination",
+      "category": "calculation",
+      "prompt": "7人を A 部屋に2人、B 部屋に2人、C 部屋に3人入れる方法は何通り？",
+      "choices": [
+        "35通り",
+        "210通り",
+        "630通り",
+        "105通り"
+      ],
+      "answerIndex": 1,
+      "explanation": "₇C₂×₅C₂×₃C₃=21×10。"
+    },
+    {
+      "id": "mat_ma03_015",
+      "unit": "math.ma.prob.count.permutation",
+      "category": "calculation",
+      "prompt": "男子4人・女子3人が1列に並ぶとき、女子どうしが隣り合わない並び方は何通り？",
+      "choices": [
+        "2880通り",
+        "720通り",
+        "1440通り",
+        "144通り"
+      ],
+      "answerIndex": 2,
+      "explanation": "男子を並べて 4!、間と両端の5か所から3か所に女子を並べて ₅P₃。"
+    },
+    {
+      "id": "mat_ma03_016",
+      "unit": "math.ma.prob.count",
+      "category": "calculation",
+      "prompt": "男子4人・女子3人が1列に並ぶとき、女子3人がすべて隣り合う並び方は何通り？",
+      "choices": [
+        "720通り",
+        "1440通り",
+        "120通り",
+        "144通り"
+      ],
+      "answerIndex": 0,
+      "explanation": "女子をまとめて5個の並び 5!、女子の中の並び 3!。"
+    },
+    {
+      "id": "mat_ma03_017",
+      "unit": "math.ma.prob.count.permutation",
+      "category": "calculation",
+      "prompt": "1〜5 のカードから3枚を並べてできる3けたの整数のうち、3の倍数は何個？",
+      "choices": [
+        "24個",
+        "18個",
+        "12個",
+        "20個"
+      ],
+      "answerIndex": 0,
+      "explanation": "和が3の倍数になる組は {1,2,3}{1,3,5}{2,3,4}{3,4,5} の4組、各 3!。"
+    },
+    {
+      "id": "mat_ma03_018",
+      "unit": "math.ma.prob.count",
+      "category": "calculation",
+      "prompt": "正六角形の3つの頂点を結んでできる三角形のうち、正六角形と辺を共有しないものは何個？",
+      "choices": [
+        "8個",
+        "2個",
+        "12個",
+        "6個"
+      ],
+      "answerIndex": 1,
+      "explanation": "全体20個から、辺を1本共有する12個と2本共有する6個を引く。"
+    },
+    {
+      "id": "mat_ma03_019",
+      "unit": "math.ma.prob.count.permutation",
+      "category": "calculation",
+      "prompt": "a, a, b, c, d の5文字を1列に並べる方法は何通り？",
+      "choices": [
+        "60通り",
+        "120通り",
+        "24通り",
+        "30通り"
+      ],
+      "answerIndex": 0,
+      "explanation": "5!/2!。"
+    },
+    {
+      "id": "mat_ma03_020",
+      "unit": "math.ma.prob.count",
+      "category": "calculation",
+      "prompt": "5段の階段を、1段または2段ずつ上る方法は何通り？",
+      "choices": [
+        "13通り",
+        "8通り",
+        "5通り",
+        "10通り"
+      ],
+      "answerIndex": 1,
+      "explanation": "1段目から 1, 2, 3, 5, 8 と、前の2つの和になる。"
+    }
+  ]
+}

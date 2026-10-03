@@ -1,0 +1,456 @@
+{
+  "setId": "science_biology_13",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_bio13_001",
+      "unit": "science.biology.gene.expression.transcription",
+      "category": "knowledge",
+      "prompt": "真核生物の転写直後の RNA から、イントロンの部分が取り除かれる過程を何という？",
+      "choices": [
+        "翻訳",
+        "複製",
+        "スプライシング",
+        "逆転写"
+      ],
+      "answerIndex": 2,
+      "explanation": "エキソンの部分がつなぎ合わされて mRNA になる。"
+    },
+    {
+      "id": "sci_bio13_002",
+      "unit": "science.biology.gene.expression.transcription",
+      "category": "knowledge",
+      "prompt": "1 つの遺伝子から、スプライシングのしかたを変えて複数種類の mRNA をつくるしくみは？",
+      "choices": [
+        "フレームシフト",
+        "オペロン",
+        "組換え",
+        "選択的スプライシング"
+      ],
+      "answerIndex": 3,
+      "explanation": "これにより、遺伝子の数より多くの種類のタンパク質がつくられる。"
+    },
+    {
+      "id": "sci_bio13_003",
+      "unit": "science.biology.gene.expression.transcription",
+      "category": "knowledge",
+      "prompt": "翻訳のとき、アミノ酸をリボソームへ運ぶ RNA は？",
+      "choices": [
+        "mRNA",
+        "DNA",
+        "rRNA",
+        "tRNA（転移 RNA）"
+      ],
+      "answerIndex": 3,
+      "explanation": "tRNA のアンチコドンが mRNA のコドンと相補的に結合する。"
+    },
+    {
+      "id": "sci_bio13_004",
+      "unit": "science.biology.gene.expression.transcription",
+      "category": "knowledge",
+      "prompt": "翻訳の開始点となるコドンは？",
+      "choices": [
+        "AUG",
+        "UAA",
+        "UGA",
+        "GGG"
+      ],
+      "answerIndex": 0,
+      "explanation": "AUG はメチオニンを指定し、開始コドンとしてはたらく。UAA・UAG・UGA は終止コドン。"
+    },
+    {
+      "id": "sci_bio13_005",
+      "unit": "science.biology.gene.expression.transcription",
+      "category": "knowledge",
+      "prompt": "転写を行う酵素は？",
+      "choices": [
+        "RNA ポリメラーゼ",
+        "DNA リガーゼ",
+        "制限酵素",
+        "DNA ポリメラーゼ"
+      ],
+      "answerIndex": 0,
+      "explanation": "RNA ポリメラーゼは、遺伝子の上流にあるプロモーターに結合して転写を始める。"
+    },
+    {
+      "id": "sci_bio13_006",
+      "unit": "science.biology.gene.expression.regulation",
+      "category": "knowledge",
+      "prompt": "原核生物で、関連する複数の遺伝子がまとまって転写調節される単位を何という？",
+      "choices": [
+        "オペロン",
+        "エキソン",
+        "プラスミド",
+        "コドン"
+      ],
+      "answerIndex": 0,
+      "explanation": "例：大腸菌のラクトースオペロン。"
+    },
+    {
+      "id": "sci_bio13_007",
+      "unit": "science.biology.gene.expression.transcription",
+      "category": "knowledge",
+      "prompt": "オペレーターに結合して、転写をおさえるタンパク質は？",
+      "choices": [
+        "リプレッサー（抑制因子）",
+        "tRNA",
+        "RNA ポリメラーゼ",
+        "インスリン"
+      ],
+      "answerIndex": 0,
+      "explanation": "リプレッサーは調節遺伝子からつくられる。"
+    },
+    {
+      "id": "sci_bio13_008",
+      "unit": "science.biology.gene.expression.transcription",
+      "category": "knowledge",
+      "prompt": "原核生物の転写と翻訳の特徴として正しいものは？",
+      "choices": [
+        "翻訳は行われない",
+        "スプライシングが必ず起こる",
+        "核膜がないので、転写と翻訳がほぼ同時に進む",
+        "転写は核内、翻訳は細胞質で行う"
+      ],
+      "answerIndex": 2,
+      "explanation": "真核生物では核内で転写とスプライシングが行われ、mRNA が細胞質へ移動して翻訳される。"
+    },
+    {
+      "id": "sci_bio13_009",
+      "unit": "science.biology.gene.expression",
+      "category": "knowledge",
+      "prompt": "DNA の塩基が 1 つ挿入されたり欠失したりして、それ以降のコドンの読みわくがずれることを何という？",
+      "choices": [
+        "置換",
+        "組換え",
+        "フレームシフト",
+        "スプライシング"
+      ],
+      "answerIndex": 2,
+      "explanation": "それ以降のアミノ酸が大きく変わり、多くの場合タンパク質ははたらかなくなる。"
+    },
+    {
+      "id": "sci_bio13_010",
+      "unit": "science.biology.gene.expression",
+      "category": "knowledge",
+      "prompt": "鎌状赤血球症の原因となる突然変異は？",
+      "choices": [
+        "遺伝子の重複",
+        "染色体の数の変化",
+        "1 塩基の置換",
+        "スプライシングの停止"
+      ],
+      "answerIndex": 2,
+      "explanation": "ヘモグロビン遺伝子の 1 塩基の置換で、アミノ酸が 1 つ（グルタミン酸 → バリン）変わる。"
+    },
+    {
+      "id": "sci_bio13_011",
+      "unit": "science.biology.gene.expression",
+      "category": "knowledge",
+      "prompt": "特定の塩基配列を認識して DNA を切断する酵素は？",
+      "choices": [
+        "DNA リガーゼ",
+        "アミラーゼ",
+        "RNA ポリメラーゼ",
+        "制限酵素"
+      ],
+      "answerIndex": 3,
+      "explanation": "切断した DNA 断片を DNA リガーゼでつなぎ、プラスミドなどに組みこむ（遺伝子組換え）。"
+    },
+    {
+      "id": "sci_bio13_012",
+      "unit": "science.biology.gene.expression.replication",
+      "category": "knowledge",
+      "prompt": "DNA の特定の領域を短時間で大量に増やす方法は？",
+      "choices": [
+        "電気泳動法",
+        "サンガー法",
+        "PCR 法",
+        "検定交雑"
+      ],
+      "answerIndex": 2,
+      "explanation": "加熱と冷却をくり返し、耐熱性の DNA ポリメラーゼで複製させる。"
+    },
+    {
+      "id": "sci_bio13_013",
+      "unit": "science.biology.gene.expression",
+      "category": "calculation",
+      "prompt": "mRNA の 4 種類の塩基で、3 つの並び（コドン）は何通りつくれる？",
+      "choices": [
+        "12 通り",
+        "81 通り",
+        "64 通り",
+        "20 通り"
+      ],
+      "answerIndex": 2,
+      "explanation": "4³ ＝ 64 通り。アミノ酸は 20 種類なので、1 つのアミノ酸に複数のコドンが対応するものがある。"
+    },
+    {
+      "id": "sci_bio13_014",
+      "unit": "science.biology.gene.expression",
+      "category": "calculation",
+      "prompt": "PCR で 1 本の二本鎖 DNA を 3 サイクル増幅すると、理論上何本になる？",
+      "choices": [
+        "3 本",
+        "9 本",
+        "8 本",
+        "6 本"
+      ],
+      "answerIndex": 2,
+      "explanation": "1 サイクルごとに 2 倍になるので 2³ ＝ 8 本。"
+    },
+    {
+      "id": "sci_bio13_015",
+      "unit": "science.biology.gene.expression.transcription",
+      "category": "thinking",
+      "prompt": "大腸菌のラクトースオペロンで、培地にラクトースがあると分解酵素の遺伝子が転写される理由は？",
+      "choices": [
+        "ラクトースの代謝物がリプレッサーに結合し、リプレッサーがオペレーターから離れるから",
+        "ラクトースが RNA ポリメラーゼになるから",
+        "リプレッサーが増えるから",
+        "ラクトースが DNA を切るから"
+      ],
+      "answerIndex": 0,
+      "explanation": "必要なときだけ酵素をつくる、むだのないしくみ。"
+    },
+    {
+      "id": "sci_bio13_016",
+      "unit": "science.biology.gene.expression",
+      "category": "thinking",
+      "prompt": "遺伝子のはじめの方で 1 塩基が欠失した場合、1 塩基が置換した場合と比べて影響はどうなることが多い？",
+      "choices": [
+        "必ず影響がない",
+        "小さい",
+        "大きい（読みわくがずれて多くのアミノ酸が変わるため）",
+        "同じ"
+      ],
+      "answerIndex": 2,
+      "explanation": "置換では変わるアミノ酸は多くて 1 つ（変わらないこともある）だが、欠失ではフレームシフトが起こる。"
+    },
+    {
+      "id": "sci_bio13_017",
+      "unit": "science.biology.gene.expression.transcription",
+      "category": "knowledge",
+      "prompt": "真核生物で、転写が行われる場所は？",
+      "choices": [
+        "ゴルジ体",
+        "細胞質基質",
+        "核",
+        "リボソーム"
+      ],
+      "answerIndex": 2,
+      "explanation": "mRNA は核膜孔を通って細胞質へ出る。"
+    },
+    {
+      "id": "sci_bio13_018",
+      "unit": "science.biology.gene.expression",
+      "category": "knowledge",
+      "prompt": "mRNA のコドンと相補的な塩基配列をもつ、tRNA の部分は？",
+      "choices": [
+        "プロモーター",
+        "エキソン",
+        "アンチコドン",
+        "オペレーター"
+      ],
+      "answerIndex": 2,
+      "explanation": "コドンとアンチコドンが対合して、正しいアミノ酸が並ぶ。"
+    },
+    {
+      "id": "sci_bio13_019",
+      "unit": "science.biology.gene.expression.transcription",
+      "category": "knowledge",
+      "prompt": "翻訳を終わらせるコドンを何という？",
+      "choices": [
+        "開始コドン",
+        "イントロン",
+        "終止コドン",
+        "アンチコドン"
+      ],
+      "answerIndex": 2,
+      "explanation": "UAA、UAG、UGA。対応するアミノ酸がない。"
+    },
+    {
+      "id": "sci_bio13_020",
+      "unit": "science.biology.gene.expression.transcription",
+      "category": "knowledge",
+      "prompt": "RNA ポリメラーゼが結合して転写が始まる DNA の領域は？",
+      "choices": [
+        "エキソン",
+        "オペレーター",
+        "ターミネーターのみ",
+        "プロモーター"
+      ],
+      "answerIndex": 3,
+      "explanation": "転写の開始点を決める。"
+    },
+    {
+      "id": "sci_bio13_021",
+      "unit": "science.biology.gene.expression.transcription",
+      "category": "knowledge",
+      "prompt": "真核生物で、転写を調節するために結合するタンパク質を何という？",
+      "choices": [
+        "ヘモグロビン",
+        "調節タンパク質（転写調節因子）",
+        "アクチン",
+        "ヒストン"
+      ],
+      "answerIndex": 1,
+      "explanation": "特定の遺伝子の発現をオン・オフする。"
+    },
+    {
+      "id": "sci_bio13_022",
+      "unit": "science.biology.gene.expression",
+      "category": "knowledge",
+      "prompt": "DNA が巻きついて染色体をつくるタンパク質は？",
+      "choices": [
+        "ヒストン",
+        "ケラチン",
+        "ミオシン",
+        "インスリン"
+      ],
+      "answerIndex": 0,
+      "explanation": "ヌクレオソームをつくる。"
+    },
+    {
+      "id": "sci_bio13_023",
+      "unit": "science.biology.gene.expression",
+      "category": "knowledge",
+      "prompt": "遺伝子組換えで、目的の DNA を細胞に運ぶために使う小さな環状 DNA は？",
+      "choices": [
+        "プラスミド",
+        "mRNA",
+        "リボソーム",
+        "ヒストン"
+      ],
+      "answerIndex": 0,
+      "explanation": "ベクターとして使う。"
+    },
+    {
+      "id": "sci_bio13_024",
+      "unit": "science.biology.gene.expression",
+      "category": "knowledge",
+      "prompt": "切断した DNA 断片どうしをつなぐ酵素は？",
+      "choices": [
+        "制限酵素",
+        "ペプシン",
+        "RNA ポリメラーゼ",
+        "DNA リガーゼ"
+      ],
+      "answerIndex": 3,
+      "explanation": "組換え DNA をつくるのに使う。"
+    },
+    {
+      "id": "sci_bio13_025",
+      "unit": "science.biology.gene.expression",
+      "category": "knowledge",
+      "prompt": "DNA 断片を大きさで分ける方法は？",
+      "choices": [
+        "電気泳動",
+        "遠心分離だけ",
+        "PCR",
+        "再結晶"
+      ],
+      "answerIndex": 0,
+      "explanation": "DNA は負に帯電しているので陽極へ移動し、小さいほど速い。"
+    },
+    {
+      "id": "sci_bio13_026",
+      "unit": "science.biology.gene.expression",
+      "category": "knowledge",
+      "prompt": "ゲノム編集の技術の例は？",
+      "choices": [
+        "PCR",
+        "電気泳動",
+        "サンガー法",
+        "CRISPR-Cas9"
+      ],
+      "answerIndex": 3,
+      "explanation": "特定の塩基配列をねらって切断・改変できる。"
+    },
+    {
+      "id": "sci_bio13_027",
+      "unit": "science.biology.gene.expression.transcription",
+      "category": "knowledge",
+      "prompt": "DNA の鋳型鎖が「GCA」のとき、転写された mRNA のコドンは？",
+      "choices": [
+        "GCU",
+        "CGU",
+        "GCA",
+        "CGT"
+      ],
+      "answerIndex": 1,
+      "explanation": "G→C、C→G、A→U。RNA では T の代わりに U を使う。"
+    },
+    {
+      "id": "sci_bio13_028",
+      "unit": "science.biology.gene.expression",
+      "category": "calculation",
+      "prompt": "mRNA のコドンが GCU のとき、tRNA のアンチコドンは？",
+      "choices": [
+        "GCU",
+        "CGT",
+        "UCG",
+        "CGA"
+      ],
+      "answerIndex": 3,
+      "explanation": "G↔C、C↔G、U↔A。"
+    },
+    {
+      "id": "sci_bio13_029",
+      "unit": "science.biology.gene.expression",
+      "category": "calculation",
+      "prompt": "アミノ酸 150 個からなるタンパク質を指定する mRNA の部分（終止コドンを除く）は何塩基？",
+      "choices": [
+        "300 塩基",
+        "50 塩基",
+        "150 塩基",
+        "450 塩基"
+      ],
+      "answerIndex": 3,
+      "explanation": "1 アミノ酸を 3 塩基（コドン）が指定するので 150 × 3 ＝ 450 塩基。"
+    },
+    {
+      "id": "sci_bio13_030",
+      "unit": "science.biology.gene.expression",
+      "category": "calculation",
+      "prompt": "PCR で 1 分子の二本鎖 DNA を 10 サイクル増やすと、理論上何分子になる？",
+      "choices": [
+        "1024 分子",
+        "20 分子",
+        "512 分子",
+        "100 分子"
+      ],
+      "answerIndex": 0,
+      "explanation": "2¹⁰。"
+    },
+    {
+      "id": "sci_bio13_031",
+      "unit": "science.biology.gene.expression",
+      "category": "thinking",
+      "prompt": "同じ個体の神経細胞と筋細胞で、つくるタンパク質がちがう理由は？",
+      "choices": [
+        "同じ DNA をもつが、発現している遺伝子がちがうから",
+        "筋細胞は DNA をもたないから",
+        "もっている DNA がちがうから",
+        "神経細胞には核がないから"
+      ],
+      "answerIndex": 0,
+      "explanation": "選択的な遺伝子発現によって細胞が分化する。"
+    },
+    {
+      "id": "sci_bio13_032",
+      "unit": "science.biology.gene.expression",
+      "category": "thinking",
+      "prompt": "1 塩基が別の塩基に置き換わっても、アミノ酸が変わらないことがある理由は？",
+      "choices": [
+        "すべてのコドンが同じアミノ酸を指定するから",
+        "塩基は変わらないから",
+        "翻訳されないから",
+        "1 つのアミノ酸に複数のコドンが対応しているから"
+      ],
+      "answerIndex": 3,
+      "explanation": "コドンは 64 種類、アミノ酸は 20 種類。"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+rules_version = '2';
+
+// つづりクエスト（単体版）の Firestore ルール。
+// ログインした本人だけが、自分の進行状況（rpg_progress）・プロフィール（rpg_profile）・
+// 学習記録（rpg_learning）・冒険の記録（rpg_journal）を読み書きできる。
+// オンライン対戦の部屋（versus_rooms）は、ログインした人が読み書きできる（下のルール）。
+// ほかのコレクション（ほかの人のデータを含む）は、だれも読み書きできない。
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{uid}/{collection}/{docId} {
+      allow read, write: if request.auth != null
+        && request.auth.uid == uid
+        && collection in ['rpg_progress', 'rpg_profile', 'rpg_learning', 'rpg_journal']
+        && docId == 'main';
+    }
+
+    // Google Play の購入権利。
+    // クライアントからは書き込めず、Cloud Functions（Admin SDK）だけが作成・更新する。
+    match /users/{uid}/rpg_purchases/{worldId} {
+      allow read: if request.auth != null
+        && request.auth.uid == uid;
+      allow write: if false;
+    }
+
+    // 問題の報告。ログインした人が自分の名前で送るだけ（読むのは管理者が Firebase コンソールで）
+    match /question_reports/{id} {
+      allow create: if request.auth != null
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.keys().hasOnly(['questionId', 'reason', 'note', 'at', 'uid'])
+        && request.resource.data.note is string
+        && request.resource.data.note.size() <= 500;
+    }
+
+    // オンライン対戦の部屋（部屋番号 4けた）。ログインした人だけが使える。
+    // 作れるのは自分がホストの部屋だけ。更新できるのはホストとゲスト（空いていれば入れる）。
+    match /versus_rooms/{code} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null
+        && request.resource.data.host == request.auth.uid;
+      allow update: if request.auth != null
+        && request.resource.data.host == resource.data.host
+        && (resource.data.host == request.auth.uid
+          || resource.data.guest == request.auth.uid
+          || (resource.data.guest == null
+            && request.resource.data.guest == request.auth.uid));
+      allow delete: if request.auth != null
+        && resource.data.host == request.auth.uid;
+    }
+  }
+}

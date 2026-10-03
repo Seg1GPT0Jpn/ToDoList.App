@@ -1,0 +1,344 @@
+{
+  "setId": "social_pol_14",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_pol14_001",
+      "unit": "social.pol.economy.welfare.system",
+      "category": "knowledge",
+      "prompt": "日本の社会保障制度の四つの柱は？",
+      "choices": [
+        "年金・医療・教育・防衛",
+        "社会保険・公的扶助・社会福祉・公衆衛生",
+        "所得税・住民税・消費税・法人税",
+        "雇用・介護・医療・税"
+      ],
+      "answerIndex": 1,
+      "explanation": "日本国憲法第 25 条の生存権にもとづく。"
+    },
+    {
+      "id": "soc_pol14_002",
+      "unit": "social.pol.economy.welfare.pension",
+      "category": "knowledge",
+      "prompt": "病気や老後などに備え、加入者が保険料を出し合う制度は？",
+      "choices": [
+        "公的扶助",
+        "社会福祉",
+        "公衆衛生",
+        "社会保険"
+      ],
+      "answerIndex": 3,
+      "explanation": "医療保険・年金保険・雇用保険・労災保険・介護保険。"
+    },
+    {
+      "id": "soc_pol14_003",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "生活に困っている人に、国が最低限度の生活を保障する制度は？",
+      "choices": [
+        "雇用保険",
+        "年金",
+        "公的扶助（生活保護）",
+        "社会保険"
+      ],
+      "answerIndex": 2,
+      "explanation": "費用は税金でまかなわれる。"
+    },
+    {
+      "id": "soc_pol14_004",
+      "unit": "social.pol.economy.welfare.pension",
+      "category": "knowledge",
+      "prompt": "すべての国民が何らかの医療保険と年金に加入するしくみは？",
+      "choices": [
+        "企業年金だけ",
+        "国民皆保険・国民皆年金",
+        "任意加入",
+        "民間保険だけ"
+      ],
+      "answerIndex": 1,
+      "explanation": "1961 年に実現した。"
+    },
+    {
+      "id": "soc_pol14_005",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "40 歳以上の人が保険料を納め、介護が必要になったときにサービスを受けられる制度は？",
+      "choices": [
+        "雇用保険",
+        "介護保険制度",
+        "生活保護",
+        "労災保険"
+      ],
+      "answerIndex": 1,
+      "explanation": "2000 年に始まった。"
+    },
+    {
+      "id": "soc_pol14_006",
+      "unit": "social.pol.economy.welfare.pension",
+      "category": "knowledge",
+      "prompt": "働いている世代が納めた保険料を、その時の高齢者の年金にあてる方式は？",
+      "choices": [
+        "賦課方式",
+        "累進方式",
+        "比例方式",
+        "積立方式"
+      ],
+      "answerIndex": 0,
+      "explanation": "日本の公的年金は賦課方式を基本としている。"
+    },
+    {
+      "id": "soc_pol14_007",
+      "unit": "social.pol.economy.welfare.system",
+      "category": "knowledge",
+      "prompt": "「ゆりかごから墓場まで」をスローガンに社会保障を整えた国は？",
+      "choices": [
+        "日本",
+        "ドイツ",
+        "アメリカ",
+        "イギリス"
+      ],
+      "answerIndex": 3,
+      "explanation": "第二次世界大戦後、ベバリッジ報告にもとづいて整備した。"
+    },
+    {
+      "id": "soc_pol14_008",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "障害のある人も、ない人も、ともに地域で暮らせる社会をめざす考え方は？",
+      "choices": [
+        "バリアフリーだけ",
+        "ワーク・ライフ・バランス",
+        "ノーマライゼーション",
+        "インフォームド・コンセント"
+      ],
+      "answerIndex": 2,
+      "explanation": "ユニバーサルデザインやバリアフリー化が進められている。"
+    },
+    {
+      "id": "soc_pol14_009",
+      "unit": "social.pol.economy.welfare.system",
+      "category": "knowledge",
+      "prompt": "失業したときに給付を受けられる社会保険は？",
+      "choices": [
+        "健康保険",
+        "介護保険",
+        "雇用保険",
+        "労災保険"
+      ],
+      "answerIndex": 2,
+      "explanation": "職業訓練などの支援もある。"
+    },
+    {
+      "id": "soc_pol14_010",
+      "unit": "social.pol.economy.welfare.aging",
+      "category": "calculation",
+      "prompt": "高齢者 1 人を支える現役世代（15〜64 歳）の人数が 3 人から 2 人になった。1 人あたりの負担は何倍？（ほかの条件は同じ）",
+      "choices": [
+        "6 倍",
+        "2 倍",
+        "0.67 倍",
+        "1.5 倍"
+      ],
+      "answerIndex": 3,
+      "explanation": "1/2 ÷ 1/3 ＝ 1.5 倍。少子高齢化で現役世代の負担が重くなる。"
+    },
+    {
+      "id": "soc_pol14_011",
+      "unit": "social.pol.economy.welfare.aging",
+      "category": "thinking",
+      "prompt": "少子高齢化が社会保障に与える影響として適切なものは？",
+      "choices": [
+        "保険料を納める人が増える",
+        "社会保障の支出が減る",
+        "年金・医療・介護の給付が増える一方、保険料を納める現役世代が減る",
+        "影響はない"
+      ],
+      "answerIndex": 2,
+      "explanation": "給付と負担のバランスをどうとるかが課題になっている。"
+    },
+    {
+      "id": "soc_pol14_012",
+      "unit": "social.pol.economy.welfare.system",
+      "category": "thinking",
+      "prompt": "社会保障が「所得の再分配」の役割をもつ理由は？",
+      "choices": [
+        "全員に同じ額を給付するから",
+        "所得の多い人から多く集め、必要な人に給付するから",
+        "所得の低い人から多く集めるから",
+        "お金を集めないから"
+      ],
+      "answerIndex": 1,
+      "explanation": "累進課税などと組み合わせて、格差を縮める。"
+    },
+    {
+      "id": "soc_pol14_013",
+      "unit": "social.pol.economy.welfare.system",
+      "category": "knowledge",
+      "prompt": "日本国憲法で、社会保障の根拠となる条文は？",
+      "choices": [
+        "第 21 条",
+        "第 9 条",
+        "第 25 条（生存権）",
+        "第 13 条"
+      ],
+      "answerIndex": 2,
+      "explanation": "「健康で文化的な最低限度の生活を営む権利」。"
+    },
+    {
+      "id": "soc_pol14_014",
+      "unit": "social.pol.economy.welfare.system",
+      "category": "knowledge",
+      "prompt": "社会保障の四つの柱のうち、感染症の予防や上下水道の整備などを行うのは？",
+      "choices": [
+        "公衆衛生",
+        "社会福祉",
+        "公的扶助",
+        "社会保険"
+      ],
+      "answerIndex": 0,
+      "explanation": "保健所などが担う。"
+    },
+    {
+      "id": "soc_pol14_015",
+      "unit": "social.pol.economy.welfare.system",
+      "category": "knowledge",
+      "prompt": "児童・高齢者・障害者などに施設やサービスを提供する社会保障は？",
+      "choices": [
+        "公衆衛生",
+        "公的扶助",
+        "社会福祉",
+        "社会保険"
+      ],
+      "answerIndex": 2,
+      "explanation": "主に税金で運営される。"
+    },
+    {
+      "id": "soc_pol14_016",
+      "unit": "social.pol.economy.welfare.system",
+      "category": "knowledge",
+      "prompt": "仕事中のけがや病気に対して給付される社会保険は？",
+      "choices": [
+        "介護保険",
+        "雇用保険",
+        "医療保険",
+        "労災保険"
+      ],
+      "answerIndex": 3,
+      "explanation": "保険料は事業主が負担する。"
+    },
+    {
+      "id": "soc_pol14_017",
+      "unit": "social.pol.economy.welfare.pension",
+      "category": "knowledge",
+      "prompt": "積立方式の年金の特徴は？",
+      "choices": [
+        "現役世代の保険料で高齢者を支える",
+        "税金だけでまかなう",
+        "自分が納めた保険料を積み立てて、将来受け取る",
+        "年金を受け取らない"
+      ],
+      "answerIndex": 2,
+      "explanation": "日本は賦課方式を基本としている。"
+    },
+    {
+      "id": "soc_pol14_018",
+      "unit": "social.pol.economy.welfare.pension",
+      "category": "knowledge",
+      "prompt": "日本の公的年金で、20 歳以上のすべての国民が加入するものは？",
+      "choices": [
+        "国民年金（基礎年金）",
+        "企業年金",
+        "個人年金",
+        "厚生年金"
+      ],
+      "answerIndex": 0,
+      "explanation": "会社員などは厚生年金にも加入する（2 階建て）。"
+    },
+    {
+      "id": "soc_pol14_019",
+      "unit": "social.pol.economy.welfare.pension",
+      "category": "knowledge",
+      "prompt": "日本の公的年金で、会社員や公務員が国民年金に上乗せして加入する年金は？",
+      "choices": [
+        "厚生年金",
+        "国民年金基金",
+        "企業年金だけ",
+        "個人年金"
+      ],
+      "answerIndex": 0,
+      "explanation": "国民年金（基礎年金）を 1 階、厚生年金を 2 階とする「2 階建て」のしくみ。"
+    },
+    {
+      "id": "soc_pol14_020",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "高齢者や障害者が暮らしやすいよう、段差などの障壁をなくすことは？",
+      "choices": [
+        "インクルージョン",
+        "バリアフリー",
+        "ユニバーサルデザイン",
+        "ノーマライゼーション"
+      ],
+      "answerIndex": 1,
+      "explanation": "ユニバーサルデザインは初めから誰もが使いやすく設計すること。"
+    },
+    {
+      "id": "soc_pol14_021",
+      "unit": "social.pol.economy.welfare.aging",
+      "category": "calculation",
+      "prompt": "65 歳以上の人口が 3600 万人、総人口が 1 億 2000 万人のとき、高齢化率は？",
+      "choices": [
+        "12 %",
+        "30 %",
+        "3.6 %",
+        "36 %"
+      ],
+      "answerIndex": 1,
+      "explanation": "3600 ÷ 12000 × 100。"
+    },
+    {
+      "id": "soc_pol14_022",
+      "unit": "social.pol.economy.welfare.pension",
+      "category": "calculation",
+      "prompt": "医療費 1 万円の治療で、自己負担が 3 割のとき、窓口で払う額は？",
+      "choices": [
+        "300 円",
+        "3000 円",
+        "7000 円",
+        "1 万円"
+      ],
+      "answerIndex": 1,
+      "explanation": "残りは医療保険から支払われる。"
+    },
+    {
+      "id": "soc_pol14_023",
+      "unit": "social.pol.economy.welfare.pension",
+      "category": "thinking",
+      "prompt": "賦課方式の年金が少子高齢化で課題をかかえる理由は？",
+      "choices": [
+        "高齢者が減るから",
+        "支える現役世代が減り、支えられる高齢者が増えるから",
+        "保険料がなくなるから",
+        "年金を受け取る人がいないから"
+      ],
+      "answerIndex": 1,
+      "explanation": "給付と負担のバランスの見直しが議論されている。"
+    },
+    {
+      "id": "soc_pol14_024",
+      "unit": "social.pol.economy.welfare.system",
+      "category": "thinking",
+      "prompt": "社会保険が「保険」として成り立つしくみは？",
+      "choices": [
+        "国がすべての費用を負担する",
+        "病気になった人だけが保険料を払う",
+        "企業だけが負担する",
+        "多くの人が保険料を出し合い、病気などになった人に給付することでリスクを分散する"
+      ],
+      "answerIndex": 3,
+      "explanation": "加入を強制することで、多くの人でリスクを支え合う。"
+    }
+  ]
+}

@@ -1,0 +1,344 @@
+{
+  "setId": "information_info1_17",
+  "worldId": "information",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "inf_info117_001",
+      "unit": "information.info.computer.logic.gate",
+      "category": "knowledge",
+      "prompt": "AND（論理積）の出力が 1 になるのは？",
+      "choices": [
+        "入力が異なるとき",
+        "入力がどちらも 0 のとき",
+        "入力のどちらかが 1 のとき",
+        "入力がどちらも 1 のとき"
+      ],
+      "answerIndex": 3,
+      "explanation": "A AND B：両方が真のときだけ真。"
+    },
+    {
+      "id": "inf_info117_002",
+      "unit": "information.info.computer.logic.gate",
+      "category": "knowledge",
+      "prompt": "OR（論理和）の出力が 1 になるのは？",
+      "choices": [
+        "入力の少なくとも一方が 1 のとき",
+        "入力が異なるときだけ",
+        "入力がどちらも 0 のとき",
+        "入力がどちらも 1 のときだけ"
+      ],
+      "answerIndex": 0,
+      "explanation": "両方 0 のときだけ 0。"
+    },
+    {
+      "id": "inf_info117_003",
+      "unit": "information.info.computer.logic.gate",
+      "category": "knowledge",
+      "prompt": "NOT（否定）のはたらきは？",
+      "choices": [
+        "入力を反転する（0 を 1 に、1 を 0 に）",
+        "入力をそのまま出す",
+        "2 つの入力を足す",
+        "入力を 2 倍にする"
+      ],
+      "answerIndex": 0,
+      "explanation": "入力は 1 つ。"
+    },
+    {
+      "id": "inf_info117_004",
+      "unit": "information.info.computer.logic.gate",
+      "category": "knowledge",
+      "prompt": "XOR（排他的論理和）の出力が 1 になるのは？",
+      "choices": [
+        "2 つの入力が同じとき",
+        "2 つの入力が異なるとき",
+        "入力がどちらも 0 のとき",
+        "入力がどちらも 1 のとき"
+      ],
+      "answerIndex": 1,
+      "explanation": "同じなら 0、違えば 1。"
+    },
+    {
+      "id": "inf_info117_005",
+      "unit": "information.info.computer.logic.adder",
+      "category": "knowledge",
+      "prompt": "半加算器の出力は？",
+      "choices": [
+        "最大値と最小値",
+        "差と借り",
+        "和（S）と桁上がり（C）",
+        "積と余り"
+      ],
+      "answerIndex": 2,
+      "explanation": "1 けたの 2 進数どうしを足す回路。"
+    },
+    {
+      "id": "inf_info117_006",
+      "unit": "information.info.computer.logic.adder",
+      "category": "knowledge",
+      "prompt": "半加算器で「和」と「桁上がり」を出す回路の組み合わせは？",
+      "choices": [
+        "和は AND、桁上がりは OR",
+        "和は NOT、桁上がりは XOR",
+        "和は XOR、桁上がりは AND",
+        "和は OR、桁上がりは NOT"
+      ],
+      "answerIndex": 2,
+      "explanation": "1 ＋ 1 ＝ 10（和 0、桁上がり 1）となる。"
+    },
+    {
+      "id": "inf_info117_007",
+      "unit": "information.info.computer.logic.adder",
+      "category": "knowledge",
+      "prompt": "全加算器が半加算器と違う点は？",
+      "choices": [
+        "引き算ができる",
+        "出力が 3 つある",
+        "下の桁からの桁上がりもふくめて 3 つの入力を足す",
+        "入力が 1 つだけ"
+      ],
+      "answerIndex": 2,
+      "explanation": "全加算器をつなげると、何けたの足し算もできる。"
+    },
+    {
+      "id": "inf_info117_008",
+      "unit": "information.info.computer.logic",
+      "category": "calculation",
+      "prompt": "1 AND 0 の結果は？",
+      "choices": [
+        "10",
+        "1",
+        "0",
+        "2"
+      ],
+      "answerIndex": 2,
+      "explanation": "両方 1 ではないので 0。"
+    },
+    {
+      "id": "inf_info117_009",
+      "unit": "information.info.computer.logic",
+      "category": "calculation",
+      "prompt": "1 XOR 1 の結果は？",
+      "choices": [
+        "2",
+        "10",
+        "0",
+        "1"
+      ],
+      "answerIndex": 2,
+      "explanation": "入力が同じなので 0。"
+    },
+    {
+      "id": "inf_info117_010",
+      "unit": "information.info.computer.logic",
+      "category": "calculation",
+      "prompt": "2 進数の 0110 ＋ 0011 は？",
+      "choices": [
+        "1011",
+        "1001",
+        "0111",
+        "1010"
+      ],
+      "answerIndex": 1,
+      "explanation": "6 ＋ 3 ＝ 9 ＝ 1001。"
+    },
+    {
+      "id": "inf_info117_011",
+      "unit": "information.info.computer.logic",
+      "category": "calculation",
+      "prompt": "1010 AND 1100（けたごとに AND）は？",
+      "choices": [
+        "0110",
+        "1000",
+        "0100",
+        "1110"
+      ],
+      "answerIndex": 1,
+      "explanation": "各けた：1&1＝1、0&1＝0、1&0＝0、0&0＝0。"
+    },
+    {
+      "id": "inf_info117_012",
+      "unit": "information.info.computer.logic.gate",
+      "category": "calculation",
+      "prompt": "NOT（1 OR 0）の結果は？",
+      "choices": [
+        "0",
+        "−1",
+        "1",
+        "10"
+      ],
+      "answerIndex": 0,
+      "explanation": "1 OR 0 ＝ 1、それを反転して 0。"
+    },
+    {
+      "id": "inf_info117_013",
+      "unit": "information.info.computer.logic.gate",
+      "category": "knowledge",
+      "prompt": "NAND の出力が 0 になるのは？",
+      "choices": [
+        "いつも 0",
+        "入力がすべて 1 のとき",
+        "入力が 1 つだけ 1 のとき",
+        "入力がすべて 0 のとき"
+      ],
+      "answerIndex": 1,
+      "explanation": "AND の結果を反転したもの。"
+    },
+    {
+      "id": "inf_info117_014",
+      "unit": "information.info.computer.logic.gate",
+      "category": "knowledge",
+      "prompt": "NOR の出力が 1 になるのは？",
+      "choices": [
+        "いつも 1",
+        "入力がすべて 1 のとき",
+        "入力がすべて 0 のとき",
+        "入力が 1 つだけ 1 のとき"
+      ],
+      "answerIndex": 2,
+      "explanation": "OR の結果を反転したもの。"
+    },
+    {
+      "id": "inf_info117_015",
+      "unit": "information.info.computer.logic.gate",
+      "category": "knowledge",
+      "prompt": "論理回路で、入力と出力の関係をすべて表にしたものは？",
+      "choices": [
+        "真理値表",
+        "度数分布表",
+        "フローチャート",
+        "クロス集計表"
+      ],
+      "answerIndex": 0,
+      "explanation": "0 と 1 の組み合わせを並べる。"
+    },
+    {
+      "id": "inf_info117_016",
+      "unit": "information.info.computer.logic",
+      "category": "knowledge",
+      "prompt": "NAND 回路だけの組み合わせで作れる回路について正しいものは？",
+      "choices": [
+        "何も作れない",
+        "OR だけ作れる",
+        "AND・OR・NOT などすべての論理回路が作れる",
+        "NOT だけしか作れない"
+      ],
+      "answerIndex": 2,
+      "explanation": "万能ゲートと呼ばれる。"
+    },
+    {
+      "id": "inf_info117_017",
+      "unit": "information.info.computer.logic",
+      "category": "calculation",
+      "prompt": "0 OR 0 の結果は？",
+      "choices": [
+        "1",
+        "不定",
+        "2",
+        "0"
+      ],
+      "answerIndex": 3,
+      "explanation": "どちらかが 1 なら 1。"
+    },
+    {
+      "id": "inf_info117_018",
+      "unit": "information.info.computer.logic",
+      "category": "calculation",
+      "prompt": "1 AND 1 の結果は？",
+      "choices": [
+        "0",
+        "2",
+        "11",
+        "1"
+      ],
+      "answerIndex": 3,
+      "explanation": "両方が 1 のときだけ 1。"
+    },
+    {
+      "id": "inf_info117_019",
+      "unit": "information.info.computer.logic",
+      "category": "calculation",
+      "prompt": "0 XOR 1 の結果は？",
+      "choices": [
+        "01",
+        "2",
+        "1",
+        "0"
+      ],
+      "answerIndex": 2,
+      "explanation": "入力が異なるとき 1。"
+    },
+    {
+      "id": "inf_info117_020",
+      "unit": "information.info.computer.logic.gate",
+      "category": "calculation",
+      "prompt": "NOT（1 AND 1）の結果は？",
+      "choices": [
+        "2",
+        "0",
+        "1",
+        "11"
+      ],
+      "answerIndex": 1,
+      "explanation": "1 AND 1 ＝ 1 を反転。"
+    },
+    {
+      "id": "inf_info117_021",
+      "unit": "information.info.computer.logic.adder",
+      "category": "calculation",
+      "prompt": "半加算器に 1 と 1 を入力したとき、和（S）と桁上がり（C）は？",
+      "choices": [
+        "S ＝ 1、C ＝ 0",
+        "S ＝ 1、C ＝ 1",
+        "S ＝ 0、C ＝ 0",
+        "S ＝ 0、C ＝ 1"
+      ],
+      "answerIndex": 3,
+      "explanation": "1 ＋ 1 ＝ 10（2 進数）。"
+    },
+    {
+      "id": "inf_info117_022",
+      "unit": "information.info.computer.logic",
+      "category": "calculation",
+      "prompt": "2 進数の 0101 ＋ 0011 を計算すると？",
+      "choices": [
+        "1100",
+        "1000",
+        "0111",
+        "0110"
+      ],
+      "answerIndex": 1,
+      "explanation": "5 ＋ 3 ＝ 8。"
+    },
+    {
+      "id": "inf_info117_023",
+      "unit": "information.info.computer.logic",
+      "category": "calculation",
+      "prompt": "1100 OR 1010（けたごと）の結果は？",
+      "choices": [
+        "1000",
+        "0110",
+        "1111",
+        "1110"
+      ],
+      "answerIndex": 3,
+      "explanation": "どちらかが 1 のけたは 1。"
+    },
+    {
+      "id": "inf_info117_024",
+      "unit": "information.info.computer.logic.gate",
+      "category": "thinking",
+      "prompt": "コンピュータの中で、足し算がすべて論理回路の組み合わせで行われていることの意味は？",
+      "choices": [
+        "人が計算している",
+        "足し算はできない",
+        "10 進数で計算している",
+        "0 と 1 の単純な演算を組み合わせれば、複雑な計算もできる"
+      ],
+      "answerIndex": 3,
+      "explanation": "加算器を並べて多けたの計算を行う。"
+    }
+  ]
+}

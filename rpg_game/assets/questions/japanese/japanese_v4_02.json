@@ -1,0 +1,428 @@
+{
+  "setId": "japanese_v4_02",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "jpn_v4b_001",
+      "unit": "japanese.gendai.kanji.read.difficult",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「時雨」の読みは？",
+      "choices": [
+        "しぐれ",
+        "ときあめ",
+        "さみだれ",
+        "じう"
+      ],
+      "answerIndex": 0,
+      "explanation": "熟字訓（熟語全体に訓をあてる読み）。晩秋から初冬に降ったりやんだりする雨。「五月雨」は「さみだれ」。",
+      "difficulty": "standard",
+      "thinkingLevel": 1
+    },
+    {
+      "id": "jpn_v4b_002",
+      "unit": "japanese.gendai.kanji.read.difficult",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「相殺」の読みは？",
+      "choices": [
+        "しょうさい",
+        "あいごろし",
+        "そうさつ",
+        "そうさい"
+      ],
+      "answerIndex": 3,
+      "explanation": "差し引いてなくすこと。「殺」を「さい」と読む例。",
+      "difficulty": "standard",
+      "thinkingLevel": 1,
+      "commonMistakes": [
+        "「そうさつ」と読む"
+      ]
+    },
+    {
+      "id": "jpn_v4b_003",
+      "unit": "japanese.gendai.kanji.read.difficult",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「境内」の読みは？",
+      "choices": [
+        "さかいうち",
+        "けいだい",
+        "けいない",
+        "きょうない"
+      ],
+      "answerIndex": 1,
+      "explanation": "神社や寺の敷地の中。",
+      "difficulty": "basic",
+      "thinkingLevel": 1
+    },
+    {
+      "id": "jpn_v4b_004",
+      "unit": "japanese.gendai.kanji.write.write",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「計画をスイコウする」のスイコウを漢字で書くと？",
+      "choices": [
+        "遂考",
+        "推行",
+        "遂行",
+        "推敲"
+      ],
+      "answerIndex": 2,
+      "explanation": "遂行＝最後までやりとげること。推敲＝文章を練り直すこと。同音語は文脈で判断する。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "jpn_v4b_005",
+      "unit": "japanese.gendai.kanji.write.write",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「キチョウな体験」のキチョウを漢字で書くと？",
+      "choices": [
+        "帰朝",
+        "記帳",
+        "基調",
+        "貴重"
+      ],
+      "answerIndex": 3,
+      "explanation": "貴重＝とても大切。基調＝根本の考え方、記帳＝帳簿に記入すること。",
+      "difficulty": "basic",
+      "thinkingLevel": 1
+    },
+    {
+      "id": "jpn_v4b_006",
+      "unit": "japanese.gendai.kanji.write.homonym",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「人数を（　）する」の（　）に入る語は？（はあく）",
+      "choices": [
+        "把悪",
+        "派握",
+        "覇握",
+        "把握"
+      ],
+      "answerIndex": 3,
+      "explanation": "把握＝しっかり理解すること。",
+      "difficulty": "basic",
+      "thinkingLevel": 1
+    },
+    {
+      "id": "jpn_v4b_008",
+      "unit": "japanese.gendai.kanji.write.homonym",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「アツい」の使い分けとして正しいものは？",
+      "choices": [
+        "暑いお茶・熱い夏・厚い本",
+        "厚いお茶・暑い夏・熱い本",
+        "熱いお茶・厚い夏・暑い本",
+        "熱いお茶・暑い夏・厚い本"
+      ],
+      "answerIndex": 3,
+      "explanation": "同訓異字。物の温度が高い → 熱い、気温が高い → 暑い、厚みがある → 厚い。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "jpn_v4b_009",
+      "unit": "japanese.gendai.vocab.idiom.kanyo",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「情けは人のためならず」の正しい意味は？",
+      "choices": [
+        "人の情けにあまえてはいけない",
+        "情けは人に見せるものではない",
+        "人に親切にすると、めぐりめぐって自分によい報いがある",
+        "人に情けをかけると、その人のためにならない"
+      ],
+      "answerIndex": 2,
+      "explanation": "「ためならず」＝ためではない。他人への親切は自分のためになる、という意味。誤用の多いことわざ。",
+      "difficulty": "standard",
+      "thinkingLevel": 2,
+      "commonMistakes": [
+        "「甘やかすのはその人のためにならない」と誤解する"
+      ]
+    },
+    {
+      "id": "jpn_v4b_010",
+      "unit": "japanese.gendai.vocab.idiom.kanyo",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「気が置けない」の正しい意味は？",
+      "choices": [
+        "油断できない",
+        "遠慮がいらず、気楽につきあえる",
+        "気が利かない",
+        "気がかりで落ち着かない"
+      ],
+      "answerIndex": 1,
+      "explanation": "「気が置けない友人」は打ち解けられる友人。「油断できない」は誤用。",
+      "difficulty": "standard",
+      "thinkingLevel": 2,
+      "commonMistakes": [
+        "「油断できない」と誤解する"
+      ]
+    },
+    {
+      "id": "jpn_v4b_011",
+      "unit": "japanese.gendai.vocab.idiom.jukugo",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "熟語「登山」の構成は？",
+      "choices": [
+        "似た意味の字を重ねる",
+        "反対の意味の字を重ねる",
+        "上の字が下の字を修飾する",
+        "下の字が上の字の目的・対象になる"
+      ],
+      "answerIndex": 3,
+      "explanation": "「山に登る」。同じ構成：読書・就職・帰国。",
+      "difficulty": "basic",
+      "thinkingLevel": 1
+    },
+    {
+      "id": "jpn_v4b_012",
+      "unit": "japanese.gendai.vocab.idiom.jukugo",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「攻守」と同じ構成の熟語は？",
+      "choices": [
+        "開閉",
+        "温暖",
+        "未定",
+        "国営"
+      ],
+      "answerIndex": 0,
+      "explanation": "反対（対）の意味の字を重ねる：攻⇔守、開⇔閉。温暖は似た意味、国営は主語・述語、未定は打消。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "jpn_v4b_013",
+      "unit": "japanese.gendai.language.grammar.grammar",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「静かな部屋」の「静かな」の品詞は？",
+      "choices": [
+        "形容動詞",
+        "連体詞",
+        "形容詞",
+        "副詞"
+      ],
+      "answerIndex": 0,
+      "explanation": "「静かだ」の連体形。言い切りが「だ」なら形容動詞、「い」なら形容詞。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "jpn_v4b_014",
+      "unit": "japanese.gendai.language.grammar.grammar",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「大きな木」の「大きな」の品詞は？",
+      "choices": [
+        "形容動詞",
+        "連体詞",
+        "形容詞",
+        "副詞"
+      ],
+      "answerIndex": 1,
+      "explanation": "「大きな」には活用がなく（×大きだ）、体言だけを修飾するので連体詞。「大きい」なら形容詞。",
+      "difficulty": "advanced",
+      "thinkingLevel": 3,
+      "commonMistakes": [
+        "形容動詞と答える"
+      ]
+    },
+    {
+      "id": "jpn_v4b_015",
+      "unit": "japanese.gendai.language.grammar.usage",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "次のうち、本来の意味で正しく使われているものは？",
+      "choices": [
+        "彼には役不足だ（役目が重すぎて力が足りない）",
+        "彼は役不足だ（彼の力量に対して役目が軽すぎる）",
+        "その案は姑息だ（ひきょうだ）",
+        "彼は確信犯だ（悪いとわかっていて行う）"
+      ],
+      "answerIndex": 1,
+      "explanation": "「役不足」は力量に比べて役目が軽すぎること。「姑息」は一時しのぎ。「確信犯」は本来、信念にもとづき正しいと信じて行う犯罪。",
+      "difficulty": "advanced",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "jpn_v4b_016",
+      "unit": "japanese.gendai.language.grammar.usage",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「ら抜き言葉」の例はどれ？",
+      "choices": [
+        "読める",
+        "行ける",
+        "見れる",
+        "見られる"
+      ],
+      "answerIndex": 2,
+      "explanation": "上一段・下一段・カ変動詞の可能形は「られる」（見られる・来られる）。「見れる」は ら抜き言葉。五段動詞の「読める」「行ける」は可能動詞で正しい。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "jpn_v4b_017",
+      "unit": "japanese.gendai.logical.hyoron.paraphrase",
+      "unitLocked": true,
+      "category": "reading",
+      "prompt": "「便利さは、私たちから待つ時間を奪った」とあるが、どういうことか。",
+      "choices": [
+        "便利になって待ち合わせができなくなったということ",
+        "技術の進歩で、何かを待つ間に考えたり感じたりする余白がなくなったということ",
+        "時間を守らない人が増えたということ",
+        "便利な機械が時間を盗んだということ"
+      ],
+      "answerIndex": 1,
+      "explanation": "比喩（「奪った」）を、本文の文脈に合う一般的な表現に言い換える。「待つ時間」＝ゆとり・余白の象徴。",
+      "difficulty": "standard",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "jpn_v4b_018",
+      "unit": "japanese.gendai.logical.hyoron.paraphrase",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "傍線部の説明問題で、解答をつくるときの基本の手順として最も適切なものは？",
+      "choices": [
+        "本文に書かれていない具体例を加える",
+        "傍線部をそのまま書き写す",
+        "傍線部を部分に分け、それぞれを本文中の言葉で言い換えてつなぐ",
+        "自分の考えを中心に書く"
+      ],
+      "answerIndex": 2,
+      "explanation": "「どういうことか」は言い換え。傍線部の主語・比喩・指示語などをほどき、本文の根拠で置きかえる。",
+      "difficulty": "standard",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "jpn_v4b_019",
+      "unit": "japanese.kobun.word.word.ikogo",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "古文の「うつくし」の意味は？",
+      "choices": [
+        "立派だ",
+        "悲しい",
+        "かわいらしい",
+        "美しい"
+      ],
+      "answerIndex": 2,
+      "explanation": "古今異義語。小さいものへの愛情を表す「かわいい」。「美しい」の意味は中世以降。",
+      "difficulty": "basic",
+      "thinkingLevel": 1
+    },
+    {
+      "id": "jpn_v4b_020",
+      "unit": "japanese.kobun.word.word.ikogo",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "古文の「ありがたし」の意味は？",
+      "choices": [
+        "めったにない",
+        "感謝したい",
+        "ありがたい",
+        "ありふれている"
+      ],
+      "answerIndex": 0,
+      "explanation": "「有り難し」＝存在することが難しい → めったにない、すぐれている。",
+      "difficulty": "standard",
+      "thinkingLevel": 1
+    },
+    {
+      "id": "jpn_v4b_021",
+      "unit": "japanese.kobun.word.word.ikogo",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "古文の「やがて」の意味は？",
+      "choices": [
+        "そのうちに",
+        "少しずつ",
+        "ついに",
+        "すぐに・そのまま"
+      ],
+      "answerIndex": 3,
+      "explanation": "現代語の「そのうち」とは異なる。「やがて出でぬ」＝すぐに出ていった。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "jpn_v4b_022",
+      "unit": "japanese.kobun.reading.reading.translate",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「春はあけぼの。やうやう白くなりゆく山ぎは、すこしあかりて」の「やうやう」の訳として正しいものは？",
+      "choices": [
+        "だんだん",
+        "急に",
+        "ようやく",
+        "やっと"
+      ],
+      "answerIndex": 0,
+      "explanation": "「やうやう」＝しだいに、だんだん。現代語の「ようやく（やっと）」とは意味が異なる。『枕草子』冒頭。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "jpn_v4b_023",
+      "unit": "japanese.kobun.reading.reading.translate",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「いと心もとなし」の現代語訳として最も適切なものは？",
+      "choices": [
+        "心が狭い",
+        "とても安心だ",
+        "とても待ち遠しい（じれったい）",
+        "心がまったくない"
+      ],
+      "answerIndex": 2,
+      "explanation": "「心もとなし」＝待ち遠しい・じれったい・不安だ。「いと」＝とても。",
+      "difficulty": "standard",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "jpn_v4b_024",
+      "unit": "japanese.kobun.reading.synthesis.synthesis",
+      "unitLocked": true,
+      "category": "reading",
+      "prompt": "次の文の主語として最も適切なものは？「（翁は）竹取りけるに、その竹の中に、もと光る竹なむ一筋ありける。あやしがりて、寄りて見るに」の「寄りて見る」のは誰か。",
+      "choices": [
+        "竹",
+        "作者",
+        "かぐや姫",
+        "翁"
+      ],
+      "answerIndex": 3,
+      "explanation": "「あやしがりて（不思議に思って）」から同じ主語が続く。接続助詞「て」の前後は主語が同じことが多い。",
+      "difficulty": "standard",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "jpn_v4b_025",
+      "unit": "japanese.kobun.reading.synthesis.synthesis",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "古文で、主語が変わりやすい目印となる接続助詞は？",
+      "choices": [
+        "係助詞「なむ」",
+        "「つつ」「ながら」",
+        "「て」「で」",
+        "「を」「に」「ど」「ば」"
+      ],
+      "answerIndex": 3,
+      "explanation": "「を・に・ど・ば」の前後では主語が変わることが多い。「て」の前後は同じ主語のことが多い。あくまで目安で、文脈で必ず確かめる。",
+      "difficulty": "advanced",
+      "thinkingLevel": 3
+    }
+  ]
+}

@@ -1,0 +1,428 @@
+{
+  "setId": "science_bio_basic_01",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "science_bio_basic_01_001",
+      "unit": "science.biology.cell.common.structure",
+      "category": "knowledge",
+      "prompt": "すべての生物に共通する特徴は？",
+      "choices": [
+        "核膜に包まれた核を持つ",
+        "多細胞からなる",
+        "光合成を行う",
+        "遺伝物質として DNA を持つ"
+      ],
+      "answerIndex": 3,
+      "explanation": "細胞からなり、DNA を持ち、代謝を行い、自己複製する。"
+    },
+    {
+      "id": "science_bio_basic_01_002",
+      "unit": "science.biology.cell.common.structure",
+      "category": "knowledge",
+      "prompt": "原核生物はどれ？",
+      "choices": [
+        "大腸菌",
+        "ゾウリムシ",
+        "酵母",
+        "ヒト"
+      ],
+      "answerIndex": 0,
+      "explanation": "大腸菌などの細菌は核膜を持たない原核生物。"
+    },
+    {
+      "id": "science_bio_basic_01_003",
+      "unit": "science.biology.cell.common.structure",
+      "category": "knowledge",
+      "prompt": "呼吸によって ATP をつくる細胞小器官は？",
+      "choices": [
+        "葉緑体",
+        "ゴルジ体",
+        "ミトコンドリア",
+        "リボソーム"
+      ],
+      "answerIndex": 2,
+      "explanation": "有機物を分解してエネルギーを取り出す。"
+    },
+    {
+      "id": "science_bio_basic_01_004",
+      "unit": "science.biology.cell.common.structure",
+      "category": "knowledge",
+      "prompt": "光合成を行う細胞小器官は？",
+      "choices": [
+        "中心体",
+        "液胞",
+        "葉緑体",
+        "ミトコンドリア"
+      ],
+      "answerIndex": 2,
+      "explanation": "光エネルギーを使って二酸化炭素と水から有機物をつくる。"
+    },
+    {
+      "id": "science_bio_basic_01_005",
+      "unit": "science.biology.cell.energy.atp",
+      "category": "knowledge",
+      "prompt": "ATP の役割は？",
+      "choices": [
+        "生命活動のエネルギーの受け渡しをする",
+        "酸素を運ぶ",
+        "遺伝情報を保存する",
+        "細胞膜をつくる"
+      ],
+      "answerIndex": 0,
+      "explanation": "アデノシン三リン酸。リン酸どうしの結合にエネルギーをたくわえる。"
+    },
+    {
+      "id": "science_bio_basic_01_006",
+      "unit": "science.biology.cell.energy.enzyme",
+      "category": "knowledge",
+      "prompt": "酵素の性質として正しいものは？",
+      "choices": [
+        "主成分はタンパク質で、触媒としてはたらく",
+        "温度に関係なく同じようにはたらく",
+        "反応のたびになくなる",
+        "どんな物質にも作用する"
+      ],
+      "answerIndex": 0,
+      "explanation": "特定の物質にだけ作用する（基質特異性）。高温では失活する。"
+    },
+    {
+      "id": "science_bio_basic_01_007",
+      "unit": "science.biology.cell.dna.structure",
+      "category": "knowledge",
+      "prompt": "DNA で、塩基 A（アデニン）と対になる塩基は？",
+      "choices": [
+        "U（ウラシル）",
+        "G（グアニン）",
+        "C（シトシン）",
+        "T（チミン）"
+      ],
+      "answerIndex": 3,
+      "explanation": "A と T、G と C が水素結合で対になる。"
+    },
+    {
+      "id": "science_bio_basic_01_008",
+      "unit": "science.biology.cell.dna.structure",
+      "category": "calculation",
+      "prompt": "ある DNA で A が全塩基の 30% のとき、G の割合は？",
+      "choices": [
+        "20%",
+        "30%",
+        "40%",
+        "70%"
+      ],
+      "answerIndex": 0,
+      "explanation": "A = T = 30%。残り 40% を G と C で等分して 20%。"
+    },
+    {
+      "id": "science_bio_basic_01_009",
+      "unit": "science.biology.cell.dna.structure",
+      "category": "knowledge",
+      "prompt": "DNA の二重らせん構造を提唱したのは？",
+      "choices": [
+        "パスツール",
+        "メンデル",
+        "ダーウィン",
+        "ワトソンとクリック"
+      ],
+      "answerIndex": 3,
+      "explanation": "1953 年に発表した。"
+    },
+    {
+      "id": "science_bio_basic_01_010",
+      "unit": "science.biology.cell.dna.structure",
+      "category": "knowledge",
+      "prompt": "DNA の遺伝情報を RNA に写しとる過程を何という？",
+      "choices": [
+        "翻訳",
+        "複製",
+        "分化",
+        "転写"
+      ],
+      "answerIndex": 3,
+      "explanation": "RNA の情報をもとにタンパク質をつくるのが翻訳。"
+    },
+    {
+      "id": "science_bio_basic_01_011",
+      "unit": "science.biology.cell.dna.structure",
+      "category": "knowledge",
+      "prompt": "RNA で、DNA のチミン（T）の代わりに使われる塩基は？",
+      "choices": [
+        "アデニン（A）",
+        "ウラシル（U）",
+        "シトシン（C）",
+        "グアニン（G）"
+      ],
+      "answerIndex": 1,
+      "explanation": "RNA の塩基は A・U・G・C。"
+    },
+    {
+      "id": "science_bio_basic_01_012",
+      "unit": "science.biology.cell.dna.replication",
+      "category": "knowledge",
+      "prompt": "細胞周期で DNA が複製されるのはどの時期？",
+      "choices": [
+        "G2 期",
+        "G1 期",
+        "S 期（間期）",
+        "M 期（分裂期）"
+      ],
+      "answerIndex": 2,
+      "explanation": "間期は G1 期・S 期・G2 期に分かれ、S 期に DNA が 2 倍になる。"
+    },
+    {
+      "id": "science_bio_basic_01_013",
+      "unit": "science.biology.cell.common.structure",
+      "category": "knowledge",
+      "prompt": "体細胞分裂で生じた娘細胞の染色体の数は？",
+      "choices": [
+        "もとの細胞の半分",
+        "分裂ごとに変わる",
+        "もとの細胞の 2 倍",
+        "もとの細胞と同じ"
+      ],
+      "answerIndex": 3,
+      "explanation": "複製した DNA を等しく分けるので、同じ遺伝情報を持つ。"
+    },
+    {
+      "id": "science_bio_basic_01_014",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "category": "knowledge",
+      "prompt": "体内の状態を一定に保とうとするしくみは？",
+      "choices": [
+        "免疫寛容",
+        "突然変異",
+        "恒常性（ホメオスタシス）",
+        "適応放散"
+      ],
+      "answerIndex": 2,
+      "explanation": "体温・血糖値・体液の濃度などを一定に保つ。"
+    },
+    {
+      "id": "science_bio_basic_01_015",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "category": "knowledge",
+      "prompt": "酸素を運ぶ血液の成分は？",
+      "choices": [
+        "赤血球",
+        "血小板",
+        "血しょう",
+        "白血球"
+      ],
+      "answerIndex": 0,
+      "explanation": "赤血球のヘモグロビンが酸素と結びつく。"
+    },
+    {
+      "id": "science_bio_basic_01_016",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "category": "knowledge",
+      "prompt": "血液を固める（血液凝固）はたらきに関わる成分は？",
+      "choices": [
+        "赤血球",
+        "白血球",
+        "血小板",
+        "リンパ球"
+      ],
+      "answerIndex": 2,
+      "explanation": "血小板などのはたらきでフィブリンができ、血ぺいがつくられる。"
+    },
+    {
+      "id": "science_bio_basic_01_017",
+      "unit": "science.biology.body.nerve.autonomic",
+      "category": "knowledge",
+      "prompt": "交感神経がはたらくと、心臓の拍動はどうなる？",
+      "choices": [
+        "変わらない",
+        "おそくなる",
+        "速くなる",
+        "止まる"
+      ],
+      "answerIndex": 2,
+      "explanation": "交感神経は活動時にはたらき、心拍数を上げる。"
+    },
+    {
+      "id": "science_bio_basic_01_018",
+      "unit": "science.biology.body.nerve.autonomic",
+      "category": "knowledge",
+      "prompt": "副交感神経がはたらくと、消化管の運動はどうなる？",
+      "choices": [
+        "止まる",
+        "抑制される",
+        "変わらない",
+        "促進される"
+      ],
+      "answerIndex": 3,
+      "explanation": "副交感神経は休息時にはたらき、消化を進める。"
+    },
+    {
+      "id": "science_bio_basic_01_019",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "血糖値を下げるホルモンは？",
+      "choices": [
+        "グルカゴン",
+        "チロキシン",
+        "インスリン",
+        "アドレナリン"
+      ],
+      "answerIndex": 2,
+      "explanation": "すい臓のランゲルハンス島 B 細胞から分泌される。"
+    },
+    {
+      "id": "science_bio_basic_01_020",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "血糖値を上げるホルモンはどれ？",
+      "choices": [
+        "パラトルモン",
+        "グルカゴン",
+        "インスリン",
+        "バソプレシン"
+      ],
+      "answerIndex": 1,
+      "explanation": "ランゲルハンス島 A 細胞から分泌され、グリコーゲンの分解を進める。"
+    },
+    {
+      "id": "science_bio_basic_01_021",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "甲状腺から分泌され、代謝を促進するホルモンは？",
+      "choices": [
+        "インスリン",
+        "成長ホルモン",
+        "チロキシン",
+        "アドレナリン"
+      ],
+      "answerIndex": 2,
+      "explanation": "体温を上げるときなどにはたらく。"
+    },
+    {
+      "id": "science_bio_basic_01_022",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "ホルモンの量が増えすぎると、その分泌が抑えられるしくみは？",
+      "choices": [
+        "正のフィードバック",
+        "負のフィードバック",
+        "拮抗作用",
+        "自然選択"
+      ],
+      "answerIndex": 1,
+      "explanation": "結果が原因を抑えるように働き、量を一定に保つ。"
+    },
+    {
+      "id": "science_bio_basic_01_023",
+      "unit": "science.biology.body.immunity.innate",
+      "category": "knowledge",
+      "prompt": "体内に入った異物を取りこんで分解する（食作用）細胞は？",
+      "choices": [
+        "血小板",
+        "赤血球",
+        "マクロファージ",
+        "B 細胞"
+      ],
+      "answerIndex": 2,
+      "explanation": "好中球や樹状細胞も食作用を行う。自然免疫のしくみ。"
+    },
+    {
+      "id": "science_bio_basic_01_024",
+      "unit": "science.biology.cell.common.structure",
+      "category": "knowledge",
+      "prompt": "抗体をつくって分泌する細胞は？",
+      "choices": [
+        "形質細胞（抗体産生細胞）",
+        "ヘルパー T 細胞",
+        "赤血球",
+        "マクロファージ"
+      ],
+      "answerIndex": 0,
+      "explanation": "B 細胞が分化して形質細胞になり、抗体を放出する。"
+    },
+    {
+      "id": "science_bio_basic_01_025",
+      "unit": "science.biology.body.immunity.disease",
+      "category": "knowledge",
+      "prompt": "ワクチンが効果を持つ理由は？",
+      "choices": [
+        "病原体をすべて殺すから",
+        "白血球を減らすから",
+        "記憶細胞ができ、次に同じ抗原が入ると速く強く反応するから",
+        "抗体を直接注射するから"
+      ],
+      "answerIndex": 2,
+      "explanation": "二次応答を利用している。"
+    },
+    {
+      "id": "science_bio_basic_01_026",
+      "unit": "science.biology.body.immunity",
+      "category": "knowledge",
+      "prompt": "免疫が過剰に反応して、体に不都合が起こることを何という？",
+      "choices": [
+        "恒常性",
+        "自然免疫",
+        "拒絶反応の抑制",
+        "アレルギー"
+      ],
+      "answerIndex": 3,
+      "explanation": "花粉症など。"
+    },
+    {
+      "id": "science_bio_basic_01_027",
+      "unit": "science.biology.ecology.vegetation.succession",
+      "category": "knowledge",
+      "prompt": "植生の遷移で最後に安定した状態（極相）となる森林の主な樹木は？",
+      "choices": [
+        "陽樹",
+        "陰樹",
+        "草本",
+        "コケ植物"
+      ],
+      "answerIndex": 1,
+      "explanation": "陰樹は暗い林床でも育つので、最後は陰樹林になる。"
+    },
+    {
+      "id": "science_bio_basic_01_028",
+      "unit": "science.biology.ecology.vegetation.biome",
+      "category": "knowledge",
+      "prompt": "日本の暖温帯（西日本の低地など）に広がるバイオームは？",
+      "choices": [
+        "熱帯多雨林",
+        "照葉樹林",
+        "針葉樹林",
+        "夏緑樹林"
+      ],
+      "answerIndex": 1,
+      "explanation": "シイ・カシ・クスノキなど、葉の表面に光沢がある常緑広葉樹。"
+    },
+    {
+      "id": "science_bio_basic_01_029",
+      "unit": "science.biology.ecology.ecosystem.structure",
+      "category": "knowledge",
+      "prompt": "生態系で、光合成によって有機物をつくる生物を何という？",
+      "choices": [
+        "分解者",
+        "生産者",
+        "捕食者",
+        "消費者"
+      ],
+      "answerIndex": 1,
+      "explanation": "植物や藻類が生産者。"
+    },
+    {
+      "id": "science_bio_basic_01_030",
+      "unit": "science.biology.gene.development.animal",
+      "category": "knowledge",
+      "prompt": "湖や海で栄養塩類が増えすぎ、プランクトンが大量発生する現象は？",
+      "choices": [
+        "砂漠化",
+        "富栄養化",
+        "温暖化",
+        "生物濃縮"
+      ],
+      "answerIndex": 1,
+      "explanation": "赤潮やアオコの原因になる。"
+    }
+  ]
+}

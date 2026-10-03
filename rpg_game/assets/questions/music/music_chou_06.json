@@ -1,0 +1,260 @@
+{
+  "setId": "music_chou_06",
+  "worldId": "music",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mus_chou06_001",
+      "unit": "music.theory.key.relation.dominant",
+      "category": "knowledge",
+      "prompt": "ある調の属音を主音とする、同じ種類の調を何という？",
+      "choices": [
+        "下属調",
+        "同主調",
+        "平行調",
+        "属調"
+      ],
+      "answerIndex": 3,
+      "explanation": "ハ長調の属調はト長調。"
+    },
+    {
+      "id": "mus_chou06_002",
+      "unit": "music.theory.key.relation.dominant",
+      "category": "knowledge",
+      "prompt": "ある調の下属音を主音とする、同じ種類の調を何という？",
+      "choices": [
+        "下属調",
+        "属調",
+        "平行調",
+        "同主調"
+      ],
+      "answerIndex": 0,
+      "explanation": "ハ長調の下属調はヘ長調。"
+    },
+    {
+      "id": "mus_chou06_003",
+      "unit": "music.theory.key.relation.dominant",
+      "category": "knowledge",
+      "prompt": "属調の調号は、♯の調ではもとの調とくらべてどうなる？",
+      "choices": [
+        "1個少ない",
+        "1個多い",
+        "変わらない",
+        "2個多い"
+      ],
+      "answerIndex": 1,
+      "explanation": "属調は完全5度上なので♯が1個増える（♭なら1個減る）。"
+    },
+    {
+      "id": "mus_chou06_004",
+      "unit": "music.theory.key.relation.dominant",
+      "category": "knowledge",
+      "prompt": "下属調の調号は、♭の調ではもとの調とくらべてどうなる？",
+      "choices": [
+        "2個少ない",
+        "1個多い",
+        "1個少ない",
+        "変わらない"
+      ],
+      "answerIndex": 1,
+      "explanation": "下属調は完全5度下なので♭が1個増える（♯なら1個減る）。"
+    },
+    {
+      "id": "mus_chou06_005",
+      "unit": "music.theory.key.relation.dominant",
+      "category": "knowledge",
+      "prompt": "同主調・平行調・属調・下属調をまとめて何という？",
+      "choices": [
+        "主調",
+        "同族調",
+        "近親調",
+        "遠隔調"
+      ],
+      "answerIndex": 2,
+      "explanation": "共通音が多く、密接な関係にある4つの調。"
+    },
+    {
+      "id": "mus_chou06_006",
+      "unit": "music.theory.key.relation.dominant",
+      "category": "knowledge",
+      "prompt": "近親調以外の調をまとめて何という？",
+      "choices": [
+        "無調",
+        "近親調",
+        "平行調",
+        "遠隔調"
+      ],
+      "answerIndex": 3,
+      "explanation": "近親調以外は遠隔調。"
+    },
+    {
+      "id": "mus_chou06_007",
+      "unit": "music.theory.key.relation.dominant",
+      "category": "knowledge",
+      "prompt": "属調・下属調で、音階にふくまれる音はもとの調とくらべてどうなる？",
+      "choices": [
+        "すべて同じ",
+        "3個異なる",
+        "すべて異なる",
+        "1個だけ異なる"
+      ],
+      "answerIndex": 3,
+      "explanation": "調号が1つちがうので、音階の音が1つだけちがう。"
+    },
+    {
+      "id": "mus_chou06_008",
+      "unit": "music.theory.key.relation.dominant",
+      "category": "thinking",
+      "prompt": "c moll の属調は？",
+      "choices": [
+        "g moll",
+        "Es dur",
+        "G dur",
+        "f moll"
+      ],
+      "answerIndex": 0,
+      "explanation": "C の完全5度上の G が主音の短調。"
+    },
+    {
+      "id": "mus_chou06_009",
+      "unit": "music.theory.key.relation.dominant",
+      "category": "thinking",
+      "prompt": "B dur の属調は？",
+      "choices": [
+        "F dur",
+        "g moll",
+        "f moll",
+        "Es dur"
+      ],
+      "answerIndex": 0,
+      "explanation": "B の完全5度上の F が主音の長調。"
+    },
+    {
+      "id": "mus_chou06_010",
+      "unit": "music.theory.key.relation.dominant",
+      "category": "thinking",
+      "prompt": "D dur の属調は？",
+      "choices": [
+        "A dur",
+        "h moll",
+        "a moll",
+        "G dur"
+      ],
+      "answerIndex": 0,
+      "explanation": "D の完全5度上の A が主音の長調。"
+    },
+    {
+      "id": "mus_chou06_011",
+      "unit": "music.theory.key.relation.dominant",
+      "category": "thinking",
+      "prompt": "e moll の属調は？",
+      "choices": [
+        "H dur",
+        "h moll",
+        "G dur",
+        "a moll"
+      ],
+      "answerIndex": 1,
+      "explanation": "E の完全5度上の H が主音の短調。"
+    },
+    {
+      "id": "mus_chou06_012",
+      "unit": "music.theory.key.relation.dominant",
+      "category": "thinking",
+      "prompt": "Es dur の属調は？",
+      "choices": [
+        "b moll",
+        "B dur",
+        "As dur",
+        "c moll"
+      ],
+      "answerIndex": 1,
+      "explanation": "Es の完全5度上の B が主音の長調。"
+    },
+    {
+      "id": "mus_chou06_013",
+      "unit": "music.theory.key.relation.dominant",
+      "category": "thinking",
+      "prompt": "C dur の下属調は？",
+      "choices": [
+        "a moll",
+        "f moll",
+        "G dur",
+        "F dur"
+      ],
+      "answerIndex": 3,
+      "explanation": "C の完全4度上（完全5度下）の F が主音。"
+    },
+    {
+      "id": "mus_chou06_014",
+      "unit": "music.theory.key.relation.dominant",
+      "category": "thinking",
+      "prompt": "h moll の下属調は？",
+      "choices": [
+        "e moll",
+        "E dur",
+        "D dur",
+        "fis moll"
+      ],
+      "answerIndex": 0,
+      "explanation": "H の完全4度上（完全5度下）の E が主音。"
+    },
+    {
+      "id": "mus_chou06_015",
+      "unit": "music.theory.key.relation.dominant",
+      "category": "thinking",
+      "prompt": "G dur の下属調は？",
+      "choices": [
+        "c moll",
+        "C dur",
+        "e moll",
+        "D dur"
+      ],
+      "answerIndex": 1,
+      "explanation": "G の完全4度上（完全5度下）の C が主音。"
+    },
+    {
+      "id": "mus_chou06_016",
+      "unit": "music.theory.key.relation.dominant",
+      "category": "thinking",
+      "prompt": "a moll の下属調は？",
+      "choices": [
+        "e moll",
+        "d moll",
+        "D dur",
+        "C dur"
+      ],
+      "answerIndex": 1,
+      "explanation": "A の完全4度上（完全5度下）の D が主音。"
+    },
+    {
+      "id": "mus_chou06_017",
+      "unit": "music.theory.key.relation.parallel",
+      "category": "thinking",
+      "prompt": "A dur の下属音を主音とする長調の、平行調は？",
+      "choices": [
+        "h moll",
+        "fis moll",
+        "e moll",
+        "d moll"
+      ],
+      "answerIndex": 0,
+      "explanation": "A dur の下属音は D。D dur の平行調は h moll。"
+    },
+    {
+      "id": "mus_chou06_018",
+      "unit": "music.theory.key.relation.parallel",
+      "category": "thinking",
+      "prompt": "G の音を音階の第Ⅵ音にもつ短調の、平行調の属調は？",
+      "choices": [
+        "A dur",
+        "G dur",
+        "D dur",
+        "E dur"
+      ],
+      "answerIndex": 0,
+      "explanation": "Ⅵが G の短調は h moll。平行調は D dur、その属調は A dur。"
+    }
+  ]
+}

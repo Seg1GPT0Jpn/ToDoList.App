@@ -1,0 +1,288 @@
+{
+  "setId": "math_m1_10",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_m110_001",
+      "unit": "math.m1.quad.graph.vertex",
+      "category": "knowledge",
+      "prompt": "y=2x² のグラフの頂点は？",
+      "choices": [
+        "(1, 2)",
+        "(0, 2)",
+        "(0, 0)",
+        "(2, 0)"
+      ],
+      "answerIndex": 2,
+      "explanation": "y=ax² の頂点は原点。"
+    },
+    {
+      "id": "mat_m110_002",
+      "unit": "math.m1.quad.graph.vertex",
+      "category": "calculation",
+      "prompt": "y=(x−3)²+2 のグラフの頂点は？",
+      "choices": [
+        "(3, 2)",
+        "(2, 3)",
+        "(−3, 2)",
+        "(3, −2)"
+      ],
+      "answerIndex": 0,
+      "explanation": "y=a(x−p)²+q の頂点は (p, q)。"
+    },
+    {
+      "id": "mat_m110_003",
+      "unit": "math.m1.quad.graph.vertex",
+      "category": "calculation",
+      "prompt": "y=x²−4x+5 のグラフの頂点は？",
+      "choices": [
+        "(2, 5)",
+        "(4, 5)",
+        "(−2, 1)",
+        "(2, 1)"
+      ],
+      "answerIndex": 3,
+      "explanation": "平方完成：(x−2)²+1。"
+    },
+    {
+      "id": "mat_m110_004",
+      "unit": "math.m1.quad.graph.vertex",
+      "category": "calculation",
+      "prompt": "y=−2(x+1)²+3 のグラフの軸は？",
+      "choices": [
+        "x=3",
+        "x=−1",
+        "x=1",
+        "x=−2"
+      ],
+      "answerIndex": 1,
+      "explanation": "(x+1)² なので p=−1。"
+    },
+    {
+      "id": "mat_m110_005",
+      "unit": "math.m1.quad.graph.vertex",
+      "category": "calculation",
+      "prompt": "y=x² を x 軸方向に2、y 軸方向に−3 だけ平行移動した式は？",
+      "choices": [
+        "y=(x−2)²+3",
+        "y=(x−2)²−3",
+        "y=(x+3)²−2",
+        "y=(x+2)²−3"
+      ],
+      "answerIndex": 1,
+      "explanation": "x を x−2、y を y+3 におきかえる。"
+    },
+    {
+      "id": "mat_m110_006",
+      "unit": "math.m1.quad.maxmin",
+      "category": "knowledge",
+      "prompt": "y=ax²+bx+c で a<0 のとき、グラフは？",
+      "choices": [
+        "上に凸",
+        "直線",
+        "下に凸",
+        "x 軸と平行"
+      ],
+      "answerIndex": 0,
+      "explanation": "a<0 なら山の形。"
+    },
+    {
+      "id": "mat_m110_007",
+      "unit": "math.m1.quad.graph.vertex",
+      "category": "calculation",
+      "prompt": "y=x²−6x+8 のグラフと x 軸の交点の x 座標は？",
+      "choices": [
+        "−2, −4",
+        "−2, 4",
+        "2, 4",
+        "1, 8"
+      ],
+      "answerIndex": 2,
+      "explanation": "x²−6x+8=(x−2)(x−4)=0。"
+    },
+    {
+      "id": "mat_m110_008",
+      "unit": "math.m1.quad.graph.vertex",
+      "category": "calculation",
+      "prompt": "y=2x²+4x−1 のグラフの頂点は？",
+      "choices": [
+        "(−1, −1)",
+        "(−1, −3)",
+        "(−2, −1)",
+        "(1, 5)"
+      ],
+      "answerIndex": 1,
+      "explanation": "2(x+1)²−3。"
+    },
+    {
+      "id": "mat_m110_009",
+      "unit": "math.m1.quad.graph.vertex",
+      "category": "calculation",
+      "prompt": "y=−x²+2x+3 のグラフの頂点は？",
+      "choices": [
+        "(2, 3)",
+        "(1, 3)",
+        "(−1, 4)",
+        "(1, 4)"
+      ],
+      "answerIndex": 3,
+      "explanation": "−(x−1)²+4。"
+    },
+    {
+      "id": "mat_m110_010",
+      "unit": "math.m1.quad.graph.vertex",
+      "category": "thinking",
+      "prompt": "2次関数を平方完成する主な目的は？",
+      "choices": [
+        "式を長くするため",
+        "係数を整数にするため",
+        "頂点の座標が分かり、グラフの形や最大・最小が分かるから",
+        "x 切片を消すため"
+      ],
+      "answerIndex": 2,
+      "explanation": "y=a(x−p)²+q の形にすると頂点 (p, q) が読み取れる。"
+    },
+    {
+      "id": "mat_m110_011",
+      "unit": "math.m1.quad.graph.vertex",
+      "category": "calculation",
+      "prompt": "y=3(x+2)²−1 のグラフの頂点は？",
+      "choices": [
+        "(3, −1)",
+        "(−2, −1)",
+        "(2, −1)",
+        "(−2, 1)"
+      ],
+      "answerIndex": 1,
+      "explanation": "y=a(x−p)²+q の頂点は (p, q)。"
+    },
+    {
+      "id": "mat_m110_012",
+      "unit": "math.m1.quad.graph.vertex",
+      "category": "calculation",
+      "prompt": "y=x²+6x+5 のグラフの頂点は？",
+      "choices": [
+        "(3, −4)",
+        "(−3, −4)",
+        "(−3, 5)",
+        "(−6, 5)"
+      ],
+      "answerIndex": 1,
+      "explanation": "(x+3)²−4。"
+    },
+    {
+      "id": "mat_m110_013",
+      "unit": "math.m1.quad.graph.vertex",
+      "category": "calculation",
+      "prompt": "y=−x²+4x のグラフの頂点は？",
+      "choices": [
+        "(2, −4)",
+        "(−2, 4)",
+        "(2, 4)",
+        "(4, 0)"
+      ],
+      "answerIndex": 2,
+      "explanation": "−(x−2)²+4。"
+    },
+    {
+      "id": "mat_m110_014",
+      "unit": "math.m1.quad.graph.vertex",
+      "category": "calculation",
+      "prompt": "y=2x²−8x+3 のグラフの頂点は？",
+      "choices": [
+        "(−2, −5)",
+        "(4, 3)",
+        "(2, 3)",
+        "(2, −5)"
+      ],
+      "answerIndex": 3,
+      "explanation": "2(x−2)²−5。"
+    },
+    {
+      "id": "mat_m110_015",
+      "unit": "math.m1.quad.graph.vertex",
+      "category": "calculation",
+      "prompt": "y=x² を x 軸方向に−1、y 軸方向に2 だけ平行移動した式は？",
+      "choices": [
+        "y=(x−1)²+2",
+        "y=(x+2)²−1",
+        "y=(x+1)²+2",
+        "y=(x+1)²−2"
+      ],
+      "answerIndex": 2,
+      "explanation": "x を x+1、y を y−2 におきかえる。"
+    },
+    {
+      "id": "mat_m110_016",
+      "unit": "math.m1.quad.graph.move",
+      "category": "calculation",
+      "prompt": "y=(x−1)² のグラフを y 軸に関して対称移動した式は？",
+      "choices": [
+        "y=(x+1)²",
+        "y=(x−1)²",
+        "y=−(x+1)²",
+        "y=−(x−1)²"
+      ],
+      "answerIndex": 0,
+      "explanation": "x を −x におきかえる。"
+    },
+    {
+      "id": "mat_m110_017",
+      "unit": "math.m1.quad.graph.vertex",
+      "category": "calculation",
+      "prompt": "y=x²−4 のグラフと x 軸の交点の x 座標は？",
+      "choices": [
+        "±2",
+        "2",
+        "4",
+        "±4"
+      ],
+      "answerIndex": 0,
+      "explanation": "x²=4。"
+    },
+    {
+      "id": "mat_m110_018",
+      "unit": "math.m1.quad.graph.vertex",
+      "category": "calculation",
+      "prompt": "y=x²+2x+3 のグラフと y 軸の交点は？",
+      "choices": [
+        "(−1, 2)",
+        "(3, 0)",
+        "(0, 2)",
+        "(0, 3)"
+      ],
+      "answerIndex": 3,
+      "explanation": "x=0 を代入。"
+    },
+    {
+      "id": "mat_m110_019",
+      "unit": "math.m1.quad.graph.vertex",
+      "category": "calculation",
+      "prompt": "y=−2x²+4x+1 のグラフの軸は？",
+      "choices": [
+        "x=4",
+        "x=2",
+        "x=1",
+        "x=−1"
+      ],
+      "answerIndex": 2,
+      "explanation": "−2(x−1)²+3。"
+    },
+    {
+      "id": "mat_m110_020",
+      "unit": "math.m1.quad.maxmin",
+      "category": "knowledge",
+      "prompt": "y=a(x−p)²+q で、|a| が大きいほどグラフはどうなる？",
+      "choices": [
+        "軸が右に移る",
+        "頂点が上に移る",
+        "開き方が小さくなる（細くなる）",
+        "開き方が大きくなる"
+      ],
+      "answerIndex": 2,
+      "explanation": "|a| が大きいほど、x が変わったときの y の変化が大きい。"
+    }
+  ]
+}

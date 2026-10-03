@@ -1,0 +1,456 @@
+{
+  "setId": "science_chemistry_13",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_chm13_001",
+      "unit": "science.chemistry.inorganic.nonmetal.halogen",
+      "category": "knowledge",
+      "prompt": "ハロゲンの単体の酸化力の強さの順は？",
+      "choices": [
+        "F₂ > Cl₂ > Br₂ > I₂",
+        "すべて同じ",
+        "Cl₂ > F₂ > I₂ > Br₂",
+        "I₂ > Br₂ > Cl₂ > F₂"
+      ],
+      "answerIndex": 0,
+      "explanation": "原子番号が小さいほど電子を受け取りやすく、酸化力が強い。"
+    },
+    {
+      "id": "sci_chm13_002",
+      "unit": "science.chemistry.inorganic.nonmetal.halogen",
+      "category": "knowledge",
+      "prompt": "塩素 Cl₂ の色は？",
+      "choices": [
+        "紫色",
+        "赤褐色",
+        "黄緑色",
+        "無色"
+      ],
+      "answerIndex": 2,
+      "explanation": "F₂ は淡黄色、Cl₂ は黄緑色、Br₂ は赤褐色の液体、I₂ は黒紫色の固体。"
+    },
+    {
+      "id": "sci_chm13_003",
+      "unit": "science.chemistry.inorganic.nonmetal.carbon",
+      "category": "knowledge",
+      "prompt": "ガラスを溶かすため、ポリエチレンの容器に保存する酸は？",
+      "choices": [
+        "フッ化水素酸",
+        "塩酸",
+        "硫酸",
+        "硝酸"
+      ],
+      "answerIndex": 0,
+      "explanation": "HF はガラスの主成分 SiO₂ と反応する。ガラスの目盛りつけに使われる。"
+    },
+    {
+      "id": "sci_chm13_004",
+      "unit": "science.chemistry.inorganic.nonmetal.oxygen",
+      "category": "knowledge",
+      "prompt": "濃硫酸がもつ性質で、スクロース（砂糖）を黒くするのは？",
+      "choices": [
+        "脱水作用",
+        "揮発性",
+        "還元作用",
+        "中和作用"
+      ],
+      "answerIndex": 0,
+      "explanation": "濃硫酸は有機物から H と O を水として奪い、炭素が残る。"
+    },
+    {
+      "id": "sci_chm13_005",
+      "unit": "science.chemistry.inorganic.nonmetal.nitrogen",
+      "category": "knowledge",
+      "prompt": "アンモニアを工業的に合成する方法は？",
+      "choices": [
+        "接触法",
+        "ソルベー法",
+        "オストワルト法",
+        "ハーバー・ボッシュ法"
+      ],
+      "answerIndex": 3,
+      "explanation": "N₂ ＋ 3H₂ ⇄ 2NH₃。鉄を主成分とする触媒を使う。"
+    },
+    {
+      "id": "sci_chm13_006",
+      "unit": "science.chemistry.inorganic.nonmetal.nitrogen",
+      "category": "knowledge",
+      "prompt": "硝酸を工業的につくる方法は？",
+      "choices": [
+        "ハーバー・ボッシュ法",
+        "接触法",
+        "オストワルト法",
+        "アンモニアソーダ法"
+      ],
+      "answerIndex": 2,
+      "explanation": "NH₃ を酸化して NO → NO₂ → HNO₃ にする。硫酸は接触法。"
+    },
+    {
+      "id": "sci_chm13_007",
+      "unit": "science.chemistry.inorganic.nonmetal.nitrogen",
+      "category": "knowledge",
+      "prompt": "二酸化窒素 NO₂ の色は？",
+      "choices": [
+        "黄緑色",
+        "無色",
+        "赤褐色",
+        "青色"
+      ],
+      "answerIndex": 2,
+      "explanation": "NO は無色で、空気中で酸化されてすぐ赤褐色の NO₂ になる。"
+    },
+    {
+      "id": "sci_chm13_008",
+      "unit": "science.chemistry.inorganic.nonmetal.carbon",
+      "category": "knowledge",
+      "prompt": "半導体として電子部品に使われる元素は？",
+      "choices": [
+        "ヘリウム He",
+        "硫黄 S",
+        "塩素 Cl",
+        "ケイ素 Si"
+      ],
+      "answerIndex": 3,
+      "explanation": "高純度のケイ素は半導体の材料。SiO₂ は石英・水晶・ガラスの主成分。"
+    },
+    {
+      "id": "sci_chm13_009",
+      "unit": "science.chemistry.inorganic.nonmetal.oxygen",
+      "category": "knowledge",
+      "prompt": "オゾン O₃ について正しいものは？",
+      "choices": [
+        "無臭で反応しにくい",
+        "窒素の化合物",
+        "酸素の同素体で、強い酸化力をもつ",
+        "金属である"
+      ],
+      "answerIndex": 2,
+      "explanation": "淡青色・特異臭の気体。成層圏のオゾン層は紫外線を吸収する。"
+    },
+    {
+      "id": "sci_chm13_010",
+      "unit": "science.chemistry.inorganic.nonmetal.nitrogen",
+      "category": "knowledge",
+      "prompt": "濃硝酸を褐色のびんに入れて保存する理由は？",
+      "choices": [
+        "光によって分解しやすいから",
+        "燃えやすいから",
+        "ガラスを溶かすから",
+        "空気中の水分を吸いやすいから"
+      ],
+      "answerIndex": 0,
+      "explanation": "光や熱で分解して NO₂ を生じる。ガラスを溶かすフッ化水素酸はポリエチレン容器に保存する。"
+    },
+    {
+      "id": "sci_chm13_011",
+      "unit": "science.chemistry.inorganic.nonmetal",
+      "category": "calculation",
+      "prompt": "N₂ 1.0 mol がすべて反応すると、NH₃ は最大何 mol できる？（N₂ ＋ 3H₂ → 2NH₃）",
+      "choices": [
+        "2.0 mol",
+        "0.50 mol",
+        "3.0 mol",
+        "1.0 mol"
+      ],
+      "answerIndex": 0,
+      "explanation": "係数の比 N₂ : NH₃ ＝ 1 : 2。"
+    },
+    {
+      "id": "sci_chm13_012",
+      "unit": "science.chemistry.inorganic.nonmetal.nitrogen",
+      "category": "calculation",
+      "prompt": "アンモニア 17 g の物質量は？（N ＝ 14、H ＝ 1.0）",
+      "choices": [
+        "17 mol",
+        "2.0 mol",
+        "1.0 mol",
+        "0.50 mol"
+      ],
+      "answerIndex": 2,
+      "explanation": "NH₃ の分子量 17。17 ÷ 17 ＝ 1.0 mol。"
+    },
+    {
+      "id": "sci_chm13_013",
+      "unit": "science.chemistry.inorganic.nonmetal",
+      "category": "calculation",
+      "prompt": "MnO₂ ＋ 4HCl → MnCl₂ ＋ 2H₂O ＋ Cl₂。HCl 0.40 mol がすべて反応すると、Cl₂ は何 mol 出る？",
+      "choices": [
+        "1.6 mol",
+        "0.10 mol",
+        "0.20 mol",
+        "0.40 mol"
+      ],
+      "answerIndex": 1,
+      "explanation": "係数の比 HCl : Cl₂ ＝ 4 : 1。0.40 ÷ 4 ＝ 0.10 mol。"
+    },
+    {
+      "id": "sci_chm13_014",
+      "unit": "science.chemistry.inorganic.nonmetal.oxygen",
+      "category": "calculation",
+      "prompt": "硫黄 32 g を完全燃焼させると、SO₂ は何 g できる？（S ＝ 32、O ＝ 16）",
+      "choices": [
+        "96 g",
+        "48 g",
+        "64 g",
+        "32 g"
+      ],
+      "answerIndex": 2,
+      "explanation": "S ＋ O₂ → SO₂。S 1.0 mol → SO₂ 1.0 mol ＝ 64 g。"
+    },
+    {
+      "id": "sci_chm13_015",
+      "unit": "science.chemistry.inorganic.nonmetal.halogen",
+      "category": "thinking",
+      "prompt": "塩素を集めるのに適した方法は？",
+      "choices": [
+        "どの方法でもよい",
+        "下方置換（空気より重く、水に溶けやすいから）",
+        "水上置換",
+        "上方置換"
+      ],
+      "answerIndex": 1,
+      "explanation": "Cl₂ は分子量 71 で空気（平均 29）より重く、水に溶けるので下方置換。"
+    },
+    {
+      "id": "sci_chm13_016",
+      "unit": "science.chemistry.inorganic.nonmetal.nitrogen",
+      "category": "thinking",
+      "prompt": "アンモニアを集めるのに適した方法は？",
+      "choices": [
+        "上方置換（空気より軽く、水にとても溶けやすいから）",
+        "どの方法でもよい",
+        "下方置換",
+        "水上置換"
+      ],
+      "answerIndex": 0,
+      "explanation": "NH₃ は分子量 17 で空気より軽く、水に非常によく溶ける。"
+    },
+    {
+      "id": "sci_chm13_017",
+      "unit": "science.chemistry.inorganic.nonmetal.halogen",
+      "category": "knowledge",
+      "prompt": "ヨウ素 I₂ の常温での状態と色は？",
+      "choices": [
+        "黄緑色の気体",
+        "赤褐色の液体",
+        "淡黄色の気体",
+        "黒紫色の固体"
+      ],
+      "answerIndex": 3,
+      "explanation": "F₂ 淡黄色気体、Cl₂ 黄緑色気体、Br₂ 赤褐色液体。"
+    },
+    {
+      "id": "sci_chm13_018",
+      "unit": "science.chemistry.inorganic.nonmetal.halogen",
+      "category": "knowledge",
+      "prompt": "ヨウ素デンプン反応の色は？",
+      "choices": [
+        "白色",
+        "青紫色",
+        "赤色",
+        "黄色"
+      ],
+      "answerIndex": 1,
+      "explanation": "デンプンの検出に使う。"
+    },
+    {
+      "id": "sci_chm13_019",
+      "unit": "science.chemistry.inorganic.nonmetal.halogen",
+      "category": "knowledge",
+      "prompt": "塩化水素の水溶液（塩酸）の性質は？",
+      "choices": [
+        "強い酸性",
+        "塩基性",
+        "中性",
+        "弱い酸性"
+      ],
+      "answerIndex": 0,
+      "explanation": "ほぼ完全に電離する強酸。"
+    },
+    {
+      "id": "sci_chm13_020",
+      "unit": "science.chemistry.inorganic.nonmetal.oxygen",
+      "category": "knowledge",
+      "prompt": "硫化水素 H₂S の特徴は？",
+      "choices": [
+        "腐卵臭のある有毒な気体",
+        "無色無臭の気体",
+        "甘いにおいの液体",
+        "黄緑色の気体"
+      ],
+      "answerIndex": 0,
+      "explanation": "還元剤としてはたらく。"
+    },
+    {
+      "id": "sci_chm13_021",
+      "unit": "science.chemistry.inorganic.nonmetal",
+      "category": "knowledge",
+      "prompt": "接触法でつくられる物質は？",
+      "choices": [
+        "アンモニア",
+        "塩酸",
+        "硫酸",
+        "硝酸"
+      ],
+      "answerIndex": 2,
+      "explanation": "SO₂ を V₂O₅ 触媒で SO₃ にし、水と反応させる。"
+    },
+    {
+      "id": "sci_chm13_022",
+      "unit": "science.chemistry.inorganic.nonmetal.nitrogen",
+      "category": "knowledge",
+      "prompt": "一酸化窒素 NO を空気にふれさせるとどうなる？",
+      "choices": [
+        "酸素と反応して赤褐色の NO₂ になる",
+        "液体になる",
+        "無色のまま変化しない",
+        "白い煙になる"
+      ],
+      "answerIndex": 0,
+      "explanation": "2NO ＋ O₂ → 2NO₂。"
+    },
+    {
+      "id": "sci_chm13_023",
+      "unit": "science.chemistry.inorganic.nonmetal.carbon",
+      "category": "knowledge",
+      "prompt": "ケイ素の単体の結晶の構造は？",
+      "choices": [
+        "分子結晶",
+        "金属結晶",
+        "ダイヤモンドと同じ共有結合の結晶",
+        "イオン結晶"
+      ],
+      "answerIndex": 2,
+      "explanation": "各原子が 4 つの原子と共有結合する。"
+    },
+    {
+      "id": "sci_chm13_024",
+      "unit": "science.chemistry.inorganic.nonmetal.carbon",
+      "category": "knowledge",
+      "prompt": "ガラスの主成分は？",
+      "choices": [
+        "二酸化ケイ素 SiO₂",
+        "酸化アルミニウム",
+        "塩化ナトリウム",
+        "炭酸カルシウム"
+      ],
+      "answerIndex": 0,
+      "explanation": "石英やケイ砂も SiO₂。"
+    },
+    {
+      "id": "sci_chm13_025",
+      "unit": "science.chemistry.inorganic.nonmetal",
+      "category": "knowledge",
+      "prompt": "希ガス（貴ガス）の性質は？",
+      "choices": [
+        "金属である",
+        "水によく溶ける",
+        "強い酸化力をもつ",
+        "ほとんど化合物をつくらず、単原子分子として存在する"
+      ],
+      "answerIndex": 3,
+      "explanation": "最外殻が安定した電子配置。"
+    },
+    {
+      "id": "sci_chm13_026",
+      "unit": "science.chemistry.inorganic.nonmetal",
+      "category": "calculation",
+      "prompt": "N₂ ＋ 3H₂ → 2NH₃ で、標準状態の N₂ 11.2 L がすべて反応すると、NH₃ は何 mol できる？",
+      "choices": [
+        "22.4 mol",
+        "1.0 mol",
+        "0.50 mol",
+        "2.0 mol"
+      ],
+      "answerIndex": 1,
+      "explanation": "N₂ 11.2 L ＝ 0.50 mol。係数の比 N₂ : NH₃ ＝ 1 : 2 なので 1.0 mol。"
+    },
+    {
+      "id": "sci_chm13_027",
+      "unit": "science.chemistry.inorganic.nonmetal.oxygen",
+      "category": "calculation",
+      "prompt": "二酸化硫黄 SO₂ 64 g の物質量は？（S ＝ 32、O ＝ 16）",
+      "choices": [
+        "2.0 mol",
+        "0.50 mol",
+        "1.0 mol",
+        "64 mol"
+      ],
+      "answerIndex": 2,
+      "explanation": "分子量 64。"
+    },
+    {
+      "id": "sci_chm13_028",
+      "unit": "science.chemistry.inorganic.nonmetal",
+      "category": "calculation",
+      "prompt": "4NH₃ ＋ 5O₂ → 4NO ＋ 6H₂O で、NH₃ 2.0 mol と反応する O₂ は？",
+      "choices": [
+        "1.6 mol",
+        "2.5 mol",
+        "2.0 mol",
+        "5.0 mol"
+      ],
+      "answerIndex": 1,
+      "explanation": "4：5 の比。"
+    },
+    {
+      "id": "sci_chm13_029",
+      "unit": "science.chemistry.inorganic.nonmetal.oxygen",
+      "category": "calculation",
+      "prompt": "濃硫酸（98 %、密度 1.8 g/cm³）1.0 L にふくまれる H₂SO₄ は約何 mol？（分子量 98）",
+      "choices": [
+        "約 1.8 mol",
+        "約 10 mol",
+        "約 18 mol",
+        "約 98 mol"
+      ],
+      "answerIndex": 2,
+      "explanation": "1800 g × 0.98 ÷ 98。"
+    },
+    {
+      "id": "sci_chm13_030",
+      "unit": "science.chemistry.inorganic.nonmetal",
+      "category": "calculation",
+      "prompt": "FeS ＋ H₂SO₄ → FeSO₄ ＋ H₂S で、FeS 8.8 g から発生する H₂S は何 mol？（FeS ＝ 88）",
+      "choices": [
+        "0.050 mol",
+        "1.0 mol",
+        "0.10 mol",
+        "0.20 mol"
+      ],
+      "answerIndex": 2,
+      "explanation": "8.8 ÷ 88。"
+    },
+    {
+      "id": "sci_chm13_031",
+      "unit": "science.chemistry.inorganic.nonmetal.halogen",
+      "category": "thinking",
+      "prompt": "塩素を水に溶かした塩素水に、殺菌・漂白作用がある理由は？",
+      "choices": [
+        "水と反応してできる次亜塩素酸 HClO が強い酸化作用をもつから",
+        "塩素が沈殿するから",
+        "塩化水素ができるから",
+        "水が酸性になるから"
+      ],
+      "answerIndex": 0,
+      "explanation": "Cl₂ ＋ H₂O ⇄ HCl ＋ HClO。"
+    },
+    {
+      "id": "sci_chm13_032",
+      "unit": "science.chemistry.inorganic.nonmetal.nitrogen",
+      "category": "thinking",
+      "prompt": "二酸化窒素 NO₂ を水上置換で集めない理由は？",
+      "choices": [
+        "燃えやすいから",
+        "色があるから",
+        "水より重いから",
+        "水によく溶けて反応するから"
+      ],
+      "answerIndex": 3,
+      "explanation": "NO₂ は下方置換で集める。"
+    }
+  ]
+}

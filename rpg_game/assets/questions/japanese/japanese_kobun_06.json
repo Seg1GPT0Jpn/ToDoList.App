@@ -1,0 +1,344 @@
+{
+  "setId": "japanese_kobun_06",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "jap_kobun06_001",
+      "unit": "japanese.kobun.grammar.joshi.final",
+      "category": "knowledge",
+      "prompt": "終助詞「ばや」の意味は？",
+      "choices": [
+        "他への願望（〜してほしい）",
+        "自分の願望（〜したい）",
+        "詠嘆",
+        "禁止"
+      ],
+      "answerIndex": 1,
+      "explanation": "未然形に接続する。"
+    },
+    {
+      "id": "jap_kobun06_002",
+      "unit": "japanese.kobun.grammar.joshi.final",
+      "category": "knowledge",
+      "prompt": "未然形につく終助詞「なむ」の意味は？",
+      "choices": [
+        "他への願望（〜してほしい）",
+        "自分の願望",
+        "強意",
+        "推量"
+      ],
+      "answerIndex": 0,
+      "explanation": "「花咲かなむ」＝花が咲いてほしい。"
+    },
+    {
+      "id": "jap_kobun06_003",
+      "unit": "japanese.kobun.grammar.joshi",
+      "category": "knowledge",
+      "prompt": "「な〜そ」の意味は？",
+      "choices": [
+        "禁止（〜するな）",
+        "願望",
+        "疑問",
+        "強意"
+      ],
+      "answerIndex": 0,
+      "explanation": "「な言ひそ」＝言うな。"
+    },
+    {
+      "id": "jap_kobun06_004",
+      "unit": "japanese.kobun.grammar.joshi.final",
+      "category": "knowledge",
+      "prompt": "副助詞「だに」の意味として適切なものは？",
+      "choices": [
+        "強意",
+        "限定（〜だけ）",
+        "添加（〜までも）",
+        "類推（〜さえ）・最小限の限定（せめて〜だけでも）"
+      ],
+      "answerIndex": 3,
+      "explanation": "「さへ」は添加（〜までも）。"
+    },
+    {
+      "id": "jap_kobun06_005",
+      "unit": "japanese.kobun.grammar.joshi.case",
+      "category": "knowledge",
+      "prompt": "接続助詞「ども」の意味は？",
+      "choices": [
+        "並列",
+        "順接の仮定条件",
+        "逆接の確定条件（〜けれども）",
+        "原因"
+      ],
+      "answerIndex": 2,
+      "explanation": "已然形に接続する。"
+    },
+    {
+      "id": "jap_kobun06_006",
+      "unit": "japanese.kobun.grammar.joshi.kakari",
+      "category": "knowledge",
+      "prompt": "終助詞「かな」の意味は？",
+      "choices": [
+        "疑問",
+        "禁止",
+        "詠嘆（〜だなあ）",
+        "願望"
+      ],
+      "answerIndex": 2,
+      "explanation": "体言や連体形に接続する。"
+    },
+    {
+      "id": "jap_kobun06_007",
+      "unit": "japanese.kobun.grammar.joshi.final",
+      "category": "knowledge",
+      "prompt": "「もがな」の意味は？",
+      "choices": [
+        "願望（〜があればなあ）",
+        "反語",
+        "禁止",
+        "詠嘆"
+      ],
+      "answerIndex": 0,
+      "explanation": "「〜もがな」＝〜があったらいいなあ。"
+    },
+    {
+      "id": "jap_kobun06_008",
+      "unit": "japanese.kobun.grammar.joshi",
+      "category": "knowledge",
+      "prompt": "「え〜打消」の意味は？",
+      "choices": [
+        "部分否定",
+        "強い否定",
+        "禁止",
+        "不可能（〜できない）"
+      ],
+      "answerIndex": 3,
+      "explanation": "呼応の副詞「え」。「え言はず」＝言うことができない。"
+    },
+    {
+      "id": "jap_kobun06_009",
+      "unit": "japanese.kobun.grammar.joshi",
+      "category": "knowledge",
+      "prompt": "「つゆ〜打消」の意味は？",
+      "choices": [
+        "たぶん〜ない",
+        "きっと〜ない",
+        "少しも〜ない",
+        "まさか〜ない"
+      ],
+      "answerIndex": 2,
+      "explanation": "「つゆ知らず」＝少しも知らない。"
+    },
+    {
+      "id": "jap_kobun06_010",
+      "unit": "japanese.kobun.grammar.joshi.case",
+      "category": "thinking",
+      "prompt": "「白き鳥の、嘴と脚と赤き」の「の」の用法は？",
+      "choices": [
+        "同格（〜で）",
+        "比喩（〜のような）",
+        "主格（〜が）",
+        "連体修飾格"
+      ],
+      "answerIndex": 0,
+      "explanation": "「白い鳥で、くちばしと脚が赤い鳥」。「の」の後に同じ名詞が補える。（伊勢物語）"
+    },
+    {
+      "id": "jap_kobun06_011",
+      "unit": "japanese.kobun.grammar.joshi.case",
+      "category": "thinking",
+      "prompt": "「月の出でたる夜」の「の」の用法は？",
+      "choices": [
+        "同格",
+        "連体修飾格",
+        "主格（〜が）",
+        "比喩"
+      ],
+      "answerIndex": 2,
+      "explanation": "「月が出ている夜」。"
+    },
+    {
+      "id": "jap_kobun06_012",
+      "unit": "japanese.kobun.grammar.joshi.kakari",
+      "category": "thinking",
+      "prompt": "「いかでこの人に会はばや」の意味は？",
+      "choices": [
+        "どうしてこの人に会うのか",
+        "この人には会わない",
+        "なんとかしてこの人に会いたい",
+        "この人に会ってほしい"
+      ],
+      "answerIndex": 2,
+      "explanation": "「いかで〜ばや」＝なんとかして〜したい。"
+    },
+    {
+      "id": "jap_kobun06_013",
+      "unit": "japanese.kobun.grammar.joshi",
+      "category": "knowledge",
+      "prompt": "「徒歩より参りけり」の「より」の意味は？",
+      "choices": [
+        "経由（〜を通って）",
+        "起点（〜から）",
+        "比較（〜より）",
+        "手段（〜で）"
+      ],
+      "answerIndex": 3,
+      "explanation": "徒歩で参上した。"
+    },
+    {
+      "id": "jap_kobun06_014",
+      "unit": "japanese.kobun.grammar.joshi",
+      "category": "knowledge",
+      "prompt": "「友とする人ひとりふたりして行きけり」の「して」の意味は？",
+      "choices": [
+        "手段",
+        "使役の対象",
+        "共同（〜と一緒に）",
+        "原因"
+      ],
+      "answerIndex": 2,
+      "explanation": "（伊勢物語）"
+    },
+    {
+      "id": "jap_kobun06_015",
+      "unit": "japanese.kobun.grammar.joshi.case",
+      "category": "knowledge",
+      "prompt": "接続助詞「で」の意味は？",
+      "choices": [
+        "場所",
+        "打消の接続（〜しないで）",
+        "強意",
+        "順接"
+      ],
+      "answerIndex": 1,
+      "explanation": "未然形に接続する。"
+    },
+    {
+      "id": "jap_kobun06_016",
+      "unit": "japanese.kobun.grammar.joshi.final",
+      "category": "knowledge",
+      "prompt": "副助詞「し」のはたらきは？",
+      "choices": [
+        "類推",
+        "限定",
+        "強意",
+        "添加"
+      ],
+      "answerIndex": 2,
+      "explanation": "訳さなくてもよいことが多い。"
+    },
+    {
+      "id": "jap_kobun06_017",
+      "unit": "japanese.kobun.grammar.joshi.kakari",
+      "category": "knowledge",
+      "prompt": "終助詞「かし」の意味は？",
+      "choices": [
+        "念押し（〜よ・〜ね）",
+        "禁止",
+        "願望",
+        "疑問"
+      ],
+      "answerIndex": 0,
+      "explanation": "文末について強調する。"
+    },
+    {
+      "id": "jap_kobun06_018",
+      "unit": "japanese.kobun.grammar.joshi",
+      "category": "knowledge",
+      "prompt": "文末の「な」（終止形接続）の意味は？",
+      "choices": [
+        "疑問",
+        "禁止（〜するな）",
+        "詠嘆",
+        "願望"
+      ],
+      "answerIndex": 1,
+      "explanation": "「な〜そ」よりも強い禁止。"
+    },
+    {
+      "id": "jap_kobun06_019",
+      "unit": "japanese.kobun.grammar.joshi.final",
+      "category": "knowledge",
+      "prompt": "終助詞「てしがな」の意味は？",
+      "choices": [
+        "自分の願望（〜したいものだ）",
+        "禁止",
+        "反語",
+        "他への願望"
+      ],
+      "answerIndex": 0,
+      "explanation": "連用形に接続する。"
+    },
+    {
+      "id": "jap_kobun06_020",
+      "unit": "japanese.kobun.grammar.joshi.case",
+      "category": "knowledge",
+      "prompt": "副助詞「のみ」のはたらきは？",
+      "choices": [
+        "類推",
+        "限定・強意",
+        "並列",
+        "添加"
+      ],
+      "answerIndex": 1,
+      "explanation": "「〜だけ」「特に〜」。"
+    },
+    {
+      "id": "jap_kobun06_021",
+      "unit": "japanese.kobun.grammar.joshi.final",
+      "category": "knowledge",
+      "prompt": "副助詞「さへ」の意味は？",
+      "choices": [
+        "限定",
+        "強意",
+        "類推（〜さえ）",
+        "添加（〜までも）"
+      ],
+      "answerIndex": 3,
+      "explanation": "現代語の「さえ」とは意味がずれる。"
+    },
+    {
+      "id": "jap_kobun06_022",
+      "unit": "japanese.kobun.grammar.joshi.case",
+      "category": "knowledge",
+      "prompt": "接続助詞「ながら」の意味として適切なものは？",
+      "choices": [
+        "〜ならば",
+        "〜ので",
+        "〜のままで・〜けれども",
+        "〜して"
+      ],
+      "answerIndex": 2,
+      "explanation": "状態の継続や逆接を表す。"
+    },
+    {
+      "id": "jap_kobun06_023",
+      "unit": "japanese.kobun.grammar.joshi.kakari",
+      "category": "knowledge",
+      "prompt": "係助詞「も」のはたらきは？",
+      "choices": [
+        "並列・強意など",
+        "反語",
+        "疑問",
+        "禁止"
+      ],
+      "answerIndex": 0,
+      "explanation": "結びの形は変えない。"
+    },
+    {
+      "id": "jap_kobun06_024",
+      "unit": "japanese.kobun.grammar.joshi",
+      "category": "thinking",
+      "prompt": "「花の散るを見て」の「を」の品詞は？",
+      "choices": [
+        "接続助詞",
+        "格助詞",
+        "終助詞",
+        "係助詞"
+      ],
+      "answerIndex": 1,
+      "explanation": "「花が散るのを見て」で、見る対象を示す。"
+    }
+  ]
+}

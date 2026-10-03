@@ -1,0 +1,248 @@
+{
+  "setId": "sea_g3_05",
+  "worldId": "sea",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g3_05_01",
+      "unit": "english.eng.structure.special.emphasis",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "It was in this room (   ) the meeting was held.",
+      "choices": [
+        "which",
+        "that",
+        "where",
+        "what"
+      ],
+      "answerIndex": 1,
+      "explanation": "It was 〜 that … の強調構文。副詞句（in this room）を強調している。"
+    },
+    {
+      "id": "sea_g3_05_02",
+      "unit": "english.eng.structure.special.emphasis",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He (   ) come, but he left soon.",
+      "choices": [
+        "does",
+        "did",
+        "do",
+        "was"
+      ],
+      "answerIndex": 1,
+      "explanation": "did + 動詞の原形 で「確かに〜した」と強調。"
+    },
+    {
+      "id": "sea_g3_05_03",
+      "unit": "english.eng.structure.special.apposition",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This is, (   ) I know, the best restaurant in town.",
+      "choices": [
+        "as long as",
+        "as far as",
+        "as soon as",
+        "as well as"
+      ],
+      "answerIndex": 1,
+      "explanation": "as far as I know（私の知る限り）は挿入句。"
+    },
+    {
+      "id": "sea_g3_05_04",
+      "unit": "english.eng.structure.special.apposition",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "We visited Kyoto, (   ) ancient capital of Japan.",
+      "choices": [
+        "a",
+        "the",
+        "that",
+        "which"
+      ],
+      "answerIndex": 1,
+      "explanation": "Kyoto と the ancient capital of Japan は同格。「日本の古都である京都」。"
+    },
+    {
+      "id": "sea_g3_05_05",
+      "unit": "english.eng.structure.special.emphasis",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "What on (   ) are you doing?",
+      "choices": [
+        "world",
+        "earth",
+        "ground",
+        "life"
+      ],
+      "answerIndex": 1,
+      "explanation": "疑問詞 + on earth で「いったい〜」と強調する。"
+    },
+    {
+      "id": "sea_g3_05_06",
+      "unit": "english.eng.structure.special.emphasis",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He did not say a (   ) word.",
+      "choices": [
+        "one",
+        "single",
+        "only",
+        "lonely"
+      ],
+      "answerIndex": 1,
+      "explanation": "not a single 〜 で「ただの1つも〜ない」と強調。"
+    },
+    {
+      "id": "sea_g3_05_07",
+      "unit": "english.eng.structure.special",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "It was not until he lost his health (   ) he realized its value.",
+      "choices": [
+        "that",
+        "when",
+        "which",
+        "what"
+      ],
+      "answerIndex": 0,
+      "explanation": "It was not until ... that ...「〜して初めて…」。"
+    },
+    {
+      "id": "sea_g3_05_08",
+      "unit": "english.eng.structure.special.emphasis",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "It is you (   ) are to blame.",
+      "choices": [
+        "who",
+        "which",
+        "whom",
+        "whose"
+      ],
+      "answerIndex": 0,
+      "explanation": "強調構文で人を強調するときは who も使える。"
+    },
+    {
+      "id": "sea_g3_05_09",
+      "unit": "english.eng.structure.special.emphasis",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I do (   ) that you will succeed.",
+      "choices": [
+        "believes",
+        "believing",
+        "believed",
+        "believe"
+      ],
+      "answerIndex": 3,
+      "explanation": "助動詞 do で動詞を強調。原形になる。"
+    },
+    {
+      "id": "sea_g3_05_10",
+      "unit": "english.eng.structure.special",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He was late, (   ) is often the case with him.",
+      "choices": [
+        "who",
+        "as",
+        "that",
+        "what"
+      ],
+      "answerIndex": 1,
+      "explanation": "as is often the case with 〜「〜にはよくあることだが」。as は前後の内容を受ける関係代名詞。"
+    },
+    {
+      "id": "sea_g3_05_11",
+      "unit": "english.eng.structure.special.apposition",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "There is no doubt (   ) he will succeed.",
+      "choices": [
+        "that",
+        "what",
+        "which",
+        "if"
+      ],
+      "answerIndex": 0,
+      "explanation": "no doubt の内容を説明する同格の that。"
+    },
+    {
+      "id": "sea_g3_05_12",
+      "unit": "english.eng.structure.special.apposition",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This is, (   ), the best way.",
+      "choices": [
+        "to think I",
+        "I think",
+        "thinking I",
+        "I thinking"
+      ],
+      "answerIndex": 1,
+      "explanation": "I think の挿入。"
+    },
+    {
+      "id": "sea_g3_05_13",
+      "unit": "english.eng.structure.special",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "All you (   ) do is wait here.",
+      "choices": [
+        "must to",
+        "having to",
+        "have to",
+        "has to"
+      ],
+      "answerIndex": 2,
+      "explanation": "All you have to do is (to) 〜「〜しさえすればよい」。"
+    },
+    {
+      "id": "sea_g3_05_14",
+      "unit": "english.eng.structure.special",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I have not the (   ) idea what he means.",
+      "choices": [
+        "little",
+        "smallest of",
+        "slightest",
+        "least of"
+      ],
+      "answerIndex": 2,
+      "explanation": "not the slightest「少しも〜ない」。"
+    },
+    {
+      "id": "sea_g3_05_15",
+      "unit": "english.eng.structure.special.apposition",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "We met Mr. Smith, (   ) teacher.",
+      "choices": [
+        "our English",
+        "whose our",
+        "who our English",
+        "which our"
+      ],
+      "answerIndex": 0,
+      "explanation": "名詞を並べた同格。"
+    },
+    {
+      "id": "sea_g3_05_16",
+      "unit": "english.eng.structure.special.emphasis",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I (   ) hope you will come again.",
+      "choices": [
+        "do",
+        "will",
+        "am",
+        "have"
+      ],
+      "answerIndex": 0,
+      "explanation": "動詞の前の do は強調「本当に」。"
+    }
+  ]
+}

@@ -1,0 +1,344 @@
+{
+  "setId": "social_geo_06",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_geo06_001",
+      "unit": "social.geo.nature.climate.element",
+      "category": "knowledge",
+      "prompt": "赤道付近で上昇し、緯度 30 度付近で下降する大気の循環によってできる、雨の少ない気圧帯は？",
+      "choices": [
+        "亜熱帯高圧帯",
+        "亜寒帯低圧帯",
+        "赤道低圧帯",
+        "極高圧帯"
+      ],
+      "answerIndex": 0,
+      "explanation": "亜熱帯高圧帯付近には砂漠が広がる。"
+    },
+    {
+      "id": "soc_geo06_002",
+      "unit": "social.geo.nature.climate.koppen",
+      "category": "knowledge",
+      "prompt": "亜熱帯高圧帯から赤道に向かって吹く東よりの風は？",
+      "choices": [
+        "偏西風",
+        "季節風",
+        "極東風",
+        "貿易風"
+      ],
+      "answerIndex": 3,
+      "explanation": "北半球では北東、南半球では南東から吹く。"
+    },
+    {
+      "id": "soc_geo06_003",
+      "unit": "social.geo.nature.climate",
+      "category": "knowledge",
+      "prompt": "中緯度の上空を西から東へ吹く風は？",
+      "choices": [
+        "季節風",
+        "海陸風",
+        "偏西風",
+        "貿易風"
+      ],
+      "answerIndex": 2,
+      "explanation": "西ヨーロッパの温和な気候（西岸海洋性気候）の原因。"
+    },
+    {
+      "id": "soc_geo06_004",
+      "unit": "social.geo.nature.climate",
+      "category": "knowledge",
+      "prompt": "夏と冬で風向きが大きく変わる風を何という？",
+      "choices": [
+        "貿易風",
+        "フェーン",
+        "偏西風",
+        "季節風（モンスーン）"
+      ],
+      "answerIndex": 3,
+      "explanation": "東・南アジアで特に顕著。"
+    },
+    {
+      "id": "soc_geo06_005",
+      "unit": "social.geo.nature.climate.element",
+      "category": "knowledge",
+      "prompt": "ケッペンの気候区分で、気温ではなく降水量の少なさで区分される気候帯は？",
+      "choices": [
+        "熱帯（A）",
+        "寒帯（E）",
+        "温帯（C）",
+        "乾燥帯（B）"
+      ],
+      "answerIndex": 3,
+      "explanation": "樹木が育たない。ステップ（BS）と砂漠（BW）。"
+    },
+    {
+      "id": "soc_geo06_006",
+      "unit": "social.geo.nature.climate.koppen",
+      "category": "knowledge",
+      "prompt": "ケッペンの気候区分で、最も寒い月の平均気温が 18℃ 以上の気候帯は？",
+      "choices": [
+        "寒帯（E）",
+        "冷帯（D）",
+        "温帯（C）",
+        "熱帯（A）"
+      ],
+      "answerIndex": 3,
+      "explanation": "熱帯雨林気候（Af）、サバナ気候（Aw）など。"
+    },
+    {
+      "id": "soc_geo06_007",
+      "unit": "social.geo.nature.climate.koppen",
+      "category": "knowledge",
+      "prompt": "冷帯（D）の最も寒い月の平均気温の条件は？",
+      "choices": [
+        "0℃ 以上",
+        "−3℃ 未満",
+        "10℃ 以上",
+        "18℃ 以上"
+      ],
+      "answerIndex": 1,
+      "explanation": "温帯は最寒月 −3℃ 以上 18℃ 未満。冷帯は最暖月 10℃ 以上。"
+    },
+    {
+      "id": "soc_geo06_008",
+      "unit": "social.geo.nature.climate.element",
+      "category": "knowledge",
+      "prompt": "最も暖かい月でも平均気温が 10℃ 未満の気候帯は？",
+      "choices": [
+        "温帯（C）",
+        "寒帯（E）",
+        "冷帯（D）",
+        "乾燥帯（B）"
+      ],
+      "answerIndex": 1,
+      "explanation": "ツンドラ気候（ET）と氷雪気候（EF）。樹木が育たない。"
+    },
+    {
+      "id": "soc_geo06_009",
+      "unit": "social.geo.nature.climate.koppen",
+      "category": "knowledge",
+      "prompt": "夏に乾燥し冬に雨が多い温帯の気候は？",
+      "choices": [
+        "地中海性気候（Cs）",
+        "温暖冬季少雨気候（Cw）",
+        "温暖湿潤気候（Cfa）",
+        "西岸海洋性気候（Cfb）"
+      ],
+      "answerIndex": 0,
+      "explanation": "オリーブやぶどうの栽培がさかん。"
+    },
+    {
+      "id": "soc_geo06_010",
+      "unit": "social.geo.nature.climate",
+      "category": "knowledge",
+      "prompt": "南北アメリカの西岸など、寒流の影響で雨が少なくなる砂漠を何という？",
+      "choices": [
+        "雨陰砂漠",
+        "回帰線砂漠",
+        "内陸砂漠",
+        "海岸砂漠"
+      ],
+      "answerIndex": 3,
+      "explanation": "例：アタカマ砂漠、ナミブ砂漠。寒流で下層の大気が冷え、上昇気流が起きにくい。"
+    },
+    {
+      "id": "soc_geo06_011",
+      "unit": "social.geo.nature.climate.element",
+      "category": "thinking",
+      "prompt": "同じ緯度でも、ヨーロッパ西部が東アジアより冬に温暖な理由は？",
+      "choices": [
+        "季節風が強いから",
+        "標高が高いから",
+        "赤道に近いから",
+        "暖流の北大西洋海流と偏西風の影響を受けるから"
+      ],
+      "answerIndex": 3,
+      "explanation": "暖流の上を吹いてきた偏西風が暖かい空気を運ぶ。"
+    },
+    {
+      "id": "soc_geo06_012",
+      "unit": "social.geo.nature.climate.element",
+      "category": "thinking",
+      "prompt": "ある都市は、最寒月 5℃・最暖月 26℃ で、夏に降水量が多い。当てはまる気候は？",
+      "choices": [
+        "地中海性気候（Cs）",
+        "サバナ気候（Aw）",
+        "温暖湿潤気候（Cfa）",
+        "ツンドラ気候（ET）"
+      ],
+      "answerIndex": 2,
+      "explanation": "温帯（最寒月 −3〜18℃）で、最暖月 22℃ 以上・年中湿潤。東京など。"
+    },
+    {
+      "id": "soc_geo06_013",
+      "unit": "social.geo.nature.climate.element",
+      "category": "knowledge",
+      "prompt": "高度が 100 m 上がるごとに、気温はおよそ何℃下がる？",
+      "choices": [
+        "約0.6℃",
+        "約1.5℃",
+        "約0.06℃",
+        "約6℃"
+      ],
+      "answerIndex": 0,
+      "explanation": "山地が平地より涼しいのはこのため。"
+    },
+    {
+      "id": "soc_geo06_014",
+      "unit": "social.geo.nature.climate",
+      "category": "knowledge",
+      "prompt": "海に近い地域の気候（海洋性気候）の特徴は？",
+      "choices": [
+        "気温の年較差が大きい",
+        "雨が降らない",
+        "一年中寒い",
+        "気温の年較差が小さい"
+      ],
+      "answerIndex": 3,
+      "explanation": "水はあたたまりにくく冷めにくい。"
+    },
+    {
+      "id": "soc_geo06_015",
+      "unit": "social.geo.nature.climate",
+      "category": "knowledge",
+      "prompt": "内陸の地域の気候（大陸性気候）の特徴は？",
+      "choices": [
+        "一年中雨が多い",
+        "気温の年較差が小さい",
+        "気温の年較差が大きい",
+        "夏も冬も涼しい"
+      ],
+      "answerIndex": 2,
+      "explanation": "陸はあたたまりやすく冷めやすい。"
+    },
+    {
+      "id": "soc_geo06_016",
+      "unit": "social.geo.nature.climate.koppen",
+      "category": "knowledge",
+      "prompt": "西岸海洋性気候のケッペンの記号は？",
+      "choices": [
+        "Cfa",
+        "Cfb",
+        "Df",
+        "Cs"
+      ],
+      "answerIndex": 1,
+      "explanation": "偏西風と暖流の影響で、一年を通じて降水がある。"
+    },
+    {
+      "id": "soc_geo06_017",
+      "unit": "social.geo.nature.climate.koppen",
+      "category": "knowledge",
+      "prompt": "熱帯雨林気候のケッペンの記号は？",
+      "choices": [
+        "Af",
+        "BS",
+        "Aw",
+        "Cfa"
+      ],
+      "answerIndex": 0,
+      "explanation": "一年中高温で雨が多い。"
+    },
+    {
+      "id": "soc_geo06_018",
+      "unit": "social.geo.nature.climate.koppen",
+      "category": "knowledge",
+      "prompt": "サバナ気候のケッペンの記号は？",
+      "choices": [
+        "BW",
+        "Aw",
+        "Af",
+        "ET"
+      ],
+      "answerIndex": 1,
+      "explanation": "雨季と乾季がはっきりしている。"
+    },
+    {
+      "id": "soc_geo06_019",
+      "unit": "social.geo.nature.climate.koppen",
+      "category": "knowledge",
+      "prompt": "ステップ気候のケッペンの記号は？",
+      "choices": [
+        "Cs",
+        "BS",
+        "BW",
+        "Dw"
+      ],
+      "answerIndex": 1,
+      "explanation": "砂漠気候（BW）より少し雨が多く、短い草が生える。"
+    },
+    {
+      "id": "soc_geo06_020",
+      "unit": "social.geo.nature.climate.koppen",
+      "category": "knowledge",
+      "prompt": "ツンドラ気候のケッペンの記号は？",
+      "choices": [
+        "Df",
+        "BW",
+        "ET",
+        "EF"
+      ],
+      "answerIndex": 2,
+      "explanation": "夏に地表の氷がとけ、コケなどが生える。"
+    },
+    {
+      "id": "soc_geo06_021",
+      "unit": "social.geo.nature.climate.element",
+      "category": "knowledge",
+      "prompt": "冬に大陸から吹き出す季節風が、日本海をわたるときに多くの水蒸気をふくむ理由は？",
+      "choices": [
+        "暖流の対馬海流が流れる日本海の上を通るから",
+        "太平洋から吹くから",
+        "山を越えるから",
+        "寒流の上を通るから"
+      ],
+      "answerIndex": 0,
+      "explanation": "その水蒸気が日本海側の雪になる。"
+    },
+    {
+      "id": "soc_geo06_022",
+      "unit": "social.geo.nature.climate.element",
+      "category": "calculation",
+      "prompt": "標高 0 m の地点の気温が 25℃ のとき、同じ時刻の標高 2000 m の地点の気温はおよそ？",
+      "choices": [
+        "5℃",
+        "19℃",
+        "13℃",
+        "23℃"
+      ],
+      "answerIndex": 2,
+      "explanation": "100 m で 0.6℃ 下がるとすると、25−12。"
+    },
+    {
+      "id": "soc_geo06_023",
+      "unit": "social.geo.nature.climate.element",
+      "category": "calculation",
+      "prompt": "年降水量が 150 mm で、最暖月の平均気温が 32℃ の都市。当てはまる気候帯は？",
+      "choices": [
+        "冷帯（D）",
+        "温帯（C）",
+        "乾燥帯（B）",
+        "熱帯（A）"
+      ],
+      "answerIndex": 2,
+      "explanation": "降水量がきわめて少ないので乾燥帯。"
+    },
+    {
+      "id": "soc_geo06_024",
+      "unit": "social.geo.nature.climate.koppen",
+      "category": "thinking",
+      "prompt": "赤道付近で雨が多い理由は？",
+      "choices": [
+        "下降気流が生じるから",
+        "寒流が流れているから",
+        "標高が高いから",
+        "強い日射で空気があたためられ、上昇気流が生じて雲ができやすいから"
+      ],
+      "answerIndex": 3,
+      "explanation": "このあたりは低圧帯（熱帯収束帯）になる。"
+    }
+  ]
+}

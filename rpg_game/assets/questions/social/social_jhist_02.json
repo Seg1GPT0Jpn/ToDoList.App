@@ -1,0 +1,344 @@
+{
+  "setId": "social_jhist_02",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_jhist02_001",
+      "unit": "social.jhist.ancient.kofun.kofun",
+      "category": "knowledge",
+      "prompt": "3 世紀後半から近畿地方を中心に各地の豪族を従えた政権は？",
+      "choices": [
+        "律令国家だけ",
+        "鎌倉幕府",
+        "ヤマト政権（大和政権）",
+        "邪馬台国"
+      ],
+      "answerIndex": 2,
+      "explanation": "その王は大王（おおきみ）と呼ばれた。"
+    },
+    {
+      "id": "soc_jhist02_002",
+      "unit": "social.jhist.ancient.kofun.kofun",
+      "category": "knowledge",
+      "prompt": "大阪府にある日本最大の前方後円墳は？",
+      "choices": [
+        "箸墓古墳",
+        "稲荷山古墳",
+        "大仙（大山）古墳",
+        "江田船山古墳"
+      ],
+      "answerIndex": 2,
+      "explanation": "仁徳天皇陵とされる。"
+    },
+    {
+      "id": "soc_jhist02_003",
+      "unit": "social.jhist.ancient.kofun.kofun",
+      "category": "knowledge",
+      "prompt": "古墳のまわりや上に並べられた、土製の焼き物は？",
+      "choices": [
+        "須恵器",
+        "埴輪",
+        "銅鐸",
+        "土偶"
+      ],
+      "answerIndex": 1,
+      "explanation": "円筒埴輪や、人・家・馬などの形象埴輪がある。"
+    },
+    {
+      "id": "soc_jhist02_004",
+      "unit": "social.jhist.ancient.kofun.kofun",
+      "category": "knowledge",
+      "prompt": "豪族が血縁をもとに「氏」をつくり、大王から「姓」を与えられた制度は？",
+      "choices": [
+        "氏姓制度",
+        "御恩と奉公",
+        "冠位十二階",
+        "班田収授法"
+      ],
+      "answerIndex": 0,
+      "explanation": "ヤマト政権の支配のしくみ。"
+    },
+    {
+      "id": "soc_jhist02_005",
+      "unit": "social.jhist.ancient.kofun",
+      "category": "knowledge",
+      "prompt": "朝鮮半島などから日本に移り住み、技術や文化を伝えた人々は？",
+      "choices": [
+        "遣唐使",
+        "防人",
+        "御家人",
+        "渡来人"
+      ],
+      "answerIndex": 3,
+      "explanation": "須恵器・機織り・漢字・仏教などを伝えた。"
+    },
+    {
+      "id": "soc_jhist02_006",
+      "unit": "social.jhist.ancient.kofun.asuka",
+      "category": "knowledge",
+      "prompt": "推古天皇のもとで、蘇我馬子と協力して政治を行った人物は？",
+      "choices": [
+        "中大兄皇子",
+        "聖徳太子（厩戸王）",
+        "藤原鎌足",
+        "聖武天皇"
+      ],
+      "answerIndex": 1,
+      "explanation": "冠位十二階・十七条の憲法を定めた。"
+    },
+    {
+      "id": "soc_jhist02_007",
+      "unit": "social.jhist.ancient.kofun",
+      "category": "knowledge",
+      "prompt": "家柄にとらわれず、才能ある人を役人に取り立てるために定められた制度は？",
+      "choices": [
+        "班田収授法",
+        "十七条の憲法",
+        "大宝律令",
+        "冠位十二階"
+      ],
+      "answerIndex": 3,
+      "explanation": "603 年に定められた。"
+    },
+    {
+      "id": "soc_jhist02_008",
+      "unit": "social.jhist.ancient.kofun.asuka",
+      "category": "knowledge",
+      "prompt": "607 年に小野妹子が派遣された中国の王朝は？",
+      "choices": [
+        "唐",
+        "宋",
+        "漢",
+        "隋"
+      ],
+      "answerIndex": 3,
+      "explanation": "遣隋使。対等な国交をめざした。"
+    },
+    {
+      "id": "soc_jhist02_009",
+      "unit": "social.jhist.ancient.kofun.asuka",
+      "category": "knowledge",
+      "prompt": "聖徳太子が建てたとされ、現存する世界最古の木造建築をもつ寺は？",
+      "choices": [
+        "金閣寺",
+        "法隆寺",
+        "延暦寺",
+        "東大寺"
+      ],
+      "answerIndex": 1,
+      "explanation": "飛鳥文化を代表する。"
+    },
+    {
+      "id": "soc_jhist02_010",
+      "unit": "social.jhist.ancient.kofun.taika",
+      "category": "knowledge",
+      "prompt": "645 年、中大兄皇子と中臣鎌足が蘇我氏を倒して始めた政治改革は？",
+      "choices": [
+        "壬申の乱",
+        "大化の改新",
+        "承久の乱",
+        "建武の新政"
+      ],
+      "answerIndex": 1,
+      "explanation": "公地公民の方針を示した。"
+    },
+    {
+      "id": "soc_jhist02_011",
+      "unit": "social.jhist.ancient.kofun",
+      "category": "knowledge",
+      "prompt": "663 年、日本が唐・新羅の連合軍に大敗した戦いは？",
+      "choices": [
+        "文禄の役",
+        "壬申の乱",
+        "白村江の戦い",
+        "元寇"
+      ],
+      "answerIndex": 2,
+      "explanation": "この後、九州に水城や山城を築いて防衛を固めた。"
+    },
+    {
+      "id": "soc_jhist02_012",
+      "unit": "social.jhist.ancient.kofun.asuka",
+      "category": "thinking",
+      "prompt": "聖徳太子が十七条の憲法を定めた目的として適切なものは？",
+      "choices": [
+        "仏教を禁止するため",
+        "外国と戦争するため",
+        "役人の心構えを示し、天皇中心の政治をめざすため",
+        "農民に税を課すため"
+      ],
+      "answerIndex": 2,
+      "explanation": "「和をもって貴しとなす」など、役人の心得を示した。"
+    },
+    {
+      "id": "soc_jhist02_013",
+      "unit": "social.jhist.ancient.kofun.kofun",
+      "category": "knowledge",
+      "prompt": "古墳時代に、朝鮮半島から伝わった、かたく灰色の土器は？",
+      "choices": [
+        "縄文土器",
+        "土師器",
+        "須恵器",
+        "弥生土器"
+      ],
+      "answerIndex": 2,
+      "explanation": "ろくろを使い、高温で焼いた。"
+    },
+    {
+      "id": "soc_jhist02_014",
+      "unit": "social.jhist.ancient.kofun.kofun",
+      "category": "knowledge",
+      "prompt": "渡来人が伝えたものにあてはまらないものは？",
+      "choices": [
+        "儒教",
+        "漢字",
+        "機織り",
+        "ひらがな"
+      ],
+      "answerIndex": 3,
+      "explanation": "ひらがなは平安時代に日本で生まれた。"
+    },
+    {
+      "id": "soc_jhist02_015",
+      "unit": "social.jhist.ancient.kofun",
+      "category": "knowledge",
+      "prompt": "6 世紀に百済から日本に正式に伝えられた宗教は？",
+      "choices": [
+        "イスラム教",
+        "仏教",
+        "ヒンドゥー教",
+        "キリスト教"
+      ],
+      "answerIndex": 1,
+      "explanation": "受け入れをめぐり、蘇我氏と物部氏が対立した。"
+    },
+    {
+      "id": "soc_jhist02_016",
+      "unit": "social.jhist.ancient.kofun",
+      "category": "knowledge",
+      "prompt": "5 世紀に中国の南朝に使いを送った 5 人の王を何という？",
+      "choices": [
+        "倭の五王",
+        "五大老",
+        "五奉行",
+        "六歌仙"
+      ],
+      "answerIndex": 0,
+      "explanation": "『宋書』倭国伝に記される。"
+    },
+    {
+      "id": "soc_jhist02_017",
+      "unit": "social.jhist.ancient.kofun.kofun",
+      "category": "knowledge",
+      "prompt": "埼玉県の稲荷山古墳から出土した鉄剣に刻まれていた大王の名は？",
+      "choices": [
+        "推古",
+        "卑弥呼",
+        "ワカタケル",
+        "天智"
+      ],
+      "answerIndex": 2,
+      "explanation": "熊本県の江田船山古墳の鉄刀にも記される。"
+    },
+    {
+      "id": "soc_jhist02_018",
+      "unit": "social.jhist.ancient.kofun.asuka",
+      "category": "knowledge",
+      "prompt": "聖徳太子のころに栄えた、日本で最初の仏教文化は？",
+      "choices": [
+        "天平文化",
+        "国風文化",
+        "白鳳文化",
+        "飛鳥文化"
+      ],
+      "answerIndex": 3,
+      "explanation": "法隆寺や釈迦三尊像が代表。"
+    },
+    {
+      "id": "soc_jhist02_019",
+      "unit": "social.jhist.ancient.kofun.taika",
+      "category": "knowledge",
+      "prompt": "大化の改新で示された、土地と人民を国家のものとする方針は？",
+      "choices": [
+        "荘園制",
+        "封建制",
+        "公地公民",
+        "楽市楽座"
+      ],
+      "answerIndex": 2,
+      "explanation": "それまでの豪族の私有地・私有民を改めた。"
+    },
+    {
+      "id": "soc_jhist02_020",
+      "unit": "social.jhist.ancient.kofun.taika",
+      "category": "knowledge",
+      "prompt": "白村江の戦いの後、九州の防衛のために置かれた兵は？",
+      "choices": [
+        "屯田兵",
+        "足軽",
+        "防人",
+        "御家人"
+      ],
+      "answerIndex": 2,
+      "explanation": "大宰府の近くに水城もつくられた。"
+    },
+    {
+      "id": "soc_jhist02_021",
+      "unit": "social.jhist.ancient.kofun.taika",
+      "category": "knowledge",
+      "prompt": "672 年、天智天皇の死後に起こったあとつぎ争いは？",
+      "choices": [
+        "応仁の乱",
+        "承久の乱",
+        "壬申の乱",
+        "保元の乱"
+      ],
+      "answerIndex": 2,
+      "explanation": "勝った大海人皇子が天武天皇となった。"
+    },
+    {
+      "id": "soc_jhist02_022",
+      "unit": "social.jhist.ancient.kofun.taika",
+      "category": "knowledge",
+      "prompt": "天武天皇のあと、日本で最初の本格的な都として完成したのは？",
+      "choices": [
+        "平安京",
+        "藤原京",
+        "難波宮",
+        "平城京"
+      ],
+      "answerIndex": 1,
+      "explanation": "694 年に持統天皇が移った。"
+    },
+    {
+      "id": "soc_jhist02_023",
+      "unit": "social.jhist.ancient.kofun.kofun",
+      "category": "thinking",
+      "prompt": "古墳の分布が近畿地方から各地に広がったことからわかることは？",
+      "choices": [
+        "都が移された",
+        "仏教が広まった",
+        "各地で稲作が始まった",
+        "ヤマト王権の勢力が各地に広がった"
+      ],
+      "answerIndex": 3,
+      "explanation": "同じ形の前方後円墳が各地に造られた。"
+    },
+    {
+      "id": "soc_jhist02_024",
+      "unit": "social.jhist.ancient.kofun.asuka",
+      "category": "thinking",
+      "prompt": "遣隋使が送った国書で、「日出づる処の天子」と書いたことの意味として考えられるのは？",
+      "choices": [
+        "隋を攻めようとした",
+        "隋との国交を断とうとした",
+        "隋に服属しようとした",
+        "隋と対等な立場で外交をしようとした"
+      ],
+      "answerIndex": 3,
+      "explanation": "冊封を受けず、対等の外交をめざしたと考えられる。"
+    }
+  ]
+}

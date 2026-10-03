@@ -1,0 +1,260 @@
+{
+  "setId": "music_chou_04",
+  "worldId": "music",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mus_chou04_001",
+      "unit": "music.theory.key.signature.sharp",
+      "category": "thinking",
+      "prompt": "調号が♯1個の短調は？",
+      "choices": [
+        "ニ短調",
+        "イ短調",
+        "ロ短調",
+        "ホ短調"
+      ],
+      "answerIndex": 3,
+      "explanation": "♯1個はホ短調（e moll）。"
+    },
+    {
+      "id": "mus_chou04_002",
+      "unit": "music.theory.key.signature.sharp",
+      "category": "thinking",
+      "prompt": "調号が♯2個の短調は？",
+      "choices": [
+        "ロ短調",
+        "ト短調",
+        "ホ短調",
+        "嬰ヘ短調"
+      ],
+      "answerIndex": 0,
+      "explanation": "♯2個はロ短調（h moll）。"
+    },
+    {
+      "id": "mus_chou04_003",
+      "unit": "music.theory.key.signature.sharp",
+      "category": "thinking",
+      "prompt": "調号が♯3個の短調は？",
+      "choices": [
+        "嬰ヘ短調",
+        "嬰ハ短調",
+        "ハ短調",
+        "ロ短調"
+      ],
+      "answerIndex": 0,
+      "explanation": "♯3個は嬰ヘ短調（fis moll）。"
+    },
+    {
+      "id": "mus_chou04_004",
+      "unit": "music.theory.key.signature.sharp",
+      "category": "thinking",
+      "prompt": "調号が♯4個の短調は？",
+      "choices": [
+        "嬰ト短調",
+        "嬰ハ短調",
+        "ヘ短調",
+        "嬰ヘ短調"
+      ],
+      "answerIndex": 1,
+      "explanation": "♯4個は嬰ハ短調（cis moll）。"
+    },
+    {
+      "id": "mus_chou04_005",
+      "unit": "music.theory.key.signature.sharp",
+      "category": "thinking",
+      "prompt": "調号が♯5個の短調は？",
+      "choices": [
+        "変ロ短調",
+        "嬰ニ短調",
+        "嬰ト短調",
+        "嬰ハ短調"
+      ],
+      "answerIndex": 2,
+      "explanation": "♯5個は嬰ト短調（gis moll）。"
+    },
+    {
+      "id": "mus_chou04_006",
+      "unit": "music.theory.key.signature.sharp",
+      "category": "thinking",
+      "prompt": "調号が♯6個の短調は？",
+      "choices": [
+        "嬰イ短調",
+        "嬰ト短調",
+        "嬰ニ短調",
+        "変ホ短調"
+      ],
+      "answerIndex": 2,
+      "explanation": "♯6個は嬰ニ短調（dis moll）。"
+    },
+    {
+      "id": "mus_chou04_007",
+      "unit": "music.theory.key.signature.sharp",
+      "category": "thinking",
+      "prompt": "調号が♯7個の短調は？",
+      "choices": [
+        "嬰ニ短調",
+        "嬰イ短調",
+        "変イ短調",
+        "嬰イ長調"
+      ],
+      "answerIndex": 1,
+      "explanation": "♯7個は嬰イ短調（ais moll）。"
+    },
+    {
+      "id": "mus_chou04_008",
+      "unit": "music.theory.key.signature.flat",
+      "category": "thinking",
+      "prompt": "調号が♭1個の短調は？",
+      "choices": [
+        "ト短調",
+        "ホ短調",
+        "ニ長調",
+        "ニ短調"
+      ],
+      "answerIndex": 3,
+      "explanation": "♭1個はニ短調（d moll）。"
+    },
+    {
+      "id": "mus_chou04_009",
+      "unit": "music.theory.key.signature.flat",
+      "category": "thinking",
+      "prompt": "調号が♭2個の短調は？",
+      "choices": [
+        "ニ短調",
+        "ハ短調",
+        "ト短調",
+        "ロ短調"
+      ],
+      "answerIndex": 2,
+      "explanation": "♭2個はト短調（g moll）。"
+    },
+    {
+      "id": "mus_chou04_010",
+      "unit": "music.theory.key.signature.flat",
+      "category": "thinking",
+      "prompt": "調号が♭3個の短調は？",
+      "choices": [
+        "ヘ短調",
+        "ト短調",
+        "嬰ヘ短調",
+        "ハ短調"
+      ],
+      "answerIndex": 3,
+      "explanation": "♭3個はハ短調（c moll）。"
+    },
+    {
+      "id": "mus_chou04_011",
+      "unit": "music.theory.key.signature.flat",
+      "category": "thinking",
+      "prompt": "調号が♭4個の短調は？",
+      "choices": [
+        "ヘ短調",
+        "嬰ハ短調",
+        "ハ短調",
+        "変ロ短調"
+      ],
+      "answerIndex": 0,
+      "explanation": "♭4個はヘ短調（f moll）。"
+    },
+    {
+      "id": "mus_chou04_012",
+      "unit": "music.theory.key.signature.flat",
+      "category": "thinking",
+      "prompt": "調号が♭5個の短調は？",
+      "choices": [
+        "変ホ短調",
+        "変ロ短調",
+        "嬰ト短調",
+        "ヘ短調"
+      ],
+      "answerIndex": 1,
+      "explanation": "♭5個は変ロ短調（b moll）。"
+    },
+    {
+      "id": "mus_chou04_013",
+      "unit": "music.theory.key.signature.flat",
+      "category": "thinking",
+      "prompt": "調号が♭6個の短調は？",
+      "choices": [
+        "変ロ短調",
+        "嬰ニ短調",
+        "変イ短調",
+        "変ホ短調"
+      ],
+      "answerIndex": 3,
+      "explanation": "♭6個は変ホ短調（es moll）。"
+    },
+    {
+      "id": "mus_chou04_014",
+      "unit": "music.theory.key.signature.flat",
+      "category": "thinking",
+      "prompt": "調号が♭7個の短調は？",
+      "choices": [
+        "変ホ短調",
+        "嬰イ短調",
+        "変イ短調",
+        "変イ長調"
+      ],
+      "answerIndex": 2,
+      "explanation": "♭7個は変イ短調（as moll）。"
+    },
+    {
+      "id": "mus_chou04_015",
+      "unit": "music.theory.key.signature.minor",
+      "category": "thinking",
+      "prompt": "嬰ヘ短調の調号は？",
+      "choices": [
+        "♯3個",
+        "♭3個",
+        "♯2個",
+        "♯4個"
+      ],
+      "answerIndex": 0,
+      "explanation": "嬰ヘ短調（fis moll）は♯3個。"
+    },
+    {
+      "id": "mus_chou04_016",
+      "unit": "music.theory.key.signature.minor",
+      "category": "thinking",
+      "prompt": "ハ短調の調号は？",
+      "choices": [
+        "♯3個",
+        "♭3個",
+        "♭2個",
+        "♯4個"
+      ],
+      "answerIndex": 1,
+      "explanation": "ハ短調（c moll）は♭3個。"
+    },
+    {
+      "id": "mus_chou04_017",
+      "unit": "music.theory.key.signature.minor",
+      "category": "thinking",
+      "prompt": "ロ短調の調号は？",
+      "choices": [
+        "♯1個",
+        "♯2個",
+        "♯3個",
+        "♭2個"
+      ],
+      "answerIndex": 1,
+      "explanation": "ロ短調（h moll）は♯2個。"
+    },
+    {
+      "id": "mus_chou04_018",
+      "unit": "music.theory.key.signature.minor",
+      "category": "thinking",
+      "prompt": "ヘ短調の調号は？",
+      "choices": [
+        "♭3個",
+        "♭4個",
+        "♯5個",
+        "♯4個"
+      ],
+      "answerIndex": 1,
+      "explanation": "ヘ短調（f moll）は♭4個。"
+    }
+  ]
+}

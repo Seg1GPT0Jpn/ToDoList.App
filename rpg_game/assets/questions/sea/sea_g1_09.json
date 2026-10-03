@@ -1,0 +1,308 @@
+{
+  "setId": "sea_g1_09",
+  "worldId": "sea",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g1_09_01",
+      "unit": "english.eng.grammar.relative",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I have a friend (   ) lives in Kyoto.",
+      "choices": [
+        "who",
+        "which",
+        "whom",
+        "whose"
+      ],
+      "answerIndex": 0,
+      "explanation": "先行詞が人で、関係詞が主語のはたらき（主格）なので who。"
+    },
+    {
+      "id": "sea_g1_09_02",
+      "unit": "english.eng.grammar.relative.pronoun",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This is the book (   ) I bought yesterday.",
+      "choices": [
+        "who",
+        "which",
+        "where",
+        "what"
+      ],
+      "answerIndex": 1,
+      "explanation": "先行詞が物で、bought の目的語が欠けている（目的格）ので which。"
+    },
+    {
+      "id": "sea_g1_09_03",
+      "unit": "english.eng.grammar.relative",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The girl (   ) you met yesterday is my cousin.",
+      "choices": [
+        "whom",
+        "which",
+        "whose",
+        "what"
+      ],
+      "answerIndex": 0,
+      "explanation": "先行詞が人で目的格なので whom（who でも可。省略もできる）。"
+    },
+    {
+      "id": "sea_g1_09_04",
+      "unit": "english.eng.grammar.relative",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He is the only person (   ) knows the truth.",
+      "choices": [
+        "which",
+        "that",
+        "what",
+        "whom"
+      ],
+      "answerIndex": 1,
+      "explanation": "the only などが付く先行詞には that がよく使われる。"
+    },
+    {
+      "id": "sea_g1_09_05",
+      "unit": "english.eng.grammar.relative.pronoun",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I know a boy (   ) father is a pilot.",
+      "choices": [
+        "who",
+        "whose",
+        "which",
+        "whom"
+      ],
+      "answerIndex": 1,
+      "explanation": "「その少年の父親」という所有の関係は whose。"
+    },
+    {
+      "id": "sea_g1_09_06",
+      "unit": "english.eng.grammar.relative.adverb",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This is the park (   ) we play soccer.",
+      "choices": [
+        "which",
+        "where",
+        "when",
+        "who"
+      ],
+      "answerIndex": 1,
+      "explanation": "we play soccer は完全な文。場所が先行詞の関係副詞は where。"
+    },
+    {
+      "id": "sea_g1_09_07",
+      "unit": "english.eng.grammar.relative.adverb",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I remember the day (   ) we first met.",
+      "choices": [
+        "when",
+        "where",
+        "which",
+        "what"
+      ],
+      "answerIndex": 0,
+      "explanation": "時を表す先行詞（the day）の関係副詞は when。"
+    },
+    {
+      "id": "sea_g1_09_08",
+      "unit": "english.eng.grammar.relative.pronoun",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The watch (   ) he gave me is expensive.",
+      "choices": [
+        "who",
+        "what",
+        "which",
+        "whose"
+      ],
+      "answerIndex": 2,
+      "explanation": "先行詞は物（the watch）で、gave の目的語が欠けているので which。"
+    },
+    {
+      "id": "sea_g1_09_09",
+      "unit": "english.eng.grammar.relative.pronoun",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The man (   ) is standing there is my teacher.",
+      "choices": [
+        "who",
+        "whom",
+        "which",
+        "whose"
+      ],
+      "answerIndex": 0,
+      "explanation": "先行詞が人で、主格の関係代名詞。"
+    },
+    {
+      "id": "sea_g1_09_10",
+      "unit": "english.eng.grammar.relative.adverb",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This is the house (   ) he was born.",
+      "choices": [
+        "when",
+        "which",
+        "what",
+        "where"
+      ],
+      "answerIndex": 3,
+      "explanation": "場所を表す先行詞 ＋ 関係副詞 where。"
+    },
+    {
+      "id": "sea_g1_09_11",
+      "unit": "english.eng.grammar.relative.pronoun",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I have a friend (   ) sister is a singer.",
+      "choices": [
+        "who",
+        "which",
+        "whose",
+        "whom"
+      ],
+      "answerIndex": 2,
+      "explanation": "所有格の関係代名詞。"
+    },
+    {
+      "id": "sea_g1_09_12",
+      "unit": "english.eng.grammar.relative.pronoun",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The pen (   ) I lost was a gift.",
+      "choices": [
+        "that",
+        "what",
+        "who",
+        "where"
+      ],
+      "answerIndex": 0,
+      "explanation": "目的格の関係代名詞 that（which も可）。"
+    },
+    {
+      "id": "sea_g1_09_13",
+      "unit": "english.eng.grammar.relative.pronoun",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) he said is true.",
+      "choices": [
+        "What",
+        "Who",
+        "Which",
+        "That"
+      ],
+      "answerIndex": 0,
+      "explanation": "関係代名詞 what「〜するもの・こと」。先行詞をふくむ。"
+    },
+    {
+      "id": "sea_g1_09_14",
+      "unit": "english.eng.grammar.relative",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This is (   ) I want.",
+      "choices": [
+        "that",
+        "what",
+        "who",
+        "which"
+      ],
+      "answerIndex": 1,
+      "explanation": "先行詞がないので what。"
+    },
+    {
+      "id": "sea_g1_09_15",
+      "unit": "english.eng.grammar.relative",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Tell me the reason (   ) you were late.",
+      "choices": [
+        "why",
+        "what",
+        "which",
+        "where"
+      ],
+      "answerIndex": 0,
+      "explanation": "the reason ＋ why。"
+    },
+    {
+      "id": "sea_g1_09_16",
+      "unit": "english.eng.grammar.relative",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This is the dog (   ) has long ears.",
+      "choices": [
+        "what",
+        "whom",
+        "which",
+        "who"
+      ],
+      "answerIndex": 2,
+      "explanation": "先行詞が動物で、主格。"
+    },
+    {
+      "id": "sea_g1_09_17",
+      "unit": "english.eng.grammar.relative",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The people (   ) live next door are very kind.",
+      "choices": [
+        "what",
+        "whose",
+        "who",
+        "which"
+      ],
+      "answerIndex": 2,
+      "explanation": "先行詞が人で、主格。"
+    },
+    {
+      "id": "sea_g1_09_18",
+      "unit": "english.eng.grammar.relative.adverb",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "That is the station (   ) I got off.",
+      "choices": [
+        "when",
+        "what",
+        "where",
+        "which"
+      ],
+      "answerIndex": 2,
+      "explanation": "「その駅で降りた」なので関係副詞 where。"
+    },
+    {
+      "id": "sea_g1_09_19",
+      "unit": "english.eng.grammar.relative.adverb",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Summer is the season (   ) many people go swimming.",
+      "choices": [
+        "what",
+        "which",
+        "when",
+        "where"
+      ],
+      "answerIndex": 2,
+      "explanation": "時を表す先行詞 ＋ 関係副詞 when。"
+    },
+    {
+      "id": "sea_g1_09_20",
+      "unit": "english.eng.grammar.relative.what",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I will give you (   ) you need.",
+      "choices": [
+        "whoever",
+        "whatever",
+        "which",
+        "whenever"
+      ],
+      "answerIndex": 1,
+      "explanation": "whatever「〜するものは何でも」。"
+    }
+  ]
+}

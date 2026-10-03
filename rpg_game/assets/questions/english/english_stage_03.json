@@ -1,0 +1,356 @@
+{
+  "setId": "english_stage_03",
+  "worldId": "english",
+  "origin": "original",
+  "version": 3,
+  "questions": [
+    {
+      "id": "en03_001",
+      "unit": "english.eng.vocab.basic.meaning",
+      "category": "meaning",
+      "prompt": "「invite」の意味は？",
+      "choices": [
+        "心配する",
+        "天気",
+        "招待する",
+        "準備する"
+      ],
+      "answerIndex": 2,
+      "explanation": "invite は「招待する」。"
+    },
+    {
+      "id": "en03_002",
+      "unit": "english.eng.vocab.basic.meaning",
+      "category": "meaning",
+      "prompt": "「protect」の意味は？",
+      "choices": [
+        "守る",
+        "有名な",
+        "受け取る",
+        "建てる"
+      ],
+      "answerIndex": 0,
+      "explanation": "protect は「守る」。"
+    },
+    {
+      "id": "en03_003",
+      "unit": "english.eng.vocab.basic.meaning",
+      "category": "meaning",
+      "prompt": "「prepare」の意味は？",
+      "choices": [
+        "必要な",
+        "準備する",
+        "招待する",
+        "貸す"
+      ],
+      "answerIndex": 1,
+      "explanation": "prepare は「準備する」。"
+    },
+    {
+      "id": "en03_004",
+      "unit": "english.eng.vocab.basic.meaning",
+      "category": "meaning",
+      "prompt": "「practice」の意味は？",
+      "choices": [
+        "到着する",
+        "訪れる",
+        "似ている",
+        "練習する"
+      ],
+      "answerIndex": 3,
+      "explanation": "practice は「練習する」。"
+    },
+    {
+      "id": "en03_005",
+      "unit": "english.eng.vocab.basic.meaning",
+      "category": "meaning",
+      "prompt": "「travel」の意味は？",
+      "choices": [
+        "旅行する",
+        "建てる",
+        "減らす",
+        "招待する"
+      ],
+      "answerIndex": 0,
+      "explanation": "travel は「旅行する」。"
+    },
+    {
+      "id": "en03_006",
+      "unit": "english.eng.vocab.basic.meaning",
+      "category": "meaning",
+      "prompt": "「visit」の意味は？",
+      "choices": [
+        "必要な",
+        "訪れる",
+        "選ぶ",
+        "運ぶ"
+      ],
+      "answerIndex": 1,
+      "explanation": "visit は「訪れる」。"
+    },
+    {
+      "id": "en03_007",
+      "unit": "english.eng.vocab.basic.meaning",
+      "category": "meaning",
+      "prompt": "「collect」の意味は？",
+      "choices": [
+        "覚えている",
+        "人気のある",
+        "集める",
+        "村"
+      ],
+      "answerIndex": 2,
+      "explanation": "collect は「集める」。"
+    },
+    {
+      "id": "en03_008",
+      "unit": "english.eng.vocab.basic.meaning",
+      "category": "meaning",
+      "prompt": "「report」の意味は？",
+      "choices": [
+        "人気のある",
+        "終える",
+        "報告する",
+        "静かな"
+      ],
+      "answerIndex": 2,
+      "explanation": "report は「報告する」。"
+    },
+    {
+      "id": "en03_009",
+      "unit": "english.eng.vocab.idiom.idiom",
+      "category": "meaning",
+      "prompt": "「look up ～」の意味は？",
+      "choices": [
+        "～を（辞書などで）調べる",
+        "～するとすぐに",
+        "～をあきらめる",
+        "～しさえすれば"
+      ],
+      "answerIndex": 0,
+      "explanation": "look up ～ は「～を（辞書などで）調べる」。"
+    },
+    {
+      "id": "en03_010",
+      "unit": "english.eng.vocab.idiom.idiom",
+      "category": "meaning",
+      "prompt": "「get along with ～」の意味は？",
+      "choices": [
+        "偶然に",
+        "～と仲良くやっていく",
+        "～を突き止める",
+        "～の世話をする"
+      ],
+      "answerIndex": 1,
+      "explanation": "get along with ～ は「～と仲良くやっていく」。"
+    },
+    {
+      "id": "en03_011",
+      "unit": "english.eng.vocab.basic.pos",
+      "category": "partOfSpeech",
+      "prompt": "次のうち「動詞」はどれ？",
+      "choices": [
+        "wide",
+        "width",
+        "widen",
+        "widely"
+      ],
+      "answerIndex": 2,
+      "explanation": "-en は「〜にする」という動詞を作る語尾。wide → widen（広げる）。"
+    },
+    {
+      "id": "en03_012",
+      "unit": "english.eng.vocab.basic.pos",
+      "category": "partOfSpeech",
+      "prompt": "次のうち「副詞」はどれ？",
+      "choices": [
+        "frequent",
+        "frequency",
+        "frequently",
+        "infrequent"
+      ],
+      "answerIndex": 2,
+      "explanation": "形容詞 frequent + -ly で副詞 frequently（しばしば）。frequency は「頻度」。"
+    },
+    {
+      "id": "en03_013",
+      "unit": "english.eng.grammar.infinitive",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I want (   ) abroad someday.",
+      "choices": [
+        "studying",
+        "to study",
+        "study",
+        "studied"
+      ],
+      "answerIndex": 1,
+      "explanation": "want は目的語に to 不定詞をとる。動名詞は不可。"
+    },
+    {
+      "id": "en03_014",
+      "unit": "english.eng.grammar.infinitive.usage",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He went to the library (   ) for the test.",
+      "choices": [
+        "studying",
+        "study",
+        "to study",
+        "studied"
+      ],
+      "answerIndex": 2,
+      "explanation": "「〜するために」（目的）は不定詞の副詞的用法。"
+    },
+    {
+      "id": "en03_015",
+      "unit": "english.eng.grammar.infinitive.usage",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I have a lot of homework (   ).",
+      "choices": [
+        "doing",
+        "to do",
+        "done",
+        "do"
+      ],
+      "answerIndex": 1,
+      "explanation": "「やるべき宿題」。不定詞が後ろから名詞を修飾する（形容詞的用法）。"
+    },
+    {
+      "id": "en03_016",
+      "unit": "english.eng.grammar.infinitive",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "It is important (   ) breakfast every day.",
+      "choices": [
+        "eat",
+        "to eat",
+        "eaten",
+        "ate"
+      ],
+      "answerIndex": 1,
+      "explanation": "It is 〜 to do の形。It は仮の主語で、本当の主語は to eat breakfast every day。"
+    },
+    {
+      "id": "en03_017",
+      "unit": "english.eng.grammar.infinitive.usage",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "My dream is (   ) a teacher.",
+      "choices": [
+        "become",
+        "to become",
+        "became",
+        "becomes"
+      ],
+      "answerIndex": 1,
+      "explanation": "「〜すること」は不定詞の名詞的用法。ここでは補語。"
+    },
+    {
+      "id": "en03_018",
+      "unit": "english.eng.grammar.infinitive.usage",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I need something cold (   ).",
+      "choices": [
+        "drink",
+        "to drink",
+        "drinking",
+        "drank"
+      ],
+      "answerIndex": 1,
+      "explanation": "「冷たい飲み物（飲むための冷たいもの）」。不定詞が後ろから名詞を修飾する形容詞的用法。"
+    },
+    {
+      "id": "en03_019",
+      "unit": "english.eng.grammar.infinitive.usage",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "She went to the station (   ) her aunt.",
+      "choices": [
+        "meet",
+        "meeting",
+        "to meet",
+        "met"
+      ],
+      "answerIndex": 2,
+      "explanation": "「〜するために」（目的）は不定詞の副詞的用法。"
+    },
+    {
+      "id": "en03_020",
+      "unit": "english.eng.grammar.infinitive",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I was glad (   ) the news.",
+      "choices": [
+        "hear",
+        "to hear",
+        "hearing",
+        "heard"
+      ],
+      "answerIndex": 1,
+      "explanation": "感情を表す形容詞 + to do で「〜して…」（感情の原因）。"
+    },
+    {
+      "id": "en03_021",
+      "unit": "english.eng.grammar.infinitive",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Please tell me how (   ) this machine.",
+      "choices": [
+        "use",
+        "to use",
+        "using",
+        "used"
+      ],
+      "answerIndex": 1,
+      "explanation": "how to do で「〜のしかた」。疑問詞 + to 不定詞。"
+    },
+    {
+      "id": "en03_022",
+      "unit": "english.eng.grammar.infinitive.construction",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He is too young (   ) this movie.",
+      "choices": [
+        "to watch",
+        "watching",
+        "watch",
+        "watched"
+      ],
+      "answerIndex": 0,
+      "explanation": "too 〜 to do で「〜すぎて…できない」。"
+    },
+    {
+      "id": "en03_023",
+      "unit": "english.eng.grammar.infinitive.construction",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "She is kind (   ) to help us.",
+      "choices": [
+        "too",
+        "so",
+        "very",
+        "enough"
+      ],
+      "answerIndex": 3,
+      "explanation": "形容詞 + enough to do で「…するほど〜だ」。enough は形容詞の後ろに置く。"
+    },
+    {
+      "id": "en03_024",
+      "unit": "english.eng.grammar.infinitive.causative",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I saw him (   ) the street.",
+      "choices": [
+        "to cross",
+        "crossed",
+        "cross",
+        "crosses"
+      ],
+      "answerIndex": 2,
+      "explanation": "知覚動詞 see + O + 動詞の原形（原形不定詞）で「O が〜するのを見る」。"
+    }
+  ]
+}

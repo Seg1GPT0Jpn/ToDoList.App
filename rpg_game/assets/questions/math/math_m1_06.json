@@ -1,0 +1,288 @@
+{
+  "setId": "math_m1_06",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_m106_001",
+      "unit": "math.m1.numexpr.real.sqrt",
+      "category": "calculation",
+      "prompt": "√(7+2√10) の二重根号を外すと？",
+      "choices": [
+        "√5+√2",
+        "√5−√2",
+        "√10+1",
+        "√7+√10"
+      ],
+      "answerIndex": 0,
+      "explanation": "和が7、積が10の2数は5と2。"
+    },
+    {
+      "id": "mat_m106_002",
+      "unit": "math.m1.numexpr.real.sqrt",
+      "category": "calculation",
+      "prompt": "√(8−2√15) の二重根号を外すと？",
+      "choices": [
+        "√8−√15",
+        "√5−√3",
+        "√3−√5",
+        "√5+√3"
+      ],
+      "answerIndex": 1,
+      "explanation": "和が8、積が15の2数は5と3。大きい方を前に。"
+    },
+    {
+      "id": "mat_m106_003",
+      "unit": "math.m1.numexpr.real.sqrt",
+      "category": "calculation",
+      "prompt": "1/(√2−1) の小数部分は？",
+      "choices": [
+        "√2+1",
+        "2−√2",
+        "√2−1",
+        "√2"
+      ],
+      "answerIndex": 2,
+      "explanation": "1/(√2−1)=√2+1≒2.414 で、整数部分は2。"
+    },
+    {
+      "id": "mat_m106_004",
+      "unit": "math.m1.numexpr.ineq1.absineq",
+      "category": "calculation",
+      "prompt": "|x−1|+|x−3| の最小値は？",
+      "choices": [
+        "4",
+        "2",
+        "1",
+        "0"
+      ],
+      "answerIndex": 1,
+      "explanation": "数直線上で1と3からの距離の和。1≦x≦3 で最小の2。"
+    },
+    {
+      "id": "mat_m106_005",
+      "unit": "math.m1.numexpr.ineq1",
+      "category": "calculation",
+      "prompt": "不等式 |2x−1|<5 を解くと？",
+      "choices": [
+        "−2<x<3",
+        "−2<x<2",
+        "−3<x<2",
+        "x<3"
+      ],
+      "answerIndex": 0,
+      "explanation": "−5<2x−1<5 → −4<2x<6。"
+    },
+    {
+      "id": "mat_m106_006",
+      "unit": "math.m1.numexpr.ineq1.property",
+      "category": "calculation",
+      "prompt": "a<0 のとき、不等式 ax>2 を解くと？",
+      "choices": [
+        "x<2a",
+        "x>a/2",
+        "x<2/a",
+        "x>2/a"
+      ],
+      "answerIndex": 2,
+      "explanation": "負の数 a で割るので向きが変わる。"
+    },
+    {
+      "id": "mat_m106_007",
+      "unit": "math.m1.numexpr.ineq1.system",
+      "category": "calculation",
+      "prompt": "連立不等式 2x+3>5x−6、x+4≧2 を満たす整数の個数は？",
+      "choices": [
+        "4個",
+        "3個",
+        "5個",
+        "6個"
+      ],
+      "answerIndex": 2,
+      "explanation": "x<3 と x≧−2 → −2,−1,0,1,2 の5個。"
+    },
+    {
+      "id": "mat_m106_008",
+      "unit": "math.m1.numexpr.ineq1.apply",
+      "category": "calculation",
+      "prompt": "不等式 x<a を満たす自然数がちょうど3個あるとき、a の範囲は？",
+      "choices": [
+        "3≦a≦4",
+        "3<a≦4",
+        "3≦a<4",
+        "3<a<4"
+      ],
+      "answerIndex": 1,
+      "explanation": "1,2,3 がふくまれ、4 はふくまれない。"
+    },
+    {
+      "id": "mat_m106_009",
+      "unit": "math.m1.numexpr.real.sqrt",
+      "category": "calculation",
+      "prompt": "√3=1.732… として、1/(2−√3) の値に最も近いものは？",
+      "choices": [
+        "2.732",
+        "3.732",
+        "0.268",
+        "1.732"
+      ],
+      "answerIndex": 1,
+      "explanation": "1/(2−√3)=2+√3。"
+    },
+    {
+      "id": "mat_m106_010",
+      "unit": "math.m1.numexpr.real.sqrt",
+      "category": "thinking",
+      "prompt": "√(7+2√10) の二重根号を外すときの考え方は？",
+      "choices": [
+        "√ を2回かける",
+        "7と10を足す",
+        "和が7、積が10になる2数を見つけ、(√a+√b)² の形にする",
+        "7を2で割る"
+      ],
+      "answerIndex": 2,
+      "explanation": "(√a+√b)²=a+b+2√(ab)。"
+    },
+    {
+      "id": "mat_m106_011",
+      "unit": "math.m1.numexpr.real.sqrt",
+      "category": "calculation",
+      "prompt": "√(5+2√6) の二重根号を外すと？",
+      "choices": [
+        "√6+1",
+        "√3+√2",
+        "√5+√6",
+        "√3−√2"
+      ],
+      "answerIndex": 1,
+      "explanation": "和5、積6の2数は3と2。"
+    },
+    {
+      "id": "mat_m106_012",
+      "unit": "math.m1.numexpr.real.sqrt",
+      "category": "calculation",
+      "prompt": "√(4−√12) の二重根号を外すと？",
+      "choices": [
+        "√3−1",
+        "√3+1",
+        "2−√3",
+        "1−√3"
+      ],
+      "answerIndex": 0,
+      "explanation": "√12=2√3 なので √(4−2√3)。和4、積3の2数は3と1。"
+    },
+    {
+      "id": "mat_m106_013",
+      "unit": "math.m1.numexpr.real.sqrt",
+      "category": "calculation",
+      "prompt": "√(9+4√5) の二重根号を外すと？",
+      "choices": [
+        "3+√5",
+        "√5+2",
+        "√9+√20",
+        "√5+√4+1"
+      ],
+      "answerIndex": 1,
+      "explanation": "4√5=2√20。和9、積20の2数は5と4。"
+    },
+    {
+      "id": "mat_m106_014",
+      "unit": "math.m1.numexpr.real.sqrt",
+      "category": "calculation",
+      "prompt": "√7 の小数部分を b とするとき、b(b+4) の値は？",
+      "choices": [
+        "7",
+        "11",
+        "√7",
+        "3"
+      ],
+      "answerIndex": 3,
+      "explanation": "2<√7<3 より b=√7−2。(√7−2)(√7+2)=7−4。"
+    },
+    {
+      "id": "mat_m106_015",
+      "unit": "math.m1.numexpr.ineq1.absineq",
+      "category": "calculation",
+      "prompt": "|x−2|+|x+1| の最小値は？",
+      "choices": [
+        "2",
+        "0",
+        "3",
+        "1"
+      ],
+      "answerIndex": 2,
+      "explanation": "数直線上で2と−1からの距離の和。−1≦x≦2 で3。"
+    },
+    {
+      "id": "mat_m106_016",
+      "unit": "math.m1.numexpr.ineq1.absineq",
+      "category": "calculation",
+      "prompt": "不等式 |x−1|≦2x を解くと？",
+      "choices": [
+        "x≧1",
+        "x≧1/3",
+        "1/3≦x≦1",
+        "x≧−1"
+      ],
+      "answerIndex": 1,
+      "explanation": "x≧1 と x<1 で場合分け。x<1 のとき 1−x≦2x より x≧1/3。"
+    },
+    {
+      "id": "mat_m106_017",
+      "unit": "math.m1.numexpr.ineq1",
+      "category": "calculation",
+      "prompt": "不等式 2x−a>0 の解が x>3 のとき、a の値は？",
+      "choices": [
+        "−6",
+        "6",
+        "3/2",
+        "3"
+      ],
+      "answerIndex": 1,
+      "explanation": "解は x>a/2。a/2=3。"
+    },
+    {
+      "id": "mat_m106_018",
+      "unit": "math.m1.numexpr.real.numbers",
+      "category": "calculation",
+      "prompt": "不等式 3x−1<a を満たす最大の整数が2であるとき、a の範囲は？",
+      "choices": [
+        "6<a≦9",
+        "5<a≦8",
+        "5≦a<8",
+        "2<a≦3"
+      ],
+      "answerIndex": 1,
+      "explanation": "x<(a+1)/3 で、2<(a+1)/3≦3。"
+    },
+    {
+      "id": "mat_m106_019",
+      "unit": "math.m1.numexpr.real.sqrt",
+      "category": "calculation",
+      "prompt": "x=√5+1 のとき、x²−2x の値は？",
+      "choices": [
+        "4",
+        "6",
+        "2√5",
+        "5"
+      ],
+      "answerIndex": 0,
+      "explanation": "x²−2x=(x−1)²−1=5−1。"
+    },
+    {
+      "id": "mat_m106_020",
+      "unit": "math.m1.numexpr.real.numbers",
+      "category": "thinking",
+      "prompt": "命題「すべての実数 x について x²≧0」の否定は？",
+      "choices": [
+        "すべての実数 x について x²<0",
+        "すべての実数 x について x²≦0",
+        "ある実数 x について x²<0",
+        "ある実数 x について x²≧0"
+      ],
+      "answerIndex": 2,
+      "explanation": "「すべて」の否定は「ある」、「≧」の否定は「<」。"
+    }
+  ]
+}

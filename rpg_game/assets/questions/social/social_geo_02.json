@@ -1,0 +1,344 @@
+{
+  "setId": "social_geo_02",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_geo02_001",
+      "unit": "social.geo.map.maps",
+      "category": "knowledge",
+      "prompt": "地図上の長さと実際の距離の比を何という？",
+      "choices": [
+        "等高線",
+        "標高",
+        "縮尺",
+        "方位"
+      ],
+      "answerIndex": 2,
+      "explanation": "2 万 5 千分の 1 なら、地図上の 1 cm が実際の 250 m。"
+    },
+    {
+      "id": "soc_geo02_002",
+      "unit": "social.geo.map.maps",
+      "category": "knowledge",
+      "prompt": "同じ高さの地点を結んだ線は？",
+      "choices": [
+        "等値線だけ",
+        "経線",
+        "等圧線",
+        "等高線"
+      ],
+      "answerIndex": 3,
+      "explanation": "間隔がせまいほど傾斜が急。"
+    },
+    {
+      "id": "soc_geo02_003",
+      "unit": "social.geo.map.maps.topo",
+      "category": "knowledge",
+      "prompt": "2 万 5 千分の 1 地形図で、主曲線は何 m ごとに引かれる？",
+      "choices": [
+        "10 m",
+        "20 m",
+        "50 m",
+        "5 m"
+      ],
+      "answerIndex": 0,
+      "explanation": "5 万分の 1 では 20 m ごと。計曲線は主曲線 5 本ごとの太い線。"
+    },
+    {
+      "id": "soc_geo02_004",
+      "unit": "social.geo.map.maps.thematic",
+      "category": "knowledge",
+      "prompt": "人口や生産量などの統計データを地図に表したものは？",
+      "choices": [
+        "統計地図",
+        "海図",
+        "一般図",
+        "地形図"
+      ],
+      "answerIndex": 0,
+      "explanation": "ある目的のために特定の情報を表した地図を主題図という。"
+    },
+    {
+      "id": "soc_geo02_005",
+      "unit": "social.geo.map.maps",
+      "category": "knowledge",
+      "prompt": "地域ごとの割合や密度を、色の濃さで塗り分けた統計地図は？",
+      "choices": [
+        "図形表現図",
+        "階級区分図",
+        "ドットマップ",
+        "流線図"
+      ],
+      "answerIndex": 1,
+      "explanation": "絶対値（人口の数など）を表すのには向かない。"
+    },
+    {
+      "id": "soc_geo02_006",
+      "unit": "social.geo.map.maps",
+      "category": "knowledge",
+      "prompt": "気温や降水量など、同じ値の地点を線で結んだ統計地図は？",
+      "choices": [
+        "階級区分図",
+        "等値線図",
+        "ドットマップ",
+        "カルトグラム"
+      ],
+      "answerIndex": 1,
+      "explanation": "連続的に変化する量を表すのに向く。"
+    },
+    {
+      "id": "soc_geo02_007",
+      "unit": "social.geo.map.maps",
+      "category": "knowledge",
+      "prompt": "人や物の移動の方向と量を、矢印の向きと太さで表した地図は？",
+      "choices": [
+        "流線図",
+        "階級区分図",
+        "等値線図",
+        "段彩図"
+      ],
+      "answerIndex": 0,
+      "explanation": "貿易や人口移動などを表す。"
+    },
+    {
+      "id": "soc_geo02_008",
+      "unit": "social.geo.map.maps.topo",
+      "category": "knowledge",
+      "prompt": "地図記号「卍」が表すものは？",
+      "choices": [
+        "墓地",
+        "神社",
+        "城跡",
+        "寺院"
+      ],
+      "answerIndex": 3,
+      "explanation": "神社は鳥居の形（⛩）。"
+    },
+    {
+      "id": "soc_geo02_009",
+      "unit": "social.geo.map.maps.topo",
+      "category": "calculation",
+      "prompt": "2 万 5 千分の 1 の地形図で 4 cm の長さは、実際には何 m？",
+      "choices": [
+        "100 m",
+        "1000 m",
+        "250 m",
+        "10000 m"
+      ],
+      "answerIndex": 1,
+      "explanation": "4 × 25000 ＝ 100000 cm ＝ 1000 m。"
+    },
+    {
+      "id": "soc_geo02_010",
+      "unit": "social.geo.map.maps.topo",
+      "category": "calculation",
+      "prompt": "5 万分の 1 の地形図で、実際の 2 km は地図上で何 cm？",
+      "choices": [
+        "4 cm",
+        "10 cm",
+        "2 cm",
+        "40 cm"
+      ],
+      "answerIndex": 0,
+      "explanation": "200000 cm ÷ 50000 ＝ 4 cm。"
+    },
+    {
+      "id": "soc_geo02_011",
+      "unit": "social.geo.map.maps.topo",
+      "category": "thinking",
+      "prompt": "等高線の間隔が広いところと狭いところでは、どちらの傾斜が急？",
+      "choices": [
+        "どちらも同じ",
+        "等高線では分からない",
+        "広いところ",
+        "狭いところ"
+      ],
+      "answerIndex": 3,
+      "explanation": "同じ高さの差を短い距離で上るので、急になる。"
+    },
+    {
+      "id": "soc_geo02_012",
+      "unit": "social.geo.map.maps.thematic",
+      "category": "thinking",
+      "prompt": "都道府県別の人口「数」を地図で表すのに適した方法は？",
+      "choices": [
+        "図形表現図やドットマップなど、数の大きさが分かる図",
+        "流線図",
+        "階級区分図だけ",
+        "等値線図"
+      ],
+      "answerIndex": 0,
+      "explanation": "面積の大きい県が目立ってしまうので、絶対値は階級区分図に向かない。"
+    },
+    {
+      "id": "soc_geo02_013",
+      "unit": "social.geo.map.maps.topo",
+      "category": "knowledge",
+      "prompt": "2万5千分の1の地形図で、計曲線は何 m ごとに引かれる？",
+      "choices": [
+        "20 m",
+        "100 m",
+        "50 m",
+        "10 m"
+      ],
+      "answerIndex": 2,
+      "explanation": "主曲線は10 m ごと。"
+    },
+    {
+      "id": "soc_geo02_014",
+      "unit": "social.geo.map.maps.topo",
+      "category": "knowledge",
+      "prompt": "5万分の1の地形図で、主曲線は何 m ごとに引かれる？",
+      "choices": [
+        "100 m",
+        "10 m",
+        "20 m",
+        "50 m"
+      ],
+      "answerIndex": 2,
+      "explanation": "計曲線は100 m ごと。"
+    },
+    {
+      "id": "soc_geo02_015",
+      "unit": "social.geo.map.maps.topo",
+      "category": "knowledge",
+      "prompt": "地図記号「文」が表すものは？",
+      "choices": [
+        "小・中学校",
+        "図書館",
+        "市役所",
+        "高等学校"
+      ],
+      "answerIndex": 0,
+      "explanation": "高等学校は「文」を丸で囲んだ記号。"
+    },
+    {
+      "id": "soc_geo02_016",
+      "unit": "social.geo.map.maps.topo",
+      "category": "knowledge",
+      "prompt": "2019年に新しくつくられた地図記号は？",
+      "choices": [
+        "風車",
+        "自然災害伝承碑",
+        "老人ホーム",
+        "博物館"
+      ],
+      "answerIndex": 1,
+      "explanation": "過去の災害の教訓を伝える石碑などを表す。"
+    },
+    {
+      "id": "soc_geo02_017",
+      "unit": "social.geo.map.maps",
+      "category": "knowledge",
+      "prompt": "数量の大きさを、円や棒などの図形の大きさで表す統計地図は？",
+      "choices": [
+        "階級区分図",
+        "等値線図",
+        "図形表現図",
+        "流線図"
+      ],
+      "answerIndex": 2,
+      "explanation": "人口などの「数」を表すのに向いている。"
+    },
+    {
+      "id": "soc_geo02_018",
+      "unit": "social.geo.map.maps",
+      "category": "knowledge",
+      "prompt": "点の数や密度で、分布のようすを表す統計地図は？",
+      "choices": [
+        "ドットマップ",
+        "流線図",
+        "等値線図",
+        "階級区分図"
+      ],
+      "answerIndex": 0,
+      "explanation": "1つの点が一定の数量を表す。"
+    },
+    {
+      "id": "soc_geo02_019",
+      "unit": "social.geo.map.maps.topo",
+      "category": "knowledge",
+      "prompt": "日本で地形図を作成・発行している機関は？",
+      "choices": [
+        "国土交通省観光庁",
+        "国土地理院",
+        "総務省統計局",
+        "気象庁"
+      ],
+      "answerIndex": 1,
+      "explanation": "地理院地図も国土地理院が公開している。"
+    },
+    {
+      "id": "soc_geo02_020",
+      "unit": "social.geo.map.maps.topo",
+      "category": "calculation",
+      "prompt": "5万分の1の地形図上で 3 cm の長さは、実際には何 km？",
+      "choices": [
+        "15 km",
+        "1.5 km",
+        "3 km",
+        "0.15 km"
+      ],
+      "answerIndex": 1,
+      "explanation": "3×50000=150000 cm。"
+    },
+    {
+      "id": "soc_geo02_021",
+      "unit": "social.geo.map.maps.topo",
+      "category": "calculation",
+      "prompt": "2万5千分の1の地形図上で、たて 2 cm・横 2 cm の正方形の土地の実際の面積は？",
+      "choices": [
+        "4 km²",
+        "0.5 km²",
+        "0.25 km²",
+        "1 km²"
+      ],
+      "answerIndex": 2,
+      "explanation": "1辺 500 m の正方形。"
+    },
+    {
+      "id": "soc_geo02_022",
+      "unit": "social.geo.map.maps.topo",
+      "category": "calculation",
+      "prompt": "2万5千分の1の地形図で、主曲線の間隔5つ分の高さの差は？",
+      "choices": [
+        "25 m",
+        "100 m",
+        "50 m",
+        "5 m"
+      ],
+      "answerIndex": 2,
+      "explanation": "主曲線は10 m ごと。"
+    },
+    {
+      "id": "soc_geo02_023",
+      "unit": "social.geo.map.maps.topo",
+      "category": "thinking",
+      "prompt": "等高線が、低い方に向かって張り出している部分は？",
+      "choices": [
+        "平地",
+        "崖",
+        "谷",
+        "尾根"
+      ],
+      "answerIndex": 3,
+      "explanation": "高い方に向かって食いこんでいる部分は谷。"
+    },
+    {
+      "id": "soc_geo02_024",
+      "unit": "social.geo.map.maps",
+      "category": "thinking",
+      "prompt": "観光客の国どうしの移動のようすを表すのに最も適した統計地図は？",
+      "choices": [
+        "ドットマップ",
+        "等値線図",
+        "階級区分図",
+        "流線図"
+      ],
+      "answerIndex": 3,
+      "explanation": "移動の向きと量を、矢印の向きと太さで表す。"
+    }
+  ]
+}

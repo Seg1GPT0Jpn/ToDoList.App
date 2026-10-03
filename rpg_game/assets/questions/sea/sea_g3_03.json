@@ -1,0 +1,248 @@
+{
+  "setId": "sea_g3_03",
+  "worldId": "sea",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g3_03_01",
+      "unit": "english.eng.structure.special",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Down (   ) the rain.",
+      "choices": [
+        "it came",
+        "came",
+        "did come",
+        "coming"
+      ],
+      "answerIndex": 1,
+      "explanation": "方向を表す副詞が文頭に来ると「動詞 + 主語」の語順になる。"
+    },
+    {
+      "id": "sea_g3_03_02",
+      "unit": "english.eng.structure.special",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Not a single word (   ).",
+      "choices": [
+        "he said",
+        "did he say",
+        "said he",
+        "he did say"
+      ],
+      "answerIndex": 1,
+      "explanation": "否定語句（Not a single word）が文頭に来ると疑問文の語順になる。"
+    },
+    {
+      "id": "sea_g3_03_03",
+      "unit": "english.eng.structure.special.inversion",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Were I rich, I (   ) travel around the world.",
+      "choices": [
+        "will",
+        "would",
+        "can",
+        "shall"
+      ],
+      "answerIndex": 1,
+      "explanation": "If I were rich の倒置。仮定法過去なので主節は would。"
+    },
+    {
+      "id": "sea_g3_03_04",
+      "unit": "english.eng.structure.special.inversion",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "So tired (   ) that he fell asleep at once.",
+      "choices": [
+        "he was",
+        "was he",
+        "did he",
+        "he did"
+      ],
+      "answerIndex": 1,
+      "explanation": "so 〜 that 構文の so 〜 が文頭に出ると倒置が起こる。"
+    },
+    {
+      "id": "sea_g3_03_05",
+      "unit": "english.eng.structure.special.inversion",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Here (   ) the bus.",
+      "choices": [
+        "come",
+        "comes",
+        "coming",
+        "is coming"
+      ],
+      "answerIndex": 1,
+      "explanation": "Here comes 〜 で「ほら〜が来た」。主語が名詞のとき倒置する。"
+    },
+    {
+      "id": "sea_g3_03_06",
+      "unit": "english.eng.structure.special.inversion",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Only by working hard (   ) succeed.",
+      "choices": [
+        "you can",
+        "can you",
+        "you will",
+        "do you"
+      ],
+      "answerIndex": 1,
+      "explanation": "Only + 副詞句が文頭に来ると倒置。"
+    },
+    {
+      "id": "sea_g3_03_07",
+      "unit": "english.eng.structure.special.inversion",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Into the room (   ) a little girl.",
+      "choices": [
+        "running",
+        "to run",
+        "runs to",
+        "ran"
+      ],
+      "answerIndex": 3,
+      "explanation": "場所の副詞句が文頭に出た倒置。"
+    },
+    {
+      "id": "sea_g3_03_08",
+      "unit": "english.eng.structure.special",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Hardly (   ) home when it began to rain.",
+      "choices": [
+        "had I got",
+        "I had got",
+        "I got",
+        "did I got"
+      ],
+      "answerIndex": 0,
+      "explanation": "Hardly had ... when ...「〜するとすぐに」。"
+    },
+    {
+      "id": "sea_g3_03_09",
+      "unit": "english.eng.structure.special.inversion",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Not only (   ) the piano, but she also sings.",
+      "choices": [
+        "plays she",
+        "does she play",
+        "she plays",
+        "she does play"
+      ],
+      "answerIndex": 1,
+      "explanation": "Not only が文頭で倒置。"
+    },
+    {
+      "id": "sea_g3_03_10",
+      "unit": "english.eng.structure.special.inversion",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Seldom (   ) him smile.",
+      "choices": [
+        "we see",
+        "see we",
+        "we do see",
+        "do we see"
+      ],
+      "answerIndex": 3,
+      "explanation": "否定の意味の副詞 seldom が文頭で倒置。"
+    },
+    {
+      "id": "sea_g3_03_11",
+      "unit": "english.eng.structure.special.inversion",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Such (   ) his anger that he could not speak.",
+      "choices": [
+        "was",
+        "he was",
+        "did",
+        "is he"
+      ],
+      "answerIndex": 0,
+      "explanation": "Such が文頭に来ると be 動詞と主語が倒置。"
+    },
+    {
+      "id": "sea_g3_03_12",
+      "unit": "english.eng.structure.special.inversion",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Happy (   ) those who help others.",
+      "choices": [
+        "is",
+        "being",
+        "are",
+        "be"
+      ],
+      "answerIndex": 2,
+      "explanation": "補語が文頭に出た倒置。"
+    },
+    {
+      "id": "sea_g3_03_13",
+      "unit": "english.eng.structure.special.inversion",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "There (   ) the last train!",
+      "choices": [
+        "go",
+        "goes",
+        "gone",
+        "going"
+      ],
+      "answerIndex": 1,
+      "explanation": "There ＋ 動詞 ＋ 名詞の倒置「ほら、終電が行ってしまう」。"
+    },
+    {
+      "id": "sea_g3_03_14",
+      "unit": "english.eng.structure.special.inversion",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Under no circumstances (   ) the door.",
+      "choices": [
+        "open you",
+        "you should open",
+        "you open",
+        "should you open"
+      ],
+      "answerIndex": 3,
+      "explanation": "否定の副詞句が文頭で倒置。"
+    },
+    {
+      "id": "sea_g3_03_15",
+      "unit": "english.eng.structure.special.inversion",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Only after the war (   ) the truth.",
+      "choices": [
+        "learned people did",
+        "people learned",
+        "did people learn",
+        "people did learn"
+      ],
+      "answerIndex": 2,
+      "explanation": "Only ＋ 副詞句が文頭で倒置。"
+    },
+    {
+      "id": "sea_g3_03_16",
+      "unit": "english.eng.structure.special.inversion",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Nowhere (   ) such a quiet place in this city.",
+      "choices": [
+        "you find",
+        "can find you",
+        "can you find",
+        "you can find"
+      ],
+      "answerIndex": 2,
+      "explanation": "否定語 Nowhere が文頭に出ると、疑問文と同じ語順の倒置になる。"
+    }
+  ]
+}

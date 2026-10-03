@@ -1,0 +1,428 @@
+{
+  "setId": "science_chem_basic_01",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "science_chem_basic_01_001",
+      "unit": "science.chemistry.structure.atom.structure",
+      "category": "knowledge",
+      "prompt": "原子番号が表しているものは？",
+      "choices": [
+        "価電子の数",
+        "中性子の数",
+        "陽子と中性子の数の和",
+        "陽子の数"
+      ],
+      "answerIndex": 3,
+      "explanation": "原子番号 = 陽子の数 = 電子の数（原子の場合）。"
+    },
+    {
+      "id": "science_chem_basic_01_002",
+      "unit": "science.chemistry.structure.atom.structure",
+      "category": "calculation",
+      "prompt": "質量数 12 の炭素原子（原子番号 6）の中性子の数は？",
+      "choices": [
+        "0",
+        "6",
+        "12",
+        "18"
+      ],
+      "answerIndex": 1,
+      "explanation": "中性子の数 = 質量数 − 陽子の数 = 12 − 6 = 6。"
+    },
+    {
+      "id": "science_chem_basic_01_003",
+      "unit": "science.chemistry.structure.atom.structure",
+      "category": "knowledge",
+      "prompt": "原子番号が同じで、質量数（中性子の数）がちがう原子どうしを何という？",
+      "choices": [
+        "異性体",
+        "同素体",
+        "同位体",
+        "同族元素"
+      ],
+      "answerIndex": 2,
+      "explanation": "¹H と ²H、¹²C と ¹³C など。化学的性質はほぼ同じ。"
+    },
+    {
+      "id": "science_chem_basic_01_004",
+      "unit": "science.chemistry.structure.life.element",
+      "category": "knowledge",
+      "prompt": "同素体の組み合わせは？",
+      "choices": [
+        "水と氷",
+        "¹²C と ¹⁴C",
+        "ダイヤモンドと黒鉛",
+        "塩素と塩化ナトリウム"
+      ],
+      "answerIndex": 2,
+      "explanation": "同じ元素からできていて性質がちがう単体どうし。"
+    },
+    {
+      "id": "science_chem_basic_01_005",
+      "unit": "science.chemistry.structure.atom.config",
+      "category": "calculation",
+      "prompt": "ナトリウム原子（原子番号 11）の価電子の数は？",
+      "choices": [
+        "1",
+        "2",
+        "8",
+        "11"
+      ],
+      "answerIndex": 0,
+      "explanation": "電子配置は K 殻 2、L 殻 8、M 殻 1。最外殻の 1 個が価電子。"
+    },
+    {
+      "id": "science_chem_basic_01_006",
+      "unit": "science.chemistry.structure.atom.ion",
+      "category": "calculation",
+      "prompt": "マグネシウムイオン Mg²⁺（原子番号 12）の電子の数は？",
+      "choices": [
+        "2",
+        "10",
+        "12",
+        "14"
+      ],
+      "answerIndex": 1,
+      "explanation": "電子を 2 個失って陽イオンになる。12 − 2 = 10。"
+    },
+    {
+      "id": "science_chem_basic_01_007",
+      "unit": "science.chemistry.change.acid.salt",
+      "category": "knowledge",
+      "prompt": "塩化ナトリウム NaCl の結合は？",
+      "choices": [
+        "イオン結合",
+        "金属結合",
+        "水素結合",
+        "共有結合"
+      ],
+      "answerIndex": 0,
+      "explanation": "陽イオン Na⁺ と陰イオン Cl⁻ が静電気的な力で結びつく。"
+    },
+    {
+      "id": "science_chem_basic_01_008",
+      "unit": "science.chemistry.structure.bond.covalent",
+      "category": "knowledge",
+      "prompt": "水分子 H₂O の中の O と H の結合は？",
+      "choices": [
+        "共有結合",
+        "金属結合",
+        "配位結合だけ",
+        "イオン結合"
+      ],
+      "answerIndex": 0,
+      "explanation": "非金属元素どうしが電子を共有して結びつく。"
+    },
+    {
+      "id": "science_chem_basic_01_009",
+      "unit": "science.chemistry.structure.bond.metal",
+      "category": "knowledge",
+      "prompt": "金属が電気や熱をよく通す理由は？",
+      "choices": [
+        "イオン結合をしているから",
+        "陽子が動き回っているから",
+        "分子でできているから",
+        "自由電子が動き回っているから"
+      ],
+      "answerIndex": 3,
+      "explanation": "金属結合では自由電子が金属全体を動ける。"
+    },
+    {
+      "id": "science_chem_basic_01_010",
+      "unit": "science.chemistry.change.mole.mass",
+      "category": "calculation",
+      "prompt": "H₂O の分子量は？（H = 1、O = 16）",
+      "choices": [
+        "16",
+        "17",
+        "18",
+        "34"
+      ],
+      "answerIndex": 2,
+      "explanation": "1 × 2 + 16 = 18。"
+    },
+    {
+      "id": "science_chem_basic_01_011",
+      "unit": "science.chemistry.change.mole.mass",
+      "category": "calculation",
+      "prompt": "CO₂ の分子量は？（C = 12、O = 16）",
+      "choices": [
+        "28",
+        "32",
+        "40",
+        "44"
+      ],
+      "answerIndex": 3,
+      "explanation": "12 + 16 × 2 = 44。"
+    },
+    {
+      "id": "science_chem_basic_01_012",
+      "unit": "science.chemistry.change.mole.mole",
+      "category": "calculation",
+      "prompt": "水 36 g の物質量は？（H₂O = 18）",
+      "choices": [
+        "0.5 mol",
+        "2 mol",
+        "18 mol",
+        "36 mol"
+      ],
+      "answerIndex": 1,
+      "explanation": "36 ÷ 18 = 2 mol。"
+    },
+    {
+      "id": "science_chem_basic_01_013",
+      "unit": "science.chemistry.inorganic.nonmetal.gas",
+      "category": "calculation",
+      "prompt": "気体 2 mol の標準状態での体積は？（1 mol = 22.4 L）",
+      "choices": [
+        "2 L",
+        "11.2 L",
+        "22.4 L",
+        "44.8 L"
+      ],
+      "answerIndex": 3,
+      "explanation": "22.4 × 2 = 44.8 L。"
+    },
+    {
+      "id": "science_chem_basic_01_014",
+      "unit": "science.chemistry.change.mole.mole",
+      "category": "knowledge",
+      "prompt": "1 mol あたりの粒子の数（アボガドロ定数）は？",
+      "choices": [
+        "約 3.0 × 10⁸",
+        "約 1.6 × 10⁻¹⁹",
+        "約 9.8 × 10²",
+        "約 6.0 × 10²³"
+      ],
+      "answerIndex": 3,
+      "explanation": "6.0 × 10²³ 個の粒子の集まりを 1 mol とする。"
+    },
+    {
+      "id": "science_chem_basic_01_015",
+      "unit": "science.chemistry.change.mole.concentration",
+      "category": "calculation",
+      "prompt": "食塩 20 g を水 80 g に溶かした水溶液の質量パーセント濃度は？",
+      "choices": [
+        "16%",
+        "20%",
+        "25%",
+        "80%"
+      ],
+      "answerIndex": 1,
+      "explanation": "20 ÷ (20 + 80) × 100 = 20%。溶液全体で割る。"
+    },
+    {
+      "id": "science_chem_basic_01_016",
+      "unit": "science.chemistry.change.mole.concentration",
+      "category": "calculation",
+      "prompt": "NaOH 0.2 mol を水に溶かして 500 mL にした水溶液のモル濃度は？",
+      "choices": [
+        "0.2 mol/L",
+        "0.1 mol/L",
+        "0.4 mol/L",
+        "100 mol/L"
+      ],
+      "answerIndex": 2,
+      "explanation": "0.2 ÷ 0.5 = 0.4 mol/L。"
+    },
+    {
+      "id": "science_chem_basic_01_017",
+      "unit": "science.chemistry.change.equation.write",
+      "category": "calculation",
+      "prompt": "2H₂ + O₂ → 2H₂O で、H₂ 4 mol が完全に反応するとできる H₂O は？",
+      "choices": [
+        "2 mol",
+        "4 mol",
+        "6 mol",
+        "8 mol"
+      ],
+      "answerIndex": 1,
+      "explanation": "係数の比 H₂ : H₂O = 2 : 2 = 1 : 1。"
+    },
+    {
+      "id": "science_chem_basic_01_018",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "knowledge",
+      "prompt": "アレーニウスの定義で、酸とは？",
+      "choices": [
+        "酸素と結びつく物質",
+        "電子を受け取る物質",
+        "水に溶けて水酸化物イオン OH⁻ を生じる物質",
+        "水に溶けて水素イオン H⁺ を生じる物質"
+      ],
+      "answerIndex": 3,
+      "explanation": "塩酸（HCl）などが酸。OH⁻ を生じるのが塩基。"
+    },
+    {
+      "id": "science_chem_basic_01_019",
+      "unit": "science.chemistry.change.acid.ph",
+      "category": "knowledge",
+      "prompt": "pH 3 の水溶液の性質は？",
+      "choices": [
+        "酸性",
+        "塩基性",
+        "中性",
+        "判断できない"
+      ],
+      "answerIndex": 0,
+      "explanation": "25℃ では pH 7 が中性。7 より小さいと酸性。"
+    },
+    {
+      "id": "science_chem_basic_01_020",
+      "unit": "science.chemistry.change.mole.concentration",
+      "category": "calculation",
+      "prompt": "pH 2 の水溶液の H⁺ の濃度は、pH 4 の水溶液の何倍？",
+      "choices": [
+        "2倍",
+        "100倍",
+        "1/100倍",
+        "20倍"
+      ],
+      "answerIndex": 1,
+      "explanation": "pH が 1 小さいと H⁺ の濃度は 10 倍。2 ちがうので 100 倍。"
+    },
+    {
+      "id": "science_chem_basic_01_021",
+      "unit": "science.chemistry.change.acid.neutral",
+      "category": "calculation",
+      "prompt": "HCl 1 mol をちょうど中和するのに必要な NaOH は？",
+      "choices": [
+        "0.5 mol",
+        "1 mol",
+        "2 mol",
+        "36.5 mol"
+      ],
+      "answerIndex": 1,
+      "explanation": "HCl + NaOH → NaCl + H₂O。1 : 1 で反応する。"
+    },
+    {
+      "id": "science_chem_basic_01_022",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "calculation",
+      "prompt": "0.1 mol/L の塩酸 10 mL をちょうど中和するのに必要な 0.1 mol/L の NaOH 水溶液は？",
+      "choices": [
+        "5 mL",
+        "10 mL",
+        "20 mL",
+        "100 mL"
+      ],
+      "answerIndex": 1,
+      "explanation": "濃度も価数も同じなので、同じ体積で中和する。"
+    },
+    {
+      "id": "science_chem_basic_01_023",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "knowledge",
+      "prompt": "酸化の説明として正しいものは？",
+      "choices": [
+        "物質が酸素を失うこと",
+        "物質が水素を受け取ること",
+        "物質が電子を受け取ること",
+        "物質が電子を失うこと"
+      ],
+      "answerIndex": 3,
+      "explanation": "酸素を受け取る・水素を失う・電子を失うのが酸化。"
+    },
+    {
+      "id": "science_chem_basic_01_024",
+      "unit": "science.chemistry.change.redox.oxnum",
+      "category": "calculation",
+      "prompt": "H₂O の O の酸化数は？",
+      "choices": [
+        "+2",
+        "0",
+        "−1",
+        "−2"
+      ],
+      "answerIndex": 3,
+      "explanation": "H は +1、化合物全体で 0 なので O は −2。"
+    },
+    {
+      "id": "science_chem_basic_01_025",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "calculation",
+      "prompt": "過マンガン酸イオン MnO₄⁻ の Mn の酸化数は？",
+      "choices": [
+        "+7",
+        "+4",
+        "+2",
+        "−1"
+      ],
+      "answerIndex": 0,
+      "explanation": "x + (−2) × 4 = −1 より x = +7。"
+    },
+    {
+      "id": "science_chem_basic_01_026",
+      "unit": "science.chemistry.structure.atom.ion",
+      "category": "knowledge",
+      "prompt": "イオン化傾向が最も大きい金属は？",
+      "choices": [
+        "金（Au）",
+        "銅（Cu）",
+        "カリウム（K）",
+        "鉄（Fe）"
+      ],
+      "answerIndex": 2,
+      "explanation": "K > Ca > Na > Mg > Al > Zn > Fe … > Cu … > Au。"
+    },
+    {
+      "id": "science_chem_basic_01_027",
+      "unit": "science.chemistry.change.redox.cell",
+      "category": "knowledge",
+      "prompt": "ダニエル電池などで、負極になるのはどちらの金属？",
+      "choices": [
+        "イオン化傾向の大きいほう",
+        "イオン化傾向の小さいほう",
+        "どちらでもよい",
+        "重いほう"
+      ],
+      "answerIndex": 0,
+      "explanation": "イオン化傾向の大きい金属が電子を放出して溶け出す。"
+    },
+    {
+      "id": "science_chem_basic_01_028",
+      "unit": "science.chemistry.structure.life.test",
+      "category": "knowledge",
+      "prompt": "ナトリウムの炎色反応の色は？",
+      "choices": [
+        "黄色",
+        "青緑色",
+        "赤紫色",
+        "橙赤色"
+      ],
+      "answerIndex": 0,
+      "explanation": "Li は赤、K は赤紫、Cu は青緑、Ca は橙赤。"
+    },
+    {
+      "id": "science_chem_basic_01_029",
+      "unit": "science.chemistry.structure.life.separation",
+      "category": "knowledge",
+      "prompt": "海水から純粋な水を取り出すのに適した分離方法は？",
+      "choices": [
+        "再結晶",
+        "ろ過",
+        "クロマトグラフィー",
+        "蒸留"
+      ],
+      "answerIndex": 3,
+      "explanation": "加熱して水蒸気にし、冷やして液体の水を集める。"
+    },
+    {
+      "id": "science_chem_basic_01_030",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "knowledge",
+      "prompt": "混合物はどれ？",
+      "choices": [
+        "空気",
+        "塩化ナトリウム",
+        "水",
+        "酸素"
+      ],
+      "answerIndex": 0,
+      "explanation": "空気は窒素や酸素などが混ざった混合物。ほかは純物質。"
+    }
+  ]
+}

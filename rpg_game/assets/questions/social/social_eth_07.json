@@ -1,0 +1,344 @@
+{
+  "setId": "social_eth_07",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_eth07_001",
+      "unit": "social.eth.western.modern",
+      "category": "knowledge",
+      "prompt": "「われ思う、ゆえにわれあり」と述べた哲学者は？",
+      "choices": [
+        "カント",
+        "ベーコン",
+        "デカルト",
+        "ロック"
+      ],
+      "answerIndex": 2,
+      "explanation": "あらゆるものを疑う方法的懐疑の末に到達した。"
+    },
+    {
+      "id": "soc_eth07_002",
+      "unit": "social.eth.western.modern.science",
+      "category": "knowledge",
+      "prompt": "デカルトに代表される、理性による推論（演繹法）を重んじる立場は？",
+      "choices": [
+        "功利主義",
+        "実存主義",
+        "合理論（大陸合理論）",
+        "イギリス経験論"
+      ],
+      "answerIndex": 2,
+      "explanation": "スピノザ・ライプニッツも合理論。"
+    },
+    {
+      "id": "soc_eth07_003",
+      "unit": "social.eth.western.modern.science",
+      "category": "knowledge",
+      "prompt": "「知は力なり」と述べ、経験と観察から法則を導く帰納法を重んじたのは？",
+      "choices": [
+        "ベーコン",
+        "ヘーゲル",
+        "パスカル",
+        "デカルト"
+      ],
+      "answerIndex": 0,
+      "explanation": "イギリス経験論の祖。"
+    },
+    {
+      "id": "soc_eth07_004",
+      "unit": "social.eth.western.modern.science",
+      "category": "knowledge",
+      "prompt": "ベーコンが、正しい認識をさまたげる偏見・思いこみを何と呼んだ？",
+      "choices": [
+        "エロース",
+        "イデア",
+        "ロゴス",
+        "イドラ"
+      ],
+      "answerIndex": 3,
+      "explanation": "種族・洞窟・市場・劇場の 4 つのイドラ。"
+    },
+    {
+      "id": "soc_eth07_005",
+      "unit": "social.eth.western.modern",
+      "category": "knowledge",
+      "prompt": "「人間は考える葦である」と述べた思想家は？",
+      "choices": [
+        "デカルト",
+        "モンテーニュ",
+        "パスカル",
+        "カント"
+      ],
+      "answerIndex": 2,
+      "explanation": "人間の偉大さと悲惨さを見つめた。"
+    },
+    {
+      "id": "soc_eth07_006",
+      "unit": "social.eth.western.modern",
+      "category": "knowledge",
+      "prompt": "合理論と経験論を統合し、批判哲学を打ち立てた哲学者は？",
+      "choices": [
+        "ロック",
+        "ヘーゲル",
+        "ヒューム",
+        "カント"
+      ],
+      "answerIndex": 3,
+      "explanation": "『純粋理性批判』を著した。"
+    },
+    {
+      "id": "soc_eth07_007",
+      "unit": "social.eth.western.modern.kant",
+      "category": "knowledge",
+      "prompt": "カントが説いた、無条件に「〜せよ」と命じる道徳法則は？",
+      "choices": [
+        "最大多数の最大幸福",
+        "仮言命法",
+        "定言命法",
+        "中庸"
+      ],
+      "answerIndex": 2,
+      "explanation": "「汝の意志の格率が、つねに同時に普遍的立法の原理として妥当しうるように行為せよ」。"
+    },
+    {
+      "id": "soc_eth07_008",
+      "unit": "social.eth.western.modern.kant",
+      "category": "knowledge",
+      "prompt": "カントが、人間を「目的」として扱うべきだと説いたことに関連する考え方は？",
+      "choices": [
+        "人格の尊重",
+        "社会契約説",
+        "功利主義",
+        "弁証法"
+      ],
+      "answerIndex": 0,
+      "explanation": "他人を単なる手段としてのみ扱ってはならない。"
+    },
+    {
+      "id": "soc_eth07_009",
+      "unit": "social.eth.western.modern.kant",
+      "category": "knowledge",
+      "prompt": "正・反・合によって物事が発展するという弁証法を説いた哲学者は？",
+      "choices": [
+        "ヘーゲル",
+        "マルクス",
+        "カント",
+        "デカルト"
+      ],
+      "answerIndex": 0,
+      "explanation": "人倫（家族・市民社会・国家）の考えも示した。"
+    },
+    {
+      "id": "soc_eth07_010",
+      "unit": "social.eth.western.modern",
+      "category": "knowledge",
+      "prompt": "ルネサンス期に、人間は自由意志によって自分のあり方を決められると説いたのは？",
+      "choices": [
+        "エラスムス",
+        "ダンテ",
+        "マキャヴェリ",
+        "ピコ＝デラ＝ミランドラ"
+      ],
+      "answerIndex": 3,
+      "explanation": "『人間の尊厳について』。"
+    },
+    {
+      "id": "soc_eth07_011",
+      "unit": "social.eth.western.modern.kant",
+      "category": "thinking",
+      "prompt": "カントの考える道徳的な行為として適切なものは？",
+      "choices": [
+        "法律で罰せられないように行う行為",
+        "自分の利益になるから行う行為",
+        "結果ではなく、義務にもとづく善い意志から行う行為",
+        "人にほめられるために行う行為"
+      ],
+      "answerIndex": 2,
+      "explanation": "動機の正しさを重視する（動機説）。"
+    },
+    {
+      "id": "soc_eth07_012",
+      "unit": "social.eth.western.modern.science",
+      "category": "thinking",
+      "prompt": "帰納法の例として適切なものは？",
+      "choices": [
+        "神の存在から世界を説明する",
+        "「人間は死ぬ」「ソクラテスは人間」から「ソクラテスは死ぬ」を導く",
+        "多くのカラスを観察して「カラスは黒い」という法則を導く",
+        "仮説を立てずに結論を出す"
+      ],
+      "answerIndex": 2,
+      "explanation": "個別の事実から一般的な法則を導く。後者は演繹法。"
+    },
+    {
+      "id": "soc_eth07_013",
+      "unit": "social.eth.western.modern",
+      "category": "knowledge",
+      "prompt": "「方法的懐疑」によって確実な知識を求めた哲学者は？",
+      "choices": [
+        "カント",
+        "デカルト",
+        "パスカル",
+        "ベーコン"
+      ],
+      "answerIndex": 1,
+      "explanation": "すべてを疑っても、疑っている自分は疑えないとした。"
+    },
+    {
+      "id": "soc_eth07_014",
+      "unit": "social.eth.western.modern.science",
+      "category": "knowledge",
+      "prompt": "デカルトが説いた、精神と物体を別のものとする考え方は？",
+      "choices": [
+        "物心二元論",
+        "一元論",
+        "観念論",
+        "唯物論"
+      ],
+      "answerIndex": 0,
+      "explanation": "機械論的自然観につながった。"
+    },
+    {
+      "id": "soc_eth07_015",
+      "unit": "social.eth.western.modern.science",
+      "category": "knowledge",
+      "prompt": "ベーコンのイドラのうち、人間という種に共通する偏見は？",
+      "choices": [
+        "市場のイドラ",
+        "洞窟のイドラ",
+        "劇場のイドラ",
+        "種族のイドラ"
+      ],
+      "answerIndex": 3,
+      "explanation": "錯覚など。洞窟は個人の偏見、市場は言葉の誤用、劇場は権威の盲信。"
+    },
+    {
+      "id": "soc_eth07_016",
+      "unit": "social.eth.western.modern",
+      "category": "knowledge",
+      "prompt": "ロックが説いた、生まれたときの心は白紙であるという考えは？",
+      "choices": [
+        "コギト",
+        "モナド",
+        "タブラ＝ラサ",
+        "イデア"
+      ],
+      "answerIndex": 2,
+      "explanation": "経験によって知識が書きこまれる。"
+    },
+    {
+      "id": "soc_eth07_017",
+      "unit": "social.eth.western.modern",
+      "category": "knowledge",
+      "prompt": "「存在するとは知覚されることである」と述べた哲学者は？",
+      "choices": [
+        "バークリー",
+        "スピノザ",
+        "ヒューム",
+        "ロック"
+      ],
+      "answerIndex": 0,
+      "explanation": "イギリス経験論。"
+    },
+    {
+      "id": "soc_eth07_018",
+      "unit": "social.eth.western.modern.kant",
+      "category": "knowledge",
+      "prompt": "因果関係は習慣的な思いこみにすぎないと懐疑論を説いた哲学者は？",
+      "choices": [
+        "デカルト",
+        "カント",
+        "ヒューム",
+        "ヘーゲル"
+      ],
+      "answerIndex": 2,
+      "explanation": "カントに影響を与えた。"
+    },
+    {
+      "id": "soc_eth07_019",
+      "unit": "social.eth.western.modern",
+      "category": "knowledge",
+      "prompt": "「神即自然」と説き、汎神論を唱えた哲学者は？",
+      "choices": [
+        "スピノザ",
+        "パスカル",
+        "ライプニッツ",
+        "デカルト"
+      ],
+      "answerIndex": 0,
+      "explanation": "大陸合理論。"
+    },
+    {
+      "id": "soc_eth07_020",
+      "unit": "social.eth.western.modern.kant",
+      "category": "knowledge",
+      "prompt": "カントの、条件つきの「〜ならば〜せよ」という命令は？",
+      "choices": [
+        "格率",
+        "定言命法",
+        "仮言命法",
+        "道徳法則"
+      ],
+      "answerIndex": 2,
+      "explanation": "道徳は無条件の定言命法でなければならない。"
+    },
+    {
+      "id": "soc_eth07_021",
+      "unit": "social.eth.western.modern.kant",
+      "category": "knowledge",
+      "prompt": "カントが説いた、自ら立てた道徳法則に従うことを何という？",
+      "choices": [
+        "他律",
+        "実存",
+        "功利",
+        "自律"
+      ],
+      "answerIndex": 3,
+      "explanation": "そこに人間の自由があるとした。"
+    },
+    {
+      "id": "soc_eth07_022",
+      "unit": "social.eth.western.modern.kant",
+      "category": "knowledge",
+      "prompt": "ヘーゲルが説いた、自由が実現される共同体の最高段階は？",
+      "choices": [
+        "教会",
+        "国家",
+        "家族",
+        "市民社会"
+      ],
+      "answerIndex": 1,
+      "explanation": "人倫（家族→市民社会→国家）。"
+    },
+    {
+      "id": "soc_eth07_023",
+      "unit": "social.eth.western.modern.science",
+      "category": "thinking",
+      "prompt": "演繹法の例として適切なものは？",
+      "choices": [
+        "実験を何度もくり返して法則を見つける。",
+        "観察から仮説を立てる。",
+        "カラスを何羽見ても黒いので、カラスは黒い。",
+        "すべての人間は死ぬ。ソクラテスは人間である。ゆえにソクラテスは死ぬ。"
+      ],
+      "answerIndex": 3,
+      "explanation": "一般的な原理から個別の結論を導く。"
+    },
+    {
+      "id": "soc_eth07_024",
+      "unit": "social.eth.western.modern.renaissance",
+      "category": "thinking",
+      "prompt": "パスカルの「人間は考える葦である」が表すことは？",
+      "choices": [
+        "人間は植物と同じである",
+        "人間は自然より強い",
+        "人間は考えなくてよい",
+        "人間は自然の中では弱いが、考えることに尊厳がある"
+      ],
+      "answerIndex": 3,
+      "explanation": "「考える」ことが人間の偉大さの根拠。"
+    }
+  ]
+}

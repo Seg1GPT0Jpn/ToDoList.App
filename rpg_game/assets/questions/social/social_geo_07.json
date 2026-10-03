@@ -1,0 +1,344 @@
+{
+  "setId": "social_geo_07",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_geo07_001",
+      "unit": "social.geo.nature.soil.vegetation",
+      "category": "knowledge",
+      "prompt": "熱帯雨林気候の地域に広がる、常緑広葉樹の密林は？",
+      "choices": [
+        "ステップ",
+        "ツンドラ",
+        "タイガ",
+        "熱帯雨林（セルバなど）"
+      ],
+      "answerIndex": 3,
+      "explanation": "アマゾン川流域のセルバなど。"
+    },
+    {
+      "id": "soc_geo07_002",
+      "unit": "social.geo.nature.soil",
+      "category": "knowledge",
+      "prompt": "冷帯（亜寒帯）に広がる針葉樹林は？",
+      "choices": [
+        "タイガ",
+        "サバナ",
+        "セルバ",
+        "プレーリー"
+      ],
+      "answerIndex": 0,
+      "explanation": "シベリアやカナダに広がる。"
+    },
+    {
+      "id": "soc_geo07_003",
+      "unit": "social.geo.nature.soil.vegetation",
+      "category": "knowledge",
+      "prompt": "雨季と乾季がはっきりした熱帯の、樹木がまばらな草原は？",
+      "choices": [
+        "パンパ",
+        "ステップ",
+        "サバナ",
+        "ツンドラ"
+      ],
+      "answerIndex": 2,
+      "explanation": "サバナ気候（Aw）の地域に見られる。"
+    },
+    {
+      "id": "soc_geo07_004",
+      "unit": "social.geo.nature.soil.soil",
+      "category": "knowledge",
+      "prompt": "熱帯に広く分布する、赤色のやせた土壌は？",
+      "choices": [
+        "テラロッサ",
+        "ラトソル",
+        "チェルノーゼム",
+        "ポドゾル"
+      ],
+      "answerIndex": 1,
+      "explanation": "養分が雨で流されてしまう。"
+    },
+    {
+      "id": "soc_geo07_005",
+      "unit": "social.geo.nature.soil.vegetation",
+      "category": "knowledge",
+      "prompt": "ウクライナなどのステップ気候の地域に分布する、肥沃な黒色土は？",
+      "choices": [
+        "ラトソル",
+        "ツンドラ土",
+        "ポドゾル",
+        "チェルノーゼム"
+      ],
+      "answerIndex": 3,
+      "explanation": "世界有数の小麦地帯になっている。"
+    },
+    {
+      "id": "soc_geo07_006",
+      "unit": "social.geo.nature.soil.vegetation",
+      "category": "knowledge",
+      "prompt": "タイガの下に分布する、灰白色のやせた酸性土壌は？",
+      "choices": [
+        "ラトソル",
+        "チェルノーゼム",
+        "ポドゾル",
+        "テラローシャ"
+      ],
+      "answerIndex": 2,
+      "explanation": "寒冷で有機物の分解が遅い。"
+    },
+    {
+      "id": "soc_geo07_007",
+      "unit": "social.geo.nature.soil",
+      "category": "knowledge",
+      "prompt": "乾燥地域で、地下水などを利用して農業ができる場所は？",
+      "choices": [
+        "タイガ",
+        "ツンドラ",
+        "フィヨルド",
+        "オアシス"
+      ],
+      "answerIndex": 3,
+      "explanation": "なつめやしなどが栽培される。"
+    },
+    {
+      "id": "soc_geo07_008",
+      "unit": "social.geo.nature.soil",
+      "category": "knowledge",
+      "prompt": "乾燥地域で、家畜とともに水や草を求めて移動する牧畜は？",
+      "choices": [
+        "遊牧",
+        "移牧",
+        "企業的牧畜",
+        "酪農"
+      ],
+      "answerIndex": 0,
+      "explanation": "モンゴルや西アジアなどで見られる。"
+    },
+    {
+      "id": "soc_geo07_009",
+      "unit": "social.geo.nature.soil.life",
+      "category": "knowledge",
+      "prompt": "シベリアなどで、地中が一年中凍っている土地を何という？",
+      "choices": [
+        "砂丘",
+        "台地",
+        "沖積平野",
+        "永久凍土"
+      ],
+      "answerIndex": 3,
+      "explanation": "建物の熱で凍土がとけないよう、高床式の建物がつくられる。"
+    },
+    {
+      "id": "soc_geo07_010",
+      "unit": "social.geo.nature.soil.life",
+      "category": "thinking",
+      "prompt": "熱帯の住居に高床式が多い理由として適切なものは？",
+      "choices": [
+        "寒さを防ぐため",
+        "砂嵐を防ぐため",
+        "地震に強くするため",
+        "湿気や浸水を防ぎ、風通しをよくするため"
+      ],
+      "answerIndex": 3,
+      "explanation": "気候に合わせて住居の形が工夫されている。"
+    },
+    {
+      "id": "soc_geo07_011",
+      "unit": "social.geo.nature.soil.life",
+      "category": "thinking",
+      "prompt": "乾燥帯の住居に日干しれんがの家が多い理由は？",
+      "choices": [
+        "森林が豊かだから",
+        "木材が少なく、厚い壁が昼の暑さと夜の寒さをやわらげるから",
+        "雨が多いから",
+        "地震が多いから"
+      ],
+      "answerIndex": 1,
+      "explanation": "窓を小さくして強い日差しや砂を防ぐ。"
+    },
+    {
+      "id": "soc_geo07_012",
+      "unit": "social.geo.nature.soil.vegetation",
+      "category": "thinking",
+      "prompt": "熱帯雨林の土壌がやせているのに、木々が豊かに茂っている理由は？",
+      "choices": [
+        "雨が少ないから",
+        "土壌に養分が多く蓄えられているから",
+        "寒くて分解が遅いから",
+        "落ち葉などがすぐ分解され、養分がすぐ植物に吸収されて循環しているから"
+      ],
+      "answerIndex": 3,
+      "explanation": "森林を伐採すると養分の循環が断たれ、土地がやせてしまう。"
+    },
+    {
+      "id": "soc_geo07_013",
+      "unit": "social.geo.nature.soil.life",
+      "category": "knowledge",
+      "prompt": "地中海性気候の地域に多い伝統的な住居の特徴は？",
+      "choices": [
+        "石づくりで壁が白く、窓が小さい",
+        "雪のブロックの家",
+        "移動式のテント",
+        "高床の木造"
+      ],
+      "answerIndex": 0,
+      "explanation": "強い日ざしと夏の乾燥に対応している。"
+    },
+    {
+      "id": "soc_geo07_014",
+      "unit": "social.geo.nature.soil.life",
+      "category": "knowledge",
+      "prompt": "永久凍土の上の建物に、高床のものが多い理由は？",
+      "choices": [
+        "動物から守るため",
+        "洪水を防ぐため",
+        "風通しをよくするため",
+        "建物の熱で凍土がとけて、建物がかたむくのを防ぐため"
+      ],
+      "answerIndex": 3,
+      "explanation": "シベリアなどで見られる。"
+    },
+    {
+      "id": "soc_geo07_015",
+      "unit": "social.geo.nature.soil.life",
+      "category": "knowledge",
+      "prompt": "モンゴルの遊牧民が使う、組み立て式の住居は？",
+      "choices": [
+        "高床住居",
+        "イグルー",
+        "日干しれんがの家",
+        "ゲル"
+      ],
+      "answerIndex": 3,
+      "explanation": "移動しやすいように、分解して運べる。"
+    },
+    {
+      "id": "soc_geo07_016",
+      "unit": "social.geo.nature.soil.soil",
+      "category": "knowledge",
+      "prompt": "温帯の落葉広葉樹林の下に分布する、比較的肥沃な土壌は？",
+      "choices": [
+        "ポドゾル",
+        "褐色森林土",
+        "砂漠土",
+        "ラトソル"
+      ],
+      "answerIndex": 1,
+      "explanation": "落ち葉が分解されて養分が多い。"
+    },
+    {
+      "id": "soc_geo07_017",
+      "unit": "social.geo.nature.soil.soil",
+      "category": "knowledge",
+      "prompt": "ブラジル高原に分布し、コーヒー栽培に適した赤紫色の土壌は？",
+      "choices": [
+        "テラローシャ",
+        "チェルノーゼム",
+        "ポドゾル",
+        "レグール"
+      ],
+      "answerIndex": 0,
+      "explanation": "玄武岩が風化してできた土壌。"
+    },
+    {
+      "id": "soc_geo07_018",
+      "unit": "social.geo.nature.soil.soil",
+      "category": "knowledge",
+      "prompt": "インドのデカン高原に分布し、綿花栽培に適した黒色土は？",
+      "choices": [
+        "プレーリー土",
+        "ラトソル",
+        "テラローシャ",
+        "レグール"
+      ],
+      "answerIndex": 3,
+      "explanation": "玄武岩が風化してできた土壌。"
+    },
+    {
+      "id": "soc_geo07_019",
+      "unit": "social.geo.nature.soil",
+      "category": "knowledge",
+      "prompt": "北アメリカの中央部に分布する、肥沃な黒色土は？",
+      "choices": [
+        "ポドゾル",
+        "プレーリー土",
+        "ラトソル",
+        "テラロッサ"
+      ],
+      "answerIndex": 1,
+      "explanation": "小麦やとうもろこしの大産地になっている。"
+    },
+    {
+      "id": "soc_geo07_020",
+      "unit": "social.geo.nature.soil",
+      "category": "knowledge",
+      "prompt": "アンデス山脈の高地で飼育されている動物は？",
+      "choices": [
+        "トナカイ",
+        "リャマやアルパカ",
+        "水牛",
+        "らくだ"
+      ],
+      "answerIndex": 1,
+      "explanation": "毛や荷物の運搬に利用されてきた。"
+    },
+    {
+      "id": "soc_geo07_021",
+      "unit": "social.geo.nature.soil",
+      "category": "knowledge",
+      "prompt": "イランなどの乾燥地域で、山ろくの地下水を運ぶためにつくられた地下水路は？",
+      "choices": [
+        "運河",
+        "カナート",
+        "ため池",
+        "センターピボット"
+      ],
+      "answerIndex": 1,
+      "explanation": "北アフリカではフォガラと呼ばれる。"
+    },
+    {
+      "id": "soc_geo07_022",
+      "unit": "social.geo.nature.soil",
+      "category": "knowledge",
+      "prompt": "熱帯の地域で主食とされてきたいも類は？",
+      "choices": [
+        "ライ麦",
+        "小麦",
+        "キャッサバやタロいも",
+        "じゃがいもだけ"
+      ],
+      "answerIndex": 2,
+      "explanation": "キャッサバからはタピオカもつくられる。"
+    },
+    {
+      "id": "soc_geo07_023",
+      "unit": "social.geo.nature.soil",
+      "category": "knowledge",
+      "prompt": "シベリアなど寒冷な地域で飼育され、乗り物や食料として利用される動物は？",
+      "choices": [
+        "やぎ",
+        "水牛",
+        "トナカイ",
+        "リャマ"
+      ],
+      "answerIndex": 2,
+      "explanation": "サーミの人々などが飼育してきた。"
+    },
+    {
+      "id": "soc_geo07_024",
+      "unit": "social.geo.nature.soil.life",
+      "category": "thinking",
+      "prompt": "寒冷な地域の住居で、窓が二重になっていることが多い理由は？",
+      "choices": [
+        "風通しをよくするため",
+        "室内の熱を外に逃がしにくくするため",
+        "光をさえぎるため",
+        "雨もりを防ぐため"
+      ],
+      "answerIndex": 1,
+      "explanation": "二重の窓の間の空気が熱を伝えにくくする。"
+    }
+  ]
+}

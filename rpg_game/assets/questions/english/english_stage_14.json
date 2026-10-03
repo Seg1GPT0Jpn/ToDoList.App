@@ -1,0 +1,356 @@
+{
+  "setId": "english_stage_14",
+  "worldId": "english",
+  "origin": "original",
+  "version": 3,
+  "questions": [
+    {
+      "id": "en14_001",
+      "unit": "english.eng.vocab.advanced.meaning",
+      "category": "meaning",
+      "prompt": "「hinder」の意味は？",
+      "choices": [
+        "妨げる",
+        "綿密に調べる",
+        "気が進まない",
+        "故意の"
+      ],
+      "answerIndex": 0,
+      "explanation": "hinder は「妨げる」。"
+    },
+    {
+      "id": "en14_002",
+      "unit": "english.eng.vocab.advanced.meaning",
+      "category": "meaning",
+      "prompt": "「elaborate」の意味は？",
+      "choices": [
+        "減少する",
+        "ためらう",
+        "手の込んだ",
+        "弱める"
+      ],
+      "answerIndex": 2,
+      "explanation": "elaborate は「手の込んだ」。"
+    },
+    {
+      "id": "en14_003",
+      "unit": "english.eng.vocab.advanced.meaning",
+      "category": "meaning",
+      "prompt": "「compatible」の意味は？",
+      "choices": [
+        "実行可能な",
+        "適切な",
+        "強調する",
+        "両立できる"
+      ],
+      "answerIndex": 3,
+      "explanation": "compatible は「両立できる」。"
+    },
+    {
+      "id": "en14_004",
+      "unit": "english.eng.vocab.advanced.meaning",
+      "category": "meaning",
+      "prompt": "「flourish」の意味は？",
+      "choices": [
+        "減少する",
+        "弱める",
+        "手の込んだ",
+        "繁栄する"
+      ],
+      "answerIndex": 3,
+      "explanation": "flourish は「繁栄する」。"
+    },
+    {
+      "id": "en14_005",
+      "unit": "english.eng.vocab.advanced.meaning",
+      "category": "meaning",
+      "prompt": "「spontaneous」の意味は？",
+      "choices": [
+        "自発的な",
+        "本来備わっている",
+        "減少する",
+        "悪化する"
+      ],
+      "answerIndex": 0,
+      "explanation": "spontaneous は「自発的な」。"
+    },
+    {
+      "id": "en14_006",
+      "unit": "english.eng.vocab.advanced.meaning",
+      "category": "meaning",
+      "prompt": "「meticulous」の意味は？",
+      "choices": [
+        "気が進まない",
+        "減少する",
+        "細心の注意を払った",
+        "結果"
+      ],
+      "answerIndex": 2,
+      "explanation": "meticulous は「細心の注意を払った」。"
+    },
+    {
+      "id": "en14_007",
+      "unit": "english.eng.vocab.advanced.meaning",
+      "category": "meaning",
+      "prompt": "「profound」の意味は？",
+      "choices": [
+        "予想する",
+        "広く行き渡る",
+        "結果",
+        "深い"
+      ],
+      "answerIndex": 3,
+      "explanation": "profound は「深い」。"
+    },
+    {
+      "id": "en14_008",
+      "unit": "english.eng.vocab.advanced.meaning",
+      "category": "meaning",
+      "prompt": "「scrutinize」の意味は？",
+      "choices": [
+        "変動する",
+        "強調する",
+        "綿密に調べる",
+        "漠然とした"
+      ],
+      "answerIndex": 2,
+      "explanation": "scrutinize は「綿密に調べる」。"
+    },
+    {
+      "id": "en14_009",
+      "unit": "english.eng.vocab.idiom.idiom",
+      "category": "meaning",
+      "prompt": "「in spite of ～」の意味は？",
+      "choices": [
+        "～にもかかわらず",
+        "～に頼る",
+        "～を尊敬する",
+        "～を楽しみに待つ"
+      ],
+      "answerIndex": 0,
+      "explanation": "in spite of ～ は「～にもかかわらず」。"
+    },
+    {
+      "id": "en14_010",
+      "unit": "english.eng.vocab.idiom.idiom",
+      "category": "meaning",
+      "prompt": "「because of ～」の意味は？",
+      "choices": [
+        "～に頼る",
+        "～が理由で",
+        "～と仲良くやっていく",
+        "意味をなす"
+      ],
+      "answerIndex": 1,
+      "explanation": "because of ～ は「～が理由で」。"
+    },
+    {
+      "id": "en14_011",
+      "unit": "english.eng.vocab.basic.pos",
+      "category": "partOfSpeech",
+      "prompt": "次のうち「動詞」はどれ？",
+      "choices": [
+        "short",
+        "shorten",
+        "shortly",
+        "shortage"
+      ],
+      "answerIndex": 1,
+      "explanation": "short + -en で動詞 shorten（短くする）。shortage は「不足」という名詞。"
+    },
+    {
+      "id": "en14_012",
+      "unit": "english.eng.vocab.basic.pos",
+      "category": "partOfSpeech",
+      "prompt": "次のうち「副詞」はどれ？",
+      "choices": [
+        "rapid",
+        "rapidly",
+        "rapidity",
+        "rapidness"
+      ],
+      "answerIndex": 1,
+      "explanation": "rapid + -ly で副詞 rapidly（急速に）。"
+    },
+    {
+      "id": "en14_013",
+      "unit": "english.eng.structure.complex",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "My mother made me (   ) my room.",
+      "choices": [
+        "to clean",
+        "clean",
+        "cleaning",
+        "cleaned"
+      ],
+      "answerIndex": 1,
+      "explanation": "使役動詞 make は「make + 人 + 動詞の原形」で「人に（むりやり）〜させる」。"
+    },
+    {
+      "id": "en14_014",
+      "unit": "english.eng.structure.complex",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Please let me (   ) your bike.",
+      "choices": [
+        "use",
+        "to use",
+        "using",
+        "used"
+      ],
+      "answerIndex": 0,
+      "explanation": "let + 人 + 動詞の原形 で「人に〜させてあげる（許可）」。"
+    },
+    {
+      "id": "en14_015",
+      "unit": "english.eng.structure.complex",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Not (   ) students like math.",
+      "choices": [
+        "every",
+        "any",
+        "all",
+        "no"
+      ],
+      "answerIndex": 2,
+      "explanation": "not all 〜 は「すべてが〜というわけではない」（部分否定）。"
+    },
+    {
+      "id": "en14_016",
+      "unit": "english.eng.structure.complex",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The story is so strange that I can (   ) believe it.",
+      "choices": [
+        "hard",
+        "hardly",
+        "nearly",
+        "almost"
+      ],
+      "answerIndex": 1,
+      "explanation": "hardly は「ほとんど〜ない」。hard は「熱心に・難しい」。"
+    },
+    {
+      "id": "en14_017",
+      "unit": "english.eng.structure.complex",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "There is no rule (   ) exceptions.",
+      "choices": [
+        "with",
+        "without",
+        "for",
+        "by"
+      ],
+      "answerIndex": 1,
+      "explanation": "no 〜 without … で「…のない〜はない」（二重否定）。"
+    },
+    {
+      "id": "en14_018",
+      "unit": "english.eng.structure.complex",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "It was not (   ) he came home that I noticed the problem.",
+      "choices": [
+        "when",
+        "before",
+        "since",
+        "until"
+      ],
+      "answerIndex": 3,
+      "explanation": "It is not until 〜 that … で「〜して初めて…」。"
+    },
+    {
+      "id": "en14_019",
+      "unit": "english.eng.structure.complex",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "No (   ) had I arrived than it began to rain.",
+      "choices": [
+        "later",
+        "sooner",
+        "more",
+        "faster"
+      ],
+      "answerIndex": 1,
+      "explanation": "No sooner had S p.p. than … で「〜するとすぐに…」。"
+    },
+    {
+      "id": "en14_020",
+      "unit": "english.eng.structure.complex",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "She (   ) goes out on weekends; she usually stays home.",
+      "choices": [
+        "often",
+        "always",
+        "rarely",
+        "sometimes"
+      ],
+      "answerIndex": 2,
+      "explanation": "rarely は「めったに〜ない」。後半の内容と合う。"
+    },
+    {
+      "id": "en14_021",
+      "unit": "english.eng.structure.complex.inanimate",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This medicine will make you (   ) better.",
+      "choices": [
+        "to feel",
+        "feel",
+        "feeling",
+        "felt"
+      ],
+      "answerIndex": 1,
+      "explanation": "使役動詞 make + O + 原形。「この薬を飲めば気分がよくなる」（無生物主語）。"
+    },
+    {
+      "id": "en14_022",
+      "unit": "english.eng.structure.complex.inanimate",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The heavy rain prevented us (   ) going out.",
+      "choices": [
+        "to",
+        "from",
+        "of",
+        "with"
+      ],
+      "answerIndex": 1,
+      "explanation": "prevent + O + from -ing で「O が〜するのを妨げる」。"
+    },
+    {
+      "id": "en14_023",
+      "unit": "english.eng.structure.complex",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "What made you (   ) so?",
+      "choices": [
+        "to think",
+        "think",
+        "thinking",
+        "thought"
+      ],
+      "answerIndex": 1,
+      "explanation": "「何があなたにそう思わせたのか」＝なぜそう思ったのか。make + O + 原形。"
+    },
+    {
+      "id": "en14_024",
+      "unit": "english.eng.structure.complex.inanimate",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This road will take you (   ) the station.",
+      "choices": [
+        "at",
+        "to",
+        "for",
+        "on"
+      ],
+      "answerIndex": 1,
+      "explanation": "無生物主語 + take + 人 + to 〜 で「（この道を行けば）〜に着く」。"
+    }
+  ]
+}

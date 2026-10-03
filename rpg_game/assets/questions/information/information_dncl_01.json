@@ -1,0 +1,456 @@
+{
+  "setId": "information_dncl_01",
+  "worldId": "information",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "information_dncl_01_001",
+      "unit": "information.info.programming.program.trace",
+      "category": "calculation",
+      "prompt": "表示される値は？",
+      "sentence": "x = 5\ny = x * 3 - 2\n表示する(y)",
+      "choices": [
+        "10",
+        "13",
+        "15",
+        "17"
+      ],
+      "answerIndex": 1,
+      "explanation": "x * 3 = 15、15 − 2 = 13。掛け算が先に計算される。"
+    },
+    {
+      "id": "information_dncl_01_002",
+      "unit": "information.info.programming.program.trace",
+      "category": "calculation",
+      "prompt": "表示される値は？（÷ は商の整数部分）",
+      "sentence": "x = 17\ny = x ÷ 5\n表示する(y)",
+      "choices": [
+        "2",
+        "3",
+        "3.4",
+        "4"
+      ],
+      "answerIndex": 1,
+      "explanation": "共通テスト用プログラム表記の「÷」は、割り算の商の整数部分を求める。17 ÷ 5 は 3 余り 2。"
+    },
+    {
+      "id": "information_dncl_01_003",
+      "unit": "information.info.programming.program.trace",
+      "category": "calculation",
+      "prompt": "表示される値は？（% は余り）",
+      "sentence": "x = 17 % 5\n表示する(x)",
+      "choices": [
+        "0",
+        "2",
+        "3",
+        "5"
+      ],
+      "answerIndex": 1,
+      "explanation": "17 を 5 で割ると商 3、余り 2。"
+    },
+    {
+      "id": "information_dncl_01_004",
+      "unit": "information.info.programming.program.trace",
+      "category": "calculation",
+      "prompt": "表示される値は？",
+      "sentence": "Data = [4, 8, 1, 6]\n表示する(Data[2])",
+      "choices": [
+        "1",
+        "4",
+        "6",
+        "8"
+      ],
+      "answerIndex": 0,
+      "explanation": "配列の添字は 0 から始まる。Data[0]=4、Data[1]=8、Data[2]=1。"
+    },
+    {
+      "id": "information_dncl_01_005",
+      "unit": "information.info.programming.program.trace",
+      "category": "calculation",
+      "prompt": "表示される値は？",
+      "sentence": "Data = [4, 8, 1, 6]\n表示する(要素数(Data))",
+      "choices": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "answerIndex": 1,
+      "explanation": "要素数(Data) は配列の要素の個数。4 個ある。"
+    },
+    {
+      "id": "information_dncl_01_006",
+      "unit": "information.info.programming.program.trace",
+      "category": "calculation",
+      "prompt": "表示される値は？",
+      "sentence": "x = 0\ni を 1 から 5 まで 1 ずつ増やしながら繰り返す:\n  x = x + i\n表示する(x)",
+      "choices": [
+        "5",
+        "10",
+        "14",
+        "15"
+      ],
+      "answerIndex": 3,
+      "explanation": "1 + 2 + 3 + 4 + 5 = 15。「5 まで」は 5 をふくむ。"
+    },
+    {
+      "id": "information_dncl_01_007",
+      "unit": "information.info.programming.program.trace",
+      "category": "calculation",
+      "prompt": "表示される値は？",
+      "sentence": "x = 1\nx < 50 の間繰り返す:\n  x = x * 3\n表示する(x)",
+      "choices": [
+        "27",
+        "50",
+        "81",
+        "243"
+      ],
+      "answerIndex": 2,
+      "explanation": "x は 1→3→9→27→81。81 で x < 50 が成り立たなくなり、くり返しが終わる。"
+    },
+    {
+      "id": "information_dncl_01_008",
+      "unit": "information.info.programming.program.trace",
+      "category": "thinking",
+      "prompt": "表示されるものは？",
+      "sentence": "x = 7\nもし x % 2 == 0 ならば:\n  表示する(\"偶数\")\nそうでなければ:\n  表示する(\"奇数\")",
+      "choices": [
+        "偶数",
+        "何も表示されない",
+        "奇数",
+        "7"
+      ],
+      "answerIndex": 2,
+      "explanation": "7 % 2 は 1 なので条件は成り立たず、「そうでなければ」の側が実行される。"
+    },
+    {
+      "id": "information_dncl_01_009",
+      "unit": "information.info.programming.program.trace",
+      "category": "calculation",
+      "prompt": "表示される値は？",
+      "sentence": "合計 = 0\nData = [3, 7, 2, 9]\ni を 0 から 要素数(Data) - 1 まで 1 ずつ増やしながら繰り返す:\n  合計 = 合計 + Data[i]\n表示する(合計)",
+      "choices": [
+        "12",
+        "18",
+        "19",
+        "21"
+      ],
+      "answerIndex": 3,
+      "explanation": "i は 0〜3 で、すべての要素を足す。3 + 7 + 2 + 9 = 21。"
+    },
+    {
+      "id": "information_dncl_01_010",
+      "unit": "information.info.programming.program.trace",
+      "category": "calculation",
+      "prompt": "表示される値は？",
+      "sentence": "Data = [3, 7, 2, 9, 5]\n最大 = Data[0]\ni を 1 から 4 まで 1 ずつ増やしながら繰り返す:\n  もし Data[i] > 最大 ならば:\n    最大 = Data[i]\n表示する(最大)",
+      "choices": [
+        "3",
+        "5",
+        "7",
+        "9"
+      ],
+      "answerIndex": 3,
+      "explanation": "今までの最大より大きい要素が出るたびに更新するので、最後には最大値 9 が残る。"
+    },
+    {
+      "id": "information_dncl_01_011",
+      "unit": "information.info.programming.program.trace",
+      "category": "calculation",
+      "prompt": "表示される値は？",
+      "sentence": "Data = [5, 2, 8]\n個数 = 0\ni を 0 から 2 まで 1 ずつ増やしながら繰り返す:\n  もし Data[i] > 4 ならば:\n    個数 = 個数 + 1\n表示する(個数)",
+      "choices": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "answerIndex": 2,
+      "explanation": "4 より大きいのは 5 と 8 の 2 個。"
+    },
+    {
+      "id": "information_dncl_01_012",
+      "unit": "information.info.programming.program",
+      "category": "calculation",
+      "prompt": "表示する(i) は何回実行される？",
+      "sentence": "i を 10 から 1 まで 3 ずつ減らしながら繰り返す:\n  表示する(i)",
+      "choices": [
+        "3回",
+        "4回",
+        "5回",
+        "10回"
+      ],
+      "answerIndex": 1,
+      "explanation": "i は 10, 7, 4, 1 と変わる。次の −2 は 1 より小さいので終わる。"
+    },
+    {
+      "id": "information_dncl_01_013",
+      "unit": "information.info.programming.program.variable",
+      "category": "thinking",
+      "prompt": "配列 Data の平均を求めたい。［ ］に入る演算子は？",
+      "sentence": "平均 = 合計 ［ ］ 要素数(Data)",
+      "choices": [
+        "*",
+        "÷",
+        "%",
+        "/"
+      ],
+      "answerIndex": 3,
+      "explanation": "平均は小数になることがあるので、ふつうの割り算「/」を使う。「÷」は商の整数部分しか求めない。"
+    },
+    {
+      "id": "information_dncl_01_014",
+      "unit": "information.info.programming.program.trace",
+      "category": "calculation",
+      "prompt": "表示される値は？",
+      "sentence": "回数 = 0\ni を 1 から 3 まで 1 ずつ増やしながら繰り返す:\n  j を 1 から 4 まで 1 ずつ増やしながら繰り返す:\n    回数 = 回数 + 1\n表示する(回数)",
+      "choices": [
+        "3",
+        "4",
+        "7",
+        "12"
+      ],
+      "answerIndex": 3,
+      "explanation": "外側 3 回 × 内側 4 回 = 12 回。"
+    },
+    {
+      "id": "information_dncl_01_015",
+      "unit": "information.info.programming.program.trace",
+      "category": "calculation",
+      "prompt": "表示される値は？",
+      "sentence": "x = 3\ny = 5\nx = y\ny = x\n表示する(x + y)",
+      "choices": [
+        "6",
+        "8",
+        "10",
+        "15"
+      ],
+      "answerIndex": 2,
+      "explanation": "x = y で x は 5。次の y = x で y も 5。5 + 5 = 10。"
+    },
+    {
+      "id": "information_dncl_01_016",
+      "unit": "information.info.programming.program.trace",
+      "category": "calculation",
+      "prompt": "実行後の Data は？",
+      "sentence": "Data = [1, 2, 3, 4]\nw = Data[1]\nData[1] = Data[3]\nData[3] = w",
+      "choices": [
+        "[1, 2, 3, 4]",
+        "[3, 4, 1, 2]",
+        "[1, 4, 3, 2]",
+        "[4, 2, 3, 1]"
+      ],
+      "answerIndex": 2,
+      "explanation": "作業用の変数 w を使って、Data[1]（2）と Data[3]（4）を入れ替える。"
+    },
+    {
+      "id": "information_dncl_01_017",
+      "unit": "information.info.programming.program.trace",
+      "category": "calculation",
+      "prompt": "表示される値は？",
+      "sentence": "Data = [6, 3, 9, 3, 7]\n位置 = -1\ni を 0 から 4 まで 1 ずつ増やしながら繰り返す:\n  もし Data[i] == 3 and 位置 == -1 ならば:\n    位置 = i\n表示する(位置)",
+      "choices": [
+        "-1",
+        "0",
+        "1",
+        "3"
+      ],
+      "answerIndex": 2,
+      "explanation": "最初に 3 が見つかった添字だけを記録する。Data[1] が最初の 3。"
+    },
+    {
+      "id": "information_dncl_01_018",
+      "unit": "information.info.programming.program.trace",
+      "category": "calculation",
+      "prompt": "実行後の Data は？",
+      "sentence": "Data = [5, 1, 4, 2]\ni を 0 から 2 まで 1 ずつ増やしながら繰り返す:\n  もし Data[i] > Data[i + 1] ならば:\n    w = Data[i]\n    Data[i] = Data[i + 1]\n    Data[i + 1] = w",
+      "choices": [
+        "[1, 2, 4, 5]",
+        "[5, 4, 2, 1]",
+        "[1, 4, 2, 5]",
+        "[1, 5, 4, 2]"
+      ],
+      "answerIndex": 2,
+      "explanation": "バブルソートの1回目の走査。5 が右へ運ばれて末尾に来るが、ほかはまだ整列しきっていない。"
+    },
+    {
+      "id": "information_dncl_01_019",
+      "unit": "information.info.programming.program.trace",
+      "category": "calculation",
+      "prompt": "表示される値は？",
+      "sentence": "x = 2\ni を 1 から 4 まで 1 ずつ増やしながら繰り返す:\n  x = x * 2\n表示する(x)",
+      "choices": [
+        "8",
+        "16",
+        "32",
+        "64"
+      ],
+      "answerIndex": 2,
+      "explanation": "2 を 4 回 2 倍する。2 → 4 → 8 → 16 → 32。"
+    },
+    {
+      "id": "information_dncl_01_020",
+      "unit": "information.info.programming.program.trace",
+      "category": "calculation",
+      "prompt": "表示される値は？",
+      "sentence": "n = 12\nc = 0\nn > 1 の間繰り返す:\n  n = n ÷ 2\n  c = c + 1\n表示する(c)",
+      "choices": [
+        "2",
+        "3",
+        "4",
+        "6"
+      ],
+      "answerIndex": 1,
+      "explanation": "n は 12 → 6 → 3 → 1。3 回で n > 1 が成り立たなくなる。"
+    },
+    {
+      "id": "information_dncl_01_021",
+      "unit": "information.info.programming.program.trace",
+      "category": "thinking",
+      "prompt": "表示される値は？",
+      "sentence": "a = 48\nb = 18\nb != 0 の間繰り返す:\n  r = a % b\n  a = b\n  b = r\n表示する(a)",
+      "choices": [
+        "3",
+        "6",
+        "12",
+        "18"
+      ],
+      "answerIndex": 1,
+      "explanation": "ユークリッドの互除法。(48,18)→(18,12)→(12,6)→(6,0)。最大公約数は 6。"
+    },
+    {
+      "id": "information_dncl_01_022",
+      "unit": "information.info.programming.program.variable",
+      "category": "knowledge",
+      "prompt": "共通テスト用プログラム表記の「要素数(Data)」が表すものは？",
+      "choices": [
+        "配列 Data の合計",
+        "配列 Data の要素の個数",
+        "配列 Data の最後の要素",
+        "配列 Data の最大値"
+      ],
+      "answerIndex": 1,
+      "explanation": "要素数(Data) は、配列にいくつ値が入っているかを返す。"
+    },
+    {
+      "id": "information_dncl_01_023",
+      "unit": "information.info.programming.program.variable",
+      "category": "knowledge",
+      "prompt": "共通テスト用プログラム表記で、配列の添字は何から始まる？",
+      "choices": [
+        "0",
+        "要素数",
+        "1",
+        "どこからでもよい"
+      ],
+      "answerIndex": 0,
+      "explanation": "特に断りがなければ、添字は 0 から始まる。"
+    },
+    {
+      "id": "information_dncl_01_024",
+      "unit": "information.info.programming.program",
+      "category": "calculation",
+      "prompt": "くり返しは何回行われる？",
+      "sentence": "i を 0 から 9 まで 2 ずつ増やしながら繰り返す:\n  表示する(i)",
+      "choices": [
+        "4回",
+        "5回",
+        "9回",
+        "10回"
+      ],
+      "answerIndex": 1,
+      "explanation": "i は 0, 2, 4, 6, 8。次の 10 は 9 をこえるので終わる。"
+    },
+    {
+      "id": "information_dncl_01_025",
+      "unit": "information.info.programming.program.trace",
+      "category": "calculation",
+      "prompt": "表示される値は？（÷ は商の整数部分）",
+      "sentence": "表示する(10 ÷ 3 * 3)",
+      "choices": [
+        "1",
+        "3",
+        "9",
+        "10"
+      ],
+      "answerIndex": 2,
+      "explanation": "左から順に計算する。10 ÷ 3 = 3、3 * 3 = 9。"
+    },
+    {
+      "id": "information_dncl_01_026",
+      "unit": "information.info.programming.program.trace",
+      "category": "thinking",
+      "prompt": "表示されるものは？",
+      "sentence": "x = 6\nもし x > 3 and x < 5 ならば:\n  表示する(\"A\")\nそうでなくもし x > 5 ならば:\n  表示する(\"B\")\nそうでなければ:\n  表示する(\"C\")",
+      "choices": [
+        "A",
+        "B",
+        "AB",
+        "C"
+      ],
+      "answerIndex": 1,
+      "explanation": "x < 5 が偽なので最初の条件は成り立たない。次の x > 5 が真なので \"B\"。"
+    },
+    {
+      "id": "information_dncl_01_027",
+      "unit": "information.info.programming.program.trace",
+      "category": "calculation",
+      "prompt": "表示される値は？",
+      "sentence": "Data = [2, 4, 6]\n積 = 1\ni を 0 から 2 まで 1 ずつ増やしながら繰り返す:\n  積 = 積 * Data[i]\n表示する(積)",
+      "choices": [
+        "12",
+        "24",
+        "36",
+        "48"
+      ],
+      "answerIndex": 3,
+      "explanation": "1 × 2 × 4 × 6 = 48。積の初期値は 0 ではなく 1 にする。"
+    },
+    {
+      "id": "information_dncl_01_028",
+      "unit": "information.info.programming.program.trace",
+      "category": "calculation",
+      "prompt": "表示される値は？",
+      "sentence": "Table = [[1, 2, 3], [4, 5, 6]]\n表示する(Table[1][2])",
+      "choices": [
+        "2",
+        "3",
+        "5",
+        "6"
+      ],
+      "answerIndex": 3,
+      "explanation": "Table[1] は [4, 5, 6]。その添字 2 は 6。"
+    },
+    {
+      "id": "information_dncl_01_029",
+      "unit": "information.info.programming.program.variable",
+      "category": "thinking",
+      "prompt": "偶数の個数を数えたい。［ ］に入るものは？",
+      "sentence": "もし Data[i] % 2 ［ ］ 0 ならば:\n  個数 = 個数 + 1",
+      "choices": [
+        "=",
+        ">",
+        "==",
+        "!="
+      ],
+      "answerIndex": 2,
+      "explanation": "等しいかどうかの比較は「==」。「=」は代入に使う。"
+    },
+    {
+      "id": "information_dncl_01_030",
+      "unit": "information.info.programming.program",
+      "category": "thinking",
+      "prompt": "このプログラムは何を求めている？",
+      "sentence": "m = Data[0]\ni を 1 から 要素数(Data) - 1 まで 1 ずつ増やしながら繰り返す:\n  もし Data[i] < m ならば:\n    m = Data[i]\n表示する(m)",
+      "choices": [
+        "最大値",
+        "平均",
+        "最小値",
+        "合計"
+      ],
+      "answerIndex": 2,
+      "explanation": "今までの値より小さいものが出るたびに m を更新するので、最小値が求まる。"
+    }
+  ]
+}

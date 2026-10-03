@@ -1,0 +1,248 @@
+{
+  "setId": "sea_g2_09",
+  "worldId": "sea",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g2_09_01",
+      "unit": "english.eng.grammar.negation.partial",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Not (   ) students like math.",
+      "choices": [
+        "every",
+        "any",
+        "all",
+        "no"
+      ],
+      "answerIndex": 2,
+      "explanation": "not all 〜 は「すべてが〜というわけではない」（部分否定）。"
+    },
+    {
+      "id": "sea_g2_09_02",
+      "unit": "english.eng.grammar.negation",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The story is so strange that I can (   ) believe it.",
+      "choices": [
+        "hard",
+        "hardly",
+        "nearly",
+        "almost"
+      ],
+      "answerIndex": 1,
+      "explanation": "hardly は「ほとんど〜ない」。hard は「熱心に・難しい」。"
+    },
+    {
+      "id": "sea_g2_09_03",
+      "unit": "english.eng.grammar.negation",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "There is no rule (   ) exceptions.",
+      "choices": [
+        "with",
+        "without",
+        "for",
+        "by"
+      ],
+      "answerIndex": 1,
+      "explanation": "no 〜 without … で「…のない〜はない」（二重否定）。"
+    },
+    {
+      "id": "sea_g2_09_04",
+      "unit": "english.eng.grammar.negation",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "It was not (   ) he came home that I noticed the problem.",
+      "choices": [
+        "when",
+        "before",
+        "since",
+        "until"
+      ],
+      "answerIndex": 3,
+      "explanation": "It is not until 〜 that … で「〜して初めて…」。"
+    },
+    {
+      "id": "sea_g2_09_05",
+      "unit": "english.eng.grammar.negation",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "No (   ) had I arrived than it began to rain.",
+      "choices": [
+        "later",
+        "sooner",
+        "more",
+        "faster"
+      ],
+      "answerIndex": 1,
+      "explanation": "No sooner had S p.p. than … で「〜するとすぐに…」。"
+    },
+    {
+      "id": "sea_g2_09_06",
+      "unit": "english.eng.grammar.negation",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "She (   ) goes out on weekends; she usually stays home.",
+      "choices": [
+        "often",
+        "always",
+        "rarely",
+        "sometimes"
+      ],
+      "answerIndex": 2,
+      "explanation": "rarely は「めったに〜ない」。後半の内容と合う。"
+    },
+    {
+      "id": "sea_g2_09_07",
+      "unit": "english.eng.grammar.negation.partial",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Not all birds (   ) fly.",
+      "choices": [
+        "can",
+        "never",
+        "do not",
+        "cannot"
+      ],
+      "answerIndex": 0,
+      "explanation": "not all は部分否定「すべてが〜とは限らない」。"
+    },
+    {
+      "id": "sea_g2_09_08",
+      "unit": "english.eng.grammar.negation.partial",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I don't (   ) agree with you.",
+      "choices": [
+        "ever",
+        "never",
+        "always",
+        "no"
+      ],
+      "answerIndex": 2,
+      "explanation": "not always「いつも〜とは限らない」。"
+    },
+    {
+      "id": "sea_g2_09_09",
+      "unit": "english.eng.grammar.negation.idiom",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He is (   ) a liar.",
+      "choices": [
+        "anything but",
+        "all but",
+        "but for",
+        "nothing but"
+      ],
+      "answerIndex": 0,
+      "explanation": "anything but「決して〜ではない」。"
+    },
+    {
+      "id": "sea_g2_09_10",
+      "unit": "english.eng.grammar.negation.idiom",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "She is (   ) from happy.",
+      "choices": [
+        "away",
+        "much",
+        "far",
+        "free"
+      ],
+      "answerIndex": 2,
+      "explanation": "far from「少しも〜ない」。"
+    },
+    {
+      "id": "sea_g2_09_11",
+      "unit": "english.eng.grammar.negation",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "It never rains (   ) it pours.",
+      "choices": [
+        "without",
+        "that",
+        "and",
+        "but"
+      ],
+      "answerIndex": 3,
+      "explanation": "「降れば必ずどしゃぶり」。never ... but「〜すれば必ず…」。"
+    },
+    {
+      "id": "sea_g2_09_12",
+      "unit": "english.eng.grammar.negation",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I have (   ) money left.",
+      "choices": [
+        "little",
+        "a few",
+        "few",
+        "many"
+      ],
+      "answerIndex": 0,
+      "explanation": "money は数えられない。little「ほとんどない」。"
+    },
+    {
+      "id": "sea_g2_09_13",
+      "unit": "english.eng.grammar.negation",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "There were (   ) people in the park.",
+      "choices": [
+        "few",
+        "much",
+        "little",
+        "a little"
+      ],
+      "answerIndex": 0,
+      "explanation": "数えられる名詞には few「ほとんどいない」。"
+    },
+    {
+      "id": "sea_g2_09_14",
+      "unit": "english.eng.grammar.negation",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He (   ) ever eats breakfast.",
+      "choices": [
+        "always",
+        "hardly",
+        "never",
+        "hard"
+      ],
+      "answerIndex": 1,
+      "explanation": "hardly ever「めったに〜ない」。"
+    },
+    {
+      "id": "sea_g2_09_15",
+      "unit": "english.eng.grammar.negation",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "You cannot be (   ) careful when you drive.",
+      "choices": [
+        "too",
+        "so",
+        "much",
+        "very"
+      ],
+      "answerIndex": 0,
+      "explanation": "cannot ... too「いくら〜してもしすぎることはない」。"
+    },
+    {
+      "id": "sea_g2_09_16",
+      "unit": "english.eng.grammar.negation",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "None of my friends (   ) the answer.",
+      "choices": [
+        "know not",
+        "knew",
+        "not knew",
+        "didn't know"
+      ],
+      "answerIndex": 1,
+      "explanation": "none が否定の意味をもつので、動詞は肯定形。"
+    }
+  ]
+}

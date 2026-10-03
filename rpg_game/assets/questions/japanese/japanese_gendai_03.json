@@ -1,0 +1,344 @@
+{
+  "setId": "japanese_gendai_03",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "jap_gendai03_001",
+      "unit": "japanese.gendai.vocab.idiom",
+      "category": "knowledge",
+      "prompt": "「異口同音」の意味は？",
+      "choices": [
+        "多くの人が口をそろえて同じことを言う",
+        "同じ音の言葉が多い",
+        "人によって意見が異なる",
+        "外国語と日本語が似ている"
+      ],
+      "answerIndex": 0,
+      "explanation": "「異口」は多くの人の口。"
+    },
+    {
+      "id": "jap_gendai03_002",
+      "unit": "japanese.gendai.vocab.idiom",
+      "category": "knowledge",
+      "prompt": "「朝令暮改」の意味は？",
+      "choices": [
+        "命令や方針がすぐに変わって定まらない",
+        "毎日同じことをくり返す",
+        "朝の決まりは夜に守る",
+        "朝早くから夜遅くまで働く"
+      ],
+      "answerIndex": 0,
+      "explanation": "朝に出した命令を夕方には改めるということ。"
+    },
+    {
+      "id": "jap_gendai03_003",
+      "unit": "japanese.gendai.vocab.idiom",
+      "category": "knowledge",
+      "prompt": "「付和雷同」の意味は？",
+      "choices": [
+        "自分の考えがなく、すぐ他人の意見に同調する",
+        "反対意見を大声で言う",
+        "和やかに協力する",
+        "雷のように激しく怒る"
+      ],
+      "answerIndex": 0,
+      "explanation": "自分の意見をもたない態度をいう。"
+    },
+    {
+      "id": "jap_gendai03_004",
+      "unit": "japanese.gendai.vocab.idiom",
+      "category": "knowledge",
+      "prompt": "「臨機応変」の意味は？",
+      "choices": [
+        "計画どおりに進める",
+        "変化をきらう",
+        "機会を待ち続ける",
+        "その場の状況に応じて、適切に対応する"
+      ],
+      "answerIndex": 3,
+      "explanation": "状況の変化に合わせて柔軟に対応すること。"
+    },
+    {
+      "id": "jap_gendai03_005",
+      "unit": "japanese.gendai.vocab.idiom.yoji",
+      "category": "knowledge",
+      "prompt": "正しい表記の四字熟語は？",
+      "choices": [
+        "絶対絶明",
+        "絶対絶命",
+        "絶体絶命",
+        "絶体絶明"
+      ],
+      "answerIndex": 2,
+      "explanation": "「絶体」も「絶命」も九星術の凶星の名。「絶対」と書くのは誤り。"
+    },
+    {
+      "id": "jap_gendai03_006",
+      "unit": "japanese.gendai.vocab.idiom.yoji",
+      "category": "knowledge",
+      "prompt": "正しい表記の四字熟語は？",
+      "choices": [
+        "機器一髪",
+        "危機一髪",
+        "危器一髪",
+        "危機一発"
+      ],
+      "answerIndex": 1,
+      "explanation": "髪の毛一本ほどのわずかな差で危機に陥りそうなこと。"
+    },
+    {
+      "id": "jap_gendai03_007",
+      "unit": "japanese.gendai.vocab.idiom",
+      "category": "knowledge",
+      "prompt": "「気が置けない友人」の意味は？",
+      "choices": [
+        "遠慮しなくてよい、気楽につきあえる友人",
+        "信用できない友人",
+        "油断できない友人",
+        "気の合わない友人"
+      ],
+      "answerIndex": 0,
+      "explanation": "「油断できない」は誤用。"
+    },
+    {
+      "id": "jap_gendai03_008",
+      "unit": "japanese.gendai.vocab.idiom",
+      "category": "knowledge",
+      "prompt": "「役不足」の本来の意味は？",
+      "choices": [
+        "本人の力量が役目に足りないこと",
+        "役目がないこと",
+        "本人の力量に対して、役目が軽すぎること",
+        "役者が足りないこと"
+      ],
+      "answerIndex": 2,
+      "explanation": "力量が足りないのは「力不足」。"
+    },
+    {
+      "id": "jap_gendai03_009",
+      "unit": "japanese.gendai.vocab.idiom",
+      "category": "knowledge",
+      "prompt": "「足もとを見る」の意味は？",
+      "choices": [
+        "足もとに注意する",
+        "相手の弱みにつけこむ",
+        "謙虚になる",
+        "初心に帰る"
+      ],
+      "answerIndex": 1,
+      "explanation": "昔、かごかきが旅人の疲れぐあいを見て料金を高くしたことから。"
+    },
+    {
+      "id": "jap_gendai03_010",
+      "unit": "japanese.gendai.vocab.idiom",
+      "category": "knowledge",
+      "prompt": "「情けは人のためならず」の意味は？",
+      "choices": [
+        "人に親切にすれば、めぐりめぐって自分によい報いがある",
+        "人は情けで生きている",
+        "情けをかけるのはやめたほうがよい",
+        "人に情けをかけるのはその人のためにならない"
+      ],
+      "answerIndex": 0,
+      "explanation": "「甘やかすとその人のためにならない」は誤用。"
+    },
+    {
+      "id": "jap_gendai03_011",
+      "unit": "japanese.gendai.vocab.idiom",
+      "category": "knowledge",
+      "prompt": "「青は藍より出でて藍より青し」の意味は？",
+      "choices": [
+        "弟子が師よりもすぐれること",
+        "物事は変わらないこと",
+        "青色が最も美しいこと",
+        "親子は似ること"
+      ],
+      "answerIndex": 0,
+      "explanation": "「出藍の誉れ」ともいう。出典は『荀子』。"
+    },
+    {
+      "id": "jap_gendai03_012",
+      "unit": "japanese.gendai.vocab.idiom",
+      "category": "knowledge",
+      "prompt": "「他山の石」の本来の意味は？",
+      "choices": [
+        "他人のよい行いを手本にする",
+        "他人のよくない言動も、自分をみがく助けになる",
+        "関係のないこと",
+        "他人の成功をうらやむ"
+      ],
+      "answerIndex": 1,
+      "explanation": "目上の人のよい行いを手本にする意味で使うのは誤用。"
+    },
+    {
+      "id": "jap_gendai03_013",
+      "unit": "japanese.gendai.vocab.idiom",
+      "category": "knowledge",
+      "prompt": "「温故知新」の意味は？",
+      "choices": [
+        "昔を懐かしむこと",
+        "古いものを捨てること",
+        "新しいものだけを大切にすること",
+        "昔のことを学んで、新しい考えや知識を得ること"
+      ],
+      "answerIndex": 3,
+      "explanation": "『論語』から。"
+    },
+    {
+      "id": "jap_gendai03_014",
+      "unit": "japanese.gendai.vocab.idiom",
+      "category": "knowledge",
+      "prompt": "「千載一遇」の意味は？",
+      "choices": [
+        "長い年月がたつこと",
+        "めったにない、よい機会",
+        "一度きりの失敗",
+        "千人に一人の人物"
+      ],
+      "answerIndex": 1,
+      "explanation": "千年に一度しかめぐりあえない。"
+    },
+    {
+      "id": "jap_gendai03_015",
+      "unit": "japanese.gendai.vocab.idiom",
+      "category": "knowledge",
+      "prompt": "「本末転倒」の意味は？",
+      "choices": [
+        "物事が順調に進むこと",
+        "本を読みすぎること",
+        "大切なこととささいなことを取りちがえること",
+        "最初から最後までやりとげること"
+      ],
+      "answerIndex": 2,
+      "explanation": "根本と末端が逆になる。"
+    },
+    {
+      "id": "jap_gendai03_016",
+      "unit": "japanese.gendai.vocab.idiom",
+      "category": "knowledge",
+      "prompt": "「我田引水」の意味は？",
+      "choices": [
+        "努力が報われること",
+        "自分に都合のよいように物事を進めること",
+        "田んぼに水を引くこと",
+        "他人に親切にすること"
+      ],
+      "answerIndex": 1,
+      "explanation": "自分の田にだけ水を引く。"
+    },
+    {
+      "id": "jap_gendai03_017",
+      "unit": "japanese.gendai.vocab.idiom.yoji",
+      "category": "knowledge",
+      "prompt": "「言葉の表面の意味だけでなく、奥に別の意味がふくまれている」意味の四字熟語の正しい表記は？",
+      "choices": [
+        "意味深長",
+        "意見深長",
+        "意味深重",
+        "意味慎重"
+      ],
+      "answerIndex": 0,
+      "explanation": "「深長」は、奥深く含みがあること。"
+    },
+    {
+      "id": "jap_gendai03_018",
+      "unit": "japanese.gendai.vocab.idiom.yoji",
+      "category": "knowledge",
+      "prompt": "「方針が立たず迷う」意味の四字熟語の正しい表記は？",
+      "choices": [
+        "五理霧中",
+        "五里霧中",
+        "五里夢中",
+        "後里霧中"
+      ],
+      "answerIndex": 1,
+      "explanation": "方針が立たず迷うこと。"
+    },
+    {
+      "id": "jap_gendai03_019",
+      "unit": "japanese.gendai.vocab.idiom",
+      "category": "knowledge",
+      "prompt": "「情けは人のためならず」と同じく、誤用の多い「流れに棹さす」の本来の意味は？",
+      "choices": [
+        "時流にうまく乗って勢いを増すこと",
+        "途中でやめること",
+        "邪魔をすること",
+        "時流に逆らうこと"
+      ],
+      "answerIndex": 0,
+      "explanation": "逆らう意味で使うのは誤用。"
+    },
+    {
+      "id": "jap_gendai03_020",
+      "unit": "japanese.gendai.vocab.idiom",
+      "category": "knowledge",
+      "prompt": "「確信犯」の本来の意味は？",
+      "choices": [
+        "計画的な犯罪",
+        "偶然の犯罪",
+        "正しいと信じて行う犯罪",
+        "悪いとわかっていて行うこと"
+      ],
+      "answerIndex": 2,
+      "explanation": "政治的・宗教的信念による行為をさす。"
+    },
+    {
+      "id": "jap_gendai03_021",
+      "unit": "japanese.gendai.vocab.idiom",
+      "category": "knowledge",
+      "prompt": "「矛盾」の由来となった故事は？",
+      "choices": [
+        "どんな盾も突き通す矛と、どんな矛も防ぐ盾を同時に売った話",
+        "王が盾を与えた話",
+        "二人の武将が戦った話",
+        "矛と盾を交換した話"
+      ],
+      "answerIndex": 0,
+      "explanation": "『韓非子』より。"
+    },
+    {
+      "id": "jap_gendai03_022",
+      "unit": "japanese.gendai.vocab.idiom",
+      "category": "knowledge",
+      "prompt": "「蛇足」の意味は？",
+      "choices": [
+        "よけいなつけ足し",
+        "大事な部分",
+        "とても長いこと",
+        "動きがすばやいこと"
+      ],
+      "answerIndex": 0,
+      "explanation": "蛇に足をかき加えて負けた故事から。"
+    },
+    {
+      "id": "jap_gendai03_023",
+      "unit": "japanese.gendai.vocab.idiom",
+      "category": "knowledge",
+      "prompt": "「漁夫の利」の意味は？",
+      "choices": [
+        "努力して利益を得ること",
+        "海から利益を得ること",
+        "失敗して損をすること",
+        "二者が争うすきに、第三者が利益を得ること"
+      ],
+      "answerIndex": 3,
+      "explanation": "シギとハマグリが争い、漁師が両方を捕らえた故事。"
+    },
+    {
+      "id": "jap_gendai03_024",
+      "unit": "japanese.gendai.vocab.idiom",
+      "category": "knowledge",
+      "prompt": "「杞憂」の意味は？",
+      "choices": [
+        "深い悲しみ",
+        "しなくてもよい心配",
+        "大きな喜び",
+        "正しい予想"
+      ],
+      "answerIndex": 1,
+      "explanation": "杞の国の人が天が落ちてこないかと心配した故事。"
+    }
+  ]
+}

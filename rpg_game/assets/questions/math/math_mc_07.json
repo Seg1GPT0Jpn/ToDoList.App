@@ -1,0 +1,288 @@
+{
+  "setId": "math_mc_07",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_mc07_001",
+      "unit": "math.mc.curve.conic.parabola",
+      "category": "knowledge",
+      "prompt": "放物線 y²=4px の焦点は？",
+      "choices": [
+        "(4p, 0)",
+        "(p, 0)",
+        "(0, p)",
+        "(−p, 0)"
+      ],
+      "answerIndex": 1,
+      "explanation": "準線は x=−p。"
+    },
+    {
+      "id": "mat_mc07_002",
+      "unit": "math.mc.curve.conic.parabola",
+      "category": "calculation",
+      "prompt": "放物線 y²=8x の焦点は？",
+      "choices": [
+        "(8, 0)",
+        "(4, 0)",
+        "(0, 2)",
+        "(2, 0)"
+      ],
+      "answerIndex": 3,
+      "explanation": "4p=8 より p=2。"
+    },
+    {
+      "id": "mat_mc07_003",
+      "unit": "math.mc.curve.conic.parabola",
+      "category": "calculation",
+      "prompt": "放物線 y²=8x の準線は？",
+      "choices": [
+        "x=−8",
+        "x=−2",
+        "y=−2",
+        "x=2"
+      ],
+      "answerIndex": 1,
+      "explanation": "x=−p。"
+    },
+    {
+      "id": "mat_mc07_004",
+      "unit": "math.mc.curve.conic.parabola",
+      "category": "calculation",
+      "prompt": "楕円 x²/25+y²/9=1 の焦点は？",
+      "choices": [
+        "(0, ±4)",
+        "(±3, 0)",
+        "(±4, 0)",
+        "(±5, 0)"
+      ],
+      "answerIndex": 2,
+      "explanation": "c²=25−9=16。"
+    },
+    {
+      "id": "mat_mc07_005",
+      "unit": "math.mc.curve.conic.ellipse",
+      "category": "calculation",
+      "prompt": "楕円 x²/25+y²/9=1 の長軸の長さは？",
+      "choices": [
+        "5",
+        "6",
+        "10",
+        "8"
+      ],
+      "answerIndex": 2,
+      "explanation": "2a=10。"
+    },
+    {
+      "id": "mat_mc07_006",
+      "unit": "math.mc.curve.conic.parabola",
+      "category": "calculation",
+      "prompt": "双曲線 x²/9−y²/16=1 の焦点は？",
+      "choices": [
+        "(±√7, 0)",
+        "(±5, 0)",
+        "(0, ±5)",
+        "(±3, 0)"
+      ],
+      "answerIndex": 1,
+      "explanation": "c²=9+16=25。"
+    },
+    {
+      "id": "mat_mc07_007",
+      "unit": "math.mc.curve.conic.hyperbola",
+      "category": "calculation",
+      "prompt": "双曲線 x²/9−y²/16=1 の漸近線は？",
+      "choices": [
+        "y=±(3/4)x",
+        "y=±(4/3)x",
+        "y=±x",
+        "y=±(16/9)x"
+      ],
+      "answerIndex": 1,
+      "explanation": "y=±(b/a)x。"
+    },
+    {
+      "id": "mat_mc07_008",
+      "unit": "math.mc.curve.conic.ellipse",
+      "category": "knowledge",
+      "prompt": "楕円の定義として正しいものは？",
+      "choices": [
+        "2つの焦点からの距離の差が一定である点の軌跡",
+        "2つの焦点からの距離の和が一定である点の軌跡",
+        "1点からの距離が一定の点の軌跡",
+        "焦点と準線からの距離が等しい点の軌跡"
+      ],
+      "answerIndex": 1,
+      "explanation": "和なら楕円、差なら双曲線。"
+    },
+    {
+      "id": "mat_mc07_009",
+      "unit": "math.mc.curve.conic.hyperbola",
+      "category": "knowledge",
+      "prompt": "双曲線の定義として正しいものは？",
+      "choices": [
+        "2つの焦点からの距離の差が一定である点の軌跡",
+        "焦点と準線からの距離が等しい点の軌跡",
+        "2つの焦点からの距離の和が一定である点の軌跡",
+        "原点からの距離が一定の点の軌跡"
+      ],
+      "answerIndex": 0,
+      "explanation": "差の絶対値が一定。"
+    },
+    {
+      "id": "mat_mc07_010",
+      "unit": "math.mc.curve.conic.parabola",
+      "category": "thinking",
+      "prompt": "パラボラアンテナが放物線の形をしている理由は？",
+      "choices": [
+        "雨が流れやすいから",
+        "形が美しいから",
+        "材料が少なくて済むから",
+        "軸に平行に入ってきた電波が、反射して焦点に集まるから"
+      ],
+      "answerIndex": 3,
+      "explanation": "放物線の反射の性質。"
+    },
+    {
+      "id": "mat_mc07_011",
+      "unit": "math.mc.curve.conic.parabola",
+      "category": "calculation",
+      "prompt": "放物線 y²=12x の焦点は？",
+      "choices": [
+        "(3, 0)",
+        "(12, 0)",
+        "(6, 0)",
+        "(0, 3)"
+      ],
+      "answerIndex": 0,
+      "explanation": "y²=4px で p=3。"
+    },
+    {
+      "id": "mat_mc07_012",
+      "unit": "math.mc.curve.conic.parabola",
+      "category": "calculation",
+      "prompt": "放物線 y²=12x の準線は？",
+      "choices": [
+        "x=−12",
+        "y=−3",
+        "x=3",
+        "x=−3"
+      ],
+      "answerIndex": 3,
+      "explanation": "x=−p。"
+    },
+    {
+      "id": "mat_mc07_013",
+      "unit": "math.mc.curve.conic.parabola",
+      "category": "calculation",
+      "prompt": "放物線 x²=4y の焦点は？",
+      "choices": [
+        "(0, 4)",
+        "(0, −1)",
+        "(1, 0)",
+        "(0, 1)"
+      ],
+      "answerIndex": 3,
+      "explanation": "x²=4py で p=1。"
+    },
+    {
+      "id": "mat_mc07_014",
+      "unit": "math.mc.curve.conic.parabola",
+      "category": "calculation",
+      "prompt": "楕円 x²/16+y²/9=1 の焦点は？",
+      "choices": [
+        "(±5, 0)",
+        "(0, ±√7)",
+        "(±√7, 0)",
+        "(±7, 0)"
+      ],
+      "answerIndex": 2,
+      "explanation": "√(16−9)=√7。"
+    },
+    {
+      "id": "mat_mc07_015",
+      "unit": "math.mc.curve.conic.ellipse",
+      "category": "calculation",
+      "prompt": "楕円 x²/16+y²/9=1 の短軸の長さは？",
+      "choices": [
+        "3",
+        "6",
+        "9",
+        "8"
+      ],
+      "answerIndex": 1,
+      "explanation": "2b=2·3。"
+    },
+    {
+      "id": "mat_mc07_016",
+      "unit": "math.mc.curve.conic.parabola",
+      "category": "calculation",
+      "prompt": "双曲線 x²/16−y²/9=1 の焦点は？",
+      "choices": [
+        "(±4, 0)",
+        "(0, ±5)",
+        "(±5, 0)",
+        "(±√7, 0)"
+      ],
+      "answerIndex": 2,
+      "explanation": "√(16+9)=5。"
+    },
+    {
+      "id": "mat_mc07_017",
+      "unit": "math.mc.curve.conic.hyperbola",
+      "category": "calculation",
+      "prompt": "双曲線 x²/16−y²/9=1 の漸近線は？",
+      "choices": [
+        "y=±(4/3)x",
+        "y=±(9/16)x",
+        "y=±x",
+        "y=±(3/4)x"
+      ],
+      "answerIndex": 3,
+      "explanation": "y=±(b/a)x。"
+    },
+    {
+      "id": "mat_mc07_018",
+      "unit": "math.mc.curve.conic.ellipse",
+      "category": "calculation",
+      "prompt": "楕円 x²/4+y²/9=1 の長軸はどの軸上にある？",
+      "choices": [
+        "直線 y=x 上",
+        "長軸と短軸が同じ",
+        "y 軸上",
+        "x 軸上"
+      ],
+      "answerIndex": 2,
+      "explanation": "y² の分母の方が大きい。"
+    },
+    {
+      "id": "mat_mc07_019",
+      "unit": "math.mc.curve.conic.parabola",
+      "category": "knowledge",
+      "prompt": "放物線の定義として正しいものは？",
+      "choices": [
+        "2定点からの距離の差が一定の点の軌跡",
+        "1定点からの距離が一定の点の軌跡",
+        "定点（焦点）と定直線（準線）からの距離が等しい点の軌跡",
+        "2定点からの距離の和が一定の点の軌跡"
+      ],
+      "answerIndex": 2,
+      "explanation": "「和が一定」は楕円、「差が一定」は双曲線、「距離一定」は円。"
+    },
+    {
+      "id": "mat_mc07_020",
+      "unit": "math.mc.curve.conic.parabola",
+      "category": "thinking",
+      "prompt": "楕円の形の部屋の一方の焦点で出した音が、もう一方の焦点に集まる理由は？",
+      "choices": [
+        "焦点が中心にあるから",
+        "楕円の一方の焦点を出た光や音は、壁で反射してもう一方の焦点を通る性質があるから",
+        "壁が音を吸収するから",
+        "楕円は円と同じ形だから"
+      ],
+      "answerIndex": 1,
+      "explanation": "楕円の反射の性質。ささやきの回廊などで知られる。"
+    }
+  ]
+}

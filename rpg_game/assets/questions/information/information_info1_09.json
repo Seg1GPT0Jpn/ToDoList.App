@@ -1,0 +1,344 @@
+{
+  "setId": "information_info1_09",
+  "worldId": "information",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "inf_info109_001",
+      "unit": "information.info.computer.media.image",
+      "category": "knowledge",
+      "prompt": "デジタル画像を構成する最小の点を何という？",
+      "choices": [
+        "画素（ピクセル）",
+        "ビット",
+        "フレーム",
+        "ドメイン"
+      ],
+      "answerIndex": 0,
+      "explanation": "画素ごとに色の情報をもつ。"
+    },
+    {
+      "id": "inf_info109_002",
+      "unit": "information.info.computer.media.image",
+      "category": "knowledge",
+      "prompt": "画像の細かさ（画素の多さ）を表すものは？",
+      "choices": [
+        "フレームレート",
+        "解像度",
+        "彩度",
+        "階調"
+      ],
+      "answerIndex": 1,
+      "explanation": "解像度が高いほど細かく表現できる。"
+    },
+    {
+      "id": "inf_info109_003",
+      "unit": "information.info.computer.media.image",
+      "category": "knowledge",
+      "prompt": "明るさや色の段階の数を何という？",
+      "choices": [
+        "解像度",
+        "圧縮率",
+        "周波数",
+        "階調"
+      ],
+      "answerIndex": 3,
+      "explanation": "1 画素 8 ビットなら 256 階調。"
+    },
+    {
+      "id": "inf_info109_004",
+      "unit": "information.info.computer.media.compress",
+      "category": "knowledge",
+      "prompt": "同じ値が続く部分を「値と個数」で表して容量を減らす圧縮方法は？",
+      "choices": [
+        "量子化",
+        "標本化",
+        "暗号化",
+        "ランレングス圧縮"
+      ],
+      "answerIndex": 3,
+      "explanation": "例：AAAABB → A4B2。"
+    },
+    {
+      "id": "inf_info109_005",
+      "unit": "information.info.computer.media.sound",
+      "category": "knowledge",
+      "prompt": "音声のデジタル化で、一定時間ごとに波の高さを取り出すことは？",
+      "choices": [
+        "符号化",
+        "標本化",
+        "量子化",
+        "復号"
+      ],
+      "answerIndex": 1,
+      "explanation": "1 秒間に取り出す回数が標本化周波数。"
+    },
+    {
+      "id": "inf_info109_006",
+      "unit": "information.info.computer.media.sound",
+      "category": "knowledge",
+      "prompt": "取り出した値を、決められた段階の数値に近づけることは？",
+      "choices": [
+        "圧縮",
+        "量子化",
+        "標本化",
+        "符号化"
+      ],
+      "answerIndex": 1,
+      "explanation": "段階の数（量子化ビット数）が多いほど元の音に近い。"
+    },
+    {
+      "id": "inf_info109_007",
+      "unit": "information.info.computer.media.sound",
+      "category": "knowledge",
+      "prompt": "量子化した数値を 0 と 1 の並びに置きかえることは？",
+      "choices": [
+        "標本化",
+        "符号化",
+        "復号",
+        "暗号化"
+      ],
+      "answerIndex": 1,
+      "explanation": "標本化 → 量子化 → 符号化 の順。"
+    },
+    {
+      "id": "inf_info109_008",
+      "unit": "information.info.computer.media",
+      "category": "knowledge",
+      "prompt": "拡大しても線がなめらかなままの画像の形式は？",
+      "choices": [
+        "ベクタ形式",
+        "JPEG 形式",
+        "ラスタ形式",
+        "ビットマップ形式"
+      ],
+      "answerIndex": 0,
+      "explanation": "図形を座標や数式で表すので、拡大しても粗くならない。"
+    },
+    {
+      "id": "inf_info109_009",
+      "unit": "information.info.computer.media.compress",
+      "category": "knowledge",
+      "prompt": "完全に元のデータに戻せる圧縮を何という？",
+      "choices": [
+        "標本化",
+        "可逆圧縮",
+        "量子化",
+        "非可逆圧縮"
+      ],
+      "answerIndex": 1,
+      "explanation": "ZIP や PNG は可逆圧縮。JPEG や MP3 は非可逆圧縮。"
+    },
+    {
+      "id": "inf_info109_010",
+      "unit": "information.info.computer.media.image",
+      "category": "calculation",
+      "prompt": "1 画素 24 ビットのフルカラー画像（640 × 480 画素）のデータ量は？",
+      "choices": [
+        "307200 バイト",
+        "921600 バイト",
+        "11520 バイト",
+        "7372800 バイト"
+      ],
+      "answerIndex": 1,
+      "explanation": "640 × 480 × 3 バイト ＝ 921600 バイト（約 900 KB）。"
+    },
+    {
+      "id": "inf_info109_011",
+      "unit": "information.info.computer.media.sound",
+      "category": "calculation",
+      "prompt": "標本化周波数 44.1 kHz、量子化ビット数 16 ビット、モノラルの音声 1 秒間のデータ量は？",
+      "choices": [
+        "16 バイト",
+        "705600 バイト",
+        "88200 バイト",
+        "44100 バイト"
+      ],
+      "answerIndex": 2,
+      "explanation": "44100 × 16 ビット ＝ 705600 ビット ＝ 88200 バイト。"
+    },
+    {
+      "id": "inf_info109_012",
+      "unit": "information.info.computer.media",
+      "category": "calculation",
+      "prompt": "R・G・B 各 8 ビットで表せる色の数は？",
+      "choices": [
+        "256 色",
+        "768 色",
+        "16777216 色",
+        "65536 色"
+      ],
+      "answerIndex": 2,
+      "explanation": "2⁸ × 2⁸ × 2⁸ ＝ 2²⁴ ＝ 16777216 色（約 1677 万色）。"
+    },
+    {
+      "id": "inf_info109_013",
+      "unit": "information.info.computer.media.image",
+      "category": "knowledge",
+      "prompt": "画像の解像度を上げると、一般にどうなる？",
+      "choices": [
+        "粗くなり、データ量が減る",
+        "色が減る",
+        "データ量は変わらない",
+        "細かく表現できるが、データ量が増える"
+      ],
+      "answerIndex": 3,
+      "explanation": "画質とデータ量はトレードオフ。"
+    },
+    {
+      "id": "inf_info109_014",
+      "unit": "information.info.computer.media.compress",
+      "category": "knowledge",
+      "prompt": "写真の保存によく使われる非可逆圧縮の形式は？",
+      "choices": [
+        "JPEG",
+        "ZIP",
+        "TXT",
+        "PNG"
+      ],
+      "answerIndex": 0,
+      "explanation": "人の目で気づきにくい情報を省く。"
+    },
+    {
+      "id": "inf_info109_015",
+      "unit": "information.info.computer.media.compress",
+      "category": "knowledge",
+      "prompt": "文字やイラストなど、ふちがくっきりした画像に向いた可逆圧縮の形式は？",
+      "choices": [
+        "MP3",
+        "PNG",
+        "JPEG",
+        "MP4"
+      ],
+      "answerIndex": 1,
+      "explanation": "透明の情報ももてる。"
+    },
+    {
+      "id": "inf_info109_016",
+      "unit": "information.info.computer.media.compress",
+      "category": "knowledge",
+      "prompt": "元のデータに完全には戻せない圧縮を何という？",
+      "choices": [
+        "暗号化",
+        "可逆圧縮",
+        "符号化だけ",
+        "非可逆圧縮"
+      ],
+      "answerIndex": 3,
+      "explanation": "画像・音声・動画でよく使われる。"
+    },
+    {
+      "id": "inf_info109_017",
+      "unit": "information.info.computer.media.image",
+      "category": "knowledge",
+      "prompt": "点（画素）の集まりで表す画像を何という？",
+      "choices": [
+        "ラスター画像（ビットマップ画像）",
+        "ベクター画像",
+        "アナログ画像",
+        "3D 画像"
+      ],
+      "answerIndex": 0,
+      "explanation": "拡大するとギザギザ（ジャギー）が目立つ。"
+    },
+    {
+      "id": "inf_info109_018",
+      "unit": "information.info.computer.media",
+      "category": "knowledge",
+      "prompt": "動画が、少しずつ変化した静止画の連続でできていることから、1 秒間の枚数を何という？",
+      "choices": [
+        "サンプリング",
+        "解像度",
+        "ビット数",
+        "フレームレート"
+      ],
+      "answerIndex": 3,
+      "explanation": "単位は fps。"
+    },
+    {
+      "id": "inf_info109_019",
+      "unit": "information.info.computer.media.sound",
+      "category": "knowledge",
+      "prompt": "標本化周波数を高くすると、音のデジタル化はどうなる？",
+      "choices": [
+        "音が小さくなる",
+        "データ量が減る",
+        "音が消える",
+        "元の波形に近くなるが、データ量が増える"
+      ],
+      "answerIndex": 3,
+      "explanation": "量子化ビット数を増やしても同様。"
+    },
+    {
+      "id": "inf_info109_020",
+      "unit": "information.info.computer.media.compress",
+      "category": "knowledge",
+      "prompt": "音楽の保存によく使われる非可逆圧縮の形式は？",
+      "choices": [
+        "PNG",
+        "MP3",
+        "CSV",
+        "WAV"
+      ],
+      "answerIndex": 1,
+      "explanation": "WAV は非圧縮のことが多い。"
+    },
+    {
+      "id": "inf_info109_021",
+      "unit": "information.info.computer.media.image",
+      "category": "calculation",
+      "prompt": "横 1000 × 縦 800 画素、1 画素 24 ビットの画像のデータ量は？",
+      "choices": [
+        "0.8 MB",
+        "19.2 MB",
+        "24 MB",
+        "2.4 MB"
+      ],
+      "answerIndex": 3,
+      "explanation": "1000 × 800 × 3 バイト ＝ 2400000 バイト。"
+    },
+    {
+      "id": "inf_info109_022",
+      "unit": "information.info.computer.media.sound",
+      "category": "calculation",
+      "prompt": "標本化周波数 8000 Hz、量子化 8 ビット、モノラルで 10 秒録音したときのデータ量は？",
+      "choices": [
+        "640 KB",
+        "800 KB",
+        "8 KB",
+        "80 KB"
+      ],
+      "answerIndex": 3,
+      "explanation": "8000 × 1 バイト × 10 ＝ 80000 バイト。"
+    },
+    {
+      "id": "inf_info109_023",
+      "unit": "information.info.computer.media.compress",
+      "category": "calculation",
+      "prompt": "「AAAAABBBCC」をランレングス圧縮で「A5B3C2」と表した。文字数は何文字から何文字になった？",
+      "choices": [
+        "10 文字から 6 文字",
+        "6 文字から 10 文字",
+        "変わらない",
+        "10 文字から 3 文字"
+      ],
+      "answerIndex": 0,
+      "explanation": "同じ文字の連続を「文字＋個数」で表す。"
+    },
+    {
+      "id": "inf_info109_024",
+      "unit": "information.info.computer.media.image",
+      "category": "thinking",
+      "prompt": "ベクター画像がロゴやイラストに向いている理由は？",
+      "choices": [
+        "図形を数式で表すので、拡大・縮小しても線がなめらかなままだから",
+        "写真のように細かい色の変化を表せるから",
+        "データ量が必ず大きいから",
+        "画素でできているから"
+      ],
+      "answerIndex": 0,
+      "explanation": "写真はラスター画像の方が向いている。"
+    }
+  ]
+}

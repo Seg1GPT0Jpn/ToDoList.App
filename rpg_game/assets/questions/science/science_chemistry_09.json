@@ -1,0 +1,456 @@
+{
+  "setId": "science_chemistry_09",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_chm09_001",
+      "unit": "science.chemistry.state.gas",
+      "category": "knowledge",
+      "prompt": "気体が液体を経ずに直接固体になる変化は？",
+      "choices": [
+        "凝固",
+        "融解",
+        "凝縮",
+        "凝華"
+      ],
+      "answerIndex": 3,
+      "explanation": "固体→気体は昇華、気体→固体は凝華（これも昇華と呼ぶことがある）。"
+    },
+    {
+      "id": "sci_chm09_002",
+      "unit": "science.chemistry.state.gas.vapor",
+      "category": "knowledge",
+      "prompt": "液体の蒸気圧は、温度が上がるとどうなる？",
+      "choices": [
+        "小さくなる",
+        "0 になる",
+        "変わらない",
+        "大きくなる"
+      ],
+      "answerIndex": 3,
+      "explanation": "温度が高いほど蒸発する分子が多くなり、蒸気圧が大きくなる。"
+    },
+    {
+      "id": "sci_chm09_003",
+      "unit": "science.chemistry.state.gas.vapor",
+      "category": "knowledge",
+      "prompt": "液体が沸騰するのはどんなとき？",
+      "choices": [
+        "蒸気圧が外圧（大気圧）と等しくなったとき",
+        "液体が固体になったとき",
+        "温度が 100 ℃ になったときだけ",
+        "蒸気圧が 0 になったとき"
+      ],
+      "answerIndex": 0,
+      "explanation": "沸点は外圧によって変わる。1.013 × 10⁵ Pa での水の沸点が 100 ℃。"
+    },
+    {
+      "id": "sci_chm09_004",
+      "unit": "science.chemistry.state.gas.vapor",
+      "category": "knowledge",
+      "prompt": "高い山の上で水の沸点が 100 ℃ より低くなる理由は？",
+      "choices": [
+        "水が蒸発しにくいから",
+        "重力が弱いから",
+        "大気圧が低いから",
+        "気温が低いから"
+      ],
+      "answerIndex": 2,
+      "explanation": "外圧が低いので、低い温度で蒸気圧が外圧に達する。"
+    },
+    {
+      "id": "sci_chm09_005",
+      "unit": "science.chemistry.state.gas.vapor",
+      "category": "knowledge",
+      "prompt": "分子間力が大きい物質ほど、沸点はどうなる？",
+      "choices": [
+        "低くなる",
+        "0 ℃ になる",
+        "高くなる",
+        "変わらない"
+      ],
+      "answerIndex": 2,
+      "explanation": "分子どうしを引き離すのに大きなエネルギーが必要になる。"
+    },
+    {
+      "id": "sci_chm09_006",
+      "unit": "science.chemistry.state.gas.real",
+      "category": "knowledge",
+      "prompt": "理想気体とは？",
+      "choices": [
+        "液体になりやすい気体",
+        "分子自身の体積と分子間力を 0 とみなした気体",
+        "実際に存在する気体のこと",
+        "水素のこと"
+      ],
+      "answerIndex": 1,
+      "explanation": "実在気体は低温・高圧で理想気体からずれる。高温・低圧では理想気体に近い。"
+    },
+    {
+      "id": "sci_chm09_007",
+      "unit": "science.chemistry.state.gas.mixture",
+      "category": "knowledge",
+      "prompt": "気体の混合物で、各成分気体の分圧の和は何に等しい？",
+      "choices": [
+        "0",
+        "大気圧",
+        "一番大きい分圧",
+        "全圧"
+      ],
+      "answerIndex": 3,
+      "explanation": "ドルトンの分圧の法則。分圧の比＝物質量の比。"
+    },
+    {
+      "id": "sci_chm09_008",
+      "unit": "science.chemistry.state.gas.vapor",
+      "category": "knowledge",
+      "prompt": "物質の三態が共存する温度・圧力の点を何という？",
+      "choices": [
+        "三重点",
+        "沸点",
+        "臨界点",
+        "融点"
+      ],
+      "answerIndex": 0,
+      "explanation": "状態図で固体・液体・気体の境界線が交わる点。"
+    },
+    {
+      "id": "sci_chm09_009",
+      "unit": "science.chemistry.state.gas.law",
+      "category": "calculation",
+      "prompt": "1.0 × 10⁵ Pa で 3.0 L の気体を、温度一定で 1.5 × 10⁵ Pa にした。体積は？",
+      "choices": [
+        "1.5 L",
+        "0.50 L",
+        "4.5 L",
+        "2.0 L"
+      ],
+      "answerIndex": 3,
+      "explanation": "ボイルの法則：1.0×10⁵ × 3.0 ＝ 1.5×10⁵ × V より V ＝ 2.0 L。"
+    },
+    {
+      "id": "sci_chm09_010",
+      "unit": "science.chemistry.state.gas.law",
+      "category": "calculation",
+      "prompt": "27 ℃ で 3.0 L の気体を、圧力一定で 127 ℃ にした。体積は？",
+      "choices": [
+        "3.4 L",
+        "4.0 L",
+        "14 L",
+        "2.3 L"
+      ],
+      "answerIndex": 1,
+      "explanation": "シャルルの法則：3.0/300 ＝ V/400 より V ＝ 4.0 L（絶対温度で計算する）。"
+    },
+    {
+      "id": "sci_chm09_011",
+      "unit": "science.chemistry.state.gas",
+      "category": "calculation",
+      "prompt": "0.20 mol の気体が 300 K で 8.3 L の容器に入っている。圧力は？（R ＝ 8.3 × 10³ Pa·L/(K·mol)）",
+      "choices": [
+        "1.5 × 10⁵ Pa",
+        "2.0 × 10⁴ Pa",
+        "6.0 × 10⁴ Pa",
+        "6.0 × 10² Pa"
+      ],
+      "answerIndex": 2,
+      "explanation": "p ＝ nRT/V ＝ 0.20 × 8.3×10³ × 300 ÷ 8.3 ＝ 6.0 × 10⁴ Pa。"
+    },
+    {
+      "id": "sci_chm09_012",
+      "unit": "science.chemistry.state.gas.mixture",
+      "category": "calculation",
+      "prompt": "窒素と酸素の物質量の比が 4 : 1 の混合気体の全圧が 1.0 × 10⁵ Pa。酸素の分圧は？",
+      "choices": [
+        "2.0 × 10⁴ Pa",
+        "5.0 × 10⁴ Pa",
+        "2.5 × 10⁴ Pa",
+        "8.0 × 10⁴ Pa"
+      ],
+      "answerIndex": 0,
+      "explanation": "分圧＝全圧 × モル分率 ＝ 1.0×10⁵ × 1/5 ＝ 2.0 × 10⁴ Pa。"
+    },
+    {
+      "id": "sci_chm09_013",
+      "unit": "science.chemistry.state.gas",
+      "category": "calculation",
+      "prompt": "窒素 80 %、酸素 20 %（物質量の割合）の空気の平均分子量は？（N₂ ＝ 28、O₂ ＝ 32）",
+      "choices": [
+        "28.8",
+        "30",
+        "29.6",
+        "28"
+      ],
+      "answerIndex": 0,
+      "explanation": "28 × 0.80 ＋ 32 × 0.20 ＝ 22.4 ＋ 6.4 ＝ 28.8。"
+    },
+    {
+      "id": "sci_chm09_014",
+      "unit": "science.chemistry.state.gas",
+      "category": "calculation",
+      "prompt": "標準状態で 5.6 L の気体の質量が 11 g だった。この気体の分子量は？",
+      "choices": [
+        "44",
+        "22",
+        "11",
+        "88"
+      ],
+      "answerIndex": 0,
+      "explanation": "5.6 L ＝ 0.25 mol。11 ÷ 0.25 ＝ 44 g/mol（CO₂ など）。"
+    },
+    {
+      "id": "sci_chm09_015",
+      "unit": "science.chemistry.state.gas.vapor",
+      "category": "thinking",
+      "prompt": "圧力鍋を使うと食材が早く煮える理由は？",
+      "choices": [
+        "熱が逃げるから",
+        "水の沸点が下がるから",
+        "鍋の中の圧力が高く、水の沸点が上がるから",
+        "空気が入らないから"
+      ],
+      "answerIndex": 2,
+      "explanation": "外圧が高いと沸点が 100 ℃ より高くなり、高い温度で調理できる。"
+    },
+    {
+      "id": "sci_chm09_016",
+      "unit": "science.chemistry.state.gas.vapor",
+      "category": "thinking",
+      "prompt": "水（分子量 18）の沸点が、硫化水素 H₂S（分子量 34）より高い理由は？",
+      "choices": [
+        "硫化水素は液体にならないから",
+        "水はイオン結晶だから",
+        "水分子の間に水素結合がはたらくから",
+        "水の方が分子量が小さいから"
+      ],
+      "answerIndex": 2,
+      "explanation": "ふつうは分子量が大きいほど沸点が高いが、水は水素結合があるため例外的に高い。"
+    },
+    {
+      "id": "sci_chm09_017",
+      "unit": "science.chemistry.state.gas.vapor",
+      "category": "knowledge",
+      "prompt": "液体が表面だけでなく内部からも気体になる現象は？",
+      "choices": [
+        "凝縮",
+        "昇華",
+        "沸騰",
+        "蒸発"
+      ],
+      "answerIndex": 2,
+      "explanation": "蒸気圧が外圧と等しくなると内部からも気泡が生じる。"
+    },
+    {
+      "id": "sci_chm09_018",
+      "unit": "science.chemistry.state.gas",
+      "category": "knowledge",
+      "prompt": "気体が液体に変わる変化を何という？",
+      "choices": [
+        "凝固",
+        "蒸発",
+        "凝縮",
+        "融解"
+      ],
+      "answerIndex": 2,
+      "explanation": "冷やしたコップの表面に水滴がつくのも凝縮。"
+    },
+    {
+      "id": "sci_chm09_019",
+      "unit": "science.chemistry.state.gas",
+      "category": "knowledge",
+      "prompt": "固体を加熱して融解している間、温度が一定になる理由は？",
+      "choices": [
+        "体積が変わらないから",
+        "熱が逃げていくから",
+        "圧力が下がるから",
+        "加えた熱が粒子の結合を切るのに使われるから"
+      ],
+      "answerIndex": 3,
+      "explanation": "融解熱として吸収される。"
+    },
+    {
+      "id": "sci_chm09_020",
+      "unit": "science.chemistry.state.gas.law",
+      "category": "knowledge",
+      "prompt": "ボイル・シャルルの法則を表す式は？",
+      "choices": [
+        "PVT ＝ 一定",
+        "PV/T ＝ 一定",
+        "P/VT ＝ 一定",
+        "PT/V ＝ 一定"
+      ],
+      "answerIndex": 1,
+      "explanation": "一定量の気体について成り立つ。"
+    },
+    {
+      "id": "sci_chm09_021",
+      "unit": "science.chemistry.state.gas",
+      "category": "knowledge",
+      "prompt": "気体定数 R の値として正しいものは？",
+      "choices": [
+        "22.4 L/mol",
+        "6.0 × 10²³ /mol",
+        "8.3 × 10³ Pa·L/(K·mol)",
+        "8.3 Pa·L/(K·mol)"
+      ],
+      "answerIndex": 2,
+      "explanation": "PV ＝ nRT で P を Pa、V を L で表すとき。"
+    },
+    {
+      "id": "sci_chm09_022",
+      "unit": "science.chemistry.state.gas.real",
+      "category": "knowledge",
+      "prompt": "実在気体が理想気体に近いふるまいをする条件は？",
+      "choices": [
+        "高温・高圧",
+        "高温・低圧",
+        "低温・低圧",
+        "低温・高圧"
+      ],
+      "answerIndex": 1,
+      "explanation": "分子間力と分子自身の体積の影響が小さくなる。"
+    },
+    {
+      "id": "sci_chm09_023",
+      "unit": "science.chemistry.state.gas.vapor",
+      "category": "knowledge",
+      "prompt": "水の状態図で、固体と液体の境界線（融解曲線）が左上がりになっている理由は？",
+      "choices": [
+        "水は蒸発しやすいから",
+        "水の方が軽いから",
+        "氷の方が水より密度が小さいから",
+        "氷は昇華しないから"
+      ],
+      "answerIndex": 2,
+      "explanation": "水は凝固すると体積が増えるので、圧力を上げると融点がわずかに下がる。"
+    },
+    {
+      "id": "sci_chm09_024",
+      "unit": "science.chemistry.state.gas",
+      "category": "knowledge",
+      "prompt": "ドライアイスが常圧で液体にならずに昇華する理由は？",
+      "choices": [
+        "CO₂ の分子量が大きいから",
+        "CO₂ の三重点の圧力が 1 気圧より高いから",
+        "温度が低すぎるから",
+        "CO₂ は極性分子だから"
+      ],
+      "answerIndex": 1,
+      "explanation": "三重点は約 5.1 × 10⁵ Pa。"
+    },
+    {
+      "id": "sci_chm09_025",
+      "unit": "science.chemistry.state.gas",
+      "category": "calculation",
+      "prompt": "温度一定で、2.0 × 10⁵ Pa、1.5 L の気体を 3.0 L にすると、圧力は？",
+      "choices": [
+        "0.5 × 10⁵ Pa",
+        "1.0 × 10⁵ Pa",
+        "2.0 × 10⁵ Pa",
+        "4.0 × 10⁵ Pa"
+      ],
+      "answerIndex": 1,
+      "explanation": "P₁V₁ ＝ P₂V₂。"
+    },
+    {
+      "id": "sci_chm09_026",
+      "unit": "science.chemistry.state.gas",
+      "category": "calculation",
+      "prompt": "圧力一定で、27 ℃ で 6.0 L の気体を −73 ℃ にすると、体積は？",
+      "choices": [
+        "9.0 L",
+        "2.0 L",
+        "16 L",
+        "4.0 L"
+      ],
+      "answerIndex": 3,
+      "explanation": "6.0 × 200/300。"
+    },
+    {
+      "id": "sci_chm09_027",
+      "unit": "science.chemistry.state.gas",
+      "category": "calculation",
+      "prompt": "0.50 mol の気体が 27 ℃、10 L の容器にある。圧力は？（R ＝ 8.3 × 10³ Pa·L/(K·mol)）",
+      "choices": [
+        "約 1.2 × 10⁵ Pa",
+        "約 2.5 × 10⁵ Pa",
+        "約 1.1 × 10⁴ Pa",
+        "約 6.2 × 10³ Pa"
+      ],
+      "answerIndex": 0,
+      "explanation": "P ＝ nRT/V ＝ 0.50 × 8.3 × 10³ × 300 ÷ 10。"
+    },
+    {
+      "id": "sci_chm09_028",
+      "unit": "science.chemistry.state.gas.mixture",
+      "category": "calculation",
+      "prompt": "全圧 1.0 × 10⁵ Pa の混合気体で、酸素のモル分率が 0.25 のとき、酸素の分圧は？",
+      "choices": [
+        "2.5 × 10⁴ Pa",
+        "7.5 × 10⁴ Pa",
+        "1.0 × 10⁵ Pa",
+        "4.0 × 10⁵ Pa"
+      ],
+      "answerIndex": 0,
+      "explanation": "分圧 ＝ 全圧 × モル分率。"
+    },
+    {
+      "id": "sci_chm09_029",
+      "unit": "science.chemistry.state.gas",
+      "category": "calculation",
+      "prompt": "27 ℃、1.0 × 10⁵ Pa で 2.49 L の気体の質量が 3.2 g だった。この気体の分子量は？（R ＝ 8.3 × 10³）",
+      "choices": [
+        "32",
+        "28",
+        "64",
+        "16"
+      ],
+      "answerIndex": 0,
+      "explanation": "n ＝ PV/RT ＝ 0.10 mol。3.2 ÷ 0.10。"
+    },
+    {
+      "id": "sci_chm09_030",
+      "unit": "science.chemistry.state.gas",
+      "category": "calculation",
+      "prompt": "窒素（分子量 28）と酸素（分子量 32）を物質量比 1：1 で混ぜた気体の平均分子量は？",
+      "choices": [
+        "60",
+        "28.8",
+        "30",
+        "29"
+      ],
+      "answerIndex": 2,
+      "explanation": "(28 + 32) ÷ 2。"
+    },
+    {
+      "id": "sci_chm09_031",
+      "unit": "science.chemistry.state.gas.vapor",
+      "category": "thinking",
+      "prompt": "密閉容器の水を加熱し続けても沸騰しないことがある理由は？",
+      "choices": [
+        "温度が上がらないから",
+        "水蒸気が液体にもどらないから",
+        "水がなくなるから",
+        "容器内の圧力が上がり、沸点も上がるから"
+      ],
+      "answerIndex": 3,
+      "explanation": "外圧が大きいほど沸点が高い。"
+    },
+    {
+      "id": "sci_chm09_032",
+      "unit": "science.chemistry.state.gas.vapor",
+      "category": "thinking",
+      "prompt": "エタノール（分子量 46）がジメチルエーテル（同じ分子量）より沸点が高い理由は？",
+      "choices": [
+        "エタノールは無極性だから",
+        "ジメチルエーテルはイオン結合だから",
+        "エタノールの方が分子が大きいから",
+        "エタノールは分子間で水素結合をつくるから"
+      ],
+      "answerIndex": 3,
+      "explanation": "O−H 基どうしで水素結合をつくる。"
+    }
+  ]
+}

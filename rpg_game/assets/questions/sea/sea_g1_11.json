@@ -1,0 +1,308 @@
+{
+  "setId": "sea_g1_11",
+  "worldId": "sea",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g1_11_01",
+      "unit": "english.eng.grammar.conj",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Hurry up, (   ) you'll miss the bus.",
+      "choices": [
+        "and",
+        "or",
+        "but",
+        "so"
+      ],
+      "answerIndex": 1,
+      "explanation": "命令文, or 〜 で「…しなさい、さもないと〜」。and だと「そうすれば」。"
+    },
+    {
+      "id": "sea_g1_11_02",
+      "unit": "english.eng.grammar.conj",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I stayed home (   ) I had a cold.",
+      "choices": [
+        "because",
+        "so",
+        "but",
+        "or"
+      ],
+      "answerIndex": 0,
+      "explanation": "理由を表す接続詞 because。"
+    },
+    {
+      "id": "sea_g1_11_03",
+      "unit": "english.eng.grammar.conj",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "It was raining, (   ) we didn't go out.",
+      "choices": [
+        "so",
+        "because",
+        "if",
+        "though"
+      ],
+      "answerIndex": 0,
+      "explanation": "結果を表す so（だから）。"
+    },
+    {
+      "id": "sea_g1_11_04",
+      "unit": "english.eng.grammar.conj.subordinate",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) he is rich, he isn't happy.",
+      "choices": [
+        "Because",
+        "Although",
+        "If",
+        "When"
+      ],
+      "answerIndex": 1,
+      "explanation": "although は「〜だけれども」（譲歩）。"
+    },
+    {
+      "id": "sea_g1_11_05",
+      "unit": "english.eng.grammar.conj",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Please turn off the lights (   ) you leave the room.",
+      "choices": [
+        "when",
+        "while",
+        "until",
+        "since"
+      ],
+      "answerIndex": 0,
+      "explanation": "「部屋を出るときに」。when は時を表す接続詞。"
+    },
+    {
+      "id": "sea_g1_11_06",
+      "unit": "english.eng.grammar.conj.subordinate",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "My mother called me (   ) I was taking a bath.",
+      "choices": [
+        "during",
+        "while",
+        "for",
+        "by"
+      ],
+      "answerIndex": 1,
+      "explanation": "while + 主語 + 動詞 で「〜している間に」。during は前置詞で後ろに名詞をとる。"
+    },
+    {
+      "id": "sea_g1_11_07",
+      "unit": "english.eng.grammar.conj",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I think (   ) she is right.",
+      "choices": [
+        "what",
+        "which",
+        "that",
+        "if"
+      ],
+      "answerIndex": 2,
+      "explanation": "think の目的語になる that 節（「〜ということ」）。この that は省略されることも多い。"
+    },
+    {
+      "id": "sea_g1_11_08",
+      "unit": "english.eng.grammar.conj.noun",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I don't know (   ) she will come.",
+      "choices": [
+        "that",
+        "what",
+        "if",
+        "which"
+      ],
+      "answerIndex": 2,
+      "explanation": "「〜かどうか」を表す if（= whether）。"
+    },
+    {
+      "id": "sea_g1_11_09",
+      "unit": "english.eng.grammar.conj",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Study hard, (   ) you will pass.",
+      "choices": [
+        "but",
+        "or",
+        "so",
+        "and"
+      ],
+      "answerIndex": 3,
+      "explanation": "命令文 ＋ and「〜しなさい、そうすれば」。"
+    },
+    {
+      "id": "sea_g1_11_10",
+      "unit": "english.eng.grammar.conj.coordinate",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Both Tom (   ) Ken are my friends.",
+      "choices": [
+        "but",
+        "and",
+        "nor",
+        "or"
+      ],
+      "answerIndex": 1,
+      "explanation": "both A and B「A も B も」。"
+    },
+    {
+      "id": "sea_g1_11_11",
+      "unit": "english.eng.grammar.conj.coordinate",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Either you (   ) I must go.",
+      "choices": [
+        "but",
+        "or",
+        "and",
+        "nor"
+      ],
+      "answerIndex": 1,
+      "explanation": "either A or B「A か B のどちらか」。"
+    },
+    {
+      "id": "sea_g1_11_12",
+      "unit": "english.eng.grammar.conj.coordinate",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Not only he (   ) his wife likes jazz.",
+      "choices": [
+        "but",
+        "or",
+        "and",
+        "nor"
+      ],
+      "answerIndex": 0,
+      "explanation": "not only A but (also) B「A だけでなく B も」。動詞は B に合わせる。"
+    },
+    {
+      "id": "sea_g1_11_13",
+      "unit": "english.eng.grammar.conj",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I will wait here (   ) you come back.",
+      "choices": [
+        "during",
+        "by",
+        "until",
+        "while"
+      ],
+      "answerIndex": 2,
+      "explanation": "until「〜するまで（ずっと）」。by は前置詞。"
+    },
+    {
+      "id": "sea_g1_11_14",
+      "unit": "english.eng.grammar.conj",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) I got home, it was dark.",
+      "choices": [
+        "When",
+        "If",
+        "Unless",
+        "Though"
+      ],
+      "answerIndex": 0,
+      "explanation": "when「〜したとき」。"
+    },
+    {
+      "id": "sea_g1_11_15",
+      "unit": "english.eng.grammar.conj",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Wash your hands (   ) you eat.",
+      "choices": [
+        "before",
+        "unless",
+        "since",
+        "during"
+      ],
+      "answerIndex": 0,
+      "explanation": "before「〜する前に」。"
+    },
+    {
+      "id": "sea_g1_11_16",
+      "unit": "english.eng.grammar.conj",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He was so tired (   ) he fell asleep.",
+      "choices": [
+        "what",
+        "as",
+        "which",
+        "that"
+      ],
+      "answerIndex": 3,
+      "explanation": "so 〜 that …「とても〜なので…」。"
+    },
+    {
+      "id": "sea_g1_11_17",
+      "unit": "english.eng.grammar.conj.subordinate",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) you hurry, you'll be late.",
+      "choices": [
+        "Because",
+        "If",
+        "Since",
+        "Unless"
+      ],
+      "answerIndex": 3,
+      "explanation": "unless「〜しない限り」。"
+    },
+    {
+      "id": "sea_g1_11_18",
+      "unit": "english.eng.grammar.conj.coordinate",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Neither he (   ) I was there.",
+      "choices": [
+        "or",
+        "nor",
+        "but",
+        "and"
+      ],
+      "answerIndex": 1,
+      "explanation": "neither A nor B「A も B も〜ない」。"
+    },
+    {
+      "id": "sea_g1_11_19",
+      "unit": "english.eng.grammar.conj",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I'll call you as soon as I (   ) there.",
+      "choices": [
+        "get",
+        "will get",
+        "getting",
+        "got"
+      ],
+      "answerIndex": 0,
+      "explanation": "時を表す節の中では、未来のことも現在形。"
+    },
+    {
+      "id": "sea_g1_11_20",
+      "unit": "english.eng.grammar.conj.subordinate",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) it was cold, we went swimming.",
+      "choices": [
+        "Though",
+        "Because",
+        "So",
+        "If"
+      ],
+      "answerIndex": 0,
+      "explanation": "though「〜だけれども」。"
+    }
+  ]
+}

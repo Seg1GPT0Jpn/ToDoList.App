@@ -1,0 +1,344 @@
+{
+  "setId": "information_info1_07",
+  "worldId": "information",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "inf_info107_001",
+      "unit": "information.info.computer.hardware.components",
+      "category": "knowledge",
+      "prompt": "CPU（中央処理装置）の主なはたらきは？",
+      "choices": [
+        "音の入力",
+        "画面への表示",
+        "データの長期保存",
+        "演算と制御"
+      ],
+      "answerIndex": 3,
+      "explanation": "五大装置のうち演算装置と制御装置にあたる。"
+    },
+    {
+      "id": "inf_info107_002",
+      "unit": "information.info.computer.hardware",
+      "category": "knowledge",
+      "prompt": "実行中のプログラムやデータを一時的に記憶する装置は？",
+      "choices": [
+        "出力装置",
+        "補助記憶装置",
+        "入力装置",
+        "主記憶装置（メモリ）"
+      ],
+      "answerIndex": 3,
+      "explanation": "電源を切ると内容が消える（揮発性）。"
+    },
+    {
+      "id": "inf_info107_003",
+      "unit": "information.info.computer.hardware.components",
+      "category": "knowledge",
+      "prompt": "電源を切っても内容が残り、データを長く保存する装置は？",
+      "choices": [
+        "主記憶装置",
+        "CPU",
+        "補助記憶装置（SSD・HDD など）",
+        "キャッシュ"
+      ],
+      "answerIndex": 2,
+      "explanation": "メモリより容量は大きいが、読み書きは遅い。"
+    },
+    {
+      "id": "inf_info107_004",
+      "unit": "information.info.computer.hardware.components",
+      "category": "knowledge",
+      "prompt": "コンピュータの五大装置の組み合わせは？",
+      "choices": [
+        "送信・受信・暗号・復号・認証",
+        "CPU・OS・アプリ・メモリ・画面",
+        "入力・出力・記憶・演算・制御",
+        "入力・出力・通信・表示・保存"
+      ],
+      "answerIndex": 2,
+      "explanation": "演算と制御をあわせて CPU という。"
+    },
+    {
+      "id": "inf_info107_005",
+      "unit": "information.info.computer.hardware.software",
+      "category": "knowledge",
+      "prompt": "OS（オペレーティングシステム）の役割は？",
+      "choices": [
+        "Web ページを表示するだけ",
+        "文章を作成する",
+        "電気を作る",
+        "ハードウェアを管理し、アプリケーションが動く土台になる"
+      ],
+      "answerIndex": 3,
+      "explanation": "例：Windows、macOS、Android、iOS、Linux。"
+    },
+    {
+      "id": "inf_info107_006",
+      "unit": "information.info.computer.hardware.software",
+      "category": "knowledge",
+      "prompt": "ソフトウェアはどれ？",
+      "choices": [
+        "マウス",
+        "表計算ソフト",
+        "CPU",
+        "キーボード"
+      ],
+      "answerIndex": 1,
+      "explanation": "目に見える機械の部分がハードウェア、プログラムがソフトウェア。"
+    },
+    {
+      "id": "inf_info107_007",
+      "unit": "information.info.computer.hardware.components",
+      "category": "knowledge",
+      "prompt": "CPU が動作するテンポを表す値を何という？",
+      "choices": [
+        "クロック周波数",
+        "標本化周波数",
+        "解像度",
+        "通信速度"
+      ],
+      "answerIndex": 0,
+      "explanation": "単位は Hz。1秒間に刻む信号の回数。"
+    },
+    {
+      "id": "inf_info107_008",
+      "unit": "information.info.computer.hardware",
+      "category": "knowledge",
+      "prompt": "プログラムもデータと同じように記憶装置に入れて実行する方式は？",
+      "choices": [
+        "公開鍵方式",
+        "プログラム内蔵方式（ノイマン型）",
+        "パケット交換方式",
+        "回線交換方式"
+      ],
+      "answerIndex": 1,
+      "explanation": "現在のほとんどのコンピュータがこの方式。"
+    },
+    {
+      "id": "inf_info107_009",
+      "unit": "information.info.computer.hardware.cpu",
+      "category": "calculation",
+      "prompt": "クロック周波数 2 GHz の CPU は、1秒間に何回の信号を刻む？",
+      "choices": [
+        "20 億回",
+        "200 万回",
+        "2 億回",
+        "2000 回"
+      ],
+      "answerIndex": 0,
+      "explanation": "2 GHz ＝ 2 × 10⁹ Hz ＝ 20 億回。"
+    },
+    {
+      "id": "inf_info107_010",
+      "unit": "information.info.computer.hardware.cpu",
+      "category": "calculation",
+      "prompt": "クロック周波数 2 GHz の CPU が、1命令を4クロックで実行する。1秒間に何命令？",
+      "choices": [
+        "5 億命令",
+        "8 億命令",
+        "20 億命令",
+        "5000 万命令"
+      ],
+      "answerIndex": 0,
+      "explanation": "2 × 10⁹ ÷ 4 ＝ 5 × 10⁸ ＝ 5 億命令。"
+    },
+    {
+      "id": "inf_info107_011",
+      "unit": "information.info.computer.hardware.components",
+      "category": "thinking",
+      "prompt": "メモリの容量が小さいと、多くのアプリを同時に使ったときに遅くなりやすい理由は？",
+      "choices": [
+        "ネットワークが切れるから",
+        "入りきらない分を遅い補助記憶装置とやりとりするから",
+        "CPU が止まるから",
+        "画面が暗くなるから"
+      ],
+      "answerIndex": 1,
+      "explanation": "メモリに入りきらないと、補助記憶を代わりに使い、読み書きに時間がかかる。"
+    },
+    {
+      "id": "inf_info107_012",
+      "unit": "information.info.computer.hardware.components",
+      "category": "thinking",
+      "prompt": "HDD より SSD の方が読み書きが速い主な理由は？",
+      "choices": [
+        "CPU の中にあるから",
+        "容量が必ず大きいから",
+        "電源が不要だから",
+        "円盤を回すなどの機械的な動きがないから"
+      ],
+      "answerIndex": 3,
+      "explanation": "SSD はフラッシュメモリで電気的に読み書きする。"
+    },
+    {
+      "id": "inf_info107_013",
+      "unit": "information.info.computer.hardware.components",
+      "category": "knowledge",
+      "prompt": "CPU の中で、計算を行う部分は？",
+      "choices": [
+        "演算装置",
+        "出力装置",
+        "記憶装置",
+        "制御装置"
+      ],
+      "answerIndex": 0,
+      "explanation": "制御装置は命令を解読して各装置を動かす。"
+    },
+    {
+      "id": "inf_info107_014",
+      "unit": "information.info.computer.hardware.components",
+      "category": "knowledge",
+      "prompt": "キーボードやマウスは五大装置のどれ？",
+      "choices": [
+        "記憶装置",
+        "出力装置",
+        "演算装置",
+        "入力装置"
+      ],
+      "answerIndex": 3,
+      "explanation": "ディスプレイやプリンタは出力装置。"
+    },
+    {
+      "id": "inf_info107_015",
+      "unit": "information.info.computer.hardware.components",
+      "category": "knowledge",
+      "prompt": "主記憶装置（メインメモリ）の特徴は？",
+      "choices": [
+        "容量が無限",
+        "CPU の中にある",
+        "電源を切っても内容が残る",
+        "読み書きが速いが、電源を切ると内容が消える"
+      ],
+      "answerIndex": 3,
+      "explanation": "揮発性メモリ（RAM）。"
+    },
+    {
+      "id": "inf_info107_016",
+      "unit": "information.info.computer.hardware.components",
+      "category": "knowledge",
+      "prompt": "CPU とメモリの速度差をうめるために、CPU の近くに置かれる高速な記憶装置は？",
+      "choices": [
+        "HDD",
+        "USB メモリ",
+        "DVD",
+        "キャッシュメモリ"
+      ],
+      "answerIndex": 3,
+      "explanation": "よく使うデータを置いておく。"
+    },
+    {
+      "id": "inf_info107_017",
+      "unit": "information.info.computer.hardware.software",
+      "category": "knowledge",
+      "prompt": "文書作成ソフトや表計算ソフトなど、目的に応じて使うソフトウェアは？",
+      "choices": [
+        "デバイスドライバ",
+        "アプリケーションソフトウェア",
+        "BIOS",
+        "OS"
+      ],
+      "answerIndex": 1,
+      "explanation": "OS の上で動く。"
+    },
+    {
+      "id": "inf_info107_018",
+      "unit": "information.info.computer.hardware.software",
+      "category": "knowledge",
+      "prompt": "周辺機器を OS から使えるようにするためのソフトウェアは？",
+      "choices": [
+        "コンパイラ",
+        "ブラウザ",
+        "デバイスドライバ",
+        "ファイアウォール"
+      ],
+      "answerIndex": 2,
+      "explanation": "プリンタなどを動かすのに必要。"
+    },
+    {
+      "id": "inf_info107_019",
+      "unit": "information.info.computer.hardware",
+      "category": "knowledge",
+      "prompt": "GPU の主なはたらきは？",
+      "choices": [
+        "画像処理など、大量の単純な計算を並列に行う",
+        "周辺機器を OS に認識させる",
+        "電源を切ってもデータを保存する",
+        "ネットワークの住所を割り当てる"
+      ],
+      "answerIndex": 0,
+      "explanation": "グラフィックス処理のほか、AI の学習などにも使われている。"
+    },
+    {
+      "id": "inf_info107_020",
+      "unit": "information.info.computer.hardware",
+      "category": "knowledge",
+      "prompt": "複数の処理を同時に行うため、CPU に複数の処理部分をもつものを何という？",
+      "choices": [
+        "シングルコア",
+        "キャッシュ",
+        "マルチコア",
+        "レジスタ"
+      ],
+      "answerIndex": 2,
+      "explanation": "同時に処理できる量が増える。"
+    },
+    {
+      "id": "inf_info107_021",
+      "unit": "information.info.computer.hardware",
+      "category": "calculation",
+      "prompt": "1 GHz は何 Hz？",
+      "choices": [
+        "10⁶ Hz",
+        "10³ Hz",
+        "10⁹ Hz",
+        "10¹² Hz"
+      ],
+      "answerIndex": 2,
+      "explanation": "G（ギガ）は 10 億。"
+    },
+    {
+      "id": "inf_info107_022",
+      "unit": "information.info.computer.hardware.cpu",
+      "category": "calculation",
+      "prompt": "クロック周波数 3 GHz の CPU で、1 クロックの時間は？",
+      "choices": [
+        "3 ナノ秒",
+        "約 0.33 ナノ秒",
+        "約 0.33 秒",
+        "3 ミリ秒"
+      ],
+      "answerIndex": 1,
+      "explanation": "1 ÷ (3 × 10⁹) 秒。"
+    },
+    {
+      "id": "inf_info107_023",
+      "unit": "information.info.computer.hardware.components",
+      "category": "knowledge",
+      "prompt": "「64 ビット CPU」の「64 ビット」が主に表しているものは？",
+      "choices": [
+        "メモリの容量（GB）",
+        "一度に扱えるデータの大きさ（ビット数）",
+        "コアの数",
+        "1 秒間に処理できる命令の数"
+      ],
+      "answerIndex": 1,
+      "explanation": "一度に扱えるデータが大きいほど、大きなメモリを扱いやすくなる。"
+    },
+    {
+      "id": "inf_info107_024",
+      "unit": "information.info.computer.hardware.components",
+      "category": "thinking",
+      "prompt": "スマートフォンもコンピュータの一種と言える理由は？",
+      "choices": [
+        "入力・出力・記憶・演算・制御の機能をもつから",
+        "画面があるから",
+        "小さいから",
+        "電話ができるから"
+      ],
+      "answerIndex": 0,
+      "explanation": "五大装置の機能をすべてもっている。"
+    }
+  ]
+}
