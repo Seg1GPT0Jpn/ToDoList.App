@@ -27,7 +27,7 @@ abstract final class Mastery {
 
   /// ステージがどの科目のものか（物語の決戦など、科目に属さないなら null）
   static String? courseOfStage(StageDef stage) {
-    // 世界の中心（5教科すべての問題）は、ひとつの科目に属さない
+    // 天空の図書院（5教科すべての問題）は、ひとつの科目に属さない
     if (stage.id == Story.centerStageId) return null;
     final fixed = _routeCourse[stage.worldId];
     if (fixed != null) return fixed;

@@ -10,6 +10,8 @@ const knownLooks = {
   // v4 で増えた文房具
   'notebook', 'pencilcase', 'glue', 'tape', 'clip', 'pushpin', 'sharpener',
   'brush', 'correction', 'inkpot', 'calculator',
+  // 道の果ての守護神（海獣・巨鳥）
+  'leviathan', 'bird',
 };
 
 void main() {

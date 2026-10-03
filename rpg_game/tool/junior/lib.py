@@ -3,7 +3,7 @@
 
 教科ごとのデータは <教科>.py に書き、gen.py がまとめて出力する。
 
-  W = World('math', '数の国', '算数・数学', prefix='mat', ...)
+  W = World('math', '数理の迷宮国', '算数・数学', prefix='mat', ...)
   R = W.route('e1', '小1', 'left')
   R.area('たし算', 'かずとけいさん', [Q('c', '3 + 4 は？', '7', ['6', '8', '5'], '…'), ...])
 
@@ -151,7 +151,7 @@ class Route:
 class World:
     def __init__(self, wid, cls, name, subject, prefix, hub, sign, desc,
                  primary='knowledge', secondary='thinking', armor='knowledge',
-                 ref=''):
+                 ref='', guardian=None):
         self.id = wid
         self.cls = cls
         self.name = name
@@ -164,6 +164,8 @@ class World:
         self.secondary = secondary
         self.armor = armor
         self.ref = ref
+        # 学年の道の最後のボスになる、暴走した守護神（dict: name/look/color/intro/defeat/desc）
+        self.guardian = guardian
         self.routes = []
 
     def route(self, rid, name, direction, grade=None, time=None, desc=''):
@@ -215,6 +217,14 @@ def _dart(s):
 
 def _enemy(w, r, k, a):
     seed = sum(map(ord, w.id + r.id)) + k
+    g = w.guardian
+    if a.boss and g and a is r.areas[-1]:
+        # 道の果てのボスは、その国の守護神（暴走した力の一部）
+        place = a.place or f'{a.section}の{BOSS_PLACES[seed % len(BOSS_PLACES)]}'
+        return dict(look=g['look'], name=f"{g['name']}〔{r.name}〕",
+                    intro=g['intro'], defeat=g['defeat'],
+                    desc=f"{g['desc']}{r.name}の道の果てで、その力の一部が暴れている。",
+                    color=g['color'], place=place)
     if a.boss:
         look = BOSS_LOOKS[_boss_i[0] % len(BOSS_LOOKS)]
         _boss_i[0] += 1

@@ -87,7 +87,7 @@ void main() {
     );
   });
 
-  testWidgets('理の国のハブと、各ルートのフィールド', (t) async {
+  testWidgets('万物の実験庭園のハブと、各ルートのフィールド', (t) async {
     await openScreen(
       t,
       FieldScreen(world: science, progress: RpgProgress.initial),

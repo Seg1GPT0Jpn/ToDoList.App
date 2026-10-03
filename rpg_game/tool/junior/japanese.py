@@ -1,4 +1,4 @@
-"""言の葉の国（国語）：小1〜中3。"""
+"""和の礎の国（国語）：小1〜中3。"""
 import random
 
 from lib import Q

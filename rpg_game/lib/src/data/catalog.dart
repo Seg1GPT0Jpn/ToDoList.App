@@ -19,7 +19,7 @@ class RpgCatalog {
   /// 教科ワールドの予定価格（買い切り・円）。ランダム要素は持たない。
   static const defaultWorldPriceYen = 250;
 
-  /// 英語の国のステージ（強さの曲線などで使う）
+  /// 異界の港町のステージ（強さの曲線などで使う）
   static List<StageDef> get englishStages => EnglishCatalog.stages;
 
   static WorldDef _world({

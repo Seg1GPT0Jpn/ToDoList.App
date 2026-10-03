@@ -1,4 +1,4 @@
-"""数の国（算数）：小1〜小6。"""
+"""数理の迷宮国（算数）：小1〜小6。"""
 from fractions import Fraction as Fr
 
 from helpers import calc, dnear, fmt, frac, near, rng, uniq

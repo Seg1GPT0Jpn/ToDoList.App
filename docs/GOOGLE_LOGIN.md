@@ -104,9 +104,15 @@ Google のアカウント選択画面が開くので、アカウントを選べ�
 | `operation-not-allowed` | Authentication で Google が有効になっていない（手順1-3） |
 | `unauthorized-domain` | Web の URL が許可されていない。Authentication →「設定」→「承認済みドメイン」に追加する（`localhost` は最初から入っています） |
 | Android でアカウントを選んだあとエラー（`invalid-cert-hash` など） | SHA-1 が未登録か、別のPCの署名。手順4をそのPCで行う |
+| 「アプリの登録が合っていません」（`developer-error`） | SHA-1／SHA-256 が、アプリをビルドしている PC のものと合っていない、またはパッケージ名がちがう。手順4をそのPCでやり直し、`flutterfire configure` をもう一度実行してビルドし直す |
+| 「ログインできましたが、クラウドに保存できません」 | Firestore が未作成（手順1-4）か、ルールが未反映（手順5） |
 | `network-request-failed` | 端末がインターネットにつながっていない |
 | `permission-denied`（保存のとき） | 手順5のルールが反映されていない |
 
 メモ：
+- Android では、端末の Google アカウント選択画面でログインします（使えないときは自動でブラウザに切りかわります）。
+  選択画面が出ないときは、Firebase →「Authentication」→「Google」→「ウェブ SDK 構成」の「ウェブ クライアント ID」を
+  `lib/cloud/google_client_id.dart` に貼ってビルドし直してください
+- うまくいかないときは、アプリに出るダイアログに「原因」「直し方」「エラーの記録」が表示されます
 - claude.ai の成果物（アーティファクト）として公開した Web 版は、安全のためポップアップが使えないので、Google ログインはできません。Google ログインは `flutter run`、Android アプリ、または Firebase Hosting で公開した Web 版で使ってください（公開のしかたは `rpg_game_app/README.md` の「公開する」）
 - リリース版の APK を作るときは、リリース用の署名の SHA-1 も同じように登録してください

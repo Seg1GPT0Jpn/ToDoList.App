@@ -2,11 +2,12 @@
 
 import '../curriculum.dart';
 
-const socialCurriculum = CurriculumNode(
+const socialCurriculum =
+CurriculumNode(
   id: 'social',
   name: '社会',
   level: CurriculumLevel.subject,
-  gameName: '時と地の国',
+  gameName: '時空の回廊',
   curriculumReference: '小学校 社会・中学校 社会',
   source: '文部科学省 小学校・中学校学習指導要領（平成29年告示）',
   sourceUrl: 'https://www.mext.go.jp/a_menu/shotou/new-cs/1384661.htm',

@@ -1,4 +1,4 @@
-"""数の国（数学）：中1〜中3。"""
+"""数理の迷宮国（数学）：中1〜中3。"""
 from fractions import Fraction as Fr
 from math import isqrt
 

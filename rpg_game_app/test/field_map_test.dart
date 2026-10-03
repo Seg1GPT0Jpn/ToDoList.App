@@ -257,7 +257,7 @@ void main() {
     }
   }
 
-  group('理の国のスタート地点', () {
+  group('万物の実験庭園のスタート地点', () {
     final hub = FieldMap.byId('science_hub');
 
     test('左＝小3・小4、下＝小5・小6、上＝中1〜中3 の出入口がある', () {

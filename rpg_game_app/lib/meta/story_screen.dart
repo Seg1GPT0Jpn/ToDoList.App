@@ -8,7 +8,7 @@ import '../battle/battle_screen.dart';
 import '../story/story_player.dart';
 import '../versus/versus_screen.dart';
 
-/// 物語：知識の世界と5つの欠片。6つそろうと「世界の中心」の決戦に挑める
+/// 物語：言霊の勇者と大樹アカデミア。5つの欠片がそろうと「天空の図書院」の決戦に挑める
 class StoryScreen extends StatefulWidget {
   const StoryScreen({super.key});
 
@@ -20,25 +20,28 @@ class _StoryScreenState extends State<StoryScreen> {
   /// エピローグをもう見せはじめた
   bool _epilogueShown = false;
 
-  /// 物語のライバル「ノイズ」と、その国の問題で早押し勝負（章が進むほど強い）
+  /// 道の果てで出会った守護神と、その国の問題で早押し勝負（救った国が多いほど強い）
   Future<void> _rivalMatch(BuildContext context, String worldId) async {
+    final story = Story.of(worldId);
     final services = RpgServices.of(context);
     final stages = [...RpgCatalog.world(worldId).stages.where((s) => !s.isBoss)]
       ..shuffle();
     final setIds = [for (final s in stages.take(4)) s.questionSetIds.first];
     final questions = await loadVersusQuestions(services, setIds);
     if (!context.mounted || questions.isEmpty) return;
-    final chapter = StoryScenes.chapterOf(worldId);
-    final level =
-        CpuLevel.values[((chapter - 1) * CpuLevel.values.length) ~/ 6];
+    final saved = Story.fragments(await services.repository.load()).length;
+    if (!context.mounted) return;
+    final level = CpuLevel.values[(saved * CpuLevel.values.length) ~/
+        (Story.worlds.length + 1)];
     await Navigator.of(context).push(
       MaterialPageRoute<void>(
         builder: (_) => VersusScreen(
           questions: questions,
-          names: [services.profiles.load().displayName, 'ノイズ'],
+          names: [services.profiles.load().displayName, story.guardian],
           cpu: level,
           rounds: 10,
-          rival: true,
+          rivalLook: story.guardianLook,
+          rivalColor: story.guardianColor,
         ),
       ),
     );
@@ -78,7 +81,7 @@ class _StoryScreenState extends State<StoryScreen> {
         final got = Story.fragments(p);
         final open = Story.centerOpen(p);
         final won = p.clearedStageIds.contains(Story.centerStageId);
-        // 魔王をたおしたら、エピローグを一度だけ見せる
+        // ネブラをたおしたら、エピローグを一度だけ見せる
         if (won &&
             !_epilogueShown &&
             !StoryScenes.seen(p, StoryScenes.epilogue)) {
@@ -113,10 +116,10 @@ class _StoryScreenState extends State<StoryScreen> {
                     StoryScenes.prologue,
                   ], replay: seen.contains(StoryScenes.prologue.id)),
                   icon: const Icon(Icons.auto_stories),
-                  label: const Text('序章「しおりの精」を読む'),
+                  label: const Text('序章「白紙のグリモワール」を読む'),
                 ),
                 const SizedBox(height: 16),
-                Text('知識の欠片（${got.length} / 6）', style: serif(16)),
+                Text('知識の欠片（${got.length} / ${Story.worlds.length}）', style: serif(16)),
                 const SizedBox(height: 6),
                 for (final w in Story.worlds)
                   Card(
@@ -135,15 +138,15 @@ class _StoryScreenState extends State<StoryScreen> {
                       ),
                       trailing: StoryScenes.seen(p, StoryScenes.boss(w.worldId))
                           ? IconButton(
-                              tooltip: 'ノイズと早押し勝負',
+                              tooltip: '${w.guardian}と早押し勝負',
                               icon: const Icon(Icons.sports_esports),
                               onPressed: () => _rivalMatch(context, w.worldId),
                             )
                           : null,
                       subtitle: Text(
                         got.contains(w.worldId)
-                            ? '${w.clearText}\n手に入れた：${w.key}・${GearDef.byId(GearDef.byFragment[w.worldId]!).name}'
-                            : '${Story.finalsOf(w.worldId).map((s) => s.name).join('・')}のボスをすべて倒すと取りもどせる',
+                            ? '${w.clearText}\n手に入れた：${w.emblem}・${GearDef.byId(GearDef.byFragment[w.worldId]!).name}'
+                            : '暴走した${w.guardian}が、${Story.finalsOf(w.worldId).map((s) => s.name).join('・')}で待っている。すべての道の果てで勝つと、正気にもどる',
                         style: const TextStyle(fontSize: 12, height: 1.5),
                       ),
                     ),
@@ -156,14 +159,14 @@ class _StoryScreenState extends State<StoryScreen> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('🌎 世界の中心', style: serif(17)),
+                        Text('📚 天空の図書院', style: serif(17)),
                         const SizedBox(height: 4),
                         Text(
                           won
-                              ? '忘却の魔王をたおし、知識の世界はふたたび一つになった。…でも、学びの旅はまだ続く。何度でも挑戦できる。'
+                              ? '虚無の霧ネブラを晴らし、大樹アカデミアに満開の花が咲いた。…でも、学びの旅はまだ続く。何度でも挑戦できる。'
                               : open
-                              ? '5つの欠片が道を照らしている。知識を奪った「忘却の魔王」との最終決戦。5教科の最後のボスの範囲すべてから出題される（共通テスト総合）。'
-                              : '5つの欠片がそろうと、道がひらく。',
+                              ? '5つの欠片が扉をひらいた。考えることをやめた心から生まれた「虚無の霧ネブラ」との最終決戦。5教科の道の果ての範囲すべてから出題される（小中学校の総まとめ）。'
+                              : '5つの国の守護神を救い、欠片がそろうと、扉がひらく。',
                           style: const TextStyle(fontSize: 13, height: 1.6),
                         ),
                         const SizedBox(height: 8),
@@ -185,7 +188,7 @@ class _StoryScreenState extends State<StoryScreen> {
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  '読んだ場面は、ここで何度でも読み返せます。国に入る・最後のボスに挑む・欠片を取りもどすと、新しい場面が読めます。',
+                  '読んだ場面は、ここで何度でも読み返せます。国に入る・道の果ての守護神に挑む・守護神を救うと、新しい場面が読めます。',
                   style: TextStyle(fontSize: 12, color: TsuzuriColors.inkSoft),
                 ),
                 const SizedBox(height: 6),
@@ -221,7 +224,7 @@ class _StoryScreenState extends State<StoryScreen> {
   }
 }
 
-/// 国の設定（国民・守護者・忘却された理由・学ぶ理由）。国に入ると読める
+/// 国の設定（国民・守護神・暴走した理由・学ぶ理由）。国に入ると読める
 class _NationCard extends StatelessWidget {
   const _NationCard({required this.lore, required this.progress});
 
@@ -269,8 +272,8 @@ class _NationCard extends StatelessWidget {
             ? [
                 item('国', lore.land),
                 item('国民', lore.people),
-                item('守護者', '${lore.guardian}。${lore.guardianNote}'),
-                item('忘却', lore.forgotten),
+                item('守護神', '${lore.guardian}。${lore.guardianNote}'),
+                item('暴走', lore.forgotten),
                 item('学ぶ理由', lore.whyLearn),
                 item('伏線', '${lore.midBossNote}\n${lore.bossNote}'),
               ]

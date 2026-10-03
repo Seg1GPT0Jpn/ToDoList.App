@@ -287,8 +287,8 @@ class Achievements {
     ),
     AchievementDef(
       id: 'english_clear',
-      title: '英語の旅人',
-      description: '英語の国で「ことばの欠片」を取りもどす',
+      title: '嵐を晴らす者',
+      description: '異界の港町で、バベル・リヴァイアサンを救う',
       group: AchievementGroup.battle,
       rarity: Rarity.epic,
       goal: 1,
@@ -296,8 +296,8 @@ class Achievements {
     ),
     AchievementDef(
       id: 'fragments_6',
-      title: '世界をつなぐ者',
-      description: '5つの知識の欠片をすべて取りもどす',
+      title: '守護神を救いし者',
+      description: '5つの国の守護神をすべて救い、知識の欠片をそろえる',
       group: AchievementGroup.collection,
       rarity: Rarity.legendary,
       goal: 5,
@@ -305,8 +305,8 @@ class Achievements {
     ),
     AchievementDef(
       id: 'world_center',
-      title: '忘却をこえし者',
-      description: '世界の中心で、忘却の魔王をたおす',
+      title: '真の言霊の勇者',
+      description: '天空の図書院で、虚無の霧ネブラを晴らす',
       group: AchievementGroup.battle,
       rarity: Rarity.legendary,
       goal: 1,

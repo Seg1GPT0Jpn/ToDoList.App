@@ -35,13 +35,13 @@ void main() {
   });
 
   test('語り部は、集めた欠片の数で話が変わる', () {
-    expect(Npcs.storytellerTalk({}).lines.join(), contains('ひとつも'));
+    expect(Npcs.storytellerTalk({}).lines.join(), contains('だれも救えていない'));
     expect(Npcs.storytellerTalk({'english'}).lines.join(), contains('ことばの欠片'));
     expect(
       Npcs.storytellerTalk({for (final w in Story.worlds) w.worldId})
           .lines
           .join(),
-      contains('世界の中心'),
+      contains('天空の図書院'),
     );
   });
 }

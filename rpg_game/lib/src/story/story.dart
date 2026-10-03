@@ -7,18 +7,28 @@ import '../models/stage.dart';
 class WorldStory {
   const WorldStory({
     required this.worldId,
+    required this.guardian,
+    required this.guardianLook,
+    required this.guardianColor,
     required this.fragment,
-    required this.key,
+    required this.emblem,
     required this.clearText,
   });
 
   final String worldId;
 
-  /// その国で取りもどす「知識の欠片」
+  /// その国の守護神（暴走して、国のボスになっている）
+  final String guardian;
+
+  /// 守護神の姿（enemy_painter の look）と色
+  final String guardianLook;
+  final int guardianColor;
+
+  /// 守護神から受け取る「知識の欠片」
   final String fragment;
 
-  /// 欠片といっしょに手に入る、次の国への鍵
-  final String key;
+  /// 守護神が正気にもどって授けてくれる「国の証（エンブレム）」
+  final String emblem;
 
   /// 国を救ったときの文
   final String clearText;
@@ -26,55 +36,73 @@ class WorldStory {
 
 /// つづりクエストの世界の物語。
 ///
-/// かつて一つだった「知識の世界」が、謎の災害によって5つの国に分断された。
-/// 主人公は各国を旅して「知識の欠片」を集め、世界を復元していく。
-/// 5つの欠片がそろうと「世界の中心」への道がひらき、知識を奪った魔王と決戦になる。
+/// 世界を支える大樹「アカデミア」が枯れはじめ、5つの国の守護神（賢者）たちが暴走した。
+/// 先代の勇者たちが旅立ったあと、留守番をしていた「言霊（つづり）の勇者」の見習いが、
+/// 白紙の聖典「スペル・グリモワール」に学んだ正解を綴り、守護神たちを浄化していく。
+/// 5つの国は好きな順に挑める。5つの欠片がそろうと「天空の図書院」がひらき、
+/// 虚無の霧ネブラとの最終決戦になる。
 class Story {
   const Story._();
 
-  static const title = '知識の世界と、5つの欠片';
+  static const title = '言霊の勇者と大樹アカデミア';
 
   static const prologue = [
-    'むかし、この世界は一つの大きな「知識の世界」だった。',
-    'ことば、数、自然、歴史――すべての知識がつながり、人びとは自由に学び、旅をしていた。',
-    'ところがある日、「忘却の魔王」があらわれ、世界の知識を奪って引きさいてしまった。',
-    '世界は5つの国――英語の国・理の国・時と地の国・言の葉の国・数の国――に分かれ、国と国をつなぐ道は閉ざされた。',
-    '奪われた知識は「知識の欠片」となって、それぞれの国のいちばん奥で、魔物たちに守られている。',
-    'きみは、ノートとペンを手にした見習いの冒険者。',
-    '各国を旅して問いに答え、魔物をたおし、知識の欠片を取りもどそう。',
-    '5つの欠片がそろったとき、「世界の中心」への道がひらく――。',
+    '世界の中心には、すべての知識を根から吸いあげて葉を茂らせる大樹「アカデミア」がある。',
+    'その大樹を守ってきたのが「言霊（つづり）の勇者」たち。けれど先代の勇者たちは、遠い旅に出たまま帰ってこない。',
+    '勇者たちが旅立ったあと、アカデミアは枯れはじめ、大樹とつながる5つの国の守護神たちが暴走してしまった。',
+    'きみは「まだ未熟だから」と留守番を任されていた、言霊の勇者の見習い。',
+    '手にしたのは、白紙の聖典「スペル・グリモワール」。学んだ正解を書きこむ（綴る）と、奇跡の魔法が発動する。',
+    '和の礎の国・数理の迷宮国・異界の港町・万物の実験庭園・時空の回廊――得意な教科、好きな雰囲気の国から、自由に挑もう。',
+    '倒す相手は、ただの悪者ではない。苦しんで暴れている守護神たちを、知識の力で助けにいくのだ。',
+    '5つの国の「知識の欠片」がそろったとき、世界の中心「天空の図書院」への扉がひらく――。',
   ];
 
+  /// 国の順（物語の画面に並べる順。挑む順は自由）
   static const worlds = <WorldStory>[
     WorldStory(
-      worldId: 'english',
-      fragment: 'ことばの欠片',
-      key: '言葉の鍵',
-      clearText: '英語の国に、ことばの流れがもどった。遠くの国の人とも、また話せる。',
-    ),
-    WorldStory(
-      worldId: 'science',
-      fragment: 'ことわりの欠片',
-      key: '実験の鍵',
-      clearText: '理の国に、自然のきまりがもどった。空も大地も、また正しく動きはじめる。',
-    ),
-    WorldStory(
-      worldId: 'social',
-      fragment: '時の欠片',
-      key: '年表の鍵',
-      clearText: '時と地の国に、歴史と地図がもどった。人びとは自分たちの歩みを思い出した。',
-    ),
-    WorldStory(
       worldId: 'japanese',
+      guardian: '巨鳥カラスバ',
+      guardianLook: 'bird',
+      guardianColor: 0xFF2A2A3A,
       fragment: '言の葉の欠片',
-      key: '筆の鍵',
-      clearText: '言の葉の国に、物語と歌がもどった。むかしの人の心の声が、また聞こえる。',
+      emblem: '白羽の紋章',
+      clearText: 'カラスバは純白の鳥にもどった。和の礎の国に、美しい言の葉がふたたび舞う。',
     ),
     WorldStory(
       worldId: 'math',
+      guardian: '巨神カラクリ・ゴーレム',
+      guardianLook: 'golem',
+      guardianColor: 0xFF9C7A3C,
       fragment: '数の欠片',
-      key: '公式の鍵',
-      clearText: '数の国に、数と図形の調和がもどった。橋も塔も、また正しく建てられる。',
+      emblem: '天秤の紋章',
+      clearText: '歯車の狂いが直り、数理の迷宮国は完璧な均衡を取りもどした。',
+    ),
+    WorldStory(
+      worldId: 'english',
+      guardian: '海獣バベル・リヴァイアサン',
+      guardianLook: 'leviathan',
+      guardianColor: 0xFF2B5F8A,
+      fragment: 'ことばの欠片',
+      emblem: '羅針の紋章',
+      clearText: '嵐が晴れ、異界の港町に船がもどった。知らない言葉の人とも、心を通わせられる。',
+    ),
+    WorldStory(
+      worldId: 'science',
+      guardian: '炎氷竜カオス・エレメンタル',
+      guardianLook: 'dragon',
+      guardianColor: 0xFF7A3FA0,
+      fragment: 'ことわりの欠片',
+      emblem: '炎氷の紋章',
+      clearText: '熱も光も気候も、正しい法則にもどった。万物の実験庭園に、穏やかな季節がめぐる。',
+    ),
+    WorldStory(
+      worldId: 'social',
+      guardian: '幽幻騎士クロノス・ナイト',
+      guardianLook: 'knight',
+      guardianColor: 0xFF6B5B45,
+      fragment: '時の欠片',
+      emblem: '砂時計の紋章',
+      clearText: 'クロノス・ナイトは誇りを取りもどした。時空の回廊に、人びとの歩みがふたたび刻まれる。',
     ),
   ];
 
@@ -99,12 +127,12 @@ class Story {
             w.worldId,
       };
 
-  /// 世界の中心への道がひらいたか
+  /// 天空の図書院への扉がひらいたか
   static bool centerOpen(RpgProgress p) => fragments(p).length == worlds.length;
 
   static const centerStageId = 'world_center_final';
 
-  /// 世界の中心の決戦。5つの国の最後のボスの範囲すべてから出題する（小中学校の総まとめ）
+  /// 天空の図書院の決戦。5つの国の最後のボスの範囲すべてから出題する（小中学校の総まとめ）
   static StageDef centerStage() {
     final sets = <String>[];
     for (final w in worlds) {
@@ -118,19 +146,19 @@ class Story {
       id: centerStageId,
       worldId: 'english',
       order: 1,
-      name: '世界の中心',
-      region: '世界の中心',
+      name: '天空の図書院',
+      region: '天空の図書院',
       isBoss: true,
       enemy: const EnemyDef(
-        id: 'oblivion_king',
-        name: '忘却の魔王',
+        id: 'nebra',
+        name: '虚無の霧ネブラ',
         maxHp: 2600,
         attack: 60,
-        look: 'dragon',
-        color: 0xFF3A2A5A,
-        description: '世界の知識を奪い、5つの国に引きさいた魔王。すべての教科の問いで立ちはだかる。',
-        introLine: 'よくぞ5つの欠片を集めた。だが、知識はふたたび忘却の底へ沈むのだ！',
-        defeatLine: 'ばかな…忘れても、また学ぶというのか…。',
+        look: 'ghost',
+        color: 0xFF4A4660,
+        description: '知識を忘れ去り、考えることをやめてしまった心の隙間から生まれた怪物。5教科すべての問いで立ちはだかる。',
+        introLine: '解かなくてもいい、考えなくてもいい……楽な暗闇へおいで……。',
+        defeatLine: 'なぜ……考えることを、やめないの……？ 霧が……晴れていく……。',
       ),
       questionSetIds: sets,
       expReward: 1000,

@@ -13,7 +13,6 @@ import '../app/toast.dart';
 import '../art/enemy_painter.dart';
 import '../art/hero_painter.dart';
 import '../art/paper.dart';
-import '../story/story_player.dart';
 import 'online_lobby_screen.dart';
 import 'online_room.dart';
 
@@ -315,11 +314,15 @@ class VersusScreen extends StatefulWidget {
     this.onFinished,
     this.random,
     this.online,
-    this.rival = false,
+    this.rivalLook,
+    this.rivalColor,
   });
 
-  /// 物語のライバル「ノイズ」との勝負（CPU の姿がノイズになる）
-  final bool rival;
+  /// 物語の守護神との勝負のとき、その姿（CPU の姿が守護神になる）
+  final String? rivalLook;
+  final int? rivalColor;
+
+  bool get rival => rivalLook != null;
 
   /// オンライン対戦のとき、そのつながり
   final OnlineLink? online;
@@ -713,7 +716,11 @@ class _VersusScreenState extends State<VersusScreen>
               animation: _idle,
               builder: (_, _) => CustomPaint(
                 painter: widget.rival
-                    ? _NoisePainter(_idle.value * 60)
+                    ? _LookPainter(
+                        widget.rivalLook!,
+                        _idle.value * 60,
+                        color: widget.rivalColor,
+                      )
                     : widget.cpu == null
                     ? _HeroMini(false)
                     : _LookPainter(_cpuLook(widget.cpu!), _idle.value * 60),
@@ -903,7 +910,7 @@ class _VersusScreenState extends State<VersusScreen>
     final title = w == null
         ? '引き分け！'
         : widget.rival
-        ? (w == 0 ? 'ノイズに勝った！' : 'ノイズの勝ち…')
+        ? (w == 0 ? '${b.name}に勝った！' : '${b.name}の勝ち…')
         : widget.cpu != null
         ? (w == 0 ? 'あなたの勝ち！' : 'CPU の勝ち…')
         : _online != null
@@ -976,24 +983,15 @@ class _VersusScreenState extends State<VersusScreen>
 }
 
 class _LookPainter extends CustomPainter {
-  _LookPainter(this.look, this.t);
+  _LookPainter(this.look, this.t, {this.color});
   final String look;
   final double t;
+  final int? color;
   @override
   void paint(Canvas canvas, Size size) =>
-      paintEnemy(canvas, size.shortestSide, look, t);
+      paintEnemy(canvas, size.shortestSide, look, t, color: color);
   @override
   bool shouldRepaint(_LookPainter old) => true;
-}
-
-class _NoisePainter extends CustomPainter {
-  _NoisePainter(this.t);
-  final double t;
-  @override
-  void paint(Canvas canvas, Size size) =>
-      paintNoise(canvas, size.shortestSide, t);
-  @override
-  bool shouldRepaint(_NoisePainter old) => true;
 }
 
 class _HeroMini extends CustomPainter {

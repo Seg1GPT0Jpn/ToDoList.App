@@ -2,11 +2,12 @@
 
 import '../curriculum.dart';
 
-const englishCurriculum = CurriculumNode(
+const englishCurriculum =
+CurriculumNode(
   id: 'english',
   name: '英語',
   level: CurriculumLevel.subject,
-  gameName: '英語の国',
+  gameName: '異界の港町',
   curriculumReference: '小学校 外国語活動・外国語、中学校 外国語（英語）',
   source: '文部科学省 小学校・中学校学習指導要領（平成29年告示）',
   sourceUrl: 'https://www.mext.go.jp/a_menu/shotou/new-cs/1384661.htm',

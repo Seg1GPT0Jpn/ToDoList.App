@@ -275,7 +275,7 @@ class FieldGame extends FlameGame with KeyboardEvents {
   void onGameResize(Vector2 size) {
     super.onGameResize(size);
     // スマホ縦持ちで横 9 マス程度が見えるように
-    // 小さいマップ（理の国のスタート地点など）は、横幅全体が見えるようにする
+    // 小さいマップ（万物の実験庭園のスタート地点など）は、横幅全体が見えるようにする
     final across = map.width <= 13 ? map.width : 9;
     camera.viewfinder.zoom = min(
       size.x / (across * tileSize),

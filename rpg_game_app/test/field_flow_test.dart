@@ -74,7 +74,7 @@ Future<void> _closeAll(WidgetTester t) async {
 }
 
 void main() {
-  testWidgets('フィールドの仕掛けに話しかけても落ちない（英語の国・中1）', (t) async {
+  testWidgets('フィールドの仕掛けに話しかけても落ちない（異界の港町・中1）', (t) async {
     await openScreen(
       t,
       FieldScreen(
@@ -147,7 +147,7 @@ void main() {
   });
 
   for (final exam in [false, true]) {
-    testWidgets('フィールドから「たたかう」でバトルに入れる（${exam ? '試験ワールド' : '英語の国・中1'}）', (
+    testWidgets('フィールドから「たたかう」でバトルに入れる（${exam ? '試験ワールド' : '異界の港町・中1'}）', (
       t,
     ) async {
       final plan = ExamWorldPlan(

@@ -9,7 +9,7 @@ import 'helpers.dart';
 /// 小中学生版の問題データの検査（tool/junior/gen.py で作ったもの）
 void main() {
   group('5教科のワールド', () {
-    test('5教科がそろい、英語の国だけ無料', () {
+    test('5教科がそろい、異界の港町だけ無料', () {
       expect(RpgCatalog.worlds.map((w) => w.id),
           ['english', 'math', 'japanese', 'science', 'social']);
       for (final w in RpgCatalog.worlds) {

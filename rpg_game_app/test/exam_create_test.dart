@@ -21,7 +21,7 @@ void main() {
     await t.tap(find.text('範囲から探す'));
     await t.pump(const Duration(milliseconds: 300));
     expect(find.textContaining('エリア見つかりました'), findsOneWidget);
-    // 英語の国は56エリアあるので、ボタンまでスクロールする
+    // 異界の港町は56エリアあるので、ボタンまでスクロールする
     final make = find.textContaining('ワールドとフィールドをつくる');
     await t.scrollUntilVisible(make, 400, scrollable: find.byType(Scrollable).first);
     await t.tap(make);

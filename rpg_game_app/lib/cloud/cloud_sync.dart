@@ -10,6 +10,7 @@ import '../account/profile_repository.dart';
 import '../data/meta_store.dart';
 import '../data/prefs_progress_repository.dart';
 import '../firebase_options.dart';
+import 'login_problem.dart';
 
 /// 進行状況とプロフィールを Firestore と同期する。
 ///
@@ -61,7 +62,7 @@ class CloudSync {
     // 前回のログインが残っていれば、クラウドの記録を読み込む
     final user = await sync._auth.authStateChanges().first;
     if (user != null) {
-      unawaited(sync.pull());
+      unawaited(sync._pullAndLink(user));
     } else if (profiles.load().isGoogleLinked) {
       // ログインが切れていたら、登録していない表示にもどす
       await profiles.replaceLocal(profiles.load().copyWith(unlinkGoogle: true));
@@ -71,52 +72,83 @@ class CloudSync {
 
   String? get _uid => _auth.currentUser?.uid;
 
+  /// 起動したときにログインが残っていたとき（Web でページを移動するログインから
+  /// もどってきたときもふくむ）。読み込んだあと、プロフィールを登録ずみの表示にする
+  Future<void> _pullAndLink(User user) async {
+    await pull();
+    final p = _profiles.load();
+    if (p.isGoogleLinked) return;
+    final email = user.email ?? '';
+    await _profiles.save(
+      p.copyWith(
+        googleEmail: email,
+        googleDisplayName: user.displayName ?? email.split('@').first,
+        linkedAt: DateTime.now(),
+      ),
+    );
+  }
+
   /// ログインした直後に呼ぶ。クラウドに記録があれば端末に読み込み、
   /// なければ端末の記録をクラウドに上げる。
-  Future<void> pull() async {
+  ///
+  /// 読み書きできなかったときは、その原因を返す（端末の記録はそのまま使える）。
+  Future<LoginProblem?> pull() async {
     final uid = _uid;
-    if (uid == null) return;
+    if (uid == null) return null;
     try {
-      final progressSnap = await _db
-          .doc(RpgFirestorePaths.progressDoc(uid))
-          .get();
-      final progressData = progressSnap.data();
-      if (progressData != null) {
-        await _progress.replaceLocal(RpgProgress.fromMap(_plain(progressData)));
-      } else {
-        await _pushProgress(await _progress.load());
+      await _pull(uid).timeout(const Duration(seconds: 20));
+      return null;
+    } on TimeoutException {
+      return LoginProblem.forCode('cloud-unavailable', detail: 'timeout');
+    } on FirebaseException catch (e) {
+      debugPrint('クラウドの記録を読み込めませんでした: $e');
+      final text = '${e.code} ${e.message}';
+      if (e.code == 'permission-denied') {
+        return LoginProblem.forCode('permission-denied', detail: text);
       }
-      final profileSnap = await _db
-          .doc(RpgFirestorePaths.profileDoc(uid))
-          .get();
-      final profileData = profileSnap.data();
-      if (profileData != null) {
-        await _profiles.replaceLocal(
-          PlayerProfile.fromMap(_plain(profileData)),
-        );
-      } else {
-        await _pushProfile(_profiles.load());
+      if (e.code == 'not-found' ||
+          (e.message ?? '').contains('does not exist')) {
+        return LoginProblem.forCode('firestore-missing', detail: text);
       }
-      final learning = (await _db.doc(RpgFirestorePaths.learningDoc(uid)).get())
-          .data();
-      final journal = (await _db.doc(RpgFirestorePaths.journalDoc(uid)).get())
-          .data();
-      await _meta.replaceLocal(
-        record: learning == null
-            ? null
-            : LearningRecord.fromMap(_plain(learning)),
-        journal: journal == null
-            ? null
-            : PlayerJournal.fromMap(_plain(journal)),
-      );
-      if (learning == null) {
-        await _push(RpgFirestorePaths.learningDoc, _meta.record.toMap());
-      }
-      if (journal == null) {
-        await _push(RpgFirestorePaths.journalDoc, _meta.journal.toMap());
-      }
+      return LoginProblem.forCode('cloud-unavailable', detail: text);
     } catch (e) {
       debugPrint('クラウドの記録を読み込めませんでした: $e');
+      return LoginProblem.forCode('cloud-unavailable', detail: '$e');
+    }
+  }
+
+  Future<void> _pull(String uid) async {
+    final progressSnap = await _db
+        .doc(RpgFirestorePaths.progressDoc(uid))
+        .get();
+    final progressData = progressSnap.data();
+    if (progressData != null) {
+      await _progress.replaceLocal(RpgProgress.fromMap(_plain(progressData)));
+    } else {
+      await _pushProgress(await _progress.load());
+    }
+    final profileSnap = await _db.doc(RpgFirestorePaths.profileDoc(uid)).get();
+    final profileData = profileSnap.data();
+    if (profileData != null) {
+      await _profiles.replaceLocal(PlayerProfile.fromMap(_plain(profileData)));
+    } else {
+      await _pushProfile(_profiles.load());
+    }
+    final learning = (await _db.doc(RpgFirestorePaths.learningDoc(uid)).get())
+        .data();
+    final journal = (await _db.doc(RpgFirestorePaths.journalDoc(uid)).get())
+        .data();
+    await _meta.replaceLocal(
+      record: learning == null
+          ? null
+          : LearningRecord.fromMap(_plain(learning)),
+      journal: journal == null ? null : PlayerJournal.fromMap(_plain(journal)),
+    );
+    if (learning == null) {
+      await _push(RpgFirestorePaths.learningDoc, _meta.record.toMap());
+    }
+    if (journal == null) {
+      await _push(RpgFirestorePaths.journalDoc, _meta.journal.toMap());
     }
   }
 

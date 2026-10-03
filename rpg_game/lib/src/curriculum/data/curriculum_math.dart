@@ -2,11 +2,12 @@
 
 import '../curriculum.dart';
 
-const mathCurriculum = CurriculumNode(
+const mathCurriculum =
+CurriculumNode(
   id: 'math',
   name: '算数・数学',
   level: CurriculumLevel.subject,
-  gameName: '数の国',
+  gameName: '数理の迷宮国',
   curriculumReference: '小学校 算数・中学校 数学',
   source: '文部科学省 小学校・中学校学習指導要領（平成29年告示）',
   sourceUrl: 'https://www.mext.go.jp/a_menu/shotou/new-cs/1384661.htm',

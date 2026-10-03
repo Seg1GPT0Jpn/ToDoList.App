@@ -2,11 +2,12 @@
 
 import '../curriculum.dart';
 
-const scienceCurriculum = CurriculumNode(
+const scienceCurriculum =
+CurriculumNode(
   id: 'science',
   name: '理科',
   level: CurriculumLevel.subject,
-  gameName: '理の国',
+  gameName: '万物の実験庭園',
   curriculumReference: '小学校 理科・中学校 理科',
   source: '文部科学省 小学校・中学校学習指導要領（平成29年告示）',
   sourceUrl: 'https://www.mext.go.jp/a_menu/shotou/new-cs/1384661.htm',

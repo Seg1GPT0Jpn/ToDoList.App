@@ -172,7 +172,7 @@ class Progression {
         },
       );
       if (!alreadyCleared) {
-        // 強敵・世界の中心は、次のエリアの解放には数えない
+        // 強敵・天空の図書院は、次のエリアの解放には数えない
         final next = Elites.isElite(stage.id) ||
                 !world.stages.any((s) => s.id == stage.id)
             ? null

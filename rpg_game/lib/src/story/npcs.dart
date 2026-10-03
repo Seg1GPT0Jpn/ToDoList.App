@@ -168,7 +168,7 @@ class Npcs {
   /// ハブ（国のスタート地点）の語り部
   static const storyteller = NpcDef(
     name: '語り部のおばば',
-    greeting: 'よう来たね、若い冒険者。昔話をひとつ、聞いていきな。',
+    greeting: 'よう来たね、見習いの勇者さん。昔話をひとつ、聞いていきな。',
     color: 0xFF8064A2,
   );
 
@@ -321,14 +321,14 @@ class Npcs {
     final lines = <String>[
       storyteller.greeting,
       Story.prologue[2],
-      Story.prologue[3],
+      Story.prologue[4],
       if (n == 0)
-        'まだ欠片はひとつも見つかっていないようだね。まずはこの国の奥をめざしてごらん。'
+        'まだ守護神はだれも救えていないようだね。道の果てで暴れている守護神を、知識の力でしずめておやり。'
       else if (n < Story.worlds.length)
-        '欠片を$n個も取りもどしたのかい。${Story.worlds.where((w) => fragments.contains(w.worldId)).map((w) => w.fragment).join('、')}…あたたかい光だねえ。'
+        '欠片を$n個も取りもどしたのかい。${Story.worlds.where((w) => fragments.contains(w.worldId)).map((w) => w.fragment).join('、')}…守護神たちも、きっと喜んでいるよ。'
       else
-        '${Story.worlds.length}つの欠片がそろったね！ 世界の中心への道がひらいたよ。ホームの「物語」から挑めるはずさ。',
-      '忘れてもいい。また学べばいいんだよ。それが、忘却の魔王にいちばん効く魔法さ。',
+        '${Story.worlds.length}つの欠片がそろったね！ 天空の図書院への扉がひらいたよ。ホームの「物語」から挑めるはずさ。',
+      '忘れてもいい。また学べばいいんだよ。考えることをやめない心が、虚無の霧にいちばん効く魔法さ。',
     ];
     return NpcTalk(npc: storyteller, lines: lines);
   }

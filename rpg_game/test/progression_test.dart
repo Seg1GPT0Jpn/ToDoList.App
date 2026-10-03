@@ -158,7 +158,7 @@ void main() {
   });
 
   group('ステージ・ワールドの解放', () {
-    test('最初は英語の国の各学年の道のエリア1だけ挑戦できる', () {
+    test('最初は異界の港町の各学年の道のエリア1だけ挑戦できる', () {
       const p = RpgProgress.initial;
       expect(Progression.isStageUnlocked(p, world, stage1), isTrue);
       for (final s in world.stages) {
@@ -170,7 +170,7 @@ void main() {
     test('英語と番外編は無料、ほかの公開済みワールドは購入後に遊べる', () {
       for (final w in RpgCatalog.worlds) {
         if (w.isFree) {
-          // 英語の国は無料
+          // 異界の港町は無料
           expect(Progression.isWorldPlayable(RpgProgress.initial, w), isTrue);
         } else if (!w.isComingSoon) {
           expect(Progression.isWorldPlayable(RpgProgress.initial, w), isFalse);
