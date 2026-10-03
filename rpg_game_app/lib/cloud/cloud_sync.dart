@@ -81,9 +81,27 @@ class CloudSync {
           .doc(RpgFirestorePaths.progressDoc(uid))
           .get();
       final progressData = progressSnap.data();
+      final serverPurchaseIds = await _loadPurchaseIds(uid);
       if (progressData != null) {
-        await _progress.replaceLocal(RpgProgress.fromMap(_plain(progressData)));
+        final current = RpgProgress.fromMap(_plain(progressData));
+        await _progress.replaceLocal(
+          current.copyWith(
+            purchasedWorldIds: {
+              ...current.purchasedWorldIds,
+              ...serverPurchaseIds,
+            },
+          ),
+        );
       } else {
+        final current = await _progress.load();
+        await _progress.replaceLocal(
+          current.copyWith(
+            purchasedWorldIds: {
+              ...current.purchasedWorldIds,
+              ...serverPurchaseIds,
+            },
+          ),
+        );
         await _pushProgress(await _progress.load());
       }
       final profileSnap = await _db
@@ -117,6 +135,28 @@ class CloudSync {
       }
     } catch (e) {
       debugPrint('クラウドの記録を読み込めませんでした: $e');
+    }
+  }
+
+  /// サーバーで検証済みの買い切りワールドだけを端末へ復元する。
+  ///
+  /// rpg_purchases はクライアントから書き込めない Firestore コレクションで、
+  /// 実際の購入は Google Play Developer API で検証した Cloud Function だけが作る。
+  Future<Set<String>> _loadPurchaseIds(String uid) async {
+    try {
+      final snapshot = await _db
+          .collection('users')
+          .doc(uid)
+          .collection(RpgFirestorePaths.purchasesCollection)
+          .get();
+      return {
+        for (final doc in snapshot.docs)
+          if (doc.data()['revokedAt'] == null) doc.id,
+      };
+    } catch (e) {
+      // オフライン時は端末側のセーブだけで続行できるようにする。
+      debugPrint('購入情報を復元できませんでした: $e');
+      return {};
     }
   }
 
