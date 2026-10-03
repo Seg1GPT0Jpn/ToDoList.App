@@ -4,15 +4,10 @@ import '../models/world.dart';
 import '../progression/progression.dart';
 import 'promo_code.dart';
 
-/// ダミーの購入処理。常に成功を返す。
+/// 開発用のダミー購入処理。
 ///
-/// TODO(billing): Google Play Billing（in_app_purchase パッケージ）に差し替える。
-///   - 商品は「非消費型（買い切り）」で、ワールドごとに1商品（例: world_math）。
-///   - ガチャ等のランダム型課金は実装しない。
-///   - 購入トークンは Cloud Functions でサーバー検証し、検証済みのものだけ
-///     users/{uid}/rpg_purchases/{worldId} に書き込む（クライアントからは書かせない）。
-///   - 未成年ユーザーが中心のため、購入前の確認ダイアログを必ず出す。
-///     保護者の承認は Google Play 側のファミリー設定に任せる。
+/// 本番の Android ビルドでは、Flutter 側から Google Play Billing の
+/// 購入処理を注入する。コア層自体は Flutter / Firebase に依存しない。
 Future<bool> mockPurchaseWorld(String worldId) async {
   await Future<void>.delayed(const Duration(milliseconds: 300));
   return true;
@@ -54,12 +49,13 @@ class WorldUnlockService {
     Future<bool> Function(String worldId)? purchase,
     this.allowComingSoonPurchase = false,
     this.allowPurchase = true,
+    this.purchaseSource = 'mock',
   }) : _purchase = purchase ?? mockPurchaseWorld;
 
-  /// 購入ボタンで買えるようにするか。
+  /// 購入ボタンを表示してよいか。
   ///
-  /// 本物の決済（Google Play Billing）がまだないので、友達に公開する版では
-  /// false にして、プロモーションコードでだけ受け取れるようにする。
+  /// Android の Google Play Billing が利用可能なビルドでは true、
+  /// Web 版などでは false にする。
   final bool allowPurchase;
 
   final ProgressRepository repository;
@@ -67,9 +63,11 @@ class WorldUnlockService {
 
   /// 準備中のワールドを購入できるようにするか。
   ///
-  /// 中身がまだないコンテンツを販売するのはトラブルの元になるので、リリース版では
-  /// false のままにすること。購入ダイアログの動作確認をするときだけ true にする。
+  /// 本番では false のままにする。
   final bool allowComingSoonPurchase;
+
+  /// [purchasedWorldIds] に記録する購入元。
+  final String purchaseSource;
 
   WorldAvailability availabilityOf(RpgProgress progress, WorldDef world) {
     final owned = Progression.isWorldOwned(progress, world);
@@ -99,7 +97,7 @@ class WorldUnlockService {
     }
     final ok = await _purchase(world.id);
     if (!ok) return PurchaseOutcome.cancelled;
-    await repository.markWorldPurchased(world.id, source: 'mock');
+    await repository.markWorldPurchased(world.id, source: purchaseSource);
     return PurchaseOutcome.success;
   }
 
