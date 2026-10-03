@@ -1,0 +1,209 @@
+{
+  "setId": "sea_g1_03",
+  "worldId": "english",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g1_03_001",
+      "unit": "english.j1.s1.a03",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "My sister (   ) a new bag.",
+      "choices": [
+        "wanting",
+        "is want",
+        "want",
+        "wants"
+      ],
+      "answerIndex": 3,
+      "explanation": "3単現。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_03_002",
+      "unit": "english.j1.s1.a03",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Kenta (   ) not like math.",
+      "choices": [
+        "do",
+        "is",
+        "isn't",
+        "does"
+      ],
+      "answerIndex": 3,
+      "explanation": "does not。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_03_003",
+      "unit": "english.j1.s1.a03",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "(   ) Mr. Tanaka teach science?",
+      "choices": [
+        "Does",
+        "Is",
+        "Do",
+        "Are"
+      ],
+      "answerIndex": 0,
+      "explanation": "3単現の疑問。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_03_004",
+      "unit": "english.j1.s1.a03",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "She (   ) her teeth after meals.",
+      "choices": [
+        "brushes",
+        "brushs",
+        "brushing",
+        "brush"
+      ],
+      "answerIndex": 0,
+      "explanation": "sh → es",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_03_005",
+      "unit": "english.j1.s1.a03",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "He (   ) to bed at ten.",
+      "choices": [
+        "gos",
+        "is go",
+        "go",
+        "goes"
+      ],
+      "answerIndex": 3,
+      "explanation": "go → goes",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_03_006",
+      "unit": "english.j1.s1.a03",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "My cat (   ) milk every morning.",
+      "choices": [
+        "drinkes",
+        "is drink",
+        "drink",
+        "drinks"
+      ],
+      "answerIndex": 3,
+      "explanation": "3単現。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_03_007",
+      "unit": "english.j1.s1.a03",
+      "category": "usage",
+      "prompt": "正しい文は？",
+      "choices": [
+        "Is he play the violin?",
+        "Does he play the violin?",
+        "Does he plays the violin?",
+        "Do he play the violin?"
+      ],
+      "answerIndex": 1,
+      "explanation": "Does ＋ 元の形。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_03_008",
+      "unit": "english.j1.s1.a03",
+      "category": "usage",
+      "prompt": "正しい文は？",
+      "choices": [
+        "Mika doesn't eats meat.",
+        "Mika isn't eat meat.",
+        "Mika doesn't eat meat.",
+        "Mika don't eat meat."
+      ],
+      "answerIndex": 2,
+      "explanation": "doesn't ＋ 元の形。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_03_009",
+      "unit": "english.j1.s1.a03",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Who (   ) this room? — My mother does.",
+      "choices": [
+        "clean",
+        "cleaning",
+        "cleans",
+        "does clean"
+      ],
+      "answerIndex": 2,
+      "explanation": "who が主語なら3単現。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_03_010",
+      "unit": "english.j1.s1.a03",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "What does your brother (   )? — He plays games.",
+      "choices": [
+        "did",
+        "does",
+        "do",
+        "doing"
+      ],
+      "answerIndex": 2,
+      "explanation": "What does ～ do?",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_03_011",
+      "unit": "english.j1.s1.a03",
+      "category": "usage",
+      "prompt": "「Does your sister cook?」に「いいえ」と答えると？",
+      "choices": [
+        "No, she isn't.",
+        "No, she don't.",
+        "No, he doesn't.",
+        "No, she doesn't."
+      ],
+      "answerIndex": 3,
+      "explanation": "sister → she。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_03_012",
+      "unit": "english.j1.s1.a03",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "The store (   ) at nine.",
+      "choices": [
+        "opens",
+        "opening",
+        "open",
+        "is open to"
+      ],
+      "answerIndex": 0,
+      "explanation": "3単現。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    }
+  ]
+}

@@ -8,6 +8,77 @@ class JuniorLessons {
 
   static const all = <InnLesson>[
     InnLesson(
+      stageId: 'english_e34_01',
+      teacher: '小3・4の宿・つづり先生',
+      title: 'アルファベット',
+      points: [
+        LessonPoint('大文字と小文字', 'アルファベットは26文字。大文字と小文字がある。', 'A a / B b / C c'),
+        LessonPoint('まちがえやすい文字', 'b と d、p と q は向きに注意。', 'bed（ベッド）'),
+      ],
+    ),
+    InnLesson(
+      stageId: 'english_j1_01',
+      teacher: '中1の宿・つづり先生',
+      title: 'be動詞',
+      points: [
+        LessonPoint('be動詞の使い分け', 'I → am、you と複数 → are、それ以外の1人・1つ → is。', 'I am / You are / He is'),
+        LessonPoint('否定文と疑問文', '否定は be動詞のあとに not、疑問文は be動詞を主語の前に。', 'Is he a student? — Yes, he is.'),
+      ],
+    ),
+    InnLesson(
+      stageId: 'english_j1_03',
+      teacher: '中1の宿・つづり先生',
+      title: '3人称単数現在',
+      points: [
+        LessonPoint('3単現の s', '主語が he / she / it や1人・1つのとき、現在の動詞に s をつける。', 'He plays tennis.'),
+        LessonPoint('does の文', '否定は doesn\'t ＋ 動詞の元の形、疑問は Does ＋ 主語 ＋ 動詞の元の形。', 'Does she like music?'),
+      ],
+    ),
+    InnLesson(
+      stageId: 'english_j1_09',
+      teacher: '中1の宿・つづり先生',
+      title: '過去形',
+      points: [
+        LessonPoint('一般動詞の過去', 'ふつうは ed、不規則動詞は形が変わる。否定・疑問は did を使い、動詞は元の形。', 'Did you go? — Yes, I did.'),
+        LessonPoint('be動詞の過去', 'am / is → was、are → were。', 'I was busy.'),
+      ],
+    ),
+    InnLesson(
+      stageId: 'english_j2_03',
+      teacher: '中2の宿・つづり先生',
+      title: '不定詞',
+      points: [
+        LessonPoint('不定詞の3つの用法', 'to ＋ 動詞の元の形。名詞的「～すること」、副詞的「～するために／～して」、形容詞的「～するための」。', 'I want to go. / I came to see you. / time to go'),
+      ],
+    ),
+    InnLesson(
+      stageId: 'english_j2_07',
+      teacher: '中2の宿・つづり先生',
+      title: '比較',
+      points: [
+        LessonPoint('比較級と最上級', '2つをくらべて「より～」は ～er than、3つ以上で「いちばん～」は the ～est。長い語は more / most。', 'taller than / the tallest'),
+        LessonPoint('as ～ as', '「同じくらい～」。否定は「～ほど…ない」。', 'as tall as / not as tall as'),
+      ],
+    ),
+    InnLesson(
+      stageId: 'english_j3_01',
+      teacher: '中3の宿・つづり先生',
+      title: '現在完了（完了・経験）',
+      points: [
+        LessonPoint('現在完了', 'have / has ＋ 過去分詞。過去のことが今とつながっている。', 'I have finished. / I have been there.'),
+        LessonPoint('完了・経験・継続', 'just / already / yet、ever / never / ～ times、for / since が目印。', 'I have lived here for ten years.'),
+      ],
+    ),
+    InnLesson(
+      stageId: 'english_j3_07',
+      teacher: '中3の宿・つづり先生',
+      title: '関係代名詞',
+      points: [
+        LessonPoint('関係代名詞', '名詞（先行詞）のあとに文をつけて説明する。人 → who、もの → which、どちらも → that。', 'a friend who lives in Kobe'),
+        LessonPoint('目的格の省略', '「名詞 ＋ 主語 ＋ 動詞」なら that / which を省略できる。', 'the book (that) I bought'),
+      ],
+    ),
+    InnLesson(
       stageId: 'math_e1_01',
       teacher: '小1の宿・つづり先生',
       title: '10までのかず',

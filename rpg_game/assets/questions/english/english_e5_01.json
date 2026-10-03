@@ -1,0 +1,214 @@
+{
+  "setId": "english_e5_01",
+  "worldId": "english",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "eng_e501_001",
+      "unit": "english.e5.s1.a01",
+      "unitLocked": true,
+      "category": "meaning",
+      "prompt": "「My name is Aoi.」の意味は？",
+      "choices": [
+        "あおいがすき。",
+        "わたしの名前はあおいです。",
+        "あおいはどこ？",
+        "あおいは友だち。"
+      ],
+      "answerIndex": 1,
+      "explanation": "My name is ～. ＝ わたしの名前は～",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "eng_e501_002",
+      "unit": "english.e5.s1.a01",
+      "unitLocked": true,
+      "category": "meaning",
+      "prompt": "「I'm from Japan.」の意味は？",
+      "choices": [
+        "わたしは日本出身です。",
+        "わたしは日本がすき。",
+        "わたしは日本に行きたい。",
+        "日本はどこ？"
+      ],
+      "answerIndex": 0,
+      "explanation": "be from ～ ＝ ～出身",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "eng_e501_003",
+      "unit": "english.e5.s1.a01",
+      "unitLocked": true,
+      "category": "meaning",
+      "prompt": "「How do you spell your name?」の意味は？",
+      "choices": [
+        "名前を言って。",
+        "名前のつづりは？",
+        "名前がすき？",
+        "名前は何？"
+      ],
+      "answerIndex": 1,
+      "explanation": "spell ＝ つづる",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "eng_e501_004",
+      "unit": "english.e5.s1.a01",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「What's your name?」に答えるのは？",
+      "choices": [
+        "I'm fine.",
+        "Yes, I am.",
+        "I'm Sora.",
+        "I'm eleven."
+      ],
+      "answerIndex": 2,
+      "explanation": "名前を答える。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "eng_e501_005",
+      "unit": "english.e5.s1.a01",
+      "unitLocked": true,
+      "category": "meaning",
+      "prompt": "「How old are you?」の意味は？",
+      "choices": [
+        "元気ですか？",
+        "背の高さは？",
+        "何さいですか？",
+        "どこの出身？"
+      ],
+      "answerIndex": 2,
+      "explanation": "How old ～? ＝ 何さい？",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "eng_e501_006",
+      "unit": "english.e5.s1.a01",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「How old are you?」に答えるのは？",
+      "choices": [
+        "I'm eleven.",
+        "I'm happy.",
+        "I'm Ken.",
+        "I like eleven."
+      ],
+      "answerIndex": 0,
+      "explanation": "年れいを答える。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "eng_e501_007",
+      "unit": "english.e5.s1.a01",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "I (   ) Mika.",
+      "choices": [
+        "is",
+        "am",
+        "are",
+        "be"
+      ],
+      "answerIndex": 1,
+      "explanation": "I のあとは am。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "eng_e501_008",
+      "unit": "english.e5.s1.a01",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "(   ) name is Taro.",
+      "choices": [
+        "Mine",
+        "My",
+        "Me",
+        "I"
+      ],
+      "answerIndex": 1,
+      "explanation": "「わたしの」は my。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "eng_e501_009",
+      "unit": "english.e5.s1.a01",
+      "unitLocked": true,
+      "category": "meaning",
+      "prompt": "「I play the piano.」の意味は？",
+      "choices": [
+        "ピアノを買った。",
+        "ピアノはどこ？",
+        "わたしはピアノが見たい。",
+        "わたしはピアノをひきます。"
+      ],
+      "answerIndex": 3,
+      "explanation": "play the ～ ＝ （楽器）をひく",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "eng_e501_010",
+      "unit": "english.e5.s1.a01",
+      "unitLocked": true,
+      "category": "meaning",
+      "prompt": "「I'm good at drawing.」の意味は？",
+      "choices": [
+        "わたしは絵を買います。",
+        "わたしは絵がきらいです。",
+        "絵をかいて。",
+        "わたしは絵をかくのが得意です。"
+      ],
+      "answerIndex": 3,
+      "explanation": "be good at ～ ＝ ～が得意",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "eng_e501_011",
+      "unit": "english.e5.s1.a01",
+      "unitLocked": true,
+      "category": "meaning",
+      "prompt": "「My favorite sport is tennis.」の意味は？",
+      "choices": [
+        "テニスはむずかしい。",
+        "テニスを見た。",
+        "わたしのいちばんすきなスポーツはテニスです。",
+        "テニスをしよう。"
+      ],
+      "answerIndex": 2,
+      "explanation": "favorite ＝ いちばんすきな",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "eng_e501_012",
+      "unit": "english.e5.s1.a01",
+      "unitLocked": true,
+      "category": "meaning",
+      "prompt": "「brother」の意味は？",
+      "choices": [
+        "兄・弟",
+        "祖父",
+        "姉・妹",
+        "父"
+      ],
+      "answerIndex": 0,
+      "explanation": "brother ＝ 兄弟",
+      "targetGrade": "小5",
+      "phase": "basics"
+    }
+  ]
+}

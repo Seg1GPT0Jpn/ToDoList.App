@@ -1,0 +1,207 @@
+{
+  "setId": "sea_g1_07",
+  "worldId": "english",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g1_07_001",
+      "unit": "english.j1.s2.a09",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "I (   ) my room last Sunday.",
+      "choices": [
+        "cleaned",
+        "clean",
+        "cleaning",
+        "cleans"
+      ],
+      "answerIndex": 0,
+      "explanation": "過去の時を表す語がある。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_07_002",
+      "unit": "english.j1.s2.a09",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Did she (   ) the letter?",
+      "choices": [
+        "wrote",
+        "written",
+        "write",
+        "writes"
+      ],
+      "answerIndex": 2,
+      "explanation": "Did ＋ 元の形。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_07_003",
+      "unit": "english.j1.s2.a09",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "We (   ) not at home yesterday.",
+      "choices": [
+        "was",
+        "are",
+        "were",
+        "did"
+      ],
+      "answerIndex": 2,
+      "explanation": "we の過去。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_07_004",
+      "unit": "english.j1.s2.a09",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "It (   ) very cold last night.",
+      "choices": [
+        "did",
+        "is",
+        "were",
+        "was"
+      ],
+      "answerIndex": 3,
+      "explanation": "it の過去。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_07_005",
+      "unit": "english.j1.s2.a09.main",
+      "category": "knowledge",
+      "prompt": "「teach」の過去形は？",
+      "choices": [
+        "taught",
+        "thought",
+        "tought",
+        "teached"
+      ],
+      "answerIndex": 0,
+      "explanation": "teach → taught",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_07_006",
+      "unit": "english.j1.s2.a09.main",
+      "category": "knowledge",
+      "prompt": "「think」の過去形は？",
+      "choices": [
+        "thank",
+        "thought",
+        "taught",
+        "thinked"
+      ],
+      "answerIndex": 1,
+      "explanation": "think → thought",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_07_007",
+      "unit": "english.j1.s2.a09.main",
+      "category": "knowledge",
+      "prompt": "「cry」の過去形は？",
+      "choices": [
+        "cried",
+        "cryd",
+        "crid",
+        "cryed"
+      ],
+      "answerIndex": 0,
+      "explanation": "y → ied",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_07_008",
+      "unit": "english.j1.s2.a09.main",
+      "category": "knowledge",
+      "prompt": "「read」の過去形は？",
+      "choices": [
+        "reading",
+        "readed",
+        "read（発音は［red］）",
+        "red（つづりも変わる）"
+      ],
+      "answerIndex": 2,
+      "explanation": "つづりは同じ、発音が変わる。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_07_009",
+      "unit": "english.j1.s2.a09.main",
+      "category": "usage",
+      "prompt": "「Where did you go?」に合う答えは？",
+      "choices": [
+        "I go to the library.",
+        "I was go to the library.",
+        "Yes, I did.",
+        "I went to the library."
+      ],
+      "answerIndex": 3,
+      "explanation": "過去形で答える。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_07_010",
+      "unit": "english.j1.s2.a09",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "What time (   ) you get up this morning?",
+      "choices": [
+        "were",
+        "are",
+        "do",
+        "did"
+      ],
+      "answerIndex": 3,
+      "explanation": "過去の疑問 did。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_07_011",
+      "unit": "english.j1.s2.a09",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "I (   ) a strange sound two hours ago.",
+      "choices": [
+        "heared",
+        "heard",
+        "hears",
+        "hear"
+      ],
+      "answerIndex": 1,
+      "explanation": "hear → heard",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_07_012",
+      "unit": "english.j1.s2.a09",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "They didn't (   ) the bus.",
+      "choices": [
+        "caught",
+        "catch",
+        "catching",
+        "catches"
+      ],
+      "answerIndex": 1,
+      "explanation": "didn't ＋ 元の形。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    }
+  ]
+}

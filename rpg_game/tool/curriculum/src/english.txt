@@ -1,0 +1,142 @@
+# 英語の学習体系（tool/junior/gen.py が生成。手で直さない）
+@subject english|英語|英語の国|ref=小学校 外国語活動・外国語、中学校 外国語（英語）|source=文部科学省 小学校・中学校学習指導要領（平成29年告示）|url=https://www.mext.go.jp/a_menu/shotou/new-cs/1384661.htm
+course e34|小3・4|grade=小3-4|game=小3・4の道|desc=アルファベット・あいさつ・数・色・好きなもの
+  field s1|ABCと あいさつ
+    unit a01|アルファベット
+      sub main|アルファベット
+    unit a02|あいさつと 気もち|pre=english.e34.s1.a01
+      sub main|あいさつと 気もち
+    unit a03|数（1〜20）|pre=english.e34.s1.a02
+      sub main|数（1〜20）
+    unit a04|色と形|pre=english.e34.s1.a03
+      sub main|色と形
+    unit a05|ABCと あいさつの まとめ
+      sub main|ABCと あいさつの まとめ
+  field s2|すきなもの
+    unit a06|動物|pre=english.e34.s1.a04
+      sub main|動物
+    unit a07|食べ物とくだもの|pre=english.e34.s2.a06
+      sub main|食べ物とくだもの
+    unit a08|曜日と天気|pre=english.e34.s2.a07
+      sub main|曜日と天気
+    unit a09|体とからだの動き|pre=english.e34.s2.a08
+      sub main|体とからだの動き
+    unit a10|すきなものの まとめ
+      sub main|すきなものの まとめ
+course e5|小5|grade=小5|game=小5の道|desc=自己紹介・誕生日・できること・道案内・注文
+  field s1|わたしのこと
+    unit a01|自己紹介
+      sub main|自己紹介
+    unit a02|月と誕生日|pre=english.e5.s1.a01
+      sub main|月と誕生日
+    unit a03|できること（can）|pre=english.e5.s1.a02
+      sub main|できること（can）
+    unit a04|わたしのことの まとめ
+      sub main|わたしのことの まとめ
+  field s2|町とくらし
+    unit a05|時間割と教科|pre=english.e5.s1.a03
+      sub main|時間割と教科
+    unit a06|道案内|pre=english.e5.s2.a05
+      sub main|道案内
+    unit a07|レストランで注文|pre=english.e5.s2.a06
+      sub main|レストランで注文
+    unit a08|町とくらしの まとめ
+      sub main|町とくらしの まとめ
+course e6|小6|grade=小6|game=小6の道|desc=過去のこと・夏休み・将来の夢・町しょうかい・中学校
+  field s1|思い出と夢
+    unit a01|週末にしたこと（過去）
+      sub main|週末にしたこと（過去）
+    unit a02|夏休みの思い出|pre=english.e6.s1.a01
+      sub main|夏休みの思い出
+    unit a03|将来の夢|pre=english.e6.s1.a02
+      sub main|将来の夢
+    unit a04|思い出と夢の まとめ
+      sub main|思い出と夢の まとめ
+  field s2|日本と世界
+    unit a05|行ってみたい国|pre=english.e6.s1.a03
+      sub main|行ってみたい国
+    unit a06|わたしたちの町と日本|pre=english.e6.s2.a05
+      sub main|わたしたちの町と日本
+    unit a07|中学校への準備|pre=english.e6.s2.a06
+      sub main|中学校への準備
+    unit a08|小学校英語の まとめ
+      sub main|小学校英語の まとめ
+course j1|中1|grade=中1|game=中1の道|desc=be動詞・一般動詞・3単現・疑問詞・進行形・can・過去形
+  field s1|現在の文
+    unit a01|be動詞
+      sub main|be動詞
+    unit a02|一般動詞|pre=english.j1.s1.a01
+      sub main|一般動詞
+    unit a03|3人称単数現在|pre=english.j1.s1.a02
+      sub main|3人称単数現在
+    unit a04|名詞の複数形と代名詞|pre=english.j1.s1.a03
+      sub main|名詞の複数形と代名詞
+    unit a05|現在の文の まとめ
+      sub main|現在の文の まとめ
+  field s2|進行形・can・過去
+    unit a06|疑問詞|pre=english.j1.s1.a04
+      sub main|疑問詞
+    unit a07|現在進行形|pre=english.j1.s2.a06
+      sub main|現在進行形
+    unit a08|can と命令文|pre=english.j1.s2.a07
+      sub main|can と命令文
+    unit a09|過去形|pre=english.j1.s2.a08
+      sub main|過去形
+    unit a10|中1の まとめ
+      sub main|中1の まとめ
+course j2|中2|grade=中2|game=中2の道|desc=未来・助動詞・不定詞・動名詞・接続詞・比較・受け身
+  field s1|未来・助動詞・不定詞
+    unit a01|未来の表現
+      sub main|未来の表現
+    unit a02|助動詞|pre=english.j2.s1.a01
+      sub main|助動詞
+    unit a03|不定詞|pre=english.j2.s1.a02
+      sub main|不定詞
+    unit a04|動名詞|pre=english.j2.s1.a03
+      sub main|動名詞
+    unit a05|未来・助動詞・不定詞の まとめ
+      sub main|未来・助動詞・不定詞の まとめ
+  field s2|接続詞・比較・受け身
+    unit a06|接続詞|pre=english.j2.s1.a04
+      sub main|接続詞
+    unit a07|比較|pre=english.j2.s2.a06
+      sub main|比較
+    unit a08|受け身|pre=english.j2.s2.a07
+      sub main|受け身
+    unit a09|いろいろな文型|pre=english.j2.s2.a08
+      sub main|いろいろな文型
+    unit a10|中2の まとめ
+      sub main|中2の まとめ
+course j3|中3|grade=中3|game=中3の道|desc=現在完了・不定詞の発展・分詞・関係代名詞・間接疑問・仮定法
+  field s1|現在完了と不定詞
+    unit a01|現在完了（完了・経験）
+      sub main|現在完了（完了・経験）
+    unit a02|現在完了（継続）・現在完了進行形|pre=english.j3.s1.a01
+      sub main|現在完了（継続）・現在完了進行形
+    unit a03|不定詞の発展|pre=english.j3.s1.a02
+      sub main|不定詞の発展
+    unit a04|間接疑問|pre=english.j3.s1.a03
+      sub main|間接疑問
+    unit a05|現在完了と不定詞の まとめ
+      sub main|現在完了と不定詞の まとめ
+  field s2|後置修飾と仮定法
+    unit a06|分詞の後置修飾|pre=english.j3.s1.a04
+      sub main|分詞の後置修飾
+    unit a07|関係代名詞|pre=english.j3.s2.a06
+      sub main|関係代名詞
+    unit a08|仮定法|pre=english.j3.s2.a07
+      sub main|仮定法
+    unit a09|会話表現と読み取り|pre=english.j3.s2.a08
+      sub main|会話表現と読み取り
+    unit a10|中学英語の まとめ
+      sub main|中学英語の まとめ
+course vocab|中学の単語と熟語|grade=中1-3|game=単語の森
+  field words|単語と熟語
+    unit j1|中1の単語
+      sub meaning|意味
+    unit j2|中2の単語
+      sub meaning|意味
+    unit j3|中3の単語
+      sub meaning|意味
+    unit idiom|中学の熟語
+      sub idiom|意味

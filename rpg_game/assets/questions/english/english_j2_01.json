@@ -1,0 +1,221 @@
+{
+  "setId": "english_j2_01",
+  "worldId": "english",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "eng_j201_001",
+      "unit": "english.j2.s1.a01",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "I (   ) visit my uncle tomorrow.",
+      "choices": [
+        "was",
+        "did",
+        "am",
+        "will"
+      ],
+      "answerIndex": 3,
+      "explanation": "未来は will ＋ 元の形。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j201_002",
+      "unit": "english.j2.s1.a01",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "It will (   ) rainy tomorrow.",
+      "choices": [
+        "are",
+        "being",
+        "is",
+        "be"
+      ],
+      "answerIndex": 3,
+      "explanation": "will のあとは be。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j201_003",
+      "unit": "english.j2.s1.a01",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "I'm going (   ) play tennis this afternoon.",
+      "choices": [
+        "at",
+        "for",
+        "to",
+        "will"
+      ],
+      "answerIndex": 2,
+      "explanation": "be going to ＋ 元の形。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j201_004",
+      "unit": "english.j2.s1.a01",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "(   ) you going to watch the movie?",
+      "choices": [
+        "Do",
+        "Will",
+        "Are",
+        "Did"
+      ],
+      "answerIndex": 2,
+      "explanation": "be going to の疑問は be動詞を前に。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j201_005",
+      "unit": "english.j2.s1.a01",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "She (   ) not come to the party.",
+      "choices": [
+        "does",
+        "is",
+        "did",
+        "will"
+      ],
+      "answerIndex": 3,
+      "explanation": "will not（won't）。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j201_006",
+      "unit": "english.j2.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「will not」の短縮形は？",
+      "choices": [
+        "wont't",
+        "won't",
+        "willn't",
+        "wo'nt"
+      ],
+      "answerIndex": 1,
+      "explanation": "will not → won't",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j201_007",
+      "unit": "english.j2.s1.a01",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「Will it be sunny tomorrow?」に「いいえ」と答えると？",
+      "choices": [
+        "No, it won't.",
+        "No, it isn't.",
+        "No, it willn't.",
+        "No, it doesn't."
+      ],
+      "answerIndex": 0,
+      "explanation": "Will ～? → won't。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j201_008",
+      "unit": "english.j2.s1.a01",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "What are you going to (   ) this weekend?",
+      "choices": [
+        "does",
+        "do",
+        "doing",
+        "did"
+      ],
+      "answerIndex": 1,
+      "explanation": "to のあとは元の形。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j201_009",
+      "unit": "english.j2.s1.a01",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "He is going to (   ) a new bike.",
+      "choices": [
+        "bought",
+        "buy",
+        "buying",
+        "buys"
+      ],
+      "answerIndex": 1,
+      "explanation": "to ＋ 元の形。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j201_010",
+      "unit": "english.j2.s1.a01",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "I (   ) be fourteen next month.",
+      "choices": [
+        "am",
+        "can",
+        "will",
+        "was"
+      ],
+      "answerIndex": 2,
+      "explanation": "未来の年れい。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j201_011",
+      "unit": "english.j2.s1.a01",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「next year」と使う文として正しいのは？",
+      "choices": [
+        "I go to Canada last year.",
+        "I went to Canada next year.",
+        "I am going Canada next year.",
+        "I will go to Canada next year."
+      ],
+      "answerIndex": 3,
+      "explanation": "next ～ は未来の文。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j201_012",
+      "unit": "english.j2.s1.a01",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "They are going (   ) the park tomorrow.",
+      "choices": [
+        "visit",
+        "visited",
+        "to visit",
+        "visiting"
+      ],
+      "answerIndex": 2,
+      "explanation": "be going to ＋ 元の形。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    }
+  ]
+}

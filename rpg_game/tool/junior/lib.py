@@ -140,7 +140,7 @@ class Route:
     def area(self, theme, section, qs, boss=False, lesson=None, place=None):
         need = 8 if boss else 10
         assert len(qs) >= need, (self.world.id, self.id, theme, len(qs))
-        keys = [q['p'] + (q['s'] or '') for q in qs]
+        keys = [q['p'] + (q['s'] or '') + q['a'] for q in qs]
         dup = [k for k in keys if keys.count(k) > 1]
         assert not dup, (self.world.id, self.id, theme, dup)
         self.areas.append(Area(self, theme, section, qs, boss, lesson, place))

@@ -1,0 +1,219 @@
+{
+  "setId": "english_j1_02",
+  "worldId": "english",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "eng_j102_001",
+      "unit": "english.j1.s1.a02",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "I (   ) tennis every day.",
+      "choices": [
+        "plays",
+        "am play",
+        "am",
+        "play"
+      ],
+      "answerIndex": 3,
+      "explanation": "I のときは動詞はそのまま。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j102_002",
+      "unit": "english.j1.s1.a02",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "(   ) you like music?",
+      "choices": [
+        "Is",
+        "Does",
+        "Do",
+        "Are"
+      ],
+      "answerIndex": 2,
+      "explanation": "一般動詞の疑問文は Do。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j102_003",
+      "unit": "english.j1.s1.a02",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "I (   ) like carrots.",
+      "choices": [
+        "don't",
+        "not",
+        "isn't",
+        "am not"
+      ],
+      "answerIndex": 0,
+      "explanation": "一般動詞の否定は don't ＋ 動詞。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j102_004",
+      "unit": "english.j1.s1.a02",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「Do you have a dog?」に「いいえ」と答えると？",
+      "choices": [
+        "No, I am not.",
+        "No, I don't.",
+        "No, you don't.",
+        "No, I haven't."
+      ],
+      "answerIndex": 1,
+      "explanation": "Do you ～? → No, I don't.",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j102_005",
+      "unit": "english.j1.s1.a02",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "We (   ) English on Monday.",
+      "choices": [
+        "studying",
+        "studies",
+        "study",
+        "are study"
+      ],
+      "answerIndex": 2,
+      "explanation": "we のときは動詞はそのまま。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j102_006",
+      "unit": "english.j1.s1.a02",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "I (   ) to school by bus.",
+      "choices": [
+        "goes",
+        "go",
+        "going",
+        "am"
+      ],
+      "answerIndex": 1,
+      "explanation": "go ＝ 行く",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j102_007",
+      "unit": "english.j1.s1.a02",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "まちがっている文は？",
+      "choices": [
+        "I am like dogs.",
+        "I don't like dogs.",
+        "I like dogs.",
+        "Do you like dogs?"
+      ],
+      "answerIndex": 0,
+      "explanation": "be動詞と一般動詞はいっしょに使わない。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j102_008",
+      "unit": "english.j1.s1.a02",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "They (   ) soccer after school.",
+      "choices": [
+        "practice",
+        "are practice",
+        "practices",
+        "practiced every"
+      ],
+      "answerIndex": 0,
+      "explanation": "they のときはそのまま。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j102_009",
+      "unit": "english.j1.s1.a02",
+      "unitLocked": true,
+      "category": "meaning",
+      "prompt": "「I usually get up at six.」の usually の意味は？",
+      "choices": [
+        "たいてい",
+        "たまに",
+        "いつも決して",
+        "ときどき"
+      ],
+      "answerIndex": 0,
+      "explanation": "usually ＝ たいてい",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j102_010",
+      "unit": "english.j1.s1.a02",
+      "unitLocked": true,
+      "category": "meaning",
+      "prompt": "「I walk to school.」の意味は？",
+      "choices": [
+        "わたしは歩いて学校に行く。",
+        "学校から帰る。",
+        "学校まで走る。",
+        "学校を歩き回る。"
+      ],
+      "answerIndex": 0,
+      "explanation": "walk to ～ ＝ ～へ歩いて行く",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j102_011",
+      "unit": "english.j1.s1.a02",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Do you (   ) a pen?",
+      "choices": [
+        "have",
+        "are",
+        "has",
+        "having"
+      ],
+      "answerIndex": 0,
+      "explanation": "Do のあとは動詞の元の形。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j102_012",
+      "unit": "english.j1.s1.a02",
+      "unitLocked": true,
+      "category": "meaning",
+      "prompt": "「I often read books.」の often の意味は？",
+      "choices": [
+        "ゆっくり",
+        "決して",
+        "たった今",
+        "よく"
+      ],
+      "answerIndex": 3,
+      "explanation": "often ＝ よく・しばしば",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    }
+  ]
+}

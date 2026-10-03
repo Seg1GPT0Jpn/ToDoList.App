@@ -1,0 +1,215 @@
+{
+  "setId": "english_e5_03",
+  "worldId": "english",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "eng_e503_001",
+      "unit": "english.e5.s1.a03",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "I (   ) swim.",
+      "choices": [
+        "can",
+        "is",
+        "do",
+        "am"
+      ],
+      "answerIndex": 0,
+      "explanation": "できることは can + 動詞。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "eng_e503_002",
+      "unit": "english.e5.s1.a03",
+      "unitLocked": true,
+      "category": "meaning",
+      "prompt": "「I can play the recorder.」の意味は？",
+      "choices": [
+        "リコーダーがほしい。",
+        "わたしはリコーダーをふくことができる。",
+        "リコーダーをふいた。",
+        "リコーダーがすき。"
+      ],
+      "answerIndex": 1,
+      "explanation": "can ＝ ～できる",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "eng_e503_003",
+      "unit": "english.e5.s1.a03",
+      "unitLocked": true,
+      "category": "meaning",
+      "prompt": "「I can't ride a unicycle.」の意味は？",
+      "choices": [
+        "一輪車に乗れる。",
+        "一輪車がすき。",
+        "わたしは一輪車に乗れない。",
+        "一輪車を買った。"
+      ],
+      "answerIndex": 2,
+      "explanation": "can't ＝ ～できない",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "eng_e503_004",
+      "unit": "english.e5.s1.a03",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「Can you cook?」に「はい」と答えるのは？",
+      "choices": [
+        "Yes, I do.",
+        "No, I can't.",
+        "Yes, I can.",
+        "Yes, I am."
+      ],
+      "answerIndex": 2,
+      "explanation": "Can you ～? → Yes, I can.",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "eng_e503_005",
+      "unit": "english.e5.s1.a03",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "(   ) you skate? — Yes, I can.",
+      "choices": [
+        "Are",
+        "Do",
+        "Can",
+        "Is"
+      ],
+      "answerIndex": 2,
+      "explanation": "たずねるときは Can を文の最初に。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "eng_e503_006",
+      "unit": "english.e5.s1.a03",
+      "unitLocked": true,
+      "category": "meaning",
+      "prompt": "「He can run fast.」の意味は？",
+      "choices": [
+        "彼はゆっくり走る。",
+        "彼は速く走れる。",
+        "彼は走らない。",
+        "彼は走りたい。"
+      ],
+      "answerIndex": 1,
+      "explanation": "fast ＝ 速く",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "eng_e503_007",
+      "unit": "english.e5.s1.a03",
+      "unitLocked": true,
+      "category": "meaning",
+      "prompt": "「She can sing well.」の意味は？",
+      "choices": [
+        "彼女は歌っている。",
+        "彼女は歌いたい。",
+        "彼女は歌がきらい。",
+        "彼女はじょうずに歌える。"
+      ],
+      "answerIndex": 3,
+      "explanation": "well ＝ じょうずに",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "eng_e503_008",
+      "unit": "english.e5.s1.a03",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "He can (   ) the guitar.",
+      "choices": [
+        "played",
+        "plays",
+        "play",
+        "playing"
+      ],
+      "answerIndex": 2,
+      "explanation": "can のあとは動詞の元の形。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "eng_e503_009",
+      "unit": "english.e5.s1.a03",
+      "unitLocked": true,
+      "category": "meaning",
+      "prompt": "「dance」の意味は？",
+      "choices": [
+        "泳ぐ",
+        "おどる",
+        "かく",
+        "歌う"
+      ],
+      "answerIndex": 1,
+      "explanation": "dance ＝ おどる",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "eng_e503_010",
+      "unit": "english.e5.s1.a03",
+      "unitLocked": true,
+      "category": "meaning",
+      "prompt": "「jump rope」の意味は？",
+      "choices": [
+        "なわとび",
+        "ボールなげ",
+        "てつぼう",
+        "かけっこ"
+      ],
+      "answerIndex": 0,
+      "explanation": "jump rope ＝ なわとび",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "eng_e503_011",
+      "unit": "english.e5.s1.a03",
+      "unitLocked": true,
+      "category": "meaning",
+      "prompt": "「Who is this?」の意味は？",
+      "choices": [
+        "これは何？",
+        "どこ？",
+        "この人はだれ？",
+        "いつ？"
+      ],
+      "answerIndex": 2,
+      "explanation": "Who ＝ だれ",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "eng_e503_012",
+      "unit": "english.e5.s1.a03",
+      "unitLocked": true,
+      "category": "meaning",
+      "prompt": "「He is my hero.」の意味は？",
+      "choices": [
+        "彼はわたしのヒーローです。",
+        "彼はわたしをたすけた。",
+        "彼はわたしの先生です。",
+        "彼はわたしの兄です。"
+      ],
+      "answerIndex": 0,
+      "explanation": "hero ＝ あこがれの人",
+      "targetGrade": "小5",
+      "phase": "basics"
+    }
+  ]
+}

@@ -1,0 +1,186 @@
+{
+  "setId": "english_j1_05",
+  "worldId": "english",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "eng_j105_001",
+      "unit": "english.j1.s1.a05",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "My sister (   ) in Tokyo.",
+      "choices": [
+        "lives",
+        "is live",
+        "live",
+        "living"
+      ],
+      "answerIndex": 0,
+      "explanation": "3単現の s。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j105_002",
+      "unit": "english.j1.s1.a05",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "(   ) your parents work on Saturday?",
+      "choices": [
+        "Are",
+        "Do",
+        "Does",
+        "Is"
+      ],
+      "answerIndex": 1,
+      "explanation": "your parents は複数。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j105_003",
+      "unit": "english.j1.s1.a05",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "He (   ) a new bike.",
+      "choices": [
+        "has",
+        "have",
+        "haves",
+        "is"
+      ],
+      "answerIndex": 0,
+      "explanation": "have → has",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j105_004",
+      "unit": "english.j1.s1.a05",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Those (   ) Mr. Sato's cars.",
+      "choices": [
+        "does",
+        "are",
+        "am",
+        "is"
+      ],
+      "answerIndex": 1,
+      "explanation": "those は複数。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j105_005",
+      "unit": "english.j1.s1.a05",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Kumi doesn't (   ) coffee.",
+      "choices": [
+        "drank",
+        "drink",
+        "drinks",
+        "drinking"
+      ],
+      "answerIndex": 1,
+      "explanation": "doesn't のあとは元の形。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j105_006",
+      "unit": "english.j1.s1.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「woman」の複数形は？",
+      "choices": [
+        "womens",
+        "womans",
+        "woman",
+        "women"
+      ],
+      "answerIndex": 3,
+      "explanation": "woman → women",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j105_007",
+      "unit": "english.j1.s1.a05",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "I love (   ). They are kind.",
+      "choices": [
+        "theirs",
+        "their",
+        "they",
+        "them"
+      ],
+      "answerIndex": 3,
+      "explanation": "動詞のあとは目的格。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j105_008",
+      "unit": "english.j1.s1.a05",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Is this (   ) umbrella? — Yes, it's mine.",
+      "choices": [
+        "you're",
+        "you",
+        "yours",
+        "your"
+      ],
+      "answerIndex": 3,
+      "explanation": "名詞の前は your。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j105_009",
+      "unit": "english.j1.s1.a05",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Mike (   ) Japanese very well.",
+      "choices": [
+        "speak",
+        "speaks",
+        "is speak",
+        "speaking"
+      ],
+      "answerIndex": 1,
+      "explanation": "3単現。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j105_010",
+      "unit": "english.j1.s1.a05",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "まちがっている文は？",
+      "choices": [
+        "She don't like milk.",
+        "I don't like milk.",
+        "They don't like milk.",
+        "She doesn't like milk."
+      ],
+      "answerIndex": 0,
+      "explanation": "she なら doesn't。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    }
+  ]
+}

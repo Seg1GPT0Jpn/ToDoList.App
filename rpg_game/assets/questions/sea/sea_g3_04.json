@@ -1,0 +1,210 @@
+{
+  "setId": "sea_g3_04",
+  "worldId": "english",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g3_04_001",
+      "unit": "english.j3.s2.a07",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "I have a friend (   ) father is a pilot.",
+      "choices": [
+        "which",
+        "that",
+        "who",
+        "whose"
+      ],
+      "answerIndex": 3,
+      "explanation": "所有格 whose。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g3_04_002",
+      "unit": "english.j3.s2.a07",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "The woman (   ) lives next door is a nurse.",
+      "choices": [
+        "which",
+        "whom only",
+        "who",
+        "whose"
+      ],
+      "answerIndex": 2,
+      "explanation": "主格（人）。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g3_04_003",
+      "unit": "english.j3.s2.a07",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "This is the computer (   ) I use every day.",
+      "choices": [
+        "whose",
+        "who",
+        "what",
+        "that"
+      ],
+      "answerIndex": 3,
+      "explanation": "目的格。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g3_04_004",
+      "unit": "english.j3.s2.a07",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "The museum (   ) we visited was great.",
+      "choices": [
+        "which",
+        "who",
+        "whose",
+        "where"
+      ],
+      "answerIndex": 0,
+      "explanation": "目的格（もの）。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g3_04_005",
+      "unit": "english.j3.s2.a07.main",
+      "category": "usage",
+      "prompt": "関係代名詞を省略できる文は？",
+      "choices": [
+        "The bus which goes to Ueno is here.",
+        "I know a boy who can swim fast.",
+        "He is the man who helped me.",
+        "This is the cake that I made."
+      ],
+      "answerIndex": 3,
+      "explanation": "目的格だけ省略できる。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g3_04_006",
+      "unit": "english.j3.s2.a07",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Is this the key (   ) you were looking for?",
+      "choices": [
+        "that",
+        "who",
+        "whose",
+        "what"
+      ],
+      "answerIndex": 0,
+      "explanation": "目的格。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g3_04_007",
+      "unit": "english.j3.s2.a07",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "He is the first man (   ) climbed the mountain.",
+      "choices": [
+        "whose",
+        "what",
+        "which",
+        "that"
+      ],
+      "answerIndex": 3,
+      "explanation": "the first ～ のあとは that が多い。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g3_04_008",
+      "unit": "english.j3.s2.a07",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "The boy and the dog (   ) are running are Ken and Shiro.",
+      "choices": [
+        "who",
+        "that",
+        "whose",
+        "which"
+      ],
+      "answerIndex": 1,
+      "explanation": "人＋動物は that。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g3_04_009",
+      "unit": "english.j3.s2.a07",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Tell me the name of the song (   ) you like.",
+      "choices": [
+        "whose",
+        "which",
+        "where",
+        "who"
+      ],
+      "answerIndex": 1,
+      "explanation": "目的格。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g3_04_010",
+      "unit": "english.j3.s2.a07",
+      "category": "usage",
+      "prompt": "「The girl I talked with was Mika.」で省略されている語は？",
+      "choices": [
+        "that（who / whom）",
+        "whose",
+        "what",
+        "which だけ"
+      ],
+      "answerIndex": 0,
+      "explanation": "人の目的格。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g3_04_011",
+      "unit": "english.j3.s2.a07",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Anyone (   ) wants to come is welcome.",
+      "choices": [
+        "which",
+        "what",
+        "whose",
+        "who"
+      ],
+      "answerIndex": 3,
+      "explanation": "主格。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g3_04_012",
+      "unit": "english.j3.s2.a07",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "This is all (   ) I have.",
+      "choices": [
+        "that",
+        "who",
+        "what",
+        "which"
+      ],
+      "answerIndex": 0,
+      "explanation": "all のあとは that。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+{
+  "setId": "sea_g1_02",
+  "worldId": "english",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g1_02_001",
+      "unit": "english.j1.s1.a04",
+      "category": "knowledge",
+      "prompt": "「leaf」の複数形は？",
+      "choices": [
+        "leafs",
+        "leaves",
+        "leaf",
+        "leafes"
+      ],
+      "answerIndex": 1,
+      "explanation": "f → ves",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_02_002",
+      "unit": "english.j1.s1.a04",
+      "category": "knowledge",
+      "prompt": "「tooth」の複数形は？",
+      "choices": [
+        "tooths",
+        "teeths",
+        "teeth",
+        "toothes"
+      ],
+      "answerIndex": 2,
+      "explanation": "不規則変化。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_02_003",
+      "unit": "english.j1.s1.a04",
+      "category": "knowledge",
+      "prompt": "「potato」の複数形は？",
+      "choices": [
+        "potatoies",
+        "potato",
+        "potatos",
+        "potatoes"
+      ],
+      "answerIndex": 3,
+      "explanation": "o で終わる語の一部は es。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_02_004",
+      "unit": "english.j1.s1.a04",
+      "category": "knowledge",
+      "prompt": "「fish」の複数形は？",
+      "choices": [
+        "fishies",
+        "fish",
+        "fishes（いつも）",
+        "fishs"
+      ],
+      "answerIndex": 1,
+      "explanation": "単数と同じ形がふつう。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_02_005",
+      "unit": "english.j1.s1.a04",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Is this (   ) cap? — No, it's not mine.",
+      "choices": [
+        "yours",
+        "your",
+        "you're",
+        "you"
+      ],
+      "answerIndex": 1,
+      "explanation": "名詞の前は your。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_02_006",
+      "unit": "english.j1.s1.a04",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "These books are (   ).",
+      "choices": [
+        "hers",
+        "she's",
+        "her",
+        "she"
+      ],
+      "answerIndex": 0,
+      "explanation": "「彼女のもの」は hers。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_02_007",
+      "unit": "english.j1.s1.a04",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "I like (   ) very much. — Who? — Ms. Brown.",
+      "choices": [
+        "herself",
+        "her",
+        "she",
+        "hers"
+      ],
+      "answerIndex": 1,
+      "explanation": "動詞のあとは her。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_02_008",
+      "unit": "english.j1.s1.a04",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "(   ) is a picture of my family.",
+      "choices": [
+        "Those",
+        "They",
+        "These",
+        "This"
+      ],
+      "answerIndex": 3,
+      "explanation": "1枚なので This。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_02_009",
+      "unit": "english.j1.s1.a04",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Those (   ) my shoes.",
+      "choices": [
+        "am",
+        "are",
+        "is",
+        "be"
+      ],
+      "answerIndex": 1,
+      "explanation": "those は複数。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_02_010",
+      "unit": "english.j1.s1.a04",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Our teacher is kind to (   ).",
+      "choices": [
+        "ours",
+        "we",
+        "us",
+        "our"
+      ],
+      "answerIndex": 2,
+      "explanation": "前置詞のあとは目的格。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_02_011",
+      "unit": "english.j1.s1.a04",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "I have three (   ).",
+      "choices": [
+        "dictionary",
+        "dictionaries",
+        "dictionaryes",
+        "dictionarys"
+      ],
+      "answerIndex": 1,
+      "explanation": "y → ies",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_02_012",
+      "unit": "english.j1.s1.a04",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Whose bike is that? — It's (   ).",
+      "choices": [
+        "my brothers",
+        "brother of me",
+        "my brother's",
+        "my brother"
+      ],
+      "answerIndex": 2,
+      "explanation": "「兄のもの」。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    }
+  ]
+}

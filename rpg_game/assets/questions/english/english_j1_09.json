@@ -1,0 +1,219 @@
+{
+  "setId": "english_j1_09",
+  "worldId": "english",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "eng_j109_001",
+      "unit": "english.j1.s2.a09",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "I (   ) to Hokkaido last summer.",
+      "choices": [
+        "going",
+        "goes",
+        "go",
+        "went"
+      ],
+      "answerIndex": 3,
+      "explanation": "last summer なので過去形。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j109_002",
+      "unit": "english.j1.s2.a09",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "(   ) you watch the game yesterday?",
+      "choices": [
+        "Did",
+        "Do",
+        "Does",
+        "Were"
+      ],
+      "answerIndex": 0,
+      "explanation": "一般動詞の過去の疑問は Did。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j109_003",
+      "unit": "english.j1.s2.a09",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "He didn't (   ) breakfast.",
+      "choices": [
+        "eats",
+        "eat",
+        "ate",
+        "eating"
+      ],
+      "answerIndex": 1,
+      "explanation": "didn't のあとは元の形。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j109_004",
+      "unit": "english.j1.s2.a09",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "We (   ) in the park an hour ago.",
+      "choices": [
+        "were",
+        "was",
+        "did",
+        "are"
+      ],
+      "answerIndex": 0,
+      "explanation": "we の過去は were。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j109_005",
+      "unit": "english.j1.s2.a09",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "I (   ) tired yesterday.",
+      "choices": [
+        "were",
+        "was",
+        "am",
+        "did"
+      ],
+      "answerIndex": 1,
+      "explanation": "I の過去は was。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j109_006",
+      "unit": "english.j1.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「study」の過去形は？",
+      "choices": [
+        "studid",
+        "studied",
+        "studyed",
+        "studies"
+      ],
+      "answerIndex": 1,
+      "explanation": "子音字＋y は ied。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j109_007",
+      "unit": "english.j1.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「stop」の過去形は？",
+      "choices": [
+        "stopt",
+        "stoped",
+        "stops",
+        "stopped"
+      ],
+      "answerIndex": 3,
+      "explanation": "p を重ねて ed。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j109_008",
+      "unit": "english.j1.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「come」の過去形は？",
+      "choices": [
+        "came",
+        "comes",
+        "comed",
+        "come"
+      ],
+      "answerIndex": 0,
+      "explanation": "come → came",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j109_009",
+      "unit": "english.j1.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「write」の過去形は？",
+      "choices": [
+        "writed",
+        "written",
+        "wrote",
+        "writes"
+      ],
+      "answerIndex": 2,
+      "explanation": "write → wrote",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j109_010",
+      "unit": "english.j1.s2.a09",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "What (   ) you doing at seven last night?",
+      "choices": [
+        "were",
+        "are",
+        "was",
+        "did"
+      ],
+      "answerIndex": 0,
+      "explanation": "過去進行形 were ＋ ～ing。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j109_011",
+      "unit": "english.j1.s2.a09",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "There (   ) a lot of people at the station yesterday.",
+      "choices": [
+        "was",
+        "is",
+        "are",
+        "were"
+      ],
+      "answerIndex": 3,
+      "explanation": "複数・過去なので were。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j109_012",
+      "unit": "english.j1.s2.a09",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「Did you enjoy the party?」に「はい」と答えると？",
+      "choices": [
+        "Yes, I enjoyed.",
+        "Yes, I was.",
+        "Yes, I did.",
+        "Yes, I do."
+      ],
+      "answerIndex": 2,
+      "explanation": "Did ～? → did で答える。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    }
+  ]
+}

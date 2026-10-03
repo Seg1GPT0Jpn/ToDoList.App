@@ -1,0 +1,222 @@
+{
+  "setId": "english_j1_03",
+  "worldId": "english",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "eng_j103_001",
+      "unit": "english.j1.s1.a03",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "He (   ) baseball.",
+      "choices": [
+        "plays",
+        "play",
+        "playing",
+        "is play"
+      ],
+      "answerIndex": 0,
+      "explanation": "主語が he なので s をつける。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j103_002",
+      "unit": "english.j1.s1.a03",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "My mother (   ) a car.",
+      "choices": [
+        "have",
+        "haves",
+        "has",
+        "is have"
+      ],
+      "answerIndex": 2,
+      "explanation": "have → has",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j103_003",
+      "unit": "english.j1.s1.a03",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "(   ) she like cats?",
+      "choices": [
+        "Is",
+        "Are",
+        "Do",
+        "Does"
+      ],
+      "answerIndex": 3,
+      "explanation": "3人称単数の疑問文は Does。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j103_004",
+      "unit": "english.j1.s1.a03",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Tom (   ) not eat natto.",
+      "choices": [
+        "do",
+        "doesn't",
+        "is",
+        "does"
+      ],
+      "answerIndex": 3,
+      "explanation": "does not ＋ 動詞の元の形。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j103_005",
+      "unit": "english.j1.s1.a03",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Does he (   ) English?",
+      "choices": [
+        "spoke",
+        "speaks",
+        "speak",
+        "speaking"
+      ],
+      "answerIndex": 2,
+      "explanation": "Does のあとは元の形。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j103_006",
+      "unit": "english.j1.s1.a03",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "She (   ) her homework after dinner.",
+      "choices": [
+        "doing",
+        "do",
+        "dos",
+        "does"
+      ],
+      "answerIndex": 3,
+      "explanation": "do → does",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j103_007",
+      "unit": "english.j1.s1.a03",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Emi (   ) TV every night.",
+      "choices": [
+        "watch",
+        "watchs",
+        "watching",
+        "watches"
+      ],
+      "answerIndex": 3,
+      "explanation": "ch で終わる語は es。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j103_008",
+      "unit": "english.j1.s1.a03",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "My brother (   ) math.",
+      "choices": [
+        "studys",
+        "studyes",
+        "studies",
+        "study"
+      ],
+      "answerIndex": 2,
+      "explanation": "子音字＋y は y を i にして es。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j103_009",
+      "unit": "english.j1.s1.a03",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「Does your father cook?」に「はい」と答えると？",
+      "choices": [
+        "Yes, he is.",
+        "Yes, he does.",
+        "Yes, does he.",
+        "Yes, he do."
+      ],
+      "answerIndex": 1,
+      "explanation": "Does ～? → Yes, he does.",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j103_010",
+      "unit": "english.j1.s1.a03",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Ken (   ) to the library on Sundays.",
+      "choices": [
+        "go",
+        "goes",
+        "gos",
+        "going"
+      ],
+      "answerIndex": 1,
+      "explanation": "go → goes",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j103_011",
+      "unit": "english.j1.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "3人称単数にあたる主語は？",
+      "choices": [
+        "my sister",
+        "I",
+        "we",
+        "you"
+      ],
+      "answerIndex": 0,
+      "explanation": "自分・相手以外の1人・1つ。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j103_012",
+      "unit": "english.j1.s1.a03",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "The cat (   ) on the sofa every day.",
+      "choices": [
+        "sleep",
+        "sleeps",
+        "sleepes",
+        "is sleep"
+      ],
+      "answerIndex": 1,
+      "explanation": "the cat は3人称単数。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    }
+  ]
+}

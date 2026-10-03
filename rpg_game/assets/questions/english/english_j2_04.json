@@ -1,0 +1,222 @@
+{
+  "setId": "english_j2_04",
+  "worldId": "english",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "eng_j204_001",
+      "unit": "english.j2.s1.a04",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "I enjoyed (   ) with you.",
+      "choices": [
+        "talked",
+        "to talk",
+        "talking",
+        "talk"
+      ],
+      "answerIndex": 2,
+      "explanation": "enjoy のあとは ～ing。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j204_002",
+      "unit": "english.j2.s1.a04",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "He finished (   ) the book.",
+      "choices": [
+        "reads",
+        "reading",
+        "read",
+        "to read"
+      ],
+      "answerIndex": 1,
+      "explanation": "finish のあとは ～ing。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j204_003",
+      "unit": "english.j2.s1.a04",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "(   ) English is fun.",
+      "choices": [
+        "Learning",
+        "Learn",
+        "Learned",
+        "Learns"
+      ],
+      "answerIndex": 0,
+      "explanation": "動名詞が主語「～すること」。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j204_004",
+      "unit": "english.j2.s1.a04",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Thank you for (   ) me.",
+      "choices": [
+        "helping",
+        "to help",
+        "help",
+        "helped"
+      ],
+      "answerIndex": 0,
+      "explanation": "前置詞のあとは ～ing。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j204_005",
+      "unit": "english.j2.s1.a04",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "She is good at (   ).",
+      "choices": [
+        "sing",
+        "to sing",
+        "singing",
+        "sings"
+      ],
+      "answerIndex": 2,
+      "explanation": "be good at ～ing。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j204_006",
+      "unit": "english.j2.s1.a04",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Stop (   ) and listen.",
+      "choices": [
+        "talk",
+        "talking",
+        "to talking",
+        "talked"
+      ],
+      "answerIndex": 1,
+      "explanation": "stop ～ing ＝ ～するのをやめる",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j204_007",
+      "unit": "english.j2.s1.a04",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "ふつう不定詞（to ～）だけを目的語にとる動詞は？",
+      "choices": [
+        "stop",
+        "want",
+        "finish",
+        "enjoy"
+      ],
+      "answerIndex": 1,
+      "explanation": "want / hope / decide は to ～。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j204_008",
+      "unit": "english.j2.s1.a04",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "ふつう動名詞（～ing）だけを目的語にとる動詞は？",
+      "choices": [
+        "want",
+        "enjoy",
+        "hope",
+        "decide"
+      ],
+      "answerIndex": 1,
+      "explanation": "enjoy / finish / stop は ～ing。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j204_009",
+      "unit": "english.j2.s1.a04",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "How about (   ) to the movies?",
+      "choices": [
+        "go",
+        "to go",
+        "went",
+        "going"
+      ],
+      "answerIndex": 3,
+      "explanation": "How about ～ing? ＝ ～するのはどう？",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j204_010",
+      "unit": "english.j2.s1.a04",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "I like (   ) soccer.",
+      "choices": [
+        "playing",
+        "played",
+        "plays",
+        "play"
+      ],
+      "answerIndex": 0,
+      "explanation": "like は to ～も ～ing も OK。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j204_011",
+      "unit": "english.j2.s1.a04",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "My hobby is (   ) stamps.",
+      "choices": [
+        "collecting",
+        "collects",
+        "collect",
+        "collected"
+      ],
+      "answerIndex": 0,
+      "explanation": "「集めること」。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j204_012",
+      "unit": "english.j2.s1.a04",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Without (   ) anything, he left.",
+      "choices": [
+        "said",
+        "say",
+        "to say",
+        "saying"
+      ],
+      "answerIndex": 3,
+      "explanation": "前置詞のあとは ～ing。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    }
+  ]
+}

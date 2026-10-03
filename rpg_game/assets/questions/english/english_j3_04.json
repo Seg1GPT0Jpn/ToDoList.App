@@ -1,0 +1,222 @@
+{
+  "setId": "english_j3_04",
+  "worldId": "english",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "eng_j304_001",
+      "unit": "english.j3.s1.a04",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "I don't know where he (   ).",
+      "choices": [
+        "live",
+        "lives",
+        "does live",
+        "living"
+      ],
+      "answerIndex": 1,
+      "explanation": "間接疑問は「疑問詞 ＋ 主語 ＋ 動詞」。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j304_002",
+      "unit": "english.j3.s1.a04",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Do you know what time it (   )?",
+      "choices": [
+        "does",
+        "be",
+        "it is is",
+        "is"
+      ],
+      "answerIndex": 3,
+      "explanation": "主語 ＋ 動詞の順。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j304_003",
+      "unit": "english.j3.s1.a04",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Tell me what you (   ) yesterday.",
+      "choices": [
+        "did",
+        "do you",
+        "did you",
+        "does"
+      ],
+      "answerIndex": 0,
+      "explanation": "過去の内容は過去形。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j304_004",
+      "unit": "english.j3.s1.a04",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "正しい文は？",
+      "choices": [
+        "I know who is she.",
+        "I know who does she.",
+        "I know she who is.",
+        "I know who she is."
+      ],
+      "answerIndex": 3,
+      "explanation": "疑問詞 ＋ 主語 ＋ 動詞。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j304_005",
+      "unit": "english.j3.s1.a04",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Can you tell me how old your brother (   )?",
+      "choices": [
+        "are",
+        "be",
+        "does",
+        "is"
+      ],
+      "answerIndex": 3,
+      "explanation": "your brother is の順。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j304_006",
+      "unit": "english.j3.s1.a04",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "I wonder why she (   ) angry.",
+      "choices": [
+        "be",
+        "is",
+        "do",
+        "does"
+      ],
+      "answerIndex": 1,
+      "explanation": "疑問詞 ＋ 主語 ＋ 動詞。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j304_007",
+      "unit": "english.j3.s1.a04",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Do you know when the party (   ) start?",
+      "choices": [
+        "is",
+        "do",
+        "does",
+        "will"
+      ],
+      "answerIndex": 3,
+      "explanation": "未来の内容は will。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j304_008",
+      "unit": "english.j3.s1.a04",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "I don't know (   ) he will come or not.",
+      "choices": [
+        "what",
+        "if",
+        "who",
+        "that"
+      ],
+      "answerIndex": 1,
+      "explanation": "「～かどうか」は if / whether。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j304_009",
+      "unit": "english.j3.s1.a04",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「Where is the station?」を「わたしは駅がどこか知らない」にすると？",
+      "choices": [
+        "I don't know where is the station.",
+        "I don't know where does the station.",
+        "I don't know where the station is.",
+        "I don't know the station where."
+      ],
+      "answerIndex": 2,
+      "explanation": "主語 ＋ 動詞の順に。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j304_010",
+      "unit": "english.j3.s1.a04",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Please tell me which bus (   ) to the museum.",
+      "choices": [
+        "going",
+        "does go",
+        "go",
+        "goes"
+      ],
+      "answerIndex": 3,
+      "explanation": "which bus が主語。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j304_011",
+      "unit": "english.j3.s1.a04",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "I asked him what he (   ) to eat.",
+      "choices": [
+        "did want",
+        "want",
+        "wanted",
+        "wants to"
+      ],
+      "answerIndex": 2,
+      "explanation": "時制を合わせる。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j304_012",
+      "unit": "english.j3.s1.a04",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "She knows how many books I (   ).",
+      "choices": [
+        "having",
+        "has",
+        "do have",
+        "have"
+      ],
+      "answerIndex": 3,
+      "explanation": "主語 I ＋ have。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    }
+  ]
+}

@@ -1,0 +1,223 @@
+{
+  "setId": "english_j2_02",
+  "worldId": "english",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "eng_j202_001",
+      "unit": "english.j2.s1.a02",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "You (   ) do your homework.",
+      "choices": [
+        "have",
+        "must",
+        "must to",
+        "are"
+      ],
+      "answerIndex": 1,
+      "explanation": "must ＝ ～しなければならない",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j202_002",
+      "unit": "english.j2.s1.a02",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "I have (   ) get up early tomorrow.",
+      "choices": [
+        "must",
+        "for",
+        "to",
+        "at"
+      ],
+      "answerIndex": 2,
+      "explanation": "have to ＝ ～しなければならない",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j202_003",
+      "unit": "english.j2.s1.a02",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "She (   ) to wash the dishes.",
+      "choices": [
+        "have",
+        "must",
+        "is",
+        "has"
+      ],
+      "answerIndex": 3,
+      "explanation": "3単現は has to。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j202_004",
+      "unit": "english.j2.s1.a02",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "You (   ) not swim here.",
+      "choices": [
+        "must",
+        "don't",
+        "are",
+        "have"
+      ],
+      "answerIndex": 0,
+      "explanation": "must not ＝ ～してはいけない",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j202_005",
+      "unit": "english.j2.s1.a02",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "You don't (   ) to hurry.",
+      "choices": [
+        "must",
+        "are",
+        "have",
+        "has"
+      ],
+      "answerIndex": 2,
+      "explanation": "don't have to ＝ ～しなくてよい",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j202_006",
+      "unit": "english.j2.s1.a02",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "You (   ) see a doctor.",
+      "choices": [
+        "has",
+        "should",
+        "are",
+        "should to"
+      ],
+      "answerIndex": 1,
+      "explanation": "should ＝ ～したほうがよい",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j202_007",
+      "unit": "english.j2.s1.a02",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "(   ) I open the window? — Yes, please.",
+      "choices": [
+        "Will",
+        "Do",
+        "Shall",
+        "Must"
+      ],
+      "answerIndex": 2,
+      "explanation": "Shall I ～? ＝ ～しましょうか",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j202_008",
+      "unit": "english.j2.s1.a02",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "(   ) you help me? — Sure.",
+      "choices": [
+        "Will",
+        "Must",
+        "Should",
+        "Shall"
+      ],
+      "answerIndex": 0,
+      "explanation": "Will you ～? ＝ ～してくれませんか",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j202_009",
+      "unit": "english.j2.s1.a02",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "(   ) I use your dictionary? — Of course.",
+      "choices": [
+        "May",
+        "Must",
+        "Shall",
+        "Should"
+      ],
+      "answerIndex": 0,
+      "explanation": "May I ～? ＝ ～してもよいですか",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j202_010",
+      "unit": "english.j2.s1.a02",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「must not」と「don't have to」の意味のちがいで正しいのは？",
+      "choices": [
+        "must not は禁止、don't have to は不必要",
+        "どちらも不必要",
+        "どちらも禁止",
+        "must not は不必要、don't have to は禁止"
+      ],
+      "answerIndex": 0,
+      "explanation": "意味がまったくちがう。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j202_011",
+      "unit": "english.j2.s1.a02",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "(   ) we go shopping? — Yes, let's.",
+      "choices": [
+        "Must",
+        "Shall",
+        "May",
+        "Will"
+      ],
+      "answerIndex": 1,
+      "explanation": "Shall we ～? ＝ ～しませんか",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j202_012",
+      "unit": "english.j2.s1.a02",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "He had (   ) stay home yesterday.",
+      "choices": [
+        "for",
+        "have",
+        "to",
+        "must"
+      ],
+      "answerIndex": 2,
+      "explanation": "過去は had to。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    }
+  ]
+}

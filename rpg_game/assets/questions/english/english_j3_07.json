@@ -1,0 +1,222 @@
+{
+  "setId": "english_j3_07",
+  "worldId": "english",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "eng_j307_001",
+      "unit": "english.j3.s2.a07",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "I have a friend (   ) lives in Kobe.",
+      "choices": [
+        "what",
+        "which",
+        "who",
+        "whose"
+      ],
+      "answerIndex": 2,
+      "explanation": "人が先行詞の主格は who。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j307_002",
+      "unit": "english.j3.s2.a07",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "This is the bus (   ) goes to the airport.",
+      "choices": [
+        "which",
+        "who",
+        "whom",
+        "what"
+      ],
+      "answerIndex": 0,
+      "explanation": "もの・動物は which。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j307_003",
+      "unit": "english.j3.s2.a07",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "The cake (   ) my mother made was delicious.",
+      "choices": [
+        "what",
+        "whose",
+        "who",
+        "that"
+      ],
+      "answerIndex": 3,
+      "explanation": "目的格は that / which（省略できる）。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j307_004",
+      "unit": "english.j3.s2.a07",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "He is the boy (   ) won the race.",
+      "choices": [
+        "which",
+        "where",
+        "what",
+        "who"
+      ],
+      "answerIndex": 3,
+      "explanation": "人 ＋ who。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j307_005",
+      "unit": "english.j3.s2.a07",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "The book (   ) I bought yesterday is interesting.",
+      "choices": [
+        "who",
+        "where",
+        "what",
+        "which"
+      ],
+      "answerIndex": 3,
+      "explanation": "もの ＋ which。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j307_006",
+      "unit": "english.j3.s2.a07",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "関係代名詞を省略できるのは？",
+      "choices": [
+        "いつでも",
+        "先行詞が人のとき",
+        "目的格のとき",
+        "主格のとき"
+      ],
+      "answerIndex": 2,
+      "explanation": "目的格は省略できる。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j307_007",
+      "unit": "english.j3.s2.a07",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「The girl I met yesterday is Mika.」の意味は？",
+      "choices": [
+        "ミカはきのう会った。",
+        "わたしがきのう会った女の子はミカです。",
+        "ミカはきのう女の子に会った。",
+        "きのうミカに会った。"
+      ],
+      "answerIndex": 1,
+      "explanation": "The girl (that) I met",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j307_008",
+      "unit": "english.j3.s2.a07",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "I know a girl (   ) can speak four languages.",
+      "choices": [
+        "whose",
+        "which",
+        "she",
+        "who"
+      ],
+      "answerIndex": 3,
+      "explanation": "主格の who。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j307_009",
+      "unit": "english.j3.s2.a07",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Is there anything (   ) I can do for you?",
+      "choices": [
+        "that",
+        "what",
+        "whose",
+        "who"
+      ],
+      "answerIndex": 0,
+      "explanation": "anything の後は that が多い。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j307_010",
+      "unit": "english.j3.s2.a07",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "The dog (   ) is running there is mine.",
+      "choices": [
+        "what",
+        "who",
+        "whom",
+        "which"
+      ],
+      "answerIndex": 3,
+      "explanation": "動物 ＋ which。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j307_011",
+      "unit": "english.j3.s2.a07",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "This is the best movie (   ) I have ever seen.",
+      "choices": [
+        "who",
+        "what",
+        "that",
+        "whose"
+      ],
+      "answerIndex": 2,
+      "explanation": "最上級のあとは that が多い。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j307_012",
+      "unit": "english.j3.s2.a07",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "The people (   ) work here are kind.",
+      "choices": [
+        "who",
+        "what",
+        "whose",
+        "which"
+      ],
+      "answerIndex": 0,
+      "explanation": "people ＋ who。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    }
+  ]
+}

@@ -1,0 +1,210 @@
+{
+  "setId": "sea_g3_01",
+  "worldId": "english",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g3_01_001",
+      "unit": "english.j3.s1.a01",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "I have (   ) here since I was five.",
+      "choices": [
+        "living",
+        "lived",
+        "lives",
+        "live"
+      ],
+      "answerIndex": 1,
+      "explanation": "継続。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g3_01_002",
+      "unit": "english.j3.s1.a01.main",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Have you ever (   ) to Okinawa?",
+      "choices": [
+        "went",
+        "been",
+        "gone",
+        "go"
+      ],
+      "answerIndex": 1,
+      "explanation": "経験は have been to。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g3_01_003",
+      "unit": "english.j3.s1.a01",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "He has just (   ) home.",
+      "choices": [
+        "come",
+        "coming",
+        "came",
+        "comes"
+      ],
+      "answerIndex": 0,
+      "explanation": "come - came - come",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g3_01_004",
+      "unit": "english.j3.s1.a01",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "I haven't seen him (   ) last year.",
+      "choices": [
+        "ago",
+        "since",
+        "from",
+        "for"
+      ],
+      "answerIndex": 1,
+      "explanation": "起点。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g3_01_005",
+      "unit": "english.j3.s1.a01.main",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "How many times (   ) you seen the movie?",
+      "choices": [
+        "are",
+        "did",
+        "have",
+        "do"
+      ],
+      "answerIndex": 2,
+      "explanation": "経験の回数。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g3_01_006",
+      "unit": "english.j3.s1.a01.main",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "We have been (   ) for an hour.",
+      "choices": [
+        "walk",
+        "walks",
+        "walking",
+        "walked"
+      ],
+      "answerIndex": 2,
+      "explanation": "現在完了進行形。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g3_01_007",
+      "unit": "english.j3.s1.a01",
+      "category": "usage",
+      "prompt": "「She has gone to Paris.」の意味は？",
+      "choices": [
+        "彼女はパリから帰ってきた。",
+        "彼女はパリへ行くつもりだ。",
+        "彼女はパリへ行ったことがある。",
+        "彼女はパリへ行ってしまった（今ここにいない）。"
+      ],
+      "answerIndex": 3,
+      "explanation": "have gone to。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g3_01_008",
+      "unit": "english.j3.s1.a01",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "I have (   ) finished reading this book.",
+      "choices": [
+        "already",
+        "still",
+        "ever",
+        "yet"
+      ],
+      "answerIndex": 0,
+      "explanation": "肯定文の already。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g3_01_009",
+      "unit": "english.j3.s1.a01",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Has the movie started (   )?",
+      "choices": [
+        "already",
+        "just",
+        "ever",
+        "yet"
+      ],
+      "answerIndex": 3,
+      "explanation": "疑問文の yet ＝ もう",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g3_01_010",
+      "unit": "english.j3.s1.a01.main",
+      "category": "usage",
+      "prompt": "まちがっている文は？",
+      "choices": [
+        "I have known him for years.",
+        "I have seen him before.",
+        "I saw him yesterday.",
+        "I have seen him yesterday."
+      ],
+      "answerIndex": 3,
+      "explanation": "yesterday は現在完了と使えない。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g3_01_011",
+      "unit": "english.j3.s1.a01",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "It (   ) been raining since morning.",
+      "choices": [
+        "is",
+        "have",
+        "was",
+        "has"
+      ],
+      "answerIndex": 3,
+      "explanation": "it は has。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g3_01_012",
+      "unit": "english.j3.s1.a01",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "How long have they (   ) married?",
+      "choices": [
+        "were",
+        "be",
+        "been",
+        "being"
+      ],
+      "answerIndex": 2,
+      "explanation": "have been ＋ 形容詞。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    }
+  ]
+}

@@ -1,0 +1,211 @@
+{
+  "setId": "sea_g2_04",
+  "worldId": "english",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g2_04_001",
+      "unit": "english.j2.s1.a04.main",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "My father likes (   ) fishing.",
+      "choices": [
+        "go",
+        "going",
+        "went",
+        "goes"
+      ],
+      "answerIndex": 1,
+      "explanation": "動名詞（to go も可）。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g2_04_002",
+      "unit": "english.j2.s1.a04",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "She finished (   ) the dishes.",
+      "choices": [
+        "washing",
+        "to wash",
+        "washed",
+        "wash"
+      ],
+      "answerIndex": 0,
+      "explanation": "finish ～ing。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g2_04_003",
+      "unit": "english.j2.s1.a04.main",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "(   ) books is important.",
+      "choices": [
+        "Reading",
+        "To reading",
+        "Read",
+        "Reads"
+      ],
+      "answerIndex": 0,
+      "explanation": "主語の動名詞。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g2_04_004",
+      "unit": "english.j2.s1.a04",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "I'm interested in (   ) pictures.",
+      "choices": [
+        "taking",
+        "to take",
+        "take",
+        "took"
+      ],
+      "answerIndex": 0,
+      "explanation": "前置詞のあと。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g2_04_005",
+      "unit": "english.j2.s1.a04",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Let's stop (   ) a break.",
+      "choices": [
+        "take",
+        "taking",
+        "took",
+        "to take"
+      ],
+      "answerIndex": 3,
+      "explanation": "stop to ～ ＝ ～するために立ち止まる。（ここでは休けいのため）",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g2_04_006",
+      "unit": "english.j2.s1.a04",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "We enjoyed (   ) the game.",
+      "choices": [
+        "watched",
+        "to watch",
+        "watching",
+        "watch"
+      ],
+      "answerIndex": 2,
+      "explanation": "enjoy ～ing。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g2_04_007",
+      "unit": "english.j2.s1.a04",
+      "category": "usage",
+      "prompt": "to ～ と ～ing のどちらも目的語にとれるのは？",
+      "choices": [
+        "enjoy",
+        "begin",
+        "want",
+        "finish"
+      ],
+      "answerIndex": 1,
+      "explanation": "begin / start / like は両方 OK。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g2_04_008",
+      "unit": "english.j2.s1.a04",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "He left (   ) goodbye.",
+      "choices": [
+        "not saying",
+        "without saying",
+        "without to say",
+        "without say"
+      ],
+      "answerIndex": 1,
+      "explanation": "without ～ing。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g2_04_009",
+      "unit": "english.j2.s1.a04",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "I'm looking forward to (   ) you.",
+      "choices": [
+        "see",
+        "saw",
+        "seeing",
+        "seen"
+      ],
+      "answerIndex": 2,
+      "explanation": "look forward to ～ing（to は前置詞）。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g2_04_010",
+      "unit": "english.j2.s1.a04",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Thank you for (   ) to my party.",
+      "choices": [
+        "came",
+        "to come",
+        "coming",
+        "come"
+      ],
+      "answerIndex": 2,
+      "explanation": "前置詞のあと。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g2_04_011",
+      "unit": "english.j2.s1.a04",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Do you mind (   ) the window?",
+      "choices": [
+        "opened",
+        "open",
+        "to open",
+        "opening"
+      ],
+      "answerIndex": 3,
+      "explanation": "mind ～ing。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g2_04_012",
+      "unit": "english.j2.s1.a04",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "(   ) up early is good for your health.",
+      "choices": [
+        "Got",
+        "Getting",
+        "Get",
+        "Gets"
+      ],
+      "answerIndex": 1,
+      "explanation": "主語。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    }
+  ]
+}

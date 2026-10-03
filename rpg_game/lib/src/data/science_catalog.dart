@@ -13,7 +13,9 @@ class ScienceCatalog {
   static const hubSign = '';
   static const description = '';
 
-  static const routes = <RouteSpec>[];
+  static const routes = <RouteSpec>[
+  ];
 
-  static final List<StageDef> stages = RouteWorldBuilder.build(worldId, routes);
+  static final List<StageDef> stages =
+      RouteWorldBuilder.build(worldId, routes);
 }

@@ -1,0 +1,221 @@
+{
+  "setId": "english_j3_01",
+  "worldId": "english",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "eng_j301_001",
+      "unit": "english.j3.s1.a01",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "I have just (   ) my homework.",
+      "choices": [
+        "finishes",
+        "finishing",
+        "finished",
+        "finish"
+      ],
+      "answerIndex": 2,
+      "explanation": "have ＋ 過去分詞。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j301_002",
+      "unit": "english.j3.s1.a01",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Have you (   ) lunch yet?",
+      "choices": [
+        "eat",
+        "ate",
+        "eaten",
+        "eating"
+      ],
+      "answerIndex": 2,
+      "explanation": "eat - ate - eaten",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j301_003",
+      "unit": "english.j3.s1.a01",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "I have (   ) been to Hokkaido.",
+      "choices": [
+        "already",
+        "never",
+        "ever",
+        "yet"
+      ],
+      "answerIndex": 1,
+      "explanation": "経験の否定 never。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j301_004",
+      "unit": "english.j3.s1.a01",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Have you (   ) seen a koala?",
+      "choices": [
+        "never",
+        "just",
+        "ever",
+        "yet"
+      ],
+      "answerIndex": 2,
+      "explanation": "経験の疑問 ever。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j301_005",
+      "unit": "english.j3.s1.a01",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "She has (   ) left home.",
+      "choices": [
+        "already",
+        "yet",
+        "ever",
+        "since"
+      ],
+      "answerIndex": 0,
+      "explanation": "肯定文「もう」は already。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j301_006",
+      "unit": "english.j3.s1.a01",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "I haven't read the book (   ).",
+      "choices": [
+        "just",
+        "yet",
+        "already",
+        "ever"
+      ],
+      "answerIndex": 1,
+      "explanation": "否定文「まだ」は yet。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j301_007",
+      "unit": "english.j3.s1.a01",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "How many times have you (   ) Kyoto?",
+      "choices": [
+        "visit",
+        "visiting",
+        "visited",
+        "visits"
+      ],
+      "answerIndex": 2,
+      "explanation": "回数をたずねる経験。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j301_008",
+      "unit": "english.j3.s1.a01",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "I have climbed Mt. Fuji (   ).",
+      "choices": [
+        "twice",
+        "two",
+        "second",
+        "two time"
+      ],
+      "answerIndex": 0,
+      "explanation": "2回は twice。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j301_009",
+      "unit": "english.j3.s1.a01",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「I have lost my key.」の意味として近いのは？",
+      "choices": [
+        "かぎをなくしたことがある（今はある）。",
+        "かぎをなくすつもり。",
+        "かぎをさがしている。",
+        "かぎをなくして、今もない。"
+      ],
+      "answerIndex": 3,
+      "explanation": "完了・結果。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j301_010",
+      "unit": "english.j3.s1.a01",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "He has (   ) to London.",
+      "choices": [
+        "going",
+        "gone",
+        "went",
+        "go"
+      ],
+      "answerIndex": 1,
+      "explanation": "has gone to ＝ 行ってしまった（今はいない）",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j301_011",
+      "unit": "english.j3.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「see」の過去分詞は？",
+      "choices": [
+        "seeing",
+        "seen",
+        "seed",
+        "saw"
+      ],
+      "answerIndex": 1,
+      "explanation": "see - saw - seen",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j301_012",
+      "unit": "english.j3.s1.a01",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "現在完了とふつういっしょに使わない語は？",
+      "choices": [
+        "ever",
+        "since",
+        "already",
+        "yesterday"
+      ],
+      "answerIndex": 3,
+      "explanation": "過去を表す語は過去形で。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    }
+  ]
+}

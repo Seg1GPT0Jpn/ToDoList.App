@@ -1,0 +1,210 @@
+{
+  "setId": "sea_g2_07",
+  "worldId": "english",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g2_07_001",
+      "unit": "english.j2.s2.a08.main",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "This letter was (   ) by my grandmother.",
+      "choices": [
+        "write",
+        "writing",
+        "wrote",
+        "written"
+      ],
+      "answerIndex": 3,
+      "explanation": "受け身。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g2_07_002",
+      "unit": "english.j2.s2.a08.main",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Soccer is (   ) all over the world.",
+      "choices": [
+        "play",
+        "plays",
+        "playing",
+        "played"
+      ],
+      "answerIndex": 3,
+      "explanation": "受け身。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g2_07_003",
+      "unit": "english.j2.s2.a08",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "The store is (   ) on Mondays.",
+      "choices": [
+        "close",
+        "closes",
+        "closing",
+        "closed"
+      ],
+      "answerIndex": 3,
+      "explanation": "be closed ＝ 閉まっている",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g2_07_004",
+      "unit": "english.j2.s2.a08.main",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "(   ) these cakes made by Mika?",
+      "choices": [
+        "Were",
+        "Was",
+        "Did",
+        "Do"
+      ],
+      "answerIndex": 0,
+      "explanation": "複数・過去の受け身。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g2_07_005",
+      "unit": "english.j2.s2.a08",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "The game wasn't (   ) because of the rain.",
+      "choices": [
+        "hold",
+        "holding",
+        "held",
+        "holded"
+      ],
+      "answerIndex": 2,
+      "explanation": "hold - held - held",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g2_07_006",
+      "unit": "english.j2.s2.a08",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "This book is read (   ) many students.",
+      "choices": [
+        "of",
+        "by",
+        "to",
+        "with"
+      ],
+      "answerIndex": 1,
+      "explanation": "by ～。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g2_07_007",
+      "unit": "english.j2.s2.a08",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Wine is made (   ) grapes.",
+      "choices": [
+        "from",
+        "by",
+        "of",
+        "with"
+      ],
+      "answerIndex": 0,
+      "explanation": "原料が変化 → from。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g2_07_008",
+      "unit": "english.j2.s2.a08",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "This desk is made (   ) wood.",
+      "choices": [
+        "from",
+        "by",
+        "in",
+        "of"
+      ],
+      "answerIndex": 3,
+      "explanation": "材料がそのまま → of。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g2_07_009",
+      "unit": "english.j2.s2.a08",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "I was surprised (   ) the news.",
+      "choices": [
+        "at",
+        "with",
+        "of",
+        "by only"
+      ],
+      "answerIndex": 0,
+      "explanation": "be surprised at ～。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g2_07_010",
+      "unit": "english.j2.s2.a08.main",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Kyoto is visited (   ) many tourists.",
+      "choices": [
+        "by",
+        "from",
+        "to",
+        "with"
+      ],
+      "answerIndex": 0,
+      "explanation": "受け身の by。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g2_07_011",
+      "unit": "english.j2.s2.a08",
+      "category": "knowledge",
+      "prompt": "「speak」の過去分詞は？",
+      "choices": [
+        "speaking",
+        "speaked",
+        "spoke",
+        "spoken"
+      ],
+      "answerIndex": 3,
+      "explanation": "speak - spoke - spoken",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g2_07_012",
+      "unit": "english.j2.s2.a08",
+      "category": "knowledge",
+      "prompt": "「give」の過去分詞は？",
+      "choices": [
+        "gave",
+        "given",
+        "gived",
+        "giving"
+      ],
+      "answerIndex": 1,
+      "explanation": "give - gave - given",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    }
+  ]
+}

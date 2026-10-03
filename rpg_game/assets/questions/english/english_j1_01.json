@@ -1,0 +1,221 @@
+{
+  "setId": "english_j1_01",
+  "worldId": "english",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "eng_j101_001",
+      "unit": "english.j1.s1.a01",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "I (   ) a student.",
+      "choices": [
+        "is",
+        "are",
+        "be",
+        "am"
+      ],
+      "answerIndex": 3,
+      "explanation": "I のときは am。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j101_002",
+      "unit": "english.j1.s1.a01",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "You (   ) my friend.",
+      "choices": [
+        "be",
+        "am",
+        "is",
+        "are"
+      ],
+      "answerIndex": 3,
+      "explanation": "you のときは are。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j101_003",
+      "unit": "english.j1.s1.a01",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "This (   ) my bag.",
+      "choices": [
+        "be",
+        "am",
+        "are",
+        "is"
+      ],
+      "answerIndex": 3,
+      "explanation": "this（1つのもの）は is。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j101_004",
+      "unit": "english.j1.s1.a01",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Ken and Yumi (   ) classmates.",
+      "choices": [
+        "am",
+        "be",
+        "are",
+        "is"
+      ],
+      "answerIndex": 2,
+      "explanation": "主語が2人なので are。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j101_005",
+      "unit": "english.j1.s1.a01",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "(   ) you from Osaka?",
+      "choices": [
+        "Am",
+        "Do",
+        "Are",
+        "Is"
+      ],
+      "answerIndex": 2,
+      "explanation": "be動詞の疑問文は be動詞を前に。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j101_006",
+      "unit": "english.j1.s1.a01",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "I am (   ) a teacher.",
+      "choices": [
+        "not",
+        "isn't",
+        "no",
+        "don't"
+      ],
+      "answerIndex": 0,
+      "explanation": "否定は be動詞のあとに not。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j101_007",
+      "unit": "english.j1.s1.a01",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「Is this your pen?」に「はい」と答えると？",
+      "choices": [
+        "Yes, this is.",
+        "Yes, it is.",
+        "Yes, I am.",
+        "Yes, it does."
+      ],
+      "answerIndex": 1,
+      "explanation": "this で聞かれたら it で答える。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j101_008",
+      "unit": "english.j1.s1.a01",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "That (   ) not my cap.",
+      "choices": [
+        "am",
+        "is",
+        "do",
+        "are"
+      ],
+      "answerIndex": 1,
+      "explanation": "that は is。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j101_009",
+      "unit": "english.j1.s1.a01",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "(   ) she your sister?",
+      "choices": [
+        "Is",
+        "Does",
+        "Are",
+        "Am"
+      ],
+      "answerIndex": 0,
+      "explanation": "she は is。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j101_010",
+      "unit": "english.j1.s1.a01",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "We (   ) in the same class.",
+      "choices": [
+        "is",
+        "be",
+        "am",
+        "are"
+      ],
+      "answerIndex": 3,
+      "explanation": "we は are。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j101_011",
+      "unit": "english.j1.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「I am」の短縮形は？",
+      "choices": [
+        "Im'",
+        "I'am",
+        "I'm",
+        "Iam"
+      ],
+      "answerIndex": 2,
+      "explanation": "I am → I'm",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j101_012",
+      "unit": "english.j1.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「is not」の短縮形は？",
+      "choices": [
+        "i'snt",
+        "isn't",
+        "is'nt",
+        "isnt"
+      ],
+      "answerIndex": 1,
+      "explanation": "is not → isn't",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    }
+  ]
+}

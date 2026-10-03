@@ -1,0 +1,221 @@
+{
+  "setId": "english_j2_07",
+  "worldId": "english",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "eng_j207_001",
+      "unit": "english.j2.s2.a07",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Ken is (   ) than Tom.",
+      "choices": [
+        "tallest",
+        "taller",
+        "more tall",
+        "tall"
+      ],
+      "answerIndex": 1,
+      "explanation": "比較級 ＋ than。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j207_002",
+      "unit": "english.j2.s2.a07",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "This is the (   ) mountain in Japan.",
+      "choices": [
+        "highest",
+        "high",
+        "higher",
+        "most high"
+      ],
+      "answerIndex": 0,
+      "explanation": "最上級 the ～est。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j207_003",
+      "unit": "english.j2.s2.a07",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "This book is (   ) interesting than that one.",
+      "choices": [
+        "very",
+        "most",
+        "much",
+        "more"
+      ],
+      "answerIndex": 3,
+      "explanation": "長い語は more ～。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j207_004",
+      "unit": "english.j2.s2.a07",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "She is as (   ) as her mother.",
+      "choices": [
+        "taller",
+        "tallest",
+        "more tall",
+        "tall"
+      ],
+      "answerIndex": 3,
+      "explanation": "as ～ as はもとの形。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j207_005",
+      "unit": "english.j2.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「good」の比較級は？",
+      "choices": [
+        "best",
+        "better",
+        "more good",
+        "gooder"
+      ],
+      "answerIndex": 1,
+      "explanation": "good → better → best",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j207_006",
+      "unit": "english.j2.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「big」の比較級は？",
+      "choices": [
+        "bigger",
+        "biggest",
+        "biger",
+        "more big"
+      ],
+      "answerIndex": 0,
+      "explanation": "g を重ねる。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j207_007",
+      "unit": "english.j2.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「easy」の最上級は？",
+      "choices": [
+        "easier",
+        "easyest",
+        "easiest",
+        "most easy"
+      ],
+      "answerIndex": 2,
+      "explanation": "y を i にして est。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j207_008",
+      "unit": "english.j2.s2.a07",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Which do you like (   ), summer or winter?",
+      "choices": [
+        "good",
+        "well",
+        "best",
+        "better"
+      ],
+      "answerIndex": 3,
+      "explanation": "2つでは better。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j207_009",
+      "unit": "english.j2.s2.a07",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "He is the fastest runner (   ) the five.",
+      "choices": [
+        "than",
+        "of",
+        "in",
+        "at"
+      ],
+      "answerIndex": 1,
+      "explanation": "複数を表す語の前は of。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j207_010",
+      "unit": "english.j2.s2.a07",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Tokyo is the largest city (   ) Japan.",
+      "choices": [
+        "of",
+        "in",
+        "than",
+        "on"
+      ],
+      "answerIndex": 1,
+      "explanation": "場所・範囲の前は in。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j207_011",
+      "unit": "english.j2.s2.a07",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "My bag is not as heavy (   ) yours.",
+      "choices": [
+        "as",
+        "so",
+        "than",
+        "like"
+      ],
+      "answerIndex": 0,
+      "explanation": "not as ～ as ＝ ～ほど…ない",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j207_012",
+      "unit": "english.j2.s2.a07",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "This is the (   ) beautiful picture of all.",
+      "choices": [
+        "more",
+        "very",
+        "much",
+        "most"
+      ],
+      "answerIndex": 3,
+      "explanation": "長い語の最上級は most。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    }
+  ]
+}

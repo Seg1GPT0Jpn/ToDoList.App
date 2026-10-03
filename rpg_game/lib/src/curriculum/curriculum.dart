@@ -156,7 +156,7 @@ class Curriculum {
       ];
 
   /// 問題ファイルを持たない問題セット（単語・熟語のリストから作る問題）の単元。
-  /// 例：words_basic_enToJa → english.eng.vocab.basic.meaning
+  /// 例：words_j1_enToJa → english.vocab.words.j1.meaning
   static String? unitForGeneratedSet(String setId) {
     for (final e in _generatedSets.entries) {
       if (setId == e.key || setId.startsWith('${e.key}_')) return e.value;
@@ -165,13 +165,10 @@ class Curriculum {
   }
 
   static const _generatedSets = {
-    'words_basic': 'english.eng.vocab.basic.meaning',
-    'words_standard': 'english.eng.vocab.standard.meaning',
-    'words_advanced': 'english.eng.vocab.advanced.meaning',
-    'idioms_basic': 'english.eng.vocab.idiom.idiom',
-    'tsuzutan_1': 'english.eng.vocab.basic.meaning',
-    'tsuzutan_2': 'english.eng.vocab.standard.meaning',
-    'tsuzutan_3': 'english.eng.vocab.advanced.meaning',
+    'words_j1': 'english.vocab.words.j1.meaning',
+    'words_j2': 'english.vocab.words.j2.meaning',
+    'words_j3': 'english.vocab.words.j3.meaning',
+    'idioms_j': 'english.vocab.words.idiom.idiom',
   };
 
   /// 「数学Ⅰ ＞ 2次関数 ＞ 最大・最小」のような表示（教科は省く）

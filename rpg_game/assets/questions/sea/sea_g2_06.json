@@ -1,0 +1,210 @@
+{
+  "setId": "sea_g2_06",
+  "worldId": "english",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g2_06_001",
+      "unit": "english.j2.s2.a07.main",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "This river is (   ) than that one.",
+      "choices": [
+        "longer",
+        "longest",
+        "long",
+        "more long"
+      ],
+      "answerIndex": 0,
+      "explanation": "比較級。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g2_06_002",
+      "unit": "english.j2.s2.a07",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "She is the (   ) student in our class.",
+      "choices": [
+        "tall",
+        "taller",
+        "most tall",
+        "tallest"
+      ],
+      "answerIndex": 3,
+      "explanation": "最上級。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g2_06_003",
+      "unit": "english.j2.s2.a07",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "This question is (   ) difficult than that one.",
+      "choices": [
+        "most",
+        "more",
+        "much more than",
+        "very"
+      ],
+      "answerIndex": 1,
+      "explanation": "長い語。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g2_06_004",
+      "unit": "english.j2.s2.a07",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "I like summer the (   ) of all seasons.",
+      "choices": [
+        "well",
+        "good",
+        "best",
+        "better"
+      ],
+      "answerIndex": 2,
+      "explanation": "like ～ the best。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g2_06_005",
+      "unit": "english.j2.s2.a07",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "My bag is as (   ) as yours.",
+      "choices": [
+        "bigger",
+        "more big",
+        "biggest",
+        "big"
+      ],
+      "answerIndex": 3,
+      "explanation": "as ～ as。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g2_06_006",
+      "unit": "english.j2.s2.a07.main",
+      "category": "knowledge",
+      "prompt": "「bad」の比較級は？",
+      "choices": [
+        "badder",
+        "worse",
+        "worst",
+        "more bad"
+      ],
+      "answerIndex": 1,
+      "explanation": "bad - worse - worst",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g2_06_007",
+      "unit": "english.j2.s2.a07",
+      "category": "knowledge",
+      "prompt": "「many」の最上級は？",
+      "choices": [
+        "most",
+        "manyest",
+        "mostest",
+        "more"
+      ],
+      "answerIndex": 0,
+      "explanation": "many - more - most",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g2_06_008",
+      "unit": "english.j2.s2.a07.main",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Who runs (   ), Ken or Taro?",
+      "choices": [
+        "faster",
+        "fast",
+        "more fast",
+        "fastest"
+      ],
+      "answerIndex": 0,
+      "explanation": "2人の比較。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g2_06_009",
+      "unit": "english.j2.s2.a07.main",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "This is (   ) than that.",
+      "choices": [
+        "more better",
+        "very better",
+        "much best",
+        "much better"
+      ],
+      "answerIndex": 3,
+      "explanation": "比較級の強調は much。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g2_06_010",
+      "unit": "english.j2.s2.a07",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Tom is not as old (   ) Jim.",
+      "choices": [
+        "than",
+        "as",
+        "so",
+        "like"
+      ],
+      "answerIndex": 1,
+      "explanation": "not as ～ as。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g2_06_011",
+      "unit": "english.j2.s2.a07",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Lake Biwa is the largest lake (   ) Japan.",
+      "choices": [
+        "at",
+        "than",
+        "in",
+        "of"
+      ],
+      "answerIndex": 2,
+      "explanation": "範囲は in。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g2_06_012",
+      "unit": "english.j2.s2.a07",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Which is the most popular sport (   ) the five?",
+      "choices": [
+        "than",
+        "at",
+        "in",
+        "of"
+      ],
+      "answerIndex": 3,
+      "explanation": "複数は of。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    }
+  ]
+}

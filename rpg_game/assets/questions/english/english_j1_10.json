@@ -1,0 +1,186 @@
+{
+  "setId": "english_j1_10",
+  "worldId": "english",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "eng_j110_001",
+      "unit": "english.j1.s2.a10",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "(   ) did you go last Sunday? — To the zoo.",
+      "choices": [
+        "Who",
+        "What",
+        "When",
+        "Where"
+      ],
+      "answerIndex": 3,
+      "explanation": "場所は where。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j110_002",
+      "unit": "english.j1.s2.a10",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Ken was (   ) a book then.",
+      "choices": [
+        "read",
+        "reading",
+        "reads",
+        "to read"
+      ],
+      "answerIndex": 1,
+      "explanation": "過去進行形。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j110_003",
+      "unit": "english.j1.s2.a10",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "She (   ) her room every day.",
+      "choices": [
+        "clean",
+        "is clean",
+        "cleaning",
+        "cleans"
+      ],
+      "answerIndex": 3,
+      "explanation": "3単現。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j110_004",
+      "unit": "english.j1.s2.a10",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "There (   ) two cats under the table.",
+      "choices": [
+        "are",
+        "am",
+        "is",
+        "be"
+      ],
+      "answerIndex": 0,
+      "explanation": "複数なので are。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j110_005",
+      "unit": "english.j1.s2.a10",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "How (   ) water do you need?",
+      "choices": [
+        "old",
+        "long",
+        "many",
+        "much"
+      ],
+      "answerIndex": 3,
+      "explanation": "数えられない量は how much。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j110_006",
+      "unit": "english.j1.s2.a10",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「take」の過去形は？",
+      "choices": [
+        "taked",
+        "takes",
+        "took",
+        "taken"
+      ],
+      "answerIndex": 2,
+      "explanation": "take → took",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j110_007",
+      "unit": "english.j1.s2.a10",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Don't (   ) late.",
+      "choices": [
+        "being",
+        "are",
+        "is",
+        "be"
+      ],
+      "answerIndex": 3,
+      "explanation": "Don't be late. ＝ おくれないで",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j110_008",
+      "unit": "english.j1.s2.a10",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "I (   ) my homework last night.",
+      "choices": [
+        "do",
+        "does",
+        "did",
+        "done"
+      ],
+      "answerIndex": 2,
+      "explanation": "do → did",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j110_009",
+      "unit": "english.j1.s2.a10",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Can your sister (   )?",
+      "choices": [
+        "skate",
+        "skates",
+        "skated",
+        "skating"
+      ],
+      "answerIndex": 0,
+      "explanation": "can ＋ 元の形。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "eng_j110_010",
+      "unit": "english.j1.s2.a10",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「How many students are there in your class?」に合う答えは？",
+      "choices": [
+        "It is thirty.",
+        "Yes, there are.",
+        "They are students.",
+        "There are thirty."
+      ],
+      "answerIndex": 3,
+      "explanation": "There are ～. で数を答える。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    }
+  ]
+}

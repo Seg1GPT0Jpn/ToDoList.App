@@ -1,0 +1,209 @@
+{
+  "setId": "sea_g1_01",
+  "worldId": "english",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g1_01_001",
+      "unit": "english.j1.s1.a01",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "My father (   ) a doctor.",
+      "choices": [
+        "is",
+        "are",
+        "am",
+        "does"
+      ],
+      "answerIndex": 0,
+      "explanation": "my father は is。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_01_002",
+      "unit": "english.j1.s1.a01",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "(   ) they your classmates? — Yes, they are.",
+      "choices": [
+        "Do",
+        "Are",
+        "Does",
+        "Is"
+      ],
+      "answerIndex": 1,
+      "explanation": "they は are。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_01_003",
+      "unit": "english.j1.s1.a01",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "I (   ) not hungry now.",
+      "choices": [
+        "are",
+        "is",
+        "do",
+        "am"
+      ],
+      "answerIndex": 3,
+      "explanation": "I am not。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_01_004",
+      "unit": "english.j1.s1.a01",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Do you (   ) a computer?",
+      "choices": [
+        "uses",
+        "using",
+        "use",
+        "are"
+      ],
+      "answerIndex": 2,
+      "explanation": "Do ＋ 主語 ＋ 元の形。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_01_005",
+      "unit": "english.j1.s1.a01",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "We don't (   ) on Sundays.",
+      "choices": [
+        "study",
+        "studies",
+        "studying",
+        "are"
+      ],
+      "answerIndex": 0,
+      "explanation": "don't ＋ 元の形。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_01_006",
+      "unit": "english.j1.s1.a01.main",
+      "category": "usage",
+      "prompt": "正しい文は？",
+      "choices": [
+        "Are you a student?",
+        "Do you a student?",
+        "Is you a student?",
+        "You are a student?"
+      ],
+      "answerIndex": 0,
+      "explanation": "be動詞の疑問文。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_01_007",
+      "unit": "english.j1.s1.a01",
+      "category": "usage",
+      "prompt": "正しい文は？",
+      "choices": [
+        "I am not like spiders.",
+        "I don't like spiders.",
+        "I doesn't like spiders.",
+        "I not like spiders."
+      ],
+      "answerIndex": 1,
+      "explanation": "一般動詞の否定。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_01_008",
+      "unit": "english.j1.s1.a01",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "This (   ) not my notebook.",
+      "choices": [
+        "are",
+        "does",
+        "is",
+        "do"
+      ],
+      "answerIndex": 2,
+      "explanation": "this は is。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_01_009",
+      "unit": "english.j1.s1.a01",
+      "category": "usage",
+      "prompt": "「Are you busy?」に「いいえ」と答えると？",
+      "choices": [
+        "No, I'm not.",
+        "No, I don't.",
+        "No, I amn't.",
+        "No, you aren't."
+      ],
+      "answerIndex": 0,
+      "explanation": "Are you ～? → No, I'm not.",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_01_010",
+      "unit": "english.j1.s1.a01",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "They (   ) to school by train.",
+      "choices": [
+        "goes",
+        "go",
+        "going",
+        "are"
+      ],
+      "answerIndex": 1,
+      "explanation": "they はそのまま。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_01_011",
+      "unit": "english.j1.s1.a01",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "(   ) you and Ken brothers?",
+      "choices": [
+        "Is",
+        "Am",
+        "Do",
+        "Are"
+      ],
+      "answerIndex": 3,
+      "explanation": "you and Ken は複数。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_01_012",
+      "unit": "english.j1.s1.a01",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "I (   ) a piano at home.",
+      "choices": [
+        "having",
+        "have",
+        "am",
+        "has"
+      ],
+      "answerIndex": 1,
+      "explanation": "I have。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    }
+  ]
+}

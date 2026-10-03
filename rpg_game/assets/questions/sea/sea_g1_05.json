@@ -1,0 +1,207 @@
+{
+  "setId": "sea_g1_05",
+  "worldId": "english",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g1_05_001",
+      "unit": "english.j1.s2.a07",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Mom is (   ) dinner now.",
+      "choices": [
+        "makes",
+        "making",
+        "makeing",
+        "make"
+      ],
+      "answerIndex": 1,
+      "explanation": "e をとって ing。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_05_002",
+      "unit": "english.j1.s2.a07",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "The children (   ) running in the yard.",
+      "choices": [
+        "is",
+        "are",
+        "be",
+        "do"
+      ],
+      "answerIndex": 1,
+      "explanation": "children は複数。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_05_003",
+      "unit": "english.j1.s2.a07",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Are you (   ) to the radio?",
+      "choices": [
+        "listening",
+        "listen",
+        "listened",
+        "listens"
+      ],
+      "answerIndex": 0,
+      "explanation": "be ＋ ～ing。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_05_004",
+      "unit": "english.j1.s2.a07",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "I'm not (   ) a book.",
+      "choices": [
+        "to read",
+        "reads",
+        "read",
+        "reading"
+      ],
+      "answerIndex": 3,
+      "explanation": "not ＋ ～ing。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_05_005",
+      "unit": "english.j1.s2.a07",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "What is she (   )? — She is writing an e-mail.",
+      "choices": [
+        "do",
+        "does",
+        "done",
+        "doing"
+      ],
+      "answerIndex": 3,
+      "explanation": "What is ～ doing?",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_05_006",
+      "unit": "english.j1.s2.a07",
+      "category": "knowledge",
+      "prompt": "「lie（横になる）」の ing 形は？",
+      "choices": [
+        "lieing",
+        "lies",
+        "liing",
+        "lying"
+      ],
+      "answerIndex": 3,
+      "explanation": "ie → ying",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_05_007",
+      "unit": "english.j1.s2.a07",
+      "category": "knowledge",
+      "prompt": "「begin」の ing 形は？",
+      "choices": [
+        "beginnig",
+        "begins",
+        "begining",
+        "beginning"
+      ],
+      "answerIndex": 3,
+      "explanation": "n を重ねる。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_05_008",
+      "unit": "english.j1.s2.a07",
+      "category": "knowledge",
+      "prompt": "「dance」の ing 形は？",
+      "choices": [
+        "dancting",
+        "dances",
+        "dancing",
+        "danceing"
+      ],
+      "answerIndex": 2,
+      "explanation": "e をとる。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_05_009",
+      "unit": "english.j1.s2.a07",
+      "category": "usage",
+      "prompt": "進行形にできない文は？",
+      "choices": [
+        "I am having a brother.",
+        "He is eating.",
+        "I am playing tennis.",
+        "I am having lunch."
+      ],
+      "answerIndex": 0,
+      "explanation": "「持っている」の have は進行形にしない。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_05_010",
+      "unit": "english.j1.s2.a07",
+      "category": "usage",
+      "prompt": "「Is Ken studying?」に「いいえ」と答えると？",
+      "choices": [
+        "No, he not.",
+        "No, he doesn't.",
+        "No, he isn't.",
+        "No, Ken don't."
+      ],
+      "answerIndex": 2,
+      "explanation": "be動詞で答える。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_05_011",
+      "unit": "english.j1.s2.a07",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Listen! Someone (   ) singing.",
+      "choices": [
+        "are",
+        "is",
+        "do",
+        "does"
+      ],
+      "answerIndex": 1,
+      "explanation": "someone は単数。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sea_g1_05_012",
+      "unit": "english.j1.s2.a07",
+      "category": "usage",
+      "prompt": "(   ) に入るのは？",
+      "sentence": "Look! The sun (   ) rising.",
+      "choices": [
+        "is",
+        "does",
+        "are",
+        "has"
+      ],
+      "answerIndex": 0,
+      "explanation": "進行形。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    }
+  ]
+}
