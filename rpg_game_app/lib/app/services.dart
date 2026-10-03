@@ -74,38 +74,7 @@ class RpgServices extends InheritedWidget {
       if (s != null) sets.add(s);
     }
     if (sets.isEmpty) return null;
-    // 英語のバトルには、エリアの語彙レベルに合ったつづ単の単語問題も混ぜる
-    if (stage.worldId == RpgCatalog.englishWorldId) {
-      final vocab = await _tsuzutanSets(stage);
-      for (final v in vocab) {
-        questions.adopt(v);
-      }
-      sets.addAll(vocab);
-    }
     return sets.length == 1 ? sets.first : QuestionSet.merge(stage.id, sets);
-  }
-
-  /// つづ単（公開版）から、エリアに合うレベルの単語問題を少しだけ作る
-  Future<List<QuestionSet>> _tsuzutanSets(StageDef stage) async {
-    final levels = Tsuzutan.levelsForStage(stage.vocabLevel);
-    final candidates = [
-      for (final l in Tsuzutan.lists)
-        if (levels.contains(l.level)) l.id,
-    ]..shuffle();
-    final lists = <WordList>[];
-    for (final id in candidates.take(2)) {
-      try {
-        final raw = utf8.decode(
-          (await rootBundle.load('packages/rpg_game/assets/words/$id.json'))
-              .buffer
-              .asUint8List(),
-        );
-        lists.add(WordList.fromJson(jsonDecode(raw) as Map<String, dynamic>));
-      } catch (_) {
-        // 読めなければ単語問題なしで続ける
-      }
-    }
-    return Tsuzutan.battleSets(lists, count: 10);
   }
 
   /// デイリークエストで選ぶ教科（持っている、遊べるワールド）

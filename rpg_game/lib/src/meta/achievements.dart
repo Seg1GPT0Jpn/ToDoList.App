@@ -70,7 +70,6 @@ class Achievements {
         'social',
         'japanese',
         'math',
-        'information',
       ].where((s) => c.record.subjectLevel(s) >= level).length;
 
   static final all = <AchievementDef>[
@@ -277,10 +276,10 @@ class Achievements {
     AchievementDef(
       id: 'all_subjects',
       title: '知識の探究者',
-      description: '6教科すべての問題に答える',
+      description: '5教科すべての問題に答える',
       group: AchievementGroup.learning,
       rarity: Rarity.rare,
-      goal: 6,
+      goal: 5,
       value: (c) => {
         for (final s in c.record.stats.values)
           if (s.setId.isNotEmpty) LearningRecord.subjectOf(s.setId),
@@ -289,7 +288,7 @@ class Achievements {
     AchievementDef(
       id: 'english_clear',
       title: '英語の旅人',
-      description: '英語ワールドで「ことばの欠片」を取りもどす',
+      description: '英語の国で「ことばの欠片」を取りもどす',
       group: AchievementGroup.battle,
       rarity: Rarity.epic,
       goal: 1,
@@ -298,10 +297,10 @@ class Achievements {
     AchievementDef(
       id: 'fragments_6',
       title: '世界をつなぐ者',
-      description: '6つの知識の欠片をすべて取りもどす',
+      description: '5つの知識の欠片をすべて取りもどす',
       group: AchievementGroup.collection,
       rarity: Rarity.legendary,
-      goal: 6,
+      goal: 5,
       value: (c) => Story.fragments(c.progress).length,
     ),
     AchievementDef(

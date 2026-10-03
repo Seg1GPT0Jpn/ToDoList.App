@@ -15,7 +15,6 @@ const examSubjects = [
   'japanese',
   'science',
   'social',
-  'information',
 ];
 
 /// 成長と学習ルート：何ができるようになったか（4つのものさし）、

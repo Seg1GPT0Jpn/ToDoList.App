@@ -188,7 +188,7 @@ def _section_no(r, k):
 
 
 def _dart(s):
-    return "'" + s.replace('\\', '\\\\').replace("'", "\\'").replace('$', '\\$') + "'"
+    return "'" + s.replace('\\', '\\\\').replace("'", "\\'").replace('$', '\\$').replace('\n', '\\n') + "'"
 
 
 def _enemy(w, r, k, a):
@@ -260,7 +260,7 @@ def write_questions(w):
 def write_catalog(w):
     L = ['// このファイルは tool/junior/gen.py が問題データと同時に生成しています。',
          '// 手で直さず tool/junior/<教科>.py を直してください。',
-         "import '../models/question.dart';",
+         *(["import '../models/question.dart';"] if w.routes else []),
          "import '../models/stage.dart';",
          "import 'route_world.dart';",
          '',
@@ -268,6 +268,11 @@ def write_catalog(w):
          f'  const {w.cls}._();',
          '',
          f"  static const worldId = '{w.id}';",
+         f'  static const name = {_dart(w.name)};',
+         f'  static const subject = {_dart(w.subject)};',
+         f'  static const hubName = {_dart(w.hub)};',
+         f'  static const hubSign = {_dart(w.sign)};',
+         f'  static const description = {_dart(w.desc)};',
          '',
          '  static const routes = <RouteSpec>[']
     for r in w.routes:
@@ -296,7 +301,8 @@ def write_catalog(w):
         L.append('      ],')
         L.append('    ),')
     L += ['  ];', '',
-          '  static final stages = RouteWorldBuilder.build(worldId, routes);',
+          '  static final List<StageDef> stages =',
+          '      RouteWorldBuilder.build(worldId, routes);',
           '}', '']
     (DATA / f'{w.id}_catalog.dart').write_text('\n'.join(L), encoding='utf-8')
 

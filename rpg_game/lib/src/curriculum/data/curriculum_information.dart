@@ -71,7 +71,7 @@ const informationCurriculum = CurriculumNode(
                     '特許',
                     '商標',
                     'クリエイティブ・コモンズ',
-                    '引用'
+                    '引用',
                   ],
                 ),
                 CurriculumNode(
@@ -90,7 +90,7 @@ const informationCurriculum = CurriculumNode(
                     '炎上',
                     'ネットいじめ',
                     'フィルタリング',
-                    'デジタルタトゥー'
+                    'デジタルタトゥー',
                   ],
                 ),
               ],
@@ -113,7 +113,7 @@ const informationCurriculum = CurriculumNode(
                     '不正アクセス',
                     'ランサム',
                     'ソーシャルエンジニアリング',
-                    '心理的なすき'
+                    '心理的なすき',
                   ],
                 ),
                 CurriculumNode(
@@ -127,7 +127,7 @@ const informationCurriculum = CurriculumNode(
                     '多要素',
                     'ファイアウォール',
                     'アップデート',
-                    'バックアップ'
+                    'バックアップ',
                   ],
                 ),
                 CurriculumNode(
@@ -204,7 +204,7 @@ const informationCurriculum = CurriculumNode(
                     'ユーザインタフェース',
                     'ユニバーサル',
                     'アクセシビリティ',
-                    'ユーザビリティ'
+                    'ユーザビリティ',
                   ],
                 ),
                 CurriculumNode(
@@ -302,7 +302,7 @@ const informationCurriculum = CurriculumNode(
                     '補助記憶',
                     '入力装置',
                     '出力装置',
-                    '五大装置'
+                    '五大装置',
                   ],
                 ),
                 CurriculumNode(
@@ -483,7 +483,7 @@ const informationCurriculum = CurriculumNode(
                     'IPv4',
                     'IPv6',
                     'MACアドレス',
-                    'DHCP'
+                    'DHCP',
                   ],
                 ),
               ],
@@ -513,7 +513,7 @@ const informationCurriculum = CurriculumNode(
                     'メール',
                     'SMTP',
                     'POP',
-                    'IMAP'
+                    'IMAP',
                   ],
                 ),
                 CurriculumNode(
@@ -624,7 +624,7 @@ const informationCurriculum = CurriculumNode(
                     '正解ラベル',
                     '教師あり',
                     '教師なし',
-                    '正解率'
+                    '正解率',
                   ],
                 ),
               ],

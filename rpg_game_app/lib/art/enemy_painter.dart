@@ -93,7 +93,7 @@ void paintEnemy(
       _squid(canvas, size, t, c ?? const Color(0xFFEF9A9A));
     case 'leviathan':
       _leviathan(canvas, size, t, c ?? const Color(0xFF1F4E79));
-    // 模擬試験の空の魔物
+    // 高校入試の空の魔物
     case 'cloudling':
       _cloudling(canvas, size, t, c ?? const Color(0xFF90A4AE));
     case 'bird':

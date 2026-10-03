@@ -87,7 +87,7 @@ class _PromoDialogState extends State<_PromoDialog> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text(
-            'コードを入力すると、理科・社会・国語・数学・情報の5つのワールドを受け取れます。',
+            'コードを入力すると、算数・数学・国語・理科・社会の4つのワールドを受け取れます。',
             style: TextStyle(fontSize: 13, height: 1.5),
           ),
           const SizedBox(height: 12),

@@ -1,0 +1,212 @@
+{
+  "setId": "math_e5_06",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_e506_001",
+      "unit": "math.e5.s2.a06",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "1/5 + 1/2 は？",
+      "choices": [
+        "2/7",
+        "3/5",
+        "7/10",
+        "4/5"
+      ],
+      "answerIndex": 2,
+      "explanation": "通分してから分子をたし、約分する。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e506_002",
+      "unit": "math.e5.s2.a06",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "1/2 + 3/4 は？",
+      "choices": [
+        "4/6",
+        "1",
+        "5/4",
+        "3/2"
+      ],
+      "answerIndex": 2,
+      "explanation": "通分してから分子をたし、約分する。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e506_003",
+      "unit": "math.e5.s2.a06",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "1/7 + 2/3 は？",
+      "choices": [
+        "3/10",
+        "16/21",
+        "17/21",
+        "6/7"
+      ],
+      "answerIndex": 2,
+      "explanation": "通分してから分子をたし、約分する。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e506_004",
+      "unit": "math.e5.s2.a06",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "1/2 − 1/4 は？",
+      "choices": [
+        "1/4",
+        "2/4",
+        "1/2",
+        "3/4"
+      ],
+      "answerIndex": 0,
+      "explanation": "通分してから分子をひき、約分する。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e506_005",
+      "unit": "math.e5.s2.a06",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "7/9 − 1/6 は？",
+      "choices": [
+        "6/18",
+        "11/18",
+        "2/3",
+        "17/18"
+      ],
+      "answerIndex": 1,
+      "explanation": "通分してから分子をひき、約分する。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e506_006",
+      "unit": "math.e5.s2.a06",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "1/9 + 1/4 は？",
+      "choices": [
+        "2/17",
+        "25/72",
+        "13/36",
+        "3/8"
+      ],
+      "answerIndex": 2,
+      "explanation": "通分してから分子をたし、約分する。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e506_007",
+      "unit": "math.e5.s2.a06",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "1/2 − 1/8 は？",
+      "choices": [
+        "2/24",
+        "3/8",
+        "5/12",
+        "5/8"
+      ],
+      "answerIndex": 1,
+      "explanation": "通分してから分子をひき、約分する。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e506_008",
+      "unit": "math.e5.s2.a06",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "1/2 − 1/7 は？",
+      "choices": [
+        "2/14",
+        "5/14",
+        "3/7",
+        "9/14"
+      ],
+      "answerIndex": 1,
+      "explanation": "通分してから分子をひき、約分する。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e506_009",
+      "unit": "math.e5.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "6/8 を約分すると？",
+      "choices": [
+        "1/2",
+        "2/3",
+        "3/4",
+        "6/4"
+      ],
+      "answerIndex": 2,
+      "explanation": "分母と分子を2でわる。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e506_010",
+      "unit": "math.e5.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "分母がちがう分数を、分母が同じ分数になおすことを何という？",
+      "choices": [
+        "帯分数",
+        "通分",
+        "四捨五入",
+        "約分"
+      ],
+      "answerIndex": 1,
+      "explanation": "分母を最小公倍数にそろえる。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e506_011",
+      "unit": "math.e5.s2.a06",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "2/3 と 3/4 では、どちらが大きい？",
+      "choices": [
+        "同じ",
+        "3/4",
+        "くらべられない",
+        "2/3"
+      ],
+      "answerIndex": 1,
+      "explanation": "8/12 と 9/12。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e506_012",
+      "unit": "math.e5.s2.a06",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "3 ÷ 4 を分数で表すと？",
+      "choices": [
+        "1/12",
+        "3/7",
+        "3/4",
+        "4/3"
+      ],
+      "answerIndex": 2,
+      "explanation": "わり算の商は「わられる数/わる数」。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    }
+  ]
+}

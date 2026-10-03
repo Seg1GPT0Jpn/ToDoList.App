@@ -9,13 +9,12 @@ import 'exam_world_screens.dart';
 import 'realm_style.dart';
 import 'sea_battle_launcher.dart';
 import 'sea_home_screen.dart';
-import 'term_cards.dart';
 
-/// 模擬試験の空：定期テストの海と対になる、もっと難しい学習モード。
+/// 高校入試の空：定期テストの海と対になる、もっと難しい学習モード。
 ///
 /// - 単元ごとに空の魔物とバトル（2回まちがえると倒れる・制限時間は RPG の半分）
 /// - 「模試対策」：範囲を入力すると、飛行船→ロケットで進む航路ができる
-/// - 「採点模試」：制限時間の中で教科を順に解き、100点満点で採点する
+/// - 「入試模試」：制限時間の中で教科を順に解き、100点満点で採点する
 class SkyHomeScreen extends StatefulWidget {
   const SkyHomeScreen({super.key});
 
@@ -48,10 +47,8 @@ class _SkyHomeScreenState extends State<SkyHomeScreen> {
     final world = RpgCatalog.world(_subject);
     final sections = _sections(world);
     final english = world.id == RpgCatalog.englishWorldId;
-    final cards = TermDecks.of(world.id).isNotEmpty;
     final extraTabs = [
       if (english) const Tab(text: '単語'),
-      if (cards) const Tab(text: '暗記カード'),
     ];
     final chooser = SizedBox(
       height: 44,
@@ -81,7 +78,7 @@ class _SkyHomeScreenState extends State<SkyHomeScreen> {
           title: Text(_realm.title, style: serif(19, color: _realm.ink)),
           actions: [
             IconButton(
-              tooltip: '採点模試',
+              tooltip: '入試模試',
               onPressed: () => Navigator.of(context).push(
                 MaterialPageRoute<void>(builder: (_) => const MockExamScreen()),
               ),
@@ -132,12 +129,6 @@ class _SkyHomeScreenState extends State<SkyHomeScreen> {
                     ),
                   if (english)
                     WordBooksTab(progress: progress, realm: StudyRealm.sky),
-                  if (cards)
-                    TermCardsTab(
-                      world: world,
-                      progress: progress,
-                      realm: StudyRealm.sky,
-                    ),
                 ],
               );
             },
@@ -187,7 +178,7 @@ class _SectionTab extends StatelessWidget {
           child: const Padding(
             padding: EdgeInsets.all(12),
             child: Text(
-              '☁ 模擬試験の空は、定期テストの海よりさらに難しい上級者向けのモードです。\n'
+              '☁ 高校入試の空は、定期テストの海よりさらに難しい上級者向けのモードです。\n'
               '・2回まちがえると倒れる　・制限時間は RPG の半分　・空の魔物は約16回の正解で倒せる\n'
               'RPG の進行や経験値は変わりません。正答率の自己ベストが残ります。',
               style: TextStyle(fontSize: 12, height: 1.6),

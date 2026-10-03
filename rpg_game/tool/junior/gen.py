@@ -28,6 +28,16 @@ def worlds():
     math_e.build(W)
     math_j.build(W)
     out.append(W)
+
+    # まだ問題を書いていない教科（準備中）
+    for wid, cls, name, subject in [
+        ('english', 'EnglishCatalog', '英語の国', '英語'),
+        ('japanese', 'JapaneseCatalog', '言の葉の国', '国語'),
+        ('science', 'ScienceCatalog', '理の国', '理科'),
+        ('social', 'SocialCatalog', '時と地の国', '社会'),
+    ]:
+        if not any(w.id == wid for w in out):
+            out.append(World(wid, cls, name, subject, prefix=wid[:3], hub='', sign='', desc=''))
     return out
 
 
@@ -36,8 +46,12 @@ def main():
     maps = []
     total = 0
     for w in ws:
+        if not w.routes:
+            lib.write_catalog(w)
+            continue
         n = lib.write_questions(w)
         lib.write_catalog(w)
+        (lib.CUR / 'src').mkdir(exist_ok=True)
         (lib.CUR / 'src' / f'{w.id}.txt').write_text(lib.curriculum_text(w), encoding='utf-8')
         maps += lib.map_lines(w)
         areas = sum(len(r.areas) for r in w.routes)

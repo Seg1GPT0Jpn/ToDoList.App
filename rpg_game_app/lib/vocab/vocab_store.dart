@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:flutter/services.dart';
 import 'package:rpg_game/rpg_game.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -24,7 +23,6 @@ class VocabStore {
   final SharedPreferences _prefs;
 
   static const _booksKey = 'vocab_books';
-  static const _unlockKey = 'vocab_unlocked_books';
   static const _progressPrefix = 'vocab_progress_';
   static const _voiceKey = 'vocab_voice';
 
@@ -49,76 +47,11 @@ class VocabStore {
     return null;
   }
 
-  Set<String> get _unlocked => {...?_prefs.getStringList(_unlockKey)};
-
-  /// 名前とパスワードで開いた単語帳があるか
-  bool get unlocked => _unlocked.isNotEmpty;
-
-  /// 同梱された暗号化ファイルを読む（見つからなければ null）
-  static Future<List<int>?> Function(String file) assetLoader = _loadAsset;
-
-  static Future<List<int>?> _loadAsset(String file) async {
-    try {
-      // ウェブでもそのまま配れるように、暗号文を base64 のテキストで置いている
-      return base64Decode(
-        (await rootBundle.loadString('assets/vocab/$file.txt')).trim(),
-      );
-    } catch (_) {
-      return null;
-    }
-  }
-
-  /// 名前とパスワードで単語帳を開く。ちがえば null
-  Future<VocabBook?> unlock(String name, String password) async {
-    if (name.trim().isEmpty || password.trim().isEmpty) return null;
-    final data = await assetLoader(VocabVault.fileName(name));
-    if (data == null) return null;
-    final opened = VocabVault.open(data, password);
-    if (opened == null) return null;
-    final id = opened.title.toLowerCase();
-    var b = book(id);
-    if (b == null) {
-      b = VocabBook(
-        id: id,
-        title: opened.title,
-        kind: VocabBookKind.protectedImport,
-        cards: opened.cards,
-      );
-      books.insert(0, b);
-    } else {
-      // 例文など自分で足したものは残し、単語と意味は同梱のものにそろえる
-      final mine = {for (final c in b.cards) c.id: c};
-      b.cards = [
-        for (final c in opened.cards)
-          mine[c.id] == null
-              ? c
-              : c.copyWith(
-                  pron: mine[c.id]!.pron.isEmpty ? null : mine[c.id]!.pron,
-                  example: mine[c.id]!.example.isEmpty
-                      ? null
-                      : mine[c.id]!.example,
-                  exampleJa: mine[c.id]!.exampleJa.isEmpty
-                      ? null
-                      : mine[c.id]!.exampleJa,
-                ),
-      ];
-    }
-    await _prefs.setStringList(_unlockKey, [..._unlocked, id]);
-    await saveBooks();
-    return b;
-  }
-
-  /// LEAP・EEVI を隠す（学習記録は残る）
-  Future<void> lock() => _prefs.remove(_unlockKey);
-
-  /// 開ける単語帳（名前とパスワードで開いていない単語帳は除く）
-  List<VocabBook> get visibleBooks {
-    final open = _unlocked;
-    return [
-      for (final b in books)
-        if (!b.isProtected || open.contains(b.id)) b,
-    ];
-  }
+  /// 開ける単語帳（自分で作った・取り込んだ単語帳）
+  List<VocabBook> get visibleBooks => [
+    for (final b in books)
+      if (!b.isProtected) b,
+  ];
 
   Future<void> saveBooks() => _prefs.setString(
     _booksKey,

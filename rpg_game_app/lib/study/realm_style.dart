@@ -3,7 +3,7 @@ import 'package:rpg_game/rpg_game.dart';
 
 import '../app/theme.dart';
 
-/// 定期テストの海・模擬試験の空の色
+/// 定期テストの海・高校入試の空の色
 extension RealmStyle on StudyRealm {
   /// 文字・ボタンの色
   Color get ink => switch (this) {

@@ -1,0 +1,212 @@
+{
+  "setId": "math_e4_09",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_e409_001",
+      "unit": "math.e4.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "2本の直線が直角に交わるとき、2本の直線は何の関係？",
+      "choices": [
+        "平行",
+        "対角線",
+        "垂直",
+        "合同"
+      ],
+      "answerIndex": 2,
+      "explanation": "直角に交わる → 垂直。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e409_002",
+      "unit": "math.e4.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "1本の直線に垂直な2本の直線は何の関係？",
+      "choices": [
+        "合同",
+        "平行",
+        "交わる",
+        "垂直"
+      ],
+      "answerIndex": 1,
+      "explanation": "平行な直線はどこまでのばしても交わらない。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e409_003",
+      "unit": "math.e4.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "向かい合った1組のへんが平行な四角形は？",
+      "choices": [
+        "台形",
+        "ひし形",
+        "正方形",
+        "平行四辺形"
+      ],
+      "answerIndex": 0,
+      "explanation": "台形は1組だけ平行。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e409_004",
+      "unit": "math.e4.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "向かい合った2組のへんがそれぞれ平行な四角形は？",
+      "choices": [
+        "五角形",
+        "台形",
+        "三角形",
+        "平行四辺形"
+      ],
+      "answerIndex": 3,
+      "explanation": "平行四辺形は2組とも平行。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e409_005",
+      "unit": "math.e4.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "4つのへんの長さがみんな等しい四角形は？",
+      "choices": [
+        "ひし形",
+        "長方形",
+        "台形",
+        "平行四辺形（いつも）"
+      ],
+      "answerIndex": 0,
+      "explanation": "ひし形はへんがすべて等しい。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e409_006",
+      "unit": "math.e4.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "四角形の向かい合ったちょう点を結んだ直線を何という？",
+      "choices": [
+        "対角線",
+        "平行線",
+        "半径",
+        "垂線"
+      ],
+      "answerIndex": 0,
+      "explanation": "四角形の対角線は2本。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e409_007",
+      "unit": "math.e4.s2.a09",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "平行四辺形の向かい合った角の大きさは？",
+      "choices": [
+        "いつも90°",
+        "いつもちがう",
+        "合わせて90°",
+        "等しい"
+      ],
+      "answerIndex": 3,
+      "explanation": "平行四辺形は向かい合う角が等しい。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e409_008",
+      "unit": "math.e4.s2.a09",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "2本の対角線が垂直に交わる四角形は？",
+      "choices": [
+        "長方形",
+        "台形",
+        "ひし形",
+        "平行四辺形（いつも）"
+      ],
+      "answerIndex": 2,
+      "explanation": "ひし形と正方形は対角線が垂直。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e409_009",
+      "unit": "math.e4.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "立方体の面の数は？",
+      "choices": [
+        "4",
+        "6",
+        "8",
+        "12"
+      ],
+      "answerIndex": 1,
+      "explanation": "正方形6つでかこまれた形。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e409_010",
+      "unit": "math.e4.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "直方体の辺の数は？",
+      "choices": [
+        "6",
+        "8",
+        "10",
+        "12"
+      ],
+      "answerIndex": 3,
+      "explanation": "直方体は辺12、頂点8、面6。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e409_011",
+      "unit": "math.e4.s2.a09",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "直方体で、1つの面に平行な面はいくつ？",
+      "choices": [
+        "4つ",
+        "1つ",
+        "2つ",
+        "0"
+      ],
+      "answerIndex": 1,
+      "explanation": "向かい合う面が平行。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e409_012",
+      "unit": "math.e4.s2.a09",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "直方体で、1つの面に垂直な面はいくつ？",
+      "choices": [
+        "6つ",
+        "4つ",
+        "1つ",
+        "2つ"
+      ],
+      "answerIndex": 1,
+      "explanation": "となり合う4つの面が垂直。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    }
+  ]
+}

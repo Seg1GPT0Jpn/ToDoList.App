@@ -1,0 +1,212 @@
+{
+  "setId": "math_j2_07",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_j207_001",
+      "unit": "math.j2.s2.a07",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "さいころを1回投げて、偶数の目が出る確率は？",
+      "choices": [
+        "1/6",
+        "1/3",
+        "1/2",
+        "2/3"
+      ],
+      "answerIndex": 2,
+      "explanation": "2, 4, 6 の3通り ÷ 6。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j207_002",
+      "unit": "math.j2.s2.a07",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "さいころを1回投げて、3の倍数の目が出る確率は？",
+      "choices": [
+        "1/6",
+        "1/3",
+        "1/2",
+        "2/3"
+      ],
+      "answerIndex": 1,
+      "explanation": "3, 6 の2通り ÷ 6。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j207_003",
+      "unit": "math.j2.s2.a07",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "2枚の硬貨を投げて、2枚とも表になる確率は？",
+      "choices": [
+        "1/4",
+        "1/3",
+        "1/2",
+        "3/4"
+      ],
+      "answerIndex": 0,
+      "explanation": "表表・表裏・裏表・裏裏の4通り。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j207_004",
+      "unit": "math.j2.s2.a07",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "2個のさいころを投げて、目の和が7になる確率は？",
+      "choices": [
+        "1/36",
+        "1/12",
+        "1/6",
+        "7/36"
+      ],
+      "answerIndex": 2,
+      "explanation": "6通り ÷ 36。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j207_005",
+      "unit": "math.j2.s2.a07",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "2個のさいころを投げて、同じ目が出る確率は？",
+      "choices": [
+        "1/36",
+        "1/6",
+        "1/3",
+        "1/2"
+      ],
+      "answerIndex": 1,
+      "explanation": "6通り ÷ 36。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j207_006",
+      "unit": "math.j2.s2.a07",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "赤玉3個・白玉2個から1個取り出すとき、白玉の確率は？",
+      "choices": [
+        "2/5",
+        "1/2",
+        "3/5",
+        "2/3"
+      ],
+      "answerIndex": 0,
+      "explanation": "2 ÷ 5。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j207_007",
+      "unit": "math.j2.s2.a07",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "あることがらの起こる確率が 0.3 のとき、起こらない確率は？",
+      "choices": [
+        "0",
+        "0.3",
+        "0.7",
+        "1.3"
+      ],
+      "answerIndex": 2,
+      "explanation": "1 − 0.3。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j207_008",
+      "unit": "math.j2.s2.a07",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "A, B, C の3人から2人を選ぶ組み合わせは何通り？",
+      "choices": [
+        "6通り",
+        "3通り",
+        "9通り",
+        "2通り"
+      ],
+      "answerIndex": 1,
+      "explanation": "AB, AC, BC。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j207_009",
+      "unit": "math.j2.s2.a07",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "2個のさいころを投げて、少なくとも1つ1の目が出る確率は？",
+      "choices": [
+        "1/6",
+        "11/36",
+        "1/3",
+        "25/36"
+      ],
+      "answerIndex": 1,
+      "explanation": "1 − 25/36。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j207_010",
+      "unit": "math.j2.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "必ず起こることがらの確率は？",
+      "choices": [
+        "0",
+        "0.5",
+        "1",
+        "100"
+      ],
+      "answerIndex": 2,
+      "explanation": "起こらないことは0。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j207_011",
+      "unit": "math.j2.s2.a07",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "1〜10のカードから1枚引いて素数が出る確率は？",
+      "choices": [
+        "1/5",
+        "3/10",
+        "2/5",
+        "1/2"
+      ],
+      "answerIndex": 2,
+      "explanation": "2, 3, 5, 7 の4枚。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j207_012",
+      "unit": "math.j2.s2.a07",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "3枚の硬貨を投げて、表が2枚になる確率は？",
+      "choices": [
+        "1/4",
+        "3/8",
+        "1/2",
+        "3/4"
+      ],
+      "answerIndex": 1,
+      "explanation": "全8通りのうち3通り。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    }
+  ]
+}

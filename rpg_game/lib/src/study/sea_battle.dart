@@ -2,14 +2,14 @@ import '../models/player_stats.dart';
 import '../models/stage.dart';
 import 'realm.dart';
 
-/// 定期テストの海・模擬試験の空のバトル。単元の問題で、海（空）の魔物と戦う。
+/// 定期テストの海・高校入試の空のバトル。単元の問題で、海（空）の魔物と戦う。
 ///
 /// 定期テストの海の難易度は「とても高い」：
 /// - 敵の HP は、ふつうの正解（チェイン・クリティカルなし）で約15回ぶん
 /// - 敵の攻撃は、3回まちがえるとほぼ倒れる強さ
 /// - 制限時間は RPG の約6割
 ///
-/// 模擬試験の空は、さらに難しい（上級者向け）：
+/// 高校入試の空は、さらに難しい（上級者向け）：
 /// - 敵の HP は約16回ぶん
 /// - 2回まちがえると倒れる
 /// - 制限時間は RPG の半分
@@ -25,7 +25,7 @@ class SeaBattle {
   /// 何回まちがえると倒れるか（定期テストの海）
   static int get missesToLose => StudyRealm.sea.missesToLose;
 
-  /// 制限時間（RPG の約6割。模擬試験の空は半分。最低8秒）
+  /// 制限時間（RPG の約6割。高校入試の空は半分。最低8秒）
   static int timeLimit(int normalSeconds,
           [StudyRealm realm = StudyRealm.sea]) =>
       (normalSeconds * realm.timeRate).round().clamp(8, 60);

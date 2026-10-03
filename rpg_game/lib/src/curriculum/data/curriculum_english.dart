@@ -108,7 +108,7 @@ const englishCurriculum = CurriculumNode(
                     'get',
                     'put',
                     'come',
-                    'give'
+                    'give',
                   ],
                 ),
                 CurriculumNode(
@@ -232,7 +232,7 @@ const englishCurriculum = CurriculumNode(
                     'should have',
                     'must have',
                     'may have',
-                    'cannot have'
+                    'cannot have',
                   ],
                 ),
                 CurriculumNode(
@@ -243,7 +243,7 @@ const englishCurriculum = CurriculumNode(
                     'had better',
                     'would rather',
                     'may well',
-                    'used to'
+                    'used to',
                   ],
                 ),
               ],
@@ -299,7 +299,7 @@ const englishCurriculum = CurriculumNode(
                     'enough',
                     'in order to',
                     'so as to',
-                    'seem to'
+                    'seem to',
                   ],
                 ),
                 CurriculumNode(
@@ -339,7 +339,7 @@ const englishCurriculum = CurriculumNode(
                     'be used to',
                     'There is no',
                     'feel like',
-                    'cannot help'
+                    'cannot help',
                   ],
                 ),
               ],
@@ -410,7 +410,7 @@ const englishCurriculum = CurriculumNode(
                     'no more',
                     'no less',
                     'not so much',
-                    '倍'
+                    '倍',
                   ],
                 ),
                 CurriculumNode(
@@ -497,7 +497,7 @@ const englishCurriculum = CurriculumNode(
                     '倒置',
                     'Were',
                     'Had',
-                    'should'
+                    'should',
                   ],
                 ),
               ],
@@ -524,7 +524,7 @@ const englishCurriculum = CurriculumNode(
                     'though',
                     'unless',
                     'while',
-                    'as long as'
+                    'as long as',
                   ],
                 ),
                 CurriculumNode(
@@ -610,7 +610,7 @@ const englishCurriculum = CurriculumNode(
                     'far from',
                     'anything but',
                     'by no means',
-                    'cannot ~ too'
+                    'cannot ~ too',
                   ],
                 ),
               ],
@@ -854,7 +854,7 @@ const englishCurriculum = CurriculumNode(
                     '許可',
                     'Would you',
                     'Shall we',
-                    'Why don\'t'
+                    'Why don\'t',
                   ],
                 ),
               ],

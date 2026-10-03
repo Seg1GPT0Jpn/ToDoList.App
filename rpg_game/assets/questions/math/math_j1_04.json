@@ -1,0 +1,212 @@
+{
+  "setId": "math_j1_04",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_j104_001",
+      "unit": "math.j1.s1.a04",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "7 − 2 は？",
+      "choices": [
+        "-5",
+        "3",
+        "5",
+        "9"
+      ],
+      "answerIndex": 2,
+      "explanation": "ひく数の符号を変えてたし算にする。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j104_002",
+      "unit": "math.j1.s1.a04",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "6 − 9 は？",
+      "choices": [
+        "-5",
+        "-3",
+        "3",
+        "15"
+      ],
+      "answerIndex": 1,
+      "explanation": "ひく数の符号を変えてたし算にする。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j104_003",
+      "unit": "math.j1.s1.a04",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "x = 3 のとき、4x + 7 の値は？",
+      "choices": [
+        "14",
+        "−5",
+        "19",
+        "5"
+      ],
+      "answerIndex": 2,
+      "explanation": "xに数を代入する（負の数はかっこをつける）。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j104_004",
+      "unit": "math.j1.s1.a04",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "(3x − 6) + (6x + 3) を計算すると？",
+      "choices": [
+        "−3x − 3",
+        "18x − 3",
+        "9x − 3",
+        "9x − 9"
+      ],
+      "answerIndex": 2,
+      "explanation": "同じ文字の項、数の項どうしをまとめる。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j104_005",
+      "unit": "math.j1.s1.a04",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "3(3x + 6) を計算すると？",
+      "choices": [
+        "9x + 6",
+        "6x + 9",
+        "3x + 18",
+        "9x + 18"
+      ],
+      "answerIndex": 3,
+      "explanation": "分配法則：かっこの中の各項にかける。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j104_006",
+      "unit": "math.j1.s1.a04",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "5(3x + 9) を計算すると？",
+      "choices": [
+        "15x + 45",
+        "8x + 14",
+        "3x + 45",
+        "15x + 9"
+      ],
+      "answerIndex": 0,
+      "explanation": "分配法則：かっこの中の各項にかける。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j104_007",
+      "unit": "math.j1.s1.a04",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "x = −1 のとき、2x の値は？",
+      "choices": [
+        "−2",
+        "2",
+        "1",
+        "−1"
+      ],
+      "answerIndex": 0,
+      "explanation": "xに数を代入する（負の数はかっこをつける）。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j104_008",
+      "unit": "math.j1.s1.a04",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "(4x − 1) + (x − 7) を計算すると？",
+      "choices": [
+        "4x − 8",
+        "5x − 8",
+        "3x − 8",
+        "5x + 6"
+      ],
+      "answerIndex": 1,
+      "explanation": "同じ文字の項、数の項どうしをまとめる。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j104_009",
+      "unit": "math.j1.s1.a04",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "10 + (−9) は？",
+      "choices": [
+        "-1",
+        "1",
+        "3",
+        "19"
+      ],
+      "answerIndex": 1,
+      "explanation": "符号が同じなら絶対値の和に共通の符号、ちがえば絶対値の差に大きい方の符号。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j104_010",
+      "unit": "math.j1.s1.a04",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "(x + 1) − (6x + 1) を計算すると？",
+      "choices": [
+        "−5x + 1",
+        "7x",
+        "−5x + 2",
+        "−5x"
+      ],
+      "answerIndex": 3,
+      "explanation": "ひく式の各項の符号を変えてたす。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j104_011",
+      "unit": "math.j1.s1.a04",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "6(4x + 3) を計算すると？",
+      "choices": [
+        "24x + 18",
+        "4x + 18",
+        "24x + 3",
+        "10x + 9"
+      ],
+      "answerIndex": 0,
+      "explanation": "分配法則：かっこの中の各項にかける。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j104_012",
+      "unit": "math.j1.s1.a04",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "2³ は？",
+      "choices": [
+        "9",
+        "6",
+        "−8",
+        "8"
+      ],
+      "answerIndex": 3,
+      "explanation": "同じ数を何回かけるか。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    }
+  ]
+}

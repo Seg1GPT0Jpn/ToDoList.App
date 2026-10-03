@@ -5,12 +5,10 @@ import 'proficiency.dart';
 abstract final class StudyReport {
   static const subjects = {
     'english': '英語',
+    'math': '算数・数学',
+    'japanese': '国語',
     'science': '理科',
     'social': '社会',
-    'japanese': '国語',
-    'math': '数学',
-    'information': '情報',
-    'music': '音楽',
   };
 
   static String _pct(int c, int a) =>

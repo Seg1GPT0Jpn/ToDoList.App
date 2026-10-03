@@ -185,7 +185,7 @@ class _TsuzuriQuestAppState extends State<TsuzuriQuestApp>
 
   Widget _app(bool dark) {
     return MaterialApp(
-      title: 'つづりクエスト',
+      title: 'つづりクエスト for elementary and junior high school',
       debugShowCheckedModeBanner: false,
       themeMode: dark ? ThemeMode.dark : ThemeMode.light,
       theme: buildTheme(Brightness.light),

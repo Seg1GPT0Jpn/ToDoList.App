@@ -1,0 +1,212 @@
+{
+  "setId": "math_e6_07",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_e607_001",
+      "unit": "math.e6.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "1本の直線を折り目にして、ぴったり重なる図形を何という？",
+      "choices": [
+        "線対称な図形",
+        "合同でない図形",
+        "拡大図",
+        "点対称な図形"
+      ],
+      "answerIndex": 0,
+      "explanation": "折り目の直線が対称の軸。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e607_002",
+      "unit": "math.e6.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "1つの点のまわりに180°回転させると、もとの図形にぴったり重なる図形は？",
+      "choices": [
+        "線対称な図形",
+        "縮図",
+        "点対称な図形",
+        "展開図"
+      ],
+      "answerIndex": 2,
+      "explanation": "回転の中心を対称の中心という。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e607_003",
+      "unit": "math.e6.s2.a07",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "正方形の対称の軸は何本？",
+      "choices": [
+        "1本",
+        "2本",
+        "8本",
+        "4本"
+      ],
+      "answerIndex": 3,
+      "explanation": "縦・横・2本の対角線。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e607_004",
+      "unit": "math.e6.s2.a07",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "次のうち、点対称だが線対称ではない図形は？",
+      "choices": [
+        "正三角形",
+        "円",
+        "平行四辺形（長方形・ひし形でない）",
+        "二等辺三角形"
+      ],
+      "answerIndex": 2,
+      "explanation": "平行四辺形は点対称だけ。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e607_005",
+      "unit": "math.e6.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "形を変えずに大きくした図を何という？",
+      "choices": [
+        "拡大図",
+        "見取図",
+        "展開図",
+        "縮図"
+      ],
+      "answerIndex": 0,
+      "explanation": "対応する辺の長さの比が全部等しい。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e607_006",
+      "unit": "math.e6.s2.a07",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "3cmの辺を2倍の拡大図にすると何cm？",
+      "choices": [
+        "1.5cm",
+        "6cm",
+        "5cm",
+        "9cm"
+      ],
+      "answerIndex": 1,
+      "explanation": "3 × 2 = 6",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e607_007",
+      "unit": "math.e6.s2.a07",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "縮尺1/1000の地図で5cmの長さは、実際は何m？",
+      "choices": [
+        "50m",
+        "5m",
+        "500m",
+        "5000m"
+      ],
+      "answerIndex": 0,
+      "explanation": "5cm × 1000 = 5000cm = 50m",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e607_008",
+      "unit": "math.e6.s2.a07",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "拡大図で、角の大きさはどうなる？",
+      "choices": [
+        "半分になる",
+        "0になる",
+        "2倍になる",
+        "変わらない"
+      ],
+      "answerIndex": 3,
+      "explanation": "形が同じなので角は等しい。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e607_009",
+      "unit": "math.e6.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "円の面積の公式は？",
+      "choices": [
+        "直径 × 直径 × 3.14",
+        "直径 × 3.14",
+        "半径 × 2 × 3.14",
+        "半径 × 半径 × 3.14"
+      ],
+      "answerIndex": 3,
+      "explanation": "円の面積 ＝ 半径 × 半径 × 円周率。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e607_010",
+      "unit": "math.e6.s2.a07",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "半径5cmの円の面積は？",
+      "choices": [
+        "314cm²",
+        "31.4cm²",
+        "15.7cm²",
+        "78.5cm²"
+      ],
+      "answerIndex": 3,
+      "explanation": "5 × 5 × 3.14 = 78.5",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e607_011",
+      "unit": "math.e6.s2.a07",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "直径6cmの円の面積は？",
+      "choices": [
+        "28.26cm²",
+        "9.42cm²",
+        "113.04cm²",
+        "18.84cm²"
+      ],
+      "answerIndex": 0,
+      "explanation": "半径3cm → 3 × 3 × 3.14",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e607_012",
+      "unit": "math.e6.s2.a07",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "半径4cmの半円の面積は？",
+      "choices": [
+        "50.24cm²",
+        "25.12cm²",
+        "6.28cm²",
+        "12.56cm²"
+      ],
+      "answerIndex": 1,
+      "explanation": "4 × 4 × 3.14 ÷ 2",
+      "targetGrade": "小6",
+      "phase": "basics"
+    }
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "setId": "math_e5_10",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_e510_001",
+      "unit": "math.e5.s2.a10",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "底辺8cm・高さ5cmの平行四辺形の面積は？",
+      "choices": [
+        "13cm²",
+        "40cm²",
+        "26cm²",
+        "20cm²"
+      ],
+      "answerIndex": 1,
+      "explanation": "平行四辺形 ＝ 底辺 × 高さ。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e510_002",
+      "unit": "math.e5.s2.a10",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "底辺6cm・高さ4cmの三角形の面積は？",
+      "choices": [
+        "10cm²",
+        "20cm²",
+        "12cm²",
+        "24cm²"
+      ],
+      "answerIndex": 2,
+      "explanation": "三角形 ＝ 底辺 × 高さ ÷ 2。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e510_003",
+      "unit": "math.e5.s2.a10",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "上底3cm・下底7cm・高さ4cmの台形の面積は？",
+      "choices": [
+        "20cm²",
+        "84cm²",
+        "40cm²",
+        "14cm²"
+      ],
+      "answerIndex": 0,
+      "explanation": "(上底 + 下底) × 高さ ÷ 2。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e510_004",
+      "unit": "math.e5.s2.a10",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "対角線が6cmと8cmのひし形の面積は？",
+      "choices": [
+        "24cm²",
+        "28cm²",
+        "14cm²",
+        "48cm²"
+      ],
+      "answerIndex": 0,
+      "explanation": "対角線 × 対角線 ÷ 2。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e510_005",
+      "unit": "math.e5.s2.a10",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "三角形の3つの角の和は？",
+      "choices": [
+        "360°",
+        "90°",
+        "180°",
+        "270°"
+      ],
+      "answerIndex": 2,
+      "explanation": "どんな三角形でも180°。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e510_006",
+      "unit": "math.e5.s2.a10",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "四角形の4つの角の和は？",
+      "choices": [
+        "360°",
+        "180°",
+        "400°",
+        "540°"
+      ],
+      "answerIndex": 0,
+      "explanation": "2つの三角形に分けられる。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e510_007",
+      "unit": "math.e5.s2.a10",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "三角形の2つの角が50°と70°。残りの角は？",
+      "choices": [
+        "60°",
+        "70°",
+        "50°",
+        "120°"
+      ],
+      "answerIndex": 0,
+      "explanation": "180 − 50 − 70 = 60",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e510_008",
+      "unit": "math.e5.s2.a10",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "五角形の5つの角の和は？",
+      "choices": [
+        "500°",
+        "720°",
+        "540°",
+        "360°"
+      ],
+      "answerIndex": 2,
+      "explanation": "3つの三角形に分けられる → 180 × 3。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e510_009",
+      "unit": "math.e5.s2.a10",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "円周の長さ ＝ 直径 × □。□は？",
+      "choices": [
+        "円周率（3.14）",
+        "10",
+        "2",
+        "半径"
+      ],
+      "answerIndex": 0,
+      "explanation": "円周率は約3.14。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e510_010",
+      "unit": "math.e5.s2.a10",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "直径10cmの円の円周は？",
+      "choices": [
+        "314cm",
+        "31.4cm",
+        "15.7cm",
+        "62.8cm"
+      ],
+      "answerIndex": 1,
+      "explanation": "10 × 3.14 = 31.4",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e510_011",
+      "unit": "math.e5.s2.a10",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "へんの長さがすべて等しく、角の大きさもすべて等しい多角形を何という？",
+      "choices": [
+        "正多角形",
+        "平行四辺形",
+        "台形",
+        "二等辺三角形"
+      ],
+      "answerIndex": 0,
+      "explanation": "正六角形など。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e510_012",
+      "unit": "math.e5.s2.a10",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "合同な図形とは？",
+      "choices": [
+        "ぴったり重ね合わせることができる図形",
+        "角の数が同じ図形",
+        "形は同じで大きさがちがう図形",
+        "面積が同じ図形"
+      ],
+      "answerIndex": 0,
+      "explanation": "形も大きさも同じ。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    }
+  ]
+}

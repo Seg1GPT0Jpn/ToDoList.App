@@ -1,0 +1,212 @@
+{
+  "setId": "math_e4_11",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_e411_001",
+      "unit": "math.e4.s2.a11",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "91590 を千の位までのがい数（四捨五入）にすると？",
+      "choices": [
+        "91000",
+        "91500",
+        "92000",
+        "93000"
+      ],
+      "answerIndex": 2,
+      "explanation": "百の位で四捨五入する。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e411_002",
+      "unit": "math.e4.s2.a11",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "3/8 + 8/8 は？（仮分数で）",
+      "choices": [
+        "11/16",
+        "11/8",
+        "12/8",
+        "24/8"
+      ],
+      "answerIndex": 1,
+      "explanation": "分母が同じなら分子をたす。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e411_003",
+      "unit": "math.e4.s2.a11",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "41386 を千の位までのがい数（四捨五入）にすると？",
+      "choices": [
+        "40000",
+        "41000",
+        "41300",
+        "42000"
+      ],
+      "answerIndex": 1,
+      "explanation": "百の位で四捨五入する。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e411_004",
+      "unit": "math.e4.s2.a11",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "たて5cm、よこ3cmの長方形の面積は何cm²？",
+      "choices": [
+        "8",
+        "15",
+        "16",
+        "20"
+      ],
+      "answerIndex": 1,
+      "explanation": "長方形の面積 ＝ たて × よこ。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e411_005",
+      "unit": "math.e4.s2.a11",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "9.14 + 1.76 は？",
+      "choices": [
+        "10.8",
+        "10.9",
+        "11",
+        "109"
+      ],
+      "answerIndex": 1,
+      "explanation": "小数点の位置をそろえる。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e411_006",
+      "unit": "math.e4.s2.a11",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "6.1 × 6 は？",
+      "choices": [
+        "36.5",
+        "36.6",
+        "36.7",
+        "366"
+      ],
+      "answerIndex": 1,
+      "explanation": "整数と同じように計算して、小数点をうつ。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e411_007",
+      "unit": "math.e4.s2.a11",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "たて4cm、よこ7cmの長方形の面積は何cm²？",
+      "choices": [
+        "11",
+        "22",
+        "28",
+        "32"
+      ],
+      "answerIndex": 2,
+      "explanation": "長方形の面積 ＝ たて × よこ。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e411_008",
+      "unit": "math.e4.s2.a11",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "25.8 ÷ 6 は？",
+      "choices": [
+        "4.2",
+        "4.3",
+        "4.4",
+        "43"
+      ],
+      "answerIndex": 1,
+      "explanation": "商の小数点は、わられる数の小数点にそろえる。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e411_009",
+      "unit": "math.e4.s2.a11",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "たて3cm、よこ2cmの長方形の面積は何cm²？",
+      "choices": [
+        "5",
+        "6",
+        "9",
+        "10"
+      ],
+      "answerIndex": 1,
+      "explanation": "長方形の面積 ＝ たて × よこ。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e411_010",
+      "unit": "math.e4.s2.a11",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "6.3 × 4 は？",
+      "choices": [
+        "25.1",
+        "25.2",
+        "25.3",
+        "252"
+      ],
+      "answerIndex": 1,
+      "explanation": "整数と同じように計算して、小数点をうつ。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e411_011",
+      "unit": "math.e4.s2.a11",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "7/6 + 8/6 は？（仮分数で）",
+      "choices": [
+        "15/12",
+        "15/6",
+        "16/6",
+        "56/6"
+      ],
+      "answerIndex": 1,
+      "explanation": "分母が同じなら分子をたす。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e411_012",
+      "unit": "math.e4.s2.a11",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "7.85 + 1.75 は？",
+      "choices": [
+        "9.5",
+        "9.6",
+        "9.7",
+        "96"
+      ],
+      "answerIndex": 1,
+      "explanation": "小数点の位置をそろえる。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    }
+  ]
+}

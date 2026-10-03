@@ -1,0 +1,178 @@
+{
+  "setId": "math_j3_09",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_j309_001",
+      "unit": "math.j3.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "集団のすべてを調べる調査を何という？",
+      "choices": [
+        "抽出",
+        "標本調査",
+        "全数調査",
+        "推定"
+      ],
+      "answerIndex": 2,
+      "explanation": "国勢調査など。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j309_002",
+      "unit": "math.j3.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "集団の一部を調べて全体を推定する調査は？",
+      "choices": [
+        "実験",
+        "全数調査",
+        "国勢調査",
+        "標本調査"
+      ],
+      "answerIndex": 3,
+      "explanation": "世論調査など。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j309_003",
+      "unit": "math.j3.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "標本調査で、調べる対象の集団全体を何という？",
+      "choices": [
+        "度数",
+        "母集団",
+        "標本",
+        "階級"
+      ],
+      "answerIndex": 1,
+      "explanation": "取り出した一部が標本。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j309_004",
+      "unit": "math.j3.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "標本をかたよりなく選ぶ方法は？",
+      "choices": [
+        "好きな人を選ぶ",
+        "同じクラスだけ選ぶ",
+        "無作為に抽出する",
+        "近くの人だけ選ぶ"
+      ],
+      "answerIndex": 2,
+      "explanation": "乱数などを使う。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j309_005",
+      "unit": "math.j3.s2.a09",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "全数調査が適しているのは？",
+      "choices": [
+        "学校の健康診断",
+        "テレビの視聴率",
+        "電球の寿命の検査",
+        "川の水質検査"
+      ],
+      "answerIndex": 0,
+      "explanation": "一人ひとりの結果が必要。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j309_006",
+      "unit": "math.j3.s2.a09",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "標本調査が適しているのは？",
+      "choices": [
+        "国勢調査",
+        "缶詰の品質検査",
+        "入学試験",
+        "学校の身体測定"
+      ],
+      "answerIndex": 1,
+      "explanation": "全部調べると商品がなくなる。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j309_007",
+      "unit": "math.j3.s2.a09",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "袋の玉から30個取り出すと赤が6個。袋に玉が500個なら、赤はおよそ？",
+      "choices": [
+        "6個",
+        "100個",
+        "150個",
+        "60個"
+      ],
+      "answerIndex": 1,
+      "explanation": "500 × 6/30",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j309_008",
+      "unit": "math.j3.s2.a09",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "池の魚に印をつけて50匹放した。後で40匹とると印つきが8匹。池の魚はおよそ？",
+      "choices": [
+        "400匹",
+        "250匹",
+        "200匹",
+        "90匹"
+      ],
+      "answerIndex": 1,
+      "explanation": "50 ÷ (8/40)",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j309_009",
+      "unit": "math.j3.s2.a09",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "標本の大きさを大きくすると、推定はどうなる？",
+      "choices": [
+        "意味がなくなる",
+        "変わらない",
+        "母集団の性質に近づきやすい",
+        "かならず外れる"
+      ],
+      "answerIndex": 2,
+      "explanation": "大きいほど誤差が小さくなりやすい。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j309_010",
+      "unit": "math.j3.s2.a09",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "1000人から無作為に100人選んで、60人が賛成。全体の賛成はおよそ？",
+      "choices": [
+        "100人",
+        "940人",
+        "600人",
+        "60人"
+      ],
+      "answerIndex": 2,
+      "explanation": "1000 × 0.6",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    }
+  ]
+}

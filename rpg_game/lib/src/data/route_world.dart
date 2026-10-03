@@ -75,7 +75,7 @@ class RouteSpec {
   final QuestionCategory armorCategory;
 }
 
-/// ルート制のワールドからステージを作る。強さは英語ワールドと同じ曲線。
+/// ルート制のワールドからステージを作る。強さはどの教科も同じ曲線。
 class RouteWorldBuilder {
   const RouteWorldBuilder._();
 
@@ -105,6 +105,10 @@ class RouteWorldBuilder {
     15: 'critical',
     18: 'gamble',
   };
+
+  /// エリア k（1〜20）のふつうの敵の強さ（学習モードの強さの目安にも使う）
+  static int hpAt(int k) => _hp[(k - 1).clamp(0, 19)];
+  static int attackAt(int k) => _atk[(k - 1).clamp(0, 19)];
 
   static String setId(String worldId, String route, int k) =>
       '${worldId}_${route}_${k.toString().padLeft(2, '0')}';

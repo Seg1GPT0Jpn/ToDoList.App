@@ -1,0 +1,212 @@
+{
+  "setId": "math_e4_10",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_e410_001",
+      "unit": "math.e4.s2.a10",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "89857 を百の位までのがい数（四捨五入）にすると？",
+      "choices": [
+        "89800",
+        "89850",
+        "89900",
+        "90000"
+      ],
+      "answerIndex": 2,
+      "explanation": "十の位で四捨五入する。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e410_002",
+      "unit": "math.e4.s2.a10",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "86894 を千の位までのがい数（四捨五入）にすると？",
+      "choices": [
+        "86000",
+        "86800",
+        "87000",
+        "88000"
+      ],
+      "answerIndex": 2,
+      "explanation": "百の位で四捨五入する。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e410_003",
+      "unit": "math.e4.s2.a10",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "95679 を千の位までのがい数（四捨五入）にすると？",
+      "choices": [
+        "95000",
+        "95600",
+        "96000",
+        "97000"
+      ],
+      "answerIndex": 2,
+      "explanation": "百の位で四捨五入する。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e410_004",
+      "unit": "math.e4.s2.a10",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "43486 を千の位までのがい数（四捨五入）にすると？",
+      "choices": [
+        "42000",
+        "43000",
+        "43400",
+        "44000"
+      ],
+      "answerIndex": 1,
+      "explanation": "百の位で四捨五入する。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e410_005",
+      "unit": "math.e4.s2.a10",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "33098 を千の位までのがい数（四捨五入）にすると？",
+      "choices": [
+        "32000",
+        "33000",
+        "34000",
+        "35000"
+      ],
+      "answerIndex": 1,
+      "explanation": "百の位で四捨五入する。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e410_006",
+      "unit": "math.e4.s2.a10",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "95164 を百の位までのがい数（四捨五入）にすると？",
+      "choices": [
+        "95100",
+        "95160",
+        "95200",
+        "95300"
+      ],
+      "answerIndex": 2,
+      "explanation": "十の位で四捨五入する。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e410_007",
+      "unit": "math.e4.s2.a10",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "65551 を百の位までのがい数（四捨五入）にすると？",
+      "choices": [
+        "65500",
+        "65550",
+        "65600",
+        "65700"
+      ],
+      "answerIndex": 2,
+      "explanation": "十の位で四捨五入する。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e410_008",
+      "unit": "math.e4.s2.a10",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "85279 を千の位までのがい数（四捨五入）にすると？",
+      "choices": [
+        "84000",
+        "85000",
+        "85200",
+        "86000"
+      ],
+      "answerIndex": 1,
+      "explanation": "百の位で四捨五入する。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e410_009",
+      "unit": "math.e4.s2.a10",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "四捨五入で、切り上げるのはその位の数字がいくつ以上のとき？",
+      "choices": [
+        "4以上",
+        "9だけ",
+        "5以上",
+        "6以上"
+      ],
+      "answerIndex": 2,
+      "explanation": "0〜4は切り捨て、5〜9は切り上げ。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e410_010",
+      "unit": "math.e4.s2.a10",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "四捨五入して千の位までのがい数にすると3000になる整数で、いちばん小さいのは？",
+      "choices": [
+        "2000",
+        "2499",
+        "2500",
+        "2999"
+      ],
+      "answerIndex": 2,
+      "explanation": "2500〜3499が3000になる。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e410_011",
+      "unit": "math.e4.s2.a10",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "298円と512円の買い物の代金を、およそ何円と見積もる？",
+      "choices": [
+        "およそ800円",
+        "およそ1000円",
+        "およそ900円",
+        "およそ700円"
+      ],
+      "answerIndex": 0,
+      "explanation": "300 + 500 ＝ 800。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e410_012",
+      "unit": "math.e4.s2.a10",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「以上」「未満」で、その数をふくまないのは？",
+      "choices": [
+        "どれもふくむ",
+        "未満",
+        "以上",
+        "以下"
+      ],
+      "answerIndex": 1,
+      "explanation": "「未満」はその数をふくまない。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    }
+  ]
+}

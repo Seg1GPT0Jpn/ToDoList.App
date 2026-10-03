@@ -1,0 +1,212 @@
+{
+  "setId": "math_e1_09",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_e109_001",
+      "unit": "math.e1.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ボールのように どこから みても まるい かたちは？",
+      "choices": [
+        "つつ",
+        "たま（きゅう）",
+        "さんかく",
+        "はこ"
+      ],
+      "answerIndex": 1,
+      "explanation": "ころころ よく ころがる。",
+      "targetGrade": "小1",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e109_002",
+      "unit": "math.e1.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "たいらな ところが なくて、よく ころがる かたちは？",
+      "choices": [
+        "はこの かたち",
+        "さいころの かたち",
+        "ボールの かたち",
+        "つみきの しかく"
+      ],
+      "answerIndex": 2,
+      "explanation": "まるい かたちは ころがる。",
+      "targetGrade": "小1",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e109_003",
+      "unit": "math.e1.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "つつの かたちを たおすと どう なる？",
+      "choices": [
+        "とがる",
+        "ぜったい うごかない",
+        "ころがる",
+        "つみかさねられない"
+      ],
+      "answerIndex": 2,
+      "explanation": "よこに すると まるい ところで ころがる。",
+      "targetGrade": "小1",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e109_004",
+      "unit": "math.e1.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "さいころの かたちの めんの かたちは？",
+      "choices": [
+        "ほそながい しかく",
+        "ましかく",
+        "まる",
+        "さんかく"
+      ],
+      "answerIndex": 1,
+      "explanation": "さいころの めんは ぜんぶ おなじ ましかく。",
+      "targetGrade": "小1",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e109_005",
+      "unit": "math.e1.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "さんかくは かどが いくつ？",
+      "choices": [
+        "3つ",
+        "2つ",
+        "5つ",
+        "4つ"
+      ],
+      "answerIndex": 0,
+      "explanation": "さん（3）かく。",
+      "targetGrade": "小1",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e109_006",
+      "unit": "math.e1.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "しかくは へんが いくつ？",
+      "choices": [
+        "5つ",
+        "6つ",
+        "4つ",
+        "3つ"
+      ],
+      "answerIndex": 2,
+      "explanation": "し（4）かく。",
+      "targetGrade": "小1",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e109_007",
+      "unit": "math.e1.s2.a09",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "えんぴつ Aは けしごむ 5こぶん、えんぴつ Bは けしごむ 7こぶんの ながさ。ながいのは？",
+      "choices": [
+        "おなじ",
+        "わからない",
+        "えんぴつ B",
+        "えんぴつ A"
+      ],
+      "answerIndex": 2,
+      "explanation": "おなじ ものの いくつぶんで くらべると、かずが おおきい ほうが ながい。",
+      "targetGrade": "小1",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e109_008",
+      "unit": "math.e1.s2.a09",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "テープ Aは ますめ 8こぶん、テープ Bは ますめ 6こぶん。どれだけ ながい？",
+      "choices": [
+        "Bが 2こぶん ながい",
+        "おなじ",
+        "Aが ますめ 2こぶん ながい",
+        "Aが 14こぶん ながい"
+      ],
+      "answerIndex": 2,
+      "explanation": "8 − 6 = 2",
+      "targetGrade": "小1",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e109_009",
+      "unit": "math.e1.s2.a09",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "ながさを くらべる とき、はしを どうする？",
+      "choices": [
+        "ずらす",
+        "まげる",
+        "きる",
+        "そろえる"
+      ],
+      "answerIndex": 3,
+      "explanation": "はしを そろえて くらべると わかりやすい。",
+      "targetGrade": "小1",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e109_010",
+      "unit": "math.e1.s2.a09",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "みずの かさを くらべる。おなじ コップ Aに 4はい、Bに 6はい。おおいのは？",
+      "choices": [
+        "A",
+        "わからない",
+        "おなじ",
+        "B"
+      ],
+      "answerIndex": 3,
+      "explanation": "おなじ コップの なんばいぶんかで くらべる。",
+      "targetGrade": "小1",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e109_011",
+      "unit": "math.e1.s2.a09",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "つくえの よこの ながさを、えんぴつで はかった。えんぴつ 4ほんぶん だった。ノートで はかると どう なる？",
+      "choices": [
+        "かならず 4さつ",
+        "ノートの ながさしだいで かずが かわる",
+        "かならず 8さつ",
+        "はかれない"
+      ],
+      "answerIndex": 1,
+      "explanation": "はかる ものが かわると、いくつぶんも かわる。",
+      "targetGrade": "小1",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e109_012",
+      "unit": "math.e1.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "しかくを ななめに 1ほん きると、なんの かたちが 2つ できる？",
+      "choices": [
+        "まる",
+        "さんかく",
+        "ほし",
+        "しかく"
+      ],
+      "answerIndex": 1,
+      "explanation": "かどと かどを むすんで きると さんかくが 2つ。",
+      "targetGrade": "小1",
+      "phase": "basics"
+    }
+  ]
+}

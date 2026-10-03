@@ -1,0 +1,212 @@
+{
+  "setId": "math_j1_05",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_j105_001",
+      "unit": "math.j1.s1.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "5x − 19 = 9x − 47 を解くと x = ？",
+      "choices": [
+        "6",
+        "7",
+        "−7",
+        "8"
+      ],
+      "answerIndex": 1,
+      "explanation": "xの項を左辺、数の項を右辺に移項する。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j105_002",
+      "unit": "math.j1.s1.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "7x − 14 = −63 を解くと x = ？",
+      "choices": [
+        "−6",
+        "−11",
+        "−7",
+        "7"
+      ],
+      "answerIndex": 2,
+      "explanation": "移項して ax ＝ c − b、両辺を a でわる。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j105_003",
+      "unit": "math.j1.s1.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "6x − 20 = 8x − 22 を解くと x = ？",
+      "choices": [
+        "0",
+        "1",
+        "−1",
+        "2"
+      ],
+      "answerIndex": 1,
+      "explanation": "xの項を左辺、数の項を右辺に移項する。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j105_004",
+      "unit": "math.j1.s1.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "4x + 7 = 27 を解くと x = ？",
+      "choices": [
+        "8",
+        "6",
+        "5",
+        "−5"
+      ],
+      "answerIndex": 2,
+      "explanation": "移項して ax ＝ c − b、両辺を a でわる。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j105_005",
+      "unit": "math.j1.s1.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "7x + 19 = 8x + 14 を解くと x = ？",
+      "choices": [
+        "4",
+        "5",
+        "6",
+        "−5"
+      ],
+      "answerIndex": 1,
+      "explanation": "xの項を左辺、数の項を右辺に移項する。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j105_006",
+      "unit": "math.j1.s1.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "8x + 3 = 35 を解くと x = ？",
+      "choices": [
+        "6",
+        "5",
+        "4",
+        "−4"
+      ],
+      "answerIndex": 2,
+      "explanation": "移項して ax ＝ c − b、両辺を a でわる。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j105_007",
+      "unit": "math.j1.s1.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "4x − 4 = −16 を解くと x = ？",
+      "choices": [
+        "−3",
+        "−2",
+        "−5",
+        "3"
+      ],
+      "answerIndex": 0,
+      "explanation": "移項して ax ＝ c − b、両辺を a でわる。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j105_008",
+      "unit": "math.j1.s1.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "9x − 17 = 64 を解くと x = ？",
+      "choices": [
+        "10",
+        "9",
+        "−9",
+        "5"
+      ],
+      "answerIndex": 1,
+      "explanation": "移項して ax ＝ c − b、両辺を a でわる。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j105_009",
+      "unit": "math.j1.s1.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "等式の一方の辺の項を、符号を変えて他方の辺に移すことを何という？",
+      "choices": [
+        "移項",
+        "約分",
+        "代入",
+        "展開"
+      ],
+      "answerIndex": 0,
+      "explanation": "+3 を移項すると −3。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j105_010",
+      "unit": "math.j1.s1.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "x/3 = 4 を解くと？",
+      "choices": [
+        "x = 4/3",
+        "x = 1",
+        "x = 12",
+        "x = 7"
+      ],
+      "answerIndex": 2,
+      "explanation": "両辺に3をかける。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j105_011",
+      "unit": "math.j1.s1.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "比例式 x : 6 = 2 : 3 を解くと？",
+      "choices": [
+        "x = 4",
+        "x = 9",
+        "x = 36",
+        "x = 1"
+      ],
+      "answerIndex": 0,
+      "explanation": "外項の積＝内項の積：3x ＝ 12",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j105_012",
+      "unit": "math.j1.s1.a05",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "1個120円のりんごをx個と200円のかごで920円。xは？",
+      "choices": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "answerIndex": 1,
+      "explanation": "120x + 200 ＝ 920 → 120x ＝ 720",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    }
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "setId": "math_j3_08",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_j308_001",
+      "unit": "math.j3.s2.a08",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "直角三角形で、直角をはさむ2辺が5cmと12cm。斜辺は？",
+      "choices": [
+        "12",
+        "13",
+        "14",
+        "17"
+      ],
+      "answerIndex": 1,
+      "explanation": "a² + b² ＝ c²",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j308_002",
+      "unit": "math.j3.s2.a08",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "直角三角形で、直角をはさむ2辺が6cmと8cm。斜辺は？",
+      "choices": [
+        "9",
+        "10",
+        "11",
+        "14"
+      ],
+      "answerIndex": 1,
+      "explanation": "a² + b² ＝ c²",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j308_003",
+      "unit": "math.j3.s2.a08",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "直角三角形で、直角をはさむ2辺が3cmと4cm。斜辺は？",
+      "choices": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "answerIndex": 1,
+      "explanation": "a² + b² ＝ c²",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j308_004",
+      "unit": "math.j3.s2.a08",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "直角三角形で、斜辺が10cm、1辺が6cm。残りの辺は？",
+      "choices": [
+        "4",
+        "7",
+        "8",
+        "9"
+      ],
+      "answerIndex": 2,
+      "explanation": "10² − 6² ＝ 64",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j308_005",
+      "unit": "math.j3.s2.a08",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "直角三角形で、斜辺が13cm、1辺が5cm。残りの辺は？",
+      "choices": [
+        "8",
+        "11",
+        "12",
+        "13"
+      ],
+      "answerIndex": 2,
+      "explanation": "13² − 5² ＝ 144",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j308_006",
+      "unit": "math.j3.s2.a08",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "直角三角形で、直角をはさむ2辺が9cmと12cm。斜辺は？",
+      "choices": [
+        "14",
+        "15",
+        "16",
+        "21"
+      ],
+      "answerIndex": 1,
+      "explanation": "a² + b² ＝ c²",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j308_007",
+      "unit": "math.j3.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "直角三角形の直角をはさむ2辺をa, b、斜辺をcとすると？",
+      "choices": [
+        "a² − b² = c²",
+        "a + b = c",
+        "ab = c²",
+        "a² + b² = c²"
+      ],
+      "answerIndex": 3,
+      "explanation": "三平方の定理。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j308_008",
+      "unit": "math.j3.s2.a08",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "1辺1cmの正方形の対角線の長さは？",
+      "choices": [
+        "√2cm",
+        "√3cm",
+        "1.5cm",
+        "2cm"
+      ],
+      "answerIndex": 0,
+      "explanation": "1 : 1 : √2",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j308_009",
+      "unit": "math.j3.s2.a08",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "1辺2cmの正三角形の高さは？",
+      "choices": [
+        "√3cm",
+        "√2cm",
+        "1cm",
+        "2cm"
+      ],
+      "answerIndex": 0,
+      "explanation": "1 : 2 : √3 の直角三角形。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j308_010",
+      "unit": "math.j3.s2.a08",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "2点(1, 2)と(4, 6)の距離は？",
+      "choices": [
+        "7",
+        "√7",
+        "5",
+        "25"
+      ],
+      "answerIndex": 2,
+      "explanation": "√(3² + 4²)",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j308_011",
+      "unit": "math.j3.s2.a08",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "縦3cm・横4cm・高さ12cmの直方体の対角線は？",
+      "choices": [
+        "√19cm",
+        "19cm",
+        "13cm",
+        "12cm"
+      ],
+      "answerIndex": 2,
+      "explanation": "√(9 + 16 + 144)",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j308_012",
+      "unit": "math.j3.s2.a08",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "3辺が 5, 12, 13 の三角形は？",
+      "choices": [
+        "直角三角形",
+        "正三角形",
+        "二等辺三角形",
+        "鈍角三角形"
+      ],
+      "answerIndex": 0,
+      "explanation": "25 + 144 ＝ 169",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    }
+  ]
+}

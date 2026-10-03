@@ -10,7 +10,7 @@ import '../battle/battle_screen.dart';
 import '../field/field_screen.dart';
 import 'realm_style.dart';
 
-/// 試験対策ワールドの一覧（定期テストの海・模擬試験の空から入る）
+/// 試験対策ワールドの一覧（定期テストの海・高校入試の空から入る）
 class ExamWorldListScreen extends StatelessWidget {
   const ExamWorldListScreen({super.key, this.realm = StudyRealm.sea});
 
@@ -51,7 +51,7 @@ class ExamWorldListScreen extends StatelessWidget {
                   '${realm.vehicle}で${realm.surface.label}を進み、終盤は'
                   '${realm.deepVehicle}で${realm.deep.label}へ。'
                   '最後には、範囲全部から出題する「試験本番」のボスが待っています。'
-                  '${realm == StudyRealm.sky ? '\n※ 模擬試験の空は、定期テストの海よりさらに難しい上級者向けです（2回まちがえると倒れる・制限時間は半分）。' : ''}',
+                  '${realm == StudyRealm.sky ? '\n※ 高校入試の空は、定期テストの海よりさらに難しい上級者向けです（2回まちがえると倒れる・制限時間は半分）。' : ''}',
                   style: const TextStyle(fontSize: 13, height: 1.6),
                 ),
                 const SizedBox(height: 16),
@@ -285,7 +285,7 @@ class _ExamWorldCreateScreenState extends State<ExamWorldCreateScreen> {
                   ],
                 ),
                 Text(
-                  '6教科を1つのワールドにまとめられます。🔒 の教科は、RPG でワールドを解放すると使えます。',
+                  '5教科を1つのワールドにまとめられます。🔒 の教科は、RPG でワールドを解放すると使えます。',
                   style: TextStyle(
                     fontSize: 11.5,
                     color: TsuzuriColors.inkSoft,
@@ -388,12 +388,11 @@ class _ExamWorldCreateScreenState extends State<ExamWorldCreateScreen> {
   }
 
   static String _hintFor(String worldId) => switch (worldId) {
-    'math' => '例：2次関数、三角比、データの分析',
-    'english' => '例：関係詞、仮定法',
-    'japanese' => '例：助動詞、敬語、漢字',
-    'science' => '例：化学基礎、物質量、酸と塩基',
-    'social' => '例：明治維新、日本国憲法',
-    'information' => '例：ネットワーク、アルゴリズム',
+    'math' => '例：一次方程式、比例と反比例、平面図形',
+    'english' => '例：過去形、比較、受け身',
+    'japanese' => '例：漢字、文法、古文',
+    'science' => '例：電流、化学変化、天気',
+    'social' => '例：江戸時代、日本国憲法、世界の気候',
     _ => '単元名を「、」で区切って入力',
   };
 

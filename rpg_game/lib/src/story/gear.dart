@@ -115,7 +115,7 @@ class GearDef {
       name: '辞書の剣',
       slot: GearSlot.weapon,
       description: '英語のバトルでダメージ +15%',
-      howToGet: '英語ワールドで「ことばの欠片」を取りもどす',
+      howToGet: '英語の国で「ことばの欠片」を取りもどす',
       subject: 'english',
       subjectRate: 0.15,
     ),
@@ -151,17 +151,8 @@ class GearDef {
       name: '数式のペン',
       slot: GearSlot.weapon,
       description: '数学のバトルでダメージ +15%',
-      howToGet: '数理の国で「数の欠片」を取りもどす',
+      howToGet: '数の国で「数の欠片」を取りもどす',
       subject: 'math',
-      subjectRate: 0.15,
-    ),
-    GearDef(
-      id: 'cable_whip',
-      name: 'ケーブルの鞭',
-      slot: GearSlot.weapon,
-      description: '情報のバトルでダメージ +15%',
-      howToGet: '情報の国で「情報の欠片」を取りもどす',
-      subject: 'information',
       subjectRate: 0.15,
     ),
     GearDef(
@@ -202,7 +193,6 @@ class GearDef {
     'social': 'timeline_spear',
     'japanese': 'brush_blade',
     'math': 'formula_pen',
-    'information': 'cable_whip',
   };
 }
 

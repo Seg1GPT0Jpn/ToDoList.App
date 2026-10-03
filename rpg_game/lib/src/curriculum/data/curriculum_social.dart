@@ -133,7 +133,7 @@ const socialCurriculum = CurriculumNode(
                     '自然堤防',
                     '後背湿地',
                     '河岸段丘',
-                    'V字谷'
+                    'V字谷',
                   ],
                 ),
                 CurriculumNode(
@@ -148,7 +148,7 @@ const socialCurriculum = CurriculumNode(
                     '海岸段丘',
                     '沈水',
                     '離水',
-                    'エスチュアリー'
+                    'エスチュアリー',
                   ],
                 ),
                 CurriculumNode(
@@ -163,7 +163,7 @@ const socialCurriculum = CurriculumNode(
                     'ドリーネ',
                     'サンゴ礁',
                     'ワジ',
-                    '砂丘'
+                    '砂丘',
                   ],
                 ),
               ],
@@ -203,7 +203,7 @@ const socialCurriculum = CurriculumNode(
                     '乾燥帯',
                     '温帯',
                     '冷帯',
-                    '寒帯'
+                    '寒帯',
                   ],
                 ),
                 CurriculumNode(
@@ -239,7 +239,7 @@ const socialCurriculum = CurriculumNode(
                     'テラロッサ',
                     'テラローシャ',
                     'レグール',
-                    '土壌'
+                    '土壌',
                   ],
                 ),
                 CurriculumNode(
@@ -381,7 +381,7 @@ const socialCurriculum = CurriculumNode(
                     'プランテーション',
                     '焼畑',
                     '遊牧',
-                    'オアシス'
+                    'オアシス',
                   ],
                 ),
                 CurriculumNode(
@@ -396,7 +396,7 @@ const socialCurriculum = CurriculumNode(
                     'コーヒー',
                     'カカオ',
                     '茶',
-                    '生産量'
+                    '生産量',
                   ],
                 ),
                 CurriculumNode(
@@ -466,7 +466,7 @@ const socialCurriculum = CurriculumNode(
                     'USMCA',
                     '経済圏',
                     'FTA',
-                    'EPA'
+                    'EPA',
                   ],
                 ),
               ],
@@ -502,7 +502,7 @@ const socialCurriculum = CurriculumNode(
                     '中心業務地区',
                     '首位都市',
                     'プライメートシティ',
-                    'メガロポリス'
+                    'メガロポリス',
                   ],
                 ),
                 CurriculumNode(
@@ -515,7 +515,7 @@ const socialCurriculum = CurriculumNode(
                     'スプロール',
                     'ドーナツ化',
                     'ジェントリフィケーション',
-                    '再開発'
+                    '再開発',
                   ],
                 ),
               ],
@@ -573,7 +573,7 @@ const socialCurriculum = CurriculumNode(
                     'インドネシア',
                     'ベトナム',
                     'マレーシア',
-                    'フィリピン'
+                    'フィリピン',
                   ],
                 ),
                 CurriculumNode(
@@ -684,7 +684,7 @@ const socialCurriculum = CurriculumNode(
                     '中国',
                     '四国',
                     '九州',
-                    '沖縄'
+                    '沖縄',
                   ],
                 ),
               ],
@@ -815,7 +815,7 @@ const socialCurriculum = CurriculumNode(
                     '憲法十七条',
                     '遣隋使',
                     '飛鳥文化',
-                    '法隆寺'
+                    '法隆寺',
                   ],
                 ),
                 CurriculumNode(
@@ -831,7 +831,7 @@ const socialCurriculum = CurriculumNode(
                     '天武',
                     '持統',
                     '藤原京',
-                    '白鳳'
+                    '白鳳',
                   ],
                 ),
               ],
@@ -875,7 +875,7 @@ const socialCurriculum = CurriculumNode(
                     '日本書紀',
                     '万葉集',
                     '鑑真',
-                    '行基'
+                    '行基',
                   ],
                 ),
               ],
@@ -901,7 +901,7 @@ const socialCurriculum = CurriculumNode(
                     '蔵人',
                     '検非違使',
                     '最澄',
-                    '空海'
+                    '空海',
                   ],
                 ),
                 CurriculumNode(
@@ -928,7 +928,7 @@ const socialCurriculum = CurriculumNode(
                     '平将門',
                     '藤原純友',
                     '前九年',
-                    '後三年'
+                    '後三年',
                   ],
                 ),
               ],
@@ -1030,7 +1030,7 @@ const socialCurriculum = CurriculumNode(
                     '運慶',
                     '方丈記',
                     '徒然草',
-                    '平家物語'
+                    '平家物語',
                   ],
                 ),
               ],
@@ -1097,7 +1097,7 @@ const socialCurriculum = CurriculumNode(
                     '書院造',
                     '水墨画',
                     '雪舟',
-                    '連歌'
+                    '連歌',
                   ],
                 ),
                 CurriculumNode(
@@ -1216,7 +1216,7 @@ const socialCurriculum = CurriculumNode(
                     '本居宣長',
                     '蘭学',
                     '杉田玄白',
-                    '伊能忠敬'
+                    '伊能忠敬',
                   ],
                 ),
               ],
@@ -1412,7 +1412,7 @@ const socialCurriculum = CurriculumNode(
                     '政党内閣',
                     '普通選挙',
                     '吉野作造',
-                    '民本主義'
+                    '民本主義',
                   ],
                 ),
                 CurriculumNode(
@@ -1627,7 +1627,7 @@ const socialCurriculum = CurriculumNode(
                     '郡国制',
                     '王莽',
                     '張騫',
-                    '紙'
+                    '紙',
                   ],
                 ),
                 CurriculumNode(
@@ -1655,7 +1655,7 @@ const socialCurriculum = CurriculumNode(
                     'スパルタ',
                     'ソロン',
                     'ペイシストラトス',
-                    'クレイステネス'
+                    'クレイステネス',
                   ],
                 ),
                 CurriculumNode(
@@ -1680,7 +1680,7 @@ const socialCurriculum = CurriculumNode(
                     'プラトン',
                     'アリストテレス',
                     'ホメロス',
-                    'パルテノン'
+                    'パルテノン',
                   ],
                 ),
               ],
@@ -1709,7 +1709,7 @@ const socialCurriculum = CurriculumNode(
                     'パクス=ロマーナ',
                     '五賢帝',
                     'ディオクレティアヌス',
-                    'コンスタンティヌス'
+                    'コンスタンティヌス',
                   ],
                 ),
                 CurriculumNode(
@@ -1804,7 +1804,7 @@ const socialCurriculum = CurriculumNode(
                     'バラ戦争',
                     '教会大分裂',
                     'ジャックリー',
-                    'ワット=タイラー'
+                    'ワット=タイラー',
                   ],
                 ),
               ],
@@ -1838,7 +1838,7 @@ const socialCurriculum = CurriculumNode(
                     'アイユーブ',
                     'マムルーク',
                     '後ウマイヤ',
-                    'ガズナ'
+                    'ガズナ',
                   ],
                 ),
                 CurriculumNode(
@@ -1887,7 +1887,7 @@ const socialCurriculum = CurriculumNode(
                     '宋学',
                     '木版印刷',
                     '羅針盤',
-                    '火薬'
+                    '火薬',
                   ],
                 ),
               ],
@@ -1947,7 +1947,7 @@ const socialCurriculum = CurriculumNode(
                     'ラファエロ',
                     '人文主義',
                     '活版印刷',
-                    'グーテンベルク'
+                    'グーテンベルク',
                   ],
                 ),
                 CurriculumNode(
@@ -2027,7 +2027,7 @@ const socialCurriculum = CurriculumNode(
                     '七年戦争',
                     'ピョートル',
                     'エカチェリーナ',
-                    '啓蒙専制'
+                    '啓蒙専制',
                   ],
                 ),
               ],
@@ -2067,7 +2067,7 @@ const socialCurriculum = CurriculumNode(
                     'ムガル',
                     'アクバル',
                     'タージ=マハル',
-                    'シク教'
+                    'シク教',
                   ],
                 ),
               ],
@@ -2099,7 +2099,7 @@ const socialCurriculum = CurriculumNode(
                     'ルソー',
                     'ヴォルテール',
                     'ニュートン',
-                    '科学革命'
+                    '科学革命',
                   ],
                 ),
                 CurriculumNode(
@@ -2118,7 +2118,7 @@ const socialCurriculum = CurriculumNode(
                     '人権宣言',
                     'ジャコバン',
                     'ロベスピエール',
-                    'テルミドール'
+                    'テルミドール',
                   ],
                 ),
                 CurriculumNode(
@@ -2158,7 +2158,7 @@ const socialCurriculum = CurriculumNode(
                     '社会主義',
                     'マルクス',
                     'オーウェン',
-                    'チャーティスト'
+                    'チャーティスト',
                   ],
                 ),
               ],
@@ -2181,7 +2181,7 @@ const socialCurriculum = CurriculumNode(
                     '七月革命',
                     '二月革命',
                     '1848年',
-                    'ウィーン体制'
+                    'ウィーン体制',
                   ],
                 ),
                 CurriculumNode(
@@ -2194,7 +2194,7 @@ const socialCurriculum = CurriculumNode(
                     'カヴール',
                     'ドイツ統一',
                     'ビスマルク',
-                    '鉄血政策'
+                    '鉄血政策',
                   ],
                 ),
                 CurriculumNode(
@@ -2243,7 +2243,7 @@ const socialCurriculum = CurriculumNode(
                     '変法',
                     '義和団',
                     '辛亥革命',
-                    '孫文'
+                    '孫文',
                   ],
                 ),
                 CurriculumNode(
@@ -2257,7 +2257,7 @@ const socialCurriculum = CurriculumNode(
                     'タンジマート',
                     'ミドハト',
                     'イラン立憲革命',
-                    'フィリピン'
+                    'フィリピン',
                   ],
                 ),
               ],
@@ -2300,7 +2300,7 @@ const socialCurriculum = CurriculumNode(
                     'ワシントン会議',
                     'ロカルノ',
                     '不戦条約',
-                    '十四か条'
+                    '十四か条',
                   ],
                 ),
                 CurriculumNode(
@@ -2314,7 +2314,7 @@ const socialCurriculum = CurriculumNode(
                     'ファシズム',
                     'ナチ',
                     'ヒトラー',
-                    'ムッソリーニ'
+                    'ムッソリーニ',
                   ],
                 ),
                 CurriculumNode(
@@ -2343,7 +2343,7 @@ const socialCurriculum = CurriculumNode(
                     '独ソ戦',
                     'ノルマンディー',
                     'ホロコースト',
-                    'ヤルタ'
+                    'ヤルタ',
                   ],
                 ),
                 CurriculumNode(
@@ -2363,7 +2363,7 @@ const socialCurriculum = CurriculumNode(
                     'NATO',
                     'ワルシャワ',
                     'ベルリン封鎖',
-                    '鉄のカーテン'
+                    '鉄のカーテン',
                   ],
                 ),
                 CurriculumNode(
@@ -2376,7 +2376,7 @@ const socialCurriculum = CurriculumNode(
                     'インド独立',
                     'インドネシア',
                     'ベトナム',
-                    'パレスチナ'
+                    'パレスチナ',
                   ],
                 ),
               ],
@@ -2411,7 +2411,7 @@ const socialCurriculum = CurriculumNode(
                     'ベルリンの壁',
                     'マルタ',
                     'ソ連解体',
-                    '東欧革命'
+                    '東欧革命',
                   ],
                 ),
                 CurriculumNode(
@@ -2425,7 +2425,7 @@ const socialCurriculum = CurriculumNode(
                     '地域紛争',
                     '湾岸戦争',
                     '同時多発',
-                    '中東'
+                    '中東',
                   ],
                 ),
               ],
@@ -2467,7 +2467,7 @@ const socialCurriculum = CurriculumNode(
                     'ホッブズ',
                     'ロック',
                     'ルソー',
-                    'モンテスキュー'
+                    'モンテスキュー',
                   ],
                 ),
                 CurriculumNode(
@@ -2698,7 +2698,7 @@ const socialCurriculum = CurriculumNode(
                     '労働三権',
                     '団結権',
                     '団体交渉',
-                    '争議'
+                    '争議',
                   ],
                 ),
                 CurriculumNode(
@@ -2788,7 +2788,7 @@ const socialCurriculum = CurriculumNode(
                     '外部不経済',
                     '公共財',
                     'カルテル',
-                    '独占禁止法'
+                    '独占禁止法',
                   ],
                 ),
                 CurriculumNode(
@@ -2873,7 +2873,7 @@ const socialCurriculum = CurriculumNode(
                     '所得の再分配',
                     '景気の安定',
                     'ビルトイン・スタビライザー',
-                    'フィスカル'
+                    'フィスカル',
                   ],
                 ),
                 CurriculumNode(
@@ -3020,7 +3020,7 @@ const socialCurriculum = CurriculumNode(
                     '心理的離乳',
                     'マージナル・マン',
                     'モラトリアム',
-                    '第二反抗期'
+                    '第二反抗期',
                   ],
                 ),
                 CurriculumNode(
@@ -3069,7 +3069,7 @@ const socialCurriculum = CurriculumNode(
                     'デモクリトス',
                     'ピタゴラス',
                     'ソフィスト',
-                    'プロタゴラス'
+                    'プロタゴラス',
                   ],
                 ),
                 CurriculumNode(
@@ -3115,7 +3115,7 @@ const socialCurriculum = CurriculumNode(
                     'アガペー',
                     'パウロ',
                     'アウグスティヌス',
-                    'トマス=アクィナス'
+                    'トマス=アクィナス',
                   ],
                 ),
                 CurriculumNode(
@@ -3152,7 +3152,7 @@ const socialCurriculum = CurriculumNode(
                     '荀子',
                     '性悪説',
                     '朱子',
-                    '王陽明'
+                    '王陽明',
                   ],
                 ),
                 CurriculumNode(
@@ -3224,7 +3224,7 @@ const socialCurriculum = CurriculumNode(
                     '賀茂真淵',
                     '石田梅岩',
                     '安藤昌益',
-                    '二宮尊徳'
+                    '二宮尊徳',
                   ],
                 ),
                 CurriculumNode(
@@ -3239,7 +3239,7 @@ const socialCurriculum = CurriculumNode(
                     '西田幾多郎',
                     '和辻哲郎',
                     '柳田国男',
-                    '幸徳秋水'
+                    '幸徳秋水',
                   ],
                 ),
               ],
@@ -3271,7 +3271,7 @@ const socialCurriculum = CurriculumNode(
                     'カルヴァン',
                     'モラリスト',
                     'モンテーニュ',
-                    'パスカル'
+                    'パスカル',
                   ],
                 ),
                 CurriculumNode(
@@ -3285,7 +3285,7 @@ const socialCurriculum = CurriculumNode(
                     'デカルト',
                     '演繹法',
                     '我思う',
-                    'スピノザ'
+                    'スピノザ',
                   ],
                 ),
                 CurriculumNode(
@@ -3355,7 +3355,7 @@ const socialCurriculum = CurriculumNode(
                     'フーコー',
                     'ロールズ',
                     'シュヴァイツァー',
-                    'ガンディー'
+                    'ガンディー',
                   ],
                 ),
               ],
@@ -3386,7 +3386,7 @@ const socialCurriculum = CurriculumNode(
                     'クローン',
                     '安楽死',
                     'インフォームド・コンセント',
-                    'QOL'
+                    'QOL',
                   ],
                 ),
                 CurriculumNode(

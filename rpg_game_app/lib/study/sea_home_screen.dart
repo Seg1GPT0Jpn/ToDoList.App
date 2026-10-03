@@ -11,7 +11,6 @@ import 'exam_world_screens.dart';
 import 'realm_style.dart';
 import 'personal_books.dart';
 import 'sea_battle_launcher.dart';
-import 'term_cards.dart';
 import '../vocab/vocab_home.dart';
 
 /// 定期テストの海：教科を選び、単元・単語帳を選ぶ画面
@@ -25,17 +24,11 @@ class SeaHomeScreen extends StatefulWidget {
 }
 
 class _SeaHomeScreenState extends State<SeaHomeScreen> {
-  /// 選んでいる教科（english / science / social / japanese / math / information）
+  /// 選んでいる教科（english / math / japanese / science / social）
   String _subject = 'english';
 
-  static const _subjects = [
-    ('english', '英語'),
-    ('science', '理科'),
-    ('social', '社会'),
-    ('japanese', '国語'),
-    ('math', '数学'),
-    ('information', '情報'),
-    ('music', '音楽'),
+  static final _subjects = [
+    for (final w in RpgCatalog.worlds) (w.id, w.subject),
   ];
 
   @override
@@ -58,25 +51,22 @@ class _SeaHomeScreenState extends State<SeaHomeScreen> {
         ],
       ),
     );
-    final english = _subject == 'english';
-    final world = english ? null : RpgCatalog.world(_subject);
+    final english = _subject == RpgCatalog.englishWorldId;
+    final world = RpgCatalog.world(_subject);
     final extras = ExtraSets.of(_subject);
-    final tabs = english
-        ? const [
-            Tab(text: '高1'),
-            Tab(text: '高2'),
-            Tab(text: '高3'),
-            Tab(text: '単語・熟語'),
-            Tab(text: '追加問題'),
-            Tab(icon: Icon(Icons.style, size: 16), text: '単語帳練習'),
-          ]
-        : [
-            for (final r in world!.routes) Tab(text: r.name),
-            if (world.routes.isEmpty) const Tab(text: '準備中'),
-            if (extras.isNotEmpty) const Tab(text: '追加問題'),
-            if (TermDecks.of(world.id).isNotEmpty)
-              const Tab(icon: Icon(Icons.style, size: 16), text: '暗記カード'),
-          ];
+    final tabs = [
+      for (final r in world.routes) Tab(text: r.name),
+      if (world.routes.isEmpty) const Tab(text: '準備中'),
+      if (english) ...const [
+        Tab(text: '中1文法'),
+        Tab(text: '中2文法'),
+        Tab(text: '中3文法'),
+        Tab(text: '単語・熟語'),
+      ],
+      if (extras.isNotEmpty) const Tab(text: '追加問題'),
+      if (english)
+        const Tab(icon: Icon(Icons.style, size: 16), text: '単語帳練習'),
+    ];
     return DefaultTabController(
       key: ValueKey(_subject),
       length: tabs.length,
@@ -116,28 +106,21 @@ class _SeaHomeScreenState extends State<SeaHomeScreen> {
             stream: RpgServices.of(context).repository.watch(),
             builder: (context, snap) {
               final progress = snap.data ?? RpgProgress.initial;
-              if (!english) {
-                return TabBarView(
-                  children: [
-                    for (final r in world!.routes)
-                      _RouteTab(world: world, route: r, progress: progress),
-                    if (world.routes.isEmpty)
-                      const Center(child: Text('この教科は準備中です')),
-                    if (extras.isNotEmpty)
-                      _ExtraTab(world: world, sets: extras, progress: progress),
-                    if (TermDecks.of(world.id).isNotEmpty)
-                      TermCardsTab(world: world, progress: progress),
-                  ],
-                );
-              }
               return TabBarView(
                 children: [
-                  _GradeTab(grade: 1, progress: progress),
-                  _GradeTab(grade: 2, progress: progress),
-                  _GradeTab(grade: 3, progress: progress),
-                  WordBooksTab(progress: progress),
-                  _ExtraTab(world: null, sets: extras, progress: progress),
-                  VocabHome(books: widget.personalBooks),
+                  for (final r in world.routes)
+                    _RouteTab(world: world, route: r, progress: progress),
+                  if (world.routes.isEmpty)
+                    const Center(child: Text('この教科は準備中です')),
+                  if (english) ...[
+                    _GradeTab(grade: 1, progress: progress),
+                    _GradeTab(grade: 2, progress: progress),
+                    _GradeTab(grade: 3, progress: progress),
+                    WordBooksTab(progress: progress),
+                  ],
+                  if (extras.isNotEmpty)
+                    _ExtraTab(world: world, sets: extras, progress: progress),
+                  if (english) VocabHome(books: widget.personalBooks),
                 ],
               );
             },
@@ -409,7 +392,7 @@ class _GradeTab extends StatelessWidget {
   }
 }
 
-/// 単語帳の4択（定期テストの海・模擬試験の空）
+/// 単語帳の4択（定期テストの海・高校入試の空）
 class WordBooksTab extends StatelessWidget {
   const WordBooksTab({
     super.key,
@@ -451,10 +434,6 @@ class WordBooksTab extends StatelessWidget {
     return ListView(
       padding: const EdgeInsets.fromLTRB(40, 12, 12, 24),
       children: [
-        Text('パスワードで開いた単語帳', style: serif(15, color: TsuzuriColors.inkSoft)),
-        const SizedBox(height: 8),
-        VocabBookQuizSection(progress: progress, realm: realm),
-        const SizedBox(height: 12),
         Text('1回20問（ランダム）', style: serif(15, color: TsuzuriColors.inkSoft)),
         const SizedBox(height: 8),
         for (final b in SeaCatalog.wordBooks)

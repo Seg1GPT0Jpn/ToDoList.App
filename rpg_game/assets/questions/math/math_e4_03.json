@@ -1,0 +1,212 @@
+{
+  "setId": "math_e4_03",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_e403_001",
+      "unit": "math.e4.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "1回転の角の大きさは何度？",
+      "choices": [
+        "360°",
+        "100°",
+        "90°",
+        "180°"
+      ],
+      "answerIndex": 0,
+      "explanation": "1回転＝360°。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e403_002",
+      "unit": "math.e4.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "半回転の角の大きさは何度？",
+      "choices": [
+        "90°",
+        "360°",
+        "180°",
+        "45°"
+      ],
+      "answerIndex": 2,
+      "explanation": "直線の角は180°。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e403_003",
+      "unit": "math.e4.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "直角は何度？",
+      "choices": [
+        "180°",
+        "45°",
+        "90°",
+        "60°"
+      ],
+      "answerIndex": 2,
+      "explanation": "直角＝90°。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e403_004",
+      "unit": "math.e4.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "角の大きさをはかる道具は？",
+      "choices": [
+        "分度器",
+        "ものさし",
+        "コンパス",
+        "三角定規"
+      ],
+      "answerIndex": 0,
+      "explanation": "分度器の中心をちょう点に合わせる。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e403_005",
+      "unit": "math.e4.s1.a03",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "180° − 35° は？",
+      "choices": [
+        "145°",
+        "155°",
+        "215°",
+        "135°"
+      ],
+      "answerIndex": 0,
+      "explanation": "一直線の角から35°をひく。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e403_006",
+      "unit": "math.e4.s1.a03",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "三角定規の角を合わせて、45° + 30° でできる角は？",
+      "choices": [
+        "90°",
+        "105°",
+        "75°",
+        "60°"
+      ],
+      "answerIndex": 2,
+      "explanation": "45 + 30 = 75",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e403_007",
+      "unit": "math.e4.s1.a03",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "三角定規の角を合わせて、90° + 60° でできる角は？",
+      "choices": [
+        "150°",
+        "120°",
+        "180°",
+        "160°"
+      ],
+      "answerIndex": 0,
+      "explanation": "90 + 60 = 150",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e403_008",
+      "unit": "math.e4.s1.a03",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "360° − 120° は？",
+      "choices": [
+        "240°",
+        "220°",
+        "140°",
+        "260°"
+      ],
+      "answerIndex": 0,
+      "explanation": "1回転から120°をひく。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e403_009",
+      "unit": "math.e4.s1.a03",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "時計の長いはりが15分で回る角度は？",
+      "choices": [
+        "90°",
+        "45°",
+        "180°",
+        "15°"
+      ],
+      "answerIndex": 0,
+      "explanation": "60分で360°、15分はその1/4。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e403_010",
+      "unit": "math.e4.s1.a03",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "時計の長いはりが10分で回る角度は？",
+      "choices": [
+        "60°",
+        "10°",
+        "30°",
+        "100°"
+      ],
+      "answerIndex": 0,
+      "explanation": "1分で6°。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e403_011",
+      "unit": "math.e4.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "90°より小さい角を何という？",
+      "choices": [
+        "直角",
+        "鈍角",
+        "鋭角",
+        "平角"
+      ],
+      "answerIndex": 2,
+      "explanation": "鋭角は90°未満。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e403_012",
+      "unit": "math.e4.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "90°より大きく180°より小さい角を何という？",
+      "choices": [
+        "鋭角",
+        "直角",
+        "鈍角",
+        "平角"
+      ],
+      "answerIndex": 2,
+      "explanation": "鈍角は90°と180°の間。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    }
+  ]
+}

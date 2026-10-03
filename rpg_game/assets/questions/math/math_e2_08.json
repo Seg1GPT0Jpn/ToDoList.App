@@ -1,0 +1,212 @@
+{
+  "setId": "math_e2_08",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_e208_001",
+      "unit": "math.e2.s2.a08",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "5 × 1 は？",
+      "choices": [
+        "5",
+        "6",
+        "7",
+        "10"
+      ],
+      "answerIndex": 0,
+      "explanation": "5のだんの九九。5が1こ分。",
+      "targetGrade": "小2",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e208_002",
+      "unit": "math.e2.s2.a08",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "3 × 1 は？",
+      "choices": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "answerIndex": 0,
+      "explanation": "3のだんの九九。3が1こ分。",
+      "targetGrade": "小2",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e208_003",
+      "unit": "math.e2.s2.a08",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "4 × 3 は？",
+      "choices": [
+        "8",
+        "12",
+        "13",
+        "16"
+      ],
+      "answerIndex": 1,
+      "explanation": "4のだんの九九。4が3こ分。",
+      "targetGrade": "小2",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e208_004",
+      "unit": "math.e2.s2.a08",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "4 × 7 は？",
+      "choices": [
+        "24",
+        "28",
+        "29",
+        "32"
+      ],
+      "answerIndex": 1,
+      "explanation": "4のだんの九九。4が7こ分。",
+      "targetGrade": "小2",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e208_005",
+      "unit": "math.e2.s2.a08",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "5 × 7 は？",
+      "choices": [
+        "30",
+        "35",
+        "36",
+        "40"
+      ],
+      "answerIndex": 1,
+      "explanation": "5のだんの九九。5が7こ分。",
+      "targetGrade": "小2",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e208_006",
+      "unit": "math.e2.s2.a08",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "3 × 4 は？",
+      "choices": [
+        "9",
+        "12",
+        "13",
+        "15"
+      ],
+      "answerIndex": 1,
+      "explanation": "3のだんの九九。3が4こ分。",
+      "targetGrade": "小2",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e208_007",
+      "unit": "math.e2.s2.a08",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "3 × 5 は？",
+      "choices": [
+        "12",
+        "15",
+        "16",
+        "18"
+      ],
+      "answerIndex": 1,
+      "explanation": "3のだんの九九。3が5こ分。",
+      "targetGrade": "小2",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e208_008",
+      "unit": "math.e2.s2.a08",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "5 × 2 は？",
+      "choices": [
+        "5",
+        "10",
+        "11",
+        "15"
+      ],
+      "answerIndex": 1,
+      "explanation": "5のだんの九九。5が2こ分。",
+      "targetGrade": "小2",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e208_009",
+      "unit": "math.e2.s2.a08",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "2 × 5 は？",
+      "choices": [
+        "8",
+        "10",
+        "11",
+        "12"
+      ],
+      "answerIndex": 1,
+      "explanation": "2のだんの九九。2が5こ分。",
+      "targetGrade": "小2",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e208_010",
+      "unit": "math.e2.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "3 × 4 の意味として正しいのは？",
+      "choices": [
+        "3と4をたす",
+        "3が4こ分",
+        "3を4でわる",
+        "4が3こ分のときだけ"
+      ],
+      "answerIndex": 1,
+      "explanation": "「かけられる数 × かける数」は「かけられる数がかける数こ分」。",
+      "targetGrade": "小2",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e208_011",
+      "unit": "math.e2.s2.a08",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "1ふくろにあめが5こずつ、4ふくろあります。あめはぜんぶで何こ？",
+      "choices": [
+        "25こ",
+        "20こ",
+        "15こ",
+        "9こ"
+      ],
+      "answerIndex": 1,
+      "explanation": "5 × 4 = 20",
+      "targetGrade": "小2",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e208_012",
+      "unit": "math.e2.s2.a08",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "2人ずつ7れつにならびました。ぜんぶで何人？",
+      "choices": [
+        "9人",
+        "16人",
+        "14人",
+        "12人"
+      ],
+      "answerIndex": 2,
+      "explanation": "2 × 7 = 14",
+      "targetGrade": "小2",
+      "phase": "basics"
+    }
+  ]
+}

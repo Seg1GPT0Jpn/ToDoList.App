@@ -1,0 +1,212 @@
+{
+  "setId": "math_j1_07",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_j107_001",
+      "unit": "math.j1.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "線分ABの中点を通り、ABに垂直な直線を何という？",
+      "choices": [
+        "垂直二等分線",
+        "接線",
+        "対角線",
+        "角の二等分線"
+      ],
+      "answerIndex": 0,
+      "explanation": "線分の両端から等しい距離の点の集まり。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j107_002",
+      "unit": "math.j1.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "角の2辺から等しい距離にある点の集まりは？",
+      "choices": [
+        "平行線",
+        "垂直二等分線",
+        "角の二等分線",
+        "円"
+      ],
+      "answerIndex": 2,
+      "explanation": "角を2等分する半直線。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j107_003",
+      "unit": "math.j1.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "円の接線は、接点を通る半径とどんな関係？",
+      "choices": [
+        "45°で交わる",
+        "一致する",
+        "垂直",
+        "平行"
+      ],
+      "answerIndex": 2,
+      "explanation": "接線 ⊥ 半径。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j107_004",
+      "unit": "math.j1.s2.a07",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "半径6cm、中心角60°のおうぎ形の弧の長さは？",
+      "choices": [
+        "πcm",
+        "12πcm",
+        "6πcm",
+        "2πcm"
+      ],
+      "answerIndex": 3,
+      "explanation": "2π × 6 × 60/360 ＝ 2π",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j107_005",
+      "unit": "math.j1.s2.a07",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "半径6cm、中心角60°のおうぎ形の面積は？",
+      "choices": [
+        "12πcm²",
+        "6πcm²",
+        "2πcm²",
+        "36πcm²"
+      ],
+      "answerIndex": 1,
+      "explanation": "π × 36 × 1/6 ＝ 6π",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j107_006",
+      "unit": "math.j1.s2.a07",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "半径3cmの円の円周の長さは？",
+      "choices": [
+        "9πcm",
+        "3πcm",
+        "12πcm",
+        "6πcm"
+      ],
+      "answerIndex": 3,
+      "explanation": "2πr",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j107_007",
+      "unit": "math.j1.s2.a07",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "半径3cmの円の面積は？",
+      "choices": [
+        "12πcm²",
+        "6πcm²",
+        "9πcm²",
+        "3πcm²"
+      ],
+      "answerIndex": 2,
+      "explanation": "πr²",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j107_008",
+      "unit": "math.j1.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "図形を一定の方向に一定の距離だけずらす移動は？",
+      "choices": [
+        "対称移動",
+        "回転移動",
+        "平行移動",
+        "拡大"
+      ],
+      "answerIndex": 2,
+      "explanation": "ずらすだけ。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j107_009",
+      "unit": "math.j1.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "図形をある直線を折り目に折り返す移動は？",
+      "choices": [
+        "平行移動",
+        "回転移動",
+        "対称移動",
+        "縮小"
+      ],
+      "answerIndex": 2,
+      "explanation": "折り目の直線が対称の軸。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j107_010",
+      "unit": "math.j1.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "1点を中心に一定の角度だけ回す移動は？",
+      "choices": [
+        "対称移動",
+        "回転移動",
+        "点対称",
+        "平行移動"
+      ],
+      "answerIndex": 1,
+      "explanation": "180°の回転移動を点対称移動という。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j107_011",
+      "unit": "math.j1.s2.a07",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "弧の長さ4πcm、半径6cmのおうぎ形の中心角は？",
+      "choices": [
+        "240°",
+        "60°",
+        "90°",
+        "120°"
+      ],
+      "answerIndex": 3,
+      "explanation": "2π × 6 × a/360 ＝ 4π → a ＝ 120",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j107_012",
+      "unit": "math.j1.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "円周上の2点を結ぶ線分を何という？",
+      "choices": [
+        "弦",
+        "接線",
+        "半径",
+        "弧"
+      ],
+      "answerIndex": 0,
+      "explanation": "弧は円周の一部。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    }
+  ]
+}

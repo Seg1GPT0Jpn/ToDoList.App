@@ -1,0 +1,212 @@
+{
+  "setId": "math_e5_05",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_e505_001",
+      "unit": "math.e5.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "14 と 45 の最大公約数は？",
+      "choices": [
+        "1",
+        "2",
+        "3",
+        "14"
+      ],
+      "answerIndex": 0,
+      "explanation": "両方の約数のうち、いちばん大きいもの。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e505_002",
+      "unit": "math.e5.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "12 と 28 の最大公約数は？",
+      "choices": [
+        "3",
+        "4",
+        "5",
+        "8"
+      ],
+      "answerIndex": 1,
+      "explanation": "両方の約数のうち、いちばん大きいもの。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e505_003",
+      "unit": "math.e5.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "18 と 12 の最大公約数は？",
+      "choices": [
+        "5",
+        "6",
+        "7",
+        "12"
+      ],
+      "answerIndex": 1,
+      "explanation": "両方の約数のうち、いちばん大きいもの。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e505_004",
+      "unit": "math.e5.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "16 と 8 の最大公約数は？",
+      "choices": [
+        "7",
+        "8",
+        "9",
+        "16"
+      ],
+      "answerIndex": 1,
+      "explanation": "両方の約数のうち、いちばん大きいもの。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e505_005",
+      "unit": "math.e5.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "5 と 4 の最小公倍数は？",
+      "choices": [
+        "5",
+        "20",
+        "25",
+        "40"
+      ],
+      "answerIndex": 1,
+      "explanation": "両方の倍数のうち、いちばん小さいもの（0はのぞく）。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e505_006",
+      "unit": "math.e5.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "9 と 11 の最小公倍数は？",
+      "choices": [
+        "11",
+        "99",
+        "108",
+        "198"
+      ],
+      "answerIndex": 1,
+      "explanation": "両方の倍数のうち、いちばん小さいもの（0はのぞく）。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e505_007",
+      "unit": "math.e5.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "7 と 4 の最小公倍数は？",
+      "choices": [
+        "7",
+        "28",
+        "35",
+        "56"
+      ],
+      "answerIndex": 1,
+      "explanation": "両方の倍数のうち、いちばん小さいもの（0はのぞく）。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e505_008",
+      "unit": "math.e5.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "6 と 5 の最小公倍数は？",
+      "choices": [
+        "6",
+        "30",
+        "36",
+        "60"
+      ],
+      "answerIndex": 1,
+      "explanation": "両方の倍数のうち、いちばん小さいもの（0はのぞく）。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e505_009",
+      "unit": "math.e5.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "2でわりきれる整数を何という？",
+      "choices": [
+        "偶数",
+        "奇数",
+        "素数",
+        "約数"
+      ],
+      "answerIndex": 0,
+      "explanation": "0、2、4、6…が偶数。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e505_010",
+      "unit": "math.e5.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "次のうち奇数は？",
+      "choices": [
+        "0",
+        "18",
+        "27",
+        "40"
+      ],
+      "answerIndex": 2,
+      "explanation": "2でわりきれない数が奇数。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e505_011",
+      "unit": "math.e5.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "12の約数はいくつある？",
+      "choices": [
+        "4こ",
+        "12こ",
+        "6こ",
+        "5こ"
+      ],
+      "answerIndex": 2,
+      "explanation": "1、2、3、4、6、12。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e505_012",
+      "unit": "math.e5.s2.a05",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "たて6cm・よこ8cmの紙をすきまなくならべて正方形を作る。いちばん小さい正方形の1辺は？",
+      "choices": [
+        "12cm",
+        "48cm",
+        "14cm",
+        "24cm"
+      ],
+      "answerIndex": 3,
+      "explanation": "6と8の最小公倍数は24。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    }
+  ]
+}

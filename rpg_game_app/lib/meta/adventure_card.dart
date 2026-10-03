@@ -5,7 +5,6 @@ import '../app/services.dart';
 import '../app/theme.dart';
 import '../art/enemy_painter.dart';
 import '../battle/battle_screen.dart';
-import '../study/common_test_screens.dart';
 import '../study/comprehensive_exam_screen.dart';
 import '../study/sky_home_screen.dart';
 import '../versus/versus_screen.dart';
@@ -111,7 +110,7 @@ class AdventureCard extends StatelessWidget {
                   ),
                   _MenuButton(
                     icon: Icons.menu_book_outlined,
-                    label: '物語（欠片 ${Story.fragments(progress).length}/6）',
+                    label: '物語（欠片 ${Story.fragments(progress).length}/${Story.worlds.length}）',
                     builder: (_) => const StoryScreen(),
                   ),
                   _MenuButton(
@@ -127,13 +126,8 @@ class AdventureCard extends StatelessWidget {
                     builder: (_) => const EquipmentScreen(),
                   ),
                   _MenuButton(
-                    icon: Icons.account_balance_outlined,
-                    label: '共通テスト遺跡',
-                    builder: (_) => const CommonTestRuinsScreen(),
-                  ),
-                  _MenuButton(
                     icon: Icons.rocket_launch_outlined,
-                    label: '模擬試験の空',
+                    label: '高校入試の空',
                     builder: (_) => const SkyHomeScreen(),
                   ),
                   _MenuButton(

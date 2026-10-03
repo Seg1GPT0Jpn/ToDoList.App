@@ -271,7 +271,7 @@ class WorldMapScreen extends StatelessWidget {
         const SizedBox(height: 14),
         _RealmBanner(
           realm: StudyRealm.sea,
-          subtitle: '単元ごとに文法・単語・熟語をチェック。船で進み、最後は潜水艦で深海へ',
+          subtitle: '学年・単元ごとに定期テスト対策。船で進み、最後は潜水艦で深海へ',
           onTap: () => Navigator.of(context).push(
             MaterialPageRoute<void>(
               builder: (_) => MusicScope(
@@ -284,7 +284,7 @@ class WorldMapScreen extends StatelessWidget {
         const SizedBox(height: 10),
         _RealmBanner(
           realm: StudyRealm.sky,
-          subtitle: '海よりさらに難しい上級者向け。飛行船で雲の上へ、最後はロケットで宇宙へ',
+          subtitle: '高校入試レベルの上級者向け。飛行船で雲の上へ、最後はロケットで宇宙へ',
           onTap: () => Navigator.of(context).push(
             MaterialPageRoute<void>(
               builder: (_) => const MusicScope(
@@ -667,7 +667,7 @@ class _WorldCard extends StatelessWidget {
   }
 }
 
-/// 定期テストの海・模擬試験の空への入口
+/// 定期テストの海・高校入試の空への入口
 class _RealmBanner extends StatelessWidget {
   const _RealmBanner({
     required this.realm,

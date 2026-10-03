@@ -12,7 +12,7 @@ class PromoCodes {
 
   static const _salt = 'tsuzuri-promo:';
 
-  /// 有料の5教科（理科・社会・国語・数学・情報）をまとめて受け取れるコード
+  /// 有料の4教科（算数・数学・国語・理科・社会）をまとめて受け取れるコード
   static const _allSubjectsHash =
       '85c5bd199f582cf7778e1ff64b9d0d718a5c4c67951084ee54e0826f6c8f2e1b';
 
@@ -35,7 +35,7 @@ class PromoCodes {
     return buf.toString().toUpperCase();
   }
 
-  /// 有料の5教科をまとめて受け取れるコードかどうか
+  /// 有料の4教科をまとめて受け取れるコードかどうか
   static bool unlocksAllSubjects(String input) {
     final code = normalize(input);
     if (code.isEmpty) return false;

@@ -124,7 +124,7 @@ class TodayButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final r = StudyNavigator.today(record, today: today).firstOrNull;
-    final label = r?.text ?? '英語ワールドで冒険をはじめる';
+    final label = r?.text ?? '冒険をはじめる';
     return FilledButton(
       key: const ValueKey('today-first'),
       style: FilledButton.styleFrom(

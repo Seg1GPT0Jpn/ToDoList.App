@@ -1,0 +1,212 @@
+{
+  "setId": "math_e4_05",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_e405_001",
+      "unit": "math.e4.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "4 + 4.08 は？",
+      "choices": [
+        "7.98",
+        "8.08",
+        "8.18",
+        "80.8"
+      ],
+      "answerIndex": 1,
+      "explanation": "小数点の位置をそろえる。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e405_002",
+      "unit": "math.e4.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "8.31 + 4.13 は？",
+      "choices": [
+        "12.34",
+        "12.44",
+        "12.54",
+        "124.4"
+      ],
+      "answerIndex": 1,
+      "explanation": "小数点の位置をそろえる。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e405_003",
+      "unit": "math.e4.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "7.9 − 2.3 は？",
+      "choices": [
+        "5.5",
+        "5.6",
+        "5.7",
+        "56"
+      ],
+      "answerIndex": 1,
+      "explanation": "小数点の位置をそろえる。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e405_004",
+      "unit": "math.e4.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "3.24 − 2.82 は？",
+      "choices": [
+        "0.32",
+        "0.42",
+        "0.52",
+        "4.2"
+      ],
+      "answerIndex": 1,
+      "explanation": "小数点の位置をそろえる。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e405_005",
+      "unit": "math.e4.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "5.37 + 2.88 は？",
+      "choices": [
+        "8.15",
+        "8.25",
+        "8.35",
+        "82.5"
+      ],
+      "answerIndex": 1,
+      "explanation": "小数点の位置をそろえる。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e405_006",
+      "unit": "math.e4.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "1.93 + 4.37 は？",
+      "choices": [
+        "6.2",
+        "6.3",
+        "6.4",
+        "63"
+      ],
+      "answerIndex": 1,
+      "explanation": "小数点の位置をそろえる。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e405_007",
+      "unit": "math.e4.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "1.74 + 3.96 は？",
+      "choices": [
+        "5.6",
+        "5.7",
+        "5.8",
+        "57"
+      ],
+      "answerIndex": 1,
+      "explanation": "小数点の位置をそろえる。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e405_008",
+      "unit": "math.e4.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "9.12 − 3.75 は？",
+      "choices": [
+        "5.27",
+        "5.37",
+        "5.47",
+        "53.7"
+      ],
+      "answerIndex": 1,
+      "explanation": "小数点の位置をそろえる。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e405_009",
+      "unit": "math.e4.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "2.54 + 2.03 は？",
+      "choices": [
+        "4.47",
+        "4.57",
+        "4.67",
+        "45.7"
+      ],
+      "answerIndex": 1,
+      "explanation": "小数点の位置をそろえる。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e405_010",
+      "unit": "math.e4.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "0.01を35こ集めた数は？",
+      "choices": [
+        "0.035",
+        "0.35",
+        "3.5",
+        "35"
+      ],
+      "answerIndex": 1,
+      "explanation": "0.01が35こで0.35。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e405_011",
+      "unit": "math.e4.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "2.468の小数第2位の数字は？",
+      "choices": [
+        "2",
+        "4",
+        "6",
+        "8"
+      ],
+      "answerIndex": 2,
+      "explanation": "小数第1位が4、第2位が6、第3位が8。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e405_012",
+      "unit": "math.e4.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "1.5kmは何m？",
+      "choices": [
+        "15000m",
+        "1500m",
+        "150m",
+        "15m"
+      ],
+      "answerIndex": 1,
+      "explanation": "1km＝1000m。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    }
+  ]
+}

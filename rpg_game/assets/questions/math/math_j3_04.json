@@ -1,0 +1,212 @@
+{
+  "setId": "math_j3_04",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_j304_001",
+      "unit": "math.j3.s1.a04",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "6√5 + 5√5 は？",
+      "choices": [
+        "√55",
+        "30√5",
+        "11√10",
+        "11√5"
+      ],
+      "answerIndex": 3,
+      "explanation": "同じ根号どうしはまとめられる。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j304_002",
+      "unit": "math.j3.s1.a04",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "√96 を a√b の形にすると？",
+      "choices": [
+        "6√4",
+        "4√6",
+        "4√24",
+        "16√6"
+      ],
+      "answerIndex": 1,
+      "explanation": "根号の中の平方数を外に出す。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j304_003",
+      "unit": "math.j3.s1.a04",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "(x + 2)(x + 2) を展開すると？",
+      "choices": [
+        "x² + 4x + 5",
+        "x² − 4x + 4",
+        "x² + 4x − 4",
+        "x² + 4x + 4"
+      ],
+      "answerIndex": 3,
+      "explanation": "(x + a)(x + b) ＝ x² + (a + b)x + ab",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j304_004",
+      "unit": "math.j3.s1.a04",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "4√5 + 6√5 は？",
+      "choices": [
+        "√50",
+        "24√5",
+        "10√10",
+        "10√5"
+      ],
+      "answerIndex": 3,
+      "explanation": "同じ根号どうしはまとめられる。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j304_005",
+      "unit": "math.j3.s1.a04",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "x² + 5x + 4 を因数分解すると？",
+      "choices": [
+        "(x + 1)(x + 4)",
+        "(x + 5)(x + 4)",
+        "(x + 1)(x − 4)",
+        "(x − 1)(x − 4)"
+      ],
+      "answerIndex": 0,
+      "explanation": "和が x の係数、積が定数項になる2数をさがす。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j304_006",
+      "unit": "math.j3.s1.a04",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "(x + 3)(x − 4) を展開すると？",
+      "choices": [
+        "x² + x − 12",
+        "x² − 12x − 1",
+        "x² − x + 12",
+        "x² − x − 12"
+      ],
+      "answerIndex": 3,
+      "explanation": "(x + a)(x + b) ＝ x² + (a + b)x + ab",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j304_007",
+      "unit": "math.j3.s1.a04",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "二次方程式 x² − 4x − 21 = 0 を解くと？",
+      "choices": [
+        "x = −4, −21",
+        "x = −7, 3",
+        "x = −3, −7",
+        "x = −3, 7"
+      ],
+      "answerIndex": 3,
+      "explanation": "因数分解して、(x − α)(x − β) ＝ 0 → x ＝ α, β。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j304_008",
+      "unit": "math.j3.s1.a04",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "二次方程式 x² + x − 12 = 0 を解くと？",
+      "choices": [
+        "x = −4, 3",
+        "x = 1, −12",
+        "x = −4, −3",
+        "x = −3, 4"
+      ],
+      "answerIndex": 0,
+      "explanation": "因数分解して、(x − α)(x − β) ＝ 0 → x ＝ α, β。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j304_009",
+      "unit": "math.j3.s1.a04",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "(x + 2)(x − 1) を展開すると？",
+      "choices": [
+        "x² − x − 2",
+        "x² + x + 2",
+        "x² + x − 2",
+        "x² − 2x + 1"
+      ],
+      "answerIndex": 2,
+      "explanation": "(x + a)(x + b) ＝ x² + (a + b)x + ab",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j304_010",
+      "unit": "math.j3.s1.a04",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "x² + 3x − 18 を因数分解すると？",
+      "choices": [
+        "(x − 3)(x + 6)",
+        "(x − 3)(x − 6)",
+        "(x + 3)(x − 18)",
+        "(x + 3)(x − 6)"
+      ],
+      "answerIndex": 0,
+      "explanation": "和が x の係数、積が定数項になる2数をさがす。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j304_011",
+      "unit": "math.j3.s1.a04",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "(x − 2)(x + 2) を展開すると？",
+      "choices": [
+        "x² − 4",
+        "x² − 4x",
+        "x² + 4",
+        "x² + x − 4"
+      ],
+      "answerIndex": 0,
+      "explanation": "(x + a)(x + b) ＝ x² + (a + b)x + ab",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j304_012",
+      "unit": "math.j3.s1.a04",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "二次方程式 x² − 5x − 14 = 0 を解くと？",
+      "choices": [
+        "x = −2, 7",
+        "x = −2, −7",
+        "x = −5, −14",
+        "x = −7, 2"
+      ],
+      "answerIndex": 0,
+      "explanation": "因数分解して、(x − α)(x − β) ＝ 0 → x ＝ α, β。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    }
+  ]
+}

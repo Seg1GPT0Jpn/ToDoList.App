@@ -1,0 +1,212 @@
+{
+  "setId": "math_e4_01",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_e401_001",
+      "unit": "math.e4.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "1億を10こ集めた数は？",
+      "choices": [
+        "100億",
+        "1000万",
+        "10億",
+        "1兆"
+      ],
+      "answerIndex": 2,
+      "explanation": "1億の10倍は10億。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e401_002",
+      "unit": "math.e4.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "1000億を10こ集めた数は？",
+      "choices": [
+        "10兆",
+        "1万億",
+        "100億",
+        "1兆"
+      ],
+      "answerIndex": 3,
+      "explanation": "1000億の10倍が1兆。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e401_003",
+      "unit": "math.e4.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "1億は1万の何倍？",
+      "choices": [
+        "100倍",
+        "1万倍",
+        "1000倍",
+        "10倍"
+      ],
+      "answerIndex": 1,
+      "explanation": "万の万倍が億。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e401_004",
+      "unit": "math.e4.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「五億三千万」を数字で書くと？",
+      "choices": [
+        "50300000",
+        "53000000",
+        "530000000",
+        "5030000000"
+      ],
+      "answerIndex": 2,
+      "explanation": "5億＝500000000、3000万＝30000000。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e401_005",
+      "unit": "math.e4.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "3億 × 10 は？",
+      "choices": [
+        "3兆",
+        "3億10",
+        "300億",
+        "30億"
+      ],
+      "answerIndex": 3,
+      "explanation": "10倍すると位が1つ上がる。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e401_006",
+      "unit": "math.e4.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "25億 + 75億 は？",
+      "choices": [
+        "100億",
+        "10億",
+        "1兆",
+        "1000億"
+      ],
+      "answerIndex": 0,
+      "explanation": "25 + 75 = 100 → 100億。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e401_007",
+      "unit": "math.e4.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "8兆 − 3兆 は？",
+      "choices": [
+        "5000億",
+        "5億",
+        "5兆",
+        "11兆"
+      ],
+      "answerIndex": 2,
+      "explanation": "8 − 3 = 5",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e401_008",
+      "unit": "math.e4.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "120 × 300 は？",
+      "choices": [
+        "420",
+        "3600",
+        "36000",
+        "360000"
+      ],
+      "answerIndex": 2,
+      "explanation": "12 × 3 = 36、0を3つつける。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e401_009",
+      "unit": "math.e4.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "2500 × 40 は？",
+      "choices": [
+        "2540",
+        "10000",
+        "100000",
+        "1000000"
+      ],
+      "answerIndex": 2,
+      "explanation": "25 × 4 = 100、0を3つつける。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e401_010",
+      "unit": "math.e4.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "346 × 27 は？",
+      "choices": [
+        "8342",
+        "9242",
+        "9342",
+        "9432"
+      ],
+      "answerIndex": 2,
+      "explanation": "346 × 20 + 346 × 7 = 6920 + 2422",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e401_011",
+      "unit": "math.e4.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "508 × 36 は？",
+      "choices": [
+        "17288",
+        "18188",
+        "18288",
+        "18298"
+      ],
+      "answerIndex": 2,
+      "explanation": "508 × 30 + 508 × 6 = 15240 + 3048",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e401_012",
+      "unit": "math.e4.s1.a01",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "0〜9の数字を1回ずつ使ってできる、いちばん小さい10けたの数の、上から1けた目は？",
+      "choices": [
+        "0",
+        "1",
+        "2",
+        "9"
+      ],
+      "answerIndex": 1,
+      "explanation": "一番上の位に0は置けないので1から始まる（1023456789）。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    }
+  ]
+}

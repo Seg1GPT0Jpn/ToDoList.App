@@ -1,0 +1,212 @@
+{
+  "setId": "math_j1_06",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_j106_001",
+      "unit": "math.j1.s2.a06",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "yはxに比例し、x = 4 のとき y = 20。比例定数は？",
+      "choices": [
+        "−5",
+        "4",
+        "5",
+        "20"
+      ],
+      "answerIndex": 2,
+      "explanation": "y ＝ ax の a ＝ y ÷ x。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j106_002",
+      "unit": "math.j1.s2.a06",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "yはxに反比例し、x = 3 のとき y = −4。x = −3 のとき y は？",
+      "choices": [
+        "−4",
+        "−12",
+        "4",
+        "12"
+      ],
+      "answerIndex": 2,
+      "explanation": "xy ＝ 一定。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j106_003",
+      "unit": "math.j1.s2.a06",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "yはxに反比例し、x = −2 のとき y = 3。x = 2 のとき y は？",
+      "choices": [
+        "−3",
+        "6",
+        "3",
+        "−6"
+      ],
+      "answerIndex": 0,
+      "explanation": "xy ＝ 一定。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j106_004",
+      "unit": "math.j1.s2.a06",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "yはxに反比例し、x = −3 のとき y = 5。x = 3 のとき y は？",
+      "choices": [
+        "5",
+        "15",
+        "−5",
+        "−15"
+      ],
+      "answerIndex": 2,
+      "explanation": "xy ＝ 一定。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j106_005",
+      "unit": "math.j1.s2.a06",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "yはxに反比例し、x = 4 のとき y = 10。x = −4 のとき y は？",
+      "choices": [
+        "−40",
+        "−10",
+        "40",
+        "10"
+      ],
+      "answerIndex": 1,
+      "explanation": "xy ＝ 一定。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j106_006",
+      "unit": "math.j1.s2.a06",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "yはxに反比例し、x = 3 のとき y = −8。x = −3 のとき y は？",
+      "choices": [
+        "−8",
+        "8",
+        "24",
+        "−24"
+      ],
+      "answerIndex": 1,
+      "explanation": "xy ＝ 一定。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j106_007",
+      "unit": "math.j1.s2.a06",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "yはxに反比例し、x = 4 のとき y = −6。x = −4 のとき y は？",
+      "choices": [
+        "6",
+        "−24",
+        "24",
+        "−6"
+      ],
+      "answerIndex": 0,
+      "explanation": "xy ＝ 一定。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j106_008",
+      "unit": "math.j1.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "y = 3x のグラフはどんな線？",
+      "choices": [
+        "原点を通る直線",
+        "双曲線",
+        "原点を通らない直線",
+        "放物線"
+      ],
+      "answerIndex": 0,
+      "explanation": "比例のグラフは原点を通る直線。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j106_009",
+      "unit": "math.j1.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "y = 6/x のグラフはどんな線？",
+      "choices": [
+        "放物線",
+        "円",
+        "原点を通る直線",
+        "双曲線"
+      ],
+      "answerIndex": 3,
+      "explanation": "反比例のグラフは双曲線。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j106_010",
+      "unit": "math.j1.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "点(3, −2) はどの象限？",
+      "choices": [
+        "第4象限",
+        "第1象限",
+        "第3象限",
+        "第2象限"
+      ],
+      "answerIndex": 0,
+      "explanation": "x正・y負は第4象限。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j106_011",
+      "unit": "math.j1.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "座標の原点の座標は？",
+      "choices": [
+        "(1, 1)",
+        "(1, 0)",
+        "(0, 1)",
+        "(0, 0)"
+      ],
+      "answerIndex": 3,
+      "explanation": "x軸とy軸の交点。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j106_012",
+      "unit": "math.j1.s2.a06",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "y = −2x で、xが増加するとyは？",
+      "choices": [
+        "0になる",
+        "変わらない",
+        "増加する",
+        "減少する"
+      ],
+      "answerIndex": 3,
+      "explanation": "比例定数が負なら右下がり。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    }
+  ]
+}

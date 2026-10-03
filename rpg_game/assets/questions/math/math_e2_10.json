@@ -1,0 +1,212 @@
+{
+  "setId": "math_e2_10",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_e210_001",
+      "unit": "math.e2.s2.a10",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "3本の直線でかこまれた形は？",
+      "choices": [
+        "三角形",
+        "四角形",
+        "五角形",
+        "円"
+      ],
+      "answerIndex": 0,
+      "explanation": "三角形のへんは3つ。",
+      "targetGrade": "小2",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e210_002",
+      "unit": "math.e2.s2.a10",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "4本の直線でかこまれた形は？",
+      "choices": [
+        "三角形",
+        "円",
+        "六角形",
+        "四角形"
+      ],
+      "answerIndex": 3,
+      "explanation": "四角形のへんは4つ。",
+      "targetGrade": "小2",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e210_003",
+      "unit": "math.e2.s2.a10",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "かどがみんな直角の四角形は？",
+      "choices": [
+        "ひし形",
+        "三角形",
+        "円",
+        "長方形"
+      ],
+      "answerIndex": 3,
+      "explanation": "かどがすべて直角なら長方形。",
+      "targetGrade": "小2",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e210_004",
+      "unit": "math.e2.s2.a10",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "かどがみんな直角で、へんの長さがみんな同じ四角形は？",
+      "choices": [
+        "直角三角形",
+        "台形",
+        "正方形",
+        "長方形"
+      ],
+      "answerIndex": 2,
+      "explanation": "正方形はへんもかども全部同じ。",
+      "targetGrade": "小2",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e210_005",
+      "unit": "math.e2.s2.a10",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "直角のかどがある三角形を何という？",
+      "choices": [
+        "直角三角形",
+        "正三角形",
+        "長方形",
+        "二等辺三角形"
+      ],
+      "answerIndex": 0,
+      "explanation": "直角が1つある三角形。",
+      "targetGrade": "小2",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e210_006",
+      "unit": "math.e2.s2.a10",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "三角形のかどの点を何という？",
+      "choices": [
+        "ちょう点",
+        "へん",
+        "中心",
+        "めん"
+      ],
+      "answerIndex": 0,
+      "explanation": "へんとへんが交わる点がちょう点。",
+      "targetGrade": "小2",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e210_007",
+      "unit": "math.e2.s2.a10",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "四角形のちょう点はいくつ？",
+      "choices": [
+        "3つ",
+        "4つ",
+        "8つ",
+        "5つ"
+      ],
+      "answerIndex": 1,
+      "explanation": "四角形はへんもちょう点も4つ。",
+      "targetGrade": "小2",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e210_008",
+      "unit": "math.e2.s2.a10",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "箱の形で、たいらな部分を何という？",
+      "choices": [
+        "へん",
+        "ちょう点",
+        "面",
+        "直角"
+      ],
+      "answerIndex": 2,
+      "explanation": "箱の形には面が6つある。",
+      "targetGrade": "小2",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e210_009",
+      "unit": "math.e2.s2.a10",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "さいころの形の面はいくつ？",
+      "choices": [
+        "4つ",
+        "12",
+        "6つ",
+        "8つ"
+      ],
+      "answerIndex": 2,
+      "explanation": "さいころには1〜6の面がある。",
+      "targetGrade": "小2",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e210_010",
+      "unit": "math.e2.s2.a10",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "箱の形のへんの数は？",
+      "choices": [
+        "4",
+        "6",
+        "8",
+        "12"
+      ],
+      "answerIndex": 3,
+      "explanation": "箱の形のへんは12本。",
+      "targetGrade": "小2",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e210_011",
+      "unit": "math.e2.s2.a10",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "箱の形のちょう点の数は？",
+      "choices": [
+        "4",
+        "6",
+        "8",
+        "12"
+      ],
+      "answerIndex": 2,
+      "explanation": "箱の形のちょう点は8つ。",
+      "targetGrade": "小2",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e210_012",
+      "unit": "math.e2.s2.a10",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "たて3cm、よこ5cmの長方形のまわりの長さは？",
+      "choices": [
+        "16cm",
+        "11cm",
+        "8cm",
+        "15cm"
+      ],
+      "answerIndex": 0,
+      "explanation": "3 + 5 + 3 + 5 = 16",
+      "targetGrade": "小2",
+      "phase": "basics"
+    }
+  ]
+}

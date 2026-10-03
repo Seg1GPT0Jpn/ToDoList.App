@@ -188,13 +188,9 @@ class FieldMap {
 
   static final Map<String, FieldMap> _cache = {};
 
-  /// 英語ワールド（20エリア。毎回同じ形になる）
-  static FieldMap get english => byId('english');
-
   /// マップの ID から取り出す。
-  /// `english`、`<worldId>_hub`（ハブ）、`<worldId>_<ルートID>`（ルートのマップ）
+  /// `<worldId>_hub`（ハブ）、`<worldId>_<ルートID>`（ルートのマップ）
   static FieldMap byId(String id) => _cache.putIfAbsent(id, () {
-    if (id == 'english') return _english();
     final sep = id.indexOf('_');
     final world = RpgCatalog.world(id.substring(0, sep));
     final rest = id.substring(sep + 1);
@@ -204,31 +200,16 @@ class FieldMap {
 
   /// そのワールドに入ったときの最初のマップ
   static String firstMapOf(String worldId) {
-    if (worldId == RpgCatalog.englishWorldId) return 'english';
     final w = RpgCatalog.world(worldId);
     return w.routes.length > 1 ? '${w.id}_hub' : '${w.id}_${w.routes.first.id}';
   }
 
-  static FieldMap _english() {
-    final world = RpgCatalog.world(RpgCatalog.englishWorldId);
-    return _build(
-      id: 'english',
-      stages: world.stages,
-      seed: 2026,
-      signText:
-          'ここは英語ワールド。20のエリアを越えて、最終章の玉座をめざそう。'
-          'エリアごとに地形も魔物もちがう。宿では授業、泉では回復の加護、'
-          '宝箱には「知識の封印」がかかっている。隠し通路や知識の扉も探してみよう！',
-      goalText: '英語ワールドのトロフィー',
-      label: (s) => 'エリア${s.areaNo}・${s.name}',
-    );
-  }
 
-  /// 試験対策ワールドのマップ。集めたエリア（6教科を混ぜてよい）と
+  /// 試験対策ワールドのマップ。集めたエリア（5教科を混ぜてよい）と
   /// 最後の「試験本番」を、同じ組み立て方で1本の航路にする。
   ///
   /// 定期テストの海は、船で大海原を進み、終盤は潜水艦で深海へ。
-  /// 模擬試験の空は、飛行船で雲海を進み、終盤はロケットで宇宙へ。
+  /// 高校入試の空は、飛行船で雲海を進み、終盤はロケットで宇宙へ。
   static FieldMap forExam(ExamWorldPlan plan, List<StageDef> stages) {
     final realm = plan.realm;
     final key =
@@ -253,7 +234,7 @@ class FieldMap {
     );
   }
 
-  /// スタート地点のハブ。ルートの向きごとに、辺に出入口を並べる（1辺に2つまで）。
+  /// スタート地点のハブ。ルートの向きごとに、辺に出入口を並べる（1辺に3つまで）。
   static FieldMap _hub(WorldDef world) {
     final lines = [
       '###########',
@@ -274,8 +255,12 @@ class FieldMap {
     final portals = <Cell, Portal>{};
     for (final dir in const ['up', 'left', 'right', 'down']) {
       final rs = world.routes.where((r) => r.direction == dir).toList();
-      if (rs.length > 2) throw ArgumentError('1辺の出入口は2つまで: $dir');
-      final slots = rs.length == 1 ? const [0.5] : const [0.3, 0.7];
+      if (rs.length > 3) throw ArgumentError('1辺の出入口は3つまで: $dir');
+      final slots = switch (rs.length) {
+        1 => const [0.5],
+        2 => const [0.3, 0.7],
+        _ => const [0.2, 0.5, 0.8],
+      };
       for (final (i, r) in rs.indexed) {
         final Cell cell = switch (dir) {
           'up' => (col: (w * slots[i]).floor(), row: 0),

@@ -1,6 +1,6 @@
 part of 'enemy_painter.dart';
 
-// 定期テストの海・模擬試験の空の魔物（色鉛筆の落書き風）
+// 定期テストの海・高校入試の空の魔物（色鉛筆の落書き風）
 
 Color _lighten(Color c, [double k = 0.35]) => Color.lerp(c, _white, k)!;
 Color _darken(Color c, [double k = 0.3]) =>

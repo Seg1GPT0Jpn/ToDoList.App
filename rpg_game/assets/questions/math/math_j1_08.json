@@ -1,0 +1,212 @@
+{
+  "setId": "math_j1_08",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_j108_001",
+      "unit": "math.j1.s2.a08",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "底面積12cm²、高さ5cmの角錐の体積は？",
+      "choices": [
+        "30cm³",
+        "17cm³",
+        "20cm³",
+        "60cm³"
+      ],
+      "answerIndex": 2,
+      "explanation": "錐の体積 ＝ 1/3 × 底面積 × 高さ。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j108_002",
+      "unit": "math.j1.s2.a08",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "底面の半径3cm、高さ4cmの円錐の体積は？",
+      "choices": [
+        "36πcm³",
+        "12πcm³",
+        "24πcm³",
+        "9πcm³"
+      ],
+      "answerIndex": 1,
+      "explanation": "1/3 × π × 9 × 4",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j108_003",
+      "unit": "math.j1.s2.a08",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "半径3cmの球の体積は？",
+      "choices": [
+        "27πcm³",
+        "12πcm³",
+        "108πcm³",
+        "36πcm³"
+      ],
+      "answerIndex": 3,
+      "explanation": "4/3πr³ ＝ 4/3 × 27π",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j108_004",
+      "unit": "math.j1.s2.a08",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "半径3cmの球の表面積は？",
+      "choices": [
+        "12πcm²",
+        "27πcm²",
+        "36πcm²",
+        "9πcm²"
+      ],
+      "answerIndex": 2,
+      "explanation": "4πr² ＝ 36π",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j108_005",
+      "unit": "math.j1.s2.a08",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "底面の半径2cm、高さ5cmの円柱の体積は？",
+      "choices": [
+        "20πcm³",
+        "40πcm³",
+        "20cm³",
+        "10πcm³"
+      ],
+      "answerIndex": 0,
+      "explanation": "π × 4 × 5",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j108_006",
+      "unit": "math.j1.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "平面だけで囲まれた立体を何という？",
+      "choices": [
+        "円柱",
+        "回転体",
+        "球",
+        "多面体"
+      ],
+      "answerIndex": 3,
+      "explanation": "角柱・角錐など。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j108_007",
+      "unit": "math.j1.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "正多面体は全部で何種類？",
+      "choices": [
+        "3種類",
+        "6種類",
+        "5種類",
+        "無数"
+      ],
+      "answerIndex": 2,
+      "explanation": "正四・正六・正八・正十二・正二十面体。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j108_008",
+      "unit": "math.j1.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "長方形を1辺を軸に1回転させてできる立体は？",
+      "choices": [
+        "球",
+        "角柱",
+        "円柱",
+        "円錐"
+      ],
+      "answerIndex": 2,
+      "explanation": "回転体。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j108_009",
+      "unit": "math.j1.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "直角三角形を直角をはさむ1辺を軸に回転させてできる立体は？",
+      "choices": [
+        "円錐",
+        "球",
+        "三角錐",
+        "円柱"
+      ],
+      "answerIndex": 0,
+      "explanation": "回転体。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j108_010",
+      "unit": "math.j1.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "空間で、交わらず平行でもない2直線の関係は？",
+      "choices": [
+        "一致",
+        "ねじれの位置",
+        "垂直",
+        "平行"
+      ],
+      "answerIndex": 1,
+      "explanation": "同じ平面上にない。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j108_011",
+      "unit": "math.j1.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "立方体の頂点の数は？",
+      "choices": [
+        "4",
+        "6",
+        "8",
+        "12"
+      ],
+      "answerIndex": 2,
+      "explanation": "面6、辺12、頂点8。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j108_012",
+      "unit": "math.j1.s2.a08",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "1辺3cmの立方体の表面積は？",
+      "choices": [
+        "18cm²",
+        "36cm²",
+        "27cm²",
+        "54cm²"
+      ],
+      "answerIndex": 3,
+      "explanation": "9 × 6 ＝ 54",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    }
+  ]
+}

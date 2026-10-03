@@ -1,0 +1,212 @@
+{
+  "setId": "math_j3_05",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_j305_001",
+      "unit": "math.j3.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "y = −x² で、xが3から4まで増加するときの変化の割合は？",
+      "choices": [
+        "7",
+        "−16",
+        "−7",
+        "−1"
+      ],
+      "answerIndex": 2,
+      "explanation": "変化の割合 ＝ yの増加量 ÷ xの増加量（＝ a(p + q)）。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j305_002",
+      "unit": "math.j3.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "y = −3x² で、xが2から3まで増加するときの変化の割合は？",
+      "choices": [
+        "−27",
+        "15",
+        "−3",
+        "−15"
+      ],
+      "answerIndex": 3,
+      "explanation": "変化の割合 ＝ yの増加量 ÷ xの増加量（＝ a(p + q)）。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j305_003",
+      "unit": "math.j3.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "y = 3x² で、x = −4 のときのyは？",
+      "choices": [
+        "−24",
+        "−12",
+        "48",
+        "−48"
+      ],
+      "answerIndex": 2,
+      "explanation": "xを2乗してからaをかける。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j305_004",
+      "unit": "math.j3.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "y = −3x² で、xが2から5まで増加するときの変化の割合は？",
+      "choices": [
+        "−21",
+        "21",
+        "−9",
+        "−75"
+      ],
+      "answerIndex": 0,
+      "explanation": "変化の割合 ＝ yの増加量 ÷ xの増加量（＝ a(p + q)）。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j305_005",
+      "unit": "math.j3.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "y = 2x² で、x = 4 のときのyは？",
+      "choices": [
+        "−32",
+        "8",
+        "16",
+        "32"
+      ],
+      "answerIndex": 3,
+      "explanation": "xを2乗してからaをかける。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j305_006",
+      "unit": "math.j3.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "y = x² で、x = −3 のときのyは？",
+      "choices": [
+        "9",
+        "−6",
+        "−9",
+        "−3"
+      ],
+      "answerIndex": 0,
+      "explanation": "xを2乗してからaをかける。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j305_007",
+      "unit": "math.j3.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "y = −3x² で、x = 3 のときのyは？",
+      "choices": [
+        "−18",
+        "−9",
+        "27",
+        "−27"
+      ],
+      "answerIndex": 3,
+      "explanation": "xを2乗してからaをかける。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j305_008",
+      "unit": "math.j3.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "y = −3x² で、x = −4 のときのyは？",
+      "choices": [
+        "−48",
+        "12",
+        "24",
+        "48"
+      ],
+      "answerIndex": 0,
+      "explanation": "xを2乗してからaをかける。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j305_009",
+      "unit": "math.j3.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "y = ax² のグラフを何という？",
+      "choices": [
+        "放物線",
+        "直線",
+        "円",
+        "双曲線"
+      ],
+      "answerIndex": 0,
+      "explanation": "原点を頂点とする放物線。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j305_010",
+      "unit": "math.j3.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "y = ax² で a ＞ 0 のとき、グラフは？",
+      "choices": [
+        "上に開く",
+        "x軸と平行",
+        "下に開く",
+        "右上がりの直線"
+      ],
+      "answerIndex": 0,
+      "explanation": "a ＜ 0 なら下に開く。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j305_011",
+      "unit": "math.j3.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "y = ax² のグラフが点(2, 12)を通る。aは？",
+      "choices": [
+        "3",
+        "4",
+        "6",
+        "24"
+      ],
+      "answerIndex": 0,
+      "explanation": "12 ＝ a × 4",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j305_012",
+      "unit": "math.j3.s2.a05",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "ボールが落ちる距離は時間の2乗に比例。1秒で5m。3秒では？",
+      "choices": [
+        "45m",
+        "30m",
+        "15m",
+        "9m"
+      ],
+      "answerIndex": 0,
+      "explanation": "y ＝ 5x² → 5 × 9",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    }
+  ]
+}

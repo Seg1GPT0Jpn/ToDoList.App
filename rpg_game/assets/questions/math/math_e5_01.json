@@ -1,0 +1,212 @@
+{
+  "setId": "math_e5_01",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_e501_001",
+      "unit": "math.e5.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "3.14 × 10 は？",
+      "choices": [
+        "0.314",
+        "3.140",
+        "31.4",
+        "314"
+      ],
+      "answerIndex": 2,
+      "explanation": "10倍すると小数点が右に1つうつる。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e501_002",
+      "unit": "math.e5.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "3.14 × 100 は？",
+      "choices": [
+        "0.0314",
+        "31.4",
+        "314",
+        "3140"
+      ],
+      "answerIndex": 2,
+      "explanation": "100倍で小数点が右に2つ。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e501_003",
+      "unit": "math.e5.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "52.6 ÷ 10 は？",
+      "choices": [
+        "0.526",
+        "5.26",
+        "52.6",
+        "526"
+      ],
+      "answerIndex": 1,
+      "explanation": "1/10で小数点が左に1つ。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e501_004",
+      "unit": "math.e5.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "7.5 ÷ 100 は？",
+      "choices": [
+        "0.0075",
+        "0.075",
+        "0.75",
+        "750"
+      ],
+      "answerIndex": 1,
+      "explanation": "1/100で小数点が左に2つ。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e501_005",
+      "unit": "math.e5.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "0.001を46こ集めた数は？",
+      "choices": [
+        "0.0046",
+        "0.046",
+        "0.46",
+        "4.6"
+      ],
+      "answerIndex": 1,
+      "explanation": "0.001が46こ。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e501_006",
+      "unit": "math.e5.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "2.305の小数第3位の数字は？",
+      "choices": [
+        "0",
+        "2",
+        "3",
+        "5"
+      ],
+      "answerIndex": 3,
+      "explanation": "第1位3、第2位0、第3位5。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e501_007",
+      "unit": "math.e5.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "0.8 × 1000 は？",
+      "choices": [
+        "0.0008",
+        "80",
+        "800",
+        "8000"
+      ],
+      "answerIndex": 2,
+      "explanation": "小数点が右に3つ。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e501_008",
+      "unit": "math.e5.s1.a01",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "4.5は0.45の何倍？",
+      "choices": [
+        "1/10",
+        "100倍",
+        "0.1倍",
+        "10倍"
+      ],
+      "answerIndex": 3,
+      "explanation": "0.45を10倍すると4.5。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e501_009",
+      "unit": "math.e5.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "たて・よこ・高さがわかる直方体の体積の公式は？",
+      "choices": [
+        "たて × よこ × 高さ",
+        "たて × よこ",
+        "たて + よこ + 高さ",
+        "(たて + よこ) × 2"
+      ],
+      "answerIndex": 0,
+      "explanation": "体積はcm³などで表す。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e501_010",
+      "unit": "math.e5.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "たて3cm・よこ4cm・高さ5cmの直方体の体積は？",
+      "choices": [
+        "94cm³",
+        "60cm³",
+        "12cm³",
+        "47cm³"
+      ],
+      "answerIndex": 1,
+      "explanation": "3 × 4 × 5 = 60",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e501_011",
+      "unit": "math.e5.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "1辺6cmの立方体の体積は？",
+      "choices": [
+        "18cm³",
+        "36cm³",
+        "216cm³",
+        "72cm³"
+      ],
+      "answerIndex": 2,
+      "explanation": "6 × 6 × 6 = 216",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e501_012",
+      "unit": "math.e5.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "1Lは何cm³？",
+      "choices": [
+        "10cm³",
+        "1000000cm³",
+        "100cm³",
+        "1000cm³"
+      ],
+      "answerIndex": 3,
+      "explanation": "1辺10cmの立方体が1L。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    }
+  ]
+}

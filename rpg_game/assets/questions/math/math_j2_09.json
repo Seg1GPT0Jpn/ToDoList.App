@@ -1,0 +1,212 @@
+{
+  "setId": "math_j2_09",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_j209_001",
+      "unit": "math.j2.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "y = x + 5 の傾きは？",
+      "choices": [
+        "6",
+        "1",
+        "−1",
+        "5"
+      ],
+      "answerIndex": 1,
+      "explanation": "y ＝ ax + b の a が傾き、b が切片。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j209_002",
+      "unit": "math.j2.s2.a09",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "正12角形の1つの外角は？",
+      "choices": [
+        "150°",
+        "60°",
+        "40°",
+        "30°"
+      ],
+      "answerIndex": 3,
+      "explanation": "外角の和は360°。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j209_003",
+      "unit": "math.j2.s2.a09",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "2点(−1, 1) と (3, 17) を通る直線の式は？",
+      "choices": [
+        "y = 4x + 5",
+        "y = −4x + 5",
+        "y = 4x − 5",
+        "y = 5x + 4"
+      ],
+      "answerIndex": 0,
+      "explanation": "傾き ＝ yの増加量 ÷ xの増加量、切片は1点を代入して求める。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j209_004",
+      "unit": "math.j2.s2.a09",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "6角形の内角の和は？",
+      "choices": [
+        "2160°",
+        "1080°",
+        "900°",
+        "720°"
+      ],
+      "answerIndex": 3,
+      "explanation": "(n − 2) × 180°",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j209_005",
+      "unit": "math.j2.s2.a09",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "連立方程式 5x + 4y = −32、3x − 4y = 0 の解は？",
+      "choices": [
+        "x = −4, y = −3",
+        "x = −4, y = 3",
+        "x = −3, y = −4",
+        "x = 4, y = −3"
+      ],
+      "answerIndex": 0,
+      "explanation": "加減法か代入法で1つの文字を消去する。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j209_006",
+      "unit": "math.j2.s2.a09",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "8角形の内角の和は？",
+      "choices": [
+        "1080°",
+        "1260°",
+        "2880°",
+        "1440°"
+      ],
+      "answerIndex": 0,
+      "explanation": "(n − 2) × 180°",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j209_007",
+      "unit": "math.j2.s2.a09",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "5角形の内角の和は？",
+      "choices": [
+        "1800°",
+        "540°",
+        "720°",
+        "900°"
+      ],
+      "answerIndex": 1,
+      "explanation": "(n − 2) × 180°",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j209_008",
+      "unit": "math.j2.s2.a09",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "連立方程式 4x + 2y = −10、3x − 2y = −18 の解は？",
+      "choices": [
+        "x = 4, y = 3",
+        "x = 3, y = −4",
+        "x = −4, y = 3",
+        "x = −4, y = −3"
+      ],
+      "answerIndex": 2,
+      "explanation": "加減法か代入法で1つの文字を消去する。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j209_009",
+      "unit": "math.j2.s2.a09",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "連立方程式 3x + 4y = −24、x − 3y = 18 の解は？",
+      "choices": [
+        "x = 1, y = −6",
+        "x = −6, y = 0",
+        "x = 0, y = 6",
+        "x = 0, y = −6"
+      ],
+      "answerIndex": 3,
+      "explanation": "加減法か代入法で1つの文字を消去する。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j209_010",
+      "unit": "math.j2.s2.a09",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "連立方程式 2x + 5y = −30、x − 5y = 15 の解は？",
+      "choices": [
+        "x = −5, y = 4",
+        "x = 5, y = −4",
+        "x = −5, y = −4",
+        "x = −4, y = −5"
+      ],
+      "answerIndex": 2,
+      "explanation": "加減法か代入法で1つの文字を消去する。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j209_011",
+      "unit": "math.j2.s2.a09",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "y = 2x + 3 で、x = 4 のときのyは？",
+      "choices": [
+        "−5",
+        "11",
+        "9",
+        "5"
+      ],
+      "answerIndex": 1,
+      "explanation": "代入する。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j209_012",
+      "unit": "math.j2.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "y = 3x + 2 の傾きは？",
+      "choices": [
+        "−3",
+        "3",
+        "2",
+        "5"
+      ],
+      "answerIndex": 1,
+      "explanation": "y ＝ ax + b の a が傾き、b が切片。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    }
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "setId": "math_e6_05",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_e605_001",
+      "unit": "math.e6.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "3:8 = 24:x のとき、xは？",
+      "choices": [
+        "16",
+        "24",
+        "64",
+        "72"
+      ],
+      "answerIndex": 2,
+      "explanation": "3を8倍して24。8も8倍。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e605_002",
+      "unit": "math.e6.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "9:5 = 36:x のとき、xは？",
+      "choices": [
+        "9",
+        "20",
+        "24",
+        "36"
+      ],
+      "answerIndex": 1,
+      "explanation": "9を4倍して36。5も4倍。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e605_003",
+      "unit": "math.e6.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "4:10 をかんたんな比にすると？",
+      "choices": [
+        "5:2",
+        "3:6",
+        "2:5",
+        "4:5"
+      ],
+      "answerIndex": 2,
+      "explanation": "両方を2でわる。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e605_004",
+      "unit": "math.e6.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "35:63 をかんたんな比にすると？",
+      "choices": [
+        "9:5",
+        "35:9",
+        "5:9",
+        "6:10"
+      ],
+      "answerIndex": 2,
+      "explanation": "両方を7でわる。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e605_005",
+      "unit": "math.e6.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "4:14 をかんたんな比にすると？",
+      "choices": [
+        "3:8",
+        "7:2",
+        "4:7",
+        "2:7"
+      ],
+      "answerIndex": 3,
+      "explanation": "両方を2でわる。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e605_006",
+      "unit": "math.e6.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "48:56 をかんたんな比にすると？",
+      "choices": [
+        "7:8",
+        "48:7",
+        "6:7",
+        "7:6"
+      ],
+      "answerIndex": 2,
+      "explanation": "両方を8でわる。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e605_007",
+      "unit": "math.e6.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "35:40 をかんたんな比にすると？",
+      "choices": [
+        "8:9",
+        "7:8",
+        "35:8",
+        "8:7"
+      ],
+      "answerIndex": 1,
+      "explanation": "両方を5でわる。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e605_008",
+      "unit": "math.e6.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "9:21 をかんたんな比にすると？",
+      "choices": [
+        "9:7",
+        "7:3",
+        "3:7",
+        "4:8"
+      ],
+      "answerIndex": 2,
+      "explanation": "両方を3でわる。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e605_009",
+      "unit": "math.e6.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "比 3:5 の比の値は？",
+      "choices": [
+        "3/5",
+        "5/3",
+        "8",
+        "15"
+      ],
+      "answerIndex": 0,
+      "explanation": "a:b の比の値は a ÷ b。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e605_010",
+      "unit": "math.e6.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "0.6:0.9 をかんたんな比にすると？",
+      "choices": [
+        "2:3",
+        "6:9",
+        "3:2",
+        "1:3"
+      ],
+      "answerIndex": 0,
+      "explanation": "10倍して6:9、3でわって2:3。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e605_011",
+      "unit": "math.e6.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "1200円を兄と弟で 2:1 に分けると、兄は何円？",
+      "choices": [
+        "400円",
+        "600円",
+        "800円",
+        "1000円"
+      ],
+      "answerIndex": 2,
+      "explanation": "1200 × 2/3 = 800",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e605_012",
+      "unit": "math.e6.s2.a05",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "コーヒーと牛乳を 3:2 でまぜる。牛乳を120mLにすると、コーヒーは？",
+      "choices": [
+        "80mL",
+        "240mL",
+        "180mL",
+        "200mL"
+      ],
+      "answerIndex": 2,
+      "explanation": "120 ÷ 2 × 3 = 180",
+      "targetGrade": "小6",
+      "phase": "basics"
+    }
+  ]
+}

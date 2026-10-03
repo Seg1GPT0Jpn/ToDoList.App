@@ -2,18 +2,19 @@ import 'dart:math';
 
 import '../data/catalog.dart';
 import '../models/enemy.dart';
+import '../data/route_world.dart';
 import '../models/stage.dart';
 import '../models/world.dart';
 import 'realm.dart';
 import 'sea_battle.dart';
 
 /// 試験対策ワールド：試験範囲を入力すると、その範囲のエリアを集めて
-/// 1つのワールドを作る（定期テストの海・模擬試験の空の機能）。
+/// 1つのワールドを作る（定期テストの海・高校入試の空の機能）。
 ///
 /// 定期テストの海では船で海を進み、終盤は潜水艦で深海へ潜っていく。
-/// 模擬試験の空では飛行船で雲の上を進み、終盤はロケットで宇宙へ。空のほうが難しい。
+/// 高校入試の空では飛行船で雲の上を進み、終盤はロケットで宇宙へ。空のほうが難しい。
 ///
-/// 6教科（英語・数学・国語・理科・社会・情報）のエリアを1つのワールドに
+/// 5教科（英語・算数数学・国語・理科・社会）のエリアを1つのワールドに
 /// まとめられる。歩けるフィールドも同じ並びで作られる。
 ///
 /// 問題はすべて RPG と同じ自作問題を使う。遊んでも RPG の進行は変わらない。
@@ -149,7 +150,7 @@ class ExamWorldPlan {
 class ExamWorlds {
   const ExamWorlds._();
 
-  /// 1つのワールドに集められるエリアの数（6教科をまとめて、1教科あたり10エリアほど）
+  /// 1つのワールドに集められるエリアの数（5教科をまとめて、1教科あたり10エリアほど）
   static const maxAreas = 60;
 
   /// テスト対策ゲージの最大
@@ -235,12 +236,12 @@ class ExamWorlds {
   /// プランから、実際に戦うステージを作る。
   ///
   /// 敵の強さは元のエリアではなく、ワールドの中の順番で決める
-  /// （英語ワールドの曲線をなぞる）。最後に「試験本番」のボスがいて、
+  /// （RPG のエリアの曲線をなぞる）。最後に「試験本番」のボスがいて、
   /// 範囲のすべての問題から出題する。
   ///
   /// [level] を渡すと、定期テストの海と同じ「とても難しい」強さにする
   /// （エリアが進むほど少しずつ HP が増え、試験本番はさらに強い）。
-  /// 模擬試験の空は、それよりさらに強い。
+  /// 高校入試の空は、それよりさらに強い。
   ///
   /// 敵は海（空）の魔物になる。前半は大海原（雲海）の魔物、終盤は深海（宇宙）の魔物。
   static List<StageDef> build(ExamWorldPlan plan, {int? level}) {
@@ -249,7 +250,6 @@ class ExamWorlds {
       for (final id in plan.stageIds)
         if (stageById(id) != null) stageById(id)!,
     ];
-    final curve = RpgCatalog.englishStages;
     final hard = level == null
         ? null
         : SeaBattle.stage(
@@ -263,16 +263,16 @@ class ExamWorlds {
     final total = picked.length + 1;
     final seed = plan.id.codeUnits.fold<int>(0, (a, c) => (a + c) % 997);
     EnemyDef scaled(EnemyDef e, int k, {bool boss = false}) {
-      final base = curve[(k - 1).clamp(0, 9)].enemy;
+      final kk = (k - 1).clamp(0, 9) + 1;
       final hp = hard == null
-          ? base.maxHp
+          ? RouteWorldBuilder.hpAt(kk)
           // エリアが進むほど少しずつ強く。60エリアでも強くなりすぎないよう、20で止める
           : (hard.maxHp * (0.7 + 0.03 * min(k, 20))).round();
       final m = VoyageMonsters.at(realm, k - 1, total, seed: seed, boss: boss);
       return m.toEnemy(
         id: 'exam_${plan.id}_$k',
         maxHp: boss ? (hp * 1.3).round() : hp,
-        attack: hard?.attack ?? base.attack,
+        attack: hard?.attack ?? RouteWorldBuilder.attackAt(kk),
         weakness: e.weakness,
         introLine: boss ? '${plan.title}の範囲、すべてから出題する。準備はいいか！' : null,
       );

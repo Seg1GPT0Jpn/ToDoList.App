@@ -1,0 +1,212 @@
+{
+  "setId": "math_e6_08",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_e608_001",
+      "unit": "math.e6.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "角柱の体積の公式は？",
+      "choices": [
+        "底面積 × 高さ ÷ 3",
+        "底面積 × 高さ",
+        "底面のまわり × 高さ",
+        "たて + よこ + 高さ"
+      ],
+      "answerIndex": 1,
+      "explanation": "角柱・円柱は 底面積 × 高さ。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e608_002",
+      "unit": "math.e6.s2.a08",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "底面積12cm²、高さ5cmの三角柱の体積は？",
+      "choices": [
+        "20cm³",
+        "60cm³",
+        "30cm³",
+        "17cm³"
+      ],
+      "answerIndex": 1,
+      "explanation": "12 × 5 = 60",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e608_003",
+      "unit": "math.e6.s2.a08",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "底面の半径2cm・高さ10cmの円柱の体積は？",
+      "choices": [
+        "125.6cm³",
+        "40cm³",
+        "12.56cm³",
+        "62.8cm³"
+      ],
+      "answerIndex": 0,
+      "explanation": "2 × 2 × 3.14 × 10",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e608_004",
+      "unit": "math.e6.s2.a08",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "底面が底辺4cm・高さ3cmの三角形で、高さ10cmの三角柱の体積は？",
+      "choices": [
+        "60cm³",
+        "120cm³",
+        "30cm³",
+        "17cm³"
+      ],
+      "answerIndex": 0,
+      "explanation": "底面積 4 × 3 ÷ 2 = 6、6 × 10 = 60",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e608_005",
+      "unit": "math.e6.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "三角柱の面の数は？",
+      "choices": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "answerIndex": 2,
+      "explanation": "底面2つと側面3つ。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e608_006",
+      "unit": "math.e6.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "円柱の側面を開くとどんな形？",
+      "choices": [
+        "長方形",
+        "おうぎ形",
+        "円",
+        "三角形"
+      ],
+      "answerIndex": 0,
+      "explanation": "たてが高さ、よこが底面の円周。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e608_007",
+      "unit": "math.e6.s2.a08",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "A、B、C、Dの4人から2人を選ぶ組み合わせは何通り？",
+      "choices": [
+        "12通り",
+        "6通り",
+        "8通り",
+        "4通り"
+      ],
+      "answerIndex": 1,
+      "explanation": "AB AC AD BC BD CD。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e608_008",
+      "unit": "math.e6.s2.a08",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "1、2、3のカードを並べて3けたの整数をつくる。何通り？",
+      "choices": [
+        "6通り",
+        "27通り",
+        "9通り",
+        "3通り"
+      ],
+      "answerIndex": 0,
+      "explanation": "3 × 2 × 1 = 6",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e608_009",
+      "unit": "math.e6.s2.a08",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "4人がリレーで走る順番は何通り？",
+      "choices": [
+        "24通り",
+        "16通り",
+        "12通り",
+        "4通り"
+      ],
+      "answerIndex": 0,
+      "explanation": "4 × 3 × 2 × 1 = 24",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e608_010",
+      "unit": "math.e6.s2.a08",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "コインを2回投げたときの表裏の出方は何通り？",
+      "choices": [
+        "6通り",
+        "2通り",
+        "3通り",
+        "4通り"
+      ],
+      "answerIndex": 3,
+      "explanation": "表表・表裏・裏表・裏裏。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e608_011",
+      "unit": "math.e6.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "データの中で、いちばん多く出てくる値を何という？",
+      "choices": [
+        "中央値",
+        "最頻値",
+        "合計",
+        "平均値"
+      ],
+      "answerIndex": 1,
+      "explanation": "モードともいう。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e608_012",
+      "unit": "math.e6.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "データを大きさの順に並べたとき、真ん中の値を何という？",
+      "choices": [
+        "平均値",
+        "中央値",
+        "最大値",
+        "最頻値"
+      ],
+      "answerIndex": 1,
+      "explanation": "メジアンともいう。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    }
+  ]
+}

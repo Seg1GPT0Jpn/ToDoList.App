@@ -1,0 +1,212 @@
+{
+  "setId": "math_e4_07",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_e407_001",
+      "unit": "math.e4.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "3と1/8 を仮分数にすると？",
+      "choices": [
+        "3/8",
+        "4/8",
+        "25/11",
+        "25/8"
+      ],
+      "answerIndex": 3,
+      "explanation": "3 ＝ 24/8。24 + 1 = 25。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e407_002",
+      "unit": "math.e4.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "1と2/3 を仮分数にすると？",
+      "choices": [
+        "2/3",
+        "3/3",
+        "5/4",
+        "5/3"
+      ],
+      "answerIndex": 3,
+      "explanation": "1 ＝ 3/3。3 + 2 = 5。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e407_003",
+      "unit": "math.e4.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "2と3/5 を仮分数にすると？",
+      "choices": [
+        "5/5",
+        "6/5",
+        "13/7",
+        "13/5"
+      ],
+      "answerIndex": 3,
+      "explanation": "2 ＝ 10/5。10 + 3 = 13。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e407_004",
+      "unit": "math.e4.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "1と4/6 を仮分数にすると？",
+      "choices": [
+        "4/6",
+        "5/6",
+        "10/7",
+        "10/6"
+      ],
+      "answerIndex": 3,
+      "explanation": "1 ＝ 6/6。6 + 4 = 10。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e407_005",
+      "unit": "math.e4.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "2と4/7 を仮分数にすると？",
+      "choices": [
+        "6/7",
+        "8/7",
+        "18/9",
+        "18/7"
+      ],
+      "answerIndex": 3,
+      "explanation": "2 ＝ 14/7。14 + 4 = 18。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e407_006",
+      "unit": "math.e4.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "4と3/4 を仮分数にすると？",
+      "choices": [
+        "7/4",
+        "19/8",
+        "12/4",
+        "19/4"
+      ],
+      "answerIndex": 3,
+      "explanation": "4 ＝ 16/4。16 + 3 = 19。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e407_007",
+      "unit": "math.e4.s2.a07",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "6/5 + 5/5 は？（仮分数で）",
+      "choices": [
+        "11/10",
+        "11/5",
+        "12/5",
+        "30/5"
+      ],
+      "answerIndex": 1,
+      "explanation": "分母が同じなら分子をたす。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e407_008",
+      "unit": "math.e4.s2.a07",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "2/5 + 5/5 は？（仮分数で）",
+      "choices": [
+        "7/10",
+        "7/5",
+        "8/5",
+        "10/5"
+      ],
+      "answerIndex": 1,
+      "explanation": "分母が同じなら分子をたす。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e407_009",
+      "unit": "math.e4.s2.a07",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "2/3 + 5/3 は？（仮分数で）",
+      "choices": [
+        "7/6",
+        "7/3",
+        "8/3",
+        "10/3"
+      ],
+      "answerIndex": 1,
+      "explanation": "分母が同じなら分子をたす。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e407_010",
+      "unit": "math.e4.s2.a07",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "9/7 + 10/7 は？（仮分数で）",
+      "choices": [
+        "19/14",
+        "19/7",
+        "20/7",
+        "90/7"
+      ],
+      "answerIndex": 1,
+      "explanation": "分母が同じなら分子をたす。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e407_011",
+      "unit": "math.e4.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "分子が分母より小さい分数を何という？",
+      "choices": [
+        "仮分数",
+        "真分数",
+        "小数",
+        "帯分数"
+      ],
+      "answerIndex": 1,
+      "explanation": "例：3/4。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e407_012",
+      "unit": "math.e4.s2.a07",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "7/5と1と3/5では、どちらが大きい？",
+      "choices": [
+        "7/5",
+        "1と3/5",
+        "同じ",
+        "くらべられない"
+      ],
+      "answerIndex": 1,
+      "explanation": "1と3/5 ＝ 8/5。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    }
+  ]
+}

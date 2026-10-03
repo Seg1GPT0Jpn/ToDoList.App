@@ -1,0 +1,212 @@
+{
+  "setId": "math_j2_02",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_j202_001",
+      "unit": "math.j2.s1.a02",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "連立方程式 5x + 5y = −45、4x − 5y = 0 の解は？",
+      "choices": [
+        "x = −5, y = 4",
+        "x = 5, y = −4",
+        "x = −5, y = −4",
+        "x = −4, y = −5"
+      ],
+      "answerIndex": 2,
+      "explanation": "加減法か代入法で1つの文字を消去する。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j202_002",
+      "unit": "math.j2.s1.a02",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "連立方程式 x + 5y = −33、3x − 3y = 9 の解は？",
+      "choices": [
+        "x = −3, y = −6",
+        "x = 3, y = −6",
+        "x = −3, y = 6",
+        "x = −6, y = −3"
+      ],
+      "answerIndex": 0,
+      "explanation": "加減法か代入法で1つの文字を消去する。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j202_003",
+      "unit": "math.j2.s1.a02",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "連立方程式 5x + 3y = 2、2x − 4y = 6 の解は？",
+      "choices": [
+        "x = −1, y = 1",
+        "x = 1, y = 1",
+        "x = −1, y = −1",
+        "x = 1, y = −1"
+      ],
+      "answerIndex": 3,
+      "explanation": "加減法か代入法で1つの文字を消去する。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j202_004",
+      "unit": "math.j2.s1.a02",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "連立方程式 4x + y = −20、x − 5y = −5 の解は？",
+      "choices": [
+        "x = −5, y = 0",
+        "x = 5, y = 0",
+        "x = −5, y = 1",
+        "x = 0, y = −5"
+      ],
+      "answerIndex": 0,
+      "explanation": "加減法か代入法で1つの文字を消去する。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j202_005",
+      "unit": "math.j2.s1.a02",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "連立方程式 2x + 5y = −12、4x − 2y = 0 の解は？",
+      "choices": [
+        "x = −1, y = 2",
+        "x = 1, y = −2",
+        "x = −2, y = −1",
+        "x = −1, y = −2"
+      ],
+      "answerIndex": 3,
+      "explanation": "加減法か代入法で1つの文字を消去する。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j202_006",
+      "unit": "math.j2.s1.a02",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "連立方程式 x + 5y = −15、5x − y = −23 の解は？",
+      "choices": [
+        "x = −2, y = −5",
+        "x = −5, y = −2",
+        "x = −5, y = 2",
+        "x = 5, y = −2"
+      ],
+      "answerIndex": 1,
+      "explanation": "加減法か代入法で1つの文字を消去する。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j202_007",
+      "unit": "math.j2.s1.a02",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "連立方程式 3x + 5y = 15、5x − 5y = −55 の解は？",
+      "choices": [
+        "x = 6, y = −5",
+        "x = −5, y = 6",
+        "x = 5, y = 6",
+        "x = −5, y = −6"
+      ],
+      "answerIndex": 1,
+      "explanation": "加減法か代入法で1つの文字を消去する。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j202_008",
+      "unit": "math.j2.s1.a02",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "連立方程式 4x + y = 26、x − y = 4 の解は？",
+      "choices": [
+        "x = −6, y = 2",
+        "x = 6, y = 2",
+        "x = 6, y = −2",
+        "x = 2, y = 6"
+      ],
+      "answerIndex": 1,
+      "explanation": "加減法か代入法で1つの文字を消去する。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j202_009",
+      "unit": "math.j2.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "2つの式をたしたりひいたりして文字を消す解き方は？",
+      "choices": [
+        "代入法",
+        "加減法",
+        "移項",
+        "因数分解"
+      ],
+      "answerIndex": 1,
+      "explanation": "係数をそろえてから加減。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j202_010",
+      "unit": "math.j2.s1.a02",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "1個80円のガムと1個120円のアメを合わせて10個買い、1000円。ガムは何個？",
+      "choices": [
+        "6個",
+        "4個",
+        "5個",
+        "3個"
+      ],
+      "answerIndex": 2,
+      "explanation": "x + y ＝ 10、80x + 120y ＝ 1000。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j202_011",
+      "unit": "math.j2.s1.a02",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "大人2人と子ども3人で1600円、大人1人と子ども2人で900円。大人1人は？",
+      "choices": [
+        "500円",
+        "400円",
+        "300円",
+        "200円"
+      ],
+      "answerIndex": 0,
+      "explanation": "2a + 3c ＝ 1600、a + 2c ＝ 900 → c ＝ 200、a ＝ 500。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j202_012",
+      "unit": "math.j2.s1.a02",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "2けたの数で、十の位と一の位の和が9、入れかえると27大きい。もとの数は？",
+      "choices": [
+        "27",
+        "36",
+        "45",
+        "63"
+      ],
+      "answerIndex": 1,
+      "explanation": "x + y ＝ 9、(10y + x) − (10x + y) ＝ 27。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    }
+  ]
+}

@@ -475,7 +475,7 @@ class EnemySpeciesCatalog {
       rarity: Rarity.common,
       personality: 'きまぐれで、すぐに泣きだす',
       attack: '雨をふらせて、集中をじゃまする',
-      lore: '模擬試験の空にうかぶ小さな雨雲。テスト中に窓の外が気になるのは、こいつのせい。',
+      lore: '高校入試の空にうかぶ小さな雨雲。テスト中に窓の外が気になるのは、こいつのせい。',
       sound: 'se_flap',
     ),
     EnemySpecies(
@@ -547,7 +547,7 @@ class EnemySpeciesCatalog {
       rarity: Rarity.legendary,
       personality: 'すべてを見とおし、公平に判定する',
       attack: '星をつないだ光の線で、答えの正しさを見ぬく',
-      lore: '模擬試験の空の果て、星の海にいる審判。その目に映るのは、点数ではなく本当の実力。',
+      lore: '高校入試の空の果て、星の海にいる審判。その目に映るのは、点数ではなく本当の実力。',
       sound: 'se_magic',
     ),
     EnemySpecies(

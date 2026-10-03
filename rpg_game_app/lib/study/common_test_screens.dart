@@ -136,7 +136,7 @@ class CommonTestRuinsScreen extends StatelessWidget {
   }
 }
 
-/// ⏱ 採点模試（模擬試験の空の中）：制限時間の中で教科を順に進み、最後に成績と弱点を出す
+/// ⏱ 入試模試（高校入試の空の中）：制限時間の中で教科を順に進み、最後に成績と弱点を出す
 class MockExamScreen extends StatefulWidget {
   const MockExamScreen({super.key});
 
@@ -262,7 +262,7 @@ class _MockExamScreenState extends State<MockExamScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: StudyRealm.sky.paper,
-        title: Text('採点模試', style: serif(18, color: StudyRealm.sky.ink)),
+        title: Text('入試模試', style: serif(18, color: StudyRealm.sky.ink)),
       ),
       body: NotebookPaper(
         child: StreamBuilder<RpgProgress>(

@@ -1,0 +1,212 @@
+{
+  "setId": "math_j3_01",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_j301_001",
+      "unit": "math.j3.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "(x − 1)(x + 4) を展開すると？",
+      "choices": [
+        "x² − 4x + 3",
+        "x² + 3x − 4",
+        "x² + 3x + 4",
+        "x² − 3x − 4"
+      ],
+      "answerIndex": 1,
+      "explanation": "(x + a)(x + b) ＝ x² + (a + b)x + ab",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j301_002",
+      "unit": "math.j3.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "(x + 3)(x − 5) を展開すると？",
+      "choices": [
+        "x² − 2x − 15",
+        "x² − 2x + 15",
+        "x² + 2x − 15",
+        "x² − 15x − 2"
+      ],
+      "answerIndex": 0,
+      "explanation": "(x + a)(x + b) ＝ x² + (a + b)x + ab",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j301_003",
+      "unit": "math.j3.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "(x + 6)(x + 1) を展開すると？",
+      "choices": [
+        "x² − 7x + 6",
+        "x² + 7x + 6",
+        "x² + 7x − 6",
+        "x² + 6x + 7"
+      ],
+      "answerIndex": 1,
+      "explanation": "(x + a)(x + b) ＝ x² + (a + b)x + ab",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j301_004",
+      "unit": "math.j3.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "x² + 9x + 20 を因数分解すると？",
+      "choices": [
+        "(x + 5)(x + 4)",
+        "(x − 5)(x − 4)",
+        "(x + 5)(x − 4)",
+        "(x + 9)(x + 20)"
+      ],
+      "answerIndex": 0,
+      "explanation": "和が x の係数、積が定数項になる2数をさがす。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j301_005",
+      "unit": "math.j3.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "x² + 4x − 12 を因数分解すると？",
+      "choices": [
+        "(x − 2)(x − 6)",
+        "(x − 2)(x + 6)",
+        "(x + 4)(x − 12)",
+        "(x + 2)(x − 6)"
+      ],
+      "answerIndex": 1,
+      "explanation": "和が x の係数、積が定数項になる2数をさがす。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j301_006",
+      "unit": "math.j3.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "x² + 7x + 12 を因数分解すると？",
+      "choices": [
+        "(x − 4)(x − 3)",
+        "(x + 7)(x + 12)",
+        "(x + 4)(x + 3)",
+        "(x + 4)(x − 3)"
+      ],
+      "answerIndex": 2,
+      "explanation": "和が x の係数、積が定数項になる2数をさがす。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j301_007",
+      "unit": "math.j3.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "x² − x − 30 を因数分解すると？",
+      "choices": [
+        "(x − 5)(x + 6)",
+        "(x + 5)(x − 6)",
+        "(x + 5)(x + 6)",
+        "(x − 1)(x − 30)"
+      ],
+      "answerIndex": 1,
+      "explanation": "和が x の係数、積が定数項になる2数をさがす。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j301_008",
+      "unit": "math.j3.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "(x − 6)(x − 3) を展開すると？",
+      "choices": [
+        "x² + 9x + 18",
+        "x² − 9x + 18",
+        "x² − 9x − 18",
+        "x² + 18x − 9"
+      ],
+      "answerIndex": 1,
+      "explanation": "(x + a)(x + b) ＝ x² + (a + b)x + ab",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j301_009",
+      "unit": "math.j3.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "(x − 6)(x + 5) を展開すると？",
+      "choices": [
+        "x² + x − 30",
+        "x² − x − 30",
+        "x² − x + 30",
+        "x² − 30x − 1"
+      ],
+      "answerIndex": 1,
+      "explanation": "(x + a)(x + b) ＝ x² + (a + b)x + ab",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j301_010",
+      "unit": "math.j3.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "(x + 3)² を展開すると？",
+      "choices": [
+        "x² + 6x + 9",
+        "x² + 6x + 6",
+        "x² + 3x + 9",
+        "x² + 9"
+      ],
+      "answerIndex": 0,
+      "explanation": "(a + b)² ＝ a² + 2ab + b²",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j301_011",
+      "unit": "math.j3.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "(x + 4)(x − 4) を展開すると？",
+      "choices": [
+        "x² − 16",
+        "x² − 8x − 16",
+        "x² + 16",
+        "x² − 8"
+      ],
+      "answerIndex": 0,
+      "explanation": "(a + b)(a − b) ＝ a² − b²",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j301_012",
+      "unit": "math.j3.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "x² − 25 を因数分解すると？",
+      "choices": [
+        "(x − 5)²",
+        "(x − 25)(x + 1)",
+        "(x + 5)(x − 5)",
+        "(x + 5)²"
+      ],
+      "answerIndex": 2,
+      "explanation": "a² − b² の形。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    }
+  ]
+}

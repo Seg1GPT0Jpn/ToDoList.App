@@ -1,0 +1,212 @@
+{
+  "setId": "math_j3_10",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_j310_001",
+      "unit": "math.j3.s2.a10",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "二次方程式 x² − 4x − 32 = 0 を解くと？",
+      "choices": [
+        "x = −4, 8",
+        "x = −4, −32",
+        "x = −8, 4",
+        "x = −4, −8"
+      ],
+      "answerIndex": 0,
+      "explanation": "因数分解して、(x − α)(x − β) ＝ 0 → x ＝ α, β。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j310_002",
+      "unit": "math.j3.s2.a10",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "二次方程式 x² − 15x + 56 = 0 を解くと？",
+      "choices": [
+        "x = 7, −8",
+        "x = −15, 56",
+        "x = −8, −7",
+        "x = 7, 8"
+      ],
+      "answerIndex": 3,
+      "explanation": "因数分解して、(x − α)(x − β) ＝ 0 → x ＝ α, β。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j310_003",
+      "unit": "math.j3.s2.a10",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "二次方程式 x² − 10x + 24 = 0 を解くと？",
+      "choices": [
+        "x = −6, −4",
+        "x = 4, −6",
+        "x = 4, 6",
+        "x = −10, 24"
+      ],
+      "answerIndex": 2,
+      "explanation": "因数分解して、(x − α)(x − β) ＝ 0 → x ＝ α, β。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j310_004",
+      "unit": "math.j3.s2.a10",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "(x − 7)(x − 5) を展開すると？",
+      "choices": [
+        "x² + 12x + 35",
+        "x² + 35x − 12",
+        "x² − 12x − 35",
+        "x² − 12x + 35"
+      ],
+      "answerIndex": 3,
+      "explanation": "(x + a)(x + b) ＝ x² + (a + b)x + ab",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j310_005",
+      "unit": "math.j3.s2.a10",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "直角三角形で、直角をはさむ2辺が8cmと15cm。斜辺は？",
+      "choices": [
+        "16",
+        "17",
+        "18",
+        "23"
+      ],
+      "answerIndex": 1,
+      "explanation": "a² + b² ＝ c²",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j310_006",
+      "unit": "math.j3.s2.a10",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "直角三角形で、斜辺が25cm、1辺が7cm。残りの辺は？",
+      "choices": [
+        "18",
+        "23",
+        "24",
+        "25"
+      ],
+      "answerIndex": 2,
+      "explanation": "25² − 7² ＝ 576",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j310_007",
+      "unit": "math.j3.s2.a10",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "y = 2x² で、xが1から2まで増加するときの変化の割合は？",
+      "choices": [
+        "2",
+        "6",
+        "−6",
+        "8"
+      ],
+      "answerIndex": 1,
+      "explanation": "変化の割合 ＝ yの増加量 ÷ xの増加量（＝ a(p + q)）。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j310_008",
+      "unit": "math.j3.s2.a10",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "二次方程式 x² − 3x − 4 = 0 を解くと？",
+      "choices": [
+        "x = −3, −4",
+        "x = −4, 1",
+        "x = −1, 4",
+        "x = −1, −4"
+      ],
+      "answerIndex": 2,
+      "explanation": "因数分解して、(x − α)(x − β) ＝ 0 → x ＝ α, β。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j310_009",
+      "unit": "math.j3.s2.a10",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "二次方程式 x² − 7x + 10 = 0 を解くと？",
+      "choices": [
+        "x = −5, −2",
+        "x = 2, −5",
+        "x = 2, 5",
+        "x = −7, 10"
+      ],
+      "answerIndex": 2,
+      "explanation": "因数分解して、(x − α)(x − β) ＝ 0 → x ＝ α, β。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j310_010",
+      "unit": "math.j3.s2.a10",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "二次方程式 x² + 4x − 5 = 0 を解くと？",
+      "choices": [
+        "x = −1, 5",
+        "x = −5, −1",
+        "x = −5, 1",
+        "x = 4, −5"
+      ],
+      "answerIndex": 2,
+      "explanation": "因数分解して、(x − α)(x − β) ＝ 0 → x ＝ α, β。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j310_011",
+      "unit": "math.j3.s2.a10",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "y = −x² で、xが4から5まで増加するときの変化の割合は？",
+      "choices": [
+        "−9",
+        "9",
+        "−25",
+        "−1"
+      ],
+      "answerIndex": 0,
+      "explanation": "変化の割合 ＝ yの増加量 ÷ xの増加量（＝ a(p + q)）。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j310_012",
+      "unit": "math.j3.s2.a10",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "y = 3x² で、x = 3 のときのyは？",
+      "choices": [
+        "18",
+        "9",
+        "−27",
+        "27"
+      ],
+      "answerIndex": 3,
+      "explanation": "xを2乗してからaをかける。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    }
+  ]
+}

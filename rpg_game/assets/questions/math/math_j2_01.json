@@ -1,0 +1,212 @@
+{
+  "setId": "math_j2_01",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_j201_001",
+      "unit": "math.j2.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "(−5x − 3y) + (−x − 5y) を計算すると？",
+      "choices": [
+        "5x + 15y",
+        "−4x + 2y",
+        "−6x − 8y",
+        "−6x + 2y"
+      ],
+      "answerIndex": 2,
+      "explanation": "同類項をまとめる。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j201_002",
+      "unit": "math.j2.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "(6x + 6y) + (x − 5y) を計算すると？",
+      "choices": [
+        "7x + y",
+        "5x + 11y",
+        "7x + 11y",
+        "6x − 30y"
+      ],
+      "answerIndex": 0,
+      "explanation": "同類項をまとめる。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j201_003",
+      "unit": "math.j2.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "(x + 3y) + (6x − 5y) を計算すると？",
+      "choices": [
+        "6x − 15y",
+        "7x − 2y",
+        "7x + 8y",
+        "−5x + 8y"
+      ],
+      "answerIndex": 1,
+      "explanation": "同類項をまとめる。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j201_004",
+      "unit": "math.j2.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "(−4x − y) + (2x − 3y) を計算すると？",
+      "choices": [
+        "−8x + 3y",
+        "−2x + 2y",
+        "−6x + 2y",
+        "−2x − 4y"
+      ],
+      "answerIndex": 3,
+      "explanation": "同類項をまとめる。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j201_005",
+      "unit": "math.j2.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "(6x + y) + (−4x + 4y) を計算すると？",
+      "choices": [
+        "−24x + 4y",
+        "2x + 5y",
+        "2x − 3y",
+        "10x − 3y"
+      ],
+      "answerIndex": 1,
+      "explanation": "同類項をまとめる。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j201_006",
+      "unit": "math.j2.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "6x × 3xy を計算すると？",
+      "choices": [
+        "18x²y²",
+        "18xy",
+        "18x²y",
+        "9x²y"
+      ],
+      "answerIndex": 2,
+      "explanation": "係数どうし、文字どうしをかける。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j201_007",
+      "unit": "math.j2.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "6x × 4xy を計算すると？",
+      "choices": [
+        "24x²y²",
+        "10x²y",
+        "24xy",
+        "24x²y"
+      ],
+      "answerIndex": 3,
+      "explanation": "係数どうし、文字どうしをかける。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j201_008",
+      "unit": "math.j2.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "4x × 4xy を計算すると？",
+      "choices": [
+        "16x²y²",
+        "16xy",
+        "16x²y",
+        "8x²y"
+      ],
+      "answerIndex": 2,
+      "explanation": "係数どうし、文字どうしをかける。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j201_009",
+      "unit": "math.j2.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "x = −2, y = 4 のとき、3x − 4y の値は？",
+      "choices": [
+        "22",
+        "10",
+        "−22",
+        "20"
+      ],
+      "answerIndex": 2,
+      "explanation": "式を簡単にしてから代入すると楽。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j201_010",
+      "unit": "math.j2.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "x = −4, y = −4 のとき、5x − 3y の値は？",
+      "choices": [
+        "9",
+        "−6",
+        "−8",
+        "−32"
+      ],
+      "answerIndex": 2,
+      "explanation": "式を簡単にしてから代入すると楽。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j201_011",
+      "unit": "math.j2.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "3x²y の次数は？",
+      "choices": [
+        "1",
+        "2",
+        "3",
+        "6"
+      ],
+      "answerIndex": 2,
+      "explanation": "かけ合わされている文字の個数：x, x, y。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j201_012",
+      "unit": "math.j2.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "S = ah/2 を h について解くと？",
+      "choices": [
+        "h = S/2a",
+        "h = 2S/a",
+        "h = aS/2",
+        "h = 2a/S"
+      ],
+      "answerIndex": 1,
+      "explanation": "両辺に2をかけて a でわる。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    }
+  ]
+}

@@ -509,7 +509,7 @@ const japaneseCurriculum = CurriculumNode(
                     'カ変',
                     'サ変',
                     'ナ変',
-                    'ラ変'
+                    'ラ変',
                   ],
                 ),
                 CurriculumNode(
@@ -707,7 +707,7 @@ const japaneseCurriculum = CurriculumNode(
                     '土佐日記',
                     '平家物語',
                     '竹取物語',
-                    '伊勢物語'
+                    '伊勢物語',
                   ],
                 ),
                 CurriculumNode(
@@ -796,7 +796,7 @@ const japaneseCurriculum = CurriculumNode(
                     '宜',
                     '須',
                     '猶',
-                    '盍'
+                    '盍',
                   ],
                 ),
                 CurriculumNode(

@@ -1,0 +1,212 @@
+{
+  "setId": "math_j1_09",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_j109_001",
+      "unit": "math.j1.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "度数分布表で、各階級の真ん中の値を何という？",
+      "choices": [
+        "階級値",
+        "相対度数",
+        "範囲",
+        "度数"
+      ],
+      "answerIndex": 0,
+      "explanation": "例：10以上20未満の階級値は15。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j109_002",
+      "unit": "math.j1.s2.a09",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "度数8、総度数40のときの相対度数は？",
+      "choices": [
+        "0.2",
+        "0.8",
+        "5",
+        "32"
+      ],
+      "answerIndex": 0,
+      "explanation": "8 ÷ 40 ＝ 0.2",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j109_003",
+      "unit": "math.j1.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "データの最大値と最小値の差を何という？",
+      "choices": [
+        "中央値",
+        "平均値",
+        "範囲（レンジ）",
+        "最頻値"
+      ],
+      "answerIndex": 2,
+      "explanation": "散らばりの大きさの目安。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j109_004",
+      "unit": "math.j1.s2.a09",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "3, 5, 7, 8, 12 の中央値は？",
+      "choices": [
+        "8",
+        "5",
+        "7.0の平均で7.5",
+        "7"
+      ],
+      "answerIndex": 3,
+      "explanation": "真ん中の値。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j109_005",
+      "unit": "math.j1.s2.a09",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "2, 4, 6, 10 の中央値は？",
+      "choices": [
+        "4",
+        "5",
+        "5.5",
+        "6"
+      ],
+      "answerIndex": 1,
+      "explanation": "真ん中2つの平均：(4 + 6) ÷ 2",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j109_006",
+      "unit": "math.j1.s2.a09",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "最大値 48、最小値 19 のデータの範囲は？",
+      "choices": [
+        "19",
+        "29",
+        "33.5",
+        "67"
+      ],
+      "answerIndex": 1,
+      "explanation": "48 − 19 ＝ 29",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j109_007",
+      "unit": "math.j1.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "度数分布表をもとに、柱を並べたグラフを何という？",
+      "choices": [
+        "帯グラフ",
+        "折れ線グラフ",
+        "円グラフ",
+        "ヒストグラム"
+      ],
+      "answerIndex": 3,
+      "explanation": "柱状グラフともいう。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j109_008",
+      "unit": "math.j1.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "最初の階級からその階級までの度数の合計を何という？",
+      "choices": [
+        "範囲",
+        "累積度数",
+        "相対度数",
+        "階級値"
+      ],
+      "answerIndex": 1,
+      "explanation": "累積相対度数もある。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j109_009",
+      "unit": "math.j1.s2.a09",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "ペットボトルのふたを1000回投げて上向きが420回。上向きになる確率はおよそ？",
+      "choices": [
+        "0.42",
+        "0.5",
+        "0.58",
+        "420"
+      ],
+      "answerIndex": 0,
+      "explanation": "多数回の実験の相対度数で確率を考える。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j109_010",
+      "unit": "math.j1.s2.a09",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "階級10cm以上15cm未満の階級値は？",
+      "choices": [
+        "15cm",
+        "12.5cm",
+        "5cm",
+        "10cm"
+      ],
+      "answerIndex": 1,
+      "explanation": "(10 + 15) ÷ 2",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j109_011",
+      "unit": "math.j1.s2.a09",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "平均値が極端な値の影響を受けやすいとき、代表値として適しているのは？",
+      "choices": [
+        "中央値",
+        "最大値",
+        "合計",
+        "範囲"
+      ],
+      "answerIndex": 0,
+      "explanation": "中央値は外れ値の影響を受けにくい。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j109_012",
+      "unit": "math.j1.s2.a09",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "1, 3, 3, 4, 3, 6 の最頻値は？",
+      "choices": [
+        "1",
+        "3",
+        "4",
+        "6"
+      ],
+      "answerIndex": 1,
+      "explanation": "いちばん多く現れる値。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    }
+  ]
+}

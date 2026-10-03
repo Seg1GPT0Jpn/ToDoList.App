@@ -32,7 +32,7 @@ class FieldScreen extends StatefulWidget {
     this.exam,
   }) : mapId = mapId ?? '';
 
-  /// 試験対策ワールドのフィールド（6教科を混ぜたエリアを1本の冒険にする）
+  /// 試験対策ワールドのフィールド（5教科を混ぜたエリアを1本の冒険にする）
   factory FieldScreen.exam({
     Key? key,
     required ExamWorldPlan plan,

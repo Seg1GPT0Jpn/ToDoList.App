@@ -5,7 +5,7 @@ import '../world/terrain.dart';
 /// 学習モードの世界。
 ///
 /// - 定期テストの海：船で海を進み、終盤は潜水艦で深海へ潜っていく
-/// - 模擬試験の空：飛行船で雲の上を進み、終盤はロケットで宇宙へ昇っていく。
+/// - 高校入試の空：飛行船で雲の上を進み、終盤はロケットで宇宙へ昇っていく。
 ///   海よりさらに難しい（上級者向け）
 enum StudyRealm {
   sea(
@@ -20,7 +20,7 @@ enum StudyRealm {
     color: 0xFF1F4E79,
   ),
   sky(
-    title: '模擬試験の空',
+    title: '高校入試の空',
     vehicle: '飛行船',
     deepVehicle: 'ロケット',
     surface: Terrain.cloudSea,
@@ -130,7 +130,7 @@ class VoyageMonster {
       );
 }
 
-/// 定期テストの海・模擬試験の空に出る魔物たち
+/// 定期テストの海・高校入試の空に出る魔物たち
 class VoyageMonsters {
   const VoyageMonsters._();
 

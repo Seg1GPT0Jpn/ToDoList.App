@@ -1,0 +1,212 @@
+{
+  "setId": "math_j2_05",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_j205_001",
+      "unit": "math.j2.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "11角形の内角の和は？",
+      "choices": [
+        "3960°",
+        "1620°",
+        "1980°",
+        "1800°"
+      ],
+      "answerIndex": 1,
+      "explanation": "(n − 2) × 180°",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j205_002",
+      "unit": "math.j2.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "正8角形の1つの外角は？",
+      "choices": [
+        "135°",
+        "90°",
+        "55°",
+        "45°"
+      ],
+      "answerIndex": 3,
+      "explanation": "外角の和は360°。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j205_003",
+      "unit": "math.j2.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "12角形の内角の和は？",
+      "choices": [
+        "1800°",
+        "2160°",
+        "1980°",
+        "4320°"
+      ],
+      "answerIndex": 0,
+      "explanation": "(n − 2) × 180°",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j205_004",
+      "unit": "math.j2.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "正10角形の1つの外角は？",
+      "choices": [
+        "46°",
+        "72°",
+        "36°",
+        "144°"
+      ],
+      "answerIndex": 2,
+      "explanation": "外角の和は360°。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j205_005",
+      "unit": "math.j2.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "9角形の内角の和は？",
+      "choices": [
+        "1440°",
+        "3240°",
+        "1260°",
+        "1620°"
+      ],
+      "answerIndex": 2,
+      "explanation": "(n − 2) × 180°",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j205_006",
+      "unit": "math.j2.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "10角形の内角の和は？",
+      "choices": [
+        "3600°",
+        "1620°",
+        "1440°",
+        "1800°"
+      ],
+      "answerIndex": 2,
+      "explanation": "(n − 2) × 180°",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j205_007",
+      "unit": "math.j2.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "平行な2直線に1本の直線が交わってできる、同位角の大きさは？",
+      "choices": [
+        "和が90°",
+        "いつも90°",
+        "等しい",
+        "和が180°"
+      ],
+      "answerIndex": 2,
+      "explanation": "平行線の同位角・錯角は等しい。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j205_008",
+      "unit": "math.j2.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "多角形の外角の和は？",
+      "choices": [
+        "180°",
+        "360°",
+        "(n − 2) × 180°",
+        "540°"
+      ],
+      "answerIndex": 1,
+      "explanation": "何角形でも360°。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j205_009",
+      "unit": "math.j2.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "三角形の外角は、それととなり合わない2つの内角の何に等しい？",
+      "choices": [
+        "平均",
+        "和",
+        "積",
+        "差"
+      ],
+      "answerIndex": 1,
+      "explanation": "外角の性質。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j205_010",
+      "unit": "math.j2.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "三角形の合同条件にないものは？",
+      "choices": [
+        "3つの角がそれぞれ等しい",
+        "2組の辺とその間の角がそれぞれ等しい",
+        "3組の辺がそれぞれ等しい",
+        "1組の辺とその両端の角がそれぞれ等しい"
+      ],
+      "answerIndex": 0,
+      "explanation": "角だけでは大きさが決まらない（相似）。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j205_011",
+      "unit": "math.j2.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "直角三角形の合同条件の1つは？",
+      "choices": [
+        "3つの角が等しい",
+        "面積が等しい",
+        "1辺が等しい",
+        "斜辺と1つの鋭角がそれぞれ等しい"
+      ],
+      "answerIndex": 3,
+      "explanation": "ほかに「斜辺と他の1辺」。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j205_012",
+      "unit": "math.j2.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "証明で、仮定から導こうとする事がらを何という？",
+      "choices": [
+        "結論",
+        "定理",
+        "仮定",
+        "定義"
+      ],
+      "answerIndex": 0,
+      "explanation": "「〜ならば…」の…が結論。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    }
+  ]
+}

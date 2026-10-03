@@ -1,273 +1,215 @@
-# 数学の学習体系（教科 → 科目 → 分野 → 単元 → 小単元）
-# 書き方は tool/curriculum/README.md を参照。
-@subject math|数学|数理の国|ref=高等学校学習指導要領（平成30年告示）第2章第4節 数学
-course m1|数学Ⅰ|grade=1|game=数学Ⅰの道|desc=数と式・図形と計量・2次関数・データの分析。高校数学すべての土台
-  field numexpr|数と式|ref=数学Ⅰ 内容(1) 数と式
-    unit poly|整式の計算|desc=式を整理し、展開・因数分解する
-      sub arrange|整式の整理と次数|kw=次数,降べき,同類項,係数
-      sub expand|展開の公式|kw=展開
-      sub factor|因数分解|kw=因数分解,因数
-      sub factor_adv|複雑な因数分解（たすき掛け・置き換え・複2次式）|kw=たすき掛け,置き換え,複2次,おきかえ,最低次
-      sub symmetric|対称式と式の値|kw=対称式,x+y,xy,式の値
-    unit real|実数|pre=math.m1.numexpr.poly|desc=数の範囲を広げ、根号・絶対値を扱う
-      sub numbers|数の分類（有理数・無理数）|kw=有理数,無理数,循環小数,実数,自然数,整数,分数で表す,0.333
-      sub absolute|絶対値|kw=絶対値,{bar}x
-      sub sqrt|根号を含む式の計算|kw=√,根号,有理化
-      sub nested|2重根号|kw=2重根号,二重根号
-      sub intpart|整数部分と小数部分|kw=整数部分,小数部分
-    unit ineq1|1次不等式|pre=math.m1.numexpr.real|desc=不等式の性質を使って解の範囲を求める
-      sub property|不等式の性質|kw=不等式の性質,負の数をかける,向き
-      sub solve|1次不等式の解法|kw=1次不等式,不等式を解
-      sub system|連立不等式|kw=連立不等式,連立
-      sub absineq|絶対値を含む方程式・不等式|kw=絶対値を含む,{bar}x−,{bar}x+,{bar}2x
-      sub apply|1次不等式の文章題|kw=個,円,人,文章,何個,何本
-  field logic|集合と命題|ref=数学Ⅰ 内容(1) 数と式（集合と命題）
-    unit set|集合|desc=集合の表し方・共通部分・和集合・補集合
-      sub notation|集合の表し方と要素|kw=要素,∈,部分集合,⊂
-      sub operation|共通部分・和集合・補集合|kw=∩,∪,補集合,共通部分,和集合,ド・モルガン
-    unit prop|命題と論理|pre=math.m1.logic.set|desc=条件・必要十分・逆裏対偶・背理法
-      sub condition|命題と条件|kw=命題,真,偽,反例
-      sub necessary|必要条件と十分条件|kw=必要条件,十分条件,必要十分
-      sub converse|逆・裏・対偶|kw=逆,裏,対偶
-      sub contradiction|背理法|kw=背理法
-  field quad|2次関数|ref=数学Ⅰ 内容(3) 2次関数
-    unit graph|2次関数のグラフ|pre=math.m1.numexpr.poly|desc=頂点・軸・平行移動・対称移動
-      sub function|関数と値域|kw=値域,定義域,f(
-      sub vertex|平方完成と頂点・軸|kw=平方完成,頂点,軸
-      sub move|平行移動・対称移動|kw=平行移動,対称移動,対称
-      sub determine|2次関数の決定|kw=通る,決定,求めよ,3点
-    unit maxmin|2次関数の最大・最小|pre=math.m1.quad.graph|desc=定義域・文字を含む場合の最大最小
-      sub basic|定義域と最大・最小|kw=最大,最小
-      sub param|文字を含む場合分け|kw=場合分け,定義域が,a≦x,0≦x≦a,文字を含む
-      sub apply|最大・最小の応用（文章題）|kw=面積,長さ,利益,売り上げ
-    unit eqineq|2次方程式と2次不等式|pre=math.m1.quad.graph|desc=判別式・グラフとx軸・2次不等式
-      sub equation|2次方程式の解法|kw=2次方程式,解の公式
-      sub discriminant|判別式と実数解の個数|kw=判別式,D=,D>,実数解,重解
-      sub intersect|グラフとx軸の位置関係|kw=x軸,共有点,接する
-      sub inequality|2次不等式|kw=2次不等式,不等式
-      sub always|絶対不等式|kw=すべての実数,常に成り立
-      sub distribution|解の配置|kw=解の配置,異なる2つの正の解,範囲に,1より大き
-  field trig|図形と計量|ref=数学Ⅰ 内容(2) 図形と計量
-    unit ratio|三角比|desc=sin・cos・tan と相互関係
-      sub define|三角比の定義|kw=sin,cos,tan,三角比
-      sub relation|三角比の相互関係|kw=sin²,cos²,相互関係,1+tan,sinθcosθ,sinθ+cosθ,sinθ−cosθ
-      sub obtuse|鈍角の三角比と単位円|kw=鈍角,単位円,180°−θ
-      sub equation|三角比を含む方程式・不等式|kw=を満たすθ,θを求め
-    unit solve|三角形への応用|pre=math.m1.trig.ratio|desc=正弦定理・余弦定理・面積
-      sub sine|正弦定理|kw=正弦定理,外接円
-      sub cosine|余弦定理|kw=余弦定理
-      sub area|三角形の面積|kw=面積
-      sub incircle|内接円・外接円と三角形|kw=内接円,半径r
-      sub solid|空間図形への応用|kw=四面体,三角錐,空間,立体,高さ
-  field data|データの分析|ref=数学Ⅰ 内容(4) データの分析
-    unit stats|データの分析|desc=代表値・散らばり・相関・仮説検定の考え
-      sub center|代表値（平均値・中央値・最頻値）|kw=平均値,中央値,最頻値,代表値
-      sub spread|四分位数と箱ひげ図|kw=四分位,箱ひげ,範囲
-      sub variance|分散と標準偏差|kw=分散,標準偏差
-      sub correlation|散布図と相関係数|kw=相関,散布図,共分散
-      sub transform|変量の変換|kw=変量,y=ax+b,変換
-      sub hypothesis|仮説検定の考え方|kw=仮説,検定,有意
-course ma|数学A|grade=1|game=数学Aの道|desc=場合の数と確率・図形の性質・数学と人間の活動
-  field prob|場合の数と確率|ref=数学A 内容(2) 場合の数と確率
-    unit count|場合の数|desc=数え上げの原理・順列・組合せ
-      sub principle|和の法則・積の法則・集合の要素の個数|kw=和の法則,積の法則,要素の個数,n(A
-      sub permutation|順列|kw=順列,P,並べ
-      sub circular|円順列・重複順列|kw=円順列,じゅず,重複順列,円形
-      sub combination|組合せ|kw=組合せ,C,選ぶ
-      sub same|同じものを含む順列・最短経路|kw=同じものを含む,最短経路,道順
-      sub divide|組分け・重複組合せ|kw=組分け,分ける,重複組合せ,H
-    unit probability|確率|pre=math.ma.prob.count|desc=確率の基本性質・独立試行・条件付き確率
-      sub basic|確率の基本と排反|kw=確率,排反
-      sub complement|余事象の確率|kw=余事象,少なくとも
-      sub independent|独立な試行の確率|kw=独立
-      sub repeated|反復試行の確率|kw=反復試行,回中,回投げ
-      sub conditional|条件付き確率と乗法定理|kw=条件付き,P_A,原因の確率
-      sub expected|期待値|kw=期待値
-  field geometry|図形の性質|ref=数学A 内容(1) 図形の性質
-    unit triangle|三角形の性質|desc=角の二等分線・五心・チェバ・メネラウス
-      sub bisector|角の二等分線と比|kw=二等分線
-      sub centers|三角形の五心（重心・内心・外心・垂心）|kw=重心,内心,外心,垂心,傍心
-      sub ceva|チェバの定理・メネラウスの定理|kw=チェバ,メネラウス
-      sub sides|三角形の辺と角の大小|kw=辺の長さ,成立条件,大小
-    unit circle|円の性質|pre=math.ma.geometry.triangle|desc=円周角・接線・方べき・2円の関係
-      sub inscribed|円周角と円に内接する四角形|kw=円周角,内接する四角形,対角
-      sub tangent|接線と接弦定理|kw=接線,接弦
-      sub power|方べきの定理|kw=方べき
-      sub two|2つの円の位置関係|kw=2つの円,共通接線
-    unit construct|作図と空間図形|desc=作図・直線と平面・多面体
-      sub construction|作図|kw=作図
-      sub space|空間の直線と平面|kw=ねじれ,平面,三垂線
-      sub polyhedron|多面体とオイラーの多面体定理|kw=多面体,オイラー,頂点の数
-  field integer|数学と人間の活動（整数）|ref=数学A 内容(3) 数学と人間の活動
-    unit divisor|約数と倍数|desc=約数・倍数・素因数分解
-      sub divisor|約数と倍数・素因数分解|kw=約数,倍数,素因数
-      sub gcd|最大公約数と最小公倍数|kw=最大公約数,最小公倍数
-      sub remainder|余りによる分類|kw=余り,割った余り,剰余
-    unit euclid|ユークリッドの互除法と不定方程式|pre=math.ma.integer.divisor|desc=互除法・1次不定方程式
-      sub euclid|ユークリッドの互除法|kw=互除法
-      sub diophantine|1次不定方程式|kw=整数解,不定方程式,ax+by
-      sub nonlinear|整数解の応用（積の形・範囲の絞り込み）|kw=積の形,xy=,絞り込
-    unit base|記数法と数学の活用|desc=n進法・数学と人間の活動
-      sub nary|n進法|kw=進法,進数
-      sub activity|数学と人間の活動（暦・パズル・ゲーム）|kw=魔方陣,ゲーム,暦,パズル
-course m2|数学Ⅱ|grade=2|game=数学Ⅱの道|desc=いろいろな式・図形と方程式・指数対数・三角関数・微分積分
-  field expr|いろいろな式|ref=数学Ⅱ 内容(1) いろいろな式
-    unit proof|式と証明|pre=math.m1.numexpr.poly|desc=二項定理・整式の割り算・恒等式・等式不等式の証明
-      sub binomial|二項定理|kw=二項定理,係数,パスカル
-      sub division|整式の割り算と分数式|kw=割り算,商,分数式
-      sub identity|恒等式|kw=恒等式
-      sub equality|等式の証明|kw=等式,証明
-      sub inequality|不等式の証明と相加相乗平均|kw=相加,相乗,不等式の証明,≧
-    unit complex|複素数と方程式|pre=math.m1.quad.eqineq|desc=複素数・解と係数の関係・剰余の定理・高次方程式
-      sub complex|複素数の計算|kw=複素数,i²,虚数
-      sub discriminant|2次方程式の解の判別|kw=判別式,虚数解
-      sub vieta|解と係数の関係|kw=解と係数,α+β,αβ
-      sub remainder|剰余の定理と因数定理|kw=剰余の定理,因数定理,余り
-      sub higher|高次方程式|kw=3次方程式,高次,ω,4次方程式
-  field coord|図形と方程式|ref=数学Ⅱ 内容(2) 図形と方程式
-    unit lines|点と直線|pre=math.m1.trig.solve|desc=内分外分・直線の方程式・距離
-      sub point|2点間の距離・内分点・外分点|kw=内分,外分,2点間,重心
-      sub line|直線の方程式|kw=直線の方程式,傾き
-      sub relation|2直線の平行・垂直|kw=平行,垂直
-      sub distance|点と直線の距離|kw=点と直線の距離
-    unit circles|円の方程式|pre=math.m2.coord.lines|desc=円・円と直線・2円
-      sub equation|円の方程式|kw=円の方程式,中心,半径
-      sub line|円と直線の位置関係|kw=円と直線,接線,共有点
-      sub two|2つの円の位置関係|kw=2つの円,2円
-    unit locus|軌跡と領域|pre=math.m2.coord.circles|desc=軌跡・不等式の表す領域・領域と最大最小
-      sub locus|軌跡|kw=軌跡
-      sub region|不等式の表す領域|kw=領域
-      sub linear|領域と最大・最小（線形計画）|kw=領域,最大値,最小値,x+y
-  field trigfunc|三角関数|ref=数学Ⅱ 内容(4) 三角関数
-    unit general|一般角と三角関数|pre=math.m1.trig.ratio|desc=弧度法・グラフ・方程式不等式
-      sub radian|一般角と弧度法|kw=弧度法,ラジアン,π,一般角,扇形
-      sub graph|三角関数のグラフと周期|kw=周期,グラフ
-      sub equation|三角関数を含む方程式・不等式|kw=方程式,不等式,0≦θ
-    unit addition|加法定理とその応用|pre=math.m2.trigfunc.general|desc=加法定理・2倍角・合成
-      sub addition|加法定理|kw=加法定理,sin(α,cos(α
-      sub double|2倍角・半角の公式|kw=2倍角,半角,sin2θ,cos2θ
-      sub synthesis|三角関数の合成|kw=合成,√2sin
-      sub maxmin|三角関数の最大・最小|kw=最大,最小
-  field explog|指数関数・対数関数|ref=数学Ⅱ 内容(3) 指数関数・対数関数
-    unit exp|指数関数|desc=累乗根・指数の拡張・指数関数
-      sub rational|指数の拡張と累乗根|kw=累乗根,指数法則,有理数の指数,³√
-      sub function|指数関数のグラフと大小|kw=グラフ,大小
-      sub equation|指数方程式・指数不等式|kw=方程式,不等式,2^x
-    unit log|対数関数|pre=math.m2.explog.exp|desc=対数の性質・対数関数・常用対数
-      sub property|対数の定義と性質|kw=log,底,対数の性質
-      sub base|底の変換公式|kw=底の変換
-      sub function|対数関数のグラフと方程式・不等式|kw=対数方程式,対数不等式,真数
-      sub common|常用対数（桁数・小数首位）|kw=常用対数,桁,けた,log₁₀,小数第
-  field calculus|微分・積分の考え|ref=数学Ⅱ 内容(5) 微分・積分の考え
-    unit diff|微分係数と導関数|pre=math.m1.quad.graph|desc=極限・微分係数・導関数・接線
-      sub limit|平均変化率と微分係数|kw=平均変化率,微分係数,lim
-      sub derivative|導関数の計算|kw=導関数,微分
-      sub tangent|接線の方程式|kw=接線
-    unit apply|微分の応用|pre=math.m2.calculus.diff|desc=増減・極値・最大最小・方程式への応用
-      sub extremum|関数の増減と極値|kw=極値,極大,極小,増減
-      sub maxmin|最大・最小|kw=最大,最小
-      sub equation|方程式・不等式への応用|kw=実数解の個数,異なる3つ,不等式が成り立
-    unit integ|積分|pre=math.m2.calculus.diff|desc=不定積分・定積分・面積
-      sub indefinite|不定積分|kw=不定積分,∫
-      sub definite|定積分|kw=定積分
-      sub area|面積|kw=面積,囲まれ
-      sub function|定積分で表された関数|kw=定積分で表され,∫_a^x
-course mb|数学B|grade=2|game=数学Bの道|desc=数列・統計的な推測・数学と社会生活
-  field seq|数列|ref=数学B 内容(1) 数列
-    unit arith|等差数列と等比数列|desc=一般項・和
-      sub arithmetic|等差数列|kw=等差
-      sub geometric|等比数列|kw=等比
-      sub mean|等差中項・等比中項|kw=中項
-    unit sum|いろいろな数列の和|pre=math.mb.seq.arith|desc=Σ・階差数列・部分分数・群数列
-      sub sigma|Σ記号と和の公式|kw=Σ,k²,和を求め
-      sub difference|階差数列|kw=階差
-      sub telescoping|分数・(等差)×(等比)の和|kw=部分分数,等差×等比,r倍
-      sub group|群数列|kw=群
-    unit recur|漸化式と数学的帰納法|pre=math.mb.seq.sum|desc=漸化式・数学的帰納法
-      sub basic|基本的な漸化式|kw=漸化式,a_{n+1}=
-      sub linear|a_{n+1}=pa_n+q 型など|kw=pa_n,特性方程式
-      sub induction|数学的帰納法|kw=帰納法
-  field stat|統計的な推測|ref=数学B 内容(2) 統計的な推測
-    unit random|確率分布|pre=math.ma.prob.probability|desc=確率変数・期待値・分散・二項分布
-      sub variable|確率変数と期待値・分散|kw=確率変数,期待値,分散,E(X),V(X)
-      sub linear|確率変数の和と積・aX+b|kw=aX+b,X+Y,独立な確率変数
-      sub binomial|二項分布|kw=二項分布,B(n
-      sub normal|正規分布|kw=正規分布,標準正規,Z=
-    unit infer|統計的な推測|pre=math.mb.stat.random|desc=標本・推定・仮説検定
-      sub sample|母集団と標本・標本平均|kw=標本,母集団,無作為
-      sub estimate|推定（信頼区間）|kw=推定,信頼区間,信頼度
-      sub test|仮説検定|kw=検定,帰無仮説,棄却,有意水準
-  field society|数学と社会生活|ref=数学B 内容(3) 数学と社会生活
-    unit model|数学と社会生活|desc=数学的モデル・社会の事象の数理
-      sub model|現実の事象と数学的モデル|kw=モデル,近似,予測
-      sub finance|金利・ローン・複利|kw=複利,利息,ローン,年利
-      sub ranking|順位・選挙・指標|kw=選挙,順位,指数,議席
-course mc|数学C|grade=3|game=数学Cの道|desc=ベクトル・平面上の曲線と複素数平面・数学的な表現の工夫
-  field vector|ベクトル|ref=数学C 内容(1) ベクトル
-    unit plane|平面ベクトル|pre=math.m2.coord.lines|desc=演算・成分・内積・位置ベクトル
-      sub operation|ベクトルの演算と成分|kw=成分,演算,大きさ,単位ベクトル
-      sub inner|内積|kw=内積,なす角
-      sub position|位置ベクトルと内分点|kw=位置ベクトル,内分,重心
-      sub figure|ベクトルと図形（交点・面積）|kw=交点,面積,一直線
-      sub equation|ベクトル方程式|kw=ベクトル方程式,媒介変数
-    unit space|空間ベクトル|pre=math.mc.vector.plane|desc=空間座標・空間ベクトル・平面と直線
-      sub coord|空間の座標|kw=空間,座標,xyz
-      sub vector|空間ベクトルの成分と内積|kw=成分,内積
-      sub figure|空間図形とベクトル（平面との交点・垂線）|kw=平面,垂線,四面体,交点
-      sub sphere|球面・平面の方程式|kw=球面,平面の方程式
-  field curve|平面上の曲線と複素数平面|ref=数学C 内容(2) 平面上の曲線と複素数平面
-    unit conic|2次曲線|pre=math.m2.coord.circles|desc=放物線・楕円・双曲線
-      sub parabola|放物線|kw=放物線,焦点,準線
-      sub ellipse|楕円|kw=楕円
-      sub hyperbola|双曲線|kw=双曲線,漸近線
-      sub line|2次曲線と直線|kw=接線,共有点
-    unit param|媒介変数表示と極座標|pre=math.mc.curve.conic|desc=媒介変数・極座標・極方程式
-      sub param|媒介変数表示|kw=媒介変数,サイクロイド
-      sub polar|極座標と極方程式|kw=極座標,極方程式,r=
-    unit complex|複素数平面|pre=math.m2.expr.complex|desc=極形式・ド・モアブル・図形への応用
-      sub plane|複素数平面と絶対値|kw=複素数平面,共役,絶対値
-      sub polar|極形式と積・商|kw=極形式,偏角,回転
-      sub demoivre|ド・モアブルの定理とn乗根|kw=ド・モアブル,乗根,z^n
-      sub figure|複素数と図形|kw=図形,円,垂直,一直線,正三角形
-  field express|数学的な表現の工夫|ref=数学C 内容(3) 数学的な表現の工夫
-    unit express|数学的な表現の工夫|desc=図・表・行列・離散グラフによる表現
-      sub chart|図や表・統計グラフの工夫|kw=グラフ,図,表
-      sub matrix|行列による表現|kw=行列
-      sub network|離散グラフ（頂点と辺）|kw=頂点,辺,一筆書き,ネットワーク
-course m3|数学Ⅲ|grade=3|game=数学Ⅲの道|desc=極限・微分法・積分法
-  field limit|極限|ref=数学Ⅲ 内容(1) 極限
-    unit seq|数列の極限|pre=math.mb.seq.recur|desc=収束・発散・無限等比級数
-      sub limit|数列の極限|kw=極限,収束,発散,lim_{n
-      sub geometric|無限等比数列|kw=r^n,無限等比数列
-      sub series|無限級数|kw=無限級数,無限等比級数,級数
-    unit func|関数の極限|pre=math.m3.limit.seq|desc=関数の極限・三角関数の極限・連続性
-      sub function|関数の極限|kw=極限,lim
-      sub trig|三角関数の極限|kw=sinx/x,sin x/x
-      sub e|eに関する極限|kw=e,(1+
-      sub continuity|関数の連続性と中間値の定理|kw=連続,中間値
-      sub inverse|分数関数・無理関数・逆関数・合成関数|kw=分数関数,無理関数,逆関数,合成関数
-  field diff|微分法|ref=数学Ⅲ 内容(2) 微分法
-    unit derivative|導関数|pre=math.m2.calculus.diff,math.m3.limit.func|desc=積・商・合成関数・いろいろな関数の微分
-      sub rule|積・商の微分|kw=積の微分,商の微分
-      sub chain|合成関数・逆関数の微分|kw=合成関数,逆関数
-      sub trig|三角関数の導関数|kw=sin,cos,tan
-      sub explog|指数・対数関数の導関数|kw=log,e^x,対数微分
-      sub higher|高次導関数・媒介変数・陰関数の微分|kw=第2次導関数,高次,媒介変数,陰関数
-    unit apply|導関数の応用|pre=math.m3.diff.derivative|desc=接線・増減・凹凸・方程式不等式・速度
-      sub tangent|接線と法線|kw=接線,法線
-      sub meanvalue|平均値の定理|kw=平均値の定理
-      sub graph|増減・凹凸とグラフ|kw=凹凸,変曲点,増減,漸近線
-      sub inequality|方程式・不等式への応用|kw=不等式,実数解
-      sub velocity|速度・加速度・近似式|kw=速度,加速度,近似
-  field integ|積分法|ref=数学Ⅲ 内容(3) 積分法
-    unit method|積分の計算|pre=math.m3.diff.derivative|desc=置換積分・部分積分・いろいろな関数の積分
-      sub basic|いろいろな関数の不定積分|kw=不定積分
-      sub substitution|置換積分|kw=置換
-      sub parts|部分積分|kw=部分積分
-      sub definite|定積分の計算|kw=定積分
-      sub limit|区分求積法と定積分の不等式|kw=区分求積,Σ,不等式
-    unit apply|積分の応用|pre=math.m3.integ.method|desc=面積・体積・曲線の長さ・道のり
-      sub area|面積|kw=面積
-      sub volume|体積・回転体|kw=体積,回転
-      sub length|曲線の長さ|kw=曲線の長さ,長さ
-      sub distance|速度と道のり|kw=道のり,速度
+# 算数・数学の学習体系（tool/junior/gen.py が生成。手で直さない）
+@subject math|算数・数学|数の国|ref=小学校 算数・中学校 数学|source=文部科学省 小学校・中学校学習指導要領（平成29年告示）|url=https://www.mext.go.jp/a_menu/shotou/new-cs/1384661.htm
+course e1|小1|grade=小1|game=小1の道|desc=10までの数・たし算ひき算・大きい数・とけい・かたち
+  field s1|かずとけいさん
+    unit a01|10までのかず
+      sub main|10までのかず
+    unit a02|たしざん|pre=math.e1.s1.a01
+      sub main|たしざん
+    unit a03|ひきざん|pre=math.e1.s1.a02
+      sub main|ひきざん
+    unit a04|かずとけいさんの まとめ
+      sub main|かずとけいさんの まとめ
+  field s2|大きいかずと くりあがり・くりさがり
+    unit a05|大きいかず（100まで）|pre=math.e1.s1.a03
+      sub main|大きいかず（100まで）
+    unit a06|くりあがりの ある たしざん|pre=math.e1.s2.a05
+      sub main|くりあがりの ある たしざん
+    unit a07|くりさがりの ある ひきざん|pre=math.e1.s2.a06
+      sub main|くりさがりの ある ひきざん
+    unit a08|とけい|pre=math.e1.s2.a07
+      sub main|とけい
+    unit a09|かたちと ながさくらべ|pre=math.e1.s2.a08
+      sub main|かたちと ながさくらべ
+    unit a10|1ねんせいの まとめ
+      sub main|1ねんせいの まとめ
+course e2|小2|grade=小2|game=小2の道|desc=ひっ算・1000までの数・長さとかさ・時こく・九九・三角形と四角形
+  field s1|ひっ算と大きい数
+    unit a01|たし算のひっ算
+      sub main|たし算のひっ算
+    unit a02|ひき算のひっ算|pre=math.e2.s1.a01
+      sub main|ひき算のひっ算
+    unit a03|1000までの数|pre=math.e2.s1.a02
+      sub main|1000までの数
+    unit a04|ひっ算と大きい数のまとめ
+      sub main|ひっ算と大きい数のまとめ
+  field s2|はかり方とかけ算
+    unit a05|長さ（mm・cm・m）|pre=math.e2.s1.a03
+      sub main|長さ（mm・cm・m）
+    unit a06|かさ（L・dL・mL）|pre=math.e2.s2.a05
+      sub main|かさ（L・dL・mL）
+    unit a07|時こくと時間|pre=math.e2.s2.a06
+      sub main|時こくと時間
+    unit a08|かけ算九九（2・3・4・5のだん）|pre=math.e2.s2.a07
+      sub main|かけ算九九（2・3・4・5のだん）
+    unit a09|かけ算九九（6・7・8・9・1のだん）|pre=math.e2.s2.a08
+      sub main|かけ算九九（6・7・8・9・1のだん）
+    unit a10|三角形と四角形・はこの形|pre=math.e2.s2.a09
+      sub main|三角形と四角形・はこの形
+    unit a11|2年生のまとめ
+      sub main|2年生のまとめ
+course e3|小3|grade=小3|game=小3の道|desc=わり算・大きい数・筆算・小数・分数・円と球
+  field s1|わり算と大きい数
+    unit a01|かけ算のきまり
+      sub main|かけ算のきまり
+    unit a02|わり算|pre=math.e3.s1.a01
+      sub main|わり算
+    unit a03|大きい数（万の位）|pre=math.e3.s1.a02
+      sub main|大きい数（万の位）
+    unit a04|わり算と大きい数のまとめ
+      sub main|わり算と大きい数のまとめ
+  field s2|筆算・小数・分数・図形
+    unit a05|3けた・4けたのたし算とひき算|pre=math.e3.s1.a03
+      sub main|3けた・4けたのたし算とひき算
+    unit a06|かけ算の筆算|pre=math.e3.s2.a05
+      sub main|かけ算の筆算
+    unit a07|あまりのあるわり算|pre=math.e3.s2.a06
+      sub main|あまりのあるわり算
+    unit a08|小数|pre=math.e3.s2.a07
+      sub main|小数
+    unit a09|分数|pre=math.e3.s2.a08
+      sub main|分数
+    unit a10|円と球・重さ・三角形|pre=math.e3.s2.a09
+      sub main|円と球・重さ・三角形
+    unit a11|3年生のまとめ
+      sub main|3年生のまとめ
+course e4|小4|grade=小4|game=小4の道|desc=億と兆・わり算の筆算・角・小数・分数・面積・がい数
+  field s1|大きい数・わり算・角
+    unit a01|大きい数（億・兆）
+      sub main|大きい数（億・兆）
+    unit a02|わり算の筆算|pre=math.e4.s1.a01
+      sub main|わり算の筆算
+    unit a03|角の大きさ|pre=math.e4.s1.a02
+      sub main|角の大きさ
+    unit a04|大きい数・わり算・角のまとめ
+      sub main|大きい数・わり算・角のまとめ
+  field s2|小数・分数・面積
+    unit a05|小数のたし算とひき算|pre=math.e4.s1.a03
+      sub main|小数のたし算とひき算
+    unit a06|小数のかけ算とわり算|pre=math.e4.s2.a05
+      sub main|小数のかけ算とわり算
+    unit a07|分数（仮分数・帯分数）|pre=math.e4.s2.a06
+      sub main|分数（仮分数・帯分数）
+    unit a08|面積|pre=math.e4.s2.a07
+      sub main|面積
+    unit a09|垂直・平行と四角形・直方体|pre=math.e4.s2.a08
+      sub main|垂直・平行と四角形・直方体
+    unit a10|がい数|pre=math.e4.s2.a09
+      sub main|がい数
+    unit a11|4年生のまとめ
+      sub main|4年生のまとめ
+course e5|小5|grade=小5|game=小5の道|desc=小数のかけ算わり算・倍数と約数・分数・平均・速さ・割合・面積と体積
+  field s1|小数のかけ算わり算・倍数と約数
+    unit a01|整数と小数・体積
+      sub main|整数と小数・体積
+    unit a02|小数のかけ算|pre=math.e5.s1.a01
+      sub main|小数のかけ算
+    unit a03|小数のわり算|pre=math.e5.s1.a02
+      sub main|小数のわり算
+    unit a04|小数と体積のまとめ
+      sub main|小数と体積のまとめ
+  field s2|分数・平均・割合・図形
+    unit a05|倍数と約数|pre=math.e5.s1.a03
+      sub main|倍数と約数
+    unit a06|分数のたし算とひき算|pre=math.e5.s2.a05
+      sub main|分数のたし算とひき算
+    unit a07|平均|pre=math.e5.s2.a06
+      sub main|平均
+    unit a08|単位量あたりの大きさ・速さ|pre=math.e5.s2.a07
+      sub main|単位量あたりの大きさ・速さ
+    unit a09|割合と百分率|pre=math.e5.s2.a08
+      sub main|割合と百分率
+    unit a10|図形の角・面積・円周|pre=math.e5.s2.a09
+      sub main|図形の角・面積・円周
+    unit a11|5年生のまとめ
+      sub main|5年生のまとめ
+course e6|小6|grade=小6|game=小6の道|desc=文字と式・分数のかけ算わり算・比・比例と反比例・円の面積・体積・場合の数
+  field s1|文字と式・分数の計算
+    unit a01|文字と式
+      sub main|文字と式
+    unit a02|分数のかけ算|pre=math.e6.s1.a01
+      sub main|分数のかけ算
+    unit a03|分数のわり算|pre=math.e6.s1.a02
+      sub main|分数のわり算
+    unit a04|文字と式・分数のまとめ
+      sub main|文字と式・分数のまとめ
+  field s2|比・比例・図形・データ
+    unit a05|比|pre=math.e6.s1.a03
+      sub main|比
+    unit a06|比例と反比例|pre=math.e6.s2.a05
+      sub main|比例と反比例
+    unit a07|対称な図形・拡大図と縮図・円の面積|pre=math.e6.s2.a06
+      sub main|対称な図形・拡大図と縮図・円の面積
+    unit a08|立体の体積・場合の数・データ|pre=math.e6.s2.a07
+      sub main|立体の体積・場合の数・データ
+    unit a09|計算のきまり（総合）|pre=math.e6.s2.a08
+      sub main|計算のきまり（総合）
+    unit a10|6年生のまとめ
+      sub main|6年生のまとめ
+course j1|中1|grade=中1|game=中1の道|desc=正負の数・文字式・方程式・比例反比例・平面図形・空間図形・データ
+  field s1|数と式
+    unit a01|正負の数
+      sub main|正負の数
+    unit a02|正負の数の計算|pre=math.j1.s1.a01
+      sub main|正負の数の計算
+    unit a03|文字と式|pre=math.j1.s1.a02
+      sub main|文字と式
+    unit a04|数と式のまとめ
+      sub main|数と式のまとめ
+    unit a05|一次方程式|pre=math.j1.s1.a03
+      sub main|一次方程式
+  field s2|関数・図形・データ
+    unit a06|比例と反比例|pre=math.j1.s1.a05
+      sub main|比例と反比例
+    unit a07|平面図形|pre=math.j1.s2.a06
+      sub main|平面図形
+    unit a08|空間図形|pre=math.j1.s2.a07
+      sub main|空間図形
+    unit a09|データの活用|pre=math.j1.s2.a08
+      sub main|データの活用
+    unit a10|中1のまとめ
+      sub main|中1のまとめ
+course j2|中2|grade=中2|game=中2の道|desc=式の計算・連立方程式・一次関数・図形の性質と証明・確率・箱ひげ図
+  field s1|式と方程式・一次関数
+    unit a01|式の計算
+      sub main|式の計算
+    unit a02|連立方程式|pre=math.j2.s1.a01
+      sub main|連立方程式
+    unit a03|一次関数|pre=math.j2.s1.a02
+      sub main|一次関数
+    unit a04|式と関数のまとめ
+      sub main|式と関数のまとめ
+  field s2|図形・確率・データ
+    unit a05|平行と合同|pre=math.j2.s1.a03
+      sub main|平行と合同
+    unit a06|三角形と四角形|pre=math.j2.s2.a05
+      sub main|三角形と四角形
+    unit a07|確率|pre=math.j2.s2.a06
+      sub main|確率
+    unit a08|データの分布（箱ひげ図）|pre=math.j2.s2.a07
+      sub main|データの分布（箱ひげ図）
+    unit a09|中2のまとめ
+      sub main|中2のまとめ
+course j3|中3|grade=中3|game=中3の道|desc=展開と因数分解・平方根・二次方程式・関数y=ax²・相似・円・三平方・標本調査
+  field s1|式と方程式
+    unit a01|展開と因数分解
+      sub main|展開と因数分解
+    unit a02|平方根|pre=math.j3.s1.a01
+      sub main|平方根
+    unit a03|二次方程式|pre=math.j3.s1.a02
+      sub main|二次方程式
+    unit a04|式と方程式のまとめ
+      sub main|式と方程式のまとめ
+  field s2|関数と図形
+    unit a05|関数 y = ax²|pre=math.j3.s1.a03
+      sub main|関数 y = ax²
+    unit a06|相似な図形|pre=math.j3.s2.a05
+      sub main|相似な図形
+    unit a07|円周角|pre=math.j3.s2.a06
+      sub main|円周角
+    unit a08|三平方の定理|pre=math.j3.s2.a07
+      sub main|三平方の定理
+    unit a09|標本調査|pre=math.j3.s2.a08
+      sub main|標本調査
+    unit a10|中3のまとめ
+      sub main|中3のまとめ

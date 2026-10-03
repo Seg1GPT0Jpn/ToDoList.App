@@ -1,0 +1,212 @@
+{
+  "setId": "math_e3_10",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_e310_001",
+      "unit": "math.e3.s2.a10",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "円の真ん中の点を何という？",
+      "choices": [
+        "直径",
+        "中心",
+        "ちょう点",
+        "半径"
+      ],
+      "answerIndex": 1,
+      "explanation": "円の中心から円のまわりまでの長さはどこも同じ。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e310_002",
+      "unit": "math.e3.s2.a10",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "円の中心から円のまわりまでひいた直線を何という？",
+      "choices": [
+        "中心",
+        "直径",
+        "半径",
+        "円周"
+      ],
+      "answerIndex": 2,
+      "explanation": "半径は全部同じ長さ。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e310_003",
+      "unit": "math.e3.s2.a10",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "半径4cmの円の直径は？",
+      "choices": [
+        "8cm",
+        "16cm",
+        "2cm",
+        "4cm"
+      ],
+      "answerIndex": 0,
+      "explanation": "直径は半径の2倍。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e310_004",
+      "unit": "math.e3.s2.a10",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "直径10cmの円の半径は？",
+      "choices": [
+        "20cm",
+        "5cm",
+        "3cm",
+        "10cm"
+      ],
+      "answerIndex": 1,
+      "explanation": "半径は直径の半分。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e310_005",
+      "unit": "math.e3.s2.a10",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "どこから見ても円に見える形を何という？",
+      "choices": [
+        "立方体",
+        "三角形",
+        "円柱",
+        "球"
+      ],
+      "answerIndex": 3,
+      "explanation": "ボールの形が球。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e310_006",
+      "unit": "math.e3.s2.a10",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "1kmは何m？",
+      "choices": [
+        "10m",
+        "10000m",
+        "100m",
+        "1000m"
+      ],
+      "answerIndex": 3,
+      "explanation": "1km＝1000m。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e310_007",
+      "unit": "math.e3.s2.a10",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "2km300mは何m？",
+      "choices": [
+        "2300m",
+        "2003m",
+        "23000m",
+        "230m"
+      ],
+      "answerIndex": 0,
+      "explanation": "2km＝2000m。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e310_008",
+      "unit": "math.e3.s2.a10",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "1kgは何g？",
+      "choices": [
+        "10g",
+        "1000g",
+        "100g",
+        "10000g"
+      ],
+      "answerIndex": 1,
+      "explanation": "1kg＝1000g。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e310_009",
+      "unit": "math.e3.s2.a10",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "1kg − 350g は何g？",
+      "choices": [
+        "750g",
+        "350g",
+        "650g",
+        "1350g"
+      ],
+      "answerIndex": 2,
+      "explanation": "1000 − 350 = 650",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e310_010",
+      "unit": "math.e3.s2.a10",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "1tは何kg？",
+      "choices": [
+        "10000kg",
+        "1000kg",
+        "10kg",
+        "100kg"
+      ],
+      "answerIndex": 1,
+      "explanation": "1t＝1000kg。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e310_011",
+      "unit": "math.e3.s2.a10",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "二等辺三角形はどんな三角形？",
+      "choices": [
+        "直角が2つある",
+        "へんが4つある",
+        "3つのへんの長さが同じ",
+        "2つのへんの長さが同じ"
+      ],
+      "answerIndex": 3,
+      "explanation": "正三角形は3つのへんが同じ。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e310_012",
+      "unit": "math.e3.s2.a10",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "正三角形の3つのかどの大きさは？",
+      "choices": [
+        "みんな同じ",
+        "1つだけ大きい",
+        "みんなちがう",
+        "みんな直角"
+      ],
+      "answerIndex": 0,
+      "explanation": "正三角形は3つのかどが等しい。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    }
+  ]
+}

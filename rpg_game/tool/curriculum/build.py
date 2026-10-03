@@ -25,7 +25,7 @@ DART_LEVEL = {
     'unit': 'unit',
     'sub': 'subUnit',
 }
-DEFAULT_SOURCE = '文部科学省 高等学校学習指導要領（平成30年告示）'
+DEFAULT_SOURCE = '文部科学省 小学校・中学校学習指導要領（平成29年告示）'
 DEFAULT_URL = 'https://www.mext.go.jp/a_menu/shotou/new-cs/1384661.htm'
 ID_RE = re.compile(r'^[a-z0-9_]+$')
 
@@ -126,8 +126,8 @@ def validate(subjects):
             if n.level == 'unit' and not n.children:
                 sys.exit(f'{n.id}: 単元には小単元が1つ以上必要')
             g = n.attrs.get('grade')
-            if g and not re.match(r'^[1-3](-[1-3])?$', g):
-                sys.exit(f'{n.id}: grade は 1 / 2 / 3 / 1-2 などで書く: {g}')
+            if g and not re.match(r'^[小中][1-6](-[小中]?[1-6])?$', g):
+                sys.exit(f'{n.id}: grade は 小1 / 中2 / 小3-4 などで書く: {g}')
     # 前提の循環を調べる
     graph = {i: split_list(n.attrs.get('pre', '')) for i, n in ids.items()}
     state = {}
@@ -153,8 +153,7 @@ def split_list(v):
 
 
 # 画面に出す教科の順（ゲームの国の順）
-ORDER = ['english', 'science', 'social', 'japanese', 'math', 'information',
-         'music']
+ORDER = ['english', 'math', 'japanese', 'science', 'social']
 
 
 def dart_str(s):

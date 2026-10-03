@@ -1,0 +1,212 @@
+{
+  "setId": "math_j2_03",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_j203_001",
+      "unit": "math.j2.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "y = 2x + 4 の傾きは？",
+      "choices": [
+        "4",
+        "6",
+        "−2",
+        "2"
+      ],
+      "answerIndex": 3,
+      "explanation": "y ＝ ax + b の a が傾き、b が切片。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j203_002",
+      "unit": "math.j2.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "y = −x + 6 の傾きは？",
+      "choices": [
+        "5",
+        "6",
+        "1",
+        "−1"
+      ],
+      "answerIndex": 3,
+      "explanation": "y ＝ ax + b の a が傾き、b が切片。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j203_003",
+      "unit": "math.j2.s1.a03",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "2点(2, −9) と (0, −5) を通る直線の式は？",
+      "choices": [
+        "y = −2x + 5",
+        "y = −2x − 5",
+        "y = 2x − 5",
+        "y = −5x − 2"
+      ],
+      "answerIndex": 1,
+      "explanation": "傾き ＝ yの増加量 ÷ xの増加量、切片は1点を代入して求める。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j203_004",
+      "unit": "math.j2.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "y = −x + 5 の傾きは？",
+      "choices": [
+        "4",
+        "5",
+        "−1",
+        "1"
+      ],
+      "answerIndex": 2,
+      "explanation": "y ＝ ax + b の a が傾き、b が切片。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j203_005",
+      "unit": "math.j2.s1.a03",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "y = −2x − 1 で、x = −1 のときのyは？",
+      "choices": [
+        "3",
+        "−4",
+        "1",
+        "−3"
+      ],
+      "answerIndex": 2,
+      "explanation": "代入する。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j203_006",
+      "unit": "math.j2.s1.a03",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "2点(2, 1) と (4, 7) を通る直線の式は？",
+      "choices": [
+        "y = −5x + 3",
+        "y = −3x − 5",
+        "y = 3x − 5",
+        "y = 3x + 5"
+      ],
+      "answerIndex": 2,
+      "explanation": "傾き ＝ yの増加量 ÷ xの増加量、切片は1点を代入して求める。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j203_007",
+      "unit": "math.j2.s1.a03",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "y = 3x − 6 で、x = −5 のときのyは？",
+      "choices": [
+        "−8",
+        "−9",
+        "−21",
+        "9"
+      ],
+      "answerIndex": 2,
+      "explanation": "代入する。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j203_008",
+      "unit": "math.j2.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "y = −3x + 2 の傾きは？",
+      "choices": [
+        "−3",
+        "2",
+        "3",
+        "−1"
+      ],
+      "answerIndex": 0,
+      "explanation": "y ＝ ax + b の a が傾き、b が切片。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j203_009",
+      "unit": "math.j2.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "y = x − 6 の傾きは？",
+      "choices": [
+        "−1",
+        "−5",
+        "−6",
+        "1"
+      ],
+      "answerIndex": 3,
+      "explanation": "y ＝ ax + b の a が傾き、b が切片。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j203_010",
+      "unit": "math.j2.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "一次関数で、変化の割合は何に等しい？",
+      "choices": [
+        "yの値",
+        "xの値",
+        "傾き a",
+        "切片 b"
+      ],
+      "answerIndex": 2,
+      "explanation": "y ＝ ax + b の変化の割合は常に a。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j203_011",
+      "unit": "math.j2.s1.a03",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "2x + y = 6 のグラフの切片は？",
+      "choices": [
+        "3",
+        "−2",
+        "2",
+        "6"
+      ],
+      "answerIndex": 3,
+      "explanation": "y ＝ −2x + 6",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j203_012",
+      "unit": "math.j2.s1.a03",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "y = x + 1 と y = −x + 5 の交点は？",
+      "choices": [
+        "(1, 2)",
+        "(−2, −1)",
+        "(3, 2)",
+        "(2, 3)"
+      ],
+      "answerIndex": 3,
+      "explanation": "連立方程式の解が交点の座標。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    }
+  ]
+}

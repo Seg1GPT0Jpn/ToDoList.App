@@ -1,5 +1,3 @@
-import '../vocab/tsuzutan.dart';
-
 /// 定期テストの海：文法の単元。
 class SeaUnit {
   const SeaUnit({
@@ -40,236 +38,140 @@ class SeaCatalog {
   const SeaCatalog._();
 
   static const gradeNames = {
-    1: '高校1年（英コミⅠ・論理表現Ⅰ）',
-    2: '高校2年（英コミⅡ・論理表現Ⅱ）',
-    3: '高校3年（英コミⅢ・論理表現Ⅲ）',
+    1: '中学1年',
+    2: '中学2年',
+    3: '中学3年',
   };
 
   static List<SeaUnit> unitsOf(int grade) =>
       units.where((u) => u.grade == grade).toList();
 
   static const units = <SeaUnit>[
-    // ---- 高校1年 ----
-    SeaUnit(id: 'sea_g1_01', grade: 1, number: 1, title: '文型・文構造', topics: [
-      '第1〜第5文型',
-      'There is / are 構文',
-      'It is ～ to do',
-      'It is ～ that …',
-      'S + V + O + to do',
-      'S + V + O + wh節',
+    // ---- 中学1年 ----
+    SeaUnit(id: 'sea_g1_01', grade: 1, number: 1, title: 'be動詞・一般動詞', topics: [
+      'am / are / is',
+      '一般動詞の現在形',
+      '否定文と疑問文',
     ]),
-    SeaUnit(id: 'sea_g1_02', grade: 1, number: 2, title: '動詞・時制', topics: [
-      '現在形・過去形',
-      'will / be going to',
-      '現在進行形・過去進行形',
-      '現在完了・現在完了進行形',
+    SeaUnit(id: 'sea_g1_02', grade: 1, number: 2, title: '名詞の複数形・代名詞', topics: [
+      '名詞の複数形',
+      '人称代名詞（I / my / me / mine）',
+      'this / that',
     ]),
-    SeaUnit(id: 'sea_g1_03', grade: 1, number: 3, title: '助動詞', topics: [
-      'can / could',
-      'may / might',
+    SeaUnit(id: 'sea_g1_03', grade: 1, number: 3, title: '3人称単数現在', topics: [
+      '3単現の s / es',
+      'does / doesn\'t',
+      'have → has',
+    ]),
+    SeaUnit(id: 'sea_g1_04', grade: 1, number: 4, title: '疑問詞', topics: [
+      'what / who / whose',
+      'where / when / which',
+      'how / how many / how much',
+    ]),
+    SeaUnit(id: 'sea_g1_05', grade: 1, number: 5, title: '現在進行形', topics: [
+      'be + ～ing',
+      '進行形の否定文・疑問文',
+      '～ing の作り方',
+    ]),
+    SeaUnit(id: 'sea_g1_06', grade: 1, number: 6, title: 'can と命令文', topics: [
+      'can / can\'t',
+      'Can I ～? / Can you ～?',
+      '命令文・Let\'s ～',
+    ]),
+    SeaUnit(id: 'sea_g1_07', grade: 1, number: 7, title: '過去形', topics: [
+      '規則動詞の過去形',
+      '不規則動詞の過去形',
+      'did / didn\'t',
+      'was / were',
+    ]),
+    SeaUnit(id: 'sea_g1_08', grade: 1, number: 8, title: '過去進行形・There is', topics: [
+      'was / were + ～ing',
+      'There is / are',
+    ]),
+    // ---- 中学2年 ----
+    SeaUnit(id: 'sea_g2_01', grade: 2, number: 1, title: '未来の表現', topics: [
+      'will',
+      'be going to',
+      '未来の否定文・疑問文',
+    ]),
+    SeaUnit(id: 'sea_g2_02', grade: 2, number: 2, title: '助動詞', topics: [
       'must / have to',
-      'should / ought to',
-      'will / would / shall',
-      'need',
+      'should',
+      'may / Shall I ～? / Will you ～?',
     ]),
-    SeaUnit(id: 'sea_g1_04', grade: 1, number: 4, title: '不定詞', topics: [
-      '名詞的・形容詞的・副詞的用法',
-      '疑問詞 + to do',
-      'too ～ to do',
-      'enough to do',
-      '原形不定詞',
+    SeaUnit(id: 'sea_g2_03', grade: 2, number: 3, title: '不定詞', topics: [
+      '名詞的用法',
+      '副詞的用法',
+      '形容詞的用法',
     ]),
-    SeaUnit(id: 'sea_g1_05', grade: 1, number: 5, title: '動名詞', topics: [
-      '動名詞の基本用法',
-      '動詞の目的語としての動名詞',
+    SeaUnit(id: 'sea_g2_04', grade: 2, number: 4, title: '動名詞', topics: [
+      '動名詞の主語・目的語',
+      '不定詞と動名詞の使い分け',
       '前置詞 + 動名詞',
-      '動名詞の意味上の主語',
     ]),
-    SeaUnit(id: 'sea_g1_06', grade: 1, number: 6, title: '分詞', topics: [
-      '現在分詞・過去分詞',
-      '分詞の形容詞的用法',
-      '感情を表す分詞',
-      '分詞を用いた表現',
-    ]),
-    SeaUnit(id: 'sea_g1_07', grade: 1, number: 7, title: '受動態', topics: [
-      '現在・過去の受動態',
-      '完了形の受動態',
-      '助動詞 + 受動態',
-      'by 以外の前置詞を使う受動態',
-    ]),
-    SeaUnit(id: 'sea_g1_08', grade: 1, number: 8, title: '比較', topics: [
-      'as ～ as',
-      '比較級 + than',
-      'the + 最上級',
-      'as ～ as possible',
-    ]),
-    SeaUnit(id: 'sea_g1_09', grade: 1, number: 9, title: '関係詞', topics: [
-      '関係代名詞 who / which / that',
-      '主格・目的格・所有格',
-      '関係副詞の基本',
-    ]),
-    SeaUnit(id: 'sea_g1_10', grade: 1, number: 10, title: '仮定法', topics: [
-      'if を用いた仮定',
-      '仮定法過去',
-      'I wish + 仮定法',
-    ]),
-    SeaUnit(id: 'sea_g1_11', grade: 1, number: 11, title: '接続詞・節', topics: [
+    SeaUnit(id: 'sea_g2_05', grade: 2, number: 5, title: '接続詞', topics: [
+      'when / if / because',
+      'that',
       'and / but / or / so',
-      'because / although',
-      'when / while / before',
-      'that節・if節',
     ]),
-    SeaUnit(id: 'sea_g1_12', grade: 1, number: 12, title: '代名詞・その他', topics: [
-      '人称代名詞・所有代名詞',
-      '不定代名詞（one / other / each）',
-      '指示代名詞',
-      '前置詞',
+    SeaUnit(id: 'sea_g2_06', grade: 2, number: 6, title: '比較', topics: [
+      '比較級・最上級',
+      'as ～ as',
+      'more / most',
+      'better / best',
     ]),
-    // ---- 高校2年 ----
-    SeaUnit(id: 'sea_g2_01', grade: 2, number: 1, title: '時制・完了', topics: [
-      '過去完了・未来完了',
-      '完了進行形',
-      '時・条件の副詞節',
+    SeaUnit(id: 'sea_g2_07', grade: 2, number: 7, title: '受け身', topics: [
+      'be + 過去分詞',
+      'by ～',
+      '受け身の否定文・疑問文',
     ]),
-    SeaUnit(id: 'sea_g2_02', grade: 2, number: 2, title: '助動詞の発展', topics: [
-      'should have done',
-      'must have done',
-      "can't have done",
-      'might have done',
-      "needn't have done",
+    SeaUnit(id: 'sea_g2_08', grade: 2, number: 8, title: 'いろいろな文型', topics: [
+      'SVC（look / become）',
+      'SVOO（give 人 物）',
+      'SVOC（call / make）',
     ]),
-    SeaUnit(id: 'sea_g2_03', grade: 2, number: 3, title: '不定詞の発展', topics: [
-      '完了不定詞',
-      '受動態の不定詞',
-      '独立不定詞',
-      '不定詞の意味上の主語',
+    // ---- 中学3年 ----
+    SeaUnit(id: 'sea_g3_01', grade: 3, number: 1, title: '現在完了', topics: [
+      '完了・結果',
+      '経験',
+      '継続',
+      '現在完了進行形',
     ]),
-    SeaUnit(id: 'sea_g2_04', grade: 2, number: 4, title: '動名詞の発展', topics: [
-      '完了動名詞',
-      '受動動名詞',
-      '動名詞と不定詞の使い分け',
+    SeaUnit(id: 'sea_g3_02', grade: 3, number: 2, title: '不定詞の発展', topics: [
+      'It is ～ for 人 to ...',
+      'want 人 to ...',
+      '疑問詞 + to ...',
+      'too ～ to / enough to',
     ]),
-    SeaUnit(id: 'sea_g2_05', grade: 2, number: 5, title: '分詞構文', topics: [
-      '現在分詞・過去分詞の分詞構文',
-      '完了形の分詞構文',
-      '否定の分詞構文',
-      '慣用的な分詞構文',
+    SeaUnit(id: 'sea_g3_03', grade: 3, number: 3, title: '分詞の後置修飾', topics: [
+      '現在分詞の修飾',
+      '過去分詞の修飾',
     ]),
-    SeaUnit(id: 'sea_g2_06', grade: 2, number: 6, title: '関係詞の発展', topics: [
-      '非制限用法',
-      '前置詞 + 関係代名詞',
-      'what の用法',
-      '複合関係詞',
+    SeaUnit(id: 'sea_g3_04', grade: 3, number: 4, title: '関係代名詞', topics: [
+      '主格 who / which / that',
+      '目的格 which / that',
+      '関係代名詞の省略',
     ]),
-    SeaUnit(id: 'sea_g2_07', grade: 2, number: 7, title: '仮定法の発展', topics: [
-      '仮定法過去完了',
-      '混合仮定法',
-      'wish / as if',
-      'if の省略',
+    SeaUnit(id: 'sea_g3_05', grade: 3, number: 5, title: '間接疑問', topics: [
+      '疑問詞 + 主語 + 動詞',
+      'I know what ～',
     ]),
-    SeaUnit(id: 'sea_g2_08', grade: 2, number: 8, title: '比較の発展', topics: [
-      '倍数表現',
-      'the 比較級, the 比較級',
-      '比較級 + than any other',
-      '比較の慣用表現',
+    SeaUnit(id: 'sea_g3_06', grade: 3, number: 6, title: '仮定法', topics: [
+      'I wish ～',
+      'If I were ～',
+      'If + 過去形 ～ would',
     ]),
-    SeaUnit(id: 'sea_g2_09', grade: 2, number: 9, title: '否定', topics: [
-      '部分否定',
-      '二重否定',
-      'hardly / rarely',
-      'not ～ until …',
-      'no sooner ～ than …',
-    ]),
-    SeaUnit(id: 'sea_g2_10', grade: 2, number: 10, title: '倒置・強調', topics: [
-      '否定語句による倒置',
-      'So / Neither',
-      '強調構文 It is ～ that …',
-      'do による強調',
-    ]),
-    SeaUnit(id: 'sea_g2_11', grade: 2, number: 11, title: '名詞・節', topics: [
-      '名詞節 that / whether',
-      'what節・wh節',
-      '同格の that',
-    ]),
-    SeaUnit(id: 'sea_g2_12', grade: 2, number: 12, title: '複雑な文構造', topics: [
-      '使役動詞',
-      '知覚動詞',
-      '無生物主語',
-      'SVOC の発展',
-    ]),
-    // ---- 高校3年 ----
-    SeaUnit(id: 'sea_g3_01', grade: 3, number: 1, title: '高度な関係詞', topics: [
-      '連鎖関係詞',
-      '前置詞 + 関係代名詞',
-      '複合関係詞',
-      '数量表現 + of which',
-    ]),
-    SeaUnit(id: 'sea_g3_02', grade: 3, number: 2, title: '高度な仮定法', topics: [
-      '混合仮定法',
-      "It's time + 仮定法",
-      'but for',
-      'suppose',
-    ]),
-    SeaUnit(id: 'sea_g3_03', grade: 3, number: 3, title: '高度な倒置', topics: [
-      '否定語による倒置',
-      '仮定法の倒置',
-      '場所・方向の倒置',
-      'so ～ that の倒置',
-    ]),
-    SeaUnit(id: 'sea_g3_04', grade: 3, number: 4, title: '省略', topics: [
-      '主語 + be動詞の省略',
-      '比較構文の省略',
-      '代不定詞',
-      'if 節の省略',
-    ]),
-    SeaUnit(id: 'sea_g3_05', grade: 3, number: 5, title: '強調・挿入・同格', topics: [
-      '強調構文',
-      'do による強調',
-      '挿入句',
-      '同格',
-      '強調語句',
-    ]),
-    SeaUnit(id: 'sea_g3_06', grade: 3, number: 6, title: '複雑な分詞構文', topics: [
-      '受動の分詞構文',
-      '完了形の分詞構文',
-      '独立分詞構文',
-      'with + O + 分詞',
-    ]),
-    SeaUnit(id: 'sea_g3_07', grade: 3, number: 7, title: '複雑な不定詞・動名詞', topics: [
-      '完了不定詞',
-      '完了受動不定詞',
-      '受動動名詞',
-      '完了動名詞',
-      'There is no ～ing',
-    ]),
-    SeaUnit(id: 'sea_g3_08', grade: 3, number: 8, title: '複雑な時制・態', topics: [
-      '進行形の受動態',
-      '未来完了の受動態',
-      '助動詞 + 完了',
-      '時制の一致',
-    ]),
-    SeaUnit(id: 'sea_g3_09', grade: 3, number: 9, title: '複雑な節・構文', topics: [
-      '形式主語',
-      'no matter + 疑問詞',
-      'not A but B の強調構文',
-      'the same ～ as',
+    SeaUnit(id: 'sea_g3_07', grade: 3, number: 7, title: '使役・知覚動詞と原形不定詞', topics: [
+      'let / make / help 人 ～',
+      'see / hear 人 ～',
     ]),
   ];
 
-  static const baseWordBooks = <SeaWordBook>[
-    SeaWordBook(
-        id: 'words_basic', title: '単語・基礎', description: '高1前半レベルの基本語 40語'),
-    SeaWordBook(
-        id: 'words_standard',
-        title: '単語・標準',
-        description: '定期テスト・共通テストでよく見る語 40語'),
-    SeaWordBook(
-        id: 'words_advanced', title: '単語・難関', description: '難関大の長文で差がつく語 40語'),
-    SeaWordBook(
-        id: 'idioms_basic', title: '熟語', description: 'よく出る熟語・イディオム 40個'),
+  /// 定期テストの海・高校入試の空に並べる単語帳（自作）
+  static const wordBooks = <SeaWordBook>[
+    SeaWordBook(id: 'words_j1', title: '中1の単語', description: '中学1年で習う基本の単語'),
+    SeaWordBook(id: 'words_j2', title: '中2の単語', description: '中学2年で習う単語'),
+    SeaWordBook(id: 'words_j3', title: '中3の単語', description: '中学3年・高校入試によく出る単語'),
+    SeaWordBook(id: 'idioms_j', title: '中学の熟語', description: '高校入試によく出る熟語・会話表現'),
   ];
-
-  /// 定期テストの海・模擬試験の空に並べる単語帳（自作の4冊＋つづ単）
-  static List<SeaWordBook> get wordBooks =>
-      [...baseWordBooks, ...Tsuzutan.seaBooks];
 }

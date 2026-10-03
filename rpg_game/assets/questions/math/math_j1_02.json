@@ -1,0 +1,212 @@
+{
+  "setId": "math_j1_02",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_j102_001",
+      "unit": "math.j1.s1.a02",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "3³ は？",
+      "choices": [
+        "27",
+        "9",
+        "28",
+        "−27"
+      ],
+      "answerIndex": 0,
+      "explanation": "同じ数を何回かけるか。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j102_002",
+      "unit": "math.j1.s1.a02",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "5 × (−6) は？",
+      "choices": [
+        "−29",
+        "−1",
+        "30",
+        "−30"
+      ],
+      "answerIndex": 3,
+      "explanation": "符号が同じなら＋、ちがえば−。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j102_003",
+      "unit": "math.j1.s1.a02",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "−8 ÷ 4 は？",
+      "choices": [
+        "−1",
+        "2",
+        "−2",
+        "−32"
+      ],
+      "answerIndex": 2,
+      "explanation": "符号は乗法と同じきまり。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j102_004",
+      "unit": "math.j1.s1.a02",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "−36 ÷ (−9) は？",
+      "choices": [
+        "324",
+        "−4",
+        "4",
+        "5"
+      ],
+      "answerIndex": 2,
+      "explanation": "符号は乗法と同じきまり。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j102_005",
+      "unit": "math.j1.s1.a02",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "−5 × 4 は？",
+      "choices": [
+        "−1",
+        "20",
+        "−20",
+        "−19"
+      ],
+      "answerIndex": 2,
+      "explanation": "符号が同じなら＋、ちがえば−。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j102_006",
+      "unit": "math.j1.s1.a02",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "−72 ÷ (−8) は？",
+      "choices": [
+        "10",
+        "9",
+        "−9",
+        "576"
+      ],
+      "answerIndex": 1,
+      "explanation": "符号は乗法と同じきまり。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j102_007",
+      "unit": "math.j1.s1.a02",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "−40 ÷ (−8) は？",
+      "choices": [
+        "5",
+        "−5",
+        "320",
+        "6"
+      ],
+      "answerIndex": 0,
+      "explanation": "符号は乗法と同じきまり。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j102_008",
+      "unit": "math.j1.s1.a02",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "−45 ÷ 9 は？",
+      "choices": [
+        "−405",
+        "−5",
+        "−4",
+        "5"
+      ],
+      "answerIndex": 1,
+      "explanation": "符号は乗法と同じきまり。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j102_009",
+      "unit": "math.j1.s1.a02",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "−3² は？",
+      "choices": [
+        "6",
+        "9",
+        "−9",
+        "−6"
+      ],
+      "answerIndex": 2,
+      "explanation": "−(3 × 3) ＝ −9。(−3)² とはちがう。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j102_010",
+      "unit": "math.j1.s1.a02",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "2 − 3 × (−4) は？",
+      "choices": [
+        "−4",
+        "−10",
+        "14",
+        "4"
+      ],
+      "answerIndex": 2,
+      "explanation": "かけ算を先に：2 + 12 ＝ 14",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j102_011",
+      "unit": "math.j1.s1.a02",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "(−6) ÷ 2 × (−3) は？",
+      "choices": [
+        "−1",
+        "−9",
+        "9",
+        "1"
+      ],
+      "answerIndex": 2,
+      "explanation": "左から：−3 × (−3) ＝ 9",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j102_012",
+      "unit": "math.j1.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "24を素因数分解すると？",
+      "choices": [
+        "2² × 3²",
+        "2³ × 3",
+        "4 × 6",
+        "2 × 12"
+      ],
+      "answerIndex": 1,
+      "explanation": "24 ＝ 2 × 2 × 2 × 3",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    }
+  ]
+}

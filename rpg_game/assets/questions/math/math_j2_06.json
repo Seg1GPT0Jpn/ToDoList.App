@@ -1,0 +1,212 @@
+{
+  "setId": "math_j2_06",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_j206_001",
+      "unit": "math.j2.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "二等辺三角形の2つの底角の大きさは？",
+      "choices": [
+        "ちがう",
+        "いつも60°",
+        "和が90°",
+        "等しい"
+      ],
+      "answerIndex": 3,
+      "explanation": "二等辺三角形の性質。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j206_002",
+      "unit": "math.j2.s2.a06",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "二等辺三角形の頂角が40°のとき、底角は？",
+      "choices": [
+        "140°",
+        "40°",
+        "50°",
+        "70°"
+      ],
+      "answerIndex": 3,
+      "explanation": "(180 − 40) ÷ 2",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j206_003",
+      "unit": "math.j2.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "正三角形の1つの角は？",
+      "choices": [
+        "120°",
+        "45°",
+        "90°",
+        "60°"
+      ],
+      "answerIndex": 3,
+      "explanation": "3つの角が等しい。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j206_004",
+      "unit": "math.j2.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "平行四辺形の対角線はどうなる？",
+      "choices": [
+        "長さがいつも等しい",
+        "交わらない",
+        "いつも垂直に交わる",
+        "それぞれの中点で交わる"
+      ],
+      "answerIndex": 3,
+      "explanation": "平行四辺形の性質。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j206_005",
+      "unit": "math.j2.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "平行四辺形が長方形になる条件は？",
+      "choices": [
+        "2組の対辺が平行",
+        "4辺が等しい",
+        "対角線の長さが等しい",
+        "対角線が垂直"
+      ],
+      "answerIndex": 2,
+      "explanation": "長方形は対角線が等しい。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j206_006",
+      "unit": "math.j2.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "平行四辺形がひし形になる条件は？",
+      "choices": [
+        "対角が等しい",
+        "対角線の長さが等しい",
+        "1つの角が直角",
+        "対角線が垂直に交わる"
+      ],
+      "answerIndex": 3,
+      "explanation": "ひし形は対角線が垂直。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j206_007",
+      "unit": "math.j2.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「ことばの意味をはっきり述べたもの」を何という？",
+      "choices": [
+        "定理",
+        "逆",
+        "定義",
+        "仮定"
+      ],
+      "answerIndex": 2,
+      "explanation": "例：二等辺三角形の定義＝2辺が等しい三角形。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j206_008",
+      "unit": "math.j2.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「aならばb」の逆は？",
+      "choices": [
+        "bでないならばaでない",
+        "bならばa",
+        "aでないならばbでない",
+        "aならばb"
+      ],
+      "answerIndex": 1,
+      "explanation": "仮定と結論を入れかえる。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j206_009",
+      "unit": "math.j2.s2.a06",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「x = 2 ならば x² = 4」の逆は正しい？",
+      "choices": [
+        "正しい",
+        "正しくない（x = −2 もある）",
+        "いつも正しい",
+        "意味がない"
+      ],
+      "answerIndex": 1,
+      "explanation": "反例 x ＝ −2。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j206_010",
+      "unit": "math.j2.s2.a06",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "AD // BC の台形ABCDで、△ABCと面積が等しい三角形は？",
+      "choices": [
+        "△ABE",
+        "△DBC",
+        "△ACD",
+        "△ABD"
+      ],
+      "answerIndex": 1,
+      "explanation": "底辺BCが共通で高さが等しい。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j206_011",
+      "unit": "math.j2.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "2組の対辺がそれぞれ平行な四角形は？",
+      "choices": [
+        "台形",
+        "たこ形",
+        "二等辺三角形",
+        "平行四辺形"
+      ],
+      "answerIndex": 3,
+      "explanation": "平行四辺形の定義。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j206_012",
+      "unit": "math.j2.s2.a06",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "平行四辺形ABCDで∠A = 110°のとき、∠Bは？",
+      "choices": [
+        "90°",
+        "70°",
+        "110°",
+        "250°"
+      ],
+      "answerIndex": 1,
+      "explanation": "となり合う角の和は180°。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    }
+  ]
+}

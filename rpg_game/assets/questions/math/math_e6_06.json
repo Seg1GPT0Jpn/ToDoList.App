@@ -1,0 +1,212 @@
+{
+  "setId": "math_e6_06",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_e606_001",
+      "unit": "math.e6.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "xが2倍、3倍…になると、yも2倍、3倍…になる関係を何という？",
+      "choices": [
+        "反比例",
+        "割合",
+        "比例",
+        "平均"
+      ],
+      "answerIndex": 2,
+      "explanation": "y ＝ きまった数 × x。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e606_002",
+      "unit": "math.e6.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "xが2倍、3倍…になると、yが1/2、1/3…になる関係を何という？",
+      "choices": [
+        "反比例",
+        "倍数",
+        "比例",
+        "約数"
+      ],
+      "answerIndex": 0,
+      "explanation": "x × y ＝ きまった数。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e606_003",
+      "unit": "math.e6.s2.a06",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "yがxに比例し、x=4のときy=12。式は？",
+      "choices": [
+        "y = 3 × x",
+        "y = 4 × x",
+        "y = x + 8",
+        "y = 12 ÷ x"
+      ],
+      "answerIndex": 0,
+      "explanation": "12 ÷ 4 = 3",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e606_004",
+      "unit": "math.e6.s2.a06",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "yがxに比例し、x=2のときy=10。x=7のときyは？",
+      "choices": [
+        "14",
+        "15",
+        "35",
+        "70"
+      ],
+      "answerIndex": 2,
+      "explanation": "y = 5 × x",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e606_005",
+      "unit": "math.e6.s2.a06",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "yがxに反比例し、x=3のときy=8。x=6のときyは？",
+      "choices": [
+        "2",
+        "4",
+        "11",
+        "16"
+      ],
+      "answerIndex": 1,
+      "explanation": "x × y = 24",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e606_006",
+      "unit": "math.e6.s2.a06",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "yがxに反比例し、x=2のときy=9。式は？",
+      "choices": [
+        "y = x + 7",
+        "y = 9 × x",
+        "y = 4.5 × x",
+        "y = 18 ÷ x"
+      ],
+      "answerIndex": 3,
+      "explanation": "2 × 9 = 18",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e606_007",
+      "unit": "math.e6.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "比例のグラフはどんな形？",
+      "choices": [
+        "まるい形",
+        "横の直線",
+        "0の点を通らない曲線",
+        "0の点を通る直線"
+      ],
+      "answerIndex": 3,
+      "explanation": "比例のグラフは原点を通る直線。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e606_008",
+      "unit": "math.e6.s2.a06",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "面積24cm²の長方形のたてxとよこyの関係は？",
+      "choices": [
+        "平均",
+        "どちらでもない",
+        "反比例",
+        "比例"
+      ],
+      "answerIndex": 2,
+      "explanation": "x × y = 24",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e606_009",
+      "unit": "math.e6.s2.a06",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "1mあたり80円の針金x mの代金y円の関係は？",
+      "choices": [
+        "反比例",
+        "割合のみ",
+        "どちらでもない",
+        "比例"
+      ],
+      "answerIndex": 3,
+      "explanation": "y = 80 × x",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e606_010",
+      "unit": "math.e6.s2.a06",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "時速40kmで走る時間x時間と道のりy kmの関係は？",
+      "choices": [
+        "どちらでもない",
+        "比例",
+        "反比例",
+        "平均"
+      ],
+      "answerIndex": 1,
+      "explanation": "y = 40 × x",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e606_011",
+      "unit": "math.e6.s2.a06",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "120kmの道のりを進むときの速さx km/hと時間y時間の関係は？",
+      "choices": [
+        "どちらでもない",
+        "反比例",
+        "割合のみ",
+        "比例"
+      ],
+      "answerIndex": 1,
+      "explanation": "x × y = 120",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e606_012",
+      "unit": "math.e6.s2.a06",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "紙10まいの重さが40g。紙250まいの重さは？",
+      "choices": [
+        "250g",
+        "1000g",
+        "10000g",
+        "400g"
+      ],
+      "answerIndex": 1,
+      "explanation": "1まい4g × 250。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    }
+  ]
+}

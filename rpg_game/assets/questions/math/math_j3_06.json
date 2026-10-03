@@ -1,0 +1,212 @@
+{
+  "setId": "math_j3_06",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_j306_001",
+      "unit": "math.j3.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "三角形の相似条件にないものは？",
+      "choices": [
+        "1組の辺の比が等しい",
+        "2組の辺の比とその間の角がそれぞれ等しい",
+        "2組の角がそれぞれ等しい",
+        "3組の辺の比がすべて等しい"
+      ],
+      "answerIndex": 0,
+      "explanation": "辺1組だけでは決まらない。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j306_002",
+      "unit": "math.j3.s2.a06",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "相似比 2:3 の三角形の面積比は？",
+      "choices": [
+        "6:9",
+        "2:3",
+        "4:9",
+        "8:27"
+      ],
+      "answerIndex": 2,
+      "explanation": "面積比は相似比の2乗。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j306_003",
+      "unit": "math.j3.s2.a06",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "相似比 2:3 の立体の体積比は？",
+      "choices": [
+        "4:9",
+        "8:27",
+        "6:9",
+        "2:3"
+      ],
+      "answerIndex": 1,
+      "explanation": "体積比は相似比の3乗。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j306_004",
+      "unit": "math.j3.s2.a06",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "△ABCで DE // BC、AD:DB = 2:1、BC = 9cm のとき DE は？",
+      "choices": [
+        "6cm",
+        "3cm",
+        "18cm",
+        "4.5cm"
+      ],
+      "answerIndex": 0,
+      "explanation": "AD:AB ＝ 2:3 ＝ DE:BC",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j306_005",
+      "unit": "math.j3.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "三角形の2辺の中点を結ぶ線分は、残りの辺とどんな関係？",
+      "choices": [
+        "垂直で同じ長さ",
+        "平行で長さは半分",
+        "平行で同じ長さ",
+        "交わる"
+      ],
+      "answerIndex": 1,
+      "explanation": "中点連結定理。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j306_006",
+      "unit": "math.j3.s2.a06",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "中点連結定理で、残りの辺が14cmなら中点を結ぶ線分は？",
+      "choices": [
+        "28cm",
+        "14cm",
+        "3.5cm",
+        "7cm"
+      ],
+      "answerIndex": 3,
+      "explanation": "半分。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j306_007",
+      "unit": "math.j3.s2.a06",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "縮尺1/25000の地図で4cmは実際何m？",
+      "choices": [
+        "625m",
+        "1000m",
+        "10000m",
+        "100m"
+      ],
+      "answerIndex": 1,
+      "explanation": "4 × 25000 ＝ 100000cm",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j306_008",
+      "unit": "math.j3.s2.a06",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "影の長さで高さを測る。1mの棒の影が1.5m、木の影が9m。木の高さは？",
+      "choices": [
+        "6m",
+        "4m",
+        "13.5m",
+        "10.5m"
+      ],
+      "answerIndex": 0,
+      "explanation": "1 : 1.5 ＝ x : 9",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j306_009",
+      "unit": "math.j3.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "記号「∽」は何を表す？",
+      "choices": [
+        "平行",
+        "垂直",
+        "合同",
+        "相似"
+      ],
+      "answerIndex": 3,
+      "explanation": "△ABC ∽ △DEF。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j306_010",
+      "unit": "math.j3.s2.a06",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "相似比 3:5 の円の面積比は？",
+      "choices": [
+        "6:10",
+        "9:25",
+        "3:5",
+        "27:125"
+      ],
+      "answerIndex": 1,
+      "explanation": "2乗。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j306_011",
+      "unit": "math.j3.s2.a06",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "面積比が 16:25 の相似な図形の相似比は？",
+      "choices": [
+        "8:12.5",
+        "2:5",
+        "4:5",
+        "16:25"
+      ],
+      "answerIndex": 2,
+      "explanation": "平方根をとる。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j306_012",
+      "unit": "math.j3.s2.a06",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "平行線 l, m, n に2直線が交わる。一方で 3cm と 6cm、もう一方の初めが 4cm なら次は？",
+      "choices": [
+        "5cm",
+        "12cm",
+        "8cm",
+        "7cm"
+      ],
+      "answerIndex": 2,
+      "explanation": "平行線と線分の比 3:6 ＝ 4:x",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    }
+  ]
+}

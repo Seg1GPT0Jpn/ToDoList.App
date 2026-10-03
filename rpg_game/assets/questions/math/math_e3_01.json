@@ -1,0 +1,212 @@
+{
+  "setId": "math_e3_01",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_e301_001",
+      "unit": "math.e3.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "8 × 9 の答えは、8 × 8 の答えより何大きい？",
+      "choices": [
+        "1",
+        "8",
+        "9",
+        "72"
+      ],
+      "answerIndex": 1,
+      "explanation": "かける数が1ふえると、かけられる数（8）だけ大きくなる。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e301_002",
+      "unit": "math.e3.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "9 × 5 の答えは、9 × 4 の答えより何大きい？",
+      "choices": [
+        "1",
+        "5",
+        "9",
+        "45"
+      ],
+      "answerIndex": 2,
+      "explanation": "かける数が1ふえると、かけられる数（9）だけ大きくなる。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e301_003",
+      "unit": "math.e3.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "6 × 3 の答えは、6 × 2 の答えより何大きい？",
+      "choices": [
+        "1",
+        "3",
+        "6",
+        "18"
+      ],
+      "answerIndex": 2,
+      "explanation": "かける数が1ふえると、かけられる数（6）だけ大きくなる。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e301_004",
+      "unit": "math.e3.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "5 × 4 の答えは、5 × 3 の答えより何大きい？",
+      "choices": [
+        "1",
+        "4",
+        "5",
+        "20"
+      ],
+      "answerIndex": 2,
+      "explanation": "かける数が1ふえると、かけられる数（5）だけ大きくなる。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e301_005",
+      "unit": "math.e3.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "8 × 10 は？",
+      "choices": [
+        "8",
+        "18",
+        "80",
+        "800"
+      ],
+      "answerIndex": 2,
+      "explanation": "8が10こ分で80。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e301_006",
+      "unit": "math.e3.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "9 × 10 は？",
+      "choices": [
+        "9",
+        "19",
+        "90",
+        "900"
+      ],
+      "answerIndex": 2,
+      "explanation": "9が10こ分で90。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e301_007",
+      "unit": "math.e3.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "5 × 10 は？",
+      "choices": [
+        "5",
+        "15",
+        "50",
+        "500"
+      ],
+      "answerIndex": 2,
+      "explanation": "5が10こ分で50。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e301_008",
+      "unit": "math.e3.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "0 × 7 は？",
+      "choices": [
+        "0",
+        "1",
+        "7",
+        "70"
+      ],
+      "answerIndex": 0,
+      "explanation": "0に何をかけても0。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e301_009",
+      "unit": "math.e3.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "8 × 0 は？",
+      "choices": [
+        "0",
+        "1",
+        "8",
+        "80"
+      ],
+      "answerIndex": 0,
+      "explanation": "どんな数に0をかけても0。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e301_010",
+      "unit": "math.e3.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "12 × 3 は？",
+      "choices": [
+        "15",
+        "33",
+        "36",
+        "39"
+      ],
+      "answerIndex": 2,
+      "explanation": "10 × 3 = 30、2 × 3 = 6。あわせて36。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e301_011",
+      "unit": "math.e3.s1.a01",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "4 × 6 = 4 × 5 + □。□は？",
+      "choices": [
+        "1",
+        "4",
+        "5",
+        "6"
+      ],
+      "answerIndex": 1,
+      "explanation": "かける数が1ふえると答えは4ふえる。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e301_012",
+      "unit": "math.e3.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "20 × 4 は？",
+      "choices": [
+        "24",
+        "80",
+        "84",
+        "800"
+      ],
+      "answerIndex": 1,
+      "explanation": "2 × 4 = 8 の10倍で80。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    }
+  ]
+}

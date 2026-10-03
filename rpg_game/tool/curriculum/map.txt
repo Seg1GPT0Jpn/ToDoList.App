@@ -1,438 +1,94 @@
-# 問題セット → 学習体系の範囲（その中で小単元を自動で選ぶ）[範囲で見つからないときの単元]
-math_m1_01 math.m1.numexpr.poly
-math_m1_02 math.m1.numexpr.poly
-math_m1_03 math.m1.numexpr.poly
-math_m1_04 math.m1.numexpr math.m1.numexpr.ineq1
-math_m1_05 math.m1.numexpr math.m1.numexpr.ineq1
-math_m1_06 math.m1.numexpr math.m1.numexpr.ineq1
-math_m1_07 math.m1.trig math.m1.trig.ratio
-math_m1_08 math.m1.trig math.m1.trig.solve
-math_m1_09 math.m1.trig math.m1.trig.solve
-math_m1_10 math.m1.quad math.m1.quad.maxmin
-math_m1_11 math.m1.quad math.m1.quad.maxmin
-math_m1_12 math.m1.quad math.m1.quad.maxmin
-math_m1_13 math.m1.quad.eqineq
-math_m1_14 math.m1.quad.eqineq
-math_m1_15 math.m1.quad.eqineq
-math_m1_16 math.m1.data.stats
-math_m1_17 math.m1.data.stats
-math_m1_18 math.m1.data.stats
-math_m1_logic_01 math.m1.logic math.m1.logic.prop
-math_m1_stat_01 math.m1.data.stats
-math_quadratic_app_01 math.m1.quad math.m1.quad.maxmin
-math_figure_01 math.ma.geometry math.ma.geometry.triangle
-math_trig_figure_01 math.m1.trig math.m1.trig.solve
-math_vector_figure_01 math.mc.vector math.mc.vector.plane
-math_input_01 math math.m1.numexpr.poly
-math_ma_01 math.ma.prob.count
-math_ma_02 math.ma.prob.count
-math_ma_03 math.ma.prob.count
-math_ma_04 math.ma.prob.probability
-math_ma_05 math.ma.prob.probability
-math_ma_06 math.ma.prob.probability
-math_ma_07 math.ma.geometry math.ma.geometry.triangle
-math_ma_08 math.ma.geometry math.ma.geometry.triangle
-math_ma_09 math.ma.geometry math.ma.geometry.triangle
-math_ma_10 math.ma.integer math.ma.integer.divisor
-math_ma_11 math.ma.integer math.ma.integer.divisor
-math_ma_12 math.ma.integer math.ma.integer.divisor
-math_m2_01 math.m2.expr.proof
-math_m2_02 math.m2.expr.proof
-math_m2_03 math.m2.expr.proof
-math_m2_04 math.m2.expr.complex
-math_m2_05 math.m2.expr.complex
-math_m2_06 math.m2.expr.complex
-math_m2_07 math.m2.coord math.m2.coord.lines
-math_m2_08 math.m2.coord math.m2.coord.lines
-math_m2_09 math.m2.coord math.m2.coord.lines
-math_m2_10 math.m2.trigfunc math.m2.trigfunc.general
-math_m2_11 math.m2.trigfunc math.m2.trigfunc.addition
-math_m2_12 math.m2.trigfunc math.m2.trigfunc.addition
-math_m2_13 math.m2.explog math.m2.explog.exp
-math_m2_14 math.m2.explog math.m2.explog.log
-math_m2_15 math.m2.explog math.m2.explog.log
-math_m2_16 math.m2.calculus math.m2.calculus.diff
-math_m2_17 math.m2.calculus math.m2.calculus.diff
-math_m2_18 math.m2.calculus math.m2.calculus.diff
-math_mb_01 math.mb.seq math.mb.seq.arith
-math_mb_02 math.mb.seq math.mb.seq.arith
-math_mb_03 math.mb.seq math.mb.seq.arith
-math_mb_04 math.mb.seq.recur
-math_mb_05 math.mb.seq.recur
-math_mb_06 math.mb.seq.recur
-math_mb_07 math.mb.stat math.mb.stat.random
-math_mb_08 math.mb.stat math.mb.stat.random
-math_mb_09 math.mb.stat math.mb.stat.random
-math_mb_10 math.mb.society.model
-math_mb_11 math.mb.society.model
-math_mb_12 math.mb.society.model
-math_mc_01 math.mc.vector.plane
-math_mc_02 math.mc.vector.plane
-math_mc_03 math.mc.vector.plane
-math_mc_04 math.mc.vector.space
-math_mc_05 math.mc.vector.space
-math_mc_06 math.mc.vector.space
-math_mc_07 math.mc.curve math.mc.curve.conic
-math_mc_08 math.mc.curve math.mc.curve.conic
-math_mc_09 math.mc.curve math.mc.curve.conic
-math_mc_10 math.mc.curve.complex
-math_mc_11 math.mc.curve.complex
-math_mc_12 math.mc.curve.complex
-math_mc_13 math.mc.express.express
-math_mc_14 math.mc.express.express
-math_mc_15 math.mc.express.express
-math_m3_01 math.m3.limit math.m3.limit.seq
-math_m3_02 math.m3.limit math.m3.limit.seq
-math_m3_03 math.m3.limit math.m3.limit.seq
-math_m3_04 math.m3.diff.derivative
-math_m3_05 math.m3.diff.derivative
-math_m3_06 math.m3.diff.derivative
-math_m3_07 math.m3.diff.apply
-math_m3_08 math.m3.diff.apply
-math_m3_09 math.m3.diff.apply
-math_m3_10 math.m3.integ.method
-math_m3_11 math.m3.integ.method
-math_m3_12 math.m3.integ.method
-math_m3_13 math.m3.integ.apply
-math_m3_14 math.m3.integ.apply
-math_m3_15 math.m3.integ.apply
-science_physics_01 science.physics.mechanics.kinematics
-science_physics_02 science.physics.mechanics.kinematics
-science_physics_03 science.physics.mechanics.force
-science_physics_04 science.physics.mechanics.newton
-science_physics_05 science.physics.mechanics.energy
-science_physics_06 science.physics.waves science.physics.waves.sound
-science_physics_07 science.physics.thermo.heat
-science_physics_08 science.physics.em.current
-science_physics_09 science.physics.mechanics.plane
-science_physics_10 science.physics.mechanics science.physics.mechanics.momentum
-science_physics_11 science.physics.mechanics.circular
-science_physics_12 science.physics.thermo.gas
-science_physics_13 science.physics.waves science.physics.waves.light
-science_physics_14 science.physics.em.field
-science_physics_15 science.physics.em.magnetism
-science_physics_16 science.physics.atom science.physics.atom.nucleus
-science_chemistry_01 science.chemistry.structure.life
-science_chemistry_02 science.chemistry.structure.atom
-science_chemistry_03 science.chemistry.structure.periodic
-science_chemistry_04 science.chemistry.structure.bond
-science_chemistry_05 science.chemistry.change.mole
-science_chemistry_06 science.chemistry.change.equation
-science_chemistry_07 science.chemistry.change.acid
-science_chemistry_08 science.chemistry.change.redox
-science_chemistry_09 science.chemistry.state.gas
-science_chemistry_10 science.chemistry.state.solution
-science_chemistry_11 science.chemistry.equilibrium.energy
-science_chemistry_12 science.chemistry.equilibrium.rate
-science_chemistry_13 science.chemistry.inorganic.nonmetal
-science_chemistry_14 science.chemistry.inorganic.metal
-science_chemistry_15 science.chemistry.organic science.chemistry.organic.aliphatic
-science_chemistry_16 science.chemistry.organic.polymer
-science_earth_01 science.earth.solid.shape
-science_earth_02 science.earth.solid.plate
-science_earth_03 science.earth.solid.quake
-science_earth_04 science.earth.solid.volcano
-science_earth_05 science.earth.history.strata
-science_earth_06 science.earth.atmos science.earth.atmos.circulation
-science_earth_07 science.earth.atmos.environment
-science_earth_08 science.earth.space science.earth.space.solar
-science_earth_09 science.earth.solid science.earth.solid.deform
-science_earth_10 science.earth.solid.deform
-science_earth_11 science.earth.history.life
-science_earth_12 science.earth.atmos science.earth.atmos.structure
-science_earth_13 science.earth.atmos.circulation
-science_earth_14 science.earth.atmos.weather
-science_earth_15 science.earth.space science.earth.space.star
-science_earth_16 science.earth.space.universe
-science_biology_01 science.biology.cell.common
-science_biology_02 science.biology.cell.energy
-science_biology_03 science.biology.cell.dna
-science_biology_04 science.biology.body.nerve
-science_biology_05 science.biology.body.homeostasis
-science_biology_06 science.biology.body.immunity
-science_biology_07 science.biology.ecology.vegetation
-science_biology_08 science.biology.ecology.ecosystem
-science_biology_09 science.biology.evolution.origin
-science_biology_10 science.biology.evolution.phylogeny
-science_biology_11 science.biology.molecule.protein
-science_biology_12 science.biology.molecule.metabolism
-science_biology_13 science.biology.gene.expression
-science_biology_14 science.biology.gene.development
-science_biology_15 science.biology.response science.biology.response.animal
-science_biology_16 science.biology.ecology science.biology.ecology.population
-science_physics_basic_01 science.physics science.physics.mechanics.kinematics
-science_physics_rlc_01 science.physics.em science.physics.em.magnetism
-science_chem_basic_01 science.chemistry science.chemistry.change.mole
-science_bio_basic_01 science.biology science.biology.cell.common
-science_earth_basic_01 science.earth science.earth.solid.shape
-science_graph_01 science science.physics.mechanics.kinematics
-social_geo_01 social.geo.map.position
-social_geo_02 social.geo.map.maps
-social_geo_03 social.geo.map.gis
-social_geo_04 social.geo.nature social.geo.nature.landform
-social_geo_05 social.geo.nature.landform
-social_geo_06 social.geo.nature.climate
-social_geo_07 social.geo.nature.soil
-social_geo_08 social.geo.culture.religion
-social_geo_09 social.geo.culture.ethnic
-social_geo_10 social.geo.industry.population
-social_geo_11 social.geo.industry.agriculture
-social_geo_12 social.geo.industry.manufacturing
-social_geo_13 social.geo.industry.resource
-social_geo_14 social.geo.urban social.geo.urban.city
-social_geo_15 social.geo.regions.asia
-social_geo_16 social.geo.regions.europe
-social_geo_17 social.geo.regions.americas
-social_geo_18 social.geo.japan.japan
-social_geo_19 social.geo social.geo.japan.global
-social_geo_20 social.geo.japan.survey
-social_jhist_01 social.jhist.ancient.prehistory
-social_jhist_02 social.jhist.ancient.kofun
-social_jhist_03 social.jhist.ancient.nara
-social_jhist_04 social.jhist.ancient.heian
-social_jhist_05 social.jhist.ancient.insei
-social_jhist_06 social.jhist.medieval.kamakura
-social_jhist_07 social.jhist.medieval.mongol
-social_jhist_08 social.jhist.medieval.muromachi
-social_jhist_09 social.jhist.medieval.sengoku
-social_jhist_10 social.jhist.early_modern.shokuho
-social_jhist_11 social.jhist.early_modern.edo
-social_jhist_12 social.jhist.early_modern.society
-social_jhist_13 social.jhist.early_modern.reform
-social_jhist_14 social.jhist.early_modern.bakumatsu
-social_jhist_15 social.jhist.modern.meiji
-social_jhist_16 social.jhist.modern.constitution
-social_jhist_17 social.jhist.modern.wars
-social_jhist_18 social.jhist.modern.taisho
-social_jhist_19 social.jhist.modern.showa
-social_jhist_20 social.jhist.contemporary social.jhist.contemporary.postwar
-social_whist_01 social.whist.ancient.orient
-social_whist_02 social.whist.ancient.india
-social_whist_03 social.whist.ancient.china
-social_whist_04 social.whist.ancient.greece
-social_whist_05 social.whist.ancient.rome
-social_whist_06 social.whist.medieval.europe
-social_whist_07 social.whist.medieval.islam
-social_whist_08 social.whist.medieval.china
-social_whist_09 social.whist.medieval.mongol
-social_whist_10 social.whist.early_modern.renaissance
-social_whist_11 social.whist.early_modern.discovery
-social_whist_12 social.whist.early_modern.absolutism
-social_whist_13 social.whist.early_modern.asia
-social_whist_14 social.whist.modern.revolution
-social_whist_15 social.whist.modern.industrial
-social_whist_16 social.whist.modern.nation
-social_whist_17 social.whist.modern.imperialism
-social_whist_18 social.whist.contemporary.ww1
-social_whist_19 social.whist.contemporary.ww2
-social_whist_20 social.whist.contemporary.global
-social_pol_01 social.pol.politics.principle
-social_pol_02 social.pol.politics.rights
-social_pol_03 social.pol.politics.diet
-social_pol_04 social.pol.politics.cabinet
-social_pol_05 social.pol.politics.court
-social_pol_06 social.pol.politics.local
-social_pol_07 social.pol.politics.election
-social_pol_08 social.pol.politics.law
-social_pol_09 social.pol.world.intl
-social_pol_10 social.pol.economy.market
-social_pol_11 social.pol.economy.macro
-social_pol_12 social.pol.economy.finance
-social_pol_13 social.pol.economy.fiscal
-social_pol_14 social.pol.economy.welfare
-social_pol_15 social.pol.economy.global
-social_eth_01 social.eth.self.adolescence
-social_eth_02 social.eth.origin.greek
-social_eth_03 social.eth.origin.religion
-social_eth_04 social.eth.origin.east
-social_eth_05 social.eth.japan.ancient
-social_eth_06 social.eth.japan.modern
-social_eth_07 social.eth.western.modern
-social_eth_08 social.eth.western.social
-social_eth_09 social.eth.western.contemporary
-social_eth_10 social.eth.issues.issues
-social_chirisogo_01 social.geo social.geo.map.maps
-social_current_2426_01 social social.pol.world.intl.issues
-social_kokyo_01 social social.pol.politics.principle
-social_rekishisogo_01 social social.whist.modern.revolution
-japanese_gendai_01 japanese.gendai.kanji.read
-japanese_gendai_02 japanese.gendai.kanji.write
-japanese_gendai_03 japanese.gendai.vocab.idiom
-japanese_gendai_04 japanese.gendai.vocab.meaning
-japanese_gendai_05 japanese.gendai.language.grammar
-japanese_gendai_06 japanese.gendai.language.info
-japanese_gendai_07 japanese.gendai.logical.hyoron
-japanese_gendai_08 japanese.gendai.logical.argument
-japanese_gendai_09 japanese.gendai.literary.novel
-japanese_gendai_10 japanese.gendai.literary.rhetoric
-japanese_gendai_11 japanese.gendai.express.speak
-japanese_gendai_12 japanese.gendai.express.summary
-japanese_kobun_01 japanese.kobun.word japanese.kobun.word.word
-japanese_kobun_02 japanese.kobun.word.word
-japanese_kobun_03 japanese.kobun.grammar.yogen
-japanese_kobun_04 japanese.kobun.grammar.jodoshi
-japanese_kobun_05 japanese.kobun.grammar.jodoshi
-japanese_kobun_06 japanese.kobun.grammar.joshi
-japanese_kobun_07 japanese.kobun.grammar.keigo
-japanese_kobun_08 japanese.kobun.grammar.discern
-japanese_kobun_09 japanese.kobun.reading.reading
-japanese_kobun_10 japanese.kobun.reading.waka
-japanese_kobun_11 japanese.kobun.reading.history
-japanese_kobun_12 japanese.kobun.reading.synthesis
-japanese_kanbun_01 japanese.kanbun.kundoku.basic
-japanese_kanbun_02 japanese.kanbun.kundoku.saidoku
-japanese_kanbun_03 japanese.kanbun.kuho.negation
-japanese_kanbun_04 japanese.kanbun.kuho.causative
-japanese_kanbun_05 japanese.kanbun.kuho.limit
-japanese_kanbun_06 japanese.kanbun.text.poem
-japanese_kanbun_07 japanese.kanbun.text.thought
-japanese_kanbun_08 japanese.kanbun.text.history
-japanese_bungakushi_01 japanese.gendai.language.literature
-japanese_idiom_01 japanese.gendai.vocab.idiom
-japanese_kanji_01 japanese.gendai.kanji japanese.gendai.kanji.read
-japanese_keigo_01 japanese.gendai.language.grammar
-japanese_novel_01 japanese.gendai.literary.novel
-japanese_practical_01 japanese.gendai.logical.practical
-japanese_reading_comp_01 japanese japanese.gendai.literary.novel
-japanese_ronri_01 japanese.gendai.logical japanese.gendai.logical.hyoron
-information_info1_01 information.info.society.nature
-information_info1_02 information.info.society.moral
-information_info1_03 information.info.society.security
-information_info1_04 information.info.society.problem
-information_info1_05 information.info.design.design
-information_info1_06 information.info.design information.info.design.design
-information_info1_07 information.info.computer.hardware
-information_info1_08 information.info.computer.digital
-information_info1_09 information.info.computer.media
-information_info1_10 information.info.network.basic
-information_info1_11 information.info.network.protocol
-information_info1_12 information.info.network.crypto
-information_info1_13 information.info.data.manage
-information_info1_14 information.info.data.analysis
-information_info1_15 information.info.programming information.info.programming.program
-information_info1_16 information.info.programming.algorithm
-information_info1_17 information.info.computer.logic
-information_data_db_01 information.info.data information.info.data.manage
-information_design_01 information.info information.info.design.design
-information_dncl_01 information.info.programming.program
-information_info2_01 information.info information.info.data.analysis
-information_network_01 information.info.network information.info.network.basic
-information_prog_algo_01 information.info.programming information.info.programming.program
-information_prog_algo_02 information.info information.info.programming.program
-music_fu_01 music.theory.notation.clef
-music_fu_02 music.theory.notation.clef
-music_fu_03 music.theory.notation.name
-music_fu_04 music.theory.notation.name
-music_fu_05 music.theory.notation.name
-music_fu_06 music.theory.notation.interval
-music_fu_07 music.theory.notation.interval
-music_fu_08 music.theory.notation.interval
-music_fu_09 music.theory.notation.interval
-music_fu_10 music.theory.notation.rhythm
-music_fu_11 music.theory.notation.rhythm
-music_fu_12 music.theory.notation music.theory.notation.interval
-music_chou_01 music.theory.key.signature
-music_chou_02 music.theory.key.signature
-music_chou_03 music.theory.key.signature
-music_chou_04 music.theory.key.signature
-music_chou_05 music.theory.key.relation
-music_chou_06 music.theory.key.relation
-music_chou_07 music.theory.key.scale
-music_chou_08 music.theory.key.scale
-music_chou_09 music.theory.key.scale
-music_chou_10 music.theory.key.world
-music_chou_11 music.theory.key.world
-music_chou_12 music.theory.key music.theory.key.scale
-music_waon_01 music.theory.harmony.triad
-music_waon_02 music.theory.harmony.triad
-music_waon_03 music.theory.harmony.degree
-music_waon_04 music.theory.harmony.degree
-music_waon_05 music.theory.harmony.triad
-music_waon_06 music.theory.harmony.triad
-music_waon_07 music.theory.harmony.function
-music_waon_08 music.theory.harmony.function
-music_waon_09 music.theory.harmony.function
-music_waon_10 music.theory.harmony music.theory.harmony.triad
-music_yougo_01 music.theory.terms.expression
-music_yougo_02 music.theory.terms.expression
-music_yougo_03 music.theory.terms.expression
-music_yougo_04 music.theory.terms.performance
-music_yougo_05 music.theory.terms.chord
-music_yougo_06 music.theory.terms.chord
-music_yougo_07 music.theory.terms.instrument
-music_yougo_08 music.theory.terms music.theory.terms.expression
-english_stage_01 english.eng.grammar english.eng.grammar.tense meaning:english.eng.vocab:english.eng.vocab.basic partOfSpeech:english.eng.vocab:english.eng.vocab.basic
-english_stage_02 english.eng.grammar.auxiliary - meaning:english.eng.vocab:english.eng.vocab.basic partOfSpeech:english.eng.vocab:english.eng.vocab.basic
-english_stage_03 english.eng.grammar.infinitive - meaning:english.eng.vocab:english.eng.vocab.basic partOfSpeech:english.eng.vocab:english.eng.vocab.basic
-english_stage_04 english.eng.grammar.infinitive - meaning:english.eng.vocab:english.eng.vocab.basic partOfSpeech:english.eng.vocab:english.eng.vocab.basic
-english_stage_05 english.eng.grammar.gerund - meaning:english.eng.vocab:english.eng.vocab.basic partOfSpeech:english.eng.vocab:english.eng.vocab.basic
-english_stage_06 english.eng.grammar.participle - meaning:english.eng.vocab:english.eng.vocab.basic partOfSpeech:english.eng.vocab:english.eng.vocab.basic
-english_stage_07 english.eng.grammar.construction - meaning:english.eng.vocab:english.eng.vocab.standard partOfSpeech:english.eng.vocab:english.eng.vocab.standard
-english_stage_08 english.eng.grammar.comparison - meaning:english.eng.vocab:english.eng.vocab.standard partOfSpeech:english.eng.vocab:english.eng.vocab.standard
-english_stage_09 english.eng.grammar.relative - meaning:english.eng.vocab:english.eng.vocab.standard partOfSpeech:english.eng.vocab:english.eng.vocab.standard
-english_stage_10 english.eng.grammar.relative - meaning:english.eng.vocab:english.eng.vocab.standard partOfSpeech:english.eng.vocab:english.eng.vocab.standard
-english_stage_11 english.eng.grammar.subjunctive - meaning:english.eng.vocab:english.eng.vocab.standard partOfSpeech:english.eng.vocab:english.eng.vocab.standard
-english_stage_12 english.eng.grammar.subjunctive - meaning:english.eng.vocab:english.eng.vocab.standard partOfSpeech:english.eng.vocab:english.eng.vocab.standard
-english_stage_13 english.eng.structure.special - meaning:english.eng.vocab:english.eng.vocab.standard partOfSpeech:english.eng.vocab:english.eng.vocab.standard
-english_stage_14 english.eng.structure english.eng.structure.complex meaning:english.eng.vocab:english.eng.vocab.advanced partOfSpeech:english.eng.vocab:english.eng.vocab.advanced
-english_stage_15 english.eng.structure.complex - meaning:english.eng.vocab:english.eng.vocab.advanced partOfSpeech:english.eng.vocab:english.eng.vocab.advanced
-english_stage_18 english.eng.reading.passage - meaning:english.eng.vocab:english.eng.vocab.advanced partOfSpeech:english.eng.vocab:english.eng.vocab.advanced
-english_stage_19 english.eng.reading.passage - meaning:english.eng.vocab:english.eng.vocab.advanced partOfSpeech:english.eng.vocab:english.eng.vocab.advanced
-english_applied_reading_01 english.eng english.eng.reading.practical
-english_conversation_01 english.eng.speaking.conversation
-english_listening_01 english.eng.listening.listening
-english_long_01 english.eng.reading.passage
-english_order_01 english.eng.structure.order
-english_pron_01 english.eng.speaking.pron
-english_stage_exam_01 english.eng english.eng.exam.advanced
-sea_g1_01 english.eng.grammar.sentence
-sea_g1_02 english.eng.grammar.tense
-sea_g1_03 english.eng.grammar.auxiliary
-sea_g1_04 english.eng.grammar.infinitive
-sea_g1_05 english.eng.grammar.gerund
-sea_g1_06 english.eng.grammar.participle
-sea_g1_07 english.eng.grammar.passive
-sea_g1_08 english.eng.grammar.comparison
-sea_g1_09 english.eng.grammar.relative
-sea_g1_10 english.eng.grammar.subjunctive
-sea_g1_11 english.eng.grammar.conj
-sea_g1_12 english.eng.grammar english.eng.grammar.pronoun
-sea_g2_01 english.eng.grammar.tense
-sea_g2_02 english.eng.grammar.auxiliary
-sea_g2_03 english.eng.grammar.infinitive
-sea_g2_04 english.eng.grammar.gerund
-sea_g2_05 english.eng.grammar.construction
-sea_g2_06 english.eng.grammar.relative
-sea_g2_07 english.eng.grammar.subjunctive
-sea_g2_08 english.eng.grammar.comparison
-sea_g2_09 english.eng.grammar.negation
-sea_g2_10 english.eng.structure.special
-sea_g2_11 english.eng.grammar.conj
-sea_g2_12 english.eng.structure.complex
-sea_g3_01 english.eng.grammar.relative
-sea_g3_02 english.eng.grammar.subjunctive
-sea_g3_03 english.eng.structure.special
-sea_g3_04 english.eng.structure.special
-sea_g3_05 english.eng.structure.special
-sea_g3_06 english.eng.grammar.construction
-sea_g3_07 english.eng.grammar english.eng.grammar.infinitive
-sea_g3_08 english.eng.grammar english.eng.grammar.tense
-sea_g3_09 english.eng.structure.complex
-math_formats_01 math math.m1.quad.maxmin
-english_formats_01 english english.eng.grammar.subjunctive
-science_formats_01 science science.physics.mechanics.kinematics
-social_formats_01 social social.geo.nature.climate
-japanese_formats_01 japanese japanese.gendai.logical.hyoron
-information_formats_01 information information.info.programming.program
-math_v4_01 math math.m1.logic.set.operation
-english_v4_01 english english.eng.exam.advanced
-science_v4_01 science science.chemistry.organic.aromatic.benzene
-social_v4_01 social social.pol.economy.japan.history
-japanese_v4_01 japanese japanese.gendai.logical.essay.essay
-information_v4_01 information information.info.computer.system.reliability
-math_v4_02 math math.m1.numexpr.poly.factor_adv
-english_v4_02 english english.eng.grammar.tense.agreement
-science_v4_02 science science.physics.mechanics.momentum.conservation
-social_v4_02 social social.whist.medieval.europe.late
-japanese_v4_02 japanese japanese.gendai.vocab.idiom.kanyo
-information_v4_02 information information.info.society.moral.moral
+# 問題セット → 学習体系（tool/junior/gen.py が生成）
+math_e1_01 math.e1.s1.a01
+math_e1_02 math.e1.s1.a02
+math_e1_03 math.e1.s1.a03
+math_e1_04 math.e1.s1.a04
+math_e1_05 math.e1.s2.a05
+math_e1_06 math.e1.s2.a06
+math_e1_07 math.e1.s2.a07
+math_e1_08 math.e1.s2.a08
+math_e1_09 math.e1.s2.a09
+math_e1_10 math.e1.s2.a10
+math_e2_01 math.e2.s1.a01
+math_e2_02 math.e2.s1.a02
+math_e2_03 math.e2.s1.a03
+math_e2_04 math.e2.s1.a04
+math_e2_05 math.e2.s2.a05
+math_e2_06 math.e2.s2.a06
+math_e2_07 math.e2.s2.a07
+math_e2_08 math.e2.s2.a08
+math_e2_09 math.e2.s2.a09
+math_e2_10 math.e2.s2.a10
+math_e2_11 math.e2.s2.a11
+math_e3_01 math.e3.s1.a01
+math_e3_02 math.e3.s1.a02
+math_e3_03 math.e3.s1.a03
+math_e3_04 math.e3.s1.a04
+math_e3_05 math.e3.s2.a05
+math_e3_06 math.e3.s2.a06
+math_e3_07 math.e3.s2.a07
+math_e3_08 math.e3.s2.a08
+math_e3_09 math.e3.s2.a09
+math_e3_10 math.e3.s2.a10
+math_e3_11 math.e3.s2.a11
+math_e4_01 math.e4.s1.a01
+math_e4_02 math.e4.s1.a02
+math_e4_03 math.e4.s1.a03
+math_e4_04 math.e4.s1.a04
+math_e4_05 math.e4.s2.a05
+math_e4_06 math.e4.s2.a06
+math_e4_07 math.e4.s2.a07
+math_e4_08 math.e4.s2.a08
+math_e4_09 math.e4.s2.a09
+math_e4_10 math.e4.s2.a10
+math_e4_11 math.e4.s2.a11
+math_e5_01 math.e5.s1.a01
+math_e5_02 math.e5.s1.a02
+math_e5_03 math.e5.s1.a03
+math_e5_04 math.e5.s1.a04
+math_e5_05 math.e5.s2.a05
+math_e5_06 math.e5.s2.a06
+math_e5_07 math.e5.s2.a07
+math_e5_08 math.e5.s2.a08
+math_e5_09 math.e5.s2.a09
+math_e5_10 math.e5.s2.a10
+math_e5_11 math.e5.s2.a11
+math_e6_01 math.e6.s1.a01
+math_e6_02 math.e6.s1.a02
+math_e6_03 math.e6.s1.a03
+math_e6_04 math.e6.s1.a04
+math_e6_05 math.e6.s2.a05
+math_e6_06 math.e6.s2.a06
+math_e6_07 math.e6.s2.a07
+math_e6_08 math.e6.s2.a08
+math_e6_09 math.e6.s2.a09
+math_e6_10 math.e6.s2.a10
+math_j1_01 math.j1.s1.a01
+math_j1_02 math.j1.s1.a02
+math_j1_03 math.j1.s1.a03
+math_j1_04 math.j1.s1.a04
+math_j1_05 math.j1.s1.a05
+math_j1_06 math.j1.s2.a06
+math_j1_07 math.j1.s2.a07
+math_j1_08 math.j1.s2.a08
+math_j1_09 math.j1.s2.a09
+math_j1_10 math.j1.s2.a10
+math_j2_01 math.j2.s1.a01
+math_j2_02 math.j2.s1.a02
+math_j2_03 math.j2.s1.a03
+math_j2_04 math.j2.s1.a04
+math_j2_05 math.j2.s2.a05
+math_j2_06 math.j2.s2.a06
+math_j2_07 math.j2.s2.a07
+math_j2_08 math.j2.s2.a08
+math_j2_09 math.j2.s2.a09
+math_j3_01 math.j3.s1.a01
+math_j3_02 math.j3.s1.a02
+math_j3_03 math.j3.s1.a03
+math_j3_04 math.j3.s1.a04
+math_j3_05 math.j3.s2.a05
+math_j3_06 math.j3.s2.a06
+math_j3_07 math.j3.s2.a07
+math_j3_08 math.j3.s2.a08
+math_j3_09 math.j3.s2.a09
+math_j3_10 math.j3.s2.a10

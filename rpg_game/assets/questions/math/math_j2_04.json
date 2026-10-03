@@ -1,0 +1,212 @@
+{
+  "setId": "math_j2_04",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_j204_001",
+      "unit": "math.j2.s1.a04",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "4x × 5xy を計算すると？",
+      "choices": [
+        "9x²y",
+        "20x²y",
+        "20x²y²",
+        "20xy"
+      ],
+      "answerIndex": 1,
+      "explanation": "係数どうし、文字どうしをかける。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j204_002",
+      "unit": "math.j2.s1.a04",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "2x × 3xy を計算すると？",
+      "choices": [
+        "6x²y",
+        "6x²y²",
+        "5x²y",
+        "6xy"
+      ],
+      "answerIndex": 0,
+      "explanation": "係数どうし、文字どうしをかける。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j204_003",
+      "unit": "math.j2.s1.a04",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "2x × 5xy を計算すると？",
+      "choices": [
+        "10x²y",
+        "10xy",
+        "7x²y",
+        "10x²y²"
+      ],
+      "answerIndex": 0,
+      "explanation": "係数どうし、文字どうしをかける。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j204_004",
+      "unit": "math.j2.s1.a04",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "y = −3x + 5 で、x = 1 のときのyは？",
+      "choices": [
+        "8",
+        "−8",
+        "3",
+        "2"
+      ],
+      "answerIndex": 3,
+      "explanation": "代入する。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j204_005",
+      "unit": "math.j2.s1.a04",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "連立方程式 3x + y = 11、4x − 3y = −7 の解は？",
+      "choices": [
+        "x = 2, y = −5",
+        "x = 2, y = 5",
+        "x = 5, y = 2",
+        "x = −2, y = 5"
+      ],
+      "answerIndex": 1,
+      "explanation": "加減法か代入法で1つの文字を消去する。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j204_006",
+      "unit": "math.j2.s1.a04",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "(x − 2y) + (5x + y) を計算すると？",
+      "choices": [
+        "6x − y",
+        "−4x − 3y",
+        "6x − 3y",
+        "5x − 2y"
+      ],
+      "answerIndex": 0,
+      "explanation": "同類項をまとめる。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j204_007",
+      "unit": "math.j2.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "y = x の傾きは？",
+      "choices": [
+        "1",
+        "0",
+        "3",
+        "−1"
+      ],
+      "answerIndex": 0,
+      "explanation": "y ＝ ax + b の a が傾き、b が切片。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j204_008",
+      "unit": "math.j2.s1.a04",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "(−4x + y) + (x − 4y) を計算すると？",
+      "choices": [
+        "−3x − 3y",
+        "−4x − 4y",
+        "−5x + 5y",
+        "−3x + 5y"
+      ],
+      "answerIndex": 0,
+      "explanation": "同類項をまとめる。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j204_009",
+      "unit": "math.j2.s1.a04",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "(3x − 6y) + (−4x + y) を計算すると？",
+      "choices": [
+        "7x − 7y",
+        "−x − 7y",
+        "−12x − 6y",
+        "−x − 5y"
+      ],
+      "answerIndex": 3,
+      "explanation": "同類項をまとめる。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j204_010",
+      "unit": "math.j2.s1.a04",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "連立方程式 3x + 3y = −24、4x − 4y = 8 の解は？",
+      "choices": [
+        "x = −3, y = −5",
+        "x = 3, y = −5",
+        "x = −3, y = 5",
+        "x = −5, y = −3"
+      ],
+      "answerIndex": 0,
+      "explanation": "加減法か代入法で1つの文字を消去する。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j204_011",
+      "unit": "math.j2.s1.a04",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "2x × 6xy を計算すると？",
+      "choices": [
+        "12x²y",
+        "12xy",
+        "8x²y",
+        "12x²y²"
+      ],
+      "answerIndex": 0,
+      "explanation": "係数どうし、文字どうしをかける。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j204_012",
+      "unit": "math.j2.s1.a04",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "4x × 2xy を計算すると？",
+      "choices": [
+        "8x²y²",
+        "6x²y",
+        "8x²y",
+        "8xy"
+      ],
+      "answerIndex": 2,
+      "explanation": "係数どうし、文字どうしをかける。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    }
+  ]
+}

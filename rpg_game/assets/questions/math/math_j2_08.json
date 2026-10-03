@@ -1,0 +1,212 @@
+{
+  "setId": "math_j2_08",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_j208_001",
+      "unit": "math.j2.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "データを小さい順に並べ、4等分する位置の値を何という？",
+      "choices": [
+        "最頻値",
+        "相対度数",
+        "四分位数",
+        "階級値"
+      ],
+      "answerIndex": 2,
+      "explanation": "第1・第2・第3四分位数。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j208_002",
+      "unit": "math.j2.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "第2四分位数は何と同じ？",
+      "choices": [
+        "中央値",
+        "平均値",
+        "最頻値",
+        "範囲"
+      ],
+      "answerIndex": 0,
+      "explanation": "真ん中の値。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j208_003",
+      "unit": "math.j2.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "第3四分位数 − 第1四分位数 を何という？",
+      "choices": [
+        "範囲",
+        "四分位範囲",
+        "中央値",
+        "平均"
+      ],
+      "answerIndex": 1,
+      "explanation": "中央付近の約半数のデータの散らばり。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j208_004",
+      "unit": "math.j2.s2.a08",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "1, 3, 5, 7, 9, 11, 13, 15 の第1四分位数は？",
+      "choices": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "answerIndex": 1,
+      "explanation": "前半1, 3, 5, 7 の中央値＝(3 + 5) ÷ 2。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j208_005",
+      "unit": "math.j2.s2.a08",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "1, 3, 5, 7, 9, 11, 13, 15 の第3四分位数は？",
+      "choices": [
+        "10",
+        "11",
+        "12",
+        "13"
+      ],
+      "answerIndex": 2,
+      "explanation": "後半9, 11, 13, 15 の中央値。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j208_006",
+      "unit": "math.j2.s2.a08",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "第1四分位数 20、第3四分位数 35 のとき、四分位範囲は？",
+      "choices": [
+        "15",
+        "27.5",
+        "35",
+        "55"
+      ],
+      "answerIndex": 0,
+      "explanation": "35 − 20",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j208_007",
+      "unit": "math.j2.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "箱ひげ図の箱の中の線は何を表す？",
+      "choices": [
+        "平均値",
+        "最小値",
+        "中央値",
+        "最大値"
+      ],
+      "answerIndex": 2,
+      "explanation": "箱は第1〜第3四分位数。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j208_008",
+      "unit": "math.j2.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "箱ひげ図のひげの両端は？",
+      "choices": [
+        "第1四分位数と第3四分位数",
+        "最小値と最大値",
+        "最頻値と範囲",
+        "平均値と中央値"
+      ],
+      "answerIndex": 1,
+      "explanation": "ひげは最小値・最大値まで。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j208_009",
+      "unit": "math.j2.s2.a08",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "箱ひげ図で、箱が長いデータの特徴は？",
+      "choices": [
+        "最大値が大きい",
+        "中央付近のデータの散らばりが大きい",
+        "データの個数が多い",
+        "平均値が大きい"
+      ],
+      "answerIndex": 1,
+      "explanation": "箱の長さ＝四分位範囲。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j208_010",
+      "unit": "math.j2.s2.a08",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "箱ひげ図から読み取れないものは？",
+      "choices": [
+        "四分位範囲",
+        "中央値",
+        "最大値",
+        "平均値（ふつうは表されない）"
+      ],
+      "answerIndex": 3,
+      "explanation": "平均値は＋で示すこともあるが、基本の5つの値は最小・Q1・中央・Q3・最大。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j208_011",
+      "unit": "math.j2.s2.a08",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "2, 4, 4, 6, 8, 10, 12 の中央値は？",
+      "choices": [
+        "4",
+        "6",
+        "6.6",
+        "8"
+      ],
+      "answerIndex": 1,
+      "explanation": "7個の真ん中は4番目。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j208_012",
+      "unit": "math.j2.s2.a08",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "A組の箱ひげ図で第1四分位数が60点。このとき、60点以上の生徒はおよそ何%？",
+      "choices": [
+        "50%",
+        "75%",
+        "25%",
+        "60%"
+      ],
+      "answerIndex": 1,
+      "explanation": "第1四分位数より上に約3/4のデータ。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    }
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "setId": "math_e6_01",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_e601_001",
+      "unit": "math.e6.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "1こx円のパンを3こ買ったときの代金を式で表すと？",
+      "choices": [
+        "x × 3",
+        "x + 3",
+        "x ÷ 3",
+        "3 − x"
+      ],
+      "answerIndex": 0,
+      "explanation": "1こ分 × こ数。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e601_002",
+      "unit": "math.e6.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "x × 4 = 28 のとき、xは？",
+      "choices": [
+        "7",
+        "24",
+        "32",
+        "112"
+      ],
+      "answerIndex": 0,
+      "explanation": "28 ÷ 4 = 7",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e601_003",
+      "unit": "math.e6.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "x + 15 = 40 のとき、xは？",
+      "choices": [
+        "15",
+        "25",
+        "55",
+        "600"
+      ],
+      "answerIndex": 1,
+      "explanation": "40 − 15 = 25",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e601_004",
+      "unit": "math.e6.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "x − 8 = 12 のとき、xは？",
+      "choices": [
+        "4",
+        "12",
+        "20",
+        "96"
+      ],
+      "answerIndex": 2,
+      "explanation": "12 + 8 = 20",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e601_005",
+      "unit": "math.e6.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "x ÷ 5 = 6 のとき、xは？",
+      "choices": [
+        "1.2",
+        "6",
+        "11",
+        "30"
+      ],
+      "answerIndex": 3,
+      "explanation": "6 × 5 = 30",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e601_006",
+      "unit": "math.e6.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "1辺x cmの正方形のまわりの長さを表す式は？",
+      "choices": [
+        "x + 4",
+        "x × 2",
+        "x × 4",
+        "x × x"
+      ],
+      "answerIndex": 2,
+      "explanation": "4つのへんの長さの合計。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e601_007",
+      "unit": "math.e6.s1.a01",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "a × 6 = y で、aが2倍になるとyは？",
+      "choices": [
+        "2倍になる",
+        "変わらない",
+        "6ふえる",
+        "半分になる"
+      ],
+      "answerIndex": 0,
+      "explanation": "yはaに比例する。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e601_008",
+      "unit": "math.e6.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "1本x円のえんぴつ5本と120円のノートで620円。xは？",
+      "choices": [
+        "100",
+        "124",
+        "148",
+        "500"
+      ],
+      "answerIndex": 0,
+      "explanation": "x × 5 + 120 = 620 → x × 5 = 500",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e601_009",
+      "unit": "math.e6.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "200円のx%を式で表すと？",
+      "choices": [
+        "200 + x",
+        "200 × x ÷ 100",
+        "x ÷ 200",
+        "200 ÷ x"
+      ],
+      "answerIndex": 1,
+      "explanation": "x% ＝ x ÷ 100。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e601_010",
+      "unit": "math.e6.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "x = 3 のとき、x × 8 + 5 の値は？",
+      "choices": [
+        "16",
+        "24",
+        "29",
+        "40"
+      ],
+      "answerIndex": 2,
+      "explanation": "3 × 8 + 5 = 29",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e601_011",
+      "unit": "math.e6.s1.a01",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「x × 3 = 15」にあう場面は？",
+      "choices": [
+        "1こx円のあめ3こで15円",
+        "x円のあめと3円のあめで15円",
+        "15円をx人で3円ずつ",
+        "x人を3人ずつ分けると15組"
+      ],
+      "answerIndex": 0,
+      "explanation": "1こ分 × 3こ ＝ 15円。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e601_012",
+      "unit": "math.e6.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "x × 2.5 = 10 のとき、xは？",
+      "choices": [
+        "4",
+        "7.5",
+        "12.5",
+        "25"
+      ],
+      "answerIndex": 0,
+      "explanation": "10 ÷ 2.5 = 4",
+      "targetGrade": "小6",
+      "phase": "basics"
+    }
+  ]
+}

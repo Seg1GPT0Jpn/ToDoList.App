@@ -752,7 +752,7 @@ const scienceCurriculum = CurriculumNode(
                     '非金属',
                     'アルカリ金属',
                     'ハロゲン',
-                    '貴ガス'
+                    '貴ガス',
                   ],
                 ),
               ],
@@ -1142,7 +1142,7 @@ const scienceCurriculum = CurriculumNode(
                     'アンモニアソーダ',
                     'ソルベー',
                     'マグネシウム',
-                    'アルカリ土類'
+                    'アルカリ土類',
                   ],
                 ),
                 CurriculumNode(
@@ -1225,7 +1225,7 @@ const scienceCurriculum = CurriculumNode(
                     'メタン',
                     'エチレン',
                     'アセチレン',
-                    '付加'
+                    '付加',
                   ],
                 ),
                 CurriculumNode(
@@ -1307,7 +1307,7 @@ const scienceCurriculum = CurriculumNode(
                     '縮合重合',
                     '樹脂',
                     'ゴム',
-                    '繊維'
+                    '繊維',
                   ],
                 ),
                 CurriculumNode(
@@ -2102,7 +2102,7 @@ const scienceCurriculum = CurriculumNode(
                     'チャート',
                     '凝灰岩',
                     '風化',
-                    '侵食'
+                    '侵食',
                   ],
                 ),
                 CurriculumNode(
@@ -2122,7 +2122,7 @@ const scienceCurriculum = CurriculumNode(
                     '新生代',
                     '先カンブリア',
                     '放射年代',
-                    '相対年代'
+                    '相対年代',
                   ],
                 ),
               ],
@@ -2231,7 +2231,7 @@ const scienceCurriculum = CurriculumNode(
                     '潮汐',
                     '大潮',
                     '満ち引き',
-                    '塩分'
+                    '塩分',
                   ],
                 ),
                 CurriculumNode(

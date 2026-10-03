@@ -8,7 +8,7 @@ import '../battle/battle_screen.dart';
 import '../story/story_player.dart';
 import '../versus/versus_screen.dart';
 
-/// 物語：知識の世界と6つの欠片。6つそろうと「世界の中心」の決戦に挑める
+/// 物語：知識の世界と5つの欠片。6つそろうと「世界の中心」の決戦に挑める
 class StoryScreen extends StatefulWidget {
   const StoryScreen({super.key});
 
@@ -162,8 +162,8 @@ class _StoryScreenState extends State<StoryScreen> {
                           won
                               ? '忘却の魔王をたおし、知識の世界はふたたび一つになった。…でも、学びの旅はまだ続く。何度でも挑戦できる。'
                               : open
-                              ? '6つの欠片が道を照らしている。知識を奪った「忘却の魔王」との最終決戦。6教科の最後のボスの範囲すべてから出題される（共通テスト総合）。'
-                              : '6つの欠片がそろうと、道がひらく。',
+                              ? '5つの欠片が道を照らしている。知識を奪った「忘却の魔王」との最終決戦。5教科の最後のボスの範囲すべてから出題される（共通テスト総合）。'
+                              : '5つの欠片がそろうと、道がひらく。',
                           style: const TextStyle(fontSize: 13, height: 1.6),
                         ),
                         const SizedBox(height: 8),
@@ -207,7 +207,7 @@ class _StoryScreenState extends State<StoryScreen> {
                         : null,
                   ),
                 const SizedBox(height: 20),
-                Text('6つの国の物語', style: serif(16)),
+                Text('5つの国の物語', style: serif(16)),
                 const SizedBox(height: 4),
                 for (final n in Lore.nations) _NationCard(lore: n, progress: p),
                 const SizedBox(height: 16),

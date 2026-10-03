@@ -1,0 +1,212 @@
+{
+  "setId": "math_j1_03",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_j103_001",
+      "unit": "math.j1.s1.a03",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "(6x + 4) + (5x + 5) を計算すると？",
+      "choices": [
+        "11x + 9",
+        "x + 9",
+        "30x + 9",
+        "11x − 1"
+      ],
+      "answerIndex": 0,
+      "explanation": "同じ文字の項、数の項どうしをまとめる。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j103_002",
+      "unit": "math.j1.s1.a03",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "(4x + 5) − (6x + 8) を計算すると？",
+      "choices": [
+        "10x − 3",
+        "−2x + 13",
+        "−2x + 3",
+        "−2x − 3"
+      ],
+      "answerIndex": 3,
+      "explanation": "ひく式の各項の符号を変えてたす。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j103_003",
+      "unit": "math.j1.s1.a03",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "(x + 5) − (4x + 8) を計算すると？",
+      "choices": [
+        "−3x + 3",
+        "5x − 3",
+        "−3x − 3",
+        "−3x + 13"
+      ],
+      "answerIndex": 2,
+      "explanation": "ひく式の各項の符号を変えてたす。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j103_004",
+      "unit": "math.j1.s1.a03",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "(3x − 9) + (2x − 4) を計算すると？",
+      "choices": [
+        "x − 13",
+        "6x − 13",
+        "5x − 5",
+        "5x − 13"
+      ],
+      "answerIndex": 3,
+      "explanation": "同じ文字の項、数の項どうしをまとめる。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j103_005",
+      "unit": "math.j1.s1.a03",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "6(2x + 3) を計算すると？",
+      "choices": [
+        "8x + 9",
+        "12x + 18",
+        "2x + 18",
+        "12x + 3"
+      ],
+      "answerIndex": 1,
+      "explanation": "分配法則：かっこの中の各項にかける。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j103_006",
+      "unit": "math.j1.s1.a03",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "4(5x + 7) を計算すると？",
+      "choices": [
+        "9x + 11",
+        "20x + 7",
+        "20x + 28",
+        "5x + 28"
+      ],
+      "answerIndex": 2,
+      "explanation": "分配法則：かっこの中の各項にかける。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j103_007",
+      "unit": "math.j1.s1.a03",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "4(2x + 5) を計算すると？",
+      "choices": [
+        "2x + 20",
+        "8x + 20",
+        "8x + 5",
+        "6x + 9"
+      ],
+      "answerIndex": 1,
+      "explanation": "分配法則：かっこの中の各項にかける。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j103_008",
+      "unit": "math.j1.s1.a03",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "x = −2 のとき、6x − 4 の値は？",
+      "choices": [
+        "0",
+        "−16",
+        "8",
+        "−8"
+      ],
+      "answerIndex": 1,
+      "explanation": "xに数を代入する（負の数はかっこをつける）。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j103_009",
+      "unit": "math.j1.s1.a03",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "x = −1 のとき、4x − 3 の値は？",
+      "choices": [
+        "−7",
+        "0",
+        "1",
+        "−1"
+      ],
+      "answerIndex": 0,
+      "explanation": "xに数を代入する（負の数はかっこをつける）。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j103_010",
+      "unit": "math.j1.s1.a03",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "x = −3 のとき、4x + 9 の値は？",
+      "choices": [
+        "21",
+        "−3",
+        "10",
+        "−21"
+      ],
+      "answerIndex": 1,
+      "explanation": "xに数を代入する（負の数はかっこをつける）。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j103_011",
+      "unit": "math.j1.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "a × b × 3 を文字式のきまりで書くと？",
+      "choices": [
+        "ab3",
+        "a3b",
+        "3 × ab",
+        "3ab"
+      ],
+      "answerIndex": 3,
+      "explanation": "数は文字の前、×は省く。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "mat_j103_012",
+      "unit": "math.j1.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "x ÷ 4 を文字式のきまりで書くと？",
+      "choices": [
+        "4x",
+        "x4",
+        "4/x",
+        "x/4"
+      ],
+      "answerIndex": 3,
+      "explanation": "わり算は分数の形にする。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    }
+  ]
+}

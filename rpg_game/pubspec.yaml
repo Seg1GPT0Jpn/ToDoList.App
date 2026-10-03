@@ -17,7 +17,6 @@ flutter:
   assets:
     # 問題は教科ごとにまとめたファイルだけを同梱する（tool/bundle_questions.py で作る）
     - assets/question_bundles/
-    - assets/cards/
     - assets/words/
 dependencies:
   crypto: ^3.0.7

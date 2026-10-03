@@ -21,48 +21,10 @@ class VocabHome extends StatefulWidget {
 
 class _VocabHomeState extends State<VocabHome> {
   late final VocabStore store = VocabStore.of(widget.books);
-  final _name = TextEditingController();
-  final _password = TextEditingController();
-  String? _message;
-  bool _opening = false;
-
-  @override
-  void dispose() {
-    _name.dispose();
-    _password.dispose();
-    super.dispose();
-  }
-
   Future<void> _open(Widget page) async {
     await Navigator.of(context)
         .push(MaterialPageRoute<void>(builder: (_) => page));
     if (mounted) setState(() {});
-  }
-
-  Future<void> _unlock() async {
-    if (_opening) return;
-    setState(() {
-      _opening = true;
-      _message = null;
-    });
-    final book = await store.unlock(_name.text, _password.text);
-    if (!mounted) return;
-    setState(() {
-      _opening = false;
-      if (book == null) {
-        _message = '名前かパスワードがちがいます';
-      } else {
-        _name.clear();
-        _password.clear();
-      }
-    });
-    if (book != null) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text('「${book.title}」（${book.cards.length}語）を追加しました'),
-        ),
-      );
-    }
   }
 
   @override
@@ -134,7 +96,6 @@ class _VocabHomeState extends State<VocabHome> {
         Text('単語帳', style: serif(16)),
         const SizedBox(height: 6),
         for (final b in books) _bookTile(b, now),
-        _gate(),
         const SizedBox(height: 8),
         OutlinedButton.icon(
           onPressed: () async {
@@ -171,78 +132,6 @@ class _VocabHomeState extends State<VocabHome> {
           b.cards.isEmpty
               ? VocabImportScreen(store: store, book: b)
               : VocabBookScreen(store: store, book: b),
-        ),
-      ),
-    );
-  }
-
-  Widget _gate() {
-    return Card(
-      margin: const EdgeInsets.only(top: 4, bottom: 6),
-      child: Padding(
-        padding: const EdgeInsets.all(12),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                const Icon(Icons.lock, size: 18),
-                const SizedBox(width: 6),
-                Text('名前とパスワードで単語帳を追加', style: serif(15)),
-              ],
-            ),
-            const SizedBox(height: 4),
-            Text(
-              'アプリに入っている単語帳（LEAP・EEVI など）は、名前とパスワードを入れると使えるようになります。',
-              style: TextStyle(fontSize: 12, color: TsuzuriColors.inkSoft),
-            ),
-            const SizedBox(height: 8),
-            TextField(
-              key: const ValueKey('vocab-book-name'),
-              controller: _name,
-              decoration: const InputDecoration(
-                labelText: '名前（例：LEAP）',
-                isDense: true,
-              ),
-              textInputAction: TextInputAction.next,
-            ),
-            const SizedBox(height: 6),
-            Row(
-              children: [
-                Expanded(
-                  child: TextField(
-                    key: const ValueKey('vocab-password'),
-                    controller: _password,
-                    obscureText: true,
-                    decoration: const InputDecoration(
-                      labelText: 'パスワード',
-                      isDense: true,
-                    ),
-                    onSubmitted: (_) => _unlock(),
-                  ),
-                ),
-                const SizedBox(width: 8),
-                FilledButton(
-                  onPressed: _opening ? null : _unlock,
-                  child: _opening
-                      ? const SizedBox(
-                          width: 16,
-                          height: 16,
-                          child: CircularProgressIndicator(strokeWidth: 2),
-                        )
-                      : const Text('追加する'),
-                ),
-              ],
-            ),
-            if (_message != null)
-              Padding(
-                padding: const EdgeInsets.only(top: 6),
-                child: Text(
-                  _message!,
-                  style: const TextStyle(color: TsuzuriColors.wrong),
-                ),
-              ),
-          ],
         ),
       ),
     );
@@ -293,8 +182,7 @@ class _VocabHomeState extends State<VocabHome> {
           alignment: Alignment.centerLeft,
           child: Text(
             '単語帳と学習記録はこの端末の中にだけ保存されます（電波がなくても使えます）。'
-            '別の端末に移すときは、バックアップをコピーして、移す先で「読み込む」に貼り付けてください。'
-            'LEAP・EEVI の単語はバックアップに入らないので、移す先でもう一度取り込んでください。',
+            '別の端末に移すときは、バックアップをコピーして、移す先で「読み込む」に貼り付けてください。',
             style: TextStyle(
               fontSize: 11,
               height: 1.5,
@@ -335,14 +223,6 @@ class _VocabHomeState extends State<VocabHome> {
             ),
           ],
         ),
-        if (store.unlocked)
-          TextButton(
-            onPressed: () async {
-              await store.lock();
-              setState(() {});
-            },
-            child: const Text('名前とパスワードで開いた単語帳を隠す'),
-          ),
       ],
     );
   }

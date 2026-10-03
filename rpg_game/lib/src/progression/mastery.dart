@@ -22,15 +22,12 @@ abstract final class Mastery {
   static const version = 1;
 
   /// ワールドのルート（ゲームの道）→ 学習体系の科目 ID
-  static const _routeCourse = {
-    'english': 'english.eng',
-    'information': 'information.info',
-    'music': 'music.theory',
-  };
+  /// （小中学生版は5教科ともルート＝学年の科目なので、固定の対応はない）
+  static const _routeCourse = <String, String>{};
 
   /// ステージがどの科目のものか（物語の決戦など、科目に属さないなら null）
   static String? courseOfStage(StageDef stage) {
-    // 世界の中心（6教科すべての問題）は、ひとつの科目に属さない
+    // 世界の中心（5教科すべての問題）は、ひとつの科目に属さない
     if (stage.id == Story.centerStageId) return null;
     final fixed = _routeCourse[stage.worldId];
     if (fixed != null) return fixed;

@@ -48,7 +48,7 @@ class LearningStatusScreen extends StatelessWidget {
                 const SizedBox(height: 6),
                 Text(
                   '熟練度は、ゲームで勝手に上がる数字ではなく、実際に答えた正答率から計算しています。'
-                  '5問以上答えた分野だけ判定します。総合力は、6教科すべての熟練度の平均（答えていない教科は0）。',
+                  '5問以上答えた分野だけ判定します。総合力は、5教科すべての熟練度の平均（答えていない教科は0）。',
                   style: TextStyle(
                     fontSize: 12,
                     color: TsuzuriColors.inkSoft,

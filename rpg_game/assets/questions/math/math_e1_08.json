@@ -1,0 +1,212 @@
+{
+  "setId": "math_e1_08",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_e108_001",
+      "unit": "math.e1.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "みじかい はりが 9と 10の あいだ、ながい はりが 6 を さしています。なんじ？",
+      "choices": [
+        "9じ",
+        "9じはん",
+        "9じ10ぷん",
+        "10じ"
+      ],
+      "answerIndex": 1,
+      "explanation": "ながい はりが 12 なら 「〜じ」、6 なら 「〜じはん」。",
+      "targetGrade": "小1",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e108_002",
+      "unit": "math.e1.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "みじかい はりが 3と 4の あいだ、ながい はりが 6 を さしています。なんじ？",
+      "choices": [
+        "3じ10ぷん",
+        "3じ",
+        "3じはん",
+        "4じ"
+      ],
+      "answerIndex": 2,
+      "explanation": "ながい はりが 12 なら 「〜じ」、6 なら 「〜じはん」。",
+      "targetGrade": "小1",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e108_003",
+      "unit": "math.e1.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "みじかい はりが 11、ながい はりが 12 を さしています。なんじ？",
+      "choices": [
+        "11じはん",
+        "11じ",
+        "12じはん",
+        "12じ"
+      ],
+      "answerIndex": 1,
+      "explanation": "ながい はりが 12 なら 「〜じ」、6 なら 「〜じはん」。",
+      "targetGrade": "小1",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e108_004",
+      "unit": "math.e1.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "みじかい はりが 1、ながい はりが 12 を さしています。なんじ？",
+      "choices": [
+        "1じ",
+        "2じはん",
+        "2じ",
+        "1じはん"
+      ],
+      "answerIndex": 0,
+      "explanation": "ながい はりが 12 なら 「〜じ」、6 なら 「〜じはん」。",
+      "targetGrade": "小1",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e108_005",
+      "unit": "math.e1.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "みじかい はりが 12、ながい はりが 12 を さしています。なんじ？",
+      "choices": [
+        "12じ",
+        "12じはん",
+        "1じはん",
+        "1じ"
+      ],
+      "answerIndex": 0,
+      "explanation": "ながい はりが 12 なら 「〜じ」、6 なら 「〜じはん」。",
+      "targetGrade": "小1",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e108_006",
+      "unit": "math.e1.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "みじかい はりが 8と 9の あいだ、ながい はりが 6 を さしています。なんじ？",
+      "choices": [
+        "8じ10ぷん",
+        "9じ",
+        "8じはん",
+        "8じ"
+      ],
+      "answerIndex": 2,
+      "explanation": "ながい はりが 12 なら 「〜じ」、6 なら 「〜じはん」。",
+      "targetGrade": "小1",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e108_007",
+      "unit": "math.e1.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "みじかい はりが 1と 2の あいだ、ながい はりが 6 を さしています。なんじ？",
+      "choices": [
+        "1じ10ぷん",
+        "2じ",
+        "1じ",
+        "1じはん"
+      ],
+      "answerIndex": 3,
+      "explanation": "ながい はりが 12 なら 「〜じ」、6 なら 「〜じはん」。",
+      "targetGrade": "小1",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e108_008",
+      "unit": "math.e1.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "みじかい はりが 10、ながい はりが 12 を さしています。なんじ？",
+      "choices": [
+        "10じはん",
+        "11じ",
+        "10じ",
+        "11じはん"
+      ],
+      "answerIndex": 2,
+      "explanation": "ながい はりが 12 なら 「〜じ」、6 なら 「〜じはん」。",
+      "targetGrade": "小1",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e108_009",
+      "unit": "math.e1.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "とけいの ながい はりが ひとまわり すると なんぷん？",
+      "choices": [
+        "60ぷん",
+        "100ぷん",
+        "30ぷん",
+        "12ふん"
+      ],
+      "answerIndex": 0,
+      "explanation": "ながい はりが 1しゅうで 60ぷん（1じかん）。",
+      "targetGrade": "小1",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e108_010",
+      "unit": "math.e1.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "とけいの ながい はりが 12 から 6 まで うごくと なんぷん？",
+      "choices": [
+        "30ぷん",
+        "15ふん",
+        "60ぷん",
+        "6ぷん"
+      ],
+      "answerIndex": 0,
+      "explanation": "はんぶん まわると 30ぷん。",
+      "targetGrade": "小1",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e108_011",
+      "unit": "math.e1.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "とけいの みじかい はりが さすのは どれ？",
+      "choices": [
+        "「なんぷん」",
+        "「なんびょう」",
+        "「なんじ」",
+        "「なんにち」"
+      ],
+      "answerIndex": 2,
+      "explanation": "みじかい はりは 「じ」、ながい はりは 「ふん」。",
+      "targetGrade": "小1",
+      "phase": "basics"
+    },
+    {
+      "id": "mat_e108_012",
+      "unit": "math.e1.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "とけいの 1めもりは なんぷん？",
+      "choices": [
+        "60ぷん",
+        "10ぷん",
+        "5ふん",
+        "1ぷん"
+      ],
+      "answerIndex": 3,
+      "explanation": "ちいさい 1めもりが 1ぷん。すうじと すうじの あいだは 5ふん。",
+      "targetGrade": "小1",
+      "phase": "basics"
+    }
+  ]
+}

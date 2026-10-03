@@ -5,7 +5,7 @@ import 'vocab_book.dart';
 
 /// 単語帳（LEAP・EEVI など）から4択問題を作る。
 ///
-/// 定期テストの海・模擬試験の空でだけ使う（RPG では使わない）。
+/// 定期テストの海・高校入試の空でだけ使う（RPG では使わない）。
 /// 問題は端末の中でその場で作り、どこにも保存しない。
 class VocabQuizBuilder {
   VocabQuizBuilder({Random? random}) : _random = random ?? Random();
