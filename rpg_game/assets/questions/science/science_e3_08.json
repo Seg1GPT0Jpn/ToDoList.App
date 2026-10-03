@@ -1,0 +1,212 @@
+{
+  "setId": "science_e3_08",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_e308_001",
+      "unit": "science.e3.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ねん土の形をかえると重さは？",
+      "choices": [
+        "軽くなる",
+        "重くなる",
+        "なくなる",
+        "かわらない"
+      ],
+      "answerIndex": 3,
+      "explanation": "形をかえても重さは同じ。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e308_002",
+      "unit": "science.e3.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ねん土をこまかく分けて全部はかると、重さは？",
+      "choices": [
+        "重くなる",
+        "半分になる",
+        "もとと同じ",
+        "軽くなる"
+      ],
+      "answerIndex": 2,
+      "explanation": "全部合わせれば同じ。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e308_003",
+      "unit": "science.e3.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "同じ体積で、いちばん重いのは？",
+      "choices": [
+        "木",
+        "プラスチック",
+        "鉄",
+        "発ぽうスチロール"
+      ],
+      "answerIndex": 2,
+      "explanation": "物によって重さがちがう。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e308_004",
+      "unit": "science.e3.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "重さをはかる道具は？",
+      "choices": [
+        "ものさし",
+        "温度計",
+        "方位じしん",
+        "てんびん・はかり"
+      ],
+      "answerIndex": 3,
+      "explanation": "てんびん・電子てんびん。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e308_005",
+      "unit": "science.e3.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "重さの単位は？",
+      "choices": [
+        "℃",
+        "L",
+        "g（グラム）",
+        "cm"
+      ],
+      "answerIndex": 2,
+      "explanation": "g・kg。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e308_006",
+      "unit": "science.e3.s2.a08",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "アルミニウムはくを丸めると重さは？",
+      "choices": [
+        "重くなる",
+        "かわらない",
+        "0になる",
+        "軽くなる"
+      ],
+      "answerIndex": 1,
+      "explanation": "形をかえても同じ。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e308_007",
+      "unit": "science.e3.s2.a08",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "同じ体積の木と鉄で重さがちがうことから、わかることは？",
+      "choices": [
+        "色で重さが決まる",
+        "ものの種類によって重さがちがう",
+        "形で重さが決まる",
+        "大きいほど軽い"
+      ],
+      "answerIndex": 1,
+      "explanation": "体積と重さ。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e308_008",
+      "unit": "science.e3.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "電子てんびんを使うとき、さいしょにすることは？",
+      "choices": [
+        "ゆらす",
+        "ものをたくさんのせる",
+        "何ものせないで表示を0にする",
+        "水をかける"
+      ],
+      "answerIndex": 2,
+      "explanation": "0に合わせる。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e308_009",
+      "unit": "science.e3.s2.a08",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "体重計にのって、しゃがんだときの重さは？",
+      "choices": [
+        "軽くなる",
+        "かわらない",
+        "重くなる",
+        "0になる"
+      ],
+      "answerIndex": 1,
+      "explanation": "しせいをかえても同じ。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e308_010",
+      "unit": "science.e3.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "1kgは何g？",
+      "choices": [
+        "1000g",
+        "10g",
+        "100g",
+        "10000g"
+      ],
+      "answerIndex": 0,
+      "explanation": "1kg＝1000g。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e308_011",
+      "unit": "science.e3.s2.a08",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "さとうを水にとかすと、全体の重さは？",
+      "choices": [
+        "さとうだけの重さになる",
+        "軽くなる",
+        "水とさとうの重さの合計と同じ",
+        "水だけの重さになる"
+      ],
+      "answerIndex": 2,
+      "explanation": "とけても重さはなくならない。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e308_012",
+      "unit": "science.e3.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "てんびんがつり合っているとき、左右の重さは？",
+      "choices": [
+        "わからない",
+        "同じ",
+        "右が重い",
+        "左が重い"
+      ],
+      "answerIndex": 1,
+      "explanation": "つり合い。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    }
+  ]
+}

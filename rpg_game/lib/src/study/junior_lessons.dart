@@ -255,5 +255,95 @@ class JuniorLessons {
         LessonPoint('因数分解', '和と積に注目して2数をさがす。', 'x² + 5x + 6 ＝ (x + 2)(x + 3)'),
       ],
     ),
+    InnLesson(
+      stageId: 'japanese_e1_01',
+      teacher: '小1の宿・つづり先生',
+      title: 'ひらがな',
+      points: [
+        LessonPoint('小さい じ', '「っ」「ゃ」「ゅ」「ょ」は 小さく かく。', 'きって・きゅうり'),
+        LessonPoint('のばす おと', 'おかあさん（あ）、おにいさん（い）、おとうさん（う）。', 'おおきい・とおい は「お」'),
+      ],
+    ),
+    InnLesson(
+      stageId: 'japanese_e4_03',
+      teacher: '小4の宿・つづり先生',
+      title: '部首',
+      points: [
+        LessonPoint('部首の位置', 'へん（左）・つくり（右）・かんむり（上）・あし（下）・たれ・にょう・かまえ。', 'さんずい（へん）・うかんむり（かんむり）'),
+        LessonPoint('部首と意味', '部首から漢字の意味の仲間がわかる。', 'さんずい → 水、ごんべん → 言葉'),
+      ],
+    ),
+    InnLesson(
+      stageId: 'japanese_e5_03',
+      teacher: '小5の宿・つづり先生',
+      title: '敬語',
+      points: [
+        LessonPoint('3つの敬語', '尊敬語（相手を高める）・謙譲語（自分をへりくだる）・ていねい語（です・ます）。', ''),
+        LessonPoint('特別な言い方', '言う → おっしゃる／申す、行く → いらっしゃる／参る、食べる → めしあがる／いただく。', ''),
+      ],
+    ),
+    InnLesson(
+      stageId: 'japanese_j1_03',
+      teacher: '中1の宿・つづり先生',
+      title: '文法：文節・単語・品詞',
+      points: [
+        LessonPoint('文節と単語', '文節は「ネ」で区切れるまとまり。単語は文節をさらに分けた最小の言葉。', '本を／読む → 本／を／読む'),
+        LessonPoint('品詞', '自立語：名詞・動詞・形容詞・形容動詞・副詞・連体詞・接続詞・感動詞。付属語：助詞・助動詞。', ''),
+      ],
+    ),
+    InnLesson(
+      stageId: 'japanese_j2_03',
+      teacher: '中2の宿・つづり先生',
+      title: '文法：用言の活用',
+      points: [
+        LessonPoint('活用の種類の見分け方', '「ない」をつけて直前の音を見る。あ段→五段、い段→上一段、え段→下一段。来る→カ変、する→サ変。', '書か(ない)・見(ない)・食べ(ない)'),
+        LessonPoint('6つの活用形', '未然形・連用形・終止形・連体形・仮定形・命令形。', ''),
+      ],
+    ),
+    InnLesson(
+      stageId: 'japanese_j3_03',
+      teacher: '中3の宿・つづり先生',
+      title: '文法：助詞・助動詞と敬語',
+      points: [
+        LessonPoint('れる・られる', '受け身・可能・自発・尊敬の4つの意味。文の内容から見分ける。', '先生が来られる（尊敬）'),
+        LessonPoint('敬語の注意', '自分の身内のことを外の人に話すときは謙譲語を使う。', '父が申しておりました'),
+      ],
+    ),
+    InnLesson(
+      stageId: 'science_j1_01',
+      teacher: '中1の宿・つづり先生',
+      title: '植物の分類',
+      points: [
+        LessonPoint('種子植物', '被子植物（胚珠が子房の中）と裸子植物（胚珠がむき出し）。', 'アブラナ／マツ'),
+        LessonPoint('単子葉類と双子葉類', '子葉・葉脈・根のつくりで分ける。', 'イネ（平行脈・ひげ根）'),
+      ],
+    ),
+    InnLesson(
+      stageId: 'science_j2_01',
+      teacher: '中2の宿・つづり先生',
+      title: '化学変化と原子・分子',
+      points: [
+        LessonPoint('化学式', '元素記号と数字で物質を表す。', 'H₂O、CO₂、O₂'),
+        LessonPoint('質量保存の法則', '化学変化の前後で全体の質量は変わらない。', ''),
+      ],
+    ),
+    InnLesson(
+      stageId: 'science_j2_05',
+      teacher: '中2の宿・つづり先生',
+      title: '電流と電圧',
+      points: [
+        LessonPoint('オームの法則', 'V（電圧）＝ R（抵抗）× I（電流）。', '10Ω × 0.5A ＝ 5V'),
+        LessonPoint('直列と並列', '直列：電流が同じ・抵抗は和。並列：電圧が同じ。', ''),
+      ],
+    ),
+    InnLesson(
+      stageId: 'science_j3_01',
+      teacher: '中3の宿・つづり先生',
+      title: '水溶液とイオン',
+      points: [
+        LessonPoint('イオン', '陽イオンは電子を失った原子、陰イオンは電子を受けとった原子。', 'Na⁺、Cl⁻'),
+        LessonPoint('酸・アルカリ・中和', '酸＝H⁺、アルカリ＝OH⁻。中和で水と塩ができる。', 'HCl + NaOH → NaCl + H₂O'),
+      ],
+    ),
   ];
 }

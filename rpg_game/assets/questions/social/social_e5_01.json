@@ -1,0 +1,212 @@
+{
+  "setId": "social_e5_01",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_e501_001",
+      "unit": "social.e5.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "日本の4つの大きな島のうち、いちばん大きいのは？",
+      "choices": [
+        "九州",
+        "北海道",
+        "本州",
+        "四国"
+      ],
+      "answerIndex": 2,
+      "explanation": "本州。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e501_002",
+      "unit": "social.e5.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "日本の最も北のはしの島は？",
+      "choices": [
+        "南鳥島",
+        "択捉島",
+        "与那国島",
+        "沖ノ鳥島"
+      ],
+      "answerIndex": 1,
+      "explanation": "北端。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e501_003",
+      "unit": "social.e5.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "日本の最も南のはしの島は？",
+      "choices": [
+        "与那国島",
+        "沖ノ鳥島",
+        "南鳥島",
+        "択捉島"
+      ],
+      "answerIndex": 1,
+      "explanation": "南端。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e501_004",
+      "unit": "social.e5.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "日本の国土のおよそ4分の3をしめるのは？",
+      "choices": [
+        "山地",
+        "砂漠",
+        "湖",
+        "平野"
+      ],
+      "answerIndex": 0,
+      "explanation": "山がち。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e501_005",
+      "unit": "social.e5.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "日本の気候で、夏と冬にふく向きのちがう風は？",
+      "choices": [
+        "台風",
+        "やませだけ",
+        "偏西風だけ",
+        "季節風"
+      ],
+      "answerIndex": 3,
+      "explanation": "季節風。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e501_006",
+      "unit": "social.e5.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "冬に雪が多いのは？",
+      "choices": [
+        "日本海側",
+        "太平洋側",
+        "南西諸島",
+        "瀬戸内"
+      ],
+      "answerIndex": 0,
+      "explanation": "北西の季節風。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e501_007",
+      "unit": "social.e5.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "一年中あたたかく、雨が多いのは？",
+      "choices": [
+        "中央高地の気候",
+        "日本海側の気候",
+        "北海道の気候",
+        "南西諸島の気候"
+      ],
+      "answerIndex": 3,
+      "explanation": "沖縄など。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e501_008",
+      "unit": "social.e5.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "一年を通して雨が少なく、冬もあたたかいのは？",
+      "choices": [
+        "北海道の気候",
+        "瀬戸内の気候",
+        "日本海側の気候",
+        "太平洋側の気候"
+      ],
+      "answerIndex": 1,
+      "explanation": "山にはさまれる。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e501_009",
+      "unit": "social.e5.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "沖縄の家で、台風にそなえた工夫は？",
+      "choices": [
+        "石がきやコンクリートのかべ",
+        "かやぶき屋根だけ",
+        "窓を大きくする",
+        "屋根を高くする"
+      ],
+      "answerIndex": 0,
+      "explanation": "台風対策。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e501_010",
+      "unit": "social.e5.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "北海道の家の工夫は？",
+      "choices": [
+        "風通しをよくする",
+        "屋根を平らにして水をためる",
+        "かべをうすくする",
+        "二重まどや断熱材"
+      ],
+      "answerIndex": 3,
+      "explanation": "寒さ対策。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e501_011",
+      "unit": "social.e5.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "日本の周りの海で、東がわに広がる大きな海は？",
+      "choices": [
+        "日本海",
+        "太平洋",
+        "オホーツク海",
+        "東シナ海"
+      ],
+      "answerIndex": 1,
+      "explanation": "太平洋。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e501_012",
+      "unit": "social.e5.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "国の領域にふくまれないのは？",
+      "choices": [
+        "公海",
+        "領海",
+        "領空",
+        "領土"
+      ],
+      "answerIndex": 0,
+      "explanation": "領土・領海・領空。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    }
+  ]
+}

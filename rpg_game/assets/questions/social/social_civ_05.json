@@ -1,0 +1,178 @@
+{
+  "setId": "social_civ_05",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_civ05_001",
+      "unit": "social.civ.s1.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "天皇が内閣の助言と承認によって行う行為は？",
+      "choices": [
+        "立法",
+        "行政",
+        "国事行為",
+        "国政"
+      ],
+      "answerIndex": 2,
+      "explanation": "国事行為。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ05_002",
+      "unit": "social.civ.s1.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "国会の種類で、毎年1月に召集されるのは？",
+      "choices": [
+        "臨時会",
+        "常会（通常国会）",
+        "緊急集会",
+        "特別会"
+      ],
+      "answerIndex": 1,
+      "explanation": "会期150日。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ05_003",
+      "unit": "social.civ.s1.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "衆議院解散後の総選挙の日から30日以内に召集される国会は？",
+      "choices": [
+        "常会",
+        "緊急集会",
+        "特別会（特別国会）",
+        "臨時会"
+      ],
+      "answerIndex": 2,
+      "explanation": "総理大臣の指名。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ05_004",
+      "unit": "social.civ.s1.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "民事裁判で、訴えた人は？",
+      "choices": [
+        "被告",
+        "検察官",
+        "原告",
+        "被告人"
+      ],
+      "answerIndex": 2,
+      "explanation": "原告。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ05_005",
+      "unit": "social.civ.s1.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "刑事裁判で裁かれる人は？",
+      "choices": [
+        "被告人",
+        "弁護人",
+        "原告",
+        "被告"
+      ],
+      "answerIndex": 0,
+      "explanation": "被告人。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ05_006",
+      "unit": "social.civ.s1.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "国民の知る権利を保障するための制度は？",
+      "choices": [
+        "情報公開制度",
+        "国民審査",
+        "住民投票",
+        "裁判員制度"
+      ],
+      "answerIndex": 0,
+      "explanation": "情報公開。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ05_007",
+      "unit": "social.civ.s1.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ある問題について住民の意思を問う投票は？",
+      "choices": [
+        "国民審査",
+        "国民投票",
+        "住民投票",
+        "総選挙"
+      ],
+      "answerIndex": 2,
+      "explanation": "住民投票。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ05_008",
+      "unit": "social.civ.s1.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "憲法改正の発議に必要な国会の賛成は？",
+      "choices": [
+        "各議院の総議員の3分の2以上",
+        "過半数",
+        "4分の3以上",
+        "全員"
+      ],
+      "answerIndex": 0,
+      "explanation": "発議。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ05_009",
+      "unit": "social.civ.s1.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "大統領制をとる代表的な国は？",
+      "choices": [
+        "カナダ",
+        "イギリス",
+        "日本",
+        "アメリカ"
+      ],
+      "answerIndex": 3,
+      "explanation": "アメリカ。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ05_010",
+      "unit": "social.civ.s1.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "子どもの権利条約で保障されていない権利は？",
+      "choices": [
+        "参加する権利",
+        "育つ権利",
+        "選挙権",
+        "生きる権利"
+      ],
+      "answerIndex": 2,
+      "explanation": "子どもの権利条約。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    }
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "setId": "social_civ_07",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_civ07_001",
+      "unit": "social.civ.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "日本の中央銀行は？",
+      "choices": [
+        "ゆうちょ銀行",
+        "日本政策投資銀行",
+        "世界銀行",
+        "日本銀行"
+      ],
+      "answerIndex": 3,
+      "explanation": "日本銀行。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ07_002",
+      "unit": "social.civ.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "日本銀行の役割にあてはまらないのは？",
+      "choices": [
+        "銀行の銀行",
+        "政府の銀行",
+        "紙幣を発行する",
+        "個人の預金を預かる"
+      ],
+      "answerIndex": 3,
+      "explanation": "日銀は個人と取引しない。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ07_003",
+      "unit": "social.civ.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "不景気のとき、日本銀行が行うことが多いのは？",
+      "choices": [
+        "紙幣を回収する",
+        "銀行に資金を供給して金利を下げる",
+        "金利を上げる",
+        "税金を上げる"
+      ],
+      "answerIndex": 1,
+      "explanation": "金融政策。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ07_004",
+      "unit": "social.civ.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "1ドル＝100円から1ドル＝80円になることは？",
+      "choices": [
+        "インフレ",
+        "円高",
+        "デフレ",
+        "円安"
+      ],
+      "answerIndex": 1,
+      "explanation": "円の価値が上がる。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ07_005",
+      "unit": "social.civ.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "円高になると有利になるのは？",
+      "choices": [
+        "輸入する企業",
+        "輸出する企業",
+        "観光で来日する外国人",
+        "海外旅行者に不利"
+      ],
+      "answerIndex": 0,
+      "explanation": "円高は輸入に有利。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ07_006",
+      "unit": "social.civ.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "所得が多いほど税率が高くなるしくみは？",
+      "choices": [
+        "消費税",
+        "累進課税",
+        "比例税",
+        "逆進性"
+      ],
+      "answerIndex": 1,
+      "explanation": "累進課税。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ07_007",
+      "unit": "social.civ.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "消費税のように、税を納める人と負担する人が異なる税は？",
+      "choices": [
+        "直接税",
+        "法人税",
+        "間接税",
+        "所得税"
+      ],
+      "answerIndex": 2,
+      "explanation": "間接税。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ07_008",
+      "unit": "social.civ.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "国の歳入の不足を補うために発行するのは？",
+      "choices": [
+        "株式",
+        "国債",
+        "社債",
+        "紙幣"
+      ],
+      "answerIndex": 1,
+      "explanation": "国債。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ07_009",
+      "unit": "social.civ.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "社会保障制度の4つの柱にあてはまらないのは？",
+      "choices": [
+        "社会保険",
+        "公衆衛生",
+        "公的扶助",
+        "国防費"
+      ],
+      "answerIndex": 3,
+      "explanation": "4つの柱（＋社会福祉）。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ07_010",
+      "unit": "social.civ.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "40歳以上の人が加入し、介護サービスを受けられる保険は？",
+      "choices": [
+        "雇用保険",
+        "労災保険",
+        "生命保険",
+        "介護保険"
+      ],
+      "answerIndex": 3,
+      "explanation": "介護保険。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ07_011",
+      "unit": "social.civ.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "不景気のとき政府が行う財政政策は？",
+      "choices": [
+        "紙幣を燃やす",
+        "公共事業をふやし、減税する",
+        "公共事業を減らし、増税する",
+        "何もしない"
+      ],
+      "answerIndex": 1,
+      "explanation": "財政政策。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ07_012",
+      "unit": "social.civ.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "生活に困っている人に最低限の生活を保障する制度は？",
+      "choices": [
+        "公衆衛生",
+        "社会保険",
+        "公的扶助（生活保護）",
+        "雇用保険"
+      ],
+      "answerIndex": 2,
+      "explanation": "公的扶助。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    }
+  ]
+}

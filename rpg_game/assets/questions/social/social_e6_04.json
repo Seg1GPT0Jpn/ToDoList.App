@@ -1,0 +1,178 @@
+{
+  "setId": "social_e6_04",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_e604_001",
+      "unit": "social.e6.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "国会議員を選ぶのは？",
+      "choices": [
+        "内閣",
+        "国民（選挙で）",
+        "裁判所",
+        "天皇"
+      ],
+      "answerIndex": 1,
+      "explanation": "選挙。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e604_002",
+      "unit": "social.e6.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "衆議院議員の任期は？",
+      "choices": [
+        "8年",
+        "6年",
+        "3年",
+        "4年（解散あり）"
+      ],
+      "answerIndex": 3,
+      "explanation": "衆議院4年、参議院6年。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e604_003",
+      "unit": "social.e6.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "参議院議員の任期は？",
+      "choices": [
+        "3年",
+        "4年",
+        "2年",
+        "6年"
+      ],
+      "answerIndex": 3,
+      "explanation": "3年ごとに半数改選。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e604_004",
+      "unit": "social.e6.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "内閣総理大臣を指名するのは？",
+      "choices": [
+        "国会",
+        "国民の直接投票",
+        "最高裁判所",
+        "天皇"
+      ],
+      "answerIndex": 0,
+      "explanation": "国会が指名、天皇が任命。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e604_005",
+      "unit": "social.e6.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "国のお金の出入りの計画は？",
+      "choices": [
+        "予算",
+        "条約",
+        "決算だけ",
+        "法律"
+      ],
+      "answerIndex": 0,
+      "explanation": "予算。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e604_006",
+      "unit": "social.e6.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "基本的人権のうち、自由に考えを発表できる権利は？",
+      "choices": [
+        "表現の自由",
+        "参政権",
+        "生存権",
+        "請求権"
+      ],
+      "answerIndex": 0,
+      "explanation": "自由権。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e604_007",
+      "unit": "social.e6.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "日本国憲法で、戦争を放棄すると定めた原則は？",
+      "choices": [
+        "基本的人権の尊重",
+        "平和主義",
+        "三権分立",
+        "国民主権"
+      ],
+      "answerIndex": 1,
+      "explanation": "平和主義。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e604_008",
+      "unit": "social.e6.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "裁判は原則として何回まで受けられる？",
+      "choices": [
+        "2回",
+        "1回",
+        "何回でも",
+        "3回"
+      ],
+      "answerIndex": 3,
+      "explanation": "三審制。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e604_009",
+      "unit": "social.e6.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "法律が憲法に違反していないか判断できるのは？",
+      "choices": [
+        "裁判所",
+        "国会",
+        "内閣",
+        "市役所"
+      ],
+      "answerIndex": 0,
+      "explanation": "違憲審査。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e604_010",
+      "unit": "social.e6.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "内閣の仕事は？",
+      "choices": [
+        "法律にもとづいて政治を行う",
+        "法律をつくる",
+        "憲法を改正する（単独で）",
+        "裁判を行う"
+      ],
+      "answerIndex": 0,
+      "explanation": "行政。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    }
+  ]
+}

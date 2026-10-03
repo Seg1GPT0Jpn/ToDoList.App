@@ -1,0 +1,212 @@
+{
+  "setId": "social_civ_06",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_civ06_001",
+      "unit": "social.civ.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "訪問販売などで一定期間内なら契約を解除できる制度は？",
+      "choices": [
+        "リコール",
+        "PL法",
+        "消費者基本法",
+        "クーリング・オフ"
+      ],
+      "answerIndex": 3,
+      "explanation": "クーリング・オフ。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ06_002",
+      "unit": "social.civ.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "製品の欠陥による被害について、製造者に責任を負わせる法律は？",
+      "choices": [
+        "製造物責任法（PL法）",
+        "消費者契約法",
+        "労働基準法",
+        "独占禁止法"
+      ],
+      "answerIndex": 0,
+      "explanation": "PL法。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ06_003",
+      "unit": "social.civ.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "需要量が供給量より多いとき、価格は？",
+      "choices": [
+        "上がる",
+        "下がる",
+        "変わらない",
+        "0になる"
+      ],
+      "answerIndex": 0,
+      "explanation": "需要と供給。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ06_004",
+      "unit": "social.civ.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "需要量と供給量が一致する価格を何という？",
+      "choices": [
+        "公共料金",
+        "均衡価格",
+        "独占価格",
+        "定価"
+      ],
+      "answerIndex": 1,
+      "explanation": "均衡価格。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ06_005",
+      "unit": "social.civ.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "電気・ガス・水道など、国や地方公共団体が決定や認可をする料金は？",
+      "choices": [
+        "均衡価格",
+        "公共料金",
+        "独占価格",
+        "市場価格"
+      ],
+      "answerIndex": 1,
+      "explanation": "公共料金。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ06_006",
+      "unit": "social.civ.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "企業の自由な競争をうながすための法律は？",
+      "choices": [
+        "消費者契約法",
+        "製造物責任法",
+        "独占禁止法",
+        "労働組合法"
+      ],
+      "answerIndex": 2,
+      "explanation": "公正取引委員会。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ06_007",
+      "unit": "social.civ.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "株式会社で、会社の利益の一部を株主に分けるものは？",
+      "choices": [
+        "給与",
+        "税金",
+        "利子",
+        "配当"
+      ],
+      "answerIndex": 3,
+      "explanation": "配当。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ06_008",
+      "unit": "social.civ.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "物価が上がり続ける現象は？",
+      "choices": [
+        "バブル崩壊",
+        "インフレーション",
+        "デフレーション",
+        "不況"
+      ],
+      "answerIndex": 1,
+      "explanation": "インフレ。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ06_009",
+      "unit": "social.civ.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "物価が下がり続ける現象は？",
+      "choices": [
+        "特需",
+        "インフレーション",
+        "好況",
+        "デフレーション"
+      ],
+      "answerIndex": 3,
+      "explanation": "デフレ。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ06_010",
+      "unit": "social.civ.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "労働時間や賃金などの最低基準を定めた法律は？",
+      "choices": [
+        "労働組合法",
+        "男女雇用機会均等法",
+        "労働関係調整法",
+        "労働基準法"
+      ],
+      "answerIndex": 3,
+      "explanation": "労働基準法。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ06_011",
+      "unit": "social.civ.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "労働三法にあてはまらないのは？",
+      "choices": [
+        "労働基準法",
+        "労働組合法",
+        "独占禁止法",
+        "労働関係調整法"
+      ],
+      "answerIndex": 2,
+      "explanation": "労働三法。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ06_012",
+      "unit": "social.civ.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "仕事と生活の調和を何という？",
+      "choices": [
+        "フレックスタイム",
+        "ワーク・ライフ・バランス",
+        "テレワーク",
+        "ワークシェアリング"
+      ],
+      "answerIndex": 1,
+      "explanation": "WLB。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    }
+  ]
+}

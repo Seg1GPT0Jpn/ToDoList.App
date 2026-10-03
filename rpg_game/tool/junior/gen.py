@@ -12,6 +12,9 @@ import lib
 from lib import World
 
 import english
+import japanese
+import science
+import social
 import sea
 import math_e
 import math_j
@@ -50,6 +53,36 @@ def worlds():
               ref='小学校 算数・中学校 数学')
     math_e.build(W)
     math_j.build(W)
+    out.append(W)
+
+    W = World('japanese', 'JapaneseCatalog', '言の葉の国', '国語', prefix='jpn',
+              hub='言の葉の広場',
+              sign='ここは言の葉の国の「言の葉の広場」。左は小1・小2、下は小3・小4、右は小5・小6、'
+                   '上は中1〜中3の道。漢字・言葉のきまり・古典・読解を、学年ごとに進もう。',
+              desc='小1〜中3の国語。ひらがな・漢字から、文法・古典・読解まで9つの道。',
+              primary='knowledge', secondary='thinking', armor='knowledge',
+              ref='小学校 国語・中学校 国語')
+    japanese.build(W)
+    out.append(W)
+
+    W = World('science', 'ScienceCatalog', '理の国', '理科', prefix='sci',
+              hub='はじまりの実験広場',
+              sign='ここは理の国の「はじまりの実験広場」。左は小3・小4、下は小5・小6、上は中1〜中3の道。'
+                   '観察し、実験し、なぜそうなるかを考えよう。',
+              desc='小3〜中3の理科。生き物・もの・エネルギー・地球の7つの道。',
+              primary='knowledge', secondary='thinking', armor='knowledge',
+              ref='小学校 理科・中学校 理科')
+    science.build(W)
+    out.append(W)
+
+    W = World('social', 'SocialCatalog', '時と地の国', '社会', prefix='soc',
+              hub='時の交差点',
+              sign='ここは時と地の国の「時の交差点」。左は小3・小4、下は小5・小6、'
+                   '上は中学の地理・歴史・公民の道。地図を読み、歴史をたどり、社会のしくみを考えよう。',
+              desc='小3〜中3の社会。くらし・地理・歴史・公民の7つの道。',
+              primary='knowledge', secondary='thinking', armor='knowledge',
+              ref='小学校 社会・中学校 社会')
+    social.build(W)
     out.append(W)
 
     # まだ問題を書いていない教科（準備中）

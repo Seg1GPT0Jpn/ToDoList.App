@@ -1,0 +1,212 @@
+{
+  "setId": "science_j1_02",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_j102_001",
+      "unit": "science.j1.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "背骨のある動物を何という？",
+      "choices": [
+        "セキツイ動物",
+        "軟体動物",
+        "無セキツイ動物",
+        "節足動物"
+      ],
+      "answerIndex": 0,
+      "explanation": "セキツイ動物。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j102_002",
+      "unit": "science.j1.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "セキツイ動物の5つのなかまにふくまれないのは？",
+      "choices": [
+        "魚類",
+        "両生類",
+        "節足類",
+        "ハチュウ類"
+      ],
+      "answerIndex": 2,
+      "explanation": "魚・両生・ハチュウ・鳥・ホニュウ。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j102_003",
+      "unit": "science.j1.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "子をうむ（胎生）のは？",
+      "choices": [
+        "魚類",
+        "鳥類",
+        "ホニュウ類",
+        "ハチュウ類"
+      ],
+      "answerIndex": 2,
+      "explanation": "胎生。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j102_004",
+      "unit": "science.j1.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "子はえらで、親は肺と皮ふで呼吸するのは？",
+      "choices": [
+        "鳥類",
+        "ハチュウ類",
+        "両生類",
+        "魚類"
+      ],
+      "answerIndex": 2,
+      "explanation": "カエル・イモリ。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j102_005",
+      "unit": "science.j1.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "からだがうろこでおおわれ、陸上にからのある卵をうむのは？",
+      "choices": [
+        "ホニュウ類",
+        "両生類",
+        "ハチュウ類",
+        "魚類"
+      ],
+      "answerIndex": 2,
+      "explanation": "トカゲ・ヘビ。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j102_006",
+      "unit": "science.j1.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "体温がまわりの温度によって変わる動物は？",
+      "choices": [
+        "恒温動物",
+        "変温動物",
+        "ホニュウ類",
+        "鳥類"
+      ],
+      "answerIndex": 1,
+      "explanation": "魚・両生・ハチュウ類。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j102_007",
+      "unit": "science.j1.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "恒温動物は？",
+      "choices": [
+        "鳥類とホニュウ類",
+        "ハチュウ類だけ",
+        "魚類と両生類",
+        "昆虫類"
+      ],
+      "answerIndex": 0,
+      "explanation": "体温が一定。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j102_008",
+      "unit": "science.j1.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "からだが外骨格でおおわれ、あしに節がある動物は？",
+      "choices": [
+        "軟体動物",
+        "ホニュウ類",
+        "セキツイ動物",
+        "節足動物"
+      ],
+      "answerIndex": 3,
+      "explanation": "昆虫類・甲殻類。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j102_009",
+      "unit": "science.j1.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "イカやアサリのなかまは？",
+      "choices": [
+        "軟体動物",
+        "セキツイ動物",
+        "両生類",
+        "節足動物"
+      ],
+      "answerIndex": 0,
+      "explanation": "外とう膜。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j102_010",
+      "unit": "science.j1.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "肉食動物の歯の特徴は？",
+      "choices": [
+        "臼歯が発達している",
+        "犬歯が発達している",
+        "歯がない",
+        "門歯だけ"
+      ],
+      "answerIndex": 1,
+      "explanation": "肉を切りさく。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j102_011",
+      "unit": "science.j1.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "草食動物の目のつき方は？",
+      "choices": [
+        "前向きで立体的に見える",
+        "後ろ向き",
+        "横向きで広い範囲を見わたせる",
+        "上向き"
+      ],
+      "answerIndex": 2,
+      "explanation": "敵を早く見つける。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j102_012",
+      "unit": "science.j1.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "クジラは何類？",
+      "choices": [
+        "ハチュウ類",
+        "両生類",
+        "ホニュウ類",
+        "魚類"
+      ],
+      "answerIndex": 2,
+      "explanation": "肺で呼吸し、子をうむ。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    }
+  ]
+}

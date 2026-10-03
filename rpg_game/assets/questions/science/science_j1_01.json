@@ -1,0 +1,212 @@
+{
+  "setId": "science_j1_01",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_j101_001",
+      "unit": "science.j1.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "花のつくりで、胚珠が子房の中にある植物は？",
+      "choices": [
+        "コケ植物",
+        "裸子植物",
+        "シダ植物",
+        "被子植物"
+      ],
+      "answerIndex": 3,
+      "explanation": "子房がある。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j101_002",
+      "unit": "science.j1.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "胚珠がむき出しの植物は？",
+      "choices": [
+        "被子植物",
+        "単子葉類",
+        "裸子植物",
+        "双子葉類"
+      ],
+      "answerIndex": 2,
+      "explanation": "マツ・イチョウ。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j101_003",
+      "unit": "science.j1.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "受粉後、子房は何になる？",
+      "choices": [
+        "種子",
+        "胚珠",
+        "果実",
+        "花粉"
+      ],
+      "answerIndex": 2,
+      "explanation": "子房 → 果実。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j101_004",
+      "unit": "science.j1.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "受粉後、胚珠は何になる？",
+      "choices": [
+        "がく",
+        "種子",
+        "柱頭",
+        "果実"
+      ],
+      "answerIndex": 1,
+      "explanation": "胚珠 → 種子。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j101_005",
+      "unit": "science.j1.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "子葉が1枚の植物のなかまは？",
+      "choices": [
+        "単子葉類",
+        "シダ植物",
+        "裸子植物",
+        "双子葉類"
+      ],
+      "answerIndex": 0,
+      "explanation": "イネ・トウモロコシ。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j101_006",
+      "unit": "science.j1.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "単子葉類の葉脈は？",
+      "choices": [
+        "放射状",
+        "葉脈がない",
+        "平行脈",
+        "網状脈"
+      ],
+      "answerIndex": 2,
+      "explanation": "平行脈。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j101_007",
+      "unit": "science.j1.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "双子葉類の根のつくりは？",
+      "choices": [
+        "ひげ根",
+        "根がない",
+        "主根と側根",
+        "仮根"
+      ],
+      "answerIndex": 2,
+      "explanation": "主根・側根。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j101_008",
+      "unit": "science.j1.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "種子をつくらず胞子でふえる植物は？",
+      "choices": [
+        "単子葉類",
+        "被子植物",
+        "裸子植物",
+        "シダ植物・コケ植物"
+      ],
+      "answerIndex": 3,
+      "explanation": "胞子。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j101_009",
+      "unit": "science.j1.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "コケ植物の特徴は？",
+      "choices": [
+        "根・茎・葉の区別がない",
+        "維管束がある",
+        "種子をつくる",
+        "花がさく"
+      ],
+      "answerIndex": 0,
+      "explanation": "仮根で体を固定。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j101_010",
+      "unit": "science.j1.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "花弁がくっついている双子葉類は？",
+      "choices": [
+        "離弁花類",
+        "単子葉類",
+        "裸子植物",
+        "合弁花類"
+      ],
+      "answerIndex": 3,
+      "explanation": "アサガオ・ツツジ。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j101_011",
+      "unit": "science.j1.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "花弁が1枚ずつ離れている双子葉類は？",
+      "choices": [
+        "シダ植物",
+        "単子葉類",
+        "離弁花類",
+        "合弁花類"
+      ],
+      "answerIndex": 2,
+      "explanation": "サクラ・アブラナ。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j101_012",
+      "unit": "science.j1.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "マツの雌花のりん片にあるのは？",
+      "choices": [
+        "子房",
+        "花粉のう",
+        "胚珠",
+        "柱頭"
+      ],
+      "answerIndex": 2,
+      "explanation": "雌花に胚珠。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    }
+  ]
+}

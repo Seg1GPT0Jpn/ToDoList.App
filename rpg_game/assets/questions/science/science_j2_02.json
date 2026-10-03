@@ -1,0 +1,212 @@
+{
+  "setId": "science_j2_02",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_j202_001",
+      "unit": "science.j2.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "水素が燃焼して水ができる化学反応式は？",
+      "choices": [
+        "2H₂ + O₂ → 2H₂O",
+        "H + O → HO",
+        "2H + O₂ → H₂O",
+        "H₂ + O₂ → H₂O"
+      ],
+      "answerIndex": 0,
+      "explanation": "原子の数をそろえる。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j202_002",
+      "unit": "science.j2.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "銅の酸化の化学反応式は？",
+      "choices": [
+        "Cu + O → CuO",
+        "2Cu + O₂ → 2CuO",
+        "Cu + O₂ → CuO₂",
+        "2Cu + O → Cu₂O"
+      ],
+      "answerIndex": 1,
+      "explanation": "酸化銅。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j202_003",
+      "unit": "science.j2.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "鉄と硫黄が反応してできる物質は？",
+      "choices": [
+        "酸化鉄",
+        "硫化鉄",
+        "塩化鉄",
+        "炭酸鉄"
+      ],
+      "answerIndex": 1,
+      "explanation": "Fe + S → FeS",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j202_004",
+      "unit": "science.j2.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "化学変化で熱を出し、まわりの温度が上がる反応は？",
+      "choices": [
+        "中和だけ",
+        "還元",
+        "発熱反応",
+        "吸熱反応"
+      ],
+      "answerIndex": 2,
+      "explanation": "カイロなど。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j202_005",
+      "unit": "science.j2.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "化学変化で熱を吸収し、まわりの温度が下がる反応は？",
+      "choices": [
+        "酸化",
+        "燃焼",
+        "吸熱反応",
+        "発熱反応"
+      ],
+      "answerIndex": 2,
+      "explanation": "冷却パック。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j202_006",
+      "unit": "science.j2.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "使い捨てカイロで利用している化学変化は？",
+      "choices": [
+        "鉄の酸化",
+        "水の分解",
+        "炭酸水素ナトリウムの分解",
+        "中和"
+      ],
+      "answerIndex": 0,
+      "explanation": "発熱。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j202_007",
+      "unit": "science.j2.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "酸化銅を炭素で還元すると、炭素は何になる？",
+      "choices": [
+        "二酸化炭素",
+        "酸素",
+        "銅",
+        "一酸化炭素だけ"
+      ],
+      "answerIndex": 0,
+      "explanation": "炭素は酸化される。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j202_008",
+      "unit": "science.j2.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "物質が熱や光を出しながら激しく酸化することを何という？",
+      "choices": [
+        "還元",
+        "分解",
+        "燃焼",
+        "さび"
+      ],
+      "answerIndex": 2,
+      "explanation": "燃焼。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j202_009",
+      "unit": "science.j2.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "密閉容器で石灰石と塩酸を反応させたとき、全体の質量は？",
+      "choices": [
+        "減る",
+        "増える",
+        "0になる",
+        "変わらない"
+      ],
+      "answerIndex": 3,
+      "explanation": "気体がにげない。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j202_010",
+      "unit": "science.j2.s1.a02",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "ふたを開けた容器で石灰石と塩酸を反応させると質量が減る理由は？",
+      "choices": [
+        "原子が消えるから",
+        "塩酸が蒸発するから（だけ）",
+        "発生した二酸化炭素が空気中に出ていくから",
+        "石灰石が軽くなるから（だけ）"
+      ],
+      "answerIndex": 2,
+      "explanation": "気体。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j202_011",
+      "unit": "science.j2.s1.a02",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "マグネシウム3gが酸素2gと結びつく。マグネシウム6gで酸化マグネシウムは何g？",
+      "choices": [
+        "12g",
+        "8g",
+        "10g",
+        "5g"
+      ],
+      "answerIndex": 2,
+      "explanation": "6 + 4",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j202_012",
+      "unit": "science.j2.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "塩化銅水溶液を電気分解すると、陽極に発生するのは？",
+      "choices": [
+        "水素",
+        "塩素",
+        "銅",
+        "酸素"
+      ],
+      "answerIndex": 1,
+      "explanation": "陰極に銅、陽極に塩素。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    }
+  ]
+}

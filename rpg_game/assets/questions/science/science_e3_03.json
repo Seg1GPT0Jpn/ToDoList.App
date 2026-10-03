@@ -1,0 +1,212 @@
+{
+  "setId": "science_e3_03",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_e303_001",
+      "unit": "science.e3.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "かげはどちらにできる？",
+      "choices": [
+        "いつも北がわだけ",
+        "太陽と同じがわ",
+        "太陽と反対がわ",
+        "いつも東がわ"
+      ],
+      "answerIndex": 2,
+      "explanation": "日光をさえぎると反対がわにかげ。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e303_002",
+      "unit": "science.e3.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "太陽は、どの方角からのぼる？",
+      "choices": [
+        "北",
+        "東",
+        "南",
+        "西"
+      ],
+      "answerIndex": 1,
+      "explanation": "東 → 南 → 西。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e303_003",
+      "unit": "science.e3.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "太陽がしずむ方角は？",
+      "choices": [
+        "北",
+        "西",
+        "南",
+        "東"
+      ],
+      "answerIndex": 1,
+      "explanation": "西にしずむ。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e303_004",
+      "unit": "science.e3.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "太陽がいちばん高くなるとき、どの方角にある？",
+      "choices": [
+        "東",
+        "西",
+        "南",
+        "北"
+      ],
+      "answerIndex": 2,
+      "explanation": "正午ごろ南。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e303_005",
+      "unit": "science.e3.s1.a03",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "朝、かげはどの方角にできる？",
+      "choices": [
+        "東",
+        "北",
+        "南",
+        "西"
+      ],
+      "answerIndex": 3,
+      "explanation": "太陽が東にあるので、かげは西。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e303_006",
+      "unit": "science.e3.s1.a03",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "太陽の動きにつれて、かげの向きはどうかわる？",
+      "choices": [
+        "西 → 北 → 東",
+        "東 → 北 → 西",
+        "かわらない",
+        "北 → 南 → 東"
+      ],
+      "answerIndex": 0,
+      "explanation": "太陽と反対に動く。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e303_007",
+      "unit": "science.e3.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "方位を調べる道具は？",
+      "choices": [
+        "温度計",
+        "てんびん",
+        "方位じしん",
+        "ものさし"
+      ],
+      "answerIndex": 2,
+      "explanation": "方位じしん。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e303_008",
+      "unit": "science.e3.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "日なたの地面と日かげの地面、あたたかいのは？",
+      "choices": [
+        "わからない",
+        "同じ",
+        "日なた",
+        "日かげ"
+      ],
+      "answerIndex": 2,
+      "explanation": "日光であたためられる。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e303_009",
+      "unit": "science.e3.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "日かげの地面のようすは？",
+      "choices": [
+        "つめたくて、かわいている",
+        "つめたくて、しめっている",
+        "あつくて、かわいている",
+        "あたたかくて、かわいている"
+      ],
+      "answerIndex": 1,
+      "explanation": "日光があたらない。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e303_010",
+      "unit": "science.e3.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "地面の温度をはかるときの温度計の使い方で正しいのは？",
+      "choices": [
+        "温度計を日光に直接あてる",
+        "温度計をふりながらはかる",
+        "温度計に日光が直接あたらないようにおおう",
+        "温度計を手でにぎる"
+      ],
+      "answerIndex": 2,
+      "explanation": "おおいをする。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e303_011",
+      "unit": "science.e3.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "温度計の目もりの読み方で正しいのは？",
+      "choices": [
+        "液の先を真横から読む",
+        "ななめから読む",
+        "上から見下ろして読む",
+        "下から見上げて読む"
+      ],
+      "answerIndex": 0,
+      "explanation": "真横から。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e303_012",
+      "unit": "science.e3.s1.a03",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "午前10時と正午で、かげの長さはどうちがう？",
+      "choices": [
+        "かげはできない",
+        "同じ",
+        "正午のほうが短い",
+        "正午のほうが長い"
+      ],
+      "answerIndex": 2,
+      "explanation": "太陽が高いとかげは短い。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    }
+  ]
+}

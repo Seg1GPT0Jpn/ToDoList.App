@@ -1,0 +1,212 @@
+{
+  "setId": "science_e4_02",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_e402_001",
+      "unit": "science.e4.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "晴れの日の1日の気温の変化は？",
+      "choices": [
+        "大きい",
+        "夜がいちばん高い",
+        "変化しない",
+        "小さい"
+      ],
+      "answerIndex": 0,
+      "explanation": "晴れの日は変化が大きい。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e402_002",
+      "unit": "science.e4.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "雨の日の1日の気温の変化は？",
+      "choices": [
+        "グラフにできない",
+        "大きい",
+        "小さい",
+        "朝がいちばん高い"
+      ],
+      "answerIndex": 2,
+      "explanation": "雲が日光をさえぎる。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e402_003",
+      "unit": "science.e4.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "水が水じょう気になることを何という？",
+      "choices": [
+        "ふっとう（だけ）",
+        "ろ過",
+        "じょう発",
+        "ぎょう結"
+      ],
+      "answerIndex": 2,
+      "explanation": "じょう発。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e402_004",
+      "unit": "science.e4.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "水じょう気が冷えて水になることを何という？",
+      "choices": [
+        "ぎょう結（結ろ）",
+        "ようかい",
+        "ふっとう",
+        "じょう発"
+      ],
+      "answerIndex": 0,
+      "explanation": "水てきがつく。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e402_005",
+      "unit": "science.e4.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "冷たい飲み物を入れたコップの外側につく水の正体は？",
+      "choices": [
+        "雨",
+        "空気中の水じょう気が冷えたもの",
+        "こおりがとけたもの",
+        "コップの中の水がしみ出たもの"
+      ],
+      "answerIndex": 1,
+      "explanation": "ぎょう結。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e402_006",
+      "unit": "science.e4.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "せんたく物がかわくのは、水が何になったから？",
+      "choices": [
+        "水じょう気",
+        "けむり",
+        "雨",
+        "こおり"
+      ],
+      "answerIndex": 0,
+      "explanation": "じょう発。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e402_007",
+      "unit": "science.e4.s1.a02",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "水たまりの水がなくなる理由は？",
+      "choices": [
+        "消えてなくなった",
+        "地面がすべてすいこんだだけ",
+        "空にすいこまれた",
+        "じょう発して空気中に出ていった"
+      ],
+      "answerIndex": 3,
+      "explanation": "じょう発（地面へもしみこむ）。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e402_008",
+      "unit": "science.e4.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "雨水は、高いところと低いところ、どちらに流れる？",
+      "choices": [
+        "どちらにも流れない",
+        "高いところ",
+        "低いところ",
+        "平らなところだけ"
+      ],
+      "answerIndex": 2,
+      "explanation": "低いほうへ。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e402_009",
+      "unit": "science.e4.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "水がしみこみやすいのは？",
+      "choices": [
+        "ガラス",
+        "つぶの大きい砂",
+        "コンクリート",
+        "つぶの小さいどろ"
+      ],
+      "answerIndex": 1,
+      "explanation": "すきまが大きい。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e402_010",
+      "unit": "science.e4.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "晴れとくもりのちがいは？",
+      "choices": [
+        "空全体の雲の量",
+        "気温だけ",
+        "時こく",
+        "風の向き"
+      ],
+      "answerIndex": 0,
+      "explanation": "雲の量0〜8は晴れ、9〜10はくもり。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e402_011",
+      "unit": "science.e4.s1.a02",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "ほうっておいた水そうの水が減ったのはなぜ？",
+      "choices": [
+        "魚が飲んだから",
+        "水がこおったから",
+        "ガラスが水をすったから",
+        "水がじょう発したから"
+      ],
+      "answerIndex": 3,
+      "explanation": "じょう発。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e402_012",
+      "unit": "science.e4.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "折れ線グラフが向いているのは？",
+      "choices": [
+        "地図をかく",
+        "クラスの人数をくらべる",
+        "気温の変化を表す",
+        "好きな食べ物の割合"
+      ],
+      "answerIndex": 2,
+      "explanation": "変化を表す。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    }
+  ]
+}

@@ -1,0 +1,217 @@
+{
+  "setId": "japanese_e3_07",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "jpn_e307_001",
+      "unit": "japanese.e3.s2.a07",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "アリはえさを見つけると何をする？",
+      "sentence": "アリは、えさを見つけると、においのある道しるべをつけながら巣にもどります。仲間のアリは、そのにおいをたどってえさの場所へ向かいます。えさがなくなると、道しるべもつけられなくなるので、においは消えていきます。",
+      "choices": [
+        "えさをその場で全部食べる",
+        "巣を新しく作る",
+        "においのある道しるべをつけながら巣にもどる",
+        "仲間を呼びに鳴く"
+      ],
+      "answerIndex": 2,
+      "explanation": "最初の文。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e307_002",
+      "unit": "japanese.e3.s2.a07",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "仲間のアリは何をたどる？",
+      "sentence": "アリは、えさを見つけると、においのある道しるべをつけながら巣にもどります。仲間のアリは、そのにおいをたどってえさの場所へ向かいます。えさがなくなると、道しるべもつけられなくなるので、においは消えていきます。",
+      "choices": [
+        "音",
+        "足あと",
+        "光",
+        "におい"
+      ],
+      "answerIndex": 3,
+      "explanation": "「においをたどって」。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e307_003",
+      "unit": "japanese.e3.s2.a07",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "えさがなくなると、においはどうなる？",
+      "sentence": "アリは、えさを見つけると、においのある道しるべをつけながら巣にもどります。仲間のアリは、そのにおいをたどってえさの場所へ向かいます。えさがなくなると、道しるべもつけられなくなるので、においは消えていきます。",
+      "choices": [
+        "消えていく",
+        "別の場所に移る",
+        "強くなる",
+        "変わらない"
+      ],
+      "answerIndex": 0,
+      "explanation": "最後の文。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e307_004",
+      "unit": "japanese.e3.s2.a07",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "においが消える理由は？",
+      "sentence": "アリは、えさを見つけると、においのある道しるべをつけながら巣にもどります。仲間のアリは、そのにおいをたどってえさの場所へ向かいます。えさがなくなると、道しるべもつけられなくなるので、においは消えていきます。",
+      "choices": [
+        "アリが消すから",
+        "雨がふるから",
+        "道しるべがつけられなくなるから",
+        "風がふくから"
+      ],
+      "answerIndex": 2,
+      "explanation": "「ので」の前が理由。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e307_005",
+      "unit": "japanese.e3.s2.a07",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "この文章の話題は？",
+      "sentence": "アリは、えさを見つけると、においのある道しるべをつけながら巣にもどります。仲間のアリは、そのにおいをたどってえさの場所へ向かいます。えさがなくなると、道しるべもつけられなくなるので、においは消えていきます。",
+      "choices": [
+        "アリの体のつくり",
+        "アリの巣の大きさ",
+        "アリが行列を作るしくみ",
+        "アリの食べ物の種類"
+      ],
+      "answerIndex": 2,
+      "explanation": "道しるべとにおい。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e307_006",
+      "unit": "japanese.e3.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "理由を表すつなぎ言葉は？",
+      "choices": [
+        "しかし",
+        "たとえば",
+        "なぜなら",
+        "そして"
+      ],
+      "answerIndex": 2,
+      "explanation": "なぜなら〜からだ。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e307_007",
+      "unit": "japanese.e3.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "段落の初めは、ふつうどう書く？",
+      "choices": [
+        "1字下げて書く",
+        "色を変えて書く",
+        "大きな字で書く",
+        "1行あける"
+      ],
+      "answerIndex": 0,
+      "explanation": "1字下げる。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e307_008",
+      "unit": "japanese.e3.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "文章の「まとめ」の段落は、ふつうどこにある？",
+      "choices": [
+        "まん中だけ",
+        "終わり",
+        "初め",
+        "どこにもない"
+      ],
+      "answerIndex": 1,
+      "explanation": "初め・中・終わり。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e307_009",
+      "unit": "japanese.e3.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「例えば」のあとに書かれるのは？",
+      "choices": [
+        "反対の意見",
+        "理由だけ",
+        "具体的な例",
+        "まとめ"
+      ],
+      "answerIndex": 2,
+      "explanation": "例を挙げる。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e307_010",
+      "unit": "japanese.e3.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「このように」のあとに書かれることが多いのは？",
+      "choices": [
+        "例",
+        "まとめ",
+        "反対のこと",
+        "問い"
+      ],
+      "answerIndex": 1,
+      "explanation": "まとめの言葉。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e307_011",
+      "unit": "japanese.e3.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "説明文で筆者がいちばん伝えたいことを何という？",
+      "choices": [
+        "題名",
+        "段落",
+        "要点（中心）",
+        "会話"
+      ],
+      "answerIndex": 2,
+      "explanation": "中心をつかむ。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e307_012",
+      "unit": "japanese.e3.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「問い」の文の終わりによくある言葉は？",
+      "choices": [
+        "〜です。",
+        "〜でしょうか。",
+        "〜ました。",
+        "〜ください。"
+      ],
+      "answerIndex": 1,
+      "explanation": "問いかけ。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    }
+  ]
+}

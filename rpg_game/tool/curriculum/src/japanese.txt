@@ -1,0 +1,173 @@
+# 国語の学習体系（tool/junior/gen.py が生成。手で直さない）
+@subject japanese|国語|言の葉の国|ref=小学校 国語・中学校 国語|source=文部科学省 小学校・中学校学習指導要領（平成29年告示）|url=https://www.mext.go.jp/a_menu/shotou/new-cs/1384661.htm
+course e1|小1|grade=小1|game=小1の道|desc=ひらがな・カタカナ・かん字・文のきまり・おはなし
+  field s1|ひらがなと かん字
+    unit a01|ひらがな
+      sub main|ひらがな
+    unit a02|カタカナ|pre=japanese.e1.s1.a01
+      sub main|カタカナ
+    unit a03|かん字の よみ（1年）|pre=japanese.e1.s1.a02
+      sub main|かん字の よみ（1年）
+    unit a04|ひらがなと かん字の まとめ
+      sub main|ひらがなと かん字の まとめ
+  field s2|ことばと おはなし
+    unit a05|かん字の かき（1年）|pre=japanese.e1.s1.a03
+      sub main|かん字の かき（1年）
+    unit a06|は・を・へと 文の きまり|pre=japanese.e1.s2.a05
+      sub main|は・を・へと 文の きまり
+    unit a07|おはなしを よむ|pre=japanese.e1.s2.a06
+      sub main|おはなしを よむ
+    unit a08|1年生の まとめ
+      sub main|1年生の まとめ
+course e2|小2|grade=小2|game=小2の道|desc=かん字・なかまのことば・主語と述語・せつめい文・物語
+  field s1|漢字と ことば
+    unit a01|漢字の 読み（2年）
+      sub main|漢字の 読み（2年）
+    unit a02|漢字の 書き（2年）|pre=japanese.e2.s1.a01
+      sub main|漢字の 書き（2年）
+    unit a03|なかまの ことば・反対の ことば|pre=japanese.e2.s1.a02
+      sub main|なかまの ことば・反対の ことば
+    unit a04|漢字と ことばの まとめ
+      sub main|漢字と ことばの まとめ
+  field s2|文を 読む
+    unit a05|主語と 述語・かたかなの ことば|pre=japanese.e2.s1.a03
+      sub main|主語と 述語・かたかなの ことば
+    unit a06|せつめい文を 読む|pre=japanese.e2.s2.a05
+      sub main|せつめい文を 読む
+    unit a07|物語を 読む|pre=japanese.e2.s2.a06
+      sub main|物語を 読む
+    unit a08|2年生の まとめ
+      sub main|2年生の まとめ
+course e3|小3|grade=小3|game=小3の道|desc=漢字・国語辞典・こそあど・ことわざ・ローマ字・読解
+  field s1|漢字と 辞典
+    unit a01|漢字の読み（3年）
+      sub main|漢字の読み（3年）
+    unit a02|漢字の書き（3年）|pre=japanese.e3.s1.a01
+      sub main|漢字の書き（3年）
+    unit a03|国語辞典と こそあど言葉|pre=japanese.e3.s1.a02
+      sub main|国語辞典と こそあど言葉
+    unit a04|漢字と辞典の まとめ
+      sub main|漢字と辞典の まとめ
+  field s2|ことわざ・ローマ字・読解
+    unit a05|ことわざ|pre=japanese.e3.s1.a03
+      sub main|ことわざ
+    unit a06|ローマ字|pre=japanese.e3.s2.a05
+      sub main|ローマ字
+    unit a07|説明文を読む（3年）|pre=japanese.e3.s2.a06
+      sub main|説明文を読む（3年）
+    unit a08|3年生の まとめ
+      sub main|3年生の まとめ
+course e4|小4|grade=小4|game=小4の道|desc=漢字・部首・つなぎ言葉・慣用句・故事成語・読解
+  field s1|漢字と 部首
+    unit a01|漢字の読み（4年）
+      sub main|漢字の読み（4年）
+    unit a02|漢字の書き（4年）|pre=japanese.e4.s1.a01
+      sub main|漢字の書き（4年）
+    unit a03|部首|pre=japanese.e4.s1.a02
+      sub main|部首
+    unit a04|漢字と部首の まとめ
+      sub main|漢字と部首の まとめ
+  field s2|言葉のきまりと 読解
+    unit a05|つなぎ言葉と 修飾語|pre=japanese.e4.s1.a03
+      sub main|つなぎ言葉と 修飾語
+    unit a06|慣用句と 故事成語|pre=japanese.e4.s2.a05
+      sub main|慣用句と 故事成語
+    unit a07|説明文を読む（4年）|pre=japanese.e4.s2.a06
+      sub main|説明文を読む（4年）
+    unit a08|4年生の まとめ
+      sub main|4年生の まとめ
+course e5|小5|grade=小5|game=小5の道|desc=漢字・敬語・和語漢語外来語・熟語・古文・読解
+  field s1|漢字と 敬語
+    unit a01|漢字の読み（5年）
+      sub main|漢字の読み（5年）
+    unit a02|漢字の書き（5年）|pre=japanese.e5.s1.a01
+      sub main|漢字の書き（5年）
+    unit a03|敬語|pre=japanese.e5.s1.a02
+      sub main|敬語
+    unit a04|漢字と敬語の まとめ
+      sub main|漢字と敬語の まとめ
+  field s2|言葉の由来と 古典
+    unit a05|和語・漢語・外来語と 熟語の組み立て|pre=japanese.e5.s1.a03
+      sub main|和語・漢語・外来語と 熟語の組み立て
+    unit a06|古文に親しむ|pre=japanese.e5.s2.a05
+      sub main|古文に親しむ
+    unit a07|説明文を読む（5年）|pre=japanese.e5.s2.a06
+      sub main|説明文を読む（5年）
+    unit a08|5年生の まとめ
+      sub main|5年生の まとめ
+course e6|小6|grade=小6|game=小6の道|desc=漢字・同音異義語・文の組み立て・古典・読解
+  field s1|漢字と 熟語
+    unit a01|漢字の読み（6年）
+      sub main|漢字の読み（6年）
+    unit a02|漢字の書き（6年）|pre=japanese.e6.s1.a01
+      sub main|漢字の書き（6年）
+    unit a03|同音異義語・同訓異字|pre=japanese.e6.s1.a02
+      sub main|同音異義語・同訓異字
+    unit a04|漢字と熟語の まとめ
+      sub main|漢字と熟語の まとめ
+  field s2|文の組み立てと 古典
+    unit a05|文の組み立て|pre=japanese.e6.s1.a03
+      sub main|文の組み立て
+    unit a06|古典・短歌と俳句|pre=japanese.e6.s2.a05
+      sub main|古典・短歌と俳句
+    unit a07|物語を読む（6年）|pre=japanese.e6.s2.a06
+      sub main|物語を読む（6年）
+    unit a08|小学校国語の まとめ
+      sub main|小学校国語の まとめ
+course j1|中1|grade=中1|game=中1の道|desc=漢字・文法（文節と品詞）・古文の基礎・故事成語・説明的文章
+  field s1|漢字と 文法
+    unit a01|漢字の読み（中1）
+      sub main|漢字の読み（中1）
+    unit a02|漢字の書き（中1）|pre=japanese.j1.s1.a01
+      sub main|漢字の書き（中1）
+    unit a03|文法：文節・単語・品詞|pre=japanese.j1.s1.a02
+      sub main|文法：文節・単語・品詞
+    unit a04|漢字と文法の まとめ
+      sub main|漢字と文法の まとめ
+  field s2|古典と 説明的文章
+    unit a05|古文の基礎：竹取物語|pre=japanese.j1.s1.a03
+      sub main|古文の基礎：竹取物語
+    unit a06|故事成語と 漢文の読み方|pre=japanese.j1.s2.a05
+      sub main|故事成語と 漢文の読み方
+    unit a07|説明的文章を読む（中1）|pre=japanese.j1.s2.a06
+      sub main|説明的文章を読む（中1）
+    unit a08|中1の まとめ
+      sub main|中1の まとめ
+course j2|中2|grade=中2|game=中2の道|desc=漢字・用言の活用・枕草子・徒然草・平家物語・漢詩
+  field s1|漢字と 用言の活用
+    unit a01|漢字の読み（中2）
+      sub main|漢字の読み（中2）
+    unit a02|漢字の書き（中2）|pre=japanese.j2.s1.a01
+      sub main|漢字の書き（中2）
+    unit a03|文法：用言の活用|pre=japanese.j2.s1.a02
+      sub main|文法：用言の活用
+    unit a04|漢字と活用の まとめ
+      sub main|漢字と活用の まとめ
+  field s2|古典と 文学的文章
+    unit a05|枕草子・徒然草・平家物語|pre=japanese.j2.s1.a03
+      sub main|枕草子・徒然草・平家物語
+    unit a06|漢詩|pre=japanese.j2.s2.a05
+      sub main|漢詩
+    unit a07|文学的文章を読む（中2）|pre=japanese.j2.s2.a06
+      sub main|文学的文章を読む（中2）
+    unit a08|中2の まとめ
+      sub main|中2の まとめ
+course j3|中3|grade=中3|game=中3の道|desc=漢字・助詞と助動詞・敬語・おくのほそ道・和歌・論語
+  field s1|漢字と 文法・敬語
+    unit a01|漢字の読み（中3）
+      sub main|漢字の読み（中3）
+    unit a02|漢字の書き（中3）|pre=japanese.j3.s1.a01
+      sub main|漢字の書き（中3）
+    unit a03|文法：助詞・助動詞と敬語|pre=japanese.j3.s1.a02
+      sub main|文法：助詞・助動詞と敬語
+    unit a04|文法と敬語の まとめ
+      sub main|文法と敬語の まとめ
+  field s2|古典と 論理的な文章
+    unit a05|おくのほそ道と和歌|pre=japanese.j3.s1.a03
+      sub main|おくのほそ道と和歌
+    unit a06|論語|pre=japanese.j3.s2.a05
+      sub main|論語
+    unit a07|論理的な文章を読む（中3）|pre=japanese.j3.s2.a06
+      sub main|論理的な文章を読む（中3）
+    unit a08|中学国語の まとめ
+      sub main|中学国語の まとめ

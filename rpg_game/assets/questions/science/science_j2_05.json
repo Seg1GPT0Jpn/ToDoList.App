@@ -1,0 +1,212 @@
+{
+  "setId": "science_j2_05",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_j205_001",
+      "unit": "science.j2.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "電流の単位は？",
+      "choices": [
+        "A（アンペア）",
+        "V（ボルト）",
+        "Ω（オーム）",
+        "W（ワット）"
+      ],
+      "answerIndex": 0,
+      "explanation": "A。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j205_002",
+      "unit": "science.j2.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "電圧の単位は？",
+      "choices": [
+        "J",
+        "A",
+        "Ω",
+        "V（ボルト）"
+      ],
+      "answerIndex": 3,
+      "explanation": "V。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j205_003",
+      "unit": "science.j2.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "抵抗の単位は？",
+      "choices": [
+        "Ω（オーム）",
+        "V",
+        "A",
+        "W"
+      ],
+      "answerIndex": 0,
+      "explanation": "Ω。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j205_004",
+      "unit": "science.j2.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "電流と電圧と抵抗の関係を表す法則は？",
+      "choices": [
+        "ジュールの法則",
+        "フックの法則",
+        "オームの法則",
+        "質量保存の法則"
+      ],
+      "answerIndex": 2,
+      "explanation": "V ＝ RI。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j205_005",
+      "unit": "science.j2.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "抵抗10Ωに電圧5Vを加えると流れる電流は？",
+      "choices": [
+        "50A",
+        "15A",
+        "2A",
+        "0.5A"
+      ],
+      "answerIndex": 3,
+      "explanation": "I ＝ V/R",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j205_006",
+      "unit": "science.j2.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "抵抗20Ωに0.3Aの電流が流れるとき、電圧は？",
+      "choices": [
+        "6V",
+        "60V",
+        "20.3V",
+        "0.015V"
+      ],
+      "answerIndex": 0,
+      "explanation": "V ＝ RI",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j205_007",
+      "unit": "science.j2.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "10Ωと20Ωを直列につなぐと全体の抵抗は？",
+      "choices": [
+        "200Ω",
+        "約6.7Ω",
+        "30Ω",
+        "10Ω"
+      ],
+      "answerIndex": 2,
+      "explanation": "和。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j205_008",
+      "unit": "science.j2.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "6Ωと3Ωを並列につなぐと全体の抵抗は？",
+      "choices": [
+        "4.5Ω",
+        "18Ω",
+        "9Ω",
+        "2Ω"
+      ],
+      "answerIndex": 3,
+      "explanation": "1/R ＝ 1/6 + 1/3",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j205_009",
+      "unit": "science.j2.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "直列回路で、各部分を流れる電流は？",
+      "choices": [
+        "部分によってちがう",
+        "抵抗が大きいほど大きい",
+        "どこも同じ",
+        "0になる"
+      ],
+      "answerIndex": 2,
+      "explanation": "直列。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j205_010",
+      "unit": "science.j2.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "並列回路で、各部分にかかる電圧は？",
+      "choices": [
+        "抵抗が大きいほど大きい",
+        "どこも同じ（電源の電圧に等しい）",
+        "0になる",
+        "部分によって必ずちがう"
+      ],
+      "answerIndex": 1,
+      "explanation": "並列。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j205_011",
+      "unit": "science.j2.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "100Vで1000Wの電気ポットに流れる電流は？",
+      "choices": [
+        "0.1A",
+        "1A",
+        "100A",
+        "10A"
+      ],
+      "answerIndex": 3,
+      "explanation": "P ＝ VI",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j205_012",
+      "unit": "science.j2.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "電力量の単位として使われるのは？",
+      "choices": [
+        "J または Wh",
+        "A",
+        "Ω",
+        "V"
+      ],
+      "answerIndex": 0,
+      "explanation": "電力量 ＝ 電力 × 時間。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    }
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "setId": "science_e3_05",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_e305_001",
+      "unit": "science.e3.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "風が強いほど、ほを立てた車の進むきょりは？",
+      "choices": [
+        "かわらない",
+        "短くなる",
+        "止まる",
+        "長くなる"
+      ],
+      "answerIndex": 3,
+      "explanation": "風の力が大きい。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e305_002",
+      "unit": "science.e3.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ゴムを長くのばすほど、ゴムで動く車の進むきょりは？",
+      "choices": [
+        "短くなる",
+        "長くなる",
+        "後ろに進む",
+        "かわらない"
+      ],
+      "answerIndex": 1,
+      "explanation": "ゴムの力が大きくなる。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e305_003",
+      "unit": "science.e3.s2.a05",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "車をもっと遠くまで走らせるには？",
+      "choices": [
+        "ゴムを長くのばす",
+        "ゴムを切る",
+        "ゴムを短くする",
+        "車を重くする"
+      ],
+      "answerIndex": 0,
+      "explanation": "力を大きく。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e305_004",
+      "unit": "science.e3.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ゴムを2本にすると、車の進むきょりは？",
+      "choices": [
+        "短くなる",
+        "かわらない",
+        "進まない",
+        "長くなる"
+      ],
+      "answerIndex": 3,
+      "explanation": "力が大きくなる。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e305_005",
+      "unit": "science.e3.s2.a05",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "実験で、くらべる条件以外はどうする？",
+      "choices": [
+        "てきとうにする",
+        "同じにする",
+        "記録しない",
+        "すべて変える"
+      ],
+      "answerIndex": 1,
+      "explanation": "条件をそろえる。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e305_006",
+      "unit": "science.e3.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "送風機の「弱」と「強」で、車がより遠くまで進むのは？",
+      "choices": [
+        "どちらも進まない",
+        "弱",
+        "強",
+        "同じ"
+      ],
+      "answerIndex": 2,
+      "explanation": "風が強い。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e305_007",
+      "unit": "science.e3.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ゴムの力を使っているものは？",
+      "choices": [
+        "パチンコ（ゴムでっぽう）",
+        "たこ",
+        "ふうりん",
+        "うちわ"
+      ],
+      "answerIndex": 0,
+      "explanation": "ゴムがもとにもどろうとする力。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e305_008",
+      "unit": "science.e3.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "風の力を使っているものは？",
+      "choices": [
+        "じしゃく",
+        "ばね",
+        "風車",
+        "ゴムでっぽう"
+      ],
+      "answerIndex": 2,
+      "explanation": "風で回る。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e305_009",
+      "unit": "science.e3.s2.a05",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "けっかを記録するときに大切なのは？",
+      "choices": [
+        "何回かやって、数字で書く",
+        "思ったことだけ書く",
+        "覚えておくだけ",
+        "1回だけやる"
+      ],
+      "answerIndex": 0,
+      "explanation": "くり返して記録。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e305_010",
+      "unit": "science.e3.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ゴムをねじったときの力で動くおもちゃは？",
+      "choices": [
+        "ビー玉",
+        "プロペラ飛行機",
+        "ふうせん",
+        "たこ"
+      ],
+      "answerIndex": 1,
+      "explanation": "ねじれたゴム。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e305_011",
+      "unit": "science.e3.s2.a05",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "風を受ける「ほ」を大きくすると？",
+      "choices": [
+        "後ろに進む",
+        "風の力をたくさん受けて遠くまで進む",
+        "かわらない",
+        "進まなくなる"
+      ],
+      "answerIndex": 1,
+      "explanation": "受ける力が大きい。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e305_012",
+      "unit": "science.e3.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ゴムを引っぱると、手ごたえはどうなる？",
+      "choices": [
+        "なくなる",
+        "かわらない",
+        "小さくなる",
+        "長くのばすほど大きくなる"
+      ],
+      "answerIndex": 3,
+      "explanation": "ゴムの力。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    }
+  ]
+}

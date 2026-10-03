@@ -1,0 +1,212 @@
+{
+  "setId": "science_j3_03",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_j303_001",
+      "unit": "science.j3.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "自分で有機物をつくる生物は？",
+      "choices": [
+        "生産者",
+        "分解者",
+        "消費者",
+        "捕食者だけ"
+      ],
+      "answerIndex": 0,
+      "explanation": "植物。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j303_002",
+      "unit": "science.j3.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "生物の死がいやふんを分解する生物は？",
+      "choices": [
+        "肉食動物",
+        "消費者",
+        "生産者",
+        "分解者"
+      ],
+      "answerIndex": 3,
+      "explanation": "菌類・細菌類。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j303_003",
+      "unit": "science.j3.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ふつう、生態系で数量がいちばん多いのは？",
+      "choices": [
+        "肉食動物",
+        "生産者（植物）",
+        "草食動物",
+        "分解者だけ"
+      ],
+      "answerIndex": 1,
+      "explanation": "ピラミッドの底辺。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j303_004",
+      "unit": "science.j3.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "菌類にふくまれるのは？",
+      "choices": [
+        "ミミズ",
+        "カビやキノコ",
+        "ミジンコ",
+        "乳酸菌"
+      ],
+      "answerIndex": 1,
+      "explanation": "菌類。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j303_005",
+      "unit": "science.j3.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "食物連鎖の網の目のようなつながりは？",
+      "choices": [
+        "生態系ピラミッド",
+        "炭素循環",
+        "食物網",
+        "食物連鎖"
+      ],
+      "answerIndex": 2,
+      "explanation": "食物網。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j303_006",
+      "unit": "science.j3.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "地球温暖化の原因と考えられる温室効果ガスは？",
+      "choices": [
+        "アルゴン",
+        "窒素",
+        "酸素",
+        "二酸化炭素"
+      ],
+      "answerIndex": 3,
+      "explanation": "温室効果。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j303_007",
+      "unit": "science.j3.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "石油・石炭・天然ガスをまとめて何という？",
+      "choices": [
+        "核燃料",
+        "化石燃料",
+        "バイオマス",
+        "再生可能エネルギー"
+      ],
+      "answerIndex": 1,
+      "explanation": "化石燃料。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j303_008",
+      "unit": "science.j3.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "再生可能エネルギーはどれ？",
+      "choices": [
+        "石油",
+        "天然ガス",
+        "石炭",
+        "太陽光"
+      ],
+      "answerIndex": 3,
+      "explanation": "太陽光・風力・地熱など。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j303_009",
+      "unit": "science.j3.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "もともとその地域にいなかった生物が人によって持ちこまれたものは？",
+      "choices": [
+        "絶滅危惧種",
+        "外来生物",
+        "天然記念物",
+        "在来種"
+      ],
+      "answerIndex": 1,
+      "explanation": "外来生物。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j303_010",
+      "unit": "science.j3.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "プラスチックが細かくなって海などを汚染しているものは？",
+      "choices": [
+        "ダイオキシンだけ",
+        "酸性雨",
+        "マイクロプラスチック",
+        "オゾン"
+      ],
+      "answerIndex": 2,
+      "explanation": "海洋汚染。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j303_011",
+      "unit": "science.j3.s1.a03",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "持続可能な社会のために大切なことは？",
+      "choices": [
+        "ごみを海にすてる",
+        "資源を循環させ、環境への影響を小さくする",
+        "資源をできるだけ多く使う",
+        "森林を切り続ける"
+      ],
+      "answerIndex": 1,
+      "explanation": "持続可能性。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j303_012",
+      "unit": "science.j3.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "炭素は生物と大気の間をどのように循環する？",
+      "choices": [
+        "呼吸で取りこまれる",
+        "循環しない",
+        "光合成で取りこまれ、呼吸や分解で放出される",
+        "光合成で放出される"
+      ],
+      "answerIndex": 2,
+      "explanation": "炭素の循環。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    }
+  ]
+}

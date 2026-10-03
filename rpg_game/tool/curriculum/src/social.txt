@@ -1,0 +1,145 @@
+# 社会の学習体系（tool/junior/gen.py が生成。手で直さない）
+@subject social|社会|時と地の国|ref=小学校 社会・中学校 社会|source=文部科学省 小学校・中学校学習指導要領（平成29年告示）|url=https://www.mext.go.jp/a_menu/shotou/new-cs/1384661.htm
+course e3|小3|grade=小3|game=小3の道|desc=わたしたちのまち・地図記号・店ではたらく人・工場・火事や事故・昔のくらし
+  field s1|わたしたちのまち
+    unit a01|地図と方位
+      sub main|地図と方位
+    unit a02|店ではたらく人びと|pre=social.e3.s1.a01
+      sub main|店ではたらく人びと
+    unit a03|工場と農家の仕事|pre=social.e3.s1.a02
+      sub main|工場と農家の仕事
+    unit a04|わたしたちのまちの まとめ
+      sub main|わたしたちのまちの まとめ
+  field s2|まちのくらしと人びと
+    unit a05|火事からくらしを守る|pre=social.e3.s1.a03
+      sub main|火事からくらしを守る
+    unit a06|事故や事件からくらしを守る|pre=social.e3.s2.a05
+      sub main|事故や事件からくらしを守る
+    unit a07|昔のくらしと道具|pre=social.e3.s2.a06
+      sub main|昔のくらしと道具
+    unit a08|3年生の社会の まとめ
+      sub main|3年生の社会の まとめ
+course e4|小4|grade=小4|game=小4の道|desc=都道府県・水とごみ・自然災害・地いきの伝統と先人
+  field s1|都道府県とくらし
+    unit a01|47都道府県
+      sub main|47都道府県
+    unit a02|水とくらし|pre=social.e4.s1.a01
+      sub main|水とくらし
+    unit a03|ごみとくらし|pre=social.e4.s1.a02
+      sub main|ごみとくらし
+    unit a04|都道府県とくらしの まとめ
+      sub main|都道府県とくらしの まとめ
+  field s2|災害と地いきの伝統
+    unit a05|自然災害からくらしを守る|pre=social.e4.s1.a03
+      sub main|自然災害からくらしを守る
+    unit a06|地いきの伝統と文化|pre=social.e4.s2.a05
+      sub main|地いきの伝統と文化
+    unit a07|地いきの発展につくした人びと|pre=social.e4.s2.a06
+      sub main|地いきの発展につくした人びと
+    unit a08|4年生の社会の まとめ
+      sub main|4年生の社会の まとめ
+course e5|小5|grade=小5|game=小5の道|desc=日本の国土・気候・農業・水産業・工業・情報・環境
+  field s1|日本の国土と食料
+    unit a01|日本の国土と気候
+      sub main|日本の国土と気候
+    unit a02|米づくりと農業|pre=social.e5.s1.a01
+      sub main|米づくりと農業
+    unit a03|水産業と食料自給|pre=social.e5.s1.a02
+      sub main|水産業と食料自給
+    unit a04|国土と食料の まとめ
+      sub main|国土と食料の まとめ
+  field s2|工業・情報・環境
+    unit a05|日本の工業|pre=social.e5.s1.a03
+      sub main|日本の工業
+    unit a06|情報とくらし|pre=social.e5.s2.a05
+      sub main|情報とくらし
+    unit a07|国土の環境を守る|pre=social.e5.s2.a06
+      sub main|国土の環境を守る
+    unit a08|5年生の社会の まとめ
+      sub main|5年生の社会の まとめ
+course e6|小6|grade=小6|game=小6の道|desc=政治のしくみ・日本国憲法・日本の歴史・世界の中の日本
+  field s1|わたしたちの生活と政治
+    unit a01|日本国憲法
+      sub main|日本国憲法
+    unit a02|国の政治のしくみ|pre=social.e6.s1.a01
+      sub main|国の政治のしくみ
+    unit a03|くらしをささえる政治|pre=social.e6.s1.a02
+      sub main|くらしをささえる政治
+    unit a04|政治の まとめ
+      sub main|政治の まとめ
+  field s2|日本の歴史と世界
+    unit a05|むかしの日本（縄文〜平安）|pre=social.e6.s1.a03
+      sub main|むかしの日本（縄文〜平安）
+    unit a06|武士の時代（鎌倉〜江戸）|pre=social.e6.s2.a05
+      sub main|武士の時代（鎌倉〜江戸）
+    unit a07|明治から今の日本と世界|pre=social.e6.s2.a06
+      sub main|明治から今の日本と世界
+    unit a08|小学校社会の まとめ
+      sub main|小学校社会の まとめ
+course geo|地理|grade=中1-2|game=地理の道|desc=世界の姿・世界の地域・日本の姿・日本の諸地域
+  field s1|世界の姿と世界の地域
+    unit a01|世界の姿
+      sub main|世界の姿
+    unit a02|世界の人々の生活と環境|pre=social.geo.s1.a01
+      sub main|世界の人々の生活と環境
+    unit a03|アジア・ヨーロッパ|pre=social.geo.s1.a02
+      sub main|アジア・ヨーロッパ
+    unit a04|アフリカ・アメリカ・オセアニア|pre=social.geo.s1.a03
+      sub main|アフリカ・アメリカ・オセアニア
+    unit a05|世界の まとめ
+      sub main|世界の まとめ
+  field s2|日本の姿と諸地域
+    unit a06|日本の姿と自然環境|pre=social.geo.s1.a04
+      sub main|日本の姿と自然環境
+    unit a07|九州・中国四国・近畿|pre=social.geo.s2.a06
+      sub main|九州・中国四国・近畿
+    unit a08|中部・関東・東北・北海道|pre=social.geo.s2.a07
+      sub main|中部・関東・東北・北海道
+    unit a09|地域調査と 地形図|pre=social.geo.s2.a08
+      sub main|地域調査と 地形図
+    unit a10|地理の まとめ
+      sub main|地理の まとめ
+course hist|歴史|grade=中1-3|game=歴史の道|desc=古代・中世・近世・近代・現代の日本と世界
+  field s1|古代〜近世
+    unit a01|古代文明と日本の始まり
+      sub main|古代文明と日本の始まり
+    unit a02|飛鳥・奈良・平安|pre=social.hist.s1.a01
+      sub main|飛鳥・奈良・平安
+    unit a03|鎌倉・室町|pre=social.hist.s1.a02
+      sub main|鎌倉・室町
+    unit a04|安土桃山・江戸|pre=social.hist.s1.a03
+      sub main|安土桃山・江戸
+    unit a05|古代〜近世の まとめ
+      sub main|古代〜近世の まとめ
+  field s2|近代〜現代
+    unit a06|欧米の近代化と開国|pre=social.hist.s1.a04
+      sub main|欧米の近代化と開国
+    unit a07|明治維新と近代国家|pre=social.hist.s2.a06
+      sub main|明治維新と近代国家
+    unit a08|二度の世界大戦|pre=social.hist.s2.a07
+      sub main|二度の世界大戦
+    unit a09|戦後の日本と現代|pre=social.hist.s2.a08
+      sub main|戦後の日本と現代
+    unit a10|歴史の まとめ
+      sub main|歴史の まとめ
+course civ|公民|grade=中3|game=公民の道|desc=現代社会・日本国憲法・政治・経済・国際社会
+  field s1|現代社会と憲法・政治
+    unit a01|現代社会とわたしたち
+      sub main|現代社会とわたしたち
+    unit a02|人権と日本国憲法|pre=social.civ.s1.a01
+      sub main|人権と日本国憲法
+    unit a03|民主政治と選挙|pre=social.civ.s1.a02
+      sub main|民主政治と選挙
+    unit a04|国会・内閣・裁判所・地方自治|pre=social.civ.s1.a03
+      sub main|国会・内閣・裁判所・地方自治
+    unit a05|憲法と政治の まとめ
+      sub main|憲法と政治の まとめ
+  field s2|経済と国際社会
+    unit a06|消費生活と市場経済|pre=social.civ.s1.a04
+      sub main|消費生活と市場経済
+    unit a07|金融と財政|pre=social.civ.s2.a06
+      sub main|金融と財政
+    unit a08|国際社会と地球規模の課題|pre=social.civ.s2.a07
+      sub main|国際社会と地球規模の課題
+    unit a09|経済と国際社会の まとめ
+      sub main|経済と国際社会の まとめ

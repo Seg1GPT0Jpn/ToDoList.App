@@ -1,0 +1,212 @@
+{
+  "setId": "science_e5_05",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_e505_001",
+      "unit": "science.e5.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "日本付近の天気は、おもにどちらからどちらへ変わる？",
+      "choices": [
+        "北から南",
+        "東から西",
+        "西から東",
+        "南から北"
+      ],
+      "answerIndex": 2,
+      "explanation": "偏西風の影響。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e505_002",
+      "unit": "science.e5.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "台風はどこで発生する？",
+      "choices": [
+        "日本の南の海上",
+        "大陸の砂ばく",
+        "北極",
+        "日本の北の山"
+      ],
+      "answerIndex": 0,
+      "explanation": "あたたかい海。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e505_003",
+      "unit": "science.e5.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "台風が近づくとどうなる？",
+      "choices": [
+        "雪がふる",
+        "気温が急に下がるだけ",
+        "強い風がふき、大雨がふる",
+        "晴れて風がない"
+      ],
+      "answerIndex": 2,
+      "explanation": "災害に注意。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e505_004",
+      "unit": "science.e5.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "雨をふらせることが多い雲は？",
+      "choices": [
+        "高積雲",
+        "巻雲（すじ雲）",
+        "巻積雲（うろこ雲）",
+        "乱層雲（雨雲）"
+      ],
+      "answerIndex": 3,
+      "explanation": "雨雲。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e505_005",
+      "unit": "science.e5.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "雷やにわか雨をもたらす雲は？",
+      "choices": [
+        "積乱雲（入道雲）",
+        "高層雲",
+        "層雲",
+        "巻雲"
+      ],
+      "answerIndex": 0,
+      "explanation": "夏に多い。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e505_006",
+      "unit": "science.e5.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "雲の動きや量を知るために使われる人工衛星の画像を何という？",
+      "choices": [
+        "地図",
+        "天気予報図",
+        "気象衛星の雲画像",
+        "星座早見"
+      ],
+      "answerIndex": 2,
+      "explanation": "ひまわり。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e505_007",
+      "unit": "science.e5.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "雨量などを自動で観測するしくみを何という？",
+      "choices": [
+        "アメダス",
+        "GPS",
+        "レーダーだけ",
+        "ひまわり"
+      ],
+      "answerIndex": 0,
+      "explanation": "地域気象観測システム。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e505_008",
+      "unit": "science.e5.s2.a05",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "大阪で雨がふっている。次に雨になりやすいのは？",
+      "choices": [
+        "東の名古屋",
+        "南の那覇",
+        "西の福岡",
+        "北の札幌"
+      ],
+      "answerIndex": 0,
+      "explanation": "天気は西から東へ。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e505_009",
+      "unit": "science.e5.s2.a05",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "夕焼けが見えた次の日の天気は？",
+      "choices": [
+        "雨になりやすい",
+        "晴れになりやすい",
+        "関係ない",
+        "雪になる"
+      ],
+      "answerIndex": 1,
+      "explanation": "西の空が晴れている。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e505_010",
+      "unit": "science.e5.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "台風の進み方の特ちょうは？",
+      "choices": [
+        "いつも西へ進む",
+        "南の海上から北や東へ進むことが多い",
+        "まっすぐ南へ進む",
+        "動かない"
+      ],
+      "answerIndex": 1,
+      "explanation": "偏西風に乗る。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e505_011",
+      "unit": "science.e5.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "台風がもたらすめぐみは？",
+      "choices": [
+        "強風",
+        "洪水",
+        "水不足の解消",
+        "作物のひがい"
+      ],
+      "answerIndex": 2,
+      "explanation": "雨が水資源になる。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e505_012",
+      "unit": "science.e5.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "雲の量が空全体の0〜8のとき、天気は？",
+      "choices": [
+        "雨",
+        "晴れ",
+        "くもり",
+        "快晴だけ"
+      ],
+      "answerIndex": 1,
+      "explanation": "9〜10はくもり、0〜1は快晴。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    }
+  ]
+}

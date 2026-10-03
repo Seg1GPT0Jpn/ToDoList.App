@@ -1,0 +1,212 @@
+{
+  "setId": "japanese_j1_04",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "jpn_j104_001",
+      "unit": "japanese.j1.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「交渉」の読みは？",
+      "choices": [
+        "しょうげき",
+        "ゆるやか",
+        "しんちょう",
+        "こうしょう"
+      ],
+      "answerIndex": 3,
+      "explanation": "交渉（こうしょう）",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j104_002",
+      "unit": "japanese.j1.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「漂う」の読みは？",
+      "choices": [
+        "ゆるやか",
+        "ただよう",
+        "ぼうだい",
+        "ひってき"
+      ],
+      "answerIndex": 1,
+      "explanation": "漂う（ただよう）",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j104_003",
+      "unit": "japanese.j1.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「こうしょう」を漢字で書くと？",
+      "choices": [
+        "繊細",
+        "一般",
+        "潤う",
+        "交渉"
+      ],
+      "answerIndex": 3,
+      "explanation": "こうしょう ＝ 交渉",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j104_004",
+      "unit": "japanese.j1.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「おだやか」を漢字で書くと？",
+      "choices": [
+        "滑らか",
+        "崩れる",
+        "穏やか",
+        "鮮やか"
+      ],
+      "answerIndex": 2,
+      "explanation": "おだやか ＝ 穏やか",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j104_005",
+      "unit": "japanese.j1.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「おい」「はい」「ああ」の品詞は？",
+      "choices": [
+        "感動詞",
+        "助詞",
+        "副詞",
+        "接続詞"
+      ],
+      "answerIndex": 0,
+      "explanation": "呼びかけ・応答・感動。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j104_006",
+      "unit": "japanese.j1.s1.a04",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「静かな部屋」の「静かな」の品詞は？",
+      "choices": [
+        "形容詞",
+        "連体詞",
+        "形容動詞",
+        "副詞"
+      ],
+      "answerIndex": 2,
+      "explanation": "静かだ → 静かな。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j104_007",
+      "unit": "japanese.j1.s1.a04",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「大きな木」の「大きな」の品詞は？",
+      "choices": [
+        "副詞",
+        "形容詞",
+        "連体詞",
+        "形容動詞"
+      ],
+      "answerIndex": 2,
+      "explanation": "「大きい」は形容詞、「大きな」は連体詞。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j104_008",
+      "unit": "japanese.j1.s1.a04",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「走る」の品詞は？",
+      "choices": [
+        "形容詞",
+        "副詞",
+        "動詞",
+        "名詞"
+      ],
+      "answerIndex": 2,
+      "explanation": "う段で終わる。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j104_009",
+      "unit": "japanese.j1.s1.a04",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「白い雲が流れる。」の主語の文節は？",
+      "choices": [
+        "白い",
+        "白い雲",
+        "雲が",
+        "流れる"
+      ],
+      "answerIndex": 2,
+      "explanation": "主語の文節。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j104_010",
+      "unit": "japanese.j1.s1.a04",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「白い雲が流れる。」の述語の文節は？",
+      "choices": [
+        "流れる",
+        "白い",
+        "雲",
+        "雲が"
+      ],
+      "answerIndex": 0,
+      "explanation": "述語の文節。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j104_011",
+      "unit": "japanese.j1.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "自立語とは？",
+      "choices": [
+        "名詞だけ",
+        "必ず活用する単語",
+        "それだけで文節を作れる単語",
+        "助詞と助動詞"
+      ],
+      "answerIndex": 2,
+      "explanation": "自立語。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j104_012",
+      "unit": "japanese.j1.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "付属語とは？",
+      "choices": [
+        "自立語のあとについて文節を作る単語",
+        "文の初めにくる単語",
+        "それだけで文節を作る単語",
+        "名詞だけ"
+      ],
+      "answerIndex": 0,
+      "explanation": "付属語。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    }
+  ]
+}

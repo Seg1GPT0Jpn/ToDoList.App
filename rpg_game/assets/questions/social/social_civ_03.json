@@ -1,0 +1,212 @@
+{
+  "setId": "social_civ_03",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_civ03_001",
+      "unit": "social.civ.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "国民が選んだ代表者が議会で決める政治は？",
+      "choices": [
+        "間接民主制（議会制民主主義）",
+        "独裁政治",
+        "専制政治",
+        "直接民主制"
+      ],
+      "answerIndex": 0,
+      "explanation": "議会制民主主義。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ03_002",
+      "unit": "social.civ.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "選挙の4原則にあてはまらないのは？",
+      "choices": [
+        "秘密選挙",
+        "公開選挙",
+        "普通選挙",
+        "平等選挙"
+      ],
+      "answerIndex": 1,
+      "explanation": "直接選挙をふくむ4原則。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ03_003",
+      "unit": "social.civ.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "1つの選挙区から1人を選ぶ制度は？",
+      "choices": [
+        "小選挙区制",
+        "比例代表制",
+        "中選挙区制",
+        "大選挙区制"
+      ],
+      "answerIndex": 0,
+      "explanation": "小選挙区制。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ03_004",
+      "unit": "social.civ.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "政党の得票数に応じて議席を配分する制度は？",
+      "choices": [
+        "比例代表制",
+        "連記制",
+        "小選挙区制",
+        "大選挙区制"
+      ],
+      "answerIndex": 0,
+      "explanation": "比例代表。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ03_005",
+      "unit": "social.civ.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "政権を担当する政党は？",
+      "choices": [
+        "第三党",
+        "野党",
+        "与党",
+        "無所属"
+      ],
+      "answerIndex": 2,
+      "explanation": "与党。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ03_006",
+      "unit": "social.civ.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "選挙区によって一票の価値に差があることを何という？",
+      "choices": [
+        "一票の格差",
+        "投票率",
+        "死票",
+        "浮動票"
+      ],
+      "answerIndex": 0,
+      "explanation": "一票の格差。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ03_007",
+      "unit": "social.civ.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "落選した候補者に投じられた票は？",
+      "choices": [
+        "無効票",
+        "死票",
+        "組織票",
+        "浮動票"
+      ],
+      "answerIndex": 1,
+      "explanation": "死票。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ03_008",
+      "unit": "social.civ.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "新聞・テレビなどで多くの人々が共有する意見は？",
+      "choices": [
+        "世論",
+        "与論",
+        "公論",
+        "私論"
+      ],
+      "answerIndex": 0,
+      "explanation": "世論（よろん）。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ03_009",
+      "unit": "social.civ.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "選挙の投票日に行けない人が事前に投票する制度は？",
+      "choices": [
+        "期日前投票",
+        "代理投票",
+        "不在者投票だけ",
+        "電子投票"
+      ],
+      "answerIndex": 0,
+      "explanation": "期日前投票。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ03_010",
+      "unit": "social.civ.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "政党が選挙のときに示す政策の約束は？",
+      "choices": [
+        "政権公約（マニフェスト）",
+        "予算",
+        "法律",
+        "条例"
+      ],
+      "answerIndex": 0,
+      "explanation": "マニフェスト。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ03_011",
+      "unit": "social.civ.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "投票率の低下で心配されることは？",
+      "choices": [
+        "選挙がなくなる",
+        "税金が下がる",
+        "一部の人の意見だけが政治に反映される",
+        "投票所がふえる"
+      ],
+      "answerIndex": 2,
+      "explanation": "政治参加。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ03_012",
+      "unit": "social.civ.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "18歳選挙権が実現した年は？",
+      "choices": [
+        "2000年",
+        "2022年",
+        "2016年",
+        "1945年"
+      ],
+      "answerIndex": 2,
+      "explanation": "18歳選挙権。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    }
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "setId": "science_e6_01",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_e601_001",
+      "unit": "science.e6.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ものが燃えるとき使われる気体は？",
+      "choices": [
+        "二酸化炭素",
+        "酸素",
+        "水素",
+        "ちっ素"
+      ],
+      "answerIndex": 1,
+      "explanation": "酸素が使われる。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e601_002",
+      "unit": "science.e6.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ものが燃えたあとにふえる気体は？",
+      "choices": [
+        "酸素",
+        "ちっ素",
+        "二酸化炭素",
+        "ヘリウム"
+      ],
+      "answerIndex": 2,
+      "explanation": "二酸化炭素が発生。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e601_003",
+      "unit": "science.e6.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "空気中にいちばん多くふくまれる気体は？",
+      "choices": [
+        "ちっ素",
+        "酸素",
+        "二酸化炭素",
+        "水じょう気"
+      ],
+      "answerIndex": 0,
+      "explanation": "ちっ素約78%。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e601_004",
+      "unit": "science.e6.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "空気中の酸素の割合はおよそ？",
+      "choices": [
+        "約21%",
+        "約0.04%",
+        "約50%",
+        "約78%"
+      ],
+      "answerIndex": 0,
+      "explanation": "約21%。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e601_005",
+      "unit": "science.e6.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "二酸化炭素があるか調べる液は？",
+      "choices": [
+        "食塩水",
+        "石灰水",
+        "BTB液だけ",
+        "ヨウ素液"
+      ],
+      "answerIndex": 1,
+      "explanation": "白くにごる。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e601_006",
+      "unit": "science.e6.s1.a01",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "びんの中でろうそくを燃やし続けるには？",
+      "choices": [
+        "びんの上と下にすき間をあけ、空気を入れかえる",
+        "水を入れる",
+        "上だけあける",
+        "ふたをしっかりしめる"
+      ],
+      "answerIndex": 0,
+      "explanation": "新しい空気が入る。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e601_007",
+      "unit": "science.e6.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "酸素の中に火のついた線こうを入れると？",
+      "choices": [
+        "かわらない",
+        "激しく燃える",
+        "すぐ消える",
+        "こおる"
+      ],
+      "answerIndex": 1,
+      "explanation": "酸素はものを燃やすはたらき。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e601_008",
+      "unit": "science.e6.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "二酸化炭素の中に火のついたろうそくを入れると？",
+      "choices": [
+        "激しく燃える",
+        "すぐ消える",
+        "青く燃える",
+        "かわらない"
+      ],
+      "answerIndex": 1,
+      "explanation": "燃やすはたらきはない。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e601_009",
+      "unit": "science.e6.s1.a01",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "ろうそくが燃えたあとの空気で、酸素はどうなった？",
+      "choices": [
+        "少しへった（なくなってはいない）",
+        "かわらない",
+        "ふえた",
+        "すべてなくなった"
+      ],
+      "answerIndex": 0,
+      "explanation": "約17%くらいになる。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e601_010",
+      "unit": "science.e6.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "気体検知管で調べられるのは？",
+      "choices": [
+        "重さ",
+        "光の強さ",
+        "温度",
+        "酸素や二酸化炭素の割合"
+      ],
+      "answerIndex": 3,
+      "explanation": "気体検知管。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e601_011",
+      "unit": "science.e6.s1.a01",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "たき火で、まきを組んで燃やすのはなぜ？",
+      "choices": [
+        "重くするため",
+        "空気（酸素）が通りやすくなるから",
+        "火を弱くするため",
+        "煙を出すため"
+      ],
+      "answerIndex": 1,
+      "explanation": "酸素の供給。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e601_012",
+      "unit": "science.e6.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "木を燃やすと残るものは？",
+      "choices": [
+        "何も残らない",
+        "鉄",
+        "水だけ",
+        "灰"
+      ],
+      "answerIndex": 3,
+      "explanation": "灰が残る。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "setId": "science_e3_09",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_e309_001",
+      "unit": "science.e3.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "じしゃくのS極は、どの方角をさす？",
+      "choices": [
+        "北",
+        "南",
+        "東",
+        "西"
+      ],
+      "answerIndex": 1,
+      "explanation": "N極が北、S極が南。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e309_002",
+      "unit": "science.e3.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ガラスのコップは電気を通す？",
+      "choices": [
+        "通す",
+        "ぬれていれば必ず通す",
+        "少しだけ通す",
+        "通さない"
+      ],
+      "answerIndex": 3,
+      "explanation": "ガラスは通さない。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e309_003",
+      "unit": "science.e3.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "音を出しているギターの弦は？",
+      "choices": [
+        "ふるえている",
+        "光っている",
+        "あつくなっている",
+        "止まっている"
+      ],
+      "answerIndex": 0,
+      "explanation": "ふるえ。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e309_004",
+      "unit": "science.e3.s2.a09",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "かがみ3まいで日光を重ねたところと1まいのところ、より明るいのは？",
+      "choices": [
+        "1まいのところ",
+        "3まいのところ",
+        "同じ",
+        "どちらも暗い"
+      ],
+      "answerIndex": 1,
+      "explanation": "重ねるほど明るい。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e309_005",
+      "unit": "science.e3.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ゴムの力を大きくするには？",
+      "choices": [
+        "短くする",
+        "冷やす",
+        "長くのばす",
+        "ぬらす"
+      ],
+      "answerIndex": 2,
+      "explanation": "長くのばす。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e309_006",
+      "unit": "science.e3.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "じしゃくは、紙1まいをはさんでも鉄を引きつける？",
+      "choices": [
+        "引きつけない",
+        "しりぞける",
+        "引きつける",
+        "こわれる"
+      ],
+      "answerIndex": 2,
+      "explanation": "間に物があっても力ははたらく。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e309_007",
+      "unit": "science.e3.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "同じ重さの鉄と木では、体積が大きいのは？",
+      "choices": [
+        "木",
+        "鉄",
+        "わからない",
+        "同じ"
+      ],
+      "answerIndex": 0,
+      "explanation": "鉄のほうが重いので、木は大きくなる。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e309_008",
+      "unit": "science.e3.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "銅の10円玉はじしゃくにつく？",
+      "choices": [
+        "N極にだけつく",
+        "つかない",
+        "S極にだけつく",
+        "つく"
+      ],
+      "answerIndex": 1,
+      "explanation": "銅はつかない。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e309_009",
+      "unit": "science.e3.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "アルミニウムは電気を通す？",
+      "choices": [
+        "じしゃくにつくときだけ通す",
+        "通さない",
+        "ぬれたときだけ通す",
+        "通す"
+      ],
+      "answerIndex": 3,
+      "explanation": "金属は通す。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e309_010",
+      "unit": "science.e3.s2.a09",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "風の強さをかえて、車の進むきょりを調べる。そろえる条件は？",
+      "choices": [
+        "風の強さ",
+        "車の重さや、ほの大きさ",
+        "記録のしかた以外ぜんぶ変える",
+        "何もそろえない"
+      ],
+      "answerIndex": 1,
+      "explanation": "調べる条件だけ変える。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    }
+  ]
+}

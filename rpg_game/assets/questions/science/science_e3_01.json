@@ -1,0 +1,212 @@
+{
+  "setId": "science_e3_01",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_e301_001",
+      "unit": "science.e3.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "こん虫のからだはいくつに分かれている？",
+      "choices": [
+        "3つ（頭・むね・はら）",
+        "2つ",
+        "分かれていない",
+        "4つ"
+      ],
+      "answerIndex": 0,
+      "explanation": "こん虫は頭・むね・はら。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e301_002",
+      "unit": "science.e3.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "こん虫のあしは何本？",
+      "choices": [
+        "4本",
+        "8本",
+        "6本",
+        "10本"
+      ],
+      "answerIndex": 2,
+      "explanation": "むねから6本。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e301_003",
+      "unit": "science.e3.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "こん虫のあしがついているのは？",
+      "choices": [
+        "むね",
+        "しょっかく",
+        "頭",
+        "はら"
+      ],
+      "answerIndex": 0,
+      "explanation": "あしも羽もむねにつく。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e301_004",
+      "unit": "science.e3.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "こん虫ではないものは？",
+      "choices": [
+        "クモ",
+        "バッタ",
+        "チョウ",
+        "アリ"
+      ],
+      "answerIndex": 0,
+      "explanation": "クモはあしが8本で、からだは2つ。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e301_005",
+      "unit": "science.e3.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "モンシロチョウの育つじゅんじょは？",
+      "choices": [
+        "たまご → せい虫 → さなぎ",
+        "よう虫 → たまご → せい虫",
+        "たまご → よう虫 → さなぎ → せい虫",
+        "たまご → さなぎ → よう虫 → せい虫"
+      ],
+      "answerIndex": 2,
+      "explanation": "完全変態。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e301_006",
+      "unit": "science.e3.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "さなぎにならない育ち方をするこん虫は？",
+      "choices": [
+        "テントウムシ",
+        "カブトムシ",
+        "バッタ",
+        "モンシロチョウ"
+      ],
+      "answerIndex": 2,
+      "explanation": "バッタ・トンボ・セミは さなぎにならない。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e301_007",
+      "unit": "science.e3.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "モンシロチョウのよう虫が食べる葉は？",
+      "choices": [
+        "サクラ",
+        "イネ",
+        "ミカン",
+        "キャベツ"
+      ],
+      "answerIndex": 3,
+      "explanation": "アブラナのなかまの葉。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e301_008",
+      "unit": "science.e3.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "こん虫の目・口・しょっかくがあるのは？",
+      "choices": [
+        "頭",
+        "はら",
+        "むね",
+        "あし"
+      ],
+      "answerIndex": 0,
+      "explanation": "頭で感じる。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e301_009",
+      "unit": "science.e3.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "トンボのよう虫（ヤゴ）がすんでいるのは？",
+      "choices": [
+        "土の中",
+        "木の上",
+        "草の葉の上",
+        "水の中"
+      ],
+      "answerIndex": 3,
+      "explanation": "ヤゴは水の中。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e301_010",
+      "unit": "science.e3.s1.a01",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "はらにふしがあるのはなぜ？",
+      "choices": [
+        "色をきれいにするため",
+        "重くするため",
+        "まげたりのばしたりして動けるように",
+        "音を出すため"
+      ],
+      "answerIndex": 2,
+      "explanation": "ふしで動く。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e301_011",
+      "unit": "science.e3.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ダンゴムシはこん虫？",
+      "choices": [
+        "こん虫ではない",
+        "こん虫のよう虫",
+        "こん虫",
+        "こん虫のさなぎ"
+      ],
+      "answerIndex": 0,
+      "explanation": "あしが14本ある。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e301_012",
+      "unit": "science.e3.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "カブトムシのよう虫がすむのは？",
+      "choices": [
+        "水の中",
+        "空中",
+        "花の中",
+        "くさった葉や土の中"
+      ],
+      "answerIndex": 3,
+      "explanation": "土の中で育つ。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    }
+  ]
+}

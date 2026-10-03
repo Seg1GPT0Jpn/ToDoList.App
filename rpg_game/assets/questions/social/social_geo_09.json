@@ -1,0 +1,212 @@
+{
+  "setId": "social_geo_09",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_geo09_001",
+      "unit": "social.geo.s2.a09",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "2万5千分の1の地形図で4cmの長さは、実際には何m？",
+      "choices": [
+        "100m",
+        "250m",
+        "10000m",
+        "1000m"
+      ],
+      "answerIndex": 3,
+      "explanation": "4 × 25000 cm",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_geo09_002",
+      "unit": "social.geo.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "等高線の間隔がせまいところは？",
+      "choices": [
+        "傾斜がゆるやか",
+        "海",
+        "傾斜が急",
+        "平地"
+      ],
+      "answerIndex": 2,
+      "explanation": "急傾斜。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_geo09_003",
+      "unit": "social.geo.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "2万5千分の1の地形図で、主曲線の間隔は何mごと？",
+      "choices": [
+        "50m",
+        "5m",
+        "10m",
+        "20m"
+      ],
+      "answerIndex": 2,
+      "explanation": "計曲線は50m。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_geo09_004",
+      "unit": "social.geo.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "地形図の記号「卍」は？",
+      "choices": [
+        "寺院",
+        "城跡",
+        "神社",
+        "博物館"
+      ],
+      "answerIndex": 0,
+      "explanation": "寺院。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_geo09_005",
+      "unit": "social.geo.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "地形図の記号で、果樹園はどれに近い形？",
+      "choices": [
+        "稲の形",
+        "茶の実",
+        "木の枝",
+        "りんごの実の形"
+      ],
+      "answerIndex": 3,
+      "explanation": "果樹園。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_geo09_006",
+      "unit": "social.geo.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "地形図の記号「Ⅱ」に似た形（稲の切り株）は？",
+      "choices": [
+        "畑",
+        "田",
+        "茶畑",
+        "果樹園"
+      ],
+      "answerIndex": 1,
+      "explanation": "田。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_geo09_007",
+      "unit": "social.geo.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "老人ホームを表す地図記号は？",
+      "choices": [
+        "〒",
+        "卍",
+        "十字",
+        "家の中につえの形"
+      ],
+      "answerIndex": 3,
+      "explanation": "2006年に追加。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_geo09_008",
+      "unit": "social.geo.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "野外調査（フィールドワーク）の前にすることは？",
+      "choices": [
+        "調査の目的や方法、ルートを決める",
+        "何も決めない",
+        "友だちの意見だけ聞く",
+        "結果を先に書く"
+      ],
+      "answerIndex": 0,
+      "explanation": "計画。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_geo09_009",
+      "unit": "social.geo.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "統計の変化を表すのに適したグラフは？",
+      "choices": [
+        "折れ線グラフ",
+        "帯グラフ",
+        "絵グラフ",
+        "円グラフ"
+      ],
+      "answerIndex": 0,
+      "explanation": "変化 → 折れ線。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_geo09_010",
+      "unit": "social.geo.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "割合を表すのに適したグラフは？",
+      "choices": [
+        "折れ線グラフ",
+        "棒グラフだけ",
+        "円グラフ・帯グラフ",
+        "散布図"
+      ],
+      "answerIndex": 2,
+      "explanation": "割合。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_geo09_011",
+      "unit": "social.geo.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "コンピューターで地図に情報を重ねて表すしくみは？",
+      "choices": [
+        "POS",
+        "GPS",
+        "GIS（地理情報システム）",
+        "SNS"
+      ],
+      "answerIndex": 2,
+      "explanation": "GIS。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_geo09_012",
+      "unit": "social.geo.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "新旧の地形図をくらべてわかることは？",
+      "choices": [
+        "気温",
+        "土地利用の変化",
+        "人の名前",
+        "天気"
+      ],
+      "answerIndex": 1,
+      "explanation": "比較。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    }
+  ]
+}

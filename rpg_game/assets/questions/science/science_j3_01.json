@@ -1,0 +1,212 @@
+{
+  "setId": "science_j3_01",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_j301_001",
+      "unit": "science.j3.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "水に溶けると電流が流れる物質を何という？",
+      "choices": [
+        "電解質",
+        "有機物",
+        "非電解質",
+        "金属"
+      ],
+      "answerIndex": 0,
+      "explanation": "塩化ナトリウムなど。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j301_002",
+      "unit": "science.j3.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "砂糖水に電流は流れる？",
+      "choices": [
+        "流れる",
+        "少し流れる",
+        "加熱すると流れる",
+        "流れない（非電解質）"
+      ],
+      "answerIndex": 3,
+      "explanation": "砂糖は非電解質。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j301_003",
+      "unit": "science.j3.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "原子が電子を失うと何になる？",
+      "choices": [
+        "中性子",
+        "分子",
+        "陽イオン",
+        "陰イオン"
+      ],
+      "answerIndex": 2,
+      "explanation": "＋の電気を帯びる。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j301_004",
+      "unit": "science.j3.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "塩化ナトリウムが水に溶けて電離すると？",
+      "choices": [
+        "Na⁻ と Cl⁺",
+        "Na⁺ と Cl⁻",
+        "Na と Cl₂",
+        "NaCl⁺"
+      ],
+      "answerIndex": 1,
+      "explanation": "電離。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j301_005",
+      "unit": "science.j3.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "酸性の水溶液に共通してふくまれるイオンは？",
+      "choices": [
+        "Na⁺",
+        "水素イオン H⁺",
+        "水酸化物イオン OH⁻",
+        "Cl⁻"
+      ],
+      "answerIndex": 1,
+      "explanation": "酸＝H⁺。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j301_006",
+      "unit": "science.j3.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "アルカリ性の水溶液に共通してふくまれるイオンは？",
+      "choices": [
+        "Cl⁻",
+        "Cu²⁺",
+        "水酸化物イオン OH⁻",
+        "水素イオン H⁺"
+      ],
+      "answerIndex": 2,
+      "explanation": "アルカリ＝OH⁻。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j301_007",
+      "unit": "science.j3.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "酸とアルカリが反応して水ができる反応は？",
+      "choices": [
+        "中和",
+        "分解",
+        "酸化",
+        "還元"
+      ],
+      "answerIndex": 0,
+      "explanation": "H⁺ + OH⁻ → H₂O",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j301_008",
+      "unit": "science.j3.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "中和で、酸の陰イオンとアルカリの陽イオンが結びついてできる物質は？",
+      "choices": [
+        "アルカリ",
+        "酸",
+        "塩",
+        "気体"
+      ],
+      "answerIndex": 2,
+      "explanation": "塩（えん）。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j301_009",
+      "unit": "science.j3.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "pH7は何性？",
+      "choices": [
+        "アルカリ性",
+        "強酸性",
+        "酸性",
+        "中性"
+      ],
+      "answerIndex": 3,
+      "explanation": "7より小さいと酸性。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j301_010",
+      "unit": "science.j3.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "亜鉛板と銅板を使った電池で、−極になるのは？",
+      "choices": [
+        "銅板",
+        "どちらでもない",
+        "どちらも",
+        "亜鉛板"
+      ],
+      "answerIndex": 3,
+      "explanation": "イオンになりやすい金属が−極。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j301_011",
+      "unit": "science.j3.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "化学エネルギーを電気エネルギーに変える装置は？",
+      "choices": [
+        "モーター",
+        "電池（化学電池）",
+        "電熱線",
+        "発電機"
+      ],
+      "answerIndex": 1,
+      "explanation": "電池。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j301_012",
+      "unit": "science.j3.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "水素と酸素から電気をとり出す電池は？",
+      "choices": [
+        "ボルタ電池",
+        "燃料電池",
+        "鉛蓄電池",
+        "乾電池"
+      ],
+      "answerIndex": 1,
+      "explanation": "水だけができる。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    }
+  ]
+}

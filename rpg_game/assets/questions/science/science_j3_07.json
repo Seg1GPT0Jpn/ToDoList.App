@@ -1,0 +1,212 @@
+{
+  "setId": "science_j3_07",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_j307_001",
+      "unit": "science.j3.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "太陽が1日に東から西へ動いて見えるのは？",
+      "choices": [
+        "地球が公転しているから",
+        "地球が自転しているから",
+        "太陽が地球のまわりを回るから",
+        "月が動くから"
+      ],
+      "answerIndex": 1,
+      "explanation": "日周運動。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j307_002",
+      "unit": "science.j3.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "地球の自転の向きは？",
+      "choices": [
+        "東から西",
+        "北から南",
+        "西から東",
+        "南から北"
+      ],
+      "answerIndex": 2,
+      "explanation": "西から東。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j307_003",
+      "unit": "science.j3.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "季節によって見える星座が変わるのは？",
+      "choices": [
+        "地球が自転しているから",
+        "月があるから",
+        "星が動くから",
+        "地球が公転しているから"
+      ],
+      "answerIndex": 3,
+      "explanation": "年周運動。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j307_004",
+      "unit": "science.j3.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "季節の変化が起こる理由は？",
+      "choices": [
+        "自転の速さが変わるから",
+        "地球と太陽の距離が大きく変わるから",
+        "地軸が傾いたまま公転しているから",
+        "月の満ち欠け"
+      ],
+      "answerIndex": 2,
+      "explanation": "地軸の傾き。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j307_005",
+      "unit": "science.j3.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "日本で夏至の日の太陽の南中高度は？",
+      "choices": [
+        "1年でいちばん高い",
+        "1年でいちばん低い",
+        "0度",
+        "春分と同じ"
+      ],
+      "answerIndex": 0,
+      "explanation": "夏至。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j307_006",
+      "unit": "science.j3.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "太陽の表面に見える黒い斑点は？",
+      "choices": [
+        "コロナ",
+        "黒点",
+        "クレーター",
+        "プロミネンス"
+      ],
+      "answerIndex": 1,
+      "explanation": "まわりより温度が低い。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j307_007",
+      "unit": "science.j3.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "太陽のように自ら光を出す天体は？",
+      "choices": [
+        "衛星",
+        "惑星",
+        "すい星",
+        "恒星"
+      ],
+      "answerIndex": 3,
+      "explanation": "恒星。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j307_008",
+      "unit": "science.j3.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "地球のまわりを回る月のような天体は？",
+      "choices": [
+        "小惑星",
+        "衛星",
+        "惑星",
+        "恒星"
+      ],
+      "answerIndex": 1,
+      "explanation": "衛星。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j307_009",
+      "unit": "science.j3.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "太陽系で最も大きな惑星は？",
+      "choices": [
+        "地球",
+        "土星",
+        "海王星",
+        "木星"
+      ],
+      "answerIndex": 3,
+      "explanation": "木星。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j307_010",
+      "unit": "science.j3.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "太陽・月・地球がこの順に一直線に並ぶと起こるのは？",
+      "choices": [
+        "新月だけ",
+        "月食",
+        "満月",
+        "日食"
+      ],
+      "answerIndex": 3,
+      "explanation": "月が太陽をかくす。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j307_011",
+      "unit": "science.j3.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "金星が真夜中に見えないのは？",
+      "choices": [
+        "自転が遅いから",
+        "大きすぎるから",
+        "地球より内側を公転しているから",
+        "光らないから"
+      ],
+      "answerIndex": 2,
+      "explanation": "明けの明星・よいの明星。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j307_012",
+      "unit": "science.j3.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "太陽系をふくむ、恒星の大集団を何という？",
+      "choices": [
+        "星雲だけ",
+        "銀河系（天の川銀河）",
+        "星座",
+        "太陽系"
+      ],
+      "answerIndex": 1,
+      "explanation": "銀河系。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    }
+  ]
+}

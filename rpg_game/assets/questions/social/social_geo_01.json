@@ -1,0 +1,212 @@
+{
+  "setId": "social_geo_01",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_geo01_001",
+      "unit": "social.geo.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "六大陸で最も大きいのは？",
+      "choices": [
+        "北アメリカ大陸",
+        "南極大陸",
+        "アフリカ大陸",
+        "ユーラシア大陸"
+      ],
+      "answerIndex": 3,
+      "explanation": "ユーラシア。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_geo01_002",
+      "unit": "social.geo.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "三大洋で最も大きいのは？",
+      "choices": [
+        "大西洋",
+        "インド洋",
+        "北極海",
+        "太平洋"
+      ],
+      "answerIndex": 3,
+      "explanation": "太平洋。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_geo01_003",
+      "unit": "social.geo.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "緯度0度の線を何という？",
+      "choices": [
+        "日付変更線",
+        "北回帰線",
+        "赤道",
+        "本初子午線"
+      ],
+      "answerIndex": 2,
+      "explanation": "赤道。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_geo01_004",
+      "unit": "social.geo.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "経度0度の線が通る都市は？",
+      "choices": [
+        "東京",
+        "ニューヨーク",
+        "パリ",
+        "ロンドン"
+      ],
+      "answerIndex": 3,
+      "explanation": "グリニッジ天文台。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_geo01_005",
+      "unit": "social.geo.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "中心からの距離と方位が正しい地図は？",
+      "choices": [
+        "メルカトル図法",
+        "モルワイデ図法",
+        "グード図法",
+        "正距方位図法"
+      ],
+      "answerIndex": 3,
+      "explanation": "航空図。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_geo01_006",
+      "unit": "social.geo.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "角度が正しく、航海図に使われる地図は？",
+      "choices": [
+        "ボンヌ図法",
+        "メルカトル図法",
+        "モルワイデ図法",
+        "正距方位図法"
+      ],
+      "answerIndex": 1,
+      "explanation": "高緯度ほど面積が大きくなる。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_geo01_007",
+      "unit": "social.geo.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "経度15度ごとに時差は何時間？",
+      "choices": [
+        "1時間",
+        "30分",
+        "2時間",
+        "15時間"
+      ],
+      "answerIndex": 0,
+      "explanation": "360度で24時間。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_geo01_008",
+      "unit": "social.geo.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "日本の標準時子午線（東経135度）とロンドン（0度）の時差は？",
+      "choices": [
+        "9時間",
+        "13時間",
+        "12時間",
+        "6時間"
+      ],
+      "answerIndex": 0,
+      "explanation": "135 ÷ 15",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_geo01_009",
+      "unit": "social.geo.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "面積が最も大きい国は？",
+      "choices": [
+        "アメリカ",
+        "中国",
+        "ロシア",
+        "カナダ"
+      ],
+      "answerIndex": 2,
+      "explanation": "ロシア。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_geo01_010",
+      "unit": "social.geo.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "人口が最も多い国（2023年以降）は？",
+      "choices": [
+        "中国",
+        "アメリカ",
+        "インド",
+        "インドネシア"
+      ],
+      "answerIndex": 2,
+      "explanation": "インドが中国を上回った。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_geo01_011",
+      "unit": "social.geo.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "海に面していない国を何という？",
+      "choices": [
+        "海洋国",
+        "島国",
+        "沿岸国",
+        "内陸国"
+      ],
+      "answerIndex": 3,
+      "explanation": "モンゴルなど。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_geo01_012",
+      "unit": "social.geo.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "地球上の位置を表すときに使う2つの数値は？",
+      "choices": [
+        "標高と面積",
+        "人口と面積",
+        "気温と降水量",
+        "緯度と経度"
+      ],
+      "answerIndex": 3,
+      "explanation": "緯度経度。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    }
+  ]
+}

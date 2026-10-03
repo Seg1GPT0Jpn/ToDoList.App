@@ -1,0 +1,178 @@
+{
+  "setId": "science_e3_04",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_e304_001",
+      "unit": "science.e3.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "こん虫のしょっかくは何本？",
+      "choices": [
+        "4本",
+        "1本",
+        "2本",
+        "6本"
+      ],
+      "answerIndex": 2,
+      "explanation": "頭に2本。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e304_002",
+      "unit": "science.e3.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "アゲハのよう虫が食べる葉は？",
+      "choices": [
+        "ミカンやサンショウ",
+        "イネ",
+        "キャベツ",
+        "サクラ"
+      ],
+      "answerIndex": 0,
+      "explanation": "ミカンのなかま。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e304_003",
+      "unit": "science.e3.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "セミの育ち方は？",
+      "choices": [
+        "たまご → よう虫 → さなぎ → せい虫",
+        "さなぎ → せい虫",
+        "たまご → さなぎ",
+        "たまご → よう虫 → せい虫"
+      ],
+      "answerIndex": 3,
+      "explanation": "さなぎにならない。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e304_004",
+      "unit": "science.e3.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "植物の葉のはたらきは？",
+      "choices": [
+        "水をすう",
+        "日光をうけて養分をつくる",
+        "からだをささえる",
+        "たねをつくる"
+      ],
+      "answerIndex": 1,
+      "explanation": "光合成（6年で習う）。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e304_005",
+      "unit": "science.e3.s1.a04",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "夕方、かげはどの方角にできる？",
+      "choices": [
+        "東",
+        "北",
+        "西",
+        "南"
+      ],
+      "answerIndex": 0,
+      "explanation": "太陽が西にあるとき。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e304_006",
+      "unit": "science.e3.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "クモのあしは何本？",
+      "choices": [
+        "4本",
+        "10本",
+        "6本",
+        "8本"
+      ],
+      "answerIndex": 3,
+      "explanation": "クモはこん虫ではない。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e304_007",
+      "unit": "science.e3.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "太陽の光をはね返すのに使う道具は？",
+      "choices": [
+        "方位じしん",
+        "かがみ",
+        "虫めがね（集める）",
+        "温度計"
+      ],
+      "answerIndex": 1,
+      "explanation": "かがみではね返す。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e304_008",
+      "unit": "science.e3.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "日光を集める道具は？",
+      "choices": [
+        "てんびん",
+        "虫めがね",
+        "方位じしん",
+        "かがみ"
+      ],
+      "answerIndex": 1,
+      "explanation": "虫めがねで集める。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e304_009",
+      "unit": "science.e3.s1.a04",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "虫めがねで集めた光を小さくするとどうなる？",
+      "choices": [
+        "変わらない",
+        "暗く、つめたくなる",
+        "明るく、あつくなる",
+        "色が消える"
+      ],
+      "answerIndex": 2,
+      "explanation": "光が集まる。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e304_010",
+      "unit": "science.e3.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "はね返した日光が当たったかべのようすは？",
+      "choices": [
+        "つめたくなる",
+        "明るく、あたたかくなる",
+        "色がかわる",
+        "暗くなる"
+      ],
+      "answerIndex": 1,
+      "explanation": "日光のはたらき。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    }
+  ]
+}

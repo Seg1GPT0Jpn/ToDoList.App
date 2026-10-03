@@ -1,0 +1,178 @@
+{
+  "setId": "science_j3_04",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_j304_001",
+      "unit": "science.j3.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "BTB溶液は酸性で何色？",
+      "choices": [
+        "青色",
+        "赤色",
+        "緑色",
+        "黄色"
+      ],
+      "answerIndex": 3,
+      "explanation": "BTB：酸性 黄、中性 緑、アルカリ性 青。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j304_002",
+      "unit": "science.j3.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "フェノールフタレイン溶液はアルカリ性で何色？",
+      "choices": [
+        "赤色",
+        "無色",
+        "青色",
+        "黄色"
+      ],
+      "answerIndex": 0,
+      "explanation": "アルカリ性で赤。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j304_003",
+      "unit": "science.j3.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "塩酸と水酸化ナトリウム水溶液の中和でできる塩は？",
+      "choices": [
+        "炭酸カルシウム",
+        "硫酸バリウム",
+        "塩化銅",
+        "塩化ナトリウム"
+      ],
+      "answerIndex": 3,
+      "explanation": "NaCl。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j304_004",
+      "unit": "science.j3.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "原子の中心にあるものは？",
+      "choices": [
+        "分子",
+        "イオン",
+        "原子核",
+        "電子"
+      ],
+      "answerIndex": 2,
+      "explanation": "陽子と中性子。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j304_005",
+      "unit": "science.j3.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "生殖細胞の染色体の数は、体細胞の何倍？",
+      "choices": [
+        "4倍",
+        "同じ",
+        "半分",
+        "2倍"
+      ],
+      "answerIndex": 2,
+      "explanation": "減数分裂。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j304_006",
+      "unit": "science.j3.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ミジンコは食物連鎖で何？",
+      "choices": [
+        "分解者",
+        "生産者",
+        "無生物",
+        "消費者"
+      ],
+      "answerIndex": 3,
+      "explanation": "植物プランクトンを食べる。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j304_007",
+      "unit": "science.j3.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "硫酸と水酸化バリウム水溶液の中和でできる白い沈殿は？",
+      "choices": [
+        "水酸化銅",
+        "硫酸バリウム",
+        "炭酸カルシウム",
+        "塩化ナトリウム"
+      ],
+      "answerIndex": 1,
+      "explanation": "水に溶けにくい塩。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j304_008",
+      "unit": "science.j3.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ゾウリムシのふえ方は？",
+      "choices": [
+        "受精",
+        "分裂",
+        "胞子",
+        "栄養生殖"
+      ],
+      "answerIndex": 1,
+      "explanation": "単細胞生物の分裂。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j304_009",
+      "unit": "science.j3.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ダニエル電池で、亜鉛板の亜鉛原子は？",
+      "choices": [
+        "銅になる",
+        "電子を受けとる",
+        "電子を失い亜鉛イオンになる",
+        "変化しない"
+      ],
+      "answerIndex": 2,
+      "explanation": "−極で溶ける。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j304_010",
+      "unit": "science.j3.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "シソチョウ（始祖鳥）は何と何の特徴をもつ？",
+      "choices": [
+        "昆虫類と鳥類",
+        "魚類と両生類",
+        "ホニュウ類と鳥類",
+        "ハチュウ類と鳥類"
+      ],
+      "answerIndex": 3,
+      "explanation": "進化の証拠。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    }
+  ]
+}

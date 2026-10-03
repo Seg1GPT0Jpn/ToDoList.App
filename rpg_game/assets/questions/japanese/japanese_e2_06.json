@@ -1,0 +1,218 @@
+{
+  "setId": "japanese_e2_06",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "jpn_e206_001",
+      "unit": "japanese.e2.s2.a06",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "花が しぼんだ あと、何が できる？",
+      "sentence": "たんぽぽの 花が さいた あと、花は しぼんで、たねが できます。たねには わた毛が ついています。わた毛は 風に のって、遠くまで とんで いきます。そして、たねは 新しい 場所で 芽を 出します。",
+      "choices": [
+        "つぼみ",
+        "ねっこ",
+        "はっぱ",
+        "たね"
+      ],
+      "answerIndex": 3,
+      "explanation": "「たねが できます」。",
+      "targetGrade": "小2",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e206_002",
+      "unit": "japanese.e2.s2.a06",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "たねに ついて いるのは？",
+      "sentence": "たんぽぽの 花が さいた あと、花は しぼんで、たねが できます。たねには わた毛が ついています。わた毛は 風に のって、遠くまで とんで いきます。そして、たねは 新しい 場所で 芽を 出します。",
+      "choices": [
+        "みつ",
+        "わた毛",
+        "はね",
+        "とげ"
+      ],
+      "answerIndex": 1,
+      "explanation": "「わた毛が ついて います」。",
+      "targetGrade": "小2",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e206_003",
+      "unit": "japanese.e2.s2.a06",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "わた毛は 何に のって とぶ？",
+      "sentence": "たんぽぽの 花が さいた あと、花は しぼんで、たねが できます。たねには わた毛が ついています。わた毛は 風に のって、遠くまで とんで いきます。そして、たねは 新しい 場所で 芽を 出します。",
+      "choices": [
+        "水",
+        "風",
+        "鳥",
+        "虫"
+      ],
+      "answerIndex": 1,
+      "explanation": "「風に のって」。",
+      "targetGrade": "小2",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e206_004",
+      "unit": "japanese.e2.s2.a06",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "たねは どこで 芽を 出す？",
+      "sentence": "たんぽぽの 花が さいた あと、花は しぼんで、たねが できます。たねには わた毛が ついています。わた毛は 風に のって、遠くまで とんで いきます。そして、たねは 新しい 場所で 芽を 出します。",
+      "choices": [
+        "花の 中",
+        "空の 上",
+        "もとの 場所だけ",
+        "新しい 場所"
+      ],
+      "answerIndex": 3,
+      "explanation": "「新しい 場所で」。",
+      "targetGrade": "小2",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e206_005",
+      "unit": "japanese.e2.s2.a06",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "この 文しょうは 何に ついて せつめいして いる？",
+      "sentence": "たんぽぽの 花が さいた あと、花は しぼんで、たねが できます。たねには わた毛が ついています。わた毛は 風に のって、遠くまで とんで いきます。そして、たねは 新しい 場所で 芽を 出します。",
+      "choices": [
+        "風の ふき方",
+        "花の 名前",
+        "たんぽぽの たねの 広がり方",
+        "たんぽぽの 色"
+      ],
+      "answerIndex": 2,
+      "explanation": "たねが とぶ しくみ。",
+      "targetGrade": "小2",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e206_006",
+      "unit": "japanese.e2.s2.a06",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「そして」の あとに 書かれて いるのは？",
+      "sentence": "たんぽぽの 花が さいた あと、花は しぼんで、たねが できます。たねには わた毛が ついています。わた毛は 風に のって、遠くまで とんで いきます。そして、たねは 新しい 場所で 芽を 出します。",
+      "choices": [
+        "たとえ",
+        "りゆう",
+        "つづいて おこる こと",
+        "反対の こと"
+      ],
+      "answerIndex": 2,
+      "explanation": "「そして」は つぎの ことを つなぐ。",
+      "targetGrade": "小2",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e206_007",
+      "unit": "japanese.e2.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "じゅんじょを あらわす ことばは？",
+      "choices": [
+        "だから",
+        "はじめに",
+        "しかし",
+        "たとえば"
+      ],
+      "answerIndex": 1,
+      "explanation": "はじめに・つぎに・さいごに。",
+      "targetGrade": "小2",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e206_008",
+      "unit": "japanese.e2.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「つぎに」の あとに 来る ことばとして 正しい じゅんは？",
+      "choices": [
+        "はじめに → つぎに → さいごに",
+        "さいごに → つぎに → はじめに",
+        "つぎに → はじめに → さいごに",
+        "はじめに → さいごに → つぎに"
+      ],
+      "answerIndex": 0,
+      "explanation": "じゅんじょ。",
+      "targetGrade": "小2",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e206_009",
+      "unit": "japanese.e2.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "せつめい文で「といの 文」の あとに あるのは？",
+      "choices": [
+        "こたえ",
+        "会話",
+        "なぞなぞ",
+        "うた"
+      ],
+      "answerIndex": 0,
+      "explanation": "といと こたえ。",
+      "targetGrade": "小2",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e206_010",
+      "unit": "japanese.e2.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "せつめい文を 読むとき 大切なのは？",
+      "choices": [
+        "声を 大きく する",
+        "さいごだけ 読む",
+        "何に ついての 話かを つかむ",
+        "絵だけを 見る"
+      ],
+      "answerIndex": 2,
+      "explanation": "わだいを つかむ。",
+      "targetGrade": "小2",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e206_011",
+      "unit": "japanese.e2.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「なぜでしょう。」は どんな 文？",
+      "choices": [
+        "といかける 文",
+        "あいさつの 文",
+        "お話の 文",
+        "こたえの 文"
+      ],
+      "answerIndex": 0,
+      "explanation": "といの 文。",
+      "targetGrade": "小2",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e206_012",
+      "unit": "japanese.e2.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「〜からです。」は 何を あらわす？",
+      "choices": [
+        "たとえ",
+        "ばしょ",
+        "じゅんじょ",
+        "りゆう"
+      ],
+      "answerIndex": 3,
+      "explanation": "りゆうを 言う。",
+      "targetGrade": "小2",
+      "phase": "basics"
+    }
+  ]
+}

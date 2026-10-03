@@ -1,0 +1,212 @@
+{
+  "setId": "japanese_j3_03",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "jpn_j303_001",
+      "unit": "japanese.j3.s1.a03",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「先生が来られる。」の「られる」の意味は？",
+      "choices": [
+        "尊敬",
+        "自発",
+        "可能",
+        "受け身"
+      ],
+      "answerIndex": 0,
+      "explanation": "先生の動作を高める。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j303_002",
+      "unit": "japanese.j3.s1.a03",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「弟にしかられる。」の「れる」の意味は？",
+      "choices": [
+        "尊敬",
+        "受け身",
+        "自発",
+        "可能"
+      ],
+      "answerIndex": 1,
+      "explanation": "〜される。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j303_003",
+      "unit": "japanese.j3.s1.a03",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「朝早く起きられる。」の「られる」の意味は？",
+      "choices": [
+        "自発",
+        "受け身",
+        "尊敬",
+        "可能"
+      ],
+      "answerIndex": 3,
+      "explanation": "〜できる。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j303_004",
+      "unit": "japanese.j3.s1.a03",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「昔のことが思い出される。」の「れる」の意味は？",
+      "choices": [
+        "自発",
+        "可能",
+        "尊敬",
+        "受け身"
+      ],
+      "answerIndex": 0,
+      "explanation": "自然に〜。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j303_005",
+      "unit": "japanese.j3.s1.a03",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「雨がふるらしい。」の「らしい」の意味は？",
+      "choices": [
+        "推定",
+        "過去",
+        "比喩",
+        "打ち消し"
+      ],
+      "answerIndex": 0,
+      "explanation": "根拠のある推定。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j303_006",
+      "unit": "japanese.j3.s1.a03",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「まるで夢のようだ。」の「ようだ」の意味は？",
+      "choices": [
+        "希望",
+        "比喩（たとえ）",
+        "例示",
+        "推定"
+      ],
+      "answerIndex": 1,
+      "explanation": "まるで〜ようだ。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j303_007",
+      "unit": "japanese.j3.s1.a03",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「わたしの書いた本」の「の」の働きは？",
+      "choices": [
+        "体言の代用",
+        "連体修飾",
+        "並立",
+        "主語を示す（「が」に置きかえられる）"
+      ],
+      "answerIndex": 3,
+      "explanation": "わたしが書いた本。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j303_008",
+      "unit": "japanese.j3.s1.a03",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「走るのが好きだ。」の「の」の働きは？",
+      "choices": [
+        "疑問",
+        "主語を示す",
+        "連体修飾",
+        "体言の代用（〜こと）"
+      ],
+      "answerIndex": 3,
+      "explanation": "走ることが好きだ。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j303_009",
+      "unit": "japanese.j3.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「先生がおっしゃる」の敬語の種類は？",
+      "choices": [
+        "丁寧語",
+        "美化語",
+        "尊敬語",
+        "謙譲語"
+      ],
+      "answerIndex": 2,
+      "explanation": "おっしゃる。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j303_010",
+      "unit": "japanese.j3.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「お客様をご案内する」の敬語の種類は？",
+      "choices": [
+        "美化語",
+        "尊敬語",
+        "丁寧語",
+        "謙譲語"
+      ],
+      "answerIndex": 3,
+      "explanation": "ご〜する。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j303_011",
+      "unit": "japanese.j3.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "敬語の使い方として正しいのは？",
+      "choices": [
+        "先生、どうぞお食べしてください。",
+        "先生、どうぞめしあがってください。",
+        "先生、どうぞいただいてください。",
+        "先生、どうぞ食べさせてください。"
+      ],
+      "answerIndex": 1,
+      "explanation": "尊敬語は めしあがる。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j303_012",
+      "unit": "japanese.j3.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "敬語の使い方として正しいのは？",
+      "choices": [
+        "お父さんは今、外出なさっています。",
+        "父は今、お出かけになっています。",
+        "父は今、外出していらっしゃいます。",
+        "父は今、外出しております。"
+      ],
+      "answerIndex": 3,
+      "explanation": "身内には謙譲語・丁寧語。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    }
+  ]
+}

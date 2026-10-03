@@ -1,0 +1,212 @@
+{
+  "setId": "japanese_j2_06",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "jpn_j206_001",
+      "unit": "japanese.j2.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "四句からなる漢詩を何という？",
+      "choices": [
+        "絶句",
+        "律詩",
+        "古詩",
+        "短歌"
+      ],
+      "answerIndex": 0,
+      "explanation": "四句＝絶句、八句＝律詩。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j206_002",
+      "unit": "japanese.j2.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "八句からなる漢詩を何という？",
+      "choices": [
+        "俳句",
+        "絶句",
+        "律詩",
+        "和歌"
+      ],
+      "answerIndex": 2,
+      "explanation": "律詩。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j206_003",
+      "unit": "japanese.j2.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "一句が五字の絶句を何という？",
+      "choices": [
+        "五言律詩",
+        "七言絶句",
+        "五言絶句",
+        "七言律詩"
+      ],
+      "answerIndex": 2,
+      "explanation": "五言絶句。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j206_004",
+      "unit": "japanese.j2.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "一句が七字の絶句を何という？",
+      "choices": [
+        "五言律詩",
+        "七言律詩",
+        "五言絶句",
+        "七言絶句"
+      ],
+      "answerIndex": 3,
+      "explanation": "七言絶句。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j206_005",
+      "unit": "japanese.j2.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "絶句の構成「起・承・転・結」で、場面が大きく変わるのは？",
+      "choices": [
+        "結",
+        "承",
+        "転",
+        "起"
+      ],
+      "answerIndex": 2,
+      "explanation": "第三句。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j206_006",
+      "unit": "japanese.j2.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「春眠暁を覚えず」で始まる漢詩の作者は？",
+      "choices": [
+        "孟浩然",
+        "李白",
+        "王維",
+        "杜甫"
+      ],
+      "answerIndex": 0,
+      "explanation": "「春暁」。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j206_007",
+      "unit": "japanese.j2.s2.a06",
+      "unitLocked": true,
+      "category": "meaning",
+      "prompt": "「春眠暁を覚えず」の意味は？",
+      "choices": [
+        "春は眠れない",
+        "夜明けが来ない",
+        "春の眠りは心地よく、夜明けにも気づかない",
+        "春は早起きする"
+      ],
+      "answerIndex": 2,
+      "explanation": "春暁。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j206_008",
+      "unit": "japanese.j2.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「国破れて山河在り」で始まる漢詩の作者は？",
+      "choices": [
+        "白居易",
+        "孟浩然",
+        "李白",
+        "杜甫"
+      ],
+      "answerIndex": 3,
+      "explanation": "「春望」。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j206_009",
+      "unit": "japanese.j2.s2.a06",
+      "unitLocked": true,
+      "category": "meaning",
+      "prompt": "「国破れて山河在り」の意味は？",
+      "choices": [
+        "国は強い",
+        "山と川がほろびた",
+        "国はほろびても山や川はそのままある",
+        "国が山と川をこわした"
+      ],
+      "answerIndex": 2,
+      "explanation": "春望。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j206_010",
+      "unit": "japanese.j2.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "漢詩で、句の終わりの音をそろえることを何という？",
+      "choices": [
+        "倒置",
+        "押韻",
+        "反復",
+        "対句"
+      ],
+      "answerIndex": 1,
+      "explanation": "韻をふむ。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j206_011",
+      "unit": "japanese.j2.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "漢詩で、組み立ての似た二つの句を並べる表現は？",
+      "choices": [
+        "押韻",
+        "対句",
+        "倒置",
+        "体言止め"
+      ],
+      "answerIndex": 1,
+      "explanation": "対句。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j206_012",
+      "unit": "japanese.j2.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「故人西のかた黄鶴楼を辞し」で始まる漢詩の作者は？",
+      "choices": [
+        "李白",
+        "杜甫",
+        "王維",
+        "孟浩然"
+      ],
+      "answerIndex": 0,
+      "explanation": "友人を見送る詩。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    }
+  ]
+}

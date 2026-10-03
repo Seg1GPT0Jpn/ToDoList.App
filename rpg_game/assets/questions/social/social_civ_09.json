@@ -1,0 +1,178 @@
+{
+  "setId": "social_civ_09",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_civ09_001",
+      "unit": "social.civ.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "環境に配慮した消費をする人を何という？",
+      "choices": [
+        "フェアトレード",
+        "NGO",
+        "クーリング・オフ",
+        "グリーンコンシューマー"
+      ],
+      "answerIndex": 3,
+      "explanation": "グリーンコンシューマー。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ09_002",
+      "unit": "social.civ.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "国連の機関で、世界の人々の健康を守るのは？",
+      "choices": [
+        "UNESCO",
+        "IMF",
+        "WHO（世界保健機関）",
+        "UNICEF"
+      ],
+      "answerIndex": 2,
+      "explanation": "WHO。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ09_003",
+      "unit": "social.civ.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「持続可能な開発目標」の略称は？",
+      "choices": [
+        "PKO",
+        "APEC",
+        "ODA",
+        "SDGs"
+      ],
+      "answerIndex": 3,
+      "explanation": "SDGs。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ09_004",
+      "unit": "social.civ.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "景気が悪く、企業の倒産や失業者が増える状態は？",
+      "choices": [
+        "インフレ",
+        "好況",
+        "バブル",
+        "不況（不景気）"
+      ],
+      "answerIndex": 3,
+      "explanation": "不況。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ09_005",
+      "unit": "social.civ.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "企業が利潤を追求するだけでなく、社会に対して果たすべき責任は？",
+      "choices": [
+        "独占",
+        "配当",
+        "企業の社会的責任（CSR）",
+        "株主総会"
+      ],
+      "answerIndex": 2,
+      "explanation": "CSR。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ09_006",
+      "unit": "social.civ.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "1ドル＝100円から120円になると？",
+      "choices": [
+        "好況",
+        "円高",
+        "円安",
+        "デフレ"
+      ],
+      "answerIndex": 2,
+      "explanation": "円の価値が下がる。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ09_007",
+      "unit": "social.civ.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "国の1年間の収入を何という？",
+      "choices": [
+        "予算",
+        "歳出",
+        "決算",
+        "歳入"
+      ],
+      "answerIndex": 3,
+      "explanation": "歳入。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ09_008",
+      "unit": "social.civ.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "国の歳出で最も大きな割合をしめるのは（近年）？",
+      "choices": [
+        "文教費",
+        "公共事業関係費",
+        "社会保障関係費",
+        "防衛関係費"
+      ],
+      "answerIndex": 2,
+      "explanation": "社会保障。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ09_009",
+      "unit": "social.civ.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "EU（ヨーロッパ連合）のように、地域でまとまって協力することは？",
+      "choices": [
+        "鎖国",
+        "地域統合（地域主義）",
+        "冷戦",
+        "南北問題"
+      ],
+      "answerIndex": 1,
+      "explanation": "地域統合。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ09_010",
+      "unit": "social.civ.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "日本が領有し、韓国が不法に占拠している島は？",
+      "choices": [
+        "沖ノ鳥島",
+        "尖閣諸島",
+        "竹島",
+        "北方領土"
+      ],
+      "answerIndex": 2,
+      "explanation": "竹島。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    }
+  ]
+}

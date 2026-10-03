@@ -1,0 +1,212 @@
+{
+  "setId": "science_e5_02",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_e502_001",
+      "unit": "science.e5.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "アサガオの花で、花粉をつくるのは？",
+      "choices": [
+        "おしべ",
+        "めしべ",
+        "がく",
+        "花びら"
+      ],
+      "answerIndex": 0,
+      "explanation": "おしべの先のやく。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e502_002",
+      "unit": "science.e5.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "めしべの先に花粉がつくことを何という？",
+      "choices": [
+        "受粉",
+        "発芽",
+        "成長",
+        "光合成"
+      ],
+      "answerIndex": 0,
+      "explanation": "受粉。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e502_003",
+      "unit": "science.e5.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "受粉すると、めしべのもとの部分は何になる？",
+      "choices": [
+        "根",
+        "おしべ",
+        "実",
+        "葉"
+      ],
+      "answerIndex": 2,
+      "explanation": "中にたねができる。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e502_004",
+      "unit": "science.e5.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ヘチマのように、お花とめ花がある植物は？",
+      "choices": [
+        "アサガオ",
+        "チューリップ",
+        "ヘチマ・ツルレイシ・カボチャ",
+        "アブラナ"
+      ],
+      "answerIndex": 2,
+      "explanation": "お花・め花。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e502_005",
+      "unit": "science.e5.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "カボチャの花粉は、おもに何で運ばれる？",
+      "choices": [
+        "虫（ハチなど）",
+        "水",
+        "人の手だけ",
+        "風"
+      ],
+      "answerIndex": 0,
+      "explanation": "虫ばい花。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e502_006",
+      "unit": "science.e5.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "トウモロコシの花粉は、おもに何で運ばれる？",
+      "choices": [
+        "風",
+        "水",
+        "鳥",
+        "虫"
+      ],
+      "answerIndex": 0,
+      "explanation": "風ばい花。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e502_007",
+      "unit": "science.e5.s1.a02",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "つぼみのときにふくろをかけ、受粉させないとどうなる？",
+      "choices": [
+        "実ができない",
+        "かわらない",
+        "大きな花がさく",
+        "実がたくさんできる"
+      ],
+      "answerIndex": 0,
+      "explanation": "受粉が必要。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e502_008",
+      "unit": "science.e5.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "花粉を観察する道具は？",
+      "choices": [
+        "望遠鏡",
+        "方位じしん",
+        "けんび鏡",
+        "虫めがねだけ"
+      ],
+      "answerIndex": 2,
+      "explanation": "けんび鏡。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e502_009",
+      "unit": "science.e5.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "けんび鏡で、さいしょに使う倍率は？",
+      "choices": [
+        "どれでもよい",
+        "いちばん高い倍率",
+        "高い倍率",
+        "低い倍率"
+      ],
+      "answerIndex": 3,
+      "explanation": "低い倍率から。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e502_010",
+      "unit": "science.e5.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "けんび鏡を使うとき、直接日光が当たる場所は？",
+      "choices": [
+        "使ったほうがよい",
+        "どちらでもよい",
+        "使ってはいけない",
+        "必ず使う"
+      ],
+      "answerIndex": 2,
+      "explanation": "目をいためる。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e502_011",
+      "unit": "science.e5.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "アブラナの花のつくりの順（外側から）は？",
+      "choices": [
+        "がく → 花びら → おしべ → めしべ",
+        "花びら → がく → めしべ → おしべ",
+        "おしべ → めしべ → がく → 花びら",
+        "めしべ → おしべ → 花びら → がく"
+      ],
+      "answerIndex": 0,
+      "explanation": "外からがく。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e502_012",
+      "unit": "science.e5.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "受粉のあと、たねができるのはどこ？",
+      "choices": [
+        "おしべの中",
+        "実の中",
+        "がくの中",
+        "花びらの中"
+      ],
+      "answerIndex": 1,
+      "explanation": "め花のもと → 実。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    }
+  ]
+}

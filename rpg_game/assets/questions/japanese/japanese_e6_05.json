@@ -1,0 +1,212 @@
+{
+  "setId": "japanese_e6_05",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "jpn_e605_001",
+      "unit": "japanese.e6.s2.a05",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「ぼくが作ったカレーはおいしい。」の主語は？",
+      "choices": [
+        "作った",
+        "カレーは",
+        "ぼくが",
+        "おいしい"
+      ],
+      "answerIndex": 1,
+      "explanation": "文全体の主語。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e605_002",
+      "unit": "japanese.e6.s2.a05",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「ぼくが作ったカレーはおいしい。」で、「ぼくが」の述語は？",
+      "choices": [
+        "作った",
+        "カレーは",
+        "ぼく",
+        "おいしい"
+      ],
+      "answerIndex": 0,
+      "explanation": "修飾部の中の主語・述語。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e605_003",
+      "unit": "japanese.e6.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "主語と述語の関係が一つだけの文を何という？",
+      "choices": [
+        "単文",
+        "会話文",
+        "重文",
+        "複文"
+      ],
+      "answerIndex": 0,
+      "explanation": "単文。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e605_004",
+      "unit": "japanese.e6.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「雨がふり、風がふく。」のように、主語・述語が対等に並ぶ文は？",
+      "choices": [
+        "重文",
+        "複文",
+        "倒置",
+        "単文"
+      ],
+      "answerIndex": 0,
+      "explanation": "重文。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e605_005",
+      "unit": "japanese.e6.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「母が作った料理はおいしい。」のような文は？",
+      "choices": [
+        "複文",
+        "重文",
+        "体言止め",
+        "単文"
+      ],
+      "answerIndex": 0,
+      "explanation": "主語・述語の関係が中にふくまれる。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e605_006",
+      "unit": "japanese.e6.s2.a05",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「美しい。この景色は。」のように、語順を入れかえる表現は？",
+      "choices": [
+        "比喩",
+        "倒置",
+        "体言止め",
+        "反復"
+      ],
+      "answerIndex": 1,
+      "explanation": "倒置法。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e605_007",
+      "unit": "japanese.e6.s2.a05",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「夕焼けの空。」のように、名詞で終える表現は？",
+      "choices": [
+        "倒置",
+        "擬人法",
+        "反復",
+        "体言止め"
+      ],
+      "answerIndex": 3,
+      "explanation": "体言止め。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e605_008",
+      "unit": "japanese.e6.s2.a05",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「まるで雪のように白い。」の表現は？",
+      "choices": [
+        "倒置",
+        "反復",
+        "比喩（直喩）",
+        "擬人法"
+      ],
+      "answerIndex": 2,
+      "explanation": "「ように」を使うたとえ。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e605_009",
+      "unit": "japanese.e6.s2.a05",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「風がささやく。」の表現は？",
+      "choices": [
+        "倒置",
+        "擬人法",
+        "直喩",
+        "体言止め"
+      ],
+      "answerIndex": 1,
+      "explanation": "人でないものを人のように。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e605_010",
+      "unit": "japanese.e6.s2.a05",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「わたしは、妹が笑ったので、うれしかった。」の文全体の述語は？",
+      "choices": [
+        "うれしかった",
+        "わたしは",
+        "笑った",
+        "妹が"
+      ],
+      "answerIndex": 0,
+      "explanation": "文末の述語。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e605_011",
+      "unit": "japanese.e6.s2.a05",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「白くて大きな船が港に着いた。」の主語は？",
+      "choices": [
+        "港に",
+        "大きな",
+        "船が",
+        "白くて"
+      ],
+      "answerIndex": 2,
+      "explanation": "主語。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e605_012",
+      "unit": "japanese.e6.s2.a05",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「たぶん、明日は晴れるだろう。」で「たぶん」と呼応しているのは？",
+      "choices": [
+        "晴れるだろう",
+        "晴れる",
+        "は",
+        "明日は"
+      ],
+      "answerIndex": 0,
+      "explanation": "呼応の副詞。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    }
+  ]
+}

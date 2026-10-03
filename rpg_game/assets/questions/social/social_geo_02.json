@@ -1,0 +1,212 @@
+{
+  "setId": "social_geo_02",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_geo02_001",
+      "unit": "social.geo.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "一年中暑く、雨が多い気候帯は？",
+      "choices": [
+        "温帯",
+        "寒帯",
+        "熱帯",
+        "乾燥帯"
+      ],
+      "answerIndex": 2,
+      "explanation": "熱帯雨林。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_geo02_002",
+      "unit": "social.geo.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "雨が少なく、砂漠が広がる気候帯は？",
+      "choices": [
+        "冷帯",
+        "寒帯",
+        "熱帯",
+        "乾燥帯"
+      ],
+      "answerIndex": 3,
+      "explanation": "乾燥帯。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_geo02_003",
+      "unit": "social.geo.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "日本の大部分が属する気候帯は？",
+      "choices": [
+        "温帯",
+        "熱帯",
+        "乾燥帯",
+        "冷帯（だけ）"
+      ],
+      "answerIndex": 0,
+      "explanation": "温帯（北海道は冷帯）。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_geo02_004",
+      "unit": "social.geo.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "針葉樹林（タイガ）が広がる気候帯は？",
+      "choices": [
+        "冷帯（亜寒帯）",
+        "温帯",
+        "乾燥帯",
+        "熱帯"
+      ],
+      "answerIndex": 0,
+      "explanation": "タイガ。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_geo02_005",
+      "unit": "social.geo.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "寒帯の地域で見られる、凍った土を何という？",
+      "choices": [
+        "オアシス",
+        "永久凍土",
+        "ステップ",
+        "サバナ"
+      ],
+      "answerIndex": 1,
+      "explanation": "永久凍土。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_geo02_006",
+      "unit": "social.geo.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "イスラム教徒が食べない肉は？",
+      "choices": [
+        "牛肉",
+        "豚肉",
+        "鶏肉",
+        "羊肉"
+      ],
+      "answerIndex": 1,
+      "explanation": "ハラル。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_geo02_007",
+      "unit": "social.geo.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ヒンドゥー教徒が神聖な動物として大切にするのは？",
+      "choices": [
+        "牛",
+        "羊",
+        "豚",
+        "鶏"
+      ],
+      "answerIndex": 0,
+      "explanation": "ヒンドゥー教。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_geo02_008",
+      "unit": "social.geo.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "世界三大宗教にあてはまらないのは？",
+      "choices": [
+        "仏教",
+        "キリスト教",
+        "イスラム教",
+        "ヒンドゥー教"
+      ],
+      "answerIndex": 3,
+      "explanation": "三大宗教。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_geo02_009",
+      "unit": "social.geo.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "砂漠で水がわき出る場所は？",
+      "choices": [
+        "ステップ",
+        "オアシス",
+        "ツンドラ",
+        "タイガ"
+      ],
+      "answerIndex": 1,
+      "explanation": "オアシス。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_geo02_010",
+      "unit": "social.geo.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "アンデス山脈の高地で飼われている動物は？",
+      "choices": [
+        "リャマやアルパカ",
+        "トナカイ",
+        "ラクダ",
+        "カンガルー"
+      ],
+      "answerIndex": 0,
+      "explanation": "高山気候。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_geo02_011",
+      "unit": "social.geo.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "イヌイットが冬に使った雪の家は？",
+      "choices": [
+        "ログハウス",
+        "高床式住居",
+        "ゲル",
+        "イグルー"
+      ],
+      "answerIndex": 3,
+      "explanation": "イグルー。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_geo02_012",
+      "unit": "social.geo.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "モンゴルの遊牧民が使う移動式住居は？",
+      "choices": [
+        "ゲル",
+        "高床式",
+        "イグルー",
+        "日干しれんがの家"
+      ],
+      "answerIndex": 0,
+      "explanation": "ゲル。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    }
+  ]
+}

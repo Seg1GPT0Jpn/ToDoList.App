@@ -1,0 +1,212 @@
+{
+  "setId": "social_e4_02",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_e402_001",
+      "unit": "social.e4.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "川の水をきれいにして飲める水にするところは？",
+      "choices": [
+        "浄水場",
+        "ダム",
+        "ごみ処理場",
+        "下水処理場"
+      ],
+      "answerIndex": 0,
+      "explanation": "浄水場。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e402_002",
+      "unit": "social.e4.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "使った水をきれいにして川や海にもどすところは？",
+      "choices": [
+        "浄水場",
+        "下水処理場（水再生センター）",
+        "ポンプ場",
+        "ダム"
+      ],
+      "answerIndex": 1,
+      "explanation": "下水処理場。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e402_003",
+      "unit": "social.e4.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ダムの役わりは？",
+      "choices": [
+        "水をよごす",
+        "水をためて、量を調節する",
+        "魚をとる",
+        "水を消す"
+      ],
+      "answerIndex": 1,
+      "explanation": "ダム。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e402_004",
+      "unit": "social.e4.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "森林が「緑のダム」とよばれる理由は？",
+      "choices": [
+        "木がダムをつくるから",
+        "雨水をたくわえ、少しずつ流すから",
+        "緑色のダムがあるから",
+        "水をすべてすいこむから"
+      ],
+      "answerIndex": 1,
+      "explanation": "水源林。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e402_005",
+      "unit": "social.e4.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "浄水場で、水の中の小さなごみを固めてしずめる薬は？",
+      "choices": [
+        "油",
+        "砂糖",
+        "塩",
+        "薬品（ぎょう集ざい）"
+      ],
+      "answerIndex": 3,
+      "explanation": "ぎょう集。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e402_006",
+      "unit": "social.e4.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "浄水場で最後に入れる、ばい菌を消すものは？",
+      "choices": [
+        "塩素",
+        "でんぷん",
+        "酸素",
+        "砂"
+      ],
+      "answerIndex": 0,
+      "explanation": "消毒。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e402_007",
+      "unit": "social.e4.s1.a02",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "水を大切に使う工夫は？",
+      "choices": [
+        "ふろの水をすぐすてる",
+        "歯をみがくとき水を止める",
+        "水を出しっぱなしにする",
+        "毎日車をあらう"
+      ],
+      "answerIndex": 1,
+      "explanation": "節水。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e402_008",
+      "unit": "social.e4.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "水道の水のもと（水源）になるのは？",
+      "choices": [
+        "水道管",
+        "雨だけ",
+        "海水だけ",
+        "川・湖・ダム・地下水"
+      ],
+      "answerIndex": 3,
+      "explanation": "水源。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e402_009",
+      "unit": "social.e4.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "水道料金を集めて水道を管理しているのは？",
+      "choices": [
+        "市や県（水道局）",
+        "消防しょ",
+        "お店",
+        "学校"
+      ],
+      "answerIndex": 0,
+      "explanation": "水道局。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e402_010",
+      "unit": "social.e4.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "水のじゅんかんで、海の水がじょう発して何になる？",
+      "choices": [
+        "川だけ",
+        "氷山",
+        "地下水だけ",
+        "雲（雨）"
+      ],
+      "answerIndex": 3,
+      "explanation": "水の循環。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e402_011",
+      "unit": "social.e4.s1.a02",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "家庭で油を流しにすてないほうがよい理由は？",
+      "choices": [
+        "料理がまずくなるから",
+        "水が増えるから",
+        "川や海をよごすから",
+        "水道管が光るから"
+      ],
+      "answerIndex": 2,
+      "explanation": "水質保全。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e402_012",
+      "unit": "social.e4.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "1人が1日に使う水の量はおよそ？",
+      "choices": [
+        "約2L",
+        "約200〜300L",
+        "約3000L",
+        "約20L"
+      ],
+      "answerIndex": 1,
+      "explanation": "約250L前後。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    }
+  ]
+}

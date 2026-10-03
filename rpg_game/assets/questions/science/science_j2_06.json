@@ -1,0 +1,212 @@
+{
+  "setId": "science_j2_06",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_j206_001",
+      "unit": "science.j2.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "磁力がはたらく空間を何という？",
+      "choices": [
+        "磁界",
+        "真空",
+        "回路",
+        "電界だけ"
+      ],
+      "answerIndex": 0,
+      "explanation": "磁界。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j206_002",
+      "unit": "science.j2.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "磁界の向きは、方位磁針の何極がさす向き？",
+      "choices": [
+        "両方",
+        "S極",
+        "N極",
+        "どちらでもない"
+      ],
+      "answerIndex": 2,
+      "explanation": "N極の向き。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j206_003",
+      "unit": "science.j2.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "導線に電流を流すと、まわりにできる磁界の形は？",
+      "choices": [
+        "直線状",
+        "らせん状だけ",
+        "同心円状",
+        "磁界はできない"
+      ],
+      "answerIndex": 2,
+      "explanation": "右ねじの法則。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j206_004",
+      "unit": "science.j2.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "コイルの中の磁界を変化させると電流が流れる現象は？",
+      "choices": [
+        "放電",
+        "電磁誘導",
+        "静電気",
+        "摩擦"
+      ],
+      "answerIndex": 1,
+      "explanation": "電磁誘導。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j206_005",
+      "unit": "science.j2.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "電磁誘導で流れる電流を何という？",
+      "choices": [
+        "放射線",
+        "静電気",
+        "直流",
+        "誘導電流"
+      ],
+      "answerIndex": 3,
+      "explanation": "誘導電流。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j206_006",
+      "unit": "science.j2.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "電磁誘導を利用しているものは？",
+      "choices": [
+        "乾電池",
+        "電熱線",
+        "豆電球",
+        "発電機"
+      ],
+      "answerIndex": 3,
+      "explanation": "発電機。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j206_007",
+      "unit": "science.j2.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "流れる向きが周期的に変わる電流は？",
+      "choices": [
+        "誘導電流だけ",
+        "直流",
+        "交流",
+        "静電気"
+      ],
+      "answerIndex": 2,
+      "explanation": "家庭のコンセント。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j206_008",
+      "unit": "science.j2.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "東日本の家庭の交流の周波数は？",
+      "choices": [
+        "60Hz",
+        "0Hz",
+        "50Hz",
+        "100Hz"
+      ],
+      "answerIndex": 2,
+      "explanation": "西日本は60Hz。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j206_009",
+      "unit": "science.j2.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "モーターが回るのは何の力？",
+      "choices": [
+        "重力",
+        "摩擦力",
+        "静電気の力",
+        "磁界の中の電流が受ける力"
+      ],
+      "answerIndex": 3,
+      "explanation": "電流が磁界から受ける力。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j206_010",
+      "unit": "science.j2.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "こすり合わせた物体にたまる電気は？",
+      "choices": [
+        "交流",
+        "静電気",
+        "直流",
+        "誘導電流"
+      ],
+      "answerIndex": 1,
+      "explanation": "静電気。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j206_011",
+      "unit": "science.j2.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "真空放電管で見られる、−極から出る電子の流れは？",
+      "choices": [
+        "陰極線（電子線）",
+        "放射線のα線",
+        "紫外線",
+        "赤外線"
+      ],
+      "answerIndex": 0,
+      "explanation": "電子の流れ。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j206_012",
+      "unit": "science.j2.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "電子は何の電気をもつ？",
+      "choices": [
+        "−の電気",
+        "電気をもたない",
+        "＋の電気",
+        "＋と−の両方"
+      ],
+      "answerIndex": 0,
+      "explanation": "電子は−。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    }
+  ]
+}

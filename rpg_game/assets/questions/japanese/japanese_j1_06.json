@@ -1,0 +1,212 @@
+{
+  "setId": "japanese_j1_06",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "jpn_j106_001",
+      "unit": "japanese.j1.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "漢文を日本語の語順で読むためにつける記号は？",
+      "choices": [
+        "ふりがな",
+        "返り点",
+        "句読点",
+        "送りがな（だけ）"
+      ],
+      "answerIndex": 1,
+      "explanation": "レ点・一二点。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j106_002",
+      "unit": "japanese.j1.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「レ点」はどう読む？",
+      "choices": [
+        "二字以上はなれて返る",
+        "下から順に読む",
+        "すぐ下の一字から、上に返って読む",
+        "読まない"
+      ],
+      "answerIndex": 2,
+      "explanation": "レ点。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j106_003",
+      "unit": "japanese.j1.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「一・二点」はどう読む？",
+      "choices": [
+        "読まない",
+        "二字以上はなれた字に返って読む",
+        "一から順に下へ",
+        "すぐ上に返る"
+      ],
+      "answerIndex": 1,
+      "explanation": "一二点。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j106_004",
+      "unit": "japanese.j1.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "漢文に送りがな・返り点をつけたものを何という？",
+      "choices": [
+        "訓読文",
+        "現代語訳",
+        "白文",
+        "書き下し文"
+      ],
+      "answerIndex": 0,
+      "explanation": "訓読文。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j106_005",
+      "unit": "japanese.j1.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "訓読文を漢字かなまじりの文に書き改めたものは？",
+      "choices": [
+        "訓読文",
+        "書き下し文",
+        "漢詩",
+        "白文"
+      ],
+      "answerIndex": 1,
+      "explanation": "書き下し文。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j106_006",
+      "unit": "japanese.j1.s2.a06",
+      "unitLocked": true,
+      "category": "meaning",
+      "prompt": "「矛盾」の話で、楚の人が売っていたものは？",
+      "choices": [
+        "米と塩",
+        "矛と盾",
+        "剣と弓",
+        "馬と車"
+      ],
+      "answerIndex": 1,
+      "explanation": "ほことたて。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j106_007",
+      "unit": "japanese.j1.s2.a06",
+      "unitLocked": true,
+      "category": "meaning",
+      "prompt": "「矛盾」の話で、楚の人は何と言われて答えられなかった？",
+      "choices": [
+        "矛と盾はどちらが重いか",
+        "盾はどこで作ったか",
+        "矛はいくらか",
+        "あなたの矛であなたの盾をついたらどうなるか"
+      ],
+      "answerIndex": 3,
+      "explanation": "つじつまが合わない。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j106_008",
+      "unit": "japanese.j1.s2.a06",
+      "unitLocked": true,
+      "category": "meaning",
+      "prompt": "「推敲」の故事で、迷った字は？",
+      "choices": [
+        "「僧」と「人」",
+        "「月」と「日」",
+        "「門」と「戸」",
+        "「推す」と「敲く」"
+      ],
+      "answerIndex": 3,
+      "explanation": "門を推す・敲く。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j106_009",
+      "unit": "japanese.j1.s2.a06",
+      "unitLocked": true,
+      "category": "meaning",
+      "prompt": "「蛇足」の話で、へびに足をかいた人はどうなった？",
+      "choices": [
+        "ほめられた",
+        "酒をたくさん飲んだ",
+        "王様になった",
+        "酒を飲みそこねた"
+      ],
+      "answerIndex": 3,
+      "explanation": "よけいなことをして失敗。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j106_010",
+      "unit": "japanese.j1.s2.a06",
+      "unitLocked": true,
+      "category": "meaning",
+      "prompt": "「杞憂」の意味は？",
+      "choices": [
+        "よい知らせ",
+        "楽しいこと",
+        "とても心配な事件",
+        "あれこれと取り越し苦労をすること"
+      ],
+      "answerIndex": 3,
+      "explanation": "杞の国の人が天が落ちるのを心配した。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j106_011",
+      "unit": "japanese.j1.s2.a06",
+      "unitLocked": true,
+      "category": "meaning",
+      "prompt": "「背水の陣」の意味は？",
+      "choices": [
+        "川で休む",
+        "水を背負う",
+        "失敗したら後がない覚悟で取り組む",
+        "逃げ道を作る"
+      ],
+      "answerIndex": 2,
+      "explanation": "故事成語。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j106_012",
+      "unit": "japanese.j1.s2.a06",
+      "unitLocked": true,
+      "category": "meaning",
+      "prompt": "「四面楚歌」の意味は？",
+      "choices": [
+        "まわりが敵ばかりで孤立すること",
+        "四人で歌う",
+        "仲間が多い",
+        "四方から歌が聞こえて楽しい"
+      ],
+      "answerIndex": 0,
+      "explanation": "故事成語。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    }
+  ]
+}

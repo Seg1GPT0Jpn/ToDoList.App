@@ -1,0 +1,212 @@
+{
+  "setId": "science_j2_01",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_j201_001",
+      "unit": "science.j2.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "物質をつくっている、それ以上分けられない小さな粒は？",
+      "choices": [
+        "電子",
+        "イオン",
+        "原子",
+        "分子"
+      ],
+      "answerIndex": 2,
+      "explanation": "原子。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j201_002",
+      "unit": "science.j2.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "水の化学式は？",
+      "choices": [
+        "HO₂",
+        "OH",
+        "H₂O",
+        "H₂O₂"
+      ],
+      "answerIndex": 2,
+      "explanation": "水素原子2個と酸素原子1個。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j201_003",
+      "unit": "science.j2.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "二酸化炭素の化学式は？",
+      "choices": [
+        "CO₂",
+        "C₂O",
+        "CO",
+        "O₂C₂"
+      ],
+      "answerIndex": 0,
+      "explanation": "炭素1・酸素2。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j201_004",
+      "unit": "science.j2.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "1種類の元素からできている物質を何という？",
+      "choices": [
+        "分子",
+        "単体",
+        "混合物",
+        "化合物"
+      ],
+      "answerIndex": 1,
+      "explanation": "単体（O₂・Fe）。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j201_005",
+      "unit": "science.j2.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "2種類以上の元素からできている物質は？",
+      "choices": [
+        "化合物",
+        "原子",
+        "元素",
+        "単体"
+      ],
+      "answerIndex": 0,
+      "explanation": "化合物（H₂O・CO₂）。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j201_006",
+      "unit": "science.j2.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "1種類の物質が2種類以上の物質に分かれる化学変化は？",
+      "choices": [
+        "分解",
+        "化合",
+        "酸化",
+        "還元"
+      ],
+      "answerIndex": 0,
+      "explanation": "分解。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j201_007",
+      "unit": "science.j2.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "炭酸水素ナトリウムを加熱すると発生する気体は？",
+      "choices": [
+        "酸素",
+        "アンモニア",
+        "二酸化炭素",
+        "水素"
+      ],
+      "answerIndex": 2,
+      "explanation": "炭酸ナトリウム・水・二酸化炭素。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j201_008",
+      "unit": "science.j2.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "水を電気分解すると、陰極に発生する気体は？",
+      "choices": [
+        "二酸化炭素",
+        "水素",
+        "酸素",
+        "塩素"
+      ],
+      "answerIndex": 1,
+      "explanation": "陰極に水素、陽極に酸素（2:1）。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j201_009",
+      "unit": "science.j2.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "物質が酸素と結びつく化学変化は？",
+      "choices": [
+        "還元",
+        "分解",
+        "中和",
+        "酸化"
+      ],
+      "answerIndex": 3,
+      "explanation": "酸化。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j201_010",
+      "unit": "science.j2.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "酸化物から酸素をとり除く化学変化は？",
+      "choices": [
+        "分解",
+        "燃焼",
+        "酸化",
+        "還元"
+      ],
+      "answerIndex": 3,
+      "explanation": "還元。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j201_011",
+      "unit": "science.j2.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "化学変化の前後で、全体の質量は変わらない。この法則は？",
+      "choices": [
+        "質量保存の法則",
+        "オームの法則",
+        "フックの法則",
+        "定比例の法則"
+      ],
+      "answerIndex": 0,
+      "explanation": "質量保存。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j201_012",
+      "unit": "science.j2.s1.a01",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "銅0.8gが完全に酸化すると1.0gになった。銅と酸素の質量比は？",
+      "choices": [
+        "1:4",
+        "4:1",
+        "5:4",
+        "4:5"
+      ],
+      "answerIndex": 1,
+      "explanation": "酸素は0.2g。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    }
+  ]
+}

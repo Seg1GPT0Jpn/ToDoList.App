@@ -1,0 +1,212 @@
+{
+  "setId": "science_j1_07",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_j107_001",
+      "unit": "science.j1.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "地震の発生した地下の場所を何という？",
+      "choices": [
+        "震度",
+        "震源",
+        "断層",
+        "震央"
+      ],
+      "answerIndex": 1,
+      "explanation": "震源。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j107_002",
+      "unit": "science.j1.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "震源の真上の地表の地点は？",
+      "choices": [
+        "震度",
+        "震源",
+        "震央",
+        "プレート"
+      ],
+      "answerIndex": 2,
+      "explanation": "震央。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j107_003",
+      "unit": "science.j1.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "地震のはじめの小さなゆれを何という？",
+      "choices": [
+        "本震",
+        "初期微動",
+        "主要動",
+        "余震"
+      ],
+      "answerIndex": 1,
+      "explanation": "P波による。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j107_004",
+      "unit": "science.j1.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "初期微動継続時間は、震源からの距離が遠いほど？",
+      "choices": [
+        "短くなる",
+        "長くなる",
+        "0になる",
+        "変わらない"
+      ],
+      "answerIndex": 1,
+      "explanation": "P波とS波の到着時刻の差。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j107_005",
+      "unit": "science.j1.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "地震の規模を表すのは？",
+      "choices": [
+        "震度",
+        "震源",
+        "初期微動",
+        "マグニチュード"
+      ],
+      "answerIndex": 3,
+      "explanation": "規模＝マグニチュード、ゆれ＝震度。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j107_006",
+      "unit": "science.j1.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "日本の震度階級はいくつ？",
+      "choices": [
+        "5段階",
+        "10段階",
+        "7段階",
+        "12段階"
+      ],
+      "answerIndex": 1,
+      "explanation": "0〜7（5・6に強弱）。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j107_007",
+      "unit": "science.j1.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "マグマが冷えて固まった岩石は？",
+      "choices": [
+        "化石",
+        "堆積岩",
+        "変成岩だけ",
+        "火成岩"
+      ],
+      "answerIndex": 3,
+      "explanation": "火成岩。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j107_008",
+      "unit": "science.j1.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "マグマが地表付近で急に冷えてできた岩石は？",
+      "choices": [
+        "火山岩",
+        "堆積岩",
+        "深成岩",
+        "チャート"
+      ],
+      "answerIndex": 0,
+      "explanation": "斑状組織。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j107_009",
+      "unit": "science.j1.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "マグマが地下深くでゆっくり冷えてできた岩石は？",
+      "choices": [
+        "凝灰岩",
+        "深成岩",
+        "石灰岩",
+        "火山岩"
+      ],
+      "answerIndex": 1,
+      "explanation": "等粒状組織。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j107_010",
+      "unit": "science.j1.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "火山灰が固まってできた堆積岩は？",
+      "choices": [
+        "石灰岩",
+        "凝灰岩",
+        "花こう岩",
+        "チャート"
+      ],
+      "answerIndex": 1,
+      "explanation": "凝灰岩。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j107_011",
+      "unit": "science.j1.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "地層ができた当時の環境を示す化石は？",
+      "choices": [
+        "示相化石",
+        "生きた化石",
+        "鉱物",
+        "示準化石"
+      ],
+      "answerIndex": 0,
+      "explanation": "サンゴ → あたたかく浅い海。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j107_012",
+      "unit": "science.j1.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "地層ができた時代を示す化石は？",
+      "choices": [
+        "火山弾",
+        "示相化石",
+        "示準化石",
+        "鉱物"
+      ],
+      "answerIndex": 2,
+      "explanation": "アンモナイト → 中生代。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    }
+  ]
+}

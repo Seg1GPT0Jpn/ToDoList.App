@@ -1,0 +1,212 @@
+{
+  "setId": "social_civ_02",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_civ02_001",
+      "unit": "social.civ.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "国の政治の最高の決まり（最高法規）は？",
+      "choices": [
+        "法律",
+        "命令",
+        "憲法",
+        "条例"
+      ],
+      "answerIndex": 2,
+      "explanation": "憲法。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ02_002",
+      "unit": "social.civ.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "憲法によって政治権力を制限する考え方は？",
+      "choices": [
+        "民主主義",
+        "社会主義",
+        "立憲主義",
+        "専制政治"
+      ],
+      "answerIndex": 2,
+      "explanation": "立憲主義。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ02_003",
+      "unit": "social.civ.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "基本的人権のうち、思想・良心の自由などをふくむのは？",
+      "choices": [
+        "参政権",
+        "請求権",
+        "社会権",
+        "自由権"
+      ],
+      "answerIndex": 3,
+      "explanation": "精神の自由。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ02_004",
+      "unit": "social.civ.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "生存権・教育を受ける権利・勤労の権利などは？",
+      "choices": [
+        "社会権",
+        "平等権",
+        "参政権",
+        "自由権"
+      ],
+      "answerIndex": 0,
+      "explanation": "社会権。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ02_005",
+      "unit": "social.civ.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "選挙権・被選挙権などは？",
+      "choices": [
+        "自由権",
+        "参政権",
+        "社会権",
+        "請求権"
+      ],
+      "answerIndex": 1,
+      "explanation": "参政権。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ02_006",
+      "unit": "social.civ.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "裁判を受ける権利・国家賠償請求権などは？",
+      "choices": [
+        "参政権",
+        "自由権",
+        "社会権",
+        "請求権"
+      ],
+      "answerIndex": 3,
+      "explanation": "請求権。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ02_007",
+      "unit": "social.civ.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "新しい人権にあてはまるのは？",
+      "choices": [
+        "財産権",
+        "環境権・知る権利・プライバシーの権利",
+        "生存権",
+        "参政権"
+      ],
+      "answerIndex": 1,
+      "explanation": "新しい人権。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ02_008",
+      "unit": "social.civ.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "男女が対等に社会参加することをめざして1999年に制定された法律は？",
+      "choices": [
+        "労働基準法",
+        "教育基本法",
+        "男女共同参画社会基本法",
+        "男女雇用機会均等法だけ"
+      ],
+      "answerIndex": 2,
+      "explanation": "男女共同参画。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ02_009",
+      "unit": "social.civ.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "障がいのある人が生活しやすいように段差などをなくすことは？",
+      "choices": [
+        "バリアフリー",
+        "ノーマライゼーションだけ",
+        "リサイクル",
+        "ユニバーサルデザインだけ"
+      ],
+      "answerIndex": 0,
+      "explanation": "バリアフリー。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ02_010",
+      "unit": "social.civ.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "人権が公共の福祉によって制限されることがある理由は？",
+      "choices": [
+        "外国のため",
+        "国の利益だけのため",
+        "他人の人権との調整のため",
+        "人権は不要だから"
+      ],
+      "answerIndex": 2,
+      "explanation": "公共の福祉。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ02_011",
+      "unit": "social.civ.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "医療で、患者が説明を受けて同意することは？",
+      "choices": [
+        "ワークライフバランス",
+        "プライバシー",
+        "インフォームド・コンセント",
+        "セカンドオピニオン"
+      ],
+      "answerIndex": 2,
+      "explanation": "IC。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ02_012",
+      "unit": "social.civ.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "1948年に国連で採択された人権の宣言は？",
+      "choices": [
+        "子どもの権利条約",
+        "独立宣言",
+        "人権宣言（フランス）",
+        "世界人権宣言"
+      ],
+      "answerIndex": 3,
+      "explanation": "世界人権宣言。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    }
+  ]
+}

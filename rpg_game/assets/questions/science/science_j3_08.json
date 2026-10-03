@@ -1,0 +1,178 @@
+{
+  "setId": "science_j3_08",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_j308_001",
+      "unit": "science.j3.s2.a08",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "質量2kgの物体を1.5m持ち上げた仕事は？（100gにはたらく重力を1Nとする）",
+      "choices": [
+        "3J",
+        "13J",
+        "30J",
+        "300J"
+      ],
+      "answerIndex": 2,
+      "explanation": "20N × 1.5m",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j308_002",
+      "unit": "science.j3.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "北の空の星は何を中心に回って見える？",
+      "choices": [
+        "北極星",
+        "太陽",
+        "月",
+        "金星"
+      ],
+      "answerIndex": 0,
+      "explanation": "北極星。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j308_003",
+      "unit": "science.j3.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "月食のときの月の形は？",
+      "choices": [
+        "三日月",
+        "半月",
+        "満月",
+        "新月"
+      ],
+      "answerIndex": 2,
+      "explanation": "太陽・地球・月の順。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j308_004",
+      "unit": "science.j3.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "陰イオンを表すものは？",
+      "choices": [
+        "Na⁺",
+        "Cu²⁺",
+        "Cl⁻",
+        "H⁺"
+      ],
+      "answerIndex": 2,
+      "explanation": "−の電気。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j308_005",
+      "unit": "science.j3.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "エネルギーの変換効率が高いことはどういう意味？",
+      "choices": [
+        "時間が長い",
+        "電気を使わない",
+        "目的のエネルギーに多く変換できる",
+        "熱を多く出す"
+      ],
+      "answerIndex": 2,
+      "explanation": "変換効率。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j308_006",
+      "unit": "science.j3.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "放射線を出す能力を何という？",
+      "choices": [
+        "放射能",
+        "半減期",
+        "放射線量",
+        "電離"
+      ],
+      "answerIndex": 0,
+      "explanation": "放射能。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j308_007",
+      "unit": "science.j3.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ヒトの体細胞の染色体の数は？",
+      "choices": [
+        "92本",
+        "46本",
+        "12本",
+        "23本"
+      ],
+      "answerIndex": 1,
+      "explanation": "生殖細胞は23本。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j308_008",
+      "unit": "science.j3.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "冬至の日、昼の長さは？",
+      "choices": [
+        "1年でいちばん短い",
+        "1年でいちばん長い",
+        "夜と同じ",
+        "春分と同じ"
+      ],
+      "answerIndex": 0,
+      "explanation": "冬至。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j308_009",
+      "unit": "science.j3.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "斜面上の物体にはたらく重力の、斜面に平行な分力は斜面の傾きが大きいほど？",
+      "choices": [
+        "大きい",
+        "変わらない",
+        "0",
+        "小さい"
+      ],
+      "answerIndex": 0,
+      "explanation": "傾きと分力。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j308_010",
+      "unit": "science.j3.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "中和でできた水溶液がアルカリ性を示すとき、多く残っているイオンは？",
+      "choices": [
+        "H⁺",
+        "OH⁻",
+        "どれも残らない",
+        "Cl⁻（だけ）"
+      ],
+      "answerIndex": 1,
+      "explanation": "アルカリ性 ＝ OH⁻。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    }
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "setId": "science_j3_02",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_j302_001",
+      "unit": "science.j3.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "体細胞分裂のとき、核の中に見えるひも状のものは？",
+      "choices": [
+        "染色体",
+        "細胞壁",
+        "葉緑体",
+        "液胞"
+      ],
+      "answerIndex": 0,
+      "explanation": "染色体。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j302_002",
+      "unit": "science.j3.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "雌雄の親を必要としないふえ方は？",
+      "choices": [
+        "受精",
+        "減数分裂",
+        "無性生殖",
+        "有性生殖"
+      ],
+      "answerIndex": 2,
+      "explanation": "分裂・栄養生殖。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j302_003",
+      "unit": "science.j3.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ジャガイモのいもからふえるような無性生殖は？",
+      "choices": [
+        "受精",
+        "受粉",
+        "栄養生殖",
+        "分裂（ゾウリムシ）"
+      ],
+      "answerIndex": 2,
+      "explanation": "栄養生殖。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j302_004",
+      "unit": "science.j3.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "生殖細胞ができるときの特別な細胞分裂は？",
+      "choices": [
+        "体細胞分裂",
+        "減数分裂",
+        "受精",
+        "無性生殖"
+      ],
+      "answerIndex": 1,
+      "explanation": "染色体の数が半分。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j302_005",
+      "unit": "science.j3.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "親の形質が子や孫に伝わることを何という？",
+      "choices": [
+        "進化",
+        "発生",
+        "遺伝",
+        "分裂"
+      ],
+      "answerIndex": 2,
+      "explanation": "遺伝。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j302_006",
+      "unit": "science.j3.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "遺伝子の本体の物質は？",
+      "choices": [
+        "タンパク質",
+        "ATP",
+        "デンプン",
+        "DNA（デオキシリボ核酸）"
+      ],
+      "answerIndex": 3,
+      "explanation": "DNA。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j302_007",
+      "unit": "science.j3.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "対立形質をもつ純系どうしをかけ合わせたとき、子に現れる形質は？",
+      "choices": [
+        "潜性形質",
+        "顕性形質",
+        "両方の中間（必ず）",
+        "現れない"
+      ],
+      "answerIndex": 1,
+      "explanation": "顕性（優性）。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j302_008",
+      "unit": "science.j3.s1.a02",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "Aa どうしをかけ合わせたとき、子の遺伝子の組み合わせ AA:Aa:aa の比は？",
+      "choices": [
+        "3:1",
+        "1:1",
+        "1:2:1",
+        "2:1:1"
+      ],
+      "answerIndex": 2,
+      "explanation": "孫の世代。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j302_009",
+      "unit": "science.j3.s1.a02",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "Aa どうしの子で、顕性：潜性の形質の比は？",
+      "choices": [
+        "3:1",
+        "1:3",
+        "1:1",
+        "1:2:1"
+      ],
+      "answerIndex": 0,
+      "explanation": "AA・Aa は顕性。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j302_010",
+      "unit": "science.j3.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "エンドウを使って遺伝の規則性を発見した人は？",
+      "choices": [
+        "パスツール",
+        "ニュートン",
+        "メンデル",
+        "ダーウィン"
+      ],
+      "answerIndex": 2,
+      "explanation": "メンデル。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j302_011",
+      "unit": "science.j3.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "生物が長い時間をかけて変化することを何という？",
+      "choices": [
+        "発生",
+        "生殖",
+        "遺伝",
+        "進化"
+      ],
+      "answerIndex": 3,
+      "explanation": "進化。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j302_012",
+      "unit": "science.j3.s1.a02",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "形やはたらきはちがうが、起源が同じと考えられる器官は？",
+      "choices": [
+        "感覚器官",
+        "痕跡器官",
+        "消化器官",
+        "相同器官"
+      ],
+      "answerIndex": 3,
+      "explanation": "クジラの胸びれとヒトの腕。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    }
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "setId": "science_e3_07",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_e307_001",
+      "unit": "science.e3.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "明かりがつくのは、どんな回路？",
+      "choices": [
+        "＋極だけにつながっている",
+        "導線が切れている",
+        "−極だけにつながっている",
+        "かん電池の＋極と−極が1つの輪のようにつながっている"
+      ],
+      "answerIndex": 3,
+      "explanation": "回路。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e307_002",
+      "unit": "science.e3.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "電気を通すものは？",
+      "choices": [
+        "プラスチック",
+        "ガラス",
+        "紙",
+        "鉄のくぎ"
+      ],
+      "answerIndex": 3,
+      "explanation": "金属は電気を通す。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e307_003",
+      "unit": "science.e3.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "電気を通さないものは？",
+      "choices": [
+        "木",
+        "鉄",
+        "アルミニウム",
+        "銅"
+      ],
+      "answerIndex": 0,
+      "explanation": "木は通さない。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e307_004",
+      "unit": "science.e3.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "じしゃくにつくものは？",
+      "choices": [
+        "鉄",
+        "アルミニウム",
+        "ガラス",
+        "銅"
+      ],
+      "answerIndex": 0,
+      "explanation": "鉄がつく。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e307_005",
+      "unit": "science.e3.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "じしゃくにつかない金ぞくは？",
+      "choices": [
+        "鉄",
+        "スチール",
+        "アルミニウム",
+        "ニッケル"
+      ],
+      "answerIndex": 2,
+      "explanation": "アルミ・銅はつかない。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e307_006",
+      "unit": "science.e3.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "じしゃくの極で、同じ極どうしを近づけると？",
+      "choices": [
+        "くっついてはなれない",
+        "しりぞけ合う",
+        "何も起きない",
+        "引き合う"
+      ],
+      "answerIndex": 1,
+      "explanation": "N-N、S-S は反発。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e307_007",
+      "unit": "science.e3.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "じしゃくのちがう極どうしを近づけると？",
+      "choices": [
+        "何も起きない",
+        "しりぞけ合う",
+        "回る",
+        "引き合う"
+      ],
+      "answerIndex": 3,
+      "explanation": "N-S は引き合う。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e307_008",
+      "unit": "science.e3.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "じしゃくの力がいちばん強いところは？",
+      "choices": [
+        "じしゃくの中だけ",
+        "どこも同じ",
+        "両はし（極）",
+        "まん中"
+      ],
+      "answerIndex": 2,
+      "explanation": "極が強い。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e307_009",
+      "unit": "science.e3.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "自由に動くようにしたじしゃくのN極は、どの方角をさす？",
+      "choices": [
+        "東",
+        "北",
+        "南",
+        "西"
+      ],
+      "answerIndex": 1,
+      "explanation": "方位じしんのしくみ。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e307_010",
+      "unit": "science.e3.s2.a07",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "じしゃくにつけた鉄のくぎは？",
+      "choices": [
+        "じしゃくのはたらきをもつ",
+        "光る",
+        "とける",
+        "電気を出す"
+      ],
+      "answerIndex": 0,
+      "explanation": "じしゃくになる。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e307_011",
+      "unit": "science.e3.s2.a07",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "あきかんのうち、じしゃくで分けられるのは？",
+      "choices": [
+        "ペットボトル",
+        "スチールかん",
+        "びん",
+        "アルミかん"
+      ],
+      "answerIndex": 1,
+      "explanation": "スチール（鉄）。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e307_012",
+      "unit": "science.e3.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "豆電球の明かりがつかない理由として考えられるのは？",
+      "choices": [
+        "豆電球がソケットにしっかり入っている",
+        "導線がはずれている",
+        "回路が輪になっている",
+        "かん電池が新しい"
+      ],
+      "answerIndex": 1,
+      "explanation": "回路が切れている。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    }
+  ]
+}

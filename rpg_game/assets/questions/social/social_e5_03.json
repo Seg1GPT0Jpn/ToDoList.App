@@ -1,0 +1,212 @@
+{
+  "setId": "social_e5_03",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_e503_001",
+      "unit": "social.e5.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "沖合で数日がかりで行う漁業は？",
+      "choices": [
+        "遠洋漁業",
+        "沿岸漁業",
+        "沖合漁業",
+        "養しょく業"
+      ],
+      "answerIndex": 2,
+      "explanation": "沖合。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e503_002",
+      "unit": "social.e5.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "何か月もかけて遠くの海で行う漁業は？",
+      "choices": [
+        "沖合漁業",
+        "遠洋漁業",
+        "沿岸漁業",
+        "栽培漁業"
+      ],
+      "answerIndex": 1,
+      "explanation": "遠洋。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e503_003",
+      "unit": "social.e5.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "いけすなどで魚や貝を育てて出荷する漁業は？",
+      "choices": [
+        "栽培漁業",
+        "沖合漁業",
+        "遠洋漁業",
+        "養しょく業"
+      ],
+      "answerIndex": 3,
+      "explanation": "養殖。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e503_004",
+      "unit": "social.e5.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "稚魚を育てて海に放流し、大きくなってからとる漁業は？",
+      "choices": [
+        "養しょく業",
+        "栽培漁業",
+        "沖合漁業",
+        "遠洋漁業"
+      ],
+      "answerIndex": 1,
+      "explanation": "栽培漁業。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e503_005",
+      "unit": "social.e5.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "寒流と暖流がぶつかる「潮目」がよい漁場になる理由は？",
+      "choices": [
+        "船が通りやすいから",
+        "波が静かだから",
+        "水がきれいだから",
+        "プランクトンが多く、魚が集まるから"
+      ],
+      "answerIndex": 3,
+      "explanation": "潮目。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e503_006",
+      "unit": "social.e5.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "日本の近くを北から流れる寒流は？",
+      "choices": [
+        "赤潮",
+        "黒潮",
+        "親潮（千島海流）",
+        "対馬海流"
+      ],
+      "answerIndex": 2,
+      "explanation": "親潮。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e503_007",
+      "unit": "social.e5.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "日本の近くを南から流れる暖流は？",
+      "choices": [
+        "リマン海流",
+        "親潮",
+        "黒潮（日本海流）",
+        "千島海流"
+      ],
+      "answerIndex": 2,
+      "explanation": "黒潮。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e503_008",
+      "unit": "social.e5.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "国内で消費する食料のうち、国内で生産される割合を何という？",
+      "choices": [
+        "輸出率",
+        "就業率",
+        "食料自給率",
+        "人口密度"
+      ],
+      "answerIndex": 2,
+      "explanation": "食料自給率。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e503_009",
+      "unit": "social.e5.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "日本の食料自給率（カロリーベース）はおよそ？",
+      "choices": [
+        "約10%",
+        "約40%",
+        "約70%",
+        "約90%"
+      ],
+      "answerIndex": 1,
+      "explanation": "先進国の中で低い。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e503_010",
+      "unit": "social.e5.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "日本が輸入にたよっている割合が高い食料は？",
+      "choices": [
+        "鶏卵",
+        "みかん",
+        "米",
+        "小麦・大豆"
+      ],
+      "answerIndex": 3,
+      "explanation": "小麦・大豆。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e503_011",
+      "unit": "social.e5.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "食品がどこでつくられ、どう運ばれたかを記録してわかるようにするしくみは？",
+      "choices": [
+        "リサイクル",
+        "地産地消",
+        "フードマイレージ",
+        "トレーサビリティ"
+      ],
+      "answerIndex": 3,
+      "explanation": "安全のため。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e503_012",
+      "unit": "social.e5.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "水あげされた魚を新鮮なまま運ぶ方法は？",
+      "choices": [
+        "日なたで運ぶ",
+        "時間をかけて運ぶ",
+        "こおらせず常温で長く置く",
+        "保冷トラックで運ぶ"
+      ],
+      "answerIndex": 3,
+      "explanation": "保冷輸送。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    }
+  ]
+}

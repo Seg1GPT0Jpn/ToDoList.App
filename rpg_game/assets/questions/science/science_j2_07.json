@@ -1,0 +1,212 @@
+{
+  "setId": "science_j2_07",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_j207_001",
+      "unit": "science.j2.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "大気圧の単位として使われるのは？",
+      "choices": [
+        "N",
+        "W",
+        "hPa（ヘクトパスカル）",
+        "J"
+      ],
+      "answerIndex": 2,
+      "explanation": "1気圧＝約1013hPa。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j207_002",
+      "unit": "science.j2.s2.a07",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "面積2m²に100Nの力がはたらくと圧力は？",
+      "choices": [
+        "50Pa",
+        "200Pa",
+        "0.02Pa",
+        "102Pa"
+      ],
+      "answerIndex": 0,
+      "explanation": "圧力 ＝ 力 ÷ 面積",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j207_003",
+      "unit": "science.j2.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "空気が上昇して冷やされ、水蒸気が水滴になり始める温度は？",
+      "choices": [
+        "融点",
+        "気温",
+        "露点",
+        "沸点"
+      ],
+      "answerIndex": 2,
+      "explanation": "露点。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j207_004",
+      "unit": "science.j2.s2.a07",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "気温20℃（飽和水蒸気量17.3g/m³）で水蒸気量8.65g/m³。湿度は？",
+      "choices": [
+        "200%",
+        "50%",
+        "86.5%",
+        "20%"
+      ],
+      "answerIndex": 1,
+      "explanation": "8.65 ÷ 17.3 × 100",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j207_005",
+      "unit": "science.j2.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "高気圧の中心付近の天気は？",
+      "choices": [
+        "必ず雪",
+        "台風になる",
+        "上昇気流で雨",
+        "下降気流で晴れやすい"
+      ],
+      "answerIndex": 3,
+      "explanation": "高気圧。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j207_006",
+      "unit": "science.j2.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "低気圧の中心付近の風の向き（北半球）は？",
+      "choices": [
+        "反時計回りにふきこむ",
+        "風はない",
+        "真上にふく",
+        "時計回りにふき出す"
+      ],
+      "answerIndex": 0,
+      "explanation": "低気圧。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j207_007",
+      "unit": "science.j2.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "寒気が暖気をおし上げて進む前線は？",
+      "choices": [
+        "寒冷前線",
+        "温暖前線",
+        "閉塞前線",
+        "停滞前線"
+      ],
+      "answerIndex": 0,
+      "explanation": "積乱雲・強いにわか雨。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j207_008",
+      "unit": "science.j2.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "寒冷前線が通過すると、気温は？",
+      "choices": [
+        "0℃になる",
+        "下がる",
+        "上がる",
+        "変わらない"
+      ],
+      "answerIndex": 1,
+      "explanation": "北寄りの風に変わる。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j207_009",
+      "unit": "science.j2.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "温暖前線付近でできやすい雲は？",
+      "choices": [
+        "巻積雲だけ",
+        "乱層雲",
+        "積乱雲",
+        "積雲"
+      ],
+      "answerIndex": 1,
+      "explanation": "おだやかな雨が長時間。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j207_010",
+      "unit": "science.j2.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "梅雨の時期に日本付近にのびる前線は？",
+      "choices": [
+        "停滞前線（梅雨前線）",
+        "温暖前線",
+        "寒冷前線",
+        "閉塞前線"
+      ],
+      "answerIndex": 0,
+      "explanation": "停滞前線。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j207_011",
+      "unit": "science.j2.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "冬の日本の気圧配置は？",
+      "choices": [
+        "南高北低",
+        "西高東低",
+        "北高南低",
+        "東高西低"
+      ],
+      "answerIndex": 1,
+      "explanation": "シベリア高気圧。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j207_012",
+      "unit": "science.j2.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "夏に日本付近に発達する気団は？",
+      "choices": [
+        "揚子江気団",
+        "シベリア気団",
+        "小笠原気団",
+        "オホーツク海気団"
+      ],
+      "answerIndex": 2,
+      "explanation": "高温多湿。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    }
+  ]
+}

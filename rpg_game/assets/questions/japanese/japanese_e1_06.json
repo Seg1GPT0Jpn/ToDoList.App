@@ -1,0 +1,212 @@
+{
+  "setId": "japanese_e1_06",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "jpn_e106_001",
+      "unit": "japanese.e1.s2.a06",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「わたし（  ）がっこうへ いく。」に はいるのは？",
+      "choices": [
+        "わ",
+        "お",
+        "を",
+        "は"
+      ],
+      "answerIndex": 3,
+      "explanation": "「〜は」と よむときは「は」と かく。",
+      "targetGrade": "小1",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e106_002",
+      "unit": "japanese.e1.s2.a06",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「ほん（  ）よむ。」に はいるのは？",
+      "choices": [
+        "お",
+        "へ",
+        "を",
+        "は"
+      ],
+      "answerIndex": 2,
+      "explanation": "「〜を」は「を」。",
+      "targetGrade": "小1",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e106_003",
+      "unit": "japanese.e1.s2.a06",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「こうえん（  ）いく。」に はいるのは？",
+      "choices": [
+        "を",
+        "は",
+        "へ",
+        "え"
+      ],
+      "answerIndex": 2,
+      "explanation": "「〜え」と よむときは「へ」と かく。",
+      "targetGrade": "小1",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e106_004",
+      "unit": "japanese.e1.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "文の おわりに つけるのは？",
+      "choices": [
+        "、（てん）",
+        "「（かぎ）",
+        "。（まる）",
+        "？だけ"
+      ],
+      "answerIndex": 2,
+      "explanation": "文の おわりは まる。",
+      "targetGrade": "小1",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e106_005",
+      "unit": "japanese.e1.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "はなした ことばに つけるのは？",
+      "choices": [
+        "「 」（かぎ）",
+        "、（てん）",
+        "。（まる）",
+        "（ ）"
+      ],
+      "answerIndex": 0,
+      "explanation": "かぎかっこで かこむ。",
+      "targetGrade": "小1",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e106_006",
+      "unit": "japanese.e1.s2.a06",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "ただしい 文は？",
+      "choices": [
+        "ぼくわ えを かく。",
+        "ぼくは えお かく。",
+        "ぼくわ えお かく。",
+        "ぼくは えを かく。"
+      ],
+      "answerIndex": 3,
+      "explanation": "は・を の かきかた。",
+      "targetGrade": "小1",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e106_007",
+      "unit": "japanese.e1.s2.a06",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "ただしい 文は？",
+      "choices": [
+        "ねこへ いる。",
+        "ねこは を いる。",
+        "ねこを いる。",
+        "ねこが いる。"
+      ],
+      "answerIndex": 3,
+      "explanation": "「〜が いる」。",
+      "targetGrade": "小1",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e106_008",
+      "unit": "japanese.e1.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「くつを はく」の 「はく」と おなじ いみの つかいかたは？",
+      "choices": [
+        "ほうきで はく",
+        "くつしたを はく",
+        "いきを はく",
+        "そうじで はく"
+      ],
+      "answerIndex": 1,
+      "explanation": "みに つける「はく」。",
+      "targetGrade": "小1",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e106_009",
+      "unit": "japanese.e1.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「おおきい」の はんたいの ことばは？",
+      "choices": [
+        "ながい",
+        "おもい",
+        "ちいさい",
+        "たかい"
+      ],
+      "answerIndex": 2,
+      "explanation": "おおきい ⇔ ちいさい",
+      "targetGrade": "小1",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e106_010",
+      "unit": "japanese.e1.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「あさ」の はんたいの ことばは？",
+      "choices": [
+        "よる",
+        "ゆうがた",
+        "ひる",
+        "あした"
+      ],
+      "answerIndex": 0,
+      "explanation": "あさ ⇔ よる",
+      "targetGrade": "小1",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e106_011",
+      "unit": "japanese.e1.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「りんご・みかん・ぶどう」を まとめて いうと？",
+      "choices": [
+        "くだもの",
+        "やさい",
+        "のみもの",
+        "おかし"
+      ],
+      "answerIndex": 0,
+      "explanation": "なかまの ことば。",
+      "targetGrade": "小1",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e106_012",
+      "unit": "japanese.e1.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「いぬ・ねこ・うさぎ」を まとめて いうと？",
+      "choices": [
+        "むし",
+        "のりもの",
+        "どうぶつ",
+        "はな"
+      ],
+      "answerIndex": 2,
+      "explanation": "なかまの ことば。",
+      "targetGrade": "小1",
+      "phase": "basics"
+    }
+  ]
+}

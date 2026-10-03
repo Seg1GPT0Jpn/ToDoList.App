@@ -1,0 +1,212 @@
+{
+  "setId": "social_geo_06",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_geo06_001",
+      "unit": "social.geo.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "日本の標準時子午線は東経何度？",
+      "choices": [
+        "135度",
+        "120度",
+        "140度",
+        "150度"
+      ],
+      "answerIndex": 0,
+      "explanation": "兵庫県明石市。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_geo06_002",
+      "unit": "social.geo.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "日本の国土面積はおよそ？",
+      "choices": [
+        "約100万km²",
+        "約3.8万km²",
+        "約10万km²",
+        "約38万km²"
+      ],
+      "answerIndex": 3,
+      "explanation": "約38万km²。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_geo06_003",
+      "unit": "social.geo.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "中部地方にある、3000m級の山々が連なる山脈群は？",
+      "choices": [
+        "中国山地",
+        "紀伊山地",
+        "日本アルプス",
+        "奥羽山脈"
+      ],
+      "answerIndex": 2,
+      "explanation": "飛驒・木曽・赤石。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_geo06_004",
+      "unit": "social.geo.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "山地が海にしずみこんでできた、出入りの多い海岸は？",
+      "choices": [
+        "砂浜海岸",
+        "サンゴ礁海岸",
+        "フィヨルド",
+        "リアス海岸"
+      ],
+      "answerIndex": 3,
+      "explanation": "三陸・志摩。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_geo06_005",
+      "unit": "social.geo.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "日本の川の特徴は？",
+      "choices": [
+        "長くてゆるやか",
+        "一年中凍る",
+        "水量が一定",
+        "短くて流れが急"
+      ],
+      "answerIndex": 3,
+      "explanation": "急流。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_geo06_006",
+      "unit": "social.geo.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "日本列島をとりまく、地震や火山が多い造山帯は？",
+      "choices": [
+        "アフリカ大地溝帯",
+        "安定陸塊",
+        "アルプス・ヒマラヤ造山帯",
+        "環太平洋造山帯"
+      ],
+      "answerIndex": 3,
+      "explanation": "環太平洋。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_geo06_007",
+      "unit": "social.geo.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "日本の人口の特徴は？",
+      "choices": [
+        "高齢者が少ない",
+        "少子高齢化が進んでいる",
+        "人口が急増している",
+        "子どもが急増している"
+      ],
+      "answerIndex": 1,
+      "explanation": "少子高齢化。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_geo06_008",
+      "unit": "social.geo.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "人口が集中しすぎることで起こる問題は？",
+      "choices": [
+        "砂漠化",
+        "過密",
+        "過疎",
+        "高齢化だけ"
+      ],
+      "answerIndex": 1,
+      "explanation": "過密。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_geo06_009",
+      "unit": "social.geo.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "若者が流出し人口が大きく減る問題は？",
+      "choices": [
+        "過疎",
+        "ドーナツ化",
+        "都市化",
+        "過密"
+      ],
+      "answerIndex": 0,
+      "explanation": "過疎。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_geo06_010",
+      "unit": "social.geo.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "日本の発電で最も割合が大きいのは？",
+      "choices": [
+        "原子力発電",
+        "風力発電",
+        "水力発電",
+        "火力発電"
+      ],
+      "answerIndex": 3,
+      "explanation": "火力。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_geo06_011",
+      "unit": "social.geo.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "日本の貿易で輸入額が最も大きい相手国は？",
+      "choices": [
+        "ブラジル",
+        "アメリカ",
+        "ドイツ",
+        "中国"
+      ],
+      "answerIndex": 3,
+      "explanation": "中国。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_geo06_012",
+      "unit": "social.geo.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "新幹線や高速道路など、地域を結ぶものをまとめて何という？",
+      "choices": [
+        "情報網",
+        "物流倉庫",
+        "交通網",
+        "工業地帯"
+      ],
+      "answerIndex": 2,
+      "explanation": "交通網。",
+      "targetGrade": "中1-2",
+      "phase": "teikiTest"
+    }
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "setId": "japanese_e3_04",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "jpn_e304_001",
+      "unit": "japanese.e3.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「昭和」の読みは？",
+      "choices": [
+        "しらべる",
+        "しゃしん",
+        "おまつり",
+        "しょうわ"
+      ],
+      "answerIndex": 3,
+      "explanation": "昭和（しょうわ）",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e304_002",
+      "unit": "japanese.e3.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「勉強」の読みは？",
+      "choices": [
+        "うつくしい",
+        "べんきょう",
+        "てっきょう",
+        "れんしゅう"
+      ],
+      "answerIndex": 1,
+      "explanation": "勉強（べんきょう）",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e304_003",
+      "unit": "japanese.e3.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「しょうわ」を漢字で書くと？",
+      "choices": [
+        "世界",
+        "坂道",
+        "勉強",
+        "昭和"
+      ],
+      "answerIndex": 3,
+      "explanation": "しょうわ ＝ 昭和",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e304_004",
+      "unit": "japanese.e3.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「せかい」を漢字で書くと？",
+      "choices": [
+        "昭和",
+        "病院",
+        "動物",
+        "世界"
+      ],
+      "answerIndex": 3,
+      "explanation": "せかい ＝ 世界",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e304_005",
+      "unit": "japanese.e3.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "国語辞典で、先に出てくる言葉は？",
+      "choices": [
+        "さんぽ",
+        "さどう",
+        "しお",
+        "さとう"
+      ],
+      "answerIndex": 3,
+      "explanation": "「と」は「ど」より先。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e304_006",
+      "unit": "japanese.e3.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "国語辞典で「食べます」を調べるときは？",
+      "choices": [
+        "食べ",
+        "食べる",
+        "食べた",
+        "食べます"
+      ],
+      "answerIndex": 1,
+      "explanation": "言い切りの形。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e304_007",
+      "unit": "japanese.e3.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「この」「その」「あの」「どの」のあとにくるのは？",
+      "choices": [
+        "数だけ",
+        "文の終わり",
+        "動きの言葉",
+        "名前の言葉"
+      ],
+      "answerIndex": 3,
+      "explanation": "この本、その花…",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e304_008",
+      "unit": "japanese.e3.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「寒い」の反対の言葉は？",
+      "choices": [
+        "冷たい",
+        "温かい",
+        "熱い",
+        "暑い"
+      ],
+      "answerIndex": 3,
+      "explanation": "気温は 寒い ⇔ 暑い。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e304_009",
+      "unit": "japanese.e3.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「悲しい」の反対の言葉は？",
+      "choices": [
+        "くやしい",
+        "うれしい",
+        "こわい",
+        "さびしい"
+      ],
+      "answerIndex": 1,
+      "explanation": "悲しい ⇔ うれしい",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e304_010",
+      "unit": "japanese.e3.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「深い」の反対の言葉は？",
+      "choices": [
+        "浅い",
+        "高い",
+        "低い",
+        "広い"
+      ],
+      "answerIndex": 0,
+      "explanation": "深い ⇔ 浅い",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e304_011",
+      "unit": "japanese.e3.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "国語辞典の「つめ」に書いてあるのは？",
+      "choices": [
+        "その部分の始まりの音",
+        "ページ数",
+        "筆者の名前",
+        "漢字の画数"
+      ],
+      "answerIndex": 0,
+      "explanation": "さがしやすくする工夫。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e304_012",
+      "unit": "japanese.e3.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "国語辞典で、言葉の意味がいくつかあるときは？",
+      "choices": [
+        "別の辞典を見る",
+        "①②…と番号で分けて書かれている",
+        "書かれていない",
+        "1つだけ書かれている"
+      ],
+      "answerIndex": 1,
+      "explanation": "文に合う意味を選ぶ。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    }
+  ]
+}

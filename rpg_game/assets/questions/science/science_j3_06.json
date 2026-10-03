@@ -1,0 +1,212 @@
+{
+  "setId": "science_j3_06",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_j306_001",
+      "unit": "science.j3.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "仕事の単位は？",
+      "choices": [
+        "Pa",
+        "J（ジュール）",
+        "N",
+        "W"
+      ],
+      "answerIndex": 1,
+      "explanation": "J。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j306_002",
+      "unit": "science.j3.s2.a06",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "20Nの力で物体を3m動かした仕事は？",
+      "choices": [
+        "6.7J",
+        "23J",
+        "60J",
+        "17J"
+      ],
+      "answerIndex": 2,
+      "explanation": "仕事 ＝ 力 × 距離",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j306_003",
+      "unit": "science.j3.s2.a06",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "60Jの仕事を3秒でしたときの仕事率は？",
+      "choices": [
+        "20W",
+        "0.05W",
+        "63W",
+        "180W"
+      ],
+      "answerIndex": 0,
+      "explanation": "仕事率 ＝ 仕事 ÷ 時間",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j306_004",
+      "unit": "science.j3.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "道具を使っても仕事の大きさは変わらない。この原理は？",
+      "choices": [
+        "作用反作用",
+        "慣性の法則",
+        "仕事の原理",
+        "エネルギー保存"
+      ],
+      "answerIndex": 2,
+      "explanation": "動滑車・斜面。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j306_005",
+      "unit": "science.j3.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "動滑車を使うと、引く力と引く距離は？",
+      "choices": [
+        "どちらも変わらない",
+        "力は2倍、距離は半分",
+        "どちらも半分",
+        "力は半分、距離は2倍"
+      ],
+      "answerIndex": 3,
+      "explanation": "仕事の原理。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j306_006",
+      "unit": "science.j3.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "高いところにある物体がもつエネルギーは？",
+      "choices": [
+        "位置エネルギー",
+        "熱エネルギー",
+        "電気エネルギー",
+        "運動エネルギー"
+      ],
+      "answerIndex": 0,
+      "explanation": "位置エネルギー。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j306_007",
+      "unit": "science.j3.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "運動している物体がもつエネルギーは？",
+      "choices": [
+        "弾性エネルギー",
+        "位置エネルギー",
+        "化学エネルギー",
+        "運動エネルギー"
+      ],
+      "answerIndex": 3,
+      "explanation": "運動エネルギー。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j306_008",
+      "unit": "science.j3.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "位置エネルギーと運動エネルギーの和を何という？",
+      "choices": [
+        "電気エネルギー",
+        "核エネルギー",
+        "力学的エネルギー",
+        "熱エネルギー"
+      ],
+      "answerIndex": 2,
+      "explanation": "力学的エネルギー。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j306_009",
+      "unit": "science.j3.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "摩擦がなければ、力学的エネルギーは？",
+      "choices": [
+        "増え続ける",
+        "減り続ける",
+        "一定に保たれる",
+        "0になる"
+      ],
+      "answerIndex": 2,
+      "explanation": "力学的エネルギー保存。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j306_010",
+      "unit": "science.j3.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ふりこのおもりの速さがいちばん速いのは？",
+      "choices": [
+        "まん中の高さ",
+        "いちばん低い位置",
+        "どこも同じ",
+        "いちばん高い位置"
+      ],
+      "answerIndex": 1,
+      "explanation": "運動エネルギー最大。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j306_011",
+      "unit": "science.j3.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "エネルギーが移り変わっても総量は変わらない。この法則は？",
+      "choices": [
+        "オームの法則",
+        "質量保存の法則",
+        "仕事の原理",
+        "エネルギー保存の法則"
+      ],
+      "answerIndex": 3,
+      "explanation": "エネルギー保存。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j306_012",
+      "unit": "science.j3.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "熱が物体の中を高温から低温へ伝わる伝わり方は？",
+      "choices": [
+        "反射",
+        "放射",
+        "伝導",
+        "対流"
+      ],
+      "answerIndex": 2,
+      "explanation": "伝導・対流・放射。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    }
+  ]
+}

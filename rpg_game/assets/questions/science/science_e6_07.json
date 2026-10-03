@@ -1,0 +1,212 @@
+{
+  "setId": "science_e6_07",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_e607_001",
+      "unit": "science.e6.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "てこを支えている点を何という？",
+      "choices": [
+        "作用点",
+        "支点",
+        "重心",
+        "力点"
+      ],
+      "answerIndex": 1,
+      "explanation": "支点。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e607_002",
+      "unit": "science.e6.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "てこで力を加える点を何という？",
+      "choices": [
+        "支点",
+        "中心",
+        "作用点",
+        "力点"
+      ],
+      "answerIndex": 3,
+      "explanation": "力点。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e607_003",
+      "unit": "science.e6.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "てこでものに力がはたらく点を何という？",
+      "choices": [
+        "作用点",
+        "重心",
+        "力点",
+        "支点"
+      ],
+      "answerIndex": 0,
+      "explanation": "作用点。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e607_004",
+      "unit": "science.e6.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "小さな力でものを持ち上げるには？",
+      "choices": [
+        "支点から力点を遠く、作用点を近くする",
+        "支点をなくす",
+        "力点を支点に近づける",
+        "作用点を支点から遠ざける"
+      ],
+      "answerIndex": 0,
+      "explanation": "てこのはたらき。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e607_005",
+      "unit": "science.e6.s2.a07",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "てこがつり合うのは？",
+      "choices": [
+        "重さの和が10のとき",
+        "きょりが同じとき（いつも）",
+        "左の（重さ×支点からのきょり）＝ 右の（重さ×支点からのきょり）",
+        "左右の重さが同じとき（いつも）"
+      ],
+      "answerIndex": 2,
+      "explanation": "てこのきまり。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e607_006",
+      "unit": "science.e6.s2.a07",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "左のうでの目もり2に30gをつるした。右の目もり3に何gつるすとつり合う？",
+      "choices": [
+        "30g",
+        "45g",
+        "20g",
+        "15g"
+      ],
+      "answerIndex": 2,
+      "explanation": "30 × 2 ＝ x × 3",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e607_007",
+      "unit": "science.e6.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "てこを利用した道具は？",
+      "choices": [
+        "温度計",
+        "方位じしん",
+        "はさみ",
+        "かがみ"
+      ],
+      "answerIndex": 2,
+      "explanation": "支点が中。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e607_008",
+      "unit": "science.e6.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "手回し発電機のハンドルを速く回すと？",
+      "choices": [
+        "電流の向きだけ変わる",
+        "大きな電流が流れる",
+        "電流が流れない",
+        "かわらない"
+      ],
+      "answerIndex": 1,
+      "explanation": "発電。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e607_009",
+      "unit": "science.e6.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "電気をためることができるものは？",
+      "choices": [
+        "電熱線",
+        "モーター",
+        "豆電球",
+        "コンデンサー"
+      ],
+      "answerIndex": 3,
+      "explanation": "ちく電。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e607_010",
+      "unit": "science.e6.s2.a07",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "豆電球と発光ダイオードで、同じ電気で長く光るのは？",
+      "choices": [
+        "どちらも光らない",
+        "豆電球",
+        "発光ダイオード",
+        "同じ"
+      ],
+      "answerIndex": 2,
+      "explanation": "効率がよい。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e607_011",
+      "unit": "science.e6.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "電気を熱に変えて利用しているものは？",
+      "choices": [
+        "扇風機",
+        "電気ストーブ",
+        "電灯（LED）",
+        "ラジオ"
+      ],
+      "answerIndex": 1,
+      "explanation": "電熱線。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e607_012",
+      "unit": "science.e6.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "電気を運動（動き）に変えて利用しているものは？",
+      "choices": [
+        "トースター",
+        "モーター（扇風機など）",
+        "電気ストーブ",
+        "アイロン"
+      ],
+      "answerIndex": 1,
+      "explanation": "電気 → 運動。",
+      "targetGrade": "小6",
+      "phase": "basics"
+    }
+  ]
+}

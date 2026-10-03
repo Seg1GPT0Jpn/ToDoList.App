@@ -1,0 +1,212 @@
+{
+  "setId": "japanese_e5_05",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "jpn_e505_001",
+      "unit": "japanese.e5.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "和語はどれ？",
+      "choices": [
+        "宿泊",
+        "やどや",
+        "ホテル",
+        "旅館"
+      ],
+      "answerIndex": 1,
+      "explanation": "昔から日本にあった言葉（訓読み）。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e505_002",
+      "unit": "japanese.e5.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "漢語はどれ？",
+      "choices": [
+        "ホテル",
+        "とまる",
+        "やどや",
+        "旅館"
+      ],
+      "answerIndex": 3,
+      "explanation": "中国から来た言葉（音読み）。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e505_003",
+      "unit": "japanese.e5.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "外来語はどれ？",
+      "choices": [
+        "やどや",
+        "宿",
+        "ホテル",
+        "旅館"
+      ],
+      "answerIndex": 2,
+      "explanation": "外国から来た言葉（カタカナ）。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e505_004",
+      "unit": "japanese.e5.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「はじめ」の漢語は？",
+      "choices": [
+        "おわり",
+        "スタート",
+        "はじまり",
+        "開始"
+      ],
+      "answerIndex": 3,
+      "explanation": "開始（かいし）。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e505_005",
+      "unit": "japanese.e5.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「きまり」の外来語は？",
+      "choices": [
+        "きめごと",
+        "約束",
+        "ルール",
+        "規則"
+      ],
+      "answerIndex": 2,
+      "explanation": "ルール。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e505_006",
+      "unit": "japanese.e5.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「強弱」の熟語の組み立ては？",
+      "choices": [
+        "似た意味の漢字を組み合わせた",
+        "下が上の目的になる",
+        "上が下を修飾する",
+        "反対の意味の漢字を組み合わせた"
+      ],
+      "answerIndex": 3,
+      "explanation": "強 ⇔ 弱",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e505_007",
+      "unit": "japanese.e5.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「岩石」の熟語の組み立ては？",
+      "choices": [
+        "反対の意味の漢字を組み合わせた",
+        "上が下を修飾する",
+        "似た意味の漢字を組み合わせた",
+        "主語と述語の関係"
+      ],
+      "answerIndex": 2,
+      "explanation": "岩 ≒ 石",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e505_008",
+      "unit": "japanese.e5.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「青空」の熟語の組み立ては？",
+      "choices": [
+        "似た意味の組み合わせ",
+        "反対の意味の組み合わせ",
+        "下が上の目的",
+        "上の漢字が下の漢字を修飾する"
+      ],
+      "answerIndex": 3,
+      "explanation": "青い空。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e505_009",
+      "unit": "japanese.e5.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「読書」の熟語の組み立ては？",
+      "choices": [
+        "下の漢字が上の漢字の目的（〜を）になる",
+        "似た意味",
+        "反対の意味",
+        "上が下を修飾する"
+      ],
+      "answerIndex": 0,
+      "explanation": "書を読む。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e505_010",
+      "unit": "japanese.e5.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「国立」の熟語の組み立ては？",
+      "choices": [
+        "下が上の目的",
+        "反対の意味",
+        "主語と述語の関係",
+        "似た意味"
+      ],
+      "answerIndex": 2,
+      "explanation": "国が立てる。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e505_011",
+      "unit": "japanese.e5.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「不安」の「不」のように、打ち消しの意味をそえる漢字は？",
+      "choices": [
+        "化",
+        "的",
+        "非",
+        "性"
+      ],
+      "answerIndex": 2,
+      "explanation": "不・非・未・無。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e505_012",
+      "unit": "japanese.e5.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「未完成」の意味は？",
+      "choices": [
+        "完成しすぎた",
+        "完成しない",
+        "完成した",
+        "まだ完成していない"
+      ],
+      "answerIndex": 3,
+      "explanation": "未＝まだ〜ない。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    }
+  ]
+}

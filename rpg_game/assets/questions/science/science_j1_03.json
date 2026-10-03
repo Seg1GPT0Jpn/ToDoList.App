@@ -1,0 +1,212 @@
+{
+  "setId": "science_j1_03",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_j103_001",
+      "unit": "science.j1.s1.a03",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "質量20g、体積8cm³の物質の密度は？",
+      "choices": [
+        "2.5g/cm³",
+        "28g/cm³",
+        "160g/cm³",
+        "0.4g/cm³"
+      ],
+      "answerIndex": 0,
+      "explanation": "密度 ＝ 質量 ÷ 体積",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j103_002",
+      "unit": "science.j1.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "水より密度が小さい物質を水に入れると？",
+      "choices": [
+        "浮く",
+        "沈む",
+        "溶ける",
+        "燃える"
+      ],
+      "answerIndex": 0,
+      "explanation": "密度1g/cm³ より小さい。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j103_003",
+      "unit": "science.j1.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "燃えると二酸化炭素と水ができる、炭素をふくむ物質は？",
+      "choices": [
+        "無機物",
+        "気体",
+        "有機物",
+        "金属"
+      ],
+      "answerIndex": 2,
+      "explanation": "砂糖・ロウ・プラスチック。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j103_004",
+      "unit": "science.j1.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "金属に共通する性質でないものは？",
+      "choices": [
+        "電気を通す",
+        "みがくと光る",
+        "熱を通す",
+        "磁石につく"
+      ],
+      "answerIndex": 3,
+      "explanation": "磁石につくのは鉄など一部。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j103_005",
+      "unit": "science.j1.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "酸素の性質は？",
+      "choices": [
+        "刺激臭がある",
+        "空気より軽く燃える",
+        "ものを燃やすはたらきがある",
+        "石灰水を白くにごらせる"
+      ],
+      "answerIndex": 2,
+      "explanation": "助燃性。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j103_006",
+      "unit": "science.j1.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "二酸化炭素の集め方として適しているのは？",
+      "choices": [
+        "下方置換法か水上置換法",
+        "どれでもよい",
+        "上方置換法だけ",
+        "集められない"
+      ],
+      "answerIndex": 0,
+      "explanation": "空気より重い。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j103_007",
+      "unit": "science.j1.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "アンモニアの集め方は？",
+      "choices": [
+        "下方置換法",
+        "どれでもよい",
+        "水上置換法",
+        "上方置換法"
+      ],
+      "answerIndex": 3,
+      "explanation": "水によく溶け、空気より軽い。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j103_008",
+      "unit": "science.j1.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "水素の性質は？",
+      "choices": [
+        "黄緑色",
+        "ものを燃やす",
+        "石灰水を白くにごらせる",
+        "燃えると水ができる"
+      ],
+      "answerIndex": 3,
+      "explanation": "もっとも軽い気体。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j103_009",
+      "unit": "science.j1.s1.a03",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "水100gに砂糖25gを溶かした。質量パーセント濃度は？",
+      "choices": [
+        "12.5%",
+        "20%",
+        "25%",
+        "80%"
+      ],
+      "answerIndex": 1,
+      "explanation": "25 ÷ 125 × 100",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j103_010",
+      "unit": "science.j1.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "固体が液体になる温度を何という？",
+      "choices": [
+        "融点",
+        "露点",
+        "沸点",
+        "凝固点だけ"
+      ],
+      "answerIndex": 0,
+      "explanation": "融点。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j103_011",
+      "unit": "science.j1.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "液体が沸騰して気体になる温度を何という？",
+      "choices": [
+        "発火点",
+        "沸点",
+        "露点",
+        "融点"
+      ],
+      "answerIndex": 1,
+      "explanation": "沸点。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j103_012",
+      "unit": "science.j1.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "沸点のちがいを利用して液体を分ける方法は？",
+      "choices": [
+        "再結晶",
+        "中和",
+        "蒸留",
+        "ろ過"
+      ],
+      "answerIndex": 2,
+      "explanation": "蒸留。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    }
+  ]
+}

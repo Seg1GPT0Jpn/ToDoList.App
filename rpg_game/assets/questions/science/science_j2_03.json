@@ -1,0 +1,212 @@
+{
+  "setId": "science_j2_03",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_j203_001",
+      "unit": "science.j2.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "生物の体をつくる基本の単位は？",
+      "choices": [
+        "組織",
+        "器官",
+        "細胞",
+        "原子"
+      ],
+      "answerIndex": 2,
+      "explanation": "細胞。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j203_002",
+      "unit": "science.j2.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "植物の細胞にだけ見られるつくりは？",
+      "choices": [
+        "ミトコンドリアだけ",
+        "細胞膜",
+        "細胞壁・葉緑体・液胞",
+        "核"
+      ],
+      "answerIndex": 2,
+      "explanation": "植物細胞。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j203_003",
+      "unit": "science.j2.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "光合成が行われる場所は？",
+      "choices": [
+        "葉緑体",
+        "核",
+        "細胞膜",
+        "気孔"
+      ],
+      "answerIndex": 0,
+      "explanation": "葉緑体。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j203_004",
+      "unit": "science.j2.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "根から吸収した水や養分が通る管は？",
+      "choices": [
+        "血管",
+        "道管",
+        "気孔",
+        "師管"
+      ],
+      "answerIndex": 1,
+      "explanation": "道管。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j203_005",
+      "unit": "science.j2.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "葉でつくられた養分が通る管は？",
+      "choices": [
+        "根毛",
+        "道管",
+        "気孔",
+        "師管"
+      ],
+      "answerIndex": 3,
+      "explanation": "師管。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j203_006",
+      "unit": "science.j2.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "だ液にふくまれ、デンプンを分解する消化酵素は？",
+      "choices": [
+        "トリプシン",
+        "ペプシン",
+        "リパーゼ",
+        "アミラーゼ"
+      ],
+      "answerIndex": 3,
+      "explanation": "アミラーゼ。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j203_007",
+      "unit": "science.j2.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "タンパク質が分解されてできるものは？",
+      "choices": [
+        "脂肪酸",
+        "ブドウ糖",
+        "アミノ酸",
+        "グリセリンだけ"
+      ],
+      "answerIndex": 2,
+      "explanation": "アミノ酸。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j203_008",
+      "unit": "science.j2.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "小腸の内側にある、表面積を広げる突起は？",
+      "choices": [
+        "気孔",
+        "柔毛",
+        "肺胞",
+        "根毛"
+      ],
+      "answerIndex": 1,
+      "explanation": "柔毛。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j203_009",
+      "unit": "science.j2.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "肺で酸素と二酸化炭素の交換を行う小さなふくろは？",
+      "choices": [
+        "ネフロン",
+        "肺胞",
+        "柔毛",
+        "気管支"
+      ],
+      "answerIndex": 1,
+      "explanation": "肺胞。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j203_010",
+      "unit": "science.j2.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "赤血球にふくまれ、酸素を運ぶ物質は？",
+      "choices": [
+        "胆汁",
+        "インスリン",
+        "アミラーゼ",
+        "ヘモグロビン"
+      ],
+      "answerIndex": 3,
+      "explanation": "ヘモグロビン。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j203_011",
+      "unit": "science.j2.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "刺激に対して意識と無関係に起こる反応は？",
+      "choices": [
+        "記憶",
+        "反射",
+        "学習",
+        "反応時間"
+      ],
+      "answerIndex": 1,
+      "explanation": "反射。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j203_012",
+      "unit": "science.j2.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "有害なアンモニアを尿素に変えるのは？",
+      "choices": [
+        "じん臓",
+        "心臓",
+        "小腸",
+        "肝臓"
+      ],
+      "answerIndex": 3,
+      "explanation": "肝臓。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    }
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "setId": "social_civ_01",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_civ01_001",
+      "unit": "social.civ.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "人・もの・お金・情報が国境をこえて行き来することを何という？",
+      "choices": [
+        "都市化",
+        "グローバル化",
+        "少子化",
+        "情報化だけ"
+      ],
+      "answerIndex": 1,
+      "explanation": "グローバル化。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ01_002",
+      "unit": "social.civ.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "合計特殊出生率が低下し、子どもの数が減ることは？",
+      "choices": [
+        "少子化",
+        "高齢化",
+        "過密",
+        "核家族化"
+      ],
+      "answerIndex": 0,
+      "explanation": "少子化。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ01_003",
+      "unit": "social.civ.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "夫婦だけ、または親と未婚の子どもだけの家族は？",
+      "choices": [
+        "拡大家族",
+        "核家族",
+        "大家族",
+        "単独世帯"
+      ],
+      "answerIndex": 1,
+      "explanation": "核家族。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ01_004",
+      "unit": "social.civ.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "対立を解決するときの考え方で、むだを省くことは？",
+      "choices": [
+        "効率",
+        "公正",
+        "平等",
+        "多数決"
+      ],
+      "answerIndex": 0,
+      "explanation": "効率と公正。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ01_005",
+      "unit": "social.civ.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "手続き・機会・結果が公平であることは？",
+      "choices": [
+        "公正",
+        "多数決",
+        "利益",
+        "効率"
+      ],
+      "answerIndex": 0,
+      "explanation": "公正。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ01_006",
+      "unit": "social.civ.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "多数決で決めるとき、大切にすべきことは？",
+      "choices": [
+        "時間をかけない",
+        "代表者だけで決める",
+        "意見を言わない",
+        "少数意見の尊重"
+      ],
+      "answerIndex": 3,
+      "explanation": "少数意見の尊重。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ01_007",
+      "unit": "social.civ.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "異なる文化を互いに認め合うことは？",
+      "choices": [
+        "鎖国",
+        "多文化共生",
+        "同化政策",
+        "文化の統一"
+      ],
+      "answerIndex": 1,
+      "explanation": "多文化共生。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ01_008",
+      "unit": "social.civ.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "年中行事で、お盆はいつごろ？",
+      "choices": [
+        "12月",
+        "8月中旬（地域により7月）",
+        "3月",
+        "1月"
+      ],
+      "answerIndex": 1,
+      "explanation": "お盆。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ01_009",
+      "unit": "social.civ.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "コンピューターやインターネットが生活に広がることを何という？",
+      "choices": [
+        "少子化",
+        "国際化だけ",
+        "グローバル化",
+        "情報化"
+      ],
+      "answerIndex": 3,
+      "explanation": "情報化。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ01_010",
+      "unit": "social.civ.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "情報を正しく判断し活用する力は？",
+      "choices": [
+        "情報リテラシー",
+        "著作権",
+        "プライバシー",
+        "情報モラルだけ"
+      ],
+      "answerIndex": 0,
+      "explanation": "情報リテラシー。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ01_011",
+      "unit": "social.civ.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "社会集団の中で、争いを防ぐためにつくるものは？",
+      "choices": [
+        "多数派",
+        "きまり（ルール）",
+        "命令だけ",
+        "争い"
+      ],
+      "answerIndex": 1,
+      "explanation": "きまり。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ01_012",
+      "unit": "social.civ.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "人工知能の略称は？",
+      "choices": [
+        "IT",
+        "IoT",
+        "SNS",
+        "AI"
+      ],
+      "answerIndex": 3,
+      "explanation": "AI。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    }
+  ]
+}

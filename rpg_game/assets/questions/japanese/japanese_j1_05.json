@@ -1,0 +1,212 @@
+{
+  "setId": "japanese_j1_05",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "jpn_j105_001",
+      "unit": "japanese.j1.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「いふ」を現代かなづかいにすると？",
+      "choices": [
+        "いぶ",
+        "いふ",
+        "ゆう",
+        "いう"
+      ],
+      "answerIndex": 3,
+      "explanation": "語中・語尾のは行 → わ行。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j105_002",
+      "unit": "japanese.j1.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「あはれ」を現代かなづかいにすると？",
+      "choices": [
+        "あわれ",
+        "あおれ",
+        "あうれ",
+        "あはれ"
+      ],
+      "answerIndex": 0,
+      "explanation": "は → わ",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j105_003",
+      "unit": "japanese.j1.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「ゐる」を現代かなづかいにすると？",
+      "choices": [
+        "える",
+        "うる",
+        "おる",
+        "いる"
+      ],
+      "answerIndex": 3,
+      "explanation": "ゐ → い",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j105_004",
+      "unit": "japanese.j1.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「やうやう」を現代かなづかいにすると？",
+      "choices": [
+        "やうやう",
+        "やよう",
+        "ようよう",
+        "ようやう"
+      ],
+      "answerIndex": 2,
+      "explanation": "au → ô",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j105_005",
+      "unit": "japanese.j1.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「けふ」を現代かなづかいにすると？",
+      "choices": [
+        "きゅう",
+        "けう",
+        "きょう",
+        "けふ"
+      ],
+      "answerIndex": 2,
+      "explanation": "eu → yô",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j105_006",
+      "unit": "japanese.j1.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "竹取物語の作者は？",
+      "choices": [
+        "紫式部",
+        "清少納言",
+        "紀貫之",
+        "わかっていない"
+      ],
+      "answerIndex": 3,
+      "explanation": "日本最古の物語とされる。作者は未詳。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j105_007",
+      "unit": "japanese.j1.s2.a05",
+      "unitLocked": true,
+      "category": "meaning",
+      "prompt": "「うつくし」の古語の意味は？",
+      "choices": [
+        "かわいらしい",
+        "こわい",
+        "美しい（今と同じだけ）",
+        "きたない"
+      ],
+      "answerIndex": 0,
+      "explanation": "古語では「かわいい」。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j105_008",
+      "unit": "japanese.j1.s2.a05",
+      "unitLocked": true,
+      "category": "meaning",
+      "prompt": "「あやし」の古語の意味として近いのは？",
+      "choices": [
+        "不思議だ",
+        "おいしい",
+        "あやうい",
+        "楽しい"
+      ],
+      "answerIndex": 0,
+      "explanation": "不思議だ・身分が低い。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j105_009",
+      "unit": "japanese.j1.s2.a05",
+      "unitLocked": true,
+      "category": "meaning",
+      "prompt": "「いと」の古語の意味は？",
+      "choices": [
+        "いつも",
+        "糸",
+        "とても",
+        "すこし"
+      ],
+      "answerIndex": 2,
+      "explanation": "いと＝とても。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j105_010",
+      "unit": "japanese.j1.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "かぐや姫が最後に帰ったところは？",
+      "choices": [
+        "山の奥",
+        "月の都",
+        "海の国",
+        "天竺"
+      ],
+      "answerIndex": 1,
+      "explanation": "竹取物語の結末。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j105_011",
+      "unit": "japanese.j1.s2.a05",
+      "unitLocked": true,
+      "category": "meaning",
+      "prompt": "「よろづのことに使ひけり」の「よろづ」の意味は？",
+      "choices": [
+        "一万の",
+        "いろいろな",
+        "少しの",
+        "新しい"
+      ],
+      "answerIndex": 1,
+      "explanation": "よろづ＝さまざまな。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j105_012",
+      "unit": "japanese.j1.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「ありけり」の「けり」の意味は？",
+      "choices": [
+        "〜たい",
+        "〜だろう",
+        "〜ない",
+        "〜た（過去）"
+      ],
+      "answerIndex": 3,
+      "explanation": "過去の助動詞。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    }
+  ]
+}

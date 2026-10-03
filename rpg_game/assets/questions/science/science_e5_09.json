@@ -1,0 +1,178 @@
+{
+  "setId": "science_e5_09",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_e509_001",
+      "unit": "science.e5.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ふりこの長さを4倍にすると、1往復の時間は？",
+      "choices": [
+        "4倍",
+        "約2倍",
+        "かわらない",
+        "半分"
+      ],
+      "answerIndex": 1,
+      "explanation": "長さの平方根に比例（参考）。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e509_002",
+      "unit": "science.e5.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "電磁石のコイルの巻き数を2倍にすると、強さは？",
+      "choices": [
+        "強くなる",
+        "弱くなる",
+        "極が消える",
+        "かわらない"
+      ],
+      "answerIndex": 0,
+      "explanation": "巻き数をふやす。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e509_003",
+      "unit": "science.e5.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "水よう液を長い時間置くと、とけたものは？",
+      "choices": [
+        "底にたまる",
+        "底にしずまない（こさは同じ）",
+        "上にうく",
+        "消える"
+      ],
+      "answerIndex": 1,
+      "explanation": "こさは均一。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e509_004",
+      "unit": "science.e5.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "天気がおもに西から東へ変わるのは何の影響？",
+      "choices": [
+        "海流",
+        "台風",
+        "季節風だけ",
+        "偏西風"
+      ],
+      "answerIndex": 3,
+      "explanation": "上空の西風。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e509_005",
+      "unit": "science.e5.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "流れる水のはたらきで、土地をけずるのは？",
+      "choices": [
+        "しん食",
+        "ろ過",
+        "たい積",
+        "運ぱん"
+      ],
+      "answerIndex": 0,
+      "explanation": "しん食。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e509_006",
+      "unit": "science.e5.s2.a09",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "60℃の水にとかしたミョウバンを20℃に冷やしたら、つぶが出た。理由は？",
+      "choices": [
+        "ミョウバンが変化したから",
+        "水がふえたから",
+        "温度が下がって、とける量が少なくなったから",
+        "重さがふえたから"
+      ],
+      "answerIndex": 2,
+      "explanation": "溶解度。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e509_007",
+      "unit": "science.e5.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "発芽したインゲンマメの子葉にヨウ素液をつけると？",
+      "choices": [
+        "かわらない",
+        "より強く青むらさき色になる",
+        "赤くなる",
+        "発芽前より青むらさき色にならない"
+      ],
+      "answerIndex": 3,
+      "explanation": "でんぷんが使われた。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e509_008",
+      "unit": "science.e5.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "メダカのたまごが受精卵になるのは？",
+      "choices": [
+        "水温が上がったとき",
+        "日光に当てたとき",
+        "えさを食べたとき",
+        "めすが産んだ卵とおすの精子が結びついたとき"
+      ],
+      "answerIndex": 3,
+      "explanation": "受精。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e509_009",
+      "unit": "science.e5.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "台風の雲の中心の、雲がないところを何という？",
+      "choices": [
+        "高気圧",
+        "台風の目",
+        "前線",
+        "雲の谷"
+      ],
+      "answerIndex": 1,
+      "explanation": "台風の目。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e509_010",
+      "unit": "science.e5.s2.a09",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ミョウバン水よう液をじょう発させると何が残る？",
+      "choices": [
+        "水",
+        "食塩",
+        "ミョウバン",
+        "何も残らない"
+      ],
+      "answerIndex": 2,
+      "explanation": "とけていたもの。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    }
+  ]
+}

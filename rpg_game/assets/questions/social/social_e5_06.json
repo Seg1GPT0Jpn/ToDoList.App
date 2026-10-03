@@ -1,0 +1,212 @@
+{
+  "setId": "social_e5_06",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_e506_001",
+      "unit": "social.e5.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "新聞・テレビ・ラジオのように、多くの人に情報を伝える方法を何という？",
+      "choices": [
+        "マスメディア",
+        "インターネットだけ",
+        "電話",
+        "手紙"
+      ],
+      "answerIndex": 0,
+      "explanation": "マスメディア。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e506_002",
+      "unit": "social.e5.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "テレビのニュース番組で、取材した内容をまとめる作業は？",
+      "choices": [
+        "印刷",
+        "放送",
+        "編集",
+        "配達"
+      ],
+      "answerIndex": 2,
+      "explanation": "編集。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e506_003",
+      "unit": "social.e5.s2.a06",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "情報を受け取るときに大切なことは？",
+      "choices": [
+        "すぐに信じる",
+        "友だちに広める",
+        "複数の情報をくらべて正しいか確かめる",
+        "自分の考えを持たない"
+      ],
+      "answerIndex": 2,
+      "explanation": "メディアリテラシー。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e506_004",
+      "unit": "social.e5.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "インターネットで他人の写真を勝手に使うことは？",
+      "choices": [
+        "ほめられる",
+        "いつでも自由",
+        "法律と関係ない",
+        "権利をおかすおそれがある"
+      ],
+      "answerIndex": 3,
+      "explanation": "著作権・肖像権。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e506_005",
+      "unit": "social.e5.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "個人の名前や住所などを何という？",
+      "choices": [
+        "交通情報",
+        "個人情報",
+        "天気情報",
+        "公共情報"
+      ],
+      "answerIndex": 1,
+      "explanation": "個人情報。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e506_006",
+      "unit": "social.e5.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "コンビニのレジで、売れた商品を記録するしくみは？",
+      "choices": [
+        "POSシステム",
+        "アメダス",
+        "ハザードマップ",
+        "GPS"
+      ],
+      "answerIndex": 0,
+      "explanation": "POS。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e506_007",
+      "unit": "social.e5.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "大きな災害のとき、テレビ画面に出る速報は？",
+      "choices": [
+        "番組表",
+        "緊急地震速報など",
+        "広告",
+        "天気予報だけ"
+      ],
+      "answerIndex": 1,
+      "explanation": "速報。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e506_008",
+      "unit": "social.e5.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "病院で、患者の情報をコンピューターで共有するしくみは？",
+      "choices": [
+        "POS",
+        "ハザードマップ",
+        "時刻表",
+        "電子カルテ"
+      ],
+      "answerIndex": 3,
+      "explanation": "電子カルテ。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e506_009",
+      "unit": "social.e5.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "インターネットでのいじめや悪口の書きこみは？",
+      "choices": [
+        "だれも困らない",
+        "名前をかくせばよい",
+        "少しならよい",
+        "してはいけない"
+      ],
+      "answerIndex": 3,
+      "explanation": "情報モラル。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e506_010",
+      "unit": "social.e5.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "パスワードの扱いで正しいのは？",
+      "choices": [
+        "メモを机にはる",
+        "友だちに教える",
+        "みんな同じにする",
+        "人に教えない"
+      ],
+      "answerIndex": 3,
+      "explanation": "セキュリティ。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e506_011",
+      "unit": "social.e5.s2.a06",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "情報化が進んで便利になったこととしてあてはまるのは？",
+      "choices": [
+        "手紙しか使えない",
+        "電話が使えない",
+        "情報が届くのがおそくなった",
+        "家にいながら買い物ができる"
+      ],
+      "answerIndex": 3,
+      "explanation": "情報化。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e506_012",
+      "unit": "social.e5.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "多くの量のデータを集めて活用することを何という？",
+      "choices": [
+        "ワークシェア",
+        "リサイクル",
+        "ハザードマップ",
+        "ビッグデータの活用"
+      ],
+      "answerIndex": 3,
+      "explanation": "ビッグデータ。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    }
+  ]
+}

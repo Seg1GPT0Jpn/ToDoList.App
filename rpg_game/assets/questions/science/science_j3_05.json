@@ -1,0 +1,212 @@
+{
+  "setId": "science_j3_05",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_j305_001",
+      "unit": "science.j3.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "120mを20秒で進んだ物体の平均の速さは？",
+      "choices": [
+        "2400m/s",
+        "0.17m/s",
+        "6m/s",
+        "140m/s"
+      ],
+      "answerIndex": 2,
+      "explanation": "速さ ＝ 距離 ÷ 時間",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j305_002",
+      "unit": "science.j3.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "一定の速さで一直線上を進む運動は？",
+      "choices": [
+        "等速直線運動",
+        "円運動",
+        "加速運動",
+        "自由落下"
+      ],
+      "answerIndex": 0,
+      "explanation": "等速直線運動。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j305_003",
+      "unit": "science.j3.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "物体に力がはたらかないとき、静止している物体は静止し続ける。この性質は？",
+      "choices": [
+        "重力",
+        "慣性",
+        "摩擦",
+        "弾性"
+      ],
+      "answerIndex": 1,
+      "explanation": "慣性の法則。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j305_004",
+      "unit": "science.j3.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "斜面を下る台車の速さは？",
+      "choices": [
+        "だんだん速くなる",
+        "止まる",
+        "一定",
+        "だんだんおそくなる"
+      ],
+      "answerIndex": 0,
+      "explanation": "斜面方向の重力の分力。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j305_005",
+      "unit": "science.j3.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "斜面の傾きを大きくすると、台車の速さの増え方は？",
+      "choices": [
+        "大きくなる",
+        "変わらない",
+        "小さくなる",
+        "0になる"
+      ],
+      "answerIndex": 0,
+      "explanation": "分力が大きくなる。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j305_006",
+      "unit": "science.j3.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "物体Aが物体Bを押すと、BもAを押し返す。この法則は？",
+      "choices": [
+        "フックの法則",
+        "作用・反作用の法則",
+        "慣性の法則",
+        "オームの法則"
+      ],
+      "answerIndex": 1,
+      "explanation": "大きさ同じ・向き反対。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j305_007",
+      "unit": "science.j3.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "作用・反作用の2力の特徴は？",
+      "choices": [
+        "同じ向き",
+        "同じ物体にはたらく",
+        "大きさがちがう",
+        "別々の物体にはたらく"
+      ],
+      "answerIndex": 3,
+      "explanation": "つり合いとのちがい。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j305_008",
+      "unit": "science.j3.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "記録タイマーで、打点の間隔が広いほど速さは？",
+      "choices": [
+        "速い",
+        "おそい",
+        "変わらない",
+        "止まっている"
+      ],
+      "answerIndex": 0,
+      "explanation": "同じ時間で進む距離が長い。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j305_009",
+      "unit": "science.j3.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "1/50秒ごとに打点する記録タイマーで、5打点ごとの時間は？",
+      "choices": [
+        "0.5秒",
+        "0.1秒",
+        "5秒",
+        "0.02秒"
+      ],
+      "answerIndex": 1,
+      "explanation": "5 × 1/50",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j305_010",
+      "unit": "science.j3.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "物体が自然に落下する運動は？",
+      "choices": [
+        "振り子運動",
+        "等速直線運動",
+        "慣性運動",
+        "自由落下"
+      ],
+      "answerIndex": 3,
+      "explanation": "速さがだんだん速くなる。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j305_011",
+      "unit": "science.j3.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "2つの力を同じはたらきをする1つの力にまとめることを何という？",
+      "choices": [
+        "力の分解",
+        "力の合成",
+        "慣性",
+        "つり合い"
+      ],
+      "answerIndex": 1,
+      "explanation": "合力。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j305_012",
+      "unit": "science.j3.s2.a05",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "電車が急に止まると体が前に倒れそうになる理由は？",
+      "choices": [
+        "電車が後ろに動くから",
+        "体が運動を続けようとするから（慣性）",
+        "摩擦がなくなるから",
+        "重力が増えるから"
+      ],
+      "answerIndex": 1,
+      "explanation": "慣性。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    }
+  ]
+}

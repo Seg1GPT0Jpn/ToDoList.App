@@ -1,0 +1,212 @@
+{
+  "setId": "science_e5_01",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_e501_001",
+      "unit": "science.e5.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "発芽に必要な3つの条件は？",
+      "choices": [
+        "水・空気・適当な温度",
+        "土・日光・水",
+        "空気・肥料・日光",
+        "水・日光・肥料"
+      ],
+      "answerIndex": 0,
+      "explanation": "日光・肥料は発芽には不要。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e501_002",
+      "unit": "science.e5.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "インゲンマメの子葉にふくまれる養分は？",
+      "choices": [
+        "でんぷん",
+        "ビタミンだけ",
+        "水",
+        "しぼう"
+      ],
+      "answerIndex": 0,
+      "explanation": "ヨウ素液で青むらさき色。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e501_003",
+      "unit": "science.e5.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "でんぷんがあるか調べる薬品は？",
+      "choices": [
+        "BTB液",
+        "食塩水",
+        "ヨウ素液",
+        "石灰水"
+      ],
+      "answerIndex": 2,
+      "explanation": "青むらさき色になる。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e501_004",
+      "unit": "science.e5.s1.a01",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "発芽したあと、子葉がしぼむのはなぜ？",
+      "choices": [
+        "水がなくなったから",
+        "子葉の養分が使われたから",
+        "虫に食べられたから",
+        "日光に当たったから"
+      ],
+      "answerIndex": 1,
+      "explanation": "発芽に養分を使う。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e501_005",
+      "unit": "science.e5.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "植物がよく成長するために必要なものは？",
+      "choices": [
+        "日光と肥料（と水など）",
+        "くらやみ",
+        "冷たい温度",
+        "塩"
+      ],
+      "answerIndex": 0,
+      "explanation": "成長の条件。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e501_006",
+      "unit": "science.e5.s1.a01",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "日光に当てずに育てたインゲンマメは？",
+      "choices": [
+        "花がたくさんさく",
+        "かわらない",
+        "葉の色がうすく、くきがひょろひょろ",
+        "こい緑で大きい"
+      ],
+      "answerIndex": 2,
+      "explanation": "日光が必要。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e501_007",
+      "unit": "science.e5.s1.a01",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "発芽に空気が必要か調べるには？",
+      "choices": [
+        "日光の量だけを変える",
+        "肥料だけ変える",
+        "何も変えない",
+        "水にしずめたたねと空気にふれるたねをくらべる"
+      ],
+      "answerIndex": 3,
+      "explanation": "条件を1つだけ変える。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e501_008",
+      "unit": "science.e5.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "たねの中で、根・くき・葉になる部分は？",
+      "choices": [
+        "へそ",
+        "子葉",
+        "かわ",
+        "はい"
+      ],
+      "answerIndex": 3,
+      "explanation": "はいが育つ。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e501_009",
+      "unit": "science.e5.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ヨウ素液をでんぷんにつけると何色？",
+      "choices": [
+        "赤色",
+        "黄色",
+        "青むらさき色",
+        "白色"
+      ],
+      "answerIndex": 2,
+      "explanation": "色の変化。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e501_010",
+      "unit": "science.e5.s1.a01",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "冷ぞう庫で発芽しなかった理由として正しいのは？",
+      "choices": [
+        "空気がなかったから",
+        "温度が低すぎたから（暗さは関係ない）",
+        "水がなかったから",
+        "暗かったから"
+      ],
+      "answerIndex": 1,
+      "explanation": "条件の整理。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e501_011",
+      "unit": "science.e5.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "イネのたねの養分はどこにある？",
+      "choices": [
+        "子葉",
+        "はいにゅう",
+        "へそ",
+        "ねもと"
+      ],
+      "answerIndex": 1,
+      "explanation": "イネは はいにゅう。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e501_012",
+      "unit": "science.e5.s1.a01",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "実験で比べる条件以外をそろえる理由は？",
+      "choices": [
+        "結果のちがいの原因を1つにしぼるため",
+        "実験を速く終わらせるため",
+        "記録を楽にするため",
+        "道具を少なくするため"
+      ],
+      "answerIndex": 0,
+      "explanation": "対照実験。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    }
+  ]
+}

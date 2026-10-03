@@ -1,0 +1,178 @@
+{
+  "setId": "science_j1_04",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_j104_001",
+      "unit": "science.j1.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "イチョウは何植物？",
+      "choices": [
+        "シダ植物",
+        "被子植物",
+        "裸子植物",
+        "コケ植物"
+      ],
+      "answerIndex": 2,
+      "explanation": "胚珠がむき出し。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j104_002",
+      "unit": "science.j1.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ペンギンは何類？",
+      "choices": [
+        "魚類",
+        "ホニュウ類",
+        "両生類",
+        "鳥類"
+      ],
+      "answerIndex": 3,
+      "explanation": "羽毛があり卵をうむ。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j104_003",
+      "unit": "science.j1.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "二酸化炭素を発生させる組み合わせは？",
+      "choices": [
+        "塩化アンモニウムと水酸化カルシウム",
+        "石灰石とうすい塩酸",
+        "亜鉛とうすい塩酸",
+        "二酸化マンガンとオキシドール"
+      ],
+      "answerIndex": 1,
+      "explanation": "二酸化炭素。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j104_004",
+      "unit": "science.j1.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "酸素を発生させる組み合わせは？",
+      "choices": [
+        "石灰石と塩酸",
+        "亜鉛と塩酸",
+        "二酸化マンガンとオキシドール",
+        "炭酸水素ナトリウムと水"
+      ],
+      "answerIndex": 2,
+      "explanation": "酸素。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j104_005",
+      "unit": "science.j1.s1.a04",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "密度2.7g/cm³のアルミニウム10cm³の質量は？",
+      "choices": [
+        "3.7g",
+        "27g",
+        "2.7g",
+        "12.7g"
+      ],
+      "answerIndex": 1,
+      "explanation": "2.7 × 10",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j104_006",
+      "unit": "science.j1.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "状態変化で、物質の質量は？",
+      "choices": [
+        "減る",
+        "変わらない",
+        "増える",
+        "0になる"
+      ],
+      "answerIndex": 1,
+      "explanation": "体積は変わるが質量は同じ。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j104_007",
+      "unit": "science.j1.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ろうが液体から固体になると、体積は？",
+      "choices": [
+        "変わらない",
+        "減る",
+        "0になる",
+        "増える"
+      ],
+      "answerIndex": 1,
+      "explanation": "多くの物質は減る（水は例外）。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j104_008",
+      "unit": "science.j1.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "溶解度の差を利用して結晶をとり出す方法は？",
+      "choices": [
+        "蒸留",
+        "再結晶",
+        "ろ過だけ",
+        "中和"
+      ],
+      "answerIndex": 1,
+      "explanation": "再結晶。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j104_009",
+      "unit": "science.j1.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "シダ植物の特徴として正しいのは？",
+      "choices": [
+        "種子でふえる",
+        "花がさく",
+        "根・茎・葉の区別があり、胞子でふえる",
+        "根・茎・葉の区別がない"
+      ],
+      "answerIndex": 2,
+      "explanation": "シダ植物。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j104_010",
+      "unit": "science.j1.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "昆虫のからだのつくりは？",
+      "choices": [
+        "体節だけ",
+        "頭部・胸部・腹部",
+        "頭部・腹部",
+        "頭胸部・腹部"
+      ],
+      "answerIndex": 1,
+      "explanation": "昆虫類。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    }
+  ]
+}

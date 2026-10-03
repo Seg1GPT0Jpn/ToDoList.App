@@ -1,0 +1,212 @@
+{
+  "setId": "japanese_e3_06",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "jpn_e306_001",
+      "unit": "japanese.e3.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「やま」をローマ字で書くと？",
+      "choices": [
+        "jama",
+        "yamma",
+        "yama",
+        "iama"
+      ],
+      "answerIndex": 2,
+      "explanation": "や＝ya",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e306_002",
+      "unit": "japanese.e3.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「さかな」をローマ字で書くと？",
+      "choices": [
+        "sakana",
+        "sakna",
+        "sacana",
+        "shakana"
+      ],
+      "answerIndex": 0,
+      "explanation": "さ＝sa、か＝ka、な＝na",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e306_003",
+      "unit": "japanese.e3.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「きって」をローマ字で書くと？",
+      "choices": [
+        "kitte",
+        "kitete",
+        "kiltute",
+        "kite"
+      ],
+      "answerIndex": 0,
+      "explanation": "小さい「っ」は次の文字を重ねる。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e306_004",
+      "unit": "japanese.e3.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「きょう」をローマ字で書くと？",
+      "choices": [
+        "kio",
+        "kyô",
+        "kyo",
+        "kiyou"
+      ],
+      "answerIndex": 1,
+      "explanation": "のばす音は ^ をつける（kyou とも書く）。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e306_005",
+      "unit": "japanese.e3.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「ほん」をローマ字で書くと？",
+      "choices": [
+        "hon",
+        "hn",
+        "fon",
+        "hom"
+      ],
+      "answerIndex": 0,
+      "explanation": "ん＝n",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e306_006",
+      "unit": "japanese.e3.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「ちず」をローマ字（訓令式）で書くと？",
+      "choices": [
+        "tuzu",
+        "tisu",
+        "tizu",
+        "tiz"
+      ],
+      "answerIndex": 2,
+      "explanation": "訓令式は ti（ヘボン式では chizu）。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e306_007",
+      "unit": "japanese.e3.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「neko」は何と読む？",
+      "choices": [
+        "のこ",
+        "なこ",
+        "ねこ",
+        "ねく"
+      ],
+      "answerIndex": 2,
+      "explanation": "ne＝ね、ko＝こ",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e306_008",
+      "unit": "japanese.e3.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「sora」は何と読む？",
+      "choices": [
+        "さら",
+        "そら",
+        "それ",
+        "すら"
+      ],
+      "answerIndex": 1,
+      "explanation": "so＝そ、ra＝ら",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e306_009",
+      "unit": "japanese.e3.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「kin'yôbi」は何と読む？",
+      "choices": [
+        "きよび",
+        "きんようび",
+        "きにようび",
+        "きにょうび"
+      ],
+      "answerIndex": 1,
+      "explanation": "ん のあとに母音がくるときは ' をつける。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e306_010",
+      "unit": "japanese.e3.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ローマ字で、地名や人名の最初の文字は？",
+      "choices": [
+        "どちらでもない",
+        "ひらがな",
+        "大文字",
+        "小文字"
+      ],
+      "answerIndex": 2,
+      "explanation": "Tôkyô、Satô など。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e306_011",
+      "unit": "japanese.e3.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「しゃしん」をローマ字（訓令式）で書くと？",
+      "choices": [
+        "siyasin",
+        "syasin",
+        "syasn",
+        "sasin"
+      ],
+      "answerIndex": 1,
+      "explanation": "訓令式は sya・si（ヘボン式では shashin）。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e306_012",
+      "unit": "japanese.e3.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「gakkô」は何と読む？",
+      "choices": [
+        "がこう",
+        "がっこ",
+        "がくこう",
+        "がっこう"
+      ],
+      "answerIndex": 3,
+      "explanation": "kk ＝ 小さい「っ」。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    }
+  ]
+}

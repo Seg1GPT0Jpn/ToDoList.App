@@ -1,0 +1,178 @@
+{
+  "setId": "science_j2_08",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_j208_001",
+      "unit": "science.j2.s2.a08",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "5Ωの電熱線に2Aの電流を流すと、電力は？",
+      "choices": [
+        "10W",
+        "7W",
+        "2.5W",
+        "20W"
+      ],
+      "answerIndex": 3,
+      "explanation": "V ＝ 10V、P ＝ 10 × 2",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j208_002",
+      "unit": "science.j2.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "冬に日本海側で雪が多いのはなぜ？",
+      "choices": [
+        "北西の季節風が日本海で水蒸気をふくみ、山にぶつかるから",
+        "太平洋から風がふくから",
+        "台風が来るから",
+        "気温が高いから"
+      ],
+      "answerIndex": 0,
+      "explanation": "季節風。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j208_003",
+      "unit": "science.j2.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "等圧線の間隔がせまいところの風は？",
+      "choices": [
+        "強い",
+        "ふかない",
+        "必ず南風",
+        "弱い"
+      ],
+      "answerIndex": 0,
+      "explanation": "気圧の差が大きい。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j208_004",
+      "unit": "science.j2.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "電磁誘導で、磁石を速く動かすと誘導電流は？",
+      "choices": [
+        "変わらない",
+        "大きくなる",
+        "流れない",
+        "小さくなる"
+      ],
+      "answerIndex": 1,
+      "explanation": "変化が速いほど大きい。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j208_005",
+      "unit": "science.j2.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "晴れた日の湿度は、昼ごろどうなる？",
+      "choices": [
+        "上がる",
+        "100%になる",
+        "下がる",
+        "変わらない"
+      ],
+      "answerIndex": 2,
+      "explanation": "気温が上がると湿度は下がる。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j208_006",
+      "unit": "science.j2.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "動脈血とは？",
+      "choices": [
+        "酸素を多くふくむ血液",
+        "二酸化炭素を多くふくむ血液",
+        "静脈を流れる血液",
+        "動脈を流れる血液（必ず）"
+      ],
+      "answerIndex": 0,
+      "explanation": "肺静脈は動脈血。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j208_007",
+      "unit": "science.j2.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "デンプンが最終的に分解されてできるのは？",
+      "choices": [
+        "脂肪酸",
+        "ブドウ糖",
+        "アミノ酸",
+        "グリセリン"
+      ],
+      "answerIndex": 1,
+      "explanation": "ブドウ糖。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j208_008",
+      "unit": "science.j2.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "直列回路で豆電球を1つ外すと？",
+      "choices": [
+        "変わらない",
+        "電池がこわれる",
+        "他の豆電球も消える",
+        "他の豆電球は明るくなる"
+      ],
+      "answerIndex": 2,
+      "explanation": "回路が切れる。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j208_009",
+      "unit": "science.j2.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "雲ができるしくみに関係のないものは？",
+      "choices": [
+        "下降気流",
+        "上昇気流",
+        "断熱膨張",
+        "露点"
+      ],
+      "answerIndex": 0,
+      "explanation": "上昇して冷える。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j208_010",
+      "unit": "science.j2.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "硫化鉄に塩酸を加えると発生する気体の特徴は？",
+      "choices": [
+        "無臭",
+        "ものを燃やす",
+        "卵のくさったようなにおい",
+        "水に溶けない"
+      ],
+      "answerIndex": 2,
+      "explanation": "硫化水素。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    }
+  ]
+}

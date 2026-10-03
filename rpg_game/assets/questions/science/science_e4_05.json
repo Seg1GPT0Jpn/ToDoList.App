@@ -1,0 +1,212 @@
+{
+  "setId": "science_e4_05",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_e405_001",
+      "unit": "science.e4.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "かん電池の向きを反対にすると、モーターの回る向きは？",
+      "choices": [
+        "止まる",
+        "反対になる",
+        "同じ",
+        "速くなる"
+      ],
+      "answerIndex": 1,
+      "explanation": "電流の向きが反対になる。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e405_002",
+      "unit": "science.e4.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "かん電池2個を直列つなぎにすると、モーターは？",
+      "choices": [
+        "速く回る",
+        "おそく回る",
+        "同じ",
+        "止まる"
+      ],
+      "answerIndex": 0,
+      "explanation": "電流が大きくなる。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e405_003",
+      "unit": "science.e4.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "かん電池2個を並列つなぎにすると、モーターの速さは？",
+      "choices": [
+        "反対に回る",
+        "止まる",
+        "とても速い",
+        "1個のときとほぼ同じ"
+      ],
+      "answerIndex": 3,
+      "explanation": "電流は1個のときと同じくらい。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e405_004",
+      "unit": "science.e4.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "電流の大きさをはかる道具は？",
+      "choices": [
+        "温度計",
+        "方位じしん",
+        "てんびん",
+        "検流計（電流計）"
+      ],
+      "answerIndex": 3,
+      "explanation": "検流計。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e405_005",
+      "unit": "science.e4.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "電流はどちらからどちらへ流れる？",
+      "choices": [
+        "−極から＋極へ",
+        "両方から",
+        "＋極から−極へ",
+        "どちらでもない"
+      ],
+      "answerIndex": 2,
+      "explanation": "＋ → −。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e405_006",
+      "unit": "science.e4.s2.a05",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "並列つなぎのよいところは？",
+      "choices": [
+        "かん電池が早くなくなる",
+        "かん電池が長持ちする",
+        "モーターが反対に回る",
+        "とても明るくなる"
+      ],
+      "answerIndex": 1,
+      "explanation": "1個あたりの負担が小さい。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e405_007",
+      "unit": "science.e4.s2.a05",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "直列つなぎで、かん電池を1個はずすとどうなる？",
+      "choices": [
+        "反対に回る",
+        "かわらない",
+        "回路がとぎれて止まる",
+        "速くなる"
+      ],
+      "answerIndex": 2,
+      "explanation": "1本の道。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e405_008",
+      "unit": "science.e4.s2.a05",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "並列つなぎで、かん電池を1個はずすとどうなる？",
+      "choices": [
+        "反対に回る",
+        "もう1個で動き続ける",
+        "止まる",
+        "速くなる"
+      ],
+      "answerIndex": 1,
+      "explanation": "別の道がある。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e405_009",
+      "unit": "science.e4.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "電気用図記号で、かん電池の長いほうの線は？",
+      "choices": [
+        "−極",
+        "豆電球",
+        "＋極",
+        "スイッチ"
+      ],
+      "answerIndex": 2,
+      "explanation": "長い線が＋。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e405_010",
+      "unit": "science.e4.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "光電池に当てる光を強くすると、モーターは？",
+      "choices": [
+        "反対に回る",
+        "おそく回る",
+        "速く回る",
+        "止まる"
+      ],
+      "answerIndex": 2,
+      "explanation": "電流が大きくなる。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e405_011",
+      "unit": "science.e4.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "光電池の光をさえぎると？",
+      "choices": [
+        "反対に流れる",
+        "電流が流れなくなる",
+        "かわらない",
+        "電流が大きくなる"
+      ],
+      "answerIndex": 1,
+      "explanation": "光で電気をつくる。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e405_012",
+      "unit": "science.e4.s2.a05",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "豆電球をより明るくするつなぎ方は？",
+      "choices": [
+        "かん電池の並列つなぎ",
+        "かん電池の直列つなぎ",
+        "かん電池1個",
+        "かん電池を反対向きにする"
+      ],
+      "answerIndex": 1,
+      "explanation": "直列で電流が大きい。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    }
+  ]
+}

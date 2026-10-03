@@ -1,0 +1,212 @@
+{
+  "setId": "social_civ_08",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_civ08_001",
+      "unit": "social.civ.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "国家の三要素は？",
+      "choices": [
+        "領域・国民・主権",
+        "言語・宗教・文化",
+        "軍隊・警察・裁判所",
+        "国旗・国歌・首都"
+      ],
+      "answerIndex": 0,
+      "explanation": "国家。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ08_002",
+      "unit": "social.civ.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "国際連合の安全保障理事会の常任理事国が持つ権利は？",
+      "choices": [
+        "拒否権",
+        "請求権",
+        "選挙権",
+        "参政権"
+      ],
+      "answerIndex": 0,
+      "explanation": "拒否権。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ08_003",
+      "unit": "social.civ.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "安全保障理事会の常任理事国にあてはまらないのは？",
+      "choices": [
+        "アメリカ",
+        "フランス",
+        "日本",
+        "中国"
+      ],
+      "answerIndex": 2,
+      "explanation": "米英仏露中。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ08_004",
+      "unit": "social.civ.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "国連の平和維持活動の略称は？",
+      "choices": [
+        "NGO",
+        "WTO",
+        "PKO",
+        "ODA"
+      ],
+      "answerIndex": 2,
+      "explanation": "PKO。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ08_005",
+      "unit": "social.civ.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "政府による発展途上国への資金・技術援助は？",
+      "choices": [
+        "PKO",
+        "NGO",
+        "ODA（政府開発援助）",
+        "NPO"
+      ],
+      "answerIndex": 2,
+      "explanation": "ODA。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ08_006",
+      "unit": "social.civ.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "民間の国際協力団体の略称は？",
+      "choices": [
+        "NGO",
+        "ODA",
+        "PKO",
+        "WHO"
+      ],
+      "answerIndex": 0,
+      "explanation": "NGO。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ08_007",
+      "unit": "social.civ.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "先進国と発展途上国の経済格差の問題は？",
+      "choices": [
+        "東西問題",
+        "南南問題",
+        "南北問題",
+        "北北問題"
+      ],
+      "answerIndex": 2,
+      "explanation": "南北問題。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ08_008",
+      "unit": "social.civ.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "発展途上国の間での経済格差は？",
+      "choices": [
+        "冷戦",
+        "人口爆発",
+        "南南問題",
+        "南北問題"
+      ],
+      "answerIndex": 2,
+      "explanation": "南南問題。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ08_009",
+      "unit": "social.civ.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "2015年に採択された温暖化対策の国際的な枠組みは？",
+      "choices": [
+        "ラムサール条約",
+        "ワシントン条約",
+        "京都議定書",
+        "パリ協定"
+      ],
+      "answerIndex": 3,
+      "explanation": "パリ協定。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ08_010",
+      "unit": "social.civ.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "発展途上国の生産物を適正な価格で買う取り組みは？",
+      "choices": [
+        "フェアトレード",
+        "保護貿易",
+        "自由貿易",
+        "ダンピング"
+      ],
+      "answerIndex": 0,
+      "explanation": "フェアトレード。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ08_011",
+      "unit": "social.civ.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "戦争や迫害で国外へ逃れた人々は？",
+      "choices": [
+        "移民",
+        "観光客",
+        "難民",
+        "留学生"
+      ],
+      "answerIndex": 2,
+      "explanation": "UNHCR。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ08_012",
+      "unit": "social.civ.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "日本が領有を主張し、ロシアが占拠している島々は？",
+      "choices": [
+        "北方領土",
+        "小笠原諸島",
+        "尖閣諸島",
+        "竹島"
+      ],
+      "answerIndex": 0,
+      "explanation": "北方領土。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    }
+  ]
+}

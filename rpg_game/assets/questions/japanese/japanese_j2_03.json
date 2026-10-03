@@ -1,0 +1,212 @@
+{
+  "setId": "japanese_j2_03",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "jpn_j203_001",
+      "unit": "japanese.j2.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「書く」の活用の種類は？",
+      "choices": [
+        "五段活用",
+        "上一段活用",
+        "カ行変格活用",
+        "下一段活用"
+      ],
+      "answerIndex": 0,
+      "explanation": "書か・書き・書く・書け・書こ。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j203_002",
+      "unit": "japanese.j2.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「見る」の活用の種類は？",
+      "choices": [
+        "サ行変格活用",
+        "上一段活用",
+        "五段活用",
+        "下一段活用"
+      ],
+      "answerIndex": 1,
+      "explanation": "「ない」をつけると「見ない」（い段）。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j203_003",
+      "unit": "japanese.j2.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「食べる」の活用の種類は？",
+      "choices": [
+        "下一段活用",
+        "カ行変格活用",
+        "上一段活用",
+        "五段活用"
+      ],
+      "answerIndex": 0,
+      "explanation": "「食べない」（え段）。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j203_004",
+      "unit": "japanese.j2.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「来る」の活用の種類は？",
+      "choices": [
+        "五段活用",
+        "上一段活用",
+        "サ行変格活用",
+        "カ行変格活用"
+      ],
+      "answerIndex": 3,
+      "explanation": "カ変は「来る」だけ。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j203_005",
+      "unit": "japanese.j2.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「勉強する」の活用の種類は？",
+      "choices": [
+        "サ行変格活用",
+        "五段活用",
+        "カ行変格活用",
+        "下一段活用"
+      ],
+      "answerIndex": 0,
+      "explanation": "サ変は「する」「〜する」。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j203_006",
+      "unit": "japanese.j2.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "活用形で「ない」「う・よう」に続く形は？",
+      "choices": [
+        "仮定形",
+        "未然形",
+        "連用形",
+        "終止形"
+      ],
+      "answerIndex": 1,
+      "explanation": "未然形。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j203_007",
+      "unit": "japanese.j2.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "活用形で「ます」「た」に続く形は？",
+      "choices": [
+        "未然形",
+        "命令形",
+        "連体形",
+        "連用形"
+      ],
+      "answerIndex": 3,
+      "explanation": "連用形。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j203_008",
+      "unit": "japanese.j2.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "活用形で「ば」に続く形は？",
+      "choices": [
+        "仮定形",
+        "命令形",
+        "連用形",
+        "未然形"
+      ],
+      "answerIndex": 0,
+      "explanation": "仮定形。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j203_009",
+      "unit": "japanese.j2.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "活用形で体言（名詞）に続く形は？",
+      "choices": [
+        "連用形",
+        "終止形",
+        "連体形",
+        "仮定形"
+      ],
+      "answerIndex": 2,
+      "explanation": "連体形。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j203_010",
+      "unit": "japanese.j2.s1.a03",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「走ろう」の「走ろ」の活用形は？",
+      "choices": [
+        "命令形",
+        "未然形",
+        "連用形",
+        "終止形"
+      ],
+      "answerIndex": 1,
+      "explanation": "「う」に続く。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j203_011",
+      "unit": "japanese.j2.s1.a03",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「美しかった」の「美しかっ」の活用形は？",
+      "choices": [
+        "未然形",
+        "終止形",
+        "連体形",
+        "連用形"
+      ],
+      "answerIndex": 3,
+      "explanation": "「た」に続く。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j203_012",
+      "unit": "japanese.j2.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "形容詞・形容動詞にない活用形は？",
+      "choices": [
+        "未然形",
+        "命令形",
+        "仮定形",
+        "連用形"
+      ],
+      "answerIndex": 1,
+      "explanation": "形容詞・形容動詞は命令形がない。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    }
+  ]
+}

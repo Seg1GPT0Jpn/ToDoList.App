@@ -1,0 +1,212 @@
+{
+  "setId": "social_e4_01",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_e401_001",
+      "unit": "social.e4.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "日本の都道府県の数は？",
+      "choices": [
+        "43",
+        "45",
+        "47",
+        "50"
+      ],
+      "answerIndex": 2,
+      "explanation": "1都1道2府43県。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e401_002",
+      "unit": "social.e4.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「道」がつくのは？",
+      "choices": [
+        "京都府",
+        "東京都",
+        "大阪府",
+        "北海道"
+      ],
+      "answerIndex": 3,
+      "explanation": "北海道だけ。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e401_003",
+      "unit": "social.e4.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「府」がつくのは？",
+      "choices": [
+        "大阪府と京都府",
+        "東京都と大阪府",
+        "北海道と京都府",
+        "神奈川県と大阪府"
+      ],
+      "answerIndex": 0,
+      "explanation": "2府。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e401_004",
+      "unit": "social.e4.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "日本でいちばん面積の大きい都道府県は？",
+      "choices": [
+        "岩手県",
+        "長野県",
+        "北海道",
+        "東京都"
+      ],
+      "answerIndex": 2,
+      "explanation": "北海道。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e401_005",
+      "unit": "social.e4.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "日本でいちばん面積の小さい都道府県は？",
+      "choices": [
+        "香川県",
+        "大阪府",
+        "東京都",
+        "沖縄県"
+      ],
+      "answerIndex": 0,
+      "explanation": "香川県。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e401_006",
+      "unit": "social.e4.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "県庁所在地が「仙台市」の県は？",
+      "choices": [
+        "宮城県",
+        "福島県",
+        "山形県",
+        "岩手県"
+      ],
+      "answerIndex": 0,
+      "explanation": "宮城県。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e401_007",
+      "unit": "social.e4.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "県庁所在地が「名古屋市」の県は？",
+      "choices": [
+        "岐阜県",
+        "三重県",
+        "静岡県",
+        "愛知県"
+      ],
+      "answerIndex": 3,
+      "explanation": "愛知県。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e401_008",
+      "unit": "social.e4.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "県庁所在地が「金沢市」の県は？",
+      "choices": [
+        "新潟県",
+        "富山県",
+        "石川県",
+        "福井県"
+      ],
+      "answerIndex": 2,
+      "explanation": "石川県。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e401_009",
+      "unit": "social.e4.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "県庁所在地が「松山市」の県は？",
+      "choices": [
+        "徳島県",
+        "香川県",
+        "高知県",
+        "愛媛県"
+      ],
+      "answerIndex": 3,
+      "explanation": "愛媛県。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e401_010",
+      "unit": "social.e4.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "県庁所在地が「那覇市」の県は？",
+      "choices": [
+        "鹿児島県",
+        "宮崎県",
+        "沖縄県",
+        "長崎県"
+      ],
+      "answerIndex": 2,
+      "explanation": "沖縄県。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e401_011",
+      "unit": "social.e4.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "海に面していない県は？",
+      "choices": [
+        "千葉県",
+        "静岡県",
+        "新潟県",
+        "長野県"
+      ],
+      "answerIndex": 3,
+      "explanation": "内陸県。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e401_012",
+      "unit": "social.e4.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "本州の北のはしにある県は？",
+      "choices": [
+        "秋田県",
+        "青森県",
+        "岩手県",
+        "北海道"
+      ],
+      "answerIndex": 1,
+      "explanation": "青森県。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    }
+  ]
+}

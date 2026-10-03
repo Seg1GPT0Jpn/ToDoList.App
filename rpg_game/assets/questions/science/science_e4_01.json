@@ -1,0 +1,212 @@
+{
+  "setId": "science_e4_01",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_e401_001",
+      "unit": "science.e4.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "春になると、ツバメはどうする？",
+      "choices": [
+        "たまごのまま冬をこす",
+        "南の国からやってきて、すをつくる",
+        "南の国へ帰る",
+        "冬眠する"
+      ],
+      "answerIndex": 1,
+      "explanation": "春にわたってくる。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e401_002",
+      "unit": "science.e4.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "秋になると、ツバメはどうする？",
+      "choices": [
+        "冬眠する",
+        "南の国へ帰る",
+        "すをつくる",
+        "たまごをうむ"
+      ],
+      "answerIndex": 1,
+      "explanation": "あたたかい国へ。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e401_003",
+      "unit": "science.e4.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "カマキリはどのようにして冬をこす？",
+      "choices": [
+        "せい虫で",
+        "さなぎで",
+        "たまごで",
+        "よう虫で"
+      ],
+      "answerIndex": 2,
+      "explanation": "たまごのかたまり。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e401_004",
+      "unit": "science.e4.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "カエルは冬をどうすごす？",
+      "choices": [
+        "空をとぶ",
+        "土の中で冬眠する",
+        "たまごをうむ",
+        "水面を泳ぎ回る"
+      ],
+      "answerIndex": 1,
+      "explanation": "冬眠。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e401_005",
+      "unit": "science.e4.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "サクラは冬にどうなっている？",
+      "choices": [
+        "花がさいている",
+        "葉が落ち、えだに芽をつけている",
+        "葉がしげっている",
+        "実がなっている"
+      ],
+      "answerIndex": 1,
+      "explanation": "冬芽。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e401_006",
+      "unit": "science.e4.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ヘチマは冬にどうなる？",
+      "choices": [
+        "冬眠する",
+        "大きく育つ",
+        "かれて、たねを残す",
+        "花がさく"
+      ],
+      "answerIndex": 2,
+      "explanation": "たねで冬をこす。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e401_007",
+      "unit": "science.e4.s1.a01",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "気温が高くなる夏、植物のようすは？",
+      "choices": [
+        "かれる",
+        "葉が落ちる",
+        "成長が止まる",
+        "よくのびる"
+      ],
+      "answerIndex": 3,
+      "explanation": "あたたかいと成長する。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e401_008",
+      "unit": "science.e4.s1.a01",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "動物の活動と気温の関係は？",
+      "choices": [
+        "気温と関係ない",
+        "寒いと活発",
+        "あたたかいと活発、寒いとにぶくなる",
+        "いつも同じ"
+      ],
+      "answerIndex": 2,
+      "explanation": "季節と生き物。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e401_009",
+      "unit": "science.e4.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "テントウムシはどのようにして冬をこす？",
+      "choices": [
+        "たまごで",
+        "せい虫が集まって",
+        "さなぎで",
+        "水の中で"
+      ],
+      "answerIndex": 1,
+      "explanation": "せい虫で集まる。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e401_010",
+      "unit": "science.e4.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "気温をはかるときの高さは？",
+      "choices": [
+        "10mの高さ",
+        "地面から1.2〜1.5mくらい",
+        "屋根の上",
+        "地面の上"
+      ],
+      "answerIndex": 1,
+      "explanation": "風通しのよい日かげ。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e401_011",
+      "unit": "science.e4.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "気温をはかる場所として正しいのは？",
+      "choices": [
+        "直射日光の当たる場所",
+        "水の中",
+        "風通しのよい日かげ",
+        "へやの中"
+      ],
+      "answerIndex": 2,
+      "explanation": "百葉箱。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e401_012",
+      "unit": "science.e4.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "1日の気温がいちばん高くなるのはいつごろ？",
+      "choices": [
+        "朝6時ごろ",
+        "夜9時ごろ",
+        "午後2時ごろ",
+        "正午ちょうど"
+      ],
+      "answerIndex": 2,
+      "explanation": "地面があたたまってから。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    }
+  ]
+}

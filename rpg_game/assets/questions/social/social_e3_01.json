@@ -1,0 +1,212 @@
+{
+  "setId": "social_e3_01",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_e301_001",
+      "unit": "social.e3.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "地図で、ふつう上はどの方位？",
+      "choices": [
+        "西",
+        "南",
+        "東",
+        "北"
+      ],
+      "answerIndex": 3,
+      "explanation": "地図の上は北。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e301_002",
+      "unit": "social.e3.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "方位を表す4つの言葉に入らないのは？",
+      "choices": [
+        "東",
+        "南",
+        "前",
+        "西"
+      ],
+      "answerIndex": 2,
+      "explanation": "東西南北。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e301_003",
+      "unit": "social.e3.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "北を向いて立ったとき、右手の方位は？",
+      "choices": [
+        "南",
+        "西",
+        "東",
+        "北"
+      ],
+      "answerIndex": 2,
+      "explanation": "北を向くと右が東。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e301_004",
+      "unit": "social.e3.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "8方位で、北と東の間の方位は？",
+      "choices": [
+        "北東",
+        "南東",
+        "北西",
+        "東北東"
+      ],
+      "answerIndex": 0,
+      "explanation": "北東。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e301_005",
+      "unit": "social.e3.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "地図記号「文」は何を表す？",
+      "choices": [
+        "寺",
+        "病院",
+        "小・中学校",
+        "郵便局"
+      ],
+      "answerIndex": 2,
+      "explanation": "文の字。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e301_006",
+      "unit": "social.e3.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "地図記号「〒」の形のものは？",
+      "choices": [
+        "交番",
+        "郵便局",
+        "学校",
+        "銀行"
+      ],
+      "answerIndex": 1,
+      "explanation": "〒。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e301_007",
+      "unit": "social.e3.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "地図記号「卍」は？",
+      "choices": [
+        "城あと",
+        "工場",
+        "寺",
+        "神社"
+      ],
+      "answerIndex": 2,
+      "explanation": "卍＝寺。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e301_008",
+      "unit": "social.e3.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "地図記号「⛩（鳥居の形）」は？",
+      "choices": [
+        "寺",
+        "神社",
+        "博物館",
+        "病院"
+      ],
+      "answerIndex": 1,
+      "explanation": "鳥居。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e301_009",
+      "unit": "social.e3.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "地図記号で、田（水田）はどんな形？",
+      "choices": [
+        "木の形",
+        "まる",
+        "三角",
+        "稲をかりとったあとの形（‖ のような形）"
+      ],
+      "answerIndex": 3,
+      "explanation": "田の記号。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e301_010",
+      "unit": "social.e3.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "地図記号「X」のような形（交わった警棒）は？",
+      "choices": [
+        "学校",
+        "工場",
+        "消防署",
+        "交番"
+      ],
+      "answerIndex": 3,
+      "explanation": "交番。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e301_011",
+      "unit": "social.e3.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "昔の消防の道具「さすまた」の形をした地図記号は？",
+      "choices": [
+        "交番",
+        "病院",
+        "市役所",
+        "消防署"
+      ],
+      "answerIndex": 3,
+      "explanation": "消防署。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    },
+    {
+      "id": "soc_e301_012",
+      "unit": "social.e3.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "高いところから見たようすを絵にしたものを何という？",
+      "choices": [
+        "年表",
+        "鳥かん図",
+        "グラフ",
+        "写真"
+      ],
+      "answerIndex": 1,
+      "explanation": "鳥の目から見たような図。",
+      "targetGrade": "小3",
+      "phase": "basics"
+    }
+  ]
+}

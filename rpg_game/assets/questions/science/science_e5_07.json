@@ -1,0 +1,212 @@
+{
+  "setId": "science_e5_07",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_e507_001",
+      "unit": "science.e5.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ふりこの1往復する時間を変えるのは？",
+      "choices": [
+        "ふりこの長さ",
+        "おもりの重さ",
+        "おもりの色",
+        "ふれはば"
+      ],
+      "answerIndex": 0,
+      "explanation": "長さだけで決まる。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e507_002",
+      "unit": "science.e5.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ふりこを長くすると、1往復する時間は？",
+      "choices": [
+        "短くなる",
+        "かわらない",
+        "長くなる",
+        "0になる"
+      ],
+      "answerIndex": 2,
+      "explanation": "長いほどゆっくり。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e507_003",
+      "unit": "science.e5.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "おもりを重くすると、1往復する時間は？",
+      "choices": [
+        "長くなる",
+        "止まる",
+        "かわらない",
+        "短くなる"
+      ],
+      "answerIndex": 2,
+      "explanation": "重さは関係ない。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e507_004",
+      "unit": "science.e5.s2.a07",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "ふりこの1往復の時間を正確に求めるには？",
+      "choices": [
+        "ふれはばを大きくする",
+        "1往復を1回だけはかる",
+        "目で見当をつける",
+        "10往復の時間を何回かはかって平均し、10でわる"
+      ],
+      "answerIndex": 3,
+      "explanation": "誤差を小さく。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e507_005",
+      "unit": "science.e5.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "導線を巻いたものを何という？",
+      "choices": [
+        "コイル",
+        "検流計",
+        "電池",
+        "モーター"
+      ],
+      "answerIndex": 0,
+      "explanation": "コイル。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e507_006",
+      "unit": "science.e5.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "コイルに鉄心を入れて電流を流すと何になる？",
+      "choices": [
+        "発電機",
+        "電磁石",
+        "電池",
+        "永久磁石"
+      ],
+      "answerIndex": 1,
+      "explanation": "電磁石。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e507_007",
+      "unit": "science.e5.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "電磁石を強くする方法は？",
+      "choices": [
+        "鉄心をぬく",
+        "コイルの巻き数をふやす・電流を大きくする",
+        "導線を短くするだけ",
+        "電流を小さくする"
+      ],
+      "answerIndex": 1,
+      "explanation": "強さの条件。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e507_008",
+      "unit": "science.e5.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "電流の向きを反対にすると、電磁石の極は？",
+      "choices": [
+        "N極だけになる",
+        "かわらない",
+        "反対になる",
+        "なくなる"
+      ],
+      "answerIndex": 2,
+      "explanation": "極が入れかわる。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e507_009",
+      "unit": "science.e5.s2.a07",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "電磁石と永久磁石のちがいは？",
+      "choices": [
+        "電磁石は電流を切ると磁石の力がなくなる",
+        "同じ",
+        "電磁石は極がない",
+        "永久磁石は鉄を引きつけない"
+      ],
+      "answerIndex": 0,
+      "explanation": "ON/OFFできる。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e507_010",
+      "unit": "science.e5.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "電磁石を利用しているものは？",
+      "choices": [
+        "かがみ",
+        "てんびん",
+        "モーター・スピーカー",
+        "温度計"
+      ],
+      "answerIndex": 2,
+      "explanation": "身のまわりの電磁石。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e507_011",
+      "unit": "science.e5.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "電流計のつなぎ方は？",
+      "choices": [
+        "回路に直列につなぐ",
+        "どこでもよい",
+        "回路に並列につなぐ",
+        "かん電池に直接つなぐ"
+      ],
+      "answerIndex": 0,
+      "explanation": "直列。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e507_012",
+      "unit": "science.e5.s2.a07",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "電流計を使うとき、最初につなぐ−端子は？",
+      "choices": [
+        "＋端子",
+        "いちばん大きい電流（5A）の端子",
+        "どれでもよい",
+        "いちばん小さい50mA"
+      ],
+      "answerIndex": 1,
+      "explanation": "針がふり切れないように。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    }
+  ]
+}

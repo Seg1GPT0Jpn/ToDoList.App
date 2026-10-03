@@ -1,0 +1,212 @@
+{
+  "setId": "japanese_j1_03",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "jpn_j103_001",
+      "unit": "japanese.j1.s1.a03",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「わたしは/本を/読む。」のように、意味がわかる最小のまとまりを何という？",
+      "choices": [
+        "段落",
+        "単語",
+        "文節",
+        "文"
+      ],
+      "answerIndex": 2,
+      "explanation": "「ネ」を入れて区切れる。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j103_002",
+      "unit": "japanese.j1.s1.a03",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「新しい本を買った。」はいくつの文節？",
+      "choices": [
+        "4つ",
+        "2つ",
+        "3つ",
+        "5つ"
+      ],
+      "answerIndex": 2,
+      "explanation": "新しい／本を／買った。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j103_003",
+      "unit": "japanese.j1.s1.a03",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「新しい本を買った。」はいくつの単語？",
+      "choices": [
+        "4つ",
+        "3つ",
+        "6つ",
+        "5つ"
+      ],
+      "answerIndex": 3,
+      "explanation": "新しい／本／を／買っ／た。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j103_004",
+      "unit": "japanese.j1.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "活用する自立語で、言い切りが「う段」で終わる品詞は？",
+      "choices": [
+        "形容詞",
+        "名詞",
+        "動詞",
+        "形容動詞"
+      ],
+      "answerIndex": 2,
+      "explanation": "走る・見る。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j103_005",
+      "unit": "japanese.j1.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "言い切りが「い」で終わる活用する自立語は？",
+      "choices": [
+        "動詞",
+        "形容詞",
+        "副詞",
+        "形容動詞"
+      ],
+      "answerIndex": 1,
+      "explanation": "美しい・高い。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j103_006",
+      "unit": "japanese.j1.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "言い切りが「だ・です」で終わる活用する自立語は？",
+      "choices": [
+        "動詞",
+        "名詞",
+        "形容詞",
+        "形容動詞"
+      ],
+      "answerIndex": 3,
+      "explanation": "静かだ・きれいだ。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j103_007",
+      "unit": "japanese.j1.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「山・東京・三つ」の品詞は？",
+      "choices": [
+        "名詞",
+        "副詞",
+        "連体詞",
+        "動詞"
+      ],
+      "answerIndex": 0,
+      "explanation": "ものの名前。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j103_008",
+      "unit": "japanese.j1.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「とても」「ゆっくり」の品詞は？",
+      "choices": [
+        "副詞",
+        "接続詞",
+        "形容詞",
+        "連体詞"
+      ],
+      "answerIndex": 0,
+      "explanation": "主に用言を修飾。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j103_009",
+      "unit": "japanese.j1.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「この」「大きな」「あらゆる」の品詞は？",
+      "choices": [
+        "連体詞",
+        "副詞",
+        "名詞",
+        "形容詞"
+      ],
+      "answerIndex": 0,
+      "explanation": "体言だけを修飾。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j103_010",
+      "unit": "japanese.j1.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「しかし」「だから」の品詞は？",
+      "choices": [
+        "接続詞",
+        "副詞",
+        "感動詞",
+        "助詞"
+      ],
+      "answerIndex": 0,
+      "explanation": "文と文をつなぐ。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j103_011",
+      "unit": "japanese.j1.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「が」「を」「に」のように、活用しない付属語は？",
+      "choices": [
+        "助詞",
+        "副詞",
+        "助動詞",
+        "接続詞"
+      ],
+      "answerIndex": 0,
+      "explanation": "付属語で活用なし。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "jpn_j103_012",
+      "unit": "japanese.j1.s1.a03",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「た」「ない」「れる」のように、活用する付属語は？",
+      "choices": [
+        "助動詞",
+        "形容詞",
+        "助詞",
+        "動詞"
+      ],
+      "answerIndex": 0,
+      "explanation": "付属語で活用あり。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    }
+  ]
+}

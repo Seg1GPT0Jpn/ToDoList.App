@@ -1,0 +1,212 @@
+{
+  "setId": "science_e5_06",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_e506_001",
+      "unit": "science.e5.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "流れる水が地面をけずるはたらきは？",
+      "choices": [
+        "運ぱん",
+        "しん食",
+        "たい積",
+        "じょう発"
+      ],
+      "answerIndex": 1,
+      "explanation": "けずる＝しん食。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e506_002",
+      "unit": "science.e5.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "流れる水が土や石を運ぶはたらきは？",
+      "choices": [
+        "ぎょう結",
+        "たい積",
+        "しん食",
+        "運ぱん"
+      ],
+      "answerIndex": 3,
+      "explanation": "運ぶ＝運ぱん。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e506_003",
+      "unit": "science.e5.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "流れる水が土や石を積もらせるはたらきは？",
+      "choices": [
+        "ふん火",
+        "運ぱん",
+        "たい積",
+        "しん食"
+      ],
+      "answerIndex": 2,
+      "explanation": "積もらせる＝たい積。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e506_004",
+      "unit": "science.e5.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "川の曲がっているところの外側の流れは？",
+      "choices": [
+        "速い",
+        "止まっている",
+        "おそい",
+        "逆向き"
+      ],
+      "answerIndex": 0,
+      "explanation": "外側は速く、けずられる。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e506_005",
+      "unit": "science.e5.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "川の曲がっているところの内側には何ができやすい？",
+      "choices": [
+        "川原（砂や石がたい積）",
+        "がけ",
+        "滝",
+        "深いふち"
+      ],
+      "answerIndex": 0,
+      "explanation": "流れがおそい。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e506_006",
+      "unit": "science.e5.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "山の中を流れる川の石の形は？",
+      "choices": [
+        "砂だけ",
+        "大きくて角ばっている",
+        "小さくて丸い",
+        "どろだけ"
+      ],
+      "answerIndex": 1,
+      "explanation": "上流の石。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e506_007",
+      "unit": "science.e5.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "平地や海の近くの川の石の形は？",
+      "choices": [
+        "石はない",
+        "大きくて角ばっている",
+        "大岩だけ",
+        "小さくて丸みがある"
+      ],
+      "answerIndex": 3,
+      "explanation": "運ばれる間にけずられる。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e506_008",
+      "unit": "science.e5.s2.a06",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "大雨がふると、川の水のはたらきは？",
+      "choices": [
+        "たい積だけになる",
+        "かわらない",
+        "しん食と運ぱんが大きくなる",
+        "小さくなる"
+      ],
+      "answerIndex": 2,
+      "explanation": "水の量と速さがふえる。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e506_009",
+      "unit": "science.e5.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "川がふだんから曲がっている外側を守るためにつくるのは？",
+      "choices": [
+        "ダムの水門",
+        "橋",
+        "ブロック（護岸）",
+        "公園"
+      ],
+      "answerIndex": 2,
+      "explanation": "けずられないように。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e506_010",
+      "unit": "science.e5.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "山から平地に出たところにできる、扇のような形の地形は？",
+      "choices": [
+        "V字谷",
+        "河岸段丘",
+        "三角州",
+        "扇状地"
+      ],
+      "answerIndex": 3,
+      "explanation": "扇状地。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e506_011",
+      "unit": "science.e5.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "川が海に出るところにできる地形は？",
+      "choices": [
+        "扇状地",
+        "V字谷",
+        "カルデラ",
+        "三角州"
+      ],
+      "answerIndex": 3,
+      "explanation": "三角州。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e506_012",
+      "unit": "science.e5.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "山の中で深くけずられた谷を何という？",
+      "choices": [
+        "三角州",
+        "扇状地",
+        "カルデラ",
+        "V字谷"
+      ],
+      "answerIndex": 3,
+      "explanation": "V字谷。",
+      "targetGrade": "小5",
+      "phase": "basics"
+    }
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "setId": "japanese_e4_05",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "jpn_e405_001",
+      "unit": "japanese.e4.s2.a05",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「雨がふった。（  ）、試合は中止になった。」に入るのは？",
+      "choices": [
+        "または",
+        "しかし",
+        "だから",
+        "たとえば"
+      ],
+      "answerIndex": 2,
+      "explanation": "理由 → 結果。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e405_002",
+      "unit": "japanese.e4.s2.a05",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「たくさん練習した。（  ）、負けてしまった。」に入るのは？",
+      "choices": [
+        "そして",
+        "つまり",
+        "しかし",
+        "だから"
+      ],
+      "answerIndex": 2,
+      "explanation": "予想と反対。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e405_003",
+      "unit": "japanese.e4.s2.a05",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「ペンで書いてください。（  ）、えんぴつでもかまいません。」に入るのは？",
+      "choices": [
+        "だから",
+        "つまり",
+        "または",
+        "しかし"
+      ],
+      "answerIndex": 2,
+      "explanation": "どちらか。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e405_004",
+      "unit": "japanese.e4.s2.a05",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「わたしの母の姉、（  ）おばです。」に入るのは？",
+      "choices": [
+        "それとも",
+        "つまり",
+        "だから",
+        "しかし"
+      ],
+      "answerIndex": 1,
+      "explanation": "言いかえ。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e405_005",
+      "unit": "japanese.e4.s2.a05",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「大きな犬がほえる。」で「大きな」がくわしくしている言葉は？",
+      "choices": [
+        "大きな",
+        "犬が",
+        "が",
+        "ほえる"
+      ],
+      "answerIndex": 1,
+      "explanation": "修飾語→被修飾語。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e405_006",
+      "unit": "japanese.e4.s2.a05",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「白い花がきれいにさいた。」で「きれいに」がくわしくしている言葉は？",
+      "choices": [
+        "きれい",
+        "白い",
+        "花が",
+        "さいた"
+      ],
+      "answerIndex": 3,
+      "explanation": "どのように→さいた。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e405_007",
+      "unit": "japanese.e4.s2.a05",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「弟がゆっくり歩く。」の修飾語は？",
+      "choices": [
+        "弟",
+        "ゆっくり",
+        "弟が",
+        "歩く"
+      ],
+      "answerIndex": 1,
+      "explanation": "どのように歩く。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e405_008",
+      "unit": "japanese.e4.s2.a05",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「きのう、ぼくは友だちと公園で遊んだ。」の主語は？",
+      "choices": [
+        "友だちと",
+        "遊んだ",
+        "きのう",
+        "ぼくは"
+      ],
+      "answerIndex": 3,
+      "explanation": "「だれが」。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e405_009",
+      "unit": "japanese.e4.s2.a05",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「きのう、ぼくは友だちと公園で遊んだ。」の述語は？",
+      "choices": [
+        "ぼくは",
+        "遊んだ",
+        "公園で",
+        "きのう"
+      ],
+      "answerIndex": 1,
+      "explanation": "「どうした」。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e405_010",
+      "unit": "japanese.e4.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "前のことと同じ方向に話を続けるつなぎ言葉は？",
+      "choices": [
+        "そして",
+        "けれども",
+        "ところが",
+        "しかし"
+      ],
+      "answerIndex": 0,
+      "explanation": "順接・並列。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e405_011",
+      "unit": "japanese.e4.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "話題を変えるつなぎ言葉は？",
+      "choices": [
+        "しかし",
+        "だから",
+        "そして",
+        "ところで"
+      ],
+      "answerIndex": 3,
+      "explanation": "転換。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "jpn_e405_012",
+      "unit": "japanese.e4.s2.a05",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「おなかがすいた。（  ）、まだ夕食まで時間がある。」に入るのは？",
+      "choices": [
+        "つまり",
+        "でも",
+        "たとえば",
+        "だから"
+      ],
+      "answerIndex": 1,
+      "explanation": "逆接。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    }
+  ]
+}

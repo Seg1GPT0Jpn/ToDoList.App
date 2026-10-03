@@ -1,0 +1,212 @@
+{
+  "setId": "science_e4_06",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_e406_001",
+      "unit": "science.e4.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "とじこめた空気をおすと、体積は？",
+      "choices": [
+        "なくなる",
+        "小さくなる",
+        "かわらない",
+        "大きくなる"
+      ],
+      "answerIndex": 1,
+      "explanation": "空気はおしちぢめられる。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e406_002",
+      "unit": "science.e4.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "とじこめた水をおすと、体積は？",
+      "choices": [
+        "大きくなる",
+        "小さくなる",
+        "なくなる",
+        "かわらない"
+      ],
+      "answerIndex": 3,
+      "explanation": "水はおしちぢめられない。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e406_003",
+      "unit": "science.e4.s2.a06",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "とじこめた空気をおしたとき、手ごたえは？",
+      "choices": [
+        "かわらない",
+        "おすほど大きくなる",
+        "なくなる",
+        "小さくなる"
+      ],
+      "answerIndex": 1,
+      "explanation": "おし返す力。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e406_004",
+      "unit": "science.e4.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "空気をあたためると体積は？",
+      "choices": [
+        "小さくなる",
+        "0になる",
+        "大きくなる",
+        "かわらない"
+      ],
+      "answerIndex": 2,
+      "explanation": "ぼうちょう。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e406_005",
+      "unit": "science.e4.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "空気・水・金ぞくのうち、温度による体積の変化がいちばん大きいのは？",
+      "choices": [
+        "空気",
+        "どれも同じ",
+        "金ぞく",
+        "水"
+      ],
+      "answerIndex": 0,
+      "explanation": "空気 ＞ 水 ＞ 金ぞく。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e406_006",
+      "unit": "science.e4.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "金ぞくのあたたまり方は？",
+      "choices": [
+        "あたたまらない",
+        "熱したところから順に伝わる",
+        "全体が同時にあたたまる",
+        "上のほうから先にあたたまる"
+      ],
+      "answerIndex": 1,
+      "explanation": "伝導。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e406_007",
+      "unit": "science.e4.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "水のあたたまり方は？",
+      "choices": [
+        "あたためられた水が上に動き、全体があたたまる",
+        "下からあたたまる",
+        "あたたまらない",
+        "熱したところから順に伝わるだけ"
+      ],
+      "answerIndex": 0,
+      "explanation": "対流。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e406_008",
+      "unit": "science.e4.s2.a06",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "へやの中で、あたたかい空気がたまるのは？",
+      "choices": [
+        "まどの外",
+        "天じょう近く",
+        "ゆか近く",
+        "どこも同じ"
+      ],
+      "answerIndex": 1,
+      "explanation": "あたたかい空気は上へ。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e406_009",
+      "unit": "science.e4.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "水がふっとうする温度は約何℃？",
+      "choices": [
+        "0℃",
+        "100℃",
+        "50℃",
+        "200℃"
+      ],
+      "answerIndex": 1,
+      "explanation": "約100℃。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e406_010",
+      "unit": "science.e4.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "水がこおる温度は？",
+      "choices": [
+        "−10℃",
+        "100℃",
+        "0℃",
+        "10℃"
+      ],
+      "answerIndex": 2,
+      "explanation": "0℃。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e406_011",
+      "unit": "science.e4.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "水がこおると体積は？",
+      "choices": [
+        "大きくなる",
+        "かわらない",
+        "小さくなる",
+        "なくなる"
+      ],
+      "answerIndex": 0,
+      "explanation": "水はこおると体積がふえる。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    },
+    {
+      "id": "sci_e406_012",
+      "unit": "science.e4.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ふっとうしている水の中から出るあわの正体は？",
+      "choices": [
+        "けむり",
+        "水じょう気",
+        "酸素",
+        "空気"
+      ],
+      "answerIndex": 1,
+      "explanation": "水が水じょう気になったもの。",
+      "targetGrade": "小4",
+      "phase": "basics"
+    }
+  ]
+}

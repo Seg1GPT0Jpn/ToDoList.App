@@ -1,0 +1,212 @@
+{
+  "setId": "social_hist_01",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_hist01_001",
+      "unit": "social.hist.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ナイル川流域で栄えた文明は？",
+      "choices": [
+        "インダス文明",
+        "メソポタミア文明",
+        "エジプト文明",
+        "中国文明"
+      ],
+      "answerIndex": 2,
+      "explanation": "ピラミッド・象形文字。",
+      "targetGrade": "中1-3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_hist01_002",
+      "unit": "social.hist.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "くさび形文字を使った文明は？",
+      "choices": [
+        "エジプト文明",
+        "メソポタミア文明",
+        "インダス文明",
+        "中国文明"
+      ],
+      "answerIndex": 1,
+      "explanation": "チグリス・ユーフラテス川。",
+      "targetGrade": "中1-3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_hist01_003",
+      "unit": "social.hist.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "中国の殷で使われた、亀の甲や骨に刻んだ文字は？",
+      "choices": [
+        "ローマ字",
+        "くさび形文字",
+        "甲骨文字",
+        "象形文字"
+      ],
+      "answerIndex": 2,
+      "explanation": "漢字のもと。",
+      "targetGrade": "中1-3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_hist01_004",
+      "unit": "social.hist.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "縄文時代の人々が住んだ、地面をほりさげた住居は？",
+      "choices": [
+        "寝殿造",
+        "たて穴住居",
+        "書院造",
+        "高床倉庫"
+      ],
+      "answerIndex": 1,
+      "explanation": "たて穴住居。",
+      "targetGrade": "中1-3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_hist01_005",
+      "unit": "social.hist.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "縄文時代の人々が食べたあとの貝がらなどを捨てた場所は？",
+      "choices": [
+        "貝塚",
+        "古墳",
+        "荘園",
+        "環濠集落"
+      ],
+      "answerIndex": 0,
+      "explanation": "大森貝塚。",
+      "targetGrade": "中1-3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_hist01_006",
+      "unit": "social.hist.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "弥生時代に米を保存した倉庫は？",
+      "choices": [
+        "たて穴住居",
+        "土倉",
+        "校倉造の正倉院だけ",
+        "高床倉庫"
+      ],
+      "answerIndex": 3,
+      "explanation": "ねずみや湿気を防ぐ。",
+      "targetGrade": "中1-3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_hist01_007",
+      "unit": "social.hist.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "佐賀県にある、弥生時代の環濠集落の遺跡は？",
+      "choices": [
+        "三内丸山遺跡",
+        "登呂遺跡",
+        "岩宿遺跡",
+        "吉野ヶ里遺跡"
+      ],
+      "answerIndex": 3,
+      "explanation": "吉野ヶ里。",
+      "targetGrade": "中1-3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_hist01_008",
+      "unit": "social.hist.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「魏志倭人伝」に記された邪馬台国の女王は？",
+      "choices": [
+        "壱与だけ",
+        "卑弥呼",
+        "推古天皇",
+        "光明皇后"
+      ],
+      "answerIndex": 1,
+      "explanation": "卑弥呼。",
+      "targetGrade": "中1-3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_hist01_009",
+      "unit": "social.hist.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "大阪府にある日本最大の前方後円墳は？",
+      "choices": [
+        "高松塚古墳",
+        "稲荷山古墳",
+        "大仙古墳（仁徳陵古墳）",
+        "箸墓古墳"
+      ],
+      "answerIndex": 2,
+      "explanation": "世界遺産。",
+      "targetGrade": "中1-3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_hist01_010",
+      "unit": "social.hist.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "朝鮮半島などから日本に移り住み、技術を伝えた人々は？",
+      "choices": [
+        "屯田兵",
+        "遣唐使",
+        "防人",
+        "渡来人"
+      ],
+      "answerIndex": 3,
+      "explanation": "渡来人。",
+      "targetGrade": "中1-3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_hist01_011",
+      "unit": "social.hist.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "古墳のまわりに並べられた素焼きの焼き物は？",
+      "choices": [
+        "埴輪",
+        "土偶",
+        "銅鐸",
+        "須恵器"
+      ],
+      "answerIndex": 0,
+      "explanation": "埴輪。",
+      "targetGrade": "中1-3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_hist01_012",
+      "unit": "social.hist.s1.a01",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "縄文時代の、まじないに使われたとされる土の人形は？",
+      "choices": [
+        "埴輪",
+        "土器",
+        "銅鐸",
+        "土偶"
+      ],
+      "answerIndex": 3,
+      "explanation": "土偶。",
+      "targetGrade": "中1-3",
+      "phase": "teikiTest"
+    }
+  ]
+}

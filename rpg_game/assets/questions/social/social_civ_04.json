@@ -1,0 +1,212 @@
+{
+  "setId": "social_civ_04",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_civ04_001",
+      "unit": "social.civ.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "国会が「国権の最高機関」とされる理由は？",
+      "choices": [
+        "天皇が選ぶから",
+        "内閣が決めたから",
+        "主権者である国民の代表で構成されるから",
+        "裁判所の上にあるから"
+      ],
+      "answerIndex": 2,
+      "explanation": "国民代表。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ04_002",
+      "unit": "social.civ.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "衆議院の優越が認められていないのは？",
+      "choices": [
+        "憲法改正の発議",
+        "内閣総理大臣の指名",
+        "予算の議決",
+        "条約の承認"
+      ],
+      "answerIndex": 0,
+      "explanation": "発議は両院対等。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ04_003",
+      "unit": "social.civ.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "内閣が国会に対して連帯して責任を負うしくみは？",
+      "choices": [
+        "大統領制",
+        "議院内閣制",
+        "三審制",
+        "二院制"
+      ],
+      "answerIndex": 1,
+      "explanation": "議院内閣制。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ04_004",
+      "unit": "social.civ.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "衆議院で内閣不信任案が可決されたとき、内閣は？",
+      "choices": [
+        "参議院を解散",
+        "裁判所に訴える",
+        "10日以内に衆議院を解散するか総辞職",
+        "何もしない"
+      ],
+      "answerIndex": 2,
+      "explanation": "解散か総辞職。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ04_005",
+      "unit": "social.civ.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "刑事裁判で、被疑者を起訴するのは？",
+      "choices": [
+        "裁判官",
+        "検察官",
+        "警察官",
+        "弁護人"
+      ],
+      "answerIndex": 1,
+      "explanation": "検察官。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ04_006",
+      "unit": "social.civ.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "同じ事件で3回まで裁判を受けられるしくみは？",
+      "choices": [
+        "裁判員制度",
+        "二審制",
+        "陪審制",
+        "三審制"
+      ],
+      "answerIndex": 3,
+      "explanation": "三審制。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ04_007",
+      "unit": "social.civ.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "最高裁判所が「憲法の番人」とよばれる理由は？",
+      "choices": [
+        "内閣を指名するから",
+        "違憲審査の最終決定権をもつから",
+        "選挙を行うから",
+        "法律をつくるから"
+      ],
+      "answerIndex": 1,
+      "explanation": "違憲審査。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ04_008",
+      "unit": "social.civ.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "地方公共団体が定める決まりは？",
+      "choices": [
+        "政令",
+        "法律",
+        "条例",
+        "憲法"
+      ],
+      "answerIndex": 2,
+      "explanation": "条例。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ04_009",
+      "unit": "social.civ.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "地方自治が「民主主義の学校」とよばれる理由は？",
+      "choices": [
+        "先生が多いから",
+        "国の命令で動くから",
+        "学校をつくるから",
+        "住民が身近な政治に参加し民主主義を学べるから"
+      ],
+      "answerIndex": 3,
+      "explanation": "ブライス。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ04_010",
+      "unit": "social.civ.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "住民が首長の解職を求めることは？",
+      "choices": [
+        "レファレンダム",
+        "イニシアティブ",
+        "リコール（解職請求）",
+        "国民審査"
+      ],
+      "answerIndex": 2,
+      "explanation": "直接請求権。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ04_011",
+      "unit": "social.civ.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "地方公共団体間の財政格差を調整するために国が配分するお金は？",
+      "choices": [
+        "国庫支出金",
+        "地方税",
+        "地方交付税交付金",
+        "地方債"
+      ],
+      "answerIndex": 2,
+      "explanation": "地方交付税。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "soc_civ04_012",
+      "unit": "social.civ.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "国の行政を担当する、内閣のもとにある機関は？",
+      "choices": [
+        "国会",
+        "省庁（府・省・庁）",
+        "裁判所",
+        "議会"
+      ],
+      "answerIndex": 1,
+      "explanation": "行政機関。",
+      "targetGrade": "中3",
+      "phase": "teikiTest"
+    }
+  ]
+}

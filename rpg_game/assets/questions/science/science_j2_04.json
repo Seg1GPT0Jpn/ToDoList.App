@@ -1,0 +1,178 @@
+{
+  "setId": "science_j2_04",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_j204_001",
+      "unit": "science.j2.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "酸素の化学式は？",
+      "choices": [
+        "O₂",
+        "O",
+        "O₃",
+        "CO"
+      ],
+      "answerIndex": 0,
+      "explanation": "分子で表す。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j204_002",
+      "unit": "science.j2.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "鉄の元素記号は？",
+      "choices": [
+        "Fe",
+        "F",
+        "Ir",
+        "Te"
+      ],
+      "answerIndex": 0,
+      "explanation": "Fe。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j204_003",
+      "unit": "science.j2.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ナトリウムの元素記号は？",
+      "choices": [
+        "Nt",
+        "Na",
+        "N",
+        "So"
+      ],
+      "answerIndex": 1,
+      "explanation": "Na。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j204_004",
+      "unit": "science.j2.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "細胞の中で、遺伝子をふくむつくりは？",
+      "choices": [
+        "液胞",
+        "葉緑体",
+        "核",
+        "細胞壁"
+      ],
+      "answerIndex": 2,
+      "explanation": "核。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j204_005",
+      "unit": "science.j2.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "脂肪を分解する消化酵素は？",
+      "choices": [
+        "ペプシン",
+        "リパーゼ",
+        "マルターゼ",
+        "アミラーゼ"
+      ],
+      "answerIndex": 1,
+      "explanation": "リパーゼ。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j204_006",
+      "unit": "science.j2.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "血液の成分で、出血したとき血液を固めるのは？",
+      "choices": [
+        "血しょう",
+        "白血球",
+        "赤血球",
+        "血小板"
+      ],
+      "answerIndex": 3,
+      "explanation": "血小板。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j204_007",
+      "unit": "science.j2.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "感覚器官で受けた刺激を伝える神経は？",
+      "choices": [
+        "感覚神経",
+        "運動神経",
+        "自律神経",
+        "中枢神経"
+      ],
+      "answerIndex": 0,
+      "explanation": "感覚神経 → 中枢 → 運動神経。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j204_008",
+      "unit": "science.j2.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "酸化銀を加熱すると発生する気体は？",
+      "choices": [
+        "水素",
+        "窒素",
+        "二酸化炭素",
+        "酸素"
+      ],
+      "answerIndex": 3,
+      "explanation": "2Ag₂O → 4Ag + O₂",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j204_009",
+      "unit": "science.j2.s1.a04",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "葉の気孔を囲む細胞は？",
+      "choices": [
+        "孔辺細胞",
+        "海綿状組織",
+        "柵状組織",
+        "表皮細胞"
+      ],
+      "answerIndex": 0,
+      "explanation": "孔辺細胞。",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j204_010",
+      "unit": "science.j2.s1.a04",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "銅と酸素は4:1で結びつく。銅2.0gを完全に酸化させると酸化銅は何g？",
+      "choices": [
+        "2.0g",
+        "0.5g",
+        "8.0g",
+        "2.5g"
+      ],
+      "answerIndex": 3,
+      "explanation": "2.0 + 0.5",
+      "targetGrade": "中2",
+      "phase": "teikiTest"
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+# 理科の学習体系（tool/junior/gen.py が生成。手で直さない）
+@subject science|理科|理の国|ref=小学校 理科・中学校 理科|source=文部科学省 小学校・中学校学習指導要領（平成29年告示）|url=https://www.mext.go.jp/a_menu/shotou/new-cs/1384661.htm
+course e3|小3|grade=小3|game=小3の道|desc=しぜんのかんさつ・こん虫・植物・風とゴム・光と音・電気と磁石・重さ
+  field s1|生き物のかんさつ
+    unit a01|こん虫のからだ
+      sub main|こん虫のからだ
+    unit a02|植物の育ち方|pre=science.e3.s1.a01
+      sub main|植物の育ち方
+    unit a03|太陽とかげ|pre=science.e3.s1.a02
+      sub main|太陽とかげ
+    unit a04|生き物と太陽の まとめ
+      sub main|生き物と太陽の まとめ
+  field s2|もののせいしつ
+    unit a05|風とゴムの力|pre=science.e3.s1.a03
+      sub main|風とゴムの力
+    unit a06|光と音|pre=science.e3.s2.a05
+      sub main|光と音
+    unit a07|電気の通り道と じしゃく|pre=science.e3.s2.a06
+      sub main|電気の通り道と じしゃく
+    unit a08|ものの重さ|pre=science.e3.s2.a07
+      sub main|ものの重さ
+    unit a09|3年生の理科の まとめ
+      sub main|3年生の理科の まとめ
+course e4|小4|grade=小4|game=小4の道|desc=季節と生き物・天気・電流・空気と水・体のつくり・月と星・もののあたたまり方
+  field s1|天気と生き物
+    unit a01|季節と生き物
+      sub main|季節と生き物
+    unit a02|天気と気温・水のゆくえ|pre=science.e4.s1.a01
+      sub main|天気と気温・水のゆくえ
+    unit a03|月と星|pre=science.e4.s1.a02
+      sub main|月と星
+    unit a04|天気と星の まとめ
+      sub main|天気と星の まとめ
+  field s2|ものと体
+    unit a05|電流のはたらき|pre=science.e4.s1.a03
+      sub main|電流のはたらき
+    unit a06|空気と水・ものの温度|pre=science.e4.s2.a05
+      sub main|空気と水・ものの温度
+    unit a07|人の体のつくりと運動|pre=science.e4.s2.a06
+      sub main|人の体のつくりと運動
+    unit a08|4年生の理科の まとめ
+      sub main|4年生の理科の まとめ
+course e5|小5|grade=小5|game=小5の道|desc=天気の変化・植物の発芽と成長・魚と人のたんじょう・流れる水・ふりこ・電磁石・もののとけ方
+  field s1|生命のつながり
+    unit a01|植物の発芽と成長
+      sub main|植物の発芽と成長
+    unit a02|花から実へ|pre=science.e5.s1.a01
+      sub main|花から実へ
+    unit a03|魚と人のたんじょう|pre=science.e5.s1.a02
+      sub main|魚と人のたんじょう
+    unit a04|生命のつながりの まとめ
+      sub main|生命のつながりの まとめ
+  field s2|天気と流れる水・もの
+    unit a05|天気の変化|pre=science.e5.s1.a03
+      sub main|天気の変化
+    unit a06|流れる水のはたらき|pre=science.e5.s2.a05
+      sub main|流れる水のはたらき
+    unit a07|ふりこと 電磁石|pre=science.e5.s2.a06
+      sub main|ふりこと 電磁石
+    unit a08|もののとけ方|pre=science.e5.s2.a07
+      sub main|もののとけ方
+    unit a09|5年生の理科の まとめ
+      sub main|5年生の理科の まとめ
+course e6|小6|grade=小6|game=小6の道|desc=ものの燃え方・人の体・植物の養分・生き物と環境・月と太陽・大地・水よう液・てこ・電気の利用
+  field s1|人と生き物・地球
+    unit a01|ものの燃え方と空気
+      sub main|ものの燃え方と空気
+    unit a02|人の体のはたらき|pre=science.e6.s1.a01
+      sub main|人の体のはたらき
+    unit a03|植物の養分と水・生き物と環境|pre=science.e6.s1.a02
+      sub main|植物の養分と水・生き物と環境
+    unit a04|人と生き物の まとめ
+      sub main|人と生き物の まとめ
+  field s2|ものとエネルギー
+    unit a05|月と太陽・大地のつくり|pre=science.e6.s1.a03
+      sub main|月と太陽・大地のつくり
+    unit a06|水よう液の性質|pre=science.e6.s2.a05
+      sub main|水よう液の性質
+    unit a07|てこと 電気の利用|pre=science.e6.s2.a06
+      sub main|てこと 電気の利用
+    unit a08|小学校理科の まとめ
+      sub main|小学校理科の まとめ
+course j1|中1|grade=中1|game=中1の道|desc=植物と動物の分類・身のまわりの物質・光と音と力・大地の変化
+  field s1|いろいろな生物と 物質
+    unit a01|植物の分類
+      sub main|植物の分類
+    unit a02|動物の分類|pre=science.j1.s1.a01
+      sub main|動物の分類
+    unit a03|身のまわりの物質|pre=science.j1.s1.a02
+      sub main|身のまわりの物質
+    unit a04|生物と物質の まとめ
+      sub main|生物と物質の まとめ
+  field s2|光・音・力と 大地
+    unit a05|光と音|pre=science.j1.s1.a03
+      sub main|光と音
+    unit a06|力のはたらき|pre=science.j1.s2.a05
+      sub main|力のはたらき
+    unit a07|大地の変化|pre=science.j1.s2.a06
+      sub main|大地の変化
+    unit a08|中1理科の まとめ
+      sub main|中1理科の まとめ
+course j2|中2|grade=中2|game=中2の道|desc=化学変化と原子・分子・生物の体のつくり・電流と磁界・天気とその変化
+  field s1|化学変化と 生物の体
+    unit a01|化学変化と原子・分子
+      sub main|化学変化と原子・分子
+    unit a02|化学反応式と熱|pre=science.j2.s1.a01
+      sub main|化学反応式と熱
+    unit a03|生物の体のつくりとはたらき|pre=science.j2.s1.a02
+      sub main|生物の体のつくりとはたらき
+    unit a04|化学変化と生物の まとめ
+      sub main|化学変化と生物の まとめ
+  field s2|電流と 天気
+    unit a05|電流と電圧|pre=science.j2.s1.a03
+      sub main|電流と電圧
+    unit a06|電流と磁界|pre=science.j2.s2.a05
+      sub main|電流と磁界
+    unit a07|天気とその変化|pre=science.j2.s2.a06
+      sub main|天気とその変化
+    unit a08|中2理科の まとめ
+      sub main|中2理科の まとめ
+course j3|中3|grade=中3|game=中3の道|desc=化学変化とイオン・生命の連続性・運動とエネルギー・地球と宇宙・自然と人間
+  field s1|イオンと 生命の連続性
+    unit a01|水溶液とイオン
+      sub main|水溶液とイオン
+    unit a02|生物のふえ方と遺伝|pre=science.j3.s1.a01
+      sub main|生物のふえ方と遺伝
+    unit a03|自然と人間|pre=science.j3.s1.a02
+      sub main|自然と人間
+    unit a04|イオンと生命の まとめ
+      sub main|イオンと生命の まとめ
+  field s2|運動・エネルギーと 宇宙
+    unit a05|物体の運動|pre=science.j3.s1.a03
+      sub main|物体の運動
+    unit a06|仕事とエネルギー|pre=science.j3.s2.a05
+      sub main|仕事とエネルギー
+    unit a07|地球と宇宙|pre=science.j3.s2.a06
+      sub main|地球と宇宙
+    unit a08|中学理科の まとめ
+      sub main|中学理科の まとめ

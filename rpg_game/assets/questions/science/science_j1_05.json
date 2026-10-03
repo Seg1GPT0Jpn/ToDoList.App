@@ -1,0 +1,212 @@
+{
+  "setId": "science_j1_05",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_j105_001",
+      "unit": "science.j1.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "光が鏡ではね返るとき、入射角と反射角の関係は？",
+      "choices": [
+        "関係ない",
+        "入射角が大きい",
+        "等しい",
+        "反射角が大きい"
+      ],
+      "answerIndex": 2,
+      "explanation": "反射の法則。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j105_002",
+      "unit": "science.j1.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "光が空気中から水中へ進むとき、屈折角は入射角より？",
+      "choices": [
+        "0",
+        "大きい",
+        "小さい",
+        "等しい"
+      ],
+      "answerIndex": 2,
+      "explanation": "空気 → 水では、法線に近づくように曲がる（屈折角 ＜ 入射角）。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j105_003",
+      "unit": "science.j1.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "水中から空気中へ進む光で、入射角が大きいときに起きる現象は？",
+      "choices": [
+        "全反射",
+        "屈折だけ",
+        "分散",
+        "乱反射"
+      ],
+      "answerIndex": 0,
+      "explanation": "光ファイバーに利用。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j105_004",
+      "unit": "science.j1.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "凸レンズの焦点を通った光は、レンズを通過後どうなる？",
+      "choices": [
+        "消える",
+        "焦点に集まる",
+        "まっすぐ戻る",
+        "光軸に平行に進む"
+      ],
+      "answerIndex": 3,
+      "explanation": "凸レンズの性質。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j105_005",
+      "unit": "science.j1.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "物体を焦点の内側に置いて凸レンズをのぞくと見える像は？",
+      "choices": [
+        "像はできない",
+        "実像（倒立）",
+        "虚像（正立で大きい）",
+        "実像（正立）"
+      ],
+      "answerIndex": 2,
+      "explanation": "虫めがね。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j105_006",
+      "unit": "science.j1.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "物体を焦点距離の2倍の位置に置くと、実像の大きさは？",
+      "choices": [
+        "物体と同じ",
+        "物体より小さい",
+        "物体より大きい",
+        "像はできない"
+      ],
+      "answerIndex": 0,
+      "explanation": "2f の位置。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j105_007",
+      "unit": "science.j1.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "音を伝えるものとしてあてはまらないのは？",
+      "choices": [
+        "真空",
+        "空気",
+        "水",
+        "金属"
+      ],
+      "answerIndex": 0,
+      "explanation": "音は振動を伝える物質が必要。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j105_008",
+      "unit": "science.j1.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "振幅が大きいほど、音は？",
+      "choices": [
+        "小さい",
+        "高い",
+        "低い",
+        "大きい"
+      ],
+      "answerIndex": 3,
+      "explanation": "振幅＝大小。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j105_009",
+      "unit": "science.j1.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "振動数が多いほど、音は？",
+      "choices": [
+        "大きい",
+        "低い",
+        "高い",
+        "小さい"
+      ],
+      "answerIndex": 2,
+      "explanation": "振動数＝高低。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j105_010",
+      "unit": "science.j1.s2.a05",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "雷の光が見えてから4秒後に音が聞こえた。音の速さ340m/sとして距離は？",
+      "choices": [
+        "1360m",
+        "1700m",
+        "85m",
+        "340m"
+      ],
+      "answerIndex": 0,
+      "explanation": "340 × 4",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j105_011",
+      "unit": "science.j1.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "振動数の単位は？",
+      "choices": [
+        "N（ニュートン）",
+        "Hz（ヘルツ）",
+        "J",
+        "Pa"
+      ],
+      "answerIndex": 1,
+      "explanation": "ヘルツ。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j105_012",
+      "unit": "science.j1.s2.a05",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "弦をはる強さを強くすると、音は？",
+      "choices": [
+        "大きくなる",
+        "変わらない",
+        "高くなる",
+        "低くなる"
+      ],
+      "answerIndex": 2,
+      "explanation": "振動数が増える。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    }
+  ]
+}

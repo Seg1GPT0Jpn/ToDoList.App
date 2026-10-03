@@ -1,0 +1,212 @@
+{
+  "setId": "science_j1_06",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_j106_001",
+      "unit": "science.j1.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "力の大きさの単位は？",
+      "choices": [
+        "J",
+        "N（ニュートン）",
+        "W",
+        "kg"
+      ],
+      "answerIndex": 1,
+      "explanation": "ニュートン。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j106_002",
+      "unit": "science.j1.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "100gの物体にはたらく重力の大きさはおよそ？",
+      "choices": [
+        "0.1N",
+        "100N",
+        "1N",
+        "10N"
+      ],
+      "answerIndex": 2,
+      "explanation": "約1N（地球上）。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j106_003",
+      "unit": "science.j1.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ばねののびは、ばねを引く力の大きさに比例する。この法則は？",
+      "choices": [
+        "オームの法則",
+        "フックの法則",
+        "作用反作用",
+        "ニュートンの法則"
+      ],
+      "answerIndex": 1,
+      "explanation": "フックの法則。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j106_004",
+      "unit": "science.j1.s2.a06",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "1Nで2cmのびるばねに3Nの力を加えると、のびは？",
+      "choices": [
+        "1.5cm",
+        "3cm",
+        "5cm",
+        "6cm"
+      ],
+      "answerIndex": 3,
+      "explanation": "2 × 3",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j106_005",
+      "unit": "science.j1.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "物体が置かれた面から垂直に受ける力を何という？",
+      "choices": [
+        "垂直抗力",
+        "弾性力",
+        "摩擦力",
+        "重力"
+      ],
+      "answerIndex": 0,
+      "explanation": "垂直抗力。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j106_006",
+      "unit": "science.j1.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ふれあう面の間で、運動をさまたげる力は？",
+      "choices": [
+        "摩擦力",
+        "垂直抗力",
+        "電気の力",
+        "磁力"
+      ],
+      "answerIndex": 0,
+      "explanation": "摩擦力。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j106_007",
+      "unit": "science.j1.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "力の3要素は？",
+      "choices": [
+        "重さ・長さ・時間",
+        "質量・体積・密度",
+        "作用点・向き・大きさ",
+        "速さ・向き・時間"
+      ],
+      "answerIndex": 2,
+      "explanation": "矢印で表す。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j106_008",
+      "unit": "science.j1.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "2力がつり合う条件にあてはまらないのは？",
+      "choices": [
+        "向きが反対",
+        "一直線上にある",
+        "作用点が必ず別の物体にある",
+        "大きさが等しい"
+      ],
+      "answerIndex": 2,
+      "explanation": "同じ物体にはたらく。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j106_009",
+      "unit": "science.j1.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "月面上では、重さ（重力の大きさ）は地球上の約何倍？",
+      "choices": [
+        "同じ",
+        "約2倍",
+        "約6分の1",
+        "約6倍"
+      ],
+      "answerIndex": 2,
+      "explanation": "質量は変わらない。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j106_010",
+      "unit": "science.j1.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "場所によって変わらない、物体そのものの量は？",
+      "choices": [
+        "重力",
+        "体積（いつも）",
+        "重さ",
+        "質量"
+      ],
+      "answerIndex": 3,
+      "explanation": "質量 g・kg。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j106_011",
+      "unit": "science.j1.s2.a06",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "磁石の力や電気の力の特徴は？",
+      "choices": [
+        "離れていてもはたらく",
+        "ふれていないとはたらかない",
+        "摩擦力の一種",
+        "重力と同じ"
+      ],
+      "answerIndex": 0,
+      "explanation": "離れてはたらく力。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j106_012",
+      "unit": "science.j1.s2.a06",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "200gの物体にはたらく重力は約何N？",
+      "choices": [
+        "2N",
+        "200N",
+        "0.2N",
+        "20N"
+      ],
+      "answerIndex": 0,
+      "explanation": "100g → 1N",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    }
+  ]
+}

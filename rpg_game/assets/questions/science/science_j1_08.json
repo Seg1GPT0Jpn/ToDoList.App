@@ -1,0 +1,178 @@
+{
+  "setId": "science_j1_08",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_j108_001",
+      "unit": "science.j1.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "うすい塩酸をかけると二酸化炭素が出る堆積岩は？",
+      "choices": [
+        "砂岩",
+        "石灰岩",
+        "凝灰岩",
+        "チャート"
+      ],
+      "answerIndex": 1,
+      "explanation": "石灰岩。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j108_002",
+      "unit": "science.j1.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "とても硬く、塩酸をかけても反応しない堆積岩は？",
+      "choices": [
+        "凝灰岩",
+        "チャート",
+        "石灰岩",
+        "泥岩"
+      ],
+      "answerIndex": 1,
+      "explanation": "チャート。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j108_003",
+      "unit": "science.j1.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "花こう岩は何岩？",
+      "choices": [
+        "堆積岩",
+        "深成岩",
+        "火山岩",
+        "変成岩"
+      ],
+      "answerIndex": 1,
+      "explanation": "白っぽい深成岩。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j108_004",
+      "unit": "science.j1.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "玄武岩は何岩？",
+      "choices": [
+        "堆積岩",
+        "深成岩",
+        "火山岩",
+        "石灰岩"
+      ],
+      "answerIndex": 2,
+      "explanation": "黒っぽい火山岩。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j108_005",
+      "unit": "science.j1.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "アンモナイトは何時代の示準化石？",
+      "choices": [
+        "先カンブリア時代",
+        "中生代",
+        "新生代",
+        "古生代"
+      ],
+      "answerIndex": 1,
+      "explanation": "中生代。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j108_006",
+      "unit": "science.j1.s2.a08",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "震源からの距離が80kmの地点で初期微動継続時間が10秒。160kmの地点では？",
+      "choices": [
+        "40秒",
+        "20秒",
+        "5秒",
+        "10秒"
+      ],
+      "answerIndex": 1,
+      "explanation": "距離に比例。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j108_007",
+      "unit": "science.j1.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "日本付近で地震が多い理由は？",
+      "choices": [
+        "海に囲まれているから",
+        "火山がないから",
+        "気温が高いから",
+        "複数のプレートの境界があるから"
+      ],
+      "answerIndex": 3,
+      "explanation": "プレート。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j108_008",
+      "unit": "science.j1.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "凸レンズでスクリーンに映る像は？",
+      "choices": [
+        "実像（上下左右が逆）",
+        "虚像",
+        "像はできない",
+        "正立の実像"
+      ],
+      "answerIndex": 0,
+      "explanation": "実像。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j108_009",
+      "unit": "science.j1.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ばねばかりではかれるのは？",
+      "choices": [
+        "質量（どこでも同じ値）",
+        "体積",
+        "密度",
+        "重さ（力の大きさ）"
+      ],
+      "answerIndex": 3,
+      "explanation": "ばねばかり＝力。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    },
+    {
+      "id": "sci_j108_010",
+      "unit": "science.j1.s2.a08",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "音が空気中を伝わる速さはおよそ？",
+      "choices": [
+        "約34m/s",
+        "約3400m/s",
+        "約30万km/s",
+        "約340m/s"
+      ],
+      "answerIndex": 3,
+      "explanation": "光は約30万km/s。",
+      "targetGrade": "中1",
+      "phase": "teikiTest"
+    }
+  ]
+}
