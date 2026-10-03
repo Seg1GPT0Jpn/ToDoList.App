@@ -11,7 +11,7 @@ void main() {
       id: 'a',
       title: '中間',
       worldId: 'english',
-      stageIds: const ['english_stage_01'],
+      stageIds: const ['english_j1_01'],
       createdAt: DateTime(2026),
     );
     await store.add(plan);

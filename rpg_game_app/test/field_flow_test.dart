@@ -74,12 +74,13 @@ Future<void> _closeAll(WidgetTester t) async {
 }
 
 void main() {
-  testWidgets('フィールドの仕掛けに話しかけても落ちない（英語ワールド）', (t) async {
+  testWidgets('フィールドの仕掛けに話しかけても落ちない（英語の国・中1）', (t) async {
     await openScreen(
       t,
       FieldScreen(
         world: RpgCatalog.world(RpgCatalog.englishWorldId),
         progress: RpgProgress.initial,
+        mapId: 'english_j1',
       ),
       frames: 20,
     );
@@ -115,7 +116,7 @@ void main() {
   });
 
   testWidgets('試験対策ワールドのフィールドでも仕掛けに話しかけられる', (t) async {
-    final picked = ExamWorlds.matchAll({'math': '2次関数', 'social': '明治維新'});
+    final picked = ExamWorlds.matchAll({'math': '一次方程式', 'social': '明治維新'});
     final plan = ExamWorldPlan(
       id: 'f1',
       title: '中間',
@@ -146,7 +147,7 @@ void main() {
   });
 
   for (final exam in [false, true]) {
-    testWidgets('フィールドから「たたかう」でバトルに入れる（${exam ? '試験ワールド' : '英語ワールド'}）', (
+    testWidgets('フィールドから「たたかう」でバトルに入れる（${exam ? '試験ワールド' : '英語の国・中1'}）', (
       t,
     ) async {
       final plan = ExamWorldPlan(
@@ -154,7 +155,7 @@ void main() {
         title: '中間',
         worldId: 'math',
         stageIds: [
-          for (final s in ExamWorlds.matchAll({'math': '2次関数'})) s.id,
+          for (final s in ExamWorlds.matchAll({'math': '一次方程式'})) s.id,
         ],
         createdAt: DateTime(2026),
       );
@@ -165,6 +166,7 @@ void main() {
             : FieldScreen(
                 world: RpgCatalog.world(RpgCatalog.englishWorldId),
                 progress: RpgProgress.initial,
+                mapId: 'english_j1',
               ),
         frames: 20,
       );
@@ -187,6 +189,7 @@ void main() {
       FieldScreen(
         world: RpgCatalog.world(RpgCatalog.englishWorldId),
         progress: RpgProgress.initial,
+        mapId: 'english_j1',
       ),
       frames: 20,
     );
@@ -216,6 +219,7 @@ void main() {
       FieldScreen(
         world: RpgCatalog.world(RpgCatalog.englishWorldId),
         progress: await services.repository.load(),
+        mapId: 'english_j1',
       ),
       frames: 20,
       keepPrefs: true,

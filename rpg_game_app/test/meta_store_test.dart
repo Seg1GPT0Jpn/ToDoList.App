@@ -15,7 +15,7 @@ void main() {
     final record = LearningRecord.empty.recordAll(const [
       AnswerEvent(
         questionId: 'q1',
-        setId: 'math_m1_01',
+        setId: 'math_j1_01',
         isCorrect: true,
         elapsedMs: 2000,
       ),

@@ -255,7 +255,7 @@ void onlineTests() {
       t,
       OnlineLobbyScreen(
         name: 'ホスト',
-        setIds: const ['english_stage_01'],
+        setIds: const ['english_j1_01'],
         rounds: 5,
         backend: host,
       ),

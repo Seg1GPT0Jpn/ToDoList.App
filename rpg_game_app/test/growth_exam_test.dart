@@ -52,14 +52,14 @@ void main() {
       record: LearningRecord(
         stats: {
           for (var i = 0; i < 6; i++) ...{
-            'e$i': stat('math.m2.calculus.apply.extremum', 0),
-            'g$i': stat('math.m1.quad.graph.vertex', 0),
+            'e$i': stat('math.j1.s1.a05.main', 0),
+            'g$i': stat('math.j1.s1.a02.main', 0),
           },
         },
       ),
     );
     await frames(t, 5);
-    final card = find.byKey(const ValueKey('route-math.m2.calculus.apply'));
+    final card = find.byKey(const ValueKey('route-math.j1.s1.a05'));
     await t.scrollUntilVisible(card, 200);
     expect(find.textContaining('根本の原因は前提の「'), findsWidgets);
     expect(t.takeException(), isNull);

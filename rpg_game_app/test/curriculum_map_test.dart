@@ -14,38 +14,38 @@ void main() {
       for (var i = 0; i < 6; i++)
         AnswerEvent(
           questionId: 'q$i',
-          setId: 'math_m1_10',
+          setId: 'math_j3_07',
           isCorrect: i < 3,
           elapsedMs: 1000,
-          unit: 'math.m1.quad.maxmin.param',
+          unit: 'math.j3.s2.a07.main',
         ),
     ], day: 1);
     await openScreen(
       t,
       const CurriculumMapScreen(initialSubject: 'math'),
       prefs: {'rpg_learning_v1': jsonEncode(record.toMap())},
+      // 9つの学年の道が1画面に入る大きさ
+      size: const Size(420, 2400),
     );
-    expect(find.text('数学Ⅰ'), findsOneWidget);
-    expect(find.text('数学Ⅲ'), findsOneWidget);
+    expect(find.text('小1'), findsOneWidget);
+    expect(find.text('中3'), findsOneWidget);
 
-    await t.tap(find.text('数学Ⅰ'));
+    await t.tap(find.text('中3'));
     await t.pumpAndSettle();
-    expect(find.text('2次関数の最大・最小'), findsOneWidget);
+    expect(find.text('円周角'), findsOneWidget);
     expect(find.text('正答50%'), findsOneWidget);
 
-    await t.tap(find.byKey(const ValueKey('unit-math.m1.quad.maxmin')));
+    await t.tap(find.byKey(const ValueKey('unit-math.j3.s2.a07')));
     await t.pumpAndSettle();
-    expect(find.text('文字を含む場合分け'), findsOneWidget);
     expect(find.text('正答率 50%'), findsOneWidget);
-    expect(find.textContaining('数学Ⅰ 内容(3) 2次関数'), findsOneWidget);
     expect(find.text('この単元で練習バトル'), findsOneWidget);
-    Navigator.of(t.element(find.text('文字を含む場合分け'))).pop();
+    Navigator.of(t.element(find.text('正答率 50%'))).pop();
     await t.pumpAndSettle();
 
-    // 理科に切りかえる：4科目が並ぶ
+    // 理科に切りかえる：小3〜中3の7つの道が並ぶ
     await t.tap(find.byKey(const ValueKey('subject-science')));
     await t.pumpAndSettle();
-    for (final c in ['物理', '化学', '生物', '地学']) {
+    for (final c in ['小3', '小4', '小5', '小6', '中1', '中2', '中3']) {
       expect(find.text(c), findsOneWidget);
     }
     expect(t.takeException(), isNull);

@@ -585,8 +585,12 @@ class _Room {
         }
         switch (terrain) {
           case Terrain.beach:
-            // 片側が海。波打ちぎわはゆらぐ
-            final left = rnd.nextBool();
+            // 片側が海。波打ちぎわはゆらぐ。
+            // 入口・出口が寄っている側は陸にする（海側だけを通る道になると、
+            // 陸地に行けず宿や宝箱を置けなくなるため）
+            final coin = rnd.nextBool();
+            final mid = (entryCol + exitCol) / 2;
+            final left = mid > w * 0.6 ? true : (mid < w * 0.4 ? false : coin);
             for (var r = 0; r < h; r++) {
               final depth = 7 + rnd.nextInt(3);
               for (var i = 1; i <= depth; i++) {

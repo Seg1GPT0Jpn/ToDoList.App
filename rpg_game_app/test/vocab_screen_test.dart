@@ -25,44 +25,6 @@ Widget _home() => Builder(
 void main() {
   setUp(() => speaker = SilentSpeaker());
 
-  testWidgets('名前とパスワードを入れると、取り込まずに単語帳が使える', (tester) async {
-    final sealed = VocabVault.seal('TEST', VocabParser.parse(_words), 'pw-123');
-    VocabStore.assetLoader = (file) async =>
-        file == VocabVault.fileName('TEST') ? sealed : null;
-    addTearDown(() => VocabStore.assetLoader = (_) async => null);
-    await openScreen(tester, _home());
-    expect(find.text('TEST'), findsNothing);
-
-    Future<void> tryOpen(String name, String pw) async {
-      await tester.enterText(
-        find.byKey(const ValueKey('vocab-book-name')),
-        name,
-      );
-      await tester.enterText(find.byKey(const ValueKey('vocab-password')), pw);
-      await tester.tap(find.text('追加する'));
-      await tester.runAsync(
-        () => Future<void>.delayed(const Duration(milliseconds: 500)),
-      );
-      await tester.pump();
-    }
-
-    await tryOpen('TEST', 'wrong');
-    expect(find.text('名前かパスワードがちがいます'), findsOneWidget);
-    await tryOpen('NOPE', 'pw-123');
-    expect(find.text('名前かパスワードがちがいます'), findsOneWidget);
-
-    await tryOpen('test', 'pw-123');
-    await tester.pump(const Duration(milliseconds: 100));
-    expect(find.text('TEST'), findsOneWidget);
-    expect(find.textContaining('5語　'), findsOneWidget);
-    final store = VocabStore.of(RpgServicesHolder.last!.personalBooks);
-    expect(store.book('test')!.cards.first.term, 'agree');
-
-    // 隠しても、もう一度開けば学習記録は残る
-    await store.lock();
-    expect(store.visibleBooks.any((b) => b.id == 'test'), isFalse);
-  });
-
   testWidgets('練習：新しい単語をめくって評価、4択、スペル（間違えた理由を記録）', (tester) async {
     await openScreen(tester, const SizedBox());
     final store = VocabStore.of(RpgServicesHolder.last!.personalBooks);

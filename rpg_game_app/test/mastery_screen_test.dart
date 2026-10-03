@@ -13,7 +13,7 @@ void main() {
     final world = RpgCatalog.world('math');
     final stage = world.stages.first;
     final progress = Mastery.migrate(const RpgProgress(level: 30))
-        .copyWith(masteryExp: {'math.m1': Mastery.expForLevel(4)});
+        .copyWith(masteryExp: {'math.e1': Mastery.expForLevel(4)});
     await openScreen(
       t,
       BattleScreen(
@@ -23,7 +23,7 @@ void main() {
           for (var i = 0; i < 6; i++)
             QuizQuestion(
               id: 'm$i',
-              unit: 'math.m1.numexpr.poly.expand',
+              unit: 'math.e1.s1.a02.main',
               category: QuestionCategory.calculation,
               prompt: '問$i',
               choices: ['$i', '${i + 1}', '${i + 2}', '${i + 3}'],
@@ -35,14 +35,14 @@ void main() {
       frames: 30,
     );
     expect(find.text('Lv30'), findsOneWidget);
-    expect(find.text('数学Ⅰ 習熟Lv4'), findsOneWidget);
+    expect(find.text('小1 習熟Lv4'), findsOneWidget);
   });
 
   testWidgets('学習ステータス：科目の習熟Lvが並ぶ', (t) async {
     final progress = Mastery.migrate(RpgProgress.initial).copyWith(
       masteryExp: {
-        'math.m1': Mastery.expForLevel(6),
-        'science.chemistry': Mastery.expForLevel(2),
+        'math.j1': Mastery.expForLevel(6),
+        'science.e5': Mastery.expForLevel(2),
       },
     );
     await openScreen(
@@ -51,7 +51,7 @@ void main() {
       prefs: {'rpg_progress_v1': jsonEncode(progress.toMap())},
     );
     expect(find.byKey(const ValueKey('mastery-card')), findsOneWidget);
-    expect(find.text('数学Ⅰ Lv6'), findsOneWidget);
-    expect(find.text('化学 Lv2'), findsOneWidget);
+    expect(find.text('算数・数学 中1 Lv6'), findsOneWidget);
+    expect(find.text('理科 小5 Lv2'), findsOneWidget);
   });
 }

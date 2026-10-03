@@ -2030,9 +2030,12 @@ class _BattleScreenState extends State<BattleScreen>
                 children: [
                   Text('Lv${_player.level}', style: serif(15)),
                   if (_masteryLevel != null)
+                    // バトル中は教科がわかっているので、学年（科目）だけを出す
                     Text(
-                      '${Mastery.courseName(Mastery.courseOfStage(widget.stage)!)}'
+                      '${Curriculum.tryNode(Mastery.courseOfStage(widget.stage)!)?.name ?? ''}'
                       ' 習熟Lv$_masteryLevel',
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                         fontSize: 10,
                         color: TsuzuriColors.inkSoft,

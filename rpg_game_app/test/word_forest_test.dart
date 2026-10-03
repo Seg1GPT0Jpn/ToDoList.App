@@ -20,7 +20,7 @@ void main() {
       find.byKey(const ValueKey('forest-tower')),
     );
     expect(tower.onPressed, isNull);
-    await t.tap(find.byKey(const ValueKey('wordlist-idioms_basic')));
+    await t.tap(find.byKey(const ValueKey('wordlist-idioms_j')));
     await t.pump(const Duration(milliseconds: 300));
     await t.tap(find.byKey(const ValueKey('forest-battle')));
     for (var i = 0; i < 20; i++) {
@@ -32,37 +32,14 @@ void main() {
     await t.pump(const Duration(seconds: 10));
   });
 
-  testWidgets('単語の森：つづ単を選んで読み込める', (t) async {
-    await openScreen(t, const WordForestScreen(), frames: 20);
-    await t.runAsync(
-      () => Future<void>.delayed(const Duration(milliseconds: 200)),
-    );
-    await t.pump(const Duration(milliseconds: 100));
-    await t.tap(find.byKey(const ValueKey('wordlist-tsuzutan')));
-    await t.pump(const Duration(milliseconds: 300));
-    await t.tap(find.textContaining('つづ単 基礎 1（').last);
-    await t.runAsync(
-      () => Future<void>.delayed(const Duration(milliseconds: 200)),
-    );
-    for (var i = 0; i < 10; i++) {
-      await t.pump(const Duration(milliseconds: 100));
-    }
-    expect(find.textContaining('コレクション 0 / 200'), findsOneWidget);
-    expect(t.takeException(), isNull);
-  });
-
-  testWidgets('RPG の英語バトルに、つづ単の単語問題が混ざる', (t) async {
+  testWidgets('RPG のバトルは、そのエリアの問題だけで戦う', (t) async {
     final services = await openScreen(t, const SizedBox(), frames: 2);
-    final pool = await t.runAsync(
-      () => services.loadStagePool(RpgCatalog.englishStages.first),
-    );
+    final stage = RpgCatalog.englishStages.first;
+    final pool = await t.runAsync(() => services.loadStagePool(stage));
     expect(pool, isNotNull);
-    expect(
-      pool!.questions.where((q) => q.id.startsWith('tsuzutan_1_')),
-      isNotEmpty,
-    );
-    // 学習記録に残せるよう、もとの単語帳がわかる
-    final q = pool.questions.firstWhere((q) => q.id.startsWith('tsuzutan_'));
-    expect(services.questions.setIdOf(q.id), startsWith('tsuzutan_1_'));
+    expect(pool!.questions, isNotEmpty);
+    for (final q in pool.questions) {
+      expect(stage.questionSetIds, contains(services.questions.setIdOf(q.id)));
+    }
   });
 }

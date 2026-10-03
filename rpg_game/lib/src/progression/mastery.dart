@@ -42,9 +42,13 @@ abstract final class Mastery {
     return Curriculum.ancestorAt(unit, CurriculumLevel.course)?.id;
   }
 
-  /// 科目の名前（例：数学Ⅰ）
-  static String courseName(String course) =>
-      Curriculum.tryNode(course)?.name ?? course;
+  /// 科目の名前（例：算数・数学 小3）。学年だけでは教科がわからないので教科名をつける
+  static String courseName(String course) {
+    final node = Curriculum.tryNode(course);
+    if (node == null) return course;
+    final subject = Curriculum.tryNode(node.subjectId)?.name ?? '';
+    return subject.isEmpty ? node.name : '$subject ${node.name}';
+  }
 
   /// 累計の経験値から習熟Lv（冒険Lvと同じ曲線。上限も同じ）
   static int levelFor(int exp) {

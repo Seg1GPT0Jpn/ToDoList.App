@@ -1,4 +1,10 @@
-# つづりクエスト（仮）— Flutter 版の試作アプリ
+# つづりクエスト for elementary and junior high school— Flutter 版の試作アプリ
+
+> **小中学生版（つづりクエスト for elementary and junior high school）について**
+> このフォルダは高校版のつづりクエストをもとにしています。小中学生版のワールド・問題データ・
+> 作り方は [docs/DEVELOPMENT.md](../docs/DEVELOPMENT.md) を見てください。以下の説明には、
+> 高校版のときの内容（英語ワールド20エリア・情報・LEAP など）が残っています。
+
 
 `../rpg_game`（ゲームのロジックと問題データ）を使って、実際に遊べる画面を作った単体アプリです。
 あとで school_planner の `lib/features/rpg_game/` に組み込みます。

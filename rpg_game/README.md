@@ -1,4 +1,10 @@
-# つづりクエスト（仮）— クイズRPGミニゲーム コアロジック
+# つづりクエスト for elementary and junior high school— クイズRPGミニゲーム コアロジック
+
+> **小中学生版（つづりクエスト for elementary and junior high school）について**
+> このフォルダは高校版のつづりクエストをもとにしています。小中学生版のワールド・問題データ・
+> 作り方は [docs/DEVELOPMENT.md](../docs/DEVELOPMENT.md) を見てください。以下の説明には、
+> 高校版のときの内容（英語ワールド20エリア・情報・LEAP など）が残っています。
+
 
 つづり（school_planner）に組み込む予定のクイズRPGの **中身（ロジック・問題データ）** です。
 school_planner とは別の場所で先に作っています。Flutter と Firebase には依存しない純 Dart で書いてあり、

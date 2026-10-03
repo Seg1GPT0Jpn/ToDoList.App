@@ -1,39 +1,78 @@
-# つづりクエスト 開発書
+# つづりクエスト for elementary and junior high school 開発書
 
-高校の全教科を学べるクイズ RPG。Flutter + Flame 製。Web（Firebase Hosting）と Android で動く。
+小学1年生〜中学3年生の5教科を学べるクイズ RPG。高校生向けの「つづりクエスト」
+（`claude/gallant-tesla-kvdjs2` ブランチ）をもとに作った別アプリ。Flutter + Flame 製で、
+Web（Firebase Hosting）と Android で動く。
 
 ## 1. 構成
 
 | フォルダ | 中身 |
 | --- | --- |
 | `rpg_game/` | 純粋な Dart のコア（ゲームの計算・問題データ・学習記録）。UI を持たない |
+| `rpg_game/tool/junior/` | **問題データの生成ツール**（5教科の問題・ワールド・学習体系をここから作る） |
 | `rpg_game_app/` | Flutter アプリ（画面・フィールド描画・音・保存・Firebase） |
-| `docs/` | 設計書・更新記録（`UPDATE_V4.md` が最新の変更点） |
+| `docs/` | 設計書（`EVOLUTION.md`・`UPDATE_V4.md` は高校版のときの記録） |
 
-コアに書けるものはコアに書き、`dart test` で確かめる。アプリは表示と保存だけを担当する。
+## 2. ワールドと学年の道
 
-### コアの主なフォルダ（`rpg_game/lib/src/`）
+5教科とも「教科 → 学年の道（ルート） → エリア」。広場から上下左右の門（1辺に3つまで）で道に入る。
 
-| フォルダ | 役割 |
+| ワールド | 教科 | 道（左／下／右／上） | 料金 |
+| --- | --- | --- | --- |
+| 英語の国 | 英語 | 小3・4 ／ 小5・小6 ／ ― ／ 中1・中2・中3 | 無料 |
+| 数の国 | 算数・数学 | 小1・小2 ／ 小3・小4 ／ 小5・小6 ／ 中1・中2・中3 | 買い切り |
+| 言の葉の国 | 国語 | 小1・小2 ／ 小3・小4 ／ 小5・小6 ／ 中1・中2・中3 | 買い切り |
+| 理の国 | 理科 | 小3・小4 ／ 小5・小6 ／ ― ／ 中1・中2・中3 | 買い切り |
+| 時と地の国 | 社会 | 小3・小4 ／ 小5・小6 ／ ― ／ 地理・歴史・公民 | 買い切り |
+
+- 1つの道は 8〜11 エリア。途中と最後にボス（装甲あり・前のエリアの問題もまとめて出す）
+- ボスの装甲は、その道でいちばん多い種類の問題で割れる（`tool/junior/lib.py` の `route_categories`）
+- 道の最初のボスに負けると仲間が捕まり、再戦で勝つと仲間になる
+- 公開版の有料4教科は、プロモーションコードでまとめて受け取れる（コードは本家と同じ）
+
+学習モード：
+- **定期テストの海**：各教科の学年の道をエリアごとに練習。英語は中1〜中3の文法23単元と単語帳4冊
+- **高校入試の空**：海より難しい上級者向け。入試模試（制限時間つき・100点満点）もここから
+- **単語の森**：中1・中2・中3の単語と、中学の熟語（各60語）
+- **対戦モード**・**総合演習**・**復習の塔**・**試験対策ワールド** は本家と同じしくみ
+
+## 3. 問題データの作り方
+
+問題は JSON を手で書かず、`rpg_game/tool/junior/` の Python で書いて生成する。
+
+| ファイル | 教科 |
 | --- | --- |
-| `battle/` | バトル計算（ダメージ・カード・出題の山札） |
-| `curriculum/` | 学習体系（教科→科目→分野→単元→小単元）、問題の属性（思考レベル・難しさの軸・学習段階） |
-| `data/` | 教科ごとのカタログ、問題の読み込み、追加問題のセット一覧（`extra_sets.dart`） |
-| `learning/` | 学習記録・間隔反復・熟練度・成長の見える化・学習ルート・複合弱点 |
-| `meta/` | 魔物図鑑（67種）・実績・クエスト |
-| `models/` | 問題・出題形式（8形式）と採点・敵・ステージ・進行状況 |
-| `progression/` | 経験値・レベル・科目の習熟・宝箱 |
-| `story/` | 物語・6つの国・住人・装備 |
-| `study/` | 定期テストの海・模擬試験の空・共通テスト遺跡・総合演習・試験ワールド |
-| `vocab/` | 単語帳・単語の森・つづ単（公開版）の一覧 |
-| `world/` | フィールドの地形・ノートの紙と落書き |
-| `versus/` | 対戦モード |
+| `english.py`・`sea.py` | 英語の国・定期テストの海（英語）・単語帳 |
+| `math_e.py`・`math_j.py` | 算数（小1〜小6）・数学（中1〜中3）。計算問題はプログラムで作る |
+| `japanese.py` | 国語。漢字の読み書きは学年ごとの語のリストから作る |
+| `science.py`・`social.py` | 理科・社会 |
+| `lib.py`・`helpers.py`・`gen.py` | 共通の道具と出力 |
 
-### アプリの主なフォルダ（`rpg_game_app/lib/`）
+```
+R.area('一次方程式', '数と式', [
+    Q('c', '3x + 5 = 20 を解くと？', 'x = 5', ['x = 3', 'x = 15', 'x = 25'], '移項して 3x = 15'),
+    ...
+])
+```
 
-`app/`（共通サービス・テーマ）・`battle/`・`field/`（Flame のフィールド）・`meta/`（ホーム・ステータス・図鑑など）・`study/`（学習モード・総合演習）・`vocab/`（単語の森）・`audio/`・`cloud/`（Firebase）・`data/`（端末保存）
+- `Q(種類, 問い, 正解, まちがい3つ, 解説, s=英文など)`。種類は k=知識・c=計算・t=考察・m=意味・u=語法
+- ふつうのエリアは10問以上、ボスは8問以上（`area()` が確かめる）
+- 同じ道で同じ問いを2度出すと `gen.py` が止まる
+- `lesson=[(見出し, 説明, 例)]` を書くと宿の授業になる（書かないエリアは問題から自動で作る）
 
-## 2. 環境構築と実行
+問題を直したら：
+
+```
+cd rpg_game/tool/junior
+python3 gen.py            # 問題 JSON・カタログ・学習体系・まとめファイルを作り直す
+cd ../.. && dart test     # コアのテスト（問題データの検査をふくむ）
+```
+
+`gen.py` が書き出すもの：`assets/questions/<教科>/*.json`、`lib/src/data/<教科>_catalog.dart`、
+`lib/src/study/junior_lessons.dart`、`tool/curriculum/src/*.txt`・`map.txt`、
+`assets/question_bundles/*.json`（アプリが読むのはこのまとめファイルだけ）。
+
+## 4. 環境構築と実行
 
 ```
 cd rpg_game && dart pub get && dart test          # コアのテスト
@@ -41,50 +80,22 @@ cd rpg_game_app && flutter pub get && flutter test  # アプリのテスト
 flutter run -d chrome                               # ブラウザで起動
 ```
 
-## 3. 問題データ
-
-- 元データ：`rpg_game/assets/questions/<教科>/<セット>.json`（約1万問）
-- アプリが読むのは教科ごとのまとめファイル `assets/question_bundles/<教科>.json` だけ
-- 1問の主な項目：`id`・`unit`（単元）・`category`・`prompt`・`choices`・`answerIndex`・`explanation`・`difficulty`・`thinkingLevel`（1〜8）・`axes`・`phase`・`format`・`combines`
-- 出題形式：4択・正誤・複数選択・並べ替え・数値入力・穴埋め・段階問題・記述（ルーブリックで部分点）
-
-### 問題を追加・修正する手順
-
-1. JSON を追加・編集する（すべて自作。`origin` は `original`）
-2. 新しいセットは `rpg_game/tool/curriculum/map.txt` に登録（`セットID 範囲 既定の単元`）
-3. 練習用セットなら `extra_sets.dart` に追加
-4. `python3 rpg_game/tool/curriculum/assign.py`（単元の割り当て・索引の再生成・まとめファイルの再作成）
-5. `dart test`（データの検査・まとめ直し忘れ・単元の存在を確認）
-
-学習体系そのものは `tool/curriculum/src/*.txt` を編集して `build.py` で Dart に変換する。
-
-## 4. 主なしくみ
-
-| しくみ | 要点 | 場所 |
-| --- | --- | --- |
-| 強さ | 冒険Lv（HP・守り）と科目の習熟Lv（攻撃）を分ける。推奨レベルとの差で補正し、1発で倒せないようにする | `progression/`・`battle/` |
-| 学習記録 | 問題ごとに正誤・時間・ライトナー式の箱・初回結果・問題の性質・間をあけた回答を保存 | `learning/question_stat.dart` |
-| 復習 | 箱ごとに 0→1→2→4→8→16→32 日後に再出題。3箱目以上で「習得」 | `learning/` |
-| 学習ルート | 苦手な単元から前提を最大4段さかのぼり、根本の弱点を出す | `learning/learning_route.dart` |
-| 総合演習 | 基礎3点×6・標準5点×6・応用12点×2、制限時間・部分点・分野別分析 | `study/comprehensive_exam.dart` |
-| 成長 | 初見正答率・応用・初見問題・定着率、学習段階（フェーズ1〜7）のはしご | `learning/growth.dart` |
-
-保存データは古い形式もそのまま読めるように作る（項目は末尾に足す。不明は0）。
-
 ## 5. 公開
 
 ```
 cd rpg_game_app
 flutter build web --release --pwa-strategy=none
-firebase deploy --only hosting --project <プロジェクトID>
+firebase deploy --only hosting --project tsuzuri-quest-junior
 ```
 
-`firestore.rules` を変えたときだけ `firebase deploy --only firestore:rules` も行う。
+- アプリ ID は `com.kazu.tsuzuri_quest_junior`（Android）・`com.kazu.tsuzuriQuestJunior`（iOS）
+- `.firebaserc` は新しいプロジェクト `tsuzuri-quest-junior` を指している。**Firebase で同じ名前の
+  プロジェクトを作り、`flutterfire configure` で `lib/firebase_options.dart` を作り直すこと**
+  （今の `firebase_options.dart` は高校版のプロジェクトのままなので、そのまま使うと記録が混ざる）
 
 ## 6. 守るルール
 
-- 市販教材（LEAP・STEP など）の内容を RPG の問題に使わない。LEAP・EEVI・つづ単は、名前とパスワードで開く単語帳（`rpg_game/tool/vocab_seal.dart` で暗号化して `assets/vocab/` に置く）だけで扱う
-- つづ単の公開版（`assets/words/tsuzutan_*.json`）は意味・例文・豆知識がすべて自作。RPG・海・空・単語の森で使う。単語ファイルを直したら `python3 rpg_game/tool/tsuzutan_index.py` で一覧を作り直す
-- パスワードや市販教材の本文をコミットしない。プロモーションコードはハッシュ値だけを保存する
+- 問題はすべて自作（`origin` は `original`）。市販教材の内容は使わない
+- 漢字・語句・年号など事実を書いた問題は、教科書の範囲と照らして確かめてから足す
 - ガチャ・ランダム型の課金は作らない
 - 変更したら `dart analyze`・`flutter analyze`・両方のテストを通してからコミットする

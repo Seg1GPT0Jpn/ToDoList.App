@@ -106,7 +106,7 @@ class WorldMapScreen extends StatelessWidget {
                     style: serif(28, color: TsuzuriColors.accent),
                   ),
                   Text(
-                    'ノートの世界を旅して、魔物をクイズでたおそう',
+                    '小学生・中学生版　ノートの世界を旅して、魔物をクイズでたおそう',
                     style: TextStyle(
                       fontSize: 12,
                       color: TsuzuriColors.inkSoft,

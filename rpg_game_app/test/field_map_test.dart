@@ -223,14 +223,6 @@ void checkRoute(String name, FieldMap map, List<StageDef> stages, Cell start) {
 }
 
 void main() {
-  final english = RpgCatalog.world(RpgCatalog.englishWorldId);
-  checkRoute(
-    '英語ワールド',
-    FieldMap.english,
-    english.stages,
-    FieldMap.english.start,
-  );
-
   for (final world in RpgCatalog.worlds.where((w) => w.routes.isNotEmpty)) {
     for (final r in world.routes) {
       final map = FieldMap.byId('${world.id}_${r.id}');
@@ -268,14 +260,19 @@ void main() {
   group('理の国のスタート地点', () {
     final hub = FieldMap.byId('science_hub');
 
-    test('上＝物理・左＝化学・右＝地学・下＝生物 の出入口がある', () {
+    test('左＝小3・小4、下＝小5・小6、上＝中1〜中3 の出入口がある', () {
       final byTarget = {
         for (final e in hub.portals.entries) e.value.target: e.key,
       };
-      expect(byTarget['science_physics']!.row, 0);
-      expect(byTarget['science_chemistry']!.col, 0);
-      expect(byTarget['science_earth']!.col, hub.width - 1);
-      expect(byTarget['science_biology']!.row, hub.height - 1);
+      expect(byTarget['science_e3']!.col, 0);
+      expect(byTarget['science_e4']!.col, 0);
+      expect(byTarget['science_e5']!.row, hub.height - 1);
+      expect(byTarget['science_e6']!.row, hub.height - 1);
+      for (final j in ['j1', 'j2', 'j3']) {
+        expect(byTarget['science_$j']!.row, 0, reason: j);
+      }
+      // 同じ辺の出入口は重ならない
+      expect(byTarget.values.toSet().length, byTarget.length);
     });
 
     test('スタート地点から4つの出入口すべてに歩いて行ける', () {
@@ -296,12 +293,12 @@ void main() {
 
     test('各系統のマップは、ハブから来た向きの端に帰り口がある', () {
       final expected = {
-        'physics': 'bottom',
-        'chemistry': 'right',
-        'earth': 'left',
-        'biology': 'top',
+        'up': 'bottom',
+        'left': 'right',
+        'right': 'left',
+        'down': 'top',
       };
-      for (final b in ScienceCatalog.branches) {
+      for (final b in RpgCatalog.world('science').routes) {
         final map = FieldMap.byId('science_${b.id}');
         final back = map.portals.entries
             .singleWhere((e) => e.value.target == 'science_hub')
@@ -313,21 +310,20 @@ void main() {
             : back.col == 0
             ? 'left'
             : 'right';
-        expect(side, expected[b.id], reason: b.id);
+        expect(side, expected[b.direction], reason: b.id);
         // ハブの出入口から来ると、そのとなりに立つ
         expect(hub.spawnFrom('science_${b.id}'), isNot(hub.start));
       }
     });
   });
 
-  // 試験対策ワールド：6教科を混ぜたエリアと試験本番で、同じように歩けるフィールドができる
+  // 試験対策ワールド：5教科を混ぜたエリアと試験本番で、同じように歩けるフィールドができる
   final picked = ExamWorlds.matchAll({
-    'math': '2次関数',
-    RpgCatalog.englishWorldId: '関係詞',
-    'japanese': '助動詞',
-    'science': '物質量',
+    'math': '一次方程式',
+    RpgCatalog.englishWorldId: '関係代名詞',
+    'japanese': '敬語',
+    'science': '電流',
     'social': '明治維新',
-    'information': 'ネットワーク',
   });
   final plan = ExamWorldPlan(
     id: 'test',
@@ -338,20 +334,20 @@ void main() {
   );
   final examStages = ExamWorlds.build(plan);
   final examMap = FieldMap.forExam(plan, examStages);
-  checkRoute('試験対策ワールド（6教科）', examMap, examStages, examMap.start);
+  checkRoute('試験対策ワールド（5教科）', examMap, examStages, examMap.start);
   test('試験対策ワールドの最後は、試験本番のボスの間', () {
     expect(examMap.bossAreas, contains(examStages.last.order));
     expect(examMap.areaLabels[examStages.last.order], '試験本番');
   });
 
-  // 60エリア（6教科×10）の大きな試験ワールドでも、同じ決まりで歩けるフィールドができる
+  // 60エリア（5教科×12）の大きな試験ワールドでも、同じ決まりで歩けるフィールドができる
   final big = ExamWorldPlan(
     id: 'big',
     title: '学年末',
     worldId: 'math',
     stageIds: [
       for (final w in RpgCatalog.worlds)
-        for (final s in w.stages.where((s) => !s.isBoss).take(10)) s.id,
+        for (final s in w.stages.where((s) => !s.isBoss).take(12)) s.id,
     ],
     createdAt: DateTime(2026),
   );

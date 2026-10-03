@@ -19,8 +19,8 @@ import 'harness.dart';
 
 ExamWorldPlan _plan({StudyRealm realm = StudyRealm.sea}) {
   final picked = ExamWorlds.matchAll({
-    'math': '2次関数',
-    RpgCatalog.englishWorldId: '関係詞',
+    'math': '一次方程式',
+    RpgCatalog.englishWorldId: '関係代名詞',
   });
   return ExamWorldPlan(
     id: 'p1',
@@ -160,7 +160,7 @@ void main() {
     );
   }
 
-  testWidgets('試験対策ワールドのフィールド（6教科ミックス）', (t) async {
+  testWidgets('試験対策ワールドのフィールド（5教科ミックス）', (t) async {
     await openScreen(
       t,
       FieldScreen.exam(plan: _plan(), progress: RpgProgress.initial),

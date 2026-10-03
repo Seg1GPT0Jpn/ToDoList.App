@@ -17,11 +17,14 @@ void main() {
       await t.pump(const Duration(milliseconds: 200));
       expect(t.takeException(), isNull, reason: '英語のチップ $i 回目');
     }
-    await t.enterText(find.byType(TextField).last, '関係詞、仮定法');
+    await t.enterText(find.byType(TextField).last, '関係代名詞、仮定法');
     await t.tap(find.text('範囲から探す'));
     await t.pump(const Duration(milliseconds: 300));
     expect(find.textContaining('エリア見つかりました'), findsOneWidget);
-    await t.tap(find.textContaining('ワールドとフィールドをつくる'));
+    // 英語の国は56エリアあるので、ボタンまでスクロールする
+    final make = find.textContaining('ワールドとフィールドをつくる');
+    await t.scrollUntilVisible(make, 400, scrollable: find.byType(Scrollable).first);
+    await t.tap(make);
     for (var i = 0; i < 10; i++) {
       await t.pump(const Duration(milliseconds: 100));
     }
