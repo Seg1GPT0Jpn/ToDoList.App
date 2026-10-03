@@ -18,6 +18,7 @@ import 'audio/music_director.dart';
 import 'audio/music_scope.dart';
 import 'audio/player_backend.dart';
 import 'cloud/cloud_sync.dart';
+import 'purchase/google_play_purchase_service.dart';
 import 'quiz/question_report.dart';
 import 'cloud/firestore_versus_backend.dart';
 import 'cloud/firebase_account_service.dart';
@@ -68,6 +69,17 @@ Future<void> main() async {
       },
     );
   }
+  // Android + Firebase 接続時だけ Google Play Billing を有効にする。
+  // 購入成功時は、Play のサーバー検証済み権利を端末の進行状況へ反映する。
+  GooglePlayPurchaseService? purchaseService;
+  if (!kIsWeb && cloud != null) {
+    purchaseService = GooglePlayPurchaseService(
+      onVerified: (worldId) =>
+          progress.markWorldPurchased(worldId, source: 'google_play'),
+    );
+    await purchaseService.initialize();
+  }
+
   // 古い学習記録に、学習体系の単元を補う（裏で行い、終わったら保存する）
   unawaited(_migrateUnits(meta));
   runApp(
@@ -82,6 +94,7 @@ Future<void> main() async {
       account: cloud == null
           ? MockAccountService()
           : FirebaseAccountService(cloud),
+      purchaseService: purchaseService,
       versusRooms: cloud == null
           ? null
           : FirestoreVersusBackend(cloud.auth, FirebaseFirestore.instance),
