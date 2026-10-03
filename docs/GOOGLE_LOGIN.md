@@ -1,6 +1,6 @@
 # Google ログインを本当につなぐ手順
 
-つづりクエストの Google ログインとクラウド保存は、**あなたの Firebase プロジェクト**につなぐと動きます。
+つづりクエスト for elementary and junior high school（小中学生版）の Google ログインとクラウド保存は、**あなたの Firebase プロジェクト**につなぐと動きます。
 コード側の準備はできているので、あとは最初の1回だけ、次の設定をします（PC の PowerShell で行います）。
 
 設定する前は、アカウント画面で「Google アカウントで登録」を押すと、この手順の案内が出るだけです（記録は端末の中だけに保存されます）。
@@ -11,7 +11,7 @@
 
 1. https://console.firebase.google.com を開いて、Google アカウントでログインする
 2. 「プロジェクトを作成」
-   - 名前：例 `tsuzuri-quest`（すでに使われているときは、うしろに数字などをつける）
+   - 名前：`tsuzuri-quest-junior`（高校版とは**別のプロジェクト**にする。使われていて作れないときは、うしろに数字などをつける）
    - Google アナリティクス：オフでよい
 3. 左のメニュー「構築」→「**Authentication**」→「始める」
    - 「Sign-in method」タブ →「**Google**」→「有効にする」をオン
@@ -41,14 +41,15 @@ $env:Path += ";$env:LOCALAPPDATA\Pub\Cache\bin"
 `rpg_game_app` のフォルダ（例 `C:\develop\projects\rpg_test\rpg_game_app`）で：
 
 ```powershell
-flutterfire configure --project=<プロジェクトID> --platforms=android,web
+flutterfire configure --project=<プロジェクトID> --platforms=android,ios,web
 ```
 
-- `<プロジェクトID>` は、Firebase のプロジェクトの設定に書いてある ID（例 `tsuzuri-quest-12ab3`）
-- 途中で Android のパッケージ名を聞かれたら `com.kazu.rpg_game_app` のままで Enter
+- `<プロジェクトID>` は、Firebase のプロジェクトの設定に書いてある ID（例 `tsuzuri-quest-junior` または `tsuzuri-quest-junior-12ab3`）
+- 途中でアプリ ID を聞かれたら、Android は `com.kazu.tsuzuri_quest_junior`、iOS は `com.kazu.tsuzuriQuestJunior`
+- `android/app/google-services.json`・`ios/Runner/GoogleService-Info.plist` も作られます（iOS は Mac で行うときだけ）
 - 終わると `lib/firebase_options.dart` が本物の設定に置きかわります（これはコミットしてかまいません。秘密の情報ではありません）
 
-プロジェクト ID が `tsuzuri-quest` 以外のときは、`.firebaserc` の `"default"` もその ID に書きかえてください。
+プロジェクト ID が `tsuzuri-quest-junior` 以外のときは、`.firebaserc` の `"default"` もその ID に書きかえてください。
 
 ## 4. Android で使うとき：署名の SHA-1 を登録する
 

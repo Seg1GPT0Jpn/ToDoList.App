@@ -89,9 +89,9 @@ firebase deploy --only hosting --project tsuzuri-quest-junior
 ```
 
 - アプリ ID は `com.kazu.tsuzuri_quest_junior`（Android）・`com.kazu.tsuzuriQuestJunior`（iOS）
-- `.firebaserc` は新しいプロジェクト `tsuzuri-quest-junior` を指している。**Firebase で同じ名前の
-  プロジェクトを作り、`flutterfire configure` で `lib/firebase_options.dart` を作り直すこと**
-  （今の `firebase_options.dart` は高校版のプロジェクトのままなので、そのまま使うと記録が混ざる）
+- `.firebaserc` は新しいプロジェクト `tsuzuri-quest-junior` を指している。`lib/firebase_options.dart` は
+  まだ仮（Firebase なしで動き、記録は端末の中だけ）。Firebase で高校版とは別のプロジェクトを作り、
+  `flutterfire configure` で作り直す（手順は `docs/GOOGLE_LOGIN.md`）
 
 ## 6. 守るルール
 
