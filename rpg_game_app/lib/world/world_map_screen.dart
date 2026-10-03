@@ -130,6 +130,25 @@ class WorldMapScreen extends StatelessWidget {
                   await showPromoCodeDialog(context);
                   return;
                 }
+                if (v == 'restore') {
+                  final billing = services.purchaseService;
+                  if (billing == null) return;
+                  if (!billing.isSignedIn) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text('購入情報を復元するには Google ログインが必要です'),
+                      ),
+                    );
+                    return;
+                  }
+                  await billing.restorePurchases();
+                  if (context.mounted) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text('Google Playの購入情報を確認しました')),
+                    );
+                  }
+                  return;
+                }
                 if (v == 'trial') {
                   await _pickTrial(context);
                   return;
@@ -165,6 +184,11 @@ class WorldMapScreen extends StatelessWidget {
                   child: Text('アカウント（名前・Google）'),
                 ),
                 const PopupMenuItem(value: 'promo', child: Text('プロモーションコード')),
+                if (services.purchaseService != null)
+                  const PopupMenuItem(
+                    value: 'restore',
+                    child: Text('Google Playの購入を復元'),
+                  ),
                 // どのエリアとも戦える確認用メニューは、開発中だけ出す
                 if (kDebugMode)
                   const PopupMenuItem(
@@ -552,7 +576,7 @@ class _WorldCard extends StatelessWidget {
                               '有料・コードで解放（${world.stages.length}エリア）',
                             WorldAvailability.purchasable
                                 when !world.isComingSoon =>
-                              '¥${world.priceYen}で解放（${world.stages.length}エリア）',
+                              'Google Playで購入（${world.stages.length}エリア）',
                             _ => '準備中',
                           },
                           style: const TextStyle(
@@ -598,6 +622,43 @@ class _WorldCard extends StatelessWidget {
       return;
     }
     final purchasable = availability == WorldAvailability.purchasable;
+
+    if (purchasable && services.unlock.allowPurchase) {
+      final billing = services.purchaseService;
+      if (billing == null) return;
+      if (!billing.isSignedIn) {
+        final goAccount = await showDialog<bool>(
+          context: context,
+          builder: (c) => AlertDialog(
+            icon: const Icon(Icons.account_circle, size: 36),
+            title: const Text('Google ログインが必要です'),
+            content: const Text(
+              '購入したワールドをあなたのアカウントに結びつけるため、'
+              '購入前に Google ログインしてください。',
+            ),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(c, false),
+                child: const Text('とじる'),
+              ),
+              FilledButton(
+                onPressed: () => Navigator.pop(c, true),
+                child: const Text('アカウントを開く'),
+              ),
+            ],
+          ),
+        );
+        if (goAccount == true && context.mounted) {
+          await Navigator.of(context).push(
+            MaterialPageRoute<void>(
+              builder: (_) => const AccountScreen(),
+            ),
+          );
+        }
+        return;
+      }
+    }
+
     if (purchasable && !services.unlock.allowPurchase) {
       final useCode = await showDialog<bool>(
         context: context,
@@ -627,6 +688,11 @@ class _WorldCard extends StatelessWidget {
       }
       return;
     }
+    final playPrice = purchasable
+        ? await services.purchaseService?.priceForWorld(world.id)
+        : null;
+    if (!context.mounted) return;
+
     final buy = await showDialog<bool>(
       context: context,
       builder: (c) => AlertDialog(
@@ -636,7 +702,7 @@ class _WorldCard extends StatelessWidget {
         ),
         content: Text(
           purchasable
-              ? '${world.subject}のワールドを解放します。\n価格：¥${world.priceYen}（買い切り・1回のみ）\n\n※ テスト用のダミー購入です。実際にお金はかかりません。'
+              ? '${world.subject}のワールドを解放します。\n価格：${playPrice ?? 'Google Playで表示される価格'}（買い切り・1回のみ）\n\nGoogle Playの購入画面で決済します.'
               : '公開までもうしばらくお待ちください。\n予定価格：¥${world.priceYen}（買い切り）',
         ),
         actions: [
@@ -647,7 +713,7 @@ class _WorldCard extends StatelessWidget {
           if (purchasable)
             FilledButton(
               onPressed: () => Navigator.pop(c, true),
-              child: const Text('購入する'),
+              child: const Text('Google Playで購入'),
             ),
         ],
       ),
@@ -657,7 +723,7 @@ class _WorldCard extends StatelessWidget {
     messenger.showSnackBar(
       SnackBar(
         content: Text(switch (outcome) {
-          PurchaseOutcome.success => '${world.name}を解放しました（ダミー購入）',
+          PurchaseOutcome.success => '${world.name}を解放しました！',
           PurchaseOutcome.cancelled => '購入をキャンセルしました',
           PurchaseOutcome.alreadyOwned => 'すでに解放済みです',
           PurchaseOutcome.notPurchasable => '現在は購入できません',
