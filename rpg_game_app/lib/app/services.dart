@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:rpg_game/rpg_game.dart';
@@ -10,6 +9,7 @@ import '../account/profile_repository.dart';
 import '../audio/music_director.dart';
 import '../data/meta_store.dart';
 import '../data/prefs_progress_repository.dart';
+import '../purchase/google_play_purchase_service.dart';
 import '../study/exam_world_store.dart';
 import '../study/personal_books.dart';
 import '../versus/online_room.dart';
@@ -28,15 +28,17 @@ class RpgServices extends InheritedWidget {
     required this.settings,
     required this.music,
     this.versusRooms,
+    this.purchaseService,
     required super.child,
   }) : questions = JsonQuestionSource(loadQuestionAsset),
        unlock = WorldUnlockService(
          repository: repository,
-         // 購入ダイアログの動作確認用。リリース版では準備中ワールドは売らない。
-         allowComingSoonPurchase: kDebugMode,
-         // 本物の決済がまだないので、公開版（リリースビルド）では購入ボタンで買えない。
-         // 有料ワールドはプロモーションコードでだけ受け取れる。
-         allowPurchase: kDebugMode,
+         // 本物の Google Play Billing がある Android 版だけ購入ボタンを有効にする。
+         allowComingSoonPurchase: false,
+         allowPurchase: purchaseService != null,
+         purchase: purchaseService?.purchaseWorld,
+         purchaseSource:
+             purchaseService != null ? 'google_play' : 'mock',
        );
 
   final PrefsProgressRepository repository;
@@ -59,6 +61,9 @@ class RpgServices extends InheritedWidget {
 
   /// オンライン対戦の部屋（Firebase の設定がなければ null）
   final VersusRoomBackend? versusRooms;
+
+  /// Google Play Billing。Web 版や Firebase 未設定版では null。
+  final GooglePlayPurchaseService? purchaseService;
 
   /// パスワード保護の個人用単語帳（LEAP など）
   final PersonalBooks personalBooks;
@@ -157,5 +162,6 @@ class RpgServices extends InheritedWidget {
 
   @override
   bool updateShouldNotify(RpgServices oldWidget) =>
-      repository != oldWidget.repository;
+      repository != oldWidget.repository ||
+      purchaseService != oldWidget.purchaseService;
 }
