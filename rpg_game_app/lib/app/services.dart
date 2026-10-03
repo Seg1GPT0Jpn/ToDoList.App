@@ -35,7 +35,7 @@ class RpgServices extends InheritedWidget {
          repository: repository,
          // 本物の Google Play Billing がある Android 版だけ購入ボタンを有効にする。
          allowComingSoonPurchase: false,
-         allowPurchase: purchaseService != null,
+         allowPurchase: purchaseService?.isAvailable == true,
          purchase: purchaseService?.purchaseWorld,
          purchaseSource:
              purchaseService != null ? 'google_play' : 'mock',
