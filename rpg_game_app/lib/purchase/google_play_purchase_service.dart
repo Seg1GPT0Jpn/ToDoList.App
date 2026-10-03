@@ -202,10 +202,6 @@ class GooglePlayPurchaseService {
       }
 
       _completePending(worldId, true);
-      } catch (e) {
-        debugPrint('購入済みワールドの保存に失敗しました: $e');
-        _completePending(worldId, false);
-      }
     }
   }
 
