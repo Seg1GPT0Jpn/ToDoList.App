@@ -51,6 +51,7 @@ rpg_game_app/functions/ が購入検証サーバーです。
 
 rpg_game_app で次を実行します。
 
+    flutter pub get
     npm --prefix functions install
     npm --prefix functions run build
     firebase deploy --only functions
