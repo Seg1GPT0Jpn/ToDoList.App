@@ -29,7 +29,11 @@ class RouteArea {
     required this.intro,
     required this.defeat,
     this.boss = false,
+    this.captive,
   });
+
+  /// ボスに負けると捕まってしまう仲間（再戦で勝つと仲間になる）
+  final String? captive;
 
   /// 単元名（宿の授業のタイトル・出題範囲の表示）
   final String theme;
@@ -146,6 +150,7 @@ class RouteWorldBuilder {
             readingTimeLimitSeconds: r.timeLimitSeconds * 2,
             recommendedLevel: _lv[k - 1],
             isBoss: a.boss,
+            captiveCompanionId: a.captive,
             rewardCardId: _rewards[k],
             enemy: EnemyDef(
               id: 'e_${worldId}_${r.info.id}_$k',

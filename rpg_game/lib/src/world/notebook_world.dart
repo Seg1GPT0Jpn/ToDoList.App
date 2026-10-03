@@ -82,12 +82,10 @@ abstract final class NotebookWorld {
       'japanese' => t == Terrain.library || t == Terrain.shrine
           ? PaperStyle.manuscript
           : PaperStyle.ruled,
-      'music' => PaperStyle.staff,
       'math' => t == Terrain.castle ? PaperStyle.blueprint : PaperStyle.grid,
       'english' => PaperStyle.ruled,
       'social' => t == Terrain.town ? PaperStyle.looseLeaf : PaperStyle.kraft,
       'science' => PaperStyle.grid,
-      'information' => PaperStyle.blueprint,
       _ => PaperStyle.grid,
     };
   }

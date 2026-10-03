@@ -23,33 +23,33 @@ LearningRecord answer(
 void main() {
   test('英語は文法・単語・長文・熟語、ほかの教科はルートごとの分野に分かれる', () {
     expect(Proficiency.fieldsOf('english'), ['文法', '単語', '長文', '熟語']);
-    expect(Proficiency.fieldsOf('science'), contains('化学'));
-    expect(Proficiency.fieldsOf('math'), contains('数学A'));
+    expect(Proficiency.fieldsOf('science'), contains('中1'));
+    expect(Proficiency.fieldsOf('math'), ['小1', '小2', '小3', '小4', '小5', '小6', '中1', '中2', '中3']);
   });
 
   test('熟練度は実際の正答率から決まり、少ない回答では判定しない', () {
     var r = LearningRecord.empty;
-    r = answer(r, 'math_ma_05', 10, correct: 3); // 確率：苦手
-    r = answer(r, 'math_m1_01', 10, correct: 9); // 数と式：得意
-    r = answer(r, 'english_stage_02', 8, correct: 6);
-    r = answer(r, 'english_stage_02', 6,
+    r = answer(r, 'math_j2_07', 10, correct: 3); // 中2の確率：苦手
+    r = answer(r, 'math_j1_01', 10, correct: 9); // 中1の正負の数：得意
+    r = answer(r, 'english_j1_02', 8, correct: 6);
+    r = answer(r, 'english_j1_02', 6,
         correct: 5, category: 'meaning', prefix: 'w');
-    r = answer(r, 'science_chemistry_01', 3, correct: 3);
+    r = answer(r, 'science_j1_03', 3, correct: 3);
     final s = Proficiency.bySubject(r);
     final math = {for (final f in s['math']!) f.field: f};
-    expect(math['数学A']!.rated, isTrue);
-    expect(math['数学A']!.score, lessThan(math['数学Ⅰ']!.score));
-    expect(math['数学Ⅰ']!.score, greaterThanOrEqualTo(80));
+    expect(math['中2']!.rated, isTrue);
+    expect(math['中2']!.score, lessThan(math['中1']!.score));
+    expect(math['中1']!.score, greaterThanOrEqualTo(80));
     final en = {for (final f in s['english']!) f.field: f};
     expect(en['文法']!.answered, 8);
     expect(en['単語']!.answered, 6);
     expect(en['長文']!.rated, isFalse);
     // 3問しか答えていない分野は判定しない
     final sci = {for (final f in s['science']!) f.field: f};
-    expect(sci['化学']!.rated, isFalse);
+    expect(sci['中1']!.rated, isFalse);
     // 苦手な単元が先に来る
     final weak = Proficiency.weakestUnits(r);
-    expect(weak.first.$1.id, 'math_ma_05');
+    expect(weak.first.$1.id, 'math_j2_07');
     expect(Proficiency.totalPower(r), inInclusiveRange(1, 100));
   });
 
@@ -61,7 +61,7 @@ void main() {
         for (var i = 0; i < 20; i++)
           AnswerEvent(
             questionId: 'm$i',
-            setId: 'math_m1_01',
+            setId: 'math_j1_01',
             isCorrect: true,
             elapsedMs: 1000,
           ),
@@ -76,7 +76,7 @@ void main() {
       isCorrect: true,
       day: 1,
       elapsedMs: 10,
-      setId: 'english_stage_01',
+      setId: 'english_j1_01',
       category: 'reading',
     );
     expect(QuestionStat.fromList(s.toList()).category, 'reading');
@@ -90,7 +90,7 @@ void main() {
       r = r.recordAll([
         const AnswerEvent(
           questionId: 'twice',
-          setId: 'math_ma_05',
+          setId: 'math_j2_07',
           isCorrect: false,
           elapsedMs: 1000,
         ),
@@ -100,7 +100,7 @@ void main() {
     r = r.recordAll([
       const AnswerEvent(
         questionId: 'old',
-        setId: 'math_m1_01',
+        setId: 'math_j1_01',
         isCorrect: true,
         elapsedMs: 1000,
       ),

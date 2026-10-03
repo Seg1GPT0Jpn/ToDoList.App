@@ -49,7 +49,7 @@ void main() {
         isCorrect: true,
         day: 9,
         elapsedMs: 1234,
-        setId: 'math_m1_01',
+        setId: 'math_j1_01',
       );
       final back = QuestionStat.fromList(s.toList());
       expect(back.toList(), s.toList());
@@ -64,7 +64,7 @@ void main() {
           for (var i = 0; i < 4; i++)
             AnswerEvent(
               questionId: 'm$i',
-              setId: 'math_m1_01',
+              setId: 'math_j1_01',
               isCorrect: true,
               elapsedMs: 1000,
             ),
@@ -205,13 +205,6 @@ void main() {
         ..remove('commonMistakes'));
       expect(plain.difficulty, isNull);
       expect(plain.tags, isEmpty);
-    });
-
-    test('数学のエリアは名前から難易度が分かる', () {
-      final stages = RpgCatalog.world('math').stages;
-      expect(stages.first.difficulty, Difficulty.basic);
-      expect(stages[1].difficulty, Difficulty.standard);
-      expect(stages[2].difficulty, Difficulty.advanced);
     });
   });
 

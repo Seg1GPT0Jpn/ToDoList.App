@@ -15,7 +15,7 @@ void main() {
       }
     });
 
-    test('有料の5教科をまとめて受け取れる。英語はもともと無料', () async {
+    test('有料の4教科をまとめて受け取れる。英語はもともと無料', () async {
       final repo = InMemoryProgressRepository();
       final service =
           WorldUnlockService(repository: repo, allowPurchase: false);
@@ -26,7 +26,7 @@ void main() {
         PromoOutcome.success,
       );
       expect(got.map((w) => w.id).toSet(),
-          {'science', 'social', 'japanese', 'math', 'information'});
+          {'science', 'social', 'japanese', 'math'});
       final p = await repo.load();
       for (final w in RpgCatalog.worlds) {
         expect(Progression.isWorldPlayable(p, w), isTrue, reason: w.id);

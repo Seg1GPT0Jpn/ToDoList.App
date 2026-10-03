@@ -7,16 +7,17 @@ import 'helpers.dart';
 
 void main() {
   group('物語', () {
-    test('6つの国に1つずつ欠片があり、ルートの最後をすべて倒すと手に入る', () {
-      expect(Story.worlds.length, 6);
+    test('5つの国に1つずつ欠片があり、ルートの最後をすべて倒すと手に入る', () {
+      expect(Story.worlds.length, 5);
       expect(Story.fragments(RpgProgress.initial), isEmpty);
       final english = Story.finalsOf('english');
-      expect(english.single.id, 'english_20');
-      final p = RpgProgress.initial.copyWith(clearedStageIds: {'english_20'});
+      expect(english.length, 6);
+      final p = RpgProgress.initial
+          .copyWith(clearedStageIds: {for (final s in english) s.id});
       expect(Story.fragments(p), {'english'});
-      // 数学はルートが6本。1本だけでは手に入らない
+      // 算数・数学はルートが9本。1本だけでは手に入らない
       final math = Story.finalsOf('math');
-      expect(math.length, 6);
+      expect(math.length, 9);
       final p2 = p.copyWith(clearedStageIds: {
         ...p.clearedStageIds,
         math.first.id,
@@ -25,7 +26,7 @@ void main() {
       expect(Story.centerOpen(p2), isFalse);
     });
 
-    test('世界の中心は6教科の最後のボスの範囲から出題する、分野横断の決戦', () {
+    test('世界の中心は5教科の最後のボスの範囲から出題する、分野横断の決戦', () {
       final c = Story.centerStage();
       expect(c.isBoss, isTrue);
       expect(BossRules.of(c), BossRule.finale);
@@ -38,7 +39,6 @@ void main() {
             'science',
             'social',
             'japanese',
-            'information'
           ]));
     });
   });
@@ -46,7 +46,7 @@ void main() {
   group('装備・職業・連続学習のごほうび', () {
     test('欠片を取りもどすと、その教科の武器が手に入り、その教科のバトルでだけ効く', () {
       final p = RpgProgress.initial.copyWith(
-        clearedStageIds: {'english_20'},
+        clearedStageIds: {for (final s in Story.finalsOf('english')) s.id},
         equipped: {'weapon': 'dict_sword'},
       );
       expect(Gear.owned(p), contains('dict_sword'));
@@ -150,13 +150,13 @@ void main() {
       for (var i = 0; i < 8; i++)
         AnswerEvent(
             questionId: 'p$i',
-            setId: 'math_ma_05',
+            setId: 'math_e1_02',
             isCorrect: i < 2,
             elapsedMs: 1),
       for (var i = 0; i < 8; i++)
         AnswerEvent(
             questionId: 'g$i',
-            setId: 'english_stage_02',
+            setId: 'english_j1_02',
             isCorrect: true,
             elapsedMs: 1,
             category: 'usage'),
@@ -166,7 +166,7 @@ void main() {
     expect(sig.first.signal, Signal.red);
     expect(sig.last.signal, Signal.green);
     final rec = StudyNavigator.today(r, today: 201);
-    expect(rec.first.stage?.id, 'math_ma_05');
+    expect(rec.first.stage?.id, 'math_e1_02');
     expect(rec.any((x) => x.review), isTrue);
     expect(StudyNavigator.insights(r, today: 201).first, contains('まちがえた'));
   });

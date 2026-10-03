@@ -85,7 +85,6 @@ const mathCurriculum = CurriculumNode(
               id: 'math.e1.s2.a05',
               name: '大きいかず（100まで）',
               level: CurriculumLevel.unit,
-              prerequisites: ['math.e1.s1.a03'],
               children: [
                 CurriculumNode(
                   id: 'math.e1.s2.a05.main',
@@ -236,7 +235,6 @@ const mathCurriculum = CurriculumNode(
               id: 'math.e2.s2.a05',
               name: '長さ（mm・cm・m）',
               level: CurriculumLevel.unit,
-              prerequisites: ['math.e2.s1.a03'],
               children: [
                 CurriculumNode(
                   id: 'math.e2.s2.a05.main',
@@ -400,7 +398,6 @@ const mathCurriculum = CurriculumNode(
               id: 'math.e3.s2.a05',
               name: '3けた・4けたのたし算とひき算',
               level: CurriculumLevel.unit,
-              prerequisites: ['math.e3.s1.a03'],
               children: [
                 CurriculumNode(
                   id: 'math.e3.s2.a05.main',
@@ -564,7 +561,6 @@ const mathCurriculum = CurriculumNode(
               id: 'math.e4.s2.a05',
               name: '小数のたし算とひき算',
               level: CurriculumLevel.unit,
-              prerequisites: ['math.e4.s1.a03'],
               children: [
                 CurriculumNode(
                   id: 'math.e4.s2.a05.main',
@@ -728,7 +724,6 @@ const mathCurriculum = CurriculumNode(
               id: 'math.e5.s2.a05',
               name: '倍数と約数',
               level: CurriculumLevel.unit,
-              prerequisites: ['math.e5.s1.a03'],
               children: [
                 CurriculumNode(
                   id: 'math.e5.s2.a05.main',
@@ -892,7 +887,6 @@ const mathCurriculum = CurriculumNode(
               id: 'math.e6.s2.a05',
               name: '比',
               level: CurriculumLevel.unit,
-              prerequisites: ['math.e6.s1.a03'],
               children: [
                 CurriculumNode(
                   id: 'math.e6.s2.a05.main',
@@ -1056,7 +1050,6 @@ const mathCurriculum = CurriculumNode(
               id: 'math.j1.s2.a06',
               name: '比例と反比例',
               level: CurriculumLevel.unit,
-              prerequisites: ['math.j1.s1.a05'],
               children: [
                 CurriculumNode(
                   id: 'math.j1.s2.a06.main',
@@ -1194,7 +1187,6 @@ const mathCurriculum = CurriculumNode(
               id: 'math.j2.s2.a05',
               name: '平行と合同',
               level: CurriculumLevel.unit,
-              prerequisites: ['math.j2.s1.a03'],
               children: [
                 CurriculumNode(
                   id: 'math.j2.s2.a05.main',
@@ -1332,7 +1324,6 @@ const mathCurriculum = CurriculumNode(
               id: 'math.j3.s2.a05',
               name: '関数 y = ax²',
               level: CurriculumLevel.unit,
-              prerequisites: ['math.j3.s1.a03'],
               children: [
                 CurriculumNode(
                   id: 'math.j3.s2.a05.main',

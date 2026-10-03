@@ -158,18 +158,19 @@ void main() {
   });
 
   group('ステージ・ワールドの解放', () {
-    test('最初は英語ワールドのステージ1だけ挑戦できる', () {
+    test('最初は英語の国の各学年の道のエリア1だけ挑戦できる', () {
       const p = RpgProgress.initial;
       expect(Progression.isStageUnlocked(p, world, stage1), isTrue);
-      for (final s in world.stages.skip(1)) {
-        expect(Progression.isStageUnlocked(p, world, s), isFalse);
+      for (final s in world.stages) {
+        expect(Progression.isStageUnlocked(p, world, s), s.areaNo == 1,
+            reason: s.id);
       }
     });
 
     test('英語と番外編は無料、ほかの公開済みワールドは購入後に遊べる', () {
       for (final w in RpgCatalog.worlds) {
         if (w.isFree) {
-          // 英語と番外編（音楽の虹）は無料
+          // 英語の国は無料
           expect(Progression.isWorldPlayable(RpgProgress.initial, w), isTrue);
         } else if (!w.isComingSoon) {
           expect(Progression.isWorldPlayable(RpgProgress.initial, w), isFalse);
@@ -183,17 +184,19 @@ void main() {
       }
     });
 
-    test('英語ワールドは20エリアで、敵がだんだん強くなる', () {
-      expect(world.stages.length, 20);
-      for (var i = 1; i < world.stages.length; i++) {
-        final prev = world.stages[i - 1].enemy;
-        final cur = world.stages[i].enemy;
-        expect(cur.attack, greaterThan(prev.attack));
-        // 装甲のある敵は、そのぶん HP が前の敵より低いこともある
-        if (cur.armor == 0 || prev.armor > 0) {
-          expect(cur.maxHp, greaterThan(prev.maxHp));
+    test('どの学年の道も、エリアが進むほど敵がだんだん強くなる', () {
+      for (final w in RpgCatalog.worlds) {
+        for (final r in w.routes) {
+          final stages = w.stages.where((s) => s.branch == r.id).toList();
+          expect(stages.length, greaterThanOrEqualTo(8), reason: r.id);
+          for (var i = 1; i < stages.length; i++) {
+            final prev = stages[i - 1].enemy;
+            final cur = stages[i].enemy;
+            expect(cur.attack, greaterThan(prev.attack));
+            expect(stages[i].areaNo, i + 1);
+          }
+          expect(stages.last.isBoss, isTrue, reason: '${w.id}/${r.id}');
         }
-        expect(world.stages[i].order, i + 1);
       }
     });
   });

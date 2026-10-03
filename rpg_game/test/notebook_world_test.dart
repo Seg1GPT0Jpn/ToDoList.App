@@ -7,14 +7,14 @@ void main() {
   test('紙の種類：国と地形で変わり、いろいろな紙が使われる', () {
     expect(NotebookWorld.paperOf(Terrain.library, 'japanese'),
         PaperStyle.manuscript);
-    expect(NotebookWorld.paperOf(Terrain.meadow, 'music'), PaperStyle.staff);
     expect(NotebookWorld.paperOf(Terrain.cave, 'math'), PaperStyle.chalkboard);
     expect(NotebookWorld.paperOf(Terrain.ocean, 'english'), PaperStyle.grid);
     final used = {
       for (final w in RpgCatalog.worlds)
         for (final t in Terrain.values) NotebookWorld.paperOf(t, w.id),
     };
-    expect(used, containsAll(PaperStyle.values));
+    // 五線譜は音楽の国（小中学生版にはない）だけで使う
+    expect(used, containsAll(PaperStyle.values.where((p) => p != PaperStyle.staff)));
     for (final w in RpgCatalog.worlds) {
       expect(NotebookWorld.scribblesOf(w.id), isNotEmpty);
     }

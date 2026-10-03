@@ -171,73 +171,73 @@ void main() {
 
     test('微分の応用が苦手で、2次関数のグラフも弱点なら、そこが根本の原因', () {
       final record = LearningRecord(stats: {
-        ...answered('math.m2.calculus.apply.extremum', 6, correct: 0),
-        ...answered('math.m2.calculus.diff.derivative', 6, correct: 2),
-        ...answered('math.m1.quad.graph.vertex', 6, correct: 0),
-        ...answered('math.m1.numexpr.poly.expand', 6, correct: 2),
+        ...answered('math.j1.s1.a05.main', 6, correct: 0),
+        ...answered('math.j1.s1.a03.main', 6, correct: 2),
+        ...answered('math.j1.s1.a02.main', 6, correct: 0),
+        ...answered('math.j1.s1.a01.main', 6, correct: 2),
       });
       final progress = CurriculumProgress.of(record);
-      final route = LearningRoute.trace('math.m2.calculus.apply', progress);
+      final route = LearningRoute.trace('math.j1.s1.a05', progress);
       final ids = route.steps.map((s) => s.node.id).toList();
-      expect(ids.last, 'math.m2.calculus.apply');
+      expect(ids.last, 'math.j1.s1.a05');
       expect(
           ids,
           containsAll([
-            'math.m2.calculus.diff',
-            'math.m1.quad.graph',
-            'math.m1.numexpr.poly'
+            'math.j1.s1.a03',
+            'math.j1.s1.a02',
+            'math.j1.s1.a01'
           ]));
       // 前提ほど前にくる
-      expect(ids.indexOf('math.m1.numexpr.poly'),
-          lessThan(ids.indexOf('math.m1.quad.graph')));
-      expect(ids.indexOf('math.m1.quad.graph'),
-          lessThan(ids.indexOf('math.m2.calculus.diff')));
-      expect(route.rootCause!.node.id, 'math.m1.quad.graph');
-      expect(route.nextStep.node.id, 'math.m1.quad.graph');
+      expect(ids.indexOf('math.j1.s1.a01'),
+          lessThan(ids.indexOf('math.j1.s1.a02')));
+      expect(ids.indexOf('math.j1.s1.a02'),
+          lessThan(ids.indexOf('math.j1.s1.a03')));
+      expect(route.rootCause!.node.id, 'math.j1.s1.a02');
+      expect(route.nextStep.node.id, 'math.j1.s1.a02');
       expect(route.target.status, RouteStatus.weak);
     });
 
     test('前提がすべてできていれば、目標そのものを学ぶ', () {
       final record = LearningRecord(stats: {
-        ...answered('math.m2.calculus.apply.extremum', 6, correct: 0),
-        ...answered('math.m2.calculus.diff.derivative', 6, correct: 2),
-        ...answered('math.m1.quad.graph.vertex', 6, correct: 2),
-        ...answered('math.m1.numexpr.poly.expand', 6, correct: 2),
+        ...answered('math.j1.s1.a05.main', 6, correct: 0),
+        ...answered('math.j1.s1.a03.main', 6, correct: 2),
+        ...answered('math.j1.s1.a02.main', 6, correct: 2),
+        ...answered('math.j1.s1.a01.main', 6, correct: 2),
       });
       final route = LearningRoute.trace(
-          'math.m2.calculus.apply', CurriculumProgress.of(record));
+          'math.j1.s1.a05', CurriculumProgress.of(record));
       expect(route.rootCause, isNull);
-      expect(route.nextStep.node.id, 'math.m2.calculus.apply');
+      expect(route.nextStep.node.id, 'math.j1.s1.a05');
       final weak = LearningRoute.forWeakUnits(CurriculumProgress.of(record),
           under: 'math');
       expect(weak.map((r) => r.target.node.id),
-          contains('math.m2.calculus.apply'));
+          contains('math.j1.s1.a05'));
     });
   });
 
   group('複合弱点', () {
     test('土台の弱点と、組み合わせの弱点を区別する', () {
       final record = LearningRecord(stats: {
-        ...answered('math.m2.calculus.diff.derivative', 6, correct: 2),
-        ...answered('math.m1.quad.graph.vertex', 6, correct: 0),
+        ...answered('math.j1.s1.a03.main', 6, correct: 2),
+        ...answered('math.j1.s1.a02.main', 6, correct: 0),
       });
       final progress = CurriculumProgress.of(record);
       final qs = [
-        choice('q1', 'math.m2.calculus.apply.extremum',
-            combines: ['math.m1.quad.graph']),
-        choice('q2', 'math.m2.calculus.apply.extremum',
-            combines: ['math.m2.calculus.diff']),
-        choice('q3', 'math.m2.calculus.apply.extremum',
-            combines: ['math.m2.calculus.diff']),
+        choice('q1', 'math.j1.s1.a05.main',
+            combines: ['math.j1.s1.a02']),
+        choice('q2', 'math.j1.s1.a05.main',
+            combines: ['math.j1.s1.a03']),
+        choice('q3', 'math.j1.s1.a05.main',
+            combines: ['math.j1.s1.a03']),
       ];
       final found =
           CompositeWeakness.find(qs, {'q1': 0, 'q2': 0.2, 'q3': 1}, progress);
       expect(found, hasLength(2));
-      final graph = found.firstWhere((c) => c.combined == 'math.m1.quad.graph');
+      final graph = found.firstWhere((c) => c.combined == 'math.j1.s1.a02');
       expect(graph.foundationWeak, isTrue);
       expect(graph.advice, contains('先にこちら'));
       final diff =
-          found.firstWhere((c) => c.combined == 'math.m2.calculus.diff');
+          found.firstWhere((c) => c.combined == 'math.j1.s1.a03');
       expect(diff.tried, 2);
       expect(diff.missed, 1);
       expect(diff.foundationWeak, isFalse);
@@ -249,12 +249,12 @@ void main() {
     final sets = {
       'math_a': [
         for (var i = 0; i < 10; i++)
-          choice('a$i', 'math.m1.quad.graph.vertex', tl: 1),
+          choice('a$i', 'math.j1.s1.a02.main', tl: 1),
         for (var i = 0; i < 10; i++)
-          choice('b$i', 'math.m1.numexpr.poly.expand', tl: 3),
+          choice('b$i', 'math.j1.s2.a07.main', tl: 3),
         for (var i = 0; i < 4; i++)
-          choice('c$i', 'math.m2.calculus.apply.extremum',
-              tl: 6, combines: ['math.m2.calculus.diff']),
+          choice('c$i', 'math.j2.s1.a03.main',
+              tl: 6, combines: ['math.j1.s1.a03']),
       ],
     };
 
@@ -295,21 +295,21 @@ void main() {
       expect(r.byThinking.map((t) => t.label),
           containsAll(['知識確認', '標準適用', '難関大学']));
       expect(r.byField.length, 3);
-      expect(r.weakestField!.label, contains('微分'));
+      expect(r.weakestField!.label, contains('一次関数'));
       final comp = r.composites(CurriculumProgress.of(LearningRecord.empty));
-      expect(comp.single.combined, 'math.m2.calculus.diff');
+      expect(comp.single.combined, 'math.j1.s1.a03');
       expect(comp.single.missed, 2);
     });
 
-    test('候補の問題セットには追加問題がふくまれる', () {
+    test('候補の問題セットは、その教科のエリアの問題セットから選ぶ', () {
       final ids = ExamPaper.candidateSets('math', seed: 5);
-      expect(ids, contains('math_v4_01'));
-      expect(ids, contains('math_formats_01'));
+      expect(ids, hasLength(12));
+      expect(ids.every((id) => id.startsWith('math_')), isTrue);
       expect(ids.toSet(), hasLength(ids.length));
     });
 
     test('ExamGrader', () {
-      final q = choice('z', 'math.m1.quad.graph.vertex');
+      final q = choice('z', 'math.j1.s1.a02.main');
       expect(ExamGrader.choice(q, 0).correct, isTrue);
       expect(ExamGrader.choice(q, 1).credit, 0);
     });

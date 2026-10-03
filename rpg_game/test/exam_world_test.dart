@@ -6,16 +6,21 @@ void main() {
     final math = RpgCatalog.world('math');
 
     test('試験範囲の文章から、合うエリアを探す（全角・漢数字のゆれも許す）', () {
-      final got = ExamWorlds.match(math, '二次関数、三角比');
+      final got = ExamWorlds.match(math, '一次方程式、三平方の定理');
       expect(got, isNotEmpty);
       for (final s in got) {
         final t = ExamWorlds.searchText(math, s);
-        expect(t.contains('2次関数') || t.contains('三角比'), isTrue, reason: s.id);
+        // 漢数字は算用数字にそろえて探す（一次 → 1次）
+        expect(
+            t.contains(ExamWorlds.normalize('一次方程式')) ||
+                t.contains('三平方の定理'),
+            isTrue,
+            reason: s.id);
       }
-      expect(got.any((s) => s.grammarTheme.startsWith('三角比')), isTrue);
-      expect(got.any((s) => s.grammarTheme.contains('2次関数')), isTrue);
-      expect(ExamWorlds.match(math, '２次関数').length,
-          ExamWorlds.match(math, '2次関数').length);
+      expect(got.any((s) => s.grammarTheme.startsWith('三平方')), isTrue);
+      expect(got.any((s) => s.grammarTheme.contains('一次方程式')), isTrue);
+      expect(ExamWorlds.match(math, '３けた').length,
+          ExamWorlds.match(math, '3けた').length);
     });
 
     test('1文字のキーワードや空の入力では何も選ばない', () {
@@ -24,23 +29,23 @@ void main() {
     });
 
     test('ほかの教科でも探せる', () {
-      expect(ExamWorlds.match(RpgCatalog.world('japanese'), '助動詞'), isNotEmpty);
-      expect(ExamWorlds.match(RpgCatalog.world('social'), '日本史'), isNotEmpty);
-      expect(ExamWorlds.match(RpgCatalog.world('science'), '化学'), isNotEmpty);
+      expect(ExamWorlds.match(RpgCatalog.world('japanese'), '敬語'), isNotEmpty);
+      expect(ExamWorlds.match(RpgCatalog.world('social'), '江戸'), isNotEmpty);
+      expect(ExamWorlds.match(RpgCatalog.world('science'), '電流'), isNotEmpty);
       expect(
-          ExamWorlds.match(RpgCatalog.world(RpgCatalog.englishWorldId), '関係詞'),
+          ExamWorlds.match(RpgCatalog.world(RpgCatalog.englishWorldId), '関係代名詞'),
           isNotEmpty);
     });
 
     test('選んだエリア＋試験本番のボスで1本道になり、ボスは範囲全部から出題する', () {
-      final picked = ExamWorlds.match(math, '三角比');
+      final picked = ExamWorlds.match(math, '三平方の定理');
       final plan = ExamWorldPlan(
         id: 't1',
         title: '中間テスト',
         worldId: 'math',
         stageIds: [for (final s in picked) s.id],
         createdAt: DateTime(2026),
-        rangeText: '三角比',
+        rangeText: '三平方の定理',
       );
       final stages = ExamWorlds.build(plan);
       expect(stages.length, picked.length + 1);
@@ -73,17 +78,16 @@ void main() {
       expect(back.completed, isFalse);
     });
 
-    test('6教科のエリアを1つのワールドにまとめられる', () {
+    test('5教科のエリアを1つのワールドにまとめられる', () {
       final picked = ExamWorlds.matchAll({
-        'math': '2次関数',
-        RpgCatalog.englishWorldId: '関係詞',
-        'japanese': '助動詞',
-        'science': '化学',
+        'math': '一次方程式',
+        RpgCatalog.englishWorldId: '関係代名詞',
+        'japanese': '敬語',
+        'science': '電流',
         'social': '明治維新',
-        'information': 'ネットワーク',
       });
       final worlds = {for (final s in picked) s.worldId};
-      expect(worlds.length, 6);
+      expect(worlds.length, 5);
       final plan = ExamWorldPlan(
         id: 'mix',
         title: '期末テスト',
@@ -93,7 +97,7 @@ void main() {
         examDate: DateTime(2026, 10, 15),
       );
       expect(plan.worldIds.length, greaterThanOrEqualTo(5));
-      expect(plan.subjectsLabel, contains('数学'));
+      expect(plan.subjectsLabel, contains('算数・数学'));
       final stages = ExamWorlds.build(plan, level: 10);
       expect(stages.length, plan.stageIds.length + 1);
       // 各エリアはもとの教科のワールドのまま（バトルの見た目・宿の授業に使う）
@@ -118,7 +122,7 @@ void main() {
         id: 'g',
         title: 't',
         worldId: 'math',
-        stageIds: const ['math_m1_01'],
+        stageIds: const ['math_j1_01'],
         createdAt: DateTime(2026),
       );
       expect(plan.addGauge(30).addGauge(90).gauge, ExamWorlds.gaugeMax);
@@ -129,11 +133,11 @@ void main() {
       expect(back.openedChests, {'exam_g_chest_1'});
     });
 
-    test('6教科から60エリアまで集められ、後半の敵も強くなりすぎない', () {
+    test('5教科から60エリアまで集められ、後半の敵も強くなりすぎない', () {
       expect(ExamWorlds.maxAreas, 60);
       final all = [
         for (final w in RpgCatalog.worlds)
-          ...w.stages.where((s) => !s.isBoss).take(10),
+          ...w.stages.where((s) => !s.isBoss).take(12),
       ];
       final plan = ExamWorldPlan(
         id: 'big',
@@ -148,7 +152,7 @@ void main() {
       final first = stages.first.enemy.maxHp;
       final last60 = stages[59].enemy.maxHp;
       expect(last60, lessThanOrEqualTo(first * 2));
-      expect(plan.worldIds.length, 6);
+      expect(plan.worldIds.length, 5);
     });
   });
 }

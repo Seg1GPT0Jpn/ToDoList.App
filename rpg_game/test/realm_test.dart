@@ -73,7 +73,7 @@ void main() {
       for (final level in [1, 10, 30, 50]) {
         final p = PlayerStats.forLevel(level);
         final s = SeaBattle.stage(
-          id: 'english_stage_01',
+          id: 'english_j1_01',
           title: '文型',
           worldId: 'english',
           level: level,
@@ -85,7 +85,7 @@ void main() {
         expect(perMiss, lessThan(p.maxHp), reason: 'Lv$level');
         expect(s.enemy.maxHp / p.attack, StudyRealm.sky.hitsToWin);
         expect(s.timeLimitSeconds, 10);
-        expect(s.region, '模擬試験の空');
+        expect(s.region, '高校入試の空');
         expect(VoyageMonsters.looks, contains(s.enemy.look));
       }
     });

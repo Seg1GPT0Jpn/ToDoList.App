@@ -98,7 +98,6 @@ const englishCurriculum = CurriculumNode(
               id: 'english.e34.s2.a06',
               name: '動物',
               level: CurriculumLevel.unit,
-              prerequisites: ['english.e34.s1.a04'],
               children: [
                 CurriculumNode(
                   id: 'english.e34.s2.a06.main',
@@ -236,7 +235,6 @@ const englishCurriculum = CurriculumNode(
               id: 'english.e5.s2.a05',
               name: '時間割と教科',
               level: CurriculumLevel.unit,
-              prerequisites: ['english.e5.s1.a03'],
               children: [
                 CurriculumNode(
                   id: 'english.e5.s2.a05.main',
@@ -361,7 +359,6 @@ const englishCurriculum = CurriculumNode(
               id: 'english.e6.s2.a05',
               name: '行ってみたい国',
               level: CurriculumLevel.unit,
-              prerequisites: ['english.e6.s1.a03'],
               children: [
                 CurriculumNode(
                   id: 'english.e6.s2.a05.main',
@@ -499,7 +496,6 @@ const englishCurriculum = CurriculumNode(
               id: 'english.j1.s2.a06',
               name: '疑問詞',
               level: CurriculumLevel.unit,
-              prerequisites: ['english.j1.s1.a04'],
               children: [
                 CurriculumNode(
                   id: 'english.j1.s2.a06.main',
@@ -650,7 +646,6 @@ const englishCurriculum = CurriculumNode(
               id: 'english.j2.s2.a06',
               name: '接続詞',
               level: CurriculumLevel.unit,
-              prerequisites: ['english.j2.s1.a04'],
               children: [
                 CurriculumNode(
                   id: 'english.j2.s2.a06.main',
@@ -801,7 +796,6 @@ const englishCurriculum = CurriculumNode(
               id: 'english.j3.s2.a06',
               name: '分詞の後置修飾',
               level: CurriculumLevel.unit,
-              prerequisites: ['english.j3.s1.a04'],
               children: [
                 CurriculumNode(
                   id: 'english.j3.s2.a06.main',

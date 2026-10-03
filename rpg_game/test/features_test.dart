@@ -167,7 +167,8 @@ void main() {
 
   group('進行：亡霊・仲間・宝箱・泉', () {
     final world = RpgCatalog.world(RpgCatalog.englishWorldId);
-    final area5 = world.stages[4];
+    // ルートの最初のボス（仲間が捕まっている）
+    final area5 = world.stages.firstWhere((s) => s.captiveCompanionId != null);
 
     BattleSummary play(bool win, {int misses = 1}) {
       final b = battle(
@@ -220,12 +221,13 @@ void main() {
     });
 
     test('初クリアでカードがもらえる', () {
+      final rewarded = world.stages.firstWhere((s) => s.rewardCardId != null);
       final r = Progression.applyBattle(
           progress: RpgProgress.initial,
           world: world,
-          stage: area5,
+          stage: rewarded,
           summary: play(true));
-      expect(r.newCard?.id, area5.rewardCardId);
+      expect(r.newCard?.id, rewarded.rewardCardId);
       expect(r.progress.deck.length, RpgProgress.starterDeck.length + 1);
     });
 
@@ -261,11 +263,16 @@ void main() {
     });
   });
 
-  test('四天王とラスボスには装甲、エリア1〜15には弱点がある', () {
-    for (final s in RpgCatalog.englishStages) {
-      if (s.order <= 15) expect(s.enemy.weakness, isNotNull, reason: s.name);
-      if ([16, 17, 20].contains(s.order)) expect(s.enemy.armor, greaterThan(0));
-      expect(s.enemy.introLine, isNotEmpty);
+  test('ボスには装甲と仲間、ふつうのエリアには弱点がある', () {
+    for (final w in RpgCatalog.worlds) {
+      for (final s in w.stages) {
+        expect(s.enemy.weakness, isNotNull, reason: s.name);
+        expect(s.enemy.introLine, isNotEmpty);
+        if (s.isBoss) {
+          expect(s.enemy.armor, greaterThan(0), reason: s.name);
+          expect(s.captiveCompanionId, isNotNull, reason: s.name);
+        }
+      }
     }
   });
 

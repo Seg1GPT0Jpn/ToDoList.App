@@ -85,7 +85,6 @@ const scienceCurriculum = CurriculumNode(
               id: 'science.e3.s2.a05',
               name: '風とゴムの力',
               level: CurriculumLevel.unit,
-              prerequisites: ['science.e3.s1.a03'],
               children: [
                 CurriculumNode(
                   id: 'science.e3.s2.a05.main',
@@ -223,7 +222,6 @@ const scienceCurriculum = CurriculumNode(
               id: 'science.e4.s2.a05',
               name: '電流のはたらき',
               level: CurriculumLevel.unit,
-              prerequisites: ['science.e4.s1.a03'],
               children: [
                 CurriculumNode(
                   id: 'science.e4.s2.a05.main',
@@ -348,7 +346,6 @@ const scienceCurriculum = CurriculumNode(
               id: 'science.e5.s2.a05',
               name: '天気の変化',
               level: CurriculumLevel.unit,
-              prerequisites: ['science.e5.s1.a03'],
               children: [
                 CurriculumNode(
                   id: 'science.e5.s2.a05.main',
@@ -486,7 +483,6 @@ const scienceCurriculum = CurriculumNode(
               id: 'science.e6.s2.a05',
               name: '月と太陽・大地のつくり',
               level: CurriculumLevel.unit,
-              prerequisites: ['science.e6.s1.a03'],
               children: [
                 CurriculumNode(
                   id: 'science.e6.s2.a05.main',
@@ -611,7 +607,6 @@ const scienceCurriculum = CurriculumNode(
               id: 'science.j1.s2.a05',
               name: '光と音',
               level: CurriculumLevel.unit,
-              prerequisites: ['science.j1.s1.a03'],
               children: [
                 CurriculumNode(
                   id: 'science.j1.s2.a05.main',
@@ -736,7 +731,6 @@ const scienceCurriculum = CurriculumNode(
               id: 'science.j2.s2.a05',
               name: '電流と電圧',
               level: CurriculumLevel.unit,
-              prerequisites: ['science.j2.s1.a03'],
               children: [
                 CurriculumNode(
                   id: 'science.j2.s2.a05.main',
@@ -861,7 +855,6 @@ const scienceCurriculum = CurriculumNode(
               id: 'science.j3.s2.a05',
               name: '物体の運動',
               level: CurriculumLevel.unit,
-              prerequisites: ['science.j3.s1.a03'],
               children: [
                 CurriculumNode(
                   id: 'science.j3.s2.a05.main',

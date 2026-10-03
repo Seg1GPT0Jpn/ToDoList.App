@@ -3,9 +3,9 @@ import 'package:test/test.dart';
 
 void main() {
   group('物語の場面', () {
-    test('序章・6つの国（導入・ボス前・欠片）・終章の場面がある', () {
+    test('序章・5つの国（導入・ボス前・欠片）・終章の場面がある', () {
       final all = StoryScenes.all;
-      expect(all.length, 1 + 6 * 3 + 2);
+      expect(all.length, 1 + 5 * 3 + 2);
       expect({for (final s in all) s.id}.length, all.length,
           reason: 'ID は重ならない');
       for (final s in all) {
@@ -13,7 +13,7 @@ void main() {
         expect(s.title, isNotEmpty);
       }
       for (final w in Story.worlds) {
-        expect(StoryScenes.chapterOf(w.worldId), inInclusiveRange(1, 6));
+        expect(StoryScenes.chapterOf(w.worldId), inInclusiveRange(1, 5));
         expect(StoryScenes.intro(w.worldId).chapter,
             StoryScenes.chapterOf(w.worldId));
       }
@@ -46,13 +46,18 @@ void main() {
 
     test('最後のボスの前に一度だけ場面が出て、欠片を取ると欠片の場面が出る', () {
       var p = RpgProgress.initial;
-      final finalStage = Story.finalsOf('english').single;
-      expect(StoryScenes.beforeFinalBoss(p, 'english', 'english_01'), isNull);
+      final finals = Story.finalsOf('english');
+      final finalStage = finals.first;
+      expect(
+          StoryScenes.beforeFinalBoss(p, 'english', 'english_j1_01'), isNull);
       final boss = StoryScenes.beforeFinalBoss(p, 'english', finalStage.id);
       expect(boss?.id, 'english:boss');
       p = StoryScenes.markSeen(p, boss!);
       expect(StoryScenes.beforeFinalBoss(p, 'english', finalStage.id), isNull);
-      p = p.copyWith(clearedStageIds: {...p.clearedStageIds, finalStage.id});
+      p = p.copyWith(clearedStageIds: {
+        ...p.clearedStageIds,
+        for (final s in finals) s.id,
+      });
       expect(StoryScenes.onEnterWorld(p, 'english').map((s) => s.id),
           contains('english:clear'));
     });

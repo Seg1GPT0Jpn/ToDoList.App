@@ -206,10 +206,13 @@ void main() {
 
   test('ボスのルール：強敵・ボス・ラスボス・試験本番', () {
     final english = RpgCatalog.world(RpgCatalog.englishWorldId).stages;
-    expect(BossRules.of(english.first), BossRule.none);
-    expect(BossRules.of(Elites.of(english.first)), BossRule.chain3);
-    expect(BossRules.of(english[15]), BossRule.trial);
-    expect(BossRules.of(english.last), BossRule.finale);
+    final route = english.where((s) => s.branch == 'j1').toList();
+    final bosses = route.where((s) => s.isBoss).toList();
+    expect(BossRules.of(route.first), BossRule.none);
+    expect(BossRules.of(Elites.of(route.first)), BossRule.chain3);
+    // ルートの途中のボスは試験（5問中4問）、ルートの最後のボスは最終決戦
+    expect(BossRules.of(bosses.first), BossRule.trial);
+    expect(BossRules.of(route.last), BossRule.finale);
   });
 
   test('カードには種類があり、デッキは10枚', () {

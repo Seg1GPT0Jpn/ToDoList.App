@@ -14,10 +14,10 @@ WordList loadWords(String id) => WordList.fromJson(
 
 void main() {
   group('定期テストの海：文法単元', () {
-    test('高1〜高3の単元がそろっている', () {
-      expect(SeaCatalog.unitsOf(1).length, 12);
-      expect(SeaCatalog.unitsOf(2).length, 12);
-      expect(SeaCatalog.unitsOf(3).length, 9);
+    test('中1〜中3の単元がそろっている', () {
+      expect(SeaCatalog.unitsOf(1).length, 8);
+      expect(SeaCatalog.unitsOf(2).length, 8);
+      expect(SeaCatalog.unitsOf(3).length, 7);
     });
 
     for (final unit in SeaCatalog.units) {
@@ -28,7 +28,10 @@ void main() {
         expect(set.questions.length, greaterThanOrEqualTo(6));
         for (final q in set.questions) {
           expect(q.explanation, isNotEmpty, reason: q.id);
-          expect(q.sentence, isNotNull, reason: q.id);
+          if (q.category == QuestionCategory.usage &&
+              q.prompt.contains('(   )')) {
+            expect(q.sentence, contains('(   )'), reason: q.id);
+          }
         }
         expect(unit.topics, isNotEmpty);
       });
@@ -38,7 +41,9 @@ void main() {
       final all = [
         for (final u in SeaCatalog.units) ...loadSea(u.id).questions,
       ];
-      final keys = all.map((q) => '${q.prompt}|${q.sentence}').toList();
+      final keys = all
+          .map((q) => '${q.prompt}|${q.sentence}|${q.choices[q.answerIndex]}')
+          .toList();
       expect(keys.toSet().length, keys.length);
     });
   });
@@ -49,9 +54,7 @@ void main() {
         final list = loadWords(book.id);
         expect(list.listId, book.id);
         expect(list.origin, QuestionOrigin.original);
-        final tsuzutan =
-            Tsuzutan.lists.where((l) => l.id == book.id).firstOrNull;
-        expect(list.words.length, tsuzutan?.count ?? 40);
+        expect(list.words.length, greaterThanOrEqualTo(40));
         for (final dir in WordQuizDirection.values) {
           final set =
               WordQuizBuilder(random: Random(1)).build(list, direction: dir);
@@ -62,42 +65,6 @@ void main() {
         }
       });
     }
-  });
-
-  group('つづ単（公開版）', () {
-    final all = [for (final l in Tsuzutan.lists) loadWords(l.id)];
-    test('全語に意味・例文・訳・豆知識があり、語の重複がない', () {
-      final terms = <String>{};
-      for (final list in all) {
-        for (final w in list.words) {
-          expect(terms.add(w.term.toLowerCase()), isTrue, reason: w.term);
-          expect(w.meaning, isNotEmpty, reason: w.term);
-          expect(w.example, isNotEmpty, reason: w.term);
-          expect(w.exampleJa, isNotEmpty, reason: w.term);
-          expect(w.note, isNotEmpty, reason: w.term);
-        }
-      }
-      expect(terms.length, 5584);
-    });
-
-    test('一覧（tsuzutan_lists.g.dart）が単語ファイルとそろっている', () {
-      for (var i = 0; i < all.length; i++) {
-        expect(all[i].words.length, Tsuzutan.lists[i].count);
-        expect(all[i].words.first.term, Tsuzutan.lists[i].first);
-      }
-    });
-
-    test('RPG のバトルに混ぜる単語問題が作れて、単元が付く', () {
-      final sets = Tsuzutan.battleSets(all.take(2).toList(),
-          count: 10, random: Random(3));
-      final qs = [for (final s in sets) ...s.questions];
-      expect(qs, isNotEmpty);
-      for (final q in qs) {
-        expect(q.choices.toSet().length, 4);
-        expect(q.unit, startsWith('english.eng.vocab.'));
-        expect(q.explanation, contains('💡'));
-      }
-    });
   });
 
   group('貼り付けた単語リストの読み取り', () {
@@ -185,10 +152,23 @@ void main() {
   });
 
   group('宿の授業', () {
-    test('英語ワールドの全ステージに授業がある', () {
-      for (final stage in RpgCatalog.englishStages) {
-        final lesson = InnLessons.forStage(stage.id);
-        expect(lesson.points.length, greaterThanOrEqualTo(3));
+    test('書いた授業は実在するステージのもので、要点が1つ以上ある', () {
+      expect(JuniorLessons.all, isNotEmpty);
+      for (final lesson in JuniorLessons.all) {
+        expect(RpgCatalog.stage(lesson.stageId).id, lesson.stageId);
+        expect(lesson.points, isNotEmpty, reason: lesson.stageId);
+        expect(InnLessons.forStage(lesson.stageId), same(lesson));
+      }
+    });
+
+    test('授業を書いていないステージは、要点なし（アプリが問題から作る）', () {
+      final written = {for (final l in JuniorLessons.all) l.stageId};
+      for (final w in RpgCatalog.worlds) {
+        for (final s in w.stages.where((s) => !written.contains(s.id))) {
+          final lesson = InnLessons.forStage(s.id);
+          expect(lesson.points, isEmpty);
+          expect(lesson.title, s.grammarTheme);
+        }
       }
     });
 

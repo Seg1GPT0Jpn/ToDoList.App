@@ -205,30 +205,4 @@ void main() {
       expect(b2.combo, 0);
     });
   });
-
-  test('出題形式の見本問題：各教科で4種類以上の形式・解説つき・学習体系に固定', () {
-    for (final id in [
-      'math_formats_01',
-      'english_formats_01',
-      'science_formats_01',
-      'social_formats_01',
-      'japanese_formats_01',
-      'information_formats_01',
-    ]) {
-      final set = loadSet(id);
-      final formats = {for (final q in set.questions) q.format};
-      expect(formats.length, greaterThanOrEqualTo(4), reason: id);
-      for (final q in set.questions) {
-        expect(q.explanation, isNotEmpty, reason: q.id);
-        expect(q.unitLocked, isTrue, reason: q.id);
-        expect(q.thinkingLevel, isNotNull, reason: q.id);
-      }
-    }
-    // 最難関レベルの記述（証明）の見本
-    final hard = loadSet('math_formats_01')
-        .questions
-        .firstWhere((q) => q.thinkingLevel == ThinkingLevel.problemSolving);
-    expect(hard.format, QuestionFormat.written);
-    expect(hard.combines, isNotEmpty);
-  });
 }

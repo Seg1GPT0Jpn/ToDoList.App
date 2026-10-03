@@ -85,7 +85,6 @@ const socialCurriculum = CurriculumNode(
               id: 'social.e3.s2.a05',
               name: '火事からくらしを守る',
               level: CurriculumLevel.unit,
-              prerequisites: ['social.e3.s1.a03'],
               children: [
                 CurriculumNode(
                   id: 'social.e3.s2.a05.main',
@@ -210,7 +209,6 @@ const socialCurriculum = CurriculumNode(
               id: 'social.e4.s2.a05',
               name: '自然災害からくらしを守る',
               level: CurriculumLevel.unit,
-              prerequisites: ['social.e4.s1.a03'],
               children: [
                 CurriculumNode(
                   id: 'social.e4.s2.a05.main',
@@ -335,7 +333,6 @@ const socialCurriculum = CurriculumNode(
               id: 'social.e5.s2.a05',
               name: '日本の工業',
               level: CurriculumLevel.unit,
-              prerequisites: ['social.e5.s1.a03'],
               children: [
                 CurriculumNode(
                   id: 'social.e5.s2.a05.main',
@@ -460,7 +457,6 @@ const socialCurriculum = CurriculumNode(
               id: 'social.e6.s2.a05',
               name: 'むかしの日本（縄文〜平安）',
               level: CurriculumLevel.unit,
-              prerequisites: ['social.e6.s1.a03'],
               children: [
                 CurriculumNode(
                   id: 'social.e6.s2.a05.main',
@@ -598,7 +594,6 @@ const socialCurriculum = CurriculumNode(
               id: 'social.geo.s2.a06',
               name: '日本の姿と自然環境',
               level: CurriculumLevel.unit,
-              prerequisites: ['social.geo.s1.a04'],
               children: [
                 CurriculumNode(
                   id: 'social.geo.s2.a06.main',
@@ -749,7 +744,6 @@ const socialCurriculum = CurriculumNode(
               id: 'social.hist.s2.a06',
               name: '欧米の近代化と開国',
               level: CurriculumLevel.unit,
-              prerequisites: ['social.hist.s1.a04'],
               children: [
                 CurriculumNode(
                   id: 'social.hist.s2.a06.main',
@@ -900,7 +894,6 @@ const socialCurriculum = CurriculumNode(
               id: 'social.civ.s2.a06',
               name: '消費生活と市場経済',
               level: CurriculumLevel.unit,
-              prerequisites: ['social.civ.s1.a04'],
               children: [
                 CurriculumNode(
                   id: 'social.civ.s2.a06.main',

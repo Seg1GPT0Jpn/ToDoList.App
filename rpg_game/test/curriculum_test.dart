@@ -18,18 +18,10 @@ Iterable<File> questionFiles() => Directory('assets/questions')
 
 void main() {
   group('学習体系（教科→科目→分野→単元→小単元）', () {
-    test('7教科・各階層が親より1段深い', () {
+    test('5教科・各階層が親より1段深い', () {
       expect(
         Curriculum.subjects.map((s) => s.id),
-        [
-          'english',
-          'science',
-          'social',
-          'japanese',
-          'math',
-          'information',
-          'music'
-        ],
+        ['english', 'math', 'japanese', 'science', 'social'],
       );
       for (final n in Curriculum.all) {
         for (final c in n.children) {
@@ -43,29 +35,29 @@ void main() {
       }
     });
 
-    test('科目は指示書のとおり（英語1・数学6・理科4・国語3・社会5・情報1）', () {
+    test('科目は学年の道（小1〜中3）', () {
       List<String> courses(String s) =>
           [for (final c in Curriculum.node(s).children) c.name];
-      expect(courses('english'), ['英語']);
-      expect(courses('math'), ['数学Ⅰ', '数学A', '数学Ⅱ', '数学B', '数学C', '数学Ⅲ']);
-      expect(courses('science'), ['物理', '化学', '生物', '地学']);
-      expect(courses('japanese'), ['現代文', '古文', '漢文']);
-      expect(courses('social'), ['地理', '日本史', '世界史', '政治・経済', '倫理']);
-      expect(courses('information'), ['情報']);
+      expect(courses('english'),
+          ['小3・4', '小5', '小6', '中1', '中2', '中3', '中学の単語と熟語']);
+      expect(courses('math'),
+          ['小1', '小2', '小3', '小4', '小5', '小6', '中1', '中2', '中3']);
+      expect(courses('japanese'),
+          ['小1', '小2', '小3', '小4', '小5', '小6', '中1', '中2', '中3']);
+      expect(courses('science'), ['小3', '小4', '小5', '小6', '中1', '中2', '中3']);
+      expect(courses('social'), ['小3', '小4', '小5', '小6', '地理', '歴史', '公民']);
     });
 
-    test('理科・社会は細かく分かれている', () {
+    test('どの学年の道にも分野と単元がある', () {
       int count(String id, CurriculumLevel level) =>
           Curriculum.descendants(id).where((n) => n.level == level).length;
-      for (final c in Curriculum.node('science').children) {
-        expect(count(c.id, CurriculumLevel.unit), greaterThanOrEqualTo(10),
-            reason: c.name);
-        expect(count(c.id, CurriculumLevel.subUnit), greaterThanOrEqualTo(40),
-            reason: c.name);
-      }
-      for (final c in Curriculum.node('social').children) {
-        expect(count(c.id, CurriculumLevel.subUnit), greaterThanOrEqualTo(25),
-            reason: c.name);
+      for (final s in Curriculum.subjects) {
+        for (final c in s.children) {
+          expect(count(c.id, CurriculumLevel.field), greaterThanOrEqualTo(1),
+              reason: c.id);
+          expect(count(c.id, CurriculumLevel.unit), greaterThanOrEqualTo(4),
+              reason: c.id);
+        }
       }
     });
 
@@ -78,16 +70,16 @@ void main() {
         expect(source, contains('学習指導要領'));
         expect(url, startsWith('https://'));
       }
-      expect(Curriculum.prerequisitesOf('math.m2.calculus.diff.derivative'),
-          contains('math.m1.quad.graph'));
+      expect(Curriculum.prerequisitesOf('math.j1.s1.a03.main'),
+          contains('math.j1.s1.a02'));
     });
 
     test('道すじ・学年・パンくず', () {
-      const id = 'math.m1.quad.maxmin.param';
+      const id = 'math.j3.s2.a07.main';
       expect(Curriculum.pathOf(id).map((n) => n.level), CurriculumLevel.values);
-      expect(Curriculum.breadcrumb(id), '数学Ⅰ ＞ 2次関数 ＞ 2次関数の最大・最小 ＞ 文字を含む場合分け');
-      expect(Curriculum.gradeOf(id), '1');
-      expect(Curriculum.ancestorAt(id, CurriculumLevel.course)?.name, '数学Ⅰ');
+      expect(Curriculum.breadcrumb(id), '中3 ＞ 関数と図形 ＞ 円周角 ＞ 円周角');
+      expect(Curriculum.gradeOf(id), '中3');
+      expect(Curriculum.ancestorAt(id, CurriculumLevel.course)?.name, '中3');
       expect(Curriculum.tryNode('nope'), isNull);
     });
   });
@@ -114,15 +106,20 @@ void main() {
           used.add(unit);
         }
       }
-      expect(total, greaterThan(9000));
+      expect(total, greaterThan(4000));
       // 振り分けが一部の単元に偏っていない
-      expect(used.length, greaterThan(600));
+      expect(used.length, greaterThan(300));
     });
 
-    test('数学の単元は「基本・標準・応用」のエリアの範囲から外れない', () {
-      final set = loadSet('math_m2_16');
-      for (final q in set.questions) {
-        expect(q.unit, startsWith('math.m2.calculus.'), reason: q.id);
+    test('エリアの問題は、そのエリアの単元に固定されている', () {
+      for (final w in RpgCatalog.worlds) {
+        for (final s in w.stages) {
+          final own = loadSet(s.questionSetIds.last);
+          for (final q in own.questions) {
+            expect(q.unitLocked, isTrue, reason: q.id);
+            expect(q.unit, startsWith('${w.id}.${s.branch}.'), reason: q.id);
+          }
+        }
       }
     });
   });
@@ -131,7 +128,7 @@ void main() {
     test('JSON で読み書きできる（省略したときは書き出さない）', () {
       final q = QuizQuestion.fromJson({
         'id': 'x1',
-        'unit': 'math.m1.quad.maxmin.param',
+        'unit': 'math.j3.s2.a07.main',
         'unitLocked': true,
         'category': 'thinking',
         'prompt': 'p',
@@ -144,7 +141,7 @@ void main() {
         'phase': 'todai',
         'estimatedSeconds': 900,
         'related': ['x0'],
-        'combines': ['math.m1.trig.solve'],
+        'combines': ['math.j3.s2.a08'],
         'steps': 5,
         'guidance': 1,
       });
@@ -196,7 +193,7 @@ void main() {
     test('書かれた値はそのまま使う', () {
       final q = QuizQuestion.fromJson({
         'id': 'x3',
-        'unit': 'english.eng.grammar.subjunctive.past',
+        'unit': 'english.j3.s2.a08.main',
         'category': 'usage',
         'prompt': 'p',
         'choices': ['a', 'b', 'c', 'd'],
@@ -210,12 +207,12 @@ void main() {
       expect(p.axes.reading, 4);
       expect(p.phase, LearningPhase.topUniv);
       expect(p.estimated, isFalse);
-      expect(p.grade, '2');
-      expect(p.node?.name, '仮定法過去');
+      expect(p.grade, '中3');
+      expect(p.node?.name, '仮定法');
     });
 
     test('難易度と種類で推定が変わる', () {
-      final calc = loadSet('math_m1_03').questions.first;
+      final calc = loadSet('math_j1_02').questions.first;
       final basic =
           QuestionProfiler.of(calc, fallbackDifficulty: Difficulty.basic);
       final adv =
@@ -231,7 +228,7 @@ void main() {
   group('学習記録の単元（マイグレーション）', () {
     test('古い形式の記録も読め、単元と初回の結果を保存できる', () {
       final old =
-          QuestionStat.fromList(['math_m1_01', 3, 2, 1, 0, 10, 900, 2, 12, 0]);
+          QuestionStat.fromList(['math_j1_01', 3, 2, 1, 0, 10, 900, 2, 12, 0]);
       expect(old.unit, '');
       expect(old.firstTryCorrect, isNull);
       final fresh = const QuestionStat().record(
@@ -270,14 +267,12 @@ void main() {
     test('節の問題数と、問題セットの対応', () {
       expect(
           CurriculumProgress.questionCount('math'),
-          CurriculumProgress.questionCount('math.m1') +
-              CurriculumProgress.questionCount('math.ma') +
-              CurriculumProgress.questionCount('math.m2') +
-              CurriculumProgress.questionCount('math.mb') +
-              CurriculumProgress.questionCount('math.mc') +
-              CurriculumProgress.questionCount('math.m3'));
-      expect(CurriculumProgress.setsFor('math.m1.quad.maxmin'),
-          contains('math_m1_10'));
+          [
+            for (final c in Curriculum.node('math').children)
+              CurriculumProgress.questionCount(c.id),
+          ].reduce((a, b) => a + b));
+      expect(CurriculumProgress.setsFor('math.j3.s2.a07'),
+          contains('math_j3_07'));
     });
 
     test('答えた記録を、小単元から教科まで積み上げる', () {
@@ -285,18 +280,18 @@ void main() {
         for (var i = 0; i < 6; i++)
           AnswerEvent(
               questionId: 'q$i',
-              setId: 'math_m1_10',
+              setId: 'math_j3_07',
               isCorrect: i.isEven,
               elapsedMs: 1,
-              unit: 'math.m1.quad.maxmin.param'),
+              unit: 'math.j3.s2.a07.main'),
       ], day: 1);
       final p = CurriculumProgress.of(record);
-      expect(p['math.m1.quad.maxmin.param'].answered, 6);
-      expect(p['math.m1.quad'].answered, 6);
+      expect(p['math.j3.s2.a07.main'].answered, 6);
+      expect(p['math.j3.s2'].answered, 6);
       expect(p['math'].accuracy, 50);
       expect(p['math'].firstTryAccuracy, 50);
       expect(p['science'].answered, 0);
-      expect(p.weakest().single.node.id, 'math.m1.quad.maxmin');
+      expect(p.weakest().single.node.id, 'math.j3.s2.a07');
     });
   });
 
@@ -305,12 +300,12 @@ void main() {
       final f = File('assets/questions/${id.split('_').first}/$id.json');
       return f.existsSync() ? f.readAsStringSync() : null;
     });
-    final first = loadSet('math_m1_10').questions.first;
+    final first = loadSet('math_j3_07').questions.first;
     final old = LearningRecord.fromMap({
       'stats': {
-        first.id: ['math_m1_10', 1, 1, 1, 0, 3, 100, 1, 4, 0],
-        'words_basic_enToJa_3': [
-          'words_basic_enToJa',
+        first.id: ['math_j3_07', 1, 1, 1, 0, 3, 100, 1, 4, 0],
+        'words_j1_enToJa_3': [
+          'words_j1_enToJa',
           1,
           0,
           0,
@@ -327,8 +322,8 @@ void main() {
     });
     final migrated = await UnitMigration.run(old, source);
     expect(migrated[first.id]!.unit, first.unit);
-    expect(migrated['words_basic_enToJa_3']!.unit,
-        'english.eng.vocab.basic.meaning');
+    expect(migrated['words_j1_enToJa_3']!.unit,
+        'english.vocab.words.j1.meaning');
     expect(migrated['leap_x']!.unit, '', reason: '読めないセットは飛ばす');
     expect(migrated.studyDays, {3});
   });

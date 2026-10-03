@@ -11,7 +11,7 @@ QuestionSet loadSet(String setId) => JsonQuestionSource.parse(
 QuestionSet loadStagePool(StageDef stage) => QuestionSet.merge(
     stage.id, [for (final id in stage.questionSetIds) loadSet(id)]);
 
-QuestionSet loadStage01() => loadSet('english_stage_01');
+QuestionSet loadStage01() => loadSet('english_j1_01');
 
 /// ダメージのブレを 0 にした計算機（期待値をそのまま検証できる）
 DamageCalculator fixedDamage() =>

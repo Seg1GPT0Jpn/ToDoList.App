@@ -10,7 +10,7 @@ WordList load(String id) => WordList.fromJson(
         as Map<String, dynamic>);
 
 void main() {
-  final list = load('words_basic');
+  final list = load('words_j1');
 
   test('同じ単語を4つの形で出す（スペルは入力式、発音は読み上げ）', () {
     final w = list.words.first;
@@ -24,7 +24,7 @@ void main() {
     expect(listening.listen, isTrue);
     expect(listening.sentence, w.term);
     for (final q in qs) {
-      expect(q.unit, 'english.eng.vocab.basic.meaning');
+      expect(q.unit, 'english.vocab.words.j1.meaning');
       expect(q.choices.toSet(), hasLength(4));
     }
   });

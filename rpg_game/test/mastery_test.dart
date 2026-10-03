@@ -40,7 +40,7 @@ void main() {
       expect(Mastery.courseOfStage(Story.centerStage()), isNull);
       expect(
         Mastery.courseOfStage(RpgCatalog.world('math').stages.first),
-        'math.m1',
+        'math.e1',
       );
     });
 
@@ -61,9 +61,9 @@ void main() {
       expect(old.masteryVersion, 0);
       final m = Mastery.migrate(old);
       expect(m.masteryVersion, Mastery.version);
-      expect(m.masteryExp['math.m1'],
+      expect(m.masteryExp['math.e1'],
           math.fold<int>(0, (a, s) => a + s.expReward));
-      expect(m.masteryExp.containsKey('science.physics'), isFalse);
+      expect(m.masteryExp.containsKey('science.j1'), isFalse);
       expect(identical(Mastery.migrate(m), m), isTrue);
       final back = RpgProgress.fromMap(m.toMap());
       expect(back.masteryExp, m.masteryExp);
@@ -144,11 +144,11 @@ void main() {
           LearningBonus.thinkingRate(q('a', thinking: 4)), closeTo(1.1, 1e-9));
       expect(
           LearningBonus.thinkingRate(q('a', thinking: 8)), closeTo(1.5, 1e-9));
-      final weak = {'math.m1.quad.maxmin'};
+      final weak = {'math.j3.s2.a07'};
       expect(
-          LearningBonus.isWeak(q('a', unit: 'math.m1.quad.maxmin.param'), weak),
+          LearningBonus.isWeak(q('a', unit: 'math.j3.s2.a07.main'), weak),
           isTrue);
-      expect(LearningBonus.isWeak(q('a', unit: 'math.m1.quad.maxminx'), weak),
+      expect(LearningBonus.isWeak(q('a', unit: 'math.j3.s2.a07x'), weak),
           isFalse);
     });
 
@@ -159,7 +159,7 @@ void main() {
         final b = BattleEngine(
           player: PlayerStats.forLevel(5),
           enemy: testEnemy,
-          questions: qs('math.m1.quad.maxmin.param'),
+          questions: qs('math.j3.s2.a07.main'),
           timeLimit: const Duration(seconds: 20),
           random: Random(1),
           damage: fixedDamage(),
@@ -170,7 +170,7 @@ void main() {
         return r.damageToEnemy;
       }
 
-      expect(firstHit({'math.m1.quad'}),
+      expect(firstHit({'math.j3.s2'}),
           (firstHit({}) * LearningBonus.weakRate).round());
     });
 
@@ -178,7 +178,7 @@ void main() {
       final stage = RpgCatalog.world('math').stages.first;
       final questions = [
         for (var i = 0; i < 12; i++)
-          q('t$i', unit: 'math.m1.numexpr.poly.expand', thinking: 6),
+          q('t$i', unit: 'math.j1.s1.a01.main', thinking: 6),
       ];
       final b = BattleEngine(
         player: PlayerStats.forLevel(30),
@@ -193,27 +193,28 @@ void main() {
       }
       final summary = b.summary();
       final bonus =
-          LearningBonus.bonusExp(summary, weakUnits: {'math.m1.numexpr.poly'});
+          LearningBonus.bonusExp(summary, weakUnits: {'math.j1.s1.a01'});
       expect(bonus, summary.correctIds.length * (3 * 3 + 3));
       final r = Progression.applyBattle(
         progress: Mastery.migrate(RpgProgress.initial),
         world: RpgCatalog.world('math'),
         stage: stage,
         summary: summary,
-        weakUnits: {'math.m1.numexpr.poly'},
+        weakUnits: {'math.j1.s1.a01'},
       );
       expect(r.learningBonusExp, bonus);
-      expect(r.progress.masteryExp['math.m1'], r.expResult.expGained);
-      expect(r.masteryCourse, 'math.m1');
+      // 習熟はステージの科目（小1の道）に入る
+      expect(r.progress.masteryExp['math.e1'], r.expResult.expGained);
+      expect(r.masteryCourse, 'math.e1');
       expect(r.masteryAfter, greaterThan(r.masteryBefore));
     });
 
     test('練習のバトルの経験値は、正解した問題の科目に分けて入る', () {
       final questions = [
-        q('p1', unit: 'math.m1.numexpr.poly.expand'),
-        q('p2', unit: 'science.physics.mechanics.force.kinds'),
-        q('p3', unit: 'science.physics.mechanics.force.kinds'),
-        q('p4', unit: 'science.physics.mechanics.force.kinds'),
+        q('p1', unit: 'math.j1.s1.a01.main'),
+        q('p2', unit: 'science.j1.s2.a06.main'),
+        q('p3', unit: 'science.j1.s2.a06.main'),
+        q('p4', unit: 'science.j1.s2.a06.main'),
       ];
       final b = BattleEngine(
         player: PlayerStats.forLevel(1),
@@ -230,9 +231,9 @@ void main() {
       final r = Progression.applyPractice(
           Mastery.migrate(RpgProgress.initial), summary);
       final m = r.progress.masteryExp;
-      expect((m['math.m1'] ?? 0) + (m['science.physics'] ?? 0),
+      expect((m['math.j1'] ?? 0) + (m['science.j1'] ?? 0),
           closeTo(r.expGained, 1));
-      expect(m['science.physics'] ?? 0, greaterThan(m['math.m1'] ?? 0));
+      expect(m['science.j1'] ?? 0, greaterThan(m['math.j1'] ?? 0));
     });
   });
 }

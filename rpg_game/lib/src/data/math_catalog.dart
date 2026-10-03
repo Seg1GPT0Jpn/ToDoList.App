@@ -25,7 +25,7 @@ class MathCatalog {
         RouteArea(
           theme: '10までのかず',
           section: 'かずとけいさん',
-          place: '10までのかずの小道',
+          place: '10までのかずの火山',
           enemy: 'うっかりセロテープス',
           look: 'tape',
           color: 0xFF26A69A,
@@ -36,7 +36,7 @@ class MathCatalog {
         RouteArea(
           theme: 'たしざん',
           section: 'かずとけいさん',
-          place: 'たしざんの森',
+          place: 'たしざんの湖のほとり',
           enemy: 'ねぼすけクリップマン',
           look: 'clip',
           color: 0xFFFF7043,
@@ -47,7 +47,7 @@ class MathCatalog {
         RouteArea(
           theme: 'ひきざん',
           section: 'かずとけいさん',
-          place: 'ひきざんの丘',
+          place: 'ひきざんの高原',
           enemy: 'ひねくれガビョウニ',
           look: 'pushpin',
           color: 0xFF7CB342,
@@ -58,7 +58,7 @@ class MathCatalog {
         RouteArea(
           theme: 'かずとけいさんの まとめ',
           section: 'かずとけいさん',
-          place: 'かずとけいさんのとりで',
+          place: 'かずとけいさんの砦',
           enemy: 'かずとけいさんの番人・バインダートータス',
           look: 'binder',
           color: 0xFF7E57C2,
@@ -66,11 +66,12 @@ class MathCatalog {
           intro: 'かずとけいさんのまとめだ！ これまでに学んだことを、ぜんぶ出してみよ！',
           defeat: '見事だ…かずとけいさんは、お前のものだ…',
           boss: true,
+          captive: 'kotodama',
         ),
         RouteArea(
           theme: '大きいかず（100まで）',
           section: '大きいかずと くりあがり・くりさがり',
-          place: '大きいかず（100まで）の橋',
+          place: '大きいかず（100まで）の花畑',
           enemy: 'ものしりフデマル',
           look: 'brush',
           color: 0xFF43A047,
@@ -81,7 +82,7 @@ class MathCatalog {
         RouteArea(
           theme: 'くりあがりの ある たしざん',
           section: '大きいかずと くりあがり・くりさがり',
-          place: 'くりあがりの ある たしざんのどうくつ',
+          place: 'くりあがりの ある たしざんの森',
           enemy: 'まよいのシュウセイテープ',
           look: 'correction',
           color: 0xFFD81B60,
@@ -92,7 +93,7 @@ class MathCatalog {
         RouteArea(
           theme: 'くりさがりの ある ひきざん',
           section: '大きいかずと くりあがり・くりさがり',
-          place: 'くりさがりの ある ひきざんの谷',
+          place: 'くりさがりの ある ひきざんの丘',
           enemy: 'くいしんぼデンタクン',
           look: 'calculator',
           color: 0xFFF4A300,
@@ -103,7 +104,7 @@ class MathCatalog {
         RouteArea(
           theme: 'とけい',
           section: '大きいかずと くりあがり・くりさがり',
-          place: 'とけいの泉',
+          place: 'とけいの川べり',
           enemy: 'あわてんぼちびエンピツ老兵',
           look: 'stubpencil',
           color: 0xFF5C6BC0,
@@ -114,7 +115,7 @@ class MathCatalog {
         RouteArea(
           theme: 'かたちと ながさくらべ',
           section: '大きいかずと くりあがり・くりさがり',
-          place: 'かたちと ながさくらべのみずうみ',
+          place: 'かたちと ながさくらべの浜辺',
           enemy: 'へそまがりシャーペンロボ',
           look: 'mechpencil',
           color: 0xFF3949AB,
@@ -133,6 +134,7 @@ class MathCatalog {
           intro: '大きいかずと くりあがり・くりさがりのまとめだ！ これまでに学んだことを、ぜんぶ出してみよ！',
           defeat: '見事だ…大きいかずと くりあがり・くりさがりは、お前のものだ…',
           boss: true,
+          captive: 'old_dict',
         ),
       ],
     ),
@@ -146,7 +148,7 @@ class MathCatalog {
         RouteArea(
           theme: 'たし算のひっ算',
           section: 'ひっ算と大きい数',
-          place: 'たし算のひっ算の森',
+          place: 'たし算のひっ算の湖のほとり',
           enemy: 'ねぼすけ蛍光ペンウィザード',
           look: 'marker',
           color: 0xFFFF7043,
@@ -157,7 +159,7 @@ class MathCatalog {
         RouteArea(
           theme: 'ひき算のひっ算',
           section: 'ひっ算と大きい数',
-          place: 'ひき算のひっ算の丘',
+          place: 'ひき算のひっ算の高原',
           enemy: 'ひねくれ分度器メイジ',
           look: 'protractor',
           color: 0xFF7CB342,
@@ -168,7 +170,7 @@ class MathCatalog {
         RouteArea(
           theme: '1000までの数',
           section: 'ひっ算と大きい数',
-          place: '1000までの数の川べり',
+          place: '1000までの数の野原',
           enemy: 'おこりんぼコンパススパイダー',
           look: 'compass',
           color: 0xFF7E57C2,
@@ -187,11 +189,12 @@ class MathCatalog {
           intro: 'ひっ算と大きい数のまとめだ！ これまでに学んだことを、ぜんぶ出してみよ！',
           defeat: '見事だ…ひっ算と大きい数は、お前のものだ…',
           boss: true,
+          captive: 'old_dict',
         ),
         RouteArea(
           theme: '長さ（mm・cm・m）',
           section: 'はかり方とかけ算',
-          place: '長さ（mm・cm・m）のどうくつ',
+          place: '長さ（mm・cm・m）の森',
           enemy: 'まよいのハサミビートル',
           look: 'scissors',
           color: 0xFFD81B60,
@@ -202,7 +205,7 @@ class MathCatalog {
         RouteArea(
           theme: 'かさ（L・dL・mL）',
           section: 'はかり方とかけ算',
-          place: 'かさ（L・dL・mL）の谷',
+          place: 'かさ（L・dL・mL）の丘',
           enemy: 'くいしんぼノートゴースト',
           look: 'ghost',
           color: 0xFFF4A300,
@@ -213,7 +216,7 @@ class MathCatalog {
         RouteArea(
           theme: '時こくと時間',
           section: 'はかり方とかけ算',
-          place: '時こくと時間の泉',
+          place: '時こくと時間の川べり',
           enemy: 'あわてんぼフデバコング',
           look: 'pencilcase',
           color: 0xFF5C6BC0,
@@ -224,7 +227,7 @@ class MathCatalog {
         RouteArea(
           theme: 'かけ算九九（2・3・4・5のだん）',
           section: 'はかり方とかけ算',
-          place: 'かけ算九九（2・3・4・5のだん）のみずうみ',
+          place: 'かけ算九九（2・3・4・5のだん）の浜辺',
           enemy: 'へそまがりケズリドン',
           look: 'sharpener',
           color: 0xFF3949AB,
@@ -235,7 +238,7 @@ class MathCatalog {
         RouteArea(
           theme: 'かけ算九九（6・7・8・9・1のだん）',
           section: 'はかり方とかけ算',
-          place: 'かけ算九九（6・7・8・9・1のだん）の花畑',
+          place: 'かけ算九九（6・7・8・9・1のだん）の洞くつ',
           enemy: 'はずかしがりインクボトル',
           look: 'inkpot',
           color: 0xFF4CAF50,
@@ -246,7 +249,7 @@ class MathCatalog {
         RouteArea(
           theme: '三角形と四角形・はこの形',
           section: 'はかり方とかけ算',
-          place: '三角形と四角形・はこの形の坂道',
+          place: '三角形と四角形・はこの形の地底湖',
           enemy: 'いばりんぼケシゴムン',
           look: 'eraser',
           color: 0xFF8D6E63,
@@ -257,7 +260,7 @@ class MathCatalog {
         RouteArea(
           theme: '2年生のまとめ',
           section: 'はかり方とかけ算',
-          place: 'はかり方とかけ算のとりで',
+          place: 'はかり方とかけ算の砦',
           enemy: 'はかり方とかけ算の番人・ぶんちんゴーレム',
           look: 'golem',
           color: 0xFF6D4C41,
@@ -265,6 +268,7 @@ class MathCatalog {
           intro: 'はかり方とかけ算のまとめだ！ これまでに学んだことを、ぜんぶ出してみよ！',
           defeat: '見事だ…はかり方とかけ算は、お前のものだ…',
           boss: true,
+          captive: 'clock_rabbit',
         ),
       ],
     ),
@@ -278,7 +282,7 @@ class MathCatalog {
         RouteArea(
           theme: 'かけ算のきまり',
           section: 'わり算と大きい数',
-          place: 'かけ算のきまりの丘',
+          place: 'かけ算のきまりの高原',
           enemy: 'ひねくれクレヨンぶんぶん',
           look: 'crayon',
           color: 0xFF7CB342,
@@ -289,7 +293,7 @@ class MathCatalog {
         RouteArea(
           theme: 'わり算',
           section: 'わり算と大きい数',
-          place: 'わり算の川べり',
+          place: 'わり算の野原',
           enemy: 'おこりんぼフセンチョウ',
           look: 'sticky',
           color: 0xFF7E57C2,
@@ -300,7 +304,7 @@ class MathCatalog {
         RouteArea(
           theme: '大きい数（万の位）',
           section: 'わり算と大きい数',
-          place: '大きい数（万の位）の橋',
+          place: '大きい数（万の位）の花畑',
           enemy: 'ものしりエンピツランサー',
           look: 'pencil',
           color: 0xFF43A047,
@@ -319,11 +323,12 @@ class MathCatalog {
           intro: 'わり算と大きい数のまとめだ！ これまでに学んだことを、ぜんぶ出してみよ！',
           defeat: '見事だ…わり算と大きい数は、お前のものだ…',
           boss: true,
+          captive: 'clock_rabbit',
         ),
         RouteArea(
           theme: '3けた・4けたのたし算とひき算',
           section: '筆算・小数・分数・図形',
-          place: '3けた・4けたのたし算とひき算の谷',
+          place: '3けた・4けたのたし算とひき算の丘',
           enemy: 'くいしんぼボールペン剣士',
           look: 'pen',
           color: 0xFFF4A300,
@@ -334,7 +339,7 @@ class MathCatalog {
         RouteArea(
           theme: 'かけ算の筆算',
           section: '筆算・小数・分数・図形',
-          place: 'かけ算の筆算の泉',
+          place: 'かけ算の筆算の川べり',
           enemy: 'あわてんぼ定規ナイト',
           look: 'ruler',
           color: 0xFF5C6BC0,
@@ -345,7 +350,7 @@ class MathCatalog {
         RouteArea(
           theme: 'あまりのあるわり算',
           section: '筆算・小数・分数・図形',
-          place: 'あまりのあるわり算のみずうみ',
+          place: 'あまりのあるわり算の浜辺',
           enemy: 'へそまがり三角定規シールダー',
           look: 'triangle',
           color: 0xFF3949AB,
@@ -356,7 +361,7 @@ class MathCatalog {
         RouteArea(
           theme: '小数',
           section: '筆算・小数・分数・図形',
-          place: '小数の花畑',
+          place: '小数の洞くつ',
           enemy: 'はずかしがりホッチキスクラブ',
           look: 'stapler',
           color: 0xFF4CAF50,
@@ -367,7 +372,7 @@ class MathCatalog {
         RouteArea(
           theme: '分数',
           section: '筆算・小数・分数・図形',
-          place: '分数の坂道',
+          place: '分数の地底湖',
           enemy: 'いばりんぼプリント兵',
           look: 'page',
           color: 0xFF8D6E63,
@@ -378,7 +383,7 @@ class MathCatalog {
         RouteArea(
           theme: '円と球・重さ・三角形',
           section: '筆算・小数・分数・図形',
-          place: '円と球・重さ・三角形の岩場',
+          place: '円と球・重さ・三角形の遺跡',
           enemy: 'さみしがりしおりコウモリ',
           look: 'bat',
           color: 0xFF6D4C41,
@@ -397,6 +402,7 @@ class MathCatalog {
           intro: '筆算・小数・分数・図形のまとめだ！ これまでに学んだことを、ぜんぶ出してみよ！',
           defeat: '見事だ…筆算・小数・分数・図形は、お前のものだ…',
           boss: true,
+          captive: 'cat_teacher',
         ),
       ],
     ),
@@ -410,7 +416,7 @@ class MathCatalog {
         RouteArea(
           theme: '大きい数（億・兆）',
           section: '大きい数・わり算・角',
-          place: '大きい数（億・兆）の川べり',
+          place: '大きい数（億・兆）の野原',
           enemy: 'おこりんぼのりスライム',
           look: 'slime',
           color: 0xFF7E57C2,
@@ -421,7 +427,7 @@ class MathCatalog {
         RouteArea(
           theme: 'わり算の筆算',
           section: '大きい数・わり算・角',
-          place: 'わり算の筆算の橋',
+          place: 'わり算の筆算の花畑',
           enemy: 'ものしりクリップ小鬼',
           look: 'goblin',
           color: 0xFF43A047,
@@ -432,7 +438,7 @@ class MathCatalog {
         RouteArea(
           theme: '角の大きさ',
           section: '大きい数・わり算・角',
-          place: '角の大きさのどうくつ',
+          place: '角の大きさの森',
           enemy: 'まよいのノートン',
           look: 'notebook',
           color: 0xFFD81B60,
@@ -451,11 +457,12 @@ class MathCatalog {
           intro: '大きい数・わり算・角のまとめだ！ これまでに学んだことを、ぜんぶ出してみよ！',
           defeat: '見事だ…大きい数・わり算・角は、お前のものだ…',
           boss: true,
+          captive: 'cat_teacher',
         ),
         RouteArea(
           theme: '小数のたし算とひき算',
           section: '小数・分数・面積',
-          place: '小数のたし算とひき算の泉',
+          place: '小数のたし算とひき算の川べり',
           enemy: 'あわてんぼノリノリスティック',
           look: 'glue',
           color: 0xFF5C6BC0,
@@ -466,7 +473,7 @@ class MathCatalog {
         RouteArea(
           theme: '小数のかけ算とわり算',
           section: '小数・分数・面積',
-          place: '小数のかけ算とわり算のみずうみ',
+          place: '小数のかけ算とわり算の浜辺',
           enemy: 'へそまがりセロテープス',
           look: 'tape',
           color: 0xFF3949AB,
@@ -477,7 +484,7 @@ class MathCatalog {
         RouteArea(
           theme: '分数（仮分数・帯分数）',
           section: '小数・分数・面積',
-          place: '分数（仮分数・帯分数）の花畑',
+          place: '分数（仮分数・帯分数）の洞くつ',
           enemy: 'はずかしがりクリップマン',
           look: 'clip',
           color: 0xFF4CAF50,
@@ -488,7 +495,7 @@ class MathCatalog {
         RouteArea(
           theme: '面積',
           section: '小数・分数・面積',
-          place: '面積の坂道',
+          place: '面積の地底湖',
           enemy: 'いばりんぼガビョウニ',
           look: 'pushpin',
           color: 0xFF8D6E63,
@@ -499,7 +506,7 @@ class MathCatalog {
         RouteArea(
           theme: '垂直・平行と四角形・直方体',
           section: '小数・分数・面積',
-          place: '垂直・平行と四角形・直方体の岩場',
+          place: '垂直・平行と四角形・直方体の遺跡',
           enemy: 'さみしがりフデマル',
           look: 'brush',
           color: 0xFF6D4C41,
@@ -510,7 +517,7 @@ class MathCatalog {
         RouteArea(
           theme: 'がい数',
           section: '小数・分数・面積',
-          place: 'がい数の林',
+          place: 'がい数の港',
           enemy: 'のんびりシュウセイテープ',
           look: 'correction',
           color: 0xFFE0483E,
@@ -529,6 +536,7 @@ class MathCatalog {
           intro: '小数・分数・面積のまとめだ！ これまでに学んだことを、ぜんぶ出してみよ！',
           defeat: '見事だ…小数・分数・面積は、お前のものだ…',
           boss: true,
+          captive: 'kotodama',
         ),
       ],
     ),
@@ -542,7 +550,7 @@ class MathCatalog {
         RouteArea(
           theme: '整数と小数・体積',
           section: '小数のかけ算わり算・倍数と約数',
-          place: '整数と小数・体積の橋',
+          place: '整数と小数・体積の花畑',
           enemy: 'ものしりデンタクン',
           look: 'calculator',
           color: 0xFF43A047,
@@ -553,7 +561,7 @@ class MathCatalog {
         RouteArea(
           theme: '小数のかけ算',
           section: '小数のかけ算わり算・倍数と約数',
-          place: '小数のかけ算のどうくつ',
+          place: '小数のかけ算の森',
           enemy: 'まよいのちびエンピツ老兵',
           look: 'stubpencil',
           color: 0xFFD81B60,
@@ -564,7 +572,7 @@ class MathCatalog {
         RouteArea(
           theme: '小数のわり算',
           section: '小数のかけ算わり算・倍数と約数',
-          place: '小数のわり算の谷',
+          place: '小数のわり算の丘',
           enemy: 'くいしんぼシャーペンロボ',
           look: 'mechpencil',
           color: 0xFFF4A300,
@@ -575,7 +583,7 @@ class MathCatalog {
         RouteArea(
           theme: '小数と体積のまとめ',
           section: '小数のかけ算わり算・倍数と約数',
-          place: '小数のかけ算わり算・倍数と約数のとりで',
+          place: '小数のかけ算わり算・倍数と約数の砦',
           enemy: '小数のかけ算わり算・倍数と約数の番人・ぶんちんゴーレム',
           look: 'golem',
           color: 0xFF5C6BC0,
@@ -583,11 +591,12 @@ class MathCatalog {
           intro: '小数のかけ算わり算・倍数と約数のまとめだ！ これまでに学んだことを、ぜんぶ出してみよ！',
           defeat: '見事だ…小数のかけ算わり算・倍数と約数は、お前のものだ…',
           boss: true,
+          captive: 'kotodama',
         ),
         RouteArea(
           theme: '倍数と約数',
           section: '分数・平均・割合・図形',
-          place: '倍数と約数のみずうみ',
+          place: '倍数と約数の浜辺',
           enemy: 'へそまがり蛍光ペンウィザード',
           look: 'marker',
           color: 0xFF3949AB,
@@ -598,7 +607,7 @@ class MathCatalog {
         RouteArea(
           theme: '分数のたし算とひき算',
           section: '分数・平均・割合・図形',
-          place: '分数のたし算とひき算の花畑',
+          place: '分数のたし算とひき算の洞くつ',
           enemy: 'はずかしがり分度器メイジ',
           look: 'protractor',
           color: 0xFF4CAF50,
@@ -609,7 +618,7 @@ class MathCatalog {
         RouteArea(
           theme: '平均',
           section: '分数・平均・割合・図形',
-          place: '平均の坂道',
+          place: '平均の地底湖',
           enemy: 'いばりんぼコンパススパイダー',
           look: 'compass',
           color: 0xFF8D6E63,
@@ -620,7 +629,7 @@ class MathCatalog {
         RouteArea(
           theme: '単位量あたりの大きさ・速さ',
           section: '分数・平均・割合・図形',
-          place: '単位量あたりの大きさ・速さの岩場',
+          place: '単位量あたりの大きさ・速さの遺跡',
           enemy: 'さみしがりハサミビートル',
           look: 'scissors',
           color: 0xFF6D4C41,
@@ -631,7 +640,7 @@ class MathCatalog {
         RouteArea(
           theme: '割合と百分率',
           section: '分数・平均・割合・図形',
-          place: '割合と百分率の林',
+          place: '割合と百分率の港',
           enemy: 'のんびりノートゴースト',
           look: 'ghost',
           color: 0xFFE0483E,
@@ -642,7 +651,7 @@ class MathCatalog {
         RouteArea(
           theme: '図形の角・面積・円周',
           section: '分数・平均・割合・図形',
-          place: '図形の角・面積・円周の村はずれ',
+          place: '図形の角・面積・円周の町なみ',
           enemy: 'せっかちフデバコング',
           look: 'pencilcase',
           color: 0xFFE91E63,
@@ -661,6 +670,7 @@ class MathCatalog {
           intro: '分数・平均・割合・図形のまとめだ！ これまでに学んだことを、ぜんぶ出してみよ！',
           defeat: '見事だ…分数・平均・割合・図形は、お前のものだ…',
           boss: true,
+          captive: 'old_dict',
         ),
       ],
     ),
@@ -674,7 +684,7 @@ class MathCatalog {
         RouteArea(
           theme: '文字と式',
           section: '文字と式・分数の計算',
-          place: '文字と式のどうくつ',
+          place: '文字と式の森',
           enemy: 'まよいのケズリドン',
           look: 'sharpener',
           color: 0xFFD81B60,
@@ -685,7 +695,7 @@ class MathCatalog {
         RouteArea(
           theme: '分数のかけ算',
           section: '文字と式・分数の計算',
-          place: '分数のかけ算の谷',
+          place: '分数のかけ算の丘',
           enemy: 'くいしんぼインクボトル',
           look: 'inkpot',
           color: 0xFFF4A300,
@@ -696,7 +706,7 @@ class MathCatalog {
         RouteArea(
           theme: '分数のわり算',
           section: '文字と式・分数の計算',
-          place: '分数のわり算の泉',
+          place: '分数のわり算の川べり',
           enemy: 'あわてんぼケシゴムン',
           look: 'eraser',
           color: 0xFF5C6BC0,
@@ -715,11 +725,12 @@ class MathCatalog {
           intro: '文字と式・分数の計算のまとめだ！ これまでに学んだことを、ぜんぶ出してみよ！',
           defeat: '見事だ…文字と式・分数の計算は、お前のものだ…',
           boss: true,
+          captive: 'old_dict',
         ),
         RouteArea(
           theme: '比',
           section: '比・比例・図形・データ',
-          place: '比の花畑',
+          place: '比の洞くつ',
           enemy: 'はずかしがりクレヨンぶんぶん',
           look: 'crayon',
           color: 0xFF4CAF50,
@@ -730,7 +741,7 @@ class MathCatalog {
         RouteArea(
           theme: '比例と反比例',
           section: '比・比例・図形・データ',
-          place: '比例と反比例の坂道',
+          place: '比例と反比例の地底湖',
           enemy: 'いばりんぼフセンチョウ',
           look: 'sticky',
           color: 0xFF8D6E63,
@@ -741,7 +752,7 @@ class MathCatalog {
         RouteArea(
           theme: '対称な図形・拡大図と縮図・円の面積',
           section: '比・比例・図形・データ',
-          place: '対称な図形・拡大図と縮図・円の面積の岩場',
+          place: '対称な図形・拡大図と縮図・円の面積の遺跡',
           enemy: 'さみしがりエンピツランサー',
           look: 'pencil',
           color: 0xFF6D4C41,
@@ -752,7 +763,7 @@ class MathCatalog {
         RouteArea(
           theme: '立体の体積・場合の数・データ',
           section: '比・比例・図形・データ',
-          place: '立体の体積・場合の数・データの林',
+          place: '立体の体積・場合の数・データの港',
           enemy: 'のんびりボールペン剣士',
           look: 'pen',
           color: 0xFFE0483E,
@@ -763,7 +774,7 @@ class MathCatalog {
         RouteArea(
           theme: '計算のきまり（総合）',
           section: '比・比例・図形・データ',
-          place: '計算のきまり（総合）の村はずれ',
+          place: '計算のきまり（総合）の町なみ',
           enemy: 'せっかち定規ナイト',
           look: 'ruler',
           color: 0xFFE91E63,
@@ -782,6 +793,7 @@ class MathCatalog {
           intro: '比・比例・図形・データのまとめだ！ これまでに学んだことを、ぜんぶ出してみよ！',
           defeat: '見事だ…比・比例・図形・データは、お前のものだ…',
           boss: true,
+          captive: 'clock_rabbit',
         ),
       ],
     ),
@@ -795,7 +807,7 @@ class MathCatalog {
         RouteArea(
           theme: '正負の数',
           section: '数と式',
-          place: '正負の数のどうくつ',
+          place: '正負の数の森',
           enemy: 'まよいの三角定規シールダー',
           look: 'triangle',
           color: 0xFFD81B60,
@@ -806,7 +818,7 @@ class MathCatalog {
         RouteArea(
           theme: '正負の数の計算',
           section: '数と式',
-          place: '正負の数の計算の谷',
+          place: '正負の数の計算の丘',
           enemy: 'くいしんぼホッチキスクラブ',
           look: 'stapler',
           color: 0xFFF4A300,
@@ -817,7 +829,7 @@ class MathCatalog {
         RouteArea(
           theme: '文字と式',
           section: '数と式',
-          place: '文字と式の泉',
+          place: '文字と式の川べり',
           enemy: 'あわてんぼプリント兵',
           look: 'page',
           color: 0xFF5C6BC0,
@@ -836,11 +848,12 @@ class MathCatalog {
           intro: '数と式のまとめだ！ これまでに学んだことを、ぜんぶ出してみよ！',
           defeat: '見事だ…数と式は、お前のものだ…',
           boss: true,
+          captive: 'clock_rabbit',
         ),
         RouteArea(
           theme: '一次方程式',
           section: '数と式',
-          place: '一次方程式の花畑',
+          place: '一次方程式の洞くつ',
           enemy: 'はずかしがりしおりコウモリ',
           look: 'bat',
           color: 0xFF4CAF50,
@@ -851,7 +864,7 @@ class MathCatalog {
         RouteArea(
           theme: '比例と反比例',
           section: '関数・図形・データ',
-          place: '比例と反比例の坂道',
+          place: '比例と反比例の地底湖',
           enemy: 'いばりんぼのりスライム',
           look: 'slime',
           color: 0xFF8D6E63,
@@ -862,7 +875,7 @@ class MathCatalog {
         RouteArea(
           theme: '平面図形',
           section: '関数・図形・データ',
-          place: '平面図形の岩場',
+          place: '平面図形の遺跡',
           enemy: 'さみしがりクリップ小鬼',
           look: 'goblin',
           color: 0xFF6D4C41,
@@ -873,7 +886,7 @@ class MathCatalog {
         RouteArea(
           theme: '空間図形',
           section: '関数・図形・データ',
-          place: '空間図形の林',
+          place: '空間図形の港',
           enemy: 'のんびりノートン',
           look: 'notebook',
           color: 0xFFE0483E,
@@ -884,7 +897,7 @@ class MathCatalog {
         RouteArea(
           theme: 'データの活用',
           section: '関数・図形・データ',
-          place: 'データの活用の村はずれ',
+          place: 'データの活用の町なみ',
           enemy: 'せっかちノリノリスティック',
           look: 'glue',
           color: 0xFFE91E63,
@@ -903,6 +916,7 @@ class MathCatalog {
           intro: '関数・図形・データのまとめだ！ これまでに学んだことを、ぜんぶ出してみよ！',
           defeat: '見事だ…関数・図形・データは、お前のものだ…',
           boss: true,
+          captive: 'cat_teacher',
         ),
       ],
     ),
@@ -916,7 +930,7 @@ class MathCatalog {
         RouteArea(
           theme: '式の計算',
           section: '式と方程式・一次関数',
-          place: '式の計算の谷',
+          place: '式の計算の丘',
           enemy: 'くいしんぼセロテープス',
           look: 'tape',
           color: 0xFFF4A300,
@@ -927,7 +941,7 @@ class MathCatalog {
         RouteArea(
           theme: '連立方程式',
           section: '式と方程式・一次関数',
-          place: '連立方程式の泉',
+          place: '連立方程式の川べり',
           enemy: 'あわてんぼクリップマン',
           look: 'clip',
           color: 0xFF5C6BC0,
@@ -938,7 +952,7 @@ class MathCatalog {
         RouteArea(
           theme: '一次関数',
           section: '式と方程式・一次関数',
-          place: '一次関数のみずうみ',
+          place: '一次関数の浜辺',
           enemy: 'へそまがりガビョウニ',
           look: 'pushpin',
           color: 0xFF3949AB,
@@ -957,11 +971,12 @@ class MathCatalog {
           intro: '式と方程式・一次関数のまとめだ！ これまでに学んだことを、ぜんぶ出してみよ！',
           defeat: '見事だ…式と方程式・一次関数は、お前のものだ…',
           boss: true,
+          captive: 'cat_teacher',
         ),
         RouteArea(
           theme: '平行と合同',
           section: '図形・確率・データ',
-          place: '平行と合同の坂道',
+          place: '平行と合同の地底湖',
           enemy: 'いばりんぼフデマル',
           look: 'brush',
           color: 0xFF8D6E63,
@@ -972,7 +987,7 @@ class MathCatalog {
         RouteArea(
           theme: '三角形と四角形',
           section: '図形・確率・データ',
-          place: '三角形と四角形の岩場',
+          place: '三角形と四角形の遺跡',
           enemy: 'さみしがりシュウセイテープ',
           look: 'correction',
           color: 0xFF6D4C41,
@@ -983,7 +998,7 @@ class MathCatalog {
         RouteArea(
           theme: '確率',
           section: '図形・確率・データ',
-          place: '確率の林',
+          place: '確率の港',
           enemy: 'のんびりデンタクン',
           look: 'calculator',
           color: 0xFFE0483E,
@@ -994,7 +1009,7 @@ class MathCatalog {
         RouteArea(
           theme: 'データの分布（箱ひげ図）',
           section: '図形・確率・データ',
-          place: 'データの分布（箱ひげ図）の村はずれ',
+          place: 'データの分布（箱ひげ図）の町なみ',
           enemy: 'せっかちちびエンピツ老兵',
           look: 'stubpencil',
           color: 0xFFE91E63,
@@ -1013,6 +1028,7 @@ class MathCatalog {
           intro: '図形・確率・データのまとめだ！ これまでに学んだことを、ぜんぶ出してみよ！',
           defeat: '見事だ…図形・確率・データは、お前のものだ…',
           boss: true,
+          captive: 'kotodama',
         ),
       ],
     ),
@@ -1026,7 +1042,7 @@ class MathCatalog {
         RouteArea(
           theme: '展開と因数分解',
           section: '式と方程式',
-          place: '展開と因数分解の泉',
+          place: '展開と因数分解の川べり',
           enemy: 'あわてんぼシャーペンロボ',
           look: 'mechpencil',
           color: 0xFF5C6BC0,
@@ -1037,7 +1053,7 @@ class MathCatalog {
         RouteArea(
           theme: '平方根',
           section: '式と方程式',
-          place: '平方根のみずうみ',
+          place: '平方根の浜辺',
           enemy: 'へそまがり蛍光ペンウィザード',
           look: 'marker',
           color: 0xFF3949AB,
@@ -1048,7 +1064,7 @@ class MathCatalog {
         RouteArea(
           theme: '二次方程式',
           section: '式と方程式',
-          place: '二次方程式の花畑',
+          place: '二次方程式の洞くつ',
           enemy: 'はずかしがり分度器メイジ',
           look: 'protractor',
           color: 0xFF4CAF50,
@@ -1067,11 +1083,12 @@ class MathCatalog {
           intro: '式と方程式のまとめだ！ これまでに学んだことを、ぜんぶ出してみよ！',
           defeat: '見事だ…式と方程式は、お前のものだ…',
           boss: true,
+          captive: 'kotodama',
         ),
         RouteArea(
           theme: '関数 y = ax²',
           section: '関数と図形',
-          place: '関数 y = ax²の岩場',
+          place: '関数 y = ax²の遺跡',
           enemy: 'さみしがりコンパススパイダー',
           look: 'compass',
           color: 0xFF6D4C41,
@@ -1082,7 +1099,7 @@ class MathCatalog {
         RouteArea(
           theme: '相似な図形',
           section: '関数と図形',
-          place: '相似な図形の林',
+          place: '相似な図形の港',
           enemy: 'のんびりハサミビートル',
           look: 'scissors',
           color: 0xFFE0483E,
@@ -1093,7 +1110,7 @@ class MathCatalog {
         RouteArea(
           theme: '円周角',
           section: '関数と図形',
-          place: '円周角の村はずれ',
+          place: '円周角の町なみ',
           enemy: 'せっかちノートゴースト',
           look: 'ghost',
           color: 0xFFE91E63,
@@ -1104,7 +1121,7 @@ class MathCatalog {
         RouteArea(
           theme: '三平方の定理',
           section: '関数と図形',
-          place: '三平方の定理の草原',
+          place: '三平方の定理の工房',
           enemy: 'わすれんぼフデバコング',
           look: 'pencilcase',
           color: 0xFF00897B,
@@ -1115,7 +1132,7 @@ class MathCatalog {
         RouteArea(
           theme: '標本調査',
           section: '関数と図形',
-          place: '標本調査の野原',
+          place: '標本調査の書庫',
           enemy: 'いたずらケズリドン',
           look: 'sharpener',
           color: 0xFF3F7CC4,
@@ -1134,6 +1151,7 @@ class MathCatalog {
           intro: '関数と図形のまとめだ！ これまでに学んだことを、ぜんぶ出してみよ！',
           defeat: '見事だ…関数と図形は、お前のものだ…',
           boss: true,
+          captive: 'old_dict',
         ),
       ],
     ),

@@ -418,7 +418,7 @@ def write():
             if q['s']:
                 d['sentence'] = q['s']
             d.update(choices=o, answerIndex=o.index(q['a']), explanation=q['e'],
-                     targetGrade=f'中{uid[5]}', phase='teikiTest')
+                     targetGrade=f'中{uid[5]}')
             data.append(d)
         total += len(data)
         (out / f'{uid}.json').write_text(json.dumps(

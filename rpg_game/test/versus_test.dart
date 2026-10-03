@@ -143,7 +143,7 @@ void main() {
 
     test('部屋の設定は保存しても元にもどる', () {
       const c =
-          VersusRoomConfig(setIds: ['english_stage_01'], seed: 7, rounds: 10);
+          VersusRoomConfig(setIds: ['english_j1_01'], seed: 7, rounds: 10);
       final d = VersusRoomConfig.fromMap(c.toMap());
       expect(d.setIds, c.setIds);
       expect(d.seed, 7);

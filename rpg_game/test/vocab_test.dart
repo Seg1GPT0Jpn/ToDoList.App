@@ -1,4 +1,3 @@
-import 'dart:math';
 
 import 'package:rpg_game/rpg_game.dart';
 import 'package:test/test.dart';
@@ -278,20 +277,6 @@ void main() {
       expect(w.length, 3);
       expect(w.first.$1, 'Week 1（1〜100）');
       expect(w.last.$2.length, 50);
-    });
-
-    test('名前とパスワードで開く暗号化した単語帳', () {
-      final cards = VocabParser.parse(_leap);
-      final data = VocabVault.seal('TEST', cards, 'pass-1', random: Random(1));
-      expect(String.fromCharCodes(data).contains('agree'), isFalse,
-          reason: '中身は平文で入っていない');
-      final opened = VocabVault.open(data, 'pass-1')!;
-      expect(opened.title, 'TEST');
-      expect(opened.cards.length, cards.length);
-      expect(opened.cards.first.term, 'agree');
-      expect(VocabVault.open(data, 'pass-2'), isNull);
-      expect(VocabVault.fileName(' test '), VocabVault.fileName('TEST'));
-      expect(VocabVault.fileName('TEST'), isNot(VocabVault.fileName('LEAP')));
     });
   });
 }

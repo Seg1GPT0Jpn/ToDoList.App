@@ -67,9 +67,10 @@ COLORS = [
     0xFFE91E63, 0xFF8D6E63, 0xFF5C6BC0, 0xFF43A047, 0xFFFF7043, 0xFF00897B,
     0xFF6D4C41, 0xFF3949AB, 0xFFD81B60, 0xFF7CB342,
 ]
-PLACES = ['野原', '小道', '森', '丘', '川べり', '橋', 'どうくつ', '谷', '泉',
-          'みずうみ', '花畑', '坂道', '岩場', '林', '村はずれ', '草原']
-BOSS_PLACES = ['とりで', '城', '塔', '神殿']
+# エリアの地名（地形は名前から決まる：world/terrain.dart）
+PLACES = ['野原', '花畑', '森', '丘', '川べり', '浜辺', '洞くつ', '地底湖', '遺跡', '港',
+          '町なみ', '工房', '書庫', '見はり塔', '空の道', '雪原', '砂漠', '火山', '湖のほとり', '高原']
+BOSS_PLACES = ['砦', '城', '塔', '神殿']
 INTRO = [
     '「{t}」、ちゃんとわかってるかな？ ためしてやる！',
     'ここを通りたければ「{t}」の問題に答えてみな！',
@@ -171,6 +172,27 @@ class World:
         return r
 
 
+# ボスに負けると捕まる仲間（battle/cards.dart の CompanionDef）
+COMPANIONS = ['kotodama', 'old_dict', 'clock_rabbit', 'cat_teacher']
+
+
+def route_categories(w, r):
+    """ルートの弱点（奇数・偶数エリア）と、ボスの装甲を割る問題の種類。
+
+    装甲はそのルートでいちばん多い種類にする（その種類の問題が出ないと装甲が割れず、
+    ボスに勝てなくなるため）。"""
+    count = {}
+    for a in r.areas:
+        for q in a.qs:
+            c = CAT[q['c']]
+            count[c] = count.get(c, 0) + 1
+    ranked = sorted(count, key=lambda c: -count[c])
+    prim = w.primary if w.primary in count else ranked[0]
+    sec = w.secondary if w.secondary in count and w.secondary != prim else (
+        ranked[1] if len(ranked) > 1 and ranked[0] == prim else ranked[0])
+    return prim, sec, ranked[0]
+
+
 def set_id(w, r, k):
     return f'{w.id}_{r.id}_{k:02d}'
 
@@ -243,7 +265,6 @@ def write_questions(w):
                 d.update(choices=o, answerIndex=o.index(q['a']),
                          explanation=q['e'] or f'正解は「{q["a"]}」。')
                 d['targetGrade'] = r.grade
-                d['phase'] = 'basics' if r.grade.startswith('小') else 'teikiTest'
                 for key in ('difficulty', 'thinkingLevel'):
                     if key in q:
                         d[key] = q[key]
@@ -275,13 +296,16 @@ def write_catalog(w):
          f'  static const description = {_dart(w.desc)};',
          '',
          '  static const routes = <RouteSpec>[']
-    for r in w.routes:
+    for ri, r in enumerate(w.routes):
+        prim, sec, armor = route_categories(w, r)
+        bosses = [k for k, a in enumerate(r.areas, 1) if a.boss]
+        captives = {k: COMPANIONS[(ri + i) % len(COMPANIONS)] for i, k in enumerate(bosses)}
         L.append('    RouteSpec(')
         L.append(f"      info: RouteInfo('{r.id}', {_dart(r.name)}, '{r.direction}'),")
         L.append(f'      timeLimitSeconds: {r.time},')
-        L.append(f'      primary: QuestionCategory.{w.primary},')
-        L.append(f'      secondary: QuestionCategory.{w.secondary},')
-        L.append(f'      armorCategory: QuestionCategory.{w.armor},')
+        L.append(f'      primary: QuestionCategory.{prim},')
+        L.append(f'      secondary: QuestionCategory.{sec},')
+        L.append(f'      armorCategory: QuestionCategory.{armor},')
         L.append('      areas: [')
         for k, a in enumerate(r.areas, 1):
             e = _enemy(w, r, k, a)
@@ -297,6 +321,8 @@ def write_catalog(w):
             L.append(f"          defeat: {_dart(e['defeat'])},")
             if a.boss:
                 L.append('          boss: true,')
+            if a.boss and k in captives:
+                L.append(f"          captive: '{captives[k]}',")
             L.append('        ),')
         L.append('      ],')
         L.append('    ),')
@@ -322,12 +348,13 @@ def curriculum_text(w):
             if sno not in done:
                 done.add(sno)
                 L.append(f'  field s{sno}|{a.section}')
+                prev_unit = None  # 前提は同じ分野の中だけでつなぐ
             pre = f'|pre={prev_unit}' if prev_unit and not a.boss else ''
             name = a.theme.replace('|', '／')
             L.append(f'    unit a{k:02d}|{name}{pre}')
             L.append('      sub main|' + name)
             if not a.boss:
-                prev_unit = unit_id(w, r, k).rsplit('.', 0)[0]
+                prev_unit = unit_id(w, r, k)
     return '\n'.join(L) + '\n'
 
 

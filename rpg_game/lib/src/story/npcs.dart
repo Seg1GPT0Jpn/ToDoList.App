@@ -322,12 +322,12 @@ class Npcs {
       storyteller.greeting,
       Story.prologue[2],
       Story.prologue[3],
-      switch (n) {
-        0 => 'まだ欠片はひとつも見つかっていないようだね。まずはこの国の奥をめざしてごらん。',
-        < 6 =>
-          '欠片を$n個も取りもどしたのかい。${Story.worlds.where((w) => fragments.contains(w.worldId)).map((w) => w.fragment).join('、')}…あたたかい光だねえ。',
-        _ => '5つの欠片がそろったね！ 世界の中心への道がひらいたよ。ホームの「物語」から挑めるはずさ。',
-      },
+      if (n == 0)
+        'まだ欠片はひとつも見つかっていないようだね。まずはこの国の奥をめざしてごらん。'
+      else if (n < Story.worlds.length)
+        '欠片を$n個も取りもどしたのかい。${Story.worlds.where((w) => fragments.contains(w.worldId)).map((w) => w.fragment).join('、')}…あたたかい光だねえ。'
+      else
+        '${Story.worlds.length}つの欠片がそろったね！ 世界の中心への道がひらいたよ。ホームの「物語」から挑めるはずさ。',
       '忘れてもいい。また学べばいいんだよ。それが、忘却の魔王にいちばん効く魔法さ。',
     ];
     return NpcTalk(npc: storyteller, lines: lines);

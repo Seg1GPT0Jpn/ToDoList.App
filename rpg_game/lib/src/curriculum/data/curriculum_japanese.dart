@@ -85,7 +85,6 @@ const japaneseCurriculum = CurriculumNode(
               id: 'japanese.e1.s2.a05',
               name: 'かん字の かき（1年）',
               level: CurriculumLevel.unit,
-              prerequisites: ['japanese.e1.s1.a03'],
               children: [
                 CurriculumNode(
                   id: 'japanese.e1.s2.a05.main',
@@ -210,7 +209,6 @@ const japaneseCurriculum = CurriculumNode(
               id: 'japanese.e2.s2.a05',
               name: '主語と 述語・かたかなの ことば',
               level: CurriculumLevel.unit,
-              prerequisites: ['japanese.e2.s1.a03'],
               children: [
                 CurriculumNode(
                   id: 'japanese.e2.s2.a05.main',
@@ -335,7 +333,6 @@ const japaneseCurriculum = CurriculumNode(
               id: 'japanese.e3.s2.a05',
               name: 'ことわざ',
               level: CurriculumLevel.unit,
-              prerequisites: ['japanese.e3.s1.a03'],
               children: [
                 CurriculumNode(
                   id: 'japanese.e3.s2.a05.main',
@@ -460,7 +457,6 @@ const japaneseCurriculum = CurriculumNode(
               id: 'japanese.e4.s2.a05',
               name: 'つなぎ言葉と 修飾語',
               level: CurriculumLevel.unit,
-              prerequisites: ['japanese.e4.s1.a03'],
               children: [
                 CurriculumNode(
                   id: 'japanese.e4.s2.a05.main',
@@ -585,7 +581,6 @@ const japaneseCurriculum = CurriculumNode(
               id: 'japanese.e5.s2.a05',
               name: '和語・漢語・外来語と 熟語の組み立て',
               level: CurriculumLevel.unit,
-              prerequisites: ['japanese.e5.s1.a03'],
               children: [
                 CurriculumNode(
                   id: 'japanese.e5.s2.a05.main',
@@ -710,7 +705,6 @@ const japaneseCurriculum = CurriculumNode(
               id: 'japanese.e6.s2.a05',
               name: '文の組み立て',
               level: CurriculumLevel.unit,
-              prerequisites: ['japanese.e6.s1.a03'],
               children: [
                 CurriculumNode(
                   id: 'japanese.e6.s2.a05.main',
@@ -835,7 +829,6 @@ const japaneseCurriculum = CurriculumNode(
               id: 'japanese.j1.s2.a05',
               name: '古文の基礎：竹取物語',
               level: CurriculumLevel.unit,
-              prerequisites: ['japanese.j1.s1.a03'],
               children: [
                 CurriculumNode(
                   id: 'japanese.j1.s2.a05.main',
@@ -960,7 +953,6 @@ const japaneseCurriculum = CurriculumNode(
               id: 'japanese.j2.s2.a05',
               name: '枕草子・徒然草・平家物語',
               level: CurriculumLevel.unit,
-              prerequisites: ['japanese.j2.s1.a03'],
               children: [
                 CurriculumNode(
                   id: 'japanese.j2.s2.a05.main',
@@ -1085,7 +1077,6 @@ const japaneseCurriculum = CurriculumNode(
               id: 'japanese.j3.s2.a05',
               name: 'おくのほそ道と和歌',
               level: CurriculumLevel.unit,
-              prerequisites: ['japanese.j3.s1.a03'],
               children: [
                 CurriculumNode(
                   id: 'japanese.j3.s2.a05.main',
