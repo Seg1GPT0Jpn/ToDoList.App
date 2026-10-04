@@ -31,8 +31,8 @@ class _StoryScreenState extends State<StoryScreen> {
     if (!context.mounted || questions.isEmpty) return;
     final saved = Story.fragments(await services.repository.load()).length;
     if (!context.mounted) return;
-    final level = CpuLevel.values[(saved * CpuLevel.values.length) ~/
-        (Story.worlds.length + 1)];
+    final level = CpuLevel
+        .values[(saved * CpuLevel.values.length) ~/ (Story.worlds.length + 1)];
     await Navigator.of(context).push(
       MaterialPageRoute<void>(
         builder: (_) => VersusScreen(
@@ -119,7 +119,10 @@ class _StoryScreenState extends State<StoryScreen> {
                   label: const Text('序章「白紙の旅立ち」を読む'),
                 ),
                 const SizedBox(height: 16),
-                Text('五つの証（${got.length} / ${Story.worlds.length}）', style: serif(16)),
+                Text(
+                  '五つの証（${got.length} / ${Story.worlds.length}）',
+                  style: serif(16),
+                ),
                 const SizedBox(height: 6),
                 for (final w in Story.worlds)
                   Card(

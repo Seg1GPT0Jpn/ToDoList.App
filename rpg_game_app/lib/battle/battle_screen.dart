@@ -8,6 +8,7 @@ import '../app/theme.dart';
 import '../app/toast.dart';
 import '../audio/music_director.dart';
 import '../art/battle_backdrop.dart';
+import '../art/fx.dart';
 import '../art/enemy_painter.dart';
 import '../art/hero_painter.dart';
 import '../art/paper.dart';
@@ -235,6 +236,53 @@ class _BattleScreenState extends State<BattleScreen>
     duration: const Duration(milliseconds: 900),
   );
 
+  /// 大技・クリティカルの画面の揺れ
+  late final _shake = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 450),
+  );
+
+  /// 正解の文字が光るプレートになって飛んでいく
+  late final _plate = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 300),
+  );
+  String _plateText = '';
+
+  /// 必殺技・浄化のカットイン
+  late final _cutIn = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 1300),
+  );
+  String _cutTitle = '';
+  String _cutSub = '';
+  Color _cutColor = const Color(0xFFD64545);
+
+  /// 国の光の色（オーラ・光の粒）
+  late final Color _light = Fx.lightFor(widget.stage.worldId);
+
+  /// 動きをへらす設定のときは、揺れ・ヒットストップ・カットインを出さない
+  bool get _still => MediaQuery.of(context).disableAnimations;
+
+  /// ヒットストップ：当たった瞬間、敵の動きを一瞬止める
+  void _hitStop(int ms) {
+    if (_still) return;
+    _idle.stop();
+    Future.delayed(Duration(milliseconds: ms), () {
+      if (mounted) _idle.repeat();
+    });
+  }
+
+  void _showCutIn(String title, String sub, Color color) {
+    if (_still) return;
+    setState(() {
+      _cutTitle = title;
+      _cutSub = sub;
+      _cutColor = color;
+    });
+    _cutIn.forward(from: 0);
+  }
+
   /// ボスの連戦で、たおれていくところを見せているボス（次のボスはそのあと前に出る）
   EnemyDef? _fallen;
 
@@ -318,6 +366,9 @@ class _BattleScreenState extends State<BattleScreen>
       _flash,
       _playerHit,
       _defeat,
+      _shake,
+      _plate,
+      _cutIn,
     ]) {
       c.dispose();
     }
@@ -423,6 +474,13 @@ class _BattleScreenState extends State<BattleScreen>
     _record(r);
 
     if (r.correct) {
+      final pq = r.question;
+      _plateText = response != null
+          ? (_typed ?? '正解！')
+          : pq.choices.isEmpty
+          ? '正解！'
+          : pq.choices[pq.correctIndex];
+      _plate.forward(from: 0);
       _slash.forward(from: 0);
       _burstColor = r.quick
           ? const Color(0xFFF2B84B)
@@ -431,11 +489,18 @@ class _BattleScreenState extends State<BattleScreen>
           : r.blocked
           ? TsuzuriColors.inkSoft
           : TsuzuriColors.ink;
-      Future.delayed(const Duration(milliseconds: 140), () {
+      Future.delayed(const Duration(milliseconds: 260), () {
         if (mounted) _burst.forward(from: 0);
       });
-      if (r.quick || r.bossBurst || r.special) _flash.forward(from: 0);
+      if (r.quick || r.bossBurst || r.special) {
+        Future.delayed(const Duration(milliseconds: 260), () {
+          if (!mounted) return;
+          _flash.forward(from: 0);
+          if (!_still) _shake.forward(from: 0);
+        });
+      }
       if (r.special) {
+        _showCutIn('言霊・全力綴り！', '必殺技', const Color(0xFFD64545));
         _burstColor = const Color(0xFFD64545);
         _popup(
           _Popup(
@@ -447,8 +512,10 @@ class _BattleScreenState extends State<BattleScreen>
           after: const Duration(milliseconds: 100),
         );
       }
-      Future.delayed(const Duration(milliseconds: 160), () {
-        if (mounted) _enemyHit.forward(from: 0);
+      Future.delayed(const Duration(milliseconds: 280), () {
+        if (!mounted) return;
+        _enemyHit.forward(from: 0);
+        _hitStop(r.quick || r.special ? 140 : 80);
       });
       _popup(
         _Popup(
@@ -457,7 +524,7 @@ class _BattleScreenState extends State<BattleScreen>
           const Alignment(0.25, -0.2),
           big: true,
         ),
-        after: const Duration(milliseconds: 160),
+        after: const Duration(milliseconds: 280),
       );
       if (r.quick) {
         _popup(
@@ -720,6 +787,21 @@ class _BattleScreenState extends State<BattleScreen>
         );
       }
       if (won) {
+        if (widget.stage.isBoss && !widget.ghost) {
+          final guardian = Story.worlds.any(
+            (w) =>
+                w.worldId == widget.stage.worldId &&
+                Story.finalsOf(w.worldId).any((s) => s.id == widget.stage.id),
+          );
+          Future.delayed(const Duration(milliseconds: 300), () {
+            if (!mounted) return;
+            _showCutIn(
+              guardian ? '正しき理を、ここに綴る！' : '撃破！',
+              guardian ? '${_engine.enemy.name}を浄化' : _engine.enemy.name,
+              guardian ? const Color(0xFF3C6FB0) : const Color(0xFF8A5A2B),
+            );
+          });
+        }
         Future.delayed(const Duration(milliseconds: 550), () {
           if (mounted) _defeat.forward();
         });
@@ -925,15 +1007,20 @@ class _BattleScreenState extends State<BattleScreen>
     final q = _last?.question ?? _engine.currentQuestion;
     return Scaffold(
       body: AnimatedBuilder(
-        animation: _playerHit,
+        animation: Listenable.merge([_playerHit, _shake, _cutIn]),
         builder: (context, child) {
           final v = _playerHit.value;
-          final shake = MediaQuery.of(context).disableAnimations
-              ? 0.0
-              : sin(v * pi * 7) * 9 * (1 - v);
+          final k = _shake.value;
+          final still = MediaQuery.of(context).disableAnimations;
+          final shake = still
+              ? Offset.zero
+              : Offset(
+                  sin(v * pi * 7) * 9 * (1 - v) + sin(k * pi * 9) * 7 * (1 - k),
+                  cos(k * pi * 7) * 4 * (1 - k) * (k > 0 ? 1 : 0),
+                );
           return Stack(
             children: [
-              Transform.translate(offset: Offset(shake, 0), child: child),
+              Transform.translate(offset: shake, child: child),
               for (final p in _popups.where((p) => p.onPlayer))
                 IgnorePointer(
                   key: p.key,
@@ -943,6 +1030,14 @@ class _BattleScreenState extends State<BattleScreen>
                   ),
                 ),
               if (_bossBanner) const IgnorePointer(child: _BossBanner()),
+              Positioned.fill(
+                child: CutIn(
+                  v: _cutIn.value,
+                  title: _cutTitle,
+                  subtitle: _cutSub,
+                  color: _cutColor,
+                ),
+              ),
               // 被ダメージ時の赤いふち
               IgnorePointer(
                 child: Container(
@@ -1072,7 +1167,7 @@ class _BattleScreenState extends State<BattleScreen>
         final size = min(box.maxWidth * 0.62, box.maxHeight * 0.92);
         final shown = _fallen ?? _engine.enemy;
         final back = _fallen == null ? _engine.backEnemy : null;
-        return Stack(
+        final stage = Stack(
           alignment: Alignment.center,
           children: [
             // 地形ごとの舞台（ノートに貼った絵）
@@ -1082,15 +1177,57 @@ class _BattleScreenState extends State<BattleScreen>
                 child: RepaintBoundary(
                   child: AnimatedBuilder(
                     animation: _idle,
-                    builder: (_, _) => CustomPaint(
-                      painter: BattleBackdropPainter(
-                        _terrain,
-                        _idle.value * 120,
-                        boss: widget.stage.isBoss && !widget.ghost,
-                      ),
+                    builder: (_, _) => Stack(
+                      fit: StackFit.expand,
+                      children: [
+                        // 背景は国の色調にして、ほんのりぼかす（被写界深度）
+                        GradedBackdrop(
+                          worldId: widget.stage.worldId,
+                          child: CustomPaint(
+                            painter: BattleBackdropPainter(
+                              _terrain,
+                              _idle.value * 120,
+                              boss: widget.stage.isBoss && !widget.ghost,
+                            ),
+                          ),
+                        ),
+                        CustomPaint(
+                          painter: LightRaysPainter(
+                            _idle.value * 120,
+                            _light,
+                            strength: widget.stage.isBoss ? 1.3 : 1,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
+              ),
+            ),
+            // 敵の後ろの魔力のオーラ（当たると白く照り返す）
+            IgnorePointer(
+              child: AnimatedBuilder(
+                animation: Listenable.merge([_idle, _enemyHit, _defeat]),
+                builder: (_, _) {
+                  final hit = _enemyHit.value;
+                  return Opacity(
+                    opacity: 1 - _defeat.value,
+                    child: SizedBox.square(
+                      dimension: size * 1.3,
+                      child: CustomPaint(
+                        painter: AuraPainter(
+                          _idle.value * 120,
+                          widget.stage.isBoss && shown.color != null
+                              // 暗い色のボスでも見えるよう、国の光を混ぜる
+                              ? Color.lerp(Color(shown.color!), _light, 0.45)!
+                              : _light,
+                          strength: widget.stage.isBoss ? 1.6 : 0.7,
+                          hitLight: hit > 0 && hit < 1 ? 1 - hit : 0,
+                        ),
+                      ),
+                    ),
+                  );
+                },
               ),
             ),
             // 乱入してきたボス（前のボスの後ろに重なって控える）
@@ -1116,15 +1253,27 @@ class _BattleScreenState extends State<BattleScreen>
                 final intro = Curves.bounceOut.transform(_intro.value);
                 final hit = _enemyHit.value;
                 final d = Curves.easeIn.transform(_defeat.value);
+                final t = _idle.value * 120;
+                final still = MediaQuery.of(context).disableAnimations;
+                // 呼吸（ふくらむ・しぼむ）と、ふわふわ浮く動き
+                final breath = still ? 0.0 : sin(t * 2.4);
+                final bob = still ? 0.0 : sin(t * 1.3) * 4;
+                // 当たった瞬間につぶれて、はね返る
+                final squash = sin(hit * pi) * (1 - hit);
                 return Transform.translate(
                   offset: Offset(
                     sin(hit * pi * 6) * 12 * (1 - hit),
-                    -(1 - intro) * box.maxHeight,
+                    -(1 - intro) * box.maxHeight + bob,
                   ),
                   child: Transform.rotate(
                     angle: d * 0.6,
-                    child: Transform.scale(
-                      scale: 1 - d * 0.7,
+                    child: Transform(
+                      alignment: Alignment.bottomCenter,
+                      transform: Matrix4.diagonal3Values(
+                        (1 + breath * 0.012 + squash * 0.18) * (1 - d * 0.7),
+                        (1 + breath * 0.025 - squash * 0.14) * (1 - d * 0.7),
+                        1,
+                      ),
                       child: Opacity(
                         opacity: 1 - d,
                         child: SizedBox.square(
@@ -1142,6 +1291,17 @@ class _BattleScreenState extends State<BattleScreen>
                   ),
                 );
               },
+            ),
+            // 正解の文字のプレート
+            IgnorePointer(
+              child: AnimatedBuilder(
+                animation: _plate,
+                builder: (_, _) => FlyingPlate(
+                  text: _plateText,
+                  v: _plate.value,
+                  color: _light,
+                ),
+              ),
             ),
             // えんぴつの斬撃
             IgnorePointer(
@@ -1192,6 +1352,17 @@ class _BattleScreenState extends State<BattleScreen>
                 ),
               ),
             ),
+            // 手前のボケた光の粒（フォアグラウンド）
+            IgnorePointer(
+              child: AnimatedBuilder(
+                animation: _idle,
+                builder: (_, _) => SizedBox.expand(
+                  child: CustomPaint(
+                    painter: ForegroundBokehPainter(_idle.value * 120, _light),
+                  ),
+                ),
+              ),
+            ),
             for (final p in _popups.where((p) => !p.onPlayer))
               Align(
                 key: p.key,
@@ -1204,6 +1375,18 @@ class _BattleScreenState extends State<BattleScreen>
                 child: _SpeechBubble(text: _speech!),
               ),
           ],
+        );
+        if (!widget.stage.isBoss || widget.ghost) return stage;
+        // ボス登場：カメラが寄ってから、ゆっくり引く
+        return AnimatedBuilder(
+          animation: _intro,
+          builder: (context, child) => Transform.scale(
+            scale: MediaQuery.of(context).disableAnimations
+                ? 1
+                : 1 + 0.35 * (1 - Curves.easeOutCubic.transform(_intro.value)),
+            child: child,
+          ),
+          child: stage,
         );
       },
     );
@@ -2266,14 +2449,17 @@ class _PopupText extends StatelessWidget {
               child: Text(
                 popup.text,
                 style: serif(popup.big ? 40 : 20, color: popup.color).copyWith(
-                  shadows: const [
-                    Shadow(
-                      color: Colors.white,
-                      blurRadius: 0,
-                      offset: Offset(2, 2),
-                    ),
-                    Shadow(color: Colors.white, blurRadius: 6),
-                  ],
+                  // 大きい文字は光って見せる（ブルーム）
+                  shadows: popup.big
+                      ? Fx.bloom(const Color(0xFFFFE08A))
+                      : const [
+                          Shadow(
+                            color: Colors.white,
+                            blurRadius: 0,
+                            offset: Offset(2, 2),
+                          ),
+                          Shadow(color: Colors.white, blurRadius: 6),
+                        ],
                 ),
               ),
             ),
@@ -2344,6 +2530,16 @@ class _BurstPainter extends CustomPainter {
       final len = reach * (i.isEven ? 1.0 : 0.72);
       final start = c + Offset(cos(a), sin(a)) * len * ease * 0.45;
       final end = c + Offset(cos(a), sin(a)) * len * ease;
+      // 光のにじみ（ブルーム）を下に重ねる
+      canvas.drawLine(
+        start,
+        end,
+        Paint()
+          ..color = color.withValues(alpha: fade * 0.5)
+          ..strokeWidth = big ? 12 : 8
+          ..strokeCap = StrokeCap.round
+          ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 6),
+      );
       canvas.drawLine(
         start,
         end,

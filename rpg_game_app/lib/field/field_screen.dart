@@ -12,6 +12,7 @@ import '../app/services.dart';
 import '../app/theme.dart';
 import '../main.dart' show routeObserver;
 import '../study/inn_screen.dart';
+import '../art/fx.dart';
 import '../art/enemy_painter.dart';
 import '../art/hero_painter.dart';
 import '../battle/battle_screen.dart';
@@ -859,6 +860,8 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
           Positioned.fill(
             child: GameWidget(game: _game, focusNode: _focus),
           ),
+          // ただよう光の粒と、ふちの暗がり（奥行きと空気感）
+          Positioned.fill(child: FieldAtmosphere(worldId: widget.world.id)),
           // 上部の情報バー
           Positioned(
             top: 0,

@@ -14,7 +14,6 @@ import '../meta/design.dart';
 /// 単語の森で最初に読む単語リスト（すべて自作）
 const wordForestLists = ['words_j1', 'words_j2', 'words_j3', 'idioms_j'];
 
-
 Future<WordList> loadWordList(String id) async {
   // バイト列を読んでその場で文字に直す（loadString は大きいファイルを
   // 別の isolate で直すうえ、結果を覚えておくので使わない）

@@ -64,8 +64,7 @@ class _SeaHomeScreenState extends State<SeaHomeScreen> {
         Tab(text: '単語・熟語'),
       ],
       if (extras.isNotEmpty) const Tab(text: '追加問題'),
-      if (english)
-        const Tab(icon: Icon(Icons.style, size: 16), text: '単語帳練習'),
+      if (english) const Tab(icon: Icon(Icons.style, size: 16), text: '単語帳練習'),
     ];
     return DefaultTabController(
       key: ValueKey(_subject),

@@ -110,7 +110,8 @@ class AdventureCard extends StatelessWidget {
                   ),
                   _MenuButton(
                     icon: Icons.menu_book_outlined,
-                    label: '物語（証 ${Story.fragments(progress).length}/${Story.worlds.length}）',
+                    label:
+                        '物語（証 ${Story.fragments(progress).length}/${Story.worlds.length}）',
                     builder: (_) => const StoryScreen(),
                   ),
                   _MenuButton(

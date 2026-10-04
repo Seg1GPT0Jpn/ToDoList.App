@@ -6,6 +6,7 @@ import 'package:rpg_game/rpg_game.dart';
 import '../app/services.dart';
 import '../app/theme.dart';
 import '../art/enemy_painter.dart';
+import '../art/fx.dart';
 import '../art/hero_painter.dart';
 import '../field/terrain_art.dart';
 
@@ -135,6 +136,21 @@ class _StoryPlayerScreenState extends State<StoryPlayerScreen>
                     CustomPaint(painter: _AmbientPainter(base, _ambient.value)),
               ),
             ),
+            // 差しこむ光の柱（奥行きと光）
+            Positioned.fill(
+              child: IgnorePointer(
+                child: AnimatedBuilder(
+                  animation: _ambient,
+                  builder: (_, _) => CustomPaint(
+                    painter: LightRaysPainter(
+                      _ambient.value * 30,
+                      const Color(0xFFFFF1C9),
+                      strength: 0.9,
+                    ),
+                  ),
+                ),
+              ),
+            ),
             if (_line < 0)
               _TitleCard(scene: scene)
             else ...[
@@ -169,6 +185,20 @@ class _StoryPlayerScreenState extends State<StoryPlayerScreen>
                     ),
                   ),
                 ),
+              // 手前のボケた光の粒
+              Positioned.fill(
+                child: IgnorePointer(
+                  child: AnimatedBuilder(
+                    animation: _ambient,
+                    builder: (_, _) => CustomPaint(
+                      painter: ForegroundBokehPainter(
+                        _ambient.value * 30,
+                        const Color(0xFFFFF1C9),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
               Align(
                 alignment: Alignment.bottomCenter,
                 child: _TextBox(

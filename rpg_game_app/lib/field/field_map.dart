@@ -204,7 +204,6 @@ class FieldMap {
     return w.routes.length > 1 ? '${w.id}_hub' : '${w.id}_${w.routes.first.id}';
   }
 
-
   /// 試験対策ワールドのマップ。集めたエリア（5教科を混ぜてよい）と
   /// 最後の「試験本番」を、同じ組み立て方で1本の航路にする。
   ///

@@ -9,13 +9,7 @@ import '../study/comprehensive_exam_screen.dart';
 import 'design.dart';
 
 /// 総合演習と成長の画面で選べる教科
-const examSubjects = [
-  'english',
-  'math',
-  'japanese',
-  'science',
-  'social',
-];
+const examSubjects = ['english', 'math', 'japanese', 'science', 'social'];
 
 /// 成長と学習ルート：何ができるようになったか（4つのものさし）、
 /// 学習の段階のはしご、苦手からさかのぼる学習ルート、複合弱点。

@@ -47,9 +47,7 @@ class _SkyHomeScreenState extends State<SkyHomeScreen> {
     final world = RpgCatalog.world(_subject);
     final sections = _sections(world);
     final english = world.id == RpgCatalog.englishWorldId;
-    final extraTabs = [
-      if (english) const Tab(text: '単語'),
-    ];
+    final extraTabs = [if (english) const Tab(text: '単語')];
     final chooser = SizedBox(
       height: 44,
       child: ListView(
