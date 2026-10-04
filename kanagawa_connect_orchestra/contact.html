@@ -4,25 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>お問い合わせ｜かながわコネクトオーケストラ</title>
-  <meta name="description" content="かながわコネクトオーケストラへの参加希望・お問い合わせについてのご案内です。">
+  <meta name="description" content="かながわコネクトオーケストラへのお問い合わせ窓口。参加希望は参加希望フォーム、その他のご連絡はメールで受け付けています。">
   <link rel="canonical" href="https://kanagawa-connect-orchestra.web.app/contact.html">
   <meta name="theme-color" content="#1c2a48">
 
-  <!-- OGP -->
-  <meta property="og:type" content="article">
+  <!-- OGP / SNS -->
+  <meta property="og:type" content="website">
   <meta property="og:site_name" content="かながわコネクトオーケストラ">
   <meta property="og:title" content="お問い合わせ｜かながわコネクトオーケストラ">
-  <meta property="og:description" content="かながわコネクトオーケストラへの参加希望・お問い合わせについてのご案内です。">
+  <meta property="og:description" content="かながわコネクトオーケストラへのお問い合わせ窓口。参加希望は参加希望フォーム、その他のご連絡はメールで受け付けています。">
   <meta property="og:url" content="https://kanagawa-connect-orchestra.web.app/contact.html">
   <meta property="og:image" content="https://kanagawa-connect-orchestra.web.app/images/ogp.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="かながわコネクトオーケストラ — すべてのひとのためのオーケストラ">
+  <meta property="og:image:alt" content="かながわコネクトオーケストラ｜すべてのひとのためのオーケストラ">
   <meta property="og:locale" content="ja_JP">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="お問い合わせ｜かながわコネクトオーケストラ">
+  <meta name="twitter:description" content="かながわコネクトオーケストラへのお問い合わせ窓口。参加希望は参加希望フォーム、その他のご連絡はメールで受け付けています。">
+  <meta name="twitter:image" content="https://kanagawa-connect-orchestra.web.app/images/ogp.png">
 
   <!-- Favicon -->
-  <link rel="icon" href="favicon/favicon.ico" sizes="32x32">
+  <link rel="icon" href="favicon/favicon.ico" sizes="48x48">
   <link rel="icon" href="favicon/icon-192.png" type="image/png" sizes="192x192">
   <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
   <link rel="manifest" href="favicon/site.webmanifest">
@@ -30,23 +33,44 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&amp;family=Noto+Serif+JP:wght@500;600&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&amp;family=Noto+Sans+JP:wght@400;700&amp;family=Noto+Serif+JP:wght@500;600&amp;display=swap">
 
   <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js" defer></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ホーム",
+      "item": "https://kanagawa-connect-orchestra.web.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "お問い合わせ",
+      "item": "https://kanagawa-connect-orchestra.web.app/contact.html"
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">本文へスキップ</a>
   <header class="site-header">
     <div class="container site-header__inner">
-      <a class="site-logo" href="./" aria-label="かながわコネクトオーケストラ ホームへ">
+      <a class="site-logo" href="./">
         <img class="site-logo__mark" src="images/logo-160.png" width="40" height="40" alt="">
         <span>かながわコネクトオーケストラ</span>
       </a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="global-nav" aria-label="メニューを開く">
-        <span class="nav-toggle__bar"></span>
-        <span class="nav-toggle__bar"></span>
-        <span class="nav-toggle__bar"></span>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="global-nav">
+        <span class="visually-hidden" data-nav-label>メニューを開く</span>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
       </button>
       <nav class="global-nav" id="global-nav" aria-label="メインメニュー">
         <ul class="global-nav__list">
@@ -66,6 +90,7 @@
       <div class="container">
         <span class="page-header__en" aria-hidden="true">Contact</span>
         <h1 class="page-header__title">お問い合わせ</h1>
+        <p class="page-header__lead">ご用件に合わせて、<br>以下の窓口をご利用ください。</p>
       </div>
     </div>
     <nav class="breadcrumb container" aria-label="パンくずリスト">
@@ -75,62 +100,73 @@
       </ol>
     </nav>
 
-    <section class="section" aria-labelledby="join-title">
-      <div class="container container--narrow">
+    <section class="section" aria-labelledby="routes-title">
+      <div class="container">
         <div class="section-title">
-          <span class="section-title__en" aria-hidden="true">Join</span>
-          <h2 id="join-title">参加をご希望の方</h2>
+          <span class="section-title__en" aria-hidden="true">Contact</span>
+          <h2 id="routes-title">お問い合わせ窓口</h2>
         </div>
-        <p class="text-center">参加希望・ご興味のある方は、Googleフォームからご連絡ください。<br>「詳しい話を聞いてみたい」という段階でも歓迎です。</p>
-        <div class="btn-group btn-group--center">
-          <a class="btn btn--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSeNVFDq4rLClPT58n83vJLcjM70ODNXvUeHCRUNjm0TzqEUAA/viewform?usp=sharing&amp;ouid=104860576931330456926" data-join-form target="_blank" rel="noopener noreferrer">参加希望フォームへ<svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="visually-hidden">（Googleフォーム・新しいタブで開きます）</span></a>
+        <div class="contact-grid">
+          <div class="card contact-card">
+            <p class="card__eyebrow">参加・見学のご相談</p>
+            <h3 class="card__title">参加希望フォーム</h3>
+            <p>参加を希望される方、興味のある方はこちらから。「まだ参加を決めていない」「詳しい話を聞いてみたい」という段階でも送信できます。</p>
+            <a class="btn btn--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSeNVFDq4rLClPT58n83vJLcjM70ODNXvUeHCRUNjm0TzqEUAA/viewform?usp=sharing&amp;ouid=104860576931330456926" target="_blank" rel="noopener noreferrer">フォームを開く<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg><span class="visually-hidden">（Googleフォーム・新しいタブで開きます）</span></a>
+          </div>
+          <div class="card contact-card">
+            <p class="card__eyebrow">その他のお問い合わせ</p>
+            <h3 class="card__title">メール</h3>
+            <p>団体へのご質問・ご連絡は、こちらのメールアドレスまでお送りください。</p>
+            <a class="contact-card__link" href="mailto:kanagawaorchestra2026renraku@gmail.com"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5 12 13l8.5-6.5"/></svg><span>kanagawaorchestra2026renraku<wbr>@gmail.com</span></a>
+          </div>
+          <div class="card contact-card">
+            <p class="card__eyebrow">最新情報</p>
+            <h3 class="card__title">公式Instagram</h3>
+            <p>活動や演奏会の最新情報をお知らせします。</p>
+            <a class="contact-card__link" href="https://www.instagram.com/for.all.people_orch.kanagawa/" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="0.6"/></svg><span>@for.all.people_orch.kanagawa</span><span class="visually-hidden">（新しいタブで開きます）</span></a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section section--tinted" aria-labelledby="channels-title">
+    <section class="section section--tinted" aria-labelledby="privacy-title">
       <div class="container container--narrow">
         <div class="section-title">
-          <span class="section-title__en" aria-hidden="true">Contact</span>
-          <h2 id="channels-title">連絡先</h2>
+          <span class="section-title__en" aria-hidden="true">Privacy</span>
+          <h2 id="privacy-title">個人情報の取り扱いについて</h2>
         </div>
-        <dl class="info-list">
-          <div class="info-list__row"><dt>メール</dt><dd><a href="mailto:kanagawaorchestra2026renraku@gmail.com">kanagawaorchestra2026renraku@gmail.com</a></dd></div>
-          <div class="info-list__row"><dt>Instagram</dt><dd><a href="https://www.instagram.com/for.all.people_orch.kanagawa/" target="_blank" rel="noopener noreferrer">@for.all.people_orch.kanagawa<span class="visually-hidden">（新しいタブで開きます）</span></a></dd></div>
-        </dl>
-        <div class="btn-group btn-group--center" style="margin-top: 2rem;">
-          <a class="btn btn--outline" href="https://www.instagram.com/for.all.people_orch.kanagawa/" data-instagram-link target="_blank" rel="noopener noreferrer"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg><span data-instagram-label>Instagram</span><span class="visually-hidden" data-instagram-newtab>（新しいタブで開きます）</span></a>
-        </div>
-        <div class="notice" style="margin-top: 2rem;">
-          <p>団体へのお問い合わせは、上記のメールアドレスまでお気軽にご連絡ください。<br>参加をご希望の方は、参加希望フォームからのご回答をおすすめしています。</p>
-        </div>
+        <p>参加希望フォームやメールでいただいた情報は、団体の活動に関するご連絡や参加確認などの目的で使用します。本人の同意なく第三者へ提供したり、SNSなどで公開したりすることはありません。</p>
+        <p>未成年の方の正式な活動参加にあたっては、必要に応じて保護者の方への確認を行います。</p>
+        <p class="note">※ 団員募集の詳細は<a href="recruit.html">団員募集ページ</a>をご覧ください。</p>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p class="site-footer__brand">かながわコネクトオーケストラ</p>
-      <p class="site-footer__concept">すべてのひとのためのオーケストラ</p>
-      <nav class="footer-nav" aria-label="フッターメニュー">
-        <ul>
+      <div class="site-footer__top">
+        <div class="site-footer__brand-block">
+          <a class="site-footer__brand" href="./">
+            <img src="images/logo-160.png" width="44" height="44" alt="">
+            <span>かながわコネクトオーケストラ</span>
+          </a>
+          <p class="site-footer__concept">すべてのひとのためのオーケストラ</p>
+          <p class="site-footer__desc">学生を中心に活動する、年齢・経験を問わないオーケストラです。</p>
+        </div>
+        <nav class="footer-nav" aria-label="フッターメニュー">
+          <ul>
           <li><a href="./">ホーム</a></li>
           <li><a href="about.html">私たちについて</a></li>
           <li><a href="recruit.html">団員募集</a></li>
           <li><a href="concert.html">第1回演奏会</a></li>
           <li><a href="activity.html">活動について</a></li>
           <li><a href="contact.html">お問い合わせ</a></li>
-        </ul>
-      </nav>
-      <div class="footer-sns">
-        <a href="mailto:kanagawaorchestra2026renraku@gmail.com">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 6.5 12 13l8.5-6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
-          <span><span class="visually-hidden">メール：</span>kanagawaorchestra2026renraku@gmail.com</span>
-        </a>
-        <a href="https://www.instagram.com/for.all.people_orch.kanagawa/" data-instagram-link target="_blank" rel="noopener noreferrer">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg>
-          <span data-instagram-label>Instagram</span><span class="visually-hidden" data-instagram-newtab>（新しいタブで開きます）</span>
-        </a>
+          </ul>
+        </nav>
+      </div>
+      <div class="site-footer__links">
+        <a class="site-footer__join" href="recruit.html">団員募集中｜詳しくはこちら</a>
+        <a class="site-footer__sns" href="https://www.instagram.com/for.all.people_orch.kanagawa/" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="0.6"/></svg><span>Instagram</span><span class="visually-hidden">（新しいタブで開きます）</span></a>
       </div>
       <p class="site-footer__copy"><small>&copy; <span data-year>2026</span> かながわコネクトオーケストラ</small></p>
     </div>

@@ -4,25 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>第1回演奏会｜かながわコネクトオーケストラ</title>
-  <meta name="description" content="かながわコネクトオーケストラ第1回演奏会のご案内。メインプログラムはドヴォルザーク 交響曲第7番。日時・会場は決定次第お知らせします。">
+  <meta name="description" content="かながわコネクトオーケストラ第1回演奏会のご案内。メインプログラムとしてドヴォルザーク 交響曲第7番を予定しています。開催日・会場は決定次第お知らせします。">
   <link rel="canonical" href="https://kanagawa-connect-orchestra.web.app/concert.html">
   <meta name="theme-color" content="#1c2a48">
 
-  <!-- OGP -->
-  <meta property="og:type" content="article">
+  <!-- OGP / SNS -->
+  <meta property="og:type" content="website">
   <meta property="og:site_name" content="かながわコネクトオーケストラ">
   <meta property="og:title" content="第1回演奏会｜かながわコネクトオーケストラ">
-  <meta property="og:description" content="かながわコネクトオーケストラ第1回演奏会のご案内。メインプログラムはドヴォルザーク 交響曲第7番。日時・会場は決定次第お知らせします。">
+  <meta property="og:description" content="かながわコネクトオーケストラ第1回演奏会のご案内。メインプログラムとしてドヴォルザーク 交響曲第7番を予定しています。開催日・会場は決定次第お知らせします。">
   <meta property="og:url" content="https://kanagawa-connect-orchestra.web.app/concert.html">
   <meta property="og:image" content="https://kanagawa-connect-orchestra.web.app/images/ogp.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="かながわコネクトオーケストラ — すべてのひとのためのオーケストラ">
+  <meta property="og:image:alt" content="かながわコネクトオーケストラ｜すべてのひとのためのオーケストラ">
   <meta property="og:locale" content="ja_JP">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="第1回演奏会｜かながわコネクトオーケストラ">
+  <meta name="twitter:description" content="かながわコネクトオーケストラ第1回演奏会のご案内。メインプログラムとしてドヴォルザーク 交響曲第7番を予定しています。開催日・会場は決定次第お知らせします。">
+  <meta name="twitter:image" content="https://kanagawa-connect-orchestra.web.app/images/ogp.png">
 
   <!-- Favicon -->
-  <link rel="icon" href="favicon/favicon.ico" sizes="32x32">
+  <link rel="icon" href="favicon/favicon.ico" sizes="48x48">
   <link rel="icon" href="favicon/icon-192.png" type="image/png" sizes="192x192">
   <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
   <link rel="manifest" href="favicon/site.webmanifest">
@@ -30,23 +33,44 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&amp;family=Noto+Serif+JP:wght@500;600&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&amp;family=Noto+Sans+JP:wght@400;700&amp;family=Noto+Serif+JP:wght@500;600&amp;display=swap">
 
   <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js" defer></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ホーム",
+      "item": "https://kanagawa-connect-orchestra.web.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "第1回演奏会",
+      "item": "https://kanagawa-connect-orchestra.web.app/concert.html"
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">本文へスキップ</a>
   <header class="site-header">
     <div class="container site-header__inner">
-      <a class="site-logo" href="./" aria-label="かながわコネクトオーケストラ ホームへ">
+      <a class="site-logo" href="./">
         <img class="site-logo__mark" src="images/logo-160.png" width="40" height="40" alt="">
         <span>かながわコネクトオーケストラ</span>
       </a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="global-nav" aria-label="メニューを開く">
-        <span class="nav-toggle__bar"></span>
-        <span class="nav-toggle__bar"></span>
-        <span class="nav-toggle__bar"></span>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="global-nav">
+        <span class="visually-hidden" data-nav-label>メニューを開く</span>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
       </button>
       <nav class="global-nav" id="global-nav" aria-label="メインメニュー">
         <ul class="global-nav__list">
@@ -66,6 +90,7 @@
       <div class="container">
         <span class="page-header__en" aria-hidden="true">Concert</span>
         <h1 class="page-header__title">第1回演奏会</h1>
+        <p class="page-header__lead">学生が中心となって、<br>ドヴォルザークの交響曲第7番に挑戦します。</p>
       </div>
     </div>
     <nav class="breadcrumb container" aria-label="パンくずリスト">
@@ -75,20 +100,36 @@
       </ol>
     </nav>
 
-    <section class="section" aria-labelledby="main-program-title">
+    <section class="section section--navy concert-feature" aria-labelledby="main-program-title">
       <div class="container container--narrow">
-        <div class="concert-card">
-          <p class="concert-card__label">THE 1ST CONCERT</p>
-          <h2 class="concert-card__title" id="main-program-title">かながわコネクトオーケストラ<br>第1回演奏会</h2>
-          <p class="concert-card__main">
-            <span class="tag">Main Program</span><br><br>
-            <span class="concert-card__composer">アントニン・ドヴォルザーク</span>
-            <span class="concert-card__work">交響曲第7番</span>
-            <span class="concert-card__composer" lang="en">Antonín Dvořák : Symphony No. 7</span>
-          </p>
-          <p class="small">その他のプログラムは決定次第お知らせします。</p>
-          <p class="small muted">日時・会場・チケット情報は決定次第お知らせします。</p>
+        <h2 class="visually-hidden" id="main-program-title">メインプログラム</h2>
+        <div class="concert-feature__program">
+          <p class="concert-feature__tag">Main Program</p>
+          <p class="concert-feature__composer" lang="cs">Antonín Dvořák</p>
+          <p class="concert-feature__work" lang="en">Symphony No. 7</p>
+          <p class="concert-feature__ja">ドヴォルザーク：交響曲第7番 ニ短調 作品70</p>
         </div>
+        <p>第1回演奏会では、ドヴォルザークの交響曲第7番を<br class="u-pc">メインプログラムとして予定しています。</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="status-title">
+      <div class="container container--narrow">
+        <div class="section-title">
+          <span class="section-title__en" aria-hidden="true">Status</span>
+          <h2 id="status-title">現在の決定状況</h2>
+        </div>
+        <p class="text-center">演奏会の情報は、決まったものから順にお知らせします。</p>
+        <dl class="info-list">
+          <div class="info-list__row"><dt>メインプログラム</dt><dd>ドヴォルザーク：交響曲第7番 <span class="badge badge--planned">予定</span></dd></div>
+          <div class="info-list__row"><dt>その他の曲目</dt><dd><span class="status status--tbd">曲目は現在調整中です</span></dd></div>
+          <div class="info-list__row"><dt>開催日</dt><dd><span class="status status--tbd">決定次第お知らせします</span></dd></div>
+          <div class="info-list__row"><dt>会場</dt><dd><span class="status status--tbd">決定次第お知らせします</span></dd></div>
+          <div class="info-list__row"><dt>チケット</dt><dd><span class="status status--tbd">決定次第お知らせします</span></dd></div>
+          <div class="info-list__row"><dt>出演者の参加費</dt><dd><span class="status status--tbd">今後決定予定です</span><br><span class="small">演奏会の開催条件などを踏まえて決定し、参加前に明確にお知らせします。</span></dd></div>
+          <div class="info-list__row"><dt>出演</dt><dd>かながわコネクトオーケストラ</dd></div>
+        </dl>
+        <p class="note">※ 演奏会の日程・会場・具体的な曲目・参加条件などは、団員数や楽器編成、練習環境などが整った段階で正式決定します。</p>
       </div>
     </section>
 
@@ -96,47 +137,43 @@
       <div class="container container--narrow">
         <div class="section-title">
           <span class="section-title__en" aria-hidden="true">Program</span>
-          <h2 id="program-title">プログラム</h2>
+          <h2 id="program-title">プログラム構成（予定）</h2>
         </div>
-        <ul class="program-list">
-          <li><span class="program-list__part">Opening</span><span class="program-list__detail pending">曲目は現在調整中です</span></li>
-          <li><span class="program-list__part">Pre-main</span><span class="program-list__detail pending">曲目は現在調整中です</span></li>
-          <li><span class="program-list__part">Main</span><span class="program-list__detail program-list__detail--main">ドヴォルザーク／交響曲第7番</span></li>
-          <li><span class="program-list__part">Encore × 2</span><span class="program-list__detail pending">曲目は現在調整中です</span></li>
-        </ul>
-        <p class="small muted" style="margin-top: 1rem;">※ 演奏会の日程・会場・具体的な曲目・参加条件などについては、団員数や楽器編成、練習環境などが整った段階で正式決定します。</p>
+        <ol class="program-list">
+          <li><span class="program-list__part">オープニング</span><span class="program-list__detail"><span class="status status--tbd">曲目は調整中です</span></span></li>
+          <li><span class="program-list__part">メイン前の作品</span><span class="program-list__detail"><span class="status status--tbd">曲目は調整中です</span></span></li>
+          <li class="program-list__main"><span class="program-list__part">メインプログラム</span><span class="program-list__detail">ドヴォルザーク：交響曲第7番 <span class="badge badge--planned">予定</span></span></li>
+          <li><span class="program-list__part">アンコール（2曲予定）</span><span class="program-list__detail"><span class="status status--tbd">曲目は調整中です</span></span></li>
+        </ol>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="info-title">
-      <div class="container container--narrow">
-        <div class="section-title">
-          <span class="section-title__en" aria-hidden="true">Information</span>
-          <h2 id="info-title">公演情報</h2>
-        </div>
-        <dl class="info-list">
-          <div class="info-list__row"><dt>日時</dt><dd><span class="pending">決定次第お知らせします</span></dd></div>
-          <div class="info-list__row"><dt>会場</dt><dd><span class="pending">決定次第お知らせします</span></dd></div>
-          <div class="info-list__row"><dt>チケット</dt><dd><span class="pending">決定次第お知らせします</span></dd></div>
-          <div class="info-list__row"><dt>出演</dt><dd>かながわコネクトオーケストラ</dd></div>
-        </dl>
-        <div class="notice" style="margin-top: 2rem;">
-          <p>最新情報は本サイトおよび<a href="https://www.instagram.com/for.all.people_orch.kanagawa/" target="_blank" rel="noopener noreferrer">公式Instagram<span class="visually-hidden">（新しいタブで開きます）</span></a>でお知らせする予定です。</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--tinted" aria-labelledby="dvorak-title">
+    <section class="section" aria-labelledby="dvorak-title">
       <div class="container container--narrow">
         <div class="section-title">
           <span class="section-title__en" aria-hidden="true">About the work</span>
           <h2 id="dvorak-title">メインプログラムについて</h2>
         </div>
-        <div class="panel">
-          <h3 class="panel__title">ドヴォルザーク　交響曲第7番 ニ短調 作品70</h3>
-          <p>チェコの作曲家アントニン・ドヴォルザーク（1841–1904）が手がけた交響曲のひとつです。</p>
-          <p>私たちの最初の演奏会で、この作品にみんなで挑戦します。初めてオーケストラに参加する方も、経験を重ねてきた方も、一緒に一つの音楽をつくりあげていきます。</p>
+        <div class="card">
+          <h3 class="card__title">ドヴォルザーク　交響曲第7番 ニ短調 作品70</h3>
+          <p>チェコの作曲家アントニン・ドヴォルザーク（1841–1904）による交響曲です。1885年にロンドンで初演された全4楽章の作品で、引き締まった構成と、情熱的で劇的な音楽が特徴です。</p>
         </div>
+        <div class="card u-mt-md">
+          <h3 class="card__title">この曲に挑戦する理由</h3>
+          <p>この作品は、経験者にとっても挑みがいのある交響曲です。第1回演奏会でこの曲に取り組むこと自体が、私たちの音楽的な目標のひとつです。</p>
+          <p>初めてオーケストラに参加する方も、経験を重ねてきた方も、それぞれの経験を持ち寄り、一つの音楽をつくりあげていきます。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tinted" aria-labelledby="news-title">
+      <div class="container container--narrow text-center">
+        <div class="section-title">
+          <span class="section-title__en" aria-hidden="true">News</span>
+          <h2 id="news-title">最新情報について</h2>
+        </div>
+        <p>演奏会の最新情報は、本サイトと公式Instagramでお知らせします。</p>
+        <a class="btn btn--outline" href="https://www.instagram.com/for.all.people_orch.kanagawa/" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="0.6"/></svg>公式Instagram<span class="visually-hidden">（新しいタブで開きます）</span></a>
       </div>
     </section>
 
@@ -146,10 +183,10 @@
           <span class="section-title__en" aria-hidden="true">Join us</span>
           <h2 id="cta-title">この演奏会を、一緒につくりませんか。</h2>
         </div>
-        <p>「少し興味がある」「参加してみたい」「詳しい話を聞いてみたい」<br>どの段階でも、どうぞお気軽に。</p>
-        <div class="btn-group">
-          <a class="btn btn--gold" href="https://docs.google.com/forms/d/e/1FAIpQLSeNVFDq4rLClPT58n83vJLcjM70ODNXvUeHCRUNjm0TzqEUAA/viewform?usp=sharing&amp;ouid=104860576931330456926" data-join-form target="_blank" rel="noopener noreferrer">参加希望フォームへ<svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="visually-hidden">（Googleフォーム・新しいタブで開きます）</span></a>
-          <a class="btn btn--outline" href="recruit.html">団員募集を見る</a>
+        <p>第1回演奏会に向けて、一緒に演奏する仲間を募集しています。<br>「詳しい話を聞いてみたい」という段階でも、気軽にご連絡ください。</p>
+        <div class="btn-group btn-group--center">
+          <a class="btn btn--gold" href="https://docs.google.com/forms/d/e/1FAIpQLSeNVFDq4rLClPT58n83vJLcjM70ODNXvUeHCRUNjm0TzqEUAA/viewform?usp=sharing&amp;ouid=104860576931330456926" target="_blank" rel="noopener noreferrer">参加希望フォームへ<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg><span class="visually-hidden">（Googleフォーム・新しいタブで開きます）</span></a>
+          <a class="btn btn--outline-light" href="recruit.html">団員募集の詳細を見る</a>
         </div>
       </div>
     </section>
@@ -157,27 +194,29 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p class="site-footer__brand">かながわコネクトオーケストラ</p>
-      <p class="site-footer__concept">すべてのひとのためのオーケストラ</p>
-      <nav class="footer-nav" aria-label="フッターメニュー">
-        <ul>
+      <div class="site-footer__top">
+        <div class="site-footer__brand-block">
+          <a class="site-footer__brand" href="./">
+            <img src="images/logo-160.png" width="44" height="44" alt="">
+            <span>かながわコネクトオーケストラ</span>
+          </a>
+          <p class="site-footer__concept">すべてのひとのためのオーケストラ</p>
+          <p class="site-footer__desc">学生を中心に活動する、年齢・経験を問わないオーケストラです。</p>
+        </div>
+        <nav class="footer-nav" aria-label="フッターメニュー">
+          <ul>
           <li><a href="./">ホーム</a></li>
           <li><a href="about.html">私たちについて</a></li>
           <li><a href="recruit.html">団員募集</a></li>
           <li><a href="concert.html">第1回演奏会</a></li>
           <li><a href="activity.html">活動について</a></li>
           <li><a href="contact.html">お問い合わせ</a></li>
-        </ul>
-      </nav>
-      <div class="footer-sns">
-        <a href="mailto:kanagawaorchestra2026renraku@gmail.com">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 6.5 12 13l8.5-6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
-          <span><span class="visually-hidden">メール：</span>kanagawaorchestra2026renraku@gmail.com</span>
-        </a>
-        <a href="https://www.instagram.com/for.all.people_orch.kanagawa/" data-instagram-link target="_blank" rel="noopener noreferrer">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg>
-          <span data-instagram-label>Instagram</span><span class="visually-hidden" data-instagram-newtab>（新しいタブで開きます）</span>
-        </a>
+          </ul>
+        </nav>
+      </div>
+      <div class="site-footer__links">
+        <a class="site-footer__join" href="recruit.html">団員募集中｜詳しくはこちら</a>
+        <a class="site-footer__sns" href="https://www.instagram.com/for.all.people_orch.kanagawa/" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="0.6"/></svg><span>Instagram</span><span class="visually-hidden">（新しいタブで開きます）</span></a>
       </div>
       <p class="site-footer__copy"><small>&copy; <span data-year>2026</span> かながわコネクトオーケストラ</small></p>
     </div>

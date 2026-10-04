@@ -1,6 +1,6 @@
 # かながわコネクトオーケストラ 公式Webサイト
 
-「すべてのひとのためのオーケストラ」— 神奈川県を中心に活動する学生主体のオーケストラの公式サイトです。
+「すべてのひとのためのオーケストラ」— 学生を中心に活動する、年齢・経験を問わないオーケストラの公式サイトです。
 HTML / CSS / JavaScript のみで構成された軽量な静的サイトで、Firebase Hosting で公開できます。
 
 ## ファイル構成
@@ -15,13 +15,14 @@ kanagawa_connect_orchestra/
 ├── contact.html        お問い合わせ
 ├── 404.html            ページが見つからない場合の表示（Firebase が自動で使用）
 ├── css/style.css       スタイル（配色・余白などは先頭の :root 変数で管理）
-├── js/main.js          スマホメニュー、Instagramリンク設定、表示アニメーション
+├── js/main.js          スマホメニュー、フッターの年表示、表示アニメーション
 ├── images/logo.png     楽団ロゴマーク（logo-160.png はヘッダー用の小サイズ）
 ├── images/ogp.png      SNS共有用画像（1200×630）
 ├── docs/recruitment-guidelines.pdf  団員募集要項PDF
 ├── favicon/            ファビコン・アイコン一式
 ├── robots.txt
 ├── sitemap.xml
+├── _tools/build_site.py  全ページのHTMLとsitemap.xmlを生成するスクリプト（公開対象外）
 ├── firebase.json       Firebase Hosting 設定
 └── .firebaserc         Firebase プロジェクトID 設定
 ```
@@ -90,46 +91,50 @@ canonical・OGP・サイトマップには絶対URLが必要なため、仮のUR
 
 ## 後から情報を更新する
 
-### Instagram のURL
+### 更新のしかた（おすすめ）
 
-設定済み：https://www.instagram.com/for.all.people_orch.kanagawa/
+全ページ共通のヘッダー・フッター・SEO設定と各ページの文章は、`_tools/build_site.py` にまとめてあります。
+文章やリンクを変えるときはこのファイルを編集し、次のコマンドで全ページを作り直してください。
 
-変更する場合は、全HTMLのURLを置換したうえで、`js/main.js` 冒頭の `SITE_CONFIG` も更新してください。
-
-```js
-const SITE_CONFIG = {
-  instagramUrl: "https://www.instagram.com/for.all.people_orch.kanagawa/",
-  ...
-};
+```bash
+cd kanagawa_connect_orchestra
+python _tools/build_site.py
 ```
 
-`instagramUrl` を空文字にすると、Instagramのリンクは「Instagram（準備中）」の表示に戻ります。
+全ページのメニュー・フッター・title・OGP・sitemap.xml が自動でそろいます。
+HTMLを直接編集しても構いませんが、その後にスクリプトを実行すると上書きされる点に注意してください。
+
+### 連絡先・リンク
+
+| 項目 | 現在の設定 | 変更する場所（`_tools/build_site.py` 冒頭） |
+| --- | --- | --- |
+| 参加希望フォーム | Googleフォーム | `FORM` |
+| Instagram | https://www.instagram.com/for.all.people_orch.kanagawa/ | `INSTAGRAM` / `INSTAGRAM_ID` |
+| メール | kanagawaorchestra2026renraku@gmail.com | `MAIL` |
+| 公開URL | https://kanagawa-connect-orchestra.web.app | `BASE`（`robots.txt` も合わせて変更） |
 
 ### 未決定の情報
 
-以下は現在「決定次第お知らせします」「現在調整中です」と表示しています。決まったら該当ページのHTMLを書き換えてください。
+以下は現在「決定次第お知らせします」「今後決定予定です」などと表示しています。決まったら書き換えてください。
 
 | 項目 | 掲載ページ |
 | --- | --- |
-| 演奏会の日時・会場・チケット | `concert.html`（ホームの演奏会欄にも記載あり） |
-| Opening / Pre-main / Encore の曲目 | `concert.html` |
-| 練習日時・練習会場（具体的な日程・場所） | `activity.html`、`recruit.html`、`index.html` |
+| 演奏会の開催日・会場・チケット | `concert.html`（ホームの演奏会欄にも記載あり） |
+| オープニング・メイン前の作品・アンコールの曲目 | `concert.html` |
+| 出演者の参加費 | `concert.html` |
+| 練習日・曜日・練習会場 | `activity.html`、`recruit.html`、`index.html` |
 | 参加費 | `recruit.html`（よくある質問にも記載あり） |
 
-未決定の箇所は `class="pending"` が付いているので、エディタで `pending` を検索すると見つけられます。
+未決定の箇所には `status--tbd` クラスが付いているので、エディタで検索すると見つけられます。
 
 ### 募集要項PDF
 
 `docs/recruitment-guidelines.pdf` を団員募集ページからダウンロードできます。内容を更新したら同じファイル名で置き換えてください。
 
-### 参加希望フォームのURL
-
-各ページのボタンに直接記載しています。変更する場合は全HTMLのフォームURLと、`js/main.js` の `joinFormUrl` を置換してください。
-
 ## 配慮していること
 
-- **スマートフォン優先**のレスポンシブ設計（960px 以上でPC向けナビに切り替え）
+- **スマートフォン優先**のレスポンシブ設計（1000px 以上でPC向けナビに切り替え）
 - **アクセシビリティ**：本文へのスキップリンク、`aria-current` / `aria-expanded`、キーボード操作（Escでメニューを閉じる）、
   フォーカス表示、十分な文字コントラスト、`prefers-reduced-motion` 対応、JS無効時もメニュー表示
 - **SEO**：ページごとの title / description、canonical、OGP / Twitterカード、構造化データ（JSON-LD）、sitemap.xml
-- **軽量**：フレームワーク不使用、ページ内の装飾はCSSとインラインSVGのみ。Webフォントは Google Fonts（Noto Serif JP / Noto Sans JP）のみ
+- **軽量**：フレームワーク不使用、ページ内の装飾はCSSとインラインSVGのみ。Webフォントは Google Fonts（Noto Serif JP / Noto Sans JP / Cormorant Garamond）のみ。読み込み中は端末のフォントで先に表示します
