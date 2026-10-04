@@ -88,18 +88,20 @@ canonical・OGP・サイトマップには絶対URLが必要なため、仮のUR
 
 ## 後から情報を更新する
 
-### Instagram のURLを設定する
+### Instagram のURL
 
-`js/main.js` 冒頭の `SITE_CONFIG` を編集するだけで、全ページのInstagramリンクが有効になります。
+設定済み：https://www.instagram.com/for.all.people_orch.kanagawa/
+
+変更する場合は、全HTMLのURLを置換したうえで、`js/main.js` 冒頭の `SITE_CONFIG` も更新してください。
 
 ```js
 const SITE_CONFIG = {
-  instagramUrl: "https://www.instagram.com/xxxxx/", // ← ここに設定
+  instagramUrl: "https://www.instagram.com/for.all.people_orch.kanagawa/",
   ...
 };
 ```
 
-未設定（空文字）の間は「Instagram（準備中）」と表示され、リンクとしては機能しません。
+`instagramUrl` を空文字にすると、Instagramのリンクは「Instagram（準備中）」の表示に戻ります。
 
 ### 未決定の情報
 

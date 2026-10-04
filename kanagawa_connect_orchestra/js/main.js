@@ -10,7 +10,7 @@
  *   例: instagramUrl: "https://www.instagram.com/xxxxx/"
  */
 const SITE_CONFIG = {
-  instagramUrl: "",
+  instagramUrl: "https://www.instagram.com/for.all.people_orch.kanagawa/",
   joinFormUrl:
     "https://docs.google.com/forms/d/e/1FAIpQLSeNVFDq4rLClPT58n83vJLcjM70ODNXvUeHCRUNjm0TzqEUAA/viewform?usp=sharing&ouid=104860576931330456926",
 };
@@ -62,12 +62,13 @@ const SITE_CONFIG = {
       el.setAttribute("rel", "noopener noreferrer");
       el.removeAttribute("aria-disabled");
       el.removeAttribute("tabindex");
-      if (label) label.textContent = "Instagram（新しいタブで開きます）";
+      if (label) label.textContent = "Instagram";
     } else {
       // URL未設定：リンクとして機能させず「準備中」と明示する
       el.removeAttribute("href");
       el.setAttribute("aria-disabled", "true");
       if (label) label.textContent = "Instagram（準備中）";
+      el.querySelectorAll("[data-instagram-newtab]").forEach((n) => n.remove());
     }
   });
 
