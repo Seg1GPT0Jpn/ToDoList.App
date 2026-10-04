@@ -422,8 +422,8 @@ index_body = f'''    <section class="hero" aria-labelledby="hero-title">
 
 # ================================================================ ABOUT
 WHY_INNER = title("Why we start", "why-title", "なぜ、このオーケストラをつくるのか") + '''
-        <p>「オーケストラをやってみたい」と思っても、経験がない、年齢が合わない、所属している団体がない——そんな理由で、一歩を踏み出せない人がいます。</p>
-        <p>一方で、経験を積んできた人にとっても、学校や団体の枠を越えて、普段とは違う仲間と音楽をつくる機会は多くありません。</p>
+        <p>初心者だから。年齢が若いから。経験が少ないから。所属が違うから。<br class="u-pc">そんな理由で、自分の音楽を諦めてほしくありません。</p>
+        <p>そして、経験を積んできた人にも、学校や団体の枠を越えて「普段とは違う仲間と演奏したい」という気持ちに応えられる場所でありたいと考えています。</p>
         <p>かながわコネクトオーケストラは、学生を中心に活動する、年齢・経験を問わないオーケストラです。<strong>年齢や経験に関係なく、音楽を通して人と人がつながる場所をつくりたい。</strong>その思いから、このオーケストラを立ち上げます。</p>'''
 
 about_body = page_header("About", "私たちについて", "年齢や経験に関係なく、<br>音楽を通して人と人がつながる場所を。") + section("", "why-title", WHY_INNER) + f'''
@@ -798,7 +798,7 @@ contact_body = page_header("Contact", "お問い合わせ", "ご用件に合わ�
 {title("Contact", "routes-title", "お問い合わせ窓口")}
         <div class="contact-grid">
           <div class="card contact-card">
-            <p class="card__eyebrow">参加・見学のご相談</p>
+            <p class="card__eyebrow">参加のご相談</p>
             <h3 class="card__title">参加希望フォーム</h3>
             <p>参加を希望される方、興味のある方はこちらから。「まだ参加を決めていない」「詳しい話を聞いてみたい」という段階でも送信できます。</p>
             {btn_form("primary", "フォームを開く")}
@@ -822,7 +822,7 @@ contact_body = page_header("Contact", "お問い合わせ", "ご用件に合わ�
     <section class="section section--tinted" aria-labelledby="privacy-title">
       <div class="container container--narrow">
 {title("Privacy", "privacy-title", "個人情報の取り扱いについて")}
-        <p>参加希望フォームやメールでいただいた情報は、団体の活動に関するご連絡や参加確認などの目的で使用します。本人の同意なく第三者へ提供したり、SNSなどで公開したりすることはありません。</p>
+        <p>参加希望フォームでいただいた情報は、団体の活動に関するご連絡や参加確認などの目的で使用します。本人の同意なく第三者へ提供したり、SNSなどで公開したりすることはありません。</p>
         <p>未成年の方の正式な活動参加にあたっては、必要に応じて保護者の方への確認を行います。</p>
         <p class="note">※ 団員募集の詳細は<a href="recruit.html">団員募集ページ</a>をご覧ください。</p>
       </div>
