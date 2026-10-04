@@ -113,7 +113,6 @@ const SITE_CONFIG = {
 | Opening / Pre-main / Encore の曲目 | `concert.html` |
 | 練習日時・練習会場 | `activity.html`、`recruit.html`、`index.html` |
 | 参加費・募集パート | `recruit.html`（よくある質問にも記載あり） |
-| 正式な連絡先 | `contact.html` |
 
 未決定の箇所は `class="pending"` が付いているので、エディタで `pending` を検索すると見つけられます。
 
