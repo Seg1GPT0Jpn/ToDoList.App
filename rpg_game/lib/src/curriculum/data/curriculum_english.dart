@@ -2,8 +2,7 @@
 
 import '../curriculum.dart';
 
-const englishCurriculum =
-CurriculumNode(
+const englishCurriculum = CurriculumNode(
   id: 'english',
   name: '英語',
   level: CurriculumLevel.subject,

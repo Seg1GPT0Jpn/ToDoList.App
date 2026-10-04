@@ -315,7 +315,7 @@ class Npcs {
     }
   }
 
-  /// 語り部の話（集めた欠片の数で変わる）
+  /// 語り部の話（集めた証の数で変わる）
   static NpcTalk storytellerTalk(Set<String> fragments) {
     final n = fragments.length;
     final lines = <String>[
@@ -323,11 +323,11 @@ class Npcs {
       Story.prologue[2],
       Story.prologue[4],
       if (n == 0)
-        'まだ守護神はだれも救えていないようだね。道の果てで暴れている守護神を、知識の力でしずめておやり。'
+        'まだ証はひとつも集まっていないようだね。道の果てで狂気に呑まれた守護者を、知識の力で正気にもどしておやり。'
       else if (n < Story.worlds.length)
-        '欠片を$n個も取りもどしたのかい。${Story.worlds.where((w) => fragments.contains(w.worldId)).map((w) => w.fragment).join('、')}…守護神たちも、きっと喜んでいるよ。'
+        '証を$n個も集めたのかい。${Story.worlds.where((w) => fragments.contains(w.worldId)).map((w) => w.fragment).join('、')}…守護者たちも、きっと喜んでいるよ。'
       else
-        '${Story.worlds.length}つの欠片がそろったね！ 天空の図書院への扉がひらいたよ。ホームの「物語」から挑めるはずさ。',
+        '${Story.worlds.length}つの証がそろったね！ 大樹の天頂に、天空の図書院への光の柱があらわれたよ。ホームの「物語」から挑めるはずさ。',
       '忘れてもいい。また学べばいいんだよ。考えることをやめない心が、虚無の霧にいちばん効く魔法さ。',
     ];
     return NpcTalk(npc: storyteller, lines: lines);

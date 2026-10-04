@@ -2,8 +2,7 @@
 
 import '../curriculum.dart';
 
-const mathCurriculum =
-CurriculumNode(
+const mathCurriculum = CurriculumNode(
   id: 'math',
   name: '算数・数学',
   level: CurriculumLevel.subject,

@@ -41,10 +41,10 @@ def worlds():
               desc='小3〜中3の英語。あいさつ・単語から、中学の文法・読み取りまで6つの道。',
               primary='meaning', secondary='usage', armor='usage',
               ref='小学校 外国語活動・外国語、中学校 外国語（英語）',
-              guardian=dict(name='バベル・リヴァイアサン', look='leviathan', color=0xFF2B5F8A,
-                                intro='……ワカラナイ……コトバガ、コワイ……！ 港ニハ、ダレモ入レヌ！',
-                                defeat='……心が、通じた。未知の言葉を恐れず、伝える勇気を持てたのだな。',
-                                desc='世界中の文字の鱗をもつ巨大な海獣。言葉が通じない恐怖から生まれた嵐をまとい、港を閉ざしている。'))
+              guardian=dict(name='バベル・リヴァイアサン', look='leviathan', color=0xFF2B5F8A, place='海峡の出口',
+                            intro='異なる言葉を持つ者は、互いを傷つけ合うだけだ。理解できぬなら、最初から交わらぬよう海を閉ざす！',
+                            defeat='未知の言葉の向こうに、対話を求める心を見た。我が海は再び開かれた。',
+                            desc='海峡の出口を塞ぐ巨大な海獣。巨体に刻まれた世界中の文字が互いに反発し合い、激しい雷鳴を放っている。'))
     english.build(W)
     out.append(W)
 
@@ -55,25 +55,25 @@ def worlds():
               desc='小1〜中3の算数・数学。計算・図形・関数・データの9つの道。',
               primary='calculation', secondary='thinking', armor='calculation',
               ref='小学校 算数・中学校 数学',
-              guardian=dict(name='カラクリ・ゴーレム', look='golem', color=0xFF9C7A3C,
-                                intro='ケイサン、フメイ。キンコウ、ホウカイ。……排除、スル。',
-                                defeat='……歯車の狂いが直った。完璧な均衡を取り戻した。論理の力、見事なり。',
-                                desc='歯車と天秤でできた時計仕掛けの巨人。世界の計算が狂ったせいで、暴走した永久機関と化している。'))
+              guardian=dict(name='カラクリ・ゴーレム', look='golem', color=0xFF9C7A3C, place='論理の大時計台',
+                            intro='等号が成立しない……解が存在しない世界に、存在する価値などない。すべてを零へと還元する。',
+                            defeat='等号は美しく結ばれた。論理の道筋を恐れずに歩んだ勇者よ、見事である。',
+                            desc='論理の大時計台に鎮座する真鍮の巨人。胸の大天秤は激しく揺れ動き、歯車は摩擦で火花を散らしている。'))
     math_e.build(W)
     math_j.build(W)
     out.append(W)
 
-    W = World('japanese', 'JapaneseCatalog', '和の礎の国', '国語', prefix='jpn',
-              hub='礎の広場',
-              sign='ここは和の礎の国の「礎の広場」。左は小1・小2、下は小3・小4、右は小5・小6、'
+    W = World('japanese', 'JapaneseCatalog', '言の葉の国', '国語', prefix='jpn',
+              hub='言の葉の広場',
+              sign='ここは言の葉の国の「言の葉の広場」。左は小1・小2、下は小3・小4、右は小5・小6、'
                    '上は中1〜中3の道。漢字・言葉のきまり・古典・読解を、学年ごとに進もう。',
               desc='小1〜中3の国語。ひらがな・漢字から、文法・古典・読解まで9つの道。',
               primary='knowledge', secondary='thinking', armor='knowledge',
               ref='小学校 国語・中学校 国語',
-              guardian=dict(name='カラスバ', look='bird', color=0xFF2A2A3A,
-                                intro='カァァ……！ 聞きたくない、聞きたくない……とげとげの言葉は、もうたくさんだ！',
-                                defeat='……ありがとう。言葉は心を傷つけるトゲにも、温める羽毛にもなる。',
-                                desc='筆の尾羽をもつ鳥の精霊。人びとの悪口や乱暴な言葉を吸い込みすぎて、体が真っ黒なインクに染まっている。'))
+              guardian=dict(name='カラスバ', look='bird', color=0xFF2A2A3A, place='言霊の大講堂',
+                            intro='誰もが言葉で他人を切り裂く……ならば、すべての言葉を沈黙の闇に塗り潰してしまえばいい！',
+                            defeat='言葉は刃にもなれば、凍えた心を包む羽毛にもなる。忘れていた温もりを思い出させてくれたな。',
+                            desc='巨大な筆の尾羽を持つ巨鳥。白かった羽毛は、世界中から集まった悪口や嘲笑の墨を吸い込み、重くドロドロに染まっている。'))
     japanese.build(W)
     out.append(W)
 
@@ -84,10 +84,10 @@ def worlds():
               desc='小3〜中3の理科。生き物・もの・エネルギー・地球の7つの道。',
               primary='knowledge', secondary='thinking', armor='knowledge',
               ref='小学校 理科・中学校 理科',
-              guardian=dict(name='カオス・エレメンタル', look='dragon', color=0xFF7A3FA0,
-                                intro='熱い……冷たい……！ 痛い、痛い……！ 近づくな！',
-                                defeat='……痛みが消えていく。世界の仕組みを、解き明かしてくれたのだな。',
-                                desc='右半身が炎、左半身が氷の炎氷竜。熱・光・気候の法則が混ざり合い、激しい痛みに耐えかねて暴れている。'))
+              guardian=dict(name='カオス・エレメンタル', look='dragon', color=0xFF7A3FA0, place='生命の樹',
+                            intro='熱い……冷たい……世界の理が我を裂く！ すべてを燃やし、すべてを凍てつかせよ！',
+                            defeat='なぜそうなるのか……理由を知る者が、混沌に安らぎを与えてくれた。',
+                            desc='炎と氷の双頭を持つ合成獣。右半身は超高温で地面を溶かし、左半身は絶対零度で大気を凍らせ、温度差の激痛に狂乱している。'))
     science.build(W)
     out.append(W)
 
@@ -98,17 +98,17 @@ def worlds():
               desc='小3〜中3の社会。くらし・地理・歴史・公民の7つの道。',
               primary='knowledge', secondary='thinking', armor='knowledge',
               ref='小学校 社会・中学校 社会',
-              guardian=dict(name='クロノス・ナイト', look='knight', color=0xFF6B5B45,
-                                intro='誰も覚えていないのなら……人びとの歩みなど、すべて砂にしてしまえ！',
-                                defeat='……そうか。人々の歩んできた道は、決して無駄ではなかったのだな。',
-                                desc='過去と現代の武具をまとった幽幻の騎士。歴史を忘れられた悲しみから、すべてを砂に変えようとしている。'))
+              guardian=dict(name='クロノス・ナイト', look='knight', color=0xFF6B5B45, place='回廊の中心の荒野',
+                            intro='人間が歩んできた苦難の道など、誰も覚えちゃいない。過去を忘れ、今だけを貪る世界など、砂となって消え失せるがいい！',
+                            defeat='お前は知っているのか……我らが流した血も、築いた石垣も、すべて今の世界へと繋がっていることを。',
+                            desc='錆びついた全身鎧をまとう幽幻の騎士。無数の折れた旗指物が背中に突き刺さり、過去を消し去る風の剣を振るう。'))
     social.build(W)
     out.append(W)
 
     # まだ問題を書いていない教科（準備中）
     for wid, cls, name, subject in [
         ('english', 'EnglishCatalog', '異界の港町', '英語'),
-        ('japanese', 'JapaneseCatalog', '和の礎の国', '国語'),
+        ('japanese', 'JapaneseCatalog', '言の葉の国', '国語'),
         ('science', 'ScienceCatalog', '万物の実験庭園', '理科'),
         ('social', 'SocialCatalog', '時空の回廊', '社会'),
     ]:

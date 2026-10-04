@@ -2,12 +2,11 @@
 
 import '../curriculum.dart';
 
-const japaneseCurriculum =
-CurriculumNode(
+const japaneseCurriculum = CurriculumNode(
   id: 'japanese',
   name: '国語',
   level: CurriculumLevel.subject,
-  gameName: '和の礎の国',
+  gameName: '言の葉の国',
   curriculumReference: '小学校 国語・中学校 国語',
   source: '文部科学省 小学校・中学校学習指導要領（平成29年告示）',
   sourceUrl: 'https://www.mext.go.jp/a_menu/shotou/new-cs/1384661.htm',

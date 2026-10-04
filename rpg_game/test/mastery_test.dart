@@ -145,11 +145,10 @@ void main() {
       expect(
           LearningBonus.thinkingRate(q('a', thinking: 8)), closeTo(1.5, 1e-9));
       final weak = {'math.j3.s2.a07'};
-      expect(
-          LearningBonus.isWeak(q('a', unit: 'math.j3.s2.a07.main'), weak),
+      expect(LearningBonus.isWeak(q('a', unit: 'math.j3.s2.a07.main'), weak),
           isTrue);
-      expect(LearningBonus.isWeak(q('a', unit: 'math.j3.s2.a07x'), weak),
-          isFalse);
+      expect(
+          LearningBonus.isWeak(q('a', unit: 'math.j3.s2.a07x'), weak), isFalse);
     });
 
     test('バトルで、苦手な単元の正解に「苦手に挑戦」がつき、ダメージが増える', () {

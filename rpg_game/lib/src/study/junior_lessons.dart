@@ -21,8 +21,10 @@ class JuniorLessons {
       teacher: '中1の宿・つづり先生',
       title: 'be動詞',
       points: [
-        LessonPoint('be動詞の使い分け', 'I → am、you と複数 → are、それ以外の1人・1つ → is。', 'I am / You are / He is'),
-        LessonPoint('否定文と疑問文', '否定は be動詞のあとに not、疑問文は be動詞を主語の前に。', 'Is he a student? — Yes, he is.'),
+        LessonPoint('be動詞の使い分け', 'I → am、you と複数 → are、それ以外の1人・1つ → is。',
+            'I am / You are / He is'),
+        LessonPoint('否定文と疑問文', '否定は be動詞のあとに not、疑問文は be動詞を主語の前に。',
+            'Is he a student? — Yes, he is.'),
       ],
     ),
     InnLesson(
@@ -30,8 +32,10 @@ class JuniorLessons {
       teacher: '中1の宿・つづり先生',
       title: '3人称単数現在',
       points: [
-        LessonPoint('3単現の s', '主語が he / she / it や1人・1つのとき、現在の動詞に s をつける。', 'He plays tennis.'),
-        LessonPoint('does の文', '否定は doesn\'t ＋ 動詞の元の形、疑問は Does ＋ 主語 ＋ 動詞の元の形。', 'Does she like music?'),
+        LessonPoint('3単現の s', '主語が he / she / it や1人・1つのとき、現在の動詞に s をつける。',
+            'He plays tennis.'),
+        LessonPoint('does の文', '否定は doesn\'t ＋ 動詞の元の形、疑問は Does ＋ 主語 ＋ 動詞の元の形。',
+            'Does she like music?'),
       ],
     ),
     InnLesson(
@@ -39,7 +43,8 @@ class JuniorLessons {
       teacher: '中1の宿・つづり先生',
       title: '過去形',
       points: [
-        LessonPoint('一般動詞の過去', 'ふつうは ed、不規則動詞は形が変わる。否定・疑問は did を使い、動詞は元の形。', 'Did you go? — Yes, I did.'),
+        LessonPoint('一般動詞の過去', 'ふつうは ed、不規則動詞は形が変わる。否定・疑問は did を使い、動詞は元の形。',
+            'Did you go? — Yes, I did.'),
         LessonPoint('be動詞の過去', 'am / is → was、are → were。', 'I was busy.'),
       ],
     ),
@@ -48,7 +53,10 @@ class JuniorLessons {
       teacher: '中2の宿・つづり先生',
       title: '不定詞',
       points: [
-        LessonPoint('不定詞の3つの用法', 'to ＋ 動詞の元の形。名詞的「～すること」、副詞的「～するために／～して」、形容詞的「～するための」。', 'I want to go. / I came to see you. / time to go'),
+        LessonPoint(
+            '不定詞の3つの用法',
+            'to ＋ 動詞の元の形。名詞的「～すること」、副詞的「～するために／～して」、形容詞的「～するための」。',
+            'I want to go. / I came to see you. / time to go'),
       ],
     ),
     InnLesson(
@@ -56,8 +64,12 @@ class JuniorLessons {
       teacher: '中2の宿・つづり先生',
       title: '比較',
       points: [
-        LessonPoint('比較級と最上級', '2つをくらべて「より～」は ～er than、3つ以上で「いちばん～」は the ～est。長い語は more / most。', 'taller than / the tallest'),
-        LessonPoint('as ～ as', '「同じくらい～」。否定は「～ほど…ない」。', 'as tall as / not as tall as'),
+        LessonPoint(
+            '比較級と最上級',
+            '2つをくらべて「より～」は ～er than、3つ以上で「いちばん～」は the ～est。長い語は more / most。',
+            'taller than / the tallest'),
+        LessonPoint(
+            'as ～ as', '「同じくらい～」。否定は「～ほど…ない」。', 'as tall as / not as tall as'),
       ],
     ),
     InnLesson(
@@ -65,8 +77,12 @@ class JuniorLessons {
       teacher: '中3の宿・つづり先生',
       title: '現在完了（完了・経験）',
       points: [
-        LessonPoint('現在完了', 'have / has ＋ 過去分詞。過去のことが今とつながっている。', 'I have finished. / I have been there.'),
-        LessonPoint('完了・経験・継続', 'just / already / yet、ever / never / ～ times、for / since が目印。', 'I have lived here for ten years.'),
+        LessonPoint('現在完了', 'have / has ＋ 過去分詞。過去のことが今とつながっている。',
+            'I have finished. / I have been there.'),
+        LessonPoint(
+            '完了・経験・継続',
+            'just / already / yet、ever / never / ～ times、for / since が目印。',
+            'I have lived here for ten years.'),
       ],
     ),
     InnLesson(
@@ -74,8 +90,12 @@ class JuniorLessons {
       teacher: '中3の宿・つづり先生',
       title: '関係代名詞',
       points: [
-        LessonPoint('関係代名詞', '名詞（先行詞）のあとに文をつけて説明する。人 → who、もの → which、どちらも → that。', 'a friend who lives in Kobe'),
-        LessonPoint('目的格の省略', '「名詞 ＋ 主語 ＋ 動詞」なら that / which を省略できる。', 'the book (that) I bought'),
+        LessonPoint(
+            '関係代名詞',
+            '名詞（先行詞）のあとに文をつけて説明する。人 → who、もの → which、どちらも → that。',
+            'a friend who lives in Kobe'),
+        LessonPoint('目的格の省略', '「名詞 ＋ 主語 ＋ 動詞」なら that / which を省略できる。',
+            'the book (that) I bought'),
       ],
     ),
     InnLesson(
@@ -110,7 +130,8 @@ class JuniorLessons {
       teacher: '小1の宿・つづり先生',
       title: '大きいかず（100まで）',
       points: [
-        LessonPoint('10の まとまり', '10が いくつと ばらが いくつで 大きい かずを あらわす。', '10が3こと ばら4こで 34'),
+        LessonPoint(
+            '10の まとまり', '10が いくつと ばらが いくつで 大きい かずを あらわす。', '10が3こと ばら4こで 34'),
         LessonPoint('100', '10が 10こで 100（ひゃく）。', '99 の つぎは 100'),
       ],
     ),
@@ -119,7 +140,8 @@ class JuniorLessons {
       teacher: '小1の宿・つづり先生',
       title: 'くりあがりの ある たしざん',
       points: [
-        LessonPoint('10を つくる', 'たす かずを わけて、まず 10 を つくる。', '8 + 5 → 8 + 2 + 3 = 13'),
+        LessonPoint(
+            '10を つくる', 'たす かずを わけて、まず 10 を つくる。', '8 + 5 → 8 + 2 + 3 = 13'),
       ],
     ),
     InnLesson(
@@ -127,7 +149,8 @@ class JuniorLessons {
       teacher: '小1の宿・つづり先生',
       title: 'くりさがりの ある ひきざん',
       points: [
-        LessonPoint('10から ひく', '13 − 8 は、10 − 8 = 2 と 3 を あわせて 5。', '13 − 8 = 5'),
+        LessonPoint(
+            '10から ひく', '13 − 8 は、10 − 8 = 2 と 3 を あわせて 5。', '13 − 8 = 5'),
       ],
     ),
     InnLesson(
@@ -135,8 +158,10 @@ class JuniorLessons {
       teacher: '小2の宿・つづり先生',
       title: 'たし算のひっ算',
       points: [
-        LessonPoint('くらいをそろえる', '一のくらいどうし、十のくらいどうしをたてにそろえて書く。', '  36\n+ 47\n= 83'),
-        LessonPoint('くり上がり', '一のくらいが10をこえたら、十のくらいに1くり上げる。', '6 + 7 = 13 → 3を書いて1くり上がる'),
+        LessonPoint(
+            'くらいをそろえる', '一のくらいどうし、十のくらいどうしをたてにそろえて書く。', '  36\n+ 47\n= 83'),
+        LessonPoint(
+            'くり上がり', '一のくらいが10をこえたら、十のくらいに1くり上げる。', '6 + 7 = 13 → 3を書いて1くり上がる'),
       ],
     ),
     InnLesson(
@@ -144,7 +169,8 @@ class JuniorLessons {
       teacher: '小2の宿・つづり先生',
       title: 'ひき算のひっ算',
       points: [
-        LessonPoint('くり下がり', 'ひけないときは十のくらいから10をかりてくる。', '52 − 18 → 12 − 8 = 4、4 − 1 = 3 → 34'),
+        LessonPoint('くり下がり', 'ひけないときは十のくらいから10をかりてくる。',
+            '52 − 18 → 12 − 8 = 4、4 − 1 = 3 → 34'),
         LessonPoint('たしかめ', '答え＋ひく数＝ひかれる数 になればOK。', '34 + 18 = 52'),
       ],
     ),
@@ -180,7 +206,8 @@ class JuniorLessons {
       teacher: '小4の宿・つづり先生',
       title: '面積',
       points: [
-        LessonPoint('長方形と正方形', '長方形 ＝ たて × よこ、正方形 ＝ 1辺 × 1辺。', '3cm × 5cm ＝ 15cm²'),
+        LessonPoint(
+            '長方形と正方形', '長方形 ＝ たて × よこ、正方形 ＝ 1辺 × 1辺。', '3cm × 5cm ＝ 15cm²'),
         LessonPoint('単位', '1m² ＝ 10000cm²、1a ＝ 100m²、1ha ＝ 10000m²。', ''),
       ],
     ),
@@ -189,7 +216,8 @@ class JuniorLessons {
       teacher: '小5の宿・つづり先生',
       title: '倍数と約数',
       points: [
-        LessonPoint('倍数', 'ある数に整数をかけてできる数。公倍数のいちばん小さいものが最小公倍数。', '4と6の最小公倍数は12'),
+        LessonPoint(
+            '倍数', 'ある数に整数をかけてできる数。公倍数のいちばん小さいものが最小公倍数。', '4と6の最小公倍数は12'),
         LessonPoint('約数', 'ある数をわりきれる整数。公約数のいちばん大きいものが最大公約数。', '12と18の最大公約数は6'),
       ],
     ),
@@ -198,7 +226,8 @@ class JuniorLessons {
       teacher: '小5の宿・つづり先生',
       title: '単位量あたりの大きさ・速さ',
       points: [
-        LessonPoint('速さの3公式', '速さ ＝ 道のり ÷ 時間、道のり ＝ 速さ × 時間、時間 ＝ 道のり ÷ 速さ。', '120km ÷ 2時間 ＝ 時速60km'),
+        LessonPoint('速さの3公式', '速さ ＝ 道のり ÷ 時間、道のり ＝ 速さ × 時間、時間 ＝ 道のり ÷ 速さ。',
+            '120km ÷ 2時間 ＝ 時速60km'),
         LessonPoint('こみぐあい', '1m²あたりの人数などでくらべる。', '12人 ÷ 6m² ＝ 2人'),
       ],
     ),
@@ -234,7 +263,8 @@ class JuniorLessons {
       teacher: '中1の宿・つづり先生',
       title: '一次方程式',
       points: [
-        LessonPoint('方程式の解き方', '①かっこ・分数をなくす ②移項 ③ax＝b ④両辺をaでわる', '3x + 5 ＝ 20 → 3x ＝ 15 → x ＝ 5'),
+        LessonPoint('方程式の解き方', '①かっこ・分数をなくす ②移項 ③ax＝b ④両辺をaでわる',
+            '3x + 5 ＝ 20 → 3x ＝ 15 → x ＝ 5'),
       ],
     ),
     InnLesson(
@@ -251,7 +281,8 @@ class JuniorLessons {
       teacher: '中3の宿・つづり先生',
       title: '展開と因数分解',
       points: [
-        LessonPoint('乗法公式', '(x + a)(x + b)、(a ± b)²、(a + b)(a − b) の4つ。', '(x + 2)(x + 5) ＝ x² + 7x + 10'),
+        LessonPoint('乗法公式', '(x + a)(x + b)、(a ± b)²、(a + b)(a − b) の4つ。',
+            '(x + 2)(x + 5) ＝ x² + 7x + 10'),
         LessonPoint('因数分解', '和と積に注目して2数をさがす。', 'x² + 5x + 6 ＝ (x + 2)(x + 3)'),
       ],
     ),
@@ -269,7 +300,8 @@ class JuniorLessons {
       teacher: '小4の宿・つづり先生',
       title: '部首',
       points: [
-        LessonPoint('部首の位置', 'へん（左）・つくり（右）・かんむり（上）・あし（下）・たれ・にょう・かまえ。', 'さんずい（へん）・うかんむり（かんむり）'),
+        LessonPoint('部首の位置', 'へん（左）・つくり（右）・かんむり（上）・あし（下）・たれ・にょう・かまえ。',
+            'さんずい（へん）・うかんむり（かんむり）'),
         LessonPoint('部首と意味', '部首から漢字の意味の仲間がわかる。', 'さんずい → 水、ごんべん → 言葉'),
       ],
     ),
@@ -279,7 +311,8 @@ class JuniorLessons {
       title: '敬語',
       points: [
         LessonPoint('3つの敬語', '尊敬語（相手を高める）・謙譲語（自分をへりくだる）・ていねい語（です・ます）。', ''),
-        LessonPoint('特別な言い方', '言う → おっしゃる／申す、行く → いらっしゃる／参る、食べる → めしあがる／いただく。', ''),
+        LessonPoint(
+            '特別な言い方', '言う → おっしゃる／申す、行く → いらっしゃる／参る、食べる → めしあがる／いただく。', ''),
       ],
     ),
     InnLesson(
@@ -287,7 +320,8 @@ class JuniorLessons {
       teacher: '中1の宿・つづり先生',
       title: '文法：文節・単語・品詞',
       points: [
-        LessonPoint('文節と単語', '文節は「ネ」で区切れるまとまり。単語は文節をさらに分けた最小の言葉。', '本を／読む → 本／を／読む'),
+        LessonPoint(
+            '文節と単語', '文節は「ネ」で区切れるまとまり。単語は文節をさらに分けた最小の言葉。', '本を／読む → 本／を／読む'),
         LessonPoint('品詞', '自立語：名詞・動詞・形容詞・形容動詞・副詞・連体詞・接続詞・感動詞。付属語：助詞・助動詞。', ''),
       ],
     ),
@@ -296,7 +330,10 @@ class JuniorLessons {
       teacher: '中2の宿・つづり先生',
       title: '文法：用言の活用',
       points: [
-        LessonPoint('活用の種類の見分け方', '「ない」をつけて直前の音を見る。あ段→五段、い段→上一段、え段→下一段。来る→カ変、する→サ変。', '書か(ない)・見(ない)・食べ(ない)'),
+        LessonPoint(
+            '活用の種類の見分け方',
+            '「ない」をつけて直前の音を見る。あ段→五段、い段→上一段、え段→下一段。来る→カ変、する→サ変。',
+            '書か(ない)・見(ない)・食べ(ない)'),
         LessonPoint('6つの活用形', '未然形・連用形・終止形・連体形・仮定形・命令形。', ''),
       ],
     ),
@@ -342,7 +379,8 @@ class JuniorLessons {
       title: '水溶液とイオン',
       points: [
         LessonPoint('イオン', '陽イオンは電子を失った原子、陰イオンは電子を受けとった原子。', 'Na⁺、Cl⁻'),
-        LessonPoint('酸・アルカリ・中和', '酸＝H⁺、アルカリ＝OH⁻。中和で水と塩ができる。', 'HCl + NaOH → NaCl + H₂O'),
+        LessonPoint('酸・アルカリ・中和', '酸＝H⁺、アルカリ＝OH⁻。中和で水と塩ができる。',
+            'HCl + NaOH → NaCl + H₂O'),
       ],
     ),
   ];

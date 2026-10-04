@@ -14,7 +14,8 @@ void main() {
         for (final t in Terrain.values) NotebookWorld.paperOf(t, w.id),
     };
     // 五線譜は音楽の国（小中学生版にはない）だけで使う
-    expect(used, containsAll(PaperStyle.values.where((p) => p != PaperStyle.staff)));
+    expect(used,
+        containsAll(PaperStyle.values.where((p) => p != PaperStyle.staff)));
     for (final w in RpgCatalog.worlds) {
       expect(NotebookWorld.scribblesOf(w.id), isNotEmpty);
     }

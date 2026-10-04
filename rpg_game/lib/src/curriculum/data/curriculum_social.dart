@@ -2,8 +2,7 @@
 
 import '../curriculum.dart';
 
-const socialCurriculum =
-CurriculumNode(
+const socialCurriculum = CurriculumNode(
   id: 'social',
   name: '社会',
   level: CurriculumLevel.subject,

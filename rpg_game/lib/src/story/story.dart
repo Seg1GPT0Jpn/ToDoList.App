@@ -7,28 +7,28 @@ import '../models/stage.dart';
 class WorldStory {
   const WorldStory({
     required this.worldId,
+    required this.chapterTitle,
     required this.guardian,
     required this.guardianLook,
     required this.guardianColor,
     required this.fragment,
-    required this.emblem,
     required this.clearText,
   });
 
   final String worldId;
 
-  /// その国の守護神（暴走して、国のボスになっている）
+  /// 章の題（例：墨染めの森と沈黙の巨鳥）
+  final String chapterTitle;
+
+  /// その国の守護者（黒い霧に触れて狂気に呑まれ、国のボスになっている）
   final String guardian;
 
-  /// 守護神の姿（enemy_painter の look）と色
+  /// 守護者の姿（enemy_painter の look）と色
   final String guardianLook;
   final int guardianColor;
 
-  /// 守護神から受け取る「知識の欠片」
+  /// 正気にもどった守護者から託される「証」（5つそろうと天空の図書院がひらく）
   final String fragment;
-
-  /// 守護神が正気にもどって授けてくれる「国の証（エンブレム）」
-  final String emblem;
 
   /// 国を救ったときの文
   final String clearText;
@@ -36,80 +36,80 @@ class WorldStory {
 
 /// つづりクエストの世界の物語。
 ///
-/// 世界を支える大樹「アカデミア」が枯れはじめ、5つの国の守護神（賢者）たちが暴走した。
-/// 先代の勇者たちが旅立ったあと、留守番をしていた「言霊（つづり）の勇者」の見習いが、
-/// 白紙の聖典「スペル・グリモワール」に学んだ正解を綴り、守護神たちを浄化していく。
-/// 5つの国は好きな順に挑める。5つの欠片がそろうと「天空の図書院」がひらき、
-/// 虚無の霧ネブラとの最終決戦になる。
+/// 世界の中心にそびえる大樹「アカデミア」。世界を調和させていた「理の輝石」が砕け散り、
+/// その破片は黒い霧となって五つの国を侵食した。霧に触れた守護者たちは狂気に呑まれ、
+/// 世界から「理解」が失われていく。残されたのは、まだ自らの文字を持たない見習い勇者と、
+/// 白紙の聖典「スペル・グリモワール」だけだった。
+///
+/// 五つの国は好きな順に挑める。守護者を正気にもどして五つの証を集めると
+/// 「天空の図書院」への光の柱があらわれ、虚無の霧ネブラとの決戦になる。
 class Story {
   const Story._();
 
-  static const title = '言霊の勇者と大樹アカデミア';
+  static const title = '白紙の聖典と大樹アカデミア';
 
   static const prologue = [
-    '世界の中心には、すべての知識を根から吸いあげて葉を茂らせる大樹「アカデミア」がある。',
-    'その大樹を守ってきたのが「言霊（つづり）の勇者」たち。けれど先代の勇者たちは、遠い旅に出たまま帰ってこない。',
-    '勇者たちが旅立ったあと、アカデミアは枯れはじめ、大樹とつながる5つの国の守護神たちが暴走してしまった。',
-    'きみは「まだ未熟だから」と留守番を任されていた、言霊の勇者の見習い。',
-    '手にしたのは、白紙の聖典「スペル・グリモワール」。学んだ正解を書きこむ（綴る）と、奇跡の魔法が発動する。',
-    '和の礎の国・数理の迷宮国・異界の港町・万物の実験庭園・時空の回廊――得意な教科、好きな雰囲気の国から、自由に挑もう。',
-    '倒す相手は、ただの悪者ではない。苦しんで暴れている守護神たちを、知識の力で助けにいくのだ。',
-    '5つの国の「知識の欠片」がそろったとき、世界の中心「天空の図書院」への扉がひらく――。',
+    '世界の中心にそびえる大樹「アカデミア」。その幹に広がる無数の枝葉は、人々の知識や探求心と共鳴し、五つの豊かな国を抱えていた。',
+    'かつて世界を調和させていた「理の輝石」が砕け散るまでは。',
+    '砕けた石の破片は黒い霧へと変わり、五つの国を侵食した。霧に触れた守護者たちは狂気に呑まれ、世界から「理解」が失われていく。',
+    '残されたのは、まだ自らの文字を持たない見習い勇者と、白紙の聖典「スペル・グリモワール」だけだった。',
+    '剣で切り裂くのではない。乱れた理を正しく見極め、その真の名をグリモワールへ刻み直す――それが、世界を救う唯一の手段。',
+    '五つの国へと続く転送門。どこから向かうかは、勇者自身の意志に委ねられている。',
   ];
 
-  /// 国の順（物語の画面に並べる順。挑む順は自由）
+  /// 国の順（第一章〜第五章。挑む順は自由）
   static const worlds = <WorldStory>[
     WorldStory(
       worldId: 'japanese',
+      chapterTitle: '墨染めの森と沈黙の巨鳥',
       guardian: '巨鳥カラスバ',
       guardianLook: 'bird',
       guardianColor: 0xFF2A2A3A,
-      fragment: '言の葉の欠片',
-      emblem: '白羽の紋章',
-      clearText: 'カラスバは純白の鳥にもどった。和の礎の国に、美しい言の葉がふたたび舞う。',
+      fragment: '言霊の羽ペン',
+      clearText: '純白の羽を取りもどしたカラスバから、柔らかな風を宿す「言霊の羽ペン」を託された。',
     ),
     WorldStory(
       worldId: 'math',
-      guardian: '巨神カラクリ・ゴーレム',
+      chapterTitle: '狂った天秤と永久の歯車',
+      guardian: 'カラクリ・ゴーレム',
       guardianLook: 'golem',
       guardianColor: 0xFF9C7A3C,
-      fragment: '数の欠片',
-      emblem: '天秤の紋章',
-      clearText: '歯車の狂いが直り、数理の迷宮国は完璧な均衡を取りもどした。',
+      fragment: '黄金の歯車',
+      clearText: '等号は美しく結ばれた。ゴーレムの胸から、完璧な対称性を誇る「黄金の歯車」を受け取った。',
     ),
     WorldStory(
       worldId: 'english',
-      guardian: '海獣バベル・リヴァイアサン',
+      chapterTitle: '閉ざされた海峡と孤独な怪獣',
+      guardian: 'バベル・リヴァイアサン',
       guardianLook: 'leviathan',
       guardianColor: 0xFF2B5F8A,
-      fragment: 'ことばの欠片',
-      emblem: '羅針の紋章',
-      clearText: '嵐が晴れ、異界の港町に船がもどった。知らない言葉の人とも、心を通わせられる。',
+      fragment: '通訳の羅針盤',
+      clearText: '海は凪ぎ、嵐は消え去った。波間から「通訳の羅針盤」が託された。',
     ),
     WorldStory(
       worldId: 'science',
-      guardian: '炎氷竜カオス・エレメンタル',
+      chapterTitle: '乱れる天秤と暴走のキメラ',
+      guardian: 'カオス・エレメンタル',
       guardianLook: 'dragon',
       guardianColor: 0xFF7A3FA0,
-      fragment: 'ことわりの欠片',
-      emblem: '炎氷の紋章',
-      clearText: '熱も光も気候も、正しい法則にもどった。万物の実験庭園に、穏やかな季節がめぐる。',
+      fragment: '元素の天球儀',
+      clearText: '混沌に安らぎがもどった。光の球は、四季の巡りを宿す「元素の天球儀」となった。',
     ),
     WorldStory(
       worldId: 'social',
-      guardian: '幽幻騎士クロノス・ナイト',
+      chapterTitle: '砂に埋もれる記憶と幽幻の騎士',
+      guardian: 'クロノス・ナイト',
       guardianLook: 'knight',
       guardianColor: 0xFF6B5B45,
-      fragment: '時の欠片',
-      emblem: '砂時計の紋章',
-      clearText: 'クロノス・ナイトは誇りを取りもどした。時空の回廊に、人びとの歩みがふたたび刻まれる。',
+      fragment: '悠久の砂時計',
+      clearText: '錆びた鎧が剥がれ、誇り高き黄金の甲冑が現れた。騎士は片膝をつき「悠久の砂時計」を差し出した。',
     ),
   ];
 
   static WorldStory of(String worldId) =>
       worlds.firstWhere((w) => w.worldId == worldId);
 
-  /// その国のルートの最後のステージ（すべて倒すと欠片が手に入る）
+  /// その国のルートの最後のステージ（すべての道の果てで守護者に勝つと証が手に入る）
   static List<StageDef> finalsOf(String worldId) {
     final w = RpgCatalog.world(worldId);
     final last = <String, StageDef>{};
@@ -119,7 +119,7 @@ class Story {
     return last.values.toList();
   }
 
-  /// 取りもどした欠片（国の ID）
+  /// 手に入れた証（国の ID）
   static Set<String> fragments(RpgProgress p) => {
         for (final w in worlds)
           if (finalsOf(w.worldId)
@@ -156,9 +156,10 @@ class Story {
         attack: 60,
         look: 'ghost',
         color: 0xFF4A4660,
-        description: '知識を忘れ去り、考えることをやめてしまった心の隙間から生まれた怪物。5教科すべての問いで立ちはだかる。',
-        introLine: '解かなくてもいい、考えなくてもいい……楽な暗闇へおいで……。',
-        defeatLine: 'なぜ……考えることを、やめないの……？ 霧が……晴れていく……。',
+        description:
+            '天空の図書院の台座に渦巻く、底知れぬ黒い霧。「めんどくさい」「意味がない」という甘い毒を心に注ぎこむ。5教科すべての問いで立ちはだかる。',
+        introLine: 'よくぞここまで無駄な足掻きを重ねたものだ。考えることをやめれば、どれほど楽になれるか。',
+        defeatLine: '暗闇が……朝焼けの色に……染まっていく……。',
       ),
       questionSetIds: sets,
       expReward: 1000,

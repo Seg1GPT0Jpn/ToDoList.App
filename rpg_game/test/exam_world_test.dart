@@ -12,8 +12,7 @@ void main() {
         final t = ExamWorlds.searchText(math, s);
         // 漢数字は算用数字にそろえて探す（一次 → 1次）
         expect(
-            t.contains(ExamWorlds.normalize('一次方程式')) ||
-                t.contains('三平方の定理'),
+            t.contains(ExamWorlds.normalize('一次方程式')) || t.contains('三平方の定理'),
             isTrue,
             reason: s.id);
       }
@@ -33,7 +32,8 @@ void main() {
       expect(ExamWorlds.match(RpgCatalog.world('social'), '江戸'), isNotEmpty);
       expect(ExamWorlds.match(RpgCatalog.world('science'), '電流'), isNotEmpty);
       expect(
-          ExamWorlds.match(RpgCatalog.world(RpgCatalog.englishWorldId), '関係代名詞'),
+          ExamWorlds.match(
+              RpgCatalog.world(RpgCatalog.englishWorldId), '関係代名詞'),
           isNotEmpty);
     });
 

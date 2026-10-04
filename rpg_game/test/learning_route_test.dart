@@ -180,13 +180,8 @@ void main() {
       final route = LearningRoute.trace('math.j1.s1.a05', progress);
       final ids = route.steps.map((s) => s.node.id).toList();
       expect(ids.last, 'math.j1.s1.a05');
-      expect(
-          ids,
-          containsAll([
-            'math.j1.s1.a03',
-            'math.j1.s1.a02',
-            'math.j1.s1.a01'
-          ]));
+      expect(ids,
+          containsAll(['math.j1.s1.a03', 'math.j1.s1.a02', 'math.j1.s1.a01']));
       // 前提ほど前にくる
       expect(ids.indexOf('math.j1.s1.a01'),
           lessThan(ids.indexOf('math.j1.s1.a02')));
@@ -204,14 +199,13 @@ void main() {
         ...answered('math.j1.s1.a02.main', 6, correct: 2),
         ...answered('math.j1.s1.a01.main', 6, correct: 2),
       });
-      final route = LearningRoute.trace(
-          'math.j1.s1.a05', CurriculumProgress.of(record));
+      final route =
+          LearningRoute.trace('math.j1.s1.a05', CurriculumProgress.of(record));
       expect(route.rootCause, isNull);
       expect(route.nextStep.node.id, 'math.j1.s1.a05');
       final weak = LearningRoute.forWeakUnits(CurriculumProgress.of(record),
           under: 'math');
-      expect(weak.map((r) => r.target.node.id),
-          contains('math.j1.s1.a05'));
+      expect(weak.map((r) => r.target.node.id), contains('math.j1.s1.a05'));
     });
   });
 
@@ -223,12 +217,9 @@ void main() {
       });
       final progress = CurriculumProgress.of(record);
       final qs = [
-        choice('q1', 'math.j1.s1.a05.main',
-            combines: ['math.j1.s1.a02']),
-        choice('q2', 'math.j1.s1.a05.main',
-            combines: ['math.j1.s1.a03']),
-        choice('q3', 'math.j1.s1.a05.main',
-            combines: ['math.j1.s1.a03']),
+        choice('q1', 'math.j1.s1.a05.main', combines: ['math.j1.s1.a02']),
+        choice('q2', 'math.j1.s1.a05.main', combines: ['math.j1.s1.a03']),
+        choice('q3', 'math.j1.s1.a05.main', combines: ['math.j1.s1.a03']),
       ];
       final found =
           CompositeWeakness.find(qs, {'q1': 0, 'q2': 0.2, 'q3': 1}, progress);
@@ -236,8 +227,7 @@ void main() {
       final graph = found.firstWhere((c) => c.combined == 'math.j1.s1.a02');
       expect(graph.foundationWeak, isTrue);
       expect(graph.advice, contains('先にこちら'));
-      final diff =
-          found.firstWhere((c) => c.combined == 'math.j1.s1.a03');
+      final diff = found.firstWhere((c) => c.combined == 'math.j1.s1.a03');
       expect(diff.tried, 2);
       expect(diff.missed, 1);
       expect(diff.foundationWeak, isFalse);

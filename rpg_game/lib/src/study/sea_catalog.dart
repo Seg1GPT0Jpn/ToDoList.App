@@ -84,10 +84,15 @@ class SeaCatalog {
       'did / didn\'t',
       'was / were',
     ]),
-    SeaUnit(id: 'sea_g1_08', grade: 1, number: 8, title: '過去進行形・There is', topics: [
-      'was / were + ～ing',
-      'There is / are',
-    ]),
+    SeaUnit(
+        id: 'sea_g1_08',
+        grade: 1,
+        number: 8,
+        title: '過去進行形・There is',
+        topics: [
+          'was / were + ～ing',
+          'There is / are',
+        ]),
     // ---- 中学2年 ----
     SeaUnit(id: 'sea_g2_01', grade: 2, number: 1, title: '未来の表現', topics: [
       'will',
@@ -161,17 +166,24 @@ class SeaCatalog {
       'If I were ～',
       'If + 過去形 ～ would',
     ]),
-    SeaUnit(id: 'sea_g3_07', grade: 3, number: 7, title: '使役・知覚動詞と原形不定詞', topics: [
-      'let / make / help 人 ～',
-      'see / hear 人 ～',
-    ]),
+    SeaUnit(
+        id: 'sea_g3_07',
+        grade: 3,
+        number: 7,
+        title: '使役・知覚動詞と原形不定詞',
+        topics: [
+          'let / make / help 人 ～',
+          'see / hear 人 ～',
+        ]),
   ];
 
   /// 定期テストの海・高校入試の空に並べる単語帳（自作）
   static const wordBooks = <SeaWordBook>[
     SeaWordBook(id: 'words_j1', title: '中1の単語', description: '中学1年で習う基本の単語'),
     SeaWordBook(id: 'words_j2', title: '中2の単語', description: '中学2年で習う単語'),
-    SeaWordBook(id: 'words_j3', title: '中3の単語', description: '中学3年・高校入試によく出る単語'),
-    SeaWordBook(id: 'idioms_j', title: '中学の熟語', description: '高校入試によく出る熟語・会話表現'),
+    SeaWordBook(
+        id: 'words_j3', title: '中3の単語', description: '中学3年・高校入試によく出る単語'),
+    SeaWordBook(
+        id: 'idioms_j', title: '中学の熟語', description: '高校入試によく出る熟語・会話表現'),
   ];
 }

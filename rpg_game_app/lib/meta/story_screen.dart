@@ -8,7 +8,7 @@ import '../battle/battle_screen.dart';
 import '../story/story_player.dart';
 import '../versus/versus_screen.dart';
 
-/// 物語：言霊の勇者と大樹アカデミア。5つの欠片がそろうと「天空の図書院」の決戦に挑める
+/// 物語：白紙の聖典と大樹アカデミア。五つの証がそろうと「天空の図書院」の決戦に挑める
 class StoryScreen extends StatefulWidget {
   const StoryScreen({super.key});
 
@@ -20,7 +20,7 @@ class _StoryScreenState extends State<StoryScreen> {
   /// エピローグをもう見せはじめた
   bool _epilogueShown = false;
 
-  /// 道の果てで出会った守護神と、その国の問題で早押し勝負（救った国が多いほど強い）
+  /// 道の果てで出会った守護者と、その国の問題で早押し勝負（救った国が多いほど強い）
   Future<void> _rivalMatch(BuildContext context, String worldId) async {
     final story = Story.of(worldId);
     final services = RpgServices.of(context);
@@ -116,10 +116,10 @@ class _StoryScreenState extends State<StoryScreen> {
                     StoryScenes.prologue,
                   ], replay: seen.contains(StoryScenes.prologue.id)),
                   icon: const Icon(Icons.auto_stories),
-                  label: const Text('序章「白紙のグリモワール」を読む'),
+                  label: const Text('序章「白紙の旅立ち」を読む'),
                 ),
                 const SizedBox(height: 16),
-                Text('知識の欠片（${got.length} / ${Story.worlds.length}）', style: serif(16)),
+                Text('五つの証（${got.length} / ${Story.worlds.length}）', style: serif(16)),
                 const SizedBox(height: 6),
                 for (final w in Story.worlds)
                   Card(
@@ -134,7 +134,7 @@ class _StoryScreenState extends State<StoryScreen> {
                             : TsuzuriColors.inkSoft,
                       ),
                       title: Text(
-                        '${RpgCatalog.world(w.worldId).name}：${got.contains(w.worldId) ? w.fragment : '？？？の欠片'}',
+                        '${RpgCatalog.world(w.worldId).name}：${got.contains(w.worldId) ? w.fragment : '？？？'}',
                       ),
                       trailing: StoryScenes.seen(p, StoryScenes.boss(w.worldId))
                           ? IconButton(
@@ -145,8 +145,8 @@ class _StoryScreenState extends State<StoryScreen> {
                           : null,
                       subtitle: Text(
                         got.contains(w.worldId)
-                            ? '${w.clearText}\n手に入れた：${w.emblem}・${GearDef.byId(GearDef.byFragment[w.worldId]!).name}'
-                            : '暴走した${w.guardian}が、${Story.finalsOf(w.worldId).map((s) => s.name).join('・')}で待っている。すべての道の果てで勝つと、正気にもどる',
+                            ? '${w.clearText}\n手に入れた：${w.fragment}・${GearDef.byId(GearDef.byFragment[w.worldId]!).name}'
+                            : '狂気に呑まれた${w.guardian}が、${Story.finalsOf(w.worldId).map((s) => s.name).join('・')}で待っている。すべての道の果てで勝つと、正気にもどる',
                         style: const TextStyle(fontSize: 12, height: 1.5),
                       ),
                     ),
@@ -165,8 +165,8 @@ class _StoryScreenState extends State<StoryScreen> {
                           won
                               ? '虚無の霧ネブラを晴らし、大樹アカデミアに満開の花が咲いた。…でも、学びの旅はまだ続く。何度でも挑戦できる。'
                               : open
-                              ? '5つの欠片が扉をひらいた。考えることをやめた心から生まれた「虚無の霧ネブラ」との最終決戦。5教科の道の果ての範囲すべてから出題される（小中学校の総まとめ）。'
-                              : '5つの国の守護神を救い、欠片がそろうと、扉がひらく。',
+                              ? '五つの証が光の柱を呼んだ。書架を灰色に染める黒い霧「ネブラ」との最終決戦。5教科の道の果ての範囲すべてから出題される（小中学校の総まとめ）。'
+                              : '五つの国の守護者を正気にもどし、五つの証がそろうと、光の柱があらわれる。',
                           style: const TextStyle(fontSize: 13, height: 1.6),
                         ),
                         const SizedBox(height: 8),
@@ -188,7 +188,7 @@ class _StoryScreenState extends State<StoryScreen> {
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  '読んだ場面は、ここで何度でも読み返せます。国に入る・道の果ての守護神に挑む・守護神を救うと、新しい場面が読めます。',
+                  '読んだ場面は、ここで何度でも読み返せます。国に入る・道の果ての守護者に挑む・守護者から証を受け取ると、新しい場面が読めます。',
                   style: TextStyle(fontSize: 12, color: TsuzuriColors.inkSoft),
                 ),
                 const SizedBox(height: 6),
@@ -224,7 +224,7 @@ class _StoryScreenState extends State<StoryScreen> {
   }
 }
 
-/// 国の設定（国民・守護神・暴走した理由・学ぶ理由）。国に入ると読める
+/// 国の設定（国民・守護者・狂気に呑まれた理由・学ぶ理由）。国に入ると読める
 class _NationCard extends StatelessWidget {
   const _NationCard({required this.lore, required this.progress});
 
@@ -272,8 +272,8 @@ class _NationCard extends StatelessWidget {
             ? [
                 item('国', lore.land),
                 item('国民', lore.people),
-                item('守護神', '${lore.guardian}。${lore.guardianNote}'),
-                item('暴走', lore.forgotten),
+                item('守護者', '${lore.guardian}。${lore.guardianNote}'),
+                item('黒い霧', lore.forgotten),
                 item('学ぶ理由', lore.whyLearn),
                 item('伏線', '${lore.midBossNote}\n${lore.bossNote}'),
               ]

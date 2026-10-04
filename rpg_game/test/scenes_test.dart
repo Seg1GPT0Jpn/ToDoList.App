@@ -22,14 +22,19 @@ void main() {
     test('序章で見習い勇者とグリモワールが出て、国は好きな順に挑める', () {
       final text = StoryScenes.prologue.lines.map((l) => l.text).join();
       expect(text, contains('スペル・グリモワール'));
-      expect(text, contains('アカデミア'));
+      expect(text, contains('理の輝石'));
+      expect(text, contains('転送門'));
+      expect(StoryScenes.intro('japanese').title, startsWith('第一章'));
+      expect(StoryScenes.intro('social').title, startsWith('第五章'));
+      expect(Story.worlds.map((w) => w.fragment),
+          ['言霊の羽ペン', '黄金の歯車', '通訳の羅針盤', '元素の天球儀', '悠久の砂時計']);
       // 5つの国の守護神と、ラスボスのネブラ
       expect(Story.worlds.map((w) => w.guardian), [
         '巨鳥カラスバ',
-        '巨神カラクリ・ゴーレム',
-        '海獣バベル・リヴァイアサン',
-        '炎氷竜カオス・エレメンタル',
-        '幽幻騎士クロノス・ナイト',
+        'カラクリ・ゴーレム',
+        'バベル・リヴァイアサン',
+        'カオス・エレメンタル',
+        'クロノス・ナイト',
       ]);
       expect(Story.centerStage().enemy.name, '虚無の霧ネブラ');
       // 決戦の前には、救った守護神たちが駆けつける
@@ -54,10 +59,10 @@ void main() {
       const line = StoryLine(StorySpeaker.hero, '{name}です');
       expect(line.textFor('つづり'), 'つづりです');
       expect(line.speakerName('つづり'), 'つづり');
-      final keeper = StoryScenes.intro('english')
+      final keeper = StoryScenes.boss('english')
           .lines
           .firstWhere((l) => l.speaker == StorySpeaker.keeper);
-      expect(keeper.speakerName('x'), '海獣バベル・リヴァイアサン');
+      expect(keeper.speakerName('x'), 'バベル・リヴァイアサン');
       expect(keeper.look, 'leviathan');
     });
 

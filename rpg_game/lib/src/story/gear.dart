@@ -115,7 +115,7 @@ class GearDef {
       name: '辞書の剣',
       slot: GearSlot.weapon,
       description: '英語のバトルでダメージ +15%',
-      howToGet: '異界の港町で「ことばの欠片」を取りもどす',
+      howToGet: '異界の港町でバベル・リヴァイアサンから「通訳の羅針盤」を受け取る',
       subject: 'english',
       subjectRate: 0.15,
     ),
@@ -124,7 +124,7 @@ class GearDef {
       name: 'フラスコの杖',
       slot: GearSlot.weapon,
       description: '理科のバトルでダメージ +15%',
-      howToGet: '万物の実験庭園で「ことわりの欠片」を取りもどす',
+      howToGet: '万物の実験庭園でカオス・エレメンタルから「元素の天球儀」を受け取る',
       subject: 'science',
       subjectRate: 0.15,
     ),
@@ -133,7 +133,7 @@ class GearDef {
       name: '年表の槍',
       slot: GearSlot.weapon,
       description: '社会のバトルでダメージ +15%',
-      howToGet: '時空の回廊で「時の欠片」を取りもどす',
+      howToGet: '時空の回廊でクロノス・ナイトから「悠久の砂時計」を受け取る',
       subject: 'social',
       subjectRate: 0.15,
     ),
@@ -142,7 +142,7 @@ class GearDef {
       name: '筆の刀',
       slot: GearSlot.weapon,
       description: '国語のバトルでダメージ +15%',
-      howToGet: '和の礎の国で「言の葉の欠片」を取りもどす',
+      howToGet: '言の葉の国でカラスバから「言霊の羽ペン」を受け取る',
       subject: 'japanese',
       subjectRate: 0.15,
     ),
@@ -151,7 +151,7 @@ class GearDef {
       name: '数式のペン',
       slot: GearSlot.weapon,
       description: '数学のバトルでダメージ +15%',
-      howToGet: '数理の迷宮国で「数の欠片」を取りもどす',
+      howToGet: '数理の迷宮国でカラクリ・ゴーレムから「黄金の歯車」を受け取る',
       subject: 'math',
       subjectRate: 0.15,
     ),
@@ -186,7 +186,7 @@ class GearDef {
 
   static const starter = {'wood_pen', 'note_armor'};
 
-  /// 欠片で手に入る装備（国 ID → 装備 ID）
+  /// 証で手に入る装備（国 ID → 装備 ID）
   static const byFragment = {
     'english': 'dict_sword',
     'science': 'flask_staff',
@@ -250,7 +250,7 @@ class StreakReward {
 class Gear {
   const Gear._();
 
-  /// 持っている装備（最初の装備・欠片の装備・受け取ったごほうびの装備）
+  /// 持っている装備（最初の装備・証の装備・受け取ったごほうびの装備）
   static Set<String> owned(RpgProgress p) => {
         ...GearDef.starter,
         for (final g in GearDef.all)

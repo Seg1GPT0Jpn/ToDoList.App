@@ -28,7 +28,7 @@ void main() {
       frames: 20,
     );
     expect(find.byType(StoryPlayerScreen), findsOneWidget);
-    expect(find.textContaining('白紙のグリモワール'), findsOneWidget);
+    expect(find.textContaining('白紙の旅立ち'), findsOneWidget);
     // タップで最後まで読む（文字送り→全部表示→次へ）
     for (var i = 0; i < 80; i++) {
       if (find.byType(StoryPlayerScreen).evaluate().isEmpty) break;
@@ -46,7 +46,7 @@ void main() {
   testWidgets('物語の画面：回想の一覧と、序章を読むボタン', (t) async {
     await openScreen(t, const StoryScreen(), size: const Size(420, 2600));
     expect(find.textContaining('物語の回想'), findsOneWidget);
-    await t.tap(find.text('序章「白紙のグリモワール」を読む'));
+    await t.tap(find.text('序章「白紙の旅立ち」を読む'));
     await _frames(t, 12);
     expect(find.byType(StoryPlayerScreen), findsOneWidget);
     await t.tap(find.text('スキップ ▶▶'));
@@ -80,20 +80,20 @@ void main() {
     expect(t.takeException(), isNull);
   });
 
-  testWidgets('物語の画面：道の果ての場面を読んだ国では、守護神と早押し勝負ができる', (t) async {
+  testWidgets('物語の画面：道の果ての場面を読んだ国では、守護者と早押し勝負ができる', (t) async {
     final s = await openScreen(
       t,
       const StoryScreen(),
       size: const Size(420, 2600),
     );
-    expect(find.byTooltip('海獣バベル・リヴァイアサンと早押し勝負'), findsNothing);
+    expect(find.byTooltip('バベル・リヴァイアサンと早押し勝負'), findsNothing);
     await t.runAsync(
       () => s.repository.save(
         StoryScenes.markSeen(RpgProgress.initial, StoryScenes.boss('english')),
       ),
     );
     await _frames(t, 5);
-    await t.tap(find.byTooltip('海獣バベル・リヴァイアサンと早押し勝負'));
+    await t.tap(find.byTooltip('バベル・リヴァイアサンと早押し勝負'));
     for (
       var i = 0;
       i < 20 && find.byType(VersusScreen).evaluate().isEmpty;
@@ -105,7 +105,7 @@ void main() {
       await t.pump(const Duration(milliseconds: 100));
     }
     expect(find.byType(VersusScreen), findsOneWidget);
-    expect(find.text('海獣バベル・リヴァイアサン'), findsOneWidget);
+    expect(find.text('バベル・リヴァイアサン'), findsOneWidget);
     await _frames(t, 5);
     await t.tap(find.byIcon(Icons.close));
     await _frames(t, 10);
@@ -127,7 +127,7 @@ void main() {
     );
     await t.tap(find.byKey(const ValueKey('nation-math')));
     await t.pumpAndSettle();
-    expect(find.textContaining('巨神カラクリ・ゴーレム'), findsOneWidget);
+    expect(find.textContaining('論理の大時計台」で'), findsOneWidget);
     await t.scrollUntilVisible(
       find.byKey(const ValueKey('archive-math_0')),
       300,

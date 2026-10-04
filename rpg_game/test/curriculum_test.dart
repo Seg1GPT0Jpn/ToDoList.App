@@ -271,8 +271,8 @@ void main() {
             for (final c in Curriculum.node('math').children)
               CurriculumProgress.questionCount(c.id),
           ].reduce((a, b) => a + b));
-      expect(CurriculumProgress.setsFor('math.j3.s2.a07'),
-          contains('math_j3_07'));
+      expect(
+          CurriculumProgress.setsFor('math.j3.s2.a07'), contains('math_j3_07'));
     });
 
     test('答えた記録を、小単元から教科まで積み上げる', () {
@@ -304,26 +304,15 @@ void main() {
     final old = LearningRecord.fromMap({
       'stats': {
         first.id: ['math_j3_07', 1, 1, 1, 0, 3, 100, 1, 4, 0],
-        'words_j1_enToJa_3': [
-          'words_j1_enToJa',
-          1,
-          0,
-          0,
-          1,
-          3,
-          100,
-          1,
-          4,
-          0
-        ],
+        'words_j1_enToJa_3': ['words_j1_enToJa', 1, 0, 0, 1, 3, 100, 1, 4, 0],
         'leap_x': ['leap_book', 1, 1, 1, 0, 3, 100, 1, 4, 0],
       },
       'days': [3],
     });
     final migrated = await UnitMigration.run(old, source);
     expect(migrated[first.id]!.unit, first.unit);
-    expect(migrated['words_j1_enToJa_3']!.unit,
-        'english.vocab.words.j1.meaning');
+    expect(
+        migrated['words_j1_enToJa_3']!.unit, 'english.vocab.words.j1.meaning');
     expect(migrated['leap_x']!.unit, '', reason: '読めないセットは飛ばす');
     expect(migrated.studyDays, {3});
   });

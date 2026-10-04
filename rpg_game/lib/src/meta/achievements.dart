@@ -288,7 +288,7 @@ class Achievements {
     AchievementDef(
       id: 'english_clear',
       title: '嵐を晴らす者',
-      description: '異界の港町で、バベル・リヴァイアサンを救う',
+      description: '異界の港町で、バベル・リヴァイアサンから「通訳の羅針盤」を受け取る',
       group: AchievementGroup.battle,
       rarity: Rarity.epic,
       goal: 1,
@@ -296,8 +296,8 @@ class Achievements {
     ),
     AchievementDef(
       id: 'fragments_6',
-      title: '守護神を救いし者',
-      description: '5つの国の守護神をすべて救い、知識の欠片をそろえる',
+      title: '五つの証を集めし者',
+      description: '5つの国の守護者をすべて正気にもどし、五つの証をそろえる',
       group: AchievementGroup.collection,
       rarity: Rarity.legendary,
       goal: 5,

@@ -24,7 +24,8 @@ void main() {
   test('英語は文法・単語・長文・熟語、ほかの教科はルートごとの分野に分かれる', () {
     expect(Proficiency.fieldsOf('english'), ['文法', '単語', '長文', '熟語']);
     expect(Proficiency.fieldsOf('science'), contains('中1'));
-    expect(Proficiency.fieldsOf('math'), ['小1', '小2', '小3', '小4', '小5', '小6', '中1', '中2', '中3']);
+    expect(Proficiency.fieldsOf('math'),
+        ['小1', '小2', '小3', '小4', '小5', '小6', '中1', '中2', '中3']);
   });
 
   test('熟練度は実際の正答率から決まり、少ない回答では判定しない', () {

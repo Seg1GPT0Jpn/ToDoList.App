@@ -164,7 +164,7 @@ class World:
         self.secondary = secondary
         self.armor = armor
         self.ref = ref
-        # 学年の道の最後のボスになる、暴走した守護神（dict: name/look/color/intro/defeat/desc）
+        # 学年の道の最後のボスになる、狂気に呑まれた守護者（dict: name/look/color/place/intro/defeat/desc）
         self.guardian = guardian
         self.routes = []
 
@@ -220,10 +220,10 @@ def _enemy(w, r, k, a):
     g = w.guardian
     if a.boss and g and a is r.areas[-1]:
         # 道の果てのボスは、その国の守護神（暴走した力の一部）
-        place = a.place or f'{a.section}の{BOSS_PLACES[seed % len(BOSS_PLACES)]}'
+        place = g.get('place') or f'{a.section}の{BOSS_PLACES[seed % len(BOSS_PLACES)]}'
         return dict(look=g['look'], name=f"{g['name']}〔{r.name}〕",
                     intro=g['intro'], defeat=g['defeat'],
-                    desc=f"{g['desc']}{r.name}の道の果てで、その力の一部が暴れている。",
+                    desc=f"{g['desc']}黒い霧に呑まれた力の一部が、{r.name}の道の果てで暴れている。",
                     color=g['color'], place=place)
     if a.boss:
         look = BOSS_LOOKS[_boss_i[0] % len(BOSS_LOOKS)]
