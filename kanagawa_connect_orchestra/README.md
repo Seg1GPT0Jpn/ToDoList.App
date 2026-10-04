@@ -16,7 +16,9 @@ kanagawa_connect_orchestra/
 ├── 404.html            ページが見つからない場合の表示（Firebase が自動で使用）
 ├── css/style.css       スタイル（配色・余白などは先頭の :root 変数で管理）
 ├── js/main.js          スマホメニュー、Instagramリンク設定、表示アニメーション
+├── images/logo.png     楽団ロゴマーク（logo-160.png はヘッダー用の小サイズ）
 ├── images/ogp.png      SNS共有用画像（1200×630）
+├── docs/recruitment-guidelines.pdf  団員募集要項PDF
 ├── favicon/            ファビコン・アイコン一式
 ├── robots.txt
 ├── sitemap.xml
@@ -111,10 +113,14 @@ const SITE_CONFIG = {
 | --- | --- |
 | 演奏会の日時・会場・チケット | `concert.html`（ホームの演奏会欄にも記載あり） |
 | Opening / Pre-main / Encore の曲目 | `concert.html` |
-| 練習日時・練習会場 | `activity.html`、`recruit.html`、`index.html` |
-| 参加費・募集パート | `recruit.html`（よくある質問にも記載あり） |
+| 練習日時・練習会場（具体的な日程・場所） | `activity.html`、`recruit.html`、`index.html` |
+| 参加費 | `recruit.html`（よくある質問にも記載あり） |
 
 未決定の箇所は `class="pending"` が付いているので、エディタで `pending` を検索すると見つけられます。
+
+### 募集要項PDF
+
+`docs/recruitment-guidelines.pdf` を団員募集ページからダウンロードできます。内容を更新したら同じファイル名で置き換えてください。
 
 ### 参加希望フォームのURL
 

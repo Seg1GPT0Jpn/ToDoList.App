@@ -91,6 +91,7 @@ h3 {
   letter-spacing: 0.06em;
   margin: 0 0 var(--space-sm);
   text-wrap: balance;
+  word-break: auto-phrase;
 }
 
 p {
@@ -180,8 +181,8 @@ ul {
 }
 
 .site-logo__mark {
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   flex-shrink: 0;
 }
 
@@ -413,6 +414,14 @@ ul {
   position: relative;
 }
 
+.hero__logo {
+  width: 112px;
+  height: 112px;
+  margin: 0 auto var(--space-md);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px var(--color-gold-soft);
+}
+
 .hero__name {
   display: inline-block;
   font-family: var(--font-serif);
@@ -562,6 +571,7 @@ ul {
 }
 
 .lead {
+  word-break: auto-phrase;
   font-family: var(--font-serif);
   font-size: clamp(1.05rem, 4vw, 1.3rem);
   line-height: 2;
@@ -582,6 +592,7 @@ ul {
 /* ---------- Concept lines ---------- */
 
 .concept-lines {
+  word-break: auto-phrase;
   list-style: none;
   font-family: var(--font-serif);
   text-align: center;
@@ -674,6 +685,10 @@ ul {
 
 .panel + .panel {
   margin-top: var(--space-md);
+}
+
+.grid-2 > .panel {
+  margin-top: 0;
 }
 
 .panel__title {
@@ -1156,4 +1171,54 @@ ul {
   .nav-toggle {
     display: none;
   }
+}
+
+/* ---------- Instruments ---------- */
+
+.instrument-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.85rem;
+  margin-top: var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .instrument-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+}
+
+.instrument-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-gold-soft);
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem 1.1rem;
+}
+
+.instrument-card__title {
+  font-size: 1rem;
+  text-align: center;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
+  border-bottom: 1px solid var(--color-gold-soft);
+}
+
+.instrument-card ul {
+  list-style: none;
+  font-size: 0.92rem;
+  line-height: 2;
+  text-align: center;
+}
+
+.check-list--dash li::before {
+  top: 1.05rem;
+  width: 0.6rem;
+  height: 0;
+  border-left: 0;
+  transform: none;
+}
+
+.faq__answer p:last-child {
+  margin-bottom: 0;
 }
