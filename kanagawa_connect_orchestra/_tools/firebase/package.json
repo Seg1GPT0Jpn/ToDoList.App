@@ -1,0 +1,16 @@
+{
+  "name": "kco-firebase-scripts",
+  "private": true,
+  "description": "曲目候補フォーム・管理画面の JavaScript を js/ に書き出すためのビルド設定（公開対象外）",
+  "scripts": {
+    "build": "esbuild src/suggest.js src/admin.js --bundle --minify --format=iife --target=es2019 --legal-comments=none --outdir=../../js --entry-names=[name].bundle",
+    "emulators": "cd ../.. && firebase emulators:start --project demo-kco --only hosting,firestore,auth"
+  },
+  "dependencies": {
+    "firebase": "12.19.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.12",
+    "firebase-tools": "15.32.1"
+  }
+}

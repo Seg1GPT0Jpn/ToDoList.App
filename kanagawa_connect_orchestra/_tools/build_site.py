@@ -22,7 +22,7 @@ INSTAGRAM = "https://www.instagram.com/for.all.people_orch.kanagawa/"
 INSTAGRAM_ID = "@for.all.people_orch.kanagawa"
 MAIL = "kanagawaorchestra2026renraku@gmail.com"
 PDF = "docs/recruitment-guidelines.pdf"
-LASTMOD = "2026-10-04"
+LASTMOD = "2026-10-05"
 
 NAV = [
     ("index.html", "ホーム"),
@@ -32,6 +32,9 @@ NAV = [
     ("activity.html", "活動について"),
     ("contact.html", "お問い合わせ"),
 ]
+
+# フッターにのみ表示するリンク
+FOOTER_EXTRA = [("suggest.html", "曲目候補の提案")]
 
 NEW_TAB = '<span class="visually-hidden">（新しいタブで開きます）</span>'
 ICON_EXT = '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>'
@@ -70,6 +73,43 @@ def title(en, id_, ja):
 
 def pending(text):
     return f'<span class="status status--tbd">{text}</span>'
+
+
+def badge_open(text="募集中"):
+    return f'<span class="badge badge--open">{text}</span>'
+
+
+def program_list():
+    """第1回演奏会のプログラム構成（演奏順）。メイン以外は曲目候補を募集中。"""
+    return f'''        <ol class="program-list">
+          <li><span class="program-list__part">オープニング</span><span class="program-list__detail">曲目候補 {badge_open()}</span></li>
+          <li><span class="program-list__part">サブメイン</span><span class="program-list__detail">曲目候補 {badge_open()}</span></li>
+          <li class="program-list__main"><span class="program-list__part">メインプログラム</span><span class="program-list__detail">ドヴォルザーク：交響曲第7番 {planned()}</span></li>
+          <li><span class="program-list__part">アンコール1</span><span class="program-list__detail">曲目候補 {badge_open()}</span></li>
+          <li><span class="program-list__part">アンコール2</span><span class="program-list__detail">曲目候補 {badge_open()}</span></li>
+        </ol>'''
+
+
+def program_call_section(id_prefix="program-call", cls="section--tinted"):
+    """「演奏会の曲目を、一緒に決めませんか？」セクション（ホーム・演奏会ページ共通）"""
+    return f'''    <section class="section {cls}" aria-labelledby="{id_prefix}-title">
+      <div class="container container--narrow">
+{title("Program", f"{id_prefix}-title", "演奏会の曲目を、<br>一緒に決めませんか？")}
+        <p>第1回演奏会では、ドヴォルザーク交響曲第7番をメインプログラムとして取り上げる予定です。</p>
+        <p>オープニング曲、サブメイン曲、アンコール曲については、これから参加する皆さんの意見も聞きながら決めていきます。</p>
+        <ul class="quote-list">
+          <li>『この曲をオーケストラで演奏してみたい！』</li>
+          <li>『この曲ならみんなで楽しめそう！』</li>
+        </ul>
+        <p>そんな一曲があれば、ぜひ教えてください。</p>
+{program_list()}
+        <div class="section-more">
+          <a class="btn btn--primary" href="suggest.html">曲目候補を提案する</a>
+          <p class="note">参加希望フォームを送っていない方も提案できます。</p>
+        </div>
+      </div>
+    </section>
+'''
 
 
 def planned(text="予定"):
@@ -175,7 +215,7 @@ def header(current, root=""):
 
 
 def footer(root=""):
-    items = "\n".join(f'          <li><a href="{href(p, root)}">{ja}</a></li>' for p, ja in NAV)
+    items = "\n".join(f'          <li><a href="{href(p, root)}">{ja}</a></li>' for p, ja in NAV + FOOTER_EXTRA)
     return f'''  <footer class="site-footer">
     <div class="container">
       <div class="site-footer__top">
@@ -203,10 +243,10 @@ def footer(root=""):
 '''
 
 
-def doc(filename, page_title, desc, body, jsonld, root="", noindex=False):
+def doc(filename, page_title, desc, body, jsonld, root="", noindex=False, scripts=""):
     full_title = f"{SITE}｜{CONCEPT}" if filename == "index.html" else f"{page_title}｜{SITE}"
     url = f"{BASE}/" if filename == "index.html" else f"{BASE}/{filename}"
-    robots = '\n  <meta name="robots" content="noindex">' if noindex else ""
+    robots = '\n  <meta name="robots" content="noindex, nofollow">' if noindex else ""
     canonical = "" if noindex else f'\n  <link rel="canonical" href="{url}">'
     ld = ""
     if jsonld:
@@ -248,7 +288,7 @@ def doc(filename, page_title, desc, body, jsonld, root="", noindex=False):
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&amp;family=Noto+Sans+JP:wght@400;700&amp;family=Noto+Serif+JP:wght@500;600&amp;display=swap">
 
   <link rel="stylesheet" href="{root}css/style.css">
-  <script src="{root}js/main.js" defer></script>{ld}
+  <script src="{root}js/main.js" defer></script>{scripts}{ld}
 </head>
 <body>
 {header(filename, root)}
@@ -367,7 +407,7 @@ index_body = f'''    <section class="hero" aria-labelledby="hero-title">
           <p class="concert-feature__work" lang="en">Symphony No. 7</p>
           <p class="concert-feature__ja">ドヴォルザーク：交響曲第7番 ニ短調 作品70</p>
         </div>
-        <p>メインプログラムとして予定しています。そのほか、オープニング・メイン前の作品・アンコールを予定しており、曲目は決定次第お知らせします。</p>
+        <p>メインプログラムとして予定しています。オープニング・サブメイン・アンコールの曲目は、参加する皆さんの意見も聞きながら決めていきます。</p>
         <p class="small muted">開催日・会場は決定次第お知らせします。</p>
         <div class="section-more">
           {btn("concert.html", "第1回演奏会について", "outline-light")}
@@ -375,6 +415,7 @@ index_body = f'''    <section class="hero" aria-labelledby="hero-title">
       </div>
     </section>
 
+{program_call_section("program-call")}
     <section class="section" aria-labelledby="values-title">
       <div class="container reveal">
 {title("Values", "values-title", "大切にしていること")}
@@ -700,7 +741,7 @@ concert_body = page_header("Concert", "第1回演奏会", "学生が中心とな
         <p class="text-center">演奏会の情報は、決まったものから順にお知らせします。</p>
         <dl class="info-list">
 {row("メインプログラム", "ドヴォルザーク：交響曲第7番 " + planned())}
-{row("その他の曲目", pending("曲目は現在調整中です"))}
+{row("その他の曲目", "オープニング・サブメイン・アンコール1・アンコール2 " + badge_open() + '<br><span class="small">曲目候補を募集しています。皆さんからいただいた候補を参考に、今後決定します。</span>')}
 {row("開催日", pending("決定次第お知らせします"))}
 {row("会場", pending("決定次第お知らせします"))}
 {row("チケット", pending("決定次第お知らせします"))}
@@ -711,18 +752,7 @@ concert_body = page_header("Concert", "第1回演奏会", "学生が中心とな
       </div>
     </section>
 
-    <section class="section section--tinted" aria-labelledby="program-title">
-      <div class="container container--narrow">
-{title("Program", "program-title", "プログラム構成（予定）")}
-        <ol class="program-list">
-          <li><span class="program-list__part">オープニング</span><span class="program-list__detail">{pending("曲目は調整中です")}</span></li>
-          <li><span class="program-list__part">メイン前の作品</span><span class="program-list__detail">{pending("曲目は調整中です")}</span></li>
-          <li class="program-list__main"><span class="program-list__part">メインプログラム</span><span class="program-list__detail">ドヴォルザーク：交響曲第7番 {planned()}</span></li>
-          <li><span class="program-list__part">アンコール（2曲予定）</span><span class="program-list__detail">{pending("曲目は調整中です")}</span></li>
-        </ol>
-      </div>
-    </section>
-
+{program_call_section("program-call")}
     <section class="section" aria-labelledby="dvorak-title">
       <div class="container container--narrow">
 {title("About the work", "dvorak-title", "メインプログラムについて")}
@@ -847,6 +877,212 @@ nf_body = f'''    <div class="page-header">
     </section>
 '''
 
+# ================================================================ SUGGEST（曲目候補の提案）
+SONG_CATS = [("opening", "オープニング曲"), ("submain", "サブメイン曲"), ("encore1", "アンコール曲1"), ("encore2", "アンコール曲2")]
+
+REASON_HINT = "例：好きな曲だから／オーケストラで演奏してみたいから／みんなで盛り上がれそうだから／この楽団に合っていると思うから／以前演奏して印象に残っているから"
+
+cat_checks = "\n".join(
+    f'''            <label class="choice"><input type="checkbox" name="category" value="{k}"><span>{ja}</span></label>'''
+    for k, ja in SONG_CATS)
+
+song_blocks = "\n".join(f'''        <fieldset class="song-block" data-song="{k}" hidden>
+          <legend>{ja}の候補</legend>
+          <div class="field">
+            <label for="sg-{k}-title">演奏してみたい曲名<span class="req">必須</span></label>
+            <input type="text" id="sg-{k}-title" maxlength="200" autocomplete="off" aria-describedby="sg-{k}-title-error">
+            <p class="field__error" id="sg-{k}-title-error" hidden></p>
+          </div>
+          <div class="field">
+            <label for="sg-{k}-composer">作曲者<span class="opt">任意</span></label>
+            <p class="field__hint" id="sg-{k}-composer-hint">分からない場合は空欄のままで大丈夫です。</p>
+            <input type="text" id="sg-{k}-composer" maxlength="100" autocomplete="off" aria-describedby="sg-{k}-composer-hint">
+          </div>
+          <div class="field">
+            <label for="sg-{k}-reason">この曲を提案した理由<span class="opt">任意</span></label>
+            <p class="field__hint" id="sg-{k}-reason-hint">{REASON_HINT}</p>
+            <textarea id="sg-{k}-reason" rows="3" maxlength="1000" aria-describedby="sg-{k}-reason-hint"></textarea>
+          </div>
+        </fieldset>''' for k, ja in SONG_CATS)
+
+PARTICIPATION_OPTS = [("applied", "すでに参加希望フォームを送っている"), ("considering", "参加を検討している"),
+                      ("undecided", "まだ分からない"), ("other", "その他")]
+part_radios = "\n".join(
+    f'''            <label class="choice"><input type="radio" name="participation" value="{k}"><span>{ja}</span></label>'''
+    for k, ja in PARTICIPATION_OPTS)
+
+SUGGEST_NOTICE = '''        <div class="notice-box" aria-labelledby="suggest-notice-title">
+          <h3 id="suggest-notice-title" class="notice-box__title">ご提案いただく前に</h3>
+          <p>いただいた曲目は候補として参考にさせていただきます。</p>
+          <p>すべての提案が採用されるわけではありません。また、楽器編成、演奏時間、楽譜の入手、著作権、演奏会全体の構成などを考慮し、最終的な曲目を決定します。</p>
+          <p>皆さんからいただいた意見をもとに、参加する人たちと一緒に演奏会をつくっていきます。</p>
+        </div>'''
+
+suggest_body = page_header("Program suggestions", "曲目候補の提案", "演奏会の曲目を、<br>一緒に決めませんか？") + f'''
+    <section class="section" aria-labelledby="suggest-intro-title">
+      <div class="container container--narrow">
+{title("Together", "suggest-intro-title", "演奏する人が、演奏会をつくる")}
+        <p>第1回演奏会では、ドヴォルザーク交響曲第7番をメインプログラムとして取り上げる予定です。</p>
+        <p>オープニング曲、サブメイン曲、アンコール曲については、これから参加する皆さんの意見も聞きながら決めていきます。</p>
+        <ul class="quote-list">
+          <li>『この曲をオーケストラで演奏してみたい！』</li>
+          <li>『この曲ならみんなで楽しめそう！』</li>
+        </ul>
+        <p>そんな一曲があれば、ぜひ教えてください。参加希望フォームを送っていない方も提案できます。</p>
+{program_list()}
+      </div>
+    </section>
+
+    <section class="section section--tinted" aria-labelledby="suggest-form-title">
+      <div class="container container--narrow">
+{title("Suggest", "suggest-form-title", "曲目候補を提案する")}
+        <noscript>
+          <p class="form-alert">このフォームの送信にはJavaScriptが必要です。JavaScriptを有効にしてご利用ください。</p>
+        </noscript>
+
+        <form class="form card" data-suggest-form novalidate>
+          <div class="form-error-summary" data-error-summary role="alert" tabindex="-1" hidden>
+            <p class="form-error-summary__title">入力内容を確認してください</p>
+            <ul></ul>
+          </div>
+
+          <div class="field">
+            <label for="sg-name">お名前・呼ばれたい名前<span class="req">必須</span></label>
+            <p class="field__hint" id="sg-name-hint">例：創造者</p>
+            <input type="text" id="sg-name" name="name" maxlength="50" autocomplete="nickname" required aria-describedby="sg-name-hint sg-name-error">
+            <p class="field__error" id="sg-name-error" hidden></p>
+          </div>
+
+          <div class="field">
+            <label for="sg-email">メールアドレス<span class="req">必須</span></label>
+            <p class="field__hint" id="sg-email-hint">連絡が必要になった場合に使用します。サイト上には公開されません。</p>
+            <input type="email" id="sg-email" name="email" maxlength="254" autocomplete="email" inputmode="email" required aria-describedby="sg-email-hint sg-email-error">
+            <p class="field__error" id="sg-email-error" hidden></p>
+          </div>
+
+          <fieldset class="field" id="sg-category" aria-describedby="sg-category-hint sg-category-error">
+            <legend>希望する曲目カテゴリー<span class="req">必須</span></legend>
+            <p class="field__hint" id="sg-category-hint">1つ以上選んでください。複数のカテゴリーに提案したい場合は、いくつでも選べます。</p>
+            <div class="choices choices--grid">
+{cat_checks}
+            </div>
+            <p class="field__error" id="sg-category-error" hidden></p>
+          </fieldset>
+
+{song_blocks}
+
+          <fieldset class="field">
+            <legend>現在の参加状況<span class="opt">任意</span></legend>
+            <p class="field__hint">参加希望フォームを提出していない方も、曲目を提案できます。</p>
+            <div class="choices">
+{part_radios}
+            </div>
+          </fieldset>
+
+          <div class="hp" aria-hidden="true">
+            <label>このフィールドは空欄のままにしてください<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+          </div>
+
+          <p class="form-privacy">お名前とメールアドレスは、曲目候補について連絡が必要になった場合にのみ使用します。サイト上で公開することはなく、提案内容は運営の担当者のみが確認します。</p>
+
+          <div class="form-actions">
+            <button class="btn btn--primary" type="submit">この内容で提案する</button>
+            <p class="form-status" data-form-status role="status" aria-live="polite"></p>
+          </div>
+        </form>
+
+        <div class="thanks card" data-thanks tabindex="-1" hidden>
+          <p class="thanks__mark" aria-hidden="true">♪</p>
+          <h2 class="thanks__title">曲目候補を送っていただき、<br>ありがとうございます！</h2>
+          <p>あなたの提案も、第1回演奏会をつくる大切な一歩です。</p>
+          <p>かながわコネクトオーケストラでは、演奏する人自身が音楽を考え、つくっていくことを大切にしています。</p>
+          <div class="btn-group btn-group--center">
+            <button class="btn btn--primary" type="button" data-suggest-again>続けて別の曲を提案する</button>
+            {btn("concert.html", "第1回演奏会のページへ")}
+          </div>
+        </div>
+
+{SUGGEST_NOTICE}
+      </div>
+    </section>
+
+{cta_band("演奏会を、一緒につくりませんか。", "曲目の提案だけでなく、演奏する仲間も募集しています。<br>「ちょっと興味がある」という段階でも、気軽にご連絡ください。")}'''
+
+# ================================================================ ADMIN（曲目候補の管理画面・非公開）
+admin_filters = "\n".join(
+    f'''            <button type="button" class="filter-btn" data-filter="{k}" aria-pressed="{'true' if k == 'all' else 'false'}">{ja}<span class="filter-btn__count" data-count>0</span></button>'''
+    for k, ja in [("all", "すべて"), ("opening", "オープニング"), ("submain", "サブメイン"), ("encore1", "アンコール1"), ("encore2", "アンコール2")])
+
+admin_body = '''    <div class="page-header page-header--compact">
+      <div class="container">
+        <span class="page-header__en" aria-hidden="true">Admin</span>
+        <h1 class="page-header__title">曲目候補の管理</h1>
+        <p class="page-header__lead">このページは運営の管理者専用です。</p>
+      </div>
+    </div>
+
+    <section class="section admin" data-admin aria-label="曲目候補の管理">
+      <div class="container">
+        <div data-admin-loading>
+          <p class="text-center muted">読み込み中…</p>
+        </div>
+
+        <div class="card admin-gate" data-admin-signed-out hidden>
+          <h2 class="card__title">管理者ログイン</h2>
+          <p>曲目候補を確認するには、管理者として登録されたGoogleアカウントでログインしてください。</p>
+          <button class="btn btn--primary" type="button" data-signin>Googleアカウントでログイン</button>
+        </div>
+
+        <div class="card admin-gate" data-admin-denied hidden>
+          <h2 class="card__title">閲覧権限がありません</h2>
+          <p>ログイン中のアカウント（<span data-admin-email></span>）には、曲目候補を閲覧する権限がありません。管理者のアカウントでログインし直してください。</p>
+          <div class="btn-group">
+            <button class="btn btn--outline" type="button" data-signout>ログアウト</button>
+            <button class="btn btn--primary" type="button" data-signin>別のアカウントでログイン</button>
+          </div>
+        </div>
+
+        <div data-admin-panel hidden>
+          <div class="admin-toolbar">
+            <p class="admin-toolbar__user">ログイン中：<span data-admin-email></span></p>
+            <div class="admin-toolbar__actions">
+              <button class="btn btn--outline btn--sm" type="button" data-reload>再読み込み</button>
+              <button class="btn btn--outline btn--sm" type="button" data-csv>CSVをダウンロード</button>
+              <button class="btn btn--outline btn--sm" type="button" data-signout>ログアウト</button>
+            </div>
+          </div>
+
+          <div class="filter-group" role="group" aria-label="カテゴリーで絞り込む">
+''' + admin_filters + '''
+          </div>
+
+          <p class="admin-count" data-admin-count aria-live="polite"></p>
+
+          <div class="table-wrap" role="region" aria-label="曲目候補の一覧（横にスクロールできます）" tabindex="0">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th scope="col">カテゴリー</th>
+                  <th scope="col">曲名</th>
+                  <th scope="col">作曲者</th>
+                  <th scope="col">提案者</th>
+                  <th scope="col">理由</th>
+                  <th scope="col">投稿日</th>
+                  <th scope="col"><span class="visually-hidden">操作</span></th>
+                </tr>
+              </thead>
+              <tbody data-admin-rows></tbody>
+            </table>
+          </div>
+          <p class="text-center muted" data-admin-empty hidden>このカテゴリーの提案はまだありません。</p>
+        </div>
+
+        <p class="admin-status" data-admin-status role="status"></p>
+      </div>
+    </section>
+'''
+
+
 PAGES = [
     ("index.html", "ホーム",
      "神奈川県を中心に活動する「かながわコネクトオーケストラ」。学生を中心に活動する、年齢・経験を問わないオーケストラです。初心者も経験者も、音楽を通してともに成長する仲間を募集しています。",
@@ -866,10 +1102,20 @@ PAGES = [
     ("contact.html", "お問い合わせ",
      "かながわコネクトオーケストラへのお問い合わせ窓口。参加希望は参加希望フォーム、その他のご連絡はメールで受け付けています。",
      contact_body, breadcrumb_ld("お問い合わせ", "contact.html")),
+    ("suggest.html", "曲目候補の提案",
+     "かながわコネクトオーケストラ第1回演奏会の曲目候補を募集しています。オープニング・サブメイン・アンコールで演奏してみたい曲を教えてください。参加希望フォームを送っていない方も提案できます。",
+     suggest_body, breadcrumb_ld("曲目候補の提案", "suggest.html"),
+     '\n  <script src="js/suggest.bundle.js" defer></script>'),
 ]
 
-for fn, t, d, body, ld in PAGES:
-    (OUT / fn).write_text(doc(fn, t, d, body, ld), encoding="utf-8")
+for fn, t, d, body, ld, *extra in PAGES:
+    (OUT / fn).write_text(doc(fn, t, d, body, ld, scripts=extra[0] if extra else ""), encoding="utf-8")
+
+# 管理画面（検索エンジンに載せない・サイトマップに含めない）
+(OUT / "admin.html").write_text(
+    doc("admin.html", "曲目候補の管理", "かながわコネクトオーケストラ 管理者用ページ", admin_body, None, noindex=True,
+        scripts='\n  <script src="js/admin.bundle.js" defer></script>'),
+    encoding="utf-8")
 
 (OUT / "404.html").write_text(
     doc("404.html", "ページが見つかりません", PAGES[0][2], nf_body, None, root="/", noindex=True), encoding="utf-8")
@@ -881,4 +1127,4 @@ for fn, *_ in PAGES:
     sitemap.append(f"  <url>\n    <loc>{loc}</loc>\n    <lastmod>{LASTMOD}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>{pr}</priority>\n  </url>")
 sitemap.append("</urlset>\n")
 (OUT / "sitemap.xml").write_text("\n".join(sitemap), encoding="utf-8")
-print("built", len(PAGES) + 1, "pages + sitemap")
+print("built", len(PAGES) + 2, "pages + sitemap")

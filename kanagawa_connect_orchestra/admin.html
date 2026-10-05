@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>曲目候補の管理｜かながわコネクトオーケストラ</title>
+  <meta name="description" content="かながわコネクトオーケストラ 管理者用ページ">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#1c2a48">
+
+  <!-- OGP / SNS -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="かながわコネクトオーケストラ">
+  <meta property="og:title" content="曲目候補の管理｜かながわコネクトオーケストラ">
+  <meta property="og:description" content="かながわコネクトオーケストラ 管理者用ページ">
+  <meta property="og:url" content="https://kanagawa-connect-orchestra.web.app/admin.html">
+  <meta property="og:image" content="https://kanagawa-connect-orchestra.web.app/images/ogp.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="かながわコネクトオーケストラ｜すべてのひとのためのオーケストラ">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="曲目候補の管理｜かながわコネクトオーケストラ">
+  <meta name="twitter:description" content="かながわコネクトオーケストラ 管理者用ページ">
+  <meta name="twitter:image" content="https://kanagawa-connect-orchestra.web.app/images/ogp.png">
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon/favicon.ico" sizes="48x48">
+  <link rel="icon" href="favicon/icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&amp;family=Noto+Sans+JP:wght@400;700&amp;family=Noto+Serif+JP:wght@500;600&amp;display=swap">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+  <script src="js/admin.bundle.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へスキップ</a>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="site-logo" href="./">
+        <img class="site-logo__mark" src="images/logo-160.png" width="40" height="40" alt="">
+        <span>かながわコネクトオーケストラ</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="global-nav">
+        <span class="visually-hidden" data-nav-label>メニューを開く</span>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+      </button>
+      <nav class="global-nav" id="global-nav" aria-label="メインメニュー">
+        <ul class="global-nav__list">
+          <li><a href="./">ホーム</a></li>
+          <li><a href="about.html">私たちについて</a></li>
+          <li><a href="recruit.html">団員募集</a></li>
+          <li><a href="concert.html">第1回演奏会</a></li>
+          <li><a href="activity.html">活動について</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <div class="page-header page-header--compact">
+      <div class="container">
+        <span class="page-header__en" aria-hidden="true">Admin</span>
+        <h1 class="page-header__title">曲目候補の管理</h1>
+        <p class="page-header__lead">このページは運営の管理者専用です。</p>
+      </div>
+    </div>
+
+    <section class="section admin" data-admin aria-label="曲目候補の管理">
+      <div class="container">
+        <div data-admin-loading>
+          <p class="text-center muted">読み込み中…</p>
+        </div>
+
+        <div class="card admin-gate" data-admin-signed-out hidden>
+          <h2 class="card__title">管理者ログイン</h2>
+          <p>曲目候補を確認するには、管理者として登録されたGoogleアカウントでログインしてください。</p>
+          <button class="btn btn--primary" type="button" data-signin>Googleアカウントでログイン</button>
+        </div>
+
+        <div class="card admin-gate" data-admin-denied hidden>
+          <h2 class="card__title">閲覧権限がありません</h2>
+          <p>ログイン中のアカウント（<span data-admin-email></span>）には、曲目候補を閲覧する権限がありません。管理者のアカウントでログインし直してください。</p>
+          <div class="btn-group">
+            <button class="btn btn--outline" type="button" data-signout>ログアウト</button>
+            <button class="btn btn--primary" type="button" data-signin>別のアカウントでログイン</button>
+          </div>
+        </div>
+
+        <div data-admin-panel hidden>
+          <div class="admin-toolbar">
+            <p class="admin-toolbar__user">ログイン中：<span data-admin-email></span></p>
+            <div class="admin-toolbar__actions">
+              <button class="btn btn--outline btn--sm" type="button" data-reload>再読み込み</button>
+              <button class="btn btn--outline btn--sm" type="button" data-csv>CSVをダウンロード</button>
+              <button class="btn btn--outline btn--sm" type="button" data-signout>ログアウト</button>
+            </div>
+          </div>
+
+          <div class="filter-group" role="group" aria-label="カテゴリーで絞り込む">
+            <button type="button" class="filter-btn" data-filter="all" aria-pressed="true">すべて<span class="filter-btn__count" data-count>0</span></button>
+            <button type="button" class="filter-btn" data-filter="opening" aria-pressed="false">オープニング<span class="filter-btn__count" data-count>0</span></button>
+            <button type="button" class="filter-btn" data-filter="submain" aria-pressed="false">サブメイン<span class="filter-btn__count" data-count>0</span></button>
+            <button type="button" class="filter-btn" data-filter="encore1" aria-pressed="false">アンコール1<span class="filter-btn__count" data-count>0</span></button>
+            <button type="button" class="filter-btn" data-filter="encore2" aria-pressed="false">アンコール2<span class="filter-btn__count" data-count>0</span></button>
+          </div>
+
+          <p class="admin-count" data-admin-count aria-live="polite"></p>
+
+          <div class="table-wrap" role="region" aria-label="曲目候補の一覧（横にスクロールできます）" tabindex="0">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th scope="col">カテゴリー</th>
+                  <th scope="col">曲名</th>
+                  <th scope="col">作曲者</th>
+                  <th scope="col">提案者</th>
+                  <th scope="col">理由</th>
+                  <th scope="col">投稿日</th>
+                  <th scope="col"><span class="visually-hidden">操作</span></th>
+                </tr>
+              </thead>
+              <tbody data-admin-rows></tbody>
+            </table>
+          </div>
+          <p class="text-center muted" data-admin-empty hidden>このカテゴリーの提案はまだありません。</p>
+        </div>
+
+        <p class="admin-status" data-admin-status role="status"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__top">
+        <div class="site-footer__brand-block">
+          <a class="site-footer__brand" href="./">
+            <img src="images/logo-160.png" width="44" height="44" alt="">
+            <span>かながわコネクトオーケストラ</span>
+          </a>
+          <p class="site-footer__concept">すべてのひとのためのオーケストラ</p>
+          <p class="site-footer__desc">学生を中心に活動する、年齢・経験を問わないオーケストラです。</p>
+        </div>
+        <nav class="footer-nav" aria-label="フッターメニュー">
+          <ul>
+          <li><a href="./">ホーム</a></li>
+          <li><a href="about.html">私たちについて</a></li>
+          <li><a href="recruit.html">団員募集</a></li>
+          <li><a href="concert.html">第1回演奏会</a></li>
+          <li><a href="activity.html">活動について</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+          <li><a href="suggest.html">曲目候補の提案</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="site-footer__links">
+        <a class="site-footer__join" href="recruit.html">団員募集中｜詳しくはこちら</a>
+        <a class="site-footer__sns" href="https://www.instagram.com/for.all.people_orch.kanagawa/" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="0.6"/></svg><span>Instagram</span><span class="visually-hidden">（新しいタブで開きます）</span></a>
+      </div>
+      <p class="site-footer__copy"><small>&copy; <span data-year>2026</span> かながわコネクトオーケストラ</small></p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -13,9 +13,12 @@ kanagawa_connect_orchestra/
 ├── concert.html        第1回演奏会
 ├── activity.html       活動について
 ├── contact.html        お問い合わせ
+├── suggest.html        曲目候補の提案フォーム（Firestore に保存）
+├── admin.html          曲目候補の管理画面（管理者のみ・検索エンジン非掲載）
 ├── 404.html            ページが見つからない場合の表示（Firebase が自動で使用）
 ├── css/style.css       スタイル（配色・余白などは先頭の :root 変数で管理）
 ├── js/main.js          スマホメニュー、フッターの年表示、表示アニメーション
+├── js/suggest.bundle.js / admin.bundle.js  曲目候補フォーム・管理画面（_tools/firebase から生成）
 ├── images/logo.png     楽団ロゴマーク（logo-160.png はヘッダー用の小サイズ）
 ├── images/ogp.png      SNS共有用画像（1200×630）
 ├── docs/recruitment-guidelines.pdf  団員募集要項PDF
@@ -23,6 +26,8 @@ kanagawa_connect_orchestra/
 ├── robots.txt
 ├── sitemap.xml
 ├── _tools/build_site.py  全ページのHTMLとsitemap.xmlを生成するスクリプト（公開対象外）
+├── _tools/firebase/    曲目候補フォーム・管理画面のJavaScriptソースとビルド設定（公開対象外）
+├── firestore.rules     Firestore セキュリティルール（公開対象外）
 ├── firebase.json       Firebase Hosting 設定
 └── .firebaserc         Firebase プロジェクトID 設定
 ```
@@ -88,6 +93,65 @@ canonical・OGP・サイトマップには絶対URLが必要なため、仮のUR
 - `*.html`（`canonical`、`og:url`、`og:image`）
 - `sitemap.xml`
 - `robots.txt`
+
+## 曲目候補の募集機能（Firestore）
+
+第1回演奏会の曲目候補（オープニング・サブメイン・アンコール1・アンコール2）を、
+`suggest.html` のフォームから受け付けます。送信内容は Firestore の **`programSuggestions`** コレクションに
+1曲＝1件で保存され、管理者だけが `admin.html` で確認できます。
+
+- 保存項目：`timestamp` `name` `email` `category`（opening / submain / encore1 / encore2）`title` `composer` `reason` `participationStatus`
+- 一般の閲覧者は、他の人の提案やメールアドレスを読み取れません（Security Rules で拒否）
+- 管理者は Google アカウントでログインし、`firestore.rules` に登録したメールアドレスのみ閲覧・削除できます
+- 団員募集の Google フォームとは独立しており、既存の団員募集には影響しません
+
+### 初回のみ：Firebase コンソールでの設定
+
+1. **Firestore を作成**：Firebase コンソール →「Firestore Database」→「データベースを作成」
+   （本番環境モード、ロケーションは `asia-northeast1（東京）` がおすすめ）
+   - すでに Firestore を作成済みで、「ルール」タブに独自のルールがある場合は、
+     **デプロイ前に** その内容を `firestore.rules` に統合してください（デプロイするとルールは置き換わります）。
+2. **Google ログインを有効化**：「Authentication」→「Sign-in method」→「Google」を有効にする
+3. **Web アプリの登録を確認**：「プロジェクトの設定」→「マイアプリ」にウェブアプリ（`</>`）がなければ追加する
+   （サイトは Firebase Hosting の `/__/firebase/init.json` から設定を自動で読み込むため、API キーをコードに書く必要はありません）
+
+### デプロイ
+
+```bash
+cd kanagawa_connect_orchestra
+firebase deploy --only firestore:rules   # セキュリティルール
+firebase deploy --only hosting           # サイト
+```
+
+### 管理画面
+
+- URL：`https://kanagawa-connect-orchestra.web.app/admin.html`（サイト内からはリンクしていません）
+- 管理者：`kanagawaorchestra2026renraku@gmail.com`
+- 管理者を追加・変更するときは、`firestore.rules` の `isAdmin()` のリストを編集し、
+  `firebase deploy --only firestore:rules` を実行してください。
+- カテゴリーごとの絞り込み、CSV ダウンロード（Excel 対応）、迷惑投稿の削除ができます。
+
+### JavaScript を変更したとき
+
+フォーム・管理画面のソースは `_tools/firebase/src/` にあります。編集後に次のコマンドで `js/*.bundle.js` を作り直します。
+
+```bash
+cd kanagawa_connect_orchestra/_tools/firebase
+npm install
+npm run build
+```
+
+### ローカルでの動作確認（Firebase エミュレーター）
+
+本物のデータベースを使わずに、フォーム送信や管理画面を試せます（Java が必要です）。
+
+```bash
+cd kanagawa_connect_orchestra/_tools/firebase
+npm install
+npm run emulators
+```
+
+http://127.0.0.1:5000/suggest.html を開くと、エミュレーターの Firestore に保存されます。
 
 ## 後から情報を更新する
 

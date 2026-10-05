@@ -1,0 +1,53 @@
+rules_version = '2';
+
+// =========================================================
+// かながわコネクトオーケストラ Firestore Security Rules
+//
+// ※ このファイルをデプロイすると、Firebase プロジェクトの
+//    Firestore ルールは「このファイルの内容」に置き換わります。
+//    コンソールで別のルールを使っている場合は、先に統合してください。
+// =========================================================
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // 管理者（曲目候補を閲覧できる Google アカウント）
+    // 管理者を追加・変更する場合は、このリストを編集して再デプロイしてください。
+    function isAdmin() {
+      return request.auth != null
+        && request.auth.token.email_verified == true
+        && request.auth.token.email in [
+          'kanagawaorchestra2026renraku@gmail.com'
+        ];
+    }
+
+    // 曲目候補 1件分のデータ検証
+    function isValidSuggestion(d) {
+      return d.keys().hasAll(['timestamp', 'name', 'email', 'category', 'title',
+                               'composer', 'reason', 'participationStatus'])
+        && d.keys().hasOnly(['timestamp', 'name', 'email', 'category', 'title',
+                             'composer', 'reason', 'participationStatus'])
+        && d.timestamp == request.time
+        && d.name is string && d.name.size() >= 1 && d.name.size() <= 50
+        && d.email is string && d.email.size() <= 254
+        && d.email.matches('^[^@\\s]+@[^@\\s]+[.][^@\\s]+$')
+        && d.category in ['opening', 'submain', 'encore1', 'encore2']
+        && d.title is string && d.title.size() >= 1 && d.title.size() <= 200
+        && d.composer is string && d.composer.size() <= 100
+        && d.reason is string && d.reason.size() <= 1000
+        && d.participationStatus in ['', 'applied', 'considering', 'undecided', 'other'];
+    }
+
+    // 曲目候補（第1回演奏会）
+    match /programSuggestions/{suggestionId} {
+      allow create: if isValidSuggestion(request.resource.data);
+      allow read, delete: if isAdmin();
+      allow update: if false;
+    }
+
+    // 上記以外はすべて拒否
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
