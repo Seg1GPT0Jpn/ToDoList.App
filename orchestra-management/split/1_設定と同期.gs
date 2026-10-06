@@ -1238,9 +1238,7 @@ function renumberApplicants() {
 
     const row = app.values[i];
     const current = row[app.map.no];
-    const isEmptyRow = row.every(v => isBlank_(v));
-
-    if (isBlank_(current) && !isEmptyRow) {
+    if (isBlank_(current) && hasApplicantData_(row, app.map)) {
       column.push([next++]);
       assigned++;
     } else {
@@ -1258,7 +1256,16 @@ function renumberApplicants() {
 
 function maxApplicantNo_(app) {
 
-  return app.records.reduce((max, r) => (r.noNum !== null && r.noNum > max ? r.noNum : max), 0);
+  let max = 0;
+
+  if (app.map.no === undefined) return max;
+
+  for (let i = 1; i < app.values.length; i++) {
+    const n = toNumberOrNull_(app.values[i][app.map.no]);
+    if (n !== null && n > max) max = n;
+  }
+
+  return max;
 }
 
 

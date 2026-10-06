@@ -31,6 +31,7 @@ function runSystemDiagnosis() {
   } else {
     app = readApplicants_(appSheet);
     add('行数（応募件数）', app.records.length, '');
+    if (app.emptyRows.length) add('中身のない行（集計対象外）', app.emptyRows.length + '行（' + app.emptyRows[0] + '〜' + app.emptyRows[app.emptyRows.length - 1] + '行目）', '⚠️');
     APPLICANT_FIELDS.forEach(f => {
       const c = app.map[f.key];
       add('列：' + f.header, c === undefined ? '見つかりません' : columnLetter_(c + 1) + '列「' + app.headers[c] + '」', c === undefined ? (f.added ? '⚠️' : '❌') : '✅');
@@ -397,12 +398,19 @@ function readApplicants_(sheet) {
   const headers = values[0].map(toStr_);
   const res = resolveColumns_(headers, applicantFieldDefs_(), false);
   const records = [];
+  const emptyRows = [];
 
   for (let i = 1; i < values.length; i++) {
 
     const row = values[i];
 
     if (row.every(v => isBlank_(v))) continue;
+
+    // No.・対応状況・チェックボックス・数式だけが入った行は応募者として数えない
+    if (!hasApplicantData_(row, res.map)) {
+      emptyRows.push(i + 1);
+      continue;
+    }
 
     const get = key => (res.map[key] === undefined ? '' : row[res.map[key]]);
     const no = get('no');
@@ -423,13 +431,30 @@ function readApplicants_(sheet) {
     });
   }
 
-  return { sheet, headers, map: res.map, missing: res.missing, values, records };
+  return { sheet, headers, map: res.map, missing: res.missing, values, records, emptyRows };
+}
+
+
+/*
+ * 応募者としての中身がある行か（回答日時・メールアドレス・お名前・楽器のどれかが入っている）
+ *
+ * v1 は「最終行まで全部に No. を振る」動きだったため、1000行目付近まで No. だけの行が
+ * できていることがある。チェックボックス（FALSE）や数式だけの列も同様。
+ */
+function hasApplicantData_(row, map) {
+
+  return ['timestamp', 'email', 'name', 'instrument'].some(key => {
+    const c = map[key];
+    if (c === undefined) return false;
+    const v = row[c];
+    return typeof v === 'boolean' ? false : !isBlank_(v);
+  });
 }
 
 
 function emptyApplicants_() {
 
-  return { sheet: null, headers: [], map: {}, missing: [], values: [], records: [] };
+  return { sheet: null, headers: [], map: {}, missing: [], values: [], records: [], emptyRows: [] };
 }
 
 

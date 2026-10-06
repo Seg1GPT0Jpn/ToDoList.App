@@ -779,6 +779,12 @@ function collectIntegrityIssues_(ss) {
     else add(essential ? 'エラー' : '警告', '列がない', A, 1, '', '「' + fieldLabel_(k) + '」列が見つかりません（見出し名が変更された可能性）');
   });
 
+  if (app.emptyRows.length) {
+    const rows = app.emptyRows;
+    add('確認', '中身のない行', A, rows[0] + '〜' + rows[rows.length - 1], '',
+      'No. や対応状況・チェックボックスなどだけが入った行が ' + rows.length + '行 あります（回答日時・メール・お名前・楽器が空）。集計には含めていません。不要なら行ごと削除して構いません');
+  }
+
   // 1行ずつ
   const noCount = new Map();
 

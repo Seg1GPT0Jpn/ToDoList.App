@@ -584,6 +584,44 @@ const incWrites = env4.stats.writes;
 check('151人目の追加も書き込み回数は一定（' + incWrites + '回）', incWrites < 40, true);
 console.log('    （ローカル実行時間：初回 ' + elapsed + 'ms／追加 ' + (Date.now() - started) + 'ms）');
 
+/* ============================================================
+ * シナリオ W：中身のない行（No.・チェックボックス・数式だけ）が大量にある
+ * ============================================================ */
+
+section('W. 中身のない行を応募者として数えない（1009人バグ）');
+
+const env5 = createGasEnvironment();
+const ss5 = env5.spreadsheet;
+const form5 = ss5.insertSheet('フォームの回答 1');
+form5.formUrl = 'https://docs.google.com/forms/d/mock5/viewform';
+const real = initialResponses().concat([response(ts(7, 9), 'tester09@example.com', 'テスト九郎', 'オーボエ')]);
+form5._setTable([FORM_HEADERS].concat(real));
+const app5 = ss5.insertSheet('応募者一覧');
+const v1Headers = ['No.', '回答日時', 'メールアドレス', 'お名前・呼ばれたい名前', '本名について', '学年・年代', '活動地域', '楽器', '希望パート', '楽器の経験年数', 'オーケストラでの演奏経験', '現在所属している音楽団体', '参加したいと思った理由', '練習参加可能性', '第1回演奏会', 'やってみたいこと', 'その他', '対応状況', '最終連絡日', '次の対応', '備考', '連絡済み'];
+const junk = [v1Headers];
+// v1 の No. 振り直しで 2〜1000行目に番号だけ入り、運営が追加したチェックボックス列（FALSE）も1000行目まである状態
+for (let r = 2; r <= 1000; r++) {
+  const line = new Array(v1Headers.length).fill('');
+  line[0] = r - 1;
+  line[21] = false;
+  junk.push(line);
+}
+app5._setTable(junk);
+const c5 = loadV2(env5);
+c5.setupOrchestraManagement();
+const dash5 = ss5.getSheetByName('ダッシュボード');
+check('参加希望者数は実際の9人（1000行目までの空行を数えない）', cell(dash5, '参加希望者数（実人数）'), 9);
+check('楽器別集計の合計も9人', cell(ss5.getSheetByName('楽器別集計'), '合計', 3), 9);
+check('活動状況の応募者数も9人', cell(ss5.getSheetByName('活動状況'), '応募者数'), 9);
+const t5 = table(app5);
+const realRows = t5.rows.filter(r => r[3]);
+check('実際の9人は取り込まれている', realRows.length, 9);
+check('新しい No. は空行の番号と重ならない', realRows.every(r => r[0] > 999), true);
+env5.alerts.length = 0;
+c5.runIntegrityCheck();
+check('整合性チェックで「中身のない行」を知らせる', ss5.getSheetByName('データチェック')._rows().some(r => r[1] === '中身のない行' && /999/.test(r[5])), true);
+check('空行はエラー扱いしない（No.未設定・空欄の警告を大量に出さない）', ss5.getSheetByName('データチェック')._rows().filter(r => r[0] === '警告' || r[0] === 'エラー').length < 20, true);
+
 console.log('\n============================');
 console.log('統合テスト：成功 ' + passed + '件 ／ 失敗 ' + failed + '件');
 process.exit(failed ? 1 : 0);
