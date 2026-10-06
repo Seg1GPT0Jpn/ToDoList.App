@@ -296,6 +296,7 @@ function onOpen() {
     .addSubMenu(
       ui.createMenu('🛠 メンテナンス')
         .addItem('楽器名の表記を統一（応募者一覧の楽器列）', 'normalizeApplicantInstruments')
+        .addItem('応募者一覧を整理（ずれた行・空の行を削除）', 'cleanupApplicantsSheet')
         .addItem('セルフテスト（本番データは変更しません）', 'runSelfTests')
     )
     .addToUi();
@@ -1832,6 +1833,256 @@ function syncContactsToApplicants_(ss) {
   }
 
   return result;
+}
+
+
+/*******************************************************
+ * 応募者一覧を整理（メンテナンス）
+ *
+ * 確認ダイアログのあと、次を行う。
+ *  ・中身のない行（No. だけ等。回答日時・メール・お名前・楽器がすべて空）を削除
+ *  ・古いコードが列をずらして書き込んだ行のうち、同じ人の正しい行があるものを削除
+ *    （正しい行が無い人の行は残す）
+ *  ・連絡記録がまだ無ければ No. を 1 から振り直す
+ *  ・意味のないメモ「⚠未取得: ニックネーム」を消す
+ * 実行前に「応募者一覧（整理前バックアップ）」シートを作る。
+ *******************************************************/
+
+const CLEANUP_BACKUP_NAME_ = '応募者一覧（整理前バックアップ）';
+const EMAIL_PATTERN_ = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function cleanupApplicantsSheet() {
+
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const sheet = ss.getSheetByName(CONFIG.applicantsSheet);
+
+  if (!sheet) {
+    alert_('「応募者一覧」シートがありません。');
+    return null;
+  }
+
+  const lock = LockService.getScriptLock();
+
+  if (!lock.tryLock(CONFIG.lockWaitMs)) {
+    alert_('他の処理が実行中です。少し待ってから再実行してください。');
+    return null;
+  }
+
+  let message;
+  let plan;
+  let done = false;
+
+  try {
+
+    plan = planCleanup_(ss, sheet);
+
+    const lines = [];
+
+    if (plan.deleteEmpty.length) lines.push('・中身のない行（No. だけ等）：' + plan.deleteEmpty.length + '行 → 削除');
+    if (plan.deleteMisaligned.length) lines.push('・列がずれて書き込まれた行（同じ人の正しい行あり）：' + plan.deleteMisaligned.length + '行 → 削除');
+    if (plan.keptMisaligned.length) lines.push('・列がずれているが、正しい行が無い行：' + plan.keptMisaligned.length + '行 → 削除せず残します');
+    if (plan.renumber) lines.push('・No. を 1〜' + plan.remaining + ' に振り直し（連絡記録がまだ無いため）');
+    if (plan.memoRows.length) lines.push('・意味のないメモ「⚠未取得: ニックネーム」を消去：' + plan.memoRows.length + '行');
+
+    if (!plan.deleteEmpty.length && !plan.deleteMisaligned.length && !plan.renumber && !plan.memoRows.length) {
+      message = '整理が必要な行はありません。';
+    }
+
+    const ok = !message && confirm_(
+      '応募者一覧を整理',
+      '次の整理を行います。\n\n' + lines.join('\n') +
+      '\n\n整理後の応募者：' + plan.remaining + '人' +
+      '\n\n実行前に「' + CLEANUP_BACKUP_NAME_ + '」シートにバックアップを作ります。\n実行しますか？'
+    );
+
+    if (!ok) {
+      message = message || '整理を中止しました（何も変更していません）。';
+    } else {
+      done = runCleanup_(ss, sheet, plan);
+      message =
+        '応募者一覧を整理しました。\n\n' +
+        lines.join('\n') +
+        '\n\n整理後の応募者：' + plan.remaining + '人' +
+        (done.renumbered ? '（No. 1〜' + done.renumbered + '）' : '') +
+        '\n\n整理前の状態は「' + done.backupName + '」シートに保存しています（不要になったら削除して構いません）。';
+    }
+
+  } finally {
+    lock.releaseLock();
+  }
+
+  if (done) updateDashboard();
+
+  alert_(message);
+
+  return plan;
+}
+
+
+/*
+ * 整理の実行（バックアップ → メモ掃除 → 行削除 → No. 振り直し）
+ */
+function runCleanup_(ss, sheet, plan) {
+
+  const backup = backupSheet_(ss, sheet, CLEANUP_BACKUP_NAME_);
+  const app = plan.app;
+
+  // メモの掃除（行を消す前に。行番号がまだ有効なうちに）
+  if (app.map.syncMemo !== undefined) {
+    plan.memoRows.forEach(m => sheet.getRange(m.row, app.map.syncMemo + 1).setValue(m.memo));
+  }
+
+  // 下の行から、連続した範囲ごとにまとめて削除
+  const rows = plan.deleteEmpty.concat(plan.deleteMisaligned).sort((a, b) => b - a);
+  let i = 0;
+
+  while (i < rows.length) {
+    let j = i;
+    while (j + 1 < rows.length && rows[j + 1] === rows[j] - 1) j++;
+    sheet.deleteRows(rows[j], i === j ? 1 : rows[i] - rows[j] + 1);
+    i = j + 1;
+  }
+
+  let renumbered = 0;
+
+  if (plan.renumber) renumbered = renumberAllApplicants_(ss, sheet);
+
+  return { renumbered, backupName: backup.getName() };
+}
+
+
+/*
+ * 整理の計画（書き込みはしない）
+ */
+function planCleanup_(ss, sheet) {
+
+  const app = readApplicants_(sheet);
+  const contacts = readContacts_(ss);
+  const properEmails = new Set();
+
+  app.records.forEach(r => {
+    if (EMAIL_PATTERN_.test(toStr_(r.email))) properEmails.add(r.emailKey);
+  });
+
+  const deleteMisaligned = [];
+  const keptMisaligned = [];
+
+  if (app.map.email !== undefined) {
+
+    app.records.forEach(r => {
+
+      if (EMAIL_PATTERN_.test(toStr_(r.email))) return;
+
+      const values = app.values[r.row - 1] || [];
+      const found = values
+        .map(toStr_)
+        .find((v, i) => i !== app.map.email && EMAIL_PATTERN_.test(v));
+
+      if (!found) return;
+
+      if (properEmails.has(emailKey_(found))) deleteMisaligned.push(r.row);
+      else keptMisaligned.push(r.row);
+    });
+  }
+
+  const memoRows = [];
+
+  app.records.forEach(r => {
+
+    if (deleteMisaligned.indexOf(r.row) >= 0 || !r.memo) return;
+
+    const parts = r.memo.split(' / ').map(seg => {
+      if (seg.indexOf(MISSING_PREFIX_) !== 0) return seg;
+      const rest = seg.slice(MISSING_PREFIX_.length).split('・').filter(x => x && x !== 'ニックネーム');
+      return rest.length ? MISSING_PREFIX_ + rest.join('・') : null;
+    }).filter(Boolean);
+
+    const next = parts.join(' / ');
+
+    if (next !== r.memo) memoRows.push({ row: r.row, memo: next });
+  });
+
+  return {
+    app,
+    deleteEmpty: app.emptyRows.slice(),
+    deleteMisaligned,
+    keptMisaligned,
+    memoRows,
+    remaining: app.records.length - deleteMisaligned.length,
+    renumber: app.map.no !== undefined && contacts.records.length === 0 && !isSequentialAfterCleanup_(app, deleteMisaligned)
+  };
+}
+
+
+/*
+ * 整理後の No. がすでに 1, 2, 3 … の順になっているか（なっていれば振り直さない）
+ */
+function isSequentialAfterCleanup_(app, deleteRows) {
+
+  const nos = app.records
+    .filter(r => deleteRows.indexOf(r.row) < 0)
+    .sort((a, b) => a.row - b.row)
+    .map(r => r.noNum);
+
+  return nos.every((n, i) => n === i + 1);
+}
+
+
+/*
+ * No. を上から 1, 2, 3 … に振り直す（連絡記録が無いときだけ呼ぶ）
+ * _同期履歴 の No. も合わせて書き換える。
+ */
+function renumberAllApplicants_(ss, sheet) {
+
+  const app = readApplicants_(sheet);
+
+  if (app.map.no === undefined || !app.records.length) return 0;
+
+  const oldToNew = new Map();
+  const column = [];
+  let next = 1;
+
+  for (let i = 1; i < app.values.length; i++) {
+    const row = app.values[i];
+    if (hasApplicantData_(row, app.map)) {
+      const oldNo = toNumberOrNull_(row[app.map.no]);
+      if (oldNo !== null) oldToNew.set(oldNo, next);
+      column.push([next++]);
+    } else {
+      column.push([row[app.map.no]]);
+    }
+  }
+
+  sheet.getRange(2, app.map.no + 1, column.length, 1).setValues(column);
+
+  const ledger = ss.getSheetByName(CONFIG.ledgerSheet);
+
+  if (ledger && ledger.getLastRow() >= 2) {
+    const range = ledger.getRange(2, 2, ledger.getLastRow() - 1, 1);
+    const values = range.getValues().map(r => {
+      const n = toNumberOrNull_(r[0]);
+      return [n !== null && oldToNew.has(n) ? oldToNew.get(n) : r[0]];
+    });
+    range.setValues(values);
+  }
+
+  return next - 1;
+}
+
+
+/*
+ * シートを丸ごとコピーしてバックアップを作る（同名があれば日時を付ける）
+ */
+function backupSheet_(ss, sheet, name) {
+
+  const copy = sheet.copyTo(ss);
+  const finalName = ss.getSheetByName(name)
+    ? name + ' ' + formatDate_(ss, new Date(), 'yyyyMMdd-HHmmss')
+    : name;
+
+  copy.setName(finalName);
+
+  return copy;
 }
 
 

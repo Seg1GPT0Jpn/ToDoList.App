@@ -718,6 +718,98 @@ check('列ずれの行をエラーとして検出', ss6.getSheetByName('デー�
 check('正しい行は列ずれ扱いしない', ss6.getSheetByName('データチェック')._rows().filter(r => r[1] === '列ずれの可能性').length, 1);
 check('フォームに無いニックネームは「未取得」にしない', table(app6).rows.filter(r => /ニックネーム/.test(String(r[20]))).length, 0);
 
+/* ============================================================
+ * シナリオ Z：本番の状態をそのまま再現して「応募者一覧を整理」
+ *   2〜1000行目：No. だけ
+ *   1001〜1010行目：以前のコード（v1）が列をずらして書いた10行（オーボエの方が2回）
+ *   1011〜1019行目：v2 が正しく取り込んだ9人
+ * ============================================================ */
+
+section('Z. 本番の状態を再現 → 応募者一覧を整理');
+
+const REAL_FORM = ['タイムスタンプ', 'メールアドレス', '  個人情報の取り扱いについて  ', 'お名前・呼ばれたい名前 ', ' 本名について  ', '学年・年代', ' 活動地域  ', '楽器', '希望パート', '楽器の経験年数', 'オーケストラでの演奏経験', '現在所属している音楽団体', '  このオーケストラに参加したいと思った理由  ', '  どのくらい練習に参加できそうですか？  ', '  第1回演奏会への参加について  ', '  このオーケストラでやってみたいこと  ', ' その他、伝えておきたいこと  '];
+const realLike = [
+  ['トランペット', ''], ['テューバ', 'チューバ'], ['フルート', 'フルート・ピッコロ'], ['テューバ', 'テューバ'], ['クラリネット', 'クラリネット'],
+  ['フルート', 'フルート'], ['フルート', '2ndもしくはpicc'], ['フルート', ''], ['オーボエ', 'オーボエ']
+].map((x, i) => [new Date(2026, 9, 4 + Math.floor(i / 3), 8 + i, 0, 0), 'r' + i + '@example.com', '確認しました', '応募者' + i, '本名を登録してもよい', '社会人', '横浜市', x[0], x[1], '10年以上', 'ある', '', '理由', '日程によって変わる', 'ぜひ参加したい', '', i === 2 ? 'お手伝いできます' : '']);
+
+const env7 = createGasEnvironment();
+const ss7 = env7.spreadsheet;
+const form7 = ss7.insertSheet('フォームの回答 1');
+form7.formUrl = 'https://docs.google.com/forms/d/mock7/viewform';
+form7._setTable([REAL_FORM].concat(realLike));
+const app7 = ss7.insertSheet('応募者一覧');
+const base7 = [PROD_HEADERS];
+for (let r = 2; r <= 1000; r++) { const l = new Array(PROD_HEADERS.length).fill(''); l[0] = r - 1; base7.push(l); }
+app7._setTable(base7);
+
+// 以前のコード（v1）で同期 → 列がずれて追加される。オーボエの方は2回（トリガーの重複などを再現）
+const v1z = loadV1(env7);
+env7.setUiAvailable(false);
+v1z.syncWithoutDialog();
+const oboe = app7._rows()[app7.getLastRow() - 1].slice();
+app7.appendRow(oboe);
+env7.setUiAvailable(true);
+
+// 新しいコードで同期 → 正しい9行が追加される
+const v2z = loadV2(env7);
+v2z.setupOrchestraManagement();
+check('再現：1019行（No.だけ999＋ずれ10＋正しい9）', app7.getLastRow(), 1019);
+check('再現：ずれた行の「楽器」列には地域が入っている', app7.get(1001, 7), '横浜市');
+check('再現：ダッシュボードは19人（ずれ10が未分類）', cell(ss7.getSheetByName('ダッシュボード'), '参加希望者数（実人数）'), 19);
+
+env7.alerts.length = 0;
+v2z.runIntegrityCheck();
+check('整合性チェックが列ずれ10行を検出', ss7.getSheetByName('データチェック')._rows().filter(r => r[1] === '列ずれの可能性').length, 10);
+
+// 整理を実行（「はい」）
+env7.alerts.length = 0;
+v2z.cleanupApplicantsSheet();
+const confirmMsg = env7.alerts.find(a => a.confirm);
+check('確認ダイアログに内容を表示', !!confirmMsg && /中身のない行（No\. だけ等）：999行/.test(confirmMsg.message) && /列がずれて書き込まれた行（同じ人の正しい行あり）：10行/.test(confirmMsg.message), true);
+const t7 = table(app7);
+check('整理後は9人だけ', t7.rows.length, 9);
+check('9人が2〜10行目にある', app7.getLastRow(), 10);
+check('No. は 1〜9', t7.col('No.'), [1, 2, 3, 4, 5, 6, 7, 8, 9]);
+check('残ったのは正しい行（メールアドレス列にメール）', t7.col('メールアドレス').every(v => /@example\.com$/.test(v)), true);
+check('氏名列に名前', t7.col('氏名').every(v => /^応募者\d$/.test(v)), true);
+check('楽器列は楽器コード', t7.col('楽器'), ['Tp', 'Tuba', 'Fl', 'Tuba', 'Cl', 'Fl', 'Fl', 'Fl', 'Ob']);
+check('「⚠未取得: ニックネーム」のメモは消えた', t7.col('同期メモ').filter(v => /ニックネーム/.test(String(v))).length, 0);
+check('バックアップシートが作られた（整理前の1019行）', ss7.getSheetByName('応募者一覧（整理前バックアップ）').getLastRow(), 1019);
+const dash7 = ss7.getSheetByName('ダッシュボード');
+const inst7 = ss7.getSheetByName('楽器別集計');
+check('ダッシュボード：参加希望者 9人', cell(dash7, '参加希望者数（実人数）'), 9);
+check('楽器別：Fl 4・Tuba 2・Tp 1・Cl 1・Ob 1', ['Fl', 'Tuba', 'Tp', 'Cl', 'Ob'].map(c => cell(inst7, c, 3)), [4, 2, 1, 1, 1]);
+check('楽器別：未分類なし', cell(inst7, '（未分類）', 3), undefined);
+check('活動状況：未対応 9（変な状況名なし）', [cell(ss7.getSheetByName('活動状況'), '未対応'), ss7.getSheetByName('活動状況')._rows().some(r => /お手伝い/.test(r[0]))], [9, false]);
+check('同期履歴の No. も 1〜9 に更新', ss7.getSheetByName('_同期履歴')._rows().slice(1).map(r => r[1]), [1, 2, 3, 4, 5, 6, 7, 8, 9]);
+
+v2z.syncWithoutDialog();
+check('整理後に同期しても誰も再追加されない', table(app7).rows.length, 9);
+addResponse(form7, [new Date(2026, 9, 7, 9, 0, 0), 'r9@example.com', '確認しました', '応募者9', '本名を登録してもよい', '社会人', '川崎市', 'ホルン', '', '3~5年', 'ない', '', '理由', '月2回程度なら参加できそう', 'ぜひ参加したい', '', '']);
+v2z.syncWithoutDialog();
+const t7b = table(app7);
+check('次の新しい応募は No.10・11行目', [t7b.get(t7b.find('氏名', '応募者9'), 'No.'), app7.getLastRow()], [10, 11]);
+check('新しい応募の楽器は Hr', t7b.get(t7b.find('氏名', '応募者9'), '楽器'), 'Hr');
+env7.alerts.length = 0;
+v2z.runIntegrityCheck();
+check('整理後のデータ整合性チェックはエラー・警告なし', ss7.getSheetByName('データチェック')._rows().filter(r => r[0] === 'エラー' || r[0] === '警告').map(r => r[1] + ':' + r[5]), []);
+
+env7.alerts.length = 0;
+v2z.cleanupApplicantsSheet();
+check('2回目の整理は「整理が必要な行はありません」', lastAlert(env7), '整理が必要な行はありません。');
+
+// 「いいえ」なら何も変えない
+const env8 = createGasEnvironment();
+const ss8 = env8.spreadsheet;
+const app8 = ss8.insertSheet('応募者一覧');
+app8._setTable(base7.slice(0, 5).concat([prodRow(4, ts(1, 9), 'x@example.com', '人', 'ニック', 'フルート', '未対応')]));
+const c8 = loadV2(env8);
+env8.setConfirmAnswer('NO');
+c8.cleanupApplicantsSheet();
+check('「いいえ」なら何も削除しない', app8.getLastRow(), 6);
+check('「いいえ」ならバックアップも作らない', !!ss8.getSheetByName('応募者一覧（整理前バックアップ）'), false);
+
 console.log('\n============================');
 console.log('統合テスト：成功 ' + passed + '件 ／ 失敗 ' + failed + '件');
 process.exit(failed ? 1 : 0);

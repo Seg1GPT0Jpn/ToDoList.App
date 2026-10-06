@@ -268,6 +268,34 @@ function createGasEnvironment(options) {
       this.validationRanges = [];
       return this;
     }
+    deleteRows(start, howMany) {
+      stats.writes++;
+      const lr = Math.max(this.getLastRow(), start + howMany - 1);
+      const lc = this.getLastColumn();
+      for (let r = start; r <= lr; r++) {
+        for (let c = 1; c <= lc; c++) {
+          const below = this.cells.get((r + howMany) + ':' + c);
+          const key = r + ':' + c;
+          if (below === undefined) this.cells.delete(key); else this.cells.set(key, below);
+        }
+      }
+      this.maxRows -= howMany;
+      if (this.filter) {
+        const fr = this.filter.range;
+        fr.numRows = Math.max(1, fr.numRows - howMany);
+      }
+      return this;
+    }
+    copyTo(ss) {
+      stats.otherCalls++;
+      let name = this.name + ' のコピー';
+      const copy = new MockSheet(name, ss);
+      this.cells.forEach((v, k) => copy.cells.set(k, v instanceof Date ? new Date(v.getTime()) : v));
+      copy.maxRows = this.maxRows;
+      copy.maxCols = this.maxCols;
+      ss.sheets.push(copy);
+      return copy;
+    }
     setFrozenRows(n) { this.frozenRows = n; return this; }
     getFrozenRows() { return this.frozenRows; }
     getFilter() { return this.filter; }

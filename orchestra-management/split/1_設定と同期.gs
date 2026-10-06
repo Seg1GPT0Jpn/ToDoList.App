@@ -296,6 +296,7 @@ function onOpen() {
     .addSubMenu(
       ui.createMenu('🛠 メンテナンス')
         .addItem('楽器名の表記を統一（応募者一覧の楽器列）', 'normalizeApplicantInstruments')
+        .addItem('応募者一覧を整理（ずれた行・空の行を削除）', 'cleanupApplicantsSheet')
         .addItem('セルフテスト（本番データは変更しません）', 'runSelfTests')
     )
     .addToUi();
