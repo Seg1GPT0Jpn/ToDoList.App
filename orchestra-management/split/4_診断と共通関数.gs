@@ -34,7 +34,9 @@ function runSystemDiagnosis() {
     if (app.emptyRows.length) add('中身のない行（集計対象外）', app.emptyRows.length + '行（' + app.emptyRows[0] + '〜' + app.emptyRows[app.emptyRows.length - 1] + '行目）', '⚠️');
     APPLICANT_FIELDS.forEach(f => {
       const c = app.map[f.key];
-      add('列：' + f.header, c === undefined ? '見つかりません' : columnLetter_(c + 1) + '列「' + app.headers[c] + '」', c === undefined ? (f.added ? '⚠️' : '❌') : '✅');
+      if (c === undefined && f.extra) return;
+      const essential = ESSENTIAL_APPLICANT_KEYS_.indexOf(f.key) >= 0;
+      add('列：' + f.header, c === undefined ? '見つかりません' + (f.optional ? '（この列が無くても動作します）' : '') : columnLetter_(c + 1) + '列「' + app.headers[c] + '」', c === undefined ? (essential ? '❌' : f.optional ? '' : '⚠️') : '✅');
     });
     const extra = app.headers.filter((h, i) => h && Object.keys(app.map).every(k => app.map[k] !== i));
     if (extra.length) add('運営が追加した列（同期では触りません）', extra.join('、'), '');

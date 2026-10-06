@@ -622,6 +622,89 @@ c5.runIntegrityCheck();
 check('整合性チェックで「中身のない行」を知らせる', ss5.getSheetByName('データチェック')._rows().some(r => r[1] === '中身のない行' && /999/.test(r[5])), true);
 check('空行はエラー扱いしない（No.未設定・空欄の警告を大量に出さない）', ss5.getSheetByName('データチェック')._rows().filter(r => r[0] === '警告' || r[0] === 'エラー').length < 20, true);
 
+/* ============================================================
+ * シナリオ X：本番の応募者一覧（見出しが「氏名」「ニックネーム」「地域」など）
+ *   ⑩ システム診断の結果から再現した列構成
+ * ============================================================ */
+
+section('X. 本番の見出し名（氏名・ニックネーム・地域 など）');
+
+const PROD_HEADERS = ['No.', '回答日時', '氏名', 'ニックネーム', '年代・学年', '地域', '楽器', '希望パート', '経験年数', 'オーケストラ経験', '現在の所属', '参加理由', '参加可能性', '第1回演奏会', 'やりたいこと', 'メールアドレス', '対応状況', '最終連絡日', '次の対応', '備考'];
+const PROD_FORM = ['タイムスタンプ', 'メールアドレス', '氏名', 'ニックネーム', '年代・学年', '地域', '楽器', '希望パート', '経験年数', 'オーケストラ経験', '現在の所属', '参加理由', '参加可能性', '第1回演奏会', 'やりたいこと'];
+const env6 = createGasEnvironment();
+const ss6 = env6.spreadsheet;
+const prodRow = (no, d, email, name, nick, inst, status) =>
+  [no, d, name, nick, '20代', '横浜', inst, '', '5年', 'あり', '', '楽しそう', '月2回', 'ぜひ参加したい', '', email, status, '', '初回連絡', ''];
+const prodData = [PROD_HEADERS];
+for (let r = 2; r <= 1000; r++) {           // 2〜1000行目：No. だけの行
+  const line = new Array(PROD_HEADERS.length).fill('');
+  line[0] = r - 1;
+  prodData.push(line);
+}
+const prodPeople = [
+  [ts(1, 10), 'p01@example.com', '本番一', 'いち', 'フルート', '正式参加'],
+  [ts(1, 11), 'p02@example.com', '本番二', 'に', 'テューバ', '参加予定'],
+  [ts(2, 9), 'p03@example.com', '本番三', 'さん', 'チューバ', '未対応'],
+  [ts(2, 10), 'p04@example.com', '本番四', 'よん', 'ヴァイオリン', '未対応'],
+  [ts(3, 9), 'p05@example.com', '本番五', 'ご', 'チェロ', '未対応'],
+  [ts(3, 10), 'p06@example.com', '本番六', 'ろく', 'クラリネット', '初回連絡済み'],
+  [ts(4, 9), 'p07@example.com', '本番七', 'なな', 'ホルン', '未対応'],
+  [ts(4, 10), 'p08@example.com', '本番八', 'はち', 'ヴィオラ', '辞退'],
+  [ts(5, 9), 'p09@example.com', '本番九', 'きゅう', 'コントラバス', '未対応'],
+  [ts(5, 10), 'p10@example.com', '本番十', 'じゅう', 'オーボエ', '未対応']
+];
+prodPeople.forEach((p, i) => prodData.push(prodRow(1000 + i, p[0], p[1], p[2], p[3], p[4], p[5])));
+const app6 = ss6.insertSheet('応募者一覧');
+app6._setTable(prodData);
+const form6 = ss6.insertSheet('フォームの回答 1');
+form6.formUrl = 'https://docs.google.com/forms/d/mock6/viewform';
+form6._setTable([PROD_FORM].concat(prodPeople.map(p => [p[0], p[1], p[2], p[3], '20代', '横浜', p[4], '', '5年', 'あり', '', '楽しそう', '月2回', 'ぜひ参加したい', ''])));
+const before6 = JSON.stringify(app6._rows().map(r => r.slice(0, 20)));
+const c6 = loadV2(env6);
+c6.setupOrchestraManagement();
+check('既存の20列は変わらない', JSON.stringify(app6._rows().slice(0, 1011).map(r => r.slice(0, 20))), before6);
+check('同期で二重登録しない（10人のまま）', table(app6).rows.filter(r => r[2]).length, 10);
+const dash6 = ss6.getSheetByName('ダッシュボード');
+const inst6 = ss6.getSheetByName('楽器別集計');
+check('参加希望者数 10人', cell(dash6, '参加希望者数（実人数）'), 10);
+check('有効応募者 9人（辞退1）', cell(dash6, '有効応募者数'), 9);
+check('Tuba 2人（テューバ＋チューバ）', cell(inst6, 'Tuba', 3), 2);
+check('Fl 正式参加 1', cell(inst6, 'Fl', 5), 1);
+check('Va は辞退のみ → 応募1・有効0', [cell(inst6, 'Va', 3), cell(inst6, 'Va', 7)], [1, 0]);
+check('楽器別集計の合計 10', cell(inst6, '合計', 3), 10);
+check('未分類なし', cell(inst6, '（未分類）', 3), undefined);
+
+// 新しい回答が本番の列構成に正しく入る
+addResponse(form6, [ts(6, 9), 'p11@example.com', '本番十一', 'じゅういち', '30代', '川崎', 'ﾁｭｰﾊﾞ', '', '10年', 'なし', '市民吹奏楽団', '近いから', '毎週', '検討中', 'ソロ']);
+c6.syncWithoutDialog();
+const t6 = table(app6);
+const p11 = t6.find('氏名', '本番十一');
+check('新しい回答が追加される', !!p11, true);
+check('氏名列に名前', t6.get(p11, '氏名'), '本番十一');
+check('ニックネーム列', t6.get(p11, 'ニックネーム'), 'じゅういち');
+check('年代・学年列', t6.get(p11, '年代・学年'), '30代');
+check('地域列', t6.get(p11, '地域'), '川崎');
+check('楽器列（正規化）', t6.get(p11, '楽器'), 'Tuba');
+check('経験年数列', t6.get(p11, '経験年数'), '10年');
+check('オーケストラ経験列', t6.get(p11, 'オーケストラ経験'), 'なし');
+check('現在の所属列', t6.get(p11, '現在の所属'), '市民吹奏楽団');
+check('参加理由列', t6.get(p11, '参加理由'), '近いから');
+check('参加可能性列', t6.get(p11, '参加可能性'), '毎週');
+check('第1回演奏会列', t6.get(p11, '第1回演奏会'), '検討中');
+check('やりたいこと列', t6.get(p11, 'やりたいこと'), 'ソロ');
+check('メールアドレス列', t6.get(p11, 'メールアドレス'), 'p11@example.com');
+check('対応状況 = 未対応', t6.get(p11, '対応状況'), '未対応');
+check('新しい No. は既存の最大値の次（1010）', t6.get(p11, 'No.'), 1010);
+check('Tuba 3人に', cell(ss6.getSheetByName('楽器別集計'), 'Tuba', 3), 3);
+check('同期メモに「未取得」が付かない', String(t6.get(p11, '同期メモ')).indexOf('未取得'), -1);
+
+env6.alerts.length = 0;
+c6.runSystemDiagnosis();
+const diag6 = ss6.getSheetByName('システム診断')._rows();
+check('診断：氏名を「お名前」として認識', diag6.some(r => r[0] === '列：お名前・呼ばれたい名前' && /氏名/.test(r[1]) && r[2] === '✅'), true);
+check('診断：本番に無い列（本名について・その他）は ❌ にしない', diag6.filter(r => /^列：/.test(r[0]) && r[2] === '❌').map(r => r[0]), []);
+check('診断：運営が追加した列は無し', diag6.some(r => /運営が追加した列/.test(r[0])), false);
+
 console.log('\n============================');
 console.log('統合テスト：成功 ' + passed + '件 ／ 失敗 ' + failed + '件');
 process.exit(failed ? 1 : 0);

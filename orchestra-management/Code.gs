@@ -126,20 +126,21 @@ const APPLICANT_FIELDS = [
   { key: 'no', header: 'No.', aliases: ['No', 'NO.', '応募者No.', '応募者ID'] },
   { key: 'timestamp', header: '回答日時', form: ['タイムスタンプ', 'Timestamp'] },
   { key: 'email', header: 'メールアドレス', form: ['メールアドレス', 'Email Address', 'Email address', 'メール アドレス'] },
-  { key: 'name', header: 'お名前・呼ばれたい名前', form: ['お名前・呼ばれたい名前', 'お名前', '呼ばれたい名前'] },
-  { key: 'realName', header: '本名について', form: ['本名について'] },
-  { key: 'age', header: '学年・年代', form: ['学年・年代'] },
-  { key: 'area', header: '活動地域', form: ['活動地域'] },
+  { key: 'name', header: 'お名前・呼ばれたい名前', aliases: ['氏名', 'お名前', '名前'], form: ['お名前・呼ばれたい名前', 'お名前', '氏名', '呼ばれたい名前'] },
+  { key: 'nickname', header: 'ニックネーム', aliases: ['呼び名'], form: ['ニックネーム', '呼び名'], extra: true },
+  { key: 'realName', header: '本名について', form: ['本名について'], optional: true },
+  { key: 'age', header: '学年・年代', aliases: ['年代・学年', '年代', '学年'], form: ['学年・年代', '年代・学年', '年代'] },
+  { key: 'area', header: '活動地域', aliases: ['地域'], form: ['活動地域', '地域'] },
   { key: 'instrument', header: '楽器', form: ['楽器'] },
   { key: 'part', header: '希望パート', form: ['希望パート'] },
-  { key: 'years', header: '楽器の経験年数', form: ['楽器の経験年数'] },
-  { key: 'orchExp', header: 'オーケストラでの演奏経験', form: ['オーケストラでの演奏経験'] },
-  { key: 'affiliation', header: '現在所属している音楽団体', form: ['現在所属している音楽団体'] },
-  { key: 'reason', header: '参加したいと思った理由', form: ['このオーケストラに参加したいと思った理由'] },
-  { key: 'practice', header: '練習参加可能性', form: ['どのくらい練習に参加できそうですか？'] },
-  { key: 'concert', header: '第1回演奏会', form: ['第1回演奏会への参加について'] },
-  { key: 'wish', header: 'やってみたいこと', form: ['このオーケストラでやってみたいこと'] },
-  { key: 'other', header: 'その他', form: ['その他、伝えておきたいこと'] },
+  { key: 'years', header: '楽器の経験年数', aliases: ['経験年数'], form: ['楽器の経験年数', '経験年数'] },
+  { key: 'orchExp', header: 'オーケストラでの演奏経験', aliases: ['オーケストラ経験'], form: ['オーケストラでの演奏経験', 'オーケストラ経験'] },
+  { key: 'affiliation', header: '現在所属している音楽団体', aliases: ['現在の所属', '所属'], form: ['現在所属している音楽団体', '現在の所属'] },
+  { key: 'reason', header: '参加したいと思った理由', aliases: ['参加理由'], form: ['このオーケストラに参加したいと思った理由', '参加理由'] },
+  { key: 'practice', header: '練習参加可能性', aliases: ['参加可能性'], form: ['どのくらい練習に参加できそうですか？', '参加可能性'] },
+  { key: 'concert', header: '第1回演奏会', form: ['第1回演奏会への参加について', '第1回演奏会'] },
+  { key: 'wish', header: 'やってみたいこと', aliases: ['やりたいこと'], form: ['このオーケストラでやってみたいこと', 'このオーケストラでやりたいこと', 'やってみたいこと', 'やりたいこと'] },
+  { key: 'other', header: 'その他', form: ['その他、伝えておきたいこと'], optional: true },
   { key: 'status', header: '対応状況', aliases: ['ステータス'] },
   { key: 'lastContact', header: '最終連絡日' },
   { key: 'nextAction', header: '次の対応' },
@@ -215,6 +216,9 @@ const PART_LABELS_ = {
   Perc: '打楽器', Vn: 'ヴァイオリン', Va: 'ヴィオラ', Vc: 'チェロ', Cb: 'コントラバス',
   Hp: 'ハープ', Pf: 'ピアノ・鍵盤'
 };
+
+// 応募者一覧に必ず必要な列（見つからないとエラー）
+const ESSENTIAL_APPLICANT_KEYS_ = ['no', 'timestamp', 'name', 'instrument', 'status'];
 
 const CODE_UNKNOWN_ = '（未分類）';
 const CODE_BLANK_ = '（楽器未回答）';
@@ -472,7 +476,7 @@ function setupApplicantsSheet_(ss) {
  */
 function ensureApplicantColumns_(sheet) {
 
-  const headers = APPLICANT_FIELDS.map(f => f.header);
+  const headers = APPLICANT_FIELDS.filter(f => !f.extra).map(f => f.header);
   const lastCol = sheet.getLastColumn();
 
   if (lastCol === 0) {
@@ -949,7 +953,8 @@ function planSync_(responseSheets, app, ledgerHashes) {
     const res = resolveColumns_(headers, formFieldDefs_(), true);
 
     info.map = res.map;
-    info.missing = res.missing;
+    // 応募者一覧に列が無い項目（本番に無い「本名について」等）は、取れなくても問題にしない
+    info.missing = res.missing.filter(k => app.map[k] !== undefined || !app.headers.length);
     info.headers = headers;
 
     if (res.map.timestamp === undefined) {
@@ -966,7 +971,7 @@ function planSync_(responseSheets, app, ledgerHashes) {
 
     info.used = true;
 
-    const missingLabels = res.missing.map(fieldLabel_);
+    const missingLabels = info.missing.map(fieldLabel_);
 
     for (let i = 1; i < values.length; i++) {
 
@@ -2666,7 +2671,9 @@ function collectIntegrityIssues_(ss) {
 
   // 見出し
   app.missing.forEach(k => {
-    const essential = ['no', 'timestamp', 'name', 'instrument', 'status'].indexOf(k) >= 0;
+    const field = APPLICANT_FIELDS.find(f => f.key === k) || {};
+    if (field.extra || field.optional) return;
+    const essential = ESSENTIAL_APPLICANT_KEYS_.indexOf(k) >= 0;
     if (k === 'syncMemo') add('確認', '列がない', A, 1, '', '「同期メモ」列がありません（⑦ 応募者管理を更新 で追加されます）');
     else add(essential ? 'エラー' : '警告', '列がない', A, 1, '', '「' + fieldLabel_(k) + '」列が見つかりません（見出し名が変更された可能性）');
   });
@@ -2987,7 +2994,9 @@ function runSystemDiagnosis() {
     if (app.emptyRows.length) add('中身のない行（集計対象外）', app.emptyRows.length + '行（' + app.emptyRows[0] + '〜' + app.emptyRows[app.emptyRows.length - 1] + '行目）', '⚠️');
     APPLICANT_FIELDS.forEach(f => {
       const c = app.map[f.key];
-      add('列：' + f.header, c === undefined ? '見つかりません' : columnLetter_(c + 1) + '列「' + app.headers[c] + '」', c === undefined ? (f.added ? '⚠️' : '❌') : '✅');
+      if (c === undefined && f.extra) return;
+      const essential = ESSENTIAL_APPLICANT_KEYS_.indexOf(f.key) >= 0;
+      add('列：' + f.header, c === undefined ? '見つかりません' + (f.optional ? '（この列が無くても動作します）' : '') : columnLetter_(c + 1) + '列「' + app.headers[c] + '」', c === undefined ? (essential ? '❌' : f.optional ? '' : '⚠️') : '✅');
     });
     const extra = app.headers.filter((h, i) => h && Object.keys(app.map).every(k => app.map[k] !== i));
     if (extra.length) add('運営が追加した列（同期では触りません）', extra.join('、'), '');

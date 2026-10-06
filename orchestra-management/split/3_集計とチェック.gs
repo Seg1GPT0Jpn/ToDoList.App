@@ -774,7 +774,9 @@ function collectIntegrityIssues_(ss) {
 
   // 見出し
   app.missing.forEach(k => {
-    const essential = ['no', 'timestamp', 'name', 'instrument', 'status'].indexOf(k) >= 0;
+    const field = APPLICANT_FIELDS.find(f => f.key === k) || {};
+    if (field.extra || field.optional) return;
+    const essential = ESSENTIAL_APPLICANT_KEYS_.indexOf(k) >= 0;
     if (k === 'syncMemo') add('確認', '列がない', A, 1, '', '「同期メモ」列がありません（⑦ 応募者管理を更新 で追加されます）');
     else add(essential ? 'エラー' : '警告', '列がない', A, 1, '', '「' + fieldLabel_(k) + '」列が見つかりません（見出し名が変更された可能性）');
   });

@@ -284,6 +284,8 @@ function createGasEnvironment(options) {
     _setTable(rows) {
       this.cells.clear();
       this.formulas.clear();
+      this.maxRows = Math.max(this.maxRows, rows.length);
+      this.maxCols = Math.max(this.maxCols, rows.reduce((m, line) => Math.max(m, line.length), 0));
       rows.forEach((line, r) => line.forEach((v, c) => this.put(r + 1, c + 1, v)));
       return this;
     }
