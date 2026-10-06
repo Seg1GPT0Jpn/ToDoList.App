@@ -954,7 +954,10 @@ function planSync_(responseSheets, app, ledgerHashes) {
 
     info.map = res.map;
     // 応募者一覧に列が無い項目（本番に無い「本名について」等）は、取れなくても問題にしない
-    info.missing = res.missing.filter(k => app.map[k] !== undefined || !app.headers.length);
+    info.missing = res.missing.filter(k => {
+      const field = APPLICANT_FIELDS.find(f => f.key === k) || {};
+      return !field.extra && (app.map[k] !== undefined || !app.headers.length);
+    });
     info.headers = headers;
 
     if (res.map.timestamp === undefined) {

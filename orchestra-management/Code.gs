@@ -954,7 +954,10 @@ function planSync_(responseSheets, app, ledgerHashes) {
 
     info.map = res.map;
     // 応募者一覧に列が無い項目（本番に無い「本名について」等）は、取れなくても問題にしない
-    info.missing = res.missing.filter(k => app.map[k] !== undefined || !app.headers.length);
+    info.missing = res.missing.filter(k => {
+      const field = APPLICANT_FIELDS.find(f => f.key === k) || {};
+      return !field.extra && (app.map[k] !== undefined || !app.headers.length);
+    });
     info.headers = headers;
 
     if (res.map.timestamp === undefined) {
@@ -2703,6 +2706,16 @@ function collectIntegrityIssues_(ss) {
     }
 
     if (!r.name) add('警告', '必須項目が空欄', A, r.row, r.no, 'お名前が空欄です');
+
+    // 列ずれ：メールアドレス列にメールが無く、別の列にメールアドレスが入っている
+    if (app.map.email !== undefined) {
+      const rowValues = app.values[r.row - 1] || [];
+      const emailHere = /@/.test(toStr_(r.email));
+      const elsewhere = rowValues.some((v, i) => i !== app.map.email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(toStr_(v)));
+      if (!emailHere && elsewhere) {
+        add('エラー', '列ずれの可能性', A, r.row, r.no, '「メールアドレス」以外の列にメールアドレスが入っています。古いコードが見出しと違う並びで書き込んだ行の可能性があります（この行の楽器・対応状況は正しく集計されません）');
+      }
+    }
     if (isBlank_(r.email)) add('確認', '必須項目が空欄', A, r.row, r.no, 'メールアドレスが空欄です（重複判定ができません）');
 
     const p = parseInstrumentCell_(r.instrument, index);

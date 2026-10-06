@@ -705,6 +705,19 @@ check('診断：氏名を「お名前」として認識', diag6.some(r => r[0] =
 check('診断：本番に無い列（本名について・その他）は ❌ にしない', diag6.filter(r => /^列：/.test(r[0]) && r[2] === '❌').map(r => r[0]), []);
 check('診断：運営が追加した列は無し', diag6.some(r => /運営が追加した列/.test(r[0])), false);
 
+section('Y. 古いコードが列をずらして書いた行を検出');
+
+// シナリオ X の本番シートに、v1（21列の並び）で書き込まれた行を足す
+const misaligned = new Array(PROD_HEADERS.length).fill('');
+misaligned[0] = 2000; misaligned[1] = ts(6, 12); misaligned[2] = 'shifted@example.com'; misaligned[3] = 'ずれ太郎';
+misaligned[6] = '藤沢市'; misaligned[7] = 'Tp'; misaligned[16] = '伝えておきたいこと';
+app6.insertRowsAfter(app6.getMaxRows(), 5);
+app6.getRange(app6.getLastRow() + 1, 1, 1, PROD_HEADERS.length).setValues([misaligned]);
+c6.runIntegrityCheck();
+check('列ずれの行をエラーとして検出', ss6.getSheetByName('データチェック')._rows().some(r => r[1] === '列ずれの可能性' && r[4] === '2000'), true);
+check('正しい行は列ずれ扱いしない', ss6.getSheetByName('データチェック')._rows().filter(r => r[1] === '列ずれの可能性').length, 1);
+check('フォームに無いニックネームは「未取得」にしない', table(app6).rows.filter(r => /ニックネーム/.test(String(r[20]))).length, 0);
+
 console.log('\n============================');
 console.log('統合テスト：成功 ' + passed + '件 ／ 失敗 ' + failed + '件');
 process.exit(failed ? 1 : 0);
