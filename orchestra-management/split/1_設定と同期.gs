@@ -145,7 +145,11 @@ const APPLICANT_FIELDS = [
   { key: 'lastContact', header: '最終連絡日' },
   { key: 'nextAction', header: '次の対応' },
   { key: 'note', header: '備考' },
-  { key: 'syncMemo', header: '同期メモ', added: true }
+  { key: 'syncMemo', header: '同期メモ', added: true },
+
+  // 団員アプリ連携（AppSync.gs）で使う列。同期を実行したときだけ末尾に追加される
+  { key: 'appId', header: 'アプリID', extra: true },
+  { key: 'appEmail', header: 'アプリ用メールアドレス', aliases: ['アプリ用メール'], extra: true }
 ];
 
 
@@ -294,12 +298,40 @@ function onOpen() {
     .addItem('⑩ システム診断', 'runSystemDiagnosis')
     .addSeparator()
     .addSubMenu(
+      ui.createMenu('📱 団員アプリ')
+        .addItem('同期の内容を確認（お試し・書き込みなし）', 'menuAppSyncPreview')
+        .addItem('団員アプリへ同期', 'menuAppSyncRun')
+        .addItem('自動同期を設定（15分ごと）', 'menuAppSyncInstallTrigger')
+        .addItem('アプリ連携設定を開く', 'menuAppSyncOpenSettings')
+    )
+    .addSubMenu(
       ui.createMenu('🛠 メンテナンス')
         .addItem('楽器名の表記を統一（応募者一覧の楽器列）', 'normalizeApplicantInstruments')
         .addItem('応募者一覧を整理（ずれた行・空の行を削除）', 'cleanupApplicantsSheet')
         .addItem('セルフテスト（本番データは変更しません）', 'runSelfTests')
     )
     .addToUi();
+}
+
+
+/*
+ * 団員アプリ連携のメニュー（AppSync.gs が追加されていない場合は案内を出す）
+ */
+function menuAppSyncPreview() { return callAppSync_('appSyncPreview'); }
+function menuAppSyncRun() { return callAppSync_('appSyncRun'); }
+function menuAppSyncInstallTrigger() { return callAppSync_('appSyncInstallTrigger'); }
+function menuAppSyncOpenSettings() { return callAppSync_('appSyncOpenSettings'); }
+
+function callAppSync_(name) {
+
+  const fn = globalThis[name];
+
+  if (typeof fn !== 'function') {
+    alert_('団員アプリ連携用のファイル（AppSync.gs）が追加されていません。\nApps Script エディタで AppSync.gs を追加してください。');
+    return null;
+  }
+
+  return fn();
 }
 
 

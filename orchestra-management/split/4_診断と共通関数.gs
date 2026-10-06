@@ -429,7 +429,10 @@ function readApplicants_(sheet) {
       status: toStr_(get('status')),
       concert: get('concert'),
       lastContact: get('lastContact'),
-      memo: toStr_(get('syncMemo'))
+      memo: toStr_(get('syncMemo')),
+      nickname: toStr_(get('nickname')),
+      appId: toStr_(get('appId')),
+      appEmail: toStr_(get('appEmail'))
     });
   }
 

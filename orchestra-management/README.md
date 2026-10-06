@@ -137,3 +137,26 @@ TZ=Asia/Tokyo node test/audit-original.js  # v1 の問題の再現
 ```
 
 `test/gas-mock.js` は SpreadsheetApp 等を模したモックです。テストデータは架空（`@example.com`）です。
+
+---
+
+## 団員アプリとの連携（AppSync.gs）
+
+応募者一覧で対応状況が「**正式参加**」の人を、団員アプリ（Firebase プロジェクト `kanagawa-connect-official`）へ同期します。アプリ側の詳細は `../kco-member-app/README.md` を参照してください。
+
+| ファイル | 内容 |
+|---|---|
+| `AppSync.gs` | 同期処理（Apps Script に「AppSync」として追加） |
+| `appsscript.json` | Firestore に書き込む権限（datastore）を含むマニフェスト |
+| `test/appsync-tests.js` | 同期のテスト（偽の Firestore を使用） |
+
+- メニュー：「🎻 オーケストラ管理」→「📱 団員アプリ」
+  - 同期の内容を確認（お試し）／団員アプリへ同期／自動同期を設定（15分ごと）／アプリ連携設定を開く
+- 初めて同期すると、応募者一覧の末尾に「**アプリID**」（団員ごとに固定）と「**アプリ用メールアドレス**」（任意。ログインに別のアドレスを使う場合）の列が追加されます。
+- 送るのは、メールアドレス（ログイン許可用）・表示名・楽器・パートと、集計値だけです。
+- 正式参加でなくなった人は削除せず「利用停止」にします。一度に半数以上が利用停止になる変更は、自動では反映しません。
+- 秘密鍵は使いません。実行した Google アカウント（Firebase プロジェクトのオーナー）の権限で書き込みます。
+
+```bash
+TZ=Asia/Tokyo node test/appsync-tests.js   # 団員アプリ同期のテスト
+```

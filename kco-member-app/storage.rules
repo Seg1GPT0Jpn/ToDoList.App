@@ -1,0 +1,10 @@
+rules_version = '2';
+
+// 楽譜の配布（Phase 4）を実装するまでは、すべて拒否します。
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

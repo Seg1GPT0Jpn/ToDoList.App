@@ -1,0 +1,35 @@
+{
+  "name": "kco-member-app",
+  "private": true,
+  "version": "0.1.0",
+  "description": "かながわコネクトオーケストラ 団員専用アプリ",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:emulator": "firebase emulators:exec --only firestore,auth --project demo-kco --ui \"vite --mode emulator\"",
+    "build": "tsc -b && vite build",
+    "typecheck": "tsc -b",
+    "test": "vitest run src",
+    "test:rules": "firebase emulators:exec --only firestore --project demo-kco \"vitest run tests\"",
+    "test:all": "npm run typecheck && npm run test && npm run test:rules",
+    "deploy": "npm run build && firebase deploy --only hosting,firestore",
+    "test:e2e": "firebase emulators:exec --only firestore,auth --project demo-kco \"node tests/e2e/run-e2e.mjs\""
+  },
+  "dependencies": {
+    "firebase": "^12.19.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-router-dom": "^7.18.4"
+  },
+  "devDependencies": {
+    "@firebase/rules-unit-testing": "^5.0.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "firebase-tools": "^15.32.1",
+    "playwright-core": "^1.63.0",
+    "typescript": "~5.9.3",
+    "vite": "^8.3.3",
+    "vitest": "^5.0.3"
+  }
+}

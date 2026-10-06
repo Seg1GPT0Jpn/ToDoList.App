@@ -407,6 +407,7 @@ function createGasEnvironment(options) {
   }
   const ScriptApp = {
     EventType,
+    getOAuthToken() { return 'mock-oauth-token'; },
     getProjectTriggers() { return triggers.slice(); },
     deleteTrigger(t) {
       const i = triggers.indexOf(t);
@@ -418,6 +419,8 @@ function createGasEnvironment(options) {
         forSpreadsheet(ss) { this._ss = ss; return this; },
         onFormSubmit() { this._type = EventType.ON_FORM_SUBMIT; return this; },
         onEdit() { this._type = EventType.ON_EDIT; return this; },
+        timeBased() { this._type = EventType.CLOCK; return this; },
+        everyMinutes(n) { this._minutes = n; return this; },
         create() {
           const t = new MockTrigger(handler, this._type, this._ss ? this._ss.getId() : null);
           triggers.push(t);
@@ -510,9 +513,63 @@ function createGasEnvironment(options) {
         .replace('mm', pad(d.getMinutes()))
         .replace('ss', pad(d.getSeconds()));
     },
-    sleep() {}
+    sleep(ms) { sleeps.push(ms); },
+    getUuid() { return crypto.randomUUID(); }
+
   };
-  const Session = { getScriptTimeZone() { return 'Asia/Tokyo'; } };
+  const sleeps = [];
+  const Session = {
+    getScriptTimeZone() { return 'Asia/Tokyo'; },
+    getEffectiveUser() { return { getEmail() { return opts.effectiveUser || 'owner@example.com'; } }; }
+  };
+
+  // ---- 偽の Firestore（REST API の一部だけ） ----
+  const firestore = { docs: new Map(), failNext: 0, failCode: 503, denied: false, requests: [] };
+  function fsResponse(code, body) {
+    return { getResponseCode() { return code; }, getContentText() { return body === undefined ? '' : JSON.stringify(body); } };
+  }
+  const UrlFetchApp = {
+    fetch(url, params) {
+      const method = (params && params.method || 'get').toLowerCase();
+      firestore.requests.push({ method, url, headers: params && params.headers });
+      if (firestore.failNext > 0) { firestore.failNext--; return fsResponse(firestore.failCode, { error: { status: 'UNAVAILABLE', message: 'try again' } }); }
+      if (firestore.denied) return fsResponse(403, { error: { status: 'PERMISSION_DENIED', message: 'Missing or insufficient permissions.' } });
+      const m = String(url).match(/\/v1\/projects\/([^/]+)\/databases\/\(default\)\/documents(.*)$/);
+      if (!m) return fsResponse(400, { error: { status: 'INVALID', message: 'bad url' } });
+      firestore.projectId = m[1];
+      const rest = m[2];
+      const root = 'projects/' + m[1] + '/databases/(default)/documents';
+      if (method === 'post' && rest.startsWith(':commit')) {
+        const body = JSON.parse(params.payload);
+        body.writes.forEach(w => {
+          const path = w.update.name.slice(root.length + 1);
+          const cur = firestore.docs.get(path) || {};
+          if (w.updateMask) {
+            const next = Object.assign({}, cur);
+            w.updateMask.fieldPaths.forEach(f => { if (f in w.update.fields) next[f] = w.update.fields[f]; else delete next[f]; });
+            firestore.docs.set(path, next);
+          } else {
+            firestore.docs.set(path, w.update.fields);
+          }
+        });
+        firestore.commits = (firestore.commits || 0) + 1;
+        return fsResponse(200, { writeResults: body.writes.map(() => ({})) });
+      }
+      if (method === 'get') {
+        const [pathPart] = rest.slice(1).split('?');
+        const segs = pathPart.split('/');
+        if (segs.length % 2 === 1) {
+          const docs = [...firestore.docs.entries()]
+            .filter(([k]) => k.startsWith(pathPart + '/') && k.split('/').length === segs.length + 1)
+            .map(([k, f]) => ({ name: root + '/' + k, fields: f }));
+          return fsResponse(200, docs.length ? { documents: docs } : {});
+        }
+        const d = firestore.docs.get(pathPart);
+        return d ? fsResponse(200, { name: root + '/' + pathPart, fields: d }) : fsResponse(404, { error: { status: 'NOT_FOUND' } });
+      }
+      return fsResponse(400, {});
+    }
+  };
   const Logger = { log(m) { logs.push(String(m)); } };
   const consoleProxy = {
     log(...a) { logs.push(a.join(' ')); },
@@ -522,7 +579,8 @@ function createGasEnvironment(options) {
   };
 
   return {
-    globals: { SpreadsheetApp, ScriptApp, LockService, PropertiesService, Utilities, Session, Logger, console: consoleProxy, Date },
+    globals: { SpreadsheetApp, ScriptApp, LockService, PropertiesService, Utilities, Session, Logger, UrlFetchApp, console: consoleProxy, Date },
+    firestore, sleeps,
     spreadsheet, stats, alerts, toasts, logs, triggers, menus, props,
     setUiAvailable(v) { uiAvailable = v; },
     setConfirmAnswer(v) { confirmAnswer = v; },

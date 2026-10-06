@@ -1,0 +1,251 @@
+rules_version = '2';
+
+// =====================================================================
+// かながわコネクトオーケストラ 団員専用アプリ  Firestore Security Rules
+//
+// 基本方針
+//  ・アプリを使えるのは「加入確定（スプレッドシートの対応状況＝正式参加）」の人だけ。
+//    → memberAccess/{メールアドレス} が status == 'active' のときだけ団員情報を読める。
+//  ・memberAccess（ログイン許可・権限）は Apps Script の同期だけが書き込む。
+//    （Apps Script は IAM 権限で書き込むためルールの対象外。アプリからは誰も書けない）
+//  ・管理者（admin）・運営補助（staff）の判定もこのルールで行う（画面側の判定は表示用のみ）。
+//  ・団員が他の団員について読めるのは members の表示名・楽器・パート・自己紹介だけ。
+//    メールアドレス・本名・年齢などの個人情報はアプリのデータベースに置かない。
+// =====================================================================
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ---------- 認証・権限 ----------
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    // メールアドレスが確認済み（メールリンク・Google ログインは確認済みになる）
+    function verified() {
+      return signedIn()
+        && request.auth.token.email is string
+        && request.auth.token.email_verified == true;
+    }
+
+    function emailKey() {
+      return request.auth.token.email.lower();
+    }
+
+    function accessPath() {
+      return /databases/$(database)/documents/memberAccess/$(emailKey());
+    }
+
+    function hasAccessDoc() {
+      return verified() && exists(accessPath());
+    }
+
+    function access() {
+      return get(accessPath()).data;
+    }
+
+    // 在籍中（書き込みもできる）
+    function isActive() {
+      return hasAccessDoc() && access().status == 'active';
+    }
+
+    // 閲覧できる（在籍中・活動休止中）
+    function canRead() {
+      return hasAccessDoc() && access().status in ['active', 'paused'];
+    }
+
+    function role() {
+      return access().get('role', 'member');
+    }
+
+    function isAdmin() {
+      return isActive() && role() == 'admin';
+    }
+
+    function isStaff() {
+      return isActive() && role() in ['admin', 'staff'];
+    }
+
+    function myMemberId() {
+      return access().get('memberId', null);
+    }
+
+    // ---------- 入力チェック ----------
+
+    function str(v, max) {
+      return v is string && v.size() <= max;
+    }
+
+    function nonEmptyStr(v, max) {
+      return v is string && v.size() >= 1 && v.size() <= max;
+    }
+
+    function dateStr(v) {
+      return v is string && (v == '' || v.matches('^[0-9]{4}-[0-9]{2}-[0-9]{2}$'));
+    }
+
+    function timeStr(v) {
+      return v is string && (v == '' || v.matches('^[0-9]{2}:[0-9]{2}$'));
+    }
+
+    function validRehearsal(d) {
+      return d.keys().hasOnly(['title', 'date', 'startTime', 'endTime', 'venue', 'content', 'notes',
+                               'target', 'scoreNote', 'attendanceDeadline', 'published',
+                               'createdAt', 'updatedAt'])
+        && d.keys().hasAll(['title', 'date', 'startTime', 'endTime', 'venue', 'published', 'updatedAt'])
+        && nonEmptyStr(d.title, 100)
+        && dateStr(d.date)
+        && timeStr(d.startTime)
+        && timeStr(d.endTime)
+        && str(d.venue, 200)
+        && str(d.get('content', ''), 3000)
+        && str(d.get('notes', ''), 3000)
+        && str(d.get('target', ''), 200)
+        && str(d.get('scoreNote', ''), 1000)
+        && (d.get('attendanceDeadline', null) == null || d.attendanceDeadline is timestamp)
+        && d.published is bool
+        && d.updatedAt == request.time;
+    }
+
+    function validAudience(a) {
+      return a is map
+        && a.keys().hasOnly(['type', 'values'])
+        && a.type in ['all', 'section', 'part']
+        && a.values is list
+        && a.values.size() <= 20;
+    }
+
+    function validAnnouncement(d) {
+      return d.keys().hasOnly(['title', 'body', 'important', 'category', 'audience', 'published',
+                               'publishedAt', 'createdAt', 'updatedAt'])
+        && d.keys().hasAll(['title', 'body', 'important', 'category', 'audience', 'published', 'updatedAt'])
+        && nonEmptyStr(d.title, 120)
+        && str(d.body, 5000)
+        && d.important is bool
+        && d.category in ['general', 'practice', 'concert', 'score', 'venue', 'submission']
+        && validAudience(d.audience)
+        && d.published is bool
+        && (d.get('publishedAt', null) == null || d.publishedAt is timestamp)
+        && d.updatedAt == request.time;
+    }
+
+    function validConcert(d) {
+      return d.keys().hasOnly(['title', 'date', 'venue', 'openTime', 'startTime', 'program',
+                               'performers', 'notes', 'daySchedule', 'order', 'published', 'updatedAt'])
+        && d.keys().hasAll(['title', 'date', 'venue', 'program', 'order', 'published', 'updatedAt'])
+        && nonEmptyStr(d.title, 120)
+        && dateStr(d.date)
+        && str(d.venue, 200)
+        && timeStr(d.get('openTime', ''))
+        && timeStr(d.get('startTime', ''))
+        && d.program is list && d.program.size() <= 20
+        && str(d.get('performers', ''), 2000)
+        && str(d.get('notes', ''), 5000)
+        && str(d.get('daySchedule', ''), 5000)
+        && d.order is int
+        && d.published is bool
+        && d.updatedAt == request.time;
+    }
+
+    // 出欠：練習が公開中で、締切（設定されていれば）を過ぎていないこと
+    function attendanceOpen(rehearsalId) {
+      let r = get(/databases/$(database)/documents/rehearsals/$(rehearsalId)).data;
+      return r.published == true
+        && (r.get('attendanceDeadline', null) == null || request.time <= r.attendanceDeadline);
+    }
+
+    function validAttendance(d) {
+      return d.keys().hasOnly(['status', 'comment', 'updatedAt'])
+        && d.status in ['present', 'absent', 'late']
+        && str(d.comment, 200)
+        && d.updatedAt == request.time;
+    }
+
+    // ---------- コレクション ----------
+
+    // ログイン許可・権限（Apps Script の同期だけが書き込む）
+    match /memberAccess/{email} {
+      allow read: if verified() && (email == emailKey() || isAdmin());
+      allow write: if false;
+    }
+
+    // 団員の公開プロフィール（団員同士で見えるのはここだけ）
+    match /members/{memberId} {
+      allow read: if canRead();
+
+      // 本人は表示名と自己紹介だけ変更できる（楽器・状態は運営が管理）
+      allow update: if isActive()
+        && memberId == myMemberId()
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['displayName', 'bio', 'updatedAt'])
+        && nonEmptyStr(request.resource.data.displayName, 30)
+        && str(request.resource.data.bio, 500)
+        && request.resource.data.updatedAt == request.time;
+
+      // 管理者は表示名・自己紹介・役職表示を直せる（不適切な表示への対応など）
+      allow update: if isAdmin()
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['displayName', 'bio', 'roleLabel', 'updatedAt'])
+        && nonEmptyStr(request.resource.data.displayName, 30)
+        && str(request.resource.data.bio, 500)
+        && str(request.resource.data.get('roleLabel', ''), 40)
+        && request.resource.data.updatedAt == request.time;
+
+      allow create, delete: if false;
+    }
+
+    // 団員数・パート別人数（同期が書き込む）
+    match /stats/{docId} {
+      allow read: if canRead();
+      allow write: if false;
+    }
+
+    // 参加希望者数など運営だけが見る集計（同期が書き込む）
+    match /adminStats/{docId} {
+      allow read: if isAdmin();
+      allow write: if false;
+    }
+
+    // 練習予定
+    match /rehearsals/{rehearsalId} {
+      allow read: if canRead() && (resource.data.published == true || isStaff());
+      allow create: if isStaff() && validRehearsal(request.resource.data)
+        && request.resource.data.createdAt == request.time;
+      allow update: if isStaff() && validRehearsal(request.resource.data)
+        && request.resource.data.get('createdAt', null) == resource.data.get('createdAt', null);
+      allow delete: if isStaff();
+
+      // 出欠（ドキュメントID = 団員ID）。未回答 = ドキュメントなし
+      match /attendance/{memberId} {
+        allow read: if canRead() && (memberId == myMemberId() || isStaff());
+        allow create, update: if isActive()
+          && myMemberId() != null
+          && memberId == myMemberId()
+          && validAttendance(request.resource.data)
+          && attendanceOpen(rehearsalId);
+        allow delete: if false;
+      }
+    }
+
+    // お知らせ（対象指定は表示の絞り込み用。団員全員が読める）
+    match /announcements/{announcementId} {
+      allow read: if canRead() && (resource.data.published == true || isStaff());
+      allow create: if isStaff() && validAnnouncement(request.resource.data)
+        && request.resource.data.createdAt == request.time;
+      allow update: if isStaff() && validAnnouncement(request.resource.data)
+        && request.resource.data.get('createdAt', null) == resource.data.get('createdAt', null);
+      allow delete: if isStaff();
+    }
+
+    // 演奏会情報
+    match /concerts/{concertId} {
+      allow read: if canRead() && (resource.data.published == true || isAdmin());
+      allow create, update: if isAdmin() && validConcert(request.resource.data);
+      allow delete: if isAdmin();
+    }
+
+    // 上記以外はすべて拒否
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
