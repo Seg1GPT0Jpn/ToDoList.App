@@ -525,12 +525,32 @@ function createGasEnvironment(options) {
 
   // ---- 偽の Firestore（REST API の一部だけ） ----
   const firestore = { docs: new Map(), failNext: 0, failCode: 503, denied: false, requests: [] };
+  // ---- 偽の FCM（通知の送信） ----
+  const fcm = { sent: [], invalidTokens: new Set(), denied: false, busyOnce: new Set() };
+  function fcmFetch(url, params) {
+    const body = JSON.parse(params.payload);
+    const token = body.message.token;
+    if (fcm.denied) return fsResponse(403, { error: { status: 'PERMISSION_DENIED', message: 'denied' } });
+    if (fcm.invalidTokens.has(token)) return fsResponse(404, { error: { status: 'NOT_FOUND', message: 'Requested entity was not found.', details: [{ errorCode: 'UNREGISTERED' }] } });
+    if (fcm.busyOnce.has(token)) { fcm.busyOnce.delete(token); return fsResponse(503, { error: { status: 'UNAVAILABLE' } }); }
+    fcm.sent.push({ url, token, data: body.message.data, headers: params.headers });
+    return fsResponse(200, { name: 'projects/x/messages/1' });
+  }
+  function matchesFilter(fields, where) {
+    const f = where.fieldFilter;
+    const v = fields[f.field.fieldPath];
+    return v !== undefined && JSON.stringify(v) === JSON.stringify(f.value);
+  }
   function fsResponse(code, body) {
     return { getResponseCode() { return code; }, getContentText() { return body === undefined ? '' : JSON.stringify(body); } };
   }
   const UrlFetchApp = {
+    fetchAll(requests) {
+      return requests.map(r => UrlFetchApp.fetch(r.url, r));
+    },
     fetch(url, params) {
       const method = (params && params.method || 'get').toLowerCase();
+      if (String(url).indexOf('https://fcm.googleapis.com/') === 0) return fcmFetch(url, params);
       firestore.requests.push({ method, url, headers: params && params.headers });
       if (firestore.failNext > 0) { firestore.failNext--; return fsResponse(firestore.failCode, { error: { status: 'UNAVAILABLE', message: 'try again' } }); }
       if (firestore.denied) return fsResponse(403, { error: { status: 'PERMISSION_DENIED', message: 'Missing or insufficient permissions.' } });
@@ -539,9 +559,25 @@ function createGasEnvironment(options) {
       firestore.projectId = m[1];
       const rest = m[2];
       const root = 'projects/' + m[1] + '/databases/(default)/documents';
+      if (method === 'post' && rest.startsWith(':runQuery')) {
+        const q = JSON.parse(params.payload).structuredQuery;
+        const coll = q.from[0].collectionId;
+        const docs = [...firestore.docs.entries()]
+          .filter(([k]) => k.startsWith(coll + '/') && k.split('/').length === 2)
+          .filter(([, f]) => !q.where || matchesFilter(f, q.where))
+          .map(([k, f]) => ({ document: { name: root + '/' + k, fields: f } }));
+        firestore.queries = (firestore.queries || 0) + 1;
+        return fsResponse(200, docs.length ? docs : [{ readTime: 'now' }]);
+      }
       if (method === 'post' && rest.startsWith(':commit')) {
         const body = JSON.parse(params.payload);
+        for (const w of body.writes) {
+          if (w.currentDocument && w.currentDocument.exists === false && firestore.docs.has(w.update.name.slice(root.length + 1))) {
+            return fsResponse(409, { error: { status: 'ALREADY_EXISTS', message: 'Document already exists' } });
+          }
+        }
         body.writes.forEach(w => {
+          if (w.delete) { firestore.docs.delete(w.delete.slice(root.length + 1)); return; }
           const path = w.update.name.slice(root.length + 1);
           const cur = firestore.docs.get(path) || {};
           if (w.updateMask) {
@@ -580,7 +616,7 @@ function createGasEnvironment(options) {
 
   return {
     globals: { SpreadsheetApp, ScriptApp, LockService, PropertiesService, Utilities, Session, Logger, UrlFetchApp, console: consoleProxy, Date },
-    firestore, sleeps,
+    firestore, fcm, sleeps,
     spreadsheet, stats, alerts, toasts, logs, triggers, menus, props,
     setUiAvailable(v) { uiAvailable = v; },
     setConfirmAnswer(v) { confirmAnswer = v; },

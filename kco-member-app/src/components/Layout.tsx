@@ -17,6 +17,13 @@ const ICONS: Record<string, ReactNode> = {
       <path d="M3.5 19c.8-3.2 3-5 5.5-5s4.7 1.8 5.5 5M15.5 5.2a3 3 0 0 1 0 5.6M17.5 14.3c1.5.7 2.6 2.2 3 4.7" />
     </>
   ),
+  together: (
+    <>
+      <circle cx="8" cy="9" r="2.8" />
+      <circle cx="16" cy="9" r="2.8" />
+      <path d="M3 19c.6-3 2.6-4.8 5-4.8s4.4 1.8 5 4.8M11 19c.6-3 2.6-4.8 5-4.8s4.4 1.8 5 4.8" />
+    </>
+  ),
   me: (
     <>
       <circle cx="12" cy="8" r="3.6" />
@@ -66,7 +73,7 @@ export function Layout() {
         <Tab to="/" icon="home" label="ホーム" end />
         <Tab to="/schedule" icon="schedule" label="予定" />
         <Tab to="/news" icon="news" label="お知らせ" />
-        <Tab to="/members" icon="members" label="団員" />
+        <Tab to="/together" icon="together" label="みんなで" />
         <Tab to="/me" icon="me" label="マイページ" />
       </nav>
     </>

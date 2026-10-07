@@ -71,6 +71,15 @@ service cloud.firestore {
       return access().get('memberId', null);
     }
 
+    // 自分のパート（同期が memberAccess に書き込む。楽譜の閲覧範囲に使う）
+    function myPart() {
+      return access().get('part', '');
+    }
+
+    function myMemberPath() {
+      return /databases/$(database)/documents/members/$(myMemberId());
+    }
+
     // ---------- 入力チェック ----------
 
     function str(v, max) {
@@ -162,6 +171,115 @@ service cloud.firestore {
         && d.updatedAt == request.time;
     }
 
+    function validSurvey(d) {
+      return d.keys().hasOnly(['title', 'description', 'questions', 'anonymous', 'deadline', 'published',
+                               'closed', 'results', 'resultsPublished', 'createdAt', 'updatedAt'])
+        && d.keys().hasAll(['title', 'description', 'questions', 'anonymous', 'published', 'closed', 'updatedAt'])
+        && nonEmptyStr(d.title, 120)
+        && str(d.description, 3000)
+        && d.questions is list && d.questions.size() >= 1 && d.questions.size() <= 20
+        && d.anonymous is bool
+        && (d.get('deadline', null) == null || d.deadline is timestamp)
+        && d.published is bool
+        && d.closed is bool
+        && (d.get('results', null) == null || d.results is map)
+        && d.get('resultsPublished', false) is bool
+        && d.updatedAt == request.time;
+    }
+
+    // アンケートが回答受付中か
+    function surveyOpen(surveyId) {
+      let sv = get(/databases/$(database)/documents/surveys/$(surveyId)).data;
+      return sv.published == true && sv.closed == false
+        && (sv.get('deadline', null) == null || request.time <= sv.deadline);
+    }
+
+    function validResponse(d) {
+      return d.keys().hasOnly(['answers', 'updatedAt'])
+        && d.answers is map && d.answers.size() <= 20
+        && d.updatedAt == request.time;
+    }
+
+    function proposalPath(proposalId) {
+      return /databases/$(database)/documents/proposals/$(proposalId);
+    }
+
+    function supportPath(proposalId, memberId) {
+      return /databases/$(database)/documents/proposals/$(proposalId)/supports/$(memberId);
+    }
+
+    function validProposalContent(d) {
+      return nonEmptyStr(d.title, 80)
+        && str(d.body, 2000)
+        && d.category in ['idea', 'music', 'practice', 'event', 'other']
+        && d.visibility in ['members', 'staff'];
+    }
+
+    function validScore(d) {
+      return d.keys().hasOnly(['title', 'composer', 'note', 'parts', 'kind', 'url', 'storagePath', 'fileName',
+                               'published', 'createdAt', 'updatedAt'])
+        && d.keys().hasAll(['title', 'parts', 'kind', 'published', 'updatedAt'])
+        && nonEmptyStr(d.title, 120)
+        && str(d.get('composer', ''), 100)
+        && str(d.get('note', ''), 1000)
+        && d.parts is list && d.parts.size() >= 1 && d.parts.size() <= 20
+        && d.kind in ['file', 'link']
+        && (d.kind != 'link' || (d.url is string && d.url.matches('^https://.{1,1000}$')))
+        && (d.kind != 'file' || (d.storagePath is string && d.storagePath.matches('^scores/[A-Za-z0-9_-]{1,40}/[^/]{1,200}$')))
+        && str(d.get('fileName', ''), 200)
+        && d.published is bool
+        && d.updatedAt == request.time;
+    }
+
+    function validNotification(d) {
+      return d.keys().hasOnly(['title', 'body', 'url', 'audience', 'status', 'source', 'createdAt', 'createdBy'])
+        && nonEmptyStr(d.title, 60)
+        && str(d.body, 200)
+        && str(d.url, 200) && (d.url == '' || d.url.matches('^/[A-Za-z0-9/_#?=&-]*$'))
+        && validAudience(d.audience)
+        && d.status == 'pending'
+        && d.source in ['manual', 'announcement', 'survey', 'score']
+        && d.createdAt == request.time
+        && d.createdBy == request.auth.uid;
+    }
+
+    function validCampaignPart(p) {
+      return p is map && p.keys().hasOnly(['part', 'label', 'level'])
+        && str(p.part, 10) && str(p.label, 20) && p.level in ['urgent', 'wanted'];
+    }
+
+    function validCampaign(d) {
+      return d.keys().hasOnly(['active', 'headline', 'message', 'parts', 'formUrl', 'hashtags', 'deadlineText',
+                               'showMemberCount', 'memberCount', 'targetMembers', 'updatedAt'])
+        && d.active is bool
+        && nonEmptyStr(d.headline, 40)
+        && str(d.message, 400)
+        && d.parts is list && d.parts.size() <= 16
+        && (d.parts.size() <= 0 || validCampaignPart(d.parts[0]))
+        && (d.parts.size() <= 1 || validCampaignPart(d.parts[1]))
+        && (d.parts.size() <= 2 || validCampaignPart(d.parts[2]))
+        && (d.parts.size() <= 3 || validCampaignPart(d.parts[3]))
+        && (d.parts.size() <= 4 || validCampaignPart(d.parts[4]))
+        && (d.parts.size() <= 5 || validCampaignPart(d.parts[5]))
+        && (d.parts.size() <= 6 || validCampaignPart(d.parts[6]))
+        && (d.parts.size() <= 7 || validCampaignPart(d.parts[7]))
+        && (d.parts.size() <= 8 || validCampaignPart(d.parts[8]))
+        && (d.parts.size() <= 9 || validCampaignPart(d.parts[9]))
+        && (d.parts.size() <= 10 || validCampaignPart(d.parts[10]))
+        && (d.parts.size() <= 11 || validCampaignPart(d.parts[11]))
+        && (d.parts.size() <= 12 || validCampaignPart(d.parts[12]))
+        && (d.parts.size() <= 13 || validCampaignPart(d.parts[13]))
+        && (d.parts.size() <= 14 || validCampaignPart(d.parts[14]))
+        && (d.parts.size() <= 15 || validCampaignPart(d.parts[15]))
+        && str(d.formUrl, 500) && (d.formUrl == '' || d.formUrl.matches('^https://[^ ]+$'))
+        && str(d.hashtags, 200)
+        && str(d.deadlineText, 40)
+        && d.showMemberCount is bool
+        && d.memberCount is int && d.memberCount >= 0 && d.memberCount <= 1000
+        && d.targetMembers is int && d.targetMembers >= 0 && d.targetMembers <= 1000
+        && d.updatedAt == request.time;
+    }
+
     // ---------- コレクション ----------
 
     // ログイン許可・権限（Apps Script の同期だけが書き込む）
@@ -241,6 +359,150 @@ service cloud.firestore {
       allow read: if canRead() && (resource.data.published == true || isAdmin());
       allow create, update: if isAdmin() && validConcert(request.resource.data);
       allow delete: if isAdmin();
+    }
+
+    // ---------- アンケート ----------
+    match /surveys/{surveyId} {
+      allow read: if canRead() && (resource.data.published == true || isStaff());
+      allow create: if isStaff() && validSurvey(request.resource.data)
+        && request.resource.data.createdAt == request.time;
+      allow update: if isStaff() && validSurvey(request.resource.data)
+        && request.resource.data.get('createdAt', null) == resource.data.get('createdAt', null);
+      allow delete: if isAdmin();
+
+      // 回答（ドキュメントID = 団員ID → 1人1回答。受付中は何度でも修正できる）
+      // 匿名アンケートでも運営画面には名前を出さない（データ上の団員IDは管理者のみ確認可能）
+      match /responses/{memberId} {
+        allow read: if canRead() && (memberId == myMemberId() || isStaff());
+        allow create, update: if isActive()
+          && myMemberId() != null
+          && memberId == myMemberId()
+          && validResponse(request.resource.data)
+          && surveyOpen(surveyId);
+        allow delete: if false;
+      }
+    }
+
+    // ---------- 団員からの提案 ----------
+    // visibility: 'members' = 団員みんなに公開／'staff' = 運営だけに届く
+    match /proposals/{proposalId} {
+      allow read: if canRead()
+        && (resource.data.visibility == 'members'
+            || resource.data.authorId == myMemberId()
+            || isStaff());
+
+      // 投稿：表示名は本人の団員プロフィールと同じものだけ（なりすまし防止）
+      allow create: if isActive()
+        && myMemberId() != null
+        && request.resource.data.keys().hasOnly(['title', 'body', 'category', 'visibility', 'authorId', 'authorName',
+                                                 'status', 'staffReply', 'supportCount', 'createdAt', 'updatedAt'])
+        && validProposalContent(request.resource.data)
+        && request.resource.data.authorId == myMemberId()
+        && request.resource.data.authorName == get(myMemberPath()).data.displayName
+        && request.resource.data.status == 'open'
+        && request.resource.data.staffReply == ''
+        && request.resource.data.supportCount == 0
+        && request.resource.data.createdAt == request.time
+        && request.resource.data.updatedAt == request.time;
+
+      // 投稿者：運営が対応を始める前（status == 'open'）なら内容を直せる
+      allow update: if isActive()
+        && resource.data.authorId == myMemberId()
+        && resource.data.status == 'open'
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['title', 'body', 'category', 'visibility', 'updatedAt'])
+        && validProposalContent(request.resource.data)
+        && request.resource.data.updatedAt == request.time;
+
+      // 運営：対応状況と返信
+      allow update: if isStaff()
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status', 'staffReply', 'updatedAt'])
+        && request.resource.data.status in ['open', 'considering', 'adopted', 'done', 'declined']
+        && str(request.resource.data.staffReply, 2000)
+        && request.resource.data.updatedAt == request.time;
+
+      // 「いいね（賛成）」の数：supports の追加・削除と同時にだけ ±1 できる
+      allow update: if isActive()
+        && myMemberId() != null
+        && (resource.data.visibility == 'members' || resource.data.authorId == myMemberId())
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['supportCount'])
+        && (
+          (request.resource.data.supportCount == resource.data.supportCount + 1
+            && !exists(supportPath(proposalId, myMemberId()))
+            && existsAfter(supportPath(proposalId, myMemberId())))
+          ||
+          (request.resource.data.supportCount == resource.data.supportCount - 1
+            && exists(supportPath(proposalId, myMemberId()))
+            && !existsAfter(supportPath(proposalId, myMemberId())))
+        );
+
+      allow delete: if isAdmin()
+        || (isActive() && resource.data.authorId == myMemberId() && resource.data.status == 'open');
+
+      match /supports/{memberId} {
+        allow read: if canRead() && memberId == myMemberId();
+        allow create: if isActive()
+          && memberId == myMemberId()
+          && request.resource.data.keys().hasOnly(['createdAt'])
+          && request.resource.data.createdAt == request.time
+          && getAfter(proposalPath(proposalId)).data.supportCount == get(proposalPath(proposalId)).data.supportCount + 1;
+        allow delete: if isActive()
+          && memberId == myMemberId()
+          && getAfter(proposalPath(proposalId)).data.supportCount == get(proposalPath(proposalId)).data.supportCount - 1;
+        allow update: if false;
+      }
+    }
+
+    // ---------- 楽譜 ----------
+    // parts に 'all' または自分のパートが含まれる楽譜だけ読める（運営はすべて）
+    match /scores/{scoreId} {
+      allow read: if isStaff()
+        || (canRead() && resource.data.published == true
+            && ('all' in resource.data.parts || myPart() in resource.data.parts));
+      allow create: if isStaff() && validScore(request.resource.data)
+        && request.resource.data.createdAt == request.time;
+      allow update: if isStaff() && validScore(request.resource.data)
+        && request.resource.data.get('createdAt', null) == resource.data.get('createdAt', null);
+      allow delete: if isStaff();
+    }
+
+    // ---------- プッシュ通知 ----------
+    // 端末ごとの通知先（ドキュメントID = 通知トークン）。本人だけが登録・確認・削除できる
+    match /pushTokens/{token} {
+      allow read, delete: if signedIn() && resource.data.uid == request.auth.uid;
+      allow create, update: if canRead()
+        && request.resource.data.keys().hasOnly(['uid', 'accessKey', 'token', 'platform', 'updatedAt'])
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.accessKey == emailKey()
+        && request.resource.data.token == token
+        && token.size() <= 1000
+        && str(request.resource.data.platform, 40)
+        && request.resource.data.updatedAt == request.time
+        && (resource == null || resource.data.uid == request.auth.uid);
+    }
+
+    // 送信予約（運営が作り、Apps Script が送信して結果を書き込む）
+    match /notifications/{notificationId} {
+      allow read: if isStaff();
+      allow create: if isStaff() && validNotification(request.resource.data);
+      allow update: if false;
+      allow delete: if isAdmin();
+    }
+
+    // アプリの設定（Web Push の公開鍵など。秘密情報は置かない）
+    match /appConfig/{docId} {
+      allow read: if canRead();
+      allow write: if isAdmin()
+        && docId == 'public'
+        && request.resource.data.keys().hasOnly(['vapidKey', 'updatedAt'])
+        && str(request.resource.data.vapidKey, 200)
+        && request.resource.data.updatedAt == request.time;
+    }
+
+    // ---------- 団員募集キャンペーン（一般公開） ----------
+    // 誰でも読める（募集ページ /join）。個人情報は置かない（項目をルールで固定）
+    match /publicCampaign/{docId} {
+      allow read: if true;
+      allow write: if isStaff() && docId == 'current' && validCampaign(request.resource.data);
     }
 
     // 上記以外はすべて拒否

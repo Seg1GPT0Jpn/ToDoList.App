@@ -72,7 +72,8 @@ const CONFIG = {
   // 応募フォームの回答シートと判定するのに必要な一致項目数
   minFormFieldsMatched: 5,
 
-  // 対応状況（v1 と同じ7種類。順番も同じ）
+  // 対応状況（v1 と同じ7種類＋「活動休止」。v1 の7種類の順番は変えない）
+  //   活動休止 … 加入確定後に一時的に休んでいる団員（団員アプリは閲覧のみ）
   statuses: [
     '未対応',
     '初回連絡済み',
@@ -80,12 +81,14 @@ const CONFIG = {
     '参加予定',
     '正式参加',
     '保留',
-    '辞退'
+    '辞退',
+    '活動休止'
   ],
   newApplicantStatus: '未対応',
   newApplicantNextAction: '初回連絡',
   plannedStatus: '参加予定',
   officialStatus: '正式参加',
+  pausedStatus: '活動休止',
 
   // 第1回演奏会（v1 と同じ選択肢）
   concertChoices: ['ぜひ参加したい', '検討中', '参加しない'],
@@ -303,6 +306,9 @@ function onOpen() {
         .addItem('団員アプリへ同期', 'menuAppSyncRun')
         .addItem('自動同期を設定（15分ごと）', 'menuAppSyncInstallTrigger')
         .addItem('アプリ連携設定を開く', 'menuAppSyncOpenSettings')
+        .addSeparator()
+        .addItem('プッシュ通知をいますぐ送信', 'menuAppNotifyRunNow')
+        .addItem('通知の送信を設定（10分ごと）', 'menuAppNotifyInstallTrigger')
     )
     .addSubMenu(
       ui.createMenu('🛠 メンテナンス')
@@ -321,13 +327,16 @@ function menuAppSyncPreview() { return callAppSync_('appSyncPreview'); }
 function menuAppSyncRun() { return callAppSync_('appSyncRun'); }
 function menuAppSyncInstallTrigger() { return callAppSync_('appSyncInstallTrigger'); }
 function menuAppSyncOpenSettings() { return callAppSync_('appSyncOpenSettings'); }
+function menuAppNotifyRunNow() { return callAppSync_('appNotifyRunNow'); }
+function menuAppNotifyInstallTrigger() { return callAppSync_('appNotifyInstallTrigger'); }
 
 function callAppSync_(name) {
 
   const fn = globalThis[name];
 
   if (typeof fn !== 'function') {
-    alert_('団員アプリ連携用のファイル（AppSync.gs）が追加されていません。\nApps Script エディタで AppSync.gs を追加してください。');
+    const file = name.indexOf('appNotify') === 0 ? 'AppNotify.gs' : 'AppSync.gs';
+    alert_('団員アプリ連携用のファイル（' + file + '）が追加されていません。\nApps Script エディタで ' + file + ' を追加してください。');
     return null;
   }
 
@@ -590,7 +599,7 @@ function expandFilterToData_(sheet) {
 
 
 /*
- * 対応状況のプルダウン（v1 と同じ7種類）
+ * 対応状況のプルダウン（v1 と同じ7種類＋活動休止）
  */
 function applyStatusValidation_(sheet, map, startRow, numRows) {
 

@@ -2,10 +2,11 @@
  * 団員アプリ（Firebase）との同期  AppSync.gs
  *
  * 応募者一覧で「対応状況＝正式参加」の人を「加入確定（団員）」として、
+ * （「活動休止」の人は団員のまま閲覧のみ）
  * 団員アプリ（Firebase プロジェクト）へ必要最小限の情報だけを送ります。
  *
  * 送るもの
- *   memberAccess/{メールアドレス} … ログイン許可（状態・権限・団員ID）
+ *   memberAccess/{メールアドレス} … ログイン許可（状態・権限・団員ID・パート）
  *   members/{団員ID}              … 表示名・楽器・パート（団員同士で見える情報）
  *   stats/summary                 … 団員数・パート別人数
  *   adminStats/summary            … 参加希望者数など（運営のみ閲覧）
@@ -31,6 +32,8 @@ const APP_SYNC = {
   settingsSheet: 'アプリ連携設定',
   settingsTitle: 'アプリ連携設定（団員アプリ）',
   joinedStatus: '正式参加',
+  // 加入確定後に休んでいる団員（アプリは閲覧のみ。出欠・回答はできない）
+  pausedStatus: '活動休止',
   defaultProjectId: 'kanagawa-connect-official',
   firestoreBase: 'https://firestore.googleapis.com/v1',
   maxWritesPerCommit: 400,
@@ -46,7 +49,10 @@ const APP_SYNC_ITEMS_ = [
   { key: 'projectId', label: 'Firebase プロジェクトID', def: () => APP_SYNC.defaultProjectId, desc: '団員アプリの Firebase プロジェクトID' },
   { key: 'adminEmails', label: '管理者のメールアドレス', def: () => appSyncCurrentUserEmail_(), desc: 'カンマ区切り。アプリの管理画面をすべて使えます' },
   { key: 'staffEmails', label: '運営補助のメールアドレス', def: () => '', desc: 'カンマ区切り。練習予定・お知らせを作成できます（演奏会情報・応募者数は不可）' },
-  { key: 'autoSync', label: '自動同期（15分ごと）', def: () => 'いいえ', desc: 'はい／いいえ。「はい」にして「自動同期を設定」を実行すると定期的に同期します' }
+  { key: 'autoSync', label: '自動同期（15分ごと）', def: () => 'いいえ', desc: 'はい／いいえ。「はい」にして「自動同期を設定」を実行すると定期的に同期します' },
+  { key: 'pushEnabled', label: 'プッシュ通知の送信', def: () => 'いいえ', desc: 'はい／いいえ。「はい」にして「通知の送信を設定」を実行すると、アプリで予約した通知を10分ごとに送ります' },
+  { key: 'reminderEnabled', label: '練習の前日通知', def: () => 'はい', desc: 'はい／いいえ。公開中の練習の前日に「明日は練習です」と通知します（プッシュ通知の送信が「はい」のとき）' },
+  { key: 'reminderHour', label: '前日通知の時刻（時）', def: () => 18, desc: '0〜23。この時刻以降の最初の送信で前日通知を送ります' }
 ];
 
 
@@ -159,6 +165,7 @@ function appSyncCore_(options) {
     busy: false,
     projectId: '',
     members: 0,
+    paused: 0,
     accessCreate: 0,
     accessUpdate: 0,
     accessDeactivate: 0,
@@ -220,6 +227,7 @@ function appSyncCore_(options) {
 
     result.newIds = desired.newIdRows.length;
     result.members = desired.members.length;
+    result.paused = desired.members.filter(m => m.status === 'paused').length;
 
     // 2. いまの Firestore の状態を読む
     const client = appSyncClient_(settings.projectId);
@@ -300,7 +308,7 @@ function appSyncDesiredMembers_(app, settings, result) {
     .sort(compareByNo_)
     .forEach(r => {
 
-      if (r.status !== APP_SYNC.joinedStatus) return;
+      if (r.status !== APP_SYNC.joinedStatus && r.status !== APP_SYNC.pausedStatus) return;
 
       const email = emailKey_(toStr_(r.appEmail) || toStr_(r.email));
 
@@ -341,7 +349,8 @@ function appSyncDesiredMembers_(app, settings, result) {
         instrument: code,
         instrumentLabel: info ? info.name : toStr_(r.instrument),
         part,
-        section: APP_SYNC_SECTIONS_[part] || 'other'
+        section: APP_SYNC_SECTIONS_[part] || 'other',
+        status: r.status === APP_SYNC.pausedStatus ? 'paused' : 'active'
       });
     });
 
@@ -388,21 +397,23 @@ function appSyncPlan_(desired, settings, existingAccess, existingMembers, extra)
   // ---- memberAccess（ログイン許可）----
   const desiredAccess = new Map();
 
-  desired.members.forEach(m => desiredAccess.set(m.email, { status: 'active', role: roleOf(m.email), memberId: m.id }));
+  desired.members.forEach(m => desiredAccess.set(m.email, { status: m.status || 'active', role: roleOf(m.email), memberId: m.id, part: m.part || '' }));
 
   settings.adminEmails.concat(settings.staffEmails).forEach(email => {
-    if (!desiredAccess.has(email)) desiredAccess.set(email, { status: 'active', role: roleOf(email), memberId: null });
+    if (!desiredAccess.has(email)) desiredAccess.set(email, { status: 'active', role: roleOf(email), memberId: null, part: '' });
   });
 
   desiredAccess.forEach((want, email) => {
     const cur = accessById.get(email);
+    const data = { email, status: want.status, role: want.role, memberId: want.memberId, part: want.part, source: 'sheet', updatedAt: now };
     if (!cur) {
-      writes.push(appSyncWrite_('memberAccess/' + email, { email, status: want.status, role: want.role, memberId: want.memberId, source: 'sheet', updatedAt: now }, null));
+      writes.push(appSyncWrite_('memberAccess/' + email, data, null));
       counts.accessCreate++;
       return;
     }
-    if (cur.status !== want.status || cur.role !== want.role || (cur.memberId || null) !== want.memberId || cur.source !== 'sheet') {
-      writes.push(appSyncWrite_('memberAccess/' + email, { email, status: want.status, role: want.role, memberId: want.memberId, source: 'sheet', updatedAt: now }, ['email', 'status', 'role', 'memberId', 'source', 'updatedAt']));
+    if (cur.status !== want.status || cur.role !== want.role || (cur.memberId || null) !== want.memberId ||
+        (cur.part || '') !== want.part || cur.source !== 'sheet') {
+      writes.push(appSyncWrite_('memberAccess/' + email, data, ['email', 'status', 'role', 'memberId', 'part', 'source', 'updatedAt']));
       counts.accessUpdate++;
     }
   });
@@ -420,7 +431,7 @@ function appSyncPlan_(desired, settings, existingAccess, existingMembers, extra)
 
   desired.members.forEach(m => {
     const cur = membersById.get(m.id);
-    const managed = { instrument: m.instrument, instrumentLabel: m.instrumentLabel, part: m.part, section: m.section, status: 'active' };
+    const managed = { instrument: m.instrument, instrumentLabel: m.instrumentLabel, part: m.part, section: m.section, status: m.status || 'active' };
     if (!cur) {
       writes.push(appSyncWrite_('members/' + m.id, Object.assign({ displayName: m.displayName, bio: '', roleLabel: '', joinedAt: now, updatedAt: now }, managed), null));
       counts.memberCreate++;
@@ -446,6 +457,7 @@ function appSyncPlan_(desired, settings, existingAccess, existingMembers, extra)
   const byPart = appSyncPartStats_(desired.members, index);
   const stats = {
     memberCount: desired.members.length,
+    pausedCount: desired.members.filter(m => m.status === 'paused').length,
     targetMembers: s.targetMembers,
     decisionMembers: s.decisionMembers,
     minimumMembers: s.minimumMembers,
@@ -571,6 +583,9 @@ function appSyncClient_(projectId) {
       if (res) {
         const code = res.getResponseCode();
         if (code >= 200 && code < 300) return JSON.parse(res.getContentText() || '{}');
+        if (code === 409 || (code === 400 && /FAILED_PRECONDITION/.test(res.getContentText()))) {
+          throw new Error('HTTP ' + code + ' ALREADY_EXISTS');
+        }
         if (code === 404 && method === 'get') return null;
         if ([429, 500, 502, 503, 504].indexOf(code) < 0) {
           throw new Error('HTTP ' + code + ' ' + appSyncApiError_(res.getContentText()));
@@ -602,11 +617,27 @@ function appSyncClient_(projectId) {
       return out;
     },
 
+    /** 1つの項目が値と等しいドキュメントだけを読む（読み取り回数を抑える） */
+    query(collection, field, value) {
+      const res = request('post', base + ':runQuery', {
+        structuredQuery: {
+          from: [{ collectionId: collection }],
+          where: { fieldFilter: { field: { fieldPath: field }, op: 'EQUAL', value: appSyncEncodeValue_(value) } },
+          limit: 500
+        }
+      });
+      return (Array.isArray(res) ? res : [])
+        .filter(r => r && r.document)
+        .map(r => ({ id: r.document.name.split('/').pop(), fields: appSyncDecodeFields_(r.document.fields || {}) }));
+    },
+
     commit(writes) {
       return request('post', base + ':commit', {
         writes: writes.map(w => {
+          if (w.remove) return { delete: root + '/' + w.path };
           const out = { update: { name: root + '/' + w.path, fields: appSyncEncodeFields_(w.data) } };
           if (w.mask) out.updateMask = { fieldPaths: w.mask };
+          if (w.mustNotExist) out.currentDocument = { exists: false };
           return out;
         })
       });
@@ -699,7 +730,10 @@ function appSyncEnsureSettingsSheet_(ss) {
 
   const existing = findOwnedSheet_(ss, APP_SYNC.settingsSheet, APP_SYNC.settingsTitle);
 
-  if (existing && existing.getLastRow() > 0) return existing;
+  if (existing && existing.getLastRow() > 0) {
+    appSyncAddMissingItems_(existing);
+    return existing;
+  }
 
   const sheet = existing || getOrCreateOwnedSheet_(ss, APP_SYNC.settingsSheet, APP_SYNC.settingsTitle);
   const rows = [[APP_SYNC.settingsTitle, '', ''], ['項目', '値', '説明']];
@@ -708,7 +742,7 @@ function appSyncEnsureSettingsSheet_(ss) {
 
   rows.push(['', '', '']);
   rows.push(['※ このシートには団員アプリの管理者のメールアドレスが入ります。公開しないでください。', '', '']);
-  rows.push(['※ 加入確定 ＝ 応募者一覧の対応状況が「' + APP_SYNC.joinedStatus + '」の人です。', '', '']);
+  rows.push(['※ 加入確定 ＝ 応募者一覧の対応状況が「' + APP_SYNC.joinedStatus + '」の人です。「' + APP_SYNC.pausedStatus + '」の人は閲覧のみ可能です。', '', '']);
 
   ensureRows_(sheet, rows.length);
   ensureCols_(sheet, 3);
@@ -719,6 +753,25 @@ function appSyncEnsureSettingsSheet_(ss) {
   sheet.setColumnWidth(2, 320);
 
   return sheet;
+}
+
+
+/** 後から増えた設定項目を、既存の設定シートの末尾に追加する（入力済みの値は変えない） */
+function appSyncAddMissingItems_(sheet) {
+
+  const lastRow = sheet.getLastRow();
+  const labels = sheet.getRange(1, 1, Math.max(lastRow, 1), 1).getValues().map(r => toStr_(r[0]));
+  const missing = APP_SYNC_ITEMS_.filter(item => labels.indexOf(item.label) < 0);
+
+  if (!missing.length) return 0;
+
+  const rows = missing.map(item => [item.label, item.def(), item.desc]);
+
+  ensureRows_(sheet, lastRow + rows.length);
+  ensureCols_(sheet, 3);
+  sheet.getRange(lastRow + 1, 1, rows.length, 3).setValues(rows);
+
+  return rows.length;
 }
 
 
@@ -739,8 +792,19 @@ function appSyncSettings_(ss) {
     projectId: toStr_(raw.projectId) || APP_SYNC.defaultProjectId,
     adminEmails: emails(raw.adminEmails),
     staffEmails: emails(raw.staffEmails),
-    autoSync: parseSettingValue_({ type: 'bool' }, raw.autoSync) === true
+    autoSync: parseSettingValue_({ type: 'bool' }, raw.autoSync) === true,
+    pushEnabled: parseSettingValue_({ type: 'bool' }, raw.pushEnabled) === true,
+    reminderEnabled: parseSettingValue_({ type: 'bool' }, raw.reminderEnabled) !== false,
+    reminderHour: appSyncHour_(raw.reminderHour)
   };
+}
+
+
+function appSyncHour_(v) {
+
+  const n = Number(v);
+
+  return Number.isInteger(n) && n >= 0 && n <= 23 ? n : 18;
 }
 
 
@@ -805,7 +869,7 @@ function appSyncDescribe_(r, isPreview) {
   const lines = [
     (isPreview ? '【確認（まだ反映していません）】' : '【団員アプリへ反映しました】'),
     'Firebase プロジェクト：' + r.projectId,
-    '加入確定（正式参加）：' + r.members + '人',
+    '加入確定（正式参加＋活動休止）：' + r.members + '人' + (r.paused ? '（うち活動休止 ' + r.paused + '人）' : ''),
     '',
     'ログイン許可：新規 ' + r.accessCreate + '人／変更 ' + r.accessUpdate + '人／利用停止 ' + r.accessDeactivate + '人',
     '団員プロフィール：新規 ' + r.memberCreate + '人／変更 ' + r.memberUpdate + '人／利用停止 ' + r.memberDeactivate + '人',

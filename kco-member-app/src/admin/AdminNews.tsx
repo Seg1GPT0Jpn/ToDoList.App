@@ -3,6 +3,7 @@ import { addDoc, collection, deleteDoc, doc, serverTimestamp, setDoc } from 'fir
 import { CATEGORY_LABELS, CategoryBadge } from '../components/Badges';
 import { Empty, ErrorNote, Loading } from '../components/Layout';
 import { getServices } from '../firebase';
+import { queueNotification } from '../lib/notify';
 import { useAnnouncements } from '../lib/data';
 import { PARTS, SECTIONS, audienceLabel } from '../lib/parts';
 import type { Announcement, AnnouncementCategory, Audience } from '../lib/types';
@@ -84,6 +85,7 @@ function NewsForm({ original, onDone }: { original: Announcement | null; onDone:
   } : EMPTY);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [notify, setNotify] = useState(false);
 
   const set = <K extends keyof FormState>(k: K, v: FormState[K]) => setF(prev => ({ ...prev, [k]: v }));
 
@@ -118,8 +120,18 @@ function NewsForm({ original, onDone }: { original: Announcement | null; onDone:
       updatedAt: serverTimestamp()
     };
     try {
+      let id = original?.id;
       if (original) await setDoc(doc(db, 'announcements', original.id), data, { merge: true });
-      else await addDoc(collection(db, 'announcements'), { ...data, createdAt: serverTimestamp() });
+      else id = (await addDoc(collection(db, 'announcements'), { ...data, createdAt: serverTimestamp() })).id;
+      if (notify && f.published) {
+        await queueNotification({
+          title: (f.important ? '【重要】' : '') + data.title,
+          body: data.body,
+          url: `/news#${id}`,
+          audience: data.audience,
+          source: 'announcement'
+        }).catch(() => undefined);
+      }
       onDone();
     } catch {
       setError('保存できませんでした。入力内容を確認してください。');
@@ -182,6 +194,12 @@ function NewsForm({ original, onDone }: { original: Announcement | null; onDone:
         <input type="checkbox" checked={f.published} onChange={e => set('published', e.target.checked)} />
         団員に公開する
       </label>
+      {f.published && (
+        <label className="checkbox">
+          <input type="checkbox" checked={notify} onChange={e => setNotify(e.target.checked)} />
+          保存したらプッシュ通知を送る（対象の団員の端末に届きます）
+        </label>
+      )}
       <div className="row" style={{ marginTop: '1rem' }}>
         <button className="btn" type="submit" disabled={saving}>保存する</button>
         <button className="btn btn--outline btn--sm" type="button" onClick={onDone}>キャンセル</button>

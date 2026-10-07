@@ -777,3 +777,163 @@ table.table {
 .paused-banner {
   margin-bottom: 1rem;
 }
+
+/* =====================================================================
+   みんなで・アンケート・提案・楽譜・通知・団員募集
+   ===================================================================== */
+
+.badge--ok { border-color: var(--color-ok); color: var(--color-ok); background: var(--color-ok-bg); }
+.badge--gold { border-color: var(--color-gold); color: var(--color-navy); background: var(--color-gold-soft); }
+
+.btn--line { background: #06c755; border-color: #06c755; color: var(--color-white); }
+.btn--line:hover { background: #05a647; border-color: #05a647; }
+
+.list__button {
+  width: 100%;
+  background: none;
+  border: 0;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+.list__action {
+  align-self: center;
+  font-size: 0.85rem;
+  color: var(--color-gold-text);
+  white-space: nowrap;
+}
+
+/* タイル（ホーム・みんなで） */
+.tile-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+.tile {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.9rem 1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-gold-soft);
+  background: var(--color-white);
+  color: inherit;
+  text-decoration: none;
+  box-shadow: var(--shadow);
+}
+.tile:hover { border-color: var(--color-gold); }
+.tile--gold { background: var(--color-navy); border-color: var(--color-navy); color: var(--color-ivory); }
+.tile--gold .tile__desc { color: var(--color-gold-soft); }
+.tile__icon { font-size: 1.3rem; line-height: 1.2; }
+.tile__title { font-weight: 700; font-family: var(--font-serif); }
+.tile__desc { font-size: 0.78rem; color: var(--color-text-muted); line-height: 1.5; }
+
+/* 切り替えボタン */
+.segmented {
+  display: inline-flex;
+  border: 1px solid var(--color-navy);
+  border-radius: 999px;
+  overflow: hidden;
+  align-self: flex-start;
+}
+.segmented button {
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 0.45rem 1rem;
+  min-height: 40px;
+  background: transparent;
+  color: var(--color-navy);
+  border: 0;
+  cursor: pointer;
+}
+.segmented button + button { border-left: 1px solid var(--color-navy); }
+.segmented button.active { background: var(--color-navy); color: var(--color-white); }
+
+/* アンケート */
+.choice-list { display: grid; gap: 0.35rem; }
+.question-edit {
+  border: 1px solid var(--color-gold-soft);
+  border-radius: var(--radius);
+  padding: 0.75rem 0.9rem 0.9rem;
+  margin: 0;
+}
+.question-edit legend { font-weight: 700; color: var(--color-navy); padding: 0 0.3rem; }
+.result-bars { list-style: none; padding: 0; margin: 0.25rem 0 0; display: grid; gap: 0.35rem; }
+.result-bars li {
+  display: grid;
+  grid-template-columns: minmax(6rem, 40%) 1fr 2.5rem;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.88rem;
+}
+.result-bars__track { background: var(--color-ivory-deep); border-radius: 999px; height: 0.7rem; overflow: hidden; }
+.result-bars__bar { display: block; height: 100%; background: var(--color-gold); border-radius: 999px; }
+.result-bars__count { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* 提案 */
+.proposal__title { margin: 0.5rem 0 0.25rem; font-size: 1.02rem; }
+.proposal__reply {
+  margin: 0.6rem 0;
+  padding: 0.6rem 0.8rem;
+  border-left: 3px solid var(--color-gold);
+  background: var(--color-ivory);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+.proposal__staff { margin-top: 0.75rem; border-top: 1px dashed var(--color-gold-soft); padding-top: 0.5rem; }
+
+/* 団員募集 */
+.chip {
+  display: inline-block;
+  padding: 0.25rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-gold);
+  color: var(--color-navy);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+.chip--gold { background: var(--color-gold); }
+.card-preview {
+  background: var(--color-ivory-deep);
+  border-radius: var(--radius);
+  padding: 0.75rem;
+  display: grid;
+  place-items: center;
+  min-height: 200px;
+}
+.card-preview img {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: var(--shadow);
+}
+.card-preview--story img { max-width: 300px; }
+.share-buttons { display: grid; gap: 0.6rem; }
+.share-buttons .btn { width: 100%; }
+.part-levels {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
+  gap: 0.4rem 0.9rem;
+}
+.part-levels li { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; font-size: 0.9rem; }
+.part-levels select { min-height: 36px; padding: 0.15rem 0.4rem; }
+
+.join { min-height: 100vh; background: var(--color-ivory); }
+.join__hero {
+  background: linear-gradient(180deg, var(--color-navy), #141f37);
+  color: var(--color-ivory);
+  text-align: center;
+  padding: 3rem 1rem 2.5rem;
+  border-bottom: 3px solid var(--color-gold);
+}
+.join__en { font-family: var(--font-latin); letter-spacing: 0.25em; color: var(--color-gold); font-size: 0.85rem; margin: 0; }
+.join__org { font-family: var(--font-serif); color: var(--color-gold-soft); margin: 0.2rem 0 0.8rem; }
+.join__title { color: var(--color-ivory); font-size: 2rem; letter-spacing: 0.15em; margin: 0; }
+.join__body { max-width: 640px; margin: 0 auto; padding: 1.5rem 16px 3rem; }
+.join__message { font-size: 1.02rem; }
+.join__cta { width: 100%; font-size: 1.05rem; min-height: 56px; }
+.join__member-link { text-align: center; margin-top: 2.5rem; }

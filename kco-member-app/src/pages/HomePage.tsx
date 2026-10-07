@@ -2,7 +2,8 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../auth/AuthProvider';
 import { AttendanceBadge, CategoryBadge } from '../components/Badges';
 import { ErrorNote, Loading } from '../components/Layout';
-import { useAnnouncements, useConcerts, useMember, useMyAttendance, useRehearsals, useStats } from '../lib/data';
+import { useAnnouncements, useCampaign, useConcerts, useMember, useMyAttendance, useRehearsals, useStats, useSurveys } from '../lib/data';
+import { isSurveyOpen } from '../lib/survey';
 import { formatDateJa, formatTimeRange, orTbd, splitByDate, todayJst } from '../lib/dates';
 import { isForMe } from '../lib/parts';
 
@@ -13,6 +14,9 @@ export function HomePage() {
   const rehearsals = useRehearsals();
   const concerts = useConcerts();
   const news = useAnnouncements();
+  const surveys = useSurveys();
+  const campaign = useCampaign();
+  const openSurveys = surveys.data.filter(sv => isSurveyOpen(sv));
 
   const today = todayJst();
   const next = splitByDate(rehearsals.data, today).upcoming[0] ?? null;
@@ -63,7 +67,11 @@ export function HomePage() {
           </div>
           <p className="small muted" style={{ marginTop: '0.5rem' }}>
             目標まであと {Math.max(target - count, 0)} 人。一緒にオーケストラをつくっていきましょう。
+            {(stats.data?.pausedCount ?? 0) > 0 && <>（うち活動休止中 {stats.data?.pausedCount}人）</>}
           </p>
+          {campaign.data?.active && count < target && (
+            <Link className="btn btn--gold btn--sm" to="/campaign" style={{ marginTop: '0.75rem' }}>📣 団員募集をシェアする</Link>
+          )}
         </section>
 
         <section className="card" aria-labelledby="next-title">
@@ -110,6 +118,29 @@ export function HomePage() {
           )}
         </section>
       </div>
+
+      <nav className="tile-grid" aria-label="よく使う機能">
+        <Link className="tile" to="/scores">
+          <span className="tile__icon" aria-hidden="true">🎼</span>
+          <span className="tile__title">楽譜</span>
+          <span className="tile__desc">自分のパートの楽譜</span>
+        </Link>
+        <Link className="tile" to="/together">
+          <span className="tile__icon" aria-hidden="true">🗳️</span>
+          <span className="tile__title">アンケート</span>
+          <span className="tile__desc">{openSurveys.length ? `受付中 ${openSurveys.length}件` : '意見を届ける'}</span>
+        </Link>
+        <Link className="tile" to="/proposals">
+          <span className="tile__icon" aria-hidden="true">💡</span>
+          <span className="tile__title">提案</span>
+          <span className="tile__desc">やりたいこと・アイデア</span>
+        </Link>
+        <Link className="tile" to="/members">
+          <span className="tile__icon" aria-hidden="true">🎻</span>
+          <span className="tile__title">団員一覧</span>
+          <span className="tile__desc">パートごとのメンバー</span>
+        </Link>
+      </nav>
 
       <section aria-labelledby="news-title">
         <div className="section-heading">

@@ -1,8 +1,53 @@
 rules_version = '2';
 
-// 楽譜の配布（Phase 4）を実装するまでは、すべて拒否します。
+// =====================================================================
+// 楽譜ファイル（Cloud Storage）
+//  ・読める：在籍中・活動休止中の団員で、その楽譜の対象パート（または全員向け）の人／運営
+//  ・置ける・消せる：運営（admin / staff）だけ。PDF・PNG・JPEG、30MB まで
+//  ・権限は Firestore の memberAccess と scores を参照して判定（画面側の判定は使わない）
+// =====================================================================
 service firebase.storage {
   match /b/{bucket}/o {
+
+    function verified() {
+      return request.auth != null
+        && request.auth.token.email is string
+        && request.auth.token.email_verified == true;
+    }
+
+    function accessPath() {
+      return /databases/(default)/documents/memberAccess/$(request.auth.token.email.lower());
+    }
+
+    function access() {
+      return firestore.get(accessPath()).data;
+    }
+
+    function hasAccess() {
+      return verified() && firestore.exists(accessPath());
+    }
+
+    function isStaff() {
+      return hasAccess() && access().status == 'active' && access().get('role', 'member') in ['admin', 'staff'];
+    }
+
+    function canReadScore(scoreId) {
+      let score = firestore.get(/databases/(default)/documents/scores/$(scoreId)).data;
+      return hasAccess()
+        && access().status in ['active', 'paused']
+        && score.published == true
+        && ('all' in score.parts || access().get('part', '') in score.parts);
+    }
+
+    match /scores/{scoreId}/{fileName} {
+      allow read: if isStaff() || canReadScore(scoreId);
+      allow create, update: if isStaff()
+        && request.resource.size < 30 * 1024 * 1024
+        && request.resource.contentType.matches('application/pdf|image/png|image/jpeg');
+      allow delete: if isStaff();
+    }
+
+    // それ以外はすべて拒否
     match /{allPaths=**} {
       allow read, write: if false;
     }

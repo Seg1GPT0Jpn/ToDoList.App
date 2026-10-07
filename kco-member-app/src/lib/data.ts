@@ -3,6 +3,7 @@ import {
   collection,
   doc,
   onSnapshot,
+  limit,
   orderBy,
   query,
   where,
@@ -10,7 +11,23 @@ import {
   type Query
 } from 'firebase/firestore';
 import { getServices } from '../firebase';
-import type { Announcement, Attendance, Concert, Member, Rehearsal, Stats, AdminStats } from './types';
+import type {
+  AdminStats,
+  Announcement,
+  Attendance,
+  Campaign,
+  Concert,
+  Member,
+  NotificationRequest,
+  Proposal,
+  Rehearsal,
+  Score,
+  Stats,
+  Survey,
+  SurveyQuestion,
+  SurveyResponse,
+  SurveyResults
+} from './types';
 
 /*
  * Firestore の読み込み（リアルタイム更新）。
@@ -142,6 +159,7 @@ export function toConcert(id: string, d: DocumentData): Concert {
 export function useStats() {
   return useDocData<Stats>(['stats', 'summary'], (_id, d) => ({
     memberCount: d.memberCount ?? 0,
+    pausedCount: d.pausedCount ?? 0,
     targetMembers: d.targetMembers ?? 80,
     decisionMembers: d.decisionMembers,
     minimumMembers: d.minimumMembers,
@@ -204,4 +222,179 @@ export function useConcerts(includeDrafts = false) {
     const ref = collection(getServices().db, 'concerts');
     return includeDrafts ? query(ref, orderBy('order')) : query(ref, where('published', '==', true), orderBy('order'));
   }, toConcert, [includeDrafts]);
+}
+
+// ---------- アンケート ----------
+
+function toQuestion(q: unknown, i: number): SurveyQuestion {
+  const o = (q ?? {}) as Record<string, unknown>;
+  const type = o.type === 'multi' || o.type === 'text' ? o.type : 'single';
+  return {
+    id: s(o.id) || `q${i + 1}`,
+    type,
+    label: s(o.label),
+    options: Array.isArray(o.options) ? o.options.filter((x): x is string => typeof x === 'string') : [],
+    required: o.required === true
+  };
+}
+
+export function toSurvey(id: string, d: DocumentData): Survey {
+  const r = d.results as SurveyResults | null | undefined;
+  return {
+    id,
+    title: s(d.title),
+    description: s(d.description),
+    questions: Array.isArray(d.questions) ? d.questions.map(toQuestion) : [],
+    anonymous: d.anonymous === true,
+    deadline: d.deadline ?? null,
+    published: d.published === true,
+    closed: d.closed === true,
+    results: r && typeof r === 'object' && typeof r.respondents === 'number' ? r : null,
+    resultsPublished: d.resultsPublished === true,
+    createdAt: d.createdAt ?? null
+  };
+}
+
+export function useSurveys(includeDrafts = false) {
+  return useQueryData(() => {
+    const ref = collection(getServices().db, 'surveys');
+    return includeDrafts
+      ? query(ref, orderBy('createdAt', 'desc'))
+      : query(ref, where('published', '==', true), orderBy('createdAt', 'desc'));
+  }, toSurvey, [includeDrafts]);
+}
+
+export function useSurvey(id: string | undefined) {
+  return useDocData(id ? ['surveys', id] : null, toSurvey, [id]);
+}
+
+function toResponse(id: string, d: DocumentData): SurveyResponse {
+  return { memberId: id, answers: d.answers && typeof d.answers === 'object' ? d.answers : {} };
+}
+
+export function useMyResponse(surveyId: string | undefined, memberId: string | null) {
+  return useDocData(surveyId && memberId ? ['surveys', surveyId, 'responses', memberId] : null, toResponse, [surveyId, memberId]);
+}
+
+export function useAllResponses(surveyId: string | undefined, enabled: boolean) {
+  return useQueryData(() => (surveyId && enabled ? collection(getServices().db, 'surveys', surveyId, 'responses') : null),
+    toResponse, [surveyId, enabled]);
+}
+
+// ---------- 提案 ----------
+
+export function toProposal(id: string, d: DocumentData): Proposal {
+  return {
+    id,
+    title: s(d.title),
+    body: s(d.body),
+    category: d.category ?? 'other',
+    visibility: d.visibility === 'staff' ? 'staff' : 'members',
+    authorId: s(d.authorId),
+    authorName: s(d.authorName),
+    status: d.status ?? 'open',
+    staffReply: s(d.staffReply),
+    supportCount: typeof d.supportCount === 'number' ? d.supportCount : 0,
+    createdAt: d.createdAt ?? null
+  };
+}
+
+/**
+ * 提案の一覧。団員は「みんなに公開」と「自分の提案」を別々に読んでまとめる
+ * （ルールで読めるものだけを問い合わせる必要があるため）
+ */
+export function useProposals(memberId: string | null, isStaff: boolean): Loadable<Proposal[]> {
+  const ref = () => collection(getServices().db, 'proposals');
+  const all = useQueryData(() => (isStaff ? query(ref(), orderBy('createdAt', 'desc')) : null), toProposal, [isStaff]);
+  const shared = useQueryData(() => (isStaff ? null : query(ref(), where('visibility', '==', 'members'), orderBy('createdAt', 'desc'))), toProposal, [isStaff]);
+  const mine = useQueryData(() => (isStaff || !memberId ? null : query(ref(), where('authorId', '==', memberId))), toProposal, [isStaff, memberId]);
+
+  if (isStaff) return all;
+  const map = new Map<string, Proposal>();
+  [...shared.data, ...mine.data].forEach(p => map.set(p.id, p));
+  const data = [...map.values()].sort((a, b) => (b.createdAt?.toMillis() ?? Infinity) - (a.createdAt?.toMillis() ?? Infinity));
+  return { data, loading: shared.loading || mine.loading, error: shared.error || mine.error };
+}
+
+export function useMySupport(proposalId: string, memberId: string | null) {
+  return useDocData(memberId ? ['proposals', proposalId, 'supports', memberId] : null, id => id, [proposalId, memberId]);
+}
+
+// ---------- 楽譜 ----------
+
+export function toScore(id: string, d: DocumentData): Score {
+  return {
+    id,
+    title: s(d.title),
+    composer: s(d.composer),
+    note: s(d.note),
+    parts: Array.isArray(d.parts) ? d.parts.filter((x: unknown): x is string => typeof x === 'string') : [],
+    kind: d.kind === 'file' ? 'file' : 'link',
+    url: s(d.url),
+    storagePath: s(d.storagePath),
+    fileName: s(d.fileName),
+    published: d.published === true,
+    createdAt: d.createdAt ?? null
+  };
+}
+
+/**
+ * 楽譜の一覧。団員は「全員向け」と「自分のパート向け」を別々に読んでまとめる
+ */
+export function useScores(myPart: string, isStaff: boolean): Loadable<Score[]> {
+  const ref = () => collection(getServices().db, 'scores');
+  const all = useQueryData(() => (isStaff ? query(ref(), orderBy('createdAt', 'desc')) : null), toScore, [isStaff]);
+  const forAll = useQueryData(() => (isStaff ? null : query(ref(), where('published', '==', true), where('parts', 'array-contains', 'all'))), toScore, [isStaff]);
+  const forPart = useQueryData(() => (isStaff || !myPart ? null : query(ref(), where('published', '==', true), where('parts', 'array-contains', myPart))), toScore, [isStaff, myPart]);
+
+  if (isStaff) return all;
+  const map = new Map<string, Score>();
+  [...forAll.data, ...forPart.data].forEach(x => map.set(x.id, x));
+  const data = [...map.values()].sort((a, b) => (b.createdAt?.toMillis() ?? 0) - (a.createdAt?.toMillis() ?? 0));
+  return { data, loading: forAll.loading || forPart.loading, error: forAll.error || forPart.error };
+}
+
+// ---------- 通知 ----------
+
+export function useNotifications(enabled: boolean) {
+  return useQueryData(() => (enabled ? query(collection(getServices().db, 'notifications'), orderBy('createdAt', 'desc'), limit(30)) : null),
+    (id, d): NotificationRequest => ({
+      id,
+      title: s(d.title),
+      body: s(d.body),
+      url: s(d.url),
+      audience: d.audience ?? { type: 'all', values: [] },
+      status: d.status ?? 'pending',
+      source: s(d.source),
+      sentCount: typeof d.sentCount === 'number' ? d.sentCount : null,
+      failedCount: typeof d.failedCount === 'number' ? d.failedCount : null,
+      error: s(d.error),
+      createdAt: d.createdAt ?? null,
+      sentAt: d.sentAt ?? null
+    }), [enabled]);
+}
+
+export function useAppConfig() {
+  return useDocData(['appConfig', 'public'], (_id, d) => ({ vapidKey: s(d.vapidKey) }), []);
+}
+
+// ---------- 団員募集キャンペーン ----------
+
+export function toCampaign(d: DocumentData): Campaign {
+  return {
+    active: d.active === true,
+    headline: s(d.headline) || '団員募集',
+    message: s(d.message),
+    parts: Array.isArray(d.parts) ? d.parts.filter((p: unknown) => p && typeof p === 'object') : [],
+    formUrl: s(d.formUrl),
+    hashtags: s(d.hashtags),
+    deadlineText: s(d.deadlineText),
+    showMemberCount: d.showMemberCount === true,
+    memberCount: typeof d.memberCount === 'number' ? d.memberCount : 0,
+    targetMembers: typeof d.targetMembers === 'number' ? d.targetMembers : 0
+  };
+}
+
+export function useCampaign() {
+  return useDocData(['publicCampaign', 'current'], (_id, d) => toCampaign(d), []);
 }

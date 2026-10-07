@@ -24,6 +24,10 @@ export function AdminLayout() {
         <NavLink to="/admin/rehearsals" className={tab}>練習・出欠</NavLink>
         <NavLink to="/admin/news" className={tab}>お知らせ</NavLink>
         {isAdmin && <NavLink to="/admin/concert" className={tab}>演奏会</NavLink>}
+        <NavLink to="/admin/surveys" className={tab}>アンケート</NavLink>
+        <NavLink to="/admin/scores" className={tab}>楽譜</NavLink>
+        <NavLink to="/admin/notify" className={tab}>通知</NavLink>
+        <NavLink to="/admin/campaign" className={tab}>募集</NavLink>
         <NavLink to="/admin/members" className={tab}>団員</NavLink>
       </nav>
       <Outlet />

@@ -9,6 +9,8 @@ export interface MemberAccess {
   status: AccessStatus;
   role: Role;
   memberId: string | null;
+  /** パートコード（楽譜の閲覧範囲。同期が書き込む） */
+  part: string;
 }
 
 /** members/{団員ID}：団員同士で見える情報だけ（個人情報は置かない） */
@@ -33,7 +35,9 @@ export interface PartStat {
 }
 
 export interface Stats {
+  /** 団員数（在籍中＋活動休止中） */
   memberCount: number;
+  pausedCount: number;
   targetMembers: number;
   decisionMembers?: number;
   minimumMembers?: number;
@@ -110,4 +114,120 @@ export interface Concert {
   daySchedule: string;
   order: number;
   published: boolean;
+}
+
+// ---------- アンケート ----------
+
+export type QuestionType = 'single' | 'multi' | 'text';
+
+export interface SurveyQuestion {
+  id: string;
+  type: QuestionType;
+  label: string;
+  options: string[];
+  required: boolean;
+}
+
+/** 選択式の集計結果（質問ID → 選択肢ごとの人数）。自由記述は含めない */
+export interface SurveyResults {
+  respondents: number;
+  counts: Record<string, number[]>;
+}
+
+export interface Survey {
+  id: string;
+  title: string;
+  description: string;
+  questions: SurveyQuestion[];
+  anonymous: boolean;
+  deadline: Timestamp | null;
+  published: boolean;
+  closed: boolean;
+  results: SurveyResults | null;
+  resultsPublished: boolean;
+  createdAt: Timestamp | null;
+}
+
+/** 回答：質問ID → 選んだ選択肢の番号（single/multi）または文章（text） */
+export type SurveyAnswers = Record<string, number | number[] | string>;
+
+export interface SurveyResponse {
+  memberId: string;
+  answers: SurveyAnswers;
+}
+
+// ---------- 提案 ----------
+
+export type ProposalCategory = 'idea' | 'music' | 'practice' | 'event' | 'other';
+export type ProposalStatus = 'open' | 'considering' | 'adopted' | 'done' | 'declined';
+export type ProposalVisibility = 'members' | 'staff';
+
+export interface Proposal {
+  id: string;
+  title: string;
+  body: string;
+  category: ProposalCategory;
+  visibility: ProposalVisibility;
+  authorId: string;
+  authorName: string;
+  status: ProposalStatus;
+  staffReply: string;
+  supportCount: number;
+  createdAt: Timestamp | null;
+}
+
+// ---------- 楽譜 ----------
+
+export interface Score {
+  id: string;
+  title: string;
+  composer: string;
+  note: string;
+  /** パートコード（'all' = 全員） */
+  parts: string[];
+  kind: 'file' | 'link';
+  url: string;
+  storagePath: string;
+  fileName: string;
+  published: boolean;
+  createdAt: Timestamp | null;
+}
+
+// ---------- 通知 ----------
+
+export interface NotificationRequest {
+  id: string;
+  title: string;
+  body: string;
+  url: string;
+  audience: Audience;
+  status: 'pending' | 'sending' | 'sent' | 'failed';
+  source: string;
+  sentCount: number | null;
+  failedCount: number | null;
+  error: string;
+  createdAt: Timestamp | null;
+  sentAt: Timestamp | null;
+}
+
+// ---------- 団員募集キャンペーン（一般公開） ----------
+
+export interface CampaignPart {
+  part: string;
+  label: string;
+  /** urgent = 急募 / wanted = 募集中 */
+  level: 'urgent' | 'wanted';
+}
+
+export interface Campaign {
+  active: boolean;
+  headline: string;
+  message: string;
+  parts: CampaignPart[];
+  formUrl: string;
+  hashtags: string;
+  deadlineText: string;
+  showMemberCount: boolean;
+  memberCount: number;
+  targetMembers: number;
 }

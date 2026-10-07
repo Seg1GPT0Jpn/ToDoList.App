@@ -2,6 +2,7 @@ import { useEffect, useState, type FormEvent } from 'react';
 import { doc, serverTimestamp, updateDoc } from 'firebase/firestore';
 import { useAuth } from '../auth/AuthProvider';
 import { ErrorNote, Loading, PageTitle } from '../components/Layout';
+import { PushCard } from '../components/PushCard';
 import { getServices } from '../firebase';
 import { useMember } from '../lib/data';
 
@@ -78,6 +79,8 @@ export function MePage() {
           {isStaff ? '運営アカウントとしてログインしています（団員プロフィールはありません）。' : 'プロフィールを準備中です。'}
         </p>
       )}
+
+      <PushCard />
 
       <div className="card">
         <h2 className="card__title">アカウント</h2>

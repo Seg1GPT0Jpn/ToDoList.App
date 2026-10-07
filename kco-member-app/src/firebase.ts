@@ -56,6 +56,24 @@ export async function initFirebase(): Promise<FirebaseServices> {
   return services;
 }
 
+/**
+ * 楽譜ファイル用の Cloud Storage（使う画面でだけ読み込む）。
+ * プロジェクトで Storage を有効にしていない場合は null。
+ */
+export async function getStorageService() {
+  const { app } = getServices();
+  if (!app.options.storageBucket) return null;
+  const { getStorage, connectStorageEmulator } = await import('firebase/storage');
+  const storage = getStorage(app);
+  if (import.meta.env.VITE_USE_EMULATORS === 'true' && !storageEmulatorConnected) {
+    connectStorageEmulator(storage, '127.0.0.1', 9199);
+    storageEmulatorConnected = true;
+  }
+  return storage;
+}
+
+let storageEmulatorConnected = false;
+
 export function getServices(): FirebaseServices {
   if (!services) throw new Error('Firebase がまだ初期化されていません');
   return services;

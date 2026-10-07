@@ -26,7 +26,7 @@ function check(label, actual, expected) {
 
 function load(env) {
   const ctx = vm.createContext(Object.assign({}, env.globals));
-  ['Code.gs', 'AppSync.gs', 'Tests.gs'].forEach(f => vm.runInContext(fs.readFileSync(path.join(ROOT, f), 'utf8'), ctx, { filename: f }));
+  ['Code.gs', 'AppSync.gs', 'AppNotify.gs', 'Tests.gs'].forEach(f => vm.runInContext(fs.readFileSync(path.join(ROOT, f), 'utf8'), ctx, { filename: f }));
   return ctx;
 }
 
@@ -307,7 +307,7 @@ section('L. 既存機能への影響なし');
   ctx.onOpen();
   const menu = env.menus[env.menus.length - 1];
   const sub = menu.items.find(i => i.submenu && i.submenu.name === '📱 団員アプリ');
-  check('メニューに「📱 団員アプリ」', sub.submenu.items.map(i => i.fn), ['menuAppSyncPreview', 'menuAppSyncRun', 'menuAppSyncInstallTrigger', 'menuAppSyncOpenSettings']);
+  check('メニューに「📱 団員アプリ」', sub.submenu.items.map(i => i.fn), ['menuAppSyncPreview', 'menuAppSyncRun', 'menuAppSyncInstallTrigger', 'menuAppSyncOpenSettings', null, 'menuAppNotifyRunNow', 'menuAppNotifyInstallTrigger']);
   check('メニューから呼べる', !!ctx.menuAppSyncPreview(), true);
 }
 
@@ -323,6 +323,162 @@ section('M. 120人規模');
   check('書き込み 243件 → 400件ずつまとめて送信（1回）', env.firestore.commits, 1);
   check('通信回数が人数に比例しない（' + env.firestore.requests.length + '回）', env.firestore.requests.length < 20, true);
   console.log('    （ローカル実行時間 ' + (Date.now() - started) + 'ms）');
+}
+
+/* ============================================================ */
+section('N. 活動休止');
+{
+  const { env, app, ctx } = makeEnv(PEOPLE);
+  ctx.appSyncRun();
+  const idOf = no => col(app, 'アプリID')[no - 1];
+  setStatus(app, 2, '活動休止');
+  env.alerts.length = 0;
+  const r = ctx.appSyncRun();
+  const access = fsDocs(env, 'memberAccess');
+  check('活動休止 → ログイン許可は paused（削除・利用停止しない）', access['p2@example.com'].status, 'paused');
+  check('活動休止 → 団員プロフィールも paused', fsDocs(env, 'members')[idOf(2)].status, 'paused');
+  check('団員数には含め、休止中の人数も送る', [fsDocs(env, 'stats').summary.memberCount, fsDocs(env, 'stats').summary.pausedCount], [3, 1]);
+  check('利用停止の扱いにはならない', r.accessDeactivate, 0);
+  check('結果に休止中の人数', /うち活動休止 1人/.test(allAlerts(env)), true);
+  setStatus(app, 2, '正式参加');
+  ctx.appSyncRun();
+  check('休止から復帰 → active', fsDocs(env, 'memberAccess')['p2@example.com'].status, 'active');
+  check('「活動休止」は対応状況の選択肢にある', vm.runInContext('CONFIG.statuses', ctx).slice(-2), ['辞退', '活動休止']);
+  check('v1 の7種類の並びは変えない', vm.runInContext('CONFIG.statuses', ctx).slice(0, 7), ['未対応', '初回連絡済み', '返信待ち', '参加予定', '正式参加', '保留', '辞退']);
+}
+
+/* ============================================================ */
+section('O. パートをログイン許可に含める（楽譜の閲覧範囲）');
+{
+  const { env, ctx } = makeEnv(PEOPLE);
+  ctx.appSyncRun();
+  const access = fsDocs(env, 'memberAccess');
+  check('団員のパート', [access['p1@example.com'].part, access['p2@example.com'].part, access['p3@example.com'].part], ['Tp', 'Tuba', 'Fl']);
+  check('団員でない管理者はパートなし', access['owner@example.com'].part, '');
+  // 既存の（パートが無い）ログイン許可にもパートを追加する
+  env.firestore.docs.forEach((f, k) => { if (k.startsWith('memberAccess/')) delete f.part; });
+  const r = ctx.appSyncCore_({ dryRun: false });
+  check('パートが無い既存の団員の許可を更新（団員3人）', [r.accessUpdate, fsDocs(env, 'memberAccess')['p1@example.com'].part], [3, 'Tp']);
+}
+
+/* ============================================================ */
+section('P. 設定シートに新しい項目を追記（既存の値は変えない）');
+{
+  const { env, ss, ctx } = makeEnv(PEOPLE);
+  const sheet = ss.insertSheet('アプリ連携設定');
+  sheet._setTable([
+    ['アプリ連携設定（団員アプリ）', '', ''], ['項目', '値', '説明'],
+    ['Firebase プロジェクトID', 'kanagawa-connect-official', ''],
+    ['管理者のメールアドレス', 'boss@example.com', ''],
+    ['運営補助のメールアドレス', '', ''],
+    ['自動同期（15分ごと）', 'はい', '']
+  ]);
+  const s = ctx.appSyncSettings_(ss);
+  const labels = sheet._rows().map(r => r[0]);
+  check('既存の値はそのまま', [s.adminEmails.join(), s.autoSync], ['boss@example.com', true]);
+  check('通知の項目を末尾に追加', ['プッシュ通知の送信', '練習の前日通知', '前日通知の時刻（時）'].every(l => labels.indexOf(l) >= 0), true);
+  check('初期値：通知の送信は「いいえ」、前日通知は18時', [s.pushEnabled, s.reminderEnabled, s.reminderHour], [false, true, 18]);
+  ctx.appSyncSettings_(ss);
+  check('2回目は追記しない', sheet._rows().filter(r => r[0] === 'プッシュ通知の送信').length, 1);
+}
+
+/* ============================================================ */
+section('Q. プッシュ通知の送信');
+function notifyEnv() {
+  const e = makeEnv(PEOPLE);
+  e.ctx.appSyncRun();
+  const sheet = e.ss.getSheetByName('アプリ連携設定');
+  const rows = sheet._rows();
+  sheet.getRange(rows.findIndex(r => r[0] === 'プッシュ通知の送信') + 1, 2).setValue('はい');
+  const access = fsDocs(e.env, 'memberAccess');
+  const put = (path, obj) => e.env.firestore.docs.set(path, e.ctx.appSyncEncodeFields_(obj));
+  // 端末：Tp・Tuba・Fl の団員、管理者、退団した人（p8 は辞退＝許可なし）、偽装（ID と token が不一致）
+  put('pushTokens/tok-tp', { uid: 'u1', accessKey: 'p1@example.com', token: 'tok-tp', platform: 'iOS' });
+  put('pushTokens/tok-tuba', { uid: 'u2', accessKey: 'p2@example.com', token: 'tok-tuba', platform: 'Android' });
+  put('pushTokens/tok-fl', { uid: 'u3', accessKey: 'p3@example.com', token: 'tok-fl', platform: 'Android' });
+  put('pushTokens/tok-admin', { uid: 'u0', accessKey: 'owner@example.com', token: 'tok-admin', platform: 'Mac' });
+  put('pushTokens/tok-left', { uid: 'u8', accessKey: 'p8@example.com', token: 'tok-left', platform: 'iOS' });
+  put('pushTokens/tok-fake', { uid: 'u9', accessKey: 'p1@example.com', token: 'other', platform: 'iOS' });
+  e.put = put;
+  e.access = access;
+  return e;
+}
+{
+  const { env, ctx, put } = notifyEnv();
+  const now = new Date(2026, 9, 7, 10, 0, 0);
+  put('notifications/n-all', { title: '全員へ', body: '本文', url: '/news#a1', audience: { type: 'all', values: [] }, status: 'pending', source: 'manual', createdAt: new Date(2026, 9, 7, 9) });
+  put('notifications/n-brass', { title: '金管へ', body: '', url: '/scores', audience: { type: 'section', values: ['brass'] }, status: 'pending', source: 'score', createdAt: new Date(2026, 9, 7, 9, 1) });
+  put('notifications/n-fl', { title: 'Flへ', body: '', url: 'https://evil.example.com', audience: { type: 'part', values: ['Fl'] }, status: 'pending', source: 'manual', createdAt: new Date(2026, 9, 7, 9, 2) });
+  put('notifications/n-done', { title: '送信済み', body: '', url: '/', audience: { type: 'all', values: [] }, status: 'sent', source: 'manual' });
+  env.fcm.invalidTokens.add('tok-fl');
+  env.fcm.busyOnce.add('tok-tp');
+  env.logs.length = 0;
+  const r = ctx.appNotifyCore_({ now });
+  const sentTo = title => env.fcm.sent.filter(x => x.data.title === title).map(x => x.token).sort();
+  check('全員宛て：在籍中の団員と運営の端末（退団者・偽装登録には送らない）', sentTo('全員へ'), ['tok-admin', 'tok-tp', 'tok-tuba']);
+  check('セクション宛て：金管（Tp・Tuba）だけ', sentTo('金管へ'), ['tok-tp', 'tok-tuba']);
+  check('混雑（503）は1回だけ再試行して届ける', env.sleeps.indexOf(2000) >= 0 && sentTo('全員へ').indexOf('tok-tp') >= 0, true);
+  check('届かなくなった端末（Fl）は登録を削除', env.firestore.docs.has('pushTokens/tok-fl'), false);
+  check('送信済みの通知は送り直さない', sentTo('送信済み'), []);
+  const n = fsDocs(env, 'notifications');
+  check('結果を記録（送信済み・送れた台数・対象の台数）', [n['n-all'].status, n['n-all'].sentCount, n['n-all'].targetCount], ['sent', 3, 4]);
+  check('アプリ外へのリンクは「/」に置き換える', env.fcm.sent.every(x => x.data.url.charAt(0) === '/') && n['n-fl'].status, 'sent');
+  check('通知の中身は data だけ（表示はアプリが行う）', Object.keys(env.fcm.sent[0].data).sort(), ['body', 'tag', 'title', 'url']);
+  check('秘密鍵を使わずログイン中アカウントの権限で送る', env.fcm.sent[0].headers.Authorization, 'Bearer mock-oauth-token');
+  check('件数', [r.notifications, r.sent, r.removedTokens], [3, 5, 1]);
+  check('ログにメールアドレス・通知トークンを出さない', env.logs.some(l => /@|tok-/.test(l)), false);
+  check('結果メッセージにメールアドレス・トークンを含めない', /@|tok-/.test(ctx.appNotifyDescribe_(r)), false);
+  const before = env.fcm.sent.length;
+  ctx.appNotifyCore_({ now });
+  check('もう一度実行しても二重に送らない', env.fcm.sent.length, before);
+}
+{
+  const { env, ctx, put } = notifyEnv();
+  const today = new Date(2026, 9, 7, 17, 59, 0);
+  const evening = new Date(2026, 9, 7, 18, 5, 0);
+  const base = { content: '', notes: '', target: '', scoreNote: '', attendanceDeadline: null };
+  put('rehearsals/r-tomorrow', Object.assign({ title: '合奏練習', date: '2026-10-08', startTime: '13:00', endTime: '16:00', venue: '', published: true }, base));
+  put('rehearsals/r-draft', Object.assign({ title: '下書き', date: '2026-10-08', startTime: '', endTime: '', venue: '', published: false }, base));
+  put('rehearsals/r-later', Object.assign({ title: '来週', date: '2026-10-14', startTime: '', endTime: '', venue: '', published: true }, base));
+  put('rehearsals/r-tbd', Object.assign({ title: '未定', date: '', startTime: '', endTime: '', venue: '', published: true }, base));
+  let r = ctx.appNotifyCore_({ now: today });
+  check('前日通知は設定した時刻（18時）より前には送らない', [r.reminders, env.fcm.sent.length], [0, 0]);
+  r = ctx.appNotifyCore_({ now: evening });
+  const msgs = env.fcm.sent.map(x => x.data);
+  check('明日の公開中の練習だけ前日通知', [r.reminders, msgs.length ? msgs[0].title : ''], [1, '明日は練習です']);
+  check('時間を本文に入れ、未定の会場は書かない', msgs[0].body, '合奏練習　13:00〜16:00');
+  check('タップすると練習の詳細へ', msgs[0].url, '/schedule/r-tomorrow');
+  r = ctx.appNotifyCore_({ now: new Date(2026, 9, 7, 21, 0, 0) });
+  check('同じ練習の前日通知は1回だけ（端末4台に1通ずつ）', [r.reminders, env.fcm.sent.filter(x => x.data.title === '明日は練習です').length], [0, 4]);
+  check('前日通知も送信履歴に残る', fsDocs(env, 'notifications')['reminder-r-tomorrow-2026-10-08'].status, 'sent');
+}
+{
+  const { env, ctx, put } = notifyEnv();
+  put('notifications/n1', { title: 'x', body: '', url: '/', audience: { type: 'all', values: [] }, status: 'pending', source: 'manual' });
+  put('notifications/n-stuck', { title: '止まった', body: '', url: '/', audience: { type: 'all', values: [] }, status: 'sending', startedAt: new Date(2026, 9, 7, 8, 0), source: 'manual' });
+  env.fcm.denied = true;
+  const r = ctx.appNotifyCore_({ now: new Date(2026, 9, 7, 10, 0) });
+  const n = fsDocs(env, 'notifications');
+  check('権限エラーは「失敗」として記録し、案内を出す', [n.n1.status, /firebase\.messaging/.test(r.error)], ['failed', true]);
+  check('「送信中」で止まった通知は再送せず失敗にする', [n['n-stuck'].status, env.fcm.sent.length], ['failed', 0]);
+}
+{
+  const { env, ctx } = notifyEnv();
+  env.firestore.requests.length = 0;
+  env.firestore.docs.forEach((f, k) => { if (k.startsWith('notifications/')) env.firestore.docs.delete(k); });
+  const r = ctx.appNotifyCore_({ now: new Date(2026, 9, 7, 10, 0) });
+  check('送るものが無いときは端末・団員の一覧を読まない（読み取りを節約）', env.firestore.requests.filter(q => /pushTokens|memberAccess/.test(q.url)).length, 0);
+  check('送るものが無いときの結果', [r.notifications, r.error], [0, null]);
+}
+{
+  const { env, ctx } = notifyEnv();
+  env.alerts.length = 0;
+  ctx.appNotifyInstallTrigger();
+  ctx.appNotifyInstallTrigger();
+  check('通知のトリガーは1本だけ（10分ごと）', env.triggers.filter(t => t.getHandlerFunction() === 'appNotifyScheduled').length, 1);
+  const sheet = env.spreadsheet.getSheetByName('アプリ連携設定');
+  sheet.getRange(sheet._rows().findIndex(r => r[0] === 'プッシュ通知の送信') + 1, 2).setValue('いいえ');
+  check('「いいえ」のときは送信しない', ctx.appNotifyScheduled(), null);
 }
 
 console.log('\n============================');

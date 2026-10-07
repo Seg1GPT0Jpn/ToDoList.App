@@ -12,6 +12,7 @@ import {
 } from 'firebase/auth';
 import { doc, onSnapshot } from 'firebase/firestore';
 import { getServices } from '../firebase';
+import { disablePush } from '../lib/push';
 import type { MemberAccess } from '../lib/types';
 
 /*
@@ -80,7 +81,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           email: user.email!.toLowerCase(),
           status: d.status === 'active' || d.status === 'paused' ? d.status : 'inactive',
           role: d.role === 'admin' || d.role === 'staff' ? d.role : 'member',
-          memberId: typeof d.memberId === 'string' ? d.memberId : null
+          memberId: typeof d.memberId === 'string' ? d.memberId : null,
+          part: typeof d.part === 'string' ? d.part : ''
         };
         setAccess(a);
         setState(a.status);
@@ -141,6 +143,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const logout = useCallback(async () => {
+    // この端末の通知登録を消してからログアウト（他の人が同じ端末を使っても届かないように）
+    try {
+      await disablePush();
+    } catch {
+      // 通知を使っていない・失敗してもログアウトは続ける
+    }
     await signOut(getServices().auth);
   }, []);
 
