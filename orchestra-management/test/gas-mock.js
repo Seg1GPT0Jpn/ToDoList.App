@@ -518,9 +518,74 @@ function createGasEnvironment(options) {
 
   };
   const sleeps = [];
+  const user = { active: opts.activeUser || opts.effectiveUser || 'owner@example.com' };
   const Session = {
     getScriptTimeZone() { return 'Asia/Tokyo'; },
-    getEffectiveUser() { return { getEmail() { return opts.effectiveUser || 'owner@example.com'; } }; }
+    getEffectiveUser() { return { getEmail() { return opts.effectiveUser || 'owner@example.com'; } }; },
+    getActiveUser() { return { getEmail() { return user.active; } }; }
+  };
+
+  // ---- 偽の MailApp（送ったメールを記録するだけ） ----
+  const mail = { sent: [], quota: 100, failFor: new Set() };
+  const MailApp = {
+    sendEmail(message) {
+      if (mail.quota <= 0) throw new Error('Service invoked too many times for one day: email.');
+      if (mail.failFor.has(message.to)) throw new Error('Invalid email: ' + message.to);
+      mail.sent.push(message);
+      mail.quota--;
+    },
+    getRemainingDailyQuota() { return mail.quota; }
+  };
+
+  // ---- 偽の FormApp（作成したフォームの質問を記録。回答先にシートを作る） ----
+  const forms = { created: [] };
+  function makeItem(form, type) {
+    const item = { type, title: '', required: false, choices: [], help: '' };
+    form.items.push(item);
+    const api = {
+      setTitle(t) { item.title = t; return api; },
+      setRequired(r) { item.required = r; return api; },
+      setHelpText(h) { item.help = h; return api; },
+      setChoiceValues(v) { item.choices = v.slice(); return api; }
+    };
+    return api;
+  }
+  const FormApp = {
+    DestinationType: { SPREADSHEET: 'SPREADSHEET' },
+    EmailCollectionType: { RESPONDER_INPUT: 'RESPONDER_INPUT', VERIFIED: 'VERIFIED' },
+    create(title) {
+      const id = 'form' + (forms.created.length + 1);
+      const form = { id, title, items: [], collect: null, description: '', confirmation: '', destination: null };
+      forms.created.push(form);
+      const api = {
+        getId() { return id; },
+        getPublishedUrl() { return 'https://docs.google.com/forms/d/e/' + id + '/viewform'; },
+        setDescription(d) { form.description = d; return api; },
+        setEmailCollectionType(t) { form.collect = t; return api; },
+        setCollectEmail(b) { form.collect = b ? 'COLLECT' : null; return api; },
+        setConfirmationMessage(m) { form.confirmation = m; return api; },
+        addTextItem() { return makeItem(form, 'text'); },
+        addParagraphTextItem() { return makeItem(form, 'paragraph'); },
+        addMultipleChoiceItem() { return makeItem(form, 'choice'); },
+        setDestination(type, ssId) {
+          form.destination = ssId;
+          let n = 1;
+          while (spreadsheet.getSheetByName('フォームの回答 ' + n)) n++;
+          const sh = spreadsheet.insertSheet('フォームの回答 ' + n);
+          sh.formUrl = 'https://docs.google.com/forms/d/' + id + '/edit';
+          const headers = ['タイムスタンプ', 'メールアドレス'].concat(form.items.map(i => i.title));
+          sh._setTable([headers]);
+          return api;
+        }
+      };
+      form.api = api;
+      return api;
+    },
+    openById(id) {
+      const f = forms.created.find(x => x.id === id);
+      if (!f) throw new Error('フォームが見つかりません');
+      return f.api;
+    }
   };
 
   // ---- 偽の Firestore（REST API の一部だけ） ----
@@ -615,8 +680,8 @@ function createGasEnvironment(options) {
   };
 
   return {
-    globals: { SpreadsheetApp, ScriptApp, LockService, PropertiesService, Utilities, Session, Logger, UrlFetchApp, console: consoleProxy, Date },
-    firestore, fcm, sleeps,
+    globals: { SpreadsheetApp, ScriptApp, LockService, PropertiesService, Utilities, Session, Logger, UrlFetchApp, MailApp, FormApp, console: consoleProxy, Date },
+    firestore, fcm, sleeps, mail, forms, user,
     spreadsheet, stats, alerts, toasts, logs, triggers, menus, props,
     setUiAvailable(v) { uiAvailable = v; },
     setConfirmAnswer(v) { confirmAnswer = v; },

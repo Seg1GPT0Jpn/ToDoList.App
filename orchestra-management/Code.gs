@@ -152,7 +152,14 @@ const APPLICANT_FIELDS = [
 
   // 団員アプリ連携（AppSync.gs）で使う列。同期を実行したときだけ末尾に追加される
   { key: 'appId', header: 'アプリID', extra: true },
-  { key: 'appEmail', header: 'アプリ用メールアドレス', aliases: ['アプリ用メール'], extra: true }
+  { key: 'appEmail', header: 'アプリ用メールアドレス', aliases: ['アプリ用メール'], extra: true },
+
+  // 正式加入確認（Membership.gs）で使う列。メニューを実行したときだけ末尾に追加される
+  { key: 'appUsage', header: 'アプリ利用', extra: true },
+  { key: 'joinIntent', header: '正式加入の意思', extra: true },
+  { key: 'joinAnsweredAt', header: '加入確認 回答日時', extra: true },
+  { key: 'joinMailAt', header: '加入確認メール', extra: true },
+  { key: 'firebaseState', header: 'Firebase連携状態', extra: true }
 ];
 
 
@@ -311,6 +318,18 @@ function onOpen() {
         .addItem('通知の送信を設定（10分ごと）', 'menuAppNotifyInstallTrigger')
     )
     .addSubMenu(
+      ui.createMenu('✉️ 正式加入確認')
+        .addItem('正式加入確認フォームを作成', 'menuMembershipCreateForm')
+        .addItem('テスト送信（自分宛て）', 'menuMembershipSendTest')
+        .addItem('正式加入確認メールを送信', 'menuMembershipSendEmails')
+        .addSeparator()
+        .addItem('正式加入回答を同期', 'menuMembershipSyncResponses')
+        .addItem('正式参加者一覧を更新', 'menuMembershipUpdateMemberList')
+        .addItem('アプリ利用対象者を更新', 'menuMembershipUpdateAppUsage')
+        .addItem('同期状況を確認', 'menuMembershipStatus')
+        .addItem('加入確認設定を開く', 'menuMembershipOpenSettings')
+    )
+    .addSubMenu(
       ui.createMenu('🛠 メンテナンス')
         .addItem('楽器名の表記を統一（応募者一覧の楽器列）', 'normalizeApplicantInstruments')
         .addItem('応募者一覧を整理（ずれた行・空の行を削除）', 'cleanupApplicantsSheet')
@@ -329,13 +348,21 @@ function menuAppSyncInstallTrigger() { return callAppSync_('appSyncInstallTrigge
 function menuAppSyncOpenSettings() { return callAppSync_('appSyncOpenSettings'); }
 function menuAppNotifyRunNow() { return callAppSync_('appNotifyRunNow'); }
 function menuAppNotifyInstallTrigger() { return callAppSync_('appNotifyInstallTrigger'); }
+function menuMembershipCreateForm() { return callAppSync_('membershipCreateForm'); }
+function menuMembershipSendTest() { return callAppSync_('membershipSendTest'); }
+function menuMembershipSendEmails() { return callAppSync_('membershipSendEmails'); }
+function menuMembershipSyncResponses() { return callAppSync_('membershipSyncResponses'); }
+function menuMembershipUpdateMemberList() { return callAppSync_('membershipUpdateMemberList'); }
+function menuMembershipUpdateAppUsage() { return callAppSync_('membershipUpdateAppUsage'); }
+function menuMembershipStatus() { return callAppSync_('membershipStatus'); }
+function menuMembershipOpenSettings() { return callAppSync_('membershipOpenSettings'); }
 
 function callAppSync_(name) {
 
   const fn = globalThis[name];
 
   if (typeof fn !== 'function') {
-    const file = name.indexOf('appNotify') === 0 ? 'AppNotify.gs' : 'AppSync.gs';
+    const file = name.indexOf('appNotify') === 0 ? 'AppNotify.gs' : name.indexOf('membership') === 0 ? 'Membership.gs' : 'AppSync.gs';
     alert_('団員アプリ連携用のファイル（' + file + '）が追加されていません。\nApps Script エディタで ' + file + ' を追加してください。');
     return null;
   }
@@ -1007,6 +1034,12 @@ function planSync_(responseSheets, app, ledgerHashes) {
       return;
     }
 
+    // 正式加入確認フォームの回答（「正式加入について」の質問がある）は応募者として取り込まない
+    if (isMembershipResponseHeaders_(headers)) {
+      info.reason = '正式加入確認フォームの回答シートのため対象外（「✉️ 正式加入確認」→「正式加入回答を同期」で扱います）';
+      return;
+    }
+
     const matchedCount = Object.keys(res.map).length;
 
     if ((res.map.name === undefined && res.map.instrument === undefined) || matchedCount < CONFIG.minFormFieldsMatched) {
@@ -1177,6 +1210,16 @@ function findResponseSheets_(ss) {
     .map((sheet, i) => ({ sheet, i, linked: formUrlOf_(sheet) ? 1 : 0 }))
     .sort((a, b) => (b.linked - a.linked) || (a.i - b.i))
     .map(x => x.sheet);
+}
+
+
+/*
+ * 正式加入確認フォームの回答シートか（見出しに「正式加入について」がある）
+ * Membership.gs が無くても、応募者の二重登録を防ぐためにここで判定する。
+ */
+function isMembershipResponseHeaders_(headers) {
+
+  return headers.some(h => normalizeHeader_(h).indexOf(normalizeHeader_('正式加入について')) === 0);
 }
 
 
@@ -1567,6 +1610,15 @@ function handleSpreadsheetFormSubmit(e) {
     const result = syncWithoutDialog();
 
     recordAutoSync_(result, null);
+
+    // 正式加入確認フォームの回答も照合する（Membership.gs がある場合だけ）
+    if (typeof globalThis.membershipSyncFromTrigger_ === 'function') {
+      try {
+        globalThis.membershipSyncFromTrigger_();
+      } catch (e) {
+        console.error('正式加入回答の同期に失敗: ' + e.message);
+      }
+    }
 
   } catch (err) {
 
@@ -2257,7 +2309,9 @@ function computeStats_(records, settings, index, now) {
     urgentParts: [],
     recruitingParts: [],
     filledParts: [],
-    situation: ''
+    situation: '',
+    // 正式加入確認・アプリ利用（Membership.gs の列が無ければすべて 0／未回答）
+    membership: { intents: {}, appTarget: 0, appUsage: {}, mailed: 0 }
   };
 
   const codeStats = {};
@@ -2271,6 +2325,11 @@ function computeStats_(records, settings, index, now) {
   primaries.forEach(r => {
 
     st.total++;
+
+    inc(st.membership.intents, r.joinIntent || '未回答');
+    if ((r.status === CONFIG.officialStatus || r.status === CONFIG.pausedStatus) && r.appUsage !== '停止') st.membership.appTarget++;
+    if (r.appUsage) inc(st.membership.appUsage, r.appUsage);
+    if (!isBlank_(r.joinMailAt)) st.membership.mailed++;
 
     const status = r.status;
     const isExcluded = excluded.has(status);
@@ -2710,6 +2769,34 @@ function writeDashboardSheet_(ss, ctx) {
 
   push(['合計', '', total.active, total.planned, total.official, total.target, total.min, total.shortage, percentText_(total.active, total.target), ''], COLOR_HEADER_, true);
   push([]);
+
+  const ms = st.membership;
+
+  push(['【正式加入・団員アプリ】', '', '', '「✉️ 正式加入確認」メニューで更新されます'], COLOR_SECTION_, true);
+  push(['項目', '人数', 'メモ'], COLOR_HEADER_, true);
+  push(['参加希望者数（実人数）', st.total, '']);
+  push(['正式参加', st.official, '']);
+  push(['保留', st.statusCounts['保留'] || 0, '']);
+  push(['辞退', st.statusCounts['辞退'] || 0, '']);
+  push(['アプリ利用対象者', ms.appTarget, '対応状況が「正式参加」（活動休止を含む）で、アプリ利用が「停止」でない人']);
+  push(['正式加入確認メール 送信済み', ms.mailed, '']);
+  push(['加入の意思：希望', ms.intents['希望'] || 0, ms.intents['希望'] ? '「正式参加者一覧」の確認待ちリストで確認してください' : '']);
+  push(['加入の意思：検討中', ms.intents['検討中'] || 0, '']);
+  push(['加入の意思：見送り', ms.intents['見送り'] || 0, '']);
+  push(['加入の意思：未回答', ms.intents['未回答'] || 0, '']);
+  Object.keys(ms.appUsage).sort().forEach(k => push(['アプリ利用：' + k, ms.appUsage[k], '']));
+  push([]);
+
+  push(['【楽器別 正式参加者数】'], COLOR_SECTION_, true);
+  push(['パート', '正式参加', '目標人数', '内訳'], COLOR_HEADER_, true);
+  st.partRows.filter(p => p.visible).forEach(p => {
+    const detail = st.codeRows
+      .filter(c => c.part === p.part && c.official > 0 && c.code !== p.part)
+      .map(c => c.name + ' ' + c.official).join('、');
+    push([p.label, p.official, blankIfNull_(p.target), detail]);
+  });
+  push([]);
+
 
   push(['【活動状況】'], COLOR_SECTION_, true);
   push(['対応状況', '人数', 'メモ'], COLOR_HEADER_, true);
@@ -3697,7 +3784,12 @@ function readApplicants_(sheet) {
       memo: toStr_(get('syncMemo')),
       nickname: toStr_(get('nickname')),
       appId: toStr_(get('appId')),
-      appEmail: toStr_(get('appEmail'))
+      appEmail: toStr_(get('appEmail')),
+      appUsage: toStr_(get('appUsage')),
+      joinIntent: toStr_(get('joinIntent')),
+      joinAnsweredAt: get('joinAnsweredAt'),
+      joinMailAt: get('joinMailAt'),
+      firebaseState: toStr_(get('firebaseState'))
     });
   }
 

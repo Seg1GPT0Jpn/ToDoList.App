@@ -26,7 +26,7 @@ function check(label, actual, expected) {
 
 function load(env) {
   const ctx = vm.createContext(Object.assign({}, env.globals));
-  ['Code.gs', 'AppSync.gs', 'AppNotify.gs', 'Tests.gs'].forEach(f => vm.runInContext(fs.readFileSync(path.join(ROOT, f), 'utf8'), ctx, { filename: f }));
+  ['Code.gs', 'AppSync.gs', 'AppNotify.gs', 'Membership.gs', 'Tests.gs'].forEach(f => vm.runInContext(fs.readFileSync(path.join(ROOT, f), 'utf8'), ctx, { filename: f }));
   return ctx;
 }
 
@@ -113,7 +113,7 @@ const main = makeEnv(PEOPLE);
   env.alerts.length = 0;
   ctx.appSyncRun();
   check('確認ダイアログが出る', env.alerts.some(a => a.confirm), true);
-  check('応募者一覧に「アプリID」「アプリ用メールアドレス」列が末尾に追加', header(app).slice(-2), ['アプリID', 'アプリ用メールアドレス']);
+  check('応募者一覧の末尾に「アプリID」「アプリ用メールアドレス」（＋正式加入確認の列）を追加', header(app).slice(21), ['アプリID', 'アプリ用メールアドレス', 'アプリ利用', '正式加入の意思', '加入確認 回答日時', '加入確認メール', 'Firebase連携状態']);
   const ids = col(app, 'アプリID');
   check('正式参加の3人だけにアプリIDが振られた', ids.filter(Boolean).length, 3);
   check('アプリIDの形式', ids.filter(Boolean).every(id => /^m[0-9a-f]{15}$/.test(id)), true);

@@ -432,7 +432,12 @@ function readApplicants_(sheet) {
       memo: toStr_(get('syncMemo')),
       nickname: toStr_(get('nickname')),
       appId: toStr_(get('appId')),
-      appEmail: toStr_(get('appEmail'))
+      appEmail: toStr_(get('appEmail')),
+      appUsage: toStr_(get('appUsage')),
+      joinIntent: toStr_(get('joinIntent')),
+      joinAnsweredAt: get('joinAnsweredAt'),
+      joinMailAt: get('joinMailAt'),
+      firebaseState: toStr_(get('firebaseState'))
     });
   }
 

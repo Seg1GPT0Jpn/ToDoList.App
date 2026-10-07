@@ -82,6 +82,8 @@ function appSyncRun() {
   }
 
   if (!preview.writes) {
+    // Firebase 側は最新。応募者一覧の「Firebase連携状態」「アプリ利用」だけ最新にする
+    appSyncCore_({ dryRun: false, allowMassDeactivation: false });
     alert_('団員アプリはすでに最新です（変更なし）。\n\n' + appSyncDescribe_(preview, true));
     return preview;
   }
@@ -258,14 +260,24 @@ function appSyncCore_(options) {
       }
     }
 
-    if (dryRun || !plan.writes.length) return result;
+    if (dryRun) return result;
 
     // 4. 書き込み（まとめて送信。失敗したら自動で再試行）
     for (let i = 0; i < plan.writes.length; i += APP_SYNC.maxWritesPerCommit) {
       client.commit(plan.writes.slice(i, i + APP_SYNC.maxWritesPerCommit));
     }
 
-    appSyncRecordRun_(result);
+    // 5. 応募者一覧の「Firebase連携状態」「アプリ利用」に結果を書き戻す（Membership.gs がある場合）
+    if (typeof globalThis.membershipAfterAppSync_ === 'function') {
+      try {
+        globalThis.membershipAfterAppSync_(ss, new Set(desired.members.map(m => m.row)));
+      } catch (e) {
+        result.problems.push('「アプリ利用」列の更新に失敗しました（同期自体は完了）');
+        console.error('アプリ利用の更新に失敗: ' + e.message);
+      }
+    }
+
+    if (plan.writes.length) appSyncRecordRun_(result);
 
     return result;
 
@@ -309,6 +321,12 @@ function appSyncDesiredMembers_(app, settings, result) {
     .forEach(r => {
 
       if (r.status !== APP_SYNC.joinedStatus && r.status !== APP_SYNC.pausedStatus) return;
+
+      // 運営が「アプリ利用」を「停止」にした人は登録しない（正式参加のままでも）
+      if (r.appUsage === '停止') {
+        result.stopped = (result.stopped || 0) + 1;
+        return;
+      }
 
       const email = emailKey_(toStr_(r.appEmail) || toStr_(r.email));
 
@@ -877,6 +895,7 @@ function appSyncDescribe_(r, isPreview) {
   ];
 
   if (r.newIds) lines.push('新しく振るアプリID：' + r.newIds + '件（応募者一覧の「アプリID」列）');
+  if (r.stopped) lines.push('アプリ利用が「停止」のため登録しない人：' + r.stopped + '人');
   if (r.massDeactivation) lines.push('', '⚠️ 一度に多くの人が利用停止になります。応募者一覧の「対応状況」が正しいか確認してください。');
   if (r.problems.length) lines.push('', '確認が必要な行：', ...r.problems.slice(0, 15).map(p => '・' + p));
 

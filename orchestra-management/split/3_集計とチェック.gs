@@ -65,7 +65,9 @@ function computeStats_(records, settings, index, now) {
     urgentParts: [],
     recruitingParts: [],
     filledParts: [],
-    situation: ''
+    situation: '',
+    // 正式加入確認・アプリ利用（Membership.gs の列が無ければすべて 0／未回答）
+    membership: { intents: {}, appTarget: 0, appUsage: {}, mailed: 0 }
   };
 
   const codeStats = {};
@@ -79,6 +81,11 @@ function computeStats_(records, settings, index, now) {
   primaries.forEach(r => {
 
     st.total++;
+
+    inc(st.membership.intents, r.joinIntent || '未回答');
+    if ((r.status === CONFIG.officialStatus || r.status === CONFIG.pausedStatus) && r.appUsage !== '停止') st.membership.appTarget++;
+    if (r.appUsage) inc(st.membership.appUsage, r.appUsage);
+    if (!isBlank_(r.joinMailAt)) st.membership.mailed++;
 
     const status = r.status;
     const isExcluded = excluded.has(status);
@@ -518,6 +525,34 @@ function writeDashboardSheet_(ss, ctx) {
 
   push(['合計', '', total.active, total.planned, total.official, total.target, total.min, total.shortage, percentText_(total.active, total.target), ''], COLOR_HEADER_, true);
   push([]);
+
+  const ms = st.membership;
+
+  push(['【正式加入・団員アプリ】', '', '', '「✉️ 正式加入確認」メニューで更新されます'], COLOR_SECTION_, true);
+  push(['項目', '人数', 'メモ'], COLOR_HEADER_, true);
+  push(['参加希望者数（実人数）', st.total, '']);
+  push(['正式参加', st.official, '']);
+  push(['保留', st.statusCounts['保留'] || 0, '']);
+  push(['辞退', st.statusCounts['辞退'] || 0, '']);
+  push(['アプリ利用対象者', ms.appTarget, '対応状況が「正式参加」（活動休止を含む）で、アプリ利用が「停止」でない人']);
+  push(['正式加入確認メール 送信済み', ms.mailed, '']);
+  push(['加入の意思：希望', ms.intents['希望'] || 0, ms.intents['希望'] ? '「正式参加者一覧」の確認待ちリストで確認してください' : '']);
+  push(['加入の意思：検討中', ms.intents['検討中'] || 0, '']);
+  push(['加入の意思：見送り', ms.intents['見送り'] || 0, '']);
+  push(['加入の意思：未回答', ms.intents['未回答'] || 0, '']);
+  Object.keys(ms.appUsage).sort().forEach(k => push(['アプリ利用：' + k, ms.appUsage[k], '']));
+  push([]);
+
+  push(['【楽器別 正式参加者数】'], COLOR_SECTION_, true);
+  push(['パート', '正式参加', '目標人数', '内訳'], COLOR_HEADER_, true);
+  st.partRows.filter(p => p.visible).forEach(p => {
+    const detail = st.codeRows
+      .filter(c => c.part === p.part && c.official > 0 && c.code !== p.part)
+      .map(c => c.name + ' ' + c.official).join('、');
+    push([p.label, p.official, blankIfNull_(p.target), detail]);
+  });
+  push([]);
+
 
   push(['【活動状況】'], COLOR_SECTION_, true);
   push(['対応状況', '人数', 'メモ'], COLOR_HEADER_, true);

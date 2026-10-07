@@ -152,7 +152,14 @@ const APPLICANT_FIELDS = [
 
   // 団員アプリ連携（AppSync.gs）で使う列。同期を実行したときだけ末尾に追加される
   { key: 'appId', header: 'アプリID', extra: true },
-  { key: 'appEmail', header: 'アプリ用メールアドレス', aliases: ['アプリ用メール'], extra: true }
+  { key: 'appEmail', header: 'アプリ用メールアドレス', aliases: ['アプリ用メール'], extra: true },
+
+  // 正式加入確認（Membership.gs）で使う列。メニューを実行したときだけ末尾に追加される
+  { key: 'appUsage', header: 'アプリ利用', extra: true },
+  { key: 'joinIntent', header: '正式加入の意思', extra: true },
+  { key: 'joinAnsweredAt', header: '加入確認 回答日時', extra: true },
+  { key: 'joinMailAt', header: '加入確認メール', extra: true },
+  { key: 'firebaseState', header: 'Firebase連携状態', extra: true }
 ];
 
 
@@ -311,6 +318,18 @@ function onOpen() {
         .addItem('通知の送信を設定（10分ごと）', 'menuAppNotifyInstallTrigger')
     )
     .addSubMenu(
+      ui.createMenu('✉️ 正式加入確認')
+        .addItem('正式加入確認フォームを作成', 'menuMembershipCreateForm')
+        .addItem('テスト送信（自分宛て）', 'menuMembershipSendTest')
+        .addItem('正式加入確認メールを送信', 'menuMembershipSendEmails')
+        .addSeparator()
+        .addItem('正式加入回答を同期', 'menuMembershipSyncResponses')
+        .addItem('正式参加者一覧を更新', 'menuMembershipUpdateMemberList')
+        .addItem('アプリ利用対象者を更新', 'menuMembershipUpdateAppUsage')
+        .addItem('同期状況を確認', 'menuMembershipStatus')
+        .addItem('加入確認設定を開く', 'menuMembershipOpenSettings')
+    )
+    .addSubMenu(
       ui.createMenu('🛠 メンテナンス')
         .addItem('楽器名の表記を統一（応募者一覧の楽器列）', 'normalizeApplicantInstruments')
         .addItem('応募者一覧を整理（ずれた行・空の行を削除）', 'cleanupApplicantsSheet')
@@ -329,13 +348,21 @@ function menuAppSyncInstallTrigger() { return callAppSync_('appSyncInstallTrigge
 function menuAppSyncOpenSettings() { return callAppSync_('appSyncOpenSettings'); }
 function menuAppNotifyRunNow() { return callAppSync_('appNotifyRunNow'); }
 function menuAppNotifyInstallTrigger() { return callAppSync_('appNotifyInstallTrigger'); }
+function menuMembershipCreateForm() { return callAppSync_('membershipCreateForm'); }
+function menuMembershipSendTest() { return callAppSync_('membershipSendTest'); }
+function menuMembershipSendEmails() { return callAppSync_('membershipSendEmails'); }
+function menuMembershipSyncResponses() { return callAppSync_('membershipSyncResponses'); }
+function menuMembershipUpdateMemberList() { return callAppSync_('membershipUpdateMemberList'); }
+function menuMembershipUpdateAppUsage() { return callAppSync_('membershipUpdateAppUsage'); }
+function menuMembershipStatus() { return callAppSync_('membershipStatus'); }
+function menuMembershipOpenSettings() { return callAppSync_('membershipOpenSettings'); }
 
 function callAppSync_(name) {
 
   const fn = globalThis[name];
 
   if (typeof fn !== 'function') {
-    const file = name.indexOf('appNotify') === 0 ? 'AppNotify.gs' : 'AppSync.gs';
+    const file = name.indexOf('appNotify') === 0 ? 'AppNotify.gs' : name.indexOf('membership') === 0 ? 'Membership.gs' : 'AppSync.gs';
     alert_('団員アプリ連携用のファイル（' + file + '）が追加されていません。\nApps Script エディタで ' + file + ' を追加してください。');
     return null;
   }
@@ -1007,6 +1034,12 @@ function planSync_(responseSheets, app, ledgerHashes) {
       return;
     }
 
+    // 正式加入確認フォームの回答（「正式加入について」の質問がある）は応募者として取り込まない
+    if (isMembershipResponseHeaders_(headers)) {
+      info.reason = '正式加入確認フォームの回答シートのため対象外（「✉️ 正式加入確認」→「正式加入回答を同期」で扱います）';
+      return;
+    }
+
     const matchedCount = Object.keys(res.map).length;
 
     if ((res.map.name === undefined && res.map.instrument === undefined) || matchedCount < CONFIG.minFormFieldsMatched) {
@@ -1177,6 +1210,16 @@ function findResponseSheets_(ss) {
     .map((sheet, i) => ({ sheet, i, linked: formUrlOf_(sheet) ? 1 : 0 }))
     .sort((a, b) => (b.linked - a.linked) || (a.i - b.i))
     .map(x => x.sheet);
+}
+
+
+/*
+ * 正式加入確認フォームの回答シートか（見出しに「正式加入について」がある）
+ * Membership.gs が無くても、応募者の二重登録を防ぐためにここで判定する。
+ */
+function isMembershipResponseHeaders_(headers) {
+
+  return headers.some(h => normalizeHeader_(h).indexOf(normalizeHeader_('正式加入について')) === 0);
 }
 
 

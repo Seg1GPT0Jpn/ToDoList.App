@@ -247,6 +247,15 @@ function handleSpreadsheetFormSubmit(e) {
 
     recordAutoSync_(result, null);
 
+    // 正式加入確認フォームの回答も照合する（Membership.gs がある場合だけ）
+    if (typeof globalThis.membershipSyncFromTrigger_ === 'function') {
+      try {
+        globalThis.membershipSyncFromTrigger_();
+      } catch (e) {
+        console.error('正式加入回答の同期に失敗: ' + e.message);
+      }
+    }
+
   } catch (err) {
 
     recordAutoSync_(null, err);
