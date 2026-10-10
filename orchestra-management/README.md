@@ -1,3 +1,7 @@
+> ## ⚠️ このフォルダは移動しました
+> 最新版は **[Seg1GPT0Jpn/kanagawa-connect-orchestra](https://github.com/Seg1GPT0Jpn/kanagawa-connect-orchestra) の `orchestra-management/`** にあります（2026年10月に移動）。
+> こちらのファイルは更新しません。編集・公開は移動先で行ってください。
+
 # かながわコネクトオーケストラ 応募者・団員管理システム（Apps Script v2）
 
 Googleフォームの回答を「応募者一覧」に取り込み、楽器別・パート別の募集状況や活動状況を自動で集計する、スプレッドシート用の Apps Script です。

@@ -1,3 +1,7 @@
+> ## ⚠️ このフォルダは移動しました
+> 最新版は **[Seg1GPT0Jpn/kanagawa-connect-orchestra](https://github.com/Seg1GPT0Jpn/kanagawa-connect-orchestra) の `kco-member-app/`** にあります（2026年10月に移動）。
+> こちらのファイルは更新しません。編集・公開は移動先で行ってください。
+
 # かながわコネクトオーケストラ 団員専用アプリ
 
 加入が確定した団員と、応募した参加希望者が使える Web アプリ（PWA）です。スマートフォンのホーム画面に追加して使えます。
