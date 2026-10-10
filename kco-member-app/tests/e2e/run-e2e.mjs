@@ -48,6 +48,9 @@ await env.withSecurityRulesDisabled(async ctx => {
   const now = Timestamp.now();
   await setDoc(doc(db, 'memberAccess', 'member.a@example.com'), { email: 'member.a@example.com', status: 'active', role: 'member', memberId: 'm-a', part: 'Va', source: 'sheet' });
   await setDoc(doc(db, 'memberAccess', 'member.b@example.com'), { email: 'member.b@example.com', status: 'active', role: 'member', memberId: 'm-b', part: 'Vc', source: 'sheet' });
+  await setDoc(doc(db, 'memberAccess', 'hopeful@example.com'), { email: 'hopeful@example.com', status: 'active', role: 'member', memberId: 'ap-1', part: 'Fl', stage: 'applicant', source: 'sheet' });
+  await setDoc(doc(db, 'applicants', 'ap-1'), { displayName: 'きぼうさん', instrument: 'Fl', instrumentLabel: 'フルート', part: 'Fl', section: 'woodwind', status: 'active', bio: '' });
+  await setDoc(doc(db, 'appConfig', 'public'), { joinFormUrl: 'https://forms.example.com/join' });
   await setDoc(doc(db, 'memberAccess', 'admin@example.com'), { email: 'admin@example.com', status: 'active', role: 'admin', memberId: null, source: 'sheet' });
   await setDoc(doc(db, 'memberAccess', 'left@example.com'), { email: 'left@example.com', status: 'inactive', role: 'member', memberId: 'm-l', source: 'sheet' });
   const member = (id, name, inst, label, part, section) => setDoc(doc(db, 'members', id), { displayName: name, instrument: inst, instrumentLabel: label, part, section, status: 'active', bio: '', roleLabel: '' });
@@ -69,6 +72,7 @@ await env.withSecurityRulesDisabled(async ctx => {
   await setDoc(doc(db, 'rehearsals', 'r2'), { title: 'パート練習', date: '', startTime: '', endTime: '', venue: '', content: '', notes: '', target: '', scoreNote: '', attendanceDeadline: null, published: true, createdAt: now, updatedAt: now });
   await setDoc(doc(db, 'announcements', 'n1'), { title: '団員専用ページを公開しました', body: 'ホームから練習予定と出欠を確認できます。', important: true, category: 'general', audience: { type: 'all', values: [] }, published: true, publishedAt: now, createdAt: now, updatedAt: now });
   await setDoc(doc(db, 'announcements', 'n2'), { title: '弦楽器の皆さんへ', body: '分奏の予定を調整中です。', important: false, category: 'practice', audience: { type: 'section', values: ['strings'] }, published: true, publishedAt: now, createdAt: now, updatedAt: now });
+  await setDoc(doc(db, 'announcements', 'n4'), { title: '見学・体験の方へ', body: '初めての方も歓迎です。', important: false, category: 'practice', audience: { type: 'all', values: [] }, forApplicants: true, published: true, publishedAt: now, createdAt: now, updatedAt: now });
   await setDoc(doc(db, 'announcements', 'n3'), { title: '管楽器の皆さんへ', body: '管楽器向けの連絡です。', important: false, category: 'practice', audience: { type: 'section', values: ['woodwind', 'brass'] }, published: true, publishedAt: now, createdAt: now, updatedAt: now });
 });
 
@@ -437,6 +441,54 @@ try {
     await page.getByRole('button', { name: '保存', exact: true }).click();
     await page.getByText('前向きに検討します').first().waitFor();
     check('運営が提案に返信できた', true);
+    await ctx.close();
+  }
+
+
+  console.log('■ 参加希望者（応募しただけの人）');
+  {
+    const { ctx, page } = await newPhone();
+    page.on('pageerror', e => pageErrors.push(e.message));
+    await emailLinkLogin(page, 'hopeful@example.com');
+    await page.getByText('参加希望者として登録されています').waitFor();
+    check('ホームに「参加希望者として登録されています」', true);
+    check('正式加入確認フォームへのボタン', (await page.getByRole('link', { name: '正式加入確認フォームへ' }).getAttribute('href')) === 'https://forms.example.com/join');
+    check('あいさつに自分の名前', await page.getByText('きぼうさん').first().isVisible());
+    check('「みんなで」タブは出ない', !(await page.getByRole('link', { name: 'みんなで' }).isVisible()));
+    check('楽譜・提案・団員一覧のタイルは出ない', !(await page.getByRole('link', { name: /楽譜/ }).isVisible()) && !(await page.getByRole('link', { name: /団員一覧/ }).isVisible()));
+    check('参加希望者向けのお知らせはホームに出る', await appears(page.getByText('見学・体験の方へ')));
+    check('団員だけのお知らせは出ない', !(await page.getByText('団員専用ページを公開しました').isVisible()));
+    await page.screenshot({ path: `${SHOTS}/16-applicant-home.png`, fullPage: true });
+
+    await page.getByRole('link', { name: '詳細・出欠' }).click();
+    await page.getByRole('button', { name: '出席' }).click();
+    await page.getByText('「出席」で登録しました。').waitFor();
+    const saved = await readAsOwner('rehearsals/r1/attendance/ap-1');
+    check('練習の出欠を登録できる', saved?.status === 'present', JSON.stringify(saved));
+
+    await page.goto(BASE + '/members');
+    await page.getByText('参加希望者として登録されています').waitFor();
+    check('団員一覧を直接開いてもホームに戻る', !page.url().includes('/members'));
+    await page.goto(BASE + '/scores');
+    await page.getByText('参加希望者として登録されています').waitFor();
+    check('楽譜を直接開いてもホームに戻る', !page.url().includes('/scores'));
+
+    await page.getByRole('link', { name: 'マイページ' }).click();
+    check('マイページの権限は「参加希望者」', await appears(page.getByText('参加希望者', { exact: true })));
+    await ctx.close();
+  }
+
+  console.log('■ 管理者：参加希望者の出欠');
+  {
+    const { ctx, page } = await newPhone();
+    page.on('pageerror', e => pageErrors.push(e.message));
+    await emailLinkLogin(page, 'admin@example.com');
+    await page.getByRole('link', { name: '運営' }).click();
+    await page.getByRole('link', { name: '練習・出欠' }).click();
+    await page.getByText('第1回 合奏練習').click();
+    await page.getByText('出欠状況').waitFor();
+    await page.getByText(/参加希望者（見学・体験）1人/).waitFor({ timeout: 8000 }).catch(() => {});
+    check('参加希望者の出欠を団員とは別に表示', await page.getByText(/参加希望者（見学・体験）1人/).isVisible());
     await ctx.close();
   }
 

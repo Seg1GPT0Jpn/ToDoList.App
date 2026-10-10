@@ -6,7 +6,7 @@ import { AttendanceBadge } from '../components/Badges';
 import { Empty, ErrorNote, Loading } from '../components/Layout';
 import { getServices } from '../firebase';
 import { summarizeAttendance } from '../lib/attendance';
-import { useAllAttendance, useMembers, useRehearsal, useRehearsals } from '../lib/data';
+import { useAllAttendance, useApplicants, useMembers, useRehearsal, useRehearsals } from '../lib/data';
 import { endOfDayJst, formatDateJa, formatTimeRange, orTbd, toDateInput } from '../lib/dates';
 import type { Rehearsal } from '../lib/types';
 
@@ -216,6 +216,7 @@ function RehearsalForm({ id, initial }: { id: string | null; initial: FormState 
 function AttendanceSummary({ rehearsalId }: { rehearsalId: string }) {
   const { isStaff } = useAuth();
   const members = useMembers();
+  const applicants = useApplicants(isStaff);
   const records = useAllAttendance(rehearsalId, isStaff);
   const [showList, setShowList] = useState(false);
 
@@ -225,6 +226,8 @@ function AttendanceSummary({ rehearsalId }: { rehearsalId: string }) {
   if (members.loading || records.loading) return <Loading />;
 
   const active = members.data.filter(m => m.status === 'active');
+  // 参加希望者（見学・体験）は団員の集計とは分けて、回答した人だけ表示
+  const guests = applicants.data.filter(a => a.status === 'active' && byId.has(a.id));
 
   return (
     <section className="card" aria-labelledby="att-sum">
@@ -270,6 +273,30 @@ function AttendanceSummary({ rehearsalId }: { rehearsalId: string }) {
             );
           })}
         </ul>
+      )}
+
+      {guests.length > 0 && (
+        <div style={{ marginTop: '1rem' }}>
+          <h3 className="h3">参加希望者（見学・体験）{guests.length}人</h3>
+          <p className="small muted">団員の出欠集計には含めていません。</p>
+          <ul className="roster">
+            {guests.map(a => {
+              const r = byId.get(a.id);
+              return (
+                <li key={a.id}>
+                  <div className="row">
+                    <span className="roster__name">{a.displayName}</span>
+                    <span className="small muted">{a.instrumentLabel}</span>
+                    <span className="badge">参加希望</span>
+                    <span className="spacer" />
+                    <AttendanceBadge status={r?.status} />
+                  </div>
+                  {r?.comment && <p className="small" style={{ marginTop: '0.25rem' }}>{r.comment}</p>}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       )}
     </section>
   );

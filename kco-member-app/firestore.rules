@@ -4,8 +4,10 @@ rules_version = '2';
 // かながわコネクトオーケストラ 団員専用アプリ  Firestore Security Rules
 //
 // 基本方針
-//  ・アプリを使えるのは「加入確定（スプレッドシートの対応状況＝正式参加）」の人だけ。
-//    → memberAccess/{メールアドレス} が status == 'active' のときだけ団員情報を読める。
+//  ・ログインできるのは、スプレッドシートの同期で memberAccess/{メールアドレス} が作られた人だけ。
+//    stage == 'member'    … 加入確定（対応状況＝正式参加・活動休止）の団員と運営
+//    stage == 'applicant' … 応募しただけの参加希望者。練習予定・出欠・演奏会・団員数と、
+//                           「参加希望者にも表示」のお知らせだけ（団員一覧・楽譜・アンケート・提案は不可）
 //  ・memberAccess（ログイン許可・権限）は Apps Script の同期だけが書き込む。
 //    （Apps Script は IAM 権限で書き込むためルールの対象外。アプリからは誰も書けない）
 //  ・管理者（admin）・運営補助（staff）の判定もこのルールで行う（画面側の判定は表示用のみ）。
@@ -71,6 +73,17 @@ service cloud.firestore {
       return access().get('memberId', null);
     }
 
+    // 段階：'member'（正式参加の団員・運営）／'applicant'（応募しただけの参加希望者）
+    // 古い同期で作られた許可には stage が無いため、無いときは団員として扱う
+    function stage() {
+      return access().get('stage', 'member');
+    }
+
+    // 団員だけが見られる情報（団員一覧・楽譜・アンケート・提案）を読める
+    function isMemberStage() {
+      return canRead() && stage() == 'member';
+    }
+
     // 自分のパート（同期が memberAccess に書き込む。楽譜の閲覧範囲に使う）
     function myPart() {
       return access().get('part', '');
@@ -127,13 +140,14 @@ service cloud.firestore {
 
     function validAnnouncement(d) {
       return d.keys().hasOnly(['title', 'body', 'important', 'category', 'audience', 'published',
-                               'publishedAt', 'createdAt', 'updatedAt'])
+                               'publishedAt', 'forApplicants', 'createdAt', 'updatedAt'])
         && d.keys().hasAll(['title', 'body', 'important', 'category', 'audience', 'published', 'updatedAt'])
         && nonEmptyStr(d.title, 120)
         && str(d.body, 5000)
         && d.important is bool
         && d.category in ['general', 'practice', 'concert', 'score', 'venue', 'submission']
         && validAudience(d.audience)
+        && d.get('forApplicants', false) is bool
         && d.published is bool
         && (d.get('publishedAt', null) == null || d.publishedAt is timestamp)
         && d.updatedAt == request.time;
@@ -232,7 +246,8 @@ service cloud.firestore {
     }
 
     function validNotification(d) {
-      return d.keys().hasOnly(['title', 'body', 'url', 'audience', 'status', 'source', 'createdAt', 'createdBy'])
+      return d.keys().hasOnly(['title', 'body', 'url', 'audience', 'includeApplicants', 'status', 'source', 'createdAt', 'createdBy'])
+        && d.get('includeApplicants', false) is bool
         && nonEmptyStr(d.title, 60)
         && str(d.body, 200)
         && str(d.url, 200) && (d.url == '' || d.url.matches('^/[A-Za-z0-9/_#?=&-]*$'))
@@ -290,10 +305,11 @@ service cloud.firestore {
 
     // 団員の公開プロフィール（団員同士で見えるのはここだけ）
     match /members/{memberId} {
-      allow read: if canRead();
+      allow read: if isMemberStage();
 
       // 本人は表示名と自己紹介だけ変更できる（楽器・状態は運営が管理）
       allow update: if isActive()
+        && stage() == 'member'
         && memberId == myMemberId()
         && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['displayName', 'bio', 'updatedAt'])
         && nonEmptyStr(request.resource.data.displayName, 30)
@@ -309,6 +325,12 @@ service cloud.firestore {
         && request.resource.data.updatedAt == request.time;
 
       allow create, delete: if false;
+    }
+
+    // 参加希望者のプロフィール（同期だけが書き込む）。本人と運営だけが読める（団員一覧には出ない）
+    match /applicants/{applicantId} {
+      allow read: if canRead() && (applicantId == myMemberId() || isStaff());
+      allow write: if false;
     }
 
     // 団員数・パート別人数（同期が書き込む）
@@ -345,8 +367,12 @@ service cloud.firestore {
     }
 
     // お知らせ（対象指定は表示の絞り込み用。団員全員が読める）
+    // 参加希望者は「参加希望者にも表示」にしたお知らせだけ読める
     match /announcements/{announcementId} {
-      allow read: if canRead() && (resource.data.published == true || isStaff());
+      allow read: if canRead()
+        && ((resource.data.published == true
+             && (stage() == 'member' || resource.data.get('forApplicants', false) == true))
+            || isStaff());
       allow create: if isStaff() && validAnnouncement(request.resource.data)
         && request.resource.data.createdAt == request.time;
       allow update: if isStaff() && validAnnouncement(request.resource.data)
@@ -363,7 +389,7 @@ service cloud.firestore {
 
     // ---------- アンケート ----------
     match /surveys/{surveyId} {
-      allow read: if canRead() && (resource.data.published == true || isStaff());
+      allow read: if isMemberStage() && (resource.data.published == true || isStaff());
       allow create: if isStaff() && validSurvey(request.resource.data)
         && request.resource.data.createdAt == request.time;
       allow update: if isStaff() && validSurvey(request.resource.data)
@@ -373,8 +399,9 @@ service cloud.firestore {
       // 回答（ドキュメントID = 団員ID → 1人1回答。受付中は何度でも修正できる）
       // 匿名アンケートでも運営画面には名前を出さない（データ上の団員IDは管理者のみ確認可能）
       match /responses/{memberId} {
-        allow read: if canRead() && (memberId == myMemberId() || isStaff());
+        allow read: if isMemberStage() && (memberId == myMemberId() || isStaff());
         allow create, update: if isActive()
+          && stage() == 'member'
           && myMemberId() != null
           && memberId == myMemberId()
           && validResponse(request.resource.data)
@@ -386,13 +413,14 @@ service cloud.firestore {
     // ---------- 団員からの提案 ----------
     // visibility: 'members' = 団員みんなに公開／'staff' = 運営だけに届く
     match /proposals/{proposalId} {
-      allow read: if canRead()
+      allow read: if isMemberStage()
         && (resource.data.visibility == 'members'
             || resource.data.authorId == myMemberId()
             || isStaff());
 
       // 投稿：表示名は本人の団員プロフィールと同じものだけ（なりすまし防止）
       allow create: if isActive()
+        && stage() == 'member'
         && myMemberId() != null
         && request.resource.data.keys().hasOnly(['title', 'body', 'category', 'visibility', 'authorId', 'authorName',
                                                  'status', 'staffReply', 'supportCount', 'createdAt', 'updatedAt'])
@@ -422,6 +450,7 @@ service cloud.firestore {
 
       // 「いいね（賛成）」の数：supports の追加・削除と同時にだけ ±1 できる
       allow update: if isActive()
+        && stage() == 'member'
         && myMemberId() != null
         && (resource.data.visibility == 'members' || resource.data.authorId == myMemberId())
         && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['supportCount'])
@@ -439,13 +468,15 @@ service cloud.firestore {
         || (isActive() && resource.data.authorId == myMemberId() && resource.data.status == 'open');
 
       match /supports/{memberId} {
-        allow read: if canRead() && memberId == myMemberId();
+        allow read: if isMemberStage() && memberId == myMemberId();
         allow create: if isActive()
+          && stage() == 'member'
           && memberId == myMemberId()
           && request.resource.data.keys().hasOnly(['createdAt'])
           && request.resource.data.createdAt == request.time
           && getAfter(proposalPath(proposalId)).data.supportCount == get(proposalPath(proposalId)).data.supportCount + 1;
         allow delete: if isActive()
+          && stage() == 'member'
           && memberId == myMemberId()
           && getAfter(proposalPath(proposalId)).data.supportCount == get(proposalPath(proposalId)).data.supportCount - 1;
         allow update: if false;
@@ -456,7 +487,7 @@ service cloud.firestore {
     // parts に 'all' または自分のパートが含まれる楽譜だけ読める（運営はすべて）
     match /scores/{scoreId} {
       allow read: if isStaff()
-        || (canRead() && resource.data.published == true
+        || (isMemberStage() && resource.data.published == true
             && ('all' in resource.data.parts || myPart() in resource.data.parts));
       allow create: if isStaff() && validScore(request.resource.data)
         && request.resource.data.createdAt == request.time;
@@ -493,8 +524,12 @@ service cloud.firestore {
       allow read: if canRead();
       allow write: if isAdmin()
         && docId == 'public'
-        && request.resource.data.keys().hasOnly(['vapidKey', 'updatedAt'])
+        && request.resource.data.keys().hasOnly(['vapidKey', 'joinFormUrl', 'updatedAt'])
         && str(request.resource.data.vapidKey, 200)
+        && str(request.resource.data.get('joinFormUrl', ''), 500)
+        // 正式加入確認フォームの URL はスプレッドシートの同期だけが変更する
+        && ((resource == null && request.resource.data.get('joinFormUrl', '') == '')
+            || (resource != null && request.resource.data.get('joinFormUrl', '') == resource.data.get('joinFormUrl', '')))
         && request.resource.data.updatedAt == request.time;
     }
 

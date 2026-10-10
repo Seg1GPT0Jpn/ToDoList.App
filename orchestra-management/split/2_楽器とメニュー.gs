@@ -256,6 +256,15 @@ function handleSpreadsheetFormSubmit(e) {
       }
     }
 
+    // 応募した人を団員アプリに「参加希望者」として登録する（AppSync.gs があり、設定が「はい」の場合）
+    if (typeof globalThis.appSyncOnFormSubmit_ === 'function') {
+      try {
+        globalThis.appSyncOnFormSubmit_();
+      } catch (e) {
+        console.error('団員アプリへの同期に失敗: ' + e.message);
+      }
+    }
+
   } catch (err) {
 
     recordAutoSync_(null, err);

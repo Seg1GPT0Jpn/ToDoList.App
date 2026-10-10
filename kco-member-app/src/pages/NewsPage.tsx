@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useAuth } from '../auth/AuthProvider';
 import { CategoryBadge } from '../components/Badges';
 import { Empty, ErrorNote, Loading, PageTitle } from '../components/Layout';
-import { useAnnouncements, useMember } from '../lib/data';
+import { useAnnouncements, useMyProfile } from '../lib/data';
 import { audienceLabel, isForMe } from '../lib/parts';
 
 function formatPublished(ts: { toDate(): Date } | null): string {
@@ -11,9 +11,9 @@ function formatPublished(ts: { toDate(): Date } | null): string {
 }
 
 export function NewsPage() {
-  const { access } = useAuth();
-  const me = useMember(access?.memberId ?? null);
-  const news = useAnnouncements();
+  const { access, isApplicant } = useAuth();
+  const me = useMyProfile(access?.memberId ?? null, isApplicant);
+  const news = useAnnouncements(false, isApplicant);
   const [onlyMine, setOnlyMine] = useState(true);
 
   useEffect(() => {

@@ -35,6 +35,7 @@ service firebase.storage {
       let score = firestore.get(/databases/(default)/documents/scores/$(scoreId)).data;
       return hasAccess()
         && access().status in ['active', 'paused']
+        && access().get('stage', 'member') == 'member'
         && score.published == true
         && ('all' in score.parts || access().get('part', '') in score.parts);
     }

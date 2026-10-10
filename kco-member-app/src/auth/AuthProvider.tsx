@@ -38,6 +38,8 @@ interface AuthValue {
   state: AccessState;
   isStaff: boolean;
   isAdmin: boolean;
+  /** 応募しただけの参加希望者（団員一覧・楽譜・アンケート・提案は使えない） */
+  isApplicant: boolean;
   canWrite: boolean;
   sendEmailLink: (email: string) => Promise<void>;
   completeEmailLink: (email?: string) => Promise<'done' | 'need-email' | 'not-link'>;
@@ -82,7 +84,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           status: d.status === 'active' || d.status === 'paused' ? d.status : 'inactive',
           role: d.role === 'admin' || d.role === 'staff' ? d.role : 'member',
           memberId: typeof d.memberId === 'string' ? d.memberId : null,
-          part: typeof d.part === 'string' ? d.part : ''
+          part: typeof d.part === 'string' ? d.part : '',
+          stage: d.stage === 'applicant' ? 'applicant' : 'member'
         };
         setAccess(a);
         setState(a.status);
@@ -161,6 +164,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       state,
       isStaff: active && (role === 'staff' || role === 'admin'),
       isAdmin: active && role === 'admin',
+      isApplicant: access?.stage === 'applicant' && role === 'member',
       canWrite: active,
       sendEmailLink,
       completeEmailLink,

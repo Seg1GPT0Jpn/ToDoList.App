@@ -33,6 +33,10 @@ export function AdminDashboard() {
           <p className="stat-tile__value">{s?.memberCount ?? 0}</p>
         </div>
         <div className="stat-tile">
+          <p className="stat-tile__label">アプリ登録の参加希望者</p>
+          <p className="stat-tile__value">{s?.applicantCount ?? 0}</p>
+        </div>
+        <div className="stat-tile">
           <p className="stat-tile__label">目標</p>
           <p className="stat-tile__value">{s?.targetMembers ?? 80}</p>
         </div>

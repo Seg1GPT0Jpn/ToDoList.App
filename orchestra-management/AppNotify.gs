@@ -141,7 +141,7 @@ function appNotifyCore_(options) {
       // 先に「送信中」にしてから送る（途中で止まっても二重には送らない）
       client.commit([appSyncWrite_('notifications/' + n.id, { status: 'sending', startedAt: now }, ['status', 'startedAt'])]);
 
-      const targets = appNotifyTargets_(recipients, n.fields.audience);
+      const targets = appNotifyTargets_(recipients, n.fields.audience, n.fields.includeApplicants === true);
       const outcome = appNotifySend_(settings.projectId, targets.map(t => t.token), {
         title: String(n.fields.title || 'お知らせ').slice(0, 60),
         body: String(n.fields.body || '').slice(0, 200),
@@ -220,6 +220,8 @@ function appNotifyQueueReminders_(client, now) {
             body,
             url: '/schedule/' + r.id,
             audience: { type: 'all', values: [] },
+            // 参加希望者も練習に出欠を付けられるため、前日通知は参加希望者にも送る
+            includeApplicants: true,
             status: 'pending',
             source: 'reminder',
             createdAt: now,
@@ -253,15 +255,18 @@ function appNotifyRecipients_(client) {
     if (!a || (a.status !== 'active' && a.status !== 'paused')) return;
     if (String(d.fields.token || '') !== d.id) return;
     const part = String(a.part || '');
-    out.push({ token: d.id, part, section: APP_SYNC_SECTIONS_[part] || '' });
+    out.push({ token: d.id, part, section: APP_SYNC_SECTIONS_[part] || '', applicant: a.stage === 'applicant' });
   });
 
   return out;
 }
 
 
-/** 対象（全員／セクション／パート）で絞り込む。運営などパートの無い人は「全員」宛てだけ受け取る */
-function appNotifyTargets_(recipients, audience) {
+/**
+ * 対象（全員／セクション／パート）で絞り込む。運営などパートの無い人は「全員」宛てだけ受け取る。
+ * 参加希望者は「参加希望者にも送る」通知（練習の前日通知を含む）だけ受け取る。
+ */
+function appNotifyTargets_(recipients, audience, includeApplicants) {
 
   const type = audience && audience.type;
   const values = (audience && Array.isArray(audience.values)) ? audience.values : [];
@@ -269,6 +274,7 @@ function appNotifyTargets_(recipients, audience) {
 
   return recipients.filter(r => {
     if (r.removed || seen.has(r.token)) return false;
+    if (r.applicant && !includeApplicants) return false;
     let ok = true;
     if (type === 'section' && values.length) ok = values.indexOf(r.section) >= 0;
     if (type === 'part' && values.length) ok = values.indexOf(r.part) >= 0;

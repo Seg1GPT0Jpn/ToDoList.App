@@ -133,7 +133,8 @@ export function toAnnouncement(id: string, d: DocumentData): Announcement {
     category: d.category ?? 'general',
     audience: d.audience ?? { type: 'all', values: [] },
     published: d.published === true,
-    publishedAt: d.publishedAt ?? null
+    publishedAt: d.publishedAt ?? null,
+    forApplicants: d.forApplicants === true
   };
 }
 
@@ -160,6 +161,7 @@ export function useStats() {
   return useDocData<Stats>(['stats', 'summary'], (_id, d) => ({
     memberCount: d.memberCount ?? 0,
     pausedCount: d.pausedCount ?? 0,
+    applicantCount: d.applicantCount ?? 0,
     targetMembers: d.targetMembers ?? 80,
     decisionMembers: d.decisionMembers,
     minimumMembers: d.minimumMembers,
@@ -186,6 +188,16 @@ export function useMember(memberId: string | null) {
   return useDocData(memberId ? ['members', memberId] : null, toMember, [memberId]);
 }
 
+/** 自分のプロフィール（団員は members、参加希望者は applicants） */
+export function useMyProfile(memberId: string | null, isApplicant: boolean) {
+  return useDocData(memberId ? [isApplicant ? 'applicants' : 'members', memberId] : null, toMember, [memberId, isApplicant]);
+}
+
+/** 参加希望者の一覧（運営のみ。出欠の確認用） */
+export function useApplicants(enabled: boolean) {
+  return useQueryData(() => (enabled ? collection(getServices().db, 'applicants') : null), toMember, [enabled]);
+}
+
 /** staff/admin は下書きも含めて取得、団員は公開中のみ */
 export function useRehearsals(includeDrafts = false) {
   return useQueryData(() => {
@@ -208,13 +220,14 @@ export function useAllAttendance(rehearsalId: string | undefined, enabled: boole
     (id, d): Attendance => ({ memberId: id, status: d.status, comment: s(d.comment) }), [rehearsalId, enabled]);
 }
 
-export function useAnnouncements(includeDrafts = false) {
+/** includeDrafts：運営は下書きも／applicantOnly：参加希望者は「参加希望者にも表示」のものだけ */
+export function useAnnouncements(includeDrafts = false, applicantOnly = false) {
   return useQueryData(() => {
     const ref = collection(getServices().db, 'announcements');
-    return includeDrafts
-      ? query(ref, orderBy('updatedAt', 'desc'))
-      : query(ref, where('published', '==', true), orderBy('publishedAt', 'desc'));
-  }, toAnnouncement, [includeDrafts]);
+    if (includeDrafts) return query(ref, orderBy('updatedAt', 'desc'));
+    if (applicantOnly) return query(ref, where('published', '==', true), where('forApplicants', '==', true), orderBy('publishedAt', 'desc'));
+    return query(ref, where('published', '==', true), orderBy('publishedAt', 'desc'));
+  }, toAnnouncement, [includeDrafts, applicantOnly]);
 }
 
 export function useConcerts(includeDrafts = false) {
@@ -255,13 +268,14 @@ export function toSurvey(id: string, d: DocumentData): Survey {
   };
 }
 
-export function useSurveys(includeDrafts = false) {
+export function useSurveys(includeDrafts = false, enabled = true) {
   return useQueryData(() => {
+    if (!enabled) return null;
     const ref = collection(getServices().db, 'surveys');
     return includeDrafts
       ? query(ref, orderBy('createdAt', 'desc'))
       : query(ref, where('published', '==', true), orderBy('createdAt', 'desc'));
-  }, toSurvey, [includeDrafts]);
+  }, toSurvey, [includeDrafts, enabled]);
 }
 
 export function useSurvey(id: string | undefined) {
@@ -375,7 +389,11 @@ export function useNotifications(enabled: boolean) {
 }
 
 export function useAppConfig() {
-  return useDocData(['appConfig', 'public'], (_id, d) => ({ vapidKey: s(d.vapidKey) }), []);
+  return useDocData(['appConfig', 'public'], (_id, d) => ({
+    vapidKey: s(d.vapidKey),
+    // 正式加入確認フォームの URL（スプレッドシートの「加入確認設定」から同期）
+    joinFormUrl: /^https:\/\/\S+$/.test(s(d.joinFormUrl)) ? s(d.joinFormUrl) : ''
+  }), []);
 }
 
 // ---------- 団員募集キャンペーン ----------

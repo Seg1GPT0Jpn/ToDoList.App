@@ -55,7 +55,8 @@ function row(p) {
   return [p.no, p.ts, p.name, '', '社会人', '横浜市', p.inst, '', '10年以上', 'ある', '', '理由', '日程によって変わる', 'ぜひ参加したい', '', p.email, p.status, '', '初回連絡', '', ''];
 }
 
-function makeEnv(people) {
+// 既存のテスト（A〜Q）は「参加希望者もアプリを使える＝いいえ」で、正式参加だけを登録する従来の動きを確認する
+function makeEnv(people, opts = {}) {
   const env = createGasEnvironment({ effectiveUser: 'owner@example.com' });
   const ss = env.spreadsheet;
   const app = ss.insertSheet('応募者一覧');
@@ -64,7 +65,18 @@ function makeEnv(people) {
   form.formUrl = 'https://docs.google.com/forms/d/mock/viewform';
   form._setTable([FORM_HEADERS].concat(people.map(p => [p.ts, p.email, p.name, '', '社会人', '横浜市', p.inst, '', '', '', '', '', '', '', '', ''])));
   const ctx = load(env);
+  if (!opts.raw) {
+    ctx.appSyncEnsureSettingsSheet_(ss);
+    setAppSetting(ss, '参加希望者もアプリを使える', opts.applicants ? 'はい' : 'いいえ');
+    setAppSetting(ss, '応募時に自動でアプリに登録', opts.syncOnSubmit ? 'はい' : 'いいえ');
+  }
   return { env, ss, app, ctx };
+}
+
+function setAppSetting(ss, label, value) {
+  const sheet = ss.getSheetByName('アプリ連携設定');
+  const r = sheet._rows().findIndex(x => x[0] === label) + 1;
+  sheet.getRange(r, 2).setValue(value);
 }
 
 function fsDocs(env, prefix) {
@@ -364,7 +376,7 @@ section('O. パートをログイン許可に含める（楽譜の閲覧範囲�
 /* ============================================================ */
 section('P. 設定シートに新しい項目を追記（既存の値は変えない）');
 {
-  const { env, ss, ctx } = makeEnv(PEOPLE);
+  const { env, ss, ctx } = makeEnv(PEOPLE, { raw: true });
   const sheet = ss.insertSheet('アプリ連携設定');
   sheet._setTable([
     ['アプリ連携設定（団員アプリ）', '', ''], ['項目', '値', '説明'],
@@ -479,6 +491,100 @@ function notifyEnv() {
   const sheet = env.spreadsheet.getSheetByName('アプリ連携設定');
   sheet.getRange(sheet._rows().findIndex(r => r[0] === 'プッシュ通知の送信') + 1, 2).setValue('いいえ');
   check('「いいえ」のときは送信しない', ctx.appNotifyScheduled(), null);
+}
+
+/* ============================================================ */
+section('R. 参加希望者（応募しただけの人）もアプリを使える');
+{
+  const { env, app, ctx } = makeEnv(PEOPLE, { applicants: true });
+  ctx.appSyncRun();
+  const access = fsDocs(env, 'memberAccess');
+  const stageOf = e => access[e] && access[e].stage;
+  check('正式参加は stage=member', [stageOf('p1@example.com'), stageOf('p2@example.com'), stageOf('p3@example.com')], ['member', 'member', 'member']);
+  check('未対応・初回連絡済みの人は stage=applicant でログインできる', [stageOf('p4@example.com'), stageOf('p6@example.com'), stageOf('p9@example.com'), access['p4@example.com'].status], ['applicant', 'applicant', 'applicant', 'active']);
+  check('辞退の人は登録しない', access['p8@example.com'], undefined);
+  check('管理者は stage=member', stageOf('owner@example.com'), 'member');
+  const members = fsDocs(env, 'members');
+  const applicants = fsDocs(env, 'applicants');
+  check('団員一覧（members）に参加希望者は入らない', Object.keys(members).length, 3);
+  check('参加希望者は applicants に（本人と運営だけが読める）', Object.keys(applicants).length, 5);
+  const one = applicants[access['p4@example.com'].memberId];
+  check('参加希望者のプロフィール：表示名・楽器のみ（個人情報なし）', Object.keys(one).filter(k => /mail|area|age|region|reason/i.test(k)), []);
+  check('参加希望者のプロフィールの中身', [one.displayName, one.instrument, one.status], ['じゅん', 'Tuba', 'active']);
+  check('団員数には参加希望者を含めない・参加希望者数を別に記録', [fsDocs(env, 'stats').summary.memberCount, fsDocs(env, 'stats').summary.applicantCount], [3, 5]);
+  check('参加希望者にもアプリIDを振る（出欠の記録用）', col(app, 'アプリID').filter(Boolean).length, 8);
+
+  // 正式参加に変わったら団員に（同じアプリIDのまま）
+  const idBefore = access['p4@example.com'].memberId;
+  setStatus(app, 4, '正式参加');
+  ctx.appSyncRun();
+  const after = fsDocs(env, 'memberAccess')['p4@example.com'];
+  check('正式参加にすると stage=member、アプリIDは同じ（出欠の記録が引き継がれる）', [after.stage, after.memberId], ['member', idBefore]);
+  check('団員プロフィールを作り、参加希望者のプロフィールは停止', [fsDocs(env, 'members')[idBefore].status, fsDocs(env, 'applicants')[idBefore].status], ['active', 'inactive']);
+
+  // 辞退にしたら使えなくなる
+  setStatus(app, 9, '辞退');
+  ctx.appSyncRun();
+  check('辞退にするとログイン許可を停止', fsDocs(env, 'memberAccess')['p9@example.com'].status, 'inactive');
+  check('アプリ利用：参加希望者は「参加希望者」、辞退は「対象外」', [col(app, 'アプリ利用')[5], col(app, 'アプリ利用')[8]], ['参加希望者', '対象外']);
+}
+{
+  // 既存の許可（stage なし）は団員として扱い、同期で stage を書き足す
+  const { env, ctx } = makeEnv(PEOPLE);
+  ctx.appSyncRun();
+  env.firestore.docs.forEach((f, k) => { if (k.startsWith('memberAccess/')) delete f.stage; });
+  ctx.appSyncRun();
+  check('stage が無い既存の許可に stage=member を書き足す', fsDocs(env, 'memberAccess')['p1@example.com'].stage, 'member');
+}
+{
+  const { env, app, ctx } = makeEnv(PEOPLE, { applicants: true, syncOnSubmit: true });
+  ctx.appSyncRun();
+  // 新しい応募がフォームから届く
+  const form = env.spreadsheet.getSheetByName('フォームの回答 1');
+  form.appendRow([new Date(2026, 9, 10, 9), 'new@example.com', 'あたらしい', '', '中学生', '横浜市', 'Fl', '', '', '', '', '', '', '', '', '']);
+  ctx.handleSpreadsheetFormSubmit({});
+  const a = fsDocs(env, 'memberAccess')['new@example.com'];
+  check('応募が届いた時点で参加希望者としてログインできる', [a && a.stage, a && a.status], ['applicant', 'active']);
+  check('応募者一覧にも取り込まれている', col(app, 'メールアドレス').indexOf('new@example.com') >= 0, true);
+  check('トリガーは増やさない', env.triggers.length, 0);
+}
+{
+  const { env, ctx } = makeEnv(PEOPLE, { applicants: true, syncOnSubmit: false });
+  const form = env.spreadsheet.getSheetByName('フォームの回答 1');
+  form.appendRow([new Date(2026, 9, 10, 9), 'new@example.com', 'あたらしい', '', '', '', 'Fl', '', '', '', '', '', '', '', '', '']);
+  ctx.handleSpreadsheetFormSubmit({});
+  check('「応募時に自動でアプリに登録」が「いいえ」なら同期しない', env.firestore.docs.size, 0);
+}
+{
+  const { env, ss, ctx } = makeEnv(PEOPLE, { applicants: true });
+  ctx.membershipEnsureSettingsSheet_(ss);
+  ctx.membershipSetSetting_(ss, 'formUrl', 'https://docs.google.com/forms/d/e/join/viewform');
+  ctx.appSyncRun();
+  check('正式加入確認フォームの URL をアプリに送る（参加希望者のホームに表示）', fsDocs(env, 'appConfig').public.joinFormUrl, 'https://docs.google.com/forms/d/e/join/viewform');
+  env.firestore.docs.get('appConfig/public').vapidKey = { stringValue: 'KEY' };
+  ctx.appSyncRun();
+  check('通知の公開鍵は消さない', fsDocs(env, 'appConfig').public.vapidKey, 'KEY');
+}
+
+{
+  // 通知：参加希望者は「参加希望者にも送る」通知と前日通知だけ受け取る
+  const { env, ctx } = makeEnv(PEOPLE, { applicants: true });
+  ctx.appSyncRun();
+  const sheet = env.spreadsheet.getSheetByName('アプリ連携設定');
+  sheet.getRange(sheet._rows().findIndex(r => r[0] === 'プッシュ通知の送信') + 1, 2).setValue('はい');
+  const put = (path, obj) => env.firestore.docs.set(path, ctx.appSyncEncodeFields_(obj));
+  put('pushTokens/tok-member', { uid: 'u1', accessKey: 'p1@example.com', token: 'tok-member', platform: 'iOS' });
+  put('pushTokens/tok-applicant', { uid: 'u4', accessKey: 'p4@example.com', token: 'tok-applicant', platform: 'iOS' });
+  put('notifications/n-members', { title: '団員へ', body: '', url: '/', audience: { type: 'all', values: [] }, status: 'pending', source: 'manual' });
+  put('notifications/n-both', { title: 'みなさんへ', body: '', url: '/', audience: { type: 'all', values: [] }, includeApplicants: true, status: 'pending', source: 'announcement' });
+  ctx.appNotifyCore_({ now: new Date(2026, 9, 7, 10, 0) });
+  const to = title => env.fcm.sent.filter(x => x.data.title === title).map(x => x.token).sort();
+  check('通常の通知は団員だけ', to('団員へ'), ['tok-member']);
+  check('「参加希望者にも送る」通知は参加希望者にも', to('みなさんへ'), ['tok-applicant', 'tok-member']);
+  const base = { content: '', notes: '', target: '', scoreNote: '', attendanceDeadline: null };
+  put('rehearsals/r1', Object.assign({ title: '合奏', date: '2026-10-08', startTime: '', endTime: '', venue: '', published: true }, base));
+  ctx.appNotifyCore_({ now: new Date(2026, 9, 7, 19, 0) });
+  check('練習の前日通知は参加希望者にも', to('明日は練習です'), ['tok-applicant', 'tok-member']);
 }
 
 console.log('\n============================');

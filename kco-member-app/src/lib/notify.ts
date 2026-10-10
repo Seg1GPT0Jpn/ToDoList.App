@@ -14,7 +14,7 @@ export const NOTIFY_LINKS: { path: string; label: string }[] = [
 ];
 
 /** 通知を予約する（実際の送信は Apps Script が数分ごとに行う） */
-export async function queueNotification(n: { title: string; body: string; url: string; audience: Audience; source: NotificationSource }) {
+export async function queueNotification(n: { title: string; body: string; url: string; audience: Audience; source: NotificationSource; includeApplicants?: boolean }) {
   const { auth, db } = getServices();
   const uid = auth.currentUser?.uid;
   if (!uid) throw new Error('signed-out');
@@ -23,6 +23,7 @@ export async function queueNotification(n: { title: string; body: string; url: s
     body: n.body.replace(/\s+/g, ' ').trim().slice(0, 200),
     url: /^\/[A-Za-z0-9/_#?=&-]*$/.test(n.url) ? n.url.slice(0, 200) : '/',
     audience: { type: n.audience.type, values: n.audience.type === 'all' ? [] : n.audience.values.slice(0, 20) },
+    includeApplicants: n.includeApplicants === true,
     status: 'pending',
     source: n.source,
     createdAt: serverTimestamp(),

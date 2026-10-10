@@ -4,11 +4,11 @@ import { useAuth } from '../auth/AuthProvider';
 import { ErrorNote, Loading, PageTitle } from '../components/Layout';
 import { PushCard } from '../components/PushCard';
 import { getServices } from '../firebase';
-import { useMember } from '../lib/data';
+import { useMyProfile } from '../lib/data';
 
 export function MePage() {
-  const { user, access, canWrite, logout, isAdmin, isStaff } = useAuth();
-  const me = useMember(access?.memberId ?? null);
+  const { user, access, canWrite, logout, isAdmin, isStaff, isApplicant } = useAuth();
+  const me = useMyProfile(access?.memberId ?? null, isApplicant);
   const [displayName, setDisplayName] = useState('');
   const [bio, setBio] = useState('');
   const [saving, setSaving] = useState(false);
@@ -52,7 +52,18 @@ export function MePage() {
       <PageTitle en="My Page">マイページ</PageTitle>
       <ErrorNote message={me.error} />
 
-      {me.data ? (
+      {isApplicant && me.data ? (
+        <div className="card">
+          <h2 className="card__title">プロフィール</h2>
+          <dl className="info">
+            <div className="info__row"><dt>名前</dt><dd>{me.data.displayName}</dd></div>
+            <div className="info__row"><dt>楽器</dt><dd>{me.data.instrumentLabel || '未設定'}</dd></div>
+          </dl>
+          <p className="small muted" style={{ marginTop: '0.5rem' }}>
+            参加希望者として登録されています。正式に加入すると、呼ばれたい名前・自己紹介を設定して団員一覧に表示されるようになります。
+          </p>
+        </div>
+      ) : me.data ? (
         <form className="card" onSubmit={onSubmit}>
           <h2 className="card__title">プロフィール</h2>
           <p className="small muted">ここで設定した内容は、団員一覧で他の団員に表示されます。本名や連絡先は書かないでください。</p>
@@ -86,7 +97,7 @@ export function MePage() {
         <h2 className="card__title">アカウント</h2>
         <dl className="info">
           <div className="info__row"><dt>ログイン中</dt><dd>{user?.email}</dd></div>
-          <div className="info__row"><dt>権限</dt><dd>{isAdmin ? '管理者' : isStaff ? '運営補助' : '団員'}</dd></div>
+          <div className="info__row"><dt>権限</dt><dd>{isAdmin ? '管理者' : isStaff ? '運営補助' : isApplicant ? '参加希望者' : '団員'}</dd></div>
         </dl>
         <p className="small muted" style={{ marginTop: '0.5rem' }}>メールアドレスは他の団員には表示されません。</p>
         <button type="button" className="btn btn--outline" onClick={() => logout()} style={{ marginTop: '0.75rem' }}>ログアウト</button>

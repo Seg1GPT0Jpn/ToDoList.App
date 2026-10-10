@@ -43,7 +43,7 @@ const MEMBERSHIP = {
   intentChoices: ['正式加入を希望する', 'もう少し活動内容を確認してから決めたい', '今回は参加を見送る'],
 
   // アプリ利用の値（「停止」だけは運営が手で選ぶ。それ以外は自動で決まる）
-  appUsageValues: ['対象外', '未発行', '招待準備', '招待済', '利用中', '停止'],
+  appUsageValues: ['対象外', '参加希望者', '未発行', '招待準備', '招待済', '利用中', '停止'],
   // アプリを使える対応状況（活動休止はアプリで閲覧のみ）
   appStatuses: ['正式参加', '活動休止'],
 
@@ -923,7 +923,11 @@ function membershipWriteReview_(ss, review) {
 function membershipAppUsageFor_(r, isPrimary) {
 
   if (r.appUsage === '停止') return '停止';
-  if (!isPrimary || MEMBERSHIP.appStatuses.indexOf(r.status) < 0) return '対象外';
+  if (!isPrimary) return '対象外';
+  // 正式参加でない人：団員アプリに参加希望者として登録済みなら「参加希望者」
+  if (MEMBERSHIP.appStatuses.indexOf(r.status) < 0) {
+    return r.firebaseState === '同期済み' && r.status !== '辞退' ? '参加希望者' : '対象外';
+  }
   if (!r.appId) return '未発行';
   if (r.firebaseState === '同期済み') return r.appUsage === '利用中' ? '利用中' : '招待済';
 
@@ -986,6 +990,21 @@ function membershipRefreshAppUsage_(sheet, syncedRows) {
   sheet.getRange(2, usageCol + 1, lastRow - 1, 1).setDataValidation(rule);
 
   return result;
+}
+
+
+/** 団員アプリに送る正式加入確認フォームの URL（設定シートが無ければ空欄。シートは作らない） */
+function membershipFormUrlForApp_(ss) {
+
+  const sheet = findOwnedSheet_(ss, MEMBERSHIP.settingsSheet, MEMBERSHIP.settingsTitle);
+
+  if (!sheet || sheet.getLastRow() < 1) return '';
+
+  const label = MEMBERSHIP_ITEMS_.find(i => i.key === 'formUrl').label;
+  const row = sheet.getRange(1, 1, sheet.getLastRow(), 2).getValues().find(r => toStr_(r[0]) === label);
+  const url = row ? toStr_(row[1]) : '';
+
+  return /^https:\/\/\S+$/.test(url) ? url : '';
 }
 
 

@@ -42,7 +42,7 @@ function Tab({ to, icon, label, end }: { to: string; icon: string; label: string
 }
 
 export function Layout() {
-  const { isStaff, state } = useAuth();
+  const { isStaff, isApplicant, state } = useAuth();
 
   return (
     <>
@@ -73,7 +73,7 @@ export function Layout() {
         <Tab to="/" icon="home" label="ホーム" end />
         <Tab to="/schedule" icon="schedule" label="予定" />
         <Tab to="/news" icon="news" label="お知らせ" />
-        <Tab to="/together" icon="together" label="みんなで" />
+        {!isApplicant && <Tab to="/together" icon="together" label="みんなで" />}
         <Tab to="/me" icon="me" label="マイページ" />
       </nav>
     </>

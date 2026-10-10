@@ -32,6 +32,8 @@ const APP_SYNC = {
   settingsSheet: 'アプリ連携設定',
   settingsTitle: 'アプリ連携設定（団員アプリ）',
   joinedStatus: '正式参加',
+  // この対応状況の人はアプリを使えない（参加希望者としても登録しない）
+  noAccessStatuses: ['辞退'],
   // 加入確定後に休んでいる団員（アプリは閲覧のみ。出欠・回答はできない）
   pausedStatus: '活動休止',
   defaultProjectId: 'kanagawa-connect-official',
@@ -50,6 +52,8 @@ const APP_SYNC_ITEMS_ = [
   { key: 'adminEmails', label: '管理者のメールアドレス', def: () => appSyncCurrentUserEmail_(), desc: 'カンマ区切り。アプリの管理画面をすべて使えます' },
   { key: 'staffEmails', label: '運営補助のメールアドレス', def: () => '', desc: 'カンマ区切り。練習予定・お知らせを作成できます（演奏会情報・応募者数は不可）' },
   { key: 'autoSync', label: '自動同期（15分ごと）', def: () => 'いいえ', desc: 'はい／いいえ。「はい」にして「自動同期を設定」を実行すると定期的に同期します' },
+  { key: 'applicantAccess', label: '参加希望者もアプリを使える', def: () => 'はい', desc: 'はい／いいえ。「はい」なら、応募した人（辞退以外）も「参加希望者」としてログインできます（練習予定・出欠・演奏会・参加希望者向けのお知らせのみ。団員一覧・楽譜などは見られません）' },
+  { key: 'syncOnSubmit', label: '応募時に自動でアプリに登録', def: () => 'はい', desc: 'はい／いいえ。「はい」なら、参加希望フォームが送信されたときに自動で団員アプリへ同期します' },
   { key: 'pushEnabled', label: 'プッシュ通知の送信', def: () => 'いいえ', desc: 'はい／いいえ。「はい」にして「通知の送信を設定」を実行すると、アプリで予約した通知を10分ごとに送ります' },
   { key: 'reminderEnabled', label: '練習の前日通知', def: () => 'はい', desc: 'はい／いいえ。公開中の練習の前日に「明日は練習です」と通知します（プッシュ通知の送信が「はい」のとき）' },
   { key: 'reminderHour', label: '前日通知の時刻（時）', def: () => 18, desc: '0〜23。この時刻以降の最初の送信で前日通知を送ります' }
@@ -143,6 +147,24 @@ function appSyncScheduled() {
 }
 
 
+/**
+ * 参加希望フォームが送信されたとき（handleSpreadsheetFormSubmit）に呼ばれる。
+ * 「応募時に自動でアプリに登録」が「はい」なら同期する（大量の利用停止は自動では行わない）
+ */
+function appSyncOnFormSubmit_() {
+
+  const settings = appSyncSettings_(SpreadsheetApp.getActiveSpreadsheet());
+
+  if (!settings.syncOnSubmit) return null;
+
+  const result = appSyncCore_({ dryRun: false, allowMassDeactivation: false });
+
+  if (result.error && !result.busy) console.error('応募時の団員アプリ同期に失敗: ' + result.error);
+
+  return result;
+}
+
+
 /** 「アプリ連携設定」シートを開く（無ければ作る） */
 function appSyncOpenSettings() {
 
@@ -229,6 +251,7 @@ function appSyncCore_(options) {
 
     result.newIds = desired.newIdRows.length;
     result.members = desired.members.length;
+    result.applicants = desired.applicants.length;
     result.paused = desired.members.filter(m => m.status === 'paused').length;
 
     // 2. いまの Firestore の状態を読む
@@ -237,12 +260,17 @@ function appSyncCore_(options) {
     const existingMembers = client.list('members');
     const existingStats = client.get('stats/summary');
     const existingAdminStats = client.get('adminStats/summary');
+    const existingApplicants = client.list('applicants');
+    const existingConfig = client.get('appConfig/public');
 
     // 3. 書き込み内容を計算
     const plan = appSyncPlan_(desired, settings, existingAccess, existingMembers, {
       stats: existingStats,
       adminStats: existingAdminStats,
-      applicants: app.records
+      applicants: app.records,
+      existingApplicants,
+      appConfig: existingConfig,
+      joinFormUrl: typeof globalThis.membershipFormUrlForApp_ === 'function' ? globalThis.membershipFormUrlForApp_(ss) : undefined
     });
 
     Object.assign(result, plan.counts);
@@ -270,7 +298,7 @@ function appSyncCore_(options) {
     // 5. 応募者一覧の「Firebase連携状態」「アプリ利用」に結果を書き戻す（Membership.gs がある場合）
     if (typeof globalThis.membershipAfterAppSync_ === 'function') {
       try {
-        globalThis.membershipAfterAppSync_(ss, new Set(desired.members.map(m => m.row)));
+        globalThis.membershipAfterAppSync_(ss, new Set(desired.members.concat(desired.applicants).map(m => m.row)));
       } catch (e) {
         result.problems.push('「アプリ利用」列の更新に失敗しました（同期自体は完了）');
         console.error('アプリ利用の更新に失敗: ' + e.message);
@@ -315,64 +343,71 @@ function appSyncDesiredMembers_(app, settings, result) {
     if (list.length > 1) result.problems.push('アプリID「' + id + '」が ' + noLabel_(list) + ' に重複しています（同期対象外）');
   });
 
-  app.records
-    .slice()
-    .sort(compareByNo_)
-    .forEach(r => {
+  // 正式参加（活動休止）の人を先に処理する：同じメールアドレスの重複行で、
+  // 参加希望の行が先に登録されて団員が「参加希望者」扱いになるのを防ぐ
+  const isMemberStatus = r => r.status === APP_SYNC.joinedStatus || r.status === APP_SYNC.pausedStatus;
+  const isApplicantStatus = r => settings.applicantAccess &&
+    CONFIG.statuses.indexOf(r.status) >= 0 && APP_SYNC.noAccessStatuses.indexOf(r.status) < 0 && !isMemberStatus(r);
+  const sorted = app.records.slice().sort(compareByNo_);
+  const applicants = [];
 
-      if (r.status !== APP_SYNC.joinedStatus && r.status !== APP_SYNC.pausedStatus) return;
+  const add = (r, stage) => {
 
-      // 運営が「アプリ利用」を「停止」にした人は登録しない（正式参加のままでも）
-      if (r.appUsage === '停止') {
-        result.stopped = (result.stopped || 0) + 1;
-        return;
-      }
+    // 運営が「アプリ利用」を「停止」にした人は登録しない（正式参加のままでも）
+    if (r.appUsage === '停止') {
+      result.stopped = (result.stopped || 0) + 1;
+      return;
+    }
 
-      const email = emailKey_(toStr_(r.appEmail) || toStr_(r.email));
+    const email = emailKey_(toStr_(r.appEmail) || toStr_(r.email));
 
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        result.problems.push(noLabel_([r]) + '：メールアドレスが無いか正しくないため、アプリに登録できません');
-        return;
-      }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      if (stage === 'member') result.problems.push(noLabel_([r]) + '：メールアドレスが無いか正しくないため、アプリに登録できません');
+      return;
+    }
 
-      if (usedEmails.has(email)) {
-        result.problems.push(noLabel_([r]) + '：' + noLabel_([usedEmails.get(email)]) + ' と同じメールアドレスのため、アプリには1人分だけ登録します');
-        return;
-      }
+    if (usedEmails.has(email)) {
+      if (stage === 'member') result.problems.push(noLabel_([r]) + '：' + noLabel_([usedEmails.get(email)]) + ' と同じメールアドレスのため、アプリには1人分だけ登録します');
+      return;
+    }
 
-      let id = toStr_(r.appId);
+    let id = toStr_(r.appId);
 
-      if (id && (usedIds.get(id) || []).length > 1) return;
+    if (id && (usedIds.get(id) || []).length > 1) return;
 
-      if (!id) {
-        id = appSyncNewId_();
-        newIdRows.push({ row: r.row, id });
-      }
+    if (!id) {
+      id = appSyncNewId_();
+      newIdRows.push({ row: r.row, id });
+    }
 
-      usedEmails.set(email, r);
+    usedEmails.set(email, r);
 
-      const parsed = parseInstrumentCell_(r.instrument, index);
-      const code = parsed.primaryCode || '';
-      const info = code ? index.info[code] : null;
-      const part = info ? (info.part || code) : '';
+    const parsed = parseInstrumentCell_(r.instrument, index);
+    const code = parsed.primaryCode || '';
+    const info = code ? index.info[code] : null;
+    const part = info ? (info.part || code) : '';
 
-      if (!code) result.problems.push(noLabel_([r]) + '：楽器を判定できないため「未設定」で登録します');
+    if (!code && stage === 'member') result.problems.push(noLabel_([r]) + '：楽器を判定できないため「未設定」で登録します');
 
-      members.push({
-        id,
-        email,
-        row: r.row,
-        no: r.no,
-        displayName: appSyncDisplayName_(r),
-        instrument: code,
-        instrumentLabel: info ? info.name : toStr_(r.instrument),
-        part,
-        section: APP_SYNC_SECTIONS_[part] || 'other',
-        status: r.status === APP_SYNC.pausedStatus ? 'paused' : 'active'
-      });
+    (stage === 'member' ? members : applicants).push({
+      id,
+      email,
+      row: r.row,
+      no: r.no,
+      displayName: appSyncDisplayName_(r),
+      instrument: code,
+      instrumentLabel: info ? info.name : toStr_(r.instrument),
+      part,
+      section: APP_SYNC_SECTIONS_[part] || 'other',
+      status: r.status === APP_SYNC.pausedStatus ? 'paused' : 'active',
+      stage
     });
+  };
 
-  return { members, newIdRows };
+  sorted.filter(isMemberStatus).forEach(r => add(r, 'member'));
+  sorted.filter(isApplicantStatus).forEach(r => add(r, 'applicant'));
+
+  return { members, applicants, newIdRows };
 }
 
 
@@ -407,7 +442,8 @@ function appSyncPlan_(desired, settings, existingAccess, existingMembers, extra)
 
   const now = new Date();
   const writes = [];
-  const counts = { accessCreate: 0, accessUpdate: 0, accessDeactivate: 0, memberCreate: 0, memberUpdate: 0, memberDeactivate: 0, statsChanged: false };
+  const counts = { accessCreate: 0, accessUpdate: 0, accessDeactivate: 0, memberCreate: 0, memberUpdate: 0, memberDeactivate: 0, applicantCreate: 0, applicantUpdate: 0, applicantDeactivate: 0, statsChanged: false };
+  const applicants = desired.applicants || [];
   const accessById = new Map(existingAccess.map(d => [d.id, d.fields]));
   const membersById = new Map(existingMembers.map(d => [d.id, d.fields]));
   const roleOf = email => (settings.adminEmails.indexOf(email) >= 0 ? 'admin' : settings.staffEmails.indexOf(email) >= 0 ? 'staff' : 'member');
@@ -415,23 +451,29 @@ function appSyncPlan_(desired, settings, existingAccess, existingMembers, extra)
   // ---- memberAccess（ログイン許可）----
   const desiredAccess = new Map();
 
-  desired.members.forEach(m => desiredAccess.set(m.email, { status: m.status || 'active', role: roleOf(m.email), memberId: m.id, part: m.part || '' }));
+  desired.members.forEach(m => desiredAccess.set(m.email, { status: m.status || 'active', role: roleOf(m.email), memberId: m.id, part: m.part || '', stage: 'member' }));
+
+  // 参加希望者：団員だけの情報は見られない段階（運営・管理者のアドレスなら団員と同じ扱い）
+  applicants.forEach(a => {
+    const role = roleOf(a.email);
+    desiredAccess.set(a.email, { status: 'active', role, memberId: a.id, part: a.part || '', stage: role === 'member' ? 'applicant' : 'member' });
+  });
 
   settings.adminEmails.concat(settings.staffEmails).forEach(email => {
-    if (!desiredAccess.has(email)) desiredAccess.set(email, { status: 'active', role: roleOf(email), memberId: null, part: '' });
+    if (!desiredAccess.has(email)) desiredAccess.set(email, { status: 'active', role: roleOf(email), memberId: null, part: '', stage: 'member' });
   });
 
   desiredAccess.forEach((want, email) => {
     const cur = accessById.get(email);
-    const data = { email, status: want.status, role: want.role, memberId: want.memberId, part: want.part, source: 'sheet', updatedAt: now };
+    const data = { email, status: want.status, role: want.role, memberId: want.memberId, part: want.part, stage: want.stage, source: 'sheet', updatedAt: now };
     if (!cur) {
       writes.push(appSyncWrite_('memberAccess/' + email, data, null));
       counts.accessCreate++;
       return;
     }
     if (cur.status !== want.status || cur.role !== want.role || (cur.memberId || null) !== want.memberId ||
-        (cur.part || '') !== want.part || cur.source !== 'sheet') {
-      writes.push(appSyncWrite_('memberAccess/' + email, data, ['email', 'status', 'role', 'memberId', 'part', 'source', 'updatedAt']));
+        (cur.part || '') !== want.part || (cur.stage || 'member') !== want.stage || !cur.stage || cur.source !== 'sheet') {
+      writes.push(appSyncWrite_('memberAccess/' + email, data, ['email', 'status', 'role', 'memberId', 'part', 'stage', 'source', 'updatedAt']));
       counts.accessUpdate++;
     }
   });
@@ -469,6 +511,40 @@ function appSyncPlan_(desired, settings, existingAccess, existingMembers, extra)
     counts.memberDeactivate++;
   });
 
+  // ---- applicants（参加希望者のプロフィール。本人と運営だけが読める）----
+  // 表示名もスプレッドシートの内容で管理する（参加希望者はアプリで変更しない）
+  const applicantsById = new Map((extra.existingApplicants || []).map(d => [d.id, d.fields]));
+  const applicantIds = new Set(applicants.map(a => a.id));
+
+  applicants.forEach(a => {
+    const cur = applicantsById.get(a.id);
+    const managed = { displayName: a.displayName, instrument: a.instrument, instrumentLabel: a.instrumentLabel, part: a.part, section: a.section, status: 'active' };
+    if (!cur) {
+      writes.push(appSyncWrite_('applicants/' + a.id, Object.assign({ bio: '', createdAt: now, updatedAt: now }, managed), null));
+      counts.applicantCreate++;
+      return;
+    }
+    if (Object.keys(managed).some(k => (cur[k] === undefined ? '' : cur[k]) !== managed[k])) {
+      writes.push(appSyncWrite_('applicants/' + a.id, Object.assign({ updatedAt: now }, managed), Object.keys(managed).concat(['updatedAt'])));
+      counts.applicantUpdate++;
+    }
+  });
+
+  // 正式参加になった人・辞退した人は参加希望者のプロフィールを停止（削除はしない）
+  (extra.existingApplicants || []).forEach(d => {
+    if (applicantIds.has(d.id) || d.fields.status === 'inactive') return;
+    writes.push(appSyncWrite_('applicants/' + d.id, { status: 'inactive', updatedAt: now }, ['status', 'updatedAt']));
+    counts.applicantDeactivate++;
+  });
+
+  // ---- 正式加入確認フォームの URL（参加希望者のホームに表示）----
+  if (extra.joinFormUrl !== undefined) {
+    const curUrl = extra.appConfig ? (extra.appConfig.fields.joinFormUrl || '') : '';
+    if (curUrl !== extra.joinFormUrl) {
+      writes.push(appSyncWrite_('appConfig/public', { joinFormUrl: extra.joinFormUrl }, ['joinFormUrl']));
+    }
+  }
+
   // ---- stats（団員数・パート別人数）----
   const s = loadSettings_(SpreadsheetApp.getActiveSpreadsheet());
   const index = buildInstrumentIndex_(s);
@@ -476,6 +552,7 @@ function appSyncPlan_(desired, settings, existingAccess, existingMembers, extra)
   const stats = {
     memberCount: desired.members.length,
     pausedCount: desired.members.filter(m => m.status === 'paused').length,
+    applicantCount: applicants.length,
     targetMembers: s.targetMembers,
     decisionMembers: s.decisionMembers,
     minimumMembers: s.minimumMembers,
@@ -811,6 +888,8 @@ function appSyncSettings_(ss) {
     adminEmails: emails(raw.adminEmails),
     staffEmails: emails(raw.staffEmails),
     autoSync: parseSettingValue_({ type: 'bool' }, raw.autoSync) === true,
+    applicantAccess: parseSettingValue_({ type: 'bool' }, raw.applicantAccess) !== false,
+    syncOnSubmit: parseSettingValue_({ type: 'bool' }, raw.syncOnSubmit) !== false,
     pushEnabled: parseSettingValue_({ type: 'bool' }, raw.pushEnabled) === true,
     reminderEnabled: parseSettingValue_({ type: 'bool' }, raw.reminderEnabled) !== false,
     reminderHour: appSyncHour_(raw.reminderHour)
@@ -891,6 +970,7 @@ function appSyncDescribe_(r, isPreview) {
     '',
     'ログイン許可：新規 ' + r.accessCreate + '人／変更 ' + r.accessUpdate + '人／利用停止 ' + r.accessDeactivate + '人',
     '団員プロフィール：新規 ' + r.memberCreate + '人／変更 ' + r.memberUpdate + '人／利用停止 ' + r.memberDeactivate + '人',
+    '参加希望者（アプリ利用）：' + (r.applicants || 0) + '人（新規 ' + (r.applicantCreate || 0) + '人／変更 ' + (r.applicantUpdate || 0) + '人／停止 ' + (r.applicantDeactivate || 0) + '人）',
     '団員数・パート別人数：' + (r.statsChanged ? '更新' : '変更なし')
   ];
 

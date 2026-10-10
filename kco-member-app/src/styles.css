@@ -180,7 +180,9 @@ a { color: var(--color-navy); text-underline-offset: 0.2em; }
   bottom: 0;
   z-index: 50;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  /* タブの数（団員5つ・参加希望者4つ）に合わせて均等に並べる */
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
   height: calc(var(--tabbar-height) + env(safe-area-inset-bottom));
   padding-bottom: env(safe-area-inset-bottom);
   background: var(--color-navy);

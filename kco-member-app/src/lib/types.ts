@@ -11,6 +11,8 @@ export interface MemberAccess {
   memberId: string | null;
   /** パートコード（楽譜の閲覧範囲。同期が書き込む） */
   part: string;
+  /** member = 正式参加の団員・運営／applicant = 応募しただけの参加希望者 */
+  stage: 'member' | 'applicant';
 }
 
 /** members/{団員ID}：団員同士で見える情報だけ（個人情報は置かない） */
@@ -38,6 +40,8 @@ export interface Stats {
   /** 団員数（在籍中＋活動休止中） */
   memberCount: number;
   pausedCount: number;
+  /** アプリに登録されている参加希望者の数 */
+  applicantCount: number;
   targetMembers: number;
   decisionMembers?: number;
   minimumMembers?: number;
@@ -93,6 +97,8 @@ export interface Announcement {
   audience: Audience;
   published: boolean;
   publishedAt: Timestamp | null;
+  /** 参加希望者にも表示する */
+  forApplicants: boolean;
 }
 
 export interface ProgramItem {

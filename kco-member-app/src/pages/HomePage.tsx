@@ -2,19 +2,20 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../auth/AuthProvider';
 import { AttendanceBadge, CategoryBadge } from '../components/Badges';
 import { ErrorNote, Loading } from '../components/Layout';
-import { useAnnouncements, useCampaign, useConcerts, useMember, useMyAttendance, useRehearsals, useStats, useSurveys } from '../lib/data';
+import { useAnnouncements, useAppConfig, useCampaign, useConcerts, useMyAttendance, useMyProfile, useRehearsals, useStats, useSurveys } from '../lib/data';
 import { isSurveyOpen } from '../lib/survey';
 import { formatDateJa, formatTimeRange, orTbd, splitByDate, todayJst } from '../lib/dates';
 import { isForMe } from '../lib/parts';
 
 export function HomePage() {
-  const { access } = useAuth();
+  const { access, isApplicant } = useAuth();
   const stats = useStats();
-  const me = useMember(access?.memberId ?? null);
+  const me = useMyProfile(access?.memberId ?? null, isApplicant);
   const rehearsals = useRehearsals();
   const concerts = useConcerts();
-  const news = useAnnouncements();
-  const surveys = useSurveys();
+  const news = useAnnouncements(false, isApplicant);
+  const surveys = useSurveys(false, !isApplicant);
+  const config = useAppConfig();
   const campaign = useCampaign();
   const openSurveys = surveys.data.filter(sv => isSurveyOpen(sv));
 
@@ -41,6 +42,21 @@ export function HomePage() {
       </p>
 
       <ErrorNote message={stats.error || rehearsals.error || news.error} />
+
+      {isApplicant && (
+        <section className="card card--important" aria-labelledby="applicant-title">
+          <h2 className="card__title" id="applicant-title">参加希望者として登録されています</h2>
+          <p className="small">
+            練習予定・演奏会・お知らせを見たり、練習の出欠（見学・体験）を登録したりできます。
+            正式に加入すると、団員一覧・楽譜・アンケートなども使えるようになります。
+          </p>
+          {config.data?.joinFormUrl ? (
+            <a className="btn btn--gold" href={config.data.joinFormUrl} target="_blank" rel="noopener noreferrer" style={{ marginTop: '0.5rem' }}>正式加入確認フォームへ</a>
+          ) : (
+            <p className="small muted">正式加入の手続きは、運営からのご案内をお待ちください。</p>
+          )}
+        </section>
+      )}
 
       {important.map(a => (
         <Link key={a.id} to={`/news#${a.id}`} className="card-link">
@@ -69,7 +85,7 @@ export function HomePage() {
             目標まであと {Math.max(target - count, 0)} 人。一緒にオーケストラをつくっていきましょう。
             {(stats.data?.pausedCount ?? 0) > 0 && <>（うち活動休止中 {stats.data?.pausedCount}人）</>}
           </p>
-          {campaign.data?.active && count < target && (
+          {!isApplicant && campaign.data?.active && count < target && (
             <Link className="btn btn--gold btn--sm" to="/campaign" style={{ marginTop: '0.75rem' }}>📣 団員募集をシェアする</Link>
           )}
         </section>
@@ -119,7 +135,7 @@ export function HomePage() {
         </section>
       </div>
 
-      <nav className="tile-grid" aria-label="よく使う機能">
+      {!isApplicant && <nav className="tile-grid" aria-label="よく使う機能">
         <Link className="tile" to="/scores">
           <span className="tile__icon" aria-hidden="true">🎼</span>
           <span className="tile__title">楽譜</span>
@@ -140,7 +156,7 @@ export function HomePage() {
           <span className="tile__title">団員一覧</span>
           <span className="tile__desc">パートごとのメンバー</span>
         </Link>
-      </nav>
+      </nav>}
 
       <section aria-labelledby="news-title">
         <div className="section-heading">
@@ -171,7 +187,7 @@ export function HomePage() {
           <div className="section-heading">
             <h2 id="parts-title">パート編成</h2>
             <span className="spacer" />
-            <Link className="small" to="/members">団員一覧</Link>
+            {!isApplicant && <Link className="small" to="/members">団員一覧</Link>}
           </div>
           <div className="part-grid">
             {stats.data.byPart.map(p => (

@@ -34,7 +34,9 @@ const USERS = {
   left: { uid: 'uid-l', email: 'left@example.com', memberId: 'm-l', part: 'Va' },
   admin: { uid: 'uid-admin', email: 'admin@example.com', memberId: null, part: '' },
   staff: { uid: 'uid-staff', email: 'staff@example.com', memberId: 'm-s', part: 'Hr' },
-  applicant: { uid: 'uid-ap', email: 'applicant@example.com', memberId: null, part: '' }
+  applicant: { uid: 'uid-ap', email: 'applicant@example.com', memberId: null, part: '' },
+  // 応募しただけの参加希望者（stage = applicant）
+  hopeful: { uid: 'uid-h', email: 'hopeful@example.com', memberId: 'ap-1', part: 'Va' }
 };
 type UserKey = keyof typeof USERS;
 
@@ -126,6 +128,8 @@ function notificationData(uid: string, extra: Record<string, unknown> = {}) {
   };
 }
 
+const now0 = () => Timestamp.now();
+
 beforeAll(async () => {
   env = await initializeTestEnvironment({
     projectId: PROJECT_ID,
@@ -151,6 +155,17 @@ beforeEach(async () => {
     await access('left', 'inactive', 'member');
     await access('admin', 'active', 'admin');
     await access('staff', 'active', 'staff');
+    await setDoc(doc(db, 'memberAccess', USERS.hopeful.email), { email: USERS.hopeful.email, status: 'active', role: 'member', memberId: 'ap-1', part: 'Va', stage: 'applicant', source: 'sheet' });
+    await setDoc(doc(db, 'applicants', 'ap-1'), { displayName: 'きぼう', instrument: 'Va', instrumentLabel: 'ヴィオラ', part: 'Va', section: 'strings', status: 'active', bio: '' });
+    await setDoc(doc(db, 'applicants', 'ap-2'), { displayName: 'べつのひと', instrument: 'Fl', instrumentLabel: 'フルート', part: 'Fl', section: 'woodwind', status: 'active', bio: '' });
+    await setDoc(doc(db, 'stats', 'summary'), { memberCount: 3, targetMembers: 80, applicantCount: 2 });
+    await setDoc(doc(db, 'rehearsals', 'r1'), { title: '合奏', date: '', startTime: '', endTime: '', venue: '', content: '', notes: '', target: '', scoreNote: '', attendanceDeadline: null, published: true, createdAt: now0(), updatedAt: now0() });
+    const news = (id: string, forApplicants: boolean | undefined) => setDoc(doc(db, 'announcements', id), {
+      title: id, body: '', important: false, category: 'general', audience: { type: 'all', values: [] }, published: true, publishedAt: now0(), createdAt: now0(), updatedAt: now0(),
+      ...(forApplicants === undefined ? {} : { forApplicants })
+    });
+    await news('a-members', undefined);
+    await news('a-both', true);
     const member = (id: string, name: string, part: string) =>
       setDoc(doc(db, 'members', id), { displayName: name, instrument: part, instrumentLabel: part, part, section: 'strings', status: 'active', bio: '', roleLabel: '' });
     await member('m-va', 'ゔぃおら', 'Va');
@@ -372,5 +387,66 @@ describe('団員募集キャンペーン', () => {
     await assertFails(setDoc(doc(as('admin'), 'publicCampaign', 'current'), campaignData({ contactEmail: 'a@example.com' })));
     await assertFails(setDoc(doc(as('admin'), 'publicCampaign', 'current'), campaignData({ formUrl: 'javascript:alert(1)' })));
     await assertFails(setDoc(doc(as('admin'), 'publicCampaign', 'current'), campaignData({ parts: [{ part: 'Ob', label: 'オーボエ', level: 'urgent' }, { part: 'Fl', label: 'x', level: 'urgent', email: 'a@example.com' }] })));
+  });
+});
+
+// ---------------------------------------------------------------------
+describe('参加希望者（応募しただけの人）', () => {
+  it('練習予定・演奏会・団員数は読め、自分の出欠を登録できる', async () => {
+    const db = as('hopeful');
+    await assertSucceeds(getDocs(query(collection(db, 'rehearsals'), where('published', '==', true), orderBy('date'))));
+    await assertSucceeds(getDoc(doc(db, 'stats', 'summary')));
+    await assertSucceeds(setDoc(doc(db, 'rehearsals', 'r1', 'attendance', 'ap-1'), { status: 'present', comment: '見学します', updatedAt: serverTimestamp() }));
+    await assertFails(setDoc(doc(db, 'rehearsals', 'r1', 'attendance', 'm-va'), { status: 'present', comment: '', updatedAt: serverTimestamp() }));
+  });
+
+  it('団員一覧・楽譜・アンケート・提案は読めない', async () => {
+    const db = as('hopeful');
+    await assertFails(getDocs(collection(db, 'members')));
+    await assertFails(getDoc(doc(db, 'members', 'm-va')));
+    await assertFails(getDoc(doc(db, 'scores', 'sc-all')));
+    await assertFails(getDoc(doc(db, 'scores', 'sc-va')));
+    await assertFails(getDocs(query(collection(db, 'scores'), where('published', '==', true), where('parts', 'array-contains', 'all'))));
+    await assertFails(getDoc(doc(db, 'surveys', 's-open')));
+    await assertFails(setDoc(doc(db, 'surveys', 's-open', 'responses', 'ap-1'), { answers: { q1: 0 }, updatedAt: serverTimestamp() }));
+    await assertFails(getDoc(doc(db, 'proposals', 'p-shared')));
+    await assertFails(getDocs(query(collection(db, 'proposals'), where('visibility', '==', 'members'), orderBy('createdAt', 'desc'))));
+    await assertFails(addDoc(collection(db, 'proposals'), proposalData({ authorId: 'ap-1', authorName: 'きぼう' })));
+  });
+
+  it('お知らせは「参加希望者にも表示」のものだけ', async () => {
+    const db = as('hopeful');
+    await assertSucceeds(getDoc(doc(db, 'announcements', 'a-both')));
+    await assertFails(getDoc(doc(db, 'announcements', 'a-members')));
+    await assertSucceeds(getDocs(query(collection(db, 'announcements'), where('published', '==', true), where('forApplicants', '==', true), orderBy('publishedAt', 'desc'))));
+    await assertFails(getDocs(query(collection(db, 'announcements'), where('published', '==', true), orderBy('publishedAt', 'desc'))));
+    // 団員はどちらも読める（stage が無い既存の許可も団員として扱う）
+    await assertSucceeds(getDoc(doc(as('va'), 'announcements', 'a-members')));
+    await assertSucceeds(getDocs(query(collection(as('va'), 'announcements'), where('published', '==', true), orderBy('publishedAt', 'desc'))));
+  });
+
+  it('参加希望者のプロフィールは本人と運営だけ（団員にも見えない）', async () => {
+    await assertSucceeds(getDoc(doc(as('hopeful'), 'applicants', 'ap-1')));
+    await assertFails(getDoc(doc(as('hopeful'), 'applicants', 'ap-2')));
+    await assertFails(getDocs(collection(as('hopeful'), 'applicants')));
+    await assertFails(getDoc(doc(as('va'), 'applicants', 'ap-1')));
+    await assertSucceeds(getDocs(collection(as('staff'), 'applicants')));
+    await assertFails(setDoc(doc(as('admin'), 'applicants', 'ap-1'), { displayName: 'x' }));
+  });
+
+  it('通知の登録はできる。お知らせの「参加希望者にも表示」は運営だけが付けられる', async () => {
+    await assertSucceeds(setDoc(doc(as('hopeful'), 'pushTokens', 'tok-h'), { uid: 'uid-h', accessKey: 'hopeful@example.com', token: 'tok-h', platform: 'iOS', updatedAt: serverTimestamp() }));
+    await assertFails(updateDoc(doc(as('hopeful'), 'announcements', 'a-members'), { forApplicants: true, updatedAt: serverTimestamp() }));
+    await assertSucceeds(updateDoc(doc(as('staff'), 'announcements', 'a-members'), { forApplicants: true, updatedAt: serverTimestamp() }));
+    await assertFails(updateDoc(doc(as('staff'), 'announcements', 'a-members'), { forApplicants: 'yes', updatedAt: serverTimestamp() }));
+  });
+
+  it('正式加入確認フォームの URL はアプリから変更できない（同期のみ）', async () => {
+    await env.withSecurityRulesDisabled(async ctx => {
+      await setDoc(doc(ctx.firestore(), 'appConfig', 'public'), { vapidKey: 'k', joinFormUrl: 'https://forms.example.com/a', updatedAt: Timestamp.now() });
+    });
+    await assertSucceeds(getDoc(doc(as('hopeful'), 'appConfig', 'public')));
+    await assertSucceeds(setDoc(doc(as('admin'), 'appConfig', 'public'), { vapidKey: 'k2', updatedAt: serverTimestamp() }, { merge: true }));
+    await assertFails(setDoc(doc(as('admin'), 'appConfig', 'public'), { joinFormUrl: 'https://evil.example.com', updatedAt: serverTimestamp() }, { merge: true }));
   });
 });

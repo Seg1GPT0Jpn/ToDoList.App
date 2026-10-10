@@ -15,6 +15,7 @@ interface FormState {
   category: AnnouncementCategory;
   audience: Audience;
   published: boolean;
+  forApplicants: boolean;
 }
 
 const EMPTY: FormState = {
@@ -23,7 +24,8 @@ const EMPTY: FormState = {
   important: false,
   category: 'general',
   audience: { type: 'all', values: [] },
-  published: true
+  published: true,
+  forApplicants: false
 };
 
 export function AdminNews() {
@@ -61,6 +63,7 @@ export function AdminNews() {
                     {a.important && <span className="badge badge--important">重要</span>}
                     <CategoryBadge category={a.category} />
                     <span className="badge">{audienceLabel(a.audience)}</span>
+                    {a.forApplicants && <span className="badge badge--gold">参加希望者にも表示</span>}
                     {!a.published && <span className="badge badge--draft">下書き</span>}
                   </span>
                   <span className="list__title">{a.title}</span>
@@ -81,7 +84,8 @@ function NewsForm({ original, onDone }: { original: Announcement | null; onDone:
     important: original.important,
     category: original.category,
     audience: original.audience,
-    published: original.published
+    published: original.published,
+    forApplicants: original.forApplicants
   } : EMPTY);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -116,6 +120,7 @@ function NewsForm({ original, onDone }: { original: Announcement | null; onDone:
       category: f.category,
       audience: { type: f.audience.type, values: f.audience.type === 'all' ? [] : f.audience.values },
       published: f.published,
+      forApplicants: f.forApplicants,
       publishedAt,
       updatedAt: serverTimestamp()
     };
@@ -129,7 +134,8 @@ function NewsForm({ original, onDone }: { original: Announcement | null; onDone:
           body: data.body,
           url: `/news#${id}`,
           audience: data.audience,
-          source: 'announcement'
+          source: 'announcement',
+          includeApplicants: f.forApplicants
         }).catch(() => undefined);
       }
       onDone();
@@ -193,6 +199,10 @@ function NewsForm({ original, onDone }: { original: Announcement | null; onDone:
       <label className="checkbox">
         <input type="checkbox" checked={f.published} onChange={e => set('published', e.target.checked)} />
         団員に公開する
+      </label>
+      <label className="checkbox">
+        <input type="checkbox" checked={f.forApplicants} onChange={e => set('forApplicants', e.target.checked)} />
+        参加希望者（応募しただけの人）にも表示する
       </label>
       {f.published && (
         <label className="checkbox">

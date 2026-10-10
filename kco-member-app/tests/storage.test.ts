@@ -17,7 +17,8 @@ const USERS = {
   vc: { uid: 'uid-vc', email: 'vc@example.com' },
   left: { uid: 'uid-l', email: 'left@example.com' },
   staff: { uid: 'uid-staff', email: 'staff@example.com' },
-  applicant: { uid: 'uid-ap', email: 'applicant@example.com' }
+  applicant: { uid: 'uid-ap', email: 'applicant@example.com' },
+  hopeful: { uid: 'uid-h', email: 'hopeful@example.com' }
 };
 type UserKey = keyof typeof USERS;
 
@@ -48,6 +49,7 @@ beforeEach(async () => {
     await access('vc', 'active', 'member', 'Vc');
     await access('left', 'inactive', 'member', 'Va');
     await access('staff', 'active', 'staff', 'Hr');
+    await setDoc(doc(db, 'memberAccess', USERS.hopeful.email), { email: USERS.hopeful.email, status: 'active', role: 'member', memberId: 'ap-1', part: 'Va', stage: 'applicant', source: 'sheet' });
     const score = (id: string, parts: string[], published = true) =>
       setDoc(doc(db, 'scores', id), { title: 't', parts, kind: 'file', storagePath: `scores/${id}/a.pdf`, published, createdAt: now, updatedAt: now });
     await score('va', ['Va']);
@@ -69,6 +71,8 @@ describe('楽譜ファイル', () => {
     await assertFails(getBytes(ref(storageAs('va'), 'scores/orphan/a.pdf'))); // 楽譜の登録が無いファイル
     await assertFails(getBytes(ref(storageAs('left'), 'scores/all/a.pdf')));
     await assertFails(getBytes(ref(storageAs('applicant'), 'scores/all/a.pdf')));
+    await assertFails(getBytes(ref(storageAs('hopeful'), 'scores/all/a.pdf'))); // 参加希望者
+    await assertFails(getBytes(ref(storageAs('hopeful'), 'scores/va/a.pdf')));
     await assertFails(getBytes(ref(env.unauthenticatedContext().storage(), 'scores/all/a.pdf')));
     await assertSucceeds(getBytes(ref(storageAs('staff'), 'scores/draft/a.pdf')));
   });

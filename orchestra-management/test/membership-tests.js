@@ -294,11 +294,15 @@ section('H. 正式参加の確定 → アプリ利用 → 団員アプリへの�
   setCell(app, 9, '対応状況', '正式参加');
   ctx.membershipUpdateAppUsage();
   check('正式参加にしただけでは「未発行」（アプリIDなし）', [byNo(app, 1, 'アプリ利用'), byNo(app, 9, 'アプリ利用')], ['未発行', '未発行']);
-  check('アプリ利用の列はプルダウン（停止を選べる）', app.validationRanges.filter(v => v.col === header(app).indexOf('アプリ利用') + 1).pop().rule.values, ['対象外', '未発行', '招待準備', '招待済', '利用中', '停止']);
+  check('アプリ利用の列はプルダウン（停止を選べる）', app.validationRanges.filter(v => v.col === header(app).indexOf('アプリ利用') + 1).pop().rule.values, ['対象外', '参加希望者', '未発行', '招待準備', '招待済', '利用中', '停止']);
 
   ctx.appSyncRun();
   const access = Object.keys(Object.fromEntries([...env.firestore.docs.keys()].filter(k => k.startsWith('memberAccess/')).map(k => [k.slice(13), 1]))).sort();
-  check('団員アプリに登録されるのは正式参加の2人＋管理者', access, ['p1@example.com', 'p9@example.com', OWNER].sort());
+  check('団員アプリに登録：正式参加・参加希望者・管理者（辞退・メールなし・重複行は除く）', access, ['p10@example.com', 'p1@example.com', 'p2@example.com', 'p3@example.com', 'p7@example.com', 'p9@example.com', OWNER].sort());
+  const stage = e => env.firestore.docs.get('memberAccess/' + e).stage.stringValue;
+  check('正式参加は団員、それ以外は参加希望者', [stage('p1@example.com'), stage('p9@example.com'), stage('p2@example.com'), stage('p3@example.com')], ['member', 'member', 'applicant', 'applicant']);
+  check('参加希望者のアプリ利用は「参加希望者」', [byNo(app, 2, 'アプリ利用'), byNo(app, 4, 'アプリ利用')], ['参加希望者', '対象外']);
+  check('正式加入確認フォームの URL をアプリへ', env.firestore.docs.get('appConfig/public').joinFormUrl.stringValue, 'https://docs.google.com/forms/d/e/form1/viewform');
   check('同期後：Firebase連携状態「同期済み」・アプリ利用「招待済」', [byNo(app, 1, 'Firebase連携状態'), byNo(app, 1, 'アプリ利用')], ['同期済み', '招待済']);
   const member = [...env.firestore.docs.entries()].find(([k]) => k.startsWith('members/'))[1];
   check('団員アプリに送るのは表示名・楽器・パートなど（加入意思・年代・地域は送らない）', Object.keys(member).filter(k => /intent|answer|mail|age|area|region|grade|school/i.test(k)), []);

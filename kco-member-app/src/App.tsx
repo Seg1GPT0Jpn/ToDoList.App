@@ -31,6 +31,12 @@ const AdminScores = lazy(() => import('./admin/AdminScores').then(m => ({ defaul
 const AdminNotify = lazy(() => import('./admin/AdminNotify').then(m => ({ default: m.AdminNotify })));
 const AdminCampaign = lazy(() => import('./admin/AdminCampaign').then(m => ({ default: m.AdminCampaign })));
 
+/** 団員だけの画面（参加希望者はホームへ。読めるかどうかの最終判定は Firestore ルール） */
+function MemberOnly({ children }: { children: ReactNode }) {
+  const { isApplicant } = useAuth();
+  return isApplicant ? <Navigate to="/" replace /> : <>{children}</>;
+}
+
 function Lazy({ children }: { children: ReactNode }) {
   return <Suspense fallback={<Loading />}>{children}</Suspense>;
 }
@@ -65,13 +71,13 @@ export function App() {
         <Route path="schedule/:id" element={<RehearsalDetailPage />} />
         <Route path="news" element={<NewsPage />} />
         <Route path="concert" element={<ConcertPage />} />
-        <Route path="members" element={<MembersPage />} />
+        <Route path="members" element={<MemberOnly><MembersPage /></MemberOnly>} />
         <Route path="me" element={<MePage />} />
-        <Route path="together" element={<TogetherPage />} />
-        <Route path="surveys/:id" element={<SurveyPage />} />
-        <Route path="proposals" element={<ProposalsPage />} />
-        <Route path="scores" element={<ScoresPage />} />
-        <Route path="campaign" element={<Lazy><CampaignSharePage /></Lazy>} />
+        <Route path="together" element={<MemberOnly><TogetherPage /></MemberOnly>} />
+        <Route path="surveys/:id" element={<MemberOnly><SurveyPage /></MemberOnly>} />
+        <Route path="proposals" element={<MemberOnly><ProposalsPage /></MemberOnly>} />
+        <Route path="scores" element={<MemberOnly><ScoresPage /></MemberOnly>} />
+        <Route path="campaign" element={<MemberOnly><Lazy><CampaignSharePage /></Lazy></MemberOnly>} />
         <Route path="admin" element={<Lazy><AdminLayout /></Lazy>}>
           <Route index element={<Lazy><AdminDashboard /></Lazy>} />
           <Route path="rehearsals" element={<Lazy><AdminRehearsals /></Lazy>} />
