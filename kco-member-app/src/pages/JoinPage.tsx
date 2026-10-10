@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useCampaign } from '../lib/data';
 import { normalizeHashtags } from '../lib/campaign';
+import { OFFICIAL_RECRUIT, OFFICIAL_SITE } from '../lib/links';
 
 /*
  * 団員募集ページ（一般公開・ログイン不要）
@@ -77,6 +78,9 @@ export function JoinPage() {
         )}
 
         <p className="small join__member-link">
+          活動内容・募集要項は <a href={OFFICIAL_RECRUIT} target="_blank" rel="noopener noreferrer">公式サイトの団員募集ページ</a>（<a href={OFFICIAL_SITE} target="_blank" rel="noopener noreferrer">公式サイト</a>）
+        </p>
+        <p className="small join__member-link" style={{ marginTop: '0.5rem' }}>
           団員の方は <Link to="/">団員ページにログイン</Link>
         </p>
       </main>

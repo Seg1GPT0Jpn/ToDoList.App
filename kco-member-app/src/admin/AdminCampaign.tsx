@@ -112,7 +112,7 @@ export function AdminCampaign() {
       <div className="field">
         <label htmlFor="c-form">応募フォームの URL（任意）</label>
         <input id="c-form" type="url" inputMode="url" maxLength={500} value={f.formUrl} onChange={e => set('formUrl', e.target.value)} placeholder="https://forms.gle/..." />
-        <p className="field__hint">いま使っている Google フォームの「送信」→ リンクのURLを貼ってください。空欄なら「準備中」と表示します。</p>
+        <p className="field__hint">公式サイトの団員募集ページと同じ参加希望フォームのURLを貼ってください（フォームの「送信」→ リンク）。空欄なら「準備中」と表示します。募集ページには公式サイトへのリンクも表示されます。</p>
       </div>
       <div className="field">
         <label htmlFor="c-deadline">締切（任意・自由入力）</label>

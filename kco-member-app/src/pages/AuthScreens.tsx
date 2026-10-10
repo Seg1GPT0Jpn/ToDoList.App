@@ -1,6 +1,7 @@
 import { useEffect, useState, type FormEvent, type ReactNode } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { authErrorMessage, useAuth } from '../auth/AuthProvider';
+import { OFFICIAL_SITE } from '../lib/links';
 
 function AuthFrame({ children }: { children: ReactNode }) {
   return (
@@ -10,6 +11,9 @@ function AuthFrame({ children }: { children: ReactNode }) {
         <p className="auth-title">かながわコネクトオーケストラ</p>
         <p className="auth-concept">団員専用ページ</p>
         {children}
+        <p className="small center auth-official">
+          <a href={OFFICIAL_SITE} target="_blank" rel="noopener noreferrer">公式サイト（活動紹介・団員募集）</a>
+        </p>
       </div>
     </div>
   );
