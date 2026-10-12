@@ -124,6 +124,23 @@ void main() {
     });
   });
 
+  group('短い意味', () {
+    String short(String m) =>
+        VocabCard(id: '1', term: 'x', meaning: m).shortMeaning;
+
+    test('使い方の注記 [接続詞で] では切らず、訳のない「（as）」だけにならない', () {
+      expect(short('（as）［接続詞で］もし～ならば'), '（as）［接続詞で］もし～ならば');
+      expect(short('[前] （as）[接続詞で] もし～ならば'), '（as）[接続詞で] もし～ならば');
+      expect(short('[名] [the ～] 大衆 [形] 公の'), '[the ～] 大衆');
+    });
+
+    test('これまでどおり、2つ目の品詞・語義の前で切る', () {
+      expect(short('[動] ①～と主張する ②～を要求する [名] ③主張'), '～と主張する');
+      expect(short('［形］静かな［名］静けさ'), '静かな');
+      expect(short('[動] 上がる；起きる [名] 上昇'), '上がる；起きる');
+    });
+  });
+
   group('クラウドの記録とまぜる', () {
     test('単語ごと・日ごとに、たくさん答えたほうが残る', () {
       final now = DateTime(2026, 10, 12, 9);

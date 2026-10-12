@@ -1,3 +1,5 @@
+import 'meaning_text.dart';
+
 /// 単語帳の1枚（1語）。
 class VocabCard {
   const VocabCard({
@@ -33,22 +35,11 @@ class VocabCard {
 
   bool get hasExample => example.isNotEmpty && clozeOf(example, term) != null;
 
-  static final _pos = RegExp(r'^\s*\[([^\]]+)\]');
-  static final _senseMark = RegExp('[①②③④⑤⑥⑦⑧⑨⑩]');
-
   /// 品詞（[名] [他] など。なければ空）
-  String get partOfSpeech => _pos.firstMatch(meaning)?.group(1) ?? '';
+  String get partOfSpeech => partOfSpeechOf(meaning);
 
   /// 4択や答え合わせに出す短い意味（最初の品詞・最初の語義だけ）
-  String get shortMeaning {
-    var m = meaning.replaceFirst(_pos, '').trim();
-    final nextPos = m.indexOf('[');
-    if (nextPos > 0) m = m.substring(0, nextPos);
-    final marks = _senseMark.allMatches(m).toList();
-    if (marks.length >= 2) m = m.substring(0, marks[1].start);
-    m = m.replaceAll(_senseMark, '').replaceAll(RegExp(r'\s+'), ' ').trim();
-    return m.isEmpty ? meaning.trim() : m;
-  }
+  String get shortMeaning => shortMeaningOf(meaning);
 
   /// スペルとして正しいと認める書き方（「afterward(s)」→ afterward / afterwards など）
   List<String> get acceptedSpellings {
