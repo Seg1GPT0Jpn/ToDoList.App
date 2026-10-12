@@ -10,6 +10,9 @@ import '../account/profile_repository.dart';
 import '../data/meta_store.dart';
 import '../data/prefs_progress_repository.dart';
 import '../firebase_options.dart';
+import '../study/personal_books.dart';
+import '../vocab/vocab_store.dart';
+import 'vocab_cloud_sync.dart';
 
 /// 進行状況とプロフィールを Firestore と同期する。
 ///
@@ -18,15 +21,41 @@ import '../firebase_options.dart';
 ///   なければ端末の記録をクラウドに上げる
 /// - ログイン中は、保存するたびにクラウドにも書き込む
 ///
-/// 個人用単語帳（LEAP など）は同期しない。端末の中だけに置く。
+/// 個人用単語帳（LEAP など）の単語は同期しない。端末の中だけに置く。
+/// 単語帳の学習記録（覚えぐあい）だけは [VocabCloudSync] でクラウドにも保存する。
 class CloudSync {
-  CloudSync._(this._auth, this._db, this._progress, this._profiles, this._meta);
+  CloudSync._(
+    this._auth,
+    this._db,
+    this._progress,
+    this._profiles,
+    this._meta,
+    this._books,
+  ) {
+    _vocab = VocabCloudSync(
+      write: (docId, data) => _db.doc(_vocabPath(_uid!, docId)).set(data),
+      readAll: () async {
+        final snap = await _db
+            .collection('users')
+            .doc(_uid)
+            .collection(vocabCollection)
+            .get();
+        return {for (final d in snap.docs) d.id: d.data()};
+      },
+    );
+  }
+
+  static const vocabCollection = 'rpg_vocab';
+  static String _vocabPath(String uid, String docId) =>
+      'users/$uid/$vocabCollection/$docId';
 
   final FirebaseAuth _auth;
   final FirebaseFirestore _db;
   final PrefsProgressRepository _progress;
   final ProfileRepository _profiles;
   final MetaStore _meta;
+  final PersonalBooks _books;
+  late final VocabCloudSync _vocab;
 
   FirebaseAuth get auth => _auth;
 
@@ -36,6 +65,7 @@ class CloudSync {
     required PrefsProgressRepository progress,
     required ProfileRepository profiles,
     required MetaStore meta,
+    required PersonalBooks books,
   }) async {
     try {
       await Firebase.initializeApp(
@@ -51,7 +81,11 @@ class CloudSync {
       progress,
       profiles,
       meta,
+      books,
     );
+    VocabStore.onProgressSaved = (store, bookId) {
+      if (sync._uid != null) sync._vocab.saved(store, bookId);
+    };
     progress.onSaved = sync._pushProgress;
     profiles.onSaved = sync._pushProfile;
     meta.onLearningSaved = (r) =>
@@ -133,6 +167,7 @@ class CloudSync {
       if (journal == null) {
         await _push(RpgFirestorePaths.journalDoc, _meta.journal.toMap());
       }
+      await _vocab.pull(VocabStore.of(_books));
     } catch (e) {
       debugPrint('クラウドの記録を読み込めませんでした: $e');
     }

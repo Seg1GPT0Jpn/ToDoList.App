@@ -8,9 +8,12 @@ import '../study/personal_books.dart';
 
 /// 単語帳練習の保存先。
 ///
-/// 単語帳も学習記録も、この端末の中（SharedPreferences）にだけ保存する。
+/// 単語帳はこの端末の中（SharedPreferences）にだけ保存する。
 /// 市販教材（LEAP・EEVI）の単語は、暗号化したもの（assets/vocab/）だけを同梱し、
-/// 名前とパスワードを入れたときに開く。クラウドにも送らない。
+/// 名前とパスワードを入れたときに開く。単語や意味はクラウドに送らない。
+///
+/// 学習記録（単語の番号ごとの覚えぐあい）だけは、Google でログインしていれば
+/// クラウドにも保存し、アンインストールしても戻せるようにする（[onProgressSaved]）。
 class VocabStore {
   VocabStore(this._prefs) {
     _load();
@@ -132,10 +135,29 @@ class VocabStore {
         : BookProgress.fromJson(jsonDecode(raw) as Map<String, dynamic>);
   }();
 
-  Future<void> saveProgress(String bookId) => _prefs.setString(
-    '$_progressPrefix$bookId',
-    jsonEncode(progress(bookId).toJson()),
-  );
+  Future<void> saveProgress(String bookId) async {
+    await _prefs.setString(
+      '$_progressPrefix$bookId',
+      jsonEncode(progress(bookId).toJson()),
+    );
+    onProgressSaved?.call(this, bookId);
+  }
+
+  /// 学習記録を保存したとき（クラウド同期が使う）
+  static void Function(VocabStore store, String bookId)? onProgressSaved;
+
+  /// 学習記録がある単語帳の ID（開いていない LEAP なども含む）
+  Iterable<String> get progressBookIds => {
+    for (final k in _prefs.getKeys())
+      if (k.startsWith(_progressPrefix)) k.substring(_progressPrefix.length),
+    ..._progress.keys,
+  };
+
+  /// クラウドの学習記録を、この端末の記録とまぜて保存する
+  Future<void> mergeProgress(String bookId, BookProgress cloud) async {
+    progress(bookId).merge(cloud);
+    await saveProgress(bookId);
+  }
 
   Future<VocabBook> createBook(String title) async {
     var n = books.length;

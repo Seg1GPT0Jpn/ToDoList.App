@@ -51,10 +51,12 @@ Future<void> main() async {
   }
   settings.addListener(() => music.applySettings(settings.value));
   // Firebase の設定があればクラウドと同期する。なければ端末の中だけで動く
+  final personalBooks = PersonalBooks(prefs);
   final cloud = await CloudSync.start(
     progress: progress,
     profiles: profiles,
     meta: meta,
+    books: personalBooks,
   );
   if (cloud != null) {
     // 問題の報告は、ログインしていればクラウド（question_reports）にも送る
@@ -88,7 +90,7 @@ Future<void> main() async {
       settings: settings,
       music: music,
       repository: progress,
-      personalBooks: PersonalBooks(prefs),
+      personalBooks: personalBooks,
       examWorlds: ExamWorldStore(prefs),
       profiles: profiles,
       account: cloud == null

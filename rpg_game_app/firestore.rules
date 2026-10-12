@@ -14,6 +14,13 @@ service cloud.firestore {
         && docId == 'main';
     }
 
+    // 単語帳の学習記録（単語の番号ごとの覚えぐあい）。1冊を「単語帳ID~番号」の文書に分けて置く
+    match /users/{uid}/rpg_vocab/{docId} {
+      allow read, write: if request.auth != null
+        && request.auth.uid == uid
+        && docId.size() <= 80;
+    }
+
     // Google Play の購入権利。
     // クライアントからは書き込めず、Cloud Functions（Admin SDK）だけが作成・更新する。
     match /users/{uid}/rpg_purchases/{worldId} {

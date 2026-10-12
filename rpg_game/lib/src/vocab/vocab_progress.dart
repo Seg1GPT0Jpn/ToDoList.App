@@ -66,6 +66,9 @@ class CardProgress {
 
   int get totalMistakes => mistakes.values.fold(0, (a, b) => a + b);
 
+  /// 答えた回数の合計（どちらの記録が新しいかの目安）
+  int get totalAnswers => answers.values.fold(0, (a, b) => a + b.$2);
+
   /// 力ごとの熟練度（0〜100）。今思い出せる確率と、記憶の安定度と、正答率から出す
   int mastery(VocabSkill k, DateTime now) {
     final s = skills[k];
@@ -295,6 +298,24 @@ class BookProgress {
       d.reviews++;
     }
     d.seconds += spent.inSeconds;
+  }
+
+  /// 別の端末（クラウド）の記録とまぜる。
+  ///
+  /// 単語ごと・日ごとに、たくさん答えているほうを残す。
+  void merge(BookProgress other) {
+    for (final e in other.cards.entries) {
+      final mine = cards[e.key];
+      if (mine == null || e.value.totalAnswers > mine.totalAnswers) {
+        cards[e.key] = e.value;
+      }
+    }
+    for (final e in other.days.entries) {
+      final mine = days[e.key];
+      if (mine == null || e.value.answered > mine.answered) {
+        days[e.key] = e.value;
+      }
+    }
   }
 
   /// 連続で学習した日数（今日まだなら昨日まで）

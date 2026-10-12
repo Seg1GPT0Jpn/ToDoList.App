@@ -124,6 +124,51 @@ void main() {
     });
   });
 
+  group('クラウドの記録とまぜる', () {
+    test('単語ごと・日ごとに、たくさん答えたほうが残る', () {
+      final now = DateTime(2026, 10, 12, 9);
+      final phone = BookProgress()
+        ..record(
+            cardId: '1',
+            skill: VocabSkill.meaning,
+            rating: Rating.good,
+            now: now)
+        ..record(
+            cardId: '1',
+            skill: VocabSkill.meaning,
+            rating: Rating.good,
+            now: now)
+        ..record(
+            cardId: '2',
+            skill: VocabSkill.meaning,
+            rating: Rating.again,
+            now: now);
+      final cloud = BookProgress.fromJson(phone.toJson())
+        ..record(
+            cardId: '2',
+            skill: VocabSkill.meaning,
+            rating: Rating.good,
+            now: now)
+        ..record(
+            cardId: '3',
+            skill: VocabSkill.recall,
+            rating: Rating.good,
+            now: now);
+      final reinstalled = BookProgress()
+        ..record(
+            cardId: '1',
+            skill: VocabSkill.meaning,
+            rating: Rating.good,
+            now: now);
+
+      reinstalled.merge(cloud);
+      expect(reinstalled.cards.keys, containsAll(['1', '2', '3']));
+      expect(reinstalled.cards['1']!.totalAnswers, 2);
+      expect(reinstalled.cards['2']!.totalAnswers, 2);
+      expect(reinstalled.days[BookProgress.dayKey(now)]!.answered, 5);
+    });
+  });
+
   group('熟練度と今日の学習', () {
     final t0 = DateTime(2026, 4, 1, 9);
     VocabBook book() => VocabBook(
