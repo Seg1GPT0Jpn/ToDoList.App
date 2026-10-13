@@ -125,7 +125,7 @@ class ShonanSubjectExamPlan {
       ].toSet().toList();
 
   static List<String> _parseIds(String text) => text
-      .split(RegExp(r'[,，、;；\\n\\r]+'))
+      .split(RegExp(r'[,，、;；\n\r]+'))
       .map((id) => id.trim())
       .where((id) => id.isNotEmpty)
       .toSet()
