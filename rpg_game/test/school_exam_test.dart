@@ -88,11 +88,11 @@ void main() {
   group('範囲表（Excel）からの取り込み', () {
     test('後期中間の公共は教科書・資料集・プリントの範囲が入る', () {
       final p = ShonanRangeTable.plan(
-        '後期中間試験（仮）',
+        '後期中間試験',
         id: 'x',
         now: DateTime(2026, 10, 13),
       );
-      expect(p.title, '1年後期中間試験（仮）');
+      expect(p.title, '1年後期中間試験');
       final s = p.subject('public_economy');
       expect(s.status, RangeStatus.entered);
       expect(s.materials.map((m) => m.range),

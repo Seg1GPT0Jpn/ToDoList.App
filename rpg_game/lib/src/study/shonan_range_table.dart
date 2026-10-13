@@ -8,8 +8,8 @@ class ShonanRangeTable {
   /// 範囲表に載っている試験（シート名, 試験名）
   static const sheets = [
     ('前期期末試験', '1年前期期末試験'),
-    ('後期中間試験（仮）', '1年後期中間試験（仮）'),
-    ('後期期末試験（仮）', '1年後期期末試験（仮）'),
+    ('後期中間試験', '1年後期中間試験'),
+    ('後期期末試験', '1年後期期末試験'),
   ];
 
   /// 範囲表のシートから試験計画を作る
@@ -226,7 +226,7 @@ class ShonanRangeTable {
                   note: '提出')
             ]);
         break;
-      case '後期中間試験（仮）':
+      case '後期中間試験':
         subjects['gendai_kokugo'] = SubjectExamPlan(
             subjectId: 'gendai_kokugo',
             rangeText: '',
@@ -384,7 +384,7 @@ class ShonanRangeTable {
               StudyMaterial(kind: 'その他', name: '授業ノート', range: '25~', note: '')
             ]);
         break;
-      case '後期期末試験（仮）':
+      case '後期期末試験':
         subjects['gendai_kokugo'] = SubjectExamPlan(
             subjectId: 'gendai_kokugo',
             rangeText: '',

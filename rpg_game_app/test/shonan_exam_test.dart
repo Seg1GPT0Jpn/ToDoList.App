@@ -51,10 +51,10 @@ void main() {
     await openScreen(t, const ShonanExamListScreen(), frames: 10);
     await t.tap(find.byKey(const ValueKey('shonan-from-table')));
     await _frames(t);
-    await t.tap(find.byKey(const ValueKey('shonan-sheet-後期中間試験（仮）')));
+    await t.tap(find.byKey(const ValueKey('shonan-sheet-後期中間試験')));
     await _frames(t);
     expect(find.byType(ShonanExamDetailScreen), findsOneWidget);
-    expect(find.text('1年後期中間試験（仮）'), findsOneWidget);
+    expect(find.text('1年後期中間試験'), findsOneWidget);
     // 公共（下のほう）までスクロールして、範囲表の内容を確かめる
     await t.scrollUntilVisible(
       find.byKey(const ValueKey('shonan-subject-public_economy')),

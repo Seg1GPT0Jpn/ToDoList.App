@@ -10,7 +10,7 @@ SUBJ = {'現代の国語':'gendai_kokugo','言語文化':'gengo_bunka','数学�
         '化学基礎':'chemistry_basic','生物基礎':'biology_basic','地理総合':'geography_general','公共':'public_economy','情報Ⅰ':'information1'}
 # 範囲表の試験・科目に最初から登録しておく委員会の新作問題セット
 COMMITTEE = {
-    ('後期中間試験（仮）', 'public_economy'): [f'social_shonan_104_public_economy_{i:02d}' for i in range(1, 9)],
+    ('後期中間試験', 'public_economy'): [f'social_shonan_104_public_economy_{i:02d}' for i in range(1, 9)],
 }
 def kind(name):
     if name == '教科書': return '教科書'
@@ -24,7 +24,8 @@ def norm(t):
     return re.sub(r'\s{2,}', '　', t)
 out = []
 for ws in wb:
-    title = '1年' + ws.title
+    sheet = ws.title.replace('（仮）', '')  # 「（仮）」は付けない
+    title = '1年' + sheet
     plan = {}
     cur = None
     for r in ws.iter_rows(min_row=3, values_only=True):
@@ -37,7 +38,7 @@ for ws in wb:
         if mat == '教科書' and note: sp['note'] = note
         if mat and (rng or note):
             sp['materials'].append({'kind': kind(mat), 'name': mat, 'range': rng, 'note': note})
-    out.append((ws.title, title, plan))
+    out.append((sheet, title, plan))
 def dq(t): return "'" + t.replace('\\','\\\\').replace('$','\\$').replace("'", "\\'") + "'"
 L = ["// 湘南高校2026年度（104回生）1年の試験範囲表から tool/shonan_range_table.py で自動生成（手で直さない）。",
      "// 生成元：委員会が作成した範囲表（Excel）。範囲が空欄の科目は未入力のまま。",
