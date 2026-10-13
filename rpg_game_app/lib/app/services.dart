@@ -140,6 +140,17 @@ class RpgServices extends InheritedWidget {
 
   static final Map<String, Future<Map<String, dynamic>?>> _bundles = {};
 
+  /// 教科（worldId）に収録されている問題セットの一覧（setId → 問題数）。
+  /// 学校の定期テスト対策で、問題セットを選ぶのに使う。
+  static Future<Map<String, int>> questionSetsOf(String world) async {
+    final bundle = await (_bundles[world] ??= _loadBundle(world));
+    if (bundle == null) _bundles.remove(world);
+    return {
+      for (final e in (bundle ?? const {}).entries)
+        e.key: ((e.value as Map)['questions'] as List?)?.length ?? 0,
+    };
+  }
+
   static Future<Map<String, dynamic>?> _loadBundle(String world) async {
     try {
       // loadString は大きなファイルを別の isolate で文字に直すので、

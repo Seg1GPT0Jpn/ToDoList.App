@@ -1,0 +1,171 @@
+import 'dart:convert';
+
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:rpg_game/rpg_game.dart';
+import 'package:rpg_game_app/app/services.dart';
+import 'package:rpg_game_app/battle/battle_screen.dart';
+import 'package:rpg_game_app/study/school_exam_store.dart';
+import 'package:rpg_game_app/study/sea_home_screen.dart';
+import 'package:rpg_game_app/study/shonan_exam_screens.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+import 'harness.dart';
+
+Future<void> _frames(WidgetTester t, [int n = 10]) async {
+  for (var i = 0; i < n; i++) {
+    await t.pump(const Duration(milliseconds: 100));
+  }
+}
+
+/// 問題データの読み込み（本物の非同期）を待つ
+Future<void> _settle(WidgetTester t) async {
+  for (var i = 0; i < 6; i++) {
+    await t.runAsync(
+      () => Future<void>.delayed(const Duration(milliseconds: 150)),
+    );
+    await _frames(t, 2);
+  }
+}
+
+void main() {
+  testWidgets('定期テストの海から湘南104の画面に入れる（既存の試験対策ボタンも残る）', (t) async {
+    await openScreen(
+      t,
+      Builder(
+        builder: (c) =>
+            SeaHomeScreen(personalBooks: RpgServices.of(c).personalBooks),
+      ),
+      frames: 20,
+      size: const Size(900, 900),
+    );
+    expect(find.text('試験対策'), findsOneWidget);
+    await t.tap(find.byKey(const ValueKey('sea-shonan')));
+    await _frames(t);
+    expect(find.byType(ShonanExamListScreen), findsOneWidget);
+    expect(find.text(ShonanText.localOnly), findsOneWidget);
+    expect(t.takeException(), isNull);
+  });
+
+  testWidgets('範囲表から後期中間を作ると、11科目の範囲と教材が見える', (t) async {
+    await openScreen(t, const ShonanExamListScreen(), frames: 10);
+    await t.tap(find.byKey(const ValueKey('shonan-from-table')));
+    await _frames(t);
+    await t.tap(find.byKey(const ValueKey('shonan-sheet-後期中間試験（仮）')));
+    await _frames(t);
+    expect(find.byType(ShonanExamDetailScreen), findsOneWidget);
+    expect(find.text('1年後期中間試験（仮）'), findsOneWidget);
+    // 公共（下のほう）までスクロールして、範囲表の内容を確かめる
+    await t.scrollUntilVisible(
+      find.byKey(const ValueKey('shonan-subject-public_economy')),
+      300,
+      scrollable: find.byType(Scrollable).first,
+    );
+    expect(find.textContaining('冊子No.3すべて'), findsOneWidget);
+    // 問題セットがないので演習ボタンは押せない
+    final btn = t.widget<ButtonStyleButton>(
+      find.byKey(const ValueKey('shonan-practice-public_economy')),
+    );
+    expect(btn.onPressed, isNull);
+    expect(t.takeException(), isNull);
+  });
+
+  testWidgets('テストを作る：名前が空だと保存できず、入れると一覧に出る。削除は確認してから', (t) async {
+    final s = await openScreen(t, const ShonanExamListScreen(), frames: 10);
+    await t.tap(find.byKey(const ValueKey('shonan-new')));
+    await _frames(t);
+    await t.tap(find.byKey(const ValueKey('shonan-save')));
+    await _frames(t, 3);
+    expect(find.text(ShonanText.titleRequired), findsOneWidget);
+    await t.enterText(find.byKey(const ValueKey('shonan-title')), '1年後期中間試験');
+    // 公共を開いて範囲を書く
+    await t.scrollUntilVisible(
+      find.text('社会｜公共（政治経済の経済分野）'),
+      300,
+      scrollable: find.byType(Scrollable).first,
+    );
+    await t.tap(find.text('社会｜公共（政治経済の経済分野）'));
+    await _frames(t, 5);
+    await t.enterText(
+      find.byKey(const ValueKey('shonan-range-public_economy')),
+      '第4章・第6章',
+    );
+    await t.tap(find.byKey(const ValueKey('shonan-save')));
+    await _frames(t);
+    final store = SchoolExamStore.of(s.personalBooks);
+    final plan = store.load().single;
+    expect(plan.title, '1年後期中間試験');
+    expect(plan.subject('public_economy').rangeText, '第4章・第6章');
+    expect(plan.subject('public_economy').status, RangeStatus.entered);
+    expect(find.textContaining('1 / 11'), findsOneWidget);
+
+    await t.tap(find.byKey(ValueKey('shonan-menu-${plan.id}')));
+    await _frames(t, 3);
+    await t.tap(find.text('削除'));
+    await _frames(t, 3);
+    await t.tap(find.byKey(const ValueKey('shonan-delete-ok')));
+    await _frames(t, 3);
+    expect(store.load(), isEmpty);
+    expect(t.takeException(), isNull);
+  });
+
+  testWidgets('既存＋未収録のセット：理由を見せてから、読めたセットで演習できる', (t) async {
+    final s = await openScreen(t, const SizedBox(), frames: 2);
+    final store = SchoolExamStore.of(s.personalBooks);
+    await store.add(
+      SchoolExamPlan(
+        id: 'p1',
+        title: 'テスト',
+        createdAt: DateTime(2026, 10, 13),
+      ).withSubject(
+        const SubjectExamPlan(
+          subjectId: 'public_economy',
+          existingSetIds: ['social_chirisogo_01'],
+          committeeSetIds: ['social_shonan_104_nothing_01'],
+        ),
+      ),
+    );
+    await openScreen(
+      t,
+      const ShonanExamDetailScreen(planId: 'p1'),
+      frames: 5,
+      keepPrefs: true,
+      size: const Size(420, 3000),
+    );
+    await t.ensureVisible(
+      find.byKey(const ValueKey('shonan-practice-public_economy')),
+    );
+    await _frames(t, 2);
+    await t.tap(find.byKey(const ValueKey('shonan-practice-public_economy')));
+    await _settle(t);
+    expect(
+      find.textContaining('social_shonan_104_nothing_01：アプリに収録されていない'),
+      findsOneWidget,
+    );
+    await t.tap(find.byKey(const ValueKey('shonan-practice-anyway')));
+    await _settle(t);
+    await _frames(t, 10);
+    expect(find.byType(BattleScreen), findsOneWidget);
+    expect(t.takeException(), isNull);
+    await t.pumpWidget(const SizedBox());
+    await t.pump(const Duration(seconds: 10));
+  });
+
+  testWidgets('既存の試験対策ワールドのデータとは別のキーに保存し、壊さない', (t) async {
+    SharedPreferences.setMockInitialValues({
+      'exam_worlds_v1': '[]',
+      SchoolExamStore.key: '{"こわれた": true}',
+    });
+    final prefs = await SharedPreferences.getInstance();
+    final store = SchoolExamStore(prefs);
+    expect(store.load(), isEmpty);
+    await store.add(
+      SchoolExamPlan(id: 'a', title: 'A', createdAt: DateTime(2026)),
+    );
+    expect(prefs.getString('exam_worlds_v1'), '[]');
+    expect(
+      (jsonDecode(prefs.getString(SchoolExamStore.key)!) as List).single['id'],
+      'a',
+    );
+  });
+}
