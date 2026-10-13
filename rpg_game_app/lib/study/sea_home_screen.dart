@@ -11,6 +11,7 @@ import 'exam_world_screens.dart';
 import 'realm_style.dart';
 import 'personal_books.dart';
 import 'sea_battle_launcher.dart';
+import 'shonan_exam_screen.dart';
 import 'term_cards.dart';
 import '../vocab/vocab_home.dart';
 
@@ -85,6 +86,15 @@ class _SeaHomeScreenState extends State<SeaHomeScreen> {
           backgroundColor: TsuzuriColors.tint(0xFFE6F0F5),
           title: Text('定期テストの海', style: serif(19, color: StudyRealm.sea.ink)),
           actions: [
+            IconButton(
+              tooltip: '湘南高校モード',
+              onPressed: () => Navigator.of(context).push(
+                MaterialPageRoute<void>(
+                  builder: (_) => const ShonanExamHomeScreen(),
+                ),
+              ),
+              icon: const Icon(Icons.school_outlined),
+            ),
             TextButton.icon(
               onPressed: () => Navigator.of(context).push(
                 MaterialPageRoute<void>(
