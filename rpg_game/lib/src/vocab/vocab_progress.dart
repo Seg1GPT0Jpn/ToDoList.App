@@ -623,7 +623,7 @@ class VocabCourse {
 
   /// 定期テストの範囲（単語帳ID・名前・番号の範囲）。単語そのものは暗号化した単語帳の中にだけある
   static const testRanges = <(String, String, int, int)>[
-    ('leap', '後期中間 特別強化', 1201, 2100),
+    ('leap', '後期中間 特別強化', 1101, 2100),
   ];
 
   /// その単語帳のテスト範囲ごとの単語
