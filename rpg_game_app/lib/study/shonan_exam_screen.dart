@@ -64,6 +64,7 @@ class _ShonanExamHomeScreenState extends State<ShonanExamHomeScreen> {
           body: NotebookPaper(
             child: StreamBuilder<List<ShonanExamPlan>>(
               stream: store.watch(),
+              initialData: store.load(),
               builder: (context, snap) {
                 final plans = snap.data ?? store.load();
                 return ListView(
@@ -466,6 +467,7 @@ class ShonanExamPlanScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return StreamBuilder<List<ShonanExamPlan>>(
       stream: store.watch(),
+      initialData: store.load(),
       builder: (context, snapshot) {
         final plan = store.byId(planId);
         if (plan == null) {
