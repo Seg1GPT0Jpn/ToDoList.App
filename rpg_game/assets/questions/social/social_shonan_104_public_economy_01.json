@@ -1,0 +1,1438 @@
+{
+  "setId": "social_shonan_104_public_economy_01",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "social_shonan_104_public_economy_01_001",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "企業が何をどれだけ生産するかを最終的に決める権限は消費者にある、という考え方を何という？",
+      "choices": [
+        "国民主権",
+        "生産者主権",
+        "消費者主権",
+        "株主主権"
+      ],
+      "answerIndex": 2,
+      "explanation": "消費者の選択が生産を方向づけるという考え方。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_002",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "「消費者の4つの権利」を1962年に示したアメリカ大統領は？",
+      "choices": [
+        "ルーズベルト",
+        "ニクソン",
+        "ケネディ",
+        "レーガン"
+      ],
+      "answerIndex": 2,
+      "explanation": "安全・知らされる・選択できる・意見を反映させる権利。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_003",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "消費者の4つの権利に含まれないものは？",
+      "choices": [
+        "安全である権利",
+        "意見を反映させる権利",
+        "知らされる権利",
+        "値引きを求める権利"
+      ],
+      "answerIndex": 3,
+      "explanation": "4つは「安全」「知らされる」「選択できる」「意見を反映させる」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_004",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "個人の消費行動が、企業の宣伝・広告の影響を強く受けることを何という？",
+      "choices": [
+        "デモンストレーション効果",
+        "アナウンスメント効果",
+        "ドーナツ化現象",
+        "依存効果"
+      ],
+      "answerIndex": 3,
+      "explanation": "ガルブレイスが指摘した。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_005",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "依存効果を指摘した経済学者は？",
+      "choices": [
+        "ケインズ",
+        "リカード",
+        "マルクス",
+        "ガルブレイス"
+      ],
+      "answerIndex": 3,
+      "explanation": "アメリカの経済学者。『ゆたかな社会』で論じた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_006",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "個人の消費行動が、他人の平均的な消費や生活スタイルの影響を受けることを何という？",
+      "choices": [
+        "デモンストレーション効果",
+        "乗数効果",
+        "ラチェット効果",
+        "依存効果"
+      ],
+      "answerIndex": 0,
+      "explanation": "周りが持っているから自分も買う、という効果。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_007",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "1955年、乳児用の粉ミルクにヒ素が混入した事件は？",
+      "choices": [
+        "スモン事件",
+        "サリドマイド事件",
+        "森永ヒ素ミルク事件",
+        "カネミ油症事件"
+      ],
+      "answerIndex": 2,
+      "explanation": "高度経済成長期の代表的な食品公害。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_008",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "妊婦が睡眠薬を服用し、手足などに障害をもつ子どもが生まれた薬害事件は？",
+      "choices": [
+        "薬害エイズ事件",
+        "森永ヒ素ミルク事件",
+        "サリドマイド事件",
+        "スモン事件"
+      ],
+      "answerIndex": 2,
+      "explanation": "1962年に問題化した。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_009",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "米ぬか油の製造工程でPCBが混入した1968年の事件は？",
+      "choices": [
+        "カネミ油症事件",
+        "イタイイタイ病",
+        "森永ヒ素ミルク事件",
+        "スモン事件"
+      ],
+      "answerIndex": 0,
+      "explanation": "西日本を中心に皮膚障害などの被害が出た。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_010",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "整腸剤キノホルムを服用した人に、知覚・運動・視力障害が出た薬害は？",
+      "choices": [
+        "スモン事件",
+        "サリドマイド事件",
+        "カネミ油症事件",
+        "薬害エイズ事件"
+      ],
+      "answerIndex": 0,
+      "explanation": "1970年に原因が明らかになった。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_011",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "商品を買った人がさらに買い手を探すと手数料が入る仕組みの商法は？（別名ネズミ講に近いもの）",
+      "choices": [
+        "マルチ商法（連鎖販売取引）",
+        "ネガティブオプション",
+        "キャッチセールス",
+        "かたり商法"
+      ],
+      "answerIndex": 0,
+      "explanation": "クーリング・オフ期間は20日間。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_012",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "注文していない商品を一方的に送りつけ、代金を支払わせようとする商法は？",
+      "choices": [
+        "キャッチセールス",
+        "アポイントメントセールス",
+        "ネガティブオプション",
+        "霊感商法"
+      ],
+      "answerIndex": 2,
+      "explanation": "送りつけ商法とも呼ばれる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_013",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "公的機関の職員のように装って商品を売りつける商法は？",
+      "choices": [
+        "マルチ商法",
+        "キャッチセールス",
+        "ネガティブオプション",
+        "かたり商法"
+      ],
+      "answerIndex": 3,
+      "explanation": "「〜の方から来ました」と身分を偽る。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_014",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "街頭でアンケートなどを口実に呼び止め、商品を売りつける商法は？",
+      "choices": [
+        "架空請求",
+        "霊感商法",
+        "キャッチセールス",
+        "アポイントメントセールス"
+      ],
+      "answerIndex": 2,
+      "explanation": "路上で声をかけて営業所などへ連れて行く。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_015",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "クレジットカードや消費者金融の利用が重なり、返済できない借金を抱えた状態を何という？",
+      "choices": [
+        "自己破産",
+        "多重債務",
+        "累積債務",
+        "財政赤字"
+      ],
+      "answerIndex": 1,
+      "explanation": "最悪の場合は自己破産に至る。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_016",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "1968年に制定され、国・地方公共団体・事業者の責務を定めた消費者保護の基本となる法律は？",
+      "choices": [
+        "消費者保護基本法",
+        "消費者基本法",
+        "消費者契約法",
+        "製造物責任法"
+      ],
+      "answerIndex": 0,
+      "explanation": "2004年に消費者基本法へ改正された。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_017",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "1970年に設置され、全国の消費生活センターから情報を集め商品テストなども行う機関は？",
+      "choices": [
+        "消費者団体",
+        "国民生活センター",
+        "公正取引委員会",
+        "消費者庁"
+      ],
+      "answerIndex": 1,
+      "explanation": "現在は独立行政法人。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_018",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "訪問販売などで契約した消費者が、一定期間内なら無条件で契約を解除できる制度は？",
+      "choices": [
+        "無過失責任制度",
+        "リコール制度",
+        "クーリング・オフ制度",
+        "消費者団体訴訟制度"
+      ],
+      "answerIndex": 2,
+      "explanation": "「頭を冷やす」という意味。書面で通知する。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_019",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "訪問販売・割賦販売のクーリング・オフの期間は？",
+      "choices": [
+        "14日間",
+        "8日間",
+        "20日間",
+        "3日間"
+      ],
+      "answerIndex": 1,
+      "explanation": "マルチ商法（連鎖販売取引）は20日間。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_020",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "マルチ商法（連鎖販売取引）のクーリング・オフ期間は？",
+      "choices": [
+        "10日間",
+        "30日間",
+        "20日間",
+        "8日間"
+      ],
+      "answerIndex": 2,
+      "explanation": "訪問販売・割賦販売は8日間。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_021",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "クーリング・オフができる取引は？",
+      "choices": [
+        "店に行って買ったゲーム機",
+        "使ってしまった化粧品（消耗品）",
+        "ネット通販で買った服",
+        "自宅に来た訪問販売で買った高額な浄水器"
+      ],
+      "answerIndex": 3,
+      "explanation": "店頭・通信販売、3000円未満の現金取引、使用後の消耗品などは対象外。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_022",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "1994年に制定され、製品の欠陥で損害が出たとき製造者が責任を負うと定めた法律は？",
+      "choices": [
+        "独占禁止法",
+        "製造物責任法（PL法）",
+        "特定商取引法",
+        "消費者契約法"
+      ],
+      "answerIndex": 1,
+      "explanation": "無過失責任制度を導入した。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_023",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "製造物責任法で導入された、製造者に過失がなくても欠陥を証明すれば賠償を求められる考え方は？",
+      "choices": [
+        "過失責任",
+        "無過失責任",
+        "連帯責任",
+        "自己責任"
+      ],
+      "answerIndex": 1,
+      "explanation": "消費者が製造者の過失を証明しなくてよくなった。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_024",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "欠陥がある製品をメーカーが無償で回収・修理することを何という？",
+      "choices": [
+        "リサイクル",
+        "リコール",
+        "クーリング・オフ",
+        "アフターサービス"
+      ],
+      "answerIndex": 1,
+      "explanation": "自動車などで行われる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_025",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "2000年に制定され、事実と違う説明などで結んだ不当な契約を取り消せるようにした法律は？",
+      "choices": [
+        "製造物責任法",
+        "割賦販売法",
+        "消費者保護基本法",
+        "消費者契約法"
+      ],
+      "answerIndex": 3,
+      "explanation": "2006年の改正で消費者団体訴訟制度を導入。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_026",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "消費者契約法で取り消せる例にあたらないものは？",
+      "choices": [
+        "「絶対にもうかる」と断定された",
+        "「新品です」と事実と違う説明をされた",
+        "自分で商品をよく調べて納得して買った",
+        "帰りたいと言ったのに帰してくれなかった"
+      ],
+      "answerIndex": 2,
+      "explanation": "不実告知・断定的判断の提供・不退去や監禁などが対象。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_027",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "2001年に訪問販売法を改称し、店舗によらない取引のルールを定めた法律は？",
+      "choices": [
+        "電子消費者契約法",
+        "消費者契約法",
+        "割賦販売法",
+        "特定商取引法"
+      ],
+      "answerIndex": 3,
+      "explanation": "電子商取引の広がりを受けて整えられた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_028",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "消費者保護基本法を改正した消費者基本法（2004年）が重視するようになったのは？",
+      "choices": [
+        "価格の統制",
+        "輸入の制限",
+        "企業の保護",
+        "消費者の自立支援"
+      ],
+      "answerIndex": 3,
+      "explanation": "保護だけでなく、自立した消費者を支える考え方へ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_029",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "2009年、消費者行政の一元化のために内閣府に設置されたのは？",
+      "choices": [
+        "消費者庁",
+        "国民生活センター",
+        "金融庁",
+        "公正取引委員会"
+      ],
+      "answerIndex": 0,
+      "explanation": "各省庁に分かれていた消費者行政をまとめた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_030",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "環境に配慮した商品を選んで買う消費者を何という？",
+      "choices": [
+        "グリーン・コンシューマー",
+        "クレーマー",
+        "プロシューマー",
+        "ミニマリスト"
+      ],
+      "answerIndex": 0,
+      "explanation": "消費者の自覚と責任の一つ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_031",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "消費者の4つの権利のうち、商品に欠陥があったときに払い戻しや取り替えなどの救済を求める権利は？",
+      "choices": [
+        "安全である権利",
+        "選択できる権利",
+        "知らされる権利",
+        "意見を反映させる権利"
+      ],
+      "answerIndex": 3,
+      "explanation": "The right to be heard。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_032",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "消費者の4つの権利のうち、市場の競争が確保され自由に商品を選べる権利は？",
+      "choices": [
+        "安全である権利",
+        "意見を反映させる権利",
+        "選択できる権利",
+        "知らされる権利"
+      ],
+      "answerIndex": 2,
+      "explanation": "The right to choose。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_033",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "1990年代に問題化した、HIVに汚染された非加熱の輸入血液製剤で血友病患者が感染した事件は？",
+      "choices": [
+        "薬害エイズ事件",
+        "スモン事件",
+        "カネミ油症事件",
+        "サリドマイド事件"
+      ],
+      "answerIndex": 0,
+      "explanation": "国と製薬会社の責任が問われた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_034",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "食品公害・薬品公害が多発したのはいつごろ？",
+      "choices": [
+        "明治時代",
+        "高度経済成長期",
+        "バブル崩壊後",
+        "石油危機後の安定成長期"
+      ],
+      "answerIndex": 1,
+      "explanation": "悪徳商法は石油危機後の安定成長期に多発した。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_035",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "悪徳（悪質）商法が多発するようになったのはいつごろ？",
+      "choices": [
+        "石油危機後の安定成長期",
+        "高度経済成長期",
+        "明治時代",
+        "戦後の復興期"
+      ],
+      "answerIndex": 0,
+      "explanation": "食品・薬品公害は高度経済成長期。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_036",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "人の不幸につけこみ、高額な壺や印鑑などを買わせる商法は？",
+      "choices": [
+        "かたり商法",
+        "マルチ商法",
+        "霊感（開運）商法",
+        "キャッチセールス"
+      ],
+      "answerIndex": 2,
+      "explanation": "「買わないと不幸になる」などと不安をあおる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_037",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "電話などで客を呼び出して商品を売りつける商法は？",
+      "choices": [
+        "かたり商法",
+        "ネガティブオプション",
+        "アポイントメントセールス",
+        "キャッチセールス"
+      ],
+      "answerIndex": 2,
+      "explanation": "「当選しました」などと呼び出すことが多い。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_038",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "身に覚えのない請求書や電話で現金をだまし取ろうとするものは？",
+      "choices": [
+        "マルチ商法",
+        "ネガティブオプション",
+        "リコール",
+        "架空請求・不当請求"
+      ],
+      "answerIndex": 3,
+      "explanation": "支払わずに消費生活センターなどへ相談する。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_039",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "実際より高い元値を並べて安く見せる表示など、不当表示・誇大広告の例は？",
+      "choices": [
+        "クーリング・オフ",
+        "原産地表示",
+        "リコール",
+        "二重価格表示"
+      ],
+      "answerIndex": 3,
+      "explanation": "産地や賞味期限の偽装も不当表示にあたる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_040",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "消費者運動（コンシューマリズム）の取り組みとして、不良品を明らかにするために行うものは？",
+      "choices": [
+        "商品テスト",
+        "輸入制限",
+        "価格カルテル",
+        "リコール隠し"
+      ],
+      "answerIndex": 0,
+      "explanation": "有害商品の告発、リサイクル、環境保護なども。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_041",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "1948年に設立された、消費者が出資して運営する協同組合は？",
+      "choices": [
+        "労働組合",
+        "経団連",
+        "消費生活協同組合（生協）",
+        "農業協同組合"
+      ],
+      "answerIndex": 2,
+      "explanation": "CO-OPとも呼ばれる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_042",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "1947年に制定され、独占・寡占企業による価格支配をなくすことを目的とした法律は？",
+      "choices": [
+        "割賦販売法",
+        "独占禁止法",
+        "製造物責任法",
+        "消費者契約法"
+      ],
+      "answerIndex": 1,
+      "explanation": "公正取引委員会が運用する。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_043",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "1961年に制定され、割賦販売やクレジットカード取引を公正にすることを目的とした法律は？",
+      "choices": [
+        "割賦販売法",
+        "消費者基本法",
+        "独占禁止法",
+        "特定商取引法"
+      ],
+      "answerIndex": 0,
+      "explanation": "分割払いの取引のルールを定める。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_044",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "1976年に制定され、クーリング・オフ制度を導入した法律は？",
+      "choices": [
+        "消費者保護基本法",
+        "消費者契約法",
+        "製造物責任法",
+        "訪問販売法"
+      ],
+      "answerIndex": 3,
+      "explanation": "2001年に特定商取引法へ改称された。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_045",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "2006年の消費者契約法の改正で導入された、消費者団体が消費者に代わって訴えられる制度は？",
+      "choices": [
+        "無過失責任制度",
+        "リコール制度",
+        "消費者団体訴訟制度",
+        "クーリング・オフ制度"
+      ],
+      "answerIndex": 2,
+      "explanation": "被害の拡大を防ぐねらいがある。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_046",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "消費者契約法で契約を取り消せる期間について正しいものは？",
+      "choices": [
+        "契約から8日以内",
+        "誤認に気づいてから1年以内か、契約から5年以内",
+        "いつでも無期限",
+        "契約から20日以内"
+      ],
+      "answerIndex": 1,
+      "explanation": "プリントの※にある期間。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_047",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "消費生活相談件数が最も多かったのは何年度ごろ？",
+      "choices": [
+        "2010年度ごろ",
+        "2021年度ごろ",
+        "1990年度ごろ",
+        "2004年度ごろ"
+      ],
+      "answerIndex": 3,
+      "explanation": "架空請求の急増が背景。その後は減少した。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_048",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "現金を使わずに支払えるキャッシュレス時代に、特に消費者に求められることは？",
+      "choices": [
+        "多重債務にならないよう適切にカードを管理すること",
+        "分割払いを積極的に使うこと",
+        "現金を一切持たないこと",
+        "クレジットカードを複数作ること"
+      ],
+      "answerIndex": 0,
+      "explanation": "現代の消費者には自己責任も求められている。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_049",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "thinking",
+      "prompt": "大学生のAさんは、自宅を訪ねてきた業者に勧められて5万円の英会話教材を契約した。契約書面を受け取ってから5日目に解約したくなった。Aさんがとるべき行動として最も適切なものは？",
+      "choices": [
+        "教材を使ってから返品する",
+        "書面（はがき等）でクーリング・オフを通知する",
+        "業者に電話で文句を言えば必ず解約できる",
+        "期間が過ぎたのであきらめる"
+      ],
+      "answerIndex": 1,
+      "explanation": "訪問販売は8日間。書面で通知するのが原則。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_050",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "thinking",
+      "prompt": "Bさんはネット通販で服を買ったが、届いてみると思っていた色と違った。クーリング・オフについて正しいものは？",
+      "choices": [
+        "8日以内ならクーリング・オフできる",
+        "ネット通販は通信販売なので、クーリング・オフの対象外",
+        "20日以内ならクーリング・オフできる",
+        "3000円以上ならクーリング・オフできる"
+      ],
+      "answerIndex": 1,
+      "explanation": "返品できるかは各ショップの返品ルールによる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_051",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "thinking",
+      "prompt": "Cさんは、友人に「この健康食品を買って、さらに会員を紹介すれば紹介料が入る」と誘われ契約した。この取引と、クーリング・オフの期間の組み合わせとして正しいものは？",
+      "choices": [
+        "訪問販売・8日間",
+        "マルチ商法（連鎖販売取引）・20日間",
+        "ネガティブオプション・20日間",
+        "キャッチセールス・8日間"
+      ],
+      "answerIndex": 1,
+      "explanation": "連鎖販売取引は20日間。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_052",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "thinking",
+      "prompt": "「この土地は来年必ず値上がりします」と言われて契約したが、値上がりしなかった。消費者契約法で取り消せる理由にあたるのは？",
+      "choices": [
+        "不利益事実の不告知",
+        "断定的判断の提供",
+        "不実告知",
+        "不退去"
+      ],
+      "answerIndex": 1,
+      "explanation": "不確実なことを断定的に言った場合。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_053",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "thinking",
+      "prompt": "マンションの勧誘で、利点だけを説明し、隣に高い建物が建つ予定であることをわざと言わなかった。消費者契約法でいうどれにあたる？",
+      "choices": [
+        "不実告知",
+        "監禁",
+        "不利益事実の不告知",
+        "断定的判断の提供"
+      ],
+      "answerIndex": 2,
+      "explanation": "重大な不利益をわざと告げなかった場合。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_054",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "thinking",
+      "prompt": "「帰らないで、契約するまで帰さない」と営業所で引き止められて契約した。消費者契約法でいうどれにあたる？",
+      "choices": [
+        "断定的判断の提供",
+        "不実告知",
+        "クーリング・オフ",
+        "退去妨害（監禁）"
+      ],
+      "answerIndex": 3,
+      "explanation": "帰らない（不退去）・帰してくれない（監禁）は取り消せる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_055",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "thinking",
+      "prompt": "ある家電製品が発火してやけどをした。製造物責任法（PL法）にもとづいて損害賠償を求めるとき、被害者が証明する必要があるのは？",
+      "choices": [
+        "製品に欠陥があったこと",
+        "メーカーに過失があったこと",
+        "メーカーに故意があったこと",
+        "メーカーが利益を得たこと"
+      ],
+      "answerIndex": 0,
+      "explanation": "無過失責任なので、欠陥を証明すればよい。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_056",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "thinking",
+      "prompt": "友達が持っているから自分も同じスニーカーを買った。この消費行動を説明する言葉は？",
+      "choices": [
+        "消費者主権",
+        "デモンストレーション効果",
+        "クーリング・オフ",
+        "依存効果"
+      ],
+      "answerIndex": 1,
+      "explanation": "他人の消費の影響を受ける効果。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_057",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "thinking",
+      "prompt": "CMで何度も見た新商品を、特に必要ではないのに買ってしまった。この消費行動を説明する言葉は？",
+      "choices": [
+        "自立支援",
+        "依存効果",
+        "消費者主権",
+        "デモンストレーション効果"
+      ],
+      "answerIndex": 1,
+      "explanation": "企業の広告に需要がつくられる効果。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_058",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "thinking",
+      "prompt": "依存効果やデモンストレーション効果が強まると、どのような問題が起きやすいか？",
+      "choices": [
+        "消費者主権が形だけになり、企業の意図で消費が左右される",
+        "企業の広告費がゼロになる",
+        "消費者の知識が自然に増える",
+        "商品の種類が減る"
+      ],
+      "answerIndex": 0,
+      "explanation": "大衆消費社会での消費者問題の背景。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_059",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "thinking",
+      "prompt": "消費者保護基本法（1968年）から消費者基本法（2004年）への変化の説明として正しいものは？",
+      "choices": [
+        "クーリング・オフ制度が廃止された",
+        "企業の規制がすべて廃止された",
+        "消費者の責任がなくなった",
+        "「保護される消費者」から「自立した消費者」の支援へ重点が移った"
+      ],
+      "answerIndex": 3,
+      "explanation": "規制緩和や消費者トラブルの複雑化が背景。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_060",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "thinking",
+      "prompt": "消費者庁が設置された主な理由は？",
+      "choices": [
+        "税金を集めるため",
+        "輸出を増やすため",
+        "企業の利益を守るため",
+        "各省庁に分かれていた消費者行政を一元化するため"
+      ],
+      "answerIndex": 3,
+      "explanation": "2009年、内閣府に設置。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_061",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "thinking",
+      "prompt": "グリーン・コンシューマーの行動として最も適切なものは？",
+      "choices": [
+        "一番安い商品を必ず選ぶ",
+        "使い捨て商品を多く買う",
+        "流行の商品をすぐ買い替える",
+        "詰め替え用の商品や環境ラベルのついた商品を選ぶ"
+      ],
+      "answerIndex": 3,
+      "explanation": "環境に配慮した商品を選ぶ消費者。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_062",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "thinking",
+      "prompt": "消費者の「選択できる権利」を守るために、最も必要な政策は？",
+      "choices": [
+        "輸入品をすべて禁止する",
+        "独占禁止法で市場の競争を確保する",
+        "商品の価格を国が決める",
+        "広告を全面禁止する"
+      ],
+      "answerIndex": 1,
+      "explanation": "競争があってこそ自由に選べる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_063",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "thinking",
+      "prompt": "消費者の「知らされる権利」を守る具体例として最も適切なものは？",
+      "choices": [
+        "食品に原材料・アレルギー物質・賞味期限を表示させる",
+        "店舗の数を増やす",
+        "商品を値下げさせる",
+        "訪問販売を全面禁止する"
+      ],
+      "answerIndex": 0,
+      "explanation": "正確な情報が与えられることが大切。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_064",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "thinking",
+      "prompt": "消費生活相談の件数が2004年度ごろに急増した主な理由として考えられるものは？",
+      "choices": [
+        "消費者庁が設置された",
+        "クーリング・オフが廃止された",
+        "人口が急増した",
+        "身に覚えのない料金を請求する架空請求が急増した"
+      ],
+      "answerIndex": 3,
+      "explanation": "ネットや携帯電話の普及が背景。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_01_065",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "thinking",
+      "prompt": "「多重債務」を防ぐための消費者の行動として最も適切なものは？",
+      "choices": [
+        "リボ払いで毎月の支払いを最小にする",
+        "カードの限度額を上げる",
+        "別の消費者金融で借りて返す",
+        "収入と支出を把握し、返済計画を立ててからカードを使う"
+      ],
+      "answerIndex": 3,
+      "explanation": "借りて返す、を繰り返すと多重債務になる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ]
+    }
+  ]
+}

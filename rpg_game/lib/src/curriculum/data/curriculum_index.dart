@@ -467,7 +467,7 @@ const curriculumQuestionCounts = <String, int>{
   'science.earth.space.universe': 34,
   'science.earth.space.universe.galaxy': 24,
   'science.earth.space.universe.expansion': 8,
-  'social': 2244,
+  'social': 2712,
   'social.geo': 543,
   'social.geo.map': 83,
   'social.geo.map.position': 31,
@@ -763,8 +763,8 @@ const curriculumQuestionCounts = <String, int>{
   'social.whist.contemporary.global.cold': 1,
   'social.whist.contemporary.global.end': 2,
   'social.whist.contemporary.global.today': 1,
-  'social.pol': 416,
-  'social.pol.politics': 219,
+  'social.pol': 884,
+  'social.pol.politics': 384,
   'social.pol.politics.principle': 33,
   'social.pol.politics.principle.democracy': 2,
   'social.pol.politics.principle.systems': 1,
@@ -796,18 +796,18 @@ const curriculumQuestionCounts = <String, int>{
   'social.pol.politics.election.system': 17,
   'social.pol.politics.election.party': 5,
   'social.pol.politics.election.opinion': 1,
-  'social.pol.politics.law': 31,
-  'social.pol.politics.law.contract': 11,
-  'social.pol.politics.law.consumer': 7,
-  'social.pol.politics.law.labor': 7,
-  'social.pol.politics.law.work': 2,
+  'social.pol.politics.law': 196,
+  'social.pol.politics.law.contract': 17,
+  'social.pol.politics.law.consumer': 72,
+  'social.pol.politics.law.labor': 44,
+  'social.pol.politics.law.work': 11,
   'social.pol.world': 27,
   'social.pol.world.intl': 27,
   'social.pol.world.intl.society': 2,
   'social.pol.world.intl.un': 10,
   'social.pol.world.intl.peace': 3,
   'social.pol.world.intl.issues': 5,
-  'social.pol.economy': 170,
+  'social.pol.economy': 473,
   'social.pol.economy.market': 31,
   'social.pol.economy.market.system': 2,
   'social.pol.economy.market.mechanism': 16,
@@ -825,20 +825,20 @@ const curriculumQuestionCounts = <String, int>{
   'social.pol.economy.fiscal.function': 6,
   'social.pol.economy.fiscal.tax': 6,
   'social.pol.economy.fiscal.debt': 6,
-  'social.pol.economy.welfare': 26,
-  'social.pol.economy.welfare.system': 10,
-  'social.pol.economy.welfare.pension': 9,
-  'social.pol.economy.welfare.aging': 3,
+  'social.pol.economy.welfare': 106,
+  'social.pol.economy.welfare.system': 28,
+  'social.pol.economy.welfare.pension': 33,
+  'social.pol.economy.welfare.aging': 8,
   'social.pol.economy.japan': 7,
   'social.pol.economy.japan.history': 4,
   'social.pol.economy.japan.issues': 3,
-  'social.pol.economy.global': 27,
-  'social.pol.economy.global.trade': 7,
-  'social.pol.economy.global.balance': 5,
-  'social.pol.economy.global.exchange': 2,
-  'social.pol.economy.global.system': 2,
-  'social.pol.economy.global.region': 2,
-  'social.pol.economy.global.north': 1,
+  'social.pol.economy.global': 250,
+  'social.pol.economy.global.trade': 24,
+  'social.pol.economy.global.balance': 23,
+  'social.pol.economy.global.exchange': 22,
+  'social.pol.economy.global.system': 21,
+  'social.pol.economy.global.region': 13,
+  'social.pol.economy.global.north': 48,
   'social.eth': 247,
   'social.eth.self': 25,
   'social.eth.self.adolescence': 25,
@@ -2904,11 +2904,32 @@ const curriculumUnitSets = <String, List<String>>{
   ],
   'social.pol.politics.election.party': ['social_pol_07'],
   'social.pol.politics.election.opinion': ['social_pol_07'],
-  'social.pol.politics.law': ['social_pol_08'],
-  'social.pol.politics.law.contract': ['social_kokyo_01', 'social_pol_08'],
-  'social.pol.politics.law.consumer': ['social_kokyo_01', 'social_pol_08'],
-  'social.pol.politics.law.labor': ['social_kokyo_01', 'social_pol_08'],
-  'social.pol.politics.law.work': ['social_v4_02'],
+  'social.pol.politics.law': [
+    'social_pol_08',
+    'social_shonan_104_public_economy_02',
+    'social_shonan_104_public_economy_03'
+  ],
+  'social.pol.politics.law.contract': [
+    'social_kokyo_01',
+    'social_pol_08',
+    'social_shonan_104_public_economy_02',
+    'social_shonan_104_public_economy_03'
+  ],
+  'social.pol.politics.law.consumer': [
+    'social_kokyo_01',
+    'social_pol_08',
+    'social_shonan_104_public_economy_01'
+  ],
+  'social.pol.politics.law.labor': [
+    'social_kokyo_01',
+    'social_pol_08',
+    'social_shonan_104_public_economy_02',
+    'social_shonan_104_public_economy_03'
+  ],
+  'social.pol.politics.law.work': [
+    'social_shonan_104_public_economy_03',
+    'social_v4_02'
+  ],
   'social.pol.world.intl': ['social_pol_09'],
   'social.pol.world.intl.society': ['social_pol_09'],
   'social.pol.world.intl.un': ['social_pol_09'],
@@ -2935,28 +2956,62 @@ const curriculumUnitSets = <String, List<String>>{
   'social.pol.economy.fiscal.function': ['social_kokyo_01', 'social_pol_13'],
   'social.pol.economy.fiscal.tax': ['social_kokyo_01', 'social_pol_13'],
   'social.pol.economy.fiscal.debt': ['social_pol_13'],
-  'social.pol.economy.welfare': ['social_pol_14'],
+  'social.pol.economy.welfare': [
+    'social_pol_14',
+    'social_shonan_104_public_economy_04'
+  ],
   'social.pol.economy.welfare.system': [
     'social_current_2426_01',
-    'social_pol_14'
+    'social_pol_14',
+    'social_shonan_104_public_economy_04'
   ],
   'social.pol.economy.welfare.pension': [
     'social_current_2426_01',
-    'social_pol_14'
+    'social_pol_14',
+    'social_shonan_104_public_economy_04'
   ],
-  'social.pol.economy.welfare.aging': ['social_pol_14'],
+  'social.pol.economy.welfare.aging': [
+    'social_pol_14',
+    'social_shonan_104_public_economy_04'
+  ],
   'social.pol.economy.japan.history': ['social_rekishisogo_01', 'social_v4_01'],
   'social.pol.economy.japan.issues': ['social_v4_01'],
-  'social.pol.economy.global': ['social_pol_15'],
-  'social.pol.economy.global.trade': ['social_pol_15'],
-  'social.pol.economy.global.balance': ['social_pol_15'],
+  'social.pol.economy.global': [
+    'social_pol_15',
+    'social_shonan_104_public_economy_05',
+    'social_shonan_104_public_economy_06',
+    'social_shonan_104_public_economy_07'
+  ],
+  'social.pol.economy.global.trade': [
+    'social_pol_15',
+    'social_shonan_104_public_economy_05',
+    'social_shonan_104_public_economy_06',
+    'social_shonan_104_public_economy_07'
+  ],
+  'social.pol.economy.global.balance': [
+    'social_pol_15',
+    'social_shonan_104_public_economy_05',
+    'social_shonan_104_public_economy_06'
+  ],
   'social.pol.economy.global.exchange': [
     'social_current_2426_01',
-    'social_pol_15'
+    'social_pol_15',
+    'social_shonan_104_public_economy_05',
+    'social_shonan_104_public_economy_06'
   ],
-  'social.pol.economy.global.system': ['social_pol_15'],
-  'social.pol.economy.global.region': ['social_v4_02'],
-  'social.pol.economy.global.north': ['social_pol_15'],
+  'social.pol.economy.global.system': [
+    'social_pol_15',
+    'social_shonan_104_public_economy_06'
+  ],
+  'social.pol.economy.global.region': [
+    'social_shonan_104_public_economy_07',
+    'social_v4_02'
+  ],
+  'social.pol.economy.global.north': [
+    'social_pol_15',
+    'social_shonan_104_public_economy_06',
+    'social_shonan_104_public_economy_08'
+  ],
   'social.eth.self.adolescence': ['social_eth_01'],
   'social.eth.self.adolescence.period': ['social_eth_01', 'social_kokyo_01'],
   'social.eth.self.adolescence.identity': ['social_eth_01'],

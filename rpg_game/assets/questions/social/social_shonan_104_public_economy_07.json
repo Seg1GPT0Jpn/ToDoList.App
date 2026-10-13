@@ -1,0 +1,1130 @@
+{
+  "setId": "social_shonan_104_public_economy_07",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "social_shonan_104_public_economy_07_001",
+      "unit": "social.pol.economy.global.region",
+      "category": "knowledge",
+      "prompt": "関税や非関税障壁をなくし、モノの移動を自由にする協定は？",
+      "choices": [
+        "経済連携協定（EPA）",
+        "共同市場",
+        "関税同盟",
+        "自由貿易協定（FTA）"
+      ],
+      "answerIndex": 3,
+      "explanation": "EPAはFTAに加えてヒト・カネの移動も自由化する。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_002",
+      "unit": "social.pol.economy.global.region",
+      "category": "knowledge",
+      "prompt": "FTAに加え、労働市場の開放や投資の拡大などヒト・カネの移動も自由化する協定は？",
+      "choices": [
+        "GATT",
+        "自由貿易協定（FTA）",
+        "WTO",
+        "経済連携協定（EPA）"
+      ],
+      "answerIndex": 3,
+      "explanation": "日本のEPAは2002年のシンガポールから始まった。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_003",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "地域内で関税をなくし、域外には共通関税をかける段階の経済統合は？",
+      "choices": [
+        "自由貿易協定",
+        "経済同盟",
+        "完全な経済統合",
+        "関税同盟"
+      ],
+      "answerIndex": 3,
+      "explanation": "例：MERCOSUR。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_004",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "経済統合が強い順に並べたものは？",
+      "choices": [
+        "FTA＞関税同盟＞共同市場＞経済同盟",
+        "経済同盟＞共同市場＞関税同盟＞FTA",
+        "共同市場＞経済同盟＞FTA＞関税同盟",
+        "関税同盟＞FTA＞経済同盟＞共同市場"
+      ],
+      "answerIndex": 1,
+      "explanation": "完全な経済統合（超国家機関で経済政策を統一）は現在は存在しない。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_005",
+      "unit": "social.pol.economy.global.trade",
+      "category": "knowledge",
+      "prompt": "ASEANが1993年から進めている自由貿易圏は？",
+      "choices": [
+        "NAFTA",
+        "ASEAN自由貿易地域（AFTA）",
+        "MERCOSUR",
+        "APEC"
+      ],
+      "answerIndex": 1,
+      "explanation": "2015年にはASEAN経済共同体（AEC）へ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_006",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "加盟国が10か国になった東南アジアの地域協力組織は？",
+      "choices": [
+        "アジア太平洋経済協力（APEC）",
+        "東南アジア諸国連合（ASEAN）",
+        "東アジア地域包括的経済連携（RCEP）",
+        "OPEC"
+      ],
+      "answerIndex": 1,
+      "explanation": "当初は反共産主義の政治的連帯だった。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_007",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "2020年にNAFTAに代わって発効した、アメリカ・メキシコ・カナダの協定は？",
+      "choices": [
+        "USMCA",
+        "APEC",
+        "TPP",
+        "MERCOSUR"
+      ],
+      "answerIndex": 0,
+      "explanation": "NAFTAは1994〜2020年。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_008",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "南米で1995年に発足した、途上国間で初めての関税同盟は？",
+      "choices": [
+        "EFTA",
+        "北米自由貿易協定",
+        "ASEAN",
+        "南米南部共同市場（MERCOSUR）"
+      ],
+      "answerIndex": 3,
+      "explanation": "2023年12月にボリビアの加盟が決まった。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_009",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "オーストラリアの提唱で1989年に発足し、21の国・地域が参加する協力の枠組みは？",
+      "choices": [
+        "アジア太平洋経済協力（APEC）",
+        "TPP",
+        "ASEAN",
+        "RCEP"
+      ],
+      "answerIndex": 0,
+      "explanation": "貿易・投資の自由化をめざす。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_010",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "アメリカが離脱を表明し、残る11か国で発効した協定は？",
+      "choices": [
+        "CPTPP（TPP11）",
+        "AFTA",
+        "RCEP",
+        "USMCA"
+      ],
+      "answerIndex": 0,
+      "explanation": "物品の関税だけでなく幅広い分野のルールをつくる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_011",
+      "unit": "social.pol.economy.global.region",
+      "category": "knowledge",
+      "prompt": "日・中・韓・豪・ニュージーランド・ASEANが参加する広域の経済連携協定は？",
+      "choices": [
+        "TPP",
+        "EU",
+        "APEC",
+        "RCEP（地域的な包括的経済連携）"
+      ],
+      "answerIndex": 3,
+      "explanation": "メガFTAとも呼ばれる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_012",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "1952年に発足し、ヨーロッパ統合の出発点となった組織は？",
+      "choices": [
+        "ヨーロッパ連合（EU）",
+        "ヨーロッパ石炭鉄鋼共同体（ECSC）",
+        "ヨーロッパ共同体（EC）",
+        "ヨーロッパ経済共同体（EEC）"
+      ],
+      "answerIndex": 1,
+      "explanation": "シューマン・プランを具体化した。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_013",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "1967年にECSC・EEC・EURATOMが統合してできた組織は？",
+      "choices": [
+        "ヨーロッパ連合（EU）",
+        "ヨーロッパ経済地域（EEA）",
+        "ヨーロッパ共同体（EC）",
+        "EFTA"
+      ],
+      "answerIndex": 2,
+      "explanation": "関税同盟を実現した。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_014",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "イギリス中心に1960年に発足し、EECに対抗した組織は？",
+      "choices": [
+        "ECSC",
+        "EU",
+        "EC",
+        "ヨーロッパ自由貿易連合（EFTA）"
+      ],
+      "answerIndex": 3,
+      "explanation": "1973年にイギリスなどはECに加盟した。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_015",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "1993年にEUを発足させた条約は？",
+      "choices": [
+        "マーストリヒト条約（欧州連合条約）",
+        "リスボン条約",
+        "アムステルダム条約",
+        "ローマ条約"
+      ],
+      "answerIndex": 0,
+      "explanation": "1992年調印。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_016",
+      "unit": "social.pol.economy.global.region",
+      "category": "knowledge",
+      "prompt": "EUの単一通貨ユーロが導入されたのはいつ？",
+      "choices": [
+        "2020年",
+        "2004年",
+        "1993年",
+        "1999年（現金の流通は2002年）"
+      ],
+      "answerIndex": 3,
+      "explanation": "現在は20か国が参加し、欧州中央銀行が金融政策を担う。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_017",
+      "unit": "social.pol.economy.global.region",
+      "category": "knowledge",
+      "prompt": "EUで大統領・\"外相\"を新設した条約は？",
+      "choices": [
+        "ニース条約",
+        "マーストリヒト条約",
+        "リスボン条約",
+        "ローマ条約"
+      ],
+      "answerIndex": 2,
+      "explanation": "2007年調印。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_018",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "2020年にEUを離脱した国は？",
+      "choices": [
+        "スイス",
+        "イタリア",
+        "イギリス",
+        "ギリシャ"
+      ],
+      "answerIndex": 2,
+      "explanation": "ブレグジットと呼ばれた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_019",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "1978年から中国で打ち出された、経済特区などで外国資本を導入した政策は？",
+      "choices": [
+        "計画経済",
+        "大躍進政策",
+        "改革・開放政策",
+        "一帯一路"
+      ],
+      "answerIndex": 2,
+      "explanation": "30年以上、年10％前後の成長を続けた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_020",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "中国主導で2015年に設立された、アジア向けの国際金融機関は？",
+      "choices": [
+        "アジアインフラ投資銀行（AIIB）",
+        "世界銀行",
+        "国際通貨基金",
+        "アジア開発銀行（ADB）"
+      ],
+      "answerIndex": 0,
+      "explanation": "一帯一路構想にもとづく。ADBは日米主導。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_021",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "ブラジル・ロシア・インド・中国・南アフリカの頭文字をとった新興国の呼び名は？",
+      "choices": [
+        "G7",
+        "NIEs",
+        "ASEAN",
+        "BRICS"
+      ],
+      "answerIndex": 3,
+      "explanation": "2024年からはエジプトなども首脳会議に参加。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_022",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "地球全体の経済や文化が一体化し、相互依存を深めている状態を何という？",
+      "choices": [
+        "ナショナリズム",
+        "ブロック経済",
+        "リージョナリズム",
+        "グローバリズム（グローバル化）"
+      ],
+      "answerIndex": 3,
+      "explanation": "モノだけでなくカネの取引も盛ん。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_023",
+      "unit": "social.pol.economy.global.region",
+      "category": "knowledge",
+      "prompt": "グローバリズムに対して、地域の統合をめざす動きを何という？",
+      "choices": [
+        "グローバリズム",
+        "多国間主義",
+        "資源ナショナリズム",
+        "リージョナリズム（地域主義）"
+      ],
+      "answerIndex": 3,
+      "explanation": "その典型がEC→EU。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_024",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "域内の人や資本の移動も自由化し、共通政策を実施する段階の統合の例は？",
+      "choices": [
+        "FTA",
+        "共同市場（例：EU）",
+        "APEC",
+        "関税同盟（例：MERCOSUR）"
+      ],
+      "answerIndex": 1,
+      "explanation": "共通通貨まで進むと経済同盟。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_025",
+      "unit": "social.pol.economy.global.region",
+      "category": "knowledge",
+      "prompt": "共通通貨や経済政策の調整を行う段階の統合は？",
+      "choices": [
+        "経済同盟",
+        "共同市場",
+        "関税同盟",
+        "FTA"
+      ],
+      "answerIndex": 0,
+      "explanation": "EUがこの段階にある。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_026",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "ASEANの当初の加盟国数は？",
+      "choices": [
+        "3か国",
+        "10か国",
+        "5か国",
+        "20か国"
+      ],
+      "answerIndex": 2,
+      "explanation": "現在は10か国（ASEAN10）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_027",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "AFTAを高度化させ、2015年に発足したものは？",
+      "choices": [
+        "EU",
+        "APEC",
+        "RCEP",
+        "ASEAN経済共同体（AEC）"
+      ],
+      "answerIndex": 3,
+      "explanation": "より高い水準の包括的な経済統合をめざす。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_028",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "日米間で2020年に発効した、事実上のFTAは？",
+      "choices": [
+        "TPP",
+        "日米貿易協定",
+        "NAFTA",
+        "USMCA"
+      ],
+      "answerIndex": 1,
+      "explanation": "米は工業製品、日は農産物の関税を撤廃・縮小。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_029",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "APECが掲げているスローガンは？",
+      "choices": [
+        "自由で開かれたインド太平洋",
+        "援助より貿易を",
+        "人間の安全保障",
+        "ゆりかごから墓場まで"
+      ],
+      "answerIndex": 0,
+      "explanation": "21の国・地域が参加。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_030",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "ECSCのもとになった、フランスの外相が提案した計画は？",
+      "choices": [
+        "ベバリッジ報告",
+        "プレビッシュ報告",
+        "マーシャル・プラン",
+        "シューマン・プラン"
+      ],
+      "answerIndex": 3,
+      "explanation": "独仏の石炭・鉄鋼の共同管理。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_031",
+      "unit": "social.pol.economy.global.trade",
+      "category": "knowledge",
+      "prompt": "EECの発足（1958年）のもとになった条約は？",
+      "choices": [
+        "マーストリヒト条約",
+        "ローマ条約",
+        "ニース条約",
+        "リスボン条約"
+      ],
+      "answerIndex": 1,
+      "explanation": "EECは域内自由貿易と域外共通関税。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_032",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "1979年に発足し、EC通貨統合の第一歩となった制度は？",
+      "choices": [
+        "SDR",
+        "ユーロ",
+        "欧州中央銀行",
+        "欧州通貨制度（EMS）"
+      ],
+      "answerIndex": 3,
+      "explanation": "ECU（欧州通貨単位）を作った。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_033",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "1997年に調印され、多数決制を導入した条約は？",
+      "choices": [
+        "リスボン条約",
+        "マーストリヒト条約",
+        "アムステルダム条約",
+        "ローマ条約"
+      ],
+      "answerIndex": 2,
+      "explanation": "政治統合を目標にした。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_034",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "ユーロ圏の金融政策を担う中央銀行は？",
+      "choices": [
+        "欧州中央銀行（ECB）",
+        "世界銀行",
+        "IMF",
+        "イングランド銀行"
+      ],
+      "answerIndex": 0,
+      "explanation": "20か国がユーロを導入している。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_035",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "世界金融危機後、財政破綻のおそれがあるとされたユーロ圏の5か国をまとめて何という？",
+      "choices": [
+        "G5",
+        "BRICS",
+        "NIEs",
+        "PIIGS"
+      ],
+      "answerIndex": 3,
+      "explanation": "ポルトガル・伊・アイルランド・ギリシャ・西。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_036",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "中国経済が「世界の工場」に加えて期待されるようになった役割は？",
+      "choices": [
+        "世界の銀行",
+        "世界の農場",
+        "世界の警察",
+        "世界の市場"
+      ],
+      "answerIndex": 3,
+      "explanation": "巨大な消費市場としての期待。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_037",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "1966年に日米主導で設立された、アジアの途上国援助の国際開発金融機関は？",
+      "choices": [
+        "アジア開発銀行（ADB）",
+        "IMF",
+        "世界銀行",
+        "アジアインフラ投資銀行（AIIB）"
+      ],
+      "answerIndex": 0,
+      "explanation": "AIIBは中国主導（2015年）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_038",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "中国が国際的に目指している、人民元を貿易などで使われる通貨にすることを何という？",
+      "choices": [
+        "固定相場制",
+        "人民元の切り下げ",
+        "人民元の国際化",
+        "人民元の廃止"
+      ],
+      "answerIndex": 2,
+      "explanation": "AIIBや一帯一路とも関係する。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_039",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "BRICSという言葉が広まるきっかけとなったレポートを出したのは？",
+      "choices": [
+        "IMF",
+        "世界銀行",
+        "OECD",
+        "ゴールドマン・サックス社"
+      ],
+      "answerIndex": 3,
+      "explanation": "2003年、2050年にはGDP上位6か国に入る可能性を示した。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_040",
+      "unit": "social.pol.economy.global.region",
+      "category": "thinking",
+      "prompt": "FTAとEPAのちがいとして正しいものは？",
+      "choices": [
+        "EPAはFTAの内容に加え、投資・人の移動・知的財産なども対象にする",
+        "EPAは関税だけを対象にする",
+        "FTAのほうが対象が広い",
+        "どちらも全く同じ"
+      ],
+      "answerIndex": 0,
+      "explanation": "EPAはより幅広い経済連携。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_041",
+      "unit": "social.pol.economy.global.region",
+      "category": "thinking",
+      "prompt": "EUの統合が進んだことによる利点として最も適切なものは？",
+      "choices": [
+        "域外との貿易が禁止された",
+        "各国の関税が上がった",
+        "域内で人・モノ・カネが自由に移動でき、ユーロで両替の手間がなくなった",
+        "各国が独自の金融政策を自由に行えるようになった"
+      ],
+      "answerIndex": 2,
+      "explanation": "単一市場と共通通貨の効果。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_042",
+      "unit": "social.pol.economy.global",
+      "category": "thinking",
+      "prompt": "ユーロ圏の国が自国だけで金利を変えられないことの問題点として最も適切なものは？",
+      "choices": [
+        "両替の手間が増える",
+        "為替相場が固定される",
+        "域内の貿易が減る",
+        "景気が悪い国も、ECBの共通の金融政策に合わせなければならない"
+      ],
+      "answerIndex": 3,
+      "explanation": "ギリシャ危機などで課題が明らかになった。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_043",
+      "unit": "social.pol.economy.global",
+      "category": "thinking",
+      "prompt": "イギリスがEUを離脱（ブレグジット）した主な理由として考えられるものは？",
+      "choices": [
+        "ユーロを使いたかったから",
+        "関税を下げたかったから",
+        "EUに加盟したかったから",
+        "移民の流入やEUのルールに従うことへの不満"
+      ],
+      "answerIndex": 3,
+      "explanation": "2016年の国民投票で離脱を選んだ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_044",
+      "unit": "social.pol.economy.global",
+      "category": "thinking",
+      "prompt": "地図のTPP・RCEP・APECから読み取れることとして正しいものは？",
+      "choices": [
+        "日本は複数の経済連携協定に重なって参加している",
+        "日本はどの協定にも参加していない",
+        "中国はTPP11に参加している",
+        "アメリカはRCEPに参加している"
+      ],
+      "answerIndex": 0,
+      "explanation": "日本はRCEP・CPTPP・APECのすべてに参加。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_045",
+      "unit": "social.pol.economy.global.region",
+      "category": "thinking",
+      "prompt": "アメリカがTPPからの離脱を表明した後も、日本などが11か国で発効させた理由として最も適切なものは？",
+      "choices": [
+        "関税を引き上げるため",
+        "アメリカに対抗して保護貿易をするため",
+        "ASEANを解体するため",
+        "幅広い分野でのルールづくりと貿易の自由化の利益を守るため"
+      ],
+      "answerIndex": 3,
+      "explanation": "CPTPP（TPP11）として発効。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_046",
+      "unit": "social.pol.economy.global.region",
+      "category": "thinking",
+      "prompt": "RCEPが「メガFTA」と呼ばれる理由は？",
+      "choices": [
+        "関税を引き上げる協定だから",
+        "ヨーロッパの国が多く参加しているから",
+        "加盟国が2か国だけだから",
+        "中国を含み、人口・GDPでTPPを上回る巨大な自由貿易圏だから"
+      ],
+      "answerIndex": 3,
+      "explanation": "日・中・韓・豪・NZ・ASEANが参加。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_047",
+      "unit": "social.pol.economy.global",
+      "category": "thinking",
+      "prompt": "地域的経済統合が進むことの問題点として最も適切なものは？",
+      "choices": [
+        "域外の国が不利になり、ブロック経済のような対立を生むおそれがある",
+        "域内の貿易が減る",
+        "WTOが強化される",
+        "すべての国が平等に利益を得る"
+      ],
+      "answerIndex": 0,
+      "explanation": "開かれた地域主義が求められる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_048",
+      "unit": "social.pol.economy.global",
+      "category": "thinking",
+      "prompt": "BRICSが注目される理由として最も適切なものは？",
+      "choices": [
+        "天然資源がほとんどないから",
+        "広い国土と多くの人口、豊かな天然資源をもち、今後大きく成長すると見込まれるから",
+        "先進国だから",
+        "人口が少ないから"
+      ],
+      "answerIndex": 1,
+      "explanation": "BRICSは世界人口の約4割を占める。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_049",
+      "unit": "social.pol.economy.global",
+      "category": "thinking",
+      "prompt": "BRICSの世界に占める割合のグラフから読み取れることとして正しいものは？",
+      "choices": [
+        "石炭生産量と粗鋼生産量で、中国が特に大きな割合を占める",
+        "ロシアの人口が最も多い",
+        "南アフリカの割合が最も大きい",
+        "BRICSの名目GDPは世界の半分をこえる"
+      ],
+      "answerIndex": 0,
+      "explanation": "石炭67.7％、粗鋼65.0％をBRICSが占める。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_050",
+      "unit": "social.pol.economy.global",
+      "category": "thinking",
+      "prompt": "中国のAIIBや一帯一路構想のねらいとして最も適切なものは？",
+      "choices": [
+        "ヨーロッパとの貿易をやめる",
+        "中国経済を閉ざす",
+        "アメリカ主導の機関を強化する",
+        "アジアなどのインフラ整備を進め、中国の経済的影響力を広げる"
+      ],
+      "answerIndex": 3,
+      "explanation": "人民元の国際化も目指す。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_07_051",
+      "unit": "social.pol.economy.global",
+      "category": "thinking",
+      "prompt": "中国が改革・開放政策で外国資本を導入した結果として正しいものは？",
+      "choices": [
+        "外国企業がすべて撤退した",
+        "計画経済が強化された",
+        "30年以上にわたって年10％前後の高い経済成長を達成した",
+        "経済が停滞した"
+      ],
+      "answerIndex": 2,
+      "explanation": "経済特区を中心に雇用を増やした。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ]
+    }
+  ]
+}

@@ -52,4 +52,38 @@ void main() {
       }
     }
   });
+
+  test('範囲表に登録した問題セットは、その科目の教科のバンドルにある', () {
+    var count = 0;
+    for (final (sheet, _) in ShonanRangeTable.sheets) {
+      final plan = ShonanRangeTable.plan(sheet, id: sheet, now: DateTime(2026));
+      for (final sp in plan.subjects.values) {
+        final subject = ShonanSubjects.byId(sp.subjectId)!;
+        for (final id in [...sp.existingSetIds, ...sp.committeeSetIds]) {
+          count++;
+          expect(bundle(subject.worldId).containsKey(id), isTrue,
+              reason: '$sheet ${sp.subjectId} $id');
+        }
+      }
+    }
+    expect(count, greaterThan(0));
+  });
+
+  test('後期中間の公共は、委員会の新作8セット（468問）で演習できる', () async {
+    final plan =
+        ShonanRangeTable.plan('後期中間試験（仮）', id: 'x', now: DateTime(2026));
+    final r = await SchoolPractice.build(
+      ShonanSubjects.byId('public_economy')!,
+      plan.subject('public_economy'),
+      (id) async {
+        final m = bundle('social')[id];
+        return m == null
+            ? null
+            : QuestionSet.fromJson(m as Map<String, dynamic>);
+      },
+    );
+    expect(r.issues, isEmpty);
+    expect(r.usedSetIds, hasLength(8));
+    expect(r.pool!.questions, hasLength(468));
+  });
 }

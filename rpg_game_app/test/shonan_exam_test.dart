@@ -62,11 +62,17 @@ void main() {
       scrollable: find.byType(Scrollable).first,
     );
     expect(find.textContaining('冊子No.3すべて'), findsOneWidget);
-    // 問題セットがないので演習ボタンは押せない
-    final btn = t.widget<ButtonStyleButton>(
+    // 公共は委員会の新作セットが登録済みなので演習できる
+    final pub = t.widget<ButtonStyleButton>(
       find.byKey(const ValueKey('shonan-practice-public_economy')),
     );
-    expect(btn.onPressed, isNull);
+    expect(pub.onPressed, isNotNull);
+    expect(find.textContaining('委員会の新作問題セット：8'), findsOneWidget);
+    // 生物基礎は範囲も問題セットもないので押せない
+    final bio = t.widget<ButtonStyleButton>(
+      find.byKey(const ValueKey('shonan-practice-biology_basic')),
+    );
+    expect(bio.onPressed, isNull);
     expect(t.takeException(), isNull);
   });
 

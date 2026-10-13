@@ -357,6 +357,16 @@ class ShonanRangeTable {
         subjects['public_economy'] = SubjectExamPlan(
             subjectId: 'public_economy',
             rangeText: '',
+            committeeSetIds: const [
+              'social_shonan_104_public_economy_01',
+              'social_shonan_104_public_economy_02',
+              'social_shonan_104_public_economy_03',
+              'social_shonan_104_public_economy_04',
+              'social_shonan_104_public_economy_05',
+              'social_shonan_104_public_economy_06',
+              'social_shonan_104_public_economy_07',
+              'social_shonan_104_public_economy_08'
+            ],
             status: RangeStatus.entered,
             materials: const [
               StudyMaterial(

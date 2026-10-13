@@ -8,6 +8,10 @@ wb = openpyxl.load_workbook(sys.argv[1], data_only=True)
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'lib', 'src', 'study', 'shonan_range_table.dart')
 SUBJ = {'現代の国語':'gendai_kokugo','言語文化':'gengo_bunka','数学Ⅰ':'math1','数学A':'math_a','ECⅠ':'ec1','論表Ⅰ':'ronhyo1',
         '化学基礎':'chemistry_basic','生物基礎':'biology_basic','地理総合':'geography_general','公共':'public_economy','情報Ⅰ':'information1'}
+# 範囲表の試験・科目に最初から登録しておく委員会の新作問題セット
+COMMITTEE = {
+    ('後期中間試験（仮）', 'public_economy'): [f'social_shonan_104_public_economy_{i:02d}' for i in range(1, 9)],
+}
 def kind(name):
     if name == '教科書': return '教科書'
     if 'プリント' in name: return '授業プリント'
@@ -49,7 +53,9 @@ for sheet, title, plan in out:
         mats = ', '.join("StudyMaterial(kind: %s, name: %s, range: %s, note: %s)" % (dq(m['kind']), dq(m['name']), dq(m['range']), dq(m['note'])) for m in sp['materials'])
         filled = bool(sp['materials'])
         date = f"examDate: DateTime.parse('{sp['date']}'), " if sp['date'] else ''
-        L.append(f"        subjects[{dq(sid)}] = SubjectExamPlan(subjectId: {dq(sid)}, rangeText: {dq(sp['note'])}, {date}status: RangeStatus.{'entered' if filled else 'empty'}, materials: const [{mats}]);")
+        sets = COMMITTEE.get((sheet, sid), [])
+        cs = f"committeeSetIds: const [{', '.join(dq(x) for x in sets)}], " if sets else ''
+        L.append(f"        subjects[{dq(sid)}] = SubjectExamPlan(subjectId: {dq(sid)}, rangeText: {dq(sp['note'])}, {date}{cs}status: RangeStatus.{'entered' if filled else 'empty'}, materials: const [{mats}]);")
     L.append("        break;")
 L += ["    }", "    final title = sheets.firstWhere((s) => s.$1 == sheet, orElse: () => (sheet, sheet)).$2;",
       "    return SchoolExamPlan(id: id, title: title, createdAt: now, subjects: subjects);", "  }", "}", ""]
