@@ -245,10 +245,8 @@ class ShonanExamStore {
     }
   }
 
-  Stream<List<ShonanExamPlan>> watch() async* {
-    yield load();
-    yield* _controller.stream;
-  }
+  /// 安定したストリームを返す。初期値は画面側の StreamBuilder.initialData で渡す。
+  Stream<List<ShonanExamPlan>> watch() => _controller.stream;
 
   Future<void> _write(List<ShonanExamPlan> plans) async {
     await _prefs.setString(
