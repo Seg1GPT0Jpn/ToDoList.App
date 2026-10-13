@@ -9,8 +9,16 @@ OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'lib', 'src
 SUBJ = {'現代の国語':'gendai_kokugo','言語文化':'gengo_bunka','数学Ⅰ':'math1','数学A':'math_a','ECⅠ':'ec1','論表Ⅰ':'ronhyo1',
         '化学基礎':'chemistry_basic','生物基礎':'biology_basic','地理総合':'geography_general','公共':'public_economy','情報Ⅰ':'information1'}
 # 範囲表の試験・科目に最初から登録しておく委員会の新作問題セット
+def _sets(prefix, n):
+    return [f'{prefix}_{i:02d}' for i in range(1, n + 1)]
+
+
 COMMITTEE = {
-    ('後期中間試験', 'public_economy'): [f'social_shonan_104_public_economy_{i:02d}' for i in range(1, 9)],
+    ('後期中間試験', 'public_economy'): _sets('social_shonan_104_public_economy', 8),
+    ('後期中間試験', 'math1'): _sets('math_shonan_104_m1_data', 4) + _sets('math_shonan_104_m1_proof', 3) + _sets('math_shonan_104_m1_complex', 4),
+    ('後期中間試験', 'math_a'): _sets('math_shonan_104_ma_integer', 5),
+    ('後期中間試験', 'ec1'): _sets('english_shonan_104_ec1', 3),
+    ('後期中間試験', 'chemistry_basic'): _sets('science_shonan_104_chem_mole', 6) + _sets('science_shonan_104_chem_solution', 4) + _sets('science_shonan_104_chem_reaction', 5),
 }
 def kind(name):
     if name == '教科書': return '教科書'

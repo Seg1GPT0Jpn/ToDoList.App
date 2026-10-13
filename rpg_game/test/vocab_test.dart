@@ -124,6 +124,30 @@ void main() {
     });
   });
 
+  group('テスト範囲', () {
+    test('LEAP の後期中間 特別強化は 1201〜2100 番だけ', () {
+      final book = VocabBook(
+        id: 'leap',
+        title: 'LEAP',
+        kind: VocabBookKind.protectedImport,
+        cards: [
+          for (final n in [1, 1200, 1201, 1500, 2100, 2101])
+            VocabCard(id: '$n', number: n, term: 'w$n', meaning: '意味'),
+        ],
+      );
+      final ranges = VocabCourse.testRangesFor(book);
+      expect(ranges.single.$1, '後期中間 特別強化（1201〜2100）');
+      expect(ranges.single.$2.map((c) => c.number), [1201, 1500, 2100]);
+      expect(
+          VocabCourse.testRangesFor(VocabBook(
+              id: 'eevi',
+              title: 'EEVI',
+              kind: VocabBookKind.protectedImport,
+              cards: book.cards)),
+          isEmpty);
+    });
+  });
+
   group('短い意味', () {
     String short(String m) =>
         VocabCard(id: '1', term: 'x', meaning: m).shortMeaning;

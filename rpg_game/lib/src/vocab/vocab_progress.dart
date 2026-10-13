@@ -621,6 +621,25 @@ class VocabChoices {
 class VocabCourse {
   const VocabCourse._();
 
+  /// 定期テストの範囲（単語帳ID・名前・番号の範囲）。単語そのものは暗号化した単語帳の中にだけある
+  static const testRanges = <(String, String, int, int)>[
+    ('leap', '後期中間 特別強化', 1201, 2100),
+  ];
+
+  /// その単語帳のテスト範囲ごとの単語
+  static List<(String, List<VocabCard>)> testRangesFor(VocabBook book) => [
+        for (final (id, name, from, to) in testRanges)
+          if (id == book.id)
+            (
+              '$name（$from〜$to）',
+              [
+                for (final c in book.cards)
+                  if (c.number != null && c.number! >= from && c.number! <= to)
+                    c,
+              ],
+            ),
+      ];
+
   static List<(String, List<VocabCard>)> weeks(VocabBook book,
       {int size = 100}) {
     final out = <(String, List<VocabCard>)>[];

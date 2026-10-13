@@ -280,6 +280,19 @@ class ShonanRangeTable {
         subjects['math1'] = SubjectExamPlan(
             subjectId: 'math1',
             rangeText: '数Ⅰ：データの分析　数Ⅱ：式と証明、複素数',
+            committeeSetIds: const [
+              'math_shonan_104_m1_data_01',
+              'math_shonan_104_m1_data_02',
+              'math_shonan_104_m1_data_03',
+              'math_shonan_104_m1_data_04',
+              'math_shonan_104_m1_proof_01',
+              'math_shonan_104_m1_proof_02',
+              'math_shonan_104_m1_proof_03',
+              'math_shonan_104_m1_complex_01',
+              'math_shonan_104_m1_complex_02',
+              'math_shonan_104_m1_complex_03',
+              'math_shonan_104_m1_complex_04'
+            ],
             status: RangeStatus.entered,
             materials: const [
               StudyMaterial(
@@ -301,6 +314,13 @@ class ShonanRangeTable {
         subjects['math_a'] = SubjectExamPlan(
             subjectId: 'math_a',
             rangeText: '数学と人間活動',
+            committeeSetIds: const [
+              'math_shonan_104_ma_integer_01',
+              'math_shonan_104_ma_integer_02',
+              'math_shonan_104_ma_integer_03',
+              'math_shonan_104_ma_integer_04',
+              'math_shonan_104_ma_integer_05'
+            ],
             status: RangeStatus.entered,
             materials: const [
               StudyMaterial(
@@ -319,6 +339,11 @@ class ShonanRangeTable {
         subjects['ec1'] = SubjectExamPlan(
             subjectId: 'ec1',
             rangeText: 'Lesson5~7',
+            committeeSetIds: const [
+              'english_shonan_104_ec1_01',
+              'english_shonan_104_ec1_02',
+              'english_shonan_104_ec1_03'
+            ],
             status: RangeStatus.entered,
             materials: const [
               StudyMaterial(
@@ -337,6 +362,23 @@ class ShonanRangeTable {
         subjects['chemistry_basic'] = SubjectExamPlan(
             subjectId: 'chemistry_basic',
             rangeText: '',
+            committeeSetIds: const [
+              'science_shonan_104_chem_mole_01',
+              'science_shonan_104_chem_mole_02',
+              'science_shonan_104_chem_mole_03',
+              'science_shonan_104_chem_mole_04',
+              'science_shonan_104_chem_mole_05',
+              'science_shonan_104_chem_mole_06',
+              'science_shonan_104_chem_solution_01',
+              'science_shonan_104_chem_solution_02',
+              'science_shonan_104_chem_solution_03',
+              'science_shonan_104_chem_solution_04',
+              'science_shonan_104_chem_reaction_01',
+              'science_shonan_104_chem_reaction_02',
+              'science_shonan_104_chem_reaction_03',
+              'science_shonan_104_chem_reaction_04',
+              'science_shonan_104_chem_reaction_05'
+            ],
             status: RangeStatus.entered,
             materials: const [
               StudyMaterial(

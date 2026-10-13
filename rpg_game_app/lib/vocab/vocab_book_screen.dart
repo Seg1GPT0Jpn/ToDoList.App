@@ -200,6 +200,13 @@ class _VocabBookScreenState extends State<VocabBookScreen> {
           label: const Text('間違えた単語だけ'),
         ),
         const SizedBox(height: 16),
+        if (VocabCourse.testRangesFor(book).isNotEmpty) ...[
+          Text('テスト範囲', style: serif(15)),
+          const SizedBox(height: 6),
+          for (final (name, cards) in VocabCourse.testRangesFor(book))
+            if (cards.isNotEmpty) _weekTile(name, cards, now),
+          const SizedBox(height: 10),
+        ],
         Text('コース', style: serif(15)),
         Text(
           'Week を開くと、その${_limit ?? 100}語を上の問題数・順番で練習できます',

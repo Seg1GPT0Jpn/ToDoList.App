@@ -1,0 +1,932 @@
+{
+  "setId": "science_shonan_104_chem_mole_02",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "science_shonan_104_chem_mole_02_001",
+      "unit": "science.chemistry.change.mole.mole",
+      "category": "calculation",
+      "prompt": "CaCl₂ 166.5 g に含まれる分子（粒子）の数は？（アボガドロ定数 6.0×10²³/mol）（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "9.0 × 10²²",
+        "1.0 × 10²⁶",
+        "1.5 × 10²³",
+        "9.0 × 10²³"
+      ],
+      "answerIndex": 3,
+      "explanation": "166.5÷111＝1.5 mol。1.5×6.0×10²³ 個。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "mole"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_mole_02_002",
+      "unit": "science.chemistry.change.mole.mass",
+      "category": "calculation",
+      "prompt": "標準状態で 33.6 L の NH₃ の質量は何 g か。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "17 g",
+        "571.2 g",
+        "25.5 g",
+        "1.5 g"
+      ],
+      "answerIndex": 2,
+      "explanation": "33.6÷22.4＝1.5 mol、×17＝25.5 g。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "mole"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_mole_02_003",
+      "unit": "science.chemistry.change.mole.mole",
+      "category": "calculation",
+      "prompt": "C₂H₆ 60 g の物質量は何 mol か。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "1800 mol",
+        "2 mol",
+        "4 mol",
+        "0.5 mol"
+      ],
+      "answerIndex": 1,
+      "explanation": "C₂H₆ のモル質量は 30 g/mol。60÷30＝2 mol。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "mole"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_mole_02_004",
+      "unit": "science.chemistry.change.mole.mass",
+      "category": "calculation",
+      "prompt": "Zn 5 mol の質量は何 g か。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "13 g",
+        "650 g",
+        "5 g",
+        "325 g"
+      ],
+      "answerIndex": 3,
+      "explanation": "65 g/mol × 5 mol ＝ 325 g。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "mole"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_mole_02_005",
+      "unit": "science.chemistry.change.mole.mass",
+      "category": "calculation",
+      "prompt": "C₂H₆ 3 mol の質量は何 g か。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "90 g",
+        "10 g",
+        "3 g",
+        "180 g"
+      ],
+      "answerIndex": 0,
+      "explanation": "30 g/mol × 3 mol ＝ 90 g。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "mole"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_mole_02_006",
+      "unit": "science.chemistry.change.mole.mole",
+      "category": "calculation",
+      "prompt": "標準状態で SO₂ 4.48 L の物質量は何 mol か。",
+      "choices": [
+        "0.2 mol",
+        "100.352 mol",
+        "0.4 mol",
+        "5 mol"
+      ],
+      "answerIndex": 0,
+      "explanation": "4.48÷22.4＝0.2 mol。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "mole"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_mole_02_007",
+      "unit": "science.chemistry.change.mole.mass",
+      "category": "calculation",
+      "prompt": "標準状態で 5.6 L の H₂ の質量は何 g か。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "11.2 g",
+        "2 g",
+        "0.5 g",
+        "0.25 g"
+      ],
+      "answerIndex": 2,
+      "explanation": "5.6÷22.4＝0.25 mol、×2＝0.5 g。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "mole"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_mole_02_008",
+      "unit": "science.chemistry.change.mole.mass",
+      "category": "calculation",
+      "prompt": "NaCl の分子量（式量）は？（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "58.5",
+        "57.5",
+        "59.5",
+        "117"
+      ],
+      "answerIndex": 0,
+      "explanation": "23×1 ＋ 35.5×1 ＝ 58.5。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "mole"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_mole_02_009",
+      "unit": "science.chemistry.change.mole.mass",
+      "category": "calculation",
+      "prompt": "N₂ 2.8 g は、標準状態で何 L か。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "0.1 L",
+        "2.24 L",
+        "62.72 L",
+        "4.48 L"
+      ],
+      "answerIndex": 1,
+      "explanation": "2.8÷28＝0.1 mol、×22.4＝2.24 L。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "mole"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_mole_02_010",
+      "unit": "science.chemistry.change.mole.mass",
+      "category": "calculation",
+      "prompt": "CH₄ の分子量（式量）は？（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "32",
+        "17",
+        "16",
+        "13"
+      ],
+      "answerIndex": 2,
+      "explanation": "12×1 ＋ 1×4 ＝ 16。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "mole"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_mole_02_011",
+      "unit": "science.chemistry.change.mole.mass",
+      "category": "calculation",
+      "prompt": "リチウムの同位体は相対質量 6（存在比 8%）と 7（存在比 92%）である。原子量は？（小数第1位まで）",
+      "choices": [
+        "6.1",
+        "6.5",
+        "7.9",
+        "6.9"
+      ],
+      "answerIndex": 3,
+      "explanation": "6×8/100＋7×92/100。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "mole"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_mole_02_012",
+      "unit": "science.chemistry.change.mole.mass",
+      "category": "calculation",
+      "prompt": "MgCl₂ の分子量（式量）は？（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "96",
+        "190",
+        "95",
+        "59.5"
+      ],
+      "answerIndex": 2,
+      "explanation": "24×1 ＋ 35.5×2 ＝ 95。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "mole"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_mole_02_013",
+      "unit": "science.chemistry.change.mole.mole",
+      "category": "calculation",
+      "prompt": "ある気体の標準状態での密度は 1.79 g/L である。この気体のモル質量は何 g/mol か。",
+      "choices": [
+        "40 g/mol",
+        "12.544 g/mol",
+        "80 g/mol",
+        "0.0797 g/mol"
+      ],
+      "answerIndex": 0,
+      "explanation": "1.79×22.4＝40。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "mole"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_mole_02_014",
+      "unit": "science.chemistry.change.mole.mass",
+      "category": "calculation",
+      "prompt": "Cl₂ 14.2 g は、標準状態で何 L か。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "4.48 L",
+        "318.08 L",
+        "8.96 L",
+        "0.2 L"
+      ],
+      "answerIndex": 0,
+      "explanation": "14.2÷71＝0.2 mol、×22.4＝4.48 L。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "mole"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_mole_02_015",
+      "unit": "science.chemistry.change.mole.mass",
+      "category": "calculation",
+      "prompt": "Al₂O₃ の分子量（式量）は？（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "204",
+        "102",
+        "43",
+        "103"
+      ],
+      "answerIndex": 1,
+      "explanation": "27×2 ＋ 16×3 ＝ 102。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "mole"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_mole_02_016",
+      "unit": "science.chemistry.change.mole.mole",
+      "category": "calculation",
+      "prompt": "NaOH 20 g に含まれる分子（粒子）の数は？（アボガドロ定数 6.0×10²³/mol）（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "3.0 × 10²³",
+        "3.0 × 10²²",
+        "1.2 × 10²⁵",
+        "5.0 × 10²²"
+      ],
+      "answerIndex": 0,
+      "explanation": "20÷40＝0.5 mol。0.5×6.0×10²³ 個。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "mole"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_mole_02_017",
+      "unit": "science.chemistry.change.mole.mass",
+      "category": "calculation",
+      "prompt": "Zn の分子量（式量）は？（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "65",
+        "130",
+        "64",
+        "66"
+      ],
+      "answerIndex": 0,
+      "explanation": "65×1 ＝ 65。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "mole"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_mole_02_018",
+      "unit": "science.chemistry.change.mole.mass",
+      "category": "calculation",
+      "prompt": "MgO 1.5 mol の質量は何 g か。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "60 g",
+        "26.7 g",
+        "1.5 g",
+        "120 g"
+      ],
+      "answerIndex": 0,
+      "explanation": "40 g/mol × 1.5 mol ＝ 60 g。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "mole"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_mole_02_019",
+      "unit": "science.chemistry.change.mole.mass",
+      "category": "calculation",
+      "prompt": "標準状態での H₂O の密度（1 L あたりの質量）は何 g/L か。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "0.80 g/L",
+        "403 g/L",
+        "1.2 g/L",
+        "1.6 g/L"
+      ],
+      "answerIndex": 0,
+      "explanation": "18 g/mol ÷ 22.4 L/mol。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "mole"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_mole_02_020",
+      "unit": "science.chemistry.change.mole.mole",
+      "category": "calculation",
+      "prompt": "O₂ 16 g に含まれる分子（粒子）の数は？（アボガドロ定数 6.0×10²³/mol）（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "9.6 × 10²⁴",
+        "3.0 × 10²³",
+        "3.0 × 10²²",
+        "5.0 × 10²²"
+      ],
+      "answerIndex": 1,
+      "explanation": "16÷32＝0.5 mol。0.5×6.0×10²³ 個。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "mole"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_mole_02_021",
+      "unit": "science.chemistry.change.mole.mole",
+      "category": "calculation",
+      "prompt": "標準状態で H₂ 67.2 L の物質量は何 mol か。",
+      "choices": [
+        "1505.28 mol",
+        "3 mol",
+        "6 mol",
+        "0.333 mol"
+      ],
+      "answerIndex": 1,
+      "explanation": "67.2÷22.4＝3 mol。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "mole"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_mole_02_022",
+      "unit": "science.chemistry.change.mole.mole",
+      "category": "calculation",
+      "prompt": "標準状態で C₃H₈ 2.24 L の物質量は何 mol か。",
+      "choices": [
+        "0.1 mol",
+        "0.2 mol",
+        "50.176 mol",
+        "10 mol"
+      ],
+      "answerIndex": 0,
+      "explanation": "2.24÷22.4＝0.1 mol。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "mole"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_mole_02_023",
+      "unit": "science.chemistry.change.mole.mole",
+      "category": "calculation",
+      "prompt": "H₂SO₄ 24.5 g に含まれる分子（粒子）の数は？（アボガドロ定数 6.0×10²³/mol）（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "1.5 × 10²³",
+        "1.5 × 10²²",
+        "2.5 × 10²²",
+        "1.5 × 10²⁵"
+      ],
+      "answerIndex": 0,
+      "explanation": "24.5÷98＝0.25 mol。0.25×6.0×10²³ 個。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "mole"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_mole_02_024",
+      "unit": "science.chemistry.change.mole.mole",
+      "category": "calculation",
+      "prompt": "H₂O 分子1個の質量は何 g か。（アボガドロ定数 6.0×10²³/mol）",
+      "choices": [
+        "1.1 × 10²⁵ g",
+        "3.0 × 10⁻²³ g",
+        "3.3 × 10²² g",
+        "3.0 × 10⁻²² g"
+      ],
+      "answerIndex": 1,
+      "explanation": "18 g を 6.0×10²³ 個で割る。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "mole"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_mole_02_025",
+      "unit": "science.chemistry.change.mole.mass",
+      "category": "calculation",
+      "prompt": "HCl 0.25 mol の質量は何 g か。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "9.125 g",
+        "146 g",
+        "0.25 g",
+        "18.25 g"
+      ],
+      "answerIndex": 0,
+      "explanation": "36.5 g/mol × 0.25 mol ＝ 9.125 g。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "mole"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_mole_02_026",
+      "unit": "science.chemistry.change.mole.mole",
+      "category": "calculation",
+      "prompt": "KCl 111.75 g に含まれる分子（粒子）の数は？（アボガドロ定数 6.0×10²³/mol）（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "6.7 × 10²⁵",
+        "1.5 × 10²³",
+        "9.0 × 10²²",
+        "9.0 × 10²³"
+      ],
+      "answerIndex": 3,
+      "explanation": "111.75÷74.5＝1.5 mol。1.5×6.0×10²³ 個。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "mole"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_mole_02_027",
+      "unit": "science.chemistry.change.mole.mole",
+      "category": "calculation",
+      "prompt": "標準状態で Cl₂ 11.2 L の物質量は何 mol か。",
+      "choices": [
+        "1 mol",
+        "0.5 mol",
+        "2 mol",
+        "250.88 mol"
+      ],
+      "answerIndex": 1,
+      "explanation": "11.2÷22.4＝0.5 mol。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "mole"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_mole_02_028",
+      "unit": "science.chemistry.change.mole.mole",
+      "category": "thinking",
+      "prompt": "標準状態で最も密度が大きい気体は？",
+      "choices": [
+        "H₂",
+        "N₂",
+        "CH₄",
+        "CO₂"
+      ],
+      "answerIndex": 3,
+      "explanation": "密度＝モル質量÷22.4。CO₂は44。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "mole"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_mole_02_029",
+      "unit": "science.chemistry.change.mole.mole",
+      "category": "calculation",
+      "prompt": "C₃H₈ 66 g に含まれる分子（粒子）の数は？（アボガドロ定数 6.0×10²³/mol）（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "9.0 × 10²²",
+        "9.0 × 10²³",
+        "1.5 × 10²³",
+        "4.0 × 10²⁵"
+      ],
+      "answerIndex": 1,
+      "explanation": "66÷44＝1.5 mol。1.5×6.0×10²³ 個。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "mole"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_mole_02_030",
+      "unit": "science.chemistry.change.mole.mass",
+      "category": "calculation",
+      "prompt": "O₂ 16 g は、標準状態で何 L か。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "358.4 L",
+        "22.4 L",
+        "0.5 L",
+        "11.2 L"
+      ],
+      "answerIndex": 3,
+      "explanation": "16÷32＝0.5 mol、×22.4＝11.2 L。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "mole"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_mole_02_031",
+      "unit": "science.chemistry.change.mole.mole",
+      "category": "calculation",
+      "prompt": "C₆H₁₂O₆ 360 g に含まれる分子（粒子）の数は？（アボガドロ定数 6.0×10²³/mol）（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "1.2 × 10²³",
+        "2.0 × 10²³",
+        "1.2 × 10²⁴",
+        "2.2 × 10²⁶"
+      ],
+      "answerIndex": 2,
+      "explanation": "360÷180＝2 mol。2×6.0×10²³ 個。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "mole"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_mole_02_032",
+      "unit": "science.chemistry.change.mole.mass",
+      "category": "calculation",
+      "prompt": "N₂ 5.6 g は、標準状態で何 L か。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "0.2 L",
+        "8.96 L",
+        "125.44 L",
+        "4.48 L"
+      ],
+      "answerIndex": 3,
+      "explanation": "5.6÷28＝0.2 mol、×22.4＝4.48 L。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "mole"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_mole_02_033",
+      "unit": "science.chemistry.change.mole.mole",
+      "category": "calculation",
+      "prompt": "ある気体の標準状態での密度は 2 g/L である。この気体のモル質量は何 g/mol か。",
+      "choices": [
+        "89.6 g/mol",
+        "11.2 g/mol",
+        "0.0893 g/mol",
+        "44.8 g/mol"
+      ],
+      "answerIndex": 3,
+      "explanation": "2×22.4＝44.8。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "mole"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_mole_02_034",
+      "unit": "science.chemistry.change.mole.mole",
+      "category": "calculation",
+      "prompt": "CO₂ 220 g に含まれる分子（粒子）の数は？（アボガドロ定数 6.0×10²³/mol）（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "5.0 × 10²³",
+        "1.3 × 10²⁶",
+        "3.0 × 10²⁴",
+        "3.0 × 10²³"
+      ],
+      "answerIndex": 2,
+      "explanation": "220÷44＝5 mol。5×6.0×10²³ 個。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "mole"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_mole_02_035",
+      "unit": "science.chemistry.change.mole.mole",
+      "category": "knowledge",
+      "prompt": "1 mol とは何個の粒子の集まりか。",
+      "choices": [
+        "22.4 個",
+        "1.0×10²³ 個",
+        "12 個",
+        "6.0×10²³ 個"
+      ],
+      "answerIndex": 3,
+      "explanation": "アボガドロ定数 6.0×10²³/mol。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "mole"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_mole_02_036",
+      "unit": "science.chemistry.change.mole.mole",
+      "category": "calculation",
+      "prompt": "C₃H₈ 11 g に含まれる分子（粒子）の数は？（アボガドロ定数 6.0×10²³/mol）（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "1.5 × 10²²",
+        "6.6 × 10²⁴",
+        "2.5 × 10²²",
+        "1.5 × 10²³"
+      ],
+      "answerIndex": 3,
+      "explanation": "11÷44＝0.25 mol。0.25×6.0×10²³ 個。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "mole"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_mole_02_037",
+      "unit": "science.chemistry.change.mole.mass",
+      "category": "calculation",
+      "prompt": "標準状態で 11.2 L の HCl の質量は何 g か。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "36.5 g",
+        "18.25 g",
+        "408.8 g",
+        "0.5 g"
+      ],
+      "answerIndex": 1,
+      "explanation": "11.2÷22.4＝0.5 mol、×36.5＝18.25 g。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "mole"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_mole_02_038",
+      "unit": "science.chemistry.change.mole",
+      "category": "calculation",
+      "prompt": "C₃H₈ 2 mol に含まれる H 原子の数は？",
+      "choices": [
+        "1.1 × 10²⁵",
+        "9.6 × 10²⁴",
+        "1.6 × 10²⁴",
+        "1.2 × 10²⁴"
+      ],
+      "answerIndex": 1,
+      "explanation": "C₃H₈ 1分子に H 原子は 8 個。2×8×6.0×10²³。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "mole"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_mole_02_039",
+      "unit": "science.chemistry.change.mole.mass",
+      "category": "calculation",
+      "prompt": "H₂ 3 g は、標準状態で何 L か。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "1.5 L",
+        "14.9 L",
+        "67.2 L",
+        "33.6 L"
+      ],
+      "answerIndex": 3,
+      "explanation": "3÷2＝1.5 mol、×22.4＝33.6 L。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "mole"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_mole_02_040",
+      "unit": "science.chemistry.change.mole.mole",
+      "category": "calculation",
+      "prompt": "標準状態で HCl 4.48 L の物質量は何 mol か。",
+      "choices": [
+        "0.4 mol",
+        "5 mol",
+        "0.2 mol",
+        "100.352 mol"
+      ],
+      "answerIndex": 2,
+      "explanation": "4.48÷22.4＝0.2 mol。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "mole"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_mole_02_041",
+      "unit": "science.chemistry.change.mole.mass",
+      "category": "calculation",
+      "prompt": "NaCl 2 mol の質量は何 g か。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "2 g",
+        "234 g",
+        "29.25 g",
+        "117 g"
+      ],
+      "answerIndex": 3,
+      "explanation": "58.5 g/mol × 2 mol ＝ 117 g。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "mole"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_mole_02_042",
+      "unit": "science.chemistry.change.mole.mole",
+      "category": "calculation",
+      "prompt": "標準状態で Cl₂ 67.2 L の物質量は何 mol か。",
+      "choices": [
+        "3 mol",
+        "6 mol",
+        "1505.28 mol",
+        "0.333 mol"
+      ],
+      "answerIndex": 0,
+      "explanation": "67.2÷22.4＝3 mol。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "mole"
+      ]
+    }
+  ]
+}
