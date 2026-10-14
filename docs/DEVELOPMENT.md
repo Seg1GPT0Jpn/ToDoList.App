@@ -88,3 +88,14 @@ firebase deploy --only hosting --project <プロジェクトID>
 - パスワードや市販教材の本文をコミットしない。プロモーションコードはハッシュ値だけを保存する
 - ガチャ・ランダム型の課金は作らない
 - 変更したら `dart analyze`・`flutter analyze`・両方のテストを通してからコミットする
+
+## Web版の自動公開（GitHub Actions）
+
+`.github/workflows/deploy-web.yml` が、開発ブランチ `claude/gallant-tesla-kvdjs2` への push のたびに
+Web版をビルドして https://tsuzuri-quest-v2.web.app に公開する。
+
+- 必要な秘密鍵：`FIREBASE_SERVICE_ACCOUNT_TSUZURI_QUEST_V2`
+  （`firebase init hosting:github --project tsuzuri-quest-v2` で登録）。未登録なら公開は飛ばす。
+- 「Run workflow」ボタンは、このファイルが既定ブランチ（main）に入るまで GitHub に表示されない。
+  それまでは push で動かす。
+- Firestore のルールや Functions は自動では公開しない（PC で `firebase deploy`）。
