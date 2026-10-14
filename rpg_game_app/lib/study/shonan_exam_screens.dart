@@ -5,7 +5,9 @@ import '../app/services.dart';
 import '../app/theme.dart';
 import '../art/paper.dart';
 import '../battle/battle_screen.dart';
+import 'ec_text.dart';
 import 'school_exam_store.dart';
+import 'shonan_question_list.dart';
 
 /// 画面に出す文言（ここにまとめる）
 class ShonanText {
@@ -304,6 +306,12 @@ class _SubjectCard extends StatelessWidget {
       );
       if (go != true || !context.mounted) return;
     }
+    var questions = result.pool!.questions;
+    // EC は本文を開いていれば、問題の中に本文（その Section）を出す
+    if (subject.id == 'ec1') {
+      final passages = await EcText.saved(services.personalBooks.prefs);
+      if (passages != null) questions = EcText.attach(questions, passages);
+    }
     final progress = await services.repository.load();
     if (!context.mounted) return;
     final stage = SeaBattle.stage(
@@ -319,7 +327,7 @@ class _SubjectCard extends StatelessWidget {
         builder: (_) => BattleScreen(
           world: RpgCatalog.world(subject.worldId),
           stage: stage,
-          questions: result.pool!.questions,
+          questions: questions,
           progress: progress,
           // 通常RPGのレベル・経験値・クリア状況は変えない（練習用）
           trial: true,
@@ -372,11 +380,44 @@ class _SubjectCard extends StatelessWidget {
               style: const TextStyle(fontSize: 12.5),
             ),
             const SizedBox(height: 6),
-            FilledButton.tonalIcon(
-              key: ValueKey('shonan-practice-${subject.id}'),
-              onPressed: sp.hasSets ? () => _practice(context, sp) : null,
-              icon: const Icon(Icons.sports_esports),
-              label: Text(sp.hasSets ? ShonanText.practice : ShonanText.noSets),
+            Wrap(
+              spacing: 8,
+              runSpacing: 4,
+              children: [
+                FilledButton.tonalIcon(
+                  key: ValueKey('shonan-practice-${subject.id}'),
+                  onPressed: sp.hasSets ? () => _practice(context, sp) : null,
+                  icon: const Icon(Icons.sports_esports),
+                  label: Text(
+                    sp.hasSets ? ShonanText.practice : ShonanText.noSets,
+                  ),
+                ),
+                if (sp.hasSets)
+                  OutlinedButton.icon(
+                    key: ValueKey('shonan-list-${subject.id}'),
+                    onPressed: () => Navigator.of(context).push(
+                      MaterialPageRoute<void>(
+                        builder: (_) => ShonanQuestionListScreen(
+                          subject: subject,
+                          plan: sp,
+                        ),
+                      ),
+                    ),
+                    icon: const Icon(Icons.list_alt),
+                    label: const Text('問題一覧・解説'),
+                  ),
+                if (subject.id == 'ec1')
+                  OutlinedButton.icon(
+                    key: const ValueKey('shonan-ec-text'),
+                    onPressed: () => Navigator.of(context).push(
+                      MaterialPageRoute<void>(
+                        builder: (_) => const EcTextScreen(),
+                      ),
+                    ),
+                    icon: const Icon(Icons.menu_book),
+                    label: const Text('本文を見る'),
+                  ),
+              ],
             ),
             if (!sp.hasSets)
               Text(

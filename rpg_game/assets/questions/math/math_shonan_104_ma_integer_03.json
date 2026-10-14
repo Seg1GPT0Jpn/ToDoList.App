@@ -214,7 +214,7 @@
         "404"
       ],
       "answerIndex": 2,
-      "explanation": "(1＋p＋p²…)(1＋q＋…) を展開した和。",
+      "explanation": "2⁴×3² より (1＋2＋4＋8＋16)×(1＋3＋9)＝403。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -236,7 +236,7 @@
         "1001001（2）"
       ],
       "answerIndex": 0,
-      "explanation": "2 で割った余りを下から並べる。",
+      "explanation": "71 を 2 で割り続けると、余りは下から順に 1、1、1、0、0、0、1。下から並べて 1000111（2）。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -258,7 +258,7 @@
         "31"
       ],
       "answerIndex": 0,
-      "explanation": "互除法などで求める。",
+      "explanation": "120＝2³×3×5、30＝2×3×5。共通の素因数を小さいほうの指数でかけて 30。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -302,7 +302,7 @@
         "1042（5）"
       ],
       "answerIndex": 3,
-      "explanation": "5 で割った余りを下から並べる。",
+      "explanation": "147 を 5 で割り続けると、余りは下から順に 2、4、0、1。下から並べて 1042（5）。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -324,7 +324,7 @@
         "172"
       ],
       "answerIndex": 0,
-      "explanation": "(1＋p＋p²…)(1＋q＋…) を展開した和。",
+      "explanation": "2²×3³ より (1＋2＋4)×(1＋3＋9＋27)＝280。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -390,7 +390,7 @@
         "108"
       ],
       "answerIndex": 1,
-      "explanation": "互除法などで求める。",
+      "explanation": "12＝2²×3、27＝3³。共通の素因数を小さいほうの指数でかけて 3。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -412,7 +412,7 @@
         "62"
       ],
       "answerIndex": 1,
-      "explanation": "各位の数×2の累乗の和。",
+      "explanation": "1×2⁵＋1×2⁴＋1×2³＋1×2²＝60。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -434,7 +434,7 @@
         "12"
       ],
       "answerIndex": 1,
-      "explanation": "互除法などで求める。",
+      "explanation": "30＝2×3×5、66＝2×3×11。共通の素因数を小さいほうの指数でかけて 6。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -456,7 +456,7 @@
         "113"
       ],
       "answerIndex": 0,
-      "explanation": "各位の数×2の累乗の和。",
+      "explanation": "1×2⁶＋1×2²＋1×2¹＋1×2⁰＝71。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -478,7 +478,7 @@
         "442（5）"
       ],
       "answerIndex": 2,
-      "explanation": "5 で割った余りを下から並べる。",
+      "explanation": "123 を 5 で割り続けると、余りは下から順に 3、4、4。下から並べて 443（5）。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -522,7 +522,7 @@
         "465"
       ],
       "answerIndex": 3,
-      "explanation": "(1＋p＋p²…)(1＋q＋…) を展開した和。",
+      "explanation": "2³×5² より (1＋2＋4＋8)×(1＋5＋25)＝465。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -588,7 +588,7 @@
         "93"
       ],
       "answerIndex": 3,
-      "explanation": "各位の数×8の累乗の和。",
+      "explanation": "1×8²＋3×8¹＋5×8⁰＝93。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -698,7 +698,7 @@
         "101110（2）"
       ],
       "answerIndex": 0,
-      "explanation": "2 で割った余りを下から並べる。",
+      "explanation": "45 を 2 で割り続けると、余りは下から順に 1、0、1、1、0、1。下から並べて 101101（2）。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -720,7 +720,7 @@
         "6"
       ],
       "answerIndex": 2,
-      "explanation": "互除法などで求める。",
+      "explanation": "30＝2×3×5、33＝3×11。共通の素因数を小さいほうの指数でかけて 3。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -896,7 +896,7 @@
         "123"
       ],
       "answerIndex": 3,
-      "explanation": "各位の数×5の累乗の和。",
+      "explanation": "4×5²＋4×5¹＋3×5⁰＝123。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -962,7 +962,7 @@
         "48"
       ],
       "answerIndex": 0,
-      "explanation": "(1＋p＋p²…)(1＋q＋…) を展開した和。",
+      "explanation": "2³×3 より (1＋2＋4＋8)×(1＋3)＝60。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [

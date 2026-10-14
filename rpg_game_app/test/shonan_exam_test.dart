@@ -5,9 +5,11 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:rpg_game/rpg_game.dart';
 import 'package:rpg_game_app/app/services.dart';
 import 'package:rpg_game_app/battle/battle_screen.dart';
+import 'package:rpg_game_app/study/ec_text.dart';
 import 'package:rpg_game_app/study/school_exam_store.dart';
 import 'package:rpg_game_app/study/sea_home_screen.dart';
 import 'package:rpg_game_app/study/shonan_exam_screens.dart';
+import 'package:rpg_game_app/study/shonan_question_list.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'harness.dart';
@@ -173,5 +175,89 @@ void main() {
       (jsonDecode(prefs.getString(SchoolExamStore.key)!) as List).single['id'],
       'a',
     );
+  });
+
+  testWidgets('問題一覧：委員会セットの問題が答え・解説つきで見られ、答えをかくせる', (t) async {
+    await openScreen(
+      t,
+      ShonanQuestionListScreen(
+        subject: ShonanSubjects.byId('math_a')!,
+        plan: const SubjectExamPlan(
+          subjectId: 'math_a',
+          committeeSetIds: ['math_shonan_104_ma_integer_01'],
+        ),
+      ),
+      frames: 2,
+      size: const Size(500, 1400),
+    );
+    await _settle(t);
+    expect(find.textContaining('math_shonan_104_ma_integer_01（'), findsOneWidget);
+    await t.tap(find.textContaining('Q1. '));
+    await _frames(t, 5);
+    expect(find.textContaining('解説：'), findsOneWidget);
+    expect(find.textContaining('✓ '), findsOneWidget);
+    await t.tap(find.byKey(const ValueKey('shonan-list-hide')));
+    await _frames(t, 3);
+    expect(find.textContaining('解説：'), findsNothing);
+    expect(find.textContaining('✓ '), findsNothing);
+    expect(t.takeException(), isNull);
+  });
+
+  group('EC の本文', () {
+    // テストでは本物のパスワードを使わず、テスト用に暗号化した本文を使う
+    const pw = 'test-password';
+    final sealed = VocabVault.seal('t', const [
+      VocabCard(
+        id: 'ec1_l5_s1',
+        term: 'Lesson 5 Roots & Shoots — Section 1',
+        meaning: 'Ken: Hello.\nJane: Hi.',
+      ),
+    ], pw);
+    setUp(() => EcText.assetLoader = (_) async => sealed);
+
+    testWidgets('パスワードがちがうと開かず、正しいと Lesson ごとに読める', (t) async {
+      final s = await openScreen(t, const EcTextScreen(), frames: 5);
+      await _settle(t);
+      await t.enterText(find.byKey(const ValueKey('ec-text-password')), 'x');
+      await t.tap(find.byKey(const ValueKey('ec-text-open')));
+      await _settle(t);
+      expect(find.text('パスワードがちがいます'), findsOneWidget);
+      await t.enterText(find.byKey(const ValueKey('ec-text-password')), pw);
+      await t.tap(find.byKey(const ValueKey('ec-text-open')));
+      await _settle(t);
+      await t.tap(find.text('Lesson 5 Roots & Shoots'));
+      await _frames(t, 5);
+      await t.tap(find.text('Section 1'));
+      await _frames(t, 5);
+      expect(find.text('Jane: Hi.'), findsOneWidget);
+      expect(s.personalBooks.prefs.getString(EcText.key), pw);
+      await EcText.forget(s.personalBooks.prefs);
+      expect(t.takeException(), isNull);
+    });
+
+    test('問題のタグ（lesson・section）から本文をつける', () async {
+      SharedPreferences.setMockInitialValues({});
+      final prefs = await SharedPreferences.getInstance();
+      final ps = (await EcText.unlock(prefs, pw))!;
+      final q = QuizQuestion(
+        id: 'q',
+        category: QuestionCategory.values.first,
+        prompt: 'p',
+        choices: const ['a', 'b', 'c', 'd'],
+        tags: const ['ec1', 'lesson5', 'section1'],
+      );
+      final other = QuizQuestion(
+        id: 'o',
+        category: QuestionCategory.values.first,
+        prompt: 'p',
+        choices: const ['a', 'b', 'c', 'd'],
+        tags: const ['ec1', 'lesson6', 'section1'],
+      );
+      final out = EcText.attach([q, other], ps);
+      expect(out[0].passage?.id, 'ec1_l5_s1');
+      expect(out[0].prompt, 'p');
+      expect(out[1].passage, isNull);
+      await EcText.forget(prefs);
+    });
   });
 }

@@ -260,9 +260,9 @@ def proof_items():
     for _ in range(10):
         a = R.randint(1, 4)
         out.append((C, f'(x＋{a})³ を展開すると？', pstr([a ** 3, 3 * a * a, 3 * a, 1]),
-                    [pstr([a ** 3, 0, 0, 1]), pstr([a ** 3, a * a, a, 1]), pstr([a ** 3, 3 * a, 3 * a * a, 1])], '(a＋b)³＝a³＋3a²b＋3ab²＋b³。'))
+                    [pstr([a ** 3, 0, 0, 1]), pstr([a ** 3, a * a, a, 1]), pstr([a ** 3, 3 * a, 3 * a * a, 1])], f'(a＋b)³＝a³＋3a²b＋3ab²＋b³ に a→x, b→{a} を入れて x³＋3·{a}x²＋3·{a}²x＋{a}³＝{pstr([a ** 3, 3 * a * a, 3 * a, 1])}。'))
         out.append((C, f'x³ − {a ** 3} を因数分解すると？', f'(x − {a})(x² ＋ {a}x ＋ {a * a})'.replace(' 1x', ' x'),
-                    [f'(x − {a})(x² − {a}x ＋ {a * a})'.replace(' 1x', ' x'), f'(x − {a})³', f'(x ＋ {a})(x² − {a}x ＋ {a * a})'.replace(' 1x', ' x')], 'a³−b³＝(a−b)(a²＋ab＋b²)。'))
+                    [f'(x − {a})(x² − {a}x ＋ {a * a})'.replace(' 1x', ' x'), f'(x − {a})³', f'(x ＋ {a})(x² − {a}x ＋ {a * a})'.replace(' 1x', ' x')], f'{a ** 3}＝{a}³ なので a³−b³＝(a−b)(a²＋ab＋b²) を使う（2つめのかっこの真ん中は＋）。'))
     # 整式の割り算
     for _ in range(26):
         q = [R.randint(-4, 4), R.randint(-4, 4), 1] if R.random() < .6 else [R.randint(-4, 4), nz(-3, 3)]
@@ -313,16 +313,16 @@ def complex_items():
         w = (nz(-4, 4), nz(-4, 4))
         p = cmul(z, w)
         out.append((C, f'({cstr(z)})({cstr(w)}) を計算すると？', cstr(p),
-                    [cstr((z[0] * w[0] + z[1] * w[1], p[1])), cstr((p[0], -p[1])), cstr((z[0] * w[0], z[1] * w[1]))], 'i²＝−1 として展開する。'))
+                    [cstr((z[0] * w[0] + z[1] * w[1], p[1])), cstr((p[0], -p[1])), cstr((z[0] * w[0], z[1] * w[1]))], f'展開すると {num(z[0] * w[0])}＋({num(z[0] * w[1])})i＋({num(z[1] * w[0])})i＋({num(z[1] * w[1])})i²。i²＝−1 より 実部 {num(z[0] * w[0])}−({num(z[1] * w[1])})＝{num(p[0])}、虚部 {num(z[0] * w[1] + z[1] * w[0])}。'))
         s = (z[0] - w[0], z[1] - w[1])
         out.append((C, f'({cstr(z)}) − ({cstr(w)}) を計算すると？', cstr(s),
-                    [cstr((z[0] + w[0], z[1] + w[1])), cstr((z[0] - w[0], z[1] + w[1])), cstr((z[0] + w[0], z[1] - w[1]))], '実部どうし、虚部どうしを計算する。'))
+                    [cstr((z[0] + w[0], z[1] + w[1])), cstr((z[0] - w[0], z[1] + w[1])), cstr((z[0] + w[0], z[1] - w[1]))], f'実部 {num(z[0])}−({num(w[0])})＝{num(s[0])}、虚部 {num(z[1])}−({num(w[1])})＝{num(s[1])}。'))
     for _ in range(14):
         z = (nz(-6, 6), nz(-6, 6))
         w = R.choice([(1, 1), (1, -1), (2, 1), (1, 2), (3, -1), (2, -1)])
         q = cdiv(z, w)
         out.append((C, f'({cstr(z)}) ÷ ({cstr(w)}) を計算すると？', cstr(q),
-                    [cstr((q[0], -q[1])), cstr((q[1], q[0])), cstr(cdiv(z, (w[0], -w[1])))], f'分母と分子に共役な複素数 {cstr((w[0], -w[1]))} をかける。'))
+                    [cstr((q[0], -q[1])), cstr((q[1], q[0])), cstr(cdiv(z, (w[0], -w[1])))], f'分母と分子に共役な複素数 {cstr((w[0], -w[1]))} をかける。分母は {w[0]}²＋({num(w[1])})²＝{w[0] ** 2 + w[1] ** 2}、分子は ({cstr(z)})({cstr((w[0], -w[1]))})＝{cstr(cmul(z, (w[0], -w[1])))}。これを {w[0] ** 2 + w[1] ** 2} で割る。'))
     for k in range(3, 23, 2):
         v = [(1, 0), (0, 1), (-1, 0), (0, -1)][k % 4]
         out.append((C, f'i^{k} を計算すると？'.replace('^' + str(k), sup(k)), cstr(v), [cstr(x) for x in [(1, 0), (0, 1), (-1, 0), (0, -1)] if x != v], f'i⁴＝1。{k}＝4×{k // 4}＋{k % 4}。'))
@@ -330,7 +330,7 @@ def complex_items():
         a, b = nz(-5, 5), nz(-5, 5)
         z = (a, b)
         out.append((C, f'({cstr(z)})² を計算すると？', cstr(cmul(z, z)),
-                    [cstr((a * a + b * b, 2 * a * b)), cstr((a * a, b * b)), cstr((a * a - b * b, -2 * a * b))], '(a＋bi)²＝a²−b²＋2abi。'))
+                    [cstr((a * a + b * b, 2 * a * b)), cstr((a * a, b * b)), cstr((a * a - b * b, -2 * a * b))], f'(a＋bi)²＝a²−b²＋2abi より 実部 ({num(a)})²−({num(b)})²＝{num(a * a - b * b)}、虚部 2×({num(a)})×({num(b)})＝{num(2 * a * b)}。'))
     # 判別式
     for _ in range(18):
         a, b, c = nz(1, 3), R.randint(-8, 8), R.randint(-6, 9)
@@ -351,11 +351,11 @@ def complex_items():
         elif q == 2:
             out.append((C, f'{eq}、1/α＋1/β の値は？', frac(s / p), [frac(p / s) if s else '0', frac(-s / p), frac(s * p)], f'(α＋β)/(αβ)＝{frac(s)}÷{frac(p)}。'))
         else:
-            out.append((C, f'{eq}、(α−β)² の値は？', frac(s * s - 4 * p), [frac(s * s + 4 * p), frac(s * s - 2 * p), frac(4 * p - s * s)], f'(α−β)²＝(α＋β)²−4αβ。'))
+            out.append((C, f'{eq}、(α−β)² の値は？', frac(s * s - 4 * p), [frac(s * s + 4 * p), frac(s * s - 2 * p), frac(4 * p - s * s)], f'α＋β＝{frac(s)}、αβ＝{frac(p)}。(α−β)²＝(α＋β)²−4αβ＝({frac(s)})²−4×({frac(p)})＝{frac(s * s - 4 * p)}。'))
     for _ in range(8):
         r1, r2 = nz(-6, 6), nz(-6, 6)
         out.append((C, f'{r1} と {r2} を解にもつ2次方程式（x² の係数1）は？', f'{pstr([r1 * r2, -(r1 + r2), 1])} ＝ 0',
-                    [f'{pstr([r1 * r2, r1 + r2, 1])} ＝ 0', f'{pstr([-r1 * r2, -(r1 + r2), 1])} ＝ 0', f'{pstr([r1 + r2, -r1 * r2, 1])} ＝ 0'], 'x²−(和)x＋(積)＝0。'))
+                    [f'{pstr([r1 * r2, r1 + r2, 1])} ＝ 0', f'{pstr([-r1 * r2, -(r1 + r2), 1])} ＝ 0', f'{pstr([r1 + r2, -r1 * r2, 1])} ＝ 0'], f'和 {r1}＋({r2})＝{r1 + r2}、積 {r1}×({r2})＝{r1 * r2}。x²−(和)x＋(積)＝0 に入れる。'))
     # 剰余の定理・因数定理
     for _ in range(20):
         p = [R.randint(-6, 6), R.randint(-5, 5), R.randint(-4, 4), nz(-2, 3)]
@@ -371,7 +371,7 @@ def complex_items():
         k = -(a ** 3 + b * a * a + c * a)
         dv = f'x − {a}' if a > 0 else f'x ＋ {-a}'
         out.append((C, f'{pstr([0, c, b, 1])} ＋ k が {dv} で割り切れるとき、k の値は？', num(k),
-                    [num(-k), num(k + a), num(a ** 3 + b * a * a + c * a + 1)], f'因数定理：P({a})＝0 になる k。'))
+                    [num(-k), num(k + a), num(a ** 3 + b * a * a + c * a + 1)], f'因数定理：P({a})＝({a})³＋{b}×({a})²＋{c}×({a})＋k＝{a ** 3 + b * a * a + c * a}＋k＝0 より k＝{num(k)}。'))
     for _ in range(8):
         a, b = R.sample([-3, -2, -1, 1, 2, 3], 2)
         ra = R.randint(-6, 6)
@@ -448,7 +448,7 @@ def integer_items():
                     [num(math.prod(f.values())), num(sum(f.values())), num(nd + 2), num(nd - 1)],
                     f'{fstr(f)} より ' + '×'.join(f'({e}＋1)' for e in f.values()) + f'＝{nd}。'))
         out.append((C, f'{n} の正の約数の総和は？', num(sum(divisors(n))),
-                    [num(sum(divisors(n)) - n), num(sum(divisors(n)) + 1), num(2 * n)], '(1＋p＋p²…)(1＋q＋…) を展開した和。'))
+                    [num(sum(divisors(n)) - n), num(sum(divisors(n)) + 1), num(2 * n)], f'{fstr(f)} より ' + '×'.join('(' + '＋'.join(str(p ** i) for i in range(e + 1)) + ')' for p, e in sorted(f.items())) + f'＝{sum(divisors(n))}。'))
     for _ in range(24):
         g = R.choice([2, 3, 4, 5, 6, 7, 8, 9, 12, 14, 15, 18])
         a, b = g * R.randint(2, 15), g * R.randint(2, 15)
@@ -456,7 +456,7 @@ def integer_items():
             continue
         G, L = math.gcd(a, b), a * b // math.gcd(a, b)
         out.append((C, f'{a} と {b} の最大公約数は？', num(G), [num(L), num(G * 2), num(min(a, b) - max(a, b) % min(a, b)) if G != min(a, b) - max(a, b) % min(a, b) else num(G + 1), num(G // 2) if G > 2 else num(G + 3)],
-                    f'互除法などで求める。'))
+                    f'{a}＝{fstr(factor(a))}、{b}＝{fstr(factor(b))}。共通の素因数を小さいほうの指数でかけて {G}。'))
         out.append((C, f'{a} と {b} の最小公倍数は？', num(L), [num(a * b), num(G), num(L * 2), num(L // 2) if L % 2 == 0 and L // 2 not in (a, b) else num(L + G)], f'最小公倍数＝{a}×{b}÷最大公約数{G}＝{L}。'))
     for _ in range(14):
         a, b = R.randint(100, 999), R.randint(30, 400)
@@ -498,9 +498,9 @@ def integer_items():
         n = R.randint(10, 200)
         s = to_base(n, b)
         out.append((C, f'10進数の {n} を {b}進法で表すと？', f'{s}（{b}）',
-                    [f'{s[::-1]}（{b}）' if s[::-1] != s else f'{to_base(n + 1, b)}（{b}）', f'{to_base(n - 1, b)}（{b}）', f'{to_base(n + b, b)}（{b}）'], f'{b} で割った余りを下から並べる。'))
+                    [f'{s[::-1]}（{b}）' if s[::-1] != s else f'{to_base(n + 1, b)}（{b}）', f'{to_base(n - 1, b)}（{b}）', f'{to_base(n + b, b)}（{b}）'], f'{n} を {b} で割り続けると、余りは下から順に ' + '、'.join(reversed(list(s))) + f'。下から並べて {s}（{b}）。'))
         out.append((C, f'{b}進法で {s}（{b}）と表される数を10進法で表すと？', num(n),
-                    [num(int(s[::-1], b)) if s[::-1] != s else num(n + 1), num(n + b), num(int(s) if int(s) != n else n - 1)], f'各位の数×{b}の累乗の和。'))
+                    [num(int(s[::-1], b)) if s[::-1] != s else num(n + 1), num(n + b), num(int(s) if int(s) != n else n - 1)], '＋'.join(f'{d}×{b}{sup(len(s) - 1 - i)}' for i, d in enumerate(s) if d != '0') + f'＝{n}。'))
     for _ in range(6):
         x, y = R.randint(5, 40), R.randint(5, 40)
         out.append((C, f'2進法の計算 {to_base(x, 2)}（2）＋{to_base(y, 2)}（2）の結果を2進法で表すと？', f'{to_base(x + y, 2)}（2）',

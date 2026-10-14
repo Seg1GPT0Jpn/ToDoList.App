@@ -38,7 +38,7 @@
         "−4/5+12/5i"
       ],
       "answerIndex": 1,
-      "explanation": "分母と分子に共役な複素数 2+i をかける。",
+      "explanation": "分母と分子に共役な複素数 2+i をかける。分母は 2²＋(−1)²＝5、分子は (−4+4i)(2+i)＝−12+4i。これを 5 で割る。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -170,7 +170,7 @@
         "1+3i"
       ],
       "answerIndex": 1,
-      "explanation": "実部どうし、虚部どうしを計算する。",
+      "explanation": "実部 5−(4)＝1、虚部 1−(2)＝−1。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -192,7 +192,7 @@
         "18−18i"
       ],
       "answerIndex": 0,
-      "explanation": "(a＋bi)²＝a²−b²＋2abi。",
+      "explanation": "(a＋bi)²＝a²−b²＋2abi より 実部 (3)²−(−3)²＝0、虚部 2×(3)×(−3)＝−18。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -324,7 +324,7 @@
         "x² − 7x + 12 ＝ 0"
       ],
       "answerIndex": 0,
-      "explanation": "x²−(和)x＋(積)＝0。",
+      "explanation": "和 -3＋(-4)＝-7、積 -3×(-4)＝12。x²−(和)x＋(積)＝0 に入れる。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -346,7 +346,7 @@
         "x² − 3x + 18 ＝ 0"
       ],
       "answerIndex": 0,
-      "explanation": "x²−(和)x＋(積)＝0。",
+      "explanation": "和 6＋(-3)＝3、積 6×(-3)＝-18。x²−(和)x＋(積)＝0 に入れる。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -368,7 +368,7 @@
         "41−40i"
       ],
       "answerIndex": 2,
-      "explanation": "(a＋bi)²＝a²−b²＋2abi。",
+      "explanation": "(a＋bi)²＝a²−b²＋2abi より 実部 (−5)²−(4)²＝9、虚部 2×(−5)×(4)＝−40。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -390,7 +390,7 @@
         "−4−8i"
       ],
       "answerIndex": 2,
-      "explanation": "i²＝−1 として展開する。",
+      "explanation": "展開すると −6＋(2)i＋(6)i＋(−2)i²。i²＝−1 より 実部 −6−(−2)＝−4、虚部 8。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -412,7 +412,7 @@
         "−3"
       ],
       "answerIndex": 3,
-      "explanation": "因数定理：P(1)＝0 になる k。",
+      "explanation": "因数定理：P(1)＝(1)³＋-2×(1)²＋4×(1)＋k＝3＋k＝0 より k＝−3。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -566,7 +566,7 @@
         "18+14i"
       ],
       "answerIndex": 3,
-      "explanation": "i²＝−1 として展開する。",
+      "explanation": "展開すると 20＋(10)i＋(4)i＋(2)i²。i²＝−1 より 実部 20−(2)＝18、虚部 14。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -654,7 +654,7 @@
         "−5+14i"
       ],
       "answerIndex": 3,
-      "explanation": "i²＝−1 として展開する。",
+      "explanation": "展開すると 3＋(12)i＋(2)i＋(8)i²。i²＝−1 より 実部 3−(8)＝−5、虚部 14。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -720,7 +720,7 @@
         "−3−21i"
       ],
       "answerIndex": 2,
-      "explanation": "i²＝−1 として展開する。",
+      "explanation": "展開すると 9＋(9)i＋(12)i＋(12)i²。i²＝−1 より 実部 9−(12)＝−3、虚部 21。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -764,7 +764,7 @@
         "−4/5+3/5i"
       ],
       "answerIndex": 1,
-      "explanation": "分母と分子に共役な複素数 2−i をかける。",
+      "explanation": "分母と分子に共役な複素数 2−i をかける。分母は 2²＋(1)²＝5、分子は (−1+2i)(2−i)＝5i。これを 5 で割る。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -808,7 +808,7 @@
         "−1+i"
       ],
       "answerIndex": 1,
-      "explanation": "実部どうし、虚部どうしを計算する。",
+      "explanation": "実部 −5−(−4)＝−1、虚部 −1−(2)＝−3。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -830,7 +830,7 @@
         "15"
       ],
       "answerIndex": 2,
-      "explanation": "因数定理：P(-3)＝0 になる k。",
+      "explanation": "因数定理：P(-3)＝(-3)³＋0×(-3)²＋-3×(-3)＋k＝-18＋k＝0 より k＝18。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -852,7 +852,7 @@
         "6"
       ],
       "answerIndex": 0,
-      "explanation": "因数定理：P(2)＝0 になる k。",
+      "explanation": "因数定理：P(2)＝(2)³＋-3×(2)²＋5×(2)＋k＝6＋k＝0 より k＝−6。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -874,7 +874,7 @@
         "22+6i"
       ],
       "answerIndex": 1,
-      "explanation": "i²＝−1 として展開する。",
+      "explanation": "展開すると 20＋(−10)i＋(4)i＋(−2)i²。i²＝−1 より 実部 20−(−2)＝22、虚部 −6。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -918,7 +918,7 @@
         "−18"
       ],
       "answerIndex": 2,
-      "explanation": "因数定理：P(-2)＝0 になる k。",
+      "explanation": "因数定理：P(-2)＝(-2)³＋0×(-2)²＋5×(-2)＋k＝-18＋k＝0 より k＝18。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [

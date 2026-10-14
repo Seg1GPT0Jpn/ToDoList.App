@@ -4,7 +4,10 @@
 
 本文そのものは収録しない。設問は本文の内容にもとづいて新しく作ったもの。
 """
-from common import make_set
+import json
+import os
+
+from common import QDIR, make_set
 
 K, T = 'knowledge', 'thinking'
 
@@ -166,4 +169,16 @@ if __name__ == '__main__':
     total = 0
     for i, (items, name) in enumerate([(L5, 'lesson5'), (L6, 'lesson6'), (L7, 'lesson7')], 1):
         total += make_set(f'english_shonan_104_ec1_{i:02d}', 'english', items, ['ec1', name], seed=i)
+    # 本文のどの Section の問題か（暗号化した本文を問題の中で表示するのに使う）
+    sec = json.load(open(os.path.join(os.path.dirname(__file__), 'ec_sections.json'), encoding='utf-8'))
+    for i in range(1, 4):
+        path = os.path.join(QDIR, 'english', f'english_shonan_104_ec1_{i:02d}.json')
+        d = json.load(open(path, encoding='utf-8'))
+        for q in d['questions']:
+            n = sec[q['prompt']]
+            q['tags'].append(f'section{n}')
+            if f'Section {n}' not in q['explanation']:
+                q['explanation'] = f"{q['explanation']}（本文 Section {n}）"
+        with open(path, 'w', encoding='utf-8') as f:
+            json.dump(d, f, ensure_ascii=False, indent=2)
     print('total', total)

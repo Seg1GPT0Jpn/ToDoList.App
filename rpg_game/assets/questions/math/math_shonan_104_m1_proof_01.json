@@ -82,7 +82,7 @@
         "(x − 1)(x² − x ＋ 1)"
       ],
       "answerIndex": 2,
-      "explanation": "a³−b³＝(a−b)(a²＋ab＋b²)。",
+      "explanation": "1＝1³ なので a³−b³＝(a−b)(a²＋ab＋b²) を使う（2つめのかっこの真ん中は＋）。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -126,7 +126,7 @@
         "(x − 3)(x² ＋ 3x ＋ 9)"
       ],
       "answerIndex": 3,
-      "explanation": "a³−b³＝(a−b)(a²＋ab＋b²)。",
+      "explanation": "27＝3³ なので a³−b³＝(a−b)(a²＋ab＋b²) を使う（2つめのかっこの真ん中は＋）。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -654,7 +654,7 @@
         "x³ + 9x² + 27x + 27"
       ],
       "answerIndex": 3,
-      "explanation": "(a＋b)³＝a³＋3a²b＋3ab²＋b³。",
+      "explanation": "(a＋b)³＝a³＋3a²b＋3ab²＋b³ に a→x, b→3 を入れて x³＋3·3x²＋3·3²x＋3³＝x³ + 9x² + 27x + 27。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -676,7 +676,7 @@
         "(x ＋ 2)(x² − 2x ＋ 4)"
       ],
       "answerIndex": 0,
-      "explanation": "a³−b³＝(a−b)(a²＋ab＋b²)。",
+      "explanation": "8＝2³ なので a³−b³＝(a−b)(a²＋ab＋b²) を使う（2つめのかっこの真ん中は＋）。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [

@@ -16,7 +16,7 @@
         "26+10i"
       ],
       "answerIndex": 1,
-      "explanation": "(a＋bi)²＝a²−b²＋2abi。",
+      "explanation": "(a＋bi)²＝a²−b²＋2abi より 実部 (−1)²−(−5)²＝−24、虚部 2×(−1)×(−5)＝10。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -38,7 +38,7 @@
         "77/4"
       ],
       "answerIndex": 0,
-      "explanation": "(α−β)²＝(α＋β)²−4αβ。",
+      "explanation": "α＋β＝−7/2、αβ＝−7/2。(α−β)²＝(α＋β)²−4αβ＝(−7/2)²−4×(−7/2)＝105/4。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -60,7 +60,7 @@
         "i"
       ],
       "answerIndex": 3,
-      "explanation": "実部どうし、虚部どうしを計算する。",
+      "explanation": "実部 3−(3)＝0、虚部 4−(3)＝1。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -82,7 +82,7 @@
         "i"
       ],
       "answerIndex": 1,
-      "explanation": "実部どうし、虚部どうしを計算する。",
+      "explanation": "実部 −3−(3)＝−6、虚部 3−(2)＝1。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -214,7 +214,7 @@
         "−15+8i"
       ],
       "answerIndex": 2,
-      "explanation": "i²＝−1 として展開する。",
+      "explanation": "展開すると 1＋(−4)i＋(−4)i＋(16)i²。i²＝−1 より 実部 1−(16)＝−15、虚部 −8。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -236,7 +236,7 @@
         "8+10i"
       ],
       "answerIndex": 0,
-      "explanation": "i²＝−1 として展開する。",
+      "explanation": "展開すると 8＋(−4)i＋(−20)i＋(10)i²。i²＝−1 より 実部 8−(10)＝−2、虚部 −24。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -302,7 +302,7 @@
         "1/5+7/5i"
       ],
       "answerIndex": 3,
-      "explanation": "分母と分子に共役な複素数 2−i をかける。",
+      "explanation": "分母と分子に共役な複素数 2−i をかける。分母は 2²＋(1)²＝5、分子は (−1+3i)(2−i)＝1+7i。これを 5 で割る。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -324,7 +324,7 @@
         "−22−23i"
       ],
       "answerIndex": 0,
-      "explanation": "i²＝−1 として展開する。",
+      "explanation": "展開すると −10＋(−15)i＋(−8)i＋(−12)i²。i²＝−1 より 実部 −10−(−12)＝2、虚部 −23。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -412,7 +412,7 @@
         "−8+3i"
       ],
       "answerIndex": 1,
-      "explanation": "実部どうし、虚部どうしを計算する。",
+      "explanation": "実部 −4−(4)＝−8、虚部 2−(1)＝1。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -434,7 +434,7 @@
         "9+25i"
       ],
       "answerIndex": 1,
-      "explanation": "(a＋bi)²＝a²−b²＋2abi。",
+      "explanation": "(a＋bi)²＝a²−b²＋2abi より 実部 (−3)²−(−5)²＝−16、虚部 2×(−3)×(−5)＝30。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -456,7 +456,7 @@
         "3"
       ],
       "answerIndex": 0,
-      "explanation": "因数定理：P(1)＝0 になる k。",
+      "explanation": "因数定理：P(1)＝(1)³＋0×(1)²＋2×(1)＋k＝3＋k＝0 より k＝−3。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -478,7 +478,7 @@
         "1+4i"
       ],
       "answerIndex": 2,
-      "explanation": "(a＋bi)²＝a²−b²＋2abi。",
+      "explanation": "(a＋bi)²＝a²−b²＋2abi より 実部 (1)²−(2)²＝−3、虚部 2×(1)×(2)＝4。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -500,7 +500,7 @@
         "−97/9"
       ],
       "answerIndex": 0,
-      "explanation": "(α−β)²＝(α＋β)²−4αβ。",
+      "explanation": "α＋β＝7/3、αβ＝−4/3。(α−β)²＝(α＋β)²−4αβ＝(7/3)²−4×(−4/3)＝97/9。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -610,7 +610,7 @@
         "1/5+12/5i"
       ],
       "answerIndex": 0,
-      "explanation": "分母と分子に共役な複素数 1−2i をかける。",
+      "explanation": "分母と分子に共役な複素数 1−2i をかける。分母は 1²＋(2)²＝5、分子は (5+2i)(1−2i)＝9−8i。これを 5 で割る。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -676,7 +676,7 @@
         "−6+4i"
       ],
       "answerIndex": 3,
-      "explanation": "実部どうし、虚部どうしを計算する。",
+      "explanation": "実部 −3−(3)＝−6、虚部 2−(−2)＝4。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -698,7 +698,7 @@
         "41+40i"
       ],
       "answerIndex": 0,
-      "explanation": "(a＋bi)²＝a²−b²＋2abi。",
+      "explanation": "(a＋bi)²＝a²−b²＋2abi より 実部 (5)²−(4)²＝9、虚部 2×(5)×(4)＝40。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -742,7 +742,7 @@
         "−1+3i"
       ],
       "answerIndex": 0,
-      "explanation": "実部どうし、虚部どうしを計算する。",
+      "explanation": "実部 3−(4)＝−1、虚部 2−(1)＝1。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -764,7 +764,7 @@
         "−3−2i"
       ],
       "answerIndex": 0,
-      "explanation": "分母と分子に共役な複素数 1−i をかける。",
+      "explanation": "分母と分子に共役な複素数 1−i をかける。分母は 1²＋(1)²＝2、分子は (−5−i)(1−i)＝−6+4i。これを 2 で割る。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -786,7 +786,7 @@
         "−6−5i"
       ],
       "answerIndex": 0,
-      "explanation": "実部どうし、虚部どうしを計算する。",
+      "explanation": "実部 −4−(−2)＝−2、虚部 −2−(3)＝−5。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -830,7 +830,7 @@
         "−11/10−13/10i"
       ],
       "answerIndex": 1,
-      "explanation": "分母と分子に共役な複素数 3+i をかける。",
+      "explanation": "分母と分子に共役な複素数 3+i をかける。分母は 3²＋(−1)²＝10、分子は (−2−5i)(3+i)＝−1−17i。これを 10 で割る。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -896,7 +896,7 @@
         "−12+16i"
       ],
       "answerIndex": 3,
-      "explanation": "(a＋bi)²＝a²−b²＋2abi。",
+      "explanation": "(a＋bi)²＝a²−b²＋2abi より 実部 (2)²−(4)²＝−12、虚部 2×(2)×(4)＝16。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -918,7 +918,7 @@
         "−8−7i"
       ],
       "answerIndex": 3,
-      "explanation": "実部どうし、虚部どうしを計算する。",
+      "explanation": "実部 −4−(4)＝−8、虚部 −5−(2)＝−7。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -940,7 +940,7 @@
         "−8+16i"
       ],
       "answerIndex": 3,
-      "explanation": "i²＝−1 として展開する。",
+      "explanation": "展開すると 4＋(12)i＋(4)i＋(12)i²。i²＝−1 より 実部 4−(12)＝−8、虚部 16。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
