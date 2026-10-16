@@ -79,15 +79,16 @@ void main() {
       }
     });
 
-    test('冒険Lv50・習熟Lv50でも、すばやい正解1回では倒せない（最低3問）', () {
+    test('冒険Lv100・習熟Lv100でも、すばやい正解1回では倒せない（最低3問）', () {
       final strong = RpgProgress(
-        level: 50,
+        level: PlayerStats.maxLevel,
         masteryVersion: Mastery.version,
         masteryExp: {
           for (final w in RpgCatalog.worlds)
             for (final s in w.stages)
               if (Mastery.courseOfStage(s) != null)
-                Mastery.courseOfStage(s)!: Mastery.expForLevel(50),
+                Mastery.courseOfStage(s)!:
+                    Mastery.expForLevel(PlayerStats.maxLevel),
         },
       );
       for (final s in rpgStages()) {

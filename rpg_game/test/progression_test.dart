@@ -60,6 +60,21 @@ void main() {
       expect(r.progress.exp, 5);
     });
 
+    test('Lv50までは前と同じ。Lv50からは後ろほど上げにくい（上限100）', () {
+      expect(PlayerStats.maxLevel, 100);
+      expect(PlayerStats.expToNextLevel(49), 740);
+      for (var l = 50; l < PlayerStats.maxLevel; l++) {
+        expect(PlayerStats.expToNextLevel(l),
+            greaterThan(PlayerStats.expToNextLevel(l - 1)));
+      }
+      expect(PlayerStats.expToNextLevel(99),
+          greaterThan(PlayerStats.expToNextLevel(49) * 10));
+      // 能力値は Lv50 までは前と同じ、その先もゆるやかに伸びる
+      expect(PlayerStats.forLevel(50).maxHp, 50 + 49 * 8);
+      expect(PlayerStats.forLevel(100).maxHp,
+          greaterThan(PlayerStats.forLevel(50).maxHp));
+    });
+
     test('最大レベルで止まる', () {
       final r = Progression.addExp(RpgProgress.initial, 1000000);
       expect(r.progress.level, PlayerStats.maxLevel);
