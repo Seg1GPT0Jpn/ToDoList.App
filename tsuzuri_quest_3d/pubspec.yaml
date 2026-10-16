@@ -1,0 +1,49 @@
+name: tsuzuri_quest_3d
+description: "つづりクエスト3D：3D オープンフィールドの学習 RPG（技術検証の試作）。2D 版（rpg_game_app）とは別のゲーム。"
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.13.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # 問題データ・バトル・成長の計算（2D 版と共有する純 Dart のコア）
+  rpg_game:
+    path: ../rpg_game
+  flutter_scene: 0.24.3
+  flutter_scene_rapier: 0.5.2
+  shared_preferences: ^2.5.5
+  vector_math: ^2.1.4
+  hooks: ^2.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  assets:
+    - assets/fonts/OFL-NotoSansJP.txt
+    - flutter_scene_generated/
+    - path: flutter_scene_generated/metal_ios/
+      platforms:
+        - ios
+    - path: flutter_scene_generated/metal_desktop/
+      platforms:
+        - macos
+    - path: flutter_scene_generated/opengl_es_vulkan/
+      platforms:
+        - android
+        - linux
+        - windows
+    - path: flutter_scene_generated/opengl_es/
+      platforms:
+        - web
+  uses-material-design: true
+  # 日本語フォント（SIL OFL）を同梱して、ネットにつながらなくても文字が出るようにする
+  fonts:
+    - family: NotoSansJP
+      fonts:
+        - asset: assets/fonts/NotoSansJP-Regular.ttf
