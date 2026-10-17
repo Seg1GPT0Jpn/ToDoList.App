@@ -5,7 +5,7 @@
 - 3D 描画：flutter_scene 0.24.3（Android は Impeller＋Flutter GPU、Web は WebGL2）
 - 物理・当たり判定：flutter_scene_rapier 0.5.2（Rapier）
 - 問題データ・バトルの計算・経験値とレベル：共通のコア `../rpg_game`（2D 版と同じもの）
-- セーブ：この端末だけ（`tq3d_progress_v1`・`tq3d_field_v1`・`tq3d_quality_v1`・`tq3d_bench_v1`）。クラウドには送らない
+- セーブ：この端末だけ（`tq3d_progress_v1`・`tq3d_field_v1`・`tq3d_learning_v1`・`tq3d_quality_v1`・`tq3d_bench_v1`）。クラウドには送らない
 
 ## フォルダ
 
@@ -16,6 +16,8 @@
 | `lib/game/questions.dart` | 問題の読み込み（rpg_game の問題まとめファイル） |
 | `lib/field/` | 3D 画面（描画・物理・カメラ・操作・計測表示） |
 | `lib/game/field_battle.dart` | その場で戦うバトルの流れ（正解→剣をふる→当てる）。計算は rpg_game の BattleEngine |
+| `lib/game/quest3d.dart` | 案内人のクエスト（順番・達成の判定・報告・称号。描画なし。単体テストあり） |
+| `lib/game/learning3d.dart` | 学習記録と復習（rpg_game の LearningRecord・ReviewPlanner を使う。単体テストあり） |
 | `lib/game/bench.dart` | 自動計測の集計（平均・p95・カクつきの数など。描画なし。単体テストあり） |
 | `lib/field/hero_model.dart` | 2D 版の主人公を基本図形で組み立てた 3D モデル（歩き・剣のふり） |
 | `CREDITS.md` | 素材の出典とライセンス |
@@ -48,6 +50,16 @@ flutter run -d chrome --profile --dart-define=FLUTTER_SCENE_RAPIER_WASM_URL=fiel
 - PC：WASD／矢印で移動、Shift で走る、マウスのドラッグ・Q/E でカメラ、ホイールで距離、Space/E で話す、Esc で戻る
 - スマホ：左下のスティックで移動（端まで倒すと走る）、画面の右側をドラッグでカメラ、「はなす」ボタン
 
+## 遊びの流れ
+1. 案内人ノート（頭に「！」）に話しかける → クエストを受ける。画面左上に「目的」が出る
+2. スライムとたたかう（下の「バトル」）。まちがえたら答えと解説を読んで「つぎへ」
+3. 目的を達成すると「案内人ノートに報告しよう」になり、「！」が出る → 報告で経験値・称号
+4. たおしたスライムは、復習の日が来ると（次の日以降）「復習スライム」として戻ってくる
+5. メニュー（︙）の「冒険の記録」で、レベル・クエスト・称号・教科ごとの正答率・習得数・今日の復習を見られる
+
+クエスト：冒険のはじまり → はじめてのバトル → 草原の見回り（称号）→ わすれたころの復習（称号）→ 知識の根っこ（10問習得・称号）。
+「習得」は 2D 版と同じ基準（同じ問題に日をあけて正解を重ね、間隔反復の箱が 3 以上）。
+
 ## バトル（その場で戦う）
 1. スライムに近づいて Space（スマホは「たたかう」ボタン）でバトル開始。画面は切りかわらない
 2. 問題に答える（PC は 1〜4 キーかクリック）。制限時間あり
@@ -55,8 +67,12 @@ flutter run -d chrome --profile --dart-define=FLUTTER_SCENE_RAPIER_WASM_URL=fiel
    - 届く距離（2.4m）で当てると攻撃。答えてから当てるまでが速いとクリティカル
    - ふれずに時間切れ → ふり遅れ（ダメージ半分・反撃も半分）
    - 届かないときは近づいてもう一度ふれる
-4. 不正解・時間切れは敵の体当たり（反撃）
-5. 勝つと経験値・レベル（2D 版と同じ計算。保存は 3D 版だけ）。Esc／「にげる」で離脱、遠くへ離れても離脱
+4. 不正解・時間切れは敵の体当たり（反撃）。あなたの答え・正解・解説が出て、「つぎへ」（Space）で進む
+   - ヒントのある問題は「ヒント」（H）で見られる
+   - 1問ごとに学習記録（tq3d_learning_v1）に残す。まちがえた問題・復習の日の問題ほど先に出る
+5. 勝つと経験値・レベル（2D 版と同じ計算。保存は 3D 版だけ）。負けても正解したぶんの経験値は入る。
+   Esc／「にげる」で離脱、遠くへ離れても離脱（にげたときは経験値なし）
+6. 復習スライムは、復習の日が来た問題から出る。経験値は 2D 版の「練習」と同じ計算。その日のうちは二度は出ない
 
 計算は rpg_game の BattleEngine。剣の流れは `lib/game/field_battle.dart`（単体テストあり）。
 
@@ -84,3 +100,5 @@ flutter run -d chrome --profile --dart-define=FLUTTER_SCENE_RAPIER_WASM_URL=fiel
 ```
 adb logcat -d | Select-String TQ3D_BENCH
 ```
+
+開発の計画・残っている課題は `DEVPLAN.md`。

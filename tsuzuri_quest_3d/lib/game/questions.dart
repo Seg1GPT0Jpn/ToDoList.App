@@ -11,6 +11,9 @@ class Questions3D {
   static final source = JsonQuestionSource(_loadSet);
   static final Map<String, Future<Map<String, dynamic>?>> _bundles = {};
 
+  /// 問題 ID → 問題セット ID（学習記録に使う）。[forStage] で読んだ問題の分
+  static final Map<String, String> setOf = {};
+
   static Future<String?> _loadSet(String setId) async {
     final world = setId.split('_').first;
     final bundle = await (_bundles[world] ??= _loadBundle(world));
@@ -43,7 +46,10 @@ class Questions3D {
       final set = await source.load(id);
       if (set == null || !set.origin.usableInRpg) continue;
       for (final q in set.questions) {
-        if (playable(q) && seen.add(q.id)) out.add(q);
+        if (playable(q) && seen.add(q.id)) {
+          out.add(q);
+          setOf[q.id] = id;
+        }
       }
     }
     return out.length < 4 ? null : out;

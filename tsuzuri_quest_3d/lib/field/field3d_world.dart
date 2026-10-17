@@ -307,7 +307,8 @@ class Field3DWorld {
     scene.add(root);
   }
 
-  void markTalked(String id) => _npcMarks[id]?.visible = false;
+  /// 人の上の「！」（話していない・クエストを報告できる）
+  void setNpcMark(String id, bool visible) => _npcMarks[id]?.visible = visible;
 
   static (double, double, double) _enemyRgb(String worldId) =>
       switch (worldId) {
@@ -373,7 +374,10 @@ class Field3DWorld {
   /// 倒した敵を消す（すぐに）
   void showDefeated(Set<String> defeated) {
     for (final MapEntry(:key, :value) in _enemies.entries) {
-      value.setAlive(!defeated.contains(key));
+      final alive = !defeated.contains(key);
+      // たおれる途中の敵は、演出が終わってから自分で消える
+      if (!alive && value.dying) continue;
+      value.setAlive(alive);
     }
   }
 
@@ -589,6 +593,8 @@ class _Slime {
       root.remove(hitbox);
     }
   }
+
+  bool get dying => _die >= 0;
 
   void hurt() => _hurt = 0;
   void lunge() => _lunge = 0;

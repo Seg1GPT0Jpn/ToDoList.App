@@ -4,7 +4,7 @@ import 'dart:math' as math;
 /// 3D フィールド（試作）の、描画に依存しない部分。
 ///
 /// 地図の配置・プレイヤーの位置・倒した敵などの状態と、その保存形式を持つ。
-/// 3D の描画・物理（flutter_scene）は rpg_game_app/lib/field3d/ にあり、
+/// 3D の描画・物理（flutter_scene）は lib/field/ にあり、
 /// ここは純 Dart なので単体テストできる。
 ///
 /// 座標はメートル。y が上。地面の高さは 0。
@@ -174,9 +174,9 @@ class Field3DRegion {
         x: 2.5,
         z: -9,
         lines: [
-          'ようこそ、立体の草原へ！ ここは 3D の試作の場所です。',
-          '草原のスライムに触れると、いつもの問題バトルになります。',
-          '勝てばスライムは消えます。場所と倒した記録は、この端末に残ります。',
+          'ようこそ、立体の草原へ！',
+          'スライムに近づいて「たたかう」と、問題バトルになります。',
+          '場所と倒した記録は、この端末に残ります。',
         ],
       ),
     ],
@@ -217,6 +217,9 @@ class Field3DState {
     this.cameraYaw = 0,
     this.defeated = const {},
     this.talked = const {},
+    this.questsDone = const {},
+    this.reviewWins = 0,
+    this.beatenDay = const {},
   });
 
   factory Field3DState.start(Field3DRegion r) =>
@@ -237,6 +240,15 @@ class Field3DState {
   final Set<String> defeated;
   final Set<String> talked;
 
+  /// 報告まで終えたクエスト（QuestBook の ID）
+  final Set<String> questsDone;
+
+  /// 復習スライムをたおした回数
+  final int reviewWins;
+
+  /// 敵 ID → 最後にたおした日（dayNumber）。たおした日のうちは復習スライムにしない
+  final Map<String, int> beatenDay;
+
   Field3DState copyWith({
     double? x,
     double? y,
@@ -245,6 +257,9 @@ class Field3DState {
     double? cameraYaw,
     Set<String>? defeated,
     Set<String>? talked,
+    Set<String>? questsDone,
+    int? reviewWins,
+    Map<String, int>? beatenDay,
   }) => Field3DState(
     regionId: regionId,
     x: x ?? this.x,
@@ -254,6 +269,9 @@ class Field3DState {
     cameraYaw: cameraYaw ?? this.cameraYaw,
     defeated: defeated ?? this.defeated,
     talked: talked ?? this.talked,
+    questsDone: questsDone ?? this.questsDone,
+    reviewWins: reviewWins ?? this.reviewWins,
+    beatenDay: beatenDay ?? this.beatenDay,
   );
 
   Map<String, Object?> toMap() => {
@@ -266,6 +284,9 @@ class Field3DState {
     'cameraYaw': cameraYaw,
     'defeated': defeated.toList()..sort(),
     'talked': talked.toList()..sort(),
+    'quests': questsDone.toList()..sort(),
+    'reviewWins': reviewWins,
+    'beaten': beatenDay,
   };
 
   String encode() => jsonEncode(toMap());
@@ -298,6 +319,15 @@ class Field3DState {
         cameraYaw: num0(m['cameraYaw']),
         defeated: ids(m['defeated']).intersection(known),
         talked: ids(m['talked']),
+        // クエストと復習は後から加えた項目。古いデータにはないので空から始める
+        questsDone: ids(m['quests']),
+        reviewWins: num0(m['reviewWins']).clamp(0, 1 << 30).toInt(),
+        beatenDay: {
+          if (m['beaten'] case final Map b)
+            for (final MapEntry(:key, :value) in b.entries)
+              if (key is String && known.contains(key) && value is num)
+                key: value.toInt(),
+        },
       );
     } catch (_) {
       return Field3DState.start(region);

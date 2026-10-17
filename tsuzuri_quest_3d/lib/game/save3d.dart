@@ -19,6 +19,7 @@ class Save3D {
   static const fieldKey = 'tq3d_field_v1';
   static const qualityKey = 'tq3d_quality_v1';
   static const benchKey = 'tq3d_bench_v1';
+  static const learningKey = 'tq3d_learning_v1';
 
   /// 自動計測の結果をいくつ残すか
   static const benchKeep = 10;
@@ -46,6 +47,20 @@ class Save3D {
   Future<void> saveField(Field3DState s) =>
       prefs.setString(fieldKey, s.encode());
 
+  /// 1問ごとの学習記録（間隔反復の箱・まちがえた回数など。2D 版と同じ形式を別のキーに）
+  LearningRecord loadLearning() {
+    final raw = prefs.getString(learningKey);
+    if (raw == null) return LearningRecord.empty;
+    try {
+      return LearningRecord.fromMap(jsonDecode(raw) as Map<String, dynamic>);
+    } catch (_) {
+      return LearningRecord.empty;
+    }
+  }
+
+  Future<void> saveLearning(LearningRecord r) =>
+      prefs.setString(learningKey, jsonEncode(r.toMap()));
+
   bool get hasField => prefs.containsKey(fieldKey);
 
   String get quality => prefs.getString(qualityKey) ?? 'standard';
@@ -63,5 +78,6 @@ class Save3D {
   Future<void> reset() async {
     await prefs.remove(progressKey);
     await prefs.remove(fieldKey);
+    await prefs.remove(learningKey);
   }
 }

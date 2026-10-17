@@ -37,7 +37,7 @@ class _TitleScreenState extends State<TitleScreen> {
       builder: (c) => AlertDialog(
         title: const Text('3D版のデータを消す'),
         content: const Text(
-          'つづりクエスト3Dのレベル・位置・倒した敵を消して、最初からにします。\n'
+          'つづりクエスト3Dのレベル・位置・倒した敵・クエスト・学習記録を消して、最初からにします。\n'
           '2D版「つづりクエスト」のデータは消えません。',
         ),
         actions: [

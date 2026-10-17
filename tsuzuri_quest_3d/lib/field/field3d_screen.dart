@@ -16,6 +16,8 @@ import 'package:vector_math/vector_math.dart' as vm;
 import '../game/bench.dart';
 import '../game/field3d.dart';
 import '../game/field_battle.dart';
+import '../game/learning3d.dart';
+import '../game/quest3d.dart';
 import '../game/questions.dart';
 import '../game/save3d.dart';
 import 'field3d_memory.dart';
@@ -25,7 +27,10 @@ import 'field3d_world.dart';
 ///
 /// 草原を歩き、NPC と話し、スライムに近づいて Space（スマホはボタン）で戦う。
 /// バトルは画面を切りかえず、その場で問題に答えて、正解したら剣（えんぴつ）をふって当てる。
-/// 位置・倒した敵・レベルは、この端末の 3D 版のデータ（[Save3D]）にだけ保存する。
+/// 案内人からクエストを受け、達成したら報告して報酬をもらう。
+/// まちがえた問題は答えと解説を読んでから次へ進み、1問ごとの学習記録（間隔反復）を残す。
+/// たおしたスライムは、復習の日が来ると「復習スライム」として戻ってくる。
+/// 位置・倒した敵・レベル・学習記録は、この端末の 3D 版のデータ（[Save3D]）にだけ保存する。
 class Field3DScreen extends StatefulWidget {
   const Field3DScreen({
     super.key,
@@ -60,7 +65,15 @@ class _Field3DScreenState extends State<Field3DScreen> {
 
   // 会話・バトル
   Npc3D? _talking;
+  List<String> _lines = const [];
   int _line = 0;
+
+  // 学習記録と復習
+  LearningRecord _learning = LearningRecord.empty;
+  int get _today => dayNumber(DateTime.now());
+
+  /// 復習の日が来て、戻ってきたスライム（倒した記録はそのまま）
+  Set<String> _revived = const {};
   bool _busy = false;
   String? _toast;
 
@@ -75,6 +88,11 @@ class _Field3DScreenState extends State<Field3DScreen> {
   String? _battleMsg;
   bool _msgGood = true;
   bool _hurt = false;
+
+  /// まちがえたあと：答えと解説を読んでから「つぎへ」で進む
+  bool _awaitNext = false;
+  bool _showHint = false;
+  bool _review = false;
   final _bar = ValueNotifier<double>(1);
   Timer? _nextTimer;
 
@@ -133,6 +151,7 @@ class _Field3DScreenState extends State<Field3DScreen> {
   Future<void> _start() async {
     try {
       _state = _save.loadField(widget.region);
+      _learning = _save.loadLearning();
       _camYaw = _state.cameraYaw;
       final world = await Field3DWorld.create(widget.region, _state);
       if (!mounted) {
@@ -142,6 +161,7 @@ class _Field3DScreenState extends State<Field3DScreen> {
       _quality = _save.quality;
       world.setQuality(_quality);
       setState(() => _world = world);
+      _refreshField();
     } catch (e, st) {
       debugPrint('3D フィールドを開けませんでした: $e\n$st');
       if (mounted) setState(() => _error = '$e');
@@ -170,12 +190,15 @@ class _Field3DScreenState extends State<Field3DScreen> {
 
   Future<void> _reset() async {
     final r = widget.region;
-    _state = Field3DState.start(r);
+    // クエストの達成は残す（報酬を何度も受け取れないように）
+    _state = Field3DState.start(r)
+        .copyWith(questsDone: _state.questsDone, reviewWins: _state.reviewWins);
     _world?.teleport(r.spawnX, r.spawnZ, heading: 0);
-    _world?.showDefeated(const {});
+    _revived = const {};
+    _refreshField();
     _camYaw = 0;
     await _save.saveField(_state);
-    _say('草原をはじめからにしました（レベルはそのまま）');
+    _say('草原をはじめからにしました（レベル・クエスト・学習記録はそのまま）');
   }
 
   // ---- 毎フレーム ----
@@ -398,26 +421,92 @@ class _Field3DScreenState extends State<Field3DScreen> {
     return widget.region.npcInRange(p.x, p.z);
   }
 
+  QuestContext get _questContext => QuestContext.of(
+    _state,
+    widget.region,
+    mastered: _learning.masteredCount(),
+  );
+
   void _talk() {
     if (_talking != null) {
-      if (_line + 1 < _talking!.lines.length) {
+      if (_line + 1 < _lines.length) {
         setState(() => _line++);
       } else {
         setState(() => _talking = null);
+        _refreshField();
       }
       return;
     }
     final n = _nearNpc;
-    if (n == null || _busy || _fight != null) return;
+    if (n == null || _busy || _fight != null || _bench != null) return;
     _world?.facePoint(n.x, n.z);
+    _state = _state.copyWith(talked: {..._state.talked, n.id});
+    var lines = n.lines;
+    if (n.id == QuestBook.giverId) {
+      final talk = QuestBook.talk(_state.questsDone, _questContext);
+      lines = talk.lines;
+      final q = talk.completed;
+      if (q != null) _completeQuest(q);
+    }
     setState(() {
       _talking = n;
+      _lines = lines;
       _line = 0;
-      _state = _state.copyWith(talked: {..._state.talked, n.id});
-      _world?.markTalked(n.id);
     });
+    _refreshField();
     _saveNow();
   }
+
+  /// クエストの報告：達成を記録して、報酬の経験値を入れる
+  void _completeQuest(Quest3D q) {
+    _state = _state.copyWith(questsDone: {..._state.questsDone, q.id});
+    final exp = Progression.addExp(_save.loadProgress(), q.rewardExp);
+    _save.saveProgress(exp.progress);
+    if (exp.leveledUp) {
+      Future<void>.delayed(const Duration(milliseconds: 300), () {
+        if (mounted) _say('Lv${exp.after.level} にあがった！');
+      });
+    }
+  }
+
+  /// 復習スライムの出現と、案内人の「！」を今の状態にあわせる
+  void _refreshField() {
+    final w = _world;
+    if (w == null) return;
+    final today = _today;
+    final revived = <String>{
+      for (final e in widget.region.enemies)
+        if (_state.defeated.contains(e.id) &&
+            (_revived.contains(e.id) ||
+                ((_state.beatenDay[e.id] ?? -1) < today &&
+                    Learning3D.dueCount(_learning, _setIdsOf(e), today) > 0)))
+          e.id,
+    };
+    // バトル中の敵は、その場で消したり出したりしない
+    final foe = _foe;
+    if (foe != null && _revived.contains(foe.id)) revived.add(foe.id);
+    _revived = revived;
+    w.showDefeated(_state.defeated.difference(revived));
+    for (final n in widget.region.npcs) {
+      final mark = n.id == QuestBook.giverId
+          ? !_state.talked.contains(n.id) ||
+                QuestBook.reportable(_state.questsDone, _questContext)
+          : !_state.talked.contains(n.id);
+      w.setNpcMark(n.id, mark);
+    }
+    if (mounted) setState(() {});
+  }
+
+  static List<String> _setIdsOf(Enemy3D e) {
+    final world = RpgCatalog.world(e.worldId);
+    for (final s in world.stages) {
+      if (s.id == e.stageId) return s.questionSetIds;
+    }
+    return const [];
+  }
+
+  bool _canFight(Enemy3D e) =>
+      !_state.defeated.contains(e.id) || _revived.contains(e.id);
 
   // ---- バトル（その場で戦う） ----
 
@@ -428,7 +517,7 @@ class _Field3DScreenState extends State<Field3DScreen> {
     Enemy3D? best;
     var bestD = 2.6;
     for (final e in widget.region.enemies) {
-      if (_state.defeated.contains(e.id)) continue;
+      if (!_canFight(e)) continue;
       final d = w.distanceTo(e.id);
       if (d <= bestD) {
         best = e;
@@ -439,7 +528,7 @@ class _Field3DScreenState extends State<Field3DScreen> {
   }
 
   Future<void> _startFight(Enemy3D e) async {
-    if (_busy || _fight != null) return;
+    if (_busy || _fight != null || _bench != null) return;
     _busy = true;
     final world = RpgCatalog.world(e.worldId);
     final stage = world.stages.firstWhere((s) => s.id == e.stageId);
@@ -456,8 +545,15 @@ class _Field3DScreenState extends State<Field3DScreen> {
       enemy: stage.enemy,
       questions: questions,
       timeLimit: Duration(seconds: stage.timeLimitSeconds),
+      // まちがえた・復習の日が来た問題ほど先に出る（復習スライムは復習の問題から）
+      questionWeight: _revived.contains(e.id)
+          ? Learning3D.reviewWeight(() => _learning, () => _today)
+          : Learning3D.weight(() => _learning, () => _today),
     );
     setState(() {
+      _review = _revived.contains(e.id);
+      _awaitNext = false;
+      _showHint = false;
       _foe = e;
       _foeWorld = world;
       _foeStage = stage;
@@ -564,6 +660,7 @@ class _Field3DScreenState extends State<Field3DScreen> {
     if (f == null || e == null) return;
     final r = f.last;
     _swingClock.stop();
+    if (r != null) _record(r, knew: r.correct || f.lastWasLate);
     if (r != null) {
       if (r.correct) {
         _battleMsg = r.quick
@@ -578,29 +675,54 @@ class _Field3DScreenState extends State<Field3DScreen> {
       } else {
         _world?.enemyAttack(e.id);
         _flashHurt();
-        final answer = f.question.choices[f.question.correctIndex];
         _battleMsg = r.timedOut
-            ? '時間切れ！ ${r.damageToPlayer} のダメージを受けた（答え：$answer）'
-            : 'ざんねん… ${r.damageToPlayer} のダメージを受けた（答え：$answer）';
+            ? '時間切れ！ ${r.damageToPlayer} のダメージを受けた'
+            : 'ざんねん… ${r.damageToPlayer} のダメージを受けた';
         _msgGood = false;
       }
     }
-    setState(() {});
-    _nextTimer?.cancel();
-    _nextTimer = Timer(const Duration(milliseconds: 1400), () {
-      if (!mounted || _fight != f) return;
-      f.next();
-      if (f.phase == FieldBattlePhase.won) {
-        _winFight();
-      } else if (f.phase == FieldBattlePhase.lost) {
-        _endFight(won: false);
-      } else {
-        setState(() => _battleMsg = null);
-        _qClock
-          ..reset()
-          ..start();
-      }
+    // まちがえたときは、答えと解説を読んでから自分で進む（時間で消さない）
+    final wrong = r != null && !r.correct && !f.lastWasLate;
+    setState(() {
+      _awaitNext = wrong;
+      _showHint = false;
     });
+    _nextTimer?.cancel();
+    if (wrong) return;
+    _nextTimer = Timer(const Duration(milliseconds: 1400), _advance);
+  }
+
+  /// 1問の結果を学習記録に残す（剣のふり遅れでも、答えが合っていれば「わかった」）
+  void _record(TurnResult r, {required bool knew}) {
+    final q = r.question.source;
+    _learning = _learning.recordAll([
+      Learning3D.event(
+        q,
+        setId: Questions3D.setOf[q.id] ?? '',
+        knew: knew,
+        elapsed: _qClock.elapsed,
+      ),
+    ], day: _today);
+    _save.saveLearning(_learning);
+  }
+
+  /// 結果を見せ終わって次の問題へ（勝ち負けが決まっていれば終わり）
+  void _advance() {
+    final f = _fight;
+    if (!mounted || f == null || f.phase != FieldBattlePhase.feedback) return;
+    _nextTimer?.cancel();
+    _awaitNext = false;
+    f.next();
+    if (f.phase == FieldBattlePhase.won) {
+      _winFight();
+    } else if (f.phase == FieldBattlePhase.lost) {
+      _loseFight();
+    } else {
+      setState(() => _battleMsg = null);
+      _qClock
+        ..reset()
+        ..start();
+    }
   }
 
   void _flashHurt() {
@@ -610,23 +732,50 @@ class _Field3DScreenState extends State<Field3DScreen> {
     });
   }
 
+  /// 経験値を入れる。ふつうのスライムは 2D 版と同じステージの計算、復習スライムは練習の計算
+  ExpGainResult _applyExp(BattleSummary summary) {
+    final progress = _save.loadProgress();
+    final exp = _review
+        ? Progression.applyPractice(progress, summary)
+        : Progression.applyBattle(
+            progress: progress,
+            world: _foeWorld!,
+            stage: _foeStage!,
+            summary: summary,
+          ).expResult;
+    _save.saveProgress(exp.progress);
+    return exp;
+  }
+
   Future<void> _winFight() async {
     final f = _fight!, e = _foe!;
-    final clear = Progression.applyBattle(
-      progress: _save.loadProgress(),
-      world: _foeWorld!,
-      stage: _foeStage!,
-      summary: f.summary(),
-    );
-    await _save.saveProgress(clear.progress);
+    final review = _review;
+    final exp = _applyExp(f.summary());
     _world?.enemyDefeat(e.id);
-    _state = _state.copyWith(defeated: {..._state.defeated, e.id});
-    final exp = clear.expResult;
+    _state = _state.copyWith(
+      defeated: {..._state.defeated, e.id},
+      reviewWins: _state.reviewWins + (review ? 1 : 0),
+      beatenDay: {..._state.beatenDay, e.id: _today},
+    );
+    _revived = _revived.difference({e.id});
+    final name = review ? '復習${_enemyName(e)}' : _enemyName(e);
     _endFight(won: true);
     _say(
       exp.leveledUp
-          ? '${_enemyName(e)}をたおした！ 経験値+${exp.expGained}　Lv${exp.after.level} にあがった！'
-          : '${_enemyName(e)}をたおした！ 経験値+${exp.expGained}',
+          ? '$nameをたおした！ 経験値+${exp.expGained}　Lv${exp.after.level} にあがった！'
+          : '$nameをたおした！ 経験値+${exp.expGained}',
+    );
+  }
+
+  /// 負けても、正解した問題のぶんの経験値は入る（まちがえを不必要に罰しない）
+  void _loseFight() {
+    final f = _fight!;
+    final exp = _applyExp(f.summary());
+    _endFight(won: false);
+    _say(
+      exp.expGained > 0
+          ? 'いったん はなれて立て直そう（正解したぶん 経験値+${exp.expGained}）'
+          : 'いったん はなれて立て直そう',
     );
   }
 
@@ -636,15 +785,15 @@ class _Field3DScreenState extends State<Field3DScreen> {
     _qClock.stop();
     _swingClock.stop();
     _world?.engage(null);
-    if (!won && e != null) {
-      _retreat(e);
-      _say('いったん はなれて立て直そう');
-    }
+    if (!won && e != null) _retreat(e);
     setState(() {
       _fight = null;
       _foe = null;
       _battleMsg = null;
+      _awaitNext = false;
+      _review = false;
     });
+    _refreshField();
     _saveNow();
     _focus.requestFocus();
   }
@@ -652,6 +801,7 @@ class _Field3DScreenState extends State<Field3DScreen> {
   void _flee() {
     if (_fight == null) return;
     _endFight(won: false);
+    _say('いったん はなれて立て直そう');
   }
 
   void _retreat(Enemy3D e) {
@@ -731,6 +881,17 @@ class _Field3DScreenState extends State<Field3DScreen> {
         LogicalKeyboardKey.digit3,
         LogicalKeyboardKey.digit4,
       ];
+      if (_awaitNext &&
+          (k == LogicalKeyboardKey.space ||
+              k == LogicalKeyboardKey.enter ||
+              k == LogicalKeyboardKey.keyN)) {
+        _advance();
+        return KeyEventResult.handled;
+      }
+      if (k == LogicalKeyboardKey.keyH && f.phase == FieldBattlePhase.asking) {
+        setState(() => _showHint = !_showHint);
+        return KeyEventResult.handled;
+      }
       final n = digits.indexOf(k);
       if (n >= 0) {
         _choose(n);
@@ -892,11 +1053,14 @@ class _Field3DScreenState extends State<Field3DScreen> {
                       onSelected: (v) {
                         if (v == 'reset') _reset();
                         if (v == 'credits') _credits();
+                        if (v == 'log') _adventureLog();
                         if (v == 'bench') _startBench();
                         if (v == 'benchlog') _benchHistory();
                         if (v.startsWith('q:')) _setQuality(v.substring(2));
                       },
                       itemBuilder: (_) => [
+                        const PopupMenuItem(value: 'log', child: Text('冒険の記録')),
+                        const PopupMenuDivider(),
                         for (final q in ['high', 'standard', 'light'])
                           CheckedPopupMenuItem(
                             value: 'q:$q',
@@ -929,6 +1093,8 @@ class _Field3DScreenState extends State<Field3DScreen> {
                 ],
               ),
             ),
+            if (_fight == null && _bench == null)
+              Positioned(top: 54, left: 0, child: _objectiveChip()),
             // 計測（試作なので常に出す）
             Align(
               alignment: Alignment.topRight,
@@ -954,7 +1120,7 @@ class _Field3DScreenState extends State<Field3DScreen> {
                 ),
               ),
             ),
-            if (_touchFree && _fight == null)
+            if (_touchFree && _fight == null && _talking == null)
               Align(
                 alignment: Alignment.bottomLeft,
                 child: _chip(
@@ -983,6 +1149,109 @@ class _Field3DScreenState extends State<Field3DScreen> {
     );
   }
 
+  /// 今の目的（クエスト）と、戻ってきた復習スライムの数
+  Widget _objectiveChip() {
+    final text = QuestBook.objective(_state.questsDone, _questContext);
+    final n = _revived.length;
+    return ConstrainedBox(
+      constraints: const BoxConstraints(maxWidth: 420),
+      child: _chip(
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+          child: Text.rich(
+            key: const ValueKey('field3d-objective'),
+            TextSpan(
+              children: [
+                const TextSpan(
+                  text: '目的　',
+                  style: TextStyle(
+                    color: Color(0xFFFFE08A),
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
+                TextSpan(text: text),
+                if (n > 0) TextSpan(text: '\n復習スライムが $n 体 もどってきた'),
+              ],
+            ),
+            style: const TextStyle(color: Colors.white, fontSize: 13),
+          ),
+        ),
+      ),
+    );
+  }
+
+  /// 冒険の記録：レベル・クエスト・称号・教科ごとの学習のようす
+  void _adventureLog() {
+    final p = _save.loadProgress();
+    final today = _today;
+    final r = _learning;
+    final subjects = Learning3D.subjects(r, today);
+    final honors = QuestBook.honors(_state.questsDone);
+    final current = QuestBook.current(_state.questsDone);
+    const head = TextStyle(fontWeight: FontWeight.w800);
+    showDialog<void>(
+      context: context,
+      builder: (c) => AlertDialog(
+        title: const Text('冒険の記録'),
+        content: SizedBox(
+          width: 420,
+          child: SingleChildScrollView(
+            child: Column(
+              key: const ValueKey('field3d-log'),
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  'Lv${p.level}　つぎのレベルまで ${PlayerStats.expToNextLevel(p.level) - p.exp}',
+                ),
+                Text('学習した日 ${r.studyDays.length}日　連続 ${r.streakDays(today)}日'),
+                const SizedBox(height: 10),
+                const Text('クエスト', style: head),
+                Text(
+                  '達成 ${_state.questsDone.length}/${QuestBook.chain.length}'
+                  '${current == null ? '' : '　いま：${current.title}'}',
+                ),
+                Text('称号：${honors.isEmpty ? 'まだなし' : honors.join('、')}'),
+                const SizedBox(height: 10),
+                const Text('学習のようす', style: head),
+                Text(
+                  '答えた問題 ${r.answeredCount()}問　習得 ${r.masteredCount()}問'
+                  '　苦手を克服 ${r.overcomeCount()}問',
+                ),
+                if (subjects.isEmpty)
+                  const Text('まだ記録がありません。スライムとたたかってみよう')
+                else
+                  for (final s in subjects)
+                    Padding(
+                      padding: const EdgeInsets.only(top: 6),
+                      child: Text(
+                        '${Learning3D.subjectName(s.subject)}：'
+                        '正答率 ${(s.accuracy * 100).round()}%'
+                        '　習得 ${s.mastered}/${s.answered}問'
+                        '${s.weak > 0 ? '　まちがえたまま ${s.weak}問' : ''}'
+                        '${s.due > 0 ? '　今日の復習 ${s.due}問' : ''}',
+                      ),
+                    ),
+                const SizedBox(height: 10),
+                const Text(
+                  '「習得」は、同じ問題に日をあけて3回正解すること。'
+                  'まちがえた問題は、次の日から復習スライムとして戻ってきます。',
+                  style: TextStyle(fontSize: 12),
+                ),
+              ],
+            ),
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(c),
+            child: const Text('とじる'),
+          ),
+        ],
+      ),
+    );
+  }
+
   Widget _engageButton(Enemy3D e) => Align(
     alignment: const Alignment(0, 0.55),
     child: FilledButton.icon(
@@ -991,7 +1260,8 @@ class _Field3DScreenState extends State<Field3DScreen> {
       onPressed: () => _startFight(e),
       icon: const Icon(Icons.flash_on),
       label: Text(
-        _touchFree ? 'Space：${_enemyName(e)}とたたかう' : '${_enemyName(e)}とたたかう',
+        '${_touchFree ? 'Space：' : ''}'
+        '${_revived.contains(e.id) ? '復習' : ''}${_enemyName(e)}とたたかう',
       ),
     ),
   );
@@ -1090,7 +1360,7 @@ class _Field3DScreenState extends State<Field3DScreen> {
                     children: [
                       Expanded(
                         child: Text(
-                          '${_enemyName(e)}（${engine.enemy.name}）',
+                          '${_review ? '復習' : ''}${_enemyName(e)}（${engine.enemy.name}）',
                           style: const TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.w700,
@@ -1144,6 +1414,34 @@ class _Field3DScreenState extends State<Field3DScreen> {
                           style: const TextStyle(color: Colors.white70),
                         ),
                       ),
+                    if (q.source.hint != null && q.source.hint!.isNotEmpty)
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: _showHint
+                            ? Padding(
+                                padding: const EdgeInsets.only(top: 4),
+                                child: Text(
+                                  'ヒント：${q.source.hint}',
+                                  key: const ValueKey('field3d-hint'),
+                                  style: const TextStyle(
+                                    color: Color(0xFFB3E5FC),
+                                  ),
+                                ),
+                              )
+                            : TextButton.icon(
+                                key: const ValueKey('field3d-hint-button'),
+                                onPressed: () =>
+                                    setState(() => _showHint = true),
+                                icon: const Icon(
+                                  Icons.lightbulb_outline,
+                                  size: 18,
+                                ),
+                                label: Text(_touchFree ? 'ヒント（H）' : 'ヒント'),
+                                style: TextButton.styleFrom(
+                                  foregroundColor: const Color(0xFFB3E5FC),
+                                ),
+                              ),
+                      ),
                     const SizedBox(height: 8),
                     GridView.count(
                       crossAxisCount: wide ? 2 : 1,
@@ -1171,7 +1469,7 @@ class _Field3DScreenState extends State<Field3DScreen> {
                           ),
                       ],
                     ),
-                  ] else
+                  ] else ...[
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 10),
                       child: Text(
@@ -1187,12 +1485,77 @@ class _Field3DScreenState extends State<Field3DScreen> {
                         ),
                       ),
                     ),
+                    if (_awaitNext && f.last != null)
+                      _explanation(f.last!, size),
+                  ],
                 ],
               ),
             ),
           ),
         ),
       ),
+    );
+  }
+
+  /// まちがえたあとの答えと解説。読んだら「つぎへ」
+  Widget _explanation(TurnResult r, Size size) {
+    final q = r.question;
+    final src = q.source;
+    final i = r.chosenIndex;
+    final chosen = r.timedOut || i == null || i < 0 || i >= q.choices.length
+        ? null
+        : q.choices[i];
+    final text = src.explanation?.trim() ?? '';
+    const white = TextStyle(color: Colors.white, fontSize: 15, height: 1.4);
+    return Column(
+      key: const ValueKey('field3d-explanation'),
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Text(src.prompt, style: const TextStyle(color: Colors.white70)),
+        if (src.sentence != null)
+          Text(src.sentence!, style: const TextStyle(color: Colors.white70)),
+        const SizedBox(height: 4),
+        if (chosen != null)
+          Text(
+            'あなたの答え：$chosen',
+            style: const TextStyle(color: Color(0xFFFFA3A3)),
+          ),
+        Text(
+          '正解：${q.choices[q.correctIndex]}',
+          key: const ValueKey('field3d-correct-answer'),
+          style: const TextStyle(
+            color: Color(0xFF9BE59B),
+            fontSize: 16,
+            fontWeight: FontWeight.w800,
+          ),
+        ),
+        if (text.isNotEmpty)
+          ConstrainedBox(
+            constraints: BoxConstraints(maxHeight: size.height * 0.22),
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.only(top: 4),
+                child: Text('解説：$text', style: white),
+              ),
+            ),
+          ),
+        const SizedBox(height: 4),
+        const Text(
+          'この問題は、あとでもう一度出ます（復習）',
+          style: TextStyle(color: Colors.white54, fontSize: 12),
+        ),
+        const SizedBox(height: 6),
+        Align(
+          alignment: Alignment.centerRight,
+          child: FilledButton.icon(
+            key: const ValueKey('field3d-next'),
+            onPressed: _advance,
+            icon: const Icon(Icons.arrow_forward),
+            label: Text(_touchFree ? 'つぎへ（Space）' : 'つぎへ'),
+          ),
+        ),
+      ],
     );
   }
 
@@ -1234,14 +1597,14 @@ class _Field3DScreenState extends State<Field3DScreen> {
                 ),
                 const SizedBox(height: 6),
                 Text(
-                  n.lines[_line],
+                  _lines[_line],
                   style: const TextStyle(color: Colors.white, fontSize: 16),
                 ),
                 const SizedBox(height: 4),
                 Align(
                   alignment: Alignment.centerRight,
                   child: Text(
-                    _line + 1 < n.lines.length ? '▼ タップ / Space' : '× とじる',
+                    _line + 1 < _lines.length ? '▼ タップ / Space' : '× とじる',
                     style: const TextStyle(color: Colors.white70, fontSize: 12),
                   ),
                 ),
