@@ -14,6 +14,7 @@ import '../art/enemy_painter.dart';
 import '../art/hero_painter.dart';
 import '../art/paper.dart';
 import '../story/story_player.dart';
+import 'duel_screens.dart';
 import 'online_lobby_screen.dart';
 import 'online_room.dart';
 
@@ -152,6 +153,18 @@ class _VersusSetupScreenState extends State<VersusSetupScreen> {
                   'はやく答えるほど、続けて正解するほど強い一撃になる。'
                   'まちがえると「お手つき」で自分が少しダメージを受け、その問題は相手だけが答えられる。',
                   style: TextStyle(fontSize: 13, height: 1.6),
+                ),
+                const SizedBox(height: 10),
+                // 同時に遊ばなくてよい、リンクで送る単語の早押し
+                OutlinedButton.icon(
+                  key: const ValueKey('versus-duel'),
+                  onPressed: () => Navigator.of(context).push(
+                    MaterialPageRoute<void>(
+                      builder: (_) => const DuelHubScreen(),
+                    ),
+                  ),
+                  icon: const Icon(Icons.send),
+                  label: const Text('単語チャレンジ（リンクを送って、好きなときに対戦）'),
                 ),
                 const SizedBox(height: 16),
                 Text('1. 相手', style: serif(15)),

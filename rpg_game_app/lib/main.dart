@@ -11,6 +11,7 @@ import 'account/account_service.dart';
 import 'account/profile_repository.dart';
 import 'account/welcome_screen.dart';
 import 'classroom/classroom_screens.dart';
+import 'versus/duel_screens.dart';
 import 'app/services.dart';
 import 'app/settings.dart';
 import 'app/theme.dart';
@@ -22,6 +23,7 @@ import 'cloud/cloud_sync.dart';
 import 'purchase/google_play_purchase_service.dart';
 import 'quiz/question_report.dart';
 import 'cloud/firestore_classroom_backend.dart';
+import 'cloud/firestore_duel_backend.dart';
 import 'cloud/firestore_versus_backend.dart';
 import 'cloud/firebase_account_service.dart';
 import 'data/meta_store.dart';
@@ -105,6 +107,9 @@ Future<void> main() async {
       classrooms: cloud == null
           ? null
           : FirestoreClassroomBackend(cloud.auth, FirebaseFirestore.instance),
+      duels: cloud == null
+          ? null
+          : FirestoreDuelBackend(cloud.auth, FirebaseFirestore.instance),
       child: TsuzuriQuestApp(
         onUserGesture: () {
           // ブラウザは、画面にさわるまで音を出させてくれない
@@ -266,6 +271,16 @@ class _FirstRunState extends State<_FirstRun> {
           MaterialPageRoute<void>(
             builder: (_) => ClassroomHubScreen(joinCode: classCode),
           ),
+        );
+      });
+    }
+    // 単語チャレンジのリンク（?duel=abcd2345）から来たら、そのチャレンジを開く
+    final duelId = kIsWeb ? Uri.base.queryParameters['duel'] : null;
+    if (duelId != null && WordDuel.validId(duelId)) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (!mounted) return;
+        Navigator.of(context).push(
+          MaterialPageRoute<void>(builder: (_) => DuelOpenScreen(id: duelId)),
         );
       });
     }

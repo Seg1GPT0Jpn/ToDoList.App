@@ -191,7 +191,10 @@ void main() {
       size: const Size(500, 1400),
     );
     await _settle(t);
-    expect(find.textContaining('math_shonan_104_ma_integer_01（'), findsOneWidget);
+    expect(
+      find.textContaining('math_shonan_104_ma_integer_01（'),
+      findsOneWidget,
+    );
     await t.tap(find.textContaining('Q1. '));
     await _frames(t, 5);
     expect(find.textContaining('解説：'), findsOneWidget);

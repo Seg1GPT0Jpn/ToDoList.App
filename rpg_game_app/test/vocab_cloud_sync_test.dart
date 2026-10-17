@@ -99,10 +99,17 @@ void main() {
     ];
     expect(TtsSpeaker.pickVoice(apple, 'en-US')!['name'], 'Samantha');
     final android = [
-      {'name': 'en-us-x-iob-local', 'locale': 'en-US', 'features': 'notInstalled'},
+      {
+        'name': 'en-us-x-iob-local',
+        'locale': 'en-US',
+        'features': 'notInstalled',
+      },
       {'name': 'en-us-x-tpf-local', 'locale': 'en-US', 'features': ''},
     ];
-    expect(TtsSpeaker.pickVoice(android, 'en-US')!['name'], 'en-us-x-tpf-local');
+    expect(
+      TtsSpeaker.pickVoice(android, 'en-US')!['name'],
+      'en-us-x-tpf-local',
+    );
     final chrome = [
       {'name': 'Microsoft Ayumi - Japanese', 'locale': 'ja-JP'},
       {'name': 'Google US English', 'locale': 'en-US'},
@@ -119,7 +126,10 @@ void main() {
     expect(c('be made (up) of'), 'be made up of');
     expect(c('remind sb of sth'), 'remind somebody of something');
     expect(c('affect / effect'), 'affect, effect');
-    expect(c('If you are really determined ...'), 'If you are really determined');
+    expect(
+      c('If you are really determined ...'),
+      'If you are really determined',
+    );
     // 日本語の読み上げはそのまま
     expect(SpeechText.clean('りんご（果物）', 'ja-JP'), 'りんご（果物）');
   });

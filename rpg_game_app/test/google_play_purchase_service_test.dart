@@ -5,10 +5,7 @@ import '../lib/purchase/google_play_purchase_service.dart';
 void main() {
   group('Google Play product IDs', () {
     test('world IDから商品IDを作れる', () {
-      expect(
-        GooglePlayPurchaseService.productIdForWorld('math'),
-        'world_math',
-      );
+      expect(GooglePlayPurchaseService.productIdForWorld('math'), 'world_math');
     });
 
     test('許可された商品IDをworld IDへ戻せる', () {
@@ -27,10 +24,7 @@ void main() {
         GooglePlayPurchaseService.worldIdForProduct('world_english'),
         isNull,
       );
-      expect(
-        GooglePlayPurchaseService.worldIdForProduct('other_math'),
-        isNull,
-      );
+      expect(GooglePlayPurchaseService.worldIdForProduct('other_math'), isNull);
     });
   });
 }

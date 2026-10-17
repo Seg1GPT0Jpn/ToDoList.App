@@ -15,6 +15,7 @@ import '../meta/streak_store.dart';
 import '../purchase/google_play_purchase_service.dart';
 import '../study/exam_world_store.dart';
 import '../study/personal_books.dart';
+import '../versus/duel_backend.dart';
 import '../versus/online_room.dart';
 import 'settings.dart';
 
@@ -32,6 +33,7 @@ class RpgServices extends InheritedWidget {
     required this.music,
     this.versusRooms,
     this.classrooms,
+    this.duels,
     this.purchaseService,
     required super.child,
   }) : questions = JsonQuestionSource(loadQuestionAsset),
@@ -67,6 +69,9 @@ class RpgServices extends InheritedWidget {
 
   /// クラスルーム（Firebase の設定がなければ null）
   final ClassroomBackend? classrooms;
+
+  /// 単語チャレンジ（リンクで遊ぶ早押し。Firebase の設定がなければ null）
+  final DuelBackend? duels;
 
   /// この端末で入っているクラスルーム
   late final ClassroomStore classroomStore = ClassroomStore(

@@ -6,6 +6,7 @@ import '../app/theme.dart';
 import '../classroom/classroom_screens.dart';
 import '../meta/streak_store.dart';
 import '../study/personal_books.dart';
+import '../versus/duel_screens.dart';
 import 'vocab_book_screen.dart';
 import 'vocab_import_screen.dart';
 import 'vocab_session_screen.dart';
@@ -147,6 +148,12 @@ class _VocabHomeState extends State<VocabHome> {
           onPressed: () => _open(WeakCardsScreen(store: store)),
           icon: const Icon(Icons.style_outlined),
           label: const Text('苦手克服カード'),
+        ),
+        OutlinedButton.icon(
+          key: const ValueKey('vocab-home-duel'),
+          onPressed: () => _open(const DuelHubScreen()),
+          icon: const Icon(Icons.flash_on),
+          label: const Text('単語チャレンジ（友だちとリンクで早押し）'),
         ),
         const SizedBox(height: 12),
         Text('単語帳', style: serif(16)),

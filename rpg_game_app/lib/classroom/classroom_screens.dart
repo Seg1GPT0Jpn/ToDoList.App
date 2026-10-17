@@ -8,6 +8,7 @@ import '../account/account_screen.dart';
 import '../app/services.dart';
 import '../app/theme.dart';
 import '../quiz/question_report.dart';
+import '../versus/duel_screens.dart';
 import '../vocab/vocab_session_screen.dart';
 import '../vocab/vocab_store.dart';
 import 'class_reminders.dart';
@@ -804,6 +805,18 @@ class _ClassroomScreenState extends State<ClassroomScreen> {
                   ? '最終チェック（$plan問）'
                   : '今日の分（$plan問）',
             ),
+          ),
+          // 同じ範囲で友だちと早押し（リンクで送る）
+          TextButton.icon(
+            key: ValueKey('class-duel-${t.id}'),
+            onPressed: () => Navigator.of(context).push(
+              MaterialPageRoute<void>(
+                builder: (_) =>
+                    DuelHubScreen(bookId: book.id, from: t.from, to: t.to),
+              ),
+            ),
+            icon: const Icon(Icons.flash_on, size: 18),
+            label: const Text('この範囲で単語チャレンジ'),
           ),
         ],
       );

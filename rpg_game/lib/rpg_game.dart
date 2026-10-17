@@ -85,3 +85,4 @@ export 'src/vocab/word_battle.dart';
 export 'src/classroom/classroom.dart';
 export 'src/learning/gentle_streak.dart';
 export 'src/vocab/weak_cards.dart';
+export 'src/versus/word_duel.dart';
