@@ -133,4 +133,79 @@ void main() {
     expect(find.text('今日の3分'), findsOneWidget);
     expect(t.takeException(), isNull);
   });
+
+  testWidgets('試験の前日は、テストの行が最近間違えた問題の最終チェックになる', (t) async {
+    final s = await openScreen(t, const SizedBox(), frames: 2);
+    final now = DateTime.now();
+    await s.examWorlds.add(
+      ExamWorldPlan(
+        id: 'e1',
+        title: '2学期中間',
+        worldId: 'math',
+        stageIds: const [],
+        createdAt: now,
+        examDate: DateTime(now.year, now.month, now.day + 1),
+      ),
+    );
+    final today = RpgServices.today();
+    await s.meta.save(
+      record: LearningRecord(
+        stats: {
+          'q1': QuestionStat(
+            setId: 'math_stage_01',
+            attempts: 2,
+            correct: 0,
+            missStreak: 2,
+            lastDay: today,
+          ),
+        },
+      ),
+    );
+    await openScreen(
+      t,
+      Scaffold(
+        body: ListView(children: [TodayPlanCard(onAdventure: () {})]),
+      ),
+      frames: 5,
+      keepPrefs: true,
+    );
+    expect(find.text('「2学期中間」の最終チェック：最近間違えた1問'), findsOneWidget);
+    expect(t.takeException(), isNull);
+  });
+
+  testWidgets('前に混同した単語は、正解とその単語の2択で見分ける', (t) async {
+    final s = await openScreen(t, const SizedBox(), frames: 2);
+    final (store, b) = await _book(s);
+    store.progress(b.id).cards.putIfAbsent('w1', CardProgress.new)
+      ..confusedWith.add('word5')
+      ..mistakes[MistakeReason.confused] = 1;
+    t
+        .state<NavigatorState>(find.byType(Navigator))
+        .push(
+          MaterialPageRoute<void>(
+            builder: (_) => VocabSessionScreen(
+              store: store,
+              book: b,
+              title: '練習',
+              random: Random(1),
+              tasks: const [VocabTask('w1', VocabMode.compare)],
+            ),
+          ),
+        );
+    await _frames(t, 5);
+    expect(find.text('前に間違えた2つの単語。この意味はどっち？'), findsOneWidget);
+    expect(find.text('word1'), findsOneWidget);
+    expect(find.text('word5'), findsOneWidget);
+    expect(find.text('word2'), findsNothing);
+    // 選択肢でほかの単語を選んだら、混同として両方に記録する
+    await t.tap(find.text('word5'));
+    await t.pump();
+    await t.ensureVisible(find.byKey(const ValueKey('vocab-next')));
+    await t.tap(find.byKey(const ValueKey('vocab-next')));
+    await _frames(t, 5);
+    final p = store.progress(b.id);
+    expect(p.cards['w1']!.mistakes[MistakeReason.confused], 2);
+    expect(p.cards['w5']!.confusedWith, contains('word1'));
+    expect(t.takeException(), isNull);
+  });
 }

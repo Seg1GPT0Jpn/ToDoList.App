@@ -606,6 +606,16 @@ class VocabChoices {
         mode == VocabMode.compare;
     String label(VocabCard c) => byTerm ? c.term : c.shortMeaning;
     final answer = label(card);
+    // 見分け：前に混同した単語があれば、その単語と正解の2択で違いを確かめる
+    if (mode == VocabMode.compare) {
+      final before = [
+        for (final t in progress?.confusedWith ?? const <String>{})
+          if (t != answer && book.cards.any((c) => c.term == t)) t,
+      ];
+      if (before.isNotEmpty) {
+        return [answer, before[rnd.nextInt(before.length)]]..shuffle(rnd);
+      }
+    }
     final wrong = <String>[];
     if (mode == VocabMode.compare || mode == VocabMode.listening) {
       for (final c in Confusables.of(book, card, progress: progress)) {

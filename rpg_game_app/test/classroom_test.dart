@@ -165,6 +165,38 @@ void main() {
     expect(t.takeException(), isNull);
   });
 
+  testWidgets('終わった範囲に本番の点数を記録すると、覚えた単語の数と並べて自分にだけ見せる', (t) async {
+    final hub = MemoryClassroomHub();
+    final b = MemoryClassroomBackend(hub, userId: 'alice');
+    final s = await openScreen(t, const SizedBox(), frames: 2, classrooms: b);
+    await _addBook(s);
+    final room = await b.create('英語', 'あり');
+    final now = DateTime.now();
+    await b.saveTasks(room.code, [
+      _task(date: DateTime(now.year, now.month, now.day - 2)),
+    ]);
+    await openScreen(
+      t,
+      ClassroomScreen(code: room.code),
+      frames: 5,
+      keepPrefs: true,
+      classrooms: b,
+      size: const Size(420, 1200),
+    );
+    expect(find.textContaining('タップして、本番の点数を記録'), findsOneWidget);
+    await t.tap(find.textContaining('タップして、本番の点数を記録'));
+    await _frames(t, 3);
+    await t.enterText(find.byKey(const ValueKey('class-result-score')), '8');
+    await t.enterText(find.byKey(const ValueKey('class-result-max')), '10');
+    await t.tap(find.byKey(const ValueKey('class-result-save')));
+    await _frames(t, 3);
+    expect(find.textContaining('覚えた単語 0/100 → 本番 8/10点'), findsOneWidget);
+    final r = RpgServicesHolder.last!.classroomStore.result(room.code, 't1')!;
+    expect((r.score, r.max, r.size), (8, 10, 100));
+    expect(t.takeException(), isNull);
+    await t.pump(const Duration(seconds: 2));
+  });
+
   group('自分の分の記録', () {
     test('正解数を共闘ボスに送り、自分の分を覚えておく。送れなければためて、あとで送る', () async {
       SharedPreferences.setMockInitialValues({});

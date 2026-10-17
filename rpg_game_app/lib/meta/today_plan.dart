@@ -5,6 +5,7 @@ import '../app/practice.dart';
 import '../app/services.dart';
 import '../app/theme.dart';
 import '../art/paper.dart';
+import '../battle/battle_screen.dart';
 import '../classroom/classroom_screens.dart';
 import '../study/personal_books.dart';
 import '../vocab/vocab_home.dart';
@@ -86,6 +87,61 @@ class _TodayPlanCardState extends State<TodayPlanCard> {
       }
     }
     return best;
+  }
+
+  static const _finalKey = 'final_check_day';
+
+  /// 明日か今日が試験の日なら、その試験の名前
+  String? _eveExam(_ClassPlan? plan, DateTime now) {
+    if (plan != null && FinalCheck.isEve(plan.task.daysLeft(now))) {
+      final t = plan.task;
+      return t.title.isEmpty ? t.kind.label : t.title;
+    }
+    final today = DateTime(now.year, now.month, now.day);
+    for (final w in RpgServices.of(context).examWorlds.load()) {
+      final d = w.examDate;
+      if (d == null) continue;
+      final left = DateTime(d.year, d.month, d.day).difference(today).inDays;
+      if (FinalCheck.isEve(left)) return w.title;
+    }
+    return null;
+  }
+
+  /// 最終チェック：最近間違えた問題で、確認用のバトル
+  Future<void> _finalCheck(List<ReviewItem> items) async {
+    final services = RpgServices.of(context);
+    final questions = <QuizQuestion>[];
+    for (final item in items) {
+      final set = await services.questions.load(item.setId);
+      final q = set?.questions.where((q) => q.id == item.questionId);
+      if (q != null && q.isNotEmpty) questions.add(q.first);
+    }
+    final progress = await services.repository.load();
+    if (!mounted || questions.isEmpty) return;
+    final worldId = LearningRecord.subjectOf(items.first.setId);
+    final world = RpgCatalog.worlds.firstWhere(
+      (w) => w.id == worldId,
+      orElse: () => RpgCatalog.worlds.first,
+    );
+    await Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        builder: (_) => BattleScreen(
+          world: world,
+          stage: ReviewTower.stage(
+            level: progress.level,
+            floor: 1,
+            questionCount: questions.length,
+            worldId: world.id,
+          ),
+          questions: questions,
+          progress: progress,
+          trial: true,
+          mode: BattleMode.review,
+        ),
+      ),
+    );
+    await services.personalBooks.prefs.setInt(_finalKey, RpgServices.today());
+    if (mounted) setState(() {});
   }
 
   Future<void> _push(Widget page) async {
@@ -227,6 +283,23 @@ class _TodayPlanCardState extends State<TodayPlanCard> {
     int today,
     DateTime now,
   ) {
+    final eve = _eveExam(plan, now);
+    if (eve != null) {
+      final prefs = RpgServices.of(context).personalBooks.prefs;
+      final done = prefs.getInt(_finalKey) == today;
+      final items = FinalCheck.pick(record, today: today);
+      if (done || items.isNotEmpty) {
+        return _Row(
+          id: 'test',
+          icon: Icons.nightlight_round,
+          text: done
+              ? '「$eve」の最終チェック：おわり。今日は早めに休もう'
+              : '「$eve」の最終チェック：最近間違えた${items.length}問',
+          done: done,
+          onTap: done ? () {} : () => _finalCheck(items),
+        );
+      }
+    }
     if (plan != null) {
       final t = plan.task;
       final name = t.title.isEmpty ? t.kind.label : t.title;

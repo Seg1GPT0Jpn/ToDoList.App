@@ -156,6 +156,22 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
     speaker.speak(text, lang: lang, rate: rate);
   }
 
+  /// 選んだ答えが、ほかの単語のものなら、その単語
+  VocabCard? _otherCard(VocabMode m, String picked) {
+    if (m == VocabMode.spelling || m == VocabMode.cloze) {
+      return null;
+    }
+    for (final c in widget.book.cards) {
+      if (c.id == _card.id) continue;
+      if (m == VocabMode.choiceMeaning
+          ? c.shortMeaning == picked
+          : c.term == picked) {
+        return c;
+      }
+    }
+    return null;
+  }
+
   String _answerOf(VocabMode m) => switch (m) {
     VocabMode.choiceMeaning => _card.shortMeaning,
     _ => _card.term,
@@ -175,7 +191,12 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
     setState(() {
       _picked = value;
       _wasCorrect = ok;
-      _reason = ok ? null : m.defaultReason;
+      // 選択肢で、ほかの単語を選んだときは「似た単語と混同した」
+      _reason = ok
+          ? null
+          : _otherCard(m, value) != null
+          ? MistakeReason.confused
+          : m.defaultReason;
       _autoRating = !ok
           ? Rating.again
           : secs > 12
@@ -204,16 +225,14 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
     final m = _task.mode;
     final correct = rating != Rating.again;
     String? confused;
-    if (!correct && _picked != null && m != VocabMode.choiceMeaning) {
-      final other = widget.book.cards.where((c) => c.term == _picked);
-      if (other.isNotEmpty && other.first.id != _card.id) {
-        confused = other.first.term;
-        // 混同は両方の単語に記録する
-        _progress.cards
-            .putIfAbsent(other.first.id, CardProgress.new)
-            .confusedWith
-            .add(_card.term);
-      }
+    final other = correct || _picked == null ? null : _otherCard(m, _picked!);
+    if (other != null) {
+      confused = other.term;
+      // 混同は両方の単語に記録する
+      _progress.cards
+          .putIfAbsent(other.id, CardProgress.new)
+          .confusedWith
+          .add(_card.term);
     }
     _progress.record(
       cardId: _card.id,
@@ -395,7 +414,10 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
           Text(
             switch (m) {
               VocabMode.spelling => '英単語をつづってください　ヒント: ${c.spellingHint}',
-              VocabMode.compare => '似た単語の中から、この意味のものを選んでください',
+              VocabMode.compare =>
+                _choices.length == 2
+                    ? '前に間違えた2つの単語。この意味はどっち？'
+                    : '似た単語の中から、この意味のものを選んでください',
               _ => '英単語はどれ？',
             },
             textAlign: TextAlign.center,

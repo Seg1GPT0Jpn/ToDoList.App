@@ -14,6 +14,7 @@ import '../vocab/vocab_session_screen.dart';
 import '../vocab/vocab_store.dart';
 import 'class_reminders.dart';
 import 'classroom_backend.dart';
+import 'classroom_store.dart';
 
 /// 画面の言葉
 class ClassText {
@@ -630,6 +631,92 @@ class _ClassroomScreenState extends State<ClassroomScreen> {
     );
   }
 
+  /// 記録した結果（自分だけに見える）
+  String _resultLabel(Classroom room, ClassTask t) {
+    final r = RpgServices.of(context).classroomStore.result(room.code, t.id);
+    if (r == null) return '\nタップして、本番の点数を記録（自分だけに見えます）';
+    return '\n覚えた単語 ${r.learned}/${r.size} → 本番 ${r.score}/${r.max}点';
+  }
+
+  /// 本番の点数を記録する。そのとき覚えていた単語の数と並べて残す
+  Future<void> _recordResult(
+    Classroom room,
+    ClassTask t,
+    List<VocabBook> books,
+  ) async {
+    final services = RpgServices.of(context);
+    final store = services.classroomStore;
+    final old = store.result(room.code, t.id);
+    final score = TextEditingController(
+      text: old == null ? '' : '${old.score}',
+    );
+    final max = TextEditingController(text: '${old?.max ?? 10}');
+    final ok = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text('「${t.title.isEmpty ? t.kind.label : t.title}」は何点だった？'),
+        content: Row(
+          children: [
+            Expanded(
+              child: TextField(
+                key: const ValueKey('class-result-score'),
+                controller: score,
+                keyboardType: TextInputType.number,
+                decoration: const InputDecoration(labelText: '点数'),
+              ),
+            ),
+            const SizedBox(width: 12),
+            Expanded(
+              child: TextField(
+                key: const ValueKey('class-result-max'),
+                controller: max,
+                keyboardType: TextInputType.number,
+                decoration: const InputDecoration(labelText: '満点'),
+              ),
+            ),
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(false),
+            child: const Text('やめる'),
+          ),
+          FilledButton(
+            key: const ValueKey('class-result-save'),
+            onPressed: () => Navigator.of(context).pop(true),
+            child: const Text('記録する'),
+          ),
+        ],
+      ),
+    );
+    // 入力欄は、閉じる動きが終わってから捨てる（すぐ捨てると、閉じる途中で使われる）
+    final s = int.tryParse(score.text.trim());
+    final m = int.tryParse(max.text.trim());
+    Future<void>.delayed(const Duration(seconds: 1), () {
+      score.dispose();
+      max.dispose();
+    });
+    if (ok != true || s == null || m == null || m <= 0 || s < 0 || s > m) {
+      return;
+    }
+    final vocab = VocabStore.of(services.personalBooks);
+    final book = ClassBooks.match(t, books);
+    final cards = book == null ? const <VocabCard>[] : t.cardsIn(book);
+    final learned = book == null
+        ? 0
+        : ClassPlanner.learnedCount(
+            cards,
+            vocab.progress(book.id),
+            DateTime.now(),
+          );
+    await store.setResult(
+      room.code,
+      t.id,
+      ClassResult(s, m, old?.learned ?? learned, old?.size ?? cards.length),
+    );
+    if (mounted) setState(() {});
+  }
+
   Widget _page(Classroom room, bool owner, Map<String, int> boss) {
     final now = DateTime.now();
     final services = RpgServices.of(context);
@@ -692,8 +779,10 @@ class _ClassroomScreenState extends State<ClassroomScreen> {
                 title: Text(t.title.isEmpty ? t.kind.label : t.title),
                 subtitle: Text(
                   '${t.bookTitle} ${t.from}〜${t.to}　${t.date.month}/${t.date.day}'
-                  '　共闘ボス ${_bossLabel(t, room, boss[t.id] ?? 0)}',
+                  '　共闘ボス ${_bossLabel(t, room, boss[t.id] ?? 0)}'
+                  '${_resultLabel(room, t)}',
                 ),
+                onTap: () => _recordResult(room, t, books),
                 trailing: owner
                     ? IconButton(
                         tooltip: '消す',

@@ -54,10 +54,34 @@ class ClassroomStore {
   Future<void> rename(String from, String to) async {
     final m = _read();
     m['codes'] = [for (final c in codes) c == from ? to : c];
-    for (final k in ['mine', 'pending']) {
+    for (final k in ['mine', 'pending', 'results']) {
       final map = m[k];
       if (map is Map && map.containsKey(from)) map[to] = map.remove(from);
     }
+    await _write(m);
+  }
+
+  /// 小テスト・定期テストの結果（自分だけに見える。サーバーには送らない）
+  ClassResult? result(String code, String taskId) {
+    final r = ((_read()['results'] as Map?)?[code] as Map?)?[taskId];
+    if (r is! Map) return null;
+    final score = r['s'], max = r['m'], learned = r['l'], size = r['n'];
+    if (score is! num || max is! num || max <= 0) return null;
+    return ClassResult(
+      score.toInt(),
+      max.toInt(),
+      learned is num ? learned.toInt() : 0,
+      size is num ? size.toInt() : 0,
+    );
+  }
+
+  Future<void> setResult(String code, String taskId, ClassResult r) async {
+    final m = _read();
+    final all = (m['results'] as Map?) ?? {};
+    final room = (all[code] as Map?) ?? {};
+    room[taskId] = {'s': r.score, 'm': r.max, 'l': r.learned, 'n': r.size};
+    all[code] = room;
+    m['results'] = all;
     await _write(m);
   }
 
@@ -127,4 +151,15 @@ class ClassroomStore {
 
   /// まだ送れていない正解数
   int pending(String code, String taskId) => _get('pending', code, taskId);
+}
+
+/// 1回のテストの結果と、そのとき覚えていた単語の数
+class ClassResult {
+  const ClassResult(this.score, this.max, this.learned, this.size);
+  final int score;
+  final int max;
+
+  /// 記録したときに覚えていた単語の数と、範囲の単語の数
+  final int learned;
+  final int size;
 }

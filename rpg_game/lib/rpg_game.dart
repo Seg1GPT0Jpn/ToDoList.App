@@ -87,3 +87,4 @@ export 'src/learning/gentle_streak.dart';
 export 'src/vocab/weak_cards.dart';
 export 'src/versus/word_duel.dart';
 export 'src/versus/ghost.dart';
+export 'src/learning/final_check.dart';
