@@ -1,12 +1,12 @@
 import 'dart:math' as math;
 
-import 'package:flutter/foundation.dart' show debugPrint;
 import 'package:flutter/painting.dart' show Color;
 import 'package:flutter_scene/physics.dart';
 import 'package:flutter_scene/scene.dart';
 import 'package:flutter_scene_rapier/flutter_scene_rapier.dart';
 
 import '../game/field3d.dart';
+import 'hero_model.dart';
 
 import 'package:vector_math/vector_math.dart' as vm;
 
@@ -22,10 +22,8 @@ class Field3DWorld {
   late final Node _player;
   late final KinematicCharacterController _kcc;
   late final Node _visual;
-  AnimationClip? _idle;
-  AnimationClip? _walk;
-  AnimationClip? _runClip;
-  final _enemies = <String, Node>{};
+  final _hero = HeroModel();
+  final _enemies = <String, _Slime>{};
   final _npcMarks = <String, Node>{};
 
   // 入力と動き
@@ -34,6 +32,7 @@ class Field3DWorld {
   double _vy = 0;
   double _heading = 0;
   double _speed = 0;
+  double _moved = 0;
   double _time = 0;
 
   static const _radius = 0.35;
@@ -335,6 +334,8 @@ class Field3DWorld {
       name: 'enemy_${e.id}',
       localTransform: vm.Matrix4.translation(vm.Vector3(e.x, 0, e.z)),
     );
+    // 見た目（向きを変えるための台）
+    final turn = Node(name: 'turn');
     final body = Node(
       name: 'body',
       mesh: Mesh(
@@ -343,25 +344,76 @@ class Field3DWorld {
       ),
       localTransform: vm.Matrix4.translation(vm.Vector3(0, 0.5, 0)),
     );
+    // 目は +Z（正面）
     for (final dx in [-0.17, 0.17]) {
       body.add(
         Node(
           mesh: Mesh(SphereGeometry(radius: 0.08), _mat(0.05, 0.05, 0.08)),
-          localTransform: vm.Matrix4.translation(vm.Vector3(dx, 0.12, -0.44)),
+          localTransform: vm.Matrix4.translation(vm.Vector3(dx, 0.12, 0.44)),
         ),
       );
     }
-    root.add(body);
+    turn.add(body);
+    root.add(turn);
+    // 当たり判定（体当たりしても通り抜けない）。倒したら外す
+    final hitbox = Node(
+      name: 'hitbox',
+      localTransform: vm.Matrix4.translation(vm.Vector3(0, 0.5, 0)),
+    );
+    hitbox.addComponent(RigidBody(type: BodyType.fixed));
+    hitbox.addComponent(Collider(shape: const SphereShape(radius: 0.5)));
+    root.add(hitbox);
     scene.add(root);
-    _enemies[e.id] = root;
+    final slime = _Slime(e, root, turn, body, hitbox);
+    // はじめは出発点のほうを向いておく
+    slime.yaw = math.atan2(region.spawnX - e.x, region.spawnZ - e.z);
+    _enemies[e.id] = slime;
   }
 
-  /// 倒した敵を消す
+  /// 倒した敵を消す（すぐに）
   void showDefeated(Set<String> defeated) {
     for (final MapEntry(:key, :value) in _enemies.entries) {
-      value.visible = !defeated.contains(key);
+      value.setAlive(!defeated.contains(key));
     }
   }
+
+  // ---- バトルの演出 ----
+
+  String? _engaged;
+
+  /// 戦っている敵（null で解除）。戦っている敵はこちらを向いて構える
+  void engage(String? id) => _engaged = id;
+
+  /// 敵までの水平距離（いなければ無限大）
+  double distanceTo(String id) {
+    final s = _enemies[id];
+    if (s == null || !s.alive) return double.infinity;
+    final p = playerFeet;
+    final dx = p.x - s.enemy.x, dz = p.z - s.enemy.z;
+    return math.sqrt(dx * dx + dz * dz);
+  }
+
+  /// 剣（えんぴつ）をふる。[targetId] の敵が届く距離にいれば、その敵のほうを向いて true
+  bool swingAt(String? targetId, {double reach = 2.4}) {
+    if (_hero.swinging) return false;
+    _hero.swing();
+    if (targetId == null) return false;
+    if (distanceTo(targetId) > reach) return false;
+    final e = _enemies[targetId]!.enemy;
+    facePoint(e.x, e.z);
+    return true;
+  }
+
+  bool get swinging => _hero.swinging;
+
+  /// 攻撃が当たった（敵がのけぞる）
+  void enemyHurt(String id) => _enemies[id]?.hurt();
+
+  /// 敵の反撃（体当たり）
+  void enemyAttack(String id) => _enemies[id]?.lunge();
+
+  /// 敵を倒した（しぼんで消える）
+  void enemyDefeat(String id) => _enemies[id]?.defeat();
 
   Future<void> _buildPlayer(Field3DState s) async {
     _heading = s.heading;
@@ -387,50 +439,12 @@ class Field3DWorld {
     _player.addComponent(_Mover(_fixedStep, _frame));
     _visual = Node(name: 'player_visual');
     _player.add(_visual);
+    // 2D 版の主人公の 3D 版（足元を地面に合わせる）
+    _hero.root.localTransform = vm.Matrix4.translation(
+      vm.Vector3(0, -_centerY, 0),
+    );
+    _visual.add(_hero.root);
     scene.add(_player);
-    try {
-      final fox = await loadScene('assets/models/fox.glb');
-      // 大きさをそろえる（高さ約 0.9m）。スキンつきのモデルなので、親のノードを動かす
-      final holder = Node(name: 'fox_holder');
-      holder.add(fox);
-      final b = fox.combinedWorldBounds;
-      final height = b == null ? 0 : (b.max.y - b.min.y);
-      final k = height > 0 ? 0.9 / height : 0.01;
-      holder.localTransform = vm.Matrix4.translation(
-        vm.Vector3(0, -_centerY, 0),
-      )..scaleByVector3(vm.Vector3.all(k));
-      _visual.add(holder);
-      Animation? anim(String name) => fox.findAnimationByName(name);
-      final survey = anim('Survey'), walk = anim('Walk'), run = anim('Run');
-      if (survey != null) {
-        _idle = fox.createAnimationClip(survey)
-          ..loop = true
-          ..play();
-      }
-      if (walk != null) {
-        _walk = fox.createAnimationClip(walk)
-          ..loop = true
-          ..weight = 0
-          ..play();
-      }
-      if (run != null) {
-        _runClip = fox.createAnimationClip(run)
-          ..loop = true
-          ..weight = 0
-          ..play();
-      }
-    } catch (e) {
-      // モデルが読めなくても、仮の体で遊べるようにする
-      debugPrint('キツネのモデルを読めませんでした: $e');
-      _visual.add(
-        Node(
-          mesh: Mesh(
-            CapsuleGeometry(radius: _radius, height: _halfHeight * 2),
-            _mat(0.95, 0.55, 0.20),
-          ),
-        ),
-      );
-    }
     _applyHeading();
   }
 
@@ -466,8 +480,11 @@ class Field3DWorld {
       deltaSeconds: dt,
     );
     if (m.grounded && _vy < 0) _vy = 0;
-    _speed = vm.Vector3(m.translation.x, 0, m.translation.z).length / dt;
+    final moved = vm.Vector3(m.translation.x, 0, m.translation.z).length;
+    _moved += moved;
+    _speed = moved / dt;
     if (_wish.length > 0.05) {
+      // 進む向き（入力の向き）を向く。体の正面は +Z
       final target = math.atan2(_wish.x, _wish.z);
       var d = target - _heading;
       while (d > math.pi) {
@@ -476,7 +493,7 @@ class Field3DWorld {
       while (d < -math.pi) {
         d += 2 * math.pi;
       }
-      _heading += d * (1 - math.exp(-12 * dt));
+      _heading += d * (1 - math.exp(-14 * dt));
       _applyHeading();
     }
     // 地図の外に落ちたら出発点へ
@@ -485,18 +502,18 @@ class Field3DWorld {
 
   void _frame(double dt) {
     _time += dt;
-    // 歩く速さでアニメーションを混ぜる
-    final t = (_speed / walkSpeed).clamp(0.0, 1.0);
-    final r = ((_speed - walkSpeed) / (runSpeed - walkSpeed)).clamp(0.0, 1.0);
-    _idle?.weight = 1 - t;
-    _walk?.weight = t * (1 - r);
-    _runClip?.weight = t * r;
-    // スライムがぴょこぴょこ動く
+    _hero.update(dt, moved: _moved, speed: _speed);
+    _moved = 0;
+    final p = playerFeet;
     var i = 0;
-    for (final n in _enemies.values) {
-      final body = n.children.first;
-      final y = 0.5 + (math.sin(_time * 3 + i) * 0.5 + 0.5) * 0.25;
-      body.position = vm.Vector3(0, y, 0);
+    for (final s in _enemies.values) {
+      s.update(
+        dt,
+        _time + i,
+        engaged: s.enemy.id == _engaged,
+        px: p.x,
+        pz: p.z,
+      );
       i++;
     }
   }
@@ -548,4 +565,87 @@ class _Mover extends Component {
 
   @override
   void update(double deltaSeconds) => onFrame(deltaSeconds);
+}
+
+/// 草原のスライム（見た目・ぴょこぴょこ・バトルの演出）
+class _Slime {
+  _Slime(this.enemy, this.root, this.turn, this.body, this.hitbox);
+
+  final Enemy3D enemy;
+  final Node root, turn, body, hitbox;
+  double yaw = 0;
+  bool alive = true;
+  double _hurt = -1, _lunge = -1, _die = -1;
+
+  void setAlive(bool v) {
+    if (v == alive && _die < 0) return;
+    alive = v;
+    _die = -1;
+    root.visible = v;
+    body.scale = vm.Vector3.all(1);
+    if (v) {
+      if (hitbox.parent == null) root.add(hitbox);
+    } else if (hitbox.parent != null) {
+      root.remove(hitbox);
+    }
+  }
+
+  void hurt() => _hurt = 0;
+  void lunge() => _lunge = 0;
+  void defeat() {
+    _die = 0;
+    if (hitbox.parent != null) root.remove(hitbox);
+  }
+
+  void update(
+    double dt,
+    double t, {
+    required bool engaged,
+    required double px,
+    required double pz,
+  }) {
+    if (!alive) return;
+    if (engaged) {
+      // こちらを向く
+      final target = math.atan2(px - enemy.x, pz - enemy.z);
+      var d = target - yaw;
+      while (d > math.pi) {
+        d -= 2 * math.pi;
+      }
+      while (d < -math.pi) {
+        d += 2 * math.pi;
+      }
+      yaw += d * (1 - math.exp(-8 * dt));
+    }
+    turn.rotation = vm.Quaternion.axisAngle(vm.Vector3(0, 1, 0), yaw);
+    var y =
+        0.5 +
+        (math.sin(t * (engaged ? 6 : 3)) * 0.5 + 0.5) * (engaged ? 0.1 : 0.25);
+    var z = 0.0;
+    var scale = 1.0;
+    if (_hurt >= 0) {
+      // のけぞる（後ろへ少し下がって、つぶれる）
+      _hurt += dt;
+      final k = math.sin((_hurt / 0.35).clamp(0.0, 1.0) * math.pi);
+      z -= 0.45 * k;
+      scale = 1 - 0.25 * k;
+      if (_hurt > 0.35) _hurt = -1;
+    }
+    if (_lunge >= 0) {
+      // 体当たり（前へ飛びかかる）
+      _lunge += dt;
+      final k = math.sin((_lunge / 0.4).clamp(0.0, 1.0) * math.pi);
+      z += 0.9 * k;
+      y += 0.35 * k;
+      if (_lunge > 0.4) _lunge = -1;
+    }
+    if (_die >= 0) {
+      _die += dt;
+      scale = (1 - _die / 0.5).clamp(0.0, 1.0);
+      y = 0.5 * scale;
+      if (_die > 0.5) setAlive(false);
+    }
+    body.position = vm.Vector3(0, y, z);
+    body.scale = vm.Vector3.all(math.max(0.01, scale));
+  }
 }

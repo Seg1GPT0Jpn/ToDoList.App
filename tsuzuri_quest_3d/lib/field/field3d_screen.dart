@@ -11,8 +11,8 @@ import 'package:flutter_scene/scene.dart';
 import 'package:rpg_game/rpg_game.dart';
 import 'package:vector_math/vector_math.dart' as vm;
 
-import '../battle/battle3d_screen.dart';
 import '../game/field3d.dart';
+import '../game/field_battle.dart';
 import '../game/questions.dart';
 import '../game/save3d.dart';
 import 'field3d_memory.dart';
@@ -20,7 +20,8 @@ import 'field3d_world.dart';
 
 /// 3D フィールド（試作）。
 ///
-/// 草原を歩き、NPC と話し、スライムに触れるとバトル画面になる。
+/// 草原を歩き、NPC と話し、スライムに近づいて Space（スマホはボタン）で戦う。
+/// バトルは画面を切りかえず、その場で問題に答えて、正解したら剣（えんぴつ）をふって当てる。
 /// 位置・倒した敵・レベルは、この端末の 3D 版のデータ（[Save3D]）にだけ保存する。
 class Field3DScreen extends StatefulWidget {
   const Field3DScreen({
@@ -60,6 +61,24 @@ class _Field3DScreenState extends State<Field3DScreen> {
   bool _busy = false;
   String? _toast;
 
+  // その場のバトル
+  Enemy3D? _foe;
+  FieldBattle? _fight;
+  WorldDef? _foeWorld;
+  StageDef? _foeStage;
+  int _foeMaxHp = 1;
+  final _qClock = Stopwatch();
+  final _swingClock = Stopwatch();
+  String? _battleMsg;
+  bool _msgGood = true;
+  bool _hurt = false;
+  final _bar = ValueNotifier<double>(1);
+  Timer? _nextTimer;
+
+  // マウスのクリック（ドラッグと区別する）
+  Offset? _downAt;
+  final _downClock = Stopwatch();
+
   // 画質
   String _quality = 'standard';
 
@@ -96,6 +115,7 @@ class _Field3DScreenState extends State<Field3DScreen> {
 
   @override
   void dispose() {
+    _nextTimer?.cancel();
     _saveNow();
     _world?.dispose();
     _focus.dispose();
@@ -161,7 +181,7 @@ class _Field3DScreenState extends State<Field3DScreen> {
     // 入力（キーボード＋仮想スティック）
     final keys = HardwareKeyboard.instance.logicalKeysPressed;
     var ix = _stick.x, iy = -_stick.y;
-    if (_talking == null && !_busy) {
+    if (_talking == null) {
       if (keys.contains(LogicalKeyboardKey.keyW) ||
           keys.contains(LogicalKeyboardKey.arrowUp)) {
         iy += 1;
@@ -190,12 +210,7 @@ class _Field3DScreenState extends State<Field3DScreen> {
         keys.contains(LogicalKeyboardKey.shiftLeft) || _stick.length > 0.95;
     w.setMoveInput(ix, iy, cameraYaw: _camYaw, run: run);
 
-    // 敵に触れたか
-    if (!_busy && _talking == null) {
-      final p = w.playerFeet;
-      final e = widget.region.touchedEnemy(p.x, p.z, _state.defeated);
-      if (e != null) unawaited(_battle(e));
-    }
+    _tickFight(dt);
 
     // ときどき保存・表示の更新
     _sinceSave += dt;
@@ -223,14 +238,21 @@ class _Field3DScreenState extends State<Field3DScreen> {
 
   PerspectiveCamera _camera(Duration elapsed) {
     final w = _world!;
-    final target = w.playerFeet + vm.Vector3(0, 1.1, 0);
+    var target = w.playerFeet + vm.Vector3(0, 1.1, 0);
+    var want = _camDist;
+    final foe = _foe;
+    if (foe != null) {
+      // バトル中は主人公と敵のまんなかを、少し引いて見る
+      target = (target + vm.Vector3(foe.x, 0.6, foe.z)) * 0.5;
+      want = math.max(_camDist, 7.5);
+    }
     final dir = vm.Vector3(
       math.sin(_camYaw) * math.cos(_camPitch),
       -math.sin(_camPitch),
       math.cos(_camYaw) * math.cos(_camPitch),
     );
     // 木や岩にカメラが埋まらないように、間に物があれば近づける
-    final dist = w.cameraDistance(target, -dir, _camDist);
+    final dist = w.cameraDistance(target, -dir, want);
     var eye = target - dir * dist;
     if (eye.y < 0.3) eye = vm.Vector3(eye.x, 0.3, eye.z);
     return PerspectiveCamera(position: eye, target: target);
@@ -255,7 +277,7 @@ class _Field3DScreenState extends State<Field3DScreen> {
       return;
     }
     final n = _nearNpc;
-    if (n == null || _busy) return;
+    if (n == null || _busy || _fight != null) return;
     _world?.facePoint(n.x, n.z);
     setState(() {
       _talking = n;
@@ -266,52 +288,239 @@ class _Field3DScreenState extends State<Field3DScreen> {
     _saveNow();
   }
 
-  // ---- バトル ----
+  // ---- バトル（その場で戦う） ----
 
-  Future<void> _battle(Enemy3D e) async {
+  /// 戦える距離にいる敵（いちばん近い、まだ倒していない敵）
+  Enemy3D? get _nearFoe {
+    final w = _world;
+    if (w == null || _fight != null) return null;
+    Enemy3D? best;
+    var bestD = 2.6;
+    for (final e in widget.region.enemies) {
+      if (_state.defeated.contains(e.id)) continue;
+      final d = w.distanceTo(e.id);
+      if (d <= bestD) {
+        best = e;
+        bestD = d;
+      }
+    }
+    return best;
+  }
+
+  Future<void> _startFight(Enemy3D e) async {
+    if (_busy || _fight != null) return;
     _busy = true;
-    _saveNow();
     final world = RpgCatalog.world(e.worldId);
     final stage = world.stages.firstWhere((s) => s.id == e.stageId);
     final questions = await Questions3D.forStage(stage);
+    _busy = false;
     if (!mounted) return;
     if (questions == null) {
       _say('このスライムの問題はまだ用意できていません');
-      _retreat(e);
-      _busy = false;
       return;
     }
-    _world?.setMoveInput(0, 0, cameraYaw: _camYaw, run: false);
-    final result = await Navigator.of(context).push(
-      MaterialPageRoute<Battle3DResult>(
-        builder: (_) => Battle3DScreen(
-          save: _save,
-          world: world,
-          stage: stage,
-          questions: questions,
-          enemyLabel: _enemyName(e),
-          color: Field3DWorld.enemyColor(e.worldId),
-        ),
-      ),
+    final progress = _save.loadProgress();
+    final engine = BattleEngine(
+      player: BattlePower.forStage(progress, stage),
+      enemy: stage.enemy,
+      questions: questions,
+      timeLimit: Duration(seconds: stage.timeLimitSeconds),
     );
-    if (!mounted) return;
-    // 戦い終わったら、元の場所から再開する（シーンは画面が持ち続けている）
-    if (result?.won ?? false) {
-      _state = _state.copyWith(defeated: {..._state.defeated, e.id});
-      _world?.showDefeated(_state.defeated);
-      final exp = result!.clear?.expResult;
-      _say(
-        exp != null && exp.leveledUp
-            ? '${_enemyName(e)}をたおした！ Lv${exp.after.level} にあがった！'
-            : '${_enemyName(e)}をたおした！',
-      );
+    setState(() {
+      _foe = e;
+      _foeWorld = world;
+      _foeStage = stage;
+      _foeMaxHp = engine.enemy.maxHp;
+      _fight = FieldBattle(engine);
+      _battleMsg = null;
+    });
+    _world?.engage(e.id);
+    _world?.facePoint(e.x, e.z);
+    _qClock
+      ..reset()
+      ..start();
+  }
+
+  void _tickFight(double dt) {
+    final f = _fight, e = _foe, w = _world;
+    if (f == null || e == null || w == null) return;
+    // カメラを、主人公と敵を横から（ななめ後ろから）見る向きへゆっくり回す
+    if (!_mouseDragging && _touchCamera.isEmpty) {
+      final p = w.playerFeet;
+      final side = math.atan2(e.x - p.x, e.z - p.z) + 0.75;
+      var d = side - _camYaw;
+      while (d > math.pi) {
+        d -= 2 * math.pi;
+      }
+      while (d < -math.pi) {
+        d += 2 * math.pi;
+      }
+      _camYaw += d * (1 - math.exp(-3 * dt));
+      _camPitch += (0.5 - _camPitch) * (1 - math.exp(-3 * dt));
+    }
+    // 遠くへ離れたら、にげたことにする
+    if (w.distanceTo(e.id) > 9) {
+      _flee();
+      return;
+    }
+    _bar.value = switch (f.phase) {
+      FieldBattlePhase.asking =>
+        1 - _qClock.elapsedMilliseconds / f.limit.inMilliseconds,
+      FieldBattlePhase.swing =>
+        1 -
+            _swingClock.elapsedMilliseconds /
+                FieldBattle.swingWindow.inMilliseconds,
+      _ => _bar.value,
+    }.clamp(0.0, 1.0);
+    if (f.phase == FieldBattlePhase.asking && _qClock.elapsed >= f.limit) {
+      f.timeout();
+      _afterTurn();
+    } else if (f.phase == FieldBattlePhase.swing &&
+        _swingClock.elapsed >= FieldBattle.swingWindow) {
+      f.late();
+      _afterTurn();
+    }
+  }
+
+  void _choose(int i) {
+    final f = _fight;
+    if (f == null || f.phase != FieldBattlePhase.asking) return;
+    if (i >= f.question.choices.length) return;
+    final ok = f.choose(i, _qClock.elapsed);
+    _qClock.stop();
+    if (ok) {
+      _swingClock
+        ..reset()
+        ..start();
+      setState(() {
+        _battleMsg = _touchFree ? '正解！ 剣をふれ！（クリック／Space）' : '正解！ 剣ボタンでふれ！';
+        _msgGood = true;
+      });
     } else {
+      _afterTurn();
+    }
+  }
+
+  /// 剣（えんぴつ）をふる
+  void _swing() {
+    final w = _world;
+    if (w == null || w.swinging) return;
+    final f = _fight, e = _foe;
+    if (f == null || e == null || f.phase != FieldBattlePhase.swing) {
+      w.swingAt(null);
+      return;
+    }
+    final inReach = w.swingAt(e.id, reach: FieldBattle.reach);
+    if (!inReach) {
+      setState(() {
+        _battleMsg = 'とどかない！ 近づいてふろう';
+        _msgGood = false;
+      });
+      return;
+    }
+    // ふり下ろした瞬間に当たる
+    final at = _swingClock.elapsed;
+    Future<void>.delayed(const Duration(milliseconds: 200), () {
+      if (!mounted || _fight != f || f.phase != FieldBattlePhase.swing) return;
+      f.hit(at);
+      _world?.enemyHurt(e.id);
+      _afterTurn();
+    });
+  }
+
+  void _afterTurn() {
+    final f = _fight, e = _foe;
+    if (f == null || e == null) return;
+    final r = f.last;
+    _swingClock.stop();
+    if (r != null) {
+      if (r.correct) {
+        _battleMsg = r.quick
+            ? 'クリティカル！ ${r.damageToEnemy} のダメージ'
+            : '${r.damageToEnemy} のダメージ！';
+        _msgGood = true;
+      } else if (f.lastWasLate) {
+        _world?.enemyAttack(e.id);
+        _flashHurt();
+        _battleMsg = 'ふりおくれ… ${r.damageToEnemy} のダメージ／${r.damageToPlayer} 受けた';
+        _msgGood = false;
+      } else {
+        _world?.enemyAttack(e.id);
+        _flashHurt();
+        final answer = f.question.choices[f.question.correctIndex];
+        _battleMsg = r.timedOut
+            ? '時間切れ！ ${r.damageToPlayer} のダメージを受けた（答え：$answer）'
+            : 'ざんねん… ${r.damageToPlayer} のダメージを受けた（答え：$answer）';
+        _msgGood = false;
+      }
+    }
+    setState(() {});
+    _nextTimer?.cancel();
+    _nextTimer = Timer(const Duration(milliseconds: 1400), () {
+      if (!mounted || _fight != f) return;
+      f.next();
+      if (f.phase == FieldBattlePhase.won) {
+        _winFight();
+      } else if (f.phase == FieldBattlePhase.lost) {
+        _endFight(won: false);
+      } else {
+        setState(() => _battleMsg = null);
+        _qClock
+          ..reset()
+          ..start();
+      }
+    });
+  }
+
+  void _flashHurt() {
+    _hurt = true;
+    Future<void>.delayed(const Duration(milliseconds: 450), () {
+      if (mounted) setState(() => _hurt = false);
+    });
+  }
+
+  Future<void> _winFight() async {
+    final f = _fight!, e = _foe!;
+    final clear = Progression.applyBattle(
+      progress: _save.loadProgress(),
+      world: _foeWorld!,
+      stage: _foeStage!,
+      summary: f.summary(),
+    );
+    await _save.saveProgress(clear.progress);
+    _world?.enemyDefeat(e.id);
+    _state = _state.copyWith(defeated: {..._state.defeated, e.id});
+    final exp = clear.expResult;
+    _endFight(won: true);
+    _say(
+      exp.leveledUp
+          ? '${_enemyName(e)}をたおした！ 経験値+${exp.expGained}　Lv${exp.after.level} にあがった！'
+          : '${_enemyName(e)}をたおした！ 経験値+${exp.expGained}',
+    );
+  }
+
+  void _endFight({required bool won}) {
+    final e = _foe;
+    _nextTimer?.cancel();
+    _qClock.stop();
+    _swingClock.stop();
+    _world?.engage(null);
+    if (!won && e != null) {
       _retreat(e);
       _say('いったん はなれて立て直そう');
     }
+    setState(() {
+      _fight = null;
+      _foe = null;
+      _battleMsg = null;
+    });
     _saveNow();
-    _busy = false;
     _focus.requestFocus();
+  }
+
+  void _flee() {
+    if (_fight == null) return;
+    _endFight(won: false);
   }
 
   void _retreat(Enemy3D e) {
@@ -343,6 +552,10 @@ class _Field3DScreenState extends State<Field3DScreen> {
     _focus.requestFocus();
     if (e.kind == PointerDeviceKind.mouse) {
       _mouseDragging = true;
+      _downAt = e.localPosition;
+      _downClock
+        ..reset()
+        ..start();
     } else if (!_isJoystickArea(e.localPosition, size)) {
       _touchCamera[e.pointer] = e.localPosition;
     }
@@ -356,18 +569,71 @@ class _Field3DScreenState extends State<Field3DScreen> {
   }
 
   void _pointerUp(PointerEvent e) {
-    if (e.kind == PointerDeviceKind.mouse) _mouseDragging = false;
+    if (e.kind == PointerDeviceKind.mouse) {
+      _mouseDragging = false;
+      // 動かさずに短く押した＝クリック：剣をふる
+      final down = _downAt;
+      if (e is PointerUpEvent &&
+          down != null &&
+          (e.localPosition - down).distance < 6 &&
+          _downClock.elapsedMilliseconds < 350) {
+        _swing();
+      }
+      _downAt = null;
+    }
     _touchCamera.remove(e.pointer);
   }
 
   KeyEventResult _key(FocusNode _, KeyEvent e) {
     if (e is! KeyDownEvent) return KeyEventResult.ignored;
     final k = e.logicalKey;
-    if (k == LogicalKeyboardKey.space ||
-        k == LogicalKeyboardKey.enter ||
-        (k == LogicalKeyboardKey.keyE &&
-            (_nearNpc != null || _talking != null))) {
-      _talk();
+    // バトル中：1〜4で答える、Space／J でふる、Esc でにげる
+    final f = _fight;
+    if (f != null) {
+      const digits = [
+        LogicalKeyboardKey.digit1,
+        LogicalKeyboardKey.digit2,
+        LogicalKeyboardKey.digit3,
+        LogicalKeyboardKey.digit4,
+      ];
+      final n = digits.indexOf(k);
+      if (n >= 0) {
+        _choose(n);
+        return KeyEventResult.handled;
+      }
+      if (k == LogicalKeyboardKey.space || k == LogicalKeyboardKey.keyJ) {
+        _swing();
+        return KeyEventResult.handled;
+      }
+      if (k == LogicalKeyboardKey.escape) {
+        _flee();
+        return KeyEventResult.handled;
+      }
+      return KeyEventResult.ignored;
+    }
+    if (_talking != null ||
+        ((k == LogicalKeyboardKey.space ||
+                k == LogicalKeyboardKey.enter ||
+                k == LogicalKeyboardKey.keyE) &&
+            _nearNpc != null)) {
+      if (k == LogicalKeyboardKey.space ||
+          k == LogicalKeyboardKey.enter ||
+          k == LogicalKeyboardKey.keyE) {
+        _talk();
+        return KeyEventResult.handled;
+      }
+    }
+    if (k == LogicalKeyboardKey.space || k == LogicalKeyboardKey.enter) {
+      final foe = _nearFoe;
+      if (foe != null) {
+        _startFight(foe);
+      } else {
+        _swing();
+      }
+      return KeyEventResult.handled;
+    }
+    if (k == LogicalKeyboardKey.keyJ) {
+      _swing();
       return KeyEventResult.handled;
     }
     if (k == LogicalKeyboardKey.escape) {
@@ -418,6 +684,18 @@ class _Field3DScreenState extends State<Field3DScreen> {
                       ),
                       _hud(context),
                       if (!_touchFree) _touchControls(),
+                      if (_hurt)
+                        const Positioned.fill(
+                          child: IgnorePointer(
+                            child: ColoredBox(color: Color(0x44FF2020)),
+                          ),
+                        ),
+                      if (_fight != null) _fightPanel(size),
+                      if (_fight == null &&
+                          _talking == null &&
+                          _nearFoe != null)
+                        _engageButton(_nearFoe!),
+                      _swordButton(),
                       if (_talking != null) _dialog(),
                       if (_toast != null) _toastView(),
                     ],
@@ -526,20 +804,20 @@ class _Field3DScreenState extends State<Field3DScreen> {
                 ),
               ),
             ),
-            if (_touchFree)
+            if (_touchFree && _fight == null)
               Align(
                 alignment: Alignment.bottomLeft,
                 child: _chip(
                   const Padding(
                     padding: EdgeInsets.all(8),
                     child: Text(
-                      'WASD/矢印：移動　Shift：走る　ドラッグ・Q/E：カメラ　ホイール：距離\nSpace/E：はなす　Esc：もどる',
+                      'WASD/矢印：移動　Shift：走る　ドラッグ・Q/E：カメラ　ホイール：距離\nSpace：はなす・たたかう　クリック/J：剣をふる　1〜4：答える　Esc：にげる・もどる',
                       style: TextStyle(color: Colors.white, fontSize: 12),
                     ),
                   ),
                 ),
               ),
-            if (near != null && _talking == null)
+            if (near != null && _talking == null && _fight == null)
               Align(
                 alignment: const Alignment(0, 0.55),
                 child: FilledButton.icon(
@@ -550,6 +828,219 @@ class _Field3DScreenState extends State<Field3DScreen> {
                 ),
               ),
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget _engageButton(Enemy3D e) => Align(
+    alignment: const Alignment(0, 0.55),
+    child: FilledButton.icon(
+      key: const ValueKey('field3d-engage'),
+      style: FilledButton.styleFrom(backgroundColor: const Color(0xFFB0413E)),
+      onPressed: () => _startFight(e),
+      icon: const Icon(Icons.flash_on),
+      label: Text(
+        _touchFree ? 'Space：${_enemyName(e)}とたたかう' : '${_enemyName(e)}とたたかう',
+      ),
+    ),
+  );
+
+  /// 剣（えんぴつ）ボタン。スマホではいつも、PC ではバトル中に出す
+  Widget _swordButton() {
+    final ready = _fight?.phase == FieldBattlePhase.swing;
+    if (_touchFree && _fight == null) return const SizedBox.shrink();
+    return Positioned(
+      right: 24,
+      bottom: 28,
+      child: SafeArea(
+        child: GestureDetector(
+          key: const ValueKey('field3d-sword'),
+          onTapDown: (_) => _swing(),
+          child: AnimatedContainer(
+            duration: const Duration(milliseconds: 200),
+            width: ready ? 96 : 76,
+            height: ready ? 96 : 76,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(60),
+              color: ready ? const Color(0xFFF2C94C) : const Color(0x99000000),
+              border: Border.all(color: Colors.white, width: 3),
+            ),
+            alignment: Alignment.center,
+            child: Icon(
+              Icons.edit,
+              size: ready ? 44 : 32,
+              color: ready ? const Color(0xFF4E342E) : Colors.white,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _fightPanel(Size size) {
+    final f = _fight!, e = _foe!;
+    final q = f.question;
+    final engine = f.engine;
+    final wide = size.width > 640;
+    final barColor = f.phase == FieldBattlePhase.swing
+        ? const Color(0xFFF2C94C)
+        : Colors.lightBlueAccent;
+    Widget hp(String label, int v, int max, Color c) => Row(
+      children: [
+        SizedBox(
+          width: 64,
+          child: Text(
+            label,
+            style: const TextStyle(color: Colors.white, fontSize: 12),
+          ),
+        ),
+        Expanded(
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(4),
+            child: LinearProgressIndicator(
+              value: max == 0 ? 0 : (v / max).clamp(0.0, 1.0),
+              minHeight: 8,
+              color: c,
+              backgroundColor: Colors.white24,
+            ),
+          ),
+        ),
+        SizedBox(
+          width: 64,
+          child: Text(
+            ' $v/$max',
+            style: const TextStyle(color: Colors.white, fontSize: 12),
+          ),
+        ),
+      ],
+    );
+    // 敵が見えるように、下に出す（スマホではスティックと剣ボタンのあいだ）
+    final touch = !_touchFree;
+    return Positioned(
+      bottom: 12,
+      left: touch && size.width > 560 ? 170 : 12,
+      right: touch ? (size.width > 560 ? 130 : 12) : 12,
+      child: SafeArea(
+        child: Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 620),
+            child: Container(
+              key: const ValueKey('field3d-fight'),
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: const Color(0xDD1E2A3A),
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Text(
+                          '${_enemyName(e)}（${engine.enemy.name}）',
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ),
+                      TextButton(
+                        key: const ValueKey('field3d-flee'),
+                        onPressed: _flee,
+                        child: Text(
+                          _touchFree ? 'にげる（Esc）' : 'にげる',
+                          style: const TextStyle(color: Colors.white70),
+                        ),
+                      ),
+                    ],
+                  ),
+                  hp('てき', engine.enemyHp, _foeMaxHp, const Color(0xFFE5534B)),
+                  const SizedBox(height: 2),
+                  hp(
+                    'じぶん',
+                    engine.playerHp,
+                    engine.maxHp,
+                    const Color(0xFF4CAF50),
+                  ),
+                  const SizedBox(height: 6),
+                  ValueListenableBuilder<double>(
+                    valueListenable: _bar,
+                    builder: (_, v, _) => LinearProgressIndicator(
+                      value: v,
+                      minHeight: 4,
+                      color: v < 0.3 ? Colors.redAccent : barColor,
+                      backgroundColor: Colors.white12,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  if (f.phase == FieldBattlePhase.asking) ...[
+                    Text(
+                      q.source.prompt,
+                      key: const ValueKey('field3d-prompt'),
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        height: 1.4,
+                      ),
+                    ),
+                    if (q.source.sentence != null)
+                      Padding(
+                        padding: const EdgeInsets.only(top: 4),
+                        child: Text(
+                          q.source.sentence!,
+                          style: const TextStyle(color: Colors.white70),
+                        ),
+                      ),
+                    const SizedBox(height: 8),
+                    GridView.count(
+                      crossAxisCount: wide ? 2 : 1,
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      childAspectRatio: wide ? 5.5 : 8,
+                      mainAxisSpacing: 6,
+                      crossAxisSpacing: 6,
+                      children: [
+                        for (final (i, c) in q.choices.indexed)
+                          FilledButton.tonal(
+                            key: ValueKey('field3d-choice-$i'),
+                            style: FilledButton.styleFrom(
+                              alignment: Alignment.centerLeft,
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 12,
+                              ),
+                            ),
+                            onPressed: () => _choose(i),
+                            child: Text(
+                              _touchFree ? '${i + 1}  $c' : c,
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                      ],
+                    ),
+                  ] else
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      child: Text(
+                        _battleMsg ?? '',
+                        key: const ValueKey('field3d-battle-msg'),
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: _msgGood
+                              ? const Color(0xFFFFE08A)
+                              : const Color(0xFFFFA3A3),
+                          fontSize: 18,
+                          fontWeight: FontWeight.w800,
+                        ),
+                      ),
+                    ),
+                ],
+              ),
+            ),
+          ),
         ),
       ),
     );
@@ -636,10 +1127,7 @@ class _Field3DScreenState extends State<Field3DScreen> {
       title: const Text('素材のクレジット'),
       content: const SingleChildScrollView(
         child: Text(
-          'キツネのモデル「Fox」（Khronos glTF Sample Assets）\n'
-          '・モデル：PixelMannen（CC0 1.0）\n'
-          '・リグとアニメーション：tomkranis（CC BY 4.0）\n'
-          '・glTF への変換：@AsoboStudio・@scurest（CC BY 4.0）\n\n'
+          '主人公・スライムなどは基本図形でつくった自作のモデルです。\n\n'
           '3D 描画：flutter_scene（MIT）\n物理：Rapier（flutter_scene_rapier、MIT）',
         ),
       ),
