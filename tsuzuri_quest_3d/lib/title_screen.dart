@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:rpg_game/rpg_game.dart';
 
 import 'field/field3d_screen.dart';
+import 'game/field3d.dart';
 import 'game/save3d.dart';
+import 'game/world_v2.dart';
 
 /// タイトル画面：冒険をはじめる・データを消す
 class TitleScreen extends StatefulWidget {
@@ -23,11 +25,13 @@ class _TitleScreenState extends State<TitleScreen> {
     });
   }
 
-  Future<void> _play() async {
+  Future<void> _play([Field3DRegion region = worldV2]) async {
     final save = _save!;
-    await Navigator.of(
-      context,
-    ).push(MaterialPageRoute<void>(builder: (_) => Field3DScreen(save: save)));
+    await Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        builder: (_) => Field3DScreen(save: save, region: region),
+      ),
+    );
     if (mounted) setState(() {});
   }
 
@@ -104,9 +108,22 @@ class _TitleScreenState extends State<TitleScreen> {
                     onPressed: save == null ? null : _play,
                     icon: const Icon(Icons.play_arrow),
                     label: Text(
-                      save?.hasField == true ? 'つづきから' : '冒険をはじめる',
+                      save?.hasRegion(worldV2.id) == true ? 'つづきから' : '冒険をはじめる',
                       style: const TextStyle(fontSize: 18),
                     ),
+                  ),
+                  const SizedBox(height: 6),
+                  const Text(
+                    '400m 四方の「はじまりの大地」',
+                    style: TextStyle(color: Color(0xFF26402C), fontSize: 12),
+                  ),
+                  const SizedBox(height: 10),
+                  OutlinedButton(
+                    key: const ValueKey('title-proto'),
+                    onPressed: save == null
+                        ? null
+                        : () => _play(Field3DRegion.meadow),
+                    child: const Text('試作の草原（40m・確認用）'),
                   ),
                   const SizedBox(height: 12),
                   TextButton(

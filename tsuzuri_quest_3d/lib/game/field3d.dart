@@ -52,6 +52,19 @@ class Enemy3D {
     required this.stageId,
     required this.x,
     required this.z,
+    this.name,
+    this.zoneX,
+    this.zoneZ,
+    this.zoneR = 0,
+    this.boss = false,
+    this.triggerR = 0,
+    this.hpRate = 1,
+    this.bonusExp = 0,
+    this.size = 1,
+    this.winX,
+    this.winZ,
+    this.loseX,
+    this.loseZ,
   });
 
   final String id;
@@ -61,9 +74,124 @@ class Enemy3D {
   final String stageId;
   final double x;
   final double z;
+
+  /// 表示名（なければ教科から「英語スライム」など）
+  final String? name;
+
+  /// 歩き回る範囲（中心と半径）。半径 0 ならその場から動かない
+  final double? zoneX;
+  final double? zoneZ;
+  final double zoneR;
+
+  /// ボス：近づくと必ずバトルになる（[triggerR] の内側に入ったとき）
+  final bool boss;
+  final double triggerR;
+
+  /// ステージの敵の HP にかける倍率（ボス用）
+  final double hpRate;
+
+  /// たおしたときに上乗せする経験値（ボス用）
+  final int bonusExp;
+
+  /// 見た目の大きさ
+  final double size;
+
+  /// 勝った・負けた／にげたときに戻る場所（なければ、その場から少し離れる）
+  final double? winX;
+  final double? winZ;
+  final double? loseX;
+  final double? loseZ;
+
+  double get homeX => zoneX ?? x;
+  double get homeZ => zoneZ ?? z;
+  bool get wanders => zoneR > 0;
 }
 
-/// 1つの地域（試作では草原1枚）
+/// しらべられる場所の種類
+enum Event3DKind {
+  /// 休憩地（記録・負けたときに戻る場所）
+  rest,
+
+  /// 宝箱（1 問に正解すると経験値）
+  chest,
+
+  /// 石碑（1 問に正解すると、なぞが解ける）
+  stele,
+
+  /// 洞窟の入口
+  cave,
+
+  /// 遺跡の祭壇
+  altar,
+}
+
+/// しらべられる場所（休憩地・宝箱・石碑など）
+class Event3D {
+  const Event3D({
+    required this.id,
+    required this.kind,
+    required this.name,
+    required this.x,
+    required this.z,
+    this.r = 3,
+    this.worldId,
+    this.stageId,
+    this.rewardExp = 0,
+    this.needs,
+    this.lines = const [],
+    this.lockedLines = const [],
+  });
+
+  final String id;
+  final Event3DKind kind;
+  final String name;
+  final double x;
+  final double z;
+
+  /// しらべられる距離
+  final double r;
+
+  /// 問題を出す場所（宝箱・石碑）のステージ
+  final String? worldId;
+  final String? stageId;
+  final int rewardExp;
+
+  /// しらべられるようになる条件（たおした敵の ID か、解いたなぞの ID）
+  final String? needs;
+
+  /// しらべたときの文
+  final List<String> lines;
+
+  /// 条件を満たしていないときの文
+  final List<String> lockedLines;
+}
+
+/// 地図の出口（次の地域への道）。いまは予告だけ
+class Gate3D {
+  const Gate3D({
+    required this.id,
+    required this.name,
+    required this.x,
+    required this.z,
+    this.r = 5,
+    this.opensWith,
+    required this.closedText,
+    required this.openText,
+  });
+
+  final String id;
+  final String name;
+  final double x;
+  final double z;
+  final double r;
+
+  /// 開く条件（たおした敵の ID など）。null なら閉じたまま
+  final String? opensWith;
+  final String closedText;
+  final String openText;
+}
+
+/// 1つの地域（試作の草原・400m の「はじまりの大地」）
 class Field3DRegion {
   const Field3DRegion({
     required this.id,
@@ -74,6 +202,12 @@ class Field3DRegion {
     required this.props,
     required this.npcs,
     required this.enemies,
+    this.centerX = 0,
+    this.centerZ = 0,
+    this.spawnHeading = 0,
+    this.terrain = false,
+    this.events = const [],
+    this.gates = const [],
   });
 
   final String id;
@@ -81,11 +215,58 @@ class Field3DRegion {
 
   /// 地面の半分の大きさ（20 なら 40m 四方）
   final double halfSize;
+
+  /// 地面の中心（試作は 0,0。はじまりの大地は 200,200 で 0〜400m）
+  final double centerX;
+  final double centerZ;
   final double spawnX;
   final double spawnZ;
+  final double spawnHeading;
   final List<Prop3D> props;
   final List<Npc3D> npcs;
   final List<Enemy3D> enemies;
+
+  /// 高低差のある地形（MapV2）を使うか。false なら平らな地面
+  final bool terrain;
+  final List<Event3D> events;
+  final List<Gate3D> gates;
+
+  double get minX => centerX - halfSize;
+  double get maxX => centerX + halfSize;
+  double get minZ => centerZ - halfSize;
+  double get maxZ => centerZ + halfSize;
+
+  bool contains(double x, double z) =>
+      x >= minX && x <= maxX && z >= minZ && z <= maxZ;
+
+  Enemy3D? enemyById(String id) {
+    for (final e in enemies) {
+      if (e.id == id) return e;
+    }
+    return null;
+  }
+
+  /// いちばん近くにある、しらべられる場所（いなければ null）
+  Event3D? eventInRange(double x, double z) {
+    Event3D? best;
+    var bestD = double.infinity;
+    for (final e in events) {
+      final d = _dist(x, z, e.x, e.z);
+      if (d <= e.r && d < bestD) {
+        best = e;
+        bestD = d;
+      }
+    }
+    return best;
+  }
+
+  /// 近くにある出口
+  Gate3D? gateInRange(double x, double z) {
+    for (final g in gates) {
+      if (_dist(x, z, g.x, g.z) <= g.r) return g;
+    }
+    return null;
+  }
 
   /// 話しかけられる距離
   static const talkRange = 2.2;
@@ -135,10 +316,10 @@ class Field3DRegion {
       dx /= len;
       dz /= len;
     }
-    final limit = halfSize - 1.5;
+    const m = 1.5;
     return (
-      (e.x + dx * distance).clamp(-limit, limit).toDouble(),
-      (e.z + dz * distance).clamp(-limit, limit).toDouble(),
+      (e.x + dx * distance).clamp(minX + m, maxX - m).toDouble(),
+      (e.z + dz * distance).clamp(minZ + m, maxZ - m).toDouble(),
     );
   }
 
@@ -220,10 +401,18 @@ class Field3DState {
     this.questsDone = const {},
     this.reviewWins = 0,
     this.beatenDay = const {},
+    this.flags = const {},
+    this.rest,
   });
 
-  factory Field3DState.start(Field3DRegion r) =>
-      Field3DState(regionId: r.id, x: r.spawnX, y: 0, z: r.spawnZ);
+  factory Field3DState.start(Field3DRegion r) => Field3DState(
+    regionId: r.id,
+    x: r.spawnX,
+    y: 0,
+    z: r.spawnZ,
+    heading: r.spawnHeading,
+    cameraYaw: r.spawnHeading,
+  );
 
   static const version = 1;
 
@@ -249,6 +438,12 @@ class Field3DState {
   /// 敵 ID → 最後にたおした日（dayNumber）。たおした日のうちは復習スライムにしない
   final Map<String, int> beatenDay;
 
+  /// 解いたなぞ・開けた宝箱など（Event3D の ID）
+  final Set<String> flags;
+
+  /// 最後に休んだ休憩地（負けたときに戻る）
+  final String? rest;
+
   Field3DState copyWith({
     double? x,
     double? y,
@@ -260,6 +455,8 @@ class Field3DState {
     Set<String>? questsDone,
     int? reviewWins,
     Map<String, int>? beatenDay,
+    Set<String>? flags,
+    String? rest,
   }) => Field3DState(
     regionId: regionId,
     x: x ?? this.x,
@@ -272,6 +469,8 @@ class Field3DState {
     questsDone: questsDone ?? this.questsDone,
     reviewWins: reviewWins ?? this.reviewWins,
     beatenDay: beatenDay ?? this.beatenDay,
+    flags: flags ?? this.flags,
+    rest: rest ?? this.rest,
   );
 
   Map<String, Object?> toMap() => {
@@ -287,6 +486,8 @@ class Field3DState {
     'quests': questsDone.toList()..sort(),
     'reviewWins': reviewWins,
     'beaten': beatenDay,
+    'flags': flags.toList()..sort(),
+    if (rest != null) 'rest': rest,
   };
 
   String encode() => jsonEncode(toMap());
@@ -306,14 +507,12 @@ class Field3DState {
             if (e is String) e,
       };
       final x = num0(m['x']), z = num0(m['z']);
-      if (x.abs() > region.halfSize || z.abs() > region.halfSize) {
-        return Field3DState.start(region);
-      }
+      if (!region.contains(x, z)) return Field3DState.start(region);
       final known = {for (final e in region.enemies) e.id};
       return Field3DState(
         regionId: region.id,
         x: x,
-        y: num0(m['y']).clamp(0, 10).toDouble(),
+        y: num0(m['y']).clamp(-5, 100).toDouble(),
         z: z,
         heading: num0(m['heading']),
         cameraYaw: num0(m['cameraYaw']),
@@ -328,6 +527,8 @@ class Field3DState {
               if (key is String && known.contains(key) && value is num)
                 key: value.toInt(),
         },
+        flags: ids(m['flags']),
+        rest: m['rest'] is String ? m['rest'] as String : null,
       );
     } catch (_) {
       return Field3DState.start(region);

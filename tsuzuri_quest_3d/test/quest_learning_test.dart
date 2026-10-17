@@ -22,60 +22,66 @@ void main() {
   group('クエスト', () {
     test('案内人と話すと最初のクエストを達成し、次のクエストを受ける', () {
       var s = Field3DState.start(_r);
-      expect(QuestBook.current(s.questsDone)!.id, 'q_hello');
-      expect(QuestBook.objective(s.questsDone, _ctx(s)), contains('案内人ノート'));
-      s = s.copyWith(talked: {QuestBook.giverId});
-      final talk = QuestBook.talk(s.questsDone, _ctx(s));
+      expect(QuestBook.proto.current(s.questsDone)!.id, 'q_hello');
+      expect(
+        QuestBook.proto.objective(s.questsDone, _ctx(s)),
+        contains('案内人ノート'),
+      );
+      s = s.copyWith(talked: {QuestBook.proto.giverId});
+      final talk = QuestBook.proto.talk(s.questsDone, _ctx(s));
       expect(talk.completed!.id, 'q_hello');
       expect(talk.lines.join(), contains('はじめてのバトル'));
       s = s.copyWith(questsDone: {...s.questsDone, talk.completed!.id});
-      expect(QuestBook.current(s.questsDone)!.id, 'q_first');
-      expect(QuestBook.reportable(s.questsDone, _ctx(s)), isFalse);
+      expect(QuestBook.proto.current(s.questsDone)!.id, 'q_first');
+      expect(QuestBook.proto.reportable(s.questsDone, _ctx(s)), isFalse);
       // 目的を達成していないうちは、報告にならない
-      expect(QuestBook.talk(s.questsDone, _ctx(s)).completed, isNull);
+      expect(QuestBook.proto.talk(s.questsDone, _ctx(s)).completed, isNull);
     });
 
     test('目的を達成すると「報告しよう」になり、報告で称号がもらえる', () {
       var s = Field3DState.start(_r).copyWith(
-        talked: {QuestBook.giverId},
+        talked: {QuestBook.proto.giverId},
         questsDone: {'q_hello', 'q_first'},
         defeated: {for (final e in _r.enemies) e.id},
       );
-      expect(QuestBook.reportable(s.questsDone, _ctx(s)), isTrue);
-      expect(QuestBook.objective(s.questsDone, _ctx(s)), contains('報告'));
-      final talk = QuestBook.talk(s.questsDone, _ctx(s));
+      expect(QuestBook.proto.reportable(s.questsDone, _ctx(s)), isTrue);
+      expect(QuestBook.proto.objective(s.questsDone, _ctx(s)), contains('報告'));
+      final talk = QuestBook.proto.talk(s.questsDone, _ctx(s));
       expect(talk.completed!.id, 'q_all');
       s = s.copyWith(questsDone: {...s.questsDone, 'q_all'});
-      expect(QuestBook.honors(s.questsDone), ['草原の見張り番']);
-      expect(QuestBook.objective(s.questsDone, _ctx(s)), contains('復習スライム'));
+      expect(QuestBook.proto.honors(s.questsDone), ['草原の見張り番']);
+      expect(
+        QuestBook.proto.objective(s.questsDone, _ctx(s)),
+        contains('復習スライム'),
+      );
     });
 
     test('復習・習得のクエストと、すべて終わったあと', () {
       final done = {'q_hello', 'q_first', 'q_all'};
       var s = Field3DState.start(_r).copyWith(questsDone: done);
-      expect(QuestBook.objective(done, _ctx(s)), contains('0/1'));
+      expect(QuestBook.proto.objective(done, _ctx(s)), contains('0/1'));
       s = s.copyWith(reviewWins: 1);
-      expect(QuestBook.reportable(done, _ctx(s)), isTrue);
+      expect(QuestBook.proto.reportable(done, _ctx(s)), isTrue);
       final done2 = {...done, 'q_review'};
       expect(
-        QuestBook.objective(done2, _ctx(s, mastered: 4)),
+        QuestBook.proto.objective(done2, _ctx(s, mastered: 4)),
         contains('4/10'),
       );
-      expect(QuestBook.reportable(done2, _ctx(s, mastered: 10)), isTrue);
-      final all = {for (final q in QuestBook.chain) q.id};
-      expect(QuestBook.current(all), isNull);
-      expect(QuestBook.talk(all, _ctx(s)).completed, isNull);
-      expect(QuestBook.objective(all, _ctx(s)), contains('すべて達成'));
+      expect(QuestBook.proto.reportable(done2, _ctx(s, mastered: 10)), isTrue);
+      final all = {for (final q in QuestBook.proto.chain) q.id};
+      expect(QuestBook.proto.current(all), isNull);
+      expect(QuestBook.proto.talk(all, _ctx(s)).completed, isNull);
+      expect(QuestBook.proto.objective(all, _ctx(s)), contains('すべて達成'));
     });
 
     test('クエストの ID は重複せず、報酬は正の数', () {
-      final ids = QuestBook.chain.map((q) => q.id).toSet();
-      expect(ids, hasLength(QuestBook.chain.length));
-      for (final q in QuestBook.chain) {
+      final ids = QuestBook.proto.chain.map((q) => q.id).toSet();
+      expect(ids, hasLength(QuestBook.proto.chain.length));
+      for (final q in QuestBook.proto.chain) {
         expect(q.rewardExp, greaterThan(0));
-        expect(QuestBook.byId(q.id), same(q));
+        expect(QuestBook.proto.byId(q.id), same(q));
       }
-      expect(_r.npcs.map((n) => n.id), contains(QuestBook.giverId));
+      expect(_r.npcs.map((n) => n.id), contains(QuestBook.proto.giverId));
     });
   });
 

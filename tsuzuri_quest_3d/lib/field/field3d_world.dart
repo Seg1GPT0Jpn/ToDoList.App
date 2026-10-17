@@ -5,13 +5,19 @@ import 'package:flutter_scene/physics.dart';
 import 'package:flutter_scene/scene.dart';
 import 'package:flutter_scene_rapier/flutter_scene_rapier.dart';
 
+import '../game/enemy_ai.dart';
 import '../game/field3d.dart';
+import '../game/map_v2.dart';
 import 'hero_model.dart';
+import 'land_builder.dart';
 
 import 'package:vector_math/vector_math.dart' as vm;
 
-/// 3D の草原（描画と物理）。ルール・保存は game/field3d.dart の [Field3DRegion] と
+/// 3D のフィールド（描画と物理）。ルール・保存は game/field3d.dart の [Field3DRegion] と
 /// [Field3DState] が持ち、ここは見た目と当たり判定だけを受け持つ。
+///
+/// 試作の草原は平らな地面。はじまりの大地（[Field3DRegion.terrain]）は MapV2 の
+/// 高さの格子から地形を作り、通れない場所（川・崖・森の奥など）には [navigable] で入れない。
 class Field3DWorld {
   Field3DWorld._(this.region, this.scene, this._physics);
 
@@ -25,6 +31,24 @@ class Field3DWorld {
   final _hero = HeroModel();
   final _enemies = <String, _Slime>{};
   final _npcMarks = <String, Node>{};
+
+  /// 高さの格子（地形のある地域だけ）
+  HeightGrid? grid;
+  LandBuilder? land;
+
+  /// 歩けるか（地形のある地域で、画面側が条件つきで渡す）。null なら制限なし
+  bool Function(double x, double z)? navigable;
+
+  /// 敵が動いてよいか（バトル中・会話中は止める）
+  bool enemiesPaused = false;
+
+  /// 地面の高さ（橋の上は橋の高さ）
+  double groundY(double x, double z) {
+    final g = grid;
+    if (g == null) return 0;
+    if (MapV2.onBridge(x, z)) return MapV2.bridgeY;
+    return g.heightAt(x, z);
+  }
 
   // 入力と動き
   vm.Vector3 _wish = vm.Vector3.zero();
@@ -55,7 +79,13 @@ class Field3DWorld {
     scene.root.addComponent(physics);
     final w = Field3DWorld._(region, scene, physics);
     w._buildSky();
-    w._buildGround();
+    if (region.terrain) {
+      final grid = w.grid = HeightGrid.build();
+      w.land = LandBuilder(scene, grid)..build();
+      w._buildFog();
+    } else {
+      w._buildGround();
+    }
     for (final p in region.props) {
       w._buildProp(p);
     }
@@ -72,11 +102,56 @@ class Field3DWorld {
 
   void dispose() {}
 
+  /// 遠くを霧でぼかす（見える距離を絞って、描く量をへらす）
+  void _buildFog() {
+    scene.fog
+      ..enabled = true
+      ..mode = FogMode.linear
+      ..start = viewDistance * 0.3
+      ..end = viewDistance - 20
+      ..color = vm.Vector3(0.72, 0.84, 0.95);
+  }
+
+  /// 地形の当たり判定と、見た目の高さがそろっているかを調べる（起動後に 1 回）。
+  /// いくつかの点で真上から光線を落とし、格子の高さとの差の最大（m）を返す
+  double? terrainSelfCheck() {
+    final g = grid;
+    if (g == null) return null;
+    var worst = 0.0;
+    for (final (x, z) in const [
+      (85.0, 310.0),
+      (170.0, 250.0),
+      (275.0, 160.0),
+      (300.0, 300.0),
+      (335.0, 102.0),
+      (60.0, 60.0),
+      (380.0, 380.0),
+      (250.0, 192.0),
+    ]) {
+      try {
+        final hit = _physics.raycast(
+          vm.Ray.originDirection(vm.Vector3(x, 80, z), vm.Vector3(0, -1, 0)),
+          maxDistance: 200,
+          includeKinematic: false,
+        );
+        if (hit == null) return double.infinity;
+        final hy = 80 - hit.distance;
+        worst = math.max(worst, (hy - g.heightAt(x, z)).abs());
+      } catch (_) {
+        return null;
+      }
+    }
+    return worst;
+  }
+
   // ---- 画質（実機での計測用に切りかえられる） ----
 
   DirectionalLight? _sun;
 
   /// 'high'：影あり・高画質、'standard'：影あり・中画質、'light'：影なし・低画質・解像度 70%
+  /// 見える距離（m）。広い地域では画質に合わせて変え、その先は霧でかくす
+  double viewDistance = 260;
+
   void setQuality(String q) {
     final sun = _sun;
     switch (q) {
@@ -84,14 +159,22 @@ class Field3DWorld {
         scene.renderQuality.tier = RenderQualityTier.high;
         scene.renderScale = 1.0;
         sun?.castsShadow = true;
+        viewDistance = 300;
       case 'light':
         scene.renderQuality.tier = RenderQualityTier.low;
         scene.renderScale = 0.7;
         sun?.castsShadow = false;
+        viewDistance = 150;
       default:
         scene.renderQuality.tier = RenderQualityTier.medium;
         scene.renderScale = 1.0;
         sun?.castsShadow = true;
+        viewDistance = 230;
+    }
+    if (region.terrain) {
+      scene.fog
+        ..start = viewDistance * 0.3
+        ..end = viewDistance - 20;
     }
   }
 
@@ -185,7 +268,7 @@ class Field3DWorld {
   }
 
   void _buildProp(Prop3D p) {
-    final at = vm.Vector3(p.x, 0, p.z);
+    final at = vm.Vector3(p.x, groundY(p.x, p.z), p.z);
     switch (p.kind) {
       case Prop3DKind.tree:
         final h = 2.2 * p.size, r = 0.28 * p.size;
@@ -261,7 +344,9 @@ class Field3DWorld {
   void _buildNpc(Npc3D n, {required bool talked}) {
     final root = Node(
       name: 'npc_${n.id}',
-      localTransform: vm.Matrix4.translation(vm.Vector3(n.x, 0, n.z)),
+      localTransform: vm.Matrix4.translation(
+        vm.Vector3(n.x, groundY(n.x, n.z), n.z),
+      ),
     );
     root.add(
       Node(
@@ -315,6 +400,8 @@ class Field3DWorld {
         'english' => (0.30, 0.55, 0.95),
         'math' => (0.92, 0.35, 0.35),
         'social' => (0.40, 0.80, 0.40),
+        'japanese' => (0.95, 0.65, 0.25),
+        'science' => (0.65, 0.45, 0.90),
         _ => (0.8, 0.8, 0.8),
       };
 
@@ -330,13 +417,16 @@ class Field3DWorld {
   }
 
   void _buildEnemy(Enemy3D e) {
-    final color = _enemyRgb(e.worldId);
+    var color = _enemyRgb(e.worldId);
+    if (e.boss) color = (color.$1 * 0.75, color.$2 * 0.75, color.$3 * 0.75);
     final root = Node(
       name: 'enemy_${e.id}',
-      localTransform: vm.Matrix4.translation(vm.Vector3(e.x, 0, e.z)),
+      localTransform: vm.Matrix4.translation(
+        vm.Vector3(e.x, groundY(e.x, e.z), e.z),
+      ),
     );
-    // 見た目（向きを変えるための台）
-    final turn = Node(name: 'turn');
+    // 見た目（向きを変えるための台）。ボスは大きい
+    final turn = Node(name: 'turn')..scale = vm.Vector3.all(e.size);
     final body = Node(
       name: 'body',
       mesh: Mesh(
@@ -356,20 +446,48 @@ class Field3DWorld {
     }
     turn.add(body);
     root.add(turn);
-    // 当たり判定（体当たりしても通り抜けない）。倒したら外す
+    // 当たり判定（体当たりしても通り抜けない）。倒したら外す。
+    // 歩き回る敵は当たり判定を持たない（ぶつかるとバトルになる）
     final hitbox = Node(
       name: 'hitbox',
-      localTransform: vm.Matrix4.translation(vm.Vector3(0, 0.5, 0)),
+      localTransform: vm.Matrix4.translation(vm.Vector3(0, 0.5 * e.size, 0)),
     );
-    hitbox.addComponent(RigidBody(type: BodyType.fixed));
-    hitbox.addComponent(Collider(shape: const SphereShape(radius: 0.5)));
-    root.add(hitbox);
+    if (!e.wanders) {
+      hitbox.addComponent(RigidBody(type: BodyType.fixed));
+      hitbox.addComponent(Collider(shape: SphereShape(radius: 0.5 * e.size)));
+      root.add(hitbox);
+    }
     scene.add(root);
-    final slime = _Slime(e, root, turn, body, hitbox);
+    final brain = e.wanders
+        ? EnemyBrain(
+            homeX: e.homeX,
+            homeZ: e.homeZ,
+            radius: e.zoneR,
+            x: e.x,
+            z: e.z,
+            seed: e.id.hashCode,
+            walkable: (x, z) => navigable?.call(x, z) ?? true,
+          )
+        : null;
+    final slime = _Slime(e, root, turn, body, hitbox, brain);
     // はじめは出発点のほうを向いておく
     slime.yaw = math.atan2(region.spawnX - e.x, region.spawnZ - e.z);
     _enemies[e.id] = slime;
   }
+
+  /// 敵のいまの位置
+  (double, double)? enemyPosition(String id) {
+    final s = _enemies[id];
+    if (s == null) return null;
+    return (s.px, s.pz);
+  }
+
+  /// 主人公を追いかけている敵か
+  bool enemyChasing(String id) => _enemies[id]?.brain?.chasing ?? false;
+
+  /// しばらく追いかけさせない（にげた・負けた直後）
+  void calmEnemy(String id, double seconds) =>
+      _enemies[id]?.brain?.calm(seconds);
 
   /// 倒した敵を消す（すぐに）
   void showDefeated(Set<String> defeated) {
@@ -393,7 +511,7 @@ class Field3DWorld {
     final s = _enemies[id];
     if (s == null || !s.alive) return double.infinity;
     final p = playerFeet;
-    final dx = p.x - s.enemy.x, dz = p.z - s.enemy.z;
+    final dx = p.x - s.px, dz = p.z - s.pz;
     return math.sqrt(dx * dx + dz * dz);
   }
 
@@ -402,9 +520,9 @@ class Field3DWorld {
     if (_hero.swinging) return false;
     _hero.swing();
     if (targetId == null) return false;
-    if (distanceTo(targetId) > reach) return false;
-    final e = _enemies[targetId]!.enemy;
-    facePoint(e.x, e.z);
+    final s = _enemies[targetId]!;
+    if (distanceTo(targetId) > reach + 0.5 * (s.enemy.size - 1)) return false;
+    facePoint(s.px, s.pz);
     return true;
   }
 
@@ -424,7 +542,11 @@ class Field3DWorld {
     _player = Node(
       name: 'player',
       localTransform: vm.Matrix4.translation(
-        vm.Vector3(s.x, s.y + _centerY, s.z),
+        vm.Vector3(
+          s.x,
+          (grid == null ? s.y : groundY(s.x, s.z) + 0.05) + _centerY,
+          s.z,
+        ),
       ),
     );
     _player.addComponent(RigidBody(type: BodyType.kinematic));
@@ -477,7 +599,28 @@ class Field3DWorld {
 
   void _fixedStep(double dt) {
     final speed = _run ? runSpeed : walkSpeed;
-    final horiz = _wish * (speed * dt);
+    var horiz = _wish * (speed * dt);
+    // 通れない場所（川・崖・森の奥など）へは進まない。かべに沿ってすべる
+    final nav = navigable;
+    if (nav != null && horiz.length2 > 0) {
+      final p = playerFeet;
+      bool ok(double dx, double dz) {
+        final len = math.sqrt(dx * dx + dz * dz);
+        if (len < 1e-9) return true;
+        final ahead = (len + _radius + 0.05) / len;
+        return nav(p.x + dx * ahead, p.z + dz * ahead);
+      }
+
+      if (!ok(horiz.x, horiz.z)) {
+        if (ok(horiz.x, 0)) {
+          horiz = vm.Vector3(horiz.x, 0, 0);
+        } else if (ok(0, horiz.z)) {
+          horiz = vm.Vector3(0, 0, horiz.z);
+        } else {
+          horiz = vm.Vector3.zero();
+        }
+      }
+    }
     _vy = math.max(-20, _vy - 9.81 * dt);
     final m = _kcc.move(
       vm.Vector3(horiz.x, _vy * dt, horiz.z),
@@ -500,8 +643,9 @@ class Field3DWorld {
       _heading += d * (1 - math.exp(-14 * dt));
       _applyHeading();
     }
-    // 地図の外に落ちたら出発点へ
-    if (playerFeet.y < -5) teleport(region.spawnX, region.spawnZ);
+    // 地図の外・地面の下に落ちたら出発点へ
+    final f = playerFeet;
+    if (f.y < groundY(f.x, f.z) - 5) teleport(region.spawnX, region.spawnZ);
   }
 
   void _frame(double dt) {
@@ -511,6 +655,19 @@ class Field3DWorld {
     final p = playerFeet;
     var i = 0;
     for (final s in _enemies.values) {
+      final b = s.brain;
+      if (b != null && s.alive) {
+        b.update(
+          dt,
+          px: p.x,
+          pz: p.z,
+          frozen: enemiesPaused || _engaged != null,
+        );
+        if (b.mode != EnemyMode.idle && s.enemy.id != _engaged) {
+          s.yaw = b.heading;
+        }
+        s.root.position = vm.Vector3(b.x, groundY(b.x, b.z), b.z);
+      }
       s.update(
         dt,
         _time + i,
@@ -528,7 +685,7 @@ class Field3DWorld {
 
   /// 指定した場所へ瞬間移動（負けたとき・やり直し）
   void teleport(double x, double z, {double? heading}) {
-    _player.position = vm.Vector3(x, _centerY + 0.05, z);
+    _player.position = vm.Vector3(x, groundY(x, z) + _centerY + 0.05, z);
     _vy = 0;
     if (heading != null) {
       _heading = heading;
@@ -573,10 +730,16 @@ class _Mover extends Component {
 
 /// 草原のスライム（見た目・ぴょこぴょこ・バトルの演出）
 class _Slime {
-  _Slime(this.enemy, this.root, this.turn, this.body, this.hitbox);
+  _Slime(this.enemy, this.root, this.turn, this.body, this.hitbox, this.brain);
 
   final Enemy3D enemy;
   final Node root, turn, body, hitbox;
+
+  /// 歩き回る敵の動き（その場にいる敵は null）
+  final EnemyBrain? brain;
+
+  double get px => brain?.x ?? enemy.x;
+  double get pz => brain?.z ?? enemy.z;
   double yaw = 0;
   bool alive = true;
   double _hurt = -1, _lunge = -1, _die = -1;
@@ -588,7 +751,9 @@ class _Slime {
     root.visible = v;
     body.scale = vm.Vector3.all(1);
     if (v) {
-      if (hitbox.parent == null) root.add(hitbox);
+      if (hitbox.parent == null && brain == null) root.add(hitbox);
+      // 復活したら自分の場所から
+      brain?.reset(enemy.x, enemy.z);
     } else if (hitbox.parent != null) {
       root.remove(hitbox);
     }
@@ -613,7 +778,7 @@ class _Slime {
     if (!alive) return;
     if (engaged) {
       // こちらを向く
-      final target = math.atan2(px - enemy.x, pz - enemy.z);
+      final target = math.atan2(px - this.px, pz - this.pz);
       var d = target - yaw;
       while (d > math.pi) {
         d -= 2 * math.pi;

@@ -105,6 +105,7 @@ void main() {
       'rpg_progress_v1': '2D版のデータ',
       Save3D.progressKey: '{"level":3}',
       Save3D.fieldKey: '{}',
+      Save3D.fieldsKey: '{"v":2,"current":"land_v2","regions":{"land_v2":{}}}',
     });
     await t.pumpWidget(const MaterialApp(home: TitleScreen()));
     await t.pumpAndSettle();
@@ -117,6 +118,7 @@ void main() {
     expect(prefs.getString('rpg_progress_v1'), '2D版のデータ');
     expect(prefs.containsKey(Save3D.progressKey), isFalse);
     expect(prefs.containsKey(Save3D.fieldKey), isFalse);
+    expect(prefs.containsKey(Save3D.fieldsKey), isFalse);
     expect(find.text('冒険をはじめる'), findsOneWidget);
   });
 
