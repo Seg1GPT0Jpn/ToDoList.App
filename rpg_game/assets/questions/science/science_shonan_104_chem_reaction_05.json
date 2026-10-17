@@ -1,0 +1,778 @@
+{
+  "setId": "science_shonan_104_chem_reaction_05",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "science_shonan_104_chem_reaction_05_001",
+      "unit": "science.chemistry.change.equation.write",
+      "category": "thinking",
+      "prompt": "2H₂ ＋ O₂ → 2H₂O の反応で、H₂ 3 mol と O₂ 3 mol を反応させた。反応後に残る物質とその量は？",
+      "choices": [
+        "O₂ が 1.5 mol 残る",
+        "H₂ が 1.5 mol 残る",
+        "どちらも残らない",
+        "O₂ が 3 mol 残る"
+      ],
+      "answerIndex": 0,
+      "explanation": "係数比 2:1。H₂ 3 mol と反応する O₂ は 1.5 mol。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "reaction"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_reaction_05_002",
+      "unit": "science.chemistry.change.equation",
+      "category": "calculation",
+      "prompt": "2H₂ ＋ O₂ → 2H₂O の反応で、H₂ 0.4 g が完全に反応したとき、O₂ は標準状態で何 L か。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "8.96 L",
+        "3.2 L",
+        "4.48 L",
+        "2.24 L"
+      ],
+      "answerIndex": 3,
+      "explanation": "O₂ 0.1 mol × 22.4 L/mol。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "reaction"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_reaction_05_003",
+      "unit": "science.chemistry.change.equation.write",
+      "category": "thinking",
+      "prompt": "化学反応式の係数の比が質量の比にならない理由は？",
+      "choices": [
+        "反応で質量がなくなるから",
+        "気体は質量がないから",
+        "係数は体積だけを表すから",
+        "物質ごとにモル質量がちがうから"
+      ],
+      "answerIndex": 3,
+      "explanation": "質量＝物質量×モル質量。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "reaction"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_reaction_05_004",
+      "unit": "science.chemistry.change.equation",
+      "category": "calculation",
+      "prompt": "2C₂H₆ ＋ 7O₂ → 4CO₂ ＋ 6H₂O の反応で、C₂H₆ 90 g が完全に反応したとき、O₂ は標準状態で何 L か。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "336 L",
+        "235.2 L",
+        "67.2 L",
+        "19.2 L"
+      ],
+      "answerIndex": 1,
+      "explanation": "O₂ 10.5 mol × 22.4 L/mol。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "reaction"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_reaction_05_005",
+      "unit": "science.chemistry.change.equation.write",
+      "category": "calculation",
+      "prompt": "2H₂ ＋ O₂ → 2H₂O の反応で、H₂ 0.5 g が完全に反応したとき、O₂ は何 mol 反応・生成するか。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "0.25 mol",
+        "0.125 mol",
+        "0.5 mol",
+        "4 mol"
+      ],
+      "answerIndex": 1,
+      "explanation": "H₂ 0.25 mol。係数比 2:1 より 0.125 mol。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "reaction"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_reaction_05_006",
+      "unit": "science.chemistry.change.equation",
+      "category": "knowledge",
+      "prompt": "気体どうしの反応で、反応・生成する気体の体積は簡単な整数比になるという法則は？",
+      "choices": [
+        "倍数比例の法則",
+        "アボガドロの法則",
+        "気体反応の法則",
+        "定比例の法則"
+      ],
+      "answerIndex": 2,
+      "explanation": "ゲーリュサックが発見。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "reaction"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_reaction_05_007",
+      "unit": "science.chemistry.change.equation",
+      "category": "calculation",
+      "prompt": "C₃H₈ ＋ 5O₂ → 3CO₂ ＋ 4H₂O の反応で、O₂ 3.2 g が完全に反応したとき、CO₂ は標準状態で何 L か。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "3.73 L",
+        "1.344 L",
+        "2.24 L",
+        "2.64 L"
+      ],
+      "answerIndex": 1,
+      "explanation": "CO₂ 0.06 mol × 22.4 L/mol。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "reaction"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_reaction_05_008",
+      "unit": "science.chemistry.change.equation.write",
+      "category": "calculation",
+      "prompt": "CaCO₃ ＋ 2HCl → CaCl₂ ＋ H₂O ＋ CO₂ の反応で、HCl 109.5 g が完全に反応したとき、CaCO₃ は何 mol 反応・生成するか。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "3 mol",
+        "6 mol",
+        "1.5 mol",
+        "150 mol"
+      ],
+      "answerIndex": 2,
+      "explanation": "HCl 3 mol。係数比 2:1 より 1.5 mol。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "reaction"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_reaction_05_009",
+      "unit": "science.chemistry.change.equation.write",
+      "category": "calculation",
+      "prompt": "C₃H₈ ＋ 5O₂ → 3CO₂ ＋ 4H₂O の反応で、O₂ 96 g が完全に反応したとき、C₃H₈ は何 mol 反応・生成するか。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "0.6 mol",
+        "26.4 mol",
+        "15 mol",
+        "3 mol"
+      ],
+      "answerIndex": 0,
+      "explanation": "O₂ 3 mol。係数比 5:1 より 0.6 mol。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "reaction"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_reaction_05_010",
+      "unit": "science.chemistry.change.equation",
+      "category": "calculation",
+      "prompt": "N₂ ＋ 3H₂ → 2NH₃ の反応で、N₂ 84 g が完全に反応したとき、H₂ は何 g 反応・生成するか。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "252 g",
+        "2 g",
+        "18 g",
+        "6 g"
+      ],
+      "answerIndex": 2,
+      "explanation": "N₂ 3 mol → H₂ 9 mol → ×2 g/mol。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "reaction"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_reaction_05_011",
+      "unit": "science.chemistry.change.equation",
+      "category": "calculation",
+      "prompt": "C₂H₅OH ＋ 3O₂ → 2CO₂ ＋ 3H₂O の反応で、C₂H₅OH 11.5 g が完全に反応したとき、H₂O は何 g 反応・生成するか。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "4.5 g",
+        "1.5 g",
+        "34.5 g",
+        "13.5 g"
+      ],
+      "answerIndex": 3,
+      "explanation": "C₂H₅OH 0.25 mol → H₂O 0.75 mol → ×18 g/mol。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "reaction"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_reaction_05_012",
+      "unit": "science.chemistry.change.equation",
+      "category": "calculation",
+      "prompt": "C₂H₅OH ＋ 3O₂ → 2CO₂ ＋ 3H₂O の反応で、C₂H₅OH 9.2 g が完全に反応したとき、CO₂ は何 g 反応・生成するか。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "4.4 g",
+        "18.4 g",
+        "17.6 g",
+        "8.8 g"
+      ],
+      "answerIndex": 2,
+      "explanation": "C₂H₅OH 0.2 mol → CO₂ 0.4 mol → ×44 g/mol。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "reaction"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_reaction_05_013",
+      "unit": "science.chemistry.change.equation.write",
+      "category": "thinking",
+      "prompt": "2H₂ ＋ O₂ → 2H₂O の反応で、H₂ 1 mol と O₂ 1 mol を反応させた。反応後に残る物質とその量は？",
+      "choices": [
+        "H₂ が 0.5 mol 残る",
+        "どちらも残らない",
+        "O₂ が 0.5 mol 残る",
+        "O₂ が 1 mol 残る"
+      ],
+      "answerIndex": 2,
+      "explanation": "係数比 2:1。H₂ 1 mol と反応する O₂ は 0.5 mol。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "reaction"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_reaction_05_014",
+      "unit": "science.chemistry.change.equation",
+      "category": "calculation",
+      "prompt": "CH₄ ＋ 2O₂ → CO₂ ＋ 2H₂O の反応で、O₂ 96 g が完全に反応したとき、CH₄ は標準状態で何 L か。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "24 L",
+        "33.6 L",
+        "134.4 L",
+        "67.2 L"
+      ],
+      "answerIndex": 1,
+      "explanation": "CH₄ 1.5 mol × 22.4 L/mol。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "reaction"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_reaction_05_015",
+      "unit": "science.chemistry.change.equation.write",
+      "category": "calculation",
+      "prompt": "2Mg ＋ O₂ → 2MgO の反応で、O₂ 6.4 g が完全に反応したとき、Mg は何 mol 反応・生成するか。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "0.1 mol",
+        "0.4 mol",
+        "0.2 mol",
+        "9.6 mol"
+      ],
+      "answerIndex": 1,
+      "explanation": "O₂ 0.2 mol。係数比 1:2 より 0.4 mol。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "reaction"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_reaction_05_016",
+      "unit": "science.chemistry.change.equation",
+      "category": "calculation",
+      "prompt": "CaCO₃ ＋ 2HCl → CaCl₂ ＋ H₂O ＋ CO₂ の反応で、HCl 3.65 g が完全に反応したとき、H₂O は何 g 反応・生成するか。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "1.825 g",
+        "0.9 g",
+        "1.8 g",
+        "3.6 g"
+      ],
+      "answerIndex": 1,
+      "explanation": "HCl 0.1 mol → H₂O 0.05 mol → ×18 g/mol。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "reaction"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_reaction_05_017",
+      "unit": "science.chemistry.change.equation.write",
+      "category": "thinking",
+      "prompt": "2Mg ＋ O₂ → 2MgO の反応で、Mg 2 mol と O₂ 4 mol を反応させた。反応後に残る物質とその量は？",
+      "choices": [
+        "O₂ が 4 mol 残る",
+        "O₂ が 3 mol 残る",
+        "どちらも残らない",
+        "Mg が 3 mol 残る"
+      ],
+      "answerIndex": 1,
+      "explanation": "係数比 2:1。Mg 2 mol と反応する O₂ は 1 mol。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "reaction"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_reaction_05_018",
+      "unit": "science.chemistry.change.equation",
+      "category": "calculation",
+      "prompt": "CH₄ ＋ 2O₂ → CO₂ ＋ 2H₂O の反応で、CH₄ 16 g が完全に反応したとき、O₂ は標準状態で何 L か。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "64 L",
+        "44.8 L",
+        "22.4 L",
+        "11.2 L"
+      ],
+      "answerIndex": 1,
+      "explanation": "O₂ 2 mol × 22.4 L/mol。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "reaction"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_reaction_05_019",
+      "unit": "science.chemistry.change.equation.write",
+      "category": "calculation",
+      "prompt": "次の化学反応式の係数 a は？（エタンの燃焼）\n2C₂H₆ ＋ 7O₂ → aCO₂ ＋ 6H₂O",
+      "choices": [
+        "8",
+        "5",
+        "4",
+        "3"
+      ],
+      "answerIndex": 2,
+      "explanation": "両辺で各原子の数をそろえる：2C₂H₆ ＋ 7O₂ → 4CO₂ ＋ 6H₂O。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "reaction"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_reaction_05_020",
+      "unit": "science.chemistry.change.equation.write",
+      "category": "calculation",
+      "prompt": "C₆H₁₂O₆ ＋ 6O₂ → 6CO₂ ＋ 6H₂O の反応で、C₆H₁₂O₆ 360 g が完全に反応したとき、CO₂ は何 mol 反応・生成するか。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "12 mol",
+        "528 mol",
+        "2 mol",
+        "0.333 mol"
+      ],
+      "answerIndex": 0,
+      "explanation": "C₆H₁₂O₆ 2 mol。係数比 1:6 より 12 mol。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "reaction"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_reaction_05_021",
+      "unit": "science.chemistry.change.equation.write",
+      "category": "thinking",
+      "prompt": "2Mg ＋ O₂ → 2MgO の反応で、Mg 0.5 mol と O₂ 3 mol を反応させた。反応後に残る物質とその量は？",
+      "choices": [
+        "どちらも残らない",
+        "Mg が 2.75 mol 残る",
+        "O₂ が 2.75 mol 残る",
+        "O₂ が 3 mol 残る"
+      ],
+      "answerIndex": 2,
+      "explanation": "係数比 2:1。Mg 0.5 mol と反応する O₂ は 0.25 mol。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "reaction"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_reaction_05_022",
+      "unit": "science.chemistry.change.equation",
+      "category": "calculation",
+      "prompt": "C₃H₈ ＋ 5O₂ → 3CO₂ ＋ 4H₂O の反応で、C₃H₈ 8.8 g が完全に反応したとき、CO₂ は標準状態で何 L か。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "4.48 L",
+        "13.44 L",
+        "1.49 L",
+        "26.4 L"
+      ],
+      "answerIndex": 1,
+      "explanation": "CO₂ 0.6 mol × 22.4 L/mol。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "reaction"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_reaction_05_023",
+      "unit": "science.chemistry.change.equation.write",
+      "category": "thinking",
+      "prompt": "2H₂ ＋ O₂ → 2H₂O の反応で、H₂ 0.5 mol と O₂ 0.5 mol を反応させた。反応後に残る物質とその量は？",
+      "choices": [
+        "O₂ が 0.5 mol 残る",
+        "どちらも残らない",
+        "H₂ が 0.25 mol 残る",
+        "O₂ が 0.25 mol 残る"
+      ],
+      "answerIndex": 3,
+      "explanation": "係数比 2:1。H₂ 0.5 mol と反応する O₂ は 0.25 mol。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "reaction"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_reaction_05_024",
+      "unit": "science.chemistry.change.equation.write",
+      "category": "calculation",
+      "prompt": "2H₂ ＋ O₂ → 2H₂O の反応で、H₂ 6 g が完全に反応したとき、O₂ は何 mol 反応・生成するか。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "48 mol",
+        "1.5 mol",
+        "3 mol",
+        "6 mol"
+      ],
+      "answerIndex": 1,
+      "explanation": "H₂ 3 mol。係数比 2:1 より 1.5 mol。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "reaction"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_reaction_05_025",
+      "unit": "science.chemistry.change.equation",
+      "category": "knowledge",
+      "prompt": "化学反応の前後で、物質全体の質量の総和が変わらないという法則は？",
+      "choices": [
+        "質量保存の法則",
+        "倍数比例の法則",
+        "定比例の法則",
+        "アボガドロの法則"
+      ],
+      "answerIndex": 0,
+      "explanation": "ラボアジエ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "reaction"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_reaction_05_026",
+      "unit": "science.chemistry.change.equation.write",
+      "category": "calculation",
+      "prompt": "Mg ＋ 2HCl → MgCl₂ ＋ H₂ の反応で、Mg 48 g が完全に反応したとき、HCl は何 mol 反応・生成するか。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "1 mol",
+        "146 mol",
+        "2 mol",
+        "4 mol"
+      ],
+      "answerIndex": 3,
+      "explanation": "Mg 2 mol。係数比 1:2 より 4 mol。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "reaction"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_reaction_05_027",
+      "unit": "science.chemistry.change.equation",
+      "category": "calculation",
+      "prompt": "2Mg ＋ O₂ → 2MgO の反応で、O₂ 64 g が完全に反応したとき、Mg は何 g 反応・生成するか。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "128 g",
+        "96 g",
+        "24 g",
+        "48 g"
+      ],
+      "answerIndex": 1,
+      "explanation": "O₂ 2 mol → Mg 4 mol → ×24 g/mol。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "reaction"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_reaction_05_028",
+      "unit": "science.chemistry.change.equation",
+      "category": "calculation",
+      "prompt": "CH₄ ＋ 2O₂ → CO₂ ＋ 2H₂O の反応で、O₂ 64 g が完全に反応したとき、CO₂ は何 g 反応・生成するか。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "176 g",
+        "88 g",
+        "32 g",
+        "44 g"
+      ],
+      "answerIndex": 3,
+      "explanation": "O₂ 2 mol → CO₂ 1 mol → ×44 g/mol。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "reaction"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_reaction_05_029",
+      "unit": "science.chemistry.change.equation.write",
+      "category": "thinking",
+      "prompt": "N₂ ＋ 3H₂ → 2NH₃ の反応で、N₂ 2 mol と H₂ 3 mol を反応させた。反応後に残る物質とその量は？",
+      "choices": [
+        "N₂ が 1 mol 残る",
+        "H₂ が 1 mol 残る",
+        "どちらも残らない",
+        "N₂ が 2 mol 残る"
+      ],
+      "answerIndex": 0,
+      "explanation": "係数比 1:3。N₂ 2 mol と反応する H₂ は 6 mol。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "reaction"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_reaction_05_030",
+      "unit": "science.chemistry.change.equation",
+      "category": "calculation",
+      "prompt": "CH₄ ＋ 2O₂ → CO₂ ＋ 2H₂O の反応で、CH₄ 1.6 g が完全に反応したとき、O₂ は標準状態で何 L か。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "6.4 L",
+        "4.48 L",
+        "2.24 L",
+        "1.12 L"
+      ],
+      "answerIndex": 1,
+      "explanation": "O₂ 0.2 mol × 22.4 L/mol。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "reaction"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_reaction_05_031",
+      "unit": "science.chemistry.change.equation",
+      "category": "calculation",
+      "prompt": "CaCO₃ ＋ 2HCl → CaCl₂ ＋ H₂O ＋ CO₂ の反応で、HCl 3.65 g が完全に反応したとき、CaCO₃ は何 g 反応・生成するか。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "1.825 g",
+        "5 g",
+        "10 g",
+        "20 g"
+      ],
+      "answerIndex": 1,
+      "explanation": "HCl 0.1 mol → CaCO₃ 0.05 mol → ×100 g/mol。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "reaction"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_reaction_05_032",
+      "unit": "science.chemistry.change.equation.write",
+      "category": "calculation",
+      "prompt": "2Mg ＋ O₂ → 2MgO の反応で、Mg 72 g が完全に反応したとき、O₂ は何 mol 反応・生成するか。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "3 mol",
+        "6 mol",
+        "1.5 mol",
+        "48 mol"
+      ],
+      "answerIndex": 2,
+      "explanation": "Mg 3 mol。係数比 2:1 より 1.5 mol。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "reaction"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_reaction_05_033",
+      "unit": "science.chemistry.change.equation.write",
+      "category": "calculation",
+      "prompt": "CH₄ ＋ 2O₂ → CO₂ ＋ 2H₂O の反応で、CH₄ 32 g が完全に反応したとき、H₂O は何 mol 反応・生成するか。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "4 mol",
+        "2 mol",
+        "72 mol",
+        "1 mol"
+      ],
+      "answerIndex": 0,
+      "explanation": "CH₄ 2 mol。係数比 1:2 より 4 mol。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "reaction"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_reaction_05_034",
+      "unit": "science.chemistry.change.equation",
+      "category": "calculation",
+      "prompt": "2C₂H₆ ＋ 7O₂ → 4CO₂ ＋ 6H₂O の反応で、C₂H₆ 3 g が完全に反応したとき、O₂ は何 g 反応・生成するか。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "11.2 g",
+        "0.914 g",
+        "10.5 g",
+        "3.2 g"
+      ],
+      "answerIndex": 0,
+      "explanation": "C₂H₆ 0.1 mol → O₂ 0.35 mol → ×32 g/mol。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "reaction"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_reaction_05_035",
+      "unit": "science.chemistry.change.equation.write",
+      "category": "calculation",
+      "prompt": "C₆H₁₂O₆ ＋ 6O₂ → 6CO₂ ＋ 6H₂O の反応で、C₆H₁₂O₆ 72 g が完全に反応したとき、O₂ は何 mol 反応・生成するか。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "choices": [
+        "76.8 mol",
+        "0.0667 mol",
+        "0.4 mol",
+        "2.4 mol"
+      ],
+      "answerIndex": 3,
+      "explanation": "C₆H₁₂O₆ 0.4 mol。係数比 1:6 より 2.4 mol。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic",
+        "reaction"
+      ]
+    }
+  ]
+}

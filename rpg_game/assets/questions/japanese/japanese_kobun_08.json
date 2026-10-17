@@ -1,0 +1,344 @@
+{
+  "setId": "japanese_kobun_08",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "jap_kobun08_001",
+      "unit": "japanese.kobun.grammar.discern",
+      "category": "knowledge",
+      "prompt": "係助詞「ぞ・なむ・や・か」の結びの活用形は？",
+      "choices": [
+        "終止形",
+        "連体形",
+        "命令形",
+        "已然形"
+      ],
+      "answerIndex": 1,
+      "explanation": "「こそ」の結びだけが已然形。"
+    },
+    {
+      "id": "jap_kobun08_002",
+      "unit": "japanese.kobun.grammar.discern",
+      "category": "knowledge",
+      "prompt": "係助詞「こそ」の結びの活用形は？",
+      "choices": [
+        "已然形",
+        "未然形",
+        "終止形",
+        "連体形"
+      ],
+      "answerIndex": 0,
+      "explanation": "「花こそ散れ」。"
+    },
+    {
+      "id": "jap_kobun08_003",
+      "unit": "japanese.kobun.grammar.discern",
+      "category": "knowledge",
+      "prompt": "「こそ〜已然形、」で文が終わらずに続くときの意味は？",
+      "choices": [
+        "逆接（〜けれども）",
+        "強調のみ",
+        "順接",
+        "仮定"
+      ],
+      "answerIndex": 0,
+      "explanation": "係り結びによる逆接。"
+    },
+    {
+      "id": "jap_kobun08_004",
+      "unit": "japanese.kobun.grammar.discern",
+      "category": "knowledge",
+      "prompt": "「や・か」の係り結びが表す意味は？",
+      "choices": [
+        "詠嘆",
+        "禁止",
+        "強意",
+        "疑問・反語"
+      ],
+      "answerIndex": 3,
+      "explanation": "「ぞ・なむ・こそ」は強意。"
+    },
+    {
+      "id": "jap_kobun08_005",
+      "unit": "japanese.kobun.grammar.discern.onbin",
+      "category": "knowledge",
+      "prompt": "「書きて」が「書いて」になる音便は？",
+      "choices": [
+        "ウ音便",
+        "撥音便",
+        "促音便",
+        "イ音便"
+      ],
+      "answerIndex": 3,
+      "explanation": "「き」が「い」に変わる。"
+    },
+    {
+      "id": "jap_kobun08_006",
+      "unit": "japanese.kobun.grammar.discern.nari",
+      "category": "knowledge",
+      "prompt": "「あるなり」が「あんなり」→「あなり」となるときの音便は？",
+      "choices": [
+        "撥音便（「ん」が表記されない）",
+        "促音便",
+        "ウ音便",
+        "イ音便"
+      ],
+      "answerIndex": 0,
+      "explanation": "撥音便の無表記。読むときは「あんなり」。"
+    },
+    {
+      "id": "jap_kobun08_007",
+      "unit": "japanese.kobun.grammar.discern",
+      "category": "thinking",
+      "prompt": "「山里は冬ぞさびしさまさり（　）」の空欄に入る形は？",
+      "choices": [
+        "ける",
+        "けら",
+        "けり",
+        "けれ"
+      ],
+      "answerIndex": 0,
+      "explanation": "係助詞「ぞ」の結びは連体形。（古今和歌集）"
+    },
+    {
+      "id": "jap_kobun08_008",
+      "unit": "japanese.kobun.grammar.discern.nari",
+      "category": "thinking",
+      "prompt": "「花咲かなむ」の「なむ」は？",
+      "choices": [
+        "ナ変動詞＋む",
+        "願望の終助詞（咲いてほしい）",
+        "強意の係助詞",
+        "完了＋推量"
+      ],
+      "answerIndex": 1,
+      "explanation": "未然形「咲か」についているので願望の終助詞。"
+    },
+    {
+      "id": "jap_kobun08_009",
+      "unit": "japanese.kobun.grammar.discern.nari",
+      "category": "thinking",
+      "prompt": "「花咲きなむ」の「なむ」は？",
+      "choices": [
+        "ナ変動詞＋む",
+        "係助詞",
+        "願望の終助詞",
+        "完了（強意）「ぬ」の未然形＋推量「む」"
+      ],
+      "answerIndex": 3,
+      "explanation": "連用形「咲き」についている。「きっと咲くだろう」。"
+    },
+    {
+      "id": "jap_kobun08_010",
+      "unit": "japanese.kobun.grammar.discern.nari",
+      "category": "thinking",
+      "prompt": "「人来ぬ」（連用形「来（き）」＋ぬ）の「ぬ」は？",
+      "choices": [
+        "係助詞",
+        "完了の助動詞「ぬ」の終止形",
+        "打消の助動詞「ず」の連体形",
+        "ナ変動詞の一部"
+      ],
+      "answerIndex": 1,
+      "explanation": "連用形につく「ぬ」は完了。未然形につく「ぬ」は打消「ず」の連体形。"
+    },
+    {
+      "id": "jap_kobun08_011",
+      "unit": "japanese.kobun.grammar.discern.nari",
+      "category": "thinking",
+      "prompt": "「人来ぬ日」（未然形「来（こ）」＋ぬ）の「ぬ」は？",
+      "choices": [
+        "打消の助動詞「ず」の連体形",
+        "完了の助動詞「ぬ」の終止形",
+        "終助詞",
+        "ナ変動詞"
+      ],
+      "answerIndex": 0,
+      "explanation": "未然形接続で、後に体言「日」が続くので連体形。"
+    },
+    {
+      "id": "jap_kobun08_012",
+      "unit": "japanese.kobun.grammar.discern.nari",
+      "category": "thinking",
+      "prompt": "「死にけり」の「に」の品詞は？",
+      "choices": [
+        "完了「ぬ」の連用形",
+        "格助詞",
+        "ナ変動詞「死ぬ」の連用形の活用語尾",
+        "断定「なり」の連用形"
+      ],
+      "answerIndex": 2,
+      "explanation": "「死に」で一語の動詞。識別では語の切れ目に注意する。"
+    },
+    {
+      "id": "jap_kobun08_013",
+      "unit": "japanese.kobun.grammar.discern.nari",
+      "category": "thinking",
+      "prompt": "「静かなり」の「なり」は？",
+      "choices": [
+        "動詞",
+        "断定の助動詞",
+        "伝聞・推定の助動詞",
+        "形容動詞の活用語尾"
+      ],
+      "answerIndex": 3,
+      "explanation": "「静かなり」で一語の形容動詞。"
+    },
+    {
+      "id": "jap_kobun08_014",
+      "unit": "japanese.kobun.grammar.discern.nari",
+      "category": "thinking",
+      "prompt": "「京なる人」の「なる」の意味は？",
+      "choices": [
+        "推定",
+        "伝聞",
+        "存在（〜にいる）",
+        "断定"
+      ],
+      "answerIndex": 2,
+      "explanation": "場所を表す語につく「なり」は存在。"
+    },
+    {
+      "id": "jap_kobun08_015",
+      "unit": "japanese.kobun.grammar.discern.nari",
+      "category": "thinking",
+      "prompt": "「散りにけり」の「に」は？",
+      "choices": [
+        "格助詞",
+        "形容動詞の活用語尾",
+        "断定「なり」の連用形",
+        "完了の助動詞「ぬ」の連用形"
+      ],
+      "answerIndex": 3,
+      "explanation": "連用形「散り」について、下に「けり」が続く。"
+    },
+    {
+      "id": "jap_kobun08_016",
+      "unit": "japanese.kobun.grammar.discern",
+      "category": "thinking",
+      "prompt": "「花こそ咲かね」の「ね」は？",
+      "choices": [
+        "終助詞",
+        "打消の助動詞「ず」の已然形",
+        "動詞の一部",
+        "完了「ぬ」の命令形"
+      ],
+      "answerIndex": 1,
+      "explanation": "未然形「咲か」について、「こそ」の結びで已然形。"
+    },
+    {
+      "id": "jap_kobun08_017",
+      "unit": "japanese.kobun.grammar.discern.nari",
+      "category": "thinking",
+      "prompt": "「人なむ来たる」の「なむ」は？",
+      "choices": [
+        "ナ変動詞＋む",
+        "完了＋推量",
+        "強意の係助詞",
+        "願望の終助詞"
+      ],
+      "answerIndex": 2,
+      "explanation": "名詞「人」について、結びの「たる」は連体形。"
+    },
+    {
+      "id": "jap_kobun08_018",
+      "unit": "japanese.kobun.grammar.discern",
+      "category": "thinking",
+      "prompt": "「見し人」の「し」は？",
+      "choices": [
+        "強意の副助詞",
+        "過去の助動詞「き」の連体形",
+        "形容詞の語尾",
+        "サ変動詞「す」の連用形"
+      ],
+      "answerIndex": 1,
+      "explanation": "連用形「見」について、名詞「人」に続く。"
+    },
+    {
+      "id": "jap_kobun08_019",
+      "unit": "japanese.kobun.grammar.discern",
+      "category": "thinking",
+      "prompt": "「月こそおもしろけれ」の「けれ」の活用形は？",
+      "choices": [
+        "終止形",
+        "已然形",
+        "連体形",
+        "命令形"
+      ],
+      "answerIndex": 1,
+      "explanation": "係助詞「こそ」の結び。"
+    },
+    {
+      "id": "jap_kobun08_020",
+      "unit": "japanese.kobun.grammar.discern",
+      "category": "knowledge",
+      "prompt": "結びになるはずの語に接続助詞がついて文が続き、係り結びが成立しないことを何という？",
+      "choices": [
+        "結びの流れ（消滅）",
+        "音便",
+        "倒置",
+        "結びの省略"
+      ],
+      "answerIndex": 0,
+      "explanation": "例：「こそ〜已然形＋ど、…」は逆接として続く。"
+    },
+    {
+      "id": "jap_kobun08_021",
+      "unit": "japanese.kobun.grammar.discern.onbin",
+      "category": "knowledge",
+      "prompt": "「思ひて」が「思うて」になる音便は？",
+      "choices": [
+        "イ音便",
+        "撥音便",
+        "促音便",
+        "ウ音便"
+      ],
+      "answerIndex": 3,
+      "explanation": "「ひ」が「う」に変わる。"
+    },
+    {
+      "id": "jap_kobun08_022",
+      "unit": "japanese.kobun.grammar.discern.onbin",
+      "category": "knowledge",
+      "prompt": "「取りて」が「取つて」になる音便は？",
+      "choices": [
+        "イ音便",
+        "促音便",
+        "ウ音便",
+        "撥音便"
+      ],
+      "answerIndex": 1,
+      "explanation": "小さい「っ」の音になる（古文では大きく書くこともある）。"
+    },
+    {
+      "id": "jap_kobun08_023",
+      "unit": "japanese.kobun.grammar.discern.onbin",
+      "category": "knowledge",
+      "prompt": "「読みて」が「読んで」になる音便は？",
+      "choices": [
+        "ウ音便",
+        "イ音便",
+        "撥音便",
+        "促音便"
+      ],
+      "answerIndex": 2,
+      "explanation": "「ん」の音になる。"
+    },
+    {
+      "id": "jap_kobun08_024",
+      "unit": "japanese.kobun.grammar.discern",
+      "category": "thinking",
+      "prompt": "「あめり」はもともと何が変化した形？",
+      "choices": [
+        "「あるめり」の撥音便「あんめり」の「ん」が表記されない形",
+        "「あり＋めり」がそのまま",
+        "「あめ（天）＋り」",
+        "「雨＋めり」"
+      ],
+      "answerIndex": 0,
+      "explanation": "読むときは「あんめり」。"
+    }
+  ]
+}

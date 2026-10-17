@@ -1,0 +1,456 @@
+{
+  "setId": "science_physics_02",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_phy02_001",
+      "unit": "science.physics.mechanics.kinematics.velocity",
+      "category": "knowledge",
+      "prompt": "加速度の単位は？",
+      "choices": [
+        "m/s²",
+        "m/s",
+        "m",
+        "N"
+      ],
+      "answerIndex": 0,
+      "explanation": "加速度＝速度の変化 ÷ 時間 なので、(m/s) ÷ s ＝ m/s²。"
+    },
+    {
+      "id": "sci_phy02_002",
+      "unit": "science.physics.mechanics.kinematics.velocity",
+      "category": "knowledge",
+      "prompt": "等加速度直線運動の速度の式は？（v₀：初速度、a：加速度）",
+      "choices": [
+        "v ＝ v₀t ＋ ½at²",
+        "v ＝ at²",
+        "v ＝ v₀ ＋ at",
+        "v ＝ v₀ − ½at"
+      ],
+      "answerIndex": 2,
+      "explanation": "速度は1秒ごとに a ずつ変わるので v ＝ v₀ ＋ at。位置は x ＝ v₀t ＋ ½at²。"
+    },
+    {
+      "id": "sci_phy02_003",
+      "unit": "science.physics.mechanics.kinematics.fall",
+      "category": "knowledge",
+      "prompt": "自由落下とはどんな運動？",
+      "choices": [
+        "水平に投げた物体の運動",
+        "初速度 0 で重力だけを受けて落ちる運動",
+        "一定の速さで落ちる運動",
+        "空気抵抗で減速しながら落ちる運動"
+      ],
+      "answerIndex": 1,
+      "explanation": "自由落下は初速度 0、加速度 g（約 9.8 m/s²）の等加速度直線運動。"
+    },
+    {
+      "id": "sci_phy02_004",
+      "unit": "science.physics.mechanics.kinematics.fall",
+      "category": "knowledge",
+      "prompt": "鉛直に投げ上げた物体が最高点に達したとき、速度は？",
+      "choices": [
+        "最大になる",
+        "9.8 m/s",
+        "0",
+        "初速度と同じ"
+      ],
+      "answerIndex": 2,
+      "explanation": "最高点では上向きの速度が 0 になり、そこから落下に転じる。"
+    },
+    {
+      "id": "sci_phy02_005",
+      "unit": "science.physics.mechanics.kinematics.velocity",
+      "category": "knowledge",
+      "prompt": "鉛直に投げ上げた物体の、最高点での加速度は？",
+      "choices": [
+        "鉛直下向きに 9.8 m/s²",
+        "0",
+        "鉛直上向きに 9.8 m/s²",
+        "初速度によって変わる"
+      ],
+      "answerIndex": 0,
+      "explanation": "速度は 0 でも重力は働き続けるので、加速度は常に下向き g。速度 0 と加速度 0 を混同しない。"
+    },
+    {
+      "id": "sci_phy02_006",
+      "unit": "science.physics.mechanics.kinematics.graph",
+      "category": "knowledge",
+      "prompt": "v-t グラフの傾きが表すものは？",
+      "choices": [
+        "速さ",
+        "変位",
+        "加速度",
+        "時間"
+      ],
+      "answerIndex": 2,
+      "explanation": "傾き＝速度の変化 ÷ 時間＝加速度。面積は変位。"
+    },
+    {
+      "id": "sci_phy02_007",
+      "unit": "science.physics.mechanics.kinematics.fall",
+      "category": "knowledge",
+      "prompt": "空気抵抗がないとき、同じ高さから同時に落とした鉄球と木の球は？",
+      "choices": [
+        "同時に地面に着く",
+        "木の球が先に着く",
+        "大きい方が先に着く",
+        "鉄球が先に着く"
+      ],
+      "answerIndex": 0,
+      "explanation": "自由落下の加速度 g は質量によらないので、同時に着地する。"
+    },
+    {
+      "id": "sci_phy02_008",
+      "unit": "science.physics.mechanics.kinematics.velocity",
+      "category": "knowledge",
+      "prompt": "物体の速度と加速度が逆向きのとき、物体はどうなる？",
+      "choices": [
+        "だんだん遅くなる",
+        "必ず止まったままになる",
+        "だんだん速くなる",
+        "一定の速さで進む"
+      ],
+      "answerIndex": 0,
+      "explanation": "加速度が速度と逆向きなら減速する。やがて止まり、そのまま加速度が続けば逆向きに動き出す。"
+    },
+    {
+      "id": "sci_phy02_009",
+      "unit": "science.physics.mechanics.kinematics.velocity",
+      "category": "calculation",
+      "prompt": "静止していた物体が 2.0 m/s² で加速した。5.0 s 後の速さは？",
+      "choices": [
+        "7.0 m/s",
+        "2.5 m/s",
+        "25 m/s",
+        "10 m/s"
+      ],
+      "answerIndex": 3,
+      "explanation": "v ＝ v₀ ＋ at ＝ 0 ＋ 2.0 × 5.0 ＝ 10 m/s。"
+    },
+    {
+      "id": "sci_phy02_010",
+      "unit": "science.physics.mechanics.kinematics",
+      "category": "calculation",
+      "prompt": "静止していた物体が 2.0 m/s² で加速した。5.0 s 間に進む距離は？",
+      "choices": [
+        "25 m",
+        "5.0 m",
+        "50 m",
+        "10 m"
+      ],
+      "answerIndex": 0,
+      "explanation": "x ＝ ½at² ＝ ½ × 2.0 × 5.0² ＝ 25 m。"
+    },
+    {
+      "id": "sci_phy02_011",
+      "unit": "science.physics.mechanics.kinematics.fall",
+      "category": "calculation",
+      "prompt": "自由落下を始めてから 2.0 s 後の速さは？（g ＝ 9.8 m/s²）",
+      "choices": [
+        "39.2 m/s",
+        "9.8 m/s",
+        "19.6 m/s",
+        "4.9 m/s"
+      ],
+      "answerIndex": 2,
+      "explanation": "v ＝ gt ＝ 9.8 × 2.0 ＝ 19.6 m/s。"
+    },
+    {
+      "id": "sci_phy02_012",
+      "unit": "science.physics.mechanics.kinematics.fall",
+      "category": "calculation",
+      "prompt": "自由落下で、最初の 2.0 s 間に落ちる距離は？（g ＝ 9.8 m/s²）",
+      "choices": [
+        "9.8 m",
+        "19.6 m",
+        "39.2 m",
+        "4.9 m"
+      ],
+      "answerIndex": 1,
+      "explanation": "y ＝ ½gt² ＝ ½ × 9.8 × 2.0² ＝ 19.6 m。"
+    },
+    {
+      "id": "sci_phy02_013",
+      "unit": "science.physics.mechanics.kinematics.fall",
+      "category": "calculation",
+      "prompt": "初速度 19.6 m/s で鉛直に投げ上げた。最高点に達するまでの時間は？（g ＝ 9.8 m/s²）",
+      "choices": [
+        "19.6 s",
+        "2.0 s",
+        "1.0 s",
+        "4.0 s"
+      ],
+      "answerIndex": 1,
+      "explanation": "最高点では v ＝ 0。0 ＝ 19.6 − 9.8t より t ＝ 2.0 s。"
+    },
+    {
+      "id": "sci_phy02_014",
+      "unit": "science.physics.mechanics.kinematics.velocity",
+      "category": "calculation",
+      "prompt": "20 m/s で走る車が一定の加速度 −4.0 m/s² でブレーキをかけた。止まるまでに進む距離は？",
+      "choices": [
+        "25 m",
+        "5.0 m",
+        "100 m",
+        "50 m"
+      ],
+      "answerIndex": 3,
+      "explanation": "v² − v₀² ＝ 2ax より 0 − 20² ＝ 2 × (−4.0) × x、x ＝ 50 m。"
+    },
+    {
+      "id": "sci_phy02_015",
+      "unit": "science.physics.mechanics.kinematics.fall",
+      "category": "thinking",
+      "prompt": "鉛直投げ上げの v-t グラフ（上向きを正）はどうなる？",
+      "choices": [
+        "右下がりの直線で、途中で t 軸を横切る",
+        "上に凸の放物線",
+        "右上がりの直線",
+        "水平な直線"
+      ],
+      "answerIndex": 0,
+      "explanation": "加速度は一定で −g なので傾き −g の直線。t 軸を横切る点が最高点。"
+    },
+    {
+      "id": "sci_phy02_016",
+      "unit": "science.physics.mechanics.kinematics.accel",
+      "category": "thinking",
+      "prompt": "一定時間ごとに物体の位置を記録したら、間隔が毎回同じ長さずつ広がっていた。この運動は？",
+      "choices": [
+        "だんだん遅くなる運動",
+        "等速直線運動",
+        "等加速度直線運動",
+        "静止"
+      ],
+      "answerIndex": 2,
+      "explanation": "等加速度直線運動では、一定時間ごとの移動距離が一定の割合（aT²）ずつ増える。"
+    },
+    {
+      "id": "sci_phy02_017",
+      "unit": "science.physics.mechanics.kinematics.velocity",
+      "category": "knowledge",
+      "prompt": "加速度とは何か？",
+      "choices": [
+        "速さと時間の積",
+        "単位時間あたりの位置の変化",
+        "単位時間あたりの速度の変化",
+        "力の大きさ"
+      ],
+      "answerIndex": 2,
+      "explanation": "a ＝ Δv ÷ Δt。"
+    },
+    {
+      "id": "sci_phy02_018",
+      "unit": "science.physics.mechanics.kinematics.velocity",
+      "category": "knowledge",
+      "prompt": "等加速度直線運動の変位の式は？（v₀：初速度、a：加速度）",
+      "choices": [
+        "x ＝ ½v₀t²",
+        "x ＝ at",
+        "x ＝ v₀ + at",
+        "x ＝ v₀t + ½at²"
+      ],
+      "answerIndex": 3,
+      "explanation": "v-t グラフの面積（台形）から求められる。"
+    },
+    {
+      "id": "sci_phy02_019",
+      "unit": "science.physics.mechanics.kinematics.accel",
+      "category": "knowledge",
+      "prompt": "時間をふくまない等加速度運動の式は？",
+      "choices": [
+        "v ＝ v₀ + at",
+        "x ＝ vt",
+        "v² − v₀² ＝ 2ax",
+        "v² ＝ 2at"
+      ],
+      "answerIndex": 2,
+      "explanation": "速度の式と変位の式から t を消去したもの。"
+    },
+    {
+      "id": "sci_phy02_020",
+      "unit": "science.physics.mechanics.kinematics.velocity",
+      "category": "knowledge",
+      "prompt": "重力加速度 g の大きさはおよそ？",
+      "choices": [
+        "9.8 m/s",
+        "98 m/s²",
+        "9.8 m/s²",
+        "1.0 m/s²"
+      ],
+      "answerIndex": 2,
+      "explanation": "地表付近では g ≒ 9.8 m/s²。"
+    },
+    {
+      "id": "sci_phy02_021",
+      "unit": "science.physics.mechanics.kinematics.fall",
+      "category": "knowledge",
+      "prompt": "鉛直下向きに投げおろした物体の運動は？",
+      "choices": [
+        "等速直線運動",
+        "初速度をもつ等加速度運動（加速度 g）",
+        "加速度 −g の運動",
+        "加速度がしだいに増える運動"
+      ],
+      "answerIndex": 1,
+      "explanation": "重力だけがはたらくので加速度は下向きに g。"
+    },
+    {
+      "id": "sci_phy02_022",
+      "unit": "science.physics.mechanics.kinematics.graph",
+      "category": "knowledge",
+      "prompt": "v-t グラフが右下がりの直線（v>0 の部分）のとき、物体は？",
+      "choices": [
+        "静止している",
+        "等速で動いている",
+        "加速している",
+        "減速している"
+      ],
+      "answerIndex": 3,
+      "explanation": "傾きが負なので加速度は運動の向きと逆。"
+    },
+    {
+      "id": "sci_phy02_023",
+      "unit": "science.physics.mechanics.kinematics.velocity",
+      "category": "calculation",
+      "prompt": "10 m/s で動いていた物体が 4.0 s 後に 30 m/s になった。加速度は？",
+      "choices": [
+        "2.5 m/s²",
+        "5.0 m/s²",
+        "10 m/s²",
+        "7.5 m/s²"
+      ],
+      "answerIndex": 1,
+      "explanation": "(30 − 10) ÷ 4.0。"
+    },
+    {
+      "id": "sci_phy02_024",
+      "unit": "science.physics.mechanics.kinematics",
+      "category": "calculation",
+      "prompt": "静止から 3.0 m/s² で加速した。4.0 s 間に進む距離は？",
+      "choices": [
+        "48 m",
+        "6.0 m",
+        "24 m",
+        "12 m"
+      ],
+      "answerIndex": 2,
+      "explanation": "½ × 3.0 × 4.0²。"
+    },
+    {
+      "id": "sci_phy02_025",
+      "unit": "science.physics.mechanics.kinematics.velocity",
+      "category": "calculation",
+      "prompt": "静止から一定の加速度で 10 s 間に 50 m 進んだ。加速度は？",
+      "choices": [
+        "10 m/s²",
+        "0.50 m/s²",
+        "1.0 m/s²",
+        "5.0 m/s²"
+      ],
+      "answerIndex": 2,
+      "explanation": "50 ＝ ½ a × 100。"
+    },
+    {
+      "id": "sci_phy02_026",
+      "unit": "science.physics.mechanics.kinematics.fall",
+      "category": "calculation",
+      "prompt": "自由落下を始めてから 3.0 s 後の速さは？（g ＝ 9.8 m/s²）",
+      "choices": [
+        "29.4 m/s",
+        "3.3 m/s",
+        "44.1 m/s",
+        "9.8 m/s"
+      ],
+      "answerIndex": 0,
+      "explanation": "v ＝ gt。"
+    },
+    {
+      "id": "sci_phy02_027",
+      "unit": "science.physics.mechanics.kinematics.fall",
+      "category": "calculation",
+      "prompt": "高さ 44.1 m から自由落下させた。地面に着くまでの時間は？（g ＝ 9.8 m/s²）",
+      "choices": [
+        "2.0 s",
+        "3.0 s",
+        "9.0 s",
+        "4.5 s"
+      ],
+      "answerIndex": 1,
+      "explanation": "44.1 ＝ ½ × 9.8 × t² → t² ＝ 9.0。"
+    },
+    {
+      "id": "sci_phy02_028",
+      "unit": "science.physics.mechanics.kinematics.fall",
+      "category": "calculation",
+      "prompt": "初速度 9.8 m/s で鉛直に投げ上げた。最高点の高さは？（g ＝ 9.8 m/s²）",
+      "choices": [
+        "9.8 m",
+        "19.6 m",
+        "2.5 m",
+        "4.9 m"
+      ],
+      "answerIndex": 3,
+      "explanation": "0 − 9.8² ＝ 2(−9.8)h。"
+    },
+    {
+      "id": "sci_phy02_029",
+      "unit": "science.physics.mechanics.kinematics.fall",
+      "category": "calculation",
+      "prompt": "初速度 14.7 m/s で鉛直に投げ上げた。投げた点にもどるまでの時間は？（g ＝ 9.8 m/s²）",
+      "choices": [
+        "6.0 s",
+        "3.0 s",
+        "1.5 s",
+        "2.0 s"
+      ],
+      "answerIndex": 1,
+      "explanation": "最高点まで 1.5 s、往復で2倍。"
+    },
+    {
+      "id": "sci_phy02_030",
+      "unit": "science.physics.mechanics.kinematics.velocity",
+      "category": "calculation",
+      "prompt": "30 m/s で走る車がブレーキをかけ、一定の加速度で 6.0 s で止まった。止まるまでに進んだ距離は？",
+      "choices": [
+        "180 m",
+        "90 m",
+        "45 m",
+        "30 m"
+      ],
+      "answerIndex": 1,
+      "explanation": "平均の速さ 15 m/s × 6.0 s。"
+    },
+    {
+      "id": "sci_phy02_031",
+      "unit": "science.physics.mechanics.kinematics.velocity",
+      "category": "thinking",
+      "prompt": "ボールを真上に投げたとき、上昇中と下降中の加速度について正しいものは？",
+      "choices": [
+        "どちらも下向きで大きさ g",
+        "最高点で0になる",
+        "上昇中は0",
+        "上昇中は上向き、下降中は下向き"
+      ],
+      "answerIndex": 0,
+      "explanation": "重力だけがはたらくので、いつも下向きに g。"
+    },
+    {
+      "id": "sci_phy02_032",
+      "unit": "science.physics.mechanics.kinematics.graph",
+      "category": "thinking",
+      "prompt": "v-t グラフから「変位」を求めるときの注意として正しいものは？",
+      "choices": [
+        "縦軸の値の最大値を読む",
+        "t 軸より下の部分は負の変位として差し引く",
+        "傾きを読みとる",
+        "すべての面積を足す"
+      ],
+      "answerIndex": 1,
+      "explanation": "面積は符号つきで考える。道のりなら絶対値を足す。"
+    }
+  ]
+}

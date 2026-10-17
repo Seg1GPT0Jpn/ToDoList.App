@@ -1,0 +1,344 @@
+{
+  "setId": "social_jhist_14",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_jhist14_001",
+      "unit": "social.jhist.early_modern.bakumatsu",
+      "category": "knowledge",
+      "prompt": "1853 年、浦賀に来航して開国を求めたアメリカの使節は？",
+      "choices": [
+        "レザノフ",
+        "ハリス",
+        "ペリー",
+        "ラクスマン"
+      ],
+      "answerIndex": 2,
+      "explanation": "翌年、再び来航した。"
+    },
+    {
+      "id": "soc_jhist14_002",
+      "unit": "social.jhist.early_modern.bakumatsu.open",
+      "category": "knowledge",
+      "prompt": "1854 年に結ばれ、下田と函館を開港した条約は？",
+      "choices": [
+        "ポーツマス条約",
+        "日米修好通商条約",
+        "下関条約",
+        "日米和親条約"
+      ],
+      "answerIndex": 3,
+      "explanation": "これで鎖国の体制が終わった。"
+    },
+    {
+      "id": "soc_jhist14_003",
+      "unit": "social.jhist.early_modern.bakumatsu.politics",
+      "category": "knowledge",
+      "prompt": "1858 年、大老井伊直弼が朝廷の許可を得ずに結んだ条約は？",
+      "choices": [
+        "日米安全保障条約",
+        "日米和親条約",
+        "樺太・千島交換条約",
+        "日米修好通商条約"
+      ],
+      "answerIndex": 3,
+      "explanation": "函館・神奈川（横浜）・長崎・新潟・兵庫（神戸）の 5 港を開いた。"
+    },
+    {
+      "id": "soc_jhist14_004",
+      "unit": "social.jhist.early_modern.bakumatsu.open",
+      "category": "knowledge",
+      "prompt": "日米修好通商条約の不平等な点は？",
+      "choices": [
+        "領事裁判権を認め、関税自主権がなかった",
+        "アメリカ人の入国を禁止した",
+        "日本だけが領事裁判権をもった",
+        "日本が関税を自由に決められた"
+      ],
+      "answerIndex": 0,
+      "explanation": "これらの改正が明治政府の大きな課題になった。"
+    },
+    {
+      "id": "soc_jhist14_005",
+      "unit": "social.jhist.early_modern.bakumatsu",
+      "category": "knowledge",
+      "prompt": "天皇を尊び、外国を追いはらおうとする考え方は？",
+      "choices": [
+        "公武合体",
+        "尊王攘夷",
+        "文明開化",
+        "富国強兵"
+      ],
+      "answerIndex": 1,
+      "explanation": "条約締結に反対する人々の間で高まった。"
+    },
+    {
+      "id": "soc_jhist14_006",
+      "unit": "social.jhist.early_modern.bakumatsu.politics",
+      "category": "knowledge",
+      "prompt": "1860 年、井伊直弼が江戸城の門外で暗殺された事件は？",
+      "choices": [
+        "生麦事件",
+        "桜田門外の変",
+        "安政の大獄",
+        "本能寺の変"
+      ],
+      "answerIndex": 1,
+      "explanation": "井伊は安政の大獄で反対派を弾圧していた。"
+    },
+    {
+      "id": "soc_jhist14_007",
+      "unit": "social.jhist.early_modern.bakumatsu.fall",
+      "category": "knowledge",
+      "prompt": "1866 年、坂本龍馬らの仲立ちで結ばれた同盟は？",
+      "choices": [
+        "日英同盟",
+        "三国同盟",
+        "薩長同盟",
+        "四国連合"
+      ],
+      "answerIndex": 2,
+      "explanation": "薩摩藩と長州藩が倒幕に向けて手を結んだ。"
+    },
+    {
+      "id": "soc_jhist14_008",
+      "unit": "social.jhist.early_modern.bakumatsu.fall",
+      "category": "knowledge",
+      "prompt": "1867 年、15 代将軍徳川慶喜が政権を朝廷に返したことを何という？",
+      "choices": [
+        "廃藩置県",
+        "王政復古の大号令",
+        "大政奉還",
+        "版籍奉還"
+      ],
+      "answerIndex": 2,
+      "explanation": "その後、朝廷は王政復古の大号令を出した。"
+    },
+    {
+      "id": "soc_jhist14_009",
+      "unit": "social.jhist.early_modern.bakumatsu",
+      "category": "knowledge",
+      "prompt": "1868 年から始まった、新政府軍と旧幕府軍の戦いは？",
+      "choices": [
+        "島原の乱",
+        "日清戦争",
+        "西南戦争",
+        "戊辰戦争"
+      ],
+      "answerIndex": 3,
+      "explanation": "函館の五稜郭の戦いで終わった。"
+    },
+    {
+      "id": "soc_jhist14_010",
+      "unit": "social.jhist.early_modern.bakumatsu",
+      "category": "knowledge",
+      "prompt": "開国後の貿易で、日本の最大の輸出品は？",
+      "choices": [
+        "生糸",
+        "綿織物",
+        "鉄鋼",
+        "石炭"
+      ],
+      "answerIndex": 0,
+      "explanation": "輸入品は毛織物・綿織物・武器など。"
+    },
+    {
+      "id": "soc_jhist14_011",
+      "unit": "social.jhist.early_modern.bakumatsu",
+      "category": "thinking",
+      "prompt": "開国後、物価が急に上がった理由として適切なものは？",
+      "choices": [
+        "年貢がなくなったから",
+        "輸入が止まったから",
+        "生糸などが大量に輸出されて品不足になり、金の流出もあったから",
+        "人口が急に減ったから"
+      ],
+      "answerIndex": 2,
+      "explanation": "日本と外国の金銀の交換比率の違いから、金が大量に流出した。"
+    },
+    {
+      "id": "soc_jhist14_012",
+      "unit": "social.jhist.early_modern.bakumatsu",
+      "category": "thinking",
+      "prompt": "薩摩藩と長州藩が攘夷から倒幕へ方針を変えた理由は？",
+      "choices": [
+        "幕府に命令されたから",
+        "外国と戦って力の差を知り、幕府を倒して新しい国づくりが必要だと考えたから",
+        "外国と同盟を結ぶため",
+        "外国に勝ったから"
+      ],
+      "answerIndex": 1,
+      "explanation": "薩英戦争や四国艦隊下関砲撃事件の経験から。"
+    },
+    {
+      "id": "soc_jhist14_013",
+      "unit": "social.jhist.early_modern.bakumatsu.open",
+      "category": "knowledge",
+      "prompt": "ペリーが来航したときの港は？",
+      "choices": [
+        "浦賀",
+        "長崎",
+        "横浜",
+        "神戸"
+      ],
+      "answerIndex": 0,
+      "explanation": "神奈川県の三浦半島。"
+    },
+    {
+      "id": "soc_jhist14_014",
+      "unit": "social.jhist.early_modern.bakumatsu.open",
+      "category": "knowledge",
+      "prompt": "日米修好通商条約を結んだアメリカの総領事は？",
+      "choices": [
+        "ハリス",
+        "ペリー",
+        "ラクスマン",
+        "ビッドル"
+      ],
+      "answerIndex": 0,
+      "explanation": "1858 年。"
+    },
+    {
+      "id": "soc_jhist14_015",
+      "unit": "social.jhist.early_modern.bakumatsu.open",
+      "category": "knowledge",
+      "prompt": "日米修好通商条約で開かれた港にあてはまらないものは？",
+      "choices": [
+        "函館",
+        "横浜（神奈川）",
+        "長崎",
+        "下田"
+      ],
+      "answerIndex": 3,
+      "explanation": "下田は日米和親条約で開かれ、その後閉鎖された。"
+    },
+    {
+      "id": "soc_jhist14_016",
+      "unit": "social.jhist.early_modern.bakumatsu.politics",
+      "category": "knowledge",
+      "prompt": "井伊直弼が、条約に反対する大名や公家、志士らを処罰した事件は？",
+      "choices": [
+        "蛮社の獄",
+        "安政の大獄",
+        "生麦事件",
+        "寛政異学の禁"
+      ],
+      "answerIndex": 1,
+      "explanation": "吉田松陰らが処刑された。"
+    },
+    {
+      "id": "soc_jhist14_017",
+      "unit": "social.jhist.early_modern.bakumatsu",
+      "category": "knowledge",
+      "prompt": "1862 年、薩摩藩の行列を横切ったイギリス人が殺傷された事件は？",
+      "choices": [
+        "生麦事件",
+        "ノルマントン号事件",
+        "禁門の変",
+        "桜田門外の変"
+      ],
+      "answerIndex": 0,
+      "explanation": "翌年の薩英戦争につながった。"
+    },
+    {
+      "id": "soc_jhist14_018",
+      "unit": "social.jhist.early_modern.bakumatsu",
+      "category": "knowledge",
+      "prompt": "1864 年、長州藩が四国連合艦隊に砲台を占領された事件は？",
+      "choices": [
+        "戊辰戦争",
+        "下関戦争（四国艦隊下関砲撃事件）",
+        "西南戦争",
+        "薩英戦争"
+      ],
+      "answerIndex": 1,
+      "explanation": "長州藩も攘夷が不可能だとさとった。"
+    },
+    {
+      "id": "soc_jhist14_019",
+      "unit": "social.jhist.early_modern.bakumatsu.fall",
+      "category": "knowledge",
+      "prompt": "王政復古の大号令が出された年は？",
+      "choices": [
+        "1853 年",
+        "1867 年",
+        "1871 年",
+        "1868 年"
+      ],
+      "answerIndex": 1,
+      "explanation": "天皇中心の新政府の成立を宣言した。"
+    },
+    {
+      "id": "soc_jhist14_020",
+      "unit": "social.jhist.early_modern.bakumatsu.fall",
+      "category": "knowledge",
+      "prompt": "戊辰戦争の最後の戦いが行われた場所は？",
+      "choices": [
+        "江戸城",
+        "会津",
+        "鳥羽・伏見",
+        "函館の五稜郭"
+      ],
+      "answerIndex": 3,
+      "explanation": "1869 年、旧幕府軍の榎本武揚らが降伏。"
+    },
+    {
+      "id": "soc_jhist14_021",
+      "unit": "social.jhist.early_modern.bakumatsu",
+      "category": "knowledge",
+      "prompt": "江戸城の無血開城を実現させた、西郷隆盛と会談した幕府側の人物は？",
+      "choices": [
+        "坂本龍馬",
+        "榎本武揚",
+        "勝海舟",
+        "徳川慶喜"
+      ],
+      "answerIndex": 2,
+      "explanation": "1868 年。"
+    },
+    {
+      "id": "soc_jhist14_022",
+      "unit": "social.jhist.early_modern.bakumatsu",
+      "category": "knowledge",
+      "prompt": "開国後、金が大量に海外へ流出した理由は？",
+      "choices": [
+        "日本と外国で金と銀の交換比率がちがったから",
+        "金の産出がふえたから",
+        "外国が金を買わなかったから",
+        "金を禁止したから"
+      ],
+      "answerIndex": 0,
+      "explanation": "日本の金銀比価は約 1：5、外国は約 1：15。"
+    },
+    {
+      "id": "soc_jhist14_023",
+      "unit": "social.jhist.early_modern.bakumatsu.open",
+      "category": "thinking",
+      "prompt": "日米修好通商条約の「関税自主権がない」ことが日本に不利だった理由は？",
+      "choices": [
+        "貿易港が少なかったから",
+        "外国人が日本に住めなかったから",
+        "輸出ができなかったから",
+        "安い外国製品が大量に入ってきても、関税で国内産業を守れなかったから"
+      ],
+      "answerIndex": 3,
+      "explanation": "税率を日本だけで決められなかった。"
+    },
+    {
+      "id": "soc_jhist14_024",
+      "unit": "social.jhist.early_modern.bakumatsu.fall",
+      "category": "thinking",
+      "prompt": "徳川慶喜が大政奉還を行ったねらいとして考えられることは？",
+      "choices": [
+        "将軍をやめて引退するため",
+        "天皇を廃止するため",
+        "外国と戦うため",
+        "武力倒幕を避け、新しい政治でも徳川家が中心的な地位を保つため"
+      ],
+      "answerIndex": 3,
+      "explanation": "実際には王政復古の大号令で排除された。"
+    }
+  ]
+}

@@ -1,0 +1,734 @@
+{
+  "setId": "math_shonan_104_m1_proof_03",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "math_shonan_104_m1_proof_03_001",
+      "unit": "math.m2.expr.proof.division",
+      "category": "calculation",
+      "prompt": "2x² − 3 を x − 1 で割ったときの商と余りは？",
+      "choices": [
+        "商 −2x − 2、余り −1",
+        "商 2x + 2、余り −1",
+        "商 2x + 2、余り 2",
+        "商 2x + 3、余り 0"
+      ],
+      "answerIndex": 1,
+      "explanation": "2x² − 3＝(x − 1)(2x + 2)＋−1。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-proof"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_proof_03_002",
+      "unit": "math.m2.expr.proof.inequality",
+      "category": "thinking",
+      "prompt": "a ＞ 0, b ＞ 0 のとき「a/b ＋ b/a ≧ 2」を証明する方法として最も適切なものは？",
+      "choices": [
+        "相加平均≧相乗平均を使う",
+        "a＝b を代入する",
+        "具体的な数を1つ代入する",
+        "両辺に 0 をかける"
+      ],
+      "answerIndex": 0,
+      "explanation": "a/b・b/a＝1 なので相乗平均は1。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-proof"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_proof_03_003",
+      "unit": "math.m2.expr.proof.division",
+      "category": "calculation",
+      "prompt": "2x² + 9x + 10 を x + 4 で割ったときの商と余りは？",
+      "choices": [
+        "商 2x + 2、余り 2",
+        "商 −2x − 1、余り 6",
+        "商 2x + 1、余り −5",
+        "商 2x + 1、余り 6"
+      ],
+      "answerIndex": 3,
+      "explanation": "2x² + 9x + 10＝(x + 4)(2x + 1)＋6。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-proof"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_proof_03_004",
+      "unit": "math.m2.expr.proof",
+      "category": "knowledge",
+      "prompt": "a³＋b³ を因数分解すると？",
+      "choices": [
+        "(a＋b)³",
+        "(a＋b)(a²−ab＋b²)",
+        "(a＋b)(a²＋ab＋b²)",
+        "(a−b)(a²＋ab＋b²)"
+      ],
+      "answerIndex": 1,
+      "explanation": "符号に注意。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-proof"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_proof_03_005",
+      "unit": "math.m2.expr.proof.inequality",
+      "category": "calculation",
+      "prompt": "x ＞ 0 のとき、x ＋ 36/x の最小値は？",
+      "choices": [
+        "12",
+        "72",
+        "36",
+        "6"
+      ],
+      "answerIndex": 0,
+      "explanation": "相加平均≧相乗平均より x＋36/x ≧ 2√36＝12。等号は x＝6。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-proof"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_proof_03_006",
+      "unit": "math.m2.expr.proof.binomial",
+      "category": "calculation",
+      "prompt": "二項係数の和 6C0＋6C1＋…＋6C6 の値は？",
+      "choices": [
+        "63",
+        "64",
+        "36",
+        "32"
+      ],
+      "answerIndex": 1,
+      "explanation": "(1＋1)⁶＝2⁶。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-proof"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_proof_03_007",
+      "unit": "math.m2.expr.proof.identity",
+      "category": "calculation",
+      "prompt": "4x² − 3x ＝ a(x − 1)² ＋ b(x − 1) ＋ c が x についての恒等式となるとき、c の値は？",
+      "choices": [
+        "2",
+        "1",
+        "0",
+        "5"
+      ],
+      "answerIndex": 1,
+      "explanation": "x＝1 を代入すると c＝1。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-proof"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_proof_03_008",
+      "unit": "math.m2.expr.proof.division",
+      "category": "calculation",
+      "prompt": "x³ − 2x² + 5x − 2 を x − 1 で割ったときの商と余りは？",
+      "choices": [
+        "商 x² − x + 5、余り 3",
+        "商 x² − x + 4、余り 2",
+        "商 x² − x + 4、余り −1",
+        "商 −x² + x − 4、余り 2"
+      ],
+      "answerIndex": 1,
+      "explanation": "x³ − 2x² + 5x − 2＝(x − 1)(x² − x + 4)＋2。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-proof"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_proof_03_009",
+      "unit": "math.m2.expr.proof.inequality",
+      "category": "knowledge",
+      "prompt": "相加平均と相乗平均の関係として正しいのは？（a＞0, b＞0）",
+      "choices": [
+        "(a＋b)/2 ≦ √(ab)",
+        "a＋b ≧ ab",
+        "(a＋b)/2 ＝ √(ab)",
+        "(a＋b)/2 ≧ √(ab)"
+      ],
+      "answerIndex": 3,
+      "explanation": "等号は a＝b のとき。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-proof"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_proof_03_010",
+      "unit": "math.m2.expr.proof.identity",
+      "category": "calculation",
+      "prompt": "2x² + x + 2 ＝ a(x − 1)² ＋ b(x − 1) ＋ c が x についての恒等式となるとき、c の値は？",
+      "choices": [
+        "−5",
+        "2",
+        "5",
+        "6"
+      ],
+      "answerIndex": 2,
+      "explanation": "x＝1 を代入すると c＝5。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-proof"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_proof_03_011",
+      "unit": "math.m2.expr.proof.binomial",
+      "category": "calculation",
+      "prompt": "(2x + 3)⁶ の展開式における x⁴ の係数は？",
+      "choices": [
+        "2160",
+        "15",
+        "−2160",
+        "720"
+      ],
+      "answerIndex": 0,
+      "explanation": "一般項は 6C4·(2x)⁴·(3)²。6C4＝15 なので 15×16×9＝2160。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-proof"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_proof_03_012",
+      "unit": "math.m2.expr.proof.division",
+      "category": "calculation",
+      "prompt": "−x² − 3x − 2 を x + 3 で割ったときの商と余りは？",
+      "choices": [
+        "商 −x、余り −2",
+        "商 −x、余り 3",
+        "商 −x + 1、余り −5",
+        "商 x、余り −2"
+      ],
+      "answerIndex": 0,
+      "explanation": "−x² − 3x − 2＝(x + 3)(−x)＋−2。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-proof"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_proof_03_013",
+      "unit": "math.m2.expr.proof.inequality",
+      "category": "calculation",
+      "prompt": "x ＞ 0 のとき、x ＋ 81/x の最小値は？",
+      "choices": [
+        "81",
+        "18",
+        "162",
+        "9"
+      ],
+      "answerIndex": 1,
+      "explanation": "相加平均≧相乗平均より x＋81/x ≧ 2√81＝18。等号は x＝9。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-proof"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_proof_03_014",
+      "unit": "math.m2.expr.proof",
+      "category": "calculation",
+      "prompt": "(x＋3)³ を展開すると？",
+      "choices": [
+        "x³ + 3x² + 9x + 27",
+        "x³ + 27",
+        "x³ + 27x² + 9x + 27",
+        "x³ + 9x² + 27x + 27"
+      ],
+      "answerIndex": 3,
+      "explanation": "(a＋b)³＝a³＋3a²b＋3ab²＋b³ に a→x, b→3 を入れて x³＋3·3x²＋3·3²x＋3³＝x³ + 9x² + 27x + 27。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-proof"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_proof_03_015",
+      "unit": "math.m2.expr.proof.identity",
+      "category": "calculation",
+      "prompt": "−2x² − 7x − 1 ＝ a(x ＋ 3)² ＋ b(x ＋ 3) ＋ c が x についての恒等式となるとき、c の値は？",
+      "choices": [
+        "2",
+        "−1",
+        "−2",
+        "5"
+      ],
+      "answerIndex": 0,
+      "explanation": "x＝-3 を代入すると c＝2。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-proof"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_proof_03_016",
+      "unit": "math.m2.expr.proof.inequality",
+      "category": "calculation",
+      "prompt": "x ＞ 0 のとき、x ＋ 16/x の最小値は？",
+      "choices": [
+        "8",
+        "32",
+        "4",
+        "16"
+      ],
+      "answerIndex": 0,
+      "explanation": "相加平均≧相乗平均より x＋16/x ≧ 2√16＝8。等号は x＝4。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-proof"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_proof_03_017",
+      "unit": "math.m2.expr.proof.binomial",
+      "category": "calculation",
+      "prompt": "(3x − 3)⁵ の展開式における x¹ の係数は？",
+      "choices": [
+        "1215",
+        "5",
+        "−45",
+        "−1215"
+      ],
+      "answerIndex": 0,
+      "explanation": "一般項は 5C1·(3x)¹·(−3)⁴。5C1＝5 なので 5×3×81＝1215。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-proof"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_proof_03_018",
+      "unit": "math.m2.expr.proof.binomial",
+      "category": "calculation",
+      "prompt": "(2x − 3)⁷ の展開式における x² の係数は？",
+      "choices": [
+        "20412",
+        "−20412",
+        "−252",
+        "21"
+      ],
+      "answerIndex": 1,
+      "explanation": "一般項は 7C2·(2x)²·(−3)⁵。7C2＝21 なので 21×4×−243＝−20412。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-proof"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_proof_03_019",
+      "unit": "math.m2.expr.proof",
+      "category": "calculation",
+      "prompt": "x³ − 1 を因数分解すると？",
+      "choices": [
+        "(x − 1)(x² − x ＋ 1)",
+        "(x − 1)(x² ＋ x ＋ 1)",
+        "(x ＋ 1)(x² − x ＋ 1)",
+        "(x − 1)³"
+      ],
+      "answerIndex": 1,
+      "explanation": "1＝1³ なので a³−b³＝(a−b)(a²＋ab＋b²) を使う（2つめのかっこの真ん中は＋）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-proof"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_proof_03_020",
+      "unit": "math.m2.expr.proof.binomial",
+      "category": "calculation",
+      "prompt": "(2x − 1)⁵ の展開式における x⁴ の係数は？",
+      "choices": [
+        "5",
+        "−80",
+        "−160",
+        "80"
+      ],
+      "answerIndex": 1,
+      "explanation": "一般項は 5C4·(2x)⁴·(−1)¹。5C4＝5 なので 5×16×−1＝−80。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-proof"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_proof_03_021",
+      "unit": "math.m2.expr.proof.division",
+      "category": "calculation",
+      "prompt": "2x² + 4x − 22 を x + 4 で割ったときの商と余りは？",
+      "choices": [
+        "商 2x − 4、余り −6",
+        "商 −2x + 4、余り −6",
+        "商 2x − 4、余り 7",
+        "商 2x − 3、余り −10"
+      ],
+      "answerIndex": 0,
+      "explanation": "2x² + 4x − 22＝(x + 4)(2x − 4)＋−6。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-proof"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_proof_03_022",
+      "unit": "math.m2.expr.proof.identity",
+      "category": "calculation",
+      "prompt": "−x² + 10x − 22 ＝ a(x − 3)² ＋ b(x − 3) ＋ c が x についての恒等式となるとき、c の値は？",
+      "choices": [
+        "4",
+        "2",
+        "−1",
+        "−22"
+      ],
+      "answerIndex": 2,
+      "explanation": "x＝3 を代入すると c＝−1。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-proof"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_proof_03_023",
+      "unit": "math.m2.expr.proof.equality",
+      "category": "thinking",
+      "prompt": "不等式 A ≧ B を証明するときの基本的な方針は？",
+      "choices": [
+        "A − B ≧ 0 を示す",
+        "A＝B を示す",
+        "A と B に同じ数を代入する",
+        "A − B ≦ 0 を示す"
+      ],
+      "answerIndex": 0,
+      "explanation": "差をとって平方完成などで0以上を示す。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-proof"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_proof_03_024",
+      "unit": "math.m2.expr.proof.division",
+      "category": "calculation",
+      "prompt": "−3x² − 4x + 7 を x + 2 で割ったときの商と余りは？",
+      "choices": [
+        "商 −3x + 2、余り −2",
+        "商 3x − 2、余り 3",
+        "商 −3x + 3、余り 1",
+        "商 −3x + 2、余り 3"
+      ],
+      "answerIndex": 3,
+      "explanation": "−3x² − 4x + 7＝(x + 2)(−3x + 2)＋3。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-proof"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_proof_03_025",
+      "unit": "math.m2.expr.proof.division",
+      "category": "calculation",
+      "prompt": "x³ − x² − 2x − 8 を x − 3 で割ったときの商と余りは？",
+      "choices": [
+        "商 x² + 2x + 5、余り 7",
+        "商 x² + 2x + 4、余り −3",
+        "商 x² + 2x + 4、余り 4",
+        "商 −x² − 2x − 4、余り 4"
+      ],
+      "answerIndex": 2,
+      "explanation": "x³ − x² − 2x − 8＝(x − 3)(x² + 2x + 4)＋4。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-proof"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_proof_03_026",
+      "unit": "math.m2.expr.proof.division",
+      "category": "calculation",
+      "prompt": "x³ + 2x² − 8x + 5 を x + 4 で割ったときの商と余りは？",
+      "choices": [
+        "商 x² − 2x、余り 5",
+        "商 −x² + 2x、余り 5",
+        "商 x² − 2x + 1、余り 1",
+        "商 x² − 2x、余り −4"
+      ],
+      "answerIndex": 0,
+      "explanation": "x³ + 2x² − 8x + 5＝(x + 4)(x² − 2x)＋5。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-proof"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_proof_03_027",
+      "unit": "math.m2.expr.proof.identity",
+      "category": "calculation",
+      "prompt": "−3x² + 4x − 2 ＝ a(x − 1)² ＋ b(x − 1) ＋ c が x についての恒等式となるとき、c の値は？",
+      "choices": [
+        "−2",
+        "0",
+        "1",
+        "−1"
+      ],
+      "answerIndex": 3,
+      "explanation": "x＝1 を代入すると c＝−1。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-proof"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_proof_03_028",
+      "unit": "math.m2.expr.proof.binomial",
+      "category": "calculation",
+      "prompt": "二項係数の和 8C0＋8C1＋…＋8C8 の値は？",
+      "choices": [
+        "256",
+        "64",
+        "255",
+        "128"
+      ],
+      "answerIndex": 0,
+      "explanation": "(1＋1)⁸＝2⁸。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-proof"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_proof_03_029",
+      "unit": "math.m2.expr.proof.binomial",
+      "category": "calculation",
+      "prompt": "(3x + 3)⁴ の展開式における x² の係数は？",
+      "choices": [
+        "6",
+        "486",
+        "162",
+        "−486"
+      ],
+      "answerIndex": 1,
+      "explanation": "一般項は 4C2·(3x)²·(3)²。4C2＝6 なので 6×9×9＝486。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-proof"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_proof_03_030",
+      "unit": "math.m2.expr.proof.binomial",
+      "category": "calculation",
+      "prompt": "(3x + 3)⁴ の展開式における x¹ の係数は？",
+      "choices": [
+        "−324",
+        "36",
+        "4",
+        "324"
+      ],
+      "answerIndex": 3,
+      "explanation": "一般項は 4C1·(3x)¹·(3)³。4C1＝4 なので 4×3×27＝324。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-proof"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_proof_03_031",
+      "unit": "math.m2.expr.proof.binomial",
+      "category": "calculation",
+      "prompt": "(x + 3)⁴ の展開式における x² の係数は？",
+      "choices": [
+        "6",
+        "−54",
+        "18",
+        "54"
+      ],
+      "answerIndex": 3,
+      "explanation": "一般項は 4C2·(x)²·(3)²。4C2＝6 なので 6×1×9＝54。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-proof"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_proof_03_032",
+      "unit": "math.m2.expr.proof",
+      "category": "calculation",
+      "prompt": "x³ − 64 を因数分解すると？",
+      "choices": [
+        "(x − 4)(x² ＋ 4x ＋ 16)",
+        "(x − 4)³",
+        "(x ＋ 4)(x² − 4x ＋ 16)",
+        "(x − 4)(x² − 4x ＋ 16)"
+      ],
+      "answerIndex": 0,
+      "explanation": "64＝4³ なので a³−b³＝(a−b)(a²＋ab＋b²) を使う（2つめのかっこの真ん中は＋）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-proof"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_proof_03_033",
+      "unit": "math.m2.expr.proof.binomial",
+      "category": "calculation",
+      "prompt": "(−2x − 2)⁵ の展開式における x³ の係数は？",
+      "choices": [
+        "10",
+        "160",
+        "−320",
+        "320"
+      ],
+      "answerIndex": 2,
+      "explanation": "一般項は 5C3·(−2x)³·(−2)²。5C3＝10 なので 10×−8×4＝−320。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-proof"
+      ]
+    }
+  ]
+}

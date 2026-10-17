@@ -1,0 +1,45 @@
+# Web版（https://tsuzuri-quest-v2.web.app）を自動で更新する。
+# 開発ブランチに push されたとき、または GitHub の Actions 画面から手動で実行したときに動く。
+# 秘密鍵 FIREBASE_SERVICE_ACCOUNT_TSUZURI_QUEST_V2 が未登録なら、何もせずに終わる。
+name: Web版を公開
+
+on:
+  push:
+    branches: [claude/gallant-tesla-kvdjs2]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-web
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      HAS_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_TSUZURI_QUEST_V2 != '' }}
+    steps:
+      - name: 秘密鍵の確認
+        if: env.HAS_KEY != 'true'
+        run: echo "::notice::FIREBASE_SERVICE_ACCOUNT_TSUZURI_QUEST_V2 が未登録のため公開をスキップしました"
+      - uses: actions/checkout@v4
+        if: env.HAS_KEY == 'true'
+      - uses: subosito/flutter-action@v2
+        if: env.HAS_KEY == 'true'
+        with:
+          flutter-version: 3.47.6
+          channel: stable
+          cache: true
+      - name: Web版をビルド
+        if: env.HAS_KEY == 'true'
+        working-directory: rpg_game_app
+        run: |
+          flutter pub get
+          flutter build web --release --pwa-strategy=none
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        if: env.HAS_KEY == 'true'
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_TSUZURI_QUEST_V2 }}
+          projectId: tsuzuri-quest-v2
+          channelId: live
+          entryPoint: rpg_game_app

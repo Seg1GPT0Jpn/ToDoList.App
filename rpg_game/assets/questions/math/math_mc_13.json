@@ -1,0 +1,288 @@
+{
+  "setId": "math_mc_13",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_mc13_001",
+      "unit": "math.mc.express.express.matrix",
+      "category": "calculation",
+      "prompt": "行列 [[1, 2], [3, 4]]+[[0, 1], [1, 0]] を計算すると？",
+      "choices": [
+        "[[1, 2], [3, 4]]",
+        "[[1, 1], [1, 1]]",
+        "[[1, 3], [4, 4]]",
+        "[[0, 2], [3, 0]]"
+      ],
+      "answerIndex": 2,
+      "explanation": "同じ位置の成分どうしを足す。"
+    },
+    {
+      "id": "mat_mc13_002",
+      "unit": "math.mc.express.express.matrix",
+      "category": "knowledge",
+      "prompt": "行列 [[1, 0], [0, 1]] を何という？",
+      "choices": [
+        "転置行列",
+        "単位行列",
+        "逆行列",
+        "零行列"
+      ],
+      "answerIndex": 1,
+      "explanation": "かけても相手を変えない行列。"
+    },
+    {
+      "id": "mat_mc13_003",
+      "unit": "math.mc.express.express",
+      "category": "calculation",
+      "prompt": "[[2, 0], [0, 3]] と列ベクトル [[1], [1]] の積は？",
+      "choices": [
+        "[[2], [0]]",
+        "[[2], [3]]",
+        "[[1], [1]]",
+        "[[5], [5]]"
+      ],
+      "answerIndex": 1,
+      "explanation": "行ごとに成分をかけて足す。"
+    },
+    {
+      "id": "mat_mc13_004",
+      "unit": "math.mc.express.express.chart",
+      "category": "knowledge",
+      "prompt": "一筆書きができるグラフの条件は？（つながったグラフ）",
+      "choices": [
+        "辺が偶数本",
+        "奇数本の辺が集まる頂点が0個か2個",
+        "頂点がすべて偶数個",
+        "頂点が4つ以下"
+      ],
+      "answerIndex": 1,
+      "explanation": "オイラーの一筆書きの定理。"
+    },
+    {
+      "id": "mat_mc13_005",
+      "unit": "math.mc.express.express.network",
+      "category": "calculation",
+      "prompt": "5つの頂点のどの2つも辺で結んだグラフ（完全グラフ）の辺の数は？",
+      "choices": [
+        "20",
+        "10",
+        "25",
+        "5"
+      ],
+      "answerIndex": 1,
+      "explanation": "₅C₂。"
+    },
+    {
+      "id": "mat_mc13_006",
+      "unit": "math.mc.express.express.chart",
+      "category": "knowledge",
+      "prompt": "項目を多い順に並べた棒グラフと、累積比率の折れ線を組み合わせた図は？",
+      "choices": [
+        "散布図",
+        "パレート図",
+        "箱ひげ図",
+        "円グラフ"
+      ],
+      "answerIndex": 1,
+      "explanation": "重点的に取り組む項目を見つけるのに使う。"
+    },
+    {
+      "id": "mat_mc13_007",
+      "unit": "math.mc.express.express.chart",
+      "category": "knowledge",
+      "prompt": "複数の項目のバランスを比べるのに向いたグラフは？",
+      "choices": [
+        "レーダーチャート",
+        "ヒストグラム",
+        "散布図",
+        "折れ線グラフ"
+      ],
+      "answerIndex": 0,
+      "explanation": "くもの巣のような形のグラフ。"
+    },
+    {
+      "id": "mat_mc13_008",
+      "unit": "math.mc.express.express.network",
+      "category": "calculation",
+      "prompt": "頂点 A、B、C で辺が A−B、B−C だけのグラフ。隣接行列の A の行は？（列の順は A、B、C）",
+      "choices": [
+        "[0, 1, 1]",
+        "[1, 1, 0]",
+        "[1, 0, 1]",
+        "[0, 1, 0]"
+      ],
+      "answerIndex": 3,
+      "explanation": "A と結ばれているのは B だけ。"
+    },
+    {
+      "id": "mat_mc13_009",
+      "unit": "math.mc.express.express",
+      "category": "calculation",
+      "prompt": "[[1, 1], [1, 0]]² を計算すると？",
+      "choices": [
+        "[[1, 2], [2, 1]]",
+        "[[1, 1], [1, 0]]",
+        "[[2, 2], [2, 0]]",
+        "[[2, 1], [1, 1]]"
+      ],
+      "answerIndex": 3,
+      "explanation": "行×列で計算する。"
+    },
+    {
+      "id": "mat_mc13_010",
+      "unit": "math.mc.express.express.matrix",
+      "category": "thinking",
+      "prompt": "行列を使うと便利な場面は？",
+      "choices": [
+        "多くの数を表にまとめて、一度にまとめて計算したいとき",
+        "図がかけないとき",
+        "確率を求めるとき",
+        "1つの数だけを扱うとき"
+      ],
+      "answerIndex": 0,
+      "explanation": "例：商品の個数×価格の計算、図形の変換。"
+    },
+    {
+      "id": "mat_mc13_011",
+      "unit": "math.mc.express.express.matrix",
+      "category": "calculation",
+      "prompt": "行列 [[2, 1], [0, 3]]−[[1, 1], [1, 1]] を計算すると？",
+      "choices": [
+        "[[1, 0], [−1, 2]]",
+        "[[1, 0], [1, 2]]",
+        "[[3, 2], [1, 4]]",
+        "[[1, 1], [−1, 2]]"
+      ],
+      "answerIndex": 0,
+      "explanation": "成分ごとに引く。"
+    },
+    {
+      "id": "mat_mc13_012",
+      "unit": "math.mc.express.express",
+      "category": "calculation",
+      "prompt": "2×[[1, −1], [0, 2]] を計算すると？",
+      "choices": [
+        "[[2, −1], [0, 2]]",
+        "[[3, 1], [2, 4]]",
+        "[[2, −2], [0, 4]]",
+        "[[1, −2], [0, 4]]"
+      ],
+      "answerIndex": 2,
+      "explanation": "すべての成分を2倍。"
+    },
+    {
+      "id": "mat_mc13_013",
+      "unit": "math.mc.express.express",
+      "category": "calculation",
+      "prompt": "[[1, 2], [0, 1]] と列ベクトル [[3], [1]] の積は？",
+      "choices": [
+        "[[4], [1]]",
+        "[[5], [1]]",
+        "[[3], [1]]",
+        "[[3], [2]]"
+      ],
+      "answerIndex": 1,
+      "explanation": "(1·3+2·1, 0·3+1·1)。"
+    },
+    {
+      "id": "mat_mc13_014",
+      "unit": "math.mc.express.express.network",
+      "category": "calculation",
+      "prompt": "頂点の次数が 2, 2, 2, 2 のつながったグラフは一筆書きできる？",
+      "choices": [
+        "できる（始点に戻ってこられる）",
+        "辺が足りない",
+        "始点と終点がちがえばできる",
+        "できない"
+      ],
+      "answerIndex": 0,
+      "explanation": "奇数次の頂点が0個なら一筆書きでき、元に戻る。"
+    },
+    {
+      "id": "mat_mc13_015",
+      "unit": "math.mc.express.express.network",
+      "category": "calculation",
+      "prompt": "4つの頂点のどの2つも辺で結んだグラフの辺の数は？",
+      "choices": [
+        "6",
+        "8",
+        "12",
+        "4"
+      ],
+      "answerIndex": 0,
+      "explanation": "₄C₂=6。"
+    },
+    {
+      "id": "mat_mc13_016",
+      "unit": "math.mc.express.express.chart",
+      "category": "knowledge",
+      "prompt": "全体に対する割合を表すのに向いたグラフは？",
+      "choices": [
+        "散布図",
+        "箱ひげ図",
+        "円グラフ・帯グラフ",
+        "折れ線グラフ"
+      ],
+      "answerIndex": 2,
+      "explanation": "部分が全体のどれだけかを示す。"
+    },
+    {
+      "id": "mat_mc13_017",
+      "unit": "math.mc.express.express.chart",
+      "category": "knowledge",
+      "prompt": "時間とともに変わる量の変化を表すのに向いたグラフは？",
+      "choices": [
+        "折れ線グラフ",
+        "ヒストグラム",
+        "レーダーチャート",
+        "円グラフ"
+      ],
+      "answerIndex": 0,
+      "explanation": "増減の様子が線の傾きで分かる。"
+    },
+    {
+      "id": "mat_mc13_018",
+      "unit": "math.mc.express.express.network",
+      "category": "calculation",
+      "prompt": "頂点 A、B、C で辺が A−B、A−C、B−C のグラフ。頂点 A の次数は？",
+      "choices": [
+        "0",
+        "2",
+        "3",
+        "1"
+      ],
+      "answerIndex": 1,
+      "explanation": "A から出る辺は A−B と A−C。"
+    },
+    {
+      "id": "mat_mc13_019",
+      "unit": "math.mc.express.express",
+      "category": "calculation",
+      "prompt": "[[0, 1], [1, 0]]² を計算すると？",
+      "choices": [
+        "[[1, 0], [0, 1]]",
+        "[[0, 0], [0, 0]]",
+        "[[0, 1], [1, 0]]",
+        "[[2, 0], [0, 2]]"
+      ],
+      "answerIndex": 0,
+      "explanation": "入れかえを2回すると元に戻る。"
+    },
+    {
+      "id": "mat_mc13_020",
+      "unit": "math.mc.express.express.chart",
+      "category": "thinking",
+      "prompt": "データをグラフにするときの注意として適切なのは？",
+      "choices": [
+        "データは都合のよいものだけ使う",
+        "軸のラベルは省略する",
+        "目盛りの始まりを0以外にすると差が大きく見えることに気をつける",
+        "いつも円グラフを使う"
+      ],
+      "answerIndex": 2,
+      "explanation": "縦軸の省略などで印象が変わるので、読む側も作る側も注意する。"
+    }
+  ]
+}

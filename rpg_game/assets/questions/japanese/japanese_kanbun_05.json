@@ -1,0 +1,344 @@
+{
+  "setId": "japanese_kanbun_05",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "jap_kanbun05_001",
+      "unit": "japanese.kanbun.kuho.limit.limit",
+      "category": "knowledge",
+      "prompt": "「唯」「只」「但」の読みは？",
+      "choices": [
+        "たとひ",
+        "もし",
+        "いはんや",
+        "ただ（〜のみ）"
+      ],
+      "answerIndex": 3,
+      "explanation": "限定を表す。"
+    },
+    {
+      "id": "jap_kanbun05_002",
+      "unit": "japanese.kanbun.kuho.limit.limit",
+      "category": "knowledge",
+      "prompt": "文末の「耳」「已」「爾」の読みは？",
+      "choices": [
+        "なり",
+        "のみ",
+        "や",
+        "かな"
+      ],
+      "answerIndex": 1,
+      "explanation": "限定・強調を表す。"
+    },
+    {
+      "id": "jap_kanbun05_003",
+      "unit": "japanese.kanbun.kuho.limit.limit",
+      "category": "knowledge",
+      "prompt": "「不二唯〜一」の意味は？",
+      "choices": [
+        "ただ〜だけではない（累加）",
+        "〜してはいけない",
+        "ただ〜だけだ",
+        "決して〜ない"
+      ],
+      "answerIndex": 0,
+      "explanation": "唯だに〜のみならず。"
+    },
+    {
+      "id": "jap_kanbun05_004",
+      "unit": "japanese.kanbun.kuho.limit.hypothesis",
+      "category": "knowledge",
+      "prompt": "「如」「若」を「もし」と読むときのはたらきは？",
+      "choices": [
+        "限定",
+        "仮定（もし〜ならば）",
+        "比較",
+        "詠嘆"
+      ],
+      "answerIndex": 1,
+      "explanation": "「如し〜ば」。"
+    },
+    {
+      "id": "jap_kanbun05_005",
+      "unit": "japanese.kanbun.kuho.limit.hypothesis",
+      "category": "knowledge",
+      "prompt": "「縦」を「たとひ」と読むときの意味は？",
+      "choices": [
+        "まして〜はなおさらだ",
+        "ただ〜だけ",
+        "もし〜ならば",
+        "たとえ〜としても"
+      ],
+      "answerIndex": 3,
+      "explanation": "逆接の仮定。「縦ひ〜とも」。"
+    },
+    {
+      "id": "jap_kanbun05_006",
+      "unit": "japanese.kanbun.kuho.limit.yokuyo",
+      "category": "knowledge",
+      "prompt": "「A 且 B、況 C 乎」の意味は？",
+      "choices": [
+        "A でさえ B だ、まして C はなおさらだ",
+        "A ならば C である",
+        "A と C はともに B だ",
+        "A も C も B ではない"
+      ],
+      "answerIndex": 0,
+      "explanation": "A すら且つ B、況んや C をや。抑揚の形。"
+    },
+    {
+      "id": "jap_kanbun05_007",
+      "unit": "japanese.kanbun.kuho.limit.yokuyo",
+      "category": "knowledge",
+      "prompt": "「嗚呼」の読みと意味は？",
+      "choices": [
+        "あに（反語）",
+        "ただ（限定）",
+        "もし（仮定）",
+        "ああ（詠嘆）"
+      ],
+      "answerIndex": 3,
+      "explanation": "文末の「哉」「夫」（かな）も詠嘆を表す。"
+    },
+    {
+      "id": "jap_kanbun05_008",
+      "unit": "japanese.kanbun.kuho.limit.yokuyo",
+      "category": "thinking",
+      "prompt": "「死馬且買レ之、況生者乎」の意味は？",
+      "choices": [
+        "死んだ馬も生きた馬も買わない",
+        "死んだ馬でさえ買うのだから、生きている馬ならなおさら買う",
+        "生きた馬より死んだ馬がよい",
+        "死んだ馬を買ってはいけない"
+      ],
+      "answerIndex": 1,
+      "explanation": "死馬すら且つ之を買ふ、況んや生ける者をや。「隗より始めよ」の故事。（十八史略）"
+    },
+    {
+      "id": "jap_kanbun05_009",
+      "unit": "japanese.kanbun.kuho.limit",
+      "category": "thinking",
+      "prompt": "「先従レ隗始」の故事が表す意味は？",
+      "choices": [
+        "大きなことを始めるには、まず身近なことから始めよ／言い出した者から始めよ",
+        "始める前によく考えよ",
+        "急いで始めよ",
+        "他人に任せるのがよい"
+      ],
+      "answerIndex": 0,
+      "explanation": "郭隗が燕の昭王に、まず自分を優遇すれば、賢者が集まると説いた。（十八史略）"
+    },
+    {
+      "id": "jap_kanbun05_010",
+      "unit": "japanese.kanbun.kuho.limit",
+      "category": "thinking",
+      "prompt": "「学而不レ思則罔」の意味として適切なものは？",
+      "choices": [
+        "学ぶだけで考えないと、物事がはっきりしない",
+        "考えずに学ぶのがよい",
+        "学ぶ必要はない",
+        "考えれば学ばなくてよい"
+      ],
+      "answerIndex": 0,
+      "explanation": "学びて思はざれば則ち罔し。（論語）"
+    },
+    {
+      "id": "jap_kanbun05_011",
+      "unit": "japanese.kanbun.kuho.limit.hypothesis",
+      "category": "thinking",
+      "prompt": "「苟〜」を「いやしくも」と読むときの意味は？",
+      "choices": [
+        "かりにも〜ならば",
+        "ただ〜だけ",
+        "たとえ〜でも",
+        "まして〜なら"
+      ],
+      "answerIndex": 0,
+      "explanation": "仮定を表す。"
+    },
+    {
+      "id": "jap_kanbun05_012",
+      "unit": "japanese.kanbun.kuho.limit",
+      "category": "thinking",
+      "prompt": "「朝聞レ道、夕死可矣」の意味は？",
+      "choices": [
+        "朝に道を聞くと夕方に死ぬ",
+        "夕方に道を聞くべきだ",
+        "朝に正しい道を聞けたなら、その夕方に死んでもかまわない",
+        "朝から晩まで道を歩く"
+      ],
+      "answerIndex": 2,
+      "explanation": "朝に道を聞かば、夕べに死すとも可なり。（論語）"
+    },
+    {
+      "id": "jap_kanbun05_013",
+      "unit": "japanese.kanbun.kuho.limit.limit",
+      "category": "knowledge",
+      "prompt": "「独」を限定で使うときの読み方は？",
+      "choices": [
+        "もし〜ば",
+        "ただに〜のみならず",
+        "いはんや",
+        "ひとり〜のみ"
+      ],
+      "answerIndex": 3,
+      "explanation": "「ただ〜だけ」の意味。"
+    },
+    {
+      "id": "jap_kanbun05_014",
+      "unit": "japanese.kanbun.kuho.limit.limit",
+      "category": "knowledge",
+      "prompt": "限定の「特」の読みは？",
+      "choices": [
+        "ひとり",
+        "ただ",
+        "もし",
+        "とくに"
+      ],
+      "answerIndex": 1,
+      "explanation": "「特だ〜のみ」。"
+    },
+    {
+      "id": "jap_kanbun05_015",
+      "unit": "japanese.kanbun.kuho.limit.hypothesis",
+      "category": "knowledge",
+      "prompt": "「雖」の読みと意味は？",
+      "choices": [
+        "〜といへども（〜けれども・たとえ〜としても）",
+        "〜のみ",
+        "〜ならば",
+        "〜ごとし"
+      ],
+      "answerIndex": 0,
+      "explanation": "逆接の確定・仮定を表す。"
+    },
+    {
+      "id": "jap_kanbun05_016",
+      "unit": "japanese.kanbun.kuho.limit.hypothesis",
+      "category": "knowledge",
+      "prompt": "「微」を仮定で使うとき、「微A」の意味は？",
+      "choices": [
+        "A だけ",
+        "A でさえ",
+        "もし A がなかったならば",
+        "A はわずかだ"
+      ],
+      "answerIndex": 2,
+      "explanation": "「A 微かりせば」と読む。"
+    },
+    {
+      "id": "jap_kanbun05_017",
+      "unit": "japanese.kanbun.kuho.limit.yokuyo",
+      "category": "knowledge",
+      "prompt": "「況」の読みは？",
+      "choices": [
+        "すなはち",
+        "まさに",
+        "いはんや",
+        "けだし"
+      ],
+      "answerIndex": 2,
+      "explanation": "抑揚形「況んや〜をや」で使う。"
+    },
+    {
+      "id": "jap_kanbun05_018",
+      "unit": "japanese.kanbun.kuho.limit.yokuyo",
+      "category": "knowledge",
+      "prompt": "抑揚形「A 且 B、況 C 乎」で、「且」の読みは？",
+      "choices": [
+        "まさに",
+        "しばらく",
+        "（すら）かつ",
+        "また"
+      ],
+      "answerIndex": 2,
+      "explanation": "「A すら且つ B、況んや C をや」。"
+    },
+    {
+      "id": "jap_kanbun05_019",
+      "unit": "japanese.kanbun.kuho.limit.yokuyo",
+      "category": "knowledge",
+      "prompt": "文末の「哉」を詠嘆で読むと？",
+      "choices": [
+        "かな",
+        "のみ",
+        "なり",
+        "や"
+      ],
+      "answerIndex": 0,
+      "explanation": "反語では「や」と読むこともある。"
+    },
+    {
+      "id": "jap_kanbun05_020",
+      "unit": "japanese.kanbun.kuho.limit.yokuyo",
+      "category": "knowledge",
+      "prompt": "「何其〜也」の読みと意味は？",
+      "choices": [
+        "いかんせん",
+        "なんぞ其れ〜や（なんと〜なことよ）",
+        "なにを其れ〜せん",
+        "いづくんぞ〜ん"
+      ],
+      "answerIndex": 1,
+      "explanation": "詠嘆を表す。"
+    },
+    {
+      "id": "jap_kanbun05_021",
+      "unit": "japanese.kanbun.kuho.limit.limit",
+      "category": "thinking",
+      "prompt": "「唯仁者能好レ人」の書き下し文は？",
+      "choices": [
+        "仁者は唯だ人を好む",
+        "仁者能く唯だ人を好む",
+        "唯仁者は人を好まず",
+        "唯だ仁者のみ能く人を好む"
+      ],
+      "answerIndex": 3,
+      "explanation": "（論語）ただ仁者だけが本当に人を好むことができる。"
+    },
+    {
+      "id": "jap_kanbun05_022",
+      "unit": "japanese.kanbun.kuho.limit",
+      "category": "thinking",
+      "prompt": "「雖二千万人一、吾往矣」の意味は？",
+      "choices": [
+        "たとえ相手が千万人いても、自分は行く",
+        "千万人が自分を待っている",
+        "千万人と一緒に行く",
+        "千万人がいるので、自分は行かない"
+      ],
+      "answerIndex": 0,
+      "explanation": "千万人と雖も吾往かん。（孟子）"
+    },
+    {
+      "id": "jap_kanbun05_023",
+      "unit": "japanese.kanbun.kuho.limit.yokuyo",
+      "category": "thinking",
+      "prompt": "「禽獣且知レ恩、況人乎」の意味は？",
+      "choices": [
+        "鳥や獣でさえ恩を知っている、まして人はなおさらだ",
+        "鳥や獣は恩を知らない",
+        "人も鳥も恩を知らない",
+        "人は鳥や獣より恩を知らない"
+      ],
+      "answerIndex": 0,
+      "explanation": "抑揚の形。"
+    },
+    {
+      "id": "jap_kanbun05_024",
+      "unit": "japanese.kanbun.kuho.limit.yokuyo",
+      "category": "thinking",
+      "prompt": "「嗚呼哀哉」の書き下し文は？",
+      "choices": [
+        "嗚呼哀しからず",
+        "哀しきや嗚呼",
+        "嗚呼哀しむや",
+        "嗚呼哀しいかな"
+      ],
+      "answerIndex": 3,
+      "explanation": "詠嘆の形。"
+    }
+  ]
+}

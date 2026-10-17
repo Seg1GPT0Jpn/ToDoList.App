@@ -1,0 +1,232 @@
+{
+  "setId": "music_yougo_02",
+  "worldId": "music",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mus_yougo02_001",
+      "unit": "music.theory.terms.expression.dynamics",
+      "category": "knowledge",
+      "prompt": "記号「pp」の意味は？",
+      "choices": [
+        "だんだん弱く",
+        "強く、すぐ弱く",
+        "ごく弱く",
+        "その音を特に強く"
+      ],
+      "answerIndex": 2,
+      "explanation": "pp＝ごく弱く。"
+    },
+    {
+      "id": "mus_yougo02_002",
+      "unit": "music.theory.terms.expression.dynamics",
+      "category": "knowledge",
+      "prompt": "記号「p」の意味は？",
+      "choices": [
+        "その音を特に強く",
+        "非常に",
+        "弱く",
+        "強く、すぐ弱く"
+      ],
+      "answerIndex": 2,
+      "explanation": "p＝弱く。"
+    },
+    {
+      "id": "mus_yougo02_003",
+      "unit": "music.theory.terms.expression",
+      "category": "knowledge",
+      "prompt": "「少し弱く」という意味の記号は？",
+      "choices": [
+        "mp",
+        "fp",
+        "ff",
+        "mf"
+      ],
+      "answerIndex": 0,
+      "explanation": "mp＝少し弱く。"
+    },
+    {
+      "id": "mus_yougo02_004",
+      "unit": "music.theory.terms.expression.dynamics",
+      "category": "knowledge",
+      "prompt": "記号「mf」の意味は？",
+      "choices": [
+        "少し強く",
+        "だんだん強く",
+        "強く、すぐ弱く",
+        "急に"
+      ],
+      "answerIndex": 0,
+      "explanation": "mf＝少し強く。"
+    },
+    {
+      "id": "mus_yougo02_005",
+      "unit": "music.theory.terms.expression.dynamics",
+      "category": "knowledge",
+      "prompt": "記号「f」の意味は？",
+      "choices": [
+        "ごく強く",
+        "強く",
+        "だんだん強く",
+        "少しずつ"
+      ],
+      "answerIndex": 1,
+      "explanation": "f＝強く。"
+    },
+    {
+      "id": "mus_yougo02_006",
+      "unit": "music.theory.terms.expression.dynamics",
+      "category": "knowledge",
+      "prompt": "「ごく強く」という意味の記号は？",
+      "choices": [
+        "molto",
+        "mp",
+        "pp",
+        "ff"
+      ],
+      "answerIndex": 3,
+      "explanation": "ff＝ごく強く。"
+    },
+    {
+      "id": "mus_yougo02_007",
+      "unit": "music.theory.terms.expression.dynamics",
+      "category": "knowledge",
+      "prompt": "記号「crescendo（cresc.）」の意味は？",
+      "choices": [
+        "急に",
+        "強く、すぐ弱く",
+        "非常に",
+        "だんだん強く"
+      ],
+      "answerIndex": 3,
+      "explanation": "crescendo（cresc.）＝だんだん強く。"
+    },
+    {
+      "id": "mus_yougo02_008",
+      "unit": "music.theory.terms.expression",
+      "category": "knowledge",
+      "prompt": "記号「diminuendo（dim.）」の意味は？",
+      "choices": [
+        "強く",
+        "だんだん強く",
+        "だんだん弱く",
+        "非常に"
+      ],
+      "answerIndex": 2,
+      "explanation": "diminuendo（dim.）＝だんだん弱く。"
+    },
+    {
+      "id": "mus_yougo02_009",
+      "unit": "music.theory.terms.expression",
+      "category": "knowledge",
+      "prompt": "「その音を特に強く」という意味の記号は？",
+      "choices": [
+        "sforzando（sf）",
+        "poco a poco",
+        "p",
+        "mp"
+      ],
+      "answerIndex": 0,
+      "explanation": "sforzando（sf）＝その音を特に強く。"
+    },
+    {
+      "id": "mus_yougo02_010",
+      "unit": "music.theory.terms.expression.dynamics",
+      "category": "knowledge",
+      "prompt": "記号「fp」の意味は？",
+      "choices": [
+        "少し強く",
+        "だんだん弱く",
+        "強く、すぐ弱く",
+        "非常に"
+      ],
+      "answerIndex": 2,
+      "explanation": "fp＝強く、すぐ弱く。"
+    },
+    {
+      "id": "mus_yougo02_011",
+      "unit": "music.theory.terms.expression",
+      "category": "knowledge",
+      "prompt": "記号「subito」の意味は？",
+      "choices": [
+        "強く、すぐ弱く",
+        "急に",
+        "強く",
+        "少し強く"
+      ],
+      "answerIndex": 1,
+      "explanation": "subito＝急に。"
+    },
+    {
+      "id": "mus_yougo02_012",
+      "unit": "music.theory.terms.expression.dynamics",
+      "category": "knowledge",
+      "prompt": "「少しずつ」という意味の記号は？",
+      "choices": [
+        "sforzando（sf）",
+        "poco a poco",
+        "p",
+        "molto"
+      ],
+      "answerIndex": 1,
+      "explanation": "poco a poco＝少しずつ。"
+    },
+    {
+      "id": "mus_yougo02_013",
+      "unit": "music.theory.terms.expression",
+      "category": "knowledge",
+      "prompt": "記号「molto」の意味は？",
+      "choices": [
+        "少し弱く",
+        "少しずつ",
+        "非常に",
+        "少し強く"
+      ],
+      "answerIndex": 2,
+      "explanation": "molto＝非常に。"
+    },
+    {
+      "id": "mus_yougo02_014",
+      "unit": "music.theory.terms.expression.dynamics",
+      "category": "knowledge",
+      "prompt": "強弱記号を弱い順に正しく並べたものは？",
+      "choices": [
+        "p → pp → mp → mf → ff → f",
+        "pp → mp → p → f → mf → ff",
+        "mp → p → pp → f → mf → ff",
+        "pp → p → mp → mf → f → ff"
+      ],
+      "answerIndex": 3,
+      "explanation": "m は「少し」の意味。"
+    },
+    {
+      "id": "mus_yougo02_015",
+      "unit": "music.theory.terms.expression",
+      "category": "knowledge",
+      "prompt": "decrescendo（decresc.）と同じ意味の記号は？",
+      "choices": [
+        "diminuendo（dim.）",
+        "crescendo（cresc.）",
+        "ritardando（rit.）",
+        "sforzando（sf）"
+      ],
+      "answerIndex": 0,
+      "explanation": "どちらも「だんだん弱く」。"
+    },
+    {
+      "id": "mus_yougo02_016",
+      "unit": "music.theory.terms.expression.dynamics",
+      "category": "knowledge",
+      "prompt": "「mf」の m は何の略？",
+      "choices": [
+        "marcato（はっきりと）",
+        "mezzo（少し・やや）",
+        "molto（非常に）",
+        "meno（より少なく）"
+      ],
+      "answerIndex": 1,
+      "explanation": "mezzo forte＝少し強く。"
+    }
+  ]
+}

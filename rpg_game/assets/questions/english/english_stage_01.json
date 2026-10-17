@@ -1,0 +1,356 @@
+{
+  "setId": "english_stage_01",
+  "worldId": "english",
+  "origin": "original",
+  "version": 3,
+  "questions": [
+    {
+      "id": "en01_001",
+      "unit": "english.eng.vocab.basic.meaning",
+      "category": "meaning",
+      "prompt": "「borrow」の意味は？",
+      "choices": [
+        "覚えている",
+        "借りる",
+        "天気",
+        "減らす"
+      ],
+      "answerIndex": 1,
+      "explanation": "borrow は「借りる」。"
+    },
+    {
+      "id": "en01_002",
+      "unit": "english.eng.vocab.basic.meaning",
+      "category": "meaning",
+      "prompt": "「lend」の意味は？",
+      "choices": [
+        "集める",
+        "重要な",
+        "貸す",
+        "続ける"
+      ],
+      "answerIndex": 2,
+      "explanation": "lend は「貸す」。"
+    },
+    {
+      "id": "en01_003",
+      "unit": "english.eng.vocab.basic.meaning",
+      "category": "meaning",
+      "prompt": "「receive」の意味は？",
+      "choices": [
+        "信じる",
+        "受け取る",
+        "守る",
+        "招待する"
+      ],
+      "answerIndex": 1,
+      "explanation": "receive は「受け取る」。"
+    },
+    {
+      "id": "en01_004",
+      "unit": "english.eng.vocab.basic.meaning",
+      "category": "meaning",
+      "prompt": "「arrive」の意味は？",
+      "choices": [
+        "静かな",
+        "改善する",
+        "人気のある",
+        "到着する"
+      ],
+      "answerIndex": 3,
+      "explanation": "arrive は「到着する」。"
+    },
+    {
+      "id": "en01_005",
+      "unit": "english.eng.vocab.basic.meaning",
+      "category": "meaning",
+      "prompt": "「explain」の意味は？",
+      "choices": [
+        "覚えている",
+        "有名な",
+        "説明する",
+        "増やす"
+      ],
+      "answerIndex": 2,
+      "explanation": "explain は「説明する」。"
+    },
+    {
+      "id": "en01_006",
+      "unit": "english.eng.vocab.basic.meaning",
+      "category": "meaning",
+      "prompt": "「forget」の意味は？",
+      "choices": [
+        "覚えている",
+        "選ぶ",
+        "貸す",
+        "忘れる"
+      ],
+      "answerIndex": 3,
+      "explanation": "forget は「忘れる」。"
+    },
+    {
+      "id": "en01_007",
+      "unit": "english.eng.vocab.basic.meaning",
+      "category": "meaning",
+      "prompt": "「remember」の意味は？",
+      "choices": [
+        "覚えている",
+        "選ぶ",
+        "健康な",
+        "壊す"
+      ],
+      "answerIndex": 0,
+      "explanation": "remember は「覚えている」。"
+    },
+    {
+      "id": "en01_008",
+      "unit": "english.eng.vocab.basic.meaning",
+      "category": "meaning",
+      "prompt": "「decide」の意味は？",
+      "choices": [
+        "改善する",
+        "旅行する",
+        "決める",
+        "報告する"
+      ],
+      "answerIndex": 2,
+      "explanation": "decide は「決める」。"
+    },
+    {
+      "id": "en01_009",
+      "unit": "english.eng.vocab.idiom.idiom",
+      "category": "meaning",
+      "prompt": "「look forward to ～」の意味は？",
+      "choices": [
+        "～を突き止める",
+        "～を楽しみに待つ",
+        "初めて",
+        "ところで"
+      ],
+      "answerIndex": 1,
+      "explanation": "look forward to ～ は「～を楽しみに待つ」。"
+    },
+    {
+      "id": "en01_010",
+      "unit": "english.eng.vocab.idiom.idiom",
+      "category": "meaning",
+      "prompt": "「take care of ～」の意味は？",
+      "choices": [
+        "～を思いつく",
+        "～に追いつく",
+        "時間どおりに",
+        "～の世話をする"
+      ],
+      "answerIndex": 3,
+      "explanation": "take care of ～ は「～の世話をする」。"
+    },
+    {
+      "id": "en01_011",
+      "unit": "english.eng.vocab.basic.pos",
+      "category": "partOfSpeech",
+      "prompt": "次のうち「名詞」はどれ？",
+      "choices": [
+        "decide",
+        "decision",
+        "decisive",
+        "decisively"
+      ],
+      "answerIndex": 1,
+      "explanation": "-sion は名詞を作る語尾。decide（動詞）→ decision（名詞）→ decisive（形容詞）→ decisively（副詞）。"
+    },
+    {
+      "id": "en01_012",
+      "unit": "english.eng.vocab.basic.pos",
+      "category": "partOfSpeech",
+      "prompt": "次のうち「副詞」はどれ？",
+      "choices": [
+        "happy",
+        "happiness",
+        "happily",
+        "unhappy"
+      ],
+      "answerIndex": 2,
+      "explanation": "形容詞 + -ly で副詞になることが多い。happy → happily。"
+    },
+    {
+      "id": "en01_013",
+      "unit": "english.eng.grammar.participle.complement",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "She looks (   ) today.",
+      "choices": [
+        "happily",
+        "happiness",
+        "happy",
+        "to happy"
+      ],
+      "answerIndex": 2,
+      "explanation": "look は後ろに補語（形容詞）をとり「〜に見える」。副詞は補語になれない。"
+    },
+    {
+      "id": "en01_014",
+      "unit": "english.eng.grammar.infinitive.causative",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The news made him (   ).",
+      "choices": [
+        "happily",
+        "happy",
+        "to happy",
+        "happiness"
+      ],
+      "answerIndex": 1,
+      "explanation": "make + O + C で「O を C（の状態）にする」。C には形容詞が入る。"
+    },
+    {
+      "id": "en01_015",
+      "unit": "english.eng.grammar.tense",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "My uncle gave (   ) a watch.",
+      "choices": [
+        "to me",
+        "for me",
+        "me",
+        "my"
+      ],
+      "answerIndex": 2,
+      "explanation": "give + 人 + 物 で「人に物を与える」。to を使うなら gave a watch to me の語順。"
+    },
+    {
+      "id": "en01_016",
+      "unit": "english.eng.grammar.sentence.verb",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He (   ) the room quietly.",
+      "choices": [
+        "entered into",
+        "arrived",
+        "went",
+        "entered"
+      ],
+      "answerIndex": 3,
+      "explanation": "enter は他動詞なので前置詞なしで目的語をとる（enter the room）。arrive と go は at / to などが必要。"
+    },
+    {
+      "id": "en01_017",
+      "unit": "english.eng.grammar.sentence.verb",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "We discussed (   ) plan for the trip.",
+      "choices": [
+        "about the",
+        "on the",
+        "with the",
+        "the"
+      ],
+      "answerIndex": 3,
+      "explanation": "discuss は他動詞。「〜について話し合う」でも about は付けない。"
+    },
+    {
+      "id": "en01_018",
+      "unit": "english.eng.grammar.tense.perfect",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I have lived in this town (   ) 2015.",
+      "choices": [
+        "for",
+        "since",
+        "during",
+        "by"
+      ],
+      "answerIndex": 1,
+      "explanation": "現在完了で「〜以来ずっと」と起点を表すのは since。for は期間（for ten years）。"
+    },
+    {
+      "id": "en01_019",
+      "unit": "english.eng.grammar.infinitive.causative",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "She has (   ) been to Kyoto.",
+      "choices": [
+        "ever",
+        "yet",
+        "never",
+        "still"
+      ],
+      "answerIndex": 2,
+      "explanation": "have never been to 〜 で「〜に行ったことがない」。ever は疑問文で使う。"
+    },
+    {
+      "id": "en01_020",
+      "unit": "english.eng.grammar.tense.simple",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "By the time you arrive, I (   ) my homework.",
+      "choices": [
+        "have finished",
+        "finished",
+        "had finished",
+        "will have finished"
+      ],
+      "answerIndex": 3,
+      "explanation": "未来のある時点（あなたが着くとき）までの完了なので未来完了。"
+    },
+    {
+      "id": "en01_021",
+      "unit": "english.eng.grammar.tense.perfect",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "When I got to the station, the train (   ).",
+      "choices": [
+        "had already left",
+        "has already left",
+        "already leaves",
+        "is leaving"
+      ],
+      "answerIndex": 0,
+      "explanation": "駅に着いた（過去）より前に出発していたので過去完了。"
+    },
+    {
+      "id": "en01_022",
+      "unit": "english.eng.grammar.tense.perfect",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I (   ) for two hours when she finally called.",
+      "choices": [
+        "have been waiting",
+        "was waited",
+        "am waiting",
+        "had been waiting"
+      ],
+      "answerIndex": 3,
+      "explanation": "電話があった（過去）時点までずっと待ち続けていたので、過去完了進行形。"
+    },
+    {
+      "id": "en01_023",
+      "unit": "english.eng.grammar.sentence.pattern",
+      "category": "usage",
+      "prompt": "次の文の文型は？",
+      "sentence": "The baby slept soundly.",
+      "choices": [
+        "第1文型（SV）",
+        "第2文型（SVC）",
+        "第3文型（SVO）",
+        "第5文型（SVOC）"
+      ],
+      "answerIndex": 0,
+      "explanation": "soundly は副詞なので文型の要素にならない。S（The baby）+ V（slept）の第1文型。"
+    },
+    {
+      "id": "en01_024",
+      "unit": "english.eng.grammar.tense.progressive",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "When you called me, I (   ) a bath.",
+      "choices": [
+        "take",
+        "am taking",
+        "was taking",
+        "have taken"
+      ],
+      "answerIndex": 2,
+      "explanation": "過去のある時点（電話があったとき）に進行中だった動作は過去進行形。"
+    }
+  ]
+}

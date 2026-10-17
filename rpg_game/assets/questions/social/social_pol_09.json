@@ -1,0 +1,344 @@
+{
+  "setId": "social_pol_09",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_pol09_001",
+      "unit": "social.pol.world.intl.issues",
+      "category": "knowledge",
+      "prompt": "国家の三要素は？",
+      "choices": [
+        "国会・内閣・裁判所",
+        "言語・宗教・文化",
+        "領域・国民・主権",
+        "軍隊・警察・裁判所"
+      ],
+      "answerIndex": 2,
+      "explanation": "領域は領土・領海・領空からなる。"
+    },
+    {
+      "id": "soc_pol09_002",
+      "unit": "social.pol.world.intl",
+      "category": "knowledge",
+      "prompt": "領海は、海岸線から何海里まで？",
+      "choices": [
+        "24 海里",
+        "3 海里",
+        "12 海里",
+        "200 海里"
+      ],
+      "answerIndex": 2,
+      "explanation": "200 海里までは排他的経済水域（EEZ）。"
+    },
+    {
+      "id": "soc_pol09_003",
+      "unit": "social.pol.world.intl.society",
+      "category": "knowledge",
+      "prompt": "国家間の合意（条約）や慣習による国際社会のルールは？",
+      "choices": [
+        "国際法",
+        "条例",
+        "判例",
+        "国内法"
+      ],
+      "answerIndex": 0,
+      "explanation": "グロティウスは「国際法の父」と呼ばれる。"
+    },
+    {
+      "id": "soc_pol09_004",
+      "unit": "social.pol.world.intl.un",
+      "category": "knowledge",
+      "prompt": "国際連合の安全保障理事会の常任理事国にふくまれない国は？",
+      "choices": [
+        "日本",
+        "フランス",
+        "アメリカ",
+        "中国"
+      ],
+      "answerIndex": 0,
+      "explanation": "常任理事国はアメリカ・イギリス・フランス・ロシア・中国の 5 か国。"
+    },
+    {
+      "id": "soc_pol09_005",
+      "unit": "social.pol.world.intl.peace",
+      "category": "knowledge",
+      "prompt": "常任理事国が 1 国でも反対すると、重要な決議ができない権利は？",
+      "choices": [
+        "自衛権",
+        "参政権",
+        "主権",
+        "拒否権"
+      ],
+      "answerIndex": 3,
+      "explanation": "大国一致の原則。冷戦中は安保理が機能しないことが多かった。"
+    },
+    {
+      "id": "soc_pol09_006",
+      "unit": "social.pol.world.intl.un",
+      "category": "knowledge",
+      "prompt": "国連が紛争地域の停戦監視などを行う活動は？",
+      "choices": [
+        "NGO",
+        "ODA",
+        "WTO",
+        "PKO（平和維持活動）"
+      ],
+      "answerIndex": 3,
+      "explanation": "日本の自衛隊は 1992 年の PKO 協力法から参加している。"
+    },
+    {
+      "id": "soc_pol09_007",
+      "unit": "social.pol.world.intl.society",
+      "category": "knowledge",
+      "prompt": "国家どうしの紛争を、国際法にもとづいて裁判で解決する国連の機関は？",
+      "choices": [
+        "経済社会理事会",
+        "国際刑事裁判所",
+        "安全保障理事会",
+        "国際司法裁判所"
+      ],
+      "answerIndex": 3,
+      "explanation": "裁判を始めるには当事国の合意が必要。"
+    },
+    {
+      "id": "soc_pol09_008",
+      "unit": "social.pol.world.intl.peace",
+      "category": "knowledge",
+      "prompt": "1968 年に調印された、核兵器をもつ国を増やさないための条約は？",
+      "choices": [
+        "核拡散防止条約（NPT）",
+        "包括的核実験禁止条約",
+        "部分的核実験禁止条約",
+        "核兵器禁止条約"
+      ],
+      "answerIndex": 0,
+      "explanation": "核保有国をアメリカ・ロシア・イギリス・フランス・中国に限定した。"
+    },
+    {
+      "id": "soc_pol09_009",
+      "unit": "social.pol.world.intl",
+      "category": "knowledge",
+      "prompt": "核爆発をともなうすべての核実験を禁止する条約は？",
+      "choices": [
+        "中距離核戦力全廃条約",
+        "部分的核実験禁止条約",
+        "核拡散防止条約",
+        "包括的核実験禁止条約（CTBT）"
+      ],
+      "answerIndex": 3,
+      "explanation": "1996 年に国連で採択されたが、発効に必要な国の批准がそろっていない。"
+    },
+    {
+      "id": "soc_pol09_010",
+      "unit": "social.pol.world.intl.issues",
+      "category": "knowledge",
+      "prompt": "国連の機関で、難民の保護や支援を行うのは？",
+      "choices": [
+        "WHO",
+        "UNESCO",
+        "UNHCR",
+        "UNICEF"
+      ],
+      "answerIndex": 2,
+      "explanation": "国連難民高等弁務官事務所。日本の緒方貞子が高等弁務官を務めた。"
+    },
+    {
+      "id": "soc_pol09_011",
+      "unit": "social.pol.world.intl.un",
+      "category": "thinking",
+      "prompt": "安全保障理事会がしばしば機能しないと言われる理由は？",
+      "choices": [
+        "常任理事国の利害が対立すると、拒否権によって決議ができないから",
+        "決議に法的拘束力が一切ないから",
+        "総会がないから",
+        "加盟国が少ないから"
+      ],
+      "answerIndex": 0,
+      "explanation": "安保理改革が議論されている。"
+    },
+    {
+      "id": "soc_pol09_012",
+      "unit": "social.pol.world.intl",
+      "category": "thinking",
+      "prompt": "NGO（非政府組織）が国際協力で果たす役割として適切なものは？",
+      "choices": [
+        "軍事力で紛争を解決する",
+        "国家の枠をこえて、人道支援や環境保護などの活動をきめ細かく行う",
+        "国の代わりに条約を結ぶ",
+        "国連の常任理事国になる"
+      ],
+      "answerIndex": 1,
+      "explanation": "国境なき医師団などが例。"
+    },
+    {
+      "id": "soc_pol09_013",
+      "unit": "social.pol.world.intl.un",
+      "category": "knowledge",
+      "prompt": "国際連合の本部がある都市は？",
+      "choices": [
+        "ニューヨーク",
+        "ジュネーブ",
+        "ハーグ",
+        "パリ"
+      ],
+      "answerIndex": 0,
+      "explanation": "国際司法裁判所はオランダのハーグにある。"
+    },
+    {
+      "id": "soc_pol09_014",
+      "unit": "social.pol.world.intl.un",
+      "category": "knowledge",
+      "prompt": "国際連合の全加盟国で構成される機関は？",
+      "choices": [
+        "総会",
+        "安全保障理事会",
+        "経済社会理事会",
+        "事務局"
+      ],
+      "answerIndex": 0,
+      "explanation": "毎年定期的に開かれる。"
+    },
+    {
+      "id": "soc_pol09_015",
+      "unit": "social.pol.world.intl.un",
+      "category": "knowledge",
+      "prompt": "国連総会での表決のしかたは？",
+      "choices": [
+        "人口に比例",
+        "1国1票",
+        "常任理事国だけが投票",
+        "拠出金に比例"
+      ],
+      "answerIndex": 1,
+      "explanation": "国の大きさに関係なく平等。"
+    },
+    {
+      "id": "soc_pol09_016",
+      "unit": "social.pol.world.intl.un",
+      "category": "knowledge",
+      "prompt": "安全保障理事会の常任理事国の組み合わせは？",
+      "choices": [
+        "アメリカ・日本・ドイツ・イギリス・フランス",
+        "アメリカ・イギリス・フランス・ロシア・中国",
+        "アメリカ・ロシア・中国・インド・ブラジル",
+        "イギリス・フランス・ドイツ・イタリア・スペイン"
+      ],
+      "answerIndex": 1,
+      "explanation": "第二次世界大戦の主な戦勝国。"
+    },
+    {
+      "id": "soc_pol09_017",
+      "unit": "social.pol.world.intl.un",
+      "category": "knowledge",
+      "prompt": "安全保障理事会の非常任理事国は何か国で、任期は何年？",
+      "choices": [
+        "10か国・5年",
+        "5か国・4年",
+        "15か国・1年",
+        "10か国・2年"
+      ],
+      "answerIndex": 3,
+      "explanation": "総会で選ばれる。日本も何度も選ばれている。"
+    },
+    {
+      "id": "soc_pol09_018",
+      "unit": "social.pol.world.intl.un",
+      "category": "knowledge",
+      "prompt": "国連事務局の最高責任者は？",
+      "choices": [
+        "国際司法裁判所長",
+        "事務総長",
+        "安保理議長",
+        "総会議長"
+      ],
+      "answerIndex": 1,
+      "explanation": "総会が安全保障理事会の勧告にもとづいて任命する。"
+    },
+    {
+      "id": "soc_pol09_019",
+      "unit": "social.pol.world.intl",
+      "category": "knowledge",
+      "prompt": "教育・科学・文化の分野で国際協力を進め、世界遺産も担当する国連の専門機関は？",
+      "choices": [
+        "IMF",
+        "UNESCO（ユネスコ）",
+        "WHO",
+        "ILO"
+      ],
+      "answerIndex": 1,
+      "explanation": "国連教育科学文化機関。"
+    },
+    {
+      "id": "soc_pol09_020",
+      "unit": "social.pol.world.intl",
+      "category": "knowledge",
+      "prompt": "感染症対策など、人々の健康の向上をめざす国連の専門機関は？",
+      "choices": [
+        "UNESCO",
+        "WHO（世界保健機関）",
+        "WTO",
+        "UNICEF"
+      ],
+      "answerIndex": 1,
+      "explanation": "本部はジュネーブ。"
+    },
+    {
+      "id": "soc_pol09_021",
+      "unit": "social.pol.world.intl",
+      "category": "knowledge",
+      "prompt": "子どもの生存や教育を支援する国連の機関は？",
+      "choices": [
+        "WHO",
+        "IAEA",
+        "UNICEF（国連児童基金）",
+        "UNHCR"
+      ],
+      "answerIndex": 2,
+      "explanation": "募金活動でも知られる。"
+    },
+    {
+      "id": "soc_pol09_022",
+      "unit": "social.pol.world.intl.un",
+      "category": "knowledge",
+      "prompt": "国連安全保障理事会で、実質事項の決議に必要な条件は？",
+      "choices": [
+        "常任理事国の過半数の賛成",
+        "15 理事国のうち 9 か国以上が賛成し、常任理事国の反対がないこと",
+        "全理事国の賛成",
+        "出席国の過半数の賛成"
+      ],
+      "answerIndex": 1,
+      "explanation": "常任理事国が 1 か国でも反対すると決議できない（拒否権）。"
+    },
+    {
+      "id": "soc_pol09_023",
+      "unit": "social.pol.world.intl.peace",
+      "category": "knowledge",
+      "prompt": "2017年に国連で採択された、核兵器の開発・保有・使用などを全面的に禁止する条約は？",
+      "choices": [
+        "中距離核戦力全廃条約",
+        "核兵器禁止条約",
+        "核拡散防止条約",
+        "部分的核実験禁止条約"
+      ],
+      "answerIndex": 1,
+      "explanation": "核保有国や日本は参加していない。"
+    },
+    {
+      "id": "soc_pol09_024",
+      "unit": "social.pol.world.intl",
+      "category": "thinking",
+      "prompt": "国連の集団安全保障の考え方として正しいものは？",
+      "choices": [
+        "各国が軍事同盟を結んで対立する",
+        "大国だけが平和を守る",
+        "国連が各国の軍隊をすべて廃止する",
+        "加盟国全体で侵略した国に制裁を加え、平和を守る"
+      ],
+      "answerIndex": 3,
+      "explanation": "勢力均衡とは異なる考え方。"
+    }
+  ]
+}

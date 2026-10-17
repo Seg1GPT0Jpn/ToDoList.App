@@ -1,0 +1,344 @@
+{
+  "setId": "information_info1_01",
+  "worldId": "information",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "inf_info101_001",
+      "unit": "information.info.society.nature.nature",
+      "category": "knowledge",
+      "prompt": "情報を人に伝えても、もとの情報が手もとからなくならない性質は？",
+      "choices": [
+        "複製性",
+        "残存性",
+        "伝播性",
+        "個別性"
+      ],
+      "answerIndex": 1,
+      "explanation": "物と違い、情報は渡しても手もとに残る（残存性）。"
+    },
+    {
+      "id": "inf_info101_002",
+      "unit": "information.info.society.nature.nature",
+      "category": "knowledge",
+      "prompt": "情報を簡単にそっくりコピーできる性質は？",
+      "choices": [
+        "伝播性",
+        "残存性",
+        "一過性",
+        "複製性"
+      ],
+      "answerIndex": 3,
+      "explanation": "デジタルの情報は劣化せずに何度でも複製できる（複製性）。"
+    },
+    {
+      "id": "inf_info101_003",
+      "unit": "information.info.society.nature.nature",
+      "category": "knowledge",
+      "prompt": "情報がすばやく広い範囲に広がっていく性質は？",
+      "choices": [
+        "保存性",
+        "複製性",
+        "伝播性",
+        "残存性"
+      ],
+      "answerIndex": 2,
+      "explanation": "ネットワークを通じて、情報は一瞬で広がる（伝播性）。"
+    },
+    {
+      "id": "inf_info101_004",
+      "unit": "information.info.society.nature",
+      "category": "knowledge",
+      "prompt": "観測や測定で得られた数値や文字そのものを何という？",
+      "choices": [
+        "知恵",
+        "知識",
+        "情報",
+        "データ"
+      ],
+      "answerIndex": 3,
+      "explanation": "データに意味づけしたものが情報、情報を整理・体系化して活用できるようにしたものが知識。"
+    },
+    {
+      "id": "inf_info101_005",
+      "unit": "information.info.society.nature",
+      "category": "knowledge",
+      "prompt": "データを整理・分析して、目的に役立つ意味をもたせたものは？",
+      "choices": [
+        "メディア",
+        "データ",
+        "情報",
+        "ノイズ"
+      ],
+      "answerIndex": 2,
+      "explanation": "例：気温の数値（データ）→「今日は昨日より暑い」（情報）。"
+    },
+    {
+      "id": "inf_info101_006",
+      "unit": "information.info.society.nature",
+      "category": "knowledge",
+      "prompt": "家電や車などあらゆるモノがインターネットにつながるしくみは？",
+      "choices": [
+        "AI",
+        "VR",
+        "GPS",
+        "IoT"
+      ],
+      "answerIndex": 3,
+      "explanation": "Internet of Things（モノのインターネット）。"
+    },
+    {
+      "id": "inf_info101_007",
+      "unit": "information.info.society.nature",
+      "category": "knowledge",
+      "prompt": "情報技術を利用できる人とできない人の間に生まれる格差を何という？",
+      "choices": [
+        "デジタルデバイド",
+        "ビッグデータ",
+        "デジタルタトゥー",
+        "テレワーク"
+      ],
+      "answerIndex": 0,
+      "explanation": "年齢・地域・経済状況などによって生じる。"
+    },
+    {
+      "id": "inf_info101_008",
+      "unit": "information.info.society.nature",
+      "category": "knowledge",
+      "prompt": "仮想空間と現実空間を高度に融合させた、日本がめざす人間中心の社会は？",
+      "choices": [
+        "Society 4.0",
+        "Web 2.0",
+        "Industry 3.0",
+        "Society 5.0"
+      ],
+      "answerIndex": 3,
+      "explanation": "狩猟1.0・農耕2.0・工業3.0・情報4.0に続く社会として示されている。"
+    },
+    {
+      "id": "inf_info101_009",
+      "unit": "information.info.society.nature",
+      "category": "knowledge",
+      "prompt": "自分で直接見たり聞いたりして得た情報を何という？",
+      "choices": [
+        "メタデータ",
+        "二次情報",
+        "一次情報",
+        "口コミ"
+      ],
+      "answerIndex": 2,
+      "explanation": "一次情報を加工・編集して伝えたものが二次情報。"
+    },
+    {
+      "id": "inf_info101_010",
+      "unit": "information.info.society.nature.media",
+      "category": "thinking",
+      "prompt": "SNS で「拡散希望」の衝撃的な投稿を見た。まずすべきことは？",
+      "choices": [
+        "コメントで賛成する",
+        "すぐに拡散する",
+        "友達だけに送る",
+        "発信元や根拠を確かめる"
+      ],
+      "answerIndex": 3,
+      "explanation": "誤った情報を広めると自分も加害者になりうる。情報の信頼性を確かめてから行動する。"
+    },
+    {
+      "id": "inf_info101_011",
+      "unit": "information.info.society.nature",
+      "category": "thinking",
+      "prompt": "同じ出来事について、複数の情報源を比べるのはなぜ？",
+      "choices": [
+        "情報を削除するため",
+        "情報を増やして覚えやすくするため",
+        "一番新しい情報だけを選ぶため",
+        "偏りや誤りに気づきやすくするため"
+      ],
+      "answerIndex": 3,
+      "explanation": "情報源ごとに立場や取材方法がちがうので、比べることで信頼性を判断しやすくなる。"
+    },
+    {
+      "id": "inf_info101_012",
+      "unit": "information.info.society.nature.nature",
+      "category": "thinking",
+      "prompt": "ネットに投稿した写真を削除しても、完全には消えないことがある理由は？",
+      "choices": [
+        "削除ボタンが存在しないから",
+        "写真は自動的に印刷されるから",
+        "すでに複製・保存されて広がっていることがあるから",
+        "サーバがすべて故障するから"
+      ],
+      "answerIndex": 2,
+      "explanation": "複製性と伝播性のため。「デジタルタトゥー」と呼ばれる。"
+    },
+    {
+      "id": "inf_info101_013",
+      "unit": "information.info.society.nature",
+      "category": "knowledge",
+      "prompt": "情報が受け手によって価値や意味が変わる性質を何という？",
+      "choices": [
+        "残存性",
+        "伝播性",
+        "個別性",
+        "複製性"
+      ],
+      "answerIndex": 2,
+      "explanation": "同じ天気予報でも、出かける人とそうでない人で価値がちがう。"
+    },
+    {
+      "id": "inf_info101_014",
+      "unit": "information.info.society.nature",
+      "category": "knowledge",
+      "prompt": "情報を伝える手段・媒体のことを何という？",
+      "choices": [
+        "メディア",
+        "アルゴリズム",
+        "データ",
+        "プロトコル"
+      ],
+      "answerIndex": 0,
+      "explanation": "新聞、テレビ、インターネットなど。"
+    },
+    {
+      "id": "inf_info101_015",
+      "unit": "information.info.society.nature.media",
+      "category": "knowledge",
+      "prompt": "メディアの分類で、文字・音声・画像など情報を表す手段を何という？",
+      "choices": [
+        "保存のメディア",
+        "表現のメディア",
+        "記録のメディア",
+        "伝達のメディア"
+      ],
+      "answerIndex": 1,
+      "explanation": "伝達のメディアは電話や放送など、記録のメディアは紙や USB メモリなど。"
+    },
+    {
+      "id": "inf_info101_016",
+      "unit": "information.info.society.nature",
+      "category": "knowledge",
+      "prompt": "情報を正しく読み解き、活用する力を何という？",
+      "choices": [
+        "プログラミング",
+        "セキュリティ",
+        "コンプライアンス",
+        "メディアリテラシー"
+      ],
+      "answerIndex": 3,
+      "explanation": "発信者の意図や情報の正しさを考える力。"
+    },
+    {
+      "id": "inf_info101_017",
+      "unit": "information.info.society.nature",
+      "category": "knowledge",
+      "prompt": "事実と異なるうその情報が SNS などで広がることを何という？",
+      "choices": [
+        "オープンデータ",
+        "バックアップ",
+        "ビッグデータ",
+        "フェイクニュース（偽情報）"
+      ],
+      "answerIndex": 3,
+      "explanation": "発信元や根拠を確かめることが大切。"
+    },
+    {
+      "id": "inf_info101_018",
+      "unit": "information.info.society.nature",
+      "category": "knowledge",
+      "prompt": "利用者の好みに合った情報ばかりが表示され、異なる意見が見えにくくなる現象は？",
+      "choices": [
+        "デジタルデバイド",
+        "エコーチェンバーだけ",
+        "フィルターバブル",
+        "ファクトチェック"
+      ],
+      "answerIndex": 2,
+      "explanation": "おすすめ機能（アルゴリズム）による。"
+    },
+    {
+      "id": "inf_info101_019",
+      "unit": "information.info.society.nature",
+      "category": "knowledge",
+      "prompt": "同じ意見の人どうしで情報をやりとりし、考えが強まっていく現象は？",
+      "choices": [
+        "クラウド",
+        "フィルタリング",
+        "エコーチェンバー",
+        "ストリーミング"
+      ],
+      "answerIndex": 2,
+      "explanation": "SNS で起こりやすい。"
+    },
+    {
+      "id": "inf_info101_020",
+      "unit": "information.info.society.nature",
+      "category": "knowledge",
+      "prompt": "情報の正しさを、根拠や他の資料と照らし合わせて検証することを何という？",
+      "choices": [
+        "ハッキング",
+        "フィッシング",
+        "ファクトチェック",
+        "スキミング"
+      ],
+      "answerIndex": 2,
+      "explanation": "報道機関などでも行われている。"
+    },
+    {
+      "id": "inf_info101_021",
+      "unit": "information.info.society.nature.society",
+      "category": "knowledge",
+      "prompt": "大量で多様なデータで、分析に活用されるものを何という？",
+      "choices": [
+        "スモールデータ",
+        "メタデータ",
+        "マスターデータ",
+        "ビッグデータ"
+      ],
+      "answerIndex": 3,
+      "explanation": "AI の学習などにも使われる。"
+    },
+    {
+      "id": "inf_info101_022",
+      "unit": "information.info.society.nature.society",
+      "category": "knowledge",
+      "prompt": "人工知能（AI）が大量のデータから特徴を学ぶ方法を何という？",
+      "choices": [
+        "二分探索",
+        "圧縮",
+        "機械学習",
+        "手続き型プログラミング"
+      ],
+      "answerIndex": 2,
+      "explanation": "ディープラーニングはその一種。"
+    },
+    {
+      "id": "inf_info101_023",
+      "unit": "information.info.society.nature",
+      "category": "thinking",
+      "prompt": "生成 AI が作った文章を使うときに注意すべきこととして適切なものは？",
+      "choices": [
+        "もっともらしい誤りをふくむことがあるので、内容を確かめる",
+        "すべて正しいのでそのまま使う",
+        "著作権などの問題は一切ない",
+        "個人情報を入力してもよい"
+      ],
+      "answerIndex": 0,
+      "explanation": "事実確認と権利・プライバシーへの配慮が必要。"
+    },
+    {
+      "id": "inf_info101_024",
+      "unit": "information.info.society.nature",
+      "category": "thinking",
+      "prompt": "ニュースの見出しだけを読んで拡散することの問題点は？",
+      "choices": [
+        "見出しが誇張されていたり、本文の内容と異なったりすることがあるから",
+        "拡散は常によいことだから",
+        "見出しは必ず正しいから",
+        "本文は読む必要がないから"
+      ],
+      "answerIndex": 0,
+      "explanation": "本文や一次情報を確認してから判断する。"
+    }
+  ]
+}

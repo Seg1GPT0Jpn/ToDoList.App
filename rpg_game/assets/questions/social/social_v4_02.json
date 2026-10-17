@@ -1,0 +1,858 @@
+{
+  "setId": "social_v4_02",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_v4b_001",
+      "unit": "social.geo.nature.climate.graph",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "雨温図で、気温の年較差が小さく、年中高温で毎月の降水量が多い都市の気候は？",
+      "choices": [
+        "熱帯雨林気候（Af）",
+        "地中海性気候（Cs）",
+        "西岸海洋性気候（Cfb）",
+        "サバナ気候（Aw）"
+      ],
+      "answerIndex": 0,
+      "explanation": "年中高温・多雨なら Af（シンガポールなど）。乾季があれば Aw。",
+      "difficulty": "basic",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "soc_v4b_002",
+      "unit": "social.geo.nature.climate.graph",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "南半球の都市の雨温図の特徴として正しいものは？",
+      "choices": [
+        "1年中気温が変わらない",
+        "7月ごろの気温が高い",
+        "降水量が必ず少ない",
+        "7月ごろの気温が低く、1月ごろの気温が高い"
+      ],
+      "answerIndex": 3,
+      "explanation": "南半球は季節が北半球と逆。グラフの山が年の両端（1月・12月）にくる。",
+      "difficulty": "standard",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "soc_v4b_003",
+      "unit": "social.geo.culture.ethnic.conflict",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "カナダのケベック州で分離・独立の動きが見られる背景は？",
+      "choices": [
+        "スペイン系住民が多い",
+        "イスラーム教徒が多い",
+        "フランス系住民が多く、フランス語を話す",
+        "先住民の割合が高い"
+      ],
+      "answerIndex": 2,
+      "explanation": "カナダは英語とフランス語の二言語を公用語とし、多文化主義をとる。ケベック州はフランス系住民が多い。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "soc_v4b_004",
+      "unit": "social.geo.culture.ethnic.conflict",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "多文化共生社会を実現するための取り組みとして最も適切なものは？",
+      "choices": [
+        "移民の受け入れを全面的に停止する",
+        "少数派の言語の使用を禁止する",
+        "一つの文化にすべて同化させる",
+        "多言語での案内や、互いの文化を学ぶ機会をつくる"
+      ],
+      "answerIndex": 3,
+      "explanation": "同化ではなく、多様な文化を互いに尊重しながら共に暮らすのが多文化共生。",
+      "difficulty": "standard",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "soc_v4b_005",
+      "unit": "social.geo.industry.manufacturing.change",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "先進国が高付加価値製品の研究開発を、発展途上国が部品の組み立てを担うような分業を何という？",
+      "choices": [
+        "水平分業",
+        "工程間の国際分業（垂直分業）",
+        "産業の空洞化",
+        "加工貿易"
+      ],
+      "answerIndex": 1,
+      "explanation": "生産工程を国ごとに分ける垂直的な分業。同じ水準の国どうしで製品を交換するのは水平分業。",
+      "difficulty": "advanced",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "soc_v4b_006",
+      "unit": "social.geo.industry.manufacturing.change",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "NIEs（新興工業経済地域）に含まれないものは？",
+      "choices": [
+        "韓国",
+        "台湾",
+        "インド",
+        "シンガポール"
+      ],
+      "answerIndex": 2,
+      "explanation": "アジア NIEs：韓国・台湾・香港・シンガポール。1970年代以降、輸出指向型の工業化で急成長した。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "soc_v4b_007",
+      "unit": "social.geo.urban.city.village",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "日本の扇状地で、扇央が水を得にくく畑や果樹園に利用される理由は？",
+      "choices": [
+        "砂や礫が多く、川の水が地下にしみこむから",
+        "粘土質で水はけが悪いから",
+        "標高が高すぎるから",
+        "海水が入るから"
+      ],
+      "answerIndex": 0,
+      "explanation": "扇央では水が伏流し水無川になりやすい。扇端で湧水が出るため、扇端に集落が並ぶ。",
+      "difficulty": "standard",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "soc_v4b_008",
+      "unit": "social.geo.urban.city.village",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "江戸時代に計画的につくられた新田集落で多く見られる形態は？",
+      "choices": [
+        "塊村",
+        "路村",
+        "円村",
+        "散村"
+      ],
+      "answerIndex": 1,
+      "explanation": "新田集落は道路に沿って家屋が並ぶ路村形態が多い（武蔵野の三富新田など）。",
+      "difficulty": "advanced",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "soc_v4b_009",
+      "unit": "social.geo.japan.survey.plan",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "人口減少が進む地方都市で、中心部に住宅や病院などを集める取り組みを何という？",
+      "choices": [
+        "コンパクトシティ",
+        "ドーナツ化現象",
+        "スプロール現象",
+        "ニュータウン"
+      ],
+      "answerIndex": 0,
+      "explanation": "公共交通でつながる中心部に機能を集約し、行政コストを抑え、高齢者も暮らしやすいまちにする。",
+      "difficulty": "standard",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "soc_v4b_010",
+      "unit": "social.geo.japan.survey.plan",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "地域の課題を調べて提案をまとめるとき、最初に行うべきことは？",
+      "choices": [
+        "他地域の提案をそのまま写す",
+        "課題を設定し、仮説を立てる",
+        "現地調査をせずに発表する",
+        "結論を先に決めて都合のよい資料だけ集める"
+      ],
+      "answerIndex": 1,
+      "explanation": "課題設定 → 仮説 → 調査（文献・野外）→ 分析 → 考察・提案、の順。",
+      "difficulty": "basic",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "soc_v4b_011",
+      "unit": "social.jhist.medieval.kamakura.society",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "鎌倉時代、同じ田畑で米と麦を交互に作るようになった農業の技術は？",
+      "choices": [
+        "輪作",
+        "二毛作",
+        "焼畑",
+        "三毛作"
+      ],
+      "answerIndex": 1,
+      "explanation": "鎌倉時代に西日本で二毛作が広がった。室町時代には三毛作も見られるようになった。",
+      "difficulty": "basic",
+      "thinkingLevel": 1
+    },
+    {
+      "id": "soc_v4b_012",
+      "unit": "social.jhist.medieval.kamakura.society",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "鎌倉時代の武士の相続について正しいものは？",
+      "choices": [
+        "財産は幕府に返された",
+        "長男がすべて相続する単独相続が基本だった",
+        "分割相続が基本で、女性にも財産が分けられた",
+        "相続は認められていなかった"
+      ],
+      "answerIndex": 2,
+      "explanation": "当初は分割相続で女性も地頭になれた。所領の細分化で困窮し、のちに単独相続へ移った。",
+      "difficulty": "standard",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "soc_v4b_013",
+      "unit": "social.jhist.early_modern.edo.control",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "江戸幕府が朝廷を統制するために定めた法令は？",
+      "choices": [
+        "公事方御定書",
+        "禁中並公家諸法度",
+        "武家諸法度",
+        "御成敗式目"
+      ],
+      "answerIndex": 1,
+      "explanation": "1615年に制定。天皇や公家の行動を規制した。武家諸法度は大名の統制。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "soc_v4b_014",
+      "unit": "social.jhist.early_modern.edo.control",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "江戸幕府がキリスト教を禁じるため、人々をいずれかの寺に所属させた制度は？",
+      "choices": [
+        "寺請制度",
+        "五人組",
+        "檀家制度のみの任意加入",
+        "本末制度"
+      ],
+      "answerIndex": 0,
+      "explanation": "寺院が檀家であることを証明（宗門改め）。寺院が民衆統制の役割を担った。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "soc_v4b_015",
+      "unit": "social.jhist.modern.meiji.diplomacy",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "1875年にロシアと結び、樺太をロシア領、千島列島全島を日本領とした条約は？",
+      "choices": [
+        "樺太・千島交換条約",
+        "日ソ共同宣言",
+        "日露和親条約",
+        "ポーツマス条約"
+      ],
+      "answerIndex": 0,
+      "explanation": "1854年の日露和親条約では樺太は両国雑居、択捉島以南が日本領だった。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "soc_v4b_016",
+      "unit": "social.jhist.modern.meiji.diplomacy",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "1871年に清と結んだ、日本にとって初めての対等な条約は？",
+      "choices": [
+        "日清修好条規",
+        "日朝修好条規",
+        "下関条約",
+        "天津条約"
+      ],
+      "answerIndex": 0,
+      "explanation": "互いに領事裁判権を認めあう対等条約。日朝修好条規（1876）は日本に有利な不平等条約。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "soc_v4b_017",
+      "unit": "social.whist.ancient.china.nanbei",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "魏で始まった、地方の評判をもとに人材を9等級に分けて推薦する官吏登用制度は？",
+      "choices": [
+        "九品中正",
+        "郷挙里選",
+        "科挙",
+        "均田制"
+      ],
+      "answerIndex": 0,
+      "explanation": "九品中正は豪族が高い官職を独占する結果となり「門閥貴族」を生んだ。科挙は隋で始まった。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "soc_v4b_018",
+      "unit": "social.whist.ancient.china.nanbei",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "北魏で始まり、隋・唐に受けつがれた土地制度は？",
+      "choices": [
+        "両税法",
+        "井田制",
+        "均田制",
+        "屯田制"
+      ],
+      "answerIndex": 2,
+      "explanation": "国家が農民に土地を割り当てる制度。孝文帝のときに実施された。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "soc_v4b_019",
+      "unit": "social.whist.medieval.europe.late",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "14世紀のヨーロッパで人口の約3分の1が失われたとされる疫病は？",
+      "choices": [
+        "天然痘",
+        "黒死病（ペスト）",
+        "コレラ",
+        "インフルエンザ"
+      ],
+      "answerIndex": 1,
+      "explanation": "農民人口の減少で領主は待遇改善を迫られ、農奴解放が進む一方、ジャクリーの乱・ワット＝タイラーの乱も起きた。",
+      "difficulty": "basic",
+      "thinkingLevel": 1
+    },
+    {
+      "id": "soc_v4b_020",
+      "unit": "social.whist.medieval.europe.late",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "百年戦争でフランスを救った少女は？",
+      "choices": [
+        "ジャンヌ＝ダルク",
+        "エリザベス1世",
+        "マリ＝アントワネット",
+        "イサベル"
+      ],
+      "answerIndex": 0,
+      "explanation": "オルレアンを解放。戦争後、両国で王権が強まり中央集権化が進んだ。",
+      "difficulty": "basic",
+      "thinkingLevel": 1
+    },
+    {
+      "id": "soc_v4b_021",
+      "unit": "social.whist.medieval.islam.dynasties",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "10世紀にエジプトで成立し、カイロを建設したシーア派の王朝は？",
+      "choices": [
+        "ファーティマ朝",
+        "ウマイヤ朝",
+        "セルジューク朝",
+        "アッバース朝"
+      ],
+      "answerIndex": 0,
+      "explanation": "ファーティマ朝はカリフを称し、アッバース朝・後ウマイヤ朝と3人のカリフが並び立った。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "soc_v4b_022",
+      "unit": "social.whist.medieval.islam.dynasties",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "11世紀にバグダードに入城し、アッバース朝カリフからスルタンの称号を得た王朝は？",
+      "choices": [
+        "アイユーブ朝",
+        "マムルーク朝",
+        "セルジューク朝",
+        "オスマン帝国"
+      ],
+      "answerIndex": 2,
+      "explanation": "トルコ系のセルジューク朝。ビザンツ帝国を圧迫し、十字軍の原因の一つとなった。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "soc_v4b_023",
+      "unit": "social.whist.medieval.islam.culture",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "イスラーム世界で発達し、のちにヨーロッパに伝わった数学の考え方は？",
+      "choices": [
+        "ユークリッド幾何学の発明",
+        "微分積分法",
+        "インド由来のゼロの概念と算用数字",
+        "十二進法"
+      ],
+      "answerIndex": 2,
+      "explanation": "インドで生まれたゼロと位取りの数字はイスラーム世界を経てヨーロッパへ。フワーリズミーが代数学を発展させた。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "soc_v4b_024",
+      "unit": "social.whist.medieval.islam.culture",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "イブン＝シーナー（アヴィケンナ）の業績として知られるものは？",
+      "choices": [
+        "『三大陸周遊記』",
+        "『千夜一夜物語』",
+        "『世界史序説』",
+        "『医学典範』"
+      ],
+      "answerIndex": 3,
+      "explanation": "『医学典範』は長くヨーロッパの医学の教科書となった。『世界史序説』はイブン＝ハルドゥーン、『三大陸周遊記』はイブン＝バットゥータ。",
+      "difficulty": "advanced",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "soc_v4b_025",
+      "unit": "social.whist.medieval.china.tang",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "唐の玄宗のころに起こり、唐が衰退するきっかけとなった反乱は？",
+      "choices": [
+        "黄巾の乱",
+        "紅巾の乱",
+        "黄巣の乱",
+        "安史の乱"
+      ],
+      "answerIndex": 3,
+      "explanation": "755年、節度使の安禄山らが反乱。のち黄巣の乱（875）で唐は決定的に衰え、907年に滅亡した。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "soc_v4b_026",
+      "unit": "social.whist.medieval.china.tang",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "唐の中期に、租調庸制に代わって導入された両税法の特徴は？",
+      "choices": [
+        "現住地で、所有する土地や資産に応じて夏と秋に課税する",
+        "成人男性一人ひとりに均一に課税する",
+        "商人だけに課税する",
+        "労役だけを課す"
+      ],
+      "answerIndex": 0,
+      "explanation": "均田制の崩壊で租調庸制が機能しなくなり、780年に宰相楊炎が両税法を実施した。",
+      "difficulty": "advanced",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "soc_v4b_027",
+      "unit": "social.whist.medieval.china.culture",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "宋代に普及した、木版印刷とともに文化の広がりを支えた技術として正しくないものは？",
+      "choices": [
+        "羅針盤の実用化",
+        "活字印刷",
+        "火薬の兵器への利用",
+        "蒸気機関"
+      ],
+      "answerIndex": 3,
+      "explanation": "宋代には活字印刷・羅針盤・火薬が実用化され、のちにイスラーム世界を通じてヨーロッパに伝わった。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "soc_v4b_028",
+      "unit": "social.whist.medieval.china.culture",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "唐代の詩人として正しい組み合わせは？",
+      "choices": [
+        "朱熹・王陽明",
+        "李白・杜甫",
+        "欧陽脩・蘇軾",
+        "司馬遷・班固"
+      ],
+      "answerIndex": 1,
+      "explanation": "李白（詩仙）・杜甫（詩聖）・白居易。司馬遷・班固は漢の歴史家、朱熹（宋）・王陽明（明）は儒学者、欧陽脩・蘇軾は宋の文人。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "soc_v4b_029",
+      "unit": "social.whist.medieval.mongol.exchange",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "元の大都を訪れ『世界の記述（東方見聞録）』で知られる人物は？",
+      "choices": [
+        "プラノ＝カルピニ",
+        "マルコ＝ポーロ",
+        "イブン＝バットゥータ",
+        "鄭和"
+      ],
+      "answerIndex": 1,
+      "explanation": "モンゴル帝国が交通路（ジャムチ＝駅伝制）を整えたことで、東西の人・物・情報の交流が活発になった。",
+      "difficulty": "basic",
+      "thinkingLevel": 1
+    },
+    {
+      "id": "soc_v4b_030",
+      "unit": "social.whist.medieval.mongol.exchange",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "モンゴル帝国の時代にユーラシアの東西交流がさかんになった理由として最も適切なものは？",
+      "choices": [
+        "海上交易を禁止したから",
+        "広い領域を支配し、駅伝制で交通の安全を保障したから",
+        "すべての宗教を禁止したから",
+        "鎖国政策をとったから"
+      ],
+      "answerIndex": 1,
+      "explanation": "「パクス＝モンゴリカ（モンゴルの平和）」。宗教にも比較的寛容だった。",
+      "difficulty": "standard",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "soc_v4b_031",
+      "unit": "social.whist.early_modern.renaissance.counter",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "対抗宗教改革の中心となり、海外布教も行った修道会は？",
+      "choices": [
+        "ベネディクト会",
+        "フランチェスコ会",
+        "ドミニコ会",
+        "イエズス会"
+      ],
+      "answerIndex": 3,
+      "explanation": "イグナティウス＝ロヨラらが設立。フランシスコ＝ザビエルが日本に布教した。",
+      "difficulty": "basic",
+      "thinkingLevel": 1
+    },
+    {
+      "id": "soc_v4b_032",
+      "unit": "social.whist.early_modern.renaissance.counter",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "1598年、フランスでユグノー戦争を終わらせ、新教徒に信仰の自由を認めた勅令は？",
+      "choices": [
+        "ナントの王令",
+        "アウクスブルクの宗教和議",
+        "ヴォルムス協約",
+        "ウェストファリア条約"
+      ],
+      "answerIndex": 0,
+      "explanation": "アンリ4世が発布。アウクスブルクの宗教和議（1555）はドイツ、ウェストファリア条約（1648）は三十年戦争の講和。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "soc_v4b_033",
+      "unit": "social.whist.modern.nation.russia",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "1861年にロシアでアレクサンドル2世が行った改革は？",
+      "choices": [
+        "新経済政策（ネップ）",
+        "農奴解放令",
+        "十月宣言",
+        "ストルイピン改革"
+      ],
+      "answerIndex": 1,
+      "explanation": "クリミア戦争の敗北で近代化の必要を痛感して実施。十月宣言は1905年、ネップは1921年。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "soc_v4b_034",
+      "unit": "social.whist.modern.nation.russia",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "19世紀の「東方問題」とは何か？",
+      "choices": [
+        "アメリカの西部開拓",
+        "オスマン帝国の衰退をめぐるヨーロッパ列強の対立",
+        "日本の開国問題",
+        "中国の開国をめぐる争い"
+      ],
+      "answerIndex": 1,
+      "explanation": "ロシアの南下政策とイギリス・フランスなどの対立。クリミア戦争・露土戦争・ベルリン会議などが関連する。",
+      "difficulty": "standard",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "soc_v4b_035",
+      "unit": "social.whist.modern.imperialism.asia",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "1857年、インドで起きたイギリス支配に対する大反乱のきっかけとなった人々は？",
+      "choices": [
+        "ムガル皇帝の軍",
+        "中国の商人",
+        "フランスの軍",
+        "シパーヒー（東インド会社のインド人傭兵）"
+      ],
+      "answerIndex": 3,
+      "explanation": "反乱後、ムガル帝国は滅亡し東インド会社は解散、1877年にインド帝国が成立した。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "soc_v4b_036",
+      "unit": "social.whist.modern.imperialism.asia",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "19世紀末、東南アジアで植民地にならなかった国は？",
+      "choices": [
+        "ベトナム",
+        "タイ（シャム）",
+        "ビルマ",
+        "インドネシア"
+      ],
+      "answerIndex": 1,
+      "explanation": "タイはイギリス領とフランス領の緩衝地帯となり、ラーマ5世の近代化政策もあって独立を保った。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "soc_v4b_037",
+      "unit": "social.whist.contemporary.ww1.asia",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "1919年に中国で起きた、反日・反帝国主義の民衆運動は？",
+      "choices": [
+        "三・一独立運動",
+        "辛亥革命",
+        "義和団事件",
+        "五・四運動"
+      ],
+      "answerIndex": 3,
+      "explanation": "パリ講和会議で山東の旧ドイツ権益の返還が認められなかったことに反発。朝鮮の三・一独立運動も同年。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "soc_v4b_038",
+      "unit": "social.whist.contemporary.ww1.asia",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "インドで非暴力・不服従運動を指導した人物は？",
+      "choices": [
+        "ネルー",
+        "ガンディー",
+        "ジンナー",
+        "ホー＝チ＝ミン"
+      ],
+      "answerIndex": 1,
+      "explanation": "塩の行進（1930）など。ネルーは独立後の首相、ジンナーはパキスタン建国の指導者。",
+      "difficulty": "basic",
+      "thinkingLevel": 1
+    },
+    {
+      "id": "soc_v4b_039",
+      "unit": "social.pol.politics.principle.democracy",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "『法の精神』で三権分立を説いた思想家は？",
+      "choices": [
+        "ホッブズ",
+        "ロック",
+        "ルソー",
+        "モンテスキュー"
+      ],
+      "answerIndex": 3,
+      "explanation": "立法・行政・司法を分けて抑制と均衡をはかる。ロックは二権分立と抵抗権、ルソーは一般意志と直接民主制。",
+      "difficulty": "basic",
+      "thinkingLevel": 1
+    },
+    {
+      "id": "soc_v4b_040",
+      "unit": "social.pol.politics.principle.democracy",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "ロックの社会契約説の特徴として正しいものは？",
+      "choices": [
+        "人々は主権者にすべての権利を譲りわたす",
+        "一般意志にもとづく直接民主制を主張した",
+        "政府が人々の自然権を侵すとき、人々は抵抗できる",
+        "王権は神から授けられたとした"
+      ],
+      "answerIndex": 2,
+      "explanation": "ロック『統治二論』：抵抗権（革命権）。ホッブズは権利の全面譲渡、ルソーは一般意志、王権神授説は絶対王政を正当化。",
+      "difficulty": "standard",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "soc_v4b_041",
+      "unit": "social.pol.politics.law.work",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "長時間労働による過労死を防ぐため、2018年の働き方改革関連法で導入されたものは？",
+      "choices": [
+        "時間外労働の上限規制（罰則つき）",
+        "終身雇用の義務化",
+        "労働組合の禁止",
+        "最低賃金の廃止"
+      ],
+      "answerIndex": 0,
+      "explanation": "原則月45時間・年360時間の上限が法律で定められた。同一労働同一賃金も盛りこまれた。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "soc_v4b_042",
+      "unit": "social.pol.politics.law.work",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "労働基準法で定められている法定労働時間は？",
+      "choices": [
+        "1日10時間・週50時間",
+        "上限はない",
+        "1日6時間・週30時間",
+        "1日8時間・週40時間"
+      ],
+      "answerIndex": 3,
+      "explanation": "これを超えて働かせるには労使協定（36協定）が必要で、割増賃金を支払う。",
+      "difficulty": "basic",
+      "thinkingLevel": 1
+    },
+    {
+      "id": "soc_v4b_043",
+      "unit": "social.pol.economy.market.system",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "生産手段を国有化し、国家の計画にもとづいて生産を行う経済体制は？",
+      "choices": [
+        "市場経済",
+        "社会主義経済",
+        "混合経済",
+        "資本主義経済"
+      ],
+      "answerIndex": 1,
+      "explanation": "旧ソ連などで採用。資本主義は生産手段の私有と市場での自由な競争が特徴。",
+      "difficulty": "basic",
+      "thinkingLevel": 1
+    },
+    {
+      "id": "soc_v4b_044",
+      "unit": "social.pol.economy.market.system",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "現代の多くの資本主義国が「混合経済」と呼ばれる理由は？",
+      "choices": [
+        "市場経済を基本としつつ、政府が景気対策や社会保障などで経済に関わるから",
+        "社会主義と資本主義を年ごとに切りかえるから",
+        "政府がまったく関わらないから",
+        "すべての企業を国有化したから"
+      ],
+      "answerIndex": 0,
+      "explanation": "世界恐慌後、ケインズの理論などをもとに政府が有効需要の創出や福祉に積極的に関わるようになった（修正資本主義）。",
+      "difficulty": "standard",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "soc_v4b_045",
+      "unit": "social.pol.economy.finance.reform",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "1990年代後半に日本で行われた大規模な金融制度改革は？",
+      "choices": [
+        "金本位制の復活",
+        "護送船団方式の強化",
+        "プラザ合意",
+        "日本版金融ビッグバン"
+      ],
+      "answerIndex": 3,
+      "explanation": "「フリー・フェア・グローバル」を掲げ、銀行・証券・保険の垣根を低くした。それまでの護送船団方式からの転換。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "soc_v4b_046",
+      "unit": "social.pol.economy.finance.reform",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "2008年、アメリカの大手投資銀行の破綻をきっかけに広がった世界的な金融危機は？",
+      "choices": [
+        "アジア通貨危機",
+        "石油危機",
+        "リーマン・ショック",
+        "ブラックマンデー"
+      ],
+      "answerIndex": 2,
+      "explanation": "サブプライムローン問題がきっかけ。アジア通貨危機は1997年。",
+      "difficulty": "basic",
+      "thinkingLevel": 1
+    },
+    {
+      "id": "soc_v4b_047",
+      "unit": "social.pol.economy.global.region",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "EU（ヨーロッパ連合）の共通通貨は？",
+      "choices": [
+        "ドル",
+        "ポンド",
+        "フラン",
+        "ユーロ"
+      ],
+      "answerIndex": 3,
+      "explanation": "1999年に導入。EU 加盟国でもユーロを導入していない国がある（スウェーデンなど）。",
+      "difficulty": "basic",
+      "thinkingLevel": 1
+    },
+    {
+      "id": "soc_v4b_048",
+      "unit": "social.pol.economy.global.region",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "日本も参加する、環太平洋地域の経済連携協定は？",
+      "choices": [
+        "ASEAN",
+        "NAFTA",
+        "TPP11（CPTPP）",
+        "MERCOSUR"
+      ],
+      "answerIndex": 2,
+      "explanation": "2018年に発効。アメリカは離脱した。NAFTA は北米（現在は USMCA）、MERCOSUR は南米の関税同盟。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "soc_v4b_049",
+      "unit": "social.eth.western.social.socialism",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "マルクスが、歴史を動かす原動力と考えたものは？",
+      "choices": [
+        "神の意志",
+        "生産力と生産関係の矛盾（階級闘争）",
+        "偉大な個人の決断",
+        "自然環境の変化"
+      ],
+      "answerIndex": 1,
+      "explanation": "唯物史観：物質的な生産のあり方（下部構造）が政治や思想（上部構造）を規定する。",
+      "difficulty": "standard",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "soc_v4b_050",
+      "unit": "social.eth.western.social.socialism",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "マルクスが資本主義社会で労働者に生じると指摘した状態は？",
+      "choices": [
+        "一般意志",
+        "労働の疎外",
+        "定言命法",
+        "功利主義"
+      ],
+      "answerIndex": 1,
+      "explanation": "労働者が自分の生み出した生産物や労働そのものから切り離され、人間らしさを失う状態。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    }
+  ]
+}

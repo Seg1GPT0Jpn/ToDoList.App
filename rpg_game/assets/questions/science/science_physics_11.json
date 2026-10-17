@@ -1,0 +1,456 @@
+{
+  "setId": "science_physics_11",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_phy11_001",
+      "unit": "science.physics.mechanics.circular.circular",
+      "category": "knowledge",
+      "prompt": "等速円運動をする物体の加速度の向きは？",
+      "choices": [
+        "0 なので向きはない",
+        "運動の向き",
+        "中心と反対向き",
+        "円の中心向き"
+      ],
+      "answerIndex": 3,
+      "explanation": "速さは一定でも向きが変わるので加速度があり、常に中心を向く（向心加速度）。"
+    },
+    {
+      "id": "sci_phy11_002",
+      "unit": "science.physics.mechanics.circular.circular",
+      "category": "knowledge",
+      "prompt": "質量 m、速さ v、半径 r の等速円運動に必要な向心力の大きさは？",
+      "choices": [
+        "mv²/r",
+        "mvr",
+        "mv/r",
+        "mr/v²"
+      ],
+      "answerIndex": 0,
+      "explanation": "向心力 F ＝ mv²/r ＝ mrω²。"
+    },
+    {
+      "id": "sci_phy11_003",
+      "unit": "science.physics.mechanics.circular.circular",
+      "category": "knowledge",
+      "prompt": "角速度 ω と周期 T の関係は？",
+      "choices": [
+        "T ＝ ω/2π",
+        "T ＝ 2π/ω",
+        "T ＝ ω",
+        "T ＝ 2πω"
+      ],
+      "answerIndex": 1,
+      "explanation": "1 周（2π rad）するのにかかる時間が周期なので T ＝ 2π/ω。"
+    },
+    {
+      "id": "sci_phy11_004",
+      "unit": "science.physics.mechanics.circular.circular",
+      "category": "knowledge",
+      "prompt": "ばね振り子の周期について正しいものは？",
+      "choices": [
+        "振幅によらず 2π√(m/k)",
+        "振幅が大きいほど長い",
+        "質量によらない",
+        "ばね定数が大きいほど長い"
+      ],
+      "answerIndex": 0,
+      "explanation": "T ＝ 2π√(m/k)。振幅にはよらない（等時性）。"
+    },
+    {
+      "id": "sci_phy11_005",
+      "unit": "science.physics.mechanics.circular.circular",
+      "category": "knowledge",
+      "prompt": "単振り子（ふれはばが小さいとき）の周期は何で決まる？",
+      "choices": [
+        "おもりの質量",
+        "おもりの材質",
+        "糸の長さと重力加速度",
+        "ふれはば"
+      ],
+      "answerIndex": 2,
+      "explanation": "T ＝ 2π√(L/g)。質量やふれはばにはよらない。"
+    },
+    {
+      "id": "sci_phy11_006",
+      "unit": "science.physics.mechanics.circular.shm",
+      "category": "knowledge",
+      "prompt": "単振動を起こす復元力の特徴は？",
+      "choices": [
+        "つり合いの位置からの変位に比例し、逆向き",
+        "速度に比例する",
+        "変位の2乗に比例する",
+        "常に一定の大きさ"
+      ],
+      "answerIndex": 0,
+      "explanation": "F ＝ −Kx。変位と逆向きで、変位に比例する力が単振動を起こす。"
+    },
+    {
+      "id": "sci_phy11_007",
+      "unit": "science.physics.mechanics.circular.gravity",
+      "category": "knowledge",
+      "prompt": "万有引力の大きさについて正しいものは？",
+      "choices": [
+        "距離に比例する",
+        "2物体の質量の積に比例し、距離の2乗に反比例する",
+        "距離によらない",
+        "質量の和に比例する"
+      ],
+      "answerIndex": 1,
+      "explanation": "F ＝ G Mm / r²。"
+    },
+    {
+      "id": "sci_phy11_008",
+      "unit": "science.physics.mechanics.circular.gravity",
+      "category": "knowledge",
+      "prompt": "ケプラーの第3法則は？",
+      "choices": [
+        "周期は長半径に比例する",
+        "惑星は円軌道を描く",
+        "公転の速さは常に一定",
+        "公転周期の2乗は、だ円軌道の長半径の3乗に比例する"
+      ],
+      "answerIndex": 3,
+      "explanation": "T² ∝ a³。第1法則はだ円軌道、第2法則は面積速度一定。"
+    },
+    {
+      "id": "sci_phy11_009",
+      "unit": "science.physics.mechanics.circular.circular",
+      "category": "calculation",
+      "prompt": "半径 2.0 m の円周上を 4.0 m/s で等速円運動している。向心加速度の大きさは？",
+      "choices": [
+        "2.0 m/s²",
+        "32 m/s²",
+        "0.50 m/s²",
+        "8.0 m/s²"
+      ],
+      "answerIndex": 3,
+      "explanation": "a ＝ v²/r ＝ 4.0² ÷ 2.0 ＝ 8.0 m/s²。"
+    },
+    {
+      "id": "sci_phy11_010",
+      "unit": "science.physics.mechanics.circular.circular",
+      "category": "calculation",
+      "prompt": "質量 0.50 kg の物体が、半径 0.50 m、角速度 4.0 rad/s で等速円運動している。向心力の大きさは？",
+      "choices": [
+        "4.0 N",
+        "8.0 N",
+        "1.0 N",
+        "2.0 N"
+      ],
+      "answerIndex": 0,
+      "explanation": "F ＝ mrω² ＝ 0.50 × 0.50 × 4.0² ＝ 4.0 N。"
+    },
+    {
+      "id": "sci_phy11_011",
+      "unit": "science.physics.mechanics.circular.circular",
+      "category": "calculation",
+      "prompt": "周期 2.0 s の等速円運動の角速度は？",
+      "choices": [
+        "2π rad/s",
+        "4π rad/s",
+        "π rad/s",
+        "π/2 rad/s"
+      ],
+      "answerIndex": 2,
+      "explanation": "ω ＝ 2π/T ＝ 2π ÷ 2.0 ＝ π rad/s（約 3.1 rad/s）。"
+    },
+    {
+      "id": "sci_phy11_012",
+      "unit": "science.physics.mechanics.circular.gravity",
+      "category": "calculation",
+      "prompt": "2物体の間の距離を2倍にすると、万有引力の大きさは何倍？",
+      "choices": [
+        "4 倍",
+        "1/4 倍",
+        "1/2 倍",
+        "2 倍"
+      ],
+      "answerIndex": 1,
+      "explanation": "距離の2乗に反比例するので 1/2² ＝ 1/4 倍。"
+    },
+    {
+      "id": "sci_phy11_013",
+      "unit": "science.physics.mechanics.circular.circular",
+      "category": "calculation",
+      "prompt": "ばね振り子のおもりの質量を4倍にすると、周期は何倍？",
+      "choices": [
+        "16 倍",
+        "1/2 倍",
+        "2 倍",
+        "4 倍"
+      ],
+      "answerIndex": 2,
+      "explanation": "T ＝ 2π√(m/k) なので √4 ＝ 2 倍。"
+    },
+    {
+      "id": "sci_phy11_014",
+      "unit": "science.physics.mechanics.circular.shm",
+      "category": "calculation",
+      "prompt": "振幅 0.10 m、角振動数 5.0 rad/s の単振動の、最大の速さは？",
+      "choices": [
+        "0.50 m/s",
+        "0.020 m/s",
+        "2.5 m/s",
+        "5.0 m/s"
+      ],
+      "answerIndex": 0,
+      "explanation": "単振動の最大の速さは Aω ＝ 0.10 × 5.0 ＝ 0.50 m/s（振動の中心で最大）。"
+    },
+    {
+      "id": "sci_phy11_015",
+      "unit": "science.physics.mechanics.circular.inertial",
+      "category": "thinking",
+      "prompt": "車がカーブを曲がるとき、乗っている人が外側へ押しつけられるように感じる理由は？",
+      "choices": [
+        "車とともに回る人から見ると、外向きの慣性力（遠心力）がはたらくように見えるから",
+        "重力の向きが変わるから",
+        "摩擦力が0になるから",
+        "外向きの向心力がはたらくから"
+      ],
+      "answerIndex": 0,
+      "explanation": "外から見ると、人は慣性でまっすぐ進もうとしているだけ。回転する車内から見ると遠心力として感じる。"
+    },
+    {
+      "id": "sci_phy11_016",
+      "unit": "science.physics.mechanics.circular.gravity",
+      "category": "thinking",
+      "prompt": "地球を回る人工衛星の中で、宇宙飛行士が浮いて見える理由は？",
+      "choices": [
+        "空気がないから",
+        "万有引力が円運動の向心力として使われ、見かけの重さが 0 になるから",
+        "宇宙には重力がまったくないから",
+        "衛星が静止しているから"
+      ],
+      "answerIndex": 1,
+      "explanation": "衛星も飛行士も同じ加速度で「落ち続けている」ので、衛星内では無重量状態になる。"
+    },
+    {
+      "id": "sci_phy11_017",
+      "unit": "science.physics.mechanics.circular.circular",
+      "category": "knowledge",
+      "prompt": "等速円運動の速度の向きは？",
+      "choices": [
+        "円の中心向き",
+        "円の接線方向",
+        "一定の方向",
+        "円の外向き"
+      ],
+      "answerIndex": 1,
+      "explanation": "向きがたえず変わるので加速度がある。"
+    },
+    {
+      "id": "sci_phy11_018",
+      "unit": "science.physics.mechanics.circular.circular",
+      "category": "knowledge",
+      "prompt": "等速円運動の速さ v、半径 r、角速度 ω の関係は？",
+      "choices": [
+        "v ＝ r²ω",
+        "v ＝ rω",
+        "v ＝ ω/r",
+        "v ＝ r/ω"
+      ],
+      "answerIndex": 1,
+      "explanation": "1秒間に回る角度 × 半径。"
+    },
+    {
+      "id": "sci_phy11_019",
+      "unit": "science.physics.mechanics.circular.circular",
+      "category": "knowledge",
+      "prompt": "単振り子の周期を表す式は？（l：糸の長さ）",
+      "choices": [
+        "T ＝ 2π√(l/g)",
+        "T ＝ √(lg)",
+        "T ＝ 2π√(g/l)",
+        "T ＝ 2πl/g"
+      ],
+      "answerIndex": 0,
+      "explanation": "ふれはばが小さいとき、おもりの質量によらない。"
+    },
+    {
+      "id": "sci_phy11_020",
+      "unit": "science.physics.mechanics.circular.circular",
+      "category": "knowledge",
+      "prompt": "ばね振り子の周期を表す式は？（m：質量、k：ばね定数）",
+      "choices": [
+        "T ＝ 2π√(m/k)",
+        "T ＝ m/k",
+        "T ＝ 2πmk",
+        "T ＝ 2π√(k/m)"
+      ],
+      "answerIndex": 0,
+      "explanation": "重いほど、ばねが弱いほど周期が長い。"
+    },
+    {
+      "id": "sci_phy11_021",
+      "unit": "science.physics.mechanics.circular.gravity",
+      "category": "knowledge",
+      "prompt": "万有引力の法則は？（G：万有引力定数）",
+      "choices": [
+        "F ＝ G(m₁ + m₂)/r²",
+        "F ＝ Gm₁m₂r²",
+        "F ＝ Gm₁m₂/r",
+        "F ＝ Gm₁m₂/r²"
+      ],
+      "answerIndex": 3,
+      "explanation": "距離の2乗に反比例。"
+    },
+    {
+      "id": "sci_phy11_022",
+      "unit": "science.physics.mechanics.circular.gravity",
+      "category": "knowledge",
+      "prompt": "ケプラーの第2法則（面積速度一定）から分かることは？",
+      "choices": [
+        "惑星はいつも同じ速さ",
+        "惑星は太陽に近いところで速く、遠いところで遅く動く",
+        "周期は半径に比例",
+        "惑星の軌道は円"
+      ],
+      "answerIndex": 1,
+      "explanation": "同じ時間に太陽と結ぶ線分がえがく面積が等しい。"
+    },
+    {
+      "id": "sci_phy11_023",
+      "unit": "science.physics.mechanics.circular.circular",
+      "category": "calculation",
+      "prompt": "半径 0.50 m の円周上を、周期 2.0 s で等速円運動している。速さは？（π ＝ 3.14）",
+      "choices": [
+        "3.14 m/s",
+        "0.25 m/s",
+        "6.28 m/s",
+        "1.57 m/s"
+      ],
+      "answerIndex": 3,
+      "explanation": "2πr ÷ T ＝ 3.14 ÷ 2.0。"
+    },
+    {
+      "id": "sci_phy11_024",
+      "unit": "science.physics.mechanics.circular.circular",
+      "category": "calculation",
+      "prompt": "質量 2.0 kg の物体が半径 1.0 m、速さ 3.0 m/s で等速円運動する。向心力の大きさは？",
+      "choices": [
+        "18 N",
+        "6.0 N",
+        "9.0 N",
+        "36 N"
+      ],
+      "answerIndex": 0,
+      "explanation": "mv²/r ＝ 2.0 × 9 ÷ 1.0。"
+    },
+    {
+      "id": "sci_phy11_025",
+      "unit": "science.physics.mechanics.circular.circular",
+      "category": "calculation",
+      "prompt": "角速度 4.0 rad/s で半径 0.50 m の等速円運動をする物体の加速度の大きさは？",
+      "choices": [
+        "16 m/s²",
+        "2.0 m/s²",
+        "8.0 m/s²",
+        "4.0 m/s²"
+      ],
+      "answerIndex": 2,
+      "explanation": "rω² ＝ 0.50 × 16。"
+    },
+    {
+      "id": "sci_phy11_026",
+      "unit": "science.physics.mechanics.circular.circular",
+      "category": "calculation",
+      "prompt": "1 分間に 30 回転する円板の周期は？",
+      "choices": [
+        "0.50 s",
+        "1.0 s",
+        "30 s",
+        "2.0 s"
+      ],
+      "answerIndex": 3,
+      "explanation": "60 ÷ 30。"
+    },
+    {
+      "id": "sci_phy11_027",
+      "unit": "science.physics.mechanics.circular.circular",
+      "category": "calculation",
+      "prompt": "単振り子の糸の長さを4倍にすると、周期は何倍？",
+      "choices": [
+        "4倍",
+        "1/2倍",
+        "16倍",
+        "2倍"
+      ],
+      "answerIndex": 3,
+      "explanation": "周期は √l に比例。"
+    },
+    {
+      "id": "sci_phy11_028",
+      "unit": "science.physics.mechanics.circular.circular",
+      "category": "calculation",
+      "prompt": "ばね定数を4倍にすると、ばね振り子の周期は何倍？",
+      "choices": [
+        "2倍",
+        "1/2倍",
+        "1/4倍",
+        "4倍"
+      ],
+      "answerIndex": 1,
+      "explanation": "周期は 1/√k に比例。"
+    },
+    {
+      "id": "sci_phy11_029",
+      "unit": "science.physics.mechanics.circular.gravity",
+      "category": "calculation",
+      "prompt": "2物体の質量をどちらも2倍にすると、万有引力は何倍？（距離は同じ）",
+      "choices": [
+        "1/4倍",
+        "8倍",
+        "4倍",
+        "2倍"
+      ],
+      "answerIndex": 2,
+      "explanation": "m₁m₂ が 2 × 2 倍。"
+    },
+    {
+      "id": "sci_phy11_030",
+      "unit": "science.physics.mechanics.circular.shm",
+      "category": "calculation",
+      "prompt": "振幅 0.20 m、角振動数 10 rad/s の単振動の、速さの最大値は？",
+      "choices": [
+        "50 m/s",
+        "0.020 m/s",
+        "2.0 m/s",
+        "20 m/s"
+      ],
+      "answerIndex": 2,
+      "explanation": "Aω ＝ 0.20 × 10。"
+    },
+    {
+      "id": "sci_phy11_031",
+      "unit": "science.physics.mechanics.circular.circular",
+      "category": "thinking",
+      "prompt": "洗濯機の脱水で水が外へ飛んでいく理由は？",
+      "choices": [
+        "水が軽くなるから",
+        "重力が強くなるから",
+        "水に外向きの力がはたらくから",
+        "水は向心力が足りなくなり、慣性で接線方向へ飛び出すから"
+      ],
+      "answerIndex": 3,
+      "explanation": "円運動を続けるには中心向きの力が必要。穴から水は抜けていく。"
+    },
+    {
+      "id": "sci_phy11_032",
+      "unit": "science.physics.mechanics.circular.circular",
+      "category": "thinking",
+      "prompt": "静止衛星（地球の自転と同じ周期で回る衛星）の軌道について正しいものは？",
+      "choices": [
+        "地表すれすれを回る",
+        "北極の上空を回る",
+        "どの高さでもよい",
+        "赤道の上空、決まった高さを回る"
+      ],
+      "answerIndex": 3,
+      "explanation": "周期が24時間になる半径は1つに決まり、地上からは止まって見える。"
+    }
+  ]
+}

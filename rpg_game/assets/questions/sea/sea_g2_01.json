@@ -1,0 +1,248 @@
+{
+  "setId": "sea_g2_01",
+  "worldId": "sea",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g2_01_01",
+      "unit": "english.eng.grammar.tense.perfect",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "When I arrived, the concert (   ) already started.",
+      "choices": [
+        "has",
+        "had",
+        "have",
+        "was"
+      ],
+      "answerIndex": 1,
+      "explanation": "到着した（過去）より前に始まっていたので過去完了。"
+    },
+    {
+      "id": "sea_g2_01_02",
+      "unit": "english.eng.grammar.tense.simple",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "By next year, I (   ) here for ten years.",
+      "choices": [
+        "will have lived",
+        "have lived",
+        "will live",
+        "had lived"
+      ],
+      "answerIndex": 0,
+      "explanation": "未来のある時点（来年）までの継続は未来完了。"
+    },
+    {
+      "id": "sea_g2_01_03",
+      "unit": "english.eng.grammar.tense.perfect",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He told me that he (   ) to Paris twice.",
+      "choices": [
+        "has been",
+        "had been",
+        "is",
+        "goes"
+      ],
+      "answerIndex": 1,
+      "explanation": "「言った」時点までの経験なので過去完了。"
+    },
+    {
+      "id": "sea_g2_01_04",
+      "unit": "english.eng.grammar.tense.perfect",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I (   ) for an hour when the bus finally came.",
+      "choices": [
+        "have been waiting",
+        "had been waiting",
+        "am waiting",
+        "was waited"
+      ],
+      "answerIndex": 1,
+      "explanation": "過去のある時点まで続いていた動作は過去完了進行形。"
+    },
+    {
+      "id": "sea_g2_01_05",
+      "unit": "english.eng.grammar.tense.simple",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I will call you when he (   ) home.",
+      "choices": [
+        "comes",
+        "will come",
+        "came",
+        "has came"
+      ],
+      "answerIndex": 0,
+      "explanation": "時・条件を表す副詞節の中では、未来のことも現在形で表す。"
+    },
+    {
+      "id": "sea_g2_01_06",
+      "unit": "english.eng.grammar.tense.perfect",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I (   ) him since he moved to Tokyo.",
+      "choices": [
+        "didn't see",
+        "haven't seen",
+        "don't see",
+        "wasn't seeing"
+      ],
+      "answerIndex": 1,
+      "explanation": "since とともに「それ以来ずっと会っていない」は現在完了。"
+    },
+    {
+      "id": "sea_g2_01_07",
+      "unit": "english.eng.grammar.tense.perfect",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I (   ) the book before I saw the movie.",
+      "choices": [
+        "read",
+        "have read",
+        "was reading",
+        "had read"
+      ],
+      "answerIndex": 3,
+      "explanation": "過去のある時点（映画を見た）より前のこと：過去完了。"
+    },
+    {
+      "id": "sea_g2_01_08",
+      "unit": "english.eng.grammar.tense.perfect",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "She (   ) in London since 2020.",
+      "choices": [
+        "lived",
+        "had lived",
+        "has lived",
+        "lives"
+      ],
+      "answerIndex": 2,
+      "explanation": "現在まで続いている：現在完了。"
+    },
+    {
+      "id": "sea_g2_01_09",
+      "unit": "english.eng.grammar.tense.simple",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "By the time you arrive, we (   ) dinner.",
+      "choices": [
+        "finish",
+        "have finished",
+        "had finished",
+        "will have finished"
+      ],
+      "answerIndex": 3,
+      "explanation": "未来のある時点までに完了：未来完了。"
+    },
+    {
+      "id": "sea_g2_01_10",
+      "unit": "english.eng.grammar.tense.perfect",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I lost the watch my father (   ) me.",
+      "choices": [
+        "was giving",
+        "has given",
+        "gives",
+        "had given"
+      ],
+      "answerIndex": 3,
+      "explanation": "なくしたときより前にもらった：過去完了（大過去）。"
+    },
+    {
+      "id": "sea_g2_01_11",
+      "unit": "english.eng.grammar.tense.perfect",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He (   ) the car for three hours when it broke down.",
+      "choices": [
+        "drives",
+        "will drive",
+        "had been driving",
+        "has been driving"
+      ],
+      "answerIndex": 2,
+      "explanation": "過去のある時点まで続いていた動作：過去完了進行形。"
+    },
+    {
+      "id": "sea_g2_01_12",
+      "unit": "english.eng.grammar.tense.simple",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Let's wait until he (   ) back.",
+      "choices": [
+        "coming",
+        "comes",
+        "came",
+        "will come"
+      ],
+      "answerIndex": 1,
+      "explanation": "時を表す副詞節では未来も現在形。"
+    },
+    {
+      "id": "sea_g2_01_13",
+      "unit": "english.eng.grammar.tense.simple",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I (   ) him three years ago.",
+      "choices": [
+        "have met",
+        "had met",
+        "meet",
+        "met"
+      ],
+      "answerIndex": 3,
+      "explanation": "「〜前に」ago は過去形とともに使う。"
+    },
+    {
+      "id": "sea_g2_01_14",
+      "unit": "english.eng.grammar.tense.perfect",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "How long (   ) you known her?",
+      "choices": [
+        "did",
+        "are",
+        "do",
+        "have"
+      ],
+      "answerIndex": 3,
+      "explanation": "期間をたずねる現在完了の疑問文。"
+    },
+    {
+      "id": "sea_g2_01_15",
+      "unit": "english.eng.grammar.tense.perfect",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This is the first time I (   ) sushi.",
+      "choices": [
+        "eat",
+        "ate",
+        "have eaten",
+        "had eaten"
+      ],
+      "answerIndex": 2,
+      "explanation": "This is the first time ＋ 現在完了。"
+    },
+    {
+      "id": "sea_g2_01_16",
+      "unit": "english.eng.grammar.tense",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "It (   ) five years since we moved here.",
+      "choices": [
+        "had",
+        "has been",
+        "was",
+        "is being"
+      ],
+      "answerIndex": 1,
+      "explanation": "It has been 〜 since …「…してから〜になる」。"
+    }
+  ]
+}

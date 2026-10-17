@@ -1,0 +1,998 @@
+{
+  "setId": "social_shonan_104_public_economy_03",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "social_shonan_104_public_economy_03_001",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "日本的雇用慣行の3つの特徴の組み合わせとして正しいものは？",
+      "choices": [
+        "短期雇用・年功序列型賃金・産業別労働組合",
+        "終身雇用・成果主義・職業別労働組合",
+        "終身雇用・年功序列型賃金・企業別労働組合",
+        "終身雇用・能力給・企業別労働組合"
+      ],
+      "answerIndex": 2,
+      "explanation": "高度経済成長期以来の日本企業の強みだった。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_03_002",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "勤続年数に比例して賃金が上がる仕組みは？",
+      "choices": [
+        "能力給",
+        "年俸制",
+        "年功序列型賃金",
+        "成果主義"
+      ],
+      "answerIndex": 2,
+      "explanation": "バブル崩壊後は成果主義・能力主義が広がった。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_03_003",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "欧米の労働組合は職業別・産業別が多いのに対し、日本の労働組合に多い形は？",
+      "choices": [
+        "地域別労働組合",
+        "企業別労働組合",
+        "職業別労働組合",
+        "産業別労働組合"
+      ],
+      "answerIndex": 1,
+      "explanation": "労使協調的と言われる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_03_004",
+      "unit": "social.pol.politics.law.contract",
+      "category": "knowledge",
+      "prompt": "アルバイト・パートタイマー・派遣労働者・契約社員などの働き方をまとめて何という？",
+      "choices": [
+        "自営業",
+        "正規雇用",
+        "終身雇用",
+        "非正規雇用"
+      ],
+      "answerIndex": 3,
+      "explanation": "全労働者の約3分の1、約2000万人にのぼる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_03_005",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "非正規雇用の待遇を改善するため、同じ仕事には同じ賃金を払うべきだという考え方は？",
+      "choices": [
+        "同一労働同一賃金",
+        "年功序列",
+        "成果主義",
+        "最低賃金制"
+      ],
+      "answerIndex": 0,
+      "explanation": "働き方改革でも柱とされた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_03_006",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "フルタイムで働いても最低限の生活を維持する収入が得られない人々を何という？",
+      "choices": [
+        "ノマドワーカー",
+        "ニート",
+        "ワーキングプア",
+        "フリーター"
+      ],
+      "answerIndex": 2,
+      "explanation": "「働く貧困層」とも訳される。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_03_007",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "仕事と生活の調和をめざす考え方を何という？",
+      "choices": [
+        "テレワーク",
+        "ジョブ型雇用",
+        "ワーク・ライフ・バランス",
+        "ワークシェアリング"
+      ],
+      "answerIndex": 2,
+      "explanation": "仕事以外の時間も充実させることをめざす。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_03_008",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "不況時に労働時間を短縮して仕事を分け合い、雇用を確保する考え方は？",
+      "choices": [
+        "リストラ",
+        "ジョブローテーション",
+        "ワークシェアリング",
+        "ワーク・ライフ・バランス"
+      ],
+      "answerIndex": 2,
+      "explanation": "本来は失業問題が生じたときの雇用調整の方法。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_03_009",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "女性差別撤廃条約の批准に合わせて1985年に制定され、募集・採用などでの女性差別を禁止した法律は？",
+      "choices": [
+        "男女雇用機会均等法",
+        "女性活躍推進法",
+        "育児・介護休業法",
+        "労働基準法"
+      ],
+      "answerIndex": 0,
+      "explanation": "1997年の改正で努力義務から禁止規定へ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_03_010",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "育児休業（最長1年）と介護休業を認めた法律は？",
+      "choices": [
+        "男女雇用機会均等法",
+        "介護保険法",
+        "育児・介護休業法",
+        "労働基準法"
+      ],
+      "answerIndex": 2,
+      "explanation": "女性のM字型カーブの解消などに関係する。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_03_011",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "女性が働きやすい職場環境づくりを企業に義務づけた2015年の法律は？",
+      "choices": [
+        "パートタイム労働法",
+        "男女共同参画社会基本法",
+        "男女雇用機会均等法",
+        "女性活躍推進法"
+      ],
+      "answerIndex": 3,
+      "explanation": "行動計画の策定などを求める。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_03_012",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "外国人労働者の受け入れで、2019年に創設された、特定の分野で定住も視野に入れた在留資格は？",
+      "choices": [
+        "特定技能",
+        "育成就労",
+        "技能実習",
+        "高度専門職"
+      ],
+      "answerIndex": 0,
+      "explanation": "技能実習制度は育成就労制度に代わることが決まった。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_03_013",
+      "unit": "social.pol.politics.law.contract",
+      "category": "knowledge",
+      "prompt": "特定の会社に所属せず、そのつど契約を結んで仕事を請け負う働き方は？",
+      "choices": [
+        "フリーランス",
+        "パートタイム",
+        "正社員",
+        "派遣労働"
+      ],
+      "answerIndex": 0,
+      "explanation": "労働者ではなく個人事業主として扱われる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_03_014",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "2019年に施行が始まり、残業時間の上限規制や年5日の有給休暇取得の義務化などを定めたのは？",
+      "choices": [
+        "パートタイム労働法",
+        "働き方改革関連法（働き方改革推進法）",
+        "労働契約法",
+        "労働者派遣法"
+      ],
+      "answerIndex": 1,
+      "explanation": "雇用形態による待遇格差の改善もめざす。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_03_015",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "高度な専門知識をもつ人を労働時間規制の対象から外す制度は？",
+      "choices": [
+        "裁量労働制",
+        "変形労働時間制",
+        "高度プロフェッショナル制度",
+        "フレックスタイム制"
+      ],
+      "answerIndex": 2,
+      "explanation": "働き方改革関連法で導入された。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_03_016",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "仕事内容（職務）に対して人を割り当てる雇用の形を何という？",
+      "choices": [
+        "終身雇用",
+        "ジョブ型雇用",
+        "年功序列",
+        "メンバーシップ型雇用"
+      ],
+      "answerIndex": 1,
+      "explanation": "日本で多かったのはメンバーシップ型。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_03_017",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "労働者派遣法について正しいものは？",
+      "choices": [
+        "規制緩和で派遣できる業種が広がり、派遣期間の上限は原則3年",
+        "派遣は製造業では禁止されている",
+        "派遣労働者は社会保険に必ず加入している",
+        "派遣期間に上限はない"
+      ],
+      "answerIndex": 0,
+      "explanation": "非正規雇用の増加の一因となった。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_03_018",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "バブル崩壊後、終身雇用に代わって増えたものは？",
+      "choices": [
+        "年功序列型賃金",
+        "中途採用・勧奨退職・出向・転職",
+        "企業別労働組合への加入",
+        "定年の廃止"
+      ],
+      "answerIndex": 1,
+      "explanation": "日本的雇用慣行が変化した。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_03_019",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "バブル崩壊後、年功序列型賃金に代わって広がった賃金の考え方は？",
+      "choices": [
+        "最低賃金制",
+        "同一労働同一賃金",
+        "終身雇用",
+        "成果主義・能力主義"
+      ],
+      "answerIndex": 3,
+      "explanation": "職能給・年俸制など。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_03_020",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "労働組合の組織率は2016年ごろどのくらい？",
+      "choices": [
+        "約50％",
+        "約5％",
+        "約35％",
+        "約17％"
+      ],
+      "answerIndex": 3,
+      "explanation": "組織率は低下し続けている。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_03_021",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "非正規雇用で最も割合が大きい雇用形態は？（グラフより）",
+      "choices": [
+        "契約社員",
+        "その他",
+        "パート・アルバイト",
+        "派遣社員"
+      ],
+      "answerIndex": 2,
+      "explanation": "約70％をパート・アルバイトが占める。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_03_022",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "非正規雇用で働く人のうち、男女の割合は？（グラフより）",
+      "choices": [
+        "女性が約7割",
+        "女性が約3割",
+        "男女がほぼ半分ずつ",
+        "男性が約7割"
+      ],
+      "answerIndex": 0,
+      "explanation": "女性67.8％・男性32.2％。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_03_023",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "手当の支払われない時間外労働を何という？",
+      "choices": [
+        "裁量労働",
+        "サービス残業",
+        "有給休暇",
+        "フレックスタイム"
+      ],
+      "answerIndex": 1,
+      "explanation": "過労死や過労自殺につながることもある。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_03_024",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "1997年の男女雇用機会均等法改正で新たに規定されたものは？",
+      "choices": [
+        "差別の禁止とセクシュアル・ハラスメント防止",
+        "育児休業制度",
+        "女子保護規定",
+        "最低賃金"
+      ],
+      "answerIndex": 0,
+      "explanation": "1985年時点では努力義務だった。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_03_025",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "1999年の労働基準法改正で撤廃されたものは？",
+      "choices": [
+        "労働時間の上限",
+        "有給休暇",
+        "最低賃金制度",
+        "女子保護規定（時間外・休日労働・深夜業の制限）"
+      ],
+      "answerIndex": 3,
+      "explanation": "男女同一の扱いにするため。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_03_026",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "女性の年齢別労働力率のグラフが、出産・育児期に下がる形を何という？",
+      "choices": [
+        "L字型カーブ",
+        "M字型カーブ",
+        "U字型カーブ",
+        "S字型カーブ"
+      ],
+      "answerIndex": 1,
+      "explanation": "育児が就業の障害になっていることを示す。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_03_027",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "技能の習得を目的として外国人を受け入れてきた制度は？",
+      "choices": [
+        "特定技能制度",
+        "ワーキングホリデー",
+        "技能実習制度",
+        "高度専門職制度"
+      ],
+      "answerIndex": 2,
+      "explanation": "2024年、育成就労制度への変更が決まった。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_03_028",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "技能実習制度に代わって導入が決まった制度は？",
+      "choices": [
+        "特定技能制度",
+        "育成就労制度",
+        "外国人研修制度",
+        "ワークシェアリング"
+      ],
+      "answerIndex": 1,
+      "explanation": "人材の育成と確保をめざす。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_03_029",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "インターネットなどを使い、会社以外の場所で働く働き方は？",
+      "choices": [
+        "ワークシェアリング",
+        "フリーランス",
+        "テレワーク（在宅勤務）",
+        "サービス残業"
+      ],
+      "answerIndex": 2,
+      "explanation": "労働者が業務時間を柔軟にしやすい。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_03_030",
+      "unit": "social.pol.politics.law.contract",
+      "category": "knowledge",
+      "prompt": "労働契約の締結・変更のルールを明確にした法律は？",
+      "choices": [
+        "労働契約法",
+        "労働組合法",
+        "労働基準法",
+        "労働者派遣法"
+      ],
+      "answerIndex": 0,
+      "explanation": "非正規雇用に関わる法律の一つ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_03_031",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "パートタイム労働者の福祉の増進や正社員への転換を図る法律は？",
+      "choices": [
+        "労働者派遣法",
+        "育児・介護休業法",
+        "パートタイム労働法",
+        "労働契約法"
+      ],
+      "answerIndex": 2,
+      "explanation": "使い捨ての抑止も目的。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_03_032",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "日本で多かった、会社がさまざまな業務を与える雇用の形は？",
+      "choices": [
+        "メンバーシップ型雇用",
+        "派遣型雇用",
+        "請負型雇用",
+        "ジョブ型雇用"
+      ],
+      "answerIndex": 0,
+      "explanation": "職務に人を割り当てるのがジョブ型。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_03_033",
+      "unit": "social.pol.politics.law",
+      "category": "thinking",
+      "prompt": "雇用形態・年齢階級別の賃金のグラフから読み取れることとして正しいものは？",
+      "choices": [
+        "正社員と非正社員の賃金は同じ",
+        "20代前半で最も差が大きい",
+        "非正社員の賃金は年齢とともに大きく上がる",
+        "正社員は年齢とともに賃金が上がるが、非正社員はほとんど上がらない"
+      ],
+      "answerIndex": 3,
+      "explanation": "格差は50代で最も大きくなる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_03_034",
+      "unit": "social.pol.politics.law.work",
+      "category": "thinking",
+      "prompt": "正規・非正規社員数の推移（1985〜2023年）のグラフから読み取れることとして正しいものは？",
+      "choices": [
+        "非正規社員は増え続け、2000万人をこえた",
+        "正規社員と非正規社員の数は同じになった",
+        "非正規社員は減り続けている",
+        "正規社員は2000万人を下回った"
+      ],
+      "answerIndex": 0,
+      "explanation": "非正規は約2124万人（2023年）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_03_035",
+      "unit": "social.pol.politics.law",
+      "category": "thinking",
+      "prompt": "企業がワークシェアリングを導入する目的として最も適切なものは？",
+      "choices": [
+        "非正規雇用をなくす",
+        "労働時間を短くして仕事を分け合い、解雇を避ける",
+        "一人あたりの労働時間を長くする",
+        "賃金を大幅に上げる"
+      ],
+      "answerIndex": 1,
+      "explanation": "不況時の雇用調整の方法。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_03_036",
+      "unit": "social.pol.politics.law.work",
+      "category": "thinking",
+      "prompt": "ワーク・ライフ・バランスを実現する取り組みとして最も適切なものは？",
+      "choices": [
+        "サービス残業を奨励する",
+        "休日出勤を増やす",
+        "残業を減らし、育児休業や有給休暇を取りやすくする",
+        "転勤を義務づける"
+      ],
+      "answerIndex": 2,
+      "explanation": "仕事と生活の両方を充実させる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_03_037",
+      "unit": "social.pol.politics.law",
+      "category": "thinking",
+      "prompt": "年功序列型賃金のメリットとして最も適切なものは？",
+      "choices": [
+        "若い人ほど賃金が高い",
+        "成果がすぐ賃金に反映される",
+        "長く勤めるほど賃金が上がるので、会社への帰属意識が高まる",
+        "転職しやすくなる"
+      ],
+      "answerIndex": 2,
+      "explanation": "高度経済成長期の日本企業の強みだった。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_03_038",
+      "unit": "social.pol.politics.law",
+      "category": "thinking",
+      "prompt": "成果主義の問題点として考えられるものは？",
+      "choices": [
+        "短期的な成果ばかり重視され、協力やチームワークが弱まるおそれ",
+        "長く勤めるほど自動的に賃金が上がる",
+        "全員の賃金が同じになる",
+        "能力がある人ほど評価されない"
+      ],
+      "answerIndex": 0,
+      "explanation": "評価の公平性も課題。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_03_039",
+      "unit": "social.pol.politics.law.work",
+      "category": "thinking",
+      "prompt": "ジョブ型雇用が広がることへの懸念としてプリントで挙げられているものは？",
+      "choices": [
+        "終身雇用が強化されること",
+        "企業の人件費負担を軽くする手段になること",
+        "ワーク・ライフ・バランスが必ず悪くなること",
+        "労働組合の組織率が上がること"
+      ],
+      "answerIndex": 1,
+      "explanation": "一方でワーク・ライフ・バランスの改善も期待される。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_03_040",
+      "unit": "social.pol.politics.law",
+      "category": "thinking",
+      "prompt": "フリーランスとして働く人が抱えやすい問題として最も適切なものは？",
+      "choices": [
+        "雇用保険に自動的に加入している",
+        "労働者として扱われず、労働基準法などの保護を受けにくい",
+        "会社から必ず残業代が払われる",
+        "解雇規制で守られている"
+      ],
+      "answerIndex": 1,
+      "explanation": "個人事業主として扱われるため。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_03_041",
+      "unit": "social.pol.politics.law",
+      "category": "thinking",
+      "prompt": "Eさんは同じ職場で、正社員と同じ仕事をしているのにパートというだけで賃金がかなり低い。これを改める考え方は？",
+      "choices": [
+        "成果主義",
+        "終身雇用",
+        "同一労働同一賃金",
+        "年功序列型賃金"
+      ],
+      "answerIndex": 2,
+      "explanation": "働き方改革の柱の一つ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_03_042",
+      "unit": "social.pol.politics.law",
+      "category": "thinking",
+      "prompt": "働き方改革関連法で、企業に義務づけられたことは？",
+      "choices": [
+        "定年を廃止すること",
+        "年5日の年次有給休暇を取得させること",
+        "最低賃金を2倍にすること",
+        "全員を正社員にすること"
+      ],
+      "answerIndex": 1,
+      "explanation": "残業時間の上限規制なども。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_03_043",
+      "unit": "social.pol.politics.law",
+      "category": "thinking",
+      "prompt": "「特定技能」制度が2019年に創設された背景として最も適切なものは？",
+      "choices": [
+        "技能実習制度を拡大するため",
+        "日本人の失業を増やすため",
+        "外国人の入国を全面禁止するため",
+        "国内の労働者不足に対応するため"
+      ],
+      "answerIndex": 3,
+      "explanation": "農業・建設など特定の分野で受け入れが始まった。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_03_044",
+      "unit": "social.pol.politics.law",
+      "category": "thinking",
+      "prompt": "技能実習制度で問題になったこととして最も適切なものは？",
+      "choices": [
+        "低賃金や長時間労働などの人権問題",
+        "日本語が使えないこと",
+        "実習生が少なすぎること",
+        "外国人の賃金が高すぎること"
+      ],
+      "answerIndex": 0,
+      "explanation": "不法就労者の発生も問題に。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_03_045",
+      "unit": "social.pol.politics.law",
+      "category": "thinking",
+      "prompt": "女性の労働力率のM字型カーブを解消する政策として最も適切なものは？",
+      "choices": [
+        "女性の深夜業を禁止する",
+        "結婚退職を義務づける",
+        "保育所の整備や育児休業の取りやすさを高める",
+        "女子保護規定を復活させる"
+      ],
+      "answerIndex": 2,
+      "explanation": "育児が就業の障害になっている。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ]
+    }
+  ]
+}

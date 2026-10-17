@@ -1,0 +1,260 @@
+{
+  "setId": "music_yougo_05",
+  "worldId": "music",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mus_yougo05_001",
+      "unit": "music.theory.terms.chord.triad",
+      "category": "knowledge",
+      "prompt": "コードネーム「C」は何の和音を表す？",
+      "choices": [
+        "C を最低音とするすべての和音",
+        "C を根音とする短三和音",
+        "C を根音とする七の和音",
+        "C を根音とする長三和音"
+      ],
+      "answerIndex": 3,
+      "explanation": "アルファベットだけなら長三和音（メジャー）。"
+    },
+    {
+      "id": "mus_yougo05_002",
+      "unit": "music.theory.terms.chord.triad",
+      "category": "knowledge",
+      "prompt": "コードネームの「m」は何を表す？",
+      "choices": [
+        "長三和音（メジャー）",
+        "短三和音（マイナー）",
+        "増三和音",
+        "7の和音"
+      ],
+      "answerIndex": 1,
+      "explanation": "Cm＝C・E♭・G。"
+    },
+    {
+      "id": "mus_yougo05_003",
+      "unit": "music.theory.terms.chord.triad",
+      "category": "knowledge",
+      "prompt": "コードネームの「dim」は何を表す？",
+      "choices": [
+        "sus4",
+        "減三和音（ディミニッシュ）",
+        "短三和音",
+        "増三和音"
+      ],
+      "answerIndex": 1,
+      "explanation": "Cdim＝C・E♭・G♭。"
+    },
+    {
+      "id": "mus_yougo05_004",
+      "unit": "music.theory.terms.chord.triad",
+      "category": "knowledge",
+      "prompt": "コードネームの「aug」（＋）は何を表す？",
+      "choices": [
+        "減三和音",
+        "長三和音",
+        "七の和音",
+        "増三和音（オーグメント）"
+      ],
+      "answerIndex": 3,
+      "explanation": "Caug＝C・E・G♯。"
+    },
+    {
+      "id": "mus_yougo05_005",
+      "unit": "music.theory.terms.chord.triad",
+      "category": "calculation",
+      "prompt": "コードネーム「Dm」の構成音は？（英語音名）",
+      "choices": [
+        "D・F・A",
+        "D・F・A♭",
+        "D・F♯・A♯",
+        "D・F♯・A"
+      ],
+      "answerIndex": 0,
+      "explanation": "Dm：D・F・A。"
+    },
+    {
+      "id": "mus_yougo05_006",
+      "unit": "music.theory.terms.chord.triad",
+      "category": "calculation",
+      "prompt": "E・G・B♭ の和音のコードネームは？（英語音名）",
+      "choices": [
+        "Edim",
+        "E",
+        "Eaug",
+        "Em"
+      ],
+      "answerIndex": 0,
+      "explanation": "根音 E の減三和音（ディミニッシュ）なので Edim。"
+    },
+    {
+      "id": "mus_yougo05_007",
+      "unit": "music.theory.terms.chord.triad",
+      "category": "calculation",
+      "prompt": "コードネーム「G」の構成音は？（英語音名）",
+      "choices": [
+        "G・B♭・D♭",
+        "G・B・D",
+        "G・B・D♯",
+        "G・B♭・D"
+      ],
+      "answerIndex": 1,
+      "explanation": "G：G・B・D。"
+    },
+    {
+      "id": "mus_yougo05_008",
+      "unit": "music.theory.terms.chord.triad",
+      "category": "calculation",
+      "prompt": "A・C♯・E♯ の和音のコードネームは？（英語音名）",
+      "choices": [
+        "Adim",
+        "Am",
+        "A",
+        "Aaug"
+      ],
+      "answerIndex": 3,
+      "explanation": "根音 A の増三和音（オーグメント）なので Aaug。"
+    },
+    {
+      "id": "mus_yougo05_009",
+      "unit": "music.theory.terms.chord.triad",
+      "category": "calculation",
+      "prompt": "コードネーム「E♭aug」の構成音は？（英語音名）",
+      "choices": [
+        "E♭・G・B♭",
+        "E♭・G・B",
+        "E♭・G♭・B𝄫",
+        "E♭・G♭・B♭"
+      ],
+      "answerIndex": 1,
+      "explanation": "E♭aug：E♭・G・B。"
+    },
+    {
+      "id": "mus_yougo05_010",
+      "unit": "music.theory.terms.chord.triad",
+      "category": "calculation",
+      "prompt": "E♭・G・B♭ の和音のコードネームは？（英語音名）",
+      "choices": [
+        "E♭dim",
+        "E♭",
+        "E♭m",
+        "E♭aug"
+      ],
+      "answerIndex": 1,
+      "explanation": "根音 E♭ の長三和音（メジャー）なので E♭。"
+    },
+    {
+      "id": "mus_yougo05_011",
+      "unit": "music.theory.terms.chord.triad",
+      "category": "calculation",
+      "prompt": "コードネーム「Cm」の構成音は？（英語音名）",
+      "choices": [
+        "C・E・G♯",
+        "C・E♭・G",
+        "C・E・G",
+        "C・E♭・G♭"
+      ],
+      "answerIndex": 1,
+      "explanation": "Cm：C・E♭・G。"
+    },
+    {
+      "id": "mus_yougo05_012",
+      "unit": "music.theory.terms.chord.triad",
+      "category": "calculation",
+      "prompt": "F・A・C の和音のコードネームは？（英語音名）",
+      "choices": [
+        "F",
+        "Faug",
+        "Fm",
+        "Fdim"
+      ],
+      "answerIndex": 0,
+      "explanation": "根音 F の長三和音（メジャー）なので F。"
+    },
+    {
+      "id": "mus_yougo05_013",
+      "unit": "music.theory.terms.chord.triad",
+      "category": "calculation",
+      "prompt": "コードネーム「Bm」の構成音は？（英語音名）",
+      "choices": [
+        "B・D♯・F♯",
+        "B・D・F♯",
+        "B・D・F",
+        "B・D♯・F𝄪"
+      ],
+      "answerIndex": 1,
+      "explanation": "Bm：B・D・F♯。"
+    },
+    {
+      "id": "mus_yougo05_014",
+      "unit": "music.theory.terms.chord.triad",
+      "category": "calculation",
+      "prompt": "D・F♯・A♯ の和音のコードネームは？（英語音名）",
+      "choices": [
+        "Daug",
+        "Ddim",
+        "D",
+        "Dm"
+      ],
+      "answerIndex": 0,
+      "explanation": "根音 D の増三和音（オーグメント）なので Daug。"
+    },
+    {
+      "id": "mus_yougo05_015",
+      "unit": "music.theory.terms.chord.triad",
+      "category": "calculation",
+      "prompt": "コードネーム「Fm」の構成音は？（英語音名）",
+      "choices": [
+        "F・A・C",
+        "F・A♭・C♭",
+        "F・A♭・C",
+        "F・A・C♯"
+      ],
+      "answerIndex": 2,
+      "explanation": "Fm：F・A♭・C。"
+    },
+    {
+      "id": "mus_yougo05_016",
+      "unit": "music.theory.terms.chord.triad",
+      "category": "calculation",
+      "prompt": "F・A・C♯ の和音のコードネームは？（英語音名）",
+      "choices": [
+        "F",
+        "Fdim",
+        "Faug",
+        "Fm"
+      ],
+      "answerIndex": 2,
+      "explanation": "根音 F の増三和音（オーグメント）なので Faug。"
+    },
+    {
+      "id": "mus_yougo05_017",
+      "unit": "music.theory.terms.chord.triad",
+      "category": "calculation",
+      "prompt": "コードネーム「Edim」の構成音は？（英語音名）",
+      "choices": [
+        "E・G♯・B♯",
+        "E・G・B♭",
+        "E・G・B",
+        "E・G♯・B"
+      ],
+      "answerIndex": 1,
+      "explanation": "Edim：E・G・B♭。"
+    },
+    {
+      "id": "mus_yougo05_018",
+      "unit": "music.theory.terms.chord.triad",
+      "category": "calculation",
+      "prompt": "A・C♯・E の和音のコードネームは？（英語音名）",
+      "choices": [
+        "Am",
+        "Aaug",
+        "A",
+        "Adim"
+      ],
+      "answerIndex": 2,
+      "explanation": "根音 A の長三和音（メジャー）なので A。"
+    }
+  ]
+}

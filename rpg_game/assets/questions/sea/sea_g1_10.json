@@ -1,0 +1,308 @@
+{
+  "setId": "sea_g1_10",
+  "worldId": "sea",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g1_10_01",
+      "unit": "english.eng.grammar.subjunctive",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "If it (   ) fine tomorrow, we will go hiking.",
+      "choices": [
+        "is",
+        "will be",
+        "were",
+        "would be"
+      ],
+      "answerIndex": 0,
+      "explanation": "実際に起こりうる条件（直説法）。時・条件の副詞節の中は未来のことでも現在形。"
+    },
+    {
+      "id": "sea_g1_10_02",
+      "unit": "english.eng.grammar.subjunctive.past",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "If I (   ) a lot of money, I would buy a house.",
+      "choices": [
+        "have",
+        "had",
+        "will have",
+        "would have"
+      ],
+      "answerIndex": 1,
+      "explanation": "今の事実と反対の仮定（仮定法過去）は If + 過去形, would + 動詞の原形。"
+    },
+    {
+      "id": "sea_g1_10_03",
+      "unit": "english.eng.grammar.subjunctive.past",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "If I were a bird, I (   ) fly to you.",
+      "choices": [
+        "can",
+        "could",
+        "will",
+        "may"
+      ],
+      "answerIndex": 1,
+      "explanation": "仮定法過去の主節は助動詞の過去形（would / could / might）。"
+    },
+    {
+      "id": "sea_g1_10_04",
+      "unit": "english.eng.grammar.subjunctive.past",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I wish I (   ) taller.",
+      "choices": [
+        "am",
+        "were",
+        "will be",
+        "be"
+      ],
+      "answerIndex": 1,
+      "explanation": "I wish + 仮定法過去で「〜ならいいのに」。be動詞は were が基本。"
+    },
+    {
+      "id": "sea_g1_10_05",
+      "unit": "english.eng.grammar.subjunctive.past",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "If she (   ) here, she would help us.",
+      "choices": [
+        "is",
+        "were",
+        "will be",
+        "has been"
+      ],
+      "answerIndex": 1,
+      "explanation": "今ここにいない（事実と反対）ので仮定法過去。"
+    },
+    {
+      "id": "sea_g1_10_06",
+      "unit": "english.eng.grammar.subjunctive.past",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "What would you do if you (   ) a million yen?",
+      "choices": [
+        "get",
+        "got",
+        "will get",
+        "have got"
+      ],
+      "answerIndex": 1,
+      "explanation": "主節が would なので、if 節は過去形（仮定法過去）。"
+    },
+    {
+      "id": "sea_g1_10_07",
+      "unit": "english.eng.grammar.subjunctive",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I wish it (   ) stop raining.",
+      "choices": [
+        "will",
+        "would",
+        "can",
+        "should"
+      ],
+      "answerIndex": 1,
+      "explanation": "I wish + would で「〜してくれればいいのに」という願望。"
+    },
+    {
+      "id": "sea_g1_10_08",
+      "unit": "english.eng.grammar.subjunctive",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "If you (   ) harder, you would pass the test.",
+      "choices": [
+        "study",
+        "studied",
+        "will study",
+        "have studied"
+      ],
+      "answerIndex": 1,
+      "explanation": "主節が would pass なので、if 節は過去形。"
+    },
+    {
+      "id": "sea_g1_10_09",
+      "unit": "english.eng.grammar.subjunctive.past",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "If I (   ) you, I would not do that.",
+      "choices": [
+        "am",
+        "had been",
+        "were",
+        "be"
+      ],
+      "answerIndex": 2,
+      "explanation": "仮定法過去では be 動詞は were を使うことが多い。"
+    },
+    {
+      "id": "sea_g1_10_10",
+      "unit": "english.eng.grammar.subjunctive",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "If it (   ) tomorrow, the game will be canceled.",
+      "choices": [
+        "will rain",
+        "rained",
+        "rains",
+        "would rain"
+      ],
+      "answerIndex": 2,
+      "explanation": "実際に起こりうる条件（直説法）。条件の節では未来も現在形。"
+    },
+    {
+      "id": "sea_g1_10_11",
+      "unit": "english.eng.grammar.subjunctive.past",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I wish I (   ) speak French.",
+      "choices": [
+        "will",
+        "can",
+        "could",
+        "am"
+      ],
+      "answerIndex": 2,
+      "explanation": "I wish ＋ 仮定法過去「〜できればいいのに」。"
+    },
+    {
+      "id": "sea_g1_10_12",
+      "unit": "english.eng.grammar.subjunctive.past",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "If he (   ) harder, he could win.",
+      "choices": [
+        "trains",
+        "will train",
+        "has trained",
+        "trained"
+      ],
+      "answerIndex": 3,
+      "explanation": "仮定法過去：If ＋ 過去形, 助動詞の過去形 ＋ 原形。"
+    },
+    {
+      "id": "sea_g1_10_13",
+      "unit": "english.eng.grammar.subjunctive.past",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "If I had wings, I (   ) fly.",
+      "choices": [
+        "will",
+        "can",
+        "am",
+        "could"
+      ],
+      "answerIndex": 3,
+      "explanation": "仮定法過去の帰結節は助動詞の過去形。"
+    },
+    {
+      "id": "sea_g1_10_14",
+      "unit": "english.eng.grammar.subjunctive.past",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "She talks as if she (   ) everything.",
+      "choices": [
+        "knows",
+        "has known",
+        "knew",
+        "will know"
+      ],
+      "answerIndex": 2,
+      "explanation": "as if ＋ 仮定法過去「まるで〜であるかのように」。"
+    },
+    {
+      "id": "sea_g1_10_15",
+      "unit": "english.eng.grammar.subjunctive",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "If you (   ) any questions, please ask me.",
+      "choices": [
+        "had",
+        "would have",
+        "have",
+        "having"
+      ],
+      "answerIndex": 2,
+      "explanation": "実際にありうる条件なので現在形。"
+    },
+    {
+      "id": "sea_g1_10_16",
+      "unit": "english.eng.grammar.subjunctive.past",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I wish you (   ) here with me now.",
+      "choices": [
+        "be",
+        "are",
+        "will be",
+        "were"
+      ],
+      "answerIndex": 3,
+      "explanation": "今の事実と反対の願望：仮定法過去。"
+    },
+    {
+      "id": "sea_g1_10_17",
+      "unit": "english.eng.grammar.subjunctive.past",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "It's high time you (   ) to bed.",
+      "choices": [
+        "go",
+        "going",
+        "will go",
+        "went"
+      ],
+      "answerIndex": 3,
+      "explanation": "It is (high) time ＋ 仮定法過去「もう〜してよいころだ」。"
+    },
+    {
+      "id": "sea_g1_10_18",
+      "unit": "english.eng.grammar.subjunctive.past",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "If I knew his address, I (   ) write to him.",
+      "choices": [
+        "can",
+        "would",
+        "will",
+        "shall"
+      ],
+      "answerIndex": 1,
+      "explanation": "仮定法過去の帰結節。"
+    },
+    {
+      "id": "sea_g1_10_19",
+      "unit": "english.eng.grammar.subjunctive.advanced",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) water, we could not live.",
+      "choices": [
+        "Without",
+        "With",
+        "Because",
+        "Unless"
+      ],
+      "answerIndex": 0,
+      "explanation": "Without 〜「〜がなければ」は if 節の代わりになる（仮定法）。Unless のあとには節が続く。"
+    },
+    {
+      "id": "sea_g1_10_20",
+      "unit": "english.eng.grammar.subjunctive.past",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "If only I (   ) more time!",
+      "choices": [
+        "having",
+        "had",
+        "will have",
+        "have"
+      ],
+      "answerIndex": 1,
+      "explanation": "If only ＋ 仮定法過去「〜でありさえすればなあ」。"
+    }
+  ]
+}

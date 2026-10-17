@@ -1,0 +1,954 @@
+{
+  "setId": "math_shonan_104_m1_data_03",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "math_shonan_104_m1_data_03_001",
+      "unit": "math.m1.data.stats.spread",
+      "category": "calculation",
+      "prompt": "次のデータの四分位範囲を求めよ。 6, 8, 16, 24, 27, 35, 36, 39",
+      "choices": [
+        "71/2",
+        "47/2",
+        "47/4",
+        "33"
+      ],
+      "answerIndex": 1,
+      "explanation": "Q₁＝12、Q₃＝71/2 なので Q₃−Q₁＝47/2。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "data"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_data_03_002",
+      "unit": "math.m1.data.stats.variance",
+      "category": "calculation",
+      "prompt": "変量 x の平均値が 8、分散が 36 である。y ＝ 3x + 30 のとき、y の分散は？",
+      "choices": [
+        "324",
+        "108",
+        "36",
+        "354"
+      ],
+      "answerIndex": 0,
+      "explanation": "分散は a² 倍（b には影響されない）：9×36。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "data"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_data_03_003",
+      "unit": "math.m1.data.stats.variance",
+      "category": "calculation",
+      "prompt": "変量 x の標準偏差が 3 である。y ＝ 3x + 8 のとき、y の標準偏差は？",
+      "choices": [
+        "27",
+        "3",
+        "17",
+        "9"
+      ],
+      "answerIndex": 3,
+      "explanation": "標準偏差は |a| 倍：|3|×3。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "data"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_data_03_004",
+      "unit": "math.m1.data.stats.spread",
+      "category": "calculation",
+      "prompt": "次のデータの第3四分位数を求めよ。 1, 3, 9, 14, 16, 19, 22, 30",
+      "choices": [
+        "30",
+        "41/2",
+        "6",
+        "43/2"
+      ],
+      "answerIndex": 1,
+      "explanation": "後半 16, 19, 22, 30 の中央値が第3四分位数。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "data"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_data_03_005",
+      "unit": "math.m1.data.stats.center",
+      "category": "calculation",
+      "prompt": "次のデータの中央値を求めよ。 13, 2, 2, 18, 19, 18, 2, 22",
+      "choices": [
+        "15.5",
+        "13",
+        "19",
+        "12"
+      ],
+      "answerIndex": 0,
+      "explanation": "小さい順に並べると 2, 2, 2, 13, 18, 18, 19, 22。真ん中の2つの平均が中央値。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "data"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_data_03_006",
+      "unit": "math.m1.data.stats.spread",
+      "category": "calculation",
+      "prompt": "次のデータの第1四分位数を求めよ。 7, 10, 14, 15, 16, 20, 24, 28",
+      "choices": [
+        "31/2",
+        "12",
+        "22",
+        "15"
+      ],
+      "answerIndex": 1,
+      "explanation": "前半 7, 10, 14, 15 の中央値が第1四分位数。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "data"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_data_03_007",
+      "unit": "math.m1.data.stats.correlation",
+      "category": "calculation",
+      "prompt": "2つの変量 (x, y) のデータ (1,10)、(3,8)、(5,6)、(7,4)、(9,2) の相関係数に最も近いものは？",
+      "choices": [
+        "0.00",
+        "-1.00",
+        "-0.50",
+        "1.00"
+      ],
+      "answerIndex": 1,
+      "explanation": "r＝共分散÷(xの標準偏差×yの標準偏差)＝−8÷√(8×8)。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "data"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_data_03_008",
+      "unit": "math.m1.data.stats.center",
+      "category": "knowledge",
+      "prompt": "データの最頻値とは？",
+      "choices": [
+        "真ん中の値",
+        "最も個数の多い値",
+        "平均の値",
+        "最大と最小の平均"
+      ],
+      "answerIndex": 1,
+      "explanation": "モードともいう。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "data"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_data_03_009",
+      "unit": "math.m1.data.stats.center",
+      "category": "calculation",
+      "prompt": "変量 x のデータの大きさが 5、平均値が 13、x² の平均値が 194 のとき、x の分散は？",
+      "choices": [
+        "181",
+        "363",
+        "5",
+        "25"
+      ],
+      "answerIndex": 3,
+      "explanation": "分散＝(x²の平均)−(xの平均)²＝194−169＝25。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "data"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_data_03_010",
+      "unit": "math.m1.data.stats.variance",
+      "category": "calculation",
+      "prompt": "変量 x の標準偏差が 5 である。y ＝ -3x + 9 のとき、y の標準偏差は？",
+      "choices": [
+        "5",
+        "45",
+        "15",
+        "24"
+      ],
+      "answerIndex": 2,
+      "explanation": "標準偏差は |a| 倍：|-3|×5。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "data"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_data_03_011",
+      "unit": "math.m1.data.stats.variance",
+      "category": "calculation",
+      "prompt": "次のデータの分散を求めよ。 6, 5, 6, 8, 10",
+      "choices": [
+        "16/5",
+        "4",
+        "8/5",
+        "21/5"
+      ],
+      "answerIndex": 0,
+      "explanation": "平均 7。偏差の2乗の平均＝16÷5＝16/5。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "data"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_data_03_012",
+      "unit": "math.m1.data.stats.variance",
+      "category": "calculation",
+      "prompt": "次のデータの分散を求めよ。 7, 4, 12, 9, 3, 1",
+      "choices": [
+        "14",
+        "10/3",
+        "84/5",
+        "15"
+      ],
+      "answerIndex": 0,
+      "explanation": "平均 6。偏差の2乗の平均＝84÷6＝14。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "data"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_data_03_013",
+      "unit": "math.m1.data.stats.spread",
+      "category": "calculation",
+      "prompt": "次のデータの四分位範囲を求めよ。 7, 10, 11, 14, 15, 19, 24, 28, 33, 38",
+      "choices": [
+        "17/2",
+        "17",
+        "28",
+        "31"
+      ],
+      "answerIndex": 1,
+      "explanation": "Q₁＝11、Q₃＝28 なので Q₃−Q₁＝17。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "data"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_data_03_014",
+      "unit": "math.m1.data.stats.variance",
+      "category": "calculation",
+      "prompt": "変量 x の標準偏差が 5 である。y ＝ 3x − 2 のとき、y の標準偏差は？",
+      "choices": [
+        "13",
+        "45",
+        "5",
+        "15"
+      ],
+      "answerIndex": 3,
+      "explanation": "標準偏差は |a| 倍：|3|×5。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "data"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_data_03_015",
+      "unit": "math.m1.data.stats.center",
+      "category": "calculation",
+      "prompt": "次のデータの平均値を求めよ。 15, 16, 11, 4, 20, 6",
+      "choices": [
+        "12",
+        "11",
+        "14",
+        "13"
+      ],
+      "answerIndex": 0,
+      "explanation": "合計 72 ÷ 個数 6 ＝ 12。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "data"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_data_03_016",
+      "unit": "math.m1.data.stats.variance",
+      "category": "calculation",
+      "prompt": "変量 x の標準偏差が 5 である。y ＝ 5x − 10 のとき、y の標準偏差は？",
+      "choices": [
+        "25",
+        "5",
+        "125",
+        "15"
+      ],
+      "answerIndex": 0,
+      "explanation": "標準偏差は |a| 倍：|5|×5。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "data"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_data_03_017",
+      "unit": "math.m1.data.stats.spread",
+      "category": "calculation",
+      "prompt": "次のデータの範囲を求めよ。 14, 20, 9, 19, 18",
+      "choices": [
+        "11",
+        "20",
+        "16",
+        "12"
+      ],
+      "answerIndex": 0,
+      "explanation": "範囲＝最大値 20 − 最小値 9。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "data"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_data_03_018",
+      "unit": "math.m1.data.stats.center",
+      "category": "knowledge",
+      "prompt": "中央値と同じ値になるのは？",
+      "choices": [
+        "第3四分位数",
+        "第2四分位数",
+        "平均値",
+        "第1四分位数"
+      ],
+      "answerIndex": 1,
+      "explanation": "データを二等分する値。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "data"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_data_03_019",
+      "unit": "math.m1.data.stats.spread",
+      "category": "calculation",
+      "prompt": "次のデータの第1四分位数を求めよ。 6, 8, 16, 24, 27, 35, 36, 39",
+      "choices": [
+        "71/2",
+        "12",
+        "24",
+        "51/2"
+      ],
+      "answerIndex": 1,
+      "explanation": "前半 6, 8, 16, 24 の中央値が第1四分位数。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "data"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_data_03_020",
+      "unit": "math.m1.data.stats.spread",
+      "category": "calculation",
+      "prompt": "次のデータの第3四分位数を求めよ。 1, 5, 8, 16, 20, 22, 29",
+      "choices": [
+        "5",
+        "22",
+        "23",
+        "29"
+      ],
+      "answerIndex": 1,
+      "explanation": "後半 20, 22, 29 の中央値が第3四分位数。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "data"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_data_03_021",
+      "unit": "math.m1.data.stats.center",
+      "category": "calculation",
+      "prompt": "次のデータの平均値を求めよ。 16, 5, 3, 7, 4, 2, 7, 11, 8",
+      "choices": [
+        "7",
+        "9",
+        "6",
+        "8"
+      ],
+      "answerIndex": 0,
+      "explanation": "合計 63 ÷ 個数 9 ＝ 7。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "data"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_data_03_022",
+      "unit": "math.m1.data.stats.center",
+      "category": "calculation",
+      "prompt": "変量 x の平均値が 3、分散が 25 である。y ＝ 3x + 18 のとき、y の平均値は？",
+      "choices": [
+        "9",
+        "63",
+        "27",
+        "21"
+      ],
+      "answerIndex": 2,
+      "explanation": "平均は ax＋b と同じように変わる：3×3+18。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "data"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_data_03_023",
+      "unit": "math.m1.data.stats.center",
+      "category": "calculation",
+      "prompt": "次のデータの平均値を求めよ。 21, 17, 8, 10, 6, 7, 19, 8",
+      "choices": [
+        "12",
+        "13",
+        "9",
+        "11"
+      ],
+      "answerIndex": 0,
+      "explanation": "合計 96 ÷ 個数 8 ＝ 12。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "data"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_data_03_024",
+      "unit": "math.m1.data.stats.variance",
+      "category": "calculation",
+      "prompt": "x の標準偏差が 2、y の標準偏差が 6、共分散が 3 のとき、相関係数は？",
+      "choices": [
+        "36",
+        "−1/4",
+        "3/8",
+        "1/4"
+      ],
+      "answerIndex": 3,
+      "explanation": "r＝3÷(2×6)＝1/4。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "data"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_data_03_025",
+      "unit": "math.m1.data.stats.variance",
+      "category": "calculation",
+      "prompt": "2つの変量 (x, y) のデータ (1,10)、(3,8)、(5,6)、(7,4)、(9,2) の共分散は？",
+      "choices": [
+        "−10",
+        "8",
+        "−8",
+        "−7"
+      ],
+      "answerIndex": 2,
+      "explanation": "偏差の積の平均。x の平均 5、y の平均 6。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "data"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_data_03_026",
+      "unit": "math.m1.data.stats.variance",
+      "category": "calculation",
+      "prompt": "変量 x の平均値が 11、分散が 25 である。y ＝ 3x − 2 のとき、y の分散は？",
+      "choices": [
+        "225",
+        "25",
+        "75",
+        "223"
+      ],
+      "answerIndex": 0,
+      "explanation": "分散は a² 倍（b には影響されない）：9×25。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "data"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_data_03_027",
+      "unit": "math.m1.data.stats.center",
+      "category": "calculation",
+      "prompt": "変量 x のデータの大きさが 10、平均値が 6、x² の平均値が 40 のとき、x の分散は？",
+      "choices": [
+        "34",
+        "76",
+        "2",
+        "4"
+      ],
+      "answerIndex": 3,
+      "explanation": "分散＝(x²の平均)−(xの平均)²＝40−36＝4。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "data"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_data_03_028",
+      "unit": "math.m1.data.stats.spread",
+      "category": "calculation",
+      "prompt": "第1四分位数が 25、第3四分位数が 45 のデータで、「Q₃＋1.5×(四分位範囲) 以上」を外れ値とするとき、外れ値とされる値の下限は？",
+      "choices": [
+        "75",
+        "65",
+        "−5",
+        "225/2"
+      ],
+      "answerIndex": 0,
+      "explanation": "IQR＝20、45＋1.5×20＝75。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "data"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_data_03_029",
+      "unit": "math.m1.data.stats.variance",
+      "category": "calculation",
+      "prompt": "次のデータの分散を求めよ。 1, 11, 9, 11",
+      "choices": [
+        "68/3",
+        "17",
+        "18",
+        "7/2"
+      ],
+      "answerIndex": 1,
+      "explanation": "平均 8。偏差の2乗の平均＝68÷4＝17。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "data"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_data_03_030",
+      "unit": "math.m1.data.stats.variance",
+      "category": "thinking",
+      "prompt": "すべてのデータに 5 を足すと、分散はどうなる？",
+      "choices": [
+        "25 増える",
+        "5 倍になる",
+        "5 増える",
+        "変わらない"
+      ],
+      "answerIndex": 3,
+      "explanation": "散らばり方は変わらない。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "data"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_data_03_031",
+      "unit": "math.m1.data.stats.correlation",
+      "category": "thinking",
+      "prompt": "相関係数が −0.9 の2つの変量の関係として正しいものは？",
+      "choices": [
+        "一方が増えると他方も増える傾向が強い",
+        "ほとんど関係がない",
+        "因果関係がある",
+        "一方が増えると他方は減る傾向が強い"
+      ],
+      "answerIndex": 3,
+      "explanation": "強い負の相関。相関は因果を意味しない。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "data"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_data_03_032",
+      "unit": "math.m1.data.stats.variance",
+      "category": "calculation",
+      "prompt": "次のデータの分散を求めよ。 7, 9, 12, 8",
+      "choices": [
+        "7/2",
+        "3/2",
+        "9/2",
+        "14/3"
+      ],
+      "answerIndex": 0,
+      "explanation": "平均 9。偏差の2乗の平均＝14÷4＝7/2。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "data"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_data_03_033",
+      "unit": "math.m1.data.stats.hypothesis",
+      "category": "knowledge",
+      "prompt": "仮説検定で、正しいかどうか判断したい主張に反する仮定を何という？",
+      "choices": [
+        "対立仮説",
+        "標本",
+        "帰無仮説",
+        "有意水準"
+      ],
+      "answerIndex": 2,
+      "explanation": "帰無仮説を立てて、それが起こりにくいかを調べる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "data"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_data_03_034",
+      "unit": "math.m1.data.stats.center",
+      "category": "calculation",
+      "prompt": "次のデータの平均値を求めよ。 12, 20, 15, 12, 6, 13",
+      "choices": [
+        "13",
+        "12",
+        "14",
+        "12.5"
+      ],
+      "answerIndex": 0,
+      "explanation": "合計 78 ÷ 個数 6 ＝ 13。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "data"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_data_03_035",
+      "unit": "math.m1.data.stats.center",
+      "category": "calculation",
+      "prompt": "次のデータの平均値を求めよ。 8, 9, 14, 12, 2",
+      "choices": [
+        "9",
+        "8",
+        "11",
+        "10"
+      ],
+      "answerIndex": 0,
+      "explanation": "合計 45 ÷ 個数 5 ＝ 9。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "data"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_data_03_036",
+      "unit": "math.m1.data.stats.variance",
+      "category": "calculation",
+      "prompt": "変量 x の平均値が 19、分散が 9 である。y ＝ -3x − 1 のとき、y の分散は？",
+      "choices": [
+        "81",
+        "−27",
+        "80",
+        "27"
+      ],
+      "answerIndex": 0,
+      "explanation": "分散は a² 倍（b には影響されない）：9×9。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "data"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_data_03_037",
+      "unit": "math.m1.data.stats.correlation",
+      "category": "thinking",
+      "prompt": "散布図で点が右上がりの直線の近くに集まっている。相関係数として最も近いものは？",
+      "choices": [
+        "−0.3",
+        "−0.9",
+        "0",
+        "0.9"
+      ],
+      "answerIndex": 3,
+      "explanation": "強い正の相関。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "data"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_data_03_038",
+      "unit": "math.m1.data.stats.hypothesis",
+      "category": "thinking",
+      "prompt": "仮説検定で「コインに偏りがない」と仮定し、その仮定のもとで観測した結果が起こる確率が 5% 未満だった。正しい判断は？",
+      "choices": [
+        "仮定が正しいと証明された",
+        "仮定は正しくなかったと判断する（偏りがあると考える）",
+        "何も判断できない",
+        "確率が5%なので偏りはない"
+      ],
+      "answerIndex": 1,
+      "explanation": "基準（有意水準）より小さければ仮説を棄却する。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "data"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_data_03_039",
+      "unit": "math.m1.data.stats.spread",
+      "category": "calculation",
+      "prompt": "次のデータの第3四分位数を求めよ。 8, 13, 17, 21, 28, 31, 34, 39",
+      "choices": [
+        "65/2",
+        "67/2",
+        "15",
+        "39"
+      ],
+      "answerIndex": 0,
+      "explanation": "後半 28, 31, 34, 39 の中央値が第3四分位数。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "data"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_data_03_040",
+      "unit": "math.m1.data.stats.variance",
+      "category": "calculation",
+      "prompt": "次のデータの分散を求めよ。 3, 4, 6, 6, 10, 1",
+      "choices": [
+        "8",
+        "48/5",
+        "9",
+        "7/3"
+      ],
+      "answerIndex": 0,
+      "explanation": "平均 5。偏差の2乗の平均＝48÷6＝8。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "data"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_data_03_041",
+      "unit": "math.m1.data.stats.spread",
+      "category": "thinking",
+      "prompt": "箱ひげ図で、箱の中の線（中央値）が箱の左端に近いとき言えることは？",
+      "choices": [
+        "四分位範囲が0",
+        "平均値が中央値より小さい",
+        "データが右に偏っていない",
+        "Q₁ から中央値までの間にデータが密集している"
+      ],
+      "answerIndex": 3,
+      "explanation": "同じ25%のデータが狭い範囲に入っている。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "data"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_data_03_042",
+      "unit": "math.m1.data.stats.center",
+      "category": "calculation",
+      "prompt": "変量 x の平均値が 8、分散が 36 である。y ＝ 3x + 30 のとき、y の平均値は？",
+      "choices": [
+        "38",
+        "114",
+        "24",
+        "54"
+      ],
+      "answerIndex": 3,
+      "explanation": "平均は ax＋b と同じように変わる：3×8+30。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "data"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_data_03_043",
+      "unit": "math.m1.data.stats.spread",
+      "category": "knowledge",
+      "prompt": "箱ひげ図の箱の長さが表すものは？",
+      "choices": [
+        "平均値",
+        "範囲",
+        "標準偏差",
+        "四分位範囲"
+      ],
+      "answerIndex": 3,
+      "explanation": "箱は Q₁ から Q₃ まで。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "data"
+      ]
+    }
+  ]
+}

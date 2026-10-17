@@ -1,0 +1,344 @@
+{
+  "setId": "japanese_gendai_04",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "jap_gendai04_001",
+      "unit": "japanese.gendai.vocab.meaning.antonym",
+      "category": "knowledge",
+      "prompt": "「抽象」の対義語は？",
+      "choices": [
+        "具有",
+        "具体",
+        "形式",
+        "象徴"
+      ],
+      "answerIndex": 1,
+      "explanation": "個々の具体例から共通点を取り出すのが抽象。"
+    },
+    {
+      "id": "jap_gendai04_002",
+      "unit": "japanese.gendai.vocab.meaning.antonym",
+      "category": "knowledge",
+      "prompt": "「主観」の対義語は？",
+      "choices": [
+        "直観",
+        "主体",
+        "客観",
+        "楽観"
+      ],
+      "answerIndex": 2,
+      "explanation": "主観：自分だけの見方。客観：だれから見てもそうであること。"
+    },
+    {
+      "id": "jap_gendai04_003",
+      "unit": "japanese.gendai.vocab.meaning.antonym",
+      "category": "knowledge",
+      "prompt": "「絶対」の対義語は？",
+      "choices": [
+        "相対",
+        "無限",
+        "偶然",
+        "反対"
+      ],
+      "answerIndex": 0,
+      "explanation": "相対：ほかとの関係や比較の中で成り立つこと。"
+    },
+    {
+      "id": "jap_gendai04_004",
+      "unit": "japanese.gendai.vocab.meaning.antonym",
+      "category": "knowledge",
+      "prompt": "「演繹」の対義語は？",
+      "choices": [
+        "類推",
+        "要約",
+        "帰納",
+        "仮説"
+      ],
+      "answerIndex": 2,
+      "explanation": "演繹：一般から個別を導く。帰納：個別から一般を導く。"
+    },
+    {
+      "id": "jap_gendai04_005",
+      "unit": "japanese.gendai.vocab.meaning.critical",
+      "category": "knowledge",
+      "prompt": "「普遍」の対義語は？",
+      "choices": [
+        "特殊",
+        "共通",
+        "平凡",
+        "一般"
+      ],
+      "answerIndex": 0,
+      "explanation": "普遍：すべてのものに当てはまること。"
+    },
+    {
+      "id": "jap_gendai04_006",
+      "unit": "japanese.gendai.vocab.meaning.meaning",
+      "category": "knowledge",
+      "prompt": "「逆説（パラドックス）」の意味は？",
+      "choices": [
+        "相手の説に反対すること",
+        "古い学説",
+        "一見矛盾しているようで、実は真理をふくむ表現",
+        "順序を逆にした説明"
+      ],
+      "answerIndex": 2,
+      "explanation": "例：「急がば回れ」。"
+    },
+    {
+      "id": "jap_gendai04_007",
+      "unit": "japanese.gendai.vocab.meaning.meaning",
+      "category": "knowledge",
+      "prompt": "「恣意的」の意味は？",
+      "choices": [
+        "意図がはっきりしているようす",
+        "注意深いようす",
+        "自分勝手で、筋道が通っていないようす",
+        "公平なようす"
+      ],
+      "answerIndex": 2,
+      "explanation": "「恣」は、ほしいままにするという意味。"
+    },
+    {
+      "id": "jap_gendai04_008",
+      "unit": "japanese.gendai.vocab.meaning.meaning",
+      "category": "knowledge",
+      "prompt": "「アイロニー」の意味は？",
+      "choices": [
+        "皮肉",
+        "矛盾",
+        "比喩",
+        "感動"
+      ],
+      "answerIndex": 0,
+      "explanation": "反語や皮肉を用いた表現。"
+    },
+    {
+      "id": "jap_gendai04_009",
+      "unit": "japanese.gendai.vocab.meaning.critical",
+      "category": "knowledge",
+      "prompt": "「相対化する」の意味は？",
+      "choices": [
+        "一つだけを正しいと決める",
+        "相手と対立する",
+        "絶対的だと思っていたものを、ほかと比べて位置づけ直す",
+        "二つを同じにする"
+      ],
+      "answerIndex": 2,
+      "explanation": "評論でよく使われる言葉。"
+    },
+    {
+      "id": "jap_gendai04_010",
+      "unit": "japanese.gendai.vocab.meaning.meaning",
+      "category": "knowledge",
+      "prompt": "「ステレオタイプ」の意味は？",
+      "choices": [
+        "新しい発想",
+        "立体的な音響",
+        "多様な意見",
+        "型にはまった固定的な見方"
+      ],
+      "answerIndex": 3,
+      "explanation": "先入観や偏見と結びつきやすい。"
+    },
+    {
+      "id": "jap_gendai04_011",
+      "unit": "japanese.gendai.vocab.meaning.meaning",
+      "category": "thinking",
+      "prompt": "「迷惑をかける」の「かける」と同じ意味で使われているのは？",
+      "choices": [
+        "橋をかける",
+        "心配をかける",
+        "電話をかける",
+        "眼鏡をかける"
+      ],
+      "answerIndex": 1,
+      "explanation": "「相手に負担や作用を及ぼす」という意味。多義語は文脈で判断する。"
+    },
+    {
+      "id": "jap_gendai04_012",
+      "unit": "japanese.gendai.vocab.meaning.critical",
+      "category": "thinking",
+      "prompt": "「理性」と対になる語として評論で使われることが多いのは？",
+      "choices": [
+        "知性",
+        "感性（感情）",
+        "論理",
+        "学問"
+      ],
+      "answerIndex": 1,
+      "explanation": "理性と感性（感情）の対比は評論の典型的な構図。"
+    },
+    {
+      "id": "jap_gendai04_013",
+      "unit": "japanese.gendai.vocab.meaning.antonym",
+      "category": "knowledge",
+      "prompt": "「具体」の対義語は？",
+      "choices": [
+        "相対",
+        "普遍",
+        "客観",
+        "抽象"
+      ],
+      "answerIndex": 3,
+      "explanation": "具体的な事例と抽象的な概念。"
+    },
+    {
+      "id": "jap_gendai04_014",
+      "unit": "japanese.gendai.vocab.meaning.antonym",
+      "category": "knowledge",
+      "prompt": "「帰納」の対義語は？",
+      "choices": [
+        "具体",
+        "分析",
+        "演繹",
+        "総合"
+      ],
+      "answerIndex": 2,
+      "explanation": "個別→一般が帰納、一般→個別が演繹。"
+    },
+    {
+      "id": "jap_gendai04_015",
+      "unit": "japanese.gendai.vocab.meaning.antonym",
+      "category": "knowledge",
+      "prompt": "「分析」の対義語は？",
+      "choices": [
+        "抽象",
+        "総合",
+        "主観",
+        "帰納"
+      ],
+      "answerIndex": 1,
+      "explanation": "分けて調べる⇔まとめる。"
+    },
+    {
+      "id": "jap_gendai04_016",
+      "unit": "japanese.gendai.vocab.meaning.antonym",
+      "category": "knowledge",
+      "prompt": "「必然」の対義語は？",
+      "choices": [
+        "偶然",
+        "自然",
+        "当然",
+        "突然"
+      ],
+      "answerIndex": 0,
+      "explanation": "かならずそうなる⇔たまたまそうなる。"
+    },
+    {
+      "id": "jap_gendai04_017",
+      "unit": "japanese.gendai.vocab.meaning.meaning",
+      "category": "knowledge",
+      "prompt": "「形而上」の意味は？",
+      "choices": [
+        "上の段にあるもの",
+        "形のある道具",
+        "形をもたない、精神的・抽象的なもの",
+        "目に見える物質的なもの"
+      ],
+      "answerIndex": 2,
+      "explanation": "対義語は「形而下」。"
+    },
+    {
+      "id": "jap_gendai04_018",
+      "unit": "japanese.gendai.vocab.meaning.meaning",
+      "category": "knowledge",
+      "prompt": "「アイデンティティ」の意味は？",
+      "choices": [
+        "身分証明書だけ",
+        "自分が自分であるという感覚（自己同一性）",
+        "他人との共通点",
+        "個人情報"
+      ],
+      "answerIndex": 1,
+      "explanation": "青年期の課題としてもよく論じられる。"
+    },
+    {
+      "id": "jap_gendai04_019",
+      "unit": "japanese.gendai.vocab.meaning.meaning",
+      "category": "knowledge",
+      "prompt": "「パラダイム」の意味は？",
+      "choices": [
+        "比喩",
+        "逆説",
+        "見本の作品",
+        "ある時代や分野の人々が共有するものの見方や考え方の枠組み"
+      ],
+      "answerIndex": 3,
+      "explanation": "クーンが科学史で用いた。"
+    },
+    {
+      "id": "jap_gendai04_020",
+      "unit": "japanese.gendai.vocab.meaning.meaning",
+      "category": "knowledge",
+      "prompt": "「ジレンマ」の意味は？",
+      "choices": [
+        "一つの答えしかない問題",
+        "矛盾のない状態",
+        "強い自信",
+        "二つの選択肢のどちらを選んでも不都合がある板ばさみの状態"
+      ],
+      "answerIndex": 3,
+      "explanation": "評論でもよく出る。"
+    },
+    {
+      "id": "jap_gendai04_021",
+      "unit": "japanese.gendai.vocab.meaning.meaning",
+      "category": "knowledge",
+      "prompt": "「メタファー」の意味は？",
+      "choices": [
+        "直喩",
+        "反復",
+        "隠喩",
+        "擬人法"
+      ],
+      "answerIndex": 2,
+      "explanation": "「ようだ」を使わないたとえ。"
+    },
+    {
+      "id": "jap_gendai04_022",
+      "unit": "japanese.gendai.vocab.meaning.meaning",
+      "category": "knowledge",
+      "prompt": "「コンテクスト」の意味は？",
+      "choices": [
+        "結論",
+        "反対意見",
+        "文脈・背景",
+        "内容の要約"
+      ],
+      "answerIndex": 2,
+      "explanation": "意味は文脈によって変わる。"
+    },
+    {
+      "id": "jap_gendai04_023",
+      "unit": "japanese.gendai.vocab.meaning.meaning",
+      "category": "knowledge",
+      "prompt": "「捨象」の意味は？",
+      "choices": [
+        "具体化すること",
+        "物を捨てること",
+        "象を捨てること",
+        "共通する性質を取り出すとき、ほかの性質を切り捨てること"
+      ],
+      "answerIndex": 3,
+      "explanation": "抽象とセットで使われる。"
+    },
+    {
+      "id": "jap_gendai04_024",
+      "unit": "japanese.gendai.vocab.meaning.meaning",
+      "category": "thinking",
+      "prompt": "「近代」を論じる評論で、「合理化」が意味する内容として適切なものは？",
+      "choices": [
+        "神話を重んじること",
+        "感情を最優先すること",
+        "伝統や習慣より、効率や論理的な説明を重視して社会や生活を組み立てること",
+        "無駄を増やすこと"
+      ],
+      "answerIndex": 2,
+      "explanation": "ヴェーバーの議論などで知られる。"
+    }
+  ]
+}

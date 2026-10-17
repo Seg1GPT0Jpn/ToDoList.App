@@ -1,0 +1,23 @@
+name: rpg_game
+description: >-
+  つづり内ミニゲーム「つづりクエスト」のコアロジック（バトル・成長・進行・解放）。
+  Flutter / Firebase に依存しない純 Dart で書き、後で school_planner の
+  lib/features/rpg_game/ に移植する前提。
+version: 0.1.0
+publish_to: none
+
+environment:
+  sdk: ^3.0.0
+
+dev_dependencies:
+  test: ^1.24.0
+
+# Flutter アプリから packages/rpg_game/assets/... で読めるようにする
+flutter:
+  assets:
+    # 問題は教科ごとにまとめたファイルだけを同梱する（tool/bundle_questions.py で作る）
+    - assets/question_bundles/
+    - assets/cards/
+    - assets/words/
+dependencies:
+  crypto: ^3.0.7

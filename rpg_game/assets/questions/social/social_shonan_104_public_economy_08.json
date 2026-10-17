@@ -1,0 +1,932 @@
+{
+  "setId": "social_shonan_104_public_economy_08",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "social_shonan_104_public_economy_08_001",
+      "unit": "social.pol.economy.global.north",
+      "category": "knowledge",
+      "prompt": "1961年に設立された「先進国クラブ」とも呼ばれる組織は？",
+      "choices": [
+        "経済協力開発機構（OECD）",
+        "国連開発計画（UNDP）",
+        "主要国首脳会議",
+        "IMF"
+      ],
+      "answerIndex": 0,
+      "explanation": "日本は1964年に加盟。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_08_002",
+      "unit": "social.pol.economy.global.north",
+      "category": "knowledge",
+      "prompt": "OECDの下部機関で、先進国による途上国援助を行うのは？",
+      "choices": [
+        "JICA",
+        "UNCTAD",
+        "開発援助委員会（DAC）",
+        "WTO"
+      ],
+      "answerIndex": 2,
+      "explanation": "ODAの調整などを行う。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_08_003",
+      "unit": "social.pol.economy.global.north",
+      "category": "knowledge",
+      "prompt": "2015年の国連総会で採択された、2030年までの目標は？",
+      "choices": [
+        "ミレニアム開発目標（MDGs）",
+        "パリ協定",
+        "新国際経済秩序",
+        "持続可能な開発目標（SDGs）"
+      ],
+      "answerIndex": 3,
+      "explanation": "MDGsは2000年に採択され2015年までの目標だった。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_08_004",
+      "unit": "social.pol.economy.global.north",
+      "category": "knowledge",
+      "prompt": "平均余命・教育・国民所得から算出し、UNDPが導入した指数は？",
+      "choices": [
+        "国内総生産（GDP）",
+        "人間開発指数（HDI）",
+        "ジニ係数",
+        "国民負担率"
+      ],
+      "answerIndex": 1,
+      "explanation": "豊かさを所得以外の面からも測る。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_08_005",
+      "unit": "social.pol.economy.global.north",
+      "category": "knowledge",
+      "prompt": "日本のODAのうち、インフラ整備などのために返済を前提に貸し付けるものは？",
+      "choices": [
+        "国際機関への拠出",
+        "技術協力",
+        "円借款",
+        "無償資金援助"
+      ],
+      "answerIndex": 2,
+      "explanation": "贈与に対して政府貸付と呼ばれる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_08_006",
+      "unit": "social.pol.economy.global.north",
+      "category": "knowledge",
+      "prompt": "青年海外協力隊を派遣するなど、技術協力を担う日本の機関は？",
+      "choices": [
+        "UNDP",
+        "国際協力機構（JICA）",
+        "OECD",
+        "国民生活センター"
+      ],
+      "answerIndex": 1,
+      "explanation": "政府による二国間援助の一部。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_08_007",
+      "unit": "social.pol.economy.global.north",
+      "category": "knowledge",
+      "prompt": "2015年に定められ、日本の国益の確保に貢献することを明記した日本の援助の方針は？",
+      "choices": [
+        "国連憲章",
+        "ODA大綱",
+        "開発協力大綱",
+        "ミレニアム宣言"
+      ],
+      "answerIndex": 2,
+      "explanation": "ODA大綱（1992年、2003年改正）に代わる方針。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_08_008",
+      "unit": "social.pol.economy.global.north",
+      "category": "knowledge",
+      "prompt": "援助条件の緩やかさを示す指標は？",
+      "choices": [
+        "ファンダメンタルズ",
+        "人間開発指数",
+        "国民負担率",
+        "グラント・エレメント"
+      ],
+      "answerIndex": 3,
+      "explanation": "日本はこの値や贈与比率が低いとされる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_08_009",
+      "unit": "social.pol.economy.global.north",
+      "category": "knowledge",
+      "prompt": "援助資金で買う物を援助国から買うよう条件をつけた援助は？",
+      "choices": [
+        "アンタイド援助",
+        "タイド（ひも付き）援助",
+        "無償資金援助",
+        "技術協力"
+      ],
+      "answerIndex": 1,
+      "explanation": "日本は今はアンタイドの比率が高い。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_08_010",
+      "unit": "social.pol.economy.global.north",
+      "category": "knowledge",
+      "prompt": "国際的なODAの目標はGNIの何％？",
+      "choices": [
+        "1％",
+        "3％",
+        "0.1％",
+        "0.7％"
+      ],
+      "answerIndex": 3,
+      "explanation": "日本は0.39％（2022年暫定値）で目標に届いていない。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_08_011",
+      "unit": "social.pol.economy.global.north",
+      "category": "knowledge",
+      "prompt": "日本のODAの特徴として正しいものは？",
+      "choices": [
+        "アジアへの援助が多く、贈与比率が低い",
+        "アフリカへの援助がほとんどを占める",
+        "贈与比率がDAC平均より高い",
+        "GNI比0.7％の目標を達成している"
+      ],
+      "answerIndex": 0,
+      "explanation": "近年はアフリカ向けも増やしている。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_08_012",
+      "unit": "social.pol.economy.global.north",
+      "category": "knowledge",
+      "prompt": "世界銀行の貧困ラインである1日2.15ドル未満で暮らす人々を何という？",
+      "choices": [
+        "中間層",
+        "相対的貧困層",
+        "ワーキングプア",
+        "絶対的貧困層"
+      ],
+      "answerIndex": 3,
+      "explanation": "約6.9億人（2018年）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_08_013",
+      "unit": "social.pol.economy.global.north",
+      "category": "knowledge",
+      "prompt": "途上国の産品を公正な価格で生産者から直接輸入・販売し、自立を支援する取り組みは？",
+      "choices": [
+        "フェアトレード",
+        "ODA",
+        "BOPビジネス",
+        "マイクロファイナンス"
+      ],
+      "answerIndex": 0,
+      "explanation": "生産者に正当な対価が届くようにする。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_08_014",
+      "unit": "social.pol.economy.global.north",
+      "category": "knowledge",
+      "prompt": "貧困層の人々の団体に少額の融資を行う仕組みは？",
+      "choices": [
+        "フェアトレード",
+        "マイクロファイナンス（マイクロクレジット）",
+        "ベーシックインカム",
+        "円借款"
+      ],
+      "answerIndex": 1,
+      "explanation": "バングラデシュのグラミン銀行が起源。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_08_015",
+      "unit": "social.pol.economy.global.north",
+      "category": "knowledge",
+      "prompt": "途上国の低所得層を対象にした持続可能なビジネスを何という？",
+      "choices": [
+        "NGO",
+        "フェアトレード",
+        "BOPビジネス",
+        "ODA"
+      ],
+      "answerIndex": 2,
+      "explanation": "BOPは所得ピラミッドの底辺（Base of the Pyramid）の意味。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_08_016",
+      "unit": "social.pol.economy.global.north",
+      "category": "knowledge",
+      "prompt": "一人ひとりの生命や生活を脅威から守るという考え方は？",
+      "choices": [
+        "安全保障理事会",
+        "集団安全保障",
+        "人間の安全保障",
+        "国家安全保障"
+      ],
+      "answerIndex": 2,
+      "explanation": "貧困削減にもこの視点が必要とされる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_08_017",
+      "unit": "social.pol.economy.global.north",
+      "category": "knowledge",
+      "prompt": "2000年の国連ミレニアムサミットで採択された、2015年までの貧困・教育・医療などの目標は？",
+      "choices": [
+        "持続可能な開発目標（SDGs）",
+        "新国際経済秩序",
+        "人間開発指数",
+        "ミレニアム開発目標（MDGs）"
+      ],
+      "answerIndex": 3,
+      "explanation": "SDGsに引き継がれた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_08_018",
+      "unit": "social.pol.economy.global.north",
+      "category": "knowledge",
+      "prompt": "ODA（政府開発援助）にあたらないものは？",
+      "choices": [
+        "国際機関への出資・拠出",
+        "NGOの寄付",
+        "無償資金援助",
+        "技術協力"
+      ],
+      "answerIndex": 1,
+      "explanation": "NGOや直接投資は民間による協力。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_08_019",
+      "unit": "social.pol.economy.global.north",
+      "category": "knowledge",
+      "prompt": "ODA大綱（1992年）の目的に含まれないものは？",
+      "choices": [
+        "環境の保全",
+        "軍事力の強化",
+        "人道的見地",
+        "国際社会の相互依存関係"
+      ],
+      "answerIndex": 1,
+      "explanation": "平和国家としての使命も目的。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_08_020",
+      "unit": "social.pol.economy.global.north",
+      "category": "knowledge",
+      "prompt": "ODA大綱の2003年の改正で提唱された視点は？",
+      "choices": [
+        "自由貿易",
+        "人間の安全保障",
+        "援助より貿易を",
+        "ゆりかごから墓場まで"
+      ],
+      "answerIndex": 1,
+      "explanation": "国益重視の理念も。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_08_021",
+      "unit": "social.pol.economy.global.north",
+      "category": "knowledge",
+      "prompt": "開発協力大綱（2015年）で可能になったことは？",
+      "choices": [
+        "軍事援助",
+        "援助の全面停止",
+        "援助の民営化",
+        "非軍事部門での他国軍への支援や、経済成長した国への支援"
+      ],
+      "answerIndex": 3,
+      "explanation": "日本の国益の確保への貢献を明記。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_08_022",
+      "unit": "social.pol.economy.global.north",
+      "category": "knowledge",
+      "prompt": "日本のODAの贈与比率（39.3％）について正しいものは？",
+      "choices": [
+        "100％である",
+        "DAC平均より高い",
+        "DAC平均（83.1％）よりかなり低い",
+        "DAC平均と同じ"
+      ],
+      "answerIndex": 2,
+      "explanation": "「自助努力を前提に発展を手助けする」方針。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_08_023",
+      "unit": "social.pol.economy.global.north",
+      "category": "knowledge",
+      "prompt": "日本のODA額が最も多かった（ピーク）のは？",
+      "choices": [
+        "2022年",
+        "1985年",
+        "1964年",
+        "1997年"
+      ],
+      "answerIndex": 3,
+      "explanation": "近年はピークの約50％に減少した。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_08_024",
+      "unit": "social.pol.economy.global.north",
+      "category": "knowledge",
+      "prompt": "日本の対中国ODA事業が終了したのは？",
+      "choices": [
+        "2015年",
+        "1997年",
+        "2008年",
+        "2021年"
+      ],
+      "answerIndex": 3,
+      "explanation": "中国が他国に援助を行うようになったことも批判された。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_08_025",
+      "unit": "social.pol.economy.global.north",
+      "category": "knowledge",
+      "prompt": "主要国のODA実績（グラフ）で、2022年に最も援助額が多い国は？",
+      "choices": [
+        "イギリス",
+        "フランス",
+        "日本",
+        "アメリカ"
+      ],
+      "answerIndex": 3,
+      "explanation": "金額では日本は世界3位。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_08_026",
+      "unit": "social.pol.economy.global.north",
+      "category": "knowledge",
+      "prompt": "ODAの対GNI比（2022年）で最も高い国は？",
+      "choices": [
+        "アメリカ",
+        "日本",
+        "スウェーデン",
+        "フランス"
+      ],
+      "answerIndex": 2,
+      "explanation": "スウェーデン0.89％、日本0.39％、アメリカ0.23％。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_08_027",
+      "unit": "social.pol.economy.global.north",
+      "category": "knowledge",
+      "prompt": "南北の格差のグラフで、サハラ以南アフリカの5歳未満児死亡率は世界平均の約何倍？",
+      "choices": [
+        "同じくらい",
+        "約半分",
+        "約10倍",
+        "約2倍"
+      ],
+      "answerIndex": 3,
+      "explanation": "7.3％と3.8％。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_08_028",
+      "unit": "social.pol.economy.global.north",
+      "category": "knowledge",
+      "prompt": "民間による国際協力にあたるものは？",
+      "choices": [
+        "JICAの技術協力",
+        "NGOの活動",
+        "無償資金援助",
+        "円借款"
+      ],
+      "answerIndex": 1,
+      "explanation": "ODAは政府による協力。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_08_029",
+      "unit": "social.pol.economy.global.north",
+      "category": "thinking",
+      "prompt": "日本のODAで円借款（貸付）が多いことについて、日本政府の考え方として最も適切なものは？",
+      "choices": [
+        "援助額を少なく見せるため",
+        "利益を上げるため",
+        "返済の義務を通じて、途上国の自助努力を促す",
+        "途上国を従属させるため"
+      ],
+      "answerIndex": 2,
+      "explanation": "グラント・エレメントや贈与比率が低くなる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_08_030",
+      "unit": "social.pol.economy.global.north",
+      "category": "thinking",
+      "prompt": "ODAで大規模なダムを建設したことの問題点として指摘されるものは？",
+      "choices": [
+        "日本の企業が損をすること",
+        "援助額が少なすぎること",
+        "熱帯雨林の破壊や住民の生活破壊につながるおそれ",
+        "電力が増えすぎること"
+      ],
+      "answerIndex": 2,
+      "explanation": "援助の質が問われている。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_08_031",
+      "unit": "social.pol.economy.global.north",
+      "category": "thinking",
+      "prompt": "日本のODAの課題として、プリントで挙げられているものに当てはまらないのは？",
+      "choices": [
+        "援助額が世界1位であること",
+        "GNI比0.7％の目標を達成していないこと",
+        "贈与比率が低いこと",
+        "人道的支援が少ないこと"
+      ],
+      "answerIndex": 0,
+      "explanation": "金額では世界3位。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_08_032",
+      "unit": "social.pol.economy.global.north",
+      "category": "thinking",
+      "prompt": "タイド援助（ひも付き援助）の問題点として最も適切なものは？",
+      "choices": [
+        "援助額が増えすぎる",
+        "援助国の企業ばかりが受注し、途上国にとって高くつくことがある",
+        "途上国が自由に業者を選べる",
+        "援助国の企業が損をする"
+      ],
+      "answerIndex": 1,
+      "explanation": "今の日本はアンタイド比率が高い。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_08_033",
+      "unit": "social.pol.economy.global.north",
+      "category": "thinking",
+      "prompt": "フェアトレードの商品を買うことの意義として最も適切なものは？",
+      "choices": [
+        "援助国の税金が減る",
+        "先進国の企業の利益が増える",
+        "最も安い商品が手に入る",
+        "途上国の生産者に正当な対価が届き、自立につながる"
+      ],
+      "answerIndex": 3,
+      "explanation": "自立支援の取り組み。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_08_034",
+      "unit": "social.pol.economy.global.north",
+      "category": "thinking",
+      "prompt": "マイクロファイナンスの特徴として最も適切なものは？",
+      "choices": [
+        "大企業にだけ融資する",
+        "国に無償で資金を配る",
+        "担保をもたない貧困層にも少額を融資し、事業を始めるのを助ける",
+        "先進国の銀行だけが行う"
+      ],
+      "answerIndex": 2,
+      "explanation": "グラミン銀行（バングラデシュ）が起源。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_08_035",
+      "unit": "social.pol.economy.global.north",
+      "category": "thinking",
+      "prompt": "BOPビジネスの例として最も適切なものは？",
+      "choices": [
+        "先進国の富裕層向けの高級品販売",
+        "途上国からの原料の安値買い取り",
+        "政府による無償の食料配布",
+        "途上国の農村向けに、少量で安い衛生用品を販売して利益と生活改善を両立する"
+      ],
+      "answerIndex": 3,
+      "explanation": "低所得層を対象にした持続可能なビジネス。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_08_036",
+      "unit": "social.pol.economy.global.north",
+      "category": "thinking",
+      "prompt": "人間開発指数（HDI）が国民所得だけでなく平均余命や教育も使う理由は？",
+      "choices": [
+        "人々の豊かさや生活の質を、所得以外の面からも測るため",
+        "先進国を有利にするため",
+        "GDPの代わりに税を計算するため",
+        "計算を簡単にするため"
+      ],
+      "answerIndex": 0,
+      "explanation": "UNDPが導入した。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_08_037",
+      "unit": "social.pol.economy.global.north",
+      "category": "thinking",
+      "prompt": "「人間の安全保障」の考え方に最も近い取り組みは？",
+      "choices": [
+        "外国からの移民を禁止する",
+        "関税を引き上げる",
+        "国境の軍備を増強する",
+        "紛争地域の子どもに教育や保健サービスを届ける"
+      ],
+      "answerIndex": 3,
+      "explanation": "一人ひとりの生命と生活を守る。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_08_038",
+      "unit": "social.pol.economy.global.north",
+      "category": "thinking",
+      "prompt": "SDGsがMDGsと比べて特徴的な点として最も適切なものは？",
+      "choices": [
+        "目標の期限がない",
+        "貧困は目標に含まれない",
+        "途上国だけでなく先進国も含めたすべての国が取り組む目標になった",
+        "途上国だけが取り組む目標になった"
+      ],
+      "answerIndex": 2,
+      "explanation": "2030年までの17の目標。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_08_039",
+      "unit": "social.pol.economy.global.north",
+      "category": "thinking",
+      "prompt": "国際協力で、国だけでなくNGOや企業の取り組みが重要とされる理由として最も適切なものは？",
+      "choices": [
+        "NGOは利益を出せるから",
+        "現地の細かいニーズに柔軟に対応でき、持続的な活動ができるから",
+        "企業は税金を払わなくてよいから",
+        "国の援助が禁止されたから"
+      ],
+      "answerIndex": 1,
+      "explanation": "絶対的貧困層は約6.9億人。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_08_040",
+      "unit": "social.pol.economy.global.north",
+      "category": "calculation",
+      "prompt": "GNIが500兆円の国が、ODAの国際目標（GNI比0.7％）を達成するのに必要な援助額は？",
+      "choices": [
+        "3.5兆円",
+        "0.7兆円",
+        "35兆円",
+        "7兆円"
+      ],
+      "answerIndex": 0,
+      "explanation": "500×0.007＝3.5兆円。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_08_041",
+      "unit": "social.pol.economy.global.north",
+      "category": "calculation",
+      "prompt": "GNIが600兆円で、ODAが2.34兆円の国のODA対GNI比は？",
+      "choices": [
+        "3.9％",
+        "0.23％",
+        "0.39％",
+        "0.7％"
+      ],
+      "answerIndex": 2,
+      "explanation": "2.34÷600＝0.0039。日本の水準。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_08_042",
+      "unit": "social.pol.economy.global.north",
+      "category": "calculation",
+      "prompt": "1人あたりGNIは世界平均16752ドル、サハラ以南アフリカ3699ドル。世界平均はサハラ以南アフリカの約何倍？",
+      "choices": [
+        "約10倍",
+        "約1.5倍",
+        "約2倍",
+        "約4.5倍"
+      ],
+      "answerIndex": 3,
+      "explanation": "16752÷3699≒4.5。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ]
+    }
+  ]
+}

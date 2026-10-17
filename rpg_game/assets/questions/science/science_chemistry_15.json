@@ -1,0 +1,456 @@
+{
+  "setId": "science_chemistry_15",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_chm15_001",
+      "unit": "science.chemistry.organic.aliphatic.hydrocarbon",
+      "category": "knowledge",
+      "prompt": "アルカンの一般式は？",
+      "choices": [
+        "CₙHₙ",
+        "CₙH₂ₙ",
+        "CₙH₂ₙ₋₂",
+        "CₙH₂ₙ₊₂"
+      ],
+      "answerIndex": 3,
+      "explanation": "すべて単結合の鎖式炭化水素。例：メタン CH₄、エタン C₂H₆。"
+    },
+    {
+      "id": "sci_chm15_002",
+      "unit": "science.chemistry.organic.aliphatic.hydrocarbon",
+      "category": "knowledge",
+      "prompt": "エチレンなどのアルケンに臭素水を加えると、赤褐色が消える。この反応は？",
+      "choices": [
+        "置換反応",
+        "縮合反応",
+        "中和反応",
+        "付加反応"
+      ],
+      "answerIndex": 3,
+      "explanation": "二重結合に Br₂ が付加する。二重結合の検出に使う。"
+    },
+    {
+      "id": "sci_chm15_003",
+      "unit": "science.chemistry.organic.aromatic.benzene",
+      "category": "knowledge",
+      "prompt": "ベンゼンが起こしやすい反応は？",
+      "choices": [
+        "置換反応",
+        "燃焼しない",
+        "付加反応",
+        "加水分解"
+      ],
+      "answerIndex": 0,
+      "explanation": "ベンゼン環は安定なので、付加よりも置換反応（ニトロ化・スルホン化など）が起こりやすい。"
+    },
+    {
+      "id": "sci_chm15_004",
+      "unit": "science.chemistry.organic.aliphatic.alcohol",
+      "category": "knowledge",
+      "prompt": "第一級アルコールを酸化すると、何を経て何になる？",
+      "choices": [
+        "カルボン酸を経てアルデヒド",
+        "アルデヒドを経てカルボン酸",
+        "ケトンを経てエステル",
+        "エーテルを経てアルケン"
+      ],
+      "answerIndex": 1,
+      "explanation": "例：エタノール → アセトアルデヒド → 酢酸。第二級アルコールはケトンになる。"
+    },
+    {
+      "id": "sci_chm15_005",
+      "unit": "science.chemistry.organic.aliphatic.carbonyl",
+      "category": "knowledge",
+      "prompt": "銀鏡反応を示すのは？",
+      "choices": [
+        "アルコール",
+        "アルデヒド",
+        "ケトン",
+        "エーテル"
+      ],
+      "answerIndex": 1,
+      "explanation": "アルデヒド基 −CHO の還元性で Ag⁺ が Ag になる。フェーリング液の還元も同じ。"
+    },
+    {
+      "id": "sci_chm15_006",
+      "unit": "science.chemistry.organic.aliphatic.acid",
+      "category": "knowledge",
+      "prompt": "カルボン酸とアルコールが反応してできる化合物は？",
+      "choices": [
+        "エーテル",
+        "ケトン",
+        "アルデヒド",
+        "エステル"
+      ],
+      "answerIndex": 3,
+      "explanation": "エステル化（縮合反応）。例：酢酸 ＋ エタノール → 酢酸エチル ＋ 水。"
+    },
+    {
+      "id": "sci_chm15_007",
+      "unit": "science.chemistry.organic.aromatic.benzene",
+      "category": "knowledge",
+      "prompt": "塩化鉄(Ⅲ)水溶液で紫色に呈色するのは？",
+      "choices": [
+        "フェノール類",
+        "アルコール",
+        "アニリン",
+        "ベンゼン"
+      ],
+      "answerIndex": 0,
+      "explanation": "ベンゼン環に直接 −OH がついたフェノール類の検出反応。"
+    },
+    {
+      "id": "sci_chm15_008",
+      "unit": "science.chemistry.organic.aliphatic.carbonyl",
+      "category": "knowledge",
+      "prompt": "ヒドロキシ基はどれ？",
+      "choices": [
+        "−OH",
+        "−NH₂",
+        "−COOH",
+        "−CHO"
+      ],
+      "answerIndex": 0,
+      "explanation": "−CHO はホルミル（アルデヒド）基、−COOH はカルボキシ基、−NH₂ はアミノ基。"
+    },
+    {
+      "id": "sci_chm15_009",
+      "unit": "science.chemistry.organic.basic.isomer",
+      "category": "knowledge",
+      "prompt": "分子式が同じで構造がちがう化合物を何という？",
+      "choices": [
+        "同素体",
+        "同族体",
+        "異性体",
+        "同位体"
+      ],
+      "answerIndex": 2,
+      "explanation": "構造異性体・立体異性体（シス-トランス異性体、鏡像異性体）がある。"
+    },
+    {
+      "id": "sci_chm15_010",
+      "unit": "science.chemistry.organic.aliphatic.alcohol",
+      "category": "knowledge",
+      "prompt": "エタノールに金属ナトリウムを入れると発生する気体は？",
+      "choices": [
+        "二酸化炭素",
+        "水素",
+        "酸素",
+        "塩素"
+      ],
+      "answerIndex": 1,
+      "explanation": "2C₂H₅OH ＋ 2Na → 2C₂H₅ONa ＋ H₂。−OH の検出に使う（エーテルは反応しない）。"
+    },
+    {
+      "id": "sci_chm15_011",
+      "unit": "science.chemistry.organic.basic.isomer",
+      "category": "calculation",
+      "prompt": "分子式 C₄H₁₀ の構造異性体はいくつ？",
+      "choices": [
+        "4",
+        "1",
+        "3",
+        "2"
+      ],
+      "answerIndex": 3,
+      "explanation": "ブタン（直鎖）と 2-メチルプロパン（枝分かれ）の2つ。"
+    },
+    {
+      "id": "sci_chm15_012",
+      "unit": "science.chemistry.organic.basic.isomer",
+      "category": "calculation",
+      "prompt": "分子式 C₅H₁₂ の構造異性体はいくつ？",
+      "choices": [
+        "5",
+        "2",
+        "3",
+        "4"
+      ],
+      "answerIndex": 2,
+      "explanation": "ペンタン、2-メチルブタン、2,2-ジメチルプロパンの3つ。"
+    },
+    {
+      "id": "sci_chm15_013",
+      "unit": "science.chemistry.organic.aliphatic.alcohol",
+      "category": "calculation",
+      "prompt": "エタノール C₂H₅OH 46 g を完全燃焼させると、CO₂ は何 g できる？（C ＝ 12、H ＝ 1.0、O ＝ 16）",
+      "choices": [
+        "88 g",
+        "132 g",
+        "46 g",
+        "44 g"
+      ],
+      "answerIndex": 0,
+      "explanation": "エタノール 1.0 mol から CO₂ 2.0 mol ＝ 88 g（C₂H₅OH ＋ 3O₂ → 2CO₂ ＋ 3H₂O）。"
+    },
+    {
+      "id": "sci_chm15_014",
+      "unit": "science.chemistry.organic.basic.analysis",
+      "category": "calculation",
+      "prompt": "C と H だけからなる化合物を分析したら、C が 12 mg、H が 3.0 mg だった。組成式（実験式）は？",
+      "choices": [
+        "CH₂",
+        "CH₃",
+        "CH₄",
+        "C₂H₃"
+      ],
+      "answerIndex": 1,
+      "explanation": "C：12/12 ＝ 1.0、H：3.0/1.0 ＝ 3.0（mmol）。原子数の比 1 : 3。"
+    },
+    {
+      "id": "sci_chm15_015",
+      "unit": "science.chemistry.organic.aliphatic.alcohol",
+      "category": "thinking",
+      "prompt": "エタノールとジメチルエーテルは同じ分子式 C₂H₆O なのに、エタノールの方が沸点がずっと高い。理由は？",
+      "choices": [
+        "エタノールの方が分子量が大きいから",
+        "エタノール分子の間に水素結合がはたらくから",
+        "ジメチルエーテルはイオン結晶だから",
+        "エタノールは無極性分子だから"
+      ],
+      "answerIndex": 1,
+      "explanation": "エタノールは −OH をもち、分子どうしが水素結合で引き合う。エーテルには −OH がない。"
+    },
+    {
+      "id": "sci_chm15_016",
+      "unit": "science.chemistry.organic.aliphatic.hydrocarbon",
+      "category": "thinking",
+      "prompt": "ある気体を臭素水に通すと、臭素水の赤褐色が消えた。この気体として考えられるのは？",
+      "choices": [
+        "メタン",
+        "二酸化炭素",
+        "窒素",
+        "エチレン"
+      ],
+      "answerIndex": 3,
+      "explanation": "不飽和結合（二重・三重結合）をもつ炭化水素は臭素を付加して脱色する。メタン（単結合のみ）では消えない。"
+    },
+    {
+      "id": "sci_chm15_017",
+      "unit": "science.chemistry.organic.aliphatic.hydrocarbon",
+      "category": "knowledge",
+      "prompt": "アルケンの一般式は？",
+      "choices": [
+        "CₙH₂ₙ",
+        "CₙHₙ",
+        "CₙH₂ₙ₋₂",
+        "CₙH₂ₙ₊₂"
+      ],
+      "answerIndex": 0,
+      "explanation": "二重結合を1つもつ鎖式炭化水素。"
+    },
+    {
+      "id": "sci_chm15_018",
+      "unit": "science.chemistry.organic.aliphatic.hydrocarbon",
+      "category": "knowledge",
+      "prompt": "アセチレン C₂H₂ がもつ結合は？",
+      "choices": [
+        "二重結合だけ",
+        "イオン結合",
+        "単結合だけ",
+        "三重結合"
+      ],
+      "answerIndex": 3,
+      "explanation": "アルキンの代表。"
+    },
+    {
+      "id": "sci_chm15_019",
+      "unit": "science.chemistry.organic.aliphatic.hydrocarbon",
+      "category": "knowledge",
+      "prompt": "アルカンに光を当てて塩素と反応させると起こる反応は？",
+      "choices": [
+        "重合反応",
+        "置換反応",
+        "縮合反応",
+        "付加反応"
+      ],
+      "answerIndex": 1,
+      "explanation": "H 原子が Cl 原子に置きかわる。"
+    },
+    {
+      "id": "sci_chm15_020",
+      "unit": "science.chemistry.organic.aliphatic.alcohol",
+      "category": "knowledge",
+      "prompt": "エタノールを酸化するとできる物質は？",
+      "choices": [
+        "メタノール",
+        "エチレン",
+        "ジエチルエーテルだけ",
+        "アセトアルデヒド、さらに酢酸"
+      ],
+      "answerIndex": 3,
+      "explanation": "第一級アルコールの酸化。"
+    },
+    {
+      "id": "sci_chm15_021",
+      "unit": "science.chemistry.organic.aliphatic.alcohol",
+      "category": "knowledge",
+      "prompt": "第二級アルコールを酸化してできる物質は？",
+      "choices": [
+        "アルデヒド",
+        "ケトン",
+        "エーテル",
+        "カルボン酸"
+      ],
+      "answerIndex": 1,
+      "explanation": "2-プロパノールを酸化するとアセトンになる。"
+    },
+    {
+      "id": "sci_chm15_022",
+      "unit": "science.chemistry.organic.aliphatic.carbonyl",
+      "category": "knowledge",
+      "prompt": "フェーリング液を還元して赤色の沈殿を生じるのは？",
+      "choices": [
+        "アルコール",
+        "アルデヒド",
+        "エステル",
+        "ケトン"
+      ],
+      "answerIndex": 1,
+      "explanation": "Cu₂O の赤色沈殿。"
+    },
+    {
+      "id": "sci_chm15_023",
+      "unit": "science.chemistry.organic.aliphatic.acid",
+      "category": "knowledge",
+      "prompt": "エステルに水酸化ナトリウム水溶液を加えて加熱する反応は？",
+      "choices": [
+        "エステル化",
+        "けん化",
+        "付加",
+        "酸化"
+      ],
+      "answerIndex": 1,
+      "explanation": "カルボン酸の塩とアルコールができる。"
+    },
+    {
+      "id": "sci_chm15_024",
+      "unit": "science.chemistry.organic.aliphatic.fat",
+      "category": "knowledge",
+      "prompt": "セッケンが油汚れを落とす理由は？",
+      "choices": [
+        "油を固めるから",
+        "親水基と疎水基をもち、油を包みこんで水中に分散させるから",
+        "油を燃やすから",
+        "油と反応して水になるから"
+      ],
+      "answerIndex": 1,
+      "explanation": "ミセルをつくる。"
+    },
+    {
+      "id": "sci_chm15_025",
+      "unit": "science.chemistry.organic.aromatic.benzene",
+      "category": "knowledge",
+      "prompt": "ベンゼンのニトロ化でできる物質は？",
+      "choices": [
+        "フェノール",
+        "安息香酸",
+        "ニトロベンゼン",
+        "アニリン"
+      ],
+      "answerIndex": 2,
+      "explanation": "濃硝酸と濃硫酸を使う。"
+    },
+    {
+      "id": "sci_chm15_026",
+      "unit": "science.chemistry.organic.aromatic.amine",
+      "category": "knowledge",
+      "prompt": "アニリンの検出に使う反応は？",
+      "choices": [
+        "銀鏡反応",
+        "さらし粉水溶液で赤紫色に呈色",
+        "塩化鉄(Ⅲ)で紫色",
+        "ヨウ素デンプン反応"
+      ],
+      "answerIndex": 1,
+      "explanation": "アニリンは塩基性の芳香族アミン。"
+    },
+    {
+      "id": "sci_chm15_027",
+      "unit": "science.chemistry.organic.aliphatic.alcohol",
+      "category": "calculation",
+      "prompt": "分子式 C₃H₈O のアルコールの構造異性体はいくつ？",
+      "choices": [
+        "1 つ",
+        "4 つ",
+        "2 つ",
+        "3 つ"
+      ],
+      "answerIndex": 2,
+      "explanation": "1-プロパノールと 2-プロパノール（エーテルを除く）。"
+    },
+    {
+      "id": "sci_chm15_028",
+      "unit": "science.chemistry.organic.aliphatic.hydrocarbon",
+      "category": "calculation",
+      "prompt": "メタン CH₄ 16 g を完全燃焼させると、CO₂ は何 g できる？（C ＝ 12、O ＝ 16、H ＝ 1）",
+      "choices": [
+        "44 g",
+        "88 g",
+        "16 g",
+        "22 g"
+      ],
+      "answerIndex": 0,
+      "explanation": "CH₄ 1 mol → CO₂ 1 mol。"
+    },
+    {
+      "id": "sci_chm15_029",
+      "unit": "science.chemistry.organic.aliphatic.hydrocarbon",
+      "category": "calculation",
+      "prompt": "エチレン C₂H₄ 1 mol に付加する臭素 Br₂ は何 mol？",
+      "choices": [
+        "3 mol",
+        "0.5 mol",
+        "2 mol",
+        "1 mol"
+      ],
+      "answerIndex": 3,
+      "explanation": "二重結合 1 つに 1 分子が付加する。"
+    },
+    {
+      "id": "sci_chm15_030",
+      "unit": "science.chemistry.organic.basic.analysis",
+      "category": "calculation",
+      "prompt": "C 85.7 %、H 14.3 % の炭化水素の組成式は？（C ＝ 12、H ＝ 1）",
+      "choices": [
+        "CH₄",
+        "CH",
+        "CH₃",
+        "CH₂"
+      ],
+      "answerIndex": 3,
+      "explanation": "C：H ＝ 85.7/12：14.3/1 ≒ 7.14：14.3 ＝ 1：2。"
+    },
+    {
+      "id": "sci_chm15_031",
+      "unit": "science.chemistry.organic.aromatic.phenol",
+      "category": "thinking",
+      "prompt": "フェノールが酸性を示すのに、エタノールが示さない理由は？",
+      "choices": [
+        "フェノールは水に溶けないから",
+        "エタノールはイオン結合だから",
+        "ベンゼン環の影響で、フェノールの O−H が H⁺ を出しやすいから",
+        "エタノールの方が分子量が大きいから"
+      ],
+      "answerIndex": 2,
+      "explanation": "フェノールは弱酸で、NaOH と反応して塩をつくる。"
+    },
+    {
+      "id": "sci_chm15_032",
+      "unit": "science.chemistry.organic.aliphatic.acid",
+      "category": "thinking",
+      "prompt": "酢酸とエタノールからエステルをつくるとき、濃硫酸を加える理由は？",
+      "choices": [
+        "沸騰を防ぐため",
+        "色をつけるため",
+        "触媒としてはたらき、また生じた水を取り除くから",
+        "酢酸を中和するため"
+      ],
+      "answerIndex": 2,
+      "explanation": "エステル化は可逆反応。"
+    }
+  ]
+}

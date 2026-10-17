@@ -1,0 +1,1218 @@
+{
+  "setId": "social_shonan_104_public_economy_02",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "social_shonan_104_public_economy_02_001",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "1811〜17年のイギリスで、産業革命で職を失った職人が機械を打ちこわした運動は？",
+      "choices": [
+        "チャーティスト運動",
+        "インターナショナル",
+        "労働組合期成会",
+        "ラダイト運動"
+      ],
+      "answerIndex": 3,
+      "explanation": "機械打ちこわし運動とも呼ばれる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_002",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "1833年にイギリスで制定された世界初の本格的な労働者保護法は？",
+      "choices": [
+        "労働組合法",
+        "工場法",
+        "労働基準法",
+        "救貧法"
+      ],
+      "answerIndex": 1,
+      "explanation": "児童の労働時間の制限などを定めた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_003",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "1837〜48年のイギリスで、労働者が普通選挙権の獲得を求めた運動は？",
+      "choices": [
+        "チャーティスト運動",
+        "囲い込み運動",
+        "ラダイト運動",
+        "名誉革命"
+      ],
+      "answerIndex": 0,
+      "explanation": "人民憲章（チャーター）を掲げた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_004",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "1906年にイギリスで結成され、議会を通じて労働者の権利獲得をめざした政党は？",
+      "choices": [
+        "保守党",
+        "労働党",
+        "社会民主党",
+        "自由党"
+      ],
+      "answerIndex": 1,
+      "explanation": "のちに政権を担う二大政党の一つとなった。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_005",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "1919年に設立され、のちに国連の専門機関として労働者の権利を守る国際機関は？",
+      "choices": [
+        "国際労働機関（ILO）",
+        "世界貿易機関（WTO）",
+        "世界保健機関（WHO）",
+        "国際通貨基金（IMF）"
+      ],
+      "answerIndex": 0,
+      "explanation": "ベルサイユ条約にもとづいて設立された。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_006",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "1911年に制定された日本初の労働者保護法は？（施行は1916年）",
+      "choices": [
+        "労働基準法",
+        "治安警察法",
+        "工場法",
+        "治安維持法"
+      ],
+      "answerIndex": 2,
+      "explanation": "小規模な工場には適用されなかった。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_007",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "1900年に制定され、労働運動・社会主義運動を抑えることを目的とした法律は？",
+      "choices": [
+        "治安警察法",
+        "工場法",
+        "労働組合法",
+        "治安維持法"
+      ],
+      "answerIndex": 0,
+      "explanation": "1925年の治安維持法と区別しよう。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_008",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "戦後の「労働三法」の組み合わせとして正しいものは？",
+      "choices": [
+        "労働基準法・雇用保険法・労働者派遣法",
+        "労働組合法・労働契約法・労働基準法",
+        "労働組合法・労働関係調整法・労働基準法",
+        "労働組合法・男女雇用機会均等法・労働基準法"
+      ],
+      "answerIndex": 2,
+      "explanation": "1945〜47年に制定された。GHQの経済民主化政策の一環。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_009",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "労働三法のうち、1945年に最初に制定されたのは？",
+      "choices": [
+        "労働関係調整法",
+        "労働契約法",
+        "労働組合法",
+        "労働基準法"
+      ],
+      "answerIndex": 2,
+      "explanation": "1946年労働関係調整法、1947年労働基準法。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_010",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "1980年代末に労働団体が再編されてできた、日本最大の労働組合の全国組織は？",
+      "choices": [
+        "連合（日本労働組合総連合会）",
+        "全労連",
+        "総評",
+        "同盟"
+      ],
+      "answerIndex": 0,
+      "explanation": "総評・同盟が解散して再編された。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_011",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "総評などが中心となり、毎年春に賃上げを求めて行われてきた闘争は？",
+      "choices": [
+        "米騒動",
+        "秋闘",
+        "安保闘争",
+        "春闘"
+      ],
+      "answerIndex": 3,
+      "explanation": "春季生活闘争ともいう。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_012",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "憲法28条で保障される労働三権に含まれないものは？",
+      "choices": [
+        "勤労権",
+        "団結権",
+        "団体交渉権",
+        "団体行動権（争議権）"
+      ],
+      "answerIndex": 0,
+      "explanation": "勤労権は27条。労働基本権＝勤労権＋労働三権。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_013",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "労働者が労働組合をつくることができる権利は？",
+      "choices": [
+        "勤労権",
+        "団体交渉権",
+        "団結権",
+        "争議権"
+      ],
+      "answerIndex": 2,
+      "explanation": "労働三権の一つ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_014",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "労働組合が労働者を代表して使用者と交渉できる権利は？",
+      "choices": [
+        "団結権",
+        "団体交渉権",
+        "請願権",
+        "争議権"
+      ],
+      "answerIndex": 1,
+      "explanation": "交渉の結果は労働協約になる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_015",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "公務員の労働基本権について正しいものは？",
+      "choices": [
+        "民間企業の労働者は争議権が認められていない",
+        "警察・消防・自衛隊などは三権とも認められていない",
+        "一般職の公務員も争議権が認められている",
+        "国家公務員は団結権も認められていない"
+      ],
+      "answerIndex": 1,
+      "explanation": "一般職の公務員は争議権が認められていない。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_016",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "公務員の争議権を制限する代わりに、給与など待遇改善を勧告する機関は？",
+      "choices": [
+        "会計検査院",
+        "労働委員会",
+        "人事院",
+        "公正取引委員会"
+      ],
+      "answerIndex": 2,
+      "explanation": "人事院勧告によって待遇改善が行われる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_017",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "労働基準法が定めているのは、労働条件の何？",
+      "choices": [
+        "最低基準",
+        "最高基準",
+        "平均基準",
+        "理想の基準"
+      ],
+      "answerIndex": 0,
+      "explanation": "これを下回る労働条件は無効になる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_018",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "労使が団体交渉で獲得した労働条件の取り決めを何という？",
+      "choices": [
+        "労働協約",
+        "団体協定",
+        "労働契約",
+        "就業規則"
+      ],
+      "answerIndex": 0,
+      "explanation": "労働協約の基準に達しない労働契約は無効。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_019",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "使用者が作成し、労働者に示さなければならない職場の規則は？",
+      "choices": [
+        "就業規則",
+        "労働協約",
+        "社内報",
+        "労働契約"
+      ],
+      "answerIndex": 0,
+      "explanation": "労働協約を文書化したもの。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_020",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "使用者による労働組合への支配・介入など、労働組合法で禁止されている行為をまとめて何という？",
+      "choices": [
+        "不法行為",
+        "公務執行妨害",
+        "争議行為",
+        "不当労働行為"
+      ],
+      "answerIndex": 3,
+      "explanation": "不利益取扱い・黄犬契約・団体交渉拒否・支配介入・経費援助など。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_021",
+      "unit": "social.pol.politics.law.contract",
+      "category": "knowledge",
+      "prompt": "組合に入らないことや脱退することを条件に雇う契約を何という？",
+      "choices": [
+        "派遣契約",
+        "団体協約",
+        "黄犬契約",
+        "請負契約"
+      ],
+      "answerIndex": 2,
+      "explanation": "不当労働行為の一つ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_022",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "不当労働行為の救済や労働争議の調整を行う行政委員会は？",
+      "choices": [
+        "人事院",
+        "労働基準監督署",
+        "労働委員会",
+        "公正取引委員会"
+      ],
+      "answerIndex": 2,
+      "explanation": "使用者委員・労働者委員・公益委員の三者で構成。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_023",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "労働者がそろって仕事を止める争議行為は？",
+      "choices": [
+        "サボタージュ（怠業）",
+        "ピケッティング",
+        "ストライキ（同盟罷業）",
+        "ロックアウト"
+      ],
+      "answerIndex": 2,
+      "explanation": "サボタージュは仕事を遅らせる、ロックアウトは使用者側の行為。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_024",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "使用者側が行う争議行為は？",
+      "choices": [
+        "サボタージュ",
+        "ストライキ",
+        "ロックアウト（作業所閉鎖）",
+        "ピケッティング"
+      ],
+      "answerIndex": 2,
+      "explanation": "「目には目を」で作業所を閉鎖する。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_025",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "労働委員会による労働争議の調整のうち、当事者がその結果に従わなければならないものは？",
+      "choices": [
+        "仲裁",
+        "斡旋",
+        "勧告",
+        "調停"
+      ],
+      "answerIndex": 0,
+      "explanation": "斡旋→調停→仲裁の順に拘束力が強くなる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_026",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "公益事業などの大規模な争議で、内閣総理大臣が争議行為を50日間禁止できる制度は？",
+      "choices": [
+        "人事院勧告",
+        "ロックアウト",
+        "仲裁裁定",
+        "緊急調整"
+      ],
+      "answerIndex": 3,
+      "explanation": "労働委員会の意見に基づいて行われる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_027",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "産業革命後、資本家に対して労働者階級を何という？",
+      "choices": [
+        "プロレタリアート",
+        "ブルジョワジー",
+        "ジェントリ",
+        "アリストクラシー"
+      ],
+      "answerIndex": 0,
+      "explanation": "資本家はブルジョワジー。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_028",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "産業革命後の労働問題で、労働者が労働条件の改善とともに求めたものは？",
+      "choices": [
+        "土地の無償配布",
+        "参政権（選挙権）",
+        "関税の撤廃",
+        "貴族の身分"
+      ],
+      "answerIndex": 1,
+      "explanation": "当時の制限選挙では選挙権は財産のある者に限られた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_029",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "1871年のイギリスで合法化されたのは？",
+      "choices": [
+        "普通選挙",
+        "労働組合",
+        "社会主義政党",
+        "児童労働"
+      ],
+      "answerIndex": 1,
+      "explanation": "労働組合法により合法化。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_030",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "1864年に結成された社会主義政党の国際組織は？",
+      "choices": [
+        "第一インターナショナル（国際労働者協会）",
+        "コミンテルン",
+        "国際連盟",
+        "国際労働機関"
+      ],
+      "answerIndex": 0,
+      "explanation": "マルクスらが関わった。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_031",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "1897年に結成され、労働組合の結成を支援した日本の団体は？",
+      "choices": [
+        "総評",
+        "連合",
+        "友愛会",
+        "労働組合期成会"
+      ],
+      "answerIndex": 3,
+      "explanation": "のちに鉄工組合（日本初の労働組合）が結成された。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_032",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "1925年に制定され、反体制運動の抑圧を目的とし、のちに死刑も導入された法律は？",
+      "choices": [
+        "労働組合法",
+        "治安警察法",
+        "治安維持法",
+        "工場法"
+      ],
+      "answerIndex": 2,
+      "explanation": "1900年の治安警察法と区別する。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_033",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "戦後、労働組合の結成を奨励したのは？",
+      "choices": [
+        "国際連盟",
+        "GHQ",
+        "大日本帝国政府",
+        "経団連"
+      ],
+      "answerIndex": 1,
+      "explanation": "経済民主化政策の一環。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_034",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "総評と並ぶ2大勢力だった労働組合の全国組織は？",
+      "choices": [
+        "連合",
+        "同盟（全日本労働総同盟）",
+        "経団連",
+        "全労連"
+      ],
+      "answerIndex": 1,
+      "explanation": "総評は日本労働組合総評議会。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_035",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "連合に反対する立場で結成された労働組合の全国組織は？",
+      "choices": [
+        "同盟",
+        "日経連",
+        "総評",
+        "全労連（全国労働組合総連合）"
+      ],
+      "answerIndex": 3,
+      "explanation": "反連合の組織。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_036",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "労働基本権の組み合わせとして正しいものは？",
+      "choices": [
+        "勤労権（27条）＋財産権（29条）",
+        "勤労権（27条）＋労働三権（28条）",
+        "生存権（25条）＋労働三権（28条）",
+        "教育を受ける権利（26条）＋勤労権（27条）"
+      ],
+      "answerIndex": 1,
+      "explanation": "労働基本権＝勤労権＋団結権・団体交渉権・団体行動権。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_037",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "労働組合法の内容として正しいものは？",
+      "choices": [
+        "労働時間の上限を定める",
+        "正当な争議行為による刑事・民事上の責任を免除する",
+        "最低賃金を定める",
+        "労働争議の調整手続きを定める"
+      ],
+      "answerIndex": 1,
+      "explanation": "労働争議の調整は労働関係調整法。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_038",
+      "unit": "social.pol.politics.law.contract",
+      "category": "knowledge",
+      "prompt": "労働協約・就業規則・労働契約のうち、最も優先して適用されるのは？（労働基準法を除く）",
+      "choices": [
+        "就業規則",
+        "労働契約",
+        "すべて同じ",
+        "労働協約"
+      ],
+      "answerIndex": 3,
+      "explanation": "労働協約の基準に達しない労働契約は無効。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_039",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "団体交渉の申し入れを、正当な理由なく使用者が拒むことは？",
+      "choices": [
+        "不当労働行為（団体交渉拒否）",
+        "労働協約",
+        "ロックアウト",
+        "正当な争議行為"
+      ],
+      "answerIndex": 0,
+      "explanation": "労働委員会に救済を申し立てられる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_040",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "使用者が労働組合の運営費用を援助することは、労働組合法で何とされている？",
+      "choices": [
+        "労働協約",
+        "正当な支援",
+        "不当労働行為（経費援助）",
+        "福利厚生"
+      ],
+      "answerIndex": 2,
+      "explanation": "組合の自主性が失われるため禁止。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_041",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "過重労働や違法労働のトラブルにあったとき、労働基準法違反を訴える行政機関は？",
+      "choices": [
+        "労働基準監督署",
+        "消費者庁",
+        "公正取引委員会",
+        "人事院"
+      ],
+      "answerIndex": 0,
+      "explanation": "労働審判制度を利用する方法もある。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_042",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "労働関係調整法の目的は？",
+      "choices": [
+        "労働争議の調整手続きを定め、平和的解決をはかる",
+        "労働組合の結成を保障する",
+        "労働条件の最低基準を定める",
+        "男女の差別を禁止する"
+      ],
+      "answerIndex": 0,
+      "explanation": "斡旋・調停・仲裁を定める。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_043",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "労働争議の調整で、斡旋員が自主的解決の仲立ちをする方法は？",
+      "choices": [
+        "緊急調整",
+        "斡旋",
+        "調停",
+        "仲裁"
+      ],
+      "answerIndex": 1,
+      "explanation": "拘束力はない。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_044",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "調停委員会が調停案を出し、受け入れを勧告する方法は？",
+      "choices": [
+        "勧告",
+        "調停",
+        "斡旋",
+        "仲裁"
+      ],
+      "answerIndex": 1,
+      "explanation": "受け入れは任意（拘束力は△）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_045",
+      "unit": "social.pol.politics.law.labor",
+      "category": "thinking",
+      "prompt": "Dさんの会社で、労働組合に入ったことを理由に、Dさんだけ遠い支店に転勤させられた。これは何にあたり、どこに救済を申し立てられる？",
+      "choices": [
+        "不当労働行為（不利益取扱い）・労働委員会",
+        "正当な人事・裁判所のみ",
+        "争議行為・人事院",
+        "不当労働行為・消費者庁"
+      ],
+      "answerIndex": 0,
+      "explanation": "組合員であることを理由にした不利益取扱いは禁止。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_046",
+      "unit": "social.pol.politics.law.contract",
+      "category": "thinking",
+      "prompt": "入社の条件として「労働組合には入らないこと」という書面に署名させられた。この契約の扱いは？",
+      "choices": [
+        "黄犬契約として不当労働行為にあたる",
+        "労働協約なので有効",
+        "自由な契約なので有効",
+        "就業規則なので有効"
+      ],
+      "answerIndex": 0,
+      "explanation": "組合への不加入・脱退を条件とする契約は禁止。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_047",
+      "unit": "social.pol.politics.law.labor",
+      "category": "thinking",
+      "prompt": "労働組合がストライキをして会社の売り上げが減った。会社が組合に損害賠償を求めた場合、正しいものは？",
+      "choices": [
+        "正当な争議行為であれば、組合は民事上の責任を免除される",
+        "組合は必ず全額を賠償しなければならない",
+        "ストライキは違法なので刑事罰を受ける",
+        "会社はロックアウトしかできない"
+      ],
+      "answerIndex": 0,
+      "explanation": "労働組合法による刑事・民事免責。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_048",
+      "unit": "social.pol.politics.law.labor",
+      "category": "thinking",
+      "prompt": "ある会社の就業規則で、労働基準法より低い賃金の最低額が定められていた。この部分の扱いは？",
+      "choices": [
+        "労働協約より優先する",
+        "労働基準法の基準を下回る部分は無効になる",
+        "就業規則が優先する",
+        "労働者が同意すれば有効"
+      ],
+      "answerIndex": 1,
+      "explanation": "労働基準法は最低基準を定める。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_049",
+      "unit": "social.pol.politics.law",
+      "category": "thinking",
+      "prompt": "公立学校の教員（一般職の地方公務員）が、待遇改善を求めてストライキを行うことについて正しいものは？",
+      "choices": [
+        "自由に行える",
+        "団結権も認められていないので組合もつくれない",
+        "警察官と同じく三権とも認められている",
+        "争議権が認められていないので行えない"
+      ],
+      "answerIndex": 3,
+      "explanation": "代わりに人事委員会などの勧告で待遇が改善される。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_050",
+      "unit": "social.pol.politics.law.labor",
+      "category": "thinking",
+      "prompt": "水道・電車・バスなど地方公営企業の職員の労働三権について正しいものは？",
+      "choices": [
+        "三権すべてがない",
+        "団結権と団体交渉権はあるが、争議権はない",
+        "三権すべてがある",
+        "争議権だけがある"
+      ],
+      "answerIndex": 1,
+      "explanation": "プリントの表を読み取る。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_051",
+      "unit": "social.pol.politics.law",
+      "category": "thinking",
+      "prompt": "ILOが日本の公務員の労働基本権の制限について指摘していることは？",
+      "choices": [
+        "制限をさらに強めるべきである",
+        "民間の労働者の権利も制限すべきである",
+        "例外を除き、原則として認めるべきである",
+        "問題はない"
+      ],
+      "answerIndex": 2,
+      "explanation": "ILO勧告違反と指摘されている。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_052",
+      "unit": "social.pol.politics.law.labor",
+      "category": "thinking",
+      "prompt": "労働組合の組織率と争議件数のグラフ（1965〜2023年）から読み取れることとして正しいものは？",
+      "choices": [
+        "組織率と争議件数はどちらも増えている",
+        "組織率は上がり続けている",
+        "争議件数は2000年代に最も多い",
+        "組織率は長期的に下がり続け、争議件数も1970年代半ば以降大きく減った"
+      ],
+      "answerIndex": 3,
+      "explanation": "組織率は約35％から約16％へ低下。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_053",
+      "unit": "social.pol.politics.law",
+      "category": "thinking",
+      "prompt": "労働委員会が使用者委員・労働者委員・公益委員の三者で構成されている理由として最も適切なものは？",
+      "choices": [
+        "裁判所の代わりに刑罰を科すため",
+        "労使どちらにも偏らず、公正に判断するため",
+        "国が労働条件を決めるため",
+        "使用者の意見だけを聞くため"
+      ],
+      "answerIndex": 1,
+      "explanation": "三者構成で公平性を保つ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_054",
+      "unit": "social.pol.politics.law.labor",
+      "category": "thinking",
+      "prompt": "戦前に治安警察法や治安維持法が制定されたことから読み取れる、当時の政府の労働運動への態度は？",
+      "choices": [
+        "労働運動を積極的に支援した",
+        "労働運動・社会主義運動を抑圧した",
+        "労働組合を法律で保障した",
+        "労働者の参政権を拡大した"
+      ],
+      "answerIndex": 1,
+      "explanation": "戦後の労働三法と対照的。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_02_055",
+      "unit": "social.pol.politics.law.labor",
+      "category": "thinking",
+      "prompt": "大規模な鉄道会社の全面ストライキで国民生活に大きな影響が出そうなとき、とられる可能性のある措置は？",
+      "choices": [
+        "人事院勧告",
+        "内閣総理大臣による緊急調整（50日間の争議行為禁止）",
+        "ロックアウトの命令",
+        "労働組合の解散命令"
+      ],
+      "answerIndex": 1,
+      "explanation": "公益事業などの大規模争議が対象。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ]
+    }
+  ]
+}
