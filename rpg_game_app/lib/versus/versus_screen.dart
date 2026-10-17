@@ -18,6 +18,7 @@ import '../story/story_player.dart';
 import 'duel_screens.dart';
 import 'online_lobby_screen.dart';
 import 'online_room.dart';
+import 'random_match_screen.dart';
 
 /// 対戦の相手
 enum VersusOpponent {
@@ -43,6 +44,13 @@ Future<List<QuizQuestion>> loadVersusQuestions(
     out.addAll(set.questions.where((q) => q.passage == null && q.isChoice));
   }
   return out;
+}
+
+/// オンライン対戦で送れるスタンプ（決まった言葉だけ）
+class VersusStamps {
+  const VersusStamps._();
+
+  static const all = ['👋 よろしく！', '👍 ナイス！', '😮 おしい！', '🔥 つよい…', '🙏 ありがとう！'];
 }
 
 /// オンライン対戦のつながり
@@ -156,6 +164,18 @@ class _VersusSetupScreenState extends State<VersusSetupScreen> {
                   style: TextStyle(fontSize: 13, height: 1.6),
                 ),
                 const SizedBox(height: 10),
+                // いま対戦したい人をさがす（いなければゴースト）
+                FilledButton.icon(
+                  key: const ValueKey('versus-random'),
+                  onPressed: () => Navigator.of(context).push(
+                    MaterialPageRoute<void>(
+                      builder: (_) => const RandomMatchScreen(),
+                    ),
+                  ),
+                  icon: const Icon(Icons.travel_explore),
+                  label: const Text('ランダム対戦（いま対戦したい人と）'),
+                ),
+                const SizedBox(height: 6),
                 // 同時に遊ばなくてよい、リンクで送る単語の早押し
                 OutlinedButton.icon(
                   key: const ValueKey('versus-duel'),
@@ -330,7 +350,15 @@ class VersusScreen extends StatefulWidget {
     this.random,
     this.online,
     this.rival = false,
+    this.ghost,
+    this.resultExtra,
   });
+
+  /// ゴースト（ほかの人の記録）との対戦
+  final GhostRun? ghost;
+
+  /// 結果の下に出すもの（ランダム対戦の、報告・ブロックなど）
+  final WidgetBuilder? resultExtra;
 
   /// 物語のライバル「ノイズ」との勝負（CPU の姿がノイズになる）
   final bool rival;
@@ -388,6 +416,15 @@ class _VersusScreenState extends State<VersusScreen>
   /// オンライン：相手が部屋を出た
   bool _opponentLeft = false;
 
+  /// オンライン：自分が送ったスタンプの数と、相手から届いたスタンプ
+  int _stampsSent = 0;
+  (int, int)? _theirStamp;
+  String? _bubble;
+  Timer? _bubbleTimer;
+
+  /// CPU かゴーストが相手
+  bool get _vsCpu => widget.cpu != null || widget.ghost != null;
+
   OnlineLink? get _online => widget.online;
 
   /// 自分の側（下に出す）
@@ -425,7 +462,11 @@ class _VersusScreenState extends State<VersusScreen>
     questions: widget.questions,
     names: widget.names,
     rounds: widget.rounds,
-    random: _online == null ? widget.random : Random(_online!.seed),
+    random: _online != null
+        ? Random(_online!.seed)
+        : widget.ghost != null
+        ? Random(widget.ghost!.seed)
+        : widget.random,
   );
 
   void _onRoom(OnlineRoom? room) {
@@ -433,6 +474,13 @@ class _VersusScreenState extends State<VersusScreen>
     if (room == null || room.closed) {
       if (!_match.isOver) setState(() => _opponentLeft = true);
       return;
+    }
+    final theirs = room.stamps[1 - _me];
+    if (theirs != null && theirs != _theirStamp) {
+      _theirStamp = theirs;
+      _showBubble(
+        VersusStamps.all[theirs.$1.clamp(0, VersusStamps.all.length - 1)],
+      );
     }
     if (room.events.length > _received) {
       _queue.addAll(room.events.skip(_received));
@@ -491,9 +539,27 @@ class _VersusScreenState extends State<VersusScreen>
 
   void _newMatch() {
     _match = _fresh();
-    _cpu = widget.cpu == null
+    _cpu = widget.ghost != null
+        ? GhostCpu(widget.ghost!, random: widget.random)
+        : widget.cpu == null
         ? null
         : VersusCpu(widget.cpu!, random: widget.random);
+  }
+
+  void _showBubble(String text) {
+    _bubbleTimer?.cancel();
+    setState(() => _bubble = text);
+    _bubbleTimer = Timer(const Duration(milliseconds: 2500), () {
+      if (mounted) setState(() => _bubble = null);
+    });
+  }
+
+  /// スタンプを送る（決まった言葉だけ。文字は打てない）
+  void _sendStamp(int i) {
+    final online = _online;
+    if (online == null) return;
+    _stampsSent++;
+    online.backend.stamp(online.code, _me, i, _stampsSent);
   }
 
   @override
@@ -502,6 +568,7 @@ class _VersusScreenState extends State<VersusScreen>
     final online = _online;
     if (online != null) online.backend.close(online.code);
     _cpuTimer?.cancel();
+    _bubbleTimer?.cancel();
     _timer.dispose();
     _idle.dispose();
     super.dispose();
@@ -574,7 +641,7 @@ class _VersusScreenState extends State<VersusScreen>
       if (!mounted) return;
       if (_match.isOver) {
         music.jingle(
-          _match.winner == _me || (widget.cpu == null && _online == null)
+          _match.winner == _me || (!_vsCpu && _online == null)
               ? 'victory'
               : 'defeat',
         );
@@ -623,7 +690,7 @@ class _VersusScreenState extends State<VersusScreen>
 
   @override
   Widget build(BuildContext context) {
-    final twoPlayers = widget.cpu == null && _online == null;
+    final twoPlayers = !_vsCpu && _online == null;
     return Scaffold(
       backgroundColor: TsuzuriColors.paper,
       body: SafeArea(
@@ -637,6 +704,7 @@ class _VersusScreenState extends State<VersusScreen>
                       : _cpuPanel(1 - _me),
                 ),
                 _centerBar(),
+                if (_online != null && !_match.isOver) _stampBar(),
                 Expanded(flex: twoPlayers ? 1 : 2, child: _panel(_me)),
               ],
             ),
@@ -649,6 +717,24 @@ class _VersusScreenState extends State<VersusScreen>
                 icon: Icon(Icons.close, color: TsuzuriColors.inkSoft),
               ),
             ),
+            if (_bubble != null)
+              Positioned(
+                right: 16,
+                top: 12,
+                child: Container(
+                  key: const ValueKey('versus-bubble'),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 12,
+                    vertical: 6,
+                  ),
+                  decoration: BoxDecoration(
+                    color: TsuzuriColors.card,
+                    borderRadius: BorderRadius.circular(14),
+                    border: Border.all(color: TsuzuriColors.stamp),
+                  ),
+                  child: Text(_bubble!, style: serif(15)),
+                ),
+              ),
             if (_match.isOver && _reveal) _resultOverlay(),
             if (_opponentLeft) _leftOverlay(),
           ],
@@ -656,6 +742,27 @@ class _VersusScreenState extends State<VersusScreen>
       ),
     );
   }
+
+  /// スタンプ（決まった言葉だけ）
+  Widget _stampBar() => SizedBox(
+    height: 40,
+    child: ListView(
+      scrollDirection: Axis.horizontal,
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+      children: [
+        for (final (i, s) in VersusStamps.all.indexed)
+          Padding(
+            padding: const EdgeInsets.only(right: 6),
+            child: ActionChip(
+              key: ValueKey('stamp-$i'),
+              visualDensity: VisualDensity.compact,
+              label: Text(s, style: const TextStyle(fontSize: 12)),
+              onPressed: () => _sendStamp(i),
+            ),
+          ),
+      ],
+    ),
+  );
 
   /// 真ん中の帯：何問目か・残り時間
   Widget _centerBar() {
@@ -729,7 +836,7 @@ class _VersusScreenState extends State<VersusScreen>
               builder: (_, _) => CustomPaint(
                 painter: widget.rival
                     ? _NoisePainter(_idle.value * 60)
-                    : widget.cpu == null
+                    : widget.cpu == null || widget.ghost != null
                     ? _HeroMini(false)
                     : _LookPainter(_cpuLook(widget.cpu!), _idle.value * 60),
               ),
@@ -756,7 +863,7 @@ class _VersusScreenState extends State<VersusScreen>
                             ? '正解！ ${last.damage}ダメージ${last.fast ? '（はやおし）' : ''}'
                             : 'お手つき…')
                       : thinking
-                      ? (widget.cpu == null ? '答えを考えている…' : '考え中…')
+                      ? (_vsCpu ? '考え中…' : '答えを考えている…')
                       : '',
                   style: TextStyle(
                     fontSize: 13,
@@ -919,6 +1026,8 @@ class _VersusScreenState extends State<VersusScreen>
         ? '引き分け！'
         : widget.rival
         ? (w == 0 ? 'ノイズに勝った！' : 'ノイズの勝ち…')
+        : widget.ghost != null
+        ? (w == 0 ? 'あなたの勝ち！' : '${_match.players[1].name}の勝ち…')
         : widget.cpu != null
         ? (w == 0 ? 'あなたの勝ち！' : 'CPU の勝ち…')
         : _online != null
@@ -960,6 +1069,7 @@ class _VersusScreenState extends State<VersusScreen>
                 ],
               ],
             ),
+            if (widget.resultExtra != null) widget.resultExtra!(context),
           ],
         ),
       ),

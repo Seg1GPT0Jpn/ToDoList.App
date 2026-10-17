@@ -146,6 +146,60 @@ service cloud.firestore {
           || plusOne('weak_cards'));
     }
 
+    // ランダム対戦の待ち合わせ（文書 ID は自分の uid）。置くのはニックネームと時刻だけ。
+    // ほかの人が書きかえられるのは、まだ部屋が決まっていないときの room と by だけ。
+    match /match_queue/{uid} {
+      allow read: if request.auth != null;
+      allow create, update: if request.auth != null && request.auth.uid == uid
+        && request.resource.data.keys().hasOnly(['name', 'since', 'ping', 'room', 'by'])
+        && request.resource.data.name is string
+        && request.resource.data.name.size() > 0
+        && request.resource.data.name.size() <= 20
+        && request.resource.data.since is timestamp
+        && request.resource.data.ping is timestamp
+        && request.resource.data.ping < request.time + duration.value(5, 'm');
+      allow update: if request.auth != null && request.auth.uid != uid
+        && resource.data.room == null
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['room', 'by'])
+        && request.resource.data.by == request.auth.uid
+        && request.resource.data.room is string
+        && request.resource.data.room.matches('^[0-9]{4}$');
+      allow delete: if request.auth != null && request.auth.uid == uid;
+    }
+
+    // ゴースト：ニックネームと、問題ごとの時間・正誤だけ。作ったあとは変えられない。
+    match /ghosts/{id} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null
+        && request.resource.data.keys().hasOnly(['uid', 'name', 'setIds', 'seed',
+          'rounds', 'answers', 'r', 'at'])
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.name is string
+        && request.resource.data.name.size() > 0
+        && request.resource.data.name.size() <= 20
+        && request.resource.data.setIds is list
+        && request.resource.data.setIds.size() <= 40
+        && request.resource.data.seed is int
+        && request.resource.data.rounds is int
+        && request.resource.data.answers is list
+        && request.resource.data.answers.size() <= 30
+        && request.resource.data.r is float
+        && request.resource.data.at == request.time;
+      allow update, delete: if false;
+    }
+
+    // 対戦相手の報告。送るだけで、アプリからは読めない（Firebase の管理画面で見る）。
+    match /player_reports/{id} {
+      allow read, update, delete: if false;
+      allow create: if request.auth != null
+        && request.resource.data.keys().hasOnly(['from', 'about', 'reason', 'at'])
+        && request.resource.data.from == request.auth.uid
+        && request.resource.data.about is string
+        && request.resource.data.about != request.auth.uid
+        && request.resource.data.reason in ['name', 'cheat', 'other']
+        && request.resource.data.at == request.time;
+    }
+
     // 単語チャレンジ（リンクで遊ぶ早押し）。ID は8文字。一覧は取れない。
     // 置くのは出題のもと・番号・種と、1人ずつの名前・正解数・点数だけ。
     // 作れるのは自分の結果だけを入れたもの。あとから入れられるのは自分の結果を1回だけ（上書き不可）。

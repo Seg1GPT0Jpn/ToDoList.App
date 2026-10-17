@@ -99,6 +99,32 @@ await check('回数：2つ同時には足せない', assertFails(setDoc(doc(N, '
 await check('回数：知らない項目（名前など）は置けない', assertFails(setDoc(doc(N, 'usage/2026-10-17'), { name: 'あ' }, { merge: true })));
 await check('回数：日付でない文書には書けない', assertFails(setDoc(doc(N, 'usage/hello'), { vocab: increment(1) }, { merge: true })));
 await check('回数：アプリからは読めない', assertFails(getDoc(doc(A, 'usage/2026-10-17'))));
+// ランダム対戦の待ち合わせ
+const q = (extra = {}) => ({ name: 'あ', since: Timestamp.now(), ping: Timestamp.now(), room: null, by: null, ...extra });
+await check('待ち合わせ：ログインなしでは入れない', assertFails(setDoc(doc(N, 'match_queue/x'), q())));
+await check('待ち合わせ：他人の名前では入れない', assertFails(setDoc(doc(A, 'match_queue/bob'), q())));
+await check('待ち合わせ：よけいな項目は置けない', assertFails(setDoc(doc(A, 'match_queue/alice'), q({ email: 'a@b' }))));
+await check('待ち合わせ：入れる', assertSucceeds(setDoc(doc(A, 'match_queue/alice'), q())));
+await check('待ち合わせ：一覧を読める', assertSucceeds(getDocs(collection(B, 'match_queue'))));
+await check('待ち合わせ：他人の名前は変えられない', assertFails(updateDoc(doc(B, 'match_queue/alice'), { name: 'ばか' })));
+await check('待ち合わせ：他人のbyに別人を入れられない', assertFails(updateDoc(doc(B, 'match_queue/alice'), { room: '1234', by: 'carol' })));
+await check('待ち合わせ：部屋を知らせられる', assertSucceeds(updateDoc(doc(B, 'match_queue/alice'), { room: '1234', by: 'bob' })));
+await check('待ち合わせ：決まった部屋は横取りできない', assertFails(updateDoc(doc(C, 'match_queue/alice'), { room: '5678', by: 'carol' })));
+await check('待ち合わせ：他人は消せない', assertFails(deleteDoc(doc(B, 'match_queue/alice'))));
+await check('待ち合わせ：自分は消せる', assertSucceeds(deleteDoc(doc(A, 'match_queue/alice'))));
+// ゴースト
+const g = (uid, extra = {}) => ({ uid, name: 'あ', setIds: ['s1'], seed: 3, rounds: 10, answers: [1200, -1, -2002], r: 0.5, at: serverTimestamp(), ...extra });
+await check('ゴースト：作れる', assertSucceeds(setDoc(doc(A, 'ghosts/g1'), g('alice'))));
+await check('ゴースト：他人の名義では作れない', assertFails(setDoc(doc(A, 'ghosts/g2'), g('bob'))));
+await check('ゴースト：よけいな項目は置けない', assertFails(setDoc(doc(A, 'ghosts/g3'), g('alice', { email: 'x' }))));
+await check('ゴースト：読める', assertSucceeds(getDocs(collection(B, 'ghosts'))));
+await check('ゴースト：変えられない', assertFails(updateDoc(doc(A, 'ghosts/g1'), { name: 'い' })));
+// 報告
+const rep = (extra = {}) => ({ from: 'alice', about: 'bob', reason: 'name', at: serverTimestamp(), ...extra });
+await check('報告：送れる', assertSucceeds(setDoc(doc(A, 'player_reports/r1'), rep())));
+await check('報告：他人のふりはできない', assertFails(setDoc(doc(A, 'player_reports/r2'), rep({ from: 'carol' }))));
+await check('報告：理由は決まったものだけ', assertFails(setDoc(doc(A, 'player_reports/r3'), rep({ reason: 'free text' }))));
+await check('報告：読めない', assertFails(getDoc(doc(A, 'player_reports/r1'))));
 // 既存のルールが壊れていない
 await check('自分の進行状況は書ける（既存）', assertSucceeds(setDoc(doc(A, 'users/alice/rpg_progress/main'), { level: 1 })));
 await check('他人の進行状況は読めない（既存）', assertFails(getDoc(doc(B, 'users/alice/rpg_progress/main'))));

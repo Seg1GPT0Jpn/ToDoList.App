@@ -6,6 +6,7 @@
 | ② ゆるい連続記録・お休み券 | 冒険の手帳・単語帳ホーム | なし（端末の中） | RPG と単語帳のどちらで勉強した日も数える。7日で1枚、2枚まで |
 | ② 苦手克服カード | 単語帳ホーム | なし | 2回以上間違えた単語を続けて2回正解で1枚。間違えた回数でレア度 |
 | ③ 単語チャレンジ | 対戦・単語帳ホーム・クラスの範囲 | `duels/{8文字}` | 先に解いてリンクを送る。友だちは7日以内に1回だけ。`?duel=ID` で開く |
+| ランダム対戦 | 対戦画面 | `match_queue/{uid}` `ghosts` `player_reports` | 全教科10問。20秒でだれもいなければゴースト（ほかの人の記録。まだなければ CPU）。スタンプだけ。報告・ブロック（ブロックは端末の中） |
 | PWA | Web版 | なし | iPhone の Safari だけにホーム画面追加の案内。読みこみ中の表示 |
 | 利用回数 | 自動 | `usage/{YYYY-MM-DD}` | 機能ごとの「その日に開いた端末の数」。名前・ID なし。設定で止められる |
 
@@ -14,6 +15,11 @@
 Firebase コンソール → Firestore Database → `usage` コレクション。
 文書が日付、項目が機能（`app` `vocab` `vocab_study` `battle` `exam_sea` `word_forest` `versus` `classroom` `duel` `weak_cards`）で、
 値はその日にその機能を開いた端末の数です（1端末1日1回）。アプリからは読めません。
+
+## 報告の見かた
+
+Firebase コンソール → Firestore → `player_reports`（from：報告した人、about：報告された人、reason：name/cheat/other）。
+ひどい名前のゴーストは `ghosts` から消してください。
 
 ## ルールの反映
 

@@ -14,7 +14,11 @@ class OnlineRoom {
     this.guestId,
     this.events = const [],
     this.closed = false,
+    this.stamps = const {},
   });
+
+  /// 送られたスタンプ（側 → (スタンプの番号, 何回目か)）。文字は送れない
+  final Map<int, (int, int)> stamps;
 
   /// 部屋の番号（4けた）
   final String code;
@@ -41,6 +45,10 @@ class OnlineRoom {
     'guestName': guestName,
     'events': [for (final e in events) e.toMap()],
     'closed': closed,
+    'stamps': {
+      for (final e in stamps.entries)
+        '${e.key}': {'i': e.value.$1, 'n': e.value.$2},
+    },
   };
 
   factory OnlineRoom.fromMap(Map<String, dynamic> m) => OnlineRoom(
@@ -55,6 +63,18 @@ class OnlineRoom {
         VersusEvent.fromMap(Map<String, dynamic>.from(e as Map)),
     ],
     closed: m['closed'] as bool? ?? false,
+    stamps: {
+      if (m['stamps'] is Map)
+        for (final e in (m['stamps'] as Map).entries)
+          if (int.tryParse('${e.key}') != null &&
+              e.value is Map &&
+              (e.value as Map)['i'] is num &&
+              (e.value as Map)['n'] is num)
+            int.parse('${e.key}'): (
+              ((e.value as Map)['i'] as num).toInt(),
+              ((e.value as Map)['n'] as num).toInt(),
+            ),
+    },
   );
 
   OnlineRoom copyWith({
@@ -62,6 +82,7 @@ class OnlineRoom {
     String? guestId,
     List<VersusEvent>? events,
     bool? closed,
+    Map<int, (int, int)>? stamps,
   }) => OnlineRoom(
     code: code,
     config: config,
@@ -71,6 +92,7 @@ class OnlineRoom {
     guestId: guestId ?? this.guestId,
     events: events ?? this.events,
     closed: closed ?? this.closed,
+    stamps: stamps ?? this.stamps,
   );
 }
 
@@ -106,6 +128,9 @@ abstract class VersusRoomBackend {
 
   /// 部屋を閉じる
   Future<void> close(String code);
+
+  /// スタンプを送る（[count] は自分が送った回数。同じスタンプを続けて送っても届く）
+  Future<void> stamp(String code, int side, int stamp, int count);
 
   /// 4けたの部屋番号
   static String newCode([Random? random]) =>
@@ -192,6 +217,16 @@ class MemoryVersusBackend implements VersusRoomBackend {
     final room = _rooms[code];
     if (room == null) return;
     _rooms[code] = room.copyWith(closed: true);
+    _emit(code);
+  }
+
+  @override
+  Future<void> stamp(String code, int side, int stamp, int count) async {
+    final room = _rooms[code];
+    if (room == null) return;
+    _rooms[code] = room.copyWith(
+      stamps: {...room.stamps, side: (stamp, count)},
+    );
     _emit(code);
   }
 }

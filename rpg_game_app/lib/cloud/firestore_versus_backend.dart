@@ -129,4 +129,15 @@ class FirestoreVersusBackend implements VersusRoomBackend {
       // すでに消えていてもかまわない
     }
   }
+
+  @override
+  Future<void> stamp(String code, int side, int stamp, int count) async {
+    try {
+      await _doc(code).update({
+        'stamps.$side': {'i': stamp, 'n': count},
+      });
+    } on FirebaseException {
+      // 届かなくてもかまわない
+    }
+  }
 }

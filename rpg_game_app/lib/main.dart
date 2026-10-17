@@ -24,6 +24,7 @@ import 'purchase/google_play_purchase_service.dart';
 import 'quiz/question_report.dart';
 import 'cloud/firestore_classroom_backend.dart';
 import 'cloud/firestore_duel_backend.dart';
+import 'cloud/firestore_matchmaking.dart';
 import 'cloud/firestore_usage_sink.dart';
 import 'cloud/firestore_versus_backend.dart';
 import 'cloud/firebase_account_service.dart';
@@ -111,6 +112,9 @@ Future<void> main() async {
       usageSink: cloud == null
           ? null
           : FirestoreUsageSink(FirebaseFirestore.instance),
+      matchmaking: cloud == null
+          ? null
+          : FirestoreMatchmaking(cloud.auth, FirebaseFirestore.instance),
       duels: cloud == null
           ? null
           : FirestoreDuelBackend(cloud.auth, FirebaseFirestore.instance),

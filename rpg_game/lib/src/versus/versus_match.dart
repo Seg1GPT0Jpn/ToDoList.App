@@ -33,6 +33,7 @@ class VersusTurn {
     required this.damage,
     required this.selfDamage,
     this.chosen,
+    this.ms = 0,
     this.fast = false,
     this.combo = 0,
     this.timedOut = false,
@@ -50,6 +51,9 @@ class VersusTurn {
   /// お手つきで自分が受けたダメージ
   final int selfDamage;
   final int? chosen;
+
+  /// 出題から答えるまでの時間（ミリ秒）
+  final int ms;
 
   /// はやおしボーナスがついた
   final bool fast;
@@ -149,6 +153,7 @@ class VersusMatch {
         damage: damage,
         selfDamage: 0,
         chosen: choice,
+        ms: elapsed.inMilliseconds,
         fast: fast,
         combo: me.combo,
         roundOver: true,
@@ -168,6 +173,7 @@ class VersusMatch {
       damage: 0,
       selfDamage: missDamage,
       chosen: choice,
+      ms: elapsed.inMilliseconds,
       roundOver: over,
     );
     if (over) {

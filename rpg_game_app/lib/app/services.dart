@@ -16,6 +16,7 @@ import '../purchase/google_play_purchase_service.dart';
 import '../study/exam_world_store.dart';
 import '../study/personal_books.dart';
 import '../versus/duel_backend.dart';
+import '../versus/matchmaking.dart';
 import '../versus/online_room.dart';
 import 'settings.dart';
 import 'usage_meter.dart';
@@ -35,6 +36,7 @@ class RpgServices extends InheritedWidget {
     this.versusRooms,
     this.classrooms,
     this.duels,
+    this.matchmaking,
     this.usageSink,
     this.purchaseService,
     required super.child,
@@ -74,6 +76,9 @@ class RpgServices extends InheritedWidget {
 
   /// 単語チャレンジ（リンクで遊ぶ早押し。Firebase の設定がなければ null）
   final DuelBackend? duels;
+
+  /// ランダム対戦の待ち合わせとゴースト（Firebase の設定がなければ null）
+  final MatchmakingBackend? matchmaking;
 
   /// 使った機能の回数の送り先（Firebase の設定がなければ null）
   final UsageSink? usageSink;
