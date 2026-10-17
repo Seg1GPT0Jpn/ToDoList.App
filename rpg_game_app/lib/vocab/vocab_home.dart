@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:rpg_game/rpg_game.dart';
 
+import '../app/pwa.dart';
 import '../app/theme.dart';
 import '../classroom/classroom_screens.dart';
 import '../meta/streak_store.dart';
@@ -92,6 +93,7 @@ class _VocabHomeState extends State<VocabHome> {
     return ListView(
       padding: const EdgeInsets.fromLTRB(40, 12, 16, 24),
       children: [
+        const AddToHomeHint(),
         Card(
           color: TsuzuriColors.tint(0xFFFFF8E1),
           child: Padding(

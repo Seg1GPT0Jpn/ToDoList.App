@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:rpg_game/rpg_game.dart';
 
+import '../app/pwa.dart';
 import '../meta/navigator_card.dart';
 import '../account/account_screen.dart';
 import '../app/services.dart';
@@ -291,6 +292,7 @@ class WorldMapScreen extends StatelessWidget {
           },
         ),
         const SizedBox(height: 14),
+        const AddToHomeHint(),
         AdventureCard(progress: progress),
         const SizedBox(height: 14),
         _RealmBanner(
