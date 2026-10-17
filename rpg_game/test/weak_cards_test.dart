@@ -36,16 +36,36 @@ void main() {
     final got = WeakCards.collected(book, p);
     expect(got.single.card.id, 'w2');
     expect(got.single.stars, 1);
+    // 日をあけてまた正解すると★が増える（間違えた回数では増えない）
+    answer(p, 'w2', Rating.good, 12);
+    answer(p, 'w2', Rating.good, 40);
+    expect(WeakCards.collected(book, p).single.stars, greaterThan(1));
     expect(WeakCards.waiting(book, p), isEmpty);
     // また間違えると、もう一度挑戦
     answer(p, 'w2', Rating.again, 3);
     expect(WeakCards.collected(book, p), isEmpty);
   });
 
-  test('間違えた回数が多いほどレア。練習はあと少しの単語から', () {
-    expect(WeakCards.starsFor(2), 1);
-    expect(WeakCards.starsFor(4), 2);
-    expect(WeakCards.starsFor(7), 3);
+  test('勘で当たった答えは、続けて正解した数に入れない', () {
+    final p = BookProgress();
+    answer(p, 'w5', Rating.again, 0);
+    answer(p, 'w5', Rating.again, 0);
+    for (var d = 1; d <= 3; d++) {
+      p.record(
+        cardId: 'w5',
+        skill: VocabSkill.meaning,
+        rating: Rating.hard,
+        now: t0.add(Duration(days: d)),
+        guessed: true,
+      );
+    }
+    expect(WeakCards.collected(book, p), isEmpty);
+    answer(p, 'w5', Rating.good, 5);
+    answer(p, 'w5', Rating.good, 7);
+    expect(WeakCards.collected(book, p).single.card.id, 'w5');
+  });
+
+  test('練習はあと少しの単語から', () {
     final p = BookProgress();
     for (var i = 0; i < 3; i++) {
       answer(p, 'w3', Rating.again, 0);

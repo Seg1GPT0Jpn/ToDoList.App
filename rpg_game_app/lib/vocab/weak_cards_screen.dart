@@ -98,8 +98,9 @@ class _WeakCardsScreenState extends State<WeakCardsScreen> {
             Text('集めたカード $total枚', style: serif(18)),
             const SizedBox(height: 4),
             Text(
-              '2回以上間違えた単語を、続けて2回正解すると1枚。'
-              '間違えた回数が多い単語ほどレア（★〜★★★）。また間違えたら、もう一度挑戦です。',
+              '2回以上間違えた単語を、続けて2回正解すると1枚（勘で当たったときは数えません）。'
+              '日をあけてもまた正解できるほど★が増えます（★★は1週間、★★★は3週間ぶんの記憶）。'
+              'また間違えたら、もう一度挑戦です。',
               style: TextStyle(fontSize: 12, color: TsuzuriColors.inkSoft),
             ),
             if (sections.isEmpty) ...[

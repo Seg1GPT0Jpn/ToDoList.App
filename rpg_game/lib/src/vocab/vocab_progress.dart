@@ -261,12 +261,26 @@ class BookProgress {
     String? confusedWith,
     Duration spent = Duration.zero,
     bool isNew = false,
+    bool guessed = false,
   }) {
     final p = cards.putIfAbsent(cardId, CardProgress.new);
     p.introduced ??= now;
     final old = p.skills[skill];
-    p.skills[skill] =
+    var next =
         old == null ? fsrs.first(rating, now) : fsrs.review(old, rating, now);
+    // 勘で当たったときは、続けて正解した数に入れない（苦手克服カードにもならない）
+    if (guessed) {
+      next = MemoryState(
+        stability: next.stability,
+        difficulty: next.difficulty,
+        due: next.due,
+        lastReview: next.lastReview,
+        reps: next.reps,
+        lapses: next.lapses,
+        streak: old?.streak ?? 0,
+      );
+    }
+    p.skills[skill] = next;
     final correct = rating != Rating.again;
     final (ok, all) = p.answers[skill] ?? (0, 0);
     p.answers[skill] = (ok + (correct ? 1 : 0), all + 1);

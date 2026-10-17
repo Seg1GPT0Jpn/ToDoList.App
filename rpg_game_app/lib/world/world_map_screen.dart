@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:rpg_game/rpg_game.dart';
 
 import '../app/pwa.dart';
-import '../meta/navigator_card.dart';
+import '../meta/today_plan.dart';
 import '../account/account_screen.dart';
 import '../app/services.dart';
 import '../app/theme.dart';
@@ -276,9 +276,7 @@ class WorldMapScreen extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 12),
-        TodayButton(
-          record: services.meta.record,
-          today: RpgServices.today(),
+        TodayPlanCard(
           onAdventure: () {
             final w = RpgCatalog.world(RpgCatalog.englishWorldId);
             Navigator.of(context).push(
@@ -766,6 +764,14 @@ class _RealmBanner extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    Text(
+                      realm.purpose,
+                      style: TextStyle(
+                        fontSize: 11,
+                        fontWeight: FontWeight.w700,
+                        color: realm.ink,
+                      ),
+                    ),
                     Text(realm.title, style: serif(18, color: realm.ink)),
                     Text(
                       subtitle,

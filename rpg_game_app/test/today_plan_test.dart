@@ -1,0 +1,136 @@
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:rpg_game/rpg_game.dart';
+import 'package:rpg_game_app/app/services.dart';
+import 'package:rpg_game_app/battle/battle_screen.dart';
+import 'package:rpg_game_app/meta/today_plan.dart';
+import 'package:rpg_game_app/vocab/vocab_session_screen.dart';
+import 'package:rpg_game_app/vocab/vocab_store.dart';
+
+import 'harness.dart';
+
+Future<void> _frames(WidgetTester t, [int n = 10]) async {
+  for (var i = 0; i < n; i++) {
+    await t.pump(const Duration(milliseconds: 100));
+  }
+}
+
+Future<(VocabStore, VocabBook)> _book(RpgServices s) async {
+  final store = VocabStore.of(s.personalBooks);
+  final b = VocabBook(
+    id: 'my1',
+    title: '英検2級',
+    kind: VocabBookKind.custom,
+    cards: [
+      for (var i = 1; i <= 8; i++)
+        VocabCard(id: 'w$i', number: i, term: 'word$i', meaning: '意味$i'),
+    ],
+  );
+  store.books.add(b);
+  await store.saveBooks();
+  return (store, b);
+}
+
+/// 4択の単語の練習を開く
+Future<void> _session(
+  WidgetTester t,
+  VocabStore store,
+  VocabBook b,
+  List<String> ids,
+) async {
+  t
+      .state<NavigatorState>(find.byType(Navigator))
+      .push(
+        MaterialPageRoute<void>(
+          builder: (_) => VocabSessionScreen(
+            store: store,
+            book: b,
+            title: '練習',
+            random: Random(1),
+            tasks: [
+              for (final id in ids) VocabTask(id, VocabMode.choiceMeaning),
+            ],
+          ),
+        ),
+      );
+  await _frames(t, 5);
+}
+
+/// 今の4択に正しく答える
+Future<void> _answerRight(WidgetTester t) async {
+  final term = find.textContaining(RegExp(r'^word\d+$'));
+  final word = t.widget<Text>(term.first).data!;
+  await t.tap(find.text('意味${word.substring(4)}'));
+  await t.pump();
+}
+
+void main() {
+  testWidgets('勘で当たったときは、続けて正解した数に入れない', (t) async {
+    final s = await openScreen(t, const SizedBox(), frames: 2);
+    final (store, b) = await _book(s);
+    await _session(t, store, b, ['w1']);
+    await _answerRight(t);
+    await t.ensureVisible(find.byKey(const ValueKey('vocab-guess')));
+    await t.tap(find.byKey(const ValueKey('vocab-guess')));
+    await _frames(t, 5);
+    final m = store.progress(b.id).cards['w1']!.skills[VocabSkill.meaning]!;
+    expect(m.reps, 1);
+    expect(m.streak, 0);
+    expect(t.takeException(), isNull);
+  });
+
+  testWidgets('練習のあとに、今の単語の魔物と1戦だけ戦える', (t) async {
+    final s = await openScreen(t, const SizedBox(), frames: 2);
+    final (store, b) = await _book(s);
+    await _session(t, store, b, ['w1', 'w2', 'w3']);
+    for (var i = 0; i < 3; i++) {
+      await _answerRight(t);
+      await t.tap(find.byKey(const ValueKey('vocab-next')));
+      await _frames(t, 5);
+    }
+    expect(find.text('おつかれさま！'), findsOneWidget);
+    await t.ensureVisible(find.byKey(const ValueKey('vocab-quick-battle')));
+    await t.tap(find.byKey(const ValueKey('vocab-quick-battle')));
+    await _frames(t, 20);
+    expect(find.byType(BattleScreen), findsOneWidget);
+    await t.pumpWidget(const SizedBox());
+    await t.pump(const Duration(seconds: 30));
+  });
+
+  testWidgets('今日やること：単語帳がなければ始め方、あれば今日の3分', (t) async {
+    var adventured = false;
+    await openScreen(
+      t,
+      Scaffold(
+        body: ListView(
+          children: [TodayPlanCard(onAdventure: () => adventured = true)],
+        ),
+      ),
+      frames: 5,
+    );
+    expect(find.text('単語帳をはじめる'), findsOneWidget);
+    expect(find.text('冒険：1戦だけ'), findsOneWidget);
+    await t.tap(find.byKey(const ValueKey('today-adventure')));
+    expect(adventured, isTrue);
+    expect(find.byKey(const ValueKey('today-all-done')), findsNothing);
+
+    final s = RpgServicesHolder.last!;
+    await _book(s);
+    await openScreen(
+      t,
+      Scaffold(
+        body: ListView(children: [TodayPlanCard(onAdventure: () {})]),
+      ),
+      frames: 5,
+      keepPrefs: true,
+    );
+    expect(find.textContaining('単語の復習：英検2級'), findsOneWidget);
+    await t.tap(find.byKey(const ValueKey('today-vocab')));
+    await _frames(t, 5);
+    expect(find.byType(VocabSessionScreen), findsOneWidget);
+    expect(find.text('今日の3分'), findsOneWidget);
+    expect(t.takeException(), isNull);
+  });
+}

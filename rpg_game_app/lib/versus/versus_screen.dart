@@ -70,6 +70,32 @@ class OnlineLink {
   final int seed;
 }
 
+/// 対戦の入口の1まとまり（見出し・説明・ボタン）
+class _Entry extends StatelessWidget {
+  const _Entry({required this.title, required this.note, required this.child});
+  final String title;
+  final String note;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) => Card(
+    margin: const EdgeInsets.only(bottom: 10),
+    child: Padding(
+      padding: const EdgeInsets.all(12),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Text(title, style: serif(16)),
+          const SizedBox(height: 2),
+          Text(note, style: const TextStyle(fontSize: 12, height: 1.5)),
+          const SizedBox(height: 8),
+          child,
+        ],
+      ),
+    ),
+  );
+}
+
 /// 対戦モードの準備画面：相手・教科・問題数を選ぶ
 class VersusSetupScreen extends StatefulWidget {
   const VersusSetupScreen({super.key});
@@ -163,31 +189,41 @@ class _VersusSetupScreenState extends State<VersusSetupScreen> {
                   'まちがえると「お手つき」で自分が少しダメージを受け、その問題は相手だけが答えられる。',
                   style: TextStyle(fontSize: 13, height: 1.6),
                 ),
+                const SizedBox(height: 12),
+                // 入口は3つ：だれかと・友だちと・ひとりで
+                _Entry(
+                  title: 'だれかと',
+                  note: 'いま対戦したい人をさがして、全教科の早押し。だれもいなければゴーストと。',
+                  child: FilledButton.icon(
+                    key: const ValueKey('versus-random'),
+                    onPressed: () => Navigator.of(context).push(
+                      MaterialPageRoute<void>(
+                        builder: (_) => const RandomMatchScreen(),
+                      ),
+                    ),
+                    icon: const Icon(Icons.travel_explore),
+                    label: const Text('ランダム対戦'),
+                  ),
+                ),
+                _Entry(
+                  title: '友だちと',
+                  note:
+                      '挑戦状は、リンクを送れば好きなときに遊べる単語の早押し。'
+                      '同時に遊ぶなら、下で「部屋番号で」か「この端末で2人」を選んでね。',
+                  child: OutlinedButton.icon(
+                    key: const ValueKey('versus-duel'),
+                    onPressed: () => Navigator.of(context).push(
+                      MaterialPageRoute<void>(
+                        builder: (_) => const DuelHubScreen(),
+                      ),
+                    ),
+                    icon: const Icon(Icons.send),
+                    label: const Text('挑戦状を送る（単語チャレンジ）'),
+                  ),
+                ),
+                const SizedBox(height: 8),
+                Text('ひとりで・同時に遊ぶ', style: serif(16)),
                 const SizedBox(height: 10),
-                // いま対戦したい人をさがす（いなければゴースト）
-                FilledButton.icon(
-                  key: const ValueKey('versus-random'),
-                  onPressed: () => Navigator.of(context).push(
-                    MaterialPageRoute<void>(
-                      builder: (_) => const RandomMatchScreen(),
-                    ),
-                  ),
-                  icon: const Icon(Icons.travel_explore),
-                  label: const Text('ランダム対戦（いま対戦したい人と）'),
-                ),
-                const SizedBox(height: 6),
-                // 同時に遊ばなくてよい、リンクで送る単語の早押し
-                OutlinedButton.icon(
-                  key: const ValueKey('versus-duel'),
-                  onPressed: () => Navigator.of(context).push(
-                    MaterialPageRoute<void>(
-                      builder: (_) => const DuelHubScreen(),
-                    ),
-                  ),
-                  icon: const Icon(Icons.send),
-                  label: const Text('単語チャレンジ（リンクを送って、好きなときに対戦）'),
-                ),
-                const SizedBox(height: 16),
                 Text('1. 相手', style: serif(15)),
                 const SizedBox(height: 6),
                 SegmentedButton<VersusOpponent>(
@@ -195,7 +231,7 @@ class _VersusSetupScreenState extends State<VersusSetupScreen> {
                     ButtonSegment(
                       value: VersusOpponent.cpu,
                       icon: Icon(Icons.smart_toy_outlined),
-                      label: Text('CPU'),
+                      label: Text('ひとりで（CPU）'),
                     ),
                     ButtonSegment(
                       value: VersusOpponent.friend,
@@ -205,7 +241,7 @@ class _VersusSetupScreenState extends State<VersusSetupScreen> {
                     ButtonSegment(
                       value: VersusOpponent.online,
                       icon: Icon(Icons.public),
-                      label: Text('オンライン'),
+                      label: Text('部屋番号で'),
                     ),
                   ],
                   selected: {_opponent},

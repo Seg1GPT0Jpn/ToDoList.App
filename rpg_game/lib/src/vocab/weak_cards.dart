@@ -3,7 +3,9 @@ import 'vocab_progress.dart';
 
 /// 苦手克服カード：何度も間違えた単語を、続けて正解できるようになったらもらえるカード。
 ///
-/// ガチャではなく、苦手を克服した記録そのもの。間違えた回数が多い単語ほどレア。
+/// ガチャではなく、苦手を克服した記録そのもの。
+/// レア度は間違えた回数ではなく、覚えていられる長さ（記憶の安定度）で決まるので、
+/// わざと間違えても得をしない。日をあけてまた正解するほど★が増える。
 class WeakCard {
   const WeakCard(this.card, this.mistakes, this.stars);
   final VocabCard card;
@@ -11,7 +13,7 @@ class WeakCard {
   /// これまでに間違えた回数
   final int mistakes;
 
-  /// レア度（★1〜3）
+  /// レア度（★1〜3）：どれだけ長く覚えていられるようになったか
   final int stars;
 }
 
@@ -24,11 +26,18 @@ class WeakCards {
   /// 克服とみなす、続けて正解した回数（意味の力）
   static const needStreak = 2;
 
-  static int starsFor(int mistakes) => mistakes >= 7
-      ? 3
-      : mistakes >= 4
-          ? 2
-          : 1;
+  /// ★2・★3 になる記憶の安定度（日）
+  static const twoStarDays = 7.0;
+  static const threeStarDays = 21.0;
+
+  static int starsFor(CardProgress p) {
+    final s = p.skills[VocabSkill.meaning]?.stability ?? 0;
+    return s >= threeStarDays
+        ? 3
+        : s >= twoStarDays
+            ? 2
+            : 1;
+  }
 
   /// 苦手だった単語か
   static bool wasWeak(CardProgress? p) =>
@@ -50,7 +59,7 @@ class WeakCards {
           WeakCard(
             c,
             progress.cards[c.id]!.totalMistakes,
-            starsFor(progress.cards[c.id]!.totalMistakes),
+            starsFor(progress.cards[c.id]!),
           ),
     ];
     out.sort((a, b) => b.mistakes.compareTo(a.mistakes));
@@ -68,7 +77,7 @@ class WeakCards {
           WeakCard(
             c,
             progress.cards[c.id]!.totalMistakes,
-            starsFor(progress.cards[c.id]!.totalMistakes),
+            starsFor(progress.cards[c.id]!),
           ),
     ];
     int streak(WeakCard w) =>

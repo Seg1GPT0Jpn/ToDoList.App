@@ -45,6 +45,12 @@ enum StudyRealm {
 
   final String title;
 
+  /// 何をする場所か（名前だけではわかりにくいので、目的を先に見せる）
+  String get purpose => switch (this) {
+        StudyRealm.sea => '定期テスト対策',
+        StudyRealm.sky => '模試レベルの演習',
+      };
+
   /// 前半の乗り物
   final String vehicle;
 

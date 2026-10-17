@@ -3,10 +3,12 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:rpg_game/rpg_game.dart';
 
+import '../app/services.dart';
 import '../app/theme.dart';
 import '../app/usage_meter.dart';
 import '../art/paper.dart';
 import '../meta/streak_store.dart';
+import 'quick_battle.dart';
 import 'speech.dart';
 import 'vocab_store.dart';
 import 'weak_cards_screen.dart';
@@ -51,6 +53,9 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
   int _combo = 0;
   int _xp = 0;
   final _missed = <String>{};
+
+  /// この回に答えた単語（答えた順）
+  final _studied = <String>{};
   final _started = DateTime.now();
 
   late DateTime _shownAt;
@@ -194,8 +199,8 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
     }
   }
 
-  /// 記録して次へ
-  Future<void> _next(Rating rating) async {
+  /// 記録して次へ（[guessed] は、正解したが勘だったとき）
+  Future<void> _next(Rating rating, {bool guessed = false}) async {
     final m = _task.mode;
     final correct = rating != Rating.again;
     String? confused;
@@ -219,8 +224,10 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
       confusedWith: _reason == MistakeReason.confused ? confused : null,
       spent: DateTime.now().difference(_shownAt),
       isNew: _task.isNew,
+      guessed: guessed,
     );
     await widget.store.saveProgress(widget.book.id);
+    _studied.add(_card.id);
     _answered++;
     if (correct) {
       _correct++;
@@ -667,6 +674,13 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
         onPressed: () => _next(_autoRating ?? Rating.good),
         child: const Text('次へ'),
       ),
+      // 勘で当たった単語は、覚えた扱いにせず早めにまた出す
+      if (_wasCorrect == true)
+        TextButton(
+          key: const ValueKey('vocab-guess'),
+          onPressed: () => _next(Rating.hard, guessed: true),
+          child: const Text('勘で当たった（早めにまた出す）'),
+        ),
     ];
   }
 
@@ -723,6 +737,22 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
         const Center(child: StreakTag()),
         ..._newCards(p),
         const SizedBox(height: 20),
+        // たった今の単語で、1戦だけ冒険（飛ばしてもよい）
+        if (_studied.length >= QuickBattle.minWords &&
+            context.getInheritedWidgetOfExactType<RpgServices>() != null) ...[
+          FilledButton.tonalIcon(
+            key: const ValueKey('vocab-quick-battle'),
+            onPressed: () => QuickBattle.start(
+              context,
+              widget.book,
+              _studied.toList(),
+              _missed,
+            ),
+            icon: const Icon(Icons.sports_martial_arts),
+            label: const Text('今の単語の魔物と、1戦だけ戦う'),
+          ),
+          const SizedBox(height: 8),
+        ],
         if (_missed.isNotEmpty)
           OutlinedButton.icon(
             onPressed: () => Navigator.of(context).pushReplacement(
