@@ -16,6 +16,7 @@ import 'equipment_screen.dart';
 import 'growth_screen.dart';
 import 'navigator_card.dart';
 import 'story_screen.dart';
+import 'streak_store.dart';
 import 'learning_status_screen.dart';
 import 'bestiary_screen.dart';
 import 'design.dart';
@@ -38,7 +39,6 @@ class AdventureCard extends StatelessWidget {
         final today = RpgServices.today();
         final record = meta.record;
         final journal = meta.journal;
-        final streak = record.streakDays(today);
         final quests = DailyQuests.forDay(
           today,
           services.questSubjects(progress),
@@ -64,12 +64,7 @@ class AdventureCard extends StatelessWidget {
                   if (journal.title.isNotEmpty)
                     _Tag('〈${journal.title}〉', TsuzuriColors.accent),
                   const SizedBox(width: Space.xs),
-                  _Tag(
-                    streak > 0 ? '🔥 $streak 日連続' : '今日から始めよう',
-                    streak > 0
-                        ? const Color(0xFFD9822B)
-                        : TsuzuriColors.inkSoft,
-                  ),
+                  const StreakTag(),
                 ],
               ),
               const SizedBox(height: Space.s),

@@ -4,11 +4,13 @@ import 'package:rpg_game/rpg_game.dart';
 
 import '../app/theme.dart';
 import '../classroom/classroom_screens.dart';
+import '../meta/streak_store.dart';
 import '../study/personal_books.dart';
 import 'vocab_book_screen.dart';
 import 'vocab_import_screen.dart';
 import 'vocab_session_screen.dart';
 import 'vocab_store.dart';
+import 'weak_cards_screen.dart';
 
 /// 単語帳練習のホーム（定期テストの海の「単語帳練習」タブ）
 class VocabHome extends StatefulWidget {
@@ -71,7 +73,7 @@ class _VocabHomeState extends State<VocabHome> {
     final now = DateTime.now();
     final books = store.visibleBooks;
     final totals = {for (final s in CardStatus.values) s: 0};
-    var due = 0, streak = 0, minutes = 0;
+    var due = 0, minutes = 0;
     VocabBook? best;
     var bestCount = 0;
     for (final b in books) {
@@ -79,7 +81,6 @@ class _VocabHomeState extends State<VocabHome> {
       final p = store.progress(b.id);
       p.counts(b, now).forEach((k, v) => totals[k] = totals[k]! + v);
       due += p.dueCount(now);
-      if (p.streak(now) > streak) streak = p.streak(now);
       minutes += (p.days[BookProgress.dayKey(now)]?.seconds ?? 0) ~/ 60;
       final plan = VocabPlanner.today(b, p, now).length;
       if (plan > bestCount) {
@@ -103,7 +104,8 @@ class _VocabHomeState extends State<VocabHome> {
                   '🔴 弱点 ${totals[CardStatus.weak]}語　🟠 あやふや ${totals[CardStatus.shaky]}語　'
                   '🟢 安定 ${totals[CardStatus.stable]}語',
                 ),
-                Text('今日の復習予定 $due問　🔥 $streak日連続　今日 $minutes分'),
+                Text('今日の復習予定 $due問　今日 $minutes分'),
+                const StreakTag(long: true),
                 if (best != null) ...[
                   const SizedBox(height: 8),
                   FilledButton.icon(
@@ -138,6 +140,13 @@ class _VocabHomeState extends State<VocabHome> {
           onPressed: () => _open(const ClassroomHubScreen()),
           icon: const Icon(Icons.groups_outlined),
           label: const Text('クラスルーム（友だちと小テスト・定期テストの範囲を準備）'),
+        ),
+        // 何度も間違えた単語を、続けて正解できるようになったらもらえるカード
+        OutlinedButton.icon(
+          key: const ValueKey('vocab-home-weak-cards'),
+          onPressed: () => _open(WeakCardsScreen(store: store)),
+          icon: const Icon(Icons.style_outlined),
+          label: const Text('苦手克服カード'),
         ),
         const SizedBox(height: 12),
         Text('単語帳', style: serif(16)),

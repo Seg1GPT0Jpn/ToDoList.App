@@ -5,8 +5,10 @@ import 'package:rpg_game/rpg_game.dart';
 
 import '../app/theme.dart';
 import '../art/paper.dart';
+import '../meta/streak_store.dart';
 import 'speech.dart';
 import 'vocab_store.dart';
+import 'weak_cards_screen.dart';
 
 /// 単語帳の練習（1回ぶん）。
 ///
@@ -66,9 +68,15 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
   VocabCard get _card => widget.book.card(_task.cardId)!;
   bool get _done => _index >= _queue.length;
 
+  /// 始める前に持っていた苦手克服カード（終わったときに、新しくもらえたカードを出す）
+  late final Set<String> _overcomeBefore;
+
   @override
   void initState() {
     super.initState();
+    _overcomeBefore = {
+      for (final w in WeakCards.collected(widget.book, _progress)) w.card.id,
+    };
     _prepare();
   }
 
@@ -660,6 +668,32 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
     ];
   }
 
+  /// この回で新しくもらえた苦手克服カード
+  List<Widget> _newCards(BookProgress p) {
+    final got = [
+      for (final w in WeakCards.collected(widget.book, p))
+        if (!_overcomeBefore.contains(w.card.id)) w,
+    ];
+    if (got.isEmpty) return const [];
+    return [
+      const SizedBox(height: 16),
+      Center(
+        child: Text(
+          '苦手克服カードを${got.length}枚ゲット！',
+          key: const ValueKey('vocab-new-weak-cards'),
+          style: serif(16),
+        ),
+      ),
+      const SizedBox(height: 8),
+      Wrap(
+        alignment: WrapAlignment.center,
+        spacing: 8,
+        runSpacing: 8,
+        children: [for (final w in got.take(12)) WeakCardTile(w)],
+      ),
+    ];
+  }
+
   Widget _summary() {
     final secs = DateTime.now().difference(_started).inSeconds;
     final pct = _answered == 0 ? 0 : (_correct * 100 / _answered).round();
@@ -684,7 +718,8 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
           ),
         ),
         const SizedBox(height: 8),
-        Center(child: Text('🔥 ${p.streak(DateTime.now())}日連続')),
+        const Center(child: StreakTag()),
+        ..._newCards(p),
         const SizedBox(height: 20),
         if (_missed.isNotEmpty)
           OutlinedButton.icon(

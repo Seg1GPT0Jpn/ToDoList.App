@@ -11,6 +11,7 @@ import '../classroom/classroom_backend.dart';
 import '../classroom/classroom_store.dart';
 import '../data/meta_store.dart';
 import '../data/prefs_progress_repository.dart';
+import '../meta/streak_store.dart';
 import '../purchase/google_play_purchase_service.dart';
 import '../study/exam_world_store.dart';
 import '../study/personal_books.dart';
@@ -71,6 +72,9 @@ class RpgServices extends InheritedWidget {
   late final ClassroomStore classroomStore = ClassroomStore(
     personalBooks.prefs,
   );
+
+  /// ゆるい連続記録とお休み券
+  late final StreakStore streak = StreakStore(personalBooks.prefs);
 
   /// Google Play Billing。Web 版や Firebase 未設定版では null。
   final GooglePlayPurchaseService? purchaseService;

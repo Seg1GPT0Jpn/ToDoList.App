@@ -83,3 +83,5 @@ export 'src/vocab/vocab_vault.dart';
 export 'src/vocab/vocab_quiz.dart';
 export 'src/vocab/word_battle.dart';
 export 'src/classroom/classroom.dart';
+export 'src/learning/gentle_streak.dart';
+export 'src/vocab/weak_cards.dart';

@@ -70,8 +70,7 @@ void main() {
   });
 
   test('後期中間の公共は、委員会の新作8セット（468問）で演習できる', () async {
-    final plan =
-        ShonanRangeTable.plan('後期中間試験', id: 'x', now: DateTime(2026));
+    final plan = ShonanRangeTable.plan('後期中間試験', id: 'x', now: DateTime(2026));
     final r = await SchoolPractice.build(
       ShonanSubjects.byId('public_economy')!,
       plan.subject('public_economy'),
