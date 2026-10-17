@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import '../generated/generated_sets.dart';
+
 import '../models/question.dart';
 
 /// 問題セットの読み込み元。
@@ -44,10 +46,12 @@ class JsonQuestionSource implements QuestionSource {
     if (cached != null) return cached;
     final raw = await loader(setId);
     if (raw == null) return null;
-    final set = parse(raw);
-    if (set.setId != setId) {
-      throw FormatException('setId が一致しません: 要求 $setId / 実際 ${set.setId}');
+    final parsed = parse(raw);
+    if (parsed.setId != setId) {
+      throw FormatException('setId が一致しません: 要求 $setId / 実際 ${parsed.setId}');
     }
+    // 計算や表から作れる問題を足す（答えはプログラムが計算する）
+    final set = GeneratedSets.augment(parsed);
     for (final q in set.questions) {
       _owner[q.id] = setId;
     }
