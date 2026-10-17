@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rpg_game/rpg_game.dart';
 
+import '../classroom/classroom_screens.dart';
 import '../app/services.dart';
 import '../app/theme.dart';
 import '../art/enemy_painter.dart';
@@ -98,6 +99,11 @@ class AdventureCard extends StatelessWidget {
                 spacing: Space.s,
                 runSpacing: Space.xs,
                 children: [
+                  _MenuButton(
+                    icon: Icons.groups_outlined,
+                    label: 'クラスルーム',
+                    builder: (_) => const ClassroomHubScreen(),
+                  ),
                   _MenuButton(
                     icon: Icons.castle_outlined,
                     label: due > 0 ? '復習の塔（$due）' : '復習の塔',

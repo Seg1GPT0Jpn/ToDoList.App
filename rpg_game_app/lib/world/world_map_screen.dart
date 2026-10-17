@@ -650,9 +650,7 @@ class _WorldCard extends StatelessWidget {
         );
         if (goAccount == true && context.mounted) {
           await Navigator.of(context).push(
-            MaterialPageRoute<void>(
-              builder: (_) => const AccountScreen(),
-            ),
+            MaterialPageRoute<void>(builder: (_) => const AccountScreen()),
           );
         }
         return;

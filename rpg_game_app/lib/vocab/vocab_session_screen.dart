@@ -20,6 +20,7 @@ class VocabSessionScreen extends StatefulWidget {
     required this.tasks,
     required this.title,
     this.random,
+    this.onFinished,
   });
 
   final VocabStore store;
@@ -27,6 +28,9 @@ class VocabSessionScreen extends StatefulWidget {
   final List<VocabTask> tasks;
   final String title;
   final Random? random;
+
+  /// 終わったとき（途中でやめたときも）に、正解した数を知らせる（クラスの共闘ボスなど）
+  final void Function(int correct)? onFinished;
 
   @override
   State<VocabSessionScreen> createState() => _VocabSessionScreenState();
@@ -68,8 +72,18 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
     _prepare();
   }
 
+  bool _reported = false;
+
+  /// 正解した数を一度だけ知らせる
+  void _report() {
+    if (_reported) return;
+    _reported = true;
+    widget.onFinished?.call(_correct);
+  }
+
   @override
   void dispose() {
+    _report();
     _input.dispose();
     speaker.stop();
     super.dispose();
@@ -212,6 +226,7 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
       _index++;
       _prepare();
     });
+    if (_done) _report();
   }
 
   /// もう一度出すときは、見分ける問題にして思い出しやすく

@@ -18,11 +18,12 @@ class GooglePlayPurchaseService {
     InAppPurchase? store,
     FirebaseFunctions? functions,
     FirebaseAuth? auth,
-  })  : _store = store ?? InAppPurchase.instance,
-        _functions = functions ??
-            FirebaseFunctions.instanceFor(region: 'asia-northeast1'),
-        _auth = auth ?? FirebaseAuth.instance,
-        _onVerified = onVerified;
+  }) : _store = store ?? InAppPurchase.instance,
+       _functions =
+           functions ??
+           FirebaseFunctions.instanceFor(region: 'asia-northeast1'),
+       _auth = auth ?? FirebaseAuth.instance,
+       _onVerified = onVerified;
 
   static const _productPrefix = 'world_';
 
@@ -106,7 +107,7 @@ class GooglePlayPurchaseService {
     if (response.error != null || response.productDetails.length != 1) {
       debugPrint(
         'Google Play の商品情報を取得できませんでした: ' +
-        (response.error?.message ?? 'product not found'),
+            (response.error?.message ?? 'product not found'),
       );
       return false;
     }
@@ -120,8 +121,9 @@ class GooglePlayPurchaseService {
 
     try {
       final started = await _store.buyNonConsumable(
-        purchaseParam:
-            PurchaseParam(productDetails: response.productDetails.single),
+        purchaseParam: PurchaseParam(
+          productDetails: response.productDetails.single,
+        ),
       );
       if (!started) {
         _pending.remove(worldId);
@@ -147,8 +149,7 @@ class GooglePlayPurchaseService {
     }
   }
 
-  bool get _isAndroidPurchaseReady =>
-      !kIsWeb && _auth.currentUser != null;
+  bool get _isAndroidPurchaseReady => !kIsWeb && _auth.currentUser != null;
 
   Future<void> _handlePurchases(List<PurchaseDetails> purchases) async {
     for (final purchase in purchases) {
@@ -216,23 +217,17 @@ class GooglePlayPurchaseService {
     if (token.isEmpty) return false;
 
     try {
-      final callable =
-          _functions.httpsCallable('verifyGooglePlayPurchase');
+      final callable = _functions.httpsCallable('verifyGooglePlayPurchase');
       final response = await callable.call(<String, dynamic>{
         'productId': purchase.productID,
         'purchaseToken': token,
         'worldId': worldId,
       });
       final data = response.data;
-      return data is Map &&
-          data['ok'] == true &&
-          data['worldId'] == worldId;
+      return data is Map && data['ok'] == true && data['worldId'] == worldId;
     } on FirebaseFunctionsException catch (e) {
       debugPrint(
-        'Google Play 購入のサーバー検証に失敗しました: ' +
-        e.code +
-        ' ' +
-        (e.message ?? ''),
+        'Google Play 購入のサーバー検証に失敗しました: ' + e.code + ' ' + (e.message ?? ''),
       );
       return false;
     } catch (e) {

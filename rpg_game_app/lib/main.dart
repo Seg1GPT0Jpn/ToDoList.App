@@ -10,6 +10,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'account/account_service.dart';
 import 'account/profile_repository.dart';
 import 'account/welcome_screen.dart';
+import 'classroom/classroom_screens.dart';
 import 'app/services.dart';
 import 'app/settings.dart';
 import 'app/theme.dart';
@@ -20,6 +21,7 @@ import 'audio/player_backend.dart';
 import 'cloud/cloud_sync.dart';
 import 'purchase/google_play_purchase_service.dart';
 import 'quiz/question_report.dart';
+import 'cloud/firestore_classroom_backend.dart';
 import 'cloud/firestore_versus_backend.dart';
 import 'cloud/firebase_account_service.dart';
 import 'data/meta_store.dart';
@@ -100,6 +102,9 @@ Future<void> main() async {
       versusRooms: cloud == null
           ? null
           : FirestoreVersusBackend(cloud.auth, FirebaseFirestore.instance),
+      classrooms: cloud == null
+          ? null
+          : FirestoreClassroomBackend(cloud.auth, FirebaseFirestore.instance),
       child: TsuzuriQuestApp(
         onUserGesture: () {
           // ブラウザは、画面にさわるまで音を出させてくれない
@@ -251,7 +256,20 @@ class _FirstRunState extends State<_FirstRun> {
     if (_asked) return;
     _asked = true;
     final p = RpgServices.of(context).profiles.load();
-    if (!p.hasName && !p.isGoogleLinked) {
+    // 招待リンク（?class=123456）から来たら、クラスルームを開いてコードを入れておく
+    final classCode = kIsWeb ? Uri.base.queryParameters['class'] : null;
+    final needWelcome = !p.hasName && !p.isGoogleLinked;
+    if (classCode != null && Classroom.validCode(classCode)) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (!mounted) return;
+        Navigator.of(context).push(
+          MaterialPageRoute<void>(
+            builder: (_) => ClassroomHubScreen(joinCode: classCode),
+          ),
+        );
+      });
+    }
+    if (needWelcome) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (!mounted) return;
         Navigator.of(context).push(

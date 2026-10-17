@@ -1,0 +1,14 @@
+{
+  "name": "tsuzuri-rules-test",
+  "private": true,
+  "type": "module",
+  "description": "firestore.rules のテスト（Firebase エミュレーターで実行）",
+  "scripts": {
+    "test": "firebase emulators:exec --only firestore --project demo-tsuzuri \"node rules.test.mjs\""
+  },
+  "devDependencies": {
+    "@firebase/rules-unit-testing": "^3.0.0",
+    "firebase": "^10.14.0",
+    "firebase-tools": "^13.0.0"
+  }
+}

@@ -44,8 +44,7 @@ class WebSpeaker implements Speaker {
     if (cached != null) return cached;
     final list = await _list(synth);
     final picked = SpeechText.pickVoice([
-      for (final v in list)
-        {'name': v.name, 'locale': v.lang},
+      for (final v in list) {'name': v.name, 'locale': v.lang},
     ], lang);
     if (picked == null) return null;
     for (final v in list) {

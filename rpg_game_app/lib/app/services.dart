@@ -7,6 +7,8 @@ import 'package:rpg_game/rpg_game.dart';
 import '../account/account_service.dart';
 import '../account/profile_repository.dart';
 import '../audio/music_director.dart';
+import '../classroom/classroom_backend.dart';
+import '../classroom/classroom_store.dart';
 import '../data/meta_store.dart';
 import '../data/prefs_progress_repository.dart';
 import '../purchase/google_play_purchase_service.dart';
@@ -28,6 +30,7 @@ class RpgServices extends InheritedWidget {
     required this.settings,
     required this.music,
     this.versusRooms,
+    this.classrooms,
     this.purchaseService,
     required super.child,
   }) : questions = JsonQuestionSource(loadQuestionAsset),
@@ -37,8 +40,7 @@ class RpgServices extends InheritedWidget {
          allowComingSoonPurchase: false,
          allowPurchase: purchaseService?.isAvailable == true,
          purchase: purchaseService?.purchaseWorld,
-         purchaseSource:
-             purchaseService != null ? 'google_play' : 'mock',
+         purchaseSource: purchaseService != null ? 'google_play' : 'mock',
        );
 
   final PrefsProgressRepository repository;
@@ -61,6 +63,14 @@ class RpgServices extends InheritedWidget {
 
   /// オンライン対戦の部屋（Firebase の設定がなければ null）
   final VersusRoomBackend? versusRooms;
+
+  /// クラスルーム（Firebase の設定がなければ null）
+  final ClassroomBackend? classrooms;
+
+  /// この端末で入っているクラスルーム
+  late final ClassroomStore classroomStore = ClassroomStore(
+    personalBooks.prefs,
+  );
 
   /// Google Play Billing。Web 版や Firebase 未設定版では null。
   final GooglePlayPurchaseService? purchaseService;

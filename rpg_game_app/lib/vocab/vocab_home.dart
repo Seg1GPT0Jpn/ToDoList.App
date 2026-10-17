@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:rpg_game/rpg_game.dart';
 
 import '../app/theme.dart';
+import '../classroom/classroom_screens.dart';
 import '../study/personal_books.dart';
 import 'vocab_book_screen.dart';
 import 'vocab_import_screen.dart';
@@ -129,6 +130,14 @@ class _VocabHomeState extends State<VocabHome> {
               ],
             ),
           ),
+        ),
+        const SizedBox(height: 8),
+        // 友だちと、小テスト・定期テストの範囲をいっしょに準備する
+        OutlinedButton.icon(
+          key: const ValueKey('vocab-home-classroom'),
+          onPressed: () => _open(const ClassroomHubScreen()),
+          icon: const Icon(Icons.groups_outlined),
+          label: const Text('クラスルーム（友だちと小テスト・定期テストの範囲を準備）'),
         ),
         const SizedBox(height: 12),
         Text('単語帳', style: serif(16)),
