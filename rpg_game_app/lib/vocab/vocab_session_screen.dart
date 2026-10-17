@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:rpg_game/rpg_game.dart';
 
 import '../app/theme.dart';
+import '../app/usage_meter.dart';
 import '../art/paper.dart';
 import '../meta/streak_store.dart';
 import 'speech.dart';
@@ -74,6 +75,7 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
   @override
   void initState() {
     super.initState();
+    UsageMeter.mark(context, 'vocab_study');
     _overcomeBefore = {
       for (final w in WeakCards.collected(widget.book, _progress)) w.card.id,
     };

@@ -15,7 +15,11 @@ class AppSettings {
     this.reduceMotion = false,
     this.adaptiveMusic = true,
     this.theme = 'system',
+    this.shareUsage = true,
   });
+
+  /// どの機能を使ったかの回数を、名前などを付けずに送る（アプリの改善用）
+  final bool shareUsage;
 
   /// 画面の明るさ：system（端末に合わせる）・light（ライト）・dark（ダーク）
   final String theme;
@@ -47,6 +51,7 @@ class AppSettings {
     bool? reduceMotion,
     bool? adaptiveMusic,
     String? theme,
+    bool? shareUsage,
   }) => AppSettings(
     bgm: bgm ?? this.bgm,
     se: se ?? this.se,
@@ -56,6 +61,7 @@ class AppSettings {
     reduceMotion: reduceMotion ?? this.reduceMotion,
     adaptiveMusic: adaptiveMusic ?? this.adaptiveMusic,
     theme: theme ?? this.theme,
+    shareUsage: shareUsage ?? this.shareUsage,
   );
 
   Map<String, dynamic> toMap() => {
@@ -67,6 +73,7 @@ class AppSettings {
     'reduceMotion': reduceMotion,
     'adaptiveMusic': adaptiveMusic,
     'theme': theme,
+    'shareUsage': shareUsage,
   };
 
   factory AppSettings.fromMap(Map<String, dynamic> m) {
@@ -80,6 +87,7 @@ class AppSettings {
       reduceMotion: m['reduceMotion'] as bool? ?? false,
       adaptiveMusic: m['adaptiveMusic'] as bool? ?? true,
       theme: themes.contains(m['theme']) ? m['theme'] as String : 'system',
+      shareUsage: m['shareUsage'] as bool? ?? true,
     );
   }
 }

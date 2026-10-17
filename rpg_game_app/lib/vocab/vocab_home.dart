@@ -4,6 +4,7 @@ import 'package:rpg_game/rpg_game.dart';
 
 import '../app/pwa.dart';
 import '../app/theme.dart';
+import '../app/usage_meter.dart';
 import '../classroom/classroom_screens.dart';
 import '../meta/streak_store.dart';
 import '../study/personal_books.dart';
@@ -25,6 +26,12 @@ class VocabHome extends StatefulWidget {
 }
 
 class _VocabHomeState extends State<VocabHome> {
+  @override
+  void initState() {
+    super.initState();
+    UsageMeter.mark(context, 'vocab');
+  }
+
   late final VocabStore store = VocabStore.of(widget.books);
   final _name = TextEditingController();
   final _password = TextEditingController();

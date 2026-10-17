@@ -6,6 +6,7 @@ import 'package:rpg_game/rpg_game.dart';
 import '../app/services.dart';
 import '../app/theme.dart';
 import '../app/toast.dart';
+import '../app/usage_meter.dart';
 import '../audio/music_director.dart';
 import '../art/battle_backdrop.dart';
 import '../art/enemy_painter.dart';
@@ -265,6 +266,7 @@ class _BattleScreenState extends State<BattleScreen>
   @override
   void initState() {
     super.initState();
+    UsageMeter.mark(context, 'battle');
     _timer.addStatusListener((s) {
       if (s == AnimationStatus.completed && !_locked) _resolve(null);
     });

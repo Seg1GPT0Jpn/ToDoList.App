@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:rpg_game/rpg_game.dart';
 
 import '../app/theme.dart';
+import '../app/usage_meter.dart';
 import '../art/paper.dart';
 import 'vocab_session_screen.dart';
 import 'vocab_store.dart';
@@ -20,6 +21,12 @@ class WeakCardsScreen extends StatefulWidget {
 }
 
 class _WeakCardsScreenState extends State<WeakCardsScreen> {
+  @override
+  void initState() {
+    super.initState();
+    UsageMeter.mark(context, 'weak_cards');
+  }
+
   Future<void> _practice(VocabBook b) async {
     final tasks = WeakCards.practice(b, widget.store.progress(b.id));
     if (tasks.isEmpty) return;

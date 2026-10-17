@@ -7,6 +7,7 @@ import 'package:rpg_game/rpg_game.dart';
 import '../account/account_screen.dart';
 import '../app/services.dart';
 import '../app/theme.dart';
+import '../app/usage_meter.dart';
 import '../quiz/question_report.dart';
 import '../versus/duel_screens.dart';
 import '../vocab/vocab_session_screen.dart';
@@ -40,6 +41,12 @@ class ClassroomHubScreen extends StatefulWidget {
 }
 
 class _ClassroomHubScreenState extends State<ClassroomHubScreen> {
+  @override
+  void initState() {
+    super.initState();
+    UsageMeter.mark(context, 'classroom');
+  }
+
   Map<String, Classroom?>? _rooms;
   bool _askedJoin = false;
 

@@ -8,6 +8,7 @@ import 'package:rpg_game/rpg_game.dart';
 import '../account/account_screen.dart';
 import '../app/services.dart';
 import '../app/theme.dart';
+import '../app/usage_meter.dart';
 import '../art/paper.dart';
 import '../vocab/vocab_store.dart';
 import '../vocab/word_forest_screen.dart' show loadWordList;
@@ -74,6 +75,12 @@ class DuelHubScreen extends StatefulWidget {
 }
 
 class _DuelHubScreenState extends State<DuelHubScreen> {
+  @override
+  void initState() {
+    super.initState();
+    UsageMeter.mark(context, 'duel');
+  }
+
   final _name = TextEditingController();
   final _from = TextEditingController();
   final _to = TextEditingController();
@@ -350,6 +357,12 @@ class DuelOpenScreen extends StatefulWidget {
 }
 
 class _DuelOpenScreenState extends State<DuelOpenScreen> {
+  @override
+  void initState() {
+    super.initState();
+    UsageMeter.mark(context, 'duel');
+  }
+
   final _name = TextEditingController();
   Future<(WordDuel?, VocabBook?)>? _load;
   String? _error;

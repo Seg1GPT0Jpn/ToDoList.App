@@ -6,6 +6,7 @@ import 'package:rpg_game/rpg_game.dart';
 
 import '../app/services.dart';
 import '../app/theme.dart';
+import '../app/usage_meter.dart';
 import '../art/enemy_painter.dart';
 import '../art/paper.dart';
 import '../battle/battle_screen.dart';
@@ -47,6 +48,7 @@ class _WordForestScreenState extends State<WordForestScreen> {
   @override
   void initState() {
     super.initState();
+    UsageMeter.mark(context, 'word_forest');
     _load();
   }
 

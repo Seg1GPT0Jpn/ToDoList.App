@@ -18,6 +18,7 @@ import '../study/personal_books.dart';
 import '../versus/duel_backend.dart';
 import '../versus/online_room.dart';
 import 'settings.dart';
+import 'usage_meter.dart';
 
 /// 画面から使うサービスの入れ物。
 class RpgServices extends InheritedWidget {
@@ -34,6 +35,7 @@ class RpgServices extends InheritedWidget {
     this.versusRooms,
     this.classrooms,
     this.duels,
+    this.usageSink,
     this.purchaseService,
     required super.child,
   }) : questions = JsonQuestionSource(loadQuestionAsset),
@@ -72,6 +74,16 @@ class RpgServices extends InheritedWidget {
 
   /// 単語チャレンジ（リンクで遊ぶ早押し。Firebase の設定がなければ null）
   final DuelBackend? duels;
+
+  /// 使った機能の回数の送り先（Firebase の設定がなければ null）
+  final UsageSink? usageSink;
+
+  /// 使った機能を数える（名前・ID は送らない。設定で止められる）
+  late final UsageMeter usage = UsageMeter(
+    personalBooks.prefs,
+    usageSink,
+    () => settings.value.shareUsage,
+  );
 
   /// この端末で入っているクラスルーム
   late final ClassroomStore classroomStore = ClassroomStore(

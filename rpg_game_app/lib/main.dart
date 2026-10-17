@@ -24,6 +24,7 @@ import 'purchase/google_play_purchase_service.dart';
 import 'quiz/question_report.dart';
 import 'cloud/firestore_classroom_backend.dart';
 import 'cloud/firestore_duel_backend.dart';
+import 'cloud/firestore_usage_sink.dart';
 import 'cloud/firestore_versus_backend.dart';
 import 'cloud/firebase_account_service.dart';
 import 'data/meta_store.dart';
@@ -107,6 +108,9 @@ Future<void> main() async {
       classrooms: cloud == null
           ? null
           : FirestoreClassroomBackend(cloud.auth, FirebaseFirestore.instance),
+      usageSink: cloud == null
+          ? null
+          : FirestoreUsageSink(FirebaseFirestore.instance),
       duels: cloud == null
           ? null
           : FirestoreDuelBackend(cloud.auth, FirebaseFirestore.instance),
@@ -261,6 +265,7 @@ class _FirstRunState extends State<_FirstRun> {
     if (_asked) return;
     _asked = true;
     final p = RpgServices.of(context).profiles.load();
+    RpgServices.of(context).usage.open('app');
     // 招待リンク（?class=123456）から来たら、クラスルームを開いてコードを入れておく
     final classCode = kIsWeb ? Uri.base.queryParameters['class'] : null;
     final needWelcome = !p.hasName && !p.isGoogleLinked;

@@ -115,6 +115,15 @@ class SettingsScreen extends StatelessWidget {
                 value: s.reduceMotion,
                 onChanged: (v) => store.update(s.copyWith(reduceMotion: v)),
               ),
+              SwitchListTile(
+                key: const ValueKey('share-usage'),
+                title: const Text('使った機能の回数を送る'),
+                subtitle: const Text(
+                  'どの機能が使われているかを、名前やIDを付けずに日ごとの回数だけ送ります（アプリの改善に使います）',
+                ),
+                value: s.shareUsage,
+                onChanged: (v) => store.update(s.copyWith(shareUsage: v)),
+              ),
               const SectionTitle('お知らせ'),
               const ReminderTile(),
               const SectionTitle('学習レポート'),

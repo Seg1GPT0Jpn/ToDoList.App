@@ -10,6 +10,7 @@ import 'package:rpg_game/rpg_game.dart';
 import '../app/services.dart';
 import '../app/theme.dart';
 import '../app/toast.dart';
+import '../app/usage_meter.dart';
 import '../art/enemy_painter.dart';
 import '../art/hero_painter.dart';
 import '../art/paper.dart';
@@ -395,6 +396,7 @@ class _VersusScreenState extends State<VersusScreen>
   @override
   void initState() {
     super.initState();
+    UsageMeter.mark(context, 'versus');
     _newMatch();
     _timer.addStatusListener((s) {
       if (s != AnimationStatus.completed || _reveal || _match.isOver) return;

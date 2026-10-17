@@ -6,6 +6,7 @@ import 'package:rpg_game/rpg_game.dart';
 
 import '../app/services.dart';
 import '../app/theme.dart';
+import '../app/usage_meter.dart';
 import '../art/paper.dart';
 import 'exam_world_screens.dart';
 import 'shonan_exam_screens.dart';
@@ -26,6 +27,12 @@ class SeaHomeScreen extends StatefulWidget {
 }
 
 class _SeaHomeScreenState extends State<SeaHomeScreen> {
+  @override
+  void initState() {
+    super.initState();
+    UsageMeter.mark(context, 'exam_sea');
+  }
+
   /// 選んでいる教科（english / science / social / japanese / math / information）
   String _subject = 'english';
 

@@ -89,6 +89,16 @@ await env.withSecurityRulesDisabled(async (ctx) => {
   await setDoc(doc(ctx.firestore(), 'duels/zzzz2345'), { ...duel('alice'), createdAt: Timestamp.now(), expiresAt: Timestamp.fromMillis(Date.now() - 1000) });
 });
 await check('チャレンジ：期限切れには入れられない', assertFails(updateDoc(doc(C, 'duels/zzzz2345'), { 'results.carol': { name: 'う', correct: 1, score: 100 } })));
+// 使った機能の回数
+await check('回数：ログインなしでも1足せる（新規）', assertSucceeds(setDoc(doc(N, 'usage/2026-10-17'), { vocab: increment(1) }, { merge: true })));
+await check('回数：1足せる（追加）', assertSucceeds(setDoc(doc(A, 'usage/2026-10-17'), { vocab: increment(1) }, { merge: true })));
+await check('回数：別の機能も足せる', assertSucceeds(setDoc(doc(N, 'usage/2026-10-17'), { duel: increment(1) }, { merge: true })));
+await check('回数：2以上は足せない', assertFails(setDoc(doc(N, 'usage/2026-10-17'), { vocab: increment(5) }, { merge: true })));
+await check('回数：減らせない', assertFails(setDoc(doc(N, 'usage/2026-10-17'), { vocab: increment(-1) }, { merge: true })));
+await check('回数：2つ同時には足せない', assertFails(setDoc(doc(N, 'usage/2026-10-17'), { vocab: increment(1), duel: increment(1) }, { merge: true })));
+await check('回数：知らない項目（名前など）は置けない', assertFails(setDoc(doc(N, 'usage/2026-10-17'), { name: 'あ' }, { merge: true })));
+await check('回数：日付でない文書には書けない', assertFails(setDoc(doc(N, 'usage/hello'), { vocab: increment(1) }, { merge: true })));
+await check('回数：アプリからは読めない', assertFails(getDoc(doc(A, 'usage/2026-10-17'))));
 // 既存のルールが壊れていない
 await check('自分の進行状況は書ける（既存）', assertSucceeds(setDoc(doc(A, 'users/alice/rpg_progress/main'), { level: 1 })));
 await check('他人の進行状況は読めない（既存）', assertFails(getDoc(doc(B, 'users/alice/rpg_progress/main'))));
