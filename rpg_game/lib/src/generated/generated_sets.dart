@@ -2,6 +2,7 @@ import 'dart:math';
 
 import '../models/question.dart';
 import 'gen_core.dart';
+import 'gen_info.dart';
 import 'gen_math.dart';
 
 /// 問題セットを読みこむときに、計算や表から作れる問題を足す。
@@ -12,7 +13,7 @@ import 'gen_math.dart';
 /// - 問題ファイルは増えないので、ダウンロードは重くならない
 abstract final class GeneratedSets {
   /// 単元 → 作り方
-  static final Map<String, List<Gen>> byUnit = {...mathGens};
+  static final Map<String, List<Gen>> byUnit = {...mathGens, ...infoGens};
 
   /// 作り方の版（作り方を変えたら上げる。問題 ID に入る）
   static const version = 1;
