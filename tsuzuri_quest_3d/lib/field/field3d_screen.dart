@@ -1,16 +1,19 @@
 import 'dart:async';
 import 'dart:math' as math;
 
-import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:flutter/foundation.dart'
+    show kIsWeb, kProfileMode, kReleaseMode;
 import 'package:flutter/gestures.dart'
     show PointerDeviceKind, PointerScrollEvent;
 import 'package:flutter/material.dart' hide BoxShape;
+import 'package:flutter/scheduler.dart' show FrameTiming, SchedulerBinding;
 import 'package:flutter/services.dart';
 import 'package:flutter_scene/kit.dart' show VirtualJoystick;
 import 'package:flutter_scene/scene.dart';
 import 'package:rpg_game/rpg_game.dart';
 import 'package:vector_math/vector_math.dart' as vm;
 
+import '../game/bench.dart';
 import '../game/field3d.dart';
 import '../game/field_battle.dart';
 import '../game/questions.dart';
@@ -106,6 +109,10 @@ class _Field3DScreenState extends State<Field3DScreen> {
   double _sinceHud = 0;
   double _sinceSave = 0;
 
+  // 自動計測（画質を順に切りかえて、カメラを回しながら測る）
+  BenchRun? _bench;
+  String _qualityBeforeBench = 'standard';
+
   @override
   void initState() {
     super.initState();
@@ -116,6 +123,7 @@ class _Field3DScreenState extends State<Field3DScreen> {
   @override
   void dispose() {
     _nextTimer?.cancel();
+    _stopBenchTimings();
     _saveNow();
     _world?.dispose();
     _focus.dispose();
@@ -181,7 +189,10 @@ class _Field3DScreenState extends State<Field3DScreen> {
     // 入力（キーボード＋仮想スティック）
     final keys = HardwareKeyboard.instance.logicalKeysPressed;
     var ix = _stick.x, iy = -_stick.y;
-    if (_talking == null) {
+    if (_bench != null) {
+      ix = 0;
+      iy = 0;
+    } else if (_talking == null) {
       if (keys.contains(LogicalKeyboardKey.keyW) ||
           keys.contains(LogicalKeyboardKey.arrowUp)) {
         iy += 1;
@@ -211,6 +222,7 @@ class _Field3DScreenState extends State<Field3DScreen> {
     w.setMoveInput(ix, iy, cameraYaw: _camYaw, run: run);
 
     _tickFight(dt);
+    _tickBench(dt);
 
     // ときどき保存・表示の更新
     _sinceSave += dt;
@@ -222,6 +234,7 @@ class _Field3DScreenState extends State<Field3DScreen> {
     if (_sinceHud > 0.5) {
       _sinceHud = 0;
       _memoryMb = Field3DMemory.usedMb();
+      _bench?.addMemory(_memoryMb);
       if (mounted) setState(() {});
     }
   }
@@ -234,6 +247,124 @@ class _Field3DScreenState extends State<Field3DScreen> {
     _avgMs = sum / _frameTimes.length;
     _fps = 1000 / _avgMs;
     _worstMs = _frameTimes.fold<double>(0, math.max);
+  }
+
+  // ---- 自動計測 ----
+
+  void _startBench() {
+    if (_world == null || _fight != null || _talking != null || _busy) {
+      _say('バトル・会話の外で始めてください');
+      return;
+    }
+    final view = View.of(context);
+    final px = view.physicalSize;
+    final device =
+        '${Field3DMemory.platform()}　画面 ${px.width.round()}x${px.height.round()}'
+        '（${view.devicePixelRatio.toStringAsFixed(2)}倍）'
+        '${kProfileMode
+            ? '　profile'
+            : kReleaseMode
+            ? '　release'
+            : '　debug（参考値）'}';
+    final run = BenchRun(const BenchPlan(), device: device);
+    _qualityBeforeBench = _quality;
+    _stick = vm.Vector2.zero();
+    SchedulerBinding.instance.addTimingsCallback(_onTimings);
+    setState(() => _bench = run);
+    _applyBenchQuality(run.quality);
+  }
+
+  void _applyBenchQuality(String q) {
+    // 計測中の画質は保存しない（終わったらもとにもどす）
+    _quality = q;
+    _world?.setQuality(q);
+    _frameTimes.clear();
+  }
+
+  void _onTimings(List<FrameTiming> timings) {
+    final b = _bench;
+    if (b == null) return;
+    for (final t in timings) {
+      b.addTiming(
+        buildMs: t.buildDuration.inMicroseconds / 1000,
+        rasterMs: t.rasterDuration.inMicroseconds / 1000,
+      );
+    }
+  }
+
+  void _stopBenchTimings() {
+    if (_bench != null) {
+      SchedulerBinding.instance.removeTimingsCallback(_onTimings);
+    }
+  }
+
+  void _tickBench(double dt) {
+    final b = _bench;
+    if (b == null) return;
+    // 草原をひとまわり見わたす（約 10 秒で 1 周）
+    _camYaw += 0.63 * dt;
+    b.addFrame(dt * 1000);
+    final next = b.tick(dt);
+    if (next != null) _applyBenchQuality(next);
+    if (b.done) _finishBench();
+  }
+
+  void _cancelBench() {
+    _stopBenchTimings();
+    setState(() => _bench = null);
+    _applyBenchQuality(_qualityBeforeBench);
+    _say('計測をやめました');
+  }
+
+  void _finishBench() {
+    final b = _bench!;
+    _stopBenchTimings();
+    _bench = null;
+    _applyBenchQuality(_qualityBeforeBench);
+    final report = b.report(
+      note:
+          '初回表示 ${_firstFrame == null ? '-' : '${(_firstFrame!.inMilliseconds / 1000).toStringAsFixed(1)}秒'}',
+    );
+    // adb logcat／flutter run の画面にも 1 行で出す
+    debugPrint(report.logLine());
+    _save.addBench(report.json());
+    if (!mounted) return;
+    setState(() {});
+    _benchDialog(report.text());
+  }
+
+  void _benchDialog(String text) => showDialog<void>(
+    context: context,
+    builder: (c) => AlertDialog(
+      title: const Text('自動計測の結果'),
+      content: SingleChildScrollView(
+        child: SelectableText(
+          key: const ValueKey('field3d-bench-result'),
+          text,
+          style: const TextStyle(
+            fontSize: 13,
+            fontFeatures: [FontFeature.tabularFigures()],
+          ),
+        ),
+      ),
+      actions: [
+        TextButton(
+          onPressed: () {
+            Clipboard.setData(ClipboardData(text: text));
+            Navigator.pop(c);
+            _say('結果をコピーしました');
+          },
+          child: const Text('コピー'),
+        ),
+        TextButton(onPressed: () => Navigator.pop(c), child: const Text('とじる')),
+      ],
+    ),
+  );
+
+  void _benchHistory() {
+    final list = _save.benchHistory;
+    final text = list.isEmpty ? 'まだ記録がありません' : list.join('\n\n');
+    _benchDialog(text);
   }
 
   PerspectiveCamera _camera(Duration elapsed) {
@@ -587,6 +718,10 @@ class _Field3DScreenState extends State<Field3DScreen> {
   KeyEventResult _key(FocusNode _, KeyEvent e) {
     if (e is! KeyDownEvent) return KeyEventResult.ignored;
     final k = e.logicalKey;
+    if (_bench != null) {
+      if (k == LogicalKeyboardKey.escape) _cancelBench();
+      return KeyEventResult.handled;
+    }
     // バトル中：1〜4で答える、Space／J でふる、Esc でにげる
     final f = _fight;
     if (f != null) {
@@ -683,7 +818,8 @@ class _Field3DScreenState extends State<Field3DScreen> {
                         ),
                       ),
                       _hud(context),
-                      if (!_touchFree) _touchControls(),
+                      if (!_touchFree && _bench == null) _touchControls(),
+                      if (_bench != null) _benchBanner(_bench!),
                       if (_hurt)
                         const Positioned.fill(
                           child: IgnorePointer(
@@ -693,9 +829,10 @@ class _Field3DScreenState extends State<Field3DScreen> {
                       if (_fight != null) _fightPanel(size),
                       if (_fight == null &&
                           _talking == null &&
+                          _bench == null &&
                           _nearFoe != null)
                         _engageButton(_nearFoe!),
-                      _swordButton(),
+                      if (_bench == null) _swordButton(),
                       if (_talking != null) _dialog(),
                       if (_toast != null) _toastView(),
                     ],
@@ -755,6 +892,8 @@ class _Field3DScreenState extends State<Field3DScreen> {
                       onSelected: (v) {
                         if (v == 'reset') _reset();
                         if (v == 'credits') _credits();
+                        if (v == 'bench') _startBench();
+                        if (v == 'benchlog') _benchHistory();
                         if (v.startsWith('q:')) _setQuality(v.substring(2));
                       },
                       itemBuilder: (_) => [
@@ -764,6 +903,17 @@ class _Field3DScreenState extends State<Field3DScreen> {
                             checked: _quality == q,
                             child: Text('画質：${_qualityName(q)}'),
                           ),
+                        const PopupMenuDivider(),
+                        PopupMenuItem(
+                          value: 'bench',
+                          child: Text(
+                            '自動計測（約${const BenchPlan().total.round()}秒）',
+                          ),
+                        ),
+                        const PopupMenuItem(
+                          value: 'benchlog',
+                          child: Text('計測の記録'),
+                        ),
                         const PopupMenuDivider(),
                         const PopupMenuItem(
                           value: 'reset',
@@ -1102,6 +1252,34 @@ class _Field3DScreenState extends State<Field3DScreen> {
       ),
     );
   }
+
+  Widget _benchBanner(BenchRun b) => Align(
+    alignment: const Alignment(0, 0.7),
+    child: _chip(
+      Padding(
+        padding: const EdgeInsets.fromLTRB(16, 8, 8, 8),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              key: const ValueKey('field3d-bench'),
+              '自動計測中 ${(b.progress * 100).round()}%　'
+              '画質 ${BenchReport.qualityLabel(b.quality)}${b.warmingUp ? '（ならし）' : ''}\n'
+              '終わるまで さわらずに待ってください',
+              style: const TextStyle(color: Colors.white),
+            ),
+            const SizedBox(width: 8),
+            TextButton(
+              key: const ValueKey('field3d-bench-cancel'),
+              onPressed: _cancelBench,
+              style: TextButton.styleFrom(foregroundColor: Colors.white),
+              child: const Text('やめる'),
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
 
   Widget _toastView() => Align(
     alignment: const Alignment(0, -0.6),

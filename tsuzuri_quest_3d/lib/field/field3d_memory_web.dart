@@ -13,3 +13,14 @@ int? usedMb() {
     return null;
   }
 }
+
+/// Web：ブラウザの userAgent
+String platform() {
+  try {
+    final nav = globalContext['navigator'] as JSObject?;
+    final ua = nav?['userAgent'] as JSString?;
+    return 'web ${ua?.toDart ?? ''}'.trim();
+  } catch (_) {
+    return 'web';
+  }
+}

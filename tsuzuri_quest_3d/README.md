@@ -5,7 +5,7 @@
 - 3D 描画：flutter_scene 0.24.3（Android は Impeller＋Flutter GPU、Web は WebGL2）
 - 物理・当たり判定：flutter_scene_rapier 0.5.2（Rapier）
 - 問題データ・バトルの計算・経験値とレベル：共通のコア `../rpg_game`（2D 版と同じもの）
-- セーブ：この端末だけ（`tq3d_progress_v1`・`tq3d_field_v1`・`tq3d_quality_v1`）。クラウドには送らない
+- セーブ：この端末だけ（`tq3d_progress_v1`・`tq3d_field_v1`・`tq3d_quality_v1`・`tq3d_bench_v1`）。クラウドには送らない
 
 ## フォルダ
 
@@ -16,6 +16,7 @@
 | `lib/game/questions.dart` | 問題の読み込み（rpg_game の問題まとめファイル） |
 | `lib/field/` | 3D 画面（描画・物理・カメラ・操作・計測表示） |
 | `lib/game/field_battle.dart` | その場で戦うバトルの流れ（正解→剣をふる→当てる）。計算は rpg_game の BattleEngine |
+| `lib/game/bench.dart` | 自動計測の集計（平均・p95・カクつきの数など。描画なし。単体テストあり） |
 | `lib/field/hero_model.dart` | 2D 版の主人公を基本図形で組み立てた 3D モデル（歩き・剣のふり） |
 | `CREDITS.md` | 素材の出典とライセンス |
 | `web/field3d/` | Web 用の物理エンジン（wasm）。外部サーバーに頼らず自分のサイトから読む |
@@ -63,3 +64,23 @@ flutter run -d chrome --profile --dart-define=FLUTTER_SCENE_RAPIER_WASM_URL=fiel
 右上に fps・平均と最大のフレーム時間・初回表示までの時間・メモリを常に表示する。
 メニュー（︙）で画質を「高／標準／軽量」に切りかえられる（計測用）。
 - メモリ：Android はアプリ全体の常駐メモリ（RSS）、Web は JS のヒープだけ（GPU のメモリは含まない）
+
+### 自動計測（Android 実機の性能を測る）
+メニュー（︙）→「自動計測（約54秒）」。さわらずに待つと、画質「高→標準→軽量」の順に
+それぞれ 3 秒ならし＋15 秒計測（カメラが草原をひとまわり回る）して、結果を出す。
+
+- 結果は画面のダイアログ（「コピー」でクリップボードへ）、ログの 1 行（`TQ3D_BENCH {...}`）、
+  この端末の記録（メニュー「計測の記録」・最新 10 件・`tq3d_bench_v1`）に残る
+- 計測中の画質は保存しない（終わるともとの画質にもどる）。「やめる」／Esc で中止
+- 見方：
+  - フレーム（画面の更新の間隔）：60Hz の端末なら平均 16.7ms・p95 が 20ms 以下ならなめらか。
+    「カクつき(>33ms)」は 1% 未満がめやす
+  - 描画（raster）・UI（build）：Flutter の FrameTiming。Android の profile／release で取れる。
+    Web では WebGL の GPU 時間が入らないので参考にならない（フレームの間隔で見る）
+  - メモリ：Android はアプリ全体（RSS）、Web は JS のヒープだけ
+- debug ビルドの数値は参考値（結果に「debug（参考値）」と出る）。測るときは `--profile`
+
+ログから結果だけ取り出す（PowerShell、実機をつないだまま）：
+```
+adb logcat -d | Select-String TQ3D_BENCH
+```
