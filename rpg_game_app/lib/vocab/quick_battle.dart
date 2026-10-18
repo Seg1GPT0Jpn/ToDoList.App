@@ -19,6 +19,8 @@ class QuickBattle {
     title: book.title,
     origin: book.isProtected
         ? QuestionOrigin.personalImport
+        : book.isTerms
+        ? QuestionOrigin.original
         : QuestionOrigin.userCreated,
     words: [
       for (final c in book.cards)
@@ -62,6 +64,7 @@ class QuickBattle {
           list,
           w,
           formats: const {WordFormat.meaning, WordFormat.recall},
+          terms: book.isTerms,
         ),
     ];
     final progress = await services.repository.load();
@@ -69,8 +72,15 @@ class QuickBattle {
     await Navigator.of(context).push(
       MaterialPageRoute<void>(
         builder: (_) => BattleScreen(
-          world: RpgCatalog.world(RpgCatalog.englishWorldId),
-          stage: WordBattle.stage(list, words, progress.level),
+          world: RpgCatalog.world(book.worldId),
+          stage: WordBattle.stage(
+            list,
+            words,
+            progress.level,
+            worldId: book.worldId,
+            name: book.isTerms ? '暗記カード：${book.title}' : null,
+            noun: book.noun,
+          ),
           questions: questions,
           progress: progress,
           trial: true,

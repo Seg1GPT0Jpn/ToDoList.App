@@ -6,7 +6,10 @@ import 'package:rpg_game/rpg_game.dart';
 
 import '../app/services.dart';
 import '../app/theme.dart';
+import '../vocab/vocab_book_screen.dart';
+import '../vocab/vocab_session_screen.dart';
 import '../vocab/vocab_store.dart';
+import '../vocab/weak_cards_screen.dart';
 import 'realm_style.dart';
 import 'sea_battle_launcher.dart';
 
@@ -46,11 +49,17 @@ Widget _badge(int? best) => Container(
   ),
 );
 
+/// 暗記カードを単語帳の形にしたもの（学習記録は英語の単語帳と同じしくみで残る）
+VocabBook termBook(TermDeck deck) => _books[deck.id] ??= deck.toBook();
+
+final _books = <String, VocabBook>{};
+
 /// 定期テストの海・模擬試験の空の「暗記カード」タブ。
 ///
-/// 理科・社会のワールドを解放する（プロモーションコードなど）と使える。
-/// カードを見るだけでなく、カードから作った4択問題で魔物と戦える（RPG では出ない）。
-class TermCardsTab extends StatelessWidget {
+/// 教科のワールドを解放すると使える。英語の単語帳と同じように、
+/// 忘れかけた順の復習（今日の最適学習）・用語を書く練習・熟練度・分析・苦手克服カードが使える。
+/// カードから作った4択問題で魔物とも戦える（RPG では出ない）。
+class TermCardsTab extends StatefulWidget {
   const TermCardsTab({
     super.key,
     required this.world,
@@ -63,8 +72,57 @@ class TermCardsTab extends StatelessWidget {
   final StudyRealm realm;
 
   @override
+  State<TermCardsTab> createState() => _TermCardsTabState();
+}
+
+class _TermCardsTabState extends State<TermCardsTab> {
+  /// 教科の暗記カード（読み込めたもの）
+  List<(TermDeckInfo, TermDeck?)>? _decks;
+
+  @override
+  void initState() {
+    super.initState();
+    _load();
+  }
+
+  @override
+  void didUpdateWidget(TermCardsTab old) {
+    super.didUpdateWidget(old);
+    if (old.world.id != widget.world.id) {
+      _decks = null;
+      _load();
+    }
+  }
+
+  Future<void> _load() async {
+    final world = widget.world.id;
+    final out = <(TermDeckInfo, TermDeck?)>[];
+    for (final info in TermDecks.of(world)) {
+      out.add((info, await loadTermDeck(info)));
+    }
+    if (mounted && world == widget.world.id) setState(() => _decks = out);
+  }
+
+  VocabStore? get _store {
+    final services = context.getInheritedWidgetOfExactType<RpgServices>();
+    return services == null ? null : VocabStore.of(services.personalBooks);
+  }
+
+  Future<void> _open(Widget page) async {
+    await Navigator.of(context)
+        .push(MaterialPageRoute<void>(builder: (_) => page));
+    if (mounted) setState(() {});
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final owned = Progression.isWorldPlayable(progress, world);
+    final world = widget.world;
+    final owned = Progression.isWorldPlayable(widget.progress, world);
+    final store = _store;
+    final books = [
+      for (final (_, d) in _decks ?? const <(TermDeckInfo, TermDeck?)>[])
+        if (d != null) termBook(d),
+    ];
     return ListView(
       padding: const EdgeInsets.fromLTRB(40, 12, 12, 24),
       children: [
@@ -79,9 +137,105 @@ class TermCardsTab extends StatelessWidget {
               ),
             ),
           ),
+        if (owned && store != null && books.isNotEmpty) _today(store, books),
         for (final info in TermDecks.of(world.id))
-          _DeckCard(info: info, owned: owned, progress: progress, realm: realm),
+          _DeckCard(
+            info: info,
+            deck: _deckOf(info),
+            loading: _decks == null,
+            owned: owned,
+            progress: widget.progress,
+            realm: widget.realm,
+            store: store,
+            onOpen: _open,
+          ),
       ],
+    );
+  }
+
+  TermDeck? _deckOf(TermDeckInfo info) {
+    for (final (i, d) in _decks ?? const <(TermDeckInfo, TermDeck?)>[]) {
+      if (i.id == info.id) return d;
+    }
+    return null;
+  }
+
+  /// 教科全体の「今日のあなた」と、今日の最適学習・苦手克服カード
+  Widget _today(VocabStore store, List<VocabBook> books) {
+    final now = DateTime.now();
+    final totals = {for (final s in CardStatus.values) s: 0};
+    var due = 0, minutes = 0;
+    VocabBook? best;
+    var bestCount = 0, bestDue = -1;
+    for (final b in books) {
+      final p = store.progress(b.id);
+      p.counts(b, now).forEach((k, v) => totals[k] = totals[k]! + v);
+      final d = p.dueCount(now);
+      due += d;
+      minutes += (p.days[BookProgress.dayKey(now)]?.seconds ?? 0) ~/ 60;
+      final plan = VocabPlanner.today(b, p, now).length;
+      // 復習がたまっている暗記カードを先に
+      if (plan > 0 && (d > bestDue || (d == bestDue && plan > bestCount))) {
+        best = b;
+        bestCount = plan;
+        bestDue = d;
+      }
+    }
+    return Card(
+      color: TsuzuriColors.tint(0xFFFFF8E1),
+      margin: const EdgeInsets.only(bottom: 10),
+      child: Padding(
+        padding: const EdgeInsets.all(14),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('今日のあなた（${widget.world.subject}）', style: serif(17)),
+            const SizedBox(height: 4),
+            Text(
+              '🔴 弱点 ${totals[CardStatus.weak]}枚　🟠 あやふや ${totals[CardStatus.shaky]}枚　'
+              '🟢 安定 ${totals[CardStatus.stable]}枚',
+              key: const ValueKey('term-today-counts'),
+            ),
+            Text('今日の復習予定 $due問　今日 $minutes分'),
+            if (best != null) ...[
+              const SizedBox(height: 8),
+              FilledButton.icon(
+                key: const ValueKey('term-today'),
+                onPressed: () {
+                  final b = best!;
+                  _open(
+                    VocabSessionScreen(
+                      store: store,
+                      book: b,
+                      title: '${b.title} 今日の最適学習',
+                      tasks: VocabPlanner.today(
+                        b,
+                        store.progress(b.id),
+                        DateTime.now(),
+                      ),
+                    ),
+                  );
+                },
+                icon: const Icon(Icons.play_arrow),
+                label: Text('今日の最適学習（${best.title}・$bestCount問）'),
+              ),
+            ],
+            const SizedBox(height: 6),
+            OutlinedButton.icon(
+              key: const ValueKey('term-weak-cards'),
+              onPressed: () =>
+                  _open(WeakCardsScreen(store: store, books: books)),
+              icon: const Icon(Icons.style_outlined),
+              label: const Text('苦手克服カード'),
+            ),
+            const SizedBox(height: 4),
+            Text(
+              '「学習する」を開くと、忘れかけた順の復習・用語を書く練習・熟練度・分析が使えます。',
+              style: TextStyle(fontSize: 11, color: TsuzuriColors.inkSoft),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
@@ -89,15 +243,25 @@ class TermCardsTab extends StatelessWidget {
 class _DeckCard extends StatelessWidget {
   const _DeckCard({
     required this.info,
+    required this.deck,
+    required this.loading,
     required this.owned,
     required this.progress,
     required this.realm,
+    required this.store,
+    required this.onOpen,
   });
 
   final TermDeckInfo info;
+
+  /// 読み込んだ暗記カード（読めなければ null）
+  final TermDeck? deck;
+  final bool loading;
   final bool owned;
   final RpgProgress progress;
   final StudyRealm realm;
+  final VocabStore? store;
+  final Future<void> Function(Widget page) onOpen;
 
   String _recordId(String? section) =>
       'card_${info.id}${section == null ? '' : '_$section'}';
@@ -129,52 +293,88 @@ class _DeckCard extends StatelessWidget {
     );
   }
 
+  /// 覚えぐあい（🟢安定・🟠あやふや・🔴弱点・復習予定）
+  String? _status(TermDeck deck) {
+    final s = store;
+    if (s == null) return null;
+    final b = termBook(deck);
+    final p = s.progress(b.id);
+    if (p.cards.isEmpty) return null;
+    final now = DateTime.now();
+    final c = p.counts(b, now);
+    return '🟢${c[CardStatus.stable]} 🟠${c[CardStatus.shaky]} 🔴${c[CardStatus.weak]}'
+        '　復習 ${p.dueCount(now)}';
+  }
+
   @override
   Widget build(BuildContext context) {
     return Card(
       key: ValueKey('deck-${info.id}'),
       margin: const EdgeInsets.only(bottom: 10),
-      child: FutureBuilder<TermDeck?>(
-        future: loadTermDeck(info),
-        builder: (context, snap) {
-          final deck = snap.data;
+      child: Builder(
+        builder: (context) {
+          final deck = this.deck;
           if (deck == null) {
             return ListTile(
               title: Text(info.title),
-              subtitle: Text(
-                snap.connectionState == ConnectionState.done ? '準備中' : '読み込み中…',
-              ),
+              subtitle: Text(loading ? '読み込み中…' : '準備中'),
             );
           }
+          final status = owned ? _status(deck) : null;
           return ExpansionTile(
             leading: Icon(Icons.style, color: realm.ink),
             title: Text('${deck.title}（${deck.cards.length}枚）'),
             subtitle: Padding(
               padding: const EdgeInsets.only(top: 6),
-              child: Wrap(
-                spacing: 8,
-                runSpacing: 6,
-                crossAxisAlignment: WrapCrossAlignment.center,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  FilledButton.tonalIcon(
-                    key: ValueKey('deck-view-${info.id}'),
-                    onPressed: owned
-                        ? () => Navigator.of(context).push(
-                            MaterialPageRoute<void>(
-                              builder: (_) => TermCardBrowserScreen(deck: deck),
-                            ),
-                          )
-                        : null,
-                    icon: const Icon(Icons.menu_book, size: 16),
-                    label: const Text('カードを見る'),
+                  if (status != null)
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 4),
+                      child: Text(status, style: const TextStyle(fontSize: 12)),
+                    ),
+                  Wrap(
+                    spacing: 8,
+                    runSpacing: 6,
+                    crossAxisAlignment: WrapCrossAlignment.center,
+                    children: [
+                      if (store != null)
+                        FilledButton.icon(
+                          key: ValueKey('deck-study-${info.id}'),
+                          onPressed: owned
+                              ? () => onOpen(
+                                  VocabBookScreen(
+                                    store: store!,
+                                    book: termBook(deck),
+                                  ),
+                                )
+                              : null,
+                          icon: const Icon(Icons.school, size: 16),
+                          label: const Text('学習する'),
+                        ),
+                      FilledButton.tonalIcon(
+                        key: ValueKey('deck-view-${info.id}'),
+                        onPressed: owned
+                            ? () => Navigator.of(context).push(
+                                MaterialPageRoute<void>(
+                                  builder: (_) =>
+                                      TermCardBrowserScreen(deck: deck),
+                                ),
+                              )
+                            : null,
+                        icon: const Icon(Icons.menu_book, size: 16),
+                        label: const Text('カードを見る'),
+                      ),
+                      OutlinedButton(
+                        key: ValueKey('deck-quiz-${info.id}'),
+                        onPressed: owned ? () => _quiz(context, deck) : null,
+                        child: const Text('全範囲から20問'),
+                      ),
+                      if (owned) _badge(_best(null)),
+                      if (!owned) const Icon(Icons.lock_outline, size: 18),
+                    ],
                   ),
-                  OutlinedButton(
-                    key: ValueKey('deck-quiz-${info.id}'),
-                    onPressed: owned ? () => _quiz(context, deck) : null,
-                    child: const Text('全範囲から20問'),
-                  ),
-                  if (owned) _badge(_best(null)),
-                  if (!owned) const Icon(Icons.lock_outline, size: 18),
                 ],
               ),
             ),

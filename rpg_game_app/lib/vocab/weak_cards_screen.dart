@@ -12,9 +12,12 @@ import 'vocab_store.dart';
 /// 2回以上間違えた単語を、続けて2回正解すると1枚。間違えた回数が多いほどレア（★1〜3）。
 /// また間違えると、カードはいったん「挑戦中」に戻る
 class WeakCardsScreen extends StatefulWidget {
-  const WeakCardsScreen({super.key, required this.store});
+  const WeakCardsScreen({super.key, required this.store, this.books});
 
   final VocabStore store;
+
+  /// 出す単語帳（null なら開いている英語の単語帳すべて。暗記カードでは教科の暗記カード）
+  final List<VocabBook>? books;
 
   @override
   State<WeakCardsScreen> createState() => _WeakCardsScreenState();
@@ -46,9 +49,10 @@ class _WeakCardsScreenState extends State<WeakCardsScreen> {
   @override
   Widget build(BuildContext context) {
     final books = [
-      for (final b in widget.store.visibleBooks)
+      for (final b in widget.books ?? widget.store.visibleBooks)
         if (b.cards.isNotEmpty) b,
     ];
+    final noun = widget.books == null ? '単語' : '用語';
     var total = 0;
     final sections = <Widget>[];
     for (final b in books) {
@@ -60,7 +64,7 @@ class _WeakCardsScreenState extends State<WeakCardsScreen> {
       sections.addAll([
         const SizedBox(height: 12),
         Text(
-          '${b.title}　${got.length}枚（挑戦中 ${waiting.length}語）',
+          '${b.title}　${got.length}枚（挑戦中 ${waiting.length}${b.unit}）',
           style: serif(16),
         ),
         const SizedBox(height: 6),
@@ -83,7 +87,7 @@ class _WeakCardsScreenState extends State<WeakCardsScreen> {
             onPressed: () => _practice(b),
             icon: const Icon(Icons.fitness_center),
             label: Text(
-              '苦手な単語を練習（${waiting.length > 20 ? 20 : waiting.length}語）',
+              '苦手な${b.noun}を練習（${waiting.length > 20 ? 20 : waiting.length}${b.unit}）',
             ),
           ),
         ],
@@ -98,16 +102,16 @@ class _WeakCardsScreenState extends State<WeakCardsScreen> {
             Text('集めたカード $total枚', style: serif(18)),
             const SizedBox(height: 4),
             Text(
-              '2回以上間違えた単語を、続けて2回正解すると1枚（勘で当たったときは数えません）。'
+              '2回以上間違えた$nounを、続けて2回正解すると1枚（勘で当たったときは数えません）。'
               '日をあけてもまた正解できるほど★が増えます（★★は1週間、★★★は3週間ぶんの記憶）。'
               'また間違えたら、もう一度挑戦です。',
               style: TextStyle(fontSize: 12, color: TsuzuriColors.inkSoft),
             ),
             if (sections.isEmpty) ...[
               const SizedBox(height: 24),
-              const Text(
-                'まだ苦手な単語はありません。間違えた単語が、ここで克服を待ちます。',
-                key: ValueKey('weak-empty'),
+              Text(
+                'まだ苦手な$nounはありません。間違えた$nounが、ここで克服を待ちます。',
+                key: const ValueKey('weak-empty'),
               ),
             ],
             ...sections,

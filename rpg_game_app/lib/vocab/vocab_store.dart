@@ -206,7 +206,8 @@ class VocabStore {
       for (final b in books)
         if (!b.isProtected) b.toJson(),
     ],
-    'progress': {for (final b in books) b.id: progress(b.id).toJson()},
+    // 暗記カード（理科・社会など）の学習記録もふくめる
+    'progress': {for (final id in progressBookIds) id: progress(id).toJson()},
   });
 
   /// バックアップを読み込む。読めなければ false

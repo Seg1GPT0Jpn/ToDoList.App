@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import '../models/question.dart';
+import '../vocab/vocab_book.dart';
 
 /// 暗記カード1枚：用語・意味・関連語・豆知識。
 class TermCard {
@@ -71,7 +72,7 @@ class TermDeck {
 
   final String id;
 
-  /// 解放に使うワールド（science / social）
+  /// 解放に使うワールド（science / social / japanese / information）
   final String worldId;
   final String title;
   final List<TermCard> cards;
@@ -86,10 +87,44 @@ class TermDeck {
         for (final c in cards)
           if (c.section == name) c
       ];
+
+  /// 単語帳の形にする（英語の単語帳と同じ「今日の最適学習」・熟練度・分析・苦手克服カードが使える）。
+  ///
+  /// カードの ID は用語そのもの（同じ用語が2枚あれば「用語#2」）。カードの順番が
+  /// 変わっても、学習記録はそのまま残る
+  VocabBook toBook() {
+    final seen = <String, int>{};
+    String idOf(String term) {
+      final n = seen[term] = (seen[term] ?? 0) + 1;
+      return n == 1 ? term : '$term#$n';
+    }
+
+    return VocabBook(
+      id: 'cards_$id',
+      title: title,
+      kind: VocabBookKind.builtin,
+      worldId: worldId,
+      cards: [
+        for (final (i, c) in cards.indexed)
+          VocabCard(
+            id: idOf(c.term),
+            number: i + 1,
+            term: c.term,
+            meaning: c.meaning,
+            pron: c.reading,
+            note: [
+              if (c.trivia.isNotEmpty) c.trivia,
+              if (c.related.isNotEmpty) '関連：${c.related.join('・')}',
+            ].join('\n'),
+            group: c.section,
+          ),
+      ],
+    );
+  }
 }
 
 /// アプリに入っている暗記カードの一覧。
-/// 理科・社会のワールド（プロモーションコードで解放）と一緒に使えるようになる。
+/// 理科・社会・国語・情報のワールドと一緒に使えるようになる。
 class TermDeckInfo {
   const TermDeckInfo(this.id, this.worldId, this.title);
   final String id;
@@ -111,6 +146,12 @@ class TermDecks {
     TermDeckInfo('world_history', 'social', '世界史'),
     TermDeckInfo('geography', 'social', '地理'),
     TermDeckInfo('politics', 'social', '政治・経済'),
+    TermDeckInfo('kobun_words', 'japanese', '古文単語'),
+    TermDeckInfo('classics', 'japanese', '古典文法・和歌・古典常識'),
+    TermDeckInfo('hyoron', 'japanese', '現代文キーワード'),
+    TermDeckInfo('kotowaza', 'japanese', 'ことわざ・慣用句・四字熟語'),
+    TermDeckInfo('bungakushi', 'japanese', '文学史'),
+    TermDeckInfo('info1', 'information', '情報Ⅰ'),
   ];
 
   static List<TermDeckInfo> of(String worldId) => [
@@ -167,6 +208,7 @@ class TermQuizBuilder {
         if (!identical(e, c) &&
             label(e) != answer &&
             e.term != c.term &&
+            e.meaning != c.meaning &&
             !c.related.contains(e.term))
           e,
     ]..shuffle(_random);

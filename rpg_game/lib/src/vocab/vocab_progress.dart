@@ -17,6 +17,23 @@ enum VocabSkill {
 
   /// 総合の熟練度に占める重み
   final double weight;
+
+  /// 暗記カード（日本語の用語）での呼び名
+  String labelOf(bool terms) => terms && this == spelling ? '書き' : label;
+  String subOf(bool terms) => !terms
+      ? sub
+      : switch (this) {
+          meaning => '用語→説明',
+          recall => '説明→用語',
+          spelling => '用語を書く',
+          _ => sub,
+        };
+
+  /// その単語帳で練習する力（暗記カードには発音・例文がない）
+  static List<VocabSkill> of(VocabBook book) => [
+        for (final k in values)
+          if (!book.isTerms || (k != listening && k != context)) k,
+      ];
 }
 
 /// 間違えた理由
@@ -32,6 +49,23 @@ enum MistakeReason {
 
   /// この理由のとき、重点的に練習する力
   final VocabSkill skill;
+
+  String labelOf(bool terms) => !terms
+      ? label
+      : switch (this) {
+          spelling => '書けなかった',
+          confused => '似た用語と混同した',
+          _ => label,
+        };
+
+  /// その単語帳で選べる理由
+  static List<MistakeReason> of(VocabBook book, VocabCard card) => [
+        for (final r in values)
+          if (book.isTerms
+              ? (r != pronunciation && r != context)
+              : (r != context || card.hasExample))
+            r,
+      ];
 }
 
 /// 単語の状態（ホームの「今日のあなた」の分類）
@@ -88,11 +122,12 @@ class CardProgress {
     return s != null && s.streak >= 3 && s.stability >= 7;
   }
 
-  /// 総合の熟練度（例文のない単語は例文を数えない）
-  int overall(DateTime now, {required bool hasExample}) {
+  /// 総合の熟練度（例文のない単語は例文を数えない。暗記カードは発音も数えない）
+  int overall(DateTime now, {required bool hasExample, bool listening = true}) {
     var sum = 0.0, weight = 0.0;
     for (final k in VocabSkill.values) {
       if (k == VocabSkill.context && !hasExample) continue;
+      if (k == VocabSkill.listening && !listening) continue;
       sum += mastery(k, now) * k.weight;
       weight += k.weight;
     }
@@ -210,6 +245,23 @@ enum VocabMode {
   const VocabMode(this.label, this.skill);
   final String label;
   final VocabSkill skill;
+
+  /// 暗記カード（日本語の用語）での呼び名
+  String labelOf(bool terms) => !terms
+      ? label
+      : switch (this) {
+          choiceMeaning => '4択 用語→説明',
+          choiceTerm => '4択 説明→用語',
+          spelling => '用語を書く',
+          compare => '似た用語の比較',
+          _ => label,
+        };
+
+  /// その単語帳で使える形式
+  static List<VocabMode> of(VocabBook book) => [
+        for (final m in values)
+          if (!book.isTerms || (m != listening && m != cloze)) m,
+      ];
 
   /// この形式で間違えたときの、ふつうの理由
   MistakeReason get defaultReason => switch (this) {
@@ -408,7 +460,12 @@ class Confusables {
   static bool similar(String a, String b) {
     a = a.toLowerCase();
     b = b.toLowerCase();
-    if (a == b || a.contains(' ') || b.contains(' ')) return false;
+    if (a == b) return false;
+    // 日本語の用語：2文字以上で、1文字だけちがう（荘園 / 荘官 など）
+    if (RegExp(r'[^\x00-\x7F]').hasMatch(a + b)) {
+      return a.runes.length >= 2 && b.runes.length >= 2 && distance(a, b) <= 1;
+    }
+    if (a.contains(' ') || b.contains(' ')) return false;
     if (a.length < 4 || b.length < 4) return false;
     final limit = min(a.length, b.length) >= 7 ? 2 : 1;
     if (distance(a, b) <= limit) return true;
@@ -487,6 +544,7 @@ class VocabPlanner {
     int reviewLimit = 60,
     bool listening = true,
   }) {
+    if (book.isTerms) listening = false;
     final due = <(VocabCard, VocabSkill, double)>[];
     final fresh = <(VocabCard, VocabSkill)>[];
     for (final c in book.cards) {
@@ -604,7 +662,7 @@ class VocabChoices {
     final byTerm = mode == VocabMode.choiceTerm ||
         mode == VocabMode.listening ||
         mode == VocabMode.compare;
-    String label(VocabCard c) => byTerm ? c.term : c.shortMeaning;
+    String label(VocabCard c) => byTerm ? c.term : book.meaningOf(c);
     final answer = label(card);
     // 見分け：前に混同した単語があれば、その単語と正解の2択で違いを確かめる
     if (mode == VocabMode.compare) {
@@ -623,15 +681,16 @@ class VocabChoices {
           wrong.add(label(c));
       }
     }
+    // 意味がまったく同じ別の単語（同じ意味のことわざなど）は、まちがいの選択肢にしない
     final others = [
       for (final c in book.cards)
-        if (c.id != card.id) c,
+        if (c.id != card.id && c.meaning != card.meaning) c,
     ]..shuffle(rnd);
-    others.sort((a, b) {
-      final pa = a.partOfSpeech == card.partOfSpeech ? 0 : 1;
-      final pb = b.partOfSpeech == card.partOfSpeech ? 0 : 1;
-      return pa - pb;
-    });
+    // 同じ章・同じ品詞を先に（まぎらわしいほうが練習になる）
+    int rank(VocabCard c) =>
+        (c.group == card.group ? 0 : 2) +
+        (c.partOfSpeech == card.partOfSpeech ? 0 : 1);
+    others.sort((a, b) => rank(a) - rank(b));
     for (final c in others) {
       if (wrong.length >= 3) break;
       final l = label(c);
@@ -663,6 +722,16 @@ class VocabCourse {
               ],
             ),
       ];
+
+  /// 暗記カードの章ごとの用語（出てくる順）
+  static List<(String, List<VocabCard>)> sections(VocabBook book) {
+    final out = <(String, List<VocabCard>)>[];
+    for (final c in book.cards) {
+      if (out.isEmpty || out.last.$1 != c.group) out.add((c.group, []));
+      out.last.$2.add(c);
+    }
+    return out;
+  }
 
   static List<(String, List<VocabCard>)> weeks(VocabBook book,
       {int size = 100}) {

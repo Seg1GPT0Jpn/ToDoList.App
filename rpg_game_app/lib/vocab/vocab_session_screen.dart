@@ -70,6 +70,9 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
   String? _damage;
 
   BookProgress get _progress => widget.store.progress(widget.book.id);
+
+  /// 日本語の用語の暗記カード
+  bool get _terms => widget.book.isTerms;
   VocabTask get _task => _queue[_index];
   VocabCard get _card => widget.book.card(_task.cardId)!;
   bool get _done => _index >= _queue.length;
@@ -152,6 +155,7 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
   }
 
   void _say(String text) {
+    if (_terms) return;
     final (lang, rate) = widget.store.voice;
     speaker.speak(text, lang: lang, rate: rate);
   }
@@ -164,7 +168,7 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
     for (final c in widget.book.cards) {
       if (c.id == _card.id) continue;
       if (m == VocabMode.choiceMeaning
-          ? c.shortMeaning == picked
+          ? widget.book.meaningOf(c) == picked
           : c.term == picked) {
         return c;
       }
@@ -173,7 +177,7 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
   }
 
   String _answerOf(VocabMode m) => switch (m) {
-    VocabMode.choiceMeaning => _card.shortMeaning,
+    VocabMode.choiceMeaning => widget.book.meaningOf(_card),
     _ => _card.term,
   };
 
@@ -182,7 +186,10 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
     if (_wasCorrect != null) return;
     final m = _task.mode;
     final ok = switch (m) {
-      VocabMode.spelling => _card.spellingMatches(value),
+      VocabMode.spelling =>
+        _terms
+            ? widget.book.writingMatches(_card, value)
+            : _card.spellingMatches(value),
       VocabMode.cloze => _card.clozeMatches(value),
       _ => value == _answerOf(m),
     };
@@ -335,7 +342,11 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
               Row(
                 children: [
                   Chip(
-                    label: Text(_task.isNew ? '新しい単語' : m.label),
+                    label: Text(
+                      _task.isNew
+                          ? '新しい${widget.book.noun}'
+                          : m.labelOf(_terms),
+                    ),
                     visualDensity: VisualDensity.compact,
                   ),
                   const Spacer(),
@@ -372,15 +383,20 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
     );
   }
 
-  Widget _speakButton(String text, {String tooltip = '発音を聞く'}) => IconButton(
-    tooltip: tooltip,
-    onPressed: () => _say(text),
-    icon: const Icon(Icons.volume_up),
-  );
+  Widget _speakButton(String text, {String tooltip = '発音を聞く'}) => _terms
+      ? const SizedBox.shrink()
+      : IconButton(
+          tooltip: tooltip,
+          onPressed: () => _say(text),
+          icon: const Icon(Icons.volume_up),
+        );
 
   List<Widget> _prompt(VocabMode m, VocabCard c) {
-    Widget big(String s) =>
-        Text(s, textAlign: TextAlign.center, style: serif(30));
+    Widget big(String s) => Text(
+      s,
+      textAlign: TextAlign.center,
+      style: serif(_terms && s.length > 8 ? 22 : 30),
+    );
     switch (m) {
       case VocabMode.flashcard:
       case VocabMode.choiceMeaning:
@@ -400,7 +416,11 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
             ),
           const SizedBox(height: 6),
           Text(
-            m == VocabMode.flashcard ? '意味を思い出してから、めくってください' : '意味はどれ？',
+            _terms
+                ? (m == VocabMode.flashcard
+                      ? 'どんな用語か思い出してから、めくってください'
+                      : '説明はどれ？')
+                : (m == VocabMode.flashcard ? '意味を思い出してから、めくってください' : '意味はどれ？'),
             textAlign: TextAlign.center,
             style: TextStyle(color: TsuzuriColors.inkSoft, fontSize: 12),
           ),
@@ -409,16 +429,22 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
       case VocabMode.spelling:
       case VocabMode.compare:
         return [
-          Text(c.shortMeaning, textAlign: TextAlign.center, style: serif(20)),
+          Text(
+            widget.book.meaningOf(c),
+            textAlign: TextAlign.center,
+            style: serif(_terms ? 18 : 20),
+          ),
           const SizedBox(height: 6),
           Text(
             switch (m) {
+              VocabMode.spelling when _terms =>
+                '用語を書いてください（読みでもよい）　ヒント: ${c.writingHint}',
               VocabMode.spelling => '英単語をつづってください　ヒント: ${c.spellingHint}',
               VocabMode.compare =>
                 _choices.length == 2
-                    ? '前に間違えた2つの単語。この意味はどっち？'
-                    : '似た単語の中から、この意味のものを選んでください',
-              _ => '英単語はどれ？',
+                    ? '前に間違えた2つの${widget.book.noun}。この${_terms ? '説明' : '意味'}はどっち？'
+                    : '似た${widget.book.noun}の中から、この意味のものを選んでください',
+              _ => _terms ? '用語はどれ？' : '英単語はどれ？',
             },
             textAlign: TextAlign.center,
             style: TextStyle(color: TsuzuriColors.inkSoft, fontSize: 12),
@@ -503,9 +529,9 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
             autocorrect: false,
             enableSuggestions: false,
             textInputAction: TextInputAction.done,
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              labelText: '英語で入力',
+            decoration: InputDecoration(
+              border: const OutlineInputBorder(),
+              labelText: _terms ? '用語を入力' : '英語で入力',
             ),
             onSubmitted: _answer,
           ),
@@ -575,7 +601,12 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
                 Text(c.term, style: serif(18)),
                 if (c.pron.isNotEmpty) ...[
                   const SizedBox(width: 8),
-                  Text(c.pron, style: TextStyle(color: TsuzuriColors.inkSoft)),
+                  Flexible(
+                    child: Text(
+                      _terms ? '（${c.pron}）' : c.pron,
+                      style: TextStyle(color: TsuzuriColors.inkSoft),
+                    ),
+                  ),
                 ],
                 _speakButton(c.term),
               ],
@@ -623,13 +654,12 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
           spacing: 6,
           runSpacing: 6,
           children: [
-            for (final r in MistakeReason.values)
-              if (r != MistakeReason.context || _card.hasExample)
-                ChoiceChip(
-                  label: Text(r.label),
-                  selected: _reason == r,
-                  onSelected: (_) => setState(() => _reason = r),
-                ),
+            for (final r in MistakeReason.of(widget.book, _card))
+              ChoiceChip(
+                label: Text(r.labelOf(_terms)),
+                selected: _reason == r,
+                onSelected: (_) => setState(() => _reason = r),
+              ),
           ],
         ),
       ],
@@ -752,7 +782,7 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
         const SizedBox(height: 12),
         Center(
           child: Text(
-            '🔴 弱点 ${counts[CardStatus.weak]}語　🟠 あやふや ${counts[CardStatus.shaky]}語　🟢 安定 ${counts[CardStatus.stable]}語',
+            '🔴 弱点 ${counts[CardStatus.weak]}${widget.book.unit}　🟠 あやふや ${counts[CardStatus.shaky]}${widget.book.unit}　🟢 安定 ${counts[CardStatus.stable]}${widget.book.unit}',
           ),
         ),
         const SizedBox(height: 8),
@@ -771,7 +801,7 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
               _missed,
             ),
             icon: const Icon(Icons.sports_martial_arts),
-            label: const Text('今の単語の魔物と、1戦だけ戦う'),
+            label: Text('今の${widget.book.noun}の魔物と、1戦だけ戦う'),
           ),
           const SizedBox(height: 8),
         ],
@@ -782,7 +812,7 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
                 builder: (_) => VocabSessionScreen(
                   store: widget.store,
                   book: widget.book,
-                  title: '間違えた単語',
+                  title: '間違えた${widget.book.noun}',
                   tasks: [
                     for (final id in _missed)
                       VocabTask(id, VocabMode.choiceMeaning),
@@ -791,7 +821,7 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
               ),
             ),
             icon: const Icon(Icons.replay),
-            label: Text('間違えた${_missed.length}語をもう一度'),
+            label: Text('間違えた${_missed.length}${widget.book.unit}をもう一度'),
           ),
         const SizedBox(height: 8),
         FilledButton(

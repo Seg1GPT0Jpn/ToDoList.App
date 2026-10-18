@@ -11,6 +11,7 @@ class VocabCard {
     this.example = '',
     this.exampleJa = '',
     this.note = '',
+    this.group = '',
   });
 
   /// 単語帳の中で一意な ID（番号があれば番号、なければ単語）
@@ -32,6 +33,9 @@ class VocabCard {
 
   /// 覚えるための豆知識（語源・使い分けなど。なければ空）
   final String note;
+
+  /// 章・単元（暗記カードの章。4択のまちがいの選択肢を同じ章から選ぶのに使う）
+  final String group;
 
   bool get hasExample => example.isNotEmpty && clozeOf(example, term) != null;
 
@@ -62,6 +66,54 @@ class VocabCard {
   String get spellingHint {
     final s = acceptedSpellings.first;
     return '${s[0]}${List.filled(s.length - 1, '＿').join()}（${s.length}文字）';
+  }
+
+  static final _jaParen = RegExp(r'[（(]([^）)]*)[）)]');
+
+  /// 日本語の用語として正しいと認める書き方（[normalizeWriting] したもの）。
+  /// 全角・半角、ひらがな・カタカナ、空白や「・」の違いは見ない。読みや、かっこの中・外だけでもよい
+  Set<String> get acceptedWritings {
+    final out = <String>{};
+    void add(String s) {
+      final n = normalizeWriting(s);
+      if (n.isNotEmpty) out.add(n);
+    }
+
+    for (final t in [term, ...term.split(RegExp('[／/]'))]) {
+      add(t);
+      if (_jaParen.hasMatch(t)) {
+        add(t.replaceAll(_jaParen, ''));
+        for (final m in _jaParen.allMatches(t)) {
+          add(m.group(1)!);
+        }
+      }
+    }
+    for (final r in pron.split(RegExp('[、,／/]'))) {
+      add(r);
+    }
+    return out;
+  }
+
+  /// 書く問題のヒント（最初の1文字と文字数。かっこの中は数えない）
+  String get writingHint {
+    final t = term.replaceAll(_jaParen, '').replaceAll(RegExp(r'\s'), '');
+    if (t.isEmpty) return '';
+    final chars = t.runes.map(String.fromCharCode).toList();
+    return '「${chars.first}」で始まる${chars.length}文字';
+  }
+
+  /// 答え合わせのために書き方をそろえる
+  static String normalizeWriting(String s) {
+    final b = StringBuffer();
+    for (final r in s.trim().runes) {
+      var c = r;
+      if (c >= 0xFF01 && c <= 0xFF5E) c -= 0xFEE0; // 全角英数 → 半角
+      if (c >= 0x30A1 && c <= 0x30F6) c -= 0x60; // カタカナ → ひらがな
+      final ch = String.fromCharCode(c);
+      if (RegExp(r'[\s・･、。,.「」『』〔〕\-‐－–—~〜～]').hasMatch(ch)) continue;
+      b.write(ch.toLowerCase());
+    }
+    return b.toString();
   }
 
   /// 例文の中の [term]（活用形もふくむ）を空欄にしたもの。見つからなければ null
@@ -285,6 +337,7 @@ class VocabCard {
         example: example ?? this.example,
         exampleJa: exampleJa ?? this.exampleJa,
         note: note ?? this.note,
+        group: group,
       );
 
   factory VocabCard.fromJson(Map<String, dynamic> j) => VocabCard(
@@ -296,6 +349,7 @@ class VocabCard {
         example: j['e'] as String? ?? '',
         exampleJa: j['ej'] as String? ?? '',
         note: j['nt'] as String? ?? '',
+        group: j['g'] as String? ?? '',
       );
 
   Map<String, dynamic> toJson() => {
@@ -307,6 +361,7 @@ class VocabCard {
         if (example.isNotEmpty) 'e': example,
         if (exampleJa.isNotEmpty) 'ej': exampleJa,
         if (note.isNotEmpty) 'nt': note,
+        if (group.isNotEmpty) 'g': group,
       };
 }
 
@@ -317,6 +372,9 @@ enum VocabBookKind {
 
   /// 利用者が自分で作った単語帳
   custom,
+
+  /// アプリに入っている暗記カード（理科・社会・国語・情報の用語。保存せず毎回読み込む）
+  builtin,
 }
 
 /// 単語帳
@@ -326,6 +384,7 @@ class VocabBook {
     required this.title,
     required this.kind,
     required this.cards,
+    this.worldId = 'english',
   });
 
   final String id;
@@ -333,7 +392,42 @@ class VocabBook {
   final VocabBookKind kind;
   List<VocabCard> cards;
 
+  /// 教科のワールド（英語の単語帳は english）
+  final String worldId;
+
   bool get isProtected => kind == VocabBookKind.protectedImport;
+
+  /// 日本語の用語の暗記カード（スペル・発音・例文の代わりに「用語を書く」で練習する）
+  bool get isTerms => kind == VocabBookKind.builtin;
+
+  /// 1枚の数え方（「語」・「枚」）と呼び名（「単語」・「用語」）
+  String get unit => isTerms ? '枚' : '語';
+  String get noun => isTerms ? '用語' : '単語';
+
+  /// 4択や答え合わせに出す意味（用語の説明は短くせずにそのまま）
+  String meaningOf(VocabCard c) => isTerms ? c.meaning : c.shortMeaning;
+
+  /// 暗記カードで書いた用語が合っているか。
+  /// かっこの中だけ・別名だけでもよいが、それがほかのカードの用語そのものなら正解にしない
+  /// （「TCP/IP」に「TCP」、「選択（データベース）」に「データベース」など）
+  /// 説明がまったく同じ別のカード（「猫に小判」と「豚に真珠」など）の用語も正解にする
+  bool writingMatches(VocabCard c, String input) {
+    final a = VocabCard.normalizeWriting(input);
+    if (a.isEmpty) return false;
+    if (c.acceptedWritings.contains(a)) {
+      return a == VocabCard.normalizeWriting(c.term) || !_terms.contains(a);
+    }
+    return cards.any(
+      (o) =>
+          o.id != c.id &&
+          o.meaning == c.meaning &&
+          VocabCard.normalizeWriting(o.term) == a,
+    );
+  }
+
+  late final Set<String> _terms = {
+    for (final c in cards) VocabCard.normalizeWriting(c.term),
+  };
 
   VocabCard? card(String id) {
     for (final c in cards) {
@@ -389,6 +483,7 @@ class VocabBook {
         id: j['id'] as String,
         title: j['title'] as String,
         kind: VocabBookKind.values.byName(j['kind'] as String),
+        worldId: j['w'] as String? ?? 'english',
         cards: [
           for (final c in j['cards'] as List)
             VocabCard.fromJson(c as Map<String, dynamic>),
@@ -399,6 +494,7 @@ class VocabBook {
         'id': id,
         'title': title,
         'kind': kind.name,
+        if (worldId != 'english') 'w': worldId,
         'cards': [for (final c in cards) c.toJson()],
       };
 }

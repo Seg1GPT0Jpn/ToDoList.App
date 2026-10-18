@@ -90,10 +90,14 @@ abstract final class WordBattle {
     WordEntry w, {
     Set<WordFormat> formats = const {...WordFormat.values},
     Random? random,
+    bool terms = false,
   }) {
     final r = random ?? Random();
     final unit = Curriculum.unitForGeneratedSet(list.listId);
-    final others = [...list.words.where((o) => o.term != w.term)]..shuffle(r);
+    // 意味がまったく同じ別の語は、まちがいの選択肢にしない
+    final others = [
+      ...list.words.where((o) => o.term != w.term && o.meaning != w.meaning),
+    ]..shuffle(r);
     others.sort((a, b) =>
         (a.partOfSpeech == w.partOfSpeech ? 0 : 1) -
         (b.partOfSpeech == w.partOfSpeech ? 0 : 1));
@@ -121,7 +125,9 @@ abstract final class WordBattle {
             category: QuestionCategory.meaning,
             prompt: f == WordFormat.listening
                 ? '読み上げられた単語の意味は？'
-                : '「${w.term}」の意味は？',
+                : terms
+                    ? '「${w.term}」の説明として正しいものは？'
+                    : '「${w.term}」の意味は？',
             sentence: f == WordFormat.listening ? w.term : null,
             listen: f == WordFormat.listening,
             choices: choices,
@@ -135,7 +141,8 @@ abstract final class WordBattle {
             id: id,
             unit: unit,
             category: QuestionCategory.meaning,
-            prompt: '「${w.shortMeaning}」を表す英語は？',
+            prompt: terms ? '次の説明にあてはまる用語は？' : '「${w.shortMeaning}」を表す英語は？',
+            sentence: terms ? w.meaning : null,
             choices: choices,
             answerIndex: choices.indexOf(w.term),
             explanation: explanation,
@@ -251,7 +258,7 @@ abstract final class WordBattle {
   ];
 
   static EnemyDef monster(WordEntry w, int hp, int attack,
-      {String prefix = ''}) {
+      {String prefix = '', String noun = '単語'}) {
     final look =
         _looks[w.term.codeUnits.fold<int>(0, (a, c) => a + c) % _looks.length];
     return EnemyDef(
@@ -261,7 +268,7 @@ abstract final class WordBattle {
       maxHp: hp,
       attack: attack,
       ability: EnemyAbility.normal,
-      description: '単語「${w.term}」（${w.shortMeaning}）が魔物になった姿。',
+      description: '$noun「${w.term}」（${w.shortMeaning}）が魔物になった姿。',
       introLine: '${w.term}…おぼえているか？',
       defeatLine: '${w.term}は、もうきみのものだ…',
     );
@@ -273,18 +280,22 @@ abstract final class WordBattle {
     List<WordEntry> words,
     int level, {
     bool tower = false,
+    String worldId = 'english',
+    String? name,
+    String noun = '単語',
   }) {
     final p = PlayerStats.forLevel(level);
     final hp = (p.attack * 2.6).round();
     final atk = (p.maxHp / 6 + p.defense / 2).ceil();
     final lineup = [
-      for (final w in words) monster(w, hp, atk, prefix: tower ? '忘却の' : ''),
+      for (final w in words)
+        monster(w, hp, atk, prefix: tower ? '忘却の' : '', noun: noun),
     ];
     return StageDef(
       id: tower ? '${list.listId}_tower' : setId(list),
-      worldId: 'english',
+      worldId: worldId,
       order: 1,
-      name: tower ? '忘却の塔（単語）' : '単語の森：${list.title}',
+      name: name ?? (tower ? '忘却の塔（単語）' : '単語の森：${list.title}'),
       region: '単語の森',
       grammarTheme: list.title,
       questionSetIds: [setId(list)],
