@@ -93,28 +93,6 @@
       ]
     },
     {
-      "id": "science_shonan_104_chem_mole_05_005",
-      "unit": "science.chemistry.change.mole.mass",
-      "category": "calculation",
-      "prompt": "標準状態で 2.24 L の C₂H₆ の質量は何 g か。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
-      "choices": [
-        "67.2 g",
-        "3 g",
-        "0.1 g",
-        "30 g"
-      ],
-      "answerIndex": 1,
-      "explanation": "2.24÷22.4＝0.1 mol、×30＝3 g。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "chemistry_basic",
-        "mole"
-      ]
-    },
-    {
       "id": "science_shonan_104_chem_mole_05_006",
       "unit": "science.chemistry.change.mole",
       "category": "calculation",
@@ -171,28 +149,6 @@
       ],
       "answerIndex": 2,
       "explanation": "18÷180＝0.1 mol。0.1×6.0×10²³ 個。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "chemistry_basic",
-        "mole"
-      ]
-    },
-    {
-      "id": "science_shonan_104_chem_mole_05_009",
-      "unit": "science.chemistry.change.mole",
-      "category": "calculation",
-      "prompt": "NH₃ 1 mol に含まれる H 原子の数は？",
-      "choices": [
-        "1.8 × 10²⁴",
-        "2.4 × 10²⁴",
-        "3.0 × 10²³",
-        "6.0 × 10²³"
-      ],
-      "answerIndex": 0,
-      "explanation": "NH₃ 1分子に H 原子は 3 個。1×3×6.0×10²³。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -671,12 +627,12 @@
       "prompt": "標準状態での N₂ の密度（1 L あたりの質量）は何 g/L か。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
       "choices": [
         "2.5 g/L",
-        "1.2 g/L",
+        "1.3 g/L",
         "0.80 g/L",
         "627 g/L"
       ],
       "answerIndex": 1,
-      "explanation": "28 g/mol ÷ 22.4 L/mol。",
+      "explanation": "28 g/mol ÷ 22.4 L/mol＝1.25 → 四捨五入して 1.3 g/L。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -875,28 +831,6 @@
       ],
       "answerIndex": 3,
       "explanation": "4.48÷22.4＝0.2 mol、×64＝12.8 g。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "chemistry_basic",
-        "mole"
-      ]
-    },
-    {
-      "id": "science_shonan_104_chem_mole_05_041",
-      "unit": "science.chemistry.change.mole.mole",
-      "category": "calculation",
-      "prompt": "Cl₂ 17.75 g の物質量は何 mol か。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
-      "choices": [
-        "0.25 mol",
-        "0.5 mol",
-        "1260.25 mol",
-        "4 mol"
-      ],
-      "answerIndex": 0,
-      "explanation": "Cl₂ のモル質量は 71 g/mol。17.75÷71＝0.25 mol。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [

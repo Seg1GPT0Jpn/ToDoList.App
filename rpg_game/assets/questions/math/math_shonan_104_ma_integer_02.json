@@ -379,28 +379,6 @@
       ]
     },
     {
-      "id": "math_shonan_104_ma_integer_02_018",
-      "unit": "math.ma.integer.euclid.diophantine",
-      "category": "calculation",
-      "prompt": "方程式 7x ＋ 3y ＝ 1 の整数解をすべて求めよ（k は整数）。",
-      "choices": [
-        "x＝3k＋1, y＝−7k−2",
-        "x＝7k＋1, y＝−3k−2",
-        "x＝3k＋1, y＝7k−2",
-        "x＝3k−2, y＝−7k＋1"
-      ],
-      "answerIndex": 0,
-      "explanation": "1つの解 (x, y)＝(1, −2) を見つけ、差をとって 7(x−(1))＝−3(y−(−2))。7 と 3 は互いに素なので x−(1) は 3 の倍数。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "math_a",
-        "integer"
-      ]
-    },
-    {
       "id": "math_shonan_104_ma_integer_02_019",
       "unit": "math.ma.integer.divisor.divisor",
       "category": "calculation",

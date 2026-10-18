@@ -126,7 +126,7 @@
         "3x − 4"
       ],
       "answerIndex": 1,
-      "explanation": "余りを px＋q とおくと、剰余の定理より −3p＋q＝−5、−1p＋q＝1。",
+      "explanation": "余りを px＋q とおくと、剰余の定理より −3p＋q＝−5、−p＋q＝1。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -148,7 +148,7 @@
         "−68"
       ],
       "answerIndex": 1,
-      "explanation": "剰余の定理：余りは P(-3)＝40。",
+      "explanation": "剰余の定理：余りは P(−3)＝40。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -170,7 +170,7 @@
         "−5"
       ],
       "answerIndex": 1,
-      "explanation": "剰余の定理：余りは P(-3)＝−104。",
+      "explanation": "剰余の定理：余りは P(−3)＝−104。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -258,7 +258,7 @@
         "25"
       ],
       "answerIndex": 0,
-      "explanation": "α²＋β²＝(α＋β)²−2αβ＝4²−2×−9。",
+      "explanation": "α²＋β²＝(α＋β)²−2αβ＝4²−2×(−9)。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -280,7 +280,7 @@
         "98"
       ],
       "answerIndex": 1,
-      "explanation": "剰余の定理：余りは P(-3)＝−22。",
+      "explanation": "剰余の定理：余りは P(−3)＝−22。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -296,10 +296,10 @@
       "category": "calculation",
       "prompt": "(−1+3i) ÷ (2+i) を計算すると？",
       "choices": [
-        "7/5+1/5i",
-        "1/5−7/5i",
+        "7/5+(1/5)i",
+        "1/5−(7/5)i",
         "−1+i",
-        "1/5+7/5i"
+        "1/5+(7/5)i"
       ],
       "answerIndex": 3,
       "explanation": "分母と分子に共役な複素数 2−i をかける。分母は 2²＋(1)²＝5、分子は (−1+3i)(2−i)＝1+7i。これを 5 で割る。",
@@ -566,7 +566,7 @@
         "7"
       ],
       "answerIndex": 0,
-      "explanation": "余りを px＋q とおくと、剰余の定理より 1p＋q＝6、−2p＋q＝6。",
+      "explanation": "余りを px＋q とおくと、剰余の定理より p＋q＝6、−2p＋q＝6。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -604,10 +604,10 @@
       "category": "calculation",
       "prompt": "(5+2i) ÷ (1+2i) を計算すると？",
       "choices": [
-        "9/5−8/5i",
-        "9/5+8/5i",
-        "−8/5+9/5i",
-        "1/5+12/5i"
+        "9/5−(8/5)i",
+        "9/5+(8/5)i",
+        "−8/5+(9/5)i",
+        "1/5+(12/5)i"
       ],
       "answerIndex": 0,
       "explanation": "分母と分子に共役な複素数 1−2i をかける。分母は 1²＋(2)²＝5、分子は (5+2i)(1−2i)＝9−8i。これを 5 で割る。",
@@ -824,10 +824,10 @@
       "category": "calculation",
       "prompt": "(−2−5i) ÷ (3−i) を計算すると？",
       "choices": [
-        "−1/10+17/10i",
-        "−1/10−17/10i",
-        "−17/10−1/10i",
-        "−11/10−13/10i"
+        "−1/10+(17/10)i",
+        "−1/10−(17/10)i",
+        "−17/10−(1/10)i",
+        "−11/10−(13/10)i"
       ],
       "answerIndex": 1,
       "explanation": "分母と分子に共役な複素数 3+i をかける。分母は 3²＋(−1)²＝10、分子は (−2−5i)(3+i)＝−1−17i。これを 10 で割る。",

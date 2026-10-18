@@ -5,28 +5,6 @@
   "version": 1,
   "questions": [
     {
-      "id": "science_shonan_104_chem_mole_06_001",
-      "unit": "science.chemistry.change.mole.mole",
-      "category": "calculation",
-      "prompt": "標準状態で N₂ 44.8 L の物質量は何 mol か。",
-      "choices": [
-        "4 mol",
-        "0.5 mol",
-        "1003.52 mol",
-        "2 mol"
-      ],
-      "answerIndex": 3,
-      "explanation": "44.8÷22.4＝2 mol。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "chemistry_basic",
-        "mole"
-      ]
-    },
-    {
       "id": "science_shonan_104_chem_mole_06_002",
       "unit": "science.chemistry.change.mole.mass",
       "category": "calculation",
@@ -643,50 +621,6 @@
       ]
     },
     {
-      "id": "science_shonan_104_chem_mole_06_030",
-      "unit": "science.chemistry.change.mole.mole",
-      "category": "calculation",
-      "prompt": "NH₃ 3.4 g に含まれる分子（粒子）の数は？（アボガドロ定数 6.0×10²³/mol）（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
-      "choices": [
-        "1.2 × 10²³",
-        "2.0 × 10²⁴",
-        "1.2 × 10²²",
-        "2.0 × 10²²"
-      ],
-      "answerIndex": 0,
-      "explanation": "3.4÷17＝0.2 mol。0.2×6.0×10²³ 個。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "chemistry_basic",
-        "mole"
-      ]
-    },
-    {
-      "id": "science_shonan_104_chem_mole_06_031",
-      "unit": "science.chemistry.change.mole.mole",
-      "category": "calculation",
-      "prompt": "標準状態で Cl₂ 11.2 L の物質量は何 mol か。",
-      "choices": [
-        "250.88 mol",
-        "2 mol",
-        "0.5 mol",
-        "1 mol"
-      ],
-      "answerIndex": 2,
-      "explanation": "11.2÷22.4＝0.5 mol。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "chemistry_basic",
-        "mole"
-      ]
-    },
-    {
       "id": "science_shonan_104_chem_mole_06_032",
       "unit": "science.chemistry.change.mole.mole",
       "category": "calculation",
@@ -753,28 +687,6 @@
       ]
     },
     {
-      "id": "science_shonan_104_chem_mole_06_035",
-      "unit": "science.chemistry.change.mole.mass",
-      "category": "calculation",
-      "prompt": "C₃H₈ 66 g は、標準状態で何 L か。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
-      "choices": [
-        "33.6 L",
-        "1.5 L",
-        "67.2 L",
-        "1478.4 L"
-      ],
-      "answerIndex": 0,
-      "explanation": "66÷44＝1.5 mol、×22.4＝33.6 L。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "chemistry_basic",
-        "mole"
-      ]
-    },
-    {
       "id": "science_shonan_104_chem_mole_06_036",
       "unit": "science.chemistry.change.mole.mass",
       "category": "calculation",
@@ -787,50 +699,6 @@
       ],
       "answerIndex": 0,
       "explanation": "138÷46＝3 mol、×22.4＝67.2 L。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "chemistry_basic",
-        "mole"
-      ]
-    },
-    {
-      "id": "science_shonan_104_chem_mole_06_037",
-      "unit": "science.chemistry.change.mole.mole",
-      "category": "calculation",
-      "prompt": "標準状態で NO₂ 4.48 L の物質量は何 mol か。",
-      "choices": [
-        "0.2 mol",
-        "5 mol",
-        "100.352 mol",
-        "0.4 mol"
-      ],
-      "answerIndex": 0,
-      "explanation": "4.48÷22.4＝0.2 mol。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "chemistry_basic",
-        "mole"
-      ]
-    },
-    {
-      "id": "science_shonan_104_chem_mole_06_038",
-      "unit": "science.chemistry.change.mole.mole",
-      "category": "calculation",
-      "prompt": "標準状態で NO₂ 11.2 L の物質量は何 mol か。",
-      "choices": [
-        "0.5 mol",
-        "250.88 mol",
-        "1 mol",
-        "2 mol"
-      ],
-      "answerIndex": 0,
-      "explanation": "11.2÷22.4＝0.5 mol。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [

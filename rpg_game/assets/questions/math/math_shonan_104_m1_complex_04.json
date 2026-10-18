@@ -32,10 +32,10 @@
       "category": "calculation",
       "prompt": "(−4+4i) ÷ (2−i) を計算すると？",
       "choices": [
-        "4/5−12/5i",
-        "−12/5+4/5i",
-        "−12/5−4/5i",
-        "−4/5+12/5i"
+        "4/5−(12/5)i",
+        "−12/5+(4/5)i",
+        "−12/5−(4/5)i",
+        "−4/5+(12/5)i"
       ],
       "answerIndex": 1,
       "explanation": "分母と分子に共役な複素数 2+i をかける。分母は 2²＋(−1)²＝5、分子は (−4+4i)(2+i)＝−12+4i。これを 5 で割る。",
@@ -104,7 +104,7 @@
         "x − 3"
       ],
       "answerIndex": 3,
-      "explanation": "余りを px＋q とおくと、剰余の定理より −1p＋q＝−4、1p＋q＝−2。",
+      "explanation": "余りを px＋q とおくと、剰余の定理より −p＋q＝−4、p＋q＝−2。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -258,7 +258,7 @@
         "69"
       ],
       "answerIndex": 2,
-      "explanation": "α²＋β²＝(α＋β)²−2αβ＝9²−2×−6。",
+      "explanation": "α²＋β²＝(α＋β)²−2αβ＝9²−2×(−6)。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -316,7 +316,7 @@
       "id": "math_shonan_104_m1_complex_04_015",
       "unit": "math.m2.expr.complex",
       "category": "calculation",
-      "prompt": "-3 と -4 を解にもつ2次方程式（x² の係数1）は？",
+      "prompt": "−3 と −4 を解にもつ2次方程式（x² の係数1）は？",
       "choices": [
         "x² + 7x + 12 ＝ 0",
         "x² + 7x − 12 ＝ 0",
@@ -324,7 +324,7 @@
         "x² − 7x + 12 ＝ 0"
       ],
       "answerIndex": 0,
-      "explanation": "和 -3＋(-4)＝-7、積 -3×(-4)＝12。x²−(和)x＋(積)＝0 に入れる。",
+      "explanation": "和 −3＋(−4)＝−7、積 −3×(−4)＝12。x²−(和)x＋(積)＝0 に入れる。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -338,7 +338,7 @@
       "id": "math_shonan_104_m1_complex_04_016",
       "unit": "math.m2.expr.complex",
       "category": "calculation",
-      "prompt": "6 と -3 を解にもつ2次方程式（x² の係数1）は？",
+      "prompt": "6 と −3 を解にもつ2次方程式（x² の係数1）は？",
       "choices": [
         "x² − 3x − 18 ＝ 0",
         "x² + 18x + 3 ＝ 0",
@@ -346,7 +346,7 @@
         "x² − 3x + 18 ＝ 0"
       ],
       "answerIndex": 0,
-      "explanation": "和 6＋(-3)＝3、積 6×(-3)＝-18。x²−(和)x＋(積)＝0 に入れる。",
+      "explanation": "和 6＋(−3)＝3、積 6×(−3)＝−18。x²−(和)x＋(積)＝0 に入れる。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -412,7 +412,7 @@
         "−3"
       ],
       "answerIndex": 3,
-      "explanation": "因数定理：P(1)＝(1)³＋-2×(1)²＋4×(1)＋k＝3＋k＝0 より k＝−3。",
+      "explanation": "因数定理：P(1)＝(1)³−2×(1)²＋4×(1)＋k＝3＋k＝0 より k＝−3。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -434,7 +434,7 @@
         "0"
       ],
       "answerIndex": 0,
-      "explanation": "剰余の定理：余りは P(-1)＝−9。",
+      "explanation": "剰余の定理：余りは P(−1)＝−9。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -457,28 +457,6 @@
       ],
       "answerIndex": 1,
       "explanation": "実部・虚部を比べて x＋y＝−1、x−y＝9。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "math1",
-        "m2-complex"
-      ]
-    },
-    {
-      "id": "math_shonan_104_m1_complex_04_022",
-      "unit": "math.m2.expr.complex",
-      "category": "knowledge",
-      "prompt": "√(−4) を i を使って表すと？",
-      "choices": [
-        "4i",
-        "−2i",
-        "−2",
-        "2i"
-      ],
-      "answerIndex": 3,
-      "explanation": "√(−a)＝√a i（a＞0）。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -610,7 +588,7 @@
         "x − 7"
       ],
       "answerIndex": 3,
-      "explanation": "余りを px＋q とおくと、剰余の定理より 2p＋q＝−5、−1p＋q＝−8。",
+      "explanation": "余りを px＋q とおくと、剰余の定理より 2p＋q＝−5、−p＋q＝−8。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -632,7 +610,7 @@
         "−19"
       ],
       "answerIndex": 1,
-      "explanation": "剰余の定理：余りは P(-3)＝19。",
+      "explanation": "剰余の定理：余りは P(−3)＝19。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -761,7 +739,7 @@
         "1",
         "i",
         "−i",
-        "−4/5+3/5i"
+        "−4/5+(3/5)i"
       ],
       "answerIndex": 1,
       "explanation": "分母と分子に共役な複素数 2−i をかける。分母は 2²＋(1)²＝5、分子は (−1+2i)(2−i)＝5i。これを 5 で割る。",
@@ -830,7 +808,7 @@
         "15"
       ],
       "answerIndex": 2,
-      "explanation": "因数定理：P(-3)＝(-3)³＋0×(-3)²＋-3×(-3)＋k＝-18＋k＝0 より k＝18。",
+      "explanation": "因数定理：P(−3)＝(−3)³＋0×(−3)²−3×(−3)＋k＝−18＋k＝0 より k＝18。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -852,7 +830,7 @@
         "6"
       ],
       "answerIndex": 0,
-      "explanation": "因数定理：P(2)＝(2)³＋-3×(2)²＋5×(2)＋k＝6＋k＝0 より k＝−6。",
+      "explanation": "因数定理：P(2)＝(2)³−3×(2)²＋5×(2)＋k＝6＋k＝0 より k＝−6。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -918,7 +896,7 @@
         "−18"
       ],
       "answerIndex": 2,
-      "explanation": "因数定理：P(-2)＝(-2)³＋0×(-2)²＋5×(-2)＋k＝-18＋k＝0 より k＝18。",
+      "explanation": "因数定理：P(−2)＝(−2)³＋0×(−2)²＋5×(−2)＋k＝−18＋k＝0 より k＝18。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [

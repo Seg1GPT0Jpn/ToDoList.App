@@ -137,28 +137,6 @@
       ]
     },
     {
-      "id": "science_shonan_104_chem_reaction_05_007",
-      "unit": "science.chemistry.change.equation",
-      "category": "calculation",
-      "prompt": "C₃H₈ ＋ 5O₂ → 3CO₂ ＋ 4H₂O の反応で、O₂ 3.2 g が完全に反応したとき、CO₂ は標準状態で何 L か。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
-      "choices": [
-        "3.73 L",
-        "1.344 L",
-        "2.24 L",
-        "2.64 L"
-      ],
-      "answerIndex": 1,
-      "explanation": "CO₂ 0.06 mol × 22.4 L/mol。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "chemistry_basic",
-        "reaction"
-      ]
-    },
-    {
       "id": "science_shonan_104_chem_reaction_05_008",
       "unit": "science.chemistry.change.equation.write",
       "category": "calculation",
@@ -215,28 +193,6 @@
       ],
       "answerIndex": 2,
       "explanation": "N₂ 3 mol → H₂ 9 mol → ×2 g/mol。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "chemistry_basic",
-        "reaction"
-      ]
-    },
-    {
-      "id": "science_shonan_104_chem_reaction_05_011",
-      "unit": "science.chemistry.change.equation",
-      "category": "calculation",
-      "prompt": "C₂H₅OH ＋ 3O₂ → 2CO₂ ＋ 3H₂O の反応で、C₂H₅OH 11.5 g が完全に反応したとき、H₂O は何 g 反応・生成するか。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
-      "choices": [
-        "4.5 g",
-        "1.5 g",
-        "34.5 g",
-        "13.5 g"
-      ],
-      "answerIndex": 3,
-      "explanation": "C₂H₅OH 0.25 mol → H₂O 0.75 mol → ×18 g/mol。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -545,28 +501,6 @@
       ],
       "answerIndex": 0,
       "explanation": "ラボアジエ。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "chemistry_basic",
-        "reaction"
-      ]
-    },
-    {
-      "id": "science_shonan_104_chem_reaction_05_026",
-      "unit": "science.chemistry.change.equation.write",
-      "category": "calculation",
-      "prompt": "Mg ＋ 2HCl → MgCl₂ ＋ H₂ の反応で、Mg 48 g が完全に反応したとき、HCl は何 mol 反応・生成するか。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
-      "choices": [
-        "1 mol",
-        "146 mol",
-        "2 mol",
-        "4 mol"
-      ],
-      "answerIndex": 3,
-      "explanation": "Mg 2 mol。係数比 1:2 より 4 mol。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [

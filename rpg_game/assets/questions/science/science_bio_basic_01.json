@@ -19,20 +19,6 @@
       "explanation": "細胞からなり、DNA を持ち、代謝を行い、自己複製する。"
     },
     {
-      "id": "science_bio_basic_01_002",
-      "unit": "science.biology.cell.common.structure",
-      "category": "knowledge",
-      "prompt": "原核生物はどれ？",
-      "choices": [
-        "大腸菌",
-        "ゾウリムシ",
-        "酵母",
-        "ヒト"
-      ],
-      "answerIndex": 0,
-      "explanation": "大腸菌などの細菌は核膜を持たない原核生物。"
-    },
-    {
       "id": "science_bio_basic_01_003",
       "unit": "science.biology.cell.common.structure",
       "category": "knowledge",
@@ -45,20 +31,6 @@
       ],
       "answerIndex": 2,
       "explanation": "有機物を分解してエネルギーを取り出す。"
-    },
-    {
-      "id": "science_bio_basic_01_004",
-      "unit": "science.biology.cell.common.structure",
-      "category": "knowledge",
-      "prompt": "光合成を行う細胞小器官は？",
-      "choices": [
-        "中心体",
-        "液胞",
-        "葉緑体",
-        "ミトコンドリア"
-      ],
-      "answerIndex": 2,
-      "explanation": "光エネルギーを使って二酸化炭素と水から有機物をつくる。"
     },
     {
       "id": "science_bio_basic_01_005",
@@ -115,20 +87,6 @@
       ],
       "answerIndex": 0,
       "explanation": "A = T = 30%。残り 40% を G と C で等分して 20%。"
-    },
-    {
-      "id": "science_bio_basic_01_009",
-      "unit": "science.biology.cell.dna.structure",
-      "category": "knowledge",
-      "prompt": "DNA の二重らせん構造を提唱したのは？",
-      "choices": [
-        "パスツール",
-        "メンデル",
-        "ダーウィン",
-        "ワトソンとクリック"
-      ],
-      "answerIndex": 3,
-      "explanation": "1953 年に発表した。"
     },
     {
       "id": "science_bio_basic_01_010",
@@ -283,20 +241,6 @@
       ],
       "answerIndex": 1,
       "explanation": "ランゲルハンス島 A 細胞から分泌され、グリコーゲンの分解を進める。"
-    },
-    {
-      "id": "science_bio_basic_01_021",
-      "unit": "science.biology.body.nerve.hormone",
-      "category": "knowledge",
-      "prompt": "甲状腺から分泌され、代謝を促進するホルモンは？",
-      "choices": [
-        "インスリン",
-        "成長ホルモン",
-        "チロキシン",
-        "アドレナリン"
-      ],
-      "answerIndex": 2,
-      "explanation": "体温を上げるときなどにはたらく。"
     },
     {
       "id": "science_bio_basic_01_022",

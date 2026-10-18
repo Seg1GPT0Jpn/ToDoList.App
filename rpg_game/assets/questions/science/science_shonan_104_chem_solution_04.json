@@ -93,50 +93,6 @@
       ]
     },
     {
-      "id": "science_shonan_104_chem_solution_04_005",
-      "unit": "science.chemistry.change.mole.concentration",
-      "category": "calculation",
-      "prompt": "2 mol/L の H₂SO₄ 水溶液を 250 mL つくるのに必要な H₂SO₄ は何 g か。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
-      "choices": [
-        "0.5 g",
-        "196 g",
-        "49000 g",
-        "49 g"
-      ],
-      "answerIndex": 3,
-      "explanation": "必要な物質量 2×0.25＝0.5 mol、×98＝49 g。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "chemistry_basic",
-        "concentration"
-      ]
-    },
-    {
-      "id": "science_shonan_104_chem_solution_04_006",
-      "unit": "science.chemistry.change.mole.concentration",
-      "category": "calculation",
-      "prompt": "6 mol/L の水溶液 50 mL に水を加えて 100 mL にした。モル濃度は何 mol/L か。",
-      "choices": [
-        "12 mol/L",
-        "0.3 mol/L",
-        "3 mol/L",
-        "6 mol/L"
-      ],
-      "answerIndex": 2,
-      "explanation": "溶質の物質量は変わらない：6×50/1000 ÷ 100/1000。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "chemistry_basic",
-        "concentration"
-      ]
-    },
-    {
       "id": "science_shonan_104_chem_solution_04_007",
       "unit": "science.chemistry.change.mole.concentration",
       "category": "calculation",
@@ -303,72 +259,6 @@
       ],
       "answerIndex": 3,
       "explanation": "20÷(20＋80)×100＝20 %。溶液の質量で割る。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "chemistry_basic",
-        "concentration"
-      ]
-    },
-    {
-      "id": "science_shonan_104_chem_solution_04_015",
-      "unit": "science.chemistry.change.mole.concentration",
-      "category": "calculation",
-      "prompt": "水 200 g に溶質 5 g を溶かした水溶液の質量パーセント濃度は？",
-      "choices": [
-        "2.44 %",
-        "0.0244 %",
-        "4.88 %",
-        "2.5 %"
-      ],
-      "answerIndex": 0,
-      "explanation": "5÷(5＋200)×100＝2.44 %。溶液の質量で割る。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "chemistry_basic",
-        "concentration"
-      ]
-    },
-    {
-      "id": "science_shonan_104_chem_solution_04_016",
-      "unit": "science.chemistry.change.mole.concentration",
-      "category": "calculation",
-      "prompt": "1 mol/L の C₆H₁₂O₆ 水溶液を 200 mL つくるのに必要な C₆H₁₂O₆ は何 g か。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
-      "choices": [
-        "36 g",
-        "36000 g",
-        "180 g",
-        "0.2 g"
-      ],
-      "answerIndex": 0,
-      "explanation": "必要な物質量 1×0.2＝0.2 mol、×180＝36 g。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "chemistry_basic",
-        "concentration"
-      ]
-    },
-    {
-      "id": "science_shonan_104_chem_solution_04_017",
-      "unit": "science.chemistry.change.mole.concentration",
-      "category": "calculation",
-      "prompt": "水 190 g に溶質 20 g を溶かした水溶液の質量パーセント濃度は？",
-      "choices": [
-        "0.0952 %",
-        "19.0 %",
-        "9.52 %",
-        "10.5 %"
-      ],
-      "answerIndex": 2,
-      "explanation": "20÷(20＋190)×100＝9.52 %。溶液の質量で割る。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -699,28 +589,6 @@
       ],
       "answerIndex": 3,
       "explanation": "1 L（1000 cm³）の質量 1400 g、溶質 882 g、÷63＝14 mol/L。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "chemistry_basic",
-        "concentration"
-      ]
-    },
-    {
-      "id": "science_shonan_104_chem_solution_04_033",
-      "unit": "science.chemistry.change.mole.concentration",
-      "category": "calculation",
-      "prompt": "0.5 mol/L の水溶液 100 mL に水を加えて 400 mL にした。モル濃度は何 mol/L か。",
-      "choices": [
-        "0.05 mol/L",
-        "2 mol/L",
-        "0.125 mol/L",
-        "0.5 mol/L"
-      ],
-      "answerIndex": 2,
-      "explanation": "溶質の物質量は変わらない：0.5×100/1000 ÷ 400/1000。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [

@@ -269,28 +269,6 @@
       ]
     },
     {
-      "id": "math_shonan_104_ma_integer_04_013",
-      "unit": "math.ma.integer.divisor.divisor",
-      "category": "calculation",
-      "prompt": "108 の正の約数の個数は？",
-      "choices": [
-        "14",
-        "6",
-        "12",
-        "5"
-      ],
-      "answerIndex": 2,
-      "explanation": "2²×3³ より (2＋1)×(3＋1)＝12。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "math_a",
-        "integer"
-      ]
-    },
-    {
       "id": "math_shonan_104_ma_integer_04_014",
       "unit": "math.ma.integer.divisor.divisor",
       "category": "calculation",
@@ -413,28 +391,6 @@
       ],
       "answerIndex": 3,
       "explanation": "1×2⁵＋1×2²＋1×2¹＝38。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "math_a",
-        "integer"
-      ]
-    },
-    {
-      "id": "math_shonan_104_ma_integer_04_020",
-      "unit": "math.ma.integer.divisor.divisor",
-      "category": "calculation",
-      "prompt": "24 を素因数分解すると？",
-      "choices": [
-        "2³×3",
-        "2⁴×3",
-        "2³×5",
-        "2×3"
-      ],
-      "answerIndex": 0,
-      "explanation": "24＝2³×3。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -809,28 +765,6 @@
       ],
       "answerIndex": 1,
       "explanation": "252＝2²×3²×7、180＝2²×3²×5。共通の素因数を小さいほうの指数でかけて 36。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "math_a",
-        "integer"
-      ]
-    },
-    {
-      "id": "math_shonan_104_ma_integer_04_038",
-      "unit": "math.ma.integer.divisor.divisor",
-      "category": "calculation",
-      "prompt": "144 の正の約数の総和は？",
-      "choices": [
-        "288",
-        "259",
-        "403",
-        "404"
-      ],
-      "answerIndex": 2,
-      "explanation": "2⁴×3² より (1＋2＋4＋8＋16)×(1＋3＋9)＝403。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [

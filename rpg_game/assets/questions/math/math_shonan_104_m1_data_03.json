@@ -143,8 +143,8 @@
       "prompt": "2つの変量 (x, y) のデータ (1,10)、(3,8)、(5,6)、(7,4)、(9,2) の相関係数に最も近いものは？",
       "choices": [
         "0.00",
-        "-1.00",
-        "-0.50",
+        "−1.00",
+        "−0.50",
         "1.00"
       ],
       "answerIndex": 1,
@@ -206,7 +206,7 @@
       "id": "math_shonan_104_m1_data_03_010",
       "unit": "math.m1.data.stats.variance",
       "category": "calculation",
-      "prompt": "変量 x の標準偏差が 5 である。y ＝ -3x + 9 のとき、y の標準偏差は？",
+      "prompt": "変量 x の標準偏差が 5 である。y ＝ −3x + 9 のとき、y の標準偏差は？",
       "choices": [
         "5",
         "45",
@@ -214,7 +214,7 @@
         "24"
       ],
       "answerIndex": 2,
-      "explanation": "標準偏差は |a| 倍：|-3|×5。",
+      "explanation": "標準偏差は |a| 倍：|−3|×5。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -778,7 +778,7 @@
       "id": "math_shonan_104_m1_data_03_036",
       "unit": "math.m1.data.stats.variance",
       "category": "calculation",
-      "prompt": "変量 x の平均値が 19、分散が 9 である。y ＝ -3x − 1 のとき、y の分散は？",
+      "prompt": "変量 x の平均値が 19、分散が 9 である。y ＝ −3x − 1 のとき、y の分散は？",
       "choices": [
         "81",
         "−27",

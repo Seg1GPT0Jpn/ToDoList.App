@@ -71,28 +71,6 @@
       ]
     },
     {
-      "id": "science_shonan_104_chem_mole_02_004",
-      "unit": "science.chemistry.change.mole.mass",
-      "category": "calculation",
-      "prompt": "Zn 5 mol の質量は何 g か。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
-      "choices": [
-        "13 g",
-        "650 g",
-        "5 g",
-        "325 g"
-      ],
-      "answerIndex": 3,
-      "explanation": "65 g/mol × 5 mol ＝ 325 g。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "chemistry_basic",
-        "mole"
-      ]
-    },
-    {
       "id": "science_shonan_104_chem_mole_02_005",
       "unit": "science.chemistry.change.mole.mass",
       "category": "calculation",
@@ -404,15 +382,15 @@
       "id": "science_shonan_104_chem_mole_02_019",
       "unit": "science.chemistry.change.mole.mass",
       "category": "calculation",
-      "prompt": "標準状態での H₂O の密度（1 L あたりの質量）は何 g/L か。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
+      "prompt": "標準状態での CH₄ の密度（1 L あたりの質量）は何 g/L か。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
       "choices": [
-        "0.80 g/L",
-        "403 g/L",
-        "1.2 g/L",
-        "1.6 g/L"
+        "0.71 g/L",
+        "358 g/L",
+        "1.4 g/L",
+        "0.36 g/L"
       ],
       "answerIndex": 0,
-      "explanation": "18 g/mol ÷ 22.4 L/mol。",
+      "explanation": "16 g/mol ÷ 22.4 L/mol ≒ 0.71 g/L。（H₂O は 0℃ では液体なので、この方法は気体にだけ使える）",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -633,28 +611,6 @@
       ],
       "answerIndex": 1,
       "explanation": "66÷44＝1.5 mol。1.5×6.0×10²³ 個。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "chemistry_basic",
-        "mole"
-      ]
-    },
-    {
-      "id": "science_shonan_104_chem_mole_02_030",
-      "unit": "science.chemistry.change.mole.mass",
-      "category": "calculation",
-      "prompt": "O₂ 16 g は、標準状態で何 L か。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
-      "choices": [
-        "358.4 L",
-        "22.4 L",
-        "0.5 L",
-        "11.2 L"
-      ],
-      "answerIndex": 3,
-      "explanation": "16÷32＝0.5 mol、×22.4＝11.2 L。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [

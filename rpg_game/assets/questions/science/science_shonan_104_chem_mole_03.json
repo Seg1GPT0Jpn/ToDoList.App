@@ -357,28 +357,6 @@
       ]
     },
     {
-      "id": "science_shonan_104_chem_mole_03_017",
-      "unit": "science.chemistry.change.mole",
-      "category": "calculation",
-      "prompt": "C₂H₅OH 0.25 mol に含まれる C 原子の数は？",
-      "choices": [
-        "3.0 × 10²³",
-        "1.5 × 10²³",
-        "4.5 × 10²³",
-        "5.0 × 10²²"
-      ],
-      "answerIndex": 0,
-      "explanation": "C₂H₅OH 1分子に C 原子は 2 個。0.25×2×6.0×10²³。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "chemistry_basic",
-        "mole"
-      ]
-    },
-    {
       "id": "science_shonan_104_chem_mole_03_018",
       "unit": "science.chemistry.change.mole.mass",
       "category": "calculation",
@@ -809,28 +787,6 @@
       ],
       "answerIndex": 3,
       "explanation": "16×2 ＝ 32。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "chemistry_basic",
-        "mole"
-      ]
-    },
-    {
-      "id": "science_shonan_104_chem_mole_03_038",
-      "unit": "science.chemistry.change.mole.mass",
-      "category": "calculation",
-      "prompt": "H₂O 0.1 mol の質量は何 g か。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
-      "choices": [
-        "180 g",
-        "1.8 g",
-        "0.1 g",
-        "3.6 g"
-      ],
-      "answerIndex": 1,
-      "explanation": "18 g/mol × 0.1 mol ＝ 1.8 g。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [

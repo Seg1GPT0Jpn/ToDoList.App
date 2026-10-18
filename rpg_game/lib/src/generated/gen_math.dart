@@ -1687,7 +1687,7 @@ GenQ? _recurrence(Random r) {
           : '${_n(p)}aₙ';
   return GenQ(
     prompt:
-        'a₁=${_n(a1)}、aₙ₊₁=$pq${q >= 0 ? '+$q' : '−${-q}'} で定められる数列の第$nn項は？',
+        'a₁=${_n(a1)}、aₙ₊₁=$pq${q > 0 ? '+$q' : q < 0 ? '−${-q}' : ''} で定められる数列の第$nn項は？',
     answer: _n(v),
     wrong: [_n(v + q), _n(p * v + q), _n(v - 1), _n(v ~/ (p == 0 ? 1 : p))],
     explanation: '順に計算していく。',

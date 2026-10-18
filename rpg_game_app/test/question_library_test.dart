@@ -41,7 +41,9 @@ void main() {
     expect(find.byType(QuestionLibrarySetScreen), findsOneWidget);
     // 自動で作った敬語の問題もふくむ（収録24問より多い）
     expect(
-      find.textContaining(RegExp(r'japanese_gendai_05・\d{3}問')),
+      find.textContaining(
+        RegExp(r'japanese_gendai_05・(2[5-9]|[3-9]\d|\d{3})問'),
+      ),
       findsOneWidget,
     );
     await t.tap(find.textContaining('Q1. '));

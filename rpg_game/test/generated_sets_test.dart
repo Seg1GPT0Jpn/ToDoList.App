@@ -2,6 +2,7 @@ import 'dart:io';
 import 'dart:math';
 
 import 'package:rpg_game/rpg_game.dart';
+import 'package:rpg_game/src/generated/generated_index_builder.dart';
 import 'package:rpg_game/src/generated/generated_sets.dart';
 import 'package:test/test.dart';
 
@@ -54,6 +55,37 @@ void main() {
     print('合計 $before → $after');
     // ignore: avoid_print
     bySubject.forEach((k, v) => print('$k ${v.$1} → ${v.$2}'));
+  });
+
+  test('索引（generated_index.dart）が問題ファイルと合っている', () {
+    final src =
+        File('lib/src/generated/generated_index.dart').readAsStringSync();
+    final sets = _allSets();
+    for (final slot in GeneratedIndexBuilder.slots(sets)) {
+      expect(src.contains("'$slot'"), isTrue,
+          reason: '$slot がない。dart run tool/generated_index.dart を実行する');
+    }
+    expect(RegExp(r"^  '", multiLine: true).allMatches(src).length,
+        GeneratedIndexBuilder.slots(sets).length,
+        reason: 'dart run tool/generated_index.dart を実行する');
+    expect(RegExp(r'\d+').allMatches(src.split('recordedKeys').last).length,
+        GeneratedIndexBuilder.recordedKeys(sets).length,
+        reason: 'dart run tool/generated_index.dart を実行する');
+  });
+
+  test('アプリ全体で、同じ問題（問題文と本文が同じで正解も同じ）が2つない', () {
+    final seen = <String, String>{};
+    final dup = <String>[];
+    for (final s in _allSets()) {
+      for (final q in GeneratedSets.augment(s).questions) {
+        final key =
+            '${s.worldId}|${q.prompt}|${q.sentence}|${q.choices.isEmpty ? '' : q.choices[q.answerIndex]}';
+        final first = seen[key];
+        if (first != null) dup.add('$first と ${q.id}: ${q.prompt}');
+        seen[key] = q.id;
+      }
+    }
+    expect(dup, isEmpty, reason: dup.take(20).join('\n'));
   });
 
   test('作り方ごとに見本を出す（目で確かめる用）', () {

@@ -16,7 +16,7 @@
         "商 2x + 3、余り 0"
       ],
       "answerIndex": 1,
-      "explanation": "2x² − 3＝(x − 1)(2x + 2)＋−1。",
+      "explanation": "2x² − 3＝(x − 1)(2x + 2)−1。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -258,7 +258,7 @@
         "商 x、余り −2"
       ],
       "answerIndex": 0,
-      "explanation": "−x² − 3x − 2＝(x + 3)(−x)＋−2。",
+      "explanation": "−x² − 3x − 2＝(x + 3)(−x)−2。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -291,28 +291,6 @@
       ]
     },
     {
-      "id": "math_shonan_104_m1_proof_03_014",
-      "unit": "math.m2.expr.proof",
-      "category": "calculation",
-      "prompt": "(x＋3)³ を展開すると？",
-      "choices": [
-        "x³ + 3x² + 9x + 27",
-        "x³ + 27",
-        "x³ + 27x² + 9x + 27",
-        "x³ + 9x² + 27x + 27"
-      ],
-      "answerIndex": 3,
-      "explanation": "(a＋b)³＝a³＋3a²b＋3ab²＋b³ に a→x, b→3 を入れて x³＋3·3x²＋3·3²x＋3³＝x³ + 9x² + 27x + 27。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "math1",
-        "m2-proof"
-      ]
-    },
-    {
       "id": "math_shonan_104_m1_proof_03_015",
       "unit": "math.m2.expr.proof.identity",
       "category": "calculation",
@@ -324,7 +302,7 @@
         "5"
       ],
       "answerIndex": 0,
-      "explanation": "x＝-3 を代入すると c＝2。",
+      "explanation": "x＝−3 を代入すると c＝2。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -390,29 +368,7 @@
         "21"
       ],
       "answerIndex": 1,
-      "explanation": "一般項は 7C2·(2x)²·(−3)⁵。7C2＝21 なので 21×4×−243＝−20412。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "math1",
-        "m2-proof"
-      ]
-    },
-    {
-      "id": "math_shonan_104_m1_proof_03_019",
-      "unit": "math.m2.expr.proof",
-      "category": "calculation",
-      "prompt": "x³ − 1 を因数分解すると？",
-      "choices": [
-        "(x − 1)(x² − x ＋ 1)",
-        "(x − 1)(x² ＋ x ＋ 1)",
-        "(x ＋ 1)(x² − x ＋ 1)",
-        "(x − 1)³"
-      ],
-      "answerIndex": 1,
-      "explanation": "1＝1³ なので a³−b³＝(a−b)(a²＋ab＋b²) を使う（2つめのかっこの真ん中は＋）。",
+      "explanation": "一般項は 7C2·(2x)²·(−3)⁵。7C2＝21 なので 21×4×(−243)＝−20412。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -434,7 +390,7 @@
         "80"
       ],
       "answerIndex": 1,
-      "explanation": "一般項は 5C4·(2x)⁴·(−1)¹。5C4＝5 なので 5×16×−1＝−80。",
+      "explanation": "一般項は 5C4·(2x)⁴·(−1)¹。5C4＝5 なので 5×16×(−1)＝−80。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -456,7 +412,7 @@
         "商 2x − 3、余り −10"
       ],
       "answerIndex": 0,
-      "explanation": "2x² + 4x − 22＝(x + 4)(2x − 4)＋−6。",
+      "explanation": "2x² + 4x − 22＝(x + 4)(2x − 4)−6。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -687,28 +643,6 @@
       ]
     },
     {
-      "id": "math_shonan_104_m1_proof_03_032",
-      "unit": "math.m2.expr.proof",
-      "category": "calculation",
-      "prompt": "x³ − 64 を因数分解すると？",
-      "choices": [
-        "(x − 4)(x² ＋ 4x ＋ 16)",
-        "(x − 4)³",
-        "(x ＋ 4)(x² − 4x ＋ 16)",
-        "(x − 4)(x² − 4x ＋ 16)"
-      ],
-      "answerIndex": 0,
-      "explanation": "64＝4³ なので a³−b³＝(a−b)(a²＋ab＋b²) を使う（2つめのかっこの真ん中は＋）。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "math1",
-        "m2-proof"
-      ]
-    },
-    {
       "id": "math_shonan_104_m1_proof_03_033",
       "unit": "math.m2.expr.proof.binomial",
       "category": "calculation",
@@ -720,7 +654,7 @@
         "320"
       ],
       "answerIndex": 2,
-      "explanation": "一般項は 5C3·(−2x)³·(−2)²。5C3＝10 なので 10×−8×4＝−320。",
+      "explanation": "一般項は 5C3·(−2x)³·(−2)²。5C3＝10 なので 10×(−8)×4＝−320。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [

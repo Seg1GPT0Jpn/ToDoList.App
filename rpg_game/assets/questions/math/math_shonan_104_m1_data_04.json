@@ -206,7 +206,7 @@
       "id": "math_shonan_104_m1_data_04_010",
       "unit": "math.m1.data.stats.variance",
       "category": "calculation",
-      "prompt": "変量 x の標準偏差が 3 である。y ＝ -3x − 1 のとき、y の標準偏差は？",
+      "prompt": "変量 x の標準偏差が 3 である。y ＝ −3x − 1 のとき、y の標準偏差は？",
       "choices": [
         "3",
         "27",
@@ -214,7 +214,7 @@
         "8"
       ],
       "answerIndex": 2,
-      "explanation": "標準偏差は |a| 倍：|-3|×3。",
+      "explanation": "標準偏差は |a| 倍：|−3|×3。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -357,32 +357,10 @@
       ]
     },
     {
-      "id": "math_shonan_104_m1_data_04_017",
-      "unit": "math.m1.data.stats.variance",
-      "category": "calculation",
-      "prompt": "x の標準偏差が 5、y の標準偏差が 2、共分散が 5 のとき、相関係数は？",
-      "choices": [
-        "50",
-        "−1/2",
-        "1/2",
-        "5/7"
-      ],
-      "answerIndex": 2,
-      "explanation": "r＝5÷(5×2)＝1/2。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "math1",
-        "data"
-      ]
-    },
-    {
       "id": "math_shonan_104_m1_data_04_018",
       "unit": "math.m1.data.stats.center",
       "category": "calculation",
-      "prompt": "変量 x の平均値が 19、分散が 9 である。y ＝ -3x − 1 のとき、y の平均値は？",
+      "prompt": "変量 x の平均値が 19、分散が 9 である。y ＝ −3x − 1 のとき、y の平均値は？",
       "choices": [
         "−57",
         "−54",
@@ -390,7 +368,7 @@
         "18"
       ],
       "answerIndex": 2,
-      "explanation": "平均は ax＋b と同じように変わる：-3×19−1。",
+      "explanation": "平均は ax＋b と同じように変わる：−3×19−1。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -453,7 +431,7 @@
         "0.00",
         "0.77",
         "0.39",
-        "-0.77"
+        "−0.77"
       ],
       "answerIndex": 1,
       "explanation": "r＝共分散÷(xの標準偏差×yの標準偏差)＝6/5÷√(2×6/5)。",

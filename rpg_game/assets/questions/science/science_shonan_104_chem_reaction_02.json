@@ -335,50 +335,6 @@
       ]
     },
     {
-      "id": "science_shonan_104_chem_reaction_02_016",
-      "unit": "science.chemistry.change.equation.write",
-      "category": "thinking",
-      "prompt": "N₂ ＋ 3H₂ → 2NH₃ の反応で、N₂ 1 mol と H₂ 2 mol を反応させた。反応後に残る物質とその量は？",
-      "choices": [
-        "N₂ が 0.333 mol 残る",
-        "H₂ が 0.333 mol 残る",
-        "N₂ が 1 mol 残る",
-        "どちらも残らない"
-      ],
-      "answerIndex": 0,
-      "explanation": "係数比 1:3。N₂ 1 mol と反応する H₂ は 3 mol。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "chemistry_basic",
-        "reaction"
-      ]
-    },
-    {
-      "id": "science_shonan_104_chem_reaction_02_017",
-      "unit": "science.chemistry.change.equation.write",
-      "category": "calculation",
-      "prompt": "Mg ＋ 2HCl → MgCl₂ ＋ H₂ の反応で、Mg 48 g が完全に反応したとき、HCl は何 mol 反応・生成するか。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
-      "choices": [
-        "4 mol",
-        "1 mol",
-        "146 mol",
-        "2 mol"
-      ],
-      "answerIndex": 0,
-      "explanation": "Mg 2 mol。係数比 1:2 より 4 mol。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "chemistry_basic",
-        "reaction"
-      ]
-    },
-    {
       "id": "science_shonan_104_chem_reaction_02_018",
       "unit": "science.chemistry.change.equation.write",
       "category": "calculation",

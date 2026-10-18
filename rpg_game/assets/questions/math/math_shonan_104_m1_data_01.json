@@ -118,7 +118,7 @@
       "id": "math_shonan_104_m1_data_01_006",
       "unit": "math.m1.data.stats.variance",
       "category": "calculation",
-      "prompt": "変量 x の平均値が 29、分散が 36 である。y ＝ -3x − 5 のとき、y の分散は？",
+      "prompt": "変量 x の平均値が 29、分散が 36 である。y ＝ −3x − 5 のとき、y の分散は？",
       "choices": [
         "108",
         "−108",
@@ -558,7 +558,7 @@
       "id": "math_shonan_104_m1_data_01_026",
       "unit": "math.m1.data.stats.variance",
       "category": "calculation",
-      "prompt": "変量 x の標準偏差が 6 である。y ＝ -3x − 5 のとき、y の標準偏差は？",
+      "prompt": "変量 x の標準偏差が 6 である。y ＝ −3x − 5 のとき、y の標準偏差は？",
       "choices": [
         "6",
         "18",
@@ -566,7 +566,7 @@
         "13"
       ],
       "answerIndex": 1,
-      "explanation": "標準偏差は |a| 倍：|-3|×6。",
+      "explanation": "標準偏差は |a| 倍：|−3|×6。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -670,9 +670,9 @@
       "category": "calculation",
       "prompt": "2つの変量 (x, y) のデータ (1,5)、(2,3)、(3,4)、(4,2)、(5,1) の相関係数に最も近いものは？",
       "choices": [
-        "-0.90",
+        "−0.90",
         "0.90",
-        "-0.45",
+        "−0.45",
         "0.00"
       ],
       "answerIndex": 0,
@@ -739,7 +739,7 @@
         "0.40",
         "0.80",
         "0.00",
-        "-0.80"
+        "−0.80"
       ],
       "answerIndex": 1,
       "explanation": "r＝共分散÷(xの標準偏差×yの標準偏差)＝4÷√(5×5)。",

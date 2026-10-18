@@ -159,28 +159,6 @@
       ]
     },
     {
-      "id": "science_shonan_104_chem_reaction_03_008",
-      "unit": "science.chemistry.change.equation.write",
-      "category": "calculation",
-      "prompt": "Mg ＋ 2HCl → MgCl₂ ＋ H₂ の反応で、HCl 73 g が完全に反応したとき、Mg は何 mol 反応・生成するか。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
-      "choices": [
-        "2 mol",
-        "1 mol",
-        "4 mol",
-        "24 mol"
-      ],
-      "answerIndex": 1,
-      "explanation": "HCl 2 mol。係数比 2:1 より 1 mol。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "chemistry_basic",
-        "reaction"
-      ]
-    },
-    {
       "id": "science_shonan_104_chem_reaction_03_009",
       "unit": "science.chemistry.change.equation",
       "category": "calculation",
@@ -523,28 +501,6 @@
       ],
       "answerIndex": 3,
       "explanation": "O₂ 0.3 mol × 22.4 L/mol。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "chemistry_basic",
-        "reaction"
-      ]
-    },
-    {
-      "id": "science_shonan_104_chem_reaction_03_025",
-      "unit": "science.chemistry.change.equation.write",
-      "category": "thinking",
-      "prompt": "2H₂ ＋ O₂ → 2H₂O の反応で、H₂ 0.5 mol と O₂ 2 mol を反応させた。反応後に残る物質とその量は？",
-      "choices": [
-        "H₂ が 1.75 mol 残る",
-        "O₂ が 2 mol 残る",
-        "O₂ が 1.75 mol 残る",
-        "どちらも残らない"
-      ],
-      "answerIndex": 2,
-      "explanation": "係数比 2:1。H₂ 0.5 mol と反応する O₂ は 0.25 mol。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [

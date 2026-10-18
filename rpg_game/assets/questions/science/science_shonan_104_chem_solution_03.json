@@ -159,28 +159,6 @@
       ]
     },
     {
-      "id": "science_shonan_104_chem_solution_03_008",
-      "unit": "science.chemistry.change.mole.concentration",
-      "category": "calculation",
-      "prompt": "水 80 g に溶質 25 g を溶かした水溶液の質量パーセント濃度は？",
-      "choices": [
-        "31.25 %",
-        "23.8 %",
-        "0.238 %",
-        "47.6 %"
-      ],
-      "answerIndex": 1,
-      "explanation": "25÷(25＋80)×100＝23.8 %。溶液の質量で割る。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "chemistry_basic",
-        "concentration"
-      ]
-    },
-    {
       "id": "science_shonan_104_chem_solution_03_009",
       "unit": "science.chemistry.change.mole.concentration",
       "category": "calculation",
@@ -391,28 +369,6 @@
       ],
       "answerIndex": 1,
       "explanation": "50÷(50＋85)×100＝37.0 %。溶液の質量で割る。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "chemistry_basic",
-        "concentration"
-      ]
-    },
-    {
-      "id": "science_shonan_104_chem_solution_03_019",
-      "unit": "science.chemistry.change.mole.concentration",
-      "category": "calculation",
-      "prompt": "水 160 g に溶質 5 g を溶かした水溶液の質量パーセント濃度は？",
-      "choices": [
-        "3.125 %",
-        "3.03 %",
-        "6.06 %",
-        "0.0303 %"
-      ],
-      "answerIndex": 1,
-      "explanation": "5÷(5＋160)×100＝3.03 %。溶液の質量で割る。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -721,28 +677,6 @@
       ],
       "answerIndex": 2,
       "explanation": "溶質の物質量は変わらない：2×25/1000 ÷ 50/1000。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "chemistry_basic",
-        "concentration"
-      ]
-    },
-    {
-      "id": "science_shonan_104_chem_solution_03_034",
-      "unit": "science.chemistry.change.mole.concentration",
-      "category": "calculation",
-      "prompt": "水 200 g に溶質 15 g を溶かした水溶液の質量パーセント濃度は？",
-      "choices": [
-        "6.98 %",
-        "14.0 %",
-        "7.5 %",
-        "0.0698 %"
-      ],
-      "answerIndex": 0,
-      "explanation": "15÷(15＋200)×100＝6.98 %。溶液の質量で割る。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [

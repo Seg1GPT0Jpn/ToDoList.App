@@ -10,7 +10,7 @@
       "category": "calculation",
       "prompt": "2つの変量 (x, y) のデータ (3,6)、(5,4)、(7,8)、(9,10)、(11,12) の相関係数に最も近いものは？",
       "choices": [
-        "-0.90",
+        "−0.90",
         "0.45",
         "0.00",
         "0.90"
@@ -52,7 +52,7 @@
       "id": "math_shonan_104_m1_data_02_003",
       "unit": "math.m1.data.stats.center",
       "category": "calculation",
-      "prompt": "変量 x の平均値が 10、分散が 25 である。y ＝ -3x + 9 のとき、y の平均値は？",
+      "prompt": "変量 x の平均値が 10、分散が 25 である。y ＝ −3x + 9 のとき、y の平均値は？",
       "choices": [
         "−30",
         "−21",
@@ -60,7 +60,7 @@
         "19"
       ],
       "answerIndex": 1,
-      "explanation": "平均は ax＋b と同じように変わる：-3×10+9。",
+      "explanation": "平均は ax＋b と同じように変わる：−3×10+9。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -96,7 +96,7 @@
       "id": "math_shonan_104_m1_data_02_005",
       "unit": "math.m1.data.stats.variance",
       "category": "calculation",
-      "prompt": "変量 x の平均値が 10、分散が 25 である。y ＝ -3x + 9 のとき、y の分散は？",
+      "prompt": "変量 x の平均値が 10、分散が 25 である。y ＝ −3x + 9 のとき、y の分散は？",
       "choices": [
         "225",
         "−75",
@@ -121,7 +121,7 @@
       "prompt": "2つの変量 (x, y) のデータ (2,4)、(3,4)、(5,8)、(6,8) の相関係数に最も近いものは？",
       "choices": [
         "0.95",
-        "-0.95",
+        "−0.95",
         "0.00",
         "0.47"
       ],
@@ -294,7 +294,7 @@
       "id": "math_shonan_104_m1_data_02_014",
       "unit": "math.m1.data.stats.center",
       "category": "calculation",
-      "prompt": "変量 x の平均値が 29、分散が 36 である。y ＝ -3x − 5 のとき、y の平均値は？",
+      "prompt": "変量 x の平均値が 29、分散が 36 である。y ＝ −3x − 5 のとき、y の平均値は？",
       "choices": [
         "−92",
         "−87",
@@ -302,7 +302,7 @@
         "24"
       ],
       "answerIndex": 0,
-      "explanation": "平均は ax＋b と同じように変わる：-3×29−5。",
+      "explanation": "平均は ax＋b と同じように変わる：−3×29−5。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -765,28 +765,6 @@
       ],
       "answerIndex": 3,
       "explanation": "平均 7。偏差の2乗の平均＝22÷4＝11/2。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "math1",
-        "data"
-      ]
-    },
-    {
-      "id": "math_shonan_104_m1_data_02_036",
-      "unit": "math.m1.data.stats.variance",
-      "category": "knowledge",
-      "prompt": "分散の正の平方根を何という？",
-      "choices": [
-        "四分位範囲",
-        "共分散",
-        "相関係数",
-        "標準偏差"
-      ],
-      "answerIndex": 3,
-      "explanation": "単位がもとのデータと同じになる。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [

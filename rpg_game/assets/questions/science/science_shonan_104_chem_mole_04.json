@@ -49,28 +49,6 @@
       ]
     },
     {
-      "id": "science_shonan_104_chem_mole_04_003",
-      "unit": "science.chemistry.change.mole",
-      "category": "calculation",
-      "prompt": "NH₃ 1 mol に含まれる H 原子の数は？",
-      "choices": [
-        "6.0 × 10²³",
-        "3.0 × 10²³",
-        "2.4 × 10²⁴",
-        "1.8 × 10²⁴"
-      ],
-      "answerIndex": 3,
-      "explanation": "NH₃ 1分子に H 原子は 3 個。1×3×6.0×10²³。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "chemistry_basic",
-        "mole"
-      ]
-    },
-    {
       "id": "science_shonan_104_chem_mole_04_004",
       "unit": "science.chemistry.change.mole.mole",
       "category": "calculation",
@@ -225,28 +203,6 @@
       ]
     },
     {
-      "id": "science_shonan_104_chem_mole_04_011",
-      "unit": "science.chemistry.change.mole.mass",
-      "category": "calculation",
-      "prompt": "N₂ 5.6 g は、標準状態で何 L か。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
-      "choices": [
-        "125.44 L",
-        "4.48 L",
-        "0.2 L",
-        "8.96 L"
-      ],
-      "answerIndex": 1,
-      "explanation": "5.6÷28＝0.2 mol、×22.4＝4.48 L。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "chemistry_basic",
-        "mole"
-      ]
-    },
-    {
       "id": "science_shonan_104_chem_mole_04_012",
       "unit": "science.chemistry.change.mole",
       "category": "calculation",
@@ -291,28 +247,6 @@
       ]
     },
     {
-      "id": "science_shonan_104_chem_mole_04_014",
-      "unit": "science.chemistry.change.mole.mole",
-      "category": "calculation",
-      "prompt": "標準状態で O₂ 33.6 L の物質量は何 mol か。",
-      "choices": [
-        "3 mol",
-        "0.667 mol",
-        "752.64 mol",
-        "1.5 mol"
-      ],
-      "answerIndex": 3,
-      "explanation": "33.6÷22.4＝1.5 mol。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "chemistry_basic",
-        "mole"
-      ]
-    },
-    {
       "id": "science_shonan_104_chem_mole_04_015",
       "unit": "science.chemistry.change.mole",
       "category": "calculation",
@@ -325,28 +259,6 @@
       ],
       "answerIndex": 0,
       "explanation": "C₂H₅OH 1分子に C 原子は 2 個。0.5×2×6.0×10²³。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "chemistry_basic",
-        "mole"
-      ]
-    },
-    {
-      "id": "science_shonan_104_chem_mole_04_016",
-      "unit": "science.chemistry.change.mole.mole",
-      "category": "calculation",
-      "prompt": "MgCl₂ 142.5 g に含まれる分子（粒子）の数は？（アボガドロ定数 6.0×10²³/mol）（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
-      "choices": [
-        "9.0 × 10²³",
-        "1.5 × 10²³",
-        "9.0 × 10²²",
-        "8.5 × 10²⁵"
-      ],
-      "answerIndex": 0,
-      "explanation": "142.5÷95＝1.5 mol。1.5×6.0×10²³ 個。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [

@@ -5,28 +5,6 @@
   "version": 1,
   "questions": [
     {
-      "id": "math_shonan_104_ma_integer_05_001",
-      "unit": "math.ma.integer.euclid.diophantine",
-      "category": "calculation",
-      "prompt": "方程式 3x ＋ 8y ＝ 1 の整数解をすべて求めよ（k は整数）。",
-      "choices": [
-        "x＝8k＋3, y＝−3k−1",
-        "x＝3k＋3, y＝−8k−1",
-        "x＝8k−1, y＝−3k＋3",
-        "x＝8k＋3, y＝3k−1"
-      ],
-      "answerIndex": 0,
-      "explanation": "1つの解 (x, y)＝(3, −1) を見つけ、差をとって 3(x−(3))＝−8(y−(−1))。3 と 8 は互いに素なので x−(3) は 8 の倍数。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "math_a",
-        "integer"
-      ]
-    },
-    {
       "id": "math_shonan_104_ma_integer_05_002",
       "unit": "math.ma.integer.divisor.divisor",
       "category": "calculation",
@@ -237,28 +215,6 @@
       ],
       "answerIndex": 3,
       "explanation": "288＝2⁵×3²。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "math_a",
-        "integer"
-      ]
-    },
-    {
-      "id": "math_shonan_104_ma_integer_05_012",
-      "unit": "math.ma.integer.divisor.divisor",
-      "category": "calculation",
-      "prompt": "108 を素因数分解すると？",
-      "choices": [
-        "2²×5",
-        "2×3",
-        "2²×3³",
-        "2³×3³"
-      ],
-      "answerIndex": 2,
-      "explanation": "108＝2²×3³。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -687,28 +643,6 @@
       ]
     },
     {
-      "id": "math_shonan_104_ma_integer_05_032",
-      "unit": "math.ma.integer.divisor.remainder",
-      "category": "calculation",
-      "prompt": "整数 a, b を 4 で割った余りがそれぞれ 3, 1 のとき、a＋b を 4 で割った余りは？",
-      "choices": [
-        "3",
-        "4",
-        "0",
-        "1"
-      ],
-      "answerIndex": 2,
-      "explanation": "3＋1＝4 を 4 で割った余り。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "math_a",
-        "integer"
-      ]
-    },
-    {
       "id": "math_shonan_104_ma_integer_05_033",
       "unit": "math.ma.integer.divisor.divisor",
       "category": "calculation",
@@ -721,28 +655,6 @@
       ],
       "answerIndex": 0,
       "explanation": "2²×3³×5 より (2＋1)×(3＋1)×(1＋1)＝24。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "math_a",
-        "integer"
-      ]
-    },
-    {
-      "id": "math_shonan_104_ma_integer_05_034",
-      "unit": "math.ma.integer.divisor.divisor",
-      "category": "calculation",
-      "prompt": "72 を素因数分解すると？",
-      "choices": [
-        "2³×3²",
-        "2³×5",
-        "2×3",
-        "2⁴×3²"
-      ],
-      "answerIndex": 0,
-      "explanation": "72＝2³×3²。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -885,28 +797,6 @@
       ]
     },
     {
-      "id": "math_shonan_104_ma_integer_05_041",
-      "unit": "math.ma.integer.divisor.divisor",
-      "category": "calculation",
-      "prompt": "30 と 90 の最小公倍数は？",
-      "choices": [
-        "90",
-        "180",
-        "2700",
-        "30"
-      ],
-      "answerIndex": 0,
-      "explanation": "最小公倍数＝30×90÷最大公約数30＝90。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "math_a",
-        "integer"
-      ]
-    },
-    {
       "id": "math_shonan_104_ma_integer_05_042",
       "unit": "math.ma.integer.base.nary",
       "category": "calculation",
@@ -929,28 +819,6 @@
       ]
     },
     {
-      "id": "math_shonan_104_ma_integer_05_043",
-      "unit": "math.ma.integer.euclid.diophantine",
-      "category": "calculation",
-      "prompt": "方程式 11x ＋ 4y ＝ 1 の整数解をすべて求めよ（k は整数）。",
-      "choices": [
-        "x＝4k−1, y＝11k＋3",
-        "x＝4k−1, y＝−11k＋3",
-        "x＝11k−1, y＝−4k＋3",
-        "x＝4k＋3, y＝−11k−1"
-      ],
-      "answerIndex": 1,
-      "explanation": "1つの解 (x, y)＝(−1, 3) を見つけ、差をとって 11(x−(−1))＝−4(y−(3))。11 と 4 は互いに素なので x−(−1) は 4 の倍数。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "math_a",
-        "integer"
-      ]
-    },
-    {
       "id": "math_shonan_104_ma_integer_05_044",
       "unit": "math.ma.integer.divisor.divisor",
       "category": "calculation",
@@ -963,28 +831,6 @@
       ],
       "answerIndex": 1,
       "explanation": "最小公倍数＝135×36÷最大公約数9＝540。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "math_a",
-        "integer"
-      ]
-    },
-    {
-      "id": "math_shonan_104_ma_integer_05_045",
-      "unit": "math.ma.integer.divisor.divisor",
-      "category": "calculation",
-      "prompt": "108 の正の約数の総和は？",
-      "choices": [
-        "172",
-        "281",
-        "280",
-        "216"
-      ],
-      "answerIndex": 2,
-      "explanation": "2²×3³ より (1＋2＋4)×(1＋3＋9＋27)＝280。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [

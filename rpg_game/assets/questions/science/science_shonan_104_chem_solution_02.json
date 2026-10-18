@@ -269,28 +269,6 @@
       ]
     },
     {
-      "id": "science_shonan_104_chem_solution_02_013",
-      "unit": "science.chemistry.change.mole.concentration",
-      "category": "calculation",
-      "prompt": "0.1 mol/L の CaCl₂ 水溶液を 2000 mL つくるのに必要な CaCl₂ は何 g か。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
-      "choices": [
-        "22.2 g",
-        "0.2 g",
-        "22200 g",
-        "11.1 g"
-      ],
-      "answerIndex": 0,
-      "explanation": "必要な物質量 0.1×2＝0.2 mol、×111＝22.2 g。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "chemistry_basic",
-        "concentration"
-      ]
-    },
-    {
       "id": "science_shonan_104_chem_solution_02_014",
       "unit": "science.chemistry.change.mole.concentration",
       "category": "calculation",
@@ -413,28 +391,6 @@
       ],
       "answerIndex": 0,
       "explanation": "溶質の物質量は変わらない：1×100/1000 ÷ 500/1000。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "chemistry_basic",
-        "concentration"
-      ]
-    },
-    {
-      "id": "science_shonan_104_chem_solution_02_020",
-      "unit": "science.chemistry.change.mole.concentration",
-      "category": "calculation",
-      "prompt": "NaCl 11.7 g を水に溶かして 200 mL にした。モル濃度は何 mol/L か。（原子量 H=1.0, C=12, N=14, O=16, Na=23, Mg=24, Al=27, S=32, Cl=35.5, Ca=40 などを用いよ）",
-      "choices": [
-        "0.2 mol/L",
-        "1 mol/L",
-        "58.5 mol/L",
-        "0.04 mol/L"
-      ],
-      "answerIndex": 1,
-      "explanation": "11.7÷58.5＝0.2 mol、÷0.2 L＝1 mol/L。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -655,28 +611,6 @@
       ],
       "answerIndex": 3,
       "explanation": "3.65÷36.5＝0.1 mol、÷0.5 L＝0.2 mol/L。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "chemistry_basic",
-        "concentration"
-      ]
-    },
-    {
-      "id": "science_shonan_104_chem_solution_02_031",
-      "unit": "science.chemistry.change.mole.concentration",
-      "category": "calculation",
-      "prompt": "水 190 g に溶質 15 g を溶かした水溶液の質量パーセント濃度は？",
-      "choices": [
-        "7.89 %",
-        "14.6 %",
-        "7.32 %",
-        "0.0732 %"
-      ],
-      "answerIndex": 2,
-      "explanation": "15÷(15＋190)×100＝7.32 %。溶液の質量で割る。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [

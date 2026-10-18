@@ -3,6 +3,7 @@ import 'dart:math';
 import '../models/question.dart';
 import 'gen_core.dart';
 import 'gen_english.dart';
+import 'generated_index.dart';
 import 'gen_info.dart';
 import 'gen_japanese.dart';
 import 'gen_math.dart';
@@ -47,12 +48,19 @@ abstract final class GeneratedSets {
   }
 
   /// 作り方の版（作り方を変えたら上げる。問題 ID に入る）
-  static const version = 1;
+  static const version = 2;
 
   static const factor = 9;
 
   /// 1つのセットに足す問題の上限
   static const maxPerSet = 600;
+
+  /// 重なりを調べるときの問題の見分け方
+  static String keyOf(String prompt, String? sentence) => '$prompt|$sentence';
+
+  /// 「セット|単元」が、同じ問題ができる仲間の中で何番目か（番号, 仲間の数）。
+  /// 自動の問題は、問題文のハッシュで仲間に振り分けて、セットをまたいで重ならないようにする。
+  static (int, int) slotPosition(String slot) => generatedSlots[slot] ?? (0, 1);
 
   static QuestionSet augment(QuestionSet set) {
     if (set.origin != QuestionOrigin.original) return set;
@@ -65,26 +73,41 @@ abstract final class GeneratedSets {
       sample.putIfAbsent(u, () => q);
     }
     if (byUnitCount.isEmpty) return set;
-    final seen = {for (final q in set.questions) '${q.prompt}|${q.sentence}'};
+    final seen = {for (final q in set.questions) keyOf(q.prompt, q.sentence)};
     final extra = <QuizQuestion>[];
     var k = 0;
     for (final MapEntry(key: unit, value: count) in byUnitCount.entries) {
       final gens = gensFor(unit)!;
       final r = Random(stableHash('${set.setId}|$unit|$version'));
       final want = count * factor;
+      final (pos, size) = slotPosition('${set.setId}|$unit');
       var made = 0;
-      for (var tries = 0; tries < want * 10 && made < want; tries++) {
+      final maxTries = min(want * 10 * size, 20000);
+      // 新しい問題がしばらく出なければ、その単元の問題は出つくしたとみなす
+      var misses = 0;
+      for (var tries = 0;
+          tries < maxTries && made < want && misses < 2000;
+          tries++) {
         if (extra.length >= maxPerSet) break;
-        final g = gens[r.nextInt(gens.length)](r);
-        if (g == null) continue;
+        misses++;
+        final g0 = gens[r.nextInt(gens.length)](r);
+        if (g0 == null) continue;
+        final g = _normalize(g0);
+        final key = keyOf(g.prompt, g.sentence);
+        // 収録問題と同じもの・ほかのセットが受けもつものは使わない
+        if (recordedKeys.contains(stableHash(key))) continue;
+        if (stableHash('part|$key') % size != pos) continue;
+        if (seen.contains(key)) continue;
         final q = build(
             g,
             '${set.setId}_g${version}_${k.toString().padLeft(4, '0')}',
             sample[unit]!);
-        if (q == null || !seen.add('${q.prompt}|${q.sentence}')) continue;
+        if (q == null) continue;
+        seen.add(key);
         extra.add(q);
         k++;
         made++;
+        misses = 0;
       }
     }
     if (extra.isEmpty) return set;

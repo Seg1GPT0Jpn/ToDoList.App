@@ -5,48 +5,6 @@
   "version": 1,
   "questions": [
     {
-      "id": "mus_fu09_001",
-      "unit": "music.theory.notation.interval.basic",
-      "category": "calculation",
-      "prompt": "G と、その上の A の音程は？",
-      "choices": [
-        "長2度",
-        "増2度",
-        "短2度",
-        "減2度"
-      ],
-      "answerIndex": 0,
-      "explanation": "G→A は幹音で数えて2度、半音2個分なので長2度。"
-    },
-    {
-      "id": "mus_fu09_002",
-      "unit": "music.theory.notation.interval.basic",
-      "category": "calculation",
-      "prompt": "F と、その上の H の音程は？",
-      "choices": [
-        "長3度",
-        "完全5度",
-        "増4度",
-        "完全4度"
-      ],
-      "answerIndex": 2,
-      "explanation": "F→H は幹音で数えて4度、半音6個分なので増4度。"
-    },
-    {
-      "id": "mus_fu09_003",
-      "unit": "music.theory.notation.interval.basic",
-      "category": "calculation",
-      "prompt": "H と、その上の F の音程は？",
-      "choices": [
-        "増5度",
-        "完全4度",
-        "長6度",
-        "減5度"
-      ],
-      "answerIndex": 3,
-      "explanation": "H→F は幹音で数えて5度、半音6個分なので減5度。"
-    },
-    {
       "id": "mus_fu09_004",
       "unit": "music.theory.notation.interval.basic",
       "category": "calculation",
@@ -59,20 +17,6 @@
       ],
       "answerIndex": 1,
       "explanation": "G→E は幹音で数えて6度、半音9個分なので長6度。"
-    },
-    {
-      "id": "mus_fu09_005",
-      "unit": "music.theory.notation.interval.basic",
-      "category": "calculation",
-      "prompt": "A と、その上の E の音程は？",
-      "choices": [
-        "長6度",
-        "増5度",
-        "完全4度",
-        "完全5度"
-      ],
-      "answerIndex": 3,
-      "explanation": "A→E は幹音で数えて5度、半音7個分なので完全5度。"
     },
     {
       "id": "mus_fu09_006",
@@ -255,6 +199,20 @@
       ],
       "answerIndex": 1,
       "explanation": "G→As は幹音で数えて2度、半音1個分なので短2度。"
+    },
+    {
+      "id": "mus_fu09_019",
+      "unit": "music.theory.notation.interval.basic",
+      "category": "calculation",
+      "prompt": "D と、その上の B の音程は？",
+      "choices": [
+        "長6度",
+        "短6度",
+        "増5度",
+        "減7度"
+      ],
+      "answerIndex": 1,
+      "explanation": "D→B（変ロ）は幹音で数えて6度、半音8個分なので短6度。"
     }
   ]
 }
