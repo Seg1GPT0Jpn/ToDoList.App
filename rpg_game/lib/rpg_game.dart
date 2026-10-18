@@ -33,6 +33,8 @@ export 'src/learning/study_report.dart';
 export 'src/learning/question_stat.dart';
 export 'src/learning/review_planner.dart';
 export 'src/learning/review_tower.dart';
+export 'src/meta/study_log.dart';
+export 'src/meta/tsuzuri_link.dart';
 export 'src/meta/achievements.dart';
 export 'src/meta/enemy_species.dart';
 export 'src/meta/journal.dart';

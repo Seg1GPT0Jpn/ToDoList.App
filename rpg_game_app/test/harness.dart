@@ -7,6 +7,7 @@ import 'package:rpg_game_app/app/settings.dart';
 import 'package:rpg_game_app/app/theme.dart';
 import 'package:rpg_game_app/audio/music_director.dart';
 import 'package:rpg_game_app/classroom/classroom_backend.dart';
+import 'package:rpg_game_app/cloud/tsuzuri_link.dart';
 import 'package:rpg_game_app/story/story_player.dart';
 import 'package:rpg_game_app/data/meta_store.dart';
 import 'package:rpg_game_app/data/prefs_progress_repository.dart';
@@ -41,6 +42,7 @@ Future<RpgServices> openScreen(
   Size size = const Size(420, 860),
   bool keepPrefs = false,
   ClassroomBackend? classrooms,
+  TsuzuriBackend? tsuzuri,
   bool story = false,
   bool dark = false,
   bool bare = false,
@@ -67,6 +69,7 @@ Future<RpgServices> openScreen(
       settings: SettingsStore.memory(),
       music: MusicDirector(SilentAudio()),
       classrooms: classrooms,
+      tsuzuriBackend: tsuzuri,
       child: Builder(
         builder: (context) {
           services = RpgServices.of(context);

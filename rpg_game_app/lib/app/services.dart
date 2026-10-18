@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
@@ -9,8 +10,10 @@ import '../account/profile_repository.dart';
 import '../audio/music_director.dart';
 import '../classroom/classroom_backend.dart';
 import '../classroom/classroom_store.dart';
+import '../cloud/tsuzuri_link.dart';
 import '../data/meta_store.dart';
 import '../data/prefs_progress_repository.dart';
+import '../data/study_log_store.dart';
 import '../meta/streak_store.dart';
 import '../purchase/google_play_purchase_service.dart';
 import '../study/exam_world_store.dart';
@@ -39,6 +42,7 @@ class RpgServices extends InheritedWidget {
     this.matchmaking,
     this.usageSink,
     this.purchaseService,
+    this.tsuzuriBackend,
     required super.child,
   }) : questions = JsonQuestionSource(loadQuestionAsset),
        unlock = WorldUnlockService(
@@ -82,6 +86,27 @@ class RpgServices extends InheritedWidget {
 
   /// 使った機能の回数の送り先（Firebase の設定がなければ null）
   final UsageSink? usageSink;
+
+  /// つづり（学校生活アプリ）の Firebase（Firebase の設定がなければ null）
+  final TsuzuriBackend? tsuzuriBackend;
+
+  /// 日ごと・教科ごとの勉強時間と問題数
+  late final StudyLogStore studyLog = StudyLogStore(personalBooks.prefs);
+
+  /// つづりとの連携（使えない版では null）。はじめて使うときに前回の接続を確かめる
+  late final TsuzuriLinkController? tsuzuri = () {
+    final backend = tsuzuriBackend;
+    if (backend == null) return null;
+    final c = TsuzuriLinkController(
+      backend,
+      personalBooks.prefs,
+      log: () => studyLog.log,
+      record: () => meta.record,
+    );
+    studyLog.onSaved = c.scheduleSync;
+    unawaited(c.start());
+    return c;
+  }();
 
   /// 使った機能を数える（名前・ID は送らない。設定で止められる）
   late final UsageMeter usage = UsageMeter(

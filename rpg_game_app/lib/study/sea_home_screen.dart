@@ -18,9 +18,16 @@ import '../vocab/vocab_home.dart';
 
 /// 定期テストの海：教科を選び、単元・単語帳を選ぶ画面
 class SeaHomeScreen extends StatefulWidget {
-  const SeaHomeScreen({super.key, required this.personalBooks});
+  const SeaHomeScreen({
+    super.key,
+    required this.personalBooks,
+    this.initialSubject,
+  });
 
   final PersonalBooks personalBooks;
+
+  /// はじめに選んでおく教科（つづりのテスト予定から開いたときなど）
+  final String? initialSubject;
 
   @override
   State<SeaHomeScreen> createState() => _SeaHomeScreenState();
@@ -34,7 +41,9 @@ class _SeaHomeScreenState extends State<SeaHomeScreen> {
   }
 
   /// 選んでいる教科（english / science / social / japanese / math / information）
-  String _subject = 'english';
+  late String _subject = _subjects.any((e) => e.$1 == widget.initialSubject)
+      ? widget.initialSubject!
+      : 'english';
 
   static const _subjects = [
     ('english', '英語'),

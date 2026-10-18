@@ -263,6 +263,9 @@ class _BattleScreenState extends State<BattleScreen>
   FormatResponse? _response;
   bool _finishing = false;
 
+  /// バトルを始めた時刻（勉強時間の記録に使う）
+  final _startedAt = DateTime.now();
+
   @override
   void initState() {
     super.initState();
@@ -863,6 +866,13 @@ class _BattleScreenState extends State<BattleScreen>
       await services.repository.save(saved);
     }
     await _commitMeta(summary, saved);
+    // 教科ごとの勉強時間（つづりと連携していれば、つづりの勉強記録にも入る）
+    await services.studyLog.add(
+      widget.world.id,
+      spent: DateTime.now().difference(_startedAt),
+      answered: summary.answeredCount,
+      correct: summary.correctCount,
+    );
     widget.onFinished?.call(summary);
     if (!mounted) return;
     Navigator.of(context).pushReplacement(

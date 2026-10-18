@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:rpg_game/rpg_game.dart';
 
+import '../account/tsuzuri_link_card.dart';
 import '../app/pwa.dart';
 import '../meta/today_plan.dart';
 import '../account/account_screen.dart';
@@ -276,6 +277,8 @@ class WorldMapScreen extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 12),
+        // つづりと連携していれば、近いテストを出す
+        const TsuzuriUpcomingCard(),
         TodayPlanCard(
           onAdventure: () {
             final w = RpgCatalog.world(RpgCatalog.englishWorldId);

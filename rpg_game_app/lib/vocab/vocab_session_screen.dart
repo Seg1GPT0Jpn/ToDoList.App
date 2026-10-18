@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -84,6 +85,7 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
   void initState() {
     super.initState();
     UsageMeter.mark(context, 'vocab_study');
+    _services = context.getInheritedWidgetOfExactType<RpgServices>();
     _overcomeBefore = {
       for (final w in WeakCards.collected(widget.book, _progress)) w.card.id,
     };
@@ -92,11 +94,23 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
 
   bool _reported = false;
 
-  /// 正解した数を一度だけ知らせる
+  /// 勉強時間を記録する先（閉じるときには context を使えないので、はじめに覚えておく）
+  RpgServices? _services;
+
+  /// 正解した数を一度だけ知らせ、勉強時間を記録する
   void _report() {
     if (_reported) return;
     _reported = true;
     widget.onFinished?.call(_correct);
+    if (_answered == 0) return;
+    unawaited(
+      _services?.studyLog.add(
+        widget.book.worldId,
+        spent: DateTime.now().difference(_started),
+        answered: _answered,
+        correct: _correct,
+      ),
+    );
   }
 
   @override

@@ -28,6 +28,7 @@ import 'cloud/firestore_matchmaking.dart';
 import 'cloud/firestore_usage_sink.dart';
 import 'cloud/firestore_versus_backend.dart';
 import 'cloud/firebase_account_service.dart';
+import 'cloud/tsuzuri_firebase_backend.dart';
 import 'data/meta_store.dart';
 import 'data/prefs_progress_repository.dart';
 import 'study/exam_world_store.dart';
@@ -118,6 +119,7 @@ Future<void> main() async {
       duels: cloud == null
           ? null
           : FirestoreDuelBackend(cloud.auth, FirebaseFirestore.instance),
+      tsuzuriBackend: cloud == null ? null : FirebaseTsuzuriBackend(),
       child: TsuzuriQuestApp(
         onUserGesture: () {
           // ブラウザは、画面にさわるまで音を出させてくれない

@@ -5,6 +5,7 @@ import '../app/services.dart';
 import '../app/theme.dart';
 import '../art/paper.dart';
 import 'account_service.dart';
+import 'tsuzuri_link_card.dart';
 
 /// アカウント：ユーザー名の変更と、Google アカウントの登録（連携）
 class AccountScreen extends StatefulWidget {
@@ -189,6 +190,8 @@ class _AccountScreenState extends State<AccountScreen> {
                       ),
                     ),
                   ),
+                const SizedBox(height: 20),
+                const TsuzuriLinkCard(),
               ],
             );
           },
