@@ -126,4 +126,21 @@ void main() {
     expect(find.textContaining('この版ではつづりと連携できません'), findsOneWidget);
     expect(t.takeException(), isNull);
   });
+
+  test('つなげなかった理由を、なおし方といっしょに出す', () {
+    expect(
+      TsuzuriLinkController.connectErrorMessage(
+        Exception('[firebase_auth/unauthorized-domain] ...'),
+      ),
+      contains('承認済みドメイン'),
+    );
+    expect(
+      TsuzuriLinkController.connectErrorMessage(Exception('popup-blocked')),
+      contains('ポップアップ'),
+    );
+    expect(
+      TsuzuriLinkController.connectErrorMessage(Exception('x')),
+      startsWith('つづりにつなげませんでした'),
+    );
+  });
 }

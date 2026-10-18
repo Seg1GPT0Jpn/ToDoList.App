@@ -118,12 +118,33 @@ class TsuzuriLinkController extends ChangeNotifier {
     try {
       _email = await _backend.connect();
     } catch (e) {
-      _error = 'つづりにつなげませんでした（$e）';
+      _error = connectErrorMessage(e);
     }
     _busy = false;
     notifyListeners();
     if (connected) await sync();
     return connected;
+  }
+
+  /// つなげなかったときの説明（よくある原因は、なおし方もいっしょに）
+  static String connectErrorMessage(Object e) {
+    final text = '$e';
+    if (text.contains('unauthorized-domain')) {
+      return 'つづりの Firebase の「承認済みドメイン」に tsuzuri-quest-v2.web.app が'
+          '入っていないため、つなげませんでした（Firebase コンソール → Authentication → 設定）。';
+    }
+    if (text.contains('popup-blocked')) {
+      return 'ログインの画面（ポップアップ）がブロックされました。ブラウザの設定でポップアップを許可してください。';
+    }
+    if (text.contains('popup-closed') || text.contains('cancelled')) {
+      return 'ログインがとちゅうで閉じられました。もう一度ためしてください。';
+    }
+    if (text.contains('invalid-cert-hash') ||
+        text.contains('app-not-authorized')) {
+      return 'この Android アプリの署名が、つづりの Firebase に登録されていません'
+          '（tools/connect_tsuzuri_android.ps1 を、このアプリを作ったPCで実行してください）。';
+    }
+    return 'つづりにつなげませんでした（$e）';
   }
 
   /// つなぐのをやめる（つづりに送った記録は消さない）
