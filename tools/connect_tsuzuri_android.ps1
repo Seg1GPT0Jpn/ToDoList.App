@@ -2,25 +2,34 @@
 # 使い方（tq-2d で）：
 #   powershell -ExecutionPolicy Bypass -File tools\connect_tsuzuri_android.ps1
 # 必要なもの：firebase コマンド（つづりの公開で使っているもの）にログイン済みであること
-$ErrorActionPreference = 'Stop'
+# firebase や keytool が途中経過を出しても止まらないように、エラーは自分で判断する
+$ErrorActionPreference = 'Continue'
 $project = 'school-planner-30628'
 $package = 'com.kazu.rpg_game_app'
 $repo = Split-Path -Parent $PSScriptRoot
 $android = Join-Path $repo 'rpg_game_app\android'
 
+# firebase.ps1 ではなく cmd から呼ぶ（途中経過のメッセージをエラーあつかいしないため）
+function Invoke-Firebase([string[]]$argv) {
+  $line = ($argv | ForEach-Object { '"' + $_ + '"' }) -join ' '
+  return (cmd /c "firebase $line --project $project 2>nul" | Out-String)
+}
+
 function Invoke-FirebaseJson([string[]]$argv) {
-  $out = & firebase @argv --project $project --json 2>$null | Out-String
-  try { return ($out | ConvertFrom-Json) } catch { return $null }
+  $out = Invoke-Firebase ($argv + @('--json'))
+  $start = $out.IndexOf('{')
+  if ($start -lt 0) { return $null }
+  try { return ($out.Substring($start) | ConvertFrom-Json) } catch { return $null }
 }
 
 Write-Host '1/4 つづりの Firebase に、クエストの Android アプリを登録します…'
 $list = Invoke-FirebaseJson @('apps:list', 'ANDROID')
 $app = $null
 if ($list -and $list.result) {
-  $app = $list.result | Where-Object { $_.packageName -eq $package -or $_.displayName -eq 'つづりクエスト' } | Select-Object -First 1
+  $app = $list.result | Where-Object { $_.packageName -eq $package -or $_.displayName -eq 'Tsuzuri Quest' } | Select-Object -First 1
 }
 if (-not $app) {
-  $created = Invoke-FirebaseJson @('apps:create', 'ANDROID', 'つづりクエスト', '--package-name', $package)
+  $created = Invoke-FirebaseJson @('apps:create', 'ANDROID', 'Tsuzuri Quest', '--package-name', $package)
   if (-not $created -or -not $created.result) { throw 'アプリを登録できませんでした。firebase login をしてから、もう一度実行してください。' }
   $app = $created.result
 }
@@ -38,7 +47,7 @@ if (-not $keytool) { throw 'keytool が見つかりません（Android Studio �
 
 function Get-Shas([string]$store, [string]$alias, [string]$storePass, [string]$keyPass) {
   if (-not (Test-Path $store)) { return @() }
-  $text = & $keytool -list -v -keystore $store -alias $alias -storepass $storePass -keypass $keyPass 2>$null | Out-String
+  $text = cmd /c "`"$keytool`" -list -v -keystore `"$store`" -alias `"$alias`" -storepass `"$storePass`" -keypass `"$keyPass`" 2>nul" | Out-String
   $found = @()
   foreach ($m in [regex]::Matches($text, 'SHA(?:1|256):\s*([0-9A-Fa-f:]+)')) { $found += $m.Groups[1].Value }
   return $found
@@ -62,7 +71,7 @@ if ($shas.Count -eq 0) { throw '署名の SHA が見つかりませんでした�
 
 Write-Host '3/4 SHA を登録します…'
 foreach ($sha in ($shas | Select-Object -Unique)) {
-  & firebase apps:android:sha:create $appId $sha --project $project 2>$null | Out-Null
+  Invoke-Firebase @('apps:android:sha:create', $appId, $sha) | Out-Null
   Write-Host "   $sha"
 }
 
