@@ -119,7 +119,9 @@ Future<void> main() async {
       duels: cloud == null
           ? null
           : FirestoreDuelBackend(cloud.auth, FirebaseFirestore.instance),
-      tsuzuriBackend: cloud == null ? null : FirebaseTsuzuriBackend(),
+      tsuzuriBackend: cloud == null || !FirebaseTsuzuriBackend.supported
+          ? null
+          : FirebaseTsuzuriBackend(),
       child: TsuzuriQuestApp(
         onUserGesture: () {
           // ブラウザは、画面にさわるまで音を出させてくれない

@@ -28,6 +28,9 @@
 - バトル・単語帳・暗記カードの練習が終わるたびに、5秒後にまとめてつづりへ送る
 - つづり：ホームの「つづりクエスト」カードに成果が出る。勉強時間は勉強記録・勉強時間の目標にも入る
 
-## 今できないこと
+## Android 版でも使うとき
 
-- Android 版のクエストからの連携（つづりの Firebase に、クエストの Android アプリの登録が必要）。今は Web 版で使う。
+1. tq-2d で `powershell -ExecutionPolicy Bypass -File tools\connect_tsuzuri_android.ps1` を実行する
+   （つづりの Firebase にクエストの Android アプリを登録し、署名の SHA-1/SHA-256 を登録する）。
+2. 最後に出る `tsuzuri android appId: …` の1行を Claude に渡す
+   → `FirebaseTsuzuriBackend.androidAppId` に入れると、Android 版にも「つづりと連携」が出る。

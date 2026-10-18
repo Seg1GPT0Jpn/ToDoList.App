@@ -28,6 +28,28 @@ class FirebaseTsuzuriBackend implements TsuzuriBackend {
     storageBucket: 'school-planner-30628.firebasestorage.app',
   );
 
+  /// つづりの Firebase に登録した、クエストの Android アプリの ID
+  /// （tools/connect_tsuzuri_android.ps1 が表示する値。まだなら null）
+  static const String? androidAppId = null;
+
+  /// つづりの Firebase の Android 用 API キー
+  static const androidApiKey = 'AIzaSyBFEsu05iHKjeRSBfoT5QAweKveboFxZTA';
+
+  /// この端末でつづりと連携できるか（Android はアプリの登録がすんでから）
+  static bool get supported =>
+      kIsWeb ||
+      (defaultTargetPlatform == TargetPlatform.android && androidAppId != null);
+
+  static FirebaseOptions get _options => kIsWeb
+      ? options
+      : FirebaseOptions(
+          apiKey: androidApiKey,
+          appId: androidAppId!,
+          messagingSenderId: options.messagingSenderId,
+          projectId: options.projectId,
+          storageBucket: options.storageBucket,
+        );
+
   FirebaseApp? _app;
 
   Future<FirebaseApp> _ensure() async {
@@ -36,7 +58,10 @@ class FirebaseTsuzuriBackend implements TsuzuriBackend {
     for (final a in Firebase.apps) {
       if (a.name == appName) return _app = a;
     }
-    return _app = await Firebase.initializeApp(name: appName, options: options);
+    return _app = await Firebase.initializeApp(
+      name: appName,
+      options: _options,
+    );
   }
 
   Future<FirebaseAuth> _auth() async =>
