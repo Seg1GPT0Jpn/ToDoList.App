@@ -8,6 +8,7 @@ import '../app/practice.dart';
 import '../study/comprehensive_exam_screen.dart';
 import 'curriculum_map_screen.dart';
 import 'growth_screen.dart';
+import 'question_library_screen.dart';
 import 'design.dart';
 
 /// 学習ステータス：実際の正答率から計算した、分野ごとの熟練度。
@@ -71,6 +72,23 @@ class LearningStatusScreen extends StatelessWidget {
                     onTap: () => Navigator.of(context).push(
                       MaterialPageRoute<void>(
                         builder: (_) => const CurriculumMapScreen(),
+                      ),
+                    ),
+                  ),
+                ),
+                Card(
+                  child: ListTile(
+                    key: const ValueKey('open-question-library'),
+                    leading: Icon(
+                      Icons.library_books_outlined,
+                      color: TsuzuriColors.accent,
+                    ),
+                    title: const Text('問題集・解説'),
+                    subtitle: const Text('全教科の問題を、答えと解説つきで見る・探す'),
+                    trailing: const Icon(Icons.chevron_right),
+                    onTap: () => Navigator.of(context).push(
+                      MaterialPageRoute<void>(
+                        builder: (_) => const QuestionLibraryScreen(),
                       ),
                     ),
                   ),

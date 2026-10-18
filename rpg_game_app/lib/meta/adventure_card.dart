@@ -18,6 +18,7 @@ import 'navigator_card.dart';
 import 'story_screen.dart';
 import 'streak_store.dart';
 import 'learning_status_screen.dart';
+import 'question_library_screen.dart';
 import 'bestiary_screen.dart';
 import 'design.dart';
 import 'review_tower_screen.dart';
@@ -152,6 +153,11 @@ class AdventureCard extends StatelessWidget {
                     icon: Icons.insights,
                     label: '学習ステータス',
                     builder: (_) => const LearningStatusScreen(),
+                  ),
+                  _MenuButton(
+                    icon: Icons.library_books_outlined,
+                    label: '問題集・解説',
+                    builder: (_) => const QuestionLibraryScreen(),
                   ),
                   _MenuButton(
                     icon: Icons.alt_route,

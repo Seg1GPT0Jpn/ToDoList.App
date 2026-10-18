@@ -44,6 +44,7 @@ export 'src/models/player_profile.dart';
 export 'src/models/player_stats.dart';
 export 'src/models/question.dart';
 export 'src/models/question_format.dart';
+export 'src/models/question_answer_text.dart';
 export 'src/models/figure_spec.dart';
 export 'src/models/rpg_progress.dart';
 export 'src/models/stage.dart';

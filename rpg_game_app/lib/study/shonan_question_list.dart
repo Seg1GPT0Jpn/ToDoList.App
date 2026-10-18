@@ -61,13 +61,7 @@ class _ShonanQuestionListScreenState extends State<ShonanQuestionListScreen> {
     });
   }
 
-  bool _match(QuizQuestion q) {
-    if (_query.isEmpty) return true;
-    final t = _query.toLowerCase();
-    return q.prompt.toLowerCase().contains(t) ||
-        (q.explanation ?? '').toLowerCase().contains(t) ||
-        q.choices.any((c) => c.toLowerCase().contains(t));
-  }
+  bool _match(QuizQuestion q) => QuestionAnswerText.matches(q, _query);
 
   @override
   Widget build(BuildContext context) {
@@ -133,7 +127,7 @@ class _ShonanQuestionListScreenState extends State<ShonanQuestionListScreen> {
                   ),
                   for (final q in s.questions)
                     if (seen.add(q.id) && _match(q))
-                      _QuestionTile(
+                      QuestionAnswerTile(
                         key: ValueKey('shonan-q-${q.id}'),
                         number: ++n,
                         question: q,
@@ -147,24 +141,30 @@ class _ShonanQuestionListScreenState extends State<ShonanQuestionListScreen> {
   }
 }
 
-class _QuestionTile extends StatelessWidget {
-  const _QuestionTile({
+/// 問題1つ：開くと選択肢・正解・解説が見える
+class QuestionAnswerTile extends StatelessWidget {
+  const QuestionAnswerTile({
     super.key,
     required this.number,
     required this.question,
     required this.hideAnswer,
     this.passage,
+    this.passageKeyPrefix = 'shonan-q-passage-',
   });
 
   final int number;
   final QuizQuestion question;
   final bool hideAnswer;
   final Passage? passage;
+  final String passageKeyPrefix;
 
   @override
   Widget build(BuildContext context) {
     final q = question;
     final style = const TextStyle(fontSize: 14, height: 1.5);
+    final choice = q.format == QuestionFormat.choice;
+    final explain = QuestionAnswerText.explain(q);
+    final options = choice ? q.choices : QuestionAnswerText.options(q);
     return Card(
       margin: const EdgeInsets.symmetric(vertical: 3),
       child: ExpansionTile(
@@ -174,30 +174,47 @@ class _QuestionTile extends StatelessWidget {
         title: Text('Q$number. ${q.prompt}', style: style),
         children: [
           if (q.sentence != null) Text(q.sentence!, style: style),
-          for (final (i, c) in q.choices.indexed)
+          if (q.cloze != null) Text(q.cloze!.text, style: style),
+          if (!choice)
+            Text(
+              '（${q.format.label}）',
+              style: style.copyWith(fontSize: 12, color: TsuzuriColors.inkSoft),
+            ),
+          for (final (i, c) in options.indexed)
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 2),
               child: Text(
-                '${!hideAnswer && i == q.answerIndex ? '✓' : '　'} ${String.fromCharCode(0x2460 + i)} $c',
+                '${choice && !hideAnswer && i == q.answerIndex ? '✓' : '　'} ${i < 20 ? String.fromCharCode(0x2460 + i) : '・'} $c',
                 style: style.copyWith(
-                  fontWeight: !hideAnswer && i == q.answerIndex
+                  fontWeight: choice && !hideAnswer && i == q.answerIndex
                       ? FontWeight.w800
                       : FontWeight.normal,
-                  color: !hideAnswer && i == q.answerIndex
+                  color: choice && !hideAnswer && i == q.answerIndex
                       ? TsuzuriColors.accent
                       : null,
                 ),
               ),
             ),
-          if (!hideAnswer && (q.explanation ?? '').isNotEmpty) ...[
+          if (!choice && !hideAnswer)
+            Padding(
+              padding: const EdgeInsets.only(top: 4),
+              child: Text(
+                '✓ 正解：${QuestionAnswerText.answer(q)}',
+                style: style.copyWith(
+                  fontWeight: FontWeight.w800,
+                  color: TsuzuriColors.accent,
+                ),
+              ),
+            ),
+          if (!hideAnswer && explain.isNotEmpty) ...[
             const SizedBox(height: 6),
-            Text('解説：${q.explanation}', style: style.copyWith(fontSize: 13)),
+            Text('解説：$explain', style: style.copyWith(fontSize: 13)),
           ],
           if (passage != null)
             Align(
               alignment: Alignment.centerLeft,
               child: TextButton.icon(
-                key: ValueKey('shonan-q-passage-${q.id}'),
+                key: ValueKey('$passageKeyPrefix${q.id}'),
                 icon: const Icon(Icons.menu_book, size: 18),
                 label: Text('本文（${passage!.title.split('—').last.trim()}）'),
                 onPressed: () => Navigator.of(context).push(
