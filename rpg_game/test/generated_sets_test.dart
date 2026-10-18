@@ -39,6 +39,12 @@ void main() {
           expect(c.trim(), isNotEmpty, reason: q.id);
         }
         expect(q.tags, contains('generated'));
+        // マイナスは「−」で書く（プログラムの問題は除く）
+        if (!q.prompt.contains('print(') && !q.prompt.contains('def ')) {
+          for (final c in [q.prompt, ...q.choices]) {
+            expect(RegExp(r'(^|[^A-Za-z/])-\d').hasMatch(c), isFalse, reason: '${q.id}: $c');
+          }
+        }
       }
     }
     // ignore: avoid_print

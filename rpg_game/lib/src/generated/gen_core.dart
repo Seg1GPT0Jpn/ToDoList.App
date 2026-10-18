@@ -71,6 +71,42 @@ abstract final class Fmt {
   static String linear(int a, [String v = 'x']) =>
       a == 0 ? v : (a > 0 ? '$v+$a' : '$v−${-a}');
 
+  /// 小数：[v]÷10^[places] を、余分な0を取って表す（588, 1 → 58.8）
+  static String dec(int v, int places) {
+    if (places <= 0) return n(v * _pow10(-places));
+    final neg = v < 0;
+    final a = v.abs();
+    final d = _pow10(places);
+    var frac = (a % d).toString().padLeft(places, '0');
+    frac = frac.replaceFirst(RegExp(r'0+$'), '');
+    final body = frac.isEmpty ? '${a ~/ d}' : '${a ~/ d}.$frac';
+    return neg ? '−$body' : body;
+  }
+
+  static int _pow10(int e) {
+    var v = 1;
+    for (var i = 0; i < e; i++) {
+      v *= 10;
+    }
+    return v;
+  }
+
+  /// a×10ⁿ の形（有効数字2けた）。[mant10] は仮数×10（例：12 → 1.2）
+  static String sci(int mant10, int exp) {
+    var m = mant10, e = exp;
+    while (m >= 100) {
+      if (m % 10 != 0) break;
+      m ~/= 10;
+      e++;
+    }
+    while (m >= 100) {
+      m = (m / 10).round();
+      e++;
+    }
+    final head = m % 10 == 0 ? '${m ~/ 10}.0' : dec(m, 1);
+    return '$head×10${sup(e)}';
+  }
+
   /// 平方根を簡単にした形（12 → 2√3、9 → 3）
   static String sqrt(int nn, {int coef = 1}) {
     final (k, m) = simplifySqrt(nn);

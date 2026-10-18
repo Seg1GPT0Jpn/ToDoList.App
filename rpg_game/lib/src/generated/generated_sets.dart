@@ -4,6 +4,7 @@ import '../models/question.dart';
 import 'gen_core.dart';
 import 'gen_info.dart';
 import 'gen_math.dart';
+import 'gen_science.dart';
 
 /// 問題セットを読みこむときに、計算や表から作れる問題を足す。
 ///
@@ -13,7 +14,11 @@ import 'gen_math.dart';
 /// - 問題ファイルは増えないので、ダウンロードは重くならない
 abstract final class GeneratedSets {
   /// 単元 → 作り方
-  static final Map<String, List<Gen>> byUnit = {...mathGens, ...infoGens};
+  static final Map<String, List<Gen>> byUnit = {
+    ...mathGens,
+    ...infoGens,
+    ...scienceGens
+  };
 
   /// 作り方の版（作り方を変えたら上げる。問題 ID に入る）
   static const version = 1;
@@ -67,7 +72,8 @@ abstract final class GeneratedSets {
   }
 
   /// 1問を4択の問題にする（まちがいが3つそろわなければ null）
-  static QuizQuestion? build(GenQ g, String id, QuizQuestion sample) {
+  static QuizQuestion? build(GenQ g0, String id, QuizQuestion sample) {
+    final g = _normalize(g0);
     final wrong = <String>[];
     for (final w in g.wrong) {
       if (w.isEmpty || w == g.answer || wrong.contains(w)) continue;
@@ -89,6 +95,22 @@ abstract final class GeneratedSets {
       targetGrade: sample.targetGrade,
       phase: sample.phase,
       tags: [...sample.tags, 'generated'],
+    );
+  }
+
+  static final _asciiMinus = RegExp(r'(^|[^A-Za-z/])-(\d)');
+
+  /// マイナス記号を「−」にそろえる（プログラムの問題はそのまま）
+  static GenQ _normalize(GenQ g) {
+    if (g.prompt.contains('print(') || g.prompt.contains('def ')) return g;
+    String f(String t) =>
+        t.replaceAllMapped(_asciiMinus, (m) => '${m[1]}−${m[2]}');
+    return GenQ(
+      prompt: f(g.prompt),
+      answer: f(g.answer),
+      wrong: [for (final w in g.wrong) f(w)],
+      explanation: f(g.explanation),
+      category: g.category,
     );
   }
 }
