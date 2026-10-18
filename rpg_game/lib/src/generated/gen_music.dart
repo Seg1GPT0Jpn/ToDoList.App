@@ -440,12 +440,12 @@ GenQ? _noteLength(Random r) {
   if (!count.isInt) return null;
   return GenQ(
     prompt: '$top/$bottom 拍子の1小節に入る$nameの数は？',
-    answer: '${count.num}つ',
+    answer: _count(count.num),
     wrong: [
-      '$topつ',
-      '${count.num * 2}つ',
-      '${max(1, count.num ~/ 2)}つ',
-      '${count.num + 1}つ'
+      _count(top),
+      _count(count.num * 2),
+      _count(max(1, count.num ~/ 2)),
+      _count(count.num + 1)
     ],
     explanation: '1小節は4分音符 $bar 個分。$nameは $len 個分。',
   );

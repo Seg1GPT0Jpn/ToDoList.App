@@ -2,7 +2,6 @@ import 'dart:io';
 import 'dart:math';
 
 import 'package:rpg_game/rpg_game.dart';
-import 'package:rpg_game/src/generated/gen_core.dart';
 import 'package:rpg_game/src/generated/generated_sets.dart';
 import 'package:test/test.dart';
 
@@ -15,7 +14,8 @@ List<QuestionSet> _allSets() => [
         JsonQuestionSource.parse(f.readAsStringSync()),
     ];
 
-final _bad = RegExp(r'NaN|null|Infinity|\+−|−−|\+\+|\+\-|\-\-|\^\(\)|\(\)|−0(?![.\d×/])|[×−+]−\d');
+final _bad = RegExp(
+    r'NaN|null|Infinity|\+−|−−|\+\+|\+\-|\-\-|\^\(\)|\(\)|−0(?![.\d×/])|[×−+]−\d');
 
 void main() {
   test('足した問題は、4択の形がととのい、変な表記がない。毎回同じ問題になる', () {
@@ -25,7 +25,8 @@ void main() {
     for (final s in sets) {
       final a = GeneratedSets.augment(s);
       final b = GeneratedSets.augment(s);
-      expect(a.questions.map((q) => q.prompt), b.questions.map((q) => q.prompt));
+      expect(
+          a.questions.map((q) => q.prompt), b.questions.map((q) => q.prompt));
       before += s.questions.length;
       after += a.questions.length;
       final (x, y) = bySubject[s.worldId] ?? (0, 0);
@@ -42,7 +43,8 @@ void main() {
         // マイナスは「−」で書く（プログラムの問題は除く）
         if (!q.prompt.contains('print(') && !q.prompt.contains('def ')) {
           for (final c in [q.prompt, ...q.choices]) {
-            expect(RegExp(r'(^|[^A-Za-z/])-\d').hasMatch(c), isFalse, reason: '${q.id}: $c');
+            expect(RegExp(r'(^|[^A-Za-z/])-\d').hasMatch(c), isFalse,
+                reason: '${q.id}: $c');
           }
         }
       }
@@ -61,10 +63,12 @@ void main() {
         for (var i = 0; i < 2; i++) {
           final q = g(r);
           if (q == null) continue;
-          out.writeln('[${e.key}] ${q.prompt} → ${q.answer}  ×${q.wrong.take(3).join(' / ')}  // ${q.explanation}');
+          out.writeln(
+              '[${e.key}] ${q.prompt} → ${q.answer}  ×${q.wrong.take(3).join(' / ')}  // ${q.explanation}');
         }
       }
     }
-    File('${Directory.systemTemp.path}/gen_samples.txt').writeAsStringSync(out.toString());
+    File('${Directory.systemTemp.path}/gen_samples.txt')
+        .writeAsStringSync(out.toString());
   });
 }
