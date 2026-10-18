@@ -4,6 +4,7 @@ import '../models/question.dart';
 import 'gen_core.dart';
 import 'gen_english.dart';
 import 'gen_info.dart';
+import 'gen_japanese.dart';
 import 'gen_math.dart';
 import 'gen_music.dart';
 import 'gen_science.dart';
@@ -24,10 +25,14 @@ abstract final class GeneratedSets {
     ...musicGens,
     ...englishGens,
     ...socialGens,
+    ...japaneseGens,
   };
 
   /// 単元の上の階層 → 作り方（その下の単元すべてに使う。歴史の時代など）
-  static final Map<String, List<Gen>> byPrefix = {...socialPrefixGens};
+  static final Map<String, List<Gen>> byPrefix = {
+    ...socialPrefixGens,
+    ...japanesePrefixGens,
+  };
 
   /// 単元の作り方（なければ null）
   static List<Gen>? gensFor(String unit) {
