@@ -33,7 +33,8 @@ void main() {
       bySubject[s.worldId] = (x + s.questions.length, y + a.questions.length);
       final prompts = <String>{};
       for (final q in a.questions.skip(s.questions.length)) {
-        expect(prompts.add(q.prompt), isTrue, reason: '${q.id} 問題文が重複');
+        expect(prompts.add('${q.prompt}|${q.sentence}'), isTrue,
+            reason: '${q.id} 問題文が重複');
         expect(q.choices, hasLength(4));
         for (final c in [q.prompt, ...q.choices, q.explanation ?? '']) {
           expect(_bad.hasMatch(c), isFalse, reason: '${q.id}: $c');
@@ -64,7 +65,7 @@ void main() {
           final q = g(r);
           if (q == null) continue;
           out.writeln(
-              '[${e.key}] ${q.prompt} → ${q.answer}  ×${q.wrong.take(3).join(' / ')}  // ${q.explanation}');
+              '[${e.key}] ${q.prompt} ${q.sentence ?? ''} → ${q.answer}  ×${q.wrong.take(3).join(' / ')}  // ${q.explanation}');
         }
       }
     }

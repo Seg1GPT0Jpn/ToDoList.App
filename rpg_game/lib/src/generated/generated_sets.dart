@@ -2,6 +2,7 @@ import 'dart:math';
 
 import '../models/question.dart';
 import 'gen_core.dart';
+import 'gen_english.dart';
 import 'gen_info.dart';
 import 'gen_math.dart';
 import 'gen_music.dart';
@@ -20,6 +21,7 @@ abstract final class GeneratedSets {
     ...infoGens,
     ...scienceGens,
     ...musicGens,
+    ...englishGens,
   };
 
   /// 作り方の版（作り方を変えたら上げる。問題 ID に入る）
@@ -41,7 +43,7 @@ abstract final class GeneratedSets {
       sample.putIfAbsent(u, () => q);
     }
     if (byUnitCount.isEmpty) return set;
-    final seen = {for (final q in set.questions) q.prompt};
+    final seen = {for (final q in set.questions) '${q.prompt}|${q.sentence}'};
     final extra = <QuizQuestion>[];
     var k = 0;
     for (final MapEntry(key: unit, value: count) in byUnitCount.entries) {
@@ -57,7 +59,7 @@ abstract final class GeneratedSets {
             g,
             '${set.setId}_g${version}_${k.toString().padLeft(4, '0')}',
             sample[unit]!);
-        if (q == null || !seen.add(q.prompt)) continue;
+        if (q == null || !seen.add('${q.prompt}|${q.sentence}')) continue;
         extra.add(q);
         k++;
         made++;
@@ -91,6 +93,7 @@ abstract final class GeneratedSets {
       unit: sample.unit,
       category: g.category,
       prompt: g.prompt,
+      sentence: g.sentence,
       choices: choices,
       answerIndex: pos,
       explanation: g.explanation,
@@ -113,6 +116,7 @@ abstract final class GeneratedSets {
       wrong: [for (final w in g.wrong) f(w)],
       explanation: f(g.explanation),
       category: g.category,
+      sentence: g.sentence,
     );
   }
 }

@@ -10,7 +10,11 @@ class GenQ {
     required this.wrong,
     required this.explanation,
     this.category = QuestionCategory.calculation,
+    this.sentence,
   });
+
+  /// 問題文とは別に出す英文など（空欄 (   ) をふくむ）
+  final String? sentence;
 
   final String prompt;
   final String answer;
