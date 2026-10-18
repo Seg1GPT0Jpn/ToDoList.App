@@ -102,6 +102,32 @@ void main() {
       expect(p.subject('biology_basic').hasRange, isFalse);
     });
 
+    test('前に作ったテストに、範囲表の問題セットを足せる（消さない・二度足さない）', () {
+      final old = SchoolExamPlan(
+        id: 'old',
+        title: '1年後期中間試験',
+        createdAt: DateTime(2026, 10, 1),
+        subjects: const {
+          'math1': SubjectExamPlan(
+              subjectId: 'math1', existingSetIds: ['math_m1_01']),
+        },
+      );
+      expect(ShonanTableSets.missing(old), greaterThan(0));
+      final p = ShonanTableSets.addTo(old, now: DateTime(2026, 10, 18));
+      expect(p.subject('math1').existingSetIds,
+          containsAll(['math_m1_01', 'math_m1_16', 'math_m2_04']));
+      expect(p.subject('math1').committeeSetIds,
+          contains('math_shonan_104_m1_data_01'));
+      expect(ShonanTableSets.missing(p), 0);
+      expect(ShonanTableSets.addTo(p, now: DateTime(2026, 10, 18)).toMap(),
+          p.toMap());
+      // 範囲表から作っていないテストは変えない
+      final mine = old.copyWith(title: '自分のテスト');
+      expect(ShonanTableSets.missing(mine), 0);
+      expect(identical(ShonanTableSets.addTo(mine, now: DateTime(2026)), mine),
+          isTrue);
+    });
+
     test('範囲表の科目はすべて11科目のどれか', () {
       for (final (sheet, _) in ShonanRangeTable.sheets) {
         final p = ShonanRangeTable.plan(sheet, id: sheet, now: DateTime(2026));

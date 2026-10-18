@@ -64,6 +64,7 @@ export 'src/study/daily_challenge.dart';
 export 'src/study/exam_world.dart';
 export 'src/study/school_exam.dart';
 export 'src/study/shonan_range_table.dart';
+export 'src/study/shonan_table_sets.dart';
 export 'src/study/inn_lessons.dart';
 export 'src/study/practice_session.dart';
 export 'src/study/realm.dart';

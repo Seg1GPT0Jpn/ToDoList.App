@@ -22,6 +22,13 @@ class ShonanRangeTable {
             subjectId: 'gendai_kokugo',
             rangeText: '',
             examDate: DateTime.parse('2026-08-25'),
+            existingSetIds: const [
+              'japanese_gendai_01',
+              'japanese_gendai_02',
+              'japanese_kanji_01',
+              'japanese_gendai_04',
+              'japanese_bungakushi_01'
+            ],
             status: RangeStatus.entered,
             materials: const [
               StudyMaterial(
@@ -49,6 +56,7 @@ class ShonanRangeTable {
             subjectId: 'gengo_bunka',
             rangeText: '',
             examDate: DateTime.parse('2026-08-27'),
+            existingSetIds: const ['japanese_kobun_01', 'japanese_kobun_02'],
             status: RangeStatus.entered,
             materials: const [
               StudyMaterial(
@@ -67,6 +75,15 @@ class ShonanRangeTable {
             subjectId: 'math1',
             rangeText: '2次関数',
             examDate: DateTime.parse('2026-08-28'),
+            existingSetIds: const [
+              'math_m1_10',
+              'math_m1_11',
+              'math_m1_12',
+              'math_m1_13',
+              'math_m1_14',
+              'math_m1_15',
+              'math_quadratic_app_01'
+            ],
             status: RangeStatus.entered,
             materials: const [
               StudyMaterial(
@@ -83,6 +100,14 @@ class ShonanRangeTable {
             subjectId: 'math_a',
             rangeText: '確率',
             examDate: DateTime.parse('2026-08-26'),
+            existingSetIds: const [
+              'math_ma_01',
+              'math_ma_02',
+              'math_ma_03',
+              'math_ma_04',
+              'math_ma_05',
+              'math_ma_06'
+            ],
             status: RangeStatus.entered,
             materials: const [
               StudyMaterial(
@@ -124,6 +149,7 @@ class ShonanRangeTable {
             subjectId: 'ronhyo1',
             rangeText: '',
             examDate: DateTime.parse('2026-08-25'),
+            existingSetIds: const ['english_stage_01', 'english_stage_02'],
             status: RangeStatus.entered,
             materials: const [
               StudyMaterial(
@@ -148,6 +174,11 @@ class ShonanRangeTable {
             subjectId: 'chemistry_basic',
             rangeText: '',
             examDate: DateTime.parse('2026-08-29'),
+            existingSetIds: const [
+              'science_chemistry_02',
+              'science_chemistry_03',
+              'science_chemistry_04'
+            ],
             status: RangeStatus.entered,
             materials: const [
               StudyMaterial(
@@ -164,6 +195,7 @@ class ShonanRangeTable {
             subjectId: 'biology_basic',
             rangeText: '',
             examDate: DateTime.parse('2026-08-26'),
+            existingSetIds: const ['science_biology_03'],
             status: RangeStatus.entered,
             materials: const [
               StudyMaterial(
@@ -230,6 +262,14 @@ class ShonanRangeTable {
         subjects['gendai_kokugo'] = SubjectExamPlan(
             subjectId: 'gendai_kokugo',
             rangeText: '',
+            existingSetIds: const [
+              'japanese_gendai_01',
+              'japanese_gendai_02',
+              'japanese_kanji_01',
+              'japanese_gendai_03',
+              'japanese_gendai_04',
+              'japanese_bungakushi_01'
+            ],
             status: RangeStatus.entered,
             materials: const [
               StudyMaterial(
@@ -256,6 +296,12 @@ class ShonanRangeTable {
         subjects['gengo_bunka'] = SubjectExamPlan(
             subjectId: 'gengo_bunka',
             rangeText: '',
+            existingSetIds: const [
+              'japanese_kobun_01',
+              'japanese_kobun_02',
+              'japanese_kanbun_01',
+              'japanese_kanbun_02'
+            ],
             status: RangeStatus.entered,
             materials: const [
               StudyMaterial(
@@ -280,6 +326,18 @@ class ShonanRangeTable {
         subjects['math1'] = SubjectExamPlan(
             subjectId: 'math1',
             rangeText: '数Ⅰ：データの分析　数Ⅱ：式と証明、複素数',
+            existingSetIds: const [
+              'math_m1_16',
+              'math_m1_17',
+              'math_m1_18',
+              'math_m1_stat_01',
+              'math_m2_01',
+              'math_m2_02',
+              'math_m2_03',
+              'math_m2_04',
+              'math_m2_05',
+              'math_m2_06'
+            ],
             committeeSetIds: const [
               'math_shonan_104_m1_data_01',
               'math_shonan_104_m1_data_02',
@@ -314,6 +372,7 @@ class ShonanRangeTable {
         subjects['math_a'] = SubjectExamPlan(
             subjectId: 'math_a',
             rangeText: '数学と人間活動',
+            existingSetIds: const ['math_ma_10', 'math_ma_11', 'math_ma_12'],
             committeeSetIds: const [
               'math_shonan_104_ma_integer_01',
               'math_shonan_104_ma_integer_02',
@@ -362,6 +421,10 @@ class ShonanRangeTable {
         subjects['chemistry_basic'] = SubjectExamPlan(
             subjectId: 'chemistry_basic',
             rangeText: '',
+            existingSetIds: const [
+              'science_chemistry_05',
+              'science_chemistry_06'
+            ],
             committeeSetIds: const [
               'science_shonan_104_chem_mole_01',
               'science_shonan_104_chem_mole_02',
@@ -399,6 +462,14 @@ class ShonanRangeTable {
         subjects['public_economy'] = SubjectExamPlan(
             subjectId: 'public_economy',
             rangeText: '',
+            existingSetIds: const [
+              'social_pol_10',
+              'social_pol_11',
+              'social_pol_12',
+              'social_pol_13',
+              'social_pol_14',
+              'social_pol_15'
+            ],
             committeeSetIds: const [
               'social_shonan_104_public_economy_01',
               'social_shonan_104_public_economy_02',
@@ -430,6 +501,14 @@ class ShonanRangeTable {
         subjects['gendai_kokugo'] = SubjectExamPlan(
             subjectId: 'gendai_kokugo',
             rangeText: '',
+            existingSetIds: const [
+              'japanese_gendai_01',
+              'japanese_gendai_02',
+              'japanese_kanji_01',
+              'japanese_gendai_03',
+              'japanese_gendai_04',
+              'japanese_bungakushi_01'
+            ],
             status: RangeStatus.entered,
             materials: const [
               StudyMaterial(
@@ -456,6 +535,7 @@ class ShonanRangeTable {
         subjects['gengo_bunka'] = SubjectExamPlan(
             subjectId: 'gengo_bunka',
             rangeText: '',
+            existingSetIds: const ['japanese_kobun_01', 'japanese_kobun_02'],
             status: RangeStatus.entered,
             materials: const [
               StudyMaterial(

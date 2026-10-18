@@ -159,6 +159,34 @@ void main() {
     await t.pump(const Duration(seconds: 10));
   });
 
+  testWidgets('前に範囲表から作ったテストに、範囲表に合う問題セットをボタンで足せる', (t) async {
+    final old = SchoolExamPlan(
+      id: 'old',
+      title: '1年後期中間試験',
+      createdAt: DateTime(2026, 10, 1),
+    );
+    await openScreen(
+      t,
+      const ShonanExamDetailScreen(planId: 'old'),
+      prefs: {
+        SchoolExamStore.key: jsonEncode([old.toMap()]),
+      },
+      frames: 10,
+    );
+    final add = find.byKey(const ValueKey('shonan-add-table-sets'));
+    expect(add, findsOneWidget);
+    await t.tap(add);
+    await _frames(t);
+    expect(add, findsNothing);
+    await t.scrollUntilVisible(
+      find.byKey(const ValueKey('shonan-subject-public_economy')),
+      300,
+      scrollable: find.byType(Scrollable).first,
+    );
+    expect(find.textContaining('既存の問題セット：6'), findsOneWidget);
+    expect(t.takeException(), isNull);
+  });
+
   testWidgets('既存の試験対策ワールドのデータとは別のキーに保存し、壊さない', (t) async {
     SharedPreferences.setMockInitialValues({
       'exam_worlds_v1': '[]',

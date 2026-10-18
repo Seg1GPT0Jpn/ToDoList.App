@@ -20,6 +20,27 @@ COMMITTEE = {
     ('後期中間試験', 'ec1'): _sets('english_shonan_104_ec1', 3),
     ('後期中間試験', 'chemistry_basic'): _sets('science_shonan_104_chem_mole', 6) + _sets('science_shonan_104_chem_solution', 4) + _sets('science_shonan_104_chem_reaction', 5),
 }
+# 範囲表の試験・科目に最初から登録しておく、アプリに入っている問題セット。
+# 範囲（教材名・単元名・ページ）から内容が読みとれるものだけ。LEAP など市販教材の中身は入れない。
+_KANJI = ['japanese_gendai_01', 'japanese_gendai_02', 'japanese_kanji_01']
+_KOGO = ['japanese_kobun_01', 'japanese_kobun_02']
+EXISTING = {
+    ('前期期末試験', 'gendai_kokugo'): _KANJI + ['japanese_gendai_04', 'japanese_bungakushi_01'],
+    ('前期期末試験', 'gengo_bunka'): _KOGO,
+    ('前期期末試験', 'math1'): [f'math_m1_{i}' for i in range(10, 16)] + ['math_quadratic_app_01'],
+    ('前期期末試験', 'math_a'): [f'math_ma_{i:02d}' for i in range(1, 7)],
+    ('前期期末試験', 'ronhyo1'): ['english_stage_01', 'english_stage_02'],
+    ('前期期末試験', 'chemistry_basic'): ['science_chemistry_02', 'science_chemistry_03', 'science_chemistry_04'],
+    ('前期期末試験', 'biology_basic'): ['science_biology_03'],
+    ('後期中間試験', 'gendai_kokugo'): _KANJI + ['japanese_gendai_03', 'japanese_gendai_04', 'japanese_bungakushi_01'],
+    ('後期中間試験', 'gengo_bunka'): _KOGO + ['japanese_kanbun_01', 'japanese_kanbun_02'],
+    ('後期中間試験', 'math1'): ['math_m1_16', 'math_m1_17', 'math_m1_18', 'math_m1_stat_01'] + [f'math_m2_{i:02d}' for i in range(1, 7)],
+    ('後期中間試験', 'math_a'): ['math_ma_10', 'math_ma_11', 'math_ma_12'],
+    ('後期中間試験', 'chemistry_basic'): ['science_chemistry_05', 'science_chemistry_06'],
+    ('後期中間試験', 'public_economy'): [f'social_pol_{i}' for i in range(10, 16)],
+    ('後期期末試験', 'gendai_kokugo'): _KANJI + ['japanese_gendai_03', 'japanese_gendai_04', 'japanese_bungakushi_01'],
+    ('後期期末試験', 'gengo_bunka'): _KOGO,
+}
 def kind(name):
     if name == '教科書': return '教科書'
     if 'プリント' in name: return '授業プリント'
@@ -63,8 +84,9 @@ for sheet, title, plan in out:
         filled = bool(sp['materials'])
         date = f"examDate: DateTime.parse('{sp['date']}'), " if sp['date'] else ''
         sets = COMMITTEE.get((sheet, sid), [])
+        es = f"existingSetIds: const [{', '.join(dq(x) for x in EXISTING.get((sheet, sid), []))}], " if EXISTING.get((sheet, sid)) else ''
         cs = f"committeeSetIds: const [{', '.join(dq(x) for x in sets)}], " if sets else ''
-        L.append(f"        subjects[{dq(sid)}] = SubjectExamPlan(subjectId: {dq(sid)}, rangeText: {dq(sp['note'])}, {date}{cs}status: RangeStatus.{'entered' if filled else 'empty'}, materials: const [{mats}]);")
+        L.append(f"        subjects[{dq(sid)}] = SubjectExamPlan(subjectId: {dq(sid)}, rangeText: {dq(sp['note'])}, {date}{es}{cs}status: RangeStatus.{'entered' if filled else 'empty'}, materials: const [{mats}]);")
     L.append("        break;")
 L += ["    }", "    final title = sheets.firstWhere((s) => s.$1 == sheet, orElse: () => (sheet, sheet)).$2;",
       "    return SchoolExamPlan(id: id, title: title, createdAt: now, subjects: subjects);", "  }", "}", ""]

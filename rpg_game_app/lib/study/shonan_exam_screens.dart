@@ -232,6 +232,18 @@ class ShonanExamDetailScreen extends StatelessWidget {
                 Text(
                   '範囲・問題を登録した科目：${plan.filledCount} / ${ShonanSubjects.all.length}',
                 ),
+                if (ShonanTableSets.missing(plan) case final n when n > 0)
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8),
+                    child: FilledButton.tonalIcon(
+                      key: const ValueKey('shonan-add-table-sets'),
+                      onPressed: () => store.update(
+                        ShonanTableSets.addTo(plan, now: DateTime.now()),
+                      ),
+                      icon: const Icon(Icons.playlist_add),
+                      label: Text('範囲表に合う問題セットを足す（$n個）'),
+                    ),
+                  ),
                 const SizedBox(height: 8),
                 for (final s in ShonanSubjects.all)
                   _SubjectCard(plan: plan, subject: s),
