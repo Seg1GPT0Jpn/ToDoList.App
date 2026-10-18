@@ -32,5 +32,5 @@
 
 1. tq-2d で `powershell -ExecutionPolicy Bypass -File tools\connect_tsuzuri_android.ps1` を実行する
    （つづりの Firebase にクエストの Android アプリを登録し、署名の SHA-1/SHA-256 を登録する）。
-2. 最後に出る `tsuzuri android appId: …` の1行を Claude に渡す
+2. 最後に出る `tsuzuri android appId: …` の1行を Claude に渡す（登録ずみ：1:1033493674765:android:b03dc83421268044b64e44）
    → `FirebaseTsuzuriBackend.androidAppId` に入れると、Android 版にも「つづりと連携」が出る。

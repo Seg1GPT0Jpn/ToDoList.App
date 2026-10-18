@@ -29,22 +29,21 @@ class FirebaseTsuzuriBackend implements TsuzuriBackend {
   );
 
   /// つづりの Firebase に登録した、クエストの Android アプリの ID
-  /// （tools/connect_tsuzuri_android.ps1 が表示する値。まだなら null）
-  static const String? androidAppId = null;
+  /// （tools/connect_tsuzuri_android.ps1 で登録した値）
+  static const androidAppId = '1:1033493674765:android:b03dc83421268044b64e44';
 
   /// つづりの Firebase の Android 用 API キー
   static const androidApiKey = 'AIzaSyBFEsu05iHKjeRSBfoT5QAweKveboFxZTA';
 
-  /// この端末でつづりと連携できるか（Android はアプリの登録がすんでから）
+  /// この端末でつづりと連携できるか（Web 版と Android 版）
   static bool get supported =>
-      kIsWeb ||
-      (defaultTargetPlatform == TargetPlatform.android && androidAppId != null);
+      kIsWeb || defaultTargetPlatform == TargetPlatform.android;
 
   static FirebaseOptions get _options => kIsWeb
       ? options
       : FirebaseOptions(
           apiKey: androidApiKey,
-          appId: androidAppId!,
+          appId: androidAppId,
           messagingSenderId: options.messagingSenderId,
           projectId: options.projectId,
           storageBucket: options.storageBucket,
