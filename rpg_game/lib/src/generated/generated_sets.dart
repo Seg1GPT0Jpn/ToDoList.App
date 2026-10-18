@@ -7,6 +7,7 @@ import 'gen_info.dart';
 import 'gen_math.dart';
 import 'gen_music.dart';
 import 'gen_science.dart';
+import 'gen_social.dart';
 
 /// 問題セットを読みこむときに、計算や表から作れる問題を足す。
 ///
@@ -22,7 +23,23 @@ abstract final class GeneratedSets {
     ...scienceGens,
     ...musicGens,
     ...englishGens,
+    ...socialGens,
   };
+
+  /// 単元の上の階層 → 作り方（その下の単元すべてに使う。歴史の時代など）
+  static final Map<String, List<Gen>> byPrefix = {...socialPrefixGens};
+
+  /// 単元の作り方（なければ null）
+  static List<Gen>? gensFor(String unit) {
+    final exact = byUnit[unit];
+    if (exact != null) return exact;
+    var best = '';
+    for (final k in byPrefix.keys) {
+      if ((unit == k || unit.startsWith('$k.')) && k.length > best.length)
+        best = k;
+    }
+    return best.isEmpty ? null : byPrefix[best];
+  }
 
   /// 作り方の版（作り方を変えたら上げる。問題 ID に入る）
   static const version = 1;
@@ -38,7 +55,7 @@ abstract final class GeneratedSets {
     final sample = <String, QuizQuestion>{};
     for (final q in set.questions) {
       final u = q.unit;
-      if (u == null || !byUnit.containsKey(u)) continue;
+      if (u == null || gensFor(u) == null) continue;
       byUnitCount[u] = (byUnitCount[u] ?? 0) + 1;
       sample.putIfAbsent(u, () => q);
     }
@@ -47,7 +64,7 @@ abstract final class GeneratedSets {
     final extra = <QuizQuestion>[];
     var k = 0;
     for (final MapEntry(key: unit, value: count) in byUnitCount.entries) {
-      final gens = byUnit[unit]!;
+      final gens = gensFor(unit)!;
       final r = Random(stableHash('${set.setId}|$unit|$version'));
       final want = count * factor;
       var made = 0;

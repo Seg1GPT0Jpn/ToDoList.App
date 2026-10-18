@@ -58,7 +58,8 @@ void main() {
 
   test('作り方ごとに見本を出す（目で確かめる用）', () {
     final out = StringBuffer();
-    for (final e in GeneratedSets.byUnit.entries) {
+    for (final e
+        in {...GeneratedSets.byUnit, ...GeneratedSets.byPrefix}.entries) {
       final r = Random(7);
       for (final g in e.value) {
         for (var i = 0; i < 2; i++) {
