@@ -4,6 +4,7 @@ import '../models/question.dart';
 import 'gen_core.dart';
 import 'gen_info.dart';
 import 'gen_math.dart';
+import 'gen_music.dart';
 import 'gen_science.dart';
 
 /// 問題セットを読みこむときに、計算や表から作れる問題を足す。
@@ -17,7 +18,8 @@ abstract final class GeneratedSets {
   static final Map<String, List<Gen>> byUnit = {
     ...mathGens,
     ...infoGens,
-    ...scienceGens
+    ...scienceGens,
+    ...musicGens,
   };
 
   /// 作り方の版（作り方を変えたら上げる。問題 ID に入る）
