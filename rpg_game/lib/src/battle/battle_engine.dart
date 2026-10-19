@@ -6,6 +6,7 @@ import '../models/question.dart';
 import '../models/question_format.dart';
 import '../progression/mastery.dart';
 import '../story/gear.dart';
+import '../learning/confidence.dart';
 import 'cards.dart';
 import 'damage_calculator.dart';
 import 'question_deck.dart';
@@ -32,6 +33,7 @@ class TurnResult {
     required this.correct,
     required this.timedOut,
     required this.quick,
+    this.confidence = Confidence.normal,
     required this.damageToEnemy,
     required this.damageToPlayer,
     required this.combo,
@@ -131,6 +133,9 @@ class TurnResult {
 
   /// クリティカル（すばやい回答、または会心のペン）
   final bool quick;
+
+  /// 答える前に選んだ自信
+  final Confidence confidence;
   final int damageToEnemy;
   final int damageToPlayer;
 
@@ -458,6 +463,9 @@ class BattleEngine {
   final List<CardDef> _discard = [];
   CardDef? _pending;
 
+  /// 次の回答の自信（答えるたびに「ふつう」にもどる）
+  Confidence confidence = Confidence.normal;
+
   int get playerHp => _playerHp;
   int get enemyHp => _enemyHp;
   int get combo => _combo;
@@ -615,6 +623,7 @@ class BattleEngine {
       if (effect == CardEffect.gamble) extra *= 3;
       if (companions.contains(CompanionEffect.attackUp)) extra *= 1.1;
       extra *= bonus.attackRate;
+      extra *= confidence.attackRate;
       if (_combo >= 3) extra *= 1 + bonus.chainBonus;
       if (_armor > 0) {
         if (category == enemy.armorCategory) {
@@ -765,6 +774,7 @@ class BattleEngine {
         if (effect == CardEffect.gamble) extra *= 2;
         if (companions.contains(CompanionEffect.defenseUp)) extra *= 0.85;
         extra *= bonus.damageTakenRate;
+        extra *= confidence.damageTakenRate;
         toPlayer = _damage.enemyAttack(
             attack: enemy.attack,
             defense: player.defense + bonus.defense,
@@ -847,6 +857,7 @@ class BattleEngine {
       timedOut: choiceIndex == null && graded == null,
       credit: correct ? 1 : (graded?.credit ?? 0),
       quick: correct && quick,
+      confidence: confidence,
       damageToEnemy: toEnemy,
       damageToPlayer: toPlayer,
       combo: _combo,
@@ -886,6 +897,7 @@ class BattleEngine {
       _pending = null;
     }
     hiddenChoices = {};
+    confidence = Confidence.normal;
     while (_hand.length < handSize) {
       if (_drawPile.isEmpty) {
         if (_discard.isEmpty) break;

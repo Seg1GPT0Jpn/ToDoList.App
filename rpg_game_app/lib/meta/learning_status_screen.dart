@@ -149,6 +149,13 @@ class LearningStatusScreen extends StatelessWidget {
                       ),
                     ),
                 ],
+                _MistakeCard(
+                  log: services.mistakes.log,
+                  sureMiss: record.stats.values.fold(
+                    0,
+                    (n, s) => n + s.sureMiss,
+                  ),
+                ),
                 const SizedBox(height: 14),
                 for (final w in RpgCatalog.worlds)
                   _SubjectCard(
@@ -353,6 +360,76 @@ class _MasteryCard extends StatelessWidget {
                     ),
                 ],
               ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/// まちがいの種類（この30日）と、自信があったのにまちがえた数
+class _MistakeCard extends StatelessWidget {
+  const _MistakeCard({required this.log, required this.sureMiss});
+
+  final MistakeLog log;
+  final int sureMiss;
+
+  @override
+  Widget build(BuildContext context) {
+    final since = RpgServices.today() - 30;
+    final counts = log.counts(since: since);
+    final total = counts.values.fold(0, (a, b) => a + b);
+    if (total == 0 && sureMiss == 0) return const SizedBox.shrink();
+    final top = log.top(since: since);
+    final small = TextStyle(fontSize: 12, color: TsuzuriColors.inkSoft);
+    return Card(
+      key: const ValueKey('mistake-card'),
+      margin: const EdgeInsets.only(top: 14),
+      child: Padding(
+        padding: const EdgeInsets.all(14),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('まちがいの種類（この30日）', style: serif(16)),
+            const SizedBox(height: 6),
+            if (total > 0)
+              for (final k in MistakeKind.values)
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 2),
+                  child: Row(
+                    children: [
+                      SizedBox(width: 92, child: Text(k.label)),
+                      Expanded(
+                        child: LinearProgressIndicator(
+                          value: counts[k]! / total,
+                          minHeight: 6,
+                          color: TsuzuriColors.wrong,
+                          backgroundColor: TsuzuriColors.tint(0xFFE8E0D2),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 40,
+                        child: Text(
+                          '${counts[k]}回',
+                          textAlign: TextAlign.right,
+                          style: small,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+            if (top != null) ...[
+              const SizedBox(height: 4),
+              Text('いちばん多いのは「${top.label}」：${top.advice}', style: small),
+            ],
+            if (sureMiss > 0) ...[
+              const SizedBox(height: 4),
+              Text(
+                '「自信あり」でまちがえた：$sureMiss回（思いこみに注意。解説をよく読もう）',
+                key: const ValueKey('sure-miss-count'),
+                style: small,
+              ),
+            ],
           ],
         ),
       ),

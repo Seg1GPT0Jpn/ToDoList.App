@@ -1,5 +1,7 @@
 import 'dart:math';
 
+import 'confidence.dart';
+
 /// 日付を「1970-01-01 からの日数」で表す（端末の暦の日付で数える）
 int dayNumber(DateTime t) =>
     DateTime.utc(t.year, t.month, t.day).millisecondsSinceEpoch ~/
@@ -28,7 +30,11 @@ class QuestionStat {
     this.profile = 0,
     this.gapTried = 0,
     this.gapCorrect = 0,
+    this.sureMiss = 0,
   });
+
+  /// 「自信あり」で答えてまちがえた回数（思いこみ。早めに復習する）
+  final int sureMiss;
 
   /// 問題の性質（[AnswerProfile] を数にしたもの。0：不明＝古い記録）
   final int profile;
@@ -106,10 +112,21 @@ class QuestionStat {
     String? category,
     String? unit,
     int? profile,
+    Confidence confidence = Confidence.normal,
   }) {
     final gap = attempts > 0 && day - lastDay >= retentionGapDays;
-    final newBox = isCorrect ? min(box + 1, maxBox) : 1;
-    final newStreak = isCorrect ? streak + 1 : 0;
+    // 「あやふや」で正解したときは、たまたまかもしれないので覚えた扱いにせず、明日また出す
+    final lucky = isCorrect && confidence == Confidence.unsure;
+    final newBox = lucky
+        ? max(box, 1)
+        : isCorrect
+            ? min(box + 1, maxBox)
+            : 1;
+    final newStreak = lucky
+        ? streak
+        : isCorrect
+            ? streak + 1
+            : 0;
     // 2回以上まちがえた問題を3回連続で正解したら「苦手克服」
     final nowOvercome = overcome || (wrong >= 2 && newStreak >= 3);
     return QuestionStat(
@@ -121,7 +138,7 @@ class QuestionStat {
       lastDay: day,
       totalMs: totalMs + max(0, elapsedMs),
       box: newBox,
-      dueDay: day + intervals[newBox],
+      dueDay: lucky ? day + 1 : day + intervals[newBox],
       overcome: nowOvercome,
       category: category ?? this.category,
       unit: (unit == null || unit.isEmpty) ? this.unit : unit,
@@ -129,6 +146,8 @@ class QuestionStat {
       profile: (profile == null || profile == 0) ? this.profile : profile,
       gapTried: gapTried + (gap ? 1 : 0),
       gapCorrect: gapCorrect + (gap && isCorrect ? 1 : 0),
+      sureMiss:
+          sureMiss + (!isCorrect && confidence == Confidence.sure ? 1 : 0),
     );
   }
 
@@ -150,6 +169,7 @@ class QuestionStat {
         profile: profile,
         gapTried: gapTried,
         gapCorrect: gapCorrect,
+        sureMiss: sureMiss,
       );
 
   /// 保存用の短い形（問題数が増えても小さく保つ）
@@ -171,6 +191,7 @@ class QuestionStat {
       profile,
       gapTried,
       gapCorrect,
+      sureMiss,
     ];
     // 後ろの、まだ使っていない項目は省く（古い形と同じ長さに保つ）
     while (out.length > 10 && (out.last == 0 || out.last == '')) {
@@ -198,6 +219,7 @@ class QuestionStat {
       profile: n(13),
       gapTried: n(14),
       gapCorrect: n(15),
+      sureMiss: n(16),
     );
   }
 }

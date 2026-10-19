@@ -166,6 +166,47 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
+  testWidgets('自信ありでまちがえると注意が出て、まちがいの種類を残せる', (tester) async {
+    // スマホの縦長の画面
+    tester.view.physicalSize = const Size(400, 860);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.reset);
+    await _open(tester, english.first);
+    await tester.tap(find.byKey(const ValueKey('confidence-sure')));
+    await tester.pump();
+    // 正解は「あ」（選択肢は並べかえられる）。それ以外を押す
+    await tester.tap(find.text('い').first);
+    for (var i = 0; i < 15; i++) {
+      await tester.pump(const Duration(milliseconds: 100));
+    }
+    expect(find.byKey(const ValueKey('sure-miss')), findsOneWidget);
+    await tester.ensureVisible(find.byKey(const ValueKey('mistake-careless')));
+    await tester.tap(find.byKey(const ValueKey('mistake-careless')));
+    await tester.pump(const Duration(milliseconds: 300));
+    final prefs = await SharedPreferences.getInstance();
+    expect(prefs.getString('rpg_mistake_log_v1'), contains('careless'));
+    for (var i = 0; i < 30; i++) {
+      await tester.pump(const Duration(milliseconds: 100));
+    }
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('数学のバトルでは計算メモを開いて書ける', (tester) async {
+    await _open(tester, RpgCatalog.world('math').stages.first);
+    await tester.tap(find.byKey(const ValueKey('open-scratchpad')));
+    await tester.pump();
+    expect(find.byKey(const ValueKey('scratchpad')), findsOneWidget);
+    await tester.drag(
+      find.byKey(const ValueKey('scratchpad')),
+      const Offset(80, 40),
+    );
+    await tester.pump();
+    await tester.tap(find.byKey(const ValueKey('scratchpad-close')));
+    await tester.pump();
+    expect(find.byKey(const ValueKey('scratchpad')), findsNothing);
+    expect(find.byKey(const ValueKey('open-scratchpad')), findsOneWidget);
+  });
+
   testWidgets('強敵のバトルが開ける', (tester) async {
     await _open(tester, Elites.of(english[2]));
   });

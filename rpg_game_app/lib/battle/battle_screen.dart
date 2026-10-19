@@ -17,6 +17,7 @@ import '../quiz/question_report.dart';
 import '../vocab/speech.dart';
 import 'format_answer.dart';
 import 'result_screen.dart';
+import 'scratchpad.dart';
 
 /// ターン制クイズバトル
 class BattleScreen extends StatefulWidget {
@@ -261,6 +262,16 @@ class _BattleScreenState extends State<BattleScreen>
 
   /// 4択以外の問題に答えた結果（自分の答えと採点）
   FormatResponse? _response;
+
+  /// まちがえたあとに選んだ、まちがいの種類
+  MistakeKind? _mistake;
+
+  /// 計算メモ（数学・理科）。問題が変わると消す
+  bool _scratchOpen = false;
+  final List<List<Offset>> _strokes = [];
+
+  bool get _scratchAllowed =>
+      widget.world.id == 'math' || widget.world.id == 'science';
   bool _finishing = false;
 
   /// バトルを始めた時刻（勉強時間の記録に使う）
@@ -335,6 +346,8 @@ class _BattleScreenState extends State<BattleScreen>
       _locked = false;
       _typed = null;
       _response = null;
+      _mistake = null;
+      _strokes.clear();
       _armedCard = null;
       _showListenText = false;
       _input.clear();
@@ -774,6 +787,7 @@ class _BattleScreenState extends State<BattleScreen>
             sea: setId.startsWith('sea_'),
           ).code,
           isCorrect: r.correct,
+          confidence: r.confidence,
           elapsedMs: r.timedOut
               ? _engine.limitFor(r.question).inMilliseconds
               : _stopwatch.elapsedMilliseconds,
@@ -955,6 +969,25 @@ class _BattleScreenState extends State<BattleScreen>
                   ),
                 ),
               if (_bossBanner) const IgnorePointer(child: _BossBanner()),
+              if (_scratchAllowed && !_scratchOpen && !_engine.isOver)
+                Positioned(
+                  right: 10,
+                  top: MediaQuery.paddingOf(context).top + 64,
+                  child: FloatingActionButton.small(
+                    key: const ValueKey('open-scratchpad'),
+                    heroTag: null,
+                    tooltip: '計算メモ',
+                    onPressed: () => setState(() => _scratchOpen = true),
+                    child: const Icon(Icons.edit_note),
+                  ),
+                ),
+              if (_scratchOpen)
+                Positioned.fill(
+                  child: ScratchpadOverlay(
+                    strokes: _strokes,
+                    onClose: () => setState(() => _scratchOpen = false),
+                  ),
+                ),
               // 被ダメージ時の赤いふち
               IgnorePointer(
                 child: Container(
@@ -1393,6 +1426,8 @@ class _BattleScreenState extends State<BattleScreen>
                 child: SingleChildScrollView(child: _questionCard(q)),
               ),
               if (!showExplanation) _cardHand(),
+              if (!showExplanation && last == null && q.source.isChoice)
+                _confidenceRow(),
               const SizedBox(height: 6),
               Expanded(
                 child: showExplanation
@@ -1491,6 +1526,72 @@ class _BattleScreenState extends State<BattleScreen>
   }
 
   /// 手札（回答前にタップすると、この問題に効果がつく）と、必殺技ゲージ
+  /// 自信ベット：自信ありは当たれば強く、外れると痛い。あやふやは控えめ
+  Widget _confidenceRow() {
+    return Padding(
+      padding: const EdgeInsets.only(top: 4),
+      child: Row(
+        key: const ValueKey('confidence-row'),
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          for (final c in Confidence.values)
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 3),
+              child: ChoiceChip(
+                key: ValueKey('confidence-${c.name}'),
+                visualDensity: VisualDensity.compact,
+                materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                label: Text(c.label, style: const TextStyle(fontSize: 12)),
+                selected: _engine.confidence == c,
+                onSelected: _locked
+                    ? null
+                    : (_) => setState(() => _engine.confidence = c),
+              ),
+            ),
+        ],
+      ),
+    );
+  }
+
+  /// まちがいの種類を1タップで残す（選ばなくてもよい）
+  Widget _mistakeChips() {
+    final picked = _mistake;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          picked == null ? 'どんなまちがい？（えらぶと記録に残るよ）' : '💡 ${picked.advice}',
+          style: TextStyle(fontSize: 12, color: TsuzuriColors.inkSoft),
+        ),
+        const SizedBox(height: 2),
+        Wrap(
+          spacing: 6,
+          runSpacing: 2,
+          children: [
+            for (final k in MistakeKind.values)
+              ChoiceChip(
+                key: ValueKey('mistake-${k.name}'),
+                visualDensity: VisualDensity.compact,
+                materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                label: Text(k.label, style: const TextStyle(fontSize: 12)),
+                selected: picked == k,
+                onSelected: picked != null
+                    ? null
+                    : (_) {
+                        setState(() => _mistake = k);
+                        _services.mistakes.add(
+                          widget.world.id,
+                          k,
+                          day: RpgServices.today(),
+                        );
+                      },
+              ),
+          ],
+        ),
+      ],
+    );
+  }
+
   Widget _cardHand() {
     final pending = _engine.pendingCard;
     final canUse = !_locked && pending == null && !_engine.isOver;
@@ -1980,20 +2081,36 @@ class _BattleScreenState extends State<BattleScreen>
           const SizedBox(height: 6),
           Expanded(
             child: SingleChildScrollView(
-              child: Text(
-                [
-                  q.source.hasMoreExplanation
-                      ? '${q.source.shortExplanation}\n📓 くわしい解説は復習手帳に書きこんだよ'
-                      : q.source.shortExplanation,
-                  if (q.source.commonMistakes.isNotEmpty)
-                    '⚠ よくあるまちがい：${q.source.commonMistakes.join('／')}',
-                  if (q.source.hint != null) '💡 ヒント：${q.source.hint}',
-                ].join('\n'),
-                style: TextStyle(
-                  fontSize: 13,
-                  height: 1.6,
-                  color: TsuzuriColors.ink,
-                ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  if (last.confidence == Confidence.sure)
+                    Text(
+                      '自信があったのにまちがえた：解説をよく読もう',
+                      key: const ValueKey('sure-miss'),
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: TsuzuriColors.wrong,
+                      ),
+                    ),
+                  _mistakeChips(),
+                  const SizedBox(height: 6),
+                  Text(
+                    [
+                      q.source.hasMoreExplanation
+                          ? '${q.source.shortExplanation}\n📓 くわしい解説は復習手帳に書きこんだよ'
+                          : q.source.shortExplanation,
+                      if (q.source.commonMistakes.isNotEmpty)
+                        '⚠ よくあるまちがい：${q.source.commonMistakes.join('／')}',
+                      if (q.source.hint != null) '💡 ヒント：${q.source.hint}',
+                    ].join('\n'),
+                    style: TextStyle(
+                      fontSize: 13,
+                      height: 1.6,
+                      color: TsuzuriColors.ink,
+                    ),
+                  ),
+                ],
               ),
             ),
           ),

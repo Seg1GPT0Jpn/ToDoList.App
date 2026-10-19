@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'confidence.dart';
 import 'question_stat.dart';
 
 /// 1回答えた結果（記録の差分）
@@ -12,7 +13,11 @@ class AnswerEvent {
     this.category,
     this.unit,
     this.profile,
+    this.confidence = Confidence.normal,
   });
+
+  /// 答える前に選んだ自信
+  final Confidence confidence;
 
   /// 問題の性質（[AnswerProfile.code]。成長の見える化に使う）
   final int? profile;
@@ -58,6 +63,7 @@ class LearningRecord {
         category: e.category,
         unit: e.unit,
         profile: e.profile,
+        confidence: e.confidence,
       );
     }
     return LearningRecord(stats: next, studyDays: {...studyDays, day});

@@ -13,6 +13,7 @@ import '../classroom/classroom_store.dart';
 import '../cloud/tsuzuri_link.dart';
 import '../data/meta_store.dart';
 import '../data/prefs_progress_repository.dart';
+import '../data/mistake_log_store.dart';
 import '../data/study_log_store.dart';
 import '../meta/streak_store.dart';
 import '../purchase/google_play_purchase_service.dart';
@@ -92,6 +93,9 @@ class RpgServices extends InheritedWidget {
 
   /// 日ごと・教科ごとの勉強時間と問題数
   late final StudyLogStore studyLog = StudyLogStore(personalBooks.prefs);
+
+  /// まちがいの種類（うっかり・知らなかった など）
+  late final MistakeLogStore mistakes = MistakeLogStore(personalBooks.prefs);
 
   /// つづりとの連携（使えない版では null）。はじめて使うときに前回の接続を確かめる
   late final TsuzuriLinkController? tsuzuri = () {

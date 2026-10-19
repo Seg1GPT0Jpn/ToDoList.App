@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../quiz/figure_view.dart';
+import '../quiz/question_report.dart';
 
 import 'package:rpg_game/rpg_game.dart';
 
@@ -196,13 +197,21 @@ class _PracticeViewState extends State<PracticeView> {
               ),
             ),
           ),
-          Align(
-            alignment: Alignment.centerRight,
-            child: FilledButton.icon(
-              onPressed: _next,
-              icon: const Icon(Icons.arrow_forward),
-              label: Text(s.isFinished ? '結果を見る' : 'つぎへ'),
-            ),
+          Row(
+            children: [
+              TextButton.icon(
+                key: const ValueKey('practice-report'),
+                onPressed: () => showReportDialog(context, q.source),
+                icon: const Icon(Icons.flag_outlined, size: 16),
+                label: const Text('報告', style: TextStyle(fontSize: 12)),
+              ),
+              const Spacer(),
+              FilledButton.icon(
+                onPressed: _next,
+                icon: const Icon(Icons.arrow_forward),
+                label: Text(s.isFinished ? '結果を見る' : 'つぎへ'),
+              ),
+            ],
           ),
         ],
       ),

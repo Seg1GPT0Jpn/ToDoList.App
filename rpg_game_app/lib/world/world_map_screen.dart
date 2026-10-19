@@ -6,6 +6,7 @@ import 'package:rpg_game/rpg_game.dart';
 
 import '../account/tsuzuri_link_card.dart';
 import '../app/pwa.dart';
+import '../meta/study_boost_card.dart';
 import '../meta/today_plan.dart';
 import '../account/account_screen.dart';
 import '../app/services.dart';
@@ -279,6 +280,7 @@ class WorldMapScreen extends StatelessWidget {
         const SizedBox(height: 12),
         // つづりと連携していれば、近いテストを出す
         const TsuzuriUpcomingCard(),
+        const StudyBoostCard(),
         TodayPlanCard(
           onAdventure: () {
             final w = RpgCatalog.world(RpgCatalog.englishWorldId);
