@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rpg_game/rpg_game.dart';
 
+import '../account/tsuzuri_test_prep.dart';
 import '../app/practice.dart';
 import '../app/services.dart';
 import '../app/theme.dart';
@@ -154,7 +155,7 @@ class _TodayPlanCardState extends State<TodayPlanCard> {
   Widget build(BuildContext context) {
     final services = RpgServices.of(context);
     return ListenableBuilder(
-      listenable: services.meta,
+      listenable: Listenable.merge([services.meta, ?services.tsuzuri]),
       builder: (context, _) {
         final now = DateTime.now();
         final today = RpgServices.today();
@@ -300,6 +301,26 @@ class _TodayPlanCardState extends State<TodayPlanCard> {
         );
       }
     }
+    // つづりに登録した、3日以内のテスト（クラスの範囲より近ければ先に）
+    final tsuzuri = _tsuzuriTest(now);
+    if (tsuzuri != null &&
+        (plan == null || !plan.task.date.isBefore(tsuzuri.date))) {
+      final minutes = RpgServices.of(context).tsuzuri!.prepMinutes(tsuzuri);
+      final days = tsuzuri.daysFrom(now);
+      final when = days <= 0 ? '今日' : (days == 1 ? '明日' : 'あと$days日');
+      return _Row(
+        id: 'test',
+        icon: Icons.edit_note,
+        text: minutes >= _tsuzuriPrepGoal
+            ? '「${tsuzuri.title}」（$when）：対策 $minutes分（もう1回もできます）'
+            : '「${tsuzuri.title}」（$when）：範囲を対策する',
+        done: minutes >= _tsuzuriPrepGoal,
+        onTap: () async {
+          await startTsuzuriPrep(context, tsuzuri);
+          if (mounted) setState(() {});
+        },
+      );
+    }
     if (plan != null) {
       final t = plan.task;
       final name = t.title.isEmpty ? t.kind.label : t.title;
@@ -342,6 +363,19 @@ class _TodayPlanCardState extends State<TodayPlanCard> {
         }
       },
     );
+  }
+
+  /// つづりのテストの対策を「今日の分おわり」にする時間（分）
+  static const _tsuzuriPrepGoal = 10;
+
+  /// つづりの、3日以内でクエストで対策できるテスト
+  TsuzuriUpcoming? _tsuzuriTest(DateTime now) {
+    final link = RpgServices.of(context).tsuzuri;
+    if (link == null || !link.connected) return null;
+    for (final u in link.upcoming) {
+      if (u.isTest && u.worldId != null && u.daysFrom(now) <= 3) return u;
+    }
+    return null;
   }
 
   _Row _adventureRow(bool done) => _Row(

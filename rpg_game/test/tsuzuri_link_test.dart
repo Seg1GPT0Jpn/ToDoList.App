@@ -104,4 +104,70 @@ void main() {
     expect(TsuzuriLink.worldFor('情報Ⅰ'), 'information');
     expect(TsuzuriLink.worldFor('体育'), isNull);
   });
+
+  test('成果：教科ごとの1週間（英語と英文法はまとめる）とテストごとの対策時間', () {
+    final log = StudyLog.empty
+        .add('english',
+            now: now,
+            spent: const Duration(minutes: 10),
+            answered: 10,
+            correct: 8)
+        .add('sea',
+            now: now,
+            spent: const Duration(minutes: 5),
+            answered: 5,
+            correct: 5)
+        .add('math',
+            now: now.subtract(const Duration(days: 3)),
+            spent: const Duration(minutes: 20));
+    final r = TsuzuriLink.results(log, LearningRecord.empty,
+        now: now, prepMinutes: {'2026-10-19|ECⅠ 小テスト': 12, 'x': 0});
+    expect((r['subjects'] as Map)['英語'],
+        {'minutes': 15, 'answered': 15, 'correct': 13});
+    expect((r['subjects'] as Map)['数学'],
+        {'minutes': 20, 'answered': 0, 'correct': 0});
+    expect((r['days'] as Map)['2026-10-18']['英語']['minutes'], 15);
+    expect(r['tests'], {'2026-10-19|ECⅠ 小テスト': 12});
+  });
+
+  test('範囲の番号・時間割・目標を読む', () {
+    expect(TsuzuriLink.numberRange('1201〜1300'), (1201, 1300));
+    expect(TsuzuriLink.numberRange('No.1300-1201'), (1201, 1300));
+    expect(TsuzuriLink.numberRange('p.20'), isNull);
+    expect(TsuzuriLink.numberRange(null), isNull);
+    final lessons = TsuzuriLink.parseLessons({
+      'lessons': {
+        '2026-10-19': [
+          {'period': 2, 'subject': '数学Ⅰ'},
+          {'period': 1, 'subject': 'ECⅠ'},
+          {'period': 3},
+        ],
+      },
+    });
+    expect(lessons['2026-10-19']!.map((l) => l.subject), ['ECⅠ', '数学Ⅰ']);
+    expect(lessons['2026-10-19']!.first.worldId, 'english');
+    final goals = TsuzuriLink.parseGoals([
+      {'title': '英検', 'type': 'none'},
+      {
+        'title': '数学の点数',
+        'type': 'number',
+        'current': 60,
+        'target': 80,
+        'unit': '点',
+        'dueDate': '2026-11-01'
+      },
+      {'title': '今月30時間', 'type': 'studyTime', 'current': 12.5, 'target': 30},
+      {'title': 'おわった', 'type': 'studyTime', 'achieved': true},
+    ]);
+    expect(goals.map((g) => g.title), ['今月30時間', '数学の点数']);
+    expect(goals.first.label, '12.5/30時間');
+    expect(goals.last.label, '60/80点');
+    expect(goals.last.ratio, 0.75);
+    final t = TsuzuriUpcoming(
+        date: DateTime(2026, 10, 19),
+        title: 'ECⅠ 小テスト',
+        kindLabel: '小テスト',
+        isTest: true);
+    expect(TsuzuriLink.testKey(t), '2026-10-19|ECⅠ 小テスト');
+  });
 }

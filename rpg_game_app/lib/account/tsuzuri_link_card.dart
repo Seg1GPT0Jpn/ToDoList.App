@@ -6,6 +6,7 @@ import '../app/services.dart';
 import '../app/theme.dart';
 import '../cloud/tsuzuri_link.dart';
 import '../study/sea_home_screen.dart';
+import 'tsuzuri_test_prep.dart';
 
 /// つづり（学校生活アプリ）を開く
 Future<void> openTsuzuri() => launchUrl(
@@ -135,7 +136,8 @@ class _Body extends StatelessWidget {
   }
 }
 
-/// ホームの「つづりのテスト予定」（つないでいて、予定があるときだけ出す）
+/// ホームの「つづり」カード：今日の授業（復習）・テスト予定（対策）・目標の進み具合。
+/// つないでいて、出すものがあるときだけ出す
 class TsuzuriUpcomingCard extends StatelessWidget {
   const TsuzuriUpcomingCard({super.key, this.limit = 4});
 
@@ -149,28 +151,105 @@ class TsuzuriUpcomingCard extends StatelessWidget {
     return ListenableBuilder(
       listenable: link,
       builder: (context, _) {
+        final now = DateTime.now();
         final items = link.upcoming.where((u) => u.isTest).toList();
-        if (!link.connected || items.isEmpty) return const SizedBox.shrink();
-        final today = DateTime.now();
+        // 夕方からは、明日の授業を出す
+        final lessonDay = now.hour >= 17
+            ? DateTime(now.year, now.month, now.day + 1)
+            : now;
+        final lessons = link.lessonsOn(lessonDay);
+        final goals = link.goals.take(2).toList();
+        if (!link.connected ||
+            (items.isEmpty && lessons.isEmpty && goals.isEmpty)) {
+          return const SizedBox.shrink();
+        }
+        final small = TextStyle(fontSize: 11, color: TsuzuriColors.inkSoft);
         return Card(
           key: const ValueKey('tsuzuri-upcoming'),
           margin: const EdgeInsets.only(bottom: 12),
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(14, 12, 8, 8),
+            padding: const EdgeInsets.fromLTRB(14, 12, 8, 10),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   children: [
-                    Expanded(child: Text('つづりのテスト予定', style: serif(16))),
+                    Expanded(child: Text('つづり', style: serif(16))),
                     TextButton(
                       onPressed: openTsuzuri,
                       child: const Text('つづりを開く'),
                     ),
                   ],
                 ),
-                for (final u in items.take(limit))
-                  _UpcomingRow(item: u, today: today),
+                if (lessons.isNotEmpty) ...[
+                  Text(
+                    lessonDay.day == now.day ? '今日の授業の復習' : '明日の授業の予習',
+                    style: small,
+                  ),
+                  const SizedBox(height: 2),
+                  Wrap(
+                    spacing: 6,
+                    runSpacing: 4,
+                    children: [
+                      for (final l in lessons)
+                        ActionChip(
+                          key: ValueKey('tsuzuri-lesson-${l.period}'),
+                          visualDensity: VisualDensity.compact,
+                          label: Text('${l.period}限 ${l.subject}'),
+                          onPressed: l.worldId == null
+                              ? null
+                              : () => Navigator.of(context).push(
+                                  MaterialPageRoute<void>(
+                                    builder: (_) => SeaHomeScreen(
+                                      personalBooks: services.personalBooks,
+                                      initialSubject: l.worldId,
+                                    ),
+                                  ),
+                                ),
+                        ),
+                    ],
+                  ),
+                  const SizedBox(height: 8),
+                ],
+                if (items.isNotEmpty) ...[
+                  Text('テスト予定', style: small),
+                  for (final u in items.take(limit))
+                    _UpcomingRow(
+                      item: u,
+                      today: now,
+                      prepMinutes: link.prepMinutes(u),
+                    ),
+                  const SizedBox(height: 4),
+                ],
+                for (final g in goals)
+                  Padding(
+                    padding: const EdgeInsets.only(top: 4, right: 8),
+                    child: Column(
+                      key: ValueKey('tsuzuri-goal-${g.title}'),
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            Expanded(
+                              child: Text(
+                                '目標：${g.title}',
+                                overflow: TextOverflow.ellipsis,
+                                style: const TextStyle(fontSize: 13),
+                              ),
+                            ),
+                            Text(g.label, style: small),
+                          ],
+                        ),
+                        const SizedBox(height: 2),
+                        LinearProgressIndicator(
+                          value: g.ratio,
+                          minHeight: 5,
+                          color: TsuzuriColors.correct,
+                          backgroundColor: TsuzuriColors.tint(0xFFE8E0D2),
+                        ),
+                      ],
+                    ),
+                  ),
               ],
             ),
           ),
@@ -181,10 +260,17 @@ class TsuzuriUpcomingCard extends StatelessWidget {
 }
 
 class _UpcomingRow extends StatelessWidget {
-  const _UpcomingRow({required this.item, required this.today});
+  const _UpcomingRow({
+    required this.item,
+    required this.today,
+    required this.prepMinutes,
+  });
 
   final TsuzuriUpcoming item;
   final DateTime today;
+
+  /// クエストで対策した時間（分）
+  final int prepMinutes;
 
   @override
   Widget build(BuildContext context) {
@@ -194,7 +280,10 @@ class _UpcomingRow extends StatelessWidget {
       1 => '明日',
       _ => 'あと$n日',
     };
-    final world = item.worldId;
+    final sub = [
+      ?item.detail,
+      if (prepMinutes > 0) '対策 $prepMinutes分',
+    ].join('　');
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 3),
       child: Row(
@@ -215,9 +304,9 @@ class _UpcomingRow extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(item.title),
-                if (item.detail != null)
+                if (sub.isNotEmpty)
                   Text(
-                    item.detail!,
+                    sub,
                     style: TextStyle(
                       fontSize: 11,
                       color: TsuzuriColors.inkSoft,
@@ -226,18 +315,11 @@ class _UpcomingRow extends StatelessWidget {
               ],
             ),
           ),
-          if (world != null)
+          if (item.worldId != null)
             TextButton(
               key: ValueKey('tsuzuri-practice-${item.title}'),
-              onPressed: () => Navigator.of(context).push(
-                MaterialPageRoute<void>(
-                  builder: (_) => SeaHomeScreen(
-                    personalBooks: RpgServices.of(context).personalBooks,
-                    initialSubject: world,
-                  ),
-                ),
-              ),
-              child: const Text('練習'),
+              onPressed: () => startTsuzuriPrep(context, item),
+              child: const Text('対策'),
             ),
         ],
       ),

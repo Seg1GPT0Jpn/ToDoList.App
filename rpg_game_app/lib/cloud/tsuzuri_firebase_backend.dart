@@ -106,6 +106,12 @@ class FirebaseTsuzuriBackend implements TsuzuriBackend {
   }
 
   @override
+  Future<List<Map<String, dynamic>>> readGoals() async {
+    final snap = await (await _user()).collection('goals').get();
+    return [for (final d in snap.docs) d.data()];
+  }
+
+  @override
   Future<void> writeSession(String id, Map<String, Object?> data) async {
     final day = data['date'] as DateTime;
     await (await _user()).collection('study_sessions').doc(id).set({

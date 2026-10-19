@@ -5,6 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:rpg_game/rpg_game.dart';
 import 'package:rpg_game_app/app/services.dart';
 import 'package:rpg_game_app/battle/battle_screen.dart';
+import 'package:rpg_game_app/cloud/tsuzuri_link.dart';
 import 'package:rpg_game_app/meta/today_plan.dart';
 import 'package:rpg_game_app/vocab/vocab_session_screen.dart';
 import 'package:rpg_game_app/vocab/vocab_store.dart';
@@ -206,6 +207,52 @@ void main() {
     final p = store.progress(b.id);
     expect(p.cards['w1']!.mistakes[MistakeReason.confused], 2);
     expect(p.cards['w5']!.confusedWith, contains('word1'));
+    expect(t.takeException(), isNull);
+  });
+
+  testWidgets('今日やること：つづりの3日以内のテストを出し、対策した時間で「おわり」', (t) async {
+    final tomorrow = StudyLog.dayKey(
+      DateTime.now().add(const Duration(days: 1)),
+    );
+    final backend = MemoryTsuzuriBackend()
+      ..upcomingDoc = {
+        'items': [
+          {
+            'date': tomorrow,
+            'title': '化学基礎 小テスト',
+            'kind': '小テスト',
+            'isTest': true,
+            'subject': '化学基礎',
+          },
+        ],
+      };
+    final s = await openScreen(
+      t,
+      Scaffold(
+        body: SingleChildScrollView(child: TodayPlanCard(onAdventure: () {})),
+      ),
+      tsuzuri: backend,
+      frames: 2,
+    );
+    await s.tsuzuri!.connect();
+    for (var i = 0; i < 5; i++) {
+      await t.runAsync(
+        () => Future<void>.delayed(const Duration(milliseconds: 50)),
+      );
+      await t.pump(const Duration(milliseconds: 50));
+    }
+    expect(find.textContaining('「化学基礎 小テスト」（明日）：範囲を対策する'), findsOneWidget);
+    await s.tsuzuri!.addPrep(
+      s.tsuzuri!.upcoming.first,
+      const Duration(minutes: 11),
+    );
+    await t.pump();
+    expect(find.textContaining('対策 11分'), findsOneWidget);
+    // 対策のあとは少し待ってつづりへ送る
+    await t.pump(const Duration(seconds: 6));
+    await t.runAsync(
+      () => Future<void>.delayed(const Duration(milliseconds: 50)),
+    );
     expect(t.takeException(), isNull);
   });
 }

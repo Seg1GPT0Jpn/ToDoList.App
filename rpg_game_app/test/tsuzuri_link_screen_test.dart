@@ -5,6 +5,9 @@ import 'package:rpg_game_app/account/account_screen.dart';
 import 'package:rpg_game_app/account/tsuzuri_link_card.dart';
 import 'package:rpg_game_app/cloud/tsuzuri_link.dart';
 import 'package:rpg_game_app/study/sea_home_screen.dart';
+import 'package:rpg_game_app/vocab/vocab_session_screen.dart';
+import 'package:rpg_game_app/vocab/vocab_store.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'harness.dart';
 
@@ -107,7 +110,7 @@ void main() {
     );
     await s.tsuzuri!.connect();
     await _settle(t);
-    expect(find.text('つづりのテスト予定'), findsOneWidget);
+    expect(find.text('テスト予定'), findsOneWidget);
     expect(find.text('明日'), findsOneWidget);
     expect(find.text('1201〜1300'), findsOneWidget);
     expect(find.text('美術 提出物'), findsNothing, reason: 'テストだけ');
@@ -142,5 +145,76 @@ void main() {
       TsuzuriLinkController.connectErrorMessage(Exception('x')),
       startsWith('つづりにつなげませんでした'),
     );
+  });
+
+  testWidgets('ホームのつづりカード：今日の授業・目標・LEAP の範囲で対策（時間を記録）', (t) async {
+    final today = DateTime.now();
+    final lessonDay = today.hour >= 17
+        ? today.add(const Duration(days: 1))
+        : today;
+    final backend = MemoryTsuzuriBackend()
+      ..upcomingDoc = {
+        ..._upcoming(),
+        'lessons': {
+          StudyLog.dayKey(lessonDay): [
+            {'period': 1, 'subject': 'ECⅠ'},
+            {'period': 2, 'subject': '数学Ⅰ'},
+          ],
+        },
+      }
+      ..goalDocs = [
+        {'title': '今月30時間', 'type': 'studyTime', 'current': 12, 'target': 30},
+      ];
+    final s = await openScreen(
+      t,
+      const Scaffold(body: SingleChildScrollView(child: TsuzuriUpcomingCard())),
+      tsuzuri: backend,
+      frames: 2,
+    );
+    final store = VocabStore.of(s.personalBooks);
+    final leap = await store.createBook('LEAP');
+    leap.cards = [
+      for (var n = 1195; n <= 1305; n++)
+        VocabCard(id: '$n', number: n, term: 'word$n', meaning: '意味$n'),
+    ];
+    await s.tsuzuri!.connect();
+    await _settle(t);
+    expect(find.text('1限 ECⅠ'), findsOneWidget);
+    expect(find.text('目標：今月30時間'), findsOneWidget);
+    expect(find.text('12/30時間'), findsOneWidget);
+
+    await t.tap(find.byKey(const ValueKey('tsuzuri-practice-ECⅠ LEAP単語テスト')));
+    await _settle(t);
+    final session = t.widget<VocabSessionScreen>(
+      find.byType(VocabSessionScreen),
+    );
+    expect(session.title, contains('1201〜1300'));
+    expect(session.tasks, hasLength(TsuzuriPrep.rangeLimit));
+    expect(
+      session.tasks.every(
+        (x) => int.parse(x.cardId) >= 1201 && int.parse(x.cardId) <= 1300,
+      ),
+      isTrue,
+    );
+    expect(t.takeException(), isNull);
+  });
+
+  test('対策の時間を記録して、つづりへの成果に入れる', () async {
+    SharedPreferences.setMockInitialValues({});
+    final prefs = await SharedPreferences.getInstance();
+    final backend = MemoryTsuzuriBackend()..upcomingDoc = _upcoming();
+    final c = TsuzuriLinkController(
+      backend,
+      prefs,
+      log: () => StudyLog.empty,
+      record: () => LearningRecord.empty,
+    );
+    await c.connect();
+    final test = c.upcoming.first;
+    await c.addPrep(test, const Duration(minutes: 12));
+    expect(c.prepMinutes(test), 12);
+    await c.sync();
+    expect((backend.results!['tests'] as Map)[TsuzuriLink.testKey(test)], 12);
+    c.dispose();
   });
 }

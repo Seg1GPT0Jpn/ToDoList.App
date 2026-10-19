@@ -68,11 +68,70 @@ class TsuzuriUpcoming {
   }
 }
 
+/// つづりの時間割の1コマ
+class TsuzuriLesson {
+  const TsuzuriLesson({required this.period, required this.subject});
+  final int period;
+
+  /// つづりの科目名（例：ECⅠ）
+  final String subject;
+
+  String? get worldId => TsuzuriLink.worldFor(subject);
+
+  Map<String, dynamic> toMap() => {'period': period, 'subject': subject};
+}
+
+/// つづりの目標（勉強時間・数値の目標）
+class TsuzuriGoal {
+  const TsuzuriGoal({
+    required this.title,
+    required this.studyTime,
+    required this.current,
+    required this.target,
+    this.unit = '',
+    this.subject,
+    this.due,
+  });
+
+  final String title;
+
+  /// 勉強時間の目標（単位は時間）
+  final bool studyTime;
+  final double current;
+  final double target;
+  final String unit;
+  final String? subject;
+  final DateTime? due;
+
+  /// 進み具合（0〜1）
+  double get ratio =>
+      target <= 0 ? 0 : (current / target).clamp(0, 1).toDouble();
+
+  String get label {
+    String n(double v) =>
+        v == v.roundToDouble() ? '${v.round()}' : v.toStringAsFixed(1);
+    return studyTime
+        ? '${n(current)}/${n(target)}時間'
+        : '${n(current)}/${n(target)}$unit';
+  }
+
+  Map<String, dynamic> toMap() => {
+        'title': title,
+        'type': studyTime ? 'studyTime' : 'number',
+        'current': current,
+        'target': target,
+        'unit': unit,
+        if (subject != null) 'subject': subject,
+        if (due != null) 'dueDate': StudyLog.dayKey(due!),
+      };
+}
+
 /// つづりとの連携で、やりとりするデータの形（Firestore はつづりの方を使う）。
 ///
-/// - つづり → クエスト：`users/{uid}/quest_link/upcoming`（これからのテスト）
+/// - つづり → クエスト：`users/{uid}/quest_link/upcoming`（これからのテストと、1週間の時間割）、
+///   `users/{uid}/goals`（目標。つづりがもともと保存している場所を読む）
 /// - クエスト → つづり：`users/{uid}/study_sessions/quest_{日付}_{教科}`（勉強時間）と
-///   `users/{uid}/quest_link/results`（解いた問題数・正答率・苦手な単元）
+///   `users/{uid}/quest_link/results`（教科ごとの時間・問題数・正答率、テストごとの対策時間、苦手な単元）
 ///
 /// 送るのは教科名・時間・問題数・単元名だけ（問題の文章や単語帳の中身は送らない）。
 class TsuzuriLink {
@@ -175,22 +234,43 @@ class TsuzuriLink {
     StudyLog log,
     LearningRecord record, {
     required DateTime now,
+    Map<String, int> prepMinutes = const {},
   }) {
     final weekFrom = now.subtract(const Duration(days: 6));
     final today = log.total(from: now, to: now);
     final week = log.total(from: weekFrom, to: now);
     final weak = CurriculumProgress.of(record).weakest(limit: 5);
+    // 教科ごと（英語と英文法のように、つづりで同じ科目名になるものはまとめる）
+    Map<String, StudyDay> bySubject(Iterable<DateTime> days) {
+      final out = <String, StudyDay>{};
+      for (final d in days) {
+        for (final e in log.on(d).entries) {
+          final label = subjectLabel(e.key);
+          out[label] = (out[label] ?? const StudyDay()).plus(e.value);
+        }
+      }
+      return out;
+    }
+
+    final last7 = [
+      for (var i = 0; i < 7; i++) DateTime(now.year, now.month, now.day - i),
+    ];
     return {
-      'v': 1,
+      'v': 2,
       'today': _sum(today),
       'week': _sum(week),
       'days': {
-        for (var i = 0; i < 7; i++)
-          StudyLog.dayKey(DateTime(now.year, now.month, now.day - i)): {
-            for (final e
-                in log.on(DateTime(now.year, now.month, now.day - i)).entries)
-              subjectLabel(e.key): _sum(e.value),
+        for (final d in last7)
+          StudyLog.dayKey(d): {
+            for (final e in bySubject([d]).entries) e.key: _sum(e.value),
           },
+      },
+      'subjects': {
+        for (final e in bySubject(last7).entries) e.key: _sum(e.value),
+      },
+      'tests': {
+        for (final e in prepMinutes.entries)
+          if (e.value > 0) e.key: e.value,
       },
       'weak': [
         for (final p in weak)
@@ -200,6 +280,65 @@ class TsuzuriLink {
           },
       ],
     };
+  }
+
+  /// テストを見分けるキー（つづりの「クエストで対策した時間」に使う。例：2026-10-19|ECⅠ LEAP単語テスト）
+  static String testKey(TsuzuriUpcoming t) =>
+      '${StudyLog.dayKey(t.date)}|${t.title}';
+
+  /// 範囲の「1201〜1300」から番号の範囲を読む（なければ null）
+  static (int, int)? numberRange(String? detail) {
+    if (detail == null) return null;
+    final m = RegExp(r'(\d+)\s*[〜~～\-－ー]\s*(\d+)').firstMatch(detail);
+    if (m == null) return null;
+    final a = int.parse(m.group(1)!), b = int.parse(m.group(2)!);
+    return a <= b ? (a, b) : (b, a);
+  }
+
+  /// つづりの時間割：日付 → その日の授業（時限の順）
+  static Map<String, List<TsuzuriLesson>> parseLessons(
+    Map<String, dynamic>? doc,
+  ) {
+    final out = <String, List<TsuzuriLesson>>{};
+    for (final e in ((doc?['lessons'] as Map?) ?? const {}).entries) {
+      final list = <TsuzuriLesson>[
+        for (final raw in (e.value as List?) ?? const [])
+          if (raw is Map && raw['subject'] is String)
+            TsuzuriLesson(
+              period: (raw['period'] as num?)?.toInt() ?? 0,
+              subject: raw['subject'] as String,
+            ),
+      ]..sort((a, b) => a.period.compareTo(b.period));
+      if (list.isNotEmpty) out['${e.key}'] = list;
+    }
+    return out;
+  }
+
+  /// つづりの目標（達成していないもの。勉強時間の目標を先に）
+  static List<TsuzuriGoal> parseGoals(Iterable<Map<String, dynamic>> docs) {
+    final out = <TsuzuriGoal>[
+      for (final m in docs)
+        if (m['achieved'] != true &&
+            m['title'] is String &&
+            (m['title'] as String).isNotEmpty &&
+            (m['type'] == 'studyTime' || m['type'] == 'number'))
+          TsuzuriGoal(
+            title: m['title'] as String,
+            studyTime: m['type'] == 'studyTime',
+            current: (m['current'] as num?)?.toDouble() ?? 0,
+            target: (m['target'] as num?)?.toDouble() ?? 0,
+            unit: m['unit'] as String? ?? '',
+            subject: m['subject'] as String?,
+            due: DateTime.tryParse('${m['dueDate']}'),
+          ),
+    ];
+    out.sort((a, b) {
+      if (a.studyTime != b.studyTime) return a.studyTime ? -1 : 1;
+      final da = a.due, db = b.due;
+      if (da == null || db == null) return da == null ? 1 : -1;
+      return da.compareTo(db);
+    });
+    return out;
   }
 
   static Map<String, int> _sum(StudyDay d) =>
