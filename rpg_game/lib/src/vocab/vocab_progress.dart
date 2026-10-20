@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'fsrs.dart';
+import 'meaning_text.dart';
 import 'vocab_book.dart';
 
 /// 単語の「力」。1つの単語でも、意味は分かるのに書けない…を分けて記録する。
@@ -694,7 +695,9 @@ class VocabChoices {
     for (final c in others) {
       if (wrong.length >= 3) break;
       final l = label(c);
-      if (l != answer && !wrong.contains(l)) wrong.add(l);
+      if (l != answer && !wrong.contains(l) && usableChoiceText(l)) {
+        wrong.add(l);
+      }
     }
     return [answer, ...wrong.take(3)]..shuffle(rnd);
   }

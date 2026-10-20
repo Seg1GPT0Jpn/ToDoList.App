@@ -8,6 +8,7 @@ import '../models/player_stats.dart';
 import '../models/question.dart';
 import '../models/stage.dart';
 import '../study/word_list.dart';
+import 'meaning_text.dart';
 
 /// 単語の問い方。同じ単語を、いくつもの形で出す。
 enum WordFormat {
@@ -105,7 +106,9 @@ abstract final class WordBattle {
       final wrong = <String>[];
       for (final o in others) {
         final l = label(o);
-        if (l != answer && !wrong.contains(l)) wrong.add(l);
+        if (l != answer && !wrong.contains(l) && usableChoiceText(l)) {
+          wrong.add(l);
+        }
         if (wrong.length == 3) break;
       }
       return [answer, ...wrong]..shuffle(r);

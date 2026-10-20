@@ -1424,9 +1424,7 @@ class _BattleScreenState extends State<BattleScreen>
                 ),
                 child: SingleChildScrollView(child: _questionCard(q)),
               ),
-              if (!showExplanation) _cardHand(),
-              if (!showExplanation && last == null && q.source.isChoice)
-                _confidenceRow(),
+              if (!showExplanation) _cardHand(q),
               const SizedBox(height: 6),
               Expanded(
                 child: showExplanation
@@ -1524,30 +1522,38 @@ class _BattleScreenState extends State<BattleScreen>
     );
   }
 
-  /// 手札（回答前にタップすると、この問題に効果がつく）と、必殺技ゲージ
-  /// 自信ベット：自信ありは当たれば強く、外れると痛い。あやふやは控えめ
-  Widget _confidenceRow() {
+  /// 自信ベット：自信ありは当たれば強く、外れると痛い。あやふやは控えめ。
+  /// 問題文と選択肢をせまくしないよう、手札の列の右はしに小さく置き、タップで切りかえる
+  Widget _confidenceButton() {
+    final c = _engine.confidence;
+    final color = switch (c) {
+      Confidence.sure => TsuzuriColors.wrong,
+      Confidence.normal => TsuzuriColors.inkSoft,
+      Confidence.unsure => TsuzuriColors.accent,
+    };
+    const order = [Confidence.normal, Confidence.sure, Confidence.unsure];
     return Padding(
-      padding: const EdgeInsets.only(top: 4),
-      child: Row(
-        key: const ValueKey('confidence-row'),
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          for (final c in Confidence.values)
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 3),
-              child: ChoiceChip(
-                key: ValueKey('confidence-${c.name}'),
-                visualDensity: VisualDensity.compact,
-                materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                label: Text(c.label, style: const TextStyle(fontSize: 12)),
-                selected: _engine.confidence == c,
-                onSelected: _locked
-                    ? null
-                    : (_) => setState(() => _engine.confidence = c),
-              ),
-            ),
-        ],
+      padding: const EdgeInsets.only(left: 4),
+      child: Tooltip(
+        message: '自信ベット：自信ありは当たると強く外すと痛い。あやふやは控えめ',
+        child: OutlinedButton(
+          key: const ValueKey('confidence-button'),
+          style: OutlinedButton.styleFrom(
+            visualDensity: VisualDensity.compact,
+            padding: const EdgeInsets.symmetric(horizontal: 8),
+            minimumSize: const Size(0, 30),
+            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            foregroundColor: color,
+            side: BorderSide(color: color),
+          ),
+          onPressed: _locked
+              ? null
+              : () => setState(
+                  () => _engine.confidence =
+                      order[(order.indexOf(c) + 1) % order.length],
+                ),
+          child: Text(c.label, style: const TextStyle(fontSize: 12)),
+        ),
       ),
     );
   }
@@ -1591,7 +1597,8 @@ class _BattleScreenState extends State<BattleScreen>
     );
   }
 
-  Widget _cardHand() {
+  /// 手札（回答前にタップすると、この問題に効果がつく）と、必殺技ゲージ
+  Widget _cardHand(PresentedQuestion q) {
     final pending = _engine.pendingCard;
     final canUse = !_locked && pending == null && !_engine.isOver;
     return Padding(
@@ -1619,6 +1626,7 @@ class _BattleScreenState extends State<BattleScreen>
                   ),
                 ),
             _specialButton(),
+            if (_last == null && q.source.isChoice) _confidenceButton(),
           ],
         ),
       ),

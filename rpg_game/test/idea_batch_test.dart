@@ -1,4 +1,5 @@
 import 'package:rpg_game/rpg_game.dart';
+import 'package:rpg_game/src/vocab/meaning_text.dart';
 import 'package:test/test.dart';
 
 import 'helpers.dart';
@@ -139,6 +140,23 @@ void main() {
       expect(w.deltaMinutes, 20);
       expect(w.daysStudied, 2);
       expect(w.bestSubject, 'english');
+    });
+  });
+
+  group('4択の意味', () {
+    test('かっこの中では切らず、「(」だけ・閉じていないかっこの選択肢を作らない', () {
+      expect(shortMeaningOf('[名] 時間(①時刻 ②期間)'), '時間(時刻 期間)');
+      expect(shortMeaningOf('[動]（〈人〉に）①頼む（[名] 依頼）'),
+          '（〈人〉に）頼む（[名] 依頼）');
+      expect(shortMeaningOf('[動] (人)を[名]の状態にする'), '(人)を[名]の状態にする');
+      expect(shortMeaningOf('[動] ①(～を)延期する ②遅らせる'), '(～を)延期する');
+      expect(shortMeaningOf('[動] 主張する [名] 主張'), '主張する');
+    });
+
+    test('記号だけの意味は、まちがいの選択肢に出ない', () {
+      expect(usableChoiceText('（'), isFalse);
+      expect(usableChoiceText('～'), isFalse);
+      expect(usableChoiceText('たまに'), isTrue);
     });
   });
 }

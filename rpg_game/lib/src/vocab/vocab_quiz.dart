@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import '../models/question.dart';
+import 'meaning_text.dart';
 import 'vocab_book.dart';
 
 /// 単語帳（LEAP・EEVI など）から4択問題を作る。
@@ -21,7 +22,7 @@ class VocabQuizBuilder {
   }) {
     final all = [
       for (final c in book.cards)
-        if (c.term.trim().isNotEmpty && c.shortMeaning.trim().isNotEmpty) c,
+        if (usableChoiceText(c.term) && usableChoiceText(c.shortMeaning)) c,
     ];
     final targets = [...(pool ?? all)]..shuffle(_random);
     String label(VocabCard c) => enToJa ? c.shortMeaning : c.term;

@@ -172,7 +172,9 @@ void main() {
     tester.view.devicePixelRatio = 1;
     addTearDown(tester.view.reset);
     await _open(tester, english.first);
-    await tester.tap(find.byKey(const ValueKey('confidence-sure')));
+    await tester.tap(find.byKey(const ValueKey('confidence-button')));
+    await tester.pump();
+    expect(find.text('自信あり'), findsOneWidget);
     await tester.pump();
     // 正解は「あ」（選択肢は並べかえられる）。それ以外を押す
     await tester.tap(find.text('い').first);
@@ -188,6 +190,37 @@ void main() {
     for (var i = 0; i < 30; i++) {
       await tester.pump(const Duration(milliseconds: 100));
     }
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('せまいスマホでも、自信ベットで長文と選択肢がつぶれない', (tester) async {
+    tester.view.physicalSize = const Size(360, 640);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.reset);
+    final qs = [
+      for (var i = 0; i < 4; i++)
+        QuizQuestion(
+          id: 'long$i',
+          category: QuestionCategory.reading,
+          prompt: '問題$i　本文の内容に合うものは？',
+          passage: Passage(
+            id: 'p',
+            title: 'Maya',
+            paragraphs: List.filled(4, 'Maya joined the club in April. ' * 4),
+          ),
+          choices: const [
+            'She joined because her friend was a member.',
+            'She wanted to grow vegetables for her family.',
+            'Her teacher asked her to join the club.',
+            'She had always loved gardening.',
+          ],
+          answerIndex: 0,
+          explanation: '解説。',
+        ),
+    ];
+    await _open(tester, english.first, questions: qs);
+    expect(find.byKey(const ValueKey('confidence-button')), findsOneWidget);
+    expect(find.byKey(const ValueKey('confidence-row')), findsNothing);
     expect(tester.takeException(), isNull);
   });
 
