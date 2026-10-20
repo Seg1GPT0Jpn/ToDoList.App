@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:rpg_game/rpg_game.dart';
 
+import '../art/slow_clock.dart';
 import '../app/services.dart';
 import '../app/theme.dart';
 import '../app/toast.dart';
@@ -193,10 +194,7 @@ class _BattleScreenState extends State<BattleScreen>
   /// 敵のセリフ（登場時・撃破時に少しだけ出す）
   String? _speech;
 
-  late final _idle = AnimationController(
-    vsync: this,
-    duration: const Duration(seconds: 120),
-  )..repeat();
+  late final _idle = SlowClock(period: const Duration(seconds: 120), fps: 15);
   late final _intro = AnimationController(
     vsync: this,
     duration: const Duration(milliseconds: 700),
@@ -299,6 +297,7 @@ class _BattleScreenState extends State<BattleScreen>
   void didChangeDependencies() {
     super.didChangeDependencies();
     _services = RpgServices.of(context);
+    _idle.follow(context);
     // バトル前の熟練度を、記録が更新される前に読んでおく
     // （サービスが使えるようになった直後。initState ではまだ使えない）
     _skillBefore;
@@ -324,8 +323,8 @@ class _BattleScreenState extends State<BattleScreen>
   void dispose() {
     _input.dispose();
     _services.music.leave(_musicKey);
+    _idle.dispose();
     for (final c in [
-      _idle,
       _intro,
       _timer,
       _enemyHit,

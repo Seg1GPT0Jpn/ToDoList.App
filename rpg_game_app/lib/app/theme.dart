@@ -57,7 +57,8 @@ ThemeData buildTheme(Brightness brightness) {
         ? TsuzuriColors.darkBg
         : const Color(0xFFFAF6EE),
   );
-  final body = GoogleFonts.notoSansJpTextTheme(base.textTheme);
+  // 本文のフォントは Regular の1つだけを持つ（読みこみを軽くするため、中くらいの太さも Regular で描く）
+  final body = GoogleFonts.notoSansJpTextTheme(_regularOnly(base.textTheme));
   return base.copyWith(
     textTheme: body.copyWith(
       headlineLarge: GoogleFonts.notoSerifJp(
@@ -78,7 +79,7 @@ ThemeData buildTheme(Brightness brightness) {
       ),
       titleMedium: GoogleFonts.notoSerifJp(
         textStyle: body.titleMedium,
-        fontWeight: FontWeight.w600,
+        fontWeight: FontWeight.w700,
       ),
     ),
     cardTheme: CardThemeData(
@@ -92,9 +93,39 @@ ThemeData buildTheme(Brightness brightness) {
   );
 }
 
-/// 見出し用（Noto Serif JP）
+/// 見出し用（Noto Serif JP）。フォントは Bold の1つだけを持つので、太さは Bold にそろえる
+/// （ほかの太さを指定すると、そのフォントをネットから取りに行って重くなる）
 TextStyle serif(
   double size, {
   FontWeight weight = FontWeight.w700,
   Color? color,
-}) => GoogleFonts.notoSerifJp(fontSize: size, fontWeight: weight, color: color);
+}) => GoogleFonts.notoSerifJp(
+  fontSize: size,
+  fontWeight: FontWeight.w700,
+  color: color,
+);
+
+/// Material の文字の太さのうち、Regular より細い・中くらいのものを Regular にする
+TextTheme _regularOnly(TextTheme t) {
+  TextStyle? r(TextStyle? s) =>
+      s == null || (s.fontWeight ?? FontWeight.w400).value >= 600
+      ? s
+      : s.copyWith(fontWeight: FontWeight.w400);
+  return TextTheme(
+    displayLarge: r(t.displayLarge),
+    displayMedium: r(t.displayMedium),
+    displaySmall: r(t.displaySmall),
+    headlineLarge: r(t.headlineLarge),
+    headlineMedium: r(t.headlineMedium),
+    headlineSmall: r(t.headlineSmall),
+    titleLarge: r(t.titleLarge),
+    titleMedium: r(t.titleMedium),
+    titleSmall: r(t.titleSmall),
+    bodyLarge: r(t.bodyLarge),
+    bodyMedium: r(t.bodyMedium),
+    bodySmall: r(t.bodySmall),
+    labelLarge: r(t.labelLarge),
+    labelMedium: r(t.labelMedium),
+    labelSmall: r(t.labelSmall),
+  );
+}

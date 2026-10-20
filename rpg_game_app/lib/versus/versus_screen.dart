@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import '../art/slow_clock.dart';
 import '../quiz/figure_view.dart';
 
 import 'dart:math';
@@ -425,10 +426,7 @@ class _VersusScreenState extends State<VersusScreen>
     vsync: this,
     duration: const Duration(seconds: 15),
   );
-  late final _idle = AnimationController(
-    vsync: this,
-    duration: const Duration(seconds: 60),
-  )..repeat();
+  late final _idle = SlowClock(period: const Duration(seconds: 60), fps: 15);
   final _stopwatch = Stopwatch();
   Timer? _cpuTimer;
 
@@ -465,6 +463,12 @@ class _VersusScreenState extends State<VersusScreen>
 
   /// 自分の側（下に出す）
   int get _me => _online?.localSide ?? 0;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _idle.follow(context);
+  }
 
   @override
   void initState() {

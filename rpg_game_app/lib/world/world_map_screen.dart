@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:rpg_game/rpg_game.dart';
 
+import '../art/slow_clock.dart';
 import '../account/tsuzuri_link_card.dart';
 import '../app/pwa.dart';
 import '../meta/study_boost_card.dart';
@@ -400,10 +401,13 @@ class _WalkingHero extends StatefulWidget {
 
 class _WalkingHeroState extends State<_WalkingHero>
     with SingleTickerProviderStateMixin {
-  late final _c = AnimationController(
-    vsync: this,
-    duration: const Duration(milliseconds: 900),
-  )..repeat();
+  late final _c = SlowClock(period: const Duration(milliseconds: 900), fps: 12);
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _c.follow(context);
+  }
 
   @override
   void dispose() {
@@ -807,10 +811,13 @@ class _HomeBanner extends StatefulWidget {
 
 class _HomeBannerState extends State<_HomeBanner>
     with SingleTickerProviderStateMixin {
-  late final _t = AnimationController(
-    vsync: this,
-    duration: const Duration(seconds: 40),
-  )..repeat();
+  late final _t = SlowClock(period: const Duration(seconds: 40), fps: 15);
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _t.follow(context);
+  }
 
   @override
   void dispose() {

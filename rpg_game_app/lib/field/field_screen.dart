@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import '../art/slow_clock.dart';
 import '../quiz/figure_view.dart';
 
 import 'package:flame/game.dart';
@@ -343,9 +344,16 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
     super.dispose();
   }
 
+  /// バトルなどの画面を上に開いたら、見えないフィールドの描きなおし（毎秒60回）を止める
+  @override
+  void didPushNext() => _game.pauseEngine();
+
   /// バトル・結果画面を閉じて、フィールドが一番手前に戻ったとき
   @override
-  void didPopNext() => _refreshAfterBattle();
+  void didPopNext() {
+    _game.resumeEngine();
+    _refreshAfterBattle();
+  }
 
   Future<void> _refreshAfterBattle() async {
     final services = RpgServices.of(context);
@@ -1555,10 +1563,13 @@ class _EnemyPortrait extends StatefulWidget {
 
 class _EnemyPortraitState extends State<_EnemyPortrait>
     with SingleTickerProviderStateMixin {
-  late final _c = AnimationController(
-    vsync: this,
-    duration: const Duration(seconds: 60),
-  )..repeat();
+  late final _c = SlowClock(period: const Duration(seconds: 60), fps: 12);
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _c.follow(context);
+  }
 
   @override
   void dispose() {

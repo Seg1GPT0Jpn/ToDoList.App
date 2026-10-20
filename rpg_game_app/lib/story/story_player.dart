@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:rpg_game/rpg_game.dart';
 
+import '../art/slow_clock.dart';
 import '../app/services.dart';
 import '../app/theme.dart';
 import '../art/enemy_painter.dart';
@@ -61,10 +62,7 @@ class _StoryPlayerScreenState extends State<StoryPlayerScreen>
   int _scene = 0;
   int _line = -1; // -1 = 章の題名
   late final _type = AnimationController(vsync: this);
-  late final _ambient = AnimationController(
-    vsync: this,
-    duration: const Duration(seconds: 30),
-  )..repeat();
+  late final _ambient = SlowClock(period: const Duration(seconds: 30), fps: 15);
 
   StoryScene get _current => widget.scenes[_scene];
 
@@ -72,6 +70,12 @@ class _StoryPlayerScreenState extends State<StoryPlayerScreen>
   void initState() {
     super.initState();
     _type.addListener(() => setState(() {}));
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _ambient.follow(context);
   }
 
   @override
