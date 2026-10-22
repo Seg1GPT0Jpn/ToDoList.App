@@ -13,14 +13,15 @@ abstract final class SchoolGate {
     '4eec16a5a143b72e875fd096fe30983a237cb53cd563da3b9d0719130e618266',
   };
 
-  static String _norm(String s) =>
+  /// 入力をそろえる（全角→半角・空白を除く・小文字）
+  static String normalize(String s) =>
       VocabVault.halfWidth(s).replaceAll(RegExp(r'\s+'), '').toLowerCase();
 
   /// 学校名とパスワードが合っているか
   static bool matches(String school, String password) => _hashes.contains(
         sha256
             .convert(utf8.encode(
-                'tsuzuri-school:${_norm(school)}|${_norm(password)}'))
+                'tsuzuri-school:${normalize(school)}|${normalize(password)}'))
             .toString(),
       );
 }

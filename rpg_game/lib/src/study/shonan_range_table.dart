@@ -270,6 +270,11 @@ class ShonanRangeTable {
               'japanese_gendai_04',
               'japanese_bungakushi_01'
             ],
+            committeeSetIds: const [
+              'japanese_shonan_104_gendai_kokugo_01',
+              'japanese_shonan_104_gendai_kokugo_02',
+              'japanese_shonan_104_gendai_kokugo_03'
+            ],
             status: RangeStatus.entered,
             materials: const [
               StudyMaterial(

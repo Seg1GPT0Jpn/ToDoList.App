@@ -15,6 +15,7 @@ def _sets(prefix, n):
 
 COMMITTEE = {
     ('後期中間試験', 'public_economy'): _sets('social_shonan_104_public_economy', 14),
+    ('後期中間試験', 'gendai_kokugo'): _sets('japanese_shonan_104_gendai_kokugo', 3),
     ('後期中間試験', 'math1'): _sets('math_shonan_104_m1_data', 4) + _sets('math_shonan_104_m1_proof', 3) + _sets('math_shonan_104_m1_complex', 4),
     ('後期中間試験', 'math_a'): _sets('math_shonan_104_ma_integer', 5),
     ('後期中間試験', 'ec1'): _sets('english_shonan_104_ec1', 3),

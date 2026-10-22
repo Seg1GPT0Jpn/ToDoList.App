@@ -1,0 +1,512 @@
+{
+  "setId": "japanese_shonan_104_gendai_kokugo_03",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_03_001",
+      "unit": "japanese.gendai.logical.hyoron.claim",
+      "category": "knowledge",
+      "prompt": "宇野重規「〈私〉時代のデモクラシー」で、「あなたらしくあれ」という宣伝がある意味で矛盾しているとされる理由は？",
+      "choices": [
+        "商品が高すぎるから",
+        "その「自分らしさ」も、市場調査によって割り出された類型化された「自分らしさ」にほかならないから",
+        "誰も自分らしさを求めていないから",
+        "宣伝が嘘をついているから"
+      ],
+      "answerIndex": 1,
+      "explanation": "「自分らしさ」さえも商品化されている。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_03_002",
+      "unit": "japanese.gendai.logical.hyoron.claim",
+      "category": "knowledge",
+      "prompt": "「近代」の目標の一つとして、まず挙げられているのは？",
+      "choices": [
+        "伝統的な人間関係や社会的関係の束縛から、個人を解放すること",
+        "宗教を広めること",
+        "身分制度を守ること",
+        "家の存続"
+      ],
+      "answerIndex": 0,
+      "explanation": "もう一つの目標は、宗教からの解放。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_03_003",
+      "unit": "japanese.gendai.logical.hyoron.paraphrase",
+      "category": "knowledge",
+      "prompt": "本文で「近代化」とはどういう過程だとされている？",
+      "choices": [
+        "都市を大きくしていく過程",
+        "人口が増えていく過程",
+        "機械を増やしていく過程",
+        "与えられた人間関係を、自分で選んだ関係に置きかえていく過程"
+      ],
+      "answerIndex": 3,
+      "explanation": "「家」の存続ではなく、当事者の合意に基づく婚姻による「近代家族」・核家族化。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_03_004",
+      "unit": "japanese.gendai.logical.hyoron.claim",
+      "category": "knowledge",
+      "prompt": "「近代」のもう一つの目標とされたものは？",
+      "choices": [
+        "国家の統一",
+        "宗教からの解放",
+        "経済の発展",
+        "科学の進歩"
+      ],
+      "answerIndex": 1,
+      "explanation": "個人の意志を新たな価値の源泉とした。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_03_005",
+      "unit": "japanese.gendai.logical.hyoron.claim",
+      "category": "knowledge",
+      "prompt": "ギデンズやベックが、現代を何と呼んでいるとされる？",
+      "choices": [
+        "「後期近代」「再帰的近代」",
+        "「超近代」",
+        "「前近代」",
+        "「ポスト・モダン」"
+      ],
+      "answerIndex": 0,
+      "explanation": "「近代」が終わったのではなく、その効果が近代自身に跳ね返ってくる段階。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_03_006",
+      "unit": "japanese.gendai.logical.hyoron.paraphrase",
+      "category": "knowledge",
+      "prompt": "「再帰的近代」の「再帰的」の意味として正しいものは？",
+      "choices": [
+        "近代が終わること",
+        "近代の効果が自分自身に戻ってくる（跳ね返ってくる）こと",
+        "近代以前に戻ること",
+        "同じことをくりかえすこと"
+      ],
+      "answerIndex": 1,
+      "explanation": "原語は reflexive。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_03_007",
+      "unit": "japanese.gendai.logical.hyoron.claim",
+      "category": "knowledge",
+      "prompt": "現代の社会理論家の代表的な一人として挙げられ、「〈私〉中心の近代」と述べたのは？",
+      "choices": [
+        "ベンヤミン",
+        "ジグムント・バウマン",
+        "ハンナ・アレント",
+        "カール・シュミット"
+      ],
+      "answerIndex": 1,
+      "explanation": "現代の社会理論で強調されるのは「差異」や「個人の選択」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_03_008",
+      "unit": "japanese.gendai.logical.hyoron.claim",
+      "category": "knowledge",
+      "prompt": "現代における個人主義は、何の平等だとされている？",
+      "choices": [
+        "財産の平等",
+        "〈私〉の平等",
+        "身分の平等",
+        "結果の平等"
+      ],
+      "answerIndex": 1,
+      "explanation": "自分が他人と同程度には特別な存在として扱われることを求める。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_03_009",
+      "unit": "japanese.gendai.logical.hyoron.paraphrase",
+      "category": "knowledge",
+      "prompt": "本文の「パラドクス」とはどういうことか？",
+      "choices": [
+        "みんなが同じものを好むのに対立すること",
+        "個人が増えると社会が強くなること",
+        "平等を求めると差別がなくなること",
+        "一人ひとりが自分の固有性にこだわるのに、社会全体で見るとどことなく似通っていること"
+      ],
+      "answerIndex": 3,
+      "explanation": "これこそが〈私〉時代を特徴づける。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_03_010",
+      "unit": "japanese.gendai.logical.hyoron.claim",
+      "category": "knowledge",
+      "prompt": "筆者によると、デモクラシーとは何によって生み出していくものか？",
+      "choices": [
+        "お金の力",
+        "政府の力",
+        "〈私〉ではなく〈私たち〉の力",
+        "一人の英雄の力"
+      ],
+      "answerIndex": 2,
+      "explanation": "〈私たち〉を形成することは、ますます難しくなっている。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_03_011",
+      "unit": "japanese.gendai.logical.hyoron.claim",
+      "category": "knowledge",
+      "prompt": "國分功一郎「来るべき民主主義」で、政治の本質を考えるには何を経由するのがよいとされる？",
+      "choices": [
+        "哲学",
+        "歴史",
+        "経済学",
+        "法律"
+      ],
+      "answerIndex": 0,
+      "explanation": "二人の哲学者（シュミットとアレント）を通じて考える。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_03_012",
+      "unit": "japanese.gendai.logical.hyoron.claim",
+      "category": "knowledge",
+      "prompt": "カール・シュミットが、政治的なものに固有の究極的な区別としたのは？",
+      "choices": [
+        "敵と友",
+        "美と醜",
+        "善と悪",
+        "利と害"
+      ],
+      "answerIndex": 0,
+      "explanation": "道徳は善と悪、美学は美と醜、経済は利と害。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_03_013",
+      "unit": "japanese.gendai.logical.hyoron.paraphrase",
+      "category": "knowledge",
+      "prompt": "シュミットによれば、道徳の分野の究極的な区別は？",
+      "choices": [
+        "美と醜",
+        "善と悪",
+        "真と偽",
+        "敵と友"
+      ],
+      "answerIndex": 1,
+      "explanation": "様々な分野にはそれぞれの究極的な区別がある。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_03_014",
+      "unit": "japanese.gendai.logical.hyoron.paraphrase",
+      "category": "knowledge",
+      "prompt": "シュミットによれば、美学の分野の究極的な区別は？",
+      "choices": [
+        "敵と友",
+        "善と悪",
+        "利と害",
+        "美と醜"
+      ],
+      "answerIndex": 3,
+      "explanation": "美しいか醜いか、それが美学の究極的な区別。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_03_015",
+      "unit": "japanese.gendai.logical.hyoron.paraphrase",
+      "category": "knowledge",
+      "prompt": "シュミットによれば、経済の分野の究極的な区別は？",
+      "choices": [
+        "利と害（利益と損失）",
+        "美と醜",
+        "敵と友",
+        "善と悪"
+      ],
+      "answerIndex": 0,
+      "explanation": "採算が取れるか取れないか。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_03_016",
+      "unit": "japanese.gendai.logical.hyoron.claim",
+      "category": "knowledge",
+      "prompt": "ハンナ・アレントが『人間の条件』で分類した人間の三つの行為は？",
+      "choices": [
+        "労働・仕事・活動",
+        "政治・経済・文化",
+        "生産・流通・消費",
+        "思考・判断・意志"
+      ],
+      "answerIndex": 0,
+      "explanation": "それぞれに対応する人間の条件は、生命・世界性・多数性。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_03_017",
+      "unit": "japanese.gendai.logical.hyoron.paraphrase",
+      "category": "knowledge",
+      "prompt": "アレントのいう〈活動〉に対応する人間の条件は？",
+      "choices": [
+        "多数性",
+        "生命",
+        "単一性",
+        "世界性"
+      ],
+      "answerIndex": 0,
+      "explanation": "〈活動〉は物を介さずに人と人との間で行われる唯一の行為。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_03_018",
+      "unit": "japanese.gendai.logical.hyoron.paraphrase",
+      "category": "knowledge",
+      "prompt": "アレントのいう〈労働〉に対応する人間の条件は？",
+      "choices": [
+        "多数性",
+        "生命",
+        "自由",
+        "世界性"
+      ],
+      "answerIndex": 1,
+      "explanation": "食物や衣料品など、生き延びるために必要な消費財を作る行為。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_03_019",
+      "unit": "japanese.gendai.logical.hyoron.paraphrase",
+      "category": "knowledge",
+      "prompt": "アレントのいう〈仕事〉の説明として正しいものは？",
+      "choices": [
+        "生き延びるための食料を作ること",
+        "自然の中で生きていくために、この世界そのものを作り替えていくこと（テクノロジーなど）",
+        "他人に命令すること",
+        "人と人との間で話し合うこと"
+      ],
+      "answerIndex": 1,
+      "explanation": "対応する人間の条件は「世界性」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_03_020",
+      "unit": "japanese.gendai.logical.hyoron.claim",
+      "category": "knowledge",
+      "prompt": "アレントの言う「全政治生活の条件であり、最大の条件」とは？",
+      "choices": [
+        "単一性",
+        "多数性",
+        "世界性",
+        "生命"
+      ],
+      "answerIndex": 1,
+      "explanation": "人間は一人ではなく、必ず多数でともに生きなければならない。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_03_021",
+      "unit": "japanese.gendai.logical.hyoron.paraphrase",
+      "category": "knowledge",
+      "prompt": "政治というものの「原理的困難」とは何か？",
+      "choices": [
+        "多と一を結びつけなければならないこと",
+        "法律が多すぎること",
+        "選挙が盛り上がらないこと",
+        "政治家が少ないこと"
+      ],
+      "answerIndex": 0,
+      "explanation": "人間は多数なのに、政治がもたらす決定は一つでしかありえない。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_03_022",
+      "unit": "japanese.gendai.logical.hyoron.claim",
+      "category": "thinking",
+      "prompt": "なぜ政治は敵／友の区別によって定義されるのか。本文の答えとして最も適切なものは？",
+      "choices": [
+        "人間はもともと争いを好むから",
+        "法律が敵を決めているから",
+        "多数の中からどの一つの決定を導くかという無理なことをやっているから、そこに争いが生まれ、敵と友の区別が出現する",
+        "政治家が対立をあおるから"
+      ],
+      "answerIndex": 2,
+      "explanation": "政治の根源には敵と友の区別が存在する。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_03_023",
+      "unit": "japanese.gendai.logical.hyoron.claim",
+      "category": "knowledge",
+      "prompt": "「民主主義」「デモクラシー」の語源として正しいものは？",
+      "choices": [
+        "ギリシア語の「デモクラティア」（民衆による支配）",
+        "ラテン語の「レス・プブリカ」",
+        "英語の「フリーダム」",
+        "ドイツ語の「フォルク」"
+      ],
+      "answerIndex": 0,
+      "explanation": "民主主義とは、民衆が主権を有し、それを行使する政治体制。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_03_024",
+      "unit": "japanese.gendai.logical.practical.multiple",
+      "category": "knowledge",
+      "prompt": "文章【A】と【B】を比べたとき、共通して考えられているテーマは？",
+      "choices": [
+        "科学技術の進歩",
+        "言葉の起源",
+        "経済の成長のしかた",
+        "人々がどのようにして一つの決定（〈私たち〉）を形成していくかという、デモクラシーのむずかしさ"
+      ],
+      "answerIndex": 3,
+      "explanation": "【A】は〈私たち〉を形成する難しさ、【B】は多と一を結びつける原理的困難。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    }
+  ]
+}

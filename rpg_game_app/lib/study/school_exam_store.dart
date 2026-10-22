@@ -76,8 +76,17 @@ class SchoolExamStore {
   Future<bool> unlock(String school, String password) async {
     if (!SchoolGate.matches(school, password)) return false;
     await _prefs.setBool(gateKey, true);
+    await saveSecret(password);
     return true;
   }
+
+  /// 鍵のかかった資料を開くためのパスワード（この端末の中だけに覚える）
+  static const _secretKey = 'school_gate_secret_v1';
+
+  String? get secret => _prefs.getString(_secretKey);
+
+  Future<void> saveSecret(String password) =>
+      _prefs.setString(_secretKey, SchoolGate.normalize(password));
 
   SchoolExamPlan? byId(String id) {
     for (final p in load()) {

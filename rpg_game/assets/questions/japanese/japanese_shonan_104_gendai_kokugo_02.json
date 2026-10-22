@@ -1,0 +1,533 @@
+{
+  "setId": "japanese_shonan_104_gendai_kokugo_02",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_02_001",
+      "unit": "japanese.gendai.logical.practical.document",
+      "category": "knowledge",
+      "prompt": "「情報の妥当性」とは？",
+      "choices": [
+        "その情報が確かなものかどうか",
+        "その情報が新しいかどうか",
+        "その情報が多くの人に読まれたかどうか",
+        "その情報が正しいか、根拠として挙げる場合に適切かどうか"
+      ],
+      "answerIndex": 3,
+      "explanation": "信頼性は「確かなものかどうか」（出典・誰がいつどこで・複数の情報）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_02_002",
+      "unit": "japanese.gendai.logical.practical.document",
+      "category": "knowledge",
+      "prompt": "「情報の信頼性」を確かめる方法として示されていないものは？",
+      "choices": [
+        "複数の情報を収集し、真偽や事実誤認の有無を確認する",
+        "出典の示し方を見る",
+        "自分の意見と合っているかを確かめる",
+        "誰が、いつ、どこで発信したものかを見る"
+      ],
+      "answerIndex": 2,
+      "explanation": "自分の考えに合うかどうかは信頼性とは関係しない。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_02_003",
+      "unit": "japanese.gendai.logical.practical.document",
+      "category": "knowledge",
+      "prompt": "書籍を引用したときの出典に書くものとして正しい組み合わせは？",
+      "choices": [
+        "書名と自分の感想",
+        "書名・編著者名・出版社・出版年など",
+        "出版社の住所と電話番号",
+        "著者名だけ"
+      ],
+      "answerIndex": 1,
+      "explanation": "こうした書誌情報の多くは奥付にある。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_02_004",
+      "unit": "japanese.gendai.logical.practical.document",
+      "category": "knowledge",
+      "prompt": "書籍の巻末にある、書名・著者・発行者・発行日などを記した部分を何という？",
+      "choices": [
+        "目次",
+        "帯",
+        "索引",
+        "奥付"
+      ],
+      "answerIndex": 3,
+      "explanation": "読みは「おくづけ」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_02_005",
+      "unit": "japanese.gendai.logical.practical.document",
+      "category": "knowledge",
+      "prompt": "ウェブサイトを引用したとき、アドレスと一緒に必要なものは？",
+      "choices": [
+        "閲覧日",
+        "作者の年齢",
+        "サイトのデザイン",
+        "アクセス数"
+      ],
+      "answerIndex": 0,
+      "explanation": "ウェブの情報は書きかえられることがあるため。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_02_006",
+      "unit": "japanese.gendai.logical.practical.document",
+      "category": "knowledge",
+      "prompt": "引用のルールとして正しくないものは？",
+      "choices": [
+        "読みやすいように、引用した文章を自分の言葉に直す",
+        "引用した部分がわかるようにかぎかっこでくくる",
+        "出典を明記する",
+        "必要な部分だけを引用する"
+      ],
+      "answerIndex": 0,
+      "explanation": "引用は正確に。原文の表記が誤りでも原文のまま書く。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_02_007",
+      "unit": "japanese.gendai.logical.practical.document",
+      "category": "knowledge",
+      "prompt": "「引用」とは？",
+      "choices": [
+        "他人の文章を要約して自分の文章とすること",
+        "他人の意見に反論すること",
+        "参考にした書籍や論文の一節、図表やグラフなどをそのまま抜き出すこと",
+        "自分の体験を書くこと"
+      ],
+      "answerIndex": 2,
+      "explanation": "引用の目的は自論の補強・正当性・権威づけなど。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_02_008",
+      "unit": "japanese.gendai.logical.practical.multiple",
+      "category": "knowledge",
+      "prompt": "中村桃子の文章で、哲学者ジュディス・バトラーがジェンダーについて指摘したこととして正しいものは？",
+      "choices": [
+        "身体をくりかえし様式化していくことであり、長い年月の間に凝固して自然な存在という見せかけを生み出す",
+        "個人が一度選べば変わらないもの",
+        "生まれつき決まっている性質である",
+        "言語とは関係なく存在する"
+      ],
+      "answerIndex": 0,
+      "explanation": "アイデンティティを言語行為を通してつくりつづけるものとみなす考え方を「構築主義」と呼ぶ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_02_009",
+      "unit": "japanese.gendai.logical.practical.multiple",
+      "category": "knowledge",
+      "prompt": "内田樹の文章で、ソシュールの言語学が構造主義にもたらした最も重要な知見は？",
+      "choices": [
+        "ことばはものの名前のカタログである",
+        "ことばとは「ものの名前」ではない",
+        "ことばは神が与えたものである",
+        "ことばは変化しない"
+      ],
+      "answerIndex": 1,
+      "explanation": "ものの名前を集めたカタログとしての言語観（名称目録的言語観）を否定した。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_02_010",
+      "unit": "japanese.gendai.logical.practical.multiple",
+      "category": "knowledge",
+      "prompt": "「名づけられる前からすでにものはあった」とする言語観を何と呼ぶ？",
+      "choices": [
+        "言語相対主義",
+        "構造主義",
+        "名称目録的言語観",
+        "構築主義"
+      ],
+      "answerIndex": 2,
+      "explanation": "ソシュールはこれを否定した。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_02_011",
+      "unit": "japanese.gendai.logical.hyoron.paraphrase",
+      "category": "knowledge",
+      "prompt": "ソシュールの考える言語活動のたとえとして示されているのは？",
+      "choices": [
+        "辞書を引くこと",
+        "すでに分かれているものに名札をはること",
+        "地図に地名を書きこむこと",
+        "星座を見るように、もともとは切れ目の入っていない世界に人為的に切れ目を入れて、まとまりをつけること"
+      ],
+      "answerIndex": 3,
+      "explanation": "名がつくことで、ある観念が思考の中に存在するようになる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_02_012",
+      "unit": "japanese.gendai.logical.practical.document",
+      "category": "knowledge",
+      "prompt": "山田登世子『贅沢の条件』の書誌情報として正しいものは？",
+      "choices": [
+        "岩波ジュニア新書・2015年",
+        "単行本・2020年",
+        "岩波新書・2009年",
+        "ちくま学芸文庫・1995年"
+      ],
+      "answerIndex": 2,
+      "explanation": "2009年7月22日 第1刷発行。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_02_013",
+      "unit": "japanese.gendai.logical.practical.document",
+      "category": "knowledge",
+      "prompt": "新書の説明として正しいものは？",
+      "choices": [
+        "173×105mm サイズの叢書で、一般には一般読者向けに書かれた本",
+        "雑誌の一種",
+        "新しく出版された本のこと",
+        "単行本の一種で、専門家向けの本"
+      ],
+      "answerIndex": 0,
+      "explanation": "新書は単行本ではない。最初に発売したのは岩波新書。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_02_014",
+      "unit": "japanese.gendai.logical.hyoron.claim",
+      "category": "knowledge",
+      "prompt": "『贅沢の条件』で、忙しいビジネス社会から失われて久しいものとされているのは？",
+      "choices": [
+        "「はるけさ」（遠い昔に起源をもつ悠久の時の流れ）",
+        "お金で買えるぜいたく品",
+        "都会の便利さ",
+        "速い情報"
+      ],
+      "answerIndex": 0,
+      "explanation": "それこそが「贅沢の条件」だとされる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_02_015",
+      "unit": "japanese.gendai.logical.hyoron.claim",
+      "category": "knowledge",
+      "prompt": "『贅沢の条件』で、情報社会を刻むタイム（機械生産の世界を刻む時）は何と呼ばれている？",
+      "choices": [
+        "悠久の時",
+        "機械的時間",
+        "手仕事的時間",
+        "物語の時間"
+      ],
+      "answerIndex": 1,
+      "explanation": "誰にでもわかる時間。マエストロや職人の「手仕事的時間」と対比される。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_02_016",
+      "unit": "japanese.gendai.logical.hyoron.claim",
+      "category": "knowledge",
+      "prompt": "ベンヤミンが「物語」と密接に結びついていると言ったものは？",
+      "choices": [
+        "手仕事",
+        "機械生産",
+        "新聞",
+        "ビジネス"
+      ],
+      "answerIndex": 0,
+      "explanation": "手仕事をするゆるい時間の流れは、物語を語り耳をかたむける時間にぴったりと呼応していた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_02_017",
+      "unit": "japanese.gendai.logical.hyoron.claim",
+      "category": "knowledge",
+      "prompt": "物語の語り手の二つの型として本文に挙げられているのは？",
+      "choices": [
+        "定住する農民と交易を営む船乗り",
+        "教師と生徒",
+        "商人と職人",
+        "王と兵士"
+      ],
+      "answerIndex": 0,
+      "explanation": "農民ははるかな祖先からの物語（時間）、船乗りは遠いところの出来事（空間）を語る。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_02_018",
+      "unit": "japanese.gendai.logical.hyoron.paraphrase",
+      "category": "knowledge",
+      "prompt": "物語に権威を与えたものとして正しい組み合わせは？",
+      "choices": [
+        "「古さ」（歴史的由来）と「はるけさ」（はるかな見知らぬ土地）",
+        "新しさと近さ",
+        "速さと正確さ",
+        "お金と力"
+      ],
+      "answerIndex": 0,
+      "explanation": "人々は物語に耳をかしながら、その権威を信じて教訓的な知恵を学んだ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_02_019",
+      "unit": "japanese.gendai.logical.hyoron.claim",
+      "category": "knowledge",
+      "prompt": "『贅沢の条件』で、情報の特性とされているのは？",
+      "choices": [
+        "瞬時に遠くの出来事を伝え、すべてを「近く」に運んでくる（「近さ」の専制）",
+        "身体的経験を養う",
+        "「遠さ」と「はるけさ」を保つ",
+        "教訓的な知恵を与える"
+      ],
+      "answerIndex": 0,
+      "explanation": "物語の特性は「遠さ」であり、情報とは対照的。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_02_020",
+      "unit": "japanese.gendai.logical.hyoron.claim",
+      "category": "knowledge",
+      "prompt": "物語と情報の「もう一つのちがい」とされているのは？",
+      "choices": [
+        "情報は文字で書かれていること",
+        "情報は身体的経験を養わず、経験的な知恵を与えないこと",
+        "情報は値段が高いこと",
+        "情報は一人でしか受け取れないこと"
+      ],
+      "answerIndex": 1,
+      "explanation": "だから知恵を得たければマニュアルに頼らざるをえない。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_02_021",
+      "unit": "japanese.gendai.logical.hyoron.claim",
+      "category": "knowledge",
+      "prompt": "ベンヤミンの言う「退屈」のたとえとして正しいものは？",
+      "choices": [
+        "時間を食べる怪物",
+        "経験という卵をかえす夢の鳥",
+        "空っぽの箱",
+        "止まった時計"
+      ],
+      "answerIndex": 1,
+      "explanation": "精神的にもっともリラックスした状態の頂点。都市ではすでに姿を消してしまった。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_02_022",
+      "unit": "japanese.gendai.logical.hyoron.claim",
+      "category": "knowledge",
+      "prompt": "ドイツ語で「退屈」をあらわすランゲヴァイレの文字通りの意味は？",
+      "choices": [
+        "長い時",
+        "止まった時",
+        "短い時",
+        "速い時"
+      ],
+      "answerIndex": 0,
+      "explanation": "その「長い時」こそ、まさに贅沢の条件である。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_02_023",
+      "unit": "japanese.gendai.logical.hyoron.claim",
+      "category": "knowledge",
+      "prompt": "『贅沢の条件』の結論として正しいものは？",
+      "choices": [
+        "贅沢とは閑暇であり、わたしたちひとりひとりがいかにして「時をとめる術」を手にするかにかかっている",
+        "贅沢とはお金で買える高級品である",
+        "贅沢は現代では不可能になった",
+        "贅沢とは情報をたくさん持つことである"
+      ],
+      "answerIndex": 0,
+      "explanation": "夢の鳥は、金では買えない贅沢な経験をあたえてくれる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_02_024",
+      "unit": "japanese.gendai.logical.hyoron.claim",
+      "category": "knowledge",
+      "prompt": "『贅沢の条件』で、すべてをわたしたちの「近く」にひきよせて「はるけさ」を奪うものは？",
+      "choices": [
+        "物語",
+        "情報（メディア）",
+        "退屈",
+        "手仕事"
+      ],
+      "answerIndex": 1,
+      "explanation": "メディアは退屈な時間を貪り食う。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gendai_kokugo_02_025",
+      "unit": "japanese.gendai.logical.practical.document",
+      "category": "knowledge",
+      "prompt": "ベンヤミンについての説明として正しいものは？",
+      "choices": [
+        "ドイツの思想家・批評家で、『複製技術時代の芸術』で「アウラ」の概念を示した",
+        "フランスの小説家で、『ゴリオ爺さん』を書いた",
+        "イギリスの経済学者",
+        "日本の民俗学者"
+      ],
+      "answerIndex": 0,
+      "explanation": "ナチスの追っ手から逃れる途中、ピレネーの山中で亡くなったとされる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gendai_kokugo"
+      ]
+    }
+  ]
+}

@@ -38,7 +38,8 @@ class VocabVault {
                   : c,
       ]);
 
-  static List<int> _pbkdf2(List<int> password, List<int> salt, int length) {
+  /// PBKDF2-HMAC-SHA256（[iterations] 回）でパスワードから鍵を作る
+  static List<int> pbkdf2(List<int> password, List<int> salt, int length) {
     final hmac = Hmac(sha256, password);
     final out = <int>[];
     for (var block = 1; out.length < length; block++) {
@@ -90,7 +91,7 @@ class VocabVault {
     final rnd = random ?? Random.secure();
     final salt = List<int>.generate(16, (_) => rnd.nextInt(256));
     final nonce = List<int>.generate(16, (_) => rnd.nextInt(256));
-    final keys = _pbkdf2(utf8.encode(password), salt, 64);
+    final keys = pbkdf2(utf8.encode(password), salt, 64);
     final plain = utf8.encode(jsonEncode({
       'title': title,
       // 英語以外（古文単語など）は、日本語の用語カードとして練習する
@@ -114,7 +115,7 @@ class VocabVault {
     final nonce = data.sublist(20, 36);
     final mac = data.sublist(36, 68);
     final cipher = data.sublist(68);
-    final keys = _pbkdf2(utf8.encode(halfWidth(password).trim()), salt, 64);
+    final keys = pbkdf2(utf8.encode(halfWidth(password).trim()), salt, 64);
     final check = Hmac(sha256, keys.sublist(32))
         .convert([...salt, ...nonce, ...cipher]).bytes;
     if (!_same(check, mac)) return null;

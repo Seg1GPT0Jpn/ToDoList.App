@@ -3,6 +3,9 @@ import 'dart:typed_data';
 
 import 'package:crypto/crypto.dart';
 
+import '../vocab/vocab_vault.dart';
+import 'school_gate.dart';
+
 /// 学校の配布資料（要点まとめなど）をページごとの画像にして同梱したもの。
 ///
 /// 画像はそのまま置かず、かんたんな暗号化をしてある（Web 版のファイルを直接開いても
@@ -14,6 +17,7 @@ class SchoolMaterial {
     required this.title,
     required this.subjectId,
     required this.pages,
+    this.locked = false,
   });
 
   /// 同梱フォルダの名前（assets/materials/<id>/）
@@ -23,6 +27,10 @@ class SchoolMaterial {
   /// 学校の科目（ShonanSubjects の id）
   final String subjectId;
   final int pages;
+
+  /// 教科書・問題集の文章をふくむ資料。学校のパスワードから作った鍵で暗号化してあり、
+  /// パスワードを知らないと開けない（鍵はアプリの中に置かない）
+  final bool locked;
 
   /// [page] ページ目（1から）の同梱ファイル
   String asset(int page) =>
@@ -37,6 +45,27 @@ abstract final class SchoolMaterials {
       subjectId: 'public_economy',
       pages: 47,
     ),
+    SchoolMaterial(
+      id: 'gendai_kaihatsu78',
+      title: '読解力開発講座 第7問・第8問（解答つき）',
+      subjectId: 'gendai_kokugo',
+      pages: 16,
+      locked: true,
+    ),
+    SchoolMaterial(
+      id: 'gendai_zeitaku',
+      title: '現代の国語⑧ 贅沢の条件・引用の妥当性（解答例つき）',
+      subjectId: 'gendai_kokugo',
+      pages: 17,
+      locked: true,
+    ),
+    SchoolMaterial(
+      id: 'gendai_democracy',
+      title: '現代の国語⑦ 複数テキストの読解（解答例つき）',
+      subjectId: 'gendai_kokugo',
+      pages: 22,
+      locked: true,
+    ),
   ];
 
   static List<SchoolMaterial> of(String subjectId) => [
@@ -50,8 +79,8 @@ abstract final class SchoolMaterials {
   static List<int> _u32(int v) =>
       [(v >> 24) & 255, (v >> 16) & 255, (v >> 8) & 255, v & 255];
 
-  static Uint8List _xor(List<int> nonce, List<int> data) {
-    final hmac = Hmac(sha256, _key);
+  static Uint8List _xor(List<int> nonce, List<int> data, {List<int>? key}) {
+    final hmac = Hmac(sha256, key ?? _key);
     final out = Uint8List(data.length);
     for (var i = 0, block = 0; i < data.length; block++) {
       final ks = hmac.convert([...nonce, ..._u32(block)]).bytes;
@@ -62,16 +91,42 @@ abstract final class SchoolMaterials {
     return out;
   }
 
-  /// 同梱用に暗号化する（道具用）
-  static Uint8List seal(List<int> data, List<int> nonce) =>
-      Uint8List.fromList([..._magic, ...nonce, ..._xor(nonce, data)]);
+  /// 同梱用に暗号化する（道具・テスト用）。[key] を渡すと鍵つきの形式にする
+  static Uint8List seal(List<int> data, List<int> nonce, {List<int>? key}) =>
+      Uint8List.fromList([
+        ...(key == null ? _magic : _magic2),
+        ...nonce,
+        ..._xor(nonce, data, key: key),
+      ]);
 
-  /// 同梱ファイルを画像のバイト列に戻す（形式がちがえば null）
-  static Uint8List? open(List<int> data) {
+  static final _magic2 = ascii.encode('TQB2');
+
+  /// 鍵のかかった資料の鍵（学校のパスワードから作る。時間がかかるので一度だけ作る）
+  static List<int> keyFor(String password) => VocabVault.pbkdf2(
+        utf8.encode(SchoolGate.normalize(password)),
+        utf8.encode('tsuzuri-material-v2'),
+        32,
+      );
+
+  /// 同梱ファイルを画像のバイト列に戻す（形式がちがう・鍵がないときは null）。
+  /// 鍵がちがうと、画像として読めないバイト列になる（[looksLikeImage] で確かめる）
+  static Uint8List? open(List<int> data, {List<int>? key}) {
     if (data.length < 20) return null;
+    var v1 = true, v2 = true;
     for (var i = 0; i < 4; i++) {
-      if (data[i] != _magic[i]) return null;
+      if (data[i] != _magic[i]) v1 = false;
+      if (data[i] != _magic2[i]) v2 = false;
     }
-    return _xor(data.sublist(4, 20), data.sublist(20));
+    if (v1) return _xor(data.sublist(4, 20), data.sublist(20));
+    if (v2 && key != null) {
+      return _xor(data.sublist(4, 20), data.sublist(20), key: key);
+    }
+    return null;
   }
+
+  /// WebP の画像か
+  static bool looksLikeImage(List<int> b) =>
+      b.length > 12 &&
+      String.fromCharCodes(b.sublist(0, 4)) == 'RIFF' &&
+      String.fromCharCodes(b.sublist(8, 12)) == 'WEBP';
 }

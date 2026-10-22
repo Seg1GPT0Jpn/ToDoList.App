@@ -368,4 +368,54 @@ void main() {
     expect(find.text('2 / ${m.pages}'), findsOneWidget);
     expect(t.takeException(), isNull);
   });
+
+  testWidgets('鍵のかかった国語の資料は、パスワードを入れると開け、次からは入れなくてよい', (t) async {
+    final m = SchoolMaterials.all.firstWhere((m) => m.locked);
+    // 本物の画像（公共の資料の1ページ目）を、テスト用のパスワードで暗号化して出す
+    final real = SchoolMaterials.all.firstWhere((m) => !m.locked);
+    final raw = await t.runAsync(
+      () => SchoolMaterialScreen.loader(real.asset(1)),
+    );
+    final image = SchoolMaterials.open(raw!)!;
+    final sealed = SchoolMaterials.seal(
+      image,
+      List.filled(16, 3),
+      key: SchoolMaterials.keyFor('test-pw'),
+    );
+    final old = SchoolMaterialScreen.loader;
+    SchoolMaterialScreen.loader = (_) async => sealed;
+    addTearDown(() => SchoolMaterialScreen.loader = old);
+
+    final s = await openScreen(
+      t,
+      SchoolMaterialScreen(material: m),
+      prefs: {SchoolExamStore.gateKey: true},
+      frames: 5,
+    );
+    expect(find.byKey(const ValueKey('material-password')), findsOneWidget);
+    await t.enterText(find.byKey(const ValueKey('material-password')), 'abc');
+    await t.tap(find.byKey(const ValueKey('material-unlock')));
+    for (var i = 0; i < 5; i++) {
+      await t.runAsync(
+        () => Future<void>.delayed(const Duration(milliseconds: 100)),
+      );
+      await _frames(t, 2);
+    }
+    expect(find.text('パスワードがちがいます'), findsOneWidget);
+
+    await t.enterText(
+      find.byKey(const ValueKey('material-password')),
+      'TEST-PW',
+    );
+    await t.tap(find.byKey(const ValueKey('material-unlock')));
+    for (var i = 0; i < 8; i++) {
+      await t.runAsync(
+        () => Future<void>.delayed(const Duration(milliseconds: 100)),
+      );
+      await _frames(t, 2);
+    }
+    expect(find.byKey(const ValueKey('material-image-1')), findsOneWidget);
+    expect(SchoolExamStore.of(s.personalBooks).secret, 'test-pw');
+    expect(t.takeException(), isNull);
+  });
 }

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:rpg_game/rpg_game.dart';
 import 'package:rpg_game/src/vocab/meaning_text.dart';
 import 'package:test/test.dart';
@@ -187,5 +189,32 @@ void main() {
     const cards = [VocabCard(id: 'k1', term: 'あはれなり', meaning: 'しみじみと趣深い')];
     final data = VocabVault.seal('t', cards, 'abc1');
     expect(VocabVault.open(data, 'ａｂｃ１'), isNotNull);
+  });
+
+  test('鍵のかかった資料は、正しいパスワードの鍵でだけ画像に戻る', () {
+    final page = [
+      ...'RIFF'.codeUnits,
+      0,
+      0,
+      0,
+      0,
+      ...'WEBP'.codeUnits,
+      1,
+      2,
+      3
+    ];
+    final key = SchoolMaterials.keyFor('ｔｅｓｔ ＰＷ');
+    final sealed = SchoolMaterials.seal(page, List.filled(16, 7), key: key);
+    expect(SchoolMaterials.open(sealed), isNull);
+    expect(SchoolMaterials.open(sealed, key: SchoolMaterials.keyFor('testpw')),
+        page);
+    final wrong =
+        SchoolMaterials.open(sealed, key: SchoolMaterials.keyFor('x'));
+    expect(SchoolMaterials.looksLikeImage(wrong!), isFalse);
+    // 同梱した国語の資料も、ちがうパスワードでは開けない
+    final m = SchoolMaterials.all.firstWhere((m) => m.locked);
+    final raw = File('../rpg_game_app/${m.asset(1)}').readAsBytesSync();
+    final tried = SchoolMaterials.open(raw, key: SchoolMaterials.keyFor('x'));
+    expect(SchoolMaterials.looksLikeImage(tried!), isFalse);
   });
 }
