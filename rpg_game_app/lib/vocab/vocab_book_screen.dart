@@ -12,9 +12,17 @@ import 'vocab_store.dart';
 
 /// 単語帳1冊：学習・単語一覧（力ごとの熟練度）・分析
 class VocabBookScreen extends StatefulWidget {
-  const VocabBookScreen({super.key, required this.store, required this.book});
+  const VocabBookScreen({
+    super.key,
+    required this.store,
+    required this.book,
+    this.editable = true,
+  });
 
   final VocabStore store;
+
+  /// 取り込み・名前の変更・削除のメニューを出すか（試験対策の単語帳では出さない）
+  final bool editable;
   final VocabBook book;
 
   @override
@@ -92,7 +100,7 @@ class _VocabBookScreenState extends State<VocabBookScreen> {
             style: serif(17),
           ),
           actions: [
-            if (!book.isTerms)
+            if (!book.isTerms && widget.editable)
               PopupMenuButton<String>(
                 onSelected: _menu,
                 itemBuilder: (_) => [

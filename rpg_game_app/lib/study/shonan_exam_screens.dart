@@ -8,6 +8,7 @@ import '../battle/battle_screen.dart';
 import 'ec_text.dart';
 import 'school_exam_store.dart';
 import 'school_material_screen.dart';
+import 'school_word_books.dart';
 import 'shonan_question_list.dart';
 
 /// 画面に出す文言（ここにまとめる）
@@ -140,6 +141,21 @@ class ShonanExamListScreen extends StatelessWidget {
                 ],
                 if (plans.isEmpty) const Text(ShonanText.empty),
                 for (final p in plans) _PlanCard(plan: p),
+                const SizedBox(height: 16),
+                Text('テスト範囲の単語帳', style: serif(15)),
+                for (final w in SchoolWordBooks.all)
+                  Card(
+                    child: ListTile(
+                      key: ValueKey('shonan-wordbook-${w.id}'),
+                      leading: const Icon(Icons.style_outlined),
+                      title: Text(w.title),
+                      subtitle: Text(
+                        ShonanSubjects.byId(w.subjectId)?.displayName ?? '',
+                      ),
+                      trailing: const Icon(Icons.chevron_right),
+                      onTap: () => openSchoolWordBook(context, w),
+                    ),
+                  ),
               ],
             );
           },
@@ -486,6 +502,13 @@ class _SubjectCard extends StatelessWidget {
                     ),
                     icon: const Icon(Icons.account_tree_outlined),
                     label: const Text('単元ごとに練習'),
+                  ),
+                for (final w in SchoolWordBooks.of(subject.id))
+                  OutlinedButton.icon(
+                    key: ValueKey('shonan-words-${w.id}'),
+                    onPressed: () => openSchoolWordBook(context, w),
+                    icon: const Icon(Icons.style_outlined),
+                    label: Text('単語帳：${w.title}'),
                   ),
                 for (final m in SchoolMaterials.of(subject.id))
                   OutlinedButton.icon(

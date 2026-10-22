@@ -1,0 +1,882 @@
+{
+  "setId": "japanese_shonan_104_gengo_bunka_koji_01",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_01_001",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "故事成語「狐借虎威（虎の威を借る狐）」の意味は？",
+      "choices": [
+        "他人の権勢をたよりにしていばること",
+        "強い者がさらに強くなること",
+        "弱い者どうしが助け合うこと",
+        "うそをついて相手をだますこと"
+      ],
+      "answerIndex": 0,
+      "explanation": "『戦国策』楚策の話。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_01_002",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「狐借虎威」の話が収められている書物は？",
+      "choices": [
+        "論語",
+        "戦国策",
+        "韓非子",
+        "史記"
+      ],
+      "answerIndex": 1,
+      "explanation": "戦国時代の遊説家たちの言葉を国別にまとめた書。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_01_003",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "故事成語とは、どのようなことばか？",
+      "choices": [
+        "昔の中国の出来事や人物のやりとりをもとにできたことば",
+        "中国の詩の決まり文句",
+        "日本の昔話からできたことば",
+        "仏教の経典にある教えをまとめたことば"
+      ],
+      "answerIndex": 0,
+      "explanation": "寓話（たとえ話）として使われたものが多い。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_01_004",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「子無敢食我也。」の書き下し文は？",
+      "choices": [
+        "子敢へて我を食らはざるなり。",
+        "子敢へて我を食らふこと無かれ。",
+        "子我を食らふこと敢へてせず。",
+        "子敢へて我を食らふ無きなり。"
+      ],
+      "answerIndex": 1,
+      "explanation": "「無敢〜」＝決して〜するな（禁止）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_01_005",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「子無敢食我也。」の「子」の意味は？",
+      "choices": [
+        "子ども",
+        "わたし",
+        "先生",
+        "あなた"
+      ],
+      "answerIndex": 3,
+      "explanation": "相手を敬っていう二人称。孔子・孟子の「子」は先生の意味。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_01_006",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「天帝使我長百獣。」の書き下し文は？",
+      "choices": [
+        "天帝我に百獣を長ぜしむ。",
+        "天帝我をして百獣に長たらしむ。",
+        "天帝我を使ひて百獣に長ず。",
+        "天帝我をして百獣の長と為す。"
+      ],
+      "answerIndex": 1,
+      "explanation": "「使」は使役「しム」。「長」は名詞を動詞にした「長たり」の未然形に「しむ」が続く。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_01_007",
+      "unit": "japanese.kanbun.kuho.causative.causative",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "使役の助動詞「しむ」と読む字の組み合わせは？",
+      "choices": [
+        "被・見・為・所",
+        "未・将・当・応",
+        "使・令・教・遣",
+        "不・弗・無・莫"
+      ],
+      "answerIndex": 2,
+      "explanation": "「AをしてBせしむ」の形で「AにBさせる」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_01_008",
+      "unit": "japanese.kanbun.kuho.causative.causative",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "使役の形「A使BC」の書き下しとして正しいものは？",
+      "choices": [
+        "A BをCせしめず",
+        "A BよりCせしむ",
+        "A BをしてCせしむ",
+        "A BにCせらる"
+      ],
+      "answerIndex": 2,
+      "explanation": "「AはBにCさせる」の意味。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_01_009",
+      "unit": "japanese.kanbun.kuho.causative.causative",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "使役の「しむ」は、どの活用形に接続する？",
+      "choices": [
+        "連用形",
+        "終止形",
+        "未然形",
+        "連体形"
+      ],
+      "answerIndex": 2,
+      "explanation": "サ変「す」なら未然形「せ」＋しむ＝「せしむ」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_01_010",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「今子食我、是逆天帝命也。」の書き下し文は？",
+      "choices": [
+        "今子我を食らへば、是れ天帝の命に逆らふなり。",
+        "今子我を食らはず、是れ天帝の命に逆らふなり。",
+        "今子我を食らふは、天帝の命に逆らふ是れなり。",
+        "今子我を食らはば、是れ天帝の命に逆らふなり。"
+      ],
+      "answerIndex": 3,
+      "explanation": "「食らはば」＝未然形＋ば で順接仮定条件（もし〜ならば）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_01_011",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "順接仮定条件「もし〜ならば」を表す文語の形は？",
+      "choices": [
+        "終止形＋とも",
+        "連用形＋て",
+        "已然形＋ば",
+        "未然形＋ば"
+      ],
+      "answerIndex": 3,
+      "explanation": "已然形＋ば は確定条件（〜ので・〜と）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_01_012",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「子以我為不信、吾為子先行。」の意味として正しいものは？",
+      "choices": [
+        "あなたはわたしを信じないので、先に行ってしまった",
+        "あなたがわたしを信じるなら、わたしはあなたの後をついて行こう",
+        "わたしはあなたを信じないので、先に行くことにする",
+        "あなたがわたしを信用できないと思うなら、わたしがあなたのために先に行こう"
+      ],
+      "answerIndex": 3,
+      "explanation": "「以〜為…」＝〜を…と思う。「為子」は「子の為に」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_01_013",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「以A為B」の意味は？",
+      "choices": [
+        "AをBと思う（みなす）",
+        "AとBをくらべる",
+        "AによってBになる",
+        "AのためにBをする"
+      ],
+      "answerIndex": 0,
+      "explanation": "「虎以為然」＝虎は「そのとおりだ」と思った。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_01_014",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「百獣之見我、而敢不走乎。」の意味は？",
+      "choices": [
+        "けものたちがわたしを見ないので、逃げることはない",
+        "けものたちがわたしを見て、どうして逃げないことがあろうか（いや、必ず逃げる）",
+        "けものたちはわたしを見て、逃げるだろうか",
+        "けものたちはわたしを見ても、決して逃げはしない"
+      ],
+      "answerIndex": 1,
+      "explanation": "「敢不〜乎」＝反語。「走」は「逃げる」の意味。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_01_015",
+      "unit": "japanese.kanbun.kuho.negation.negation",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「不敢〜」の意味として正しいものは？",
+      "choices": [
+        "まだ〜しない",
+        "決して〜しない（無理に〜しようとしない）",
+        "〜しないわけではない",
+        "どうして〜しないことがあろうか"
+      ],
+      "answerIndex": 1,
+      "explanation": "語順が「敢不〜」になると反語になり、意味が大きく変わる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_01_016",
+      "unit": "japanese.kanbun.kuho.negation.question",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「敢不〜（乎）」の意味として正しいものは？",
+      "choices": [
+        "どうして〜しないことがあろうか（いや、きっとする）",
+        "決して〜しない",
+        "まだ〜しない",
+        "〜しないこともある"
+      ],
+      "answerIndex": 0,
+      "explanation": "反語の形。全部否定ではない。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_01_017",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "漢文の「走」は、ふつうどんな意味？",
+      "choices": [
+        "逃げる",
+        "追いかける",
+        "歩く",
+        "戦う"
+      ],
+      "answerIndex": 0,
+      "explanation": "「獣見之皆走」＝けものたちはそれを見てみな逃げた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_01_018",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「虎不知獣畏己而走也。以為畏狐也。」から分かる虎の思い違いは？",
+      "choices": [
+        "けものたちが狐を恐れたのに、自分を恐れたと思った",
+        "けものたちが自分を恐れていないと思った",
+        "狐が天帝の使いだと気づいていた",
+        "けものたちが自分（虎）を恐れて逃げたのに、狐を恐れたと思った"
+      ],
+      "answerIndex": 3,
+      "explanation": "このため、狐は虎の威を借りていばることができた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_01_019",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「狐借虎威」の話で、楚の宣王に話をした臣下は？",
+      "choices": [
+        "江乙",
+        "孟子",
+        "蘇代",
+        "昭奚恤"
+      ],
+      "answerIndex": 0,
+      "explanation": "宣王が「北方の国々は昭奚恤を恐れているそうだが本当か」と群臣に尋ね、江乙が進み出て答えた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_01_020",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "楚の宣王の宰相で、北方の国々に恐れられているとうわさされた人物は？",
+      "choices": [
+        "昭奚恤（しょうけいじゅつ）",
+        "恵王",
+        "江乙",
+        "蘇代"
+      ],
+      "answerIndex": 0,
+      "explanation": "宣王は昭奚恤に百万の兵を任せていた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_01_021",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "江乙が「狐借虎威」の寓話で宣王に伝えようとしたことは？",
+      "choices": [
+        "王は虎のように強いので、北方の国々を攻めるべきだ",
+        "昭奚恤は狐のようにずる賢いので、すぐに処罰すべきだ",
+        "北方の国々が恐れているのは昭奚恤ではなく、王の軍隊（王の力）である",
+        "北方の国々は楚の王を少しも恐れていない"
+      ],
+      "answerIndex": 2,
+      "explanation": "虎＝宣王、狐＝昭奚恤、百獣＝北方の国々にあたる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_01_022",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「果誠何如。」の読み方は？",
+      "choices": [
+        "果たして誠に何如（いかん）。",
+        "誠を果たすこと何如（いかに）せん。",
+        "果たして何ぞ誠ならん。",
+        "果たして誠に何如（いづく）にか。"
+      ],
+      "answerIndex": 0,
+      "explanation": "「何如」は「いかん」と読み、「どうであるか」と状態・結果をたずねる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_01_023",
+      "unit": "japanese.kanbun.kuho.negation.question",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「何如」と「如何」のちがいとして正しいものは？",
+      "choices": [
+        "「何如」は方法をたずね、「如何」は状態をたずねる",
+        "「何如」は状態・是非をたずね、「如何」は方法・処置をたずねる",
+        "「何如」は反語専用、「如何」は疑問専用",
+        "意味も読みも全く同じ"
+      ],
+      "answerIndex": 1,
+      "explanation": "何如＝どうであるか、如何＝どうしようか。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_01_024",
+      "unit": "japanese.kanbun.kuho.negation.negation",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「群臣莫対。」の書き下し文は？",
+      "choices": [
+        "群臣に対ふる莫かれ。",
+        "群臣莫く対ふ。",
+        "群臣対へざるなり。",
+        "群臣対ふる莫し。"
+      ],
+      "answerIndex": 3,
+      "explanation": "「莫」は「なシ」と読み、「〜する者はいない」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_01_025",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「猶百獣之畏虎也。」の書き下し文は？",
+      "choices": [
+        "猶ほ百獣は虎を畏るるなり。",
+        "猶ほ百獣の虎を畏れざるがごときなり。",
+        "百獣の虎を畏るること猶ほなり。",
+        "猶ほ百獣の虎を畏るるがごときなり。"
+      ],
+      "answerIndex": 3,
+      "explanation": "「猶」＝なホ〜ノ（ガ）ごとシ。「也」が続くので連体形「ごとき」になる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_01_026",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "故事成語「漁夫之利（漁夫の利）」の意味は？",
+      "choices": [
+        "両者が争っているすきに、第三者が利益を横取りすること",
+        "つじつまが合わないこと",
+        "少しの違いで本質は同じであること",
+        "努力が報われずに終わること"
+      ],
+      "answerIndex": 0,
+      "explanation": "『戦国策』燕策の話。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_01_027",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「漁夫之利」で、争っていた二つの生き物は？",
+      "choices": [
+        "ツルとカメ",
+        "カラスとヘビ",
+        "虎と狐",
+        "シギ（鷸）とドブガイ（蚌）"
+      ],
+      "answerIndex": 3,
+      "explanation": "蚌が鷸のくちばしをはさみ、どちらも放さなかった。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_01_028",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「漁夫之利」の話をして、恵王を説得した人物は？",
+      "choices": [
+        "江乙",
+        "韓非",
+        "孟子",
+        "蘇代"
+      ],
+      "answerIndex": 3,
+      "explanation": "戦国時代の遊説家。燕のために趙の恵王を説いた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_01_029",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「漁夫之利」の恵王は、どの国の王？",
+      "choices": [
+        "秦",
+        "魏",
+        "趙",
+        "燕"
+      ],
+      "answerIndex": 2,
+      "explanation": "趙が燕を攻めようとしていた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_01_030",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "蘇代が「漁夫之利」の寓話で恵王に伝えたかったことは？",
+      "choices": [
+        "燕はすでに弱っているので、今すぐ攻めるべきだ",
+        "漁師のように時機を待てば、燕を簡単に倒せる",
+        "趙は燕と手を組んで秦を攻めるべきだ",
+        "趙と燕が争い続ければ、強国の秦が漁夫のように両国を手に入れてしまう"
+      ],
+      "answerIndex": 3,
+      "explanation": "恵王は「善し」と言って、燕を攻めるのをやめた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_01_031",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「趙且伐燕。」の書き下し文は？",
+      "choices": [
+        "趙且つ燕を伐つ。",
+        "趙且に燕を伐たんとす。",
+        "趙且に燕を伐つべし。",
+        "趙未だ燕を伐たず。"
+      ],
+      "answerIndex": 1,
+      "explanation": "「且」は再読文字「まさニ〜ントす」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_01_032",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「今者臣来過易水。」の「今者」の読みは？",
+      "choices": [
+        "こんじや",
+        "いま",
+        "いまは",
+        "いまのもの"
+      ],
+      "answerIndex": 1,
+      "explanation": "「者」は時を表す語について読まないこともある（今者＝いま）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_01_033",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「臣」は、ここではだれを指す？",
+      "choices": [
+        "話し手（蘇代）自身",
+        "漁師",
+        "恵王",
+        "趙の兵士"
+      ],
+      "answerIndex": 0,
+      "explanation": "「臣」は家来が君主に対して使う一人称。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_01_034",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「蚌合而箝其喙。」の意味は？",
+      "choices": [
+        "ドブガイは貝殻を閉じて、シギのくちばしをはさんだ",
+        "シギはドブガイの肉をくちばしでつついた",
+        "ドブガイは口を開けて日に当たっていた",
+        "シギとドブガイは仲直りした"
+      ],
+      "answerIndex": 0,
+      "explanation": "「而」は順接の置き字。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_01_035",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「今日不雨、明日不雨、即有死蚌。」の意味は？",
+      "choices": [
+        "今日雨が降らなくても、明日は降るだろう",
+        "雨が降らないので、ドブガイは外に出ない",
+        "今日も明日も雨が降らなければ、すぐに死んだドブガイができるだろう",
+        "今日も明日も雨が降ったので、ドブガイは死なずにすんだ"
+      ],
+      "answerIndex": 2,
+      "explanation": "「即」は「すなはチ」＝すぐに。貝殻を開けられず干からびると言っている。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_01_036",
+      "unit": "japanese.kanbun.kundoku.saidoku.words",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「即」の読みと意味は？",
+      "choices": [
+        "また（同じく）",
+        "すでニ（もう）",
+        "すなはチ（すぐに・つまり）",
+        "すなはチ（そこで）"
+      ],
+      "answerIndex": 2,
+      "explanation": "「乃」は「そこで」、「則」は「〜ならば」の意味で、同じ「すなはチ」でも使い分ける。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_01_037",
+      "unit": "japanese.kanbun.kundoku.saidoku.words",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「蚌亦謂鷸曰」の「亦」の意味は？",
+      "choices": [
+        "ふたたび",
+        "〜もまた（同じく）",
+        "そこで",
+        "しかし"
+      ],
+      "answerIndex": 1,
+      "explanation": "鷸と同じように、蚌も言い返した。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_01_038",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「両者不肯相舎。」の意味は？",
+      "choices": [
+        "どちらも相手から逃げなかった",
+        "どちらも相手を放そうとしなかった",
+        "どちらも相手を許した",
+        "二人は仲良く暮らした"
+      ],
+      "answerIndex": 1,
+      "explanation": "「肯」は「がへんズ（承知する）」、「舎」は「捨つ（放す）」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    }
+  ]
+}

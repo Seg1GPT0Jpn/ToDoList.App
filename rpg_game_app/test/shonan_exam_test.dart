@@ -11,6 +11,8 @@ import 'package:rpg_game_app/study/school_material_screen.dart';
 import 'package:rpg_game_app/study/sea_home_screen.dart';
 import 'package:rpg_game_app/study/shonan_exam_screens.dart';
 import 'package:rpg_game_app/study/shonan_question_list.dart';
+import 'package:rpg_game_app/vocab/vocab_book_screen.dart';
+import 'package:rpg_game_app/vocab/vocab_store.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'harness.dart';
@@ -456,6 +458,70 @@ void main() {
     );
     await _frames(t, 2);
     expect(picked?.questions.length, 3);
+    expect(t.takeException(), isNull);
+  });
+
+  testWidgets('テスト範囲の単語帳：学校のパスワードで開き、ふつうの単語帳と同じ画面で練習できる', (t) async {
+    // 学校のパスワードはテストに書かないので、テスト用のパスワードで暗号化した単語帳を出す
+    final sealed = {
+      for (final w in SchoolWordBooks.all)
+        w.file: VocabVault.seal(
+          w.id == 'leap' ? 'LEAP' : '漢字・語彙',
+          [
+            const VocabCard(id: '1', number: 1, term: '輪郭', meaning: '物の外形'),
+            const VocabCard(id: '2', number: 2, term: '襲う', meaning: '急に攻める'),
+          ],
+          'test-pw',
+          worldId: w.id == 'leap' ? 'english' : 'japanese',
+        ),
+    };
+    final old = VocabStore.assetLoader;
+    VocabStore.assetLoader = (file) async => sealed[file];
+    addTearDown(() => VocabStore.assetLoader = old);
+    final s = await openScreen(
+      t,
+      const ShonanExamListScreen(),
+      prefs: {SchoolExamStore.gateKey: true},
+      frames: 10,
+    );
+    final tile = find.byKey(const ValueKey('shonan-wordbook-kanji'));
+    await t.ensureVisible(tile);
+    await _frames(t, 3);
+    await t.tap(tile);
+    await _settle(t);
+    // 前の版から開いていた端末なので、パスワードを一度だけたずねる
+    await t.enterText(
+      find.byKey(const ValueKey('school-words-password')),
+      'abc',
+    );
+    await t.tap(find.byKey(const ValueKey('school-words-open')));
+    await _frames(t, 3);
+    expect(find.text('パスワードがちがいます'), findsOneWidget);
+    await t.enterText(
+      find.byKey(const ValueKey('school-words-password')),
+      'TEST-PW',
+    );
+    await t.tap(find.byKey(const ValueKey('school-words-open')));
+    await _settle(t);
+    expect(find.byType(VocabBookScreen), findsOneWidget);
+    expect(find.textContaining('漢字・語彙'), findsWidgets);
+    expect(SchoolExamStore.of(s.personalBooks).secret, 'test-pw');
+    // ふつうの単語帳の一覧には出ない
+    expect(VocabStore.of(s.personalBooks).visibleBooks, isEmpty);
+
+    // 次からはパスワードなしで開く（英語の LEAP も同じ）
+    await t.pageBack();
+    await _frames(t, 5);
+    final leap = find.byKey(const ValueKey('shonan-wordbook-leap'));
+    await t.ensureVisible(leap);
+    await _frames(t, 3);
+    await t.tap(leap);
+    await _settle(t);
+    expect(find.byKey(const ValueKey('school-words-password')), findsNothing);
+    expect(find.byType(VocabBookScreen), findsOneWidget);
+    expect(find.textContaining('LEAP'), findsWidgets);
+    await t.pumpWidget(const SizedBox());
+    await _frames(t, 3);
     expect(t.takeException(), isNull);
   });
 }

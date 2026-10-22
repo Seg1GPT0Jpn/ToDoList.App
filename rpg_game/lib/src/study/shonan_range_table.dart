@@ -307,6 +307,13 @@ class ShonanRangeTable {
               'japanese_kanbun_01',
               'japanese_kanbun_02'
             ],
+            committeeSetIds: const [
+              'japanese_shonan_104_gengo_bunka_kundoku_01',
+              'japanese_shonan_104_gengo_bunka_kundoku_02',
+              'japanese_shonan_104_gengo_bunka_koji_01',
+              'japanese_shonan_104_gengo_bunka_koji_02',
+              'japanese_shonan_104_gengo_bunka_history_01'
+            ],
             status: RangeStatus.entered,
             materials: const [
               StudyMaterial(
