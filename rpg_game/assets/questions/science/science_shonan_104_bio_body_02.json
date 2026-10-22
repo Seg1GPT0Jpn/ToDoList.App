@@ -1,0 +1,652 @@
+{
+  "setId": "science_shonan_104_bio_body_02",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "science_shonan_104_bio_body_02_001",
+      "unit": "science.biology.body.nerve.autonomic",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "小脳のはたらきとして正しいものは？",
+      "choices": [
+        "記憶や思考の中枢",
+        "自律神経と内分泌の中枢",
+        "体の平衡を保ち、運動を調節する",
+        "呼吸や心臓の拍動を調節する"
+      ],
+      "answerIndex": 2,
+      "explanation": "酒に酔ってふらつくのは小脳のはたらきが弱まるため。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_02_002",
+      "unit": "science.biology.body.nerve.autonomic",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "延髄のはたらきとして正しいものは？",
+      "choices": [
+        "記憶や思考の中枢",
+        "呼吸運動や心臓の拍動の中枢",
+        "体の平衡を保つ中枢",
+        "眼球運動や瞳孔の大きさの中枢"
+      ],
+      "answerIndex": 1,
+      "explanation": "せき・くしゃみ・だ液の分泌などの反射の中枢でもある。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_02_003",
+      "unit": "science.biology.body.nerve.autonomic",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "中脳のはたらきとして正しいものは？",
+      "choices": [
+        "呼吸運動の中枢",
+        "血糖量調節の中枢",
+        "記憶や思考の中枢",
+        "姿勢の保持や眼球運動、瞳孔の大きさの調節の中枢"
+      ],
+      "answerIndex": 3,
+      "explanation": "瞳孔反射の中枢は中脳。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_02_004",
+      "unit": "science.biology.body.nerve.autonomic",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "間脳の視床下部のはたらきとして正しいものは？",
+      "choices": [
+        "体の平衡を保つ中枢",
+        "随意運動の中枢",
+        "自律神経系と内分泌系の中枢",
+        "呼吸運動の中枢"
+      ],
+      "answerIndex": 2,
+      "explanation": "体温・血糖量・体液の濃度などの調節の中枢。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_02_005",
+      "unit": "science.biology.body.nerve.autonomic",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "脳の中で「脳幹」に含まれないものは？",
+      "choices": [
+        "大脳",
+        "延髄",
+        "中脳",
+        "橋"
+      ],
+      "answerIndex": 0,
+      "explanation": "脳幹は生命の維持に欠かせない部分（間脳をふくめることもある）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_02_006",
+      "unit": "science.biology.body.nerve.autonomic",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "脳死と植物状態のちがいとして正しいものは？",
+      "choices": [
+        "両者のちがいはない",
+        "脳死は大脳だけが止まり、植物状態は脳全体が止まっている",
+        "脳死は脳幹をふくむ脳全体の機能が停止しており、植物状態は脳幹の機能が残っている",
+        "脳死では自発呼吸が続くが、植物状態では止まる"
+      ],
+      "answerIndex": 2,
+      "explanation": "植物状態では自発呼吸ができることが多い。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_02_007",
+      "unit": "science.biology.body.nerve.autonomic",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "交感神経と副交感神経は、一つの器官に対してどのようにはたらくことが多い？",
+      "choices": [
+        "副交感神経だけがはたらく",
+        "交感神経だけがはたらく",
+        "どちらも同じはたらきをする",
+        "互いに反対のはたらき（拮抗的）をする"
+      ],
+      "answerIndex": 3,
+      "explanation": "アクセルとブレーキのような関係。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_02_008",
+      "unit": "science.biology.body.nerve.autonomic",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "交感神経がよくはたらくのは、どんなときか？",
+      "choices": [
+        "眠っているとき",
+        "食後や休息しているとき",
+        "運動時や緊張したとき",
+        "リラックスしているとき"
+      ],
+      "answerIndex": 2,
+      "explanation": "「闘争か逃走か」の状態をつくる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_02_009",
+      "unit": "science.biology.body.nerve.autonomic",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "交感神経がはたらくと、瞳孔はどうなる？",
+      "choices": [
+        "自律神経は分布していない",
+        "変化しない",
+        "縮小",
+        "拡大"
+      ],
+      "answerIndex": 3,
+      "explanation": "副交感神経がはたらくと「縮小」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_02_010",
+      "unit": "science.biology.body.nerve.autonomic",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "副交感神経がはたらくと、瞳孔はどうなる？",
+      "choices": [
+        "変化しない",
+        "自律神経は分布していない",
+        "拡大",
+        "縮小"
+      ],
+      "answerIndex": 3,
+      "explanation": "交感神経がはたらくと「拡大」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_02_011",
+      "unit": "science.biology.body.nerve.autonomic",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "交感神経がはたらくと、心臓の拍動はどうなる？",
+      "choices": [
+        "変化しない",
+        "促進",
+        "自律神経は分布していない",
+        "抑制"
+      ],
+      "answerIndex": 1,
+      "explanation": "副交感神経がはたらくと「抑制」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_02_012",
+      "unit": "science.biology.body.nerve.autonomic",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "副交感神経がはたらくと、心臓の拍動はどうなる？",
+      "choices": [
+        "促進",
+        "抑制",
+        "自律神経は分布していない",
+        "変化しない"
+      ],
+      "answerIndex": 1,
+      "explanation": "交感神経がはたらくと「促進」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_02_013",
+      "unit": "science.biology.body.nerve.autonomic",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "交感神経がはたらくと、消化管の運動はどうなる？",
+      "choices": [
+        "抑制",
+        "自律神経は分布していない",
+        "変化しない",
+        "促進"
+      ],
+      "answerIndex": 0,
+      "explanation": "副交感神経がはたらくと「促進」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_02_014",
+      "unit": "science.biology.body.nerve.autonomic",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "副交感神経がはたらくと、消化管の運動はどうなる？",
+      "choices": [
+        "変化しない",
+        "自律神経は分布していない",
+        "抑制",
+        "促進"
+      ],
+      "answerIndex": 3,
+      "explanation": "交感神経がはたらくと「抑制」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_02_015",
+      "unit": "science.biology.body.nerve.autonomic",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "交感神経がはたらくと、気管支はどうなる？",
+      "choices": [
+        "収縮",
+        "変化しない",
+        "拡張",
+        "自律神経は分布していない"
+      ],
+      "answerIndex": 2,
+      "explanation": "副交感神経がはたらくと「収縮」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_02_016",
+      "unit": "science.biology.body.nerve.autonomic",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "副交感神経がはたらくと、気管支はどうなる？",
+      "choices": [
+        "自律神経は分布していない",
+        "拡張",
+        "収縮",
+        "変化しない"
+      ],
+      "answerIndex": 2,
+      "explanation": "交感神経がはたらくと「拡張」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_02_017",
+      "unit": "science.biology.body.nerve.autonomic",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "交感神経がはたらくと、ぼうこう（排尿）はどうなる？",
+      "choices": [
+        "拡張（排尿を抑制）",
+        "変化しない",
+        "収縮（排尿を促進）",
+        "自律神経は分布していない"
+      ],
+      "answerIndex": 0,
+      "explanation": "副交感神経がはたらくと「収縮（排尿を促進）」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_02_018",
+      "unit": "science.biology.body.nerve.autonomic",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "副交感神経がはたらくと、ぼうこう（排尿）はどうなる？",
+      "choices": [
+        "自律神経は分布していない",
+        "拡張（排尿を抑制）",
+        "収縮（排尿を促進）",
+        "変化しない"
+      ],
+      "answerIndex": 2,
+      "explanation": "交感神経がはたらくと「拡張（排尿を抑制）」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_02_019",
+      "unit": "science.biology.body.nerve.autonomic",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "交感神経がはたらくと、すい液の分泌はどうなる？",
+      "choices": [
+        "自律神経は分布していない",
+        "抑制",
+        "変化しない",
+        "促進"
+      ],
+      "answerIndex": 1,
+      "explanation": "副交感神経がはたらくと「促進」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_02_020",
+      "unit": "science.biology.body.nerve.autonomic",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "副交感神経がはたらくと、すい液の分泌はどうなる？",
+      "choices": [
+        "抑制",
+        "促進",
+        "変化しない",
+        "自律神経は分布していない"
+      ],
+      "answerIndex": 1,
+      "explanation": "交感神経がはたらくと「抑制」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_02_021",
+      "unit": "science.biology.body.nerve.autonomic",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "立毛筋について正しいものは？",
+      "choices": [
+        "自律神経は分布していない",
+        "交感神経によって弛緩する",
+        "副交感神経によって収縮する",
+        "交感神経によって収縮し、副交感神経は分布していない"
+      ],
+      "answerIndex": 3,
+      "explanation": "寒いときの「鳥肌」は交感神経のはたらき。汗腺も交感神経だけが分布する。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_02_022",
+      "unit": "science.biology.body.nerve.autonomic",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "交感神経の末端から放出される主な神経伝達物質は？",
+      "choices": [
+        "ノルアドレナリン",
+        "グルカゴン",
+        "インスリン",
+        "アセチルコリン"
+      ],
+      "answerIndex": 0,
+      "explanation": "副交感神経の末端からはアセチルコリンが放出される。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_02_023",
+      "unit": "science.biology.body.nerve.autonomic",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "副交感神経の末端から放出される神経伝達物質は？",
+      "choices": [
+        "アセチルコリン",
+        "ノルアドレナリン",
+        "チロキシン",
+        "アドレナリン"
+      ],
+      "answerIndex": 0,
+      "explanation": "運動神経の末端からもアセチルコリンが放出される。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_02_024",
+      "unit": "science.biology.body.nerve.autonomic",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "神経の末端で、電気信号ではなく化学物質で情報が伝えられる部分を何という？",
+      "choices": [
+        "樹状突起",
+        "軸索",
+        "シナプス",
+        "ランビエ絞輪"
+      ],
+      "answerIndex": 2,
+      "explanation": "ニューロンの末端から神経伝達物質が放出され、次の細胞に情報が伝わる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_02_025",
+      "unit": "science.biology.body.nerve.autonomic",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "交感神経が出ているのは、中枢神経系のどこからか？",
+      "choices": [
+        "大脳と小脳",
+        "仙髄だけ",
+        "中脳と延髄",
+        "脊髄（胸髄と腰髄）"
+      ],
+      "answerIndex": 3,
+      "explanation": "副交感神経は中脳・延髄・脊髄の最下部（仙髄）から出る。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_02_026",
+      "unit": "science.biology.body.nerve.autonomic",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "網膜で、視細胞（とくに錐体細胞）が集中し、物がはっきり見える部分は？",
+      "choices": [
+        "水晶体",
+        "虹彩",
+        "黄斑",
+        "盲斑"
+      ],
+      "answerIndex": 2,
+      "explanation": "視野の中心にピントが合うのはこのため。周辺は桿体細胞が多く、はっきりとは見えない。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_02_027",
+      "unit": "science.biology.body.nerve.autonomic",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "網膜で、視神経が束になって出ていくため視細胞がなく、光を感じない部分は？",
+      "choices": [
+        "ガラス体",
+        "角膜",
+        "盲斑",
+        "黄斑"
+      ],
+      "answerIndex": 2,
+      "explanation": "盲点ともいう。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_02_028",
+      "unit": "science.biology.body.nerve.autonomic",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "色の区別にはたらき、明るい所ではたらく視細胞は？",
+      "choices": [
+        "色素細胞",
+        "桿体細胞",
+        "錐体細胞",
+        "神経細胞"
+      ],
+      "answerIndex": 2,
+      "explanation": "桿体細胞は弱い光でもはたらき、明暗を感じる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    }
+  ]
+}

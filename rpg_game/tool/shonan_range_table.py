@@ -16,6 +16,7 @@ def _sets(prefix, n):
 COMMITTEE = {
     ('後期中間試験', 'public_economy'): _sets('social_shonan_104_public_economy', 14),
     ('後期中間試験', 'gendai_kokugo'): _sets('japanese_shonan_104_gendai_kokugo', 3),
+    ('後期中間試験', 'biology_basic'): _sets('science_shonan_104_bio_body', 2) + _sets('science_shonan_104_bio_hormone', 1) + _sets('science_shonan_104_bio_immune', 2) + _sets('science_shonan_104_bio_veg', 2),
     ('後期中間試験', 'gengo_bunka'): _sets('japanese_shonan_104_gengo_bunka_kundoku', 2) + _sets('japanese_shonan_104_gengo_bunka_koji', 2) + _sets('japanese_shonan_104_gengo_bunka_history', 1),
     # 後期期末の化学基礎は範囲が未定なので、第2章（物質の変化）の新作をすべて入れて、単元ごとに対策できるようにする
     ('後期期末試験', 'chemistry_basic'): _sets('science_shonan_104_chem_mole', 6) + _sets('science_shonan_104_chem_solution', 4) + _sets('science_shonan_104_chem_reaction', 5) + _sets('science_shonan_104_chem_laws', 1) + _sets('science_shonan_104_chem_acid', 3) + _sets('science_shonan_104_chem_neutral', 2),
@@ -41,6 +42,7 @@ EXISTING = {
     ('後期中間試験', 'math1'): ['math_m1_16', 'math_m1_17', 'math_m1_18', 'math_m1_stat_01'] + [f'math_m2_{i:02d}' for i in range(1, 7)],
     ('後期中間試験', 'math_a'): ['math_ma_10', 'math_ma_11', 'math_ma_12'],
     ('後期中間試験', 'chemistry_basic'): ['science_chemistry_05', 'science_chemistry_06'],
+    ('後期中間試験', 'biology_basic'): ['science_biology_04', 'science_biology_05', 'science_biology_06', 'science_biology_07'],
     ('後期中間試験', 'public_economy'): [f'social_pol_{i}' for i in range(10, 16)],
     ('後期期末試験', 'chemistry_basic'): ['science_chemistry_05', 'science_chemistry_06', 'science_chemistry_07'],
     ('後期期末試験', 'gendai_kokugo'): _KANJI + ['japanese_gendai_03', 'japanese_gendai_04', 'japanese_bungakushi_01'],

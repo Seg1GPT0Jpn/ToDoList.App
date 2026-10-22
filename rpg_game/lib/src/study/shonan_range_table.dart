@@ -464,6 +464,21 @@ class ShonanRangeTable {
         subjects['biology_basic'] = SubjectExamPlan(
             subjectId: 'biology_basic',
             rangeText: '',
+            existingSetIds: const [
+              'science_biology_04',
+              'science_biology_05',
+              'science_biology_06',
+              'science_biology_07'
+            ],
+            committeeSetIds: const [
+              'science_shonan_104_bio_body_01',
+              'science_shonan_104_bio_body_02',
+              'science_shonan_104_bio_hormone_01',
+              'science_shonan_104_bio_immune_01',
+              'science_shonan_104_bio_immune_02',
+              'science_shonan_104_bio_veg_01',
+              'science_shonan_104_bio_veg_02'
+            ],
             status: RangeStatus.empty,
             materials: const []);
         subjects['geography_general'] = SubjectExamPlan(

@@ -131,7 +131,7 @@ const curriculumQuestionCounts = <String, int>{
   'english.eng.exam.common.reading': 3,
   'english.eng.exam.advanced': 10,
   'english.eng.exam.advanced.synthesis': 5,
-  'science': 3019,
+  'science': 3230,
   'science.physics': 623,
   'science.physics.mechanics': 304,
   'science.physics.mechanics.kinematics': 95,
@@ -320,7 +320,7 @@ const curriculumQuestionCounts = <String, int>{
   'science.chemistry.organic.polymer.protein': 10,
   'science.chemistry.organic.polymer.nucleic': 1,
   'science.chemistry.organic.polymer.role': 2,
-  'science.biology': 555,
+  'science.biology': 766,
   'science.biology.cell': 112,
   'science.biology.cell.common': 37,
   'science.biology.cell.common.common': 1,
@@ -335,25 +335,25 @@ const curriculumQuestionCounts = <String, int>{
   'science.biology.cell.dna.structure': 26,
   'science.biology.cell.dna.replication': 6,
   'science.biology.cell.dna.expression': 5,
-  'science.biology.body': 110,
-  'science.biology.body.nerve': 39,
-  'science.biology.body.nerve.autonomic': 14,
-  'science.biology.body.nerve.hormone': 17,
-  'science.biology.body.nerve.feedback': 2,
-  'science.biology.body.homeostasis': 36,
-  'science.biology.body.homeostasis.fluid': 11,
-  'science.biology.body.homeostasis.glucose': 7,
-  'science.biology.body.homeostasis.temperature': 2,
-  'science.biology.body.homeostasis.organ': 11,
-  'science.biology.body.immunity': 35,
-  'science.biology.body.immunity.innate': 5,
-  'science.biology.body.immunity.adaptive': 14,
-  'science.biology.body.immunity.disease': 5,
-  'science.biology.ecology': 102,
-  'science.biology.ecology.vegetation': 35,
-  'science.biology.ecology.vegetation.vegetation': 5,
-  'science.biology.ecology.vegetation.succession': 9,
-  'science.biology.ecology.vegetation.biome': 18,
+  'science.biology.body': 257,
+  'science.biology.body.nerve': 95,
+  'science.biology.body.nerve.autonomic': 46,
+  'science.biology.body.nerve.hormone': 37,
+  'science.biology.body.nerve.feedback': 6,
+  'science.biology.body.homeostasis': 79,
+  'science.biology.body.homeostasis.fluid': 32,
+  'science.biology.body.homeostasis.glucose': 22,
+  'science.biology.body.homeostasis.temperature': 5,
+  'science.biology.body.homeostasis.organ': 15,
+  'science.biology.body.immunity': 83,
+  'science.biology.body.immunity.innate': 14,
+  'science.biology.body.immunity.adaptive': 36,
+  'science.biology.body.immunity.disease': 22,
+  'science.biology.ecology': 166,
+  'science.biology.ecology.vegetation': 99,
+  'science.biology.ecology.vegetation.vegetation': 22,
+  'science.biology.ecology.vegetation.succession': 31,
+  'science.biology.ecology.vegetation.biome': 43,
   'science.biology.ecology.ecosystem': 41,
   'science.biology.ecology.ecosystem.structure': 19,
   'science.biology.ecology.ecosystem.cycle': 2,
@@ -2262,47 +2262,74 @@ const curriculumUnitSets = <String, List<String>>{
   'science.biology.body.nerve': ['science_biology_04'],
   'science.biology.body.nerve.autonomic': [
     'science_bio_basic_01',
-    'science_biology_04'
+    'science_biology_04',
+    'science_shonan_104_bio_body_01',
+    'science_shonan_104_bio_body_02'
   ],
   'science.biology.body.nerve.hormone': [
     'science_bio_basic_01',
-    'science_biology_04'
+    'science_biology_04',
+    'science_shonan_104_bio_hormone_01'
   ],
-  'science.biology.body.nerve.feedback': ['science_v4_02'],
+  'science.biology.body.nerve.feedback': [
+    'science_shonan_104_bio_hormone_01',
+    'science_v4_02'
+  ],
   'science.biology.body.homeostasis': ['science_biology_05'],
   'science.biology.body.homeostasis.fluid': [
     'science_bio_basic_01',
-    'science_biology_05'
+    'science_biology_05',
+    'science_shonan_104_bio_body_01'
   ],
   'science.biology.body.homeostasis.glucose': [
     'science_biology_05',
+    'science_shonan_104_bio_hormone_01',
     'science_v4_01'
   ],
-  'science.biology.body.homeostasis.temperature': ['science_biology_05'],
-  'science.biology.body.homeostasis.organ': ['science_biology_05'],
+  'science.biology.body.homeostasis.temperature': [
+    'science_biology_05',
+    'science_shonan_104_bio_hormone_01'
+  ],
+  'science.biology.body.homeostasis.organ': [
+    'science_biology_05',
+    'science_shonan_104_bio_body_01'
+  ],
   'science.biology.body.immunity': [
     'science_bio_basic_01',
     'science_biology_06'
   ],
   'science.biology.body.immunity.innate': [
     'science_bio_basic_01',
-    'science_biology_06'
+    'science_biology_06',
+    'science_shonan_104_bio_immune_01'
   ],
-  'science.biology.body.immunity.adaptive': ['science_biology_06'],
+  'science.biology.body.immunity.adaptive': [
+    'science_biology_06',
+    'science_shonan_104_bio_immune_01',
+    'science_shonan_104_bio_immune_02'
+  ],
   'science.biology.body.immunity.disease': [
     'science_bio_basic_01',
-    'science_biology_06'
+    'science_biology_06',
+    'science_shonan_104_bio_immune_01',
+    'science_shonan_104_bio_immune_02'
   ],
   'science.biology.ecology.vegetation': ['science_biology_07'],
-  'science.biology.ecology.vegetation.vegetation': ['science_biology_07'],
+  'science.biology.ecology.vegetation.vegetation': [
+    'science_biology_07',
+    'science_shonan_104_bio_veg_01'
+  ],
   'science.biology.ecology.vegetation.succession': [
     'science_bio_basic_01',
-    'science_biology_07'
+    'science_biology_07',
+    'science_shonan_104_bio_veg_01',
+    'science_shonan_104_bio_veg_02'
   ],
   'science.biology.ecology.vegetation.biome': [
     'science_bio_basic_01',
     'science_biology_07',
-    'science_biology_16'
+    'science_biology_16',
+    'science_shonan_104_bio_veg_02'
   ],
   'science.biology.ecology.ecosystem': ['science_biology_08'],
   'science.biology.ecology.ecosystem.structure': [
