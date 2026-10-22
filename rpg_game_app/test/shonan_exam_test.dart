@@ -418,4 +418,44 @@ void main() {
     expect(SchoolExamStore.of(s.personalBooks).secret, 'test-pw');
     expect(t.takeException(), isNull);
   });
+
+  testWidgets('単元ごとに練習：単元と小単元に分かれ、押すとその問題だけで練習する', (t) async {
+    QuizQuestion q(String id, String unit) => QuizQuestion(
+      id: id,
+      category: QuestionCategory.meaning,
+      prompt: id,
+      choices: const ['a', 'b', 'c', 'd'],
+      answerIndex: 0,
+      unit: unit,
+    );
+    final groups = SchoolUnitGroup.of([
+      q('q1', 'science.chemistry.change.acid.define'),
+      q('q2', 'science.chemistry.change.acid.ph'),
+      q('q3', 'science.chemistry.change.acid.ph'),
+      q('q4', 'science.chemistry.change.equation.write'),
+    ]);
+    SchoolUnitGroup? picked;
+    await openScreen(
+      t,
+      SchoolUnitScreen(
+        title: '化学基礎',
+        groups: groups,
+        onPractice: (c, g) async => picked = g,
+      ),
+    );
+    expect(
+      find.byKey(const ValueKey('unit-science.chemistry.change.acid')),
+      findsOneWidget,
+    );
+    await t.tap(
+      find.byKey(const ValueKey('unit-science.chemistry.change.acid')),
+    );
+    await _frames(t, 5);
+    await t.tap(
+      find.byKey(const ValueKey('unit-play-science.chemistry.change.acid-all')),
+    );
+    await _frames(t, 2);
+    expect(picked?.questions.length, 3);
+    expect(t.takeException(), isNull);
+  });
 }

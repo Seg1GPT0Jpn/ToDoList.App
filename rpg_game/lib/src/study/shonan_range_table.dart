@@ -584,6 +584,34 @@ class ShonanRangeTable {
         subjects['chemistry_basic'] = SubjectExamPlan(
             subjectId: 'chemistry_basic',
             rangeText: '',
+            existingSetIds: const [
+              'science_chemistry_05',
+              'science_chemistry_06',
+              'science_chemistry_07'
+            ],
+            committeeSetIds: const [
+              'science_shonan_104_chem_mole_01',
+              'science_shonan_104_chem_mole_02',
+              'science_shonan_104_chem_mole_03',
+              'science_shonan_104_chem_mole_04',
+              'science_shonan_104_chem_mole_05',
+              'science_shonan_104_chem_mole_06',
+              'science_shonan_104_chem_solution_01',
+              'science_shonan_104_chem_solution_02',
+              'science_shonan_104_chem_solution_03',
+              'science_shonan_104_chem_solution_04',
+              'science_shonan_104_chem_reaction_01',
+              'science_shonan_104_chem_reaction_02',
+              'science_shonan_104_chem_reaction_03',
+              'science_shonan_104_chem_reaction_04',
+              'science_shonan_104_chem_reaction_05',
+              'science_shonan_104_chem_laws_01',
+              'science_shonan_104_chem_acid_01',
+              'science_shonan_104_chem_acid_02',
+              'science_shonan_104_chem_acid_03',
+              'science_shonan_104_chem_neutral_01',
+              'science_shonan_104_chem_neutral_02'
+            ],
             status: RangeStatus.empty,
             materials: const []);
         subjects['biology_basic'] = SubjectExamPlan(

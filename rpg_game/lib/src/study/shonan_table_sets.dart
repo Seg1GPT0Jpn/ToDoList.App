@@ -55,3 +55,22 @@ abstract final class ShonanTableSets {
     return out;
   }
 }
+
+/// 範囲表のすべての試験に入っている、その科目の問題セット（範囲が未定のテストで単元ごとに対策するため）
+abstract final class ShonanSubjectSets {
+  static SubjectExamPlan allFor(String subjectId) {
+    final existing = <String>[];
+    final committee = <String>[];
+    for (final (sheet, _) in ShonanRangeTable.sheets) {
+      final s = ShonanRangeTable.plan(sheet, id: '', now: DateTime(2026))
+          .subject(subjectId);
+      existing.addAll(s.existingSetIds.where((x) => !existing.contains(x)));
+      committee.addAll(s.committeeSetIds.where((x) => !committee.contains(x)));
+    }
+    return SubjectExamPlan(
+      subjectId: subjectId,
+      existingSetIds: existing,
+      committeeSetIds: committee,
+    );
+  }
+}

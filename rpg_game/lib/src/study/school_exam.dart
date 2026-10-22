@@ -1,3 +1,4 @@
+import '../curriculum/curriculum.dart';
 import '../models/question.dart';
 
 /// 学校の定期テスト対策（湘南高校104回生モード）。
@@ -419,5 +420,68 @@ class SchoolPractice {
       usedSetIds: [for (final s in sets) s.setId],
       duplicateQuestionIds: dups,
     );
+  }
+}
+
+/// 問題を学習体系の「単元」ごとに分ける（範囲が決まっていない試験でも、単元ごとに対策できるように）
+class SchoolUnitGroup {
+  const SchoolUnitGroup({
+    required this.id,
+    required this.name,
+    required this.questions,
+    this.parts = const [],
+  });
+
+  /// 単元の ID（学習体系にない問題は空）
+  final String id;
+  final String name;
+  final List<QuizQuestion> questions;
+
+  /// 単元の中の小単元（2つ以上あるときだけ）
+  final List<SchoolUnitGroup> parts;
+
+  /// 問題を単元ごと（その中は小単元ごと）に分ける。学習体系の順に並べる
+  static List<SchoolUnitGroup> of(List<QuizQuestion> questions) {
+    final order = <String, int>{};
+    var i = 0;
+    for (final n in Curriculum.subjects) {
+      for (final d in Curriculum.descendants(n.id)) {
+        order[d.id] = i++;
+      }
+    }
+    final units = <String, List<QuizQuestion>>{};
+    final subs = <String, Map<String, List<QuizQuestion>>>{};
+    for (final q in questions) {
+      final id = q.unit ?? '';
+      final node = Curriculum.tryNode(id);
+      final unit = node == null
+          ? null
+          : (Curriculum.ancestorAt(id, CurriculumLevel.unit) ?? node);
+      final key = unit?.id ?? '';
+      (units[key] ??= []).add(q);
+      ((subs[key] ??= {})[node?.id ?? ''] ??= []).add(q);
+    }
+    String nameOf(String id) => id.isEmpty ? 'その他' : Curriculum.node(id).name;
+    final keys = units.keys.toList()
+      ..sort((a, b) => (order[a] ?? 1 << 30).compareTo(order[b] ?? 1 << 30));
+    return [
+      for (final k in keys)
+        SchoolUnitGroup(
+          id: k,
+          name: nameOf(k),
+          questions: units[k]!,
+          parts: subs[k]!.length < 2
+              ? const []
+              : ([
+                  for (final e in subs[k]!.entries)
+                    SchoolUnitGroup(
+                      id: e.key,
+                      name: nameOf(e.key),
+                      questions: e.value,
+                    ),
+                ]..sort((a, b) =>
+                  (order[a.id] ?? 1 << 30).compareTo(order[b.id] ?? 1 << 30))),
+        ),
+    ];
   }
 }

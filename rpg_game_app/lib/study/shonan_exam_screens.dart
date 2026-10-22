@@ -282,7 +282,39 @@ class _SubjectCard extends StatelessWidget {
   final SchoolExamPlan plan;
   final SchoolSubject subject;
 
-  Future<void> _practice(BuildContext context, SubjectExamPlan sp) async {
+  /// 単元ごとに練習する：登録した問題セットの問題を、学習体系の単元ごとに分けて選ぶ
+  Future<void> _byUnit(BuildContext context, SubjectExamPlan sp) async {
+    final services = RpgServices.of(context);
+    final result = await SchoolPractice.build(
+      subject,
+      sp,
+      services.questions.load,
+    );
+    if (!context.mounted) return;
+    final pool = result.pool;
+    if (pool == null) return _practice(context, sp);
+    Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        builder: (_) => SchoolUnitScreen(
+          title: subject.displayName,
+          groups: SchoolUnitGroup.of(pool.questions),
+          onPractice: (c, g) => _practice(
+            c,
+            sp,
+            onlyIds: {for (final q in g.questions) q.id},
+            label: g.name,
+          ),
+        ),
+      ),
+    );
+  }
+
+  Future<void> _practice(
+    BuildContext context,
+    SubjectExamPlan sp, {
+    Set<String>? onlyIds,
+    String? label,
+  }) async {
     final services = RpgServices.of(context);
     final result = await SchoolPractice.build(
       subject,
@@ -339,7 +371,10 @@ class _SubjectCard extends StatelessWidget {
       );
       if (go != true || !context.mounted) return;
     }
-    var questions = result.pool!.questions;
+    var questions = [
+      for (final q in result.pool!.questions)
+        if (onlyIds == null || onlyIds.contains(q.id)) q,
+    ];
     // EC は本文を開いていれば、問題の中に本文（その Section）を出す
     if (subject.id == 'ec1') {
       final passages = await EcText.saved(services.personalBooks.prefs);
@@ -349,7 +384,9 @@ class _SubjectCard extends StatelessWidget {
     if (!context.mounted) return;
     final stage = SeaBattle.stage(
       id: 'shonan_${plan.id}_${subject.id}',
-      title: subject.displayName,
+      title: label == null
+          ? subject.displayName
+          : '${subject.displayName}｜$label',
       worldId: subject.worldId,
       level: progress.level,
       normalTimeLimitSeconds: 20,
@@ -438,6 +475,17 @@ class _SubjectCard extends StatelessWidget {
                     ),
                     icon: const Icon(Icons.list_alt),
                     label: const Text('問題一覧・解説'),
+                  ),
+                // 範囲の問題セットがまだなくても、その科目の今年度の問題で単元ごとに対策できる
+                if (sp.hasSets || ShonanSubjectSets.allFor(subject.id).hasSets)
+                  OutlinedButton.icon(
+                    key: ValueKey('shonan-units-${subject.id}'),
+                    onPressed: () => _byUnit(
+                      context,
+                      sp.hasSets ? sp : ShonanSubjectSets.allFor(subject.id),
+                    ),
+                    icon: const Icon(Icons.account_tree_outlined),
+                    label: const Text('単元ごとに練習'),
                   ),
                 for (final m in SchoolMaterials.of(subject.id))
                   OutlinedButton.icon(
@@ -905,4 +953,79 @@ class _Note extends StatelessWidget {
       ),
     ],
   );
+}
+
+/// 単元ごとに練習：単元（その中の小単元）を選んで演習する
+class SchoolUnitScreen extends StatelessWidget {
+  const SchoolUnitScreen({
+    super.key,
+    required this.title,
+    required this.groups,
+    required this.onPractice,
+  });
+
+  final String title;
+  final List<SchoolUnitGroup> groups;
+  final Future<void> Function(BuildContext context, SchoolUnitGroup group)
+  onPractice;
+
+  @override
+  Widget build(BuildContext context) {
+    Widget play(SchoolUnitGroup g, {bool all = false}) => TextButton(
+      key: ValueKey('unit-play-${g.id}${all ? '-all' : ''}'),
+      onPressed: () => onPractice(context, g),
+      child: Text(
+        all ? 'この単元すべて（${g.questions.length}問）' : '${g.questions.length}問',
+      ),
+    );
+    return Scaffold(
+      appBar: AppBar(title: Text('単元ごとに練習｜$title', style: serif(16))),
+      body: NotebookPaper(
+        child: ListView(
+          padding: const EdgeInsets.fromLTRB(16, 12, 16, 32),
+          children: [
+            Text(
+              '範囲が決まっていなくても、単元を選んで対策できます。単元を開くと、さらに細かい小単元ごとにも練習できます。',
+              style: TextStyle(fontSize: 12, color: TsuzuriColors.inkSoft),
+            ),
+            const SizedBox(height: 8),
+            for (final g in groups)
+              Card(
+                margin: const EdgeInsets.only(bottom: 8),
+                child: g.parts.isEmpty
+                    ? ListTile(
+                        key: ValueKey('unit-${g.id}'),
+                        title: Text(g.name),
+                        trailing: play(g),
+                      )
+                    : ExpansionTile(
+                        key: ValueKey('unit-${g.id}'),
+                        title: Text(g.name),
+                        subtitle: Text('${g.questions.length}問'),
+                        children: [
+                          Align(
+                            alignment: Alignment.centerLeft,
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 8),
+                              child: play(g, all: true),
+                            ),
+                          ),
+                          for (final p in g.parts)
+                            ListTile(
+                              dense: true,
+                              contentPadding: const EdgeInsets.only(
+                                left: 24,
+                                right: 8,
+                              ),
+                              title: Text(p.name),
+                              trailing: play(p),
+                            ),
+                        ],
+                      ),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
 }

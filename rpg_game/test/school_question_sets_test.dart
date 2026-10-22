@@ -85,4 +85,47 @@ void main() {
     expect(r.usedSetIds, hasLength(20));
     expect(r.pool!.questions, hasLength(1033 + 6 * 24));
   });
+
+  test('範囲が未定の後期期末の化学基礎も、単元ごと（小単元ごと）に分けて対策できる', () async {
+    final plan = ShonanRangeTable.plan('後期期末試験', id: 'x', now: DateTime(2026));
+    final r = await SchoolPractice.build(
+      ShonanSubjects.byId('chemistry_basic')!,
+      plan.subject('chemistry_basic'),
+      (id) async {
+        final m = bundle('science')[id];
+        return m == null
+            ? null
+            : QuestionSet.fromJson(m as Map<String, dynamic>);
+      },
+    );
+    expect(r.issues, isEmpty);
+    final groups = SchoolUnitGroup.of(r.pool!.questions);
+    final ids = [for (final g in groups) g.id];
+    expect(
+        ids,
+        containsAll([
+          'science.chemistry.change.mole',
+          'science.chemistry.change.equation',
+          'science.chemistry.change.acid'
+        ]));
+    final acid =
+        groups.firstWhere((g) => g.id == 'science.chemistry.change.acid');
+    expect(
+        [for (final p in acid.parts) p.id],
+        containsAll([
+          'science.chemistry.change.acid.define',
+          'science.chemistry.change.acid.ph',
+          'science.chemistry.change.acid.neutral',
+          'science.chemistry.change.acid.salt',
+        ]));
+    expect(groups.fold(0, (n, g) => n + g.questions.length),
+        r.pool!.questions.length);
+  });
+
+  test('範囲の問題セットがない科目でも、今年度の範囲表のセットで単元ごとに対策できる', () {
+    final all = ShonanSubjectSets.allFor('public_economy');
+    expect(
+        all.committeeSetIds, contains('social_shonan_104_public_economy_14'));
+    expect(ShonanSubjectSets.allFor('gendai_kokugo').hasSets, isTrue);
+  });
 }
