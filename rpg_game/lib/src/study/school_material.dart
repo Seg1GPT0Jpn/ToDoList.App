@@ -108,6 +108,13 @@ abstract final class SchoolMaterials {
       pages: 28,
       locked: true,
     ),
+    SchoolMaterial(
+      id: 'bio_prints',
+      title: '生物基礎 授業プリントNo.10〜15（解答例つき）',
+      subjectId: 'biology_basic',
+      pages: 17,
+      locked: true,
+    ),
   ];
 
   static List<SchoolMaterial> of(String subjectId) => [
