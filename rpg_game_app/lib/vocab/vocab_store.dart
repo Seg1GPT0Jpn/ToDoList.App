@@ -71,16 +71,74 @@ class VocabStore {
     }
   }
 
+  /// 開いた単語帳の名前と合言葉（この端末の中だけ。同梱データが新しくなったら開きなおすため）
+  static const _vaultKey = 'vocab_vault_keys';
+
+  Map<String, List<String>> get _vaultKeys {
+    final raw = _prefs.getString(_vaultKey);
+    if (raw == null) return {};
+    try {
+      return {
+        for (final e in (jsonDecode(raw) as Map).entries)
+          '${e.key}': [for (final v in e.value as List) '$v'],
+      };
+    } catch (_) {
+      return {};
+    }
+  }
+
   /// 名前とパスワードで単語帳を開く。ちがえば null
   Future<VocabBook?> unlock(String name, String password) async {
     if (name.trim().isEmpty || password.trim().isEmpty) return null;
     final data = await assetLoader(VocabVault.fileName(name));
     if (data == null) return null;
     // 大文字・小文字のちがいでは開けなくならないように、小文字でも試す
-    final opened =
-        VocabVault.open(data, password) ??
-        VocabVault.open(data, VocabVault.halfWidth(password).toLowerCase());
+    var used = password;
+    var opened = VocabVault.open(data, used);
+    if (opened == null) {
+      used = VocabVault.halfWidth(password).toLowerCase();
+      opened = VocabVault.open(data, used);
+    }
     if (opened == null) return null;
+    final b = _apply(opened);
+    await _prefs.setString(
+      _vaultKey,
+      jsonEncode({
+        ..._vaultKeys,
+        b.id: [name, used],
+      }),
+    );
+    await _prefs.setStringList(_unlockKey, {..._unlocked, b.id}.toList());
+    await saveBooks();
+    return b;
+  }
+
+  /// 前に開いた単語帳を、アプリに入っている新しい版（章分け・意味の直しなど）にそろえる。
+  /// 変わったものがあれば true
+  Future<bool> refreshOpened() async {
+    var changed = false;
+    for (final MapEntry(key: id, value: v) in _vaultKeys.entries) {
+      if (v.length != 2 || !_unlocked.contains(id)) continue;
+      final data = await assetLoader(VocabVault.fileName(v[0]));
+      if (data == null) continue;
+      final opened = VocabVault.open(data, v[1]);
+      if (opened == null) continue;
+      String sig(List<VocabCard> cards) => jsonEncode([
+        for (final c in cards) [c.id, c.term, c.meaning, c.group],
+      ]);
+      final before = book(id);
+      if (before != null && sig(before.cards) == sig(opened.cards)) continue;
+      _apply(opened);
+      changed = true;
+    }
+    if (changed) await saveBooks();
+    return changed;
+  }
+
+  /// 開いた中身を単語帳にする（前からあれば、自分で足した例文などは残して中身をそろえる）
+  VocabBook _apply(
+    ({String title, String worldId, List<VocabCard> cards}) opened,
+  ) {
     final id = opened.title.toLowerCase();
     var b = book(id);
     if (b == null) {
@@ -93,7 +151,7 @@ class VocabStore {
       );
       books.insert(0, b);
     } else {
-      // 例文など自分で足したものは残し、単語と意味は同梱のものにそろえる
+      // 例文など自分で足したものは残し、単語と意味・章は同梱のものにそろえる
       final mine = {for (final c in b.cards) c.id: c};
       b.cards = [
         for (final c in opened.cards)
@@ -110,8 +168,6 @@ class VocabStore {
                 ),
       ];
     }
-    await _prefs.setStringList(_unlockKey, [..._unlocked, id]);
-    await saveBooks();
     return b;
   }
 

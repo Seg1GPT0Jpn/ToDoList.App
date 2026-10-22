@@ -101,6 +101,10 @@ class _TermCardsTabState extends State<TermCardsTab> {
       out.add((info, await loadTermDeck(info)));
     }
     if (mounted && world == widget.world.id) setState(() => _decks = out);
+    // 開いた単語帳（古文など）を、アプリに入っている新しい版にそろえる
+    if (await _store?.refreshOpened() ?? false) {
+      if (mounted) setState(() {});
+    }
   }
 
   VocabStore? get _store {

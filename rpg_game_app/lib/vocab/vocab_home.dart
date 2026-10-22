@@ -30,6 +30,10 @@ class _VocabHomeState extends State<VocabHome> {
   void initState() {
     super.initState();
     UsageMeter.mark(context, 'vocab');
+    // アプリの単語帳が新しくなっていたら（章分けの変更など）、開いた単語帳にも反映する
+    store.refreshOpened().then((changed) {
+      if (changed && mounted) setState(() {});
+    });
   }
 
   late final VocabStore store = VocabStore.of(widget.books);
