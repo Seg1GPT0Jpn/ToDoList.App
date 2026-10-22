@@ -180,4 +180,12 @@ void main() {
     expect(VocabVault.open(VocabVault.seal('英', cards, 'pw'), 'pw')!.worldId,
         'english');
   });
+
+  test('単語帳の名前・パスワードは、全角で入れても開ける', () {
+    expect(VocabVault.fileName('古文テスト３３０'), VocabVault.fileName('古文テスト330'));
+    expect(VocabVault.fileName('ＬＥＡＰ　'), VocabVault.fileName('leap'));
+    const cards = [VocabCard(id: 'k1', term: 'あはれなり', meaning: 'しみじみと趣深い')];
+    final data = VocabVault.seal('t', cards, 'abc1');
+    expect(VocabVault.open(data, 'ａｂｃ１'), isNotNull);
+  });
 }

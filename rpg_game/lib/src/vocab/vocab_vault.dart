@@ -20,11 +20,23 @@ class VocabVault {
   static const iterations = 4000;
   static final _magic = ascii.encode('TQV1');
 
-  /// 名前から同梱ファイルの名前を決める（名前の一覧もソースに置かない）
+  /// 名前から同梱ファイルの名前を決める（名前の一覧もソースに置かない）。
+  /// 全角の英数字（日本語入力で「３３０」になったもの）も半角と同じに扱う
   static String fileName(String name) => sha256
-      .convert(utf8.encode('tsuzuri-vocab-name:${name.trim().toLowerCase()}'))
+      .convert(utf8
+          .encode('tsuzuri-vocab-name:${halfWidth(name).trim().toLowerCase()}'))
       .toString()
       .substring(0, 16);
+
+  /// 全角の英数字・記号・空白を半角にする
+  static String halfWidth(String s) => String.fromCharCodes([
+        for (final c in s.runes)
+          c == 0x3000
+              ? 0x20
+              : (c >= 0xFF01 && c <= 0xFF5E)
+                  ? c - 0xFEE0
+                  : c,
+      ]);
 
   static List<int> _pbkdf2(List<int> password, List<int> salt, int length) {
     final hmac = Hmac(sha256, password);
@@ -102,7 +114,7 @@ class VocabVault {
     final nonce = data.sublist(20, 36);
     final mac = data.sublist(36, 68);
     final cipher = data.sublist(68);
-    final keys = _pbkdf2(utf8.encode(password.trim()), salt, 64);
+    final keys = _pbkdf2(utf8.encode(halfWidth(password).trim()), salt, 64);
     final check = Hmac(sha256, keys.sublist(32))
         .convert([...salt, ...nonce, ...cipher]).bytes;
     if (!_same(check, mac)) return null;

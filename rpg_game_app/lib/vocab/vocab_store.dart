@@ -76,7 +76,10 @@ class VocabStore {
     if (name.trim().isEmpty || password.trim().isEmpty) return null;
     final data = await assetLoader(VocabVault.fileName(name));
     if (data == null) return null;
-    final opened = VocabVault.open(data, password);
+    // 大文字・小文字のちがいでは開けなくならないように、小文字でも試す
+    final opened =
+        VocabVault.open(data, password) ??
+        VocabVault.open(data, VocabVault.halfWidth(password).toLowerCase());
     if (opened == null) return null;
     final id = opened.title.toLowerCase();
     var b = book(id);
