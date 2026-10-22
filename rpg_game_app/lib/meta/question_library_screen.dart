@@ -4,6 +4,7 @@ import 'package:rpg_game/rpg_game.dart';
 import '../app/services.dart';
 import '../app/theme.dart';
 import '../art/paper.dart';
+import '../study/school_exam_store.dart';
 import '../study/shonan_question_list.dart';
 
 /// 問題集：アプリに入っている全問題を、教科 → 問題セットの順に、答え・解説つきで見る
@@ -113,9 +114,14 @@ class _QuestionLibrarySubjectScreenState
   }
 
   Future<void> _load() async {
-    final source = RpgServices.of(context).questions;
-    final ids = (await RpgServices.questionSetsOf(widget.world)).keys.toList()
-      ..sort();
+    final services = RpgServices.of(context);
+    final source = services.questions;
+    // 学校専用の問題は、試験対策で学校名とパスワードを入れた端末でだけ見せる
+    final school = SchoolExamStore.of(services.personalBooks).unlocked;
+    final ids = [
+      for (final id in (await RpgServices.questionSetsOf(widget.world)).keys)
+        if (school || !id.contains('_shonan_')) id,
+    ]..sort();
     final sets = <QuestionSet>[];
     for (final id in ids) {
       final s = await source.load(id);

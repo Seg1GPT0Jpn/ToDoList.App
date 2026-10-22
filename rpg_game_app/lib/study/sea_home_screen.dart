@@ -9,7 +9,6 @@ import '../app/theme.dart';
 import '../app/usage_meter.dart';
 import '../art/paper.dart';
 import 'exam_world_screens.dart';
-import 'shonan_exam_screens.dart';
 import 'realm_style.dart';
 import 'personal_books.dart';
 import 'sea_battle_launcher.dart';
@@ -110,16 +109,6 @@ class _SeaHomeScreenState extends State<SeaHomeScreen> {
               ),
               icon: const Icon(Icons.auto_awesome, size: 18),
               label: const Text('試験対策'),
-            ),
-            TextButton.icon(
-              key: const ValueKey('sea-shonan'),
-              onPressed: () => Navigator.of(context).push(
-                MaterialPageRoute<void>(
-                  builder: (_) => const ShonanExamListScreen(),
-                ),
-              ),
-              icon: const Icon(Icons.school, size: 18),
-              label: const Text(ShonanText.entry),
             ),
           ],
           bottom: PreferredSize(

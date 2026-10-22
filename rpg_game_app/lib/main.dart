@@ -32,6 +32,7 @@ import 'cloud/tsuzuri_firebase_backend.dart';
 import 'data/meta_store.dart';
 import 'data/prefs_progress_repository.dart';
 import 'study/exam_world_store.dart';
+import 'study/school_exam_store.dart';
 import 'study/personal_books.dart';
 import 'world/world_map_screen.dart';
 
@@ -39,6 +40,8 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   _registerFontLicenses();
   final prefs = await SharedPreferences.getInstance();
+  // 学校専用の対策：前から使っていた端末は開いたままにする（ほかの保存より前に確かめる）
+  await SchoolExamStore.migrate(prefs);
   final progress = PrefsProgressRepository(prefs);
   final profiles = ProfileRepository(prefs);
   final meta = MetaStore(prefs);

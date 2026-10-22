@@ -13,7 +13,6 @@ import 'shonan_question_list.dart';
 class ShonanText {
   const ShonanText._();
   static const title = '湘南高校104回生 定期テスト対策';
-  static const entry = '湘南104';
   static const localOnly = 'この端末にだけ保存されます。ほかの端末や友だちとは共有されません。';
   static const empty = 'まだテストがありません。「範囲表から作る」か「新しく作る」で追加してください。';
   static const fromTable = '範囲表から作る';

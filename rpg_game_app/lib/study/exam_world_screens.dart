@@ -9,6 +9,8 @@ import '../audio/music_scope.dart';
 import '../battle/battle_screen.dart';
 import '../field/field_screen.dart';
 import 'realm_style.dart';
+import 'school_exam_store.dart';
+import 'shonan_exam_screens.dart';
 
 /// 試験対策ワールドの一覧（定期テストの海・模擬試験の空から入る）
 class ExamWorldListScreen extends StatelessWidget {
@@ -54,7 +56,9 @@ class ExamWorldListScreen extends StatelessWidget {
                   '${realm == StudyRealm.sky ? '\n※ 模擬試験の空は、定期テストの海よりさらに難しい上級者向けです（2回まちがえると倒れる・制限時間は半分）。' : ''}',
                   style: const TextStyle(fontSize: 13, height: 1.6),
                 ),
-                const SizedBox(height: 16),
+                const SizedBox(height: 12),
+                if (realm == StudyRealm.sea) const _SchoolGateCard(),
+                const SizedBox(height: 4),
                 if (plans.isEmpty)
                   Padding(
                     padding: EdgeInsets.only(top: 24),
@@ -68,6 +72,124 @@ class ExamWorldListScreen extends StatelessWidget {
               ],
             );
           },
+        ),
+      ),
+    );
+  }
+}
+
+/// 学校専用の定期テスト対策。学校名とパスワードで開く（開いたあとは、ここから入る）
+class _SchoolGateCard extends StatefulWidget {
+  const _SchoolGateCard();
+
+  @override
+  State<_SchoolGateCard> createState() => _SchoolGateCardState();
+}
+
+class _SchoolGateCardState extends State<_SchoolGateCard> {
+  final _school = TextEditingController();
+  final _password = TextEditingController();
+  String? _error;
+
+  @override
+  void dispose() {
+    _school.dispose();
+    _password.dispose();
+    super.dispose();
+  }
+
+  SchoolExamStore get _store =>
+      SchoolExamStore.of(RpgServices.of(context).personalBooks);
+
+  Future<void> _unlock() async {
+    final ok = await _store.unlock(_school.text, _password.text);
+    if (!mounted) return;
+    setState(() => _error = ok ? null : '学校名かパスワードがちがいます');
+    if (ok) {
+      _school.clear();
+      _password.clear();
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (_store.unlocked) {
+      return Card(
+        margin: const EdgeInsets.only(bottom: 10),
+        child: ListTile(
+          key: const ValueKey('school-exam-open'),
+          leading: Icon(Icons.school, color: TsuzuriColors.accent),
+          title: const Text(ShonanText.title),
+          subtitle: const Text('学校の範囲表から、科目ごとに演習できます'),
+          trailing: const Icon(Icons.chevron_right),
+          onTap: () => Navigator.of(context).push(
+            MaterialPageRoute<void>(
+              builder: (_) => const ShonanExamListScreen(),
+            ),
+          ),
+        ),
+      );
+    }
+    return Card(
+      margin: const EdgeInsets.only(bottom: 10),
+      child: Padding(
+        padding: const EdgeInsets.all(14),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Icon(Icons.school, size: 20, color: TsuzuriColors.accent),
+                const SizedBox(width: 6),
+                Text('学校の定期テスト対策', style: serif(15)),
+              ],
+            ),
+            const SizedBox(height: 4),
+            Text(
+              '学校専用の対策がある場合は、学校名とパスワードを入れると使えます。',
+              style: TextStyle(fontSize: 12, color: TsuzuriColors.inkSoft),
+            ),
+            TextField(
+              key: const ValueKey('school-name'),
+              controller: _school,
+              decoration: const InputDecoration(
+                labelText: '学校名',
+                isDense: true,
+              ),
+              textInputAction: TextInputAction.next,
+            ),
+            const SizedBox(height: 6),
+            Row(
+              children: [
+                Expanded(
+                  child: TextField(
+                    key: const ValueKey('school-password'),
+                    controller: _password,
+                    obscureText: true,
+                    decoration: const InputDecoration(
+                      labelText: 'パスワード',
+                      isDense: true,
+                    ),
+                    onSubmitted: (_) => _unlock(),
+                  ),
+                ),
+                const SizedBox(width: 8),
+                FilledButton(
+                  key: const ValueKey('school-unlock'),
+                  onPressed: _unlock,
+                  child: const Text('開く'),
+                ),
+              ],
+            ),
+            if (_error != null)
+              Padding(
+                padding: const EdgeInsets.only(top: 6),
+                child: Text(
+                  _error!,
+                  style: TextStyle(fontSize: 12, color: TsuzuriColors.wrong),
+                ),
+              ),
+          ],
         ),
       ),
     );

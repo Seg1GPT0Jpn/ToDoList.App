@@ -31,7 +31,7 @@ Future<void> _settle(WidgetTester t) async {
 }
 
 void main() {
-  testWidgets('定期テストの海から湘南104の画面に入れる（既存の試験対策ボタンも残る）', (t) async {
+  testWidgets('学校専用の対策は、定期テストの海の上には出ず、試験対策で学校名とパスワードを入れて開く', (t) async {
     await openScreen(
       t,
       Builder(
@@ -41,12 +41,54 @@ void main() {
       frames: 20,
       size: const Size(900, 900),
     );
-    expect(find.text('試験対策'), findsOneWidget);
-    await t.tap(find.byKey(const ValueKey('sea-shonan')));
+    expect(find.byIcon(Icons.school), findsNothing);
+    await t.tap(find.text('試験対策'));
+    await _frames(t);
+    expect(find.byKey(const ValueKey('school-exam-open')), findsNothing);
+    await t.enterText(find.byKey(const ValueKey('school-name')), 'どこか高校');
+    await t.enterText(find.byKey(const ValueKey('school-password')), 'abc');
+    await t.tap(find.byKey(const ValueKey('school-unlock')));
+    await _frames(t, 3);
+    expect(find.text('学校名かパスワードがちがいます'), findsOneWidget);
+    expect(find.byKey(const ValueKey('school-exam-open')), findsNothing);
+    expect(t.takeException(), isNull);
+  });
+
+  testWidgets('開いた端末では、試験対策から学校の定期テスト対策に入れる', (t) async {
+    await openScreen(
+      t,
+      Builder(
+        builder: (c) =>
+            SeaHomeScreen(personalBooks: RpgServices.of(c).personalBooks),
+      ),
+      prefs: {SchoolExamStore.gateKey: true},
+      frames: 20,
+      size: const Size(900, 900),
+    );
+    await t.tap(find.text('試験対策'));
+    await _frames(t);
+    await t.tap(find.byKey(const ValueKey('school-exam-open')));
     await _frames(t);
     expect(find.byType(ShonanExamListScreen), findsOneWidget);
     expect(find.text(ShonanText.localOnly), findsOneWidget);
     expect(t.takeException(), isNull);
+  });
+
+  test('この更新より前から使っていた端末は、合言葉なしで開いたまま。新しい端末は閉じている', () async {
+    SharedPreferences.setMockInitialValues({'rpg_progress_v1': '{}'});
+    final old = await SharedPreferences.getInstance();
+    await SchoolExamStore.migrate(old);
+    expect(SchoolExamStore(old).unlocked, isTrue);
+
+    SharedPreferences.setMockInitialValues({});
+    final fresh = await SharedPreferences.getInstance();
+    await SchoolExamStore.migrate(fresh);
+    expect(SchoolExamStore(fresh).unlocked, isFalse);
+    // 2回目の起動では、保存があっても開かない（最初の1回だけ確かめる）
+    await fresh.setString('something', 'x');
+    await SchoolExamStore.migrate(fresh);
+    expect(SchoolExamStore(fresh).unlocked, isFalse);
+    expect(await SchoolExamStore(fresh).unlock('どこか高校', 'abc'), isFalse);
   });
 
   testWidgets('範囲表から後期中間を作ると、11科目の範囲と教材が見える', (t) async {
@@ -69,7 +111,7 @@ void main() {
       find.byKey(const ValueKey('shonan-practice-public_economy')),
     );
     expect(pub.onPressed, isNotNull);
-    expect(find.textContaining('委員会の新作問題セット：8'), findsOneWidget);
+    expect(find.textContaining('委員会の新作問題セット：14'), findsOneWidget);
     // 生物基礎は範囲も問題セットもないので押せない
     final bio = t.widget<ButtonStyleButton>(
       find.byKey(const ValueKey('shonan-practice-biology_basic')),

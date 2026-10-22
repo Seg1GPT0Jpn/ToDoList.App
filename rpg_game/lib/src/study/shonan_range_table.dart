@@ -478,7 +478,13 @@ class ShonanRangeTable {
               'social_shonan_104_public_economy_05',
               'social_shonan_104_public_economy_06',
               'social_shonan_104_public_economy_07',
-              'social_shonan_104_public_economy_08'
+              'social_shonan_104_public_economy_08',
+              'social_shonan_104_public_economy_09',
+              'social_shonan_104_public_economy_10',
+              'social_shonan_104_public_economy_11',
+              'social_shonan_104_public_economy_12',
+              'social_shonan_104_public_economy_13',
+              'social_shonan_104_public_economy_14'
             ],
             status: RangeStatus.entered,
             materials: const [

@@ -57,6 +57,28 @@ class SchoolExamStore {
       if (p.id != id) p,
   ]);
 
+  /// 学校専用の定期テスト対策を開いたか（試験対策で学校名とパスワードを入れる）
+  static const gateKey = 'school_gate_shonan_v1';
+  static const _gateCheckedKey = 'school_gate_checked_v1';
+
+  /// この更新より前からアプリを使っていた端末では、合言葉なしで開いたままにする。
+  /// 起動して最初に（ほかの保存より前に）呼ぶ。保存が1つでもあれば、前から使っていた端末
+  static Future<void> migrate(SharedPreferences prefs) async {
+    if (prefs.containsKey(_gateCheckedKey)) return;
+    final usedBefore = prefs.getKeys().isNotEmpty;
+    await prefs.setBool(_gateCheckedKey, true);
+    if (usedBefore) await prefs.setBool(gateKey, true);
+  }
+
+  bool get unlocked => _prefs.getBool(gateKey) ?? false;
+
+  /// 学校名とパスワードで開く。ちがえば false
+  Future<bool> unlock(String school, String password) async {
+    if (!SchoolGate.matches(school, password)) return false;
+    await _prefs.setBool(gateKey, true);
+    return true;
+  }
+
   SchoolExamPlan? byId(String id) {
     for (final p in load()) {
       if (p.id == id) return p;
