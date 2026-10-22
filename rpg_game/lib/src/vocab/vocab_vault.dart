@@ -73,6 +73,7 @@ class VocabVault {
     List<VocabCard> cards,
     String password, {
     Random? random,
+    String worldId = 'english',
   }) {
     final rnd = random ?? Random.secure();
     final salt = List<int>.generate(16, (_) => rnd.nextInt(256));
@@ -80,6 +81,8 @@ class VocabVault {
     final keys = _pbkdf2(utf8.encode(password), salt, 64);
     final plain = utf8.encode(jsonEncode({
       'title': title,
+      // 英語以外（古文単語など）は、日本語の用語カードとして練習する
+      if (worldId != 'english') 'w': worldId,
       'cards': [for (final c in cards) c.toJson()],
     }));
     final cipher = _xor(keys.sublist(0, 32), nonce, plain);
@@ -90,7 +93,7 @@ class VocabVault {
   }
 
   /// 開く。パスワードがちがう・壊れているときは null
-  static ({String title, List<VocabCard> cards})? open(
+  static ({String title, String worldId, List<VocabCard> cards})? open(
     List<int> data,
     String password,
   ) {
@@ -107,6 +110,7 @@ class VocabVault {
         as Map<String, dynamic>;
     return (
       title: j['title'] as String,
+      worldId: j['w'] as String? ?? 'english',
       cards: [
         for (final c in j['cards'] as List)
           VocabCard.fromJson(c as Map<String, dynamic>),

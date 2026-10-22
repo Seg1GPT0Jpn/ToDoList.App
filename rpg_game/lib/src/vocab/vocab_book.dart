@@ -397,8 +397,9 @@ class VocabBook {
 
   bool get isProtected => kind == VocabBookKind.protectedImport;
 
-  /// 日本語の用語の暗記カード（スペル・発音・例文の代わりに「用語を書く」で練習する）
-  bool get isTerms => kind == VocabBookKind.builtin;
+  /// 日本語の用語の暗記カード（スペル・発音・例文の代わりに「用語を書く」で練習する）。
+  /// アプリに入っているカードと、英語以外の単語帳（古文単語など）
+  bool get isTerms => kind == VocabBookKind.builtin || worldId != 'english';
 
   /// 1枚の数え方（「語」・「枚」）と呼び名（「単語」・「用語」）
   String get unit => isTerms ? '枚' : '語';

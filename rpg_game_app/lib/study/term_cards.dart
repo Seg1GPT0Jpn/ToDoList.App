@@ -119,9 +119,15 @@ class _TermCardsTabState extends State<TermCardsTab> {
     final world = widget.world;
     final owned = Progression.isWorldPlayable(widget.progress, world);
     final store = _store;
+    // 名前とパスワードで開いた、この教科の単語帳（古文単語など）
+    final unlocked = [
+      for (final b in store?.visibleBooks ?? const <VocabBook>[])
+        if (b.isProtected && b.worldId == world.id) b,
+    ];
     final books = [
       for (final (_, d) in _decks ?? const <(TermDeckInfo, TermDeck?)>[])
         if (d != null) termBook(d),
+      ...unlocked,
     ];
     return ListView(
       padding: const EdgeInsets.fromLTRB(40, 12, 12, 24),
@@ -138,6 +144,21 @@ class _TermCardsTabState extends State<TermCardsTab> {
             ),
           ),
         if (owned && store != null && books.isNotEmpty) _today(store, books),
+        if (store != null)
+          for (final b in unlocked)
+            Card(
+              key: ValueKey('unlocked-book-${b.id}'),
+              child: ListTile(
+                leading: Icon(Icons.lock_open, color: TsuzuriColors.accent),
+                title: Text(b.title),
+                subtitle: Text('${b.cards.length}${b.unit}・パスワードで開いた単語帳'),
+                trailing: FilledButton(
+                  onPressed: () =>
+                      _open(VocabBookScreen(store: store, book: b)),
+                  child: const Text('学習する'),
+                ),
+              ),
+            ),
         for (final info in TermDecks.of(world.id))
           _DeckCard(
             info: info,
@@ -662,7 +683,7 @@ class VocabBookQuizSection extends StatelessWidget {
     final store = VocabStore.of(RpgServices.of(context).personalBooks);
     final books = [
       for (final b in store.visibleBooks)
-        if (b.isProtected && b.cards.length >= 4) b,
+        if (b.isProtected && !b.isTerms && b.cards.length >= 4) b,
     ];
     if (books.isEmpty) {
       return Card(

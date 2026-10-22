@@ -85,6 +85,7 @@ class VocabStore {
         id: id,
         title: opened.title,
         kind: VocabBookKind.protectedImport,
+        worldId: opened.worldId,
         cards: opened.cards,
       );
       books.insert(0, b);
