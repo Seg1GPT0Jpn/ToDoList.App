@@ -7,6 +7,7 @@ import '../art/paper.dart';
 import '../battle/battle_screen.dart';
 import 'ec_text.dart';
 import 'school_exam_store.dart';
+import 'school_material_screen.dart';
 import 'shonan_question_list.dart';
 
 /// 画面に出す文言（ここにまとめる）
@@ -116,6 +117,27 @@ class ShonanExamListScreen extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 16),
+                if (SchoolMaterials.all.isNotEmpty) ...[
+                  Text('資料（PDF）', style: serif(15)),
+                  for (final m in SchoolMaterials.all)
+                    Card(
+                      child: ListTile(
+                        key: ValueKey('shonan-materials-${m.id}'),
+                        leading: const Icon(Icons.picture_as_pdf_outlined),
+                        title: Text(m.title),
+                        subtitle: Text(
+                          '${ShonanSubjects.byId(m.subjectId)?.displayName ?? ''}・${m.pages}ページ',
+                        ),
+                        trailing: const Icon(Icons.chevron_right),
+                        onTap: () => Navigator.of(context).push(
+                          MaterialPageRoute<void>(
+                            builder: (_) => SchoolMaterialScreen(material: m),
+                          ),
+                        ),
+                      ),
+                    ),
+                  const SizedBox(height: 16),
+                ],
                 if (plans.isEmpty) const Text(ShonanText.empty),
                 for (final p in plans) _PlanCard(plan: p),
               ],
@@ -416,6 +438,17 @@ class _SubjectCard extends StatelessWidget {
                     ),
                     icon: const Icon(Icons.list_alt),
                     label: const Text('問題一覧・解説'),
+                  ),
+                for (final m in SchoolMaterials.of(subject.id))
+                  OutlinedButton.icon(
+                    key: ValueKey('shonan-material-${m.id}'),
+                    onPressed: () => Navigator.of(context).push(
+                      MaterialPageRoute<void>(
+                        builder: (_) => SchoolMaterialScreen(material: m),
+                      ),
+                    ),
+                    icon: const Icon(Icons.picture_as_pdf_outlined),
+                    label: const Text('資料（PDF）を見る'),
                   ),
                 if (subject.id == 'ec1')
                   OutlinedButton.icon(

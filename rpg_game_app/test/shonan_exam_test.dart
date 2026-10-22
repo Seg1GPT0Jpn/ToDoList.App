@@ -7,6 +7,7 @@ import 'package:rpg_game_app/app/services.dart';
 import 'package:rpg_game_app/battle/battle_screen.dart';
 import 'package:rpg_game_app/study/ec_text.dart';
 import 'package:rpg_game_app/study/school_exam_store.dart';
+import 'package:rpg_game_app/study/school_material_screen.dart';
 import 'package:rpg_game_app/study/sea_home_screen.dart';
 import 'package:rpg_game_app/study/shonan_exam_screens.dart';
 import 'package:rpg_game_app/study/shonan_question_list.dart';
@@ -332,5 +333,39 @@ void main() {
       expect(out[1].passage, isNull);
       await EcText.forget(prefs);
     });
+  });
+
+  testWidgets('配布資料（PDF）をページごとにめくって見られる', (t) async {
+    await openScreen(
+      t,
+      const ShonanExamListScreen(),
+      prefs: {SchoolExamStore.gateKey: true},
+      frames: 10,
+    );
+    final m = SchoolMaterials.all.first;
+    // 同梱の画像は暗号化してあり、開くと WebP の画像になる
+    final raw = await t.runAsync(() => SchoolMaterialScreen.loader(m.asset(1)));
+    final page = SchoolMaterials.open(raw!)!;
+    expect(String.fromCharCodes(page.sublist(8, 12)), 'WEBP');
+
+    await t.tap(find.byKey(ValueKey('shonan-materials-${m.id}')));
+    for (var i = 0; i < 5; i++) {
+      await t.runAsync(
+        () => Future<void>.delayed(const Duration(milliseconds: 100)),
+      );
+      await _frames(t, 2);
+    }
+    expect(find.byType(SchoolMaterialScreen), findsOneWidget);
+    expect(find.text('1 / ${m.pages}'), findsOneWidget);
+    expect(find.byKey(const ValueKey('material-image-1')), findsOneWidget);
+    await t.drag(find.byType(PageView), const Offset(-500, 0));
+    for (var i = 0; i < 5; i++) {
+      await t.runAsync(
+        () => Future<void>.delayed(const Duration(milliseconds: 100)),
+      );
+      await _frames(t, 2);
+    }
+    expect(find.text('2 / ${m.pages}'), findsOneWidget);
+    expect(t.takeException(), isNull);
   });
 }
