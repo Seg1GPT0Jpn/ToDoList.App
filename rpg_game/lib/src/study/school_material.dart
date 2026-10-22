@@ -66,6 +66,48 @@ abstract final class SchoolMaterials {
       pages: 22,
       locked: true,
     ),
+    SchoolMaterial(
+      id: 'gengo_koji',
+      title: '故事成語「狐借虎威」ほか（漁夫之利・五十歩百歩）',
+      subjectId: 'gengo_bunka',
+      pages: 12,
+      locked: true,
+    ),
+    SchoolMaterial(
+      id: 'gengo_kundoku',
+      title: '漢文訓読の基本',
+      subjectId: 'gengo_bunka',
+      pages: 15,
+      locked: true,
+    ),
+    SchoolMaterial(
+      id: 'kw_matome',
+      title: '現代文キーワード 41〜70 重要語句まとめ',
+      subjectId: 'gendai_kokugo',
+      pages: 14,
+      locked: true,
+    ),
+    SchoolMaterial(
+      id: 'kw_mondai',
+      title: '現代文キーワード 41〜70 対策問題（解答つき）',
+      subjectId: 'gendai_kokugo',
+      pages: 6,
+      locked: true,
+    ),
+    SchoolMaterial(
+      id: 'kw_book',
+      title: '現代文キーワード 41〜70（本）',
+      subjectId: 'gendai_kokugo',
+      pages: 30,
+      locked: true,
+    ),
+    SchoolMaterial(
+      id: 'kanji_goi',
+      title: '漢字・語彙 第5・6章・四字熟語（文字起こし）',
+      subjectId: 'gendai_kokugo',
+      pages: 28,
+      locked: true,
+    ),
   ];
 
   static List<SchoolMaterial> of(String subjectId) => [

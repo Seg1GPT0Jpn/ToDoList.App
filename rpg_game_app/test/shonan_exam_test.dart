@@ -350,6 +350,10 @@ void main() {
     final page = SchoolMaterials.open(raw!)!;
     expect(String.fromCharCodes(page.sublist(8, 12)), 'WEBP');
 
+    await t.tap(find.byKey(const ValueKey('shonan-materials')));
+    await _frames(t, 5);
+    await t.ensureVisible(find.byKey(ValueKey('shonan-materials-${m.id}')));
+    await _frames(t, 2);
     await t.tap(find.byKey(ValueKey('shonan-materials-${m.id}')));
     for (var i = 0; i < 5; i++) {
       await t.runAsync(

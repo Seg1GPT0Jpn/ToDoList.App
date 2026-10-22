@@ -119,24 +119,35 @@ class ShonanExamListScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 if (SchoolMaterials.all.isNotEmpty) ...[
-                  Text('資料（PDF）', style: serif(15)),
-                  for (final m in SchoolMaterials.all)
-                    Card(
-                      child: ListTile(
-                        key: ValueKey('shonan-materials-${m.id}'),
-                        leading: const Icon(Icons.picture_as_pdf_outlined),
-                        title: Text(m.title),
-                        subtitle: Text(
-                          '${ShonanSubjects.byId(m.subjectId)?.displayName ?? ''}・${m.pages}ページ',
-                        ),
-                        trailing: const Icon(Icons.chevron_right),
-                        onTap: () => Navigator.of(context).push(
-                          MaterialPageRoute<void>(
-                            builder: (_) => SchoolMaterialScreen(material: m),
+                  // 資料が多いので、ふだんは閉じておく（テストの一覧が下に押し出されないように）
+                  ExpansionTile(
+                    key: const ValueKey('shonan-materials'),
+                    tilePadding: EdgeInsets.zero,
+                    title: Text(
+                      '資料（PDF）　${SchoolMaterials.all.length}件',
+                      style: serif(15),
+                    ),
+                    children: [
+                      for (final m in SchoolMaterials.all)
+                        Card(
+                          child: ListTile(
+                            key: ValueKey('shonan-materials-${m.id}'),
+                            leading: const Icon(Icons.picture_as_pdf_outlined),
+                            title: Text(m.title),
+                            subtitle: Text(
+                              '${ShonanSubjects.byId(m.subjectId)?.displayName ?? ''}・${m.pages}ページ',
+                            ),
+                            trailing: const Icon(Icons.chevron_right),
+                            onTap: () => Navigator.of(context).push(
+                              MaterialPageRoute<void>(
+                                builder: (_) =>
+                                    SchoolMaterialScreen(material: m),
+                              ),
+                            ),
                           ),
                         ),
-                      ),
-                    ),
+                    ],
+                  ),
                   const SizedBox(height: 16),
                 ],
                 if (plans.isEmpty) const Text(ShonanText.empty),
