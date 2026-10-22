@@ -18,7 +18,7 @@ void main() {
       expect(b.open(_data(b), 'wrong'), isNull, reason: b.id);
     }
     expect(SchoolWordBooks.of('gengo_bunka').single.id, 'kobun');
-    expect({for (final b in SchoolWordBooks.all) b.file}.length, 3);
+    expect({for (final b in SchoolWordBooks.all) b.file}.length, 4);
   });
 
   test('学校のパスワードで開いた単語帳を、ふつうの単語帳として使える', () {
@@ -54,7 +54,13 @@ void main() {
     expect(kanji.cards.first.meaning, contains('［リンカク］'));
     expect({for (final c in kanji.cards) c.group},
         containsAll(['第5章 漢字①', '第6章 同音異義語①', '付録 四字熟語②']));
-    for (final c in kanji.cards) {
+    final kw = open('keyword');
+    expect(kw.cards.length, 188);
+    expect(kw.cards.first.term, 'オリエンタリズム');
+    // キーワードの説明では、答えの語を伏せてある
+    expect(kw.cards.first.meaning, isNot(contains('オリエンタリズム')));
+    expect({for (final c in kw.cards) c.group}.length, 30);
+    for (final c in [...kanji.cards, ...kw.cards]) {
       expect(c.term.trim(), isNotEmpty);
       expect(c.meaning, isNot(contains('読み取れず')));
     }

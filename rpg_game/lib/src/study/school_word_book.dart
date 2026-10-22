@@ -62,6 +62,12 @@ abstract final class SchoolWordBooks {
       subjectId: 'gendai_kokugo',
       vault: 'school-word-3',
     ),
+    SchoolWordBook(
+      id: 'keyword',
+      title: '現代文キーワード（41〜70）',
+      subjectId: 'gendai_kokugo',
+      vault: 'school-word-4',
+    ),
   ];
 
   static List<SchoolWordBook> of(String subjectId) => [
