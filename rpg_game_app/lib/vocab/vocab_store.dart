@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:rpg_game/rpg_game.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -185,10 +186,57 @@ class VocabStore {
     ];
   }
 
-  Future<void> saveBooks() => _prefs.setString(
+  Future<void> saveBooks() async {
+    await _writeBooks();
+    onBooksSaved?.call(this);
+  }
+
+  Future<void> _writeBooks() => _prefs.setString(
     _booksKey,
     jsonEncode([for (final b in books) b.toJson()]),
   );
+
+  /// 単語帳（中身）を保存したとき（クラウド同期が使う。自分で作った単語帳だけを送る）
+  static void Function(VocabStore store)? onBooksSaved;
+
+  /// 単語帳や覚えぐあいが、ほかのアプリ・端末から変わったことを画面に知らせる
+  static final changes = ValueNotifier<int>(0);
+
+  /// 単語帳ごとの最後に書きかえた時刻（ミリ秒）。端末をまたいで新しいほうを使うため
+  static const _bookTimesKey = 'vocab_book_times';
+
+  Map<String, int> get _bookTimes {
+    final raw = _prefs.getString(_bookTimesKey);
+    if (raw == null) return {};
+    try {
+      return {
+        for (final e in (jsonDecode(raw) as Map).entries)
+          '${e.key}': (e.value as num).toInt(),
+      };
+    } catch (_) {
+      return {};
+    }
+  }
+
+  int bookTime(String id) => _bookTimes[id] ?? 0;
+
+  Future<void> setBookTime(String id, int ms) =>
+      _prefs.setString(_bookTimesKey, jsonEncode({..._bookTimes, id: ms}));
+
+  /// ほかの端末で書きかえた単語帳を入れる（null なら消す）。クラウドには送りなおさない
+  Future<void> putBookFromCloud(String id, VocabBook? b) async {
+    final i = books.indexWhere((x) => x.id == id);
+    if (b == null) {
+      if (i < 0) return;
+      books.removeAt(i);
+    } else if (i < 0) {
+      books.add(b);
+    } else {
+      books[i] = b;
+    }
+    await _writeBooks();
+    changes.value++;
+  }
 
   BookProgress progress(String bookId) => _progress[bookId] ??= () {
     final raw = _prefs.getString('$_progressPrefix$bookId');
@@ -216,34 +264,46 @@ class VocabStore {
   };
 
   /// 同じ端末の別のアプリ（同じブラウザのつづりクエストLight など）が保存した
-  /// 学習記録を、読みこみ済みの記録にまぜる
+  /// 単語帳と学習記録を、読みこみ済みのものにまぜる
   void absorbPrefs() {
+    final saved = _prefs.getString(_booksKey);
+    final mine = jsonEncode([for (final b in books) b.toJson()]);
+    if (saved != null && saved != mine) {
+      books.clear();
+      _load();
+      changes.value++;
+    }
     for (final id in _progress.keys) {
       final raw = _prefs.getString('$_progressPrefix$id');
       if (raw == null) continue;
       try {
-        _progress[id]!.merge(
+        if (_progress[id]!.merge(
           BookProgress.fromJson(jsonDecode(raw) as Map<String, dynamic>),
-        );
+        )) {
+          changes.value++;
+        }
       } catch (_) {
         // 壊れていれば手元の記録のまま
       }
     }
   }
 
-  /// クラウドの学習記録を、この端末の記録とまぜて保存する
-  Future<void> mergeProgress(String bookId, BookProgress cloud) async {
-    progress(bookId).merge(cloud);
+  /// クラウドの学習記録を、この端末の記録とまぜて保存する。変わったら true
+  Future<bool> mergeProgress(String bookId, BookProgress cloud) async {
+    if (!progress(bookId).merge(cloud)) return false;
     await saveProgress(bookId);
+    changes.value++;
+    return true;
   }
 
   Future<VocabBook> createBook(String title) async {
-    var n = books.length;
-    while (book('my$n') != null) {
-      n++;
+    // 端末をまたいでも重ならない ID（ほかの端末で作った・消した単語帳とまちがえない）
+    var id = 'my${DateTime.now().millisecondsSinceEpoch.toRadixString(36)}';
+    while (book(id) != null) {
+      id = '${id}_';
     }
     final b = VocabBook(
-      id: 'my$n',
+      id: id,
       title: title,
       kind: VocabBookKind.custom,
       cards: [],

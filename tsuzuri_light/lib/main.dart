@@ -43,6 +43,7 @@ Future<void> main() async {
     examWorlds: ExamWorldStore(prefs),
   );
   Future<void> Function()? refresh;
+  Future<void> Function()? flush;
   // 同じ端末のつづりクエスト（Web は同じブラウザのほかのタブ）と記録をそろえる
   SameDeviceSync(
     prefs: prefs,
@@ -50,6 +51,7 @@ Future<void> main() async {
     progress: stores.progress,
     books: stores.books,
     onResume: () async => refresh?.call(),
+    onPause: () async => flush?.call(),
   ).start();
   runApp(
     LightRoot(
@@ -64,6 +66,7 @@ Future<void> main() async {
         );
         if (c == null) return null;
         refresh = c.refresh;
+        flush = c.flush;
         return (account: c.account, classrooms: c.classrooms);
       },
     ),

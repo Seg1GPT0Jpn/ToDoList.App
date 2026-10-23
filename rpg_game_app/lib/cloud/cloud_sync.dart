@@ -91,6 +91,10 @@ class CloudSync {
     VocabStore.onProgressSaved = (store, bookId) {
       if (sync._uid != null) sync._vocab.saved(store, bookId);
     };
+    VocabStore.onBooksSaved = (store) {
+      if (sync._uid != null) sync._vocab.booksSaved(store);
+    };
+    sync._vocab.initBooks(VocabStore.of(books));
     progress.onSaved = sync._pushProgress;
     profiles.onSaved = sync._pushProfile;
     meta.onLearningSaved = (r) =>
@@ -159,6 +163,29 @@ class CloudSync {
     }
 
     final uid = user.uid;
+    // 単語帳：変わった文書だけを取りこむ（自分が送ったこだまは無視）
+    _subs.add(
+      _db
+          .collection('users')
+          .doc(uid)
+          .collection(vocabCollection)
+          .snapshots()
+          .listen((snap) {
+            final changed = {
+              for (final c in snap.docChanges)
+                if (!c.doc.metadata.hasPendingWrites) c.doc.id,
+            };
+            if (changed.isEmpty) return;
+            final all = {for (final d in snap.docs) d.id: d.data()};
+            unawaited(
+              _vocab
+                  .apply(VocabStore.of(_books), all, changed: changed)
+                  .catchError(
+                    (Object e) => debugPrint('単語帳の変化を反映できませんでした: $e'),
+                  ),
+            );
+          }, onError: (Object e) => debugPrint('単語帳の変化を受け取れません: $e')),
+    );
     watch(RpgFirestorePaths.progressDoc(uid), _applyProgress);
     watch(RpgFirestorePaths.learningDoc(uid), _applyLearning);
     watch(RpgFirestorePaths.journalDoc(uid), _applyJournal);
@@ -200,6 +227,9 @@ class CloudSync {
       await _push(RpgFirestorePaths.lessonsDoc, mine);
     }
   }
+
+  /// アプリを閉じる・ほかのアプリに切りかえるとき：たまっている単語帳の記録をすぐ送る
+  Future<void> flush() => _vocab.flush();
 
   DateTime _lastRefresh = DateTime.fromMillisecondsSinceEpoch(0);
 

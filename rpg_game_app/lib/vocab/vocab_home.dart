@@ -29,6 +29,8 @@ class _VocabHomeState extends State<VocabHome> {
   @override
   void initState() {
     super.initState();
+    // ほかのアプリ・端末で答えた分が届いたら描きなおす
+    VocabStore.changes.addListener(_changed);
     UsageMeter.mark(context, 'vocab');
     // アプリの単語帳が新しくなっていたら（章分けの変更など）、開いた単語帳にも反映する
     store.refreshOpened().then((changed) {
@@ -42,8 +44,13 @@ class _VocabHomeState extends State<VocabHome> {
   String? _message;
   bool _opening = false;
 
+  void _changed() {
+    if (mounted) setState(() {});
+  }
+
   @override
   void dispose() {
+    VocabStore.changes.removeListener(_changed);
     _name.dispose();
     _password.dispose();
     super.dispose();

@@ -12,10 +12,11 @@ import 'package:rpg_game_app/study/personal_books.dart';
 
 /// クラウド（Firebase）につないだあとに使うもの
 class LightCloud {
-  LightCloud(this.account, this.classrooms, this.refresh);
+  LightCloud(this.account, this.classrooms, this.refresh, this.flush);
   final AccountService account;
   final ClassroomBackend classrooms;
   final Future<void> Function() refresh;
+  final Future<void> Function() flush;
 }
 
 /// Firebase を読みこんでつなぐ。この部分は画面が出たあとに読みこむ（起動を軽くするため）。
@@ -47,5 +48,6 @@ Future<LightCloud?> startCloud({
     FirebaseAccountService(cloud),
     FirestoreClassroomBackend(cloud.auth, FirebaseFirestore.instance),
     cloud.refresh,
+    cloud.flush,
   );
 }

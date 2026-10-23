@@ -25,6 +25,7 @@ class SameDeviceSync with WidgetsBindingObserver {
     required this.progress,
     required this.books,
     this.onResume,
+    this.onPause,
   });
 
   final SharedPreferences prefs;
@@ -34,6 +35,9 @@ class SameDeviceSync with WidgetsBindingObserver {
 
   /// アプリにもどってきたとき（クラウドの記録を読みなおす）
   final Future<void> Function()? onResume;
+
+  /// アプリを閉じる・切りかえるとき（たまっている記録をクラウドへすぐ送る）
+  final Future<void> Function()? onPause;
 
   Timer? _timer;
 
@@ -47,6 +51,10 @@ class SameDeviceSync with WidgetsBindingObserver {
     if (state == AppLifecycleState.resumed) {
       schedule();
       unawaited(onResume?.call());
+    } else if (state == AppLifecycleState.hidden ||
+        state == AppLifecycleState.paused ||
+        state == AppLifecycleState.inactive) {
+      unawaited(onPause?.call());
     }
   }
 

@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:rpg_game/rpg_game.dart';
 import 'package:test/test.dart';
 
@@ -98,5 +100,20 @@ void main() {
         }),
         isTrue);
     expect(RecordMerge.same({'a': 1}, {'a': 2}), isFalse);
+  });
+
+  test('単語帳：答えた数が同じでも、どちらの端末でも同じほうを選ぶ（送りなおしが続かない）', () {
+    final t = DateTime(2026, 10, 23, 9);
+    BookProgress one(Rating r) => BookProgress()
+      ..record(cardId: 'w', skill: VocabSkill.meaning, rating: r, now: t);
+    final a = one(Rating.good), b = one(Rating.again);
+    final a2 = BookProgress.fromJson(a.toJson()),
+        b2 = BookProgress.fromJson(b.toJson());
+    final x = a.merge(b2);
+    final y = b.merge(a2);
+    expect(x || y, isTrue);
+    expect(jsonEncode(a.toJson()), jsonEncode(b.toJson()));
+    // もう一度まぜても変わらない
+    expect(a.merge(BookProgress.fromJson(b.toJson())), isFalse);
   });
 }

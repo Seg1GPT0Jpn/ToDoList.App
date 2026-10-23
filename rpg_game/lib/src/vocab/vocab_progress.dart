@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:math';
 
 import 'fsrs.dart';
@@ -369,20 +370,42 @@ class BookProgress {
 
   /// 別の端末（クラウド）の記録とまぜる。
   ///
-  /// 単語ごと・日ごとに、たくさん答えているほうを残す。
-  void merge(BookProgress other) {
+  /// 単語ごと・日ごとに、たくさん答えているほうを残す。答えた数が同じで中身がちがうときは、
+  /// どの端末でも同じほうを選ぶ（2つのアプリがおたがいに送りなおし続けないように）。
+  /// 似た単語（クラウドには送らない）は両方のぶんを残す。
+  /// 端末の記録が変わったら true。
+  bool merge(BookProgress other) {
+    var changed = false;
+    String key(Map<String, dynamic> j) => jsonEncode(Map.of(j)..remove('c'));
     for (final e in other.cards.entries) {
       final mine = cards[e.key];
-      if (mine == null || e.value.totalAnswers > mine.totalAnswers) {
-        cards[e.key] = e.value;
+      final theirs = e.value;
+      final take = mine == null ||
+          theirs.totalAnswers > mine.totalAnswers ||
+          (theirs.totalAnswers == mine.totalAnswers &&
+              key(theirs.toJson()).compareTo(key(mine.toJson())) > 0);
+      if (take) {
+        if (mine != null) theirs.confusedWith.addAll(mine.confusedWith);
+        cards[e.key] = theirs;
+        changed = true;
+      } else if (!mine.confusedWith.containsAll(theirs.confusedWith)) {
+        mine.confusedWith.addAll(theirs.confusedWith);
+        changed = true;
       }
     }
     for (final e in other.days.entries) {
       final mine = days[e.key];
-      if (mine == null || e.value.answered > mine.answered) {
-        days[e.key] = e.value;
+      final theirs = e.value;
+      if (mine == null ||
+          theirs.answered > mine.answered ||
+          (theirs.answered == mine.answered &&
+              jsonEncode(theirs.toJson()).compareTo(jsonEncode(mine.toJson())) >
+                  0)) {
+        days[e.key] = theirs;
+        changed = true;
       }
     }
+    return changed;
   }
 
   /// 連続で学習した日数（今日まだなら昨日まで）

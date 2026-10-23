@@ -30,6 +30,23 @@ class VocabBookScreen extends StatefulWidget {
 }
 
 class _VocabBookScreenState extends State<VocabBookScreen> {
+  @override
+  void initState() {
+    super.initState();
+    // ほかのアプリ・端末で答えた分が届いたら描きなおす
+    VocabStore.changes.addListener(_changed);
+  }
+
+  void _changed() {
+    if (mounted) setState(() {});
+  }
+
+  @override
+  void dispose() {
+    VocabStore.changes.removeListener(_changed);
+    super.dispose();
+  }
+
   VocabStore get store => widget.store;
   VocabBook get book => widget.book;
   BookProgress get progress => store.progress(book.id);

@@ -84,6 +84,7 @@ Future<void> main() async {
     progress: progress,
     books: personalBooks,
     onResume: cloud?.refresh,
+    onPause: cloud?.flush,
   ).start();
   if (cloud != null) {
     // 問題の報告は、ログインしていればクラウド（question_reports）にも送る

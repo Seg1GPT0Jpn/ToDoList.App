@@ -133,4 +133,98 @@ void main() {
     // 日本語の読み上げはそのまま
     expect(SpeechText.clean('りんご（果物）', 'ja-JP'), 'りんご（果物）');
   });
+
+  group('2つのアプリ（つづりクエストと Light）で同時に使う', () {
+    late Map<String, Map<String, dynamic>> cloud;
+    late Set<String> lastWrites;
+    VocabCloudSync sync() => VocabCloudSync(
+      write: (id, data) async {
+        lastWrites.add(id);
+        cloud[id] = jsonDecode(jsonEncode(data));
+      },
+      readAll: () async => Map.of(cloud),
+      delay: Duration.zero,
+    );
+
+    setUp(() {
+      cloud = {};
+      lastWrites = {};
+    });
+
+    test('片方で答えた分がもう片方にすぐ届き、送りなおしが続かない', () async {
+      final full = await _store();
+      final light = await _store();
+      final a = sync(), b = sync();
+      // フル版で答える → クラウドへ
+      full
+          .progress('leap')
+          .record(
+            cardId: '1',
+            skill: VocabSkill.meaning,
+            rating: Rating.good,
+            now: now,
+          );
+      a.saved(full, 'leap');
+      await a.flush();
+      // Light がクラウドの変化を受けとる
+      final changed = Set.of(lastWrites);
+      lastWrites.clear();
+      var redraws = 0;
+      void count() => redraws++;
+      VocabStore.changes.addListener(count);
+      await b.apply(light, Map.of(cloud), changed: changed);
+      VocabStore.changes.removeListener(count);
+      expect(light.progress('leap').cards.keys, contains('1'));
+      expect(redraws, greaterThan(0));
+      await b.flush();
+      // 同じ中身なので、Light からは送りかえさない
+      expect(lastWrites, isEmpty);
+
+      // Light でも答える → フル版に届く（どちらの答えも残る）
+      light
+          .progress('leap')
+          .record(
+            cardId: '2',
+            skill: VocabSkill.meaning,
+            rating: Rating.again,
+            now: now,
+          );
+      b.saved(light, 'leap');
+      await b.flush();
+      final changed2 = Set.of(lastWrites);
+      lastWrites.clear();
+      await a.apply(full, Map.of(cloud), changed: changed2);
+      await a.flush();
+      expect(full.progress('leap').cards.keys, containsAll(['1', '2']));
+      expect(lastWrites, isEmpty);
+    });
+
+    test('自分で作った単語帳は中身も届き、消すともう片方からも消える', () async {
+      final full = await _store();
+      final light = await _store();
+      final a = sync(), b = sync();
+      a.initBooks(full);
+      b.initBooks(light);
+      final book = await full.createBook('部活の単語');
+      book.cards.add(VocabCard(id: 'c1', term: 'dribble', meaning: 'ドリブル'));
+      await full.saveBooks();
+      a.booksSaved(full);
+      await a.flush();
+      expect(
+        cloud.keys.where((k) => k.startsWith(VocabCloudSync.bookPrefix)),
+        hasLength(1),
+      );
+      await b.apply(light, Map.of(cloud), changed: Set.of(lastWrites));
+      expect(light.book(book.id)?.cards.single.term, 'dribble');
+
+      // フル版で消す → Light からも消える
+      lastWrites.clear();
+      await Future<void>.delayed(const Duration(milliseconds: 5));
+      await full.deleteBook(book.id);
+      a.booksSaved(full);
+      await a.flush();
+      await b.apply(light, Map.of(cloud), changed: Set.of(lastWrites));
+      expect(light.book(book.id), isNull);
+    });
+  });
 }
