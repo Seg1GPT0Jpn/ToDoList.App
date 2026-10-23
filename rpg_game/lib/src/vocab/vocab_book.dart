@@ -1,6 +1,27 @@
 import 'meaning_text.dart';
 
 /// 単語帳の1枚（1語）。
+/// 語義ごとの例文（「①賛成する」の例文 など）
+class VocabExample {
+  const VocabExample({required this.sense, required this.en, this.ja = ''});
+
+  /// どの意味の例文か（「賛成する」など。1つしか意味がなければ空でもよい）
+  final String sense;
+  final String en;
+  final String ja;
+
+  List<String> toJson() => [sense, en, ja];
+
+  static VocabExample? fromJson(Object? j) {
+    if (j is! List || j.length < 2) return null;
+    return VocabExample(
+      sense: '${j[0]}',
+      en: '${j[1]}',
+      ja: j.length > 2 ? '${j[2]}' : '',
+    );
+  }
+}
+
 class VocabCard {
   const VocabCard({
     required this.id,
@@ -12,6 +33,7 @@ class VocabCard {
     this.exampleJa = '',
     this.note = '',
     this.group = '',
+    this.examples = const [],
   });
 
   /// 単語帳の中で一意な ID（番号があれば番号、なければ単語）
@@ -36,6 +58,15 @@ class VocabCard {
 
   /// 章・単元（暗記カードの章。4択のまちがいの選択肢を同じ章から選ぶのに使う）
   final String group;
+
+  /// 語義ごとの例文（[example] は穴埋めに使う代表の1つ。ここには意味ごとのすべてを入れる）
+  final List<VocabExample> examples;
+
+  /// [example] 以外の例文（答え合わせで「ほかの意味の例文」として見せる）
+  List<VocabExample> get otherExamples => [
+        for (final x in examples)
+          if (x.en != example) x
+      ];
 
   bool get hasExample => example.isNotEmpty && clozeOf(example, term) != null;
 
@@ -338,6 +369,7 @@ class VocabCard {
         exampleJa: exampleJa ?? this.exampleJa,
         note: note ?? this.note,
         group: group,
+        examples: examples,
       );
 
   factory VocabCard.fromJson(Map<String, dynamic> j) => VocabCard(
@@ -350,6 +382,10 @@ class VocabCard {
         exampleJa: j['ej'] as String? ?? '',
         note: j['nt'] as String? ?? '',
         group: j['g'] as String? ?? '',
+        examples: [
+          for (final x in j['xs'] as List? ?? const [])
+            if (VocabExample.fromJson(x) case final e?) e,
+        ],
       );
 
   Map<String, dynamic> toJson() => {
@@ -362,6 +398,7 @@ class VocabCard {
         if (exampleJa.isNotEmpty) 'ej': exampleJa,
         if (note.isNotEmpty) 'nt': note,
         if (group.isNotEmpty) 'g': group,
+        if (examples.isNotEmpty) 'xs': [for (final x in examples) x.toJson()],
       };
 }
 

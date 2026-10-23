@@ -645,6 +645,31 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
                   style: TextStyle(color: TsuzuriColors.inkSoft, fontSize: 12),
                 ),
             ],
+            // ほかの意味の例文（意味ごとに1つずつ）
+            for (final x in c.otherExamples) ...[
+              const SizedBox(height: 6),
+              if (x.sense.isNotEmpty)
+                Text(
+                  x.sense,
+                  style: TextStyle(color: TsuzuriColors.accent, fontSize: 11.5),
+                ),
+              Row(
+                children: [
+                  Expanded(
+                    child: Text(
+                      x.en,
+                      style: const TextStyle(fontStyle: FontStyle.italic),
+                    ),
+                  ),
+                  _speakButton(x.en, tooltip: '例文を聞く'),
+                ],
+              ),
+              if (x.ja.isNotEmpty)
+                Text(
+                  x.ja,
+                  style: TextStyle(color: TsuzuriColors.inkSoft, fontSize: 12),
+                ),
+            ],
             if (c.note.isNotEmpty) ...[
               const SizedBox(height: 6),
               Text(

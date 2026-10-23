@@ -380,4 +380,24 @@ void main() {
       expect(VocabVault.fileName('TEST'), isNot(VocabVault.fileName('LEAP')));
     });
   });
+
+  test('語義ごとの例文を保存・復元できる（古い形の単語帳も読める）', () {
+    const c = VocabCard(
+      id: '1',
+      term: 'agree',
+      meaning: '[自] ①賛成する ②意見が一致する',
+      example: 'I agree with you.',
+      exampleJa: 'あなたに賛成です。',
+      examples: [
+        VocabExample(sense: '賛成する', en: 'I agree with you.', ja: 'あなたに賛成です。'),
+        VocabExample(sense: '意見が一致する', en: 'They agreed on the plan.'),
+      ],
+    );
+    final back = VocabCard.fromJson(c.toJson());
+    expect(back.examples.map((x) => x.sense), ['賛成する', '意見が一致する']);
+    expect(back.otherExamples.single.en, 'They agreed on the plan.');
+    expect(back.copyWith(note: 'メモ').examples, hasLength(2));
+    expect(
+        VocabCard.fromJson({'id': '2', 't': 'x', 'm': 'y'}).examples, isEmpty);
+  });
 }

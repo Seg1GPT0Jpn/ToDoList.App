@@ -47,6 +47,10 @@ void main() {
     expect(leap.isTerms, isFalse);
     final n = leap.cards.map((c) => c.number!).toList();
     expect([n.length, n.first, n.last], [1001, 1100, 2100]);
+    // 例文：すべての単語に意味ごとの例文があり、ほとんどは穴埋めにも使える
+    expect(leap.cards.every((c) => c.examples.isNotEmpty), isTrue);
+    expect(leap.cards.where((c) => c.hasExample).length,
+        greaterThanOrEqualTo(1000));
     final kanji = open('kanji');
     expect(kanji.isTerms, isTrue);
     expect(kanji.cards.length, 670);

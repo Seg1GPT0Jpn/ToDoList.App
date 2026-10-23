@@ -126,8 +126,16 @@ class VocabStore {
       if (data == null) continue;
       final opened = VocabVault.open(data, v[1]);
       if (opened == null) continue;
+      // 単語・意味・章・同梱の例文が変わったら入れなおす（自分で足した例文は残す）
       String sig(List<VocabCard> cards) => jsonEncode([
-        for (final c in cards) [c.id, c.term, c.meaning, c.group],
+        for (final c in cards)
+          [
+            c.id,
+            c.term,
+            c.meaning,
+            c.group,
+            [for (final x in c.examples) x.en],
+          ],
       ]);
       final before = book(id);
       if (before != null && sig(before.cards) == sig(opened.cards)) continue;

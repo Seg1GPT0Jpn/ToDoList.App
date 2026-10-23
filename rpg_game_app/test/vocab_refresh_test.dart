@@ -37,4 +37,32 @@ void main() {
     final again = VocabStore(prefs);
     expect(again.book(b.id)!.cards.first.group, '第11回（151〜180）');
   });
+
+  test('同梱の単語帳に例文が加わったら、開いた単語帳にも例文が入る', () async {
+    SharedPreferences.setMockInitialValues({});
+    final prefs = await SharedPreferences.getInstance();
+    final old = VocabStore.assetLoader;
+    addTearDown(() => VocabStore.assetLoader = old);
+    List<int> sealed({bool examples = false}) => VocabVault.seal('TEST', [
+      VocabCard(
+        id: '1',
+        term: 'agree',
+        meaning: '[自] 賛成する',
+        example: examples ? 'I agree with you.' : '',
+        examples: [
+          if (examples)
+            const VocabExample(sense: '賛成する', en: 'I agree with you.'),
+        ],
+      ),
+    ], 'pw');
+    var data = sealed();
+    VocabStore.assetLoader = (_) async => data;
+    final store = VocabStore(prefs);
+    final b = await store.unlock('TEST', 'pw');
+    expect(b!.cards.single.examples, isEmpty);
+    data = sealed(examples: true);
+    expect(await store.refreshOpened(), isTrue);
+    expect(store.book(b.id)!.cards.single.hasExample, isTrue);
+    expect(store.book(b.id)!.cards.single.examples, hasLength(1));
+  });
 }
