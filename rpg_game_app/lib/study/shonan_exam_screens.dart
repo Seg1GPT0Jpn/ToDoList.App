@@ -7,6 +7,7 @@ import '../art/paper.dart';
 import '../battle/battle_screen.dart';
 import 'ec_text.dart';
 import 'school_exam_store.dart';
+import 'school_lesson_screens.dart';
 import 'school_material_screen.dart';
 import 'school_word_books.dart';
 import 'shonan_question_list.dart';
@@ -304,6 +305,113 @@ class ShonanExamDetailScreen extends StatelessWidget {
   }
 }
 
+/// 科目の問題で演習する（[onlyIds] があればその問題だけ）。
+/// 答えは学習記録に残り、授業の習得の判定や復習に使われる（経験値は出ない）
+Future<void> startSchoolPractice(
+  BuildContext context, {
+  required SchoolExamPlan plan,
+  required SchoolSubject subject,
+  required SubjectExamPlan sp,
+  Set<String>? onlyIds,
+  String? label,
+}) async {
+  final services = RpgServices.of(context);
+  final result = await SchoolPractice.build(
+    subject,
+    sp,
+    services.questions.load,
+  );
+  if (!context.mounted) return;
+  if (!result.canPlay) {
+    await showDialog<void>(
+      context: context,
+      builder: (c) => AlertDialog(
+        title: const Text(ShonanText.cannotPlay),
+        content: Text(
+          [
+            for (final i in result.issues) '・$i',
+            ShonanText.noSetsHelp,
+          ].join('\n'),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(c),
+            child: const Text('閉じる'),
+          ),
+        ],
+      ),
+    );
+    return;
+  }
+  if (result.issues.isNotEmpty || result.duplicateQuestionIds.isNotEmpty) {
+    final go = await showDialog<bool>(
+      context: context,
+      builder: (c) => AlertDialog(
+        title: const Text('使えない問題セットがあります'),
+        content: Text(
+          [
+            for (final i in result.issues) '・$i',
+            if (result.duplicateQuestionIds.isNotEmpty)
+              '・同じ問題IDが複数のセットにあります（1回だけ出題）：${result.duplicateQuestionIds.join('、')}',
+            '\n読めたセット（${result.usedSetIds.length}個）だけで演習しますか？',
+          ].join('\n'),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(c, false),
+            child: const Text('やめる'),
+          ),
+          FilledButton(
+            key: const ValueKey('shonan-practice-anyway'),
+            onPressed: () => Navigator.pop(c, true),
+            child: const Text('演習する'),
+          ),
+        ],
+      ),
+    );
+    if (go != true || !context.mounted) return;
+  }
+  var questions = [
+    for (final q in result.pool!.questions)
+      if (onlyIds == null || onlyIds.contains(q.id)) q,
+  ];
+  if (questions.isEmpty) {
+    ScaffoldMessenger.of(context)
+        .showSnackBar(const SnackBar(content: Text('いま出せる問題がありません')));
+    return;
+  }
+  // EC は本文を開いていれば、問題の中に本文（その Section）を出す
+  if (subject.id == 'ec1') {
+    final passages = await EcText.saved(services.personalBooks.prefs);
+    if (passages != null) questions = EcText.attach(questions, passages);
+  }
+  final progress = await services.repository.load();
+  if (!context.mounted) return;
+  final stage = SeaBattle.stage(
+    id: 'shonan_${plan.id}_${subject.id}',
+    title: label == null
+        ? subject.displayName
+        : '${subject.displayName}｜$label',
+    worldId: subject.worldId,
+    level: progress.level,
+    normalTimeLimitSeconds: 20,
+    questionSetIds: result.usedSetIds,
+  );
+  Navigator.of(context).push(
+    MaterialPageRoute<void>(
+      builder: (_) => BattleScreen(
+        world: RpgCatalog.world(subject.worldId),
+        stage: stage,
+        questions: questions,
+        progress: progress,
+        // 通常RPGのレベル・経験値・クリア状況は変えない（練習用）
+        trial: true,
+        mode: BattleMode.exam,
+      ),
+    ),
+  );
+}
+
 class _SubjectCard extends StatelessWidget {
   const _SubjectCard({required this.plan, required this.subject});
   final SchoolExamPlan plan;
@@ -341,98 +449,14 @@ class _SubjectCard extends StatelessWidget {
     SubjectExamPlan sp, {
     Set<String>? onlyIds,
     String? label,
-  }) async {
-    final services = RpgServices.of(context);
-    final result = await SchoolPractice.build(
-      subject,
-      sp,
-      services.questions.load,
-    );
-    if (!context.mounted) return;
-    if (!result.canPlay) {
-      await showDialog<void>(
-        context: context,
-        builder: (c) => AlertDialog(
-          title: const Text(ShonanText.cannotPlay),
-          content: Text(
-            [
-              for (final i in result.issues) '・$i',
-              ShonanText.noSetsHelp,
-            ].join('\n'),
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(c),
-              child: const Text('閉じる'),
-            ),
-          ],
-        ),
-      );
-      return;
-    }
-    if (result.issues.isNotEmpty || result.duplicateQuestionIds.isNotEmpty) {
-      final go = await showDialog<bool>(
-        context: context,
-        builder: (c) => AlertDialog(
-          title: const Text('使えない問題セットがあります'),
-          content: Text(
-            [
-              for (final i in result.issues) '・$i',
-              if (result.duplicateQuestionIds.isNotEmpty)
-                '・同じ問題IDが複数のセットにあります（1回だけ出題）：${result.duplicateQuestionIds.join('、')}',
-              '\n読めたセット（${result.usedSetIds.length}個）だけで演習しますか？',
-            ].join('\n'),
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(c, false),
-              child: const Text('やめる'),
-            ),
-            FilledButton(
-              key: const ValueKey('shonan-practice-anyway'),
-              onPressed: () => Navigator.pop(c, true),
-              child: const Text('演習する'),
-            ),
-          ],
-        ),
-      );
-      if (go != true || !context.mounted) return;
-    }
-    var questions = [
-      for (final q in result.pool!.questions)
-        if (onlyIds == null || onlyIds.contains(q.id)) q,
-    ];
-    // EC は本文を開いていれば、問題の中に本文（その Section）を出す
-    if (subject.id == 'ec1') {
-      final passages = await EcText.saved(services.personalBooks.prefs);
-      if (passages != null) questions = EcText.attach(questions, passages);
-    }
-    final progress = await services.repository.load();
-    if (!context.mounted) return;
-    final stage = SeaBattle.stage(
-      id: 'shonan_${plan.id}_${subject.id}',
-      title: label == null
-          ? subject.displayName
-          : '${subject.displayName}｜$label',
-      worldId: subject.worldId,
-      level: progress.level,
-      normalTimeLimitSeconds: 20,
-      questionSetIds: result.usedSetIds,
-    );
-    Navigator.of(context).push(
-      MaterialPageRoute<void>(
-        builder: (_) => BattleScreen(
-          world: RpgCatalog.world(subject.worldId),
-          stage: stage,
-          questions: questions,
-          progress: progress,
-          // 通常RPGのレベル・経験値・クリア状況は変えない（練習用）
-          trial: true,
-          mode: BattleMode.exam,
-        ),
-      ),
-    );
-  }
+  }) => startSchoolPractice(
+    context,
+    plan: plan,
+    subject: subject,
+    sp: sp,
+    onlyIds: onlyIds,
+    label: label,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -502,6 +526,24 @@ class _SubjectCard extends StatelessWidget {
                     ),
                     icon: const Icon(Icons.list_alt),
                     label: const Text('問題一覧・解説'),
+                  ),
+                // 範囲の単元ごとに「授業 → 確認テスト → 演習 → 復習」で学ぶ
+                if (sp.hasSets || ShonanSubjectSets.allFor(subject.id).hasSets)
+                  FilledButton.tonalIcon(
+                    key: ValueKey('shonan-course-${subject.id}'),
+                    onPressed: () => Navigator.of(context).push(
+                      MaterialPageRoute<void>(
+                        builder: (_) => SchoolCourseScreen(
+                          plan: plan,
+                          subject: subject,
+                          sp: sp.hasSets
+                              ? sp
+                              : ShonanSubjectSets.allFor(subject.id),
+                        ),
+                      ),
+                    ),
+                    icon: const Icon(Icons.school),
+                    label: const Text('授業で学ぶ'),
                   ),
                 // 範囲の問題セットがまだなくても、その科目の今年度の問題で単元ごとに対策できる
                 if (sp.hasSets || ShonanSubjectSets.allFor(subject.id).hasSets)

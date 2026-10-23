@@ -74,6 +74,7 @@ export 'src/study/shonan_table_sets.dart';
 export 'src/study/school_gate.dart';
 export 'src/study/school_material.dart';
 export 'src/study/school_word_book.dart';
+export 'src/study/school_lesson.dart';
 export 'src/study/inn_lessons.dart';
 export 'src/study/practice_session.dart';
 export 'src/study/realm.dart';
