@@ -190,8 +190,10 @@ void main() {
       keepPrefs: true,
       size: const Size(420, 3000),
     );
-    await t.ensureVisible(
+    await t.scrollUntilVisible(
       find.byKey(const ValueKey('shonan-practice-public_economy')),
+      400,
+      scrollable: find.byType(Scrollable).first,
     );
     await _frames(t, 2);
     await t.tap(find.byKey(const ValueKey('shonan-practice-public_economy')));

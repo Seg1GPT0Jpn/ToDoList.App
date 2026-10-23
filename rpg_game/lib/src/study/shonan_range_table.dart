@@ -312,7 +312,8 @@ class ShonanRangeTable {
               'japanese_shonan_104_gengo_bunka_kundoku_02',
               'japanese_shonan_104_gengo_bunka_koji_01',
               'japanese_shonan_104_gengo_bunka_koji_02',
-              'japanese_shonan_104_gengo_bunka_history_01'
+              'japanese_shonan_104_gengo_bunka_history_01',
+              'japanese_shonan_104_gengo_bunka_kuho_01'
             ],
             status: RangeStatus.entered,
             materials: const [
@@ -413,7 +414,8 @@ class ShonanRangeTable {
             committeeSetIds: const [
               'english_shonan_104_ec1_01',
               'english_shonan_104_ec1_02',
-              'english_shonan_104_ec1_03'
+              'english_shonan_104_ec1_03',
+              'english_shonan_104_ec1_grammar_01'
             ],
             status: RangeStatus.entered,
             materials: const [

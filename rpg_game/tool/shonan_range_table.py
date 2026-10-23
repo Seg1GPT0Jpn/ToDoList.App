@@ -17,12 +17,12 @@ COMMITTEE = {
     ('後期中間試験', 'public_economy'): _sets('social_shonan_104_public_economy', 14),
     ('後期中間試験', 'gendai_kokugo'): _sets('japanese_shonan_104_gendai_kokugo', 3),
     ('後期中間試験', 'biology_basic'): _sets('science_shonan_104_bio_body', 2) + _sets('science_shonan_104_bio_hormone', 1) + _sets('science_shonan_104_bio_immune', 2) + _sets('science_shonan_104_bio_veg', 2),
-    ('後期中間試験', 'gengo_bunka'): _sets('japanese_shonan_104_gengo_bunka_kundoku', 2) + _sets('japanese_shonan_104_gengo_bunka_koji', 2) + _sets('japanese_shonan_104_gengo_bunka_history', 1),
+    ('後期中間試験', 'gengo_bunka'): _sets('japanese_shonan_104_gengo_bunka_kundoku', 2) + _sets('japanese_shonan_104_gengo_bunka_koji', 2) + _sets('japanese_shonan_104_gengo_bunka_history', 1) + _sets('japanese_shonan_104_gengo_bunka_kuho', 1),
     # 後期期末の化学基礎は範囲が未定なので、第2章（物質の変化）の新作をすべて入れて、単元ごとに対策できるようにする
     ('後期期末試験', 'chemistry_basic'): _sets('science_shonan_104_chem_mole', 6) + _sets('science_shonan_104_chem_solution', 4) + _sets('science_shonan_104_chem_reaction', 5) + _sets('science_shonan_104_chem_laws', 1) + _sets('science_shonan_104_chem_acid', 3) + _sets('science_shonan_104_chem_neutral', 2),
     ('後期中間試験', 'math1'): _sets('math_shonan_104_m1_data', 4) + _sets('math_shonan_104_m1_proof', 3) + _sets('math_shonan_104_m1_complex', 4),
     ('後期中間試験', 'math_a'): _sets('math_shonan_104_ma_integer', 5),
-    ('後期中間試験', 'ec1'): _sets('english_shonan_104_ec1', 3),
+    ('後期中間試験', 'ec1'): _sets('english_shonan_104_ec1', 3) + ['english_shonan_104_ec1_grammar_01'],
     ('後期中間試験', 'chemistry_basic'): _sets('science_shonan_104_chem_mole', 6) + _sets('science_shonan_104_chem_solution', 4) + _sets('science_shonan_104_chem_reaction', 5),
 }
 # 範囲表の試験・科目に最初から登録しておく、アプリに入っている問題セット。

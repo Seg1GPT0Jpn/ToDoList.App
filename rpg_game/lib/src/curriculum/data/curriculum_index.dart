@@ -2,8 +2,8 @@
 
 /// 学習体系の節ごとの問題数（下の節の問題をふくむ。問題がない節は入れない）
 const curriculumQuestionCounts = <String, int>{
-  'english': 1379,
-  'english.eng': 1379,
+  'english': 1405,
+  'english.eng': 1405,
   'english.eng.vocab': 255,
   'english.eng.vocab.basic': 133,
   'english.eng.vocab.basic.meaning': 103,
@@ -21,14 +21,14 @@ const curriculumQuestionCounts = <String, int>{
   'english.eng.vocab.synonym': 11,
   'english.eng.vocab.synonym.synonym': 10,
   'english.eng.vocab.synonym.usage': 1,
-  'english.eng.grammar': 661,
+  'english.eng.grammar': 687,
   'english.eng.grammar.sentence': 24,
   'english.eng.grammar.sentence.pattern': 11,
   'english.eng.grammar.sentence.verb': 2,
-  'english.eng.grammar.tense': 64,
-  'english.eng.grammar.tense.simple': 13,
+  'english.eng.grammar.tense': 74,
+  'english.eng.grammar.tense.simple': 15,
   'english.eng.grammar.tense.progressive': 6,
-  'english.eng.grammar.tense.perfect': 37,
+  'english.eng.grammar.tense.perfect': 45,
   'english.eng.grammar.tense.agreement': 3,
   'english.eng.grammar.auxiliary': 53,
   'english.eng.grammar.auxiliary.basic': 21,
@@ -67,13 +67,13 @@ const curriculumQuestionCounts = <String, int>{
   'english.eng.grammar.subjunctive.pastperfect': 6,
   'english.eng.grammar.subjunctive.wish': 4,
   'english.eng.grammar.subjunctive.advanced': 14,
-  'english.eng.grammar.conj': 39,
-  'english.eng.grammar.conj.coordinate': 7,
-  'english.eng.grammar.conj.subordinate': 4,
+  'english.eng.grammar.conj': 48,
+  'english.eng.grammar.conj.coordinate': 10,
+  'english.eng.grammar.conj.subordinate': 10,
   'english.eng.grammar.conj.noun': 3,
-  'english.eng.grammar.pronoun': 23,
+  'english.eng.grammar.pronoun': 30,
   'english.eng.grammar.pronoun.noun': 1,
-  'english.eng.grammar.pronoun.pronoun': 5,
+  'english.eng.grammar.pronoun.pronoun': 12,
   'english.eng.grammar.pronoun.article': 7,
   'english.eng.grammar.adjadv': 12,
   'english.eng.grammar.adjadv.adjective': 4,
@@ -888,7 +888,7 @@ const curriculumQuestionCounts = <String, int>{
   'social.eth.issues.issues.environment': 3,
   'social.eth.issues.issues.information': 3,
   'social.eth.issues.issues.culture': 1,
-  'japanese': 1282,
+  'japanese': 1304,
   'japanese.gendai': 598,
   'japanese.gendai.kanji': 94,
   'japanese.gendai.kanji.read': 56,
@@ -988,7 +988,7 @@ const curriculumQuestionCounts = <String, int>{
   'japanese.kobun.reading.history.genre': 10,
   'japanese.kobun.reading.synthesis': 26,
   'japanese.kobun.reading.synthesis.synthesis': 2,
-  'japanese.kanbun': 382,
+  'japanese.kanbun': 404,
   'japanese.kanbun.kundoku': 137,
   'japanese.kanbun.kundoku.basic': 64,
   'japanese.kanbun.kundoku.basic.kaeriten': 28,
@@ -996,18 +996,18 @@ const curriculumQuestionCounts = <String, int>{
   'japanese.kanbun.kundoku.saidoku': 73,
   'japanese.kanbun.kundoku.saidoku.saidoku': 48,
   'japanese.kanbun.kundoku.saidoku.words': 20,
-  'japanese.kanbun.kuho': 88,
+  'japanese.kanbun.kuho': 110,
   'japanese.kanbun.kuho.negation': 33,
   'japanese.kanbun.kuho.negation.negation': 18,
   'japanese.kanbun.kuho.negation.question': 13,
-  'japanese.kanbun.kuho.causative': 27,
-  'japanese.kanbun.kuho.causative.causative': 9,
-  'japanese.kanbun.kuho.causative.passive': 8,
-  'japanese.kanbun.kuho.causative.compare': 5,
-  'japanese.kanbun.kuho.limit': 28,
-  'japanese.kanbun.kuho.limit.limit': 8,
-  'japanese.kanbun.kuho.limit.hypothesis': 6,
-  'japanese.kanbun.kuho.limit.yokuyo': 10,
+  'japanese.kanbun.kuho.causative': 39,
+  'japanese.kanbun.kuho.causative.causative': 13,
+  'japanese.kanbun.kuho.causative.passive': 12,
+  'japanese.kanbun.kuho.causative.compare': 9,
+  'japanese.kanbun.kuho.limit': 38,
+  'japanese.kanbun.kuho.limit.limit': 12,
+  'japanese.kanbun.kuho.limit.hypothesis': 9,
+  'japanese.kanbun.kuho.limit.yokuyo': 13,
   'japanese.kanbun.text': 157,
   'japanese.kanbun.text.poem': 24,
   'japanese.kanbun.text.poem.form': 13,
@@ -1505,6 +1505,7 @@ const curriculumUnitSets = <String, List<String>>{
     'sea_g3_08'
   ],
   'english.eng.grammar.tense.simple': [
+    'english_shonan_104_ec1_grammar_01',
     'english_stage_01',
     'sea_g1_02',
     'sea_g2_01',
@@ -1518,6 +1519,7 @@ const curriculumUnitSets = <String, List<String>>{
   'english.eng.grammar.tense.perfect': [
     'english_shonan_104_ec1_01',
     'english_shonan_104_ec1_02',
+    'english_shonan_104_ec1_grammar_01',
     'english_stage_01',
     'english_stage_exam_01',
     'sea_g1_02',
@@ -1702,14 +1704,21 @@ const curriculumUnitSets = <String, List<String>>{
   'english.eng.grammar.conj': ['sea_g1_11', 'sea_g2_11'],
   'english.eng.grammar.conj.coordinate': [
     'english_shonan_104_ec1_01',
+    'english_shonan_104_ec1_grammar_01',
     'sea_g1_11',
     'sea_g1_12'
   ],
-  'english.eng.grammar.conj.subordinate': ['sea_g1_11'],
+  'english.eng.grammar.conj.subordinate': [
+    'english_shonan_104_ec1_grammar_01',
+    'sea_g1_11'
+  ],
   'english.eng.grammar.conj.noun': ['sea_g1_11', 'sea_g2_11'],
   'english.eng.grammar.pronoun': ['sea_g1_12'],
   'english.eng.grammar.pronoun.noun': ['english_formats_01'],
-  'english.eng.grammar.pronoun.pronoun': ['sea_g1_12'],
+  'english.eng.grammar.pronoun.pronoun': [
+    'english_shonan_104_ec1_grammar_01',
+    'sea_g1_12'
+  ],
   'english.eng.grammar.pronoun.article': [
     'english_shonan_104_ec1_02',
     'english_shonan_104_ec1_03',
@@ -3392,20 +3401,33 @@ const curriculumUnitSets = <String, List<String>>{
   'japanese.kanbun.kuho.causative': ['japanese_kanbun_04'],
   'japanese.kanbun.kuho.causative.causative': [
     'japanese_kanbun_04',
-    'japanese_shonan_104_gengo_bunka_koji_01'
+    'japanese_shonan_104_gengo_bunka_koji_01',
+    'japanese_shonan_104_gengo_bunka_kuho_01'
   ],
-  'japanese.kanbun.kuho.causative.passive': ['japanese_kanbun_04'],
-  'japanese.kanbun.kuho.causative.compare': ['japanese_kanbun_04'],
+  'japanese.kanbun.kuho.causative.passive': [
+    'japanese_kanbun_04',
+    'japanese_shonan_104_gengo_bunka_kuho_01'
+  ],
+  'japanese.kanbun.kuho.causative.compare': [
+    'japanese_kanbun_04',
+    'japanese_shonan_104_gengo_bunka_kuho_01'
+  ],
   'japanese.kanbun.kuho.limit': ['japanese_kanbun_05'],
   'japanese.kanbun.kuho.limit.limit': [
     'japanese_kanbun_05',
-    'japanese_shonan_104_gengo_bunka_koji_02'
+    'japanese_shonan_104_gengo_bunka_koji_02',
+    'japanese_shonan_104_gengo_bunka_kuho_01'
   ],
   'japanese.kanbun.kuho.limit.hypothesis': [
     'japanese_kanbun_05',
-    'japanese_shonan_104_gengo_bunka_koji_02'
+    'japanese_shonan_104_gengo_bunka_koji_02',
+    'japanese_shonan_104_gengo_bunka_kuho_01'
   ],
-  'japanese.kanbun.kuho.limit.yokuyo': ['japanese_kanbun_05', 'japanese_v4_01'],
+  'japanese.kanbun.kuho.limit.yokuyo': [
+    'japanese_kanbun_05',
+    'japanese_shonan_104_gengo_bunka_kuho_01',
+    'japanese_v4_01'
+  ],
   'japanese.kanbun.text.poem': ['japanese_kanbun_06'],
   'japanese.kanbun.text.poem.form': ['japanese_kanbun_06'],
   'japanese.kanbun.text.poem.poets': ['japanese_kanbun_06'],

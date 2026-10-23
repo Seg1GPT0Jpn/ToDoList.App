@@ -147,7 +147,16 @@ void main() {
           .listSync(recursive: true)
           .whereType<File>()
           .where((f) => f.path.endsWith('.json'))) {
-        final json = jsonDecode(f.readAsStringSync()) as Map<String, dynamic>;
+        final raw = jsonDecode(f.readAsStringSync());
+        if (f.path.contains('lessons')) {
+          // 授業の教材：自作（出典の説明つき）で、未検証のものは未検証と記録している
+          for (final l in raw as List) {
+            expect((l as Map)['source'], isNotEmpty, reason: f.path);
+            expect(l['review'], 'unreviewed', reason: f.path);
+          }
+          continue;
+        }
+        final json = raw as Map<String, dynamic>;
         if (f.path.contains('question_bundles')) {
           // 教科ごとのまとめファイル：中の問題セットを1つずつ確かめる
           expect(json, isNotEmpty, reason: f.path);
