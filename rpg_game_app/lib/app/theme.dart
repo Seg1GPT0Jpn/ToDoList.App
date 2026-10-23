@@ -41,6 +41,15 @@ class TsuzuriColors {
   }
 }
 
+/// 見出しも本文と同じフォント（Noto Sans JP）で描き、明朝体（約2MB）を読みこまない。
+/// つづりクエストLight で使う
+bool sansOnly = false;
+
+/// 見出しの文字（太字）。sansOnly のときは本文のフォントを太く描く（別の太さのファイルは読みこまない）
+TextStyle _heading(TextStyle? base) => sansOnly
+    ? (base ?? const TextStyle()).copyWith(fontWeight: FontWeight.w700)
+    : GoogleFonts.notoSerifJp(textStyle: base, fontWeight: FontWeight.w700);
+
 ThemeData buildTheme(Brightness brightness) {
   final dark = brightness == Brightness.dark;
   final scheme = ColorScheme.fromSeed(
@@ -61,26 +70,11 @@ ThemeData buildTheme(Brightness brightness) {
   final body = GoogleFonts.notoSansJpTextTheme(_regularOnly(base.textTheme));
   return base.copyWith(
     textTheme: body.copyWith(
-      headlineLarge: GoogleFonts.notoSerifJp(
-        textStyle: body.headlineLarge,
-        fontWeight: FontWeight.w700,
-      ),
-      headlineMedium: GoogleFonts.notoSerifJp(
-        textStyle: body.headlineMedium,
-        fontWeight: FontWeight.w700,
-      ),
-      headlineSmall: GoogleFonts.notoSerifJp(
-        textStyle: body.headlineSmall,
-        fontWeight: FontWeight.w700,
-      ),
-      titleLarge: GoogleFonts.notoSerifJp(
-        textStyle: body.titleLarge,
-        fontWeight: FontWeight.w700,
-      ),
-      titleMedium: GoogleFonts.notoSerifJp(
-        textStyle: body.titleMedium,
-        fontWeight: FontWeight.w700,
-      ),
+      headlineLarge: _heading(body.headlineLarge),
+      headlineMedium: _heading(body.headlineMedium),
+      headlineSmall: _heading(body.headlineSmall),
+      titleLarge: _heading(body.titleLarge),
+      titleMedium: _heading(body.titleMedium),
     ),
     cardTheme: CardThemeData(
       color: scheme.surface,
@@ -99,11 +93,16 @@ TextStyle serif(
   double size, {
   FontWeight weight = FontWeight.w700,
   Color? color,
-}) => GoogleFonts.notoSerifJp(
-  fontSize: size,
-  fontWeight: FontWeight.w700,
-  color: color,
-);
+}) => sansOnly
+    ? GoogleFonts.notoSansJp(
+        fontSize: size,
+        color: color,
+      ).copyWith(fontWeight: FontWeight.w700)
+    : GoogleFonts.notoSerifJp(
+        fontSize: size,
+        fontWeight: FontWeight.w700,
+        color: color,
+      );
 
 /// Material の文字の太さのうち、Regular より細い・中くらいのものを Regular にする
 TextTheme _regularOnly(TextTheme t) {

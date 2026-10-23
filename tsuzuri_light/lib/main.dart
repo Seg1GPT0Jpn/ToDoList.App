@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:rpg_game/rpg_game.dart';
@@ -9,89 +8,150 @@ import 'package:rpg_game_app/account/profile_repository.dart';
 import 'package:rpg_game_app/app/asset_path.dart';
 import 'package:rpg_game_app/app/services.dart';
 import 'package:rpg_game_app/app/settings.dart';
+import 'package:rpg_game_app/app/theme.dart';
 import 'package:rpg_game_app/audio/music_director.dart';
-import 'package:rpg_game_app/cloud/cloud_sync.dart';
-import 'package:rpg_game_app/cloud/firebase_account_service.dart';
-import 'package:rpg_game_app/cloud/firestore_classroom_backend.dart';
+import 'package:rpg_game_app/classroom/classroom_backend.dart';
 import 'package:rpg_game_app/cloud/same_device_sync.dart';
 import 'package:rpg_game_app/data/meta_store.dart';
 import 'package:rpg_game_app/data/prefs_progress_repository.dart';
-import 'package:rpg_game_app/quiz/question_report.dart';
 import 'package:rpg_game_app/study/exam_world_store.dart';
 import 'package:rpg_game_app/study/personal_books.dart';
 import 'package:rpg_game_app/study/school_exam_store.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'light_app.dart';
+import 'light_cloud.dart' deferred as cloud_lib;
 
 /// つづりクエストLight：定期テストの海・単語帳・クラスルームだけの軽い版。
 ///
 /// つづりクエストと同じ保存場所・同じクラウドの記録を使うので、進み具合は同じになる。
-/// 冒険のマップ（Flame）・BGM・対戦・購入は読みこまない。
+/// 軽くするために：冒険のマップ（Flame）・BGM・効果音・画面の動き・明朝体を使わない。
+/// クラウド（Firebase）と各画面のプログラムは、ホームを出したあとで必要になったときに読みこむ。
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // つづりクエストの同梱ファイル（単語帳・資料など）を部品の中から読む
   appAssetPrefix = 'packages/rpg_game_app/';
+  sansOnly = true;
   final prefs = await SharedPreferences.getInstance();
   await SchoolExamStore.migrate(prefs);
-  final progress = PrefsProgressRepository(prefs);
-  final profiles = ProfileRepository(prefs);
-  final meta = MetaStore(prefs);
-  final settings = SettingsStore(prefs);
-  final personalBooks = PersonalBooks(prefs);
-  // 通信が遅い・つながらないときは待たずに始める（記録は端末に残り、次に開いたときに同期する）
-  final cloud =
-      await CloudSync.start(
-        progress: progress,
-        profiles: profiles,
-        meta: meta,
-        books: personalBooks,
-      ).timeout(
-        const Duration(seconds: 8),
-        onTimeout: () {
-          debugPrint('クラウドにつながらないので、端末の中だけで始めます');
-          return null;
-        },
-      );
+  final stores = LightStores(
+    progress: PrefsProgressRepository(prefs),
+    profiles: ProfileRepository(prefs),
+    meta: MetaStore(prefs),
+    settings: SettingsStore(prefs),
+    books: PersonalBooks(prefs),
+    examWorlds: ExamWorldStore(prefs),
+  );
+  Future<void> Function()? refresh;
   // 同じ端末のつづりクエスト（Web は同じブラウザのほかのタブ）と記録をそろえる
   SameDeviceSync(
     prefs: prefs,
-    meta: meta,
-    progress: progress,
-    books: personalBooks,
-    onResume: cloud?.refresh,
+    meta: stores.meta,
+    progress: stores.progress,
+    books: stores.books,
+    onResume: () async => refresh?.call(),
   ).start();
-  if (cloud != null) {
-    reportSink = ReportSink(
-      upload: (r) async {
-        final uid = cloud.auth.currentUser?.uid;
-        if (uid == null) return;
-        await FirebaseFirestore.instance.collection('question_reports').add({
-          ...r.toJson(),
-          'uid': uid,
-        });
-      },
-    );
-  }
   runApp(
-    RpgServices(
-      meta: meta,
-      settings: settings,
-      // 音は鳴らさない（音のファイルを読みこまない）
-      music: MusicDirector(SilentAudio(), settings.value),
-      repository: progress,
-      personalBooks: personalBooks,
-      examWorlds: ExamWorldStore(prefs),
-      profiles: profiles,
-      account: cloud == null
-          ? MockAccountService()
-          : FirebaseAccountService(cloud),
-      classrooms: cloud == null
-          ? null
-          : FirestoreClassroomBackend(cloud.auth, FirebaseFirestore.instance),
-      child: const LightApp(),
+    LightRoot(
+      stores: stores,
+      connect: () async {
+        await cloud_lib.loadLibrary();
+        final c = await cloud_lib.startCloud(
+          progress: stores.progress,
+          profiles: stores.profiles,
+          meta: stores.meta,
+          books: stores.books,
+        );
+        if (c == null) return null;
+        refresh = c.refresh;
+        return (account: c.account, classrooms: c.classrooms);
+      },
     ),
   );
+}
+
+/// 端末に保存する記録（つづりクエストと同じ場所）
+class LightStores {
+  LightStores({
+    required this.progress,
+    required this.profiles,
+    required this.meta,
+    required this.settings,
+    required this.books,
+    required this.examWorlds,
+  });
+  final PrefsProgressRepository progress;
+  final ProfileRepository profiles;
+  final MetaStore meta;
+  final SettingsStore settings;
+  final PersonalBooks books;
+  final ExamWorldStore examWorlds;
+}
+
+typedef LightConnection = ({
+  AccountService account,
+  ClassroomBackend classrooms,
+});
+
+/// サービスの入れ物。はじめは端末の中だけで動き、クラウドにつながったらログインと
+/// クラスルームを差しこむ（画面はつながるのを待たずに出す）
+class LightRoot extends StatefulWidget {
+  const LightRoot({super.key, required this.stores, this.connect});
+
+  final LightStores stores;
+
+  /// クラウドにつなぐ（テストでは null）
+  final Future<LightConnection?> Function()? connect;
+
+  @override
+  State<LightRoot> createState() => _LightRootState();
+}
+
+class _LightRootState extends State<LightRoot> {
+  late final _music = MusicDirector(
+    SilentAudio(),
+    widget.stores.settings.value,
+  );
+  AccountService _account = MockAccountService();
+  ClassroomBackend? _classrooms;
+
+  @override
+  void initState() {
+    super.initState();
+    final connect = widget.connect;
+    if (connect == null) return;
+    // ホームを描いてから、クラウドの部品を読みこむ
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      try {
+        final c = await connect().timeout(const Duration(seconds: 20));
+        if (c == null || !mounted) return;
+        setState(() {
+          _account = c.account;
+          _classrooms = c.classrooms;
+        });
+      } catch (e) {
+        debugPrint('クラウドにつながらないので、端末の中だけで続けます: $e');
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final s = widget.stores;
+    return RpgServices(
+      meta: s.meta,
+      settings: s.settings,
+      // 音は鳴らさない（音のファイルを読みこまない）
+      music: _music,
+      repository: s.progress,
+      personalBooks: s.books,
+      examWorlds: s.examWorlds,
+      profiles: s.profiles,
+      account: _account,
+      classrooms: _classrooms,
+      child: const LightApp(),
+    );
+  }
 }
 
 /// 何も鳴らさない音の出し先

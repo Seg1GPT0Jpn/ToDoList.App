@@ -1,26 +1,24 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:rpg_game/rpg_game.dart';
-import 'package:rpg_game_app/account/account_screen.dart';
 import 'package:rpg_game_app/app/services.dart';
 import 'package:rpg_game_app/app/theme.dart';
 import 'package:rpg_game_app/art/paper.dart';
-import 'package:rpg_game_app/classroom/classroom_screens.dart';
-import 'package:rpg_game_app/meta/learning_status_screen.dart';
-import 'package:rpg_game_app/meta/review_tower_screen.dart';
-import 'package:rpg_game_app/meta/settings_screen.dart';
-import 'package:rpg_game_app/meta/today_plan.dart';
-import 'package:rpg_game_app/study/exam_world_screens.dart';
-import 'package:rpg_game_app/study/sea_home_screen.dart';
-import 'package:rpg_game_app/vocab/vocab_home.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import 'light_pages.dart' deferred as pages;
+
+/// 画面のプログラムを読みこんでから開く（はじめて開くときだけ少し待つ）
+Future<void> openPage(BuildContext context, Widget Function() page) async {
+  await pages.loadLibrary();
+  if (!context.mounted) return;
+  await Navigator.of(context)
+      .push(MaterialPageRoute<void>(builder: (_) => page()));
+}
 
 /// つづりクエストLight のホーム：必要な入口だけを並べる（絵や動きは置かない）
 class LightHome extends StatelessWidget {
   const LightHome({super.key});
-
-  Future<void> _push(BuildContext context, Widget page) =>
-      Navigator.of(context).push(MaterialPageRoute<void>(builder: (_) => page));
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +53,7 @@ class LightHome extends StatelessWidget {
                   IconButton(
                     key: const ValueKey('light-settings'),
                     tooltip: '設定',
-                    onPressed: () => _push(context, const SettingsScreen()),
+                    onPressed: () => openPage(context, () => pages.settings()),
                     icon: const Icon(Icons.settings_outlined),
                   ),
                 ],
@@ -63,38 +61,31 @@ class LightHome extends StatelessWidget {
               const SizedBox(height: 8),
               const _AccountRow(),
               const SizedBox(height: 10),
-              const TodayPlanCard(),
+              const _TodayPlan(),
               const SizedBox(height: 12),
               _Entry(
                 id: 'sea',
                 icon: Icons.sailing,
                 title: '定期テストの海',
                 subtitle: '教科・単元ごとの問題と単語帳。上の「試験対策」から学校の範囲へ',
-                onTap: () => _push(
-                  context,
-                  SeaHomeScreen(personalBooks: services.personalBooks),
-                ),
+                onTap: () =>
+                    openPage(context, () => pages.sea(services.personalBooks)),
               ),
               _Entry(
                 id: 'exam',
                 icon: Icons.school_outlined,
                 title: '試験対策（学校の定期テスト）',
                 subtitle: '範囲表からの演習・授業・テスト範囲の単語帳',
-                onTap: () => _push(context, const ExamWorldListScreen()),
+                onTap: () => openPage(context, () => pages.exam()),
               ),
               _Entry(
                 id: 'vocab',
                 icon: Icons.style_outlined,
                 title: '単語帳',
                 subtitle: 'つづ単・自分の単語帳・苦手な単語',
-                onTap: () => _push(
+                onTap: () => openPage(
                   context,
-                  Scaffold(
-                    appBar: AppBar(title: Text('単語帳', style: serif(18))),
-                    body: NotebookPaper(
-                      child: VocabHome(books: services.personalBooks),
-                    ),
-                  ),
+                  () => pages.vocab(services.personalBooks),
                 ),
               ),
               _Entry(
@@ -104,7 +95,7 @@ class LightHome extends StatelessWidget {
                 subtitle: services.classrooms == null
                     ? 'インターネットにつながると使えます'
                     : '先生の課題・クラスの範囲',
-                onTap: () => _push(context, const ClassroomHubScreen()),
+                onTap: () => openPage(context, () => pages.classroom()),
               ),
               ListenableBuilder(
                 listenable: services.meta,
@@ -119,7 +110,7 @@ class LightHome extends StatelessWidget {
                     title: due > 0 ? '復習（$due問）' : '復習',
                     subtitle: 'まちがえた問題・忘れかけた問題をもう一度',
                     highlight: due > 0,
-                    onTap: () => _push(context, const ReviewTowerScreen()),
+                    onTap: () => openPage(context, () => pages.review()),
                   );
                 },
               ),
@@ -128,7 +119,7 @@ class LightHome extends StatelessWidget {
                 icon: Icons.insights,
                 title: '学習ステータス',
                 subtitle: '教科ごとの正解率と、学習した日',
-                onTap: () => _push(context, const LearningStatusScreen()),
+                onTap: () => openPage(context, () => pages.status()),
               ),
               if (kIsWeb) ...[
                 const SizedBox(height: 12),
@@ -148,6 +139,30 @@ class LightHome extends StatelessWidget {
       ),
     );
   }
+}
+
+/// 今日やること（ホームを出したあとで読みこむ）
+class _TodayPlan extends StatefulWidget {
+  const _TodayPlan();
+
+  @override
+  State<_TodayPlan> createState() => _TodayPlanState();
+}
+
+class _TodayPlanState extends State<_TodayPlan> {
+  var _ready = false;
+
+  @override
+  void initState() {
+    super.initState();
+    pages.loadLibrary().then((_) {
+      if (mounted) setState(() => _ready = true);
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) =>
+      _ready ? pages.todayPlan() : const SizedBox(height: 120);
 }
 
 /// 名前と、ほかのアプリ・端末との同期のようす
@@ -178,9 +193,7 @@ class _AccountRow extends StatelessWidget {
               style: const TextStyle(fontSize: 12),
             ),
             trailing: const Icon(Icons.chevron_right),
-            onTap: () => Navigator.of(context).push(
-              MaterialPageRoute<void>(builder: (_) => const AccountScreen()),
-            ),
+            onTap: () => openPage(context, () => pages.account()),
           ),
         );
       },

@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:rpg_game_app/account/welcome_screen.dart';
 import 'package:rpg_game_app/app/services.dart';
 import 'package:rpg_game_app/app/settings.dart';
 import 'package:rpg_game_app/app/theme.dart';
 import 'package:rpg_game_app/app/toast.dart';
-import 'package:rpg_game_app/classroom/classroom_screens.dart';
 
 import 'light_home.dart';
+import 'light_pages.dart' deferred as pages;
 import 'main.dart' show inviteClassCode;
 
 class LightApp extends StatefulWidget {
@@ -106,21 +105,22 @@ class _FirstRunState extends State<_FirstRun> {
     _asked = true;
     final p = RpgServices.of(context).profiles.load();
     final code = inviteClassCode();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
+    final welcome = !p.hasName && !p.isGoogleLinked;
+    if (code == null && !welcome) return;
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      await pages.loadLibrary();
       if (!mounted) return;
       final nav = Navigator.of(context);
       if (code != null) {
         nav.push(
-          MaterialPageRoute<void>(
-            builder: (_) => ClassroomHubScreen(joinCode: code),
-          ),
+          MaterialPageRoute<void>(builder: (_) => pages.classroom(code)),
         );
       }
-      if (!p.hasName && !p.isGoogleLinked) {
+      if (welcome) {
         nav.push(
           MaterialPageRoute<void>(
             fullscreenDialog: true,
-            builder: (_) => const WelcomeScreen(),
+            builder: (_) => pages.welcome(),
           ),
         );
       }

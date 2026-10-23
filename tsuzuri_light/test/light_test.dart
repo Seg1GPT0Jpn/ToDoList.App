@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:rpg_game/rpg_game.dart';
@@ -13,7 +15,8 @@ import 'package:rpg_game_app/study/exam_world_store.dart';
 import 'package:rpg_game_app/study/personal_books.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tsuzuri_light/light_app.dart';
-import 'package:tsuzuri_light/main.dart' show SilentAudio;
+import 'package:rpg_game_app/classroom/classroom_backend.dart';
+import 'package:tsuzuri_light/main.dart';
 
 Future<RpgServices> _open(WidgetTester t, Map<String, Object> prefs) async {
   t.view.physicalSize = const Size(420, 860);
@@ -112,5 +115,38 @@ void main() {
       books: books,
     ).absorb();
     expect(light.record.stats.keys, containsAll(['q1', 'q2']));
+  });
+
+  testWidgets('クラウドを待たずにホームを出し、つながったらクラスルームを使えるようにする', (t) async {
+    t.view.physicalSize = const Size(420, 860);
+    t.view.devicePixelRatio = 1;
+    addTearDown(t.view.reset);
+    SharedPreferences.setMockInitialValues(named);
+    final p = await SharedPreferences.getInstance();
+    final done = Completer<LightConnection?>();
+    await t.pumpWidget(
+      LightRoot(
+        stores: LightStores(
+          progress: PrefsProgressRepository(p),
+          profiles: ProfileRepository(p),
+          meta: MetaStore(p),
+          settings: SettingsStore.memory(),
+          books: PersonalBooks(p),
+          examWorlds: ExamWorldStore(p),
+        ),
+        connect: () => done.future,
+      ),
+    );
+    await _frames(t);
+    // まだつながっていない：ホームは出ていて、クラスルームは使えない表示
+    expect(find.byKey(const ValueKey('light-home')), findsOneWidget);
+    expect(find.text('インターネットにつながると使えます'), findsOneWidget);
+    done.complete((
+      account: MockAccountService(),
+      classrooms: MemoryClassroomBackend(MemoryClassroomHub()),
+    ));
+    await _frames(t);
+    expect(find.text('先生の課題・クラスの範囲'), findsOneWidget);
+    expect(t.takeException(), isNull);
   });
 }

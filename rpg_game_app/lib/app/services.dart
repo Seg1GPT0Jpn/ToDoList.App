@@ -239,5 +239,8 @@ class RpgServices extends InheritedWidget {
   @override
   bool updateShouldNotify(RpgServices oldWidget) =>
       repository != oldWidget.repository ||
-      purchaseService != oldWidget.purchaseService;
+      purchaseService != oldWidget.purchaseService ||
+      // つづりクエストLight は、クラウドの準備ができたあとでログイン・クラスルームを差しこむ
+      account != oldWidget.account ||
+      classrooms != oldWidget.classrooms;
 }
