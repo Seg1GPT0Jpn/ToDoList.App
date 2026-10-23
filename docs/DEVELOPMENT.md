@@ -8,6 +8,7 @@
 | --- | --- |
 | `rpg_game/` | 純粋な Dart のコア（ゲームの計算・問題データ・学習記録）。UI を持たない |
 | `rpg_game_app/` | Flutter アプリ（画面・フィールド描画・音・保存・Firebase） |
+| `tsuzuri_light/` | つづりクエストLight（軽い版。`rpg_game_app` の画面を部品として使う。`LIGHT.md`） |
 | `docs/` | 設計書・更新記録（`UPDATE_V4.md` が最新の変更点） |
 
 コアに書けるものはコアに書き、`dart test` で確かめる。アプリは表示と保存だけを担当する。

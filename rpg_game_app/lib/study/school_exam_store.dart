@@ -47,6 +47,9 @@ class SchoolExamStore {
     _controller.add(plans);
   }
 
+  /// 同じ端末の別のアプリが保存したかもしれないので、画面に知らせなおす
+  void refresh() => _controller.add(load());
+
   Future<void> add(SchoolExamPlan plan) => _write([plan, ...load()]);
 
   Future<void> update(SchoolExamPlan plan) =>

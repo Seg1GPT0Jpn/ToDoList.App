@@ -5,6 +5,7 @@ import 'package:rpg_game/rpg_game.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../study/personal_books.dart';
+import '../app/asset_path.dart';
 
 /// 単語帳練習の保存先。
 ///
@@ -64,7 +65,8 @@ class VocabStore {
     try {
       // ウェブでもそのまま配れるように、暗号文を base64 のテキストで置いている
       return base64Decode(
-        (await rootBundle.loadString('assets/vocab/$file.txt')).trim(),
+        (await rootBundle.loadString(appAsset('assets/vocab/$file.txt')))
+            .trim(),
       );
     } catch (_) {
       return null;
@@ -212,6 +214,22 @@ class VocabStore {
       if (k.startsWith(_progressPrefix)) k.substring(_progressPrefix.length),
     ..._progress.keys,
   };
+
+  /// 同じ端末の別のアプリ（同じブラウザのつづりクエストLight など）が保存した
+  /// 学習記録を、読みこみ済みの記録にまぜる
+  void absorbPrefs() {
+    for (final id in _progress.keys) {
+      final raw = _prefs.getString('$_progressPrefix$id');
+      if (raw == null) continue;
+      try {
+        _progress[id]!.merge(
+          BookProgress.fromJson(jsonDecode(raw) as Map<String, dynamic>),
+        );
+      } catch (_) {
+        // 壊れていれば手元の記録のまま
+      }
+    }
+  }
 
   /// クラウドの学習記録を、この端末の記録とまぜて保存する
   Future<void> mergeProgress(String bookId, BookProgress cloud) async {

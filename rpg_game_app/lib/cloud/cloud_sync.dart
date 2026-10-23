@@ -11,6 +11,7 @@ import '../data/meta_store.dart';
 import '../data/prefs_progress_repository.dart';
 import '../firebase_options.dart';
 import '../study/personal_books.dart';
+import '../study/school_lesson_store.dart';
 import '../vocab/vocab_store.dart';
 import 'vocab_cloud_sync.dart';
 
@@ -20,6 +21,10 @@ import 'vocab_cloud_sync.dart';
 /// - ログインすると、クラウドに記録があればそれを読み込み（クラウド優先）、
 ///   なければ端末の記録をクラウドに上げる
 /// - ログイン中は、保存するたびにクラウドにも書き込む
+///
+/// つづりクエストとつづりクエストLight は同じ記録を使う。どちらか（または別の端末）で
+/// 保存すると、ログイン中のもう一方にもすぐ届く（[_listen]）。記録はまぜて保存する
+/// （[RecordMerge]：多い方・進んだ方を残す）ので、同時に使っても答えた記録は消えない。
 ///
 /// 個人用単語帳（LEAP など）の単語は同期しない。端末の中だけに置く。
 /// 単語帳の学習記録（覚えぐあい）だけは [VocabCloudSync] でクラウドにも保存する。
@@ -92,6 +97,10 @@ class CloudSync {
         sync._push(RpgFirestorePaths.learningDoc, r.toMap());
     meta.onJournalSaved = (j) =>
         sync._push(RpgFirestorePaths.journalDoc, j.toMap());
+    SchoolLessonStore.onSaved = (all) =>
+        sync._push(RpgFirestorePaths.lessonsDoc, _lessonsMap(all));
+    // ログイン中は、ほかのアプリ・端末の保存をすぐ受け取る
+    sync._auth.authStateChanges().listen(sync._listen);
     // 前回のログインが残っていれば、クラウドの記録を読み込む
     final user = await sync._auth.authStateChanges().first;
     if (user != null) {
@@ -105,37 +114,134 @@ class CloudSync {
 
   String? get _uid => _auth.currentUser?.uid;
 
+  static Map<String, dynamic> _lessonsMap(Map<String, LessonRecord> all) => {
+    'lessons': {for (final e in all.entries) e.key: e.value.toJson()},
+  };
+
+  static Map<String, LessonRecord> _lessonsOf(Map<String, dynamic> data) => {
+    for (final e in ((data['lessons'] as Map?) ?? const {}).entries)
+      if (e.value is Map)
+        '${e.key}': LessonRecord.fromJson(
+          Map<String, dynamic>.from(e.value as Map),
+        ),
+  };
+
+  /// 最後にクラウドと同期したアカウント
+  static const _uidKey = 'cloud_sync_uid';
+
+  final _subs = <StreamSubscription<Object?>>[];
+  String? _listening;
+
+  /// ログインした人の記録の変化を受け取る（ログアウトしたら止める）
+  void _listen(User? user) {
+    if (user?.uid == _listening) return;
+    for (final s in _subs) {
+      unawaited(s.cancel());
+    }
+    _subs.clear();
+    _listening = user?.uid;
+    if (user == null) return;
+    void watch(
+      String path,
+      Future<void> Function(Map<String, dynamic> remote) apply,
+    ) {
+      _subs.add(
+        _db.doc(path).snapshots().listen((snap) {
+          // 自分が送った書き込みのこだまは無視する
+          final data = snap.data();
+          if (snap.metadata.hasPendingWrites || data == null) return;
+          unawaited(
+            apply(_plain(data))
+                .catchError((Object e) => debugPrint('クラウドの変化を反映できませんでした: $e')),
+          );
+        }, onError: (Object e) => debugPrint('クラウドの変化を受け取れません: $e')),
+      );
+    }
+
+    final uid = user.uid;
+    watch(RpgFirestorePaths.progressDoc(uid), _applyProgress);
+    watch(RpgFirestorePaths.learningDoc(uid), _applyLearning);
+    watch(RpgFirestorePaths.journalDoc(uid), _applyJournal);
+    watch(RpgFirestorePaths.lessonsDoc(uid), _applyLessons);
+  }
+
+  /// クラウドの記録を端末の記録とまぜる。まぜた結果がクラウドとちがえば送りなおす
+  Future<void> _applyProgress(Map<String, dynamic> remote) async {
+    final cloud = RpgProgress.fromMap(remote);
+    await _progress.absorb(cloud);
+    final merged = await _progress.load();
+    if (!RecordMerge.same(merged.toMap(), cloud.toMap())) {
+      await _pushProgress(merged);
+    }
+  }
+
+  Future<void> _applyLearning(Map<String, dynamic> remote) async {
+    final cloud = LearningRecord.fromMap(remote);
+    await _meta.absorb(record: cloud);
+    if (!RecordMerge.same(_meta.record.toMap(), cloud.toMap())) {
+      await _push(RpgFirestorePaths.learningDoc, _meta.record.toMap());
+    }
+  }
+
+  Future<void> _applyJournal(Map<String, dynamic> remote) async {
+    final cloud = PlayerJournal.fromMap(remote);
+    await _meta.absorb(journal: cloud);
+    if (!RecordMerge.same(_meta.journal.toMap(), cloud.toMap())) {
+      await _push(RpgFirestorePaths.journalDoc, _meta.journal.toMap());
+    }
+  }
+
+  Future<void> _applyLessons(Map<String, dynamic> remote) async {
+    final lessons = SchoolLessonStore.of(_books);
+    final cloud = _lessonsOf(remote);
+    await lessons.absorb(cloud);
+    final mine = _lessonsMap(lessons.load());
+    if (!RecordMerge.same(mine, _lessonsMap(cloud))) {
+      await _push(RpgFirestorePaths.lessonsDoc, mine);
+    }
+  }
+
+  DateTime _lastRefresh = DateTime.fromMillisecondsSinceEpoch(0);
+
+  /// アプリにもどってきたとき：クラウドの記録をもう一度まぜる（単語帳もふくめて）
+  Future<void> refresh() async {
+    if (_uid == null) return;
+    final now = DateTime.now();
+    if (now.difference(_lastRefresh) < const Duration(seconds: 15)) return;
+    _lastRefresh = now;
+    await pull();
+  }
+
   /// ログインした直後に呼ぶ。クラウドに記録があれば端末に読み込み、
   /// なければ端末の記録をクラウドに上げる。
   Future<void> pull() async {
     final uid = _uid;
     if (uid == null) return;
     try {
-      final progressSnap = await _db
-          .doc(RpgFirestorePaths.progressDoc(uid))
-          .get();
-      final progressData = progressSnap.data();
+      // 前に別のアカウントでログインしていた端末では、その人の記録をまぜない（クラウドを優先）
+      final prefs = _books.prefs;
+      final before = prefs.getString(_uidKey);
+      if (before != null && before != uid) {
+        await _progress.replaceLocal(RpgProgress.initial);
+        await _meta.replaceLocal(
+          record: LearningRecord.empty,
+          journal: PlayerJournal.empty,
+        );
+        await SchoolLessonStore.of(_books).replaceAll(const {});
+      }
+      await prefs.setString(_uidKey, uid);
       final serverPurchaseIds = await _loadPurchaseIds(uid);
+      final progressData =
+          (await _db.doc(RpgFirestorePaths.progressDoc(uid)).get()).data();
+      final local = await _progress.load();
+      await _progress.replaceLocal(
+        local.copyWith(
+          purchasedWorldIds: {...local.purchasedWorldIds, ...serverPurchaseIds},
+        ),
+      );
       if (progressData != null) {
-        final current = RpgProgress.fromMap(_plain(progressData));
-        await _progress.replaceLocal(
-          current.copyWith(
-            purchasedWorldIds: {
-              ...current.purchasedWorldIds,
-              ...serverPurchaseIds,
-            },
-          ),
-        );
+        await _applyProgress(_plain(progressData));
       } else {
-        final current = await _progress.load();
-        await _progress.replaceLocal(
-          current.copyWith(
-            purchasedWorldIds: {
-              ...current.purchasedWorldIds,
-              ...serverPurchaseIds,
-            },
-          ),
-        );
         await _pushProgress(await _progress.load());
       }
       final profileSnap = await _db
@@ -149,23 +255,35 @@ class CloudSync {
       } else {
         await _pushProfile(_profiles.load());
       }
-      final learning = (await _db.doc(RpgFirestorePaths.learningDoc(uid)).get())
-          .data();
-      final journal = (await _db.doc(RpgFirestorePaths.journalDoc(uid)).get())
-          .data();
-      await _meta.replaceLocal(
-        record: learning == null
-            ? null
-            : LearningRecord.fromMap(_plain(learning)),
-        journal: journal == null
-            ? null
-            : PlayerJournal.fromMap(_plain(journal)),
-      );
-      if (learning == null) {
-        await _push(RpgFirestorePaths.learningDoc, _meta.record.toMap());
-      }
-      if (journal == null) {
-        await _push(RpgFirestorePaths.journalDoc, _meta.journal.toMap());
+      // 学習記録・冒険の記録・授業の記録は、端末とクラウドをまぜる（どちらも消さない）
+      for (final (path, apply, mine) in [
+        (
+          RpgFirestorePaths.learningDoc,
+          _applyLearning,
+          () => _meta.record.toMap(),
+        ),
+        (
+          RpgFirestorePaths.journalDoc,
+          _applyJournal,
+          () => _meta.journal.toMap(),
+        ),
+        (
+          RpgFirestorePaths.lessonsDoc,
+          _applyLessons,
+          () => _lessonsMap(SchoolLessonStore.of(_books).load()),
+        ),
+      ]) {
+        try {
+          final data = (await _db.doc(path(uid)).get()).data();
+          if (data != null) {
+            await apply(_plain(data));
+          } else {
+            await _push(path, mine());
+          }
+        } catch (e) {
+          // 授業の記録の置き場所をまだ許可していないクラウドでも、ほかは続ける
+          debugPrint('クラウドの記録（$path）を読めませんでした: $e');
+        }
       }
       await _vocab.pull(VocabStore.of(_books));
     } catch (e) {

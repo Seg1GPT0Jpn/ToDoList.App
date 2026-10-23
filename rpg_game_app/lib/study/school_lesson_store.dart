@@ -46,12 +46,38 @@ class SchoolLessonStore extends ChangeNotifier {
 
   Future<void> save(LessonRecord r) async {
     final all = load()..[r.lessonId] = r;
+    await _write(all);
+    onSaved?.call(all);
+  }
+
+  Future<void> _write(Map<String, LessonRecord> all) async {
     await _prefs.setString(
       key,
       jsonEncode({for (final e in all.entries) e.key: e.value.toJson()}),
     );
     notifyListeners();
   }
+
+  /// 保存したとき（クラウド同期が使う。授業 ID と数値だけを送る）
+  static void Function(Map<String, LessonRecord> all)? onSaved;
+
+  /// ほかの端末・アプリの授業の記録をまぜる。端末の記録が変わったら true
+  Future<bool> absorb(Map<String, LessonRecord> other) async {
+    final local = load();
+    final merged = RecordMerge.lessons(local, other);
+    Map<String, Object?> plain(Map<String, LessonRecord> m) => {
+      for (final e in m.entries) e.key: e.value.toJson(),
+    };
+    if (RecordMerge.same(plain(merged), plain(local))) return false;
+    await _write(merged);
+    return true;
+  }
+
+  /// 記録をまるごと置きかえる（別のアカウントでログインしたとき）
+  Future<void> replaceAll(Map<String, LessonRecord> all) => _write(all);
+
+  /// 同じ端末の別のアプリが保存したかもしれないので、画面に知らせなおす
+  void refresh() => notifyListeners();
 
   /// 同梱の授業（科目ごとの教材ファイル）を読む。テストで差しかえる
   static Future<String?> Function(String subjectId) loader = (subjectId) async {

@@ -1,0 +1,35 @@
+{
+  "name": "つづりクエストLight",
+  "short_name": "つづりLight",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#FAF6EE",
+  "theme_color": "#6D4C41",
+  "description": "つづりクエストの軽い版：定期テスト対策・単語帳・クラスルーム",
+  "orientation": "portrait-primary",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "icons/Icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/Icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/Icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/Icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

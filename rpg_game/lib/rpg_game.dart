@@ -20,6 +20,7 @@ export 'src/data/math_catalog.dart';
 export 'src/data/social_catalog.dart';
 export 'src/data/firestore_paths.dart';
 export 'src/data/progress_repository.dart';
+export 'src/data/record_merge.dart';
 export 'src/data/question_source.dart';
 export 'src/data/user_deck_questions.dart';
 export 'src/learning/adaptive.dart';

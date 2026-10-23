@@ -52,6 +52,18 @@ class PrefsProgressRepository implements ProgressRepository {
     _controller.add(progress);
   }
 
+  /// ほかの端末・アプリの進行状況をまぜる。端末の記録が変わったら true
+  Future<bool> absorb(RpgProgress other) async {
+    final local = _read();
+    final merged = RecordMerge.progress(local, other);
+    if (RecordMerge.same(merged.toMap(), local.toMap())) return false;
+    await replaceLocal(merged);
+    return true;
+  }
+
+  /// 保存されている進行状況を、見ている画面に知らせなおす
+  void refresh() => _controller.add(_read());
+
   @override
   Future<void> markWorldPurchased(
     String worldId, {

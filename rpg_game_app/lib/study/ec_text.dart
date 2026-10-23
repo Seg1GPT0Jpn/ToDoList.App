@@ -4,6 +4,8 @@ import 'package:flutter/services.dart';
 import 'package:rpg_game/rpg_game.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../app/asset_path.dart';
+
 /// 英語コミュニケーションⅠ（Lesson 5〜7）の本文。
 ///
 /// 教科書の文章なので、暗号化したもの（assets/texts/）だけを同梱し、
@@ -20,7 +22,8 @@ class EcText {
   static Future<List<int>?> _loadAsset(String file) async {
     try {
       return base64Decode(
-        (await rootBundle.loadString('assets/texts/$file.txt')).trim(),
+        (await rootBundle.loadString(appAsset('assets/texts/$file.txt')))
+            .trim(),
       );
     } catch (_) {
       return null;

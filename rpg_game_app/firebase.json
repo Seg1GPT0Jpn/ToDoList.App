@@ -16,6 +16,10 @@
     ],
     "rewrites": [
       {
+        "source": "/light/**",
+        "destination": "/light/index.html"
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }

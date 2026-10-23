@@ -70,6 +70,22 @@ class MetaStore extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// ほかの端末・アプリの記録をまぜる（消えないように多い方・進んだ方を残す）。
+  /// 端末の記録が変わったら true
+  Future<bool> absorb({LearningRecord? record, PlayerJournal? journal}) async {
+    final r = record == null ? null : RecordMerge.learning(_record, record);
+    final j = journal == null ? null : RecordMerge.journal(_journal, journal);
+    final rc = r != null && !RecordMerge.same(r.toMap(), _record.toMap());
+    final jc = j != null && !RecordMerge.same(j.toMap(), _journal.toMap());
+    if (!rc && !jc) return false;
+    await replaceLocal(record: rc ? r : null, journal: jc ? j : null);
+    return true;
+  }
+
+  /// 同じ端末の別のアプリ（同じブラウザのつづりクエストLight など）が保存した記録をまぜる
+  Future<bool> absorbPrefs() =>
+      absorb(record: _readRecord(_prefs), journal: _readJournal(_prefs));
+
   Future<void> reset() async {
     await save(record: LearningRecord.empty, journal: PlayerJournal.empty);
   }

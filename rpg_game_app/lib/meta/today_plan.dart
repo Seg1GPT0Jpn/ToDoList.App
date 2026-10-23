@@ -22,10 +22,10 @@ const todayVocabCount = 15;
 /// 1つ終えるごとにチェックがつき、全部終わったら「今日はこれでOK」。
 /// それ以上は追い立てない。
 class TodayPlanCard extends StatefulWidget {
-  const TodayPlanCard({super.key, required this.onAdventure});
+  const TodayPlanCard({super.key, this.onAdventure});
 
-  /// 冒険に出る
-  final VoidCallback onAdventure;
+  /// 冒険に出る（冒険のないつづりクエストLight では null。冒険の行を出さない）
+  final VoidCallback? onAdventure;
 
   @override
   State<TodayPlanCard> createState() => _TodayPlanCardState();
@@ -167,7 +167,11 @@ class _TodayPlanCardState extends State<TodayPlanCard> {
           future: _classPlan,
           builder: (context, snap) {
             final test = _testRow(snap.data, record, today, now);
-            final rows = [vocab, test, _adventureRow(adventureDone)];
+            final rows = [
+              vocab,
+              test,
+              if (widget.onAdventure != null) _adventureRow(adventureDone),
+            ];
             final allDone = rows.every((r) => r.done);
             return PaperCard(
               key: const ValueKey('today-plan'),
@@ -383,7 +387,7 @@ class _TodayPlanCardState extends State<TodayPlanCard> {
     icon: Icons.sports_martial_arts,
     text: done ? '冒険：今日も戦った' : '冒険：1戦だけ',
     done: done,
-    onTap: widget.onAdventure,
+    onTap: widget.onAdventure ?? () {},
   );
 }
 

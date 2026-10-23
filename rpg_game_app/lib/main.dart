@@ -20,6 +20,7 @@ import 'audio/music_director.dart';
 import 'audio/music_scope.dart';
 import 'audio/player_backend.dart';
 import 'cloud/cloud_sync.dart';
+import 'cloud/same_device_sync.dart';
 import 'purchase/google_play_purchase_service.dart';
 import 'quiz/question_report.dart';
 import 'cloud/firestore_classroom_backend.dart';
@@ -62,12 +63,28 @@ Future<void> main() async {
   settings.addListener(() => music.applySettings(settings.value));
   // Firebase の設定があればクラウドと同期する。なければ端末の中だけで動く
   final personalBooks = PersonalBooks(prefs);
-  final cloud = await CloudSync.start(
-    progress: progress,
-    profiles: profiles,
+  // 通信が遅い・つながらないときは待たずに始める（記録は端末に残り、次に開いたときに同期する）
+  final cloud =
+      await CloudSync.start(
+        progress: progress,
+        profiles: profiles,
+        meta: meta,
+        books: personalBooks,
+      ).timeout(
+        const Duration(seconds: 8),
+        onTimeout: () {
+          debugPrint('クラウドにつながらないので、端末の中だけで始めます');
+          return null;
+        },
+      );
+  // 同じ端末のつづりクエストLight（Web は同じブラウザのほかのタブ）と記録をそろえる
+  SameDeviceSync(
+    prefs: prefs,
     meta: meta,
+    progress: progress,
     books: personalBooks,
-  );
+    onResume: cloud?.refresh,
+  ).start();
   if (cloud != null) {
     // 問題の報告は、ログインしていればクラウド（question_reports）にも送る
     reportSink = ReportSink(

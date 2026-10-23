@@ -5,6 +5,7 @@ import 'package:rpg_game/rpg_game.dart';
 import '../app/services.dart';
 import '../app/theme.dart';
 import 'school_exam_store.dart';
+import '../app/asset_path.dart';
 
 /// 学校の配布資料（要点まとめなど）を、ページごとにめくって見る。
 /// ピンチで拡大できる。ページは開いたときに読み込む。
@@ -16,7 +17,7 @@ class SchoolMaterialScreen extends StatefulWidget {
 
   /// 同梱ファイルを読む（テストで差しかえる）
   static Future<List<int>> Function(String asset) loader = (asset) async =>
-      (await rootBundle.load(asset)).buffer.asUint8List();
+      (await rootBundle.load(appAsset(asset))).buffer.asUint8List();
 
   @override
   State<SchoolMaterialScreen> createState() => _SchoolMaterialScreenState();
