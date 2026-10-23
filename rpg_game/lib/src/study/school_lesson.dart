@@ -92,15 +92,26 @@ class LessonCheck {
 
 /// 授業の1ステップ（説明か、その場で解く問題）
 class LessonStep {
-  const LessonStep.block(this.kind, this.heading, this.body) : check = null;
+  const LessonStep.block(
+    this.kind,
+    this.heading,
+    this.body, {
+    this.talk = const [],
+  }) : check = null;
   const LessonStep.check(LessonCheck this.check)
       : kind = null,
         heading = '',
-        body = '';
+        body = '',
+        talk = const [];
 
   final LessonBlockKind? kind;
   final String heading;
+
+  /// 板書（黒板に書く内容）
   final String body;
+
+  /// 先生の話（映像授業のナレーション。1つずつ順に出す）
+  final List<String> talk;
   final LessonCheck? check;
 
   bool get isCheck => check != null;
@@ -111,6 +122,7 @@ class LessonStep {
           LessonBlockKind.parse(j['t']),
           j['h'] as String? ?? '',
           j['b'] as String? ?? '',
+          talk: [for (final t in j['talk'] as List? ?? const []) '$t'],
         );
 }
 
@@ -130,6 +142,8 @@ class SchoolLesson {
     this.source = '',
     this.review = 'unreviewed',
     this.version = 1,
+    this.opening = const [],
+    this.closing = const [],
   });
 
   final String id;
@@ -164,6 +178,10 @@ class SchoolLesson {
   final String review;
   final int version;
 
+  /// 授業のはじめ・おわりの先生のあいさつ
+  final List<String> opening;
+  final List<String> closing;
+
   List<LessonCheck> get inlineChecks => [
         for (final s in steps)
           if (s.check != null) s.check!,
@@ -196,6 +214,8 @@ class SchoolLesson {
         source: j['source'] as String? ?? '',
         review: j['review'] as String? ?? 'unreviewed',
         version: (j['version'] as num?)?.toInt() ?? 1,
+        opening: [for (final t in j['opening'] as List? ?? const []) '$t'],
+        closing: [for (final t in j['closing'] as List? ?? const []) '$t'],
       );
 
   /// 授業として足りないところ（なければ空）。

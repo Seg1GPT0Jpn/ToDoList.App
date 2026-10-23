@@ -38,6 +38,13 @@ void main() {
         for (final c in [...l.inlineChecks, ...l.quiz]) {
           expect(c.problems(), isEmpty, reason: '${l.id}: ${c.prompt}');
         }
+        // 映像授業：はじめとおわりのあいさつと、説明ごとに先生の話が3つ以上
+        expect(l.opening, isNotEmpty, reason: l.id);
+        expect(l.closing, isNotEmpty, reason: l.id);
+        for (final s in l.steps.where((s) => !s.isCheck)) {
+          expect(s.talk.length, greaterThanOrEqualTo(3),
+              reason: '${l.id}: ${s.heading}');
+        }
         // 専門家の検証済みとは表示しない
         expect(l.review, 'unreviewed');
       }

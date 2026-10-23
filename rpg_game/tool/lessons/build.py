@@ -2,6 +2,9 @@
 
   cd rpg_game/tool/lessons && python3 build.py
 
+先生の話（映像授業のナレーション）は talk_<科目>.py の TALK に、
+{単元ID: {'@open': [...], '@close': [...], 説明ブロックの見出し: [...]}} の形で書く。
+
 検査（足りない授業は書き出さない）：目標・説明3つ以上・まとめ・途中の問題・確認テスト3問以上、
 選択肢の重複・正解の位置・解説の有無、授業IDの重複。単元が学習体系にあるかは Dart のテストで確かめる。
 """
@@ -37,6 +40,26 @@ def check(lesson):
     assert lesson['reteach'], (w, '別の角度からの説明なし')
 
 
+def merge_talk(subject, lessons):
+    """先生の話を授業にまぜる。すべての説明ブロックに3つ以上の話が必要"""
+    mod = importlib.import_module(f'talk_{subject}')
+    for l in lessons:
+        t = mod.TALK.get(l['unitId'])
+        assert t, (l['id'], '先生の話がない')
+        heads = {s['h'] for s in l['steps'] if s['t'] != 'check'}
+        extra = set(t) - heads - {'@open', '@close'}
+        assert not extra, (l['id'], '見出しが合わない', extra)
+        l['opening'] = t.get('@open', [])
+        l['closing'] = t.get('@close', [])
+        assert l['opening'] and l['closing'], (l['id'], 'あいさつがない')
+        for s in l['steps']:
+            if s['t'] == 'check':
+                continue
+            talk = t.get(s['h'], [])
+            assert len(talk) >= 3, (l['id'], s['h'], '先生の話が3つ未満')
+            s['talk'] = talk
+
+
 def main():
     os.makedirs(OUT, exist_ok=True)
     seen = set()
@@ -47,6 +70,7 @@ def main():
         except ModuleNotFoundError:
             continue
         lessons = mod.LESSONS
+        merge_talk(subject, lessons)
         for l in lessons:
             assert l['subjectId'] == subject, l['id']
             assert l['id'] not in seen, l['id']

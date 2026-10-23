@@ -1,9 +1,12 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:rpg_game/rpg_game.dart';
 
 import '../app/services.dart';
 import '../app/theme.dart';
 import '../art/paper.dart';
+import '../vocab/speech.dart';
 import 'school_lesson_store.dart';
 import 'shonan_exam_screens.dart';
 
@@ -509,6 +512,16 @@ class _SchoolLessonScreenState extends State<SchoolLessonScreen> {
   final Map<int, Set<int>> _picked = {};
   int _understanding = 0;
 
+  /// 先生の話：今のページで何番目まで話したか・自動で進めるか・読み上げるか・全文を出すか
+  int _line = 0;
+  var _auto = false;
+  var _voice = false;
+  var _transcript = false;
+  Timer? _timer;
+
+  static const _autoKey = 'school_lesson_auto';
+  static const _voiceKey = 'school_lesson_voice';
+
   SchoolLessonStore get _store =>
       SchoolLessonStore.of(RpgServices.of(context).personalBooks);
 
@@ -517,6 +530,9 @@ class _SchoolLessonScreenState extends State<SchoolLessonScreen> {
     super.didChangeDependencies();
     if (_started) return;
     _started = true;
+    final prefs = RpgServices.of(context).personalBooks.prefs;
+    _auto = prefs.getBool(_autoKey) ?? false;
+    _voice = prefs.getBool(_voiceKey) ?? false;
     final r = _store.record(_l.id);
     // 続きから：前に読んだステップの次を開く（読み終わっていれば最初から）
     if (!widget.fromStart && r.step > 0 && r.step < _l.steps.length) {
@@ -528,7 +544,68 @@ class _SchoolLessonScreenState extends State<SchoolLessonScreen> {
     }
   }
 
+  @override
+  void dispose() {
+    _timer?.cancel();
+    if (_voice) speaker.stop();
+    super.dispose();
+  }
+
   int get _last => _l.steps.length + 1;
+
+  /// このページで先生が話すこと
+  List<String> get _talk {
+    if (_page == 0) return _l.opening;
+    if (_page >= _last) return _l.closing;
+    final s = _l.steps[_page - 1];
+    if (s.isCheck) {
+      return const ['ここで問題です。今の説明を思い出しながら、自分で解いてみましょう。'];
+    }
+    return s.talk;
+  }
+
+  bool get _talkDone => _line >= _talk.length - 1;
+
+  /// 話を1つ進める（最後まで話したら、自動再生ならページを進める）
+  void _say(int line) {
+    _timer?.cancel();
+    final talk = _talk;
+    if (talk.isEmpty) return;
+    setState(() => _line = line.clamp(0, talk.length - 1));
+    final text = talk[_line];
+    if (_voice) speaker.speak(text, lang: 'ja-JP', rate: 0.55);
+    if (!_auto) return;
+    // 1文字あたりの時間で次の話へ（読み上げ中はゆっくり）
+    final ms = 1400 + text.length * (_voice ? 190 : 120);
+    _timer = Timer(Duration(milliseconds: ms), () {
+      if (!mounted || !_auto) return;
+      if (!_talkDone) {
+        _say(_line + 1);
+      } else if (_page > 0 && _page < _last && _canNext) {
+        _go(_page + 1);
+      }
+    });
+  }
+
+  Future<void> _setAuto(bool v) async {
+    setState(() => _auto = v);
+    await RpgServices.of(context).personalBooks.prefs.setBool(_autoKey, v);
+    if (v) {
+      _say(_line);
+    } else {
+      _timer?.cancel();
+    }
+  }
+
+  Future<void> _setVoice(bool v) async {
+    setState(() => _voice = v);
+    await RpgServices.of(context).personalBooks.prefs.setBool(_voiceKey, v);
+    if (v) {
+      _say(_line);
+    } else {
+      await speaker.stop();
+    }
+  }
 
   bool get _canNext {
     if (_page == 0 || _page == _last) return true;
@@ -537,7 +614,12 @@ class _SchoolLessonScreenState extends State<SchoolLessonScreen> {
   }
 
   Future<void> _go(int page) async {
-    setState(() => _page = page.clamp(0, _last));
+    _timer?.cancel();
+    setState(() {
+      _page = page.clamp(0, _last);
+      _line = 0;
+    });
+    if (_auto || _voice) _say(0);
     if (_page == 0) return;
     // 次に開くページを残す（おわりのページまで来たら「授業閲覧済み」）
     final r = _store.record(_l.id);
@@ -621,7 +703,28 @@ class _SchoolLessonScreenState extends State<SchoolLessonScreen> {
     );
   }
 
+  /// 先生（アバター・吹き出し・操作）
+  Widget _teacher() {
+    final talk = _talk;
+    if (talk.isEmpty) return const SizedBox.shrink();
+    final line = _line.clamp(0, talk.length - 1);
+    return _TeacherTalk(
+      lines: talk,
+      index: line,
+      transcript: _transcript,
+      auto: _auto,
+      voice: _voice,
+      onPrev: line > 0 ? () => _say(line - 1) : null,
+      onNext: line < talk.length - 1 ? () => _say(line + 1) : null,
+      onTranscript: () => setState(() => _transcript = !_transcript),
+      onAuto: () => _setAuto(!_auto),
+      onVoice: () => _setVoice(!_voice),
+    );
+  }
+
   List<Widget> _overview() => [
+    _teacher(),
+    const SizedBox(height: 14),
     Text('この授業の目標', style: serif(16)),
     for (final g in _l.goals) Text('・$g', style: const TextStyle(height: 1.6)),
     if (_l.prerequisites.isNotEmpty) ...[
@@ -659,24 +762,16 @@ class _SchoolLessonScreenState extends State<SchoolLessonScreen> {
     final check = s.check;
     if (check == null) {
       return Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text(
-            s.kind!.label,
-            style: TextStyle(
-              fontSize: 12,
-              color: s.kind == LessonBlockKind.mistake
-                  ? TsuzuriColors.wrong
-                  : TsuzuriColors.accent,
-              fontWeight: FontWeight.w700,
-            ),
+          _Blackboard(
+            label: s.kind!.label,
+            heading: s.heading,
+            body: s.body,
+            warn: s.kind == LessonBlockKind.mistake,
           ),
-          Text(s.heading, style: serif(17)),
-          const SizedBox(height: 10),
-          SelectableText(
-            s.body,
-            style: const TextStyle(fontSize: 15.5, height: 1.75),
-          ),
+          const SizedBox(height: 12),
+          _teacher(),
         ],
       );
     }
@@ -687,6 +782,8 @@ class _SchoolLessonScreenState extends State<SchoolLessonScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        _teacher(),
+        const SizedBox(height: 12),
         Text(
           '自分で解いてみよう',
           style: TextStyle(
@@ -762,6 +859,8 @@ class _SchoolLessonScreenState extends State<SchoolLessonScreen> {
   }
 
   List<Widget> _finish() => [
+    _teacher(),
+    const SizedBox(height: 14),
     Text('授業のまとめ', style: serif(17)),
     for (final s in _l.steps)
       if (s.kind == LessonBlockKind.point || s.kind == LessonBlockKind.summary)
@@ -799,6 +898,7 @@ class _SchoolLessonScreenState extends State<SchoolLessonScreen> {
         key: const ValueKey('lesson-restart'),
         onPressed: () => setState(() {
           _page = 1;
+          _line = 0;
           _solved.clear();
           _revealed.clear();
           _tries.clear();
@@ -815,6 +915,227 @@ class _SchoolLessonScreenState extends State<SchoolLessonScreen> {
       label: Text('確認テストへ（${_l.quiz.length}問）'),
     ),
   ];
+}
+
+/// 板書：黒板にチョークで書いたような説明
+class _Blackboard extends StatelessWidget {
+  const _Blackboard({
+    required this.label,
+    required this.heading,
+    required this.body,
+    this.warn = false,
+  });
+
+  final String label;
+  final String heading;
+  final String body;
+  final bool warn;
+
+  static const _board = Color(0xFF24463A);
+  static const _chalk = Color(0xFFF3F1E6);
+  static const _yellow = Color(0xFFF2D46B);
+  static const _pink = Color(0xFFF2A6A0);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      key: const ValueKey('lesson-board'),
+      decoration: BoxDecoration(
+        color: _board,
+        borderRadius: BorderRadius.circular(6),
+        border: Border.all(color: const Color(0xFF8A6239), width: 6),
+        boxShadow: const [
+          BoxShadow(
+            color: Color(0x33000000),
+            blurRadius: 6,
+            offset: Offset(0, 3),
+          ),
+        ],
+      ),
+      padding: const EdgeInsets.fromLTRB(16, 12, 16, 16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            label,
+            style: TextStyle(
+              fontSize: 12,
+              color: warn ? _pink : _yellow,
+              fontWeight: FontWeight.w700,
+              letterSpacing: 1,
+            ),
+          ),
+          const SizedBox(height: 2),
+          Text(heading, style: serif(18).copyWith(color: _chalk)),
+          Container(
+            height: 1.5,
+            margin: const EdgeInsets.symmetric(vertical: 8),
+            color: _chalk.withValues(alpha: 0.35),
+          ),
+          SelectableText(
+            body,
+            style: const TextStyle(fontSize: 15, height: 1.8, color: _chalk),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+/// 先生の話：アバターと吹き出しで、1つずつ話す（映像授業のナレーション）
+class _TeacherTalk extends StatelessWidget {
+  const _TeacherTalk({
+    required this.lines,
+    required this.index,
+    required this.transcript,
+    required this.auto,
+    required this.voice,
+    required this.onPrev,
+    required this.onNext,
+    required this.onTranscript,
+    required this.onAuto,
+    required this.onVoice,
+  });
+
+  final List<String> lines;
+  final int index;
+  final bool transcript;
+  final bool auto;
+  final bool voice;
+  final VoidCallback? onPrev;
+  final VoidCallback? onNext;
+  final VoidCallback onTranscript;
+  final VoidCallback onAuto;
+  final VoidCallback onVoice;
+
+  @override
+  Widget build(BuildContext context) {
+    final single = lines.length == 1;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Column(
+              children: [
+                CircleAvatar(
+                  radius: 22,
+                  backgroundColor: TsuzuriColors.accent.withValues(alpha: 0.15),
+                  child: Icon(Icons.school, color: TsuzuriColors.accent),
+                ),
+                const SizedBox(height: 2),
+                Text(
+                  'つづり先生',
+                  style: TextStyle(fontSize: 10, color: TsuzuriColors.inkSoft),
+                ),
+              ],
+            ),
+            const SizedBox(width: 8),
+            Expanded(
+              child: GestureDetector(
+                onTap: onNext,
+                child: Container(
+                  key: const ValueKey('lesson-talk'),
+                  padding: const EdgeInsets.fromLTRB(14, 10, 14, 10),
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).colorScheme.surface,
+                    borderRadius: const BorderRadius.only(
+                      topRight: Radius.circular(14),
+                      bottomLeft: Radius.circular(14),
+                      bottomRight: Radius.circular(14),
+                    ),
+                    border: Border.all(
+                      color: TsuzuriColors.accent.withValues(alpha: 0.4),
+                    ),
+                  ),
+                  child: AnimatedSwitcher(
+                    duration: const Duration(milliseconds: 200),
+                    child: transcript
+                        ? Column(
+                            key: const ValueKey('all'),
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              for (final (i, t) in lines.indexed)
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 6),
+                                  child: Text(
+                                    t,
+                                    style: TextStyle(
+                                      fontSize: 14.5,
+                                      height: 1.65,
+                                      color: i == index
+                                          ? TsuzuriColors.ink
+                                          : TsuzuriColors.inkSoft,
+                                    ),
+                                  ),
+                                ),
+                            ],
+                          )
+                        : Text(
+                            lines[index],
+                            key: ValueKey(index),
+                            style: const TextStyle(fontSize: 15.5, height: 1.7),
+                          ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+        if (!single)
+          Padding(
+            padding: const EdgeInsets.only(top: 4, left: 52),
+            child: Wrap(
+              crossAxisAlignment: WrapCrossAlignment.center,
+              spacing: 2,
+              children: [
+                IconButton(
+                  key: const ValueKey('lesson-talk-prev'),
+                  tooltip: '前の話',
+                  visualDensity: VisualDensity.compact,
+                  onPressed: onPrev,
+                  icon: const Icon(Icons.chevron_left),
+                ),
+                Text(
+                  '${index + 1}/${lines.length}',
+                  key: const ValueKey('lesson-talk-count'),
+                  style: TextStyle(fontSize: 12, color: TsuzuriColors.inkSoft),
+                ),
+                IconButton(
+                  key: const ValueKey('lesson-talk-next'),
+                  tooltip: '次の話',
+                  visualDensity: VisualDensity.compact,
+                  onPressed: onNext,
+                  icon: const Icon(Icons.chevron_right),
+                ),
+                IconButton(
+                  key: const ValueKey('lesson-talk-auto'),
+                  tooltip: auto ? '自動再生を止める' : '自動再生',
+                  visualDensity: VisualDensity.compact,
+                  isSelected: auto,
+                  onPressed: onAuto,
+                  icon: Icon(auto ? Icons.pause_circle : Icons.play_circle),
+                ),
+                IconButton(
+                  key: const ValueKey('lesson-talk-voice'),
+                  tooltip: voice ? '読み上げを止める' : '読み上げる',
+                  visualDensity: VisualDensity.compact,
+                  isSelected: voice,
+                  onPressed: onVoice,
+                  icon: Icon(voice ? Icons.volume_up : Icons.volume_off),
+                ),
+                TextButton(
+                  key: const ValueKey('lesson-talk-all'),
+                  onPressed: onTranscript,
+                  child: Text(transcript ? '1つずつ' : '話をすべて表示'),
+                ),
+              ],
+            ),
+          ),
+      ],
+    );
+  }
 }
 
 class _Feedback extends StatelessWidget {

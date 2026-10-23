@@ -7,6 +7,7 @@ import 'package:rpg_game/rpg_game.dart';
 import 'package:rpg_game_app/study/school_exam_store.dart';
 import 'package:rpg_game_app/study/school_lesson_screens.dart';
 import 'package:rpg_game_app/study/school_lesson_store.dart';
+import 'package:rpg_game_app/vocab/speech.dart';
 
 import 'harness.dart';
 
@@ -27,6 +28,22 @@ Future<void> _settle(WidgetTester t) async {
 }
 
 const _immunity = 'science.biology.body.immunity';
+
+class _FakeSpeaker implements Speaker {
+  final said = <String>[];
+  var stopped = 0;
+  @override
+  Future<void> speak(
+    String text, {
+    required String lang,
+    required double rate,
+  }) async {
+    said.add(text);
+  }
+
+  @override
+  Future<void> stop() async => stopped++;
+}
 
 /// 教材ファイル（rpg_game/assets/lessons/）をそのまま読む
 String? _lessonFile(String subjectId) {
@@ -105,8 +122,24 @@ void main() {
     await t.tap(find.byKey(const ValueKey('course-lesson-$_immunity')));
     await _frames(t);
     expect(find.text('この授業の目標'), findsOneWidget);
+    // 先生のあいさつ
+    expect(find.text(l.opening.first), findsOneWidget);
     await t.tap(find.byKey(const ValueKey('lesson-next')));
     await _frames(t, 3);
+    // 説明は黒板（板書）と先生の話。話は1つずつ進められ、全文も出せる
+    final first = l.steps.first;
+    expect(find.byKey(const ValueKey('lesson-board')), findsOneWidget);
+    expect(find.text(first.talk[0]), findsOneWidget);
+    await t.tap(find.byKey(const ValueKey('lesson-talk-next')));
+    await _frames(t, 3);
+    expect(find.text(first.talk[1]), findsOneWidget);
+    expect(
+      t.widget<Text>(find.byKey(const ValueKey('lesson-talk-count'))).data,
+      '2/${first.talk.length}',
+    );
+    await t.tap(find.byKey(const ValueKey('lesson-talk-all')));
+    await _frames(t, 3);
+    expect(find.text(first.talk.last), findsOneWidget);
     for (var i = 0; i < l.steps.length; i++) {
       final check = l.steps[i].check;
       if (check != null) {
@@ -167,6 +200,37 @@ void main() {
       t.widget<Text>(find.byKey(const ValueKey('coverage-learned'))).data,
       '1/4',
     );
+    expect(t.takeException(), isNull);
+  });
+
+  testWidgets('自動再生で先生の話が進み、話し終えると次の説明へ。読み上げもできる', (t) async {
+    final fake = _FakeSpeaker();
+    final saved = speaker;
+    speaker = fake;
+    addTearDown(() => speaker = saved);
+    final l = await lesson(t);
+    await openCourse(t);
+    await scrollTo(t, find.byKey(const ValueKey('course-lesson-$_immunity')));
+    await t.tap(find.byKey(const ValueKey('course-lesson-$_immunity')));
+    await _frames(t);
+    await t.tap(find.byKey(const ValueKey('lesson-next')));
+    await _frames(t, 3);
+    final talk = l.steps.first.talk;
+    await t.tap(find.byKey(const ValueKey('lesson-talk-voice')));
+    await _frames(t, 2);
+    expect(fake.said, [talk.first]);
+    await t.tap(find.byKey(const ValueKey('lesson-talk-auto')));
+    // 話をすべて終えるまで待つと、次のページ（2つめの説明）へ進む
+    for (var i = 0; i < talk.length + 2; i++) {
+      await t.pump(const Duration(seconds: 30));
+    }
+    expect(fake.said, containsAllInOrder(talk));
+    expect(find.byKey(const ValueKey('lesson-page-1')), findsNothing);
+    // 読み上げを止める
+    await t.tap(find.byKey(const ValueKey('lesson-talk-auto')));
+    await t.tap(find.byKey(const ValueKey('lesson-talk-voice')));
+    await _frames(t, 2);
+    expect(fake.stopped, greaterThan(0));
     expect(t.takeException(), isNull);
   });
 
