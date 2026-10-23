@@ -4,6 +4,10 @@
 最低限の **今日やること・復習・学習ステータス・設定・アカウント** だけを入れた別アプリ。
 
 - Web：`https://tsuzuri-quest-v2.web.app/light/`（フル版と同じサイトの `/light/`）
+- ホーム画面に別のアプリとして置くとき：`https://tsuzuri-quest-v2.firebaseapp.com/light/`
+  （フル版を web.app でホーム画面に追加していると、同じサイトの `/light/` はフル版の中で開いてしまう。
+  firebaseapp.com は同じ公開内容の別のアドレスなので、別のアプリとして追加できる。保存場所はフル版と別になるので、
+  Google でログインして記録をそろえる）
 - ソース：`tsuzuri_light/`（Flutter アプリ。フル版 `rpg_game_app` の画面・保存・同期を部品として使う）
 
 ## 軽くしているところ

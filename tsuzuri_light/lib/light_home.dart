@@ -8,6 +8,20 @@ import 'package:url_launcher/url_launcher.dart';
 
 import 'light_pages.dart' deferred as pages;
 
+/// フル版のつづりクエストのサイト
+const fullAppHost = 'tsuzuri-quest-v2.web.app';
+
+/// フル版を開くアドレス。Light を別のアドレス（firebaseapp.com）で開いていても、フル版はいつものサイトで開く
+Uri get fullAppUrl => Uri.base.host.endsWith('firebaseapp.com')
+    ? Uri.https(fullAppHost, '/')
+    : Uri.base.resolve('/');
+
+/// フル版と同じ保存場所を使っているか（Web で同じサイトのとき）。
+/// Light をホーム画面に別のアプリとして置くために firebaseapp.com で開いたときや、
+/// Android 版では保存場所が別なので、Google でログインして記録をそろえる
+bool get sharesStorageWithFull =>
+    kIsWeb && !Uri.base.host.endsWith('firebaseapp.com');
+
 /// 画面のプログラムを読みこんでから開く（はじめて開くときだけ少し待つ）
 Future<void> openPage(BuildContext context, Widget Function() page) async {
   await pages.loadLibrary();
@@ -125,10 +139,8 @@ class LightHome extends StatelessWidget {
                 const SizedBox(height: 12),
                 TextButton.icon(
                   key: const ValueKey('light-full'),
-                  onPressed: () => launchUrl(
-                    Uri.base.resolve('/'),
-                    webOnlyWindowName: '_self',
-                  ),
+                  onPressed: () =>
+                      launchUrl(fullAppUrl, webOnlyWindowName: '_self'),
                   icon: const Icon(Icons.open_in_new, size: 18),
                   label: const Text('冒険もできる「つづりクエスト」を開く（記録は同じ）'),
                 ),
@@ -189,7 +201,9 @@ class _AccountRow extends StatelessWidget {
             subtitle: Text(
               linked
                   ? 'つづりクエストと同じ記録（自動で同期中）'
-                  : 'この端末ではつづりクエストと同じ記録。Google でログインすると別の端末・アプリとも同期',
+                  : sharesStorageWithFull
+                  ? 'この端末ではつづりクエストと同じ記録。Google でログインすると別の端末・アプリとも同期'
+                  : 'Google でログインすると、つづりクエストと同じ記録になります（ログインするまではこのアプリの中だけ）',
               style: const TextStyle(fontSize: 12),
             ),
             trailing: const Icon(Icons.chevron_right),
