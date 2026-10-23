@@ -4,6 +4,7 @@ import 'package:rpg_game/rpg_game.dart';
 import 'package:rpg_game_app/app/services.dart';
 import 'package:rpg_game_app/app/theme.dart';
 import 'package:rpg_game_app/art/paper.dart';
+import 'package:rpg_game_app/cloud/sync_status.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'light_pages.dart' deferred as pages;
@@ -188,27 +189,50 @@ class _AccountRow extends StatelessWidget {
       stream: services.profiles.watch(),
       builder: (context, snap) {
         final p = snap.data ?? services.profiles.load();
-        final linked = p.isGoogleLinked;
-        return Card(
-          margin: EdgeInsets.zero,
-          child: ListTile(
-            key: const ValueKey('light-account'),
-            leading: Icon(
-              linked ? Icons.cloud_done_outlined : Icons.cloud_off_outlined,
-              color: linked ? TsuzuriColors.correct : TsuzuriColors.inkSoft,
-            ),
-            title: Text(p.displayName, style: serif(15)),
-            subtitle: Text(
-              linked
-                  ? 'つづりクエストと同じ記録（自動で同期中）'
-                  : sharesStorageWithFull
-                  ? 'この端末ではつづりクエストと同じ記録。Google でログインすると別の端末・アプリとも同期'
-                  : 'Google でログインすると、つづりクエストと同じ記録になります（ログインするまではこのアプリの中だけ）',
-              style: const TextStyle(fontSize: 12),
-            ),
-            trailing: const Icon(Icons.chevron_right),
-            onTap: () => openPage(context, () => pages.account()),
-          ),
+        return ValueListenableBuilder<SyncStatus>(
+          valueListenable: syncStatus,
+          builder: (context, s, _) {
+            // 本当にログインしているか・問題が起きていないかを、同期のようすから出す
+            final linked = s.email != null;
+            final problem = s.error;
+            final String text;
+            if (problem != null) {
+              text = '同期の問題：$problem（タップでくわしく・今すぐ同期）';
+            } else if (linked) {
+              text = '${s.email} で同期中（つづりクエストと同じ記録）';
+            } else if (s.connected == null) {
+              text = 'クラウドにつないでいます…';
+            } else if (sharesStorageWithFull) {
+              text = 'この端末ではつづりクエストと同じ記録。Google でログインすると別の端末・アプリとも同期';
+            } else {
+              text = 'Google でログインすると、つづりクエストと同じ記録になります（ログインするまではこのアプリの中だけ）';
+            }
+            final good = linked && problem == null;
+            return Card(
+              margin: EdgeInsets.zero,
+              child: ListTile(
+                key: const ValueKey('light-account'),
+                leading: Icon(
+                  good ? Icons.cloud_done_outlined : Icons.cloud_off_outlined,
+                  color: problem != null
+                      ? TsuzuriColors.wrong
+                      : good
+                      ? TsuzuriColors.correct
+                      : TsuzuriColors.inkSoft,
+                ),
+                title: Text(p.displayName, style: serif(15)),
+                subtitle: Text(
+                  text,
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: problem != null ? TsuzuriColors.wrong : null,
+                  ),
+                ),
+                trailing: const Icon(Icons.chevron_right),
+                onTap: () => openPage(context, () => pages.account()),
+              ),
+            );
+          },
         );
       },
     );

@@ -13,6 +13,7 @@ import '../firebase_options.dart';
 import '../study/personal_books.dart';
 import '../study/school_lesson_store.dart';
 import '../vocab/vocab_store.dart';
+import 'sync_status.dart';
 import 'vocab_cloud_sync.dart';
 
 /// 進行状況とプロフィールを Firestore と同期する。
@@ -78,6 +79,7 @@ class CloudSync {
       );
     } catch (e) {
       debugPrint('Firebase を使わずに起動します: $e');
+      syncConnected(false, error: e);
       return null;
     }
     final sync = CloudSync._(
@@ -113,7 +115,20 @@ class CloudSync {
       // ログインが切れていたら、登録していない表示にもどす
       await profiles.replaceLocal(profiles.load().copyWith(unlinkGoogle: true));
     }
+    syncConnected(true);
+    instance = sync;
     return sync;
+  }
+
+  /// 動いている同期（アカウント画面の「今すぐ同期」が使う）
+  static CloudSync? instance;
+
+  /// 今すぐ同期する：たまっている分を送り、クラウドの記録をまぜる
+  Future<void> syncNow() async {
+    syncClearError();
+    await _vocab.flush();
+    _lastRefresh = DateTime.fromMillisecondsSinceEpoch(0);
+    await pull();
   }
 
   String? get _uid => _auth.currentUser?.uid;
@@ -138,6 +153,7 @@ class CloudSync {
 
   /// ログインした人の記録の変化を受け取る（ログアウトしたら止める）
   void _listen(User? user) {
+    syncSignedIn(user == null ? null : (user.email ?? 'ログイン中'));
     if (user?.uid == _listening) return;
     for (final s in _subs) {
       unawaited(s.cancel());
@@ -156,9 +172,10 @@ class CloudSync {
           if (snap.metadata.hasPendingWrites || data == null) return;
           unawaited(
             apply(_plain(data))
-                .catchError((Object e) => debugPrint('クラウドの変化を反映できませんでした: $e')),
+                .then((_) => syncReceived())
+                .catchError((Object e) => syncError('受けとった記録の反映', e)),
           );
-        }, onError: (Object e) => debugPrint('クラウドの変化を受け取れません: $e')),
+        }, onError: (Object e) => syncError('記録の受けとり（$path）', e)),
       );
     }
 
@@ -180,11 +197,10 @@ class CloudSync {
             unawaited(
               _vocab
                   .apply(VocabStore.of(_books), all, changed: changed)
-                  .catchError(
-                    (Object e) => debugPrint('単語帳の変化を反映できませんでした: $e'),
-                  ),
+                  .then((_) => syncReceived())
+                  .catchError((Object e) => syncError('単語帳の反映', e)),
             );
-          }, onError: (Object e) => debugPrint('単語帳の変化を受け取れません: $e')),
+          }, onError: (Object e) => syncError('単語帳の受けとり', e)),
     );
     watch(RpgFirestorePaths.progressDoc(uid), _applyProgress);
     watch(RpgFirestorePaths.learningDoc(uid), _applyLearning);
@@ -312,12 +328,13 @@ class CloudSync {
           }
         } catch (e) {
           // 授業の記録の置き場所をまだ許可していないクラウドでも、ほかは続ける
-          debugPrint('クラウドの記録（$path）を読めませんでした: $e');
+          syncError('記録の読みこみ', e);
         }
       }
       await _vocab.pull(VocabStore.of(_books));
+      syncPulled();
     } catch (e) {
-      debugPrint('クラウドの記録を読み込めませんでした: $e');
+      syncError('クラウドの記録の読みこみ', e);
     }
   }
 
@@ -352,7 +369,8 @@ class CloudSync {
       _db
           .doc(RpgFirestorePaths.progressDoc(uid))
           .set({...progress.toMap(), 'updatedAt': FieldValue.serverTimestamp()})
-          .catchError((Object e) => debugPrint('クラウドに保存できませんでした: $e')),
+          .then((_) => syncSent())
+          .catchError((Object e) => syncError('クラウドへの保存', e)),
     );
   }
 
@@ -365,7 +383,8 @@ class CloudSync {
       _db
           .doc(RpgFirestorePaths.profileDoc(uid))
           .set({...profile.toMap(), 'updatedAt': FieldValue.serverTimestamp()})
-          .catchError((Object e) => debugPrint('クラウドに保存できませんでした: $e')),
+          .then((_) => syncSent())
+          .catchError((Object e) => syncError('クラウドへの保存', e)),
     );
   }
 
@@ -379,7 +398,8 @@ class CloudSync {
       _db
           .doc(doc(uid))
           .set({...data, 'updatedAt': FieldValue.serverTimestamp()})
-          .catchError((Object e) => debugPrint('クラウドに保存できませんでした: $e')),
+          .then((_) => syncSent())
+          .catchError((Object e) => syncError('クラウドへの保存', e)),
     );
   }
 

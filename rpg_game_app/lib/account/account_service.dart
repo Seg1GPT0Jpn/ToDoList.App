@@ -93,3 +93,45 @@ class _SetupNeededDialog extends StatelessWidget {
     );
   }
 }
+
+/// クラウドの準備がまだ終わっていないとき（通信が遅い・起動を待たせないため）。
+///
+/// 準備ができたら本物のログインにまかせる。ログインボタンを押したときにまだなら、
+/// 準備が終わるのを少し待つ。つながらなければ、そのことを伝える。
+class PendingAccountService implements AccountService {
+  PendingAccountService(this.ready) {
+    ready.then((a) => _inner = a, onError: (_) => null);
+  }
+
+  /// 準備ができたときの本物のログイン（つながらなければ null）
+  final Future<AccountService?> ready;
+  AccountService? _inner;
+
+  Future<AccountService?> _wait() async {
+    if (_inner != null) return _inner;
+    try {
+      return await ready.timeout(const Duration(seconds: 30));
+    } catch (_) {
+      return null;
+    }
+  }
+
+  @override
+  bool get isReal => _inner?.isReal ?? true;
+
+  @override
+  Future<GoogleAccount?> signInWithGoogle(BuildContext context) async {
+    final messenger = ScaffoldMessenger.of(context);
+    final a = await _wait();
+    if (a == null || !context.mounted) {
+      messenger.showSnackBar(
+        const SnackBar(content: Text('クラウドにつながりません。インターネットを確かめて、もう一度ためしてください')),
+      );
+      return null;
+    }
+    return a.signInWithGoogle(context);
+  }
+
+  @override
+  Future<void> signOut() async => (await _wait())?.signOut();
+}

@@ -67,6 +67,8 @@ void main() {
       300,
       scrollable: find.byType(Scrollable).first,
     );
+    await t.ensureVisible(find.byKey(const ValueKey('tsuzuri-connect')));
+    await t.pump(const Duration(milliseconds: 200));
     await t.tap(find.byKey(const ValueKey('tsuzuri-connect')));
     await _settle(t);
     expect(find.text('つないでいるアカウント：student@example.com'), findsOneWidget);

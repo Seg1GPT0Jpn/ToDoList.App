@@ -63,28 +63,28 @@ Future<void> main() async {
   settings.addListener(() => music.applySettings(settings.value));
   // Firebase の設定があればクラウドと同期する。なければ端末の中だけで動く
   final personalBooks = PersonalBooks(prefs);
-  // 通信が遅い・つながらないときは待たずに始める（記録は端末に残り、次に開いたときに同期する）
-  final cloud =
-      await CloudSync.start(
-        progress: progress,
-        profiles: profiles,
-        meta: meta,
-        books: personalBooks,
-      ).timeout(
-        const Duration(seconds: 8),
-        onTimeout: () {
-          debugPrint('クラウドにつながらないので、端末の中だけで始めます');
-          return null;
-        },
-      );
+  // 通信が遅い・つながらないときは待たずに始める（記録は端末に残り、つながりしだい同期する）
+  final cloudReady = CloudSync.start(
+    progress: progress,
+    profiles: profiles,
+    meta: meta,
+    books: personalBooks,
+  );
+  final cloud = await cloudReady.timeout(
+    const Duration(seconds: 8),
+    onTimeout: () {
+      debugPrint('クラウドの準備を待たずに始めます');
+      return null;
+    },
+  );
   // 同じ端末のつづりクエストLight（Web は同じブラウザのほかのタブ）と記録をそろえる
   SameDeviceSync(
     prefs: prefs,
     meta: meta,
     progress: progress,
     books: personalBooks,
-    onResume: cloud?.refresh,
-    onPause: cloud?.flush,
+    onResume: () async => CloudSync.instance?.refresh(),
+    onPause: () async => CloudSync.instance?.flush(),
   ).start();
   if (cloud != null) {
     // 問題の報告は、ログインしていればクラウド（question_reports）にも送る
@@ -121,9 +121,14 @@ Future<void> main() async {
       personalBooks: personalBooks,
       examWorlds: ExamWorldStore(prefs),
       profiles: profiles,
-      account: cloud == null
-          ? MockAccountService()
-          : FirebaseAccountService(cloud),
+      account: cloud != null
+          ? FirebaseAccountService(cloud)
+          // まだつながっていなければ、つながりしだい本物のログインを使う
+          : PendingAccountService(
+              cloudReady.then(
+                (c) => c == null ? null : FirebaseAccountService(c),
+              ),
+            ),
       purchaseService: purchaseService,
       versusRooms: cloud == null
           ? null

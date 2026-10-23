@@ -115,24 +115,32 @@ class _LightRootState extends State<LightRoot> {
     SilentAudio(),
     widget.stores.settings.value,
   );
-  AccountService _account = MockAccountService();
+  late AccountService _account;
   ClassroomBackend? _classrooms;
 
   @override
   void initState() {
     super.initState();
     final connect = widget.connect;
-    if (connect == null) return;
+    if (connect == null) {
+      _account = MockAccountService();
+      return;
+    }
+    // クラウドの準備ができるまでにログインを押されたら、準備ができるのを待ってからログインする
+    final account = Completer<AccountService?>();
+    _account = PendingAccountService(account.future);
     // ホームを描いてから、クラウドの部品を読みこむ
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       try {
-        final c = await connect().timeout(const Duration(seconds: 20));
+        final c = await connect().timeout(const Duration(seconds: 30));
+        account.complete(c?.account);
         if (c == null || !mounted) return;
         setState(() {
           _account = c.account;
           _classrooms = c.classrooms;
         });
       } catch (e) {
+        if (!account.isCompleted) account.complete(null);
         debugPrint('クラウドにつながらないので、端末の中だけで続けます: $e');
       }
     });

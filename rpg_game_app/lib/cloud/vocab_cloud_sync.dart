@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:flutter/foundation.dart';
 import 'package:rpg_game/rpg_game.dart';
 
 import '../vocab/vocab_store.dart';
+import 'sync_status.dart';
 
 /// 単語帳の学習記録を、Google ログイン中はクラウド（users/{uid}/rpg_vocab）にも保存する。
 ///
@@ -148,8 +148,9 @@ class VocabCloudSync {
         try {
           await write('$bookPrefix$id', data);
           _sent['$bookPrefix$id'] = text;
+          syncSent();
         } catch (err) {
-          debugPrint('単語帳をクラウドに保存できませんでした: $err');
+          syncError('単語帳の保存', err);
         }
       }
     }
@@ -162,8 +163,9 @@ class VocabCloudSync {
         try {
           await write(doc.key, doc.value);
           _sent[doc.key] = text;
+          syncSent();
         } catch (err) {
-          debugPrint('単語帳の記録をクラウドに保存できませんでした: $err');
+          syncError('単語帳の記録の保存', err);
         }
       }
     }
@@ -175,7 +177,7 @@ class VocabCloudSync {
     try {
       all = await readAll();
     } catch (err) {
-      debugPrint('単語帳の記録をクラウドから読めませんでした: $err');
+      syncError('単語帳の記録の読みこみ', err);
       return;
     }
     await apply(store, all, first: true);
