@@ -1,0 +1,344 @@
+{
+  "setId": "social_pol_06",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_pol06_001",
+      "unit": "social.pol.politics.local.principle",
+      "category": "knowledge",
+      "prompt": "「地方自治は民主主義の学校」という言葉を残した人物は？",
+      "choices": [
+        "ロック",
+        "リンカン",
+        "ルソー",
+        "ブライス"
+      ],
+      "answerIndex": 3,
+      "explanation": "住民が身近な政治に参加することで、民主主義を学ぶという意味。"
+    },
+    {
+      "id": "soc_pol06_002",
+      "unit": "social.pol.politics.local.principle",
+      "category": "knowledge",
+      "prompt": "地域の住民が、自分たちの意思で地域の政治を行う原則は？",
+      "choices": [
+        "住民自治",
+        "三権分立",
+        "国民主権",
+        "団体自治"
+      ],
+      "answerIndex": 0,
+      "explanation": "国から独立した地方公共団体が政治を行う原則は団体自治。"
+    },
+    {
+      "id": "soc_pol06_003",
+      "unit": "social.pol.politics.local.principle",
+      "category": "knowledge",
+      "prompt": "地方公共団体が、法律の範囲内で定める独自のきまりは？",
+      "choices": [
+        "政令",
+        "省令",
+        "条例",
+        "判決"
+      ],
+      "answerIndex": 2,
+      "explanation": "地方議会が制定する。"
+    },
+    {
+      "id": "soc_pol06_004",
+      "unit": "social.pol.politics.local.principle",
+      "category": "knowledge",
+      "prompt": "都道府県知事の被選挙権の年齢は？",
+      "choices": [
+        "満 30 歳以上",
+        "満 18 歳以上",
+        "満 20 歳以上",
+        "満 25 歳以上"
+      ],
+      "answerIndex": 0,
+      "explanation": "市町村長と地方議会議員は満 25 歳以上。"
+    },
+    {
+      "id": "soc_pol06_005",
+      "unit": "social.pol.politics.local.principle",
+      "category": "knowledge",
+      "prompt": "住民が首長や議員の解職を求めることができる権利は？",
+      "choices": [
+        "リコール（解職請求）",
+        "レファレンダム",
+        "国民審査",
+        "イニシアティブ"
+      ],
+      "answerIndex": 0,
+      "explanation": "直接請求権の一つ。有権者の 3 分の 1 以上の署名が原則として必要。"
+    },
+    {
+      "id": "soc_pol06_006",
+      "unit": "social.pol.politics.local.petition",
+      "category": "knowledge",
+      "prompt": "条例の制定・改廃の請求に必要な署名数は？",
+      "choices": [
+        "有権者の 3 分の 1 以上",
+        "有権者の 50 分の 1 以上",
+        "有権者の過半数",
+        "有権者の 10 分の 1 以上"
+      ],
+      "answerIndex": 1,
+      "explanation": "請求先は首長。"
+    },
+    {
+      "id": "soc_pol06_007",
+      "unit": "social.pol.politics.local.finance",
+      "category": "knowledge",
+      "prompt": "地方公共団体の間の財政格差を調整するために、国から配分されるお金は？",
+      "choices": [
+        "地方税",
+        "国庫支出金",
+        "地方債",
+        "地方交付税交付金"
+      ],
+      "answerIndex": 3,
+      "explanation": "使い道は自由。国庫支出金は使い道が決められている。"
+    },
+    {
+      "id": "soc_pol06_008",
+      "unit": "social.pol.politics.local",
+      "category": "knowledge",
+      "prompt": "地方公共団体が自主的に集める財源は？",
+      "choices": [
+        "地方税",
+        "地方交付税交付金",
+        "国債",
+        "国庫支出金"
+      ],
+      "answerIndex": 0,
+      "explanation": "自主財源が少ないことが課題（「三割自治」とも言われた）。"
+    },
+    {
+      "id": "soc_pol06_009",
+      "unit": "social.pol.politics.local.petition",
+      "category": "knowledge",
+      "prompt": "特定の問題について、住民の賛否を投票で問う制度は？",
+      "choices": [
+        "住民投票",
+        "リコール",
+        "国民審査",
+        "国民投票"
+      ],
+      "answerIndex": 0,
+      "explanation": "条例にもとづく住民投票は法的な拘束力をもたないことが多い。"
+    },
+    {
+      "id": "soc_pol06_010",
+      "unit": "social.pol.politics.local.finance",
+      "category": "knowledge",
+      "prompt": "国の権限や財源を地方に移し、地方の自主性を高めることを何という？",
+      "choices": [
+        "地方分権",
+        "市町村合併だけ",
+        "中央集権",
+        "規制強化"
+      ],
+      "answerIndex": 0,
+      "explanation": "1999 年に地方分権一括法が成立した。"
+    },
+    {
+      "id": "soc_pol06_011",
+      "unit": "social.pol.politics.local.principle",
+      "category": "thinking",
+      "prompt": "地方自治で、国政より住民の直接参加の制度が多く認められている理由は？",
+      "choices": [
+        "住民が選挙に行かないから",
+        "身近な地域の政治で、住民が直接意思を示しやすいから",
+        "地方には議会がないから",
+        "国政が民主的でないから"
+      ],
+      "answerIndex": 1,
+      "explanation": "直接請求権などが認められている。"
+    },
+    {
+      "id": "soc_pol06_012",
+      "unit": "social.pol.politics.local.principle",
+      "category": "thinking",
+      "prompt": "首長と地方議会の関係として適切なものは？",
+      "choices": [
+        "議会は首長が任命する",
+        "どちらも住民の直接選挙で選ばれる二元代表制で、互いに抑制し合う",
+        "首長は議会が選ぶ",
+        "首長は国が任命する"
+      ],
+      "answerIndex": 1,
+      "explanation": "議会は首長の不信任を議決でき、首長は議会を解散できる。"
+    },
+    {
+      "id": "soc_pol06_013",
+      "unit": "social.pol.politics.local",
+      "category": "knowledge",
+      "prompt": "市町村長の被選挙権の年齢は？",
+      "choices": [
+        "満25歳以上",
+        "満20歳以上",
+        "満30歳以上",
+        "満18歳以上"
+      ],
+      "answerIndex": 0,
+      "explanation": "都道府県知事は満30歳以上。"
+    },
+    {
+      "id": "soc_pol06_014",
+      "unit": "social.pol.politics.local.principle",
+      "category": "knowledge",
+      "prompt": "地方公共団体の首長の任期は？",
+      "choices": [
+        "6年",
+        "3年",
+        "5年",
+        "4年"
+      ],
+      "answerIndex": 3,
+      "explanation": "地方議会の議員の任期も4年。"
+    },
+    {
+      "id": "soc_pol06_015",
+      "unit": "social.pol.politics.local.principle",
+      "category": "knowledge",
+      "prompt": "地方公共団体が国から独立して、自らの意思で政治を行う原則は？",
+      "choices": [
+        "地方分権",
+        "住民自治",
+        "団体自治",
+        "三権分立"
+      ],
+      "answerIndex": 2,
+      "explanation": "住民自治とあわせて「地方自治の本旨」とされる。"
+    },
+    {
+      "id": "soc_pol06_016",
+      "unit": "social.pol.politics.local.principle",
+      "category": "knowledge",
+      "prompt": "首長の解職請求に必要な署名数は、原則として？",
+      "choices": [
+        "有権者の過半数",
+        "有権者の10分の1以上",
+        "有権者の3分の1以上",
+        "有権者の50分の1以上"
+      ],
+      "answerIndex": 2,
+      "explanation": "署名を集めたあと、住民投票で過半数の同意があれば失職する。"
+    },
+    {
+      "id": "soc_pol06_017",
+      "unit": "social.pol.politics.local",
+      "category": "knowledge",
+      "prompt": "住民が監査を請求するとき、請求先となるのは？",
+      "choices": [
+        "首長",
+        "選挙管理委員会",
+        "裁判所",
+        "監査委員"
+      ],
+      "answerIndex": 3,
+      "explanation": "有権者の50分の1以上の署名が必要。"
+    },
+    {
+      "id": "soc_pol06_018",
+      "unit": "social.pol.politics.local.principle",
+      "category": "knowledge",
+      "prompt": "地方議会の解散請求の請求先は？",
+      "choices": [
+        "議長",
+        "首長",
+        "監査委員",
+        "選挙管理委員会"
+      ],
+      "answerIndex": 3,
+      "explanation": "有権者の3分の1以上の署名が必要（原則）。"
+    },
+    {
+      "id": "soc_pol06_019",
+      "unit": "social.pol.politics.local.principle",
+      "category": "knowledge",
+      "prompt": "首長が、議会の議決に異議があるときに審議のやり直しを求めることを何という？",
+      "choices": [
+        "不信任決議",
+        "再議（拒否権）",
+        "解職請求",
+        "国民審査"
+      ],
+      "answerIndex": 1,
+      "explanation": "議会と首長は互いに抑制し合う。"
+    },
+    {
+      "id": "soc_pol06_020",
+      "unit": "social.pol.politics.local.principle",
+      "category": "knowledge",
+      "prompt": "地方議会が首長に対して行える議決は？",
+      "choices": [
+        "弾劾",
+        "罷免",
+        "解散命令",
+        "不信任決議"
+      ],
+      "answerIndex": 3,
+      "explanation": "不信任決議を受けた首長は、議会を解散することもできる。"
+    },
+    {
+      "id": "soc_pol06_021",
+      "unit": "social.pol.politics.local",
+      "category": "knowledge",
+      "prompt": "国から地方公共団体に支払われ、使い道が決められているお金は？",
+      "choices": [
+        "地方交付税交付金",
+        "地方債",
+        "国庫支出金",
+        "地方税"
+      ],
+      "answerIndex": 2,
+      "explanation": "義務教育や道路整備などに使われる。"
+    },
+    {
+      "id": "soc_pol06_022",
+      "unit": "social.pol.politics.local",
+      "category": "knowledge",
+      "prompt": "地方公共団体が借り入れるお金（借金）を何という？",
+      "choices": [
+        "地方税",
+        "交付金",
+        "国債",
+        "地方債"
+      ],
+      "answerIndex": 3,
+      "explanation": "学校や道路などの建設に使われる。"
+    },
+    {
+      "id": "soc_pol06_023",
+      "unit": "social.pol.politics.local.finance",
+      "category": "knowledge",
+      "prompt": "2000年代に進められた、国庫補助負担金・税源移譲・地方交付税を一体で見直した改革は？",
+      "choices": [
+        "三位一体の改革",
+        "構造改革特区",
+        "郵政民営化",
+        "行政改革"
+      ],
+      "answerIndex": 0,
+      "explanation": "地方の財政の自立をめざした。"
+    },
+    {
+      "id": "soc_pol06_024",
+      "unit": "social.pol.politics.local.finance",
+      "category": "thinking",
+      "prompt": "地方財政で、自主財源（地方税など）の割合が低いことの問題として適切なものは？",
+      "choices": [
+        "選挙が行えなくなる",
+        "国の予算が増える",
+        "住民の負担が大きすぎる",
+        "国からのお金にたよることになり、地域の実情に合った政策を進めにくい"
+      ],
+      "answerIndex": 3,
+      "explanation": "財源の多くが国に左右されてしまう。"
+    }
+  ]
+}

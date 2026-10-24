@@ -1,0 +1,784 @@
+{
+  "setId": "math_vector_figure_01",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "math_vector_figure_01_001",
+      "unit": "math.mc.vector.plane.operation",
+      "category": "calculation",
+      "prompt": "a = (2, 3)、b = (1, −1) のとき a + b は？",
+      "choices": [
+        "(2, −3)",
+        "(1, 4)",
+        "(3, 2)",
+        "(3, 4)"
+      ],
+      "answerIndex": 2,
+      "explanation": "成分どうしを足す。"
+    },
+    {
+      "id": "math_vector_figure_01_002",
+      "unit": "math.mc.vector.plane",
+      "category": "calculation",
+      "prompt": "a = (2, 3)、b = (1, −1) のとき a − b は？",
+      "choices": [
+        "(3, 2)",
+        "(1, 4)",
+        "(1, 2)",
+        "(−1, −4)"
+      ],
+      "answerIndex": 1,
+      "explanation": "(2 − 1, 3 − (−1))。"
+    },
+    {
+      "id": "math_vector_figure_01_003",
+      "unit": "math.mc.vector.plane",
+      "category": "calculation",
+      "prompt": "a = (2, 3)、b = (1, −1) のとき 2a + 3b は？",
+      "choices": [
+        "(5, 2)",
+        "(4, 3)",
+        "(7, 3)",
+        "(7, 9)"
+      ],
+      "answerIndex": 2,
+      "explanation": "(4 + 3, 6 − 3)。"
+    },
+    {
+      "id": "math_vector_figure_01_004",
+      "unit": "math.mc.vector.plane.operation",
+      "category": "calculation",
+      "prompt": "a = (3, 4) の大きさ（長さ）は？",
+      "choices": [
+        "5",
+        "√7",
+        "7",
+        "25"
+      ],
+      "answerIndex": 0,
+      "explanation": "√(3² + 4²) = 5。"
+    },
+    {
+      "id": "math_vector_figure_01_005",
+      "unit": "math.mc.vector.plane.inner",
+      "category": "calculation",
+      "prompt": "a = (2, 3)、b = (1, −1) の内積 a·b は？",
+      "choices": [
+        "(2, −3)",
+        "1",
+        "−1",
+        "5"
+      ],
+      "answerIndex": 2,
+      "explanation": "2 × 1 + 3 × (−1) = −1。"
+    },
+    {
+      "id": "math_vector_figure_01_006",
+      "unit": "math.mc.vector.plane.inner",
+      "category": "calculation",
+      "prompt": "a = (1, 2)、b = (3, 4) の内積は？",
+      "choices": [
+        "(3, 8)",
+        "10",
+        "5",
+        "11"
+      ],
+      "answerIndex": 3,
+      "explanation": "1 × 3 + 2 × 4 = 11。"
+    },
+    {
+      "id": "math_vector_figure_01_007",
+      "unit": "math.mc.vector.plane",
+      "category": "calculation",
+      "prompt": "a = (2, k) と b = (3, −6) が垂直になる k は？",
+      "choices": [
+        "−1",
+        "1",
+        "4",
+        "9"
+      ],
+      "answerIndex": 1,
+      "explanation": "a·b = 6 − 6k = 0。"
+    },
+    {
+      "id": "math_vector_figure_01_008",
+      "unit": "math.mc.vector.plane",
+      "category": "calculation",
+      "prompt": "a = (2, k) と b = (3, 6) が平行になる k は？",
+      "choices": [
+        "−1",
+        "1",
+        "4",
+        "9"
+      ],
+      "answerIndex": 2,
+      "explanation": "2 : 3 = k : 6 より k = 4。"
+    },
+    {
+      "id": "math_vector_figure_01_009",
+      "unit": "math.mc.vector.plane.inner",
+      "category": "calculation",
+      "prompt": "a = (1, 0) と b = (1, 1) のなす角は？",
+      "choices": [
+        "30°",
+        "45°",
+        "60°",
+        "90°"
+      ],
+      "answerIndex": 1,
+      "explanation": "cosθ = 1/(1 × √2) = 1/√2。"
+    },
+    {
+      "id": "math_vector_figure_01_010",
+      "unit": "math.mc.vector.plane.inner",
+      "category": "calculation",
+      "prompt": "大きさ 2 と 3 の 2 つのベクトルのなす角が 60° のとき、内積は？",
+      "choices": [
+        "6",
+        "1",
+        "3",
+        "3√3"
+      ],
+      "answerIndex": 2,
+      "explanation": "2 × 3 × cos 60° = 3。"
+    },
+    {
+      "id": "math_vector_figure_01_011",
+      "unit": "math.mc.vector.plane.operation",
+      "category": "calculation",
+      "prompt": "大きさ 2 と 3、内積 3 の 2 つのベクトル a、b について、a + b の大きさは？",
+      "choices": [
+        "√19",
+        "5",
+        "√13",
+        "19"
+      ],
+      "answerIndex": 0,
+      "explanation": "(a + b の大きさ)² = 4 + 2·3 + 9 = 19。"
+    },
+    {
+      "id": "math_vector_figure_01_012",
+      "unit": "math.mc.vector.plane.operation",
+      "category": "calculation",
+      "prompt": "a = (3, 4) と同じ向きの単位ベクトルは？",
+      "choices": [
+        "(4/5, 3/5)",
+        "(1/3, 1/4)",
+        "(3, 4)",
+        "(3/5, 4/5)"
+      ],
+      "answerIndex": 3,
+      "explanation": "大きさ 5 で割る。"
+    },
+    {
+      "id": "math_vector_figure_01_013",
+      "unit": "math.mc.vector.plane",
+      "category": "calculation",
+      "prompt": "A(1, 2)、B(4, 6) のとき、ベクトル AB は？",
+      "choices": [
+        "(−3, −4)",
+        "(4, 3)",
+        "(3, 4)",
+        "(5, 8)"
+      ],
+      "answerIndex": 2,
+      "explanation": "終点 − 始点。"
+    },
+    {
+      "id": "math_vector_figure_01_014",
+      "unit": "math.mc.vector.plane.position",
+      "category": "knowledge",
+      "prompt": "位置ベクトル a、b の点 A、B について、線分 AB の中点の位置ベクトルは？",
+      "choices": [
+        "b − a",
+        "(a + b)/2",
+        "a + b",
+        "(a − b)/2"
+      ],
+      "answerIndex": 1,
+      "explanation": "2 点の平均。"
+    },
+    {
+      "id": "math_vector_figure_01_015",
+      "unit": "math.mc.vector.plane.position",
+      "category": "knowledge",
+      "prompt": "線分 AB を 2 : 1 に内分する点の位置ベクトルは？",
+      "choices": [
+        "(a + b)/3",
+        "(2a + b)/3",
+        "2a − b",
+        "(a + 2b)/3"
+      ],
+      "answerIndex": 3,
+      "explanation": "m : n に内分する点は (na + mb)/(m + n)。"
+    },
+    {
+      "id": "math_vector_figure_01_016",
+      "unit": "math.mc.vector.plane.position",
+      "category": "knowledge",
+      "prompt": "線分 AB を 2 : 1 に外分する点の位置ベクトルは？",
+      "choices": [
+        "(a + 2b)/3",
+        "a − 2b",
+        "2a − b",
+        "−a + 2b"
+      ],
+      "answerIndex": 3,
+      "explanation": "m : n に外分する点は (−na + mb)/(m − n)。"
+    },
+    {
+      "id": "math_vector_figure_01_017",
+      "unit": "math.mc.vector.plane.position",
+      "category": "knowledge",
+      "prompt": "△ABC の重心の位置ベクトルは？",
+      "choices": [
+        "(a + b + c)/3",
+        "(a + b)/2 + c",
+        "(a + b + c)/2",
+        "a + b + c"
+      ],
+      "answerIndex": 0,
+      "explanation": "3 頂点の平均。"
+    },
+    {
+      "id": "math_vector_figure_01_018",
+      "unit": "math.mc.vector.plane.figure",
+      "category": "knowledge",
+      "prompt": "3 点 A、B、C が一直線上にある条件は？",
+      "choices": [
+        "AB と AC が垂直",
+        "AC = k AB となる実数 k がある",
+        "AB·AC = 0",
+        "AB と AC の大きさが等しい"
+      ],
+      "answerIndex": 1,
+      "explanation": "同じ向き（または逆向き）のベクトルの実数倍。"
+    },
+    {
+      "id": "math_vector_figure_01_019",
+      "unit": "math.mc.vector.plane.inner",
+      "category": "knowledge",
+      "prompt": "ベクトル a と自分自身の内積 a·a は？",
+      "choices": [
+        "a の大きさ",
+        "0",
+        "a の大きさの 2 乗",
+        "1"
+      ],
+      "answerIndex": 2,
+      "explanation": "なす角が 0° なので cos 0° = 1。"
+    },
+    {
+      "id": "math_vector_figure_01_020",
+      "unit": "math.mc.vector.plane.operation",
+      "category": "calculation",
+      "prompt": "空間ベクトル (1, 2, 2) の大きさは？",
+      "choices": [
+        "9",
+        "√5",
+        "5",
+        "3"
+      ],
+      "answerIndex": 3,
+      "explanation": "√(1 + 4 + 4) = 3。"
+    },
+    {
+      "id": "math_vector_figure_01_021",
+      "unit": "math.mc.vector.plane.inner",
+      "category": "calculation",
+      "prompt": "空間ベクトル (1, 0, 1) と (0, 1, 1) の内積は？",
+      "choices": [
+        "(0, 0, 1)",
+        "1",
+        "0",
+        "2"
+      ],
+      "answerIndex": 1,
+      "explanation": "0 + 0 + 1 = 1。"
+    },
+    {
+      "id": "math_vector_figure_01_022",
+      "unit": "math.mc.vector.plane",
+      "category": "calculation",
+      "prompt": "図の平行四辺形 ABCD で、AB = a、AD = b のとき、ベクトル AC は？",
+      "choices": [
+        "a + b",
+        "a − b",
+        "b − a",
+        "2a"
+      ],
+      "answerIndex": 0,
+      "explanation": "AC = AB + BC = a + b。",
+      "figure": {
+        "w": 220,
+        "h": 120,
+        "items": [
+          {
+            "poly": [
+              20,
+              100,
+              150,
+              100,
+              200,
+              20,
+              70,
+              20
+            ]
+          },
+          {
+            "arrow": [
+              20,
+              100,
+              150,
+              100
+            ]
+          },
+          {
+            "arrow": [
+              20,
+              100,
+              70,
+              20
+            ]
+          },
+          {
+            "line": [
+              20,
+              100,
+              200,
+              20
+            ],
+            "dash": true
+          },
+          {
+            "text": "A",
+            "at": [
+              12,
+              108
+            ]
+          },
+          {
+            "text": "B",
+            "at": [
+              158,
+              110
+            ]
+          },
+          {
+            "text": "C",
+            "at": [
+              208,
+              14
+            ]
+          },
+          {
+            "text": "D",
+            "at": [
+              62,
+              14
+            ]
+          },
+          {
+            "text": "a",
+            "at": [
+              85,
+              112
+            ]
+          },
+          {
+            "text": "b",
+            "at": [
+              36,
+              55
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "math_vector_figure_01_023",
+      "unit": "math.mc.vector.plane",
+      "category": "calculation",
+      "prompt": "図の平行四辺形 ABCD で、AB = a、AD = b のとき、ベクトル BD は？",
+      "choices": [
+        "−a − b",
+        "b − a",
+        "a − b",
+        "a + b"
+      ],
+      "answerIndex": 1,
+      "explanation": "BD = AD − AB。",
+      "figure": {
+        "w": 220,
+        "h": 120,
+        "items": [
+          {
+            "poly": [
+              20,
+              100,
+              150,
+              100,
+              200,
+              20,
+              70,
+              20
+            ]
+          },
+          {
+            "arrow": [
+              20,
+              100,
+              150,
+              100
+            ]
+          },
+          {
+            "arrow": [
+              20,
+              100,
+              70,
+              20
+            ]
+          },
+          {
+            "line": [
+              20,
+              100,
+              200,
+              20
+            ],
+            "dash": true
+          },
+          {
+            "text": "A",
+            "at": [
+              12,
+              108
+            ]
+          },
+          {
+            "text": "B",
+            "at": [
+              158,
+              110
+            ]
+          },
+          {
+            "text": "C",
+            "at": [
+              208,
+              14
+            ]
+          },
+          {
+            "text": "D",
+            "at": [
+              62,
+              14
+            ]
+          },
+          {
+            "text": "a",
+            "at": [
+              85,
+              112
+            ]
+          },
+          {
+            "text": "b",
+            "at": [
+              36,
+              55
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "math_vector_figure_01_024",
+      "unit": "math.mc.vector.plane",
+      "category": "calculation",
+      "prompt": "図の正六角形 ABCDEF（中心 O）で OA = a、OB = b のとき、OC は？",
+      "choices": [
+        "b − a",
+        "−a",
+        "a + b",
+        "a − b"
+      ],
+      "answerIndex": 0,
+      "explanation": "OC = AB = OB − OA。",
+      "figure": {
+        "w": 200,
+        "h": 180,
+        "items": [
+          {
+            "poly": [
+              160,
+              90,
+              130,
+              38,
+              70,
+              38,
+              40,
+              90,
+              70,
+              142,
+              130,
+              142
+            ]
+          },
+          {
+            "dot": [
+              100,
+              90
+            ]
+          },
+          {
+            "text": "O",
+            "at": [
+              100,
+              102
+            ]
+          },
+          {
+            "arrow": [
+              100,
+              90,
+              160,
+              90
+            ]
+          },
+          {
+            "arrow": [
+              100,
+              90,
+              130,
+              38
+            ]
+          },
+          {
+            "text": "A",
+            "at": [
+              172,
+              90
+            ]
+          },
+          {
+            "text": "B",
+            "at": [
+              136,
+              28
+            ]
+          },
+          {
+            "text": "C",
+            "at": [
+              64,
+              28
+            ]
+          },
+          {
+            "text": "D",
+            "at": [
+              28,
+              90
+            ]
+          },
+          {
+            "text": "E",
+            "at": [
+              64,
+              152
+            ]
+          },
+          {
+            "text": "F",
+            "at": [
+              136,
+              152
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "math_vector_figure_01_025",
+      "unit": "math.mc.vector.plane",
+      "category": "calculation",
+      "prompt": "図の正六角形 ABCDEF（中心 O）で OA = a、OB = b のとき、OD は？",
+      "choices": [
+        "b − a",
+        "−b",
+        "a − b",
+        "−a"
+      ],
+      "answerIndex": 3,
+      "explanation": "D は A の反対側にある。",
+      "figure": {
+        "w": 200,
+        "h": 180,
+        "items": [
+          {
+            "poly": [
+              160,
+              90,
+              130,
+              38,
+              70,
+              38,
+              40,
+              90,
+              70,
+              142,
+              130,
+              142
+            ]
+          },
+          {
+            "dot": [
+              100,
+              90
+            ]
+          },
+          {
+            "text": "O",
+            "at": [
+              100,
+              102
+            ]
+          },
+          {
+            "arrow": [
+              100,
+              90,
+              160,
+              90
+            ]
+          },
+          {
+            "arrow": [
+              100,
+              90,
+              130,
+              38
+            ]
+          },
+          {
+            "text": "A",
+            "at": [
+              172,
+              90
+            ]
+          },
+          {
+            "text": "B",
+            "at": [
+              136,
+              28
+            ]
+          },
+          {
+            "text": "C",
+            "at": [
+              64,
+              28
+            ]
+          },
+          {
+            "text": "D",
+            "at": [
+              28,
+              90
+            ]
+          },
+          {
+            "text": "E",
+            "at": [
+              64,
+              152
+            ]
+          },
+          {
+            "text": "F",
+            "at": [
+              136,
+              152
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "math_vector_figure_01_026",
+      "unit": "math.mc.vector.plane.figure",
+      "category": "calculation",
+      "prompt": "a = (1, 2)、b = (3, 1) を 2 辺とする平行四辺形の面積は？",
+      "choices": [
+        "1",
+        "√50",
+        "5",
+        "7"
+      ],
+      "answerIndex": 2,
+      "explanation": "面積 = (1 × 1 − 2 × 3) の絶対値 = 5。"
+    },
+    {
+      "id": "math_vector_figure_01_027",
+      "unit": "math.mc.vector.plane.equation",
+      "category": "knowledge",
+      "prompt": "点 A を通り、方向ベクトル u の直線のベクトル方程式は？",
+      "choices": [
+        "p = a + tu",
+        "p = tu",
+        "p = a − u",
+        "p = a·u"
+      ],
+      "answerIndex": 0,
+      "explanation": "t が実数全体を動くとき、点 P は直線をえがく。"
+    },
+    {
+      "id": "math_vector_figure_01_028",
+      "unit": "math.mc.vector.plane.equation",
+      "category": "knowledge",
+      "prompt": "中心 C、半径 r の円のベクトル方程式は？",
+      "choices": [
+        "p = rc",
+        "p − c の大きさ = r",
+        "p·c = r",
+        "p = c + r"
+      ],
+      "answerIndex": 1,
+      "explanation": "点 P と中心 C の距離が r。"
+    },
+    {
+      "id": "math_vector_figure_01_029",
+      "unit": "math.mc.vector.plane.operation",
+      "category": "calculation",
+      "prompt": "a = (2, 1)、b = (−1, 3) のとき a − b の大きさは？",
+      "choices": [
+        "5",
+        "√5",
+        "13",
+        "√13"
+      ],
+      "answerIndex": 3,
+      "explanation": "a − b = (3, −2)。√(9 + 4) = √13。"
+    },
+    {
+      "id": "math_vector_figure_01_030",
+      "unit": "math.mc.vector.plane.operation",
+      "category": "calculation",
+      "prompt": "零ベクトルの大きさは？",
+      "choices": [
+        "無限大",
+        "1",
+        "定まらない",
+        "0"
+      ],
+      "answerIndex": 3,
+      "explanation": "大きさ 0 で、向きは考えない。"
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+# 英語の学習体系。ゲームでは「英語」1科目として扱い、
+# 英語コミュニケーションⅠ〜Ⅲ・論理・表現Ⅰ〜Ⅲの内容を分野で細かく分ける。
+@subject english|英語|英語ワールド|ref=高等学校学習指導要領（平成30年告示）第2章第8節 外国語（英語コミュニケーションⅠ〜Ⅲ・論理・表現Ⅰ〜Ⅲ）
+course eng|英語|grade=1-3|game=英語の道|desc=語彙・文法・構文・読解・リスニング・表現・英作文を1つの道で学ぶ|ref=英語コミュニケーションⅠ〜Ⅲ・論理・表現Ⅰ〜Ⅲ
+  field vocab|語彙|ref=英語コミュニケーションⅠ〜Ⅲ（語彙）
+    unit basic|基礎語彙|grade=1|desc=中学〜高1で使う基本の単語
+      sub meaning|基本単語の意味|kw=意味
+      sub pos|品詞と語形|kw=品詞,名詞,動詞,形容詞,副詞
+    unit standard|標準語彙|grade=2|pre=english.eng.vocab.basic|desc=共通テスト・標準的な入試に必要な単語
+      sub meaning|標準単語の意味|kw=意味
+      sub derivation|派生語・接頭辞・接尾辞|kw=派生,接頭辞,接尾辞,un-,-ness
+    unit advanced|難関語彙|grade=3|pre=english.eng.vocab.standard|desc=難関大学・最難関大学の長文で出る単語
+      sub meaning|難関単語の意味|kw=意味
+      sub abstract|抽象語・学術語|kw=抽象,概念
+    unit idiom|熟語・句動詞|desc=句動詞・慣用表現・コロケーション
+      sub phrasal|句動詞|kw=句動詞,look,take,get,put,come,give
+      sub idiom|慣用表現|kw=慣用,熟語,～
+      sub collocation|コロケーション（語の組み合わせ）|kw=コロケーション,make,do
+    unit synonym|類義語・反意語・語法の区別|pre=english.eng.vocab.standard|desc=似た単語の使い分け
+      sub synonym|類義語の使い分け|kw=類義,使い分け,ちがい
+      sub usage|動詞の語法|kw=語法,SVO,suggest,remind
+  field grammar|文法|ref=論理・表現Ⅰ〜Ⅲ（文法事項）
+    unit sentence|文型と動詞|grade=1|desc=5文型・自動詞と他動詞
+      sub pattern|5文型|kw=文型,SVOC,SVOO,第
+      sub verb|自動詞と他動詞|kw=自動詞,他動詞,lie,lay,raise,rise
+    unit tense|時制|grade=1|pre=english.eng.grammar.sentence|desc=現在・過去・未来・進行形・完了形
+      sub simple|現在形・過去形・未来|kw=現在形,過去形,will,未来
+      sub progressive|進行形|kw=進行
+      sub perfect|完了形|kw=完了,have been,had,現在完了,過去完了
+      sub agreement|時制の一致と時・条件の副詞節|kw=時制の一致,副詞節,when,if
+    unit auxiliary|助動詞|grade=1|pre=english.eng.grammar.tense|desc=can・may・must・should・助動詞＋完了形
+      sub basic|助動詞の基本|kw=can,may,must,should,will
+      sub perfect|助動詞＋have＋過去分詞|kw=have p.p.,should have,must have,may have,cannot have
+      sub idiom|助動詞を使った慣用表現|kw=had better,would rather,may well,used to
+    unit passive|受動態|grade=1|pre=english.eng.grammar.tense|desc=受動態の形と注意点
+      sub basic|受動態の基本|kw=受動態,受け身,be p.p.
+      sub advanced|注意すべき受動態|kw=by以外,群動詞,完了形の受動態,進行形の受動態
+    unit infinitive|不定詞|grade=1|pre=english.eng.grammar.sentence|desc=名詞・形容詞・副詞的用法と構文
+      sub usage|不定詞の3用法|kw=名詞的,形容詞的,副詞的,用法
+      sub subject|意味上の主語・完了不定詞|kw=意味上の主語,for,of,to have
+      sub construction|不定詞を使った構文|kw=too,enough,in order to,so as to,seem to
+      sub causative|使役動詞・知覚動詞と原形不定詞|kw=使役,知覚,make,let,have,原形
+    unit gerund|動名詞|grade=1|pre=english.eng.grammar.infinitive|desc=動名詞の働き・不定詞との使い分け
+      sub usage|動名詞の働き|kw=動名詞
+      sub contrast|動名詞と不定詞の使い分け|kw=remember,forget,stop,try,regret
+      sub idiom|動名詞を使った慣用表現|kw=look forward to,be used to,There is no,feel like,cannot help
+    unit participle|分詞|grade=2|pre=english.eng.grammar.gerund|desc=分詞の形容詞的用法・補語
+      sub modifier|名詞を修飾する分詞|kw=分詞,修飾,現在分詞,過去分詞
+      sub complement|補語になる分詞|kw=補語,SVOC,感情
+    unit construction|分詞構文|grade=2|pre=english.eng.grammar.participle|desc=分詞構文の意味と形
+      sub basic|分詞構文の基本|kw=分詞構文
+      sub advanced|独立分詞構文・with構文|kw=独立分詞構文,with,完了形の分詞構文,being
+    unit comparison|比較|grade=2|desc=原級・比較級・最上級と比較の構文
+      sub basic|比較の基本|kw=比較級,最上級,原級,as
+      sub idiom|比較の慣用表現|kw=the 比較級,no more,no less,not so much,倍
+      sub latin|ラテン比較・最上級の書きかえ|kw=superior,prefer,書きかえ
+    unit relative|関係詞|grade=2|pre=english.eng.grammar.sentence|desc=関係代名詞・関係副詞・what・複合関係詞
+      sub pronoun|関係代名詞|kw=関係代名詞,who,which,that,whose
+      sub adverb|関係副詞|kw=関係副詞,where,when,why,how
+      sub nonrestrictive|非制限用法と前置詞＋関係代名詞|kw=非制限,カンマ,前置詞＋関係代名詞,in which
+      sub what|関係代名詞 what|kw=what
+      sub compound|複合関係詞|kw=whoever,whatever,however,wherever
+    unit subjunctive|仮定法|grade=2|pre=english.eng.grammar.tense|desc=仮定法過去・過去完了・いろいろな仮定法
+      sub past|仮定法過去|kw=仮定法過去,If I were
+      sub pastperfect|仮定法過去完了・混合型|kw=仮定法過去完了,had p.p.,混合
+      sub wish|I wish・as if・It is time|kw=wish,as if,It is time,If only
+      sub advanced|if の省略・without・倒置の仮定法|kw=Without,But for,倒置,Were,Had,should
+    unit conj|接続詞と節|grade=2|desc=等位・従位接続詞・名詞節
+      sub coordinate|等位接続詞と相関表現|kw=both,either,neither,not only
+      sub subordinate|従位接続詞|kw=although,though,unless,while,as long as
+      sub noun|名詞節（that・whether・疑問詞）|kw=名詞節,whether,that節
+    unit pronoun|名詞・代名詞・冠詞|grade=1|desc=可算・不可算・代名詞・冠詞
+      sub noun|可算名詞と不可算名詞|kw=可算,不可算,furniture,information
+      sub pronoun|代名詞の用法|kw=代名詞,one,another,the other,others
+      sub article|冠詞|kw=冠詞,a,the
+    unit adjadv|形容詞・副詞・前置詞|grade=1|desc=修飾語と前置詞の使い分け
+      sub adjective|形容詞の用法|kw=形容詞,many,much,few,little
+      sub adverb|副詞の用法|kw=副詞,already,yet,still,hardly
+      sub preposition|前置詞|kw=前置詞,in,on,at,by,until
+    unit negation|否定|grade=3|desc=部分否定・二重否定・否定の慣用表現
+      sub partial|部分否定と全体否定|kw=部分否定,not all,not always
+      sub idiom|否定の慣用表現|kw=far from,anything but,by no means,cannot ~ too
+  field structure|文構造・構文|ref=英語コミュニケーションⅡ・Ⅲ／論理・表現Ⅱ・Ⅲ
+    unit special|特殊な構文|grade=3|pre=english.eng.grammar.relative|desc=倒置・強調・省略・挿入・同格
+      sub inversion|倒置|kw=倒置,Never,Little,Only
+      sub emphasis|強調構文|kw=強調,It is ~ that
+      sub ellipsis|省略|kw=省略
+      sub apposition|挿入と同格|kw=挿入,同格,the fact that
+    unit complex|複雑な文構造|grade=3|pre=english.eng.structure.special|desc=長い主語・入れ子の節・無生物主語
+      sub subject|長い主語と形式主語・形式目的語|kw=形式主語,形式目的語,it
+      sub nested|入れ子になった節|kw=節,入れ子
+      sub inanimate|無生物主語|kw=無生物主語,enable,prevent,cause
+    unit order|語順整序（並べ替え）|desc=語句を正しく並べる
+      sub order|並べ替え|kw=並べ,並び替え,並べかえ
+  field reading|読解|ref=英語コミュニケーションⅠ〜Ⅲ（読むこと）
+    unit intensive|精読|grade=2|pre=english.eng.structure.complex|desc=1文の構造を正確に読む・和訳
+      sub structure|構文をとって訳す|kw=訳,和訳,意味として
+      sub reference|指示語・代名詞の指すもの|kw=指す,指示語,it,this
+    unit passage|長文読解|grade=2|desc=主旨・内容一致・段落の役割
+      sub detail|内容一致と細部の読み取り|kw=内容,合っている,本文
+      sub main|主旨・タイトル|kw=主旨,要旨,タイトル,最も適切
+      sub logic|段落構成と論理展開|kw=段落,論理,however,therefore,具体例
+      sub inference|推論|kw=推測,推論,意図
+    unit practical|資料・実用文の読解|grade=1|desc=広告・メール・グラフ・複数の資料
+      sub notice|広告・掲示・メール|kw=広告,掲示,メール,ウェブ
+      sub chart|図表・グラフを含む文章|kw=グラフ,表,図
+      sub multiple|複数の資料の比較|kw=複数,比較,2つの文章
+  field listening|リスニング|ref=英語コミュニケーションⅠ〜Ⅲ（聞くこと）
+    unit listening|リスニング|desc=短い会話・説明・長いモノローグ
+      sub short|短い発話・会話|kw=会話,聞
+      sub long|長めの説明・講義|kw=説明,講義,モノローグ
+      sub phonetic|音の変化（連結・脱落）|kw=連結,脱落,音の変化
+  field speaking|話すこと・やり取り|ref=論理・表現Ⅰ〜Ⅲ（話すこと［やり取り］［発表］）
+    unit conversation|会話表現|grade=1|desc=場面に応じた応答・依頼・提案
+      sub response|応答の表現|kw=応答,返事,答え
+      sub function|依頼・提案・許可の表現|kw=依頼,提案,許可,Would you,Shall we,Why don't
+    unit pron|発音・アクセント|desc=発音・アクセント・強勢
+      sub sound|発音|kw=発音,下線部
+      sub accent|アクセント|kw=アクセント,強勢,第1,強く読む,音節
+  field writing|書くこと・英作文|ref=論理・表現Ⅰ〜Ⅲ（書くこと）
+    unit sentence|和文英訳|grade=2|pre=english.eng.grammar.subjunctive|desc=日本語を正確な英文にする
+      sub translate|和文英訳|kw=英訳,英語にしなさい,英文に
+      sub error|誤文訂正|kw=誤り,誤文,間違い
+    unit essay|自由英作文・要約|grade=3|pre=english.eng.writing.sentence|desc=意見を論理的に書く・要約する
+      sub opinion|意見を述べる英作文|kw=意見,賛成,反対
+      sub summary|英文の要約|kw=要約
+  field exam|入試対策|ref=大学入学共通テスト・個別試験
+    unit common|共通テスト形式|grade=3|desc=共通テスト（リーディング・リスニング）の形式
+      sub reading|共通テスト型リーディング|kw=共通テスト
+    unit advanced|難関大学形式|grade=3|pre=english.eng.reading.passage|desc=難関・最難関大学の総合問題
+      sub synthesis|総合問題|kw=総合,全範囲

@@ -1,0 +1,29 @@
+name: tsuzuri_light
+description: "つづりクエストLight：定期テスト対策・単語帳・クラスルームだけの軽い版"
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.13.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cloud_firestore: ^6.10.0
+  firebase_auth: ^6.7.0
+  firebase_core: ^4.15.0
+  shared_preferences: ^2.5.5
+  url_launcher: ^6.3.3
+  rpg_game:
+    path: ../rpg_game
+  # つづりクエストの画面・保存・同期をそのまま部品として使う（同じ記録を読み書きする）
+  rpg_game_app:
+    path: ../rpg_game_app
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true

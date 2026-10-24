@@ -1,0 +1,288 @@
+{
+  "setId": "math_m2_02",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_m202_001",
+      "unit": "math.m2.expr.proof",
+      "category": "calculation",
+      "prompt": "(x+1/x)⁶ の展開式の定数項は？",
+      "choices": [
+        "15",
+        "1",
+        "6",
+        "20"
+      ],
+      "answerIndex": 3,
+      "explanation": "x の次数が0になるのは ₆C₃。"
+    },
+    {
+      "id": "mat_m202_002",
+      "unit": "math.m2.expr.proof.identity",
+      "category": "calculation",
+      "prompt": "x²=a(x−1)²+b(x−1)+c が恒等式のとき、a+b+c の値は？",
+      "choices": [
+        "3",
+        "4",
+        "1",
+        "2"
+      ],
+      "answerIndex": 1,
+      "explanation": "x²=(x−1)²+2(x−1)+1 で a=1, b=2, c=1。"
+    },
+    {
+      "id": "mat_m202_003",
+      "unit": "math.m2.expr.proof",
+      "category": "calculation",
+      "prompt": "1/(x(x+1)) を部分分数に分けると？",
+      "choices": [
+        "1/(x+1)−1/x",
+        "1/x−1/(x+1)",
+        "1/x+1/(x+1)",
+        "2/x−1/(x+1)"
+      ],
+      "answerIndex": 1,
+      "explanation": "通分すると (x+1−x)/(x(x+1))。"
+    },
+    {
+      "id": "mat_m202_004",
+      "unit": "math.m2.expr.proof",
+      "category": "calculation",
+      "prompt": "x³−2x+3 を x−1 で割った余りは？",
+      "choices": [
+        "3",
+        "0",
+        "2",
+        "−2"
+      ],
+      "answerIndex": 2,
+      "explanation": "剰余の定理：x=1 を代入。"
+    },
+    {
+      "id": "mat_m202_005",
+      "unit": "math.m2.expr.proof",
+      "category": "knowledge",
+      "prompt": "a+b+c=0 のときに成り立つ式は？",
+      "choices": [
+        "a²+b²+c²=0",
+        "a³+b³+c³=0",
+        "a³+b³+c³=3abc",
+        "abc=0"
+      ],
+      "answerIndex": 2,
+      "explanation": "a³+b³+c³−3abc=(a+b+c)(…) より。"
+    },
+    {
+      "id": "mat_m202_006",
+      "unit": "math.m2.expr.proof",
+      "category": "calculation",
+      "prompt": "a/b=c/d=2 のとき、(a+c)/(b+d) の値は？",
+      "choices": [
+        "4",
+        "1/2",
+        "1",
+        "2"
+      ],
+      "answerIndex": 3,
+      "explanation": "a=2b、c=2d を代入。"
+    },
+    {
+      "id": "mat_m202_007",
+      "unit": "math.m2.expr.proof",
+      "category": "calculation",
+      "prompt": "x>0 のとき、4x+9/x の最小値は？",
+      "choices": [
+        "12",
+        "13",
+        "36",
+        "6"
+      ],
+      "answerIndex": 0,
+      "explanation": "2√(4x·9/x)=2√36。等号は x=3/2。"
+    },
+    {
+      "id": "mat_m202_008",
+      "unit": "math.m2.expr.proof.inequality",
+      "category": "calculation",
+      "prompt": "a>0、b>0 のとき、(a+b)(1/a+1/b) の最小値は？",
+      "choices": [
+        "4",
+        "1",
+        "2",
+        "8"
+      ],
+      "answerIndex": 0,
+      "explanation": "展開すると 2+b/a+a/b≧2+2。"
+    },
+    {
+      "id": "mat_m202_009",
+      "unit": "math.m2.expr.proof",
+      "category": "calculation",
+      "prompt": "x/(x−1)−1/(x−1) を計算すると？",
+      "choices": [
+        "1",
+        "(x+1)/(x−1)",
+        "x",
+        "0"
+      ],
+      "answerIndex": 0,
+      "explanation": "(x−1)/(x−1)=1。"
+    },
+    {
+      "id": "mat_m202_010",
+      "unit": "math.m2.expr.proof.equality",
+      "category": "thinking",
+      "prompt": "不等式 A≧B を証明するのに、A−B≧0 を示す理由は？",
+      "choices": [
+        "差の符号を調べれば、どちらが大きいかが分かるから",
+        "A と B が等しいから",
+        "引き算は必ず正になるから",
+        "両辺を2乗しなくてよいから"
+      ],
+      "answerIndex": 0,
+      "explanation": "A−B を平方の和などに変形して0以上を示す。"
+    },
+    {
+      "id": "mat_m202_011",
+      "unit": "math.m2.expr.proof",
+      "category": "calculation",
+      "prompt": "(2x+1/x)⁴ の展開式の定数項は？",
+      "choices": [
+        "6",
+        "8",
+        "24",
+        "16"
+      ],
+      "answerIndex": 2,
+      "explanation": "₄C₂(2x)²(1/x)²=6·4=24。"
+    },
+    {
+      "id": "mat_m202_012",
+      "unit": "math.m2.expr.proof.binomial",
+      "category": "calculation",
+      "prompt": "(x²+2)⁵ の展開式における x⁴ の係数は？",
+      "choices": [
+        "10",
+        "80",
+        "40",
+        "160"
+      ],
+      "answerIndex": 1,
+      "explanation": "x⁴ は (x²)² のとき：₅C₂·2³=10·8=80。"
+    },
+    {
+      "id": "mat_m202_013",
+      "unit": "math.m2.expr.proof",
+      "category": "calculation",
+      "prompt": "x³+2x²−x+3 を x+2 で割った余りは？",
+      "choices": [
+        "−5",
+        "1",
+        "5",
+        "3"
+      ],
+      "answerIndex": 2,
+      "explanation": "x=−2：−8+8+2+3=5。"
+    },
+    {
+      "id": "mat_m202_014",
+      "unit": "math.m2.expr.proof",
+      "category": "calculation",
+      "prompt": "x³+ax+2 が x+1 で割り切れるとき、a の値は？",
+      "choices": [
+        "−3",
+        "3",
+        "−1",
+        "1"
+      ],
+      "answerIndex": 3,
+      "explanation": "x=−1 を代入して −1−a+2=0 → a=1。"
+    },
+    {
+      "id": "mat_m202_015",
+      "unit": "math.m2.expr.proof",
+      "category": "calculation",
+      "prompt": "1/((x+1)(x+2)) を部分分数に分けると？",
+      "choices": [
+        "1/(x+1)+1/(x+2)",
+        "2/(x+1)−1/(x+2)",
+        "1/(x+2)−1/(x+1)",
+        "1/(x+1)−1/(x+2)"
+      ],
+      "answerIndex": 3,
+      "explanation": "通分すると {(x+2)−(x+1)}/((x+1)(x+2)) となり一致する。"
+    },
+    {
+      "id": "mat_m202_016",
+      "unit": "math.m2.expr.proof",
+      "category": "calculation",
+      "prompt": "(x+1)/(x−1)÷(x²−1)/(x−1)² を計算すると？",
+      "choices": [
+        "1/(x+1)",
+        "(x−1)/(x+1)",
+        "1",
+        "x+1"
+      ],
+      "answerIndex": 2,
+      "explanation": "(x+1)/(x−1)×(x−1)²/((x+1)(x−1))=1。"
+    },
+    {
+      "id": "mat_m202_017",
+      "unit": "math.m2.expr.proof",
+      "category": "calculation",
+      "prompt": "x/2=y/3=z/4（≠0）のとき、(x+y+z)/y の値は？",
+      "choices": [
+        "3",
+        "2",
+        "9/4",
+        "9/2"
+      ],
+      "answerIndex": 0,
+      "explanation": "x=2k、y=3k、z=4k とおくと 9k/3k=3。"
+    },
+    {
+      "id": "mat_m202_018",
+      "unit": "math.m2.expr.proof.inequality",
+      "category": "calculation",
+      "prompt": "x>0 のとき、x+1/x+2 の最小値は？",
+      "choices": [
+        "6",
+        "2",
+        "3",
+        "4"
+      ],
+      "answerIndex": 3,
+      "explanation": "x+1/x≧2（x=1 で等号）。よって最小値 4。"
+    },
+    {
+      "id": "mat_m202_019",
+      "unit": "math.m2.expr.proof.inequality",
+      "category": "calculation",
+      "prompt": "x>1 のとき、x+1/(x−1) の最小値は？",
+      "choices": [
+        "1",
+        "3",
+        "4",
+        "2"
+      ],
+      "answerIndex": 1,
+      "explanation": "(x−1)+1/(x−1)+1≧2+1=3。等号は x=2。"
+    },
+    {
+      "id": "mat_m202_020",
+      "unit": "math.m2.expr.proof.inequality",
+      "category": "thinking",
+      "prompt": "a≧0、b≧0 のとき √a+√b≧√(a+b) を示すのに有効な方法は？",
+      "choices": [
+        "両辺の逆数を比べる",
+        "a=b=1 のときだけ確かめる",
+        "両辺とも0以上なので、両辺を2乗した差を比べる",
+        "両辺に同じ数を足す"
+      ],
+      "answerIndex": 2,
+      "explanation": "(√a+√b)²−(a+b)=2√(ab)≧0。両辺が0以上なので2乗で比べてよい。"
+    }
+  ]
+}

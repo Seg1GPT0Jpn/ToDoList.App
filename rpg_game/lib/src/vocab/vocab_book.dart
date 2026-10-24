@@ -1,0 +1,755 @@
+import 'meaning_text.dart';
+
+/// 単語帳の1枚（1語）。
+/// 語義ごとの例文（「①賛成する」の例文 など）
+class VocabExample {
+  const VocabExample({required this.sense, required this.en, this.ja = ''});
+
+  /// どの意味の例文か（「賛成する」など。1つしか意味がなければ空でもよい）
+  final String sense;
+  final String en;
+  final String ja;
+
+  List<String> toJson() => [sense, en, ja];
+
+  static VocabExample? fromJson(Object? j) {
+    if (j is! List || j.length < 2) return null;
+    return VocabExample(
+      sense: '${j[0]}',
+      en: '${j[1]}',
+      ja: j.length > 2 ? '${j[2]}' : '',
+    );
+  }
+}
+
+class VocabCard {
+  const VocabCard({
+    required this.id,
+    required this.term,
+    required this.meaning,
+    this.number,
+    this.pron = '',
+    this.example = '',
+    this.exampleJa = '',
+    this.note = '',
+    this.group = '',
+    this.examples = const [],
+  });
+
+  /// 単語帳の中で一意な ID（番号があれば番号、なければ単語）
+  final String id;
+
+  /// 通し番号（取り込んだ一覧にあれば）
+  final int? number;
+  final String term;
+
+  /// 意味（取り込んだ一覧の説明をそのまま保持）
+  final String meaning;
+
+  /// 発音記号（あれば）
+  final String pron;
+
+  /// 例文と、その訳（あれば）
+  final String example;
+  final String exampleJa;
+
+  /// 覚えるための豆知識（語源・使い分けなど。なければ空）
+  final String note;
+
+  /// 章・単元（暗記カードの章。4択のまちがいの選択肢を同じ章から選ぶのに使う）
+  final String group;
+
+  /// 語義ごとの例文（[example] は穴埋めに使う代表の1つ。ここには意味ごとのすべてを入れる）
+  final List<VocabExample> examples;
+
+  /// [example] 以外の例文（答え合わせで「ほかの意味の例文」として見せる）
+  List<VocabExample> get otherExamples => [
+        for (final x in examples)
+          if (x.en != example) x
+      ];
+
+  bool get hasExample => example.isNotEmpty && clozeOf(example, term) != null;
+
+  /// 品詞（[名] [他] など。なければ空）
+  String get partOfSpeech => partOfSpeechOf(meaning);
+
+  /// 4択や答え合わせに出す短い意味（最初の品詞・最初の語義だけ）
+  String get shortMeaning => shortMeaningOf(meaning);
+
+  /// スペルとして正しいと認める書き方（「afterward(s)」→ afterward / afterwards など）
+  List<String> get acceptedSpellings {
+    var t = term.replaceAll(RegExp(r'[～~〜]'), '').trim();
+    t = t.replaceAll(RegExp(r'\s+'), ' ');
+    final paren = RegExp(r'\(([^)]*)\)');
+    if (!paren.hasMatch(t)) return [t.toLowerCase()];
+    final without = t.replaceAll(paren, '').replaceAll(RegExp(r'\s+'), ' ');
+    final withIt = t.replaceAllMapped(paren, (m) => m.group(1)!);
+    return {without.trim().toLowerCase(), withIt.trim().toLowerCase()}.toList();
+  }
+
+  /// 入力されたスペルが合っているか（大文字小文字・前後の空白は区別しない）
+  bool spellingMatches(String input) {
+    final a = input.trim().toLowerCase().replaceAll(RegExp(r'\s+'), ' ');
+    return a.isNotEmpty && acceptedSpellings.contains(a);
+  }
+
+  /// スペル入力のヒント（頭文字と文字数）
+  String get spellingHint {
+    final s = acceptedSpellings.first;
+    return '${s[0]}${List.filled(s.length - 1, '＿').join()}（${s.length}文字）';
+  }
+
+  static final _jaParen = RegExp(r'[（(]([^）)]*)[）)]');
+
+  /// 日本語の用語として正しいと認める書き方（[normalizeWriting] したもの）。
+  /// 全角・半角、ひらがな・カタカナ、空白や「・」の違いは見ない。読みや、かっこの中・外だけでもよい
+  Set<String> get acceptedWritings {
+    final out = <String>{};
+    void add(String s) {
+      final n = normalizeWriting(s);
+      if (n.isNotEmpty) out.add(n);
+    }
+
+    for (final t in [term, ...term.split(RegExp('[／/]'))]) {
+      add(t);
+      if (_jaParen.hasMatch(t)) {
+        add(t.replaceAll(_jaParen, ''));
+        for (final m in _jaParen.allMatches(t)) {
+          add(m.group(1)!);
+        }
+      }
+    }
+    for (final r in pron.split(RegExp('[、,／/]'))) {
+      add(r);
+    }
+    return out;
+  }
+
+  /// 書く問題のヒント（最初の1文字と文字数。かっこの中は数えない）
+  String get writingHint {
+    final t = term.replaceAll(_jaParen, '').replaceAll(RegExp(r'\s'), '');
+    if (t.isEmpty) return '';
+    final chars = t.runes.map(String.fromCharCode).toList();
+    return '「${chars.first}」で始まる${chars.length}文字';
+  }
+
+  /// 答え合わせのために書き方をそろえる
+  static String normalizeWriting(String s) {
+    final b = StringBuffer();
+    for (final r in s.trim().runes) {
+      var c = r;
+      if (c >= 0xFF01 && c <= 0xFF5E) c -= 0xFEE0; // 全角英数 → 半角
+      if (c >= 0x30A1 && c <= 0x30F6) c -= 0x60; // カタカナ → ひらがな
+      final ch = String.fromCharCode(c);
+      if (RegExp(r'[\s・･、。,.「」『』〔〕\-‐－–—~〜～]').hasMatch(ch)) continue;
+      b.write(ch.toLowerCase());
+    }
+    return b.toString();
+  }
+
+  /// 例文の中の [term]（活用形もふくむ）を空欄にしたもの。見つからなければ null
+  static String? clozeOf(String example, String term) {
+    final m = _clozeMatch(example, term);
+    if (m == null) return null;
+    return example.replaceRange(m.$1, m.$2, '＿＿＿＿');
+  }
+
+  /// 例文の中で空欄にした語（「abandoned」など、活用した形のまま）
+  static String? clozeWord(String example, String term) {
+    final m = _clozeMatch(example, term);
+    return m == null ? null : example.substring(m.$1, m.$2);
+  }
+
+  static final _slot = RegExp(
+    r"^(one's|oneself|A|B|sb|sth|someone|something|somebody|doing|.+の|\.\.\.|…)$",
+  );
+
+  /// よく出る不規則動詞の活用形（穴埋めで例文の中から見つけるため）
+  static const _irregular = {
+    // I'm / he's / they're のような短縮形もふくむ
+    'be': "is|are|am|was|were|been|being|['’](?:m|s|re)",
+    'bear': 'bore|borne|born',
+    'beat': 'beaten',
+    'become': 'became',
+    'begin': 'began|begun',
+    'bend': 'bent',
+    'bind': 'bound',
+    'bite': 'bit|bitten',
+    'bleed': 'bled',
+    'blow': 'blew|blown',
+    'break': 'broke|broken',
+    'breed': 'bred',
+    'bring': 'brought',
+    'build': 'built',
+    'burst': 'burst',
+    'buy': 'bought',
+    'catch': 'caught',
+    'choose': 'chose|chosen',
+    'cling': 'clung',
+    'come': 'came',
+    'creep': 'crept',
+    'deal': 'dealt',
+    'dig': 'dug',
+    'do': 'did|done|does',
+    'draw': 'drew|drawn',
+    'drink': 'drank|drunk',
+    'drive': 'drove|driven',
+    'dwell': 'dwelt',
+    'eat': 'ate|eaten',
+    'fall': 'fell|fallen',
+    'feed': 'fed',
+    'feel': 'felt',
+    'fight': 'fought',
+    'find': 'found',
+    'flee': 'fled',
+    'fly': 'flew|flown|flies',
+    'forbid': 'forbade|forbidden',
+    'forget': 'forgot|forgotten',
+    'forgive': 'forgave|forgiven',
+    'freeze': 'froze|frozen',
+    'get': 'got|gotten',
+    'give': 'gave|given',
+    'go': 'went|gone|goes',
+    'grind': 'ground',
+    'grow': 'grew|grown',
+    'hang': 'hung',
+    'have': 'had|has',
+    'hear': 'heard',
+    'hide': 'hid|hidden',
+    'hold': 'held',
+    'keep': 'kept',
+    'know': 'knew|known',
+    'lay': 'laid',
+    'lead': 'led',
+    'lean': 'leant',
+    'leap': 'leapt',
+    'leave': 'left',
+    'lend': 'lent',
+    'lie': 'lay|lain|lying',
+    'lose': 'lost',
+    'make': 'made',
+    'mean': 'meant',
+    'meet': 'met',
+    'mislead': 'misled',
+    'overcome': 'overcame',
+    'overtake': 'overtook|overtaken',
+    'pay': 'paid',
+    'ride': 'rode|ridden',
+    'ring': 'rang|rung',
+    'rise': 'rose|risen',
+    'run': 'ran',
+    'say': 'said',
+    'see': 'saw|seen',
+    'seek': 'sought',
+    'sell': 'sold',
+    'send': 'sent',
+    'shake': 'shook|shaken',
+    'shine': 'shone',
+    'shoot': 'shot',
+    'shrink': 'shrank|shrunk',
+    'sing': 'sang|sung',
+    'sink': 'sank|sunk',
+    'sit': 'sat',
+    'sleep': 'slept',
+    'slide': 'slid',
+    'speak': 'spoke|spoken',
+    'spend': 'spent',
+    'spin': 'spun',
+    'spring': 'sprang|sprung',
+    'stand': 'stood',
+    'steal': 'stole|stolen',
+    'stick': 'stuck',
+    'sting': 'stung',
+    'stride': 'strode',
+    'strike': 'struck',
+    'strive': 'strove|striven',
+    'swear': 'swore|sworn',
+    'sweep': 'swept',
+    'swim': 'swam|swum',
+    'swing': 'swung',
+    'take': 'took|taken',
+    'teach': 'taught',
+    'tear': 'tore|torn',
+    'tell': 'told',
+    'think': 'thought',
+    'throw': 'threw|thrown',
+    'undergo': 'underwent|undergone',
+    'undertake': 'undertook|undertaken',
+    'wake': 'woke|woken',
+    'wear': 'wore|worn',
+    'weave': 'wove|woven',
+    'weep': 'wept',
+    'win': 'won',
+    'withdraw': 'withdrew|withdrawn',
+    'withstand': 'withstood',
+    'write': 'wrote|written',
+  };
+
+  /// 語尾が変わる（-ed / -ing / -s / y→ied など）ことと不規則な活用を考えた、1語ぶんの正規表現
+  static String _wordPattern(String w) {
+    final lower = w.toLowerCase();
+    // 4文字の語も、y / e で終わるなら外して探す（deny → denied、hide → hiding）
+    final stem = lower.length > 4 ||
+            (lower.length == 4 && RegExp(r'[ye]$').hasMatch(lower))
+        ? lower.substring(0, lower.length - 1)
+        : lower;
+    final forms = ['${RegExp.escape(stem)}[a-z]*'];
+    final irr = _irregular[lower];
+    if (irr != null) forms.add(irr);
+    return '(?:${forms.join('|')})';
+  }
+
+  static const _particles = {
+    'up',
+    'out',
+    'in',
+    'off',
+    'down',
+    'away',
+    'over',
+    'on',
+    'back',
+    'around'
+  };
+
+  static (int, int)? _clozeMatch(String example, String term) {
+    final base = term.replaceAll(RegExp(r'[～~〜()（）]'), '').trim();
+    if (base.isEmpty) return null;
+    if (base.contains(' ')) {
+      final i = example.toLowerCase().indexOf(base.toLowerCase());
+      if (i >= 0) return (i, i + base.length);
+      // 熟語：最初の語は活用してよく、one's / A などの部分には別の語が入ってよい
+      final parts = base.split(RegExp(r'\s+'));
+      final pattern = StringBuffer();
+      for (var k = 0; k < parts.length; k++) {
+        final w = parts[k];
+        if (k == 1 && parts.length == 2 && _particles.contains(w)) {
+          // rough him up / see you out のように、目的語が間に入ってよい
+          pattern.write(r"(?:\s+[\w'’-]+){0,2}\s+");
+        } else if (k > 0) {
+          pattern.write(r'\s+');
+        }
+        if (w == 'ing') {
+          // be used to ～ing：～ing の部分には動詞の -ing 形が入る
+          pattern.write(r"[\w'’-]+ing");
+        } else if (_slot.hasMatch(w) || (k > 0 && w == 'do')) {
+          pattern.write(r"[\w'’-]+(?:\s+[\w'’-]+){0,2}");
+        } else if (k == 0 && (w.length > 2 || _irregular.containsKey(w))) {
+          pattern.write(_wordPattern(w));
+        } else {
+          pattern.write(RegExp.escape(w));
+        }
+      }
+      final m =
+          RegExp('\\b$pattern\\b', caseSensitive: false).firstMatch(example);
+      return m == null ? null : (m.start, m.end);
+    }
+    final m = RegExp('\\b${_wordPattern(base)}\\b', caseSensitive: false)
+        .firstMatch(example);
+    return m == null ? null : (m.start, m.end);
+  }
+
+  /// 穴埋めの答え：例文の中の形そのまま（過去形・三人称単数・複数形などの変化もふくむ）
+  String get clozeAnswer => clozeWord(example, term) ?? term;
+
+  /// 穴埋めのヒント（例文の中の形の、最初の文字と文字数）
+  String get clozeHint {
+    final s = clozeAnswer;
+    return '${s[0]}${List.filled(s.length - 1, '＿').join()}（${s.length}文字）';
+  }
+
+  /// 穴埋めの答えとして正しいか：例文の中の形をそのまま書く（rise の例文が rose なら rose）。
+  /// 大文字・小文字、空白の数、アポストロフィの形（' と ’）のちがいは見ない
+  bool clozeMatches(String input) {
+    String norm(String t) => t
+        .trim()
+        .toLowerCase()
+        .replaceAll('’', "'")
+        .replaceAll(RegExp(r'\s+'), ' ');
+    final a = norm(input);
+    if (a.isEmpty) return false;
+    final want = norm(clozeAnswer);
+    if (a == want) return true;
+    // 短縮形（'m proud of）は、もとの形（am proud of）で書いてもよい
+    const full = {"'m": 'am', "'s": 'is', "'re": 'are'};
+    for (final e in full.entries) {
+      if (want.startsWith(e.key) &&
+          a == '${e.value}${want.substring(e.key.length)}') {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  VocabCard copyWith(
+          {String? pron,
+          String? example,
+          String? exampleJa,
+          String? note,
+          String? meaning}) =>
+      VocabCard(
+        id: id,
+        number: number,
+        term: term,
+        meaning: meaning ?? this.meaning,
+        pron: pron ?? this.pron,
+        example: example ?? this.example,
+        exampleJa: exampleJa ?? this.exampleJa,
+        note: note ?? this.note,
+        group: group,
+        examples: examples,
+      );
+
+  factory VocabCard.fromJson(Map<String, dynamic> j) => VocabCard(
+        id: j['id'] as String,
+        number: (j['n'] as num?)?.toInt(),
+        term: j['t'] as String,
+        meaning: j['m'] as String,
+        pron: j['p'] as String? ?? '',
+        example: j['e'] as String? ?? '',
+        exampleJa: j['ej'] as String? ?? '',
+        note: j['nt'] as String? ?? '',
+        group: j['g'] as String? ?? '',
+        examples: [
+          for (final x in j['xs'] as List? ?? const [])
+            if (VocabExample.fromJson(x) case final e?) e,
+        ],
+      );
+
+  Map<String, dynamic> toJson() => {
+        'id': id,
+        if (number != null) 'n': number,
+        't': term,
+        'm': meaning,
+        if (pron.isNotEmpty) 'p': pron,
+        if (example.isNotEmpty) 'e': example,
+        if (exampleJa.isNotEmpty) 'ej': exampleJa,
+        if (note.isNotEmpty) 'nt': note,
+        if (group.isNotEmpty) 'g': group,
+        if (examples.isNotEmpty) 'xs': [for (final x in examples) x.toJson()],
+      };
+}
+
+/// 単語帳の種類
+enum VocabBookKind {
+  /// 市販教材を利用者が自分の端末に取り込んだもの（パスワードで保護・同期しない）
+  protectedImport,
+
+  /// 利用者が自分で作った単語帳
+  custom,
+
+  /// アプリに入っている暗記カード（理科・社会・国語・情報の用語。保存せず毎回読み込む）
+  builtin,
+}
+
+/// 単語帳
+class VocabBook {
+  VocabBook({
+    required this.id,
+    required this.title,
+    required this.kind,
+    required this.cards,
+    this.worldId = 'english',
+  });
+
+  final String id;
+  String title;
+  final VocabBookKind kind;
+  List<VocabCard> cards;
+
+  /// 教科のワールド（英語の単語帳は english）
+  final String worldId;
+
+  bool get isProtected => kind == VocabBookKind.protectedImport;
+
+  /// 日本語の用語の暗記カード（スペル・発音・例文の代わりに「用語を書く」で練習する）。
+  /// アプリに入っているカードと、英語以外の単語帳（古文単語など）
+  bool get isTerms => kind == VocabBookKind.builtin || worldId != 'english';
+
+  /// 1枚の数え方（「語」・「枚」）と呼び名（「単語」・「用語」）
+  String get unit => isTerms ? '枚' : '語';
+  String get noun => isTerms ? '用語' : '単語';
+
+  /// 4択や答え合わせに出す意味（用語の説明は短くせずにそのまま）
+  String meaningOf(VocabCard c) => isTerms ? c.meaning : c.shortMeaning;
+
+  /// 暗記カードで書いた用語が合っているか。
+  /// かっこの中だけ・別名だけでもよいが、それがほかのカードの用語そのものなら正解にしない
+  /// （「TCP/IP」に「TCP」、「選択（データベース）」に「データベース」など）
+  /// 説明がまったく同じ別のカード（「猫に小判」と「豚に真珠」など）の用語も正解にする
+  bool writingMatches(VocabCard c, String input) {
+    final a = VocabCard.normalizeWriting(input);
+    if (a.isEmpty) return false;
+    if (c.acceptedWritings.contains(a)) {
+      return a == VocabCard.normalizeWriting(c.term) || !_terms.contains(a);
+    }
+    return cards.any(
+      (o) =>
+          o.id != c.id &&
+          o.meaning == c.meaning &&
+          VocabCard.normalizeWriting(o.term) == a,
+    );
+  }
+
+  late final Set<String> _terms = {
+    for (final c in cards) VocabCard.normalizeWriting(c.term),
+  };
+
+  VocabCard? card(String id) {
+    for (final c in cards) {
+      if (c.id == id) return c;
+    }
+    return null;
+  }
+
+  /// [incoming] を加える。同じ単語があれば、空いている項目（例文・発音）だけ埋める
+  ({int added, int updated}) merge(List<VocabCard> incoming) {
+    var added = 0, updated = 0;
+    final byTerm = {for (final c in cards) c.term.toLowerCase(): c};
+    final ids = cards.map((c) => c.id).toSet();
+    for (final c in incoming) {
+      final old = byTerm[c.term.toLowerCase()];
+      if (old != null) {
+        final merged = old.copyWith(
+          pron: old.pron.isEmpty ? c.pron : null,
+          example: old.example.isEmpty ? c.example : null,
+          exampleJa: old.exampleJa.isEmpty ? c.exampleJa : null,
+        );
+        if (merged.pron != old.pron ||
+            merged.example != old.example ||
+            merged.exampleJa != old.exampleJa) {
+          cards[cards.indexOf(old)] = merged;
+          byTerm[c.term.toLowerCase()] = merged;
+          updated++;
+        }
+        continue;
+      }
+      var id = c.id;
+      while (ids.contains(id)) {
+        id = '${id}_';
+      }
+      final fresh = VocabCard(
+        id: id,
+        number: c.number,
+        term: c.term,
+        meaning: c.meaning,
+        pron: c.pron,
+        example: c.example,
+        exampleJa: c.exampleJa,
+      );
+      cards.add(fresh);
+      ids.add(id);
+      byTerm[c.term.toLowerCase()] = fresh;
+      added++;
+    }
+    return (added: added, updated: updated);
+  }
+
+  factory VocabBook.fromJson(Map<String, dynamic> j) => VocabBook(
+        id: j['id'] as String,
+        title: j['title'] as String,
+        kind: VocabBookKind.values.byName(j['kind'] as String),
+        worldId: j['w'] as String? ?? 'english',
+        cards: [
+          for (final c in j['cards'] as List)
+            VocabCard.fromJson(c as Map<String, dynamic>),
+        ],
+      );
+
+  Map<String, dynamic> toJson() => {
+        'id': id,
+        'title': title,
+        'kind': kind.name,
+        if (worldId != 'english') 'w': worldId,
+        'cards': [for (final c in cards) c.toJson()],
+      };
+}
+
+/// 貼り付けられた一覧を読み取る。
+///
+/// 対応する形式:
+/// - 「番号<TAB>英単語<TAB>意味」（LEAP の一覧など）
+/// - 「番号」「英単語」「■品詞：意味」が1行ずつ並んだ形（STEP の一覧など）
+/// - CSV・TSV（1行目が見出しなら「term, meaning, pron, example, translation」などの列名で読む）
+/// - Excel やスプレッドシートからコピーした表（タブ区切り）
+class VocabParser {
+  const VocabParser._();
+
+  static final _stepMeaning = RegExp(r'^[■\[]');
+
+  static List<VocabCard> parse(String text, {List<int>? skipped}) {
+    final lines = text.split(RegExp(r'\r?\n'));
+    if (_looksLikeStacked(lines)) return _parseStacked(lines);
+    return _parseRows(lines, skipped);
+  }
+
+  /// 「番号」「単語」「■意味」が縦に並んだ形か
+  static bool _looksLikeStacked(List<String> lines) {
+    var hits = 0;
+    for (var i = 0; i + 2 < lines.length && hits < 3; i++) {
+      if (RegExp(r'^\s*\d+\s*$').hasMatch(lines[i]) &&
+          lines[i + 1].trim().isNotEmpty &&
+          lines[i + 2].trim().startsWith('■')) {
+        hits++;
+      }
+    }
+    return hits >= 2;
+  }
+
+  static List<VocabCard> _parseStacked(List<String> lines) {
+    final cards = <VocabCard>[];
+    for (var i = 0; i + 2 < lines.length; i++) {
+      final n = int.tryParse(lines[i].trim());
+      if (n == null) continue;
+      final term = lines[i + 1].trim();
+      final meaningLine = lines[i + 2].trim();
+      if (term.isEmpty || !_stepMeaning.hasMatch(meaningLine)) continue;
+      cards.add(VocabCard(
+        id: '$n',
+        number: n,
+        term: term,
+        meaning: normalizeStepMeaning(meaningLine),
+      ));
+      i += 2;
+    }
+    return cards;
+  }
+
+  /// 「■動詞：上がる；起きる　■名詞：上昇」→「[動] 上がる；起きる [名] 上昇」
+  static String normalizeStepMeaning(String s) {
+    const abbr = {
+      '動詞': '動',
+      '名詞': '名',
+      '形容詞': '形',
+      '副詞': '副',
+      '前置詞': '前',
+      '接続詞': '接',
+      '助動詞': '助',
+    };
+    return s
+        .replaceAllMapped(
+          RegExp(r'■\s*([^：:]+?)\s*[：:]\s*'),
+          (m) => ' [${abbr[m.group(1)!.trim()] ?? m.group(1)!.trim()}] ',
+        )
+        .replaceAll('　', ' ')
+        .replaceAll(RegExp(r'\s+'), ' ')
+        .trim();
+  }
+
+  static const _headerNames = {
+    'term': ['term', 'word', 'english', '単語', '英単語', '英語', 'front'],
+    'meaning': ['meaning', 'japanese', 'definition', '意味', '日本語', '訳語', 'back'],
+    'pron': ['pron', 'pronunciation', 'ipa', '発音', '発音記号'],
+    'example': ['example', 'sentence', '例文'],
+    'exampleJa': ['translation', 'example_ja', '例文訳', '訳', '和訳'],
+    'number': ['no', 'no.', 'number', '番号', '#'],
+  };
+
+  static List<String> _split(String line) {
+    if (line.contains('\t')) {
+      return line.split('\t').map((c) => c.trim()).toList();
+    }
+    if (!line.contains(',')) return [line.trim()];
+    // CSV（ダブルクォートで囲まれたカンマに対応）
+    final out = <String>[];
+    final buf = StringBuffer();
+    var quoted = false;
+    for (var i = 0; i < line.length; i++) {
+      final ch = line[i];
+      if (ch == '"') {
+        if (quoted && i + 1 < line.length && line[i + 1] == '"') {
+          buf.write('"');
+          i++;
+        } else {
+          quoted = !quoted;
+        }
+      } else if (ch == ',' && !quoted) {
+        out.add(buf.toString().trim());
+        buf.clear();
+      } else {
+        buf.write(ch);
+      }
+    }
+    out.add(buf.toString().trim());
+    return out;
+  }
+
+  static List<VocabCard> _parseRows(List<String> lines, List<int>? skipped) {
+    final cards = <VocabCard>[];
+    Map<String, int>? header;
+    for (var i = 0; i < lines.length; i++) {
+      final line = lines[i].trim();
+      if (line.isEmpty) continue;
+      var cols = _split(line);
+      if (header == null && cards.isEmpty) {
+        final h = <String, int>{};
+        for (var c = 0; c < cols.length; c++) {
+          final name = cols[c].toLowerCase();
+          for (final e in _headerNames.entries) {
+            if (e.value.contains(name)) h.putIfAbsent(e.key, () => c);
+          }
+        }
+        if (h.containsKey('term') && h.containsKey('meaning')) {
+          header = h;
+          continue;
+        }
+        // 「No 単語 意味」のような見出しは読み飛ばす
+        if (h.length >= 2) continue;
+      }
+      if (header != null) {
+        String at(String k) {
+          final c = header![k];
+          return c == null || c >= cols.length ? '' : cols[c];
+        }
+
+        final term = at('term'), meaning = at('meaning');
+        if (term.isEmpty || meaning.isEmpty) {
+          skipped?.add(i + 1);
+          continue;
+        }
+        final n = int.tryParse(at('number'));
+        cards.add(VocabCard(
+          id: n != null ? '$n' : term.toLowerCase(),
+          number: n,
+          term: term,
+          meaning: meaning,
+          pron: at('pron'),
+          example: at('example'),
+          exampleJa: at('exampleJa'),
+        ));
+        continue;
+      }
+      if (cols.length < 2) {
+        // タブが空白に変わってしまった場合: 「番号 英語 意味」を推測する
+        final m = RegExp(
+                r"^(\d+)\s+([A-Za-z][A-Za-z\-.'() ~～]*?)\s+(\[.*|[^A-Za-z].*)$")
+            .firstMatch(line);
+        if (m == null) {
+          skipped?.add(i + 1);
+          continue;
+        }
+        cols = [m.group(1)!, m.group(2)!, m.group(3)!];
+      }
+      int? number;
+      if (cols.length >= 3 && int.tryParse(cols[0]) != null) {
+        number = int.parse(cols[0]);
+        cols = cols.sublist(1);
+      }
+      final term = cols[0];
+      final meaning = cols.length > 1 ? cols[1] : '';
+      if (term.isEmpty || meaning.isEmpty) {
+        skipped?.add(i + 1);
+        continue;
+      }
+      cards.add(VocabCard(
+        id: number != null ? '$number' : term.toLowerCase(),
+        number: number,
+        term: term,
+        meaning: meaning,
+        example: cols.length > 2 ? cols[2] : '',
+        exampleJa: cols.length > 3 ? cols[3] : '',
+      ));
+    }
+    return cards;
+  }
+}

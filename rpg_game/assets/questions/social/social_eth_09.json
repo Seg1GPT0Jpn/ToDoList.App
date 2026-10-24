@@ -1,0 +1,344 @@
+{
+  "setId": "social_eth_09",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_eth09_001",
+      "unit": "social.eth.western.contemporary",
+      "category": "knowledge",
+      "prompt": "資本主義を分析し、労働者の階級闘争による社会の変革を説いたのは？",
+      "choices": [
+        "サルトル",
+        "ヘーゲル",
+        "ニーチェ",
+        "マルクス"
+      ],
+      "answerIndex": 3,
+      "explanation": "『資本論』を著した。唯物史観。"
+    },
+    {
+      "id": "soc_eth09_002",
+      "unit": "social.eth.western.contemporary",
+      "category": "knowledge",
+      "prompt": "「神は死んだ」と述べ、力への意志や超人を説いたのは？",
+      "choices": [
+        "キルケゴール",
+        "ヤスパース",
+        "ハイデガー",
+        "ニーチェ"
+      ],
+      "answerIndex": 3,
+      "explanation": "キリスト教道徳を「奴隷道徳」と批判した。"
+    },
+    {
+      "id": "soc_eth09_003",
+      "unit": "social.eth.western.contemporary.existential",
+      "category": "knowledge",
+      "prompt": "「私にとって真理であるような真理」を求め、実存主義の先駆となったのは？",
+      "choices": [
+        "マルクス",
+        "ニーチェ",
+        "キルケゴール",
+        "カント"
+      ],
+      "answerIndex": 2,
+      "explanation": "実存の三段階（美的・倫理的・宗教的）を説いた。"
+    },
+    {
+      "id": "soc_eth09_004",
+      "unit": "social.eth.western.contemporary.existential",
+      "category": "knowledge",
+      "prompt": "「実存は本質に先立つ」と述べ、人間は自由の刑に処せられていると説いたのは？",
+      "choices": [
+        "キルケゴール",
+        "ニーチェ",
+        "サルトル",
+        "ハイデガー"
+      ],
+      "answerIndex": 2,
+      "explanation": "アンガージュマン（社会参加）を重んじた。"
+    },
+    {
+      "id": "soc_eth09_005",
+      "unit": "social.eth.western.contemporary",
+      "category": "knowledge",
+      "prompt": "人間を「死への存在」ととらえたドイツの哲学者は？",
+      "choices": [
+        "ハイデガー",
+        "ヤスパース",
+        "フロイト",
+        "サルトル"
+      ],
+      "answerIndex": 0,
+      "explanation": "『存在と時間』を著した。"
+    },
+    {
+      "id": "soc_eth09_006",
+      "unit": "social.eth.western.contemporary",
+      "category": "knowledge",
+      "prompt": "無意識の領域を発見し、精神分析学を創始したのは？",
+      "choices": [
+        "ユング",
+        "エリクソン",
+        "フロイト",
+        "マズロー"
+      ],
+      "answerIndex": 2,
+      "explanation": "心をエス・自我・超自我の三つの領域で説明した。"
+    },
+    {
+      "id": "soc_eth09_007",
+      "unit": "social.eth.western.contemporary",
+      "category": "knowledge",
+      "prompt": "人間の思考や行動が、社会や言語の見えない構造に規定されていると考える立場は？",
+      "choices": [
+        "実存主義",
+        "功利主義",
+        "構造主義",
+        "プラグマティズム"
+      ],
+      "answerIndex": 2,
+      "explanation": "レヴィ＝ストロースらが代表。"
+    },
+    {
+      "id": "soc_eth09_008",
+      "unit": "social.eth.western.contemporary",
+      "category": "knowledge",
+      "prompt": "近代社会の監視や規律のしくみを分析し、「知と権力」の関係を問うたのは？",
+      "choices": [
+        "サルトル",
+        "フーコー",
+        "デューイ",
+        "レヴィ＝ストロース"
+      ],
+      "answerIndex": 1,
+      "explanation": "『監獄の誕生』などを著した。"
+    },
+    {
+      "id": "soc_eth09_009",
+      "unit": "social.eth.western.contemporary.pragmatism",
+      "category": "knowledge",
+      "prompt": "知識や思想は、生活の中で問題を解決する道具だとする、アメリカで生まれた思想は？",
+      "choices": [
+        "構造主義",
+        "観念論",
+        "プラグマティズム",
+        "実存主義"
+      ],
+      "answerIndex": 2,
+      "explanation": "デューイは「道具主義」を唱えた。"
+    },
+    {
+      "id": "soc_eth09_010",
+      "unit": "social.eth.western.contemporary",
+      "category": "knowledge",
+      "prompt": "対話による合意を重視し、「対話的理性（コミュニケーション的合理性）」を説いたのは？",
+      "choices": [
+        "フーコー",
+        "ニーチェ",
+        "ハーバーマス",
+        "ハイデガー"
+      ],
+      "answerIndex": 2,
+      "explanation": "公共圏における自由な討議を重んじた。"
+    },
+    {
+      "id": "soc_eth09_011",
+      "unit": "social.eth.western.contemporary.existential",
+      "category": "thinking",
+      "prompt": "サルトルの「実存は本質に先立つ」の意味として適切なものは？",
+      "choices": [
+        "人間は、まず存在し、その後の自分の選択によって自らのあり方をつくっていく",
+        "神が人間の本質を決める",
+        "人間は本質を持たない物である",
+        "人間のあり方は生まれる前から決まっている"
+      ],
+      "answerIndex": 0,
+      "explanation": "自由であるからこそ、選択の責任も負う。"
+    },
+    {
+      "id": "soc_eth09_012",
+      "unit": "social.eth.western.contemporary",
+      "category": "thinking",
+      "prompt": "レヴィ＝ストロースが「未開」の社会を研究して示した考え方は？",
+      "choices": [
+        "西洋文明が最も進んでいる",
+        "文化はすべて同じ",
+        "西洋文明が優れているという見方は一面的で、どの文化にも独自の構造と合理性がある",
+        "未開の社会には思考がない"
+      ],
+      "answerIndex": 2,
+      "explanation": "自民族中心主義（エスノセントリズム）を批判した。"
+    },
+    {
+      "id": "soc_eth09_013",
+      "unit": "social.eth.western.contemporary",
+      "category": "knowledge",
+      "prompt": "マルクスが説いた、労働者が自分の労働や生産物から切り離される状態は？",
+      "choices": [
+        "唯物史観",
+        "労働の疎外",
+        "剰余価値",
+        "階級闘争"
+      ],
+      "answerIndex": 1,
+      "explanation": "資本主義社会の問題として論じた。"
+    },
+    {
+      "id": "soc_eth09_014",
+      "unit": "social.eth.western.contemporary",
+      "category": "knowledge",
+      "prompt": "マルクスの、社会の土台（下部構造）となるものは？",
+      "choices": [
+        "政治",
+        "経済（生産関係）",
+        "法律",
+        "宗教"
+      ],
+      "answerIndex": 1,
+      "explanation": "上部構造（政治・法・思想）を規定するとした。"
+    },
+    {
+      "id": "soc_eth09_015",
+      "unit": "social.eth.western.contemporary.existential",
+      "category": "knowledge",
+      "prompt": "キルケゴールが説いた実存の三段階にあてはまらないものは？",
+      "choices": [
+        "政治的実存",
+        "倫理的実存",
+        "美的実存",
+        "宗教的実存"
+      ],
+      "answerIndex": 0,
+      "explanation": "最後は単独者として神の前に立つ宗教的実存。"
+    },
+    {
+      "id": "soc_eth09_016",
+      "unit": "social.eth.western.contemporary.existential",
+      "category": "knowledge",
+      "prompt": "ニーチェが、同じことが永遠にくり返される世界を肯定する生き方を何とした？",
+      "choices": [
+        "ルサンチマン",
+        "ニヒリズム",
+        "運命愛（永劫回帰の肯定）",
+        "アンガージュマン"
+      ],
+      "answerIndex": 2,
+      "explanation": "超人の生き方。"
+    },
+    {
+      "id": "soc_eth09_017",
+      "unit": "social.eth.western.contemporary.existential",
+      "category": "knowledge",
+      "prompt": "ヤスパースが、死・苦しみ・争いなど人間が避けられない状況を何と呼んだ？",
+      "choices": [
+        "実存",
+        "世界内存在",
+        "限界状況",
+        "投企"
+      ],
+      "answerIndex": 2,
+      "explanation": "そこで超越者に出会うとした。"
+    },
+    {
+      "id": "soc_eth09_018",
+      "unit": "social.eth.western.contemporary.existential",
+      "category": "knowledge",
+      "prompt": "サルトルが説いた、社会に参加し責任を引き受けることは？",
+      "choices": [
+        "パノプティコン",
+        "エポケー",
+        "アンガージュマン（社会参加）",
+        "ルサンチマン"
+      ],
+      "answerIndex": 2,
+      "explanation": "自由には責任がともなう。"
+    },
+    {
+      "id": "soc_eth09_019",
+      "unit": "social.eth.western.contemporary",
+      "category": "knowledge",
+      "prompt": "ボーヴォワールが『第二の性』で述べた有名な言葉は？",
+      "choices": [
+        "われ思う、ゆえにわれあり",
+        "人は女に生まれるのではない、女になるのだ",
+        "人間は自由の刑に処せられている",
+        "神は死んだ"
+      ],
+      "answerIndex": 1,
+      "explanation": "ジェンダー論に大きな影響を与えた。"
+    },
+    {
+      "id": "soc_eth09_020",
+      "unit": "social.eth.western.contemporary",
+      "category": "knowledge",
+      "prompt": "ハイデガーが、日常の中で自分を見失い「ひと（世人）」として生きる状態を何とした？",
+      "choices": [
+        "覚悟",
+        "超越",
+        "頽落",
+        "実存"
+      ],
+      "answerIndex": 2,
+      "explanation": "死への存在を自覚して本来の自己を取りもどす。"
+    },
+    {
+      "id": "soc_eth09_021",
+      "unit": "social.eth.western.contemporary",
+      "category": "knowledge",
+      "prompt": "レヴィナスが、倫理の出発点とした他者の姿は？",
+      "choices": [
+        "神",
+        "身体",
+        "理性",
+        "顔"
+      ],
+      "answerIndex": 3,
+      "explanation": "他者の顔が「殺すなかれ」と訴えるとした。"
+    },
+    {
+      "id": "soc_eth09_022",
+      "unit": "social.eth.western.contemporary",
+      "category": "knowledge",
+      "prompt": "アーレントが『人間の条件』で重視した、人々が言葉を交わし共に行う活動は？",
+      "choices": [
+        "労働",
+        "仕事",
+        "観想",
+        "活動（action）"
+      ],
+      "answerIndex": 3,
+      "explanation": "公共的な空間での活動を重視した。"
+    },
+    {
+      "id": "soc_eth09_023",
+      "unit": "social.eth.western.contemporary.existential",
+      "category": "thinking",
+      "prompt": "ニーチェの「ルサンチマン」とは？",
+      "choices": [
+        "弱者が強者に対してもつ怨恨で、キリスト教道徳の背後にあるとされた",
+        "神への愛",
+        "強者の自信",
+        "自然への感謝"
+      ],
+      "answerIndex": 0,
+      "explanation": "弱さを善とする価値の転倒を批判した。"
+    },
+    {
+      "id": "soc_eth09_024",
+      "unit": "social.eth.western.contemporary.modern",
+      "category": "thinking",
+      "prompt": "ハーバーマスが重視した「対話的理性」の考え方として適切なものは？",
+      "choices": [
+        "権力で相手を従わせる",
+        "多数決だけで決める",
+        "対等な立場で理由を示し合い、合意をめざして話し合う",
+        "話し合いをしない"
+      ],
+      "answerIndex": 2,
+      "explanation": "公共圏での討議を重視した。"
+    }
+  ]
+}

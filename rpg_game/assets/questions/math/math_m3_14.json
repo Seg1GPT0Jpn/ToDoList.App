@@ -1,0 +1,288 @@
+{
+  "setId": "math_m3_14",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_m314_001",
+      "unit": "math.m3.integ.apply.area",
+      "category": "calculation",
+      "prompt": "2曲線 y=x² と y=√x で囲まれた部分の面積は？",
+      "choices": [
+        "2/3",
+        "1",
+        "1/6",
+        "1/3"
+      ],
+      "answerIndex": 3,
+      "explanation": "∫₀¹ (√x−x²) dx=2/3−1/3。"
+    },
+    {
+      "id": "mat_m314_002",
+      "unit": "math.m3.integ.apply.area",
+      "category": "calculation",
+      "prompt": "楕円 x²/9+y²/4=1 で囲まれた部分の面積は？",
+      "choices": [
+        "5π",
+        "36π",
+        "13π",
+        "6π"
+      ],
+      "answerIndex": 3,
+      "explanation": "πab=π·3·2。"
+    },
+    {
+      "id": "mat_m314_003",
+      "unit": "math.m3.integ.apply.volume",
+      "category": "calculation",
+      "prompt": "y=sin x（0≦x≦π）と x 軸の間の部分を x 軸のまわりに回転した立体の体積は？",
+      "choices": [
+        "π²",
+        "2π",
+        "π",
+        "π²/2"
+      ],
+      "answerIndex": 3,
+      "explanation": "π∫₀^π sin²x dx=π·π/2。"
+    },
+    {
+      "id": "mat_m314_004",
+      "unit": "math.m3.integ.apply.area",
+      "category": "calculation",
+      "prompt": "曲線 y=eˣ、直線 y=e、y 軸で囲まれた部分の面積は？",
+      "choices": [
+        "e−1",
+        "1",
+        "e",
+        "2"
+      ],
+      "answerIndex": 1,
+      "explanation": "∫₀¹ (e−eˣ) dx=e−(e−1)。"
+    },
+    {
+      "id": "mat_m314_005",
+      "unit": "math.m3.integ.apply.length",
+      "category": "calculation",
+      "prompt": "x=cos t、y=sin t（0≦t≦π）の曲線の長さは？",
+      "choices": [
+        "π/2",
+        "1",
+        "2π",
+        "π"
+      ],
+      "answerIndex": 3,
+      "explanation": "半円の弧。√((−sin t)²+cos²t)=1。"
+    },
+    {
+      "id": "mat_m314_006",
+      "unit": "math.m3.integ.apply.length",
+      "category": "knowledge",
+      "prompt": "サイクロイド x=θ−sin θ、y=1−cos θ の1つの弧（0≦θ≦2π）の長さは？",
+      "choices": [
+        "4",
+        "6",
+        "2π",
+        "8"
+      ],
+      "answerIndex": 3,
+      "explanation": "∫₀^(2π) 2sin(θ/2) dθ=8。"
+    },
+    {
+      "id": "mat_m314_007",
+      "unit": "math.m3.integ.apply.distance",
+      "category": "calculation",
+      "prompt": "速度 v(t)=t−1（0≦t≦2）で動く点の、道のりは？",
+      "choices": [
+        "1",
+        "1/2",
+        "0",
+        "2"
+      ],
+      "answerIndex": 0,
+      "explanation": "∫₀²|t−1| dt。"
+    },
+    {
+      "id": "mat_m314_008",
+      "unit": "math.m3.integ.apply",
+      "category": "calculation",
+      "prompt": "同じ点の、t=0 から t=2 までの位置の変化は？",
+      "choices": [
+        "1",
+        "2",
+        "−1",
+        "0"
+      ],
+      "answerIndex": 3,
+      "explanation": "∫₀² (t−1) dt。"
+    },
+    {
+      "id": "mat_m314_009",
+      "unit": "math.m3.integ.apply.area",
+      "category": "calculation",
+      "prompt": "曲線 y=log x と x 軸、直線 x=e で囲まれた部分の面積は？",
+      "choices": [
+        "e−1",
+        "1",
+        "e",
+        "1/e"
+      ],
+      "answerIndex": 1,
+      "explanation": "[x log x−x]₁^e=0−(−1)。"
+    },
+    {
+      "id": "mat_m314_010",
+      "unit": "math.m3.integ.apply.distance",
+      "category": "thinking",
+      "prompt": "「道のり」と「位置の変化」が異なることがある理由は？",
+      "choices": [
+        "時間が負になるから",
+        "同じになることはないから",
+        "向きが逆になる区間があると、位置の変化では打ち消し合うが、道のりでは足されるから",
+        "速度が一定だから"
+      ],
+      "answerIndex": 2,
+      "explanation": "道のりは ∫|v| dt。"
+    },
+    {
+      "id": "mat_m314_011",
+      "unit": "math.m3.integ.apply.area",
+      "category": "calculation",
+      "prompt": "2曲線 y=x² と y=x³ で囲まれた部分（0≦x≦1）の面積は？",
+      "choices": [
+        "1/4",
+        "1/12",
+        "1/3",
+        "1/6"
+      ],
+      "answerIndex": 1,
+      "explanation": "∫₀¹ (x²−x³) dx=1/3−1/4。"
+    },
+    {
+      "id": "mat_m314_012",
+      "unit": "math.m3.integ.apply.area",
+      "category": "calculation",
+      "prompt": "円 x²+y²=4 で囲まれた部分の面積を積分で求めると？",
+      "choices": [
+        "8π",
+        "2π",
+        "π",
+        "4π"
+      ],
+      "answerIndex": 3,
+      "explanation": "4∫₀² √(4−x²) dx=4π。"
+    },
+    {
+      "id": "mat_m314_013",
+      "unit": "math.m3.integ.apply.volume",
+      "category": "calculation",
+      "prompt": "y=cos x（−π/2≦x≦π/2）と x 軸の間の部分を x 軸のまわりに回転した立体の体積は？",
+      "choices": [
+        "π²/2",
+        "π",
+        "π²",
+        "2π"
+      ],
+      "answerIndex": 0,
+      "explanation": "π∫ cos²x dx=π·π/2。"
+    },
+    {
+      "id": "mat_m314_014",
+      "unit": "math.m3.integ.apply.area",
+      "category": "calculation",
+      "prompt": "曲線 y=log x、x 軸、y 軸、直線 y=1 で囲まれた部分の面積は？",
+      "choices": [
+        "e−1",
+        "1/e",
+        "1",
+        "e"
+      ],
+      "answerIndex": 0,
+      "explanation": "x=eʸ として ∫₀¹ eʸ dy。"
+    },
+    {
+      "id": "mat_m314_015",
+      "unit": "math.m3.integ.apply.length",
+      "category": "calculation",
+      "prompt": "x=2cos t、y=2sin t（0≦t≦π/2）の曲線の長さは？",
+      "choices": [
+        "2π",
+        "4",
+        "π",
+        "π/2"
+      ],
+      "answerIndex": 2,
+      "explanation": "半径2の円の 1/4。"
+    },
+    {
+      "id": "mat_m314_016",
+      "unit": "math.m3.integ.apply.distance",
+      "category": "calculation",
+      "prompt": "速度 v(t)=2t−2（0≦t≦3）で動く点の道のりは？",
+      "choices": [
+        "4",
+        "5",
+        "9",
+        "3"
+      ],
+      "answerIndex": 1,
+      "explanation": "∫₀³ |2t−2| dt=1+4。"
+    },
+    {
+      "id": "mat_m314_017",
+      "unit": "math.m3.integ.apply",
+      "category": "calculation",
+      "prompt": "同じ点の、t=0 から t=3 までの位置の変化は？",
+      "choices": [
+        "9",
+        "3",
+        "5",
+        "−3"
+      ],
+      "answerIndex": 1,
+      "explanation": "∫₀³ (2t−2) dt=9−6。"
+    },
+    {
+      "id": "mat_m314_018",
+      "unit": "math.m3.integ.apply.volume",
+      "category": "calculation",
+      "prompt": "y=x²（0≦x≦2）と x 軸の間の部分を x 軸のまわりに回転した立体の体積は？",
+      "choices": [
+        "16π/5",
+        "32π/5",
+        "32π/3",
+        "8π/3"
+      ],
+      "answerIndex": 1,
+      "explanation": "π∫₀² x⁴ dx。"
+    },
+    {
+      "id": "mat_m314_019",
+      "unit": "math.m3.integ.apply.volume",
+      "category": "calculation",
+      "prompt": "曲線 y=eˣ（0≦x≦1）と x 軸、直線 x=0、x=1 で囲まれた部分を x 軸のまわりに回転した体積は？",
+      "choices": [
+        "πe²/2",
+        "π(e²−1)/2",
+        "π(e²−1)",
+        "π(e−1)"
+      ],
+      "answerIndex": 1,
+      "explanation": "π∫₀¹ e^(2x) dx。"
+    },
+    {
+      "id": "mat_m314_020",
+      "unit": "math.m3.integ.apply.area",
+      "category": "thinking",
+      "prompt": "2曲線で囲まれた部分の面積を求めるとき、最初にすることは？",
+      "choices": [
+        "原点を通るか調べる",
+        "接線を求める",
+        "交点を求め、どちらが上にあるかを調べる",
+        "すぐに両方を足して積分する"
+      ],
+      "answerIndex": 2,
+      "explanation": "(上の曲線−下の曲線) を交点の間で積分する。"
+    }
+  ]
+}

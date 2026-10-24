@@ -1,0 +1,514 @@
+{
+  "setId": "japanese_shonan_104_gengo_bunka_kuho_01",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kuho_01_001",
+      "unit": "japanese.kanbun.kuho.causative.causative",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「王使人学之。」の書き下し文は？",
+      "choices": [
+        "王人を使ひて之を学ぶ。",
+        "王之を学びて人を使ふ。",
+        "王人に之を学ばる。",
+        "王人をして之を学ばしむ。"
+      ],
+      "answerIndex": 3,
+      "explanation": "「使」は使役「しム」。相手（人）に「をして」、動詞は未然形＋しむ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kuho"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kuho_01_002",
+      "unit": "japanese.kanbun.kuho.causative.causative",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「令弟子読書。」の意味は？",
+      "choices": [
+        "弟子に書物を読ませる",
+        "弟子が書物を読む命令を出す",
+        "弟子と一緒に書物を読む",
+        "弟子が書物を読まれる"
+      ],
+      "answerIndex": 0,
+      "explanation": "「令」も使役の「しム」。弟子をして書を読ましむ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kuho"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kuho_01_003",
+      "unit": "japanese.kanbun.kuho.causative.causative",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "使役の形「A 令 B C」で、Cの動作をするのは？",
+      "choices": [
+        "A",
+        "B",
+        "だれもしない",
+        "AとBの両方"
+      ],
+      "answerIndex": 1,
+      "explanation": "AはBにCさせる。Cをするのは「をして」がつくB。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kuho"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kuho_01_004",
+      "unit": "japanese.kanbun.kuho.causative.causative",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "使役の助動詞「しむ」は書き下し文でどう書く？",
+      "choices": [
+        "ひらがなで「しむ」と書く",
+        "カタカナで「シム」と書く",
+        "漢字で「使」と書く",
+        "書かない"
+      ],
+      "answerIndex": 0,
+      "explanation": "助動詞にあたるのでひらがなにする。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kuho"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kuho_01_005",
+      "unit": "japanese.kanbun.kuho.causative.passive",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "受身を表す「見」の読みは？",
+      "choices": [
+        "しむ",
+        "る・らる",
+        "みる",
+        "ごとし"
+      ],
+      "answerIndex": 1,
+      "explanation": "「見疑」＝疑はる（疑われる）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kuho"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kuho_01_006",
+      "unit": "japanese.kanbun.kuho.causative.passive",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「信而見疑。」の意味は？",
+      "choices": [
+        "信じたので疑わない",
+        "信じて疑いを見る",
+        "誠実なのに疑われる",
+        "誠実で人を疑う"
+      ],
+      "answerIndex": 2,
+      "explanation": "「見」は受身。信にして疑はる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kuho"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kuho_01_007",
+      "unit": "japanese.kanbun.kuho.causative.passive",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「為人所欺。」の書き下し文は？",
+      "choices": [
+        "人の欺く所と為る。",
+        "人に欺かしむ。",
+        "人の為に欺く所なり。",
+        "人を欺く所と為す。"
+      ],
+      "answerIndex": 0,
+      "explanation": "為A所B＝AのBする所と為る（AにBされる）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kuho"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kuho_01_008",
+      "unit": "japanese.kanbun.kuho.causative.passive",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "受身の助動詞として使われない字は？",
+      "choices": [
+        "被",
+        "為（〜所〜）",
+        "使",
+        "見"
+      ],
+      "answerIndex": 2,
+      "explanation": "「使」は使役。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kuho"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kuho_01_009",
+      "unit": "japanese.kanbun.kuho.causative.compare",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「苛政猛於虎也。」の意味は？",
+      "choices": [
+        "むごい政治で虎を退治する",
+        "虎はむごい政治より恐ろしい",
+        "むごい政治は虎よりも恐ろしい",
+        "むごい政治は虎のように強い"
+      ],
+      "answerIndex": 2,
+      "explanation": "「於」は比較（〜より）。苛政は虎よりも猛なり。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kuho"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kuho_01_010",
+      "unit": "japanese.kanbun.kuho.causative.compare",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「百聞不如一見。」の書き下し文は？",
+      "choices": [
+        "百聞は一見より如かず。",
+        "百聞は一見の如くならず。",
+        "百聞一見に如くは無し。",
+        "百聞は一見に如かず。"
+      ],
+      "answerIndex": 3,
+      "explanation": "不如＝しカず（及ばない）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kuho"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kuho_01_011",
+      "unit": "japanese.kanbun.kuho.causative.compare",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「莫若〜」の意味は？",
+      "choices": [
+        "〜しなければならない",
+        "〜のようではない",
+        "〜するのがよい",
+        "〜に及ぶものはない（〜が一番だ）"
+      ],
+      "answerIndex": 3,
+      "explanation": "Bに若くは莫し。最上級を表す。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kuho"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kuho_01_012",
+      "unit": "japanese.kanbun.kuho.causative.compare",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「寧為鶏口、無為牛後。」の意味は？",
+      "choices": [
+        "むしろ小さな集団の長になっても、大きな集団の後ろにつくな",
+        "鶏も牛も大切にせよ",
+        "鶏の口と牛の後ろは同じだ",
+        "鶏の口より牛の後ろの方がよい"
+      ],
+      "answerIndex": 0,
+      "explanation": "寧ろ鶏口と為るとも、牛後と為る無かれ（選択）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kuho"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kuho_01_013",
+      "unit": "japanese.kanbun.kuho.limit.limit",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "限定の「たダ」と読まない字は？",
+      "choices": [
+        "唯",
+        "況",
+        "惟",
+        "只"
+      ],
+      "answerIndex": 1,
+      "explanation": "「況」は抑揚の「いはンや」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kuho"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kuho_01_014",
+      "unit": "japanese.kanbun.kuho.limit.limit",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「唯仁者能好人。」の意味は？",
+      "choices": [
+        "仁者は人を好むことができない",
+        "仁者はただ人を好む",
+        "仁者と人は好き合う",
+        "ただ仁者だけが人を好むことができる"
+      ],
+      "answerIndex": 3,
+      "explanation": "唯（たダ）〜のみ、で限定。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kuho"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kuho_01_015",
+      "unit": "japanese.kanbun.kuho.limit.limit",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "文末で「のみ」と読む字の組み合わせは？",
+      "choices": [
+        "乎・哉・与",
+        "不・弗・無",
+        "耳・已・而已",
+        "也・矣・焉"
+      ],
+      "answerIndex": 2,
+      "explanation": "限定・強調の「のみ」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kuho"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kuho_01_016",
+      "unit": "japanese.kanbun.kuho.limit.limit",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「不唯〜（而）…」の意味は？",
+      "choices": [
+        "ただ〜だけでなく…も",
+        "〜でないだけだ",
+        "まして〜はなおさらだ",
+        "ただ〜だけだ"
+      ],
+      "answerIndex": 0,
+      "explanation": "累加の形。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kuho"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kuho_01_017",
+      "unit": "japanese.kanbun.kuho.limit.hypothesis",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「苟」の読みは？",
+      "choices": [
+        "いやしクモ",
+        "たとヒ",
+        "もシ",
+        "いへどモ"
+      ],
+      "answerIndex": 0,
+      "explanation": "かりにも〜ならば。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kuho"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kuho_01_018",
+      "unit": "japanese.kanbun.kuho.limit.hypothesis",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「縦」の読みと意味は？",
+      "choices": [
+        "もシ（もし〜ならば）",
+        "なほ（ちょうど〜のようだ）",
+        "たとヒ（たとえ〜でも）",
+        "たダ（〜だけ）"
+      ],
+      "answerIndex": 2,
+      "explanation": "逆接の仮定。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kuho"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kuho_01_019",
+      "unit": "japanese.kanbun.kuho.limit.hypothesis",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「雖千万人、吾往矣。」の意味は？",
+      "choices": [
+        "千万人がわたしの所に来た",
+        "千万人と一緒にわたしは行く",
+        "千万人がいるのでわたしは行かない",
+        "たとえ相手が千万人であっても、わたしは行く"
+      ],
+      "answerIndex": 3,
+      "explanation": "雖（いへどモ）＝たとえ〜でも。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kuho"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kuho_01_020",
+      "unit": "japanese.kanbun.kuho.limit.yokuyo",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「死馬且買之、況生者乎。」の意味は？",
+      "choices": [
+        "死んだ馬も生きている馬も買わない",
+        "死んだ馬を買って生きている馬を売る",
+        "まして死んだ馬は買わない",
+        "死んだ馬でさえ買うのだから、まして生きている馬はなおさら買う"
+      ],
+      "answerIndex": 3,
+      "explanation": "抑揚：A且B、況C乎（AでさえB、ましてCはなおさら）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kuho"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kuho_01_021",
+      "unit": "japanese.kanbun.kuho.limit.yokuyo",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「況〜乎」の読みは？",
+      "choices": [
+        "なんゾ〜や",
+        "あに〜や",
+        "いはンや〜をや",
+        "いかんゾ〜や"
+      ],
+      "answerIndex": 2,
+      "explanation": "抑揚の形。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kuho"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kuho_01_022",
+      "unit": "japanese.kanbun.kuho.limit.yokuyo",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "文末の「哉」が詠嘆を表すときの読みは？",
+      "choices": [
+        "か",
+        "かな",
+        "や",
+        "のみ"
+      ],
+      "answerIndex": 1,
+      "explanation": "〜だなあ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kuho"
+      ]
+    }
+  ]
+}

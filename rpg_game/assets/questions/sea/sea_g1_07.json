@@ -1,0 +1,308 @@
+{
+  "setId": "sea_g1_07",
+  "worldId": "sea",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g1_07_01",
+      "unit": "english.eng.grammar.passive.basic",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "English (   ) in many countries.",
+      "choices": [
+        "speaks",
+        "is spoken",
+        "spoke",
+        "is speaking"
+      ],
+      "answerIndex": 1,
+      "explanation": "英語は「話される」側なので受動態（be + 過去分詞）。"
+    },
+    {
+      "id": "sea_g1_07_02",
+      "unit": "english.eng.grammar.passive.basic",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This temple (   ) 300 years ago.",
+      "choices": [
+        "built",
+        "was built",
+        "is built",
+        "has built"
+      ],
+      "answerIndex": 1,
+      "explanation": "「300年前に建てられた」。過去の受動態は was / were + 過去分詞。"
+    },
+    {
+      "id": "sea_g1_07_03",
+      "unit": "english.eng.grammar.passive.basic",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The work (   ) already been finished.",
+      "choices": [
+        "is",
+        "has",
+        "was",
+        "have"
+      ],
+      "answerIndex": 1,
+      "explanation": "完了形の受動態は have / has been + 過去分詞。主語が単数なので has。"
+    },
+    {
+      "id": "sea_g1_07_04",
+      "unit": "english.eng.grammar.passive.basic",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The rules must (   ) by everyone.",
+      "choices": [
+        "follow",
+        "be followed",
+        "followed",
+        "be following"
+      ],
+      "answerIndex": 1,
+      "explanation": "助動詞 + be + 過去分詞 で受動態。"
+    },
+    {
+      "id": "sea_g1_07_05",
+      "unit": "english.eng.grammar.passive.basic",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The top of the mountain is covered (   ) snow.",
+      "choices": [
+        "by",
+        "with",
+        "in",
+        "of"
+      ],
+      "answerIndex": 1,
+      "explanation": "be covered with 〜 で「〜でおおわれている」。by 以外の前置詞を使う受動態。"
+    },
+    {
+      "id": "sea_g1_07_06",
+      "unit": "english.eng.grammar.passive.basic",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I was spoken (   ) by a stranger.",
+      "choices": [
+        "by",
+        "with",
+        "to",
+        "at"
+      ],
+      "answerIndex": 2,
+      "explanation": "speak to 〜 を受動態にすると be spoken to by 〜。to を落とさない。"
+    },
+    {
+      "id": "sea_g1_07_07",
+      "unit": "english.eng.grammar.passive",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "She is interested (   ) Japanese history.",
+      "choices": [
+        "in",
+        "at",
+        "with",
+        "by"
+      ],
+      "answerIndex": 0,
+      "explanation": "be interested in 〜 で「〜に興味がある」。"
+    },
+    {
+      "id": "sea_g1_07_08",
+      "unit": "english.eng.grammar.passive.basic",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "My bike is (   ) repaired now.",
+      "choices": [
+        "been",
+        "being",
+        "be",
+        "to be"
+      ],
+      "answerIndex": 1,
+      "explanation": "進行形の受動態は be being + 過去分詞「〜されているところだ」。"
+    },
+    {
+      "id": "sea_g1_07_09",
+      "unit": "english.eng.grammar.passive",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This letter (   ) by my grandmother.",
+      "choices": [
+        "wrote",
+        "was written",
+        "was writing",
+        "has written"
+      ],
+      "answerIndex": 1,
+      "explanation": "「書かれた」：be ＋ 過去分詞。"
+    },
+    {
+      "id": "sea_g1_07_10",
+      "unit": "english.eng.grammar.passive",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The window was broken (   ) Tom.",
+      "choices": [
+        "of",
+        "with",
+        "from",
+        "by"
+      ],
+      "answerIndex": 3,
+      "explanation": "動作をした人は by で表す。"
+    },
+    {
+      "id": "sea_g1_07_11",
+      "unit": "english.eng.grammar.passive",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Many stars can (   ) tonight.",
+      "choices": [
+        "see",
+        "seen",
+        "be seen",
+        "be seeing"
+      ],
+      "answerIndex": 2,
+      "explanation": "助動詞 ＋ be ＋ 過去分詞。"
+    },
+    {
+      "id": "sea_g1_07_12",
+      "unit": "english.eng.grammar.passive.basic",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The room (   ) every day.",
+      "choices": [
+        "cleaned",
+        "is cleaned",
+        "cleans",
+        "is cleaning"
+      ],
+      "answerIndex": 1,
+      "explanation": "習慣的に「掃除される」：現在形の受動態。"
+    },
+    {
+      "id": "sea_g1_07_13",
+      "unit": "english.eng.grammar.passive.basic",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The bridge (   ) now.",
+      "choices": [
+        "is building",
+        "has built",
+        "is being built",
+        "builds"
+      ],
+      "answerIndex": 2,
+      "explanation": "「今建設されているところ」：進行形の受動態。"
+    },
+    {
+      "id": "sea_g1_07_14",
+      "unit": "english.eng.grammar.passive",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The singer is known (   ) everyone.",
+      "choices": [
+        "to",
+        "at",
+        "by",
+        "for"
+      ],
+      "answerIndex": 0,
+      "explanation": "be known to 〜「〜に知られている」。"
+    },
+    {
+      "id": "sea_g1_07_15",
+      "unit": "english.eng.grammar.passive",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The desk is made (   ) wood.",
+      "choices": [
+        "from",
+        "by",
+        "of",
+        "into"
+      ],
+      "answerIndex": 2,
+      "explanation": "材料が見て分かるときは be made of。"
+    },
+    {
+      "id": "sea_g1_07_16",
+      "unit": "english.eng.grammar.passive",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Wine is made (   ) grapes.",
+      "choices": [
+        "of",
+        "with",
+        "from",
+        "by"
+      ],
+      "answerIndex": 2,
+      "explanation": "原料の形が変わっているときは be made from。"
+    },
+    {
+      "id": "sea_g1_07_17",
+      "unit": "english.eng.grammar.passive",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The concert will (   ) next week.",
+      "choices": [
+        "held",
+        "hold",
+        "be held",
+        "be holding"
+      ],
+      "answerIndex": 2,
+      "explanation": "「開かれる」：will be ＋ 過去分詞。"
+    },
+    {
+      "id": "sea_g1_07_18",
+      "unit": "english.eng.grammar.passive.basic",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He was made (   ) the room.",
+      "choices": [
+        "to clean",
+        "clean",
+        "cleaned",
+        "cleaning"
+      ],
+      "answerIndex": 0,
+      "explanation": "使役の make を受動態にすると、原形が to 不定詞になる。"
+    },
+    {
+      "id": "sea_g1_07_19",
+      "unit": "english.eng.grammar.passive.basic",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "When (   ) this castle built?",
+      "choices": [
+        "has",
+        "did",
+        "was",
+        "is"
+      ],
+      "answerIndex": 2,
+      "explanation": "受動態の疑問文：be 動詞を前に出す。"
+    },
+    {
+      "id": "sea_g1_07_20",
+      "unit": "english.eng.grammar.passive.basic",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The problem (   ) by the students yet.",
+      "choices": [
+        "hasn't been solved",
+        "didn't solve",
+        "hasn't solved",
+        "isn't solving"
+      ],
+      "answerIndex": 0,
+      "explanation": "完了形の受動態：have been ＋ 過去分詞。"
+    }
+  ]
+}

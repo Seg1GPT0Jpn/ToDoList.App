@@ -1,0 +1,456 @@
+{
+  "setId": "science_earth_04",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_ear04_001",
+      "unit": "science.earth.solid.volcano.magma",
+      "category": "knowledge",
+      "prompt": "マグマのねばりけ（粘性）が大きくなるのは、どんな成分が多いとき？",
+      "choices": [
+        "水素",
+        "鉄",
+        "二酸化ケイ素（SiO₂）",
+        "マグネシウム"
+      ],
+      "answerIndex": 2,
+      "explanation": "SiO₂ が多いマグマは粘性が大きく、温度が低い。白っぽい岩石になる。"
+    },
+    {
+      "id": "sci_ear04_002",
+      "unit": "science.earth.solid.volcano.magma",
+      "category": "knowledge",
+      "prompt": "粘性の大きいマグマがつくる火山の形と噴火のようすは？",
+      "choices": [
+        "盾状火山をつくり、おだやかな噴火",
+        "溶岩台地をつくる",
+        "噴火しない",
+        "溶岩ドームをつくり、爆発的な噴火をしやすい"
+      ],
+      "answerIndex": 3,
+      "explanation": "例：昭和新山、雲仙普賢岳の溶岩ドーム。"
+    },
+    {
+      "id": "sci_ear04_003",
+      "unit": "science.earth.solid.volcano.magma",
+      "category": "knowledge",
+      "prompt": "粘性の小さいマグマがつくる、傾斜のゆるやかな火山を何という？",
+      "choices": [
+        "成層火山",
+        "溶岩ドーム",
+        "盾状火山",
+        "カルデラ"
+      ],
+      "answerIndex": 2,
+      "explanation": "例：ハワイのマウナロア。溶岩が流れやすく、おだやかな噴火が多い。"
+    },
+    {
+      "id": "sci_ear04_004",
+      "unit": "science.earth.solid.volcano.magma",
+      "category": "knowledge",
+      "prompt": "富士山のように、溶岩と火山砕屑物が交互に積み重なった円すい形の火山は？",
+      "choices": [
+        "成層火山",
+        "溶岩台地",
+        "盾状火山",
+        "溶岩ドーム"
+      ],
+      "answerIndex": 0,
+      "explanation": "中間的な粘性のマグマによることが多い。"
+    },
+    {
+      "id": "sci_ear04_005",
+      "unit": "science.earth.solid.volcano.rock",
+      "category": "knowledge",
+      "prompt": "マグマが地表や地表近くで急に冷えてできた火成岩を何という？",
+      "choices": [
+        "変成岩",
+        "火山岩",
+        "深成岩",
+        "堆積岩"
+      ],
+      "answerIndex": 1,
+      "explanation": "斑晶と、細かい結晶やガラスからなる石基をもつ斑状組織を示す。"
+    },
+    {
+      "id": "sci_ear04_006",
+      "unit": "science.earth.solid.volcano.magma",
+      "category": "knowledge",
+      "prompt": "マグマが地下深くでゆっくり冷えてできた火成岩を何という？",
+      "choices": [
+        "堆積岩",
+        "凝灰岩",
+        "火山岩",
+        "深成岩"
+      ],
+      "answerIndex": 3,
+      "explanation": "大きな結晶がそろった等粒状組織を示す。"
+    },
+    {
+      "id": "sci_ear04_007",
+      "unit": "science.earth.solid.volcano.rock",
+      "category": "knowledge",
+      "prompt": "深成岩のうち、白っぽく、石英や長石を多くふくむものは？",
+      "choices": [
+        "安山岩",
+        "玄武岩",
+        "斑れい岩",
+        "花こう岩"
+      ],
+      "answerIndex": 3,
+      "explanation": "深成岩：花こう岩（白）・閃緑岩・斑れい岩（黒）。火山岩：流紋岩・安山岩・玄武岩。"
+    },
+    {
+      "id": "sci_ear04_008",
+      "unit": "science.earth.solid.volcano.mineral",
+      "category": "knowledge",
+      "prompt": "火山岩のうち、黒っぽく、有色鉱物を多くふくむものは？",
+      "choices": [
+        "花こう岩",
+        "玄武岩",
+        "流紋岩",
+        "閃緑岩"
+      ],
+      "answerIndex": 1,
+      "explanation": "SiO₂ が少ない（苦鉄質の）マグマからできる。"
+    },
+    {
+      "id": "sci_ear04_009",
+      "unit": "science.earth.solid.volcano.mineral",
+      "category": "knowledge",
+      "prompt": "無色鉱物はどれ？",
+      "choices": [
+        "かんらん石",
+        "黒雲母",
+        "輝石",
+        "石英"
+      ],
+      "answerIndex": 3,
+      "explanation": "無色鉱物は石英・長石。有色鉱物はかんらん石・輝石・角閃石・黒雲母など。"
+    },
+    {
+      "id": "sci_ear04_010",
+      "unit": "science.earth.solid.volcano.magma",
+      "category": "knowledge",
+      "prompt": "高温の火山ガスと火山砕屑物が一体となって、山の斜面を高速で流れ下る現象は？",
+      "choices": [
+        "火砕流",
+        "溶岩流",
+        "津波",
+        "土石流"
+      ],
+      "answerIndex": 0,
+      "explanation": "時速 100 km を超えることもあり、非常に危険。"
+    },
+    {
+      "id": "sci_ear04_011",
+      "unit": "science.earth.solid.volcano.magma",
+      "category": "knowledge",
+      "prompt": "大規模な噴火のあと、火山の中心部が陥没してできた大きなくぼ地を何という？",
+      "choices": [
+        "火口湖",
+        "海溝",
+        "カルデラ",
+        "溶岩ドーム"
+      ],
+      "answerIndex": 2,
+      "explanation": "例：阿蘇山、洞爺湖。"
+    },
+    {
+      "id": "sci_ear04_012",
+      "unit": "science.earth.solid.volcano.magma",
+      "category": "knowledge",
+      "prompt": "日本列島で、火山が海溝とほぼ平行な帯状に分布し、その海溝側の境界線を何という？",
+      "choices": [
+        "中央構造線",
+        "火山前線（火山フロント）",
+        "森林限界",
+        "海嶺"
+      ],
+      "answerIndex": 1,
+      "explanation": "沈みこんだプレートがある深さに達した場所の上にマグマができるため。"
+    },
+    {
+      "id": "sci_ear04_013",
+      "unit": "science.earth.solid.volcano.mineral",
+      "category": "calculation",
+      "prompt": "ある火成岩の有色鉱物の体積の割合が 30 % だった。この岩石の色指数は？",
+      "choices": [
+        "30",
+        "70",
+        "100",
+        "3.0"
+      ],
+      "answerIndex": 0,
+      "explanation": "色指数は有色鉱物の体積 %。数値が大きいほど黒っぽい。"
+    },
+    {
+      "id": "sci_ear04_014",
+      "unit": "science.earth.solid.volcano.magma",
+      "category": "calculation",
+      "prompt": "SiO₂ を質量で約 70 % ふくむマグマが地下深くでゆっくり冷えた。できる岩石は？",
+      "choices": [
+        "花こう岩",
+        "玄武岩",
+        "斑れい岩",
+        "安山岩"
+      ],
+      "answerIndex": 0,
+      "explanation": "SiO₂ が多い（ケイ長質）で深成岩なので花こう岩。急に冷えれば流紋岩。"
+    },
+    {
+      "id": "sci_ear04_015",
+      "unit": "science.earth.solid.volcano.magma",
+      "category": "thinking",
+      "prompt": "火山岩に大きな結晶（斑晶）と細かい部分（石基）があるのはなぜ？",
+      "choices": [
+        "地表で結晶が成長したから",
+        "水の中で冷えたから",
+        "最初から大きさのちがう結晶がふくまれていたから",
+        "地下でゆっくり冷えて斑晶ができ、その後地表付近で急に冷えて石基ができたから"
+      ],
+      "answerIndex": 3,
+      "explanation": "冷え方が2段階だったことを示す。"
+    },
+    {
+      "id": "sci_ear04_016",
+      "unit": "science.earth.solid.volcano.magma",
+      "category": "thinking",
+      "prompt": "日本の火山が、日本海溝などの海溝から一定の距離をおいて並んでいる理由は？",
+      "choices": [
+        "偶然である",
+        "ホットスポットが並んでいるから",
+        "沈みこんだプレートがある深さに達すると、その上でマグマができるから",
+        "海溝の真上でマグマができるから"
+      ],
+      "answerIndex": 2,
+      "explanation": "そのため、火山前線より海溝側には火山がない。"
+    },
+    {
+      "id": "sci_ear04_017",
+      "unit": "science.earth.solid.volcano.magma",
+      "category": "knowledge",
+      "prompt": "マグマの温度が高く、SiO₂ が少ないとき、マグマの性質は？",
+      "choices": [
+        "ねばりけが小さく流れやすい",
+        "爆発的に噴火しやすい",
+        "ねばりけが大きい",
+        "固体になっている"
+      ],
+      "answerIndex": 0,
+      "explanation": "玄武岩質マグマ。"
+    },
+    {
+      "id": "sci_ear04_018",
+      "unit": "science.earth.solid.volcano.magma",
+      "category": "knowledge",
+      "prompt": "粘性の大きいマグマで起こりやすい噴火は？",
+      "choices": [
+        "おだやかな溶岩の流出",
+        "噴火しない",
+        "爆発的な噴火",
+        "水だけが出る"
+      ],
+      "answerIndex": 2,
+      "explanation": "ガスがぬけにくく、たまって爆発する。"
+    },
+    {
+      "id": "sci_ear04_019",
+      "unit": "science.earth.solid.volcano.magma",
+      "category": "knowledge",
+      "prompt": "火山砕屑物にあてはまらないものは？",
+      "choices": [
+        "火山弾",
+        "火山灰",
+        "火山れき",
+        "溶岩流"
+      ],
+      "answerIndex": 3,
+      "explanation": "溶岩流は液体のマグマが流れたもの。"
+    },
+    {
+      "id": "sci_ear04_020",
+      "unit": "science.earth.solid.volcano",
+      "category": "knowledge",
+      "prompt": "等粒状組織をもつ岩石は？",
+      "choices": [
+        "火山岩",
+        "堆積岩",
+        "深成岩",
+        "凝灰岩"
+      ],
+      "answerIndex": 2,
+      "explanation": "ゆっくり冷えて、結晶が大きく育つ。"
+    },
+    {
+      "id": "sci_ear04_021",
+      "unit": "science.earth.solid.volcano.rock",
+      "category": "knowledge",
+      "prompt": "斑状組織をもつ岩石は？",
+      "choices": [
+        "深成岩",
+        "石灰岩",
+        "火山岩",
+        "チャート"
+      ],
+      "answerIndex": 2,
+      "explanation": "斑晶と石基からなる。"
+    },
+    {
+      "id": "sci_ear04_022",
+      "unit": "science.earth.solid.volcano.rock",
+      "category": "knowledge",
+      "prompt": "安山岩と同じような成分をもつ深成岩は？",
+      "choices": [
+        "閃緑岩",
+        "花こう岩",
+        "流紋岩",
+        "はんれい岩"
+      ],
+      "answerIndex": 0,
+      "explanation": "玄武岩↔はんれい岩、安山岩↔閃緑岩、流紋岩↔花こう岩。"
+    },
+    {
+      "id": "sci_ear04_023",
+      "unit": "science.earth.solid.volcano.mineral",
+      "category": "knowledge",
+      "prompt": "かんらん石・輝石・角閃石・黒雲母に共通するものは？",
+      "choices": [
+        "炭酸塩鉱物",
+        "無色鉱物",
+        "有色鉱物",
+        "粘土鉱物"
+      ],
+      "answerIndex": 2,
+      "explanation": "鉄やマグネシウムを多くふくみ、黒っぽい。"
+    },
+    {
+      "id": "sci_ear04_024",
+      "unit": "science.earth.solid.volcano.magma",
+      "category": "knowledge",
+      "prompt": "火山の噴火のようすを大きく左右するマグマの性質は？",
+      "choices": [
+        "色",
+        "におい",
+        "ねばりけ（粘性）",
+        "重さだけ"
+      ],
+      "answerIndex": 2,
+      "explanation": "粘性で火山の形や噴火の激しさが変わる。"
+    },
+    {
+      "id": "sci_ear04_025",
+      "unit": "science.earth.solid.volcano.magma",
+      "category": "knowledge",
+      "prompt": "マグマだまりとは？",
+      "choices": [
+        "火口にたまった水",
+        "溶岩がたまった平地",
+        "地下でマグマがたまっている場所",
+        "火山灰の層"
+      ],
+      "answerIndex": 2,
+      "explanation": "地下数 km〜十数 km にある。"
+    },
+    {
+      "id": "sci_ear04_026",
+      "unit": "science.earth.solid.volcano.magma",
+      "category": "knowledge",
+      "prompt": "溶岩ドーム（溶岩円頂丘）をつくるマグマは？",
+      "choices": [
+        "ねばりけの大きいマグマ",
+        "玄武岩質マグマ",
+        "ねばりけの小さいマグマ",
+        "水"
+      ],
+      "answerIndex": 0,
+      "explanation": "昭和新山や雲仙普賢岳の溶岩ドーム。"
+    },
+    {
+      "id": "sci_ear04_027",
+      "unit": "science.earth.solid.volcano.mineral",
+      "category": "calculation",
+      "prompt": "ある岩石で、有色鉱物の体積割合が 45 % だった。無色鉱物の割合は？",
+      "choices": [
+        "45 %",
+        "55 %",
+        "100 %",
+        "5 %"
+      ],
+      "answerIndex": 1,
+      "explanation": "100 − 45。"
+    },
+    {
+      "id": "sci_ear04_028",
+      "unit": "science.earth.solid.volcano",
+      "category": "calculation",
+      "prompt": "直径 0.05 cm の結晶が、1 年に 0.001 cm ずつ成長するとすると、何年でできる？（単純計算）",
+      "choices": [
+        "0.05 年",
+        "5 年",
+        "500 年",
+        "50 年"
+      ],
+      "answerIndex": 3,
+      "explanation": "0.05 ÷ 0.001。"
+    },
+    {
+      "id": "sci_ear04_029",
+      "unit": "science.earth.solid.volcano.magma",
+      "category": "calculation",
+      "prompt": "火山灰が 1 時間に 2 mm 積もった。10 時間では何 cm？",
+      "choices": [
+        "20 cm",
+        "2 cm",
+        "0.2 cm",
+        "10 cm"
+      ],
+      "answerIndex": 1,
+      "explanation": "20 mm ＝ 2 cm。"
+    },
+    {
+      "id": "sci_ear04_030",
+      "unit": "science.earth.solid.volcano.magma",
+      "category": "calculation",
+      "prompt": "溶岩流の速さが 1 分間に 50 m のとき、2 km 先の集落に届くのは約何分後？",
+      "choices": [
+        "約 40 分後",
+        "約 100 分後",
+        "約 4 分後",
+        "約 25 分後"
+      ],
+      "answerIndex": 0,
+      "explanation": "2000 ÷ 50。"
+    },
+    {
+      "id": "sci_ear04_031",
+      "unit": "science.earth.solid.volcano.rock",
+      "category": "thinking",
+      "prompt": "地下深くでできた深成岩が、地表で見られることがある理由は？",
+      "choices": [
+        "マグマが地表に噴き出して固まったから",
+        "地表で急に冷えてできたから",
+        "地殻の隆起と侵食で、上にあった岩石がけずり取られたから",
+        "地下水が岩石を押し上げたから"
+      ],
+      "answerIndex": 2,
+      "explanation": "長い年月の隆起と侵食で、地下の深成岩（花こう岩など）が地表に現れる。"
+    },
+    {
+      "id": "sci_ear04_032",
+      "unit": "science.earth.solid.volcano.magma",
+      "category": "thinking",
+      "prompt": "火山の恵みとして正しくないものは？",
+      "choices": [
+        "地熱発電ができる",
+        "美しい景観が観光資源になる",
+        "火砕流が発生すること",
+        "温泉が利用できる"
+      ],
+      "answerIndex": 2,
+      "explanation": "火砕流は災害。"
+    }
+  ]
+}

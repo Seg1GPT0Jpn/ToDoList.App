@@ -1,0 +1,456 @@
+{
+  "setId": "science_physics_13",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_phy13_001",
+      "unit": "science.physics.waves.basic.describe",
+      "category": "knowledge",
+      "prompt": "2つの波源からの波が強め合う条件は？（経路差を Δl、波長を λ、同位相の波源）",
+      "choices": [
+        "Δl ＝ (m ＋ ½)λ",
+        "Δl ＝ 0 のときだけ",
+        "Δl ＝ λ/4",
+        "Δl ＝ mλ（m ＝ 0, 1, 2, …）"
+      ],
+      "answerIndex": 3,
+      "explanation": "経路差が波長の整数倍なら山と山が重なって強め合う。半波長の奇数倍なら弱め合う。"
+    },
+    {
+      "id": "sci_phy13_002",
+      "unit": "science.physics.waves.basic.describe",
+      "category": "knowledge",
+      "prompt": "波が障害物の裏側にまで回りこむ現象は？",
+      "choices": [
+        "回折",
+        "分散",
+        "屈折",
+        "反射"
+      ],
+      "answerIndex": 0,
+      "explanation": "すき間や障害物が波長と同じくらいのとき、回折が目立つ。"
+    },
+    {
+      "id": "sci_phy13_003",
+      "unit": "science.physics.waves.sound.nature",
+      "category": "knowledge",
+      "prompt": "音源が近づいてくるとき、聞こえる音の高さは？",
+      "choices": [
+        "変わらない",
+        "もとの音より低い",
+        "もとの音より高い",
+        "聞こえなくなる"
+      ],
+      "answerIndex": 2,
+      "explanation": "ドップラー効果。近づくと波長が短くなり振動数が大きく（高く）聞こえる。"
+    },
+    {
+      "id": "sci_phy13_004",
+      "unit": "science.physics.waves.basic.reflection",
+      "category": "knowledge",
+      "prompt": "屈折の法則は？（n：屈折率、θ：入射角・屈折角）",
+      "choices": [
+        "n₁ sinθ₁ ＝ n₂ sinθ₂",
+        "n₁θ₁ ＝ n₂θ₂",
+        "n₁/sinθ₁ ＝ n₂ sinθ₂",
+        "n₁ cosθ₁ ＝ n₂ cosθ₂"
+      ],
+      "answerIndex": 0,
+      "explanation": "スネルの法則。屈折率の大きい媒質ほど光の進む向きは法線に近づく。"
+    },
+    {
+      "id": "sci_phy13_005",
+      "unit": "science.physics.waves.light.nature",
+      "category": "knowledge",
+      "prompt": "全反射が起こる条件は？",
+      "choices": [
+        "どんな場合でも起こる",
+        "屈折率の小さい媒質から大きい媒質へ入射する",
+        "垂直に入射する",
+        "屈折率の大きい媒質から小さい媒質へ、臨界角より大きい角で入射する"
+      ],
+      "answerIndex": 3,
+      "explanation": "光ファイバーは全反射を利用している。"
+    },
+    {
+      "id": "sci_phy13_006",
+      "unit": "science.physics.waves.basic.reflection",
+      "category": "knowledge",
+      "prompt": "白色光をプリズムに通すと色に分かれる現象は？",
+      "choices": [
+        "干渉",
+        "偏光",
+        "回折",
+        "分散"
+      ],
+      "answerIndex": 3,
+      "explanation": "光の色（波長）によって屈折率がわずかに異なるため、屈折の角度が変わる。"
+    },
+    {
+      "id": "sci_phy13_007",
+      "unit": "science.physics.waves.light.nature",
+      "category": "knowledge",
+      "prompt": "偏光という現象が起こることからわかる光の性質は？",
+      "choices": [
+        "光は横波である",
+        "光は媒質がないと進めない",
+        "光は粒子だけである",
+        "光は縦波である"
+      ],
+      "answerIndex": 0,
+      "explanation": "振動方向がそろう（偏る）のは横波だけの性質。"
+    },
+    {
+      "id": "sci_phy13_008",
+      "unit": "science.physics.waves.light.interference",
+      "category": "knowledge",
+      "prompt": "ヤングの実験（間隔 d の2つのスリット、スクリーンまでの距離 L）で、明線の間隔は？",
+      "choices": [
+        "Lλ/d",
+        "λ/(Ld)",
+        "dλ/L",
+        "Ld/λ"
+      ],
+      "answerIndex": 0,
+      "explanation": "Δx ＝ Lλ/d。波長が長いほど、スリット間隔が狭いほど、間隔が広がる。"
+    },
+    {
+      "id": "sci_phy13_009",
+      "unit": "science.physics.waves.basic.describe",
+      "category": "calculation",
+      "prompt": "振動数 660 Hz の音源が 10 m/s で近づいてくる。聞こえる振動数は？（音速 340 m/s）",
+      "choices": [
+        "641 Hz",
+        "660 Hz",
+        "680 Hz",
+        "700 Hz"
+      ],
+      "answerIndex": 2,
+      "explanation": "f′ ＝ f × V/(V − v) ＝ 660 × 340/330 ＝ 680 Hz。"
+    },
+    {
+      "id": "sci_phy13_010",
+      "unit": "science.physics.waves.light.interference",
+      "category": "calculation",
+      "prompt": "ヤングの実験で L ＝ 1.0 m、d ＝ 0.50 mm、波長 5.0 × 10⁻⁷ m。明線の間隔は？",
+      "choices": [
+        "0.25 mm",
+        "0.10 mm",
+        "1.0 mm",
+        "2.0 mm"
+      ],
+      "answerIndex": 2,
+      "explanation": "Δx ＝ Lλ/d ＝ 1.0 × 5.0×10⁻⁷ ÷ 5.0×10⁻⁴ ＝ 1.0 × 10⁻³ m ＝ 1.0 mm。"
+    },
+    {
+      "id": "sci_phy13_011",
+      "unit": "science.physics.waves.light.nature",
+      "category": "calculation",
+      "prompt": "屈折率 1.5 のガラスの中を進む光の速さは？（真空中の光速 3.0 × 10⁸ m/s）",
+      "choices": [
+        "4.5 × 10⁸ m/s",
+        "1.5 × 10⁸ m/s",
+        "3.0 × 10⁸ m/s",
+        "2.0 × 10⁸ m/s"
+      ],
+      "answerIndex": 3,
+      "explanation": "v ＝ c/n ＝ 3.0×10⁸ ÷ 1.5 ＝ 2.0 × 10⁸ m/s。"
+    },
+    {
+      "id": "sci_phy13_012",
+      "unit": "science.physics.waves.basic.describe",
+      "category": "calculation",
+      "prompt": "真空中の波長 600 nm の光が、屈折率 1.5 のガラスに入った。ガラス中の波長は？",
+      "choices": [
+        "400 nm",
+        "600 nm",
+        "900 nm",
+        "300 nm"
+      ],
+      "answerIndex": 0,
+      "explanation": "振動数は変わらず速さが 1/n になるので、波長も 1/n。600 ÷ 1.5 ＝ 400 nm。"
+    },
+    {
+      "id": "sci_phy13_013",
+      "unit": "science.physics.waves.light.interference",
+      "category": "calculation",
+      "prompt": "格子定数 1.2 × 10⁻⁶ m の回折格子で、1次の明線が 30° の方向に見えた。光の波長は？",
+      "choices": [
+        "1.2 × 10⁻⁶ m",
+        "6.0 × 10⁻⁷ m",
+        "3.0 × 10⁻⁷ m",
+        "2.4 × 10⁻⁶ m"
+      ],
+      "answerIndex": 1,
+      "explanation": "d sinθ ＝ mλ より λ ＝ 1.2×10⁻⁶ × sin30° ÷ 1 ＝ 6.0 × 10⁻⁷ m。"
+    },
+    {
+      "id": "sci_phy13_014",
+      "unit": "science.physics.waves.basic.describe",
+      "category": "calculation",
+      "prompt": "同位相の2つの波源からの経路差が、波長の 1.5 倍の点ではどうなる？",
+      "choices": [
+        "波長が変わる",
+        "弱め合う",
+        "強め合う",
+        "振動数が2倍になる"
+      ],
+      "answerIndex": 1,
+      "explanation": "1.5λ ＝ (1 ＋ ½)λ で半波長の奇数倍なので弱め合う。"
+    },
+    {
+      "id": "sci_phy13_015",
+      "unit": "science.physics.waves.basic.reflection",
+      "category": "thinking",
+      "prompt": "プールの底のコインが、実際より浅い所にあるように見える理由は？",
+      "choices": [
+        "光が回折するから",
+        "水から空気へ出る光が屈折するから",
+        "光が全反射するから",
+        "水が光を吸収するから"
+      ],
+      "answerIndex": 1,
+      "explanation": "水面で光が屈折し、目は光がまっすぐ来たと考えるので、浮き上がって見える。"
+    },
+    {
+      "id": "sci_phy13_016",
+      "unit": "science.physics.waves.light.interference",
+      "category": "thinking",
+      "prompt": "シャボン玉が色づいて見える理由は？",
+      "choices": [
+        "膜の表と裏で反射した光が干渉するから",
+        "石けんに色がついているから",
+        "光が分散するから",
+        "光が偏光するから"
+      ],
+      "answerIndex": 0,
+      "explanation": "薄膜の表と裏で反射した光が、膜の厚さと波長によって強め合ったり弱め合ったりする。"
+    },
+    {
+      "id": "sci_phy13_017",
+      "unit": "science.physics.waves.basic.describe",
+      "category": "knowledge",
+      "prompt": "2つの波源からの波が弱め合う条件は？（同位相、m は整数）",
+      "choices": [
+        "経路差 ＝ 0",
+        "経路差 ＝ (m + ½)λ",
+        "経路差 ＝ mλ",
+        "経路差 ＝ 2mλ"
+      ],
+      "answerIndex": 1,
+      "explanation": "半波長の奇数倍のずれで山と谷が重なる。"
+    },
+    {
+      "id": "sci_phy13_018",
+      "unit": "science.physics.waves.basic.reflection",
+      "category": "knowledge",
+      "prompt": "光が反射するとき、入射角と反射角の関係は？",
+      "choices": [
+        "関係ない",
+        "反射角が2倍",
+        "等しい",
+        "反射角が小さい"
+      ],
+      "answerIndex": 2,
+      "explanation": "反射の法則。"
+    },
+    {
+      "id": "sci_phy13_019",
+      "unit": "science.physics.waves.basic.describe",
+      "category": "knowledge",
+      "prompt": "可視光のうち、波長が最も長い色は？",
+      "choices": [
+        "緑",
+        "青",
+        "赤",
+        "紫"
+      ],
+      "answerIndex": 2,
+      "explanation": "赤から紫に向かって波長が短くなる。"
+    },
+    {
+      "id": "sci_phy13_020",
+      "unit": "science.physics.waves.sound.doppler",
+      "category": "knowledge",
+      "prompt": "救急車が遠ざかるとき、聞こえるサイレンの音は？",
+      "choices": [
+        "聞こえなくなる",
+        "元の音より低い",
+        "変わらない",
+        "元の音より高い"
+      ],
+      "answerIndex": 1,
+      "explanation": "ドップラー効果。"
+    },
+    {
+      "id": "sci_phy13_021",
+      "unit": "science.physics.waves.light.nature",
+      "category": "knowledge",
+      "prompt": "屈折率の大きい物質中では、光の速さはどうなる？",
+      "choices": [
+        "遅くなる",
+        "速くなる",
+        "変わらない",
+        "0になる"
+      ],
+      "answerIndex": 0,
+      "explanation": "v ＝ c/n。"
+    },
+    {
+      "id": "sci_phy13_022",
+      "unit": "science.physics.waves.light.nature",
+      "category": "knowledge",
+      "prompt": "光ファイバーで光が外にもれずに進む理由は？",
+      "choices": [
+        "光が吸収されるから",
+        "光が曲がりにくいから",
+        "全反射をくり返して進むから",
+        "光の速さが0になるから"
+      ],
+      "answerIndex": 2,
+      "explanation": "屈折率の大きい中心部と小さい外側の境界で全反射する。"
+    },
+    {
+      "id": "sci_phy13_023",
+      "unit": "science.physics.waves.basic.describe",
+      "category": "calculation",
+      "prompt": "振動数 500 Hz の音源が 20 m/s で観測者に近づく。聞こえる振動数は？（音速 340 m/s）",
+      "choices": [
+        "471 Hz",
+        "520 Hz",
+        "500 Hz",
+        "531 Hz"
+      ],
+      "answerIndex": 3,
+      "explanation": "f′ ＝ 500 × 340/(340 − 20)。"
+    },
+    {
+      "id": "sci_phy13_024",
+      "unit": "science.physics.waves.basic.describe",
+      "category": "calculation",
+      "prompt": "観測者が 17 m/s で静止した 340 Hz の音源に近づく。聞こえる振動数は？（音速 340 m/s）",
+      "choices": [
+        "374 Hz",
+        "323 Hz",
+        "340 Hz",
+        "357 Hz"
+      ],
+      "answerIndex": 3,
+      "explanation": "f′ ＝ 340 × (340 + 17)/340。"
+    },
+    {
+      "id": "sci_phy13_025",
+      "unit": "science.physics.waves.light.nature",
+      "category": "calculation",
+      "prompt": "屈折率 2.0 の物質中での光の速さは？（真空中 3.0 × 10⁸ m/s）",
+      "choices": [
+        "1.0 × 10⁸ m/s",
+        "3.0 × 10⁸ m/s",
+        "1.5 × 10⁸ m/s",
+        "6.0 × 10⁸ m/s"
+      ],
+      "answerIndex": 2,
+      "explanation": "c/n。"
+    },
+    {
+      "id": "sci_phy13_026",
+      "unit": "science.physics.waves.basic.reflection",
+      "category": "calculation",
+      "prompt": "空気中（屈折率 1.0）から入射角 30° で屈折率 √3 の物質に入る光の屈折角は？",
+      "choices": [
+        "30°",
+        "約 17°",
+        "45°",
+        "60°"
+      ],
+      "answerIndex": 1,
+      "explanation": "sin r ＝ sin 30°/√3 ≒ 0.29。"
+    },
+    {
+      "id": "sci_phy13_027",
+      "unit": "science.physics.waves.light.interference",
+      "category": "calculation",
+      "prompt": "ヤングの実験で、L ＝ 2.0 m、d ＝ 1.0 mm、波長 500 nm のとき、明線の間隔は？",
+      "choices": [
+        "0.50 mm",
+        "10 mm",
+        "1.0 mm",
+        "2.0 mm"
+      ],
+      "answerIndex": 2,
+      "explanation": "Δx ＝ Lλ/d ＝ 2.0 × 5.0 × 10⁻⁷ ÷ 1.0 × 10⁻³。"
+    },
+    {
+      "id": "sci_phy13_028",
+      "unit": "science.physics.waves.basic.describe",
+      "category": "calculation",
+      "prompt": "回折格子（格子定数 d）で、波長 λ の光の m 次の明線の方向 θ が満たす式は？",
+      "choices": [
+        "d sin θ ＝ mλ",
+        "λ sin θ ＝ md",
+        "d ＝ mλ sin θ",
+        "d cos θ ＝ mλ"
+      ],
+      "answerIndex": 0,
+      "explanation": "隣り合うすき間からの光の経路差が波長の整数倍。"
+    },
+    {
+      "id": "sci_phy13_029",
+      "unit": "science.physics.waves.basic.describe",
+      "category": "calculation",
+      "prompt": "同位相の2つの波源からの経路差が 2.0 λ の点では？",
+      "choices": [
+        "強め合う",
+        "弱め合う",
+        "振動しない",
+        "半分だけ強め合う"
+      ],
+      "answerIndex": 0,
+      "explanation": "波長の整数倍なので強め合う。"
+    },
+    {
+      "id": "sci_phy13_030",
+      "unit": "science.physics.waves.basic.describe",
+      "category": "calculation",
+      "prompt": "空気中で波長 630 nm の光が屈折率 1.5 の水晶中に入った。水晶中の波長は？",
+      "choices": [
+        "630 nm",
+        "945 nm",
+        "420 nm",
+        "315 nm"
+      ],
+      "answerIndex": 2,
+      "explanation": "λ/n。振動数は変わらない。"
+    },
+    {
+      "id": "sci_phy13_031",
+      "unit": "science.physics.waves.light",
+      "category": "thinking",
+      "prompt": "空が青く見える理由は？",
+      "choices": [
+        "青い光だけが太陽から出ているから",
+        "海の色が映るから",
+        "波長の短い青い光が空気の分子によく散乱されるから",
+        "空気が青い色をしているから"
+      ],
+      "answerIndex": 2,
+      "explanation": "レイリー散乱。夕焼けが赤いのは、長い距離で青が散乱され尽くすため。"
+    },
+    {
+      "id": "sci_phy13_032",
+      "unit": "science.physics.waves.light.interference",
+      "category": "thinking",
+      "prompt": "水たまりに油が浮くと虹色に見える理由は？",
+      "choices": [
+        "油が色を出すから",
+        "薄い膜の表と裏で反射した光が干渉するから",
+        "光が吸収されるから",
+        "光が全反射するから"
+      ],
+      "answerIndex": 1,
+      "explanation": "薄膜干渉。膜の厚さで強め合う色が変わる。"
+    }
+  ]
+}
