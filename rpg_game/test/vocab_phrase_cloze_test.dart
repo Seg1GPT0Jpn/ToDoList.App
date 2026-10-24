@@ -59,4 +59,18 @@ void main() {
     expect(p.clozeMatches('looks  up to'), isTrue);
     expect(p.clozeMatches('look up to'), isFalse);
   });
+
+  test("be の熟語は I'm などの短縮形でも穴埋めにでき、もとの形で書いてもよい", () {
+    const c = VocabCard(
+      id: '1',
+      term: 'be used to ～ing',
+      meaning: '～することに慣れている',
+      example: "I'm used to getting up early.",
+    );
+    expect(c.hasExample, isTrue);
+    expect(c.clozeAnswer, "'m used to getting");
+    expect(c.clozeMatches("'m used to getting"), isTrue);
+    expect(c.clozeMatches('am used to getting'), isTrue);
+    expect(c.clozeMatches('be used to getting'), isFalse);
+  });
 }

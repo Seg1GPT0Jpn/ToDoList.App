@@ -166,7 +166,8 @@ class VocabCard {
 
   /// よく出る不規則動詞の活用形（穴埋めで例文の中から見つけるため）
   static const _irregular = {
-    'be': 'is|are|am|was|were|been|being',
+    // I'm / he's / they're のような短縮形もふくむ
+    'be': "is|are|am|was|were|been|being|['’](?:m|s|re)",
     'bear': 'bore|borne|born',
     'beat': 'beaten',
     'become': 'became',
@@ -328,7 +329,10 @@ class VocabCard {
         } else if (k > 0) {
           pattern.write(r'\s+');
         }
-        if (_slot.hasMatch(w) || (k > 0 && w == 'do')) {
+        if (w == 'ing') {
+          // be used to ～ing：～ing の部分には動詞の -ing 形が入る
+          pattern.write(r"[\w'’-]+ing");
+        } else if (_slot.hasMatch(w) || (k > 0 && w == 'do')) {
           pattern.write(r"[\w'’-]+(?:\s+[\w'’-]+){0,2}");
         } else if (k == 0 && (w.length > 2 || _irregular.containsKey(w))) {
           pattern.write(_wordPattern(w));
@@ -363,7 +367,18 @@ class VocabCard {
         .replaceAll('’', "'")
         .replaceAll(RegExp(r'\s+'), ' ');
     final a = norm(input);
-    return a.isNotEmpty && a == norm(clozeAnswer);
+    if (a.isEmpty) return false;
+    final want = norm(clozeAnswer);
+    if (a == want) return true;
+    // 短縮形（'m proud of）は、もとの形（am proud of）で書いてもよい
+    const full = {"'m": 'am', "'s": 'is', "'re": 'are'};
+    for (final e in full.entries) {
+      if (want.startsWith(e.key) &&
+          a == '${e.value}${want.substring(e.key.length)}') {
+        return true;
+      }
+    }
+    return false;
   }
 
   VocabCard copyWith(
