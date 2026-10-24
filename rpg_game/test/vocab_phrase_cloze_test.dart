@@ -36,4 +36,27 @@ void main() {
     expect(VocabCard.clozeWord('She is akin to her aunt.', 'be akin to'),
         'is akin to');
   });
+
+  test('穴埋めは、例文の中の形（過去形など）をそのまま書く', () {
+    const c = VocabCard(
+      id: '1',
+      term: 'rise',
+      meaning: '[動] 上がる',
+      example: 'The price of gasoline rose again this month.',
+    );
+    expect(c.clozeAnswer, 'rose');
+    expect(c.clozeHint, 'r＿＿＿（4文字）');
+    expect(c.clozeMatches('rose'), isTrue);
+    expect(c.clozeMatches(' Rose '), isTrue);
+    // 元の形では正解にしない
+    expect(c.clozeMatches('rise'), isFalse);
+    const p = VocabCard(
+      id: '2',
+      term: 'look up to',
+      meaning: '尊敬する',
+      example: 'She looks up to her sister.',
+    );
+    expect(p.clozeMatches('looks  up to'), isTrue);
+    expect(p.clozeMatches('look up to'), isFalse);
+  });
 }

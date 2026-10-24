@@ -516,7 +516,7 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
             Text(c.exampleJa, style: TextStyle(color: TsuzuriColors.inkSoft)),
           const SizedBox(height: 6),
           Text(
-            '空欄に入る単語をつづってください　ヒント: ${c.spellingHint}',
+            '空欄に入る形のまま書いてください（過去形などもそのまま）　ヒント: ${c.clozeHint}',
             style: TextStyle(color: TsuzuriColors.inkSoft, fontSize: 12),
           ),
         ];
@@ -602,7 +602,12 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
           children: [
             if (_wasCorrect != null)
               Text(
-                _wasCorrect! ? '○ 正解' : '× 正解は「${c.term}」',
+                _wasCorrect!
+                    ? '○ 正解'
+                    : _task.mode == VocabMode.cloze &&
+                          c.clozeAnswer.toLowerCase() != c.term.toLowerCase()
+                    ? '× 正解は「${c.clozeAnswer}」（${c.term} の変化した形）'
+                    : '× 正解は「${c.term}」',
                 style: TextStyle(
                   fontWeight: FontWeight.w800,
                   color: _wasCorrect!

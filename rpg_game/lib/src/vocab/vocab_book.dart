@@ -345,12 +345,25 @@ class VocabCard {
     return m == null ? null : (m.start, m.end);
   }
 
-  /// 穴埋めの答えとして正しいか（元の形でも、例文の中の形でもよい）
+  /// 穴埋めの答え：例文の中の形そのまま（過去形・三人称単数・複数形などの変化もふくむ）
+  String get clozeAnswer => clozeWord(example, term) ?? term;
+
+  /// 穴埋めのヒント（例文の中の形の、最初の文字と文字数）
+  String get clozeHint {
+    final s = clozeAnswer;
+    return '${s[0]}${List.filled(s.length - 1, '＿').join()}（${s.length}文字）';
+  }
+
+  /// 穴埋めの答えとして正しいか：例文の中の形をそのまま書く（rise の例文が rose なら rose）。
+  /// 大文字・小文字、空白の数、アポストロフィの形（' と ’）のちがいは見ない
   bool clozeMatches(String input) {
-    final a = input.trim().toLowerCase();
-    if (a.isEmpty) return false;
-    final w = clozeWord(example, term)?.toLowerCase();
-    return a == w || spellingMatches(a);
+    String norm(String t) => t
+        .trim()
+        .toLowerCase()
+        .replaceAll('’', "'")
+        .replaceAll(RegExp(r'\s+'), ' ');
+    final a = norm(input);
+    return a.isNotEmpty && a == norm(clozeAnswer);
   }
 
   VocabCard copyWith(
