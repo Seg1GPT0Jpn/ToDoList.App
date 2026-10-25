@@ -16,8 +16,12 @@ service cloud.firestore {
     }
 
     // 単語帳の学習記録（単語の番号ごとの覚えぐあい）。1冊を「単語帳ID~番号」の文書に分けて置く
+    // 読むときは、まとめて一覧で読む（list）。一覧では文書の名前（docId）を条件に使えないので、
+    // 読み取りは本人であることだけを見る。書きこみは文書ごとなので名前の長さも見る
     match /users/{uid}/rpg_vocab/{docId} {
-      allow read, write: if request.auth != null
+      allow read: if request.auth != null
+        && request.auth.uid == uid;
+      allow write: if request.auth != null
         && request.auth.uid == uid
         && docId.size() <= 80;
     }
