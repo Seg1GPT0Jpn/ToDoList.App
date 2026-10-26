@@ -495,6 +495,39 @@ class VocabBook {
     for (final c in cards) VocabCard.normalizeWriting(c.term),
   };
 
+  /// 単語の番号（一覧に番号がなければ、上から数えた番号）
+  int numberAt(int i) => cards[i].number ?? i + 1;
+
+  /// いちばん小さい番号と大きい番号（単語がなければ (0, 0)）
+  (int, int) get numberSpan {
+    if (cards.isEmpty) return (0, 0);
+    var lo = numberAt(0), hi = lo;
+    for (var i = 1; i < cards.length; i++) {
+      final n = numberAt(i);
+      if (n < lo) lo = n;
+      if (n > hi) hi = n;
+    }
+    return (lo, hi);
+  }
+
+  /// 番号が [from]〜[to] の単語（逆に入れてもよい）
+  List<VocabCard> inRange(int from, int to) {
+    final lo = from < to ? from : to, hi = from < to ? to : from;
+    return [
+      for (var i = 0; i < cards.length; i++)
+        if (numberAt(i) >= lo && numberAt(i) <= hi) cards[i],
+    ];
+  }
+
+  /// 一部の単語だけの単語帳（同じ ID・同じ学習記録で、範囲だけを練習するのに使う）
+  VocabBook view(List<VocabCard> subset) => VocabBook(
+        id: id,
+        title: title,
+        kind: kind,
+        cards: subset,
+        worldId: worldId,
+      );
+
   VocabCard? card(String id) {
     for (final c in cards) {
       if (c.id == id) return c;

@@ -44,6 +44,8 @@ class _VocabBookScreenState extends State<VocabBookScreen> {
   @override
   void dispose() {
     VocabStore.changes.removeListener(_changed);
+    _from.dispose();
+    _to.dispose();
     super.dispose();
   }
 
@@ -234,6 +236,8 @@ class _VocabBookScreenState extends State<VocabBookScreen> {
           label: Text('間違えた${book.noun}だけ'),
         ),
         const SizedBox(height: 16),
+        _rangeCard(now),
+        const SizedBox(height: 16),
         if (VocabCourse.testRangesFor(book).isNotEmpty) ...[
           Text('テスト範囲', style: serif(15)),
           const SizedBox(height: 6),
@@ -251,6 +255,112 @@ class _VocabBookScreenState extends State<VocabBookScreen> {
         const SizedBox(height: 6),
         for (final (name, cards) in weeks) _weekTile(name, cards, now),
       ],
+    );
+  }
+
+  // ---------------- 範囲を決めて練習 ----------------
+
+  late final (int, int) _span = book.numberSpan;
+  late final _from = TextEditingController(
+    text: '${store.rangeOf(book.id)?.$1 ?? _span.$1}',
+  );
+  late final _to = TextEditingController(
+    text: '${store.rangeOf(book.id)?.$2 ?? _span.$2}',
+  );
+
+  /// 入力された範囲（数字でなければ、単語帳のはじめ・おわり）
+  (int, int) get _range {
+    final a = int.tryParse(_from.text.trim()) ?? _span.$1;
+    final b = int.tryParse(_to.text.trim()) ?? _span.$2;
+    return a <= b ? (a, b) : (b, a);
+  }
+
+  void _rangeChanged() {
+    final (a, b) = _range;
+    store.setRange(book.id, a, b);
+    setState(() {});
+  }
+
+  Widget _numberField(TextEditingController c, String key) => SizedBox(
+    width: 84,
+    child: TextField(
+      key: ValueKey(key),
+      controller: c,
+      keyboardType: TextInputType.number,
+      textAlign: TextAlign.center,
+      decoration: const InputDecoration(isDense: true),
+      onChanged: (_) => _rangeChanged(),
+    ),
+  );
+
+  Widget _rangeCard(DateTime now) {
+    final (a, b) = _range;
+    final cards = book.inRange(a, b);
+    final sub = book.view(cards);
+    final label = '$a〜$b';
+    return Card(
+      key: const ValueKey('vocab-range'),
+      child: Padding(
+        padding: const EdgeInsets.all(12),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('範囲を決めて練習', style: serif(15)),
+            const SizedBox(height: 4),
+            Wrap(
+              crossAxisAlignment: WrapCrossAlignment.center,
+              spacing: 6,
+              children: [
+                const Text('番号'),
+                _numberField(_from, 'vocab-range-from'),
+                const Text('〜'),
+                _numberField(_to, 'vocab-range-to'),
+                Text(
+                  '${cards.length}${book.unit}（この単語帳は ${_span.$1}〜${_span.$2}）',
+                  key: const ValueKey('vocab-range-count'),
+                  style: TextStyle(fontSize: 12, color: TsuzuriColors.inkSoft),
+                ),
+              ],
+            ),
+            const SizedBox(height: 8),
+            Wrap(
+              spacing: 8,
+              runSpacing: 6,
+              children: [
+                FilledButton.icon(
+                  key: const ValueKey('vocab-range-today'),
+                  onPressed: cards.isEmpty
+                      ? null
+                      : () => _start(
+                          '$label の最適学習',
+                          VocabPlanner.today(sub, progress, now),
+                        ),
+                  icon: const Icon(Icons.play_arrow),
+                  label: const Text('この範囲の最適学習'),
+                ),
+                OutlinedButton.icon(
+                  key: const ValueKey('vocab-range-mistakes'),
+                  onPressed: cards.isEmpty
+                      ? null
+                      : () => _start(
+                          '$label の間違いだけ',
+                          VocabPlanner.mistakesOnly(sub, progress),
+                        ),
+                  icon: const Icon(Icons.error_outline),
+                  label: const Text('この範囲の間違いだけ'),
+                ),
+              ],
+            ),
+            const SizedBox(height: 8),
+            Text(
+              '形式を選ぶ（問題数・順番は上の設定）',
+              style: TextStyle(fontSize: 11, color: TsuzuriColors.inkSoft),
+            ),
+            const SizedBox(height: 4),
+            if (cards.isNotEmpty) _modeGrid(cards, label, keyPrefix: 'range-'),
+          ],
+        ),
+      ),
     );
   }
 
@@ -311,14 +421,18 @@ class _VocabBookScreenState extends State<VocabBookScreen> {
     ],
   );
 
-  Widget _modeGrid(List<VocabCard> cards, String range) => Wrap(
+  Widget _modeGrid(
+    List<VocabCard> cards,
+    String range, {
+    String keyPrefix = '',
+  }) => Wrap(
     spacing: 6,
     runSpacing: 6,
     children: [
       for (final m in VocabMode.of(book))
         if (m != VocabMode.compare)
           ActionChip(
-            key: ValueKey('vocab-mode-${m.name}'),
+            key: ValueKey('vocab-mode-$keyPrefix${m.name}'),
             label: Text(m.labelOf(book.isTerms)),
             onPressed: () {
               final tasks = VocabPlanner.drill(

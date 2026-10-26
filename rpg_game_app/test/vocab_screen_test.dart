@@ -203,4 +203,58 @@ void main() {
     expect(find.text('今週、最も間違えた単語'), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
+
+  testWidgets('単語帳の画面：番号で範囲を決めて練習でき、範囲は次も残る', (tester) async {
+    await openScreen(tester, _home());
+    final store = VocabStore.of(RpgServicesHolder.last!.personalBooks);
+    final book = await store.createBook('範囲テスト');
+    book.merge(VocabParser.parse(_words));
+    await store.saveBooks();
+    await tester.pumpWidget(Container());
+    await openScreen(tester, _home(), keepPrefs: true);
+    await tester.tap(find.text('範囲テスト'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('番号順'));
+    await tester.pump();
+    // 画面のまん中に出してからさわる（上の見出しに隠れないように）
+    Future<void> center(Finder f) async {
+      await tester.runAsync(
+        () => Scrollable.ensureVisible(tester.element(f), alignment: 0.5),
+      );
+      await tester.pumpAndSettle();
+    }
+
+    await tester.scrollUntilVisible(
+      find.byKey(const ValueKey('vocab-range')),
+      200,
+      scrollable: find.byType(Scrollable).last,
+    );
+    expect(
+      tester.widget<Text>(find.byKey(const ValueKey('vocab-range-count'))).data,
+      '5語（この単語帳は 1〜5）',
+    );
+    await tester.enterText(find.byKey(const ValueKey('vocab-range-from')), '2');
+    await tester.enterText(find.byKey(const ValueKey('vocab-range-to')), '4');
+    await tester.pump();
+    expect(
+      tester.widget<Text>(find.byKey(const ValueKey('vocab-range-count'))).data,
+      startsWith('3語'),
+    );
+    expect(store.rangeOf(book.id), (2, 4));
+    // 範囲の単語だけで、形式を選んで練習
+    await center(find.byKey(const ValueKey('vocab-mode-range-spelling')));
+    await tester.tap(find.byKey(const ValueKey('vocab-mode-range-spelling')));
+    await tester.pumpAndSettle();
+    expect(find.text('2〜4 スペル入力（3問）'), findsOneWidget);
+    await tester.pageBack();
+    await tester.pumpAndSettle();
+    // この範囲の最適学習：新しい単語は範囲の中からだけ出る
+    await center(find.byKey(const ValueKey('vocab-range-today')));
+    await tester.tap(find.byKey(const ValueKey('vocab-range-today')));
+    await tester.pumpAndSettle();
+    expect(find.text('2〜4 の最適学習'), findsOneWidget);
+    expect(find.textContaining('/ 3'), findsOneWidget);
+    expect(find.text('agree'), findsNothing);
+    expect(tester.takeException(), isNull);
+  });
 }

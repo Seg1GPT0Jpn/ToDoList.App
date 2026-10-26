@@ -335,6 +335,17 @@ class VocabStore {
     await saveBooks();
   }
 
+  /// 単語帳ごとに、最後に選んだ練習の範囲（番号）
+  (int, int)? rangeOf(String bookId) {
+    final v = _prefs.getString('vocab_range_$bookId')?.split('-');
+    if (v == null || v.length != 2) return null;
+    final a = int.tryParse(v[0]), b = int.tryParse(v[1]);
+    return a == null || b == null ? null : (a, b);
+  }
+
+  Future<void> setRange(String bookId, int from, int to) =>
+      _prefs.setString('vocab_range_$bookId', '$from-$to');
+
   /// 発音の設定（'en-US' / 'en-GB'、速さ 0.3〜1.0）
   (String, double) get voice {
     final v = _prefs.getString(_voiceKey)?.split('|');

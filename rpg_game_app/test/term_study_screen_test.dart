@@ -152,7 +152,8 @@ void main() {
     expect(find.text('古文テスト（5枚）'), findsOneWidget);
     expect(find.byType(PopupMenuButton<String>), findsNothing);
     expect(find.byKey(const ValueKey('vocab-mode-spelling')), findsOneWidget);
-    expect(find.text('用語を書く'), findsOneWidget);
+    // 全体の形式と、範囲を決めて練習の形式の2か所にある
+    expect(find.text('用語を書く'), findsNWidgets(2));
     expect(find.byKey(const ValueKey('vocab-mode-listening')), findsNothing);
     expect(find.byKey(const ValueKey('vocab-mode-cloze')), findsNothing);
     await t.dragUntilVisible(

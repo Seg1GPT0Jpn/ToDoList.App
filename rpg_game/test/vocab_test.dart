@@ -400,4 +400,31 @@ void main() {
     expect(
         VocabCard.fromJson({'id': '2', 't': 'x', 'm': 'y'}).examples, isEmpty);
   });
+
+  test('番号で範囲を選ぶ（逆に入れてもよい・番号がなければ上から数える）', () {
+    final b = VocabBook(
+      id: 'b',
+      title: 'b',
+      kind: VocabBookKind.custom,
+      cards: [
+        for (var i = 10; i <= 15; i++)
+          VocabCard(id: '$i', number: i, term: 'w$i', meaning: 'm'),
+      ],
+    );
+    expect(b.numberSpan, (10, 15));
+    expect(b.inRange(12, 13).map((c) => c.id), ['12', '13']);
+    expect(b.inRange(13, 12).map((c) => c.id), ['12', '13']);
+    expect(b.view(b.inRange(14, 99)).cards, hasLength(2));
+    final plain = VocabBook(
+      id: 'p',
+      title: 'p',
+      kind: VocabBookKind.custom,
+      cards: [
+        for (final w in ['a', 'b', 'c'])
+          VocabCard(id: w, term: w, meaning: 'm'),
+      ],
+    );
+    expect(plain.numberSpan, (1, 3));
+    expect(plain.inRange(2, 3).map((c) => c.id), ['b', 'c']);
+  });
 }

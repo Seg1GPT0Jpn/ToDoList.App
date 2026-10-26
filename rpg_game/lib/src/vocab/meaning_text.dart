@@ -31,11 +31,11 @@ String shortMeaningOf(String meaning) {
   // かっこの中（「時間(①時刻 ②期間)」の ② など）では切らない。
   // 「(人)を[名]の状態に」のように文の中にある [名] も品詞ではないので切らない
   final next = _posTag.allMatches(m).where(
-    (t) =>
-        t.start > 0 &&
-        _depthAt(m, t.start) == 0 &&
-        (t.end == m.length || !_particle.hasMatch(m[t.end])),
-  );
+        (t) =>
+            t.start > 0 &&
+            _depthAt(m, t.start) == 0 &&
+            (t.end == m.length || !_particle.hasMatch(m[t.end])),
+      );
   if (next.isNotEmpty) m = m.substring(0, next.first.start);
   final marks = [
     for (final k in _senseMark.allMatches(m))
