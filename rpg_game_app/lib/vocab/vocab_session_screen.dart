@@ -17,7 +17,7 @@ import 'weak_cards_screen.dart';
 /// 単語帳の練習（1回ぶん）。
 ///
 /// 課題を1つずつ出し、答えたら FSRS で次の出題日を決めて保存する。
-/// 「忘れた」単語は、この回の最後にもう一度出す。
+/// まちがえた単語は、少し間をあけて同じ形式でもう一度出す（正解しても覚えた扱いにはしない）。
 class VocabSessionScreen extends StatefulWidget {
   const VocabSessionScreen({
     super.key,
@@ -55,6 +55,12 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
   int _xp = 0;
   final _missed = <String>{};
 
+  /// まちがえた単語の形式（もう一度のときに同じ形式で出す）
+  final _missedMode = <String, VocabMode>{};
+
+  /// この回の中では出し直さず、時間をおいてたしかめる単語
+  final _later = <String>{};
+
   /// この回に答えた単語（答えた順）
   final _studied = <String>{};
   final _started = DateTime.now();
@@ -66,6 +72,12 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
   bool? _wasCorrect;
   String? _picked;
   bool _flipped = false;
+
+  /// フラッシュカードで「わからない」を選んでめくった
+  bool _unknown = false;
+
+  /// めくる前に書いた（思い出した）意味
+  final _guess = TextEditingController();
   MistakeReason? _reason;
   Rating? _autoRating;
   String? _damage;
@@ -117,6 +129,7 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
   void dispose() {
     _report();
     _input.dispose();
+    _guess.dispose();
     speaker.stop();
     super.dispose();
   }
@@ -148,6 +161,8 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
     _wasCorrect = null;
     _picked = null;
     _flipped = false;
+    _unknown = false;
+    _guess.clear();
     _reason = null;
     _autoRating = null;
     _damage = null;
@@ -245,6 +260,10 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
   Future<void> _next(Rating rating, {bool guessed = false}) async {
     final m = _task.mode;
     final correct = rating != Rating.again;
+    // さっき答えを見たばかりの出し直しは、正解しても「覚えた」にしない
+    if (_task.relearn && (rating == Rating.good || rating == Rating.easy)) {
+      rating = Rating.hard;
+    }
     String? confused;
     final other = correct || _picked == null ? null : _otherCard(m, _picked!);
     if (other != null) {
@@ -265,6 +284,8 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
       spent: DateTime.now().difference(_shownAt),
       isNew: _task.isNew,
       guessed: guessed,
+      // はじめての単語を「わからない」と言えたのは、まちがいではない
+      countMistake: !(_unknown && _task.isNew),
     );
     await widget.store.saveProgress(widget.book.id);
     _studied.add(_card.id);
@@ -273,9 +294,16 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
       _correct++;
     } else {
       _missed.add(_card.id);
-      // この回の最後にもう一度（1回だけ）
+      _missedMode[_card.id] = m;
+      // 少し間をあけて、同じ形式でもう一度（1回だけ）。すぐ後だと答えを
+      // 覚えているだけで正解でき、わかった気になってしまう
       if (_requeued.add('${_card.id}:${m.name}')) {
-        _queue.add(VocabTask(_card.id, _retryMode(m)));
+        final at = VocabTask.retrySlot(_queue.length, _index);
+        if (at == null) {
+          _later.add(_card.id);
+        } else {
+          _queue.insert(at, VocabTask(_card.id, m, relearn: true));
+        }
       }
     }
     if (!mounted) return;
@@ -285,10 +313,6 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
     });
     if (_done) _report();
   }
-
-  /// もう一度出すときは、見分ける問題にして思い出しやすく
-  VocabMode _retryMode(VocabMode m) =>
-      m == VocabMode.flashcard ? VocabMode.choiceMeaning : m;
 
   @override
   Widget build(BuildContext context) {
@@ -526,12 +550,63 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
   List<Widget> _answerArea(VocabMode m, VocabCard c) {
     switch (m) {
       case VocabMode.flashcard:
+        if (_flipped) {
+          final g = _guess.text.trim();
+          return [
+            if (g.isNotEmpty)
+              Text(
+                'あなたの答え: $g',
+                key: const ValueKey('flash-your-guess'),
+                style: TextStyle(color: TsuzuriColors.inkSoft),
+              ),
+          ];
+        }
         return [
-          if (!_flipped)
-            FilledButton(
-              onPressed: () => setState(() => _flipped = true),
-              child: const Text('めくる'),
+          if (_task.relearn)
+            Padding(
+              padding: const EdgeInsets.only(bottom: 8),
+              child: Text(
+                'さっきまちがえた${widget.book.noun}です。選択肢なしで、意味を思い出してから答えを見ましょう',
+                key: const ValueKey('flash-relearn'),
+                style: TextStyle(color: TsuzuriColors.stamp, fontSize: 12),
+              ),
             ),
+          Text(
+            '${_terms ? '説明' : '意味'}を頭の中で（できれば声に出して）言ってから答えを見よう',
+            style: TextStyle(color: TsuzuriColors.inkSoft, fontSize: 12),
+          ),
+          const SizedBox(height: 6),
+          TextField(
+            key: const ValueKey('flash-guess'),
+            controller: _guess,
+            decoration: const InputDecoration(
+              isDense: true,
+              hintText: '思い出した意味をメモ（書かなくてもよい）',
+            ),
+          ),
+          const SizedBox(height: 10),
+          Row(
+            children: [
+              Expanded(
+                child: OutlinedButton(
+                  key: const ValueKey('flash-unknown'),
+                  onPressed: () => setState(() {
+                    _flipped = true;
+                    _unknown = true;
+                  }),
+                  child: const Text('わからない'),
+                ),
+              ),
+              const SizedBox(width: 8),
+              Expanded(
+                child: FilledButton(
+                  key: const ValueKey('flash-reveal'),
+                  onPressed: () => setState(() => _flipped = true),
+                  child: const Text('思い出せた・答えを見る'),
+                ),
+              ),
+            ],
+          ),
         ];
       case VocabMode.spelling:
       case VocabMode.cloze:
@@ -719,12 +794,30 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
   List<Widget> _nextButtons(VocabMode m) {
     if (m == VocabMode.flashcard) {
       if (!_flipped) return const [];
+      if (_unknown) {
+        return [
+          Text(
+            '答えを見て「わかった」と思っても、まだ覚えたことにはしません。'
+            '時間をおいて、選択肢なしでもう一度出します。',
+            style: TextStyle(color: TsuzuriColors.inkSoft, fontSize: 12),
+          ),
+          const SizedBox(height: 6),
+          FilledButton(
+            key: const ValueKey('flash-learned'),
+            onPressed: () {
+              _hit(false);
+              _next(Rating.again);
+            },
+            child: const Text('覚えた・次へ'),
+          ),
+        ];
+      }
       final preview = BookProgress.fsrs.preview(
         _progress.cards[_card.id]?.skills[m.skill],
         DateTime.now(),
       );
       return [
-        Text('どれくらい思い出せましたか？', style: serif(14)),
+        Text('思い出した意味と合っていましたか？', style: serif(14)),
         const SizedBox(height: 6),
         Row(
           children: [
@@ -746,7 +839,10 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
                     },
                     child: Column(
                       children: [
-                        Text(r.label, style: const TextStyle(fontSize: 12)),
+                        Text(
+                          _recallLabel(r),
+                          style: const TextStyle(fontSize: 12),
+                        ),
                         Text(
                           _fmt(preview[r]!),
                           style: TextStyle(
@@ -779,6 +875,14 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
         ),
     ];
   }
+
+  /// 正直に答えやすいよう、思い出せたかどうかで聞く
+  static String _recallLabel(Rating r) => switch (r) {
+    Rating.again => 'ちがった',
+    Rating.hard => 'あいまい',
+    Rating.good => '合っていた',
+    Rating.easy => '迷わず言えた',
+  };
 
   /// この回で新しくもらえた苦手克服カード
   List<Widget> _newCards(BookProgress p) {
@@ -849,6 +953,35 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
           ),
           const SizedBox(height: 8),
         ],
+        if (_later.isNotEmpty) ...[
+          Card(
+            key: const ValueKey('vocab-later'),
+            child: Padding(
+              padding: const EdgeInsets.all(12),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('時間をおいてたしかめる${widget.book.noun}', style: serif(14)),
+                  const SizedBox(height: 4),
+                  Text(
+                    '今すぐもう一度やると答えを覚えているだけで正解できるので、'
+                    'あとの復習（明日など）で選択肢なしでまた出します。',
+                    style: TextStyle(
+                      color: TsuzuriColors.inkSoft,
+                      fontSize: 12,
+                    ),
+                  ),
+                  const SizedBox(height: 4),
+                  Text(
+                    [for (final id in _later) widget.book.card(id)?.term ?? '']
+                        .join('・'),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          const SizedBox(height: 8),
+        ],
         if (_missed.isNotEmpty)
           OutlinedButton.icon(
             onPressed: () => Navigator.of(context).pushReplacement(
@@ -859,7 +992,11 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
                   title: '間違えた${widget.book.noun}',
                   tasks: [
                     for (final id in _missed)
-                      VocabTask(id, VocabMode.choiceMeaning),
+                      VocabTask(
+                        id,
+                        _missedMode[id] ?? VocabMode.choiceMeaning,
+                        relearn: true,
+                      ),
                   ],
                 ),
               ),

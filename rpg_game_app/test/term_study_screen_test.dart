@@ -97,7 +97,7 @@ void main() {
     expect(find.byIcon(Icons.volume_up), findsNothing);
     expect(find.text('新しい用語'), findsOneWidget);
     expect(find.text('艮'), findsOneWidget);
-    await t.tap(find.text('めくる'));
+    await t.tap(find.byKey(const ValueKey('flash-reveal')));
     await t.pump();
     expect(find.text('（うしとら）'), findsOneWidget);
     expect(find.textContaining('鬼門'), findsOneWidget);

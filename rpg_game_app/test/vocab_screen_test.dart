@@ -88,7 +88,7 @@ void main() {
 
     // 1. フラッシュカード
     expect(find.text('agree'), findsOneWidget);
-    await tester.tap(find.text('めくる'));
+    await tester.tap(find.byKey(const ValueKey('flash-reveal')));
     await tester.pump();
     await tester.tap(find.byKey(const ValueKey('rate-good')));
     await tester.pumpAndSettle();
@@ -118,14 +118,74 @@ void main() {
     await tester.pumpAndSettle();
     expect(p.cards['3']!.mistakes[MistakeReason.confused], 1);
 
-    // 間違えた単語は最後にもう一度出る
-    expect(find.textContaining('4 / 4'), findsOneWidget);
-    await tester.enterText(find.byKey(const ValueKey('vocab-input')), 'Advise');
-    await tester.tap(find.text('答える'));
+    // 最後の単語は、すぐ出し直さず時間をおいてたしかめる
+    expect(find.text('おつかれさま！'), findsOneWidget);
+    await tester.scrollUntilVisible(
+      find.byKey(const ValueKey('vocab-later')),
+      200,
+    );
+    expect(find.textContaining('advise'), findsWidgets);
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('フラッシュカード：わからない→少しあとに選択肢なしで出し直し、正解でも覚えた扱いにしない', (tester) async {
+    await openScreen(tester, const SizedBox());
+    final store = VocabStore.of(RpgServicesHolder.last!.personalBooks);
+    final book = await store.createBook('自作');
+    book.merge(VocabParser.parse(_words));
+    final nav = tester.state<NavigatorState>(find.byType(Navigator));
+    nav.push(
+      MaterialPageRoute<void>(
+        builder: (_) => VocabSessionScreen(
+          store: store,
+          book: book,
+          title: '練習',
+          random: Random(1),
+          tasks: [
+            for (final id in ['1', '2', '3', '4', '5'])
+              VocabTask(id, VocabMode.flashcard, isNew: true),
+          ],
+        ),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    // めくる前に「わからない」と言える（はじめての単語ならまちがいに数えない）
+    expect(find.text('agree'), findsOneWidget);
+    await tester.enterText(find.byKey(const ValueKey('flash-guess')), '反対');
+    await tester.tap(find.byKey(const ValueKey('flash-unknown')));
     await tester.pump();
-    await tester.tap(find.byKey(const ValueKey('vocab-next')));
+    expect(find.byKey(const ValueKey('rate-good')), findsNothing);
+    expect(find.text('あなたの答え: 反対'), findsOneWidget);
+    await tester.ensureVisible(find.byKey(const ValueKey('flash-learned')));
+    await tester.tap(find.byKey(const ValueKey('flash-learned')));
+    await tester.pumpAndSettle();
+    final p = store.progress(book.id);
+    expect(p.cards['1']!.mistakes, isEmpty);
+
+    // すぐ次には出さない
+    for (final w in ['oppose', 'advise', 'tip', 'discuss']) {
+      expect(find.text(w), findsOneWidget);
+      expect(find.byKey(const ValueKey('flash-relearn')), findsNothing);
+      await tester.tap(find.byKey(const ValueKey('flash-reveal')));
+      await tester.pump();
+      await tester.ensureVisible(find.byKey(const ValueKey('rate-good')));
+      await tester.tap(find.byKey(const ValueKey('rate-good')));
+      await tester.pumpAndSettle();
+    }
+
+    // 間をあけて、同じフラッシュカードで出し直す
+    expect(find.text('agree'), findsOneWidget);
+    expect(find.byKey(const ValueKey('flash-relearn')), findsOneWidget);
+    await tester.tap(find.byKey(const ValueKey('flash-reveal')));
+    await tester.pump();
+    await tester.ensureVisible(find.byKey(const ValueKey('rate-easy')));
+    await tester.tap(find.byKey(const ValueKey('rate-easy')));
     await tester.pumpAndSettle();
     expect(find.text('おつかれさま！'), findsOneWidget);
+    // 「迷わず言えた」でも、すぐ後の正解は「あいまい」として記録（早めにまた出る）
+    final s = p.cards['1']!.skills[VocabSkill.meaning]!;
+    expect(s.due.difference(DateTime.now()).inDays, lessThan(2));
     expect(tester.takeException(), isNull);
   });
 

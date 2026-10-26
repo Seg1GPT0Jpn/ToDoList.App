@@ -427,4 +427,26 @@ void main() {
     expect(plain.numberSpan, (1, 3));
     expect(plain.inRange(2, 3).map((c) => c.id), ['b', 'c']);
   });
+
+  test('まちがえた単語の出し直しは間をあけ、残りが少ないときは出さない', () {
+    expect(VocabTask.retrySlot(10, 0), 6);
+    expect(VocabTask.retrySlot(5, 0), 5);
+    expect(VocabTask.retrySlot(5, 2), null);
+    expect(VocabTask.retrySlot(1, 0), null);
+  });
+
+  test('はじめての単語の「わからない」は、まちがいに数えない', () {
+    final p = BookProgress();
+    final now = DateTime(2026, 10, 26, 9);
+    p.record(
+      cardId: 'a',
+      skill: VocabSkill.meaning,
+      rating: Rating.again,
+      now: now,
+      isNew: true,
+      countMistake: false,
+    );
+    expect(p.cards['a']!.mistakes, isEmpty);
+    expect(p.cards['a']!.skills[VocabSkill.meaning], isNotNull);
+  });
 }

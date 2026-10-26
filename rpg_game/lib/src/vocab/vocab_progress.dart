@@ -277,12 +277,33 @@ enum VocabMode {
 
 /// 1問ぶんの課題
 class VocabTask {
-  const VocabTask(this.cardId, this.mode, {this.isNew = false});
+  const VocabTask(
+    this.cardId,
+    this.mode, {
+    this.isNew = false,
+    this.relearn = false,
+  });
   final String cardId;
   final VocabMode mode;
 
   /// はじめて覚える単語
   final bool isNew;
+
+  /// この回で一度まちがえた単語の出し直し。正解しても「覚えた」扱いにせず、
+  /// 明日またたしかめる（直前に答えを見たので、わかった気になりやすい）
+  final bool relearn;
+
+  /// まちがえた単語を出し直す位置（null ならこの回では出さない）。
+  /// [retryGap] 問あとに出す。すぐ後だと答えを覚えているだけで正解できる。
+  /// 残りが [retryMinRest] 問より少ないときは、時間をおいてたしかめる
+  static int? retrySlot(int length, int index) {
+    final rest = length - index - 1;
+    if (rest < retryMinRest) return null;
+    return min(index + 1 + retryGap, length);
+  }
+
+  static const retryGap = 5;
+  static const retryMinRest = 3;
 }
 
 /// 単語帳1冊ぶんの学習記録
@@ -316,6 +337,7 @@ class BookProgress {
     Duration spent = Duration.zero,
     bool isNew = false,
     bool guessed = false,
+    bool countMistake = true,
   }) {
     final p = cards.putIfAbsent(cardId, CardProgress.new);
     p.introduced ??= now;
@@ -338,7 +360,7 @@ class BookProgress {
     final correct = rating != Rating.again;
     final (ok, all) = p.answers[skill] ?? (0, 0);
     p.answers[skill] = (ok + (correct ? 1 : 0), all + 1);
-    if (!correct) {
+    if (!correct && countMistake) {
       final r = reason ?? MistakeReason.meaning;
       p.mistakes[r] = (p.mistakes[r] ?? 0) + 1;
       p.lastMistake = now;
