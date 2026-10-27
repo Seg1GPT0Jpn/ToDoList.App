@@ -57,7 +57,13 @@ FILES = {
     "c_kokudo.jpg": ("Kokudo Station IMG 0035.jpg", "Dandy1022", "CC BY-SA 4.0"),
     "c_yaga.jpg": ("JR Gotemba Line Yaga Station building.jpg", "Mister0124", "CC BY-SA 4.0"),
     "c_odasakae.jpg": ("JR Nambu Line Odasakae Station Platform 1.jpg", "Mister0124", "CC BY-SA 4.0"),
-    "c_monorail.jpg": ("Shonan monorail departing Enoshima (24031).jpg", "Syced", "CC0"),
+    "c_kozukue.jpg": ("Kozukue Station.jpg", "Syced", "CC0"),
+    "c_hakuraku.jpg": ("Tokyu Hakuraku sta 001.jpg", "東京特許許可局", "CC BY-SA 4.0"),
+    "c_kanazawabunko.jpg": ("250429 Kanazawa-bunko Station 08.jpg", "Aspere", "CC0"),
+    "c_ninomiya.jpg": ("Ninomiya Station Dec 20 2021 various.jpeg", "Nesnad", "CC BY 4.0"),
+    "c_sobudaimae.jpg": ("Sobudai-Mae Station.jpg", "Oos", "CC BY-SA 3.0"),
+    "c_nishiya.jpg": ("Nishiya Station 2.jpg", "Syced", "CC0"),
+    "c_musashinakahara.jpg": ("Musashi-Nakahara-Sta-S.JPG", "Nyao148", "CC BY-SA 3.0"),
     "c_kamiseya.jpg": ("US Navy 110828-N-VE260-735 An SH-60B Sea Hawk helicopter lands at Naval Support Facility Kamiseya "
                        "during the Yokohama Comprehensive Disaster Drill.jpg", "U.S. Navy", "Public domain"),
 }
@@ -72,6 +78,11 @@ BLUR = {
     "c_kokudo.jpg": [(0.42, 0.11, 0.53, 0.23), (0.82, 0.50, 0.96, 0.60), (0.47, 0.58, 0.53, 0.69), (0.52, 0.57, 0.58, 0.80)],
     "c_yaga.jpg": [(0.42, 0.56, 0.58, 0.66)],
     "c_odasakae.jpg": [(0.16, 0.32, 0.22, 0.76)],
+    "c_kozukue.jpg": [(0.40, 0.73, 0.58, 0.81)],
+    "c_kanazawabunko.jpg": [(0.12, 0.25, 0.19, 0.45)],
+    "c_hakuraku.jpg": [(0.27, 0.25, 0.54, 0.37), (0.85, 0.09, 0.91, 0.27)],
+    "c_sobudaimae.jpg": [(0.10, 0.35, 0.49, 0.47)],
+    "c_musashinakahara.jpg": [(0.46, 0.48, 0.61, 0.60)],
 }
 
 
