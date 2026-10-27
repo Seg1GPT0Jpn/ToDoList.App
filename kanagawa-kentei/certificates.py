@@ -8,7 +8,9 @@ import pathlib
 import subprocess
 
 import figures as F
-from questions import BRONZE, GOLD, ORG, SILVER, TITLE
+from questions import BRONZE, GOLD, ORG, SECTIONS, SILVER, TITLE
+
+TOTAL = sum(q["pts"] for s in SECTIONS for q in s["questions"])
 
 ROOT = pathlib.Path(__file__).parent
 
@@ -101,7 +103,7 @@ def corner(k, pos):
 
 def page(k, silhouette):
     score = ("" if k["key"] == "entry" else
-             '<div class="score"><div>得点　<span class="b"></span>　点／200点</div>'
+             '<div class="score"><div>得点　<span class="b"></span>　点／' + str(TOTAL) + '点</div>'
              '<div>得点率　<span class="b"></span>　％</div></div>')
     return f"""
 <div class="cert" style="--c1:{k['c1']};--c2:{k['c2']};--c3:{k['c3']}">

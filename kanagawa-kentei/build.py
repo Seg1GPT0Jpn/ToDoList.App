@@ -15,12 +15,11 @@ from questions import (BRONZE, EXAM_MINUTES, GOLD, ORG, SECTIONS, SILVER, SUBTIT
                        UNIT_MIN_RATE)
 
 ROOT = pathlib.Path(__file__).parent
-SUB = "アイウエオカキクケコサシスセソタチツテト"
+SUB = "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホ"
 
 for s in SECTIONS:
     s["pts"] = sum(q["pts"] for q in s["questions"])
 TOTAL = sum(s["pts"] for s in SECTIONS)
-assert TOTAL == 200, TOTAL
 
 
 def need(rate):
@@ -268,7 +267,7 @@ def answer_key(grader):
 <table class="mk"><tr><th>問</th><th style="width:20mm">配点</th><th style="width:40mm">ゴールドに必要な得点</th></tr>{rows}</table>
 <p><b>採点上の注意</b></p>
 <ul style="margin-top:0;font-size:9.5pt">
-<li>マーク式は問1〜問4が各3点、問5・問7・問8が各2点、問6が各3点。正答の番号のみ得点とする。</li>
+<li>マーク式は問1〜問4が各3点、問5〜問8が各2点。正答の番号のみ得点とする。</li>
 <li>記述式は各8点。解説欄の採点基準にしたがって部分点を与える。35字未満・45字超は2点減点、指定語句の欠落は1語につき2点減点、文末の指定違反は2点減点（0点未満にはしない）。</li>
 <li>配点は受験者に公開しない。</li>
 </ul></div>""")
