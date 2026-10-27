@@ -5,6 +5,7 @@
 PDF 変換には Node.js 版 Playwright（render_pdf.js）を使う。
 """
 import html
+import json
 import os
 import pathlib
 import subprocess
@@ -22,6 +23,8 @@ for s in SECTIONS:
 TOTAL = sum(s["pts"] for s in SECTIONS)
 assert TOTAL == 100, TOTAL
 NQ = sum(len(s["questions"]) for s in SECTIONS)
+_cred = ROOT / "images" / "credits.json"
+CREDITS = json.loads(_cred.read_text()) if _cred.exists() else {}
 
 
 def e(t):
@@ -89,7 +92,7 @@ figure .box svg { display: block; max-height: 78mm; }
 figure .cap { font-size: 9pt; font-weight: bold; margin-bottom: .8mm; }
 figure .box { border: 1px solid var(--line); border-radius: 2mm; padding: 2mm; background: #fff; }
 figure .src { font-size: 7.5pt; color: #555; text-align: right; line-height: 1.4; margin-top: .6mm; }
-figure img { width: 100%; max-height: 72mm; object-fit: cover; display: block; border-radius: 1mm; }
+figure img { display: block; max-width: 100%; max-height: 80mm; margin: 0 auto; border-radius: 1mm; }
 .ph { height: 52mm; border: 1.5px dashed var(--line); border-radius: 2mm; background: repeating-linear-gradient(45deg,#f5f7fa 0 6px,#fff 6px 12px);
       display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-size: 8.5pt;
       line-height: 1.5; color: #333; padding: 2mm; }
@@ -150,10 +153,13 @@ def render_fig(f):
         _, svg, cap, src = f
         return (f'<figure><div class="cap sans">{e(cap)}</div><div class="box">{svg}</div>'
                 + (f'<div class="src sans">{e(src)}</div>' if src else "") + "</figure>")
-    _, file, cap, url, desc = f
-    ph = (f'{CAMERA}<b>{e(cap)}</b>{e(desc)}<br>images/{e(file)} に写真を保存すると表示されます')
-    return (f'<figure><div class="cap sans">{e(cap)}</div><div class="box"><img src="images/{e(file)}" alt="{e(cap)}" '
-            f'data-ph="{e(ph)}"></div><div class="src sans">出典：ぱくたそ（www.pakutaso.com）</div></figure>')
+    _, path, cap, src = f
+    if src is None:
+        c = CREDITS.get(pathlib.Path(path).name)
+        src = f'{c["artist"]}／{c["license"]}（Wikimedia Commons）' if c else "出典未取得"
+    ph = f'{CAMERA}<b>{e(cap)}</b>{e(path)} が見つかりません'
+    return (f'<figure><div class="cap sans">{e(cap)}</div><div class="box"><img src="{e(path)}" alt="{e(cap)}" '
+            f'data-ph="{e(ph)}"></div><div class="src sans">{e(src)}</div></figure>')
 
 
 def render_choices(q):
@@ -298,16 +304,20 @@ def answer_key():
 <li>記述式は各5点。解説欄の採点基準にしたがって部分点を与える。字数を超えたものは0点とする。</li>
 </ul>""")
     photos = [(si, qi, f) for si, s in enumerate(SECTIONS) for qi, q in enumerate(s["questions"])
-              for f in q["figs"] if f[0] == "photo"]
-    prow = "".join(f'<tr><td>{kana_head(si)} 問{qi + 1}</td><td>{e(f[1])}</td><td>{e(f[4])}</td>'
-                   f'<td style="word-break:break-all;font-size:8pt">{e(f[3])}</td></tr>' for si, qi, f in photos)
+              for f in q["figs"] if f[0] == "img" and f[3] is None]
+    prow = ""
+    for si, qi, f in photos:
+        c = CREDITS.get(pathlib.Path(f[1]).name, {})
+        prow += (f'<tr><td>{kana_head(si)} 問{qi + 1}</td><td>{e(f[2])}</td><td>{e(c.get("artist", ""))}</td>'
+                 f'<td>{e(c.get("license", ""))}</td><td style="word-break:break-all;font-size:7.5pt">{e(c.get("page", ""))}</td></tr>')
     out.append(f"""
-<div class="sec-head sans" style="margin-top:4mm"><div class="no">写真</div><div class="ttl">写真素材一覧</div></div>
-<p style="font-size:9pt;margin:0 0 2mm">出典：フリー素材「ぱくたそ」（https://www.pakutaso.com/）。無料・クレジット表記不要で商用利用可。
-素材をそのまま商品として販売すること、再配布、画像への直接リンクは禁止。利用前に最新の利用規約を確認すること。</p>
-<table class="mk"><tr><th style="width:24mm">使う問題</th><th style="width:18mm">保存名</th><th style="width:60mm">内容</th><th>素材ページ</th></tr>{prow}</table>
+<div class="sec-head sans" style="margin-top:4mm"><div class="no">写真</div><div class="ttl">写真の出典（Wikimedia Commons）</div></div>
+<p style="font-size:9pt;margin:0 0 2mm">いずれもパブリックドメイン、CC0、またはクリエイティブ・コモンズ（CC BY／CC BY-SA）のもとで公開されている写真・作品。
+CC BY／CC BY-SA の写真は、作者名とライセンスを表示して利用する（問題冊子の各写真の下にも表示している）。</p>
+<table class="mk"><tr><th style="width:20mm">使う問題</th><th style="width:48mm">写真</th><th style="width:34mm">作者</th><th style="width:20mm">ライセンス</th><th>ファイルページ</th></tr>{prow}</table>
 <div class="sec-head sans" style="margin-top:4mm"><div class="no">出典</div><div class="ttl">地図・統計の出典</div></div>
 <ul style="margin-top:0;font-size:9pt">
+<li>地図・空中写真：国土地理院「地理院タイル」（色別標高図・陰影起伏図・淡色地図・標準地図・全国最新写真）を加工して作成</li>
 <li>市町村界：国土地理院「地球地図日本」（jpn-atlas による TopoJSON 版）をもとに作成</li>
 <li>横浜港の輸出額：横浜税関「横浜港 貿易概況（2024年分 速報）」</li>
 <li>昼夜間人口比率：総務省「令和2年国勢調査」、横浜市・神奈川県の公表資料</li>

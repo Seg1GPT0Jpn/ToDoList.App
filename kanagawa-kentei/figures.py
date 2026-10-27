@@ -131,27 +131,6 @@ def terrace():
     return svg(750, 305, g)
 
 
-def enoshima():
-    """江の島周辺の模式図"""
-    g = ('<rect width="700" height="330" fill="#e6eff6"/>'
-         '<path d="M0,0 L700,0 L700,120 Q520,140 400,150 Q300,152 200,140 Q90,128 0,120 Z" fill="#fbfaf6" stroke="#1b2b44" stroke-width="2"/>'
-         '<path d="M355,150 Q345,195 335,228 L365,228 Q360,195 385,150 Z" fill="#f3e3b5" stroke="#1b2b44" stroke-width="1.5" stroke-dasharray="5 3"/>'
-         '<path d="M280,230 Q300,205 350,215 Q410,200 450,225 Q470,262 430,282 Q370,300 310,285 Q265,262 280,230 Z" fill="#cfe0c3" stroke="#1b2b44" stroke-width="2"/>'
-         '<path d="M330,0 Q345,60 360,100 Q366,130 368,150" stroke="#5b8fc0" stroke-width="7"/>'
-         '<text x="300" y="70" font-size="15" fill="#1b2b44" stroke="none">境川</text>'
-         '<text x="365" y="262" text-anchor="middle" font-size="20" font-weight="bold" fill="#1b2b44" stroke="none">江の島</text>'
-         '<text x="120" y="110" font-size="15" fill="#1b2b44" stroke="none">片瀬西浜</text>'
-         '<text x="520" y="118" font-size="15" fill="#1b2b44" stroke="none">片瀬東浜</text>'
-         '<text x="395" y="190" font-size="15" fill="#c0392b" stroke="none">X（砂がたまった部分）</text>'
-         '<path d="M120,190 Q200,170 300,185" stroke="#1b2b44" stroke-width="1.5" marker-end="url(#arr)"/>'
-         '<path d="M620,190 Q520,172 430,185" stroke="#1b2b44" stroke-width="1.5" marker-end="url(#arr)"/>'
-         '<text x="60" y="210" font-size="13" fill="#1b2b44" stroke="none">波・沿岸流</text>'
-         '<text x="560" y="210" font-size="13" fill="#1b2b44" stroke="none">波・沿岸流</text>'
-         '<text x="40" y="300" font-size="20" fill="#5b7895" stroke="none" letter-spacing="6">相 模 湾</text>'
-         '<text x="690" y="320" text-anchor="end" font-size="11" fill="#555" stroke="none">※模式図（橋は省略）</text>')
-    return svg(700, 330, g)
-
-
 def sagami_trough():
     """関東大震災の震源とプレート境界（模式図）"""
     base = kanagawa(sea_labels=False, width="100%")
@@ -165,28 +144,6 @@ def sagami_trough():
     base = base.replace(f'width="{_MAP["W"] + 20}" height="{_MAP["H"] + 60}" fill="{SEA}"',
                         f'width="{_MAP["W"] + 20}" height="{_MAP["H"] + 110}" fill="{SEA}"')
     return base.replace("</svg>", extra + "</svg>")
-
-
-def kamakura():
-    """鎌倉の地形と切通し（模式図）"""
-    g = ('<rect width="700" height="420" fill="#e6eff6"/>'
-         '<path d="M0,0 H700 V300 Q600,290 520,310 Q430,325 350,322 Q250,318 160,305 Q80,295 0,300 Z" fill="#fbfaf6"/>'
-         '<path d="M0,0 H700 V300 L620,290 Q640,170 600,90 Q480,40 350,45 Q220,40 110,95 Q60,170 80,295 L0,300 Z" fill="#b9c9a5" stroke="#1b2b44" stroke-width="1.5"/>'
-         '<path d="M80,295 Q60,170 110,95 Q220,40 350,45 Q480,40 600,90 Q640,170 620,290 Q520,312 350,322 Q180,315 80,295 Z" fill="#fbfaf6" stroke="#1b2b44" stroke-width="1.5"/>'
-         '<line x1="350" y1="110" x2="350" y2="318" stroke="#1b2b44" stroke-width="5"/>'
-         '<text x="360" y="230" font-size="14" fill="#1b2b44" stroke="none">若宮大路</text>'
-         '<rect x="325" y="85" width="50" height="26" fill="#fff" stroke="#1b2b44" stroke-width="1.5"/>'
-         '<text x="350" y="78" text-anchor="middle" font-size="14" fill="#1b2b44" stroke="none">鶴岡八幡宮</text>'
-         '<text x="300" y="370" font-size="20" fill="#5b7895" stroke="none" letter-spacing="6">相 模 湾</text>'
-         '<text x="380" y="342" font-size="14" fill="#1b2b44" stroke="none">由比ヶ浜</text>'
-         '<text x="40" y="40" font-size="15" fill="#1b2b44" stroke="none">山（丘陵）</text>')
-    cuts = [(95, 230), (150, 110), (250, 60), (430, 58), (560, 85), (630, 200), (300, 52)]
-    for x, y in cuts:
-        g += f'<rect x="{x - 9}" y="{y - 9}" width="18" height="18" fill="#c0392b" stroke="#fff" stroke-width="2"/>'
-    g += ('<rect x="470" y="380" width="14" height="14" fill="#c0392b"/>'
-          '<text x="490" y="392" font-size="13" fill="#1b2b44" stroke="none">切通し（鎌倉七口）</text>'
-          '<text x="690" y="414" text-anchor="end" font-size="11" fill="#555" stroke="none">※模式図</text>')
-    return svg(700, 420, g)
 
 
 def timeline(items, width=700):
@@ -304,26 +261,6 @@ def hakone_profile():
               f'<text x="{X(k) + 8}" y="{Y(m) - 12}" font-size="13" font-weight="bold" fill="#1b2b44" stroke="none">{s}（{m}m）</text>')
     g += '<text x="690" y="20" text-anchor="end" font-size="11" fill="#555" stroke="none">※主な駅のみを結んだ模式的なグラフ</text>'
     return svg(700, 322, g)
-
-
-def yokohama_station():
-    g = ('<rect width="700" height="300" fill="#e6eff6"/>'
-         '<path d="M0,0 H700 V110 Q560,120 470,170 Q400,210 330,300 H0 Z" fill="#fbfaf6" stroke="#1b2b44" stroke-width="1.5"/>'
-         '<path d="M40,30 Q250,60 300,170 Q330,240 360,285" stroke="#7d8fa8" stroke-width="3" stroke-dasharray="10 6"/>'
-         '<path d="M40,30 Q200,70 230,140 Q250,200 120,280" stroke="#1b2b44" stroke-width="5"/>'
-         '<text x="30" y="22" font-size="13" fill="#1b2b44" stroke="none">← 東京方面</text>'
-         '<text x="70" y="295" font-size="13" fill="#1b2b44" stroke="none">← 小田原方面</text>')
-    for x, y, lab, yr in [(355, 280, "初代", "1872年"), (300, 175, "2代目", "1915年"), (224, 125, "3代目（現在）", "1928年")]:
-        g += (f'<rect x="{x - 10}" y="{y - 10}" width="20" height="20" fill="#c0392b" stroke="#fff" stroke-width="2"/>'
-              f'<text x="{x + 16}" y="{y + 2}" font-size="14" font-weight="bold" fill="#1b2b44" stroke="none">{lab}</text>'
-              f'<text x="{x + 16}" y="{y + 19}" font-size="12" fill="#1b2b44" stroke="none">{yr}</text>')
-    g += ('<line x1="470" y1="40" x2="510" y2="40" stroke="#1b2b44" stroke-width="5"/>'
-          '<text x="518" y="45" font-size="12" fill="#1b2b44" stroke="none">現在の東海道線</text>'
-          '<line x1="470" y1="62" x2="510" y2="62" stroke="#7d8fa8" stroke-width="3" stroke-dasharray="10 6"/>'
-          '<text x="518" y="67" font-size="12" fill="#1b2b44" stroke="none">開業当時の線路</text>'
-          '<text x="560" y="230" font-size="20" fill="#5b7895" stroke="none" letter-spacing="6">横浜港</text>'
-          '<text x="690" y="292" text-anchor="end" font-size="11" fill="#555" stroke="none">※模式図</text>')
-    return svg(700, 300, g)
 
 
 def shin_yokohama():
