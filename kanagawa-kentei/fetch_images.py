@@ -46,9 +46,33 @@ FILES = {
     "c_shintsunashima.jpg": ("Shin-tsunashima Station Platform 20240406 01.jpg", "Suikotei", "CC BY 4.0"),
     "c_yokohama_east.jpg": ("Yokohama Station East exit Taxi plaza.jpg", "Yoh-Plus", "CC BY 4.0"),
     "c_asahina.jpg": ("Asahina-Pass.jpg", "Tarourashima", "Public domain"),
+    "c_katase.jpg": ("Katase Enoshima Station Building 2021-12.jpg", "Kirin7739", "CC BY-SA 4.0"),
+    "c_umishibaura.jpg": ("JR Tsurumi Line Umi-Shibaura StationPlatform.jpg", "Mister0124", "CC BY-SA 4.0"),
+    "c_kencho.jpg": ("The King’s Tower of the Kanagawa Prefectural Government Building.jpg", "Galactic Center Radio Arc", "CC0"),
+    "c_redbrick.jpg": ("Yokohama Red Brick Warehouse 2.jpg", "Syced", "CC0"),
+    "c_zenrinmon.jpg": ("Zenrinmon Gate.jpg", "Ymblanter", "CC BY-SA 4.0"),
+    "c_kawasakidaishi.jpg": ("Kawasaki Daishi Main Hall.jpg", "ペン太", "CC BY 2.5"),
     "c_kamiseya.jpg": ("US Navy 110828-N-VE260-735 An SH-60B Sea Hawk helicopter lands at Naval Support Facility Kamiseya "
                        "during the Yokohama Comprehensive Disaster Drill.jpg", "U.S. Navy", "Public domain"),
 }
+
+
+# 答えがわかってしまう駅名標などをぼかす範囲（画像の幅・高さに対する割合：左, 上, 右, 下）
+BLUR = {
+    "c_katase.jpg": [(0.62, 0.39, 0.85, 0.51)],
+    "c_umishibaura.jpg": [(0.81, 0.36, 0.89, 0.82)],
+}
+
+
+def blur(name):
+    from PIL import Image, ImageFilter
+    path = IMG / name
+    im = Image.open(path).convert("RGB")
+    W, H = im.size
+    for l, t, r, b in BLUR[name]:
+        box = (int(l * W), int(t * H), int(r * W), int(b * H))
+        im.paste(im.crop(box).filter(ImageFilter.GaussianBlur(14)), box)
+    im.save(path, quality=90)
 
 
 def urls(title):
@@ -84,6 +108,8 @@ def main():
         for u in urls(title):
             try:
                 (IMG / name).write_bytes(get(u))
+                if name in BLUR:
+                    blur(name)
                 print(name, "<-", "thumb" if "/thumb/" in u else "original", flush=True)
                 break
             except urllib.error.HTTPError as ex:

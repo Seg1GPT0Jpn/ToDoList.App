@@ -9,6 +9,7 @@ import pathlib
 import re
 import subprocess
 
+import figures as F
 from layout import CREDITS, e
 from questions import (BRONZE, EXAM_MINUTES, GOLD, ORG, SECTIONS, SILVER, SUBTITLE, TITLE,
                        UNIT_MIN_RATE)
@@ -38,18 +39,33 @@ body { font-family: "Yu Mincho","YuMincho","Hiragino Mincho ProN","Noto Serif CJ
        font-size: 10.3pt; line-height: 1.75; color: #000; background: #fff; margin: 0; }
 b, .lbl, .who, .qh { font-family: "Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans CJK JP","IPAGothic",sans-serif; }
 .page { page-break-after: always; }
-/* 表紙 */
-.cover { height: 265mm; display: flex; flex-direction: column; align-items: center; }
-.cover .yr { margin-top: 18mm; font-size: 13pt; }
-.cover h1 { font-size: 20pt; margin: 3mm 0 0; letter-spacing: .08em; text-align: center; line-height: 1.6; }
-.cover .org { font-size: 12pt; letter-spacing: .2em; }
-.cover .notice { width: 150mm; margin-top: 12mm; border: 1.5px solid #000; padding: 4mm 7mm; font-size: 10.5pt; line-height: 1.9; }
-.cover .notice h3 { text-align: center; letter-spacing: .6em; margin: 0 0 2mm; font-size: 12pt; }
-.cover .notice ol { margin: 0; padding-left: 6mm; }
-.cover .id { margin-top: 12mm; display: flex; align-items: stretch; border: 1.5px solid #000; }
-.cover .id .h { padding: 3mm 6mm; border-right: 1.5px solid #000; display: flex; align-items: center; font-weight: bold; }
-.cover .id span { width: 12mm; height: 14mm; border-right: 1px solid #000; }
-.cover .id span:last-child { border-right: 0; width: 10mm; text-align: center; line-height: 14mm; }
+/* 表紙（第2版のデザイン） */
+:root { --ink:#1b2b44; --accent:#0f6d7a; --red:#c0392b; --pale:#eef3f8; }
+.sans { font-family: "Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans CJK JP","IPAGothic",sans-serif; }
+.cover { height: 263mm; display: flex; flex-direction: column; }
+.cover .band { background: var(--ink); color: #fff; padding: 9mm 10mm 7mm; border-radius: 4mm 4mm 0 0; position: relative; overflow: hidden; }
+.cover .band .org { font-size: 10pt; letter-spacing: .3em; opacity: .85; }
+.cover .band h1 { font-size: 30pt; margin: 3mm 0 1mm; letter-spacing: .12em; font-weight: 900; }
+.cover .band .sub { font-size: 13pt; letter-spacing: .3em; }
+.cover .band .wave { position: absolute; right: -4mm; bottom: -2mm; width: 80mm; opacity: .25; }
+.cover .stripe { height: 3mm; background: repeating-linear-gradient(90deg, var(--accent) 0 12mm, #4fa3ad 12mm 24mm); }
+.cover .mid { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; margin: 6mm 0 4mm; align-items: center; }
+.cover .map svg { width: 100%; }
+.info { width: 100%; border-collapse: collapse; font-size: 10.5pt; }
+.info th, .info td { border: 1px solid var(--ink); padding: 2mm 3mm; }
+.info th { background: var(--pale); width: 30mm; text-align: left; }
+.notice { border: 1.5px solid var(--ink); border-radius: 3mm; padding: 3mm 6mm 2mm; font-size: 9.8pt; line-height: 1.7; }
+.notice h3 { margin: 0 0 1mm; font-size: 11pt; letter-spacing: .4em; text-align: center; }
+.notice ol { margin: 0; padding-left: 5mm; }
+.idbox { display: flex; align-items: center; gap: 3mm; margin-top: 5mm; }
+.idbox .cells { display: flex; }
+.idbox .cells span { width: 10mm; height: 12mm; border: 1.5px solid var(--ink); margin-left: -1.5px; }
+.start { margin-top: auto; text-align: center; font-weight: bold; border: 2px solid var(--red); color: var(--red);
+         padding: 2mm; border-radius: 2mm; }
+/* 問5（写真と問いを左右に並べる） */
+.side { display: grid; grid-template-columns: 62mm 1fr; gap: 4mm; align-items: start; }
+.side .fbox img { max-height: 46mm; }
+.side .ch { margin-left: 9mm; }
 /* 問 */
 .mon { margin: 0 0 3mm; }
 .mon .qh { font-weight: bold; font-size: 11.5pt; margin-right: 2mm; }
@@ -115,29 +131,45 @@ def choices(q):
 
 # ---------------- 問題冊子 ----------------
 def booklet():
+    silhouette = F.kanagawa(fill={n: "light" for n in F.CODE}, sea_labels=True)
+    nums = "、".join(f"問{i + 1}" for i in range(len(SECTIONS)))
     out = [f"""
 <div class="page cover">
-  <div class="yr">令和8年度</div>
-  <h1>{e(TITLE)}<br>{e(SUBTITLE)}</h1>
-  <div class="org" style="margin-top:4mm">{e(ORG)}</div>
+  <div class="band">
+    <div class="org sans">{e(ORG)}</div>
+    <h1 class="sans">{e(TITLE)}</h1>
+    <div class="sub sans">{e(SUBTITLE)}</div>
+    <svg class="wave" viewBox="0 0 200 80"><path d="M0,60 Q25,20 50,50 T100,45 T150,40 T200,30 V80 H0Z" fill="#fff"/>
+      <path d="M0,70 Q30,45 60,62 T120,58 T200,50 V80 H0Z" fill="#9fd3da"/></svg>
+  </div>
+  <div class="stripe"></div>
+  <div class="mid">
+    <div class="map">{silhouette}</div>
+    <table class="info sans">
+      <tr><th>検査時間</th><td>{EXAM_MINUTES}分</td></tr>
+      <tr><th>問題数</th><td>問1〜問{len(SECTIONS)}・全{NQ}問</td></tr>
+      <tr><th>配点</th><td>100点満点</td></tr>
+      <tr><th>解答方法</th><td>マーク式・記述式<br>（別紙の解答用紙に記入）</td></tr>
+      <tr><th>認定</th><td>ゴールド／シルバー／ブロンズ</td></tr>
+    </table>
+  </div>
   <div class="notice">
-    <h3>注意事項</h3>
+    <h3 class="sans">注意事項</h3>
     <ol>
       <li>開始の合図があるまで、この問題冊子を開いてはいけません。</li>
-      <li>本検査の問題は、問1、問2、問3、問4の4問あり、2ページから印刷されています。</li>
-      <li>検査時間は{EXAM_MINUTES}分です。</li>
-      <li>問題用紙・解答用紙の印刷不鮮明や汚れに気づいた場合は、手を挙げて監督者に知らせなさい。</li>
-      <li>計算や下書きは、問題冊子のあいているところを使いなさい。</li>
-      <li>解答は、すべて解答用紙の決められた欄に記入しなさい。</li>
-      <li>マークシート方式により解答する場合は、選んだ番号の〇の中を塗りつぶしなさい。</li>
+      <li>本検査の問題は、{nums}の{len(SECTIONS)}問あり、2ページから印刷されています。</li>
+      <li>解答は、すべて解答用紙の決められた欄に記入しなさい。マークシート方式の問題は、選んだ番号の〇の中を塗りつぶしなさい。</li>
       <li>記述式の問題は、1マスに1字ずつ書きなさい。句読点や記号も1字に数えます。</li>
       <li>資料中の図の多くは、内容をわかりやすくするために簡略化しています。</li>
-      <li>終了の合図があったら、すぐに解答をやめなさい。</li>
+      <li>計算や下書きは、問題冊子のあいているところを使いなさい。</li>
+      <li>印刷の不鮮明、ページの落丁・乱丁に気づいた場合は、手を挙げて監督者に知らせなさい。</li>
+      <li>終了の合図があったら、すぐに解答をやめなさい。問題冊子は持ち帰ってかまいません。</li>
     </ol>
   </div>
-  <div class="id"><div class="h">受 検 番 号</div>{"<span></span>" * 4}<span>番</span></div>
-  <div style="margin-top:6mm;display:flex;gap:3mm;align-items:flex-end;width:120mm"><b>氏名</b>
-    <div style="flex:1;border-bottom:1px solid #000;height:9mm"></div></div>
+  <div class="idbox sans"><b>受検番号</b><div class="cells">{"<span></span>" * 6}</div>
+    <b style="margin-left:8mm">氏名</b><div style="flex:1;border-bottom:1.5px solid #1b2b44;height:10mm"></div></div>
+  <div style="height:5mm"></div>
+  <div class="start sans">試験開始の合図があるまで、問題冊子を開いてはいけません。</div>
 </div>"""]
     for si, s in enumerate(SECTIONS):
         out.append('<div class="page">')
@@ -145,11 +177,15 @@ def booklet():
         out.extend(s["materials"])
         for qi, q in enumerate(s["questions"]):
             out.append('<div class="sq">')
-            out.append(f'<div class="qt"><span>({SUB[qi]})</span><span>{q["q"]}'
-                       f'<span class="pt">（{q["pts"]}点）</span></span></div>')
-            out.extend(q.get("pre", []))
-            if q["kind"] == "mark":
-                out.append(choices(q))
+            qt = (f'<div class="qt"><span>({SUB[qi]})</span><span>{q["q"]}'
+                  f'<span class="pt">（{q["pts"]}点）</span></span></div>')
+            if q.get("side"):
+                out.append(f'<div class="side"><div>{"".join(q["pre"])}</div><div>{qt}{choices(q)}</div></div>')
+            else:
+                out.append(qt)
+                out.extend(q.get("pre", []))
+                if q["kind"] == "mark":
+                    out.append(choices(q))
             if si == len(SECTIONS) - 1 and qi == len(s["questions"]) - 1:
                 out.append('<p class="end">（これで、問題は終わりです。）</p>')
             out.append("</div>")
@@ -217,8 +253,8 @@ def answer_key():
 <table class="mk"><tr><th>問</th><th style="width:20mm">配点</th><th style="width:40mm">ゴールドに必要な得点</th></tr>{rows}</table>
 <p><b>採点上の注意</b></p>
 <ul style="margin-top:0;font-size:9.5pt">
-<li>マーク式は各4点。正答の番号のみ得点とする。</li>
-<li>記述式は各9点。解説欄の採点基準にしたがって部分点を与える。35字未満・45字超は2点減点、指定語句の欠落は1語につき2点減点、文末の指定違反は2点減点（0点未満にはしない）。</li>
+<li>マーク式は問1〜問4が各3点、問5が各2点。正答の番号のみ得点とする。</li>
+<li>記述式は各8点。解説欄の採点基準にしたがって部分点を与える。35字未満・45字超は2点減点、指定語句の欠落は1語につき2点減点、文末の指定違反は2点減点（0点未満にはしない）。</li>
 </ul>""")
     used = []
     for si, s in enumerate(SECTIONS):
