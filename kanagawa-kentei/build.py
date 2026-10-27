@@ -182,10 +182,8 @@ def booklet():
         out.extend(s["materials"])
         for qi, q in enumerate(s["questions"]):
             out.append('<div class="sq">')
-            # 点数は問い文の末尾（あ〜うの枠がある場合はその前）に置く
-            pt = f'<span class="pt">（{q["pts"]}点）</span>'
-            body = q["q"].replace('<div class="blk">', pt + '<div class="blk">', 1) if '<div class="blk">' in q["q"] else q["q"] + pt
-            qt = f'<div class="qt"><span>({SUB[qi]})</span><span>{body}</span></div>'
+            # 問題の取捨選択ができないよう、配点は表示しない
+            qt = f'<div class="qt"><span>({SUB[qi]})</span><span>{q["q"]}</span></div>'
             if q.get("side"):
                 out.append(f'<div class="side"><div>{"".join(q["pre"])}</div><div>{qt}{choices(q)}</div></div>')
             else:
@@ -212,7 +210,7 @@ def answer_sheet():
 <div style="font-size:8.5pt;text-align:right;font-family:sans-serif">マーク例　良い例 <span class="bub" style="background:#000"></span>
 悪い例 <span class="bub">✓</span><span class="bub">×</span></div></div>
 <table class="mk"><tr><th style="width:20mm">受検番号</th><td style="width:50mm"></td><th style="width:14mm">氏名</th><td></td></tr>
-<tr><th>合計得点</th><td style="text-align:right;font-size:12pt">／{TOTAL}</td><th>認定</th>
+<tr><th>合計得点</th><td style="text-align:right;font-size:12pt">点</td><th>認定</th>
 <td>□ ゴールド　□ シルバー　□ ブロンズ　□ 参加賞</td></tr></table>"""]
     for si, s in enumerate(SECTIONS):
         n = len(s["questions"])
@@ -225,33 +223,43 @@ def answer_sheet():
                 cell = grid(q["chars"])
             out.append(f'<tr><td style="width:12mm;text-align:center">({SUB[qi]})</td><td>{cell}</td>')
             if qi == 0:
-                out.append(f'<td rowspan="{n}" class="score">／{s["pts"]}</td>')
+                out.append(f'<td rowspan="{n}" class="score"></td>')
             out.append("</tr>")
         out.append("</table>")
     out.append("</div>")
     return doc(f"{TITLE} 解答用紙", "".join(out))
 
 
-# ---------------- 解答と解説 ----------------
-def answer_key():
+# ---------------- 解答と解説（受験者用）・採点基準（採点者用） ----------------
+def answer_key(grader):
+    """grader=True で採点者用（配点・採点基準・出題のねらいつき）、False で受験者用（正答と解説のみ）"""
+    kind = "採点基準（採点者用）" if grader else "解答と解説（受験者用）"
     out = [f'<div class="sheet"><div class="top"><div><div style="font-size:9pt">{e(ORG)}</div>'
-           f'<h1>{e(TITLE)}　正答・解説・出題のねらい</h1></div><div style="font-size:9pt">採点者用</div></div>']
+           f'<h1>{e(TITLE)}　{kind}</h1></div><div style="font-size:9pt">{"採点者用・受験者に配布しない" if grader else "受験者用"}</div></div>']
     for si, s in enumerate(SECTIONS):
         out.append(f'<div style="page-break-inside:avoid"><p style="margin:3mm 0 1mm"><b>問{si + 1}　{e(s["name"])}'
-                   f'（配点 {s["pts"]}点）</b></p>')
-        out.append('<table class="mk key"><tr><th style="width:10mm">小問</th><th style="width:9mm">配点</th>'
-                   '<th style="width:30mm">正答</th><th>解説</th><th style="width:42mm">出題のねらい</th></tr>')
+                   + (f'（配点 {s["pts"]}点）' if grader else "") + "</b></p>")
+        head = ('<th style="width:10mm">小問</th>' + ('<th style="width:9mm">配点</th>' if grader else "")
+                + '<th style="width:30mm">正答</th><th>解説</th>'
+                + ('<th style="width:42mm">出題のねらい</th>' if grader else ""))
+        out.append(f'<table class="mk key"><tr>{head}</tr>')
         for qi, q in enumerate(s["questions"]):
             ans = str(q["ans"]) if q["kind"] == "mark" else q["ans"]
             size = "13pt" if q["kind"] == "mark" else "8.5pt"
-            out.append(f'<tr><td style="text-align:center">({SUB[qi]})</td><td style="text-align:center">{q["pts"]}</td>'
-                       f'<td><b style="font-size:{size}">{e(ans)}</b></td><td>{e(q["exp"])}</td><td>{e(q["intent"])}</td></tr>')
+            exp = e(q["exp"])
+            if grader and q.get("rubric"):
+                exp += f'<br><b>【採点基準】</b>{e(q["rubric"])}'
+            out.append(f'<tr><td style="text-align:center">({SUB[qi]})</td>'
+                       + (f'<td style="text-align:center">{q["pts"]}</td>' if grader else "")
+                       + f'<td><b style="font-size:{size}">{e(ans)}</b></td><td>{exp}</td>'
+                       + (f'<td>{e(q["intent"])}</td>' if grader else "") + "</tr>")
         out.append("</table></div>")
-    rows = "".join(f'<tr><td>問{i + 1}　{e(s["name"])}</td><td style="text-align:center">{s["pts"]}</td>'
-                   f'<td style="text-align:center">{unit_min(s["pts"])}点以上</td></tr>' for i, s in enumerate(SECTIONS))
-    out.append(f"""
+    if grader:
+        rows = "".join(f'<tr><td>問{i + 1}　{e(s["name"])}</td><td style="text-align:center">{s["pts"]}</td>'
+                       f'<td style="text-align:center">{unit_min(s["pts"])}点以上</td></tr>' for i, s in enumerate(SECTIONS))
+        out.append(f"""
 <div style="page-break-before:always"></div>
-<p><b>認定基準</b></p>
+<p><b>認定基準</b>（{TOTAL}点満点）</p>
 <table class="mk"><tr><th style="width:42mm">認定</th><th>条件</th></tr>
 <tr><td>神奈川知識ゴールド</td><td>得点率{GOLD}％以上（{need(GOLD)}点以上）、かつ、すべての問で得点率{int(UNIT_MIN_RATE * 100)}％以上（下表）</td></tr>
 <tr><td>神奈川知識シルバー</td><td>得点率{SILVER}％以上（{need(SILVER)}点以上）。ゴールドの条件を満たさない場合を含む</td></tr>
@@ -260,9 +268,20 @@ def answer_key():
 <table class="mk"><tr><th>問</th><th style="width:20mm">配点</th><th style="width:40mm">ゴールドに必要な得点</th></tr>{rows}</table>
 <p><b>採点上の注意</b></p>
 <ul style="margin-top:0;font-size:9.5pt">
-<li>マーク式は問1〜問6が各3点、問7・問8が各2点。正答の番号のみ得点とする。</li>
+<li>マーク式は問1〜問4が各3点、問5・問7・問8が各2点、問6が各3点。正答の番号のみ得点とする。</li>
 <li>記述式は各8点。解説欄の採点基準にしたがって部分点を与える。35字未満・45字超は2点減点、指定語句の欠落は1語につき2点減点、文末の指定違反は2点減点（0点未満にはしない）。</li>
-</ul>""")
+<li>配点は受験者に公開しない。</li>
+</ul></div>""")
+        return doc(f"{TITLE} {kind}", "".join(out))
+    out.append(f"""
+<div style="page-break-before:always"></div>
+<p><b>認定基準</b></p>
+<table class="mk"><tr><th style="width:42mm">認定</th><th>条件</th></tr>
+<tr><td>神奈川知識ゴールド</td><td>得点率{GOLD}％以上、かつ、すべての問で得点率{int(UNIT_MIN_RATE * 100)}％以上</td></tr>
+<tr><td>神奈川知識シルバー</td><td>得点率{SILVER}％以上</td></tr>
+<tr><td>神奈川知識ブロンズ</td><td>得点率{BRONZE}％以上</td></tr>
+<tr><td>参加賞</td><td>得点率{BRONZE}％未満</td></tr></table>
+""")
     used = []
     for si, s in enumerate(SECTIONS):
         html_all = "".join(s["materials"]) + "".join("".join(q.get("pre", [])) for q in s["questions"])
@@ -285,11 +304,12 @@ def answer_key():
 <li>箱根登山電車の標高・距離：箱根登山鉄道の公表資料ほか</li>
 <li>問1の表1、問3(イ)の時刻設定は、この検査のために設定した模式的な値</li>
 </ul></div>""")
-    return doc(f"{TITLE} 解答と解説", "".join(out))
+    return doc(f"{TITLE} {kind}", "".join(out))
 
 
 def main():
-    files = {"01_問題冊子": booklet(), "02_解答用紙": answer_sheet(), "03_解答と解説": answer_key()}
+    files = {"01_問題冊子": booklet(), "02_解答用紙": answer_sheet(),
+             "03_解答と解説_受験者用": answer_key(grader=False), "05_採点基準_採点者用": answer_key(grader=True)}
     for name, content in files.items():
         (ROOT / f"{name}.html").write_text(content, encoding="utf-8")
     npm_root = subprocess.run(["npm", "root", "-g"], capture_output=True, text=True).stdout.strip()
