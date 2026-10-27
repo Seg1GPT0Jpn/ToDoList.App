@@ -292,3 +292,53 @@ def expo_map():
     return kanagawa(fill={"横浜市": "light"}, names=["横浜市"],
                     markers=[(522, 196, "会場", "旧上瀬谷通信施設の跡地")],
                     legend=[("light", "横浜市")])
+
+
+def terrace_layers():
+    """相模川沿いの河岸段丘：地層と地下水面（模式断面図）"""
+    surf = "M20,60 L230,62 L252,150 L430,156 L452,228 L600,234 L612,252 L688,252 L700,226 L770,222"
+    g = (f'<path d="{surf} L770,330 L20,330 Z" fill="#e8e1d2" stroke="none"/>'
+         # ローム層（斜線）・段丘礫層（点）
+         '<path d="M20,60 L230,62 L236,86 L20,84 Z M252,150 L430,156 L436,176 L256,172 Z" fill="url(#hatch)" stroke="#1b2b44"/>'
+         '<path d="M20,84 L236,86 L246,130 L20,128 Z M256,172 L436,176 L444,204 L262,200 Z M452,228 L600,234 L604,246 L455,242 Z" '
+         'fill="url(#dots)" stroke="#1b2b44"/>'
+         f'<path d="{surf}" fill="none" stroke="#1b2b44" stroke-width="2.5"/>'
+         '<path d="M612,252 Q650,240 688,252 Z" fill="#9cc3e0" stroke="#1b2b44"/>'
+         # 地下水面
+         '<path d="M20,150 L240,152 L262,151 M262,190 L440,196 L458,229 M458,236 L606,244" stroke="#1d5fa8" stroke-width="2.5" '
+         'stroke-dasharray="9 5" fill="none"/>'
+         '<text x="650" y="275" text-anchor="middle" font-size="14" fill="#1b2b44" stroke="none">相模川</text>')
+    for x, y, s in [(120, 60, "P"), (340, 156, "Q"), (462, 229, "R"), (540, 233, "S")]:
+        g += (f'<line x1="{x}" y1="{y}" x2="{x}" y2="{y - 26}" stroke="#c0392b" stroke-width="2"/>'
+              f'<circle cx="{x}" cy="{y - 36}" r="12" fill="#fff" stroke="#c0392b" stroke-width="2.5"/>'
+              f'<text x="{x}" y="{y - 31}" text-anchor="middle" font-size="15" font-weight="bold" fill="#c0392b" stroke="none">{s}</text>')
+    g += ('<g font-size="12.5" fill="#1b2b44" stroke="none">'
+          '<rect x="22" y="290" width="22" height="13" fill="url(#hatch)" stroke="#1b2b44"/><text x="50" y="301">関東ローム層（火山灰）</text>'
+          '<rect x="210" y="290" width="22" height="13" fill="url(#dots)" stroke="#1b2b44"/><text x="238" y="301">段丘礫層（砂・れき）</text>'
+          '<line x1="400" y1="297" x2="430" y2="297" stroke="#1d5fa8" stroke-width="2.5" stroke-dasharray="9 5"/>'
+          '<text x="436" y="301">地下水面</text>'
+          '<text x="22" y="322">西（台地）</text><text x="760" y="322" text-anchor="end">東 ／ ※高さを強調した模式図</text></g>')
+    return svg(780, 330, g)
+
+
+def silk_road():
+    """八王子から横浜へ生糸が運ばれた道（模式図）"""
+    g = ('<rect width="700" height="300" fill="#fff"/>'
+         '<path d="M560,300 Q600,250 700,240 V300 Z" fill="#e6eff6"/>'
+         '<text x="640" y="285" font-size="14" fill="#5b7895" stroke="none">横浜港</text>'
+         '<path d="M80,60 Q200,120 300,150 Q420,190 600,250" stroke="#8a6d3b" stroke-width="4" stroke-dasharray="2 6" '
+         'stroke-linecap="round"/>'
+         '<path d="M80,70 Q190,150 310,175 Q450,205 560,230 L600,250" stroke="#1b2b44" stroke-width="4"/>'
+         '<g font-size="14" font-weight="bold" fill="#1b2b44" stroke="none">'
+         '<circle cx="80" cy="64" r="9" fill="#fff" stroke="#1b2b44" stroke-width="3"/><text x="40" y="40">八王子</text>'
+         '<circle cx="300" cy="158" r="8" fill="#fff" stroke="#1b2b44" stroke-width="3"/><text x="250" y="130">原町田</text>'
+         '<circle cx="560" cy="232" r="8" fill="#fff" stroke="#1b2b44" stroke-width="3"/><text x="500" y="210">東神奈川</text>'
+         '<circle cx="602" cy="252" r="9" fill="#c0392b" stroke="#fff" stroke-width="2"/><text x="612" y="248">横浜</text></g>'
+         '<g font-size="12.5" fill="#1b2b44" stroke="none">'
+         '<line x1="30" y1="250" x2="70" y2="250" stroke="#8a6d3b" stroke-width="4" stroke-dasharray="2 6" stroke-linecap="round"/>'
+         '<text x="78" y="255">江戸時代末から生糸を運んだ道（「絹の道」）</text>'
+         '<line x1="30" y1="275" x2="70" y2="275" stroke="#1b2b44" stroke-width="4"/>'
+         '<text x="78" y="280">1908年に開通した横浜鉄道（現在のJR横浜線）</text>'
+         '<text x="690" y="20" text-anchor="end">※模式図</text>'
+         '<text x="40" y="100">（周辺は養蚕地帯）</text></g>')
+    return svg(700, 300, g)

@@ -1,116 +1,92 @@
 <!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>第1回 神奈川県検定 解答と解説</title><style>
-@page { size: A4; margin: 16mm 15mm 16mm; }
-:root { --ink:#1b2b44; --accent:#0f6d7a; --red:#c0392b; --pale:#eef3f8; --line:#9aa9bd; }
+@page { size: A4; margin: 14mm 15mm 15mm; }
 * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 body { font-family: "Yu Mincho","YuMincho","Hiragino Mincho ProN","Noto Serif CJK JP","IPAMincho",serif;
-       font-size: 10.5pt; line-height: 1.85; color: #111; background: #fff; margin: 0; }
-.sans { font-family: "Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans CJK JP","IPAGothic",sans-serif; }
+       font-size: 10.3pt; line-height: 1.75; color: #000; background: #fff; margin: 0; }
+b, .lbl, .who, .qh { font-family: "Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans CJK JP","IPAGothic",sans-serif; }
 .page { page-break-after: always; }
-u { text-decoration: none; border-bottom: 1.5px solid #111; }
 /* 表紙 */
-.cover { height: 263mm; display: flex; flex-direction: column; }
-.cover .band { background: var(--ink); color: #fff; padding: 9mm 10mm 7mm; border-radius: 4mm 4mm 0 0; position: relative; overflow: hidden; }
-.cover .band .org { font-size: 10pt; letter-spacing: .3em; opacity: .85; }
-.cover .band h1 { font-size: 30pt; margin: 3mm 0 1mm; letter-spacing: .12em; font-weight: 900; }
-.cover .band .sub { font-size: 13pt; letter-spacing: .5em; }
-.cover .band .wave { position: absolute; right: -4mm; bottom: -2mm; width: 80mm; opacity: .25; }
-.cover .stripe { height: 3mm; background: repeating-linear-gradient(90deg, var(--accent) 0 12mm, #4fa3ad 12mm 24mm); }
-.cover .mid { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; margin: 6mm 0 4mm; align-items: center; }
-.cover .map svg { width: 100%; }
-.info { width: 100%; border-collapse: collapse; font-size: 10.5pt; }
-.info th, .info td { border: 1px solid var(--ink); padding: 2mm 3mm; }
-.info th { background: var(--pale); width: 30mm; text-align: left; }
-.notice { border: 1.5px solid var(--ink); border-radius: 3mm; padding: 3mm 6mm 2mm; font-size: 9.8pt; line-height: 1.7; }
-.notice h3 { margin: 0 0 1mm; font-size: 11pt; letter-spacing: .4em; text-align: center; }
-.notice ol { margin: 0; padding-left: 5mm; }
-.idbox { display: flex; align-items: center; gap: 3mm; margin-top: 5mm; }
-.idbox .cells { display: flex; }
-.idbox .cells span { width: 10mm; height: 12mm; border: 1.5px solid var(--ink); margin-left: -1.5px; }
-.start { margin-top: auto; text-align: center; font-weight: bold; border: 2px solid var(--red); color: var(--red);
-         padding: 2mm; border-radius: 2mm; }
-/* 大問 */
-.sec-head { display: flex; align-items: stretch; margin-bottom: 3mm; border-radius: 2.5mm; overflow: hidden; border: 1.5px solid var(--ink); }
-.sec-head .no { background: var(--ink); color: #fff; padding: 1.5mm 5mm; font-size: 14pt; font-weight: 900; letter-spacing: .1em; }
-.sec-head .ttl { flex: 1; padding: 1.5mm 4mm; font-size: 13pt; font-weight: bold; background: var(--pale); }
-.sec-head .pts { padding: 1.5mm 4mm; font-size: 10pt; align-self: center; }
-.intro { margin: 0 0 3mm; }
-.talk { border: 1px solid var(--line); border-radius: 2.5mm; padding: 2mm 4mm; margin: 0 0 4mm; background: #fbfcfe; }
-.talk .row { display: grid; grid-template-columns: 26mm 1fr; gap: 2mm; }
-.talk .who { font-weight: bold; color: var(--accent); }
-/* 小問 */
-.q { margin: 0 0 6mm; page-break-inside: avoid; }
-.q-text { margin: 1mm 0 2mm; }
-.tag { display: inline-block; background: var(--ink); color: #fff; font-weight: bold; padding: 0 2.5mm; border-radius: 1.5mm;
-       margin-right: 2mm; font-size: 10pt; }
-.pt { font-size: 8.5pt; color: #444; margin-left: 1mm; }
-.figs { display: flex; gap: 4mm; justify-content: center; align-items: flex-start; flex-wrap: wrap; margin: 1mm 0 2mm; }
-figure { margin: 0; flex: 1 1 0; min-width: 45mm; max-width: 118mm; }
-figure .box svg { display: block; max-height: 78mm; }
-figure .cap { font-size: 9pt; font-weight: bold; margin-bottom: .8mm; }
-figure .box { border: 1px solid var(--line); border-radius: 2mm; padding: 2mm; background: #fff; }
-figure .src { font-size: 7.5pt; color: #555; text-align: right; line-height: 1.4; margin-top: .6mm; }
-figure img { display: block; max-width: 100%; max-height: 66mm; margin: 0 auto; border-radius: 1mm; }
-.ph { height: 52mm; border: 1.5px dashed var(--line); border-radius: 2mm; background: repeating-linear-gradient(45deg,#f5f7fa 0 6px,#fff 6px 12px);
-      display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-size: 8.5pt;
-      line-height: 1.5; color: #333; padding: 2mm; }
-.ph b { font-size: 9.5pt; }
-.note { border: 1px solid var(--ink); border-left: 2.5mm solid var(--accent); padding: 1.5mm 4mm; margin: 1mm 0 2mm;
-        font-size: 9.6pt; line-height: 1.7; background: #fbfcfe; }
-.note .src { font-size: 7.5pt; color: #555; }
-.stmts { border: 1px solid var(--line); border-radius: 2mm; padding: 1.5mm 4mm; margin: 1.5mm 0; }
-.stmt { display: grid; grid-template-columns: 7mm 1fr; }
-.choices { display: grid; grid-template-columns: 1fr; gap: .5mm 6mm; margin: 1mm 0 0 2mm; }
-.choices.c2 { grid-template-columns: 1fr 1fr; } .choices.c3 { grid-template-columns: 1fr 1fr 1fr; }
-.choices.c4 { grid-template-columns: repeat(4,1fr); }
-.choice { display: grid; grid-template-columns: 6mm 1fr; }
-table.combo { border-collapse: collapse; margin: 1.5mm auto 0; font-size: 9.6pt; }
-table.combo th, table.combo td { border: 1px solid var(--ink); padding: .6mm 2.4mm; text-align: center; line-height: 1.5; }
-table.combo th { background: var(--pale); }
-.end { text-align: right; margin-top: 6mm; }
-/* 解答用紙 */
+.cover { height: 265mm; display: flex; flex-direction: column; align-items: center; }
+.cover .yr { margin-top: 18mm; font-size: 13pt; }
+.cover h1 { font-size: 20pt; margin: 3mm 0 0; letter-spacing: .08em; text-align: center; line-height: 1.6; }
+.cover .org { font-size: 12pt; letter-spacing: .2em; }
+.cover .notice { width: 150mm; margin-top: 12mm; border: 1.5px solid #000; padding: 4mm 7mm; font-size: 10.5pt; line-height: 1.9; }
+.cover .notice h3 { text-align: center; letter-spacing: .6em; margin: 0 0 2mm; font-size: 12pt; }
+.cover .notice ol { margin: 0; padding-left: 6mm; }
+.cover .id { margin-top: 12mm; display: flex; align-items: stretch; border: 1.5px solid #000; }
+.cover .id .h { padding: 3mm 6mm; border-right: 1.5px solid #000; display: flex; align-items: center; font-weight: bold; }
+.cover .id span { width: 12mm; height: 14mm; border-right: 1px solid #000; }
+.cover .id span:last-child { border-right: 0; width: 10mm; text-align: center; line-height: 14mm; }
+/* 問 */
+.mon { margin: 0 0 3mm; }
+.mon .qh { font-weight: bold; font-size: 11.5pt; margin-right: 2mm; }
+.blk { margin: 2mm 0 3mm; page-break-inside: avoid; }
+.lbl { font-weight: bold; font-size: 10.3pt; margin-bottom: .5mm; }
+.box { border: 1.2px dashed #000; padding: 2mm 3.5mm; }
+.box.solid { border-style: solid; }
+.tk { display: grid; grid-template-columns: 18mm 1fr; }
+.who { font-size: 10pt; }
+.st { display: grid; grid-template-columns: 6mm 1fr; }
+.foot { font-size: 9pt; margin: -1mm 0 3mm 2mm; }
+.row { display: flex; gap: 4mm; align-items: flex-start; margin: 2mm 0 3mm; page-break-inside: avoid; }
+.row > div { min-width: 0; }
+.row .blk { margin: 0; }
+figure { margin: 0; page-break-inside: avoid; }
+.fbox { border: 1px solid #000; padding: 1.5mm; background: #fff; }
+.fbox img { display: block; width: 100%; max-height: 70mm; object-fit: contain; }
+.fbox svg { display: block; width: 100%; max-height: 74mm; }
+figcaption { font-size: 9pt; text-align: center; margin-top: .5mm; line-height: 1.4; }
+figcaption .src { display: block; font-size: 7pt; color: #333; text-align: right; }
+.tblk { margin: 2mm 0 3mm; page-break-inside: avoid; }
+table.dt { border-collapse: collapse; font-size: 9.6pt; margin: 0 auto; }
+table.dt th, table.dt td { border: 1px solid #000; padding: .6mm 3mm; line-height: 1.45; text-align: center; }
+table.dt.sm th, table.dt.sm td { font-size: 8.8pt; padding: .4mm 2mm; }
+table.dt th { background: #f2f2f2; font-family: sans-serif; }
+.tblk .src { font-size: 7pt; text-align: right; color: #333; }
+.sq { margin: 4mm 0 5mm; page-break-inside: avoid; }
+.sq .qt { display: grid; grid-template-columns: 9mm 1fr; }
+.ch { display: grid; gap: .3mm 8mm; margin: 1.5mm 0 0 11mm; font-size: 10pt; }
+.ch div { display: grid; grid-template-columns: 6mm 1fr; }
+.pt { font-size: 8.5pt; }
+.end { text-align: right; margin-top: 5mm; }
+/* 解答用紙・解説 */
 .sheet h1 { font-size: 15pt; margin: 0; }
-.sheet .top { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 3px solid var(--ink); padding-bottom: 1.5mm; margin-bottom: 3mm; }
-.mk { border-collapse: collapse; width: 100%; margin-bottom: 2.5mm; font-family: sans-serif; font-size: 9pt; }
-.mk th, .mk td { border: 1px solid var(--ink); padding: .8mm 2mm; line-height: 1.4; }
-.mk th { background: var(--pale); }
-.bub { display: inline-flex; width: 6.4mm; height: 4.6mm; border: 1px solid #c0392b; border-radius: 50%; align-items: center;
-       justify-content: center; font-size: 7pt; color: #c0392b; margin-right: 1.6mm; }
-.grid { display: grid; grid-template-columns: repeat(20, 6.5mm); }
-.grid span { height: 6.5mm; border: .6px solid #555; margin: 0 -.3px -.3px 0; }
-.score { width: 22mm; text-align: right; vertical-align: bottom; font-size: 9pt; }
-/* 解答と解説 */
-.key td, .key th { font-size: 9pt; }
-</style></head><body><div class="sheet"><div class="top"><div><div class="sans" style="font-size:9pt">神奈川県知識向上委員会</div><h1 class="sans">第1回 神奈川県検定　解答と解説</h1></div><div class="sans" style="font-size:9pt">採点者用</div></div><div style="page-break-inside:avoid"><div class="sec-head sans" style="margin-top:3mm"><div class="no">大問1</div><div class="ttl">神奈川の大地と自然</div><div class="pts">（配点 20点）</div></div><table class="mk key"><tr><th style="width:12mm">問</th><th style="width:11mm">配点</th><th style="width:34mm">正解</th><th>解説</th></tr><tr><td class="sans" style="text-align:center">1</td><td class="sans" style="text-align:center">3</td><td><b style="font-size:13pt">②</b></td><td>ウが誤り。座間市など相模川東側の台地は河岸段丘であり、三角州ではない。台地の上は水が得にくく、かつては畑や桑畑が多かった（問2・問6も参照）。</td></tr><tr><td class="sans" style="text-align:center">2</td><td class="sans" style="text-align:center">3</td><td><b style="font-size:13pt">③</b></td><td>川沿いの低地（④）は水を引きやすく水田に適する。段丘崖（がけ）のふもと（②）は、台地にしみこんだ地下水が湧き出しやすい。</td></tr><tr><td class="sans" style="text-align:center">3</td><td class="sans" style="text-align:center">3</td><td><b style="font-size:13pt">①</b></td><td>江の島は砂州（トンボロ）で陸とつながる陸繋島。江の島は火山島ではない。</td></tr><tr><td class="sans" style="text-align:center">4</td><td class="sans" style="text-align:center">3</td><td><b style="font-size:13pt">③</b></td><td>イが誤り。震源は相模湾北西部で、フィリピン海プレートが沈みこむ相模トラフ沿いの地震とされる。</td></tr><tr><td class="sans" style="text-align:center">5</td><td class="sans" style="text-align:center">3</td><td><b style="font-size:13pt">①</b></td><td>②箱根山は活火山（2015年に小規模な噴火）。③殻の鉄分と温泉の硫化水素が反応して黒くなる。④芦ノ湖から流れ出るのは早川（ほかに静岡県側への深良用水）。</td></tr><tr><td class="sans" style="text-align:center">6</td><td class="sans" style="text-align:center">5</td><td><b style="font-size:9pt">台地の上は川より高い位置にあり、水を引きにくかったから。（25字）</b></td><td>【採点基準】「川より高い（台地上）」という位置関係（2点）と「水が得にくい・引きにくい」（3点）の両方で5点。どちらか一方のみは2〜3点。</td></tr></table></div><div style="page-break-inside:avoid"><div class="sec-head sans" style="margin-top:3mm"><div class="no">大問2</div><div class="ttl">神奈川の歴史をたどる</div><div class="pts">（配点 18点）</div></div><table class="mk key"><tr><th style="width:12mm">問</th><th style="width:11mm">配点</th><th style="width:34mm">正解</th><th>解説</th></tr><tr><td class="sans" style="text-align:center">1</td><td class="sans" style="text-align:center">3</td><td><b style="font-size:13pt">①</b></td><td>鎌倉は北・東・西を山、南を海に囲まれた要害の地。名越・朝比奈・巨福呂坂・亀ヶ谷坂・化粧坂・大仏・極楽寺の「鎌倉七口」と呼ばれる切通しが出入り口となった。</td></tr><tr><td class="sans" style="text-align:center">2</td><td class="sans" style="text-align:center">3</td><td><b style="font-size:13pt">③</b></td><td>ア：15世紀末（B）。イ：元寇は1274年・1281年（A）。ウ：箱根関所は1619年（C）。</td></tr><tr><td class="sans" style="text-align:center">3</td><td class="sans" style="text-align:center">3</td><td><b style="font-size:13pt">④</b></td><td>X：1219年 → Z：承久の乱（1221年）→ Y：御成敗式目（1232年）。</td></tr><tr><td class="sans" style="text-align:center">4</td><td class="sans" style="text-align:center">3</td><td><b style="font-size:13pt">②</b></td><td>保土ヶ谷と藤沢の間は戸塚宿。県内の東海道の宿場は川崎〜箱根の9宿。参勤交代で江戸に置かれた大名の妻子は人質の意味があったため、「入鉄砲に出女」として取り締まられた。</td></tr><tr><td class="sans" style="text-align:center">5</td><td class="sans" style="text-align:center">3</td><td><b style="font-size:13pt">③</b></td><td>横浜村は小さな村だった。外国側は東海道沿いの神奈川を主張したが、幕府は「横浜も神奈川の一部」として横浜に港を開いた。1862年には東海道の生麦村で生麦事件が起きている。</td></tr><tr><td class="sans" style="text-align:center">6</td><td class="sans" style="text-align:center">3</td><td><b style="font-size:13pt">②</b></td><td>ウが誤り。赤レンガ倉庫1号館は関東大震災で約半分が崩れた。</td></tr></table></div><div style="page-break-inside:avoid"><div class="sec-head sans" style="margin-top:3mm"><div class="no">大問3</div><div class="ttl">データで読む産業とくらし</div><div class="pts">（配点 15点）</div></div><table class="mk key"><tr><th style="width:12mm">問</th><th style="width:11mm">配点</th><th style="width:34mm">正解</th><th>解説</th></tr><tr><td class="sans" style="text-align:center">1</td><td class="sans" style="text-align:center">3</td><td><b style="font-size:13pt">③</b></td><td>（15,626＋3,966）÷85,403＝0.229… → 約23％。自動車だけなら約18％。</td></tr><tr><td class="sans" style="text-align:center">2</td><td class="sans" style="text-align:center">3</td><td><b style="font-size:13pt">⑤</b></td><td>アが誤り。昼間人口が夜間人口の2倍以上ある（横浜駅やみなとみらいにオフィスや商業施設が集まる）。川崎市の83.6は政令指定都市で最も低い。</td></tr><tr><td class="sans" style="text-align:center">3</td><td class="sans" style="text-align:center">3</td><td><b style="font-size:13pt">④</b></td><td>臨海部の埋め立て地には、石油・鉄鉱石などを船で受け入れる石油化学コンビナートや製鉄所が立地している。</td></tr><tr><td class="sans" style="text-align:center">4</td><td class="sans" style="text-align:center">3</td><td><b style="font-size:13pt">②</b></td><td>P：鎌倉彫、Q：箱根寄木細工、R：小田原漆器。ウが誤り。小田原漆器は、箱根の山などから得られるケヤキなどの木材に漆を塗った木工品。</td></tr><tr><td class="sans" style="text-align:center">5</td><td class="sans" style="text-align:center">3</td><td><b style="font-size:13pt">③</b></td><td>S三浦市：三崎のマグロ（a）、T横浜市：崎陽軒のシウマイ（d）、U南足柄市：足柄茶（b）、V小田原市：かまぼこ（c）。</td></tr></table></div><div style="page-break-inside:avoid"><div class="sec-head sans" style="margin-top:3mm"><div class="no">大問4</div><div class="ttl">鎌倉・江の島・箱根を歩く</div><div class="pts">（配点 18点）</div></div><table class="mk key"><tr><th style="width:12mm">問</th><th style="width:11mm">配点</th><th style="width:34mm">正解</th><th>解説</th></tr><tr><td class="sans" style="text-align:center">1</td><td class="sans" style="text-align:center">3</td><td><b style="font-size:13pt">②</b></td><td>江ノ島〜腰越間は、車と同じ道路上を走る路面電車のような区間として知られる。江ノ電は全15駅、全線約10km。</td></tr><tr><td class="sans" style="text-align:center">2</td><td class="sans" style="text-align:center">3</td><td><b style="font-size:13pt">①</b></td><td>鎌倉高校前駅は海に面した無人駅で、ホームからは西に江の島が見える。極楽寺駅は海から離れた谷あいの駅。</td></tr><tr><td class="sans" style="text-align:center">3</td><td class="sans" style="text-align:center">3</td><td><b style="font-size:13pt">③</b></td><td>イが誤り。像の高さは奈良の大仏（約15m）の方が高く、鎌倉大仏は約11m。大仏殿は地震や津波などで失われたとされる。</td></tr><tr><td class="sans" style="text-align:center">4</td><td class="sans" style="text-align:center">3</td><td><b style="font-size:13pt">④</b></td><td>江の島は火山島ではなく、大問1問3のとおり砂州で陸とつながる陸繋島。</td></tr><tr><td class="sans" style="text-align:center">5</td><td class="sans" style="text-align:center">3</td><td><b style="font-size:13pt">⑤</b></td><td>アが誤り。ランドマークタワー（296m）は2014年にあべのハルカスに抜かれ、現在は麻布台ヒルズ森JPタワーが最も高い。かつてここには三菱重工業の横浜造船所や国鉄の貨物駅があった。</td></tr><tr><td class="sans" style="text-align:center">6</td><td class="sans" style="text-align:center">3</td><td><b style="font-size:13pt">②</b></td><td>箱根湯本→強羅（箱根登山電車）→早雲山（ケーブルカー）→大涌谷→桃源台（ロープウェイ）→元箱根港（海賊船）。</td></tr></table></div><div style="page-break-inside:avoid"><div class="sec-head sans" style="margin-top:3mm"><div class="no">大問5</div><div class="ttl">鉄道がつくる神奈川</div><div class="pts">（配点 15点）</div></div><table class="mk key"><tr><th style="width:12mm">問</th><th style="width:11mm">配点</th><th style="width:34mm">正解</th><th>解説</th></tr><tr><td class="sans" style="text-align:center">1</td><td class="sans" style="text-align:center">3</td><td><b style="font-size:13pt">③</b></td><td>標高差 541−96＝445m、距離 8.9km＝8,900m。445÷8,900×1000＝50‰。なお最も急な区間は80‰。</td></tr><tr><td class="sans" style="text-align:center">2</td><td class="sans" style="text-align:center">3</td><td><b style="font-size:13pt">④</b></td><td>出山信号場・大平台駅・上大平台信号場の3か所で進行方向を変える。</td></tr><tr><td class="sans" style="text-align:center">3</td><td class="sans" style="text-align:center">3</td><td><b style="font-size:13pt">②</b></td><td>東海道線が西へ延びると、行き止まり式の初代駅では列車が向きを変えなければならなかった。1915年に2代目、関東大震災後の1928年に現在の3代目の駅ができた。</td></tr><tr><td class="sans" style="text-align:center">4</td><td class="sans" style="text-align:center">3</td><td><b style="font-size:13pt">⑤</b></td><td>アが誤り。羽沢横浜国大駅はJR線との直通運転開始に合わせて2019年に開業した。新横浜線の開業は2023年3月。</td></tr><tr><td class="sans" style="text-align:center">5</td><td class="sans" style="text-align:center">3</td><td><b style="font-size:13pt">③</b></td><td>横浜駅にはJR東日本・東急・京急・相鉄・横浜市営地下鉄・横浜高速鉄道（みなとみらい線）が乗り入れる。</td></tr></table></div><div style="page-break-inside:avoid"><div class="sec-head sans" style="margin-top:3mm"><div class="no">大問6</div><div class="ttl">いまの神奈川を考える</div><div class="pts">（配点 14点）</div></div><table class="mk key"><tr><th style="width:12mm">問</th><th style="width:11mm">配点</th><th style="width:34mm">正解</th><th>解説</th></tr><tr><td class="sans" style="text-align:center">1</td><td class="sans" style="text-align:center">3</td><td><b style="font-size:13pt">②</b></td><td>ウが誤り。会場の旧上瀬谷通信施設は横浜市の内陸部（旭区・瀬谷区）にある。</td></tr><tr><td class="sans" style="text-align:center">2</td><td class="sans" style="text-align:center">3</td><td><b style="font-size:13pt">④</b></td><td>BASEGATE横浜関内は2026年3月19日に開業。①は新港ふ頭、②③はみなとみらい地区の施設。</td></tr><tr><td class="sans" style="text-align:center">3</td><td class="sans" style="text-align:center">3</td><td><b style="font-size:13pt">③</b></td><td>イが誤り。箱根町は海に面していない。海老名駅には小田急・相鉄・JR相模線が乗り入れる。</td></tr><tr><td class="sans" style="text-align:center">4</td><td class="sans" style="text-align:center">5</td><td><b style="font-size:9pt">世帯数が人口よりも大きく増えたので、1世帯あたりの人数が減り、少人数の世帯が増えている。（40字以内）</b></td><td>【採点基準】「1世帯あたりの人数が減った（減少）」（3点）＋「一人暮らしや夫婦のみなど少人数の世帯が増えた」（2点）。語句「1世帯あたり」がない場合は2点減点。</td></tr></table></div>
+.sheet .top { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 2px solid #000;
+              padding-bottom: 1.5mm; margin-bottom: 3mm; }
+.mk { border-collapse: collapse; width: 100%; margin-bottom: 3mm; font-family: sans-serif; font-size: 9pt; }
+.mk th, .mk td { border: 1px solid #000; padding: 1mm 2mm; line-height: 1.45; vertical-align: middle; }
+.mk th { background: #f2f2f2; }
+.bub { display: inline-flex; width: 6.6mm; height: 4.8mm; border: 1px solid #000; border-radius: 50%; align-items: center;
+       justify-content: center; font-size: 7.5pt; margin-right: 1.8mm; }
+.grid { display: grid; grid-template-columns: repeat(15, 7.2mm); margin: 1mm 0 3mm; }
+.grid span { height: 7.2mm; border: .6px solid #555; margin: 0 -.3px -.3px 0; position: relative; }
+.grid span.m::after { content: attr(data-n); position: absolute; right: -.5mm; bottom: -3.4mm; font-size: 6pt; }
+.score { width: 20mm; text-align: right; vertical-align: bottom !important; }
+.key td { font-size: 8.8pt; }
+</style></head><body><div class="sheet"><div class="top"><div><div style="font-size:9pt">神奈川県知識向上委員会</div><h1>第1回 神奈川県検定　正答・解説・出題のねらい</h1></div><div style="font-size:9pt">採点者用</div></div><div style="page-break-inside:avoid"><p style="margin:3mm 0 1mm"><b>問1　台地と水 ― 相模原台地のくらし（配点 21点）</b></p><table class="mk key"><tr><th style="width:10mm">小問</th><th style="width:9mm">配点</th><th style="width:30mm">正答</th><th>解説</th><th style="width:42mm">出題のねらい</th></tr><tr><td style="text-align:center">(ア)</td><td style="text-align:center">4</td><td><b style="font-size:13pt">2</b></td><td>地表から地下水面までの深さは P＝37m、Q＝12m、R＝1m、S＝2m。最も深いのはP（上段の段丘面）。文章より台地上では畑作が中心で、明治に桑畑・養蚕が広がった。</td><td>断面図・数表の計算と文章の記述を組み合わせて判断させる。</td></tr><tr><td style="text-align:center">(イ)</td><td style="text-align:center">4</td><td><b style="font-size:13pt">3</b></td><td>井戸：P37m×、Q12m×、R1m○、S2m○。洪水：R70−35＝35m○、S39−35＝4m×。Rは下段の段丘面（平らな土地）に接する。よってRのみ。文章の「段丘崖のふもとに集落」とも一致する。</td><td>複数の条件を同時に満たすかを、表の数値から順に検証させる。</td></tr><tr><td style="text-align:center">(ウ)</td><td style="text-align:center">4</td><td><b style="font-size:13pt">4</b></td><td>A：文章に明記（Ⅰ）。B：文章は「水がわき出す」ことを述べており、洪水との関係は書かれていない（Ⅱ）。C：文章は「八王子などを経て横浜へ運ばれ」とだけあり、運び方は書かれていない（Ⅱ）。</td><td>本文に書かれていることと、もっともらしい推測とを区別させる。</td></tr><tr><td style="text-align:center">(エ)</td><td style="text-align:center">9</td><td><b style="font-size:8.5pt">台地は水を通しやすい地層でできていて地下水が深く、水田に必要な水を得にくかったから。</b></td><td>【採点基準】①地層が水を通しやすい（3点）②地下水（面）が深い（3点）③水田に必要な水が得られない（3点）。指定語句の欠落は1語につき2点減点、字数・文末の条件違反は2点減点。</td><td>地形・地層・水の関係を因果的に説明させる。</td></tr></table></div><div style="page-break-inside:avoid"><p style="margin:3mm 0 1mm"><b>問2　生糸が開いた港 ― 横浜開港と日本の近代（配点 25点）</b></p><table class="mk key"><tr><th style="width:10mm">小問</th><th style="width:9mm">配点</th><th style="width:30mm">正答</th><th>解説</th><th style="width:42mm">出題のねらい</th></tr><tr><td style="text-align:center">(ア)</td><td style="text-align:center">4</td><td><b style="font-size:13pt">2</b></td><td>あ：1849＞1514で正。い：生糸1849×0.794≒1468、毛＋綿1514×0.738≒1117で正。う：武器＋艦船1514×0.133≒201、茶1849×0.105≒194で、武器・艦船の方が大きいので誤。</td><td>割合と総額から実額を計算して比べる力を問う。</td></tr><tr><td style="text-align:center">(イ)</td><td style="text-align:center">4</td><td><b style="font-size:13pt">3</b></td><td>フランス・イタリアで蚕の病気（微粒子病）が広がり、日本の生糸や蚕卵紙の需要が高まった。輸出の急増で国内の生糸が不足し、物価上昇を招いた（攘夷運動の背景にもなった）。</td><td>貿易統計（表1の蚕卵紙）と国内外の情勢を結びつけて因果を考えさせる。</td></tr><tr><td style="text-align:center">(ウ)</td><td style="text-align:center">4</td><td><b style="font-size:13pt">4</b></td><td>c 1858年 → d 1859年 → a 1862年（生麦事件）→ b 1863年（薩英戦争）→ e 1872年。</td><td>開港から近代化までの流れを年代で整理させる。</td></tr><tr><td style="text-align:center">(エ)</td><td style="text-align:center">4</td><td><b style="font-size:13pt">2</b></td><td>「絹の道」と並行する路線で、生糸輸送を担った。軍施設の設置は昭和期、住宅地化は戦後のこと。</td><td>資料の年代と目的を照らし合わせ、時代の異なる選択肢を排除させる。</td></tr><tr><td style="text-align:center">(オ)</td><td style="text-align:center">9</td><td><b style="font-size:8.5pt">人や大名行列の往来が多い東海道から離れた場所に港を置き、外国人と日本人の接触を減らすため。</b></td><td>【採点基準】①東海道（人の往来の多い道）から離す（4点）②外国人と日本人の接触・争いを避ける（5点）。語句・字数・文末の条件違反は各2点減点。生麦事件（東海道で発生）は、この判断の妥当性を示す例として解説で扱う。</td><td>地図上の位置関係から、政策の意図を説明させる。</td></tr></table></div><div style="page-break-inside:avoid"><p style="margin:3mm 0 1mm"><b>問3　鎌倉・江の島・箱根を歩く ― 地形と観光（配点 29点）</b></p><table class="mk key"><tr><th style="width:10mm">小問</th><th style="width:9mm">配点</th><th style="width:30mm">正答</th><th>解説</th><th style="width:42mm">出題のねらい</th></tr><tr><td style="text-align:center">(ア)</td><td style="text-align:center">4</td><td><b style="font-size:13pt">2</b></td><td>鎌倉は三方を丘陵、南を相模湾に囲まれた要害の地。丘陵を切り開いた切通し（鎌倉七口）は、守りを固めつつ交通・物流を支えた。</td><td>地形図と写真から、立地の利点と交通の工夫を同時に読み取らせる。</td></tr><tr><td style="text-align:center">(イ)</td><td style="text-align:center">4</td><td><b style="font-size:13pt">5</b></td><td>各駅の発車時刻は、江ノ島9:10＋12分ごと、鎌倉高校前9:14＋12分ごと、長谷9:24＋12分ごと。江ノ島9:10着→10:10発（60分）→鎌倉高校前10:14着→10:38発（24分）→長谷10:48着→11:36発（48分）→鎌倉11:41着。1は12分、2は36分、3は48分で不足。4は11:41着があるので誤り。6は藤沢10:00発だと最短でも鎌倉12:41着となり不可。</td><td>設定と条件を正確に読み、時刻を計算して計画の可否を判断させる。</td></tr><tr><td style="text-align:center">(ウ)</td><td style="text-align:center">4</td><td><b style="font-size:13pt">4</b></td><td>A：11÷15≒0.73で7割以上（Ⅰ）。B：文章は時代を述べていない（Ⅱ）。C：もっともらしいが文章には書かれていない（Ⅱ）。</td><td>数値の計算による判断と、文章に根拠のない推測の見きわめを同時に求める。</td></tr><tr><td style="text-align:center">(エ)</td><td style="text-align:center">4</td><td><b style="font-size:13pt">3</b></td><td>X：（541−96）÷8900×1000＝50‰。Y：80×600÷1000＝48m。</td><td>グラフから値を読み取り、単位の意味を理解して計算させる。</td></tr><tr><td style="text-align:center">(オ)</td><td style="text-align:center">4</td><td><b style="font-size:13pt">2</b></td><td>図4で外輪山の内側に芦ノ湖がある。殻の鉄分と硫化水素が反応して硫化鉄ができ、黒くなる。</td><td>地形図の読図と、火山の恵み（温泉）のしくみを結びつける。</td></tr><tr><td style="text-align:center">(カ)</td><td style="text-align:center">9</td><td><b style="font-size:8.5pt">波や沿岸流によって運ばれた砂が、島のかげで波の弱くなる陸地との間に堆積してたまったから。</b></td><td>【採点基準】①波（沿岸流）が砂を運ぶ（3点）②島と陸地の間（波が弱まる所）に（3点）③堆積してたまる（3点）。江の島のように砂州で陸とつながった島を陸繋島という。</td><td>空中写真から地形の特徴を見いだし、形成のしくみを説明させる。</td></tr></table></div><div style="page-break-inside:avoid"><p style="margin:3mm 0 1mm"><b>問4　これからの神奈川 ― 人の動きとまちの変化（配点 25点）</b></p><table class="mk key"><tr><th style="width:10mm">小問</th><th style="width:9mm">配点</th><th style="width:30mm">正答</th><th>解説</th><th style="width:42mm">出題のねらい</th></tr><tr><td style="text-align:center">(ア)</td><td style="text-align:center">4</td><td><b style="font-size:13pt">2</b></td><td>あ：100−83.6＝16.4で正。い：115800÷1.158＝100000で正。う：昼間人口が夜間人口の約2倍なので誤。</td><td>指標の定義を理解し、逆算を含めて数値を解釈させる。</td></tr><tr><td style="text-align:center">(イ)</td><td style="text-align:center">4</td><td><b style="font-size:13pt">2</b></td><td>1.015÷1.077≒0.942 → 約6％減。人口より世帯数の伸びが大きく、少人数の世帯が増えたことを示す。</td><td>二つの増減率から、直接示されていない指標の変化を導かせる。</td></tr><tr><td style="text-align:center">(ウ)</td><td style="text-align:center">4</td><td><b style="font-size:13pt">5</b></td><td>あ：図1で箱根町は海に面していないので誤。い：海老名駅に3路線で正。う：7.7÷1.5≒5.1倍で正。</td><td>地図と表を突き合わせ、計算もふくめて判断させる。</td></tr><tr><td style="text-align:center">(エ)</td><td style="text-align:center">4</td><td><b style="font-size:13pt">3</b></td><td>相鉄線と東急線が新横浜駅を経由して直通運転を始め、横浜駅を通らずに東京方面へ向かう経路ができた。</td><td>交通網の変化を、住民の行動の変化として捉えさせる。</td></tr><tr><td style="text-align:center">(オ)</td><td style="text-align:center">9</td><td><b style="font-size:8.5pt">複数の路線が乗り入れる駅があり、東京や横浜へ通勤しやすく、住む人が増えたと考えられる。</b></td><td>【採点基準】①複数路線の乗り入れ（交通の便）（4点）②東京・横浜方面への通勤のしやすさ（3点）③住む人（住宅）が増えた（2点）。語句・字数・文末の条件違反は各2点減点。</td><td>人口・交通・通勤の資料を統合し、地域の変化の要因を説明させる。</td></tr></table></div>
 <div style="page-break-before:always"></div>
-<div class="sec-head sans"><div class="no">認定</div><div class="ttl">認定基準</div></div>
+<p><b>認定基準</b></p>
 <table class="mk"><tr><th style="width:42mm">認定</th><th>条件</th></tr>
-<tr><td>神奈川知識ゴールド</td><td>85点以上、かつ、すべての大問で得点率60％以上（下表）</td></tr>
+<tr><td>神奈川知識ゴールド</td><td>85点以上、かつ、すべての問で得点率60％以上（下表）</td></tr>
 <tr><td>神奈川知識シルバー</td><td>70点以上（ゴールドの条件を満たさない場合を含む）</td></tr>
 <tr><td>神奈川知識ブロンズ</td><td>50点以上</td></tr>
 <tr><td>参加賞</td><td>50点未満</td></tr></table>
-<table class="mk"><tr><th>大問</th><th style="width:20mm">配点</th><th style="width:40mm">ゴールドに必要な得点</th></tr><tr><td>大問1　神奈川の大地と自然</td><td style="text-align:center">20</td><td style="text-align:center">12点以上</td></tr><tr><td>大問2　神奈川の歴史をたどる</td><td style="text-align:center">18</td><td style="text-align:center">11点以上</td></tr><tr><td>大問3　データで読む産業とくらし</td><td style="text-align:center">15</td><td style="text-align:center">9点以上</td></tr><tr><td>大問4　鎌倉・江の島・箱根を歩く</td><td style="text-align:center">18</td><td style="text-align:center">11点以上</td></tr><tr><td>大問5　鉄道がつくる神奈川</td><td style="text-align:center">15</td><td style="text-align:center">9点以上</td></tr><tr><td>大問6　いまの神奈川を考える</td><td style="text-align:center">14</td><td style="text-align:center">9点以上</td></tr></table>
-<div class="sec-head sans" style="margin-top:4mm"><div class="no">採点</div><div class="ttl">採点上の注意</div></div>
-<ul style="margin-top:0">
-<li>マーク式は各3点。正解の番号のみ得点とする。</li>
-<li>記述式は各5点。解説欄の採点基準にしたがって部分点を与える。字数を超えたものは0点とする。</li>
+<table class="mk"><tr><th>問</th><th style="width:20mm">配点</th><th style="width:40mm">ゴールドに必要な得点</th></tr><tr><td>問1　台地と水 ― 相模原台地のくらし</td><td style="text-align:center">21</td><td style="text-align:center">13点以上</td></tr><tr><td>問2　生糸が開いた港 ― 横浜開港と日本の近代</td><td style="text-align:center">25</td><td style="text-align:center">15点以上</td></tr><tr><td>問3　鎌倉・江の島・箱根を歩く ― 地形と観光</td><td style="text-align:center">29</td><td style="text-align:center">18点以上</td></tr><tr><td>問4　これからの神奈川 ― 人の動きとまちの変化</td><td style="text-align:center">25</td><td style="text-align:center">15点以上</td></tr></table>
+<p><b>採点上の注意</b></p>
+<ul style="margin-top:0;font-size:9.5pt">
+<li>マーク式は各4点。正答の番号のみ得点とする。</li>
+<li>記述式は各9点。解説欄の採点基準にしたがって部分点を与える。35字未満・45字超は2点減点、指定語句の欠落は1語につき2点減点、文末の指定違反は2点減点（0点未満にはしない）。</li>
 </ul>
-<div class="sec-head sans" style="margin-top:4mm"><div class="no">写真</div><div class="ttl">写真の出典（Wikimedia Commons）</div></div>
-<p style="font-size:9pt;margin:0 0 2mm">いずれもパブリックドメイン、CC0、またはクリエイティブ・コモンズ（CC BY／CC BY-SA）のもとで公開されている写真・作品。
-CC BY／CC BY-SA の写真は、作者名とライセンスを表示して利用する（問題冊子の各写真の下にも表示している）。</p>
-<table class="mk"><tr><th style="width:20mm">使う問題</th><th style="width:48mm">写真</th><th style="width:34mm">作者</th><th style="width:20mm">ライセンス</th><th>ファイルページ</th></tr><tr><td>大問1 問3</td><td>写真1　上空から見た江の島</td><td>Manuel Zamora</td><td>Public domain</td><td style="word-break:break-all;font-size:7.5pt">https://commons.wikimedia.org/wiki/File:Aerial_view_of_Enoshima_from_USAF_UH-1N_Huey.jpg</td></tr><tr><td>大問1 問4</td><td>写真2　関東大震災直後の横浜（元町・山下町付近）</td><td>作者不詳</td><td>Public domain</td><td style="word-break:break-all;font-size:7.5pt">https://commons.wikimedia.org/wiki/File:Motomachi_and_Yamashitacho_after_Great_Kanto_earthquake.JPG</td></tr><tr><td>大問1 問5</td><td>写真3　大涌谷</td><td>そらみみ</td><td>CC BY-SA 3.0</td><td style="word-break:break-all;font-size:7.5pt">https://commons.wikimedia.org/wiki/File:Owakudani_Valley_near_Owakudani_Station.JPG</td></tr><tr><td>大問2 問1</td><td>写真1　朝比奈切通</td><td>Tarourashima</td><td>Public domain</td><td style="word-break:break-all;font-size:7.5pt">https://commons.wikimedia.org/wiki/File:Asahina-Pass.jpg</td></tr><tr><td>大問2 問2</td><td>写真2　小田原城天守閣（復興）</td><td>Suicasmo</td><td>CC BY-SA 4.0</td><td style="word-break:break-all;font-size:7.5pt">https://commons.wikimedia.org/wiki/File:Odawara_Castle_Keep_Tower_20211201-1.jpg</td></tr><tr><td>大問2 問3</td><td>写真3　鶴岡八幡宮</td><td>Ocdp</td><td>CC0</td><td style="word-break:break-all;font-size:7.5pt">https://commons.wikimedia.org/wiki/File:Tsurugaoka_Hachimangu_001.jpg</td></tr><tr><td>大問2 問4</td><td>写真4　復元された箱根関所</td><td>Guilhem Vellut</td><td>CC BY 2.0</td><td style="word-break:break-all;font-size:7.5pt">https://commons.wikimedia.org/wiki/File:Checkpoint_%40_Hakone_Sekisho_%40_Hakone_%2810621234575%29.jpg</td></tr><tr><td>大問2 問5</td><td>資料2　歌川貞秀「神名川横浜新開港図」（1860年）</td><td>歌川貞秀（メトロポリタン美術館所蔵）</td><td>CC0</td><td style="word-break:break-all;font-size:7.5pt">https://commons.wikimedia.org/wiki/File:%E3%80%8C%E7%A5%9E%E5%90%8D%E5%B7%9D%E6%A8%AA%E6%B5%9C%E6%96%B0%E9%96%8B%E6%B8%AF%E5%9C%96%E3%80%8D-%E2%80%9CThe_Newly_Opened_Port_of_Yokohama_in_Kanagawa_Prefecture%E2%80%9D_MET_DP147960.jpg</td></tr><tr><td>大問2 問6</td><td>写真5　山下公園と横浜マリンタワー</td><td>Tokyo538</td><td>CC0</td><td style="word-break:break-all;font-size:7.5pt">https://commons.wikimedia.org/wiki/File:Yokohama_Yamashita_Park_and_Marine_Tower.jpg</td></tr><tr><td>大問2 問6</td><td>写真6　氷川丸</td><td>Matthide127</td><td>CC0</td><td style="word-break:break-all;font-size:7.5pt">https://commons.wikimedia.org/wiki/File:20250103_Hikawa_Maru_113538.jpg</td></tr><tr><td>大問3 問3</td><td>写真1　川崎市の臨海部の夜景</td><td>Yudai_photography</td><td>CC BY 4.0</td><td style="word-break:break-all;font-size:7.5pt">https://commons.wikimedia.org/wiki/File:Kanagawa_Kawasaki_night_view_xl.jpg</td></tr><tr><td>大問3 問4</td><td>写真2　Pの工芸品</td><td>Pqks758</td><td>CC BY-SA 3.0</td><td style="word-break:break-all;font-size:7.5pt">https://commons.wikimedia.org/wiki/File:KamakuraBori.jpg</td></tr><tr><td>大問3 問4</td><td>写真3　Qの工芸品</td><td>Daderot</td><td>CC0</td><td style="word-break:break-all;font-size:7.5pt">https://commons.wikimedia.org/wiki/File:Hakone_Yosegi_Zaiku_display_-_Hakone_Checkpoint_Exhibition_Hall_-_Hakone_no_Seki_%28barrier_station%29_-_Hakone%2C_Japan_-_DSC06051.jpg</td></tr><tr><td>大問4 問1</td><td>写真1　道路の上を走る江ノ電</td><td>kitmasterbloke</td><td>CC BY 2.0</td><td style="word-break:break-all;font-size:7.5pt">https://commons.wikimedia.org/wiki/File:Enoshima_Line_street_running_near_Koshigoe_station.jpg</td></tr><tr><td>大問4 問2</td><td>写真2　江ノ電の踏切と海</td><td>Dick Thomas Johnson</td><td>CC BY 2.0</td><td style="word-break:break-all;font-size:7.5pt">https://commons.wikimedia.org/wiki/File:Level_crossing_near_the_Kamakura-K%C5%8Dk%C5%8D-Mae_Station_02.jpg</td></tr><tr><td>大問4 問3</td><td>写真3　鎌倉大仏</td><td>Suicasmo</td><td>CC BY-SA 4.0</td><td style="word-break:break-all;font-size:7.5pt">https://commons.wikimedia.org/wiki/File:Kamakura_Daibutsu_20170210.jpg</td></tr><tr><td>大問4 問4</td><td>写真4　江の島の参道</td><td>Nandaro</td><td>CC BY-SA 3.0</td><td style="word-break:break-all;font-size:7.5pt">https://commons.wikimedia.org/wiki/File:Benzaiten_Nakamise_Street.jpg</td></tr><tr><td>大問4 問5</td><td>写真5　みなとみらいの大観覧車</td><td>Suicasmo</td><td>CC BY-SA 4.0</td><td style="word-break:break-all;font-size:7.5pt">https://commons.wikimedia.org/wiki/File:Cosmo_Clock_21_at_night_20211225.jpg</td></tr><tr><td>大問4 問6</td><td>写真6　芦ノ湖に立つ箱根神社の鳥居</td><td>Guilhem Vellut</td><td>CC BY 2.0</td><td style="word-break:break-all;font-size:7.5pt">https://commons.wikimedia.org/wiki/File:Torii_on_Lake_Ashi_%40_Hakone_Shrine_%2813776878594%29.jpg</td></tr><tr><td>大問5 問2</td><td>写真1　大平台駅付近を走る箱根登山電車</td><td>Kuroc622</td><td>CC0</td><td style="word-break:break-all;font-size:7.5pt">https://commons.wikimedia.org/wiki/File:Hakone_tozan_railway_103_in_Ohiradai.jpg</td></tr><tr><td>大問5 問3</td><td>写真2　明治時代の初代横浜駅</td><td>作者不詳</td><td>Public domain</td><td style="word-break:break-all;font-size:7.5pt">https://commons.wikimedia.org/wiki/File:Yokohama_Station_1800s.jpg</td></tr><tr><td>大問5 問4</td><td>写真3　新綱島駅のホーム</td><td>Suikotei</td><td>CC BY 4.0</td><td style="word-break:break-all;font-size:7.5pt">https://commons.wikimedia.org/wiki/File:Shin-tsunashima_Station_Platform_20240406_01.jpg</td></tr><tr><td>大問5 問5</td><td>写真4　横浜駅東口</td><td>Yoh-Plus</td><td>CC BY 4.0</td><td style="word-break:break-all;font-size:7.5pt">https://commons.wikimedia.org/wiki/File:Yokohama_Station_East_exit_Taxi_plaza.jpg</td></tr><tr><td>大問6 問1</td><td>写真1　返還前の上瀬谷通信施設（2011年）</td><td>U.S. Navy</td><td>Public domain</td><td style="word-break:break-all;font-size:7.5pt">https://commons.wikimedia.org/wiki/File:US_Navy_110828-N-VE260-735_An_SH-60B_Sea_Hawk_helicopter_lands_at_Naval_Support_Facility_Kamiseya_during_the_Yokohama_Comprehensive_Disaster_Drill.jpg</td></tr></table>
-<div class="sec-head sans" style="margin-top:4mm"><div class="no">出典</div><div class="ttl">地図・統計の出典</div></div>
+<p><b>写真・図版の出典（Wikimedia Commons）</b></p>
+<p style="font-size:8.5pt;margin:0 0 1mm">いずれもパブリックドメイン、CC0、またはCC BY／CC BY-SAで公開されているもの。CC BY／CC BY-SAの写真は、作者名とライセンスを表示して利用する（問題冊子の各写真の下にも表示）。</p>
+<table class="mk"><tr><th style="width:10mm">問</th><th>ファイル名</th><th style="width:30mm">作者</th><th style="width:20mm">ライセンス</th><th style="width:55mm">ファイルページ</th></tr><tr><td>問2</td><td>「神名川横浜新開港圖」-“The Newly Opened Port of Yokohama in Kanagawa Prefecture” MET DP147960.jpg</td><td>歌川貞秀（メトロポリタン美術館所蔵）</td><td>CC0</td><td style="word-break:break-all;font-size:7pt">https://commons.wikimedia.org/wiki/File:%E3%80%8C%E7%A5%9E%E5%90%8D%E5%B7%9D%E6%A8%AA%E6%B5%9C%E6%96%B0%E9%96%8B%E6%B8%AF%E5%9C%96%E3%80%8D-%E2%80%9CThe_Newly_Opened_Port_of_Yokohama_in_Kanagawa_Prefecture%E2%80%9D_MET_DP147960.jpg</td></tr><tr><td>問3</td><td>Aerial view of Enoshima from USAF UH-1N Huey.jpg</td><td>Manuel Zamora</td><td>Public domain</td><td style="word-break:break-all;font-size:7pt">https://commons.wikimedia.org/wiki/File:Aerial_view_of_Enoshima_from_USAF_UH-1N_Huey.jpg</td></tr><tr><td>問3</td><td>Owakudani Valley near Owakudani Station.JPG</td><td>そらみみ</td><td>CC BY-SA 3.0</td><td style="word-break:break-all;font-size:7pt">https://commons.wikimedia.org/wiki/File:Owakudani_Valley_near_Owakudani_Station.JPG</td></tr><tr><td>問3</td><td>Kamakura Daibutsu 20170210.jpg</td><td>Suicasmo</td><td>CC BY-SA 4.0</td><td style="word-break:break-all;font-size:7pt">https://commons.wikimedia.org/wiki/File:Kamakura_Daibutsu_20170210.jpg</td></tr><tr><td>問3</td><td>Hakone tozan railway 103 in Ohiradai.jpg</td><td>Kuroc622</td><td>CC0</td><td style="word-break:break-all;font-size:7pt">https://commons.wikimedia.org/wiki/File:Hakone_tozan_railway_103_in_Ohiradai.jpg</td></tr><tr><td>問3</td><td>Asahina-Pass.jpg</td><td>Tarourashima</td><td>Public domain</td><td style="word-break:break-all;font-size:7pt">https://commons.wikimedia.org/wiki/File:Asahina-Pass.jpg</td></tr><tr><td>問4</td><td>Shin-tsunashima Station Platform 20240406 01.jpg</td><td>Suikotei</td><td>CC BY 4.0</td><td style="word-break:break-all;font-size:7pt">https://commons.wikimedia.org/wiki/File:Shin-tsunashima_Station_Platform_20240406_01.jpg</td></tr></table>
+<p><b>地図・統計の出典</b></p>
 <ul style="margin-top:0;font-size:9pt">
-<li>地図・空中写真：国土地理院「地理院タイル」（色別標高図・陰影起伏図・淡色地図・標準地図・全国最新写真）を加工して作成</li>
+<li>地図・空中写真：国土地理院「地理院タイル」（色別標高図・陰影起伏図・淡色地図・全国最新写真）を加工して作成</li>
 <li>市町村界：国土地理院「地球地図日本」（jpn-atlas による TopoJSON 版）をもとに作成</li>
-<li>横浜港の輸出額：横浜税関「横浜港 貿易概況（2024年分 速報）」</li>
+<li>1865年の輸出入品：石井孝『幕末貿易史の研究』（中学・高校教科書に掲載の数値）</li>
 <li>昼夜間人口比率：総務省「令和2年国勢調査」、横浜市・神奈川県の公表資料</li>
 <li>人口・世帯の増減率：神奈川県「令和7年国勢調査結果速報」、開成町の公表資料</li>
 <li>箱根登山電車の標高・距離：箱根登山鉄道の公表資料ほか</li>
-</ul></div>
-<script>
-document.querySelectorAll('img[data-ph]').forEach(function (img) {
-  function ph() { var d = document.createElement('div'); d.className = 'ph'; d.innerHTML = img.getAttribute('data-ph'); img.replaceWith(d); }
-  if (img.complete && img.naturalWidth === 0) ph(); else img.onerror = ph;
-});
-</script>
-</body></html>
+<li>問1の表1、問3(イ)の時刻設定は、この検査のために設定した模式的な値</li>
+</ul></div></body></html>

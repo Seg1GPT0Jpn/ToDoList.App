@@ -1,96 +1,72 @@
 <!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>第1回 神奈川県検定 解答用紙</title><style>
-@page { size: A4; margin: 16mm 15mm 16mm; }
-:root { --ink:#1b2b44; --accent:#0f6d7a; --red:#c0392b; --pale:#eef3f8; --line:#9aa9bd; }
+@page { size: A4; margin: 14mm 15mm 15mm; }
 * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 body { font-family: "Yu Mincho","YuMincho","Hiragino Mincho ProN","Noto Serif CJK JP","IPAMincho",serif;
-       font-size: 10.5pt; line-height: 1.85; color: #111; background: #fff; margin: 0; }
-.sans { font-family: "Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans CJK JP","IPAGothic",sans-serif; }
+       font-size: 10.3pt; line-height: 1.75; color: #000; background: #fff; margin: 0; }
+b, .lbl, .who, .qh { font-family: "Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans CJK JP","IPAGothic",sans-serif; }
 .page { page-break-after: always; }
-u { text-decoration: none; border-bottom: 1.5px solid #111; }
 /* 表紙 */
-.cover { height: 263mm; display: flex; flex-direction: column; }
-.cover .band { background: var(--ink); color: #fff; padding: 9mm 10mm 7mm; border-radius: 4mm 4mm 0 0; position: relative; overflow: hidden; }
-.cover .band .org { font-size: 10pt; letter-spacing: .3em; opacity: .85; }
-.cover .band h1 { font-size: 30pt; margin: 3mm 0 1mm; letter-spacing: .12em; font-weight: 900; }
-.cover .band .sub { font-size: 13pt; letter-spacing: .5em; }
-.cover .band .wave { position: absolute; right: -4mm; bottom: -2mm; width: 80mm; opacity: .25; }
-.cover .stripe { height: 3mm; background: repeating-linear-gradient(90deg, var(--accent) 0 12mm, #4fa3ad 12mm 24mm); }
-.cover .mid { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; margin: 6mm 0 4mm; align-items: center; }
-.cover .map svg { width: 100%; }
-.info { width: 100%; border-collapse: collapse; font-size: 10.5pt; }
-.info th, .info td { border: 1px solid var(--ink); padding: 2mm 3mm; }
-.info th { background: var(--pale); width: 30mm; text-align: left; }
-.notice { border: 1.5px solid var(--ink); border-radius: 3mm; padding: 3mm 6mm 2mm; font-size: 9.8pt; line-height: 1.7; }
-.notice h3 { margin: 0 0 1mm; font-size: 11pt; letter-spacing: .4em; text-align: center; }
-.notice ol { margin: 0; padding-left: 5mm; }
-.idbox { display: flex; align-items: center; gap: 3mm; margin-top: 5mm; }
-.idbox .cells { display: flex; }
-.idbox .cells span { width: 10mm; height: 12mm; border: 1.5px solid var(--ink); margin-left: -1.5px; }
-.start { margin-top: auto; text-align: center; font-weight: bold; border: 2px solid var(--red); color: var(--red);
-         padding: 2mm; border-radius: 2mm; }
-/* 大問 */
-.sec-head { display: flex; align-items: stretch; margin-bottom: 3mm; border-radius: 2.5mm; overflow: hidden; border: 1.5px solid var(--ink); }
-.sec-head .no { background: var(--ink); color: #fff; padding: 1.5mm 5mm; font-size: 14pt; font-weight: 900; letter-spacing: .1em; }
-.sec-head .ttl { flex: 1; padding: 1.5mm 4mm; font-size: 13pt; font-weight: bold; background: var(--pale); }
-.sec-head .pts { padding: 1.5mm 4mm; font-size: 10pt; align-self: center; }
-.intro { margin: 0 0 3mm; }
-.talk { border: 1px solid var(--line); border-radius: 2.5mm; padding: 2mm 4mm; margin: 0 0 4mm; background: #fbfcfe; }
-.talk .row { display: grid; grid-template-columns: 26mm 1fr; gap: 2mm; }
-.talk .who { font-weight: bold; color: var(--accent); }
-/* 小問 */
-.q { margin: 0 0 6mm; page-break-inside: avoid; }
-.q-text { margin: 1mm 0 2mm; }
-.tag { display: inline-block; background: var(--ink); color: #fff; font-weight: bold; padding: 0 2.5mm; border-radius: 1.5mm;
-       margin-right: 2mm; font-size: 10pt; }
-.pt { font-size: 8.5pt; color: #444; margin-left: 1mm; }
-.figs { display: flex; gap: 4mm; justify-content: center; align-items: flex-start; flex-wrap: wrap; margin: 1mm 0 2mm; }
-figure { margin: 0; flex: 1 1 0; min-width: 45mm; max-width: 118mm; }
-figure .box svg { display: block; max-height: 78mm; }
-figure .cap { font-size: 9pt; font-weight: bold; margin-bottom: .8mm; }
-figure .box { border: 1px solid var(--line); border-radius: 2mm; padding: 2mm; background: #fff; }
-figure .src { font-size: 7.5pt; color: #555; text-align: right; line-height: 1.4; margin-top: .6mm; }
-figure img { display: block; max-width: 100%; max-height: 66mm; margin: 0 auto; border-radius: 1mm; }
-.ph { height: 52mm; border: 1.5px dashed var(--line); border-radius: 2mm; background: repeating-linear-gradient(45deg,#f5f7fa 0 6px,#fff 6px 12px);
-      display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-size: 8.5pt;
-      line-height: 1.5; color: #333; padding: 2mm; }
-.ph b { font-size: 9.5pt; }
-.note { border: 1px solid var(--ink); border-left: 2.5mm solid var(--accent); padding: 1.5mm 4mm; margin: 1mm 0 2mm;
-        font-size: 9.6pt; line-height: 1.7; background: #fbfcfe; }
-.note .src { font-size: 7.5pt; color: #555; }
-.stmts { border: 1px solid var(--line); border-radius: 2mm; padding: 1.5mm 4mm; margin: 1.5mm 0; }
-.stmt { display: grid; grid-template-columns: 7mm 1fr; }
-.choices { display: grid; grid-template-columns: 1fr; gap: .5mm 6mm; margin: 1mm 0 0 2mm; }
-.choices.c2 { grid-template-columns: 1fr 1fr; } .choices.c3 { grid-template-columns: 1fr 1fr 1fr; }
-.choices.c4 { grid-template-columns: repeat(4,1fr); }
-.choice { display: grid; grid-template-columns: 6mm 1fr; }
-table.combo { border-collapse: collapse; margin: 1.5mm auto 0; font-size: 9.6pt; }
-table.combo th, table.combo td { border: 1px solid var(--ink); padding: .6mm 2.4mm; text-align: center; line-height: 1.5; }
-table.combo th { background: var(--pale); }
-.end { text-align: right; margin-top: 6mm; }
-/* 解答用紙 */
+.cover { height: 265mm; display: flex; flex-direction: column; align-items: center; }
+.cover .yr { margin-top: 18mm; font-size: 13pt; }
+.cover h1 { font-size: 20pt; margin: 3mm 0 0; letter-spacing: .08em; text-align: center; line-height: 1.6; }
+.cover .org { font-size: 12pt; letter-spacing: .2em; }
+.cover .notice { width: 150mm; margin-top: 12mm; border: 1.5px solid #000; padding: 4mm 7mm; font-size: 10.5pt; line-height: 1.9; }
+.cover .notice h3 { text-align: center; letter-spacing: .6em; margin: 0 0 2mm; font-size: 12pt; }
+.cover .notice ol { margin: 0; padding-left: 6mm; }
+.cover .id { margin-top: 12mm; display: flex; align-items: stretch; border: 1.5px solid #000; }
+.cover .id .h { padding: 3mm 6mm; border-right: 1.5px solid #000; display: flex; align-items: center; font-weight: bold; }
+.cover .id span { width: 12mm; height: 14mm; border-right: 1px solid #000; }
+.cover .id span:last-child { border-right: 0; width: 10mm; text-align: center; line-height: 14mm; }
+/* 問 */
+.mon { margin: 0 0 3mm; }
+.mon .qh { font-weight: bold; font-size: 11.5pt; margin-right: 2mm; }
+.blk { margin: 2mm 0 3mm; page-break-inside: avoid; }
+.lbl { font-weight: bold; font-size: 10.3pt; margin-bottom: .5mm; }
+.box { border: 1.2px dashed #000; padding: 2mm 3.5mm; }
+.box.solid { border-style: solid; }
+.tk { display: grid; grid-template-columns: 18mm 1fr; }
+.who { font-size: 10pt; }
+.st { display: grid; grid-template-columns: 6mm 1fr; }
+.foot { font-size: 9pt; margin: -1mm 0 3mm 2mm; }
+.row { display: flex; gap: 4mm; align-items: flex-start; margin: 2mm 0 3mm; page-break-inside: avoid; }
+.row > div { min-width: 0; }
+.row .blk { margin: 0; }
+figure { margin: 0; page-break-inside: avoid; }
+.fbox { border: 1px solid #000; padding: 1.5mm; background: #fff; }
+.fbox img { display: block; width: 100%; max-height: 70mm; object-fit: contain; }
+.fbox svg { display: block; width: 100%; max-height: 74mm; }
+figcaption { font-size: 9pt; text-align: center; margin-top: .5mm; line-height: 1.4; }
+figcaption .src { display: block; font-size: 7pt; color: #333; text-align: right; }
+.tblk { margin: 2mm 0 3mm; page-break-inside: avoid; }
+table.dt { border-collapse: collapse; font-size: 9.6pt; margin: 0 auto; }
+table.dt th, table.dt td { border: 1px solid #000; padding: .6mm 3mm; line-height: 1.45; text-align: center; }
+table.dt.sm th, table.dt.sm td { font-size: 8.8pt; padding: .4mm 2mm; }
+table.dt th { background: #f2f2f2; font-family: sans-serif; }
+.tblk .src { font-size: 7pt; text-align: right; color: #333; }
+.sq { margin: 4mm 0 5mm; page-break-inside: avoid; }
+.sq .qt { display: grid; grid-template-columns: 9mm 1fr; }
+.ch { display: grid; gap: .3mm 8mm; margin: 1.5mm 0 0 11mm; font-size: 10pt; }
+.ch div { display: grid; grid-template-columns: 6mm 1fr; }
+.pt { font-size: 8.5pt; }
+.end { text-align: right; margin-top: 5mm; }
+/* 解答用紙・解説 */
 .sheet h1 { font-size: 15pt; margin: 0; }
-.sheet .top { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 3px solid var(--ink); padding-bottom: 1.5mm; margin-bottom: 3mm; }
-.mk { border-collapse: collapse; width: 100%; margin-bottom: 2.5mm; font-family: sans-serif; font-size: 9pt; }
-.mk th, .mk td { border: 1px solid var(--ink); padding: .8mm 2mm; line-height: 1.4; }
-.mk th { background: var(--pale); }
-.bub { display: inline-flex; width: 6.4mm; height: 4.6mm; border: 1px solid #c0392b; border-radius: 50%; align-items: center;
-       justify-content: center; font-size: 7pt; color: #c0392b; margin-right: 1.6mm; }
-.grid { display: grid; grid-template-columns: repeat(20, 6.5mm); }
-.grid span { height: 6.5mm; border: .6px solid #555; margin: 0 -.3px -.3px 0; }
-.score { width: 22mm; text-align: right; vertical-align: bottom; font-size: 9pt; }
-/* 解答と解説 */
-.key td, .key th { font-size: 9pt; }
+.sheet .top { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 2px solid #000;
+              padding-bottom: 1.5mm; margin-bottom: 3mm; }
+.mk { border-collapse: collapse; width: 100%; margin-bottom: 3mm; font-family: sans-serif; font-size: 9pt; }
+.mk th, .mk td { border: 1px solid #000; padding: 1mm 2mm; line-height: 1.45; vertical-align: middle; }
+.mk th { background: #f2f2f2; }
+.bub { display: inline-flex; width: 6.6mm; height: 4.8mm; border: 1px solid #000; border-radius: 50%; align-items: center;
+       justify-content: center; font-size: 7.5pt; margin-right: 1.8mm; }
+.grid { display: grid; grid-template-columns: repeat(15, 7.2mm); margin: 1mm 0 3mm; }
+.grid span { height: 7.2mm; border: .6px solid #555; margin: 0 -.3px -.3px 0; position: relative; }
+.grid span.m::after { content: attr(data-n); position: absolute; right: -.5mm; bottom: -3.4mm; font-size: 6pt; }
+.score { width: 20mm; text-align: right; vertical-align: bottom !important; }
+.key td { font-size: 8.8pt; }
 </style></head><body><div class="sheet">
-<div class="top"><div><div class="sans" style="font-size:9pt">神奈川県知識向上委員会</div><h1 class="sans">第1回 神奈川県検定　解答用紙</h1></div>
-<div class="sans" style="font-size:8.5pt;text-align:right">マーク例　良い例 <span class="bub" style="background:#111;border-color:#111"></span>
+<div class="top"><div><div style="font-size:9pt">神奈川県知識向上委員会</div><h1>第1回 神奈川県検定　解答用紙</h1></div>
+<div style="font-size:8.5pt;text-align:right;font-family:sans-serif">マーク例　良い例 <span class="bub" style="background:#000"></span>
 悪い例 <span class="bub">✓</span><span class="bub">×</span></div></div>
-<table class="mk sans"><tr><th style="width:20mm">受検番号</th><td style="width:55mm"></td><th style="width:14mm">氏名</th><td></td></tr>
+<table class="mk"><tr><th style="width:20mm">受検番号</th><td style="width:50mm"></td><th style="width:14mm">氏名</th><td></td></tr>
 <tr><th>合計得点</th><td style="text-align:right;font-size:12pt">／100</td><th>認定</th>
-<td>□ ゴールド　□ シルバー　□ ブロンズ　□ 参加賞</td></tr></table><table class="mk sans" style="page-break-inside:avoid"><tr><th colspan="2" style="text-align:left">大問1　神奈川の大地と自然</th><th style="width:22mm">得点</th></tr><tr><td style="width:14mm;text-align:center">問1</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span><span class="bub">5</span><span class="bub">6</span><span class="bub">7</span><span class="bub">8</span></td><td rowspan="6" class="score">／20</td></tr><tr><td style="width:14mm;text-align:center">問2</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span></td></tr><tr><td style="width:14mm;text-align:center">問3</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span></td></tr><tr><td style="width:14mm;text-align:center">問4</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span><span class="bub">5</span><span class="bub">6</span><span class="bub">7</span><span class="bub">8</span></td></tr><tr><td style="width:14mm;text-align:center">問5</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span></td></tr><tr><td style="width:14mm;text-align:center">問6</td><td><div class="grid" style="margin:1mm 0"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></td></tr></table><table class="mk sans" style="page-break-inside:avoid"><tr><th colspan="2" style="text-align:left">大問2　神奈川の歴史をたどる</th><th style="width:22mm">得点</th></tr><tr><td style="width:14mm;text-align:center">問1</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span></td><td rowspan="6" class="score">／18</td></tr><tr><td style="width:14mm;text-align:center">問2</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span><span class="bub">5</span><span class="bub">6</span></td></tr><tr><td style="width:14mm;text-align:center">問3</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span><span class="bub">5</span><span class="bub">6</span></td></tr><tr><td style="width:14mm;text-align:center">問4</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span></td></tr><tr><td style="width:14mm;text-align:center">問5</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span></td></tr><tr><td style="width:14mm;text-align:center">問6</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span><span class="bub">5</span><span class="bub">6</span><span class="bub">7</span><span class="bub">8</span></td></tr></table><table class="mk sans" style="page-break-inside:avoid"><tr><th colspan="2" style="text-align:left">大問3　データで読む産業とくらし</th><th style="width:22mm">得点</th></tr><tr><td style="width:14mm;text-align:center">問1</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span></td><td rowspan="5" class="score">／15</td></tr><tr><td style="width:14mm;text-align:center">問2</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span><span class="bub">5</span><span class="bub">6</span><span class="bub">7</span><span class="bub">8</span></td></tr><tr><td style="width:14mm;text-align:center">問3</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span></td></tr><tr><td style="width:14mm;text-align:center">問4</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span><span class="bub">5</span><span class="bub">6</span><span class="bub">7</span><span class="bub">8</span></td></tr><tr><td style="width:14mm;text-align:center">問5</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span></td></tr></table><table class="mk sans" style="page-break-inside:avoid"><tr><th colspan="2" style="text-align:left">大問4　鎌倉・江の島・箱根を歩く</th><th style="width:22mm">得点</th></tr><tr><td style="width:14mm;text-align:center">問1</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span></td><td rowspan="6" class="score">／18</td></tr><tr><td style="width:14mm;text-align:center">問2</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span></td></tr><tr><td style="width:14mm;text-align:center">問3</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span><span class="bub">5</span><span class="bub">6</span><span class="bub">7</span><span class="bub">8</span></td></tr><tr><td style="width:14mm;text-align:center">問4</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span></td></tr><tr><td style="width:14mm;text-align:center">問5</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span><span class="bub">5</span><span class="bub">6</span><span class="bub">7</span><span class="bub">8</span></td></tr><tr><td style="width:14mm;text-align:center">問6</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span></td></tr></table><table class="mk sans" style="page-break-inside:avoid"><tr><th colspan="2" style="text-align:left">大問5　鉄道がつくる神奈川</th><th style="width:22mm">得点</th></tr><tr><td style="width:14mm;text-align:center">問1</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span></td><td rowspan="5" class="score">／15</td></tr><tr><td style="width:14mm;text-align:center">問2</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span></td></tr><tr><td style="width:14mm;text-align:center">問3</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span></td></tr><tr><td style="width:14mm;text-align:center">問4</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span><span class="bub">5</span><span class="bub">6</span><span class="bub">7</span><span class="bub">8</span></td></tr><tr><td style="width:14mm;text-align:center">問5</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span></td></tr></table><table class="mk sans" style="page-break-inside:avoid"><tr><th colspan="2" style="text-align:left">大問6　いまの神奈川を考える</th><th style="width:22mm">得点</th></tr><tr><td style="width:14mm;text-align:center">問1</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span><span class="bub">5</span><span class="bub">6</span><span class="bub">7</span><span class="bub">8</span></td><td rowspan="4" class="score">／14</td></tr><tr><td style="width:14mm;text-align:center">問2</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span></td></tr><tr><td style="width:14mm;text-align:center">問3</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span><span class="bub">5</span><span class="bub">6</span><span class="bub">7</span><span class="bub">8</span></td></tr><tr><td style="width:14mm;text-align:center">問4</td><td><div class="grid" style="margin:1mm 0"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></td></tr></table></div>
-<script>
-document.querySelectorAll('img[data-ph]').forEach(function (img) {
-  function ph() { var d = document.createElement('div'); d.className = 'ph'; d.innerHTML = img.getAttribute('data-ph'); img.replaceWith(d); }
-  if (img.complete && img.naturalWidth === 0) ph(); else img.onerror = ph;
-});
-</script>
-</body></html>
+<td>□ ゴールド　□ シルバー　□ ブロンズ　□ 参加賞</td></tr></table><table class="mk" style="page-break-inside:avoid"><tr><th colspan="2" style="text-align:left">問1</th><th style="width:20mm">得点</th></tr><tr><td style="width:12mm;text-align:center">(ア)</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span></td><td rowspan="4" class="score">／21</td></tr><tr><td style="width:12mm;text-align:center">(イ)</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span><span class="bub">5</span><span class="bub">6</span></td></tr><tr><td style="width:12mm;text-align:center">(ウ)</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span><span class="bub">5</span><span class="bub">6</span><span class="bub">7</span><span class="bub">8</span></td></tr><tr><td style="width:12mm;text-align:center">(エ)</td><td><div class="grid"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span class="m" data-n="35"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span class="m" data-n="45"></span></div></td></tr></table><table class="mk" style="page-break-inside:avoid"><tr><th colspan="2" style="text-align:left">問2</th><th style="width:20mm">得点</th></tr><tr><td style="width:12mm;text-align:center">(ア)</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span><span class="bub">5</span><span class="bub">6</span><span class="bub">7</span><span class="bub">8</span></td><td rowspan="5" class="score">／25</td></tr><tr><td style="width:12mm;text-align:center">(イ)</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span></td></tr><tr><td style="width:12mm;text-align:center">(ウ)</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span><span class="bub">5</span><span class="bub">6</span></td></tr><tr><td style="width:12mm;text-align:center">(エ)</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span></td></tr><tr><td style="width:12mm;text-align:center">(オ)</td><td><div class="grid"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span class="m" data-n="35"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span class="m" data-n="45"></span></div></td></tr></table><table class="mk" style="page-break-inside:avoid"><tr><th colspan="2" style="text-align:left">問3</th><th style="width:20mm">得点</th></tr><tr><td style="width:12mm;text-align:center">(ア)</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span></td><td rowspan="6" class="score">／29</td></tr><tr><td style="width:12mm;text-align:center">(イ)</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span><span class="bub">5</span><span class="bub">6</span></td></tr><tr><td style="width:12mm;text-align:center">(ウ)</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span><span class="bub">5</span><span class="bub">6</span><span class="bub">7</span><span class="bub">8</span></td></tr><tr><td style="width:12mm;text-align:center">(エ)</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span></td></tr><tr><td style="width:12mm;text-align:center">(オ)</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span></td></tr><tr><td style="width:12mm;text-align:center">(カ)</td><td><div class="grid"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span class="m" data-n="35"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span class="m" data-n="45"></span></div></td></tr></table><table class="mk" style="page-break-inside:avoid"><tr><th colspan="2" style="text-align:left">問4</th><th style="width:20mm">得点</th></tr><tr><td style="width:12mm;text-align:center">(ア)</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span><span class="bub">5</span><span class="bub">6</span><span class="bub">7</span><span class="bub">8</span></td><td rowspan="5" class="score">／25</td></tr><tr><td style="width:12mm;text-align:center">(イ)</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span></td></tr><tr><td style="width:12mm;text-align:center">(ウ)</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span><span class="bub">5</span><span class="bub">6</span><span class="bub">7</span><span class="bub">8</span></td></tr><tr><td style="width:12mm;text-align:center">(エ)</td><td><span class="bub">1</span><span class="bub">2</span><span class="bub">3</span><span class="bub">4</span></td></tr><tr><td style="width:12mm;text-align:center">(オ)</td><td><div class="grid"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span class="m" data-n="35"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span class="m" data-n="45"></span></div></td></tr></table></div></body></html>
