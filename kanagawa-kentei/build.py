@@ -109,12 +109,15 @@ table.dt th { background: #f2f2f2; font-family: sans-serif; }
 .mk { border-collapse: collapse; width: 100%; margin-bottom: 3mm; font-family: sans-serif; font-size: 9pt; }
 .mk th, .mk td { border: 1px solid #000; padding: 1mm 2mm; line-height: 1.45; vertical-align: middle; }
 .mk th { background: #f2f2f2; }
-.bub { display: inline-flex; width: 6.6mm; height: 4.8mm; border: 1px solid #000; border-radius: 50%; align-items: center;
-       justify-content: center; font-size: 7.5pt; margin-right: 1.8mm; }
+.bub { display: inline-flex; width: 7.6mm; height: 5.6mm; border: 1px solid #000; border-radius: 50%; align-items: center;
+       justify-content: center; font-size: 8.5pt; margin-right: 1.4mm; }
 .grid { display: grid; grid-template-columns: repeat(15, 7.2mm); margin: 1mm 0 3mm; }
 .grid span { height: 7.2mm; border: .6px solid #555; margin: 0 -.3px -.3px 0; position: relative; }
 .grid span.m::after { content: attr(data-n); position: absolute; right: -.5mm; bottom: -3.4mm; font-size: 6pt; }
 .score { width: 20mm; text-align: right; vertical-align: bottom !important; }
+.mgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 3mm; }
+.mi { display: flex; align-items: center; padding: 1.6mm 0; border-bottom: .3px solid #bbb; }
+.mi .ql { width: 10mm; flex: none; font-size: 9.5pt; }
 .key td { font-size: 8.8pt; }
 """
 
@@ -211,20 +214,20 @@ def answer_sheet():
 <table class="mk"><tr><th style="width:20mm">受検番号</th><td style="width:50mm"></td><th style="width:14mm">氏名</th><td></td></tr>
 <tr><th>合計得点</th><td style="text-align:right;font-size:12pt">点</td><th>認定</th>
 <td>□ ゴールド　□ シルバー　□ ブロンズ　□ 参加賞</td></tr></table>"""]
+    # 4ページに収めるため、マーク欄は3列に並べる（選択肢が7つ以上の問は2列分、記述は1行全部を使う）
     for si, s in enumerate(SECTIONS):
-        n = len(s["questions"])
-        out.append(f'<table class="mk" style="page-break-inside:avoid"><tr><th colspan="2" style="text-align:left">'
-                   f'問{si + 1}</th><th style="width:20mm">得点</th></tr>')
+        items = []
         for qi, q in enumerate(s["questions"]):
+            label = f'<span class="ql">({SUB[qi]})</span>'
             if q["kind"] == "mark":
-                cell = "".join(f'<span class="bub">{i + 1}</span>' for i in range(len(q["choices"])))
+                span = ' style="grid-column:span 2"' if len(q["choices"]) > 6 else ""
+                bubs = "".join(f'<span class="bub">{i + 1}</span>' for i in range(len(q["choices"])))
+                items.append(f'<div class="mi"{span}>{label}{bubs}</div>')
             else:
-                cell = grid(q["chars"])
-            out.append(f'<tr><td style="width:12mm;text-align:center">({SUB[qi]})</td><td>{cell}</td>')
-            if qi == 0:
-                out.append(f'<td rowspan="{n}" class="score"></td>')
-            out.append("</tr>")
-        out.append("</table>")
+                items.append(f'<div class="mi" style="grid-column:1/-1">{label}{grid(q["chars"])}</div>')
+        out.append(f'<table class="mk" style="page-break-inside:avoid"><tr><th style="text-align:left">問{si + 1}</th>'
+                   f'<th style="width:20mm">得点</th></tr><tr><td><div class="mgrid">{"".join(items)}</div></td>'
+                   f'<td class="score"></td></tr></table>')
     out.append("</div>")
     return doc(f"{TITLE} 解答用紙", "".join(out))
 
