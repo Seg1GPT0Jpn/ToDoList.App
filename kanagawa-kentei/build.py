@@ -182,8 +182,10 @@ def booklet():
         out.extend(s["materials"])
         for qi, q in enumerate(s["questions"]):
             out.append('<div class="sq">')
-            qt = (f'<div class="qt"><span>({SUB[qi]})</span><span>{q["q"]}'
-                  f'<span class="pt">（{q["pts"]}点）</span></span></div>')
+            # 点数は問い文の末尾（あ〜うの枠がある場合はその前）に置く
+            pt = f'<span class="pt">（{q["pts"]}点）</span>'
+            body = q["q"].replace('<div class="blk">', pt + '<div class="blk">', 1) if '<div class="blk">' in q["q"] else q["q"] + pt
+            qt = f'<div class="qt"><span>({SUB[qi]})</span><span>{body}</span></div>'
             if q.get("side"):
                 out.append(f'<div class="side"><div>{"".join(q["pre"])}</div><div>{qt}{choices(q)}</div></div>')
             else:
