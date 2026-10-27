@@ -73,6 +73,7 @@ export 'src/study/school_exam.dart';
 export 'src/study/shonan_range_table.dart';
 export 'src/study/shonan_table_sets.dart';
 export 'src/study/school_gate.dart';
+export 'src/study/school_drive.dart';
 export 'src/study/school_material.dart';
 export 'src/study/school_word_book.dart';
 export 'src/study/school_lesson.dart';

@@ -6,6 +6,7 @@ import '../app/theme.dart';
 import '../art/paper.dart';
 import '../battle/battle_screen.dart';
 import 'ec_text.dart';
+import 'school_drive_screen.dart';
 import 'school_exam_store.dart';
 import 'school_lesson_screens.dart';
 import 'school_material_screen.dart';
@@ -117,6 +118,21 @@ class ShonanExamListScreen extends StatelessWidget {
                       label: const Text(ShonanText.newPlan),
                     ),
                   ],
+                ),
+                const SizedBox(height: 16),
+                Card(
+                  child: ListTile(
+                    key: const ValueKey('shonan-drive'),
+                    leading: const Icon(Icons.folder_shared_outlined),
+                    title: const Text('ドライブの資料（予想問題・授業ノートなど）'),
+                    subtitle: const Text('教科ごとの Google ドライブのフォルダを開く'),
+                    trailing: const Icon(Icons.chevron_right),
+                    onTap: () => Navigator.of(context).push(
+                      MaterialPageRoute<void>(
+                        builder: (_) => const SchoolDriveScreen(),
+                      ),
+                    ),
+                  ),
                 ),
                 const SizedBox(height: 16),
                 if (SchoolMaterials.all.isNotEmpty) ...[

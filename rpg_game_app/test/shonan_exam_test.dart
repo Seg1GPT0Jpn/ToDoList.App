@@ -6,6 +6,7 @@ import 'package:rpg_game/rpg_game.dart';
 import 'package:rpg_game_app/app/services.dart';
 import 'package:rpg_game_app/battle/battle_screen.dart';
 import 'package:rpg_game_app/study/ec_text.dart';
+import 'package:rpg_game_app/study/school_drive_screen.dart';
 import 'package:rpg_game_app/study/school_exam_store.dart';
 import 'package:rpg_game_app/study/school_material_screen.dart';
 import 'package:rpg_game_app/study/sea_home_screen.dart';
@@ -428,6 +429,70 @@ void main() {
       await _frames(t, 2);
     }
     expect(find.byKey(const ValueKey('material-image-1')), findsOneWidget);
+    expect(SchoolExamStore.of(s.personalBooks).secret, 'test-pw');
+    expect(t.takeException(), isNull);
+  });
+
+  testWidgets('ドライブの資料：パスワードで教科ごとのフォルダが出て、タップで開く', (t) async {
+    final oldData = SchoolDriveScreen.data,
+        oldOpener = SchoolDriveScreen.opener;
+    SchoolDriveScreen.data = SchoolDrive.seal(
+      const [
+        SchoolDriveLink(
+          title: 'フォルダ全体',
+          url: 'https://drive.google.com/drive/folders/all',
+        ),
+        SchoolDriveLink(
+          title: '情報Ⅰ',
+          url: 'https://drive.google.com/drive/folders/info',
+          group: '情報',
+        ),
+      ],
+      List.filled(16, 5),
+      SchoolMaterials.keyFor('test-pw'),
+    );
+    final opened = <Uri>[];
+    SchoolDriveScreen.opener = (u) async {
+      opened.add(u);
+      return true;
+    };
+    addTearDown(() {
+      SchoolDriveScreen.data = oldData;
+      SchoolDriveScreen.opener = oldOpener;
+    });
+
+    final s = await openScreen(
+      t,
+      const ShonanExamListScreen(),
+      prefs: {SchoolExamStore.gateKey: true},
+      frames: 5,
+    );
+    await t.tap(find.byKey(const ValueKey('shonan-drive')));
+    await _frames(t, 5);
+    await t.enterText(find.byKey(const ValueKey('drive-password')), 'abc');
+    await t.tap(find.byKey(const ValueKey('drive-unlock')));
+    for (var i = 0; i < 5; i++) {
+      await t.runAsync(
+        () => Future<void>.delayed(const Duration(milliseconds: 100)),
+      );
+      await _frames(t, 2);
+    }
+    expect(find.text('パスワードがちがいます'), findsOneWidget);
+    await t.enterText(find.byKey(const ValueKey('drive-password')), 'TEST-PW');
+    await t.tap(find.byKey(const ValueKey('drive-unlock')));
+    for (var i = 0; i < 5; i++) {
+      await t.runAsync(
+        () => Future<void>.delayed(const Duration(milliseconds: 100)),
+      );
+      await _frames(t, 2);
+    }
+    expect(find.text('情報'), findsOneWidget);
+    await t.tap(find.byKey(const ValueKey('drive-link-情報Ⅰ')));
+    await _frames(t, 2);
+    expect(
+      opened.single.toString(),
+      'https://drive.google.com/drive/folders/info',
+    );
     expect(SchoolExamStore.of(s.personalBooks).secret, 'test-pw');
     expect(t.takeException(), isNull);
   });
