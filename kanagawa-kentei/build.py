@@ -15,12 +15,17 @@ from questions import (BRONZE, EXAM_MINUTES, GOLD, ORG, SECTIONS, SILVER, SUBTIT
                        UNIT_MIN_RATE)
 
 ROOT = pathlib.Path(__file__).parent
-SUB = "アイウエオカキクケコ"
+SUB = "アイウエオカキクケコサシスセソタチツテト"
 
 for s in SECTIONS:
     s["pts"] = sum(q["pts"] for q in s["questions"])
 TOTAL = sum(s["pts"] for s in SECTIONS)
-assert TOTAL == 100, TOTAL
+assert TOTAL == 200, TOTAL
+
+
+def need(rate):
+    """得点率（％）を満たすのに必要な最小の得点"""
+    return -(-TOTAL * rate // 100)
 NQ = sum(len(s["questions"]) for s in SECTIONS)
 for s in SECTIONS:
     for q in s["questions"]:
@@ -148,7 +153,7 @@ def booklet():
     <table class="info sans">
       <tr><th>検査時間</th><td>{EXAM_MINUTES}分</td></tr>
       <tr><th>問題数</th><td>問1〜問{len(SECTIONS)}・全{NQ}問</td></tr>
-      <tr><th>配点</th><td>100点満点</td></tr>
+      <tr><th>配点</th><td>{TOTAL}点満点（得点率で認定）</td></tr>
       <tr><th>解答方法</th><td>マーク式・記述式<br>（別紙の解答用紙に記入）</td></tr>
       <tr><th>認定</th><td>ゴールド／シルバー／ブロンズ</td></tr>
     </table>
@@ -205,7 +210,7 @@ def answer_sheet():
 <div style="font-size:8.5pt;text-align:right;font-family:sans-serif">マーク例　良い例 <span class="bub" style="background:#000"></span>
 悪い例 <span class="bub">✓</span><span class="bub">×</span></div></div>
 <table class="mk"><tr><th style="width:20mm">受検番号</th><td style="width:50mm"></td><th style="width:14mm">氏名</th><td></td></tr>
-<tr><th>合計得点</th><td style="text-align:right;font-size:12pt">／100</td><th>認定</th>
+<tr><th>合計得点</th><td style="text-align:right;font-size:12pt">／{TOTAL}</td><th>認定</th>
 <td>□ ゴールド　□ シルバー　□ ブロンズ　□ 参加賞</td></tr></table>"""]
     for si, s in enumerate(SECTIONS):
         n = len(s["questions"])
@@ -246,14 +251,14 @@ def answer_key():
 <div style="page-break-before:always"></div>
 <p><b>認定基準</b></p>
 <table class="mk"><tr><th style="width:42mm">認定</th><th>条件</th></tr>
-<tr><td>神奈川知識ゴールド</td><td>{GOLD}点以上、かつ、すべての問で得点率{int(UNIT_MIN_RATE * 100)}％以上（下表）</td></tr>
-<tr><td>神奈川知識シルバー</td><td>{SILVER}点以上（ゴールドの条件を満たさない場合を含む）</td></tr>
-<tr><td>神奈川知識ブロンズ</td><td>{BRONZE}点以上</td></tr>
-<tr><td>参加賞</td><td>{BRONZE}点未満</td></tr></table>
+<tr><td>神奈川知識ゴールド</td><td>得点率{GOLD}％以上（{need(GOLD)}点以上）、かつ、すべての問で得点率{int(UNIT_MIN_RATE * 100)}％以上（下表）</td></tr>
+<tr><td>神奈川知識シルバー</td><td>得点率{SILVER}％以上（{need(SILVER)}点以上）。ゴールドの条件を満たさない場合を含む</td></tr>
+<tr><td>神奈川知識ブロンズ</td><td>得点率{BRONZE}％以上（{need(BRONZE)}点以上）</td></tr>
+<tr><td>参加賞</td><td>得点率{BRONZE}％未満</td></tr></table>
 <table class="mk"><tr><th>問</th><th style="width:20mm">配点</th><th style="width:40mm">ゴールドに必要な得点</th></tr>{rows}</table>
 <p><b>採点上の注意</b></p>
 <ul style="margin-top:0;font-size:9.5pt">
-<li>マーク式は問1〜問4が各3点、問5が各2点。正答の番号のみ得点とする。</li>
+<li>マーク式は問1〜問6が各3点、問7・問8が各2点。正答の番号のみ得点とする。</li>
 <li>記述式は各8点。解説欄の採点基準にしたがって部分点を与える。35字未満・45字超は2点減点、指定語句の欠落は1語につき2点減点、文末の指定違反は2点減点（0点未満にはしない）。</li>
 </ul>""")
     used = []

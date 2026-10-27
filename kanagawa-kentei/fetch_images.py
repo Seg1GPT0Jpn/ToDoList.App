@@ -52,6 +52,7 @@ FILES = {
     "c_redbrick.jpg": ("Yokohama Red Brick Warehouse 2.jpg", "Syced", "CC0"),
     "c_zenrinmon.jpg": ("Zenrinmon Gate.jpg", "Ymblanter", "CC BY-SA 4.0"),
     "c_kawasakidaishi.jpg": ("Kawasaki Daishi Main Hall.jpg", "ペン太", "CC BY 2.5"),
+    "c_daiyuzan.jpg": ("Izuhakone-railway-Daiyuzan-line-Daiyuzan-station-building-20140310-142412.jpg", "LERK", "CC BY-SA 4.0"),
     "c_kamiseya.jpg": ("US Navy 110828-N-VE260-735 An SH-60B Sea Hawk helicopter lands at Naval Support Facility Kamiseya "
                        "during the Yokohama Comprehensive Disaster Drill.jpg", "U.S. Navy", "Public domain"),
 }
@@ -61,6 +62,7 @@ FILES = {
 BLUR = {
     "c_katase.jpg": [(0.62, 0.39, 0.85, 0.51)],
     "c_umishibaura.jpg": [(0.81, 0.36, 0.89, 0.82)],
+    "c_daiyuzan.jpg": [(0.19, 0.41, 0.36, 0.50), (0.21, 0.50, 0.34, 0.56)],
 }
 
 
