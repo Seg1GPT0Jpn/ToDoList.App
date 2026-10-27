@@ -6,6 +6,7 @@ import 'package:rpg_game/rpg_game.dart';
 import 'package:rpg_game_app/app/services.dart';
 import 'package:rpg_game_app/battle/battle_screen.dart';
 import 'package:rpg_game_app/study/ec_text.dart';
+import 'package:rpg_game_app/study/school_drive_folder_screen.dart';
 import 'package:rpg_game_app/study/school_drive_screen.dart';
 import 'package:rpg_game_app/study/school_exam_store.dart';
 import 'package:rpg_game_app/study/school_material_screen.dart';
@@ -456,9 +457,31 @@ void main() {
       opened.add(u);
       return true;
     };
+    final oldFetcher = SchoolDriveFolderScreen.fetcher;
+    final oldEmbed = SchoolDriveFolderScreen.embed;
+    String entry(String id, String href, String title) =>
+        '<div class="flip-entry" id="entry-$id"><div class="flip-entry-info">'
+        '<a href="$href" target="_blank"><div class="flip-entry-title">$title</div></a></div>'
+        '<div class="flip-entry-last-modified"><div>Oct 27</div></div></div>';
+    final fetched = <String>[];
+    SchoolDriveFolderScreen.embed = (_) => null;
+    SchoolDriveFolderScreen.fetcher = (u) async {
+      final id = u.queryParameters['id']!;
+      fetched.add(id);
+      return id == 'info'
+          ? entry('sub', 'https://drive.google.com/drive/folders/sub', '過去問') +
+                entry(
+                  'f1',
+                  'https://drive.google.com/file/d/f1/view',
+                  '予想問題.pdf',
+                )
+          : entry('f2', 'https://drive.google.com/file/d/f2/view', '解答.pdf');
+    };
     addTearDown(() {
       SchoolDriveScreen.data = oldData;
       SchoolDriveScreen.opener = oldOpener;
+      SchoolDriveFolderScreen.fetcher = oldFetcher;
+      SchoolDriveFolderScreen.embed = oldEmbed;
     });
 
     final s = await openScreen(
@@ -487,12 +510,20 @@ void main() {
       await _frames(t, 2);
     }
     expect(find.text('情報'), findsOneWidget);
+    // フォルダの中のファイルが、アプリの中で一覧になる
     await t.tap(find.byKey(const ValueKey('drive-link-情報Ⅰ')));
+    await _frames(t, 5);
+    expect(find.text('予想問題.pdf'), findsOneWidget);
+    expect(find.text('更新 Oct 27'), findsNWidgets(2));
+    // 中のフォルダもアプリの中で開ける
+    await t.tap(find.byKey(const ValueKey('drive-entry-sub')));
+    await _frames(t, 5);
+    expect(fetched, ['info', 'sub']);
+    expect(find.text('解答.pdf'), findsOneWidget);
+    // ファイルはドライブで開く
+    await t.tap(find.byKey(const ValueKey('drive-entry-f2')));
     await _frames(t, 2);
-    expect(
-      opened.single.toString(),
-      'https://drive.google.com/drive/folders/info',
-    );
+    expect(opened.single.toString(), 'https://drive.google.com/file/d/f2/view');
     expect(SchoolExamStore.of(s.personalBooks).secret, 'test-pw');
     expect(t.takeException(), isNull);
   });

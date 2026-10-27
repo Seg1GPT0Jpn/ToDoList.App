@@ -5,6 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 import '../app/services.dart';
 import '../app/theme.dart';
 import '../art/paper.dart';
+import 'school_drive_folder_screen.dart';
 import 'school_exam_store.dart';
 
 /// 学校の Google ドライブ（予想問題・授業ノートなど）のフォルダを教科ごとに並べ、
@@ -72,15 +73,11 @@ class _SchoolDriveScreenState extends State<SchoolDriveScreen> {
     });
   }
 
-  Future<void> _open(SchoolDriveLink l) async {
-    var ok = false;
-    try {
-      ok = await SchoolDriveScreen.opener(Uri.parse(l.url));
-    } catch (_) {}
-    if (ok || !mounted) return;
-    ScaffoldMessenger.of(context)
-        .showSnackBar(const SnackBar(content: Text('ドライブを開けませんでした')));
-  }
+  void _open(SchoolDriveLink l) => Navigator.of(context).push(
+    MaterialPageRoute<void>(
+      builder: (_) => SchoolDriveFolderScreen(title: l.title, url: l.url),
+    ),
+  );
 
   Widget _locked() => Card(
     child: Padding(
@@ -151,7 +148,7 @@ class _SchoolDriveScreenState extends State<SchoolDriveScreen> {
             key: ValueKey('drive-link-${l.title}'),
             leading: const Icon(Icons.folder_shared_outlined),
             title: Text(l.title),
-            trailing: const Icon(Icons.open_in_new, size: 18),
+            trailing: const Icon(Icons.chevron_right),
             onTap: () => _open(l),
           ),
         ),
@@ -171,7 +168,7 @@ class _SchoolDriveScreenState extends State<SchoolDriveScreen> {
           children: [
             Text(
               '予想問題・授業ノートなどを置いている Google ドライブのフォルダです。'
-              'タップするとドライブが開きます（ファイルが増えても、ここからそのまま見られます）。',
+              'タップするとフォルダの中のファイルが見られます（ドライブに増えたファイルも、そのまま出ます）。',
               style: TextStyle(fontSize: 12, color: TsuzuriColors.inkSoft),
             ),
             const SizedBox(height: 12),
@@ -186,4 +183,15 @@ class _SchoolDriveScreenState extends State<SchoolDriveScreen> {
       ),
     );
   }
+}
+
+/// ドライブのリンクを、ドライブのアプリかブラウザで開く
+Future<void> openDriveUrl(BuildContext context, String url) async {
+  var ok = false;
+  try {
+    ok = await SchoolDriveScreen.opener(Uri.parse(url));
+  } catch (_) {}
+  if (ok || !context.mounted) return;
+  ScaffoldMessenger.of(context)
+      .showSnackBar(const SnackBar(content: Text('ドライブを開けませんでした')));
 }
