@@ -1,18 +1,25 @@
 """神奈川県検定の 問題冊子・解答用紙・解答と解説 を HTML と PDF で出力する（特色検査形式）。
 
-使い方: python3 build.py
+使い方: python3 build.py          … 本検査（questions.py）
+       python3 build.py --tsui   … 追検査（questions_tsui.py）
 写真は fetch_images.py、地図は gsi_maps.py で images/ に用意しておく。
 PDF 変換には Node.js 版 Playwright（render_pdf.js）を使う。
 """
+import importlib
 import os
 import pathlib
 import re
 import subprocess
+import sys
 
 import figures as F
 from layout import CREDITS, e
-from questions import (BRONZE, EXAM_MINUTES, GOLD, ORG, SECTIONS, SILVER, SUBTITLE, TITLE,
-                       UNIT_MIN_RATE)
+
+TSUI = "--tsui" in sys.argv
+Q = importlib.import_module("questions_tsui" if TSUI else "questions")
+BRONZE, EXAM_MINUTES, GOLD, ORG, SECTIONS, SILVER, SUBTITLE, TITLE, UNIT_MIN_RATE, SOURCES = (
+    Q.BRONZE, Q.EXAM_MINUTES, Q.GOLD, Q.ORG, Q.SECTIONS, Q.SILVER, Q.SUBTITLE, Q.TITLE, Q.UNIT_MIN_RATE, Q.SOURCES)
+PREFIX = "追検査_" if TSUI else ""
 
 ROOT = pathlib.Path(__file__).parent
 SUB = "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホ"
@@ -298,24 +305,20 @@ def answer_key(grader):
 <table class="mk"><tr><th style="width:10mm">問</th><th>ファイル名</th><th style="width:30mm">作者</th><th style="width:20mm">ライセンス</th><th style="width:55mm">ファイルページ</th></tr>{prow}</table>
 <p><b>地図・統計の出典</b></p>
 <ul style="margin-top:0;font-size:9pt">
-<li>地図・空中写真：国土地理院「地理院タイル」（色別標高図・陰影起伏図・淡色地図・全国最新写真）を加工して作成</li>
-<li>市町村界：国土地理院「地球地図日本」（jpn-atlas による TopoJSON 版）をもとに作成</li>
-<li>1865年の輸出入品：石井孝『幕末貿易史の研究』（中学・高校教科書に掲載の数値）</li>
-<li>昼夜間人口比率：総務省「令和2年国勢調査」、横浜市・神奈川県の公表資料</li>
-<li>人口・世帯の増減率：神奈川県「令和7年国勢調査結果速報」、開成町の公表資料</li>
-<li>箱根登山電車の標高・距離：箱根登山鉄道の公表資料ほか</li>
-<li>問1の表1、問3(イ)の時刻設定は、この検査のために設定した模式的な値</li>
+{"".join(f"<li>{e(x)}</li>" for x in SOURCES)}
 </ul></div>""")
     return doc(f"{TITLE} {kind}", "".join(out))
 
 
 def main():
-    files = {"01_問題冊子": booklet(), "02_解答用紙": answer_sheet(),
-             "03_解答と解説_受験者用": answer_key(grader=False), "05_採点基準_採点者用": answer_key(grader=True)}
+    n = "1" if TSUI else "0"
+    files = {f"{n}1_{PREFIX}問題冊子": booklet(), f"{n}2_{PREFIX}解答用紙": answer_sheet(),
+             f"{n}3_{PREFIX}解答と解説_受験者用": answer_key(grader=False),
+             f"{n}5_{PREFIX}採点基準_採点者用": answer_key(grader=True)}
     for name, content in files.items():
         (ROOT / f"{name}.html").write_text(content, encoding="utf-8")
     npm_root = subprocess.run(["npm", "root", "-g"], capture_output=True, text=True).stdout.strip()
-    subprocess.run(["node", str(ROOT / "render_pdf.js")], check=False, env={**os.environ, "NODE_PATH": npm_root})
+    subprocess.run(["node", str(ROOT / "render_pdf.js"), *files], check=False, env={**os.environ, "NODE_PATH": npm_root})
 
 
 if __name__ == "__main__":
