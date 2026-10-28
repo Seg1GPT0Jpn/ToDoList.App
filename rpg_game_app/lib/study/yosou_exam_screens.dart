@@ -146,7 +146,18 @@ class _YosouExamListScreenState extends State<YosouExamListScreen> {
           '${ShonanSubjects.byId(e.subjectId)?.displayName ?? ''}・${e.minutes}分\n$status',
         ),
         isThreeLine: true,
-        trailing: const Icon(Icons.chevron_right),
+        trailing: _store.hasData(e.id)
+            ? IconButton(
+                key: ValueKey('yosou-reset-${e.id}'),
+                tooltip: '答えと結果をリセット',
+                icon: const Icon(Icons.restart_alt),
+                onPressed: () async {
+                  if (!await confirmYosouReset(context, e.title)) return;
+                  await _store.reset(e.id);
+                  if (mounted) setState(() {});
+                },
+              )
+            : const Icon(Icons.chevron_right),
         onTap: () async {
           await Navigator.of(context).push(
             MaterialPageRoute<void>(
@@ -170,8 +181,8 @@ class _YosouExamListScreenState extends State<YosouExamListScreen> {
           children: [
             Text(
               '本番と同じく全体で60分。1問ごとの時間制限はありません。'
-              '問題冊子（原本のページ）を見ながら、解答用紙に答えを書きます。'
-              '途中で閉じても、答えと残り時間は保存されます。',
+              '小問が1問ずつ出て、最後に提出してまとめて採点します。'
+              '途中で閉じても、答えと残り時間は保存されます（右の ↺ でリセットできます）。',
               style: TextStyle(fontSize: 12, color: TsuzuriColors.inkSoft),
             ),
             const SizedBox(height: 12),
@@ -179,14 +190,66 @@ class _YosouExamListScreenState extends State<YosouExamListScreen> {
               _checking && _gate.secret != null
                   ? const Center(child: CircularProgressIndicator())
                   : _locked()
-            else
+            else ...[
               for (final e in YosouExams.all) _examCard(e, key),
+              if (YosouExams.all.any((e) => _store.hasData(e.id)))
+                Padding(
+                  padding: const EdgeInsets.only(top: 12),
+                  child: Center(
+                    child: TextButton.icon(
+                      key: const ValueKey('yosou-reset-all'),
+                      onPressed: () async {
+                        if (!await confirmYosouReset(context, 'すべての予想問題')) {
+                          return;
+                        }
+                        await _store.resetAll();
+                        if (mounted) setState(() {});
+                      },
+                      icon: const Icon(Icons.restart_alt),
+                      label: const Text('すべての予想問題の答えと結果をリセット'),
+                    ),
+                  ),
+                ),
+            ],
           ],
         ),
       ),
     );
   }
 }
+
+/// リセットしてよいか聞く
+Future<bool> confirmYosouReset(
+  BuildContext context,
+  String what, {
+  bool keepHistory = false,
+}) async =>
+    await showDialog<bool>(
+      context: context,
+      builder: (c) => AlertDialog(
+        title: const Text('リセットしますか？'),
+        content: Text(
+          keepHistory
+              ? '$what の、いま解いている答えと残り時間を消して、はじめる前にもどします。'
+                    'これまでの結果は残ります。'
+              : '$what の、解いている途中の答え・残り時間・これまでの結果をすべて消します。'
+                    '元にはもどせません。',
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(c, false),
+            child: const Text('やめる'),
+          ),
+          FilledButton(
+            key: const ValueKey('yosou-reset-ok'),
+            style: FilledButton.styleFrom(backgroundColor: TsuzuriColors.wrong),
+            onPressed: () => Navigator.pop(c, true),
+            child: const Text('リセットする'),
+          ),
+        ],
+      ),
+    ) ==
+    true;
 
 String _clock(Duration d) {
   final m = d.inMinutes, s = d.inSeconds % 60;
@@ -319,6 +382,33 @@ class _YosouExamScreenState extends State<YosouExamScreen> {
     await _save();
     _startTimer();
   }
+
+  /// 答えと結果を消して、はじめる前にもどす
+  Future<void> _reset({bool keepHistory = false}) async {
+    if (!await confirmYosouReset(context, _e.title, keepHistory: keepHistory)) {
+      return;
+    }
+    _timer?.cancel();
+    speaker.stop();
+    keepHistory ? await _store.clear(_e.id) : await _store.reset(_e.id);
+    for (final c in _inputs.values) {
+      c.dispose();
+    }
+    _inputs.clear();
+    _played.clear();
+    _heard.clear();
+    _strokes.clear();
+    _index = 0;
+    _scratch = false;
+    if (mounted) setState(() => _attempt = null);
+  }
+
+  Widget _resetButton() => TextButton.icon(
+    key: const ValueKey('yosou-reset'),
+    onPressed: _reset,
+    icon: const Icon(Icons.restart_alt),
+    label: const Text('答えと結果をリセット'),
+  );
 
   Future<void> _submit({bool timeUp = false}) async {
     final a = _attempt;
@@ -470,7 +560,12 @@ class _YosouExamScreenState extends State<YosouExamScreen> {
             ),
             if (h.isNotEmpty) ...[
               const SizedBox(height: 24),
-              Text('これまでの結果', style: serif(15)),
+              Row(
+                children: [
+                  Expanded(child: Text('これまでの結果', style: serif(15))),
+                  _resetButton(),
+                ],
+              ),
               for (final r in h)
                 ListTile(
                   dense: true,
@@ -753,6 +848,12 @@ class _YosouExamScreenState extends State<YosouExamScreen> {
                                 tooltip: '原本の問題冊子',
                                 onPressed: _openBooklet,
                                 icon: const Icon(Icons.description_outlined),
+                              ),
+                              IconButton(
+                                key: const ValueKey('yosou-restart'),
+                                tooltip: '答えをリセットして、はじめから',
+                                onPressed: () => _reset(keepHistory: true),
+                                icon: const Icon(Icons.restart_alt),
                               ),
                               IconButton(
                                 key: const ValueKey('yosou-memo'),
@@ -1111,6 +1212,7 @@ class _YosouExamScreenState extends State<YosouExamScreen> {
             icon: const Icon(Icons.replay),
             label: const Text('もう一度解く'),
           ),
+          _resetButton(),
         ],
       ),
     ];

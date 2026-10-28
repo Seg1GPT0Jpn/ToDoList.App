@@ -224,4 +224,51 @@ void main() {
     );
     expect(t.takeException(), isNull);
   });
+
+  testWidgets('一覧：教科ごと・すべての答えと結果をリセットできる', (t) async {
+    await useFiles(t);
+    final ids = [for (final e in YosouExams.all.take(2)) e.id];
+    final result = {
+      'start': DateTime(2026, 10, 1).millisecondsSinceEpoch,
+      'score': 40,
+      'total': 100,
+      'spent': 600,
+    };
+    final s = await openScreen(
+      t,
+      const YosouExamListScreen(),
+      prefs: {
+        SchoolExamStore.gateKey: true,
+        YosouExamStore.historyKey: jsonEncode({
+          for (final id in ids) id: [result],
+        }),
+      },
+      frames: 3,
+    );
+    final store = YosouExamStore.of(s.personalBooks);
+    await t.enterText(find.byKey(const ValueKey('yosou-password')), 'TEST-PW');
+    await t.tap(find.byKey(const ValueKey('yosou-unlock')));
+    await _frames(t, 10);
+    expect(find.textContaining('前回 40/100 点'), findsNWidgets(2));
+
+    await t.tap(find.byKey(ValueKey('yosou-reset-${ids[0]}')));
+    await _frames(t);
+    await t.tap(find.byKey(const ValueKey('yosou-reset-ok')));
+    await _frames(t);
+    expect(store.history(ids[0]), isEmpty);
+    expect(store.history(ids[1]), hasLength(1));
+    expect(find.byKey(ValueKey('yosou-reset-${ids[0]}')), findsNothing);
+
+    await t.scrollUntilVisible(
+      find.byKey(const ValueKey('yosou-reset-all')),
+      300,
+    );
+    await t.tap(find.byKey(const ValueKey('yosou-reset-all')));
+    await _frames(t);
+    await t.tap(find.byKey(const ValueKey('yosou-reset-ok')));
+    await _frames(t);
+    expect(store.history(ids[1]), isEmpty);
+    expect(find.byKey(const ValueKey('yosou-reset-all')), findsNothing);
+    expect(t.takeException(), isNull);
+  });
 }

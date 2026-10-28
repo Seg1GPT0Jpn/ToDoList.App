@@ -49,6 +49,23 @@ class YosouExamStore {
     return _prefs.setString(attemptsKey, jsonEncode(all));
   }
 
+  /// 解いている途中の答えと、これまでの結果を消す
+  Future<void> reset(String examId) async {
+    await clear(examId);
+    final all = _read(historyKey)..remove(examId);
+    await _prefs.setString(historyKey, jsonEncode(all));
+  }
+
+  /// すべての予想問題の答えと結果を消す
+  Future<void> resetAll() async {
+    await _prefs.remove(attemptsKey);
+    await _prefs.remove(historyKey);
+  }
+
+  /// 消せる記録があるか
+  bool hasData(String examId) =>
+      attempt(examId) != null || history(examId).isNotEmpty;
+
   /// これまでの結果（新しい順）
   List<YosouResult> history(String examId) {
     final list = _read(historyKey)[examId];

@@ -226,6 +226,67 @@ void main() {
     expect(t.takeException(), isNull);
   });
 
+  testWidgets('リセット：途中の答えだけ消す／結果もふくめて消す', (t) async {
+    key = SchoolMaterials.keyFor('test-pw');
+    final sealed = SchoolMaterials.seal(
+      utf8.encode(
+        jsonEncode(
+          QuestionSet(
+            setId: 'yosou_joho',
+            worldId: 'information1',
+            origin: QuestionOrigin.original,
+            version: 1,
+            questions: _qs,
+          ).toJson(),
+        ),
+      ),
+      List.filled(16, 3),
+      key: key,
+    );
+    YosouExamFiles.loader = (asset) async => sealed;
+    final now = DateTime(2026, 10, 28, 9);
+    final s = await openScreen(
+      t,
+      YosouExamScreen(exam: _exam, keyBytes: key, now: () => now),
+      prefs: {SchoolExamStore.gateKey: true},
+      frames: 3,
+    );
+    final store = YosouExamStore.of(s.personalBooks);
+    await _frames(t);
+    await t.tap(find.byKey(const ValueKey('yosou-start')));
+    await _frames(t);
+    await t.tap(find.byKey(const ValueKey('yosou-choice-2')));
+    await t.pump();
+    expect(store.attempt('joho')!.answers, isNotEmpty);
+
+    // 解いている途中：答えだけ消して、はじめる前へ
+    await t.tap(find.byKey(const ValueKey('yosou-restart')));
+    await _frames(t);
+    expect(find.textContaining('これまでの結果は残ります'), findsOneWidget);
+    await t.tap(find.byKey(const ValueKey('yosou-reset-ok')));
+    await _frames(t);
+    expect(store.attempt('joho'), isNull);
+    expect(find.byKey(const ValueKey('yosou-start')), findsOneWidget);
+
+    // 提出したあと：結果もふくめて消す
+    await t.tap(find.byKey(const ValueKey('yosou-start')));
+    await _frames(t);
+    await t.tap(find.byKey(const ValueKey('yosou-submit')));
+    await _frames(t);
+    await t.tap(find.byKey(const ValueKey('yosou-submit-ok')));
+    await _frames(t);
+    expect(store.history('joho'), hasLength(1));
+    await t.ensureVisible(find.byKey(const ValueKey('yosou-reset')));
+    await t.tap(find.byKey(const ValueKey('yosou-reset')));
+    await _frames(t);
+    await t.tap(find.byKey(const ValueKey('yosou-reset-ok')));
+    await _frames(t);
+    expect(store.attempt('joho'), isNull);
+    expect(store.history('joho'), isEmpty);
+    expect(find.byKey(const ValueKey('yosou-start')), findsOneWidget);
+    expect(t.takeException(), isNull);
+  });
+
   testWidgets(
     '本物の小問：すべての教科で、全問を1問ずつ表示して正しく答え、提出で満点（記述をのぞく）になる',
     (t) async {
