@@ -92,6 +92,7 @@ abstract final class YosouExams {
       subjectId: 'ronhyo1',
       questionPages: 4,
       answerPages: 3,
+      smallQuestions: true,
     ),
     YosouExam(
       id: 'chem',

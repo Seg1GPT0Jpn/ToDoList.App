@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:rpg_game/rpg_game.dart';
 
-import '../app/services.dart';
 import '../app/theme.dart';
 import '../art/paper.dart';
-import '../battle/battle_screen.dart';
 import '../battle/format_answer.dart';
 import '../battle/scratchpad.dart';
 import '../quiz/figure_view.dart';
@@ -23,44 +21,12 @@ class YosouDrillMenu extends StatelessWidget {
   final YosouExam exam;
   final List<QuizQuestion> questions;
 
-  String get _worldId =>
-      ShonanSubjects.byId(exam.subjectId)?.worldId ?? 'english';
-
   void _drill(BuildContext context, String title, List<QuizQuestion> qs) =>
       Navigator.of(context).push(
         MaterialPageRoute<void>(
           builder: (_) => YosouDrillScreen(title: title, questions: qs),
         ),
       );
-
-  Future<void> _battle(
-    BuildContext context,
-    String id,
-    String title,
-    List<QuizQuestion> qs,
-  ) async {
-    final services = RpgServices.of(context);
-    final progress = await services.repository.load();
-    if (!context.mounted) return;
-    await Navigator.of(context).push(
-      MaterialPageRoute<void>(
-        builder: (_) => BattleScreen(
-          world: RpgCatalog.world(_worldId),
-          stage: YosouBattle.stage(
-            id: id,
-            title: title,
-            worldId: _worldId,
-            level: progress.level,
-            questions: qs.length,
-          ),
-          questions: qs,
-          progress: progress,
-          trial: true,
-          mode: BattleMode.sea,
-        ),
-      ),
-    );
-  }
 
   Widget _row(
     BuildContext context,
@@ -89,12 +55,6 @@ class YosouDrillMenu extends StatelessWidget {
                 icon: const Icon(Icons.format_list_numbered, size: 18),
                 label: const Text('順番に解く'),
               ),
-              TextButton.icon(
-                key: ValueKey('yosou-battle-$id'),
-                onPressed: () => _battle(context, '${exam.id}_$id', title, qs),
-                icon: const Icon(Icons.sports_martial_arts, size: 18),
-                label: const Text('バトルで解く'),
-              ),
             ],
           ),
         ],
@@ -112,9 +72,8 @@ class YosouDrillMenu extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(16, 12, 16, 32),
           children: [
             Text(
-              '予想問題の小問を、1問ずつ解きます。「順番に解く」は大問の中の順番どおり（前の小問が誘導になっている問題もそのまま）。'
-              '「バトルで解く」はいつもの RPG のバトルで、順番はばらばらになります。'
-              '本文・同じ大問の問題・計算メモは、どちらでも開けます。',
+              '予想問題の小問を、いつもの問題と同じ形で1問ずつ解きます。大問の中の順番どおりに出すので、'
+              '前の小問が誘導になっている問題もそのまま解けます。本文・同じ大問の問題・計算メモはいつでも開けます。',
               style: TextStyle(fontSize: 12, color: TsuzuriColors.inkSoft),
             ),
             const SizedBox(height: 10),

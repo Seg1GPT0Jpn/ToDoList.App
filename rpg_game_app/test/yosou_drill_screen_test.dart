@@ -4,8 +4,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:rpg_game/rpg_game.dart';
-import 'package:rpg_game_app/battle/battle_screen.dart';
 import 'package:rpg_game_app/study/school_exam_store.dart';
+import 'package:rpg_game_app/study/yosou_crop_view.dart';
 import 'package:rpg_game_app/study/yosou_drill_screens.dart';
 import 'package:rpg_game_app/study/yosou_exam_store.dart';
 import 'package:rpg_game_app/vocab/speech.dart';
@@ -102,64 +102,64 @@ void main() {
     expect(t.takeException(), isNull);
   });
 
-  testWidgets('本物のECの小問：順番にすべて表示でき、バトルでも出題できる', (t) async {
+  testWidgets('本物の小問：どの問題もはみ出さずに表示でき、選択・記入は答えられる', (t) async {
     final key = SchoolMaterials.keyFor(_password!);
-    final exam = YosouExams.byId('ec')!;
-    final files = YosouExamFiles(exam, key);
-    final qs = (await t.runAsync(files.questions))!;
-    expect(qs.length, 68);
-    await openScreen(
-      t,
-      YosouDrillMenu(exam: exam, questions: qs),
-      prefs: {SchoolExamStore.gateKey: true},
-      frames: 3,
-    );
-    expect(find.byKey(const ValueKey('yosou-drill-all')), findsOneWidget);
-    await t.tap(find.byKey(const ValueKey('yosou-drill-all')));
-    await _frames(t);
-    for (var i = 0; i < qs.length; i++) {
-      final q = qs[i];
-      final list = find
-          .descendant(
-            of: find.byKey(ValueKey('yosou-drill-${q.id}')),
-            matching: find.byType(Scrollable),
-          )
-          .first;
-      Future<void> show(String key) async {
-        await t.scrollUntilVisible(
-          find.byKey(ValueKey(key)),
-          300,
-          scrollable: list,
+    YosouImages.key = key;
+    for (final exam in YosouExams.all.where((e) => e.smallQuestions)) {
+      final qs = (await t.runAsync(YosouExamFiles(exam, key).questions))!;
+      expect(qs, isNotEmpty, reason: exam.id);
+      for (final q in qs) {
+        await openScreen(
+          t,
+          YosouDrillScreen(
+            key: ValueKey(q.id),
+            title: exam.title,
+            questions: [q],
+          ),
+          prefs: {SchoolExamStore.gateKey: true},
+          frames: 2,
         );
-        await t.pumpAndSettle();
-      }
+        if (q.figure != null) {
+          await t.runAsync(
+            () => Future<void>.delayed(const Duration(milliseconds: 50)),
+          );
+          await _frames(t, 2);
+        }
+        final list = find
+            .descendant(
+              of: find.byKey(ValueKey('yosou-drill-${q.id}')),
+              matching: find.byType(Scrollable),
+            )
+            .first;
+        Future<void> show(String k) async {
+          await t.scrollUntilVisible(
+            find.byKey(ValueKey(k)),
+            300,
+            scrollable: list,
+          );
+          await t.pumpAndSettle();
+        }
 
-      if (q.isChoice && q.isInput) {
-        await show('yosou-drill-input');
-        await t.enterText(find.byKey(const ValueKey('yosou-drill-input')), 'x');
-        await t.tap(find.byKey(const ValueKey('yosou-drill-submit')));
-      } else if (q.isChoice) {
-        await show('yosou-choice-0');
-        await t.tap(find.byKey(const ValueKey('yosou-choice-0')));
-      } else {
-        break;
+        if (q.isChoice && q.isInput) {
+          await show('yosou-drill-input');
+          await t.enterText(
+            find.byKey(const ValueKey('yosou-drill-input')),
+            q.answer,
+          );
+          await t.tap(find.byKey(const ValueKey('yosou-drill-submit')));
+          await t.pumpAndSettle();
+          await show('yosou-drill-mark');
+          expect(find.text('○ 正解'), findsOneWidget, reason: q.id);
+        } else if (q.isChoice) {
+          await show('yosou-choice-${q.answerIndex}');
+          await t.tap(find.byKey(ValueKey('yosou-choice-${q.answerIndex}')));
+          await t.pumpAndSettle();
+          await show('yosou-drill-mark');
+          expect(find.text('○ 正解'), findsOneWidget, reason: q.id);
+        }
+        expect(t.takeException(), isNull, reason: q.id);
       }
-      await t.pumpAndSettle();
-      await show('yosou-drill-next');
-      await t.tap(find.byKey(const ValueKey('yosou-drill-next')));
-      await t.pumpAndSettle();
-      expect(t.takeException(), isNull, reason: q.id);
     }
-    await t.pageBack();
-    await t.pumpAndSettle();
-    await t.tap(find.byKey(const ValueKey('yosou-battle-all')));
-    await _frames(t, 20);
-    expect(find.byType(BattleScreen), findsOneWidget);
-    expect(find.byKey(const ValueKey('open-scratchpad')), findsOneWidget);
-    expect(t.takeException(), isNull);
-    // バトルのタイマーを止める
-    await t.pumpWidget(const SizedBox());
-    await t.pump(const Duration(seconds: 5));
   }, skip: _password == null);
 
   test('ほかの教科は、小問がまだなら null', () async {

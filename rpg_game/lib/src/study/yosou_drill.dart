@@ -1,7 +1,4 @@
-import '../models/player_stats.dart';
 import '../models/question.dart';
-import '../models/stage.dart';
-import 'realm.dart';
 
 /// 予想問題を小問ごとに解く。
 ///
@@ -40,45 +37,4 @@ class YosouGroup {
   static String groupId(QuizQuestion q) =>
       q.passage?.id ??
       q.id.substring(0, q.id.lastIndexOf('_').clamp(0, q.id.length));
-}
-
-/// 予想問題のバトル（定期テストの海より時間に余裕があり、何度かまちがえても続けられる）
-abstract final class YosouBattle {
-  static StageDef stage({
-    required String id,
-    required String title,
-    required String worldId,
-    required int level,
-    required int questions,
-  }) {
-    final player = PlayerStats.forLevel(level);
-    final h = id.codeUnits.fold<int>(0, (a, c) => (a * 31 + c) & 0x7fffffff);
-    final monsters = [
-      ...VoyageMonsters.surface(StudyRealm.sea),
-      ...VoyageMonsters.deep(StudyRealm.sea),
-    ];
-    final m = monsters[h % monsters.length];
-    // ふつうの正解で、問題の数（最大12）だけ当てれば倒せる。6回まちがえると倒れる
-    final hits = questions.clamp(3, 12);
-    final attack = (player.maxHp / 6 + player.defense / 2).ceil() + 1;
-    return StageDef(
-      id: 'yosou_battle_$id',
-      worldId: worldId,
-      order: 1,
-      name: title,
-      region: '予想問題',
-      isBoss: true,
-      expReward: 0,
-      questionSetIds: const [],
-      timeLimitSeconds: 90,
-      readingTimeLimitSeconds: 240,
-      grammarTheme: title,
-      enemy: m.toEnemy(
-        id: 'yosou_enemy_$id',
-        maxHp: player.attack * hits,
-        attack: attack,
-        introLine: '「$title」…本番の前に、ここで力を試すがいい！',
-      ),
-    );
-  }
 }

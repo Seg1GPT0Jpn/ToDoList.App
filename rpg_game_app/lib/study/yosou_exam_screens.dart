@@ -384,12 +384,12 @@ class _YosouExamScreenState extends State<YosouExamScreen> {
     );
   }
 
-  /// 小問ごとに解く（RPG のバトル・順番に）
+  /// 小問ごとに解く（いつもの問題と同じ形で、1問ずつ）
   Widget _drillButton() => OutlinedButton.icon(
     key: const ValueKey('yosou-small'),
     onPressed: () => openYosouDrill(context, _e, _files),
     icon: const Icon(Icons.extension_outlined),
-    label: const Text('小問ごとに解く（バトル・順番に）'),
+    label: const Text('小問ごとに解く'),
   );
 
   // ───────── はじめる前 ─────────

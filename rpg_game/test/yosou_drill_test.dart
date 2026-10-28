@@ -53,20 +53,6 @@ void main() {
     expect(g.first.title, '大問 A');
   });
 
-  test('予想問題のバトルは、問題の数に合わせて倒せて、時間に余裕がある', () {
-    final s = YosouBattle.stage(
-      id: 'ec_all',
-      title: 'EC',
-      worldId: 'english',
-      level: 10,
-      questions: 68,
-    );
-    final p = PlayerStats.forLevel(10);
-    expect(s.enemy.maxHp, p.attack * 12);
-    expect(s.timeLimitSeconds, greaterThanOrEqualTo(60));
-    expect(s.readingTimeLimitSeconds, greaterThan(s.timeLimitSeconds));
-  });
-
   test('同梱の小問データは学校のパスワードで開け、すべて読める', () {
     final key = SchoolMaterials.keyFor(_password!);
     final withSmall = YosouExams.all.where((e) => e.smallQuestions).toList();
