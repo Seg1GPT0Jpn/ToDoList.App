@@ -172,8 +172,14 @@ void main() {
     }
   }, skip: _password == null);
 
-  test('ほかの教科は、小問がまだなら null', () async {
-    final e = YosouExams.all.firstWhere((e) => !e.smallQuestions);
+  test('小問がまだない教科は null', () async {
+    const e = YosouExam(
+      id: 'geo',
+      title: '地理総合',
+      subjectId: 'geography_general',
+      questionPages: 1,
+      answerPages: 1,
+    );
     expect(await YosouExamFiles(e, const [1]).questions(), isNull);
     expect(jsonEncode(e.questionsAsset), contains(e.id));
   });

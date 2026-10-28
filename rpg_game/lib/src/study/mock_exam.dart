@@ -56,6 +56,7 @@ abstract final class YosouExams {
       subjectId: 'gendai_kokugo',
       questionPages: 26,
       answerPages: 6,
+      smallQuestions: true,
     ),
     YosouExam(
       id: 'gengo',
