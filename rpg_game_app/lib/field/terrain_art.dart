@@ -927,6 +927,7 @@ class TerrainArt {
     required int color,
     double bob = 0,
     bool quest = false,
+    bool bubble = true,
   }) {
     final cx = r.center.dx, top = r.top + 2 - bob;
     _shadow(c, r, 16);
@@ -954,35 +955,36 @@ class TerrainArt {
     c.drawCircle(Offset(cx - 2.3, top + 9), 0.9, _fill(0xFF2E2A33));
     c.drawCircle(Offset(cx + 2.3, top + 9), 0.9, _fill(0xFF2E2A33));
     // ふきだし（頼みごとがあるときは「！」、ないときは「…」）
-    final bubble = Rect.fromCenter(
+    if (!bubble) return;
+    final mark = Rect.fromCenter(
       center: Offset(cx + 10, top - 3),
       width: 13,
       height: 10,
     );
     c.drawRRect(
-      ui.RRect.fromRectAndRadius(bubble, const ui.Radius.circular(4)),
+      ui.RRect.fromRectAndRadius(mark, const ui.Radius.circular(4)),
       _fill(0xFFFFFDF8),
     );
     c.drawRRect(
-      ui.RRect.fromRectAndRadius(bubble, const ui.Radius.circular(4)),
+      ui.RRect.fromRectAndRadius(mark, const ui.Radius.circular(4)),
       _ink..strokeWidth = 0.9,
     );
     if (quest) {
       c.drawLine(
-        Offset(bubble.center.dx, bubble.top + 2),
-        Offset(bubble.center.dx, bubble.bottom - 4),
+        Offset(mark.center.dx, mark.top + 2),
+        Offset(mark.center.dx, mark.bottom - 4),
         ui.Paint()
           ..color = const ui.Color(0xFFC62828)
           ..strokeWidth = 1.6,
       );
       c.drawCircle(
-        Offset(bubble.center.dx, bubble.bottom - 2),
+        Offset(mark.center.dx, mark.bottom - 2),
         0.9,
         _fill(0xFFC62828),
       );
     } else {
       for (final dx in [-3.0, 0.0, 3.0]) {
-        c.drawCircle(bubble.center + Offset(dx, 0), 0.9, _fill(0xFF2E2A33));
+        c.drawCircle(mark.center + Offset(dx, 0), 0.9, _fill(0xFF2E2A33));
       }
     }
   }

@@ -67,6 +67,7 @@ export 'src/story/lore.dart';
 export 'src/story/npcs.dart';
 export 'src/story/scenes.dart';
 export 'src/story/story.dart';
+export 'src/story/villagers.dart';
 export 'src/study/common_test.dart';
 export 'src/study/comprehensive_exam.dart';
 export 'src/study/daily_challenge.dart';

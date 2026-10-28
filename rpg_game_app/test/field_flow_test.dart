@@ -6,6 +6,7 @@ import 'package:rpg_game_app/art/hero_painter.dart';
 import 'package:rpg_game_app/field/field_game.dart';
 import 'package:rpg_game_app/field/field_map.dart';
 import 'package:rpg_game_app/field/field_screen.dart';
+import 'package:rpg_game_app/field/villager.dart';
 
 import 'harness.dart';
 
@@ -296,6 +297,42 @@ void main() {
     await _bump(t, g, spot);
     expect(find.textContaining('影の番人'), findsWidgets);
     expect(find.text('たたかう'), findsOneWidget);
+    expect(t.takeException(), isNull);
+    await t.pumpWidget(const SizedBox());
+    await t.pump(const Duration(seconds: 10));
+  });
+
+  testWidgets('村の住人：家の前を歩き回り、となりに来るとふきだしで話す', (t) async {
+    await openScreen(
+      t,
+      FieldScreen(
+        world: RpgCatalog.world(RpgCatalog.englishWorldId),
+        progress: RpgProgress.initial,
+      ),
+      frames: 20,
+    );
+    final g = _game(t);
+    final villagers = g.world.children.whereType<VillagerToken>().toList();
+    expect(villagers, isNotEmpty);
+    final v = villagers.first;
+    expect(v.talking, isFalse);
+    // 住人のとなりに立つ
+    final next = [
+      (col: v.cell.col + 1, row: v.cell.row),
+      (col: v.cell.col - 1, row: v.cell.row),
+      (col: v.cell.col, row: v.cell.row + 1),
+      (col: v.cell.col, row: v.cell.row - 1),
+    ].firstWhere((c) => g.map.isFloor(c.col, c.row));
+    g.player
+      ..cell = next
+      ..position = Vector2(
+        (next.col + 0.5) * tileSize,
+        (next.row + 0.5) * tileSize,
+      );
+    await _frames(t, 2);
+    expect(v.talking, isTrue);
+    // 住人は道をふさがない
+    expect(g.walkable(v.cell), isTrue);
     expect(t.takeException(), isNull);
     await t.pumpWidget(const SizedBox());
     await t.pump(const Duration(seconds: 10));

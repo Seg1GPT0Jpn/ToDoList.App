@@ -18,6 +18,7 @@ import 'field_map.dart';
 import 'landmark_art.dart';
 import 'paper_art.dart';
 import 'scenery.dart';
+import 'villager.dart';
 import 'terrain_art.dart';
 
 const double tileSize = 32;
@@ -168,8 +169,14 @@ class FieldGame extends FlameGame with KeyboardEvents {
   final Map<Cell, WarpToken> _warps = {};
   final Map<Cell, EnemyToken> _elites = {};
 
+  /// 村や町を歩き回る住人
+  final List<VillagerToken> _villagers = [];
+
   /// クリア後の裏ボス（全エリアをクリアすると、ゴールの前に現れる）
   EnemyToken? _shadow;
+
+  /// 住人と話した回数（同じ人でも、話すたびに話題を変える）
+  int _talks = 0;
 
   /// このマップのエリア（順番どおり）
   late final List<StageDef> _mapStages = [
@@ -338,6 +345,36 @@ class FieldGame extends FlameGame with KeyboardEvents {
       final token = EnemyToken(stage: Elites.of(base), home: c);
       _elites[c] = token;
       world.add(token);
+    }
+    // 家の前に住人を1人ずつ（航路にはいない）
+    for (final (i, l) in map.landmarks.indexed) {
+      if (l.kind != LandmarkKind.house) continue;
+      final door = (col: l.at.col + l.w ~/ 2, row: l.at.row + l.h);
+      Cell? start;
+      for (final c in [
+        door,
+        (col: door.col - 1, row: door.row),
+        (col: door.col + 1, row: door.row),
+        (col: door.col, row: door.row + 1),
+      ]) {
+        if (map.tileAt(c.col, c.row) == '.') {
+          start = c;
+          break;
+        }
+      }
+      if (start == null) continue;
+      final v = VillagerToken(
+        home: start,
+        color: VillagerChat.colors[i % VillagerChat.colors.length],
+        tileSize: tileSize,
+        seed: i * 31 + map.id.hashCode,
+        canWalk: (c) =>
+            map.tileAt(c.col, c.row) == '.' &&
+            _enemyAt(c) == null &&
+            !_villagers.any((o) => o.cell == c),
+      );
+      _villagers.add(v);
+      world.add(v);
     }
     // 影の番人の立ち位置：トロフィーの1つ下の床
     final goals = map.findAll('G');
@@ -565,6 +602,25 @@ class FieldGame extends FlameGame with KeyboardEvents {
     } else if (!player.moving && dir != null && dir != _bumpedDirection) {
       _queued = null;
       _tryStep(dir);
+    }
+    // 住人：となりに来たら、ひとこと話す
+    for (final (i, v) in _villagers.indexed) {
+      final d =
+          (v.cell.col - player.cell.col).abs() +
+          (v.cell.row - player.cell.row).abs();
+      if (d <= 1 && v.cooldown == 0 && !v.talking) {
+        final now = DateTime.now();
+        v.say(
+          VillagerChat.line(
+            progress: _progress,
+            stages: _mapStages,
+            terrain: map.terrainAt(v.cell.col, v.cell.row),
+            hour: now.hour,
+            day: now.difference(DateTime(2026)).inDays + _talks++,
+            who: i,
+          ),
+        );
+      }
     }
     // 近くにいる敵には「！」を出す
     for (final e in [..._enemies.values, ..._elites.values]) {
