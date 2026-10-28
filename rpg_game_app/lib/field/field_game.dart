@@ -169,8 +169,55 @@ class FieldGame extends FlameGame with KeyboardEvents {
   /// 短く押しただけの方向（歩いている途中に押されても、次の1歩として必ず進む）
   Facing? _queued;
 
+  /// タップした場所までの残りの道（1歩ずつ進む）
+  final List<Cell> _route = [];
+
+  /// タップした場所（目印を出す。着いたら null）
+  final tapTarget = ValueNotifier<Cell?>(null);
+
+  /// 歩いて通れるマス（開いた隠し通路・扉もふくむ。敵や亡霊のいるマスは通れない）
+  bool walkable(Cell c) {
+    final t = map.tileAt(c.col, c.row);
+    final floor =
+        map.isFloor(c.col, c.row) || ((t == 'H' || t == 'D') && isOpen(c));
+    return floor &&
+        _enemyAt(c) == null &&
+        !_ghosts.values.any((g) => g.cell == c);
+  }
+
+  /// 画面をタップした場所（マップの座標）まで歩く。人や敵なら、となりまで行って話しかける
+  void tapAt(Vector2 worldPoint) {
+    if (inputLocked) return;
+    final goal = (
+      col: (worldPoint.x / tileSize).floor(),
+      row: (worldPoint.y / tileSize).floor(),
+    );
+    if (goal.col < 0 ||
+        goal.row < 0 ||
+        goal.col >= map.width ||
+        goal.row >= map.height) {
+      return;
+    }
+    final path = findFieldPath(player.cell, goal, walkable);
+    _route.clear();
+    if (path == null || path.isEmpty) {
+      tapTarget.value = null;
+      return;
+    }
+    _route.addAll(path);
+    tapTarget.value = goal;
+    _bumpedDirection = null;
+  }
+
+  /// タップで歩くのをやめる（十字ボタン・キーを使ったとき、話しかけたとき）
+  void cancelRoute() {
+    _route.clear();
+    tapTarget.value = null;
+  }
+
   /// 十字ボタン・キーが押された瞬間に呼ぶ。短いタップでも取りこぼさない
   void press(Facing dir) {
+    cancelRoute();
     _queued = dir;
     // もう一度押したら、目の前の人や看板にもう一度話しかけられる
     _bumpedDirection = null;
@@ -212,6 +259,7 @@ class FieldGame extends FlameGame with KeyboardEvents {
   @override
   Future<void> onLoad() async {
     world.add(MapLayer(map, worldId: rpgWorld.id));
+    world.add(TapMarker(tapTarget));
     for (final e in map.enemySpots.entries) {
       final stage = rpgWorld.stages.where((s) => s.order == e.key).firstOrNull;
       if (stage == null) continue;
@@ -442,9 +490,27 @@ class FieldGame extends FlameGame with KeyboardEvents {
     final no = map.areaAt(player.cell.col, player.cell.row);
     if (areaNo.value != no) areaNo.value = no;
     final dir = padDirection ?? _keyDirection ?? _queued;
+    if (dir != null) cancelRoute();
     if (dir != _bumpedDirection) _bumpedDirection = null;
     if (inputLocked) {
       _queued = null;
+      cancelRoute();
+    } else if (!player.moving && _route.isNotEmpty) {
+      final next = _route.removeAt(0);
+      final d = next.col - player.cell.col;
+      final r = next.row - player.cell.row;
+      final step = d > 0
+          ? Facing.right
+          : d < 0
+          ? Facing.left
+          : r > 0
+          ? Facing.down
+          : Facing.up;
+      final before = player.cell;
+      _tryStep(step);
+      // 進めなかった（話しかけた・ふさがれた）ら、そこで止まる
+      if (player.cell == before) cancelRoute();
+      if (_route.isEmpty) tapTarget.value = null;
     } else if (!player.moving && dir != null && dir != _bumpedDirection) {
       _queued = null;
       _tryStep(dir);
@@ -1357,4 +1423,31 @@ class NpcToken extends PositionComponent {
     bob: (sin(_t * 2) + 1) * 0.8,
     quest: quest,
   );
+}
+
+/// タップした行き先の目印
+class TapMarker extends PositionComponent {
+  TapMarker(this.target) : super(priority: 1);
+
+  final ValueNotifier<Cell?> target;
+  double _t = 0;
+
+  @override
+  void update(double dt) => _t += dt;
+
+  @override
+  void render(ui.Canvas canvas) {
+    final c = target.value;
+    if (c == null) return;
+    final center = _center(c).toOffset();
+    final pulse = 0.5 + 0.5 * sin(_t * 6);
+    canvas.drawCircle(
+      center,
+      tileSize * (0.28 + 0.06 * pulse),
+      ui.Paint()
+        ..style = ui.PaintingStyle.stroke
+        ..strokeWidth = 2
+        ..color = TsuzuriColors.accent.withValues(alpha: 0.5 + 0.4 * pulse),
+    );
+  }
 }

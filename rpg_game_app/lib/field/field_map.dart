@@ -1061,3 +1061,47 @@ class _Room {
     return _Room([for (final row in tiles) row.join()], safe, chests);
   }
 }
+
+/// タップした場所までの道（となりのマスへ1歩ずつ。床だけを通る）。
+///
+/// [goal] が歩けないマス（人・看板・敵など）なら、そのとなりまで歩き、
+/// 最後に [goal] へ向かって1歩ふみ出す（話しかける・調べる）。
+/// 道がなければ null。もう着いていれば空。
+List<Cell>? findFieldPath(
+  Cell from,
+  Cell goal,
+  bool Function(Cell c) walkable, {
+  int maxCells = 20000,
+}) {
+  if (from == goal) return const [];
+  final goalWalkable = walkable(goal);
+  final prev = <Cell, Cell>{};
+  final queue = Queue<Cell>()..add(from);
+  final seen = {from};
+  Cell? end;
+  while (queue.isNotEmpty && seen.length <= maxCells) {
+    final c = queue.removeFirst();
+    for (final (dc, dr) in const [(0, -1), (1, 0), (0, 1), (-1, 0)]) {
+      final n = (col: c.col + dc, row: c.row + dr);
+      if (seen.contains(n)) continue;
+      if (n == goal) {
+        prev[n] = c;
+        end = n;
+        break;
+      }
+      if (!walkable(n)) continue;
+      seen.add(n);
+      prev[n] = c;
+      queue.add(n);
+    }
+    if (end != null) break;
+  }
+  if (end == null) return null;
+  final path = <Cell>[];
+  for (Cell? c = end; c != null && c != from; c = prev[c]) {
+    path.add(c);
+  }
+  // 歩けないマスは、となりから話しかける（最後の1歩はふみ出すだけ）
+  if (!goalWalkable && path.isEmpty) return null;
+  return path.reversed.toList();
+}

@@ -232,4 +232,47 @@ void main() {
     expect(t.takeException(), isNull);
     await _frames(t, 40);
   });
+
+  testWidgets('タップで移動：最初の敵をタップすると、となりまで歩いて話しかける', (t) async {
+    await openScreen(
+      t,
+      FieldScreen(
+        world: RpgCatalog.world(RpgCatalog.englishWorldId),
+        progress: RpgProgress.initial,
+      ),
+      frames: 20,
+    );
+    final g = _game(t);
+    // 何もない床をタップすると、そこまで歩く
+    final start = g.player.cell;
+    final floor = [
+      for (var r = 0; r < g.map.height; r++)
+        for (var c = 0; c < g.map.width; c++)
+          if (g.walkable((col: c, row: r)) &&
+              (c - start.col).abs() + (r - start.row).abs() == 3)
+            (col: c, row: r),
+    ].where((c) => findFieldPath(start, c, g.walkable)?.length == 3).first;
+    g.tapAt(
+      Vector2((floor.col + 0.5) * tileSize, (floor.row + 0.5) * tileSize),
+    );
+    expect(g.tapTarget.value, floor);
+    await _frames(t, 20);
+    expect(g.player.cell, floor);
+    expect(g.tapTarget.value, isNull);
+
+    final gate = g.map.enemySpots.entries
+        .reduce((a, b) => a.key < b.key ? a : b)
+        .value;
+    g.tapAt(Vector2((gate.col + 0.5) * tileSize, (gate.row + 0.5) * tileSize));
+    for (var i = 0; i < 80 && find.text('たたかう').evaluate().isEmpty; i++) {
+      await _frames(t, 1);
+    }
+    expect(find.text('たたかう'), findsOneWidget);
+    expect(
+      (g.player.cell.col - gate.col).abs() +
+          (g.player.cell.row - gate.row).abs(),
+      1,
+    );
+    expect(t.takeException(), isNull);
+  });
 }

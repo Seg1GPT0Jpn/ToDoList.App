@@ -865,7 +865,17 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
       body: Stack(
         children: [
           Positioned.fill(
-            child: GameWidget(game: _game, focusNode: _focus),
+            // 行きたい場所をタップすると、そこまで歩く（人や敵なら話しかける）
+            child: GestureDetector(
+              key: const ValueKey('field-tap'),
+              behavior: HitTestBehavior.opaque,
+              onTapUp: (d) => _game.tapAt(
+                _game.camera.globalToLocal(
+                  Vector2(d.localPosition.dx, d.localPosition.dy),
+                ),
+              ),
+              child: GameWidget(game: _game, focusNode: _focus),
+            ),
           ),
           // 上部の情報バー
           Positioned(
