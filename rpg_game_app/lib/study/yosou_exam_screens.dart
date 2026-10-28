@@ -666,7 +666,7 @@ class _YosouExamScreenState extends State<YosouExamScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
-            width: 64,
+            width: 78,
             child: Padding(
               padding: const EdgeInsets.only(top: 8),
               child: Text(

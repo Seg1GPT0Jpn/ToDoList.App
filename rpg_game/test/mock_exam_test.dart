@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:rpg_game/rpg_game.dart';
 import 'package:test/test.dart';
@@ -45,6 +46,7 @@ final _sheet = MockSheet.fromJson(
 );
 
 void main() {
+  _bundled();
   test('解答用紙を読み、配点の合計を出す', () {
     expect(_sheet.items.length, 4);
     expect(_sheet.total, 13);
@@ -142,4 +144,47 @@ void main() {
 abstract final class YosouAttemptFixture {
   static MockAttempt start(DateTime t) =>
       MockAttempt(examId: 'x', startedAt: t);
+}
+
+final _password = Platform.environment['SCHOOL_PASSWORD'];
+
+void _bundled() {
+  test('同梱の予想問題は学校のパスワードで開け、ページがそろい、100点満点', () {
+    final key = SchoolMaterials.keyFor(_password!);
+    for (final e in YosouExams.all) {
+      final dir = '../rpg_game_app/';
+      final sheet = MockSheet.fromJson(
+        utf8.decode(
+          SchoolMaterials.open(
+            File(dir + e.sheetAsset).readAsBytesSync(),
+            key: key,
+          )!,
+        ),
+      );
+      expect(sheet.total, 100, reason: e.id);
+      expect(
+        {for (final i in sheet.items) i.id}.length,
+        sheet.items.length,
+        reason: e.id,
+      );
+      for (final i in sheet.items) {
+        if (i.type == MockItemType.choice) {
+          for (final a in i.answers) {
+            expect(i.options, contains(a), reason: '${e.id} ${i.id}');
+          }
+        }
+        expect(i.answers, isNotEmpty, reason: '${e.id} ${i.id}');
+      }
+      for (var p = 1; p <= e.pages; p++) {
+        final img = SchoolMaterials.open(
+          File(dir + e.asset(p)).readAsBytesSync(),
+          key: key,
+        );
+        expect(SchoolMaterials.looksLikeImage(img!), isTrue,
+            reason: '${e.id} $p');
+      }
+      expect(File(dir + e.asset(e.pages + 1)).existsSync(), isFalse,
+          reason: e.id);
+    }
+  }, skip: _password == null ? 'SCHOOL_PASSWORD がないので中身は確かめない' : false);
 }

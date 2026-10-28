@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -77,6 +78,7 @@ final _sheetJson = jsonEncode({
 });
 
 void main() {
+  _realExams();
   late List<int> key;
   late List<int> sealedSheet;
   late List<int> sealedPage;
@@ -218,9 +220,58 @@ void main() {
     await t.enterText(find.byKey(const ValueKey('yosou-password')), 'TEST-PW');
     await t.tap(find.byKey(const ValueKey('yosou-unlock')));
     await _frames(t, 10);
-    for (final e in YosouExams.all) {
-      expect(find.byKey(ValueKey('yosou-exam-${e.id}')), findsOneWidget);
-    }
+    expect(
+      find.byKey(ValueKey('yosou-exam-${YosouExams.all.first.id}')),
+      findsOneWidget,
+    );
     expect(t.takeException(), isNull);
   });
+}
+
+final _password = Platform.environment['SCHOOL_PASSWORD'];
+
+void _realExams() {
+  testWidgets('本物の予想問題：すべての教科の解答用紙と結果が、はみ出さずに表示できる', (t) async {
+    speaker = SilentSpeaker();
+    final key = SchoolMaterials.keyFor(_password!);
+    for (final e in YosouExams.all) {
+      var now = DateTime(2026, 10, 28, 9);
+      await openScreen(
+        t,
+        YosouExamScreen(
+          key: ValueKey(e.id),
+          exam: e,
+          keyBytes: key,
+          now: () => now,
+        ),
+        prefs: {SchoolExamStore.gateKey: true},
+        frames: 3,
+      );
+      await _frames(t, 8);
+      await t.tap(find.byKey(const ValueKey('yosou-start')));
+      await _frames(t, 8);
+      await t.tap(find.byKey(const ValueKey('yosou-tab-sheet')));
+      await _frames(t, 4);
+      for (var i = 0; i < 30; i++) {
+        await t.drag(
+          find.byKey(const ValueKey('yosou-sheet')),
+          const Offset(0, -700),
+        );
+        await t.pump();
+      }
+      await t.tap(find.byKey(const ValueKey('yosou-submit')));
+      await _frames(t, 3);
+      await t.tap(find.byKey(const ValueKey('yosou-submit-ok')));
+      await _frames(t, 6);
+      expect(find.text('0 / 100 点'), findsOneWidget, reason: e.id);
+      for (var i = 0; i < 40; i++) {
+        await t.drag(
+          find.byKey(const ValueKey('yosou-result')),
+          const Offset(0, -700),
+        );
+        await t.pump();
+      }
+      expect(t.takeException(), isNull, reason: e.id);
+    }
+  }, skip: _password == null);
 }

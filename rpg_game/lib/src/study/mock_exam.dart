@@ -44,6 +44,69 @@ class YosouExam {
 abstract final class YosouExams {
   static const all = <YosouExam>[
     YosouExam(
+      id: 'gendai',
+      title: '現代の国語 後期中間 予想問題',
+      subjectId: 'gendai_kokugo',
+      questionPages: 26,
+      answerPages: 6,
+    ),
+    YosouExam(
+      id: 'gengo',
+      title: '言語文化 後期中間 予想問題',
+      subjectId: 'gengo_bunka',
+      questionPages: 14,
+      answerPages: 8,
+    ),
+    YosouExam(
+      id: 'math1',
+      title: '数学Ⅰ 後期中間 予想問題',
+      subjectId: 'math1',
+      questionPages: 2,
+      answerPages: 6,
+    ),
+    YosouExam(
+      id: 'mathA',
+      title: '数学A 後期中間 予想問題',
+      subjectId: 'math_a',
+      questionPages: 2,
+      answerPages: 6,
+    ),
+    YosouExam(
+      id: 'ec',
+      title: 'English Communication Ⅰ 後期中間 予想問題',
+      subjectId: 'ec1',
+      questionPages: 8,
+      answerPages: 10,
+    ),
+    YosouExam(
+      id: 'le',
+      title: 'Logic and Expression Ⅰ 後期中間 予想問題',
+      subjectId: 'ronhyo1',
+      questionPages: 4,
+      answerPages: 3,
+    ),
+    YosouExam(
+      id: 'chem',
+      title: '化学基礎 後期中間 予想問題',
+      subjectId: 'chemistry_basic',
+      questionPages: 4,
+      answerPages: 3,
+    ),
+    YosouExam(
+      id: 'bio',
+      title: '生物基礎 後期中間 予想問題',
+      subjectId: 'biology_basic',
+      questionPages: 5,
+      answerPages: 3,
+    ),
+    YosouExam(
+      id: 'kokyo',
+      title: '公共 後期中間 予想問題',
+      subjectId: 'public_economy',
+      questionPages: 9,
+      answerPages: 4,
+    ),
+    YosouExam(
       id: 'joho',
       title: '情報Ⅰ 後期中間 予想問題',
       subjectId: 'information1',
@@ -140,6 +203,7 @@ class MockItem {
   static String normalize(String s) => VocabVault.halfWidth(s)
       .toLowerCase()
       .replaceAll(RegExp('[−‐–—―]'), '-')
+      .replaceAll(RegExp('[〜~]'), '~')
       .replaceAll(RegExp(r'[\s、。・「」『』()〔〕\[\]【】]'), '');
 }
 
