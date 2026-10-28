@@ -24,6 +24,7 @@ import '../study/realm_style.dart';
 import '../study/sea_home_screen.dart';
 import '../study/sky_home_screen.dart';
 import 'promo_code_dialog.dart';
+import 'world_atlas.dart';
 
 const _subjectIcons = <String, IconData>{
   'japanese': Icons.menu_book,
@@ -331,9 +332,42 @@ class WorldMapScreen extends StatelessWidget {
           ),
         ],
         const SizedBox(height: 16),
+        Text('ノートの世界', style: serif(16)),
+        Text(
+          '国をタップすると旅立てます',
+          style: TextStyle(fontSize: 12, color: TsuzuriColors.inkSoft),
+        ),
+        const SizedBox(height: 8),
+        WorldAtlas(
+          progress: progress,
+          onOpen: (w) => _openWorld(context, w, progress),
+        ),
+        const SizedBox(height: 18),
         Text('冒険の行き先をえらぶ', style: serif(16)),
       ],
     );
+  }
+}
+
+/// ワールドへ旅立つ（まだ遊べないワールドは、行き方を案内する）
+void _openWorld(BuildContext context, WorldDef world, RpgProgress progress) {
+  final availability = RpgServices.of(context).unlock
+      .availabilityOf(progress, world);
+  if (availability == WorldAvailability.playable) {
+    Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        builder: (_) => MusicScope(
+          music: MusicDirector.fieldKey(world.id),
+          child: FieldScreen(world: world, progress: progress),
+        ),
+      ),
+    );
+  } else {
+    _WorldCard(
+      world: world,
+      progress: progress,
+      index: 0,
+    )._showLocked(context, availability);
   }
 }
 
@@ -481,16 +515,7 @@ class _WorldCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         child: InkWell(
           borderRadius: BorderRadius.circular(16),
-          onTap: () => playable
-              ? Navigator.of(context).push(
-                  MaterialPageRoute<void>(
-                    builder: (_) => MusicScope(
-                      music: MusicDirector.fieldKey(world.id),
-                      child: FieldScreen(world: world, progress: progress),
-                    ),
-                  ),
-                )
-              : _showLocked(context, availability),
+          onTap: () => _openWorld(context, world, progress),
           child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16),
