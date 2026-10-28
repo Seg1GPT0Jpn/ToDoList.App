@@ -12,6 +12,7 @@ import 'school_lesson_screens.dart';
 import 'school_material_screen.dart';
 import 'school_word_books.dart';
 import 'shonan_question_list.dart';
+import 'yosou_exam_screens.dart';
 
 /// 画面に出す文言（ここにまとめる）
 class ShonanText {
@@ -120,6 +121,20 @@ class ShonanExamListScreen extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 16),
+                Card(
+                  child: ListTile(
+                    key: const ValueKey('shonan-yosou'),
+                    leading: const Icon(Icons.timer_outlined),
+                    title: const Text('予想問題を60分で解く'),
+                    subtitle: const Text('本番と同じ時間で解いて、その場で採点'),
+                    trailing: const Icon(Icons.chevron_right),
+                    onTap: () => Navigator.of(context).push(
+                      MaterialPageRoute<void>(
+                        builder: (_) => const YosouExamListScreen(),
+                      ),
+                    ),
+                  ),
+                ),
                 Card(
                   child: ListTile(
                     key: const ValueKey('shonan-drive'),
