@@ -14,6 +14,12 @@ void main() {
     expect(s.allFeatures, isTrue);
     // 前の版で保存した設定（項目がない）は、はじめの値になる
     expect(AppSettings.fromMap(const {}).vibration, isTrue);
+    expect(AppSettings.fromMap(const {}).difficulty, 'normal');
+    expect(
+      AppSettings.fromMap(const AppSettings(difficulty: 'hard').toMap())
+          .difficulty,
+      'hard',
+    );
   });
 
   testWidgets('振動を切ると、ふるえない', (t) async {
@@ -21,8 +27,9 @@ void main() {
     t.binding.defaultBinaryMessenger.setMockMethodCallHandler(
       SystemChannels.platform,
       (call) async {
-        if (call.method == 'HapticFeedback.vibrate')
+        if (call.method == 'HapticFeedback.vibrate') {
           calls.add('${call.arguments}');
+        }
         return null;
       },
     );

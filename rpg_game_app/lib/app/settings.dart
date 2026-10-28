@@ -18,7 +18,11 @@ class AppSettings {
     this.shareUsage = true,
     this.allFeatures = false,
     this.vibration = true,
+    this.difficulty = 'normal',
   });
+
+  /// バトルのむずかしさ（BattleDifficulty の名前）
+  final String difficulty;
 
   /// 正解・ダメージなどで端末をふるわせる（Android など）
   final bool vibration;
@@ -62,6 +66,7 @@ class AppSettings {
     bool? shareUsage,
     bool? allFeatures,
     bool? vibration,
+    String? difficulty,
   }) => AppSettings(
     bgm: bgm ?? this.bgm,
     se: se ?? this.se,
@@ -74,6 +79,7 @@ class AppSettings {
     shareUsage: shareUsage ?? this.shareUsage,
     allFeatures: allFeatures ?? this.allFeatures,
     vibration: vibration ?? this.vibration,
+    difficulty: difficulty ?? this.difficulty,
   );
 
   Map<String, dynamic> toMap() => {
@@ -88,6 +94,7 @@ class AppSettings {
     'shareUsage': shareUsage,
     'allFeatures': allFeatures,
     'vibration': vibration,
+    'difficulty': difficulty,
   };
 
   factory AppSettings.fromMap(Map<String, dynamic> m) {
@@ -104,6 +111,7 @@ class AppSettings {
       shareUsage: m['shareUsage'] as bool? ?? true,
       allFeatures: m['allFeatures'] as bool? ?? false,
       vibration: m['vibration'] as bool? ?? true,
+      difficulty: m['difficulty'] as String? ?? 'normal',
     );
   }
 }

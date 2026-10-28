@@ -8,6 +8,7 @@ import '../models/player_stats.dart';
 import '../models/rpg_progress.dart';
 import '../models/stage.dart';
 import '../models/world.dart';
+import 'battle_difficulty.dart';
 import 'mastery.dart';
 
 /// 経験値付与の結果。結果画面のレベルアップ演出に使う。
@@ -134,12 +135,15 @@ class Progression {
     required StageDef stage,
     required BattleSummary summary,
     Set<String> weakUnits = const {},
+    BattleDifficulty difficulty = BattleDifficulty.normal,
   }) {
     progress = Mastery.migrate(progress);
     final alreadyCleared = progress.clearedStageIds.contains(stage.id);
     final learningBonus = LearningBonus.bonusExp(summary, weakUnits: weakUnits);
-    final gained =
-        expFor(stage, summary, alreadyCleared: alreadyCleared) + learningBonus;
+    final gained = ((expFor(stage, summary, alreadyCleared: alreadyCleared) +
+                learningBonus) *
+            difficulty.exp)
+        .round();
 
     // 間違えた問題は亡霊として残し、正解した問題は亡霊から外す
     final mistakes = {...progress.mistakes};
@@ -158,6 +162,12 @@ class Progression {
     CardDef? newCard;
     CompanionDef? rescued;
     if (summary.won) {
+      if (difficulty == BattleDifficulty.hard) {
+        updated = updated.copyWith(fieldFlags: {
+          ...updated.fieldFlags,
+          BattleDifficulty.hardFlag(stage.id),
+        });
+      }
       final prev = progress.stageRecords[stage.id];
       final better = prev == null || summary.accuracy > prev.bestAccuracy;
       updated = updated.copyWith(

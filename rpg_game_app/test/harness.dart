@@ -47,6 +47,7 @@ Future<RpgServices> openScreen(
   bool story = false,
   bool dark = false,
   bool bare = false,
+  AppSettings settings = const AppSettings(),
 }) async {
   TsuzuriColors.dark = dark;
   // 物語の場面の自動再生は、物語のテストでだけ使う
@@ -73,7 +74,7 @@ Future<RpgServices> openScreen(
       account: MockAccountService(),
       examWorlds: ExamWorldStore(p),
       meta: MetaStore(p),
-      settings: SettingsStore.memory(),
+      settings: SettingsStore.memory(settings),
       music: MusicDirector(SilentAudio()),
       classrooms: classrooms,
       tsuzuriBackend: tsuzuri,

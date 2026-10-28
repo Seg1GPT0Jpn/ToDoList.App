@@ -1,4 +1,6 @@
+import '../data/catalog.dart';
 import '../learning/learning_record.dart';
+import '../progression/battle_difficulty.dart';
 import '../models/rpg_progress.dart';
 import '../story/scenes.dart';
 import '../story/story.dart';
@@ -426,7 +428,41 @@ class Achievements {
       goal: StoryScenes.all.length,
       value: (c) => StoryScenes.unlocked(c.progress).length,
     ),
+    AchievementDef(
+      id: 'hard_1',
+      title: '腕だめし',
+      description: '「むずかしい」でエリアを1つクリアする',
+      group: AchievementGroup.battle,
+      rarity: Rarity.rare,
+      goal: 1,
+      value: (c) => _hardClears(c),
+    ),
+    AchievementDef(
+      id: 'hard_20',
+      title: '修羅の学徒',
+      description: '「むずかしい」でエリアを20クリアする',
+      group: AchievementGroup.battle,
+      rarity: Rarity.epic,
+      goal: 20,
+      value: (c) => _hardClears(c),
+    ),
+    AchievementDef(
+      id: 'hard_english',
+      title: '英語の覇者',
+      description: '「むずかしい」で英語ワールドの全エリアをクリアする',
+      group: AchievementGroup.battle,
+      rarity: Rarity.legendary,
+      goal: RpgCatalog.world(RpgCatalog.englishWorldId).stages.length,
+      value: (c) => BattleDifficulty.hardClears(
+        c.progress,
+        RpgCatalog.world(RpgCatalog.englishWorldId).stages,
+      ),
+    ),
   ];
+
+  /// 「むずかしい」でクリアしたエリアの数（どのワールドでも）
+  static int _hardClears(AchievementContext c) =>
+      c.progress.fieldFlags.where((f) => f.startsWith('hard:')).length;
 
   static int _flag(AchievementContext c, String flag) =>
       c.progress.fieldFlags.contains(flag) ? 1 : 0;

@@ -112,6 +112,16 @@ class _BattleScreenState extends State<BattleScreen>
   /// バトルの舞台の地形
   late final Terrain _terrain = battleTerrainOf(widget.stage);
 
+  /// バトルのむずかしさ（フィールドのバトルだけ。設定で選ぶ）
+  late final BattleDifficulty _difficulty = _mode == BattleMode.rpg
+      ? BattleDifficulty.byName(
+          RpgServices.maybeOf(context)?.settings.value.difficulty,
+        )
+      : BattleDifficulty.normal;
+
+  /// 答える時間（むずかしいと短い）
+  late final int _seconds = _difficulty.seconds(widget.stage.timeLimitSeconds);
+
   /// 亡霊バトルでは、間違えた問題の数に合わせた弱めの亡霊が相手
   late final EnemyDef _enemy = widget.ghost
       ? EnemyDef(
@@ -126,7 +136,7 @@ class _BattleScreenState extends State<BattleScreen>
           introLine: 'あのとき まちがえた問題…おぼえているかな？',
           defeatLine: 'もう まちがえないね…すっきりした…',
         )
-      : widget.stage.enemy;
+      : _difficulty.enemy(widget.stage.enemy);
 
   late final BattleMode _mode =
       widget.mode ??
@@ -180,10 +190,14 @@ class _BattleScreenState extends State<BattleScreen>
     player: _player,
     enemy: _enemy,
     // 共通テスト遺跡：ボスが重なって現れる連戦
-    reinforcements: widget.ghost ? const [] : widget.stage.reinforcements,
+    reinforcements: widget.ghost
+        ? const []
+        : [for (final e in widget.stage.reinforcements) _difficulty.enemy(e)],
     questions: widget.questions,
-    timeLimit: Duration(seconds: widget.stage.timeLimitSeconds),
-    readingTimeLimit: Duration(seconds: widget.stage.readingTimeLimitSeconds),
+    timeLimit: Duration(seconds: _seconds),
+    readingTimeLimit: Duration(
+      seconds: _difficulty.seconds(widget.stage.readingTimeLimitSeconds),
+    ),
     deck: [for (final id in widget.progress.battleDeck) CardDef.byId(id)],
     bossRule: widget.ghost ? BossRule.none : BossRules.of(widget.stage),
     // 装備と職業の補正（その教科のバトルで効く装備もある）
@@ -215,7 +229,7 @@ class _BattleScreenState extends State<BattleScreen>
   );
   late final _timer = AnimationController(
     vsync: this,
-    duration: Duration(seconds: widget.stage.timeLimitSeconds),
+    duration: Duration(seconds: _seconds),
   );
   late final _enemyHit = AnimationController(
     vsync: this,
@@ -900,6 +914,7 @@ class _BattleScreenState extends State<BattleScreen>
             stage: widget.stage,
             summary: summary,
             weakUnits: _weakUnits,
+            difficulty: _difficulty,
           );
     await services.repository.save(result.progress);
     var saved = result.progress;
@@ -1102,6 +1117,8 @@ class _BattleScreenState extends State<BattleScreen>
                   spacing: 6,
                   runSpacing: 4,
                   children: [
+                    if (_difficulty == BattleDifficulty.hard)
+                      const _Tag('むずかしい', Color(0xFFB03A2E)),
                     if (enemy.weakness != null)
                       _Tag(
                         '弱点：${enemy.weakness!.label}',

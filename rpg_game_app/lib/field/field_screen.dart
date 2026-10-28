@@ -849,6 +849,10 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
     Navigator.of(context).push(MaterialPageRoute<void>(builder: (_) => page));
   }
 
+  /// むずかしいでクリアしたエリアの数
+  int get _hardClears =>
+      BattleDifficulty.hardClears(_progress, widget.world.stages);
+
   @override
   Widget build(BuildContext context) {
     final stats = PlayerStats.forLevel(_progress.level);
@@ -903,6 +907,7 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
                           expToNext: PlayerStats.expToNextLevel(stats.level),
                           stars: plan == null
                               ? '★ $cleared / ${widget.world.stages.length}　'
+                                    '${_hardClears > 0 ? '👑 $_hardClears　' : ''}'
                                     '発見 ${_discovery().percent}%'
                               : '★ $cleared / ${widget.world.stages.length}　対策ゲージ ${plan.gauge}',
                         ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:rpg_game/rpg_game.dart';
+import 'package:rpg_game_app/app/settings.dart';
 import 'package:rpg_game_app/battle/battle_screen.dart';
 import 'package:rpg_game_app/battle/battle_tips.dart';
 
@@ -68,6 +69,38 @@ void main() {
     await _frames(t, 10);
     expect(find.byKey(const ValueKey('confidence-button')), findsOneWidget);
     expect(find.textContaining('必殺'), findsOneWidget);
+    await t.pumpWidget(const SizedBox());
+  });
+
+  testWidgets('むずかしい：敵が強く、答える時間が短い。「むずかしい」の札が出る', (t) async {
+    final stage = _english.stages.first;
+    await openScreen(
+      t,
+      BattleScreen(
+        world: _english,
+        stage: stage,
+        questions: _qs,
+        progress: RpgProgress.initial,
+      ),
+      settings: const AppSettings(difficulty: 'hard'),
+      size: const Size(420, 900),
+      frames: 40,
+    );
+    expect(find.text('むずかしい'), findsOneWidget);
+    // 残り時間の数字は、むずかしいの時間（ふつうより短い）をこえない
+    final secs = [
+      for (final w in t.widgetList<Text>(find.byType(Text)))
+        ?int.tryParse(w.data ?? ''),
+    ];
+    expect(secs, isNotEmpty);
+    expect(
+      secs.reduce((a, b) => a > b ? a : b),
+      lessThanOrEqualTo(BattleDifficulty.hard.seconds(stage.timeLimitSeconds)),
+    );
+    expect(
+      BattleDifficulty.hard.seconds(stage.timeLimitSeconds),
+      lessThan(stage.timeLimitSeconds),
+    );
     await t.pumpWidget(const SizedBox());
   });
 }

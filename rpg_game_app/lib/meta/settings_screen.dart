@@ -115,6 +115,35 @@ class SettingsScreen extends StatelessWidget {
                 value: s.reduceMotion,
                 onChanged: (v) => store.update(s.copyWith(reduceMotion: v)),
               ),
+              ListTile(
+                title: const Text('バトルのむずかしさ'),
+                subtitle: Text(
+                  s.difficulty == 'hard'
+                      ? '敵のHP・攻撃が上がり、答える時間が短くなります。経験値は1.3倍、クリアしたエリアに👑がつきます'
+                      : '正答率が5割くらいでも、少しずつ進めるむずかしさです',
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
+                child: SegmentedButton<String>(
+                  key: const ValueKey('difficulty'),
+                  segments: [
+                    for (final d in BattleDifficulty.values)
+                      ButtonSegment(
+                        value: d.name,
+                        label: Text(d.label),
+                        icon: Icon(
+                          d == BattleDifficulty.hard
+                              ? Icons.local_fire_department
+                              : Icons.sentiment_satisfied,
+                        ),
+                      ),
+                  ],
+                  selected: {BattleDifficulty.byName(s.difficulty).name},
+                  onSelectionChanged: (v) =>
+                      store.update(s.copyWith(difficulty: v.first)),
+                ),
+              ),
               SwitchListTile(
                 key: const ValueKey('vibration'),
                 title: const Text('振動'),

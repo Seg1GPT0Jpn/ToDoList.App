@@ -542,7 +542,8 @@ class _WorldCard extends StatelessWidget {
                     if (playable) ...[
                       // エリア数が多い（数学は90）ので、★は数とバーで表す
                       Text(
-                        '★ $cleared / ${world.stages.length}',
+                        '★ $cleared / ${world.stages.length}'
+                        '${BattleDifficulty.hardClears(progress, world.stages) > 0 ? '  👑 ${BattleDifficulty.hardClears(progress, world.stages)}' : ''}',
                         style: const TextStyle(
                           fontSize: 12,
                           color: Color(0xFFB8860B),
