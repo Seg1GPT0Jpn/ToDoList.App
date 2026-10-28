@@ -162,6 +162,8 @@ class MockItem {
     this.answers = const [],
     this.explain = '',
     this.all = false,
+    this.prompt = '',
+    this.parts = const [],
   });
 
   /// 解答用紙の中で一意な名前
@@ -183,6 +185,12 @@ class MockItem {
 
   /// choice で、正解をすべて選ぶ（完答・順不同）
   final bool all;
+
+  /// 問題文（小問ごとの問題から作った欄。結果で見せる）
+  final String prompt;
+
+  /// 完答の欄：ここにある欄がすべて正解で点になる（答えはそれぞれの id で持つ）
+  final List<MockItem> parts;
 
   static MockItem fromMap(Map<String, dynamic> m) => MockItem(
         id: m['id'] as String,
@@ -354,7 +362,16 @@ class MockAttempt {
     submittedAt = now.isAfter(limit) ? limit : now;
   }
 
-  bool answered(MockItem i) => (answers[i.id] ?? '').trim().isNotEmpty;
+  bool answered(MockItem i) => i.parts.isEmpty
+      ? (answers[i.id] ?? '').trim().isNotEmpty
+      : i.parts.any(answered);
+
+  /// 自動の採点（self は null。完答の欄は、すべて正解なら true）
+  bool? autoCheck(MockItem i) {
+    if (i.type == MockItemType.self) return null;
+    if (i.parts.isEmpty) return i.check(answers[i.id]);
+    return i.parts.every((p) => p.check(answers[p.id]) == true);
+  }
 
   /// 欄が正解か（self は自分でつけた点が満点か。まだなら null）
   bool? correct(MockItem i) {
@@ -364,7 +381,7 @@ class MockAttempt {
       final s = selfScores[i.id];
       return s == null ? null : s >= i.points;
     }
-    return i.check(answers[i.id]);
+    return autoCheck(i);
   }
 
   /// 欄の点（self でまだ点をつけていなければ null）
@@ -375,7 +392,7 @@ class MockAttempt {
       final s = selfScores[i.id];
       return s?.clamp(0, i.points);
     }
-    return i.check(answers[i.id]) == true ? i.points : 0;
+    return autoCheck(i) == true ? i.points : 0;
   }
 
   int score(MockSheet sheet) =>

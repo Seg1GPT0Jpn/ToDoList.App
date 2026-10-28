@@ -7,11 +7,12 @@ import 'package:rpg_game/rpg_game.dart';
 import '../app/services.dart';
 import '../app/theme.dart';
 import '../art/paper.dart';
+import '../battle/scratchpad.dart';
 import '../vocab/speech.dart';
 import 'school_exam_store.dart';
 import 'yosou_crop_view.dart';
-import 'yosou_drill_screens.dart';
 import 'yosou_exam_store.dart';
+import 'yosou_question_view.dart';
 
 /// 予想問題の一覧（60分で解く）
 class YosouExamListScreen extends StatefulWidget {
@@ -216,8 +217,21 @@ class _YosouExamScreenState extends State<YosouExamScreen> {
     widget.exam,
     widget.keyBytes,
   );
-  late final Future<MockSheet?> _sheet = _files.sheet();
+  late final Future<MockSheet?> _sheet = _load();
   MockAttempt? _attempt;
+
+  /// 小問ごとの問題（あれば1問ずつ出す。なければ問題冊子と解答用紙で解く）
+  List<QuizQuestion>? _qs;
+
+  /// いま出している小問
+  int _index = 0;
+
+  /// 計算メモ（問題ごと）
+  bool _scratch = false;
+  final _strokes = <String, List<List<Offset>>>{};
+
+  /// 小問の音声を流した回数
+  final _heard = <String, int>{};
   Timer? _timer;
   final _inputs = <String, TextEditingController>{};
 
@@ -249,6 +263,24 @@ class _YosouExamScreenState extends State<YosouExamScreen> {
     super.dispose();
   }
 
+  Future<MockSheet?> _load() async {
+    if (_e.smallQuestions) {
+      final qs = await _files.questions();
+      if (qs != null && qs.isNotEmpty) {
+        YosouImages.key = widget.keyBytes;
+        _qs = qs;
+        final a = _attempt;
+        if (a != null && !a.submitted) {
+          // 続きから：まだ答えていない最初の問題へ
+          final i = qs.indexWhere((q) => (a.answers[q.id] ?? '').isEmpty);
+          _index = i < 0 ? 0 : i;
+        }
+        return YosouSheet.of(qs);
+      }
+    }
+    return _files.sheet();
+  }
+
   void _startTimer() {
     _timer?.cancel();
     final a = _attempt;
@@ -278,6 +310,10 @@ class _YosouExamScreenState extends State<YosouExamScreen> {
     }
     _inputs.clear();
     _played.clear();
+    _heard.clear();
+    _strokes.clear();
+    _index = 0;
+    _scratch = false;
     final a = MockAttempt(examId: _e.id, startedAt: widget.now());
     setState(() => _attempt = a);
     await _save();
@@ -317,7 +353,11 @@ class _YosouExamScreenState extends State<YosouExamScreen> {
 
   Future<void> _confirmSubmit(MockSheet sheet) async {
     final a = _attempt!;
-    final blank = sheet.items.where((i) => !a.answered(i)).length;
+    final qs = _qs;
+    final unit = qs == null ? '欄' : '問';
+    final blank = qs == null
+        ? sheet.items.where((i) => !a.answered(i)).length
+        : qs.where((q) => (a.answers[q.id] ?? '').trim().isEmpty).length;
     final flagged = a.flags.length;
     final ok = await showDialog<bool>(
       context: context,
@@ -325,8 +365,8 @@ class _YosouExamScreenState extends State<YosouExamScreen> {
         title: const Text('提出しますか？'),
         content: Text(
           [
-            if (blank > 0) '未記入が $blank 欄あります。',
-            if (flagged > 0) '見直しの印が $flagged 欄あります。',
+            if (blank > 0) '未記入が $blank $unitあります。',
+            if (flagged > 0) '見直しの印が $flagged $unitあります。',
             '提出すると答えは直せません。',
           ].join('\n'),
         ),
@@ -384,14 +424,6 @@ class _YosouExamScreenState extends State<YosouExamScreen> {
     );
   }
 
-  /// 小問ごとに解く（いつもの問題と同じ形で、1問ずつ）
-  Widget _drillButton() => OutlinedButton.icon(
-    key: const ValueKey('yosou-small'),
-    onPressed: () => openYosouDrill(context, _e, _files),
-    icon: const Icon(Icons.extension_outlined),
-    label: const Text('小問ごとに解く'),
-  );
-
   // ───────── はじめる前 ─────────
 
   Widget _intro(MockSheet sheet) {
@@ -406,7 +438,7 @@ class _YosouExamScreenState extends State<YosouExamScreen> {
             const SizedBox(height: 8),
             Text(
               '時間 ${_e.minutes}分（1問ごとの制限なし）・${sheet.total}点満点・'
-              '${sheet.items.length}欄・問題冊子 ${_e.questionPages}ページ',
+              '${_qs == null ? '${sheet.items.length}欄・問題冊子 ${_e.questionPages}ページ' : '小問 ${_qs!.length}問'}',
             ),
             if (sheet.note.isNotEmpty) ...[
               const SizedBox(height: 6),
@@ -417,10 +449,16 @@ class _YosouExamScreenState extends State<YosouExamScreen> {
             ],
             const SizedBox(height: 12),
             Text(
-              '・「問題冊子」と「解答用紙」を切りかえて解きます。\n'
-              '・迷った欄には見直しの印をつけられます。\n'
-              '・時間になると自動で提出します。一時停止もできます（本番のつもりなら止めずに）。\n'
-              '・記述や計算の過程は、提出後に模範解答を見て自分で点をつけます。',
+              _qs == null
+                  ? '・「問題冊子」と「解答用紙」を切りかえて解きます。\n'
+                        '・迷った欄には見直しの印をつけられます。\n'
+                        '・時間になると自動で提出します。一時停止もできます（本番のつもりなら止めずに）。\n'
+                        '・記述や計算の過程は、提出後に模範解答を見て自分で点をつけます。'
+                  : '・小問が1問ずつ出ます。「前へ」「次へ」や問題の一覧で、自由に行き来できます。\n'
+                        '・答えはその場では採点しません。全部解いたら「提出」で、最後にまとめて採点します。\n'
+                        '・本文・同じ大問の問題・計算メモ・原本の問題冊子は、いつでも開けます。\n'
+                        '・迷った問題には見直しの印をつけられます。時間になると自動で提出します。\n'
+                        '・記述は、提出後に模範解答と採点基準を見て自分で点をつけます。',
               style: TextStyle(fontSize: 13, color: TsuzuriColors.inkSoft),
             ),
             const SizedBox(height: 20),
@@ -430,10 +468,6 @@ class _YosouExamScreenState extends State<YosouExamScreen> {
               icon: const Icon(Icons.play_arrow),
               label: Text('はじめる（${_e.minutes}分）'),
             ),
-            if (_e.smallQuestions) ...[
-              const SizedBox(height: 10),
-              _drillButton(),
-            ],
             if (h.isNotEmpty) ...[
               const SizedBox(height: 24),
               Text('これまでの結果', style: serif(15)),
@@ -460,6 +494,7 @@ class _YosouExamScreenState extends State<YosouExamScreen> {
   // ───────── 解く ─────────
 
   Widget _solving(MockSheet sheet, MockAttempt a) {
+    if (_qs case final qs?) return _smallSolving(sheet, a, qs);
     final left = a.remaining(widget.now(), _e.minutes);
     final done = sheet.items.where(a.answered).length;
     final low = left < const Duration(minutes: 5);
@@ -535,6 +570,278 @@ class _YosouExamScreenState extends State<YosouExamScreen> {
           children: [a.paused ? _pausedCover() : booklet, answers],
         ),
       ),
+    );
+  }
+
+  // ───────── 小問を1問ずつ解く ─────────
+
+  void _go(int i) {
+    final qs = _qs!;
+    if (i < 0 || i >= qs.length) return;
+    speaker.stop();
+    setState(() {
+      _index = i;
+      _scratch = false;
+    });
+  }
+
+  List<QuizQuestion> _siblings(QuizQuestion q) {
+    final g = YosouGroup.groupId(q);
+    return [
+      for (final x in _qs!)
+        if (YosouGroup.groupId(x) == g) x,
+    ];
+  }
+
+  void _openBooklet() => Navigator.of(context).push(
+    MaterialPageRoute<void>(
+      builder: (_) => Scaffold(
+        appBar: AppBar(title: Text('問題冊子（原本）', style: serif(16))),
+        body: YosouPages(
+          files: _files,
+          from: 1,
+          to: _e.questionPages,
+          keyPrefix: 'yosou-q',
+        ),
+      ),
+    ),
+  );
+
+  /// 問題の一覧（答えた・見直しの印）。タップでその問題へ
+  void _openList(MockAttempt a) {
+    final qs = _qs!;
+    showModalBottomSheet<void>(
+      context: context,
+      isScrollControlled: true,
+      builder: (c) => SafeArea(
+        child: ConstrainedBox(
+          constraints: BoxConstraints(
+            maxHeight: MediaQuery.sizeOf(c).height * 0.75,
+          ),
+          child: ListView(
+            key: const ValueKey('yosou-list'),
+            shrinkWrap: true,
+            padding: const EdgeInsets.fromLTRB(16, 16, 16, 24),
+            children: [
+              Text(
+                '答えた ${qs.where((q) => (a.answers[q.id] ?? '').trim().isNotEmpty).length}/${qs.length}'
+                '・見直し ${a.flags.length}',
+                style: serif(15),
+              ),
+              for (final g in YosouGroup.of(qs)) ...[
+                Padding(
+                  padding: const EdgeInsets.only(top: 12, bottom: 4),
+                  child: Text(g.title, style: const TextStyle(fontSize: 13)),
+                ),
+                Wrap(
+                  spacing: 6,
+                  runSpacing: 6,
+                  children: [
+                    for (final q in g.questions) _listChip(c, a, qs.indexOf(q)),
+                  ],
+                ),
+              ],
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _listChip(BuildContext c, MockAttempt a, int i) {
+    final q = _qs![i];
+    final done = (a.answers[q.id] ?? '').trim().isNotEmpty;
+    final flagged = a.flags.contains(q.id);
+    return InkWell(
+      key: ValueKey('yosou-go-${i + 1}'),
+      borderRadius: BorderRadius.circular(8),
+      onTap: () {
+        Navigator.of(c).pop();
+        _go(i);
+      },
+      child: Container(
+        width: 46,
+        height: 40,
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          color: done ? TsuzuriColors.accent.withValues(alpha: 0.22) : null,
+          border: Border.all(
+            color: i == _index ? TsuzuriColors.accent : TsuzuriColors.inkSoft,
+            width: i == _index ? 2.5 : 1,
+          ),
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              '${i + 1}',
+              style: const TextStyle(fontWeight: FontWeight.w700),
+            ),
+            if (flagged)
+              const Icon(Icons.flag, size: 12, color: TsuzuriColors.stamp),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _smallSolving(MockSheet sheet, MockAttempt a, List<QuizQuestion> qs) {
+    final left = a.remaining(widget.now(), _e.minutes);
+    final low = left < const Duration(minutes: 5);
+    final q = qs[_index];
+    final flagged = a.flags.contains(q.id);
+    final done = qs.where((x) => (a.answers[x.id] ?? '').trim().isNotEmpty);
+    final last = _index + 1 >= qs.length;
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          '第${_index + 1}問 / ${qs.length}',
+          key: const ValueKey('yosou-number'),
+          style: serif(15),
+        ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 4),
+            child: Center(
+              child: Text(
+                a.paused ? '一時停止中' : 'のこり ${_clock(left)}',
+                key: const ValueKey('yosou-clock'),
+                style: TextStyle(
+                  fontWeight: FontWeight.w800,
+                  fontFeatures: const [FontFeature.tabularFigures()],
+                  color: low ? TsuzuriColors.wrong : TsuzuriColors.ink,
+                ),
+              ),
+            ),
+          ),
+          IconButton(
+            key: const ValueKey('yosou-pause'),
+            tooltip: a.paused ? '再開' : '一時停止',
+            onPressed: _togglePause,
+            icon: Icon(a.paused ? Icons.play_arrow : Icons.pause),
+          ),
+          TextButton(
+            key: const ValueKey('yosou-submit'),
+            onPressed: () => _confirmSubmit(sheet),
+            child: const Text('提出'),
+          ),
+        ],
+      ),
+      body: a.paused
+          ? _pausedCover()
+          : NotebookPaper(
+              child: Stack(
+                children: [
+                  Positioned.fill(
+                    child: Column(
+                      children: [
+                        Material(
+                          color: Colors.transparent,
+                          child: Row(
+                            children: [
+                              const SizedBox(width: 4),
+                              TextButton.icon(
+                                key: const ValueKey('yosou-list-open'),
+                                onPressed: () => _openList(a),
+                                icon: const Icon(Icons.grid_view, size: 18),
+                                label: Text('一覧（${done.length}/${qs.length}）'),
+                              ),
+                              const Spacer(),
+                              IconButton(
+                                key: const ValueKey('yosou-booklet'),
+                                tooltip: '原本の問題冊子',
+                                onPressed: _openBooklet,
+                                icon: const Icon(Icons.description_outlined),
+                              ),
+                              IconButton(
+                                key: const ValueKey('yosou-memo'),
+                                tooltip: '計算メモ',
+                                onPressed: () =>
+                                    setState(() => _scratch = true),
+                                icon: const Icon(Icons.edit_note),
+                              ),
+                              IconButton(
+                                key: ValueKey('yosou-flag-${q.id}'),
+                                tooltip: '見直しの印',
+                                onPressed: () {
+                                  flagged
+                                      ? a.flags.remove(q.id)
+                                      : a.flags.add(q.id);
+                                  _save();
+                                  setState(() {});
+                                },
+                                icon: Icon(
+                                  flagged ? Icons.flag : Icons.outlined_flag,
+                                  color: flagged
+                                      ? TsuzuriColors.stamp
+                                      : TsuzuriColors.inkSoft,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        const Divider(height: 1),
+                        Expanded(
+                          child: YosouQuestionView(
+                            key: ValueKey('yosou-view-${q.id}'),
+                            question: q,
+                            number: _index + 1,
+                            total: qs.length,
+                            siblings: _siblings(q),
+                            answers: a.answers,
+                            onAnswer: (v) => _set(q.id, v),
+                            onJump: (s) => _go(qs.indexOf(s)),
+                            heard: _heard[q.id] ?? 0,
+                            onListen: () => setState(
+                              () => _heard[q.id] = (_heard[q.id] ?? 0) + 1,
+                            ),
+                          ),
+                        ),
+                        const Divider(height: 1),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(10, 6, 10, 8),
+                          child: Row(
+                            children: [
+                              OutlinedButton.icon(
+                                key: const ValueKey('yosou-prev'),
+                                onPressed: _index == 0
+                                    ? null
+                                    : () => _go(_index - 1),
+                                icon: const Icon(Icons.chevron_left),
+                                label: const Text('前へ'),
+                              ),
+                              const Spacer(),
+                              if (last)
+                                FilledButton.icon(
+                                  key: const ValueKey('yosou-next'),
+                                  onPressed: () => _confirmSubmit(sheet),
+                                  icon: const Icon(Icons.done_all),
+                                  label: const Text('提出する'),
+                                )
+                              else
+                                FilledButton.icon(
+                                  key: const ValueKey('yosou-next'),
+                                  onPressed: () => _go(_index + 1),
+                                  icon: const Icon(Icons.chevron_right),
+                                  label: const Text('次へ'),
+                                ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  if (_scratch)
+                    Positioned.fill(
+                      child: ScratchpadOverlay(
+                        strokes: _strokes.putIfAbsent(q.id, () => []),
+                        onClose: () => setState(() => _scratch = false),
+                      ),
+                    ),
+                ],
+              ),
+            ),
     );
   }
 
@@ -779,7 +1086,6 @@ class _YosouExamScreenState extends State<YosouExamScreen> {
             icon: const Icon(Icons.description_outlined),
             label: const Text('問題冊子'),
           ),
-          if (_e.smallQuestions) _drillButton(),
           FilledButton.tonalIcon(
             key: const ValueKey('yosou-retry'),
             onPressed: () async {
@@ -838,7 +1144,17 @@ class _YosouExamScreenState extends State<YosouExamScreen> {
   Widget _itemResult(MockSheet sheet, MockItem i, MockAttempt a) {
     final ok = a.correct(i);
     final got = a.scoreOf(i);
-    final mine = (a.answers[i.id] ?? '').trim();
+    String yours(MockItem x) {
+      final v = (a.answers[x.id] ?? '').trim();
+      return x.all ? v.replaceAll(',', '・') : v;
+    }
+
+    final mine = i.parts.isEmpty
+        ? yours(i)
+        : i.parts.any((p) => yours(p).isNotEmpty)
+        ? [for (final p in i.parts) yours(p).isEmpty ? '（未記入）' : yours(p)]
+              .join(' ／ ')
+        : '';
     final mark = ok == null
         ? '？'
         : ok
@@ -880,14 +1196,16 @@ class _YosouExamScreenState extends State<YosouExamScreen> {
                 Text('${got ?? '−'}/${i.points}点'),
               ],
             ),
+            if (i.prompt.isNotEmpty)
+              Padding(
+                padding: const EdgeInsets.only(top: 4),
+                child: Text(
+                  i.prompt,
+                  style: const TextStyle(fontSize: 13, height: 1.4),
+                ),
+              ),
             const SizedBox(height: 4),
-            Text(
-              'あなたの答え：${mine.isEmpty
-                  ? '（未記入）'
-                  : i.all
-                  ? mine.replaceAll(',', '・')
-                  : mine}',
-            ),
+            Text('あなたの答え：${mine.isEmpty ? '（未記入）' : mine}'),
             Text(
               i.type == MockItemType.self
                   ? '模範解答：$correctText'
@@ -928,7 +1246,7 @@ class _YosouExamScreenState extends State<YosouExamScreen> {
                     if (a.overrides.containsKey(i.id)) {
                       a.overrides.remove(i.id);
                     } else {
-                      a.overrides[i.id] = !(i.check(a.answers[i.id]) ?? false);
+                      a.overrides[i.id] = !(a.autoCheck(i) ?? false);
                     }
                     _changed(sheet);
                   },

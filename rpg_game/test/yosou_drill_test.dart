@@ -53,6 +53,53 @@ void main() {
     expect(g.first.title, '大問 A');
   });
 
+  test('小問から解答用紙を作る：配点・完答・形式ごとの答え', () {
+    final sheet = YosouSheet.of([
+      _q('a1', passage: 'A', tags: const ['yosou', 'pt:3']),
+      _q('a2', passage: 'A', tags: const ['yosou', 'pt:2', 'set:a2']),
+      _q('a3', passage: 'A', tags: const ['yosou', 'pt:2', 'set:a2']),
+      QuizQuestion(
+        id: 'b1',
+        category: QuestionCategory.reading,
+        prompt: '書こう',
+        choices: const ['x', 'y', 'z', 'w'],
+        accepted: const ['ex'],
+        tags: const ['yosou'],
+        passage: const Passage(id: 'B', title: '大問 B', paragraphs: ['本文']),
+      ),
+      QuizQuestion(
+        id: 'b2',
+        category: QuestionCategory.reading,
+        format: QuestionFormat.written,
+        prompt: '説明しよう',
+        written:
+            WrittenSpec(modelAnswer: '模範', rubric: const [RubricItem('要点', 4)]),
+        tags: const ['yosou', 'pt:4'],
+        passage: const Passage(id: 'B', title: '大問 B', paragraphs: ['本文']),
+      ),
+    ]);
+    expect([for (final s in sheet.sections) s.title], ['大問 A', '大問 B']);
+    expect(sheet.total, 3 + 2 + 1 + 4);
+    final items = sheet.items.toList();
+    expect(
+        [for (final i in items) i.label], ['第1問', '第2〜3問（完答）', '第4問', '第5問']);
+    expect(items[0].type, MockItemType.choice);
+    expect(items[0].answers, ['a1-0']);
+    expect(items[2].type, MockItemType.text);
+    expect(items[2].answers, ['x', 'ex']);
+    expect(items[3].type, MockItemType.self);
+    expect(items[3].prompt, '説明しよう');
+
+    final a = MockAttempt(examId: 'e', startedAt: DateTime(2026))
+      ..answers.addAll({'a1': 'a1-0', 'a2': 'a2-0', 'b1': 'ＥＸ'});
+    expect(a.answered(items[1]), isTrue);
+    expect(a.scoreOf(items[1]), 0, reason: '完答なので片方だけでは0点');
+    a.answers['a3'] = 'a3-0';
+    expect(a.scoreOf(items[1]), 2);
+    expect(a.score(sheet), 3 + 2 + 1);
+    expect(a.unscored(sheet), [items[3]]);
+  });
+
   test('同梱の小問データは学校のパスワードで開け、すべて読める', () {
     final key = SchoolMaterials.keyFor(_password!);
     final withSmall = YosouExams.all.where((e) => e.smallQuestions).toList();
@@ -64,9 +111,12 @@ void main() {
             as Map<String, dynamic>,
       );
       expect(set.questions.length, greaterThan(10), reason: e.id);
+      expect(YosouSheet.of(set.questions).total, 100, reason: e.id);
       for (final q in set.questions) {
         expect(q.tags, contains(QuizQuestion.yosouTag), reason: q.id);
         expect(q.passage, isNotNull, reason: q.id);
+        expect(q.tags.where((t) => t.startsWith('pt:')), hasLength(1),
+            reason: q.id);
         if (q.figure != null) {
           expect(FigureSpec.problems(q.figure!), isEmpty, reason: q.id);
         }
