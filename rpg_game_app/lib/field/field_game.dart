@@ -167,6 +167,15 @@ class FieldGame extends FlameGame with KeyboardEvents {
   final Map<Cell, SealToken> _seals = {};
   final Map<Cell, WarpToken> _warps = {};
   final Map<Cell, EnemyToken> _elites = {};
+
+  /// クリア後の裏ボス（全エリアをクリアすると、ゴールの前に現れる）
+  EnemyToken? _shadow;
+
+  /// このマップのエリア（順番どおり）
+  late final List<StageDef> _mapStages = [
+    for (final s in rpgWorld.stages)
+      if (map.enemySpots.containsKey(s.order)) s,
+  ]..sort((a, b) => a.order.compareTo(b.order));
   final Map<Cell, NpcToken> _npcs = {};
 
   /// 画面の十字ボタンで押されている方向
@@ -330,6 +339,15 @@ class FieldGame extends FlameGame with KeyboardEvents {
       _elites[c] = token;
       world.add(token);
     }
+    // 影の番人の立ち位置：トロフィーの1つ下の床
+    final goals = map.findAll('G');
+    if (goals.isNotEmpty && _mapStages.isNotEmpty && chestVariants) {
+      final g = goals.first;
+      final spot = (col: g.col, row: g.row + 1);
+      if (map.isFloor(spot.col, spot.row)) {
+        _shadow = EnemyToken(stage: ShadowKeeper.of(_mapStages), home: spot);
+      }
+    }
     if (darknessOf != null) world.add(LightLayer(map, darknessOf!));
     player = PlayerToken(from == null ? map.start : map.spawnFrom(from))
       ..vehicleAt = (c) => Vehicle.of(map.terrainAt(c.col, c.row));
@@ -372,6 +390,18 @@ class FieldGame extends FlameGame with KeyboardEvents {
         token.removeFromParent();
       } else if (token.parent == null) {
         world.add(token);
+      }
+    }
+    // 影の番人：全エリアをクリアすると現れ、倒すといなくなる
+    if (_shadow case final shadow?) {
+      final show =
+          ShadowKeeper.appears(progress, _mapStages) &&
+          !_cleared(progress, shadow.stage);
+      shadow.priority = shadow.cell.row * 10 + 4;
+      if (!show) {
+        shadow.removeFromParent();
+      } else if (shadow.parent == null) {
+        world.add(shadow);
       }
     }
     for (final token in _enemies.values) {
@@ -465,6 +495,8 @@ class FieldGame extends FlameGame with KeyboardEvents {
     }
     final elite = _elites[c];
     if (elite != null && !elite.cleared) return elite;
+    final shadow = _shadow;
+    if (shadow != null && shadow.cell == c && shadow.isMounted) return shadow;
     return null;
   }
 
@@ -624,9 +656,15 @@ class FieldGame extends FlameGame with KeyboardEvents {
         final bossCleared = rpgWorld.stages
             .where((s) => map.enemySpots.containsKey(s.order))
             .every((s) => _cleared(_progress, s));
+        final shadowDown =
+            _mapStages.isNotEmpty &&
+            ShadowKeeper.defeated(_progress, _mapStages);
         onMessage(
-          bossCleared
+          shadowDown
+              ? '${map.goalText}が虹色にかがやいている。影の番人もたおした、完全制覇だ！'
+              : bossCleared
               ? '${map.goalText}がきらきら光っている。制覇おめでとう！'
+                    '${_shadow != null ? '…トロフィーの前に、だれかの影が立っている。' : ''}'
               : '${map.goalText}がある。…でも、まだ手が届かない。',
         );
         return;

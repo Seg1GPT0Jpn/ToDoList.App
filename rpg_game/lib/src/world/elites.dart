@@ -2,6 +2,7 @@ import '../battle/cards.dart';
 import '../data/catalog.dart';
 import '../models/enemy.dart';
 import '../models/stage.dart';
+import 'shadow_keeper.dart';
 
 /// フィールドの寄り道にいる「強敵」。
 ///
@@ -72,6 +73,7 @@ class BossRules {
   /// ほかのボスは「5問中4問の試練」。
   static BossRule of(StageDef stage) {
     if (Elites.isElite(stage.id)) return BossRule.chain3;
+    if (ShadowKeeper.isShadow(stage.id)) return BossRule.finale;
     if (!stage.isBoss) return BossRule.none;
     // 共通テスト遺跡はボスの連戦そのものが特別ルール
     if (stage.reinforcements.isNotEmpty) return BossRule.none;

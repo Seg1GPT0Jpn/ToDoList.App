@@ -6,6 +6,7 @@ import '../story/scenes.dart';
 import '../story/story.dart';
 import '../versus/versus_match.dart';
 import '../world/elites.dart';
+import '../world/shadow_keeper.dart';
 import 'enemy_species.dart';
 import 'journal.dart';
 
@@ -458,7 +459,29 @@ class Achievements {
         RpgCatalog.world(RpgCatalog.englishWorldId).stages,
       ),
     ),
+    AchievementDef(
+      id: 'shadow_1',
+      title: '影を払いし者',
+      description: '影の番人（全エリアをクリアすると、ゴールの間に現れる）を1体倒す',
+      group: AchievementGroup.battle,
+      rarity: Rarity.epic,
+      goal: 1,
+      value: (c) => _shadows(c),
+    ),
+    AchievementDef(
+      id: 'shadow_5',
+      title: '影の狩人',
+      description: '影の番人を5体倒す',
+      group: AchievementGroup.battle,
+      rarity: Rarity.legendary,
+      goal: 5,
+      value: (c) => _shadows(c),
+    ),
   ];
+
+  /// 倒した影の番人の数
+  static int _shadows(AchievementContext c) =>
+      c.progress.clearedStageIds.where(ShadowKeeper.isShadow).length;
 
   /// 「むずかしい」でクリアしたエリアの数（どのワールドでも）
   static int _hardClears(AchievementContext c) =>

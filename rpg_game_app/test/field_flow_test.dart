@@ -275,4 +275,29 @@ void main() {
     );
     expect(t.takeException(), isNull);
   });
+
+  testWidgets('全エリアをクリアすると、ゴールの前に影の番人が現れ、戦える', (t) async {
+    final english = RpgCatalog.world(RpgCatalog.englishWorldId);
+    await openScreen(
+      t,
+      FieldScreen(
+        world: english,
+        progress: RpgProgress.initial.copyWith(
+          clearedStageIds: {for (final s in english.stages) s.id},
+        ),
+      ),
+      frames: 20,
+    );
+    final g = _game(t);
+    final goal = g.map.findAll('G').first;
+    final spot = (col: goal.col, row: goal.row + 1);
+    // 影の番人のマスは通れない（敵がいる）
+    expect(g.walkable(spot), isFalse);
+    await _bump(t, g, spot);
+    expect(find.textContaining('影の番人'), findsWidgets);
+    expect(find.text('たたかう'), findsOneWidget);
+    expect(t.takeException(), isNull);
+    await t.pumpWidget(const SizedBox());
+    await t.pump(const Duration(seconds: 10));
+  });
 }
