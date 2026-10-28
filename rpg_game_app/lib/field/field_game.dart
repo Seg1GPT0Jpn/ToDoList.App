@@ -15,6 +15,7 @@ import '../art/hero_painter.dart';
 import '../art/vehicle_painter.dart';
 import 'ambient.dart';
 import 'field_map.dart';
+import 'landmark_art.dart';
 import 'paper_art.dart';
 import 'scenery.dart';
 import 'terrain_art.dart';
@@ -634,6 +635,11 @@ class FieldGame extends FlameGame with KeyboardEvents {
         final portal = map.portals[target];
         if (portal != null) onPortal(portal);
         return;
+      case 'L':
+        _bumpedDirection = dir;
+        final mark = map.landmarkAt(target);
+        if (mark != null) onMessage('${mark.kind.label}：${mark.kind.text}');
+        return;
     }
     if (map.isFloor(target.col, target.row)) player.walkTo(target);
   }
@@ -684,6 +690,19 @@ class MapLayer extends PositionComponent {
     // 地面・道・水・壁・木は、マス目が目立たない新しい描き方（航路はこれまでどおり）
     final scenery = Scenery.supports(map);
     if (scenery) Scenery.paint(c, map, worldId, tileSize);
+    // 大きな目印（上から順に、手前のものがあとになるように）
+    for (final l in [...map.landmarks]..sort((a, b) => a.at.row - b.at.row)) {
+      LandmarkArt.paint(
+        c,
+        Rect.fromLTWH(
+          l.at.col * tileSize,
+          l.at.row * tileSize,
+          l.w * tileSize,
+          l.h * tileSize,
+        ),
+        l.kind,
+      );
+    }
     // 床（方眼ノートの目）をマスごとに描く。地形ごとに色と模様が変わる
     for (var r = 0; !scenery && r < map.height; r++) {
       for (var col = 0; col < map.width; col++) {

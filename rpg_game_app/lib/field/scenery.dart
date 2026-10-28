@@ -316,8 +316,8 @@ abstract final class Scenery {
       map,
       ts,
       // 外の道は、けもの道（_trails）で描く。建物の中のじゅうたんだけ帯にする
-      (col, r) =>
-          (tile(col, r) == 'R' || tile(col, r) == 'B') && !_outdoor(t(col, r)),
+      // （建物の中のじゅうたんも、大きな道として _trails で描く）
+      (col, r) => false,
       edge: (col, r) => _paletteOf(t(col, r)).pathEdge,
       fill: (col, r) => _paletteOf(t(col, r)).path,
       grow: 0.08,
@@ -455,18 +455,12 @@ abstract final class Scenery {
 
     _canopies(c, map, ts, mass);
 
-    // ---- 建物の中・町の障害物は1つずつ（影は上で落とした） ----
-    final rnd = Random(7);
+    // ---- 建物の中の障害物（柱・本棚・木箱・機械）。上の行から順に、マスより高く描く ----
     for (var r = 0; r < h; r++) {
       for (var col = 0; col < w; col++) {
         final k = tile(col, r);
         if ((k == 'T' || k == 'H') && !_outdoor(t(col, r))) {
-          TerrainArt.obstacle(
-            c,
-            Rect.fromLTWH(col * ts, r * ts, ts, ts),
-            rnd,
-            t(col, r),
-          );
+          _indoorObstacle(c, map, col, r, ts);
         }
       }
     }
@@ -487,30 +481,46 @@ abstract final class Scenery {
   static bool _walk(FieldMap map, int col, int r) =>
       map.isFloor(col, r) || const {'B', 'R'}.contains(map.tileAt(col, r));
 
-  /// [from] から [to] までのいちばん近い道（マスの列）
+  /// [from] から [to] までの道（マスの列）。曲がる回数が少ない道を選ぶ
   static List<Cell>? _route(FieldMap map, Cell from, Set<Cell> to) {
-    final prev = <Cell, Cell>{};
-    final seen = {from};
-    final queue = <Cell>[from];
-    for (var i = 0; i < queue.length; i++) {
-      final c = queue[i];
-      if (to.contains(c) && c != from) {
-        final out = [c];
-        for (var p = prev[c]; p != null; p = prev[p]) {
-          out.add(p);
-        }
-        return out.reversed.toList();
+    const dirs = [(0, -1), (1, 0), (0, 1), (-1, 0)];
+    // 状態 = (マス, 向き)。1歩 = 1、曲がると +2
+    final best = <(Cell, int), int>{};
+    final prev = <(Cell, int), (Cell, int)>{};
+    final open = <(int, Cell, int)>[(0, from, -1)];
+    (Cell, int)? end;
+    while (open.isNotEmpty) {
+      // 小さいマップなので、いちばん安いものを線形に探す
+      var bi = 0;
+      for (var i = 1; i < open.length; i++) {
+        if (open[i].$1 < open[bi].$1) bi = i;
       }
-      for (final (dc, dr) in const [(0, -1), (1, 0), (0, 1), (-1, 0)]) {
-        final n = (col: c.col + dc, row: c.row + dr);
-        if (seen.contains(n)) continue;
+      final (cost, cell, dir) = open.removeAt(bi);
+      if (best[(cell, dir)] != null && best[(cell, dir)]! < cost) continue;
+      if (to.contains(cell) && cell != from) {
+        end = (cell, dir);
+        break;
+      }
+      for (var d = 0; d < 4; d++) {
+        final n = (col: cell.col + dirs[d].$1, row: cell.row + dirs[d].$2);
         if (!_walk(map, n.col, n.row) && !to.contains(n)) continue;
-        seen.add(n);
-        prev[n] = c;
-        queue.add(n);
+        final nc = cost + 1 + (dir >= 0 && dir != d ? 2 : 0);
+        final key = (n, d);
+        if (best[key] != null && best[key]! <= nc) continue;
+        best[key] = nc;
+        prev[key] = (cell, dir);
+        open.add((nc, n, d));
       }
     }
-    return null;
+    if (end == null) return null;
+    final out = <Cell>[];
+    (Cell, int)? k = end;
+    while (k != null) {
+      out.add(k.$1);
+      if (k.$1 == from && k.$2 == -1) break;
+      k = prev[k];
+    }
+    return out.reversed.toList();
   }
 
   static void _trails(ui.Canvas c, FieldMap map, double ts) {
@@ -561,10 +571,36 @@ abstract final class Scenery {
     }
 
     split(side, ts * 0.32);
+    final sideCount = pieces.length;
     split(main, ts * 0.52);
-    for (final pass in [0, 1]) {
-      for (final (t, route, width) in pieces) {
-        if (!_outdoor(t)) continue;
+    for (final pass in [0, 1, 2]) {
+      for (final (i, (t, route, width)) in pieces.indexed) {
+        if (!_outdoor(t)) {
+          // 建物の中の小道は描かない（じゅうたんだらけになるため）
+          if (i < sideCount) continue;
+          final boss = map.bossAreas.contains(
+            map.areaAt(route.first.col, route.first.row),
+          );
+          // 建物の中は、じゅうたん（金のふち）
+          final (fill, edge) = switch (t) {
+            Terrain.library => (0xFF4E7D5B, 0xFFE2C46C),
+            Terrain.workshop || Terrain.tower => (0xFF7D7A8C, 0xFFB8B4C8),
+            Terrain.ruins => (0xFFD9C29A, 0xFFB0946A),
+            Terrain.town => (0xFFD8CBB2, 0xFFB5A27E),
+            _ => (0xFFB8484A, 0xFFE2B44C),
+          };
+          if (pass == 2) continue;
+          c.drawPath(
+            _smoothSquare(route, ts),
+            pass == 0
+                ? (_stroke(edge, width * (boss ? 1.9 : 1.35) + 4)
+                    ..strokeCap = ui.StrokeCap.square)
+                : (_stroke(fill, width * (boss ? 1.9 : 1.35))
+                    ..strokeCap = ui.StrokeCap.square),
+          );
+          continue;
+        }
+        if (pass == 2) continue;
         final pal = _paletteOf(t);
         c.drawPath(
           _smooth(route, ts, map),
@@ -573,6 +609,167 @@ abstract final class Scenery {
               : _stroke(pal.path, width, 0.95),
         );
       }
+    }
+  }
+
+  /// マスの中心をまっすぐつないだ線（建物の中のじゅうたん）
+  static ui.Path _smoothSquare(List<Cell> route, double ts) {
+    final path = ui.Path();
+    for (var i = 0; i < route.length; i++) {
+      final o = Offset((route[i].col + 0.5) * ts, (route[i].row + 0.5) * ts);
+      i == 0 ? path.moveTo(o.dx, o.dy) : path.lineTo(o.dx, o.dy);
+    }
+    return path;
+  }
+
+  /// 建物の中の障害物。柱・本棚は上のマスにはみ出すほど高く、となりの本棚とはつなげる
+  static void _indoorObstacle(
+    ui.Canvas c,
+    FieldMap map,
+    int col,
+    int r,
+    double ts,
+  ) {
+    final t = map.terrainAt(col, r);
+    final x = col * ts, y = r * ts;
+    final ink = _stroke(0xFF3E3A4A, 1.3);
+    bool same(int dc) {
+      final k = map.tileAt(col + dc, r);
+      return (k == 'T' || k == 'H') && map.terrainAt(col + dc, r) == t;
+    }
+
+    switch (t) {
+      case Terrain.library || Terrain.tower:
+        // 本棚：となりとつながった長い棚。上のマスに少しはみ出す
+        final left = same(-1) ? x : x + 2;
+        final right = same(1) ? x + ts : x + ts - 2;
+        final top = y - ts * 0.45;
+        final body = Rect.fromLTRB(left, top, right, y + ts - 2);
+        c.drawRect(body, _p(t == Terrain.tower ? 0xFF6E6680 : 0xFF8A5A3C));
+        // 棚板と本
+        for (var k = 0; k < 3; k++) {
+          final sy = top + 4 + k * (body.height - 6) / 3;
+          final sh = (body.height - 6) / 3 - 3;
+          var bx = left + 2;
+          var i = 0;
+          while (bx < right - 3) {
+            final bw = 3 + _h(col, r * 9 + k, i) * 3;
+            final bh = sh * (0.7 + _h(col, r * 7 + k, i + 20) * 0.3);
+            const colors = [
+              0xFFC0504D,
+              0xFF4F81BD,
+              0xFF9BBB59,
+              0xFFF2C14E,
+              0xFF8064A2,
+              0xFFE8E0D0,
+            ];
+            c.drawRect(
+              Rect.fromLTWH(bx, sy + sh - bh, bw - 0.8, bh),
+              _p(colors[(_h(col, r + k, i + 40) * colors.length).floor()]),
+            );
+            bx += bw;
+            i++;
+          }
+          c.drawLine(
+            Offset(left, sy + sh + 1),
+            Offset(right, sy + sh + 1),
+            _stroke(0xFF4E342E, 1.6),
+          );
+        }
+        c.drawLine(body.topLeft, body.topRight, ink);
+        c.drawLine(body.bottomLeft, body.bottomRight, ink);
+        if (!same(-1)) c.drawLine(body.topLeft, body.bottomLeft, ink);
+        if (!same(1)) c.drawLine(body.topRight, body.bottomRight, ink);
+      case Terrain.workshop:
+        // 木箱を2段に積む／歯車の機械
+        if (_h(col, r, 5) < 0.6) {
+          for (final (dy, s) in [(0.0, 0.8), (-0.42, 0.62)]) {
+            if (dy < 0 && _h(col, r, 6) < 0.5) continue;
+            final b = Rect.fromCenter(
+              center: Offset(x + ts / 2, y + ts * (0.55 + dy)),
+              width: ts * s,
+              height: ts * s * 0.75,
+            );
+            c.drawRect(b, _p(0xFFC69C6D));
+            c.drawLine(b.topLeft, b.bottomRight, _stroke(0xFF8A5A3C, 1));
+            c.drawLine(b.topRight, b.bottomLeft, _stroke(0xFF8A5A3C, 1));
+            c.drawRect(b, ink);
+          }
+        } else {
+          final o = Offset(x + ts / 2, y + ts * 0.4);
+          final g = ui.Path();
+          for (var i = 0; i < 16; i++) {
+            final a = i * pi / 8;
+            final rr = i.isEven ? ts * 0.42 : ts * 0.34;
+            final p = o + Offset(cos(a), sin(a)) * rr;
+            i == 0 ? g.moveTo(p.dx, p.dy) : g.lineTo(p.dx, p.dy);
+          }
+          g.close();
+          c.drawPath(g, _p(0xFF9E9E9E));
+          c.drawPath(g, ink);
+          c.drawCircle(o, ts * 0.12, _p(0xFF5A5A5A));
+        }
+      default:
+        // 柱：台座・円柱・柱頭。上のマスにはみ出すほど高い
+        final (stone, dark) = switch (t) {
+          Terrain.shrine => (0xFFD0574F, 0xFF8C2F2A),
+          Terrain.castle => (0xFFC8C3D8, 0xFF7E7894),
+          _ => (0xFFE3D7BC, 0xFFA8977A),
+        };
+        final broken = t == Terrain.ruins && _h(col, r, 7) < 0.35;
+        final top = broken ? y + ts * 0.15 : y - ts * 0.3;
+        final shaft = Rect.fromLTRB(
+          x + ts * 0.28,
+          top,
+          x + ts * 0.72,
+          y + ts * 0.82,
+        );
+        c.drawRect(shaft, _p(stone));
+        // 立体感：右側にかげ、縦のみぞ
+        c.drawRect(
+          Rect.fromLTRB(
+            shaft.right - ts * 0.12,
+            shaft.top,
+            shaft.right,
+            shaft.bottom,
+          ),
+          _p(dark, 0.45),
+        );
+        for (final f in [0.38, 0.5, 0.62]) {
+          c.drawLine(
+            Offset(x + ts * f, shaft.top + 3),
+            Offset(x + ts * f, shaft.bottom - 2),
+            _stroke(dark, 0.7, 0.5),
+          );
+        }
+        c.drawRect(shaft, ink);
+        final base = Rect.fromLTRB(
+          x + ts * 0.18,
+          y + ts * 0.78,
+          x + ts * 0.82,
+          y + ts * 0.95,
+        );
+        c.drawRect(base, _p(stone));
+        c.drawRect(base, ink);
+        if (broken) {
+          // くずれた上のはし
+          final crack = ui.Path()
+            ..moveTo(shaft.left, shaft.top)
+            ..lineTo(shaft.left + ts * 0.12, shaft.top - 4)
+            ..lineTo(shaft.left + ts * 0.25, shaft.top + 2)
+            ..lineTo(shaft.right, shaft.top - 3);
+          c.drawPath(crack, ink);
+          c.drawCircle(Offset(x + ts * 0.85, y + ts * 0.85), 2.5, _p(stone));
+        } else {
+          final cap = Rect.fromLTRB(
+            x + ts * 0.16,
+            top - ts * 0.12,
+            x + ts * 0.84,
+            top + 2,
+          );
+          c.drawRect(cap, _p(stone));
+          c.drawRect(cap, ink);
+        }
     }
   }
 

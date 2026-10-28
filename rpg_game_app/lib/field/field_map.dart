@@ -8,6 +8,59 @@ typedef Cell = ({int col, int row});
 /// ほかのマップへの出入口
 typedef Portal = ({String target, String label});
 
+/// 大きな目印（2×2マス以上の建物・地形。通れない。話しかけると説明が出る）
+enum LandmarkKind {
+  bigTree('大きな木', 'みんなの待ち合わせ場所になっている、大きな木だ。', 2, 2),
+  windmill('風車', '風車がゆっくり回っている。ことばの粉をひいているらしい。', 2, 2),
+  blossomTree('花の大樹', '花びらがはらはらと舞っている。見上げると、心が軽くなる。', 2, 2),
+  ancientTree('古い大樹', '何百年も森を見守ってきた大樹。幹に古い文字がきざまれている。', 2, 2),
+  lighthouse('灯台', '夜になると、迷った冒険者を照らしてくれる灯台だ。', 2, 2),
+  pyramid('ピラミッド', '砂に半分うもれたピラミッド。中には入れないようだ。', 3, 2),
+  snowman('雪だるま', 'だれかが作った大きな雪だるま。鼻は鉛筆でできている。', 2, 2),
+  crystals('結晶の柱', 'ひんやり光る結晶の柱。耳を当てると、かすかに歌が聞こえる。', 2, 2),
+  vent('火口', 'ぐつぐつと煮える火口。近づきすぎると、ノートがこげそうだ。', 2, 2),
+  statue('英雄の像', 'かつて忘却の魔王と戦った英雄の像。台座に「学びつづけよ」とある。', 2, 2),
+  fountain('噴水', 'きらきらした噴水。コインを投げる人がいるらしい。', 2, 2),
+  clock('大時計', 'チクタクと時をきざむ大時計。少しだけ進んでいる。', 2, 2),
+  gears('からくり', '歯車がかみ合って動く、大きなからくりだ。', 2, 2),
+  globe('大きな地球儀', '世界じゅうの国が描かれた地球儀。ゆっくり回している。', 2, 2),
+  cloudCastle('雲の城', '雲の上に浮かぶ小さな城。だれが住んでいるのだろう。', 2, 2),
+  house('家', '町の人の家だ。中から、ことばの練習をする声が聞こえる。', 3, 2);
+
+  const LandmarkKind(this.label, this.text, this.w, this.h);
+  final String label;
+
+  /// 話しかけたときの説明
+  final String text;
+
+  /// 大きさ（マス）
+  final int w;
+  final int h;
+
+  /// 地形に合う目印
+  static LandmarkKind forTerrain(Terrain t, int salt) => switch (t) {
+    Terrain.meadow || Terrain.hill => salt.isEven ? bigTree : windmill,
+    Terrain.flower => blossomTree,
+    Terrain.forest => ancientTree,
+    Terrain.river => salt.isEven ? windmill : bigTree,
+    Terrain.beach || Terrain.harbor => lighthouse,
+    Terrain.desert => pyramid,
+    Terrain.snow => snowman,
+    Terrain.cave || Terrain.crystal => crystals,
+    Terrain.lava => vent,
+    Terrain.ruins || Terrain.shrine || Terrain.castle => statue,
+    Terrain.town => fountain,
+    Terrain.tower => clock,
+    Terrain.workshop => gears,
+    Terrain.library => globe,
+    Terrain.sky => cloudCastle,
+    _ => bigTree,
+  };
+}
+
+/// マップの上の目印（左上のマスと大きさ）
+typedef Landmark = ({Cell at, int w, int h, LandmarkKind kind});
+
 /// 宝箱の種類
 enum ChestKind {
   /// エリアの奥にある宝箱（難問1問）
@@ -49,6 +102,7 @@ class FieldMap {
     this.bossAreas = const {},
     this.chestKinds = const {},
     this.portals = const {},
+    this.landmarks = const [],
     this.signText = '',
     this.goalText = 'トロフィーがある。',
   }) : width = rows.first.length,
@@ -86,6 +140,22 @@ class FieldMap {
 
   /// 出入口のマス → 行き先
   final Map<Cell, Portal> portals;
+
+  /// 大きな目印（L のマス）
+  final List<Landmark> landmarks;
+
+  /// そのマスをふくむ目印
+  Landmark? landmarkAt(Cell c) {
+    for (final l in landmarks) {
+      if (c.col >= l.at.col &&
+          c.col < l.at.col + l.w &&
+          c.row >= l.at.row &&
+          c.row < l.at.row + l.h) {
+        return l;
+      }
+    }
+    return null;
+  }
 
   /// 看板のメッセージ
   final String signText;
@@ -376,6 +446,19 @@ class FieldMap {
       bossAreas: bossAreas,
       chestKinds: {for (final e in chestKinds.entries) to(e.key): e.value},
       portals: {for (final e in portals.entries) to(e.key): e.value},
+      landmarks: [
+        for (final l in landmarks)
+          () {
+            final a = to(l.at);
+            final b = to((col: l.at.col + l.w - 1, row: l.at.row + l.h - 1));
+            return (
+              at: (col: min(a.col, b.col), row: min(a.row, b.row)),
+              w: (a.col - b.col).abs() + 1,
+              h: (a.row - b.row).abs() + 1,
+              kind: l.kind,
+            );
+          }(),
+      ],
       signText: signText,
       goalText: goalText,
     );
@@ -419,6 +502,7 @@ class FieldMap {
     final enemyRows = <int, int>{};
     final safe = <int, List<Cell>>{};
     final chestKinds = <Cell, ChestKind>{};
+    final landmarks = <Landmark>[];
     String wall() => '#' * _width;
 
     void add(String line, Terrain terrain, int area) {
@@ -462,6 +546,14 @@ class FieldMap {
       for (final e in room.chests.entries) {
         chestKinds[(col: e.key.col, row: e.key.row + top)] = e.value;
       }
+      for (final l in room.landmarks) {
+        landmarks.add((
+          at: (col: l.at.col, row: l.at.row + top),
+          w: l.w,
+          h: l.h,
+          kind: l.kind,
+        ));
+      }
     }
     final bottom = wall().split('');
     final portals = <Cell, Portal>{};
@@ -497,6 +589,7 @@ class FieldMap {
       },
       chestKinds: chestKinds,
       portals: portals,
+      landmarks: landmarks,
       signText: signText,
       goalText: goalText,
     );
@@ -510,7 +603,10 @@ class FieldMap {
 /// 3. 入口から行けない場所は障害物で埋める（閉じこめられる場所をなくす）
 /// 4. 宿・ワープ石・宝箱・泉・隠し通路・知識の扉・目印の飾りを置く
 class _Room {
-  _Room(this.lines, this.safe, this.chests);
+  _Room(this.lines, this.safe, this.chests, this.landmarks);
+
+  /// 部屋の中の目印（row は部屋の中での行）
+  final List<Landmark> landmarks;
 
   final List<String> lines;
 
@@ -660,23 +756,14 @@ class _Room {
         }
         switch (terrain) {
           case Terrain.town:
-            // 家（横3×縦2）が通りに並ぶ
-            for (var r = 1; r < h - 2; r += 4) {
-              for (var c = 2 + rnd.nextInt(2); c < w - 4; c += 5) {
-                if (rnd.nextDouble() < 0.85) {
-                  for (var dr = 0; dr < 2; dr++) {
-                    for (var dc = 0; dc < 3; dc++) {
-                      g[r + dr][c + dc] = true;
-                    }
-                  }
-                }
-              }
-            }
+            // 家と噴水は、あとで大きな目印として建てる（通りは広くあける）
+            break;
           case Terrain.library:
-            // 本棚が横に長く並び、ところどころ抜けられる
+            // 本棚の列：左右対称に並び、まん中と両わきに通路がある
             for (var r = 2; r < h - 1; r += 3) {
-              for (var c = 1; c < w - 1; c++) {
-                g[r][c] = rnd.nextDouble() > 0.18;
+              for (var c = 2; c < w - 2; c++) {
+                final aisle = c == w ~/ 2 || c == 7 || c == w - 8;
+                if (!aisle) g[r][c] = true;
               }
             }
           case Terrain.tower || Terrain.workshop:
@@ -692,17 +779,23 @@ class _Room {
               }
             }
           default:
-            // 遺跡・殿堂・城：柱が規則正しく並ぶ
+            // 遺跡・殿堂・城：左右対称の柱の列（大広間）。遺跡はところどころくずれている
             for (var r = 1; r < h - 1; r += 2) {
-              for (var c = (r ~/ 2).isEven ? 2 : 3; c < w - 1; c += 3) {
-                if (rnd.nextDouble() < 0.8) g[r][c] = true;
+              for (final c in const [3, 7, 11]) {
+                if (terrain == Terrain.ruins && rnd.nextDouble() < 0.3) {
+                  continue;
+                }
+                g[r][c] = true;
+                g[r][w - 1 - c] = true;
               }
             }
         }
-        // くずれた柱・荷物などを少し
-        for (var r = 0; r < h; r++) {
-          for (var c = 1; c < w - 1; c++) {
-            if (rnd.nextDouble() < 0.05) g[r][c] = true;
+        // 工房・塔には、荷物や機械を少し
+        if (terrain == Terrain.workshop || terrain == Terrain.tower) {
+          for (var r = 0; r < h; r++) {
+            for (var c = 1; c < w - 1; c++) {
+              if (rnd.nextDouble() < 0.04) g[r][c] = true;
+            }
           }
         }
     }
@@ -912,6 +1005,72 @@ class _Room {
 
     final chests = <Cell, ChestKind>{};
 
+    // 大きな目印：道からはなれた広い床に1つ（ボスの間・航路にはおかない）
+    final marks = <Landmark>[];
+    final kinds = boss || terrain.isVoyage
+        ? const <LandmarkKind>[]
+        : terrain == Terrain.town
+        ? const [
+            LandmarkKind.fountain,
+            LandmarkKind.house,
+            LandmarkKind.house,
+            LandmarkKind.house,
+            LandmarkKind.house,
+          ]
+        : [LandmarkKind.forTerrain(terrain, seed)];
+    for (final kind in kinds) {
+      bool blockAll(List<(int, int)> cells) {
+        if (cells.any(
+          (p) =>
+              g[p.$1][p.$2] ||
+              bridge[p.$1][p.$2] ||
+              tiles[p.$1][p.$2] != '.' ||
+              onPath.contains(p),
+        )) {
+          return false;
+        }
+        final copy = [
+          for (final row in g) [...row],
+        ];
+        for (final (rr, cc) in cells) {
+          copy[rr][cc] = true;
+        }
+        return reach(copy).length == reachable.length - cells.length;
+      }
+
+      final spots = [
+        for (var rr = 1; rr + kind.h < h - 1; rr++)
+          for (var cc = 2; cc + kind.w < w - 2; cc++) (rr, cc),
+      ]..shuffle(rnd);
+      for (final (r0, c0) in spots) {
+        final cells = [
+          for (var dr = 0; dr < kind.h; dr++)
+            for (var dc = 0; dc < kind.w; dc++) (r0 + dr, c0 + dc),
+        ];
+        // ほかの目印とは1マスあける（家のあいだに通りを残す）
+        final crowded =
+            [
+              for (var dr = -1; dr <= kind.h; dr++)
+                for (var dc = -1; dc <= kind.w; dc++) (r0 + dr, c0 + dc),
+            ].any(
+              (p) =>
+                  p.$1 >= 0 &&
+                  p.$1 < h &&
+                  p.$2 >= 0 &&
+                  p.$2 < w &&
+                  tiles[p.$1][p.$2] == 'L',
+            );
+        if (crowded || !blockAll(cells)) continue;
+        for (final (rr, cc) in cells) {
+          tiles[rr][cc] = 'L';
+          g[rr][cc] = true;
+          reachable.remove((rr, cc));
+        }
+        marks.add((at: (col: c0, row: r0), w: kind.w, h: kind.h, kind: kind));
+        break;
+      }
+    }
+
     // スタート地点と看板
     if (isStart) {
       place('P', h - 2, entryCol);
@@ -1058,7 +1217,7 @@ class _Room {
           (col: e.key.$2, row: e.key.$1),
     ]..sort((a, b) => a.row != b.row ? a.row - b.row : a.col - b.col);
 
-    return _Room([for (final row in tiles) row.join()], safe, chests);
+    return _Room([for (final row in tiles) row.join()], safe, chests, marks);
   }
 }
 
