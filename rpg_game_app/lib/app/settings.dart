@@ -16,7 +16,11 @@ class AppSettings {
     this.adaptiveMusic = true,
     this.theme = 'system',
     this.shareUsage = true,
+    this.allFeatures = false,
   });
+
+  /// ホームに、まだ冒険で出てきていない機能もすべて出す
+  final bool allFeatures;
 
   /// どの機能を使ったかの回数を、名前などを付けずに送る（アプリの改善用）
   final bool shareUsage;
@@ -52,6 +56,7 @@ class AppSettings {
     bool? adaptiveMusic,
     String? theme,
     bool? shareUsage,
+    bool? allFeatures,
   }) => AppSettings(
     bgm: bgm ?? this.bgm,
     se: se ?? this.se,
@@ -62,6 +67,7 @@ class AppSettings {
     adaptiveMusic: adaptiveMusic ?? this.adaptiveMusic,
     theme: theme ?? this.theme,
     shareUsage: shareUsage ?? this.shareUsage,
+    allFeatures: allFeatures ?? this.allFeatures,
   );
 
   Map<String, dynamic> toMap() => {
@@ -74,6 +80,7 @@ class AppSettings {
     'adaptiveMusic': adaptiveMusic,
     'theme': theme,
     'shareUsage': shareUsage,
+    'allFeatures': allFeatures,
   };
 
   factory AppSettings.fromMap(Map<String, dynamic> m) {
@@ -88,6 +95,7 @@ class AppSettings {
       adaptiveMusic: m['adaptiveMusic'] as bool? ?? true,
       theme: themes.contains(m['theme']) ? m['theme'] as String : 'system',
       shareUsage: m['shareUsage'] as bool? ?? true,
+      allFeatures: m['allFeatures'] as bool? ?? false,
     );
   }
 }

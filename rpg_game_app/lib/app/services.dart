@@ -15,6 +15,7 @@ import '../data/meta_store.dart';
 import '../data/prefs_progress_repository.dart';
 import '../data/mistake_log_store.dart';
 import '../data/study_log_store.dart';
+import '../meta/home_feature_store.dart';
 import '../meta/streak_store.dart';
 import '../purchase/google_play_purchase_service.dart';
 import '../study/exam_world_store.dart';
@@ -127,6 +128,11 @@ class RpgServices extends InheritedWidget {
   /// ゆるい連続記録とお休み券
   late final StreakStore streak = StreakStore(personalBooks.prefs);
 
+  /// ホームの機能の「NEW」
+  late final HomeFeatureStore homeFeatures = HomeFeatureStore(
+    personalBooks.prefs,
+  );
+
   /// Google Play Billing。Web 版や Firebase 未設定版では null。
   final GooglePlayPurchaseService? purchaseService;
 
@@ -179,11 +185,26 @@ class RpgServices extends InheritedWidget {
   }
 
   /// デイリークエストで選ぶ教科（持っている、遊べるワールド）
-  Map<String, String> questSubjects(RpgProgress progress) => {
-    for (final w in RpgCatalog.worlds)
-      if (unlock.availabilityOf(progress, w) == WorldAvailability.playable)
-        w.id: w.subject,
-  };
+  ///
+  /// 遊べるワールドのうち、もう冒険をはじめた教科から選ぶ（はじめは英語だけ）
+  Map<String, String> questSubjects(RpgProgress progress) {
+    final playable = [
+      for (final w in RpgCatalog.worlds)
+        if (unlock.availabilityOf(progress, w) == WorldAvailability.playable) w,
+    ];
+    bool started(WorldDef w) => w.stages.any(
+      (s) =>
+          progress.clearedStageIds.contains(s.id) ||
+          progress.stageRecords.containsKey(s.id),
+    );
+    final picked = playable.where(started).toList();
+    if (picked.isEmpty) {
+      picked.addAll(playable.where((w) => w.id == RpgCatalog.englishWorldId));
+    }
+    return {
+      for (final w in picked.isEmpty ? playable : picked) w.id: w.subject,
+    };
+  }
 
   /// 今日（学習記録の日付の数え方）
   static int today() => dayNumber(DateTime.now());

@@ -7,6 +7,7 @@ import 'package:rpg_game_app/app/services.dart';
 import 'package:rpg_game_app/app/settings.dart';
 import 'package:rpg_game_app/audio/music_director.dart';
 import 'package:rpg_game_app/battle/battle_screen.dart';
+import 'package:rpg_game_app/battle/battle_tips.dart';
 import 'package:rpg_game_app/battle/deck_screen.dart';
 import 'package:rpg_game_app/meta/bestiary_screen.dart';
 import 'package:rpg_game_app/meta/equipment_screen.dart';
@@ -46,7 +47,10 @@ final _questions = [
 ];
 
 Future<void> _screen(WidgetTester tester, Widget page) async {
-  SharedPreferences.setMockInitialValues({});
+  // 心得は出さない（心得は battle_tips_test で確かめる）
+  SharedPreferences.setMockInitialValues({
+    BattleTipStore.key: [for (final t in BattleTip.values) t.name],
+  });
   final prefs = await SharedPreferences.getInstance();
   await tester.pumpWidget(
     RpgServices(
@@ -73,7 +77,10 @@ Future<void> _open(
   bool trial = false,
   List<QuizQuestion>? questions,
 }) async {
-  SharedPreferences.setMockInitialValues({});
+  // 心得は出さない（心得は battle_tips_test で確かめる）
+  SharedPreferences.setMockInitialValues({
+    BattleTipStore.key: [for (final t in BattleTip.values) t.name],
+  });
   final prefs = await SharedPreferences.getInstance();
   await tester.pumpWidget(
     RpgServices(
@@ -90,7 +97,8 @@ Future<void> _open(
           world: RpgCatalog.world(stage.worldId),
           stage: stage,
           questions: questions ?? _questions,
-          progress: RpgProgress.initial,
+          // はじめてのバトルではないとき（カード・ベット・必殺技が出る）
+          progress: _veteran,
           trial: trial,
         ),
       ),
@@ -107,6 +115,13 @@ Future<void> _open(
     isTrue,
   );
 }
+
+/// 1つエリアをクリアした冒険者
+final _veteran = RpgProgress.initial.copyWith(
+  clearedStageIds: {
+    RpgCatalog.world(RpgCatalog.englishWorldId).stages.first.id,
+  },
+);
 
 void main() {
   final english = RpgCatalog.world(RpgCatalog.englishWorldId).stages;

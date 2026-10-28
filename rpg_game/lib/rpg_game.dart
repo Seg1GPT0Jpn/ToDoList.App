@@ -43,6 +43,7 @@ export 'src/meta/achievements.dart';
 export 'src/meta/enemy_species.dart';
 export 'src/meta/journal.dart';
 export 'src/meta/meta_update.dart';
+export 'src/meta/home_features.dart';
 export 'src/meta/quests.dart';
 export 'src/models/difficulty.dart';
 export 'src/models/enemy.dart';

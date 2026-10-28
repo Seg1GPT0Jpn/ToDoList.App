@@ -4,6 +4,7 @@ import 'package:rpg_game_app/account/account_service.dart';
 import 'package:rpg_game_app/account/profile_repository.dart';
 import 'package:rpg_game_app/app/services.dart';
 import 'package:rpg_game_app/app/settings.dart';
+import 'package:rpg_game_app/battle/battle_tips.dart';
 import 'package:rpg_game_app/app/theme.dart';
 import 'package:rpg_game_app/audio/music_director.dart';
 import 'package:rpg_game_app/classroom/classroom_backend.dart';
@@ -53,7 +54,13 @@ Future<RpgServices> openScreen(
   tester.view.physicalSize = size;
   tester.view.devicePixelRatio = 1;
   addTearDown(tester.view.reset);
-  if (!keepPrefs) SharedPreferences.setMockInitialValues(prefs);
+  // バトルの心得は、心得のテストでだけ出す
+  if (!keepPrefs) {
+    SharedPreferences.setMockInitialValues({
+      BattleTipStore.key: [for (final t in BattleTip.values) t.name],
+      ...prefs,
+    });
+  }
   // ほかのテスト（フェイクの時間）で始めた問題の読み込みを持ちこさない
   RpgServices.clearQuestionBundles();
   final p = await SharedPreferences.getInstance();

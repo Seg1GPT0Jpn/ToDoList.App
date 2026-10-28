@@ -32,7 +32,11 @@ void main() {
         world: RpgCatalog.world(RpgCatalog.englishWorldId),
         stage: boss,
         questions: _qs,
-        progress: RpgProgress.initial,
+        progress: RpgProgress.initial.copyWith(
+          clearedStageIds: {
+            RpgCatalog.world(RpgCatalog.englishWorldId).stages.first.id,
+          },
+        ),
       ),
       size: const Size(420, 900),
       frames: 40,

@@ -116,6 +116,13 @@ class SettingsScreen extends StatelessWidget {
                 onChanged: (v) => store.update(s.copyWith(reduceMotion: v)),
               ),
               SwitchListTile(
+                key: const ValueKey('all-features'),
+                title: const Text('すべての機能を表示'),
+                subtitle: const Text('ホームの「冒険の手帳」に、冒険を進めると出てくる機能も最初から全部出します'),
+                value: s.allFeatures,
+                onChanged: (v) => store.update(s.copyWith(allFeatures: v)),
+              ),
+              SwitchListTile(
                 key: const ValueKey('share-usage'),
                 title: const Text('使った機能の回数を送る'),
                 subtitle: const Text(

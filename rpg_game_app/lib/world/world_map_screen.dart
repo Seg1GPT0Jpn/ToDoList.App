@@ -59,32 +59,35 @@ class WorldMapScreen extends StatelessWidget {
             stream: services.repository.watch(),
             builder: (context, snap) {
               final progress = snap.data ?? RpgProgress.initial;
-              return CustomScrollView(
-                slivers: [
-                  SliverPadding(
-                    padding: const EdgeInsets.fromLTRB(44, 20, 16, 8),
-                    sliver: SliverToBoxAdapter(
-                      child: _header(context, progress),
+              return ListenableBuilder(
+                listenable: services.settings,
+                builder: (context, _) => CustomScrollView(
+                  slivers: [
+                    SliverPadding(
+                      padding: const EdgeInsets.fromLTRB(44, 20, 16, 8),
+                      sliver: SliverToBoxAdapter(
+                        child: _header(context, progress),
+                      ),
                     ),
-                  ),
-                  SliverPadding(
-                    padding: const EdgeInsets.fromLTRB(40, 8, 12, 24),
-                    // 横に広い画面でもカードが縦に伸びすぎないよう、高さを決めておく
-                    sliver: SliverGrid(
-                      gridDelegate:
-                          const SliverGridDelegateWithMaxCrossAxisExtent(
-                            maxCrossAxisExtent: 260,
-                            mainAxisExtent: 176,
-                            mainAxisSpacing: 12,
-                            crossAxisSpacing: 12,
-                          ),
-                      delegate: SliverChildListDelegate([
-                        for (final (i, w) in RpgCatalog.worlds.indexed)
-                          _WorldCard(world: w, progress: progress, index: i),
-                      ]),
+                    SliverPadding(
+                      padding: const EdgeInsets.fromLTRB(40, 8, 12, 24),
+                      // 横に広い画面でもカードが縦に伸びすぎないよう、高さを決めておく
+                      sliver: SliverGrid(
+                        gridDelegate:
+                            const SliverGridDelegateWithMaxCrossAxisExtent(
+                              maxCrossAxisExtent: 260,
+                              mainAxisExtent: 176,
+                              mainAxisSpacing: 12,
+                              crossAxisSpacing: 12,
+                            ),
+                        delegate: SliverChildListDelegate([
+                          for (final (i, w) in RpgCatalog.worlds.indexed)
+                            _WorldCard(world: w, progress: progress, index: i),
+                        ]),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               );
             },
           ),
@@ -311,19 +314,22 @@ class WorldMapScreen extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(height: 10),
-        _RealmBanner(
-          realm: StudyRealm.sky,
-          subtitle: '海よりさらに難しい上級者向け。飛行船で雲の上へ、最後はロケットで宇宙へ',
-          onTap: () => Navigator.of(context).push(
-            MaterialPageRoute<void>(
-              builder: (_) => const MusicScope(
-                music: 'field_information',
-                child: SkyHomeScreen(),
+        if (HomeFeature.sky.openFor(progress) ||
+            services.settings.value.allFeatures) ...[
+          const SizedBox(height: 10),
+          _RealmBanner(
+            realm: StudyRealm.sky,
+            subtitle: '海よりさらに難しい上級者向け。飛行船で雲の上へ、最後はロケットで宇宙へ',
+            onTap: () => Navigator.of(context).push(
+              MaterialPageRoute<void>(
+                builder: (_) => const MusicScope(
+                  music: 'field_information',
+                  child: SkyHomeScreen(),
+                ),
               ),
             ),
           ),
-        ),
+        ],
         const SizedBox(height: 16),
         Text('冒険の行き先をえらぶ', style: serif(16)),
       ],

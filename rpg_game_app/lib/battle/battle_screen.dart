@@ -17,6 +17,7 @@ import '../quiz/figure_view.dart';
 import '../study/yosou_crop_view.dart';
 import '../quiz/question_report.dart';
 import '../vocab/speech.dart';
+import 'battle_tips.dart';
 import 'format_answer.dart';
 import 'result_screen.dart';
 import 'scratchpad.dart';
@@ -145,6 +146,17 @@ class _BattleScreenState extends State<BattleScreen>
 
   /// ボス登場の演出
   bool _bossBanner = false;
+
+  /// はじめてのバトル（まだどのエリアもクリアしていない）。カード・ベット・必殺技は出さない
+  late final bool _basic =
+      _mode == BattleMode.rpg && widget.progress.clearedStageIds.isEmpty;
+
+  /// このバトルで読む心得（読み終えるまで1問目を始めない）
+  BattleTip? _tip;
+  bool _tipPicked = false;
+
+  /// 心得を読んでいるあいだ、1問目を待たせる
+  bool _waitTip = false;
 
   /// 単元の熟練度（試験対策など、もとの単元がはっきりしないバトルでは null）
   SkillScore? _skillOf(LearningRecord record) {
@@ -292,6 +304,10 @@ class _BattleScreenState extends State<BattleScreen>
       Future.delayed(Duration(milliseconds: _speech == null ? 0 : 1400), () {
         if (!mounted) return;
         setState(() => _speech = null);
+        if (_tip != null) {
+          _waitTip = true;
+          return;
+        }
         _startQuestion();
       });
     });
@@ -305,6 +321,11 @@ class _BattleScreenState extends State<BattleScreen>
     // バトル前の熟練度を、記録が更新される前に読んでおく
     // （サービスが使えるようになった直後。initState ではまだ使えない）
     _skillBefore;
+    if (!_tipPicked) {
+      _tipPicked = true;
+      _tip = BattleTipStore(_services.personalBooks.prefs)
+          .pick(basic: _basic, hasWeakness: _enemy.weakness != null);
+    }
     if (_audioStarted) return;
     _audioStarted = true;
     final music = _services.music;
@@ -972,6 +993,21 @@ class _BattleScreenState extends State<BattleScreen>
                   ),
                 ),
               if (_bossBanner) const IgnorePointer(child: _BossBanner()),
+              if (_tip case final tip? when !_bossBanner)
+                Positioned.fill(
+                  child: BattleTipCard(
+                    tip: tip,
+                    onOk: () {
+                      BattleTipStore(_services.personalBooks.prefs)
+                          .markSeen(tip);
+                      setState(() => _tip = null);
+                      if (_waitTip) {
+                        _waitTip = false;
+                        _startQuestion();
+                      }
+                    },
+                  ),
+                ),
               if (_scratchAllowed && !_scratchOpen && !_engine.isOver)
                 Positioned(
                   right: 10,
@@ -1434,7 +1470,7 @@ class _BattleScreenState extends State<BattleScreen>
                 ),
                 child: SingleChildScrollView(child: _questionCard(q)),
               ),
-              if (!showExplanation) _cardHand(q),
+              if (!showExplanation && !_basic) _cardHand(q),
               const SizedBox(height: 6),
               Expanded(
                 child: showExplanation
