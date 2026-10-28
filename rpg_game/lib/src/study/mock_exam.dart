@@ -70,6 +70,7 @@ abstract final class YosouExams {
       subjectId: 'math1',
       questionPages: 2,
       answerPages: 6,
+      smallQuestions: true,
     ),
     YosouExam(
       id: 'mathA',
