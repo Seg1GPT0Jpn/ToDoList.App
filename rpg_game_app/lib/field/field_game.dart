@@ -13,6 +13,7 @@ import '../app/theme.dart';
 import '../art/enemy_painter.dart';
 import '../art/hero_painter.dart';
 import '../art/vehicle_painter.dart';
+import 'ambient.dart';
 import 'field_map.dart';
 import 'paper_art.dart';
 import 'scenery.dart';
@@ -55,7 +56,11 @@ class FieldGame extends FlameGame with KeyboardEvents {
     this.darknessOf,
     this.masteredArea,
     this.chestVariants = true,
+    this.calm = false,
   });
+
+  /// 動きをへらす（舞うものを出さない）
+  final bool calm;
 
   /// 宝箱の種類（連続正解・ミミック・探索のごほうび）を使うか。
   /// 試験対策ワールドでは使わない（ふつうの封印だけ）
@@ -261,6 +266,18 @@ class FieldGame extends FlameGame with KeyboardEvents {
   Future<void> onLoad() async {
     world.add(MapLayer(map, worldId: rpgWorld.id));
     world.add(TapMarker(tapTarget));
+    if (!calm) {
+      ui.Rect view() => camera.visibleWorldRect;
+      world.add(WaterGlints(map: map, view: view, tileSize: tileSize));
+      world.add(
+        AmbientLayer(
+          map: map,
+          focus: () => player.position,
+          view: view,
+          tileSize: tileSize,
+        ),
+      );
+    }
     for (final e in map.enemySpots.entries) {
       final stage = rpgWorld.stages.where((s) => s.order == e.key).firstOrNull;
       if (stage == null) continue;
@@ -751,6 +768,14 @@ class MapLayer extends PositionComponent {
     ..strokeCap = ui.StrokeCap.round;
 
   void _sign(ui.Canvas c, Rect r) {
+    c.drawOval(
+      Rect.fromCenter(
+        center: Offset(r.center.dx + 2, r.bottom - 2),
+        width: r.width * 0.7,
+        height: r.width * 0.2,
+      ),
+      ui.Paint()..color = const ui.Color(0x33201A30),
+    );
     c.drawRect(
       Rect.fromLTWH(r.center.dx - 2, r.center.dy, 4, 13),
       ui.Paint()..color = const ui.Color(0xFF8D6E63),
@@ -803,49 +828,116 @@ class MapLayer extends PositionComponent {
     c.drawParagraph(p, Offset(r.left, r.center.dy - p.height / 2 + 3));
   }
 
-  /// 宿：小さな家と「宿」の看板
+  /// 宿：あかりのともった小さな家と「宿」の看板（マスより少し大きく、上にはみ出す）
   void _inn(ui.Canvas c, Rect r) {
-    final wall = Rect.fromLTWH(
-      r.left + 4,
-      r.top + 13,
-      r.width - 8,
-      r.height - 15,
-    );
+    final ts = r.width;
+    final cx = r.center.dx;
+    // 影
     c.drawOval(
       Rect.fromCenter(
-        center: Offset(r.center.dx, r.bottom - 2),
-        width: 28,
-        height: 6,
+        center: Offset(cx + 3, r.bottom - 1),
+        width: ts * 1.35,
+        height: ts * 0.32,
       ),
-      ui.Paint()..color = const ui.Color(0x33000000),
+      ui.Paint()
+        ..color = const ui.Color(0x33201A30)
+        ..maskFilter = const ui.MaskFilter.blur(ui.BlurStyle.normal, 2),
     );
-    c.drawRect(wall, ui.Paint()..color = const ui.Color(0xFFF5E6C8));
+    // 壁（しっくいと木の柱）
+    final wall = Rect.fromLTRB(
+      cx - ts * 0.55,
+      r.top + ts * 0.18,
+      cx + ts * 0.55,
+      r.bottom - 1,
+    );
+    c.drawRect(wall, ui.Paint()..color = const ui.Color(0xFFF6E7C8));
+    final beam = ui.Paint()
+      ..color = const ui.Color(0xFF8A5A3C)
+      ..strokeWidth = 2;
+    c.drawLine(wall.topLeft, wall.bottomLeft, beam);
+    c.drawLine(wall.topRight, wall.bottomRight, beam);
+    c.drawLine(
+      Offset(wall.left, wall.top + wall.height * 0.45),
+      Offset(wall.right, wall.top + wall.height * 0.45),
+      beam..strokeWidth = 1.4,
+    );
     c.drawRect(wall, _ink..strokeWidth = 1.3);
-    final roof = ui.Path()
-      ..moveTo(r.left + 1, r.top + 14)
-      ..lineTo(r.center.dx, r.top + 2)
-      ..lineTo(r.right - 1, r.top + 14)
-      ..close();
-    c.drawPath(roof, ui.Paint()..color = const ui.Color(0xFFB5523B));
-    c.drawPath(roof, _ink..strokeWidth = 1.3);
+    // あかりのついた窓
+    for (final dx in [-0.32, 0.32]) {
+      final w = Rect.fromCenter(
+        center: Offset(cx + ts * dx, wall.top + wall.height * 0.7),
+        width: ts * 0.2,
+        height: ts * 0.2,
+      );
+      c.drawCircle(
+        w.center,
+        ts * 0.22,
+        ui.Paint()..color = const ui.Color(0x40FFD36B),
+      );
+      c.drawRect(w, ui.Paint()..color = const ui.Color(0xFFFFD36B));
+      c.drawRect(w, _ink..strokeWidth = 1);
+      c.drawLine(w.topCenter, w.bottomCenter, _ink..strokeWidth = 0.8);
+    }
     // 扉
-    c.drawRect(
-      Rect.fromLTWH(r.center.dx - 3, r.bottom - 10, 6, 8),
-      ui.Paint()..color = const ui.Color(0xFF8D6E63),
+    final door = Rect.fromLTWH(
+      cx - ts * 0.11,
+      r.bottom - ts * 0.36,
+      ts * 0.22,
+      ts * 0.35,
     );
+    c.drawRRect(
+      ui.RRect.fromRectAndCorners(
+        door,
+        topLeft: const ui.Radius.circular(4),
+        topRight: const ui.Radius.circular(4),
+      ),
+      ui.Paint()..color = const ui.Color(0xFF7A4A30),
+    );
+    // 屋根（上のマスにはみ出す）と煙突
+    final chimney = Rect.fromLTWH(cx + ts * 0.22, r.top - ts * 0.42, 6, 12);
+    c.drawRect(chimney, ui.Paint()..color = const ui.Color(0xFF9C6B52));
+    c.drawRect(chimney, _ink..strokeWidth = 1);
+    final roof = ui.Path()
+      ..moveTo(cx - ts * 0.72, wall.top + 2)
+      ..lineTo(cx, r.top - ts * 0.5)
+      ..lineTo(cx + ts * 0.72, wall.top + 2)
+      ..close();
+    c.drawPath(roof, ui.Paint()..color = const ui.Color(0xFFC0563E));
+    final tile = ui.Paint()
+      ..color = const ui.Color(0x55000000)
+      ..strokeWidth = 0.8;
+    for (var k = 1; k <= 3; k++) {
+      final y = r.top - ts * 0.5 + (wall.top + 2 - (r.top - ts * 0.5)) * k / 4;
+      final half = ts * 0.72 * k / 4;
+      c.drawLine(Offset(cx - half, y), Offset(cx + half, y), tile);
+    }
+    c.drawPath(roof, _ink..strokeWidth = 1.4);
     // 看板「宿」
+    final sign = Rect.fromCenter(
+      center: Offset(cx, wall.top + wall.height * 0.22),
+      width: ts * 0.34,
+      height: ts * 0.26,
+    );
+    c.drawRRect(
+      ui.RRect.fromRectAndRadius(sign, const ui.Radius.circular(2)),
+      ui.Paint()..color = const ui.Color(0xFFE9C97F),
+    );
+    c.drawRRect(
+      ui.RRect.fromRectAndRadius(sign, const ui.Radius.circular(2)),
+      _ink..strokeWidth = 1,
+    );
     final b =
         ui.ParagraphBuilder(ui.ParagraphStyle(textAlign: ui.TextAlign.center))
           ..pushStyle(
             ui.TextStyle(
               color: const ui.Color(0xFF6D4C41),
-              fontSize: 8,
+              fontSize: 7,
               fontWeight: ui.FontWeight.w900,
             ),
           )
           ..addText('宿');
-    final p = b.build()..layout(ui.ParagraphConstraints(width: r.width));
-    c.drawParagraph(p, Offset(r.left, r.top + 15));
+    final p = b.build()..layout(ui.ParagraphConstraints(width: sign.width));
+    c.drawParagraph(p, Offset(sign.left, sign.center.dy - p.height / 2));
   }
 
   void _trophy(ui.Canvas c, Cell g) {

@@ -148,6 +148,7 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
   bool get _isExam => widget.exam != null;
 
   late final FieldGame _game = FieldGame(
+    calm: RpgServices.maybeOf(context)?.settings.value.reduceMotion ?? false,
     map: _isExam
         ? FieldMap.forExam(widget.exam!, widget.world.stages)
         : FieldMap.byId(

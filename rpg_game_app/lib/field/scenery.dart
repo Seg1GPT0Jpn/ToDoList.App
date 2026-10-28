@@ -291,6 +291,14 @@ abstract final class Scenery {
       }
     }
 
+    // ---- 建物の中の床：石だたみ・板張り ----
+    for (var r = 0; r < h; r++) {
+      for (var col = 0; col < w; col++) {
+        if (_outdoor(t(col, r)) || tile(col, r) == '#') continue;
+        _indoorFloor(c, t(col, r), col, r, ts);
+      }
+    }
+
     // ---- 地面の描きこみ（草・小石・花・砂紋・ひび）。マスの中の位置はばらばら ----
     for (var r = 0; r < h; r++) {
       for (var col = 0; col < w; col++) {
@@ -719,6 +727,55 @@ abstract final class Scenery {
             _stroke(pal.detail, 0.8, 0.5),
           );
         }
+    }
+  }
+
+  /// 建物の中の床。書庫・町・工房は板張り、それ以外は石だたみ
+  static void _indoorFloor(ui.Canvas c, Terrain t, int col, int r, double ts) {
+    final x = col * ts, y = r * ts;
+    final line = _stroke(0xFF5D4A3A, 0.7, 0.16);
+    final wood =
+        t == Terrain.library || t == Terrain.town || t == Terrain.workshop;
+    if (wood) {
+      // 板：横に3枚。継ぎ目は列ごとにずらす
+      for (var k = 0; k < 3; k++) {
+        final yy = y + ts * k / 3;
+        c.drawLine(Offset(x, yy), Offset(x + ts, yy), line);
+        final j = x + ts * _h(col, r * 3 + k, 12);
+        c.drawLine(Offset(j, yy), Offset(j, yy + ts / 3), line);
+      }
+      return;
+    }
+    // 石だたみ：マスを大小の石に分ける（角を少しまるめる）
+    final split = _h(col, r, 13);
+    final stones = split < 0.4
+        ? [Rect.fromLTWH(x, y, ts, ts)]
+        : split < 0.7
+        ? [
+            Rect.fromLTWH(x, y, ts / 2, ts),
+            Rect.fromLTWH(x + ts / 2, y, ts / 2, ts),
+          ]
+        : [
+            Rect.fromLTWH(x, y, ts / 2, ts / 2),
+            Rect.fromLTWH(x + ts / 2, y, ts / 2, ts / 2),
+            Rect.fromLTWH(x, y + ts / 2, ts, ts / 2),
+          ];
+    for (final st in stones) {
+      c.drawRRect(
+        ui.RRect.fromRectAndRadius(
+          st.deflate(1.2),
+          const ui.Radius.circular(4),
+        ),
+        line,
+      );
+    }
+    if (_h(col, r, 14) < 0.15) {
+      // ひび
+      c.drawLine(
+        Offset(x + ts * 0.3, y + ts * 0.4),
+        Offset(x + ts * 0.5, y + ts * 0.55),
+        line,
+      );
     }
   }
 
