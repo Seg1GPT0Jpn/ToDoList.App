@@ -114,6 +114,7 @@ abstract final class YosouExams {
       subjectId: 'public_economy',
       questionPages: 9,
       answerPages: 4,
+      smallQuestions: true,
     ),
     YosouExam(
       id: 'joho',

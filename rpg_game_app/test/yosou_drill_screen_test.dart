@@ -119,11 +119,21 @@ void main() {
           prefs: {SchoolExamStore.gateKey: true},
           frames: 2,
         );
-        if (q.figure != null) {
-          await t.runAsync(
-            () => Future<void>.delayed(const Duration(milliseconds: 50)),
+        if (q.figure != null ||
+            q.passage!.paragraphs.any(
+              (p) => p.startsWith(YosouCrop.paragraphPrefix),
+            )) {
+          for (var k = 0; k < 4; k++) {
+            await t.runAsync(
+              () => Future<void>.delayed(const Duration(milliseconds: 80)),
+            );
+            await _frames(t, 2);
+          }
+          expect(
+            find.textContaining('図を開けませんでした'),
+            findsNothing,
+            reason: q.id,
           );
-          await _frames(t, 2);
         }
         final list = find
             .descendant(
@@ -137,7 +147,7 @@ void main() {
             300,
             scrollable: list,
           );
-          await t.pumpAndSettle();
+          await _frames(t, 4);
         }
 
         if (q.isChoice && q.isInput) {
@@ -147,13 +157,13 @@ void main() {
             q.answer,
           );
           await t.tap(find.byKey(const ValueKey('yosou-drill-submit')));
-          await t.pumpAndSettle();
+          await _frames(t, 4);
           await show('yosou-drill-mark');
           expect(find.text('○ 正解'), findsOneWidget, reason: q.id);
         } else if (q.isChoice) {
           await show('yosou-choice-${q.answerIndex}');
           await t.tap(find.byKey(ValueKey('yosou-choice-${q.answerIndex}')));
-          await t.pumpAndSettle();
+          await _frames(t, 4);
           await show('yosou-drill-mark');
           expect(find.text('○ 正解'), findsOneWidget, reason: q.id);
         }
