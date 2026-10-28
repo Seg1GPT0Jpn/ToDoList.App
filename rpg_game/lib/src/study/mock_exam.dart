@@ -108,6 +108,7 @@ abstract final class YosouExams {
       subjectId: 'biology_basic',
       questionPages: 5,
       answerPages: 3,
+      smallQuestions: true,
     ),
     YosouExam(
       id: 'kokyo',
