@@ -124,6 +124,7 @@ abstract final class YosouExams {
       subjectId: 'information1',
       questionPages: 6,
       answerPages: 2,
+      smallQuestions: true,
     ),
   ];
 
