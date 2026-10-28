@@ -63,6 +63,7 @@ abstract final class YosouExams {
       subjectId: 'gengo_bunka',
       questionPages: 14,
       answerPages: 8,
+      smallQuestions: true,
     ),
     YosouExam(
       id: 'math1',
