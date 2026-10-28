@@ -17,7 +17,11 @@ class AppSettings {
     this.theme = 'system',
     this.shareUsage = true,
     this.allFeatures = false,
+    this.vibration = true,
   });
+
+  /// 正解・ダメージなどで端末をふるわせる（Android など）
+  final bool vibration;
 
   /// ホームに、まだ冒険で出てきていない機能もすべて出す
   final bool allFeatures;
@@ -57,6 +61,7 @@ class AppSettings {
     String? theme,
     bool? shareUsage,
     bool? allFeatures,
+    bool? vibration,
   }) => AppSettings(
     bgm: bgm ?? this.bgm,
     se: se ?? this.se,
@@ -68,6 +73,7 @@ class AppSettings {
     theme: theme ?? this.theme,
     shareUsage: shareUsage ?? this.shareUsage,
     allFeatures: allFeatures ?? this.allFeatures,
+    vibration: vibration ?? this.vibration,
   );
 
   Map<String, dynamic> toMap() => {
@@ -81,6 +87,7 @@ class AppSettings {
     'theme': theme,
     'shareUsage': shareUsage,
     'allFeatures': allFeatures,
+    'vibration': vibration,
   };
 
   factory AppSettings.fromMap(Map<String, dynamic> m) {
@@ -96,6 +103,7 @@ class AppSettings {
       theme: themes.contains(m['theme']) ? m['theme'] as String : 'system',
       shareUsage: m['shareUsage'] as bool? ?? true,
       allFeatures: m['allFeatures'] as bool? ?? false,
+      vibration: m['vibration'] as bool? ?? true,
     );
   }
 }

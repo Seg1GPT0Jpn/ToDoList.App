@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -464,7 +465,9 @@ class _BattleScreenState extends State<BattleScreen>
     setState(() => _last = r);
     _record(r);
 
+    final haptics = _services.haptics;
     if (r.correct) {
+      r.quick || r.special || r.weakness ? haptics.strong() : haptics.hit();
       _slash.forward(from: 0);
       _burstColor = r.quick
           ? const Color(0xFFF2B84B)
@@ -635,6 +638,7 @@ class _BattleScreenState extends State<BattleScreen>
           after: const Duration(milliseconds: 120),
         );
       }
+      if (r.damageToPlayer > 0) haptics.heavy();
       _playerHit.forward(from: 0);
       _popup(
         _Popup(
@@ -705,7 +709,9 @@ class _BattleScreenState extends State<BattleScreen>
       );
       _fallen = r.defeated;
       Future.delayed(const Duration(milliseconds: 400), () {
-        if (mounted) _defeat.forward(from: 0);
+        if (!mounted) return;
+        haptics.heavy();
+        _defeat.forward(from: 0);
       });
       Future.delayed(const Duration(milliseconds: 1400), () {
         if (!mounted) return;
@@ -763,7 +769,9 @@ class _BattleScreenState extends State<BattleScreen>
       }
       if (won) {
         Future.delayed(const Duration(milliseconds: 550), () {
-          if (mounted) _defeat.forward();
+          if (!mounted) return;
+          haptics.heavy();
+          _defeat.forward();
         });
         if (_engine.enemy.defeatLine.isNotEmpty) {
           Future.delayed(const Duration(milliseconds: 400), () {
@@ -2370,7 +2378,7 @@ class _SpeechBubble extends StatelessWidget {
   );
 }
 
-class _HpBar extends StatelessWidget {
+class _HpBar extends StatefulWidget {
   const _HpBar({
     required this.value,
     required this.max,
@@ -2384,13 +2392,45 @@ class _HpBar extends StatelessWidget {
   final bool showNumbers;
 
   @override
+  State<_HpBar> createState() => _HpBarState();
+}
+
+/// HP は先にすっと減り、削れた分（うすい赤）があとから追いかけて減る
+class _HpBarState extends State<_HpBar> {
+  late double _trail = widget.value / widget.max;
+  Timer? _wait;
+
+  @override
+  void didUpdateWidget(_HpBar old) {
+    super.didUpdateWidget(old);
+    final now = widget.value / widget.max;
+    if (now >= _trail) {
+      // 回復したときは、すぐにそろえる
+      _wait?.cancel();
+      _trail = now;
+      return;
+    }
+    _wait?.cancel();
+    _wait = Timer(const Duration(milliseconds: 450), () {
+      if (mounted) setState(() => _trail = widget.value / widget.max);
+    });
+  }
+
+  @override
+  void dispose() {
+    _wait?.cancel();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final w = widget;
     return TweenAnimationBuilder<double>(
-      tween: Tween(end: value / max),
-      duration: const Duration(milliseconds: 450),
+      tween: Tween(end: w.value / w.max),
+      duration: const Duration(milliseconds: 220),
       curve: Curves.easeOutCubic,
       builder: (context, v, _) {
-        final c = v < 0.3 ? TsuzuriColors.hpLow : color;
+        final c = v < 0.3 ? TsuzuriColors.hpLow : w.color;
         return Row(
           children: [
             Text(
@@ -2412,22 +2452,42 @@ class _HpBar extends StatelessWidget {
                     color: TsuzuriColors.ink.withValues(alpha: 0.6),
                   ),
                 ),
-                child: FractionallySizedBox(
-                  alignment: Alignment.centerLeft,
-                  widthFactor: v.clamp(0, 1),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: c,
-                      borderRadius: BorderRadius.circular(6),
+                child: Stack(
+                  children: [
+                    TweenAnimationBuilder<double>(
+                      tween: Tween(end: _trail),
+                      duration: const Duration(milliseconds: 600),
+                      curve: Curves.easeInCubic,
+                      builder: (context, t, _) => FractionallySizedBox(
+                        alignment: Alignment.centerLeft,
+                        widthFactor: max(t, v).clamp(0, 1),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: const Color(0xFFE57373)
+                                .withValues(alpha: 0.7),
+                            borderRadius: BorderRadius.circular(6),
+                          ),
+                        ),
+                      ),
                     ),
-                  ),
+                    FractionallySizedBox(
+                      alignment: Alignment.centerLeft,
+                      widthFactor: v.clamp(0, 1),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: c,
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
-            if (showNumbers) ...[
+            if (w.showNumbers) ...[
               const SizedBox(width: 8),
               Text(
-                '$value / $max',
+                '${w.value} / ${w.max}',
                 style: const TextStyle(
                   fontSize: 12,
                   fontWeight: FontWeight.w700,

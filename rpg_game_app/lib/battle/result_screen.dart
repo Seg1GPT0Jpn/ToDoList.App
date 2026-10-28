@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:rpg_game/rpg_game.dart';
 
+import '../app/services.dart';
 import '../app/theme.dart';
 import '../art/paper.dart';
 
@@ -116,6 +117,7 @@ class _ResultScreenState extends State<ResultScreen>
     final lv = _expAt(Curves.easeInOut.transform(_exp.value)).level;
     if (lv > _shownLevel) {
       setState(() => _shownLevel = lv);
+      RpgServices.maybeOf(context)?.haptics.strong();
       _levelUp.forward(from: 0);
     }
   }

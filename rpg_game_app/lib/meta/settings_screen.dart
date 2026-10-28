@@ -116,6 +116,13 @@ class SettingsScreen extends StatelessWidget {
                 onChanged: (v) => store.update(s.copyWith(reduceMotion: v)),
               ),
               SwitchListTile(
+                key: const ValueKey('vibration'),
+                title: const Text('振動'),
+                subtitle: const Text('正解・ダメージ・勝利のときに、端末を軽くふるわせます'),
+                value: s.vibration,
+                onChanged: (v) => store.update(s.copyWith(vibration: v)),
+              ),
+              SwitchListTile(
                 key: const ValueKey('all-features'),
                 title: const Text('すべての機能を表示'),
                 subtitle: const Text('ホームの「冒険の手帳」に、冒険を進めると出てくる機能も最初から全部出します'),

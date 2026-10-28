@@ -23,6 +23,7 @@ import '../study/personal_books.dart';
 import '../versus/duel_backend.dart';
 import '../versus/matchmaking.dart';
 import '../versus/online_room.dart';
+import 'haptics.dart';
 import 'settings.dart';
 import 'usage_meter.dart';
 
@@ -128,6 +129,9 @@ class RpgServices extends InheritedWidget {
   /// ゆるい連続記録とお休み券
   late final StreakStore streak = StreakStore(personalBooks.prefs);
 
+  /// 振動
+  late final Haptics haptics = Haptics(settings);
+
   /// ホームの機能の「NEW」
   late final HomeFeatureStore homeFeatures = HomeFeatureStore(
     personalBooks.prefs,
@@ -208,6 +212,10 @@ class RpgServices extends InheritedWidget {
 
   /// 今日（学習記録の日付の数え方）
   static int today() => dayNumber(DateTime.now());
+
+  /// サービスの外（テストの部品など）では null
+  static RpgServices? maybeOf(BuildContext context) =>
+      context.getInheritedWidgetOfExactType<RpgServices>();
 
   static RpgServices of(BuildContext context) =>
       context.dependOnInheritedWidgetOfExactType<RpgServices>()!;
