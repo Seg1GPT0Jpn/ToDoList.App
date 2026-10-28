@@ -100,6 +100,7 @@ abstract final class YosouExams {
       subjectId: 'chemistry_basic',
       questionPages: 4,
       answerPages: 3,
+      smallQuestions: true,
     ),
     YosouExam(
       id: 'bio',
