@@ -15,6 +15,7 @@ import '../art/hero_painter.dart';
 import '../art/vehicle_painter.dart';
 import 'field_map.dart';
 import 'paper_art.dart';
+import 'scenery.dart';
 import 'terrain_art.dart';
 
 const double tileSize = 32;
@@ -663,8 +664,11 @@ class MapLayer extends PositionComponent {
   }
 
   void _paintMap(ui.Canvas c) {
+    // 地面・道・水・壁・木は、マス目が目立たない新しい描き方（航路はこれまでどおり）
+    final scenery = Scenery.supports(map);
+    if (scenery) Scenery.paint(c, map, worldId, tileSize);
     // 床（方眼ノートの目）をマスごとに描く。地形ごとに色と模様が変わる
-    for (var r = 0; r < map.height; r++) {
+    for (var r = 0; !scenery && r < map.height; r++) {
       for (var col = 0; col < map.width; col++) {
         final terrain = map.terrainAt(col, r);
         final x = col * tileSize, y = r * tileSize;
@@ -712,15 +716,15 @@ class MapLayer extends PositionComponent {
           TerrainArt.islet(c, rect, terrain);
         }
         switch (tile) {
-          case '#':
+          case '#' when !scenery:
             TerrainArt.wall(c, rect, rnd, terrain);
-          case 'T':
+          case 'T' when !scenery:
             TerrainArt.obstacle(c, rect, rnd, terrain);
-          case '~':
+          case '~' when !scenery:
             TerrainArt.water(c, rect, terrain);
           case 'B':
             TerrainArt.bridge(c, rect, terrain);
-          case 'R':
+          case 'R' when !scenery:
             TerrainArt.carpet(c, rect, terrain);
           case 'F':
             TerrainArt.decoration(
