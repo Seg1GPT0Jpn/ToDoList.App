@@ -281,7 +281,14 @@ class FieldGame extends FlameGame with KeyboardEvents {
 
   @override
   Future<void> onLoad() async {
-    world.add(MapLayer(map, worldId: rpgWorld.id));
+    world.add(
+      MapLayer(
+        map,
+        worldId: rpgWorld.id,
+        view: () => camera.visibleWorldRect,
+        zoom: () => camera.viewfinder.zoom,
+      ),
+    );
     world.add(TapMarker(tapTarget));
     if (!calm) {
       ui.Rect view() => camera.visibleWorldRect;
@@ -569,10 +576,14 @@ class FieldGame extends FlameGame with KeyboardEvents {
     return KeyEventResult.handled;
   }
 
+  /// 見えている範囲（少し広め）。画面の外の駒を描かないために使う
+  static ui.Rect visible = ui.Rect.largest;
+
   @override
   void update(double dt) {
     super.update(dt);
     _clampCamera();
+    visible = camera.visibleWorldRect.inflate(tileSize * 2);
     final label = map.labelAt(player.cell.col, player.cell.row);
     if (area.value != label) area.value = label;
     final no = map.areaAt(player.cell.col, player.cell.row);
@@ -739,9 +750,18 @@ class FieldGame extends FlameGame with KeyboardEvents {
   }
 }
 
+/// 画面の外にあるときは描かない（大きなマップでも軽く）
+mixin OnScreenOnly on PositionComponent {
+  @override
+  void renderTree(ui.Canvas canvas) {
+    if (!FieldGame.visible.overlaps(toRect())) return;
+    super.renderTree(canvas);
+  }
+}
+
 /// 地形をまとめて1枚の絵にしておくレイヤー
 class MapLayer extends PositionComponent {
-  MapLayer(this.map, {this.worldId = ''})
+  MapLayer(this.map, {this.worldId = '', this.view, this.zoom})
     : super(
         size: Vector2(map.width * tileSize, map.height * tileSize),
         priority: -1,
@@ -751,8 +771,26 @@ class MapLayer extends PositionComponent {
 
   /// 教科の国（紙の種類と、余白の手書きの文字が変わる）
   final String worldId;
+
+  /// 見えている範囲（マップの座標）。あれば、見えているところだけを画像にして貼る
+  final ui.Rect Function()? view;
+
+  /// カメラの拡大率（画像の細かさを決める）
+  final double Function()? zoom;
+
   late final ui.Picture _picture;
+  late final List<Cell> _goals = map.findAll('G');
   double _t = 0;
+
+  /// 地図を小さな四角（チャンク）に分けて、1度だけ画像にしておく。
+  /// 毎フレーム、ぼかしや影をふくむ地図を描き直すと、とても重いため。
+  static const _chunk = 256.0;
+
+  /// ぼかしがチャンクの切れ目でうすくならないよう、まわりを少し広く描く
+  static const _pad = 48.0;
+  final _images = <(int, int), ui.Image>{};
+  final _pending = <(int, int)>{};
+  double _rasterScale = 0;
 
   @override
   Future<void> onLoad() async {
@@ -762,15 +800,115 @@ class MapLayer extends PositionComponent {
   }
 
   @override
+  void onRemove() {
+    for (final img in _images.values) {
+      img.dispose();
+    }
+    _images.clear();
+    super.onRemove();
+  }
+
+  @override
   void update(double dt) => _t += dt;
+
+  Future<void> _raster((int, int) key, double s) async {
+    final (cx, cy) = key;
+    final rec = ui.PictureRecorder();
+    final c = ui.Canvas(rec);
+    c.scale(s);
+    c.translate(-cx * _chunk + _pad, -cy * _chunk + _pad);
+    c.clipRect(
+      Rect.fromLTWH(
+        cx * _chunk - _pad,
+        cy * _chunk - _pad,
+        _chunk + _pad * 2,
+        _chunk + _pad * 2,
+      ),
+    );
+    c.drawPicture(_picture);
+    final px = ((_chunk + _pad * 2) * s).ceil();
+    final img = await rec.endRecording().toImage(px, px);
+    _pending.remove(key);
+    if (!isMounted || s != _rasterScale) {
+      img.dispose();
+      return;
+    }
+    _images[key]?.dispose();
+    _images[key] = img;
+  }
 
   @override
   void render(ui.Canvas canvas) {
-    canvas.drawPicture(_picture);
+    final v = view?.call();
+    if (v == null || v.isEmpty) {
+      canvas.drawPicture(_picture);
+    } else {
+      // 画面の細かさ（拡大率 × 画面の密度）に合わせる。上げすぎると重いので 3 まで
+      final dpr =
+          ui.PlatformDispatcher.instance.views.firstOrNull?.devicePixelRatio ??
+          2;
+      final s = ((zoom?.call() ?? 1) * dpr).clamp(1.0, 3.0).toDouble();
+      if ((s - _rasterScale).abs() > 0.25) {
+        _rasterScale = s;
+        for (final img in _images.values) {
+          img.dispose();
+        }
+        _images.clear();
+      }
+      final want = v.inflate(_chunk * 0.5);
+      final c0 = max(0, (want.left / _chunk).floor());
+      final c1 = min(
+        ((size.x - 1) / _chunk).floor(),
+        (want.right / _chunk).floor(),
+      );
+      final r0 = max(0, (want.top / _chunk).floor());
+      final r1 = min(
+        ((size.y - 1) / _chunk).floor(),
+        (want.bottom / _chunk).floor(),
+      );
+      final paint = ui.Paint()..filterQuality = ui.FilterQuality.medium;
+      for (var cy = r0; cy <= r1; cy++) {
+        for (var cx = c0; cx <= c1; cx++) {
+          final dst = Rect.fromLTWH(cx * _chunk, cy * _chunk, _chunk, _chunk);
+          final img = _images[(cx, cy)];
+          if (img != null) {
+            canvas.drawImageRect(
+              img,
+              Rect.fromLTWH(
+                _pad * _rasterScale,
+                _pad * _rasterScale,
+                _chunk * _rasterScale,
+                _chunk * _rasterScale,
+              ),
+              dst,
+              paint,
+            );
+            continue;
+          }
+          if (_pending.length < 3 && _pending.add((cx, cy))) {
+            _raster((cx, cy), _rasterScale);
+          }
+          // 画像ができるまでは、そのまま描く
+          if (dst.overlaps(v)) {
+            canvas.save();
+            canvas.clipRect(dst);
+            canvas.drawPicture(_picture);
+            canvas.restore();
+          }
+        }
+      }
+      // 遠くのチャンクは手ばなす（メモリを使いすぎない）
+      final keep = v.inflate(_chunk * 2.5);
+      _images.removeWhere((k, img) {
+        final r = Rect.fromLTWH(k.$1 * _chunk, k.$2 * _chunk, _chunk, _chunk);
+        if (r.overlaps(keep)) return false;
+        img.dispose();
+        return true;
+      });
+    }
     // ゴールのトロフィーだけきらめかせる
-    final goals = map.findAll('G');
-    if (goals.isEmpty) return;
-    final g = goals.first;
+    if (_goals.isEmpty) return;
+    final g = _goals.first;
     final glow = (sin(_t * 3) + 1) / 2;
     canvas.drawCircle(
       Offset((g.col + 0.5) * tileSize, (g.row + 0.5) * tileSize),
@@ -1070,7 +1208,7 @@ class MapLayer extends PositionComponent {
 }
 
 /// フィールド上の敵
-class EnemyToken extends PositionComponent {
+class EnemyToken extends PositionComponent with OnScreenOnly {
   EnemyToken({required this.stage, required this.home})
     : cell = home,
       super(
@@ -1226,7 +1364,7 @@ class PlayerToken extends PositionComponent {
 }
 
 /// 宝箱（開けると空っぽになる）
-class ChestToken extends PositionComponent {
+class ChestToken extends PositionComponent with OnScreenOnly {
   ChestToken(this.cell, {this.variant = ChestVariant.seal})
     : super(
         size: Vector2.all(tileSize),
@@ -1361,7 +1499,7 @@ class ChestToken extends PositionComponent {
 }
 
 /// 回復の泉（ゆらゆら光る）
-class SpringToken extends PositionComponent {
+class SpringToken extends PositionComponent with OnScreenOnly {
   SpringToken(Cell cell)
     : super(
         size: Vector2.all(tileSize),
@@ -1406,7 +1544,7 @@ class SpringToken extends PositionComponent {
 }
 
 /// 亡霊（そのステージで間違えた問題）。話しかけると再戦できる
-class GhostToken extends PositionComponent {
+class GhostToken extends PositionComponent with OnScreenOnly {
   GhostToken(this.stage, this.cell, this.count)
     : super(
         size: Vector2.all(tileSize * 1.05),
@@ -1448,7 +1586,7 @@ class GhostToken extends PositionComponent {
 }
 
 /// 捕まった仲間の檻（ゲート横の壁ぎわ）
-class CageToken extends PositionComponent {
+class CageToken extends PositionComponent with OnScreenOnly {
   CageToken(Cell cell)
     : super(
         size: Vector2.all(tileSize),
@@ -1514,7 +1652,7 @@ class CageToken extends PositionComponent {
 }
 
 /// 隠し通路（H）と知識の扉（D）。閉じている間は障害物・扉の絵を上に重ねる
-class SealToken extends PositionComponent {
+class SealToken extends PositionComponent with OnScreenOnly {
   SealToken(this.cell, {required this.door, required this.terrain})
     : super(
         size: Vector2.all(tileSize),
@@ -1542,7 +1680,7 @@ class SealToken extends PositionComponent {
 }
 
 /// ワープ石
-class WarpToken extends PositionComponent {
+class WarpToken extends PositionComponent with OnScreenOnly {
   WarpToken(this.cell)
     : super(
         size: Vector2.all(tileSize),
@@ -1579,8 +1717,13 @@ class LightLayer extends PositionComponent {
 
   @override
   void render(ui.Canvas canvas) {
-    // 同じ暗さが横に続くところは、まとめて1つの四角で塗る（大きなマップでも軽く）
-    for (var r = 0; r < map.height; r++) {
+    // 同じ暗さが横に続くところは、まとめて1つの四角で塗る（見えている行だけ）
+    final v = FieldGame.visible;
+    final r0 = v == ui.Rect.largest ? 0 : max(0, (v.top / tileSize).floor());
+    final r1 = v == ui.Rect.largest
+        ? map.height - 1
+        : min(map.height - 1, (v.bottom / tileSize).ceil());
+    for (var r = r0; r <= r1; r++) {
       var c = 0;
       while (c < map.width) {
         final d = darknessOf(map.areaAt(c, r));
@@ -1606,7 +1749,7 @@ class LightLayer extends PositionComponent {
 }
 
 /// 住人（NPC）。ゆっくり上下にゆれる
-class NpcToken extends PositionComponent {
+class NpcToken extends PositionComponent with OnScreenOnly {
   NpcToken(this.cell, {required this.color})
     : super(
         size: Vector2.all(tileSize),

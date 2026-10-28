@@ -5,6 +5,7 @@ import 'package:rpg_game/rpg_game.dart';
 
 import '../app/services.dart';
 import '../app/theme.dart';
+import '../art/cached_paint.dart';
 import '../art/hero_painter.dart';
 import '../art/slow_clock.dart';
 
@@ -102,7 +103,8 @@ class _WorldAtlasState extends State<WorldAtlas>
               children: [
                 Positioned.fill(
                   child: RepaintBoundary(
-                    child: CustomPaint(
+                    child: CachedPaint(
+                      cacheKey: playable.toString(),
                       painter: _AtlasPainter(
                         playable: playable,
                         colors: {

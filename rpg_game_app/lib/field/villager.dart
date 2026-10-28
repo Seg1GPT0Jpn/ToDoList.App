@@ -3,12 +3,13 @@ import 'dart:ui' as ui;
 
 import 'package:flame/components.dart';
 
+import 'field_game.dart' show OnScreenOnly;
 import 'field_map.dart';
 import 'terrain_art.dart';
 
 /// 村や町を歩き回る住人。道はふさがない（主人公は通りぬけられる）。
 /// 主人公が近づくと、ふきだしでひとこと話す。
-class VillagerToken extends PositionComponent {
+class VillagerToken extends PositionComponent with OnScreenOnly {
   VillagerToken({
     required this.home,
     required this.color,
@@ -40,6 +41,9 @@ class VillagerToken extends PositionComponent {
   String? _line;
   double _lineLeft = 0;
 
+  /// ふきだしの文字（話すたびに1度だけ組み立てる）
+  ui.Paragraph? _paragraph;
+
   /// もう一度話すまでの時間
   double cooldown = 0;
 
@@ -47,6 +51,7 @@ class VillagerToken extends PositionComponent {
 
   void say(String line) {
     _line = line;
+    _paragraph = null;
     _lineLeft = 4.5;
     cooldown = 14;
   }
@@ -100,19 +105,21 @@ class VillagerToken extends PositionComponent {
     final line = _line;
     if (line == null) return;
     // ふきだし
-    final b =
-        ui.ParagraphBuilder(
-            ui.ParagraphStyle(textAlign: ui.TextAlign.left, maxLines: 4),
-          )
-          ..pushStyle(
-            ui.TextStyle(
-              color: const ui.Color(0xFF3E3A4A),
-              fontSize: 9.5,
-              height: 1.3,
-            ),
-          )
-          ..addText(line);
-    final p = b.build()..layout(const ui.ParagraphConstraints(width: 150));
+    final p = _paragraph ??= () {
+      final b =
+          ui.ParagraphBuilder(
+              ui.ParagraphStyle(textAlign: ui.TextAlign.left, maxLines: 4),
+            )
+            ..pushStyle(
+              ui.TextStyle(
+                color: const ui.Color(0xFF3E3A4A),
+                fontSize: 9.5,
+                height: 1.3,
+              ),
+            )
+            ..addText(line);
+      return b.build()..layout(const ui.ParagraphConstraints(width: 150));
+    }();
     final w = p.longestLine + 14, h = p.height + 10;
     final box = ui.Rect.fromLTWH(tileSize / 2 - w / 2, -h - 8, w, h);
     final rr = ui.RRect.fromRectAndRadius(box, const ui.Radius.circular(8));
