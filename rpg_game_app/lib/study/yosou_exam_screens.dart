@@ -9,6 +9,8 @@ import '../app/theme.dart';
 import '../art/paper.dart';
 import '../vocab/speech.dart';
 import 'school_exam_store.dart';
+import 'yosou_crop_view.dart';
+import 'yosou_drill_screens.dart';
 import 'yosou_exam_store.dart';
 
 /// 予想問題の一覧（60分で解く）
@@ -63,6 +65,7 @@ class _YosouExamListScreenState extends State<YosouExamListScreen> {
       _checking = false;
       if (sheet != null) {
         _key = key;
+        YosouImages.key = key;
       } else if (remember) {
         _error = 'パスワードがちがいます';
       }
@@ -381,6 +384,14 @@ class _YosouExamScreenState extends State<YosouExamScreen> {
     );
   }
 
+  /// 小問ごとに解く（RPG のバトル・順番に）
+  Widget _drillButton() => OutlinedButton.icon(
+    key: const ValueKey('yosou-small'),
+    onPressed: () => openYosouDrill(context, _e, _files),
+    icon: const Icon(Icons.extension_outlined),
+    label: const Text('小問ごとに解く（バトル・順番に）'),
+  );
+
   // ───────── はじめる前 ─────────
 
   Widget _intro(MockSheet sheet) {
@@ -419,6 +430,10 @@ class _YosouExamScreenState extends State<YosouExamScreen> {
               icon: const Icon(Icons.play_arrow),
               label: Text('はじめる（${_e.minutes}分）'),
             ),
+            if (_e.smallQuestions) ...[
+              const SizedBox(height: 10),
+              _drillButton(),
+            ],
             if (h.isNotEmpty) ...[
               const SizedBox(height: 24),
               Text('これまでの結果', style: serif(15)),
@@ -764,6 +779,7 @@ class _YosouExamScreenState extends State<YosouExamScreen> {
             icon: const Icon(Icons.description_outlined),
             label: const Text('問題冊子'),
           ),
+          if (_e.smallQuestions) _drillButton(),
           FilledButton.tonalIcon(
             key: const ValueKey('yosou-retry'),
             onPressed: () async {

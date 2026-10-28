@@ -15,6 +15,7 @@ class YosouExam {
     required this.questionPages,
     required this.answerPages,
     this.minutes = 60,
+    this.smallQuestions = false,
   });
 
   /// 同梱フォルダの名前（assets/mock_exams/<id>/）
@@ -39,6 +40,12 @@ class YosouExam {
 
   /// 解答用紙（答え・配点）の同梱ファイル
   String get sheetAsset => 'assets/mock_exams/$id/sheet.bin';
+
+  /// 小問ごとの問題データ（QuestionSet の JSON）を同梱しているか
+  final bool smallQuestions;
+
+  /// 小問ごとの問題データの同梱ファイル
+  String get questionsAsset => 'assets/mock_exams/$id/questions.bin';
 }
 
 abstract final class YosouExams {
@@ -77,6 +84,7 @@ abstract final class YosouExams {
       subjectId: 'ec1',
       questionPages: 8,
       answerPages: 10,
+      smallQuestions: true,
     ),
     YosouExam(
       id: 'le',

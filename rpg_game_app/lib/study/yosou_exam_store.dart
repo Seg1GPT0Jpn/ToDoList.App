@@ -131,6 +131,25 @@ class YosouExamFiles {
     }
   }
 
+  /// 小問ごとの問題データを開く（ないとき・鍵がちがうときは null）
+  Future<List<QuizQuestion>?> questions() => _questions ??= () async {
+    if (!exam.smallQuestions) return null;
+    try {
+      final bytes = SchoolMaterials.open(
+        await loader(exam.questionsAsset),
+        key: key,
+      );
+      if (bytes == null) return null;
+      final json = Map<String, dynamic>.from(
+        jsonDecode(utf8.decode(bytes)) as Map,
+      );
+      return QuestionSet.fromJson(json).questions;
+    } catch (_) {
+      return null;
+    }
+  }();
+  Future<List<QuizQuestion>?>? _questions;
+
   final _pages = <int, Future<Uint8List?>>{};
 
   /// [page] ページ目（1から）の画像

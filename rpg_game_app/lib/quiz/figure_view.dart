@@ -1,8 +1,10 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:rpg_game/rpg_game.dart';
 
 import '../app/theme.dart';
+import '../study/yosou_crop_view.dart';
 
 /// 問題の図・グラフを描く（形式は rpg_game の FigureSpec）。
 class FigureView extends StatelessWidget {
@@ -13,6 +15,10 @@ class FigureView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final crop = spec['yosou'] is String
+        ? YosouCrop.tryParse(spec['yosou'] as String)
+        : null;
+    if (crop != null) return YosouCropView(crop, maxHeight: height * 1.6);
     final chart = spec['chart'];
     final double aspect = chart != null
         ? 1.8

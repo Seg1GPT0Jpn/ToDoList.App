@@ -75,6 +75,7 @@ export 'src/study/shonan_table_sets.dart';
 export 'src/study/school_gate.dart';
 export 'src/study/drive_folder.dart';
 export 'src/study/mock_exam.dart';
+export 'src/study/yosou_drill.dart';
 export 'src/study/school_drive.dart';
 export 'src/study/school_material.dart';
 export 'src/study/school_word_book.dart';

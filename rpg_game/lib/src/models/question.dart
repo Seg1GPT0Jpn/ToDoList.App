@@ -123,7 +123,10 @@ class QuizQuestion {
       _checkSpec();
       return;
     }
-    if (choices.length != 4) {
+    // 予想問題は原本どおりの数の選択肢（2〜10個）
+    if (tags.contains(yosouTag)
+        ? choices.length < 2 || choices.length > 10
+        : choices.length != 4) {
       throw ArgumentError('問題 $id: 選択肢は4つ必要です（${choices.length}個）');
     }
     if (answerIndex < 0 || answerIndex >= choices.length) {
@@ -169,6 +172,9 @@ class QuizQuestion {
 
   /// 4択（入力式をふくむ）の問題か。4択しか出せない画面（対戦・宝箱など）はこれだけを使う
   bool get isChoice => format == QuestionFormat.choice;
+
+  /// 学校の定期テストの予想問題につけるタグ（選択肢の数が原本どおりで、4つとは限らない）
+  static const yosouTag = 'yosou';
 
   final String id;
   final QuestionCategory category;

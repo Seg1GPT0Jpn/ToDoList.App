@@ -14,6 +14,7 @@ import '../art/enemy_painter.dart';
 import '../art/hero_painter.dart';
 import '../art/paper.dart';
 import '../quiz/figure_view.dart';
+import '../study/yosou_crop_view.dart';
 import '../quiz/question_report.dart';
 import '../vocab/speech.dart';
 import 'format_answer.dart';
@@ -268,8 +269,11 @@ class _BattleScreenState extends State<BattleScreen>
   bool _scratchOpen = false;
   final List<List<Offset>> _strokes = [];
 
-  bool get _scratchAllowed =>
-      widget.world.id == 'math' || widget.world.id == 'science';
+  late final bool _scratchAllowed =
+      widget.world.id == 'math' ||
+      widget.world.id == 'science' ||
+      // 予想問題はどの教科でもメモできる
+      widget.questions.any((q) => q.tags.contains(QuizQuestion.yosouTag));
   bool _finishing = false;
 
   /// バトルを始めた時刻（勉強時間の記録に使う）
@@ -1283,28 +1287,34 @@ class _BattleScreenState extends State<BattleScreen>
                   ),
                   const SizedBox(height: 8),
                   for (final (i, p) in passage.paragraphs.indexed)
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 8),
-                      child: Text.rich(
-                        TextSpan(
-                          children: [
-                            TextSpan(
-                              text: '[${i + 1}] ',
-                              style: TextStyle(
-                                fontWeight: FontWeight.w800,
-                                color: TsuzuriColors.accent,
+                    if (YosouCrop.ofParagraph(p) case final crop?)
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 8),
+                        child: YosouCropView(crop),
+                      )
+                    else
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 8),
+                        child: Text.rich(
+                          TextSpan(
+                            children: [
+                              TextSpan(
+                                text: '[${i + 1}] ',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w800,
+                                  color: TsuzuriColors.accent,
+                                ),
                               ),
-                            ),
-                            TextSpan(text: p),
-                          ],
-                        ),
-                        style: TextStyle(
-                          fontSize: 14,
-                          height: 1.55,
-                          color: TsuzuriColors.ink,
+                              TextSpan(text: p),
+                            ],
+                          ),
+                          style: TextStyle(
+                            fontSize: 14,
+                            height: 1.55,
+                            color: TsuzuriColors.ink,
+                          ),
                         ),
                       ),
-                    ),
                 ],
               ),
             ),
@@ -1893,6 +1903,23 @@ class _BattleScreenState extends State<BattleScreen>
       );
     }
 
+    if (q.choices.length != 4) {
+      // 予想問題は選択肢の数が原本どおり（4つとは限らない）。縦に並べてスクロール
+      return ListView(
+        key: ValueKey('choices-${q.source.id}'),
+        padding: EdgeInsets.zero,
+        children: [
+          for (var i = 0; i < q.choices.length; i++)
+            SizedBox(
+              height: 52,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [choice(i)],
+              ),
+            ),
+        ],
+      );
+    }
     if (reading) {
       // 長文の選択肢は長いので縦に並べる
       return Column(

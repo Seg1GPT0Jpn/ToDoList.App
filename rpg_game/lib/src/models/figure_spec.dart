@@ -24,6 +24,13 @@ abstract final class FigureSpec {
   /// 形式のまちがいを返す（なければ空）
   static List<String> problems(Map<String, dynamic> f) {
     final out = <String>[];
+    // 予想問題の原本の図の切り抜き
+    if (f.containsKey('yosou')) {
+      final v = f['yosou'];
+      return v is String && YosouCrop.tryParse(v) != null
+          ? out
+          : ['yosou の切り抜きの書き方がちがう'];
+    }
     bool nums(Object? v, int n) {
       if (v is! List || v.any((e) => e is! num)) return false;
       return n > 0 ? v.length == n : v.length >= -n * 2 && v.length.isEven;
@@ -73,4 +80,45 @@ abstract final class FigureSpec {
     }
     return out;
   }
+}
+
+/// 予想問題の原本のページ画像の一部（図・表・漢文など）。
+///
+/// 書き方は「<予想問題のid>:<ページ>:<左>,<上>,<右>,<下>」（位置はページの幅・高さに対する
+/// 0〜1 の割合）。問題の図（figure の "yosou"）や、本文の段落（"@yosou:" で始まる）に使う。
+class YosouCrop {
+  const YosouCrop(
+      this.examId, this.page, this.left, this.top, this.right, this.bottom);
+
+  final String examId;
+  final int page;
+  final double left;
+  final double top;
+  final double right;
+  final double bottom;
+
+  /// 本文の段落を画像にするときの印
+  static const paragraphPrefix = '@yosou:';
+
+  static YosouCrop? tryParse(String s) {
+    final m = RegExp(r'^([\w-]+):(\d+):([\d.]+),([\d.]+),([\d.]+),([\d.]+)$')
+        .firstMatch(s.trim());
+    if (m == null) return null;
+    final v = [for (var i = 3; i <= 6; i++) double.parse(m.group(i)!)];
+    if (v.any((x) => x < 0 || x > 1) || v[0] >= v[2] || v[1] >= v[3]) {
+      return null;
+    }
+    final page = int.parse(m.group(2)!);
+    if (page < 1) return null;
+    return YosouCrop(m.group(1)!, page, v[0], v[1], v[2], v[3]);
+  }
+
+  /// 本文の段落が画像なら、その切り抜き
+  static YosouCrop? ofParagraph(String p) => p.startsWith(paragraphPrefix)
+      ? tryParse(p.substring(paragraphPrefix.length))
+      : null;
+
+  /// 横の長さ÷縦の長さ（ページの縦横比 [pageAspect] をかける）
+  double aspect(double pageAspect) =>
+      (right - left) / (bottom - top) * pageAspect;
 }
