@@ -325,22 +325,35 @@ class FieldMap {
 
   /// スタート地点のハブ。ルートの向きごとに、辺に出入口を並べる（1辺に2つまで）。
   static FieldMap _hub(WorldDef world) {
+    // 町の広場：まん中に噴水、四すみに家。辺の出入口から各ルートへ
+    const w = 21, h = 15;
     final lines = [
-      '###########',
-      '#.........#',
-      '#.T.....T.#',
-      '#....S.N..#',
-      '#.........#',
-      '#.~.....~.#',
-      '#....P....#',
-      '#.........#',
-      '#.~.....~.#',
-      '#.........#',
-      '#.T.....T.#',
-      '#.........#',
-      '###########',
-    ].map((l) => l.split('')).toList();
-    final h = lines.length, w = lines.first.length;
+      for (var r = 0; r < h; r++)
+        [
+          for (var c = 0; c < w; c++)
+            r == 0 || r == h - 1 || c == 0 || c == w - 1 ? '#' : '.',
+        ],
+    ];
+    final marks = <Landmark>[];
+    void mark(LandmarkKind k, int col, int row) {
+      for (var dr = 0; dr < k.h; dr++) {
+        for (var dc = 0; dc < k.w; dc++) {
+          lines[row + dr][col + dc] = 'L';
+        }
+      }
+      marks.add((at: (col: col, row: row), w: k.w, h: k.h, kind: k));
+    }
+
+    mark(LandmarkKind.fountain, 9, 5);
+    mark(LandmarkKind.house, 2, 2);
+    mark(LandmarkKind.house, 16, 2);
+    mark(LandmarkKind.house, 2, 11);
+    mark(LandmarkKind.house, 16, 11);
+    lines[8][10] = 'P';
+    lines[7][6] = 'S';
+    lines[7][14] = 'N';
+    lines[4][6] = 'F';
+    lines[4][14] = 'F';
     final portals = <Cell, Portal>{};
     for (final dir in const ['up', 'left', 'right', 'down']) {
       final rs = world.routes.where((r) => r.direction == dir).toList();
@@ -360,6 +373,7 @@ class FieldMap {
     return FieldMap(
       [for (final l in lines) l.join()],
       id: '${world.id}_hub',
+      landmarks: marks,
       terrainGrid: List.generate(h, (_) => List.filled(w, Terrain.town)),
       areaGrid: List.generate(h, (_) => List.filled(w, 0)),
       enemySpots: const {},
@@ -1016,6 +1030,13 @@ class _Room {
             LandmarkKind.house,
             LandmarkKind.house,
             LandmarkKind.house,
+          ]
+        : isStart && terrain.layout != Layout.grid
+        // スタート地点は小さな村（家が2けん）
+        ? [
+            LandmarkKind.house,
+            LandmarkKind.house,
+            LandmarkKind.forTerrain(terrain, seed),
           ]
         : [LandmarkKind.forTerrain(terrain, seed)];
     for (final kind in kinds) {

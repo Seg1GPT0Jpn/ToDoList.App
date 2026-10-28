@@ -465,6 +465,11 @@ abstract final class Scenery {
       }
     }
 
+    // ---- エリアの境目の門（敵が立つすきまの両わきに門柱） ----
+    for (final g in map.enemySpots.values) {
+      _gate(c, map, g, ts);
+    }
+
     // ---- 光：上のほうを少し明るく、四すみを少しくらく ----
     c.drawRect(
       bounds,
@@ -535,6 +540,17 @@ abstract final class Scenery {
     ];
     final main = <List<Cell>>[];
     final onMain = <Cell>{};
+    // 敵のいない町（ハブ）は、広場から出入口への道
+    if (map.enemySpots.isEmpty) {
+      for (final start in map.findAll('P')) {
+        for (final o in map.findAll('O')) {
+          final r = _route(map, start, {o});
+          if (r == null) continue;
+          main.add(r);
+          onMain.addAll(r);
+        }
+      }
+    }
     for (var i = 0; i + 1 < keys.length; i++) {
       final r = _route(map, keys[i], {keys[i + 1]});
       if (r == null) continue;
@@ -925,6 +941,41 @@ abstract final class Scenery {
           );
         }
     }
+  }
+
+  /// 門：外は木の鳥居のような門、建物の中は石のアーチ
+  static void _gate(ui.Canvas c, FieldMap map, Cell g, double ts) {
+    // 門は横向きの壁の切れ目にだけ建てる（左右が壁）
+    final horizontal =
+        map.tileAt(g.col - 1, g.row) == '#' &&
+        map.tileAt(g.col + 1, g.row) == '#';
+    if (!horizontal) return;
+    final t = map.terrainAt(g.col, g.row + 1);
+    final outdoor = _outdoor(t);
+    final x = g.col * ts, y = g.row * ts;
+    final ink = _stroke(0xFF3E3A4A, 1.4);
+    final (post, beam) = outdoor
+        ? (t == Terrain.lava
+              ? (0xFF3A2724, 0xFFE4572E)
+              : (0xFF9A6B45, 0xFFC0563E))
+        : (0xFFCFC8B8, 0xFF8E86A0);
+    for (final side in [-1, 1]) {
+      final px = side < 0 ? x - ts * 0.18 : x + ts * 0.98;
+      final r = Rect.fromLTWH(px, y - ts * 0.55, ts * 0.2, ts * 1.45);
+      c.drawRect(r, _p(post));
+      c.drawRect(r, ink);
+    }
+    final top = Rect.fromLTWH(x - ts * 0.35, y - ts * 0.72, ts * 1.7, ts * 0.2);
+    c.drawRect(top, _p(beam));
+    c.drawRect(top, ink);
+    final under = Rect.fromLTWH(
+      x - ts * 0.2,
+      y - ts * 0.42,
+      ts * 1.4,
+      ts * 0.12,
+    );
+    c.drawRect(under, _p(beam));
+    c.drawRect(under, ink);
   }
 
   /// 建物の中の床。書庫・町・工房は板張り、それ以外は石だたみ
