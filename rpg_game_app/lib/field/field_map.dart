@@ -71,6 +71,12 @@ enum ChestKind {
 
   /// 知識の扉の奥にある宝箱
   vault,
+
+  /// 洞くつのとちゅうの宝箱
+  cave1,
+
+  /// 洞くつのいちばん奥（洞くつの主のうしろ）の宝箱
+  cave2,
 }
 
 /// フィールドのマップ（1文字 = 1マス）。
@@ -103,6 +109,7 @@ class FieldMap {
     this.chestKinds = const {},
     this.portals = const {},
     this.landmarks = const [],
+    this.dungeonOf,
     this.signText = '',
     this.goalText = 'トロフィーがある。',
   }) : width = rows.first.length,
@@ -143,6 +150,12 @@ class FieldMap {
 
   /// 大きな目印（L のマス）
   final List<Landmark> landmarks;
+
+  /// 寄り道の洞くつのとき、その洞くつがあるエリア（ステージの order）
+  final int? dungeonOf;
+
+  /// 洞くつのマップの ID
+  static String dungeonId(String parentId, int order) => '$parentId~dg$order';
 
   /// そのマスをふくむ目印
   Landmark? landmarkAt(Cell c) {
@@ -250,6 +263,7 @@ class FieldMap {
 
   /// そのマスの先にいる（次に戦う）敵の番号。ゴールの部屋やハブでは null。
   int? enemyAhead(Cell cell) {
+    if (dungeonOf != null) return dungeonOf;
     final a = areaAt(cell.col, cell.row);
     return enemySpots.containsKey(a) ? a : null;
   }
@@ -264,6 +278,7 @@ class FieldMap {
   /// マップの ID から取り出す。
   /// `english`、`<worldId>_hub`（ハブ）、`<worldId>_<ルートID>`（ルートのマップ）
   static FieldMap byId(String id) => _cache.putIfAbsent(id, () {
+    if (id.contains('~dg')) return _dungeon(id);
     if (id == 'english') return _english();
     final sep = id.indexOf('_');
     final world = RpgCatalog.world(id.substring(0, sep));
@@ -291,6 +306,7 @@ class FieldMap {
           '宝箱には「知識の封印」がかかっている。隠し通路や知識の扉も探してみよう！',
       goalText: '英語ワールドのトロフィー',
       label: (s) => 'エリア${s.areaNo}・${s.name}',
+      dungeons: true,
     );
   }
 
@@ -410,8 +426,206 @@ class FieldMap {
           '${bosses.isEmpty ? '' : 'ボスは${bosses.join('と')}。'}'
           '宿で授業を受けてから挑もう。隠し通路や知識の扉も探してみよう。',
       goalText: '${route.name}マスターのトロフィー',
+      dungeons: true,
     );
     return up._turned(route.direction);
+  }
+
+  /// 寄り道の洞くつ（3部屋）。下の入口の部屋 → 宝箱と泉の部屋 → 洞くつの主と奥の宝箱の部屋
+  static FieldMap _dungeon(String id) {
+    final k = id.indexOf('~dg');
+    final parentId = id.substring(0, k);
+    final order = int.parse(id.substring(k + 3));
+    final parent = byId(parentId);
+    var parentTerrain = Terrain.cave;
+    for (final e in parent.portals.entries) {
+      if (e.value.target == id) {
+        parentTerrain = parent.terrainAt(e.key.col, e.key.row);
+      }
+    }
+    final terrain = switch (parentTerrain) {
+      Terrain.lava => Terrain.lava,
+      Terrain.crystal || Terrain.snow || Terrain.sky => Terrain.crystal,
+      _ when parentTerrain.layout == Layout.grid => Terrain.ruins,
+      _ => Terrain.cave,
+    };
+    const w = 21;
+    final rnd = Random(id.hashCode & 0x7fffffff);
+    final rows = <List<String>>[];
+    final chests = <Cell, ChestKind>{};
+
+    /// 洞くつの1部屋（ふちは壁）。入口の列から出口の列まで道を掘る
+    List<List<String>> room(int h, int entry, int exit) {
+      var g = List.generate(
+        h,
+        (r) => List.generate(
+          w,
+          (c) => c == 0 || c == w - 1 || rnd.nextDouble() < 0.42,
+        ),
+      );
+      for (var i = 0; i < 2; i++) {
+        g = List.generate(
+          h,
+          (r) => List.generate(w, (c) {
+            if (c == 0 || c == w - 1) return true;
+            var n = 0;
+            for (var dr = -1; dr <= 1; dr++) {
+              for (var dc = -1; dc <= 1; dc++) {
+                if (dr == 0 && dc == 0) continue;
+                final rr = r + dr, cc = c + dc;
+                if (rr < 0 || rr >= h || cc < 0 || cc >= w || g[rr][cc]) n++;
+              }
+            }
+            return n >= 5;
+          }),
+        );
+      }
+      var r = h - 1, c = entry;
+      g[r][c] = false;
+      while (r > 0 || c != exit) {
+        final roll = rnd.nextDouble();
+        if (r > 0 && (roll < 0.45 || c == exit)) {
+          r--;
+        } else if (c != exit) {
+          c += c < exit ? 1 : -1;
+        }
+        g[r][c] = false;
+        if (c + 1 < w - 1 && rnd.nextDouble() < 0.5) g[r][c + 1] = false;
+      }
+      // 入口から行けない床は埋める
+      final seen = <(int, int)>{(h - 1, entry)};
+      final q = Queue<(int, int)>()..add((h - 1, entry));
+      while (q.isNotEmpty) {
+        final (rr, cc) = q.removeFirst();
+        for (final (dr, dc) in const [(1, 0), (-1, 0), (0, 1), (0, -1)]) {
+          final nr = rr + dr, nc = cc + dc;
+          if (nr < 0 || nr >= h || nc < 0 || nc >= w || g[nr][nc]) continue;
+          if (seen.add((nr, nc))) q.add((nr, nc));
+        }
+      }
+      return [
+        for (var rr = 0; rr < h; rr++)
+          [
+            for (var cc = 0; cc < w; cc++)
+              cc == 0 || cc == w - 1
+                  ? '#'
+                  : seen.contains((rr, cc))
+                  ? '.'
+                  : 'T',
+          ],
+      ];
+    }
+
+    // 入口から遠い（[near] なら近い）行き止まりの床
+    (int, int)? far(
+      List<List<String>> t,
+      int fromRow,
+      int fromCol, {
+      bool near = false,
+    }) {
+      final d = <(int, int), int>{(fromRow, fromCol): 0};
+      final q = Queue<(int, int)>()..add((fromRow, fromCol));
+      while (q.isNotEmpty) {
+        final (rr, cc) = q.removeFirst();
+        for (final (dr, dc) in const [(1, 0), (-1, 0), (0, 1), (0, -1)]) {
+          final nr = rr + dr, nc = cc + dc;
+          if (nr < 0 || nr >= t.length || nc < 0 || nc >= w) continue;
+          if (t[nr][nc] != '.' || d.containsKey((nr, nc))) continue;
+          d[(nr, nc)] = d[(rr, cc)]! + 1;
+          q.add((nr, nc));
+        }
+      }
+      // 行き止まり（となりの床が1つだけ）なら、置いても道をふさがない
+      int open((int, int) p) => [
+        for (final (dr, dc) in const [(1, 0), (-1, 0), (0, 1), (0, -1)])
+          if (p.$1 + dr >= 0 &&
+              p.$1 + dr < t.length &&
+              t[p.$1 + dr][p.$2 + dc] == '.')
+            1,
+      ].length;
+      final cand =
+          d.keys
+              .where((p) => p.$1 > 0 && p.$1 < t.length - 1 && open(p) == 1)
+              .toList()
+            ..sort(
+              (a, b) => near ? d[a]!.compareTo(d[b]!) : d[b]!.compareTo(d[a]!),
+            );
+      return cand.firstOrNull;
+    }
+
+    final gate1 = 3 + rnd.nextInt(w - 6), gate2 = 3 + rnd.nextInt(w - 6);
+    const mid = w ~/ 2;
+    // 奥の部屋：まん中に洞くつの主、そのうしろ（上）に宝箱。宝箱のまわりは岩でかこむ
+    final boss = room(9, gate2, mid);
+    for (var rr = 0; rr <= 3; rr++) {
+      for (var cc = mid - 1; cc <= mid + 1; cc++) {
+        boss[rr][cc] = 'T';
+      }
+    }
+    boss[2][mid] = 'C';
+    boss[3][mid] = 'M';
+    // 洞くつの主の手前は広く、入口からの道を必ずつなぐ
+    for (var rr = 4; rr <= 5; rr++) {
+      for (var cc = mid - 2; cc <= mid + 2; cc++) {
+        boss[rr][cc] = '.';
+      }
+    }
+    for (var rr = 4; rr <= 8; rr++) {
+      boss[rr][mid] = '.';
+    }
+    for (var cc = min(mid, gate2); cc <= max(mid, gate2); cc++) {
+      boss[7][cc] = '.';
+    }
+    for (var rr = 7; rr <= 8; rr++) {
+      boss[rr][gate2] = '.';
+    }
+    // とちゅうの部屋：宝箱と泉
+    final middle = room(9, gate1, gate2);
+    final entryRoom = room(8, mid, gate1);
+
+    rows.add(List.filled(w, '#'));
+    final bossTop = rows.length;
+    rows.addAll(boss);
+    rows.add([for (var c = 0; c < w; c++) c == gate2 ? '.' : '#']);
+    final midTop = rows.length;
+    rows.addAll(middle);
+    rows.add([for (var c = 0; c < w; c++) c == gate1 ? '.' : '#']);
+    final entryTop = rows.length;
+    rows.addAll(entryRoom);
+    rows.add([for (var c = 0; c < w; c++) c == mid ? 'O' : '#']);
+
+    chests[(col: mid, row: bossTop + 2)] = ChestKind.cave2;
+    final c1 = far(middle, middle.length - 1, gate1);
+    if (c1 != null) {
+      rows[midTop + c1.$1][c1.$2] = 'C';
+      chests[(col: c1.$2, row: midTop + c1.$1)] = ChestKind.cave1;
+    }
+    // 泉と、洞くつにすむ仙人（入口の部屋）
+    final spring = far(entryRoom, entryRoom.length - 1, mid);
+    if (spring != null) rows[entryTop + spring.$1][spring.$2] = 'W';
+    if (spring != null) entryRoom[spring.$1][spring.$2] = 'W';
+    final hermit = far(entryRoom, entryRoom.length - 1, mid, near: true);
+    if (hermit != null) rows[entryTop + hermit.$1][hermit.$2] = 'N';
+    // スタート地点は出口のすぐ上（出口から入るので、ふだんは使わない）
+    if (rows[entryTop + entryRoom.length - 1][mid] == '.') {
+      rows[entryTop + entryRoom.length - 1][mid] = 'P';
+    }
+    final h = rows.length;
+    final label = parent.areaLabels[order] ?? parent.labelAt(0, 0);
+    return FieldMap(
+      [for (final r in rows) r.join()],
+      id: id,
+      terrainGrid: List.generate(h, (_) => List.filled(w, terrain)),
+      areaGrid: List.generate(h, (_) => List.filled(w, order)),
+      enemySpots: const {},
+      safeCells: const {},
+      areaLabels: {order: '$labelの洞くつ'},
+      areaThemes: {order: '洞くつの奥に、宝と主がいる'},
+      chestKinds: chests,
+      portals: {(col: mid, row: h - 1): (target: parentId, label: '外へ')},
+      dungeonOf: order,
+      signText: '洞くつの奥には、宝を守る主がいる。',
+    );
   }
 
   /// 上へ進む形のマップを、[dir]（up / down / left / right）へ進む形に向きを変える
@@ -492,6 +706,7 @@ class FieldMap {
     Portal? backPortal,
     String signText = '',
     String goalText = 'トロフィーがある。',
+    bool dungeons = false,
   }) {
     final rnd = Random(seed);
     final areas = stages.length;
@@ -517,6 +732,7 @@ class FieldMap {
     final safe = <int, List<Cell>>{};
     final chestKinds = <Cell, ChestKind>{};
     final landmarks = <Landmark>[];
+    final portals = <Cell, Portal>{};
     String wall() => '#' * _width;
 
     void add(String line, Terrain terrain, int area) {
@@ -550,6 +766,7 @@ class FieldMap {
         exitCol: gate,
         isStart: k == 1,
         withSign: signText.isNotEmpty,
+        cave: dungeons && !stage.isBoss && k % 4 == 3 && !terrain.isVoyage,
       );
       for (final line in room.lines) {
         add(line, terrain, stage.order);
@@ -559,6 +776,12 @@ class FieldMap {
       ];
       for (final e in room.chests.entries) {
         chestKinds[(col: e.key.col, row: e.key.row + top)] = e.value;
+      }
+      for (final c in room.caves) {
+        portals[(col: c.col, row: c.row + top)] = (
+          target: dungeonId(id, stage.order),
+          label: '洞くつ',
+        );
       }
       for (final l in room.landmarks) {
         landmarks.add((
@@ -570,7 +793,6 @@ class FieldMap {
       }
     }
     final bottom = wall().split('');
-    final portals = <Cell, Portal>{};
     if (backPortal != null) {
       bottom[_width ~/ 2] = 'O';
       portals[(col: _width ~/ 2, row: rows.length)] = backPortal;
@@ -617,7 +839,10 @@ class FieldMap {
 /// 3. 入口から行けない場所は障害物で埋める（閉じこめられる場所をなくす）
 /// 4. 宿・ワープ石・宝箱・泉・隠し通路・知識の扉・目印の飾りを置く
 class _Room {
-  _Room(this.lines, this.safe, this.chests, this.landmarks);
+  _Room(this.lines, this.safe, this.chests, this.landmarks, this.caves);
+
+  /// 洞くつの入口（row は部屋の中での行）
+  final List<Cell> caves;
 
   /// 部屋の中の目印（row は部屋の中での行）
   final List<Landmark> landmarks;
@@ -641,6 +866,7 @@ class _Room {
     required int exitCol,
     required bool isStart,
     bool withSign = true,
+    bool cave = false,
   }) {
     final h = boss ? 13 : 11;
     final rnd = Random(seed);
@@ -1114,6 +1340,30 @@ class _Room {
       }
     }
 
+    // 洞くつの入口：障害物の中で、となりの1マスだけが床（道からはなれた所）
+    final caves = <Cell>[];
+    if (cave) {
+      final d0 = distances();
+      final spots = [
+        for (var rr = 1; rr < h - 1; rr++)
+          for (var cc = 1; cc < w - 1; cc++) (rr, cc),
+      ]..shuffle(rnd);
+      for (final (rr, cc) in spots) {
+        if (tiles[rr][cc] != 'T') continue;
+        final open = [
+          for (final (dr, dc) in const [(0, 1), (0, -1), (1, 0), (-1, 0)])
+            if (d0.containsKey((rr + dr, cc + dc)) &&
+                tiles[rr + dr][cc + dc] == '.')
+              (rr + dr, cc + dc),
+        ];
+        if (open.length != 1 || onPath.contains(open.first)) continue;
+        tiles[rr][cc] = 'O';
+        needsAccess.add((rr, cc));
+        caves.add((col: cc, row: rr));
+        break;
+      }
+    }
+
     // スタート地点と看板
     if (isStart) {
       place('P', h - 2, entryCol);
@@ -1260,7 +1510,13 @@ class _Room {
           (col: e.key.$2, row: e.key.$1),
     ]..sort((a, b) => a.row != b.row ? a.row - b.row : a.col - b.col);
 
-    return _Room([for (final row in tiles) row.join()], safe, chests, marks);
+    return _Room(
+      [for (final row in tiles) row.join()],
+      safe,
+      chests,
+      marks,
+      caves,
+    );
   }
 }
 

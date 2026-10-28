@@ -297,6 +297,11 @@ abstract final class Scenery {
     }
     c.restore();
 
+    // ---- 洞くつの中は暗く ----
+    if (map.dungeonOf != null) {
+      c.drawRect(bounds, _p(0xFF2A2236, 0.32));
+    }
+
     // ---- ノートの線（うすく。ノートに描いた世界であることは残す） ----
     for (var r = 0; r < h; r++) {
       for (var col = 0; col < w; col++) {

@@ -79,8 +79,8 @@ class FieldGame extends FlameGame with KeyboardEvents {
   ChestVariant chestVariantAt(Cell c) {
     if (!chestVariants) return ChestVariant.seal;
     return switch (map.chestKinds[c]) {
-      ChestKind.secret => ChestVariant.explore,
-      ChestKind.vault => ChestVariant.seal,
+      ChestKind.secret || ChestKind.cave1 => ChestVariant.explore,
+      ChestKind.vault || ChestKind.cave2 => ChestVariant.seal,
       _ => ChestVariant.forMainChest(
         map.enemyAhead(c) ?? 1,
         boss: map.bossAreas.contains(map.areaAt(c.col, c.row)),
@@ -349,7 +349,11 @@ class FieldGame extends FlameGame with KeyboardEvents {
     for (final c in map.findAll('M')) {
       final base = _stageAhead(c);
       if (base == null) continue;
-      final token = EnemyToken(stage: Elites.of(base), home: c);
+      // 洞くつの奥にいるのは「洞くつの主」
+      final token = EnemyToken(
+        stage: map.dungeonOf != null ? CaveBoss.of(base) : Elites.of(base),
+        home: c,
+      );
       _elites[c] = token;
       world.add(token);
     }
@@ -507,6 +511,8 @@ class FieldGame extends FlameGame with KeyboardEvents {
     return switch (map.chestKinds[c]) {
       ChestKind.secret => '${base}_secret',
       ChestKind.vault => '${base}_vault',
+      ChestKind.cave1 => '${base}_cave1',
+      ChestKind.cave2 => '${base}_cave2',
       _ => base,
     };
   }
@@ -1048,7 +1054,44 @@ class MapLayer extends PositionComponent {
   }
 
   /// 出入口：アーチと行き先の札
+  /// 洞くつの入口：岩にあいた暗い穴
+  void _caveMouth(ui.Canvas c, Rect r) {
+    final rock = ui.Path()
+      ..addOval(
+        Rect.fromCenter(
+          center: r.center.translate(0, 2),
+          width: r.width * 1.15,
+          height: r.height * 1.05,
+        ),
+      );
+    c.drawPath(rock, ui.Paint()..color = const ui.Color(0xFF8E867C));
+    c.drawPath(rock, _ink..strokeWidth = 1.4);
+    final hole = ui.Path()
+      ..moveTo(r.left + r.width * 0.2, r.bottom - 1)
+      ..lineTo(r.left + r.width * 0.2, r.top + r.height * 0.55)
+      ..arcToPoint(
+        Offset(r.right - r.width * 0.2, r.top + r.height * 0.55),
+        radius: ui.Radius.circular(r.width * 0.3),
+      )
+      ..lineTo(r.right - r.width * 0.2, r.bottom - 1)
+      ..close();
+    c.drawPath(hole, ui.Paint()..color = const ui.Color(0xFF241E2C));
+    c.drawPath(hole, _ink..strokeWidth = 1.2);
+    // 入口のたいまつ
+    c.drawCircle(
+      Offset(r.right - 3, r.top + r.height * 0.3),
+      4,
+      ui.Paint()..color = const ui.Color(0x55FFB74D),
+    );
+    c.drawCircle(
+      Offset(r.right - 3, r.top + r.height * 0.3),
+      2,
+      ui.Paint()..color = const ui.Color(0xFFFFB74D),
+    );
+  }
+
   void _portal(ui.Canvas c, Rect r, String label) {
+    if (label == '洞くつ') return _caveMouth(c, r);
     c.drawRect(r, ui.Paint()..color = const ui.Color(0xFFFFF3C4));
     final arch = ui.Path()
       ..moveTo(r.left + 3, r.bottom)

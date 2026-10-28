@@ -15,10 +15,12 @@ class Elites {
 
   static bool isElite(String stageId) => stageId.endsWith(idSuffix);
 
-  /// 強敵のステージ ID から、もとのエリアの ID
+  /// 強敵・洞くつの主のステージ ID から、もとのエリアの ID
   static String baseId(String stageId) => isElite(stageId)
       ? stageId.substring(0, stageId.length - idSuffix.length)
-      : stageId;
+      : CaveBoss.isCaveBoss(stageId)
+          ? stageId.substring(0, stageId.length - CaveBoss.idSuffix.length)
+          : stageId;
 
   /// エリアの強敵
   static StageDef of(StageDef base) {
@@ -60,6 +62,57 @@ class Elites {
   }
 }
 
+/// 寄り道の洞くつの奥にいる「洞くつの主」。
+///
+/// そのエリアと同じ問題で戦う。強敵よりさらに手ごわいが、倒すとレアカードと
+/// たくさんの経験値がもらえる（はじめて倒したときだけ）。倒すと奥の宝箱へ進める。
+class CaveBoss {
+  const CaveBoss._();
+
+  static const idSuffix = '_cave';
+
+  static bool isCaveBoss(String stageId) => stageId.endsWith(idSuffix);
+
+  static StageDef of(StageDef base) {
+    final e = base.enemy;
+    final rares = CardDef.rares;
+    final card = rares[(base.order + 3) % rares.length];
+    return StageDef(
+      id: '${base.id}$idSuffix',
+      worldId: base.worldId,
+      order: base.order,
+      name: '${base.name}の洞くつ',
+      region: base.region,
+      branch: base.branch,
+      branchOrder: base.branchOrder,
+      isBoss: true,
+      enemy: EnemyDef(
+        id: '${e.id}$idSuffix',
+        name: '洞くつの主・${e.name}',
+        maxHp: (e.maxHp * 1.9).round(),
+        attack: (e.attack * 1.3).round(),
+        description: '${e.description} 洞くつの奥で、宝を守りつづけている。',
+        look: e.look,
+        color: 0xFF5D4E75,
+        weakness: e.weakness,
+        armorCategory: e.armorCategory,
+        armor: e.armor,
+        ability: e.ability,
+        introLine: 'この洞くつの宝がほしければ、わたしをこえてゆけ！',
+        defeatLine: 'よくぞここまで…。奥の宝は、おまえのものだ。',
+      ),
+      questionSetIds: base.questionSetIds,
+      expReward: (base.expReward * 2.5).round(),
+      timeLimitSeconds: base.timeLimitSeconds,
+      readingTimeLimitSeconds: base.readingTimeLimitSeconds,
+      recommendedLevel: base.recommendedLevel + 3,
+      grammarTheme: base.grammarTheme,
+      vocabLevel: base.vocabLevel,
+      rewardCardId: card.id,
+    );
+  }
+}
+
 /// ステージごとのボスの特別ルール
 class BossRules {
   const BossRules._();
@@ -74,6 +127,7 @@ class BossRules {
   static BossRule of(StageDef stage) {
     if (Elites.isElite(stage.id)) return BossRule.chain3;
     if (ShadowKeeper.isShadow(stage.id)) return BossRule.finale;
+    if (CaveBoss.isCaveBoss(stage.id)) return BossRule.trial;
     if (!stage.isBoss) return BossRule.none;
     // 共通テスト遺跡はボスの連戦そのものが特別ルール
     if (stage.reinforcements.isNotEmpty) return BossRule.none;
