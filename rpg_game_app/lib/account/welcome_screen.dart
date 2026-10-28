@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../app/services.dart';
 import '../app/theme.dart';
+import '../art/journey_banner.dart';
 import '../art/paper.dart';
 import 'account_screen.dart';
 
@@ -52,12 +53,15 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      const Icon(Icons.auto_stories, size: 64),
-                      const SizedBox(height: 12),
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(16),
+                        child: const JourneyBanner(height: 150),
+                      ),
+                      const SizedBox(height: 18),
                       Text(
                         'つづりクエスト',
                         textAlign: TextAlign.center,
-                        style: serif(30),
+                        style: serif(34, color: TsuzuriColors.accent),
                       ),
                       const SizedBox(height: 8),
                       Text(

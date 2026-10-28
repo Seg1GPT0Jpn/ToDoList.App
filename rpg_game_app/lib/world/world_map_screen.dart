@@ -12,10 +12,10 @@ import '../meta/today_plan.dart';
 import '../account/account_screen.dart';
 import '../app/services.dart';
 import '../app/theme.dart';
-import '../art/battle_backdrop.dart';
 import '../art/hero_painter.dart';
 import '../audio/music_director.dart';
 import '../audio/music_scope.dart';
+import '../art/journey_banner.dart';
 import '../art/paper.dart';
 import '../battle/battle_screen.dart';
 import '../field/field_screen.dart';
@@ -208,7 +208,7 @@ class WorldMapScreen extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 10),
-        const _HomeBanner(),
+        const JourneyBanner(),
         const SizedBox(height: 10),
         Container(
           padding: const EdgeInsets.all(12),
@@ -808,92 +808,3 @@ class _RealmBanner extends StatelessWidget {
 }
 
 /// ホームの上の、時間で変わる景色の帯。主人公が歩いて旅をしている
-class _HomeBanner extends StatefulWidget {
-  const _HomeBanner();
-
-  @override
-  State<_HomeBanner> createState() => _HomeBannerState();
-}
-
-class _HomeBannerState extends State<_HomeBanner>
-    with SingleTickerProviderStateMixin {
-  late final _t = SlowClock(period: const Duration(seconds: 40), fps: 15);
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    _t.follow(context);
-  }
-
-  @override
-  void dispose() {
-    _t.dispose();
-    super.dispose();
-  }
-
-  /// 朝〜昼は草原、夕方は砂漠の夕やけ、夜は星空の城
-  static Terrain _terrainNow() {
-    final h = DateTime.now().hour;
-    if (h >= 6 && h < 16) return Terrain.meadow;
-    if (h >= 16 && h < 19) return Terrain.desert;
-    return Terrain.castle;
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final terrain = _terrainNow();
-    return SizedBox(
-      height: 96,
-      child: RepaintBoundary(
-        child: AnimatedBuilder(
-          animation: _t,
-          builder: (context, _) {
-            final v = _t.value;
-            return LayoutBuilder(
-              builder: (context, box) {
-                final w = box.maxWidth;
-                return Stack(
-                  children: [
-                    Positioned.fill(
-                      child: CustomPaint(
-                        painter: BattleBackdropPainter(
-                          terrain,
-                          v * 40,
-                          showStage: false,
-                        ),
-                      ),
-                    ),
-                    // 主人公が、左から右へ旅をする
-                    Positioned(
-                      left: -40 + (w + 80) * v,
-                      bottom: 12,
-                      child: SizedBox.square(
-                        dimension: 40,
-                        child: CustomPaint(painter: _BannerHero(v * 40)),
-                      ),
-                    ),
-                  ],
-                );
-              },
-            );
-          },
-        ),
-      ),
-    );
-  }
-}
-
-class _BannerHero extends CustomPainter {
-  _BannerHero(this.t);
-  final double t;
-  @override
-  void paint(Canvas canvas, Size size) => paintHero(
-    canvas,
-    size.shortestSide,
-    facing: Facing.right,
-    walk: t * 1.2,
-    moving: true,
-  );
-  @override
-  bool shouldRepaint(_BannerHero old) => true;
-}
