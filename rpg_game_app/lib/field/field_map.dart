@@ -780,16 +780,38 @@ class _Room {
                 if (!aisle) g[r][c] = true;
               }
             }
-          case Terrain.tower || Terrain.workshop:
-            // 仕切りの壁が縦に並ぶ（迷路のような部屋）
-            for (
-              var c = 4 + rnd.nextInt(2);
-              c < w - 2;
-              c += 4 + rnd.nextInt(2)
-            ) {
-              final door = 1 + rnd.nextInt(h - 2);
-              for (var r = 1; r < h - 1; r++) {
-                if ((r - door).abs() > 0) g[r][c] = true;
+          case Terrain.tower:
+            // 時計塔の中：入れ子になった回廊。輪の壁には、上下左右のどこかに切れ目
+            for (final inset in const [2, 4]) {
+              final top = inset, bottom = h - 1 - inset;
+              final left = inset + 1, right = w - 2 - inset;
+              if (bottom - top < 2) continue;
+              final gaps = {
+                (top, left + rnd.nextInt(right - left)),
+                (bottom, left + rnd.nextInt(right - left)),
+                (top + 1 + rnd.nextInt(bottom - top - 1), left),
+                (top + 1 + rnd.nextInt(bottom - top - 1), right),
+              };
+              for (var c = left; c <= right; c++) {
+                for (final r in [top, bottom]) {
+                  if (!gaps.contains((r, c))) g[r][c] = true;
+                }
+              }
+              for (var r = top; r <= bottom; r++) {
+                for (final c in [left, right]) {
+                  if (!gaps.contains((r, c))) g[r][c] = true;
+                }
+              }
+            }
+          case Terrain.workshop:
+            // 工房：作業台（横3マス）が通路をはさんで並ぶ
+            for (var r = 2; r < h - 2; r += 3) {
+              for (var c = 3; c + 3 < w - 2; c += 5) {
+                if (rnd.nextDouble() < 0.85) {
+                  for (var dc = 0; dc < 3; dc++) {
+                    g[r][c + dc] = true;
+                  }
+                }
               }
             }
           default:
@@ -804,11 +826,11 @@ class _Room {
               }
             }
         }
-        // 工房・塔には、荷物や機械を少し
-        if (terrain == Terrain.workshop || terrain == Terrain.tower) {
+        // 工房には、機械を少し
+        if (terrain == Terrain.workshop) {
           for (var r = 0; r < h; r++) {
             for (var c = 1; c < w - 1; c++) {
-              if (rnd.nextDouble() < 0.04) g[r][c] = true;
+              if (rnd.nextDouble() < 0.025) g[r][c] = true;
             }
           }
         }

@@ -179,6 +179,28 @@ _Palette _paletteOf(Terrain t) => switch (t) {
     obs: _Obs.cloud,
     detail: 0xFFB9CDE8,
   ),
+  Terrain.workshop => const _Palette(
+    ground: 0xFFDAD8D2,
+    patch: 0xFFC2BFB6,
+    path: 0xFF7D7A8C,
+    pathEdge: 0xFFB8B4C8,
+    leaf: 0xFF9E9AAE,
+    leafDark: 0xFF5C566E,
+    leafLight: 0xFFC8C4D6,
+    obs: _Obs.indoor,
+    detail: 0xFF8E8A80,
+  ),
+  Terrain.tower => const _Palette(
+    ground: 0xFFE4DEEC,
+    patch: 0xFFCFC6DE,
+    path: 0xFF7D7A8C,
+    pathEdge: 0xFFB8B4C8,
+    leaf: 0xFF8E86A0,
+    leafDark: 0xFF4A3F66,
+    leafLight: 0xFFC8C0DA,
+    obs: _Obs.indoor,
+    detail: 0xFF9A90B0,
+  ),
   _ => const _Palette(
     ground: 0xFFE9E2D2,
     patch: 0xFFD8CCB4,
@@ -655,7 +677,7 @@ abstract final class Scenery {
     }
 
     switch (t) {
-      case Terrain.library || Terrain.tower:
+      case Terrain.library:
         // 本棚：となりとつながった長い棚。上のマスに少しはみ出す
         final left = same(-1) ? x : x + 2;
         final right = same(1) ? x + ts : x + ts - 2;
@@ -696,35 +718,151 @@ abstract final class Scenery {
         c.drawLine(body.bottomLeft, body.bottomRight, ink);
         if (!same(-1)) c.drawLine(body.topLeft, body.bottomLeft, ink);
         if (!same(1)) c.drawLine(body.topRight, body.bottomRight, ink);
-      case Terrain.workshop:
-        // 木箱を2段に積む／歯車の機械
-        if (_h(col, r, 5) < 0.6) {
-          for (final (dy, s) in [(0.0, 0.8), (-0.42, 0.62)]) {
-            if (dy < 0 && _h(col, r, 6) < 0.5) continue;
-            final b = Rect.fromCenter(
-              center: Offset(x + ts / 2, y + ts * (0.55 + dy)),
-              width: ts * s,
-              height: ts * s * 0.75,
+      case Terrain.workshop when same(-1) || same(1):
+        // 作業台：となりとつながった長い机。上に道具がのっている
+        final left = same(-1) ? x : x + 2;
+        final right = same(1) ? x + ts : x + ts - 2;
+        final top = Rect.fromLTRB(left, y + ts * 0.18, right, y + ts * 0.5);
+        final front = Rect.fromLTRB(left, top.bottom, right, y + ts * 0.62);
+        c.drawRect(top, _p(0xFFC69C6D));
+        c.drawRect(front, _p(0xFF9A6B45));
+        for (final lx in [left + 3, right - 6]) {
+          if ((lx < x + ts / 2) == same(-1) && lx < x + ts / 2) continue;
+          c.drawRect(
+            Rect.fromLTWH(lx, front.bottom, 3, ts * 0.32),
+            _p(0xFF7A4A30),
+          );
+        }
+        c.drawLine(top.topLeft, top.topRight, ink);
+        c.drawLine(front.bottomLeft, front.bottomRight, ink);
+        if (!same(-1)) c.drawLine(top.topLeft, front.bottomLeft, ink);
+        if (!same(1)) c.drawLine(top.topRight, front.bottomRight, ink);
+        // 道具（かなづち・スパナ・歯車・設計図）
+        switch ((_h(col, r, 8) * 4).floor()) {
+          case 0:
+            c.drawLine(
+              Offset(x + ts * 0.25, y + ts * 0.4),
+              Offset(x + ts * 0.65, y + ts * 0.28),
+              _stroke(0xFF7A4A30, 2.4),
             );
-            c.drawRect(b, _p(0xFFC69C6D));
-            c.drawLine(b.topLeft, b.bottomRight, _stroke(0xFF8A5A3C, 1));
-            c.drawLine(b.topRight, b.bottomLeft, _stroke(0xFF8A5A3C, 1));
-            c.drawRect(b, ink);
-          }
-        } else {
-          final o = Offset(x + ts / 2, y + ts * 0.4);
+            c.drawRect(
+              Rect.fromCenter(
+                center: Offset(x + ts * 0.68, y + ts * 0.27),
+                width: 8,
+                height: 5,
+              ),
+              _p(0xFF6E6E6E),
+            );
+          case 1:
+            final o = Offset(x + ts * 0.5, y + ts * 0.33);
+            c.drawCircle(o, ts * 0.12, _p(0xFFB08D57));
+            c.drawCircle(o, ts * 0.12, ink);
+            c.drawCircle(o, ts * 0.04, _p(0xFF5A5A5A));
+          case 2:
+            c.drawRect(
+              Rect.fromCenter(
+                center: Offset(x + ts * 0.5, y + ts * 0.33),
+                width: ts * 0.5,
+                height: ts * 0.2,
+              ),
+              _p(0xFF7FA6D8),
+            );
+            c.drawLine(
+              Offset(x + ts * 0.3, y + ts * 0.33),
+              Offset(x + ts * 0.7, y + ts * 0.33),
+              _stroke(0xFFFFFFFF, 0.8),
+            );
+          default:
+            break;
+        }
+      case Terrain.workshop:
+        // 機械：鉄の箱に歯車とランプ
+        final box = Rect.fromLTRB(
+          x + ts * 0.12,
+          y - ts * 0.15,
+          x + ts * 0.88,
+          y + ts * 0.9,
+        );
+        c.drawRRect(
+          ui.RRect.fromRectAndRadius(box, const ui.Radius.circular(3)),
+          _p(0xFF8A8F98),
+        );
+        c.drawRRect(
+          ui.RRect.fromRectAndRadius(box, const ui.Radius.circular(3)),
+          ink,
+        );
+        for (final (dx, dy) in [
+          (0.2, 0.0),
+          (0.8, 0.0),
+          (0.2, 0.85),
+          (0.8, 0.85),
+        ]) {
+          c.drawCircle(
+            Offset(
+              box.left + box.width * dx,
+              box.top + 4 + (box.height - 8) * dy,
+            ),
+            1.2,
+            _p(0xFF4E4E4E),
+          );
+        }
+        final o = Offset(x + ts * 0.5, y + ts * 0.42);
+        final g = ui.Path();
+        for (var i = 0; i < 16; i++) {
+          final a = i * pi / 8;
+          final rr = i.isEven ? ts * 0.24 : ts * 0.18;
+          final p = o + Offset(cos(a), sin(a)) * rr;
+          i == 0 ? g.moveTo(p.dx, p.dy) : g.lineTo(p.dx, p.dy);
+        }
+        g.close();
+        c.drawPath(g, _p(0xFFB08D57));
+        c.drawPath(g, ink);
+        c.drawCircle(o, ts * 0.07, _p(0xFF5A5A5A));
+        c.drawCircle(Offset(box.right - 6, box.top + 6), 2.6, _p(0xFF8CE07A));
+      case Terrain.tower:
+        // 時計塔の壁：歯車がうめこまれた石の壁（上のマスに少しはみ出す）
+        final top = same(0) ? y - ts * 0.3 : y - ts * 0.3;
+        final body = Rect.fromLTRB(x, top, x + ts, y + ts);
+        c.drawRect(body, _p(0xFF6E6680));
+        c.drawRect(
+          Rect.fromLTRB(x, top, x + ts, top + ts * 0.22),
+          _p(0xFF8E86A0),
+        );
+        // 石の目
+        final joint = _stroke(0xFF3E3A4A, 0.7, 0.4);
+        c.drawLine(
+          Offset(x, y + ts * 0.35),
+          Offset(x + ts, y + ts * 0.35),
+          joint,
+        );
+        c.drawLine(
+          Offset(x, y + ts * 0.7),
+          Offset(x + ts, y + ts * 0.7),
+          joint,
+        );
+        final off = (col + r).isEven ? 0.3 : 0.7;
+        c.drawLine(
+          Offset(x + ts * off, y + ts * 0.35),
+          Offset(x + ts * off, y + ts * 0.7),
+          joint,
+        );
+        if (_h(col, r, 9) < 0.3) {
+          final o = Offset(x + ts * 0.5, y + ts * 0.5);
           final g = ui.Path();
-          for (var i = 0; i < 16; i++) {
-            final a = i * pi / 8;
-            final rr = i.isEven ? ts * 0.42 : ts * 0.34;
+          for (var i = 0; i < 12; i++) {
+            final a = i * pi / 6;
+            final rr = i.isEven ? ts * 0.22 : ts * 0.16;
             final p = o + Offset(cos(a), sin(a)) * rr;
             i == 0 ? g.moveTo(p.dx, p.dy) : g.lineTo(p.dx, p.dy);
           }
           g.close();
-          c.drawPath(g, _p(0xFF9E9E9E));
+          c.drawPath(g, _p(0xFFD4AF5A));
           c.drawPath(g, ink);
-          c.drawCircle(o, ts * 0.12, _p(0xFF5A5A5A));
+          c.drawCircle(o, ts * 0.05, _p(0xFF6E6680));
         }
+        if (!same(-1)) c.drawLine(body.topLeft, body.bottomLeft, ink);
+        if (!same(1)) c.drawLine(body.topRight, body.bottomRight, ink);
+        c.drawLine(body.topLeft, body.topRight, ink);
       default:
         // 柱：台座・円柱・柱頭。上のマスにはみ出すほど高い
         final (stone, dark) = switch (t) {
@@ -982,8 +1120,23 @@ abstract final class Scenery {
   static void _indoorFloor(ui.Canvas c, Terrain t, int col, int r, double ts) {
     final x = col * ts, y = r * ts;
     final line = _stroke(0xFF5D4A3A, 0.7, 0.16);
-    final wood =
-        t == Terrain.library || t == Terrain.town || t == Terrain.workshop;
+    if (t == Terrain.workshop) {
+      // 鉄板：2×2 の板に、四すみのびょう
+      for (final (dx, dy) in [(0.0, 0.0), (0.5, 0.0), (0.0, 0.5), (0.5, 0.5)]) {
+        final plate = Rect.fromLTWH(x + ts * dx, y + ts * dy, ts / 2, ts / 2);
+        c.drawRect(plate.deflate(0.8), line);
+        c.drawCircle(plate.topLeft.translate(3, 3), 0.9, _p(0xFF5D4A3A, 0.3));
+      }
+      return;
+    }
+    if (t == Terrain.tower) {
+      // 市松もようの床
+      if ((col + r).isEven) {
+        c.drawRect(Rect.fromLTWH(x, y, ts, ts), _p(0xFF8E86A0, 0.12));
+      }
+      return;
+    }
+    final wood = t == Terrain.library || t == Terrain.town;
     if (wood) {
       // 板：横に3枚。継ぎ目は列ごとにずらす
       for (var k = 0; k < 3; k++) {
