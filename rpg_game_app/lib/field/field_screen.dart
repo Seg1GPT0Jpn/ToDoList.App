@@ -182,7 +182,23 @@ class _FieldScreenState extends State<FieldScreen> with RouteAware {
           : _SpringDialog(stage),
     ),
     onGhost: (stage, count) => _open(_GhostDialog(stage, count)),
+    onIncident: _isExam ? null : _incident,
   );
+
+  /// 住人の事件が進んだ：印を残し、お礼の経験値を受け取り、ことばを出す
+  Future<void> _incident(String flag, int exp, String text) async {
+    final services = RpgServices.of(context);
+    final latest = await services.repository.load();
+    if (latest.fieldFlags.contains(flag)) return;
+    var p = latest.copyWith(fieldFlags: {...latest.fieldFlags, flag});
+    if (exp > 0) {
+      p = Progression.addExp(p, exp).progress;
+      services.music.se('se_chest');
+    }
+    await _save(p);
+    if (mounted) _open(_MessageDialog(text));
+  }
+
   final _random = Random();
   _Dialog? _dialog;
   bool _starting = false;

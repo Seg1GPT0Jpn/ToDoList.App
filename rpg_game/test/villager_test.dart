@@ -32,4 +32,22 @@ void main() {
     };
     expect(later.any((l) => l.contains('影')), isTrue);
   });
+
+  test('住人の事件：迷子さがしと落とし物。見つけた・届けたを印で残す', () {
+    final kinds = {
+      for (var i = 0; i < 6; i++) Incident.of('english', i).kind,
+    };
+    expect(kinds, IncidentKind.values.toSet());
+    final inc = Incident.of('english', 0);
+    expect(Incident.of('english', 0).item, inc.item, reason: 'いつも同じ');
+    expect(inc.request('そよ風の丘'), contains('そよ風の丘'));
+    expect(inc.thanksText, contains('${Incident.rewardExp}'));
+    var p = RpgProgress.initial;
+    expect(inc.found(p), isFalse);
+    p = p.copyWith(fieldFlags: {inc.foundFlag});
+    expect(inc.found(p), isTrue);
+    expect(inc.done(p), isFalse);
+    p = p.copyWith(fieldFlags: {...p.fieldFlags, inc.doneFlag});
+    expect(inc.done(p), isTrue);
+  });
 }

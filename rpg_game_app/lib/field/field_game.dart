@@ -59,7 +59,11 @@ class FieldGame extends FlameGame with KeyboardEvents {
     this.masteredArea,
     this.chestVariants = true,
     this.calm = false,
+    this.onIncident,
   });
+
+  /// 住人の事件が進んだとき（記録する印・お礼の経験値・出すことば）
+  final void Function(String flag, int exp, String text)? onIncident;
 
   /// 動きをへらす（舞うものを出さない）
   final bool calm;
@@ -174,6 +178,73 @@ class FieldGame extends FlameGame with KeyboardEvents {
 
   /// クリア後の裏ボス（全エリアをクリアすると、ゴールの前に現れる）
   EnemyToken? _shadow;
+
+  /// 住人の事件（住人の番号 → 事件）と、見つけるもの
+  final Map<int, Incident> _incidents = {};
+  final Map<int, IncidentToken> _incidentTokens = {};
+
+  /// もう知らせた事件の印（保存を待つあいだに、何度も知らせないように）
+  final Set<String> _incidentSent = {};
+
+  void _report(String flag, int exp, String text) {
+    if (!_incidentSent.add(flag)) return;
+    onIncident?.call(flag, exp, text);
+  }
+
+  /// 事件で見つけるものを置く場所。住人のエリアの1つ先（まだ行けなければ、行ける所まで）
+  (Cell, String)? _incidentSpot(VillagerToken v, Incident inc) {
+    final own = map.areaAt(v.home.col, v.home.row);
+    var area = own;
+    if (_mapStages.isNotEmpty) {
+      final open =
+          _mapStages
+              .where((s) => !_cleared(_progress, s))
+              .map((s) => s.order)
+              .firstOrNull ??
+          _mapStages.last.order;
+      area = min(own + 1, open);
+    }
+    var cells = map.safeCells[area] ?? const <Cell>[];
+    if (cells.isEmpty) {
+      cells = [
+        for (var r = 0; r < map.height; r++)
+          for (var c = 0; c < map.width; c++)
+            if (map.tileAt(c, r) == '.' &&
+                map.areaAt(c, r) == area &&
+                (c - v.home.col).abs() + (r - v.home.row).abs() > 4)
+              (col: c, row: r),
+      ];
+    }
+    if (cells.isEmpty) return null;
+    var k = (inc.index * 7 + 3) % cells.length;
+    // 亡霊が立つマス（まん中）はさける
+    if (k == cells.length ~/ 2 && cells.length > 1) k = (k + 1) % cells.length;
+    return (cells[k], map.areaLabels[area] ?? 'この近く');
+  }
+
+  /// 住人の事件の「！」と、見つけるものを、進み具合に合わせる
+  void _syncIncidents() {
+    if (onIncident == null) return;
+    for (final v in _villagers) {
+      final inc = _incidents[v.index] ??= Incident.of(map.id, v.index);
+      v.quest = !inc.done(_progress);
+      final token = _incidentTokens[v.index];
+      final spot = inc.found(_progress) ? null : _incidentSpot(v, inc);
+      if (spot == null || token?.cell != spot.$1) {
+        token?.removeFromParent();
+        _incidentTokens.remove(v.index);
+      }
+      if (spot != null && _incidentTokens[v.index] == null) {
+        final t = IncidentToken(
+          cell: spot.$1,
+          child: inc.kind == IncidentKind.lostChild,
+          tileSize: tileSize,
+        );
+        _incidentTokens[v.index] = t;
+        world.add(t);
+      }
+    }
+  }
 
   /// 住人と話した回数（同じ人でも、話すたびに話題を変える）
   int _talks = 0;
@@ -375,6 +446,7 @@ class FieldGame extends FlameGame with KeyboardEvents {
       }
       if (start == null) continue;
       final v = VillagerToken(
+        index: i,
         home: start,
         color: VillagerChat.colors[i % VillagerChat.colors.length],
         tileSize: tileSize,
@@ -440,6 +512,7 @@ class FieldGame extends FlameGame with KeyboardEvents {
         world.add(token);
       }
     }
+    _syncIncidents();
     // 影の番人：全エリアをクリアすると現れ、倒すといなくなる
     if (_shadow case final shadow?) {
       final show =
@@ -620,11 +693,42 @@ class FieldGame extends FlameGame with KeyboardEvents {
       _queued = null;
       _tryStep(dir);
     }
-    // 住人：となりに来たら、ひとこと話す
+    // 事件で見つけるもの：となりに来たら見つかる
+    for (final e in _incidentTokens.entries) {
+      final t = e.value;
+      final d =
+          (t.cell.col - player.cell.col).abs() +
+          (t.cell.row - player.cell.row).abs();
+      if (d <= 1 && !t.reported && !inputLocked) {
+        t.reported = true;
+        final inc = _incidents[e.key]!;
+        _report(inc.foundFlag, 0, inc.foundText);
+      }
+    }
+    // 住人：となりに来たら、ひとこと話す（困りごとがあれば、そのこと）
     for (final (i, v) in _villagers.indexed) {
       final d =
           (v.cell.col - player.cell.col).abs() +
           (v.cell.row - player.cell.row).abs();
+      final inc = _incidents[v.index];
+      if (d <= 1 &&
+          inc != null &&
+          inc.found(_progress) &&
+          !inc.done(_progress) &&
+          !inputLocked) {
+        if (!_incidentSent.contains(inc.doneFlag)) v.say(inc.thanksText);
+        _report(inc.doneFlag, Incident.rewardExp, inc.thanksText);
+        continue;
+      }
+      if (d <= 1 &&
+          v.cooldown == 0 &&
+          !v.talking &&
+          inc != null &&
+          !inc.done(_progress)) {
+        final spot = _incidentSpot(v, inc);
+        v.say(inc.request(spot?.$2 ?? 'この近く'));
+        continue;
+      }
       if (d <= 1 && v.cooldown == 0 && !v.talking) {
         final now = DateTime.now();
         v.say(

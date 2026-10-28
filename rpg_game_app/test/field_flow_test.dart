@@ -235,11 +235,18 @@ void main() {
   });
 
   testWidgets('タップで移動：最初の敵をタップすると、となりまで歩いて話しかける', (t) async {
+    // 住人の事件は済ませておく（とちゅうで落とし物を見つけて止まらないように）
+    final done = {
+      for (var i = 0; i < 40; i++) ...[
+        'inc:english:$i:found',
+        'inc:english:$i:done',
+      ],
+    };
     await openScreen(
       t,
       FieldScreen(
         world: RpgCatalog.world(RpgCatalog.englishWorldId),
-        progress: RpgProgress.initial,
+        progress: RpgProgress.initial.copyWith(fieldFlags: done),
       ),
       frames: 20,
     );
@@ -333,6 +340,64 @@ void main() {
     expect(v.talking, isTrue);
     // 住人は道をふさがない
     expect(g.walkable(v.cell), isTrue);
+    expect(t.takeException(), isNull);
+    await t.pumpWidget(const SizedBox());
+    await t.pump(const Duration(seconds: 10));
+  });
+
+  testWidgets('住人の事件：困っている住人に「！」。見つけて届けると、お礼の経験値', (t) async {
+    final english = RpgCatalog.world(RpgCatalog.englishWorldId);
+    final s = await openScreen(
+      t,
+      FieldScreen(
+        world: english,
+        progress: RpgProgress.initial.copyWith(
+          clearedStageIds: {english.stages.first.id},
+        ),
+      ),
+      frames: 20,
+    );
+    await s.repository.save(
+      RpgProgress.initial.copyWith(clearedStageIds: {english.stages.first.id}),
+    );
+    final g = _game(t);
+    final v = g.world.children.whereType<VillagerToken>().first;
+    expect(v.quest, isTrue);
+    final target = g.world.children.whereType<IncidentToken>().first;
+    void stand(Cell c) => g.player
+      ..cell = c
+      ..position = Vector2((c.col + 0.5) * tileSize, (c.row + 0.5) * tileSize);
+    Cell besideOf(Cell c) => [
+      (col: c.col + 1, row: c.row),
+      (col: c.col - 1, row: c.row),
+      (col: c.col, row: c.row + 1),
+      (col: c.col, row: c.row - 1),
+    ].firstWhere((n) => g.map.isFloor(n.col, n.row));
+    g.inputLocked = false;
+    stand(besideOf(target.cell));
+    await _frames(t, 30);
+    // 見つけたものの持ち主
+    final saved = await s.repository.load();
+    final owner = g.world.children.whereType<VillagerToken>().firstWhere(
+      (x) => Incident.of(g.map.id, x.index).found(saved),
+    );
+    final inc = Incident.of(g.map.id, owner.index);
+    expect(find.textContaining(inc.item), findsWidgets);
+    // ダイアログを閉じて、住人のところへ
+    for (final label in ['とじる', 'OK', 'つぎへ']) {
+      if (find.text(label).evaluate().isNotEmpty) {
+        await t.tap(find.text(label).first);
+        await _frames(t, 6);
+        break;
+      }
+    }
+    g.inputLocked = false;
+    final before = (await s.repository.load()).totalExp;
+    stand(besideOf(owner.cell));
+    await _frames(t, 8);
+    final after = await s.repository.load();
+    expect(after.fieldFlags, contains(inc.doneFlag));
+    expect(after.totalExp, before + Incident.rewardExp);
     expect(t.takeException(), isNull);
     await t.pumpWidget(const SizedBox());
     await t.pump(const Duration(seconds: 10));

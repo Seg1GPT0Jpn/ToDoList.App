@@ -96,3 +96,81 @@ class VillagerChat {
     return pool[(day * 3 + who * 5 + hour ~/ 6) % pool.length];
   }
 }
+
+/// 住人の小さな事件の種類
+enum IncidentKind {
+  /// 子どもが帰ってこない（見つけて声をかける）
+  lostChild,
+
+  /// 落とし物（見つけて拾う）
+  lostItem,
+}
+
+/// 住人の小さな事件。家の前の住人が困っていて、この先のエリアで見つけて届けるとお礼がもらえる。
+///
+/// 進み具合は fieldFlags に `inc:<マップ>:<番号>:found`（見つけた）と `:done`（届けた）で残す。
+class Incident {
+  const Incident({
+    required this.mapId,
+    required this.index,
+    required this.kind,
+    required this.item,
+  });
+
+  final String mapId;
+
+  /// 住人の番号（マップの中の家の順）
+  final int index;
+  final IncidentKind kind;
+
+  /// 落とし物の名前（子どものときは子どもの名前）
+  final String item;
+
+  /// お礼の経験値
+  static const rewardExp = 30;
+
+  static const _items = ['メガネ', '単語帳', '手帳', 'ペンケース', '家の鍵', '麦わら帽子'];
+  static const _children = ['ハル', 'ソラ', 'ミナ', 'リク', 'ユイ', 'コウ'];
+
+  /// そのマップの、その住人の事件
+  static Incident of(String mapId, int index) {
+    // どの端末でも同じになるよう、文字コードの合計で決める
+    final h = mapId.codeUnits.fold(0, (a, b) => a + b) + index * 7;
+    final kind = h.isEven ? IncidentKind.lostChild : IncidentKind.lostItem;
+    return Incident(
+      mapId: mapId,
+      index: index,
+      kind: kind,
+      item: kind == IncidentKind.lostChild
+          ? _children[h % _children.length]
+          : _items[h % _items.length],
+    );
+  }
+
+  String get foundFlag => 'inc:$mapId:$index:found';
+  String get doneFlag => 'inc:$mapId:$index:done';
+
+  bool found(RpgProgress p) => p.fieldFlags.contains(foundFlag);
+  bool done(RpgProgress p) => p.fieldFlags.contains(doneFlag);
+
+  /// 困っている住人のたのみ（[where] は見つかる場所の名前）
+  String request(String where) => switch (kind) {
+        IncidentKind.lostChild =>
+          'うちの$itemがまだ帰ってこないの…。$whereのあたりで遊んでいるはず。見つけたら声をかけてあげて！',
+        IncidentKind.lostItem => '大事な$itemを落としちゃった…。たしか$whereのあたりを歩いていたときに…。',
+      };
+
+  /// 見つけたとき
+  String get foundText => switch (kind) {
+        IncidentKind.lostChild => '$item「あっ、冒険者さん！ そろそろおうちに帰るね。おしえてくれてありがとう！」',
+        IncidentKind.lostItem => '$itemを拾った！ 落とした人に届けてあげよう。',
+      };
+
+  /// 届けたとき（お礼）
+  String get thanksText => switch (kind) {
+        IncidentKind.lostChild =>
+          '$itemが帰ってきたよ！ 本当にありがとう。これはほんの気持ち。（経験値 +$rewardExp）',
+        IncidentKind.lostItem =>
+          'それ、わたしの$item！ 本当にありがとう。お礼にどうぞ。（経験値 +$rewardExp）',
+      };
+}

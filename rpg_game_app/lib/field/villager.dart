@@ -16,6 +16,7 @@ class VillagerToken extends PositionComponent with OnScreenOnly {
     required this.tileSize,
     required this.canWalk,
     required this.seed,
+    this.index = 0,
   }) : cell = home,
        super(size: Vector2.all(tileSize)) {
     position = Vector2(home.col * tileSize, home.row * tileSize);
@@ -28,6 +29,12 @@ class VillagerToken extends PositionComponent with OnScreenOnly {
   /// 歩けるマスか（壁・敵・ほかの住人のいるマスは歩かない）
   final bool Function(Cell c) canWalk;
   final int seed;
+
+  /// マップの中での住人の番号（事件の番号）
+  final int index;
+
+  /// 困っていることがある（頭の上に「！」）
+  bool quest = false;
 
   Cell cell;
   late final Random _rnd = Random(seed);
@@ -100,7 +107,8 @@ class VillagerToken extends PositionComponent with OnScreenOnly {
       ui.Rect.fromLTWH(0, 0, tileSize, tileSize),
       color: color,
       bob: walking ? sin(_t * 14).abs() * 2 : (sin(_t * 2) + 1) * 0.6,
-      bubble: false,
+      bubble: quest,
+      quest: quest,
     );
     final line = _line;
     if (line == null) return;
@@ -142,5 +150,81 @@ class VillagerToken extends PositionComponent with OnScreenOnly {
         ..strokeWidth = 1.2,
     );
     canvas.drawParagraph(p, ui.Offset(box.left + 7, box.top + 5));
+  }
+}
+
+/// 住人の事件で見つけるもの（迷子の子ども・落とし物）。道はふさがない
+class IncidentToken extends PositionComponent with OnScreenOnly {
+  IncidentToken({
+    required this.cell,
+    required this.child,
+    required this.tileSize,
+  }) : super(
+         size: Vector2.all(tileSize),
+         position: Vector2(cell.col * tileSize, cell.row * tileSize),
+         priority: cell.row * 10 + 3,
+       );
+
+  final Cell cell;
+
+  /// 子ども（落とし物でなく）
+  final bool child;
+  final double tileSize;
+
+  /// 見つけたことを、もう知らせた
+  bool reported = false;
+  double _t = 0;
+
+  @override
+  void update(double dt) => _t += dt;
+
+  @override
+  void render(ui.Canvas canvas) {
+    if (child) {
+      // 小さな子ども（ぴょんぴょん跳ねる）
+      canvas.save();
+      canvas.translate(tileSize * 0.15, tileSize * 0.25);
+      canvas.scale(0.7);
+      TerrainArt.npc(
+        canvas,
+        ui.Rect.fromLTWH(0, 0, tileSize, tileSize),
+        color: 0xFFF2C14E,
+        bob: sin(_t * 6).abs() * 3,
+        bubble: false,
+      );
+      canvas.restore();
+      return;
+    }
+    // 落とし物：きらきら光る小さな包み
+    final o = ui.Offset(tileSize / 2, tileSize * 0.6);
+    final glow = 0.5 + 0.5 * sin(_t * 4);
+    canvas.drawCircle(
+      o,
+      tileSize * (0.3 + glow * 0.08),
+      ui.Paint()..color = ui.Color.fromRGBO(255, 224, 120, 0.25 + glow * 0.25),
+    );
+    canvas.drawRRect(
+      ui.RRect.fromRectAndRadius(
+        ui.Rect.fromCenter(center: o, width: 12, height: 9),
+        const ui.Radius.circular(2),
+      ),
+      ui.Paint()..color = const ui.Color(0xFF8E6BBF),
+    );
+    canvas.drawRRect(
+      ui.RRect.fromRectAndRadius(
+        ui.Rect.fromCenter(center: o, width: 12, height: 9),
+        const ui.Radius.circular(2),
+      ),
+      ui.Paint()
+        ..color = const ui.Color(0xFF3E3A4A)
+        ..style = ui.PaintingStyle.stroke
+        ..strokeWidth = 1,
+    );
+    final star = ui.Paint()
+      ..color = ui.Color.fromRGBO(255, 255, 255, glow)
+      ..strokeWidth = 1.2;
+    final s = o.translate(7, -8);
+    canvas.drawLine(s.translate(-4, 0), s.translate(4, 0), star);
+    canvas.drawLine(s.translate(0, -4), s.translate(0, 4), star);
   }
 }
