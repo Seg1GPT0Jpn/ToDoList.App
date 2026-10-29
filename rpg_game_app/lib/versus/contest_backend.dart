@@ -123,7 +123,8 @@ class ContestText {
   static const title = '週替わり単語バトル';
   static const intro =
       'LEAP・EEVI を開いている人みんなで、同じ範囲・同じ問題の早押し4択で点数を競います。'
-      'LEAP は毎週日曜、EEVI は毎週金曜（日本時間の0時〜24時）。1人1回だけです。';
+      'EEVI は木曜 18:00〜金曜 19:15、LEAP は土曜 18:00〜月曜 8:00 が受付（日本時間）。'
+      '1人1回だけで、受付が終わると最終ランキングを発表します。';
   static const privacy = 'みんなに見えるのはニックネームと正解数・点数だけ。単語の中身はサーバーに送りません。';
   static const needLogin = '週替わり単語バトルは、Google でログインすると参加できます';
   static const noBackend = 'この版では、週替わり単語バトルは使えません（サーバーの設定がありません）';

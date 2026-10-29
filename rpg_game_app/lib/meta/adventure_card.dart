@@ -705,7 +705,7 @@ class _MenuGroupsState extends State<_MenuGroups> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         // LEAP・EEVI のバトルの日は、どのまとまりを見ていても出す
-        if (store.unlocked) ContestEntryButton(store: store, onlyToday: true),
+        if (store.unlocked) ContestEntryButton(store: store, onlyActive: true),
         Wrap(
           spacing: Space.xs,
           runSpacing: Space.xs,

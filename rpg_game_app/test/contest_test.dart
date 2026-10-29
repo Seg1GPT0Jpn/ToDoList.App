@@ -43,7 +43,7 @@ Future<void> _solve(WidgetTester t, int count) async {
   await _frames(t, 5);
 }
 
-/// 日本時間 10/30（金）の朝（EEVI の第1回の日）
+/// 日本時間 10/30（金）の朝8時（EEVI の第1回の受付中）
 DateTime _eeviDay() => DateTime.utc(2026, 10, 29, 23);
 
 void main() {
@@ -65,10 +65,14 @@ void main() {
       frames: 5,
       size: const Size(420, 1400),
     );
-    expect(find.textContaining('今日 10/30（金）　EEVI 301〜350・20問'), findsOneWidget);
+    expect(find.textContaining('受付中　EEVI 301〜350・20問'), findsOneWidget);
+    expect(find.textContaining('10/30（金）19:15まで'), findsOneWidget);
     expect(find.byKey(const ValueKey('contest-no-book-eevi')), findsOneWidget);
     expect(find.byKey(const ValueKey('contest-play-eevi')), findsNothing);
-    expect(find.textContaining('次回 11/1（日）　LEAP 1801〜1900'), findsOneWidget);
+    expect(
+      find.textContaining('次回　LEAP 1801〜1900・20問\n10/31（土）18:00〜11/2（月）8:00'),
+      findsOneWidget,
+    );
     expect(
       find.byKey(const ValueKey('contest-upcoming-leap-2026-11-01')),
       findsOneWidget,
@@ -156,6 +160,45 @@ void main() {
     expect(t.takeException(), isNull);
   });
 
+  testWidgets('受付が終わると挑戦できなくなり、最終ランキングが出る', (t) async {
+    final shared = <String, Map<String, ContestEntry>>{
+      'eevi-2026-10-30': {
+        'a': const ContestEntry(
+          uid: 'a',
+          name: 'えー',
+          correct: 18,
+          score: 2400,
+          done: true,
+        ),
+      },
+    };
+    final s = await openScreen(t, const SizedBox(), frames: 2);
+    await _addEevi(s);
+    // 日本時間 10/30（金）19:15（EEVI の受付が終わったところ）
+    DateTime after() => DateTime.utc(2026, 10, 30, 10, 15);
+    await openScreen(
+      t,
+      ContestScreen(
+        backend: MemoryContestBackend(userId: 'z', entries: shared),
+        now: after,
+      ),
+      frames: 5,
+      keepPrefs: true,
+      size: const Size(420, 1400),
+    );
+    expect(find.byKey(const ValueKey('contest-play-eevi')), findsNothing);
+    expect(find.textContaining('最終ランキング発表！（301〜350）'), findsOneWidget);
+    expect(
+      find.textContaining('次回　EEVI 351〜400・20問\n11/5（木）18:00〜11/6（金）19:15'),
+      findsOneWidget,
+    );
+    await t.tap(find.byKey(const ValueKey('contest-last-eevi')));
+    await _frames(t, 5);
+    expect(find.byKey(const ValueKey('contest-final')), findsOneWidget);
+    expect(find.textContaining('1位　えー'), findsOneWidget);
+    expect(t.takeException(), isNull);
+  });
+
   testWidgets('管理者だけが日程と範囲を変えられる', (t) async {
     final admin = MemoryContestBackend(
       userId: 'k',
@@ -165,7 +208,7 @@ void main() {
       t,
       ContestScreen(backend: admin, now: _eeviDay),
       frames: 5,
-      size: const Size(420, 1600),
+      size: const Size(420, 2800),
     );
     await t.tap(find.byKey(const ValueKey('contest-admin')));
     await _frames(t, 5);
@@ -183,7 +226,10 @@ void main() {
       find.byKey(const ValueKey('contest-preview-eevi-2026-11-06')),
       findsNothing,
     );
-    expect(find.textContaining('11/20（金）　EEVI 331〜360'), findsOneWidget);
+    expect(
+      find.textContaining('EEVI 331〜360（20問）\n　11/19（木）18:00〜11/20（金）19:15'),
+      findsOneWidget,
+    );
     await t.tap(find.byKey(const ValueKey('contest-admin-save')));
     await _frames(t, 5);
     final eevi = admin.config.plans['eevi']!;
@@ -212,7 +258,11 @@ void main() {
     // 日付は端末の今日で決まるので、今日が EEVI の日の設定にする
     final today = ContestRules.jstToday(DateTime.now());
     final config = ContestConfig({
-      'eevi': ContestConfig.initial.plans['eevi']!.copyWith(first: today),
+      'eevi': ContestConfig.initial.plans['eevi']!.copyWith(
+        first: today,
+        openMin: -2880,
+        closeMin: 2880,
+      ),
       'leap': ContestConfig.initial.plans['leap']!.copyWith(
         first: today.add(const Duration(days: 2)),
       ),
@@ -230,7 +280,7 @@ void main() {
       frames: 5,
       keepPrefs: true,
     );
-    expect(find.textContaining('今日はEEVIバトルの日！（301〜350）'), findsOneWidget);
+    expect(find.textContaining('EEVIバトル受付中！（301〜350・'), findsOneWidget);
     expect(t.takeException(), isNull);
   });
 }

@@ -41,6 +41,36 @@ abstract final class ContestRules {
 
   static const weekdays = ['月', '火', '水', '木', '金', '土', '日'];
 
+  /// UTC の時刻を、日本時間の「10/29（木）18:00」にする
+  static String time(DateTime utc) {
+    final j = utc.toUtc().add(const Duration(hours: 9));
+    return '${label(j)}${j.hour}:${j.minute.toString().padLeft(2, '0')}';
+  }
+
+  static const _dayWords = {-2: '2日前', -1: '前日', 0: '当日', 1: '翌日', 2: '2日後'};
+
+  /// バトルの日の 0 時からの分を「前日 18:00」にする
+  static String offset(int minutes) {
+    final day = (minutes / 1440).floor();
+    final rest = minutes - day * 1440;
+    final word = _dayWords[day] ?? '$day日';
+    return '$word ${rest ~/ 60}:${(rest % 60).toString().padLeft(2, '0')}';
+  }
+
+  /// 「前日 18:00」「翌日 8:00」「-1 18:00」を、バトルの日の 0 時からの分に直す
+  static int? parseOffset(String s) {
+    final m =
+        RegExp(r'^\s*(2日前|前日|当日|翌日|2日後|[-+]?\d+)\s*(\d{1,2})[:：](\d{2})\s*$')
+            .firstMatch(s);
+    if (m == null) return null;
+    final w = m.group(1)!;
+    final day = _dayWords.entries.where((e) => e.value == w).firstOrNull?.key ??
+        int.parse(w);
+    final h = int.parse(m.group(2)!), mi = int.parse(m.group(3)!);
+    if (h > 23 || mi > 59 || day.abs() > 3) return null;
+    return day * 1440 + h * 60 + mi;
+  }
+
   /// 「11/1（日）」
   static String label(DateTime d) =>
       '${d.month}/${d.day}（${weekdays[d.weekday - 1]}）';
@@ -95,6 +125,8 @@ class ContestPlan {
     this.ranges = const {},
     this.extras = const {},
     this.enabled = true,
+    this.openMin = -360,
+    this.closeMin = 1440,
   });
 
   /// 単語帳の ID（'leap'・'eevi'。名前とパスワードで開いた単語帳の ID と同じ）
@@ -112,6 +144,10 @@ class ContestPlan {
   final Map<String, ContestRange> ranges;
   final Map<String, ContestRange> extras;
   final bool enabled;
+
+  /// 受付の始まりと終わり（バトルの日の、日本時間 0 時からの分。前日 18:00 なら -360）
+  final int openMin;
+  final int closeMin;
 
   int get weekday => first.weekday;
 
@@ -153,6 +189,32 @@ class ContestPlan {
         date: d,
         range: r,
         count: count,
+        openMin: openMin,
+        closeMin: closeMin,
+      );
+
+  /// いま受付中の回（なければ null）
+  ContestRound? openAt(DateTime now) =>
+      _near(now).where((r) => r.isOpen(now)).firstOrNull;
+
+  /// 次に受付が始まる回（なければ null）
+  ContestRound? nextAt(DateTime now) =>
+      _near(now).where((r) => r.openAt.isAfter(now)).firstOrNull;
+
+  /// 受付が終わった、いちばん新しい回（なければ null）
+  ContestRound? lastClosed(DateTime now) {
+    ContestRound? last;
+    for (final r in rounds(first, 600)) {
+      if (r.closeAt.isAfter(now)) break;
+      last = r;
+    }
+    return last;
+  }
+
+  /// [now] のころの回（受付の時間は前後に数日ずれうるので、1週前から見る）
+  List<ContestRound> _near(DateTime now) => rounds(
+        ContestRules.jstToday(now).subtract(const Duration(days: 7)),
+        6,
       );
 
   /// その日の回（なければ null）
@@ -183,6 +245,8 @@ class ContestPlan {
     Map<String, ContestRange>? ranges,
     Map<String, ContestRange>? extras,
     bool? enabled,
+    int? openMin,
+    int? closeMin,
   }) =>
       ContestPlan(
         bookId: bookId,
@@ -195,6 +259,8 @@ class ContestPlan {
         ranges: ranges ?? this.ranges,
         extras: extras ?? this.extras,
         enabled: enabled ?? this.enabled,
+        openMin: openMin ?? this.openMin,
+        closeMin: closeMin ?? this.closeMin,
       );
 
   Map<String, Object?> toMap() => {
@@ -207,6 +273,8 @@ class ContestPlan {
         'ranges': {for (final e in ranges.entries) e.key: e.value.toMap()},
         'extras': {for (final e in extras.entries) e.key: e.value.toMap()},
         'enabled': enabled,
+        'open': openMin,
+        'close': closeMin,
       };
 
   static ContestPlan? fromMap(String bookId, Object? m) {
@@ -224,6 +292,10 @@ class ContestPlan {
                 '${e.key}': ContestRange.fromMap(e.value)!,
         };
     final count = (m['count'] as num?)?.toInt() ?? 20;
+    final fallback = ContestConfig.initial.plans[bookId];
+    var open = (m['open'] as num?)?.toInt() ?? fallback?.openMin ?? -360;
+    var close = (m['close'] as num?)?.toInt() ?? fallback?.closeMin ?? 1440;
+    if (close <= open) (open, close) = (-360, 1440);
     return ContestPlan(
       bookId: bookId,
       title: m['title'] is String ? m['title'] as String : bookId.toUpperCase(),
@@ -239,6 +311,8 @@ class ContestPlan {
       ranges: rangesOf(m['ranges']),
       extras: rangesOf(m['extras']),
       enabled: m['enabled'] as bool? ?? true,
+      openMin: open,
+      closeMin: close,
     );
   }
 }
@@ -253,7 +327,8 @@ class ContestConfig {
   static const books = ['leap', 'eevi'];
 
   /// 設定がまだサーバーにないときの日程。
-  /// EEVI は 10/30（金）の 301〜350 から毎週金曜、LEAP は 11/1（日）の 1801〜1900 から毎週日曜。
+  /// EEVI は 10/30（金）の 301〜350 から毎週金曜（受付は木曜 18:00〜金曜 19:15）、
+  /// LEAP は 11/1（日）の 1801〜1900 から毎週日曜（受付は土曜 18:00〜月曜 8:00）。
   /// 11/13（金）と 11/22（日）はお休み
   static final initial = ContestConfig({
     'eevi': ContestPlan(
@@ -263,6 +338,8 @@ class ContestConfig {
       firstFrom: 301,
       width: 50,
       skips: const {'2026-11-13'},
+      openMin: -360,
+      closeMin: 19 * 60 + 15,
     ),
     'leap': ContestPlan(
       bookId: 'leap',
@@ -271,6 +348,8 @@ class ContestConfig {
       firstFrom: 1801,
       width: 100,
       skips: const {'2026-11-22'},
+      openMin: -360,
+      closeMin: 32 * 60,
     ),
   });
 
@@ -293,6 +372,12 @@ class ContestConfig {
           if (plans[id]?.on(day) case final r?) r,
       ];
 
+  /// いま受付中の回（LEAP・EEVI の順）
+  List<ContestRound> openAt(DateTime now) => [
+        for (final id in books)
+          if (plans[id]?.openAt(now) case final r?) r,
+      ];
+
   /// これからの回（日付の早い順）
   List<ContestRound> upcoming(DateTime from, int n) {
     final all = [
@@ -310,6 +395,8 @@ class ContestRound {
     required this.date,
     required this.range,
     required this.count,
+    this.openMin = -360,
+    this.closeMin = 1440,
   });
 
   final String bookId;
@@ -317,6 +404,22 @@ class ContestRound {
   final DateTime date;
   final ContestRange range;
   final int count;
+  final int openMin;
+  final int closeMin;
+
+  /// その日の日本時間 0 時（UTC）
+  DateTime get _midnight => date.subtract(const Duration(hours: 9));
+
+  /// 受付の始まりと終わり（UTC）
+  DateTime get openAt => _midnight.add(Duration(minutes: openMin));
+  DateTime get closeAt => _midnight.add(Duration(minutes: closeMin));
+
+  bool isOpen(DateTime now) => !now.isBefore(openAt) && now.isBefore(closeAt);
+  bool isClosed(DateTime now) => !now.isBefore(closeAt);
+
+  /// 「10/29（木）18:00〜10/30（金）19:15」
+  String get window =>
+      '${ContestRules.time(openAt)}〜${ContestRules.time(closeAt)}';
 
   /// サーバーで使う ID（「leap-2026-11-01」）
   String get id => '$bookId-${ContestRules.dayKey(date)}';
@@ -332,10 +435,6 @@ class ContestRound {
   }
 
   String get heading => '$title ${range.from}〜${range.to}';
-
-  bool isToday(DateTime now) =>
-      ContestRules.dayKey(ContestRules.jstToday(now)) ==
-      ContestRules.dayKey(date);
 
   /// 出題する番号（自分の単語帳から、範囲の中の [count] 語。みんな同じになる）
   List<int> numbers(VocabBook book) => DuelRules.pick(

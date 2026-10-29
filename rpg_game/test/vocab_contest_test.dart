@@ -41,6 +41,44 @@ void main() {
     );
   });
 
+  test('EEVI の受付は木曜 18:00〜金曜 19:15、LEAP は土曜 18:00〜月曜 8:00（日本時間）', () {
+    // 日本時間は UTC+9
+    DateTime jst(int m, int d, int h, [int mi = 0]) =>
+        DateTime.utc(2026, m, d, h, mi).subtract(const Duration(hours: 9));
+    final eevi = config.plans['eevi']!, leap = config.plans['leap']!;
+    final first = eevi.on(DateTime.utc(2026, 10, 30))!;
+    expect(first.window, '10/29（木）18:00〜10/30（金）19:15');
+    expect(eevi.openAt(jst(10, 29, 17, 59)), isNull);
+    expect(eevi.nextAt(jst(10, 29, 17, 59))!.id, 'eevi-2026-10-30');
+    expect(eevi.openAt(jst(10, 29, 18))!.id, 'eevi-2026-10-30');
+    expect(eevi.openAt(jst(10, 30, 19, 14))!.id, 'eevi-2026-10-30');
+    expect(eevi.openAt(jst(10, 30, 19, 15)), isNull);
+    expect(eevi.lastClosed(jst(10, 30, 19, 15))!.id, 'eevi-2026-10-30');
+    expect(eevi.lastClosed(jst(10, 30, 19, 14)), isNull);
+    expect(
+      leap.on(DateTime.utc(2026, 11, 1))!.window,
+      '10/31（土）18:00〜11/2（月）8:00',
+    );
+    expect(leap.openAt(jst(11, 2, 7, 59))!.id, 'leap-2026-11-01');
+    expect(leap.openAt(jst(11, 2, 8)), isNull);
+    expect(
+        config.openAt(jst(10, 31, 20)).map((r) => r.id), ['leap-2026-11-01']);
+    // お休みの週（11/13）は、木曜の夜になっても受付しない
+    expect(eevi.openAt(jst(11, 12, 20)), isNull);
+    expect(eevi.nextAt(jst(11, 12, 20))!.id, 'eevi-2026-11-20');
+  });
+
+  test('受付時間の書き方', () {
+    expect(ContestRules.offset(-360), '前日 18:00');
+    expect(ContestRules.offset(19 * 60 + 15), '当日 19:15');
+    expect(ContestRules.offset(32 * 60), '翌日 8:00');
+    expect(ContestRules.parseOffset('前日 18:00'), -360);
+    expect(ContestRules.parseOffset('翌日 8:00'), 32 * 60);
+    expect(ContestRules.parseOffset('-1 18:00'), -360);
+    expect(ContestRules.parseOffset('当日 25:00'), isNull);
+    expect(ContestRules.parseOffset('あした'), isNull);
+  });
+
   test('範囲の書きかえ・追加の日・お休みの日を足す', () {
     final eevi = config.plans['eevi']!.copyWith(
       ranges: {'2026-11-06': const ContestRange(1, 100)},

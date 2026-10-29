@@ -22,13 +22,13 @@ class ContestEntryButton extends StatefulWidget {
     super.key,
     required this.store,
     this.backend,
-    this.onlyToday = false,
+    this.onlyActive = false,
   });
 
   final VocabStore store;
 
-  /// バトルの日だけ出す（ホーム用）
-  final bool onlyToday;
+  /// 受付中と、最終ランキングが出てから1日のあいだだけ出す（ホーム用）
+  final bool onlyActive;
 
   /// テスト用（ふだんは RpgServices.contests）
   final ContestBackend? backend;
@@ -51,8 +51,11 @@ class _ContestEntryButtonState extends State<ContestEntryButton> {
       Future.value(ContestConfig.initial);
 
   Future<void> _open() async {
-    await Navigator.of(context)
-        .push(MaterialPageRoute<void>(builder: (_) => const ContestScreen()));
+    await Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        builder: (_) => ContestScreen(backend: widget.backend),
+      ),
+    );
     if (!mounted) return;
     setState(() => _config = _loadConfig());
   }
@@ -62,34 +65,55 @@ class _ContestEntryButtonState extends State<ContestEntryButton> {
     return FutureBuilder<ContestConfig>(
       future: _config,
       builder: (context, snap) {
-        final today = snap.data
-            ?.on(ContestRules.jstToday(DateTime.now()))
-            .where((r) => contestBook(widget.store, r.bookId) != null)
-            .toList();
-        if (today != null && today.isNotEmpty) {
-          final button = FilledButton.icon(
+        final config = snap.data;
+        final now = DateTime.now();
+        bool mine(ContestRound r) =>
+            contestBook(widget.store, r.bookId) != null;
+        final open = config?.openAt(now).where(mine).toList() ?? const [];
+        // 受付が終わってから1日のあいだは、最終ランキングへの入口を出す
+        final results = [
+          for (final id in ContestConfig.books)
+            if (config?.plans[id]?.lastClosed(now) case final r?)
+              if (mine(r) &&
+                  now.difference(r.closeAt) < const Duration(days: 1))
+                r,
+        ];
+        Widget? button;
+        if (open.isNotEmpty) {
+          button = FilledButton.icon(
             key: const ValueKey('vocab-home-contest'),
             onPressed: _open,
             icon: const Icon(Icons.emoji_events),
             label: Text(
-              '今日は${today.map((r) => r.title).join('・')}バトルの日！'
-              '（${today.map((r) => '${r.range}').join('・')}）',
+              '${open.map((r) => r.title).join('・')}バトル受付中！'
+              '（${open.map((r) => '${r.range}・${ContestRules.time(r.closeAt)}まで').join('／')}）',
             ),
           );
-          return widget.onlyToday
-              ? Padding(
+        } else if (results.isNotEmpty) {
+          button = FilledButton.tonalIcon(
+            key: const ValueKey('vocab-home-contest'),
+            onPressed: _open,
+            icon: const Icon(Icons.emoji_events),
+            label: Text(
+              '${results.map((r) => r.title).join('・')}バトルの最終ランキング発表！',
+            ),
+          );
+        }
+        if (widget.onlyActive) {
+          return button == null
+              ? const SizedBox.shrink()
+              : Padding(
                   padding: const EdgeInsets.only(bottom: 8),
                   child: button,
-                )
-              : button;
+                );
         }
-        if (widget.onlyToday) return const SizedBox.shrink();
-        return OutlinedButton.icon(
-          key: const ValueKey('vocab-home-contest'),
-          onPressed: _open,
-          icon: const Icon(Icons.emoji_events_outlined),
-          label: const Text('週替わり単語バトル（LEAP 日曜・EEVI 金曜）'),
-        );
+        return button ??
+            OutlinedButton.icon(
+              key: const ValueKey('vocab-home-contest'),
+              onPressed: _open,
+              icon: const Icon(Icons.emoji_events_outlined),
+              label: const Text('週替わり単語バトル（LEAP・EEVI）'),
+            );
       },
     );
   }
@@ -145,13 +169,13 @@ class _ContestScreenState extends State<ContestScreen> {
   void _reload() {
     final backend = _backend;
     if (backend == null || backend.userId == null) return;
-    final today = ContestRules.jstToday(_now());
+    final now = _now();
     _load = () async {
       final config = await backend.loadConfig();
-      final rounds = config.on(today);
+      final rounds = config.openAt(now);
       return _Board(
         config: config,
-        today: today,
+        now: now,
         mine: {for (final r in rounds) r.id: await backend.mine(r.id)},
       );
     }();
@@ -215,7 +239,7 @@ class _ContestScreenState extends State<ContestScreen> {
         await Navigator.of(context).push(
           MaterialPageRoute<void>(
             builder: (_) =>
-                ContestRankingScreen(round: round, backend: backend),
+                ContestRankingScreen(round: round, backend: backend, now: _now),
           ),
         );
       }
@@ -233,7 +257,8 @@ class _ContestScreenState extends State<ContestScreen> {
 
   void _ranking(ContestRound round) => Navigator.of(context).push(
     MaterialPageRoute<void>(
-      builder: (_) => ContestRankingScreen(round: round, backend: _backend!),
+      builder: (_) =>
+          ContestRankingScreen(round: round, backend: _backend!, now: _now),
     ),
   );
 
@@ -323,11 +348,18 @@ class _ContestScreenState extends State<ContestScreen> {
         const SizedBox(height: 16),
         Text('これからの日程', style: serif(16)),
         const SizedBox(height: 4),
-        for (final r in board.config.upcoming(board.today, 8))
-          Text(
-            '${ContestRules.label(r.date)}　${r.heading}（${r.count}問）',
-            key: ValueKey('contest-upcoming-${r.id}'),
-          ),
+        for (final r in board.config.upcoming(
+          ContestRules.jstToday(board.now),
+          8,
+        ))
+          if (!r.isClosed(board.now))
+            Padding(
+              padding: const EdgeInsets.only(bottom: 4),
+              child: Text(
+                '${r.heading}（${r.count}問）\n　${r.window}',
+                key: ValueKey('contest-upcoming-${r.id}'),
+              ),
+            ),
         if (backend.isAdmin) ...[
           const SizedBox(height: 20),
           OutlinedButton.icon(
@@ -338,7 +370,7 @@ class _ContestScreenState extends State<ContestScreen> {
                   builder: (_) => ContestAdminScreen(
                     backend: backend,
                     config: board.config,
-                    today: board.today,
+                    today: ContestRules.jstToday(board.now),
                   ),
                 ),
               );
@@ -353,12 +385,15 @@ class _ContestScreenState extends State<ContestScreen> {
   }
 
   Widget _planCard(ContestPlan plan, _Board board, TextStyle small) {
+    final now = board.now;
     final book = contestBook(_store, plan.bookId);
-    final round = plan.on(board.today);
-    final next = plan.rounds(board.today.add(const Duration(days: 1)), 1);
-    final last = plan.before(board.today);
+    final round = plan.openAt(now);
+    final next = plan.nextAt(now);
+    final last = plan.lastClosed(now);
     final weekday = ContestRules.weekdays[plan.weekday - 1];
     final mine = round == null ? null : board.mine[round.id];
+    final fresh =
+        last != null && now.difference(last.closeAt) < const Duration(days: 1);
     return Card(
       key: ValueKey('contest-plan-${plan.bookId}'),
       margin: const EdgeInsets.only(top: 12),
@@ -368,15 +403,20 @@ class _ContestScreenState extends State<ContestScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text('${plan.title} バトル（毎週$weekday曜）', style: serif(17)),
+            Text(
+              '受付：${ContestRules.offset(plan.openMin)}〜${ContestRules.offset(plan.closeMin)}',
+              style: small,
+            ),
             const SizedBox(height: 4),
             if (!plan.enabled)
               const Text('いまはお休み中です')
             else if (round != null) ...[
               Text(
-                '今日 ${ContestRules.label(round.date)}　${round.heading}・${round.count}問',
-                key: ValueKey('contest-today-${plan.bookId}'),
+                '受付中　${round.heading}・${round.count}問',
+                key: ValueKey('contest-open-${plan.bookId}'),
                 style: const TextStyle(fontWeight: FontWeight.bold),
               ),
+              Text('${ContestRules.time(round.closeAt)}まで', style: small),
               const SizedBox(height: 6),
               if (book == null)
                 Text(
@@ -402,20 +442,31 @@ class _ContestScreenState extends State<ContestScreen> {
               TextButton(
                 key: ValueKey('contest-ranking-${plan.bookId}'),
                 onPressed: () => _ranking(round),
-                child: const Text('今日の順位を見る'),
+                child: const Text('いまの順位を見る（暫定）'),
               ),
-            ],
-            if (plan.enabled && next.isNotEmpty)
+            ] else if (next != null)
               Text(
-                '次回 ${ContestRules.label(next.first.date)}　${next.first.heading}',
-                style: small,
+                '次回　${next.heading}・${next.count}問\n${next.window}',
+                key: ValueKey('contest-next-${plan.bookId}'),
               ),
-            if (last != null)
-              TextButton(
-                key: ValueKey('contest-last-${plan.bookId}'),
-                onPressed: () => _ranking(last),
-                child: Text('前回（${ContestRules.label(last.date)}）の順位'),
-              ),
+            if (last != null) ...[
+              const SizedBox(height: 6),
+              if (fresh)
+                FilledButton.tonalIcon(
+                  key: ValueKey('contest-last-${plan.bookId}'),
+                  onPressed: () => _ranking(last),
+                  icon: const Icon(Icons.emoji_events),
+                  label: Text('最終ランキング発表！（${last.range}）'),
+                )
+              else
+                TextButton(
+                  key: ValueKey('contest-last-${plan.bookId}'),
+                  onPressed: () => _ranking(last),
+                  child: Text(
+                    '前回（${ContestRules.label(last.date)}・${last.range}）の最終ランキング',
+                  ),
+                ),
+            ],
           ],
         ),
       ),
@@ -424,11 +475,11 @@ class _ContestScreenState extends State<ContestScreen> {
 }
 
 class _Board {
-  const _Board({required this.config, required this.today, required this.mine});
+  const _Board({required this.config, required this.now, required this.mine});
   final ContestConfig config;
-  final DateTime today;
+  final DateTime now;
 
-  /// 今日の回の ID → 自分の記録
+  /// 受付中の回の ID → 自分の記録
   final Map<String, ContestEntry?> mine;
 }
 
@@ -438,10 +489,14 @@ class ContestRankingScreen extends StatefulWidget {
     super.key,
     required this.round,
     required this.backend,
+    this.now,
   });
 
   final ContestRound round;
   final ContestBackend backend;
+
+  /// テスト用の「今」
+  final DateTime Function()? now;
 
   @override
   State<ContestRankingScreen> createState() => _ContestRankingScreenState();
@@ -466,6 +521,7 @@ class _ContestRankingScreenState extends State<ContestRankingScreen> {
   Widget build(BuildContext context) {
     final r = widget.round;
     final me = widget.backend.userId;
+    final closed = r.isClosed(widget.now?.call() ?? DateTime.now());
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -498,7 +554,17 @@ class _ContestRankingScreenState extends State<ContestRankingScreen> {
             return ListView(
               padding: const EdgeInsets.fromLTRB(40, 16, 16, 24),
               children: [
-                Text('「${r.heading}」の順位', style: serif(18)),
+                Text(
+                  closed ? '「${r.heading}」最終ランキング' : '「${r.heading}」いまの順位（暫定）',
+                  key: ValueKey(closed ? 'contest-final' : 'contest-interim'),
+                  style: serif(18),
+                ),
+                Text(
+                  closed
+                      ? '受付は ${ContestRules.time(r.closeAt)} に終わりました'
+                      : '受付は ${ContestRules.time(r.closeAt)} まで。終わると最終ランキングになります',
+                  style: TextStyle(fontSize: 12, color: TsuzuriColors.inkSoft),
+                ),
                 const SizedBox(height: 6),
                 if (mine != null && mine.done && standing != null)
                   Text(
@@ -563,10 +629,13 @@ class _PlanForm {
       ),
       ranges = TextEditingController(text: _lines(plan.ranges)),
       extras = TextEditingController(text: _lines(plan.extras)),
+      openAt = TextEditingController(text: ContestRules.offset(plan.openMin)),
+      closeAt = TextEditingController(text: ContestRules.offset(plan.closeMin)),
       enabled = plan.enabled;
 
   final ContestPlan plan;
   final TextEditingController first, from, width, count, skips, ranges, extras;
+  final TextEditingController openAt, closeAt;
   bool enabled;
 
   static String _lines(Map<String, ContestRange> m) =>
@@ -581,6 +650,8 @@ class _PlanForm {
     skips,
     ranges,
     extras,
+    openAt,
+    closeAt,
   ];
 
   /// 入力を読む。まちがいがあれば、その説明を返す
@@ -602,6 +673,12 @@ class _PlanForm {
       if (d == null) return (null, '$t：お休みの日「$line」が読めません');
       skipSet.add(ContestRules.dayKey(d));
     }
+    final o = ContestRules.parseOffset(openAt.text);
+    final cl = ContestRules.parseOffset(closeAt.text);
+    if (o == null || cl == null) {
+      return (null, '$t：受付の時間は「前日 18:00」「翌日 8:00」の形で入れてください');
+    }
+    if (cl <= o) return (null, '$t：受付の終わりは、始まりより後にしてください');
     final (r, re) = _dated(ranges.text, '範囲を変える日');
     if (re != null) return (null, '$t：$re');
     final (x, xe) = _dated(extras.text, '追加の日');
@@ -616,6 +693,8 @@ class _PlanForm {
         ranges: r,
         extras: x,
         enabled: enabled,
+        openMin: o,
+        closeMin: cl,
       ),
       null,
     );
@@ -737,9 +816,12 @@ class _ContestAdminScreenState extends State<ContestAdminScreen> {
               )
             else
               for (final r in preview.upcoming(widget.today, 12))
-                Text(
-                  '${ContestRules.label(r.date)}　${r.heading}（${r.count}問）',
-                  key: ValueKey('contest-preview-${r.id}'),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 4),
+                  child: Text(
+                    '${r.heading}（${r.count}問）\n　${r.window}',
+                    key: ValueKey('contest-preview-${r.id}'),
+                  ),
                 ),
             if (_error != null) ...[
               const SizedBox(height: 8),
@@ -809,6 +891,14 @@ class _ContestAdminScreenState extends State<ContestAdminScreen> {
                 Expanded(child: field(f.count, '問題数', number: true)),
               ],
             ),
+            Row(
+              children: [
+                Expanded(child: field(f.openAt, '受付の始まり', hint: '前日 18:00')),
+                const SizedBox(width: 8),
+                Expanded(child: field(f.closeAt, '受付の終わり', hint: '翌日 8:00')),
+              ],
+            ),
+            Text('バトルの日から見て「2日前・前日・当日・翌日・2日後」と時刻で入れます', style: small),
             const SizedBox(height: 6),
             field(f.skips, 'お休みの日（1行に1日）', hint: '2026-11-22', lines: 2),
             field(

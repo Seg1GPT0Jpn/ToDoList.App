@@ -261,9 +261,10 @@ service cloud.firestore {
         && request.resource.data.keys().hasOnly(['leap', 'eevi', 'updatedAt', 'updatedBy']);
     }
 
-    // 週替わり単語バトルの参加記録（回の ID は「leap-2026-11-01」）。
+    // 週替わり単語バトルの参加記録（回の ID は「leap-2026-11-01」＝バトルの日）。
     // 置くのはニックネーム・正解数・点数だけ。ログインした人が読める（順位表）。
-    // その日（日本時間の0時〜24時）のうちに、自分の分を1回だけ作れる。
+    // 受付のあいだ（日程の設定の open〜close。バトルの日の日本時間0時からの分）に、自分の分を1回だけ作れる。
+    // 設定がなければ EEVI は前日18:00〜当日19:15、LEAP は前日18:00〜翌日8:00。
     // 点数を入れられるのは、始めてから8分以内に1回だけ（あとから書きかえられない）。
     match /vocab_contests/{roundId}/entries/{uid} {
       function dayStart() {
@@ -273,12 +274,26 @@ service cloud.firestore {
       function validRound() {
         return roundId.matches('^(leap|eevi)-20[0-9]{2}-[01][0-9]-[0-3][0-9]$');
       }
+      function kind() {
+        return roundId.split('-')[0];
+      }
+      function plan() {
+        return exists(/databases/$(database)/documents/vocab_contest_config/main)
+          ? get(/databases/$(database)/documents/vocab_contest_config/main).data.get(kind(), {})
+          : {};
+      }
+      function openAt() {
+        return dayStart() + duration.value(plan().get('open', -360), 'm');
+      }
+      function closeAt() {
+        return dayStart() + duration.value(plan().get('close', kind() == 'leap' ? 1920 : 1155), 'm');
+      }
       allow read: if request.auth != null;
       allow create: if request.auth != null
         && request.auth.uid == uid
         && validRound()
-        && request.time >= dayStart()
-        && request.time < dayStart() + duration.value(24, 'h')
+        && request.time >= openAt()
+        && request.time < closeAt()
         && request.resource.data.keys().hasOnly(['name', 'correct', 'score', 'done', 'startedAt'])
         && request.resource.data.name is string
         && request.resource.data.name.size() > 0
