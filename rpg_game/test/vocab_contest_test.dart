@@ -139,10 +139,10 @@ void main() {
         ],
       );
 
-  test('4種類を100問ずつ。みんな同じ問題で、範囲の外の単語は出さない', () {
+  test('EEVI は範囲の50語を4種類で1回ずつ。みんな同じ問題で、範囲の外の単語は出さない', () {
     final r = config.on(DateTime.utc(2026, 10, 30))!.single;
     final a = r.parts(book()), b = r.parts(book());
-    expect(a.map((p) => p.length), [100, 100, 100, 100]);
+    expect(a.map((p) => p.length), [50, 50, 50, 50]);
     expect(a.map((p) => p.first.part), ContestPart.values);
     for (var i = 0; i < 4; i++) {
       expect(a[i].map((q) => '${q.prompt}${q.sub}${q.choices.join()}'),
@@ -153,19 +153,20 @@ void main() {
       all.every((q) => q.card.number! >= 301 && q.card.number! <= 350),
       isTrue,
     );
-    // 範囲は50語なので、どの単語も各種類で2回ずつ出る
+    // どの単語も、各種類で1回ずつ出る
     final counts = <int, int>{};
     for (final q in a[2]) {
       counts[q.card.number!] = (counts[q.card.number!] ?? 0) + 1;
     }
-    expect(counts.values.toSet(), {2});
+    expect(counts.values.toSet(), {1});
+    expect(counts, hasLength(50));
     // 正解の選択肢
     final flash = a[0];
     for (final q in flash) {
       expect(q.choices, hasLength(2));
       expect(q.answer == 0, q.sub == q.card.shortMeaning);
     }
-    expect(flash.where((q) => q.answer == 0).length, inInclusiveRange(30, 70));
+    expect(flash.where((q) => q.answer == 0).length, inInclusiveRange(12, 38));
     for (final q in a[1]) {
       expect(q.choices[q.answer], q.card.term);
       expect(q.prompt, q.card.shortMeaning);
@@ -183,8 +184,8 @@ void main() {
 
   test('例文がない単語帳では、例文の問題を出さない', () {
     final r = config.on(DateTime.utc(2026, 10, 30))!.single;
-    expect(r.parts(book(examples: false)).map((p) => p.length),
-        [100, 100, 100, 0]);
+    expect(
+        r.parts(book(examples: false)).map((p) => p.length), [50, 50, 50, 0]);
   });
 
   test('点数：正解は100点＋速さで最大50点。得点は満点に対する割合', () {
@@ -201,26 +202,45 @@ void main() {
   });
 
   test('順位は得点、同点なら正解数。1種類も解き終わっていない人は入らない', () {
+    const all = {0: 1, 1: 1, 2: 1, 3: 1};
     final rows = ContestEntry.rank(const [
+      ContestEntry(uid: 'a', name: 'A', correct: 9, score: 1200, scores: all),
+      ContestEntry(uid: 'b', name: 'B', correct: 10, score: 1200, scores: all),
+      ContestEntry(uid: 'c', name: 'C', correct: 0, score: 0),
       ContestEntry(
-          uid: 'a', name: 'A', correct: 9, score: 1200, done: true, section: 4),
-      ContestEntry(
-          uid: 'b',
-          name: 'B',
-          correct: 10,
-          score: 1200,
-          done: true,
-          section: 4),
-      ContestEntry(uid: 'c', name: 'C', correct: 0, score: 0, done: false),
-      ContestEntry(
-          uid: 'd',
-          name: 'D',
-          correct: 12,
-          score: 1500,
-          done: false,
-          section: 2),
+        uid: 'd',
+        name: 'D',
+        correct: 12,
+        score: 1500,
+        scores: {0: 1, 3: 1},
+      ),
     ]);
     expect(rows.map((e) => e.uid), ['d', 'b', 'a']);
+  });
+
+  test('分野ごとに、好きな順で1回ずつ。始めて30分たつと記録なし', () {
+    final t0 = DateTime.utc(2026, 10, 29, 10);
+    var e = const ContestEntry(uid: 'x', name: 'X', correct: 0, score: 0);
+    expect(e.started(2), isFalse);
+    e = e.withStart(2, t0);
+    expect(e.started(2), isTrue);
+    expect(e.abandoned(2, t0.add(const Duration(minutes: 29))), isFalse);
+    expect(e.abandoned(2, t0.add(const Duration(minutes: 30))), isTrue);
+    e = e.next(
+      part: 2,
+      partScore: 9000,
+      partCorrect: 48,
+      partPoints: 6750,
+      totalQuestions: 200,
+    );
+    expect(e.section, 1);
+    expect(e.partScore(2), 9000);
+    expect(e.partScore(0), isNull);
+    expect(e.score, ContestScoring.score(6750, 200));
+    expect(e.done, isFalse);
+    final back = ContestEntry.fromMap('x', e.toMap())!;
+    expect(back.partScore(2), 9000);
+    expect(back.starts[2], t0);
   });
 
   test('入賞：2〜4人なら1位、5〜9人なら上位2人、10人以上なら上位3人', () {

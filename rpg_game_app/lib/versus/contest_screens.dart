@@ -195,70 +195,79 @@ class _ContestScreenState extends State<ContestScreen> {
     }();
   }
 
-  /// 始める（[resume] があれば、その記録の続きから）
+  /// [parts] の種類を解く（分野ごとなら1つ、一気になら、まだの種類すべて）
   Future<void> _play(
     ContestRound round,
-    VocabBook book, {
-    ContestEntry? resume,
-  }) async {
+    VocabBook book,
+    List<int> parts,
+    ContestEntry? mine,
+  ) async {
     final backend = _backend!;
-    final parts = round.parts(book);
-    final total = parts.fold(0, (n, p) => n + p.length);
-    if (parts.where((p) => p.isNotEmpty).length < 3) {
+    final all = round.parts(book);
+    if (all.where((p) => p.isNotEmpty).length < 3) {
       setState(
         () => _error = '範囲 ${round.range} の単語が、この端末の ${book.title} にありません',
       );
       return;
     }
     final name = Classroom.cleanName(_name.text, fallback: 'あなた');
-    if (resume == null) {
-      final ok = await showDialog<bool>(
-        context: context,
-        builder: (c) => AlertDialog(
-          title: Text('${round.heading}・全$total問'),
-          content: Text(
-            '${[for (final (i, p) in parts.indexed) '${ContestPart.values[i].label} ${p.length}問'].join('・')}\n\n'
-            '1人1回だけです。1種類を解き終わるごとに記録します。'
-            '途中でやめても、受付中で始めてから${ContestRules.playWindow.inMinutes}分以内なら続きから解けます。',
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(c, false),
-              child: const Text('やめる'),
-            ),
-            FilledButton(
-              key: const ValueKey('contest-confirm'),
-              onPressed: () => Navigator.pop(c, true),
-              child: const Text('はじめる'),
-            ),
-          ],
+    final total = parts.fold(0, (n, i) => n + all[i].length);
+    final ok = await showDialog<bool>(
+      context: context,
+      builder: (c) => AlertDialog(
+        title: Text(
+          parts.length == 1
+              ? '${ContestPart.values[parts.single].label}・$total問'
+              : '一気に挑戦・$total問',
         ),
-      );
-      if (ok != true || !mounted) return;
-    }
+        content: Text(
+          '${[for (final i in parts) '${ContestPart.values[i].label} ${all[i].length}問'].join('・')}\n\n'
+          '種類ごとに1回だけです。種類の「はじめる」を押してから'
+          '${ContestRules.partWindow.inMinutes}分以内に解き終わると記録します'
+          '（途中でやめた種類は記録なし）。',
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(c, false),
+            child: const Text('やめる'),
+          ),
+          FilledButton(
+            key: const ValueKey('contest-confirm'),
+            onPressed: () => Navigator.pop(c, true),
+            child: const Text('すすむ'),
+          ),
+        ],
+      ),
+    );
+    if (ok != true || !mounted) return;
     setState(() {
       _busy = true;
       _error = null;
     });
     try {
-      final entry = resume ?? await backend.start(round.id, name);
+      await RpgServices.of(context).classroomStore.setNickname(name);
       if (!mounted) return;
-      if (resume == null) {
-        await RpgServices.of(context).classroomStore.setNickname(name);
-        if (!mounted) return;
-      }
       final result = await Navigator.of(context).push<ContestEntry>(
         MaterialPageRoute(
           builder: (_) => ContestPlayScreen(
             round: round,
             book: book,
-            entry: entry,
+            entry:
+                mine ??
+                ContestEntry(
+                  uid: backend.userId ?? '',
+                  name: name,
+                  correct: 0,
+                  score: 0,
+                ),
             backend: backend,
+            name: name,
+            parts: parts,
             store: _store,
           ),
         ),
       );
-      if (result != null && result.section > 0 && mounted) {
+      if (result != null && result.section > (mine?.section ?? 0) && mounted) {
         await Navigator.of(context).push(
           MaterialPageRoute<void>(
             builder: (_) =>
@@ -278,13 +287,87 @@ class _ContestScreenState extends State<ContestScreen> {
     }
   }
 
+  /// 1つの種類：まだなら挑戦ボタン、解いたら得点、やめたら記録なし
+  Widget _partRow(
+    ContestPart p,
+    ContestRound round,
+    VocabBook book,
+    ContestEntry? mine,
+    DateTime now,
+  ) {
+    final id = round.bookId;
+    final score = mine?.partScore(p.index);
+    if (score != null) {
+      return Text(
+        '✅ ${p.label}　${ContestScoring.percent(score)}',
+        key: ValueKey('contest-part-done-$id-${p.name}'),
+      );
+    }
+    if (mine != null && mine.started(p.index)) {
+      return Text(
+        mine.abandoned(p.index, now)
+            ? '❌ ${p.label}　途中でやめたため記録なし'
+            : '⏳ ${p.label}　挑戦中（始めてから${ContestRules.partWindow.inMinutes}分以内に解き終わると記録）',
+        key: ValueKey('contest-part-stopped-$id-${p.name}'),
+      );
+    }
+    return OutlinedButton(
+      key: ValueKey('contest-part-$id-${p.name}'),
+      onPressed: _busy ? null : () => _play(round, book, [p.index], mine),
+      child: Text('${p.label}に挑戦（${round.count}問）'),
+    );
+  }
+
+  /// 受付中の回の、挑戦ボタン（一気に・分野ごと）と、種類ごとの結果
+  List<Widget> _challenges(
+    ContestPlan plan,
+    ContestRound round,
+    VocabBook book,
+    ContestEntry? mine,
+    DateTime now,
+    TextStyle small,
+  ) {
+    final left = [
+      for (final p in ContestPart.values)
+        if (!(mine?.started(p.index) ?? false)) p.index,
+    ];
+    final id = plan.bookId;
+    return [
+      if (mine != null && mine.section > 0)
+        Text(
+          'あなたの得点 ${ContestScoring.percent(mine.score)}'
+          '（正解 ${mine.correct}問${mine.done ? '' : '・${mine.section}/4種類'}）',
+          key: ValueKey('contest-mine-$id'),
+          style: serif(16),
+        ),
+      if (left.length > 1)
+        FilledButton.icon(
+          key: ValueKey('contest-all-$id'),
+          onPressed: _busy ? null : () => _play(round, book, left, mine),
+          icon: const Icon(Icons.flash_on),
+          label: Text(
+            left.length == ContestPart.values.length
+                ? '一気に挑戦（4種類×${round.count}問）'
+                : '一気に挑戦（のこり${left.length}種類）',
+          ),
+        ),
+      const SizedBox(height: 4),
+      Text('分野ごとに挑戦', style: small),
+      for (final p in ContestPart.values)
+        Padding(
+          padding: const EdgeInsets.only(top: 4),
+          child: _partRow(p, round, book, mine, now),
+        ),
+    ];
+  }
+
   /// 入賞したときの報酬（受け取りボタン、または受け取ったしるし）
   Widget _prize(ContestRound round, int place, _Board board) {
     final medal = ContestPrizes.medal(place);
     final exp = ContestPrizes.exp(place);
     if (ContestPrizes.claimed(board.progress, round.id) != null) {
       return Text(
-        '$medal ${round.title} ${place}位に入賞！（報酬は受け取りずみ）',
+        '$medal ${round.title} $place位に入賞！（報酬は受け取りずみ）',
         key: ValueKey('contest-prize-done-${round.bookId}'),
         style: serif(15),
       );
@@ -512,40 +595,8 @@ class _ContestScreenState extends State<ContestScreen> {
                   '（単語帳練習で、名前とパスワードを入れて追加）。',
                   key: ValueKey('contest-no-book-${plan.bookId}'),
                 )
-              else if (mine == null)
-                FilledButton.icon(
-                  key: ValueKey('contest-play-${plan.bookId}'),
-                  onPressed: _busy ? null : () => _play(round, book),
-                  icon: const Icon(Icons.flash_on),
-                  label: const Text('挑戦する（1回だけ・4種類）'),
-                )
-              else ...[
-                if (mine.section > 0)
-                  Text(
-                    'あなたの得点 ${ContestScoring.percent(mine.score)}'
-                    '（正解 ${mine.correct}問${mine.done ? '' : '・${mine.section}/4種類'}）',
-                    key: ValueKey('contest-mine-${plan.bookId}'),
-                    style: serif(16),
-                  ),
-                if (mine.canResume(now))
-                  FilledButton.icon(
-                    key: ValueKey('contest-resume-${plan.bookId}'),
-                    onPressed: _busy
-                        ? null
-                        : () => _play(round, book, resume: mine),
-                    icon: const Icon(Icons.play_arrow),
-                    label: Text(
-                      '続きから（${ContestPart.values[mine.section].label}から）',
-                    ),
-                  )
-                else if (!mine.done)
-                  Text(
-                    mine.section == 0
-                        ? '始めてから${ContestRules.playWindow.inMinutes}分たったため、この回は記録なしです'
-                        : '時間切れのため、${mine.section}種類目までの得点で記録しました',
-                    key: ValueKey('contest-timeout-${plan.bookId}'),
-                  ),
-              ],
+              else
+                ..._challenges(plan, round, book, mine, now, small),
               TextButton(
                 key: ValueKey('contest-ranking-${plan.bookId}'),
                 onPressed: () => _ranking(round),

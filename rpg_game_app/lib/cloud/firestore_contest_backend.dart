@@ -75,10 +75,9 @@ class FirestoreContestBackend extends ContestBackend {
   /// Firestore の時刻（Timestamp）を DateTime にしてから読む
   static ContestEntry? _entry(String uid, Map<String, dynamic>? data) {
     if (data == null) return null;
-    final at = data['startedAt'];
     return ContestEntry.fromMap(uid, {
-      ...data,
-      'startedAt': at is Timestamp ? at.toDate() : null,
+      for (final e in data.entries)
+        e.key: e.value is Timestamp ? (e.value as Timestamp).toDate() : e.value,
     });
   }
 
@@ -94,42 +93,40 @@ class FirestoreContestBackend extends ContestBackend {
   }
 
   @override
-  Future<ContestEntry> start(String roundId, String name) async {
+  Future<ContestEntry> startPart(String roundId, String name, int part) async {
     final uid = _uid();
     try {
       final doc = _entries(roundId).doc(uid);
       await _db.runTransaction((tx) async {
-        if ((await tx.get(doc)).exists) {
-          throw const DuelException('このバトルは、もう挑戦ずみです');
+        final snap = await tx.get(doc);
+        final now = FieldValue.serverTimestamp();
+        if (!snap.exists) {
+          tx.set(doc, {
+            'name': name,
+            'correct': 0,
+            'score': 0,
+            'points': 0,
+            'done': false,
+            'section': 0,
+            'startedAt': now,
+            's$part': now,
+          });
+          return;
         }
-        tx.set(doc, {
-          'name': name,
-          'correct': 0,
-          'score': 0,
-          'points': 0,
-          'done': false,
-          'section': 0,
-          'parts': <int>[],
-          'startedAt': FieldValue.serverTimestamp(),
-        });
+        if (_entry(uid, snap.data())!.started(part)) {
+          throw const DuelException('この種類は、もう挑戦ずみです');
+        }
+        tx.update(doc, {'s$part': now});
       });
-      // サーバーの時刻を読みなおす（続きから解ける時間の計算に使う）
-      return (await mine(roundId)) ??
-          ContestEntry(
-            uid: uid,
-            name: name,
-            correct: 0,
-            score: 0,
-            done: false,
-            startedAt: DateTime.now(),
-          );
+      // サーバーの時刻を読みなおす（結果を送れる時間の計算に使う）
+      return (await mine(roundId))!;
     } catch (e) {
       _fail(e);
     }
   }
 
   @override
-  Future<void> savePart(String roundId, ContestEntry entry) async {
+  Future<void> savePart(String roundId, ContestEntry entry, int part) async {
     final uid = _uid();
     try {
       await _entries(roundId).doc(uid).update({
@@ -138,8 +135,7 @@ class FirestoreContestBackend extends ContestBackend {
         'points': entry.points,
         'done': entry.done,
         'section': entry.section,
-        'parts': entry.parts,
-        if (entry.parts.isNotEmpty) 'p${entry.parts.length - 1}': entry.parts.last,
+        'p$part': entry.partScore(part),
         'updatedAt': FieldValue.serverTimestamp(),
       });
     } catch (e) {

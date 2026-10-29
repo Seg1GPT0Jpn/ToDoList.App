@@ -18,8 +18,8 @@ abstract final class ContestRules {
   /// 1種類あたりの問題数の上限（4種類で 400 問。ルールの上限もこれで決まる）
   static const maxCount = 100;
 
-  /// 始めてから最後の結果を送るまでの時間の上限（ルールと同じ）
-  static const playWindow = Duration(minutes: 90);
+  /// 1種類を始めてから結果を送るまでの時間の上限（ルールと同じ）
+  static const partWindow = Duration(minutes: 30);
 
   /// 日本時間（バトルの日付は日本の暦で数える）
   static DateTime jstToday(DateTime now) {
@@ -338,6 +338,7 @@ class ContestConfig {
       first: DateTime.utc(2026, 10, 30),
       firstFrom: 301,
       width: 50,
+      count: 50,
       skips: const {'2026-11-13'},
       openMin: -360,
       closeMin: 19 * 60 + 15,
@@ -348,6 +349,7 @@ class ContestConfig {
       first: DateTime.utc(2026, 11, 1),
       firstFrom: 1801,
       width: 100,
+      count: 100,
       skips: const {'2026-11-22'},
       openMin: -360,
       closeMin: 32 * 60,
@@ -645,18 +647,20 @@ abstract final class ContestQuestions {
   }
 }
 
-/// 1人分の参加記録
+/// 1人分の参加記録。
+///
+/// 4種類（[ContestPart]）は、分野ごとにでも、一気にでも、好きな順に1回ずつ挑戦できる。
+/// 始めた種類は [starts] に時刻が入り、そこから [ContestRules.partWindow] のうちに結果を送ると
+/// [scores] に得点が入る。始めたまま結果を送らなかった種類は、記録なし（0点）。
 class ContestEntry {
   const ContestEntry({
     required this.uid,
     required this.name,
     required this.correct,
     required this.score,
-    required this.done,
-    this.section = 0,
-    this.parts = const [],
+    this.scores = const {},
+    this.starts = const {},
     this.points = 0,
-    this.startedAt,
   });
 
   final String uid;
@@ -668,46 +672,62 @@ class ContestEntry {
   /// 得点（満点に対する割合。0〜10000 で、100.00% が 10000。[ContestScoring.score]）
   final int score;
 
-  /// 4種類とも解き終わったか
-  final bool done;
+  /// 種類の番号 → その種類の得点（0〜10000。解き終わった種類だけ）
+  final Map<int, int> scores;
 
-  /// 解き終わった種類の数（0〜4。途中でやめたら、次の種類から続けられる）
-  final int section;
-
-  /// 種類ごとの得点（0〜10000。解き終わった種類の分だけ）
-  final List<int> parts;
+  /// 種類の番号 → 始めた時刻
+  final Map<int, DateTime> starts;
 
   /// 4種類の合計の点数（正解100点＋速さ。得点はこれを満点で割ったもの）
   final int points;
 
-  /// 始めた時刻（続きから解けるのは、ここから [ContestRules.playWindow] のあいだ）
-  final DateTime? startedAt;
+  /// 解き終わった種類の数
+  int get section => scores.length;
 
-  bool canResume(DateTime now) =>
-      !done &&
-      section < ContestPart.values.length &&
-      startedAt != null &&
-      now.isBefore(startedAt!.add(ContestRules.playWindow));
+  /// 4種類とも解き終わったか
+  bool get done => scores.length >= ContestPart.values.length;
+
+  /// その種類の得点（まだ解いていなければ null）
+  int? partScore(int part) => scores[part];
+
+  /// その種類を、もう始めたか（始めたら、もう一度は挑戦できない）
+  bool started(int part) =>
+      starts.containsKey(part) || scores.containsKey(part);
+
+  /// 始めたのに結果を送っていない種類（記録なし）
+  bool abandoned(int part, DateTime now) =>
+      starts.containsKey(part) &&
+      !scores.containsKey(part) &&
+      !now.isBefore(starts[part]!.add(ContestRules.partWindow));
+
+  /// その種類を始めた記録
+  ContestEntry withStart(int part, DateTime at) => ContestEntry(
+        uid: uid,
+        name: name,
+        correct: correct,
+        score: score,
+        scores: scores,
+        starts: {...starts, part: at},
+        points: points,
+      );
 
   /// 1種類を解き終わったあとの記録
   ContestEntry next({
+    required int part,
     required int partScore,
     required int partCorrect,
     required int partPoints,
     required int totalQuestions,
   }) {
     final p = points + partPoints;
-    final s = section + 1;
     return ContestEntry(
       uid: uid,
       name: name,
       correct: correct + partCorrect,
       score: ContestScoring.score(p, totalQuestions),
-      done: s >= ContestPart.values.length,
-      section: s,
-      parts: [...parts, partScore],
+      scores: {...scores, part: partScore},
+      starts: starts,
       points: p,
-      startedAt: startedAt,
     );
   }
 
@@ -715,12 +735,12 @@ class ContestEntry {
         'name': name,
         'correct': correct,
         'score': score,
+        'points': points,
         'done': done,
         'section': section,
-        'parts': parts,
-        'points': points,
-        // 分野ごとの順位表のため、種類ごとの得点を別の項目にも置く（p0〜p3）
-        for (final (i, p) in parts.indexed) 'p$i': p,
+        // 分野ごとの順位表のため、種類ごとの得点を別の項目に置く（p0〜p3）
+        for (final e in scores.entries) 'p${e.key}': e.value,
+        for (final e in starts.entries) 's${e.key}': e.value,
       };
 
   static ContestEntry? fromMap(String uid, Object? m) {
@@ -732,20 +752,17 @@ class ContestEntry {
       name: name,
       correct: correct.toInt(),
       score: score.toInt(),
-      done: m['done'] == true,
-      section: (m['section'] as num?)?.toInt() ?? 0,
-      parts: [
-        if (m['parts'] is List)
-          for (final x in m['parts'] as List)
-            if (x is num) x.toInt(),
-      ],
+      scores: {
+        for (var i = 0; i < ContestPart.values.length; i++)
+          if (m['p$i'] is num) i: (m['p$i'] as num).toInt(),
+      },
+      starts: {
+        for (var i = 0; i < ContestPart.values.length; i++)
+          if (m['s$i'] is DateTime) i: m['s$i'] as DateTime,
+      },
       points: (m['points'] as num?)?.toInt() ?? 0,
-      startedAt: m['startedAt'] is DateTime ? m['startedAt'] as DateTime : null,
     );
   }
-
-  /// その種類の得点（まだ解いていなければ null）
-  int? partScore(int part) => part < parts.length ? parts[part] : null;
 
   /// その種類の得点の高い順（[part] が null なら総合の得点の順）
   static List<ContestEntry> rankBy(Iterable<ContestEntry> all, int? part) {

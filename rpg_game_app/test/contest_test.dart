@@ -122,10 +122,10 @@ void main() {
       frames: 5,
       size: const Size(420, 1400),
     );
-    expect(find.textContaining('受付中　EEVI 301〜350・4種類×100問'), findsOneWidget);
+    expect(find.textContaining('受付中　EEVI 301〜350・4種類×50問'), findsOneWidget);
     expect(find.textContaining('10/30（金）19:15まで'), findsOneWidget);
     expect(find.byKey(const ValueKey('contest-no-book-eevi')), findsOneWidget);
-    expect(find.byKey(const ValueKey('contest-play-eevi')), findsNothing);
+    expect(find.byKey(const ValueKey('contest-all-eevi')), findsNothing);
     expect(
       find.textContaining(
         '次回　LEAP 1801〜1900・4種類×100問\n10/31（土）18:00〜11/2（月）8:00',
@@ -145,9 +145,7 @@ void main() {
           name: 'らいばる',
           correct: 20,
           score: 10000,
-          done: true,
-          section: 4,
-          parts: [10000, 10000, 10000, 10000],
+          scores: {0: 10000, 1: 10000, 2: 10000, 3: 10000},
         ),
       },
     };
@@ -158,9 +156,10 @@ void main() {
     );
     final s = await _open(t, me);
     await t.enterText(find.byKey(const ValueKey('contest-name')), 'あり');
-    await t.tap(find.byKey(const ValueKey('contest-play-eevi')));
+    expect(find.textContaining('一気に挑戦（4種類×5問）'), findsOneWidget);
+    await t.tap(find.byKey(const ValueKey('contest-all-eevi')));
     await _frames(t, 3);
-    expect(find.textContaining('全20問'), findsOneWidget);
+    expect(find.textContaining('一気に挑戦・20問'), findsOneWidget);
     await t.tap(find.byKey(const ValueKey('contest-confirm')));
     await _frames(t, 3);
     for (final part in ContestPart.values) {
@@ -173,7 +172,7 @@ void main() {
     final mine = shared['eevi-2026-10-30']!['alice']!;
     expect(mine.done, isTrue);
     expect(mine.name, 'あり');
-    expect(mine.parts, hasLength(4));
+    expect(mine.scores, hasLength(4));
     // 速く正解したので、ほぼ満点（100% には少し届かない）
     expect(mine.score, inInclusiveRange(9000, 9999));
     // 総合の順位表
@@ -188,14 +187,18 @@ void main() {
     // もどると、もう挑戦できない
     await t.pageBack();
     await _frames(t, 5);
-    expect(find.byKey(const ValueKey('contest-play-eevi')), findsNothing);
-    expect(find.byKey(const ValueKey('contest-resume-eevi')), findsNothing);
+    expect(find.byKey(const ValueKey('contest-all-eevi')), findsNothing);
+    expect(find.byKey(const ValueKey('contest-part-eevi-flash')), findsNothing);
+    expect(
+      find.byKey(const ValueKey('contest-part-done-eevi-cloze')),
+      findsOneWidget,
+    );
     expect(find.byKey(const ValueKey('contest-mine-eevi')), findsOneWidget);
     expect(VocabStore.of(s.personalBooks).progress('eevi').cards, isNotEmpty);
     expect(t.takeException(), isNull);
   });
 
-  testWidgets('途中でやめても、次の種類から続けられる。時間が切れたらそこまで', (t) async {
+  testWidgets('分野ごとに好きな順で1回ずつ。途中でやめた分野は記録なし', (t) async {
     final shared = <String, Map<String, ContestEntry>>{};
     final me = MemoryContestBackend(
       userId: 'bob',
@@ -204,27 +207,41 @@ void main() {
     );
     var clock = _eeviDay();
     await _open(t, me, now: () => clock);
-    await t.tap(find.byKey(const ValueKey('contest-play-eevi')));
+    // 英→日だけ挑戦する
+    await t.tap(find.byKey(const ValueKey('contest-part-eevi-enJa')));
     await _frames(t, 3);
+    expect(find.textContaining('英→日・5問'), findsOneWidget);
     await t.tap(find.byKey(const ValueKey('contest-confirm')));
     await _frames(t, 3);
+    expect(_text(t, 'contest-part-title'), '英→日');
     await _solvePart(t, 5);
-    // 2種類目（日→英）の説明のところでやめる
-    await t.pageBack();
-    await _frames(t, 12);
-    expect(shared['eevi-2026-10-30']!['bob']!.section, 1);
+    final e = shared['eevi-2026-10-30']!['bob']!;
+    expect(e.section, 1);
+    expect(e.partScore(ContestPart.enJa.index), isNotNull);
+    expect(e.partScore(ContestPart.flash.index), isNull);
     // 1種類だけでも順位表に出る
     expect(find.byKey(const ValueKey('contest-my-rank')), findsOneWidget);
     await t.pageBack();
-    await _frames(t, 5);
-    expect(find.textContaining('続きから（日→英から）'), findsOneWidget);
-    await t.tap(find.byKey(const ValueKey('contest-resume-eevi')));
-    await _frames(t, 5);
-    expect(_text(t, 'contest-part-title'), contains('日→英'));
+    await _frames(t, 12);
+    expect(
+      find.byKey(const ValueKey('contest-part-done-eevi-enJa')),
+      findsOneWidget,
+    );
+    expect(find.byKey(const ValueKey('contest-part-eevi-enJa')), findsNothing);
+    expect(find.textContaining('一気に挑戦（のこり3種類）'), findsOneWidget);
+    // フラッシュカードを始めて、途中でやめる
+    await t.tap(find.byKey(const ValueKey('contest-part-eevi-flash')));
+    await _frames(t, 3);
+    await t.tap(find.byKey(const ValueKey('contest-confirm')));
+    await _frames(t, 3);
+    await t.tap(find.byKey(const ValueKey('contest-part-start')));
+    await _frames(t, 3);
     await t.pageBack();
-    await _frames(t, 5);
-    // 始めてから90分たつと、続きからは解けない
-    clock = clock.add(const Duration(minutes: 91));
+    await _frames(t, 12);
+    expect(find.byKey(const ValueKey('contest-part-eevi-flash')), findsNothing);
+    expect(find.textContaining('フラッシュカード　挑戦中'), findsOneWidget);
+    // 30分たつと記録なし。のこりの2種類には、まだ挑戦できる
+    clock = clock.add(const Duration(minutes: 31));
     await t.pumpWidget(const SizedBox());
     await openScreen(
       t,
@@ -233,8 +250,16 @@ void main() {
       keepPrefs: true,
       size: const Size(420, 1400),
     );
-    expect(find.byKey(const ValueKey('contest-resume-eevi')), findsNothing);
-    expect(find.textContaining('1種類目までの得点で記録しました'), findsOneWidget);
+    expect(find.textContaining('フラッシュカード　途中でやめたため記録なし'), findsOneWidget);
+    expect(
+      find.byKey(const ValueKey('contest-part-eevi-jaEn')),
+      findsOneWidget,
+    );
+    expect(
+      find.byKey(const ValueKey('contest-part-eevi-cloze')),
+      findsOneWidget,
+    );
+    expect(find.textContaining('一気に挑戦（のこり2種類）'), findsOneWidget);
     expect(t.takeException(), isNull);
   });
 
@@ -246,9 +271,7 @@ void main() {
           name: 'えー',
           correct: 380,
           score: 9123,
-          done: true,
-          section: 4,
-          parts: [9000, 9100, 9200, 9192],
+          scores: {0: 9000, 1: 9100, 2: 9200, 3: 9192},
         ),
       },
     };
@@ -259,12 +282,10 @@ void main() {
       MemoryContestBackend(userId: 'z', entries: shared),
       now: after,
     );
-    expect(find.byKey(const ValueKey('contest-play-eevi')), findsNothing);
+    expect(find.byKey(const ValueKey('contest-all-eevi')), findsNothing);
     expect(find.textContaining('最終ランキング発表！（301〜350）'), findsOneWidget);
     expect(
-      find.textContaining(
-        '次回　EEVI 351〜400・4種類×100問\n11/5（木）18:00〜11/6（金）19:15',
-      ),
+      find.textContaining('次回　EEVI 351〜400・4種類×50問\n11/5（木）18:00〜11/6（金）19:15'),
       findsOneWidget,
     );
     await t.tap(find.byKey(const ValueKey('contest-last-eevi')));
@@ -283,9 +304,9 @@ void main() {
       name: uid,
       correct: 300,
       score: score,
-      done: true,
-      section: 4,
-      parts: [score, score, score, score],
+      scores: {
+        for (final (i, x) in [score, score, score, score].indexed) i: x,
+      },
     );
     // 5人なので上位2人が入賞。自分（me）は2位
     final shared = {
@@ -358,7 +379,7 @@ void main() {
     );
     expect(
       find.textContaining(
-        'EEVI 331〜360（4種類×100問）\n　11/19（木）18:00〜11/20（金）20:00',
+        'EEVI 331〜360（4種類×50問）\n　11/19（木）18:00〜11/20（金）20:00',
       ),
       findsOneWidget,
     );

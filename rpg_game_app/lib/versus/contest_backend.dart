@@ -21,11 +21,12 @@ abstract class ContestBackend {
   /// 自分の参加記録（まだなら null）
   Future<ContestEntry?> mine(String roundId);
 
-  /// 始める（1回だけ。もう始めていたら [DuelException]）。始めたときの記録を返す
-  Future<ContestEntry> start(String roundId, String name);
+  /// その種類を始める（種類ごとに1回だけ。もう始めていたら [DuelException]）。
+  /// まだ記録がなければ作る。始めたあとの記録を返す
+  Future<ContestEntry> startPart(String roundId, String name, int part);
 
-  /// 1種類を解き終わった記録を入れる（[ContestEntry.next] で作ったもの）
-  Future<void> savePart(String roundId, ContestEntry entry);
+  /// その種類を解き終わった記録を入れる（[ContestEntry.next] で作ったもの）
+  Future<void> savePart(String roundId, ContestEntry entry, int part);
 
   /// 得点の高い順に [limit] 人（[part] があれば、その種類の得点の順）
   Future<List<ContestEntry>> ranking(
@@ -81,30 +82,26 @@ class MemoryContestBackend extends ContestBackend {
   Future<ContestEntry?> mine(String roundId) async => entries[roundId]?[_uid()];
 
   @override
-  Future<ContestEntry> start(String roundId, String name) async {
+  Future<ContestEntry> startPart(String roundId, String name, int part) async {
     final uid = _uid();
     final room = entries.putIfAbsent(roundId, () => {});
-    if (room.containsKey(uid)) {
-      throw const DuelException('このバトルは、もう挑戦ずみです');
+    final e =
+        room[uid] ?? ContestEntry(uid: uid, name: name, correct: 0, score: 0);
+    if (e.started(part)) {
+      throw const DuelException('この種類は、もう挑戦ずみです');
     }
-    return room[uid] = ContestEntry(
-      uid: uid,
-      name: name,
-      correct: 0,
-      score: 0,
-      done: false,
-      startedAt: now(),
-    );
+    return room[uid] = e.withStart(part, now());
   }
 
   @override
-  Future<void> savePart(String roundId, ContestEntry entry) async {
+  Future<void> savePart(String roundId, ContestEntry entry, int part) async {
     final uid = _uid();
     final e = entries[roundId]?[uid];
+    final at = e?.starts[part];
     if (e == null ||
-        e.done ||
-        entry.section != e.section + 1 ||
-        !e.canResume(now())) {
+        at == null ||
+        e.partScore(part) != null ||
+        !now().isBefore(at.add(ContestRules.partWindow))) {
       throw const DuelException('結果を送れませんでした（時間切れか、挑戦ずみです）');
     }
     entries[roundId]![uid] = entry;

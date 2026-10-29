@@ -263,8 +263,9 @@ service cloud.firestore {
 
     // 週替わり単語バトルの参加記録（回の ID は「leap-2026-11-01」＝バトルの日）。
     // 置くのはニックネーム・正解数・点数だけ。ログインした人が読める（順位表）。
-    // 受付のあいだ（日程の設定の open〜close。バトルの日の日本時間0時からの分）に、自分の分を1回だけ作れる。
-    // 得点（score）は満点に対する割合で、0〜10000（100.00%）。
+    // 4種類（フラッシュカード・日→英・英→日・例文）は、受付のあいだ（日程の設定の open〜close。
+    // バトルの日の日本時間0時からの分）に、種類ごとに1回だけ始められ、始めてから30分以内に結果を入れられる。
+    // 得点（score・p0〜p3）は満点に対する割合で、0〜10000（100.00%）。
     // 設定がなければ EEVI は前日18:00〜当日19:15、LEAP は前日18:00〜翌日8:00。
     // 点数を入れられるのは、始めてから8分以内に1回だけ（あとから書きかえられない）。
     match /vocab_contests/{roundId}/entries/{uid} {
@@ -289,13 +290,33 @@ service cloud.firestore {
       function closeAt() {
         return dayStart() + duration.value(plan().get('close', kind() == 'leap' ? 1920 : 1155), 'm');
       }
+      // 種類（0〜3）を始めた時刻 s0〜s3 と、得点 p0〜p3
+      function newKey(k) {
+        return !(k in resource.data) && (k in request.resource.data);
+      }
+      // 新しく始めた種類の時刻は、いまの時刻
+      function startOk(i) {
+        return !newKey('s' + string(i)) || request.resource.data['s' + string(i)] == request.time;
+      }
+      // 新しく入れた得点は、その種類を始めてから30分以内で、0〜10000
+      function scoreOk(i) {
+        return !newKey('p' + string(i))
+          || (('s' + string(i)) in resource.data
+            && request.time < resource.data['s' + string(i)] + duration.value(30, 'm')
+            && request.resource.data['p' + string(i)] is int
+            && request.resource.data['p' + string(i)] >= 0
+            && request.resource.data['p' + string(i)] <= 10000);
+      }
+      function open() {
+        return validRound() && request.time >= openAt() && request.time < closeAt();
+      }
       allow read: if request.auth != null;
+      // はじめの種類を始めるときに作る（s0〜s3 のどれか1つだけ）
       allow create: if request.auth != null
         && request.auth.uid == uid
-        && validRound()
-        && request.time >= openAt()
-        && request.time < closeAt()
-        && request.resource.data.keys().hasOnly(['name', 'correct', 'score', 'points', 'done', 'section', 'parts', 'startedAt'])
+        && open()
+        && request.resource.data.keys().hasOnly(['name', 'correct', 'score', 'points', 'done', 'section', 'startedAt', 's0', 's1', 's2', 's3'])
+        && request.resource.data.keys().size() == 8
         && request.resource.data.name is string
         && request.resource.data.name.size() > 0
         && request.resource.data.name.size() <= 20
@@ -304,24 +325,31 @@ service cloud.firestore {
         && request.resource.data.points == 0
         && request.resource.data.done == false
         && request.resource.data.section == 0
-        && request.resource.data.parts == []
-        && request.resource.data.startedAt == request.time;
-      // 4種類（フラッシュカード・日→英・英→日・例文）を1つ解き終わるごとに、1回ずつ足す。
-      // その種類の得点は p0〜p3 にも置く（分野ごとの順位表に使う）。
-      // 始めてから90分のあいだだけ。正解数・点数・得点は減らせない
+        && request.resource.data.startedAt == request.time
+        && request.resource.data.get('s0', request.time) == request.time
+        && request.resource.data.get('s1', request.time) == request.time
+        && request.resource.data.get('s2', request.time) == request.time
+        && request.resource.data.get('s3', request.time) == request.time;
+      // ほかの種類を始める（受付中に、まだ始めていない種類を1つだけ）
       allow update: if request.auth != null
         && request.auth.uid == uid
-        && resource.data.done == false
-        && request.time < resource.data.startedAt + duration.value(90, 'm')
-        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['correct', 'score', 'points', 'done', 'section', 'parts', 'updatedAt', 'p' + string(resource.data.section)])
-        && request.resource.data['p' + string(resource.data.section)] is int
-        && request.resource.data['p' + string(resource.data.section)] >= 0
-        && request.resource.data['p' + string(resource.data.section)] <= 10000
+        && open()
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['s0', 's1', 's2', 's3'])
+        && request.resource.data.diff(resource.data).addedKeys().size() == 1
+        && request.resource.data.diff(resource.data).changedKeys().size() == 0
+        && startOk(0) && startOk(1) && startOk(2) && startOk(3);
+      // 始めた種類の結果を入れる（種類ごとに1回だけ。正解数・点数・得点は減らせない）
+      allow update: if request.auth != null
+        && request.auth.uid == uid
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['correct', 'score', 'points', 'done', 'section', 'updatedAt', 'p0', 'p1', 'p2', 'p3'])
+        && request.resource.data.diff(resource.data).removedKeys().size() == 0
+        && !request.resource.data.diff(resource.data).changedKeys().hasAny(['p0', 'p1', 'p2', 'p3'])
+        && request.resource.data.diff(resource.data).addedKeys().hasAny(['p0', 'p1', 'p2', 'p3'])
+        && request.resource.data.diff(resource.data).addedKeys().difference(['updatedAt'].toSet()).size() == 1
+        && scoreOk(0) && scoreOk(1) && scoreOk(2) && scoreOk(3)
         && request.resource.data.section == resource.data.section + 1
         && request.resource.data.section <= 4
         && request.resource.data.done == (request.resource.data.section == 4)
-        && request.resource.data.parts is list
-        && request.resource.data.parts.size() == request.resource.data.section
         && request.resource.data.correct is int
         && request.resource.data.correct >= resource.data.correct
         && request.resource.data.correct <= resource.data.correct + 100

@@ -9,9 +9,9 @@ import '../vocab/vocab_store.dart';
 import 'contest_backend.dart';
 import 'duel_backend.dart';
 
-/// 週替わり単語バトルの本体：フラッシュカード・日→英・英→日・例文の4種類を順に解く。
+/// 週替わり単語バトルの本体：[parts] の種類（フラッシュカード・日→英・英→日・例文）を順に解く。
 ///
-/// 1種類を解き終わるたびに記録を送るので、途中でやめても次の種類から続けられる。
+/// 種類ごとに、「はじめる」を押したときに始めた記録を送り（1回だけ）、解き終わったら結果を送る。
 /// 最後まで解くか、やめたときの記録を返して閉じる。
 class ContestPlayScreen extends StatefulWidget {
   const ContestPlayScreen({
@@ -20,15 +20,23 @@ class ContestPlayScreen extends StatefulWidget {
     required this.book,
     required this.entry,
     required this.backend,
+    required this.name,
+    required this.parts,
     this.store,
   });
 
   final ContestRound round;
   final VocabBook book;
 
-  /// いまの記録（続きからなら、解き終わった種類の数が入っている）
+  /// いまの記録
   final ContestEntry entry;
   final ContestBackend backend;
+
+  /// ニックネーム（はじめて始めるときに記録に入れる）
+  final String name;
+
+  /// 解く種類の番号（分野ごとなら1つ、一気になら、まだの種類すべて）
+  final List<int> parts;
 
   /// 学習記録にも残す（テストでは null）
   final VocabStore? store;
@@ -46,6 +54,9 @@ class _ContestPlayScreenState extends State<ContestPlayScreen> {
   late final int _total = _parts.fold(0, (n, p) => n + p.length);
   late ContestEntry _entry = widget.entry;
 
+  /// [ContestPlayScreen.parts] の何番目を解いているか
+  int _step = 0;
+
   /// 解いている種類の問題（null なら、種類の説明を出している）
   List<ContestQuestion>? _questions;
   int _index = 0;
@@ -57,7 +68,7 @@ class _ContestPlayScreenState extends State<ContestPlayScreen> {
   bool _saving = false;
   String? _error;
 
-  ContestPart get _part => ContestPart.values[_entry.section];
+  ContestPart get _part => ContestPart.values[widget.parts[_step]];
   ContestQuestion get _q => _questions![_index];
 
   @override
@@ -66,13 +77,35 @@ class _ContestPlayScreenState extends State<ContestPlayScreen> {
     super.dispose();
   }
 
-  void _begin() {
+  Future<void> _begin() async {
+    final part = _part.index;
     setState(() {
-      _questions = _parts[_entry.section];
+      _saving = true;
+      _error = null;
+    });
+    try {
+      // 始めた記録（この種類は、もう挑戦しなおせない）
+      _entry = await widget.backend.startPart(
+        widget.round.id,
+        widget.name,
+        part,
+      );
+    } on DuelException catch (e) {
+      if (mounted) {
+        setState(() {
+          _error = e.message;
+          _saving = false;
+        });
+      }
+      return;
+    }
+    if (!mounted) return;
+    setState(() {
+      _saving = false;
+      _questions = _parts[part];
       _index = 0;
       _correct = 0;
       _points = 0;
-      _error = null;
     });
     if (_questions!.isEmpty) {
       _endPart();
@@ -128,7 +161,9 @@ class _ContestPlayScreenState extends State<ContestPlayScreen> {
 
   Future<void> _endPart() async {
     final qs = _questions!;
+    final part = _part.index;
     final next = _entry.next(
+      part: part,
       partScore: ContestScoring.score(_points, qs.length),
       partCorrect: _correct,
       partPoints: _points,
@@ -136,15 +171,18 @@ class _ContestPlayScreenState extends State<ContestPlayScreen> {
     );
     setState(() => _saving = true);
     try {
-      await widget.backend.savePart(widget.round.id, next);
+      await widget.backend.savePart(widget.round.id, next, part);
       await widget.store?.saveProgress(widget.book.id);
       if (!mounted) return;
       _entry = next;
-      if (next.done) {
+      if (_step + 1 >= widget.parts.length) {
         Navigator.of(context).pop(next);
         return;
       }
-      setState(() => _questions = null);
+      setState(() {
+        _step++;
+        _questions = null;
+      });
     } on DuelException catch (e) {
       if (mounted) setState(() => _error = e.message);
     } finally {
@@ -183,7 +221,9 @@ class _ContestPlayScreenState extends State<ContestPlayScreen> {
       padding: const EdgeInsets.fromLTRB(40, 24, 16, 24),
       children: [
         Text(
-          '${part.index + 1} / ${ContestPart.values.length}　${part.label}',
+          widget.parts.length > 1
+              ? '${_step + 1} / ${widget.parts.length}　${part.label}'
+              : part.label,
           key: const ValueKey('contest-part-title'),
           style: serif(22),
         ),
@@ -197,7 +237,7 @@ class _ContestPlayScreenState extends State<ContestPlayScreen> {
           const SizedBox(height: 12),
           Text(
             'ここまでの得点 ${ContestScoring.percent(_entry.score)}'
-            '（${[for (final (i, p) in _entry.parts.indexed) '${ContestPart.values[i].label} ${ContestScoring.percent(p)}'].join('・')}）',
+            '（${[for (final e in _entry.scores.entries) '${ContestPart.values[e.key].label} ${ContestScoring.percent(e.value)}'].join('・')}）',
             key: const ValueKey('contest-so-far'),
           ),
         ],
@@ -210,9 +250,8 @@ class _ContestPlayScreenState extends State<ContestPlayScreen> {
         ),
         const SizedBox(height: 12),
         Text(
-          '1種類を解き終わるごとに記録します。途中でやめても、受付中で始めてから'
-          '${ContestRules.playWindow.inMinutes}分以内なら、次の種類から続けられます'
-          '（解いている途中の種類は、やり直しになります）。',
+          '「はじめる」を押すと、この種類は1回だけの挑戦になります。'
+          '途中でやめると、この種類は記録なしです（ほかの種類には、あとから挑戦できます）。',
           style: TextStyle(fontSize: 12, color: TsuzuriColors.inkSoft),
         ),
         if (_error != null) ...[
