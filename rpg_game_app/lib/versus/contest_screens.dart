@@ -18,9 +18,17 @@ VocabBook? contestBook(VocabStore store, String bookId) => store.visibleBooks
 
 /// 単語帳練習のホームに出す入口。バトルの日は目立たせる
 class ContestEntryButton extends StatefulWidget {
-  const ContestEntryButton({super.key, required this.store, this.backend});
+  const ContestEntryButton({
+    super.key,
+    required this.store,
+    this.backend,
+    this.onlyToday = false,
+  });
 
   final VocabStore store;
+
+  /// バトルの日だけ出す（ホーム用）
+  final bool onlyToday;
 
   /// テスト用（ふだんは RpgServices.contests）
   final ContestBackend? backend;
@@ -59,7 +67,7 @@ class _ContestEntryButtonState extends State<ContestEntryButton> {
             .where((r) => contestBook(widget.store, r.bookId) != null)
             .toList();
         if (today != null && today.isNotEmpty) {
-          return FilledButton.icon(
+          final button = FilledButton.icon(
             key: const ValueKey('vocab-home-contest'),
             onPressed: _open,
             icon: const Icon(Icons.emoji_events),
@@ -68,7 +76,14 @@ class _ContestEntryButtonState extends State<ContestEntryButton> {
               '（${today.map((r) => '${r.range}').join('・')}）',
             ),
           );
+          return widget.onlyToday
+              ? Padding(
+                  padding: const EdgeInsets.only(bottom: 8),
+                  child: button,
+                )
+              : button;
         }
+        if (widget.onlyToday) return const SizedBox.shrink();
         return OutlinedButton.icon(
           key: const ValueKey('vocab-home-contest'),
           onPressed: _open,

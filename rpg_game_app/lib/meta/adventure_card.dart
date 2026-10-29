@@ -8,8 +8,12 @@ import '../art/enemy_painter.dart';
 import '../battle/battle_screen.dart';
 import '../study/common_test_screens.dart';
 import '../study/comprehensive_exam_screen.dart';
+import '../study/sea_home_screen.dart';
 import '../study/sky_home_screen.dart';
+import '../versus/contest_screens.dart';
+import '../versus/duel_screens.dart';
 import '../versus/versus_screen.dart';
+import '../vocab/vocab_store.dart';
 import '../vocab/word_forest_screen.dart';
 import 'achievements_screen.dart';
 import 'equipment_screen.dart';
@@ -103,126 +107,7 @@ class AdventureCard extends StatelessWidget {
               const SizedBox(height: Space.s),
               _SubjectLevels(record: record),
               const SizedBox(height: Space.s),
-              Wrap(
-                spacing: Space.s,
-                runSpacing: Space.xs,
-                children: [
-                  if (open.contains(HomeFeature.classroom))
-                    _MenuButton(
-                      feature: HomeFeature.classroom,
-                      icon: Icons.groups_outlined,
-                      label: 'クラスルーム',
-                      builder: (_) => const ClassroomHubScreen(),
-                    ),
-                  if (open.contains(HomeFeature.reviewTower))
-                    _MenuButton(
-                      feature: HomeFeature.reviewTower,
-                      icon: Icons.castle_outlined,
-                      label: due > 0 ? '復習の塔（$due）' : '復習の塔',
-                      highlight: due > 0,
-                      builder: (_) => const ReviewTowerScreen(),
-                    ),
-                  if (open.contains(HomeFeature.wordForest))
-                    _MenuButton(
-                      feature: HomeFeature.wordForest,
-                      icon: Icons.forest_outlined,
-                      label: '単語の森',
-                      builder: (_) => const WordForestScreen(),
-                    ),
-                  if (open.contains(HomeFeature.story))
-                    _MenuButton(
-                      feature: HomeFeature.story,
-                      icon: Icons.menu_book_outlined,
-                      label: '物語（欠片 ${Story.fragments(progress).length}/6）',
-                      builder: (_) => const StoryScreen(),
-                    ),
-                  if (open.contains(HomeFeature.gear))
-                    _MenuButton(
-                      feature: HomeFeature.gear,
-                      icon: Icons.shield_outlined,
-                      label: Gear.claimable(progress, record, today).isEmpty
-                          ? '装備・職業'
-                          : '装備・職業（ごほうび！）',
-                      highlight: Gear.claimable(
-                        progress,
-                        record,
-                        today,
-                      ).isNotEmpty,
-                      builder: (_) => const EquipmentScreen(),
-                    ),
-                  if (open.contains(HomeFeature.commonTest))
-                    _MenuButton(
-                      feature: HomeFeature.commonTest,
-                      icon: Icons.account_balance_outlined,
-                      label: '共通テスト遺跡',
-                      builder: (_) => const CommonTestRuinsScreen(),
-                    ),
-                  if (open.contains(HomeFeature.sky))
-                    _MenuButton(
-                      feature: HomeFeature.sky,
-                      icon: Icons.rocket_launch_outlined,
-                      label: '模擬試験の空',
-                      builder: (_) => const SkyHomeScreen(),
-                    ),
-                  if (open.contains(HomeFeature.comprehensive))
-                    _MenuButton(
-                      feature: HomeFeature.comprehensive,
-                      icon: Icons.assignment_outlined,
-                      label: '総合演習',
-                      builder: (_) =>
-                          const ComprehensiveExamScreen(subject: 'math'),
-                    ),
-                  if (open.contains(HomeFeature.versus))
-                    _MenuButton(
-                      feature: HomeFeature.versus,
-                      icon: Icons.sports_esports_outlined,
-                      label: '対戦モード',
-                      builder: (_) => const VersusSetupScreen(),
-                    ),
-                  if (open.contains(HomeFeature.learningStatus))
-                    _MenuButton(
-                      feature: HomeFeature.learningStatus,
-                      icon: Icons.insights,
-                      label: '学習ステータス',
-                      builder: (_) => const LearningStatusScreen(),
-                    ),
-                  if (open.contains(HomeFeature.library))
-                    _MenuButton(
-                      feature: HomeFeature.library,
-                      icon: Icons.library_books_outlined,
-                      label: '問題集・解説',
-                      builder: (_) => const QuestionLibraryScreen(),
-                    ),
-                  if (open.contains(HomeFeature.growth))
-                    _MenuButton(
-                      feature: HomeFeature.growth,
-                      icon: Icons.alt_route,
-                      label: '成長と学習ルート',
-                      builder: (_) => const GrowthScreen(),
-                    ),
-                  if (open.contains(HomeFeature.bestiary))
-                    _MenuButton(
-                      feature: HomeFeature.bestiary,
-                      icon: Icons.pets,
-                      label: '魔物図鑑',
-                      builder: (_) => const BestiaryScreen(),
-                    ),
-                  if (open.contains(HomeFeature.achievements))
-                    _MenuButton(
-                      feature: HomeFeature.achievements,
-                      icon: Icons.emoji_events_outlined,
-                      label: '実績・称号',
-                      builder: (_) => const AchievementsScreen(),
-                    ),
-                  if (open.contains(HomeFeature.settings))
-                    _MenuButton(
-                      feature: HomeFeature.settings,
-                      icon: Icons.settings_outlined,
-                      label: '設定',
-                      builder: (_) => const SettingsScreen(),
-                    ),
-                ],
-              ),
+              _MenuGroups(progress: progress, open: open, due: due),
               if (next != null)
                 Padding(
                   padding: const EdgeInsets.only(top: Space.s),
@@ -452,26 +337,36 @@ class _SubjectLevels extends StatelessWidget {
 
 class _MenuButton extends StatelessWidget {
   const _MenuButton({
-    required this.feature,
+    this.feature,
+    this.id,
     required this.icon,
     required this.label,
     required this.builder,
     this.highlight = false,
   });
 
-  final HomeFeature feature;
+  /// NEW を出す機能（いつも出ている入口は null）
+  final HomeFeature? feature;
+
+  /// [feature] がないときのキーの名前
+  final String? id;
   final IconData icon;
   final String label;
   final WidgetBuilder builder;
   final bool highlight;
 
+  String get _key => feature?.name ?? id!;
+
+  bool fresh(RpgServices services) =>
+      feature != null && services.homeFeatures.isNew(feature!);
+
   @override
   Widget build(BuildContext context) {
     final services = RpgServices.of(context);
-    final fresh = services.homeFeatures.isNew(feature);
+    final fresh = this.fresh(services);
     void open() {
       services.music.se('se_tap');
-      services.homeFeatures.markSeen(feature);
+      if (feature != null) services.homeFeatures.markSeen(feature!);
       Navigator.of(context).push(MaterialPageRoute<void>(builder: builder));
     }
 
@@ -482,7 +377,7 @@ class _MenuButton extends StatelessWidget {
               Flexible(child: Text(label)),
               const SizedBox(width: 6),
               Container(
-                key: ValueKey('home-new-${feature.name}'),
+                key: ValueKey('home-new-$_key'),
                 padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 1),
                 decoration: BoxDecoration(
                   color: TsuzuriColors.stamp,
@@ -502,13 +397,13 @@ class _MenuButton extends StatelessWidget {
         : Text(label);
     return highlight || fresh
         ? FilledButton.icon(
-            key: ValueKey('home-feature-${feature.name}'),
+            key: ValueKey('home-feature-$_key'),
             onPressed: open,
             icon: Icon(icon, size: 18),
             label: text,
           )
         : OutlinedButton.icon(
-            key: ValueKey('home-feature-${feature.name}'),
+            key: ValueKey('home-feature-$_key'),
             onPressed: open,
             icon: Icon(icon, size: 18),
             label: text,
@@ -613,4 +508,245 @@ class _LookPainter extends CustomPainter {
   );
   @override
   bool shouldRepaint(_LookPainter old) => false;
+}
+
+/// ホームの入口のまとまり
+enum _Group {
+  rpg('RPG', Icons.shield_outlined),
+  exam('定期テスト・模擬試験', Icons.sailing_outlined),
+  common('共通テスト・総合演習', Icons.account_balance_outlined),
+  versus('対戦・クラスルーム', Icons.sports_esports_outlined),
+  records('記録・設定', Icons.insights);
+
+  const _Group(this.label, this.icon);
+  final String label;
+  final IconData icon;
+}
+
+/// 冒険の手帳の下の入口。まとまりごとのタブで切りかえて、1つのまとまりだけを出す
+class _MenuGroups extends StatefulWidget {
+  const _MenuGroups({
+    required this.progress,
+    required this.open,
+    required this.due,
+  });
+
+  final RpgProgress progress;
+  final List<HomeFeature> open;
+  final int due;
+
+  @override
+  State<_MenuGroups> createState() => _MenuGroupsState();
+}
+
+class _MenuGroupsState extends State<_MenuGroups> {
+  /// アプリを開いているあいだは、最後に選んだまとまりを覚えておく
+  static _Group _last = _Group.rpg;
+  _Group _group = _last;
+
+  Map<_Group, List<_MenuButton>> _items(BuildContext context) {
+    final services = RpgServices.of(context);
+    final progress = widget.progress, open = widget.open, due = widget.due;
+    final record = services.meta.record;
+    final today = RpgServices.today();
+    final claimable = Gear.claimable(progress, record, today).isNotEmpty;
+    final tower = _MenuButton(
+      feature: HomeFeature.reviewTower,
+      icon: Icons.castle_outlined,
+      label: due > 0 ? '復習の塔（$due）' : '復習の塔',
+      highlight: due > 0,
+      builder: (_) => const ReviewTowerScreen(),
+    );
+    bool has(HomeFeature f) => open.contains(f);
+    return {
+      _Group.rpg: [
+        if (has(HomeFeature.story))
+          _MenuButton(
+            feature: HomeFeature.story,
+            icon: Icons.menu_book_outlined,
+            label: '物語（欠片 ${Story.fragments(progress).length}/6）',
+            builder: (_) => const StoryScreen(),
+          ),
+        if (has(HomeFeature.gear))
+          _MenuButton(
+            feature: HomeFeature.gear,
+            icon: Icons.shield_outlined,
+            label: claimable ? '装備・職業（ごほうび！）' : '装備・職業',
+            highlight: claimable,
+            builder: (_) => const EquipmentScreen(),
+          ),
+        if (has(HomeFeature.reviewTower)) tower,
+        if (has(HomeFeature.wordForest))
+          _MenuButton(
+            feature: HomeFeature.wordForest,
+            icon: Icons.forest_outlined,
+            label: '単語の森',
+            builder: (_) => const WordForestScreen(),
+          ),
+      ],
+      _Group.exam: [
+        _MenuButton(
+          id: 'sea',
+          icon: Icons.sailing_outlined,
+          label: '定期テストの海',
+          builder: (_) => SeaHomeScreen(personalBooks: services.personalBooks),
+        ),
+        if (has(HomeFeature.sky))
+          _MenuButton(
+            feature: HomeFeature.sky,
+            icon: Icons.rocket_launch_outlined,
+            label: '模擬試験の空',
+            builder: (_) => const SkyHomeScreen(),
+          ),
+        if (has(HomeFeature.reviewTower)) tower,
+      ],
+      _Group.common: [
+        if (has(HomeFeature.commonTest))
+          _MenuButton(
+            feature: HomeFeature.commonTest,
+            icon: Icons.account_balance_outlined,
+            label: '共通テスト遺跡',
+            builder: (_) => const CommonTestRuinsScreen(),
+          ),
+        if (has(HomeFeature.comprehensive))
+          _MenuButton(
+            feature: HomeFeature.comprehensive,
+            icon: Icons.assignment_outlined,
+            label: '総合演習',
+            builder: (_) => const ComprehensiveExamScreen(subject: 'math'),
+          ),
+      ],
+      _Group.versus: [
+        if (has(HomeFeature.versus))
+          _MenuButton(
+            feature: HomeFeature.versus,
+            icon: Icons.sports_esports_outlined,
+            label: '対戦モード',
+            builder: (_) => const VersusSetupScreen(),
+          ),
+        if (has(HomeFeature.classroom))
+          _MenuButton(
+            feature: HomeFeature.classroom,
+            icon: Icons.groups_outlined,
+            label: 'クラスルーム',
+            builder: (_) => const ClassroomHubScreen(),
+          ),
+        _MenuButton(
+          id: 'contest',
+          icon: Icons.emoji_events_outlined,
+          label: '週替わり単語バトル（LEAP・EEVI）',
+          builder: (_) => const ContestScreen(),
+        ),
+        _MenuButton(
+          id: 'duel',
+          icon: Icons.flash_on,
+          label: '単語チャレンジ',
+          builder: (_) => const DuelHubScreen(),
+        ),
+      ],
+      _Group.records: [
+        if (has(HomeFeature.learningStatus))
+          _MenuButton(
+            feature: HomeFeature.learningStatus,
+            icon: Icons.insights,
+            label: '学習ステータス',
+            builder: (_) => const LearningStatusScreen(),
+          ),
+        if (has(HomeFeature.library))
+          _MenuButton(
+            feature: HomeFeature.library,
+            icon: Icons.library_books_outlined,
+            label: '問題集・解説',
+            builder: (_) => const QuestionLibraryScreen(),
+          ),
+        if (has(HomeFeature.growth))
+          _MenuButton(
+            feature: HomeFeature.growth,
+            icon: Icons.alt_route,
+            label: '成長と学習ルート',
+            builder: (_) => const GrowthScreen(),
+          ),
+        if (has(HomeFeature.bestiary))
+          _MenuButton(
+            feature: HomeFeature.bestiary,
+            icon: Icons.pets,
+            label: '魔物図鑑',
+            builder: (_) => const BestiaryScreen(),
+          ),
+        if (has(HomeFeature.achievements))
+          _MenuButton(
+            feature: HomeFeature.achievements,
+            icon: Icons.emoji_events_outlined,
+            label: '実績・称号',
+            builder: (_) => const AchievementsScreen(),
+          ),
+        if (has(HomeFeature.settings))
+          _MenuButton(
+            feature: HomeFeature.settings,
+            icon: Icons.settings_outlined,
+            label: '設定',
+            builder: (_) => const SettingsScreen(),
+          ),
+      ],
+    };
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final services = RpgServices.of(context);
+    final items = _items(context);
+    final groups = [
+      for (final g in _Group.values)
+        if (items[g]!.isNotEmpty) g,
+    ];
+    final group = groups.contains(_group) ? _group : groups.first;
+    final store = VocabStore.of(services.personalBooks);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        // LEAP・EEVI のバトルの日は、どのまとまりを見ていても出す
+        if (store.unlocked) ContestEntryButton(store: store, onlyToday: true),
+        Wrap(
+          spacing: Space.xs,
+          runSpacing: Space.xs,
+          children: [
+            for (final g in groups)
+              ChoiceChip(
+                key: ValueKey('home-group-${g.name}'),
+                avatar: Icon(g.icon, size: 16),
+                label: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(g.label, style: const TextStyle(fontSize: 12)),
+                    // まだ開いていない機能や、やることがあるまとまりに印をつける
+                    if (g != group &&
+                        items[g]!.any((b) => b.highlight || b.fresh(services)))
+                      Container(
+                        key: ValueKey('home-group-dot-${g.name}'),
+                        margin: const EdgeInsets.only(left: 4),
+                        width: 7,
+                        height: 7,
+                        decoration: const BoxDecoration(
+                          color: TsuzuriColors.stamp,
+                          shape: BoxShape.circle,
+                        ),
+                      ),
+                  ],
+                ),
+                selected: g == group,
+                visualDensity: VisualDensity.compact,
+                onSelected: (_) => setState(() => _group = _last = g),
+              ),
+          ],
+        ),
+        const SizedBox(height: Space.s),
+        Wrap(
+          key: ValueKey('home-group-body-${group.name}'),
+          spacing: Space.s,
+          runSpacing: Space.xs,
+          children: items[group]!,
+        ),
+      ],
+    );
+  }
 }
