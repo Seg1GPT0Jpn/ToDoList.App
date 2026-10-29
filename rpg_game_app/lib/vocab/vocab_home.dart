@@ -8,6 +8,7 @@ import '../app/usage_meter.dart';
 import '../classroom/classroom_screens.dart';
 import '../meta/streak_store.dart';
 import '../study/personal_books.dart';
+import '../versus/contest_screens.dart';
 import '../versus/duel_screens.dart';
 import 'vocab_book_screen.dart';
 import 'vocab_import_screen.dart';
@@ -175,6 +176,8 @@ class _VocabHomeState extends State<VocabHome> {
           icon: const Icon(Icons.flash_on),
           label: const Text('単語チャレンジ（友だちとリンクで早押し）'),
         ),
+        // LEAP・EEVI を開いている人みんなで、週に1回点数を競う
+        ContestEntryButton(store: store),
         const SizedBox(height: 12),
         Text('単語帳', style: serif(16)),
         const SizedBox(height: 6),

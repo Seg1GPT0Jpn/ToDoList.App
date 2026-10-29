@@ -5,6 +5,8 @@ rules_version = '2';
 // 学習記録（rpg_learning）・冒険の記録（rpg_journal）を読み書きできる。
 // オンライン対戦の部屋（versus_rooms）は、ログインした人が読み書きできる（下のルール）。
 // クラスルーム（classrooms）は、コードを知っている人が読み、メンバーが自分の分を書ける（下のルール）。
+// 週替わり単語バトル（vocab_contest_config・vocab_contests）は、日程はだれでも読めて管理者だけが書け、
+// 参加記録はその日のうちに1人1回だけ作れる（下のルール）。
 // ほかのコレクション（ほかの人のデータを含む）は、だれも読み書きできない。
 service cloud.firestore {
   match /databases/{database}/documents {
@@ -246,6 +248,58 @@ service cloud.firestore {
         && request.resource.data.results.diff(resource.data.results).removedKeys().size() == 0
         && request.resource.data.results.size() <= 30
         && validResult(request.resource.data.results[request.auth.uid]);
+      allow delete: if false;
+    }
+
+    // 週替わり単語バトルの日程（LEAP・EEVI の日付と範囲）。だれでも読めて、書けるのは管理者だけ。
+    match /vocab_contest_config/{doc} {
+      allow read: if true;
+      allow write: if doc == 'main'
+        && request.auth != null
+        && request.auth.token.email == 'kzmsegawa@gmail.com'
+        && request.auth.token.email_verified == true
+        && request.resource.data.keys().hasOnly(['leap', 'eevi', 'updatedAt', 'updatedBy']);
+    }
+
+    // 週替わり単語バトルの参加記録（回の ID は「leap-2026-11-01」）。
+    // 置くのはニックネーム・正解数・点数だけ。ログインした人が読める（順位表）。
+    // その日（日本時間の0時〜24時）のうちに、自分の分を1回だけ作れる。
+    // 点数を入れられるのは、始めてから8分以内に1回だけ（あとから書きかえられない）。
+    match /vocab_contests/{roundId}/entries/{uid} {
+      function dayStart() {
+        let p = roundId.split('-');
+        return timestamp.date(int(p[1]), int(p[2]), int(p[3])) - duration.value(9, 'h');
+      }
+      function validRound() {
+        return roundId.matches('^(leap|eevi)-20[0-9]{2}-[01][0-9]-[0-3][0-9]$');
+      }
+      allow read: if request.auth != null;
+      allow create: if request.auth != null
+        && request.auth.uid == uid
+        && validRound()
+        && request.time >= dayStart()
+        && request.time < dayStart() + duration.value(24, 'h')
+        && request.resource.data.keys().hasOnly(['name', 'correct', 'score', 'done', 'startedAt'])
+        && request.resource.data.name is string
+        && request.resource.data.name.size() > 0
+        && request.resource.data.name.size() <= 20
+        && request.resource.data.correct == 0
+        && request.resource.data.score == 0
+        && request.resource.data.done == false
+        && request.resource.data.startedAt == request.time;
+      allow update: if request.auth != null
+        && request.auth.uid == uid
+        && resource.data.done == false
+        && request.time < resource.data.startedAt + duration.value(8, 'm')
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['correct', 'score', 'done', 'finishedAt'])
+        && request.resource.data.done == true
+        && request.resource.data.correct is int
+        && request.resource.data.correct >= 0
+        && request.resource.data.correct <= 50
+        && request.resource.data.score is int
+        && request.resource.data.score >= 0
+        && request.resource.data.score <= 7500
+        && request.resource.data.finishedAt == request.time;
       allow delete: if false;
     }
 

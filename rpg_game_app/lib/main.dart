@@ -24,6 +24,7 @@ import 'cloud/same_device_sync.dart';
 import 'purchase/google_play_purchase_service.dart';
 import 'quiz/question_report.dart';
 import 'cloud/firestore_classroom_backend.dart';
+import 'cloud/firestore_contest_backend.dart';
 import 'cloud/firestore_duel_backend.dart';
 import 'cloud/firestore_matchmaking.dart';
 import 'cloud/firestore_usage_sink.dart';
@@ -145,6 +146,9 @@ Future<void> main() async {
       duels: cloud == null
           ? null
           : FirestoreDuelBackend(cloud.auth, FirebaseFirestore.instance),
+      contests: cloud == null
+          ? null
+          : FirestoreContestBackend(cloud.auth, FirebaseFirestore.instance),
       tsuzuriBackend: cloud == null || !FirebaseTsuzuriBackend.supported
           ? null
           : FirebaseTsuzuriBackend(),

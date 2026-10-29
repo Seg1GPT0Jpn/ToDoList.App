@@ -125,6 +125,45 @@ await check('報告：送れる', assertSucceeds(setDoc(doc(A, 'player_reports/r
 await check('報告：他人のふりはできない', assertFails(setDoc(doc(A, 'player_reports/r2'), rep({ from: 'carol' }))));
 await check('報告：理由は決まったものだけ', assertFails(setDoc(doc(A, 'player_reports/r3'), rep({ reason: 'free text' }))));
 await check('報告：読めない', assertFails(getDoc(doc(A, 'player_reports/r1'))));
+// 週替わり単語バトル
+const jst = (d) => new Date(Date.now() + 9 * 3600000 + d * 86400000).toISOString().slice(0, 10);
+const today = jst(0), yesterday = jst(-1), tomorrow = jst(1);
+const ADMIN = env.authenticatedContext('admin', { email: 'kzmsegawa@gmail.com', email_verified: true }).firestore();
+const FAKE = env.authenticatedContext('fake', { email: 'kzmsegawa@gmail.com', email_verified: false }).firestore();
+const OTHER = env.authenticatedContext('other', { email: 'someone@gmail.com', email_verified: true }).firestore();
+const cfg = { leap: { title: 'LEAP', first: '2026-11-01', firstFrom: 1801, width: 100 }, eevi: { title: 'EEVI', first: '2026-10-30', firstFrom: 301, width: 50 } };
+await check('バトル日程：ログインなしでも読める', assertSucceeds(getDoc(doc(N, 'vocab_contest_config/main'))));
+await check('バトル日程：管理者は保存できる', assertSucceeds(setDoc(doc(ADMIN, 'vocab_contest_config/main'), { ...cfg, updatedAt: serverTimestamp(), updatedBy: 'kzmsegawa@gmail.com' })));
+await check('バトル日程：ほかの人は保存できない', assertFails(setDoc(doc(OTHER, 'vocab_contest_config/main'), cfg)));
+await check('バトル日程：確認されていないメールでは保存できない', assertFails(setDoc(doc(FAKE, 'vocab_contest_config/main'), cfg)));
+await check('バトル日程：ふつうのログインでは保存できない', assertFails(setDoc(doc(A, 'vocab_contest_config/main'), cfg)));
+await check('バトル日程：管理者でもよけいな項目は置けない', assertFails(setDoc(doc(ADMIN, 'vocab_contest_config/main'), { ...cfg, words: ['apple'] })));
+await check('バトル日程：管理者でもほかの文書は作れない', assertFails(setDoc(doc(ADMIN, 'vocab_contest_config/other'), cfg)));
+const ent = (extra = {}) => ({ name: 'あ', correct: 0, score: 0, done: false, startedAt: serverTimestamp(), ...extra });
+const rid = `leap-${today}`;
+await check('バトル：今日の回は始められる', assertSucceeds(setDoc(doc(A, `vocab_contests/${rid}/entries/alice`), ent())));
+await check('バトル：もう一度は始められない（上書き）', assertFails(setDoc(doc(A, `vocab_contests/${rid}/entries/alice`), ent())));
+await check('バトル：他人の分は作れない', assertFails(setDoc(doc(A, `vocab_contests/${rid}/entries/bob`), ent())));
+await check('バトル：点数を入れて始められない', assertFails(setDoc(doc(B, `vocab_contests/${rid}/entries/bob`), ent({ score: 1000 }))));
+await check('バトル：昨日の回は始められない', assertFails(setDoc(doc(B, `vocab_contests/leap-${yesterday}/entries/bob`), ent())));
+await check('バトル：明日の回は始められない', assertFails(setDoc(doc(B, `vocab_contests/eevi-${tomorrow}/entries/bob`), ent())));
+await check('バトル：LEAP・EEVI 以外は作れない', assertFails(setDoc(doc(B, `vocab_contests/toeic-${today}/entries/bob`), ent())));
+await check('バトル：単語などよけいな項目は置けない', assertFails(setDoc(doc(B, `vocab_contests/${rid}/entries/bob`), ent({ words: ['apple'] }))));
+await check('バトル：点数を入れられる', assertSucceeds(updateDoc(doc(A, `vocab_contests/${rid}/entries/alice`), { correct: 18, score: 2500, done: true, finishedAt: serverTimestamp() })));
+await check('バトル：点数は書きかえられない', assertFails(updateDoc(doc(A, `vocab_contests/${rid}/entries/alice`), { correct: 20, score: 3000, done: true, finishedAt: serverTimestamp() })));
+await check('バトル：ログインすれば順位を読める', assertSucceeds(getDocs(collection(B, `vocab_contests/${rid}/entries`))));
+await check('バトル：ログインなしでは読めない', assertFails(getDocs(collection(N, `vocab_contests/${rid}/entries`))));
+await check('バトル：消せない', assertFails(deleteDoc(doc(A, `vocab_contests/${rid}/entries/alice`))));
+await check('バトル：ありえない点数は入れられない', (async () => {
+  await assertSucceeds(setDoc(doc(B, `vocab_contests/${rid}/entries/bob`), ent()));
+  await assertFails(updateDoc(doc(B, `vocab_contests/${rid}/entries/bob`), { correct: 20, score: 99999, done: true, finishedAt: serverTimestamp() }));
+})());
+await check('バトル：時間が切れたら点数を入れられない', (async () => {
+  await env.withSecurityRulesDisabled(async (ctx) => {
+    await setDoc(doc(ctx.firestore(), `vocab_contests/${rid}/entries/carol`), ent({ startedAt: Timestamp.fromMillis(Date.now() - 9 * 60000) }));
+  });
+  await assertFails(updateDoc(doc(C, `vocab_contests/${rid}/entries/carol`), { correct: 20, score: 3000, done: true, finishedAt: serverTimestamp() }));
+})());
 // 既存のルールが壊れていない
 await check('自分の進行状況は書ける（既存）', assertSucceeds(setDoc(doc(A, 'users/alice/rpg_progress/main'), { level: 1 })));
 await check('他人の進行状況は読めない（既存）', assertFails(getDoc(doc(B, 'users/alice/rpg_progress/main'))));
