@@ -1,7 +1,7 @@
 import 'dart:math';
 
+import '../vocab/meaning_text.dart';
 import '../vocab/vocab_book.dart';
-import 'word_duel.dart';
 
 /// 週替わり単語バトル：LEAP・EEVI を開いている人みんなで、決まった日に同じ範囲・同じ問題で点数を競う。
 ///
@@ -14,11 +14,11 @@ abstract final class ContestRules {
   static bool isAdmin(String? email) =>
       email != null && email.trim().toLowerCase() == adminEmail;
 
-  /// 1回の問題数の上限（ルールの点数の上限もこれで決まる）
-  static const maxCount = 50;
+  /// 1種類あたりの問題数の上限（4種類で 400 問。ルールの上限もこれで決まる）
+  static const maxCount = 100;
 
-  /// 開始してから結果を送るまでの時間の上限（ルールと同じ）
-  static const playWindow = Duration(minutes: 8);
+  /// 始めてから最後の結果を送るまでの時間の上限（ルールと同じ）
+  static const playWindow = Duration(minutes: 90);
 
   /// 日本時間（バトルの日付は日本の暦で数える）
   static DateTime jstToday(DateTime now) {
@@ -120,7 +120,7 @@ class ContestPlan {
     required this.first,
     required this.firstFrom,
     required this.width,
-    this.count = 20,
+    this.count = 100,
     this.skips = const {},
     this.ranges = const {},
     this.extras = const {},
@@ -138,7 +138,7 @@ class ContestPlan {
   final int firstFrom;
   final int width;
 
-  /// 1回の問題数
+  /// 1種類あたりの問題数（フラッシュカード・日→英・英→日・例文の4種類）
   final int count;
   final Set<String> skips;
   final Map<String, ContestRange> ranges;
@@ -291,7 +291,7 @@ class ContestPlan {
                   ContestRange.fromMap(e.value) != null)
                 '${e.key}': ContestRange.fromMap(e.value)!,
         };
-    final count = (m['count'] as num?)?.toInt() ?? 20;
+    final count = (m['count'] as num?)?.toInt() ?? 100;
     final fallback = ContestConfig.initial.plans[bookId];
     var open = (m['open'] as num?)?.toInt() ?? fallback?.openMin ?? -360;
     var close = (m['close'] as num?)?.toInt() ?? fallback?.closeMin ?? 1440;
@@ -436,17 +436,212 @@ class ContestRound {
 
   String get heading => '$title ${range.from}〜${range.to}';
 
-  /// 出題する番号（自分の単語帳から、範囲の中の [count] 語。みんな同じになる）
-  List<int> numbers(VocabBook book) => DuelRules.pick(
-        book,
-        Random(seed),
-        from: range.from,
-        to: range.to,
-        count: count.clamp(1, ContestRules.maxCount),
-      );
+  /// 4種類の問題（[ContestPart] の順。自分の単語帳から作る。同じ単語帳ならみんな同じになる）
+  List<List<ContestQuestion>> parts(VocabBook book) =>
+      ContestQuestions.build(book, range, count, seed);
+}
 
-  List<DuelQuestion> questions(VocabBook book) =>
-      DuelRules.build(book, numbers(book), seed);
+/// 問題の種類
+enum ContestPart {
+  flash('フラッシュカード', '英単語と意味が合っていれば〇、ちがえば×', Duration(seconds: 5)),
+  jaEn('日→英', '意味に合う英単語を選ぶ', Duration(seconds: 8)),
+  enJa('英→日', '英単語の意味を選ぶ', Duration(seconds: 8)),
+  cloze('例文', '例文の空らんに入る語を選ぶ', Duration(seconds: 12));
+
+  const ContestPart(this.label, this.how, this.limit);
+  final String label;
+  final String how;
+
+  /// 1問の制限時間
+  final Duration limit;
+}
+
+/// 1問
+class ContestQuestion {
+  const ContestQuestion({
+    required this.part,
+    required this.card,
+    required this.prompt,
+    required this.choices,
+    required this.answer,
+    this.sub = '',
+  });
+
+  final ContestPart part;
+  final VocabCard card;
+
+  /// 大きく出す文字（英単語・意味・空らんのある例文）
+  final String prompt;
+
+  /// 小さく出す文字（フラッシュカードの意味・例文の訳）
+  final String sub;
+  final List<String> choices;
+  final int answer;
+}
+
+/// 点数：正解で100点、早いほど最大50点を足す。1問の満点は [perQuestion]
+abstract final class ContestScoring {
+  static const perQuestion = 150;
+
+  static int points(bool correct, Duration took, Duration limit) {
+    if (!correct) return 0;
+    final ms = limit.inMilliseconds;
+    final left = (ms - took.inMilliseconds).clamp(0, ms);
+    return 100 + (50 * left / ms).round();
+  }
+
+  /// 得点（満点に対する割合を 0〜10000 で。100.00% が 10000）
+  static int score(int points, int questions) => questions == 0
+      ? 0
+      : (points * 10000 / (questions * perQuestion)).round().clamp(0, 10000);
+
+  /// 「87.35%」
+  static String percent(int score) =>
+      '${score ~/ 100}.${(score % 100).toString().padLeft(2, '0')}%';
+}
+
+/// 4種類の問題づくり
+abstract final class ContestQuestions {
+  static List<List<ContestQuestion>> build(
+    VocabBook book,
+    ContestRange range,
+    int count,
+    int seed,
+  ) {
+    final n = count.clamp(1, ContestRules.maxCount);
+    final usable = [
+      for (final c in book.cards)
+        if (usableChoiceText(c.term) && usableChoiceText(c.shortMeaning)) c,
+    ];
+    final inRange = [
+      for (final c in usable)
+        if (c.number != null &&
+            c.number! >= range.from &&
+            c.number! <= range.to)
+          c,
+    ]..sort((a, b) => a.number!.compareTo(b.number!));
+    final withExample = [
+      for (final c in inRange)
+        if (c.hasExample) c,
+    ];
+    return [
+      for (final part in ContestPart.values)
+        _part(
+          part,
+          part == ContestPart.cloze ? withExample : inRange,
+          usable,
+          n,
+          Random(seed + part.index * 7919),
+        ),
+    ];
+  }
+
+  /// 範囲の単語を、[n] 問になるまで並べる（1周ごとに順番を変える）
+  static List<VocabCard> _order(List<VocabCard> pool, int n, Random r) {
+    final out = <VocabCard>[];
+    while (pool.isNotEmpty && out.length < n) {
+      out.addAll([...pool]..shuffle(r));
+    }
+    return out.take(n).toList();
+  }
+
+  static List<ContestQuestion> _part(
+    ContestPart part,
+    List<VocabCard> pool,
+    List<VocabCard> all,
+    int n,
+    Random r,
+  ) {
+    if (pool.length < 2 || all.length < 4) return const [];
+    final out = <ContestQuestion>[];
+    for (final c in _order(pool, n, r)) {
+      final q = switch (part) {
+        ContestPart.flash => _flash(c, all, r),
+        ContestPart.jaEn => _choose(
+            part,
+            c,
+            all,
+            r,
+            prompt: c.shortMeaning,
+            label: (e) => e.term,
+          ),
+        ContestPart.enJa => _choose(
+            part,
+            c,
+            all,
+            r,
+            prompt: c.term,
+            label: (e) => e.shortMeaning,
+          ),
+        ContestPart.cloze => _choose(
+            part,
+            c,
+            all,
+            r,
+            prompt: VocabCard.clozeOf(c.example, c.term) ?? c.example,
+            sub: c.exampleJa,
+            answer: c.clozeAnswer,
+            label: (e) => e.hasExample ? e.clozeAnswer : e.term,
+          ),
+      };
+      if (q != null) out.add(q);
+    }
+    return out;
+  }
+
+  /// 半分は正しい意味、半分はほかの単語の意味を出す
+  static ContestQuestion? _flash(VocabCard c, List<VocabCard> all, Random r) {
+    final right = r.nextBool();
+    var shown = c.shortMeaning;
+    if (!right) {
+      final others = [
+        for (final e in all)
+          if (e.shortMeaning != c.shortMeaning) e.shortMeaning,
+      ];
+      if (others.isEmpty) return null;
+      shown = others[r.nextInt(others.length)];
+    }
+    return ContestQuestion(
+      part: ContestPart.flash,
+      card: c,
+      prompt: c.term,
+      sub: shown,
+      choices: const ['〇 合っている', '× ちがう'],
+      answer: right ? 0 : 1,
+    );
+  }
+
+  static ContestQuestion? _choose(
+    ContestPart part,
+    VocabCard c,
+    List<VocabCard> all,
+    Random r, {
+    required String prompt,
+    required String Function(VocabCard) label,
+    String? answer,
+    String sub = '',
+  }) {
+    final right = answer ?? label(c);
+    final wrong = <String>{};
+    final others = [
+      for (final e in all)
+        if (!identical(e, c) && label(e) != right) e,
+    ];
+    var guard = 0;
+    while (wrong.length < 3 && others.isNotEmpty && guard++ < 60) {
+      wrong.add(label(others[r.nextInt(others.length)]));
+    }
+    if (wrong.length < 3) return null;
+    final choices = [right, ...wrong]..shuffle(r);
+    return ContestQuestion(
+      part: part,
+      card: c,
+      prompt: prompt,
+      sub: sub,
+      choices: choices,
+      answer: choices.indexOf(right),
+    );
+  }
 }
 
 /// 1人分の参加記録
@@ -457,21 +652,74 @@ class ContestEntry {
     required this.correct,
     required this.score,
     required this.done,
+    this.section = 0,
+    this.parts = const [],
+    this.points = 0,
+    this.startedAt,
   });
 
   final String uid;
   final String name;
+
+  /// 4種類の合計の正解数
   final int correct;
+
+  /// 得点（満点に対する割合。0〜10000 で、100.00% が 10000。[ContestScoring.score]）
   final int score;
 
-  /// 最後まで解いて結果を送ったか（始めただけなら false）
+  /// 4種類とも解き終わったか
   final bool done;
+
+  /// 解き終わった種類の数（0〜4。途中でやめたら、次の種類から続けられる）
+  final int section;
+
+  /// 種類ごとの得点（0〜10000。解き終わった種類の分だけ）
+  final List<int> parts;
+
+  /// 4種類の合計の点数（正解100点＋速さ。得点はこれを満点で割ったもの）
+  final int points;
+
+  /// 始めた時刻（続きから解けるのは、ここから [ContestRules.playWindow] のあいだ）
+  final DateTime? startedAt;
+
+  bool canResume(DateTime now) =>
+      !done &&
+      section < ContestPart.values.length &&
+      startedAt != null &&
+      now.isBefore(startedAt!.add(ContestRules.playWindow));
+
+  /// 1種類を解き終わったあとの記録
+  ContestEntry next({
+    required int partScore,
+    required int partCorrect,
+    required int partPoints,
+    required int totalQuestions,
+  }) {
+    final p = points + partPoints;
+    final s = section + 1;
+    return ContestEntry(
+      uid: uid,
+      name: name,
+      correct: correct + partCorrect,
+      score: ContestScoring.score(p, totalQuestions),
+      done: s >= ContestPart.values.length,
+      section: s,
+      parts: [...parts, partScore],
+      points: p,
+      startedAt: startedAt,
+    );
+  }
 
   Map<String, Object?> toMap() => {
         'name': name,
         'correct': correct,
         'score': score,
         'done': done,
+        'section': section,
+        'parts': parts,
+        'points': points,
+        // 分野ごとの順位表のため、種類ごとの得点を別の項目にも置く（p0〜p3）
+        for (final (i, p) in parts.indexed) 'p$i': p,
       };
 
   static ContestEntry? fromMap(String uid, Object? m) {
@@ -484,14 +732,36 @@ class ContestEntry {
       correct: correct.toInt(),
       score: score.toInt(),
       done: m['done'] == true,
+      section: (m['section'] as num?)?.toInt() ?? 0,
+      parts: [
+        if (m['parts'] is List)
+          for (final x in m['parts'] as List)
+            if (x is num) x.toInt(),
+      ],
+      points: (m['points'] as num?)?.toInt() ?? 0,
+      startedAt: m['startedAt'] is DateTime ? m['startedAt'] as DateTime : null,
     );
   }
 
-  /// 点数の高い順（同点は正解数の多い順）。始めただけの人は入れない
+  /// その種類の得点（まだ解いていなければ null）
+  int? partScore(int part) => part < parts.length ? parts[part] : null;
+
+  /// その種類の得点の高い順（[part] が null なら総合の得点の順）
+  static List<ContestEntry> rankBy(Iterable<ContestEntry> all, int? part) {
+    if (part == null) return rank(all);
+    final out = [
+      for (final e in all)
+        if (e.partScore(part) != null) e,
+    ];
+    out.sort((a, b) => b.partScore(part)!.compareTo(a.partScore(part)!));
+    return out;
+  }
+
+  /// 得点の高い順（同点は正解数の多い順）。1種類も解き終わっていない人は入れない
   static List<ContestEntry> rank(Iterable<ContestEntry> all) {
     final out = [
       for (final e in all)
-        if (e.done) e
+        if (e.section > 0) e
     ];
     out.sort((a, b) {
       final s = b.score.compareTo(a.score);

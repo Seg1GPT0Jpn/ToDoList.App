@@ -21,17 +21,26 @@ abstract class ContestBackend {
   /// 自分の参加記録（まだなら null）
   Future<ContestEntry?> mine(String roundId);
 
-  /// 始める（1回だけ。もう始めていたら [DuelException]）
-  Future<void> start(String roundId, String name);
+  /// 始める（1回だけ。もう始めていたら [DuelException]）。始めたときの記録を返す
+  Future<ContestEntry> start(String roundId, String name);
 
-  /// 解き終わった点数を入れる（1回だけ）
-  Future<void> finish(String roundId, int correct, int score);
+  /// 1種類を解き終わった記録を入れる（[ContestEntry.next] で作ったもの）
+  Future<void> savePart(String roundId, ContestEntry entry);
 
-  /// 点数の高い順に [limit] 人
-  Future<List<ContestEntry>> ranking(String roundId, {int limit = 100});
+  /// 得点の高い順に [limit] 人（[part] があれば、その種類の得点の順）
+  Future<List<ContestEntry>> ranking(
+    String roundId, {
+    int? part,
+    int limit = 100,
+  });
 
-  /// 解き終わった人数と、自分より点数の高い人数（自分の順位 = 上の人数 + 1）
-  Future<({int players, int above})> standing(String roundId, int score);
+  /// 解いた人数と、自分より得点の高い人数（自分の順位 = 上の人数 + 1）。
+  /// [part] があれば、その種類を解いた人と、その種類の得点で数える
+  Future<({int players, int above})> standing(
+    String roundId,
+    int score, {
+    int? part,
+  });
 }
 
 /// テストとサーバーのない版の、端末の中だけの保存先
@@ -51,6 +60,9 @@ class MemoryContestBackend extends ContestBackend {
 
   ContestConfig config;
 
+  /// テスト用の「今」
+  DateTime Function() now = DateTime.now;
+
   /// 回の ID → uid → 記録（テストでは何人かで同じものを使う）
   final Map<String, Map<String, ContestEntry>> entries;
 
@@ -69,49 +81,59 @@ class MemoryContestBackend extends ContestBackend {
   Future<ContestEntry?> mine(String roundId) async => entries[roundId]?[_uid()];
 
   @override
-  Future<void> start(String roundId, String name) async {
+  Future<ContestEntry> start(String roundId, String name) async {
     final uid = _uid();
     final room = entries.putIfAbsent(roundId, () => {});
     if (room.containsKey(uid)) {
       throw const DuelException('このバトルは、もう挑戦ずみです');
     }
-    room[uid] = ContestEntry(
+    return room[uid] = ContestEntry(
       uid: uid,
       name: name,
       correct: 0,
       score: 0,
       done: false,
+      startedAt: now(),
     );
   }
 
   @override
-  Future<void> finish(String roundId, int correct, int score) async {
+  Future<void> savePart(String roundId, ContestEntry entry) async {
     final uid = _uid();
     final e = entries[roundId]?[uid];
-    if (e == null || e.done) {
-      throw const DuelException('結果を送れませんでした（挑戦ずみです）');
+    if (e == null ||
+        e.done ||
+        entry.section != e.section + 1 ||
+        !e.canResume(now())) {
+      throw const DuelException('結果を送れませんでした（時間切れか、挑戦ずみです）');
     }
-    entries[roundId]![uid] = ContestEntry(
-      uid: uid,
-      name: e.name,
-      correct: correct,
-      score: score,
-      done: true,
-    );
+    entries[roundId]![uid] = entry;
   }
 
   @override
-  Future<List<ContestEntry>> ranking(String roundId, {int limit = 100}) async =>
-      ContestEntry.rank(entries[roundId]?.values ?? const [])
-          .take(limit)
-          .toList();
+  Future<List<ContestEntry>> ranking(
+    String roundId, {
+    int? part,
+    int limit = 100,
+  }) async => ContestEntry.rankBy(
+    entries[roundId]?.values ?? const [],
+    part,
+  ).take(limit).toList();
 
   @override
-  Future<({int players, int above})> standing(String roundId, int score) async {
-    final done = ContestEntry.rank(entries[roundId]?.values ?? const []);
+  Future<({int players, int above})> standing(
+    String roundId,
+    int score, {
+    int? part,
+  }) async {
+    final done = ContestEntry.rankBy(
+      entries[roundId]?.values ?? const [],
+      part,
+    );
+    int of(ContestEntry e) => part == null ? e.score : e.partScore(part)!;
     return (
       players: done.length,
-      above: done.where((e) => e.score > score).length,
+      above: done.where((e) => of(e) > score).length,
     );
   }
 }

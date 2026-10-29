@@ -9,7 +9,7 @@ import '../art/paper.dart';
 import '../vocab/vocab_store.dart';
 import 'contest_backend.dart';
 import 'duel_backend.dart';
-import 'duel_screens.dart';
+import 'contest_play_screen.dart';
 
 /// 名前とパスワードで開いた LEAP・EEVI（開いていなければ null）
 VocabBook? contestBook(VocabStore store, String bookId) => store.visibleBooks
@@ -181,61 +181,70 @@ class _ContestScreenState extends State<ContestScreen> {
     }();
   }
 
-  Future<void> _play(ContestRound round, VocabBook book) async {
+  /// 始める（[resume] があれば、その記録の続きから）
+  Future<void> _play(
+    ContestRound round,
+    VocabBook book, {
+    ContestEntry? resume,
+  }) async {
     final backend = _backend!;
-    final questions = round.questions(book);
-    if (questions.length < 4) {
+    final parts = round.parts(book);
+    final total = parts.fold(0, (n, p) => n + p.length);
+    if (parts.where((p) => p.isNotEmpty).length < 3) {
       setState(
         () => _error = '範囲 ${round.range} の単語が、この端末の ${book.title} にありません',
       );
       return;
     }
     final name = Classroom.cleanName(_name.text, fallback: 'あなた');
-    final ok = await showDialog<bool>(
-      context: context,
-      builder: (c) => AlertDialog(
-        title: Text('${round.heading}・${questions.length}問'),
-        content: const Text(
-          '1人1回だけです。始めたら途中でやめないでください'
-          '（やめると、この回は記録なしになります）。',
+    if (resume == null) {
+      final ok = await showDialog<bool>(
+        context: context,
+        builder: (c) => AlertDialog(
+          title: Text('${round.heading}・全$total問'),
+          content: Text(
+            '${[for (final (i, p) in parts.indexed) '${ContestPart.values[i].label} ${p.length}問'].join('・')}\n\n'
+            '1人1回だけです。1種類を解き終わるごとに記録します。'
+            '途中でやめても、受付中で始めてから${ContestRules.playWindow.inMinutes}分以内なら続きから解けます。',
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(c, false),
+              child: const Text('やめる'),
+            ),
+            FilledButton(
+              key: const ValueKey('contest-confirm'),
+              onPressed: () => Navigator.pop(c, true),
+              child: const Text('はじめる'),
+            ),
+          ],
         ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(c, false),
-            child: const Text('やめる'),
-          ),
-          FilledButton(
-            key: const ValueKey('contest-confirm'),
-            onPressed: () => Navigator.pop(c, true),
-            child: const Text('はじめる'),
-          ),
-        ],
-      ),
-    );
-    if (ok != true || !mounted) return;
+      );
+      if (ok != true || !mounted) return;
+    }
     setState(() {
       _busy = true;
       _error = null;
     });
     try {
-      await backend.start(round.id, name);
+      final entry = resume ?? await backend.start(round.id, name);
       if (!mounted) return;
-      await RpgServices.of(context).classroomStore.setNickname(name);
-      if (!mounted) return;
-      final result = await Navigator.of(context).push<DuelResult>(
+      if (resume == null) {
+        await RpgServices.of(context).classroomStore.setNickname(name);
+        if (!mounted) return;
+      }
+      final result = await Navigator.of(context).push<ContestEntry>(
         MaterialPageRoute(
-          builder: (_) => DuelPlayScreen(
-            name: name,
-            title: round.heading,
-            questions: questions,
-            store: _store,
+          builder: (_) => ContestPlayScreen(
+            round: round,
             book: book,
+            entry: entry,
+            backend: backend,
+            store: _store,
           ),
         ),
       );
-      if (result != null) {
-        await backend.finish(round.id, result.correct, result.score);
-        if (!mounted) return;
+      if (result != null && result.section > 0 && mounted) {
         await Navigator.of(context).push(
           MaterialPageRoute<void>(
             builder: (_) =>
@@ -356,7 +365,7 @@ class _ContestScreenState extends State<ContestScreen> {
             Padding(
               padding: const EdgeInsets.only(bottom: 4),
               child: Text(
-                '${r.heading}（${r.count}問）\n　${r.window}',
+                '${r.heading}（4種類×${r.count}問）\n　${r.window}',
                 key: ValueKey('contest-upcoming-${r.id}'),
               ),
             ),
@@ -412,7 +421,7 @@ class _ContestScreenState extends State<ContestScreen> {
               const Text('いまはお休み中です')
             else if (round != null) ...[
               Text(
-                '受付中　${round.heading}・${round.count}問',
+                '受付中　${round.heading}・4種類×${round.count}問',
                 key: ValueKey('contest-open-${plan.bookId}'),
                 style: const TextStyle(fontWeight: FontWeight.bold),
               ),
@@ -429,16 +438,35 @@ class _ContestScreenState extends State<ContestScreen> {
                   key: ValueKey('contest-play-${plan.bookId}'),
                   onPressed: _busy ? null : () => _play(round, book),
                   icon: const Icon(Icons.flash_on),
-                  label: const Text('挑戦する（1回だけ）'),
+                  label: const Text('挑戦する（1回だけ・4種類）'),
                 )
-              else if (!mine.done)
-                const Text('この回は途中でやめたため、記録なしです。次の回でがんばろう！')
-              else
-                Text(
-                  'あなたは ${mine.correct}問正解・${mine.score}点',
-                  key: ValueKey('contest-mine-${plan.bookId}'),
-                  style: serif(16),
-                ),
+              else ...[
+                if (mine.section > 0)
+                  Text(
+                    'あなたの得点 ${ContestScoring.percent(mine.score)}'
+                    '（正解 ${mine.correct}問${mine.done ? '' : '・${mine.section}/4種類'}）',
+                    key: ValueKey('contest-mine-${plan.bookId}'),
+                    style: serif(16),
+                  ),
+                if (mine.canResume(now))
+                  FilledButton.icon(
+                    key: ValueKey('contest-resume-${plan.bookId}'),
+                    onPressed: _busy
+                        ? null
+                        : () => _play(round, book, resume: mine),
+                    icon: const Icon(Icons.play_arrow),
+                    label: Text(
+                      '続きから（${ContestPart.values[mine.section].label}から）',
+                    ),
+                  )
+                else if (!mine.done)
+                  Text(
+                    mine.section == 0
+                        ? '始めてから${ContestRules.playWindow.inMinutes}分たったため、この回は記録なしです'
+                        : '時間切れのため、${mine.section}種類目までの得点で記録しました',
+                    key: ValueKey('contest-timeout-${plan.bookId}'),
+                  ),
+              ],
               TextButton(
                 key: ValueKey('contest-ranking-${plan.bookId}'),
                 onPressed: () => _ranking(round),
@@ -446,7 +474,7 @@ class _ContestScreenState extends State<ContestScreen> {
               ),
             ] else if (next != null)
               Text(
-                '次回　${next.heading}・${next.count}問\n${next.window}',
+                '次回　${next.heading}・4種類×${next.count}問\n${next.window}',
                 key: ValueKey('contest-next-${plan.bookId}'),
               ),
             if (last != null) ...[
@@ -503,19 +531,31 @@ class ContestRankingScreen extends StatefulWidget {
 }
 
 class _ContestRankingScreenState extends State<ContestRankingScreen> {
+  /// 見ている順位表（null なら総合、ほかは [ContestPart] の番号）
+  int? _part;
+
   late Future<(List<ContestEntry>, ContestEntry?, ({int players, int above})?)>
   _load = _fetch();
 
   Future<(List<ContestEntry>, ContestEntry?, ({int players, int above})?)>
   _fetch() async {
-    final b = widget.backend, id = widget.round.id;
-    final rows = await b.ranking(id);
+    final b = widget.backend, id = widget.round.id, part = _part;
+    final rows = await b.ranking(id, part: part);
     final mine = await b.mine(id);
-    final standing = mine != null && mine.done
-        ? await b.standing(id, mine.score)
-        : null;
+    final my = mine == null ? null : _value(mine);
+    final standing = my == null || (part == null && mine!.section == 0)
+        ? null
+        : await b.standing(id, my, part: part);
     return (rows, mine, standing);
   }
+
+  /// 見ている順位表での得点（その種類をまだ解いていなければ null）
+  int? _value(ContestEntry e) => _part == null ? e.score : e.partScore(_part!);
+
+  void _pick(int? part) => setState(() {
+    _part = part;
+    _load = _fetch();
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -565,11 +605,29 @@ class _ContestRankingScreenState extends State<ContestRankingScreen> {
                       : '受付は ${ContestRules.time(r.closeAt)} まで。終わると最終ランキングになります',
                   style: TextStyle(fontSize: 12, color: TsuzuriColors.inkSoft),
                 ),
-                const SizedBox(height: 6),
-                if (mine != null && mine.done && standing != null)
+                const SizedBox(height: 8),
+                // 総合と、分野（4種類）ごとの順位表
+                Wrap(
+                  spacing: 6,
+                  runSpacing: 4,
+                  children: [
+                    for (final part in [null, ...ContestPart.values])
+                      ChoiceChip(
+                        key: ValueKey('contest-tab-${part?.name ?? 'total'}'),
+                        label: Text(part?.label ?? '総合'),
+                        selected: _part == part?.index,
+                        visualDensity: VisualDensity.compact,
+                        onSelected: (_) => _pick(part?.index),
+                      ),
+                  ],
+                ),
+                const SizedBox(height: 8),
+                if (mine != null && standing != null && _value(mine) != null)
                   Text(
+                    '${_part == null ? '総合' : ContestPart.values[_part!].label}で'
                     'あなたは ${standing.above + 1}位 / ${standing.players}人'
-                    '（${mine.correct}問正解・${mine.score}点）',
+                    '（${ContestScoring.percent(_value(mine)!)}'
+                    '${_part == null ? '・正解 ${mine.correct}問' : ''}）',
                     key: const ValueKey('contest-my-rank'),
                     style: serif(17),
                   ),
@@ -582,7 +640,8 @@ class _ContestRankingScreenState extends State<ContestRankingScreen> {
                       padding: const EdgeInsets.symmetric(vertical: 2),
                       child: Text(
                         '${i + 1}位　${e.name}${e.uid == me ? '（あなた）' : ''}　'
-                        '${e.correct}問正解・${e.score}点',
+                        '${ContestScoring.percent(_value(e)!)}'
+                        '${_part != null ? '' : '（正解 ${e.correct}問${e.done ? '' : '・${e.section}/4種類'}）'}',
                         key: ValueKey('contest-row-$i'),
                         style: TextStyle(
                           fontWeight: e.uid == me
@@ -665,7 +724,7 @@ class _PlanForm {
     if (a == null || a < 1) return (null, '$t：範囲のはじめは1以上の数にしてください');
     if (w == null || w < 1) return (null, '$t：範囲の広さは1以上の数にしてください');
     if (c == null || c < 4 || c > ContestRules.maxCount) {
-      return (null, '$t：問題数は4〜${ContestRules.maxCount}にしてください');
+      return (null, '$t：1種類の問題数は4〜${ContestRules.maxCount}にしてください');
     }
     final skipSet = <String>{};
     for (final line in _split(skips.text)) {
@@ -819,7 +878,7 @@ class _ContestAdminScreenState extends State<ContestAdminScreen> {
                 Padding(
                   padding: const EdgeInsets.only(bottom: 4),
                   child: Text(
-                    '${r.heading}（${r.count}問）\n　${r.window}',
+                    '${r.heading}（4種類×${r.count}問）\n　${r.window}',
                     key: ValueKey('contest-preview-${r.id}'),
                   ),
                 ),
@@ -888,7 +947,7 @@ class _ContestAdminScreenState extends State<ContestAdminScreen> {
                 const SizedBox(width: 8),
                 Expanded(child: field(f.width, '範囲の広さ', number: true)),
                 const SizedBox(width: 8),
-                Expanded(child: field(f.count, '問題数', number: true)),
+                Expanded(child: field(f.count, '1種類の問題数', number: true)),
               ],
             ),
             Row(

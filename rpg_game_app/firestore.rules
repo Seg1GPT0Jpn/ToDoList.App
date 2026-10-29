@@ -264,6 +264,7 @@ service cloud.firestore {
     // 週替わり単語バトルの参加記録（回の ID は「leap-2026-11-01」＝バトルの日）。
     // 置くのはニックネーム・正解数・点数だけ。ログインした人が読める（順位表）。
     // 受付のあいだ（日程の設定の open〜close。バトルの日の日本時間0時からの分）に、自分の分を1回だけ作れる。
+    // 得点（score）は満点に対する割合で、0〜10000（100.00%）。
     // 設定がなければ EEVI は前日18:00〜当日19:15、LEAP は前日18:00〜翌日8:00。
     // 点数を入れられるのは、始めてから8分以内に1回だけ（あとから書きかえられない）。
     match /vocab_contests/{roundId}/entries/{uid} {
@@ -294,27 +295,43 @@ service cloud.firestore {
         && validRound()
         && request.time >= openAt()
         && request.time < closeAt()
-        && request.resource.data.keys().hasOnly(['name', 'correct', 'score', 'done', 'startedAt'])
+        && request.resource.data.keys().hasOnly(['name', 'correct', 'score', 'points', 'done', 'section', 'parts', 'startedAt'])
         && request.resource.data.name is string
         && request.resource.data.name.size() > 0
         && request.resource.data.name.size() <= 20
         && request.resource.data.correct == 0
         && request.resource.data.score == 0
+        && request.resource.data.points == 0
         && request.resource.data.done == false
+        && request.resource.data.section == 0
+        && request.resource.data.parts == []
         && request.resource.data.startedAt == request.time;
+      // 4種類（フラッシュカード・日→英・英→日・例文）を1つ解き終わるごとに、1回ずつ足す。
+      // その種類の得点は p0〜p3 にも置く（分野ごとの順位表に使う）。
+      // 始めてから90分のあいだだけ。正解数・点数・得点は減らせない
       allow update: if request.auth != null
         && request.auth.uid == uid
         && resource.data.done == false
-        && request.time < resource.data.startedAt + duration.value(8, 'm')
-        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['correct', 'score', 'done', 'finishedAt'])
-        && request.resource.data.done == true
+        && request.time < resource.data.startedAt + duration.value(90, 'm')
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['correct', 'score', 'points', 'done', 'section', 'parts', 'updatedAt', 'p' + string(resource.data.section)])
+        && request.resource.data['p' + string(resource.data.section)] is int
+        && request.resource.data['p' + string(resource.data.section)] >= 0
+        && request.resource.data['p' + string(resource.data.section)] <= 10000
+        && request.resource.data.section == resource.data.section + 1
+        && request.resource.data.section <= 4
+        && request.resource.data.done == (request.resource.data.section == 4)
+        && request.resource.data.parts is list
+        && request.resource.data.parts.size() == request.resource.data.section
         && request.resource.data.correct is int
-        && request.resource.data.correct >= 0
-        && request.resource.data.correct <= 50
+        && request.resource.data.correct >= resource.data.correct
+        && request.resource.data.correct <= resource.data.correct + 100
+        && request.resource.data.points is int
+        && request.resource.data.points >= resource.data.points
+        && request.resource.data.points <= resource.data.points + 15000
         && request.resource.data.score is int
-        && request.resource.data.score >= 0
-        && request.resource.data.score <= 7500
-        && request.resource.data.finishedAt == request.time;
+        && request.resource.data.score >= resource.data.score
+        && request.resource.data.score <= 10000
+        && request.resource.data.updatedAt == request.time;
       allow delete: if false;
     }
 

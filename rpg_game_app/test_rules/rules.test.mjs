@@ -144,7 +144,8 @@ await check('バトル日程：確認されていないメールでは保存で�
 await check('バトル日程：ふつうのログインでは保存できない', assertFails(setDoc(doc(A, 'vocab_contest_config/main'), cfg)));
 await check('バトル日程：管理者でもよけいな項目は置けない', assertFails(setDoc(doc(ADMIN, 'vocab_contest_config/main'), { ...cfg, words: ['apple'] })));
 await check('バトル日程：管理者でもほかの文書は作れない', assertFails(setDoc(doc(ADMIN, 'vocab_contest_config/other'), cfg)));
-const ent = (extra = {}) => ({ name: 'あ', correct: 0, score: 0, done: false, startedAt: serverTimestamp(), ...extra });
+const ent = (extra = {}) => ({ name: 'あ', correct: 0, score: 0, points: 0, done: false, section: 0, parts: [], startedAt: serverTimestamp(), ...extra });
+const part = (section, extra = {}) => ({ correct: 90 * section, score: 2200 * section, points: 13000 * section, done: section === 4, section, parts: Array(section).fill(8800), [`p${section - 1}`]: 8800, updatedAt: serverTimestamp(), ...extra });
 const rid = `leap-${openDay}`;
 await check('バトル：受付中の回は始められる', assertSucceeds(setDoc(doc(A, `vocab_contests/${rid}/entries/alice`), ent())));
 await check('バトル：もう一度は始められない（上書き）', assertFails(setDoc(doc(A, `vocab_contests/${rid}/entries/alice`), ent())));
@@ -154,20 +155,32 @@ await check('バトル：終わった回は始められない', assertFails(setD
 await check('バトル：まだ始まっていない回は始められない', assertFails(setDoc(doc(B, `vocab_contests/leap-${notYet}/entries/bob`), ent())));
 await check('バトル：LEAP・EEVI 以外は作れない', assertFails(setDoc(doc(B, `vocab_contests/toeic-${openDay}/entries/bob`), ent())));
 await check('バトル：単語などよけいな項目は置けない', assertFails(setDoc(doc(B, `vocab_contests/${rid}/entries/bob`), ent({ words: ['apple'] }))));
-await check('バトル：点数を入れられる', assertSucceeds(updateDoc(doc(A, `vocab_contests/${rid}/entries/alice`), { correct: 18, score: 2500, done: true, finishedAt: serverTimestamp() })));
-await check('バトル：点数は書きかえられない', assertFails(updateDoc(doc(A, `vocab_contests/${rid}/entries/alice`), { correct: 20, score: 3000, done: true, finishedAt: serverTimestamp() })));
+await check('バトル：1種類目の結果を入れられる', assertSucceeds(updateDoc(doc(A, `vocab_contests/${rid}/entries/alice`), part(1))));
+await check('バトル：種類をとばせない', assertFails(updateDoc(doc(A, `vocab_contests/${rid}/entries/alice`), part(3))));
+await check('バトル：同じ種類を入れなおせない', assertFails(updateDoc(doc(A, `vocab_contests/${rid}/entries/alice`), part(1, { score: 3000 }))));
+await check('バトル：得点は減らせない', assertFails(updateDoc(doc(A, `vocab_contests/${rid}/entries/alice`), part(2, { score: 100 }))));
+await check('バトル：ほかの種類の得点は入れられない', assertFails(updateDoc(doc(A, `vocab_contests/${rid}/entries/alice`), part(2, { p3: 10000 }))));
+await check('バトル：種類の得点は10000まで', assertFails(updateDoc(doc(A, `vocab_contests/${rid}/entries/alice`), part(2, { p1: 10001 }))));
+await check('バトル：1種類で100問より多く正解できない', assertFails(updateDoc(doc(A, `vocab_contests/${rid}/entries/alice`), part(2, { correct: 300 }))));
+await check('バトル：4種類目までのこりを入れられる', (async () => {
+  await assertSucceeds(updateDoc(doc(A, `vocab_contests/${rid}/entries/alice`), part(2)));
+  await assertSucceeds(updateDoc(doc(A, `vocab_contests/${rid}/entries/alice`), part(3)));
+  await assertFails(updateDoc(doc(A, `vocab_contests/${rid}/entries/alice`), part(4, { done: false })));
+  await assertSucceeds(updateDoc(doc(A, `vocab_contests/${rid}/entries/alice`), part(4)));
+})());
+await check('バトル：終わったあとは書きかえられない', assertFails(updateDoc(doc(A, `vocab_contests/${rid}/entries/alice`), part(4, { score: 9999 }))));
 await check('バトル：ログインすれば順位を読める', assertSucceeds(getDocs(collection(B, `vocab_contests/${rid}/entries`))));
 await check('バトル：ログインなしでは読めない', assertFails(getDocs(collection(N, `vocab_contests/${rid}/entries`))));
 await check('バトル：消せない', assertFails(deleteDoc(doc(A, `vocab_contests/${rid}/entries/alice`))));
 await check('バトル：ありえない点数は入れられない', (async () => {
   await assertSucceeds(setDoc(doc(B, `vocab_contests/${rid}/entries/bob`), ent()));
-  await assertFails(updateDoc(doc(B, `vocab_contests/${rid}/entries/bob`), { correct: 20, score: 99999, done: true, finishedAt: serverTimestamp() }));
+  await assertFails(updateDoc(doc(B, `vocab_contests/${rid}/entries/bob`), part(1, { score: 99999 })));
 })());
 await check('バトル：時間が切れたら点数を入れられない', (async () => {
   await env.withSecurityRulesDisabled(async (ctx) => {
-    await setDoc(doc(ctx.firestore(), `vocab_contests/${rid}/entries/carol`), ent({ startedAt: Timestamp.fromMillis(Date.now() - 9 * 60000) }));
+    await setDoc(doc(ctx.firestore(), `vocab_contests/${rid}/entries/carol`), ent({ startedAt: Timestamp.fromMillis(Date.now() - 91 * 60000) }));
   });
-  await assertFails(updateDoc(doc(C, `vocab_contests/${rid}/entries/carol`), { correct: 20, score: 3000, done: true, finishedAt: serverTimestamp() }));
+  await assertFails(updateDoc(doc(C, `vocab_contests/${rid}/entries/carol`), part(1)));
 })());
 await check('バトル：管理者が受付を早く閉じると、もう始められない', (async () => {
   await assertSucceeds(setDoc(doc(ADMIN, 'vocab_contest_config/main'), { ...cfg, leap: { ...cfg.leap, open: -2880, close: -2000 } }));

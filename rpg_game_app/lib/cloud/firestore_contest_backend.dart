@@ -72,19 +72,29 @@ class FirestoreContestBackend extends ContestBackend {
     }
   }
 
+  /// Firestore の時刻（Timestamp）を DateTime にしてから読む
+  static ContestEntry? _entry(String uid, Map<String, dynamic>? data) {
+    if (data == null) return null;
+    final at = data['startedAt'];
+    return ContestEntry.fromMap(uid, {
+      ...data,
+      'startedAt': at is Timestamp ? at.toDate() : null,
+    });
+  }
+
   @override
   Future<ContestEntry?> mine(String roundId) async {
     final uid = _uid();
     try {
       final snap = await _entries(roundId).doc(uid).get();
-      return ContestEntry.fromMap(uid, snap.data());
+      return _entry(uid, snap.data());
     } catch (e) {
       _fail(e);
     }
   }
 
   @override
-  Future<void> start(String roundId, String name) async {
+  Future<ContestEntry> start(String roundId, String name) async {
     final uid = _uid();
     try {
       final doc = _entries(roundId).doc(uid);
@@ -96,24 +106,41 @@ class FirestoreContestBackend extends ContestBackend {
           'name': name,
           'correct': 0,
           'score': 0,
+          'points': 0,
           'done': false,
+          'section': 0,
+          'parts': <int>[],
           'startedAt': FieldValue.serverTimestamp(),
         });
       });
+      // サーバーの時刻を読みなおす（続きから解ける時間の計算に使う）
+      return (await mine(roundId)) ??
+          ContestEntry(
+            uid: uid,
+            name: name,
+            correct: 0,
+            score: 0,
+            done: false,
+            startedAt: DateTime.now(),
+          );
     } catch (e) {
       _fail(e);
     }
   }
 
   @override
-  Future<void> finish(String roundId, int correct, int score) async {
+  Future<void> savePart(String roundId, ContestEntry entry) async {
     final uid = _uid();
     try {
       await _entries(roundId).doc(uid).update({
-        'correct': correct,
-        'score': score,
-        'done': true,
-        'finishedAt': FieldValue.serverTimestamp(),
+        'correct': entry.correct,
+        'score': entry.score,
+        'points': entry.points,
+        'done': entry.done,
+        'section': entry.section,
+        'parts': entry.parts,
+        if (entry.parts.isNotEmpty) 'p${entry.parts.length - 1}': entry.parts.last,
+        'updatedAt': FieldValue.serverTimestamp(),
       });
     } catch (e) {
       _fail(e);
@@ -121,30 +148,39 @@ class FirestoreContestBackend extends ContestBackend {
   }
 
   @override
-  Future<List<ContestEntry>> ranking(String roundId, {int limit = 100}) async {
+  Future<List<ContestEntry>> ranking(
+    String roundId, {
+    int? part,
+    int limit = 100,
+  }) async {
     try {
-      // 点数だけで並べる（始めただけの人は 0 点なので下に来る。done は手元で除く）
+      // 総合は得点（score）、種類ごとは p0〜p3 で並べる（その種類を解いていない人は出ない）。
+      // 始めただけの人は 0 なので下に来る。手元で除く
       final snap = await _entries(roundId)
-          .orderBy('score', descending: true)
+          .orderBy(part == null ? 'score' : 'p$part', descending: true)
           .limit(limit)
           .get();
-      return ContestEntry.rank([
-        for (final d in snap.docs) ?ContestEntry.fromMap(d.id, d.data()),
-      ]);
+      return ContestEntry.rankBy([
+        for (final d in snap.docs) ?_entry(d.id, d.data()),
+      ], part);
     } catch (e) {
       _fail(e);
     }
   }
 
   @override
-  Future<({int players, int above})> standing(String roundId, int score) async {
+  Future<({int players, int above})> standing(
+    String roundId,
+    int score, {
+    int? part,
+  }) async {
     try {
       final col = _entries(roundId);
-      final players = await col.where('done', isEqualTo: true).count().get();
-      final above = await col
-          .where('score', isGreaterThan: score)
-          .count()
-          .get();
+      final field = part == null ? 'score' : 'p$part';
+      final players = part == null
+          ? await col.where('section', isGreaterThan: 0).count().get()
+          : await col.where(field, isGreaterThanOrEqualTo: 0).count().get();
+      final above = await col.where(field, isGreaterThan: score).count().get();
       return (players: players.count ?? 0, above: above.count ?? 0);
     } catch (e) {
       _fail(e);
