@@ -6,6 +6,7 @@ import '../app/theme.dart';
 import '../art/paper.dart';
 import 'account_service.dart';
 import 'sync_status_card.dart';
+import 'study_library_card.dart';
 import 'tsuzuri_link_card.dart';
 
 /// アカウント：ユーザー名の変更と、Google アカウントの登録（連携）
@@ -195,6 +196,8 @@ class _AccountScreenState extends State<AccountScreen> {
                 const SyncStatusCard(),
                 const SizedBox(height: 20),
                 const TsuzuriLinkCard(),
+                const SizedBox(height: 12),
+                const StudyLibraryCard(),
               ],
             );
           },

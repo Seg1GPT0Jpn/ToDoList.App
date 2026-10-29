@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:rpg_game/rpg_game.dart';
 
+import '../account/study_library_card.dart';
 import '../app/services.dart';
 import '../app/theme.dart';
 import '../app/usage_meter.dart';
@@ -101,6 +102,12 @@ class _SeaHomeScreenState extends State<SeaHomeScreen> {
           backgroundColor: TsuzuriColors.tint(0xFFE6F0F5),
           title: Text('定期テストの海', style: serif(19, color: StudyRealm.sea.ink)),
           actions: [
+            IconButton(
+              key: const ValueKey('sea-study-library'),
+              tooltip: 'かながわ教材ライブラリ（プリント）',
+              onPressed: openStudyLibrary,
+              icon: const Icon(Icons.menu_book),
+            ),
             TextButton.icon(
               onPressed: () => Navigator.of(context).push(
                 MaterialPageRoute<void>(
