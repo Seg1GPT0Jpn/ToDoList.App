@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import '../models/rpg_progress.dart';
 import '../vocab/meaning_text.dart';
 import '../vocab/vocab_book.dart';
 
@@ -769,4 +770,58 @@ class ContestEntry {
     });
     return out;
   }
+}
+
+/// 最終ランキングの入賞と報酬。
+///
+/// 入賞するのは、参加した人数が2〜4人なら1位、5〜9人なら上位2人、10人以上なら上位3人
+/// （総合の得点。同じ得点なら同じ順位）。受け取った報酬は [RpgProgress.claimedRewards] に
+/// 「contest:回のID:順位」で残し、2回は受け取れない。
+abstract final class ContestPrizes {
+  /// 入賞する人数
+  static int winners(int players) => players >= 10
+      ? 3
+      : players >= 5
+          ? 2
+          : players >= 2
+              ? 1
+              : 0;
+
+  /// 入賞した順位（1〜3。入賞していなければ null）。[above] は自分より得点の高い人数
+  static int? place(int above, int players) {
+    final rank = above + 1;
+    return rank <= winners(players) ? rank : null;
+  }
+
+  static const _exp = [2000, 1200, 800];
+  static const medals = ['🥇', '🥈', '🥉'];
+
+  static int exp(int place) => _exp[place - 1];
+  static String medal(int place) => medals[place - 1];
+
+  static const _prefix = 'contest:';
+
+  static String id(String roundId, int place) => '$_prefix$roundId:$place';
+
+  /// その回の報酬を受け取った順位（まだなら null）
+  static int? claimed(RpgProgress p, String roundId) {
+    for (final c in p.claimedRewards) {
+      if (c.startsWith('$_prefix$roundId:')) {
+        return int.tryParse(c.substring(c.lastIndexOf(':') + 1));
+      }
+    }
+    return null;
+  }
+
+  /// 報酬を受け取った進行状況（経験値は [Progression.addExp] で別に足す）
+  static RpgProgress claim(RpgProgress p, String roundId, int place) =>
+      p.copyWith(claimedRewards: {...p.claimedRewards, id(roundId, place)});
+
+  /// 入賞した回数（[bookId] があればその単語帳だけ、[place] があればその順位だけ）
+  static int count(RpgProgress p, {String? bookId, int? place}) => [
+        for (final c in p.claimedRewards)
+          if (c.startsWith(_prefix))
+            if (bookId == null || c.startsWith('$_prefix$bookId-'))
+              if (place == null || c.endsWith(':$place')) c,
+      ].length;
 }

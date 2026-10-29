@@ -170,13 +170,27 @@ class _ContestScreenState extends State<ContestScreen> {
     final backend = _backend;
     if (backend == null || backend.userId == null) return;
     final now = _now();
+    final repository = RpgServices.of(context).repository;
     _load = () async {
       final config = await backend.loadConfig();
       final rounds = config.openAt(now);
+      // 受付が終わった回の、自分の入賞
+      final places = <String, int>{};
+      for (final id in ContestConfig.books) {
+        final last = config.plans[id]?.lastClosed(now);
+        if (last == null) continue;
+        final m = await backend.mine(last.id);
+        if (m == null || m.section == 0) continue;
+        final st = await backend.standing(last.id, m.score);
+        final place = ContestPrizes.place(st.above, st.players);
+        if (place != null) places[last.id] = place;
+      }
       return _Board(
         config: config,
         now: now,
         mine: {for (final r in rounds) r.id: await backend.mine(r.id)},
+        places: places,
+        progress: await repository.load(),
       );
     }();
   }
@@ -254,6 +268,71 @@ class _ContestScreenState extends State<ContestScreen> {
       }
     } on DuelException catch (e) {
       if (mounted) setState(() => _error = e.message);
+    } finally {
+      if (mounted) {
+        setState(() {
+          _busy = false;
+          _reload();
+        });
+      }
+    }
+  }
+
+  /// 入賞したときの報酬（受け取りボタン、または受け取ったしるし）
+  Widget _prize(ContestRound round, int place, _Board board) {
+    final medal = ContestPrizes.medal(place);
+    final exp = ContestPrizes.exp(place);
+    if (ContestPrizes.claimed(board.progress, round.id) != null) {
+      return Text(
+        '$medal ${round.title} ${place}位に入賞！（報酬は受け取りずみ）',
+        key: ValueKey('contest-prize-done-${round.bookId}'),
+        style: serif(15),
+      );
+    }
+    return FilledButton.icon(
+      key: ValueKey('contest-prize-${round.bookId}'),
+      onPressed: _busy ? null : () => _claim(round, place),
+      icon: Text(medal, style: const TextStyle(fontSize: 18)),
+      label: Text('$place位の報酬を受け取る（+${exp}EXP・称号）'),
+    );
+  }
+
+  Future<void> _claim(ContestRound round, int place) async {
+    final services = RpgServices.of(context);
+    setState(() => _busy = true);
+    try {
+      final latest = await services.repository.load();
+      if (ContestPrizes.claimed(latest, round.id) != null) return;
+      final r = Progression.addExp(latest, ContestPrizes.exp(place));
+      final next = ContestPrizes.claim(r.progress, round.id, place);
+      await services.repository.save(next);
+      final meta = services.meta;
+      final today = RpgServices.today();
+      final unlocked = Achievements.newlyAchieved(
+        AchievementContext(
+          progress: next,
+          record: meta.record,
+          journal: meta.journal,
+          today: today,
+        ),
+      );
+      if (unlocked.isNotEmpty) {
+        await meta.save(
+          journal: meta.journal.unlock(unlocked.map((a) => a.id), today),
+        );
+      }
+      services.music.jingle(
+        r.after.level > r.before.level ? 'levelup' : 'clear',
+      );
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            '${ContestPrizes.medal(place)} 経験値 +${ContestPrizes.exp(place)}！'
+            '${unlocked.isEmpty ? '' : '　称号「${unlocked.map((a) => a.title).join('」「')}」を手に入れた（実績・称号で選べます）'}',
+          ),
+        ),
+      );
     } finally {
       if (mounted) {
         setState(() {
@@ -479,6 +558,8 @@ class _ContestScreenState extends State<ContestScreen> {
               ),
             if (last != null) ...[
               const SizedBox(height: 6),
+              if (board.places[last.id] case final place?)
+                _prize(last, place, board),
               if (fresh)
                 FilledButton.tonalIcon(
                   key: ValueKey('contest-last-${plan.bookId}'),
@@ -503,12 +584,24 @@ class _ContestScreenState extends State<ContestScreen> {
 }
 
 class _Board {
-  const _Board({required this.config, required this.now, required this.mine});
+  const _Board({
+    required this.config,
+    required this.now,
+    required this.mine,
+    this.places = const {},
+    this.progress = RpgProgress.initial,
+  });
   final ContestConfig config;
   final DateTime now;
 
   /// 受付中の回の ID → 自分の記録
   final Map<String, ContestEntry?> mine;
+
+  /// 受付が終わった回の ID → 自分が入賞した順位
+  final Map<String, int> places;
+
+  /// 報酬を受け取ったかを見るための進行状況
+  final RpgProgress progress;
 }
 
 /// 順位表（上位100人と、自分の順位）
@@ -591,6 +684,13 @@ class _ContestRankingScreenState extends State<ContestRankingScreen> {
               return const Center(child: CircularProgressIndicator());
             }
             final (rows, mine, standing) = data;
+            // 最終ランキング（総合）では、入賞した人にメダルをつける
+            final players = standing?.players ?? rows.length;
+            final winners = closed && _part == null
+                ? ContestPrizes.winners(players)
+                : 0;
+            int rankOf(ContestEntry e) =>
+                1 + rows.where((o) => o.score > e.score).length;
             return ListView(
               padding: const EdgeInsets.fromLTRB(40, 16, 16, 24),
               children: [
@@ -603,6 +703,11 @@ class _ContestRankingScreenState extends State<ContestRankingScreen> {
                   closed
                       ? '受付は ${ContestRules.time(r.closeAt)} に終わりました'
                       : '受付は ${ContestRules.time(r.closeAt)} まで。終わると最終ランキングになります',
+                  style: TextStyle(fontSize: 12, color: TsuzuriColors.inkSoft),
+                ),
+                Text(
+                  '入賞：参加2〜4人なら1位、5〜9人なら上位2人、10人以上なら上位3人（総合）。'
+                  '1位 +${ContestPrizes.exp(1)}EXP・2位 +${ContestPrizes.exp(2)}EXP・3位 +${ContestPrizes.exp(3)}EXP と称号',
                   style: TextStyle(fontSize: 12, color: TsuzuriColors.inkSoft),
                 ),
                 const SizedBox(height: 8),
@@ -639,7 +744,8 @@ class _ContestRankingScreenState extends State<ContestRankingScreen> {
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 2),
                       child: Text(
-                        '${i + 1}位　${e.name}${e.uid == me ? '（あなた）' : ''}　'
+                        '${rankOf(e) <= winners ? '${ContestPrizes.medal(rankOf(e))} ' : ''}'
+                        '${_part == null ? rankOf(e) : i + 1}位　${e.name}${e.uid == me ? '（あなた）' : ''}　'
                         '${ContestScoring.percent(_value(e)!)}'
                         '${_part != null ? '' : '（正解 ${e.correct}問${e.done ? '' : '・${e.section}/4種類'}）'}',
                         key: ValueKey('contest-row-$i'),

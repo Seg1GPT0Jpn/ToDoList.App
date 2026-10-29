@@ -5,6 +5,7 @@ import '../models/rpg_progress.dart';
 import '../story/scenes.dart';
 import '../story/story.dart';
 import '../versus/versus_match.dart';
+import '../versus/vocab_contest.dart';
 import '../world/elites.dart';
 import '../world/shadow_keeper.dart';
 import 'enemy_species.dart';
@@ -476,6 +477,43 @@ class Achievements {
       rarity: Rarity.legendary,
       goal: 5,
       value: (c) => _shadows(c),
+    ),
+    // 週替わり単語バトル（LEAP・EEVI）の最終ランキングで入賞する
+    AchievementDef(
+      id: 'contest_podium_1',
+      title: '表彰台の学徒',
+      description: '週替わり単語バトルで入賞する（最終ランキング）',
+      group: AchievementGroup.battle,
+      rarity: Rarity.rare,
+      goal: 1,
+      value: (c) => ContestPrizes.count(c.progress),
+    ),
+    AchievementDef(
+      id: 'contest_eevi_1',
+      title: 'EEVIの覇者',
+      description: 'EEVI バトルの最終ランキングで1位になる',
+      group: AchievementGroup.battle,
+      rarity: Rarity.epic,
+      goal: 1,
+      value: (c) => ContestPrizes.count(c.progress, bookId: 'eevi', place: 1),
+    ),
+    AchievementDef(
+      id: 'contest_leap_1',
+      title: 'LEAPの覇者',
+      description: 'LEAP バトルの最終ランキングで1位になる',
+      group: AchievementGroup.battle,
+      rarity: Rarity.epic,
+      goal: 1,
+      value: (c) => ContestPrizes.count(c.progress, bookId: 'leap', place: 1),
+    ),
+    AchievementDef(
+      id: 'contest_podium_10',
+      title: '単語バトルの常連王者',
+      description: '週替わり単語バトルで10回入賞する',
+      group: AchievementGroup.battle,
+      rarity: Rarity.legendary,
+      goal: 10,
+      value: (c) => ContestPrizes.count(c.progress),
     ),
   ];
 

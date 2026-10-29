@@ -223,6 +223,41 @@ void main() {
     expect(rows.map((e) => e.uid), ['d', 'b', 'a']);
   });
 
+  test('入賞：2〜4人なら1位、5〜9人なら上位2人、10人以上なら上位3人', () {
+    expect([1, 2, 4, 5, 9, 10, 50].map(ContestPrizes.winners),
+        [0, 1, 1, 2, 2, 3, 3]);
+    expect(ContestPrizes.place(0, 1), isNull);
+    expect(ContestPrizes.place(0, 3), 1);
+    expect(ContestPrizes.place(1, 3), isNull);
+    expect(ContestPrizes.place(1, 5), 2);
+    expect(ContestPrizes.place(2, 9), isNull);
+    expect(ContestPrizes.place(2, 10), 3);
+    // 同じ得点の人が上にいなければ、同じ順位になる
+    expect(ContestPrizes.place(0, 12), 1);
+    expect(ContestPrizes.exp(1), greaterThan(ContestPrizes.exp(2)));
+  });
+
+  test('報酬は1回だけ。入賞の回数で実績が解除される', () {
+    var p = RpgProgress.initial;
+    expect(ContestPrizes.claimed(p, 'eevi-2026-10-30'), isNull);
+    p = ContestPrizes.claim(p, 'eevi-2026-10-30', 1);
+    p = ContestPrizes.claim(p, 'leap-2026-11-01', 3);
+    expect(ContestPrizes.claimed(p, 'eevi-2026-10-30'), 1);
+    expect(ContestPrizes.claimed(p, 'leap-2026-11-01'), 3);
+    expect(ContestPrizes.count(p), 2);
+    expect(ContestPrizes.count(p, bookId: 'eevi', place: 1), 1);
+    expect(ContestPrizes.count(p, bookId: 'leap', place: 1), 0);
+    final ids = Achievements.newlyAchieved(AchievementContext(
+      progress: p,
+      record: LearningRecord.empty,
+      journal: PlayerJournal.empty,
+      today: 0,
+    )).map((a) => a.id);
+    expect(ids, containsAll(['contest_podium_1', 'contest_eevi_1']));
+    expect(ids, isNot(contains('contest_leap_1')));
+    expect(ids, isNot(contains('contest_podium_10')));
+  });
+
   test('管理者はひとりだけ', () {
     expect(ContestRules.isAdmin('kzmsegawa@gmail.com'), isTrue);
     expect(ContestRules.isAdmin(' KZMSegawa@gmail.com '), isTrue);

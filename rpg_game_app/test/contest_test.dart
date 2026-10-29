@@ -277,6 +277,54 @@ void main() {
     expect(t.takeException(), isNull);
   });
 
+  testWidgets('最終ランキングで入賞すると、報酬を1回だけ受け取れる', (t) async {
+    ContestEntry e(String uid, int score) => ContestEntry(
+      uid: uid,
+      name: uid,
+      correct: 300,
+      score: score,
+      done: true,
+      section: 4,
+      parts: [score, score, score, score],
+    );
+    // 5人なので上位2人が入賞。自分（me）は2位
+    final shared = {
+      'eevi-2026-10-30': {
+        for (final x in [
+          e('a', 9500),
+          e('me', 9000),
+          e('c', 8000),
+          e('d', 7000),
+          e('f', 6000),
+        ])
+          x.uid: x,
+      },
+    };
+    DateTime after() => DateTime.utc(2026, 10, 30, 11);
+    final s = await _open(
+      t,
+      MemoryContestBackend(userId: 'me', entries: shared),
+      now: after,
+    );
+    expect(find.textContaining('2位の報酬を受け取る（+1200EXP・称号）'), findsOneWidget);
+    await t.tap(find.byKey(const ValueKey('contest-prize-eevi')));
+    await _frames(t, 8);
+    final p = await s.repository.load();
+    expect(ContestPrizes.claimed(p, 'eevi-2026-10-30'), 2);
+    expect(p.totalExp, greaterThanOrEqualTo(1200));
+    // 入賞の実績が解除され、称号として選べる
+    expect(find.textContaining('「表彰台の学徒」'), findsOneWidget);
+    expect(find.byKey(const ValueKey('contest-prize-eevi')), findsNothing);
+    expect(find.textContaining('🥈 EEVI 2位に入賞！（報酬は受け取りずみ）'), findsOneWidget);
+    // 最終ランキングでは、入賞した2人にメダル
+    await t.tap(find.byKey(const ValueKey('contest-last-eevi')));
+    await _frames(t, 5);
+    expect(find.textContaining('🥇 1位　a'), findsOneWidget);
+    expect(find.textContaining('🥈 2位　me（あなた）'), findsOneWidget);
+    expect(find.textContaining('🥉'), findsNothing);
+    expect(t.takeException(), isNull);
+  });
+
   testWidgets('管理者だけが日程と範囲を変えられる', (t) async {
     final admin = MemoryContestBackend(
       userId: 'k',
