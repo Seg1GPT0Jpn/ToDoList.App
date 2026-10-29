@@ -576,13 +576,6 @@ class _MenuGroupsState extends State<_MenuGroups> {
             builder: (_) => const EquipmentScreen(),
           ),
         if (has(HomeFeature.reviewTower)) tower,
-        if (has(HomeFeature.wordForest))
-          _MenuButton(
-            feature: HomeFeature.wordForest,
-            icon: Icons.forest_outlined,
-            label: '単語の森',
-            builder: (_) => const WordForestScreen(),
-          ),
       ],
       _Group.exam: [
         _MenuButton(
@@ -599,6 +592,13 @@ class _MenuGroupsState extends State<_MenuGroups> {
             builder: (_) => const SkyHomeScreen(),
           ),
         if (has(HomeFeature.reviewTower)) tower,
+        if (has(HomeFeature.wordForest))
+          _MenuButton(
+            feature: HomeFeature.wordForest,
+            icon: Icons.forest_outlined,
+            label: '単語の森',
+            builder: (_) => const WordForestScreen(),
+          ),
       ],
       _Group.common: [
         if (has(HomeFeature.commonTest))
