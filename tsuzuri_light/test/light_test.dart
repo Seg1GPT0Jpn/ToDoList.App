@@ -8,6 +8,7 @@ import 'package:rpg_game_app/account/profile_repository.dart';
 import 'package:rpg_game_app/app/services.dart';
 import 'package:rpg_game_app/app/settings.dart';
 import 'package:rpg_game_app/app/theme.dart';
+import 'package:rpg_game_app/classroom/classroom_store.dart';
 import 'package:rpg_game_app/audio/music_director.dart';
 import 'package:rpg_game_app/cloud/same_device_sync.dart';
 import 'package:rpg_game_app/data/meta_store.dart';
@@ -118,13 +119,18 @@ void main() {
     expect(light.record.stats.keys, containsAll(['q1', 'q2']));
   });
 
-  testWidgets('クラウドを待たずにホームを出し、つながったらクラスルームを使えるようにする', (t) async {
+  Future<int Function()> openLight(
+    WidgetTester t,
+    Completer<LightConnection?> done, {
+    bool inClass = false,
+  }) async {
     t.view.physicalSize = const Size(420, 860);
     t.view.devicePixelRatio = 1;
     addTearDown(t.view.reset);
     SharedPreferences.setMockInitialValues(named);
     final p = await SharedPreferences.getInstance();
-    final done = Completer<LightConnection?>();
+    if (inClass) await ClassroomStore(p).add('123456');
+    var calls = 0;
     await t.pumpWidget(
       LightRoot(
         stores: LightStores(
@@ -135,16 +141,50 @@ void main() {
           books: PersonalBooks(p),
           examWorlds: ExamWorldStore(p),
         ),
-        connect: () => done.future,
+        connect: () {
+          calls++;
+          return done.future;
+        },
       ),
     );
     await _frames(t);
+    return () => calls;
+  }
+
+  testWidgets('クラスルームに入っている人は、クラウドを待たずにホームを出し、つながったらクラスルームを使えるようにする', (
+    t,
+  ) async {
+    final done = Completer<LightConnection?>();
+    final calls = await openLight(t, done, inClass: true);
     // まだつながっていない：ホームは出ていて、クラスルームは使えない表示
+    expect(calls(), 1);
     expect(find.byKey(const ValueKey('light-home')), findsOneWidget);
     expect(find.text('インターネットにつながると使えます'), findsOneWidget);
     done.complete((
       account: MockAccountService(),
       classrooms: MemoryClassroomBackend(MemoryClassroomHub()),
+      contests: null,
+    ));
+    await _frames(t);
+    expect(find.text('先生の課題・クラスの範囲'), findsOneWidget);
+    expect(t.takeException(), isNull);
+  });
+
+  testWidgets('ログインもクラスルームも使っていない人は、必要になるまでクラウドを読みこまない', (t) async {
+    final done = Completer<LightConnection?>();
+    final calls = await openLight(t, done);
+    expect(calls(), 0);
+    expect(find.text('クラウドにつないでいます…'), findsNothing);
+    expect(find.text('先生の課題・クラスの範囲'), findsOneWidget);
+    // ログイン・クラスルームの画面を開くと読みこみはじめる（1回だけ）
+    requestCloud();
+    requestCloud();
+    await _frames(t);
+    expect(calls(), 1);
+    done.complete((
+      account: MockAccountService(),
+      classrooms: MemoryClassroomBackend(MemoryClassroomHub()),
+      contests: null,
     ));
     await _frames(t);
     expect(find.text('先生の課題・クラスの範囲'), findsOneWidget);

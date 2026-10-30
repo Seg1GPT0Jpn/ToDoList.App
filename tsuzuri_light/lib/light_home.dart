@@ -8,6 +8,7 @@ import 'package:rpg_game_app/cloud/sync_status.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'light_pages.dart' deferred as pages;
+import 'main.dart' show cloudRequested, requestCloud;
 
 /// フル版のつづりクエストのサイト
 const fullAppHost = 'tsuzuri-quest-v2.web.app';
@@ -103,14 +104,20 @@ class LightHome extends StatelessWidget {
                   () => pages.vocab(services.personalBooks),
                 ),
               ),
-              _Entry(
-                id: 'class',
-                icon: Icons.groups_outlined,
-                title: 'クラスルーム',
-                subtitle: services.classrooms == null
-                    ? 'インターネットにつながると使えます'
-                    : '先生の課題・クラスの範囲',
-                onTap: () => openPage(context, () => pages.classroom()),
+              ValueListenableBuilder<bool>(
+                valueListenable: cloudRequested,
+                builder: (context, requested, _) => _Entry(
+                  id: 'class',
+                  icon: Icons.groups_outlined,
+                  title: 'クラスルーム',
+                  subtitle: services.classrooms == null && requested
+                      ? 'インターネットにつながると使えます'
+                      : '先生の課題・クラスの範囲',
+                  onTap: () {
+                    requestCloud();
+                    openPage(context, () => pages.classroom());
+                  },
+                ),
               ),
               ListenableBuilder(
                 listenable: services.meta,
@@ -189,9 +196,10 @@ class _AccountRow extends StatelessWidget {
       stream: services.profiles.watch(),
       builder: (context, snap) {
         final p = snap.data ?? services.profiles.load();
-        return ValueListenableBuilder<SyncStatus>(
-          valueListenable: syncStatus,
-          builder: (context, s, _) {
+        return ListenableBuilder(
+          listenable: Listenable.merge([syncStatus, cloudRequested]),
+          builder: (context, _) {
+            final s = syncStatus.value;
             // 本当にログインしているか・問題が起きていないかを、同期のようすから出す
             final linked = s.email != null;
             final problem = s.error;
@@ -200,7 +208,7 @@ class _AccountRow extends StatelessWidget {
               text = '同期の問題：$problem（タップでくわしく・今すぐ同期）';
             } else if (linked) {
               text = '${s.email} で同期中（つづりクエストと同じ記録）';
-            } else if (s.connected == null) {
+            } else if (s.connected == null && cloudRequested.value) {
               text = 'クラウドにつないでいます…';
             } else if (sharesStorageWithFull) {
               text = 'この端末ではつづりクエストと同じ記録。Google でログインすると別の端末・アプリとも同期';
@@ -229,7 +237,11 @@ class _AccountRow extends StatelessWidget {
                   ),
                 ),
                 trailing: const Icon(Icons.chevron_right),
-                onTap: () => openPage(context, () => pages.account()),
+                onTap: () {
+                  // ログインを押す前に、クラウドの部品を読みこみはじめる
+                  requestCloud();
+                  openPage(context, () => pages.account());
+                },
               ),
             );
           },

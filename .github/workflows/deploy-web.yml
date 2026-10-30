@@ -41,8 +41,13 @@ jobs:
         working-directory: tsuzuri_light
         run: |
           flutter pub get
-          # WebAssembly 版（対応していないブラウザでは自動で JS 版を使う）。軽く、メモリも少ない
-          flutter build web --wasm --release --pwa-strategy=none --dart-define=TSUZURI_LIGHT=true --base-href /light/
+          # WebAssembly 版（対応していないブラウザでは自動で JS 版を使う）。軽く、メモリも少ない。
+          # 描画エンジンも同じサイトに置く（Service Worker に入れて、ネットなしで起動できるように）
+          flutter build web --wasm --release --pwa-strategy=none --no-web-resources-cdn --dart-define=TSUZURI_LIGHT=true --base-href /light/
+          # Service Worker の版：アプリ本体（単語帳・問題などのファイルをのぞく）の中身から決める
+          V=$(cd build/web && find . -type f ! -name sw.js ! -path './assets/packages/*' -print0 | sort -z | xargs -0 sha256sum | sha256sum | cut -c1-16)
+          sed -i "s/__TSUZURI_LIGHT_VERSION__/$V/" build/web/sw.js
+          grep -q "$V" build/web/sw.js
           rm -rf ../rpg_game_app/build/web/light
           cp -r build/web ../rpg_game_app/build/web/light
       # Firestore のルール（同期を許可する場所）も反映する。公開用の鍵に権限がなければ失敗するが、

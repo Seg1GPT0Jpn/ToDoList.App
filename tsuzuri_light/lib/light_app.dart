@@ -6,7 +6,7 @@ import 'package:rpg_game_app/app/toast.dart';
 
 import 'light_home.dart';
 import 'light_pages.dart' deferred as pages;
-import 'main.dart' show inviteClassCode;
+import 'main.dart' show inviteClassCode, requestCloud;
 
 /// 色を明るさだけにする
 const _grayscale = ColorFilter.matrix([
@@ -116,6 +116,8 @@ class _FirstRunState extends State<_FirstRun> {
     final code = inviteClassCode();
     final welcome = !p.hasName && !p.isGoogleLinked;
     if (code == null && !welcome) return;
+    // クラスルーム・ログインの画面を出すので、クラウドの部品を読みこみはじめる
+    requestCloud();
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       await pages.loadLibrary();
       if (!mounted) return;

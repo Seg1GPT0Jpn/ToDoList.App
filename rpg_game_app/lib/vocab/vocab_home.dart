@@ -9,6 +9,7 @@ import '../classroom/classroom_screens.dart';
 import '../meta/streak_store.dart';
 import '../study/personal_books.dart';
 import '../versus/contest_screens.dart';
+import '../app/edition.dart';
 import '../versus/duel_screens.dart';
 import 'vocab_book_screen.dart';
 import 'vocab_import_screen.dart';
@@ -170,12 +171,14 @@ class _VocabHomeState extends State<VocabHome> {
           icon: const Icon(Icons.style_outlined),
           label: const Text('苦手克服カード'),
         ),
-        OutlinedButton.icon(
-          key: const ValueKey('vocab-home-duel'),
-          onPressed: () => _open(const DuelHubScreen()),
-          icon: const Icon(Icons.flash_on),
-          label: const Text('単語チャレンジ（友だちとリンクで早押し）'),
-        ),
+        // Light には単語チャレンジを入れない
+        if (!lightEdition)
+          OutlinedButton.icon(
+            key: const ValueKey('vocab-home-duel'),
+            onPressed: () => _open(const DuelHubScreen()),
+            icon: const Icon(Icons.flash_on),
+            label: const Text('単語チャレンジ（友だちとリンクで早押し）'),
+          ),
         // LEAP・EEVI を開いている人みんなで、週に1回点数を競う
         ContestEntryButton(store: store),
         const SizedBox(height: 12),

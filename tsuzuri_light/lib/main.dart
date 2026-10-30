@@ -12,6 +12,8 @@ import 'package:rpg_game_app/app/settings.dart';
 import 'package:rpg_game_app/app/theme.dart';
 import 'package:rpg_game_app/audio/music_director.dart';
 import 'package:rpg_game_app/classroom/classroom_backend.dart';
+import 'package:rpg_game_app/classroom/classroom_store.dart';
+import 'package:rpg_game_app/versus/contest_backend.dart';
 import 'package:rpg_game_app/cloud/same_device_sync.dart';
 import 'package:rpg_game_app/data/meta_store.dart';
 import 'package:rpg_game_app/data/prefs_progress_repository.dart';
@@ -27,7 +29,8 @@ import 'light_cloud.dart' deferred as cloud_lib;
 ///
 /// つづりクエストと同じ保存場所・同じクラウドの記録を使うので、進み具合は同じになる。
 /// 軽くするために：冒険のマップ（Flame）・BGM・効果音・画面の動き・明朝体・色を使わない。
-/// クラウド（Firebase）と各画面のプログラムは、ホームを出したあとで必要になったときに読みこむ。
+/// 各画面のプログラムは、開くときに読みこむ。クラウド（Firebase）は、ログインしている人はホームを出したあとで、
+/// ログインしていない人はログイン・クラスルームの画面を開いたときに読みこむ。
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // つづりクエストの同梱ファイル（単語帳・資料など）を部品の中から読む
@@ -76,7 +79,11 @@ Future<void> main() async {
         if (c == null) return null;
         refresh = c.refresh;
         flush = c.flush;
-        return (account: c.account, classrooms: c.classrooms);
+        return (
+          account: c.account,
+          classrooms: c.classrooms,
+          contests: c.contests,
+        );
       },
     ),
   );
@@ -103,6 +110,7 @@ class LightStores {
 typedef LightConnection = ({
   AccountService account,
   ClassroomBackend classrooms,
+  ContestBackend? contests,
 });
 
 /// サービスの入れ物。はじめは端末の中だけで動き、クラウドにつながったらログインと
@@ -126,6 +134,7 @@ class _LightRootState extends State<LightRoot> {
   );
   late AccountService _account;
   ClassroomBackend? _classrooms;
+  ContestBackend? _contests;
 
   @override
   void initState() {
@@ -136,23 +145,44 @@ class _LightRootState extends State<LightRoot> {
       return;
     }
     // クラウドの準備ができるまでにログインを押されたら、準備ができるのを待ってからログインする
-    final account = Completer<AccountService?>();
-    _account = PendingAccountService(account.future);
-    // ホームを描いてから、クラウドの部品を読みこむ
-    WidgetsBinding.instance.addPostFrameCallback((_) async {
-      try {
-        final c = await connect().timeout(const Duration(seconds: 30));
-        account.complete(c?.account);
-        if (c == null || !mounted) return;
-        setState(() {
-          _account = c.account;
-          _classrooms = c.classrooms;
-        });
-      } catch (e) {
-        if (!account.isCompleted) account.complete(null);
-        debugPrint('クラウドにつながらないので、端末の中だけで続けます: $e');
-      }
-    });
+    _account = PendingAccountService(_ready.future, onNeed: _start);
+    cloudRequested.value = false;
+    requestCloud = _start;
+    // ログインしている人・クラスルームに入っている人は、ホームを描いてからすぐつなぐ。
+    // そうでない人は、ログイン・クラスルームの画面を開くまで Firebase を読みこまない
+    if (needsCloudAtStart(widget.stores)) {
+      WidgetsBinding.instance.addPostFrameCallback((_) => _start());
+    }
+  }
+
+  final _ready = Completer<AccountService?>();
+  bool _started = false;
+
+  /// クラウドの部品を読みこんでつなぐ（1回だけ）
+  Future<void> _start() async {
+    final connect = widget.connect;
+    if (_started || connect == null) return;
+    _started = true;
+    cloudRequested.value = true;
+    try {
+      final c = await connect().timeout(const Duration(seconds: 30));
+      _ready.complete(c?.account);
+      if (c == null || !mounted) return;
+      setState(() {
+        _account = c.account;
+        _classrooms = c.classrooms;
+        _contests = c.contests;
+      });
+    } catch (e) {
+      if (!_ready.isCompleted) _ready.complete(null);
+      debugPrint('クラウドにつながらないので、端末の中だけで続けます: $e');
+    }
+  }
+
+  @override
+  void dispose() {
+    requestCloud = () {};
+    super.dispose();
   }
 
   @override
@@ -169,10 +199,23 @@ class _LightRootState extends State<LightRoot> {
       profiles: s.profiles,
       account: _account,
       classrooms: _classrooms,
+      contests: _contests,
       child: const LightApp(),
     );
   }
 }
+
+/// クラウド（Firebase）を読みこみはじめたか
+final cloudRequested = ValueNotifier<bool>(false);
+
+/// クラウドを使う画面（ログイン・クラスルーム）を開くときに呼ぶ。まだなら読みこみはじめる
+void Function() requestCloud = () {};
+
+/// 起動してすぐクラウドにつなぐか：ログインしている・クラスルームに入っている・招待リンクから来た
+bool needsCloudAtStart(LightStores s) =>
+    s.profiles.load().isGoogleLinked ||
+    inviteClassCode() != null ||
+    ClassroomStore(s.books.prefs).codes.isNotEmpty;
 
 /// 何も鳴らさない音の出し先
 class SilentAudio implements AudioBackend {

@@ -38,7 +38,10 @@
     // 古い版を覚えてしまう Service Worker を外す（更新がすぐ反映されるように）
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.getRegistrations().then(function (rs) {
-        rs.forEach(function (r) { r.unregister(); });
+        // つづりクエストLight（/light/）の Service Worker は残す（Light をネットなしで使うため）
+        rs.forEach(function (r) {
+          if (r.scope.indexOf('/light/') < 0) r.unregister();
+        });
       });
     }
   </script>

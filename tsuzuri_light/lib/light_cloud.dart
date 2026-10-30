@@ -5,6 +5,8 @@ import 'package:rpg_game_app/classroom/classroom_backend.dart';
 import 'package:rpg_game_app/cloud/cloud_sync.dart';
 import 'package:rpg_game_app/cloud/firebase_account_service.dart';
 import 'package:rpg_game_app/cloud/firestore_classroom_backend.dart';
+import 'package:rpg_game_app/cloud/firestore_contest_backend.dart';
+import 'package:rpg_game_app/versus/contest_backend.dart';
 import 'package:rpg_game_app/data/meta_store.dart';
 import 'package:rpg_game_app/data/prefs_progress_repository.dart';
 import 'package:rpg_game_app/quiz/question_report.dart';
@@ -12,9 +14,18 @@ import 'package:rpg_game_app/study/personal_books.dart';
 
 /// クラウド（Firebase）につないだあとに使うもの
 class LightCloud {
-  LightCloud(this.account, this.classrooms, this.refresh, this.flush);
+  LightCloud(
+    this.account,
+    this.classrooms,
+    this.contests,
+    this.refresh,
+    this.flush,
+  );
   final AccountService account;
   final ClassroomBackend classrooms;
+
+  /// 週替わり単語バトル（LEAP・EEVI）
+  final ContestBackend contests;
   final Future<void> Function() refresh;
   final Future<void> Function() flush;
 }
@@ -47,6 +58,7 @@ Future<LightCloud?> startCloud({
   return LightCloud(
     FirebaseAccountService(cloud),
     FirestoreClassroomBackend(cloud.auth, FirebaseFirestore.instance),
+    FirestoreContestBackend(cloud.auth, FirebaseFirestore.instance),
     cloud.refresh,
     cloud.flush,
   );

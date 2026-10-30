@@ -99,7 +99,7 @@ class _SetupNeededDialog extends StatelessWidget {
 /// 準備ができたら本物のログインにまかせる。ログインボタンを押したときにまだなら、
 /// 準備が終わるのを少し待つ。つながらなければ、そのことを伝える。
 class PendingAccountService implements AccountService {
-  PendingAccountService(this.ready) {
+  PendingAccountService(this.ready, {this.onNeed}) {
     ready.then((a) => _inner = a, onError: (_) => null);
   }
 
@@ -107,8 +107,12 @@ class PendingAccountService implements AccountService {
   final Future<AccountService?> ready;
   AccountService? _inner;
 
+  /// ログインが必要になったとき（まだクラウドを読みこんでいなければ、読みこみはじめる）
+  final void Function()? onNeed;
+
   Future<AccountService?> _wait() async {
     if (_inner != null) return _inner;
+    onNeed?.call();
     try {
       return await ready.timeout(const Duration(seconds: 30));
     } catch (_) {
