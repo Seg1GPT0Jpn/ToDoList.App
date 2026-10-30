@@ -211,6 +211,8 @@ class _YosouExamListScreenState extends State<YosouExamListScreen> {
                   ? const Center(child: CircularProgressIndicator())
                   : _locked()
             else ...[
+              // 予想問題を開いた人は、みんなランキングの名簿に入る
+              const YosouMemberCard(),
               for (final e in YosouExams.all) _examCard(e, key),
               if (YosouExams.all.any((e) => _store.hasData(e.id)))
                 Padding(

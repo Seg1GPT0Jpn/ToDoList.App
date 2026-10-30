@@ -58,7 +58,7 @@ class _HostState extends State<_Host> {
 void main() {
   final board = YosouRankBackend.boardId(_exam.id);
 
-  testWidgets('1回目の結果をランキングに登録し、自分で採点した点も入る', (t) async {
+  testWidgets('1回目の結果は自動でランキングに入り、自分で採点した点も入る。解いていない人は未回答', (t) async {
     final boards = {
       board: {
         'a': const YosouRankEntry(
@@ -72,17 +72,15 @@ void main() {
       },
     };
     final me = MemoryYosouRankBackend(userId: 'me', boards: boards);
+    // 名簿：予想問題を開いた人（c はまだ解いていない）
+    me.roster.addAll({'a': 'えー', 'me': 'あり', 'c': 'しー'});
     await openScreen(
       t,
       _Host(backend: me, started: _first),
       frames: 5,
       size: const Size(420, 1000),
     );
-    await t.enterText(find.byKey(const ValueKey('yosou-rank-name')), 'あり');
-    expect(find.text('70点でランキングに登録'), findsOneWidget);
-    await t.tap(find.byKey(const ValueKey('yosou-rank-enter')));
-    await _frames(t);
-    expect(boards[board]!['me']!.name, 'あり');
+    expect(boards[board]!['me']!.score, 70);
     expect(find.textContaining('あなたは 2位 / 2人（70/100 点）'), findsOneWidget);
     // 自分で採点すると、ランキングの点も変わる
     await t.tap(find.byKey(const ValueKey('selfscore')));
@@ -95,6 +93,23 @@ void main() {
     await _frames(t);
     expect(find.textContaining('1位　えー　90/100 点'), findsOneWidget);
     expect(find.textContaining('2位　あり（あなた）　76/100 点'), findsOneWidget);
+    expect(find.text('回答 2人・未回答 1人'), findsOneWidget);
+    expect(find.textContaining('−　しー　未回答'), findsOneWidget);
+    expect(t.takeException(), isNull);
+  });
+
+  testWidgets('予想問題を開くと名簿に入り、名前を変えられる', (t) async {
+    final b = MemoryYosouRankBackend(userId: 'me');
+    await openScreen(t, Scaffold(body: YosouMemberCard(backend: b)), frames: 5);
+    expect(b.roster['me'], YosouRankText.noName);
+    expect(find.text('ランキングでの名前：${YosouRankText.noName}'), findsOneWidget);
+    await t.tap(find.byKey(const ValueKey('yosou-member-rename')));
+    await _frames(t, 3);
+    await t.enterText(find.byKey(const ValueKey('yosou-member-name')), 'あり');
+    await t.tap(find.byKey(const ValueKey('yosou-member-save')));
+    await _frames(t);
+    expect(b.roster['me'], 'あり');
+    expect(find.text('ランキングでの名前：あり'), findsOneWidget);
     expect(t.takeException(), isNull);
   });
 
@@ -108,7 +123,6 @@ void main() {
       frames: 5,
     );
     expect(find.byKey(const ValueKey('yosou-rank-retry')), findsOneWidget);
-    expect(find.byKey(const ValueKey('yosou-rank-enter')), findsNothing);
     expect(t.takeException(), isNull);
   });
 

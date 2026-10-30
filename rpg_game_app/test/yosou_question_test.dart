@@ -213,11 +213,20 @@ void main() {
     expect(find.text('5 / 10 点'), findsOneWidget);
     expect(find.text('(1) 正しいものは？'), findsOneWidget);
     expect(find.text('あなたの答え：3. う'), findsOneWidget);
-    await t.ensureVisible(find.byKey(const ValueKey('yosou-self-yosou_t_3-2')));
-    // 画面のはしにあると押しにくいので、少し上に動かしてから押す
+    // 結果の画面を、自分で採点するボタンが見えるところまでスクロールする
+    await t.scrollUntilVisible(
+      find.byKey(const ValueKey('yosou-self-yosou_t_3-2')),
+      200,
+      scrollable: find
+          .descendant(
+            of: find.byKey(const ValueKey('yosou-result')),
+            matching: find.byType(Scrollable),
+          )
+          .first,
+    );
     await t.drag(
       find.byKey(const ValueKey('yosou-result')),
-      const Offset(0, -200),
+      const Offset(0, -150),
     );
     await _frames(t);
     await t.tap(find.byKey(const ValueKey('yosou-self-yosou_t_3-2')));

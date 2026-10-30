@@ -216,6 +216,14 @@ await check('予想ランキング：3日たつと点を入れなおせない', 
   });
   await assertFails(updateDoc(Y(C, 'carol'), { score: 90, unscored: 0, updatedAt: serverTimestamp() }));
 })());
+// 予想問題の名簿
+const M = (who, uid) => doc(who, `yosou_members/${uid}`);
+await check('予想名簿：自分を入れられる', assertSucceeds(setDoc(M(A, 'alice'), { name: 'あり', at: serverTimestamp() })));
+await check('予想名簿：名前を変えられる', assertSucceeds(setDoc(M(A, 'alice'), { name: 'ありす', at: serverTimestamp() })));
+await check('予想名簿：他人は入れられない', assertFails(setDoc(M(A, 'bob'), { name: 'ぼぶ', at: serverTimestamp() })));
+await check('予想名簿：よけいな項目は置けない', assertFails(setDoc(M(B, 'bob'), { name: 'ぼぶ', email: 'x@y', at: serverTimestamp() })));
+await check('予想名簿：ログインすれば読める', assertSucceeds(getDocs(collection(B, 'yosou_members'))));
+await check('予想名簿：ログインなしでは読めない', assertFails(getDocs(collection(N, 'yosou_members'))));
 // 既存のルールが壊れていない
 await check('自分の進行状況は書ける（既存）', assertSucceeds(setDoc(doc(A, 'users/alice/rpg_progress/main'), { level: 1 })));
 await check('他人の進行状況は読めない（既存）', assertFails(getDoc(doc(B, 'users/alice/rpg_progress/main'))));

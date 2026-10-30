@@ -158,11 +158,20 @@ void main() {
     await t.tap(find.byKey(const ValueKey('yosou-override-a')));
     await _frames(t);
     expect(find.text('5 / 12 点'), findsOneWidget);
-    await t.ensureVisible(find.byKey(const ValueKey('yosou-self-c-4')));
-    // 画面のはしにあると押しにくいので、少し上に動かしてから押す
+    // 結果の画面を、自分で採点するボタンが見えるところまでスクロールする
+    await t.scrollUntilVisible(
+      find.byKey(const ValueKey('yosou-self-c-4')),
+      200,
+      scrollable: find
+          .descendant(
+            of: find.byKey(const ValueKey('yosou-result')),
+            matching: find.byType(Scrollable),
+          )
+          .first,
+    );
     await t.drag(
       find.byKey(const ValueKey('yosou-result')),
-      const Offset(0, -200),
+      const Offset(0, -150),
     );
     await _frames(t);
     await t.tap(find.byKey(const ValueKey('yosou-self-c-4')));

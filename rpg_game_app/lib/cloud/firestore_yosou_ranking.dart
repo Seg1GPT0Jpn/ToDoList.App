@@ -105,4 +105,30 @@ class FirestoreYosouRankBackend extends YosouRankBackend {
       _fail(e);
     }
   }
+
+  @override
+  Future<Map<String, String>> members() async {
+    try {
+      final snap = await _db.collection('yosou_members').limit(1000).get();
+      return {
+        for (final d in snap.docs)
+          if (d.data()['name'] is String) d.id: d.data()['name'] as String,
+      };
+    } catch (e) {
+      _fail(e);
+    }
+  }
+
+  @override
+  Future<void> join(String name) async {
+    final uid = _uid();
+    try {
+      await _db.collection('yosou_members').doc(uid).set({
+        'name': name,
+        'at': FieldValue.serverTimestamp(),
+      });
+    } catch (e) {
+      _fail(e);
+    }
+  }
 }

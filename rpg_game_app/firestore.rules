@@ -7,7 +7,7 @@ rules_version = '2';
 // クラスルーム（classrooms）は、コードを知っている人が読み、メンバーが自分の分を書ける（下のルール）。
 // 週替わり単語バトル（vocab_contest_config・vocab_contests）は、日程はだれでも読めて管理者だけが書け、
 // 参加記録はその日のうちに1人1回だけ作れる（下のルール）。
-// 予想問題のランキング（yosou_rankings）は、ログインした人が読み、自分の分を1回だけ登録できる（下のルール）。
+// 予想問題のランキング（yosou_rankings・名簿の yosou_members）は、ログインした人が読み、自分の分を1回だけ登録できる（下のルール）。
 // ほかのコレクション（ほかの人のデータを含む）は、だれも読み書きできない。
 service cloud.firestore {
   match /databases/{database}/documents {
@@ -361,6 +361,20 @@ service cloud.firestore {
         && request.resource.data.score >= resource.data.score
         && request.resource.data.score <= 10000
         && request.resource.data.updatedAt == request.time;
+      allow delete: if false;
+    }
+
+    // 予想問題を開いている人の名簿（ランキングで「未回答」として並べる）。置くのは名前だけ。
+    // ログインした人が読め、自分の分だけ書ける。
+    match /yosou_members/{uid} {
+      allow read: if request.auth != null;
+      allow create, update: if request.auth != null
+        && request.auth.uid == uid
+        && request.resource.data.keys().hasOnly(['name', 'at'])
+        && request.resource.data.name is string
+        && request.resource.data.name.size() > 0
+        && request.resource.data.name.size() <= 20
+        && request.resource.data.at == request.time;
       allow delete: if false;
     }
 

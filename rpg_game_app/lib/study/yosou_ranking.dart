@@ -87,6 +87,12 @@ abstract class YosouRankBackend {
 
   /// 登録した人数と、自分より点数の高い人数
   Future<({int players, int above})> standing(String examId, int score);
+
+  /// 予想問題を開いている人（学校のパスワードを入れた人）の名簿：uid → ランキングでの名前
+  Future<Map<String, String>> members();
+
+  /// 名簿に自分を入れる（名前を変えるときも）
+  Future<void> join(String name);
 }
 
 /// テストとサーバーのない版の、端末の中だけの保存先
@@ -143,6 +149,15 @@ class MemoryYosouRankBackend extends YosouRankBackend {
           .take(limit)
           .toList();
 
+  /// 名簿：uid → 名前
+  final Map<String, String> roster = {};
+
+  @override
+  Future<Map<String, String>> members() async => {...roster};
+
+  @override
+  Future<void> join(String name) async => roster[_uid()] = name;
+
   @override
   Future<({int players, int above})> standing(String examId, int score) async {
     final all = boards[examId]?.values ?? const <YosouRankEntry>[];
@@ -158,9 +173,13 @@ class YosouRankText {
 
   static const needLogin = 'ランキングは、Google でログインすると参加できます';
   static const rule =
+      '予想問題を開いている人は全員ランキングに入り、まだ解いていない人は「未回答」になります。'
       '順位に入るのは、1回目に解いた結果だけです（解き直した回は入りません）。'
       '自分で採点する欄の点は、提出から3日のあいだ直せます。'
       'みんなに見えるのはニックネームと点数・かかった時間だけです。';
+
+  /// 名前がまだないときの名前
+  static const noName = 'ニックネーム未設定';
 }
 
 /// 結果の画面に出す、ランキングへの登録と自分の順位
@@ -198,7 +217,6 @@ class _YosouRankCardState extends State<YosouRankCard> {
   final _name = TextEditingController();
   Future<(YosouRankEntry?, ({int players, int above})?)>? _load;
   String? _error;
-  bool _busy = false;
 
   YosouRankBackend? get _backend =>
       widget.backend ?? RpgServices.of(context).yosouRanking;
@@ -215,7 +233,7 @@ class _YosouRankCardState extends State<YosouRankCard> {
     super.didChangeDependencies();
     if (_load != null) return;
     _name.text = RpgServices.of(context).classroomStore.nickname;
-    _reload();
+    _reload(enter: true);
   }
 
   @override
@@ -233,14 +251,40 @@ class _YosouRankCardState extends State<YosouRankCard> {
     super.dispose();
   }
 
-  void _reload() {
+  /// 自分の順位を読む。[enter] なら、1回目の結果をまだ登録していなければ登録する
+  void _reload({bool enter = false}) {
     final b = _backend;
     if (b == null || b.userId == null) return;
+    final name = Classroom.cleanName(
+      _name.text,
+      fallback: YosouRankText.noName,
+    );
     _load = () async {
-      final m = await b.mine(_board);
+      var m = await b.mine(_board);
+      if (m == null && enter && _first) {
+        try {
+          await b.enter(_board, _entry(b.userId!, name));
+          // 名簿の名前があれば、そちらを使う
+          final roster = await b.members();
+          if (!roster.containsKey(b.userId)) await b.join(name);
+        } on DuelException {
+          // もう登録ずみなど
+        }
+        m = await b.mine(_board);
+      }
       return (m, m == null ? null : await b.standing(_board, m.score));
     }();
   }
+
+  YosouRankEntry _entry(String uid, String name) => YosouRankEntry(
+    uid: uid,
+    name: name,
+    score: widget.score,
+    total: widget.total,
+    spent: widget.spent.inSeconds,
+    start: widget.attempt.startedAt.millisecondsSinceEpoch,
+    unscored: widget.unscored,
+  );
 
   Future<void> _rescore() async {
     final b = _backend;
@@ -255,40 +299,6 @@ class _YosouRankCardState extends State<YosouRankCard> {
       if (mounted) setState(_reload);
     } on DuelException {
       // 3日たったなど。表示は前の点のまま
-    }
-  }
-
-  Future<void> _enter() async {
-    final b = _backend!;
-    final name = Classroom.cleanName(_name.text, fallback: 'あなた');
-    setState(() {
-      _busy = true;
-      _error = null;
-    });
-    try {
-      await b.enter(
-        _board,
-        YosouRankEntry(
-          uid: b.userId!,
-          name: name,
-          score: widget.score,
-          total: widget.total,
-          spent: widget.spent.inSeconds,
-          start: widget.attempt.startedAt.millisecondsSinceEpoch,
-          unscored: widget.unscored,
-        ),
-      );
-      if (!mounted) return;
-      await RpgServices.of(context).classroomStore.setNickname(name);
-    } on DuelException catch (e) {
-      if (mounted) setState(() => _error = e.message);
-    } finally {
-      if (mounted) {
-        setState(() {
-          _busy = false;
-          _reload();
-        });
-      }
     }
   }
 
@@ -324,26 +334,7 @@ class _YosouRankCardState extends State<YosouRankCard> {
               key: ValueKey('yosou-rank-retry'),
             );
           }
-          return Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              TextField(
-                key: const ValueKey('yosou-rank-name'),
-                controller: _name,
-                maxLength: Classroom.maxName,
-                decoration: const InputDecoration(
-                  labelText: 'ニックネーム（みんなに見えます）',
-                  isDense: true,
-                ),
-              ),
-              FilledButton.icon(
-                key: const ValueKey('yosou-rank-enter'),
-                onPressed: _busy ? null : _enter,
-                icon: const Icon(Icons.emoji_events_outlined),
-                label: Text('${widget.score}点でランキングに登録'),
-              ),
-            ],
-          );
+          return const Text('ランキングに登録できませんでした。あとで開きなおしてください');
         },
       );
     }
@@ -391,7 +382,14 @@ class YosouRankingScreen extends StatefulWidget {
 }
 
 class _YosouRankingScreenState extends State<YosouRankingScreen> {
-  Future<(List<YosouRankEntry>, YosouRankEntry?, ({int players, int above})?)>?
+  Future<
+    (
+      List<YosouRankEntry>,
+      YosouRankEntry?,
+      ({int players, int above})?,
+      Map<String, String>,
+    )
+  >?
   _load;
 
   YosouRankBackend? get _backend =>
@@ -403,16 +401,24 @@ class _YosouRankingScreenState extends State<YosouRankingScreen> {
     _load ??= _fetch();
   }
 
-  Future<(List<YosouRankEntry>, YosouRankEntry?, ({int players, int above})?)>
+  Future<
+    (
+      List<YosouRankEntry>,
+      YosouRankEntry?,
+      ({int players, int above})?,
+      Map<String, String>,
+    )
+  >
   _fetch() async {
     final b = _backend;
-    if (b == null || b.userId == null)
-      return (const <YosouRankEntry>[], null, null);
+    if (b == null || b.userId == null) {
+      return (const <YosouRankEntry>[], null, null, const <String, String>{});
+    }
     final id = YosouRankBackend.boardId(widget.exam.id);
-    final rows = await b.ranking(id);
+    final rows = await b.ranking(id, limit: 500);
     final mine = await b.mine(id);
     final st = mine == null ? null : await b.standing(id, mine.score);
-    return (rows, mine, st);
+    return (rows, mine, st, await b.members());
   }
 
   @override
@@ -449,7 +455,15 @@ class _YosouRankingScreenState extends State<YosouRankingScreen> {
                   if (data == null) {
                     return const Center(child: CircularProgressIndicator());
                   }
-                  final (rows, mine, st) = data;
+                  final (rows, mine, st, roster) = data;
+                  // 名前は名簿のもの（変えていればそちら）
+                  String nameOf(String uid, String fallback) =>
+                      roster[uid] ?? fallback;
+                  final answered = {for (final e in rows) e.uid};
+                  final waiting = [
+                    for (final e in roster.entries)
+                      if (!answered.contains(e.key)) e,
+                  ]..sort((a, b) => a.value.compareTo(b.value));
                   int rankOf(YosouRankEntry e) =>
                       1 + rows.where((o) => o.score > e.score).length;
                   return ListView(
@@ -472,15 +486,19 @@ class _YosouRankingScreenState extends State<YosouRankingScreen> {
                           key: const ValueKey('yosou-ranking-mine'),
                           style: serif(17),
                         ),
+                      Text(
+                        '回答 ${rows.length}人・未回答 ${waiting.length}人',
+                        key: const ValueKey('yosou-ranking-count'),
+                      ),
                       const SizedBox(height: 8),
                       if (rows.isEmpty)
-                        const Text('まだだれも登録していません')
+                        const Text('まだだれも解いていません')
                       else
                         for (final (i, e) in rows.indexed)
                           Padding(
                             padding: const EdgeInsets.symmetric(vertical: 2),
                             child: Text(
-                              '${rankOf(e)}位　${e.name}${e.uid == me ? '（あなた）' : ''}　'
+                              '${rankOf(e)}位　${nameOf(e.uid, e.name)}${e.uid == me ? '（あなた）' : ''}　'
                               '${e.score}/${e.total} 点'
                               '　${e.spent ~/ 60}分${e.unscored > 0 ? '　未採点${e.unscored}' : ''}',
                               key: ValueKey('yosou-ranking-row-$i'),
@@ -491,6 +509,145 @@ class _YosouRankingScreenState extends State<YosouRankingScreen> {
                               ),
                             ),
                           ),
+                      if (waiting.isNotEmpty) ...[
+                        const SizedBox(height: 12),
+                        Text('未回答', style: serif(15)),
+                        for (final w in waiting)
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 2),
+                            child: Text(
+                              '−　${w.value}${w.key == me ? '（あなた）' : ''}　未回答',
+                              key: ValueKey('yosou-ranking-waiting-${w.key}'),
+                              style: TextStyle(color: TsuzuriColors.inkSoft),
+                            ),
+                          ),
+                      ],
+                    ],
+                  );
+                },
+              ),
+      ),
+    );
+  }
+}
+
+/// 予想問題の一覧に出す、ランキングでの名前（開いたら名簿に入る）
+class YosouMemberCard extends StatefulWidget {
+  const YosouMemberCard({super.key, this.backend});
+
+  /// テスト用（ふだんは RpgServices.yosouRanking）
+  final YosouRankBackend? backend;
+
+  @override
+  State<YosouMemberCard> createState() => _YosouMemberCardState();
+}
+
+class _YosouMemberCardState extends State<YosouMemberCard> {
+  Future<String?>? _load;
+
+  YosouRankBackend? get _backend =>
+      widget.backend ?? RpgServices.of(context).yosouRanking;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _load ??= _joined();
+  }
+
+  /// 名簿の自分の名前（まだ入っていなければ、ニックネームで入る）
+  Future<String?> _joined() async {
+    final b = _backend;
+    if (b == null || b.userId == null) return null;
+    final nick = RpgServices.of(context).classroomStore.nickname;
+    final roster = await b.members();
+    final mine = roster[b.userId];
+    if (mine != null) return mine;
+    final name = Classroom.cleanName(nick, fallback: YosouRankText.noName);
+    await b.join(name);
+    return name;
+  }
+
+  Future<void> _rename(String now) async {
+    final c = TextEditingController(
+      text: now == YosouRankText.noName ? '' : now,
+    );
+    final name = await showDialog<String>(
+      context: context,
+      builder: (d) => AlertDialog(
+        title: const Text('ランキングでの名前'),
+        content: TextField(
+          key: const ValueKey('yosou-member-name'),
+          controller: c,
+          maxLength: Classroom.maxName,
+          autofocus: true,
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(d),
+            child: const Text('やめる'),
+          ),
+          FilledButton(
+            key: const ValueKey('yosou-member-save'),
+            onPressed: () => Navigator.pop(d, c.text),
+            child: const Text('決める'),
+          ),
+        ],
+      ),
+    );
+    // 閉じるアニメーションのあいだも入力欄が使われるので、ここでは捨てない
+    if (name == null || !mounted) return;
+    final clean = Classroom.cleanName(name, fallback: YosouRankText.noName);
+    final services = RpgServices.of(context);
+    try {
+      await _backend!.join(clean);
+      await services.classroomStore.setNickname(clean);
+    } on DuelException catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context)
+            .showSnackBar(SnackBar(content: Text(e.message)));
+      }
+    }
+    if (mounted) {
+      setState(() {
+        _load = _joined();
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final b = _backend;
+    if (b == null) return const SizedBox.shrink();
+    return Card(
+      key: const ValueKey('yosou-member-card'),
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(14, 10, 8, 10),
+        child: b.userId == null
+            ? const Text(YosouRankText.needLogin)
+            : FutureBuilder<String?>(
+                future: _load,
+                builder: (context, snap) {
+                  final name = snap.data;
+                  return Row(
+                    children: [
+                      const Icon(Icons.emoji_events_outlined, size: 20),
+                      const SizedBox(width: 8),
+                      Expanded(
+                        child: Text(
+                          snap.hasError
+                              ? 'ランキングの名簿を読めませんでした'
+                              : name == null
+                              ? 'ランキングの名簿を読んでいます…'
+                              : 'ランキングでの名前：$name',
+                          key: const ValueKey('yosou-member-label'),
+                        ),
+                      ),
+                      if (name != null)
+                        TextButton(
+                          key: const ValueKey('yosou-member-rename'),
+                          onPressed: () => _rename(name),
+                          child: const Text('変える'),
+                        ),
                     ],
                   );
                 },
