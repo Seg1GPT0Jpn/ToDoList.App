@@ -19,7 +19,17 @@ class AppSettings {
     this.allFeatures = false,
     this.vibration = true,
     this.difficulty = 'normal',
+    this.quizAmount = 'normal',
   });
+
+  /// 1回に解く問題の量（つづりクエストLight の定期テストの海・復習などのむずかしさ）。
+  /// easy（かんたん）・normal（ふつう）・hard（むずかしい）
+  final String quizAmount;
+
+  static const quizAmounts = {'easy': 5, 'normal': 10, 'hard': 20};
+
+  /// 1回に解く問題の数
+  int get quizCount => quizAmounts[quizAmount] ?? quizAmounts['normal']!;
 
   /// バトルのむずかしさ（BattleDifficulty の名前）
   final String difficulty;
@@ -67,6 +77,7 @@ class AppSettings {
     bool? allFeatures,
     bool? vibration,
     String? difficulty,
+    String? quizAmount,
   }) => AppSettings(
     bgm: bgm ?? this.bgm,
     se: se ?? this.se,
@@ -80,6 +91,7 @@ class AppSettings {
     allFeatures: allFeatures ?? this.allFeatures,
     vibration: vibration ?? this.vibration,
     difficulty: difficulty ?? this.difficulty,
+    quizAmount: quizAmount ?? this.quizAmount,
   );
 
   Map<String, dynamic> toMap() => {
@@ -95,6 +107,7 @@ class AppSettings {
     'allFeatures': allFeatures,
     'vibration': vibration,
     'difficulty': difficulty,
+    'quizAmount': quizAmount,
   };
 
   factory AppSettings.fromMap(Map<String, dynamic> m) {
@@ -112,6 +125,9 @@ class AppSettings {
       allFeatures: m['allFeatures'] as bool? ?? false,
       vibration: m['vibration'] as bool? ?? true,
       difficulty: m['difficulty'] as String? ?? 'normal',
+      quizAmount: quizAmounts.containsKey(m['quizAmount'])
+          ? m['quizAmount'] as String
+          : 'normal',
     );
   }
 }

@@ -191,19 +191,22 @@ void main() {
     expect(t.takeException(), isNull);
   });
 
-  test('白黒のときは、色をすべて同じ明るさの灰色にする', () {
+  test('白黒のときは、背景・文字・線を灰色にし、差し色と正解・不正解だけ色を残す', () {
     TsuzuriColors.mono = true;
     addTearDown(() => TsuzuriColors.mono = false);
     for (final c in [
-      TsuzuriColors.accent,
       TsuzuriColors.paper,
+      TsuzuriColors.ink,
       TsuzuriColors.marginLine,
       TsuzuriColors.tint(0xFFE3F2FD),
-      buildTheme(Brightness.light).colorScheme.primary,
     ]) {
       expect(c.r, c.g);
       expect(c.g, c.b);
     }
+    final accent = TsuzuriColors.accent;
+    expect(accent.r == accent.g && accent.g == accent.b, isFalse);
+    expect(buildTheme(Brightness.light).colorScheme.primary, accent);
+    expect(TsuzuriColors.correct, isNot(TsuzuriColors.wrong));
   });
 
   test('本文のフォントは pubspec の Roboto（中身は Noto Sans JP）を使い、google_fonts を使わない', () {

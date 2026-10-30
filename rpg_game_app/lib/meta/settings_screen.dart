@@ -31,6 +31,43 @@ class SettingsScreen extends StatelessWidget {
               Space.xl,
             ),
             children: [
+              // Light のむずかしさは、1回に解く問題の量（定期テストの海・復習など）
+              if (lightEdition) ...[
+                const SectionTitle('むずかしさ（1回の問題の量）'),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
+                  child: SegmentedButton<String>(
+                    key: const ValueKey('quiz-amount'),
+                    segments: [
+                      for (final (id, label) in const [
+                        ('easy', 'かんたん'),
+                        ('normal', 'ふつう'),
+                        ('hard', 'むずかしい'),
+                      ])
+                        ButtonSegment(
+                          value: id,
+                          label: Text(
+                            '$label\n${AppSettings.quizAmounts[id]}問',
+                          ),
+                        ),
+                    ],
+                    selected: {s.quizAmount},
+                    onSelectionChanged: (v) =>
+                        store.update(s.copyWith(quizAmount: v.first)),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
+                  child: Text(
+                    '定期テストの海・復習などで、1回に解く問題の数です（まちがえた問題はもう一度出ます）',
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: TsuzuriColors.inkSoft,
+                    ),
+                  ),
+                ),
+                const SizedBox(height: Space.l),
+              ],
               // Light は音を使わないので、音の設定は出さない
               if (!lightEdition) ...[
                 const SectionTitle('音'),

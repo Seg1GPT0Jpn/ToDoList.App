@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:rpg_game/rpg_game.dart';
 import 'package:rpg_game_app/app/services.dart';
+import 'package:rpg_game_app/app/settings.dart';
 import 'package:rpg_game_app/study/study_quiz_screen.dart';
 
 import 'harness.dart';
@@ -104,6 +105,41 @@ void main() {
     for (final q in questions) {
       expect(services.meta.record[q.id], isNotNull, reason: q.id);
     }
+    expect(t.takeException(), isNull);
+  });
+
+  testWidgets('1回に解く問題の数は、設定の「問題の量」（かんたん5・ふつう10・むずかしい20）', (t) async {
+    expect(AppSettings.fromMap({'quizAmount': 'hard'}).quizCount, 20);
+    expect(AppSettings.fromMap({'quizAmount': 'xxx'}).quizCount, 10);
+    expect(
+      AppSettings.fromMap(const AppSettings(quizAmount: 'easy').toMap())
+          .quizCount,
+      5,
+    );
+    final services = await openScreen(
+      t,
+      const SizedBox(),
+      settings: const AppSettings(quizAmount: 'easy'),
+    );
+    late List<QuizQuestion> questions;
+    await t.runAsync(() async {
+      final setId = (await RpgServices.questionSetsOf('english')).keys.first;
+      final set = (await services.questions.load(setId))!;
+      questions = set.questions.where((q) => q.isChoice).take(8).toList();
+    });
+    t
+        .state<NavigatorState>(find.byType(Navigator))
+        .push(
+          MaterialPageRoute<void>(
+            builder: (_) => StudyQuizScreen(
+              title: '練習',
+              subject: 'english',
+              questions: questions,
+            ),
+          ),
+        );
+    await _frames(t);
+    expect(find.text('1 / 5'), findsOneWidget);
     expect(t.takeException(), isNull);
   });
 }

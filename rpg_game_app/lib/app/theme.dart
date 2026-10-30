@@ -11,7 +11,7 @@ class TsuzuriColors {
   /// ダークモードで表示しているか（アプリの一番上で、設定と端末の設定から決める）
   static bool dark = false;
 
-  /// 色を使わず白黒で描くか（つづりクエストLight）
+  /// 背景・文字を白黒で描き、色は差し色（[accent]）と正解・不正解の色だけにするか（つづりクエストLight）
   static bool mono = false;
 
   static Color _pick(int light, int darkColor) =>
@@ -24,7 +24,10 @@ class TsuzuriColors {
     return Color.fromARGB((c.a * 255).round(), v, v, v);
   }
 
-  static Color get accent => _pick(0xFF6D4C41, 0xFFC9A48C); // こげ茶
+  static Color get accent => mono
+      // Light：背景・文字は白黒、差し色だけ青緑
+      ? Color(dark ? 0xFF6FCFC9 : 0xFF1F8A85)
+      : _pick(0xFF6D4C41, 0xFFC9A48C); // こげ茶
   static Color get paper => _pick(0xFFFAF6EE, 0xFF1E1A16); // 背景（生成り）
   static Color get card => _pick(0xFFFFFDF8, 0xFF2A241F);
   static const darkBg = Color(0xFF1E1A16);
@@ -86,10 +89,11 @@ ThemeData buildTheme(Brightness brightness) {
   final mono = TsuzuriColors.mono;
   final scheme = mono
       ? ColorScheme.fromSeed(
-          seedColor: const Color(0xFF808080),
+          seedColor: TsuzuriColors.accent,
           brightness: brightness,
           dynamicSchemeVariant: DynamicSchemeVariant.monochrome,
-          primary: dark ? Colors.white : Colors.black,
+          primary: dark ? const Color(0xFF6FCFC9) : const Color(0xFF1F8A85),
+          onPrimary: dark ? Colors.black : Colors.white,
           surface: dark ? Colors.black : Colors.white,
         )
       : ColorScheme.fromSeed(

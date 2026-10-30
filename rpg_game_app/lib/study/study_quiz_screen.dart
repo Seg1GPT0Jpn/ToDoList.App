@@ -22,7 +22,7 @@ class StudyQuizScreen extends StatefulWidget {
     required this.subject,
     required this.questions,
     this.record = true,
-    this.limit = maxQuestions,
+    this.limit,
     this.onFinished,
     this.random,
   });
@@ -36,14 +36,12 @@ class StudyQuizScreen extends StatefulWidget {
   /// 学習記録に残すか（その場で作った問題の確認などでは残さない）
   final bool record;
 
-  /// 1回に出す問題の数（もう一度出す分はふくまない）
-  final int limit;
+  /// 1回に出す問題の数（もう一度出す分はふくまない）。null なら設定の「問題の量」
+  final int? limit;
 
   /// 終わったとき（正解の数・答えた数）
   final void Function(int correct, int answered)? onFinished;
   final Random? random;
-
-  static const maxQuestions = 15;
 
   @override
   State<StudyQuizScreen> createState() => _StudyQuizScreenState();
@@ -81,7 +79,8 @@ class _StudyQuizScreenState extends State<StudyQuizScreen> {
         RpgServices.today(),
       ),
     );
-    final n = min(widget.limit, widget.questions.length);
+    final limit = widget.limit ?? _services.settings.value.quizCount;
+    final n = min(limit, widget.questions.length);
     return [for (var i = 0; i < n; i++) deck.draw()];
   }
 

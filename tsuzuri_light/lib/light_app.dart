@@ -8,14 +8,6 @@ import 'light_home.dart';
 import 'light_pages.dart' deferred as pages;
 import 'main.dart' show inviteClassCode, requestCloud;
 
-/// 色を明るさだけにする
-const _grayscale = ColorFilter.matrix([
-  0.299, 0.587, 0.114, 0, 0, //
-  0.299, 0.587, 0.114, 0, 0, //
-  0.299, 0.587, 0.114, 0, 0, //
-  0, 0, 0, 1, 0, //
-]);
-
 class LightApp extends StatefulWidget {
   const LightApp({super.key});
 
@@ -84,8 +76,7 @@ class _LightAppState extends State<LightApp> with WidgetsBindingObserver {
                 textScaler: TextScaler.linear(s.textScale),
                 disableAnimations: true,
               ),
-              // 白黒で描く（色をつけている絵や印も灰色にする）
-              child: ColorFiltered(colorFilter: _grayscale, child: child!),
+              child: child!,
             );
           },
           home: const _FirstRun(child: LightHome()),

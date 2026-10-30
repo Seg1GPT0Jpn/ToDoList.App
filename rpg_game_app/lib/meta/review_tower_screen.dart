@@ -23,8 +23,9 @@ class _ReviewTowerScreenState extends State<ReviewTowerScreen> {
   /// 選んだ階（null なら、これまでどおりのおまかせ）
   TowerFloor? _towerFloor;
 
-  /// 1回の挑戦で出す問題の数
-  static const _size = 10;
+  /// 1回の挑戦で出す問題の数（Light は設定の「問題の量」）
+  int get _size =>
+      lightEdition ? RpgServices.of(context).settings.value.quizCount : 10;
 
   Future<List<(ReviewItem, QuizQuestion)>> _load(RpgServices services) async {
     final f = _towerFloor;
