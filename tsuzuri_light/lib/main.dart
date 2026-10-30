@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:rpg_game/rpg_game.dart';
 import 'package:rpg_game_app/account/account_service.dart';
 import 'package:rpg_game_app/account/profile_repository.dart';
@@ -32,13 +33,14 @@ Future<void> main() async {
   // つづりクエストの同梱ファイル（単語帳・資料など）を部品の中から読む
   appAssetPrefix = 'packages/rpg_game_app/';
   sansOnly = true;
+  // 本文のフォントは pubspec で Roboto として登録してあり、描画エンジンが起動時に読む
+  // （字を描く前に読み終わるので、ネットの別のフォントを取りに行かない）
+  bundledSans = 'Roboto';
+  LicenseRegistry.addLicense(() async* {
+    final text = await rootBundle.loadString('assets/fonts/OFL-NotoSansJP.txt');
+    yield LicenseEntryWithLineBreaks(['Noto Sans JP'], text);
+  });
   TsuzuriColors.mono = true;
-  // 字を描く前に本文のフォントを読む（ネットのフォントを取りに行かないように）
-  try {
-    await loadBodyFont().timeout(const Duration(seconds: 20));
-  } catch (e) {
-    debugPrint('フォントを読みこめませんでした: $e');
-  }
   final prefs = await SharedPreferences.getInstance();
   await SchoolExamStore.migrate(prefs);
   final stores = LightStores(

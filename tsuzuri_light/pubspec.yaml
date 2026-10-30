@@ -27,3 +27,11 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/fonts/OFL-NotoSansJP.txt
+  # 本文の Noto Sans JP（つづりクエストと同じファイル。SIL OFL）を Roboto の名前で登録する。
+  # 描画エンジンは Roboto がないと別に取りに行く（約170KB）ので、そのかわりにこれを使わせる
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/NotoSansJP-Regular.ttf

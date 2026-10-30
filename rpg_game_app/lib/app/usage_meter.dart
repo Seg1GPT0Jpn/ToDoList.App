@@ -21,7 +21,10 @@ class UsageMeter {
   UsageMeter(this._prefs, this._sink, this._enabled);
 
   final SharedPreferences _prefs;
-  final UsageSink? _sink;
+  UsageSink? _sink;
+
+  /// 送り先（クラウドにつながったあとで差しこむ）
+  set sink(UsageSink? value) => _sink = value;
   final bool Function() _enabled;
 
   static const _key = 'usage_sent_v1';

@@ -165,4 +165,18 @@ void main() {
       expect(c.g, c.b);
     }
   });
+
+  test('本文のフォントは pubspec の Roboto（中身は Noto Sans JP）を使い、google_fonts を使わない', () {
+    sansOnly = true;
+    bundledSans = 'Roboto';
+    addTearDown(() {
+      sansOnly = false;
+      bundledSans = null;
+    });
+    final t = buildTheme(Brightness.light).textTheme;
+    expect(t.bodyMedium!.fontFamily, 'Roboto');
+    expect(t.titleLarge!.fontFamily, 'Roboto');
+    expect(t.titleLarge!.fontWeight, FontWeight.w700);
+    expect(serif(18).fontFamily, 'Roboto');
+  });
 }

@@ -16,8 +16,15 @@ class PlayerBackend implements AudioBackend {
   /// 自動再生の制限で止められた
   bool blocked = false;
 
-  AudioPlayer _channel(String name) =>
-      _channels.putIfAbsent(name, () => AudioPlayer(playerId: 'ch_$name'));
+  AudioPlayer _channel(String name) => _channels.putIfAbsent(
+    name,
+    () => _quiet(AudioPlayer(playerId: 'ch_$name')),
+  );
+
+  /// 再生位置を調べない。audioplayers は鳴っている間、位置を知らせるために
+  /// 毎フレーム画面の描きなおしを予約するので、何もしていない画面でも毎秒60回描いてしまう
+  /// （このアプリは再生位置を使わない）
+  static AudioPlayer _quiet(AudioPlayer p) => p..positionUpdater = null;
 
   @override
   Future<void> loop(String channel, String asset, double volume) async {
@@ -54,7 +61,7 @@ class PlayerBackend implements AudioBackend {
   @override
   Future<void> once(String asset, double volume) async {
     if (_pool.length < 6) {
-      _pool.add(AudioPlayer()..setReleaseMode(ReleaseMode.stop));
+      _pool.add(_quiet(AudioPlayer())..setReleaseMode(ReleaseMode.stop));
     }
     final p = _pool[_next++ % _pool.length];
     try {

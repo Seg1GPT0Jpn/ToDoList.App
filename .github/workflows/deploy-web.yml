@@ -34,7 +34,7 @@ jobs:
         working-directory: rpg_game_app
         run: |
           flutter pub get
-          flutter build web --release --pwa-strategy=none
+          flutter build web --wasm --release --pwa-strategy=none
       # つづりクエストLight は同じサイトの /light/ に置く（同じ保存場所・同じログインを使う）
       - name: Light版をビルド
         if: env.HAS_KEY == 'true'

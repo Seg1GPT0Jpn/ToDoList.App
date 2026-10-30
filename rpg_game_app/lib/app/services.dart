@@ -104,48 +104,69 @@ class RpgServices extends InheritedWidget {
   final TsuzuriBackend? tsuzuriBackend;
 
   /// 日ごと・教科ごとの勉強時間と問題数
-  late final StudyLogStore studyLog = StudyLogStore(personalBooks.prefs);
+  late final StudyLogStore studyLog = _keep(
+    () => StudyLogStore(personalBooks.prefs),
+  );
 
   /// まちがいの種類（うっかり・知らなかった など）
-  late final MistakeLogStore mistakes = MistakeLogStore(personalBooks.prefs);
+  late final MistakeLogStore mistakes = _keep(
+    () => MistakeLogStore(personalBooks.prefs),
+  );
 
   /// つづりとの連携（使えない版では null）。はじめて使うときに前回の接続を確かめる
   late final TsuzuriLinkController? tsuzuri = () {
     final backend = tsuzuriBackend;
     if (backend == null) return null;
-    final c = TsuzuriLinkController(
-      backend,
-      personalBooks.prefs,
-      log: () => studyLog.log,
-      record: () => meta.record,
-    );
-    studyLog.onSaved = c.scheduleSync;
-    unawaited(c.start());
-    return c;
+    return _keep(() {
+      final c = TsuzuriLinkController(
+        backend,
+        personalBooks.prefs,
+        log: () => studyLog.log,
+        record: () => meta.record,
+      );
+      studyLog.onSaved = c.scheduleSync;
+      unawaited(c.start());
+      return c;
+    });
   }();
 
   /// 使った機能を数える（名前・ID は送らない。設定で止められる）
-  late final UsageMeter usage = UsageMeter(
-    personalBooks.prefs,
-    usageSink,
-    () => settings.value.shareUsage,
-  );
+  late final UsageMeter usage = () {
+    final u = _keep(
+      () => UsageMeter(
+        personalBooks.prefs,
+        usageSink,
+        () => settings.value.shareUsage,
+      ),
+    );
+    if (usageSink != null) u.sink = usageSink;
+    return u;
+  }();
 
   /// この端末で入っているクラスルーム
-  late final ClassroomStore classroomStore = ClassroomStore(
-    personalBooks.prefs,
+  late final ClassroomStore classroomStore = _keep(
+    () => ClassroomStore(personalBooks.prefs),
   );
 
   /// ゆるい連続記録とお休み券
-  late final StreakStore streak = StreakStore(personalBooks.prefs);
+  late final StreakStore streak = _keep(() => StreakStore(personalBooks.prefs));
 
   /// 振動
-  late final Haptics haptics = Haptics(settings);
+  late final Haptics haptics = _keep(() => Haptics(settings));
 
   /// ホームの機能の「NEW」
-  late final HomeFeatureStore homeFeatures = HomeFeatureStore(
-    personalBooks.prefs,
+  late final HomeFeatureStore homeFeatures = _keep(
+    () => HomeFeatureStore(personalBooks.prefs),
   );
+
+  /// クラウドにつながったあとなどで RpgServices を作りなおしても、同じ部品を使う。
+  /// 作りなおすたびに新しく作ると、記録や「NEW」の状態が古いものと新しいものに分かれてしまう
+  static final _kept = Expando<Map<Type, Object>>();
+
+  T _keep<T extends Object>(T Function() make) {
+    final m = _kept[personalBooks] ??= {};
+    return (m[T] ??= make()) as T;
+  }
 
   /// Google Play Billing。Web 版や Firebase 未設定版では null。
   final GooglePlayPurchaseService? purchaseService;
@@ -279,7 +300,13 @@ class RpgServices extends InheritedWidget {
   bool updateShouldNotify(RpgServices oldWidget) =>
       repository != oldWidget.repository ||
       purchaseService != oldWidget.purchaseService ||
-      // つづりクエストLight は、クラウドの準備ができたあとでログイン・クラスルームを差しこむ
+      // クラウドの準備ができたあとで、ログイン・クラスルームなどを差しこむ
       account != oldWidget.account ||
-      classrooms != oldWidget.classrooms;
+      classrooms != oldWidget.classrooms ||
+      versusRooms != oldWidget.versusRooms ||
+      duels != oldWidget.duels ||
+      contests != oldWidget.contests ||
+      yosouRanking != oldWidget.yosouRanking ||
+      matchmaking != oldWidget.matchmaking ||
+      tsuzuriBackend != oldWidget.tsuzuriBackend;
 }

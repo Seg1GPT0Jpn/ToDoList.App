@@ -55,10 +55,18 @@ class TsuzuriColors {
 /// つづりクエストLight で使う
 bool sansOnly = false;
 
+/// 本文のフォントを、アプリの pubspec の `fonts:` で登録した名前で使う（つづりクエストLight は 'Roboto'）。
+/// 描画エンジンは起動時にこのフォントを読み、Roboto を別に取りに行かない。google_fonts も使わない
+String? bundledSans;
+
 /// 本文のフォントを読みこみ終わるまで待つ。読みこむ前に字を描くと、足りない字を
 /// ネットの別のフォント（中国語用の Noto など）から何度も取りに行って通信が増える
+/// （sansOnly でなければ、見出しの明朝体もいっしょに読む）
 Future<void> loadBodyFont() async {
+  // エンジンが起動時に読んでいる
+  if (bundledSans != null) return;
   GoogleFonts.notoSansJp();
+  if (!sansOnly) GoogleFonts.notoSerifJp(fontWeight: FontWeight.w700);
   await GoogleFonts.pendingFonts();
 }
 
@@ -95,7 +103,10 @@ ThemeData buildTheme(Brightness brightness) {
         : const Color(0xFFFAF6EE),
   );
   // 本文のフォントは Regular の1つだけを持つ（読みこみを軽くするため、中くらいの太さも Regular で描く）
-  final body = GoogleFonts.notoSansJpTextTheme(_regularOnly(base.textTheme));
+  final sans = bundledSans;
+  final body = sans != null
+      ? _regularOnly(base.textTheme).apply(fontFamily: sans)
+      : GoogleFonts.notoSansJpTextTheme(_regularOnly(base.textTheme));
   return base.copyWith(
     textTheme: body.copyWith(
       headlineLarge: _heading(body.headlineLarge),
@@ -121,7 +132,14 @@ TextStyle serif(
   double size, {
   FontWeight weight = FontWeight.w700,
   Color? color,
-}) => sansOnly
+}) => bundledSans != null
+    ? TextStyle(
+        fontFamily: bundledSans,
+        fontSize: size,
+        color: color,
+        fontWeight: FontWeight.w700,
+      )
+    : sansOnly
     ? GoogleFonts.notoSansJp(
         fontSize: size,
         color: color,

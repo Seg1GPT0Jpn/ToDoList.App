@@ -42,6 +42,9 @@ import 'world/world_map_screen.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   _registerFontLicenses();
+  // 字を描く前にフォントを読む（先に描くと、足りない字をネットの別のフォントから何度も取りに行く）。
+  // クラウドの準備と同時に進める
+  final fonts = loadBodyFont();
   final prefs = await SharedPreferences.getInstance();
   // 学校専用の対策：前から使っていた端末は開いたままにする（ほかの保存より前に確かめる）
   await SchoolExamStore.migrate(prefs);
@@ -49,6 +52,15 @@ Future<void> main() async {
   final profiles = ProfileRepository(prefs);
   final meta = MetaStore(prefs);
   final settings = SettingsStore(prefs);
+  // Firebase の設定があればクラウドと同期する。なければ端末の中だけで動く
+  final personalBooks = PersonalBooks(prefs);
+  // 曲の一覧・フォントを読むのと同時に進める
+  final cloudReady = CloudSync.start(
+    progress: progress,
+    profiles: profiles,
+    meta: meta,
+    books: personalBooks,
+  );
   final backend = PlayerBackend();
   final music = MusicDirector(backend, settings.value);
   // バトル・ボスの曲が1つのファイル（bgm_battle.mp3 / bgm_boss.mp3）で置いてあれば、そちらを使う
@@ -63,22 +75,6 @@ Future<void> main() async {
     // 一覧が読めなければ、これまでどおり4パートで流す
   }
   settings.addListener(() => music.applySettings(settings.value));
-  // Firebase の設定があればクラウドと同期する。なければ端末の中だけで動く
-  final personalBooks = PersonalBooks(prefs);
-  // 通信が遅い・つながらないときは待たずに始める（記録は端末に残り、つながりしだい同期する）
-  final cloudReady = CloudSync.start(
-    progress: progress,
-    profiles: profiles,
-    meta: meta,
-    books: personalBooks,
-  );
-  final cloud = await cloudReady.timeout(
-    const Duration(seconds: 8),
-    onTimeout: () {
-      debugPrint('クラウドの準備を待たずに始めます');
-      return null;
-    },
-  );
   // 同じ端末のつづりクエストLight（Web は同じブラウザのほかのタブ）と記録をそろえる
   SameDeviceSync(
     prefs: prefs,
@@ -88,7 +84,171 @@ Future<void> main() async {
     onResume: () async => CloudSync.instance?.refresh(),
     onPause: () async => CloudSync.instance?.flush(),
   ).start();
-  if (cloud != null) {
+  // フォントを読み終えるまで待つ（クラウドの準備も同時に進む）
+  try {
+    await fonts.timeout(const Duration(seconds: 8));
+  } catch (e) {
+    debugPrint('フォントを読みこめませんでした: $e');
+  }
+  // クラウドの準備がまだなら待たずに始め、つながりしだい差しこむ
+  // （記録は端末に残り、つながりしだい同期する）
+  final cloud = await cloudReady.timeout(
+    const Duration(milliseconds: 300),
+    onTimeout: () {
+      debugPrint('クラウドの準備を待たずに始めます');
+      return null;
+    },
+  );
+
+  // 古い学習記録に、学習体系の単元を補う（裏で行い、終わったら保存する）
+  unawaited(_migrateUnits(meta));
+  runApp(
+    _CloudRoot(
+      cloud: cloud,
+      cloudReady: cloudReady,
+      progress: progress,
+      build: (c) => RpgServices(
+        meta: meta,
+        settings: settings,
+        music: music,
+        repository: progress,
+        personalBooks: personalBooks,
+        examWorlds: ExamWorldStore(prefs),
+        profiles: profiles,
+        account: c.account,
+        purchaseService: c.purchase,
+        versusRooms: c.versusRooms,
+        classrooms: c.classrooms,
+        usageSink: c.usageSink,
+        matchmaking: c.matchmaking,
+        duels: c.duels,
+        contests: c.contests,
+        yosouRanking: c.yosouRanking,
+        tsuzuriBackend: c.tsuzuriBackend,
+        child: TsuzuriQuestApp(
+          onUserGesture: () {
+            // ブラウザは、画面にさわるまで音を出させてくれない
+            if (backend.blocked) {
+              backend.blocked = false;
+              music.retry();
+            }
+          },
+        ),
+      ),
+    ),
+  );
+}
+
+/// クラウドにつないだあとで使うもの（つながっていなければ、ログイン以外は null）
+class _Cloud {
+  _Cloud.offline(this.account)
+    : purchase = null,
+      versusRooms = null,
+      classrooms = null,
+      usageSink = null,
+      matchmaking = null,
+      duels = null,
+      contests = null,
+      yosouRanking = null,
+      tsuzuriBackend = null;
+
+  _Cloud.online(CloudSync cloud, this.account, this.purchase)
+    : versusRooms = FirestoreVersusBackend(
+        cloud.auth,
+        FirebaseFirestore.instance,
+      ),
+      classrooms = FirestoreClassroomBackend(
+        cloud.auth,
+        FirebaseFirestore.instance,
+      ),
+      usageSink = FirestoreUsageSink(FirebaseFirestore.instance),
+      matchmaking = FirestoreMatchmaking(
+        cloud.auth,
+        FirebaseFirestore.instance,
+      ),
+      duels = FirestoreDuelBackend(cloud.auth, FirebaseFirestore.instance),
+      contests = FirestoreContestBackend(
+        cloud.auth,
+        FirebaseFirestore.instance,
+      ),
+      yosouRanking = FirestoreYosouRankBackend(
+        cloud.auth,
+        FirebaseFirestore.instance,
+      ),
+      tsuzuriBackend = FirebaseTsuzuriBackend.supported
+          ? FirebaseTsuzuriBackend()
+          : null;
+
+  _Cloud._copy(_Cloud o, this.purchase)
+    : account = o.account,
+      versusRooms = o.versusRooms,
+      classrooms = o.classrooms,
+      usageSink = o.usageSink,
+      matchmaking = o.matchmaking,
+      duels = o.duels,
+      contests = o.contests,
+      yosouRanking = o.yosouRanking,
+      tsuzuriBackend = o.tsuzuriBackend;
+
+  _Cloud withPurchase(GooglePlayPurchaseService? p) => _Cloud._copy(this, p);
+
+  final AccountService account;
+  final GooglePlayPurchaseService? purchase;
+  final FirestoreVersusBackend? versusRooms;
+  final FirestoreClassroomBackend? classrooms;
+  final FirestoreUsageSink? usageSink;
+  final FirestoreMatchmaking? matchmaking;
+  final FirestoreDuelBackend? duels;
+  final FirestoreContestBackend? contests;
+  final FirestoreYosouRankBackend? yosouRanking;
+  final FirebaseTsuzuriBackend? tsuzuriBackend;
+}
+
+/// 起動時にクラウドの準備ができていなければ、端末の中だけでホームを出し、
+/// つながったらログイン・クラスルーム・対戦などを差しこむ
+class _CloudRoot extends StatefulWidget {
+  const _CloudRoot({
+    required this.cloud,
+    required this.cloudReady,
+    required this.progress,
+    required this.build,
+  });
+
+  final CloudSync? cloud;
+  final Future<CloudSync?> cloudReady;
+  final PrefsProgressRepository progress;
+  final Widget Function(_Cloud cloud) build;
+
+  @override
+  State<_CloudRoot> createState() => _CloudRootState();
+}
+
+class _CloudRootState extends State<_CloudRoot> {
+  late _Cloud _cloud;
+
+  @override
+  void initState() {
+    super.initState();
+    final now = widget.cloud;
+    if (now != null) {
+      _cloud = _Cloud.online(now, FirebaseAccountService(now), null);
+      unawaited(_connected(now, _cloud.account));
+      return;
+    }
+    // ログインを押されたら、準備ができるのを待ってからログインする
+    final account = widget.cloudReady.then(
+      (c) => c == null ? null : FirebaseAccountService(c),
+    );
+    _cloud = _Cloud.offline(PendingAccountService(account));
+    widget.cloudReady.then((c) async {
+      final a = await account;
+      if (c == null || a == null) return;
+      await _connected(c, a);
+    }, onError: (Object e) => debugPrint('クラウドにつながりませんでした: $e'));
+  }
+
+  /// つながったあとの準備：問題の報告の送り先・Google Play Billing
+  Future<void> _connected(CloudSync cloud, AccountService account) async {
     // 問題の報告は、ログインしていればクラウド（question_reports）にも送る
     reportSink = ReportSink(
       upload: (r) async {
@@ -100,73 +260,29 @@ Future<void> main() async {
         });
       },
     );
-  }
-  // Android + Firebase 接続時だけ Google Play Billing を有効にする。
-  // 購入成功時は、Play のサーバー検証済み権利を端末の進行状況へ反映する。
-  GooglePlayPurchaseService? purchaseService;
-  if (!kIsWeb && cloud != null) {
-    purchaseService = GooglePlayPurchaseService(
-      onVerified: (worldId) =>
-          progress.markWorldPurchased(worldId, source: 'google_play'),
-    );
-    await purchaseService.initialize();
+    // Android + Firebase 接続時だけ Google Play Billing を有効にする。
+    // 購入成功時は、Play のサーバー検証済み権利を端末の進行状況へ反映する。
+    GooglePlayPurchaseService? purchase;
+    if (!kIsWeb) {
+      purchase = GooglePlayPurchaseService(
+        onVerified: (worldId) =>
+            widget.progress.markWorldPurchased(worldId, source: 'google_play'),
+      );
+      await purchase.initialize();
+    }
+    if (!mounted) return;
+    if (identical(_cloud.account, account) && _cloud.classrooms != null) {
+      // 起動したときからつながっていた：購入だけを差しこむ
+      if (purchase != null) {
+        setState(() => _cloud = _cloud.withPurchase(purchase));
+      }
+      return;
+    }
+    setState(() => _cloud = _Cloud.online(cloud, account, purchase));
   }
 
-  // 古い学習記録に、学習体系の単元を補う（裏で行い、終わったら保存する）
-  unawaited(_migrateUnits(meta));
-  runApp(
-    RpgServices(
-      meta: meta,
-      settings: settings,
-      music: music,
-      repository: progress,
-      personalBooks: personalBooks,
-      examWorlds: ExamWorldStore(prefs),
-      profiles: profiles,
-      account: cloud != null
-          ? FirebaseAccountService(cloud)
-          // まだつながっていなければ、つながりしだい本物のログインを使う
-          : PendingAccountService(
-              cloudReady.then(
-                (c) => c == null ? null : FirebaseAccountService(c),
-              ),
-            ),
-      purchaseService: purchaseService,
-      versusRooms: cloud == null
-          ? null
-          : FirestoreVersusBackend(cloud.auth, FirebaseFirestore.instance),
-      classrooms: cloud == null
-          ? null
-          : FirestoreClassroomBackend(cloud.auth, FirebaseFirestore.instance),
-      usageSink: cloud == null
-          ? null
-          : FirestoreUsageSink(FirebaseFirestore.instance),
-      matchmaking: cloud == null
-          ? null
-          : FirestoreMatchmaking(cloud.auth, FirebaseFirestore.instance),
-      duels: cloud == null
-          ? null
-          : FirestoreDuelBackend(cloud.auth, FirebaseFirestore.instance),
-      contests: cloud == null
-          ? null
-          : FirestoreContestBackend(cloud.auth, FirebaseFirestore.instance),
-      yosouRanking: cloud == null
-          ? null
-          : FirestoreYosouRankBackend(cloud.auth, FirebaseFirestore.instance),
-      tsuzuriBackend: cloud == null || !FirebaseTsuzuriBackend.supported
-          ? null
-          : FirebaseTsuzuriBackend(),
-      child: TsuzuriQuestApp(
-        onUserGesture: () {
-          // ブラウザは、画面にさわるまで音を出させてくれない
-          if (backend.blocked) {
-            backend.blocked = false;
-            music.retry();
-          }
-        },
-      ),
-    ),
-  );
+  @override
+  Widget build(BuildContext context) => widget.build(_cloud);
 }
 
 /// 学習記録のマイグレーション：単元が書かれていない古い記録に単元を補う

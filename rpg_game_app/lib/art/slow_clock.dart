@@ -15,7 +15,12 @@ class SlowClock extends ChangeNotifier implements ValueListenable<double> {
   final int fps;
 
   final Stopwatch _watch = Stopwatch();
-  Timer? _timer;
+
+  /// 動いている時計。1つのタイマーでまとめて進め、描きなおしを同じフレームにそろえる
+  /// （時計ごとにタイマーがあると、15回＋12回で毎秒27回描くことになる）
+  static final Set<SlowClock> _running = {};
+  static Timer? _shared;
+  static int _sharedFps = 0;
 
   @override
   double get value => period.inMicroseconds == 0
@@ -23,21 +28,33 @@ class SlowClock extends ChangeNotifier implements ValueListenable<double> {
       : (_watch.elapsedMicroseconds % period.inMicroseconds) /
             period.inMicroseconds;
 
-  bool get isRunning => _timer != null;
+  bool get isRunning => _running.contains(this);
 
   void start() {
-    if (_timer != null) return;
+    if (!_running.add(this)) return;
     _watch.start();
-    _timer = Timer.periodic(
-      Duration(microseconds: 1000000 ~/ fps),
-      (_) => notifyListeners(),
-    );
+    _retime();
   }
 
   void stop() {
-    _timer?.cancel();
-    _timer = null;
+    if (!_running.remove(this)) return;
     _watch.stop();
+    _retime();
+  }
+
+  /// 動いている時計のうち、いちばん細かい回数でタイマーを回す
+  static void _retime() {
+    final fps = _running.fold(0, (m, c) => c.fps > m ? c.fps : m);
+    if (fps == _sharedFps && (_shared != null) == (fps > 0)) return;
+    _shared?.cancel();
+    _shared = null;
+    _sharedFps = fps;
+    if (fps == 0) return;
+    _shared = Timer.periodic(Duration(microseconds: 1000000 ~/ fps), (_) {
+      for (final c in _running.toList()) {
+        c.notifyListeners();
+      }
+    });
   }
 
   /// 画面に出ているときだけ動かす（下に隠れた画面や「動きを減らす」設定では止める）
