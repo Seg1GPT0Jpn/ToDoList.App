@@ -7,6 +7,7 @@ import 'package:rpg_game_app/account/account_service.dart';
 import 'package:rpg_game_app/account/profile_repository.dart';
 import 'package:rpg_game_app/app/services.dart';
 import 'package:rpg_game_app/app/settings.dart';
+import 'package:rpg_game_app/app/theme.dart';
 import 'package:rpg_game_app/audio/music_director.dart';
 import 'package:rpg_game_app/cloud/same_device_sync.dart';
 import 'package:rpg_game_app/data/meta_store.dart';
@@ -148,5 +149,20 @@ void main() {
     await _frames(t);
     expect(find.text('先生の課題・クラスの範囲'), findsOneWidget);
     expect(t.takeException(), isNull);
+  });
+
+  test('白黒のときは、色をすべて同じ明るさの灰色にする', () {
+    TsuzuriColors.mono = true;
+    addTearDown(() => TsuzuriColors.mono = false);
+    for (final c in [
+      TsuzuriColors.accent,
+      TsuzuriColors.paper,
+      TsuzuriColors.marginLine,
+      TsuzuriColors.tint(0xFFE3F2FD),
+      buildTheme(Brightness.light).colorScheme.primary,
+    ]) {
+      expect(c.r, c.g);
+      expect(c.g, c.b);
+    }
   });
 }

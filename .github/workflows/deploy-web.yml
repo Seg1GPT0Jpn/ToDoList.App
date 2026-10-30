@@ -42,7 +42,7 @@ jobs:
         run: |
           flutter pub get
           # WebAssembly 版（対応していないブラウザでは自動で JS 版を使う）。軽く、メモリも少ない
-          flutter build web --wasm --release --pwa-strategy=none --base-href /light/
+          flutter build web --wasm --release --pwa-strategy=none --dart-define=TSUZURI_LIGHT=true --base-href /light/
           rm -rf ../rpg_game_app/build/web/light
           cp -r build/web ../rpg_game_app/build/web/light
       # Firestore のルール（同期を許可する場所）も反映する。公開用の鍵に権限がなければ失敗するが、

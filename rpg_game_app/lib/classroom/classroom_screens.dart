@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:rpg_game/rpg_game.dart';
 
 import '../account/account_screen.dart';
+import '../app/edition.dart';
 import '../app/services.dart';
 import '../app/theme.dart';
 import '../app/usage_meter.dart';
@@ -902,18 +903,19 @@ class _ClassroomScreenState extends State<ClassroomScreen> {
                   : '今日の分（$plan問）',
             ),
           ),
-          // 同じ範囲で友だちと早押し（リンクで送る）
-          TextButton.icon(
-            key: ValueKey('class-duel-${t.id}'),
-            onPressed: () => Navigator.of(context).push(
-              MaterialPageRoute<void>(
-                builder: (_) =>
-                    DuelHubScreen(bookId: book.id, from: t.from, to: t.to),
+          // 同じ範囲で友だちと早押し（リンクで送る）。Light には入れない
+          if (!lightEdition)
+            TextButton.icon(
+              key: ValueKey('class-duel-${t.id}'),
+              onPressed: () => Navigator.of(context).push(
+                MaterialPageRoute<void>(
+                  builder: (_) =>
+                      DuelHubScreen(bookId: book.id, from: t.from, to: t.to),
+                ),
               ),
+              icon: const Icon(Icons.flash_on, size: 18),
+              label: const Text('この範囲で単語チャレンジ'),
             ),
-            icon: const Icon(Icons.flash_on, size: 18),
-            label: const Text('この範囲で単語チャレンジ'),
-          ),
         ],
       );
     }

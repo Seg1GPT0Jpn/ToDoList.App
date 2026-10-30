@@ -6,6 +6,7 @@ import '../app/theme.dart';
 import '../art/paper.dart';
 import '../audio/music_director.dart';
 import '../audio/music_scope.dart';
+import '../app/edition.dart';
 import '../battle/battle_screen.dart';
 import '../field/field_screen.dart';
 import 'realm_style.dart';
@@ -709,42 +710,45 @@ class ExamWorldPlayScreen extends StatelessWidget {
                     ),
                   ),
                 const SizedBox(height: 12),
-                FilledButton.icon(
-                  style: FilledButton.styleFrom(
-                    backgroundColor: plan.realm.ink,
-                  ),
-                  onPressed: () async {
-                    final services = RpgServices.of(context);
-                    final progress = await services.repository.load();
-                    if (!context.mounted) return;
-                    Navigator.of(context).push(
-                      MaterialPageRoute<void>(
-                        builder: (_) => MusicScope(
-                          music: MusicDirector.fieldKey(stages.first.worldId),
-                          child: FieldScreen.exam(
-                            plan: plan,
-                            progress: progress,
+                // Light（冒険のマップを入れない版）では、航路へ出発するボタンを出さない
+                if (!lightEdition) ...[
+                  FilledButton.icon(
+                    style: FilledButton.styleFrom(
+                      backgroundColor: plan.realm.ink,
+                    ),
+                    onPressed: () async {
+                      final services = RpgServices.of(context);
+                      final progress = await services.repository.load();
+                      if (!context.mounted) return;
+                      Navigator.of(context).push(
+                        MaterialPageRoute<void>(
+                          builder: (_) => MusicScope(
+                            music: MusicDirector.fieldKey(stages.first.worldId),
+                            child: FieldScreen.exam(
+                              plan: plan,
+                              progress: progress,
+                            ),
                           ),
                         ),
-                      ),
-                    );
-                  },
-                  icon: Icon(plan.realm.icon),
-                  label: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 12),
-                    child: Text('${plan.realm.vehicle}で出発する'),
+                      );
+                    },
+                    icon: Icon(plan.realm.icon),
+                    label: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 12),
+                      child: Text('${plan.realm.vehicle}で出発する'),
+                    ),
                   ),
-                ),
-                const SizedBox(height: 4),
-                Text(
-                  '${plan.realm.vehicle}で${plan.realm.surface.label}を進み、終盤は'
-                  '${plan.realm.deepVehicle}で${plan.realm.deep.label}へ。'
-                  '航路でも、下の一覧からでも、同じ記録で遊べます。',
-                  style: TextStyle(
-                    fontSize: 11.5,
-                    color: TsuzuriColors.inkSoft,
+                  const SizedBox(height: 4),
+                  Text(
+                    '${plan.realm.vehicle}で${plan.realm.surface.label}を進み、終盤は'
+                    '${plan.realm.deepVehicle}で${plan.realm.deep.label}へ。'
+                    '航路でも、下の一覧からでも、同じ記録で遊べます。',
+                    style: TextStyle(
+                      fontSize: 11.5,
+                      color: TsuzuriColors.inkSoft,
+                    ),
                   ),
-                ),
+                ],
                 const SizedBox(height: 12),
                 const SizedBox(height: 8),
                 ClipRRect(

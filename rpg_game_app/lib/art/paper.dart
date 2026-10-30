@@ -22,6 +22,8 @@ class _PaperPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     canvas.drawRect(Offset.zero & size, Paint()..color = TsuzuriColors.paper);
+    // 白黒のとき（Light）は罫線を引かない無地の紙
+    if (TsuzuriColors.mono) return;
     final line = Paint()
       ..color = TsuzuriColors.gridLine
       ..strokeWidth = 1;

@@ -21,6 +21,22 @@
 | 起動時にすべてのプログラムを読む | ホームに必要な分だけ先に読み、各画面（`light_pages.dart`）とクラウド（`light_cloud.dart`）はあとから読む（deferred import） |
 | Firebase の準備ができるまで起動を待つ | 待たずにホームを出し、つながったらログイン・クラスルームを差しこむ（`LightRoot`） |
 | 対戦・ランダムマッチ・単語チャレンジ・購入・物語・図鑑・装備 | 入れない |
+| 色（生成りの紙・こげ茶・色つきの絵や印） | 白黒だけで描く（`TsuzuriColors.mono` と画面全体の灰色フィルター）。罫線も引かない |
+| 試験対策の「航路へ出発する」（冒険のマップ・Flame） | ボタンを出さず、プログラムもビルドから外す（`--dart-define=TSUZURI_LIGHT=true` → `lightEdition`） |
+| 本文のフォントを読みこむ前に字を描く | 読み終えてから描く（`loadBodyFont`）。先に描くと、足りない字を中国語用の Noto などから十数回取りに行っていた |
+
+### 通信量（2026-10-30・WebAssembly 版・はじめて開いたとき、brotli 圧縮後）
+
+| | 白黒化の前 | 今 |
+| --- | --- | --- |
+| アプリのプログラム（main.dart.wasm） | 1.39MB | **1.32MB** |
+| 本文のフォント（Noto Sans JP） | 0.73MB | 0.73MB |
+| ネットのフォントの追加読みこみ（Noto Sans SC/TC/JP） | 約0.5MB（約18回） | **0** |
+| 描画エンジン（skwasm、本番は Google の CDN） | 1.18MB | 1.18MB |
+| Firebase の部品（gstatic） | 約0.25MB | 約0.25MB |
+| 合計 | 約4.1MB | **約3.5MB** |
+
+2回目からはブラウザに残ったファイルを使う（`no-cache` なので変わっていないかを確かめるだけで、中身はほとんど送らない）。
 
 ### 計測（Chromium・CPU を4倍遅くしてスマホ相当に。2026-10 時点）
 
@@ -77,7 +93,7 @@ cd tsuzuri_light
 flutter pub get
 flutter test
 flutter run -d chrome                       # ブラウザで
-flutter build web --release --pwa-strategy=none --base-href /light/
+flutter build web --wasm --release --pwa-strategy=none --dart-define=TSUZURI_LIGHT=true --base-href /light/
 ```
 
 ### Android 版

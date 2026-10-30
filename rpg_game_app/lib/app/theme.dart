@@ -9,8 +9,18 @@ class TsuzuriColors {
   /// ダークモードで表示しているか（アプリの一番上で、設定と端末の設定から決める）
   static bool dark = false;
 
+  /// 色を使わず白黒で描くか（つづりクエストLight）
+  static bool mono = false;
+
   static Color _pick(int light, int darkColor) =>
-      Color(dark ? darkColor : light);
+      _gray(Color(dark ? darkColor : light));
+
+  /// mono のとき、同じ明るさの灰色にする
+  static Color _gray(Color c) {
+    if (!mono) return c;
+    final v = ((0.299 * c.r + 0.587 * c.g + 0.114 * c.b) * 255).round();
+    return Color.fromARGB((c.a * 255).round(), v, v, v);
+  }
 
   static Color get accent => _pick(0xFF6D4C41, 0xFFC9A48C); // こげ茶
   static Color get paper => _pick(0xFFFAF6EE, 0xFF1E1A16); // 背景（生成り）
@@ -37,13 +47,20 @@ class TsuzuriColors {
   /// 明るい背景の色（カードの地色など）。ダークモードでは、色味を残したまま暗くする
   static Color tint(int argb) {
     final c = Color(argb);
-    return dark ? Color.lerp(c, const Color(0xFF2A241F), 0.84)! : c;
+    return _gray(dark ? Color.lerp(c, const Color(0xFF2A241F), 0.84)! : c);
   }
 }
 
 /// 見出しも本文と同じフォント（Noto Sans JP）で描き、明朝体（約2MB）を読みこまない。
 /// つづりクエストLight で使う
 bool sansOnly = false;
+
+/// 本文のフォントを読みこみ終わるまで待つ。読みこむ前に字を描くと、足りない字を
+/// ネットの別のフォント（中国語用の Noto など）から何度も取りに行って通信が増える
+Future<void> loadBodyFont() async {
+  GoogleFonts.notoSansJp();
+  await GoogleFonts.pendingFonts();
+}
 
 /// 見出しの文字（太字）。sansOnly のときは本文のフォントを太く描く（別の太さのファイルは読みこまない）
 TextStyle _heading(TextStyle? base) => sansOnly
@@ -52,17 +69,28 @@ TextStyle _heading(TextStyle? base) => sansOnly
 
 ThemeData buildTheme(Brightness brightness) {
   final dark = brightness == Brightness.dark;
-  final scheme = ColorScheme.fromSeed(
-    seedColor: TsuzuriColors.accent,
-    brightness: brightness,
-    primary: dark ? const Color(0xFFD7B8A8) : const Color(0xFF6D4C41),
-    surface: dark ? const Color(0xFF2A241F) : const Color(0xFFFFFDF8),
-  );
+  final mono = TsuzuriColors.mono;
+  final scheme = mono
+      ? ColorScheme.fromSeed(
+          seedColor: const Color(0xFF808080),
+          brightness: brightness,
+          dynamicSchemeVariant: DynamicSchemeVariant.monochrome,
+          primary: dark ? Colors.white : Colors.black,
+          surface: dark ? Colors.black : Colors.white,
+        )
+      : ColorScheme.fromSeed(
+          seedColor: TsuzuriColors.accent,
+          brightness: brightness,
+          primary: dark ? const Color(0xFFD7B8A8) : const Color(0xFF6D4C41),
+          surface: dark ? const Color(0xFF2A241F) : const Color(0xFFFFFDF8),
+        );
   final base = ThemeData(
     brightness: brightness,
     colorScheme: scheme,
     useMaterial3: true,
-    scaffoldBackgroundColor: dark
+    scaffoldBackgroundColor: mono
+        ? scheme.surface
+        : dark
         ? TsuzuriColors.darkBg
         : const Color(0xFFFAF6EE),
   );
