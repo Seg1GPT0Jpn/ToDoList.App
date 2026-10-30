@@ -37,6 +37,9 @@ Future<void> main() async {
   // つづりクエストの同梱ファイル（単語帳・資料など）を部品の中から読む
   appAssetPrefix = 'packages/rpg_game_app/';
   sansOnly = true;
+  // 音声を使わないので、単語帳の聞き取り（リスニング）の練習は出さない
+  VocabPlanner.listeningAvailable = false;
+  PlayerProfile.unnamed = '名前なし';
   // Android 版は、資料・予想問題を APK に入れず、開いたときにネットから読む
   missingAssetLoader = remoteAssetLoader();
   // 本文のフォントは pubspec で Roboto として登録してあり、描画エンジンが起動時に読む

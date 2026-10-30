@@ -27,7 +27,10 @@ class PlayerProfile {
   bool get isGoogleLinked => googleEmail != null;
 
   /// 画面に出す名前
-  String get displayName => hasName ? userName : '名無しの冒険者';
+  String get displayName => hasName ? userName : unnamed;
+
+  /// 名前がないときの呼び方（つづりクエストLight は冒険がないので変える）
+  static String unnamed = '名無しの冒険者';
 
   /// ユーザー名の入力チェック。問題なければ null、だめなら理由を返す。
   static String? validateName(String raw) {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../app/edition.dart';
 import '../app/services.dart';
 import '../app/theme.dart';
 import '../art/journey_banner.dart';
@@ -53,19 +54,24 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(16),
-                        child: const JourneyBanner(height: 150),
-                      ),
-                      const SizedBox(height: 18),
+                      // Light は冒険の絵を出さない
+                      if (!lightEdition) ...[
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(16),
+                          child: const JourneyBanner(height: 150),
+                        ),
+                        const SizedBox(height: 18),
+                      ],
                       Text(
-                        'つづりクエスト',
+                        lightEdition ? 'つづりクエストLight' : 'つづりクエスト',
                         textAlign: TextAlign.center,
                         style: serif(34, color: TsuzuriColors.accent),
                       ),
                       const SizedBox(height: 8),
                       Text(
-                        '問題を解いて魔物をたおす、学びの冒険へようこそ！',
+                        lightEdition
+                            ? '単語帳と定期テスト対策で、毎日の勉強をすこしずつ。'
+                            : '問題を解いて魔物をたおす、学びの冒険へようこそ！',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 14,
@@ -93,8 +99,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         ),
                         const SizedBox(height: 6),
                         Text(
-                          '記録がクラウドに保存され、別の端末でも続きから遊べます。'
-                          '購入したワールドの復元にも使います。',
+                          lightEdition
+                              ? '記録がクラウドに保存され、別の端末やつづりクエストでも続きから使えます。'
+                              : '記録がクラウドに保存され、別の端末でも続きから遊べます。'
+                                    '購入したワールドの復元にも使います。',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: 12,

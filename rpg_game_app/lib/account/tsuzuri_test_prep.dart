@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:rpg_game/rpg_game.dart';
 
 import '../app/services.dart';
-import '../battle/battle_screen.dart';
+import '../app/quiz_screen.dart';
 import '../study/sea_home_screen.dart';
 import '../vocab/vocab_session_screen.dart';
 import '../vocab/vocab_store.dart';
@@ -69,7 +69,8 @@ Future<void> startTsuzuriPrep(
     if (questions.length >= TsuzuriPrep.weakMinimum) {
       final progress = await services.repository.load();
       await open(
-        BattleScreen(
+        quizScreen(
+          title: '復習',
           world: RpgCatalog.world(world),
           stage: ReviewTower.stage(
             level: progress.level,

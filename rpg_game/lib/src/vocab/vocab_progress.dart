@@ -262,7 +262,8 @@ enum VocabMode {
   /// その単語帳で使える形式
   static List<VocabMode> of(VocabBook book) => [
         for (final m in values)
-          if (!book.isTerms || (m != listening && m != cloze)) m,
+          if (!book.isTerms || (m != listening && m != cloze))
+            if (m != listening || VocabPlanner.listeningAvailable) m,
       ];
 
   /// この形式で間違えたときの、ふつうの理由
@@ -555,6 +556,10 @@ class Confusables {
 class VocabPlanner {
   const VocabPlanner._();
 
+  /// 音を出せるか。つづりクエストLight は音声を使わないので false にし、
+  /// 聞き取り（リスニング）の練習を出さない
+  static bool listeningAvailable = true;
+
   /// その単語で、次に練習をはじめてよい力
   static List<VocabSkill> unlocked(
     VocabCard card,
@@ -590,7 +595,7 @@ class VocabPlanner {
     int reviewLimit = 60,
     bool listening = true,
   }) {
-    if (book.isTerms) listening = false;
+    if (book.isTerms || !listeningAvailable) listening = false;
     final due = <(VocabCard, VocabSkill, double)>[];
     final fresh = <(VocabCard, VocabSkill)>[];
     for (final c in book.cards) {

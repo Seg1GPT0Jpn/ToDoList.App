@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rpg_game/rpg_game.dart';
 
+import '../app/edition.dart';
 import '../app/services.dart';
 import '../app/theme.dart';
 import '../art/paper.dart';
@@ -37,8 +38,11 @@ class LearningStatusScreen extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    _BigStat(label: '冒険Lv', value: '${progress.level}'),
-                    const SizedBox(width: 10),
+                    // Light には冒険（RPG）がないので、冒険Lv・科目の習熟Lv（戦いの強さ）は出さない
+                    if (!lightEdition) ...[
+                      _BigStat(label: '冒険Lv', value: '${progress.level}'),
+                      const SizedBox(width: 10),
+                    ],
                     _BigStat(
                       label: '総合力',
                       value: '$total',
@@ -48,7 +52,7 @@ class LearningStatusScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 6),
                 Text(
-                  '熟練度は、ゲームで勝手に上がる数字ではなく、実際に答えた正答率から計算しています。'
+                  '熟練度は、${lightEdition ? '' : 'ゲームで勝手に上がる数字ではなく、'}実際に答えた正答率から計算しています。'
                   '5問以上答えた分野だけ判定します。総合力は、6教科すべての熟練度の平均（答えていない教科は0）。',
                   style: TextStyle(
                     fontSize: 12,
@@ -56,8 +60,10 @@ class LearningStatusScreen extends StatelessWidget {
                     height: 1.5,
                   ),
                 ),
-                const SizedBox(height: 10),
-                _MasteryCard(progress: progress),
+                if (!lightEdition) ...[
+                  const SizedBox(height: 10),
+                  _MasteryCard(progress: progress),
+                ],
                 const SizedBox(height: 10),
                 Card(
                   child: ListTile(

@@ -1,5 +1,6 @@
 import 'package:flutter_tts/flutter_tts.dart';
 
+import '../app/edition.dart';
 import 'speech_web_stub.dart' if (dart.library.js_interop) 'speech_web.dart';
 
 /// 単語や例文を読み上げる
@@ -183,4 +184,7 @@ class SilentSpeaker implements Speaker {
 
 /// テストでは [SilentSpeaker] に差し替える。
 /// Web版はブラウザの読み上げを直接使う（flutter_tts の Web 版は止まりやすく、速さの基準もちがう）
-Speaker speaker = createPlatformSpeaker() ?? TtsSpeaker();
+Speaker speaker = lightEdition
+    // つづりクエストLight は音声を使わない（読み上げのプログラムも入れない）
+    ? SilentSpeaker()
+    : createPlatformSpeaker() ?? TtsSpeaker();

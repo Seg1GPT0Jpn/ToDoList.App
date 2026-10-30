@@ -11,7 +11,7 @@ import '../app/practice.dart';
 import '../app/services.dart';
 import '../app/theme.dart';
 import '../art/paper.dart';
-import '../battle/battle_screen.dart';
+import '../app/quiz_screen.dart';
 import 'realm_style.dart';
 
 /// 解放ずみの教科のワールド
@@ -54,7 +54,7 @@ class CommonTestRuinsScreen extends StatelessWidget {
     final stage = CommonTest.stage(floor, picked, level: progress.level);
     Navigator.of(context).push(
       MaterialPageRoute<void>(
-        builder: (_) => BattleScreen(
+        builder: (_) => quizScreen(
           world: RpgCatalog.world(stage.worldId),
           stage: stage,
           questions: filtered,

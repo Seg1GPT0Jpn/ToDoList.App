@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:rpg_game/rpg_game.dart';
 
 import '../app/services.dart';
-import '../battle/battle_screen.dart';
+import '../app/quiz_screen.dart';
 
 /// 定期テストの海（模擬試験の空）の単元で、海（空）の魔物とバトルする（とても難しい）。
+/// つづりクエストLight ではバトルなしで問題を解く（[quizScreen]）。
 ///
 /// RPG の進行・経験値は変えない。正答率の自己ベストだけを記録する。
 /// 模擬試験の空の記録は [skyRecordId] の ID で、海とは別に残す。
@@ -32,7 +33,8 @@ Future<void> startSeaBattle(
   final bestId = realm == StudyRealm.sea ? recordId : skyRecordId(recordId);
   await Navigator.of(context).push(
     MaterialPageRoute<void>(
-      builder: (_) => BattleScreen(
+      builder: (_) => quizScreen(
+        title: title,
         world: RpgCatalog.world(worldId),
         stage: stage,
         questions: questions,

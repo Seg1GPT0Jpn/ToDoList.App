@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:rpg_game/rpg_game.dart';
 
 import '../app/services.dart';
-import '../battle/battle_screen.dart';
+import '../app/quiz_screen.dart';
 
 /// 単語の練習のあとの「1戦だけの冒険」。
 ///
@@ -71,7 +71,7 @@ class QuickBattle {
     if (!context.mounted || questions.isEmpty) return;
     await Navigator.of(context).push(
       MaterialPageRoute<void>(
-        builder: (_) => BattleScreen(
+        builder: (_) => quizScreen(
           world: RpgCatalog.world(book.worldId),
           stage: WordBattle.stage(
             list,

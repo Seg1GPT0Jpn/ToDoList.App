@@ -3,7 +3,7 @@ import 'package:rpg_game/rpg_game.dart';
 
 import '../app/services.dart';
 import '../app/theme.dart';
-import '../battle/battle_screen.dart';
+import '../app/quiz_screen.dart';
 
 /// 選んだ問題で、確認用のバトルを始める
 Future<void> startItemsBattle(
@@ -27,7 +27,8 @@ Future<void> startItemsBattle(
   );
   await nav.push(
     MaterialPageRoute<void>(
-      builder: (_) => BattleScreen(
+      builder: (_) => quizScreen(
+        title: '復習',
         world: world,
         stage: ReviewTower.stage(
           level: progress.level,

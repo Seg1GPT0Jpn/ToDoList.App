@@ -305,41 +305,44 @@ class _VocabHomeState extends State<VocabHome> {
       tilePadding: EdgeInsets.zero,
       title: Text('設定・バックアップ', style: serif(15)),
       children: [
-        Row(
-          children: [
-            const Text('発音'),
-            const SizedBox(width: 8),
-            SegmentedButton<String>(
-              segments: const [
-                ButtonSegment(value: 'en-US', label: Text('米音')),
-                ButtonSegment(value: 'en-GB', label: Text('英音')),
-              ],
-              selected: {lang},
-              onSelectionChanged: (s) async {
-                await store.setVoice(s.first, rate);
-                setState(() {});
-              },
-            ),
-          ],
-        ),
-        Row(
-          children: [
-            const Text('速さ'),
-            Expanded(
-              child: Slider(
-                value: rate,
-                min: 0.2,
-                max: 1.0,
-                divisions: 8,
-                label: rate.toStringAsFixed(1),
-                onChanged: (v) async {
-                  await store.setVoice(lang, v);
+        // Light は音声を使わないので、発音の設定は出さない
+        if (!lightEdition) ...[
+          Row(
+            children: [
+              const Text('発音'),
+              const SizedBox(width: 8),
+              SegmentedButton<String>(
+                segments: const [
+                  ButtonSegment(value: 'en-US', label: Text('米音')),
+                  ButtonSegment(value: 'en-GB', label: Text('英音')),
+                ],
+                selected: {lang},
+                onSelectionChanged: (s) async {
+                  await store.setVoice(s.first, rate);
                   setState(() {});
                 },
               ),
-            ),
-          ],
-        ),
+            ],
+          ),
+          Row(
+            children: [
+              const Text('速さ'),
+              Expanded(
+                child: Slider(
+                  value: rate,
+                  min: 0.2,
+                  max: 1.0,
+                  divisions: 8,
+                  label: rate.toStringAsFixed(1),
+                  onChanged: (v) async {
+                    await store.setVoice(lang, v);
+                    setState(() {});
+                  },
+                ),
+              ),
+            ],
+          ),
+        ],
         Align(
           alignment: Alignment.centerLeft,
           child: Text(

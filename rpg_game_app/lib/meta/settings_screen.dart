@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:rpg_game/rpg_game.dart';
 
+import '../app/edition.dart';
 import '../app/services.dart';
 import '../app/settings.dart';
 import '../app/theme.dart';
@@ -30,33 +31,36 @@ class SettingsScreen extends StatelessWidget {
               Space.xl,
             ),
             children: [
-              const SectionTitle('音'),
-              SwitchListTile(
-                title: const Text('BGM'),
-                value: s.bgm,
-                onChanged: (v) => store.update(s.copyWith(bgm: v)),
-              ),
-              _slider(
-                'BGM の音量',
-                s.bgmVolume,
-                s.bgm,
-                (v) => store.update(s.copyWith(bgmVolume: v)),
-              ),
-              SwitchListTile(
-                title: const Text('効果音'),
-                value: s.se,
-                onChanged: (v) => store.update(s.copyWith(se: v)),
-              ),
-              _slider('効果音の音量', s.seVolume, s.se, (v) {
-                store.update(s.copyWith(seVolume: v));
-              }, onEnd: () => services.music.se('se_correct')),
-              SwitchListTile(
-                title: const Text('学ぶほど曲が完成する'),
-                subtitle: const Text('バトルで正解を続けると、ベース・打楽器・ストリングスが加わります'),
-                value: s.adaptiveMusic,
-                onChanged: (v) => store.update(s.copyWith(adaptiveMusic: v)),
-              ),
-              const SizedBox(height: Space.l),
+              // Light は音を使わないので、音の設定は出さない
+              if (!lightEdition) ...[
+                const SectionTitle('音'),
+                SwitchListTile(
+                  title: const Text('BGM'),
+                  value: s.bgm,
+                  onChanged: (v) => store.update(s.copyWith(bgm: v)),
+                ),
+                _slider(
+                  'BGM の音量',
+                  s.bgmVolume,
+                  s.bgm,
+                  (v) => store.update(s.copyWith(bgmVolume: v)),
+                ),
+                SwitchListTile(
+                  title: const Text('効果音'),
+                  value: s.se,
+                  onChanged: (v) => store.update(s.copyWith(se: v)),
+                ),
+                _slider('効果音の音量', s.seVolume, s.se, (v) {
+                  store.update(s.copyWith(seVolume: v));
+                }, onEnd: () => services.music.se('se_correct')),
+                SwitchListTile(
+                  title: const Text('学ぶほど曲が完成する'),
+                  subtitle: const Text('バトルで正解を続けると、ベース・打楽器・ストリングスが加わります'),
+                  value: s.adaptiveMusic,
+                  onChanged: (v) => store.update(s.copyWith(adaptiveMusic: v)),
+                ),
+                const SizedBox(height: Space.l),
+              ],
               const SectionTitle('見やすさ'),
               ListTile(
                 title: const Text('文字の大きさ'),
@@ -109,55 +113,58 @@ class SettingsScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SwitchListTile(
-                title: const Text('動きをへらす'),
-                subtitle: const Text('画面のゆれ・点滅・大きな動きをおさえます'),
-                value: s.reduceMotion,
-                onChanged: (v) => store.update(s.copyWith(reduceMotion: v)),
-              ),
-              ListTile(
-                title: const Text('バトルのむずかしさ'),
-                subtitle: Text(
-                  s.difficulty == 'hard'
-                      ? '敵のHP・攻撃が上がり、答える時間が短くなります。経験値は1.3倍、クリアしたエリアに👑がつきます'
-                      : '正答率が5割くらいでも、少しずつ進めるむずかしさです',
+              // Light は動き・バトル・振動・冒険の手帳がないので、これらの設定は出さない
+              if (!lightEdition) ...[
+                SwitchListTile(
+                  title: const Text('動きをへらす'),
+                  subtitle: const Text('画面のゆれ・点滅・大きな動きをおさえます'),
+                  value: s.reduceMotion,
+                  onChanged: (v) => store.update(s.copyWith(reduceMotion: v)),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
-                child: SegmentedButton<String>(
-                  key: const ValueKey('difficulty'),
-                  segments: [
-                    for (final d in BattleDifficulty.values)
-                      ButtonSegment(
-                        value: d.name,
-                        label: Text(d.label),
-                        icon: Icon(
-                          d == BattleDifficulty.hard
-                              ? Icons.local_fire_department
-                              : Icons.sentiment_satisfied,
+                ListTile(
+                  title: const Text('バトルのむずかしさ'),
+                  subtitle: Text(
+                    s.difficulty == 'hard'
+                        ? '敵のHP・攻撃が上がり、答える時間が短くなります。経験値は1.3倍、クリアしたエリアに👑がつきます'
+                        : '正答率が5割くらいでも、少しずつ進めるむずかしさです',
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
+                  child: SegmentedButton<String>(
+                    key: const ValueKey('difficulty'),
+                    segments: [
+                      for (final d in BattleDifficulty.values)
+                        ButtonSegment(
+                          value: d.name,
+                          label: Text(d.label),
+                          icon: Icon(
+                            d == BattleDifficulty.hard
+                                ? Icons.local_fire_department
+                                : Icons.sentiment_satisfied,
+                          ),
                         ),
-                      ),
-                  ],
-                  selected: {BattleDifficulty.byName(s.difficulty).name},
-                  onSelectionChanged: (v) =>
-                      store.update(s.copyWith(difficulty: v.first)),
+                    ],
+                    selected: {BattleDifficulty.byName(s.difficulty).name},
+                    onSelectionChanged: (v) =>
+                        store.update(s.copyWith(difficulty: v.first)),
+                  ),
                 ),
-              ),
-              SwitchListTile(
-                key: const ValueKey('vibration'),
-                title: const Text('振動'),
-                subtitle: const Text('正解・ダメージ・勝利のときに、端末を軽くふるわせます'),
-                value: s.vibration,
-                onChanged: (v) => store.update(s.copyWith(vibration: v)),
-              ),
-              SwitchListTile(
-                key: const ValueKey('all-features'),
-                title: const Text('すべての機能を表示'),
-                subtitle: const Text('ホームの「冒険の手帳」に、冒険を進めると出てくる機能も最初から全部出します'),
-                value: s.allFeatures,
-                onChanged: (v) => store.update(s.copyWith(allFeatures: v)),
-              ),
+                SwitchListTile(
+                  key: const ValueKey('vibration'),
+                  title: const Text('振動'),
+                  subtitle: const Text('正解・ダメージ・勝利のときに、端末を軽くふるわせます'),
+                  value: s.vibration,
+                  onChanged: (v) => store.update(s.copyWith(vibration: v)),
+                ),
+                SwitchListTile(
+                  key: const ValueKey('all-features'),
+                  title: const Text('すべての機能を表示'),
+                  subtitle: const Text('ホームの「冒険の手帳」に、冒険を進めると出てくる機能も最初から全部出します'),
+                  value: s.allFeatures,
+                  onChanged: (v) => store.update(s.copyWith(allFeatures: v)),
+                ),
+              ],
               SwitchListTile(
                 key: const ValueKey('share-usage'),
                 title: const Text('使った機能の回数を送る'),

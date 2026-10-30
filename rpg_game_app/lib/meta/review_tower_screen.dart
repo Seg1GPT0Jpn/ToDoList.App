@@ -4,7 +4,8 @@ import 'package:rpg_game/rpg_game.dart';
 import '../app/services.dart';
 import '../app/theme.dart';
 import '../art/paper.dart';
-import '../battle/battle_screen.dart';
+import '../app/edition.dart';
+import '../app/quiz_screen.dart';
 import 'design.dart';
 
 /// 復習の塔。まちがえた問題・復習の日が来た問題・時間がかかった問題で戦う。
@@ -55,7 +56,7 @@ class _ReviewTowerScreenState extends State<ReviewTowerScreen> {
     final services = RpgServices.of(context);
     final meta = services.meta;
     return Scaffold(
-      appBar: AppBar(title: const Text('復習の塔')),
+      appBar: AppBar(title: const Text(lightEdition ? '復習' : '復習の塔')),
       body: NotebookPaper(
         child: ListenableBuilder(
           listenable: meta,
@@ -77,35 +78,37 @@ class _ReviewTowerScreenState extends State<ReviewTowerScreen> {
                     Space.xl,
                   ),
                   children: [
-                    PaperCard(
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.castle_outlined,
-                            size: 40,
-                            color: TsuzuriColors.accent,
-                          ),
-                          const SizedBox(width: Space.m),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text('いま $floor 階', style: serif(18)),
-                                Text(
-                                  '復習で合計 ${ReviewTower.correctPerFloor} 問正解するごとに1階上へ（これまでの正解もふくむ）。'
-                                  '5階ごとに塔の番人が待っています。',
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    color: TsuzuriColors.inkSoft,
-                                  ),
-                                ),
-                              ],
+                    // Light は塔・階・番人のない、ふつうの復習
+                    if (!lightEdition)
+                      PaperCard(
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.castle_outlined,
+                              size: 40,
+                              color: TsuzuriColors.accent,
                             ),
-                          ),
-                        ],
+                            const SizedBox(width: Space.m),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text('いま $floor 階', style: serif(18)),
+                                  Text(
+                                    '復習で合計 ${ReviewTower.correctPerFloor} 問正解するごとに1階上へ（これまでの正解もふくむ）。'
+                                    '5階ごとに塔の番人が待っています。',
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      color: TsuzuriColors.inkSoft,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                    const SizedBox(height: Space.m),
+                    if (!lightEdition) const SizedBox(height: Space.m),
                     Wrap(
                       spacing: Space.s,
                       children: [
@@ -124,7 +127,10 @@ class _ReviewTowerScreenState extends State<ReviewTowerScreen> {
                       ],
                     ),
                     const SizedBox(height: Space.m),
-                    Text('どの階へ行く？', style: serif(15)),
+                    Text(
+                      lightEdition ? '何を復習する？' : 'どの階へ行く？',
+                      style: serif(15),
+                    ),
                     const SizedBox(height: Space.xs),
                     _FloorTile(
                       label: 'おまかせ',
@@ -141,9 +147,13 @@ class _ReviewTowerScreenState extends State<ReviewTowerScreen> {
                     ),
                     for (final f in TowerFloor.values)
                       _FloorTile(
-                        label: f.floorLabel,
-                        title: f.title,
-                        description: f.description,
+                        label: lightEdition ? '' : f.floorLabel,
+                        title: lightEdition && f == TowerFloor.summit
+                            ? '苦手な問題ばかり'
+                            : f.title,
+                        description: lightEdition && f == TowerFloor.summit
+                            ? '苦手な問題を10問まとめて'
+                            : f.description,
                         count: ReviewPlanner.planFloor(
                           meta.record,
                           f,
@@ -152,7 +162,7 @@ class _ReviewTowerScreenState extends State<ReviewTowerScreen> {
                           subject: _subject,
                         ).length,
                         selected: _towerFloor == f,
-                        boss: f == TowerFloor.summit,
+                        boss: !lightEdition && f == TowerFloor.summit,
                         onTap: () => setState(() => _towerFloor = f),
                       ),
                     const SizedBox(height: Space.m),
@@ -162,20 +172,22 @@ class _ReviewTowerScreenState extends State<ReviewTowerScreen> {
                       const PaperCard(
                         child: Text(
                           'いまは復習する問題がありません。\n'
-                          'バトルでまちがえた問題や、しばらく解いていない問題が、'
+                          '${lightEdition ? '' : 'バトルで'}まちがえた問題や、しばらく解いていない問題が、'
                           'ここに集まってきます。',
                           style: TextStyle(height: 1.6),
                         ),
                       )
                     else ...[
                       SectionTitle(
-                        '今回の相手：最大 ${items.length} 問（8割正解で撃破）',
+                        lightEdition
+                            ? '今回：最大 ${items.length} 問'
+                            : '今回の相手：最大 ${items.length} 問（8割正解で撃破）',
                         trailing: FilledButton.icon(
                           onPressed: () => _start(context, floor, [
                             for (final (_, q) in items) q,
                           ], items.first.$1.setId),
                           icon: const Icon(Icons.play_arrow),
-                          label: const Text('挑戦する'),
+                          label: const Text(lightEdition ? 'はじめる' : '挑戦する'),
                         ),
                       ),
                       for (final (item, q) in items)
@@ -239,7 +251,8 @@ class _ReviewTowerScreenState extends State<ReviewTowerScreen> {
     if (!context.mounted) return;
     await Navigator.of(context).push(
       MaterialPageRoute<void>(
-        builder: (_) => BattleScreen(
+        builder: (_) => quizScreen(
+          title: '復習',
           world: world,
           stage: ReviewTower.stage(
             level: progress.level,
@@ -296,14 +309,16 @@ class _FloorTile extends StatelessWidget {
         dense: true,
         onTap: count == 0 ? null : onTap,
         enabled: count > 0,
-        leading: SizedBox(
-          width: 48,
-          child: Text(
-            label,
-            textAlign: TextAlign.center,
-            style: TextStyle(fontWeight: FontWeight.w800, color: color),
-          ),
-        ),
+        leading: label.isEmpty
+            ? null
+            : SizedBox(
+                width: 48,
+                child: Text(
+                  label,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontWeight: FontWeight.w800, color: color),
+                ),
+              ),
         title: Text(title),
         subtitle: Text(description, style: const TextStyle(fontSize: 11.5)),
         trailing: Text(count == 0 ? 'なし' : '$count問'),

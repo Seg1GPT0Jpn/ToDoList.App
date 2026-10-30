@@ -5,6 +5,7 @@ import 'package:rpg_game/rpg_game.dart';
 
 import '../app/theme.dart';
 import '../art/paper.dart';
+import '../app/edition.dart';
 import 'speech.dart';
 import 'vocab_import_screen.dart';
 import 'vocab_session_screen.dart';
@@ -575,7 +576,7 @@ class _VocabBookScreenState extends State<VocabBookScreen> {
                   ),
                 ),
                 Text(
-                  '${p?.overall(now, hasExample: c.hasExample, listening: !book.isTerms) ?? 0}%',
+                  '${p?.overall(now, hasExample: c.hasExample, listening: !book.isTerms && VocabPlanner.listeningAvailable) ?? 0}%',
                   style: const TextStyle(fontWeight: FontWeight.w700),
                 ),
               ],
@@ -632,13 +633,15 @@ class _VocabBookScreenState extends State<VocabBookScreen> {
         title: Row(
           children: [
             Expanded(child: Text(c.term)),
-            IconButton(
-              onPressed: () {
-                final (lang, rate) = store.voice;
-                speaker.speak(c.term, lang: lang, rate: rate);
-              },
-              icon: const Icon(Icons.volume_up),
-            ),
+            // Light は音声を使わない
+            if (!lightEdition)
+              IconButton(
+                onPressed: () {
+                  final (lang, rate) = store.voice;
+                  speaker.speak(c.term, lang: lang, rate: rate);
+                },
+                icon: const Icon(Icons.volume_up),
+              ),
           ],
         ),
         content: SingleChildScrollView(

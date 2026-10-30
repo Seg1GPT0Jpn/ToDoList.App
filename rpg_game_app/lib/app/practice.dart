@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rpg_game/rpg_game.dart';
 
-import '../battle/battle_screen.dart';
+import 'quiz_screen.dart';
 import 'services.dart';
 
 /// 単元の練習バトルを始める（RPG の進行は変えない。答えた記録は熟練度に反映される）
@@ -12,7 +12,7 @@ Future<void> startPractice(BuildContext context, StageDef stage) async {
   if (pool == null || !pool.origin.usableInRpg || !context.mounted) return;
   await Navigator.of(context).push(
     MaterialPageRoute<void>(
-      builder: (_) => BattleScreen(
+      builder: (_) => quizScreen(
         world: RpgCatalog.world(stage.worldId),
         // 高いレベルでも1問で終わらないよう、レベルに合わせた強さにする
         stage: PracticeBattle.stage(stage, progress.level),
@@ -57,7 +57,7 @@ Future<String?> startUnitPractice(BuildContext context, String unitId) async {
   base ??= world.stages.first;
   await Navigator.of(context).push(
     MaterialPageRoute<void>(
-      builder: (_) => BattleScreen(
+      builder: (_) => quizScreen(
         world: world,
         stage: PracticeBattle.stage(
           base!,

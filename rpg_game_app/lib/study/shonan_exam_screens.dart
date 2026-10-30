@@ -4,7 +4,7 @@ import 'package:rpg_game/rpg_game.dart';
 import '../app/services.dart';
 import '../app/theme.dart';
 import '../art/paper.dart';
-import '../battle/battle_screen.dart';
+import '../app/quiz_screen.dart';
 import 'ec_text.dart';
 import 'school_drive_screen.dart';
 import 'school_exam_store.dart';
@@ -430,7 +430,7 @@ Future<void> startSchoolPractice(
   );
   Navigator.of(context).push(
     MaterialPageRoute<void>(
-      builder: (_) => BattleScreen(
+      builder: (_) => quizScreen(
         world: RpgCatalog.world(subject.worldId),
         stage: stage,
         questions: questions,

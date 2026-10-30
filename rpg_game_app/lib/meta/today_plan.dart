@@ -6,7 +6,7 @@ import '../app/practice.dart';
 import '../app/services.dart';
 import '../app/theme.dart';
 import '../art/paper.dart';
-import '../battle/battle_screen.dart';
+import '../app/quiz_screen.dart';
 import '../classroom/classroom_screens.dart';
 import '../study/personal_books.dart';
 import '../vocab/vocab_home.dart';
@@ -126,7 +126,8 @@ class _TodayPlanCardState extends State<TodayPlanCard> {
     );
     await Navigator.of(context).push(
       MaterialPageRoute<void>(
-        builder: (_) => BattleScreen(
+        builder: (_) => quizScreen(
+          title: '復習',
           world: world,
           stage: ReviewTower.stage(
             level: progress.level,

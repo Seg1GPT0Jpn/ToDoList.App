@@ -7,7 +7,7 @@ import '../art/paper.dart';
 import '../audio/music_director.dart';
 import '../audio/music_scope.dart';
 import '../app/edition.dart';
-import '../battle/battle_screen.dart';
+import '../app/quiz_screen.dart';
 import '../field/field_screen.dart';
 import 'realm_style.dart';
 import 'school_exam_store.dart';
@@ -48,15 +48,23 @@ class ExamWorldListScreen extends StatelessWidget {
             return ListView(
               padding: const EdgeInsets.fromLTRB(44, 16, 16, 96),
               children: [
-                Text(
-                  '${realm == StudyRealm.sea ? '試験範囲' : '模試の範囲'}を入力すると、'
-                  'その範囲のエリアを集めた航路ができます。'
-                  '${realm.vehicle}で${realm.surface.label}を進み、終盤は'
-                  '${realm.deepVehicle}で${realm.deep.label}へ。'
-                  '最後には、範囲全部から出題する「試験本番」のボスが待っています。'
-                  '${realm == StudyRealm.sky ? '\n※ 模擬試験の空は、定期テストの海よりさらに難しい上級者向けです（2回まちがえると倒れる・制限時間は半分）。' : ''}',
-                  style: const TextStyle(fontSize: 13, height: 1.6),
-                ),
+                if (lightEdition)
+                  Text(
+                    '${realm == StudyRealm.sea ? '試験範囲' : '模試の範囲'}を入力すると、'
+                    'その範囲の単元を順番に練習できます。'
+                    '最後は、範囲全部から出題する「試験本番」の練習です（6割正解でつぎへ進めます）。',
+                    style: const TextStyle(fontSize: 13, height: 1.6),
+                  )
+                else
+                  Text(
+                    '${realm == StudyRealm.sea ? '試験範囲' : '模試の範囲'}を入力すると、'
+                    'その範囲のエリアを集めた航路ができます。'
+                    '${realm.vehicle}で${realm.surface.label}を進み、終盤は'
+                    '${realm.deepVehicle}で${realm.deep.label}へ。'
+                    '最後には、範囲全部から出題する「試験本番」のボスが待っています。'
+                    '${realm == StudyRealm.sky ? '\n※ 模擬試験の空は、定期テストの海よりさらに難しい上級者向けです（2回まちがえると倒れる・制限時間は半分）。' : ''}',
+                    style: const TextStyle(fontSize: 13, height: 1.6),
+                  ),
                 const SizedBox(height: 12),
                 if (realm == StudyRealm.sea) const _SchoolGateCard(),
                 const SizedBox(height: 4),
@@ -598,7 +606,7 @@ class ExamWorldPlayScreen extends StatelessWidget {
     final hard = ExamWorlds.build(plan, level: progress.level)[index];
     Navigator.of(context).push(
       MaterialPageRoute<void>(
-        builder: (_) => BattleScreen(
+        builder: (_) => quizScreen(
           world: RpgCatalog.world(hard.worldId),
           stage: hard,
           questions: pool.questions,
@@ -763,7 +771,7 @@ class ExamWorldPlayScreen extends StatelessWidget {
                 const SizedBox(height: 4),
                 Text(
                   '${plan.clearedCount} / ${plan.length} クリア　'
-                  '※ RPG の進行や経験値には影響しません。何度でも挑戦できます。',
+                  '${lightEdition ? '※ 何度でも練習できます。' : '※ RPG の進行や経験値には影響しません。何度でも挑戦できます。'}',
                   style: TextStyle(
                     fontSize: 11.5,
                     color: TsuzuriColors.inkSoft,
@@ -775,7 +783,11 @@ class ExamWorldPlayScreen extends StatelessWidget {
                     margin: const EdgeInsets.only(top: 12),
                     child: const Padding(
                       padding: EdgeInsets.all(12),
-                      child: Text('🎉 試験本番のボスまで全部クリア！ 本番もこの調子でがんばろう。'),
+                      child: Text(
+                        lightEdition
+                            ? '🎉 試験本番の練習まで全部クリア！ 本番もこの調子でがんばろう。'
+                            : '🎉 試験本番のボスまで全部クリア！ 本番もこの調子でがんばろう。',
+                      ),
                     ),
                   ),
                 const SizedBox(height: 12),

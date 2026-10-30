@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:rpg_game/rpg_game.dart';
 
+import '../app/edition.dart';
 import '../app/services.dart';
 import '../app/theme.dart';
 import '../app/usage_meter.dart';
@@ -184,7 +185,7 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
   }
 
   void _say(String text) {
-    if (_terms) return;
+    if (_terms || lightEdition) return;
     final (lang, rate) = widget.store.voice;
     speaker.speak(text, lang: lang, rate: rate);
   }
@@ -421,7 +422,8 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
     );
   }
 
-  Widget _speakButton(String text, {String tooltip = '発音を聞く'}) => _terms
+  Widget _speakButton(String text, {String tooltip = '発音を聞く'}) =>
+      _terms || lightEdition
       ? const SizedBox.shrink()
       : IconButton(
           tooltip: tooltip,
