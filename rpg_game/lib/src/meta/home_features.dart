@@ -1,4 +1,5 @@
 import '../models/rpg_progress.dart';
+import '../edition.dart';
 
 /// ホームの「冒険の手帳」に並ぶ機能。
 ///
@@ -18,7 +19,7 @@ enum HomeFeature {
   growth('成長と学習ルート', 3),
   versus('対戦モード', 5),
   commonTest('共通テスト遺跡', 5),
-  sky('模擬試験の空', 5),
+  sky(juniorEdition ? '高校入試の空' : '模擬試験の空', 5),
   comprehensive('総合演習', 5);
 
   const HomeFeature(this.label, this.clears);

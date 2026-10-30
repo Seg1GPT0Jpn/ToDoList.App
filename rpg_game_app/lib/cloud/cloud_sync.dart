@@ -70,6 +70,16 @@ class CloudSync {
 
   /// Firebase を初期化する。設定がない（flutterfire configure をしていない）
   /// ときは null を返し、端末の中だけで動かす。
+  /// Firebase の設定があるか（小中学生版など、まだ設定していない版では false。そのときは端末の中だけで動く）
+  static bool get configured {
+    try {
+      DefaultFirebaseOptions.currentPlatform;
+      return true;
+    } catch (_) {
+      return false;
+    }
+  }
+
   static Future<CloudSync?> start({
     required PrefsProgressRepository progress,
     required ProfileRepository profiles,

@@ -45,15 +45,98 @@ class _SeaHomeScreenState extends State<SeaHomeScreen> {
       ? widget.initialSubject!
       : 'english';
 
-  static const _subjects = [
-    ('english', '英語'),
-    ('science', '理科'),
-    ('social', '社会'),
-    ('japanese', '国語'),
-    ('math', '数学'),
-    ('information', '情報'),
-    ('music', '音楽'),
-  ];
+  /// 小中学生版は、ワールドの一覧（英語・算数数学・国語・理科・社会）から作る
+  static final _subjects = juniorEdition
+      ? [for (final w in RpgCatalog.worlds) (w.id, w.subject)]
+      : const [
+          ('english', '英語'),
+          ('science', '理科'),
+          ('social', '社会'),
+          ('japanese', '国語'),
+          ('math', '数学'),
+          ('information', '情報'),
+          ('music', '音楽'),
+        ];
+
+  /// 小中学生版：どの教科もルート（学年）の単元。英語はさらに中1〜中3の文法・単語・単語帳
+  Widget _junior(BuildContext context, Widget chooser) {
+    final english = _subject == RpgCatalog.englishWorldId;
+    final world = RpgCatalog.world(_subject);
+    final extras = ExtraSets.of(_subject);
+    final tabs = [
+      for (final r in world.routes) Tab(text: r.name),
+      if (world.routes.isEmpty) const Tab(text: '準備中'),
+      if (english) ...const [
+        Tab(text: '中1文法'),
+        Tab(text: '中2文法'),
+        Tab(text: '中3文法'),
+        Tab(text: '単語・熟語'),
+      ],
+      if (extras.isNotEmpty) const Tab(text: '追加問題'),
+      if (english) const Tab(icon: Icon(Icons.style, size: 16), text: '単語帳練習'),
+    ];
+    return DefaultTabController(
+      key: ValueKey(_subject),
+      length: tabs.length,
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: TsuzuriColors.tint(0xFFE6F0F5),
+          title: Text('定期テストの海', style: serif(19, color: StudyRealm.sea.ink)),
+          actions: [
+            TextButton.icon(
+              onPressed: () => Navigator.of(context).push(
+                MaterialPageRoute<void>(
+                  builder: (_) => const ExamWorldListScreen(),
+                ),
+              ),
+              icon: const Icon(Icons.auto_awesome, size: 18),
+              label: const Text('試験対策'),
+            ),
+          ],
+          bottom: PreferredSize(
+            preferredSize: const Size.fromHeight(44 + 48),
+            child: Column(
+              children: [
+                chooser,
+                TabBar(
+                  isScrollable: true,
+                  tabAlignment: TabAlignment.start,
+                  labelColor: StudyRealm.sea.ink,
+                  indicatorColor: StudyRealm.sea.ink,
+                  tabs: tabs,
+                ),
+              ],
+            ),
+          ),
+        ),
+        body: NotebookPaper(
+          child: StreamBuilder<RpgProgress>(
+            stream: RpgServices.of(context).repository.watch(),
+            builder: (context, snap) {
+              final progress = snap.data ?? RpgProgress.initial;
+              return TabBarView(
+                children: [
+                  for (final r in world.routes)
+                    _RouteTab(world: world, route: r, progress: progress),
+                  if (world.routes.isEmpty)
+                    const Center(child: Text('この教科は準備中です')),
+                  if (english) ...[
+                    _GradeTab(grade: 1, progress: progress),
+                    _GradeTab(grade: 2, progress: progress),
+                    _GradeTab(grade: 3, progress: progress),
+                    WordBooksTab(progress: progress),
+                  ],
+                  if (extras.isNotEmpty)
+                    _ExtraTab(world: world, sets: extras, progress: progress),
+                  if (english) VocabHome(books: widget.personalBooks),
+                ],
+              );
+            },
+          ),
+        ),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -75,6 +158,7 @@ class _SeaHomeScreenState extends State<SeaHomeScreen> {
         ],
       ),
     );
+    if (juniorEdition) return _junior(context, chooser);
     final english = _subject == 'english';
     final world = english ? null : RpgCatalog.world(_subject);
     final extras = ExtraSets.of(_subject);
@@ -348,7 +432,7 @@ class _GradeTab extends StatelessWidget {
     if (set == null || !context.mounted) return;
     await startSeaBattle(
       context,
-      title: '高$grade ${unit.number}. ${unit.title}',
+      title: '${juniorEdition ? '中' : '高'}$grade ${unit.number}. ${unit.title}',
       recordId: unit.id,
       questions: set.questions,
       worldId: RpgCatalog.englishWorldId,
@@ -474,10 +558,13 @@ class WordBooksTab extends StatelessWidget {
     return ListView(
       padding: const EdgeInsets.fromLTRB(40, 12, 12, 24),
       children: [
-        Text('パスワードで開いた単語帳', style: serif(15, color: TsuzuriColors.inkSoft)),
-        const SizedBox(height: 8),
-        VocabBookQuizSection(progress: progress, realm: realm),
-        const SizedBox(height: 12),
+        // 小中学生版には、パスワードで開く単語帳（LEAP など）はない
+        if (!juniorEdition) ...[
+          Text('パスワードで開いた単語帳', style: serif(15, color: TsuzuriColors.inkSoft)),
+          const SizedBox(height: 8),
+          VocabBookQuizSection(progress: progress, realm: realm),
+          const SizedBox(height: 12),
+        ],
         Text('1回20問（ランダム）', style: serif(15, color: TsuzuriColors.inkSoft)),
         const SizedBox(height: 8),
         for (final b in SeaCatalog.wordBooks)

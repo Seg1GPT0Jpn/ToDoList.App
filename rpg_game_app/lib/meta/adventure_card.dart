@@ -27,6 +27,7 @@ import 'bestiary_screen.dart';
 import 'design.dart';
 import 'review_tower_screen.dart';
 import 'settings_screen.dart';
+import '../cloud/cloud_sync.dart';
 
 /// ホームの「冒険の手帳」：称号・連続日数・次の目標・デイリークエスト・教科レベル
 class AdventureCard extends StatelessWidget {
@@ -544,6 +545,9 @@ class _MenuGroupsState extends State<_MenuGroups> {
   static _Group _last = _Group.rpg;
   _Group _group = _last;
 
+  /// クラウド（Firebase）を使う機能を出すか（小中学生版は Firebase を設定するまで出さない）
+  static bool get _cloud => !juniorEdition || CloudSync.configured;
+
   Map<_Group, List<_MenuButton>> _items(BuildContext context) {
     final services = RpgServices.of(context);
     final progress = widget.progress, open = widget.open, due = widget.due;
@@ -564,7 +568,8 @@ class _MenuGroupsState extends State<_MenuGroups> {
           _MenuButton(
             feature: HomeFeature.story,
             icon: Icons.menu_book_outlined,
-            label: '物語（欠片 ${Story.fragments(progress).length}/6）',
+            label:
+                '物語（${juniorEdition ? '証' : '欠片'} ${Story.fragments(progress).length}/${Story.worlds.length}）',
             builder: (_) => const StoryScreen(),
           ),
         if (has(HomeFeature.gear))
@@ -588,7 +593,7 @@ class _MenuGroupsState extends State<_MenuGroups> {
           _MenuButton(
             feature: HomeFeature.sky,
             icon: Icons.rocket_launch_outlined,
-            label: '模擬試験の空',
+            label: StudyRealm.sky.title,
             builder: (_) => const SkyHomeScreen(),
           ),
         if (has(HomeFeature.reviewTower)) tower,
@@ -600,15 +605,16 @@ class _MenuGroupsState extends State<_MenuGroups> {
             builder: (_) => const WordForestScreen(),
           ),
       ],
+      // 小中学生版には共通テスト・総合演習（高校生向け）はない
       _Group.common: [
-        if (has(HomeFeature.commonTest))
+        if (!juniorEdition && has(HomeFeature.commonTest))
           _MenuButton(
             feature: HomeFeature.commonTest,
             icon: Icons.account_balance_outlined,
             label: '共通テスト遺跡',
             builder: (_) => const CommonTestRuinsScreen(),
           ),
-        if (has(HomeFeature.comprehensive))
+        if (!juniorEdition && has(HomeFeature.comprehensive))
           _MenuButton(
             feature: HomeFeature.comprehensive,
             icon: Icons.assignment_outlined,
@@ -624,25 +630,28 @@ class _MenuGroupsState extends State<_MenuGroups> {
             label: '対戦モード',
             builder: (_) => const VersusSetupScreen(),
           ),
-        if (has(HomeFeature.classroom))
+        // クラスルーム・単語チャレンジは Firebase が必要（小中学生版は設定するまで出さない）
+        if (has(HomeFeature.classroom) && _cloud)
           _MenuButton(
             feature: HomeFeature.classroom,
             icon: Icons.groups_outlined,
             label: 'クラスルーム',
             builder: (_) => const ClassroomHubScreen(),
           ),
-        _MenuButton(
-          id: 'contest',
-          icon: Icons.emoji_events_outlined,
-          label: '週替わり単語バトル（LEAP・EEVI）',
-          builder: (_) => const ContestScreen(),
-        ),
-        _MenuButton(
-          id: 'duel',
-          icon: Icons.flash_on,
-          label: '単語チャレンジ',
-          builder: (_) => const DuelHubScreen(),
-        ),
+        if (!juniorEdition)
+          _MenuButton(
+            id: 'contest',
+            icon: Icons.emoji_events_outlined,
+            label: '週替わり単語バトル（LEAP・EEVI）',
+            builder: (_) => const ContestScreen(),
+          ),
+        if (_cloud)
+          _MenuButton(
+            id: 'duel',
+            icon: Icons.flash_on,
+            label: '単語チャレンジ',
+            builder: (_) => const DuelHubScreen(),
+          ),
       ],
       _Group.records: [
         if (has(HomeFeature.learningStatus))

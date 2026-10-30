@@ -10,6 +10,7 @@ import '../world/elites.dart';
 import '../world/shadow_keeper.dart';
 import 'enemy_species.dart';
 import 'journal.dart';
+import '../edition.dart';
 
 /// 実績の判定に使う情報
 class AchievementContext {
@@ -74,7 +75,7 @@ class Achievements {
         'social',
         'japanese',
         'math',
-        'information',
+        if (!juniorEdition) 'information',
       ].where((s) => c.record.subjectLevel(s) >= level).length;
 
   static final all = <AchievementDef>[
@@ -281,10 +282,10 @@ class Achievements {
     AchievementDef(
       id: 'all_subjects',
       title: '知識の探究者',
-      description: '6教科すべての問題に答える',
+      description: '${juniorEdition ? 5 : 6}教科すべての問題に答える',
       group: AchievementGroup.learning,
       rarity: Rarity.rare,
-      goal: 6,
+      goal: juniorEdition ? 5 : 6,
       value: (c) => {
         for (final s in c.record.stats.values)
           if (s.setId.isNotEmpty) LearningRecord.subjectOf(s.setId),
@@ -292,8 +293,10 @@ class Achievements {
     ),
     AchievementDef(
       id: 'english_clear',
-      title: '英語の旅人',
-      description: '英語ワールドで「ことばの欠片」を取りもどす',
+      title: juniorEdition ? '嵐を晴らす者' : '英語の旅人',
+      description: juniorEdition
+          ? '異界の港町で、バベル・リヴァイアサンから「通訳の羅針盤」を受け取る'
+          : '英語ワールドで「ことばの欠片」を取りもどす',
       group: AchievementGroup.battle,
       rarity: Rarity.epic,
       goal: 1,
@@ -301,17 +304,18 @@ class Achievements {
     ),
     AchievementDef(
       id: 'fragments_6',
-      title: '世界をつなぐ者',
-      description: '6つの知識の欠片をすべて取りもどす',
+      title: juniorEdition ? '五つの証を集めし者' : '世界をつなぐ者',
+      description:
+          juniorEdition ? '5つの国の守護者をすべて正気にもどし、五つの証をそろえる' : '6つの知識の欠片をすべて取りもどす',
       group: AchievementGroup.collection,
       rarity: Rarity.legendary,
-      goal: 6,
+      goal: juniorEdition ? 5 : 6,
       value: (c) => Story.fragments(c.progress).length,
     ),
     AchievementDef(
       id: 'world_center',
-      title: '忘却をこえし者',
-      description: '世界の中心で、忘却の魔王をたおす',
+      title: juniorEdition ? '真の言霊の勇者' : '忘却をこえし者',
+      description: juniorEdition ? '天空の図書院で、虚無の霧ネブラを晴らす' : '世界の中心で、忘却の魔王をたおす',
       group: AchievementGroup.battle,
       rarity: Rarity.legendary,
       goal: 1,

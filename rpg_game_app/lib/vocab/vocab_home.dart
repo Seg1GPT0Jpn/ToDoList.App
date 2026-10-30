@@ -181,12 +181,14 @@ class _VocabHomeState extends State<VocabHome> {
             label: const Text('単語チャレンジ（友だちとリンクで早押し）'),
           ),
         // LEAP・EEVI を開いている人みんなで、週に1回点数を競う
-        ContestEntryButton(store: store),
+        // 小中学生版には LEAP・EEVI の週替わり単語バトルはない
+        if (!juniorEdition) ContestEntryButton(store: store),
         const SizedBox(height: 12),
         Text('単語帳', style: serif(16)),
         const SizedBox(height: 6),
         for (final b in books) _bookTile(b, now),
-        _gate(),
+        // パスワードで開く単語帳（LEAP など）は高校生版だけ
+        if (!juniorEdition) _gate(),
         const SizedBox(height: 8),
         OutlinedButton.icon(
           onPressed: () async {

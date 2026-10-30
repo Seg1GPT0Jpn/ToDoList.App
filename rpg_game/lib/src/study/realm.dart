@@ -1,6 +1,7 @@
 import '../models/enemy.dart';
 import '../models/question.dart';
 import '../world/terrain.dart';
+import '../edition.dart';
 
 /// 学習モードの世界。
 ///
@@ -20,7 +21,8 @@ enum StudyRealm {
     color: 0xFF1F4E79,
   ),
   sky(
-    title: '模擬試験の空',
+    // 小中学生版は高校入試の対策
+    title: juniorEdition ? '高校入試の空' : '模擬試験の空',
     vehicle: '飛行船',
     deepVehicle: 'ロケット',
     surface: Terrain.cloudSea,

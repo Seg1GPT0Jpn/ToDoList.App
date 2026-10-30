@@ -118,12 +118,14 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         style: OutlinedButton.styleFrom(
                           minimumSize: const Size.fromHeight(48),
                         ),
-                        child: const Text('ログインせずにはじめる'),
+                        child: Text(real ? 'ログインせずにはじめる' : 'はじめる'),
                       ),
                       const SizedBox(height: 6),
                       Text(
-                        '記録はこの端末の中だけに保存されます。'
-                        'あとから「アカウント」でいつでもログインできます。',
+                        real
+                            ? '記録はこの端末の中だけに保存されます。'
+                                  'あとから「アカウント」でいつでもログインできます。'
+                            : '記録はこの端末の中に保存されます。',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 12,

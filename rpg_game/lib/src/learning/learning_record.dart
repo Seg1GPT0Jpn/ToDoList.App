@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'confidence.dart';
 import 'question_stat.dart';
+import '../edition.dart';
 
 /// 1回答えた結果（記録の差分）
 class AnswerEvent {
@@ -91,7 +92,13 @@ class LearningRecord {
   /// 教科（ワールド ID）。定期テストの海の英語（sea_…）は英語にまとめる
   static String subjectOf(String setId) {
     final w = setId.split('_').first;
-    return w == 'sea' || w == 'tsuzutan' ? 'english' : w;
+    // 定期テストの海・単語帳の問題は英語（小中学生版の単語帳は words・idioms）
+    return (juniorEdition
+                ? const {'sea', 'words', 'idioms'}
+                : const {'sea', 'tsuzutan'})
+            .contains(w)
+        ? 'english'
+        : w;
   }
 
   Iterable<QuestionStat> _of(String? subject) => subject == null

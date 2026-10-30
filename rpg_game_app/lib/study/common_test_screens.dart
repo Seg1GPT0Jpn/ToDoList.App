@@ -262,7 +262,10 @@ class _MockExamScreenState extends State<MockExamScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: StudyRealm.sky.paper,
-        title: Text('採点模試', style: serif(18, color: StudyRealm.sky.ink)),
+        title: Text(
+          juniorEdition ? '入試模試' : '採点模試',
+          style: serif(18, color: StudyRealm.sky.ink),
+        ),
       ),
       body: NotebookPaper(
         child: StreamBuilder<RpgProgress>(

@@ -1,6 +1,7 @@
 /// つづりクエスト（仮）— クイズRPGミニゲームのコアロジック。
 library rpg_game;
 
+export 'src/edition.dart';
 export 'src/battle/battle_engine.dart';
 export 'src/battle/cards.dart';
 export 'src/battle/damage_calculator.dart';

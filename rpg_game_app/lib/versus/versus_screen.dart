@@ -15,7 +15,7 @@ import '../app/usage_meter.dart';
 import '../art/enemy_painter.dart';
 import '../art/hero_painter.dart';
 import '../art/paper.dart';
-import '../story/story_player.dart';
+import '../art/noise_painter.dart';
 import 'duel_screens.dart';
 import 'online_lobby_screen.dart';
 import 'online_room.dart';
@@ -387,6 +387,8 @@ class VersusScreen extends StatefulWidget {
     this.random,
     this.online,
     this.rival = false,
+    this.rivalLook,
+    this.rivalColor,
     this.ghost,
     this.resultExtra,
   });
@@ -399,6 +401,10 @@ class VersusScreen extends StatefulWidget {
 
   /// 物語のライバル「ノイズ」との勝負（CPU の姿がノイズになる）
   final bool rival;
+
+  /// 物語の相手を、ノイズではなくこの姿で出す（小中学生版の守護者など）
+  final String? rivalLook;
+  final int? rivalColor;
 
   /// オンライン対戦のとき、そのつながり
   final OnlineLink? online;
@@ -874,7 +880,13 @@ class _VersusScreenState extends State<VersusScreen>
             child: AnimatedBuilder(
               animation: _idle,
               builder: (_, _) => CustomPaint(
-                painter: widget.rival
+                painter: widget.rivalLook != null
+                    ? _LookPainter(
+                        widget.rivalLook!,
+                        _idle.value * 60,
+                        color: widget.rivalColor,
+                      )
+                    : widget.rival
                     ? _NoisePainter(_idle.value * 60)
                     : widget.cpu == null || widget.ghost != null
                     ? _HeroMini(false)
@@ -1064,6 +1076,8 @@ class _VersusScreenState extends State<VersusScreen>
     final a = _match.players[0], b = _match.players[1];
     final title = w == null
         ? '引き分け！'
+        : widget.rivalLook != null
+        ? (w == 0 ? '${b.name}に勝った！' : '${b.name}の勝ち…')
         : widget.rival
         ? (w == 0 ? 'ノイズに勝った！' : 'ノイズの勝ち…')
         : widget.ghost != null
@@ -1141,12 +1155,13 @@ class _VersusScreenState extends State<VersusScreen>
 }
 
 class _LookPainter extends CustomPainter {
-  _LookPainter(this.look, this.t);
+  _LookPainter(this.look, this.t, {this.color});
   final String look;
   final double t;
+  final int? color;
   @override
   void paint(Canvas canvas, Size size) =>
-      paintEnemy(canvas, size.shortestSide, look, t);
+      paintEnemy(canvas, size.shortestSide, look, t, color: color);
   @override
   bool shouldRepaint(_LookPainter old) => true;
 }

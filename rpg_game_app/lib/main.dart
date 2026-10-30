@@ -55,12 +55,14 @@ Future<void> main() async {
   // Firebase の設定があればクラウドと同期する。なければ端末の中だけで動く
   final personalBooks = PersonalBooks(prefs);
   // 曲の一覧・フォントを読むのと同時に進める
-  final cloudReady = CloudSync.start(
-    progress: progress,
-    profiles: profiles,
-    meta: meta,
-    books: personalBooks,
-  );
+  final cloudReady = !CloudSync.configured
+      ? Future<CloudSync?>.value()
+      : CloudSync.start(
+          progress: progress,
+          profiles: profiles,
+          meta: meta,
+          books: personalBooks,
+        );
   final backend = PlayerBackend();
   final music = MusicDirector(backend, settings.value);
   // バトル・ボスの曲が1つのファイル（bgm_battle.mp3 / bgm_boss.mp3）で置いてあれば、そちらを使う
@@ -235,6 +237,11 @@ class _CloudRootState extends State<_CloudRoot> {
       unawaited(_connected(now, _cloud.account));
       return;
     }
+    // Firebase の設定がない版は、ログインを出さずに端末の中だけで動く
+    if (!CloudSync.configured) {
+      _cloud = _Cloud.offline(MockAccountService());
+      return;
+    }
     // ログインを押されたら、準備ができるのを待ってからログインする
     final account = widget.cloudReady.then(
       (c) => c == null ? null : FirebaseAccountService(c),
@@ -372,7 +379,9 @@ class _TsuzuriQuestAppState extends State<TsuzuriQuestApp>
 
   Widget _app(bool dark) {
     return MaterialApp(
-      title: 'つづりクエスト',
+      title: juniorEdition
+          ? 'つづりクエスト for elementary and junior high school'
+          : 'つづりクエスト',
       debugShowCheckedModeBanner: false,
       themeMode: dark ? ThemeMode.dark : ThemeMode.light,
       theme: buildTheme(Brightness.light),
