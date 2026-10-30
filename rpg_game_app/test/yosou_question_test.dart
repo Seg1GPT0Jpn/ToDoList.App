@@ -214,6 +214,12 @@ void main() {
     expect(find.text('(1) 正しいものは？'), findsOneWidget);
     expect(find.text('あなたの答え：3. う'), findsOneWidget);
     await t.ensureVisible(find.byKey(const ValueKey('yosou-self-yosou_t_3-2')));
+    // 画面のはしにあると押しにくいので、少し上に動かしてから押す
+    await t.drag(
+      find.byKey(const ValueKey('yosou-result')),
+      const Offset(0, -200),
+    );
+    await _frames(t);
     await t.tap(find.byKey(const ValueKey('yosou-self-yosou_t_3-2')));
     await _frames(t);
     await t.drag(
