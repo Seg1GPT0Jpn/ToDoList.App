@@ -12,6 +12,7 @@ import '../vocab/vocab_store.dart';
 import '../vocab/weak_cards_screen.dart';
 import 'realm_style.dart';
 import 'sea_battle_launcher.dart';
+import '../vocab/status_dots.dart';
 
 /// 暗記カード（物理・日本史など）を読み込む。読めなければ null。
 Future<TermDeck?> loadTermDeck(TermDeckInfo info) async {
@@ -216,7 +217,7 @@ class _TermCardsTabState extends State<TermCardsTab> {
           children: [
             Text('今日のあなた（${widget.world.subject}）', style: serif(17)),
             const SizedBox(height: 4),
-            Text(
+            DotText(
               '🔴 弱点 ${totals[CardStatus.weak]}枚　🟠 あやふや ${totals[CardStatus.shaky]}枚　'
               '🟢 安定 ${totals[CardStatus.stable]}枚',
               key: const ValueKey('term-today-counts'),
@@ -357,7 +358,10 @@ class _DeckCard extends StatelessWidget {
                   if (status != null)
                     Padding(
                       padding: const EdgeInsets.only(bottom: 4),
-                      child: Text(status, style: const TextStyle(fontSize: 12)),
+                      child: DotText(
+                        status,
+                        style: const TextStyle(fontSize: 12),
+                      ),
                     ),
                   Wrap(
                     spacing: 8,

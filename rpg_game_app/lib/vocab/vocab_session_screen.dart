@@ -14,6 +14,7 @@ import 'quick_battle.dart';
 import 'speech.dart';
 import 'vocab_store.dart';
 import 'weak_cards_screen.dart';
+import 'status_dots.dart';
 
 /// 単語帳の練習（1回ぶん）。
 ///
@@ -931,7 +932,7 @@ class _VocabSessionScreenState extends State<VocabSessionScreen> {
         ),
         const SizedBox(height: 12),
         Center(
-          child: Text(
+          child: DotText(
             '🔴 弱点 ${counts[CardStatus.weak]}${widget.book.unit}　🟠 あやふや ${counts[CardStatus.shaky]}${widget.book.unit}　🟢 安定 ${counts[CardStatus.stable]}${widget.book.unit}',
           ),
         ),

@@ -20,7 +20,9 @@ void showMetaToast({
   m.showSnackBar(
     SnackBar(
       behavior: SnackBarBehavior.floating,
-      backgroundColor: TsuzuriColors.ink,
+      backgroundColor: TsuzuriColors.mono
+          ? const Color(0xFF0B4F4B)
+          : TsuzuriColors.ink,
       duration: Duration(seconds: 3 + lines.length),
       content: Text(lines.join('\n')),
     ),

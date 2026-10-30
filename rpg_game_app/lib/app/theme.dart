@@ -94,6 +94,19 @@ ThemeData buildTheme(Brightness brightness) {
           dynamicSchemeVariant: DynamicSchemeVariant.monochrome,
           primary: dark ? const Color(0xFF6FCFC9) : const Color(0xFF1F8A85),
           onPrimary: dark ? Colors.black : Colors.white,
+          // 選んでいるもの・浮いているボタンなども、黒や濃い灰色ではなく薄い青緑にする
+          primaryContainer: dark
+              ? const Color(0xFF124F4C)
+              : const Color(0xFFD3EFEC),
+          onPrimaryContainer: dark
+              ? const Color(0xFFD3EFEC)
+              : const Color(0xFF0B4F4B),
+          secondaryContainer: dark
+              ? const Color(0xFF124F4C)
+              : const Color(0xFFD3EFEC),
+          onSecondaryContainer: dark
+              ? const Color(0xFFD3EFEC)
+              : const Color(0xFF0B4F4B),
           surface: dark ? Colors.black : Colors.white,
         )
       : ColorScheme.fromSeed(
@@ -117,6 +130,15 @@ ThemeData buildTheme(Brightness brightness) {
       ? _regularOnly(base.textTheme).apply(fontFamily: _bundledFamily)
       : GoogleFonts.notoSansJpTextTheme(_regularOnly(base.textTheme));
   return base.copyWith(
+    // Light：上の帯にうすく色をつける
+    appBarTheme: mono
+        ? AppBarTheme(
+            backgroundColor: dark
+                ? const Color(0xFF0B2B29)
+                : const Color(0xFFEAF6F5),
+            foregroundColor: dark ? Colors.white : const Color(0xFF0B4F4B),
+          )
+        : null,
     textTheme: body.copyWith(
       headlineLarge: _heading(body.headlineLarge),
       headlineMedium: _heading(body.headlineMedium),

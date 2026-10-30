@@ -16,6 +16,7 @@ import 'vocab_import_screen.dart';
 import 'vocab_session_screen.dart';
 import 'vocab_store.dart';
 import 'weak_cards_screen.dart';
+import 'status_dots.dart';
 
 /// 単語帳練習のホーム（定期テストの海の「単語帳練習」タブ）
 class VocabHome extends StatefulWidget {
@@ -123,7 +124,7 @@ class _VocabHomeState extends State<VocabHome> {
               children: [
                 Text('今日のあなた', style: serif(17)),
                 const SizedBox(height: 4),
-                Text(
+                DotText(
                   '🔴 弱点 ${totals[CardStatus.weak]}語　🟠 あやふや ${totals[CardStatus.shaky]}語　'
                   '🟢 安定 ${totals[CardStatus.stable]}語',
                 ),
@@ -212,7 +213,7 @@ class _VocabHomeState extends State<VocabHome> {
       child: ListTile(
         leading: Icon(b.isProtected ? Icons.lock_open : Icons.menu_book),
         title: Text(b.title),
-        subtitle: Text(
+        subtitle: DotText(
           b.cards.isEmpty
               ? 'まだ単語がありません（タップして取り込む）'
               : '${b.cards.length}語　🟢${c[CardStatus.stable]} 🟠${c[CardStatus.shaky]} 🔴${c[CardStatus.weak]}　復習 ${p.dueCount(now)}',

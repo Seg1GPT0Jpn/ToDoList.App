@@ -7,6 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../app/services.dart';
 import '../app/theme.dart';
 import '../vocab/vocab_store.dart';
+import '../app/edition.dart';
 
 /// ゆるい連続記録とお休み券の保存先（この端末の中だけ）。
 ///
@@ -64,6 +65,12 @@ class StreakStore extends ChangeNotifier {
   }
 }
 
+/// 連続の日数（Light は絵文字を使わない：絵文字のフォントをネットから取りに行くため）
+const streakMark = lightEdition ? '' : '🔥 ';
+
+/// お休み券の印
+const ticketMark = lightEdition ? 'お休み券' : '🎫';
+
 /// 「🔥 n 日連続」とお休み券の札。表示のたびに券の出し入れを済ませ、
 /// 使った・もらったときはひとことだけ知らせる
 class StreakTag extends StatefulWidget {
@@ -99,7 +106,7 @@ class _StreakTagState extends State<StreakTag> {
         });
         final n = store.state.length(days, today);
         final tickets = store.state.tickets;
-        final tag = n > 0 ? '🔥 $n 日連続' : '今日から始めよう';
+        final tag = n > 0 ? '$streakMark$n 日連続' : '今日から始めよう';
         if (!widget.long) {
           return Container(
             key: const ValueKey('streak-tag'),
@@ -110,7 +117,7 @@ class _StreakTagState extends State<StreakTag> {
               borderRadius: BorderRadius.circular(10),
             ),
             child: Text(
-              tickets > 0 ? '$tag　🎫×$tickets' : tag,
+              tickets > 0 ? '$tag　$ticketMark×$tickets' : tag,
               style: TextStyle(
                 fontSize: 12,
                 color: n > 0 ? const Color(0xFFD9822B) : TsuzuriColors.inkSoft,
@@ -122,7 +129,7 @@ class _StreakTagState extends State<StreakTag> {
           key: const ValueKey('streak-long'),
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('$tag　🎫 お休み券 ×$tickets'),
+            Text('$tag　${lightEdition ? '' : '🎫 '}お休み券 ×$tickets'),
             Text(
               StreakText.help,
               style: TextStyle(fontSize: 11, color: TsuzuriColors.inkSoft),
@@ -141,6 +148,7 @@ class StreakText {
 
   static String news(StreakNews n) => [
     if (n.used > 0) 'お休み券を${n.used}枚使って、連続をつなぎました',
-    if (n.earned > 0) '7日続きました！お休み券を${n.earned}枚もらいました 🎫',
+    if (n.earned > 0)
+      '7日続きました！お休み券を${n.earned}枚もらいました${lightEdition ? '' : ' 🎫'}',
   ].join('。');
 }

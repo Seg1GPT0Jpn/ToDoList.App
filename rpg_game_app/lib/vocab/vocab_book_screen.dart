@@ -10,6 +10,8 @@ import 'speech.dart';
 import 'vocab_import_screen.dart';
 import 'vocab_session_screen.dart';
 import 'vocab_store.dart';
+import 'status_dots.dart';
+import '../meta/streak_store.dart';
 
 /// 単語帳1冊：学習・単語一覧（力ごとの熟練度）・分析
 class VocabBookScreen extends StatefulWidget {
@@ -551,7 +553,7 @@ class _VocabBookScreenState extends State<VocabBookScreen> {
           children: [
             Row(
               children: [
-                Text('$dot ', style: const TextStyle(fontSize: 11)),
+                DotText('$dot ', style: const TextStyle(fontSize: 11)),
                 if (c.number != null)
                   Text(
                     '${c.number} ',
@@ -771,12 +773,12 @@ class _VocabBookScreenState extends State<VocabBookScreen> {
       children: [
         Text('今日のあなた', style: serif(16)),
         const SizedBox(height: 4),
-        Text(
+        DotText(
           '🔴 弱点 ${counts[CardStatus.weak]}${book.unit}　🟠 あやふや ${counts[CardStatus.shaky]}${book.unit}　'
           '🟢 安定 ${counts[CardStatus.stable]}${book.unit}　⚪ 未学習 ${counts[CardStatus.unseen]}${book.unit}',
         ),
         Text(
-          '今日の復習予定 ${progress.dueCount(now)}問　🔥 ${progress.streak(now)}日連続',
+          '今日の復習予定 ${progress.dueCount(now)}問　$streakMark${progress.streak(now)}日連続',
         ),
         if (today != null)
           Text(
