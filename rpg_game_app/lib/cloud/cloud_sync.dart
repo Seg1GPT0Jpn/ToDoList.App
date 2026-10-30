@@ -41,11 +41,14 @@ class CloudSync {
     _vocab = VocabCloudSync(
       write: (docId, data) => _db.doc(_vocabPath(_uid!, docId)).set(data),
       readAll: () async {
-        final snap = await _db
-            .collection('users')
-            .doc(_uid)
-            .collection(vocabCollection)
-            .get();
+        final snap = await _fresh(
+          _db
+              .collection('users')
+              .doc(_uid)
+              .collection(vocabCollection)
+              .snapshots(includeMetadataChanges: true),
+          (s) => s.metadata.isFromCache,
+        );
         return {for (final d in snap.docs) d.id: d.data()};
       },
     );
@@ -76,6 +79,12 @@ class CloudSync {
     try {
       await Firebase.initializeApp(
         options: DefaultFirebaseOptions.currentPlatform,
+      );
+      // 受けとった記録を端末（Web は IndexedDB）に残す。次に読むときは、変わった分だけが届く。
+      // フル版と Light を同じブラウザで同時に開いても使えるように、タブをまたいで共有する
+      FirebaseFirestore.instance.settings = const Settings(
+        persistenceEnabled: true,
+        webPersistentTabManager: WebPersistentMultipleTabManager(),
       );
     } catch (e) {
       debugPrint('Firebase を使わずに起動します: $e');
@@ -277,8 +286,8 @@ class CloudSync {
       }
       await prefs.setString(_uidKey, uid);
       final serverPurchaseIds = await _loadPurchaseIds(uid);
-      final progressData =
-          (await _db.doc(RpgFirestorePaths.progressDoc(uid)).get()).data();
+      final progressData = (await _freshDoc(RpgFirestorePaths.progressDoc(uid)))
+          .data();
       final local = await _progress.load();
       await _progress.replaceLocal(
         local.copyWith(
@@ -290,9 +299,7 @@ class CloudSync {
       } else {
         await _pushProgress(await _progress.load());
       }
-      final profileSnap = await _db
-          .doc(RpgFirestorePaths.profileDoc(uid))
-          .get();
+      final profileSnap = await _freshDoc(RpgFirestorePaths.profileDoc(uid));
       final profileData = profileSnap.data();
       if (profileData != null) {
         await _profiles.replaceLocal(
@@ -320,7 +327,7 @@ class CloudSync {
         ),
       ]) {
         try {
-          final data = (await _db.doc(path(uid)).get()).data();
+          final data = (await _freshDoc(path(uid))).data();
           if (data != null) {
             await apply(_plain(data));
           } else {
@@ -338,17 +345,37 @@ class CloudSync {
     }
   }
 
+  /// サーバーと同じになった最新の中身を読む（get のかわり）。
+  ///
+  /// 見張り（snapshots）と同じ読み方なので、見張っている文書は見張りと1回の読みこみを共有する。
+  /// また、少し前（Firestore の決まりでは目安30分以内）に読んだ文書は端末のキャッシュを使い、変わった分だけが届く。
+  /// get は毎回すべてを送ってくるので、起動・アプリにもどるたびに記録をまるごと読みなおし、
+  /// 起動したときは見張りの分とあわせて2回読んでいた。
+  /// オフラインなどで読めなければ（20秒）失敗する（get と同じ）
+  static Future<T> _fresh<T>(Stream<T> s, bool Function(T) fromCache) =>
+      firstFromServer(s, fromCache);
+
+  /// 中身が変わっていなくても「サーバーと同じになった」ことを受けとるため、includeMetadataChanges にする
+  Future<DocumentSnapshot<Map<String, dynamic>>> _freshDoc(String path) =>
+      _fresh(
+        _db.doc(path).snapshots(includeMetadataChanges: true),
+        (s) => s.metadata.isFromCache,
+      );
+
   /// サーバーで検証済みの買い切りワールドだけを端末へ復元する。
   ///
   /// rpg_purchases はクライアントから書き込めない Firestore コレクションで、
   /// 実際の購入は Google Play Developer API で検証した Cloud Function だけが作る。
   Future<Set<String>> _loadPurchaseIds(String uid) async {
     try {
-      final snapshot = await _db
-          .collection('users')
-          .doc(uid)
-          .collection(RpgFirestorePaths.purchasesCollection)
-          .get();
+      final snapshot = await _fresh(
+        _db
+            .collection('users')
+            .doc(uid)
+            .collection(RpgFirestorePaths.purchasesCollection)
+            .snapshots(includeMetadataChanges: true),
+        (s) => s.metadata.isFromCache,
+      );
       return {
         for (final doc in snapshot.docs)
           if (doc.data()['revokedAt'] == null) doc.id,
@@ -406,4 +433,34 @@ class CloudSync {
   /// Firestore の Timestamp など、JSON にない型を取りのぞく
   static Map<String, dynamic> _plain(Map<String, dynamic> data) =>
       Map.of(data)..remove('updatedAt');
+}
+
+/// [s] のうち、端末のキャッシュではなくサーバーから届いた最初のものを返す（届いたら見張りをやめる）。
+/// [limit] たっても届かなければ失敗する
+Future<T> firstFromServer<T>(
+  Stream<T> s,
+  bool Function(T) fromCache, {
+  Duration limit = const Duration(seconds: 20),
+}) {
+  final done = Completer<T>();
+  late final StreamSubscription<T> sub;
+  sub = s.listen(
+    (x) {
+      if (fromCache(x) || done.isCompleted) return;
+      done.complete(x);
+      unawaited(sub.cancel());
+    },
+    onError: (Object e, StackTrace st) {
+      if (done.isCompleted) return;
+      done.completeError(e, st);
+      unawaited(sub.cancel());
+    },
+  );
+  return done.future.timeout(
+    limit,
+    onTimeout: () {
+      unawaited(sub.cancel());
+      throw TimeoutException('クラウドの記録を読めませんでした');
+    },
+  );
 }
