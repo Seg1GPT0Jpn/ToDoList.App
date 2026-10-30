@@ -26,6 +26,7 @@ import 'quiz/question_report.dart';
 import 'cloud/firestore_classroom_backend.dart';
 import 'cloud/firestore_contest_backend.dart';
 import 'cloud/firestore_duel_backend.dart';
+import 'cloud/firestore_yosou_ranking.dart';
 import 'cloud/firestore_matchmaking.dart';
 import 'cloud/firestore_usage_sink.dart';
 import 'cloud/firestore_versus_backend.dart';
@@ -149,6 +150,9 @@ Future<void> main() async {
       contests: cloud == null
           ? null
           : FirestoreContestBackend(cloud.auth, FirebaseFirestore.instance),
+      yosouRanking: cloud == null
+          ? null
+          : FirestoreYosouRankBackend(cloud.auth, FirebaseFirestore.instance),
       tsuzuriBackend: cloud == null || !FirebaseTsuzuriBackend.supported
           ? null
           : FirebaseTsuzuriBackend(),

@@ -20,6 +20,7 @@ import '../meta/streak_store.dart';
 import '../purchase/google_play_purchase_service.dart';
 import '../study/exam_world_store.dart';
 import '../study/personal_books.dart';
+import '../study/yosou_ranking.dart';
 import '../versus/contest_backend.dart';
 import '../versus/duel_backend.dart';
 import '../versus/matchmaking.dart';
@@ -44,6 +45,7 @@ class RpgServices extends InheritedWidget {
     this.classrooms,
     this.duels,
     this.contests,
+    this.yosouRanking,
     this.matchmaking,
     this.usageSink,
     this.purchaseService,
@@ -88,6 +90,9 @@ class RpgServices extends InheritedWidget {
 
   /// 週替わり単語バトル（LEAP・EEVI。Firebase の設定がなければ null）
   final ContestBackend? contests;
+
+  /// 予想問題のランキング（Firebase の設定がなければ null）
+  final YosouRankBackend? yosouRanking;
 
   /// ランダム対戦の待ち合わせとゴースト（Firebase の設定がなければ null）
   final MatchmakingBackend? matchmaking;

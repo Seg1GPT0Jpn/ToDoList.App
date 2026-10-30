@@ -159,6 +159,12 @@ void main() {
     await _frames(t);
     expect(find.text('5 / 12 点'), findsOneWidget);
     await t.ensureVisible(find.byKey(const ValueKey('yosou-self-c-4')));
+    // 画面のはしにあると押しにくいので、少し上に動かしてから押す
+    await t.drag(
+      find.byKey(const ValueKey('yosou-result')),
+      const Offset(0, -200),
+    );
+    await _frames(t);
     await t.tap(find.byKey(const ValueKey('yosou-self-c-4')));
     await _frames(t);
     await t.drag(

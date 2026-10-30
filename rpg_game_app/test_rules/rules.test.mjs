@@ -197,6 +197,25 @@ await check('バトル：管理者が受付を早く閉じると、もう始め�
   await assertSucceeds(setDoc(doc(ADMIN, 'vocab_contest_config/main'), cfg));
   await assertSucceeds(setDoc(doc(db('dave'), `vocab_contests/${rid}/entries/dave`), ent()));
 })());
+// 予想問題のランキング
+const yr = (extra = {}) => ({ name: 'あ', score: 72, total: 100, spent: 3300, start: 1761800000000, unscored: 2, at: serverTimestamp(), ...extra });
+const Y = (who, uid) => doc(who, `yosou_rankings/2026-2m-gendai/entries/${uid}`);
+await check('予想ランキング：登録できる', assertSucceeds(setDoc(Y(A, 'alice'), yr())));
+await check('予想ランキング：もう一度は登録できない', assertFails(setDoc(Y(A, 'alice'), yr({ score: 100 }))));
+await check('予想ランキング：他人の名前では登録できない', assertFails(setDoc(Y(A, 'bob'), yr())));
+await check('予想ランキング：満点より高い点は入れられない', assertFails(setDoc(Y(B, 'bob'), yr({ score: 101 }))));
+await check('予想ランキング：答えなどよけいな項目は置けない', assertFails(setDoc(Y(B, 'bob'), yr({ answers: ['ア'] }))));
+await check('予想ランキング：自分で採点した点を入れなおせる', assertSucceeds(updateDoc(Y(A, 'alice'), { score: 78, unscored: 0, updatedAt: serverTimestamp() })));
+await check('予想ランキング：満点やかかった時間は変えられない', assertFails(updateDoc(Y(A, 'alice'), { total: 50, updatedAt: serverTimestamp() })));
+await check('予想ランキング：他人の点は変えられない', assertFails(updateDoc(Y(B, 'alice'), { score: 0, unscored: 0, updatedAt: serverTimestamp() })));
+await check('予想ランキング：ログインすれば読める', assertSucceeds(getDocs(collection(B, 'yosou_rankings/2026-2m-gendai/entries'))));
+await check('予想ランキング：ログインなしでは読めない', assertFails(getDocs(collection(N, 'yosou_rankings/2026-2m-gendai/entries'))));
+await check('予想ランキング：3日たつと点を入れなおせない', (async () => {
+  await env.withSecurityRulesDisabled(async (ctx) => {
+    await setDoc(doc(ctx.firestore(), 'yosou_rankings/2026-2m-gendai/entries/carol'), yr({ at: Timestamp.fromMillis(Date.now() - 4 * 86400000) }));
+  });
+  await assertFails(updateDoc(Y(C, 'carol'), { score: 90, unscored: 0, updatedAt: serverTimestamp() }));
+})());
 // 既存のルールが壊れていない
 await check('自分の進行状況は書ける（既存）', assertSucceeds(setDoc(doc(A, 'users/alice/rpg_progress/main'), { level: 1 })));
 await check('他人の進行状況は読めない（既存）', assertFails(getDoc(doc(B, 'users/alice/rpg_progress/main'))));

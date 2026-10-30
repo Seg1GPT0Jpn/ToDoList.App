@@ -13,6 +13,7 @@ import 'school_exam_store.dart';
 import 'yosou_crop_view.dart';
 import 'yosou_exam_store.dart';
 import 'yosou_question_view.dart';
+import 'yosou_ranking.dart';
 
 /// 予想問題の一覧（60分で解く）
 class YosouExamListScreen extends StatefulWidget {
@@ -134,39 +135,58 @@ class _YosouExamListScreenState extends State<YosouExamListScreen> {
               '${h.length > 1 ? '　最高 ${h.map((r) => r.score).reduce((x, y) => x > y ? x : y)} 点' : ''}'
         : 'まだ解いていません';
     return Card(
-      child: ListTile(
-        key: ValueKey('yosou-exam-${e.id}'),
-        leading: Icon(
-          a != null && !a.submitted
-              ? Icons.timer_outlined
-              : Icons.assignment_outlined,
-        ),
-        title: Text(e.title),
-        subtitle: Text(
-          '${ShonanSubjects.byId(e.subjectId)?.displayName ?? ''}・${e.minutes}分\n$status',
-        ),
-        isThreeLine: true,
-        trailing: _store.hasData(e.id)
-            ? IconButton(
-                key: ValueKey('yosou-reset-${e.id}'),
-                tooltip: '答えと結果をリセット',
-                icon: const Icon(Icons.restart_alt),
-                onPressed: () async {
-                  if (!await confirmYosouReset(context, e.title)) return;
-                  await _store.reset(e.id);
-                  if (mounted) setState(() {});
-                },
-              )
-            : const Icon(Icons.chevron_right),
-        onTap: () async {
-          await Navigator.of(context).push(
-            MaterialPageRoute<void>(
-              builder: (_) => YosouExamScreen(exam: e, keyBytes: key),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          _examTile(e, key, a, status),
+          TextButton.icon(
+            key: ValueKey('yosou-ranking-${e.id}'),
+            onPressed: () => Navigator.of(context).push(
+              MaterialPageRoute<void>(
+                builder: (_) => YosouRankingScreen(exam: e),
+              ),
             ),
-          );
-          if (mounted) setState(() {});
-        },
+            icon: const Icon(Icons.emoji_events_outlined, size: 18),
+            label: const Text('ランキング'),
+          ),
+        ],
       ),
+    );
+  }
+
+  Widget _examTile(YosouExam e, List<int> key, MockAttempt? a, String status) {
+    return ListTile(
+      key: ValueKey('yosou-exam-${e.id}'),
+      leading: Icon(
+        a != null && !a.submitted
+            ? Icons.timer_outlined
+            : Icons.assignment_outlined,
+      ),
+      title: Text(e.title),
+      subtitle: Text(
+        '${ShonanSubjects.byId(e.subjectId)?.displayName ?? ''}・${e.minutes}分\n$status',
+      ),
+      isThreeLine: true,
+      trailing: _store.hasData(e.id)
+          ? IconButton(
+              key: ValueKey('yosou-reset-${e.id}'),
+              tooltip: '答えと結果をリセット',
+              icon: const Icon(Icons.restart_alt),
+              onPressed: () async {
+                if (!await confirmYosouReset(context, e.title)) return;
+                await _store.reset(e.id);
+                if (mounted) setState(() {});
+              },
+            )
+          : const Icon(Icons.chevron_right),
+      onTap: () async {
+        await Navigator.of(context).push(
+          MaterialPageRoute<void>(
+            builder: (_) => YosouExamScreen(exam: e, keyBytes: key),
+          ),
+        );
+        if (mounted) setState(() {});
+      },
     );
   }
 
@@ -1145,6 +1165,17 @@ class _YosouExamScreenState extends State<YosouExamScreen> {
           textAlign: TextAlign.center,
           style: TextStyle(color: TsuzuriColors.inkSoft),
         ),
+      ),
+      const SizedBox(height: 12),
+      YosouRankCard(
+        exam: _e,
+        attempt: a,
+        score: score,
+        total: sheet.total,
+        unscored: unscored.length,
+        spent: spent,
+        // 1回目に解いた回（これまでの結果のいちばん古いもの）
+        firstStart: _store.history(_e.id).lastOrNull?.startedAt ?? a.startedAt,
       ),
       const SizedBox(height: 12),
       Wrap(
