@@ -73,3 +73,19 @@ flutter {
 dependencies {
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4")
 }
+
+// つづりクエストの部品から入ってくるファイルのうち、APK に入れないもの（Flutter が同梱ファイルを写すときに外す）
+// - Light では使わない：BGM・効果音、見出しの明朝体、本文フォントのつづりクエスト側の写し（Light は TsuzuriLightSans.ttf）
+// - 開いたときにネットから読んで端末に残す（lib/remote_assets_io.dart）：資料（materials）・予想問題（mock_exams）。約36MB
+tasks.withType<Copy>().configureEach {
+    if (name.startsWith("copyFlutterAssets")) {
+        exclude(
+            "**/packages/rpg_game_app/assets/audio/**",
+            "**/packages/rpg_game_app/assets/materials/**",
+            "**/packages/rpg_game_app/assets/mock_exams/**",
+            "**/packages/rpg_game_app/assets/fonts/NotoSerifJP-Bold.ttf",
+            "**/packages/rpg_game_app/assets/fonts/OFL-NotoSerifJP.txt",
+            "**/packages/rpg_game_app/assets/fonts/NotoSansJP-Regular.ttf",
+        )
+    }
+}

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'edition.dart';
+
 /// つづり（school_planner）の lib/app/theme.dart に合わせた配色。
 /// 移植時は school_planner 側のテーマをそのまま使う。
 class TsuzuriColors {
@@ -59,19 +61,23 @@ bool sansOnly = false;
 /// 描画エンジンは起動時にこのフォントを読み、Roboto を別に取りに行かない。google_fonts も使わない
 String? bundledSans;
 
+/// 本文のフォントを pubspec の名前で使うか。Light のビルドでは const で決まり、google_fonts のプログラムが入らない
+bool get _bundled => lightEdition || bundledSans != null;
+String get _bundledFamily => bundledSans ?? 'Roboto';
+
 /// 本文のフォントを読みこみ終わるまで待つ。読みこむ前に字を描くと、足りない字を
 /// ネットの別のフォント（中国語用の Noto など）から何度も取りに行って通信が増える
 /// （sansOnly でなければ、見出しの明朝体もいっしょに読む）
 Future<void> loadBodyFont() async {
   // エンジンが起動時に読んでいる
-  if (bundledSans != null) return;
+  if (_bundled) return;
   GoogleFonts.notoSansJp();
   if (!sansOnly) GoogleFonts.notoSerifJp(fontWeight: FontWeight.w700);
   await GoogleFonts.pendingFonts();
 }
 
 /// 見出しの文字（太字）。sansOnly のときは本文のフォントを太く描く（別の太さのファイルは読みこまない）
-TextStyle _heading(TextStyle? base) => sansOnly
+TextStyle _heading(TextStyle? base) => sansOnly || lightEdition
     ? (base ?? const TextStyle()).copyWith(fontWeight: FontWeight.w700)
     : GoogleFonts.notoSerifJp(textStyle: base, fontWeight: FontWeight.w700);
 
@@ -103,9 +109,8 @@ ThemeData buildTheme(Brightness brightness) {
         : const Color(0xFFFAF6EE),
   );
   // 本文のフォントは Regular の1つだけを持つ（読みこみを軽くするため、中くらいの太さも Regular で描く）
-  final sans = bundledSans;
-  final body = sans != null
-      ? _regularOnly(base.textTheme).apply(fontFamily: sans)
+  final body = _bundled
+      ? _regularOnly(base.textTheme).apply(fontFamily: _bundledFamily)
       : GoogleFonts.notoSansJpTextTheme(_regularOnly(base.textTheme));
   return base.copyWith(
     textTheme: body.copyWith(
@@ -132,9 +137,9 @@ TextStyle serif(
   double size, {
   FontWeight weight = FontWeight.w700,
   Color? color,
-}) => bundledSans != null
+}) => _bundled
     ? TextStyle(
-        fontFamily: bundledSans,
+        fontFamily: _bundledFamily,
         fontSize: size,
         color: color,
         fontWeight: FontWeight.w700,

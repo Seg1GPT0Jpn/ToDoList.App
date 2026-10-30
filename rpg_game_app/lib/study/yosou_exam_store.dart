@@ -131,8 +131,7 @@ class YosouExamFiles {
   final List<int> key;
 
   /// 同梱ファイルを読む（テストで差しかえる）
-  static Future<List<int>> Function(String asset) loader = (asset) async =>
-      (await rootBundle.load(appAsset(asset))).buffer.asUint8List();
+  static Future<List<int>> Function(String asset) loader = loadAppAssetBytes;
 
   /// 解答用紙を開く（鍵がちがえば null）
   Future<MockSheet?> sheet() async {

@@ -49,6 +49,7 @@ void main() {
     expect(identical(after.homeFeatures, before.homeFeatures), isTrue);
     expect(identical(after.classroomStore, before.classroomStore), isTrue);
     expect(identical(after.usage, before.usage), isTrue);
+    expect(identical(after.questions, before.questions), isTrue);
     await before.usage.open('vocab');
     expect(sink.sent, ['vocab']);
     // 別の入れ物（PersonalBooks）を使うときは分ける

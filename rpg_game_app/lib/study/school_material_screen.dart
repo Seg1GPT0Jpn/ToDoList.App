@@ -16,8 +16,7 @@ class SchoolMaterialScreen extends StatefulWidget {
   final SchoolMaterial material;
 
   /// 同梱ファイルを読む（テストで差しかえる）
-  static Future<List<int>> Function(String asset) loader = (asset) async =>
-      (await rootBundle.load(appAsset(asset))).buffer.asUint8List();
+  static Future<List<int>> Function(String asset) loader = loadAppAssetBytes;
 
   @override
   State<SchoolMaterialScreen> createState() => _SchoolMaterialScreenState();

@@ -51,8 +51,7 @@ class RpgServices extends InheritedWidget {
     this.purchaseService,
     this.tsuzuriBackend,
     required super.child,
-  }) : questions = JsonQuestionSource(loadQuestionAsset),
-       unlock = WorldUnlockService(
+  }) : unlock = WorldUnlockService(
          repository: repository,
          // 本物の Google Play Billing がある Android 版だけ購入ボタンを有効にする。
          allowComingSoonPurchase: false,
@@ -173,7 +172,11 @@ class RpgServices extends InheritedWidget {
 
   /// パスワード保護の個人用単語帳（LEAP など）
   final PersonalBooks personalBooks;
-  final JsonQuestionSource questions;
+
+  /// 問題（読んだ問題セットを覚えている。作りなおしても同じものを使う）
+  late final JsonQuestionSource questions = _keep(
+    () => JsonQuestionSource(loadQuestionAsset),
+  );
   final WorldUnlockService unlock;
 
   /// ステージの出題範囲をまとめて読み込む（エリア16以降は複数セット）。
@@ -253,25 +256,51 @@ class RpgServices extends InheritedWidget {
 
   /// 同梱の問題を読む。問題は教科ごとに1つのファイル
   /// （packages/rpg_game/assets/question_bundles/<教科>.json）にまとめてあり、
-  /// 教科ごとに1回だけ読んで覚えておく。
+  /// 読んだ教科は覚えておく（最近使った [bundleLimit] 教科まで）。
   static Future<String?> loadQuestionAsset(String setId) async {
     final world = setId.split('_').first;
-    final bundle = await (_bundles[world] ??= _loadBundle(world));
-    // 読めなかったときは覚えず、次にもう一度読みにいく（通信の一時的な失敗など）
-    if (bundle == null) _bundles.remove(world);
+    final bundle = await _bundle(world);
     final set = bundle?[setId];
     return set == null ? null : jsonEncode(set);
   }
 
+  /// 覚えておく教科のまとめファイルの数。全教科を覚えると読みこんだ中身だけで 25MB ほどになり、
+  /// 長く使うほどメモリが増えるので、最近使った教科だけにする（ほかは使うときに読みなおす）
+  static const bundleLimit = 4;
+
+  /// 教科 → 読みこんだまとめファイル（後ろほど最近使った）
   static final Map<String, Future<Map<String, dynamic>?>> _bundles = {};
+
+  /// 教科 → 問題セットの一覧（setId → 問題数）。小さいので、すべて覚えておく
+  static final Map<String, Map<String, int>> _setCounts = {};
+
+  static Future<Map<String, dynamic>?> _bundle(String world) async {
+    final loading = _bundles.remove(world) ?? _loadBundle(world);
+    _bundles[world] = loading;
+    while (_bundles.length > bundleLimit) {
+      _bundles.remove(_bundles.keys.first);
+    }
+    final bundle = await loading;
+    // 読めなかったときは覚えず、次にもう一度読みにいく（通信の一時的な失敗など）
+    if (bundle == null && identical(_bundles[world], loading)) {
+      _bundles.remove(world);
+    }
+    return bundle;
+  }
+
+  /// 今覚えている教科（テスト用）
+  @visibleForTesting
+  static List<String> get cachedBundles => _bundles.keys.toList();
 
   /// 教科（worldId）に収録されている問題セットの一覧（setId → 問題数）。
   /// 学校の定期テスト対策で、問題セットを選ぶのに使う。
   static Future<Map<String, int>> questionSetsOf(String world) async {
-    final bundle = await (_bundles[world] ??= _loadBundle(world));
-    if (bundle == null) _bundles.remove(world);
-    return {
-      for (final e in (bundle ?? const {}).entries)
+    final known = _setCounts[world];
+    if (known != null) return known;
+    final bundle = await _bundle(world);
+    if (bundle == null) return const {};
+    return _setCounts[world] = {
+      for (final e in bundle.entries)
         e.key: ((e.value as Map)['questions'] as List?)?.length ?? 0,
     };
   }
@@ -294,7 +323,10 @@ class RpgServices extends InheritedWidget {
 
   /// 読み込んだ教科のまとめファイルを忘れる（テスト用）
   @visibleForTesting
-  static void clearQuestionBundles() => _bundles.clear();
+  static void clearQuestionBundles() {
+    _bundles.clear();
+    _setCounts.clear();
+  }
 
   @override
   bool updateShouldNotify(RpgServices oldWidget) =>

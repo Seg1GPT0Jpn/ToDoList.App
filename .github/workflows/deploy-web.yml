@@ -44,6 +44,11 @@ jobs:
           # WebAssembly 版（対応していないブラウザでは自動で JS 版を使う）。軽く、メモリも少ない。
           # 描画エンジンも同じサイトに置く（Service Worker に入れて、ネットなしで起動できるように）
           flutter build web --wasm --release --pwa-strategy=none --no-web-resources-cdn --dart-define=TSUZURI_LIGHT=true --base-href /light/
+          # つづりクエストの部品から入ってくるが Light では使わないファイルを公開しない（BGM・効果音・明朝体・本文フォントの写し）
+          rm -rf build/web/assets/packages/rpg_game_app/assets/audio
+          rm -f build/web/assets/packages/rpg_game_app/assets/fonts/NotoSerifJP-Bold.ttf \
+            build/web/assets/packages/rpg_game_app/assets/fonts/OFL-NotoSerifJP.txt \
+            build/web/assets/packages/rpg_game_app/assets/fonts/NotoSansJP-Regular.ttf
           # Service Worker の版：アプリ本体（単語帳・問題などのファイルをのぞく）の中身から決める
           V=$(cd build/web && find . -type f ! -name sw.js ! -path './assets/packages/*' -print0 | sort -z | xargs -0 sha256sum | sha256sum | cut -c1-16)
           sed -i "s/__TSUZURI_LIGHT_VERSION__/$V/" build/web/sw.js

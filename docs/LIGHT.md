@@ -118,10 +118,30 @@ cd tsuzuri_light
 flutter pub get
 flutter test
 flutter run -d chrome                       # ブラウザで
-flutter build web --wasm --release --pwa-strategy=none --dart-define=TSUZURI_LIGHT=true --base-href /light/
+flutter build web --wasm --release --pwa-strategy=none --no-web-resources-cdn --dart-define=TSUZURI_LIGHT=true --base-href /light/
 ```
 
 ### Android 版
+
+**ビルドするときは必ず `--dart-define=TSUZURI_LIGHT=true` をつける**（つけないと、冒険のマップ・単語チャレンジ・
+google_fonts のプログラムが入ったままになる）。`--split-debug-info` でエラー調査用の記号を別のフォルダに分ける（APK が約1.5MB 小さくなる。
+フォルダはエラーを調べるときのために残しておく）。
+
+```
+flutter build apk --release --split-per-abi --dart-define=TSUZURI_LIGHT=true --split-debug-info=build/symbols
+flutter build appbundle --release --dart-define=TSUZURI_LIGHT=true --split-debug-info=build/symbols
+```
+
+| APK（arm64） | 大きさ |
+| --- | --- |
+| 前（`--dart-define` なし・全部入り） | 77.0MB |
+| 今 | **31.9MB** |
+
+- つづりクエストの部品から入ってくるが Light では使わないファイル（BGM・効果音、見出しの明朝体、本文フォントの写し）と、
+  **資料（materials）・予想問題（mock_exams）の約36MB** は APK に入れない（`android/app/build.gradle.kts` で、Flutter が同梱ファイルを写すときに外す）。
+- 資料・予想問題は、**開いたときに**公開サイト（Light の Web 版と同じファイル）から読み、端末に残す（`lib/remote_assets_io.dart`）。
+  一度開いたものはネットなしで開ける。7日に1回まで、裏で新しくなっていないかを確かめる。
+- Web 版は `deploy-web.yml` で使わないファイルを公開しない。
 
 アプリ ID は `com.kazu.tsuzuri_light`（フル版とは別のアプリとして入る）。端末の保存場所は別なので、
 フル版と記録をそろえるには **同じ Google アカウントでログイン**する。Google ログインを Android で使うには、

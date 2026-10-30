@@ -20,7 +20,7 @@ const CORE = [
   'favicon.png',
   'assets/FontManifest.json',
   'assets/fonts/MaterialIcons-Regular.otf',
-  'assets/assets/fonts/NotoSansJP-Regular.ttf',
+  'assets/assets/fonts/TsuzuriLightSans.ttf',
 ];
 
 self.addEventListener('install', (event) => {

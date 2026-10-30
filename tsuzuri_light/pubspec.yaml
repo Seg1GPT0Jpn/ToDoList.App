@@ -13,6 +13,8 @@ dependencies:
   firebase_auth: ^6.7.0
   firebase_core: ^4.15.0
   shared_preferences: ^2.5.5
+  # 資料・予想問題を端末に残す場所（Android 版。つづりクエストの部品からすでに入っている）
+  path_provider: ^2.1.6
   url_launcher: ^6.3.3
   rpg_game:
     path: ../rpg_game
@@ -34,4 +36,4 @@ flutter:
   fonts:
     - family: Roboto
       fonts:
-        - asset: assets/fonts/NotoSansJP-Regular.ttf
+        - asset: assets/fonts/TsuzuriLightSans.ttf

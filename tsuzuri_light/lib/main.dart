@@ -24,6 +24,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'light_app.dart';
 import 'light_cloud.dart' deferred as cloud_lib;
+import 'remote_assets.dart';
 
 /// つづりクエストLight：定期テストの海・単語帳・クラスルームだけの軽い版。
 ///
@@ -36,6 +37,8 @@ Future<void> main() async {
   // つづりクエストの同梱ファイル（単語帳・資料など）を部品の中から読む
   appAssetPrefix = 'packages/rpg_game_app/';
   sansOnly = true;
+  // Android 版は、資料・予想問題を APK に入れず、開いたときにネットから読む
+  missingAssetLoader = remoteAssetLoader();
   // 本文のフォントは pubspec で Roboto として登録してあり、描画エンジンが起動時に読む
   // （字を描く前に読み終わるので、ネットの別のフォントを取りに行かない）
   bundledSans = 'Roboto';
