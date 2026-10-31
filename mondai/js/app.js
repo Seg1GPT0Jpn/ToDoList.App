@@ -48,14 +48,48 @@
     state.stims = {};
     state.lists = [];
     for (const ds of state.datasets) {
-      for (const q of ds.questions || []) { state.questions.push(q); state.byId.set(q.id, q); }
+      for (const q of ds.questions || []) {
+        if (q.ucode) {
+          const name = unitName(q.ucode);
+          if (name) {
+            q.unit = bigUnit(name, q.ucode);
+            q.subunit = name !== q.unit ? name : '';
+          }
+        }
+        state.questions.push(q);
+        state.byId.set(q.id, q);
+      }
       Object.assign(state.stims, ds.stims || {});
       state.lists.push(...(ds.lists || []));
     }
     renderDatasets();
+    // 単元コードを持たない古い取り込みデータがあれば、読み込み直しを案内する
+    $('reimport').hidden = !state.questions.some(q => q.src === 'つづり' && !q.ucode);
     buildFilters();
     buildWordLists();
     updateCartCount();
+  }
+
+  // つづりクエストの単元コードを日本語名にする（高校は先頭4区切りで引く）
+  function unitName(code) {
+    if (typeof UNIT_NAMES === 'undefined') return '';
+    return UNIT_NAMES[code] || UNIT_NAMES[code.split('.').slice(0, 4).join('.')] || '';
+  }
+
+  // 細かい単元名を、教科書の単元の大きさにまとめる
+  //   不定詞（3用法）→ 不定詞、文法：不定詞 → 不定詞（高校英語）、2次関数：グラフ → 2次関数
+  const UNIT_ALIAS = {
+    未来: '未来表現', '2次関数': '二次関数', 論理: '集合と命題', 微分積分: '微分法・積分法', '指数・対数': '指数関数・対数関数',
+    微分法: '微分法とその応用', 積分法: '積分法とその応用', 統計: '統計的な推測', 平面上の曲線: '平面上の曲線と複素数平面',
+    '式：複素数': '複素数と方程式', '式：二項定理・等式不等式の証明': '式と証明',
+  };
+  function bigUnit(name, code) {
+    if (UNIT_ALIAS[name]) return UNIT_ALIAS[name];
+    let u = name;
+    const m = /^([^：]+)：(.+)$/.exec(u);
+    if (m) u = code.startsWith('english.') ? m[2] : m[1];
+    u = u.replace(/（[^（）]*）$/, '').trim() || name;
+    return UNIT_ALIAS[u] || u;
   }
 
   function renderDatasets() {
@@ -123,7 +157,7 @@
       else if ((q[k] || '') !== f[k]) return false;
     }
     if (kw) {
-      if (!q._kw) q._kw = [q.stem, q.sentence, q.unit, q.set, q.course, (q.choices || []).join(' ')].join(' ').toLowerCase();
+      if (!q._kw) q._kw = [q.stem, q.sentence, q.unit, q.subunit, q.set, q.course, (q.choices || []).join(' ')].join(' ').toLowerCase();
       for (const w of kw) if (!q._kw.includes(w)) return false;
     }
     return true;
@@ -136,16 +170,22 @@
       const sel = $(id);
       const cur = sel.value;
       const f = currentFilter(key);
-      const counts = new Map();
+      const counts = new Map(), uord = new Map();
       for (const q of state.questions) {
         if (!matches(q, f, kw)) continue;
         const v = key === 'unit' ? (q.unit || q.set) : q[key];
         if (!v) continue;
         counts.set(v, (counts.get(v) || 0) + 1);
+        if (key === 'unit' && q.uord && (!uord.has(v) || q.uord < uord.get(v))) uord.set(v, q.uord);
       }
       let vals = Array.from(counts.keys());
       const ord = ORDER[key];
       vals.sort((a, b) => {
+        if (key === 'unit') {
+          // 単元は教科書の順（データの単元コード順）に並べる
+          const oa = uord.get(a) || '~' + a, ob = uord.get(b) || '~' + b;
+          if (oa !== ob) return oa < ob ? -1 : 1;
+        }
         if (ord) { const ia = ord.indexOf(a), ib = ord.indexOf(b); if (ia !== ib) return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib); }
         return a.localeCompare(b, 'ja', { numeric: true });
       });
@@ -166,9 +206,11 @@
   const inCart = () => new Set(state.cart.filter(c => c.ref).map(c => c.ref));
 
   function renderList() {
+    $('nodata').hidden = state.questions.length > 0;
     if (!state.questions.length) {
       $('result-count').textContent = '';
-      $('qlist').innerHTML = '<li class="empty">まず「① データ」で問題データを読み込んでください。</li>';
+      $('f-count').textContent = '';
+      $('qlist').innerHTML = '';
       $('pager').innerHTML = '';
       return;
     }
@@ -180,13 +222,15 @@
     const start = state.page * PAGE_SIZE;
     const rows = state.filtered.slice(start, start + PAGE_SIZE);
     $('result-count').textContent = `${total.toLocaleString()} 問が見つかりました`;
+    $('f-count').textContent = `${total.toLocaleString()} 問`;
+    $('f-show').textContent = `↓ ${total.toLocaleString()} 問を見る`;
     $('qlist').innerHTML = rows.map(q => {
       const on = sel.has(q.id);
       const tags = [q.src, q.stage, q.course || q.subj, q.grade, Render.TYPE_LABEL[q.type], q.level].filter(Boolean).map(t => `<span class="tag">${Render.esc(t)}</span>`).join('');
       return `<li class="qrow${on ? ' on' : ''}" data-id="${Render.esc(q.id)}">
         <button class="add ${on ? 'added' : ''}" data-add="${Render.esc(q.id)}">${on ? '✓ 追加済み' : '＋ 追加'}</button>
         <div class="qmain">
-          <div class="tags">${tags}<span class="unit">${Render.esc(q.unit || q.set || '')}</span></div>
+          <div class="tags">${tags}<span class="unit">${Render.esc([q.unit || q.set, q.subunit].filter(Boolean).join(' › '))}</span></div>
           <div class="qstem${q.src === 'かながわ' ? ' tex' : ''}">${Render.text(q.stem)}</div>
           <details><summary>選択肢・答えを見る</summary><div class="${q.src === 'かながわ' ? 'tex' : ''}">${detailHtml(q)}</div></details>
         </div></li>`;
@@ -406,6 +450,8 @@
     let kwTimer;
     $('f-q').addEventListener('input', () => { clearTimeout(kwTimer); kwTimer = setTimeout(() => { buildFilters(); applyFilter(); }, 250); });
     for (const [id] of FILTERS) $(id).addEventListener('change', () => { buildFilters(); applyFilter(); });
+    $('f-show').addEventListener('click', () => $('results').scrollIntoView({ behavior: 'smooth' }));
+    document.addEventListener('click', e => { const g = e.target.closest('[data-goto]'); if (g) { showTab(g.dataset.goto); window.scrollTo(0, 0); } });
     $('f-reset').addEventListener('click', () => { $('f-q').value = ''; FILTERS.forEach(([id]) => { $(id).value = ''; }); buildFilters(); applyFilter(); });
     $('r-add').addEventListener('click', randomAdd);
     $('add-page').addEventListener('click', () => {

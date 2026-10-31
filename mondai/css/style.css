@@ -80,6 +80,11 @@ button:disabled { opacity: .4; cursor: default; }
 /* ---------- 問題えらび ---------- */
 .pick-layout { display: grid; grid-template-columns: 270px 1fr; gap: 16px; align-items: start; }
 .filters { position: sticky; top: 70px; max-height: calc(100vh - 90px); overflow: auto; }
+.f-count { font-size: 13px; color: var(--accent); margin-left: 6px; }
+.nodata { border-color: var(--accent); background: var(--accent-soft); }
+.notice { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; background: #fff8e6; border-color: #f0d48a; }
+#f-show { display: none; }
+#results { scroll-margin-top: 80px; }
 .rand-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 8px; }
 .results-bar { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; font-weight: 600; }
 .spacer { flex: 1; }
@@ -229,5 +234,8 @@ details .expl { font-size: 12px; color: #444; margin-top: 2px; }
   main { padding: 12px; }
   .pick-layout, .print-layout { grid-template-columns: 1fr; }
   .filters, .print-side { position: static; max-height: none; }
+  #f-show { display: inline-block; }
+  .app-header { position: static; }
+  #results { scroll-margin-top: 8px; }
   .preview-wrap { overflow-x: auto; }
 }
