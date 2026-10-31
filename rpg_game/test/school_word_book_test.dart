@@ -68,12 +68,10 @@ void main() {
     final scramble = open('scramble');
     expect(scramble.isTerms, isFalse);
     final sn = scramble.cards.map((c) => c.number!).toList();
-    // Theme 227（1069〜1079）は元の資料にないので入っていない
-    expect([sn.length, sn.first, sn.last], [87, 1046, 1143]);
-    expect(sn.where((n) => n >= 1069 && n <= 1079), isEmpty);
+    expect([sn.length, sn.first, sn.last], [98, 1046, 1143]);
     expect(scramble.cards.every((c) => c.example.isNotEmpty), isTrue);
     expect(scramble.cards.where((c) => c.hasExample).length,
-        greaterThanOrEqualTo(85));
+        greaterThanOrEqualTo(96));
     for (final c in [...kanji.cards, ...kw.cards]) {
       expect(c.term.trim(), isNotEmpty);
       expect(c.meaning, isNot(contains('読み取れず')));

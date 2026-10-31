@@ -110,8 +110,8 @@ abstract final class YosouExams {
       id: 'bio',
       title: '生物基礎 後期中間 予想問題',
       subjectId: 'biology_basic',
-      questionPages: 5,
-      answerPages: 3,
+      questionPages: 7,
+      answerPages: 4,
       smallQuestions: true,
     ),
     YosouExam(
