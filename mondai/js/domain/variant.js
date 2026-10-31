@@ -65,7 +65,8 @@ export function formatNumber(v, fmt = '') {
 /** テンプレートの文字に値を入れる */
 export function fill(text, vals) {
   if (typeof text !== 'string') return text;
-  return text.replace(/\{\{\s*(=)?([^}|]+?)\s*(?:\|\s*([a-z0-9]+)\s*)?\}\}/g, (_, eq, body, fmt) => {
+  // 中身に { } を含まない最も内側の {{…}} を置きかえる（\dfrac{{{=x}}}{2} のように LaTeX の { の直後でも使える）
+  return text.replace(/\{\{\s*(=)?([^{}|]+?)\s*(?:\|\s*([a-z0-9]+)\s*)?\}\}/g, (_, eq, body, fmt) => {
     if (eq) return formatNumber(evaluate(body, vals), fmt || '');
     const name = body.trim();
     if (!Object.hasOwn(vals, name)) throw new ReferenceError(`変数 ${name} がありません`);
