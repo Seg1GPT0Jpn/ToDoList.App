@@ -85,7 +85,7 @@ describe('autoVary / varyQuestion', () => {
     const r = varyQuestion(q, 5);
     expect(r.ok).toBe(true);
     expect(r.q.stem).not.toBe(q.stem);
-    const [x, y] = r.q.stem.match(/\d+/g).map(Number);
+    const [, x, y] = r.q.stem.match(/\d+/g).map(Number); // 先頭の「1個」の 1 は除く
     expect(parseAnswerNumber(r.q.ans)).toBe(x * y);
   });
   it('指数の数は変えない', () => {
