@@ -60,6 +60,9 @@ Firebase コンソールで一度だけ必要な設定：
 
 1. Authentication →「始める」→ ログイン方法に **Google** を追加して有効にする（サポートメールを選ぶ）
 2. Authentication → 設定 → 承認済みドメインに `tsuzuri-quest-junior-26426.web.app` があることを確かめる（ふつうは最初から入っている）
+3. Firestore のルールを PC から反映する（公開用の鍵にはルールを書きかえる権限がないため、CI では失敗する）：
+   `cd C:\Users\kzmse\tq-2d\rpg_game_app` → `firebase deploy --only firestore:rules --project tsuzuri-quest-junior-26426`。
+   ルール（`firestore.rules`）を変えたときも同じ
 
 Android 版でも使うときは、`flutterfire configure --project tsuzuri-quest-junior-26426` で Android アプリを追加し、
 できた設定を上のファイルに入れる。
