@@ -4,6 +4,8 @@ const Render = (() => {
     kana: ['ア', 'イ', 'ウ', 'エ', 'オ', 'カ', 'キ', 'ク', 'ケ', 'コ', 'サ', 'シ'],
     num: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
     alpha: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'],
+    circled: ['①', '②', '③', '④', '⑤', '⑥', '⑦', '⑧', '⑨', '⑩', '⑪', '⑫'],
+    hira: ['あ', 'い', 'う', 'え', 'お', 'か', 'き', 'く', 'け', 'こ', 'さ', 'し'],
   };
   const TYPE_LABEL = { choice: '選択', multi: '複数選択', order: '並べかえ', tf: '正誤', short: '答えのみ', written: '記述', steps: '小問つき' };
 
@@ -207,6 +209,8 @@ const Render = (() => {
     const tex = isTex(q) ? ' tex' : '';
     let h = `<div class="pq${tex}">`;
     h += `<div class="pq-head"><span class="pq-no${v.dai ? ' sub' : ''}">${v.label}</span><div class="pq-stem">${text(q.stem)}`;
+    // 共通テスト・入試形式：解答番号やマーク記号の枠（例：[ 1 ]、[ アイ ]）
+    if (v.markLabel) h += ` <span class="markbox">${esc(v.markLabel)}</span>`;
     if (v.pts != null && s.points !== 'none') h += `<span class="pq-pts">（${v.pts}点）</span>`;
     h += `</div></div>`;
     if (s.meta) h += `<div class="pq-meta">${esc([q.src, q.course || q.subj, q.grade, q.unit].filter(Boolean).join('｜'))}</div>`;

@@ -50,7 +50,7 @@ const newPage = async (opts = {}) => {
 const go = async (p, hash) => { await p.evaluate(h => { location.hash = h; }, hash); await p.waitForTimeout(500); };
 const state = (p) => p.evaluate(() => {
   const s = /** @type {any} */ (window).__mondai.state;
-  return { questions: s.questions.length, materials: s.materials.map(m => ({ id: m.id, title: m.title, kind: m.kind, status: m.status, blocks: m.blocks.map(b => ({ type: b.type, ref: b.ref, pts: b.pts, perm: b.perm, rev: b.rev })), exam: m.exam, page: m.page })) };
+  return { questions: s.questions.length, materials: s.materials.map(m => ({ id: m.id, title: m.title, kind: m.kind, status: m.status, blocks: m.blocks.map(b => ({ type: b.type, ref: b.ref, pts: b.pts, perm: b.perm, rev: b.rev, variant: b.variant })), exam: m.exam, page: m.page })) };
 });
 
 try {
@@ -260,6 +260,19 @@ try {
     await p.waitForTimeout(500);
     assert((await p.textContent('#m-count')).includes('合計 50 点'), await p.textContent('#m-count'));
   });
+  await test('印刷・PDF のファイル名が【試験名】【種類】になる', async () => {
+    await p.evaluate(() => { /** @type {any} */ (window).__titles = []; window.print = () => { /** @type {any} */ (window).__titles.push(document.title); }; });
+    await p.selectOption('[data-pr=key]', 'expl');
+    for (const part of ['all', 'questions', 'sheet', 'key']) { await p.click(`[data-print=${part}]`); await p.waitForTimeout(400); }
+    await p.selectOption('[data-pr=key]', 'ans');
+    await p.waitForTimeout(300);
+    await p.click('[data-print=all]');
+    await p.waitForTimeout(400);
+    const t = await p.evaluate(() => /** @type {any} */ (window).__titles);
+    const want = ['【E2E 定期テスト】【問題+解答・解説】', '【E2E 定期テスト】【問題】', '【E2E 定期テスト】【解答用紙】', '【E2E 定期テスト】【解答・解説】', '【E2E 定期テスト】【問題+解答】'];
+    assert(JSON.stringify(t) === JSON.stringify(want), JSON.stringify(t));
+    await p.selectOption('[data-pr=key]', 'expl');
+  });
   await test('単語・用語テストが作れる（データがないときは案内）', async () => {
     await p.click('[data-tab=blocks]');
     await p.click('[data-add=words]');
@@ -292,9 +305,100 @@ try {
       const pts = v.blocks.filter(b => b.type === 'question').reduce((a, b) => a + b.pts, 0);
       assert(pts === 100, `${v.title} の合計 ${pts}`);
     }
+    assert(/数値を変えた問題 [1-9]/.test(await p.textContent('#toast')), 'B版で数値が変わらない：' + await p.textContent('#toast'));
+    const varied = vs.flatMap(v => v.blocks).filter(b => b.type === 'question' && b.variant).length;
+    assert(varied > 0, 'B版に数値替えの問題がない');
     const orderA = vs[0].blocks.filter(b => b.type === 'question').map(b => b.ref).join();
     const orderB = vs[1].blocks.filter(b => b.type === 'question').map(b => b.ref).join();
     assert(orderA !== orderB || vs.some(v => v.blocks.some(b => b.perm)), 'A・B が同じ');
+  });
+
+  // ---------- 入試形式 ----------
+  for (const [fmt, label, sheetSel] of [['kyotsu', '共通テスト', '.msheet .bub'], ['kanagawa', '神奈川県入試', '.msheet .bub'], ['niji', '二次試験', '.pd-q .lines']]) {
+    await test(`入試形式：${label}の形で作れる（表紙・番号・解答用紙）`, async () => {
+      await go(p, '#/exam');
+      await p.selectOption('#x-format', fmt);
+      await p.waitForTimeout(300);
+      await p.selectOption('#x-subj', '数学');
+      await p.waitForTimeout(300);
+      await p.selectOption('#x-course', '数学Ⅰ');
+      await p.waitForTimeout(300);
+      await p.selectOption('#x-versions', '1');
+      await p.click('#x-build');
+      await p.waitForTimeout(800);
+      assert((await p.textContent('#x-result')).includes('一致しています'), '配点');
+      await p.click('#x-save');
+      await p.waitForTimeout(1500);
+      const txt = await p.textContent('#preview');
+      assert(await p.isVisible('#preview .paper.cover'), '表紙がない');
+      assert(txt.includes(fmt === 'kanagawa' ? '問1' : '第1問'), '大問の番号');
+      assert((await p.$$(`#preview ${sheetSel}`)).length > 0, '解答用紙の形');
+      if (fmt === 'kyotsu') assert((await p.$$('#preview .markbox')).length > 0, '解答番号の枠');
+    });
+  }
+
+  // ---------- 図形 ----------
+  await test('図形：教材に図を描いて入れ、問題にも図を付けられる', async () => {
+    await go(p, '#/editor/' + matId);
+    await p.waitForTimeout(600);
+    const n0 = (await p.$$('#preview svg')).length;
+    await p.click('[data-tab=blocks]');
+    await p.click('[data-add=figure]');
+    await p.waitForSelector('[data-preset=graph]');
+    await p.click('[data-preset=graph]');
+    await p.click('[data-preset=triangle]');
+    await p.click('[data-act=save]');
+    await p.waitForTimeout(800);
+    assert((await p.$$('.blk-fig svg')).length === 1, '図形ブロック');
+    assert((await p.$$('#preview svg')).length > n0, '見本に図が出ない');
+    assert((await p.innerHTML('#preview')).includes('<polyline') || (await p.innerHTML('#preview')).includes('<path'), 'グラフの線');
+    // 問題にも図を付ける
+    await go(p, '#/bank?new=1');
+    await p.waitForSelector('#fig-draw');
+    await p.fill('[name=stem]', '図の三角形について答えなさい。');
+    await p.click('#fig-draw');
+    await p.waitForSelector('[data-preset=triangle]');
+    await p.click('[data-preset=triangle]');
+    await p.click('[data-act=save]');
+    await p.waitForTimeout(500);
+    assert((await p.$$('#qe-prev svg')).length > 0, '問題の見本に図が出ない');
+    assert((await p.textContent('#fig-draw')).includes('編集'), '図を編集できない');
+    await p.click('.modal [data-close]');
+  });
+
+  // ---------- 数値替え ----------
+  await test('数値替え：検算の式から自動で数値を変えた問題を作れる', async () => {
+    await go(p, '#/editor/new');
+    await p.click('[data-kind=quiz]');
+    await p.waitForTimeout(800);
+    await go(p, '#/bank');
+    await p.fill('#f-q', 'テスト用');
+    await p.waitForTimeout(700);
+    await p.click('.qrow [data-act=toggle]');
+    await p.waitForTimeout(400);
+    await go(p, '#/editor');
+    await p.waitForSelector('[data-vary]');
+    const before = await p.textContent('.blk.q .qtext');
+    await p.click('[data-vary]');
+    await p.waitForSelector('#vy-use');
+    await p.click('#vy-use');
+    await p.waitForTimeout(500);
+    const after = await p.textContent('.blk.q .qtext');
+    assert(before !== after, '問題文が変わらない');
+    assert((await p.textContent('.blk.q')).includes('数値替え'), '数値替えの印');
+  });
+  await test('数値替え：テンプレートを編集画面で試せる', async () => {
+    await go(p, '#/bank?new=1');
+    await p.waitForSelector('[name=stem]');
+    await p.selectOption('[name=type]', 'short');
+    await p.fill('[name=stem]', '1個 {{a}} 円の品物を 3 個買うといくらか。');
+    await p.fill('[name=ans]', '300円');
+    await p.click('summary:has-text("数値替えのテンプレート")');
+    await p.fill('[name=varyJson]', JSON.stringify({ vars: { a: { min: 50, max: 200, step: 10 } }, stem: '1個 {{a}} 円の品物を 3 個買うといくらか。', ans: '{{=3*a}}円', check: '3*a', expl: '{{a}}×3={{=3*a}}', original: { a: 100 } }));
+    await p.click('#try-vary');
+    await p.waitForTimeout(300);
+    assert(/円/.test(await p.textContent('#vary-out')) && !(await p.textContent('#vary-out')).includes('作れません'), await p.textContent('#vary-out'));
+    await p.click('.modal [data-close]');
   });
 
   // ---------- 解答・解説 ----------

@@ -2,13 +2,20 @@
 // Render（js/render.js、通常の <script> で読み込み）の部品を使う
 import { answerSpaceFor } from '../domain/answersheet.js';
 import { PAGE_SIZES } from '../domain/material.js';
+import { formatOf, integerAnswer, digitLabeler } from '../domain/format.js';
+import { toSvg } from '../domain/figure.js';
 
 const R = /** @type {any} */ (globalThis).Render;
 
 /** 教材の設定を Render の設定の形にする */
 export function printSettings(m) {
+  const fmt = formatOf(m);
   return {
     ...m.print,
+    // 入試形式では、選択肢の記号と解答用紙の作りを形式に合わせる（名前は表紙・解答用紙に書く）
+    ...(fmt.labels ? { labels: fmt.labels } : {}),
+    ...(fmt.sheet && m.print.answer !== 'none' ? { answer: 'sheet' } : {}),
+    ...(fmt.cover ? { name: false } : {}),
     title: m.title, subtitle: m.subtitle, notes: m.notes,
     cols: m.page.cols, font: m.page.font,
     fullMarks: m.exam && m.exam.total ? m.exam.total : 100,
@@ -49,6 +56,7 @@ function freeBlockHtml(b) {
     case 'image': return b.src ? `<figure class="fig mb-image"><img src="${R.esc(b.src)}" alt="${R.esc(b.alt || '')}" style="max-width:${Number(b.width) || 100}%"></figure>` : '';
     case 'space': return `<div class="mb-space">${b.label ? `<div class="mb-space-label">${R.esc(b.label)}</div>` : ''}<div class="lines">${'<div></div>'.repeat(Number(b.lines) || 4)}</div></div>`;
     case 'pagebreak': return '<div class="mb-pagebreak"></div>';
+    case 'figure': return b.fig ? R.figure({ svg: toSvg(b.fig).replace(/<svg /, `<svg style="width:${Math.min(100, Number(b.width) || 60)}%;height:auto" `), caption: b.caption }) : '';
     default: return '';
   }
 }
@@ -77,6 +85,7 @@ function sheetCell(v) {
  */
 export function renderMaterial(m, stims, opt = {}) {
   const s = printSettings(m);
+  const fmt = formatOf(m);
   const parts = opt.parts || ['questions', ...(s.answer === 'sheet' ? ['sheet'] : []), ...(s.key !== 'none' ? ['key'] : [])];
   const qBlocks = m.blocks.filter(b => b.type === 'question');
   const views = R.prepare(qBlocks.map(b => blockQuestion(b, s)), s);
@@ -123,23 +132,70 @@ export function renderMaterial(m, stims, opt = {}) {
     }
     flush();
   }
+  // 入試形式の番号：大問は「問1」「第1問」、小問は「(ア)」「問1」「(1)」。大問がなければ全体を1つの大問にする
+  if (fmt.dai) {
+    if (!flow.some(f => f.kind === 'dai')) {
+      const first = flow.findIndex(f => f.kind === 'q');
+      if (first >= 0) flow.splice(first, 0, { kind: 'dai', no: 1, title: '', inst: '次の各問いに答えなさい。' });
+    }
+    let n = 0, k = 0;
+    for (const f of flow) {
+      if (f.kind === 'dai') { n++; k = 0; f.no = n; continue; }
+      if (f.kind !== 'q') continue;
+      const v = f.v;
+      v.dai = n || 1;
+      v.label = fmt.sub(k);
+      v.key = fmt.dai(v.dai) + v.label;
+      k++;
+    }
+  }
   const ordered = flow.filter(f => f.kind === 'q').map(f => /** @type {any} */ (f).v);
+  // 解答番号（共通テスト）と、整数の答えを1けたずつマークさせる記号（ア・イ…／あ・い…）
+  if (fmt.sheet === 'mark') {
+    let no = 0;
+    const nextDigits = fmt.digits && fmt.digits !== 'none' ? digitLabeler(fmt.digits) : null;
+    for (const v of ordered) {
+      const n = nextDigits ? integerAnswer(v.q) : null;
+      if (n != null) {
+        const str = String(n);
+        const labels = nextDigits(str.length);
+        v.digitRows = labels.map((l, i) => ({ label: l, digit: str[i] }));
+        v.markLabel = labels.join('');
+        v.ans = `${v.markLabel} ＝ ${str}` + (/[^\d\s-]/.test(String(v.q.ans).replace(/^-?\d+/, '')) ? `（${v.q.ans}）` : '');
+      } else if (['choice', 'multi'].includes(v.q.type) && v.labels) {
+        if (fmt.answerNo === 'number') { no++; v.markLabel = String(no); v.ans = `解答番号${no}：${v.ans}`; }
+        v.markRow = { label: fmt.answerNo === 'number' ? String(no) : v.key, opts: v.labels.slice(0, v.q.choices.length) };
+      }
+    }
+  }
   s.total = (s.points !== 'none' && ordered.length && ordered.every(v => v.pts != null)) ? ordered.reduce((a, v) => a + v.pts, 0) : 0;
 
   const [w] = paperSize(m);
   const style = `--fs:${s.font}px;--paper-w:${w}mm`;
   let out = '';
 
+  // 表紙（入試形式）
+  if (fmt.cover && parts.includes('questions')) {
+    const time = m.exam && m.exam.timeMin ? `試験時間 ${m.exam.timeMin} 分` : '';
+    const notes = [...(fmt.notes || []), ...String(m.notes || '').split('\n').map(x => x.trim()).filter(x => x && !/^試験時間/.test(x))];
+    out += `<div class="paper cover" style="${style}"><div class="cv-kind">${R.esc(fmt.short || fmt.label)}</div>
+      <div class="cv-title">${R.esc(m.title)}</div>${m.subtitle ? `<div class="cv-sub">${R.esc(m.subtitle)}</div>` : ''}
+      ${time || s.total ? `<div class="cv-time">${R.esc(time)}${s.total ? `　満点 ${s.total} 点` : ''}</div>` : ''}
+      <div class="cv-notes"><b>注意事項</b><ol>${notes.map(x => `<li>${R.esc(x)}</li>`).join('')}</ol></div>
+      <div class="cv-id"><div>受${fmt.short === '神奈川県入試' ? '検' : '験'}番号<span></span></div><div>氏名<span></span></div></div></div>`;
+  }
+
   if (parts.includes('questions')) {
-    out += `<div class="paper" style="${style}">${R.header(s)}`;
-    if (s.notes) out += `<ul class="pnotes">${s.notes.split('\n').filter(x => x.trim()).map(x => `<li>${R.esc(x)}</li>`).join('')}</ul>`;
+    const brk0 = out ? ' break' : '';
+    out += `<div class="paper${brk0}" style="${style}">${fmt.cover ? `<div class="ph"><div class="ph-left"><div class="ph-title">${R.esc(m.title)}</div></div></div>` : R.header(s)}`;
+    if (s.notes && !fmt.cover) out += `<ul class="pnotes">${s.notes.split('\n').filter(x => x.trim()).map(x => `<li>${R.esc(x)}</li>`).join('')}</ul>`;
     out += `<div class="pbody cols${s.cols}">`;
     let lastSid = null;
     for (let i = 0; i < flow.length; i++) {
       const f = flow[i];
       if (f.kind === 'block') { out += freeBlockHtml(f.b); lastSid = null; continue; }
       if (f.kind === 'dai') {
-        out += `<div class="pdai"><span class="pdai-no">${f.no}</span><span class="pdai-inst">${R.esc([f.title, f.inst].filter(Boolean).join('　'))}</span></div>`;
+        out += `<div class="pdai"><span class="pdai-no${fmt.dai ? ' wide' : ''}">${fmt.dai ? R.esc(fmt.dai(f.no)) : f.no}</span><span class="pdai-inst">${R.esc([f.title, f.inst].filter(Boolean).join('　'))}</span></div>`;
         lastSid = null;
         continue;
       }
@@ -158,7 +214,11 @@ export function renderMaterial(m, stims, opt = {}) {
     out += '</div></div>';
   }
 
-  if (parts.includes('sheet')) {
+  if (parts.includes('sheet') && fmt.sheet === 'mark') {
+    out += markSheet(ordered, s, fmt, style, out ? ' break' : '', m);
+  } else if (parts.includes('sheet') && fmt.sheet === 'perDai') {
+    out += perDaiSheet(ordered, s, fmt, style, out ? ' break' : '', m);
+  } else if (parts.includes('sheet')) {
     const brk = out ? ' break' : '';
     out += `<div class="paper${brk}" style="${style}">${R.header(s, '解答用紙')}<table class="asheet">`;
     out += ordered.map(v => {
@@ -192,4 +252,48 @@ export function renderMaterial(m, stims, opt = {}) {
     out += '</div>';
   }
   return { html: out, total: s.total, count: ordered.length };
+}
+
+/** 解答用紙の上の欄（受験番号・氏名・得点） */
+function sheetHead(m, s, fmt, sub) {
+  return `<div class="ph"><div class="ph-left"><div class="ph-title">${R.esc(m.title)}<span class="ph-kind">${R.esc(sub)}</span></div></div>
+    <div class="ph-name"><div class="nm">受${fmt.short === '神奈川県入試' ? '検' : '験'}番号</div><div class="nm">氏名</div>${s.total ? `<div class="score">得点<span>／${s.total}</span></div>` : ''}</div></div>`;
+}
+
+/** マークシート形式の解答用紙（神奈川県入試・共通テスト） */
+function markSheet(ordered, s, fmt, style, brk, m) {
+  // 丸の中は数字だけ（①→1）にして見やすくする
+  const plainLabel = (o) => { const i = '①②③④⑤⑥⑦⑧⑨⑩⑪⑫'.indexOf(o); return i >= 0 ? String(i + 1) : o; };
+  const bubbles = (opts) => opts.map(o => `<span class="bub">${R.esc(plainLabel(o))}</span>`).join('');
+  const digitOpts = fmt.digits === 'kata' ? ['−', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'] : ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+  const rows = [];
+  const written = [];
+  for (const v of ordered) {
+    if (v.digitRows) v.digitRows.forEach(r => rows.push(`<div class="mrow"><span class="mlab">${R.esc(r.label)}</span>${bubbles(digitOpts.filter(o => o !== '−' || String(v.q.ans).trim().startsWith('-') || fmt.digits === 'kata'))}</div>`));
+    else if (v.markRow) rows.push(`<div class="mrow"><span class="mlab">${R.esc(v.markRow.label)}</span>${bubbles(v.markRow.opts)}</div>`);
+    else written.push(v);
+  }
+  let h = `<div class="paper${brk}" style="${style}">${sheetHead(m, s, fmt, '解答用紙')}
+    <p class="small">${fmt.answerNo === 'number' ? '解答番号・記号の欄の、答えにあたるところをマークしなさい。' : '問題の番号の欄の、答えにあたる番号をマークしなさい。数値の答えは、あ・い…の欄に1けたずつマークしなさい。'}</p>
+    <div class="msheet">${rows.join('')}</div>`;
+  if (written.length) {
+    h += `<h3 class="mt">記述の解答欄</h3><table class="asheet">${written.map(v => `<tr class="tall"><th>${R.esc(v.key)}</th><td>${sheetCell(v)}</td>${s.total ? `<td class="pt">${v.pts}</td>` : ''}</tr>`).join('')}</table>`;
+  }
+  return h + '</div>';
+}
+
+/** 大問ごとの記述式解答用紙（二次試験） */
+function perDaiSheet(ordered, s, fmt, style, brk, m) {
+  const byDai = new Map();
+  for (const v of ordered) { if (!byDai.has(v.dai)) byDai.set(v.dai, []); byDai.get(v.dai).push(v); }
+  let h = '';
+  let first = true;
+  for (const [d, vs] of byDai) {
+    h += `<div class="paper${first ? brk : ' break'}" style="${style}">${sheetHead(m, s, fmt, `解答用紙　${fmt.dai(d)}`)}`;
+    h += vs.map(v => `<div class="pd-q"><b>${R.esc(v.label)}</b>${v.pts != null && s.points !== 'none' ? `<span class="pq-pts">（${v.pts}点）</span>` : ''}
+      <div class="lines">${'<div></div>'.repeat(Math.max(v.q.type === 'written' ? 10 : 5, (v.q.lines || 0) * 2))}</div></div>`).join('');
+    h += '</div>';
+    first = false;
+  }
+  return h;
 }

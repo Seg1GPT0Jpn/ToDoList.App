@@ -4,7 +4,7 @@ import { esc, toast, clone } from '../core/util.js';
 import { renderMaterial, pageCss } from '../render/material.js';
 import { answerSpaceFor } from '../domain/answersheet.js';
 import { checkAnswer } from '../domain/mathcheck.js';
-import { renderMath, texClass, R, TYPE_LABEL } from './common.js';
+import { renderMath, texClass, R, TYPE_LABEL, printFileName, printAs } from './common.js';
 import { editQuestion } from './qeditor.js';
 
 const SPACE_LABEL = { symbol: '記号', symbols: '複数記号', tf: '○×', order: '順序', calc: '計算＋答え', short: '短答', written: '記述', proof: '証明', english: '英文' };
@@ -73,7 +73,7 @@ export async function render(root, parts) {
       document.getElementById('page-css').textContent = pageCss(m);
       renderMath(prev);
       await log('印刷', m.id, `${m.title}（${t.dataset.print === 'sheet' ? '解答用紙' : '解答・解説集'}）`);
-      setTimeout(() => window.print(), 50);
+      setTimeout(() => printAs(printFileName(m, [t.dataset.print])), 50);
       return;
     }
     const act = t.dataset.act;

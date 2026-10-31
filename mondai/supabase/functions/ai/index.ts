@@ -29,6 +29,7 @@ const REQUIRED_ROLES: Record<Action, string[]> = {
   review: EDITORS_AND_REVIEWERS,
   plan_material: EDITORS,
   suggest_review: EDITORS,
+  vary: EDITORS,
 };
 
 const CORS: Record<string, string> = {

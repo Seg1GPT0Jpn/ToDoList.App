@@ -9,7 +9,7 @@ import { renderMath, texClass, questionDetail, addToCurrentMaterial, R, TYPE_LAB
 import { editQuestion } from './qeditor.js';
 
 const mem = {
-  text: '', cond: { subj: '', course: '', grade: '', units: '', level: '', count: 10, types: [], timeMin: '', totalPts: '', exclude: '', explanation: 'detailed', notes: '' },
+  text: '', cond: { subj: '', course: '', grade: '', units: '', level: '', count: 10, types: [], timeMin: '', totalPts: '', exclude: '', explanation: 'detailed', notes: '', format: '' },
   items: [], // {q, from:'bank'|'ai', state, notes}
 };
 const STATE_LABEL = { bank: '既存', verifying: '検証中', verified: '検証済み', needs_fix: '要修正', approved: '人間承認済み', discarded: '破棄' };
@@ -40,6 +40,7 @@ export async function render(root) {
         <label class="f">想定時間（分）<input class="input" type="number" data-c="timeMin"></label>
         <label class="f">配点の合計<input class="input" type="number" data-c="totalPts"></label>
         <label class="f">除外する内容<input class="input" data-c="exclude"></label>
+        <label class="f">形式<select class="input" data-c="format"><option value="">通常</option><option value="kanagawa">神奈川県公立高校入試</option><option value="kyotsu">共通テスト</option><option value="niji">二次試験（記述式）</option></select></label>
         <label class="f">解説の詳しさ<select class="input" data-c="explanation"><option value="brief">簡単</option><option value="detailed">詳しく</option><option value="none">なし</option></select></label>
       </div>
       <div class="f">問題形式 ${Object.entries(TYPE_LABEL).filter(([k]) => k !== 'steps').map(([k, l]) => `<label class="check" style="display:inline-flex;margin-right:10px"><input type="checkbox" data-type="${k}"> ${l}</label>`).join('')}</div>
@@ -238,11 +239,11 @@ export async function render(root) {
     const purpose = mem.text.trim() || [mem.cond.course || mem.cond.subj, units().join('・'), mem.cond.notes].filter(Boolean).join(' ');
     if (!purpose) { toast('依頼文か条件を入れてください', 'error'); return; }
     progress('教材の構成案を作っています…');
-    const r = await callAI('plan_material', { purpose }, '教材の構成案');
+    const r = await callAI('plan_material', { purpose, format: mem.cond.format || undefined }, '教材の構成案');
     progress('');
     if (!r.ok) { toast('作れませんでした：' + r.error.message, 'error'); return; }
     const d = r.data;
-    const m = newMaterial(d.kind || 'worksheet', { id: uid('M-'), now: nowISO() });
+    const m = newMaterial(mem.cond.format || d.kind || 'worksheet', { id: uid('M-'), now: nowISO() });
     m.title = d.title || m.title; m.subtitle = d.subtitle || '';
     if (d.page) { m.page.size = d.page.size || m.page.size; m.page.orientation = d.page.orientation || m.page.orientation; m.page.cols = String(d.page.cols || m.page.cols); }
     const pool = matchBank();
