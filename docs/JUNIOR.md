@@ -15,7 +15,8 @@
 | `juniorEdition`（`rpg_game/lib/src/edition.dart`） | `--dart-define=TSUZURI_JUNIOR=true` のとき true。高校向けの機能を出さない・文言を変える |
 
 小中学生版で出さないもの：共通テスト遺跡・総合演習・LEAP/EEVI（パスワードで開く単語帳と週替わり単語バトル）・
-学校専用の対策（湘南）。Firebase を設定するまでは、クラスルーム・単語チャレンジ・Google ログインも出さない（記録は端末の中だけ）。
+学校専用の対策（湘南）・単語チャレンジ。Web 版は Google ログイン・クラウド同期・対戦・クラスルームを使える
+（Android 版は Firebase に未登録のため、記録は端末の中だけ）。
 
 もとは `claude/todolist-app-update-ynuzwf` ブランチ（10/2 の高校生版から作りかえたもの）。そこから中身だけを取り出した。
 
@@ -50,10 +51,15 @@ firebase init hosting:github --project tsuzuri-quest-junior-26426
 - 鍵が GitHub に自動で登録される。そのあとの質問（ビルドのスクリプト・自動デプロイの設定ファイルを作るか）は **No**
   （公開は `deploy-web.yml` が行う）。`firebase.json`・`.firebaserc` を書きかえるかを聞かれたら **No**
 
-## Google ログイン・クラスルームを使えるようにする（あとで）
+## Google ログイン・クラスルーム
 
-小中学生版の Firebase の設定（`firebase_options.dart`）はまだ仮で、記録は端末の中だけに保存される。
-使えるようにするには、Firebase コンソールで `tsuzuri-quest-junior-26426` に Web アプリを追加して Authentication（Google）と
-Firestore を有効にし、`flutterfire configure --project tsuzuri-quest-junior-26426` で作った `lib/firebase_options.dart` を
-`editions/junior/files/rpg_game_app/lib/firebase_options.dart` に置く（Firestore のルールも高校生版と同じものを反映する）。
-設定すると、ログイン・クラスルーム・単語チャレンジが自動で出る。
+`editions/junior/files/rpg_game_app/lib/firebase_options.dart` に、Firebase プロジェクト `tsuzuri-quest-junior-26426` の
+Web アプリの設定が入っている。Firestore のルールは、公開のたびに高校生版と同じもの（`rpg_game_app/firestore.rules`）を反映する。
+
+Firebase コンソールで一度だけ必要な設定：
+
+1. Authentication →「始める」→ ログイン方法に **Google** を追加して有効にする（サポートメールを選ぶ）
+2. Authentication → 設定 → 承認済みドメインに `tsuzuri-quest-junior-26426.web.app` があることを確かめる（ふつうは最初から入っている）
+
+Android 版でも使うときは、`flutterfire configure --project tsuzuri-quest-junior-26426` で Android アプリを追加し、
+できた設定を上のファイルに入れる。

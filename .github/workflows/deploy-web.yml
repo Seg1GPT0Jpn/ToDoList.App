@@ -105,6 +105,18 @@ jobs:
           cd rpg_game_app
           flutter pub get
           flutter build web --wasm --release --pwa-strategy=none --dart-define=TSUZURI_JUNIOR=true
+      # Firestore のルールも高校生版と同じものを反映する（鍵に権限がなければ失敗するが、公開は続ける）
+      - name: Firestore のルールを反映
+        if: env.HAS_KEY == 'true'
+        continue-on-error: true
+        working-directory: rpg_game_app
+        env:
+          SA_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_TSUZURI_QUEST_JUNIOR_26426 }}
+        run: |
+          printf '%s' "$SA_KEY" > "$RUNNER_TEMP/sa.json"
+          export GOOGLE_APPLICATION_CREDENTIALS="$RUNNER_TEMP/sa.json"
+          npx --yes firebase-tools@14 deploy --only firestore:rules --project tsuzuri-quest-junior-26426 --non-interactive
+          rm -f "$RUNNER_TEMP/sa.json"
       - uses: FirebaseExtended/action-hosting-deploy@v0
         if: env.HAS_KEY == 'true'
         with:
