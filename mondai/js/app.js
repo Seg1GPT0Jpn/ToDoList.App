@@ -8,6 +8,7 @@
     stims: {},
     lists: [],
     filtered: [],
+    units: new Set(),  // えらんだ単元（複数可）
     page: 0,
     cart: [],       // { ref: 問題ID } または { q: 単語テストなどで作った問題 }
     settings: null,
@@ -52,9 +53,17 @@
         if (q.ucode) {
           const name = unitName(q.ucode);
           if (name) {
-            q.unit = bigUnit(name, q.ucode);
+            const grp = typeof UNIT_GROUP !== 'undefined' && (UNIT_GROUP[q.ucode] || UNIT_GROUP[q.ucode.split('.').slice(0, 4).join('.')]);
+            q.unit = grp || bigUnit(name, q.ucode);
             q.subunit = name !== q.unit ? name : '';
           }
+        } else if (q.src === '予想問題' && !q.subunit) {
+          // 予想問題は大問ごとではなく、科目ごとの1単元にまとめる（大問名は小単元として残す）
+          q.subunit = q.unit;
+          q.unit = q.set;
+        } else if (q.src === 'かながわ' && typeof KANAGAWA_ALIAS !== 'undefined' && KANAGAWA_ALIAS[q.unit] && !q.subunit) {
+          q.subunit = q.unit;
+          q.unit = KANAGAWA_ALIAS[q.unit];
         }
         state.questions.push(q);
         state.byId.set(q.id, q);
@@ -146,14 +155,19 @@
     subj: ['国語', '数学', '英語', '理科', '社会', '情報', '音楽', '教科横断'],
   };
 
+  // 単元はチェックボックスで複数えらべる（state.units）。ほかはプルダウンで1つ
   function currentFilter(except) {
     const f = {};
-    for (const [id, key] of FILTERS) if (key !== except && $(id).value) f[key] = $(id).value;
+    for (const [id, key] of FILTERS) {
+      if (key === except) continue;
+      if (key === 'unit') { if (state.units.size) f.unit = state.units; }
+      else if ($(id).value) f[key] = $(id).value;
+    }
     return f;
   }
   function matches(q, f, kw) {
     for (const k in f) {
-      if (k === 'unit') { if ((q.unit || q.set) !== f.unit && q.set !== f.unit) return false; }
+      if (k === 'unit') { if (!f.unit.has(q.unit || q.set)) return false; }
       else if ((q[k] || '') !== f[k]) return false;
     }
     if (kw) {
@@ -168,8 +182,10 @@
     const kw = keywords();
     for (const [id, key, label] of FILTERS) {
       const sel = $(id);
-      const cur = sel.value;
+      const cur = key === 'unit' ? '' : sel.value;
       const f = currentFilter(key);
+      // 単元は上の条件で決まる側なので、ほかの欄の選択肢は単元の選択でしぼらない
+      if (key !== 'unit') delete f.unit;
       const counts = new Map(), uord = new Map();
       for (const q of state.questions) {
         if (!matches(q, f, kw)) continue;
@@ -190,10 +206,24 @@
         return a.localeCompare(b, 'ja', { numeric: true });
       });
       if (key === 'unit' && vals.length > 800) vals = vals.slice(0, 800);
+      if (key === 'unit') { renderUnitChecks(vals, counts); continue; }
       const show = v => key === 'type' ? (Render.TYPE_LABEL[v] || v) : v;
       sel.innerHTML = `<option value="">すべての${label}</option>` + vals.map(v => `<option value="${Render.esc(v)}">${Render.esc(show(v))}（${counts.get(v)}）</option>`).join('');
       sel.value = counts.has(cur) ? cur : '';
     }
+  }
+
+  function renderUnitChecks(vals, counts) {
+    // 選んでいた単元が条件変更で消えたら、選択からもはずす
+    for (const u of Array.from(state.units)) if (!counts.has(u)) state.units.delete(u);
+    const n = state.units.size;
+    $('f-unit-sum').textContent = n ? `${n}個えらび中` : 'すべての単元';
+    $('f-unit-clear').hidden = !n;
+    const box = $('f-unit'), top = box.scrollTop;
+    box.innerHTML = vals.length
+      ? vals.map(v => `<label class="uc${state.units.has(v) ? ' on' : ''}"><input type="checkbox" value="${Render.esc(v)}"${state.units.has(v) ? ' checked' : ''}><span>${Render.esc(v)}</span><span class="n">${counts.get(v)}</span></label>`).join('')
+      : '<p class="muted small">（該当する単元がありません）</p>';
+    box.scrollTop = top;
   }
 
   function applyFilter() {
@@ -449,10 +479,19 @@
 
     let kwTimer;
     $('f-q').addEventListener('input', () => { clearTimeout(kwTimer); kwTimer = setTimeout(() => { buildFilters(); applyFilter(); }, 250); });
-    for (const [id] of FILTERS) $(id).addEventListener('change', () => { buildFilters(); applyFilter(); });
+    for (const [id, key] of FILTERS) {
+      if (key === 'unit') continue;
+      $(id).addEventListener('change', () => { buildFilters(); applyFilter(); });
+    }
+    $('f-unit').addEventListener('change', e => {
+      const v = e.target.value;
+      if (e.target.checked) state.units.add(v); else state.units.delete(v);
+      buildFilters(); applyFilter();
+    });
+    $('f-unit-clear').addEventListener('click', () => { state.units.clear(); buildFilters(); applyFilter(); });
     $('f-show').addEventListener('click', () => $('results').scrollIntoView({ behavior: 'smooth' }));
     document.addEventListener('click', e => { const g = e.target.closest('[data-goto]'); if (g) { showTab(g.dataset.goto); window.scrollTo(0, 0); } });
-    $('f-reset').addEventListener('click', () => { $('f-q').value = ''; FILTERS.forEach(([id]) => { $(id).value = ''; }); buildFilters(); applyFilter(); });
+    $('f-reset').addEventListener('click', () => { $('f-q').value = ''; FILTERS.forEach(([id, key]) => { if (key !== 'unit') $(id).value = ''; }); state.units.clear(); buildFilters(); applyFilter(); });
     $('r-add').addEventListener('click', randomAdd);
     $('add-page').addEventListener('click', () => {
       const ids = state.filtered.slice(state.page * PAGE_SIZE, (state.page + 1) * PAGE_SIZE).map(q => q.id);
