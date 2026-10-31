@@ -89,7 +89,7 @@ export function cond(expr, vals) {
   }
 }
 
-function pick(spec, rand) {
+function domain(spec) {
   let vals;
   if (Array.isArray(spec.values) && spec.values.length) vals = spec.values;
   else {
@@ -99,7 +99,33 @@ function pick(spec, rand) {
   }
   if (spec.not) vals = vals.filter(v => !spec.not.includes(v));
   if (!vals.length) throw new RangeError('変数の候補がありません');
+  return vals;
+}
+function pick(spec, rand) {
+  const vals = domain(spec);
   return vals[Math.floor(rand() * vals.length)];
+}
+
+/** 値の組を、まず乱数で、見つからなければ全部の組み合わせ（シードで順番を混ぜる）から順に出す */
+function* candidates(vars, rand, tries) {
+  for (let t = 0; t < tries; t++) {
+    /** @type {Record<string, number>} */
+    const vals = {};
+    for (const [k, s] of Object.entries(vars)) vals[k] = pick(s, rand);
+    yield vals;
+  }
+  const keys = Object.keys(vars);
+  const doms = keys.map(k => domain(vars[k]));
+  const total = doms.reduce((a, d) => a * d.length, 1);
+  if (total > 50000) return;
+  const order = Array.from({ length: total }, (_, i) => i);
+  for (let i = total - 1; i > 0; i--) { const j = Math.floor(rand() * (i + 1)); [order[i], order[j]] = [order[j], order[i]]; }
+  for (let idx of order) {
+    /** @type {Record<string, number>} */
+    const vals = {};
+    for (let k = keys.length - 1; k >= 0; k--) { const d = doms[k]; vals[keys[k]] = d[idx % d.length]; idx = Math.floor(idx / d.length); }
+    yield vals;
+  }
 }
 
 /** テンプレートの形を確かめる。問題があれば日本語のメッセージ */
@@ -128,10 +154,7 @@ export function makeVariant(q, opt = {}) {
   const tries = opt.tries || 200;
   const avoid = (opt.avoid || []).map(v => JSON.stringify(v));
   let lastReason = '条件に合う数値が見つかりませんでした';
-  for (let t = 0; t < tries; t++) {
-    /** @type {Record<string, number>} */
-    const vals = {};
-    for (const [k, s] of Object.entries(vary.vars)) vals[k] = pick(s, rand);
+  for (const vals of candidates(vary.vars, rand, tries)) {
     if (avoid.includes(JSON.stringify(vals))) continue;
     try {
       if ((vary.where || []).some(w => !cond(w, vals))) continue;

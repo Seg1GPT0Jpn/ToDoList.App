@@ -50,7 +50,7 @@ const newPage = async (opts = {}) => {
 const go = async (p, hash) => { await p.evaluate(h => { location.hash = h; }, hash); await p.waitForTimeout(500); };
 const state = (p) => p.evaluate(() => {
   const s = /** @type {any} */ (window).__mondai.state;
-  return { questions: s.questions.length, materials: s.materials.map(m => ({ id: m.id, title: m.title, kind: m.kind, status: m.status, blocks: m.blocks.map(b => ({ type: b.type, ref: b.ref, pts: b.pts, perm: b.perm, rev: b.rev })), exam: m.exam, page: m.page })) };
+  return { questions: s.questions.length, materials: s.materials.map(m => ({ id: m.id, title: m.title, kind: m.kind, status: m.status, blocks: m.blocks.map(b => ({ type: b.type, ref: b.ref, pts: b.pts, perm: b.perm, rev: b.rev, variant: b.variant })), exam: m.exam, page: m.page })) };
 });
 
 try {
@@ -305,6 +305,9 @@ try {
       const pts = v.blocks.filter(b => b.type === 'question').reduce((a, b) => a + b.pts, 0);
       assert(pts === 100, `${v.title} の合計 ${pts}`);
     }
+    assert(/数値を変えた問題 [1-9]/.test(await p.textContent('#toast')), 'B版で数値が変わらない：' + await p.textContent('#toast'));
+    const varied = vs.flatMap(v => v.blocks).filter(b => b.type === 'question' && b.variant).length;
+    assert(varied > 0, 'B版に数値替えの問題がない');
     const orderA = vs[0].blocks.filter(b => b.type === 'question').map(b => b.ref).join();
     const orderB = vs[1].blocks.filter(b => b.type === 'question').map(b => b.ref).join();
     assert(orderA !== orderB || vs.some(v => v.blocks.some(b => b.perm)), 'A・B が同じ');

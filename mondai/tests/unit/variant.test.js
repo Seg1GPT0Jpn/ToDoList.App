@@ -97,3 +97,20 @@ describe('autoVary / varyQuestion', () => {
     expect(varyQuestion({ id: 'n', type: 'short', stem: '用語を答えよ', ans: '光合成' }, 1).ok).toBe(false);
   });
 });
+
+describe('内蔵問題の数値替えテンプレート', () => {
+  it('すべてのテンプレートで、元の問題が再現でき、数値替えが作れる', async () => {
+    const fs = await import('node:fs');
+    const url = new URL('../../builtin/hs.json', import.meta.url);
+    const qs = JSON.parse(fs.readFileSync(url, 'utf8')).questions.filter(q => q.vary);
+    expect(qs.length).toBeGreaterThan(600);
+    const bad = [];
+    for (const q of qs) {
+      const v = q.vary;
+      if (fill(v.stem, v.original) !== q.stem) { bad.push(q.id + ' 問題文'); continue; }
+      const r = varyQuestion(q, 'test-' + q.id);
+      if (!r.ok) bad.push(q.id + ' ' + r.reason);
+    }
+    expect(bad).toEqual([]);
+  });
+});
