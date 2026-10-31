@@ -48,14 +48,26 @@
     state.stims = {};
     state.lists = [];
     for (const ds of state.datasets) {
-      for (const q of ds.questions || []) { state.questions.push(q); state.byId.set(q.id, q); }
+      for (const q of ds.questions || []) {
+        if (q.ucode) q.unit = unitName(q.ucode) || q.unit;
+        state.questions.push(q);
+        state.byId.set(q.id, q);
+      }
       Object.assign(state.stims, ds.stims || {});
       state.lists.push(...(ds.lists || []));
     }
     renderDatasets();
+    // 単元コードを持たない古い取り込みデータがあれば、読み込み直しを案内する
+    $('reimport').hidden = !state.questions.some(q => q.src === 'つづり' && !q.ucode);
     buildFilters();
     buildWordLists();
     updateCartCount();
+  }
+
+  // つづりクエストの単元コードを日本語名にする（高校は先頭4区切りで引く）
+  function unitName(code) {
+    if (typeof UNIT_NAMES === 'undefined') return '';
+    return UNIT_NAMES[code] || UNIT_NAMES[code.split('.').slice(0, 4).join('.')] || '';
   }
 
   function renderDatasets() {
@@ -136,16 +148,22 @@
       const sel = $(id);
       const cur = sel.value;
       const f = currentFilter(key);
-      const counts = new Map();
+      const counts = new Map(), uord = new Map();
       for (const q of state.questions) {
         if (!matches(q, f, kw)) continue;
         const v = key === 'unit' ? (q.unit || q.set) : q[key];
         if (!v) continue;
         counts.set(v, (counts.get(v) || 0) + 1);
+        if (key === 'unit' && q.uord && (!uord.has(v) || q.uord < uord.get(v))) uord.set(v, q.uord);
       }
       let vals = Array.from(counts.keys());
       const ord = ORDER[key];
       vals.sort((a, b) => {
+        if (key === 'unit') {
+          // 単元は教科書の順（データの単元コード順）に並べる
+          const oa = uord.get(a) || '~' + a, ob = uord.get(b) || '~' + b;
+          if (oa !== ob) return oa < ob ? -1 : 1;
+        }
         if (ord) { const ia = ord.indexOf(a), ib = ord.indexOf(b); if (ia !== ib) return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib); }
         return a.localeCompare(b, 'ja', { numeric: true });
       });
@@ -166,9 +184,11 @@
   const inCart = () => new Set(state.cart.filter(c => c.ref).map(c => c.ref));
 
   function renderList() {
+    $('nodata').hidden = state.questions.length > 0;
     if (!state.questions.length) {
       $('result-count').textContent = '';
-      $('qlist').innerHTML = '<li class="empty">まず「① データ」で問題データを読み込んでください。</li>';
+      $('f-count').textContent = '';
+      $('qlist').innerHTML = '';
       $('pager').innerHTML = '';
       return;
     }
@@ -180,6 +200,8 @@
     const start = state.page * PAGE_SIZE;
     const rows = state.filtered.slice(start, start + PAGE_SIZE);
     $('result-count').textContent = `${total.toLocaleString()} 問が見つかりました`;
+    $('f-count').textContent = `${total.toLocaleString()} 問`;
+    $('f-show').textContent = `↓ ${total.toLocaleString()} 問を見る`;
     $('qlist').innerHTML = rows.map(q => {
       const on = sel.has(q.id);
       const tags = [q.src, q.stage, q.course || q.subj, q.grade, Render.TYPE_LABEL[q.type], q.level].filter(Boolean).map(t => `<span class="tag">${Render.esc(t)}</span>`).join('');
@@ -406,6 +428,8 @@
     let kwTimer;
     $('f-q').addEventListener('input', () => { clearTimeout(kwTimer); kwTimer = setTimeout(() => { buildFilters(); applyFilter(); }, 250); });
     for (const [id] of FILTERS) $(id).addEventListener('change', () => { buildFilters(); applyFilter(); });
+    $('f-show').addEventListener('click', () => $('results').scrollIntoView({ behavior: 'smooth' }));
+    document.addEventListener('click', e => { const g = e.target.closest('[data-goto]'); if (g) { showTab(g.dataset.goto); window.scrollTo(0, 0); } });
     $('f-reset').addEventListener('click', () => { $('f-q').value = ''; FILTERS.forEach(([id]) => { $(id).value = ''; }); buildFilters(); applyFilter(); });
     $('r-add').addEventListener('click', randomAdd);
     $('add-page').addEventListener('click', () => {
