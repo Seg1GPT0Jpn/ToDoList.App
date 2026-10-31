@@ -9,6 +9,31 @@ export const R = () => /** @type {any} */ (globalThis).Render;
 export const TYPE_LABEL = { choice: '選択', multi: '複数選択', order: '並べかえ', tf: '正誤', short: '答えのみ', written: '記述', steps: '小問つき' };
 export const ORIGIN_LABEL = { builtin: '内蔵', imported: '取り込み', user: '自作', ai: 'AI生成' };
 
+/**
+ * 印刷・PDF のファイル名（＝ページのタイトル）：【試験名】【問題／問題+解答／問題+解答・解説】
+ * @param {any} m 教材 @param {string[]} [parts] 印刷する部分（'questions' 'sheet' 'key'）。省略時は教材の設定どおり
+ */
+export function printFileName(m, parts) {
+  const p = parts || ['questions', ...(m.print.answer === 'sheet' ? ['sheet'] : []), ...(m.print.key !== 'none' ? ['key'] : [])];
+  const keyKind = m.print.key === 'ans' ? '解答' : '解答・解説';
+  let kind;
+  if (p.includes('questions')) kind = p.includes('key') ? `問題+${keyKind}` : '問題';
+  else if (p.includes('key')) kind = keyKind;
+  else kind = '解答用紙';
+  // ファイル名に使えない文字は全角にする
+  const safe = String(m.title || '無題').replace(/[\\/:*?"<>|]/g, (c) => String.fromCharCode(c.charCodeAt(0) + 0xFEE0)).trim();
+  return `【${safe}】【${kind}】`;
+}
+
+/** タイトルをファイル名にして印刷し、終わったら元に戻す */
+export function printAs(name) {
+  const old = document.title;
+  document.title = name;
+  const restore = () => { document.title = old; window.removeEventListener('afterprint', restore); };
+  window.addEventListener('afterprint', restore);
+  window.print();
+}
+
 /** 見本の紙を、表示している枠の幅に合わせて縮める（印刷には影響しない） */
 export function fitPreview(preview) {
   const wrap = preview && preview.parentElement;

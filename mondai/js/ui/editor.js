@@ -5,7 +5,7 @@ import { KINDS, PAGE_SIZES, newMaterial, blockId, questionBlock, outdatedBlocks 
 import { renderMaterial, pageCss } from '../render/material.js';
 import { FORMATS } from '../domain/format.js';
 import { canVary, varyQuestion } from '../domain/variant.js';
-import { modal, renderMath, texClass, makeWordQuestions, kindLabel, R, fitPreview } from './common.js';
+import { modal, renderMath, texClass, makeWordQuestions, kindLabel, R, fitPreview, printFileName, printAs } from './common.js';
 import { editQuestion } from './qeditor.js';
 
 const BLOCK_LABEL = { heading: '見出し', text: '文章', section: '大問', question: '問題', pagebreak: '改ページ', table: '表', image: '画像', space: '解答・メモ欄' };
@@ -370,7 +370,7 @@ export async function render(root, parts, params) {
     if (part !== 'all') { $('#preview').innerHTML = renderMaterial(m, state.stims, { parts: parts2 }).html; renderMath($('#preview')); }
     if (dirty) await saveMaterial(m);
     await log('印刷', m.id, `${m.title}（${part}）`);
-    setTimeout(() => { window.print(); if (part !== 'all') renderPreview(); }, 50);
+    setTimeout(() => { printAs(printFileName(m, parts2)); if (part !== 'all') renderPreview(); }, 50);
   };
   root.querySelectorAll('[data-print]').forEach(b => b.addEventListener('click', () => doPrint(b.dataset.print)));
 
@@ -491,8 +491,15 @@ export async function render(root, parts, params) {
   const onResize = debounce(() => fitPreview($('#preview')), 150);
   window.addEventListener('resize', onResize);
   // 印刷のときは縮小をやめ、終わったら戻す
-  const beforePrint = () => { $('#preview').style.zoom = ''; };
-  const afterPrint = () => fitPreview($('#preview'));
+  let titleBeforePrint = null;
+  const beforePrint = () => {
+    $('#preview').style.zoom = '';
+    if (!/^【/.test(document.title)) { titleBeforePrint = document.title; document.title = printFileName(m); }
+  };
+  const afterPrint = () => {
+    fitPreview($('#preview'));
+    if (titleBeforePrint) { document.title = titleBeforePrint; titleBeforePrint = null; }
+  };
   window.addEventListener('beforeprint', beforePrint);
   window.addEventListener('afterprint', afterPrint);
 

@@ -260,6 +260,19 @@ try {
     await p.waitForTimeout(500);
     assert((await p.textContent('#m-count')).includes('合計 50 点'), await p.textContent('#m-count'));
   });
+  await test('印刷・PDF のファイル名が【試験名】【種類】になる', async () => {
+    await p.evaluate(() => { /** @type {any} */ (window).__titles = []; window.print = () => { /** @type {any} */ (window).__titles.push(document.title); }; });
+    await p.selectOption('[data-pr=key]', 'expl');
+    for (const part of ['all', 'questions', 'sheet', 'key']) { await p.click(`[data-print=${part}]`); await p.waitForTimeout(400); }
+    await p.selectOption('[data-pr=key]', 'ans');
+    await p.waitForTimeout(300);
+    await p.click('[data-print=all]');
+    await p.waitForTimeout(400);
+    const t = await p.evaluate(() => /** @type {any} */ (window).__titles);
+    const want = ['【E2E 定期テスト】【問題+解答・解説】', '【E2E 定期テスト】【問題】', '【E2E 定期テスト】【解答用紙】', '【E2E 定期テスト】【解答・解説】', '【E2E 定期テスト】【問題+解答】'];
+    assert(JSON.stringify(t) === JSON.stringify(want), JSON.stringify(t));
+    await p.selectOption('[data-pr=key]', 'expl');
+  });
   await test('単語・用語テストが作れる（データがないときは案内）', async () => {
     await p.click('[data-tab=blocks]');
     await p.click('[data-add=words]');
