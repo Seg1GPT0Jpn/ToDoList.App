@@ -18,7 +18,8 @@ void main() {
       expect(b.open(_data(b), 'wrong'), isNull, reason: b.id);
     }
     expect(SchoolWordBooks.of('gengo_bunka').single.id, 'kobun');
-    expect({for (final b in SchoolWordBooks.all) b.file}.length, 4);
+    expect(SchoolWordBooks.of('ronhyo1').single.id, 'scramble');
+    expect({for (final b in SchoolWordBooks.all) b.file}.length, 5);
   });
 
   test('学校のパスワードで開いた単語帳を、ふつうの単語帳として使える', () {
@@ -64,6 +65,15 @@ void main() {
     // キーワードの説明では、答えの語を伏せてある
     expect(kw.cards.first.meaning, isNot(contains('オリエンタリズム')));
     expect({for (final c in kw.cards) c.group}.length, 30);
+    final scramble = open('scramble');
+    expect(scramble.isTerms, isFalse);
+    final sn = scramble.cards.map((c) => c.number!).toList();
+    // Theme 227（1069〜1079）は元の資料にないので入っていない
+    expect([sn.length, sn.first, sn.last], [87, 1046, 1143]);
+    expect(sn.where((n) => n >= 1069 && n <= 1079), isEmpty);
+    expect(scramble.cards.every((c) => c.example.isNotEmpty), isTrue);
+    expect(scramble.cards.where((c) => c.hasExample).length,
+        greaterThanOrEqualTo(85));
     for (final c in [...kanji.cards, ...kw.cards]) {
       expect(c.term.trim(), isNotEmpty);
       expect(c.meaning, isNot(contains('読み取れず')));

@@ -161,7 +161,7 @@ class VocabCard {
   }
 
   static final _slot = RegExp(
-    r"^(one's|oneself|A|B|sb|sth|someone|something|somebody|doing|.+の|\.\.\.|…)$",
+    r"^(one's|oneself|A|B|A's|B's|sb|sth|someone|something|somebody|doing|.+の|\.\.\.|…)$",
   );
 
   /// よく出る不規則動詞の活用形（穴埋めで例文の中から見つけるため）
@@ -313,26 +313,84 @@ class VocabCard {
   };
 
   static (int, int)? _clozeMatch(String example, String term) {
-    final base = term.replaceAll(RegExp(r'[～~〜()（）]'), '').trim();
-    if (base.isEmpty) return null;
+    final forms = _termForms(term);
+    // まず書いてあるとおりの形で探し、なければ語と語の間に1語（great など）が入った形も探す
+    for (final loose in [false, true]) {
+      for (final f in forms) {
+        final m = _clozeMatchForm(example, f, loose: loose);
+        if (m != null) return m;
+      }
+    }
+    return null;
+  }
+
+  /// 見出し語の書き方の候補。
+  /// 「keep an [one's] eye on」→ keep an eye on / keep one's eye on（［ ］は直前の語の言いかえ）、
+  /// 「make (both) ends meet」→ make both ends meet / make ends meet（( ) はなくてもよい語）
+  static List<String> _termForms(String term) {
+    var t = term
+        .replaceAll(RegExp(r'[～~〜]'), '')
+        .replaceAll(RegExp(r'\s*(?:that\s+)?節'), '')
+        .trim();
+    var forms = [t];
+    final alt = RegExp(r"([\w'’-]+)\s*\[([^\]]+)\]");
+    while (forms.any((f) => alt.hasMatch(f))) {
+      forms = [
+        for (final f in forms)
+          if (alt.firstMatch(f) case final m?) ...[
+            f.replaceRange(m.start, m.end, m.group(1)!),
+            f.replaceRange(m.start, m.end, m.group(2)!.trim()),
+          ] else
+            f,
+      ];
+    }
+    final opt = RegExp(r'(\s*)[(（]([^)）]*)[)）]');
+    forms = [
+      for (final f in forms) ...{
+        f.replaceAllMapped(opt, (m) => '${m.group(1)}${m.group(2)}'),
+        if (opt.hasMatch(f)) f.replaceAll(opt, ''),
+      },
+    ];
+    return [
+      for (final f in forms)
+        if (f.replaceAll(RegExp(r'\s+'), ' ').trim() case final g
+            when g.isNotEmpty)
+          g,
+    ];
+  }
+
+  static (int, int)? _clozeMatchForm(String example, String base,
+      {bool loose = false}) {
     if (base.contains(' ')) {
-      final i = example.toLowerCase().indexOf(base.toLowerCase());
-      if (i >= 0) return (i, i + base.length);
+      if (!loose) {
+        final i = example.toLowerCase().indexOf(base.toLowerCase());
+        if (i >= 0) return (i, i + base.length);
+      }
       // 熟語：最初の語は活用してよく、one's / A などの部分には別の語が入ってよい
       final parts = base.split(RegExp(r'\s+'));
       final pattern = StringBuffer();
       for (var k = 0; k < parts.length; k++) {
         final w = parts[k];
+        final slot = _slot.hasMatch(w) || (k > 0 && w == 'do');
         if (k == 1 && parts.length == 2 && _particles.contains(w)) {
           // rough him up / see you out のように、目的語が間に入ってよい
           pattern.write(r"(?:\s+[\w'’-]+){0,2}\s+");
+        } else if (k > 0 && loose && slot) {
+          // 受け身などで A の部分がない形（brought to light）
+          pattern.write(r"(?:\s+[\w'’-]+(?:\s+[\w'’-]+){0,2})?");
+          continue;
+        } else if (k > 0 && loose) {
+          pattern.write(r"(?:\s+[\w'’-]+)?\s+");
         } else if (k > 0) {
           pattern.write(r'\s+');
         }
         if (w == 'ing') {
           // be used to ～ing：～ing の部分には動詞の -ing 形が入る
           pattern.write(r"[\w'’-]+ing");
-        } else if (_slot.hasMatch(w) || (k > 0 && w == 'do')) {
+        } else if (slot && w == 'do' && k == parts.length - 1) {
+          // 最後の to do は動詞1語だけ（go out of one's way to do → … to bring）
+          pattern.write(r"[\w'’-]+");
+        } else if (slot) {
           pattern.write(r"[\w'’-]+(?:\s+[\w'’-]+){0,2}");
         } else if (k == 0 && (w.length > 2 || _irregular.containsKey(w))) {
           pattern.write(_wordPattern(w));
@@ -344,6 +402,7 @@ class VocabCard {
           RegExp('\\b$pattern\\b', caseSensitive: false).firstMatch(example);
       return m == null ? null : (m.start, m.end);
     }
+    if (loose) return null;
     final m = RegExp('\\b${_wordPattern(base)}\\b', caseSensitive: false)
         .firstMatch(example);
     return m == null ? null : (m.start, m.end);

@@ -68,6 +68,12 @@ abstract final class SchoolWordBooks {
       subjectId: 'gendai_kokugo',
       vault: 'school-word-4',
     ),
+    SchoolWordBook(
+      id: 'scramble',
+      title: 'Scramble イディオム（1046〜1143）',
+      subjectId: 'ronhyo1',
+      vault: 'school-word-5',
+    ),
   ];
 
   static List<SchoolWordBook> of(String subjectId) => [

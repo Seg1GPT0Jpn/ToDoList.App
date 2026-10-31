@@ -73,4 +73,39 @@ void main() {
     expect(c.clozeMatches('am used to getting'), isTrue);
     expect(c.clozeMatches('be used to getting'), isFalse);
   });
+
+  test('熟語の穴埋め：［ ］の言いかえ・( ) の省略・間に入る1語・A\'s', () {
+    expect(
+        VocabCard.clozeWord('Will you keep an eye on this baggage?',
+            "keep an [one's] eye on ～"),
+        'keep an eye on');
+    expect(
+        VocabCard.clozeWord('He is entirely dependent on his father.',
+            'be dependent on [upon] ～'),
+        'is entirely dependent on');
+    expect(
+        VocabCard.clozeWord(
+            'It is never easy to make ends meet.', 'make (both) ends meet'),
+        'make ends meet');
+    expect(
+        VocabCard.clozeWord(
+            'She gets on my nerves with her complaints.', "get on A's nerves"),
+        'gets on my nerves');
+    expect(
+        VocabCard.clozeWord(
+            'Some facts were brought to light.', 'bring A to light'),
+        'brought to light');
+    expect(
+        VocabCard.clozeWord(
+            'Make sure your phone is switched off.', 'make sure that 節'),
+        'Make sure');
+    // 最後の to do は動詞1語だけ
+    expect(
+        VocabCard.clozeWord(
+            "I don't want you to go out of your way to bring it.",
+            "go out of one's way to do"),
+        'go out of your way to bring');
+    // 書いてあるとおりに見つかるときは、間に語を入れた形を探さない
+    expect(VocabCard.clozeWord('Life is a journey.', 'look up to'), isNull);
+  });
 }

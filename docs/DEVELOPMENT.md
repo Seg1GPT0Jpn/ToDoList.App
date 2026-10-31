@@ -84,7 +84,7 @@ firebase deploy --only hosting --project <プロジェクトID>
 
 ## 6. 守るルール
 
-- 市販教材（LEAP・STEP など）の内容を RPG の問題に使わない。LEAP・EEVI・つづ単は、名前とパスワードで開く単語帳（`rpg_game/tool/vocab_seal.dart` で暗号化して `assets/vocab/` に置く）だけで扱う
+- 市販教材（LEAP・STEP など）の内容を RPG の問題に使わない。LEAP・EEVI・つづ単・Scramble は、名前とパスワードで開く単語帳（`rpg_game/tool/vocab_seal.dart` で暗号化して `assets/vocab/` に置く）だけで扱う
 - つづ単の公開版（`assets/words/tsuzutan_*.json`）は意味・例文・豆知識がすべて自作。RPG・海・空・単語の森で使う。単語ファイルを直したら `python3 rpg_game/tool/tsuzutan_index.py` で一覧を作り直す
 - パスワードや市販教材の本文をコミットしない。プロモーションコードはハッシュ値だけを保存する
 - ガチャ・ランダム型の課金は作らない
