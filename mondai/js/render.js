@@ -22,6 +22,10 @@ const Render = (() => {
     return String(s == null ? '' : s).replace(/\[\[mark:[^:\]]+:(.*?)\]\]/g, '$1').replace(/\[\[u:(.*?)\]\]/g, '$1').replace(/\[\[blank:([^\]]*)\]\]/g, '（$1）');
   }
 
+  // 数式（$...$）を KaTeX で表示する出典。ほかの出典は $ を普通の文字として扱う
+  const TEX_SRC = new Set(['かながわ', '内蔵']);
+  function isTex(q) { return TEX_SRC.has(q.src); }
+
   function math(root) {
     if (!window.renderMathInElement) return;
     root.querySelectorAll('.tex').forEach(el => {
@@ -194,7 +198,7 @@ const Render = (() => {
 
   function questionHtml(v, s) {
     const q = v.q;
-    const tex = q.src === 'かながわ' ? ' tex' : '';
+    const tex = isTex(q) ? ' tex' : '';
     let h = `<div class="pq${tex}">`;
     h += `<div class="pq-head"><span class="pq-no">${v.no}</span><div class="pq-stem">${text(q.stem)}`;
     if (v.pts != null && s.points !== 'none') h += `<span class="pq-pts">（${v.pts}点）</span>`;
@@ -244,7 +248,7 @@ const Render = (() => {
         lastSid = null;
         continue;
       }
-      if (v.q.sid && v.q.sid !== lastSid && stims[v.q.sid]) out += stim(stims[v.q.sid], v.q.src === 'かながわ');
+      if (v.q.sid && v.q.sid !== lastSid && stims[v.q.sid]) out += stim(stims[v.q.sid], isTex(v.q));
       lastSid = v.q.sid || null;
       out += questionHtml(v, s);
     }
@@ -266,11 +270,11 @@ const Render = (() => {
     if (s.key !== 'none') {
       out += `<div class="paper break key" style="${style}">${header({ ...s, name: false }, '解答・解説')}`;
       if (s.key === 'ans') {
-        out += `<ol class="key-grid">${views.map(v => `<li class="${v.q.src === 'かながわ' ? 'tex' : ''}"><b>${v.no}</b>　${text(v.ans)}</li>`).join('')}</ol>`;
+        out += `<ol class="key-grid">${views.map(v => `<li class="${isTex(v.q) ? 'tex' : ''}"><b>${v.no}</b>　${text(v.ans)}</li>`).join('')}</ol>`;
       } else {
         out += views.map(v => {
           const q = v.q;
-          let h = `<div class="kq${q.src === 'かながわ' ? ' tex' : ''}"><div class="kq-ans"><b>${v.no}</b>　<span class="kq-a">${text(v.ans)}</span>${v.pts != null && s.points !== 'none' ? `<span class="pq-pts">（${v.pts}点）</span>` : ''}</div>`;
+          let h = `<div class="kq${isTex(q) ? ' tex' : ''}"><div class="kq-ans"><b>${v.no}</b>　<span class="kq-a">${text(v.ans)}</span>${v.pts != null && s.points !== 'none' ? `<span class="pq-pts">（${v.pts}点）</span>` : ''}</div>`;
           if (q.expl) h += `<div class="kq-expl">${text(q.expl)}</div>`;
           if (q.steps && q.steps.length) h += `<ol class="kq-steps">${q.steps.map(x => `<li>${text(x)}</li>`).join('')}</ol>`;
           if (q.rubric && q.rubric.length) h += `<div class="kq-rubric">採点基準：${q.rubric.map(r => `${text(r.c)}（${r.p}点）`).join('／')}</div>`;
@@ -282,5 +286,5 @@ const Render = (() => {
     return out;
   }
 
-  return { esc, text, plain, math, figure, table, stim, prepare, sheet, choicesHtml, TYPE_LABEL };
+  return { esc, text, plain, isTex, math, figure, table, stim, prepare, sheet, choicesHtml, TYPE_LABEL };
 })();
