@@ -17,7 +17,7 @@
   const LS_CART = 'mondai.cart', LS_SETTINGS = 'mondai.settings', LS_SAVED = 'mondai.saved';
   const DEFAULT_SETTINGS = {
     title: '確認テスト', subtitle: '', notes: '', labels: 'auto', cols: '1', answer: 'inline', key: 'expl',
-    font: '13.5', points: 'data', shuffle: false, name: true, date: false, meta: false, seed: 1,
+    font: '13.5', points: 'data', group: 'none', shuffle: false, name: true, date: false, meta: false, seed: 1,
   };
 
   function load(key, def) { try { const v = localStorage.getItem(key); return v ? JSON.parse(v) : def; } catch (e) { return def; } }
@@ -350,7 +350,7 @@
   }
 
   // ---------- 設定 ----------
-  const SETTING_FIELDS = { title: 's-title', subtitle: 's-subtitle', notes: 's-notes', labels: 's-labels', cols: 's-cols', answer: 's-answer', key: 's-key', font: 's-font', points: 's-points', shuffle: 's-shuffle', name: 's-name', date: 's-date', meta: 's-meta' };
+  const SETTING_FIELDS = { title: 's-title', subtitle: 's-subtitle', notes: 's-notes', labels: 's-labels', cols: 's-cols', answer: 's-answer', key: 's-key', font: 's-font', points: 's-points', group: 's-group', shuffle: 's-shuffle', name: 's-name', date: 's-date', meta: 's-meta' };
   function settingsToForm() {
     for (const [k, id] of Object.entries(SETTING_FIELDS)) {
       const el = $(id);
