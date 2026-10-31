@@ -656,3 +656,5 @@ const UNIT_NAMES = {
   'social.whist.modern.nation': '近代：国民国家の形成',
   'social.whist.modern.revolution': '近代：市民革命',
 };
+
+window.UNIT_NAMES = UNIT_NAMES;

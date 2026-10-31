@@ -24,7 +24,8 @@ const Render = (() => {
 
   // 数式（$...$）を KaTeX で表示する出典。ほかの出典は $ を普通の文字として扱う
   const TEX_SRC = new Set(['かながわ', '内蔵']);
-  function isTex(q) { return TEX_SRC.has(q.src); }
+  // 自作・AI 生成の問題も数式記法（$...$）で書く
+  function isTex(q) { return TEX_SRC.has(q.src) || q.origin === 'user' || q.origin === 'ai' || q.tex === true; }
 
   function math(root) {
     if (!window.renderMathInElement) return;
@@ -144,7 +145,9 @@ const Render = (() => {
       const v = { q, no: k + 1 };
       if (q.choices && q.choices.length) {
         v.labels = labelsFor(q, s.labels, q.choices.length);
-        v.perm = (s.shuffle && q.type !== 'order') ? shuffled(q.choices.length, rand) : q.choices.map((_, i) => i);
+        // __perm：テストの別バージョンなどで、選択肢の並びを指定するとき
+        v.perm = (q.__perm && q.__perm.length === q.choices.length) ? q.__perm
+          : (s.shuffle && q.type !== 'order') ? shuffled(q.choices.length, rand) : q.choices.map((_, i) => i);
         v.ans = answerFor(q.choices, q.ai || [], v.perm, v.labels, q.type);
       } else if (q.subs) {
         v.subs = q.subs.map(sq => {
@@ -159,12 +162,15 @@ const Render = (() => {
       return v;
     });
     // 配点
+    const full = Number(s.fullMarks) || 100;
     if (s.points === 'equal' && views.length) {
-      const base = Math.floor(100 / views.length), extra = 100 - base * views.length;
+      const base = Math.floor(full / views.length), extra = full - base * views.length;
       views.forEach((v, i) => { v.pts = Math.max(1, base + (i < extra ? 1 : 0)); });
-    } else if (s.points === 'data') {
+    } else if (s.points === 'data' || s.points === 'block') {
       views.forEach(v => { if (v.q.pts != null) v.pts = v.q.pts; });
     }
+    // __pts：教材側で問題ごとに配点を決めたとき（テスト制作など）
+    views.forEach(v => { if (v.q.__pts != null && s.points !== 'none') v.pts = v.q.__pts; });
     return views;
   }
 
@@ -335,5 +341,7 @@ const Render = (() => {
     return out;
   }
 
-  return { esc, text, plain, isTex, math, figure, table, stim, prepare, sheet, choicesHtml, TYPE_LABEL };
+  return { esc, text, plain, isTex, math, figure, table, stim, prepare, sheet, choicesHtml, TYPE_LABEL, questionHtml, compactTable, header, numberViews, writeArea, groupOf };
 })();
+
+window.Render = Render;

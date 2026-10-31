@@ -3,210 +3,53 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>プリント作成</title>
+<title>教材制作プラットフォーム</title>
+<script>
+  // テーマは描画前に決めてちらつきを防ぐ
+  try { const t = localStorage.getItem('mondai.theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) { /* 設定なし */ }
+</script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/app.css">
+<link rel="stylesheet" href="css/paper.css">
+<style id="page-css"></style>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-<script defer src="js/db.js"></script>
 <script defer src="js/importer.js"></script>
 <script defer src="js/unit-names.js"></script>
 <script defer src="js/unit-groups.js"></script>
 <script defer src="js/render.js"></script>
-<script defer src="js/app.js"></script>
+<script type="module" src="js/main.js"></script>
 </head>
 <body>
-<header class="app-header no-print">
-  <h1>プリント作成</h1>
-  <nav class="tabs" id="tabs">
-    <button data-tab="data">① データ</button>
-    <button data-tab="pick">② 問題をえらぶ</button>
-    <button data-tab="words">③ 単語・用語テスト</button>
-    <button data-tab="print">④ プリント <span class="badge" id="cart-count">0</span></button>
+<div class="app-shell" id="shell">
+  <nav class="app-nav" id="nav" aria-label="メインメニュー">
+    <div class="brand">教材制作プラットフォーム<small>問題・プリント・テストづくり</small></div>
+    <a href="#/home" data-page="home"><span class="ico">⌂</span>ホーム</a>
+    <a href="#/bank" data-page="bank"><span class="ico">▤</span>問題バンク</a>
+    <a href="#/studio" data-page="studio"><span class="ico">✦</span>AIスタジオ</a>
+    <a href="#/editor" data-page="editor"><span class="ico">✎</span>教材制作<span class="nav-badge" id="nav-count" hidden></span></a>
+    <a href="#/exam" data-page="exam"><span class="ico">✓</span>テスト制作</a>
+    <a href="#/answers" data-page="answers"><span class="ico">◎</span>解答・解説</a>
+    <a href="#/library" data-page="library"><span class="ico">▦</span>ライブラリ</a>
+    <a href="#/team" data-page="team"><span class="ico">☺</span>チーム</a>
+    <a href="#/analytics" data-page="analytics"><span class="ico">▥</span>分析</a>
+    <a href="#/settings" data-page="settings"><span class="ico">⚙</span>設定・データ</a>
+    <div class="nav-foot">
+      <button id="theme-btn" title="画面の明るさを切り替え">表示：自動</button>
+    </div>
   </nav>
-</header>
-
-<main>
-  <!-- ① データ -->
-  <section class="tab no-print" id="tab-data">
-    <div class="card">
-      <h2>問題データを読み込む</h2>
-      <p>もらった <b>zip ファイル</b>（または json ファイル）をここにドラッグするか、ボタンから選んでください。複数まとめて選べます。</p>
-      <label class="drop" id="drop">
-        <input type="file" id="file-input" multiple accept=".zip,.json">
-        <span>ここにファイルをドロップ／クリックして選ぶ</span>
-      </label>
-      <p class="status" id="import-status"></p>
-      <p class="note">読み込んだデータはこのブラウザの中（IndexedDB）にだけ保存されます。インターネットには送られません。別のパソコンやブラウザで使うときは、そこでもう一度読み込んでください。</p>
-    </div>
-    <div class="card">
-      <h2>読み込み済みのデータ</h2>
-      <div id="dataset-list"><p class="muted">まだありません。</p></div>
-    </div>
-  </section>
-
-  <!-- ② 問題をえらぶ -->
-  <section class="tab no-print" id="tab-pick" hidden>
-    <div class="card nodata" id="nodata" hidden>
-      <h2>この端末にはまだ問題データが入っていません</h2>
-      <p>問題データは安全のためインターネットには置いていないので、使う端末ごとに1回だけ zip を読み込む必要があります。</p>
-      <button class="primary" data-goto="data">① データを読み込む</button>
-    </div>
-    <div class="card notice" id="reimport" hidden>
-      単元名を日本語で表示できるようになりました。<b>つづりクエストの zip をもう一度読み込む</b>と反映されます。
-      <button class="ghost small" data-goto="data">① データへ</button>
-    </div>
-    <div class="pick-layout">
-      <aside class="filters card">
-        <h2>しぼりこみ <span class="f-count" id="f-count"></span></h2>
-        <p class="muted small">上から順に選んでいくと、下の選択肢がしぼられます。</p>
-        <label>教科<select id="f-subj"></select></label>
-        <label>段階<select id="f-stage"></select></label>
-        <label>学年<select id="f-grade"></select></label>
-        <label>科目<select id="f-course"></select></label>
-        <div class="unit-box">
-          <div class="unit-head">単元 <span class="muted" id="f-unit-sum">すべての単元</span><button class="link small" id="f-unit-clear" hidden>選択を解除</button></div>
-          <div class="checklist" id="f-unit"></div>
-        </div>
-        <label>難易度<select id="f-level"></select></label>
-        <label>形式<select id="f-type"></select></label>
-        <label>出典<select id="f-src"></select></label>
-        <label>区分<select id="f-cat"></select></label>
-        <label>キーワード<input type="search" id="f-q" placeholder="例：一次関数、関係代名詞"></label>
-        <div class="btn-row">
-          <button class="primary" id="f-show">↓ 問題を見る</button>
-          <button class="ghost" id="f-reset">リセット</button>
-        </div>
-
-        <h2 class="mt">ランダムに追加</h2>
-        <p class="muted small">いまの条件の中から、まだ選んでいない問題を選びます。</p>
-        <div class="rand-grid">
-          <label>基礎<input type="number" min="0" value="0" id="r-basic"></label>
-          <label>標準<input type="number" min="0" value="0" id="r-standard"></label>
-          <label>応用<input type="number" min="0" value="0" id="r-advanced"></label>
-          <label>指定なし<input type="number" min="0" value="10" id="r-any"></label>
-        </div>
-        <button class="primary" id="r-add">ランダムに追加</button>
-      </aside>
-      <div class="results" id="results">
-        <div class="results-bar">
-          <span id="result-count"></span>
-          <span class="spacer"></span>
-          <button class="ghost" id="add-page">このページを全部追加</button>
-        </div>
-        <ol class="qlist" id="qlist"></ol>
-        <div class="pager" id="pager"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ③ 単語・用語テスト -->
-  <section class="tab no-print" id="tab-words" hidden>
-    <div class="card">
-      <h2>単語・用語テストを作る</h2>
-      <div class="form-grid">
-        <label>単語帳・用語カード<select id="w-list"></select></label>
-        <label>番号（から）<input type="number" id="w-from" min="1" value="1"></label>
-        <label>番号（まで）<input type="number" id="w-to" min="1" value="50"></label>
-        <label>問題数<input type="number" id="w-count" min="1" value="20"></label>
-        <label>出し方<select id="w-mode">
-          <option value="meaning">見出し → 意味を書く</option>
-          <option value="term">意味 → 見出しを書く</option>
-          <option value="mc">見出し → 意味を4択</option>
-          <option value="mcr">意味 → 見出しを4択</option>
-          <option value="cloze">例文の空所補充（英単語・熟語）</option>
-        </select></label>
-        <label>順番<select id="w-order">
-          <option value="random">ランダム</option>
-          <option value="seq">番号順</option>
-        </select></label>
-      </div>
-      <p class="muted small" id="w-info"></p>
-      <button class="primary" id="w-add">プリントに追加</button>
-      <div id="w-preview" class="w-preview"></div>
-    </div>
-  </section>
-
-  <!-- ④ プリント -->
-  <section class="tab" id="tab-print" hidden>
-    <div class="print-layout">
-      <aside class="print-side no-print">
-        <div class="card">
-          <h2>プリントの設定</h2>
-          <label>タイトル<input type="text" id="s-title"></label>
-          <label>サブタイトル<input type="text" id="s-subtitle"></label>
-          <label>注意書き（1行に1つ）<textarea id="s-notes" rows="2"></textarea></label>
-          <div class="form-grid two">
-            <label>選択肢の記号<select id="s-labels">
-              <option value="auto">元のまま（なければア・イ…）</option>
-              <option value="kana">ア・イ・ウ・エ</option>
-              <option value="num">1・2・3・4</option>
-              <option value="alpha">A・B・C・D</option>
-            </select></label>
-            <label>レイアウト<select id="s-cols">
-              <option value="1">1段</option>
-              <option value="2">2段</option>
-            </select></label>
-            <label>解答欄<select id="s-answer">
-              <option value="inline">問題の下につける</option>
-              <option value="sheet">別紙の解答用紙</option>
-              <option value="none">つけない</option>
-            </select></label>
-            <label>解答・解説<select id="s-key">
-              <option value="expl">解答と解説をつける</option>
-              <option value="ans">解答だけつける</option>
-              <option value="none">つけない</option>
-            </select></label>
-            <label>大問のまとめ方<select id="s-group">
-              <option value="none">まとめない（通し番号）</option>
-              <option value="type">同じ形式で大問にする</option>
-              <option value="unit">同じ単元で大問にする</option>
-            </select></label>
-            <label>文字の大きさ<select id="s-font">
-              <option value="12">小</option>
-              <option value="13.5">ふつう</option>
-              <option value="15">大</option>
-            </select></label>
-            <label>配点<select id="s-points">
-              <option value="data">データの配点を表示</option>
-              <option value="equal">すべて同じ配点（合計100点）</option>
-              <option value="none">表示しない</option>
-            </select></label>
-          </div>
-          <label class="check"><input type="checkbox" id="s-shuffle"> 選択肢の順番を入れかえる</label>
-          <label class="check"><input type="checkbox" id="s-name" checked> 名前欄をつける</label>
-          <label class="check"><input type="checkbox" id="s-date"> 日付を入れる</label>
-          <label class="check"><input type="checkbox" id="s-meta"> 問題に出典・単元を小さく表示</label>
-          <div class="btn-row">
-            <button class="primary" id="do-print">印刷する／PDFで保存</button>
-            <button class="ghost" id="reshuffle" title="選択肢の入れかえをやり直す">入れかえ直す</button>
-          </div>
-        </div>
-        <div class="card">
-          <h2>入っている問題 <span id="cart-count2"></span></h2>
-          <div class="btn-row">
-            <button class="ghost small" id="cart-group">本文ごとにまとめる</button>
-            <button class="ghost small" id="cart-shuffle">順番をシャッフル</button>
-            <button class="ghost small danger" id="cart-clear">全部はずす</button>
-          </div>
-          <ol class="cart" id="cart"></ol>
-        </div>
-        <div class="card">
-          <h2>保存したプリント</h2>
-          <div class="btn-row">
-            <input type="text" id="save-name" placeholder="名前をつけて保存">
-            <button class="ghost" id="save-btn">保存</button>
-          </div>
-          <ul class="saved" id="saved"></ul>
-        </div>
-      </aside>
-      <div class="preview-wrap">
-        <div id="preview" class="preview"></div>
-      </div>
-    </div>
-  </section>
-</main>
-<div class="toast no-print" id="toast"></div>
+  <div class="app-main">
+    <header class="app-top">
+      <button id="nav-toggle" aria-label="メニューを開く">☰</button>
+      <b id="top-title">教材制作プラットフォーム</b>
+    </header>
+    <main class="view" id="view" tabindex="-1">
+      <p class="muted">読み込み中…</p>
+    </main>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<noscript>このアプリを使うには JavaScript を有効にしてください。</noscript>
 </body>
 </html>
