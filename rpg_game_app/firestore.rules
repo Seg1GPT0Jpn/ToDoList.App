@@ -1,0 +1,464 @@
+rules_version = '2';
+
+// つづりクエスト（単体版）の Firestore ルール。
+// ログインした本人だけが、自分の進行状況（rpg_progress）・プロフィール（rpg_profile）・
+// 学習記録（rpg_learning）・冒険の記録（rpg_journal）を読み書きできる。
+// オンライン対戦の部屋（versus_rooms）は、ログインした人が読み書きできる（下のルール）。
+// クラスルーム（classrooms）は、コードを知っている人が読み、メンバーが自分の分を書ける（下のルール）。
+// 週替わり単語バトル（vocab_contest_config・vocab_contests）は、日程はだれでも読めて管理者だけが書け、
+// 参加記録はその日のうちに1人1回だけ作れる（下のルール）。
+// 予想問題のランキング（yosou_rankings・名簿の yosou_members）は、ログインした人が読み、自分の分を1回だけ登録できる（下のルール）。
+// ほかのコレクション（ほかの人のデータを含む）は、だれも読み書きできない。
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{uid}/{collection}/{docId} {
+      allow read, write: if request.auth != null
+        && request.auth.uid == uid
+        && collection in ['rpg_progress', 'rpg_profile', 'rpg_learning', 'rpg_journal', 'rpg_lessons']
+        && docId == 'main';
+    }
+
+    // 単語帳の学習記録（単語の番号ごとの覚えぐあい）。1冊を「単語帳ID~番号」の文書に分けて置く
+    // 読むときは、まとめて一覧で読む（list）。一覧では文書の名前（docId）を条件に使えないので、
+    // 読み取りは本人であることだけを見る。書きこみは文書ごとなので名前の長さも見る
+    match /users/{uid}/rpg_vocab/{docId} {
+      allow read: if request.auth != null
+        && request.auth.uid == uid;
+      allow write: if request.auth != null
+        && request.auth.uid == uid
+        && docId.size() <= 80;
+    }
+
+    // Google Play の購入権利。
+    // クライアントからは書き込めず、Cloud Functions（Admin SDK）だけが作成・更新する。
+    match /users/{uid}/rpg_purchases/{worldId} {
+      allow read: if request.auth != null
+        && request.auth.uid == uid;
+      allow write: if false;
+    }
+
+    // 問題の報告。ログインした人が自分の名前で送るだけ（読むのは管理者が Firebase コンソールで）
+    match /question_reports/{id} {
+      allow create: if request.auth != null
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.keys().hasOnly(['questionId', 'reason', 'note', 'at', 'uid'])
+        && request.resource.data.note is string
+        && request.resource.data.note.size() <= 500;
+    }
+
+    // クラスルーム（6ケタのコード）。単語の小テスト・定期テストの「範囲と日付」をみんなで共有する。
+    // 共有するのは単語帳の名前・番号の範囲・日付だけで、単語の中身は置かない。
+    // だれが何問正解したかは置かず、共闘ボスに与えた正解数の合計だけを置く。
+    match /classrooms/{code} {
+      function signedIn() {
+        return request.auth != null;
+      }
+      function validName(n) {
+        return n is string && n.size() > 0 && n.size() <= 20;
+      }
+      function validCode() {
+        return code.matches('^[1-9][0-9]{5}$');
+      }
+      // コードを知っている人だけが読める（一覧は出せない）
+      allow get: if signedIn() && validCode();
+      allow list: if false;
+      allow create: if signedIn() && validCode()
+        && request.resource.data.keys().hasOnly(['code', 'name', 'ownerId', 'ownerName', 'members', 'tasks', 'closed', 'createdAt', 'expiresAt'])
+        && request.resource.data.code == code
+        && request.resource.data.ownerId == request.auth.uid
+        && validName(request.resource.data.name)
+        && validName(request.resource.data.ownerName)
+        && request.resource.data.members is map
+        && request.resource.data.members.keys().hasOnly([request.auth.uid])
+        && request.resource.data.tasks is list
+        && request.resource.data.tasks.size() <= 30
+        && request.resource.data.closed == false
+        && request.resource.data.createdAt == request.time
+        && request.resource.data.expiresAt is timestamp
+        && request.resource.data.expiresAt <= request.time + duration.value(181, 'd');
+      // 作った人：名前・範囲・閉じる・期限・メンバーを外す
+      allow update: if signedIn()
+        && resource.data.ownerId == request.auth.uid
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['name', 'tasks', 'closed', 'expiresAt', 'members'])
+        && validName(request.resource.data.name)
+        && request.resource.data.tasks is list
+        && request.resource.data.tasks.size() <= 30
+        && request.resource.data.members is map
+        && request.resource.data.members.size() <= 40
+        && request.auth.uid in request.resource.data.members
+        && request.resource.data.expiresAt <= request.time + duration.value(181, 'd');
+      // メンバー：自分の分だけ（入る・抜ける・ニックネームを変える）
+      allow update: if signedIn()
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['members'])
+        && request.resource.data.members.diff(resource.data.members).affectedKeys().hasOnly([request.auth.uid])
+        && (
+          // 入る：閉じていない・期限内・満員でない
+          (!(request.auth.uid in resource.data.members)
+            && resource.data.closed == false
+            && resource.data.expiresAt > request.time
+            && request.resource.data.members.size() <= 40
+            && validName(request.resource.data.members[request.auth.uid]))
+          // 抜ける（作った人は抜けられない。クラスを閉じる）
+          || ((request.auth.uid in resource.data.members)
+            && resource.data.ownerId != request.auth.uid
+            && !(request.auth.uid in request.resource.data.members))
+          // ニックネームを変える
+          || ((request.auth.uid in resource.data.members)
+            && validName(request.resource.data.members[request.auth.uid]))
+        );
+      allow delete: if false;
+
+      // 共闘ボス：範囲ごとの正解数の合計。メンバーだけが読み書きでき、1回に足せるのは100まで
+      match /boss/{taskId} {
+        function member() {
+          return request.auth != null
+            && request.auth.uid in get(/databases/$(database)/documents/classrooms/$(code)).data.members;
+        }
+        allow read: if member();
+        allow create: if member()
+          && taskId.size() <= 40
+          && request.resource.data.keys().hasOnly(['dealt'])
+          && request.resource.data.dealt is int
+          && request.resource.data.dealt >= 0
+          && request.resource.data.dealt <= 100;
+        allow update: if member()
+          && request.resource.data.keys().hasOnly(['dealt'])
+          && request.resource.data.dealt is int
+          && request.resource.data.dealt > resource.data.dealt
+          && request.resource.data.dealt <= resource.data.dealt + 100;
+        allow delete: if false;
+      }
+    }
+
+    // 使った機能の回数（日ごと）。だれのものかは入れない。ログインしていなくても足せる。
+    // 1回に1つの機能を1だけ足せる。読めるのは Firebase の管理画面からだけ。
+    match /usage/{day} {
+      function plusOne(k) {
+        return request.resource.data.diff(resource == null ? {} : resource.data)
+            .affectedKeys().hasOnly([k])
+          && request.resource.data[k]
+            == (resource == null ? 0 : resource.data.get(k, 0)) + 1;
+      }
+      allow read, delete: if false;
+      allow create, update: if day.matches('^20[0-9]{2}-[01][0-9]-[0-3][0-9]$')
+        && (plusOne('app')
+          || plusOne('battle')
+          || plusOne('vocab')
+          || plusOne('vocab_study')
+          || plusOne('exam_sea')
+          || plusOne('word_forest')
+          || plusOne('versus')
+          || plusOne('classroom')
+          || plusOne('duel')
+          || plusOne('weak_cards'));
+    }
+
+    // ランダム対戦の待ち合わせ（文書 ID は自分の uid）。置くのはニックネームと時刻だけ。
+    // ほかの人が書きかえられるのは、まだ部屋が決まっていないときの room と by だけ。
+    match /match_queue/{uid} {
+      allow read: if request.auth != null;
+      allow create, update: if request.auth != null && request.auth.uid == uid
+        && request.resource.data.keys().hasOnly(['name', 'since', 'ping', 'room', 'by'])
+        && request.resource.data.name is string
+        && request.resource.data.name.size() > 0
+        && request.resource.data.name.size() <= 20
+        && request.resource.data.since is timestamp
+        && request.resource.data.ping is timestamp
+        && request.resource.data.ping < request.time + duration.value(5, 'm');
+      allow update: if request.auth != null && request.auth.uid != uid
+        && resource.data.room == null
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['room', 'by'])
+        && request.resource.data.by == request.auth.uid
+        && request.resource.data.room is string
+        && request.resource.data.room.matches('^[0-9]{4}$');
+      allow delete: if request.auth != null && request.auth.uid == uid;
+    }
+
+    // ゴースト：ニックネームと、問題ごとの時間・正誤だけ。作ったあとは変えられない。
+    match /ghosts/{id} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null
+        && request.resource.data.keys().hasOnly(['uid', 'name', 'setIds', 'seed',
+          'rounds', 'answers', 'r', 'at'])
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.name is string
+        && request.resource.data.name.size() > 0
+        && request.resource.data.name.size() <= 20
+        && request.resource.data.setIds is list
+        && request.resource.data.setIds.size() <= 40
+        && request.resource.data.seed is int
+        && request.resource.data.rounds is int
+        && request.resource.data.answers is list
+        && request.resource.data.answers.size() <= 30
+        && request.resource.data.r is float
+        && request.resource.data.at == request.time;
+      allow update, delete: if false;
+    }
+
+    // 対戦相手の報告。送るだけで、アプリからは読めない（Firebase の管理画面で見る）。
+    match /player_reports/{id} {
+      allow read, update, delete: if false;
+      allow create: if request.auth != null
+        && request.resource.data.keys().hasOnly(['from', 'about', 'reason', 'at'])
+        && request.resource.data.from == request.auth.uid
+        && request.resource.data.about is string
+        && request.resource.data.about != request.auth.uid
+        && request.resource.data.reason in ['name', 'cheat', 'other']
+        && request.resource.data.at == request.time;
+    }
+
+    // 単語チャレンジ（リンクで遊ぶ早押し）。ID は8文字。一覧は取れない。
+    // 置くのは出題のもと・番号・種と、1人ずつの名前・正解数・点数だけ。
+    // 作れるのは自分の結果だけを入れたもの。あとから入れられるのは自分の結果を1回だけ（上書き不可）。
+    match /duels/{id} {
+      function validResult(r) {
+        return r is map
+          && r.keys().hasOnly(['name', 'correct', 'score'])
+          && r.name is string && r.name.size() > 0 && r.name.size() <= 20
+          && r.correct is int && r.correct >= 0 && r.correct <= 20
+          && r.score is int && r.score >= 0 && r.score <= 3000;
+      }
+      allow get: if request.auth != null && id.matches('^[a-z0-9]{8}$');
+      allow list: if false;
+      allow create: if request.auth != null
+        && id.matches('^[a-z0-9]{8}$')
+        && request.resource.data.keys().hasOnly(['ownerId', 'ownerName', 'source',
+          'sourceId', 'title', 'numbers', 'seed', 'results', 'createdAt', 'expiresAt'])
+        && request.resource.data.ownerId == request.auth.uid
+        && request.resource.data.ownerName is string
+        && request.resource.data.ownerName.size() <= 20
+        && request.resource.data.source in ['tsuzutan', 'book']
+        && request.resource.data.sourceId is string
+        && request.resource.data.sourceId.size() <= 60
+        && request.resource.data.title is string
+        && request.resource.data.title.size() <= 60
+        && request.resource.data.numbers is list
+        && request.resource.data.numbers.size() > 0
+        && request.resource.data.numbers.size() <= 20
+        && request.resource.data.seed is int
+        && request.resource.data.results.keys().hasOnly([request.auth.uid])
+        && validResult(request.resource.data.results[request.auth.uid])
+        && request.resource.data.createdAt == request.time
+        && request.resource.data.expiresAt <= request.time + duration.value(8, 'd');
+      allow update: if request.auth != null
+        && request.time < resource.data.expiresAt
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['results'])
+        && request.resource.data.results.diff(resource.data.results).addedKeys()
+          .hasOnly([request.auth.uid])
+        && request.resource.data.results.diff(resource.data.results).changedKeys().size() == 0
+        && request.resource.data.results.diff(resource.data.results).removedKeys().size() == 0
+        && request.resource.data.results.size() <= 30
+        && validResult(request.resource.data.results[request.auth.uid]);
+      allow delete: if false;
+    }
+
+    // 週替わり単語バトルの日程（LEAP・EEVI の日付と範囲）。だれでも読めて、書けるのは管理者だけ。
+    match /vocab_contest_config/{doc} {
+      allow read: if true;
+      allow write: if doc == 'main'
+        && request.auth != null
+        && request.auth.token.email == 'kzmsegawa@gmail.com'
+        && request.auth.token.email_verified == true
+        && request.resource.data.keys().hasOnly(['leap', 'eevi', 'updatedAt', 'updatedBy']);
+    }
+
+    // 管理者からのお知らせ（ホームに出す）。だれでも読めて、書けるのは管理者だけ。
+    match /app_notice/{doc} {
+      allow read: if true;
+      allow write: if doc == 'main'
+        && request.auth != null
+        && request.auth.token.email == 'kzmsegawa@gmail.com'
+        && request.auth.token.email_verified == true
+        && request.resource.data.keys().hasOnly(['id', 'title', 'body', 'linkUrl', 'linkLabel', 'testerSignup', 'enabled', 'updatedAt'])
+        && request.resource.data.title is string && request.resource.data.title.size() <= 60
+        && request.resource.data.body is string && request.resource.data.body.size() <= 1000;
+    }
+
+    // Google Play のテスターの申しこみ（Gmail・名前・日時）。本人が自分の分だけ書けて、
+    // 読めるのは本人と管理者だけ（一覧は管理者だけ）。
+    match /tester_signups/{uid} {
+      function isAdmin() {
+        return request.auth != null
+          && request.auth.token.email == 'kzmsegawa@gmail.com'
+          && request.auth.token.email_verified == true;
+      }
+      allow get: if request.auth != null && (request.auth.uid == uid || isAdmin());
+      allow list: if isAdmin();
+      allow create, update: if request.auth != null
+        && request.auth.uid == uid
+        && request.resource.data.keys().hasOnly(['email', 'name', 'at'])
+        && request.resource.data.email is string
+        && request.resource.data.email.matches('^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+[.][A-Za-z]{2,}$')
+        && request.resource.data.email.size() <= 100
+        && request.resource.data.name is string
+        && request.resource.data.name.size() <= 40
+        && request.resource.data.at == request.time;
+      allow delete: if request.auth != null && request.auth.uid == uid;
+    }
+
+    // 週替わり単語バトルの参加記録（回の ID は「leap-2026-11-01」＝バトルの日）。
+    // 置くのはニックネーム・正解数・点数だけ。ログインした人が読める（順位表）。
+    // 4種類（フラッシュカード・日→英・英→日・例文）は、受付のあいだ（日程の設定の open〜close。
+    // バトルの日の日本時間0時からの分）に、種類ごとに1回だけ始められ、始めてから30分以内に結果を入れられる。
+    // 得点（score・p0〜p3）は満点に対する割合で、0〜10000（100.00%）。
+    // 設定がなければ EEVI は前日18:00〜当日19:15、LEAP は前日18:00〜翌日8:00。
+    // 点数を入れられるのは、始めてから8分以内に1回だけ（あとから書きかえられない）。
+    match /vocab_contests/{roundId}/entries/{uid} {
+      function dayStart() {
+        let p = roundId.split('-');
+        return timestamp.date(int(p[1]), int(p[2]), int(p[3])) - duration.value(9, 'h');
+      }
+      function validRound() {
+        return roundId.matches('^(leap|eevi)-20[0-9]{2}-[01][0-9]-[0-3][0-9]$');
+      }
+      function kind() {
+        return roundId.split('-')[0];
+      }
+      function plan() {
+        return exists(/databases/$(database)/documents/vocab_contest_config/main)
+          ? get(/databases/$(database)/documents/vocab_contest_config/main).data.get(kind(), {})
+          : {};
+      }
+      function openAt() {
+        return dayStart() + duration.value(plan().get('open', -360), 'm');
+      }
+      function closeAt() {
+        return dayStart() + duration.value(plan().get('close', kind() == 'leap' ? 1920 : 1155), 'm');
+      }
+      // 種類（0〜3）を始めた時刻 s0〜s3 と、得点 p0〜p3
+      function newKey(k) {
+        return !(k in resource.data) && (k in request.resource.data);
+      }
+      // 新しく始めた種類の時刻は、いまの時刻
+      function startOk(i) {
+        return !newKey('s' + string(i)) || request.resource.data['s' + string(i)] == request.time;
+      }
+      // 新しく入れた得点は、その種類を始めてから30分以内で、0〜10000
+      function scoreOk(i) {
+        return !newKey('p' + string(i))
+          || (('s' + string(i)) in resource.data
+            && request.time < resource.data['s' + string(i)] + duration.value(30, 'm')
+            && request.resource.data['p' + string(i)] is int
+            && request.resource.data['p' + string(i)] >= 0
+            && request.resource.data['p' + string(i)] <= 10000);
+      }
+      function open() {
+        return validRound() && request.time >= openAt() && request.time < closeAt();
+      }
+      allow read: if request.auth != null;
+      // はじめの種類を始めるときに作る（s0〜s3 のどれか1つだけ）
+      allow create: if request.auth != null
+        && request.auth.uid == uid
+        && open()
+        && request.resource.data.keys().hasOnly(['name', 'correct', 'score', 'points', 'done', 'section', 'startedAt', 's0', 's1', 's2', 's3'])
+        && request.resource.data.keys().size() == 8
+        && request.resource.data.name is string
+        && request.resource.data.name.size() > 0
+        && request.resource.data.name.size() <= 20
+        && request.resource.data.correct == 0
+        && request.resource.data.score == 0
+        && request.resource.data.points == 0
+        && request.resource.data.done == false
+        && request.resource.data.section == 0
+        && request.resource.data.startedAt == request.time
+        && request.resource.data.get('s0', request.time) == request.time
+        && request.resource.data.get('s1', request.time) == request.time
+        && request.resource.data.get('s2', request.time) == request.time
+        && request.resource.data.get('s3', request.time) == request.time;
+      // ほかの種類を始める（受付中に、まだ始めていない種類を1つだけ）
+      allow update: if request.auth != null
+        && request.auth.uid == uid
+        && open()
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['s0', 's1', 's2', 's3'])
+        && request.resource.data.diff(resource.data).addedKeys().size() == 1
+        && request.resource.data.diff(resource.data).changedKeys().size() == 0
+        && startOk(0) && startOk(1) && startOk(2) && startOk(3);
+      // 始めた種類の結果を入れる（種類ごとに1回だけ。正解数・点数・得点は減らせない）
+      allow update: if request.auth != null
+        && request.auth.uid == uid
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['correct', 'score', 'points', 'done', 'section', 'updatedAt', 'p0', 'p1', 'p2', 'p3'])
+        && request.resource.data.diff(resource.data).removedKeys().size() == 0
+        && !request.resource.data.diff(resource.data).changedKeys().hasAny(['p0', 'p1', 'p2', 'p3'])
+        && request.resource.data.diff(resource.data).addedKeys().hasAny(['p0', 'p1', 'p2', 'p3'])
+        && request.resource.data.diff(resource.data).addedKeys().difference(['updatedAt'].toSet()).size() == 1
+        && scoreOk(0) && scoreOk(1) && scoreOk(2) && scoreOk(3)
+        && request.resource.data.section == resource.data.section + 1
+        && request.resource.data.section <= 4
+        && request.resource.data.done == (request.resource.data.section == 4)
+        && request.resource.data.correct is int
+        && request.resource.data.correct >= resource.data.correct
+        && request.resource.data.correct <= resource.data.correct + 100
+        && request.resource.data.points is int
+        && request.resource.data.points >= resource.data.points
+        && request.resource.data.points <= resource.data.points + 15000
+        && request.resource.data.score is int
+        && request.resource.data.score >= resource.data.score
+        && request.resource.data.score <= 10000
+        && request.resource.data.updatedAt == request.time;
+      allow delete: if false;
+    }
+
+    // 予想問題を開いている人の名簿（ランキングで「未回答」として並べる）。置くのは名前だけ。
+    // ログインした人が読め、自分の分だけ書ける。
+    match /yosou_members/{uid} {
+      allow read: if request.auth != null;
+      allow create, update: if request.auth != null
+        && request.auth.uid == uid
+        && request.resource.data.keys().hasOnly(['name', 'at'])
+        && request.resource.data.name is string
+        && request.resource.data.name.size() > 0
+        && request.resource.data.name.size() <= 20
+        && request.resource.data.at == request.time;
+      allow delete: if false;
+    }
+
+    // 予想問題のランキング（予想問題ごと）。置くのはニックネーム・点数・満点・かかった時間・未採点の数だけ。
+    // 1人1回登録でき、自分で採点した点は登録から3日のあいだ入れなおせる。ログインした人が読める。
+    match /yosou_rankings/{examId}/entries/{uid} {
+      function validScore(d) {
+        return d.score is int && d.score >= 0 && d.score <= d.total
+          && d.unscored is int && d.unscored >= 0 && d.unscored <= 500;
+      }
+      allow read: if request.auth != null;
+      allow create: if request.auth != null
+        && request.auth.uid == uid
+        && examId.matches('^[A-Za-z0-9_-]{1,40}$')
+        && request.resource.data.keys().hasOnly(['name', 'score', 'total', 'spent', 'start', 'unscored', 'at'])
+        && request.resource.data.name is string
+        && request.resource.data.name.size() > 0
+        && request.resource.data.name.size() <= 20
+        && request.resource.data.total is int
+        && request.resource.data.total > 0
+        && request.resource.data.total <= 1000
+        && validScore(request.resource.data)
+        && request.resource.data.spent is int
+        && request.resource.data.spent >= 0
+        && request.resource.data.spent <= 36000
+        && request.resource.data.start is int
+        && request.resource.data.at == request.time;
+      allow update: if request.auth != null
+        && request.auth.uid == uid
+        && request.time < resource.data.at + duration.value(3, 'd')
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['score', 'unscored', 'updatedAt'])
+        && validScore(request.resource.data)
+        && request.resource.data.updatedAt == request.time;
+      allow delete: if false;
+    }
+
+    // オンライン対戦の部屋（部屋番号 4けた）。ログインした人だけが使える。
+    // 作れるのは自分がホストの部屋だけ。更新できるのはホストとゲスト（空いていれば入れる）。
+    match /versus_rooms/{code} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null
+        && request.resource.data.host == request.auth.uid;
+      allow update: if request.auth != null
+        && request.resource.data.host == resource.data.host
+        && (resource.data.host == request.auth.uid
+          || resource.data.guest == request.auth.uid
+          || (resource.data.guest == null
+            && request.resource.data.guest == request.auth.uid));
+      allow delete: if request.auth != null
+        && resource.data.host == request.auth.uid;
+    }
+  }
+}

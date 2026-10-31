@@ -1,0 +1,456 @@
+{
+  "setId": "science_biology_01",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_bio01_001",
+      "unit": "science.biology.cell.common",
+      "category": "knowledge",
+      "prompt": "すべての生物に共通する特徴として正しくないものは？",
+      "choices": [
+        "遺伝物質として DNA をもつ",
+        "ATP を使ってエネルギーのやりとりをする",
+        "細胞からできている",
+        "光合成を行う"
+      ],
+      "answerIndex": 3,
+      "explanation": "光合成をするのは植物や藻類など一部の生物だけ。ほかの3つはすべての生物に共通。"
+    },
+    {
+      "id": "sci_bio01_002",
+      "unit": "science.biology.cell.common.structure",
+      "category": "knowledge",
+      "prompt": "原核細胞の特徴は？",
+      "choices": [
+        "細胞膜をもたない",
+        "核膜に包まれた核をもたない",
+        "必ずミトコンドリアをもつ",
+        "DNA をもたない"
+      ],
+      "answerIndex": 1,
+      "explanation": "原核細胞は DNA が細胞質基質に存在し、核膜や膜でできた細胞小器官をもたない。"
+    },
+    {
+      "id": "sci_bio01_003",
+      "unit": "science.biology.cell.common.structure",
+      "category": "knowledge",
+      "prompt": "原核生物はどれ？",
+      "choices": [
+        "酵母",
+        "アメーバ",
+        "大腸菌",
+        "ゾウリムシ"
+      ],
+      "answerIndex": 2,
+      "explanation": "細菌（大腸菌・シアノバクテリアなど）は原核生物。酵母・ゾウリムシは真核生物。"
+    },
+    {
+      "id": "sci_bio01_004",
+      "unit": "science.biology.cell.common.structure",
+      "category": "knowledge",
+      "prompt": "呼吸によって ATP を多くつくる細胞小器官は？",
+      "choices": [
+        "液胞",
+        "核",
+        "ミトコンドリア",
+        "葉緑体"
+      ],
+      "answerIndex": 2,
+      "explanation": "ミトコンドリアは有機物を分解して ATP をつくる。動物にも植物にもある。"
+    },
+    {
+      "id": "sci_bio01_005",
+      "unit": "science.biology.cell.common.structure",
+      "category": "knowledge",
+      "prompt": "光合成を行う細胞小器官は？",
+      "choices": [
+        "リボソーム",
+        "ミトコンドリア",
+        "葉緑体",
+        "ゴルジ体"
+      ],
+      "answerIndex": 2,
+      "explanation": "葉緑体は光エネルギーを使って二酸化炭素と水から有機物をつくる。"
+    },
+    {
+      "id": "sci_bio01_006",
+      "unit": "science.biology.cell.common.structure",
+      "category": "knowledge",
+      "prompt": "植物細胞にはあるが、動物細胞にはふつう見られないものは？",
+      "choices": [
+        "核",
+        "細胞壁",
+        "ミトコンドリア",
+        "細胞膜"
+      ],
+      "answerIndex": 1,
+      "explanation": "植物細胞は細胞膜の外側にセルロースを主成分とする細胞壁をもつ。葉緑体や発達した液胞も植物の特徴。"
+    },
+    {
+      "id": "sci_bio01_007",
+      "unit": "science.biology.cell.common.structure",
+      "category": "knowledge",
+      "prompt": "遺伝情報を担う DNA が主に存在する場所（真核細胞）は？",
+      "choices": [
+        "核",
+        "液胞",
+        "細胞壁",
+        "細胞膜"
+      ],
+      "answerIndex": 0,
+      "explanation": "真核細胞では DNA の大部分が核の中にある（ミトコンドリアや葉緑体にもわずかにある）。"
+    },
+    {
+      "id": "sci_bio01_008",
+      "unit": "science.biology.cell.common.structure",
+      "category": "knowledge",
+      "prompt": "細胞の内外を仕切り、物質の出入りを調節する膜は？",
+      "choices": [
+        "細胞膜",
+        "核膜",
+        "液胞膜",
+        "細胞壁"
+      ],
+      "answerIndex": 0,
+      "explanation": "細胞膜は必要な物質を選んで通す性質（選択的透過性）をもつ。"
+    },
+    {
+      "id": "sci_bio01_009",
+      "unit": "science.biology.cell.common.structure",
+      "category": "knowledge",
+      "prompt": "1つの細胞だけで生活している生物を何という？",
+      "choices": [
+        "多細胞生物",
+        "ウイルス",
+        "原生動物だけ",
+        "単細胞生物"
+      ],
+      "answerIndex": 3,
+      "explanation": "ゾウリムシ・ミドリムシ・大腸菌など。"
+    },
+    {
+      "id": "sci_bio01_010",
+      "unit": "science.biology.cell.common.structure",
+      "category": "knowledge",
+      "prompt": "ウイルスが「生物ではない」とされる主な理由は？",
+      "choices": [
+        "タンパク質をもたないから",
+        "非常に大きいから",
+        "DNA や RNA をもたないから",
+        "細胞からできておらず、自分だけでは増えられないから"
+      ],
+      "answerIndex": 3,
+      "explanation": "ウイルスは遺伝物質とタンパク質の殻からなり、他の生物の細胞の中でしか増えられない。"
+    },
+    {
+      "id": "sci_bio01_011",
+      "unit": "science.biology.cell.common.structure",
+      "category": "knowledge",
+      "prompt": "多細胞生物で、同じ形やはたらきの細胞が集まったものを何という？",
+      "choices": [
+        "組織",
+        "器官",
+        "細胞小器官",
+        "個体"
+      ],
+      "answerIndex": 0,
+      "explanation": "細胞 → 組織 → 器官 → 個体 の順に大きなまとまりになる。"
+    },
+    {
+      "id": "sci_bio01_012",
+      "unit": "science.biology.cell.common.structure",
+      "category": "knowledge",
+      "prompt": "「生物のからだは細胞からできている」という細胞説を唱えたのは？",
+      "choices": [
+        "ワトソンとクリック",
+        "シュライデンとシュワン",
+        "ダーウィン",
+        "メンデル"
+      ],
+      "answerIndex": 1,
+      "explanation": "植物はシュライデン、動物はシュワンが提唱した。"
+    },
+    {
+      "id": "sci_bio01_013",
+      "unit": "science.biology.cell.common.microscope",
+      "category": "calculation",
+      "prompt": "接眼ミクロメーター 10 目盛りと、対物ミクロメーター（1目盛り 10 μm）4 目盛りが一致した。接眼ミクロメーター1目盛りの長さは？",
+      "choices": [
+        "40 μm",
+        "2.5 μm",
+        "4 μm",
+        "10 μm"
+      ],
+      "answerIndex": 2,
+      "explanation": "4 × 10 μm ＝ 40 μm を 10 目盛りで割って 4 μm。"
+    },
+    {
+      "id": "sci_bio01_014",
+      "unit": "science.biology.cell.common.structure",
+      "category": "calculation",
+      "prompt": "前問の倍率で、ある細胞の長さが接眼ミクロメーター 15 目盛りだった。細胞の長さは？",
+      "choices": [
+        "60 μm",
+        "15 μm",
+        "150 μm",
+        "38 μm"
+      ],
+      "answerIndex": 0,
+      "explanation": "15 × 4 μm ＝ 60 μm。"
+    },
+    {
+      "id": "sci_bio01_015",
+      "unit": "science.biology.cell.common.common",
+      "category": "thinking",
+      "prompt": "生物が多様であるにもかかわらず、多くの共通性をもつ理由として最も適切なものは？",
+      "choices": [
+        "共通の祖先から進化してきたから",
+        "同じ場所に住んでいるから",
+        "人間が品種改良したから",
+        "偶然に同じ特徴をもったから"
+      ],
+      "answerIndex": 0,
+      "explanation": "共通の祖先がもっていた特徴を受けつぎながら、環境に応じて多様化してきた。"
+    },
+    {
+      "id": "sci_bio01_016",
+      "unit": "science.biology.cell.common.structure",
+      "category": "thinking",
+      "prompt": "ミトコンドリアと葉緑体が独自の DNA をもち、分裂して増えることから考えられることは？",
+      "choices": [
+        "ウイルスが変化したもの",
+        "核から分かれてできた",
+        "細胞膜がくびれてできた",
+        "もとは別の原核生物で、細胞内に共生して取りこまれた"
+      ],
+      "answerIndex": 3,
+      "explanation": "細胞内共生説。好気性細菌がミトコンドリアに、シアノバクテリアが葉緑体になったと考えられている。"
+    },
+    {
+      "id": "sci_bio01_017",
+      "unit": "science.biology.cell.common.structure",
+      "category": "knowledge",
+      "prompt": "真核生物はどれ？",
+      "choices": [
+        "シアノバクテリア",
+        "酵母菌",
+        "大腸菌",
+        "乳酸菌"
+      ],
+      "answerIndex": 1,
+      "explanation": "酵母菌は菌類で、核膜に包まれた核をもつ。ほかの3つは原核生物。"
+    },
+    {
+      "id": "sci_bio01_018",
+      "unit": "science.biology.cell.common.structure",
+      "category": "knowledge",
+      "prompt": "原核細胞にも真核細胞にも共通して存在するものは？",
+      "choices": [
+        "核膜",
+        "細胞膜とリボソーム",
+        "ミトコンドリア",
+        "葉緑体"
+      ],
+      "answerIndex": 1,
+      "explanation": "原核細胞は核膜や膜で包まれた細胞小器官をもたないが、細胞膜・リボソーム・DNA はもつ。"
+    },
+    {
+      "id": "sci_bio01_019",
+      "unit": "science.biology.cell.common.structure",
+      "category": "knowledge",
+      "prompt": "成熟した植物細胞で大きく発達する液胞のはたらきは？",
+      "choices": [
+        "物質の貯蔵や、細胞内の水分の調節",
+        "光合成",
+        "ATP の合成",
+        "タンパク質の合成"
+      ],
+      "answerIndex": 0,
+      "explanation": "液胞の中は細胞液で満たされ、色素（アントシアン）をふくむこともある。"
+    },
+    {
+      "id": "sci_bio01_020",
+      "unit": "science.biology.cell.common.structure",
+      "category": "knowledge",
+      "prompt": "細胞質基質（サイトゾル）とは？",
+      "choices": [
+        "葉緑体の内部",
+        "細胞壁のすきま",
+        "核の中の液体",
+        "細胞小器官のあいだを満たす液状の部分"
+      ],
+      "answerIndex": 3,
+      "explanation": "さまざまな化学反応が行われる場でもある。"
+    },
+    {
+      "id": "sci_bio01_021",
+      "unit": "science.biology.cell.common.microscope",
+      "category": "knowledge",
+      "prompt": "光学顕微鏡で見分けられる2点間の最小の距離（分解能）はおよそ？",
+      "choices": [
+        "0.2 μm",
+        "2 mm",
+        "0.2 nm",
+        "0.2 mm"
+      ],
+      "answerIndex": 0,
+      "explanation": "電子顕微鏡では、さらに小さいものまで見分けられる。"
+    },
+    {
+      "id": "sci_bio01_022",
+      "unit": "science.biology.cell.common",
+      "category": "knowledge",
+      "prompt": "1 μm（マイクロメートル）は何 mm？",
+      "choices": [
+        "0.1 mm",
+        "0.001 mm",
+        "0.01 mm",
+        "0.0001 mm"
+      ],
+      "answerIndex": 1,
+      "explanation": "1 mm=1000 μm。"
+    },
+    {
+      "id": "sci_bio01_023",
+      "unit": "science.biology.cell.common.structure",
+      "category": "knowledge",
+      "prompt": "動物細胞にも植物細胞にもあるものは？",
+      "choices": [
+        "発達した液胞",
+        "ミトコンドリア",
+        "葉緑体",
+        "細胞壁"
+      ],
+      "answerIndex": 1,
+      "explanation": "ミトコンドリアは呼吸の場で、ほとんどの真核細胞にある。"
+    },
+    {
+      "id": "sci_bio01_024",
+      "unit": "science.biology.cell.common",
+      "category": "knowledge",
+      "prompt": "大腸菌・ヒトの赤血球・ゾウリムシを小さい順に並べると？",
+      "choices": [
+        "赤血球 → 大腸菌 → ゾウリムシ",
+        "大腸菌 → ゾウリムシ → 赤血球",
+        "大腸菌 → 赤血球 → ゾウリムシ",
+        "ゾウリムシ → 赤血球 → 大腸菌"
+      ],
+      "answerIndex": 2,
+      "explanation": "おおよそ 数μm → 7〜8μm → 200μm。"
+    },
+    {
+      "id": "sci_bio01_025",
+      "unit": "science.biology.cell.common.structure",
+      "category": "knowledge",
+      "prompt": "シアノバクテリア（ネンジュモなど）について正しいものは？",
+      "choices": [
+        "原核生物だが、光合成を行う",
+        "真核生物で、葉緑体をもつ",
+        "ウイルスの一種",
+        "光合成を行わない"
+      ],
+      "answerIndex": 0,
+      "explanation": "光合成の色素はもつが、葉緑体はもたない。"
+    },
+    {
+      "id": "sci_bio01_026",
+      "unit": "science.biology.cell.common.structure",
+      "category": "knowledge",
+      "prompt": "葉緑体にふくまれ、光合成で光を吸収する緑色の色素は？",
+      "choices": [
+        "メラニン",
+        "アントシアン",
+        "クロロフィル",
+        "ヘモグロビン"
+      ],
+      "answerIndex": 2,
+      "explanation": "葉が緑に見えるのは、クロロフィルが緑色の光をあまり吸収しないから。"
+    },
+    {
+      "id": "sci_bio01_027",
+      "unit": "science.biology.cell.common.structure",
+      "category": "knowledge",
+      "prompt": "顕微鏡で視野の右上に見える細胞を中央に動かすには、プレパラートをどちらに動かす？",
+      "choices": [
+        "左下",
+        "左上",
+        "右下",
+        "右上"
+      ],
+      "answerIndex": 3,
+      "explanation": "像は上下左右が逆に見えるので、見えている方向に動かす。"
+    },
+    {
+      "id": "sci_bio01_028",
+      "unit": "science.biology.cell.common.microscope",
+      "category": "calculation",
+      "prompt": "接眼ミクロメーター20目盛りと、対物ミクロメーター（1目盛り10 μm）5目盛りが一致した。接眼ミクロメーター1目盛りは？",
+      "choices": [
+        "25 μm",
+        "2.5 μm",
+        "4 μm",
+        "0.25 μm"
+      ],
+      "answerIndex": 1,
+      "explanation": "50 μm÷20。"
+    },
+    {
+      "id": "sci_bio01_029",
+      "unit": "science.biology.cell.common.microscope",
+      "category": "calculation",
+      "prompt": "対物レンズの倍率を10倍から40倍に上げると、接眼ミクロメーター1目盛りが示す長さはどうなる？",
+      "choices": [
+        "1/2 になる",
+        "変わらない",
+        "4倍になる",
+        "1/4 になる"
+      ],
+      "answerIndex": 3,
+      "explanation": "拡大されるほど、1目盛りに入る長さは短くなる。"
+    },
+    {
+      "id": "sci_bio01_030",
+      "unit": "science.biology.cell.common.structure",
+      "category": "calculation",
+      "prompt": "1辺10 μm の立方体の細胞の体積は？",
+      "choices": [
+        "600 μm³",
+        "100 μm³",
+        "30 μm³",
+        "1000 μm³"
+      ],
+      "answerIndex": 3,
+      "explanation": "10×10×10。"
+    },
+    {
+      "id": "sci_bio01_031",
+      "unit": "science.biology.cell.common.structure",
+      "category": "thinking",
+      "prompt": "細胞が小さいことの利点として最も適切なものは？",
+      "choices": [
+        "体積あたりの表面積が大きく、物質の出入りが効率よく行えるから",
+        "中に多くの物質をためられるから",
+        "分裂しなくてよいから",
+        "光を通さないから"
+      ],
+      "answerIndex": 0,
+      "explanation": "細胞が大きくなると、表面積の増え方は体積の増え方に追いつかない。"
+    },
+    {
+      "id": "sci_bio01_032",
+      "unit": "science.biology.cell.common.microscope",
+      "category": "thinking",
+      "prompt": "ふつうの光学顕微鏡でウイルスが見えない理由は？",
+      "choices": [
+        "ウイルスは細胞の中にしかいないから",
+        "ウイルスは動き回るから",
+        "ウイルスは透明だから",
+        "ウイルスの大きさが、光学顕微鏡の分解能より小さいから"
+      ],
+      "answerIndex": 3,
+      "explanation": "ウイルスの多くは 0.1 μm 前後で、電子顕微鏡で観察する。"
+    }
+  ]
+}

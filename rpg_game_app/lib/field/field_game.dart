@@ -1,0 +1,1952 @@
+import 'dart:math';
+import 'dart:ui' as ui;
+
+import 'package:flame/components.dart';
+import 'package:flame/events.dart';
+import 'package:flame/game.dart';
+import 'package:flutter/foundation.dart' show ValueNotifier;
+import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart' show KeyEventResult;
+import 'package:rpg_game/rpg_game.dart';
+
+import '../app/theme.dart';
+import '../art/enemy_painter.dart';
+import '../art/hero_painter.dart';
+import '../art/vehicle_painter.dart';
+import 'ambient.dart';
+import 'field_map.dart';
+import 'landmark_art.dart';
+import 'paper_art.dart';
+import 'scenery.dart';
+import 'villager.dart';
+import 'terrain_art.dart';
+
+const double tileSize = 32;
+
+extension on Facing {
+  Cell get delta => switch (this) {
+    Facing.up => (col: 0, row: -1),
+    Facing.down => (col: 0, row: 1),
+    Facing.left => (col: -1, row: 0),
+    Facing.right => (col: 1, row: 0),
+  };
+}
+
+Vector2 _center(Cell c) =>
+    Vector2((c.col + 0.5) * tileSize, (c.row + 0.5) * tileSize);
+
+/// 見下ろし型のフィールド。マス目単位で歩き、道をふさぐ敵に話しかけるとバトル。
+class FieldGame extends FlameGame with KeyboardEvents {
+  FieldGame({
+    required this.map,
+    required this.rpgWorld,
+    required this._progress,
+    required this.onEncounter,
+    required this.onMessage,
+    required this.onInn,
+    required this.onChest,
+    required this.onSpring,
+    required this.onGhost,
+    required this.onPortal,
+    required this.onSecret,
+    required this.onDoor,
+    required this.onWarp,
+    required this.onNpc,
+    this.from,
+    this.isCleared,
+    this.chestOpened,
+    this.darknessOf,
+    this.masteredArea,
+    this.chestVariants = true,
+    this.calm = false,
+    this.onIncident,
+  });
+
+  /// 住人の事件が進んだとき（記録する印・お礼の経験値・出すことば）
+  final void Function(String flag, int exp, String text)? onIncident;
+
+  /// 動きをへらす（舞うものを出さない）
+  final bool calm;
+
+  /// 宝箱の種類（連続正解・ミミック・探索のごほうび）を使うか。
+  /// 試験対策ワールドでは使わない（ふつうの封印だけ）
+  final bool chestVariants;
+
+  /// 宝箱の種類（宝箱の ID で引く）
+  final Map<String, ChestVariant> _variants = {};
+
+  /// 宝箱の種類（知らない ID ならふつうの封印）
+  ChestVariant variantOfChest(String chestId) =>
+      _variants[chestId] ?? ChestVariant.seal;
+
+  /// そのマスの宝箱の種類
+  ChestVariant chestVariantAt(Cell c) {
+    if (!chestVariants) return ChestVariant.seal;
+    return switch (map.chestKinds[c]) {
+      ChestKind.secret || ChestKind.cave1 => ChestVariant.explore,
+      ChestKind.vault || ChestKind.cave2 => ChestVariant.seal,
+      _ => ChestVariant.forMainChest(
+        map.enemyAhead(c) ?? 1,
+        boss: map.bossAreas.contains(map.areaAt(c.col, c.row)),
+      ),
+    };
+  }
+
+  /// エリアの暗さ（0〜1）。学力が低い単元のエリアほど暗い
+  final double Function(int area)? darknessOf;
+
+  /// その単元を身につけたか（熟練度が高いと、隠し通路がひとりでに開く）
+  final bool Function(int area)? masteredArea;
+
+  /// 隠し通路（H）を調べたとき
+  final void Function(Cell cell) onSecret;
+
+  /// 閉じた知識の扉（D）に話しかけたとき。引数は扉の先にいる（次に戦う）ステージ
+  final void Function(StageDef nextStage, Cell cell) onDoor;
+
+  /// ワープ石（X）にさわったとき
+  final void Function(Cell cell) onWarp;
+
+  /// 住人（N）に話しかけたとき。引数はその先にいるステージ（ハブなら null）
+  final void Function(StageDef? nextStage, Cell cell) onNpc;
+
+  /// 頼みごとの「！」を出す住人
+  bool Function(Cell cell)? npcHasQuest;
+
+  /// ステージをクリアしたか（試験対策ワールドでは、ワールドの中の記録で判定する）
+  final bool Function(RpgProgress progress, StageDef stage)? isCleared;
+
+  /// 宝箱を開けたか（試験対策ワールドでは、ワールドの中の記録で判定する）
+  final bool Function(RpgProgress progress, String chestId)? chestOpened;
+
+  /// 隠し通路・扉が開いたことを記録する文字列
+  static String openKey(String mapId, Cell c) =>
+      'open:$mapId:${c.col}:${c.row}';
+
+  /// ワープ石にさわったことを記録する文字列
+  static String warpKey(String mapId, Cell c) =>
+      'warp:$mapId:${c.col}:${c.row}';
+
+  bool _cleared(RpgProgress p, StageDef s) =>
+      isCleared?.call(p, s) ?? p.clearedStageIds.contains(s.id);
+
+  bool _chestOpened(RpgProgress p, String id) =>
+      chestOpened?.call(p, id) ?? p.openedChests.contains(id);
+
+  /// その隠し通路・扉が開いているか。
+  /// 隠し通路は、その単元の熟練度が高くなると、ひとりでに開く（学力で世界が変わる）
+  bool isOpen(Cell c) =>
+      _progress.fieldFlags.contains(openKey(map.id, c)) ||
+      (map.tileAt(c.col, c.row) == 'H' &&
+          (masteredArea?.call(map.areaAt(c.col, c.row)) ?? false));
+
+  /// 前にいたマップ（出入口のとなりから始める）。null ならスタート地点から
+  final String? from;
+
+  /// 出入口に入ったとき
+  final void Function(Portal portal) onPortal;
+
+  final FieldMap map;
+  final WorldDef rpgWorld;
+  final void Function(StageDef stage, bool cleared) onEncounter;
+  final void Function(String message) onMessage;
+
+  /// 宿に話しかけたとき。引数は宿の先にいる（次に戦う）ステージ
+  final void Function(StageDef nextStage) onInn;
+
+  /// 宝箱に話しかけたとき（[chestId] は保存用の ID）
+  final void Function(StageDef nextStage, String chestId, bool opened) onChest;
+
+  /// 泉に話しかけたとき
+  final void Function(StageDef nextStage) onSpring;
+
+  /// 亡霊（そのステージで間違えた問題）に話しかけたとき
+  final void Function(StageDef stage, int count) onGhost;
+
+  RpgProgress _progress;
+  late final PlayerToken player;
+  final Map<int, EnemyToken> _enemies = {};
+  final Map<Cell, ChestToken> _chests = {};
+  final Map<int, GhostToken> _ghosts = {};
+  final Map<int, CageToken> _cages = {};
+  final Map<Cell, SealToken> _seals = {};
+  final Map<Cell, WarpToken> _warps = {};
+  final Map<Cell, EnemyToken> _elites = {};
+
+  /// 村や町を歩き回る住人
+  final List<VillagerToken> _villagers = [];
+
+  /// クリア後の裏ボス（全エリアをクリアすると、ゴールの前に現れる）
+  EnemyToken? _shadow;
+
+  /// 住人の事件（住人の番号 → 事件）と、見つけるもの
+  final Map<int, Incident> _incidents = {};
+  final Map<int, IncidentToken> _incidentTokens = {};
+
+  /// もう知らせた事件の印（保存を待つあいだに、何度も知らせないように）
+  final Set<String> _incidentSent = {};
+
+  void _report(String flag, int exp, String text) {
+    if (!_incidentSent.add(flag)) return;
+    onIncident?.call(flag, exp, text);
+  }
+
+  /// 事件で見つけるものを置く場所。住人のエリアの1つ先（まだ行けなければ、行ける所まで）
+  (Cell, String)? _incidentSpot(VillagerToken v, Incident inc) {
+    final own = map.areaAt(v.home.col, v.home.row);
+    var area = own;
+    if (_mapStages.isNotEmpty) {
+      final open =
+          _mapStages
+              .where((s) => !_cleared(_progress, s))
+              .map((s) => s.order)
+              .firstOrNull ??
+          _mapStages.last.order;
+      area = min(own + 1, open);
+    }
+    var cells = map.safeCells[area] ?? const <Cell>[];
+    if (cells.isEmpty) {
+      cells = [
+        for (var r = 0; r < map.height; r++)
+          for (var c = 0; c < map.width; c++)
+            if (map.tileAt(c, r) == '.' &&
+                map.areaAt(c, r) == area &&
+                (c - v.home.col).abs() + (r - v.home.row).abs() > 4)
+              (col: c, row: r),
+      ];
+    }
+    if (cells.isEmpty) return null;
+    var k = (inc.index * 7 + 3) % cells.length;
+    // 亡霊が立つマス（まん中）はさける
+    if (k == cells.length ~/ 2 && cells.length > 1) k = (k + 1) % cells.length;
+    return (cells[k], map.areaLabels[area] ?? 'この近く');
+  }
+
+  /// 住人の事件の「！」と、見つけるものを、進み具合に合わせる
+  void _syncIncidents() {
+    if (onIncident == null) return;
+    for (final v in _villagers) {
+      final inc = _incidents[v.index] ??= Incident.of(map.id, v.index);
+      v.quest = !inc.done(_progress);
+      final token = _incidentTokens[v.index];
+      final spot = inc.found(_progress) ? null : _incidentSpot(v, inc);
+      if (spot == null || token?.cell != spot.$1) {
+        token?.removeFromParent();
+        _incidentTokens.remove(v.index);
+      }
+      if (spot != null && _incidentTokens[v.index] == null) {
+        final t = IncidentToken(
+          cell: spot.$1,
+          child: inc.kind == IncidentKind.lostChild,
+          tileSize: tileSize,
+        );
+        _incidentTokens[v.index] = t;
+        world.add(t);
+      }
+    }
+  }
+
+  /// 住人と話した回数（同じ人でも、話すたびに話題を変える）
+  int _talks = 0;
+
+  /// このマップのエリア（順番どおり）
+  late final List<StageDef> _mapStages = [
+    for (final s in rpgWorld.stages)
+      if (map.enemySpots.containsKey(s.order)) s,
+  ]..sort((a, b) => a.order.compareTo(b.order));
+  final Map<Cell, NpcToken> _npcs = {};
+
+  /// 画面の十字ボタンで押されている方向
+  Facing? padDirection;
+  Facing? _keyDirection;
+
+  /// 短く押しただけの方向（歩いている途中に押されても、次の1歩として必ず進む）
+  Facing? _queued;
+
+  /// タップした場所までの残りの道（1歩ずつ進む）
+  final List<Cell> _route = [];
+
+  /// タップした場所（目印を出す。着いたら null）
+  final tapTarget = ValueNotifier<Cell?>(null);
+
+  /// 歩いて通れるマス（開いた隠し通路・扉もふくむ。敵や亡霊のいるマスは通れない）
+  bool walkable(Cell c) {
+    final t = map.tileAt(c.col, c.row);
+    final floor =
+        map.isFloor(c.col, c.row) || ((t == 'H' || t == 'D') && isOpen(c));
+    return floor &&
+        _enemyAt(c) == null &&
+        !_ghosts.values.any((g) => g.cell == c);
+  }
+
+  /// 画面をタップした場所（マップの座標）まで歩く。人や敵なら、となりまで行って話しかける
+  void tapAt(Vector2 worldPoint) {
+    if (inputLocked) return;
+    final goal = (
+      col: (worldPoint.x / tileSize).floor(),
+      row: (worldPoint.y / tileSize).floor(),
+    );
+    if (goal.col < 0 ||
+        goal.row < 0 ||
+        goal.col >= map.width ||
+        goal.row >= map.height) {
+      return;
+    }
+    final path = findFieldPath(player.cell, goal, walkable);
+    _route.clear();
+    if (path == null || path.isEmpty) {
+      tapTarget.value = null;
+      return;
+    }
+    _route.addAll(path);
+    tapTarget.value = goal;
+    _bumpedDirection = null;
+  }
+
+  /// タップで歩くのをやめる（十字ボタン・キーを使ったとき、話しかけたとき）
+  void cancelRoute() {
+    _route.clear();
+    tapTarget.value = null;
+  }
+
+  /// 十字ボタン・キーが押された瞬間に呼ぶ。短いタップでも取りこぼさない
+  void press(Facing dir) {
+    cancelRoute();
+    _queued = dir;
+    // もう一度押したら、目の前の人や看板にもう一度話しかけられる
+    _bumpedDirection = null;
+  }
+
+  /// 向いている先を調べる（Enter・スペース・「しらべる」ボタン）
+  void interact() {
+    if (inputLocked || player.moving) return;
+    final dir = player.facing;
+    final target = (
+      col: player.cell.col + dir.delta.col,
+      row: player.cell.row + dir.delta.row,
+    );
+    final blocked =
+        !map.isFloor(target.col, target.row) ||
+        _enemyAt(target) != null ||
+        _ghosts.values.any((g) => g.cell == target);
+    // 目の前が何もない床なら歩かない（調べるだけ）
+    if (!blocked) return;
+    _bumpedDirection = null;
+    _tryStep(dir);
+  }
+
+  /// ダイアログ表示中などは操作を受け付けない
+  bool inputLocked = false;
+
+  /// 今いるエリアの名前（画面上部の表示用）
+  late final area = ValueNotifier<String>(map.labelAt(0, 0));
+
+  /// 今いるエリアの番号（入ったときの演出用）
+  late final areaNo = ValueNotifier<int>(-1);
+
+  /// 話しかけた直後、同じ方向を押しっぱなしで何度も話しかけないようにする
+  Facing? _bumpedDirection;
+
+  @override
+  ui.Color backgroundColor() => TsuzuriColors.penKraft;
+
+  @override
+  Future<void> onLoad() async {
+    world.add(
+      MapLayer(
+        map,
+        worldId: rpgWorld.id,
+        view: () => camera.visibleWorldRect,
+        zoom: () => camera.viewfinder.zoom,
+      ),
+    );
+    world.add(TapMarker(tapTarget));
+    if (!calm) {
+      ui.Rect view() => camera.visibleWorldRect;
+      world.add(WaterGlints(map: map, view: view, tileSize: tileSize));
+      world.add(
+        AmbientLayer(
+          map: map,
+          focus: () => player.position,
+          view: view,
+          tileSize: tileSize,
+        ),
+      );
+    }
+    for (final e in map.enemySpots.entries) {
+      final stage = rpgWorld.stages.where((s) => s.order == e.key).firstOrNull;
+      if (stage == null) continue;
+      final token = EnemyToken(stage: stage, home: e.value);
+      _enemies[e.key] = token;
+      world.add(token);
+    }
+    for (final c in map.findAll('C')) {
+      final variant = chestVariantAt(c);
+      _variants[chestIdAt(c)] = variant;
+      final token = ChestToken(c, variant: variant);
+      _chests[c] = token;
+      world.add(token);
+    }
+    for (final w in map.findAll('W')) {
+      world.add(SpringToken(w));
+    }
+    for (final ch in const ['H', 'D']) {
+      for (final c in map.findAll(ch)) {
+        final token = SealToken(
+          c,
+          door: ch == 'D',
+          terrain: map.terrainAt(c.col, c.row),
+        );
+        _seals[c] = token;
+        world.add(token);
+      }
+    }
+    for (final c in map.findAll('N')) {
+      final stage = _stageAhead(c);
+      final token = NpcToken(
+        c,
+        color: stage == null
+            ? Npcs.storyteller.color
+            : Npcs.of(map.terrainAt(c.col, c.row)).color,
+      );
+      _npcs[c] = token;
+      world.add(token);
+    }
+    for (final c in map.findAll('X')) {
+      final token = WarpToken(c);
+      _warps[c] = token;
+      world.add(token);
+    }
+    for (final c in map.findAll('M')) {
+      final base = _stageAhead(c);
+      if (base == null) continue;
+      // 洞くつの奥にいるのは「洞くつの主」
+      final token = EnemyToken(
+        stage: map.dungeonOf != null ? CaveBoss.of(base) : Elites.of(base),
+        home: c,
+      );
+      _elites[c] = token;
+      world.add(token);
+    }
+    // 家の前に住人を1人ずつ（航路にはいない）
+    for (final (i, l) in map.landmarks.indexed) {
+      if (l.kind != LandmarkKind.house) continue;
+      final door = (col: l.at.col + l.w ~/ 2, row: l.at.row + l.h);
+      Cell? start;
+      for (final c in [
+        door,
+        (col: door.col - 1, row: door.row),
+        (col: door.col + 1, row: door.row),
+        (col: door.col, row: door.row + 1),
+      ]) {
+        if (map.tileAt(c.col, c.row) == '.') {
+          start = c;
+          break;
+        }
+      }
+      if (start == null) continue;
+      final v = VillagerToken(
+        index: i,
+        home: start,
+        color: VillagerChat.colors[i % VillagerChat.colors.length],
+        tileSize: tileSize,
+        seed: i * 31 + map.id.hashCode,
+        canWalk: (c) =>
+            map.tileAt(c.col, c.row) == '.' &&
+            _enemyAt(c) == null &&
+            !_villagers.any((o) => o.cell == c),
+      );
+      _villagers.add(v);
+      world.add(v);
+    }
+    // 影の番人の立ち位置：トロフィーの1つ下の床
+    final goals = map.findAll('G');
+    if (goals.isNotEmpty && _mapStages.isNotEmpty && chestVariants) {
+      final g = goals.first;
+      final spot = (col: g.col, row: g.row + 1);
+      if (map.isFloor(spot.col, spot.row)) {
+        _shadow = EnemyToken(stage: ShadowKeeper.of(_mapStages), home: spot);
+      }
+    }
+    if (darknessOf != null) world.add(LightLayer(map, darknessOf!));
+    player = PlayerToken(from == null ? map.start : map.spawnFrom(from))
+      ..vehicleAt = (c) => Vehicle.of(map.terrainAt(c.col, c.row));
+    world.add(player);
+    applyProgress(_progress);
+    camera.follow(player, snap: true);
+  }
+
+  @override
+  void onGameResize(Vector2 size) {
+    super.onGameResize(size);
+    // スマホ縦持ちで横 9 マス程度が見えるように
+    // 小さいマップ（理の国のスタート地点など）は、横幅全体が見えるようにする
+    final across = map.width <= 13 ? map.width : 9;
+    camera.viewfinder.zoom = min(
+      size.x / (across * tileSize),
+      size.y / (max(11, across + 2) * tileSize),
+    );
+  }
+
+  /// 進行状況に合わせて、倒した敵を道の脇へどかす
+  void applyProgress(RpgProgress progress) {
+    _progress = progress;
+    for (final e in _seals.entries) {
+      e.value.open = isOpen(e.key);
+    }
+    for (final e in _warps.entries) {
+      e.value.active = progress.fieldFlags.contains(warpKey(map.id, e.key));
+    }
+    for (final e in _npcs.entries) {
+      e.value.quest = npcHasQuest?.call(e.key) ?? false;
+    }
+    for (final token in _elites.values) {
+      final cleared = _cleared(progress, token.stage);
+      token.cleared = cleared;
+      token.position = _center(token.cell);
+      token.priority = token.cell.row * 10 + 4;
+      // 倒した強敵はいなくなる
+      if (cleared) {
+        token.removeFromParent();
+      } else if (token.parent == null) {
+        world.add(token);
+      }
+    }
+    _syncIncidents();
+    // 影の番人：全エリアをクリアすると現れ、倒すといなくなる
+    if (_shadow case final shadow?) {
+      final show =
+          ShadowKeeper.appears(progress, _mapStages) &&
+          !_cleared(progress, shadow.stage);
+      shadow.priority = shadow.cell.row * 10 + 4;
+      if (!show) {
+        shadow.removeFromParent();
+      } else if (shadow.parent == null) {
+        world.add(shadow);
+      }
+    }
+    for (final token in _enemies.values) {
+      final cleared = _cleared(progress, token.stage);
+      token.cleared = cleared;
+      token.cell = cleared ? map.asideOf(token.home) : token.home;
+      token.position = _center(token.cell);
+      token.priority = token.cell.row * 10 + 4;
+    }
+    for (final e in _chests.entries) {
+      e.value.opened = _chestOpened(progress, chestIdAt(e.key));
+    }
+    // 亡霊：間違えた問題があるステージごとに1体、そのステージの手前の部屋をさまよう
+    final counts = <String, int>{};
+    for (final stageId in progress.mistakes.values) {
+      counts[stageId] = (counts[stageId] ?? 0) + 1;
+    }
+    for (final stage in rpgWorld.stages) {
+      final n = counts[stage.id] ?? 0;
+      final cells = map.safeCells[stage.order] ?? const [];
+      final existing = _ghosts[stage.order];
+      if (n == 0 || cells.isEmpty) {
+        existing?.removeFromParent();
+        _ghosts.remove(stage.order);
+        continue;
+      }
+      if (existing != null) {
+        existing.count = n;
+      } else {
+        final token = GhostToken(stage, cells[cells.length ~/ 2], n);
+        _ghosts[stage.order] = token;
+        world.add(token);
+      }
+    }
+    // 負けたステージの仲間は、ゲート横の檻に捕まっている
+    for (final stage in rpgWorld.stages) {
+      final captive = stage.captiveCompanionId;
+      final caught =
+          captive != null &&
+          progress.lostStages.contains(stage.id) &&
+          !progress.companions.contains(captive);
+      final existing = _cages[stage.order];
+      if (!caught) {
+        existing?.removeFromParent();
+        _cages.remove(stage.order);
+      } else if (existing == null) {
+        final gate = map.enemySpots[stage.order];
+        if (gate == null) continue;
+        final token = CageToken(map.cageOf(gate));
+        _cages[stage.order] = token;
+        world.add(token);
+      }
+    }
+  }
+
+  /// 宝箱の保存用 ID（その先にいる敵の番号と、宝箱の種類で決まる）
+  String chestIdAt(Cell c) {
+    final base = '${rpgWorld.id}_chest_${map.enemyAhead(c)}';
+    return switch (map.chestKinds[c]) {
+      ChestKind.secret => '${base}_secret',
+      ChestKind.vault => '${base}_vault',
+      ChestKind.cave1 => '${base}_cave1',
+      ChestKind.cave2 => '${base}_cave2',
+      _ => base,
+    };
+  }
+
+  /// ワープ石から別のワープ石へ飛ぶ（その石のとなりに立つ）
+  void warpTo(Cell stone) {
+    final spot = map.floorNextTo(stone);
+    if (spot == null) return;
+    player
+      ..cell = spot
+      ..position = _center(spot)
+      ..facing = Facing.down;
+    camera.follow(player, snap: true);
+  }
+
+  /// さわったことのあるワープ石（エリアの順）
+  List<Cell> get activeWarps => [
+    for (final e in _warps.entries)
+      if (e.value.active) e.key,
+  ]..sort((a, b) => b.row.compareTo(a.row));
+
+  StageDef? _stageAhead(Cell c) {
+    final n = map.enemyAhead(c);
+    return rpgWorld.stages.where((s) => s.order == n).firstOrNull;
+  }
+
+  EnemyToken? _enemyAt(Cell c) {
+    for (final e in _enemies.values) {
+      if (e.cell == c) return e;
+    }
+    final elite = _elites[c];
+    if (elite != null && !elite.cleared) return elite;
+    final shadow = _shadow;
+    if (shadow != null && shadow.cell == c && shadow.isMounted) return shadow;
+    return null;
+  }
+
+  @override
+  KeyEventResult onKeyEvent(
+    KeyEvent event,
+    Set<LogicalKeyboardKey> keysPressed,
+  ) {
+    Facing? dir;
+    if (keysPressed.contains(LogicalKeyboardKey.arrowUp) ||
+        keysPressed.contains(LogicalKeyboardKey.keyW)) {
+      dir = Facing.up;
+    } else if (keysPressed.contains(LogicalKeyboardKey.arrowDown) ||
+        keysPressed.contains(LogicalKeyboardKey.keyS)) {
+      dir = Facing.down;
+    } else if (keysPressed.contains(LogicalKeyboardKey.arrowLeft) ||
+        keysPressed.contains(LogicalKeyboardKey.keyA)) {
+      dir = Facing.left;
+    } else if (keysPressed.contains(LogicalKeyboardKey.arrowRight) ||
+        keysPressed.contains(LogicalKeyboardKey.keyD)) {
+      dir = Facing.right;
+    }
+    if (event is KeyDownEvent) {
+      if (event.logicalKey == LogicalKeyboardKey.enter ||
+          event.logicalKey == LogicalKeyboardKey.numpadEnter ||
+          event.logicalKey == LogicalKeyboardKey.space) {
+        interact();
+      } else if (dir != null) {
+        press(dir);
+      }
+    }
+    _keyDirection = dir;
+    return KeyEventResult.handled;
+  }
+
+  /// 見えている範囲（少し広め）。画面の外の駒を描かないために使う
+  static ui.Rect visible = ui.Rect.largest;
+
+  @override
+  void update(double dt) {
+    super.update(dt);
+    _clampCamera();
+    visible = camera.visibleWorldRect.inflate(tileSize * 2);
+    final label = map.labelAt(player.cell.col, player.cell.row);
+    if (area.value != label) area.value = label;
+    final no = map.areaAt(player.cell.col, player.cell.row);
+    if (areaNo.value != no) areaNo.value = no;
+    final dir = padDirection ?? _keyDirection ?? _queued;
+    if (dir != null) cancelRoute();
+    if (dir != _bumpedDirection) _bumpedDirection = null;
+    if (inputLocked) {
+      _queued = null;
+      cancelRoute();
+    } else if (!player.moving && _route.isNotEmpty) {
+      final next = _route.removeAt(0);
+      final d = next.col - player.cell.col;
+      final r = next.row - player.cell.row;
+      final step = d > 0
+          ? Facing.right
+          : d < 0
+          ? Facing.left
+          : r > 0
+          ? Facing.down
+          : Facing.up;
+      final before = player.cell;
+      _tryStep(step);
+      // 進めなかった（話しかけた・ふさがれた）ら、そこで止まる
+      if (player.cell == before) cancelRoute();
+      if (_route.isEmpty) tapTarget.value = null;
+    } else if (!player.moving && dir != null && dir != _bumpedDirection) {
+      _queued = null;
+      _tryStep(dir);
+    }
+    // 事件で見つけるもの：となりに来たら見つかる
+    for (final e in _incidentTokens.entries) {
+      final t = e.value;
+      final d =
+          (t.cell.col - player.cell.col).abs() +
+          (t.cell.row - player.cell.row).abs();
+      if (d <= 1 && !t.reported && !inputLocked) {
+        t.reported = true;
+        final inc = _incidents[e.key]!;
+        _report(inc.foundFlag, 0, inc.foundText);
+      }
+    }
+    // 住人：となりに来たら、ひとこと話す（困りごとがあれば、そのこと）
+    for (final (i, v) in _villagers.indexed) {
+      final d =
+          (v.cell.col - player.cell.col).abs() +
+          (v.cell.row - player.cell.row).abs();
+      final inc = _incidents[v.index];
+      if (d <= 1 &&
+          inc != null &&
+          inc.found(_progress) &&
+          !inc.done(_progress) &&
+          !inputLocked) {
+        if (!_incidentSent.contains(inc.doneFlag)) v.say(inc.thanksText);
+        _report(inc.doneFlag, Incident.rewardExp, inc.thanksText);
+        continue;
+      }
+      if (d <= 1 &&
+          v.cooldown == 0 &&
+          !v.talking &&
+          inc != null &&
+          !inc.done(_progress)) {
+        final spot = _incidentSpot(v, inc);
+        v.say(inc.request(spot?.$2 ?? 'この近く'));
+        continue;
+      }
+      if (d <= 1 && v.cooldown == 0 && !v.talking) {
+        final now = DateTime.now();
+        v.say(
+          VillagerChat.line(
+            progress: _progress,
+            stages: _mapStages,
+            terrain: map.terrainAt(v.cell.col, v.cell.row),
+            hour: now.hour,
+            day: now.difference(DateTime(2026)).inDays + _talks++,
+            who: i,
+          ),
+        );
+      }
+    }
+    // 近くにいる敵には「！」を出す
+    for (final e in [..._enemies.values, ..._elites.values]) {
+      final d =
+          (e.cell.col - player.cell.col).abs() +
+          (e.cell.row - player.cell.row).abs();
+      e.alert = d <= 2 && !e.cleared;
+    }
+  }
+
+  /// マップの外（無地の部分）が映りすぎないよう、カメラを端で止める
+  void _clampCamera() {
+    final vf = camera.viewfinder;
+    final visible = camera.viewport.virtualSize / vf.zoom;
+    final mapSize = Vector2(map.width * tileSize, map.height * tileSize);
+    double clamp(double v, double view, double total) =>
+        view >= total ? total / 2 : v.clamp(view / 2, total - view / 2);
+    vf.position = Vector2(
+      clamp(vf.position.x, visible.x, mapSize.x),
+      clamp(vf.position.y, visible.y, mapSize.y),
+    );
+  }
+
+  void _tryStep(Facing dir) {
+    player.facing = dir;
+    final target = (
+      col: player.cell.col + dir.delta.col,
+      row: player.cell.row + dir.delta.row,
+    );
+    for (final g in _ghosts.values) {
+      if (g.cell == target) {
+        _bumpedDirection = dir;
+        onGhost(g.stage, g.count);
+        return;
+      }
+    }
+    final enemy = _enemyAt(target);
+    if (enemy != null) {
+      _bumpedDirection = dir;
+      onEncounter(enemy.stage, enemy.cleared);
+      return;
+    }
+    switch (map.tileAt(target.col, target.row)) {
+      case 'H' || 'D' when isOpen(target):
+        player.walkTo(target);
+        return;
+      case 'H':
+        _bumpedDirection = dir;
+        onSecret(target);
+        return;
+      case 'D':
+        _bumpedDirection = dir;
+        final stage = _stageAhead(target);
+        if (stage != null) onDoor(stage, target);
+        return;
+      case 'X':
+        _bumpedDirection = dir;
+        onWarp(target);
+        return;
+      case 'N':
+        _bumpedDirection = dir;
+        onNpc(_stageAhead(target), target);
+        return;
+      case 'I':
+        _bumpedDirection = dir;
+        final n = map.enemyAhead(target);
+        final stage = rpgWorld.stages.where((s) => s.order == n).firstOrNull;
+        if (stage != null) onInn(stage);
+        return;
+      case 'S':
+        _bumpedDirection = dir;
+        onMessage(map.signText);
+        return;
+      case 'C':
+        _bumpedDirection = dir;
+        final stage = _stageAhead(target);
+        final id = chestIdAt(target);
+        if (stage != null) {
+          onChest(stage, id, _chestOpened(_progress, id));
+        }
+        return;
+      case 'W':
+        _bumpedDirection = dir;
+        final stage = _stageAhead(target);
+        if (stage != null) onSpring(stage);
+        return;
+      case 'G':
+        _bumpedDirection = dir;
+        final bossCleared = rpgWorld.stages
+            .where((s) => map.enemySpots.containsKey(s.order))
+            .every((s) => _cleared(_progress, s));
+        final shadowDown =
+            _mapStages.isNotEmpty &&
+            ShadowKeeper.defeated(_progress, _mapStages);
+        onMessage(
+          shadowDown
+              ? '${map.goalText}が虹色にかがやいている。影の番人もたおした、完全制覇だ！'
+              : bossCleared
+              ? '${map.goalText}がきらきら光っている。制覇おめでとう！'
+                    '${_shadow != null ? '…トロフィーの前に、だれかの影が立っている。' : ''}'
+              : '${map.goalText}がある。…でも、まだ手が届かない。',
+        );
+        return;
+      case 'O':
+        _bumpedDirection = dir;
+        final portal = map.portals[target];
+        if (portal != null) onPortal(portal);
+        return;
+      case 'L':
+        _bumpedDirection = dir;
+        final mark = map.landmarkAt(target);
+        if (mark != null) onMessage('${mark.kind.label}：${mark.kind.text}');
+        return;
+    }
+    if (map.isFloor(target.col, target.row)) player.walkTo(target);
+  }
+}
+
+/// 画面の外にあるときは描かない（大きなマップでも軽く）
+mixin OnScreenOnly on PositionComponent {
+  @override
+  void renderTree(ui.Canvas canvas) {
+    if (!FieldGame.visible.overlaps(toRect())) return;
+    super.renderTree(canvas);
+  }
+}
+
+/// 地形をまとめて1枚の絵にしておくレイヤー
+class MapLayer extends PositionComponent {
+  MapLayer(this.map, {this.worldId = '', this.view, this.zoom})
+    : super(
+        size: Vector2(map.width * tileSize, map.height * tileSize),
+        priority: -1,
+      );
+
+  final FieldMap map;
+
+  /// 教科の国（紙の種類と、余白の手書きの文字が変わる）
+  final String worldId;
+
+  /// 見えている範囲（マップの座標）。あれば、見えているところだけを画像にして貼る
+  final ui.Rect Function()? view;
+
+  /// カメラの拡大率（画像の細かさを決める）
+  final double Function()? zoom;
+
+  late final ui.Picture _picture;
+  late final List<Cell> _goals = map.findAll('G');
+  double _t = 0;
+
+  /// 地図を小さな四角（チャンク）に分けて、1度だけ画像にしておく。
+  /// 毎フレーム、ぼかしや影をふくむ地図を描き直すと、とても重いため。
+  static const _chunk = 256.0;
+
+  /// ぼかしがチャンクの切れ目でうすくならないよう、まわりを少し広く描く
+  static const _pad = 48.0;
+  final _images = <(int, int), ui.Image>{};
+  final _pending = <(int, int)>{};
+  double _rasterScale = 0;
+
+  @override
+  Future<void> onLoad() async {
+    final recorder = ui.PictureRecorder();
+    _paintMap(ui.Canvas(recorder));
+    _picture = recorder.endRecording();
+  }
+
+  @override
+  void onRemove() {
+    for (final img in _images.values) {
+      img.dispose();
+    }
+    _images.clear();
+    super.onRemove();
+  }
+
+  @override
+  void update(double dt) => _t += dt;
+
+  Future<void> _raster((int, int) key, double s) async {
+    final (cx, cy) = key;
+    final rec = ui.PictureRecorder();
+    final c = ui.Canvas(rec);
+    c.scale(s);
+    c.translate(-cx * _chunk + _pad, -cy * _chunk + _pad);
+    c.clipRect(
+      Rect.fromLTWH(
+        cx * _chunk - _pad,
+        cy * _chunk - _pad,
+        _chunk + _pad * 2,
+        _chunk + _pad * 2,
+      ),
+    );
+    c.drawPicture(_picture);
+    final px = ((_chunk + _pad * 2) * s).ceil();
+    final img = await rec.endRecording().toImage(px, px);
+    _pending.remove(key);
+    if (!isMounted || s != _rasterScale) {
+      img.dispose();
+      return;
+    }
+    _images[key]?.dispose();
+    _images[key] = img;
+  }
+
+  @override
+  void render(ui.Canvas canvas) {
+    final v = view?.call();
+    if (v == null || v.isEmpty) {
+      canvas.drawPicture(_picture);
+    } else {
+      // 画面の細かさ（拡大率 × 画面の密度）に合わせる。上げすぎると重いので 3 まで
+      final dpr =
+          ui.PlatformDispatcher.instance.views.firstOrNull?.devicePixelRatio ??
+          2;
+      final s = ((zoom?.call() ?? 1) * dpr).clamp(1.0, 3.0).toDouble();
+      if ((s - _rasterScale).abs() > 0.25) {
+        _rasterScale = s;
+        for (final img in _images.values) {
+          img.dispose();
+        }
+        _images.clear();
+      }
+      final want = v.inflate(_chunk * 0.5);
+      final c0 = max(0, (want.left / _chunk).floor());
+      final c1 = min(
+        ((size.x - 1) / _chunk).floor(),
+        (want.right / _chunk).floor(),
+      );
+      final r0 = max(0, (want.top / _chunk).floor());
+      final r1 = min(
+        ((size.y - 1) / _chunk).floor(),
+        (want.bottom / _chunk).floor(),
+      );
+      final paint = ui.Paint()..filterQuality = ui.FilterQuality.medium;
+      for (var cy = r0; cy <= r1; cy++) {
+        for (var cx = c0; cx <= c1; cx++) {
+          final dst = Rect.fromLTWH(cx * _chunk, cy * _chunk, _chunk, _chunk);
+          final img = _images[(cx, cy)];
+          if (img != null) {
+            canvas.drawImageRect(
+              img,
+              Rect.fromLTWH(
+                _pad * _rasterScale,
+                _pad * _rasterScale,
+                _chunk * _rasterScale,
+                _chunk * _rasterScale,
+              ),
+              dst,
+              paint,
+            );
+            continue;
+          }
+          if (_pending.length < 3 && _pending.add((cx, cy))) {
+            _raster((cx, cy), _rasterScale);
+          }
+          // 画像ができるまでは、そのまま描く
+          if (dst.overlaps(v)) {
+            canvas.save();
+            canvas.clipRect(dst);
+            canvas.drawPicture(_picture);
+            canvas.restore();
+          }
+        }
+      }
+      // 遠くのチャンクは手ばなす（メモリを使いすぎない）
+      final keep = v.inflate(_chunk * 2.5);
+      _images.removeWhere((k, img) {
+        final r = Rect.fromLTWH(k.$1 * _chunk, k.$2 * _chunk, _chunk, _chunk);
+        if (r.overlaps(keep)) return false;
+        img.dispose();
+        return true;
+      });
+    }
+    // ゴールのトロフィーだけきらめかせる
+    if (_goals.isEmpty) return;
+    final g = _goals.first;
+    final glow = (sin(_t * 3) + 1) / 2;
+    canvas.drawCircle(
+      Offset((g.col + 0.5) * tileSize, (g.row + 0.5) * tileSize),
+      tileSize * (0.55 + glow * 0.1),
+      ui.Paint()..color = ui.Color.fromRGBO(255, 214, 90, 0.15 + glow * 0.2),
+    );
+    _trophy(canvas, g);
+  }
+
+  void _paintMap(ui.Canvas c) {
+    // 地面・道・水・壁・木は、マス目が目立たない新しい描き方（航路はこれまでどおり）
+    final scenery = Scenery.supports(map);
+    if (scenery) Scenery.paint(c, map, worldId, tileSize);
+    // 大きな目印（上から順に、手前のものがあとになるように）
+    for (final l in [...map.landmarks]..sort((a, b) => a.at.row - b.at.row)) {
+      LandmarkArt.paint(
+        c,
+        Rect.fromLTWH(
+          l.at.col * tileSize,
+          l.at.row * tileSize,
+          l.w * tileSize,
+          l.h * tileSize,
+        ),
+        l.kind,
+      );
+    }
+    // 床（方眼ノートの目）をマスごとに描く。地形ごとに色と模様が変わる
+    for (var r = 0; !scenery && r < map.height; r++) {
+      for (var col = 0; col < map.width; col++) {
+        final terrain = map.terrainAt(col, r);
+        final x = col * tileSize, y = r * tileSize;
+        final rect = Rect.fromLTWH(x, y, tileSize, tileSize);
+        // 紙の種類（方眼・罫線・原稿用紙・五線譜・製図用紙…）で、床と線が変わる
+        final paper = NotebookWorld.paperOf(terrain, worldId);
+        c.drawRect(
+          rect,
+          ui.Paint()
+            ..color = PaperArt.tintFloor(TerrainArt.floor(terrain), paper),
+        );
+        PaperArt.lines(c, rect, paper, TerrainArt.grid(terrain), col, r);
+        TerrainArt.floorDetail(c, rect, terrain, col, r);
+        // 紙の上の小物・落書き（通れる床だけ。通行のじゃまはしない）
+        if (map.tileAt(col, r) == '.' && !terrain.isVoyage) {
+          final mark = PaperArt.markAt(col, r, paper, map.id.hashCode);
+          if (mark != null) {
+            PaperArt.mark(
+              c,
+              rect,
+              mark,
+              NotebookWorld.scribblesOf(worldId),
+              col,
+              r,
+              dark: paper == PaperStyle.chalkboard,
+            );
+          }
+        }
+      }
+    }
+    final rnd = Random(7);
+    for (var r = 0; r < map.height; r++) {
+      for (var col = 0; col < map.width; col++) {
+        final terrain = map.terrainAt(col, r);
+        final rect = Rect.fromLTWH(
+          col * tileSize,
+          r * tileSize,
+          tileSize,
+          tileSize,
+        );
+        final tile = map.tileAt(col, r);
+        // 航路では、宿・看板・住人などは小島（雲の台・小さな月）の上にいる
+        if (terrain.isVoyage &&
+            const {'I', 'S', 'N', 'X', 'W', 'G', 'O'}.contains(tile)) {
+          TerrainArt.islet(c, rect, terrain);
+        }
+        switch (tile) {
+          case '#' when !scenery:
+            TerrainArt.wall(c, rect, rnd, terrain);
+          case 'T' when !scenery:
+            TerrainArt.obstacle(c, rect, rnd, terrain);
+          case '~' when !scenery:
+            TerrainArt.water(c, rect, terrain);
+          case 'B':
+            TerrainArt.bridge(c, rect, terrain);
+          case 'R' when !scenery:
+            TerrainArt.carpet(c, rect, terrain);
+          case 'F':
+            TerrainArt.decoration(
+              c,
+              rect,
+              terrain,
+              boss: map.bossAreas.contains(map.areaAt(col, r)),
+            );
+          case 'S':
+            _sign(c, rect);
+          case 'I':
+            _inn(c, rect);
+          case 'O':
+            _portal(c, rect, map.portals[(col: col, row: r)]?.label ?? '');
+        }
+      }
+    }
+  }
+
+  static final _ink = ui.Paint()
+    ..color = TsuzuriColors.pen
+    ..style = ui.PaintingStyle.stroke
+    ..strokeWidth = 1.6
+    ..strokeCap = ui.StrokeCap.round;
+
+  void _sign(ui.Canvas c, Rect r) {
+    c.drawOval(
+      Rect.fromCenter(
+        center: Offset(r.center.dx + 2, r.bottom - 2),
+        width: r.width * 0.7,
+        height: r.width * 0.2,
+      ),
+      ui.Paint()..color = const ui.Color(0x33201A30),
+    );
+    c.drawRect(
+      Rect.fromLTWH(r.center.dx - 2, r.center.dy, 4, 13),
+      ui.Paint()..color = const ui.Color(0xFF8D6E63),
+    );
+    final board = Rect.fromCenter(
+      center: r.center.translate(0, -3),
+      width: 24,
+      height: 15,
+    );
+    c.drawRect(board, ui.Paint()..color = const ui.Color(0xFFE6CFA3));
+    c.drawRect(board, _ink..strokeWidth = 1.4);
+    for (final dy in [-2.0, 2.0]) {
+      c.drawLine(
+        Offset(board.left + 5, board.center.dy + dy),
+        Offset(board.right - 5, board.center.dy + dy),
+        _ink..strokeWidth = 1,
+      );
+    }
+  }
+
+  /// 出入口：アーチと行き先の札
+  /// 洞くつの入口：岩にあいた暗い穴
+  void _caveMouth(ui.Canvas c, Rect r) {
+    final rock = ui.Path()
+      ..addOval(
+        Rect.fromCenter(
+          center: r.center.translate(0, 2),
+          width: r.width * 1.15,
+          height: r.height * 1.05,
+        ),
+      );
+    c.drawPath(rock, ui.Paint()..color = const ui.Color(0xFF8E867C));
+    c.drawPath(rock, _ink..strokeWidth = 1.4);
+    final hole = ui.Path()
+      ..moveTo(r.left + r.width * 0.2, r.bottom - 1)
+      ..lineTo(r.left + r.width * 0.2, r.top + r.height * 0.55)
+      ..arcToPoint(
+        Offset(r.right - r.width * 0.2, r.top + r.height * 0.55),
+        radius: ui.Radius.circular(r.width * 0.3),
+      )
+      ..lineTo(r.right - r.width * 0.2, r.bottom - 1)
+      ..close();
+    c.drawPath(hole, ui.Paint()..color = const ui.Color(0xFF241E2C));
+    c.drawPath(hole, _ink..strokeWidth = 1.2);
+    // 入口のたいまつ
+    c.drawCircle(
+      Offset(r.right - 3, r.top + r.height * 0.3),
+      4,
+      ui.Paint()..color = const ui.Color(0x55FFB74D),
+    );
+    c.drawCircle(
+      Offset(r.right - 3, r.top + r.height * 0.3),
+      2,
+      ui.Paint()..color = const ui.Color(0xFFFFB74D),
+    );
+  }
+
+  void _portal(ui.Canvas c, Rect r, String label) {
+    if (label == '洞くつ') return _caveMouth(c, r);
+    c.drawRect(r, ui.Paint()..color = const ui.Color(0xFFFFF3C4));
+    final arch = ui.Path()
+      ..moveTo(r.left + 3, r.bottom)
+      ..lineTo(r.left + 3, r.top + 12)
+      ..arcToPoint(
+        Offset(r.right - 3, r.top + 12),
+        radius: ui.Radius.circular(r.width / 2 - 3),
+      )
+      ..lineTo(r.right - 3, r.bottom);
+    c.drawPath(
+      arch,
+      ui.Paint()
+        ..color = const ui.Color(0xFFB5763B)
+        ..style = ui.PaintingStyle.stroke
+        ..strokeWidth = 4,
+    );
+    final b =
+        ui.ParagraphBuilder(ui.ParagraphStyle(textAlign: ui.TextAlign.center))
+          ..pushStyle(
+            ui.TextStyle(
+              color: const ui.Color(0xFF6D4C41),
+              fontSize: label.length > 3 ? 6 : 9,
+              fontWeight: ui.FontWeight.w900,
+            ),
+          )
+          ..addText(label);
+    final p = b.build()..layout(ui.ParagraphConstraints(width: r.width));
+    c.drawParagraph(p, Offset(r.left, r.center.dy - p.height / 2 + 3));
+  }
+
+  /// 宿：あかりのともった小さな家と「宿」の看板（マスより少し大きく、上にはみ出す）
+  void _inn(ui.Canvas c, Rect r) {
+    final ts = r.width;
+    final cx = r.center.dx;
+    // 影
+    c.drawOval(
+      Rect.fromCenter(
+        center: Offset(cx + 3, r.bottom - 1),
+        width: ts * 1.35,
+        height: ts * 0.32,
+      ),
+      ui.Paint()
+        ..color = const ui.Color(0x33201A30)
+        ..maskFilter = const ui.MaskFilter.blur(ui.BlurStyle.normal, 2),
+    );
+    // 壁（しっくいと木の柱）
+    final wall = Rect.fromLTRB(
+      cx - ts * 0.55,
+      r.top + ts * 0.18,
+      cx + ts * 0.55,
+      r.bottom - 1,
+    );
+    c.drawRect(wall, ui.Paint()..color = const ui.Color(0xFFF6E7C8));
+    final beam = ui.Paint()
+      ..color = const ui.Color(0xFF8A5A3C)
+      ..strokeWidth = 2;
+    c.drawLine(wall.topLeft, wall.bottomLeft, beam);
+    c.drawLine(wall.topRight, wall.bottomRight, beam);
+    c.drawLine(
+      Offset(wall.left, wall.top + wall.height * 0.45),
+      Offset(wall.right, wall.top + wall.height * 0.45),
+      beam..strokeWidth = 1.4,
+    );
+    c.drawRect(wall, _ink..strokeWidth = 1.3);
+    // あかりのついた窓
+    for (final dx in [-0.32, 0.32]) {
+      final w = Rect.fromCenter(
+        center: Offset(cx + ts * dx, wall.top + wall.height * 0.7),
+        width: ts * 0.2,
+        height: ts * 0.2,
+      );
+      c.drawCircle(
+        w.center,
+        ts * 0.22,
+        ui.Paint()..color = const ui.Color(0x40FFD36B),
+      );
+      c.drawRect(w, ui.Paint()..color = const ui.Color(0xFFFFD36B));
+      c.drawRect(w, _ink..strokeWidth = 1);
+      c.drawLine(w.topCenter, w.bottomCenter, _ink..strokeWidth = 0.8);
+    }
+    // 扉
+    final door = Rect.fromLTWH(
+      cx - ts * 0.11,
+      r.bottom - ts * 0.36,
+      ts * 0.22,
+      ts * 0.35,
+    );
+    c.drawRRect(
+      ui.RRect.fromRectAndCorners(
+        door,
+        topLeft: const ui.Radius.circular(4),
+        topRight: const ui.Radius.circular(4),
+      ),
+      ui.Paint()..color = const ui.Color(0xFF7A4A30),
+    );
+    // 屋根（上のマスにはみ出す）と煙突
+    final chimney = Rect.fromLTWH(cx + ts * 0.22, r.top - ts * 0.42, 6, 12);
+    c.drawRect(chimney, ui.Paint()..color = const ui.Color(0xFF9C6B52));
+    c.drawRect(chimney, _ink..strokeWidth = 1);
+    final roof = ui.Path()
+      ..moveTo(cx - ts * 0.72, wall.top + 2)
+      ..lineTo(cx, r.top - ts * 0.5)
+      ..lineTo(cx + ts * 0.72, wall.top + 2)
+      ..close();
+    c.drawPath(roof, ui.Paint()..color = const ui.Color(0xFFC0563E));
+    final tile = ui.Paint()
+      ..color = const ui.Color(0x55000000)
+      ..strokeWidth = 0.8;
+    for (var k = 1; k <= 3; k++) {
+      final y = r.top - ts * 0.5 + (wall.top + 2 - (r.top - ts * 0.5)) * k / 4;
+      final half = ts * 0.72 * k / 4;
+      c.drawLine(Offset(cx - half, y), Offset(cx + half, y), tile);
+    }
+    c.drawPath(roof, _ink..strokeWidth = 1.4);
+    // 看板「宿」
+    final sign = Rect.fromCenter(
+      center: Offset(cx, wall.top + wall.height * 0.22),
+      width: ts * 0.34,
+      height: ts * 0.26,
+    );
+    c.drawRRect(
+      ui.RRect.fromRectAndRadius(sign, const ui.Radius.circular(2)),
+      ui.Paint()..color = const ui.Color(0xFFE9C97F),
+    );
+    c.drawRRect(
+      ui.RRect.fromRectAndRadius(sign, const ui.Radius.circular(2)),
+      _ink..strokeWidth = 1,
+    );
+    final b =
+        ui.ParagraphBuilder(ui.ParagraphStyle(textAlign: ui.TextAlign.center))
+          ..pushStyle(
+            ui.TextStyle(
+              color: const ui.Color(0xFF6D4C41),
+              fontSize: 7,
+              fontWeight: ui.FontWeight.w900,
+            ),
+          )
+          ..addText('宿');
+    final p = b.build()..layout(ui.ParagraphConstraints(width: sign.width));
+    c.drawParagraph(p, Offset(sign.left, sign.center.dy - p.height / 2));
+  }
+
+  void _trophy(ui.Canvas c, Cell g) {
+    final cx = (g.col + 0.5) * tileSize, cy = (g.row + 0.5) * tileSize;
+    final gold = ui.Paint()..color = const ui.Color(0xFFF2B84B);
+    final cup = ui.Path()
+      ..moveTo(cx - 9, cy - 10)
+      ..lineTo(cx + 9, cy - 10)
+      ..quadraticBezierTo(cx + 9, cy + 2, cx, cy + 3)
+      ..quadraticBezierTo(cx - 9, cy + 2, cx - 9, cy - 10)
+      ..close();
+    c.drawRect(Rect.fromLTWH(cx - 2, cy + 2, 4, 6), gold);
+    c.drawRect(Rect.fromLTWH(cx - 7, cy + 8, 14, 4), gold);
+    c.drawPath(cup, gold);
+    c.drawPath(cup, _ink..strokeWidth = 1.4);
+  }
+}
+
+/// フィールド上の敵
+class EnemyToken extends PositionComponent with OnScreenOnly {
+  EnemyToken({required this.stage, required this.home})
+    : cell = home,
+      super(
+        size: Vector2.all(tileSize * (stage.isBoss ? 1.45 : 1.15)),
+        anchor: Anchor.center,
+      );
+
+  final StageDef stage;
+  final Cell home;
+  Cell cell;
+  bool cleared = false;
+  bool alert = false;
+  double _t = Random().nextDouble() * 10;
+
+  @override
+  void update(double dt) => _t += dt;
+
+  @override
+  void render(ui.Canvas canvas) {
+    final s = size.x;
+    if (cleared) {
+      canvas.saveLayer(null, ui.Paint()..color = const ui.Color(0xB0FFFFFF));
+      canvas.translate(s * 0.1, s * 0.15);
+      canvas.scale(0.8);
+      paintEnemy(
+        canvas,
+        s,
+        stage.enemy.look,
+        _t * 0.5,
+        color: stage.enemy.color,
+      );
+      canvas.restore();
+      _badge(canvas, s, '★', const ui.Color(0xFFF2B84B));
+    } else {
+      paintEnemy(canvas, s, stage.enemy.look, _t, color: stage.enemy.color);
+      if (alert) {
+        final jump = sin(_t * 8).abs() * 3;
+        _badge(canvas, s, '！', TsuzuriColors.stamp, dy: -jump);
+      }
+    }
+  }
+
+  void _badge(
+    ui.Canvas canvas,
+    double s,
+    String text,
+    ui.Color color, {
+    double dy = 0,
+  }) {
+    final center = Offset(s * 0.82, s * 0.05 + dy);
+    canvas.drawCircle(center, 7, ui.Paint()..color = TsuzuriColors.penPaper);
+    canvas.drawCircle(
+      center,
+      7,
+      ui.Paint()
+        ..color = color
+        ..style = ui.PaintingStyle.stroke
+        ..strokeWidth = 1.5,
+    );
+    final b =
+        ui.ParagraphBuilder(ui.ParagraphStyle(textAlign: ui.TextAlign.center))
+          ..pushStyle(
+            ui.TextStyle(
+              color: color,
+              fontSize: 10,
+              fontWeight: ui.FontWeight.w900,
+            ),
+          )
+          ..addText(text);
+    final p = b.build()..layout(const ui.ParagraphConstraints(width: 14));
+    canvas.drawParagraph(p, center - Offset(7, p.height / 2));
+  }
+}
+
+/// プレイヤー（マス目単位でなめらかに歩く）
+class PlayerToken extends PositionComponent {
+  PlayerToken(this.cell)
+    : super(
+        size: Vector2.all(tileSize),
+        anchor: Anchor.center,
+        position: _center(cell),
+      );
+
+  static const stepSeconds = 0.18;
+
+  Cell cell;
+  Facing facing = Facing.up;
+  bool moving = false;
+
+  /// そのマスで乗る乗り物（航路なら船・潜水艦・飛行船・ロケット）
+  Vehicle? Function(Cell cell)? vehicleAt;
+
+  /// 左右どちらを向いているか（上下に動いても、乗り物の向きは変えない）
+  Facing _side = Facing.right;
+  double _t = 0;
+  double _walk = 0;
+  double _idle = 1;
+  late Vector2 _from;
+  late Vector2 _to;
+  double _p = 0;
+
+  void walkTo(Cell target) {
+    _from = position.clone();
+    _to = _center(target);
+    cell = target;
+    _p = 0;
+    moving = true;
+  }
+
+  @override
+  void update(double dt) {
+    priority = cell.row * 10 + 5;
+    _t += dt;
+    if (facing == Facing.left || facing == Facing.right) _side = facing;
+    if (!moving) {
+      _idle += dt;
+      return;
+    }
+    _idle = 0;
+    _p = min(1, _p + dt / stepSeconds);
+    _walk += dt / (stepSeconds * 2);
+    position = _from + (_to - _from) * _p;
+    if (_p >= 1) moving = false;
+  }
+
+  @override
+  void render(ui.Canvas canvas) {
+    final vehicle = vehicleAt?.call(cell);
+    if (vehicle != null) {
+      // 乗り物は1マスより少し大きく描く
+      final big = size.x * 1.25;
+      canvas.save();
+      canvas.translate((size.x - big) / 2, (size.y - big) / 2 - 2);
+      paintVehicle(
+        canvas,
+        big,
+        vehicle,
+        facing: _side,
+        t: _t,
+        moving: moving || _idle < 0.08,
+      );
+      canvas.restore();
+      return;
+    }
+    paintHero(
+      canvas,
+      size.x,
+      facing: facing,
+      walk: _walk,
+      moving: moving || _idle < 0.08,
+    );
+  }
+}
+
+/// 宝箱（開けると空っぽになる）
+class ChestToken extends PositionComponent with OnScreenOnly {
+  ChestToken(this.cell, {this.variant = ChestVariant.seal})
+    : super(
+        size: Vector2.all(tileSize),
+        anchor: Anchor.center,
+        position: _center(cell),
+        priority: cell.row * 10 + 3,
+      );
+
+  final Cell cell;
+
+  /// 宝箱の種類（見た目の色と飾りが変わる）
+  final ChestVariant variant;
+  bool opened = false;
+  double _t = 0;
+
+  @override
+  void update(double dt) => _t += dt;
+
+  /// 箱とふたの色
+  (ui.Color, ui.Color) get _colors => switch (variant) {
+    ChestVariant.chain => (
+      const ui.Color(0xFF8A929C),
+      const ui.Color(0xFFB8BEC6),
+    ),
+    ChestVariant.explore => (
+      const ui.Color(0xFFC98A00),
+      const ui.Color(0xFFF2B84B),
+    ),
+    ChestVariant.mimic => (
+      const ui.Color(0xFFA06A35),
+      const ui.Color(0xFFBE7E43),
+    ),
+    ChestVariant.seal => (
+      const ui.Color(0xFFB5763B),
+      const ui.Color(0xFFC98A4B),
+    ),
+  };
+
+  @override
+  void render(ui.Canvas canvas) {
+    final c = canvas;
+    final s = size.x;
+    final (boxColor, lidColor) = _colors;
+    final ink = ui.Paint()
+      ..color = TsuzuriColors.pen
+      ..style = ui.PaintingStyle.stroke
+      ..strokeWidth = 1.4;
+    c.drawOval(
+      Rect.fromCenter(center: Offset(s / 2, s - 4), width: 24, height: 6),
+      ui.Paint()..color = const ui.Color(0x33000000),
+    );
+    if (!opened) {
+      // きらきら
+      final glow = (sin(_t * 3) + 1) / 2;
+      c.drawCircle(
+        Offset(s / 2, s / 2),
+        s * 0.5,
+        ui.Paint()..color = ui.Color.fromRGBO(255, 214, 90, 0.08 + glow * 0.15),
+      );
+    }
+    final box = Rect.fromLTWH(5, s * 0.45, s - 10, s * 0.4);
+    // ミミックは、ときどきふたがかたかた動く
+    final rattle = variant == ChestVariant.mimic && !opened
+        ? (sin(_t * 9) * (sin(_t * 0.8) > 0.7 ? 1.5 : 0))
+        : 0.0;
+    c.save();
+    c.translate(rattle, 0);
+    c.drawRect(box, ui.Paint()..color = boxColor);
+    c.drawRect(box, ink);
+    final lid = opened
+        ? Rect.fromLTWH(5, s * 0.22, s - 10, s * 0.14)
+        : Rect.fromLTWH(5, s * 0.3, s - 10, s * 0.17);
+    c.drawRRect(
+      ui.RRect.fromRectAndCorners(
+        lid,
+        topLeft: const ui.Radius.circular(6),
+        topRight: const ui.Radius.circular(6),
+      ),
+      ui.Paint()..color = lidColor,
+    );
+    c.drawRRect(
+      ui.RRect.fromRectAndCorners(
+        lid,
+        topLeft: const ui.Radius.circular(6),
+        topRight: const ui.Radius.circular(6),
+      ),
+      ink,
+    );
+    c.drawRect(
+      Rect.fromCenter(center: Offset(s / 2, s * 0.5), width: 6, height: 7),
+      ui.Paint()..color = const ui.Color(0xFFF2B84B),
+    );
+    if (opened) {
+      c.drawRect(
+        Rect.fromLTWH(8, s * 0.45, s - 16, 4),
+        ui.Paint()..color = const ui.Color(0xFF3A2A1E),
+      );
+    } else if (variant == ChestVariant.chain) {
+      // 連続正解の宝箱：3つの星
+      for (var i = 0; i < 3; i++) {
+        c.drawCircle(
+          Offset(s * (0.32 + i * 0.18), s * 0.7),
+          2.2,
+          ui.Paint()..color = const ui.Color(0xFFF2B84B),
+        );
+      }
+    } else if (variant == ChestVariant.explore) {
+      // 探索のごほうび：はなまる
+      c.drawCircle(
+        Offset(s * 0.5, s * 0.7),
+        5,
+        ui.Paint()
+          ..color = const ui.Color(0xFFD64545)
+          ..style = ui.PaintingStyle.stroke
+          ..strokeWidth = 1.2,
+      );
+    } else if (variant == ChestVariant.mimic) {
+      // すき間からのぞく目
+      final peek = (sin(_t * 0.8) + 1) / 2;
+      if (peek > 0.75) {
+        for (final dx in [-5.0, 5.0]) {
+          c.drawCircle(
+            Offset(s / 2 + dx, s * 0.43),
+            1.6,
+            ui.Paint()..color = const ui.Color(0xFFFFF59D),
+          );
+        }
+      }
+    }
+    c.restore();
+  }
+}
+
+/// 回復の泉（ゆらゆら光る）
+class SpringToken extends PositionComponent with OnScreenOnly {
+  SpringToken(Cell cell)
+    : super(
+        size: Vector2.all(tileSize),
+        anchor: Anchor.center,
+        position: _center(cell),
+        priority: cell.row * 10 + 2,
+      );
+
+  double _t = 0;
+
+  @override
+  void update(double dt) => _t += dt;
+
+  @override
+  void render(ui.Canvas canvas) {
+    final c = canvas;
+    final s = size.x;
+    final rim = Rect.fromCenter(
+      center: Offset(s / 2, s * 0.6),
+      width: s - 4,
+      height: s * 0.62,
+    );
+    c.drawOval(rim, ui.Paint()..color = const ui.Color(0xFFB8B0A2));
+    c.drawOval(rim.deflate(3), ui.Paint()..color = const ui.Color(0xFF7FC8E8));
+    c.drawOval(
+      rim,
+      ui.Paint()
+        ..color = TsuzuriColors.pen
+        ..style = ui.PaintingStyle.stroke
+        ..strokeWidth = 1.4,
+    );
+    // 立ちのぼる光のつぶ
+    for (var i = 0; i < 3; i++) {
+      final p = (_t * 0.6 + i / 3) % 1;
+      c.drawCircle(
+        Offset(s * (0.3 + i * 0.2), s * 0.55 - p * s * 0.5),
+        2.2 * (1 - p),
+        ui.Paint()..color = ui.Color.fromRGBO(255, 255, 255, 0.9 * (1 - p)),
+      );
+    }
+  }
+}
+
+/// 亡霊（そのステージで間違えた問題）。話しかけると再戦できる
+class GhostToken extends PositionComponent with OnScreenOnly {
+  GhostToken(this.stage, this.cell, this.count)
+    : super(
+        size: Vector2.all(tileSize * 1.05),
+        anchor: Anchor.center,
+        position: _center(cell),
+        priority: cell.row * 10 + 4,
+      );
+
+  final StageDef stage;
+  final Cell cell;
+  int count;
+  double _t = Random().nextDouble() * 10;
+
+  @override
+  void update(double dt) => _t += dt;
+
+  @override
+  void render(ui.Canvas canvas) {
+    final c = canvas;
+    final s = size.x;
+    c.saveLayer(null, ui.Paint()..color = const ui.Color(0xD0FFFFFF));
+    paintEnemy(c, s, 'ghost', _t);
+    c.restore();
+    final center = Offset(s * 0.85, s * 0.1);
+    c.drawCircle(center, 8, ui.Paint()..color = const ui.Color(0xFF6A4BA8));
+    final b =
+        ui.ParagraphBuilder(ui.ParagraphStyle(textAlign: ui.TextAlign.center))
+          ..pushStyle(
+            ui.TextStyle(
+              color: const ui.Color(0xFFFFFFFF),
+              fontSize: 9,
+              fontWeight: ui.FontWeight.w900,
+            ),
+          )
+          ..addText('$count');
+    final p = b.build()..layout(const ui.ParagraphConstraints(width: 16));
+    c.drawParagraph(p, center - Offset(8, p.height / 2));
+  }
+}
+
+/// 捕まった仲間の檻（ゲート横の壁ぎわ）
+class CageToken extends PositionComponent with OnScreenOnly {
+  CageToken(Cell cell)
+    : super(
+        size: Vector2.all(tileSize),
+        anchor: Anchor.center,
+        position: _center(cell),
+        priority: cell.row * 10 + 6,
+      );
+
+  double _t = 0;
+
+  @override
+  void update(double dt) => _t += dt;
+
+  @override
+  void render(ui.Canvas canvas) {
+    final c = canvas;
+    final s = size.x;
+    // 中の仲間（小さな妖精の影）
+    final bob = sin(_t * 5) * 1.5;
+    c.drawCircle(
+      Offset(s / 2, s * 0.55 + bob),
+      s * 0.18,
+      ui.Paint()..color = const ui.Color(0xFFF7D9A8),
+    );
+    c.drawCircle(
+      Offset(s * 0.44, s * 0.52 + bob),
+      1.6,
+      ui.Paint()..color = TsuzuriColors.pen,
+    );
+    c.drawCircle(
+      Offset(s * 0.56, s * 0.52 + bob),
+      1.6,
+      ui.Paint()..color = TsuzuriColors.pen,
+    );
+    final bar = ui.Paint()
+      ..color = const ui.Color(0xFF3A3A3A)
+      ..strokeWidth = 2;
+    c.drawRect(
+      Rect.fromLTWH(4, s * 0.2, s - 8, 3),
+      ui.Paint()..color = const ui.Color(0xFF3A3A3A),
+    );
+    for (var x = 6.0; x <= s - 6; x += 5) {
+      c.drawLine(Offset(x, s * 0.2), Offset(x, s * 0.9), bar);
+    }
+    c.drawRect(
+      Rect.fromLTWH(4, s * 0.88, s - 8, 3),
+      ui.Paint()..color = const ui.Color(0xFF3A3A3A),
+    );
+    // 「たすけて」の吹き出し
+    final b =
+        ui.ParagraphBuilder(ui.ParagraphStyle(textAlign: ui.TextAlign.center))
+          ..pushStyle(
+            ui.TextStyle(
+              color: TsuzuriColors.stamp,
+              fontSize: 7,
+              fontWeight: ui.FontWeight.w900,
+            ),
+          )
+          ..addText('たすけて！');
+    final p = b.build()..layout(ui.ParagraphConstraints(width: s * 1.6));
+    c.drawParagraph(p, Offset(-s * 0.3, -2 + bob));
+  }
+}
+
+/// 隠し通路（H）と知識の扉（D）。閉じている間は障害物・扉の絵を上に重ねる
+class SealToken extends PositionComponent with OnScreenOnly {
+  SealToken(this.cell, {required this.door, required this.terrain})
+    : super(
+        size: Vector2.all(tileSize),
+        position: Vector2(cell.col * tileSize, cell.row * tileSize),
+        priority: cell.row * 10 + 3,
+      );
+
+  final Cell cell;
+  final bool door;
+  final Terrain terrain;
+  bool open = false;
+
+  @override
+  void render(ui.Canvas canvas) {
+    final r = Rect.fromLTWH(0, 0, tileSize, tileSize);
+    if (door) {
+      open ? TerrainArt.doorOpen(canvas, r) : TerrainArt.door(canvas, r);
+      return;
+    }
+    if (open) return;
+    // 見た目はまわりと同じ障害物。よく見ると小さなひびがある
+    TerrainArt.obstacle(canvas, r, Random(cell.col * 31 + cell.row), terrain);
+    TerrainArt.crack(canvas, r);
+  }
+}
+
+/// ワープ石
+class WarpToken extends PositionComponent with OnScreenOnly {
+  WarpToken(this.cell)
+    : super(
+        size: Vector2.all(tileSize),
+        position: Vector2(cell.col * tileSize, cell.row * tileSize),
+        priority: cell.row * 10 + 3,
+      );
+
+  final Cell cell;
+  bool active = false;
+  double _t = 0;
+
+  @override
+  void update(double dt) => _t += dt;
+
+  @override
+  void render(ui.Canvas canvas) => TerrainArt.warpStone(
+    canvas,
+    Rect.fromLTWH(0, 0, tileSize, tileSize),
+    active: active,
+    glow: (sin(_t * 2.5) + 1) / 2,
+  );
+}
+
+/// 学力で世界が変わる：熟練度の低い単元のエリアは暗く、上がると明るくなる
+class LightLayer extends PositionComponent {
+  LightLayer(this.map, this.darknessOf)
+    : super(
+        size: Vector2(map.width * tileSize, map.height * tileSize),
+        priority: 1 << 20,
+      );
+
+  final FieldMap map;
+  final double Function(int area) darknessOf;
+
+  @override
+  void render(ui.Canvas canvas) {
+    // 同じ暗さが横に続くところは、まとめて1つの四角で塗る（見えている行だけ）
+    final v = FieldGame.visible;
+    final r0 = v == ui.Rect.largest ? 0 : max(0, (v.top / tileSize).floor());
+    final r1 = v == ui.Rect.largest
+        ? map.height - 1
+        : min(map.height - 1, (v.bottom / tileSize).ceil());
+    for (var r = r0; r <= r1; r++) {
+      var c = 0;
+      while (c < map.width) {
+        final d = darknessOf(map.areaAt(c, r));
+        var end = c + 1;
+        while (end < map.width && darknessOf(map.areaAt(end, r)) == d) {
+          end++;
+        }
+        if (d > 0) {
+          canvas.drawRect(
+            Rect.fromLTWH(
+              c * tileSize,
+              r * tileSize,
+              (end - c) * tileSize,
+              tileSize,
+            ),
+            ui.Paint()..color = ui.Color.fromRGBO(20, 16, 40, d),
+          );
+        }
+        c = end;
+      }
+    }
+  }
+}
+
+/// 住人（NPC）。ゆっくり上下にゆれる
+class NpcToken extends PositionComponent with OnScreenOnly {
+  NpcToken(this.cell, {required this.color})
+    : super(
+        size: Vector2.all(tileSize),
+        position: Vector2(cell.col * tileSize, cell.row * tileSize),
+        priority: cell.row * 10 + 4,
+      );
+
+  final Cell cell;
+  final int color;
+
+  /// 頼みごとの「！」を出すか
+  bool quest = false;
+  double _t = Random().nextDouble() * 5;
+
+  @override
+  void update(double dt) => _t += dt;
+
+  @override
+  void render(ui.Canvas canvas) => TerrainArt.npc(
+    canvas,
+    Rect.fromLTWH(0, 0, tileSize, tileSize),
+    color: color,
+    bob: (sin(_t * 2) + 1) * 0.8,
+    quest: quest,
+  );
+}
+
+/// タップした行き先の目印
+class TapMarker extends PositionComponent {
+  TapMarker(this.target) : super(priority: 1);
+
+  final ValueNotifier<Cell?> target;
+  double _t = 0;
+
+  @override
+  void update(double dt) => _t += dt;
+
+  @override
+  void render(ui.Canvas canvas) {
+    final c = target.value;
+    if (c == null) return;
+    final center = _center(c).toOffset();
+    final pulse = 0.5 + 0.5 * sin(_t * 6);
+    canvas.drawCircle(
+      center,
+      tileSize * (0.28 + 0.06 * pulse),
+      ui.Paint()
+        ..style = ui.PaintingStyle.stroke
+        ..strokeWidth = 2
+        ..color = TsuzuriColors.accent.withValues(alpha: 0.5 + 0.4 * pulse),
+    );
+  }
+}

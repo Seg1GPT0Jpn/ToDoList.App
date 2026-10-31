@@ -1,0 +1,232 @@
+{
+  "setId": "music_fu_05",
+  "worldId": "music",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mus_fu05_001",
+      "unit": "music.theory.notation.name.accidental",
+      "category": "knowledge",
+      "prompt": "「嬰記号」を記号で書くと？",
+      "choices": [
+        "𝄪",
+        "♭",
+        "♯",
+        "♮"
+      ],
+      "answerIndex": 2,
+      "explanation": "嬰（えい）記号はシャープ。"
+    },
+    {
+      "id": "mus_fu05_002",
+      "unit": "music.theory.notation.name.accidental",
+      "category": "knowledge",
+      "prompt": "「変記号」を記号で書くと？",
+      "choices": [
+        "♮",
+        "♯",
+        "𝄫",
+        "♭"
+      ],
+      "answerIndex": 3,
+      "explanation": "変記号はフラット。"
+    },
+    {
+      "id": "mus_fu05_003",
+      "unit": "music.theory.notation.name.accidental",
+      "category": "knowledge",
+      "prompt": "「本位記号」を記号で書くと？",
+      "choices": [
+        "♭",
+        "♮",
+        "𝄪",
+        "♯"
+      ],
+      "answerIndex": 1,
+      "explanation": "本位記号はナチュラル。変化をとり消してもとの高さにもどす。"
+    },
+    {
+      "id": "mus_fu05_004",
+      "unit": "music.theory.notation.name.accidental",
+      "category": "knowledge",
+      "prompt": "「重嬰記号」を記号で書くと？",
+      "choices": [
+        "♮",
+        "𝄫",
+        "♯",
+        "𝄪"
+      ],
+      "answerIndex": 3,
+      "explanation": "ダブルシャープ。半音2つ上げる。"
+    },
+    {
+      "id": "mus_fu05_005",
+      "unit": "music.theory.notation.name",
+      "category": "knowledge",
+      "prompt": "♯（嬰記号）のはたらきは？",
+      "choices": [
+        "音を半音上げる",
+        "もとの高さにもどす",
+        "音を半音下げる",
+        "音を全音上げる"
+      ],
+      "answerIndex": 0,
+      "explanation": "♯は半音上げる。"
+    },
+    {
+      "id": "mus_fu05_006",
+      "unit": "music.theory.notation.name",
+      "category": "knowledge",
+      "prompt": "♭（変記号）のはたらきは？",
+      "choices": [
+        "音を半音上げる",
+        "音を1オクターブ下げる",
+        "音を半音下げる",
+        "音を全音下げる"
+      ],
+      "answerIndex": 2,
+      "explanation": "♭は半音下げる。"
+    },
+    {
+      "id": "mus_fu05_007",
+      "unit": "music.theory.notation.name.accidental",
+      "category": "knowledge",
+      "prompt": "𝄫（重変記号）のはたらきは？",
+      "choices": [
+        "音を半音下げる",
+        "音を消す",
+        "音を半音2つ上げる",
+        "音を半音2つ（全音）下げる"
+      ],
+      "answerIndex": 3,
+      "explanation": "ダブルフラット。"
+    },
+    {
+      "id": "mus_fu05_008",
+      "unit": "music.theory.notation.name.accidental",
+      "category": "knowledge",
+      "prompt": "変化記号のついていない音を何という？",
+      "choices": [
+        "幹音",
+        "和音",
+        "派生音",
+        "異名同音"
+      ],
+      "answerIndex": 0,
+      "explanation": "ドレミファソラシの7つが幹音。"
+    },
+    {
+      "id": "mus_fu05_009",
+      "unit": "music.theory.notation.name.natural",
+      "category": "knowledge",
+      "prompt": "幹音に変化記号をつけて変化させた音を何という？",
+      "choices": [
+        "倍音",
+        "派生音",
+        "幹音",
+        "主音"
+      ],
+      "answerIndex": 1,
+      "explanation": "Fis や B などが派生音。"
+    },
+    {
+      "id": "mus_fu05_010",
+      "unit": "music.theory.notation.name",
+      "category": "knowledge",
+      "prompt": "楽曲の途中で、その小節の中だけ音を変化させる記号を何という？",
+      "choices": [
+        "調号",
+        "音部記号",
+        "拍子記号",
+        "臨時記号"
+      ],
+      "answerIndex": 3,
+      "explanation": "臨時記号はその小節の中で有効。"
+    },
+    {
+      "id": "mus_fu05_011",
+      "unit": "music.theory.notation.name",
+      "category": "knowledge",
+      "prompt": "調号で示された変化は、オクターブのちがう同じ名前の音にもかかる？",
+      "choices": [
+        "ト音譜表だけかかる",
+        "かかる（オクターブにかかわりなく同じ音名すべて）",
+        "かからない",
+        "その小節だけかかる"
+      ],
+      "answerIndex": 1,
+      "explanation": "調号はオクターブの高低にかかわりなく、同じ名前の音すべてにかかる。"
+    },
+    {
+      "id": "mus_fu05_012",
+      "unit": "music.theory.notation.name.accidental",
+      "category": "thinking",
+      "prompt": "Fis と異名同音（同じ高さで名前のちがう音）なのは？",
+      "choices": [
+        "G",
+        "F",
+        "Gis",
+        "Ges"
+      ],
+      "answerIndex": 3,
+      "explanation": "Fis と Ges はピアノで同じけん盤の音。"
+    },
+    {
+      "id": "mus_fu05_013",
+      "unit": "music.theory.notation.name.accidental",
+      "category": "thinking",
+      "prompt": "Cis と異名同音（同じ高さで名前のちがう音）なのは？",
+      "choices": [
+        "Dis",
+        "D",
+        "Des",
+        "C"
+      ],
+      "answerIndex": 2,
+      "explanation": "Cis と Des はピアノで同じけん盤の音。"
+    },
+    {
+      "id": "mus_fu05_014",
+      "unit": "music.theory.notation.name.accidental",
+      "category": "thinking",
+      "prompt": "Ais と異名同音（同じ高さで名前のちがう音）なのは？",
+      "choices": [
+        "B",
+        "A",
+        "H",
+        "His"
+      ],
+      "answerIndex": 0,
+      "explanation": "Ais と B はピアノで同じけん盤の音。"
+    },
+    {
+      "id": "mus_fu05_015",
+      "unit": "music.theory.notation.name.accidental",
+      "category": "thinking",
+      "prompt": "Eis と異名同音（同じ高さで名前のちがう音）なのは？",
+      "choices": [
+        "F",
+        "Fis",
+        "E",
+        "Ges"
+      ],
+      "answerIndex": 0,
+      "explanation": "Eis と F はピアノで同じけん盤の音。"
+    },
+    {
+      "id": "mus_fu05_016",
+      "unit": "music.theory.notation.name.accidental",
+      "category": "thinking",
+      "prompt": "H と異名同音（同じ高さで名前のちがう音）なのは？",
+      "choices": [
+        "Cis",
+        "Ces",
+        "C",
+        "H"
+      ],
+      "answerIndex": 1,
+      "explanation": "H と Ces はピアノで同じけん盤の音。"
+    }
+  ]
+}

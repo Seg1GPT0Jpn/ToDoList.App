@@ -1,0 +1,537 @@
+{
+  "setId": "science_shonan_104_chem_laws_01",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "science_shonan_104_chem_laws_01_001",
+      "unit": "science.chemistry.change.equation.write",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "定比例の法則を発見（提唱）した人物は？",
+      "choices": [
+        "ゲーリュサック",
+        "プルースト",
+        "ドルトン",
+        "ラボアジエ"
+      ],
+      "answerIndex": 1,
+      "explanation": "答え：プルースト",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "laws"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_laws_01_002",
+      "unit": "science.chemistry.change.equation.write",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「炭酸水素ナトリウムを加熱する」は物理変化・化学変化のどちら？",
+      "choices": [
+        "物理変化",
+        "化学変化",
+        "状態変化ではない物理変化",
+        "どちらでもない"
+      ],
+      "answerIndex": 1,
+      "explanation": "構成粒子の組み合わせが変わって別の物質になるのが化学変化。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "laws"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_laws_01_003",
+      "unit": "science.chemistry.change.equation.write",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「ヨウ素が昇華する」は物理変化・化学変化のどちら？",
+      "choices": [
+        "化学変化",
+        "状態変化ではない物理変化",
+        "どちらでもない",
+        "物理変化"
+      ],
+      "answerIndex": 3,
+      "explanation": "構成粒子の組み合わせが変わって別の物質になるのが化学変化。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "laws"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_laws_01_004",
+      "unit": "science.chemistry.change.equation.write",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "次の内容を表す法則は？　化学反応の前後で、物質の質量の総和は変わらない。",
+      "choices": [
+        "気体反応の法則",
+        "定比例の法則",
+        "質量保存の法則",
+        "倍数比例の法則"
+      ],
+      "answerIndex": 2,
+      "explanation": "答え：質量保存の法則",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "laws"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_laws_01_005",
+      "unit": "science.chemistry.change.equation.write",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "倍数比例の法則の例として正しい組み合わせは？",
+      "choices": [
+        "一酸化炭素 CO と二酸化炭素 CO₂",
+        "水 H₂O と塩化水素 HCl",
+        "酸素 O₂ と窒素 N₂",
+        "塩化ナトリウム NaCl と塩化カリウム KCl"
+      ],
+      "answerIndex": 0,
+      "explanation": "炭素 12 g と結びつく酸素は 16 g と 32 g で、1:2 の整数比。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "laws"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_laws_01_006",
+      "unit": "science.chemistry.change.equation.write",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "次の内容を表す法則は？　化合物を構成する成分元素の質量比は、つねに一定である。",
+      "choices": [
+        "定比例の法則",
+        "倍数比例の法則",
+        "質量保存の法則",
+        "気体反応の法則"
+      ],
+      "answerIndex": 0,
+      "explanation": "答え：定比例の法則",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "laws"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_laws_01_007",
+      "unit": "science.chemistry.change.equation.write",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "反応に関係しないイオンを省いて書いた化学反応式を何という？",
+      "choices": [
+        "熱化学方程式",
+        "イオン反応式",
+        "構造式",
+        "電離式"
+      ],
+      "answerIndex": 1,
+      "explanation": "両辺で電荷の総和も等しくする。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "laws"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_laws_01_008",
+      "unit": "science.chemistry.change.equation.write",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "2H₂ ＋ O₂ → 2H₂O（気体）で、水素 4.0 L が反応すると水蒸気は同温・同圧で何 L 生じる？",
+      "choices": [
+        "8.0 L",
+        "2.0 L",
+        "6.0 L",
+        "4.0 L"
+      ],
+      "answerIndex": 3,
+      "explanation": "体積比＝係数比＝2:1:2",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "laws"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_laws_01_009",
+      "unit": "science.chemistry.change.equation.write",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "次の内容を表す法則は？　同温・同圧で同体積の気体には、気体の種類によらず同数の分子が含まれる。",
+      "choices": [
+        "アボガドロの法則",
+        "定比例の法則",
+        "倍数比例の法則",
+        "質量保存の法則"
+      ],
+      "answerIndex": 0,
+      "explanation": "答え：アボガドロの法則",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "laws"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_laws_01_010",
+      "unit": "science.chemistry.change.equation.write",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "気体反応の法則を発見（提唱）した人物は？",
+      "choices": [
+        "ゲーリュサック",
+        "ドルトン",
+        "ラボアジエ",
+        "プルースト"
+      ],
+      "answerIndex": 0,
+      "explanation": "答え：ゲーリュサック",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "laws"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_laws_01_011",
+      "unit": "science.chemistry.change.equation.write",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "次の内容を表す法則は？　気体どうしの反応では、反応・生成する気体の体積は、同温・同圧で簡単な整数比になる。",
+      "choices": [
+        "気体反応の法則",
+        "質量保存の法則",
+        "倍数比例の法則",
+        "定比例の法則"
+      ],
+      "answerIndex": 0,
+      "explanation": "答え：気体反応の法則",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "laws"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_laws_01_012",
+      "unit": "science.chemistry.change.equation.write",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「紙が燃える」は物理変化・化学変化のどちら？",
+      "choices": [
+        "状態変化ではない物理変化",
+        "化学変化",
+        "どちらでもない",
+        "物理変化"
+      ],
+      "answerIndex": 1,
+      "explanation": "構成粒子の組み合わせが変わって別の物質になるのが化学変化。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "laws"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_laws_01_013",
+      "unit": "science.chemistry.change.equation.write",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "硝酸銀水溶液に塩化ナトリウム水溶液を加えたときのイオン反応式は？",
+      "choices": [
+        "Na⁺ ＋ NO₃⁻ → NaNO₃",
+        "Ag⁺ ＋ Cl⁻ → AgCl",
+        "AgNO₃ ＋ NaCl → AgCl ＋ NaNO₃",
+        "Ag ＋ Cl → AgCl₂"
+      ],
+      "answerIndex": 1,
+      "explanation": "白色の沈殿 AgCl ができる。Na⁺ と NO₃⁻ は反応に関係しない。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "laws"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_laws_01_014",
+      "unit": "science.chemistry.change.equation.write",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「氷がとけて水になる」は物理変化・化学変化のどちら？",
+      "choices": [
+        "化学変化",
+        "物理変化",
+        "どちらでもない",
+        "状態変化ではない物理変化"
+      ],
+      "answerIndex": 1,
+      "explanation": "構成粒子の組み合わせが変わって別の物質になるのが化学変化。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "laws"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_laws_01_015",
+      "unit": "science.chemistry.change.equation.write",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「ドライアイスが昇華する」は物理変化・化学変化のどちら？",
+      "choices": [
+        "物理変化",
+        "どちらでもない",
+        "状態変化ではない物理変化",
+        "化学変化"
+      ],
+      "answerIndex": 0,
+      "explanation": "構成粒子の組み合わせが変わって別の物質になるのが化学変化。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "laws"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_laws_01_016",
+      "unit": "science.chemistry.change.equation.write",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "質量保存の法則を発見（提唱）した人物は？",
+      "choices": [
+        "プルースト",
+        "ゲーリュサック",
+        "ラボアジエ",
+        "ドルトン"
+      ],
+      "answerIndex": 2,
+      "explanation": "答え：ラボアジエ",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "laws"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_laws_01_017",
+      "unit": "science.chemistry.change.equation.write",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "倍数比例の法則を発見（提唱）した人物は？",
+      "choices": [
+        "ドルトン",
+        "ラボアジエ",
+        "プルースト",
+        "ゲーリュサック"
+      ],
+      "answerIndex": 0,
+      "explanation": "答え：ドルトン",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "laws"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_laws_01_018",
+      "unit": "science.chemistry.change.equation.write",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「食塩が水に溶ける」は物理変化・化学変化のどちら？",
+      "choices": [
+        "状態変化ではない物理変化",
+        "どちらでもない",
+        "化学変化",
+        "物理変化"
+      ],
+      "answerIndex": 3,
+      "explanation": "構成粒子の組み合わせが変わって別の物質になるのが化学変化。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "laws"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_laws_01_019",
+      "unit": "science.chemistry.change.equation.write",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "気体反応の法則を、原子説だけでは説明できなかったのを解決するために提唱されたのは？",
+      "choices": [
+        "ドルトンの原子説",
+        "ラボアジエの燃焼理論",
+        "アボガドロの分子説",
+        "メンデレーエフの周期表"
+      ],
+      "answerIndex": 2,
+      "explanation": "水素2体積と酸素1体積から水蒸気2体積ができることを、分子を考えて説明した。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "laws"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_laws_01_020",
+      "unit": "science.chemistry.change.equation.write",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "アボガドロの法則を発見（提唱）した人物は？",
+      "choices": [
+        "アボガドロ",
+        "ドルトン",
+        "ラボアジエ",
+        "プルースト"
+      ],
+      "answerIndex": 0,
+      "explanation": "答え：アボガドロ",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "laws"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_laws_01_021",
+      "unit": "science.chemistry.change.equation.write",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「鉄がさびる」は物理変化・化学変化のどちら？",
+      "choices": [
+        "物理変化",
+        "状態変化ではない物理変化",
+        "どちらでもない",
+        "化学変化"
+      ],
+      "answerIndex": 3,
+      "explanation": "構成粒子の組み合わせが変わって別の物質になるのが化学変化。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "laws"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_laws_01_022",
+      "unit": "science.chemistry.change.equation.write",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「水を電気分解する」は物理変化・化学変化のどちら？",
+      "choices": [
+        "化学変化",
+        "物理変化",
+        "状態変化ではない物理変化",
+        "どちらでもない"
+      ],
+      "answerIndex": 0,
+      "explanation": "構成粒子の組み合わせが変わって別の物質になるのが化学変化。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "laws"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_laws_01_023",
+      "unit": "science.chemistry.change.equation.write",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "次の内容を表す法則は？　2種類の元素からなる化合物が2種類以上あるとき、一方の元素の一定質量と結びつく他方の元素の質量は、簡単な整数比になる。",
+      "choices": [
+        "質量保存の法則",
+        "倍数比例の法則",
+        "気体反応の法則",
+        "定比例の法則"
+      ],
+      "answerIndex": 1,
+      "explanation": "答え：倍数比例の法則",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "laws"
+      ]
+    }
+  ]
+}

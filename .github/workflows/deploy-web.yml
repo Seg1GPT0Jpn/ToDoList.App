@@ -1,0 +1,127 @@
+# Web版（https://tsuzuri-quest-v2.web.app）と Light版（/light/）、
+# 小中学生版（https://tsuzuri-quest-junior-26426.web.app）を自動で更新する。
+# 開発ブランチに push されたとき、または GitHub の Actions 画面から手動で実行したときに動く。
+# 秘密鍵 FIREBASE_SERVICE_ACCOUNT_TSUZURI_QUEST_V2（小中学生版は
+# FIREBASE_SERVICE_ACCOUNT_TSUZURI_QUEST_JUNIOR_26426）が未登録なら、その版は何もせずに終わる。
+name: Web版を公開
+
+on:
+  push:
+    branches: [claude/gallant-tesla-kvdjs2]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-web
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      HAS_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_TSUZURI_QUEST_V2 != '' }}
+    steps:
+      - name: 秘密鍵の確認
+        if: env.HAS_KEY != 'true'
+        run: echo "::notice::FIREBASE_SERVICE_ACCOUNT_TSUZURI_QUEST_V2 が未登録のため公開をスキップしました"
+      - uses: actions/checkout@v4
+        if: env.HAS_KEY == 'true'
+      - uses: subosito/flutter-action@v2
+        if: env.HAS_KEY == 'true'
+        with:
+          flutter-version: 3.47.6
+          channel: stable
+          cache: true
+      - name: Web版をビルド
+        if: env.HAS_KEY == 'true'
+        working-directory: rpg_game_app
+        run: |
+          flutter pub get
+          flutter build web --wasm --release --pwa-strategy=none
+      # つづりクエストLight は同じサイトの /light/ に置く（同じ保存場所・同じログインを使う）
+      - name: Light版をビルド
+        if: env.HAS_KEY == 'true'
+        working-directory: tsuzuri_light
+        run: |
+          flutter pub get
+          # WebAssembly 版（対応していないブラウザでは自動で JS 版を使う）。軽く、メモリも少ない。
+          # 描画エンジンも同じサイトに置く（Service Worker に入れて、ネットなしで起動できるように）
+          flutter build web --wasm --release --pwa-strategy=none --no-web-resources-cdn --dart-define=TSUZURI_LIGHT=true --base-href /light/
+          # つづりクエストの部品から入ってくるが Light では使わないファイルを公開しない（BGM・効果音・明朝体・本文フォントの写し）
+          rm -rf build/web/assets/packages/rpg_game_app/assets/audio
+          rm -f build/web/assets/packages/rpg_game_app/assets/fonts/NotoSerifJP-Bold.ttf \
+            build/web/assets/packages/rpg_game_app/assets/fonts/OFL-NotoSerifJP.txt \
+            build/web/assets/packages/rpg_game_app/assets/fonts/NotoSansJP-Regular.ttf
+          # Service Worker の版：アプリ本体（単語帳・問題などのファイルをのぞく）の中身から決める
+          V=$(cd build/web && find . -type f ! -name sw.js ! -path './assets/packages/*' -print0 | sort -z | xargs -0 sha256sum | sha256sum | cut -c1-16)
+          sed -i "s/__TSUZURI_LIGHT_VERSION__/$V/" build/web/sw.js
+          grep -q "$V" build/web/sw.js
+          rm -rf ../rpg_game_app/build/web/light
+          cp -r build/web ../rpg_game_app/build/web/light
+      # Firestore のルール（同期を許可する場所）も反映する。公開用の鍵に権限がなければ失敗するが、
+      # Web の公開は続ける（そのときは PC で firebase deploy --only firestore:rules を行う）
+      - name: Firestore のルールを反映
+        if: env.HAS_KEY == 'true'
+        continue-on-error: true
+        working-directory: rpg_game_app
+        env:
+          SA_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_TSUZURI_QUEST_V2 }}
+        run: |
+          printf '%s' "$SA_KEY" > "$RUNNER_TEMP/sa.json"
+          export GOOGLE_APPLICATION_CREDENTIALS="$RUNNER_TEMP/sa.json"
+          npx --yes firebase-tools@14 deploy --only firestore:rules --project tsuzuri-quest-v2 --non-interactive
+          rm -f "$RUNNER_TEMP/sa.json"
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        if: env.HAS_KEY == 'true'
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_TSUZURI_QUEST_V2 }}
+          projectId: tsuzuri-quest-v2
+          channelId: live
+          entryPoint: rpg_game_app
+
+  # 小中学生版：仕組みは共通で、中身（ワールド・問題・学習体系・物語・アイコン）を editions/junior/ に入れかえて作る
+  deploy-junior:
+    runs-on: ubuntu-latest
+    env:
+      HAS_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_TSUZURI_QUEST_JUNIOR_26426 != '' }}
+    steps:
+      - name: 秘密鍵の確認
+        if: env.HAS_KEY != 'true'
+        run: echo "::notice::FIREBASE_SERVICE_ACCOUNT_TSUZURI_QUEST_JUNIOR_26426 が未登録のため、小中学生版の公開をスキップしました"
+      - uses: actions/checkout@v4
+        if: env.HAS_KEY == 'true'
+      - uses: subosito/flutter-action@v2
+        if: env.HAS_KEY == 'true'
+        with:
+          flutter-version: 3.47.6
+          channel: stable
+          cache: true
+      - name: 小中学生版をビルド
+        if: env.HAS_KEY == 'true'
+        run: |
+          sh editions/junior/apply.sh
+          # 小中学生版の中身のテスト（ワールド・問題・単元のつじつま）
+          (cd rpg_game && dart pub get && dart test test/junior_data_test.dart)
+          cd rpg_game_app
+          flutter pub get
+          flutter build web --wasm --release --pwa-strategy=none --dart-define=TSUZURI_JUNIOR=true
+      # Firestore のルールも高校生版と同じものを反映する（鍵に権限がなければ失敗するが、公開は続ける）
+      - name: Firestore のルールを反映
+        if: env.HAS_KEY == 'true'
+        continue-on-error: true
+        working-directory: rpg_game_app
+        env:
+          SA_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_TSUZURI_QUEST_JUNIOR_26426 }}
+        run: |
+          printf '%s' "$SA_KEY" > "$RUNNER_TEMP/sa.json"
+          export GOOGLE_APPLICATION_CREDENTIALS="$RUNNER_TEMP/sa.json"
+          npx --yes firebase-tools@14 deploy --only firestore:rules --project tsuzuri-quest-junior-26426 --non-interactive
+          rm -f "$RUNNER_TEMP/sa.json"
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        if: env.HAS_KEY == 'true'
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_TSUZURI_QUEST_JUNIOR_26426 }}
+          projectId: tsuzuri-quest-junior-26426
+          channelId: live
+          entryPoint: rpg_game_app

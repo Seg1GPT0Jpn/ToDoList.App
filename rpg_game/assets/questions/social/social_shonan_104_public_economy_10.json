@@ -1,0 +1,2009 @@
+{
+  "setId": "social_shonan_104_public_economy_10",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "social_shonan_104_public_economy_10_001",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "「1995年制定。育児休業最長1年・介護休業最長3か月を定めた法律」にあてはまる語は？",
+      "choices": [
+        "男女雇用機会均等法",
+        "M字型カーブ",
+        "年功序列型賃金",
+        "育児・介護休業法"
+      ],
+      "answerIndex": 3,
+      "explanation": "育児・介護休業法：1995年制定。育児休業最長1年・介護休業最長3か月を定めた法律。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_002",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "「2024年成立。技能実習制度にかわる制度で、2027年4月施行予定」にあてはまる語は？",
+      "choices": [
+        "年功序列型賃金",
+        "テレワーク（在宅勤務）",
+        "育児・介護休業法",
+        "育成就労制度"
+      ],
+      "answerIndex": 3,
+      "explanation": "育成就労制度：2024年成立。技能実習制度にかわる制度で、2027年4月施行予定。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_003",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "「女性の就業率が出産・育児期に下がるグラフの形」にあてはまる語は？",
+      "choices": [
+        "長時間労働",
+        "M字型カーブ",
+        "高度プロフェッショナル制度",
+        "労働者派遣法"
+      ],
+      "answerIndex": 1,
+      "explanation": "M字型カーブ：女性の就業率が出産・育児期に下がるグラフの形。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_004",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "「アジア・南米出身者が多く、単純労働は原則禁止とされてきた労働者」にあてはまる語は？",
+      "choices": [
+        "女性活躍推進法",
+        "テレワーク（在宅勤務）",
+        "労働者派遣法",
+        "外国人労働者"
+      ],
+      "answerIndex": 3,
+      "explanation": "外国人労働者：アジア・南米出身者が多く、単純労働は原則禁止とされてきた労働者。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_005",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "「長時間労働などで死に至ること」にあてはまる語は？",
+      "choices": [
+        "パートタイム労働法",
+        "技能実習制度",
+        "過労死",
+        "労働契約法"
+      ],
+      "answerIndex": 2,
+      "explanation": "過労死：長時間労働などで死に至ること。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_006",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "「企業単位で組織される日本の労働組合」にあてはまる語は？",
+      "choices": [
+        "テレワーク（在宅勤務）",
+        "育成就労制度",
+        "企業別労働組合",
+        "同一労働同一賃金"
+      ],
+      "answerIndex": 2,
+      "explanation": "企業別労働組合：企業単位で組織される日本の労働組合。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_007",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "「技能の習得を目的に外国人が働く制度。人権問題も多発」にあてはまる語は？",
+      "choices": [
+        "技能実習制度",
+        "終身雇用制",
+        "M字型カーブ",
+        "ジョブ型雇用"
+      ],
+      "answerIndex": 0,
+      "explanation": "技能実習制度：技能の習得を目的に外国人が働く制度。人権問題も多発。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_008",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "「高度な専門業務を労働時間の規制対象から外す制度」にあてはまる語は？",
+      "choices": [
+        "高度プロフェッショナル制度",
+        "成果主義・能力主義",
+        "マタハラ・パワハラ",
+        "育成就労制度"
+      ],
+      "answerIndex": 0,
+      "explanation": "高度プロフェッショナル制度：高度な専門業務を労働時間の規制対象から外す制度。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_009",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "「定年まで同じ会社で働く慣行」にあてはまる語は？",
+      "choices": [
+        "過労死",
+        "終身雇用制",
+        "男女雇用機会均等法",
+        "ワーキングプア"
+      ],
+      "answerIndex": 1,
+      "explanation": "終身雇用制：定年まで同じ会社で働く慣行。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_010",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "「2015年制定。働きやすい環境の整備を企業に義務付けた法律」にあてはまる語は？",
+      "choices": [
+        "女性活躍推進法",
+        "働き方改革推進法",
+        "セクシュアルハラスメント",
+        "成果主義・能力主義"
+      ],
+      "answerIndex": 0,
+      "explanation": "女性活躍推進法：2015年制定。働きやすい環境の整備を企業に義務付けた法律。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_011",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "「国連で採択され、男女雇用機会均等法制定のきっかけになった条約」にあてはまる語は？",
+      "choices": [
+        "女性活躍推進法",
+        "女性差別撤廃条約",
+        "労働者派遣法",
+        "男女雇用機会均等法"
+      ],
+      "answerIndex": 1,
+      "explanation": "女性差別撤廃条約：国連で採択され、男女雇用機会均等法制定のきっかけになった条約。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_012",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "「各業務に人を割り当てる欧米型の雇用」にあてはまる語は？",
+      "choices": [
+        "ジョブ型雇用",
+        "非正規雇用",
+        "終身雇用制",
+        "長時間労働"
+      ],
+      "answerIndex": 0,
+      "explanation": "ジョブ型雇用：各業務に人を割り当てる欧米型の雇用。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_013",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "「職能給・年俸制など、バブル崩壊後に採用が広がった賃金の考え方」にあてはまる語は？",
+      "choices": [
+        "企業別労働組合",
+        "女性活躍推進法",
+        "非正規雇用",
+        "成果主義・能力主義"
+      ],
+      "answerIndex": 3,
+      "explanation": "成果主義・能力主義：職能給・年俸制など、バブル崩壊後に採用が広がった賃金の考え方。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_014",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "「性的な嫌がらせ。1997年の均等法改正で防止を規定」にあてはまる語は？",
+      "choices": [
+        "過労死",
+        "ジョブ型雇用",
+        "セクシュアルハラスメント",
+        "非正規雇用"
+      ],
+      "answerIndex": 2,
+      "explanation": "セクシュアルハラスメント：性的な嫌がらせ。1997年の均等法改正で防止を規定。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_015",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "「1985年制定。募集・採用・配置・昇進での女性差別を禁止した法律」にあてはまる語は？",
+      "choices": [
+        "男女雇用機会均等法",
+        "長時間労働",
+        "ワーキングプア",
+        "メンバーシップ型雇用"
+      ],
+      "answerIndex": 0,
+      "explanation": "男女雇用機会均等法：1985年制定。募集・採用・配置・昇進での女性差別を禁止した法律。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_016",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "「所定外労働が多くサービス残業も多い状態。過労死につながる」にあてはまる語は？",
+      "choices": [
+        "長時間労働",
+        "男女雇用機会均等法",
+        "働き方改革推進法",
+        "高度プロフェッショナル制度"
+      ],
+      "answerIndex": 0,
+      "explanation": "長時間労働：所定外労働が多くサービス残業も多い状態。過労死につながる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_017",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "「インターネットを使って自宅などで働くこと」にあてはまる語は？",
+      "choices": [
+        "育成就労制度",
+        "テレワーク（在宅勤務）",
+        "成果主義・能力主義",
+        "年功序列型賃金"
+      ],
+      "answerIndex": 1,
+      "explanation": "テレワーク（在宅勤務）：インターネットを使って自宅などで働くこと。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_018",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "「同じ仕事をする人には、雇用形態に関係なく同じ待遇をする考え方」にあてはまる語は？",
+      "choices": [
+        "育児・介護休業法",
+        "同一労働同一賃金",
+        "過労死",
+        "高度プロフェッショナル制度"
+      ],
+      "answerIndex": 1,
+      "explanation": "同一労働同一賃金：同じ仕事をする人には、雇用形態に関係なく同じ待遇をする考え方。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_019",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "「2019年創設。農業・建設など特定の分野で外国人を受け入れる在留資格」にあてはまる語は？",
+      "choices": [
+        "ワーク・ライフ・バランス",
+        "特定技能",
+        "女性活躍推進法",
+        "技能実習制度"
+      ],
+      "answerIndex": 1,
+      "explanation": "特定技能：2019年創設。農業・建設など特定の分野で外国人を受け入れる在留資格。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_020",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "「勤続年数に比例して賃金が上がる制度」にあてはまる語は？",
+      "choices": [
+        "ジョブ型雇用",
+        "同一労働同一賃金",
+        "メンバーシップ型雇用",
+        "年功序列型賃金"
+      ],
+      "answerIndex": 3,
+      "explanation": "年功序列型賃金：勤続年数に比例して賃金が上がる制度。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_021",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "「2019年施行。待遇格差の改善・残業規制・年5日の有給取得義務を定めた」にあてはまる語は？",
+      "choices": [
+        "ワークシェアリング",
+        "働き方改革推進法",
+        "女性差別撤廃条約",
+        "高度プロフェッショナル制度"
+      ],
+      "answerIndex": 1,
+      "explanation": "働き方改革推進法：2019年施行。待遇格差の改善・残業規制・年5日の有給取得義務を定めた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_022",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "「パートの福祉の増進や正社員への転換などを図る法律」にあてはまる語は？",
+      "choices": [
+        "同一労働同一賃金",
+        "非正規雇用",
+        "男女雇用機会均等法",
+        "パートタイム労働法"
+      ],
+      "answerIndex": 3,
+      "explanation": "パートタイム労働法：パートの福祉の増進や正社員への転換などを図る法律。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_023",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "「正社員以外の、期間を定めた雇用や短時間などの働き方」にあてはまる語は？",
+      "choices": [
+        "セクシュアルハラスメント",
+        "非正規雇用",
+        "M字型カーブ",
+        "長時間労働"
+      ],
+      "answerIndex": 1,
+      "explanation": "非正規雇用：正社員以外の、期間を定めた雇用や短時間などの働き方。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_024",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "「会社に所属せず、都度契約を結ぶ個人事業主」にあてはまる語は？",
+      "choices": [
+        "特定技能",
+        "働き方改革推進法",
+        "女性差別撤廃条約",
+        "フリーランス"
+      ],
+      "answerIndex": 3,
+      "explanation": "フリーランス：会社に所属せず、都度契約を結ぶ個人事業主。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_025",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "「マタニティハラスメント・パワーハラスメント」にあてはまる語は？",
+      "choices": [
+        "テレワーク（在宅勤務）",
+        "企業別労働組合",
+        "マタハラ・パワハラ",
+        "ワーキングプア"
+      ],
+      "answerIndex": 2,
+      "explanation": "マタハラ・パワハラ：マタニティハラスメント・パワーハラスメント。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_026",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "「会社が労働者に業務を与える日本型の雇用」にあてはまる語は？",
+      "choices": [
+        "メンバーシップ型雇用",
+        "高度プロフェッショナル制度",
+        "労働者派遣法",
+        "セクシュアルハラスメント"
+      ],
+      "answerIndex": 0,
+      "explanation": "メンバーシップ型雇用：会社が労働者に業務を与える日本型の雇用。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_027",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "「労働契約の締結・変更のルールを明確化した法律」にあてはまる語は？",
+      "choices": [
+        "労働契約法",
+        "長時間労働",
+        "育成就労制度",
+        "高度プロフェッショナル制度"
+      ],
+      "answerIndex": 0,
+      "explanation": "労働契約法：労働契約の締結・変更のルールを明確化した法律。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_028",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "「派遣の規制緩和が重ねられ、上限は原則3年とされる法律」にあてはまる語は？",
+      "choices": [
+        "年功序列型賃金",
+        "労働者派遣法",
+        "労働契約法",
+        "女性活躍推進法"
+      ],
+      "answerIndex": 1,
+      "explanation": "労働者派遣法：派遣の規制緩和が重ねられ、上限は原則3年とされる法律。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_029",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "「フルタイムで働いても最低生活水準を維持できない人々」にあてはまる語は？",
+      "choices": [
+        "同一労働同一賃金",
+        "M字型カーブ",
+        "パートタイム労働法",
+        "ワーキングプア"
+      ],
+      "answerIndex": 3,
+      "explanation": "ワーキングプア：フルタイムで働いても最低生活水準を維持できない人々。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_030",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "「労働時間を短縮して仕事を分かち合い、雇用を確保する方法」にあてはまる語は？",
+      "choices": [
+        "ワーク・ライフ・バランス",
+        "M字型カーブ",
+        "ワークシェアリング",
+        "労働者派遣法"
+      ],
+      "answerIndex": 2,
+      "explanation": "ワークシェアリング：労働時間を短縮して仕事を分かち合い、雇用を確保する方法。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_031",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "「仕事と生活の調和」にあてはまる語は？",
+      "choices": [
+        "ワーク・ライフ・バランス",
+        "成果主義・能力主義",
+        "特定技能",
+        "過労死"
+      ],
+      "answerIndex": 0,
+      "explanation": "ワーク・ライフ・バランス：仕事と生活の調和。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_032",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「自助努力主義で民間保険中心の社会保障の型」にあてはまる語は？",
+      "choices": [
+        "健康保険法",
+        "アメリカ型",
+        "社会保険庁",
+        "ノーマライゼーション"
+      ],
+      "answerIndex": 1,
+      "explanation": "アメリカ型：自助努力主義で民間保険中心の社会保障の型。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_033",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「原則7割給付（自己負担3割）の社会保険」にあてはまる語は？",
+      "choices": [
+        "拠出制・無拠出制",
+        "共済年金",
+        "法定雇用率",
+        "医療保険"
+      ],
+      "answerIndex": 3,
+      "explanation": "医療保険：原則7割給付（自己負担3割）の社会保険。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_034",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「1601年（英）。世界初の公的扶助」にあてはまる語は？",
+      "choices": [
+        "マクロ経済スライド",
+        "エリザベス救貧法",
+        "恤救規則",
+        "後期高齢者医療制度"
+      ],
+      "answerIndex": 1,
+      "explanation": "エリザベス救貧法：1601年（英）。世界初の公的扶助。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_035",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「要支援1・2〜要介護1〜5の人が対象。40歳以上が保険料を負担」にあてはまる語は？",
+      "choices": [
+        "修正積立方式",
+        "社会保険",
+        "公衆衛生",
+        "介護保険"
+      ],
+      "answerIndex": 3,
+      "explanation": "介護保険：要支援1・2〜要介護1〜5の人が対象。40歳以上が保険料を負担。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_036",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「1997年成立、2000年導入」にあてはまる語は？",
+      "choices": [
+        "疾病保険法",
+        "介護保険法",
+        "恤救規則",
+        "高齢化率"
+      ],
+      "answerIndex": 1,
+      "explanation": "介護保険法：1997年成立、2000年導入。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_037",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「所得などの格差が広がった社会」にあてはまる語は？",
+      "choices": [
+        "国民健康保険",
+        "格差社会",
+        "フィラデルフィア宣言",
+        "健康保険法"
+      ],
+      "answerIndex": 1,
+      "explanation": "格差社会：所得などの格差が広がった社会。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_038",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「年金の1階部分。全国民が加入し、1985年の改正で導入」にあてはまる語は？",
+      "choices": [
+        "基礎年金（国民年金）",
+        "バリアフリー",
+        "合計特殊出生率",
+        "積立方式"
+      ],
+      "answerIndex": 0,
+      "explanation": "基礎年金（国民年金）：年金の1階部分。全国民が加入し、1985年の改正で導入。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_039",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「公務員などの年金。2015年10月に厚生年金に一本化」にあてはまる語は？",
+      "choices": [
+        "拠出制・無拠出制",
+        "国民健康保険",
+        "共済年金",
+        "障害者雇用促進法"
+      ],
+      "answerIndex": 2,
+      "explanation": "共済年金：公務員などの年金。2015年10月に厚生年金に一本化。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_040",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「保険料負担がある制度と、公費負担が原則の制度の区別」にあてはまる語は？",
+      "choices": [
+        "拠出制・無拠出制",
+        "国民保険法",
+        "後期高齢者医療制度",
+        "被用者保険"
+      ],
+      "answerIndex": 0,
+      "explanation": "拠出制・無拠出制：保険料負担がある制度と、公費負担が原則の制度の区別。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_041",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「介護のプランを立てる専門職」にあてはまる語は？",
+      "choices": [
+        "ユニバーサルデザイン",
+        "102号条約",
+        "ケアマネジャー",
+        "合計特殊出生率"
+      ],
+      "answerIndex": 2,
+      "explanation": "ケアマネジャー：介護のプランを立てる専門職。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_042",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「1922年制定。日本初の社会保険で、工場・鉱山の労働者のみが対象」にあてはまる語は？",
+      "choices": [
+        "健康保険法",
+        "法定雇用率",
+        "障害者自立支援法",
+        "合計特殊出生率"
+      ],
+      "answerIndex": 0,
+      "explanation": "健康保険法：1922年制定。日本初の社会保険で、工場・鉱山の労働者のみが対象。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_043",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「2008年、75歳以上を対象に独立させた医療制度」にあてはまる語は？",
+      "choices": [
+        "法定雇用率",
+        "後期高齢者医療制度",
+        "社会保険",
+        "雇用保険"
+      ],
+      "answerIndex": 1,
+      "explanation": "後期高齢者医療制度：2008年、75歳以上を対象に独立させた医療制度。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_044",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「1人の女性が生涯に生む子の数の平均。人口維持には2.07」にあてはまる語は？",
+      "choices": [
+        "公的扶助",
+        "修正積立方式",
+        "合計特殊出生率",
+        "アメリカ型"
+      ],
+      "answerIndex": 2,
+      "explanation": "合計特殊出生率：1人の女性が生涯に生む子の数の平均。人口維持には2.07。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_045",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「国民の健康保持と環境整備。予防接種・上下水道・ごみ処理」にあてはまる語は？",
+      "choices": [
+        "福祉六法",
+        "大陸型",
+        "エリザベス救貧法",
+        "公衆衛生"
+      ],
+      "answerIndex": 3,
+      "explanation": "公衆衛生：国民の健康保持と環境整備。予防接種・上下水道・ごみ処理。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_046",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「年金の2階部分。民間被用者が加入し報酬比例」にあてはまる語は？",
+      "choices": [
+        "雇用保険",
+        "社会福祉",
+        "高齢化率",
+        "厚生年金"
+      ],
+      "answerIndex": 3,
+      "explanation": "厚生年金：年金の2階部分。民間被用者が加入し報酬比例。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_047",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「生活困窮者に国が手当を支給する制度。生活保護」にあてはまる語は？",
+      "choices": [
+        "格差社会",
+        "国民皆保険・国民皆年金",
+        "恤救規則",
+        "公的扶助"
+      ],
+      "answerIndex": 3,
+      "explanation": "公的扶助：生活困窮者に国が手当を支給する制度。生活保護。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_048",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「65歳以上の人口割合。7%・14%・21%で社会の呼び名が変わる」にあてはまる語は？",
+      "choices": [
+        "年金保険",
+        "高齢化率",
+        "社会保障法",
+        "健康保険法"
+      ],
+      "answerIndex": 1,
+      "explanation": "高齢化率：65歳以上の人口割合。7%・14%・21%で社会の呼び名が変わる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_049",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「1961年に実現した、全国民がいずれかの医療保険・年金に加入する体制」にあてはまる語は？",
+      "choices": [
+        "国民皆保険・国民皆年金",
+        "生活保護法",
+        "社会保障",
+        "フィラデルフィア宣言"
+      ],
+      "answerIndex": 0,
+      "explanation": "国民皆保険・国民皆年金：1961年に実現した、全国民がいずれかの医療保険・年金に加入する体制。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_050",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「自営業・農業などが加入し、市町村が運営する医療保険」にあてはまる語は？",
+      "choices": [
+        "国民健康保険",
+        "公的扶助",
+        "積立方式",
+        "ベーシック・インカム"
+      ],
+      "answerIndex": 0,
+      "explanation": "国民健康保険：自営業・農業などが加入し、市町村が運営する医療保険。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_051",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「（租税負担＋社会保障負担）÷国民所得」にあてはまる語は？",
+      "choices": [
+        "国民負担率",
+        "積立方式",
+        "国民皆保険・国民皆年金",
+        "障害者自立支援法"
+      ],
+      "answerIndex": 0,
+      "explanation": "国民負担率：（租税負担＋社会保障負担）÷国民所得。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_052",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「1911年（英）。世界初の失業保険」にあてはまる語は？",
+      "choices": [
+        "介護保険法",
+        "国民保険法",
+        "生活保護法",
+        "ノーマライゼーション"
+      ],
+      "answerIndex": 1,
+      "explanation": "国民保険法：1911年（英）。世界初の失業保険。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_053",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「失業者に失業給付。ハローワークに申請」にあてはまる語は？",
+      "choices": [
+        "健康保険法",
+        "雇用保険",
+        "フィラデルフィア宣言",
+        "生活保護法"
+      ],
+      "answerIndex": 1,
+      "explanation": "雇用保険：失業者に失業給付。ハローワークに申請。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_054",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「社会的弱者を保護する制度。福祉六法が中心」にあてはまる語は？",
+      "choices": [
+        "社会福祉",
+        "拠出制・無拠出制",
+        "社会保障法",
+        "障害者雇用促進法"
+      ],
+      "answerIndex": 0,
+      "explanation": "社会福祉：社会的弱者を保護する制度。福祉六法が中心。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_055",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「社会保障の4本柱の一つで、保険料を負担して給付を受ける仕組み（拠出制）」にあてはまる語は？",
+      "choices": [
+        "大陸型",
+        "疾病保険法",
+        "年金保険",
+        "社会保険"
+      ],
+      "answerIndex": 3,
+      "explanation": "社会保険：社会保障の4本柱の一つで、保険料を負担して給付を受ける仕組み（拠出制）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_056",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「年金記録問題で2010年廃止。日本年金機構が業務を継承」にあてはまる語は？",
+      "choices": [
+        "大陸型",
+        "社会福祉",
+        "社会保険庁",
+        "社会保障"
+      ],
+      "answerIndex": 2,
+      "explanation": "社会保険庁：年金記録問題で2010年廃止。日本年金機構が業務を継承。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_057",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「貧困・失業などに対し、国が社会的責任で最低限度の生活を保障すること」にあてはまる語は？",
+      "choices": [
+        "生活保護法",
+        "福祉元年",
+        "健康保険法",
+        "社会保障"
+      ],
+      "answerIndex": 3,
+      "explanation": "社会保障：貧困・失業などに対し、国が社会的責任で最低限度の生活を保障すること。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_058",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「1935年（米）。「社会保障」の語を初めて使用。ニューディール政策の一環」にあてはまる語は？",
+      "choices": [
+        "基礎年金（国民年金）",
+        "超高齢社会",
+        "社会保障法",
+        "恤救規則"
+      ],
+      "answerIndex": 2,
+      "explanation": "社会保障法：1935年（米）。「社会保障」の語を初めて使用。ニューディール政策の一環。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_059",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「1883年（独）。世界初の医療保険（ビスマルク）」にあてはまる語は？",
+      "choices": [
+        "疾病保険法",
+        "労働者災害補償保険（労災）",
+        "エリザベス救貧法",
+        "社会保障法"
+      ],
+      "answerIndex": 0,
+      "explanation": "疾病保険法：1883年（独）。世界初の医療保険（ビスマルク）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_060",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「積立方式に賦課方式を併用する方式」にあてはまる語は？",
+      "choices": [
+        "恤救規則",
+        "修正積立方式",
+        "大陸型",
+        "アメリカ型"
+      ],
+      "answerIndex": 1,
+      "explanation": "修正積立方式：積立方式に賦課方式を併用する方式。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_061",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「1874年。日本初の救貧制度」にあてはまる語は？",
+      "choices": [
+        "介護保険法",
+        "社会福祉",
+        "介護保険",
+        "恤救規則"
+      ],
+      "answerIndex": 3,
+      "explanation": "恤救規則：1874年。日本初の救貧制度。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_062",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「1987年。法定雇用率を定める法律」にあてはまる語は？",
+      "choices": [
+        "格差社会",
+        "ケアマネジャー",
+        "障害者雇用促進法",
+        "基礎年金（国民年金）"
+      ],
+      "answerIndex": 2,
+      "explanation": "障害者雇用促進法：1987年。法定雇用率を定める法律。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_063",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「2006年。障害の程度を認定して介護サービスを提供」にあてはまる語は？",
+      "choices": [
+        "障害者自立支援法",
+        "労働者災害補償保険（労災）",
+        "ノーマライゼーション",
+        "恤救規則"
+      ],
+      "answerIndex": 0,
+      "explanation": "障害者自立支援法：2006年。障害の程度を認定して介護サービスを提供。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_064",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「1946年。生存権を具体化する公的扶助の法律」にあてはまる語は？",
+      "choices": [
+        "マクロ経済スライド",
+        "生活保護法",
+        "障害者自立支援法",
+        "拠出制・無拠出制"
+      ],
+      "answerIndex": 1,
+      "explanation": "生活保護法：1946年。生存権を具体化する公的扶助の法律。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_065",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「憲法25条。健康で文化的な最低限度の生活を営む権利」にあてはまる語は？",
+      "choices": [
+        "生存権",
+        "恤救規則",
+        "法定雇用率",
+        "疾病保険法"
+      ],
+      "answerIndex": 0,
+      "explanation": "生存権：憲法25条。健康で文化的な最低限度の生活を営む権利。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_066",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「自分が現役のときに積み立てた保険料と運用益で、将来自分の年金をまかなう方式」にあてはまる語は？",
+      "choices": [
+        "生活保護法",
+        "雇用保険",
+        "修正積立方式",
+        "積立方式"
+      ],
+      "answerIndex": 3,
+      "explanation": "積立方式：自分が現役のときに積み立てた保険料と運用益で、将来自分の年金をまかなう方式。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_067",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「所得比例主義で社会保険中心の社会保障の型（独・伊・仏）」にあてはまる語は？",
+      "choices": [
+        "大陸型",
+        "高齢化率",
+        "北欧型",
+        "賦課方式"
+      ],
+      "answerIndex": 0,
+      "explanation": "大陸型：所得比例主義で社会保険中心の社会保障の型（独・伊・仏）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_068",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「高齢化率21%以上の社会。日本は2007年に到達」にあてはまる語は？",
+      "choices": [
+        "福祉元年",
+        "超高齢社会",
+        "恤救規則",
+        "疾病保険法"
+      ],
+      "answerIndex": 1,
+      "explanation": "超高齢社会：高齢化率21%以上の社会。日本は2007年に到達。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_069",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「国が保障する最低限度の生活」にあてはまる語は？",
+      "choices": [
+        "102号条約",
+        "生存権",
+        "雇用保険",
+        "ナショナル・ミニマム"
+      ],
+      "answerIndex": 3,
+      "explanation": "ナショナル・ミニマム：国が保障する最低限度の生活。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_070",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「3階建てで、60〜65歳から給付される社会保険」にあてはまる語は？",
+      "choices": [
+        "ベーシック・インカム",
+        "ケアマネジャー",
+        "生存権",
+        "年金保険"
+      ],
+      "answerIndex": 3,
+      "explanation": "年金保険：3階建てで、60〜65歳から給付される社会保険。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_071",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「すべての人が共生できる社会をめざす考え方」にあてはまる語は？",
+      "choices": [
+        "ノーマライゼーション",
+        "バリアフリー",
+        "公的扶助",
+        "国民保険法"
+      ],
+      "answerIndex": 0,
+      "explanation": "ノーマライゼーション：すべての人が共生できる社会をめざす考え方。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_072",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「障壁を取り除くこと」にあてはまる語は？",
+      "choices": [
+        "バリアフリー",
+        "合計特殊出生率",
+        "フィラデルフィア宣言",
+        "エリザベス救貧法"
+      ],
+      "answerIndex": 0,
+      "explanation": "バリアフリー：障壁を取り除くこと。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_073",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「ドイツの宰相。「アメとムチ」の政策で疾病保険法を作った」にあてはまる語は？",
+      "choices": [
+        "ビスマルク",
+        "102号条約",
+        "ナショナル・ミニマム",
+        "超高齢社会"
+      ],
+      "answerIndex": 0,
+      "explanation": "ビスマルク：ドイツの宰相。「アメとムチ」の政策で疾病保険法を作った。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_074",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「1952年。ILOの社会保障の最低基準に関する条約」にあてはまる語は？",
+      "choices": [
+        "102号条約",
+        "労働者災害補償保険（労災）",
+        "バリアフリー",
+        "障害者雇用促進法"
+      ],
+      "answerIndex": 0,
+      "explanation": "102号条約：1952年。ILOの社会保障の最低基準に関する条約。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_075",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「健康保険・共済組合・船員保険」にあてはまる語は？",
+      "choices": [
+        "被用者保険",
+        "マクロ経済スライド",
+        "医療保険",
+        "共済年金"
+      ],
+      "answerIndex": 0,
+      "explanation": "被用者保険：健康保険・共済組合・船員保険。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_076",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「1944年にILOで採択された社会保障の基本原理」にあてはまる語は？",
+      "choices": [
+        "フィラデルフィア宣言",
+        "国民健康保険",
+        "ワイマール憲法",
+        "疾病保険法"
+      ],
+      "answerIndex": 0,
+      "explanation": "フィラデルフィア宣言：1944年にILOで採択された社会保障の基本原理。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_077",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「1973年。年金の物価スライド制導入・老人医療無料化」にあてはまる語は？",
+      "choices": [
+        "福祉元年",
+        "公的扶助",
+        "ワイマール憲法",
+        "福祉六法"
+      ],
+      "answerIndex": 0,
+      "explanation": "福祉元年：1973年。年金の物価スライド制導入・老人医療無料化。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_078",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「児童・老人・母子・身体障害者・知的障害者福祉法と生活保護法」にあてはまる語は？",
+      "choices": [
+        "格差社会",
+        "国民健康保険",
+        "福祉六法",
+        "エリザベス救貧法"
+      ],
+      "answerIndex": 2,
+      "explanation": "福祉六法：児童・老人・母子・身体障害者・知的障害者福祉法と生活保護法。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_079",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「現役世代の保険料で、今の高齢者の年金を支える方式」にあてはまる語は？",
+      "choices": [
+        "大陸型",
+        "年金保険",
+        "賦課方式",
+        "法定雇用率"
+      ],
+      "answerIndex": 2,
+      "explanation": "賦課方式：現役世代の保険料で、今の高齢者の年金を支える方式。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_080",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「政府が全国民に一律の現金を給付する仕組み」にあてはまる語は？",
+      "choices": [
+        "国民健康保険",
+        "基礎年金（国民年金）",
+        "ユニバーサルデザイン",
+        "ベーシック・インカム"
+      ],
+      "answerIndex": 3,
+      "explanation": "ベーシック・インカム：政府が全国民に一律の現金を給付する仕組み。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_081",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「1942年（英）。社会保険中心で「ゆりかごから墓場まで」」にあてはまる語は？",
+      "choices": [
+        "障害者雇用促進法",
+        "健康保険法",
+        "102号条約",
+        "ベバリッジ報告"
+      ],
+      "answerIndex": 3,
+      "explanation": "ベバリッジ報告：1942年（英）。社会保険中心で「ゆりかごから墓場まで」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_082",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「企業などが雇用すべき障害者の割合」にあてはまる語は？",
+      "choices": [
+        "年金保険",
+        "ケアマネジャー",
+        "法定雇用率",
+        "社会保険"
+      ],
+      "answerIndex": 2,
+      "explanation": "法定雇用率：企業などが雇用すべき障害者の割合。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_083",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「無差別平等主義で租税中心の福祉先進国型」にあてはまる語は？",
+      "choices": [
+        "合計特殊出生率",
+        "北欧型",
+        "社会保障",
+        "法定雇用率"
+      ],
+      "answerIndex": 1,
+      "explanation": "北欧型：無差別平等主義で租税中心の福祉先進国型。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_084",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「年金額の伸びを、現役世代の減少などに合わせて抑える仕組み」にあてはまる語は？",
+      "choices": [
+        "後期高齢者医療制度",
+        "格差社会",
+        "マクロ経済スライド",
+        "社会福祉"
+      ],
+      "answerIndex": 2,
+      "explanation": "マクロ経済スライド：年金額の伸びを、現役世代の減少などに合わせて抑える仕組み。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_085",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「だれもが使いやすいデザイン」にあてはまる語は？",
+      "choices": [
+        "ナショナル・ミニマム",
+        "疾病保険法",
+        "合計特殊出生率",
+        "ユニバーサルデザイン"
+      ],
+      "answerIndex": 3,
+      "explanation": "ユニバーサルデザイン：だれもが使いやすいデザイン。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_086",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「仕事上の災害に対する給付で、事業主が負担する保険」にあてはまる語は？",
+      "choices": [
+        "被用者保険",
+        "労働者災害補償保険（労災）",
+        "基礎年金（国民年金）",
+        "公衆衛生"
+      ],
+      "answerIndex": 1,
+      "explanation": "労働者災害補償保険（労災）：仕事上の災害に対する給付で、事業主が負担する保険。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_10_087",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「1919年（独）。初めて生存権を保障した憲法」にあてはまる語は？",
+      "choices": [
+        "恤救規則",
+        "国民負担率",
+        "ワイマール憲法",
+        "賦課方式"
+      ],
+      "answerIndex": 2,
+      "explanation": "ワイマール憲法：1919年（独）。初めて生存権を保障した憲法。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    }
+  ]
+}

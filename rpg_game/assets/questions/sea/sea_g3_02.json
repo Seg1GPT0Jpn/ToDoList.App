@@ -1,0 +1,248 @@
+{
+  "setId": "sea_g3_02",
+  "worldId": "sea",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g3_02_01",
+      "unit": "english.eng.grammar.subjunctive.pastperfect",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "If it had not rained yesterday, the ground (   ) dry now.",
+      "choices": [
+        "would have been",
+        "would be",
+        "will be",
+        "is"
+      ],
+      "answerIndex": 1,
+      "explanation": "過去の仮定 ＋ 今の結果（now）の混合仮定法。"
+    },
+    {
+      "id": "sea_g3_02_02",
+      "unit": "english.eng.grammar.subjunctive",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "It's time we (   ) home.",
+      "choices": [
+        "leave",
+        "left",
+        "leaving",
+        "will leave"
+      ],
+      "answerIndex": 1,
+      "explanation": "It's time + S + 過去形 で「もう〜する時間だ」。"
+    },
+    {
+      "id": "sea_g3_02_03",
+      "unit": "english.eng.grammar.subjunctive.advanced",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) for your help, I would have failed.",
+      "choices": [
+        "If",
+        "Unless",
+        "But",
+        "Without"
+      ],
+      "answerIndex": 2,
+      "explanation": "but for 〜 で「〜がなかったら」（= without）。Without for とは言わない。"
+    },
+    {
+      "id": "sea_g3_02_04",
+      "unit": "english.eng.grammar.subjunctive.past",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Suppose you (   ) the lottery, what would you buy?",
+      "choices": [
+        "win",
+        "won",
+        "will win",
+        "have won"
+      ],
+      "answerIndex": 1,
+      "explanation": "suppose + 仮定法過去で「もし〜としたら」。"
+    },
+    {
+      "id": "sea_g3_02_05",
+      "unit": "english.eng.grammar.subjunctive.advanced",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I would have gone with you (   ) I been free.",
+      "choices": [
+        "if",
+        "had",
+        "were",
+        "should"
+      ],
+      "answerIndex": 1,
+      "explanation": "if I had been free の if を省略した倒置。"
+    },
+    {
+      "id": "sea_g3_02_06",
+      "unit": "english.eng.grammar.subjunctive.wish",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He acted as if nothing (   ) happened.",
+      "choices": [
+        "has",
+        "had",
+        "have",
+        "was"
+      ],
+      "answerIndex": 1,
+      "explanation": "「（それより前に）何も起きなかったかのように」は as if + 過去完了。"
+    },
+    {
+      "id": "sea_g3_02_07",
+      "unit": "english.eng.grammar.subjunctive.pastperfect",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "If I had taken the train, I (   ) here now.",
+      "choices": [
+        "will be",
+        "would be",
+        "am",
+        "would have been"
+      ],
+      "answerIndex": 1,
+      "explanation": "過去の条件と現在の結果の混合型。"
+    },
+    {
+      "id": "sea_g3_02_08",
+      "unit": "english.eng.grammar.subjunctive.advanced",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) he been there, he would have helped us.",
+      "choices": [
+        "Should",
+        "If",
+        "Had",
+        "Were"
+      ],
+      "answerIndex": 2,
+      "explanation": "If he had been の倒置。"
+    },
+    {
+      "id": "sea_g3_02_09",
+      "unit": "english.eng.grammar.subjunctive.past",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "If it (   ) not been for the map, we would have got lost.",
+      "choices": [
+        "would",
+        "were",
+        "has",
+        "had"
+      ],
+      "answerIndex": 3,
+      "explanation": "If it had not been for 〜「（あのとき）〜がなかったら」。仮定法過去完了。"
+    },
+    {
+      "id": "sea_g3_02_10",
+      "unit": "english.eng.grammar.subjunctive",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "If he (   ) come tomorrow, what would you do?",
+      "choices": [
+        "will",
+        "were to",
+        "would",
+        "is to"
+      ],
+      "answerIndex": 1,
+      "explanation": "If 主語 were to 〜「万一〜するとしたら」。未来の仮定。"
+    },
+    {
+      "id": "sea_g3_02_11",
+      "unit": "english.eng.grammar.subjunctive.advanced",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) you in my place, what would you do?",
+      "choices": [
+        "Should",
+        "Are",
+        "Had",
+        "Were"
+      ],
+      "answerIndex": 3,
+      "explanation": "If you were in my place の if を省略した倒置。"
+    },
+    {
+      "id": "sea_g3_02_12",
+      "unit": "english.eng.grammar.subjunctive.advanced",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) I known your address, I would have written to you.",
+      "choices": [
+        "Were",
+        "If",
+        "Did",
+        "Had"
+      ],
+      "answerIndex": 3,
+      "explanation": "If I had known の if を省略した倒置。"
+    },
+    {
+      "id": "sea_g3_02_13",
+      "unit": "english.eng.grammar.subjunctive",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "A wise man (   ) not do such a thing.",
+      "choices": [
+        "will",
+        "can",
+        "would",
+        "must"
+      ],
+      "answerIndex": 2,
+      "explanation": "主語に条件がふくまれる仮定法「賢い人ならそんなことはしないだろう」。"
+    },
+    {
+      "id": "sea_g3_02_14",
+      "unit": "english.eng.grammar.subjunctive.past",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "If it (   ) for the internet, our lives would be very different.",
+      "choices": [
+        "was not being",
+        "is not",
+        "had not",
+        "were not"
+      ],
+      "answerIndex": 3,
+      "explanation": "If it were not for 〜「（今）〜がなければ」。仮定法過去。"
+    },
+    {
+      "id": "sea_g3_02_15",
+      "unit": "english.eng.grammar.subjunctive.wish",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "She speaks English as if she (   ) in America.",
+      "choices": [
+        "lives",
+        "had lived",
+        "will live",
+        "lived"
+      ],
+      "answerIndex": 1,
+      "explanation": "過去の事実に反することは as if ＋ 過去完了。"
+    },
+    {
+      "id": "sea_g3_02_16",
+      "unit": "english.eng.grammar.subjunctive",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I took a taxi. Otherwise, I (   ) the last train.",
+      "choices": [
+        "miss",
+        "will miss",
+        "would have missed",
+        "had missed"
+      ],
+      "answerIndex": 2,
+      "explanation": "otherwise「そうでなければ」も仮定法の条件になる。過去の話。"
+    }
+  ]
+}

@@ -1,0 +1,356 @@
+{
+  "setId": "english_stage_09",
+  "worldId": "english",
+  "origin": "original",
+  "version": 3,
+  "questions": [
+    {
+      "id": "en09_001",
+      "unit": "english.eng.vocab.standard.meaning",
+      "category": "meaning",
+      "prompt": "「knowledge」の意味は？",
+      "choices": [
+        "自信のある",
+        "予測する",
+        "生き残る",
+        "知識"
+      ],
+      "answerIndex": 3,
+      "explanation": "knowledge は「知識」。"
+    },
+    {
+      "id": "en09_002",
+      "unit": "english.eng.vocab.standard.meaning",
+      "category": "meaning",
+      "prompt": "「solution」の意味は？",
+      "choices": [
+        "明らかな",
+        "生き残る",
+        "解決策",
+        "なじみのある"
+      ],
+      "answerIndex": 2,
+      "explanation": "solution は「解決策」。"
+    },
+    {
+      "id": "en09_003",
+      "unit": "english.eng.vocab.standard.meaning",
+      "category": "meaning",
+      "prompt": "「advantage」の意味は？",
+      "choices": [
+        "十分な",
+        "提供する",
+        "目的",
+        "利点"
+      ],
+      "answerIndex": 3,
+      "explanation": "advantage は「利点」。"
+    },
+    {
+      "id": "en09_004",
+      "unit": "english.eng.vocab.standard.meaning",
+      "category": "meaning",
+      "prompt": "「available」の意味は？",
+      "choices": [
+        "予測する",
+        "利用できる",
+        "知識",
+        "信頼できる"
+      ],
+      "answerIndex": 1,
+      "explanation": "available は「利用できる」。"
+    },
+    {
+      "id": "en09_005",
+      "unit": "english.eng.vocab.standard.meaning",
+      "category": "meaning",
+      "prompt": "「efficient」の意味は？",
+      "choices": [
+        "効率のよい",
+        "描写する",
+        "機会",
+        "古代の"
+      ],
+      "answerIndex": 0,
+      "explanation": "efficient は「効率のよい」。"
+    },
+    {
+      "id": "en09_006",
+      "unit": "english.eng.vocab.standard.meaning",
+      "category": "meaning",
+      "prompt": "「include」の意味は？",
+      "choices": [
+        "避ける",
+        "雇う",
+        "含む",
+        "生き残る"
+      ],
+      "answerIndex": 2,
+      "explanation": "include は「含む」。"
+    },
+    {
+      "id": "en09_007",
+      "unit": "english.eng.vocab.standard.meaning",
+      "category": "meaning",
+      "prompt": "「require」の意味は？",
+      "choices": [
+        "必要とする",
+        "消える",
+        "十分な",
+        "目的"
+      ],
+      "answerIndex": 0,
+      "explanation": "require は「必要とする」。"
+    },
+    {
+      "id": "en09_008",
+      "unit": "english.eng.vocab.standard.meaning",
+      "category": "meaning",
+      "prompt": "「maintain」の意味は？",
+      "choices": [
+        "機会",
+        "維持する",
+        "辛抱強い",
+        "信頼できる"
+      ],
+      "answerIndex": 1,
+      "explanation": "maintain は「維持する」。"
+    },
+    {
+      "id": "en09_009",
+      "unit": "english.eng.vocab.idiom.idiom",
+      "category": "meaning",
+      "prompt": "「put up with ～」の意味は？",
+      "choices": [
+        "～をあきらめる",
+        "少なくとも",
+        "～を尊敬する",
+        "～を我慢する"
+      ],
+      "answerIndex": 3,
+      "explanation": "put up with ～ は「～を我慢する」。"
+    },
+    {
+      "id": "en09_010",
+      "unit": "english.eng.vocab.idiom.idiom",
+      "category": "meaning",
+      "prompt": "「look down on ～」の意味は？",
+      "choices": [
+        "わざと",
+        "～を見下す",
+        "少なくとも",
+        "時間どおりに"
+      ],
+      "answerIndex": 1,
+      "explanation": "look down on ～ は「～を見下す」。"
+    },
+    {
+      "id": "en09_011",
+      "unit": "english.eng.vocab.basic.pos",
+      "category": "partOfSpeech",
+      "prompt": "次のうち「名詞」はどれ？",
+      "choices": [
+        "explain",
+        "explanation",
+        "explanatory",
+        "explained"
+      ],
+      "answerIndex": 1,
+      "explanation": "explain（説明する）の名詞形は explanation。つづりの変化に注意。"
+    },
+    {
+      "id": "en09_012",
+      "unit": "english.eng.vocab.basic.pos",
+      "category": "partOfSpeech",
+      "prompt": "次のうち「形容詞」はどれ？",
+      "choices": [
+        "success",
+        "succeed",
+        "successful",
+        "successfully"
+      ],
+      "answerIndex": 2,
+      "explanation": "success（名詞）+ -ful で形容詞 successful（成功した）。"
+    },
+    {
+      "id": "en09_013",
+      "unit": "english.eng.grammar.relative.pronoun",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This is the house (   ) my grandfather built.",
+      "choices": [
+        "where",
+        "which",
+        "what",
+        "who"
+      ],
+      "answerIndex": 1,
+      "explanation": "built の目的語が欠けているので関係代名詞 which。where は後ろが完全な文のときに使う。"
+    },
+    {
+      "id": "en09_014",
+      "unit": "english.eng.grammar.relative.pronoun",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The man (   ) car was stolen called the police.",
+      "choices": [
+        "who",
+        "which",
+        "whose",
+        "whom"
+      ],
+      "answerIndex": 2,
+      "explanation": "「その男の車」という所有の関係なので whose。"
+    },
+    {
+      "id": "en09_015",
+      "unit": "english.eng.grammar.relative.adverb",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This is the town (   ) I was born.",
+      "choices": [
+        "which",
+        "what",
+        "that",
+        "where"
+      ],
+      "answerIndex": 3,
+      "explanation": "I was born は完全な文なので関係副詞 where（= in which）。"
+    },
+    {
+      "id": "en09_016",
+      "unit": "english.eng.grammar.relative.pronoun",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This is the museum (   ) we visited last summer.",
+      "choices": [
+        "which",
+        "where",
+        "when",
+        "in which"
+      ],
+      "answerIndex": 0,
+      "explanation": "visit は他動詞で目的語が欠けているので関係代名詞 which。"
+    },
+    {
+      "id": "en09_017",
+      "unit": "english.eng.grammar.relative.adverb",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Nobody knows the reason (   ) she left the club.",
+      "choices": [
+        "which",
+        "why",
+        "what",
+        "how"
+      ],
+      "answerIndex": 1,
+      "explanation": "the reason に続く関係副詞は why。"
+    },
+    {
+      "id": "en09_018",
+      "unit": "english.eng.grammar.relative.nonrestrictive",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I have an uncle, (   ) lives in Canada.",
+      "choices": [
+        "that",
+        "which",
+        "who",
+        "whom"
+      ],
+      "answerIndex": 2,
+      "explanation": "人が先行詞で主格なので who。カンマの後ろ（非制限用法）に that は使えない。"
+    },
+    {
+      "id": "en09_019",
+      "unit": "english.eng.grammar.relative",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I have a friend (   ) lives in Kyoto.",
+      "choices": [
+        "who",
+        "which",
+        "whom",
+        "whose"
+      ],
+      "answerIndex": 0,
+      "explanation": "先行詞が人で、関係詞が主語のはたらき（主格）なので who。"
+    },
+    {
+      "id": "en09_020",
+      "unit": "english.eng.grammar.relative",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The girl (   ) you met yesterday is my cousin.",
+      "choices": [
+        "whom",
+        "which",
+        "whose",
+        "what"
+      ],
+      "answerIndex": 0,
+      "explanation": "先行詞が人で目的格なので whom（who でも可。省略もできる）。"
+    },
+    {
+      "id": "en09_021",
+      "unit": "english.eng.grammar.relative",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He is the only person (   ) knows the truth.",
+      "choices": [
+        "which",
+        "that",
+        "what",
+        "whom"
+      ],
+      "answerIndex": 1,
+      "explanation": "the only などが付く先行詞には that がよく使われる。"
+    },
+    {
+      "id": "en09_022",
+      "unit": "english.eng.grammar.relative.pronoun",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I know a boy (   ) father is a pilot.",
+      "choices": [
+        "who",
+        "whose",
+        "which",
+        "whom"
+      ],
+      "answerIndex": 1,
+      "explanation": "「その少年の父親」という所有の関係は whose。"
+    },
+    {
+      "id": "en09_023",
+      "unit": "english.eng.grammar.relative.adverb",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I remember the day (   ) we first met.",
+      "choices": [
+        "when",
+        "where",
+        "which",
+        "what"
+      ],
+      "answerIndex": 0,
+      "explanation": "時を表す先行詞（the day）の関係副詞は when。"
+    },
+    {
+      "id": "en09_024",
+      "unit": "english.eng.grammar.relative.pronoun",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The watch (   ) he gave me is expensive.",
+      "choices": [
+        "who",
+        "what",
+        "which",
+        "whose"
+      ],
+      "answerIndex": 2,
+      "explanation": "先行詞は物（the watch）で、gave の目的語が欠けているので which。"
+    }
+  ]
+}

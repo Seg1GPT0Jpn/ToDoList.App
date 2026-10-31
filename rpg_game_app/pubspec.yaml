@@ -1,0 +1,64 @@
+name: rpg_game_app
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.13.4
+
+dependencies:
+  audioplayers: ^6.8.1
+  cloud_firestore: ^6.10.0
+  cloud_functions: ^6.5.0
+  firebase_auth: ^6.7.0
+  firebase_core: ^4.15.0
+  flame: ^1.38.2
+  flutter:
+    sdk: flutter
+  flutter_local_notifications: ^22.3.1
+  flutter_tts: ^4.2.5
+  google_fonts: ^8.2.1
+  in_app_purchase: ^3.3.1
+  rpg_game:
+    path: ../rpg_game
+  shared_preferences: ^2.5.5
+  web: ^1.1.1
+  timezone: ^0.11.1
+  url_launcher: ^6.3.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/audio/
+    # LEAP・EEVI（名前とパスワードで開く、暗号化した単語帳）
+    - assets/vocab/
+    - assets/texts/
+    # 学校の配布資料（ページごとの画像。かんたんな暗号化をしてある）
+    - assets/mock_exams/gendai/
+    - assets/mock_exams/gengo/
+    - assets/mock_exams/math1/
+    - assets/mock_exams/mathA/
+    - assets/mock_exams/ec/
+    - assets/mock_exams/le/
+    - assets/mock_exams/chem/
+    - assets/mock_exams/bio/
+    - assets/mock_exams/kokyo/
+    - assets/mock_exams/joho/
+    - assets/materials/kokyo_print3/
+    - assets/materials/gendai_kaihatsu78/
+    - assets/materials/gendai_zeitaku/
+    - assets/materials/gendai_democracy/
+    - assets/materials/gengo_koji/
+    - assets/materials/gengo_kundoku/
+    - assets/materials/kw_matome/
+    - assets/materials/kw_mondai/
+    - assets/materials/kw_book/
+    - assets/materials/kanji_goi/
+    - assets/materials/bio_prints/
+    # google_fonts はここにある同名のフォントを使い、ネットから取りに行かない
+    - assets/fonts/

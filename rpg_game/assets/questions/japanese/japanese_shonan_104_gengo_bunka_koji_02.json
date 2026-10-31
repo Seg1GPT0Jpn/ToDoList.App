@@ -1,0 +1,882 @@
+{
+  "setId": "japanese_shonan_104_gengo_bunka_koji_02",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_02_001",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「漁者得而并擒之。」の書き下し文は？",
+      "choices": [
+        "漁者并せて之を得擒ふ。",
+        "漁者得而之を并せ擒ふ。",
+        "漁者得て之を并せ擒ふ。",
+        "漁者之を得て擒へず。"
+      ],
+      "answerIndex": 2,
+      "explanation": "「而」は置き字なので書き下し文には書かない。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_02_002",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「臣恐強秦之為漁父也。」の「漁父」が表しているのは？",
+      "choices": [
+        "戦争で苦しむ民衆",
+        "争いのすきに得をする第三者",
+        "話を聞いている王",
+        "争っている二国"
+      ],
+      "answerIndex": 1,
+      "explanation": "強い秦が、弱った燕と趙を両方手に入れてしまうことをたとえた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_02_003",
+      "unit": "japanese.kanbun.kundoku.saidoku.words",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「故願王之熟計之也。」の「願」の意味は？",
+      "choices": [
+        "〜したことがある",
+        "どうか〜してください（願望）",
+        "きっと〜だろう",
+        "〜するべきではない"
+      ],
+      "answerIndex": 1,
+      "explanation": "「願はくは〜（セヨ）」＝どうか〜してほしい。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_02_004",
+      "unit": "japanese.kanbun.kundoku.saidoku.words",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「恵王曰、『善。』乃止。」の「乃」の意味は？",
+      "choices": [
+        "もし",
+        "つまり",
+        "すぐに",
+        "そこで"
+      ],
+      "answerIndex": 3,
+      "explanation": "「乃ち止む」＝そこで（燕を攻めるのを）やめた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_02_005",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "故事成語「五十歩百歩」の意味は？",
+      "choices": [
+        "少しずつ進めば、いつか目的に着くこと",
+        "努力すればするほど差がつくこと",
+        "大きな失敗の前には小さな失敗があること",
+        "少しの違いはあっても、本質的には同じであること"
+      ],
+      "answerIndex": 3,
+      "explanation": "『孟子』梁恵王上の話。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_02_006",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「五十歩百歩」の話が収められている書物は？",
+      "choices": [
+        "孟子",
+        "論語",
+        "戦国策",
+        "荘子"
+      ],
+      "answerIndex": 0,
+      "explanation": "孟子の言行を記録した書。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_02_007",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "孟子の思想として正しいものは？",
+      "choices": [
+        "性善説を唱え、徳によって民を治める王道政治を説いた",
+        "性悪説を唱え、法と刑罰による政治を説いた",
+        "兼愛を説き、身分の差をなくすことを主張した",
+        "無為自然を説き、政治から離れることをすすめた"
+      ],
+      "answerIndex": 0,
+      "explanation": "孔子の思想を受け継ぎ、仁義を重んじた。性悪説は荀子、法治は韓非子。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_02_008",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「梁恵王」はどの国の王？",
+      "choices": [
+        "魏（梁は魏の都）",
+        "楚",
+        "燕",
+        "趙"
+      ],
+      "answerIndex": 0,
+      "explanation": "魏は都を大梁に移したので、梁ともよばれた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_02_009",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「寡人」とはどういう意味の語？",
+      "choices": [
+        "国の民衆",
+        "一人きりの人",
+        "少ない家来",
+        "徳の少ない人（王の謙遜した一人称）"
+      ],
+      "answerIndex": 3,
+      "explanation": "王が自分を指して言うことば。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_02_010",
+      "unit": "japanese.kanbun.kuho.limit.limit",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「寡人之於国也、尽心焉耳矣。」の「焉耳矣」の読みは？",
+      "choices": [
+        "なり",
+        "のみ",
+        "や",
+        "いづくんぞ"
+      ],
+      "answerIndex": 1,
+      "explanation": "三字で「のみ」と読み、強い断定・限定を表す。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_02_011",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「河内凶、則移其民於河東、移其粟於河内。」で恵王がしたことは？",
+      "choices": [
+        "河内が凶作のとき、民を河東に移し、穀物を河内に移した",
+        "河東が凶作のとき、河内の民を河東に移した",
+        "隣国から穀物を買い入れた",
+        "凶作のとき、民から穀物を取り上げた"
+      ],
+      "answerIndex": 0,
+      "explanation": "「粟」は穀物、「凶」は凶作。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_02_012",
+      "unit": "japanese.kanbun.kundoku.saidoku.words",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「河内凶、則移其民於河東」の「則」の読みと意味は？",
+      "choices": [
+        "すなはチ（そこで）",
+        "また（同じく）",
+        "のっとル（手本にする）",
+        "すなはチ（〜ならば…）"
+      ],
+      "answerIndex": 3,
+      "explanation": "条件を受けて「〜すると・〜ならば」とつなぐ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_02_013",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「察隣国之政、無如寡人之用心者。」の意味は？",
+      "choices": [
+        "隣国の政治は、わたしの心配りと同じである",
+        "隣国の政治を見ても、わたしの心配はなくならない",
+        "隣国の政治を見て、わたしも心を配るようになった",
+        "隣国の政治を見ると、わたしほど心を配っている者はいない"
+      ],
+      "answerIndex": 3,
+      "explanation": "「無如〜」＝〜に及ぶものはない（〜がいちばんだ）。「如」は「しク」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_02_014",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「隣国之民不加少、寡人之民不加多、何也。」で恵王が疑問に思っていることは？",
+      "choices": [
+        "隣国の民が増え、自分の国の民が減るのはなぜか",
+        "民を移しても凶作が続くのはなぜか",
+        "隣国の民が減らず、自分の国の民が増えないのはなぜか",
+        "隣国の王が自分をまねするのはなぜか"
+      ],
+      "answerIndex": 2,
+      "explanation": "当時は、よい政治をする国に民が集まると考えられていた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_02_015",
+      "unit": "japanese.kanbun.kundoku.saidoku.words",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「王好戦。請以戦喩。」の「請」の意味は？",
+      "choices": [
+        "どうか〜させてください",
+        "〜をたのむ",
+        "〜を招く",
+        "まさか〜ではあるまい"
+      ],
+      "answerIndex": 0,
+      "explanation": "「請ふ戦ひを以て喩へん」＝戦争でたとえさせてください。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_02_016",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「棄甲曳兵而走。」の意味は？",
+      "choices": [
+        "よろいを脱いで、兵士を休ませる",
+        "よろいを着て、武器を持って攻める",
+        "兵士を捨てて、ひとりで逃げる",
+        "よろいを捨て、武器を引きずって逃げる"
+      ],
+      "answerIndex": 3,
+      "explanation": "「甲」はよろい、「兵」は武器、「走」は逃げる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_02_017",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「以五十歩笑百歩、則何如。」の意味は？",
+      "choices": [
+        "五十歩で止まるのと百歩で止まるのは、どちらがよいでしょう",
+        "百歩逃げた者が五十歩逃げた者を笑ったら、どうでしょう",
+        "五十歩進んだ者が百歩進んだ者に勝ったら、どうでしょう",
+        "五十歩逃げた者が百歩逃げた者を笑ったら、どうでしょう"
+      ],
+      "answerIndex": 3,
+      "explanation": "「何如」＝どうか（状態・是非をたずねる）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_02_018",
+      "unit": "japanese.kanbun.kuho.limit.limit",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「直不百歩耳。」の書き下し文は？",
+      "choices": [
+        "直だ百歩のみならず。",
+        "百歩に直らざるのみ。",
+        "直ちに百歩ならざるのみ。",
+        "直だ百歩ならざるのみ。"
+      ],
+      "answerIndex": 3,
+      "explanation": "「直〜耳」＝ただ〜だけだ（限定）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_02_019",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「是亦走也。」の「是」が指すものは？",
+      "choices": [
+        "五十歩で止まった（逃げた）こと",
+        "孟子のたとえ話",
+        "百歩逃げたこと",
+        "戦いに勝ったこと"
+      ],
+      "answerIndex": 0,
+      "explanation": "五十歩でも逃げたことには変わりがない。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_02_020",
+      "unit": "japanese.kanbun.kuho.limit.hypothesis",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「王如知此、則無望民之多於隣国也。」の「如」の読みは？",
+      "choices": [
+        "ゆく",
+        "しく",
+        "もし",
+        "ごとし"
+      ],
+      "answerIndex": 2,
+      "explanation": "仮定の「もシ」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_02_021",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「民之多於隣国」の「於」のはたらきは？",
+      "choices": [
+        "場所（〜で）",
+        "受身（〜に）",
+        "対象（〜に対して）",
+        "比較（〜より）"
+      ],
+      "answerIndex": 3,
+      "explanation": "「民の隣国より多き」＝民が隣国より多くなること。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_02_022",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「五十歩百歩」のたとえで、孟子が恵王に伝えようとしたことは？",
+      "choices": [
+        "恵王の政治は隣国よりはるかにすぐれている",
+        "恵王の政治も隣国と本質的には変わらないので、民が増えることを期待してはいけない",
+        "戦争に勝てば、民は自然に集まってくる",
+        "恵王は逃げずに最後まで戦うべきだ"
+      ],
+      "answerIndex": 1,
+      "explanation": "戦争を好み、民を苦しめる点では同じ。真の王道政治を求めた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_02_023",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "故事成語「矛盾」の意味は？",
+      "choices": [
+        "強い者どうしが戦うこと",
+        "二つのものが仲よく並ぶこと",
+        "つじつまが合わないこと",
+        "前後でくり返し言うこと"
+      ],
+      "answerIndex": 2,
+      "explanation": "『韓非子』の話。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_02_024",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「矛盾」の話が収められている書物は？",
+      "choices": [
+        "韓非子",
+        "戦国策",
+        "史記",
+        "孟子"
+      ],
+      "answerIndex": 0,
+      "explanation": "韓非は戦国時代の法家の思想家。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_02_025",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "韓非子の思想の説明として正しいものは？",
+      "choices": [
+        "仁と礼による政治を説いた儒家の思想",
+        "法律と刑罰による政治を重視した法家の思想",
+        "無為自然を説いた道家の思想",
+        "平和主義と兼愛を説いた墨家の思想"
+      ],
+      "answerIndex": 1,
+      "explanation": "儒家の徳治主義を批判した。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_02_026",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「楚人有鬻盾与矛者。」の「鬻」の意味は？",
+      "choices": [
+        "売る",
+        "持つ",
+        "作る",
+        "買う"
+      ],
+      "answerIndex": 0,
+      "explanation": "「ひさグ」と読む。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_02_027",
+      "unit": "japanese.kanbun.kuho.negation.negation",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「吾盾之堅、莫能陥也。」の意味は？",
+      "choices": [
+        "わたしの盾は、何もつき通すことができない",
+        "わたしの盾は堅くないので、すぐ穴があく",
+        "わたしの盾の堅さは、つき通せるものがない",
+        "わたしの盾は堅いが、つき通すこともできる"
+      ],
+      "answerIndex": 2,
+      "explanation": "「莫能〜」＝〜できるものはない。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_02_028",
+      "unit": "japanese.kanbun.kuho.negation.negation",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「於物無不陥也。」の意味は？",
+      "choices": [
+        "物をつき通すことはしない",
+        "どんな物でもつき通さないものはない",
+        "どんな物もつき通すことはできない",
+        "つき通せる物は一つもない"
+      ],
+      "answerIndex": 1,
+      "explanation": "「無不〜」＝〜しないものはない（二重否定＝強い肯定）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_02_029",
+      "unit": "japanese.kanbun.kuho.negation.negation",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「無不〜」のような否定の形を何という？",
+      "choices": [
+        "部分否定",
+        "禁止",
+        "二重否定",
+        "全部否定"
+      ],
+      "answerIndex": 2,
+      "explanation": "否定を二つ重ねて、強い肯定を表す。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_02_030",
+      "unit": "japanese.kanbun.kuho.negation.negation",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「其人弗能応也。」の意味は？",
+      "choices": [
+        "その人はうまく答えた",
+        "その人は答えることができなかった",
+        "その人は答えようとしなかった",
+        "その人は答える必要がなかった"
+      ],
+      "answerIndex": 1,
+      "explanation": "「弗能〜」＝〜できない（不可能）。「弗」は「不」と同じ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_02_031",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「以子之矛、陥子之盾、何如。」でたずねられた人が答えられなかった理由は？",
+      "choices": [
+        "矛と盾を売る値段を決めていなかったから",
+        "「つき通せる」と答えても「つき通せない」と答えても、前に言ったことと食い違うから",
+        "矛も盾も、まだ作っていなかったから",
+        "相手のことばが外国語で分からなかったから"
+      ],
+      "answerIndex": 1,
+      "explanation": "ここから「矛盾」という語ができた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_02_032",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "韓非子が「矛盾」の話で批判した相手は？",
+      "choices": [
+        "無為自然を説く道家",
+        "法律を重んじる法家",
+        "戦争を好む君主",
+        "堯と舜をともに聖人としてほめる儒家"
+      ],
+      "answerIndex": 3,
+      "explanation": "舜が民を導いたなら堯の政治は不完全だったことになり、両方をほめるのはつじつまが合わない、と考えた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_02_033",
+      "unit": "japanese.kanbun.text.history.koji",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「子之矛」の「子」の意味は？",
+      "choices": [
+        "先生",
+        "あなた",
+        "子ども",
+        "わたし"
+      ],
+      "answerIndex": 1,
+      "explanation": "相手を敬っていう二人称。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_02_034",
+      "unit": "japanese.kanbun.kundoku.saidoku.words",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「也」の用法として当てはまらないものは？",
+      "choices": [
+        "呼びかけ（よ）",
+        "断定（なり）",
+        "疑問・反語（や・か）",
+        "使役（〜させる）"
+      ],
+      "answerIndex": 3,
+      "explanation": "主題の提示「〜は（や）」の用法もある。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_02_035",
+      "unit": "japanese.kanbun.kundoku.saidoku.words",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「以」の主な読みと意味は？",
+      "choices": [
+        "まさニ（今にも）",
+        "ゆゑニ（だから）",
+        "もっテ（〜を使って・〜によって）",
+        "いまダ（まだ）"
+      ],
+      "answerIndex": 2,
+      "explanation": "手段・方法・理由などを表す。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_02_036",
+      "unit": "japanese.kanbun.kundoku.saidoku.words",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「為」の読み方として当てはまらないものは？",
+      "choices": [
+        "なる",
+        "ため",
+        "つくる",
+        "いまだ"
+      ],
+      "answerIndex": 3,
+      "explanation": "ほかに「なす」「たり」、受身の「る・らる」などがある。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_02_037",
+      "unit": "japanese.kanbun.kundoku.saidoku.words",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "二人称で、目上の人に対して使う語の組み合わせは？",
+      "choices": [
+        "子・公・君・卿",
+        "寡人・臣・妾・僕",
+        "汝・爾・若・女",
+        "吾・我・余・予"
+      ],
+      "answerIndex": 0,
+      "explanation": "汝・爾・若・女は目下に対する「なんぢ」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_koji_02_038",
+      "unit": "japanese.kanbun.kundoku.saidoku.words",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "二人称の「なんぢ」と読む字として当てはまらないものは？",
+      "choices": [
+        "卿",
+        "若",
+        "爾",
+        "汝"
+      ],
+      "answerIndex": 0,
+      "explanation": "「卿」は目上に対する「あなた」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "koji"
+      ]
+    }
+  ]
+}

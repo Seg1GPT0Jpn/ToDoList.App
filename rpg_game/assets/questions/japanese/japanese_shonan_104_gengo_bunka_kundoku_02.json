@@ -1,0 +1,882 @@
+{
+  "setId": "japanese_shonan_104_gengo_bunka_kundoku_02",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_02_001",
+      "unit": "japanese.kanbun.kundoku.basic.kakikudashi",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「其馬将胡駿馬而帰。」の「将」の意味は？",
+      "choices": [
+        "いまにも〜しようとする",
+        "将軍",
+        "持つ",
+        "引き連れる"
+      ],
+      "answerIndex": 3,
+      "explanation": "「其の馬胡の駿馬を将ゐて帰る」。ここでは再読文字ではない。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_02_002",
+      "unit": "japanese.kanbun.kundoku.basic.kakikudashi",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「病従口入、禍従口出。」の「従」の意味は？",
+      "choices": [
+        "〜とともに",
+        "〜から（〜より）",
+        "〜のように",
+        "〜に従う"
+      ],
+      "answerIndex": 1,
+      "explanation": "「病は口より入り、禍は口より出づ」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_02_003",
+      "unit": "japanese.kanbun.kundoku.saidoku.words",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「若」の読み方として当てはまらないものは？",
+      "choices": [
+        "もし",
+        "ごとし",
+        "しく",
+        "いまだ"
+      ],
+      "answerIndex": 3,
+      "explanation": "ほかに「なんぢ（二人称）」とも読む。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_02_004",
+      "unit": "japanese.kanbun.kundoku.saidoku.words",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「君子之交淡若水。」の「若」の読みは？",
+      "choices": [
+        "ごとし",
+        "もし",
+        "なんぢ",
+        "しく"
+      ],
+      "answerIndex": 0,
+      "explanation": "「君子の交はりは淡きこと水の若し」＝比況。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_02_005",
+      "unit": "japanese.kanbun.kundoku.saidoku.words",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「若有欲学法令、以吏為師。」の「若」の読みは？",
+      "choices": [
+        "もし",
+        "なんぢ",
+        "しく",
+        "ごとし"
+      ],
+      "answerIndex": 0,
+      "explanation": "「若し法令を学ばんと欲する有らば、吏を以て師と為せ」＝仮定。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_02_006",
+      "unit": "japanese.kanbun.kundoku.saidoku.words",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「彼与彼年相若也。」の「若」の読みは？",
+      "choices": [
+        "もし",
+        "しく",
+        "なんぢ",
+        "ごとし"
+      ],
+      "answerIndex": 1,
+      "explanation": "「及ぶ・匹敵する」の意味。年齢が同じくらいだということ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_02_007",
+      "unit": "japanese.kanbun.kundoku.saidoku.words",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「若尚有畏乎。」の「若」の読みは？",
+      "choices": [
+        "もし",
+        "なんぢ",
+        "しく",
+        "ごとし"
+      ],
+      "answerIndex": 1,
+      "explanation": "「若尚ほ畏るる有りや」＝おまえはまだ恐れるものがあるのか。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_02_008",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "一つの字を二度読む字を何という？",
+      "choices": [
+        "使役の字",
+        "再読文字",
+        "返読文字",
+        "置き字"
+      ],
+      "answerIndex": 1,
+      "explanation": "一度目は返り点を無視して副詞として、二度目は返り点に従って動詞・助動詞として読む。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_02_009",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "再読文字の読み方として正しいものは？",
+      "choices": [
+        "一度目は動詞として、二度目は副詞として読む",
+        "一度目は返り点を無視して副詞として読み、二度目は返り点に従って読む",
+        "一度目は読まず、二度目だけ読む",
+        "一度目も二度目も返り点に従って読む"
+      ],
+      "answerIndex": 1,
+      "explanation": "例：未→「いまダ〜ず」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_02_010",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "再読文字「未」の読み方は？",
+      "choices": [
+        "まさニ〜ベシ",
+        "いまダ〜ず",
+        "まさニ〜ントす",
+        "よろシク〜ベシ"
+      ],
+      "answerIndex": 1,
+      "explanation": "意味は「まだ〜しない」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_02_011",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "再読文字「未」の意味は？",
+      "choices": [
+        "まさに〜しようとする",
+        "〜するのがよい",
+        "まだ〜しない",
+        "ぜひ〜する必要がある"
+      ],
+      "answerIndex": 2,
+      "explanation": "読みは「いまダ〜ず」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_02_012",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "再読文字「将」の読み方は？",
+      "choices": [
+        "まさニ〜ベシ",
+        "いまダ〜ず",
+        "よろシク〜ベシ",
+        "まさニ〜ントす"
+      ],
+      "answerIndex": 3,
+      "explanation": "意味は「今にも〜しようとする」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_02_013",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "再読文字「将」の意味は？",
+      "choices": [
+        "今にも〜しようとする",
+        "ちょうど〜と同じだ",
+        "当然〜すべきだ",
+        "まだ〜しない"
+      ],
+      "answerIndex": 0,
+      "explanation": "読みは「まさニ〜ントす」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_02_014",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "再読文字「当」の読み方は？",
+      "choices": [
+        "まさニ〜ベシ",
+        "よろシク〜ベシ",
+        "いまダ〜ず",
+        "まさニ〜ントす"
+      ],
+      "answerIndex": 0,
+      "explanation": "意味は「当然〜すべきだ」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_02_015",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "再読文字「当」の意味は？",
+      "choices": [
+        "今にも〜しようとする",
+        "当然〜すべきだ",
+        "どうして〜しないのか",
+        "まだ〜しない"
+      ],
+      "answerIndex": 1,
+      "explanation": "読みは「まさニ〜ベシ」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_02_016",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "再読文字「応」の読み方は？",
+      "choices": [
+        "いまダ〜ず",
+        "まさニ〜ントす",
+        "よろシク〜ベシ",
+        "まさニ〜ベシ"
+      ],
+      "answerIndex": 3,
+      "explanation": "意味は「きっと〜だろう」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_02_017",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "再読文字「応」の意味は？",
+      "choices": [
+        "まだ〜しない",
+        "きっと〜だろう",
+        "ちょうど〜と同じだ",
+        "〜するのがよい"
+      ],
+      "answerIndex": 1,
+      "explanation": "読みは「まさニ〜ベシ」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_02_018",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "再読文字「宜」の読み方は？",
+      "choices": [
+        "いまダ〜ず",
+        "まさニ〜ベシ",
+        "よろシク〜ベシ",
+        "まさニ〜ントす"
+      ],
+      "answerIndex": 2,
+      "explanation": "意味は「〜するのがよい」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_02_019",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "再読文字「宜」の意味は？",
+      "choices": [
+        "今にも〜しようとする",
+        "まだ〜しない",
+        "ちょうど〜と同じだ",
+        "〜するのがよい"
+      ],
+      "answerIndex": 3,
+      "explanation": "読みは「よろシク〜ベシ」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_02_020",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "再読文字「須」の読み方は？",
+      "choices": [
+        "まさニ〜ントす",
+        "すべかラク〜ベシ",
+        "いまダ〜ず",
+        "まさニ〜ベシ"
+      ],
+      "answerIndex": 1,
+      "explanation": "意味は「ぜひ〜する必要がある」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_02_021",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "再読文字「須」の意味は？",
+      "choices": [
+        "〜するのがよい",
+        "まだ〜しない",
+        "どうして〜しないのか",
+        "ぜひ〜する必要がある"
+      ],
+      "answerIndex": 3,
+      "explanation": "読みは「すべかラク〜ベシ」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_02_022",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "再読文字「猶」の読み方は？",
+      "choices": [
+        "まさニ〜ベシ",
+        "なホ〜ノ（ガ）ごとシ",
+        "いまダ〜ず",
+        "まさニ〜ントす"
+      ],
+      "answerIndex": 1,
+      "explanation": "意味は「ちょうど〜と同じだ」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_02_023",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "再読文字「猶」の意味は？",
+      "choices": [
+        "ぜひ〜する必要がある",
+        "今にも〜しようとする",
+        "まだ〜しない",
+        "ちょうど〜と同じだ"
+      ],
+      "answerIndex": 3,
+      "explanation": "読みは「なホ〜ノ（ガ）ごとシ」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_02_024",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "再読文字「盍」の読み方は？",
+      "choices": [
+        "まさニ〜ントす",
+        "なんゾ〜ざル",
+        "いまダ〜ず",
+        "まさニ〜ベシ"
+      ],
+      "answerIndex": 1,
+      "explanation": "意味は「どうして〜しないのか（〜すればよい）」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_02_025",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "再読文字「盍」の意味は？",
+      "choices": [
+        "当然〜すべきだ",
+        "まだ〜しない",
+        "ちょうど〜と同じだ",
+        "どうして〜しないのか（〜すればよい）"
+      ],
+      "answerIndex": 3,
+      "explanation": "読みは「なんゾ〜ざル」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_02_026",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「将」と同じく「まさニ〜ントす」と読む再読文字は？",
+      "choices": [
+        "且",
+        "当",
+        "未",
+        "応"
+      ],
+      "answerIndex": 0,
+      "explanation": "「将」は「将軍」の意味で使われることもある。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_02_027",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「猶」と同じく「なホ〜ノ（ガ）ごとシ」と読む再読文字は？",
+      "choices": [
+        "宜",
+        "須",
+        "盍",
+        "由"
+      ],
+      "answerIndex": 3,
+      "explanation": "「由」は「よル」と読む動詞のこともある。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_02_028",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「まさニ〜ベシ」と読む再読文字の組み合わせは？",
+      "choices": [
+        "猶・由",
+        "将・且",
+        "当・応",
+        "未・盍"
+      ],
+      "answerIndex": 2,
+      "explanation": "「当」は当然、「応」は推量の意味が中心。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_02_029",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「未解憶長安。」の書き下し文は？",
+      "choices": [
+        "未だ長安を憶ひて解せず。",
+        "未だ解せずして長安を憶ふ。",
+        "未だ長安を憶ふを解せず。",
+        "長安を憶ふを未だ解す。"
+      ],
+      "answerIndex": 2,
+      "explanation": "杜甫「月夜」の一句。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_02_030",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「田園将蕪。」の書き下し文は？",
+      "choices": [
+        "田園未だ蕪れず。",
+        "田園将ゐて蕪る。",
+        "田園将に蕪るべし。",
+        "田園将に蕪れんとす。"
+      ],
+      "answerIndex": 3,
+      "explanation": "陶淵明「帰去来の辞」の一句。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_02_031",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「及時当勉励。」の書き下し文は？",
+      "choices": [
+        "時に及んで当に勉励せんとす。",
+        "時に及ばずして勉励すべし。",
+        "時に当たりて勉励に及ぶ。",
+        "時に及んで当に勉励すべし。"
+      ],
+      "answerIndex": 3,
+      "explanation": "陶淵明「雑詩」の一句。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_02_032",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「過猶不及。」の書き下し文は？",
+      "choices": [
+        "過ぎたるは及ばざるに猶るがごとし。",
+        "過ぎたるは猶ほ及ばざるがごとし。",
+        "過ぎたるは猶ほ及ばず。",
+        "猶ほ過ぎたるに及ばず。"
+      ],
+      "answerIndex": 1,
+      "explanation": "『論語』。やり過ぎは足りないのと同じでよくない、という意味。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_02_033",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「盍各言爾志。」の書き下し文は？",
+      "choices": [
+        "各爾の志を言はざらん。",
+        "盍ぞ各爾の志を言ふ。",
+        "盍ぞ各爾の志を言はざる。",
+        "盍ぞ各爾の志を言ふべき。"
+      ],
+      "answerIndex": 2,
+      "explanation": "『論語』。「どうしてそれぞれ自分の志を言わないのか（言ってごらん）」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_02_034",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「須常思病苦時。」の書き下し文は？",
+      "choices": [
+        "常に病苦の時を思ふを須ふ。",
+        "須らく常に病苦の時を思はんとす。",
+        "須らく常に病苦の時を思はず。",
+        "須らく常に病苦の時を思ふべし。"
+      ],
+      "answerIndex": 3,
+      "explanation": "「すべかラク〜ベシ」＝ぜひ〜する必要がある。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_02_035",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「惟仁者宜在高位。」の書き下し文は？",
+      "choices": [
+        "惟だ仁者のみ高位に在るを宜しとす。",
+        "惟だ仁者のみ宜しく高位に在るべし。",
+        "惟だ仁者は宜しく高位に在らんとす。",
+        "仁者を惟ひて宜しく高位に在るべし。"
+      ],
+      "answerIndex": 1,
+      "explanation": "『孟子』。「惟」は限定の副詞「たダ」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_02_036",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「未聞好学者也。」の書き下し文は？",
+      "choices": [
+        "未だ学を好む者を聞くなり。",
+        "未だ学を好みて聞かざる者なり。",
+        "学を好む者未だ聞かざるなり。",
+        "未だ学を好む者を聞かざるなり。"
+      ],
+      "answerIndex": 3,
+      "explanation": "「也」は断定の助動詞「なり」。連体形「ざる」に続く。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_02_037",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「引酒且飲之。」（酒を引きて且に之を飲まんとす。）で、「且」の二度目の読みにあたるのは？",
+      "choices": [
+        "まん",
+        "ん",
+        "まさに",
+        "す"
+      ],
+      "answerIndex": 3,
+      "explanation": "「飲まん」の「ん」は送り仮名（助動詞「む」）。再読の二度目は「す」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_02_038",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "再読文字「未」の二度目の読み「ず」は、書き下し文でどう書く？",
+      "choices": [
+        "ひらがなで「ず」と書く",
+        "書かない",
+        "カタカナで「ズ」と書く",
+        "漢字で「未」と書く"
+      ],
+      "answerIndex": 0,
+      "explanation": "助動詞にあたるので、ひらがなにする。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    }
+  ]
+}

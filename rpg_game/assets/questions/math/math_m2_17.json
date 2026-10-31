@@ -1,0 +1,288 @@
+{
+  "setId": "math_m2_17",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_m217_001",
+      "unit": "math.m2.calculus.apply.extremum",
+      "category": "calculation",
+      "prompt": "f(x)=x³−3x²+2 の極小値は？",
+      "choices": [
+        "−2",
+        "2",
+        "−1",
+        "0"
+      ],
+      "answerIndex": 0,
+      "explanation": "f′(x)=3x(x−2)。x=2 で極小。"
+    },
+    {
+      "id": "mat_m217_002",
+      "unit": "math.m2.calculus.integ.area",
+      "category": "calculation",
+      "prompt": "放物線 y=x² と x 軸、直線 x=3 で囲まれた部分の面積は？",
+      "choices": [
+        "3",
+        "6",
+        "9",
+        "27"
+      ],
+      "answerIndex": 2,
+      "explanation": "∫₀³ x² dx。"
+    },
+    {
+      "id": "mat_m217_003",
+      "unit": "math.m2.calculus.integ.area",
+      "category": "calculation",
+      "prompt": "放物線 y=x²−1 と x 軸で囲まれた部分の面積は？",
+      "choices": [
+        "2",
+        "1",
+        "4/3",
+        "2/3"
+      ],
+      "answerIndex": 2,
+      "explanation": "∫₋₁¹ (1−x²) dx。"
+    },
+    {
+      "id": "mat_m217_004",
+      "unit": "math.m2.calculus.integ.area",
+      "category": "calculation",
+      "prompt": "放物線 y=x² と直線 y=x で囲まれた部分の面積は？",
+      "choices": [
+        "1/2",
+        "1/6",
+        "1/3",
+        "1"
+      ],
+      "answerIndex": 1,
+      "explanation": "∫₀¹ (x−x²) dx。"
+    },
+    {
+      "id": "mat_m217_005",
+      "unit": "math.m2.calculus.apply.maxmin",
+      "category": "calculation",
+      "prompt": "f(x)=x³−3x（0≦x≦2）の最大値は？",
+      "choices": [
+        "−2",
+        "0",
+        "2",
+        "1"
+      ],
+      "answerIndex": 2,
+      "explanation": "f(0)=0、f(1)=−2、f(2)=2。"
+    },
+    {
+      "id": "mat_m217_006",
+      "unit": "math.m2.calculus.diff.tangent",
+      "category": "calculation",
+      "prompt": "曲線 y=x³ 上の点 (1, 1) における接線の方程式は？",
+      "choices": [
+        "y=3x−2",
+        "y=x",
+        "y=3x−1",
+        "y=3x+2"
+      ],
+      "answerIndex": 0,
+      "explanation": "傾き3。"
+    },
+    {
+      "id": "mat_m217_007",
+      "unit": "math.m2.calculus.integ.indefinite",
+      "category": "calculation",
+      "prompt": "∫₋₁¹ x³ dx の値は？",
+      "choices": [
+        "1",
+        "0",
+        "−1/2",
+        "1/2"
+      ],
+      "answerIndex": 1,
+      "explanation": "奇関数なので打ち消し合う。"
+    },
+    {
+      "id": "mat_m217_008",
+      "unit": "math.m2.calculus.integ.indefinite",
+      "category": "knowledge",
+      "prompt": "d/dx ∫ₐˣ f(t) dt は？（a は定数）",
+      "choices": [
+        "f′(x)",
+        "f(x)−f(a)",
+        "f(a)",
+        "f(x)"
+      ],
+      "answerIndex": 3,
+      "explanation": "微分と積分は逆の関係。"
+    },
+    {
+      "id": "mat_m217_009",
+      "unit": "math.m2.calculus.apply.equation",
+      "category": "calculation",
+      "prompt": "方程式 x³−3x−k=0 が異なる3つの実数解をもつ k の範囲は？",
+      "choices": [
+        "k<−2",
+        "k>2",
+        "−2<k<2",
+        "−1<k<1"
+      ],
+      "answerIndex": 2,
+      "explanation": "y=x³−3x と y=k の共有点。極大2、極小−2。"
+    },
+    {
+      "id": "mat_m217_010",
+      "unit": "math.m2.calculus.integ.area",
+      "category": "thinking",
+      "prompt": "面積を求めるとき、x 軸より下にある部分はどう扱う？",
+      "choices": [
+        "関数にマイナスをつけて積分する（面積は正）",
+        "2倍する",
+        "無視する",
+        "そのまま積分する"
+      ],
+      "answerIndex": 0,
+      "explanation": "定積分の値は x 軸より下で負になるため。"
+    },
+    {
+      "id": "mat_m217_011",
+      "unit": "math.m2.calculus.apply.extremum",
+      "category": "calculation",
+      "prompt": "f(x)=2x³−3x²−12x の極大値は？",
+      "choices": [
+        "7",
+        "−20",
+        "20",
+        "0"
+      ],
+      "answerIndex": 0,
+      "explanation": "f′=6(x−2)(x+1)。x=−1 で極大 −2−3+12=7。"
+    },
+    {
+      "id": "mat_m217_012",
+      "unit": "math.m2.calculus.integ.area",
+      "category": "calculation",
+      "prompt": "放物線 y=x² と x 軸、直線 x=2 で囲まれた部分の面積は？",
+      "choices": [
+        "8",
+        "8/3",
+        "4",
+        "2"
+      ],
+      "answerIndex": 1,
+      "explanation": "∫₀² x² dx=8/3。"
+    },
+    {
+      "id": "mat_m217_013",
+      "unit": "math.m2.calculus.integ.area",
+      "category": "calculation",
+      "prompt": "放物線 y=4−x² と x 軸で囲まれた部分の面積は？",
+      "choices": [
+        "8",
+        "16/3",
+        "16",
+        "32/3"
+      ],
+      "answerIndex": 3,
+      "explanation": "∫₋₂² (4−x²) dx=2(8−8/3)=32/3。"
+    },
+    {
+      "id": "mat_m217_014",
+      "unit": "math.m2.calculus.integ.area",
+      "category": "calculation",
+      "prompt": "放物線 y=x² と直線 y=2x で囲まれた部分の面積は？",
+      "choices": [
+        "8/3",
+        "4",
+        "2/3",
+        "4/3"
+      ],
+      "answerIndex": 3,
+      "explanation": "交点 x=0、2。(1/6)(2−0)³=4/3。"
+    },
+    {
+      "id": "mat_m217_015",
+      "unit": "math.m2.calculus.apply.maxmin",
+      "category": "calculation",
+      "prompt": "f(x)=x³−12x（−3≦x≦3）の最大値は？",
+      "choices": [
+        "0",
+        "16",
+        "−16",
+        "9"
+      ],
+      "answerIndex": 1,
+      "explanation": "x=−2 で極大16、端点 x=3 で −9、x=−3 で 9。"
+    },
+    {
+      "id": "mat_m217_016",
+      "unit": "math.m2.calculus.diff.tangent",
+      "category": "calculation",
+      "prompt": "曲線 y=x³−x 上の点 (0, 0) における接線の方程式は？",
+      "choices": [
+        "y=x",
+        "y=−x",
+        "y=−3x",
+        "y=0"
+      ],
+      "answerIndex": 1,
+      "explanation": "y′=3x²−1、x=0 で −1。"
+    },
+    {
+      "id": "mat_m217_017",
+      "unit": "math.m2.calculus.integ.indefinite",
+      "category": "calculation",
+      "prompt": "∫₋₂² x² dx の値は？",
+      "choices": [
+        "16/3",
+        "8",
+        "8/3",
+        "0"
+      ],
+      "answerIndex": 0,
+      "explanation": "偶関数なので 2∫₀² x² dx=16/3。"
+    },
+    {
+      "id": "mat_m217_018",
+      "unit": "math.m2.calculus.integ.indefinite",
+      "category": "calculation",
+      "prompt": "F(x)=∫₀ˣ (t²+1) dt のとき、F′(x) は？",
+      "choices": [
+        "2x",
+        "x³/3+x",
+        "t²+1",
+        "x²+1"
+      ],
+      "answerIndex": 3,
+      "explanation": "積分して微分すると、中身の t を x にかえたものになる。"
+    },
+    {
+      "id": "mat_m217_019",
+      "unit": "math.m2.calculus.apply.equation",
+      "category": "calculation",
+      "prompt": "方程式 x³−3x²+2=k が異なる3つの実数解をもつ k の範囲は？",
+      "choices": [
+        "−2<k<2",
+        "0<k<2",
+        "−2<k<0",
+        "k<2"
+      ],
+      "answerIndex": 0,
+      "explanation": "y=x³−3x²+2 の極大値2（x=0）、極小値 −2（x=2）の間。"
+    },
+    {
+      "id": "mat_m217_020",
+      "unit": "math.m2.calculus.diff",
+      "category": "thinking",
+      "prompt": "3次関数のグラフと直線 y=k の共有点の個数を調べる理由は？",
+      "choices": [
+        "面積が分かるから",
+        "接線の傾きが分かるから",
+        "定数項が分かるから",
+        "方程式 f(x)=k の実数解の個数と一致するから"
+      ],
+      "answerIndex": 3,
+      "explanation": "文字定数を分離して、グラフと水平線の交点で解の個数を数える。"
+    }
+  ]
+}

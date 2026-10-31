@@ -1,0 +1,288 @@
+{
+  "setId": "math_m1_08",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_m108_001",
+      "unit": "math.m1.trig.solve.sine",
+      "category": "knowledge",
+      "prompt": "正弦定理として正しいものは？（R は外接円の半径）",
+      "choices": [
+        "a/cosA=2R",
+        "a/sinA=2R",
+        "a/sinA=R",
+        "a·sinA=2R"
+      ],
+      "answerIndex": 1,
+      "explanation": "a/sinA=b/sinB=c/sinC=2R。"
+    },
+    {
+      "id": "mat_m108_002",
+      "unit": "math.m1.trig.solve.cosine",
+      "category": "calculation",
+      "prompt": "△ABC で b=3、c=5、A=120° のとき、a の値は？",
+      "choices": [
+        "√34",
+        "7",
+        "√19",
+        "8"
+      ],
+      "answerIndex": 1,
+      "explanation": "余弦定理：a²=9+25−2·3·5·cos120°=34+15=49。"
+    },
+    {
+      "id": "mat_m108_003",
+      "unit": "math.m1.trig.solve.area",
+      "category": "calculation",
+      "prompt": "△ABC で b=4、c=5、A=30° のとき、面積は？",
+      "choices": [
+        "10",
+        "5",
+        "5√3",
+        "10√3"
+      ],
+      "answerIndex": 1,
+      "explanation": "S=½bc·sinA=½·4·5·½=5。"
+    },
+    {
+      "id": "mat_m108_004",
+      "unit": "math.m1.trig.solve.sine",
+      "category": "calculation",
+      "prompt": "△ABC で a=6、A=30° のとき、外接円の半径 R は？",
+      "choices": [
+        "6√3",
+        "6",
+        "3",
+        "12"
+      ],
+      "answerIndex": 1,
+      "explanation": "2R=6/sin30°=12。"
+    },
+    {
+      "id": "mat_m108_005",
+      "unit": "math.m1.trig.ratio.define",
+      "category": "calculation",
+      "prompt": "△ABC で a=7、b=5、c=3 のとき、角 A は？",
+      "choices": [
+        "60°",
+        "150°",
+        "90°",
+        "120°"
+      ],
+      "answerIndex": 3,
+      "explanation": "cosA=(25+9−49)/(2·5·3)=−1/2。"
+    },
+    {
+      "id": "mat_m108_006",
+      "unit": "math.m1.trig.ratio.relation",
+      "category": "calculation",
+      "prompt": "θ が鋭角で tanθ=2 のとき、cosθ の値は？",
+      "choices": [
+        "2√5/5",
+        "√5/2",
+        "√5/5",
+        "1/2"
+      ],
+      "answerIndex": 2,
+      "explanation": "1+tan²θ=1/cos²θ より cos²θ=1/5。"
+    },
+    {
+      "id": "mat_m108_007",
+      "unit": "math.m1.trig.ratio.obtuse",
+      "category": "calculation",
+      "prompt": "0°≦θ≦180° で sinθ=1/2 を満たす θ は？",
+      "choices": [
+        "60°, 120°",
+        "150°",
+        "30°, 150°",
+        "30°"
+      ],
+      "answerIndex": 2,
+      "explanation": "単位円で y 座標が 1/2 の点は2つ。"
+    },
+    {
+      "id": "mat_m108_008",
+      "unit": "math.m1.trig.ratio.obtuse",
+      "category": "calculation",
+      "prompt": "0°≦θ≦180° で cosθ=−√3/2 を満たす θ は？",
+      "choices": [
+        "120°",
+        "30°",
+        "150°",
+        "135°"
+      ],
+      "answerIndex": 2,
+      "explanation": "単位円で x 座標が −√3/2。"
+    },
+    {
+      "id": "mat_m108_009",
+      "unit": "math.m1.trig.solve.area",
+      "category": "calculation",
+      "prompt": "3辺の長さが 5、5、6 の三角形の面積は？",
+      "choices": [
+        "15",
+        "10",
+        "24",
+        "12"
+      ],
+      "answerIndex": 3,
+      "explanation": "底辺6、高さ √(25−9)=4 で ½·6·4=12。ヘロンの公式でもよい。"
+    },
+    {
+      "id": "mat_m108_010",
+      "unit": "math.m1.trig.ratio.obtuse",
+      "category": "thinking",
+      "prompt": "三角形が鋭角・直角・鈍角三角形のどれかを判定する方法は？",
+      "choices": [
+        "周の長さを比べる",
+        "最小の辺を調べる",
+        "最大辺 c について、c² と a²+b² の大小を比べる",
+        "面積を比べる"
+      ],
+      "answerIndex": 2,
+      "explanation": "c²>a²+b² なら鈍角、= なら直角、< なら鋭角。"
+    },
+    {
+      "id": "mat_m108_011",
+      "unit": "math.m1.trig.solve",
+      "category": "calculation",
+      "prompt": "△ABC で a=3、b=5、C=60° のとき、c の値は？",
+      "choices": [
+        "√34",
+        "√19",
+        "4",
+        "7"
+      ],
+      "answerIndex": 1,
+      "explanation": "c²=9+25−2·3·5·½=19。"
+    },
+    {
+      "id": "mat_m108_012",
+      "unit": "math.m1.trig.solve.area",
+      "category": "calculation",
+      "prompt": "△ABC で b=√3、c=2、A=30° のとき、面積は？",
+      "choices": [
+        "√3",
+        "3/2",
+        "√3/2",
+        "1"
+      ],
+      "answerIndex": 2,
+      "explanation": "½·√3·2·sin30°。"
+    },
+    {
+      "id": "mat_m108_013",
+      "unit": "math.m1.trig.solve.sine",
+      "category": "calculation",
+      "prompt": "△ABC で A=45°、B=30°、a=2 のとき、b の値は？",
+      "choices": [
+        "2√2",
+        "√3",
+        "1",
+        "√2"
+      ],
+      "answerIndex": 3,
+      "explanation": "正弦定理：b=a·sinB/sinA=2·½÷(√2/2)。"
+    },
+    {
+      "id": "mat_m108_014",
+      "unit": "math.m1.trig.ratio.define",
+      "category": "calculation",
+      "prompt": "3辺が 5、7、8 の三角形で、長さ7の辺の向かいの角は？",
+      "choices": [
+        "90°",
+        "45°",
+        "60°",
+        "120°"
+      ],
+      "answerIndex": 2,
+      "explanation": "cos=(25+64−49)/(2·5·8)=1/2。"
+    },
+    {
+      "id": "mat_m108_015",
+      "unit": "math.m1.trig.solve",
+      "category": "calculation",
+      "prompt": "3辺が 2、3、4 の三角形は？",
+      "choices": [
+        "三角形にならない",
+        "鈍角三角形",
+        "鋭角三角形",
+        "直角三角形"
+      ],
+      "answerIndex": 1,
+      "explanation": "4²=16>2²+3²=13。"
+    },
+    {
+      "id": "mat_m108_016",
+      "unit": "math.m1.trig.ratio.define",
+      "category": "calculation",
+      "prompt": "0°≦θ≦180° で cosθ=1/2 を満たす θ は？",
+      "choices": [
+        "120°",
+        "60°, 120°",
+        "60°",
+        "30°"
+      ],
+      "answerIndex": 2,
+      "explanation": "cos は 0°〜180° で1つの値に1つの角が対応する。"
+    },
+    {
+      "id": "mat_m108_017",
+      "unit": "math.m1.trig.solve",
+      "category": "calculation",
+      "prompt": "0°≦θ≦180° で tanθ=−1 を満たす θ は？",
+      "choices": [
+        "45°",
+        "150°",
+        "135°",
+        "120°"
+      ],
+      "answerIndex": 2,
+      "explanation": "第2象限で tan が −1。"
+    },
+    {
+      "id": "mat_m108_018",
+      "unit": "math.m1.trig.ratio.obtuse",
+      "category": "calculation",
+      "prompt": "θ が鈍角で sinθ=4/5 のとき、cosθ の値は？",
+      "choices": [
+        "−4/5",
+        "−3/5",
+        "3/5",
+        "−3/4"
+      ],
+      "answerIndex": 1,
+      "explanation": "鈍角なので cos は負。"
+    },
+    {
+      "id": "mat_m108_019",
+      "unit": "math.m1.trig.solve.sine",
+      "category": "calculation",
+      "prompt": "外接円の半径が5、A=30° の △ABC で、a の値は？",
+      "choices": [
+        "5/2",
+        "5√3",
+        "10",
+        "5"
+      ],
+      "answerIndex": 3,
+      "explanation": "a=2R·sinA=10·½。"
+    },
+    {
+      "id": "mat_m108_020",
+      "unit": "math.m1.trig.solve.area",
+      "category": "calculation",
+      "prompt": "△ABC で b=6、c=8、A=150° のとき、面積は？",
+      "choices": [
+        "12",
+        "6",
+        "12√3",
+        "24"
+      ],
+      "answerIndex": 0,
+      "explanation": "½·6·8·sin150°=½·48·½。"
+    }
+  ]
+}

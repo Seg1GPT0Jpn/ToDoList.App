@@ -1,0 +1,344 @@
+{
+  "setId": "information_info1_10",
+  "worldId": "information",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "inf_info110_001",
+      "unit": "information.info.network.basic",
+      "category": "knowledge",
+      "prompt": "学校や家庭など、限られた範囲のネットワークは？",
+      "choices": [
+        "LAN",
+        "DNS",
+        "WAN",
+        "URL"
+      ],
+      "answerIndex": 0,
+      "explanation": "Local Area Network。"
+    },
+    {
+      "id": "inf_info110_002",
+      "unit": "information.info.network.basic",
+      "category": "knowledge",
+      "prompt": "離れた LAN どうしを結ぶ広い範囲のネットワークは？",
+      "choices": [
+        "IoT",
+        "WAN",
+        "LAN",
+        "CPU"
+      ],
+      "answerIndex": 1,
+      "explanation": "Wide Area Network。"
+    },
+    {
+      "id": "inf_info110_003",
+      "unit": "information.info.network.basic",
+      "category": "knowledge",
+      "prompt": "ネットワークでサービスを提供する側のコンピュータは？",
+      "choices": [
+        "サーバ",
+        "クライアント",
+        "ルータ",
+        "ハブ"
+      ],
+      "answerIndex": 0,
+      "explanation": "サービスを受ける側がクライアント。"
+    },
+    {
+      "id": "inf_info110_004",
+      "unit": "information.info.network.basic",
+      "category": "knowledge",
+      "prompt": "データを小さく分けて送る方式は？",
+      "choices": [
+        "パケット交換方式",
+        "符号化方式",
+        "公開鍵方式",
+        "回線交換方式"
+      ],
+      "answerIndex": 0,
+      "explanation": "分けたデータ（パケット）にはあて先などの情報がつく。"
+    },
+    {
+      "id": "inf_info110_005",
+      "unit": "information.info.network.basic.address",
+      "category": "knowledge",
+      "prompt": "ネットワーク上の機器を区別するための番号（住所）は？",
+      "choices": [
+        "URL",
+        "パスワード",
+        "MAC アドレスだけ",
+        "IP アドレス"
+      ],
+      "answerIndex": 3,
+      "explanation": "IPv4 は 32 ビット、IPv6 は 128 ビット。"
+    },
+    {
+      "id": "inf_info110_006",
+      "unit": "information.info.network.basic.address",
+      "category": "knowledge",
+      "prompt": "IPv4 アドレスは何ビット？",
+      "choices": [
+        "128 ビット",
+        "8 ビット",
+        "32 ビット",
+        "64 ビット"
+      ],
+      "answerIndex": 2,
+      "explanation": "8 ビットずつ 4 つに区切って 10 進数で書く（例：192.168.0.1）。"
+    },
+    {
+      "id": "inf_info110_007",
+      "unit": "information.info.network.basic.address",
+      "category": "knowledge",
+      "prompt": "ドメイン名を IP アドレスに変換するしくみは？",
+      "choices": [
+        "HTTP",
+        "DNS",
+        "LAN",
+        "SMTP"
+      ],
+      "answerIndex": 1,
+      "explanation": "Domain Name System。"
+    },
+    {
+      "id": "inf_info110_008",
+      "unit": "information.info.network.basic",
+      "category": "knowledge",
+      "prompt": "ネットワーク機器に製造時に割り当てられた固有の番号は？",
+      "choices": [
+        "IP アドレス",
+        "ポート番号",
+        "ドメイン名",
+        "MAC アドレス"
+      ],
+      "answerIndex": 3,
+      "explanation": "48 ビットで表す。"
+    },
+    {
+      "id": "inf_info110_009",
+      "unit": "information.info.network.basic",
+      "category": "knowledge",
+      "prompt": "ネットワークどうしをつなぎ、パケットの経路を選んで中継する機器は？",
+      "choices": [
+        "モニタ",
+        "プリンタ",
+        "ルータ",
+        "スキャナ"
+      ],
+      "answerIndex": 2,
+      "explanation": "経路選択をルーティングという。"
+    },
+    {
+      "id": "inf_info110_010",
+      "unit": "information.info.network.basic",
+      "category": "calculation",
+      "prompt": "通信速度 100 Mbps の回線で、50 MB（＝ 400 Mbit）のファイルを送るのにかかる時間は？（ほかの影響は考えない）",
+      "choices": [
+        "0.5 秒",
+        "2 秒",
+        "4 秒",
+        "50 秒"
+      ],
+      "answerIndex": 2,
+      "explanation": "400 Mbit ÷ 100 Mbps ＝ 4 秒。B（バイト）と b（ビット）の違いに注意。"
+    },
+    {
+      "id": "inf_info110_011",
+      "unit": "information.info.network.basic.address",
+      "category": "calculation",
+      "prompt": "IPv4 で表せるアドレスの数はおよそ？",
+      "choices": [
+        "約 256",
+        "約 1000 兆",
+        "約 43 億",
+        "約 6.5 万"
+      ],
+      "answerIndex": 2,
+      "explanation": "2³² ≒ 43 億。足りなくなってきたので IPv6（2¹²⁸）が使われる。"
+    },
+    {
+      "id": "inf_info110_012",
+      "unit": "information.info.network.basic",
+      "category": "thinking",
+      "prompt": "パケット交換方式の利点は？",
+      "choices": [
+        "送る順番に必ず届く",
+        "1 本の回線を多くの通信で共有でき、一部が故障しても別の経路で届く",
+        "データが暗号化される",
+        "必ず 1 本の回線を独占できる"
+      ],
+      "answerIndex": 1,
+      "explanation": "回線交換方式（電話）は通信中に回線を占有する。"
+    },
+    {
+      "id": "inf_info110_013",
+      "unit": "information.info.network.basic",
+      "category": "knowledge",
+      "prompt": "ネットワークに接続した機器どうしを中継し、LAN の中でデータを届ける機器は？",
+      "choices": [
+        "スイッチ（ハブ）",
+        "ルータ",
+        "プリンタ",
+        "モデム"
+      ],
+      "answerIndex": 0,
+      "explanation": "MAC アドレスを使って転送する。"
+    },
+    {
+      "id": "inf_info110_014",
+      "unit": "information.info.network.basic",
+      "category": "knowledge",
+      "prompt": "無線で LAN に接続するしくみの一般的な呼び名は？",
+      "choices": [
+        "Bluetooth だけ",
+        "有線 LAN",
+        "Wi-Fi（無線 LAN）",
+        "USB"
+      ],
+      "answerIndex": 2,
+      "explanation": "電波を使う。"
+    },
+    {
+      "id": "inf_info110_015",
+      "unit": "information.info.network.basic.structure",
+      "category": "knowledge",
+      "prompt": "家庭や学校のネットワークを、インターネットに接続するサービスを提供する事業者は？",
+      "choices": [
+        "印刷会社",
+        "OS メーカー",
+        "インターネットサービスプロバイダ（ISP）",
+        "放送局"
+      ],
+      "answerIndex": 2,
+      "explanation": "回線を通じてインターネットにつなぐ。"
+    },
+    {
+      "id": "inf_info110_016",
+      "unit": "information.info.network.basic",
+      "category": "knowledge",
+      "prompt": "サーバが提供するサービスを利用する側のコンピュータは？",
+      "choices": [
+        "クライアント",
+        "スイッチ",
+        "ルータ",
+        "サーバ"
+      ],
+      "answerIndex": 0,
+      "explanation": "クライアントサーバ方式。"
+    },
+    {
+      "id": "inf_info110_017",
+      "unit": "information.info.network.basic",
+      "category": "knowledge",
+      "prompt": "サーバを置かず、対等なコンピュータどうしが直接通信する方式は？",
+      "choices": [
+        "回線交換",
+        "クライアントサーバ",
+        "スター型",
+        "ピア・ツー・ピア（P2P）"
+      ],
+      "answerIndex": 3,
+      "explanation": "ファイル共有などで使われる。"
+    },
+    {
+      "id": "inf_info110_018",
+      "unit": "information.info.network.basic.structure",
+      "category": "knowledge",
+      "prompt": "電話のように、通信中は回線を占有する方式は？",
+      "choices": [
+        "回線交換方式",
+        "P2P",
+        "パケット交換方式",
+        "ストリーミング"
+      ],
+      "answerIndex": 0,
+      "explanation": "インターネットはパケット交換方式。"
+    },
+    {
+      "id": "inf_info110_019",
+      "unit": "information.info.network.basic.address",
+      "category": "knowledge",
+      "prompt": "IPv6 アドレスは何ビット？",
+      "choices": [
+        "64 ビット",
+        "256 ビット",
+        "32 ビット",
+        "128 ビット"
+      ],
+      "answerIndex": 3,
+      "explanation": "IPv4 の枯渇に対応した。"
+    },
+    {
+      "id": "inf_info110_020",
+      "unit": "information.info.network.basic.address",
+      "category": "knowledge",
+      "prompt": "ドメイン名「www.example.co.jp」の「jp」が表すものは？",
+      "choices": [
+        "プロトコル",
+        "会社の種類",
+        "国（日本）",
+        "サーバの名前"
+      ],
+      "answerIndex": 2,
+      "explanation": "co は会社などの組織を表す。"
+    },
+    {
+      "id": "inf_info110_021",
+      "unit": "information.info.network.basic",
+      "category": "calculation",
+      "prompt": "通信速度 10 Mbps の回線で、50 MB のデータを送るのにかかる時間は？（効率 100 %）",
+      "choices": [
+        "40 秒",
+        "4 秒",
+        "5 秒",
+        "50 秒"
+      ],
+      "answerIndex": 0,
+      "explanation": "50 × 8 ＝ 400 Mb。400 ÷ 10。"
+    },
+    {
+      "id": "inf_info110_022",
+      "unit": "information.info.network.basic",
+      "category": "calculation",
+      "prompt": "通信速度 1 Gbps は何 Mbps？",
+      "choices": [
+        "8 Mbps",
+        "10 Mbps",
+        "100 Mbps",
+        "1000 Mbps"
+      ],
+      "answerIndex": 3,
+      "explanation": "G は M の 1000 倍。"
+    },
+    {
+      "id": "inf_info110_023",
+      "unit": "information.info.network.basic.address",
+      "category": "knowledge",
+      "prompt": "IPv4 アドレス「192.168.1.10」は、32 ビットを何ビットずつに区切って 10 進数で表したもの？",
+      "choices": [
+        "32 ビット",
+        "8 ビット",
+        "16 ビット",
+        "4 ビット"
+      ],
+      "answerIndex": 1,
+      "explanation": "8 ビット × 4 つ。1 つの区切りは 0〜255 の値をとる。"
+    },
+    {
+      "id": "inf_info110_024",
+      "unit": "information.info.network.basic",
+      "category": "calculation",
+      "prompt": "通信速度 100 Mbps の回線で、1 GB のデータを送るのにかかる時間は？（1 GB ＝ 1000 MB、圧縮や効率は考えない）",
+      "choices": [
+        "10 秒",
+        "800 秒",
+        "80 秒",
+        "8 秒"
+      ],
+      "answerIndex": 2,
+      "explanation": "1 GB ＝ 8000 Mb。8000 ÷ 100 ＝ 80 秒。"
+    }
+  ]
+}

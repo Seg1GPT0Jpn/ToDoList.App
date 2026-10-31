@@ -1,0 +1,428 @@
+{
+  "setId": "english_order_01",
+  "worldId": "english",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "english_order_01_001",
+      "unit": "english.eng.structure.order",
+      "category": "usage",
+      "prompt": "「彼女は私に駅への行き方を教えてくれた」に合う英文は？",
+      "choices": [
+        "She told me to how get to the station.",
+        "She me told how to get to the station.",
+        "She told how me to get to the station.",
+        "She told me how to get to the station."
+      ],
+      "answerIndex": 3,
+      "explanation": "tell + 人 + how to 〜（〜のしかたを教える）。"
+    },
+    {
+      "id": "english_order_01_002",
+      "unit": "english.eng.structure.order",
+      "category": "usage",
+      "prompt": "「この本は読む価値がある」に合う英文は？",
+      "choices": [
+        "This book is worth reading.",
+        "This book is worth to read.",
+        "This book is reading worth.",
+        "This book worth is reading."
+      ],
+      "answerIndex": 0,
+      "explanation": "be worth 〜ing で「〜する価値がある」。"
+    },
+    {
+      "id": "english_order_01_003",
+      "unit": "english.eng.structure.order",
+      "category": "usage",
+      "prompt": "「彼は速く走ることができるので有名だ」に合う英文は？",
+      "choices": [
+        "He is famous running for fast.",
+        "He is running famous for fast.",
+        "He famous is for running fast.",
+        "He is famous for running fast."
+      ],
+      "answerIndex": 3,
+      "explanation": "be famous for 〜ing。"
+    },
+    {
+      "id": "english_order_01_004",
+      "unit": "english.eng.structure.order",
+      "category": "usage",
+      "prompt": "「雨がやんだら出かけよう」に合う英文は？",
+      "choices": [
+        "Let's go when out it stops raining.",
+        "Let's go out when stops it raining.",
+        "Let's go out when it will stop raining.",
+        "Let's go out when it stops raining."
+      ],
+      "answerIndex": 3,
+      "explanation": "時を表す節の中では未来のことも現在形で表す。"
+    },
+    {
+      "id": "english_order_01_005",
+      "unit": "english.eng.structure.order",
+      "category": "usage",
+      "prompt": "「私は彼に車を洗ってもらった」に合う英文は？",
+      "choices": [
+        "I had wash him my car.",
+        "I had him to wash my car.",
+        "I him had wash my car.",
+        "I had him wash my car."
+      ],
+      "answerIndex": 3,
+      "explanation": "have + 人 + 動詞の原形（人に〜してもらう）。"
+    },
+    {
+      "id": "english_order_01_006",
+      "unit": "english.eng.structure.order",
+      "category": "usage",
+      "prompt": "「私は財布を盗まれた」に合う英文は？",
+      "choices": [
+        "I had stolen my wallet.",
+        "I had my wallet stolen.",
+        "My wallet had me stolen.",
+        "I was stolen my wallet."
+      ],
+      "answerIndex": 1,
+      "explanation": "have + 物 + 過去分詞（物を〜される）。"
+    },
+    {
+      "id": "english_order_01_007",
+      "unit": "english.eng.structure.order",
+      "category": "usage",
+      "prompt": "「その知らせを聞いて私はうれしかった」に合う英文は？",
+      "choices": [
+        "I was happy hearing to the news.",
+        "I happy was to hear the news.",
+        "I was happy to hear the news.",
+        "I was to hear happy the news."
+      ],
+      "answerIndex": 2,
+      "explanation": "感情の原因を表す不定詞。"
+    },
+    {
+      "id": "english_order_01_008",
+      "unit": "english.eng.structure.order",
+      "category": "usage",
+      "prompt": "「これは私が今まで見た中で最も美しい景色だ」に合う英文は？",
+      "choices": [
+        "This is the most beautiful view I have ever seen.",
+        "This is the most view beautiful I have ever seen.",
+        "This is the beautiful most view I have ever seen.",
+        "This is the most beautiful view I have seen ever."
+      ],
+      "answerIndex": 0,
+      "explanation": "最上級 + (that) S have ever 過去分詞。"
+    },
+    {
+      "id": "english_order_01_009",
+      "unit": "english.eng.structure.order",
+      "category": "usage",
+      "prompt": "「窓を開けてもよろしいですか」に合う英文は？",
+      "choices": [
+        "Do you if mind I open the window?",
+        "Do mind you if I open the window?",
+        "Do you mind if open I the window?",
+        "Do you mind if I open the window?"
+      ],
+      "answerIndex": 3,
+      "explanation": "Do you mind if I 〜? で許可を求める。"
+    },
+    {
+      "id": "english_order_01_010",
+      "unit": "english.eng.structure.order",
+      "category": "usage",
+      "prompt": "「彼は疲れすぎて歩けなかった」に合う英文は？",
+      "choices": [
+        "He was too tired walk to.",
+        "He was too tired to walk.",
+        "He was tired too to walk.",
+        "He too was tired to walk."
+      ],
+      "answerIndex": 1,
+      "explanation": "too 〜 to …（〜すぎて…できない）。"
+    },
+    {
+      "id": "english_order_01_011",
+      "unit": "english.eng.structure.order",
+      "category": "usage",
+      "prompt": "「私はその本をどこで買ったか覚えていない」に合う英文は？",
+      "choices": [
+        "I don't remember where did I buy the book.",
+        "I don't remember where I bought the book.",
+        "I don't remember I bought where the book.",
+        "I don't where remember I bought the book."
+      ],
+      "answerIndex": 1,
+      "explanation": "間接疑問文は「疑問詞 + 主語 + 動詞」の語順。"
+    },
+    {
+      "id": "english_order_01_012",
+      "unit": "english.eng.structure.order",
+      "category": "usage",
+      "prompt": "「彼女は英語だけでなくフランス語も話す」に合う英文は？",
+      "choices": [
+        "She speaks not English only but also French.",
+        "She speaks only not English but also French.",
+        "She not only speaks English also but French.",
+        "She speaks not only English but also French."
+      ],
+      "answerIndex": 3,
+      "explanation": "not only A but also B。"
+    },
+    {
+      "id": "english_order_01_013",
+      "unit": "english.eng.structure.order",
+      "category": "usage",
+      "prompt": "「もし私が鳥なら、あなたのところへ飛んでいけるのに」に合う英文は？",
+      "choices": [
+        "If I were a bird, I could fly to you.",
+        "If were I a bird, I could fly to you.",
+        "If I am a bird, I could fly to you.",
+        "If I were a bird, I can fly to you."
+      ],
+      "answerIndex": 0,
+      "explanation": "仮定法過去：If + 過去形, S + could + 原形。"
+    },
+    {
+      "id": "english_order_01_014",
+      "unit": "english.eng.structure.order",
+      "category": "usage",
+      "prompt": "「その問題を解くのは簡単だった」に合う英文は？",
+      "choices": [
+        "It easy was to solve the problem.",
+        "It was easy the problem to solve.",
+        "It was easy to solve the problem.",
+        "It was to solve easy the problem."
+      ],
+      "answerIndex": 2,
+      "explanation": "形式主語 it + to 不定詞。"
+    },
+    {
+      "id": "english_order_01_015",
+      "unit": "english.eng.structure.order",
+      "category": "usage",
+      "prompt": "「私たちが昨日会った男性は医者だ」に合う英文は？",
+      "choices": [
+        "The man we met is yesterday a doctor.",
+        "The man we met yesterday is a doctor.",
+        "The man met we yesterday is a doctor.",
+        "The man is we met yesterday a doctor."
+      ],
+      "answerIndex": 1,
+      "explanation": "目的格の関係代名詞は省略できる。"
+    },
+    {
+      "id": "english_order_01_016",
+      "unit": "english.eng.structure.order",
+      "category": "usage",
+      "prompt": "「彼は何も言わずに部屋を出ていった」に合う英文は？",
+      "choices": [
+        "He left the room without anything saying.",
+        "He left without the room saying anything.",
+        "He left the room without saying anything.",
+        "He without saying left the room anything."
+      ],
+      "answerIndex": 2,
+      "explanation": "without 〜ing（〜しないで）。"
+    },
+    {
+      "id": "english_order_01_017",
+      "unit": "english.eng.structure.order",
+      "category": "usage",
+      "prompt": "「私は彼が来るのを待っている」に合う英文は？",
+      "choices": [
+        "I am for waiting him to come.",
+        "I am waiting him for to come.",
+        "I am waiting to come for him.",
+        "I am waiting for him to come."
+      ],
+      "answerIndex": 3,
+      "explanation": "wait for + 人 + to 〜（人が〜するのを待つ）。"
+    },
+    {
+      "id": "english_order_01_018",
+      "unit": "english.eng.structure.order",
+      "category": "usage",
+      "prompt": "「駅まで歩いて10分かかる」に合う英文は？",
+      "choices": [
+        "It takes to walk ten minutes to the station.",
+        "It ten minutes takes to walk to the station.",
+        "It takes ten minutes walk to to the station.",
+        "It takes ten minutes to walk to the station."
+      ],
+      "answerIndex": 3,
+      "explanation": "It takes + 時間 + to 〜。"
+    },
+    {
+      "id": "english_order_01_019",
+      "unit": "english.eng.structure.order",
+      "category": "usage",
+      "prompt": "「彼女がいつ帰ってくるか教えてください」に合う英文は？",
+      "choices": [
+        "Please tell me she when will come back.",
+        "Please tell me when will she come back.",
+        "Please tell me when she will come back.",
+        "Please tell when me she will come back."
+      ],
+      "answerIndex": 2,
+      "explanation": "間接疑問文の語順。when 節は名詞節なので will を使う。"
+    },
+    {
+      "id": "english_order_01_020",
+      "unit": "english.eng.structure.order",
+      "category": "usage",
+      "prompt": "「私は子どものころからずっとこの町に住んでいる」に合う英文は？",
+      "choices": [
+        "I lived have in this town since I was a child.",
+        "I have lived in this town since I was a child.",
+        "I have lived since in this town I was a child.",
+        "I have lived in this town since was I a child."
+      ],
+      "answerIndex": 1,
+      "explanation": "現在完了の継続 + since。"
+    },
+    {
+      "id": "english_order_01_021",
+      "unit": "english.eng.structure.order",
+      "category": "usage",
+      "prompt": "「この部屋は掃除される必要がある」に合う英文は？",
+      "choices": [
+        "This room needs to cleaning.",
+        "This needs room cleaning.",
+        "This room cleaning needs.",
+        "This room needs cleaning."
+      ],
+      "answerIndex": 3,
+      "explanation": "need 〜ing で「〜される必要がある」。"
+    },
+    {
+      "id": "english_order_01_022",
+      "unit": "english.eng.structure.order",
+      "category": "usage",
+      "prompt": "「彼はまるで何でも知っているかのように話す」に合う英文は？",
+      "choices": [
+        "He as if talks he knew everything.",
+        "He talks if as he knew everything.",
+        "He talks as if he knew everything.",
+        "He talks as if knew he everything."
+      ],
+      "answerIndex": 2,
+      "explanation": "as if + 仮定法過去。"
+    },
+    {
+      "id": "english_order_01_023",
+      "unit": "english.eng.structure.order",
+      "category": "usage",
+      "prompt": "「私は英語で自分の考えを伝えるのが苦手だ」に合う英文は？",
+      "choices": [
+        "I am not good at expressing my ideas in English.",
+        "I am good not at expressing my ideas in English.",
+        "I am not good expressing at my ideas in English.",
+        "I am not at good expressing my ideas in English."
+      ],
+      "answerIndex": 0,
+      "explanation": "be good at 〜ing の否定。"
+    },
+    {
+      "id": "english_order_01_024",
+      "unit": "english.eng.structure.order",
+      "category": "usage",
+      "prompt": "「その映画を見れば見るほど好きになった」に合う英文は？",
+      "choices": [
+        "The more I watched the movie, I liked it the more.",
+        "More I watched the movie, the more I liked it.",
+        "The more I watched the movie, the more I liked it.",
+        "The more watched I the movie, the more I liked it."
+      ],
+      "answerIndex": 2,
+      "explanation": "the 比較級 S V, the 比較級 S V。"
+    },
+    {
+      "id": "english_order_01_025",
+      "unit": "english.eng.structure.order",
+      "category": "usage",
+      "prompt": "「彼が遅れた理由を知っていますか」に合う英文は？",
+      "choices": [
+        "Do you know why was he late?",
+        "Do know you why he was late?",
+        "Do you know he was why late?",
+        "Do you know why he was late?"
+      ],
+      "answerIndex": 3,
+      "explanation": "間接疑問文は平叙文の語順。"
+    },
+    {
+      "id": "english_order_01_026",
+      "unit": "english.eng.structure.order",
+      "category": "usage",
+      "prompt": "「私は彼女に会うのを楽しみにしている」に合う英文は？",
+      "choices": [
+        "I am looking forward to seeing her.",
+        "I am forward looking to seeing her.",
+        "I am looking forward to see her.",
+        "I am looking to forward seeing her."
+      ],
+      "answerIndex": 0,
+      "explanation": "look forward to の to は前置詞なので 〜ing。"
+    },
+    {
+      "id": "english_order_01_027",
+      "unit": "english.eng.structure.order",
+      "category": "usage",
+      "prompt": "「そのニュースは私たちを驚かせた」に合う英文は？",
+      "choices": [
+        "The news was surprised us.",
+        "The news surprising us.",
+        "Us surprised the news.",
+        "The news surprised us."
+      ],
+      "answerIndex": 3,
+      "explanation": "無生物主語 + surprise + 人。"
+    },
+    {
+      "id": "english_order_01_028",
+      "unit": "english.eng.structure.order",
+      "category": "usage",
+      "prompt": "「どちらを選べばよいかわからない」に合う英文は？",
+      "choices": [
+        "I don't know which to choose.",
+        "I don't know which choose to.",
+        "I don't which know to choose.",
+        "I don't know to choose which."
+      ],
+      "answerIndex": 0,
+      "explanation": "which to 〜（どちらを〜すべきか）。"
+    },
+    {
+      "id": "english_order_01_029",
+      "unit": "english.eng.structure.order",
+      "category": "usage",
+      "prompt": "「もっと早く起きていればバスに間に合ったのに」に合う英文は？",
+      "choices": [
+        "If had I gotten up earlier, I could have caught the bus.",
+        "If I got up earlier, I could have caught the bus.",
+        "If I had gotten up earlier, I could catch the bus.",
+        "If I had gotten up earlier, I could have caught the bus."
+      ],
+      "answerIndex": 3,
+      "explanation": "仮定法過去完了：If + had 過去分詞, S + could have 過去分詞。"
+    },
+    {
+      "id": "english_order_01_030",
+      "unit": "english.eng.structure.order",
+      "category": "usage",
+      "prompt": "「彼女は私の2倍の数の本を持っている」に合う英文は？",
+      "choices": [
+        "She has as many twice books as I do.",
+        "She has twice many as books as I do.",
+        "She has twice as many books as I do.",
+        "She has as twice many books as I do."
+      ],
+      "answerIndex": 2,
+      "explanation": "倍数 + as many 名詞 as。"
+    }
+  ]
+}

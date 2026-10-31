@@ -1,0 +1,308 @@
+{
+  "setId": "sea_g1_03",
+  "worldId": "sea",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g1_03_01",
+      "unit": "english.eng.grammar.auxiliary",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) you swim when you were five?",
+      "choices": [
+        "Can",
+        "Could",
+        "May",
+        "Must"
+      ],
+      "answerIndex": 1,
+      "explanation": "過去（when you were five）の能力は could。"
+    },
+    {
+      "id": "sea_g1_03_02",
+      "unit": "english.eng.grammar.auxiliary.basic",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "You (   ) not smoke here. It's against the rules.",
+      "choices": [
+        "have",
+        "must",
+        "don't",
+        "would"
+      ],
+      "answerIndex": 1,
+      "explanation": "must not は「〜してはいけない（禁止）」。"
+    },
+    {
+      "id": "sea_g1_03_03",
+      "unit": "english.eng.grammar.auxiliary",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "It (   ) rain tomorrow, so take an umbrella just in case.",
+      "choices": [
+        "must",
+        "shall",
+        "might",
+        "ought"
+      ],
+      "answerIndex": 2,
+      "explanation": "might は「〜かもしれない」（弱い推量）。just in case（念のため）と合う。"
+    },
+    {
+      "id": "sea_g1_03_04",
+      "unit": "english.eng.grammar.auxiliary",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "You don't (   ) to come if you are busy.",
+      "choices": [
+        "have",
+        "must",
+        "should",
+        "can"
+      ],
+      "answerIndex": 0,
+      "explanation": "don't have to は「〜する必要はない」。must not（禁止）とは意味が違う。"
+    },
+    {
+      "id": "sea_g1_03_05",
+      "unit": "english.eng.grammar.auxiliary",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) I carry your bag? ― Yes, please.",
+      "choices": [
+        "Will",
+        "Shall",
+        "Must",
+        "Need"
+      ],
+      "answerIndex": 1,
+      "explanation": "Shall I 〜? は「（私が）〜しましょうか」という申し出。"
+    },
+    {
+      "id": "sea_g1_03_06",
+      "unit": "english.eng.grammar.auxiliary",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "You (   ) to see a doctor.",
+      "choices": [
+        "should",
+        "must",
+        "ought",
+        "had"
+      ],
+      "answerIndex": 2,
+      "explanation": "ought to do は「〜すべきだ」。to が続くのは ought だけ。"
+    },
+    {
+      "id": "sea_g1_03_07",
+      "unit": "english.eng.grammar.auxiliary",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) you like some tea?",
+      "choices": [
+        "Will",
+        "Would",
+        "Shall",
+        "Could"
+      ],
+      "answerIndex": 1,
+      "explanation": "Would you like 〜? は「〜はいかがですか」とていねいに勧める表現。"
+    },
+    {
+      "id": "sea_g1_03_08",
+      "unit": "english.eng.grammar.auxiliary",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) I come tomorrow? ― No, you needn't.",
+      "choices": [
+        "Shall",
+        "Would",
+        "Must",
+        "Could"
+      ],
+      "answerIndex": 2,
+      "explanation": "Must I 〜?（〜しなければなりませんか）への「いいえ」は needn't / don't have to。"
+    },
+    {
+      "id": "sea_g1_03_09",
+      "unit": "english.eng.grammar.auxiliary.basic",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "You (   ) be tired after the long trip.",
+      "choices": [
+        "mustn't",
+        "must",
+        "shall",
+        "need"
+      ],
+      "answerIndex": 1,
+      "explanation": "must「〜にちがいない」（推量）。"
+    },
+    {
+      "id": "sea_g1_03_10",
+      "unit": "english.eng.grammar.auxiliary",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The story (   ) be true. He never lies.",
+      "choices": [
+        "needn't",
+        "may not",
+        "can't",
+        "must"
+      ],
+      "answerIndex": 3,
+      "explanation": "うそをつかない人の話なので「本当にちがいない」。"
+    },
+    {
+      "id": "sea_g1_03_11",
+      "unit": "english.eng.grammar.auxiliary",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) you open the window? ― Sure.",
+      "choices": [
+        "Shall",
+        "Will",
+        "May",
+        "Must"
+      ],
+      "answerIndex": 1,
+      "explanation": "Will you 〜?「〜してくれませんか」（依頼）。"
+    },
+    {
+      "id": "sea_g1_03_12",
+      "unit": "english.eng.grammar.auxiliary.idiom",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "You (   ) better go home now.",
+      "choices": [
+        "have",
+        "should",
+        "would",
+        "had"
+      ],
+      "answerIndex": 3,
+      "explanation": "had better ＋ 動詞の原形「〜したほうがよい」。"
+    },
+    {
+      "id": "sea_g1_03_13",
+      "unit": "english.eng.grammar.auxiliary.basic",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "You (   ) not tell anyone about this. It's a secret.",
+      "choices": [
+        "have",
+        "must",
+        "need",
+        "ought"
+      ],
+      "answerIndex": 1,
+      "explanation": "must not「〜してはいけない」（禁止）。"
+    },
+    {
+      "id": "sea_g1_03_14",
+      "unit": "english.eng.grammar.auxiliary",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "She (   ) to go to school on Saturdays.",
+      "choices": [
+        "have",
+        "has",
+        "must",
+        "should"
+      ],
+      "answerIndex": 1,
+      "explanation": "has to ＋ 原形「〜しなければならない」。主語が3人称単数。"
+    },
+    {
+      "id": "sea_g1_03_15",
+      "unit": "english.eng.grammar.auxiliary.idiom",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I (   ) to get up early when I was a child.",
+      "choices": [
+        "used",
+        "would",
+        "should",
+        "was"
+      ],
+      "answerIndex": 0,
+      "explanation": "used to ＋ 原形「以前はよく〜したものだ」。"
+    },
+    {
+      "id": "sea_g1_03_16",
+      "unit": "english.eng.grammar.auxiliary",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) I use your pen? ― Of course.",
+      "choices": [
+        "May",
+        "Should",
+        "Must",
+        "Need"
+      ],
+      "answerIndex": 0,
+      "explanation": "May I 〜?「〜してもよいですか」（許可）。"
+    },
+    {
+      "id": "sea_g1_03_17",
+      "unit": "english.eng.grammar.auxiliary.basic",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He (   ) speak three languages.",
+      "choices": [
+        "is",
+        "cans",
+        "can to",
+        "can"
+      ],
+      "answerIndex": 3,
+      "explanation": "can ＋ 原形「〜できる」。can に s はつかない。"
+    },
+    {
+      "id": "sea_g1_03_18",
+      "unit": "english.eng.grammar.auxiliary",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "You (   ) be here by nine.",
+      "choices": [
+        "must to",
+        "has to",
+        "ought",
+        "have to"
+      ],
+      "answerIndex": 3,
+      "explanation": "have to ＋ 原形。must のあとに to はつけない。"
+    },
+    {
+      "id": "sea_g1_03_19",
+      "unit": "english.eng.grammar.auxiliary.basic",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "It (   ) be cold tonight, so bring a jacket.",
+      "choices": [
+        "needn't",
+        "mustn't",
+        "shall",
+        "may"
+      ],
+      "answerIndex": 3,
+      "explanation": "may「〜かもしれない」。"
+    },
+    {
+      "id": "sea_g1_03_20",
+      "unit": "english.eng.grammar.auxiliary",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Shall we go to the movies? ― Yes, (   ).",
+      "choices": [
+        "you do",
+        "we shall",
+        "let's",
+        "I will"
+      ],
+      "answerIndex": 2,
+      "explanation": "Shall we 〜?「〜しましょうか」への答え方。"
+    }
+  ]
+}

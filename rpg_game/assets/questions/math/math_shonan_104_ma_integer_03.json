@@ -1,0 +1,844 @@
+{
+  "setId": "math_shonan_104_ma_integer_03",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "math_shonan_104_ma_integer_03_001",
+      "unit": "math.ma.integer.divisor.divisor",
+      "category": "calculation",
+      "prompt": "10! を素因数分解したとき、素因数 2 の個数は？",
+      "choices": [
+        "7",
+        "8",
+        "9",
+        "5"
+      ],
+      "answerIndex": 1,
+      "explanation": "10÷2, 10÷2², … の商を足す。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math_a",
+        "integer"
+      ]
+    },
+    {
+      "id": "math_shonan_104_ma_integer_03_002",
+      "unit": "math.ma.integer.euclid.diophantine",
+      "category": "calculation",
+      "prompt": "方程式 13x ＋ 5y ＝ 1 の整数解をすべて求めよ（k は整数）。",
+      "choices": [
+        "x＝5k＋2, y＝−13k−5",
+        "x＝13k＋2, y＝−5k−5",
+        "x＝5k−5, y＝−13k＋2",
+        "x＝5k＋2, y＝13k−5"
+      ],
+      "answerIndex": 0,
+      "explanation": "1つの解 (x, y)＝(2, −5) を見つけ、差をとって 13(x−(2))＝−5(y−(−5))。13 と 5 は互いに素なので x−(2) は 5 の倍数。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math_a",
+        "integer"
+      ]
+    },
+    {
+      "id": "math_shonan_104_ma_integer_03_003",
+      "unit": "math.ma.integer.divisor.remainder",
+      "category": "calculation",
+      "prompt": "整数 a, b を 7 で割った余りがそれぞれ 5, 4 のとき、ab を 7 で割った余りは？",
+      "choices": [
+        "2",
+        "0",
+        "20",
+        "6"
+      ],
+      "answerIndex": 3,
+      "explanation": "余りどうしをかけて 20 を 7 で割った余り。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math_a",
+        "integer"
+      ]
+    },
+    {
+      "id": "math_shonan_104_ma_integer_03_004",
+      "unit": "math.ma.integer.divisor.divisor",
+      "category": "calculation",
+      "prompt": "36 を素因数分解すると？",
+      "choices": [
+        "2²×5",
+        "2²×3²",
+        "2³×3²",
+        "2×3"
+      ],
+      "answerIndex": 1,
+      "explanation": "36＝2²×3²。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math_a",
+        "integer"
+      ]
+    },
+    {
+      "id": "math_shonan_104_ma_integer_03_005",
+      "unit": "math.ma.integer.divisor.divisor",
+      "category": "calculation",
+      "prompt": "108 を素因数分解すると？",
+      "choices": [
+        "2²×3³",
+        "2×3",
+        "2²×5",
+        "2³×3³"
+      ],
+      "answerIndex": 0,
+      "explanation": "108＝2²×3³。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math_a",
+        "integer"
+      ]
+    },
+    {
+      "id": "math_shonan_104_ma_integer_03_006",
+      "unit": "math.ma.integer.divisor.divisor",
+      "category": "thinking",
+      "prompt": "連続する2つの整数の積が必ず2の倍数になる理由は？",
+      "choices": [
+        "和が奇数だから",
+        "どちらか一方は必ず偶数だから",
+        "どちらも奇数だから",
+        "2で割った余りが1だから"
+      ],
+      "answerIndex": 1,
+      "explanation": "余りで分類（偶奇）して考える。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math_a",
+        "integer"
+      ]
+    },
+    {
+      "id": "math_shonan_104_ma_integer_03_007",
+      "unit": "math.ma.integer.divisor.divisor",
+      "category": "calculation",
+      "prompt": "50! を素因数分解したとき、素因数 5 の個数は？",
+      "choices": [
+        "11",
+        "12",
+        "13",
+        "10"
+      ],
+      "answerIndex": 1,
+      "explanation": "50÷5, 50÷5², … の商を足す。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math_a",
+        "integer"
+      ]
+    },
+    {
+      "id": "math_shonan_104_ma_integer_03_008",
+      "unit": "math.ma.integer.divisor.remainder",
+      "category": "calculation",
+      "prompt": "整数 a, b を 7 で割った余りがそれぞれ 5, 4 のとき、a＋b を 7 で割った余りは？",
+      "choices": [
+        "6",
+        "2",
+        "9",
+        "3"
+      ],
+      "answerIndex": 1,
+      "explanation": "5＋4＝9 を 7 で割った余り。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math_a",
+        "integer"
+      ]
+    },
+    {
+      "id": "math_shonan_104_ma_integer_03_009",
+      "unit": "math.ma.integer.divisor.divisor",
+      "category": "calculation",
+      "prompt": "36 と 72 の最小公倍数は？",
+      "choices": [
+        "2592",
+        "36",
+        "144",
+        "72"
+      ],
+      "answerIndex": 3,
+      "explanation": "最小公倍数＝36×72÷最大公約数36＝72。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math_a",
+        "integer"
+      ]
+    },
+    {
+      "id": "math_shonan_104_ma_integer_03_010",
+      "unit": "math.ma.integer.divisor.divisor",
+      "category": "calculation",
+      "prompt": "144 の正の約数の総和は？",
+      "choices": [
+        "288",
+        "259",
+        "403",
+        "404"
+      ],
+      "answerIndex": 2,
+      "explanation": "2⁴×3² より (1＋2＋4＋8＋16)×(1＋3＋9)＝403。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math_a",
+        "integer"
+      ]
+    },
+    {
+      "id": "math_shonan_104_ma_integer_03_011",
+      "unit": "math.ma.integer.base.nary",
+      "category": "calculation",
+      "prompt": "10進数の 71 を 2進法で表すと？",
+      "choices": [
+        "1000111（2）",
+        "1110001（2）",
+        "1000110（2）",
+        "1001001（2）"
+      ],
+      "answerIndex": 0,
+      "explanation": "71 を 2 で割り続けると、余りは下から順に 1、1、1、0、0、0、1。下から並べて 1000111（2）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math_a",
+        "integer"
+      ]
+    },
+    {
+      "id": "math_shonan_104_ma_integer_03_012",
+      "unit": "math.ma.integer.divisor.divisor",
+      "category": "calculation",
+      "prompt": "120 と 30 の最大公約数は？",
+      "choices": [
+        "30",
+        "60",
+        "120",
+        "31"
+      ],
+      "answerIndex": 0,
+      "explanation": "120＝2³×3×5、30＝2×3×5。共通の素因数を小さいほうの指数でかけて 30。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math_a",
+        "integer"
+      ]
+    },
+    {
+      "id": "math_shonan_104_ma_integer_03_013",
+      "unit": "math.ma.integer.divisor.divisor",
+      "category": "calculation",
+      "prompt": "144 の正の約数の個数は？",
+      "choices": [
+        "6",
+        "15",
+        "17",
+        "8"
+      ],
+      "answerIndex": 1,
+      "explanation": "2⁴×3² より (4＋1)×(2＋1)＝15。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math_a",
+        "integer"
+      ]
+    },
+    {
+      "id": "math_shonan_104_ma_integer_03_014",
+      "unit": "math.ma.integer.base.nary",
+      "category": "calculation",
+      "prompt": "10進数の 147 を 5進法で表すと？",
+      "choices": [
+        "1041（5）",
+        "2401（5）",
+        "1102（5）",
+        "1042（5）"
+      ],
+      "answerIndex": 3,
+      "explanation": "147 を 5 で割り続けると、余りは下から順に 2、4、0、1。下から並べて 1042（5）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math_a",
+        "integer"
+      ]
+    },
+    {
+      "id": "math_shonan_104_ma_integer_03_015",
+      "unit": "math.ma.integer.divisor.divisor",
+      "category": "calculation",
+      "prompt": "108 の正の約数の総和は？",
+      "choices": [
+        "280",
+        "281",
+        "216",
+        "172"
+      ],
+      "answerIndex": 0,
+      "explanation": "2²×3³ より (1＋2＋4)×(1＋3＋9＋27)＝280。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math_a",
+        "integer"
+      ]
+    },
+    {
+      "id": "math_shonan_104_ma_integer_03_016",
+      "unit": "math.ma.integer.base.nary",
+      "category": "knowledge",
+      "prompt": "2進法で 1 0 0 0（2）は10進法でいくつ？",
+      "choices": [
+        "8",
+        "16",
+        "4",
+        "1000"
+      ],
+      "answerIndex": 0,
+      "explanation": "2³＝8。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math_a",
+        "integer"
+      ]
+    },
+    {
+      "id": "math_shonan_104_ma_integer_03_018",
+      "unit": "math.ma.integer.divisor.divisor",
+      "category": "calculation",
+      "prompt": "12 と 27 の最大公約数は？",
+      "choices": [
+        "6",
+        "3",
+        "9",
+        "108"
+      ],
+      "answerIndex": 1,
+      "explanation": "12＝2²×3、27＝3³。共通の素因数を小さいほうの指数でかけて 3。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math_a",
+        "integer"
+      ]
+    },
+    {
+      "id": "math_shonan_104_ma_integer_03_019",
+      "unit": "math.ma.integer.base.nary",
+      "category": "calculation",
+      "prompt": "2進法で 111100（2）と表される数を10進法で表すと？",
+      "choices": [
+        "15",
+        "60",
+        "111100",
+        "62"
+      ],
+      "answerIndex": 1,
+      "explanation": "1×2⁵＋1×2⁴＋1×2³＋1×2²＝60。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math_a",
+        "integer"
+      ]
+    },
+    {
+      "id": "math_shonan_104_ma_integer_03_020",
+      "unit": "math.ma.integer.divisor.divisor",
+      "category": "calculation",
+      "prompt": "30 と 66 の最大公約数は？",
+      "choices": [
+        "330",
+        "6",
+        "24",
+        "12"
+      ],
+      "answerIndex": 1,
+      "explanation": "30＝2×3×5、66＝2×3×11。共通の素因数を小さいほうの指数でかけて 6。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math_a",
+        "integer"
+      ]
+    },
+    {
+      "id": "math_shonan_104_ma_integer_03_021",
+      "unit": "math.ma.integer.base.nary",
+      "category": "calculation",
+      "prompt": "2進法で 1000111（2）と表される数を10進法で表すと？",
+      "choices": [
+        "71",
+        "1000111",
+        "73",
+        "113"
+      ],
+      "answerIndex": 0,
+      "explanation": "1×2⁶＋1×2²＋1×2¹＋1×2⁰＝71。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math_a",
+        "integer"
+      ]
+    },
+    {
+      "id": "math_shonan_104_ma_integer_03_022",
+      "unit": "math.ma.integer.base.nary",
+      "category": "calculation",
+      "prompt": "10進数の 123 を 5進法で表すと？",
+      "choices": [
+        "344（5）",
+        "1003（5）",
+        "443（5）",
+        "442（5）"
+      ],
+      "answerIndex": 2,
+      "explanation": "123 を 5 で割り続けると、余りは下から順に 3、4、4。下から並べて 443（5）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math_a",
+        "integer"
+      ]
+    },
+    {
+      "id": "math_shonan_104_ma_integer_03_023",
+      "unit": "math.ma.integer.divisor.divisor",
+      "category": "thinking",
+      "prompt": "√(56n) が自然数となる最小の自然数 n は？",
+      "choices": [
+        "14",
+        "2",
+        "7",
+        "56"
+      ],
+      "answerIndex": 0,
+      "explanation": "56＝2³×7。指数をすべて偶数にするには 2×7＝14。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math_a",
+        "integer"
+      ]
+    },
+    {
+      "id": "math_shonan_104_ma_integer_03_024",
+      "unit": "math.ma.integer.divisor.divisor",
+      "category": "calculation",
+      "prompt": "200 の正の約数の総和は？",
+      "choices": [
+        "466",
+        "400",
+        "265",
+        "465"
+      ],
+      "answerIndex": 3,
+      "explanation": "2³×5² より (1＋2＋4＋8)×(1＋5＋25)＝465。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math_a",
+        "integer"
+      ]
+    },
+    {
+      "id": "math_shonan_104_ma_integer_03_027",
+      "unit": "math.ma.integer.base.nary",
+      "category": "calculation",
+      "prompt": "8進法で 135（8）と表される数を10進法で表すと？",
+      "choices": [
+        "345",
+        "101",
+        "135",
+        "93"
+      ],
+      "answerIndex": 3,
+      "explanation": "1×8²＋3×8¹＋5×8⁰＝93。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math_a",
+        "integer"
+      ]
+    },
+    {
+      "id": "math_shonan_104_ma_integer_03_028",
+      "unit": "math.ma.integer.divisor.divisor",
+      "category": "calculation",
+      "prompt": "24 を素因数分解すると？",
+      "choices": [
+        "2³×3",
+        "2⁴×3",
+        "2³×5",
+        "2×3"
+      ],
+      "answerIndex": 0,
+      "explanation": "24＝2³×3。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math_a",
+        "integer"
+      ]
+    },
+    {
+      "id": "math_shonan_104_ma_integer_03_029",
+      "unit": "math.ma.integer.divisor.divisor",
+      "category": "calculation",
+      "prompt": "10 と 20 の最小公倍数は？",
+      "choices": [
+        "200",
+        "20",
+        "40",
+        "10"
+      ],
+      "answerIndex": 1,
+      "explanation": "最小公倍数＝10×20÷最大公約数10＝20。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math_a",
+        "integer"
+      ]
+    },
+    {
+      "id": "math_shonan_104_ma_integer_03_030",
+      "unit": "math.ma.integer.euclid.diophantine",
+      "category": "calculation",
+      "prompt": "方程式 3x ＋ 5y ＝ 1 の整数解をすべて求めよ（k は整数）。",
+      "choices": [
+        "x＝5k＋2, y＝3k−1",
+        "x＝5k−1, y＝−3k＋2",
+        "x＝3k＋2, y＝−5k−1",
+        "x＝5k＋2, y＝−3k−1"
+      ],
+      "answerIndex": 3,
+      "explanation": "1つの解 (x, y)＝(2, −1) を見つけ、差をとって 3(x−(2))＝−5(y−(−1))。3 と 5 は互いに素なので x−(2) は 5 の倍数。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math_a",
+        "integer"
+      ]
+    },
+    {
+      "id": "math_shonan_104_ma_integer_03_031",
+      "unit": "math.ma.integer.divisor.divisor",
+      "category": "knowledge",
+      "prompt": "素数とは？",
+      "choices": [
+        "奇数のこと",
+        "約数が3個ある数",
+        "2で割り切れない数",
+        "1とその数自身以外に正の約数をもたない2以上の整数"
+      ],
+      "answerIndex": 3,
+      "explanation": "2は唯一の偶数の素数。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math_a",
+        "integer"
+      ]
+    },
+    {
+      "id": "math_shonan_104_ma_integer_03_032",
+      "unit": "math.ma.integer.base.nary",
+      "category": "calculation",
+      "prompt": "10進数の 45 を 2進法で表すと？",
+      "choices": [
+        "101101（2）",
+        "101100（2）",
+        "101111（2）",
+        "101110（2）"
+      ],
+      "answerIndex": 0,
+      "explanation": "45 を 2 で割り続けると、余りは下から順に 1、0、1、1、0、1。下から並べて 101101（2）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math_a",
+        "integer"
+      ]
+    },
+    {
+      "id": "math_shonan_104_ma_integer_03_033",
+      "unit": "math.ma.integer.divisor.divisor",
+      "category": "calculation",
+      "prompt": "30 と 33 の最大公約数は？",
+      "choices": [
+        "330",
+        "27",
+        "3",
+        "6"
+      ],
+      "answerIndex": 2,
+      "explanation": "30＝2×3×5、33＝3×11。共通の素因数を小さいほうの指数でかけて 3。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math_a",
+        "integer"
+      ]
+    },
+    {
+      "id": "math_shonan_104_ma_integer_03_034",
+      "unit": "math.ma.integer.euclid.diophantine",
+      "category": "calculation",
+      "prompt": "方程式 5x ＋ 8y ＝ 1 の整数解をすべて求めよ（k は整数）。",
+      "choices": [
+        "x＝8k−3, y＝−5k＋2",
+        "x＝8k＋2, y＝−5k−3",
+        "x＝5k−3, y＝−8k＋2",
+        "x＝8k−3, y＝5k＋2"
+      ],
+      "answerIndex": 0,
+      "explanation": "1つの解 (x, y)＝(−3, 2) を見つけ、差をとって 5(x−(−3))＝−8(y−(2))。5 と 8 は互いに素なので x−(−3) は 8 の倍数。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math_a",
+        "integer"
+      ]
+    },
+    {
+      "id": "math_shonan_104_ma_integer_03_035",
+      "unit": "math.ma.integer.divisor.divisor",
+      "category": "calculation",
+      "prompt": "36 の正の約数の個数は？",
+      "choices": [
+        "9",
+        "11",
+        "8",
+        "4"
+      ],
+      "answerIndex": 0,
+      "explanation": "2²×3² より (2＋1)×(2＋1)＝9。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math_a",
+        "integer"
+      ]
+    },
+    {
+      "id": "math_shonan_104_ma_integer_03_036",
+      "unit": "math.ma.integer.divisor.divisor",
+      "category": "calculation",
+      "prompt": "40 を素因数分解すると？",
+      "choices": [
+        "2³×5",
+        "2⁴×5",
+        "2³×7",
+        "2×5"
+      ],
+      "answerIndex": 0,
+      "explanation": "40＝2³×5。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math_a",
+        "integer"
+      ]
+    },
+    {
+      "id": "math_shonan_104_ma_integer_03_038",
+      "unit": "math.ma.integer.divisor.divisor",
+      "category": "calculation",
+      "prompt": "144 を素因数分解すると？",
+      "choices": [
+        "2⁵×3²",
+        "2⁴×3²",
+        "2⁴×5",
+        "2×3"
+      ],
+      "answerIndex": 1,
+      "explanation": "144＝2⁴×3²。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math_a",
+        "integer"
+      ]
+    },
+    {
+      "id": "math_shonan_104_ma_integer_03_040",
+      "unit": "math.ma.integer.divisor.divisor",
+      "category": "calculation",
+      "prompt": "135 と 105 の最小公倍数は？",
+      "choices": [
+        "945",
+        "14175",
+        "1890",
+        "15"
+      ],
+      "answerIndex": 0,
+      "explanation": "最小公倍数＝135×105÷最大公約数15＝945。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math_a",
+        "integer"
+      ]
+    },
+    {
+      "id": "math_shonan_104_ma_integer_03_041",
+      "unit": "math.ma.integer.base.nary",
+      "category": "calculation",
+      "prompt": "5進法で 443（5）と表される数を10進法で表すと？",
+      "choices": [
+        "443",
+        "128",
+        "99",
+        "123"
+      ],
+      "answerIndex": 3,
+      "explanation": "4×5²＋4×5¹＋3×5⁰＝123。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math_a",
+        "integer"
+      ]
+    },
+    {
+      "id": "math_shonan_104_ma_integer_03_042",
+      "unit": "math.ma.integer.divisor.remainder",
+      "category": "calculation",
+      "prompt": "3¹³ を 10 で割った余りは？",
+      "choices": [
+        "9",
+        "1",
+        "4",
+        "3"
+      ],
+      "answerIndex": 3,
+      "explanation": "3 の累乗を 10 で割った余りの周期を調べる（合同式でもよい）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math_a",
+        "integer"
+      ]
+    },
+    {
+      "id": "math_shonan_104_ma_integer_03_043",
+      "unit": "math.ma.integer.euclid.diophantine",
+      "category": "calculation",
+      "prompt": "方程式 3x ＋ 8y ＝ 2 の整数解をすべて求めよ（k は整数）。",
+      "choices": [
+        "x＝8k＋1, y＝−3k−2",
+        "x＝3k−2, y＝−8k＋1",
+        "x＝8k−2, y＝3k＋1",
+        "x＝8k−2, y＝−3k＋1"
+      ],
+      "answerIndex": 3,
+      "explanation": "1つの解 (x, y)＝(−2, 1) を見つけ、差をとって 3(x−(−2))＝−8(y−(1))。3 と 8 は互いに素なので x−(−2) は 8 の倍数。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math_a",
+        "integer"
+      ]
+    }
+  ]
+}

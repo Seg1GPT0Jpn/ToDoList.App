@@ -1,0 +1,39 @@
+name: tsuzuri_light
+description: "つづりクエストLight：定期テスト対策・単語帳・クラスルームだけの軽い版"
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.13.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cloud_firestore: ^6.10.0
+  firebase_auth: ^6.7.0
+  firebase_core: ^4.15.0
+  shared_preferences: ^2.5.5
+  # 資料・予想問題を端末に残す場所（Android 版。つづりクエストの部品からすでに入っている）
+  path_provider: ^2.1.6
+  url_launcher: ^6.3.3
+  rpg_game:
+    path: ../rpg_game
+  # つづりクエストの画面・保存・同期をそのまま部品として使う（同じ記録を読み書きする）
+  rpg_game_app:
+    path: ../rpg_game_app
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/fonts/OFL-NotoSansJP.txt
+  # 本文の Noto Sans JP（つづりクエストと同じファイル。SIL OFL）を Roboto の名前で登録する。
+  # 描画エンジンは Roboto がないと別に取りに行く（約170KB）ので、そのかわりにこれを使わせる
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/TsuzuriLightSans.ttf

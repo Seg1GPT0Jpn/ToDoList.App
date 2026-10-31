@@ -1,0 +1,974 @@
+{
+  "setId": "science_shonan_104_bio_hormone_01",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "science_shonan_104_bio_hormone_01_001",
+      "unit": "science.biology.body.nerve.hormone",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ホルモンをつくり、血液中に直接分泌する器官を何という？",
+      "choices": [
+        "消化腺",
+        "汗腺",
+        "内分泌腺",
+        "外分泌腺"
+      ],
+      "answerIndex": 2,
+      "explanation": "排出管（導管）をもたない。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "hormone"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_hormone_01_002",
+      "unit": "science.biology.body.nerve.hormone",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "汗腺や消化腺のように、排出管を通して体外や消化管内に分泌する腺は？",
+      "choices": [
+        "内分泌腺",
+        "脳下垂体",
+        "外分泌腺",
+        "甲状腺"
+      ],
+      "answerIndex": 2,
+      "explanation": "内分泌腺は血液中に分泌する。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "hormone"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_hormone_01_003",
+      "unit": "science.biology.body.nerve.hormone",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ホルモンが作用する器官を何という？",
+      "choices": [
+        "内分泌腺",
+        "受容器",
+        "標的器官",
+        "効果器"
+      ],
+      "answerIndex": 2,
+      "explanation": "標的器官の細胞（標的細胞）にはホルモンと結合する受容体がある。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "hormone"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_hormone_01_004",
+      "unit": "science.biology.body.nerve.hormone",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "ホルモンが特定の細胞にだけはたらく理由は？",
+      "choices": [
+        "すべての細胞が同じようにはたらくから",
+        "ホルモンがその細胞の近くでだけつくられるから",
+        "その細胞だけが、そのホルモンと結合する受容体をもつから",
+        "ホルモンは神経を通って運ばれるから"
+      ],
+      "answerIndex": 2,
+      "explanation": "ホルモンは血液で全身に運ばれるが、受容体をもつ標的細胞だけが反応する。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "hormone"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_hormone_01_005",
+      "unit": "science.biology.body.nerve.hormone",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "神経による情報伝達と比べたときの、ホルモンによる情報伝達の特徴は？",
+      "choices": [
+        "伝わるのは遅いが、効果が長く続き、全身に及ぶ",
+        "電気信号で伝わる",
+        "特定の1か所にしか伝わらない",
+        "伝わるのが速く、効果は短い"
+      ],
+      "answerIndex": 0,
+      "explanation": "神経は速く、局所的で、効果は短い。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "hormone"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_hormone_01_006",
+      "unit": "science.biology.body.nerve.hormone",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "血液中のホルモンの量は、ふつうどのくらいか？",
+      "choices": [
+        "血液の半分ほど",
+        "全く検出できない",
+        "血しょうのタンパク質と同じくらい多い",
+        "ごく微量で、大きな効果をもつ"
+      ],
+      "answerIndex": 3,
+      "explanation": "ごく微量でも標的細胞に作用する。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "hormone"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_hormone_01_007",
+      "unit": "science.biology.body.nerve.hormone",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "脳下垂体前葉から分泌され、「成長を促進する（タンパク質合成の促進・血糖量の増加）」はたらきをするホルモンは？",
+      "choices": [
+        "成長ホルモン",
+        "グルカゴン",
+        "パラトルモン",
+        "アドレナリン"
+      ],
+      "answerIndex": 0,
+      "explanation": "成長ホルモンは脳下垂体前葉から分泌される。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "hormone"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_hormone_01_008",
+      "unit": "science.biology.body.nerve.hormone",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "脳下垂体前葉から分泌され、「甲状腺からのチロキシンの分泌を促進する」はたらきをするホルモンは？",
+      "choices": [
+        "バソプレシン",
+        "チロキシン",
+        "甲状腺刺激ホルモン",
+        "成長ホルモン"
+      ],
+      "answerIndex": 2,
+      "explanation": "甲状腺刺激ホルモンは脳下垂体前葉から分泌される。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "hormone"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_hormone_01_009",
+      "unit": "science.biology.body.nerve.hormone",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "脳下垂体前葉から分泌され、「副腎皮質からの糖質コルチコイドの分泌を促進する」はたらきをするホルモンは？",
+      "choices": [
+        "バソプレシン",
+        "成長ホルモン",
+        "チロキシン",
+        "副腎皮質刺激ホルモン"
+      ],
+      "answerIndex": 3,
+      "explanation": "副腎皮質刺激ホルモンは脳下垂体前葉から分泌される。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "hormone"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_hormone_01_010",
+      "unit": "science.biology.body.nerve.hormone",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "脳下垂体後葉から分泌され、「腎臓の集合管で水の再吸収を促進する」はたらきをするホルモンは？",
+      "choices": [
+        "グルカゴン",
+        "バソプレシン",
+        "パラトルモン",
+        "アドレナリン"
+      ],
+      "answerIndex": 1,
+      "explanation": "バソプレシンは脳下垂体後葉から分泌される。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "hormone"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_hormone_01_011",
+      "unit": "science.biology.body.nerve.hormone",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "甲状腺から分泌され、「体内の化学反応（代謝）を促進する」はたらきをするホルモンは？",
+      "choices": [
+        "アドレナリン",
+        "チロキシン",
+        "パラトルモン",
+        "グルカゴン"
+      ],
+      "answerIndex": 1,
+      "explanation": "チロキシンは甲状腺から分泌される。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "hormone"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_hormone_01_012",
+      "unit": "science.biology.body.nerve.hormone",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "副甲状腺から分泌され、「血液中のカルシウムイオン濃度を上げる」はたらきをするホルモンは？",
+      "choices": [
+        "バソプレシン",
+        "パラトルモン",
+        "成長ホルモン",
+        "チロキシン"
+      ],
+      "answerIndex": 1,
+      "explanation": "パラトルモンは副甲状腺から分泌される。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "hormone"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_hormone_01_013",
+      "unit": "science.biology.body.nerve.hormone",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "副腎髄質から分泌され、「肝臓のグリコーゲンの分解を促進し、血糖量を増やす」はたらきをするホルモンは？",
+      "choices": [
+        "チロキシン",
+        "成長ホルモン",
+        "アドレナリン",
+        "バソプレシン"
+      ],
+      "answerIndex": 2,
+      "explanation": "アドレナリンは副腎髄質から分泌される。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "hormone"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_hormone_01_014",
+      "unit": "science.biology.body.nerve.hormone",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "副腎皮質から分泌され、「タンパク質からの糖の合成を促進し、血糖量を増やす」はたらきをするホルモンは？",
+      "choices": [
+        "バソプレシン",
+        "チロキシン",
+        "成長ホルモン",
+        "糖質コルチコイド"
+      ],
+      "answerIndex": 3,
+      "explanation": "糖質コルチコイドは副腎皮質から分泌される。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "hormone"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_hormone_01_015",
+      "unit": "science.biology.body.nerve.hormone",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "副腎皮質から分泌され、「腎臓でのナトリウムイオンの再吸収を促進する」はたらきをするホルモンは？",
+      "choices": [
+        "鉱質コルチコイド",
+        "成長ホルモン",
+        "バソプレシン",
+        "チロキシン"
+      ],
+      "answerIndex": 0,
+      "explanation": "鉱質コルチコイドは副腎皮質から分泌される。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "hormone"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_hormone_01_016",
+      "unit": "science.biology.body.nerve.hormone",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "すい臓のランゲルハンス島A細胞から分泌され、「肝臓のグリコーゲンの分解を促進し、血糖量を増やす」はたらきをするホルモンは？",
+      "choices": [
+        "成長ホルモン",
+        "グルカゴン",
+        "チロキシン",
+        "バソプレシン"
+      ],
+      "answerIndex": 1,
+      "explanation": "グルカゴンはすい臓のランゲルハンス島A細胞から分泌される。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "hormone"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_hormone_01_017",
+      "unit": "science.biology.body.nerve.hormone",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "すい臓のランゲルハンス島B細胞から分泌され、「細胞へのグルコースの取りこみやグリコーゲンの合成を促進し、血糖量を減らす」はたらきをするホルモンは？",
+      "choices": [
+        "インスリン",
+        "成長ホルモン",
+        "バソプレシン",
+        "チロキシン"
+      ],
+      "answerIndex": 0,
+      "explanation": "インスリンはすい臓のランゲルハンス島B細胞から分泌される。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "hormone"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_hormone_01_018",
+      "unit": "science.biology.body.nerve.hormone",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "バソプレシンをつくっている細胞はどこにある？",
+      "choices": [
+        "脳下垂体前葉",
+        "間脳の視床下部（神経分泌細胞）",
+        "腎臓",
+        "副腎"
+      ],
+      "answerIndex": 1,
+      "explanation": "視床下部の神経分泌細胞が脳下垂体後葉まで突起を伸ばし、そこから血液中に分泌する。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "hormone"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_hormone_01_019",
+      "unit": "science.biology.body.nerve.hormone",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "視床下部から分泌され、脳下垂体前葉のホルモン分泌を調節するホルモンは？",
+      "choices": [
+        "放出ホルモン・放出抑制ホルモン",
+        "成長ホルモン",
+        "インスリン",
+        "バソプレシン"
+      ],
+      "answerIndex": 0,
+      "explanation": "視床下部は神経分泌細胞によってホルモンを分泌する。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "hormone"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_hormone_01_020",
+      "unit": "science.biology.body.nerve.hormone",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "体液の塩分濃度が高くなったとき（水分が不足したとき）の調節として正しいものは？",
+      "choices": [
+        "バソプレシンの分泌が減り、尿量が増える",
+        "インスリンの分泌が増え、尿量が減る",
+        "バソプレシンの分泌が増え、水の再吸収が増えて尿量が減る",
+        "チロキシンの分泌が減り、汗が増える"
+      ],
+      "answerIndex": 2,
+      "explanation": "濃い尿を少しだけ出して、体内の水分を保つ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "hormone"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_hormone_01_021",
+      "unit": "science.biology.body.nerve.feedback",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "最終的につくられた物質や効果が、はじめの段階にもどってはたらきを調節するしくみを何という？",
+      "choices": [
+        "抗原提示",
+        "フィードバック",
+        "拮抗作用",
+        "食作用"
+      ],
+      "answerIndex": 1,
+      "explanation": "ホルモン量を一定に保つしくみ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "hormone"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_hormone_01_022",
+      "unit": "science.biology.body.nerve.feedback",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "結果が原因を打ち消す方向にはたらくフィードバックを何という？",
+      "choices": [
+        "二次応答",
+        "負のフィードバック",
+        "正のフィードバック",
+        "拮抗作用"
+      ],
+      "answerIndex": 1,
+      "explanation": "ホルモン量の調節の多くは負のフィードバック。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "hormone"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_hormone_01_023",
+      "unit": "science.biology.body.nerve.feedback",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "血液中のチロキシンが多くなりすぎたときに起こることは？",
+      "choices": [
+        "チロキシンがさらに増える",
+        "視床下部や脳下垂体前葉がはたらきを抑えられ、甲状腺刺激ホルモンの分泌が減る",
+        "インスリンの分泌が増える",
+        "甲状腺刺激ホルモンの分泌が増える"
+      ],
+      "answerIndex": 1,
+      "explanation": "その結果チロキシンの分泌が減り、量がもとにもどる（負のフィードバック）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "hormone"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_hormone_01_024",
+      "unit": "science.biology.body.nerve.feedback",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "血液中のチロキシンが少なくなったときに起こることは？",
+      "choices": [
+        "甲状腺刺激ホルモンの分泌が減る",
+        "バソプレシンの分泌が増える",
+        "甲状腺刺激ホルモンの分泌が増え、チロキシンの分泌が増える",
+        "甲状腺がはたらかなくなる"
+      ],
+      "answerIndex": 2,
+      "explanation": "負のフィードバックで一定に保たれる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "hormone"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_hormone_01_025",
+      "unit": "science.biology.body.homeostasis.glucose",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「血糖」とは何か？",
+      "choices": [
+        "血液中のタンパク質",
+        "肝臓のグリコーゲン",
+        "血液中のグルコース",
+        "尿中の糖"
+      ],
+      "answerIndex": 2,
+      "explanation": "ヒトの血糖濃度は、空腹時で約0.1％（100mg/100mL）に保たれる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "hormone"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_hormone_01_026",
+      "unit": "science.biology.body.homeostasis.glucose",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ヒトの空腹時の血糖濃度はおよそいくらに保たれている？",
+      "choices": [
+        "約0.001％",
+        "約1％",
+        "約10％",
+        "約0.1％"
+      ],
+      "answerIndex": 3,
+      "explanation": "100mLの血液に約100mgのグルコース。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "hormone"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_hormone_01_027",
+      "unit": "science.biology.body.homeostasis.glucose",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "血糖量を下げるはたらきをもつ唯一のホルモンは？",
+      "choices": [
+        "糖質コルチコイド",
+        "グルカゴン",
+        "インスリン",
+        "アドレナリン"
+      ],
+      "answerIndex": 2,
+      "explanation": "血糖量を上げるホルモンは複数ある。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "hormone"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_hormone_01_028",
+      "unit": "science.biology.body.homeostasis.glucose",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "血糖量を上げるはたらきをもつホルモンとして当てはまらないものは？",
+      "choices": [
+        "グルカゴン",
+        "インスリン",
+        "糖質コルチコイド",
+        "アドレナリン"
+      ],
+      "answerIndex": 1,
+      "explanation": "成長ホルモンも血糖量を上げるはたらきをもつ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "hormone"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_hormone_01_029",
+      "unit": "science.biology.body.homeostasis.glucose",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "食後に血糖量が高くなったときの調節として正しいものは？",
+      "choices": [
+        "交感神経を通して副腎髄質からアドレナリンが分泌される",
+        "すい臓A細胞からグルカゴンが分泌される",
+        "視床下部が感知し、副交感神経を通してすい臓B細胞からインスリンが分泌される",
+        "脳下垂体前葉から副腎皮質刺激ホルモンが分泌される"
+      ],
+      "answerIndex": 2,
+      "explanation": "B細胞自身も血糖量の上昇を直接感知してインスリンを分泌する。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "hormone"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_hormone_01_030",
+      "unit": "science.biology.body.homeostasis.glucose",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "血糖量が低くなったときの調節として正しいものは？",
+      "choices": [
+        "チロキシンの分泌が止まる",
+        "交感神経を通して副腎髄質からアドレナリン、すい臓A細胞からグルカゴンが分泌される",
+        "バソプレシンが分泌されて尿量が増える",
+        "副交感神経を通してインスリンが分泌される"
+      ],
+      "answerIndex": 1,
+      "explanation": "脳下垂体前葉→副腎皮質→糖質コルチコイドの経路もはたらく。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "hormone"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_hormone_01_031",
+      "unit": "science.biology.body.homeostasis.glucose",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "低血糖のとき、脳下垂体前葉からの副腎皮質刺激ホルモンによって分泌が促されるホルモンは？",
+      "choices": [
+        "インスリン",
+        "グルカゴン",
+        "アドレナリン",
+        "糖質コルチコイド"
+      ],
+      "answerIndex": 3,
+      "explanation": "タンパク質から糖をつくらせて血糖量を上げる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "hormone"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_hormone_01_032",
+      "unit": "science.biology.body.homeostasis.glucose",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "インスリンのはたらきとして正しいものは？",
+      "choices": [
+        "肝臓のグリコーゲンを分解してグルコースにする",
+        "タンパク質から糖をつくらせる",
+        "細胞へのグルコースの取りこみと、肝臓や筋肉でのグリコーゲンの合成を促進する",
+        "腎臓で水の再吸収を促す"
+      ],
+      "answerIndex": 2,
+      "explanation": "その結果、血糖量が下がる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "hormone"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_hormone_01_033",
+      "unit": "science.biology.body.homeostasis.glucose",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "グルカゴンのはたらきとして正しいものは？",
+      "choices": [
+        "細胞へのグルコースの取りこみを促進する",
+        "グリコーゲンの合成を促進する",
+        "肝臓のグリコーゲンを分解してグルコースにし、血糖量を上げる",
+        "腎臓でグルコースの再吸収を止める"
+      ],
+      "answerIndex": 2,
+      "explanation": "すい臓ランゲルハンス島のA細胞から分泌される。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "hormone"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_hormone_01_034",
+      "unit": "science.biology.body.homeostasis.glucose",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "肝臓にたくわえられている、グルコースがたくさんつながった物質は？",
+      "choices": [
+        "デンプン",
+        "グリコーゲン",
+        "セルロース",
+        "フィブリン"
+      ],
+      "answerIndex": 1,
+      "explanation": "血糖量が下がると分解されてグルコースになる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "hormone"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_hormone_01_035",
+      "unit": "science.biology.body.homeostasis.glucose",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "血糖量の調節の中枢はどこか？",
+      "choices": [
+        "間脳の視床下部",
+        "延髄",
+        "大脳皮質",
+        "小脳"
+      ],
+      "answerIndex": 0,
+      "explanation": "視床下部が血糖量の変化を感知し、自律神経やホルモンで調節する。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "hormone"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_hormone_01_036",
+      "unit": "science.biology.body.homeostasis.glucose",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "糖尿病とはどのような状態か？",
+      "choices": [
+        "血糖量が低い状態が続く",
+        "血糖量が高い状態が続き、尿中にグルコースが排出される",
+        "尿が全く出なくなる",
+        "血液が固まりにくくなる"
+      ],
+      "answerIndex": 1,
+      "explanation": "腎臓でグルコースを再吸収しきれなくなり、尿に出る。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "hormone"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_hormone_01_037",
+      "unit": "science.biology.body.homeostasis.glucose",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "1型糖尿病の原因として正しいものは？",
+      "choices": [
+        "バソプレシンが分泌されない",
+        "インスリンは分泌されるが、標的細胞が反応しにくくなる",
+        "すい臓のB細胞が破壊され、インスリンがほとんど分泌されない",
+        "グルカゴンが分泌されない"
+      ],
+      "answerIndex": 2,
+      "explanation": "自己免疫疾患の一つで、若いうちに発症することが多い。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "hormone"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_hormone_01_038",
+      "unit": "science.biology.body.homeostasis.glucose",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "2型糖尿病の原因として正しいものは？",
+      "choices": [
+        "B細胞が免疫によって完全に破壊される",
+        "グルカゴンの分泌が止まる",
+        "血糖量が低くなりすぎる",
+        "インスリンの分泌量が減ったり、標的細胞がインスリンに反応しにくくなったりする"
+      ],
+      "answerIndex": 3,
+      "explanation": "生活習慣（食べすぎ・運動不足など）が関係し、日本の糖尿病患者の大部分を占める。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "hormone"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_hormone_01_039",
+      "unit": "science.biology.body.homeostasis.glucose",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "血糖量を上げるホルモンが多く、下げるホルモンが1つしかない理由として考えられるものは？",
+      "choices": [
+        "高血糖の方が命にかかわるから",
+        "低血糖は脳のエネルギー不足で命にかかわり、また長い歴史の中で飢餓の方が多かったから",
+        "ヒトは血糖量を調節していないから",
+        "インスリンだけで血糖量を上げられるから"
+      ],
+      "answerIndex": 1,
+      "explanation": "脳はグルコースを主なエネルギー源とするため、低血糖をすばやく防ぐしくみが何重にもある。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "hormone"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_hormone_01_040",
+      "unit": "science.biology.body.homeostasis.temperature",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "寒いときの体温調節として当てはまらないものは？",
+      "choices": [
+        "交感神経によって皮膚の血管が収縮する",
+        "チロキシンやアドレナリンで代謝が高まり発熱量が増える",
+        "皮膚の血管が拡張する",
+        "立毛筋が収縮する"
+      ],
+      "answerIndex": 2,
+      "explanation": "皮膚の血管が拡張するのは暑いとき（放熱を増やす）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "hormone"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_hormone_01_041",
+      "unit": "science.biology.body.homeostasis.temperature",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "暑いときの体温調節として正しいものは？",
+      "choices": [
+        "交感神経のはたらきで発汗が促進され、皮膚の血管が拡張して放熱が増える",
+        "立毛筋が収縮する",
+        "チロキシンの分泌が増える",
+        "皮膚の血管が収縮する"
+      ],
+      "answerIndex": 0,
+      "explanation": "体温調節の中枢は間脳の視床下部。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "hormone"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_hormone_01_042",
+      "unit": "science.biology.body.homeostasis.temperature",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "体温調節の中枢はどこか？",
+      "choices": [
+        "小脳",
+        "中脳",
+        "間脳の視床下部",
+        "延髄"
+      ],
+      "answerIndex": 2,
+      "explanation": "血糖量や体液濃度の調節の中枢でもある。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "hormone"
+      ]
+    }
+  ]
+}

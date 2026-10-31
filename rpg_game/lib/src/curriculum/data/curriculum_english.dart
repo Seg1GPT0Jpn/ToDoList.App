@@ -1,0 +1,978 @@
+// このファイルは tool/curriculum/build.py が生成しています。手で直さず src/*.txt を直してください。
+
+import '../curriculum.dart';
+
+const englishCurriculum = CurriculumNode(
+  id: 'english',
+  name: '英語',
+  level: CurriculumLevel.subject,
+  gameName: '英語ワールド',
+  curriculumReference: '高等学校学習指導要領（平成30年告示）第2章第8節 外国語（英語コミュニケーションⅠ〜Ⅲ・論理・表現Ⅰ〜Ⅲ）',
+  source: '文部科学省 高等学校学習指導要領（平成30年告示）',
+  sourceUrl: 'https://www.mext.go.jp/a_menu/shotou/new-cs/1384661.htm',
+  children: [
+    CurriculumNode(
+      id: 'english.eng',
+      name: '英語',
+      level: CurriculumLevel.course,
+      gameName: '英語の道',
+      description: '語彙・文法・構文・読解・リスニング・表現・英作文を1つの道で学ぶ',
+      curriculumReference: '英語コミュニケーションⅠ〜Ⅲ・論理・表現Ⅰ〜Ⅲ',
+      grade: '1-3',
+      children: [
+        CurriculumNode(
+          id: 'english.eng.vocab',
+          name: '語彙',
+          level: CurriculumLevel.field,
+          curriculumReference: '英語コミュニケーションⅠ〜Ⅲ（語彙）',
+          children: [
+            CurriculumNode(
+              id: 'english.eng.vocab.basic',
+              name: '基礎語彙',
+              level: CurriculumLevel.unit,
+              description: '中学〜高1で使う基本の単語',
+              grade: '1',
+              children: [
+                CurriculumNode(
+                  id: 'english.eng.vocab.basic.meaning',
+                  name: '基本単語の意味',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['意味'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.vocab.basic.pos',
+                  name: '品詞と語形',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['品詞', '名詞', '動詞', '形容詞', '副詞'],
+                ),
+              ],
+            ),
+            CurriculumNode(
+              id: 'english.eng.vocab.standard',
+              name: '標準語彙',
+              level: CurriculumLevel.unit,
+              description: '共通テスト・標準的な入試に必要な単語',
+              grade: '2',
+              prerequisites: ['english.eng.vocab.basic'],
+              children: [
+                CurriculumNode(
+                  id: 'english.eng.vocab.standard.meaning',
+                  name: '標準単語の意味',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['意味'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.vocab.standard.derivation',
+                  name: '派生語・接頭辞・接尾辞',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['派生', '接頭辞', '接尾辞', 'un-', '-ness'],
+                ),
+              ],
+            ),
+            CurriculumNode(
+              id: 'english.eng.vocab.advanced',
+              name: '難関語彙',
+              level: CurriculumLevel.unit,
+              description: '難関大学・最難関大学の長文で出る単語',
+              grade: '3',
+              prerequisites: ['english.eng.vocab.standard'],
+              children: [
+                CurriculumNode(
+                  id: 'english.eng.vocab.advanced.meaning',
+                  name: '難関単語の意味',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['意味'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.vocab.advanced.abstract',
+                  name: '抽象語・学術語',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['抽象', '概念'],
+                ),
+              ],
+            ),
+            CurriculumNode(
+              id: 'english.eng.vocab.idiom',
+              name: '熟語・句動詞',
+              level: CurriculumLevel.unit,
+              description: '句動詞・慣用表現・コロケーション',
+              children: [
+                CurriculumNode(
+                  id: 'english.eng.vocab.idiom.phrasal',
+                  name: '句動詞',
+                  level: CurriculumLevel.subUnit,
+                  keywords: [
+                    '句動詞',
+                    'look',
+                    'take',
+                    'get',
+                    'put',
+                    'come',
+                    'give'
+                  ],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.vocab.idiom.idiom',
+                  name: '慣用表現',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['慣用', '熟語', '～'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.vocab.idiom.collocation',
+                  name: 'コロケーション（語の組み合わせ）',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['コロケーション', 'make', 'do'],
+                ),
+              ],
+            ),
+            CurriculumNode(
+              id: 'english.eng.vocab.synonym',
+              name: '類義語・反意語・語法の区別',
+              level: CurriculumLevel.unit,
+              description: '似た単語の使い分け',
+              prerequisites: ['english.eng.vocab.standard'],
+              children: [
+                CurriculumNode(
+                  id: 'english.eng.vocab.synonym.synonym',
+                  name: '類義語の使い分け',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['類義', '使い分け', 'ちがい'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.vocab.synonym.usage',
+                  name: '動詞の語法',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['語法', 'SVO', 'suggest', 'remind'],
+                ),
+              ],
+            ),
+          ],
+        ),
+        CurriculumNode(
+          id: 'english.eng.grammar',
+          name: '文法',
+          level: CurriculumLevel.field,
+          curriculumReference: '論理・表現Ⅰ〜Ⅲ（文法事項）',
+          children: [
+            CurriculumNode(
+              id: 'english.eng.grammar.sentence',
+              name: '文型と動詞',
+              level: CurriculumLevel.unit,
+              description: '5文型・自動詞と他動詞',
+              grade: '1',
+              children: [
+                CurriculumNode(
+                  id: 'english.eng.grammar.sentence.pattern',
+                  name: '5文型',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['文型', 'SVOC', 'SVOO', '第'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.grammar.sentence.verb',
+                  name: '自動詞と他動詞',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['自動詞', '他動詞', 'lie', 'lay', 'raise', 'rise'],
+                ),
+              ],
+            ),
+            CurriculumNode(
+              id: 'english.eng.grammar.tense',
+              name: '時制',
+              level: CurriculumLevel.unit,
+              description: '現在・過去・未来・進行形・完了形',
+              grade: '1',
+              prerequisites: ['english.eng.grammar.sentence'],
+              children: [
+                CurriculumNode(
+                  id: 'english.eng.grammar.tense.simple',
+                  name: '現在形・過去形・未来',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['現在形', '過去形', 'will', '未来'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.grammar.tense.progressive',
+                  name: '進行形',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['進行'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.grammar.tense.perfect',
+                  name: '完了形',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['完了', 'have been', 'had', '現在完了', '過去完了'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.grammar.tense.agreement',
+                  name: '時制の一致と時・条件の副詞節',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['時制の一致', '副詞節', 'when', 'if'],
+                ),
+              ],
+            ),
+            CurriculumNode(
+              id: 'english.eng.grammar.auxiliary',
+              name: '助動詞',
+              level: CurriculumLevel.unit,
+              description: 'can・may・must・should・助動詞＋完了形',
+              grade: '1',
+              prerequisites: ['english.eng.grammar.tense'],
+              children: [
+                CurriculumNode(
+                  id: 'english.eng.grammar.auxiliary.basic',
+                  name: '助動詞の基本',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['can', 'may', 'must', 'should', 'will'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.grammar.auxiliary.perfect',
+                  name: '助動詞＋have＋過去分詞',
+                  level: CurriculumLevel.subUnit,
+                  keywords: [
+                    'have p.p.',
+                    'should have',
+                    'must have',
+                    'may have',
+                    'cannot have'
+                  ],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.grammar.auxiliary.idiom',
+                  name: '助動詞を使った慣用表現',
+                  level: CurriculumLevel.subUnit,
+                  keywords: [
+                    'had better',
+                    'would rather',
+                    'may well',
+                    'used to'
+                  ],
+                ),
+              ],
+            ),
+            CurriculumNode(
+              id: 'english.eng.grammar.passive',
+              name: '受動態',
+              level: CurriculumLevel.unit,
+              description: '受動態の形と注意点',
+              grade: '1',
+              prerequisites: ['english.eng.grammar.tense'],
+              children: [
+                CurriculumNode(
+                  id: 'english.eng.grammar.passive.basic',
+                  name: '受動態の基本',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['受動態', '受け身', 'be p.p.'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.grammar.passive.advanced',
+                  name: '注意すべき受動態',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['by以外', '群動詞', '完了形の受動態', '進行形の受動態'],
+                ),
+              ],
+            ),
+            CurriculumNode(
+              id: 'english.eng.grammar.infinitive',
+              name: '不定詞',
+              level: CurriculumLevel.unit,
+              description: '名詞・形容詞・副詞的用法と構文',
+              grade: '1',
+              prerequisites: ['english.eng.grammar.sentence'],
+              children: [
+                CurriculumNode(
+                  id: 'english.eng.grammar.infinitive.usage',
+                  name: '不定詞の3用法',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['名詞的', '形容詞的', '副詞的', '用法'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.grammar.infinitive.subject',
+                  name: '意味上の主語・完了不定詞',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['意味上の主語', 'for', 'of', 'to have'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.grammar.infinitive.construction',
+                  name: '不定詞を使った構文',
+                  level: CurriculumLevel.subUnit,
+                  keywords: [
+                    'too',
+                    'enough',
+                    'in order to',
+                    'so as to',
+                    'seem to'
+                  ],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.grammar.infinitive.causative',
+                  name: '使役動詞・知覚動詞と原形不定詞',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['使役', '知覚', 'make', 'let', 'have', '原形'],
+                ),
+              ],
+            ),
+            CurriculumNode(
+              id: 'english.eng.grammar.gerund',
+              name: '動名詞',
+              level: CurriculumLevel.unit,
+              description: '動名詞の働き・不定詞との使い分け',
+              grade: '1',
+              prerequisites: ['english.eng.grammar.infinitive'],
+              children: [
+                CurriculumNode(
+                  id: 'english.eng.grammar.gerund.usage',
+                  name: '動名詞の働き',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['動名詞'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.grammar.gerund.contrast',
+                  name: '動名詞と不定詞の使い分け',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['remember', 'forget', 'stop', 'try', 'regret'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.grammar.gerund.idiom',
+                  name: '動名詞を使った慣用表現',
+                  level: CurriculumLevel.subUnit,
+                  keywords: [
+                    'look forward to',
+                    'be used to',
+                    'There is no',
+                    'feel like',
+                    'cannot help'
+                  ],
+                ),
+              ],
+            ),
+            CurriculumNode(
+              id: 'english.eng.grammar.participle',
+              name: '分詞',
+              level: CurriculumLevel.unit,
+              description: '分詞の形容詞的用法・補語',
+              grade: '2',
+              prerequisites: ['english.eng.grammar.gerund'],
+              children: [
+                CurriculumNode(
+                  id: 'english.eng.grammar.participle.modifier',
+                  name: '名詞を修飾する分詞',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['分詞', '修飾', '現在分詞', '過去分詞'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.grammar.participle.complement',
+                  name: '補語になる分詞',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['補語', 'SVOC', '感情'],
+                ),
+              ],
+            ),
+            CurriculumNode(
+              id: 'english.eng.grammar.construction',
+              name: '分詞構文',
+              level: CurriculumLevel.unit,
+              description: '分詞構文の意味と形',
+              grade: '2',
+              prerequisites: ['english.eng.grammar.participle'],
+              children: [
+                CurriculumNode(
+                  id: 'english.eng.grammar.construction.basic',
+                  name: '分詞構文の基本',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['分詞構文'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.grammar.construction.advanced',
+                  name: '独立分詞構文・with構文',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['独立分詞構文', 'with', '完了形の分詞構文', 'being'],
+                ),
+              ],
+            ),
+            CurriculumNode(
+              id: 'english.eng.grammar.comparison',
+              name: '比較',
+              level: CurriculumLevel.unit,
+              description: '原級・比較級・最上級と比較の構文',
+              grade: '2',
+              children: [
+                CurriculumNode(
+                  id: 'english.eng.grammar.comparison.basic',
+                  name: '比較の基本',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['比較級', '最上級', '原級', 'as'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.grammar.comparison.idiom',
+                  name: '比較の慣用表現',
+                  level: CurriculumLevel.subUnit,
+                  keywords: [
+                    'the 比較級',
+                    'no more',
+                    'no less',
+                    'not so much',
+                    '倍'
+                  ],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.grammar.comparison.latin',
+                  name: 'ラテン比較・最上級の書きかえ',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['superior', 'prefer', '書きかえ'],
+                ),
+              ],
+            ),
+            CurriculumNode(
+              id: 'english.eng.grammar.relative',
+              name: '関係詞',
+              level: CurriculumLevel.unit,
+              description: '関係代名詞・関係副詞・what・複合関係詞',
+              grade: '2',
+              prerequisites: ['english.eng.grammar.sentence'],
+              children: [
+                CurriculumNode(
+                  id: 'english.eng.grammar.relative.pronoun',
+                  name: '関係代名詞',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['関係代名詞', 'who', 'which', 'that', 'whose'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.grammar.relative.adverb',
+                  name: '関係副詞',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['関係副詞', 'where', 'when', 'why', 'how'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.grammar.relative.nonrestrictive',
+                  name: '非制限用法と前置詞＋関係代名詞',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['非制限', 'カンマ', '前置詞＋関係代名詞', 'in which'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.grammar.relative.what',
+                  name: '関係代名詞 what',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['what'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.grammar.relative.compound',
+                  name: '複合関係詞',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['whoever', 'whatever', 'however', 'wherever'],
+                ),
+              ],
+            ),
+            CurriculumNode(
+              id: 'english.eng.grammar.subjunctive',
+              name: '仮定法',
+              level: CurriculumLevel.unit,
+              description: '仮定法過去・過去完了・いろいろな仮定法',
+              grade: '2',
+              prerequisites: ['english.eng.grammar.tense'],
+              children: [
+                CurriculumNode(
+                  id: 'english.eng.grammar.subjunctive.past',
+                  name: '仮定法過去',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['仮定法過去', 'If I were'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.grammar.subjunctive.pastperfect',
+                  name: '仮定法過去完了・混合型',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['仮定法過去完了', 'had p.p.', '混合'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.grammar.subjunctive.wish',
+                  name: 'I wish・as if・It is time',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['wish', 'as if', 'It is time', 'If only'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.grammar.subjunctive.advanced',
+                  name: 'if の省略・without・倒置の仮定法',
+                  level: CurriculumLevel.subUnit,
+                  keywords: [
+                    'Without',
+                    'But for',
+                    '倒置',
+                    'Were',
+                    'Had',
+                    'should'
+                  ],
+                ),
+              ],
+            ),
+            CurriculumNode(
+              id: 'english.eng.grammar.conj',
+              name: '接続詞と節',
+              level: CurriculumLevel.unit,
+              description: '等位・従位接続詞・名詞節',
+              grade: '2',
+              children: [
+                CurriculumNode(
+                  id: 'english.eng.grammar.conj.coordinate',
+                  name: '等位接続詞と相関表現',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['both', 'either', 'neither', 'not only'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.grammar.conj.subordinate',
+                  name: '従位接続詞',
+                  level: CurriculumLevel.subUnit,
+                  keywords: [
+                    'although',
+                    'though',
+                    'unless',
+                    'while',
+                    'as long as'
+                  ],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.grammar.conj.noun',
+                  name: '名詞節（that・whether・疑問詞）',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['名詞節', 'whether', 'that節'],
+                ),
+              ],
+            ),
+            CurriculumNode(
+              id: 'english.eng.grammar.pronoun',
+              name: '名詞・代名詞・冠詞',
+              level: CurriculumLevel.unit,
+              description: '可算・不可算・代名詞・冠詞',
+              grade: '1',
+              children: [
+                CurriculumNode(
+                  id: 'english.eng.grammar.pronoun.noun',
+                  name: '可算名詞と不可算名詞',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['可算', '不可算', 'furniture', 'information'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.grammar.pronoun.pronoun',
+                  name: '代名詞の用法',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['代名詞', 'one', 'another', 'the other', 'others'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.grammar.pronoun.article',
+                  name: '冠詞',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['冠詞', 'a', 'the'],
+                ),
+              ],
+            ),
+            CurriculumNode(
+              id: 'english.eng.grammar.adjadv',
+              name: '形容詞・副詞・前置詞',
+              level: CurriculumLevel.unit,
+              description: '修飾語と前置詞の使い分け',
+              grade: '1',
+              children: [
+                CurriculumNode(
+                  id: 'english.eng.grammar.adjadv.adjective',
+                  name: '形容詞の用法',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['形容詞', 'many', 'much', 'few', 'little'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.grammar.adjadv.adverb',
+                  name: '副詞の用法',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['副詞', 'already', 'yet', 'still', 'hardly'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.grammar.adjadv.preposition',
+                  name: '前置詞',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['前置詞', 'in', 'on', 'at', 'by', 'until'],
+                ),
+              ],
+            ),
+            CurriculumNode(
+              id: 'english.eng.grammar.negation',
+              name: '否定',
+              level: CurriculumLevel.unit,
+              description: '部分否定・二重否定・否定の慣用表現',
+              grade: '3',
+              children: [
+                CurriculumNode(
+                  id: 'english.eng.grammar.negation.partial',
+                  name: '部分否定と全体否定',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['部分否定', 'not all', 'not always'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.grammar.negation.idiom',
+                  name: '否定の慣用表現',
+                  level: CurriculumLevel.subUnit,
+                  keywords: [
+                    'far from',
+                    'anything but',
+                    'by no means',
+                    'cannot ~ too'
+                  ],
+                ),
+              ],
+            ),
+          ],
+        ),
+        CurriculumNode(
+          id: 'english.eng.structure',
+          name: '文構造・構文',
+          level: CurriculumLevel.field,
+          curriculumReference: '英語コミュニケーションⅡ・Ⅲ／論理・表現Ⅱ・Ⅲ',
+          children: [
+            CurriculumNode(
+              id: 'english.eng.structure.special',
+              name: '特殊な構文',
+              level: CurriculumLevel.unit,
+              description: '倒置・強調・省略・挿入・同格',
+              grade: '3',
+              prerequisites: ['english.eng.grammar.relative'],
+              children: [
+                CurriculumNode(
+                  id: 'english.eng.structure.special.inversion',
+                  name: '倒置',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['倒置', 'Never', 'Little', 'Only'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.structure.special.emphasis',
+                  name: '強調構文',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['強調', 'It is ~ that'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.structure.special.ellipsis',
+                  name: '省略',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['省略'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.structure.special.apposition',
+                  name: '挿入と同格',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['挿入', '同格', 'the fact that'],
+                ),
+              ],
+            ),
+            CurriculumNode(
+              id: 'english.eng.structure.complex',
+              name: '複雑な文構造',
+              level: CurriculumLevel.unit,
+              description: '長い主語・入れ子の節・無生物主語',
+              grade: '3',
+              prerequisites: ['english.eng.structure.special'],
+              children: [
+                CurriculumNode(
+                  id: 'english.eng.structure.complex.subject',
+                  name: '長い主語と形式主語・形式目的語',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['形式主語', '形式目的語', 'it'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.structure.complex.nested',
+                  name: '入れ子になった節',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['節', '入れ子'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.structure.complex.inanimate',
+                  name: '無生物主語',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['無生物主語', 'enable', 'prevent', 'cause'],
+                ),
+              ],
+            ),
+            CurriculumNode(
+              id: 'english.eng.structure.order',
+              name: '語順整序（並べ替え）',
+              level: CurriculumLevel.unit,
+              description: '語句を正しく並べる',
+              children: [
+                CurriculumNode(
+                  id: 'english.eng.structure.order.order',
+                  name: '並べ替え',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['並べ', '並び替え', '並べかえ'],
+                ),
+              ],
+            ),
+          ],
+        ),
+        CurriculumNode(
+          id: 'english.eng.reading',
+          name: '読解',
+          level: CurriculumLevel.field,
+          curriculumReference: '英語コミュニケーションⅠ〜Ⅲ（読むこと）',
+          children: [
+            CurriculumNode(
+              id: 'english.eng.reading.intensive',
+              name: '精読',
+              level: CurriculumLevel.unit,
+              description: '1文の構造を正確に読む・和訳',
+              grade: '2',
+              prerequisites: ['english.eng.structure.complex'],
+              children: [
+                CurriculumNode(
+                  id: 'english.eng.reading.intensive.structure',
+                  name: '構文をとって訳す',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['訳', '和訳', '意味として'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.reading.intensive.reference',
+                  name: '指示語・代名詞の指すもの',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['指す', '指示語', 'it', 'this'],
+                ),
+              ],
+            ),
+            CurriculumNode(
+              id: 'english.eng.reading.passage',
+              name: '長文読解',
+              level: CurriculumLevel.unit,
+              description: '主旨・内容一致・段落の役割',
+              grade: '2',
+              children: [
+                CurriculumNode(
+                  id: 'english.eng.reading.passage.detail',
+                  name: '内容一致と細部の読み取り',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['内容', '合っている', '本文'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.reading.passage.main',
+                  name: '主旨・タイトル',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['主旨', '要旨', 'タイトル', '最も適切'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.reading.passage.logic',
+                  name: '段落構成と論理展開',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['段落', '論理', 'however', 'therefore', '具体例'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.reading.passage.inference',
+                  name: '推論',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['推測', '推論', '意図'],
+                ),
+              ],
+            ),
+            CurriculumNode(
+              id: 'english.eng.reading.practical',
+              name: '資料・実用文の読解',
+              level: CurriculumLevel.unit,
+              description: '広告・メール・グラフ・複数の資料',
+              grade: '1',
+              children: [
+                CurriculumNode(
+                  id: 'english.eng.reading.practical.notice',
+                  name: '広告・掲示・メール',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['広告', '掲示', 'メール', 'ウェブ'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.reading.practical.chart',
+                  name: '図表・グラフを含む文章',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['グラフ', '表', '図'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.reading.practical.multiple',
+                  name: '複数の資料の比較',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['複数', '比較', '2つの文章'],
+                ),
+              ],
+            ),
+          ],
+        ),
+        CurriculumNode(
+          id: 'english.eng.listening',
+          name: 'リスニング',
+          level: CurriculumLevel.field,
+          curriculumReference: '英語コミュニケーションⅠ〜Ⅲ（聞くこと）',
+          children: [
+            CurriculumNode(
+              id: 'english.eng.listening.listening',
+              name: 'リスニング',
+              level: CurriculumLevel.unit,
+              description: '短い会話・説明・長いモノローグ',
+              children: [
+                CurriculumNode(
+                  id: 'english.eng.listening.listening.short',
+                  name: '短い発話・会話',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['会話', '聞'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.listening.listening.long',
+                  name: '長めの説明・講義',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['説明', '講義', 'モノローグ'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.listening.listening.phonetic',
+                  name: '音の変化（連結・脱落）',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['連結', '脱落', '音の変化'],
+                ),
+              ],
+            ),
+          ],
+        ),
+        CurriculumNode(
+          id: 'english.eng.speaking',
+          name: '話すこと・やり取り',
+          level: CurriculumLevel.field,
+          curriculumReference: '論理・表現Ⅰ〜Ⅲ（話すこと［やり取り］［発表］）',
+          children: [
+            CurriculumNode(
+              id: 'english.eng.speaking.conversation',
+              name: '会話表現',
+              level: CurriculumLevel.unit,
+              description: '場面に応じた応答・依頼・提案',
+              grade: '1',
+              children: [
+                CurriculumNode(
+                  id: 'english.eng.speaking.conversation.response',
+                  name: '応答の表現',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['応答', '返事', '答え'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.speaking.conversation.function',
+                  name: '依頼・提案・許可の表現',
+                  level: CurriculumLevel.subUnit,
+                  keywords: [
+                    '依頼',
+                    '提案',
+                    '許可',
+                    'Would you',
+                    'Shall we',
+                    'Why don\'t'
+                  ],
+                ),
+              ],
+            ),
+            CurriculumNode(
+              id: 'english.eng.speaking.pron',
+              name: '発音・アクセント',
+              level: CurriculumLevel.unit,
+              description: '発音・アクセント・強勢',
+              children: [
+                CurriculumNode(
+                  id: 'english.eng.speaking.pron.sound',
+                  name: '発音',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['発音', '下線部'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.speaking.pron.accent',
+                  name: 'アクセント',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['アクセント', '強勢', '第1', '強く読む', '音節'],
+                ),
+              ],
+            ),
+          ],
+        ),
+        CurriculumNode(
+          id: 'english.eng.writing',
+          name: '書くこと・英作文',
+          level: CurriculumLevel.field,
+          curriculumReference: '論理・表現Ⅰ〜Ⅲ（書くこと）',
+          children: [
+            CurriculumNode(
+              id: 'english.eng.writing.sentence',
+              name: '和文英訳',
+              level: CurriculumLevel.unit,
+              description: '日本語を正確な英文にする',
+              grade: '2',
+              prerequisites: ['english.eng.grammar.subjunctive'],
+              children: [
+                CurriculumNode(
+                  id: 'english.eng.writing.sentence.translate',
+                  name: '和文英訳',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['英訳', '英語にしなさい', '英文に'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.writing.sentence.error',
+                  name: '誤文訂正',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['誤り', '誤文', '間違い'],
+                ),
+              ],
+            ),
+            CurriculumNode(
+              id: 'english.eng.writing.essay',
+              name: '自由英作文・要約',
+              level: CurriculumLevel.unit,
+              description: '意見を論理的に書く・要約する',
+              grade: '3',
+              prerequisites: ['english.eng.writing.sentence'],
+              children: [
+                CurriculumNode(
+                  id: 'english.eng.writing.essay.opinion',
+                  name: '意見を述べる英作文',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['意見', '賛成', '反対'],
+                ),
+                CurriculumNode(
+                  id: 'english.eng.writing.essay.summary',
+                  name: '英文の要約',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['要約'],
+                ),
+              ],
+            ),
+          ],
+        ),
+        CurriculumNode(
+          id: 'english.eng.exam',
+          name: '入試対策',
+          level: CurriculumLevel.field,
+          curriculumReference: '大学入学共通テスト・個別試験',
+          children: [
+            CurriculumNode(
+              id: 'english.eng.exam.common',
+              name: '共通テスト形式',
+              level: CurriculumLevel.unit,
+              description: '共通テスト（リーディング・リスニング）の形式',
+              grade: '3',
+              children: [
+                CurriculumNode(
+                  id: 'english.eng.exam.common.reading',
+                  name: '共通テスト型リーディング',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['共通テスト'],
+                ),
+              ],
+            ),
+            CurriculumNode(
+              id: 'english.eng.exam.advanced',
+              name: '難関大学形式',
+              level: CurriculumLevel.unit,
+              description: '難関・最難関大学の総合問題',
+              grade: '3',
+              prerequisites: ['english.eng.reading.passage'],
+              children: [
+                CurriculumNode(
+                  id: 'english.eng.exam.advanced.synthesis',
+                  name: '総合問題',
+                  level: CurriculumLevel.subUnit,
+                  keywords: ['総合', '全範囲'],
+                ),
+              ],
+            ),
+          ],
+        ),
+      ],
+    ),
+  ],
+);

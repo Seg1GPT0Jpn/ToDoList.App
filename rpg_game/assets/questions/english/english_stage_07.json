@@ -1,0 +1,356 @@
+{
+  "setId": "english_stage_07",
+  "worldId": "english",
+  "origin": "original",
+  "version": 3,
+  "questions": [
+    {
+      "id": "en07_001",
+      "unit": "english.eng.vocab.standard.meaning",
+      "category": "meaning",
+      "prompt": "「reliable」の意味は？",
+      "choices": [
+        "利点",
+        "信頼できる",
+        "必要とする",
+        "古代の"
+      ],
+      "answerIndex": 1,
+      "explanation": "reliable は「信頼できる」。"
+    },
+    {
+      "id": "en07_002",
+      "unit": "english.eng.vocab.standard.meaning",
+      "category": "meaning",
+      "prompt": "「obvious」の意味は？",
+      "choices": [
+        "現代の",
+        "明らかな",
+        "意見",
+        "消える"
+      ],
+      "answerIndex": 1,
+      "explanation": "obvious は「明らかな」。"
+    },
+    {
+      "id": "en07_003",
+      "unit": "english.eng.vocab.standard.meaning",
+      "category": "meaning",
+      "prompt": "「opportunity」の意味は？",
+      "choices": [
+        "古代の",
+        "機会",
+        "なじみのある",
+        "自信のある"
+      ],
+      "answerIndex": 1,
+      "explanation": "opportunity は「機会」。"
+    },
+    {
+      "id": "en07_004",
+      "unit": "english.eng.vocab.standard.meaning",
+      "category": "meaning",
+      "prompt": "「purpose」の意味は？",
+      "choices": [
+        "解決策",
+        "利用できる",
+        "目的",
+        "態度"
+      ],
+      "answerIndex": 2,
+      "explanation": "purpose は「目的」。"
+    },
+    {
+      "id": "en07_005",
+      "unit": "english.eng.vocab.standard.meaning",
+      "category": "meaning",
+      "prompt": "「opinion」の意味は？",
+      "choices": [
+        "経験",
+        "許す",
+        "意見",
+        "態度"
+      ],
+      "answerIndex": 2,
+      "explanation": "opinion は「意見」。"
+    },
+    {
+      "id": "en07_006",
+      "unit": "english.eng.vocab.standard.meaning",
+      "category": "meaning",
+      "prompt": "「sufficient」の意味は？",
+      "choices": [
+        "信頼できる",
+        "必要とする",
+        "十分な",
+        "描写する"
+      ],
+      "answerIndex": 2,
+      "explanation": "sufficient は「十分な」。"
+    },
+    {
+      "id": "en07_007",
+      "unit": "english.eng.vocab.standard.meaning",
+      "category": "meaning",
+      "prompt": "「familiar」の意味は？",
+      "choices": [
+        "必要とする",
+        "利用できる",
+        "なじみのある",
+        "拒否する"
+      ],
+      "answerIndex": 2,
+      "explanation": "familiar は「なじみのある」。"
+    },
+    {
+      "id": "en07_008",
+      "unit": "english.eng.vocab.standard.meaning",
+      "category": "meaning",
+      "prompt": "「ancient」の意味は？",
+      "choices": [
+        "辛抱強い",
+        "古代の",
+        "雇う",
+        "明らかな"
+      ],
+      "answerIndex": 1,
+      "explanation": "ancient は「古代の」。"
+    },
+    {
+      "id": "en07_009",
+      "unit": "english.eng.vocab.idiom.collocation",
+      "category": "meaning",
+      "prompt": "「make up one's mind」の意味は？",
+      "choices": [
+        "～を使い果たす",
+        "～に頼る",
+        "～が理由で",
+        "決心する"
+      ],
+      "answerIndex": 3,
+      "explanation": "make up one's mind は「決心する」。"
+    },
+    {
+      "id": "en07_010",
+      "unit": "english.eng.vocab.idiom.idiom",
+      "category": "meaning",
+      "prompt": "「take part in ～」の意味は？",
+      "choices": [
+        "意味をなす",
+        "～を誇りに思う",
+        "～しさえすれば",
+        "～に参加する"
+      ],
+      "answerIndex": 3,
+      "explanation": "take part in ～ は「～に参加する」。"
+    },
+    {
+      "id": "en07_011",
+      "unit": "english.eng.vocab.basic.pos",
+      "category": "partOfSpeech",
+      "prompt": "次のうち「名詞」はどれ？",
+      "choices": [
+        "invent",
+        "inventive",
+        "invention",
+        "inventively"
+      ],
+      "answerIndex": 2,
+      "explanation": "-tion は名詞を作る語尾。invent（発明する）→ invention（発明）。"
+    },
+    {
+      "id": "en07_012",
+      "unit": "english.eng.vocab.basic.pos",
+      "category": "partOfSpeech",
+      "prompt": "次のうち「形容詞」はどれ？",
+      "choices": [
+        "nature",
+        "natural",
+        "naturally",
+        "naturalize"
+      ],
+      "answerIndex": 1,
+      "explanation": "-al は形容詞を作る語尾。natural = 自然の、当然の。"
+    },
+    {
+      "id": "en07_013",
+      "unit": "english.eng.grammar.construction.basic",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) the news, she began to cry.",
+      "choices": [
+        "Heard",
+        "Hearing",
+        "To hear",
+        "Hear"
+      ],
+      "answerIndex": 1,
+      "explanation": "「その知らせを聞いて」。主語 she が「聞く」側なので現在分詞で始まる分詞構文。"
+    },
+    {
+      "id": "en07_014",
+      "unit": "english.eng.grammar.construction.advanced",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "She was listening to music with her eyes (   ).",
+      "choices": [
+        "closing",
+        "close",
+        "closed",
+        "to close"
+      ],
+      "answerIndex": 2,
+      "explanation": "with + O + 分詞 で付帯状況。目は「閉じられた」状態なので過去分詞。"
+    },
+    {
+      "id": "en07_015",
+      "unit": "english.eng.grammar.construction",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) tired, I went to bed early.",
+      "choices": [
+        "Felt",
+        "Feeling",
+        "To feel",
+        "Feel"
+      ],
+      "answerIndex": 1,
+      "explanation": "「疲れていたので」。主語 I が「感じる」側なので現在分詞。"
+    },
+    {
+      "id": "en07_016",
+      "unit": "english.eng.grammar.construction.basic",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) in simple English, this book is easy to read.",
+      "choices": [
+        "Writing",
+        "Written",
+        "To write",
+        "Write"
+      ],
+      "answerIndex": 1,
+      "explanation": "本は「書かれた」側なので過去分詞で始まる分詞構文。"
+    },
+    {
+      "id": "en07_017",
+      "unit": "english.eng.grammar.construction.basic",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) finished my homework, I went out.",
+      "choices": [
+        "Having",
+        "Had",
+        "Have",
+        "To have"
+      ],
+      "answerIndex": 0,
+      "explanation": "出かける前に宿題を終えていたので、完了形の分詞構文 having + 過去分詞。"
+    },
+    {
+      "id": "en07_018",
+      "unit": "english.eng.grammar.construction.basic",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) knowing what to do, I asked for help.",
+      "choices": [
+        "No",
+        "Never",
+        "Not",
+        "Without"
+      ],
+      "answerIndex": 2,
+      "explanation": "分詞構文の否定は not を分詞の前に置く。"
+    },
+    {
+      "id": "en07_019",
+      "unit": "english.eng.grammar.construction.basic",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) speaking, this plan is too expensive.",
+      "choices": [
+        "General",
+        "Generally",
+        "In general",
+        "Generalized"
+      ],
+      "answerIndex": 1,
+      "explanation": "generally speaking（一般的に言えば）は慣用的な分詞構文。"
+    },
+    {
+      "id": "en07_020",
+      "unit": "english.eng.grammar.construction",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Frankly (   ), I don't agree.",
+      "choices": [
+        "spoken",
+        "speaking",
+        "to speak",
+        "speak"
+      ],
+      "answerIndex": 1,
+      "explanation": "frankly speaking（率直に言えば）。"
+    },
+    {
+      "id": "en07_021",
+      "unit": "english.eng.grammar.construction.basic",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) from a distance, the rock looks like a face.",
+      "choices": [
+        "Seeing",
+        "Seen",
+        "To see",
+        "Having seen"
+      ],
+      "answerIndex": 1,
+      "explanation": "岩は「見られる」側なので過去分詞で始まる分詞構文。"
+    },
+    {
+      "id": "en07_022",
+      "unit": "english.eng.grammar.construction.basic",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) been told the news, she was shocked.",
+      "choices": [
+        "Being",
+        "Having",
+        "Had",
+        "Have"
+      ],
+      "answerIndex": 1,
+      "explanation": "「（先に）知らされていたので」は完了受動の分詞構文 having been + 過去分詞。"
+    },
+    {
+      "id": "en07_023",
+      "unit": "english.eng.grammar.construction.basic",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "All things (   ), the plan was a success.",
+      "choices": [
+        "considering",
+        "considered",
+        "to consider",
+        "consider"
+      ],
+      "answerIndex": 1,
+      "explanation": "all things considered（あらゆることを考慮すると）。独立分詞構文の慣用表現。"
+    },
+    {
+      "id": "en07_024",
+      "unit": "english.eng.grammar.construction.basic",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Night (   ), we went home.",
+      "choices": [
+        "came on",
+        "coming on",
+        "come on",
+        "to come"
+      ],
+      "answerIndex": 1,
+      "explanation": "主節と主語が違う独立分詞構文。Night coming on（夜になったので）。"
+    }
+  ]
+}

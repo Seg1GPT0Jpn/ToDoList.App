@@ -1,0 +1,344 @@
+{
+  "setId": "social_eth_10",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_eth10_001",
+      "unit": "social.eth.issues.issues",
+      "category": "knowledge",
+      "prompt": "患者の意思よりも、医師が「患者のため」と判断して治療方針を決める考え方は？",
+      "choices": [
+        "パターナリズム",
+        "リビング・ウィル",
+        "インフォームド・コンセント",
+        "セカンド・オピニオン"
+      ],
+      "answerIndex": 0,
+      "explanation": "父権主義とも訳される。現在は患者の自己決定権を尊重する考え方が重視されている。"
+    },
+    {
+      "id": "soc_eth10_002",
+      "unit": "social.eth.issues.issues",
+      "category": "knowledge",
+      "prompt": "生命の質を重視し、延命だけでなく本人らしい生き方を大切にする考え方は？",
+      "choices": [
+        "パターナリズム",
+        "エンハンスメント",
+        "QOL（クオリティ・オブ・ライフ）",
+        "SOL（生命の尊厳）だけ"
+      ],
+      "answerIndex": 2,
+      "explanation": "生命の神聖さ（SOL）と対比される。"
+    },
+    {
+      "id": "soc_eth10_003",
+      "unit": "social.eth.issues.issues",
+      "category": "knowledge",
+      "prompt": "主治医以外の医師に意見を求めることは？",
+      "choices": [
+        "セカンド・オピニオン",
+        "インフォームド・コンセント",
+        "リヴィング・ウィル",
+        "ターミナル・ケア"
+      ],
+      "answerIndex": 0,
+      "explanation": "納得して治療法を選ぶために役立つ。"
+    },
+    {
+      "id": "soc_eth10_004",
+      "unit": "social.eth.issues.issues",
+      "category": "knowledge",
+      "prompt": "死が近い患者の心身の苦痛をやわらげるケアは？",
+      "choices": [
+        "遺伝子治療",
+        "再生医療",
+        "臓器移植",
+        "緩和ケア（ホスピスケア）"
+      ],
+      "answerIndex": 3,
+      "explanation": "ターミナル・ケアとも呼ばれる。"
+    },
+    {
+      "id": "soc_eth10_005",
+      "unit": "social.eth.issues.issues.environment",
+      "category": "knowledge",
+      "prompt": "人間だけでなく、将来の世代や自然への責任を考える倫理は？",
+      "choices": [
+        "職業倫理",
+        "生命倫理",
+        "環境倫理",
+        "情報倫理"
+      ],
+      "answerIndex": 2,
+      "explanation": "世代間倫理・地球有限主義・自然の生存権などの考え方がある。"
+    },
+    {
+      "id": "soc_eth10_006",
+      "unit": "social.eth.issues.issues",
+      "category": "knowledge",
+      "prompt": "「沈黙の春」を著し、農薬による環境汚染を警告したのは？",
+      "choices": [
+        "アルド＝レオポルド",
+        "ハーディン",
+        "ヨナス",
+        "レイチェル＝カーソン"
+      ],
+      "answerIndex": 3,
+      "explanation": "1962 年に出版された。"
+    },
+    {
+      "id": "soc_eth10_007",
+      "unit": "social.eth.issues.issues",
+      "category": "knowledge",
+      "prompt": "社会的・文化的につくられた性別の役割を何という？",
+      "choices": [
+        "ダイバーシティ",
+        "セックス",
+        "ジェンダー",
+        "ステレオタイプだけ"
+      ],
+      "answerIndex": 2,
+      "explanation": "生物学的な性別（セックス）と区別する。"
+    },
+    {
+      "id": "soc_eth10_008",
+      "unit": "social.eth.issues.issues.information",
+      "category": "knowledge",
+      "prompt": "情報社会で、他者の権利を尊重し、責任ある行動をとるための倫理は？",
+      "choices": [
+        "生命倫理",
+        "情報倫理",
+        "環境倫理",
+        "ビジネス倫理"
+      ],
+      "answerIndex": 1,
+      "explanation": "著作権・プライバシー・フェイクニュースへの対応など。"
+    },
+    {
+      "id": "soc_eth10_009",
+      "unit": "social.eth.issues.issues",
+      "category": "knowledge",
+      "prompt": "共有地（コモンズ）を各自が自由に使うと、資源がなくなってしまうという考えは？",
+      "choices": [
+        "無知のヴェール",
+        "共有地（コモンズ）の悲劇",
+        "パレート最適",
+        "囚人のジレンマ"
+      ],
+      "answerIndex": 1,
+      "explanation": "ハーディンが示した。環境問題を考える手がかりになる。"
+    },
+    {
+      "id": "soc_eth10_010",
+      "unit": "social.eth.issues.issues",
+      "category": "knowledge",
+      "prompt": "iPS 細胞などを用いて、失われた組織や臓器の機能を回復させる医療は？",
+      "choices": [
+        "終末期医療",
+        "再生医療",
+        "緩和ケア",
+        "代替医療"
+      ],
+      "answerIndex": 1,
+      "explanation": "倫理的な課題についても議論されている。"
+    },
+    {
+      "id": "soc_eth10_011",
+      "unit": "social.eth.issues.issues",
+      "category": "thinking",
+      "prompt": "出生前診断をめぐる倫理的な課題として適切なものは？",
+      "choices": [
+        "必ず病気が治ること",
+        "法律で義務づけられていること",
+        "命の選別につながるのではないかという問題",
+        "診断に費用がかからないこと"
+      ],
+      "answerIndex": 2,
+      "explanation": "技術の進歩が新しい倫理的な問いを生んでいる。"
+    },
+    {
+      "id": "soc_eth10_012",
+      "unit": "social.eth.issues.issues.environment",
+      "category": "thinking",
+      "prompt": "「持続可能な開発」の考え方として適切なものは？",
+      "choices": [
+        "現在の世代の利益だけを最大にする開発",
+        "先進国だけが発展すること",
+        "将来の世代の必要を損なわずに、現在の世代の必要を満たす開発",
+        "開発を完全にやめること"
+      ],
+      "answerIndex": 2,
+      "explanation": "1987 年の国連の委員会（ブルントラント委員会）が示した。"
+    },
+    {
+      "id": "soc_eth10_013",
+      "unit": "social.eth.issues.issues",
+      "category": "knowledge",
+      "prompt": "体外受精や代理出産などの技術を何という？",
+      "choices": [
+        "遺伝子治療",
+        "生殖補助医療",
+        "再生医療",
+        "緩和ケア"
+      ],
+      "answerIndex": 1,
+      "explanation": "親子関係などの倫理的課題がある。"
+    },
+    {
+      "id": "soc_eth10_014",
+      "unit": "social.eth.issues.issues.bio",
+      "category": "knowledge",
+      "prompt": "日本の臓器移植法で、脳死判定後の臓器提供に必要なことは？",
+      "choices": [
+        "本人の意思表示、または本人が拒否していない場合の家族の承諾",
+        "何も必要ない",
+        "国の許可だけ",
+        "医師だけの判断"
+      ],
+      "answerIndex": 0,
+      "explanation": "2009 年の改正で家族の承諾でも可能になった。"
+    },
+    {
+      "id": "soc_eth10_015",
+      "unit": "social.eth.issues.issues",
+      "category": "knowledge",
+      "prompt": "自分の死のあり方について、元気なうちに意思を示しておく文書は？",
+      "choices": [
+        "リビング＝ウィル",
+        "セカンド＝オピニオン",
+        "インフォームド＝コンセント",
+        "ドナーカード"
+      ],
+      "answerIndex": 0,
+      "explanation": "延命治療を望まないことなどを記す。"
+    },
+    {
+      "id": "soc_eth10_016",
+      "unit": "social.eth.issues.issues.bio",
+      "category": "knowledge",
+      "prompt": "生命の尊さは絶対的で、質によって比べられないとする考え方は？",
+      "choices": [
+        "QOL（生命の質）",
+        "SOL（生命の尊厳）",
+        "功利主義",
+        "自己決定権"
+      ],
+      "answerIndex": 1,
+      "explanation": "QOL との関係が議論される。"
+    },
+    {
+      "id": "soc_eth10_017",
+      "unit": "social.eth.issues.issues",
+      "category": "knowledge",
+      "prompt": "地球環境問題に対して、将来世代への責任を重視する考え方は？",
+      "choices": [
+        "世代間倫理",
+        "地域エゴ",
+        "人間中心主義",
+        "経済優先主義"
+      ],
+      "answerIndex": 0,
+      "explanation": "ヨナスが「責任という原理」を説いた。"
+    },
+    {
+      "id": "soc_eth10_018",
+      "unit": "social.eth.issues.issues.environment",
+      "category": "knowledge",
+      "prompt": "人間だけでなく、動物や生態系にも道徳的配慮を広げるべきだとする考えは？",
+      "choices": [
+        "自然の生存権",
+        "人間中心主義",
+        "功利主義の否定",
+        "自由放任"
+      ],
+      "answerIndex": 0,
+      "explanation": "環境倫理の主張の一つ。"
+    },
+    {
+      "id": "soc_eth10_019",
+      "unit": "social.eth.issues.issues",
+      "category": "knowledge",
+      "prompt": "インターネット上で、他人の著作物を無断で公開すると侵害することになる権利は？",
+      "choices": [
+        "選挙権",
+        "生存権",
+        "著作権",
+        "肖像権だけ"
+      ],
+      "answerIndex": 2,
+      "explanation": "知的財産権の一つ。"
+    },
+    {
+      "id": "soc_eth10_020",
+      "unit": "social.eth.issues.issues",
+      "category": "knowledge",
+      "prompt": "性的指向や性自認の多様性を表す言葉として使われるものは？",
+      "choices": [
+        "LGBTQ",
+        "NPO",
+        "QOL",
+        "SDGs"
+      ],
+      "answerIndex": 0,
+      "explanation": "一人ひとりの性のあり方を尊重することが求められている。"
+    },
+    {
+      "id": "soc_eth10_021",
+      "unit": "social.eth.issues.issues",
+      "category": "knowledge",
+      "prompt": "文化や価値観のちがいを優劣でとらえず、それぞれ尊重する考えは？",
+      "choices": [
+        "自民族中心主義",
+        "普遍主義",
+        "同化主義",
+        "文化相対主義"
+      ],
+      "answerIndex": 3,
+      "explanation": "自民族中心主義（エスノセントリズム）と対になる。"
+    },
+    {
+      "id": "soc_eth10_022",
+      "unit": "social.eth.issues.issues",
+      "category": "knowledge",
+      "prompt": "ボランティア活動の原則として一般にあげられるものは？",
+      "choices": [
+        "強制性・有償性・私益性",
+        "一回性だけ",
+        "自発性・無償性・公共性",
+        "競争性・営利性"
+      ],
+      "answerIndex": 2,
+      "explanation": "自分の意思で他者や社会のために行う。"
+    },
+    {
+      "id": "soc_eth10_023",
+      "unit": "social.eth.issues.issues",
+      "category": "thinking",
+      "prompt": "デジタル社会で「フィルターバブル」が問題になる理由は？",
+      "choices": [
+        "通信速度が遅くなるから",
+        "情報がまったく届かなくなるから",
+        "自分の好みに合った情報ばかりに囲まれ、異なる意見にふれにくくなるから",
+        "すべての情報が正しくなるから"
+      ],
+      "answerIndex": 2,
+      "explanation": "社会の分断につながるおそれがある。"
+    },
+    {
+      "id": "soc_eth10_024",
+      "unit": "social.eth.issues.issues.information",
+      "category": "thinking",
+      "prompt": "遺伝子検査の結果を保険や雇用に使うことが問題とされる理由は？",
+      "choices": [
+        "本人に選べない遺伝的な特徴による差別につながるおそれがあるから",
+        "結果が必ず正しいから",
+        "検査が簡単すぎるから",
+        "費用が安いから"
+      ],
+      "answerIndex": 0,
+      "explanation": "プライバシーと差別の防止が課題。"
+    }
+  ]
+}

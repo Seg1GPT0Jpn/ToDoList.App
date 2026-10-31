@@ -1,0 +1,79 @@
+{
+  "setId": "information_data_db_01",
+  "worldId": "information",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "inf_db01_001",
+      "unit": "information.info.data.manage.database",
+      "category": "knowledge",
+      "prompt": "関係データベース（RDB）において、行を一意に識別するための列を何という？",
+      "choices": [
+        "外部キー",
+        "主キー（プライマリキー）",
+        "インデックス",
+        "複合キー"
+      ],
+      "answerIndex": 1,
+      "explanation": "各レコード（行）が重複せず固有に特定できる識別子を主キーと呼びます。"
+    },
+    {
+      "id": "inf_db01_002",
+      "unit": "information.info.data.manage.database",
+      "category": "knowledge",
+      "prompt": "データベースでデータの重複を排除し、不整合を防ぐために表を整理・分割する操作は？",
+      "choices": [
+        "暗号化",
+        "冗長化",
+        "正規化",
+        "抽象化"
+      ],
+      "answerIndex": 2,
+      "explanation": "第1正規化〜第3正規化などを通じてデータの独立性と整合性を高める作業です。"
+    },
+    {
+      "id": "inf_db01_003",
+      "unit": "information.info.data.manage.database",
+      "category": "thinking",
+      "prompt": "次の SQL 文が実行する操作は？",
+      "sentence": "SELECT name FROM students WHERE score >= 80;",
+      "choices": [
+        "全生徒の氏名を削除する",
+        "点数が80点以上の生徒の氏名を抽出する",
+        "生徒の点数を80点に更新する",
+        "80点未満の生徒のみ表示する"
+      ],
+      "answerIndex": 1,
+      "explanation": "SELECT 列名 FROM 表名 WHERE 条件 で、80点以上のレコードの氏名を取り出します。"
+    },
+    {
+      "id": "inf_db01_004",
+      "unit": "information.info.data.manage.database",
+      "category": "thinking",
+      "prompt": "データベースのトランザクション処理が満たすべき「ACID特性」に含まれないものは？",
+      "choices": [
+        "原子性（Atomicity）",
+        "一貫性（Consistency）",
+        "独立性（Isolation）",
+        "加速度性（Acceleration）"
+      ],
+      "answerIndex": 3,
+      "explanation": "ACID特性は原子性(A)・一貫性(C)・独立性(I)・永続性(D)の4つです。"
+    },
+    {
+      "id": "inf_db01_005",
+      "unit": "information.info.data.analysis.ml",
+      "category": "thinking",
+      "prompt": "（データの活用）機械学習において、正解ラベルを用いずにデータの構造やグループを見つける手法は？",
+      "choices": [
+        "教師あり学習",
+        "教師なし学習",
+        "強化学習",
+        "ルールベース"
+      ],
+      "answerIndex": 1,
+      "explanation": "クラスタリング（k-meansなど）のように、事前ラベルなしでパターンを抽出する手法です。"
+    }
+  ]
+}

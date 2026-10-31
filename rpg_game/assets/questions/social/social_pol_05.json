@@ -1,0 +1,344 @@
+{
+  "setId": "social_pol_05",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_pol05_001",
+      "unit": "social.pol.politics.court.trial",
+      "category": "knowledge",
+      "prompt": "一つの事件について 3 回まで裁判を受けられるしくみは？",
+      "choices": [
+        "三審制",
+        "二院制",
+        "陪審制",
+        "三権分立"
+      ],
+      "answerIndex": 0,
+      "explanation": "控訴・上告によって上級の裁判所で審理を受けられる。"
+    },
+    {
+      "id": "soc_pol05_002",
+      "unit": "social.pol.politics.court.trial",
+      "category": "knowledge",
+      "prompt": "第一審の判決に不服で、上級の裁判所に訴えることを何という？",
+      "choices": [
+        "控訴",
+        "抗告",
+        "上告",
+        "起訴"
+      ],
+      "answerIndex": 0,
+      "explanation": "第二審の判決に不服で訴えることは上告。"
+    },
+    {
+      "id": "soc_pol05_003",
+      "unit": "social.pol.politics.court.independence",
+      "category": "knowledge",
+      "prompt": "法律などが憲法に違反していないかを判断する権限は？",
+      "choices": [
+        "国政調査権",
+        "弾劾裁判権",
+        "違憲審査権（違憲立法審査権）",
+        "恩赦"
+      ],
+      "answerIndex": 2,
+      "explanation": "すべての裁判所がもつ。最高裁判所は「憲法の番人」と呼ばれる。"
+    },
+    {
+      "id": "soc_pol05_004",
+      "unit": "social.pol.politics.court",
+      "category": "knowledge",
+      "prompt": "私人どうしの争い（お金の貸し借りなど）を解決する裁判は？",
+      "choices": [
+        "刑事裁判",
+        "行政裁判だけ",
+        "民事裁判",
+        "弾劾裁判"
+      ],
+      "answerIndex": 2,
+      "explanation": "訴えた人が原告、訴えられた人が被告。"
+    },
+    {
+      "id": "soc_pol05_005",
+      "unit": "social.pol.politics.court",
+      "category": "knowledge",
+      "prompt": "犯罪について、有罪か無罪か、刑罰を決める裁判は？",
+      "choices": [
+        "民事裁判",
+        "家事審判",
+        "刑事裁判",
+        "弾劾裁判"
+      ],
+      "answerIndex": 2,
+      "explanation": "検察官が被疑者を被告人として起訴する。"
+    },
+    {
+      "id": "soc_pol05_006",
+      "unit": "social.pol.politics.court.trial",
+      "category": "knowledge",
+      "prompt": "2009 年に始まった、国民が刑事裁判に参加する制度は？",
+      "choices": [
+        "裁判員制度",
+        "国民審査",
+        "参審制だけ",
+        "陪審制"
+      ],
+      "answerIndex": 0,
+      "explanation": "重大な刑事事件の第一審で、裁判官とともに有罪・無罪と刑罰を決める。"
+    },
+    {
+      "id": "soc_pol05_007",
+      "unit": "social.pol.politics.court.independence",
+      "category": "knowledge",
+      "prompt": "最高裁判所の裁判官がふさわしいかどうかを国民が判断する制度は？",
+      "choices": [
+        "住民投票",
+        "国民投票",
+        "国民審査",
+        "リコール"
+      ],
+      "answerIndex": 2,
+      "explanation": "衆議院議員総選挙のときに行われる。"
+    },
+    {
+      "id": "soc_pol05_008",
+      "unit": "social.pol.politics.court",
+      "category": "knowledge",
+      "prompt": "裁判官が、ほかの権力から圧力を受けずに裁判を行うことを何という？",
+      "choices": [
+        "公共の福祉",
+        "法の支配",
+        "司法権の独立",
+        "三権分立"
+      ],
+      "answerIndex": 2,
+      "explanation": "裁判官は憲法と法律と良心にのみ拘束される。"
+    },
+    {
+      "id": "soc_pol05_009",
+      "unit": "social.pol.politics.court",
+      "category": "knowledge",
+      "prompt": "「疑わしきは被告人の利益に」という原則を何という？",
+      "choices": [
+        "罪刑法定主義",
+        "一事不再理",
+        "法の下の平等",
+        "推定無罪（無罪推定）の原則"
+      ],
+      "answerIndex": 3,
+      "explanation": "有罪が確定するまでは無罪として扱われる。"
+    },
+    {
+      "id": "soc_pol05_010",
+      "unit": "social.pol.politics.court",
+      "category": "knowledge",
+      "prompt": "犯罪と刑罰は、あらかじめ法律で定めておかなければならないという原則は？",
+      "choices": [
+        "罪刑法定主義",
+        "三審制",
+        "公開裁判",
+        "推定無罪"
+      ],
+      "answerIndex": 0,
+      "explanation": "国家による恣意的な処罰を防ぐ。"
+    },
+    {
+      "id": "soc_pol05_011",
+      "unit": "social.pol.politics.court.citizen",
+      "category": "thinking",
+      "prompt": "裁判員制度が導入された目的として適切なものは？",
+      "choices": [
+        "裁判官の数を減らすため",
+        "国民の感覚を裁判に反映させ、司法への理解と信頼を深めるため",
+        "裁判をなくすため",
+        "判決を必ず重くするため"
+      ],
+      "answerIndex": 1,
+      "explanation": "裁判の迅速化や、分かりやすい審理にもつながっている。"
+    },
+    {
+      "id": "soc_pol05_012",
+      "unit": "social.pol.politics.court",
+      "category": "thinking",
+      "prompt": "冤罪を防ぐために取り組まれていることとして適切なものは？",
+      "choices": [
+        "裁判を非公開にする",
+        "弁護人をつけない",
+        "自白だけで有罪にする",
+        "取り調べの録音・録画（可視化）"
+      ],
+      "answerIndex": 3,
+      "explanation": "自白の強要を防ぐため。"
+    },
+    {
+      "id": "soc_pol05_013",
+      "unit": "social.pol.politics.court.independence",
+      "category": "knowledge",
+      "prompt": "最高裁判所の長官を任命するのは？",
+      "choices": [
+        "国会",
+        "天皇（内閣の指名にもとづく）",
+        "内閣総理大臣",
+        "国民"
+      ],
+      "answerIndex": 1,
+      "explanation": "そのほかの最高裁判所の裁判官は内閣が任命する。"
+    },
+    {
+      "id": "soc_pol05_014",
+      "unit": "social.pol.politics.court.independence",
+      "category": "knowledge",
+      "prompt": "下級裁判所にあたるものは？",
+      "choices": [
+        "高等・地方・家庭・簡易裁判所",
+        "弾劾裁判所",
+        "最高裁判所だけ",
+        "国際司法裁判所"
+      ],
+      "answerIndex": 0,
+      "explanation": "最高裁判所以外の裁判所。"
+    },
+    {
+      "id": "soc_pol05_015",
+      "unit": "social.pol.politics.court.trial",
+      "category": "knowledge",
+      "prompt": "第二審の判決に不服で、さらに上級の裁判所に訴えることを何という？",
+      "choices": [
+        "控訴",
+        "抗告",
+        "起訴",
+        "上告"
+      ],
+      "answerIndex": 3,
+      "explanation": "第一審から第二審へは控訴。"
+    },
+    {
+      "id": "soc_pol05_016",
+      "unit": "social.pol.politics.court",
+      "category": "knowledge",
+      "prompt": "家庭内の争いや少年事件をあつかう裁判所は？",
+      "choices": [
+        "家庭裁判所",
+        "最高裁判所",
+        "高等裁判所",
+        "簡易裁判所"
+      ],
+      "answerIndex": 0,
+      "explanation": "少年事件は、原則としてまず家庭裁判所に送られる。"
+    },
+    {
+      "id": "soc_pol05_017",
+      "unit": "social.pol.politics.court.trial",
+      "category": "knowledge",
+      "prompt": "刑事裁判で、被疑者を裁判所に訴える（起訴する）のは？",
+      "choices": [
+        "警察官",
+        "裁判官",
+        "弁護人",
+        "検察官"
+      ],
+      "answerIndex": 3,
+      "explanation": "起訴された人は被告人と呼ばれる。"
+    },
+    {
+      "id": "soc_pol05_018",
+      "unit": "social.pol.politics.court.trial",
+      "category": "knowledge",
+      "prompt": "民事裁判で、裁判所に訴えた側を何という？",
+      "choices": [
+        "原告",
+        "被告",
+        "検察官",
+        "被告人"
+      ],
+      "answerIndex": 0,
+      "explanation": "訴えられた側は被告。"
+    },
+    {
+      "id": "soc_pol05_019",
+      "unit": "social.pol.politics.court",
+      "category": "knowledge",
+      "prompt": "取り調べや裁判で、自分に不利なことを言わなくてよい権利は？",
+      "choices": [
+        "拒否権",
+        "請願権",
+        "参政権",
+        "黙秘権"
+      ],
+      "answerIndex": 3,
+      "explanation": "憲法第38条で保障されている。"
+    },
+    {
+      "id": "soc_pol05_020",
+      "unit": "social.pol.politics.court",
+      "category": "knowledge",
+      "prompt": "現行犯の場合を除き、逮捕に必要な令状を出すのは？",
+      "choices": [
+        "内閣総理大臣",
+        "裁判官",
+        "警察官",
+        "検察官"
+      ],
+      "answerIndex": 1,
+      "explanation": "令状主義と呼ばれる。"
+    },
+    {
+      "id": "soc_pol05_021",
+      "unit": "social.pol.politics.court.review",
+      "category": "knowledge",
+      "prompt": "違憲審査の最終的な判断を下すことから、最高裁判所は何と呼ばれる？",
+      "choices": [
+        "全体の奉仕者",
+        "国権の最高機関",
+        "憲法の番人",
+        "民主主義の学校"
+      ],
+      "answerIndex": 2,
+      "explanation": "すべての裁判所が違憲審査権をもつ。"
+    },
+    {
+      "id": "soc_pol05_022",
+      "unit": "social.pol.politics.court.citizen",
+      "category": "knowledge",
+      "prompt": "裁判員裁判で審理されるのは？",
+      "choices": [
+        "最高裁判所の裁判",
+        "重大な刑事事件の第一審",
+        "少年事件だけ",
+        "すべての民事裁判"
+      ],
+      "answerIndex": 1,
+      "explanation": "殺人や強盗致死傷などが対象。"
+    },
+    {
+      "id": "soc_pol05_023",
+      "unit": "social.pol.politics.court.citizen",
+      "category": "knowledge",
+      "prompt": "裁判員はどのように選ばれる？",
+      "choices": [
+        "弁護士の中から選ばれる",
+        "裁判官が指名する",
+        "立候補した人から選挙で選ぶ",
+        "18歳以上の有権者から、くじで選ばれる"
+      ],
+      "answerIndex": 3,
+      "explanation": "2023年から18歳・19歳も対象になった。"
+    },
+    {
+      "id": "soc_pol05_024",
+      "unit": "social.pol.politics.court.trial",
+      "category": "thinking",
+      "prompt": "三審制がとられている目的として最も適切なものは？",
+      "choices": [
+        "国民を裁判に参加させるため",
+        "裁判の誤りを防ぎ、人権を守るため",
+        "裁判官を増やすため",
+        "裁判を早く終わらせるため"
+      ],
+      "answerIndex": 1,
+      "explanation": "判決に不服なら上級の裁判所で審理を受けられる。"
+    }
+  ]
+}

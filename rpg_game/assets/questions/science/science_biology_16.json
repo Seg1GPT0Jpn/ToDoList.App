@@ -1,0 +1,456 @@
+{
+  "setId": "science_biology_16",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_bio16_001",
+      "unit": "science.biology.ecology.population.population",
+      "category": "knowledge",
+      "prompt": "同じ種の個体の集まりで、一定の地域に生活しているものを何という？",
+      "choices": [
+        "バイオーム",
+        "個体群",
+        "生物群集",
+        "生態系"
+      ],
+      "answerIndex": 1,
+      "explanation": "ある地域にすむ複数の個体群の集まりが生物群集。"
+    },
+    {
+      "id": "sci_bio16_002",
+      "unit": "science.biology.ecology.population.population",
+      "category": "knowledge",
+      "prompt": "個体群の成長曲線が S 字形になり、ある値で頭打ちになる。この上限を何という？",
+      "choices": [
+        "環境収容力",
+        "純生産量",
+        "閾値",
+        "個体群密度"
+      ],
+      "answerIndex": 0,
+      "explanation": "食物や生活空間に限りがあるため、個体数は無限には増えない。"
+    },
+    {
+      "id": "sci_bio16_003",
+      "unit": "science.biology.ecology.population.population",
+      "category": "knowledge",
+      "prompt": "個体群密度が高くなると、出生率が下がったり死亡率が上がったりすることを何という？",
+      "choices": [
+        "生物濃縮",
+        "自然浄化",
+        "密度効果",
+        "遺伝的浮動"
+      ],
+      "answerIndex": 2,
+      "explanation": "トノサマバッタでは、密度が高いと群生相という別の形態になる（相変異）。"
+    },
+    {
+      "id": "sci_bio16_004",
+      "unit": "science.biology.ecology.population",
+      "category": "knowledge",
+      "prompt": "移動する動物の個体数を推定するのに適した方法は？",
+      "choices": [
+        "区画法",
+        "標識再捕法",
+        "ミクロメーター",
+        "PCR 法"
+      ],
+      "answerIndex": 1,
+      "explanation": "区画法は植物や移動の少ない動物に用いる。"
+    },
+    {
+      "id": "sci_bio16_005",
+      "unit": "science.biology.ecology.population",
+      "category": "knowledge",
+      "prompt": "動物が一定の空間を占有し、同種の他の個体の侵入を防ぐ場合、その空間を何という？",
+      "choices": [
+        "行動圏",
+        "群れ",
+        "ニッチ",
+        "縄張り"
+      ],
+      "answerIndex": 3,
+      "explanation": "例：アユ。守るのにかかる労力と得られる利益のバランスで大きさが決まる。"
+    },
+    {
+      "id": "sci_bio16_006",
+      "unit": "science.biology.ecology.population",
+      "category": "knowledge",
+      "prompt": "同じ資源を利用する 2 種が同じ場所にいると、一方が排除されることを何という？",
+      "choices": [
+        "すみわけ",
+        "競争的排除",
+        "寄生",
+        "相利共生"
+      ],
+      "answerIndex": 1,
+      "explanation": "ガウゼのゾウリムシの実験が有名。"
+    },
+    {
+      "id": "sci_bio16_007",
+      "unit": "science.biology.ecology.population.interaction",
+      "category": "knowledge",
+      "prompt": "生物群集の中で、ある種が必要とする資源や生活環境の要素の範囲を何という？",
+      "choices": [
+        "縄張り",
+        "極相",
+        "環境収容力",
+        "生態的地位（ニッチ）"
+      ],
+      "answerIndex": 3,
+      "explanation": "ニッチが重なるほど競争が激しくなる。"
+    },
+    {
+      "id": "sci_bio16_008",
+      "unit": "science.biology.ecology.population.interaction",
+      "category": "knowledge",
+      "prompt": "イワナとヤマメが、川の上流と下流で分かれて生活するような現象を何という？",
+      "choices": [
+        "捕食",
+        "寄生",
+        "すみわけ",
+        "競争的排除"
+      ],
+      "answerIndex": 2,
+      "explanation": "ニッチの重なりを減らして共存している。"
+    },
+    {
+      "id": "sci_bio16_009",
+      "unit": "science.biology.ecology.population",
+      "category": "knowledge",
+      "prompt": "アリとアブラムシのように、互いに利益を受ける関係を何という？",
+      "choices": [
+        "相利共生",
+        "捕食",
+        "寄生",
+        "片利共生"
+      ],
+      "answerIndex": 0,
+      "explanation": "アブラムシは甘い汁をアリに与え、アリはアブラムシをテントウムシなどから守る。"
+    },
+    {
+      "id": "sci_bio16_010",
+      "unit": "science.biology.ecology.population.production",
+      "category": "knowledge",
+      "prompt": "生態系で、生産者の総生産量から呼吸量を引いたものを何という？",
+      "choices": [
+        "枯死量",
+        "被食量",
+        "純生産量",
+        "成長量"
+      ],
+      "answerIndex": 2,
+      "explanation": "純生産量 ＝ 総生産量 − 呼吸量。成長量 ＝ 純生産量 −（被食量 ＋ 枯死量）。"
+    },
+    {
+      "id": "sci_bio16_011",
+      "unit": "science.biology.ecology.population.interaction",
+      "category": "knowledge",
+      "prompt": "同じ場所にすむ似た生活をする 2 種が、えさの種類や大きさを変えて共存することを何という？",
+      "choices": [
+        "競争的排除",
+        "相利共生",
+        "食いわけ",
+        "寄生"
+      ],
+      "answerIndex": 2,
+      "explanation": "ニッチの重なりを小さくする共存のしかた。すむ場所を分けるのはすみわけ。"
+    },
+    {
+      "id": "sci_bio16_012",
+      "unit": "science.biology.ecology.population.interaction",
+      "category": "knowledge",
+      "prompt": "捕食者と被食者の個体数を長期間調べると、どんな変化が見られることが多い？",
+      "choices": [
+        "両方とも一定",
+        "捕食者だけが増え続ける",
+        "周期的に増減し、捕食者の変動が少し遅れる",
+        "被食者はすぐに絶滅する"
+      ],
+      "answerIndex": 2,
+      "explanation": "例：カナダオオヤマネコとカンジキウサギ。"
+    },
+    {
+      "id": "sci_bio16_013",
+      "unit": "science.biology.ecology.population",
+      "category": "calculation",
+      "prompt": "池で 50 匹を捕まえて標識をつけて放し、後日 60 匹捕まえたら 10 匹に標識があった。この池の個体数の推定値は？",
+      "choices": [
+        "120 匹",
+        "110 匹",
+        "300 匹",
+        "500 匹"
+      ],
+      "answerIndex": 2,
+      "explanation": "N ：50 ＝ 60 ：10 より N ＝ 50 × 60 ÷ 10 ＝ 300 匹。"
+    },
+    {
+      "id": "sci_bio16_014",
+      "unit": "science.biology.ecology.population.production",
+      "category": "calculation",
+      "prompt": "ある森林で総生産量が 100、呼吸量が 40（同じ単位）だった。純生産量は？",
+      "choices": [
+        "60",
+        "40",
+        "140",
+        "2.5"
+      ],
+      "answerIndex": 0,
+      "explanation": "100 − 40 ＝ 60。"
+    },
+    {
+      "id": "sci_bio16_015",
+      "unit": "science.biology.ecology.vegetation.biome",
+      "category": "calculation",
+      "prompt": "前問の森林で、被食量が 10、枯死量が 5 だった。成長量は？",
+      "choices": [
+        "60",
+        "85",
+        "45",
+        "55"
+      ],
+      "answerIndex": 2,
+      "explanation": "成長量 ＝ 純生産量 − 被食量 − 枯死量 ＝ 60 − 10 − 5 ＝ 45。"
+    },
+    {
+      "id": "sci_bio16_016",
+      "unit": "science.biology.ecology.population.interaction",
+      "category": "thinking",
+      "prompt": "2 種のゾウリムシを別々に飼うとどちらも増えたが、同じ容器で飼うと一方が絶滅した。理由として最も適切なものは？",
+      "choices": [
+        "互いに助け合ったから",
+        "同じ食物をめぐって競争し、一方が排除されたから",
+        "容器が小さすぎて両方とも減ったから",
+        "一方が他方を捕食したから"
+      ],
+      "answerIndex": 1,
+      "explanation": "ニッチが重なる 2 種の間で種間競争が起こり、競争的排除が起きた。"
+    },
+    {
+      "id": "sci_bio16_017",
+      "unit": "science.biology.ecology.population.population",
+      "category": "knowledge",
+      "prompt": "個体群密度とは？",
+      "choices": [
+        "個体群の全体の重さ",
+        "個体の大きさ",
+        "一定の面積（体積）あたりの個体数",
+        "1 年に生まれる数"
+      ],
+      "answerIndex": 2,
+      "explanation": "個体群の混み具合を表す。"
+    },
+    {
+      "id": "sci_bio16_018",
+      "unit": "science.biology.ecology.population.population",
+      "category": "knowledge",
+      "prompt": "環境収容力とは？",
+      "choices": [
+        "食物の量",
+        "その環境で維持できる個体数の上限",
+        "個体の寿命",
+        "1 年に増える数"
+      ],
+      "answerIndex": 1,
+      "explanation": "成長曲線が S 字形で頭打ちになる値。"
+    },
+    {
+      "id": "sci_bio16_019",
+      "unit": "science.biology.ecology.population.population",
+      "category": "knowledge",
+      "prompt": "生存曲線で、若いうちに多くが死に、残った個体が長生きする型の例は？",
+      "choices": [
+        "ヒト",
+        "魚類や貝類（多産で親の保護がない）",
+        "ミツバチ",
+        "大型の哺乳類"
+      ],
+      "answerIndex": 1,
+      "explanation": "晩死型（ヒトなど）、平均型（鳥類など）がある。"
+    },
+    {
+      "id": "sci_bio16_020",
+      "unit": "science.biology.ecology.population",
+      "category": "knowledge",
+      "prompt": "植物の個体数の推定に適した方法は？",
+      "choices": [
+        "標識再捕法",
+        "聞き取り調査",
+        "ルアー法",
+        "区画法"
+      ],
+      "answerIndex": 3,
+      "explanation": "一定の区画の個体数を数えて全体を推定する。"
+    },
+    {
+      "id": "sci_bio16_021",
+      "unit": "science.biology.ecology.population",
+      "category": "knowledge",
+      "prompt": "群れをつくる利点として正しいものは？",
+      "choices": [
+        "病気がうつらない",
+        "すべての個体がリーダーになれる",
+        "食物を取り合わなくてよくなる",
+        "天敵に気づきやすく、食べられにくくなる"
+      ],
+      "answerIndex": 3,
+      "explanation": "一方で、食物をめぐる争いは増える。"
+    },
+    {
+      "id": "sci_bio16_022",
+      "unit": "science.biology.ecology.population.interaction",
+      "category": "knowledge",
+      "prompt": "寄生の例は？",
+      "choices": [
+        "カイチュウとヒト",
+        "マメ科植物と根粒菌",
+        "アリとアブラムシ",
+        "クマノミとイソギンチャク"
+      ],
+      "answerIndex": 0,
+      "explanation": "一方が利益を得て、もう一方が不利益を受ける。"
+    },
+    {
+      "id": "sci_bio16_023",
+      "unit": "science.biology.ecology.ecosystem.structure",
+      "category": "knowledge",
+      "prompt": "生態系で、生物の遺体や排出物を分解する生物は？",
+      "choices": [
+        "分解者（菌類・細菌など）",
+        "生産者",
+        "二次消費者",
+        "一次消費者"
+      ],
+      "answerIndex": 0,
+      "explanation": "無機物にもどして生産者が利用できるようにする。"
+    },
+    {
+      "id": "sci_bio16_024",
+      "unit": "science.biology.ecology.ecosystem.structure",
+      "category": "knowledge",
+      "prompt": "生態系の物質の循環について正しいものは？",
+      "choices": [
+        "物質は生態系から消える",
+        "エネルギーは循環する",
+        "物質は一方向にしか流れない",
+        "炭素や窒素は生物と無機的環境の間を循環する"
+      ],
+      "answerIndex": 3,
+      "explanation": "エネルギーは循環せず、熱として出ていく。"
+    },
+    {
+      "id": "sci_bio16_025",
+      "unit": "science.biology.ecology.ecosystem.structure",
+      "category": "knowledge",
+      "prompt": "キーストーン種とは？",
+      "choices": [
+        "絶滅した種",
+        "最も数の多い種",
+        "数は少なくても、群集の構造に大きな影響をあたえる種",
+        "外来種"
+      ],
+      "answerIndex": 2,
+      "explanation": "ラッコ（ウニを食べて海藻の森を守る）など。"
+    },
+    {
+      "id": "sci_bio16_026",
+      "unit": "science.biology.ecology.ecosystem.conservation",
+      "category": "knowledge",
+      "prompt": "外来生物が問題になる理由は？",
+      "choices": [
+        "在来種を捕食したり、競争で追いやったりして生態系を変えるから",
+        "すぐに絶滅するから",
+        "数が少ないから",
+        "人間に役立つから"
+      ],
+      "answerIndex": 0,
+      "explanation": "オオクチバスやマングースなど。"
+    },
+    {
+      "id": "sci_bio16_027",
+      "unit": "science.biology.ecology.ecosystem.conservation",
+      "category": "knowledge",
+      "prompt": "生物濃縮とは？",
+      "choices": [
+        "個体数が増えること",
+        "生物が濃く集まること",
+        "分解されにくい物質が、食物連鎖の上位ほど高い濃度でたまること",
+        "海水が濃くなること"
+      ],
+      "answerIndex": 2,
+      "explanation": "DDT や有機水銀などが問題になった。"
+    },
+    {
+      "id": "sci_bio16_028",
+      "unit": "science.biology.ecology.population",
+      "category": "calculation",
+      "prompt": "池で 40 匹に標識をつけて放し、後日 50 匹捕まえたら 10 匹に標識があった。池の個体数の推定値は？",
+      "choices": [
+        "500 匹",
+        "100 匹",
+        "90 匹",
+        "200 匹"
+      ],
+      "answerIndex": 3,
+      "explanation": "40 × 50 ÷ 10。"
+    },
+    {
+      "id": "sci_bio16_029",
+      "unit": "science.biology.ecology.population.production",
+      "category": "calculation",
+      "prompt": "総生産量 200、呼吸量 120 のとき、純生産量は？",
+      "choices": [
+        "320",
+        "80",
+        "200",
+        "120"
+      ],
+      "answerIndex": 1,
+      "explanation": "総生産量 − 呼吸量。"
+    },
+    {
+      "id": "sci_bio16_030",
+      "unit": "science.biology.ecology.population.production",
+      "category": "calculation",
+      "prompt": "純生産量 80、被食量 20、枯死量 10 のとき、成長量は？",
+      "choices": [
+        "30",
+        "50",
+        "110",
+        "80"
+      ],
+      "answerIndex": 1,
+      "explanation": "80 − 20 − 10。"
+    },
+    {
+      "id": "sci_bio16_031",
+      "unit": "science.biology.ecology.population",
+      "category": "thinking",
+      "prompt": "里山の雑木林を人が手入れしなくなると、生物多様性が下がることがある理由は？",
+      "choices": [
+        "動物が増えすぎるから",
+        "林が暗くなり、明るい環境を好む生物がすめなくなるから",
+        "木がなくなるから",
+        "外来種が必ず入るから"
+      ],
+      "answerIndex": 1,
+      "explanation": "人の手入れで保たれてきた環境もある。"
+    },
+    {
+      "id": "sci_bio16_032",
+      "unit": "science.biology.ecology.ecosystem.structure",
+      "category": "thinking",
+      "prompt": "生産者のエネルギーが、上位の消費者ほど少なくなる理由は？",
+      "choices": [
+        "上位の消費者は食べないから",
+        "エネルギーが循環するから",
+        "各段階で呼吸などによって多くのエネルギーが熱として失われるから",
+        "分解者がエネルギーを増やすから"
+      ],
+      "answerIndex": 2,
+      "explanation": "生態ピラミッドが上ほど小さくなる理由。"
+    }
+  ]
+}

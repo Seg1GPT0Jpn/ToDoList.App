@@ -1,0 +1,356 @@
+{
+  "setId": "english_stage_04",
+  "worldId": "english",
+  "origin": "original",
+  "version": 3,
+  "questions": [
+    {
+      "id": "en04_001",
+      "unit": "english.eng.vocab.basic.meaning",
+      "category": "meaning",
+      "prompt": "「improve」の意味は？",
+      "choices": [
+        "練習する",
+        "改善する",
+        "守る",
+        "人気のある"
+      ],
+      "answerIndex": 1,
+      "explanation": "improve は「改善する」。"
+    },
+    {
+      "id": "en04_002",
+      "unit": "english.eng.vocab.basic.meaning",
+      "category": "meaning",
+      "prompt": "「reduce」の意味は？",
+      "choices": [
+        "減らす",
+        "決める",
+        "借りる",
+        "有名な"
+      ],
+      "answerIndex": 0,
+      "explanation": "reduce は「減らす」。"
+    },
+    {
+      "id": "en04_003",
+      "unit": "english.eng.vocab.basic.meaning",
+      "category": "meaning",
+      "prompt": "「increase」の意味は？",
+      "choices": [
+        "建てる",
+        "増やす",
+        "健康な",
+        "村"
+      ],
+      "answerIndex": 1,
+      "explanation": "increase は「増やす」。"
+    },
+    {
+      "id": "en04_004",
+      "unit": "english.eng.vocab.basic.meaning",
+      "category": "meaning",
+      "prompt": "「continue」の意味は？",
+      "choices": [
+        "続ける",
+        "旅行する",
+        "覚えている",
+        "心配する"
+      ],
+      "answerIndex": 0,
+      "explanation": "continue は「続ける」。"
+    },
+    {
+      "id": "en04_005",
+      "unit": "english.eng.vocab.basic.meaning",
+      "category": "meaning",
+      "prompt": "「finish」の意味は？",
+      "choices": [
+        "心配する",
+        "説明する",
+        "旅行する",
+        "終える"
+      ],
+      "answerIndex": 3,
+      "explanation": "finish は「終える」。"
+    },
+    {
+      "id": "en04_006",
+      "unit": "english.eng.vocab.basic.meaning",
+      "category": "meaning",
+      "prompt": "「believe」の意味は？",
+      "choices": [
+        "信じる",
+        "村",
+        "招待する",
+        "増やす"
+      ],
+      "answerIndex": 0,
+      "explanation": "believe は「信じる」。"
+    },
+    {
+      "id": "en04_007",
+      "unit": "english.eng.vocab.basic.meaning",
+      "category": "meaning",
+      "prompt": "「hope」の意味は？",
+      "choices": [
+        "望む",
+        "運ぶ",
+        "忘れる",
+        "到着する"
+      ],
+      "answerIndex": 0,
+      "explanation": "hope は「望む」。"
+    },
+    {
+      "id": "en04_008",
+      "unit": "english.eng.vocab.basic.meaning",
+      "category": "meaning",
+      "prompt": "「worry」の意味は？",
+      "choices": [
+        "訪れる",
+        "忘れる",
+        "心配する",
+        "準備する"
+      ],
+      "answerIndex": 2,
+      "explanation": "worry は「心配する」。"
+    },
+    {
+      "id": "en04_009",
+      "unit": "english.eng.vocab.idiom.idiom",
+      "category": "meaning",
+      "prompt": "「be absent from ～」の意味は？",
+      "choices": [
+        "すぐに",
+        "～に頼る",
+        "～が理由で",
+        "～を欠席する"
+      ],
+      "answerIndex": 3,
+      "explanation": "be absent from ～ は「～を欠席する」。"
+    },
+    {
+      "id": "en04_010",
+      "unit": "english.eng.vocab.idiom.idiom",
+      "category": "meaning",
+      "prompt": "「be proud of ～」の意味は？",
+      "choices": [
+        "決心する",
+        "～を誇りに思う",
+        "～に注意を払う",
+        "わざと"
+      ],
+      "answerIndex": 1,
+      "explanation": "be proud of ～ は「～を誇りに思う」。"
+    },
+    {
+      "id": "en04_011",
+      "unit": "english.eng.vocab.basic.pos",
+      "category": "partOfSpeech",
+      "prompt": "次のうち「名詞」はどれ？",
+      "choices": [
+        "responsible",
+        "responsibly",
+        "responsibility",
+        "irresponsible"
+      ],
+      "answerIndex": 2,
+      "explanation": "-ity は名詞を作る語尾。responsibility = 責任。"
+    },
+    {
+      "id": "en04_012",
+      "unit": "english.eng.vocab.basic.pos",
+      "category": "partOfSpeech",
+      "prompt": "次のうち「動詞」はどれ？",
+      "choices": [
+        "critic",
+        "critical",
+        "criticize",
+        "criticism"
+      ],
+      "answerIndex": 2,
+      "explanation": "-ize は動詞を作る語尾。critic（批評家）と criticism（批判）は名詞、critical は形容詞。"
+    },
+    {
+      "id": "en04_013",
+      "unit": "english.eng.grammar.infinitive.subject",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "It was careless (   ) you to leave the door open.",
+      "choices": [
+        "for",
+        "to",
+        "with",
+        "of"
+      ],
+      "answerIndex": 3,
+      "explanation": "careless など人の性質を表す形容詞のとき、意味上の主語は of 〜 で表す。"
+    },
+    {
+      "id": "en04_014",
+      "unit": "english.eng.grammar.infinitive.subject",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "She seems (   ) ill last week.",
+      "choices": [
+        "to be",
+        "to have been",
+        "being",
+        "have been"
+      ],
+      "answerIndex": 1,
+      "explanation": "「今そう見える」のに「病気だった」のは過去のことなので、完了不定詞 to have been。"
+    },
+    {
+      "id": "en04_015",
+      "unit": "english.eng.grammar.infinitive.subject",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I think it important (   ) your own opinion.",
+      "choices": [
+        "to have",
+        "have",
+        "having",
+        "had"
+      ],
+      "answerIndex": 0,
+      "explanation": "think it 〜 to do の it は仮の目的語。本当の目的語は to have your own opinion。"
+    },
+    {
+      "id": "en04_016",
+      "unit": "english.eng.grammar.infinitive",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He seems (   ) rich when he was young.",
+      "choices": [
+        "to be",
+        "to have been",
+        "being",
+        "have been"
+      ],
+      "answerIndex": 1,
+      "explanation": "「今そう思われる」のに「裕福だった」のは過去なので完了不定詞。"
+    },
+    {
+      "id": "en04_017",
+      "unit": "english.eng.grammar.infinitive",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Everyone wants (   ) by others.",
+      "choices": [
+        "to love",
+        "loving",
+        "to be loved",
+        "loved"
+      ],
+      "answerIndex": 2,
+      "explanation": "「愛されること」は受動態の不定詞 to be + 過去分詞。"
+    },
+    {
+      "id": "en04_018",
+      "unit": "english.eng.grammar.infinitive.subject",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The house is said (   ) built 100 years ago.",
+      "choices": [
+        "to be",
+        "to have been",
+        "being",
+        "have been"
+      ],
+      "answerIndex": 1,
+      "explanation": "「言われている（今）」より前に「建てられた」ので完了受動不定詞 to have been + 過去分詞。"
+    },
+    {
+      "id": "en04_019",
+      "unit": "english.eng.grammar.infinitive",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) tell the truth, I don't like him.",
+      "choices": [
+        "For",
+        "To",
+        "In",
+        "By"
+      ],
+      "answerIndex": 1,
+      "explanation": "to tell the truth（実を言うと）は独立不定詞。"
+    },
+    {
+      "id": "en04_020",
+      "unit": "english.eng.grammar.infinitive.subject",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "It is necessary (   ) you to finish it.",
+      "choices": [
+        "of",
+        "for",
+        "to",
+        "with"
+      ],
+      "answerIndex": 1,
+      "explanation": "不定詞の意味上の主語はふつう for 〜。人の性質を表す形容詞のときだけ of。"
+    },
+    {
+      "id": "en04_021",
+      "unit": "english.eng.grammar.infinitive",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He is, (   ) speak, a walking dictionary.",
+      "choices": [
+        "as to",
+        "so to",
+        "to",
+        "in order to"
+      ],
+      "answerIndex": 1,
+      "explanation": "so to speak（いわば）は独立不定詞。"
+    },
+    {
+      "id": "en04_022",
+      "unit": "english.eng.grammar.infinitive",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He is believed (   ) the money.",
+      "choices": [
+        "to steal",
+        "to have stolen",
+        "stealing",
+        "stole"
+      ],
+      "answerIndex": 1,
+      "explanation": "「信じられている（今）」より前に「盗んだ」ので完了不定詞。"
+    },
+    {
+      "id": "en04_023",
+      "unit": "english.eng.grammar.infinitive.subject",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The problem seems (   ) solved already.",
+      "choices": [
+        "to be",
+        "to have been",
+        "being",
+        "having been"
+      ],
+      "answerIndex": 1,
+      "explanation": "already（すでに）解決されたので、完了受動不定詞 to have been + 過去分詞。"
+    },
+    {
+      "id": "en04_024",
+      "unit": "english.eng.grammar.infinitive.causative",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He was made (   ) the room by his mother.",
+      "choices": [
+        "clean",
+        "cleaning",
+        "cleaned",
+        "to clean"
+      ],
+      "answerIndex": 3,
+      "explanation": "make + 人 + 原形 を受け身にすると be made to do と to が必要になる。"
+    }
+  ]
+}

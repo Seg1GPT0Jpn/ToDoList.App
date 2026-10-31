@@ -1,0 +1,560 @@
+{
+  "setId": "science_shonan_104_bio_immune_01",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "science_shonan_104_bio_immune_01_001",
+      "unit": "science.biology.body.immunity.innate",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "皮膚の角質層や粘膜で、病原体の侵入を物理的に防ぐしくみを何という？",
+      "choices": [
+        "化学的防御",
+        "体液性免疫",
+        "物理的防御",
+        "細胞性免疫"
+      ],
+      "answerIndex": 2,
+      "explanation": "気管の繊毛や粘液、せき・くしゃみも物理的防御。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_01_002",
+      "unit": "science.biology.body.immunity.innate",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "化学的防御の例として正しいものは？",
+      "choices": [
+        "涙やだ液にふくまれるリゾチームが細菌の細胞壁を分解する",
+        "キラーT細胞が感染細胞を攻撃する",
+        "皮膚の角質層が病原体の侵入を防ぐ",
+        "気管の繊毛が異物を外に運ぶ"
+      ],
+      "answerIndex": 0,
+      "explanation": "胃酸による殺菌、皮膚表面が弱酸性であることも化学的防御。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_01_003",
+      "unit": "science.biology.body.immunity.innate",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "物理的防御の例として正しいものは？",
+      "choices": [
+        "胃酸で病原体を殺す",
+        "抗体が抗原と結合する",
+        "気管の内面の繊毛が、粘液にとらえた異物を外へ送り出す",
+        "リゾチームで細菌の細胞壁を分解する"
+      ],
+      "answerIndex": 2,
+      "explanation": "皮膚の角質層、くしゃみ・せきなども物理的防御。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_01_004",
+      "unit": "science.biology.body.immunity.innate",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "生まれつき備わっていて、異物を幅広く素早く排除する免疫を何という？",
+      "choices": [
+        "細胞性免疫",
+        "自然免疫",
+        "獲得免疫（適応免疫）",
+        "体液性免疫"
+      ],
+      "answerIndex": 1,
+      "explanation": "食作用やNK細胞のはたらき、炎症など。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_01_005",
+      "unit": "science.biology.body.immunity.innate",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "白血球が異物を細胞内に取りこんで分解するはたらきを何という？",
+      "choices": [
+        "食作用",
+        "血液凝固",
+        "抗原提示",
+        "抗原抗体反応"
+      ],
+      "answerIndex": 0,
+      "explanation": "好中球・マクロファージ・樹状細胞などが行う。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_01_006",
+      "unit": "science.biology.body.immunity.innate",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "食作用を行う細胞として当てはまらないものは？",
+      "choices": [
+        "好中球",
+        "マクロファージ",
+        "樹状細胞",
+        "B細胞"
+      ],
+      "answerIndex": 3,
+      "explanation": "B細胞は抗体をつくる形質細胞になるリンパ球。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_01_007",
+      "unit": "science.biology.body.immunity.innate",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "感染した細胞やがん細胞を、異物と判断して直接攻撃する自然免疫のリンパ球は？",
+      "choices": [
+        "B細胞",
+        "NK細胞（ナチュラルキラー細胞）",
+        "ヘルパーT細胞",
+        "形質細胞"
+      ],
+      "answerIndex": 1,
+      "explanation": "抗原の情報を受け取らなくてもはたらく。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_01_008",
+      "unit": "science.biology.body.immunity.innate",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "食作用で取りこんだ異物の情報をT細胞に伝える（抗原提示）主な細胞は？",
+      "choices": [
+        "血小板",
+        "樹状細胞",
+        "赤血球",
+        "形質細胞"
+      ],
+      "answerIndex": 1,
+      "explanation": "リンパ節に移動して、ヘルパーT細胞やキラーT細胞に抗原を提示する。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_01_009",
+      "unit": "science.biology.body.immunity.innate",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "炎症で起こる症状の組み合わせとして正しいものは？",
+      "choices": [
+        "血糖量の低下と尿量の増加",
+        "血液が固まらなくなる",
+        "発熱・はれ・赤くなる・痛み",
+        "寒気・鳥肌・青くなる"
+      ],
+      "answerIndex": 2,
+      "explanation": "血管が拡張して食細胞が集まりやすくなる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_01_010",
+      "unit": "science.biology.body.immunity.adaptive",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "特定の異物を見分けて排除し、記憶もする免疫を何という？",
+      "choices": [
+        "化学的防御",
+        "獲得免疫（適応免疫）",
+        "物理的防御",
+        "自然免疫"
+      ],
+      "answerIndex": 1,
+      "explanation": "体液性免疫と細胞性免疫がある。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_01_011",
+      "unit": "science.biology.body.immunity.adaptive",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "T細胞が成熟する場所は？",
+      "choices": [
+        "胸腺",
+        "骨髄",
+        "リンパ節",
+        "ひ臓"
+      ],
+      "answerIndex": 0,
+      "explanation": "T細胞もB細胞も骨髄でつくられるが、T細胞は胸腺で成熟する。B細胞は骨髄で成熟する。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_01_012",
+      "unit": "science.biology.body.immunity.adaptive",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "B細胞が成熟する場所は？",
+      "choices": [
+        "骨髄",
+        "胸腺",
+        "ひ臓",
+        "肝臓"
+      ],
+      "answerIndex": 0,
+      "explanation": "T細胞は胸腺で成熟する。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_01_013",
+      "unit": "science.biology.body.immunity.adaptive",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "抗原提示を受けて活性化し、B細胞やキラーT細胞を活性化するリンパ球は？",
+      "choices": [
+        "形質細胞",
+        "マクロファージ",
+        "NK細胞",
+        "ヘルパーT細胞"
+      ],
+      "answerIndex": 3,
+      "explanation": "獲得免疫の「司令塔」。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_01_014",
+      "unit": "science.biology.body.immunity.adaptive",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "感染した細胞を直接攻撃して排除するリンパ球は？",
+      "choices": [
+        "キラーT細胞",
+        "ヘルパーT細胞",
+        "B細胞",
+        "形質細胞"
+      ],
+      "answerIndex": 0,
+      "explanation": "キラーT細胞が中心となる免疫を細胞性免疫という。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_01_015",
+      "unit": "science.biology.body.immunity.adaptive",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "活性化したB細胞が増殖・分化してできる、抗体をつくる細胞は？",
+      "choices": [
+        "NK細胞",
+        "樹状細胞",
+        "形質細胞（抗体産生細胞）",
+        "キラーT細胞"
+      ],
+      "answerIndex": 2,
+      "explanation": "抗体を血液中に大量に放出する。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_01_016",
+      "unit": "science.biology.body.immunity.adaptive",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "抗体の本体であるタンパク質を何という？",
+      "choices": [
+        "ヘモグロビン",
+        "免疫グロブリン",
+        "グリコーゲン",
+        "フィブリン"
+      ],
+      "answerIndex": 1,
+      "explanation": "Y字形のタンパク質で、先端（可変部）で抗原と結合する。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_01_017",
+      "unit": "science.biology.body.immunity.adaptive",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "抗体が特定の抗原と結合することを何という？",
+      "choices": [
+        "食作用",
+        "抗原提示",
+        "拒絶反応",
+        "抗原抗体反応"
+      ],
+      "answerIndex": 3,
+      "explanation": "結合した抗原は無毒化され、食細胞に取りこまれやすくなる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_01_018",
+      "unit": "science.biology.body.immunity.adaptive",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "形質細胞がつくる抗体が中心となってはたらく免疫を何という？",
+      "choices": [
+        "自然免疫",
+        "細胞性免疫",
+        "体液性免疫",
+        "物理的防御"
+      ],
+      "answerIndex": 2,
+      "explanation": "B細胞→形質細胞→抗体の流れ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_01_019",
+      "unit": "science.biology.body.immunity.adaptive",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "キラーT細胞が感染細胞を直接攻撃する免疫を何という？",
+      "choices": [
+        "細胞性免疫",
+        "体液性免疫",
+        "自然免疫",
+        "化学的防御"
+      ],
+      "answerIndex": 0,
+      "explanation": "移植した臓器への拒絶反応も細胞性免疫による。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_01_020",
+      "unit": "science.biology.body.immunity.adaptive",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "獲得免疫で、抗原を排除するまでの流れとして正しいものは？",
+      "choices": [
+        "形質細胞が抗原提示→キラーT細胞が抗体をつくる",
+        "NK細胞が抗体をつくる→ヘルパーT細胞が食作用",
+        "B細胞が抗原提示→樹状細胞が抗体をつくる",
+        "樹状細胞が抗原提示→ヘルパーT細胞が活性化→B細胞が形質細胞になり抗体をつくる"
+      ],
+      "answerIndex": 3,
+      "explanation": "ヘルパーT細胞はキラーT細胞も活性化する。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_01_021",
+      "unit": "science.biology.body.immunity.adaptive",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "獲得免疫で一部のT細胞やB細胞が長く体内に残ったものを何という？",
+      "choices": [
+        "NK細胞",
+        "記憶細胞",
+        "形質細胞",
+        "樹状細胞"
+      ],
+      "answerIndex": 1,
+      "explanation": "同じ抗原が再び侵入すると、すばやく強く反応する（二次応答）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_01_022",
+      "unit": "science.biology.body.immunity.adaptive",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "一度かかった病気に再びかかりにくい理由は？",
+      "choices": [
+        "抗体が一生同じ量だけ血液中に残るから",
+        "自然免疫が強くなるから",
+        "記憶細胞が残っていて、2回目は速く強く抗体をつくれるから（二次応答）",
+        "病原体が二度と体内に入れないから"
+      ],
+      "answerIndex": 2,
+      "explanation": "1回目（一次応答）より短い時間で、多くの抗体がつくられる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_01_023",
+      "unit": "science.biology.body.immunity.adaptive",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "同じ抗原が2回目に侵入したときの免疫反応を何という？",
+      "choices": [
+        "アレルギー",
+        "一次応答",
+        "拒絶反応",
+        "二次応答"
+      ],
+      "answerIndex": 3,
+      "explanation": "一次応答より速く、強い。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_01_024",
+      "unit": "science.biology.body.immunity.disease",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "エイズ（後天性免疫不全症候群）の原因ウイルスは？",
+      "choices": [
+        "ノロウイルス",
+        "HIV（ヒト免疫不全ウイルス）",
+        "狂犬病ウイルス",
+        "インフルエンザウイルス"
+      ],
+      "answerIndex": 1,
+      "explanation": "ヘルパーT細胞に感染して破壊する。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    }
+  ]
+}
