@@ -1,0 +1,18 @@
+{
+  "name": "mondai-platform",
+  "private": true,
+  "type": "module",
+  "description": "教育コンテンツ制作プラットフォーム（開発用。公開にはビルド不要）",
+  "scripts": {
+    "test": "vitest run",
+    "test:db": "vitest run tests/db",
+    "test:e2e": "node tests/e2e/run.mjs",
+    "typecheck": "tsc -p jsconfig.json",
+    "serve": "http-server .. -p 8765 -c-1 -s"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.2.17",
+    "typescript": "5.6.3",
+    "vitest": "2.1.8"
+  }
+}
