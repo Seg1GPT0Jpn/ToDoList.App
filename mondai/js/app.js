@@ -53,10 +53,14 @@
         if (q.ucode) {
           const name = unitName(q.ucode);
           if (name) {
-            const grp = typeof UNIT_GROUP !== 'undefined' && UNIT_GROUP[q.ucode];
+            const grp = typeof UNIT_GROUP !== 'undefined' && (UNIT_GROUP[q.ucode] || UNIT_GROUP[q.ucode.split('.').slice(0, 4).join('.')]);
             q.unit = grp || bigUnit(name, q.ucode);
             q.subunit = name !== q.unit ? name : '';
           }
+        } else if (q.src === '予想問題' && !q.subunit) {
+          // 予想問題は大問ごとではなく、科目ごとの1単元にまとめる（大問名は小単元として残す）
+          q.subunit = q.unit;
+          q.unit = q.set;
         } else if (q.src === 'かながわ' && typeof KANAGAWA_ALIAS !== 'undefined' && KANAGAWA_ALIAS[q.unit] && !q.subunit) {
           q.subunit = q.unit;
           q.unit = KANAGAWA_ALIAS[q.unit];
