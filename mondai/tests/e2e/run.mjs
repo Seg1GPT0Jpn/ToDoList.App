@@ -334,6 +334,35 @@ try {
     });
   }
 
+  // ---------- 図形 ----------
+  await test('図形：教材に図を描いて入れ、問題にも図を付けられる', async () => {
+    await go(p, '#/editor/' + matId);
+    await p.waitForTimeout(600);
+    const n0 = (await p.$$('#preview svg')).length;
+    await p.click('[data-tab=blocks]');
+    await p.click('[data-add=figure]');
+    await p.waitForSelector('[data-preset=graph]');
+    await p.click('[data-preset=graph]');
+    await p.click('[data-preset=triangle]');
+    await p.click('[data-act=save]');
+    await p.waitForTimeout(800);
+    assert((await p.$$('.blk-fig svg')).length === 1, '図形ブロック');
+    assert((await p.$$('#preview svg')).length > n0, '見本に図が出ない');
+    assert((await p.innerHTML('#preview')).includes('<polyline') || (await p.innerHTML('#preview')).includes('<path'), 'グラフの線');
+    // 問題にも図を付ける
+    await go(p, '#/bank?new=1');
+    await p.waitForSelector('#fig-draw');
+    await p.fill('[name=stem]', '図の三角形について答えなさい。');
+    await p.click('#fig-draw');
+    await p.waitForSelector('[data-preset=triangle]');
+    await p.click('[data-preset=triangle]');
+    await p.click('[data-act=save]');
+    await p.waitForTimeout(500);
+    assert((await p.$$('#qe-prev svg')).length > 0, '問題の見本に図が出ない');
+    assert((await p.textContent('#fig-draw')).includes('編集'), '図を編集できない');
+    await p.click('.modal [data-close]');
+  });
+
   // ---------- 数値替え ----------
   await test('数値替え：検算の式から自動で数値を変えた問題を作れる', async () => {
     await go(p, '#/editor/new');

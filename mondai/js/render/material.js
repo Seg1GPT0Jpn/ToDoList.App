@@ -3,6 +3,7 @@
 import { answerSpaceFor } from '../domain/answersheet.js';
 import { PAGE_SIZES } from '../domain/material.js';
 import { formatOf, integerAnswer, digitLabeler } from '../domain/format.js';
+import { toSvg } from '../domain/figure.js';
 
 const R = /** @type {any} */ (globalThis).Render;
 
@@ -55,6 +56,7 @@ function freeBlockHtml(b) {
     case 'image': return b.src ? `<figure class="fig mb-image"><img src="${R.esc(b.src)}" alt="${R.esc(b.alt || '')}" style="max-width:${Number(b.width) || 100}%"></figure>` : '';
     case 'space': return `<div class="mb-space">${b.label ? `<div class="mb-space-label">${R.esc(b.label)}</div>` : ''}<div class="lines">${'<div></div>'.repeat(Number(b.lines) || 4)}</div></div>`;
     case 'pagebreak': return '<div class="mb-pagebreak"></div>';
+    case 'figure': return b.fig ? R.figure({ svg: toSvg(b.fig).replace(/<svg /, `<svg style="width:${Math.min(100, Number(b.width) || 60)}%;height:auto" `), caption: b.caption }) : '';
     default: return '';
   }
 }

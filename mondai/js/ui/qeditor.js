@@ -46,6 +46,8 @@ export function editQuestion(original, opt = {}) {
           </div>
           <label class="f">問題文（数式は $...$、下線は [[u:語句]]）<textarea class="input" name="stem" rows="4"></textarea></label>
           <label class="f">付属の文・資料（任意）<textarea class="input" name="sentence" rows="2"></textarea></label>
+          <div class="f">図 <button class="btn sm" type="button" id="fig-draw">図を描く</button> <button class="btn sm danger" type="button" id="fig-clear" hidden>図をはずす</button>
+            <input class="input" name="figCaption" placeholder="図の説明・キャプション（任意）" style="margin-top:4px"></div>
           <div id="ans-area"></div>
           <details class="mt"><summary>解説・採点基準</summary>
             <label class="f">解説<textarea class="input" name="expl" rows="3"></textarea></label>
@@ -114,6 +116,12 @@ export function editQuestion(original, opt = {}) {
     set('timeMin', q.time ? +(q.time / 60).toFixed(1) : '');
     set('checkExpr', q.check ? q.check.expr : '');
     set('varyJson', q.vary ? JSON.stringify(q.vary, null, 1) : '');
+    set('figCaption', q.fig && q.fig.caption ? q.fig.caption : '');
+    const figButtons = () => {
+      /** @type {any} */ (form.querySelector('#fig-draw')).textContent = q.fig ? (q.fig.model ? '図を編集' : '図を描き直す') : '図を描く';
+      /** @type {any} */ (form.querySelector('#fig-clear')).hidden = !q.fig;
+    };
+    figButtons();
     set('checkExpect', q.check ? q.check.expect || '' : '');
     if (!q.status) set('status', 'unverified');
 
@@ -156,6 +164,7 @@ export function editQuestion(original, opt = {}) {
       q.tags = csv(g('tags'));
       q.pts = g('pts') === '' ? null : Number(g('pts'));
       q.time = g('timeMin') === '' ? null : Math.round(Number(g('timeMin')) * 60);
+      if (q.fig) q.fig.caption = (g('figCaption') || '').trim();
       const vj = (g('varyJson') || '').trim();
       if (vj) { try { q.vary = JSON.parse(vj); q.__varyErr = validateVary(q.vary); } catch (e) { q.__varyErr = 'JSON として読めません：' + e.message; } }
       else { delete q.vary; delete q.__varyErr; }
@@ -204,7 +213,8 @@ export function editQuestion(original, opt = {}) {
       }
       showPreview();
     });
-    form.addEventListener('click', (e) => {
+    const g2 = (k) => (f(k) ? f(k).value : '');
+    form.addEventListener('click', async (e) => {
       const t = /** @type {HTMLElement} */ (e.target);
       if (t.id === 'add-choice') { collect(); q.choices.push(''); renderAnswer(); showPreview(); }
       if (t.dataset.rm != null) {
@@ -227,6 +237,17 @@ export function editQuestion(original, opt = {}) {
         form.querySelectorAll('[data-star]').forEach(b => { b.textContent = +(/** @type {any} */ (b).dataset.star) <= n ? '★' : '☆'; });
         toast('評価を保存しました');
       }
+      if (t.id === 'fig-draw') {
+        collect();
+        if (q.fig && !q.fig.model && !confirm('この図は取り込んだ図なので、そのまま編集できません。新しく描き直しますか？')) return;
+        const [{ openDrawing }, { toSvg }] = await Promise.all([import('./drawing.js'), import('../domain/figure.js')]);
+        const fig = await openDrawing(q.fig && q.fig.model ? q.fig.model : undefined, { title: '問題の図' });
+        if (!fig) return;
+        q.fig = { svg: toSvg(fig), caption: (g2('figCaption') || '').trim(), model: fig };
+        figButtons();
+        showPreview();
+      }
+      if (t.id === 'fig-clear') { delete q.fig; figButtons(); showPreview(); }
       if (t.id === 'try-vary') {
         collect();
         const out = /** @type {HTMLElement} */ (form.querySelector('#vary-out'));

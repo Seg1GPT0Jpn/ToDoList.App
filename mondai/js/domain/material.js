@@ -10,7 +10,8 @@
  *  | { id:string, type:'pagebreak' }
  *  | { id:string, type:'table', header:string[], rows:string[][], caption?:string }
  *  | { id:string, type:'image', src:string, alt?:string, width?:number }
- *  | { id:string, type:'space', lines:number, label?:string }} Block
+ *  | { id:string, type:'space', lines:number, label?:string }
+ *  | { id:string, type:'figure', fig:any, width?:number, caption?:string }} Block
  */
 
 export const KINDS = {

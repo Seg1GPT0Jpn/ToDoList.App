@@ -5,10 +5,13 @@ import { KINDS, PAGE_SIZES, newMaterial, blockId, questionBlock, outdatedBlocks 
 import { renderMaterial, pageCss } from '../render/material.js';
 import { FORMATS } from '../domain/format.js';
 import { canVary, varyQuestion } from '../domain/variant.js';
+import { toSvg } from '../domain/figure.js';
+
+const figThumb = (fig) => toSvg(fig).replace(/<svg /, '<svg style="max-width:100%;max-height:140px;background:#fff" ');
 import { modal, renderMath, texClass, makeWordQuestions, kindLabel, R, fitPreview, printFileName, printAs } from './common.js';
 import { editQuestion } from './qeditor.js';
 
-const BLOCK_LABEL = { heading: '見出し', text: '文章', section: '大問', question: '問題', pagebreak: '改ページ', table: '表', image: '画像', space: '解答・メモ欄' };
+const BLOCK_LABEL = { heading: '見出し', text: '文章', section: '大問', question: '問題', pagebreak: '改ページ', table: '表', image: '画像', space: '解答・メモ欄', figure: '図形' };
 const STATUS_LABEL = { draft: '下書き', review: 'レビュー中', approved: '承認済み', published: '公開・配布', archived: 'アーカイブ' };
 
 export async function render(root, parts, params) {
@@ -84,7 +87,7 @@ export async function render(root, parts, params) {
           <div class="add-row">
             <button class="btn sm" data-add="heading">＋見出し</button><button class="btn sm" data-add="text">＋文章</button><button class="btn sm" data-add="section">＋大問</button>
             <a class="btn sm" href="#/bank">＋問題（バンク）</a><button class="btn sm" data-add="newq">＋問題を作る</button>
-            <button class="btn sm" data-add="table">＋表</button><button class="btn sm" data-add="image">＋画像</button><button class="btn sm" data-add="space">＋解答欄</button><button class="btn sm" data-add="pagebreak">＋改ページ</button>
+            <button class="btn sm" data-add="table">＋表</button><button class="btn sm" data-add="figure">＋図形</button><button class="btn sm" data-add="image">＋画像</button><button class="btn sm" data-add="space">＋解答欄</button><button class="btn sm" data-add="pagebreak">＋改ページ</button>
             <button class="btn sm" data-add="words">＋単語・用語テスト</button>
           </div>
           <ol class="blocks" id="blocks"></ol>
@@ -192,6 +195,9 @@ export async function render(root, parts, params) {
       case 'image': return `${b.src ? `<img src="${esc(b.src)}" alt="" style="max-width:100%;max-height:120px">` : ''}<div class="row mt"><input type="file" accept="image/*" data-img><label class="small">幅 <input class="input" style="width:70px;display:inline-block" type="number" min="10" max="100" data-f="width" value="${b.width || 80}">%</label></div><input class="input mt" data-f="alt" value="${esc(b.alt || '')}" placeholder="画像の説明（読み上げ用）">`;
       case 'space': return `<div class="row"><input class="input grow" data-f="label" value="${esc(b.label || '')}" placeholder="欄の名前（任意。例：メモ）"><label class="small">行数 <input class="input" style="width:64px;display:inline-block" type="number" min="1" max="40" data-f="lines" value="${b.lines || 4}"></label></div>`;
       case 'pagebreak': return '<div class="small muted">ここで改ページします</div>';
+      case 'figure': return `<div class="blk-fig">${b.fig ? figThumb(b.fig) : '<span class="muted small">（まだ描いていません）</span>'}</div>
+        <div class="row mt"><button class="btn sm" data-draw>図を${b.fig ? '編集' : '描く'}</button><label class="small">幅 <input class="input" style="width:70px;display:inline-block" type="number" min="10" max="100" data-f="width" value="${b.width || 60}">%</label></div>
+        <input class="input mt" data-f="caption" value="${esc(b.caption || '')}" placeholder="図の説明（任意。例：図1）">`;
       default: return '';
     }
   };
@@ -248,6 +254,11 @@ export async function render(root, parts, params) {
     else if (t.matches('[data-down]') && i < m.blocks.length - 1) { [m.blocks[i + 1], m.blocks[i]] = [m.blocks[i], m.blocks[i + 1]]; changed(true); }
     else if (t.matches('[data-dup]')) { m.blocks.splice(i + 1, 0, { ...clone(b), id: blockId() }); changed(true); }
     else if (t.matches('[data-vary]')) { varyOne(b); }
+    else if (t.matches('[data-draw]')) {
+      const { openDrawing } = await import('./drawing.js');
+      const fig = await openDrawing(b.fig || undefined, { title: '図形' });
+      if (fig) { b.fig = fig; changed(true); }
+    }
     else if (t.matches('[data-upd]')) { const cur = state.byId.get(b.ref); if (cur) { b.q = clone(cur); b.rev = cur.rev || 1; changed(true); } }
     else if (t.matches('[data-edit]')) {
       // バンクにある問題ならバンクの問題を編集してこの教材にも反映。単語テストなどバンク外の問題は教材の中だけで編集
@@ -303,6 +314,12 @@ export async function render(root, parts, params) {
     if (type === 'table') Object.assign(nb, { header: ['項目', '内容'], rows: [['', '']], caption: '' });
     if (type === 'image') Object.assign(nb, { src: '', alt: '', width: 80 });
     if (type === 'space') Object.assign(nb, { lines: 4, label: '' });
+    if (type === 'figure') {
+      const { openDrawing } = await import('./drawing.js');
+      const fig = await openDrawing(undefined, { title: '図形' });
+      if (!fig) return;
+      Object.assign(nb, { fig, width: 60, caption: '' });
+    }
     m.blocks.push(/** @type {any} */ (nb));
     changed(true);
     const last = ol.lastElementChild;

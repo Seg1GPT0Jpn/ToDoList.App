@@ -232,7 +232,7 @@ export function openDrawing(initial, { title = '図をかく' } = {}) {
       over.innerHTML = h;
     }
     function updateButtons() {
-      root.querySelectorAll('[data-tool]').forEach(b => b.classList.toggle('on', /** @type {HTMLElement} */ (b).dataset.tool === tool));
+      root.querySelectorAll('.dr-tool[data-tool]').forEach(b => b.classList.toggle('on', /** @type {HTMLElement} */ (b).dataset.tool === tool));
       /** @type {HTMLButtonElement} */ ($('[data-act="undo"]')).disabled = !past.length;
       /** @type {HTMLButtonElement} */ ($('[data-act="redo"]')).disabled = !future.length;
       const t = TOOLS.find(x => x[0] === tool);
@@ -240,7 +240,7 @@ export function openDrawing(initial, { title = '図をかく' } = {}) {
       if (tool === 'polygon' && clicks.length) msg = `頂点 ${clicks.length} 個。最初の点をクリック・ダブルクリック・Enter で完成、Esc でやめる`;
       if (tool === 'angle' && clicks.length) msg = clicks.length === 1 ? '② 一方の辺の上をクリック' : '③ もう一方の辺の上をクリック';
       hint.innerHTML = esc(msg) + (tool === 'polygon' && clicks.length >= 2 ? ' <button type="button" class="btn sm" data-act="poly-done">完成</button>' : '');
-      stage.dataset.tool = tool;
+      stage.dataset.mode = tool;
     }
 
     // ---------- 道具 ----------
@@ -604,7 +604,7 @@ export function openDrawing(initial, { title = '図をかく' } = {}) {
     // ---------- ボタン ----------
     root.addEventListener('click', e => {
       const t = /** @type {HTMLElement} */ (e.target);
-      const toolBtn = /** @type {HTMLElement|null} */ (t.closest('[data-tool]'));
+      const toolBtn = /** @type {HTMLElement|null} */ (t.closest('.dr-tool[data-tool]'));
       if (toolBtn) { setTool(/** @type {string} */ (toolBtn.dataset.tool)); return; }
       const pre = /** @type {HTMLElement|null} */ (t.closest('[data-preset]'));
       if (pre) { addPreset(/** @type {string} */ (pre.dataset.preset)); return; }
