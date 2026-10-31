@@ -5,11 +5,14 @@ import { buildExam, allocatePoints, validatePoints, makeVersions } from '../doma
 import { newMaterial, questionBlock, blockId } from '../domain/material.js';
 import { LEVELS } from '../domain/question.js';
 import { renderMath, texClass, R, TYPE_LABEL } from './common.js';
+import { FORMATS, fitsFormat } from '../domain/format.js';
+import { varyQuestion } from '../domain/variant.js';
 
 const KINDS = { quiz: '小テスト', unit: '単元テスト', test: '定期テスト', ability: '実力テスト', mock: '模擬試験', entrance: '入試形式', ability2: '総合確認テスト' };
 const mem = {
   subj: '', course: '', units: new Set(), src: '', kind: 'test', title: '', time: 50, total: 100, count: 20,
   sections: [], level: { 基礎: 3, 標準: 5, 応用: 2 }, type: { choice: 0, short: 0, written: 0 }, excludeTags: '', preferUnused: true, versions: 1, pointsMode: 'weighted', seed: 1,
+  format: 'standard', varyNumbers: true,
 };
 
 export async function render(root) {
@@ -29,6 +32,8 @@ export async function render(root) {
     <div>
       <section class="card">
         <h2>テストの条件</h2>
+        <label class="f">形式<select class="input" id="x-format">${Object.entries(FORMATS).map(([k, f]) => `<option value="${k}">${esc(f.label)}</option>`).join('')}</select></label>
+        <p class="small muted" id="x-fmt-note"></p>
         <div class="form-grid">
           <label class="f">種類<select class="input" id="x-kind">${Object.entries(KINDS).map(([k, l]) => `<option value="${k}">${l}</option>`).join('')}</select></label>
           <label class="f">タイトル<input class="input" id="x-title" placeholder="例：1学期中間テスト"></label>
@@ -36,6 +41,7 @@ export async function render(root) {
           <label class="f">満点<input class="input" type="number" min="1" id="x-total"></label>
           <label class="f">問題数（大問を使わないとき）<input class="input" type="number" min="1" id="x-count"></label>
           <label class="f">版の数（A・B…）<select class="input" id="x-versions"><option>1</option><option>2</option><option>3</option><option>4</option></select></label>
+          <label class="f check" style="align-self:end"><input type="checkbox" id="x-vary"> B版以降は数値も変える</label>
           <label class="f">配点の付け方<select class="input" id="x-pmode"><option value="weighted">難易度・記述に重み</option><option value="equal">すべて同じ</option></select></label>
         </div>
         <h3>難易度の割合（基礎・標準・応用）</h3>
@@ -82,10 +88,13 @@ export async function render(root) {
     $('x-pool').textContent = `対象の問題：${pool.length.toLocaleString()} 問（${byLv}）`;
   };
   const exTags = () => mem.excludeTags.split(/[,、，]/).map(s => s.trim()).filter(Boolean);
-  const poolList = () => state.questions.filter(q => inScope(q) && !(q.tags || []).some(t => exTags().includes(t)));
+  const poolList = () => state.questions.filter(q => inScope(q) && fitsFormat(q, mem.format) && !(q.tags || []).some(t => exTags().includes(t)));
 
   const fill = () => {
     $('x-kind').value = mem.kind; $('x-title').value = mem.title; $('x-time').value = mem.time; $('x-total').value = mem.total; $('x-count').value = mem.count;
+    $('x-format').value = mem.format; $('x-vary').checked = mem.varyNumbers;
+    const fm = FORMATS[mem.format];
+    $('x-fmt-note').textContent = fm.preset ? `${fm.label}：表紙・番号・選択肢の記号・解答用紙をこの形式で出力します。${mem.format === 'kyotsu' ? '選択問題と、答えが整数の問題だけを使います。' : mem.format === 'niji' ? '記述と答えを書く問題だけを使います。' : ''}` : '';
     $('x-versions').value = String(mem.versions); $('x-pmode').value = mem.pointsMode; $('x-extags').value = mem.excludeTags; $('x-unused').checked = mem.preferUnused;
     root.querySelectorAll('[data-lv]').forEach(el => { el.value = mem.level[el.dataset.lv]; });
     root.querySelectorAll('[data-ty]').forEach(el => { el.value = mem.type[el.dataset.ty]; });
@@ -101,6 +110,16 @@ export async function render(root) {
   renderScope();
   fill();
 
+  $('x-format').addEventListener('change', () => {
+    mem.format = $('x-format').value;
+    const pr = FORMATS[mem.format].preset;
+    if (pr) {
+      Object.assign(mem, { time: pr.timeMin, total: pr.total, sections: pr.sections.map(x => ({ ...x })), level: { ...pr.levelRatio } });
+      if (['kanagawa', 'kyotsu', 'niji'].includes(mem.format)) mem.kind = mem.kind === 'test' || !KINDS[mem.kind] ? 'entrance' : mem.kind;
+    }
+    fill(); renderScope();
+  });
+  $('x-vary').addEventListener('change', () => { mem.varyNumbers = $('x-vary').checked; });
   $('x-subj').addEventListener('change', () => { mem.subj = $('x-subj').value; mem.course = ''; renderScope(); });
   $('x-course').addEventListener('change', () => { mem.course = $('x-course').value; renderScope(); });
   $('x-src').addEventListener('change', () => { mem.src = $('x-src').value; renderScope(); });
@@ -175,10 +194,13 @@ export async function render(root) {
     const ptsOf = new Map(result.questions.map((q, i) => [q.id, result.pts[i]]));
     const byId = new Map(result.questions.map(q => [q.id, q]));
     const versions = mem.versions > 1 ? makeVersions(result, mem.versions, { seed: mem.seed }) : [{ label: '', order: result.questions.map(q => q.id), choicePerm: {} }];
-    const title = mem.title || `${KINDS[mem.kind] || 'テスト'}（${[mem.course || mem.subj, ...[...mem.units].slice(0, 2)].filter(Boolean).join('・') || '問題バンク'}）`;
+    const title = mem.title || `${FORMATS[mem.format].preset ? FORMATS[mem.format].short + ' 模擬問題' : KINDS[mem.kind] || 'テスト'}（${[mem.course || mem.subj, ...[...mem.units].slice(0, 2)].filter(Boolean).join('・') || '問題バンク'}）`;
     let first = null;
-    for (const v of versions) {
-      const m = newMaterial(KINDS[mem.kind] ? (mem.kind === 'ability2' ? 'ability' : mem.kind) : 'test', { id: uid('M-'), now: nowISO() });
+    let varied = 0, notVaried = 0;
+    for (const [vi, v] of versions.entries()) {
+      const kind = FORMATS[mem.format].preset ? mem.format : KINDS[mem.kind] ? (mem.kind === 'ability2' ? 'ability' : mem.kind) : 'test';
+      const m = newMaterial(kind, { id: uid('M-'), now: nowISO() });
+      m.print.format = mem.format;
       m.title = title + (v.label ? `（${v.label}版）` : '');
       m.notes = [`試験時間 ${mem.time} 分`, ...(m.notes ? [m.notes] : [])].join('\n');
       m.print.points = 'block';
@@ -194,6 +216,11 @@ export async function render(root) {
           lastSec = si;
         }
         const b = questionBlock(byId.get(id));
+        // B版以降：数値替えできる問題は数値を変える（答えはテンプレートの式で計算し直して確認ずみ）
+        if (vi > 0 && mem.varyNumbers) {
+          const r = varyQuestion(byId.get(id), `${mem.seed}:${v.label}:${id}`);
+          if (r.ok) { b.q = r.q; b.variant = { auto: !!r.auto }; varied++; } else notVaried++;
+        }
         b.pts = ptsOf.get(id);
         if (v.choicePerm && v.choicePerm[id]) b.perm = v.choicePerm[id];
         m.blocks.push(b);
@@ -203,7 +230,7 @@ export async function render(root) {
     }
     await setCurrentMaterial(first.id);
     await log('テストを作成', first.id, `${title}（${versions.length}版）`);
-    toast(`${versions.length} 件の教材を作りました`, 'ok');
+    toast(`${versions.length} 件の教材を作りました${versions.length > 1 && mem.varyNumbers ? `（B版以降で数値を変えた問題 ${varied}・変えられなかった問題 ${notVaried}）` : ''}`, 'ok');
     location.hash = '#/editor/' + first.id;
   });
 }

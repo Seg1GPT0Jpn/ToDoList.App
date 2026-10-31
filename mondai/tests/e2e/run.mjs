@@ -297,6 +297,65 @@ try {
     assert(orderA !== orderB || vs.some(v => v.blocks.some(b => b.perm)), 'A・B が同じ');
   });
 
+  // ---------- 入試形式 ----------
+  for (const [fmt, label, sheetSel] of [['kyotsu', '共通テスト', '.msheet .bub'], ['kanagawa', '神奈川県入試', '.msheet .bub'], ['niji', '二次試験', '.pd-q .lines']]) {
+    await test(`入試形式：${label}の形で作れる（表紙・番号・解答用紙）`, async () => {
+      await go(p, '#/exam');
+      await p.selectOption('#x-format', fmt);
+      await p.waitForTimeout(300);
+      await p.selectOption('#x-subj', '数学');
+      await p.waitForTimeout(300);
+      await p.selectOption('#x-course', '数学Ⅰ');
+      await p.waitForTimeout(300);
+      await p.selectOption('#x-versions', '1');
+      await p.click('#x-build');
+      await p.waitForTimeout(800);
+      assert((await p.textContent('#x-result')).includes('一致しています'), '配点');
+      await p.click('#x-save');
+      await p.waitForTimeout(1500);
+      const txt = await p.textContent('#preview');
+      assert(await p.isVisible('#preview .paper.cover'), '表紙がない');
+      assert(txt.includes(fmt === 'kanagawa' ? '問1' : '第1問'), '大問の番号');
+      assert((await p.$$(`#preview ${sheetSel}`)).length > 0, '解答用紙の形');
+      if (fmt === 'kyotsu') assert((await p.$$('#preview .markbox')).length > 0, '解答番号の枠');
+    });
+  }
+
+  // ---------- 数値替え ----------
+  await test('数値替え：検算の式から自動で数値を変えた問題を作れる', async () => {
+    await go(p, '#/editor/new');
+    await p.click('[data-kind=quiz]');
+    await p.waitForTimeout(800);
+    await go(p, '#/bank');
+    await p.fill('#f-q', 'テスト用');
+    await p.waitForTimeout(700);
+    await p.click('.qrow [data-act=toggle]');
+    await p.waitForTimeout(400);
+    await go(p, '#/editor');
+    await p.waitForSelector('[data-vary]');
+    const before = await p.textContent('.blk.q .qtext');
+    await p.click('[data-vary]');
+    await p.waitForSelector('#vy-use');
+    await p.click('#vy-use');
+    await p.waitForTimeout(500);
+    const after = await p.textContent('.blk.q .qtext');
+    assert(before !== after, '問題文が変わらない');
+    assert((await p.textContent('.blk.q')).includes('数値替え'), '数値替えの印');
+  });
+  await test('数値替え：テンプレートを編集画面で試せる', async () => {
+    await go(p, '#/bank?new=1');
+    await p.waitForSelector('[name=stem]');
+    await p.selectOption('[name=type]', 'short');
+    await p.fill('[name=stem]', '1個 {{a}} 円の品物を 3 個買うといくらか。');
+    await p.fill('[name=ans]', '300円');
+    await p.click('summary:has-text("数値替えのテンプレート")');
+    await p.fill('[name=varyJson]', JSON.stringify({ vars: { a: { min: 50, max: 200, step: 10 } }, stem: '1個 {{a}} 円の品物を 3 個買うといくらか。', ans: '{{=3*a}}円', check: '3*a', expl: '{{a}}×3={{=3*a}}', original: { a: 100 } }));
+    await p.click('#try-vary');
+    await p.waitForTimeout(300);
+    assert(/円/.test(await p.textContent('#vary-out')) && !(await p.textContent('#vary-out')).includes('作れません'), await p.textContent('#vary-out'));
+    await p.click('.modal [data-close]');
+  });
+
   // ---------- 解答・解説 ----------
   await test('解答・解説：一覧と要再確認の通知', async () => {
     await go(p, '#/answers/' + matId);

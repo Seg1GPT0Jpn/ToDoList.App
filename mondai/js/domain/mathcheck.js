@@ -1,6 +1,6 @@
 // 計算問題の答え合わせ用の安全な式の計算（eval / Function は使わない）。
 // 使えるもの：数（小数・1.2e3）、+ - * / ^ **、単項マイナス、かっこ、
-// 関数 sqrt abs sin cos tan log(=自然対数) ln log10 exp floor ceil round min max、定数 pi e、
+// 関数 sqrt abs sin cos tan log(=自然対数) ln log10 exp floor ceil round min max gcd lcm mod sign、定数 pi e、
 // evaluate の vars で渡した変数。それ以外の名前・記号はすべてエラーになる。
 
 /**
@@ -27,6 +27,10 @@ const FUNCS = new Map([
   ['round', { fn: Math.round, min: 1, max: 1 }],
   ['min', { fn: Math.min, min: 1, max: Infinity }],
   ['max', { fn: Math.max, min: 1, max: Infinity }],
+  ['gcd', { fn: (a, b) => { a = Math.abs(Math.round(a)); b = Math.abs(Math.round(b)); while (b) [a, b] = [b, a % b]; return a; }, min: 2, max: 2 }],
+  ['lcm', { fn: (a, b) => { const x = Math.abs(Math.round(a)), y = Math.abs(Math.round(b)); let p = x, q = y; while (q) [p, q] = [q, p % q]; return p ? x / p * y : 0; }, min: 2, max: 2 }],
+  ['mod', { fn: (a, b) => ((a % b) + b) % b, min: 2, max: 2 }],
+  ['sign', { fn: Math.sign, min: 1, max: 1 }],
 ]);
 /** @type {Map<string, number>} */
 const CONSTS = new Map([['pi', Math.PI], ['e', Math.E]]);

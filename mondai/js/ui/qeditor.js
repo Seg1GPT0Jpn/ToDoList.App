@@ -4,6 +4,7 @@ import * as db from '../core/db.js';
 import { esc, clone, toast, debounce } from '../core/util.js';
 import { QUESTION_TYPES, LEVELS, STATUSES, newQuestion, validateQuestion } from '../domain/question.js';
 import { checkAnswer } from '../domain/mathcheck.js';
+import { varyQuestion, validateVary } from '../domain/variant.js';
 import { modal, renderMath, R } from './common.js';
 
 const lines = (s) => String(s || '').split('\n').map(x => x.trim()).filter(Boolean);
@@ -77,6 +78,13 @@ export function editQuestion(original, opt = {}) {
             </div>
             <button class="btn sm" type="button" id="run-check">式で検算する</button> <span id="check-out" class="small"></span>
           </details>
+          <details class="mt"><summary>数値替えのテンプレート（上級者向け）</summary>
+            <p class="small muted">数値だけを変えた版を作るための設定です（JSON）。書き方：<code>{"vars":{"a":{"min":2,"max":9}},"stem":"… {{a}} …","ans":"{{=a*2}}","check":"a*2","expl":"…","original":{"a":3}}</code>。
+              <code>{{a}}</code> に値、<code>{{=式}}</code> に計算結果が入ります（<code>|frac</code> 分数、<code>|sign</code> 符号つき、<code>|coef</code> 係数）。空欄なら、検算の式から自動で作ります。</p>
+            <textarea class="input mono" name="varyJson" rows="6"></textarea>
+            <button class="btn sm" type="button" id="try-vary">試しに作る</button>
+            <div id="vary-out" class="small mt"></div>
+          </details>
           ${datalist('dl-subj', 'subj')}${datalist('dl-course', 'course')}${datalist('dl-grade', 'grade')}${datalist('dl-unit', 'unit')}
         </div>
         <div>
@@ -105,6 +113,7 @@ export function editQuestion(original, opt = {}) {
     set('tags', (q.tags || []).join('、'));
     set('timeMin', q.time ? +(q.time / 60).toFixed(1) : '');
     set('checkExpr', q.check ? q.check.expr : '');
+    set('varyJson', q.vary ? JSON.stringify(q.vary, null, 1) : '');
     set('checkExpect', q.check ? q.check.expect || '' : '');
     if (!q.status) set('status', 'unverified');
 
@@ -147,6 +156,9 @@ export function editQuestion(original, opt = {}) {
       q.tags = csv(g('tags'));
       q.pts = g('pts') === '' ? null : Number(g('pts'));
       q.time = g('timeMin') === '' ? null : Math.round(Number(g('timeMin')) * 60);
+      const vj = (g('varyJson') || '').trim();
+      if (vj) { try { q.vary = JSON.parse(vj); q.__varyErr = validateVary(q.vary); } catch (e) { q.__varyErr = 'JSON として読めません：' + e.message; } }
+      else { delete q.vary; delete q.__varyErr; }
       const ex = (g('checkExpr') || '').trim();
       q.check = ex ? { expr: ex, ...(g('checkExpect') ? { expect: g('checkExpect').trim() } : {}) } : undefined;
       const def = QUESTION_TYPES[q.type] || {};
@@ -215,6 +227,16 @@ export function editQuestion(original, opt = {}) {
         form.querySelectorAll('[data-star]').forEach(b => { b.textContent = +(/** @type {any} */ (b).dataset.star) <= n ? '★' : '☆'; });
         toast('評価を保存しました');
       }
+      if (t.id === 'try-vary') {
+        collect();
+        const out = /** @type {HTMLElement} */ (form.querySelector('#vary-out'));
+        if (q.__varyErr) { out.innerHTML = `<span style="color:var(--danger)">${esc(q.__varyErr)}</span>`; return; }
+        const r = varyQuestion(q, Math.random());
+        if (!r.ok) { out.innerHTML = `<span style="color:var(--danger)">作れません：${esc(r.reason)}</span>`; return; }
+        const Rr = R();
+        out.innerHTML = `<div class="notice ok">${r.auto ? '（検算の式から自動で作成）' : ''}${Rr.text(r.q.stem)}<br>答え：${Rr.text(Rr.prepare([r.q], { labels: 'auto', points: 'none' })[0].ans)}</div>`;
+        renderMath(out);
+      }
       if (t.id === 'run-check') {
         collect();
         const r = checkAnswer(q);
@@ -270,6 +292,8 @@ export function editQuestion(original, opt = {}) {
       collect();
       const v = validateQuestion(q);
       if (!v.ok) { toast('入力を確認してください：' + v.errors[0].message, 'error'); return; }
+      if (q.__varyErr) { toast('数値替えのテンプレート：' + q.__varyErr, 'error'); return; }
+      delete q.__varyErr;
       // 問題文・答えが変わったら検証状態を戻す（人が承認済みでも再確認が必要）
       if (original && original.status === 'approved' && (original.stem !== q.stem || JSON.stringify(original.ai) !== JSON.stringify(q.ai) || original.ans !== q.ans) && q.status === 'approved') {
         q.status = 'verified';

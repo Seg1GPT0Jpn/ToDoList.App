@@ -28,6 +28,9 @@ export const KINDS = {
   mock: { label: '模擬試験', title: '模擬試験', notes: '解答はすべて解答用紙に記入しなさい。' },
   entrance: { label: '入試対策', title: '入試対策演習', notes: '' },
   answers: { label: '解答・解説集', title: '解答・解説集', notes: '' },
+  kanagawa: { label: '神奈川県公立高校入試形式', title: '神奈川県公立高校入試 模擬問題', notes: '' },
+  kyotsu: { label: '共通テスト形式', title: '共通テスト 模擬問題', notes: '' },
+  niji: { label: '二次試験形式（記述）', title: '二次試験 模擬問題', notes: '' },
   material: { label: '授業用資料', title: '授業資料', notes: '' },
 };
 
@@ -35,7 +38,7 @@ export const PAGE_SIZES = { A4: [210, 297], B4: [257, 364], A3: [297, 420], B5: 
 
 export const DEFAULT_PAGE = { size: 'A4', orientation: 'portrait', margin: 12, header: '', footer: '', pageNumbers: true, cols: '1', font: '13.5' };
 export const DEFAULT_PRINT = {
-  labels: 'auto', answer: 'inline', key: 'expl', points: 'data', group: 'none',
+  labels: 'auto', answer: 'inline', key: 'expl', points: 'data', group: 'none', format: 'standard',
   shuffle: false, name: true, date: false, meta: false, seed: 1,
 };
 
@@ -51,6 +54,9 @@ const TEMPLATE_PRESETS = {
   worksheet: { print: { answer: 'inline', key: 'ans' }, blocks: [['heading', 'ねらい'], ['text', ''], ['heading', '練習問題']] },
   memorize: { print: { answer: 'inline', key: 'ans', points: 'none' } },
   answers: { print: { answer: 'none', key: 'expl', points: 'data' } },
+  kanagawa: { print: { format: 'kanagawa', answer: 'sheet', key: 'expl', points: 'equal', group: 'type' } },
+  kyotsu: { print: { format: 'kyotsu', answer: 'sheet', key: 'expl', points: 'equal', group: 'unit' } },
+  niji: { print: { format: 'niji', answer: 'sheet', key: 'expl', points: 'equal', group: 'unit' } },
 };
 
 let seq = 0;

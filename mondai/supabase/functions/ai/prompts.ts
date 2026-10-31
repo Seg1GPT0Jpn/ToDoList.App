@@ -8,7 +8,8 @@ export type Action =
   | "explain"
   | "review"
   | "plan_material"
-  | "suggest_review";
+  | "suggest_review"
+  | "vary";
 
 export const ACTIONS: readonly Action[] = [
   "parse_request",
@@ -18,7 +19,28 @@ export const ACTIONS: readonly Action[] = [
   "review",
   "plan_material",
   "suggest_review",
+  "vary",
 ];
+
+// 入試の形式ごとの作り方（generate / plan_material で、conditions.format または payload.format で指定）
+const FORMAT_GUIDE: Record<string, string> = {
+  kanagawa:
+    "神奈川県公立高校入試の形式に合わせる：中学校の学習範囲。大問「問1」〜、小問「(ア)(イ)…」。選択肢は1〜4の番号で4つ（choice）。" +
+    "数値を答える問題は整数が答えになるようにし（マークで「あい」と1けたずつ答えさせる）、type は short。一部に記述（written、字数指定つき）を含めてよい。" +
+    "資料・会話文・グラフ（表で表す）を読み取る思考力の問題を入れる。",
+  kyotsu:
+    "大学入学共通テストの形式に合わせる：高校の学習範囲。大問「第1問」〜、小問「問1」〜。すべてマーク式：選択問題（choice、選択肢は4〜6個）と、" +
+    "整数が答えになる数値問題（short、答えは整数のみ。分数や根号は分子・分母・根号の中などを別の小問に分けて整数で答えさせる）だけにする。" +
+    "会話文・資料・実験・複数の情報を組み合わせて考える問題、誘導つきの問題を多くする。",
+  niji:
+    "大学入試の二次試験（記述式）の形式に合わせる：大問「第1問」〜を、誘導つきの小問「(1)(2)(3)」に分ける。答えだけでなく過程・論証を書かせる記述問題（written）" +
+    "と、答えを求める問題（short）にする。選択式は使わない。採点基準（rubric）を必ず付け、部分点の観点を示す。難易度は標準〜応用。",
+};
+function formatGuide(p: Record<string, unknown>): string {
+  const c = isObj(p.conditions) ? p.conditions : {};
+  const f = String(p.format ?? c.format ?? "");
+  return FORMAT_GUIDE[f] ? `\n\n出題形式：${FORMAT_GUIDE[f]}` : "";
+}
 
 export type Validation = { ok: true; value: unknown } | { ok: false; reason: string };
 
@@ -153,7 +175,8 @@ ${QUESTION_FORMAT}
     buildUser: (p) =>
       `条件：\n${str(p.conditions ?? p.spec ?? p)}\n\n` +
       `既存問題の要約（重複を避けること）：\n${str(p.existing ?? "なし", 8000)}\n\n` +
-      `作成数：${str(p.count ?? (isObj(p.conditions) ? p.conditions.count : null) ?? "条件に従う")}`,
+      `作成数：${str(p.count ?? (isObj(p.conditions) ? p.conditions.count : null) ?? "条件に従う")}` +
+      formatGuide(p),
     validate: (o) => {
       const arr = isObj(o) ? o.questions : Array.isArray(o) ? o : null;
       if (!Array.isArray(arr) || arr.length === 0) return { ok: false, reason: "questions 配列がありません" };
@@ -232,7 +255,7 @@ ${QUESTION_FORMAT}
  "title": "題名", "subtitle": "副題",
  "page": {"size": "A4" | "B4" | "A3", "orientation": "portrait" | "landscape", "cols": 1 | 2},
  "blocks": [{"type": "...", ...}], "notes": "作成上の注意"}`,
-    buildUser: (p) => `教材の目的・条件：\n${str(p.purpose ?? p.text ?? p)}`,
+    buildUser: (p) => `教材の目的・条件：\n${str(p.purpose ?? p.text ?? p)}${formatGuide(p)}`,
     validate: (o) => {
       const v = requireObject(o, ["title", "blocks"]);
       if (!v.ok) return v;
@@ -252,6 +275,23 @@ ${QUESTION_FORMAT}
  "want": [{"unit": "単元", "level": "基礎" | "標準" | "応用", "count": 数, "types": ["choice"]}]}`,
     buildUser: (p) => `学習結果の集計：\n${str(p.stats ?? p.results ?? p)}`,
     validate: (o) => requireObject(o, ["summary", "weakPoints"]),
+  },
+
+  vary: {
+    maxTokens: 8000,
+    system: `${COMMON}
+与えられた問題と同じ形・同じ難易度で、数値（係数・データ・量）だけを変えた問題を 1 問作ります。
+答え・選択肢（誤答はもとの誤答と同じ種類のまちがいから作る）・解説・採点基準も新しい数値に合わせて作り直し、計算を必ず検算してください。
+数値が答えになる場合は、答えを機械で検算できる check 式（例 {"expr": "3*4"}）を付けてください。問題の意味や条件が成り立つ数値にすること。
+${QUESTION_FORMAT}
+出力形式：{"question": 問題, "changes": "どの数値をどう変えたか"}`,
+    buildUser: (p) => `元の問題（正答つき）：\n${str(p.question)}`,
+    validate: (o) => {
+      if (!isObj(o) || !isObj(o.question)) return { ok: false, reason: "question がありません" };
+      const err = validateQuestion(o.question);
+      if (err) return { ok: false, reason: err };
+      return { ok: true, value: { question: normalizeQuestion(o.question as Record<string, unknown>), changes: o.changes ?? "" } };
+    },
   },
 };
 

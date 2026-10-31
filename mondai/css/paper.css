@@ -129,3 +129,25 @@
   .preview .mb-pagebreak { border: 0; margin: 0; }
   .preview .mb-pagebreak::after { display: none; }
 }
+
+/* 入試形式：表紙・解答番号の枠・マークシート・大問ごとの解答用紙 */
+.paper.cover { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.cv-kind { margin-top: 18mm; font-size: 1.1em; letter-spacing: .3em; border: 1.5px solid #000; padding: .2em 1.2em; font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif; }
+.cv-title { font-size: 2.1em; font-weight: 700; margin: 14mm 0 4mm; font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif; }
+.cv-sub { font-size: 1.2em; }
+.cv-time { margin-top: 6mm; font-size: 1.1em; }
+.cv-notes { text-align: left; margin-top: 14mm; border: 1px solid #000; padding: 4mm 6mm; width: 100%; }
+.cv-notes ol { margin: .4em 0 0; padding-left: 1.4em; }
+.cv-notes li { margin-bottom: .35em; }
+.cv-id { margin-top: auto; padding-top: 12mm; display: flex; gap: 10mm; width: 100%; }
+.cv-id > div { flex: 1; border: 1.5px solid #000; padding: 3mm; text-align: left; font-weight: 700; }
+.cv-id span { display: block; height: 10mm; }
+.markbox { display: inline-block; border: 1.2px solid #000; padding: 0 .55em; margin: 0 .2em; font-weight: 700; font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif; line-height: 1.4; letter-spacing: .15em; }
+.pdai-no.wide { width: auto; padding: 0 .6em; }
+.msheet { columns: 2; column-gap: 8mm; column-rule: 1px solid #bbb; margin-top: 3mm; }
+.mrow { display: flex; align-items: center; gap: 1.2mm; break-inside: avoid; padding: .6mm 0; border-bottom: 1px dotted #ccc; }
+.mlab { min-width: 4.2em; font-weight: 700; font-size: .85em; font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif; }
+.bub { display: inline-flex; align-items: center; justify-content: center; width: 1.25em; height: 1.75em; border: 1px solid #000; border-radius: 50%; font-size: .72em; }
+.pd-q { margin-bottom: 4mm; break-inside: avoid; }
+.pd-q .lines > div { height: 2.3em; }
+@media print { .paper.cover { min-height: 260mm; } }

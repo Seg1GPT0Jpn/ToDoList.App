@@ -3,6 +3,8 @@ import { state, getMaterial, saveMaterial, setCurrentMaterial, currentMaterialId
 import { esc, uid, nowISO, toast, debounce, clone, emit, fmtDate, download } from '../core/util.js';
 import { KINDS, PAGE_SIZES, newMaterial, blockId, questionBlock, outdatedBlocks } from '../domain/material.js';
 import { renderMaterial, pageCss } from '../render/material.js';
+import { FORMATS } from '../domain/format.js';
+import { canVary, varyQuestion } from '../domain/variant.js';
 import { modal, renderMath, texClass, makeWordQuestions, kindLabel, R, fitPreview } from './common.js';
 import { editQuestion } from './qeditor.js';
 
@@ -63,6 +65,7 @@ export async function render(root, parts, params) {
       <p><span class="savestate" id="savestate">保存済み</span> ・ <span id="m-count"></span></p></div>
     <button class="btn" id="undo" title="元に戻す（Ctrl+Z）">↶ 元に戻す</button><button class="btn" id="redo" title="やり直し（Ctrl+Y）">↷ やり直し</button>
     <button class="btn" id="save-ver" title="この時点の版を残す">版を保存</button>
+    <button class="btn" id="vary-all" title="数値だけを変えた別の版（B版など）を作る">数値替え版を作る</button>
     <div class="btn-group" role="group" aria-label="印刷">
       <button class="btn primary" data-print="all">印刷／PDF</button>
       <button class="btn" data-print="questions">問題用紙</button>
@@ -105,6 +108,8 @@ export async function render(root, parts, params) {
             <label class="f">大問のまとめ方<select class="input" data-pr="group"><option value="none">まとめない</option><option value="type">同じ形式で</option><option value="unit">同じ単元で</option></select></label>
             <label class="f">満点<input class="input" type="number" min="1" id="full-marks"></label>
           </div>
+          <label class="f">形式（入試の形に合わせる）<select class="input" data-pr="format">${Object.entries(FORMATS).map(([k, f]) => `<option value="${k}">${esc(f.label)}</option>`).join('')}</select></label>
+          <p class="small muted" id="fmt-note"></p>
           <label class="check"><input type="checkbox" data-pr="shuffle"> 選択肢の順番を入れかえる <button class="btn sm ghost" id="reshuffle" type="button">入れかえ直す</button></label>
           <label class="check"><input type="checkbox" data-pr="name"> 名前欄・得点欄</label>
           <label class="check"><input type="checkbox" data-pr="date"> 日付</label>
@@ -144,6 +149,9 @@ export async function render(root, parts, params) {
     $('#m-tags').value = (m.tags || []).join('、');
     $('#full-marks').value = (m.exam && m.exam.total) || 100;
     $('#m-status').textContent = STATUS_LABEL[m.status] || m.status;
+    if (!m.print.format) m.print.format = 'standard';
+    const fm = FORMATS[m.print.format];
+    $('#fmt-note').textContent = fm && fm.cover ? `${fm.label}：表紙・番号の付け方・選択肢の記号・解答用紙（${fm.sheet === 'mark' ? 'マークシート' : '大問ごとの記述欄'}）が形式に合わせて変わります。` : '';
     $('#m-updated').textContent = fmtDate(m.updatedAt, true);
   };
   fillForm();
@@ -154,7 +162,7 @@ export async function render(root, parts, params) {
     changed();
   }));
   root.querySelectorAll('[data-pg="header"],[data-pg="footer"]').forEach(el => el.addEventListener('input', () => { m.page[el.dataset.pg] = el.value; changed(); }));
-  root.querySelectorAll('[data-pr]').forEach(el => el.addEventListener('change', () => { m.print[el.dataset.pr] = el.type === 'checkbox' ? el.checked : el.value; changed(); }));
+  root.querySelectorAll('[data-pr]').forEach(el => el.addEventListener('change', () => { m.print[el.dataset.pr] = el.type === 'checkbox' ? el.checked : el.value; if (el.dataset.pr === 'format') fillForm(); changed(); }));
   root.querySelectorAll('[data-mt]').forEach(el => el.addEventListener('change', () => { m[el.dataset.mt] = el.value; $('#m-status').textContent = STATUS_LABEL[m.status] || m.status; changed(); }));
   root.querySelectorAll('[data-mt="notes"],[data-mt="subtitle"]').forEach(el => el.addEventListener('input', () => { m[el.dataset.mt] = el.value; changed(); }));
   $('#m-tags').addEventListener('change', () => { m.tags = $('#m-tags').value.split(/[,、，]/).map(s => s.trim()).filter(Boolean); changed(); });
@@ -173,6 +181,7 @@ export async function render(root, parts, params) {
         return `<div class="qtext ${texClass(b.q)}">${R().text((b.q.stem || '').slice(0, 160))}</div>
           <div class="row small mt"><span class="tag">${esc(b.q.level || '')}</span><span class="tag">${esc(b.q.unit || '')}</span>
           ${old ? '<span class="chip warn">バンクに新しい版あり</span><button class="btn sm" data-upd>更新</button>' : ''}
+          ${b.q.variantOf ? '<span class="chip accent">数値替え</span>' : ''}${canVary(cur || b.q) || canVary(b.q) ? '<button class="btn sm" data-vary title="同じ問題で数値だけ変える">数値替え</button>' : ''}
           <span class="spacer"></span>配点 <input class="input" style="width:64px;display:inline-block" type="number" min="0" data-f="pts" value="${b.pts ?? ''}" placeholder="${b.q.pts ?? ''}"></div>`;
       }
       case 'table': {
@@ -238,6 +247,7 @@ export async function render(root, parts, params) {
     else if (t.matches('[data-up]') && i > 0) { [m.blocks[i - 1], m.blocks[i]] = [m.blocks[i], m.blocks[i - 1]]; changed(true); }
     else if (t.matches('[data-down]') && i < m.blocks.length - 1) { [m.blocks[i + 1], m.blocks[i]] = [m.blocks[i], m.blocks[i + 1]]; changed(true); }
     else if (t.matches('[data-dup]')) { m.blocks.splice(i + 1, 0, { ...clone(b), id: blockId() }); changed(true); }
+    else if (t.matches('[data-vary]')) { varyOne(b); }
     else if (t.matches('[data-upd]')) { const cur = state.byId.get(b.ref); if (cur) { b.q = clone(cur); b.rev = cur.rev || 1; changed(true); } }
     else if (t.matches('[data-edit]')) {
       // バンクにある問題ならバンクの問題を編集してこの教材にも反映。単語テストなどバンク外の問題は教材の中だけで編集
@@ -399,6 +409,84 @@ export async function render(root, parts, params) {
     toast(`${n} 問を最新版にしました`, 'ok');
   });
 
+  // ---------- 数値替え ----------
+  const baseOf = (b) => { const cur = state.byId.get(b.ref); return cur && canVary(cur) ? cur : b.q; };
+  const varyOne = (b) => {
+    let r = varyQuestion(baseOf(b), Math.random());
+    if (!r.ok) { toast('数値替えできませんでした：' + r.reason, 'error'); return; }
+    const show = () => {
+      const Rr = R();
+      const ans = (q) => Rr.prepare([q], { labels: m.print.labels, points: 'none' })[0].ans;
+      return `<div class="grid2"><div><div class="small muted">いまの問題</div><div class="notice ${texClass(b.q)}">${Rr.text(b.q.stem)}<div class="small mt">答え：${Rr.text(ans(b.q))}</div></div></div>
+        <div><div class="small muted">数値替え${r.auto ? '（検算の式から自動で作成・内容を確認してください）' : '（テンプレートから作成・答えは機械で検算済み）'}</div><div class="notice ok ${texClass(r.q)}">${Rr.text(r.q.stem)}<div class="small mt">答え：${Rr.text(ans(r.q))}</div>
+        ${r.q.expl ? `<div class="small muted mt">${Rr.text(r.q.expl)}</div>` : ''}</div></div></div>`;
+    };
+    const md = modal({ title: '数値替え', body: `<div id="vy-body">${show()}</div>`, foot: '<button class="btn" data-close>やめる</button><button class="btn" id="vy-again">別の数値で</button><button class="btn primary" id="vy-use">この問題にする</button>' });
+    renderMath(md.el);
+    md.el.querySelector('#vy-again').addEventListener('click', () => {
+      const r2 = varyQuestion(baseOf(b), Math.random());
+      if (!r2.ok) { toast(r2.reason, 'error'); return; }
+      r = r2;
+      md.el.querySelector('#vy-body').innerHTML = show();
+      renderMath(md.el);
+    });
+    md.el.querySelector('#vy-use').addEventListener('click', () => {
+      b.q = r.q;
+      b.variant = { auto: !!r.auto, values: r.values || null };
+      md.close();
+      changed(true);
+    });
+  };
+  $('#vary-all').addEventListener('click', async () => {
+    const qbs = m.blocks.filter(x => x.type === 'question');
+    if (!qbs.length) { toast('問題が入っていません', 'error'); return; }
+    const able = qbs.filter(x => canVary(baseOf(x)));
+    const ai = await import('../ai/client.js');
+    const av = await ai.availability();
+    const rest = qbs.length - able.length;
+    const md = modal({
+      title: '数値替え版を作る', narrow: true,
+      body: `<p>この教材をコピーして、数値だけを変えた版を作ります（元の教材はそのまま残ります）。</p>
+        <ul><li>テンプレートや検算の式から機械で作れる問題：<b>${able.length}</b> 問（答えは計算し直して確認します）</li>
+        <li>機械では作れない問題：<b>${rest}</b> 問 ${av.ok ? '' : '（そのまま残します）'}</li></ul>
+        ${rest && av.ok ? '<label class="check"><input type="checkbox" id="va-ai" checked> 機械で作れない問題も AI で数値替えする（独立解答・校閲で検証し、合格したものだけ使う）</label>' : ''}
+        ${!av.ok && rest ? `<p class="small muted">AI を使うと、ほかの問題も数値替えできます（${esc(av.reason)}）</p>` : ''}
+        <label class="f">版の名前<input class="input" id="va-label" value="B"></label>`,
+      foot: '<button class="btn" data-close>やめる</button><button class="btn primary" id="va-go">作る</button>',
+    });
+    md.el.querySelector('#va-go').addEventListener('click', async () => {
+      const label = /** @type {any} */ (md.el.querySelector('#va-label')).value.trim() || 'B';
+      const useAI = !!(md.el.querySelector('#va-ai') && /** @type {any} */ (md.el.querySelector('#va-ai')).checked);
+      const go = /** @type {any} */ (md.el.querySelector('#va-go'));
+      go.disabled = true;
+      const copy = clone(m);
+      Object.assign(copy, { id: uid('M-'), title: `${m.title}（${label}版・数値替え）`, rev: 1, status: 'draft', createdAt: nowISO() });
+      copy.blocks = copy.blocks.map(x => ({ ...x, id: blockId() }));
+      let byRule = 0, byAI = 0, kept = 0;
+      const seed = Date.now();
+      for (const x of copy.blocks) {
+        if (x.type !== 'question') continue;
+        const r = varyQuestion(baseOf(x), `${seed}:${x.ref}`);
+        if (r.ok) { x.q = r.q; x.variant = { auto: !!r.auto }; byRule++; continue; }
+        if (useAI) {
+          go.textContent = `AI で作成中…（${byAI + kept + 1}問目）`;
+          const res = await ai.callAI('vary', { question: x.q }, '数値替え：' + (x.q.stem || '').slice(0, 30));
+          if (res.ok && res.data && res.data.question) {
+            const nq = { ...x.q, ...res.data.question, id: x.q.id, variantOf: x.ref };
+            const v = await ai.verifyQuestion(nq, state.questions.filter(q => q.subj === x.q.subj));
+            if (v.status === 'verified') { x.q = nq; x.variant = { ai: true }; byAI++; continue; }
+          }
+        }
+        kept++;
+      }
+      await saveMaterial(copy);
+      await log('数値替え版を作成', copy.id, `${copy.title}（機械 ${byRule}・AI ${byAI}・そのまま ${kept}）`);
+      md.close();
+      toast(`数値替え版を作りました（機械で ${byRule} 問${byAI ? `・AI で ${byAI} 問` : ''}・そのまま ${kept} 問）`, 'ok');
+      location.hash = '#/editor/' + copy.id;
+    });
+  });
+
   if (params.get('words')) setTimeout(wordDialog, 0);
   const onResize = debounce(() => fitPreview($('#preview')), 150);
   window.addEventListener('resize', onResize);
@@ -438,4 +526,6 @@ const KIND_DESC = {
   drill: '問題をたくさん並べる演習', memorize: '用語・語句の確認', wordtest: '単語帳から自動で作る', quiz: '10〜20分の確認テスト',
   unit: '単元の理解度テスト', test: '定期テスト（別紙解答用紙つき）', ability: '複数単元の実力テスト', mock: '本番形式の模擬試験',
   entrance: '入試の形式に合わせた演習', answers: '解答と解説をまとめた冊子', material: '授業で配る資料',
+  kanagawa: '問1・(ア)の番号、番号の選択肢、あいうの数値マーク、マークシート、表紙つき', kyotsu: '第1問・問1、①〜の選択肢、解答番号とアイウの数値マーク、マークシート、表紙つき',
+  niji: '第1問・(1)の記述式、大問ごとの解答用紙、表紙つき',
 };

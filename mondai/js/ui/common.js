@@ -31,6 +31,7 @@ export function questionTags(q) {
     t.push(`<span class="chip ${cls}">${esc(STATUSES[q.status] || q.status || '未検証')}</span>`);
   }
   if (state.base.has(q.id) && state.user.has(q.id)) t.push('<span class="chip warn">編集済み</span>');
+  if (q.vary) t.push('<span class="chip ok" title="数値だけを変えた版を作れます">数値替え可</span>');
   (q.tags || []).forEach(x => t.push(`<span class="chip accent">#${esc(x)}</span>`));
   return t.join('');
 }
