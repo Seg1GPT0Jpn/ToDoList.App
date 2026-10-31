@@ -161,30 +161,6 @@ class WorldMapScreen extends StatelessWidget {
                   await _pickTrial(context);
                   return;
                 }
-                if (v != 'reset') return;
-                final ok = await showDialog<bool>(
-                  context: context,
-                  builder: (c) => AlertDialog(
-                    title: const Text('データをリセット'),
-                    content: const Text(
-                      'レベル・クリア状況・購入状況・学習記録・図鑑をすべて消して、最初からにします。',
-                    ),
-                    actions: [
-                      TextButton(
-                        onPressed: () => Navigator.pop(c, false),
-                        child: const Text('やめる'),
-                      ),
-                      FilledButton(
-                        onPressed: () => Navigator.pop(c, true),
-                        child: const Text('リセット'),
-                      ),
-                    ],
-                  ),
-                );
-                if (ok == true) {
-                  await services.repository.reset();
-                  await services.meta.reset();
-                }
               },
               itemBuilder: (_) => [
                 const PopupMenuItem(
@@ -203,7 +179,6 @@ class WorldMapScreen extends StatelessWidget {
                     value: 'trial',
                     child: Text('エリアを選んでバトル（確認用）'),
                   ),
-                const PopupMenuItem(value: 'reset', child: Text('データをリセット')),
               ],
             ),
           ],

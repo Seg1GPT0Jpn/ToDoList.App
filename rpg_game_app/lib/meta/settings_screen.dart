@@ -9,6 +9,7 @@ import '../app/theme.dart';
 import '../art/paper.dart';
 import 'design.dart';
 import 'reminder.dart';
+import 'reset_data_screen.dart';
 
 /// 設定（音・文字の大きさ・動き）
 class SettingsScreen extends StatelessWidget {
@@ -240,6 +241,19 @@ class SettingsScreen extends StatelessWidget {
                     ),
                   );
                 },
+              ),
+              const SectionTitle('データ'),
+              ListTile(
+                key: const ValueKey('reset-data-open'),
+                leading: const Icon(Icons.delete_outline),
+                title: const Text('データをリセット'),
+                subtitle: const Text('記録をすべて消して、最初からにします'),
+                trailing: const Icon(Icons.chevron_right),
+                onTap: () => Navigator.of(context).push(
+                  MaterialPageRoute<void>(
+                    builder: (_) => const ResetDataScreen(),
+                  ),
+                ),
               ),
               const SizedBox(height: Space.l),
               Text(
