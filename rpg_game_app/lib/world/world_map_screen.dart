@@ -9,6 +9,7 @@ import '../account/tsuzuri_link_card.dart';
 import '../app/pwa.dart';
 import '../meta/study_boost_card.dart';
 import '../meta/today_plan.dart';
+import '../notice/notice_card.dart';
 import '../account/account_screen.dart';
 import '../app/services.dart';
 import '../app/theme.dart';
@@ -186,6 +187,7 @@ class WorldMapScreen extends StatelessWidget {
         const SizedBox(height: 10),
         const JourneyBanner(),
         const SizedBox(height: 10),
+        const NoticeCard(),
         Container(
           padding: const EdgeInsets.all(12),
           decoration: BoxDecoration(

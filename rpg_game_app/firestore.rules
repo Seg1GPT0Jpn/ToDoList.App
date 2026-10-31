@@ -262,6 +262,40 @@ service cloud.firestore {
         && request.resource.data.keys().hasOnly(['leap', 'eevi', 'updatedAt', 'updatedBy']);
     }
 
+    // 管理者からのお知らせ（ホームに出す）。だれでも読めて、書けるのは管理者だけ。
+    match /app_notice/{doc} {
+      allow read: if true;
+      allow write: if doc == 'main'
+        && request.auth != null
+        && request.auth.token.email == 'kzmsegawa@gmail.com'
+        && request.auth.token.email_verified == true
+        && request.resource.data.keys().hasOnly(['id', 'title', 'body', 'linkUrl', 'linkLabel', 'testerSignup', 'enabled', 'updatedAt'])
+        && request.resource.data.title is string && request.resource.data.title.size() <= 60
+        && request.resource.data.body is string && request.resource.data.body.size() <= 1000;
+    }
+
+    // Google Play のテスターの申しこみ（Gmail・名前・日時）。本人が自分の分だけ書けて、
+    // 読めるのは本人と管理者だけ（一覧は管理者だけ）。
+    match /tester_signups/{uid} {
+      function isAdmin() {
+        return request.auth != null
+          && request.auth.token.email == 'kzmsegawa@gmail.com'
+          && request.auth.token.email_verified == true;
+      }
+      allow get: if request.auth != null && (request.auth.uid == uid || isAdmin());
+      allow list: if isAdmin();
+      allow create, update: if request.auth != null
+        && request.auth.uid == uid
+        && request.resource.data.keys().hasOnly(['email', 'name', 'at'])
+        && request.resource.data.email is string
+        && request.resource.data.email.matches('^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+[.][A-Za-z]{2,}$')
+        && request.resource.data.email.size() <= 100
+        && request.resource.data.name is string
+        && request.resource.data.name.size() <= 40
+        && request.resource.data.at == request.time;
+      allow delete: if request.auth != null && request.auth.uid == uid;
+    }
+
     // 週替わり単語バトルの参加記録（回の ID は「leap-2026-11-01」＝バトルの日）。
     // 置くのはニックネーム・正解数・点数だけ。ログインした人が読める（順位表）。
     // 4種類（フラッシュカード・日→英・英→日・例文）は、受付のあいだ（日程の設定の open〜close。

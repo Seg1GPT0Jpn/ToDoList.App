@@ -10,6 +10,7 @@ import '../art/paper.dart';
 import 'design.dart';
 import 'reminder.dart';
 import 'reset_data_screen.dart';
+import '../notice/notice_admin_screen.dart';
 
 /// 設定（音・文字の大きさ・動き）
 class SettingsScreen extends StatelessWidget {
@@ -242,6 +243,21 @@ class SettingsScreen extends StatelessWidget {
                   );
                 },
               ),
+              if (services.notices case final n? when n.isAdmin) ...[
+                const SectionTitle('管理者'),
+                ListTile(
+                  key: const ValueKey('notice-admin-open'),
+                  leading: const Icon(Icons.campaign_outlined),
+                  title: const Text('お知らせ・テスター募集'),
+                  subtitle: const Text('ホームに出すお知らせと、テスターの申しこみの一覧'),
+                  trailing: const Icon(Icons.chevron_right),
+                  onTap: () => Navigator.of(context).push(
+                    MaterialPageRoute<void>(
+                      builder: (_) => NoticeAdminScreen(backend: n),
+                    ),
+                  ),
+                ),
+              ],
               const SectionTitle('データ'),
               ListTile(
                 key: const ValueKey('reset-data-open'),
