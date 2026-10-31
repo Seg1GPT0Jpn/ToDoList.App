@@ -22,6 +22,10 @@ const Render = (() => {
     return String(s == null ? '' : s).replace(/\[\[mark:[^:\]]+:(.*?)\]\]/g, '$1').replace(/\[\[u:(.*?)\]\]/g, '$1').replace(/\[\[blank:([^\]]*)\]\]/g, '（$1）');
   }
 
+  // 数式（$...$）を KaTeX で表示する出典。ほかの出典は $ を普通の文字として扱う
+  const TEX_SRC = new Set(['かながわ', '内蔵']);
+  function isTex(q) { return TEX_SRC.has(q.src); }
+
   function math(root) {
     if (!window.renderMathInElement) return;
     root.querySelectorAll('.tex').forEach(el => {
@@ -194,9 +198,9 @@ const Render = (() => {
 
   function questionHtml(v, s) {
     const q = v.q;
-    const tex = q.src === 'かながわ' ? ' tex' : '';
+    const tex = isTex(q) ? ' tex' : '';
     let h = `<div class="pq${tex}">`;
-    h += `<div class="pq-head"><span class="pq-no">${v.no}</span><div class="pq-stem">${text(q.stem)}`;
+    h += `<div class="pq-head"><span class="pq-no${v.dai ? ' sub' : ''}">${v.label}</span><div class="pq-stem">${text(q.stem)}`;
     if (v.pts != null && s.points !== 'none') h += `<span class="pq-pts">（${v.pts}点）</span>`;
     h += `</div></div>`;
     if (s.meta) h += `<div class="pq-meta">${esc([q.src, q.course || q.subj, q.grade, q.unit].filter(Boolean).join('｜'))}</div>`;
@@ -211,10 +215,53 @@ const Render = (() => {
   }
 
   function compactTable(views, s) {
-    const cells = views.map(v => `<td><span class="pq-no">${v.no}</span> <span class="w-stem">${text(v.q.stem)}</span>${s.answer === 'inline' ? '<span class="w-line"></span>' : ''}</td>`);
+    const cells = views.map(v => `<td><span class="pq-no">${v.label}</span> <span class="w-stem">${text(v.q.stem)}</span>${s.answer === 'inline' ? '<span class="w-line"></span>' : ''}</td>`);
     let rows = '';
     for (let i = 0; i < cells.length; i += 2) rows += `<tr>${cells[i]}${cells[i + 1] || '<td></td>'}</tr>`;
     return `<table class="wtable">${rows}</table>`;
+  }
+
+  // ---------- 大問にまとめる ----------
+  const GROUP_INST = {
+    choice: '次の各問いについて、最も適当なものを選び、記号で答えなさい。',
+    multi: '次の各問いについて、あてはまるものをすべて選び、記号で答えなさい。',
+    order: '次の各問いについて、正しい順に並べかえ、記号で答えなさい。',
+    tf: '次の各文が正しければ○、誤っていれば×で答えなさい。',
+    short: '次の各問いに答えなさい。',
+    written: '次の各問いについて、考え方や理由も書いて答えなさい。',
+    steps: '次の各問いに答えなさい。',
+    words: '次の各問いに答えなさい。',
+  };
+  function groupOf(q, mode, stims) {
+    const st = q.sid && stims[q.sid];
+    if (st) return { key: 'sid:' + q.sid, inst: /^次の/.test(st.title || '') ? '' : '次の文章・資料を読んで、あとの問いに答えなさい。' };
+    if (mode === 'unit') { const u = q.unit || q.set || ''; return { key: 'unit:' + u, inst: (u ? `【${u}】` : '') + '次の各問いに答えなさい。' }; }
+    const t = q.compact ? 'words' : q.type;
+    return { key: 'type:' + t, inst: GROUP_INST[t] || GROUP_INST.short };
+  }
+  // 番号をふる。まとめるときは同じ大問の問題を最初に出てくる位置に集め、1(1) 1(2)… とする
+  function numberViews(views, s, stims) {
+    if (!s.group || s.group === 'none') {
+      views.forEach(v => { v.label = v.key = String(v.no); v.dai = 0; v.daiStart = null; });
+      return views;
+    }
+    const groups = new Map();
+    for (const v of views) {
+      const g = groupOf(v.q, s.group, stims);
+      if (!groups.has(g.key)) groups.set(g.key, { ...g, items: [] });
+      groups.get(g.key).items.push(v);
+    }
+    const out = [];
+    Array.from(groups.values()).forEach((g, gi) => {
+      g.items.forEach((v, k) => {
+        v.dai = gi + 1;
+        v.label = `(${k + 1})`;
+        v.key = `${gi + 1}(${k + 1})`;
+        v.daiStart = k === 0 ? g : null;
+        out.push(v);
+      });
+    });
+    return out;
   }
 
   function header(s, sub) {
@@ -228,6 +275,7 @@ const Render = (() => {
   }
 
   function sheet(views, s, stims) {
+    views = numberViews(views, s, stims);
     s.total = (s.points !== 'none' && views.length && views.every(v => v.pts != null)) ? views.reduce((a, v) => a + v.pts, 0) : 0;
     const style = `--fs:${s.font}px`;
     let out = `<div class="paper" style="${style}">${header(s)}`;
@@ -236,15 +284,20 @@ const Render = (() => {
     let lastSid = null;
     for (let i = 0; i < views.length; i++) {
       const v = views[i];
+      if (v.daiStart) {
+        out += `<div class="pdai"><span class="pdai-no">${v.dai}</span><span class="pdai-inst">${esc(v.daiStart.inst)}</span></div>`;
+        lastSid = null;
+      }
       if (v.q.compact) {
-        const run = [];
-        while (i < views.length && views[i].q.compact) run.push(views[i++]);
+        const run = [v];
+        i++;
+        while (i < views.length && views[i].q.compact && !views[i].daiStart) run.push(views[i++]);
         i--;
         out += compactTable(run, s);
         lastSid = null;
         continue;
       }
-      if (v.q.sid && v.q.sid !== lastSid && stims[v.q.sid]) out += stim(stims[v.q.sid], v.q.src === 'かながわ');
+      if (v.q.sid && v.q.sid !== lastSid && stims[v.q.sid]) out += stim(stims[v.q.sid], isTex(v.q));
       lastSid = v.q.sid || null;
       out += questionHtml(v, s);
     }
@@ -258,7 +311,7 @@ const Render = (() => {
         else if (v.subs) cell = v.subs.map((_, k) => `(${k + 1})<span class="box s"></span>`).join('　');
         else cell = '';
         const tall = v.q.type === 'written' ? ' class="tall"' : '';
-        return `<tr${tall}><th>${v.no}</th><td>${cell}</td>${s.total ? `<td class="pt">${v.pts}</td>` : ''}</tr>`;
+        return `<tr${tall}><th>${v.key}</th><td>${cell}</td>${s.total ? `<td class="pt">${v.pts}</td>` : ''}</tr>`;
       }).join('');
       out += '</table></div>';
     }
@@ -266,11 +319,11 @@ const Render = (() => {
     if (s.key !== 'none') {
       out += `<div class="paper break key" style="${style}">${header({ ...s, name: false }, '解答・解説')}`;
       if (s.key === 'ans') {
-        out += `<ol class="key-grid">${views.map(v => `<li class="${v.q.src === 'かながわ' ? 'tex' : ''}"><b>${v.no}</b>　${text(v.ans)}</li>`).join('')}</ol>`;
+        out += `<ol class="key-grid">${views.map(v => `<li class="${isTex(v.q) ? 'tex' : ''}"><b>${v.key}</b>　${text(v.ans)}</li>`).join('')}</ol>`;
       } else {
         out += views.map(v => {
           const q = v.q;
-          let h = `<div class="kq${q.src === 'かながわ' ? ' tex' : ''}"><div class="kq-ans"><b>${v.no}</b>　<span class="kq-a">${text(v.ans)}</span>${v.pts != null && s.points !== 'none' ? `<span class="pq-pts">（${v.pts}点）</span>` : ''}</div>`;
+          let h = `<div class="kq${isTex(q) ? ' tex' : ''}"><div class="kq-ans"><b>${v.key}</b>　<span class="kq-a">${text(v.ans)}</span>${v.pts != null && s.points !== 'none' ? `<span class="pq-pts">（${v.pts}点）</span>` : ''}</div>`;
           if (q.expl) h += `<div class="kq-expl">${text(q.expl)}</div>`;
           if (q.steps && q.steps.length) h += `<ol class="kq-steps">${q.steps.map(x => `<li>${text(x)}</li>`).join('')}</ol>`;
           if (q.rubric && q.rubric.length) h += `<div class="kq-rubric">採点基準：${q.rubric.map(r => `${text(r.c)}（${r.p}点）`).join('／')}</div>`;
@@ -282,5 +335,5 @@ const Render = (() => {
     return out;
   }
 
-  return { esc, text, plain, math, figure, table, stim, prepare, sheet, choicesHtml, TYPE_LABEL };
+  return { esc, text, plain, isTex, math, figure, table, stim, prepare, sheet, choicesHtml, TYPE_LABEL };
 })();

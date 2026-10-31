@@ -17,7 +17,7 @@
   const LS_CART = 'mondai.cart', LS_SETTINGS = 'mondai.settings', LS_SAVED = 'mondai.saved';
   const DEFAULT_SETTINGS = {
     title: '確認テスト', subtitle: '', notes: '', labels: 'auto', cols: '1', answer: 'inline', key: 'expl',
-    font: '13.5', points: 'data', shuffle: false, name: true, date: false, meta: false, seed: 1,
+    font: '13.5', points: 'data', group: 'none', shuffle: false, name: true, date: false, meta: false, seed: 1,
   };
 
   function load(key, def) { try { const v = localStorage.getItem(key); return v ? JSON.parse(v) : def; } catch (e) { return def; } }
@@ -106,7 +106,7 @@
     if (!state.datasets.length) { el.innerHTML = '<p class="muted">まだありません。</p>'; return; }
     el.innerHTML = '<table class="dslist"><tr><th>データ</th><th>中身</th><th>読み込んだ日</th><th></th></tr>' +
       state.datasets.map(ds => `<tr><td>${Render.esc(ds.name)}</td><td>${ds.questions ? ds.questions.length.toLocaleString() + ' 問' : ds.lists.length + ' 冊（' + ds.lists.reduce((a, l) => a + l.items.length, 0).toLocaleString() + ' 語）'}</td>` +
-        `<td>${new Date(ds.importedAt).toLocaleDateString('ja-JP')}</td><td><button class="ghost small danger" data-del="${ds.id}">削除</button></td></tr>`).join('') +
+        (ds.builtin ? '<td>アプリに内蔵</td><td></td></tr>' : `<td>${new Date(ds.importedAt).toLocaleDateString('ja-JP')}</td><td><button class="ghost small danger" data-del="${ds.id}">削除</button></td></tr>`)).join('') +
       '</table>' + `<p class="muted small">合計 ${state.questions.length.toLocaleString()} 問・単語帳など ${state.lists.length} 冊</p>`;
   }
 
@@ -261,8 +261,8 @@
         <button class="add ${on ? 'added' : ''}" data-add="${Render.esc(q.id)}">${on ? '✓ 追加済み' : '＋ 追加'}</button>
         <div class="qmain">
           <div class="tags">${tags}<span class="unit">${Render.esc([q.unit || q.set, q.subunit].filter(Boolean).join(' › '))}</span></div>
-          <div class="qstem${q.src === 'かながわ' ? ' tex' : ''}">${Render.text(q.stem)}</div>
-          <details><summary>選択肢・答えを見る</summary><div class="${q.src === 'かながわ' ? 'tex' : ''}">${detailHtml(q)}</div></details>
+          <div class="qstem${Render.isTex(q) ? ' tex' : ''}">${Render.text(q.stem)}</div>
+          <details><summary>選択肢・答えを見る</summary><div class="${Render.isTex(q) ? 'tex' : ''}">${detailHtml(q)}</div></details>
         </div></li>`;
     }).join('') || '<li class="empty">条件に合う問題がありません。</li>';
     Render.math($('qlist'));
@@ -341,7 +341,7 @@
   function renderCart() {
     const el = $('cart');
     const qs = state.cart.map(resolve);
-    el.innerHTML = qs.map((q, i) => q ? `<li><span class="c-no">${i + 1}</span><span class="c-text${q.src === 'かながわ' ? ' tex' : ''}">${Render.esc(Render.plain(q.stem).slice(0, 60))}${Render.plain(q.stem).length > 60 ? '…' : ''}</span>
+    el.innerHTML = qs.map((q, i) => q ? `<li><span class="c-no">${i + 1}</span><span class="c-text${Render.isTex(q) ? ' tex' : ''}">${Render.esc(Render.plain(q.stem).slice(0, 60))}${Render.plain(q.stem).length > 60 ? '…' : ''}</span>
       <span class="c-btns"><button data-up="${i}" title="上へ">↑</button><button data-down="${i}" title="下へ">↓</button><button data-rm="${i}" title="はずす">✕</button></span></li>`
       : `<li class="muted"><span class="c-no">${i + 1}</span>（データが見つからない問題）<span class="c-btns"><button data-rm="${i}">✕</button></span></li>`).join('') ||
       '<li class="empty">「② 問題をえらぶ」か「③ 単語・用語テスト」で問題を追加してください。</li>';
@@ -350,7 +350,7 @@
   }
 
   // ---------- 設定 ----------
-  const SETTING_FIELDS = { title: 's-title', subtitle: 's-subtitle', notes: 's-notes', labels: 's-labels', cols: 's-cols', answer: 's-answer', key: 's-key', font: 's-font', points: 's-points', shuffle: 's-shuffle', name: 's-name', date: 's-date', meta: 's-meta' };
+  const SETTING_FIELDS = { title: 's-title', subtitle: 's-subtitle', notes: 's-notes', labels: 's-labels', cols: 's-cols', answer: 's-answer', key: 's-key', font: 's-font', points: 's-points', group: 's-group', shuffle: 's-shuffle', name: 's-name', date: 's-date', meta: 's-meta' };
   function settingsToForm() {
     for (const [k, id] of Object.entries(SETTING_FIELDS)) {
       const el = $(id);
@@ -566,12 +566,26 @@
     window.addEventListener('beforeprint', () => { if ($('tab-print').hidden) showTab('print'); });
   }
 
+  // アプリに内蔵している問題（このリポジトリで作ったオリジナル問題）。zip なしで使える
+  async function loadBuiltin() {
+    try {
+      const res = await fetch('builtin/hs.json');
+      if (!res.ok) return null;
+      const d = await res.json();
+      return { id: 'builtin', name: '内蔵問題（高校5教科・オリジナル）', builtin: true, questions: d.questions, stims: {}, importedAt: null };
+    } catch (e) {
+      return null;
+    }
+  }
+
   async function init() {
     state.settings = { ...DEFAULT_SETTINGS, ...load(LS_SETTINGS, {}) };
     state.cart = load(LS_CART, []);
     settingsToForm();
     bind();
+    const builtin = await loadBuiltin();
     try { state.datasets = await DB.getAll(); } catch (e) { console.error(e); $('import-status').textContent = 'このブラウザではデータを保存できません（プライベートモードでは使えないことがあります）。'; }
+    if (builtin) state.datasets.unshift(builtin);
     rebuild();
     state.filtered = state.questions;
     let tab = null;
