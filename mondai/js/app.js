@@ -49,7 +49,13 @@
     state.lists = [];
     for (const ds of state.datasets) {
       for (const q of ds.questions || []) {
-        if (q.ucode) q.unit = unitName(q.ucode) || q.unit;
+        if (q.ucode) {
+          const name = unitName(q.ucode);
+          if (name) {
+            q.unit = bigUnit(name, q.ucode);
+            q.subunit = name !== q.unit ? name : '';
+          }
+        }
         state.questions.push(q);
         state.byId.set(q.id, q);
       }
@@ -68,6 +74,22 @@
   function unitName(code) {
     if (typeof UNIT_NAMES === 'undefined') return '';
     return UNIT_NAMES[code] || UNIT_NAMES[code.split('.').slice(0, 4).join('.')] || '';
+  }
+
+  // 細かい単元名を、教科書の単元の大きさにまとめる
+  //   不定詞（3用法）→ 不定詞、文法：不定詞 → 不定詞（高校英語）、2次関数：グラフ → 2次関数
+  const UNIT_ALIAS = {
+    未来: '未来表現', '2次関数': '二次関数', 論理: '集合と命題', 微分積分: '微分法・積分法', '指数・対数': '指数関数・対数関数',
+    微分法: '微分法とその応用', 積分法: '積分法とその応用', 統計: '統計的な推測', 平面上の曲線: '平面上の曲線と複素数平面',
+    '式：複素数': '複素数と方程式', '式：二項定理・等式不等式の証明': '式と証明',
+  };
+  function bigUnit(name, code) {
+    if (UNIT_ALIAS[name]) return UNIT_ALIAS[name];
+    let u = name;
+    const m = /^([^：]+)：(.+)$/.exec(u);
+    if (m) u = code.startsWith('english.') ? m[2] : m[1];
+    u = u.replace(/（[^（）]*）$/, '').trim() || name;
+    return UNIT_ALIAS[u] || u;
   }
 
   function renderDatasets() {
@@ -135,7 +157,7 @@
       else if ((q[k] || '') !== f[k]) return false;
     }
     if (kw) {
-      if (!q._kw) q._kw = [q.stem, q.sentence, q.unit, q.set, q.course, (q.choices || []).join(' ')].join(' ').toLowerCase();
+      if (!q._kw) q._kw = [q.stem, q.sentence, q.unit, q.subunit, q.set, q.course, (q.choices || []).join(' ')].join(' ').toLowerCase();
       for (const w of kw) if (!q._kw.includes(w)) return false;
     }
     return true;
@@ -208,7 +230,7 @@
       return `<li class="qrow${on ? ' on' : ''}" data-id="${Render.esc(q.id)}">
         <button class="add ${on ? 'added' : ''}" data-add="${Render.esc(q.id)}">${on ? '✓ 追加済み' : '＋ 追加'}</button>
         <div class="qmain">
-          <div class="tags">${tags}<span class="unit">${Render.esc(q.unit || q.set || '')}</span></div>
+          <div class="tags">${tags}<span class="unit">${Render.esc([q.unit || q.set, q.subunit].filter(Boolean).join(' › '))}</span></div>
           <div class="qstem${q.src === 'かながわ' ? ' tex' : ''}">${Render.text(q.stem)}</div>
           <details><summary>選択肢・答えを見る</summary><div class="${q.src === 'かながわ' ? 'tex' : ''}">${detailHtml(q)}</div></details>
         </div></li>`;
