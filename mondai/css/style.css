@@ -85,6 +85,16 @@ button:disabled { opacity: .4; cursor: default; }
 .notice { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; background: #fff8e6; border-color: #f0d48a; }
 #f-show { display: none; }
 #results { scroll-margin-top: 80px; }
+.unit-box { margin-bottom: 8px; }
+.unit-head { display: flex; gap: 8px; align-items: baseline; font-size: 12px; color: var(--muted); }
+.unit-head #f-unit-sum { flex: 1; }
+.checklist { margin-top: 2px; max-height: 260px; overflow: auto; border: 1px solid var(--line); border-radius: 6px; background: #fff; padding: 2px; }
+.checklist .uc { display: flex; align-items: flex-start; gap: 6px; margin: 0; padding: 4px 6px; border-radius: 4px; color: var(--ink); font-size: 13px; line-height: 1.4; cursor: pointer; }
+.checklist .uc:hover { background: #f3f5f9; }
+.checklist .uc.on { background: var(--accent-soft); }
+.checklist .uc input { margin-top: 2px; flex: none; }
+.checklist .uc span:first-of-type { flex: 1; }
+.checklist .n { color: var(--muted); font-size: 11px; }
 .rand-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 8px; }
 .results-bar { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; font-weight: 600; }
 .spacer { flex: 1; }

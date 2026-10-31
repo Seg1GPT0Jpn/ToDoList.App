@@ -12,6 +12,7 @@
 <script defer src="js/db.js"></script>
 <script defer src="js/importer.js"></script>
 <script defer src="js/unit-names.js"></script>
+<script defer src="js/unit-groups.js"></script>
 <script defer src="js/render.js"></script>
 <script defer src="js/app.js"></script>
 </head>
@@ -64,7 +65,10 @@
         <label>段階<select id="f-stage"></select></label>
         <label>学年<select id="f-grade"></select></label>
         <label>科目<select id="f-course"></select></label>
-        <label>単元<select id="f-unit"></select></label>
+        <div class="unit-box">
+          <div class="unit-head">単元 <span class="muted" id="f-unit-sum">すべての単元</span><button class="link small" id="f-unit-clear" hidden>選択を解除</button></div>
+          <div class="checklist" id="f-unit"></div>
+        </div>
         <label>難易度<select id="f-level"></select></label>
         <label>形式<select id="f-type"></select></label>
         <label>出典<select id="f-src"></select></label>
