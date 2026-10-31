@@ -358,3 +358,5 @@ const Importer = (() => {
 
   return { importFiles };
 })();
+
+window.Importer = Importer;

@@ -660,3 +660,6 @@ const UNIT_GROUP = {
 // KANAGAWA_ALIAS: かながわ教材どうしで同じ内容の単元名 → まとめ先の単元名
 const KANAGAWA_ALIAS = {
 };
+
+window.UNIT_GROUP = UNIT_GROUP;
+window.KANAGAWA_ALIAS = KANAGAWA_ALIAS;
