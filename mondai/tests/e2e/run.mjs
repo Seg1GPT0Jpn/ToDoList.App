@@ -50,7 +50,7 @@ const newPage = async (opts = {}) => {
 const go = async (p, hash) => { await p.evaluate(h => { location.hash = h; }, hash); await p.waitForTimeout(500); };
 const state = (p) => p.evaluate(() => {
   const s = /** @type {any} */ (window).__mondai.state;
-  return { questions: s.questions.length, materials: s.materials.map(m => ({ id: m.id, title: m.title, kind: m.kind, status: m.status, blocks: m.blocks.map(b => ({ type: b.type, ref: b.ref, pts: b.pts, perm: b.perm, rev: b.rev, variant: b.variant })), exam: m.exam, page: m.page })) };
+  return { questions: s.questions.length, materials: s.materials.map(m => ({ id: m.id, title: m.title, kind: m.kind, status: m.status, blocks: m.blocks.map(b => ({ type: b.type, ref: b.ref, pts: b.pts, perm: b.perm, rev: b.rev, variant: b.variant, stage: b.q && b.q.stage, sid: b.q && b.q.sid })), exam: m.exam, page: m.page, print: m.print })) };
 });
 
 try {
@@ -66,9 +66,9 @@ try {
   await p.goto(BASE, { waitUntil: 'networkidle' });
   await p.waitForTimeout(1500);
 
-  await test('起動：内蔵問題 3,840 問が zip なしで読み込まれる', async () => {
+  await test('起動：内蔵問題（高校 3,840 問・中学 3,520 問）が zip なしで読み込まれる', async () => {
     const s = await state(p);
-    assert(s.questions === 3840, `問題数 ${s.questions}`);
+    assert(s.questions === 7360, `問題数 ${s.questions}`);
   });
   await test('移行：旧版のカートと保存プリントが教材になる（元データは残る）', async () => {
     const s = await state(p);
@@ -319,10 +319,11 @@ try {
       await go(p, '#/exam');
       await p.selectOption('#x-format', fmt);
       await p.waitForTimeout(300);
+      // 神奈川県入試は中学、共通テスト・二次試験は高校の問題に自動で切りかわる
+      assert(await p.inputValue('#x-stage') === (fmt === 'kanagawa' ? '中学' : '高校'), '学校段階');
       await p.selectOption('#x-subj', '数学');
       await p.waitForTimeout(300);
-      await p.selectOption('#x-course', '数学Ⅰ');
-      await p.waitForTimeout(300);
+      if (fmt !== 'kanagawa') { await p.selectOption('#x-course', '数学Ⅰ'); await p.waitForTimeout(300); }
       await p.selectOption('#x-versions', '1');
       await p.click('#x-build');
       await p.waitForTimeout(800);
@@ -334,8 +335,29 @@ try {
       assert(txt.includes(fmt === 'kanagawa' ? '問1' : '第1問'), '大問の番号');
       assert((await p.$$(`#preview ${sheetSel}`)).length > 0, '解答用紙の形');
       if (fmt === 'kyotsu') assert((await p.$$('#preview .markbox')).length > 0, '解答番号の枠');
+      if (fmt === 'kanagawa') {
+        const m = (await state(p)).materials.find(x => x.print && x.print.format === 'kanagawa');
+        const qs = m.blocks.filter(b => b.type === 'question');
+        assert(qs.length > 0 && qs.every(b => b.stage === '中学'), '中学の問題から選ばれていない');
+      }
     });
   }
+
+  await test('中学の内蔵問題：共通の資料（文章・表・図）と問題の図が印刷面に出る', async () => {
+    const id = await p.evaluate(async () => {
+      const { addToCurrentMaterial } = await import('./js/ui/common.js');
+      const s = /** @type {any} */ (window).__mondai.state;
+      const r = await addToCurrentMaterial(['BI-JH-MATH-G1-U02-S16', 'BI-JH-MATH-G2-U03-B05', 'BI-JH-ENG-G3-U06-S01'].map(id => s.byId.get(id)).filter(Boolean));
+      return r.material.id;
+    });
+    await go(p, '#/home');
+    await go(p, '#/editor/' + id);
+    await p.waitForTimeout(1200);
+    const html = await p.innerHTML('#preview');
+    assert((await p.$$('#preview .pstim')).length >= 2, '共通の資料が出ない');
+    assert((await p.$$('#preview .fig svg')).length >= 2, '図が出ない');
+    assert(!html.includes('[[u:'), '下線の記法がそのまま出ている');
+  });
 
   // ---------- 図形 ----------
   await test('図形：教材に図を描いて入れ、問題にも図を付けられる', async () => {

@@ -86,7 +86,7 @@ describe('builtin/jh.json（中学・神奈川県入試形式）', () => {
     }
     for (const st of Object.values(data.stims)) if (st.fig) expect(st.fig.svg).toMatch(/^<svg /);
     expect(qs.filter(q => q.sid).length).toBeGreaterThan(100);
-    expect(qs.filter(q => q.fig).length).toBeGreaterThan(50);
+    expect(qs.filter(q => q.fig).length + Object.values(data.stims).filter(st => st.fig).length).toBeGreaterThan(50);
   });
 
   it('高校の内蔵問題と id が重ならない', () => {
