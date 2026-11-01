@@ -24,24 +24,35 @@ export const state = {
 };
 
 // ---------- 読み込み ----------
-async function loadBuiltin() {
+/** アプリに内蔵の問題集（高校・中学）。ファイルがなくても動く */
+const BUILTIN_FILES = [
+  { id: 'builtin', file: 'builtin/hs.json', name: '内蔵問題（高校5教科・オリジナル）' },
+  { id: 'builtin-jh', file: 'builtin/jh.json', name: '内蔵問題（中学5教科・神奈川県入試形式・オリジナル）' },
+];
+
+async function loadBuiltinFile({ id, file, name }) {
   try {
-    const res = await fetch('builtin/hs.json');
+    const res = await fetch(file);
     if (!res.ok) return null;
     const d = await res.json();
     d.questions.forEach(q => { q.origin = 'builtin'; });
-    return { id: 'builtin', name: '内蔵問題（高校5教科・オリジナル）', builtin: true, questions: d.questions, stims: {}, importedAt: null };
+    return { id, name, builtin: true, questions: d.questions, stims: d.stims || {}, importedAt: null };
   } catch (e) {
     return null;
   }
+}
+
+async function loadBuiltin() {
+  const list = await Promise.all(BUILTIN_FILES.map(loadBuiltinFile));
+  return list.filter(Boolean);
 }
 
 export async function loadAll() {
   const [builtin, datasets, userQs, materials] = await Promise.all([
     loadBuiltin(), db.all('datasets'), db.all('questions'), db.all('materials'),
   ]);
-  state.builtinLoaded = !!builtin;
-  state.datasets = builtin ? [builtin, ...datasets] : datasets;
+  state.builtinLoaded = builtin.length > 0;
+  state.datasets = [...builtin, ...datasets];
   state.user = new Map(userQs.map(q => [q.id, q]));
   state.materials = materials.sort((a, b) => (b.updatedAt || '').localeCompare(a.updatedAt || ''));
   rebuild();

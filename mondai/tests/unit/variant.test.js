@@ -101,8 +101,8 @@ describe('autoVary / varyQuestion', () => {
 describe('内蔵問題の数値替えテンプレート', () => {
   it('すべてのテンプレートで、元の問題が再現でき、数値替えが作れる', async () => {
     const fs = await import('node:fs');
-    const url = new URL('../../builtin/hs.json', import.meta.url);
-    const qs = JSON.parse(fs.readFileSync(url, 'utf8')).questions.filter(q => q.vary);
+    const read = (f) => JSON.parse(fs.readFileSync(new URL('../../builtin/' + f, import.meta.url), 'utf8')).questions;
+    const qs = [...read('hs.json'), ...read('jh.json')].filter(q => q.vary);
     expect(qs.length).toBeGreaterThan(600);
     const bad = [];
     for (const q of qs) {

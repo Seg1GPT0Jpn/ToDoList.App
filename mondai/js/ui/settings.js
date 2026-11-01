@@ -23,7 +23,7 @@ export async function render(root) {
           <span class="muted small">またはクリックしてファイルを選ぶ（複数まとめて選べます）</span>
         </label>
         <p class="small muted" id="import-status" role="status"></p>
-        <p class="small muted">読み込んだデータはこのブラウザの中だけに保存され、インターネットには送られません。内蔵問題（高校5教科 3,840問）は読み込まなくても使えます。</p>
+        <p class="small muted">読み込んだデータはこのブラウザの中だけに保存され、インターネットには送られません。内蔵問題（高校5教科 3,840問・中学5教科＋特色検査 3,520問）は読み込まなくても使えます。</p>
         <div id="datasets"></div>
       </section>
       <section class="card">
