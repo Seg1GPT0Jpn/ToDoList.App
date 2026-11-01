@@ -10,7 +10,7 @@ import { varyQuestion } from '../domain/variant.js';
 
 const KINDS = { quiz: '小テスト', unit: '単元テスト', test: '定期テスト', ability: '実力テスト', mock: '模擬試験', entrance: '入試形式', ability2: '総合確認テスト' };
 const mem = {
-  subj: '', course: '', units: new Set(), src: '', kind: 'test', title: '', time: 50, total: 100, count: 20,
+  stage: '', subj: '', course: '', units: new Set(), src: '', kind: 'test', title: '', time: 50, total: 100, count: 20,
   sections: [], level: { 基礎: 3, 標準: 5, 応用: 2 }, type: { choice: 0, short: 0, written: 0 }, excludeTags: '', preferUnused: true, versions: 1, pointsMode: 'weighted', seed: 1,
   format: 'standard', varyNumbers: true,
 };
@@ -21,6 +21,7 @@ export async function render(root) {
   <div class="side-layout">
     <aside class="card">
       <h2>出題範囲</h2>
+      <label class="f">学校段階<select class="input" id="x-stage"></select></label>
       <label class="f">教科<select class="input" id="x-subj"></select></label>
       <label class="f">科目<select class="input" id="x-course"></select></label>
       <div class="f">単元（複数可） <button class="btn ghost sm" id="x-unit-all">すべて解除</button><div class="checklist" id="x-units"></div></div>
@@ -65,13 +66,15 @@ export async function render(root) {
     return [...c].sort((a, b) => String(a[0]).localeCompare(String(b[0]), 'ja'));
   };
   const opts = (list, label, cur) => `<option value="">すべての${label}</option>` + list.map(([v, n]) => `<option value="${esc(v)}"${v === cur ? ' selected' : ''}>${esc(v)}（${n}）</option>`).join('');
-  const inScope = (q, ignoreUnits = false) => allowed(q) && (!mem.subj || q.subj === mem.subj) && (!mem.course || q.course === mem.course) && (!mem.src || q.src === mem.src)
+  const inScope = (q, ignoreUnits = false) => allowed(q) && (!mem.stage || q.stage === mem.stage) && (!mem.subj || q.subj === mem.subj) && (!mem.course || q.course === mem.course) && (!mem.src || q.src === mem.src)
     && (ignoreUnits || !mem.units.size || mem.units.has(q.unit || q.set));
 
   const renderScope = () => {
-    $('x-subj').innerHTML = opts(facet('subj', () => true), '教科', mem.subj);
-    $('x-course').innerHTML = opts(facet('course', q => !mem.subj || q.subj === mem.subj), '科目', mem.course);
-    $('x-src').innerHTML = opts(facet('src', q => (!mem.subj || q.subj === mem.subj) && (!mem.course || q.course === mem.course)), '出典', mem.src);
+    const st = (q) => !mem.stage || q.stage === mem.stage;
+    $('x-stage').innerHTML = opts(facet('stage', () => true), '学校段階', mem.stage);
+    $('x-subj').innerHTML = opts(facet('subj', st), '教科', mem.subj);
+    $('x-course').innerHTML = opts(facet('course', q => st(q) && (!mem.subj || q.subj === mem.subj)), '科目', mem.course);
+    $('x-src').innerHTML = opts(facet('src', q => st(q) && (!mem.subj || q.subj === mem.subj) && (!mem.course || q.course === mem.course)), '出典', mem.src);
     const uc = new Map(), uord = new Map();
     for (const q of state.questions) {
       if (!inScope(q, true)) continue;
@@ -116,10 +119,14 @@ export async function render(root) {
     if (pr) {
       Object.assign(mem, { time: pr.timeMin, total: pr.total, sections: pr.sections.map(x => ({ ...x })), level: { ...pr.levelRatio } });
       if (['kanagawa', 'kyotsu', 'niji'].includes(mem.format)) mem.kind = mem.kind === 'test' || !KINDS[mem.kind] ? 'entrance' : mem.kind;
+      // 神奈川県公立高校入試は中学の範囲、共通テスト・二次試験は高校の範囲から選ぶ（あとで変えられる）
+      const stage = mem.format === 'kanagawa' ? '中学' : '高校';
+      if (state.questions.some(q => q.stage === stage) && mem.stage !== stage) { mem.stage = stage; mem.subj = ''; mem.course = ''; mem.src = ''; mem.units.clear(); }
     }
     fill(); renderScope();
   });
   $('x-vary').addEventListener('change', () => { mem.varyNumbers = $('x-vary').checked; });
+  $('x-stage').addEventListener('change', () => { mem.stage = $('x-stage').value; mem.subj = ''; mem.course = ''; renderScope(); });
   $('x-subj').addEventListener('change', () => { mem.subj = $('x-subj').value; mem.course = ''; renderScope(); });
   $('x-course').addEventListener('change', () => { mem.course = $('x-course').value; renderScope(); });
   $('x-src').addEventListener('change', () => { mem.src = $('x-src').value; renderScope(); });

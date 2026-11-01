@@ -8,10 +8,15 @@ import { buildExam } from '../../js/domain/exam.js';
 import { questionsToCSV, csvToQuestions } from '../../js/domain/csv.js';
 import { buildAnswerSheet } from '../../js/domain/answersheet.js';
 
-const data = JSON.parse(readFileSync(fileURLToPath(new URL('../../builtin/hs.json', import.meta.url)), 'utf8'));
+import { fitsFormat, integerAnswer } from '../../js/domain/format.js';
+
+const load = (f) => JSON.parse(readFileSync(fileURLToPath(new URL('../../builtin/' + f, import.meta.url)), 'utf8'));
+
+for (const file of ['hs.json', 'jh.json']) {
+const data = load(file);
 const questions = data.questions;
 
-describe('builtin/hs.json', () => {
+describe('builtin/' + file, () => {
   it('has questions', () => { expect(questions.length).toBeGreaterThan(1000); });
 
   it('every question passes validateQuestion (raw and normalized)', () => {
@@ -46,5 +51,46 @@ describe('builtin/hs.json', () => {
     const back = csvToQuestions(questionsToCSV(sample));
     expect(back.errors).toEqual([]);
     expect(back.questions.map(q => q.stem)).toEqual(sample.map(q => q.stem));
+  });
+});
+}
+
+describe('builtin/jh.json（中学・神奈川県入試形式）', () => {
+  const data = load('jh.json');
+  const qs = data.questions;
+  const units = new Set(qs.map(q => q.uord));
+
+  it('全単元に 基礎10・標準20・応用10', () => {
+    expect(units.size).toBe(88);
+    for (const u of units) {
+      const lv = { 基礎: 0, 標準: 0, 応用: 0 };
+      for (const q of qs) if (q.uord === u) lv[q.level]++;
+      expect(lv, u).toEqual({ 基礎: 10, 標準: 20, 応用: 10 });
+    }
+  });
+
+  it('中学・神奈川県入試の形式に合う', () => {
+    expect(qs.every(q => q.stage === '中学' && /^中[123]$/.test(q.grade) && q.src === '内蔵')).toBe(true);
+    expect(qs.every(q => fitsFormat(q, 'kanagawa'))).toBe(true);
+    for (const q of qs.filter(q => q.type === 'choice')) expect(q.choices, q.id).toHaveLength(4);
+    // 数学の答えのみの問題は、多くが整数（マーク式で答えられる）
+    const mathShort = qs.filter(q => q.subj === '数学' && q.type === 'short');
+    expect(mathShort.filter(q => integerAnswer(q) != null).length / mathShort.length).toBeGreaterThan(0.5);
+  });
+
+  it('資料（stimulus）と図がそろっている', () => {
+    for (const q of qs) {
+      if (q.sid) expect(data.stims[q.sid], q.id).toBeTruthy();
+      if (q.fig) expect(q.fig.svg, q.id).toMatch(/^<svg /);
+      if (q.grid) expect(q.grid).toBeGreaterThanOrEqual(10);
+    }
+    for (const st of Object.values(data.stims)) if (st.fig) expect(st.fig.svg).toMatch(/^<svg /);
+    expect(qs.filter(q => q.sid).length).toBeGreaterThan(100);
+    expect(qs.filter(q => q.fig).length).toBeGreaterThan(50);
+  });
+
+  it('高校の内蔵問題と id が重ならない', () => {
+    const hs = new Set(load('hs.json').questions.map(q => q.id));
+    expect(qs.filter(q => hs.has(q.id))).toEqual([]);
   });
 });
