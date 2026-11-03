@@ -32,21 +32,20 @@ class RpgCatalog {
     required String hubSign,
     required String description,
     bool isFree = false,
-  }) =>
-      WorldDef(
-        id: id,
-        name: name,
-        subject: subject,
-        // 問題をまだ用意していない教科は準備中（購入もできない）
-        status: stages.isEmpty ? WorldStatus.comingSoon : WorldStatus.available,
-        isFree: isFree,
-        priceYen: isFree ? null : defaultWorldPriceYen,
-        stages: stages,
-        routes: routes,
-        hubName: hubName,
-        hubSign: hubSign,
-        description: description,
-      );
+  }) => WorldDef(
+    id: id,
+    name: name,
+    subject: subject,
+    // 問題をまだ用意していない教科は準備中（購入もできない）
+    status: stages.isEmpty ? WorldStatus.comingSoon : WorldStatus.available,
+    isFree: isFree,
+    priceYen: isFree ? null : defaultWorldPriceYen,
+    stages: stages,
+    routes: routes,
+    hubName: hubName,
+    hubSign: hubSign,
+    description: description,
+  );
 
   static final worlds = <WorldDef>[
     _world(
@@ -102,10 +101,19 @@ class RpgCatalog {
     ),
   ];
 
+  /// 追加コンテンツ（高校生版の資格の塔など）。小中学生版にはない
+  static final extraWorlds = <WorldDef>[];
+
+  /// 地図のワールドと追加コンテンツのすべて（ID で探すとき）
+  static final allWorlds = <WorldDef>[...worlds, ...extraWorlds];
+
+  static bool isExtra(String worldId) =>
+      extraWorlds.any((w) => w.id == worldId);
+
   static WorldDef world(String id) => worlds.firstWhere(
-        (w) => w.id == id,
-        orElse: () => throw ArgumentError('不明なワールドです: $id'),
-      );
+    (w) => w.id == id,
+    orElse: () => throw ArgumentError('不明なワールドです: $id'),
+  );
 
   /// 画面に出すステージの名前（例：小3・エリア3）
   static String stageLabel(StageDef s) => s.branch.isEmpty
@@ -116,7 +124,10 @@ class RpgCatalog {
   static String themeLabel(StageDef s) =>
       '単元：${s.grammarTheme}（${s.vocabLevel}）';
 
-  static StageDef stage(String id) =>
-      worlds.expand((w) => w.stages).firstWhere((s) => s.id == id,
-          orElse: () => throw ArgumentError('不明なステージです: $id'));
+  static StageDef stage(String id) => worlds
+      .expand((w) => w.stages)
+      .firstWhere(
+        (s) => s.id == id,
+        orElse: () => throw ArgumentError('不明なステージです: $id'),
+      );
 }
