@@ -9,6 +9,7 @@ import 'japanese_catalog.dart';
 import 'math_catalog.dart';
 import 'social_catalog.dart';
 import 'route_world.dart';
+import 'shikaku_catalog.dart';
 import 'science_catalog.dart';
 
 /// ワールド・ステージのマスターデータ。
@@ -691,6 +692,20 @@ class RpgCatalog {
       hubSign: 'ここは番外編・音楽の虹。上へ進むと譜と音の道、左は調と音階の道、'
           '右は和音の道、下は音楽用語の道。それぞれの道の最後に玉座のボスが待っている。',
       description: '番外編（無料）。楽典と音楽用語の4つの道・42エリア。',
+    ),
+    // 番外編：資格試験の対策（宅建から。英検・三大国家試験の道を順に足す）
+    WorldDef(
+      id: ShikakuCatalog.worldId,
+      name: '資格の塔',
+      subject: '資格',
+      status: WorldStatus.available,
+      isFree: true,
+      stages: ShikakuCatalog.stages,
+      routes: [for (final r in ShikakuCatalog.routes) r.info],
+      hubName: '資格の塔の入口',
+      hubSign: 'ここは番外編・資格の塔。上へ進むと宅建の道。'
+          '権利関係・宅建業法・法令上の制限・税その他の16エリアで、本番の4分野をひと通りたどれる。',
+      description: '番外編（無料）。宅建士試験の4分野・16エリア。',
     ),
   ];
 

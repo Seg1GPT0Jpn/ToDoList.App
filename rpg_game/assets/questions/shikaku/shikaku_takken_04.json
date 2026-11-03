@@ -1,0 +1,233 @@
+{
+  "setId": "shikaku_takken_04",
+  "worldId": "shikaku",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "tkn04_001",
+      "unit": "shikaku.takken.kenri.saiken.fuko",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "金銭の支払いが遅れた原因が大地震（不可抗力）だった。遅延損害金は？",
+      "choices": [
+        "半額でよい",
+        "支払わなければならない",
+        "支払わなくてよい",
+        "債権者の同意があれば免れる"
+      ],
+      "answerIndex": 1,
+      "explanation": "金銭債務の不履行は、不可抗力をもって抗弁とすることができない（民法419条3項）。"
+    },
+    {
+      "id": "tkn04_002",
+      "unit": "shikaku.takken.kenri.saiken.fuko",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "催告による解除ができないのは、どんな場合？",
+      "choices": [
+        "債務者に帰責事由がないとき",
+        "催告から2週間たったとき",
+        "期間経過時の不履行が契約と取引上の社会通念に照らして軽微なとき",
+        "売主が宅建業者のとき"
+      ],
+      "answerIndex": 2,
+      "explanation": "不履行が軽微なら解除できない（民法541条ただし書）。債務者の帰責事由は解除の要件ではない。"
+    },
+    {
+      "id": "tkn04_003",
+      "unit": "shikaku.takken.kenri.saiken.fuko",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "現在の民法で、債務不履行による解除に債務者の帰責事由は必要？",
+      "choices": [
+        "催告しないときだけ必要",
+        "必要",
+        "損害賠償をするときだけ必要",
+        "不要"
+      ],
+      "answerIndex": 3,
+      "explanation": "解除は債権者を契約から解放する制度で、債務者の帰責事由は不要。損害賠償には必要。"
+    },
+    {
+      "id": "tkn04_004",
+      "unit": "shikaku.takken.kenri.saiken.fuko",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "手付による解除ができるのは、いつまで？",
+      "choices": [
+        "相手方が履行に着手するまで",
+        "引渡しまで",
+        "契約から1か月まで",
+        "自分が履行に着手するまで"
+      ],
+      "answerIndex": 0,
+      "explanation": "相手方が履行に着手した後は、手付解除ができない（民法557条1項）。"
+    },
+    {
+      "id": "tkn04_005",
+      "unit": "shikaku.takken.kenri.saiken.fuko",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "売主が手付解除をするには、どうする？",
+      "choices": [
+        "手付を放棄する",
+        "手付の倍額を現実に提供する",
+        "手付を返すだけでよい",
+        "倍額を払うと口頭で伝えればよい"
+      ],
+      "answerIndex": 1,
+      "explanation": "買主は手付を放棄、売主は倍額を現実に提供して解除する（民法557条1項）。"
+    },
+    {
+      "id": "tkn04_006",
+      "unit": "shikaku.takken.kenri.saiken.futekigou",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "引き渡された建物の品質が契約に適合しない。買主が権利を保全するには、不適合を知った時からいつまでに通知する？",
+      "choices": [
+        "5年以内",
+        "6か月以内",
+        "1年以内",
+        "2年以内"
+      ],
+      "answerIndex": 2,
+      "explanation": "種類・品質の不適合は、知った時から1年以内に通知が必要（民法566条）。"
+    },
+    {
+      "id": "tkn04_007",
+      "unit": "shikaku.takken.kenri.saiken.futekigou",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "契約不適合のとき、買主が売主に請求できないものは？",
+      "choices": [
+        "契約の解除",
+        "履行の追完",
+        "代金の減額",
+        "売主の帰責事由がない場合の損害賠償"
+      ],
+      "answerIndex": 3,
+      "explanation": "損害賠償には売主の帰責事由が必要。追完・減額・解除は帰責事由がなくてもできる。"
+    },
+    {
+      "id": "tkn04_008",
+      "unit": "shikaku.takken.kenri.saiken.futekigou",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "代金減額請求は、原則としてどうしてからする？",
+      "choices": [
+        "相当の期間を定めて追完を催告してから",
+        "裁判を起こしてから",
+        "すぐにできる",
+        "契約を解除してから"
+      ],
+      "answerIndex": 0,
+      "explanation": "原則として追完の催告をし、期間内に追完がないときに減額請求できる（民法563条）。"
+    },
+    {
+      "id": "tkn04_009",
+      "unit": "shikaku.takken.kenri.saiken.futekigou",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「売主は契約不適合責任を負わない」という特約は有効？",
+      "choices": [
+        "買主が宅建業者のときだけ有効",
+        "有効。ただし売主が知りながら告げなかった事実は免れない",
+        "常に有効",
+        "常に無効"
+      ],
+      "answerIndex": 1,
+      "explanation": "担保責任を負わない特約も有効だが、知りながら告げなかった事実などは免れない（民法572条）。"
+    },
+    {
+      "id": "tkn04_010",
+      "unit": "shikaku.takken.kenri.saiken.chintai",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "賃借人が雨漏りを直した（必要費）。費用の返還をいつ請求できる？",
+      "choices": [
+        "賃貸借の終了時",
+        "賃貸人が承諾した時",
+        "直ちに",
+        "退去してから1年後"
+      ],
+      "answerIndex": 2,
+      "explanation": "必要費は直ちに償還を請求できる（民法608条1項）。有益費は終了時。"
+    },
+    {
+      "id": "tkn04_011",
+      "unit": "shikaku.takken.kenri.saiken.chintai",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "賃借人が無断で転貸した。賃貸人が解除できないのは、どんな場合？",
+      "choices": [
+        "転借人が家賃を払っているとき",
+        "賃借人が謝ったとき",
+        "転貸の期間が短いとき",
+        "賃貸人に対する背信的行為と認めるに足りない特段の事情があるとき"
+      ],
+      "answerIndex": 3,
+      "explanation": "信頼関係破壊の法理（判例）。背信的行為と認めるに足りない特段の事情があれば解除できない。"
+    },
+    {
+      "id": "tkn04_012",
+      "unit": "shikaku.takken.kenri.saiken.chintai",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "敷金の返還と建物の明渡しは、どちらが先？",
+      "choices": [
+        "明渡しが先",
+        "敷金の返還が先",
+        "契約で決めなければならない",
+        "同時履行"
+      ],
+      "answerIndex": 0,
+      "explanation": "敷金は明渡し後に返還すればよい（民法622条の2）。同時履行の関係ではない。"
+    },
+    {
+      "id": "tkn04_013",
+      "unit": "shikaku.takken.kenri.saiken.chintai",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "民法上の賃貸借の存続期間の上限は？",
+      "choices": [
+        "30年",
+        "50年",
+        "上限はない",
+        "20年"
+      ],
+      "answerIndex": 1,
+      "explanation": "2020年の改正で20年から50年になった（民法604条）。"
+    },
+    {
+      "id": "tkn04_014",
+      "unit": "shikaku.takken.kenri.saiken.chintai",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "賃貸中の建物が売られた。新しい所有者が賃借人に家賃を請求するには何が必要？",
+      "choices": [
+        "旧所有者の承諾",
+        "賃借人の承諾",
+        "所有権移転登記",
+        "賃借人への内容証明郵便"
+      ],
+      "answerIndex": 2,
+      "explanation": "賃貸人の地位の移転は賃借人の承諾不要だが、登記をしないと賃借人に対抗できない（民法605条の2）。"
+    },
+    {
+      "id": "tkn04_015",
+      "unit": "shikaku.takken.kenri.saiken.chintai",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "賃借人が賃貸人の承諾を得て転貸した。転借人は賃貸人に対して直接義務を負う？",
+      "choices": [
+        "家賃の半分だけ負う",
+        "賃借人が死亡したときだけ負う",
+        "負わない",
+        "負う"
+      ],
+      "answerIndex": 3,
+      "explanation": "適法な転貸の転借人は、賃貸人に直接義務を負う（民法613条1項）。"
+    }
+  ]
+}

@@ -27,6 +27,7 @@ class WorldAtlas extends StatefulWidget {
     'social': Offset(0.5, 0.86),
     'music': Offset(0.17, 0.77),
     'information': Offset(0.85, 0.79),
+    'shikaku': Offset(0.86, 0.12),
   };
 
   /// 地図の縦横比（縦 / 横）
@@ -173,6 +174,7 @@ Color atlasColor(String id) => switch (id) {
   'social' => const Color(0xFFD9822B),
   'information' => const Color(0xFF4A8C8C),
   'music' => const Color(0xFFD45D8C),
+  'shikaku' => const Color(0xFF8C6D3F),
   _ => TsuzuriColors.accent,
 };
 
@@ -322,7 +324,10 @@ class _AtlasPainter extends CustomPainter {
       (Offset(w * 0.33, h * 0.68), w * 0.17),
       (Offset(w * 0.62, h * 0.7), w * 0.14),
     ];
-    final island = <(Offset, double)>[(at('information'), w * 0.12)];
+    final island = <(Offset, double)>[
+      (at('information'), w * 0.12),
+      (at('shikaku'), w * 0.1),
+    ];
     for (final group in [continent, island]) {
       for (final (o, r) in group) {
         c.drawCircle(
@@ -703,6 +708,50 @@ class _AtlasPainter extends CustomPainter {
           _ink..strokeWidth = 2,
         );
         _ink.strokeWidth = 1.4;
+      case 'shikaku':
+        // 資格の塔：石の塔と合格の旗
+        shape(
+          Path()..addRect(
+            Rect.fromCenter(
+              center: o + Offset(0, s * 0.05),
+              width: s * 0.55,
+              height: s * 1.0,
+            ),
+          ),
+          0xFFE3D3B0,
+        );
+        for (var i = 0; i < 3; i++) {
+          shape(
+            Path()..addRect(
+              Rect.fromLTWH(
+                o.dx - s * 0.3 + i * s * 0.22,
+                o.dy - s * 0.6,
+                s * 0.16,
+                s * 0.16,
+              ),
+            ),
+            0xFFE3D3B0,
+          );
+        }
+        c.drawLine(o + Offset(0, -s * 0.6), o + Offset(0, -s * 1.05), _ink);
+        shape(
+          Path()
+            ..moveTo(o.dx, o.dy - s * 1.05)
+            ..lineTo(o.dx + s * 0.4, o.dy - s * 0.92)
+            ..lineTo(o.dx, o.dy - s * 0.8)
+            ..close(),
+          0xFFC0504D,
+        );
+        shape(
+          Path()..addRect(
+            Rect.fromCenter(
+              center: o + Offset(0, s * 0.35),
+              width: s * 0.18,
+              height: s * 0.3,
+            ),
+          ),
+          0xFF6B4F2C,
+        );
     }
   }
 

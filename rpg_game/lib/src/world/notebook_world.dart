@@ -83,6 +83,7 @@ abstract final class NotebookWorld {
           ? PaperStyle.manuscript
           : PaperStyle.ruled,
       'music' => PaperStyle.staff,
+      'shikaku' => PaperStyle.looseLeaf,
       'math' => t == Terrain.castle ? PaperStyle.blueprint : PaperStyle.grid,
       'english' => PaperStyle.ruled,
       'social' => t == Terrain.town ? PaperStyle.looseLeaf : PaperStyle.kraft,
@@ -120,6 +121,7 @@ abstract final class NotebookWorld {
     'japanese': ['あはれ', '係り結び', '返り点', '漢字', '要旨', 'をかし', '句法'],
     'information': ['0101', 'if', 'for', 'IP', 'AND', 'HTTP', 'bit'],
     'music': ['♪', '♯', '♭', 'C dur', 'f', 'p', '4/4'],
+    'shikaku': ['宅建', '35条', '37条', '登記', '3％+6万', '1,000㎡', '合格'],
   };
 }
 

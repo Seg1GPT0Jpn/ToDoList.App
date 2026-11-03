@@ -1,0 +1,233 @@
+{
+  "setId": "shikaku_takken_05",
+  "worldId": "shikaku",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "tkn05_001",
+      "unit": "shikaku.takken.kenri.tokubetsu.shakuchi",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "借地権の存続期間を定めなかった。期間は何年になる？",
+      "choices": [
+        "50年",
+        "20年",
+        "30年",
+        "10年"
+      ],
+      "answerIndex": 2,
+      "explanation": "借地権の存続期間は30年。30年より長い期間を定めればその期間（借地借家法3条）。"
+    },
+    {
+      "id": "tkn05_002",
+      "unit": "shikaku.takken.kenri.tokubetsu.shakuchi",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "借地契約の最初の更新後の期間は、最低何年？",
+      "choices": [
+        "30年",
+        "5年",
+        "10年",
+        "20年"
+      ],
+      "answerIndex": 3,
+      "explanation": "最初の更新は20年以上、2回目以降は10年以上（借地借家法4条）。"
+    },
+    {
+      "id": "tkn05_003",
+      "unit": "shikaku.takken.kenri.tokubetsu.shakuchi",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "借地権を第三者に対抗する方法として正しいものは？",
+      "choices": [
+        "借地上に借地権者名義で登記された建物を持つ",
+        "借地権を公正証書にする",
+        "家族名義で建物を登記する",
+        "土地の引渡しを受ける"
+      ],
+      "answerIndex": 0,
+      "explanation": "借地権者名義の建物登記で対抗できる（借地借家法10条）。家族名義では対抗できない（判例）。"
+    },
+    {
+      "id": "tkn05_004",
+      "unit": "shikaku.takken.kenri.tokubetsu.shakuchi",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "普通の建物賃貸借で期間を1年未満と定めた。どうなる？",
+      "choices": [
+        "1年とみなされる",
+        "期間の定めがないものとみなされる",
+        "そのまま有効",
+        "契約が無効になる"
+      ],
+      "answerIndex": 1,
+      "explanation": "期間1年未満の建物賃貸借は、期間の定めのないものとみなす（借地借家法29条）。"
+    },
+    {
+      "id": "tkn05_005",
+      "unit": "shikaku.takken.kenri.tokubetsu.shakuchi",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "建物の賃貸人から解約を申し入れる。何か月前に、何が必要？",
+      "choices": [
+        "1か月前・正当事由",
+        "1年前・正当事由不要",
+        "6か月前・正当事由",
+        "3か月前・正当事由不要"
+      ],
+      "answerIndex": 2,
+      "explanation": "賃貸人の解約申入れは6か月前で、正当事由が必要（借地借家法27条・28条）。"
+    },
+    {
+      "id": "tkn05_006",
+      "unit": "shikaku.takken.kenri.tokubetsu.shakuchi",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "建物賃借権の対抗要件として正しいものは？",
+      "choices": [
+        "賃借権の登記だけ",
+        "公正証書",
+        "賃貸人への通知",
+        "建物の引渡し"
+      ],
+      "answerIndex": 3,
+      "explanation": "建物の引渡しがあれば対抗できる（借地借家法31条）。"
+    },
+    {
+      "id": "tkn05_007",
+      "unit": "shikaku.takken.kenri.tokubetsu.shakuchi",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "定期建物賃貸借をするとき、契約前に賃貸人がしなければならないことは？",
+      "choices": [
+        "更新がなく期間満了で終わることを書面を交付して説明する",
+        "登記をする",
+        "公正証書を作る",
+        "家賃を前払いさせる"
+      ],
+      "answerIndex": 0,
+      "explanation": "事前の書面交付による説明が必要。説明がないと更新がない旨の定めは無効（借地借家法38条）。"
+    },
+    {
+      "id": "tkn05_008",
+      "unit": "shikaku.takken.kenri.tokubetsu.shakuchi",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "造作買取請求権を認めない特約は有効？",
+      "choices": [
+        "定期借家のときだけ有効",
+        "有効",
+        "賃借人に不利なので無効",
+        "無効"
+      ],
+      "answerIndex": 1,
+      "explanation": "造作買取請求権は特約で排除できる（借地借家法33条・37条）。"
+    },
+    {
+      "id": "tkn05_009",
+      "unit": "shikaku.takken.kenri.tokubetsu.shakuchi",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "事業用定期借地権の設定契約は、どの方式でしなければならない？",
+      "choices": [
+        "登記",
+        "書面なら何でもよい",
+        "公正証書",
+        "口頭でよい"
+      ],
+      "answerIndex": 2,
+      "explanation": "事業用定期借地権は公正証書によってしなければならない（借地借家法23条3項）。"
+    },
+    {
+      "id": "tkn05_010",
+      "unit": "shikaku.takken.kenri.tokubetsu.touki",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "建物を新築した所有者は、いつまでに表題登記を申請しなければならない？",
+      "choices": [
+        "3か月以内",
+        "1年以内",
+        "申請義務はない",
+        "所有権を取得した日から1か月以内"
+      ],
+      "answerIndex": 3,
+      "explanation": "表題登記は1か月以内の申請義務がある（不動産登記法47条）。"
+    },
+    {
+      "id": "tkn05_011",
+      "unit": "shikaku.takken.kenri.tokubetsu.touki",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "相続で不動産を取得したと知った相続人は、いつまでに相続登記を申請しなければならない？",
+      "choices": [
+        "3年以内",
+        "5年以内",
+        "申請義務はない",
+        "1年以内"
+      ],
+      "answerIndex": 0,
+      "explanation": "2024年4月から相続登記が義務化された（不動産登記法76条の2）。"
+    },
+    {
+      "id": "tkn05_012",
+      "unit": "shikaku.takken.kenri.tokubetsu.souzoku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "相続人が配偶者と子2人。子1人の法定相続分は？",
+      "choices": [
+        "3分の1",
+        "4分の1",
+        "2分の1",
+        "6分の1"
+      ],
+      "answerIndex": 1,
+      "explanation": "配偶者2分の1、子が残り2分の1を等分（民法900条）。"
+    },
+    {
+      "id": "tkn05_013",
+      "unit": "shikaku.takken.kenri.tokubetsu.souzoku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "相続人が配偶者と兄弟姉妹のとき、配偶者の法定相続分は？",
+      "choices": [
+        "全部",
+        "2分の1",
+        "4分の3",
+        "3分の2"
+      ],
+      "answerIndex": 2,
+      "explanation": "配偶者4分の3・兄弟姉妹4分の1（民法900条3号）。"
+    },
+    {
+      "id": "tkn05_014",
+      "unit": "shikaku.takken.kenri.tokubetsu.souzoku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "遺留分がない相続人は？",
+      "choices": [
+        "直系尊属",
+        "配偶者",
+        "子",
+        "兄弟姉妹"
+      ],
+      "answerIndex": 3,
+      "explanation": "兄弟姉妹には遺留分がない（民法1042条）。"
+    },
+    {
+      "id": "tkn05_015",
+      "unit": "shikaku.takken.kenri.tokubetsu.souzoku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "相続放棄は、原則としていつまでにする？",
+      "choices": [
+        "相続の開始を知った時から3か月以内に家庭裁判所に申述",
+        "相続開始から1年以内に公証役場で",
+        "相続開始から10か月以内に税務署で",
+        "いつでもよい"
+      ],
+      "answerIndex": 0,
+      "explanation": "熟慮期間は3か月（民法915条）。家庭裁判所に申述する（民法938条）。"
+    }
+  ]
+}

@@ -1,0 +1,233 @@
+{
+  "setId": "shikaku_takken_02",
+  "worldId": "shikaku",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "tkn02_001",
+      "unit": "shikaku.takken.kenri.dairi.dairi",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "無権代理による契約を本人が追認した。効力はいつから生じる？",
+      "choices": [
+        "相手方に通知した時から",
+        "追認の時から",
+        "登記の時から",
+        "契約の時にさかのぼって生じる"
+      ],
+      "answerIndex": 3,
+      "explanation": "追認は、別段の意思表示がない限り契約の時にさかのぼって効力を生じる（民法116条）。"
+    },
+    {
+      "id": "tkn02_002",
+      "unit": "shikaku.takken.kenri.dairi.dairi",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "無権代理の相手方が本人に追認するか催告したが、期間内に確答がない。どうなる？",
+      "choices": [
+        "追認を拒絶したものとみなされる",
+        "契約は有効に確定する",
+        "追認したものとみなされる",
+        "代理人が本人になる"
+      ],
+      "answerIndex": 0,
+      "explanation": "本人が確答しないときは、追認を拒絶したものとみなす（民法114条）。"
+    },
+    {
+      "id": "tkn02_003",
+      "unit": "shikaku.takken.kenri.dairi.dairi",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "無権代理の相手方が契約を取り消せるのは、どんな場合？",
+      "choices": [
+        "代理権がないことを知っていた場合",
+        "代理権がないことを知らなかった場合で、本人の追認前",
+        "本人の追認後でも取り消せる",
+        "いつでも取り消せる"
+      ],
+      "answerIndex": 1,
+      "explanation": "善意の相手方は、本人が追認しない間は取り消せる（民法115条）。"
+    },
+    {
+      "id": "tkn02_004",
+      "unit": "shikaku.takken.kenri.dairi.dairi",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "未成年者を任意代理人として契約させた。行為能力の制限を理由に取り消せる？",
+      "choices": [
+        "未成年者の親が取り消せる",
+        "相手方が取り消せる",
+        "取り消せない",
+        "本人が取り消せる"
+      ],
+      "answerIndex": 2,
+      "explanation": "制限行為能力者が代理人としてした行為は、行為能力の制限によって取り消せない（民法102条）。"
+    },
+    {
+      "id": "tkn02_005",
+      "unit": "shikaku.takken.kenri.dairi.dairi",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "代理人が本人の許諾なく、売主と買主の双方の代理人として契約した（双方代理）。この契約は？",
+      "choices": [
+        "有効",
+        "当然に無効で追認もできない",
+        "取り消すことができる",
+        "無権代理行為とみなされる"
+      ],
+      "answerIndex": 3,
+      "explanation": "自己契約・双方代理は、本人があらかじめ許諾した場合などを除き、無権代理とみなす（民法108条）。"
+    },
+    {
+      "id": "tkn02_006",
+      "unit": "shikaku.takken.kenri.dairi.dairi",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "任意代理人が復代理人を選任できるのは、どんなとき？",
+      "choices": [
+        "本人の許諾を得たとき、またはやむを得ない事由があるとき",
+        "いつでも自由にできる",
+        "相手方の同意を得たとき",
+        "一切できない"
+      ],
+      "answerIndex": 0,
+      "explanation": "任意代理人は、本人の許諾かやむを得ない事由がなければ復代理人を選べない（民法104条）。"
+    },
+    {
+      "id": "tkn02_007",
+      "unit": "shikaku.takken.kenri.dairi.dairi",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "任意代理の代理権が消滅しない事由はどれ？",
+      "choices": [
+        "代理人の破産手続開始の決定",
+        "本人が後見開始の審判を受けたこと",
+        "本人の死亡",
+        "代理人の死亡"
+      ],
+      "answerIndex": 1,
+      "explanation": "本人の後見開始は消滅事由ではない。本人の死亡・破産、代理人の死亡・破産・後見開始で消滅する（民法111条）。"
+    },
+    {
+      "id": "tkn02_008",
+      "unit": "shikaku.takken.kenri.dairi.dairi",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "代理人が権限外の行為をし、相手方が代理権があると信ずべき正当な理由があった。どうなる？",
+      "choices": [
+        "代理人だけが責任を負い、本人は関係ない",
+        "契約は当然に無効",
+        "本人は責任を負う（表見代理）",
+        "本人は一切責任を負わない"
+      ],
+      "answerIndex": 2,
+      "explanation": "権限外の行為の表見代理（民法110条）。相手方に正当な理由があれば本人が責任を負う。"
+    },
+    {
+      "id": "tkn02_009",
+      "unit": "shikaku.takken.kenri.dairi.jikou",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "他人の土地を、善意無過失で所有の意思をもって平穏・公然と占有し始めた。何年で取得時効が完成する？",
+      "choices": [
+        "5年",
+        "30年",
+        "20年",
+        "10年"
+      ],
+      "answerIndex": 3,
+      "explanation": "占有開始時に善意無過失なら10年、それ以外は20年（民法162条）。"
+    },
+    {
+      "id": "tkn02_010",
+      "unit": "shikaku.takken.kenri.dairi.jikou",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "他人の土地だと知りながら所有の意思をもって占有を続けた。何年で取得時効が完成する？",
+      "choices": [
+        "20年",
+        "10年",
+        "30年",
+        "15年"
+      ],
+      "answerIndex": 0,
+      "explanation": "悪意または有過失の占有者は20年で時効取得する（民法162条1項）。"
+    },
+    {
+      "id": "tkn02_011",
+      "unit": "shikaku.takken.kenri.dairi.jikou",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "消滅時効にかからない権利はどれ？",
+      "choices": [
+        "損害賠償請求権",
+        "所有権",
+        "貸金債権",
+        "売買代金債権"
+      ],
+      "answerIndex": 1,
+      "explanation": "所有権は消滅時効にかからない（民法166条2項参照）。"
+    },
+    {
+      "id": "tkn02_012",
+      "unit": "shikaku.takken.kenri.dairi.jikou",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "一般の債権は、権利を行使できることを知った時から何年で時効により消滅する？",
+      "choices": [
+        "10年",
+        "3年",
+        "5年",
+        "20年"
+      ],
+      "answerIndex": 2,
+      "explanation": "知った時から5年、行使できる時から10年のどちらか早いほう（民法166条1項）。"
+    },
+    {
+      "id": "tkn02_013",
+      "unit": "shikaku.takken.kenri.dairi.jikou",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "時効の利益は、時効が完成する前にあらかじめ放棄できる？",
+      "choices": [
+        "相手方の同意があれば放棄できる",
+        "いつでも放棄できる",
+        "公正証書なら放棄できる",
+        "放棄できない"
+      ],
+      "answerIndex": 3,
+      "explanation": "時効の利益は、あらかじめ放棄できない（民法146条）。"
+    },
+    {
+      "id": "tkn02_014",
+      "unit": "shikaku.takken.kenri.dairi.jikou",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "裁判外で支払いを催告した。時効はどうなる？",
+      "choices": [
+        "催告の時から6か月を経過するまで完成が猶予される",
+        "時効が更新される（ゼロから進み直す）",
+        "何の効果もない",
+        "1年間完成が猶予される"
+      ],
+      "answerIndex": 0,
+      "explanation": "催告には6か月の完成猶予の効果だけがある（民法150条）。"
+    },
+    {
+      "id": "tkn02_015",
+      "unit": "shikaku.takken.kenri.dairi.jikou",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "時効が完成して援用された。その効力はいつにさかのぼる？",
+      "choices": [
+        "時効が完成した日",
+        "起算日",
+        "訴えを起こした日",
+        "援用した日"
+      ],
+      "answerIndex": 1,
+      "explanation": "時効の効力は、その起算日にさかのぼる（民法144条）。"
+    }
+  ]
+}

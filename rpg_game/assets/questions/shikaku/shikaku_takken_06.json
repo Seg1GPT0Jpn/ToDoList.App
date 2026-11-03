@@ -1,0 +1,233 @@
+{
+  "setId": "shikaku_takken_06",
+  "worldId": "shikaku",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "tkn06_001",
+      "unit": "shikaku.takken.gyouhou.menkyo.teigi",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "宅建業の免許がなくてもできるものはどれ？",
+      "choices": [
+        "自分の土地を分譲して反復して売る",
+        "他人の建物の賃貸を反復して代理する",
+        "他人の土地の売買を反復して媒介する",
+        "自分が所有するマンションを自ら賃貸する"
+      ],
+      "answerIndex": 3,
+      "explanation": "「自ら貸借」は宅建業の取引に当たらない（宅建業法2条2号）。"
+    },
+    {
+      "id": "tkn06_002",
+      "unit": "shikaku.takken.gyouhou.menkyo.teigi",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "用途地域内にある農地は、宅建業法上の「宅地」に当たる？",
+      "choices": [
+        "当たる",
+        "当たらない",
+        "面積が小さければ当たらない",
+        "農地法の許可があれば当たらない"
+      ],
+      "answerIndex": 0,
+      "explanation": "用途地域内の土地は、道路・公園・河川・広場・水路の用に供されているもの以外は宅地（宅建業法2条1号）。"
+    },
+    {
+      "id": "tkn06_003",
+      "unit": "shikaku.takken.gyouhou.menkyo.menkyo",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "事務所を2つ以上の都道府県に置いて宅建業を営む。免許を出すのは？",
+      "choices": [
+        "市町村長",
+        "国土交通大臣",
+        "主たる事務所のある都道府県知事",
+        "すべての都道府県知事"
+      ],
+      "answerIndex": 1,
+      "explanation": "2以上の都道府県に事務所 → 国土交通大臣免許（宅建業法3条1項）。"
+    },
+    {
+      "id": "tkn06_004",
+      "unit": "shikaku.takken.gyouhou.menkyo.menkyo",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "宅建業の免許の有効期間は？",
+      "choices": [
+        "6年",
+        "3年",
+        "5年",
+        "10年"
+      ],
+      "answerIndex": 2,
+      "explanation": "免許の有効期間は5年（宅建業法3条2項）。"
+    },
+    {
+      "id": "tkn06_005",
+      "unit": "shikaku.takken.gyouhou.menkyo.menkyo",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "免許の更新の申請はいつ行う？",
+      "choices": [
+        "満了後30日以内",
+        "満了の日まで",
+        "満了の日の1年前から6か月前まで",
+        "有効期間満了の日の90日前から30日前まで"
+      ],
+      "answerIndex": 3,
+      "explanation": "更新申請は90日前から30日前まで（施行規則3条）。"
+    },
+    {
+      "id": "tkn06_006",
+      "unit": "shikaku.takken.gyouhou.menkyo.menkyo",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "拘禁刑に処せられた者が免許を受けられるようになるのは？",
+      "choices": [
+        "刑の執行を終わった日から5年を経過した後",
+        "3年を経過した後",
+        "刑の執行を終わった直後",
+        "10年を経過した後"
+      ],
+      "answerIndex": 0,
+      "explanation": "拘禁刑以上の刑は、執行を終わるなどした日から5年間は欠格（宅建業法5条1項5号）。"
+    },
+    {
+      "id": "tkn06_007",
+      "unit": "shikaku.takken.gyouhou.menkyo.menkyo",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "罰金刑に処せられて免許の欠格事由になるのは、どの罪？",
+      "choices": [
+        "公職選挙法違反",
+        "傷害罪",
+        "過失傷害罪",
+        "道路交通法違反"
+      ],
+      "answerIndex": 1,
+      "explanation": "罰金刑で欠格になるのは宅建業法違反・暴力的な犯罪（傷害・暴行・脅迫など）・背任罪など（宅建業法5条1項6号）。"
+    },
+    {
+      "id": "tkn06_008",
+      "unit": "shikaku.takken.gyouhou.menkyo.menkyo",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "拘禁刑に執行猶予がつき、その猶予期間が満了した。免許は？",
+      "choices": [
+        "二度と受けられない",
+        "満了から5年は受けられない",
+        "直ちに受けられる",
+        "満了から3年は受けられない"
+      ],
+      "answerIndex": 2,
+      "explanation": "執行猶予期間が満了すると刑の言渡しは効力を失うので、直ちに免許を受けられる。"
+    },
+    {
+      "id": "tkn06_009",
+      "unit": "shikaku.takken.gyouhou.menkyo.menkyo",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "甲県知事の免許を受けた業者が、乙県にも事務所を設けて営業する。必要な手続は？",
+      "choices": [
+        "乙県知事の免許を追加で受ける",
+        "乙県知事への届出だけ",
+        "甲県知事への変更の届出だけ",
+        "国土交通大臣の免許への免許換え"
+      ],
+      "answerIndex": 3,
+      "explanation": "2以上の都道府県に事務所を置くので、国土交通大臣への免許換えが必要（宅建業法7条）。"
+    },
+    {
+      "id": "tkn06_010",
+      "unit": "shikaku.takken.gyouhou.menkyo.menkyo",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "個人の宅建業者が死亡した。廃業等の届出は誰がいつまでにする？",
+      "choices": [
+        "相続人が、死亡を知った日から30日以内",
+        "相続人が、死亡の日から60日以内",
+        "届出は不要",
+        "事務所の宅建士が、死亡の日から30日以内"
+      ],
+      "answerIndex": 0,
+      "explanation": "死亡は相続人が知った日から30日以内に届け出る（宅建業法11条1項1号）。"
+    },
+    {
+      "id": "tkn06_011",
+      "unit": "shikaku.takken.gyouhou.menkyo.menkyo",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "法人の宅建業者が合併で消滅した。届出をするのは？",
+      "choices": [
+        "消滅した法人の宅建士",
+        "消滅した法人の代表役員だった者",
+        "合併後の法人の代表者",
+        "届出は不要"
+      ],
+      "answerIndex": 1,
+      "explanation": "合併による消滅は、消滅法人を代表する役員であった者が30日以内に届け出る（宅建業法11条1項2号）。"
+    },
+    {
+      "id": "tkn06_012",
+      "unit": "shikaku.takken.gyouhou.menkyo.menkyo",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "宅建業者が自分の名義を他人に貸して宅建業を営ませた。どうなる？",
+      "choices": [
+        "届け出れば許される",
+        "1年以内ならよい",
+        "名義貸しとして禁止されている",
+        "親族ならよい"
+      ],
+      "answerIndex": 2,
+      "explanation": "名義貸しは禁止（宅建業法13条）。"
+    },
+    {
+      "id": "tkn06_013",
+      "unit": "shikaku.takken.gyouhou.menkyo.menkyo",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "事務所に置かなければならない専任の宅建士の数は？",
+      "choices": [
+        "事務所に1人以上だけ",
+        "3人に1人以上",
+        "10人に1人以上",
+        "業務に従事する者5人に1人以上"
+      ],
+      "answerIndex": 3,
+      "explanation": "事務所ごとに、業務に従事する者の5分の1以上（施行規則15条の5の3）。"
+    },
+    {
+      "id": "tkn06_014",
+      "unit": "shikaku.takken.gyouhou.menkyo.menkyo",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "契約の申込みを受ける案内所に置く専任の宅建士は？",
+      "choices": [
+        "1人以上",
+        "置かなくてよい",
+        "5人に1人以上",
+        "3人以上"
+      ],
+      "answerIndex": 0,
+      "explanation": "契約の締結や申込みを受ける案内所などには、専任の宅建士を1人以上（施行規則15条の5の3）。"
+    },
+    {
+      "id": "tkn06_015",
+      "unit": "shikaku.takken.gyouhou.menkyo.menkyo",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "専任の宅建士が退職して法定数に足りなくなった。宅建業者がしなければならないことは？",
+      "choices": [
+        "何もしなくてよい",
+        "2週間以内に補充など必要な措置をとる",
+        "1か月以内に届け出るだけ",
+        "30日以内に免許を返す"
+      ],
+      "answerIndex": 1,
+      "explanation": "2週間以内に必要な措置をとらなければならない（宅建業法31条の3第3項）。"
+    }
+  ]
+}

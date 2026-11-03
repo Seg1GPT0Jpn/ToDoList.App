@@ -1,0 +1,233 @@
+{
+  "setId": "shikaku_takken_01",
+  "worldId": "shikaku",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "tkn01_001",
+      "unit": "shikaku.takken.kenri.ishi.seigen",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "未成年者が法定代理人の同意を得ずに土地を売る契約をした。原則としてどうなる？",
+      "choices": [
+        "当然に無効である",
+        "取り消すことはできない",
+        "取り消すことができる",
+        "法定代理人が追認しない限り無効である"
+      ],
+      "answerIndex": 2,
+      "explanation": "未成年者が同意を得ずにした法律行為は、原則として取り消すことができる（民法5条2項）。"
+    },
+    {
+      "id": "tkn01_002",
+      "unit": "shikaku.takken.kenri.ishi.seigen",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "未成年者が法定代理人の同意なしにできる行為はどれ？",
+      "choices": [
+        "土地の賃貸借契約",
+        "高額な借金の契約",
+        "建物の購入",
+        "単に権利を得、または義務を免れる行為"
+      ],
+      "answerIndex": 3,
+      "explanation": "単に権利を得、または義務を免れる法律行為は、同意がなくてもできる（民法5条1項ただし書）。"
+    },
+    {
+      "id": "tkn01_003",
+      "unit": "shikaku.takken.kenri.ishi.seigen",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "成年被後見人がした行為のうち、取り消すことができないものは？",
+      "choices": [
+        "日用品の購入その他日常生活に関する行為",
+        "建物の賃貸借契約",
+        "借金の連帯保証",
+        "成年後見人の同意を得てした土地の売却"
+      ],
+      "answerIndex": 0,
+      "explanation": "日常生活に関する行為は取り消せない（民法9条ただし書）。同意を得てした行為でも、成年被後見人の行為は取り消せる。"
+    },
+    {
+      "id": "tkn01_004",
+      "unit": "shikaku.takken.kenri.ishi.seigen",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "成年被後見人が成年後見人の同意を得て土地を売却した。この契約は？",
+      "choices": [
+        "同意があるので取り消せない",
+        "取り消すことができる",
+        "家庭裁判所の許可がなければ無効",
+        "当然に無効"
+      ],
+      "answerIndex": 1,
+      "explanation": "成年後見人には同意権がないため、同意を得ていても成年被後見人の行為は取り消せる。"
+    },
+    {
+      "id": "tkn01_005",
+      "unit": "shikaku.takken.kenri.ishi.seigen",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "被保佐人が保佐人の同意なしに不動産を売却した。この契約は？",
+      "choices": [
+        "有効で取り消せない",
+        "相手方だけが取り消せる",
+        "取り消すことができる",
+        "当然に無効"
+      ],
+      "answerIndex": 2,
+      "explanation": "不動産の売買は保佐人の同意が必要な行為（民法13条1項3号）。同意がなければ取り消せる。"
+    },
+    {
+      "id": "tkn01_006",
+      "unit": "shikaku.takken.kenri.ishi.seigen",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "制限行為能力者が、行為能力者であると相手方に信じさせるため詐術を用いた。この行為は？",
+      "choices": [
+        "当然に無効",
+        "追認したものとみなされる",
+        "いつでも取り消せる",
+        "取り消すことができない"
+      ],
+      "answerIndex": 3,
+      "explanation": "詐術を用いた制限行為能力者は、その行為を取り消すことができない（民法21条）。"
+    },
+    {
+      "id": "tkn01_007",
+      "unit": "shikaku.takken.kenri.ishi.seigen",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "成年に達した元未成年者に、相手方が1か月以上の期間を定めて追認するか催告した。期間内に確答がないと？",
+      "choices": [
+        "追認したものとみなされる",
+        "取り消したものとみなされる",
+        "何の効果も生じない",
+        "契約は無効になる"
+      ],
+      "answerIndex": 0,
+      "explanation": "行為能力者となった本人に催告し、確答がなければ追認したものとみなされる（民法20条1項）。"
+    },
+    {
+      "id": "tkn01_008",
+      "unit": "shikaku.takken.kenri.ishi.hyouji",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "心裡留保（冗談の売却の申込みなど）による意思表示は、原則としてどうなる？",
+      "choices": [
+        "常に無効",
+        "有効（相手方が真意でないことを知り、または知ることができたときは無効）",
+        "常に取り消せる",
+        "常に有効"
+      ],
+      "answerIndex": 1,
+      "explanation": "心裡留保は原則有効。相手方が悪意または有過失なら無効（民法93条1項）。"
+    },
+    {
+      "id": "tkn01_009",
+      "unit": "shikaku.takken.kenri.ishi.hyouji",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "AとBが通謀して、土地を売ったように見せかけた（虚偽表示）。この売買は？",
+      "choices": [
+        "有効",
+        "取り消すことができる",
+        "当事者間では無効だが、善意の第三者には無効を主張できない",
+        "誰に対しても無効を主張できる"
+      ],
+      "answerIndex": 2,
+      "explanation": "虚偽表示は無効だが、善意の第三者に対抗できない（民法94条）。第三者は無過失でなくてよい。"
+    },
+    {
+      "id": "tkn01_010",
+      "unit": "shikaku.takken.kenri.ishi.hyouji",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "重要な錯誤による意思表示は、現在の民法ではどうなる？",
+      "choices": [
+        "当然に無効",
+        "相手方だけが取り消せる",
+        "常に有効",
+        "取り消すことができる"
+      ],
+      "answerIndex": 3,
+      "explanation": "2020年施行の改正で、錯誤は「無効」から「取り消すことができる」に変わった（民法95条1項）。"
+    },
+    {
+      "id": "tkn01_011",
+      "unit": "shikaku.takken.kenri.ishi.hyouji",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "表意者に重大な過失がある錯誤は、原則としてどうなる？",
+      "choices": [
+        "取り消すことができない",
+        "必ず取り消せる",
+        "相手方の同意で取り消せる",
+        "無効になる"
+      ],
+      "answerIndex": 0,
+      "explanation": "重過失があると原則取り消せない。相手方が悪意・重過失のときや、相手方も同じ錯誤のときは例外（民法95条3項）。"
+    },
+    {
+      "id": "tkn01_012",
+      "unit": "shikaku.takken.kenri.ishi.hyouji",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "詐欺による意思表示を取り消した。取消し前に現れた第三者にはどうなる？",
+      "choices": [
+        "どんな第三者にも対抗できる",
+        "善意かつ無過失の第三者には対抗できない",
+        "登記があれば必ず対抗できる",
+        "悪意の第三者にも対抗できない"
+      ],
+      "answerIndex": 1,
+      "explanation": "詐欺による取消しは、善意かつ無過失の第三者に対抗できない（民法96条3項）。"
+    },
+    {
+      "id": "tkn01_013",
+      "unit": "shikaku.takken.kenri.ishi.hyouji",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "強迫による意思表示を取り消した。取消し前の善意無過失の第三者にはどうなる？",
+      "choices": [
+        "対抗できない",
+        "取り消すことはできない",
+        "対抗できる",
+        "第三者が登記していれば対抗できない"
+      ],
+      "answerIndex": 2,
+      "explanation": "強迫の被害者は保護が厚く、善意無過失の第三者にも取消しを対抗できる。"
+    },
+    {
+      "id": "tkn01_014",
+      "unit": "shikaku.takken.kenri.ishi.hyouji",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "BがCにだまされてAと契約した（第三者による詐欺）。Bが取り消せるのはどんなとき？",
+      "choices": [
+        "Cが罰せられたとき",
+        "いつでも取り消せる",
+        "Aの同意があるとき",
+        "Aがその事実を知り、または知ることができたとき"
+      ],
+      "answerIndex": 3,
+      "explanation": "第三者の詐欺は、相手方が悪意または有過失のときに限り取り消せる（民法96条2項）。"
+    },
+    {
+      "id": "tkn01_015",
+      "unit": "shikaku.takken.kenri.ishi.hyouji",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "取り消された行為は、どうなったものとみなされる？",
+      "choices": [
+        "初めから無効であったもの",
+        "取消しの通知が届いた時から無効",
+        "取消しの時から無効",
+        "有効のまま"
+      ],
+      "answerIndex": 0,
+      "explanation": "取り消された行為は、初めから無効であったものとみなす（民法121条）。"
+    }
+  ]
+}

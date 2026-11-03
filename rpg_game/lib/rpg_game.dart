@@ -16,6 +16,7 @@ export 'src/data/extra_sets.dart';
 export 'src/data/science_catalog.dart';
 export 'src/data/route_world.dart';
 export 'src/data/information_catalog.dart';
+export 'src/data/shikaku_catalog.dart';
 export 'src/data/japanese_catalog.dart';
 export 'src/data/math_catalog.dart';
 export 'src/data/social_catalog.dart';

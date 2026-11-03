@@ -1,0 +1,233 @@
+{
+  "setId": "shikaku_takken_15",
+  "worldId": "shikaku",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "tkn15_001",
+      "unit": "shikaku.takken.zei.kakaku.kouji",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "地価公示を行うのは？",
+      "choices": [
+        "市町村長",
+        "都道府県知事",
+        "国税庁",
+        "土地鑑定委員会"
+      ],
+      "answerIndex": 3,
+      "explanation": "土地鑑定委員会が標準地の正常な価格を判定し公示する（地価公示法2条）。"
+    },
+    {
+      "id": "tkn15_002",
+      "unit": "shikaku.takken.zei.kakaku.kouji",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "地価公示の価格の基準日は？",
+      "choices": [
+        "毎年1月1日",
+        "毎年4月1日",
+        "毎年7月1日",
+        "毎年10月1日"
+      ],
+      "answerIndex": 0,
+      "explanation": "標準地の単位面積当たりの正常な価格を1月1日時点で判定する。"
+    },
+    {
+      "id": "tkn15_003",
+      "unit": "shikaku.takken.zei.kakaku.kouji",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "標準地の正常な価格を判定するとき、何人以上の不動産鑑定士の評価を求める？",
+      "choices": [
+        "1人以上",
+        "2人以上",
+        "3人以上",
+        "5人以上"
+      ],
+      "answerIndex": 1,
+      "explanation": "2人以上の不動産鑑定士の鑑定評価を求める（地価公示法2条1項）。"
+    },
+    {
+      "id": "tkn15_004",
+      "unit": "shikaku.takken.zei.kakaku.kouji",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "標準地の「正常な価格」は、建物があるときどう考える？",
+      "choices": [
+        "建物の価格の半分を含める",
+        "建物の価格を含める",
+        "建物などがないもの（更地）として判定する",
+        "建物があると判定しない"
+      ],
+      "answerIndex": 2,
+      "explanation": "建物や使用収益を制限する権利がないものとして判定する（地価公示法2条2項）。"
+    },
+    {
+      "id": "tkn15_005",
+      "unit": "shikaku.takken.zei.kakaku.kouji",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "一般の人が土地を取引するとき、公示価格はどう使う？",
+      "choices": [
+        "公示価格より高く売ってはならない",
+        "関係ない",
+        "必ずその価格で取引しなければならない",
+        "指標として取引を行うよう努める"
+      ],
+      "answerIndex": 3,
+      "explanation": "一般の土地取引は公示価格を指標とするよう努める（地価公示法1条の2）。"
+    },
+    {
+      "id": "tkn15_006",
+      "unit": "shikaku.takken.zei.kakaku.kantei",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "原価法とは？",
+      "choices": [
+        "再調達原価に減価修正をして価格を求める方法",
+        "将来の収益から求める方法",
+        "似た取引の価格から求める方法",
+        "公示価格をそのまま使う方法"
+      ],
+      "answerIndex": 0,
+      "explanation": "原価法は再調達原価から減価修正する（不動産鑑定評価基準）。"
+    },
+    {
+      "id": "tkn15_007",
+      "unit": "shikaku.takken.zei.kakaku.kantei",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "取引事例比較法で、取引事例の価格に行うものは？",
+      "choices": [
+        "減価修正だけ",
+        "事情補正と時点修正",
+        "何もしない",
+        "還元利回りの調整"
+      ],
+      "answerIndex": 1,
+      "explanation": "事例の特殊な事情を補正し、時点の違いを修正する。"
+    },
+    {
+      "id": "tkn15_008",
+      "unit": "shikaku.takken.zei.kakaku.kantei",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "収益還元法とは？",
+      "choices": [
+        "固定資産税評価額を使う方法",
+        "近くの売買価格から求める方法",
+        "将来生み出すと期待される純収益の現在価値の合計で価格を求める方法",
+        "建物を建て直す費用から求める方法"
+      ],
+      "answerIndex": 2,
+      "explanation": "収益還元法（不動産鑑定評価基準）。"
+    },
+    {
+      "id": "tkn15_009",
+      "unit": "shikaku.takken.zei.kakaku.kantei",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "自分で住んでいる住宅（自用の不動産）に収益還元法は使える？",
+      "choices": [
+        "更地だけ使える",
+        "使えない",
+        "賃貸中の物件だけ使える",
+        "使える（賃貸を想定して適用できる）"
+      ],
+      "answerIndex": 3,
+      "explanation": "自用の不動産でも賃貸を想定して適用できる。"
+    },
+    {
+      "id": "tkn15_010",
+      "unit": "shikaku.takken.zei.kakaku.kantei",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "隣の土地を買って一つにまとめる（併合）ときの価格は？",
+      "choices": [
+        "限定価格",
+        "正常価格",
+        "特殊価格",
+        "特定価格"
+      ],
+      "answerIndex": 0,
+      "explanation": "市場が限定される場合の価格が限定価格。"
+    },
+    {
+      "id": "tkn15_011",
+      "unit": "shikaku.takken.zei.kakaku.kantei",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "文化財の建物など、市場性がない不動産の価格は？",
+      "choices": [
+        "正常価格",
+        "特殊価格",
+        "限定価格",
+        "特定価格"
+      ],
+      "answerIndex": 1,
+      "explanation": "市場性を有しない不動産の価格が特殊価格。"
+    },
+    {
+      "id": "tkn15_012",
+      "unit": "shikaku.takken.zei.kakaku.kantei",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "不動産の価格は、その不動産の効用が最高度に発揮される使い方を前提に決まる。この考え方は？",
+      "choices": [
+        "需要と供給の原則",
+        "予測の原則",
+        "最有効使用の原則",
+        "変動の原則"
+      ],
+      "answerIndex": 2,
+      "explanation": "最有効使用の原則（不動産鑑定評価基準）。"
+    },
+    {
+      "id": "tkn15_013",
+      "unit": "shikaku.takken.zei.kakaku.kantei",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "鑑定評価で、原則として求める価格は？",
+      "choices": [
+        "公示価格",
+        "限定価格",
+        "特殊価格",
+        "正常価格"
+      ],
+      "answerIndex": 3,
+      "explanation": "市場性を有する不動産は、原則として正常価格を求める。"
+    },
+    {
+      "id": "tkn15_014",
+      "unit": "shikaku.takken.zei.kakaku.kouji",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "公示区域から除かれる区域は？",
+      "choices": [
+        "国土利用計画法の規制区域",
+        "都市計画区域",
+        "市街化区域",
+        "準都市計画区域"
+      ],
+      "answerIndex": 0,
+      "explanation": "公示区域は都市計画区域その他の取引が相当程度見込まれる区域で、規制区域を除く。"
+    },
+    {
+      "id": "tkn15_015",
+      "unit": "shikaku.takken.zei.kakaku.kantei",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "鑑定評価の3つの手法の組み合わせとして正しいものは？",
+      "choices": [
+        "取引事例比較法・利回り法・路線価法",
+        "原価法・取引事例比較法・収益還元法",
+        "収益還元法・固定資産評価法・積算法",
+        "原価法・路線価法・公示価格法"
+      ],
+      "answerIndex": 1,
+      "explanation": "鑑定評価の基本的な3手法。"
+    }
+  ]
+}

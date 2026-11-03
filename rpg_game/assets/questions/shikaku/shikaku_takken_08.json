@@ -1,0 +1,233 @@
+{
+  "setId": "shikaku_takken_08",
+  "worldId": "shikaku",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "tkn08_001",
+      "unit": "shikaku.takken.gyouhou.juusetsu.baikai",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "専任媒介契約の有効期間の上限は？",
+      "choices": [
+        "6か月",
+        "3か月",
+        "1年",
+        "1か月"
+      ],
+      "answerIndex": 1,
+      "explanation": "3か月を超える定めは3か月とされる（宅建業法34条の2第3項）。"
+    },
+    {
+      "id": "tkn08_002",
+      "unit": "shikaku.takken.gyouhou.juusetsu.baikai",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "専属専任媒介契約で、業務の処理状況を依頼者に報告する頻度は？",
+      "choices": [
+        "2週間に1回以上",
+        "1か月に1回以上",
+        "1週間に1回以上",
+        "報告は不要"
+      ],
+      "answerIndex": 2,
+      "explanation": "専任は2週間に1回以上、専属専任は1週間に1回以上（宅建業法34条の2第9項）。"
+    },
+    {
+      "id": "tkn08_003",
+      "unit": "shikaku.takken.gyouhou.juusetsu.baikai",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "専任媒介契約を結んだ。指定流通機構への登録の期限は？（休業日を除く）",
+      "choices": [
+        "14日以内",
+        "5日以内",
+        "登録は不要",
+        "契約から7日以内"
+      ],
+      "answerIndex": 3,
+      "explanation": "専任は7日以内、専属専任は5日以内（施行規則15条の10）。"
+    },
+    {
+      "id": "tkn08_004",
+      "unit": "shikaku.takken.gyouhou.juusetsu.baikai",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "指定流通機構への登録が義務ではない媒介契約は？",
+      "choices": [
+        "一般媒介契約",
+        "専任媒介契約",
+        "どれも義務",
+        "専属専任媒介契約"
+      ],
+      "answerIndex": 0,
+      "explanation": "一般媒介契約には登録義務がない（してもよい）。"
+    },
+    {
+      "id": "tkn08_005",
+      "unit": "shikaku.takken.gyouhou.juusetsu.koukoku",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "建築確認を受ける前の建物について、宅建業者ができないことは？",
+      "choices": [
+        "近隣の相場を調べること",
+        "売買や貸借の広告をすること",
+        "建築確認の申請を手伝うこと",
+        "建物の設計を相談すること"
+      ],
+      "answerIndex": 1,
+      "explanation": "開発許可・建築確認などの前は、広告をしてはならない（貸借も含む。宅建業法33条）。"
+    },
+    {
+      "id": "tkn08_006",
+      "unit": "shikaku.takken.gyouhou.juusetsu.koukoku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "実際には取引するつもりのない物件で客を集める広告（おとり広告）は？",
+      "choices": [
+        "注意書きがあればよい",
+        "問題ない",
+        "誇大広告として禁止される",
+        "実際に被害がなければよい"
+      ],
+      "answerIndex": 2,
+      "explanation": "おとり広告も誇大広告の禁止に当たる。被害がなくても違反（宅建業法32条）。"
+    },
+    {
+      "id": "tkn08_007",
+      "unit": "shikaku.takken.gyouhou.juusetsu.koukoku",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "広告で取引態様を明示した。注文を受けたときに改めて明示する必要は？",
+      "choices": [
+        "書面で求められたときだけある",
+        "ない",
+        "相手方が宅建業者のときだけある",
+        "ある"
+      ],
+      "answerIndex": 3,
+      "explanation": "広告時と注文を受けた時の両方で取引態様を明示する（宅建業法34条）。"
+    },
+    {
+      "id": "tkn08_008",
+      "unit": "shikaku.takken.gyouhou.juusetsu.s35",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "重要事項の説明をしなければならない時期は？",
+      "choices": [
+        "契約が成立するまで",
+        "登記の時",
+        "引渡しの時",
+        "契約が成立してから遅滞なく"
+      ],
+      "answerIndex": 0,
+      "explanation": "重要事項は契約成立前に説明する（宅建業法35条）。"
+    },
+    {
+      "id": "tkn08_009",
+      "unit": "shikaku.takken.gyouhou.juusetsu.s35",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "重要事項の説明をするのは誰？",
+      "choices": [
+        "宅建業者の代表者",
+        "宅建士（専任でなくてよい）",
+        "専任の宅建士だけ",
+        "誰でもよい"
+      ],
+      "answerIndex": 1,
+      "explanation": "宅建士が説明する。専任である必要はない（宅建業法35条）。"
+    },
+    {
+      "id": "tkn08_010",
+      "unit": "shikaku.takken.gyouhou.juusetsu.s35",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "買主が宅建業者の場合、重要事項の説明は？",
+      "choices": [
+        "説明も書面も必要",
+        "説明も書面も不要",
+        "説明は不要だが、書面の交付は必要",
+        "説明だけ必要"
+      ],
+      "answerIndex": 2,
+      "explanation": "相手方が宅建業者なら説明は省略できるが、35条書面の交付は必要（宅建業法35条6項）。"
+    },
+    {
+      "id": "tkn08_011",
+      "unit": "shikaku.takken.gyouhou.juusetsu.s35",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "重要事項の説明をする場所は？",
+      "choices": [
+        "物件の所在地だけ",
+        "買主の自宅だけ",
+        "事務所だけ",
+        "決まりはない"
+      ],
+      "answerIndex": 3,
+      "explanation": "説明場所に制限はない。テレビ会議などのIT重説も条件を満たせばできる。"
+    },
+    {
+      "id": "tkn08_012",
+      "unit": "shikaku.takken.gyouhou.juusetsu.s35",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "35条書面（重要事項説明書）で説明しなくてよいものは？",
+      "choices": [
+        "代金の額",
+        "代金以外に授受される金銭の額と目的",
+        "登記された権利の種類",
+        "飲用水・電気・ガスの供給施設"
+      ],
+      "answerIndex": 0,
+      "explanation": "代金の額は37条書面の記載事項で、35条の説明事項ではない。"
+    },
+    {
+      "id": "tkn08_013",
+      "unit": "shikaku.takken.gyouhou.juusetsu.s35",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "35条書面を書面の代わりに電磁的方法で提供できるのは？",
+      "choices": [
+        "相手方が宅建業者のときだけ",
+        "相手方の承諾を得たとき",
+        "いつでも",
+        "できない"
+      ],
+      "answerIndex": 1,
+      "explanation": "2022年5月から、相手方の承諾があれば電磁的方法で提供できる（宅建業法35条8項）。"
+    },
+    {
+      "id": "tkn08_014",
+      "unit": "shikaku.takken.gyouhou.juusetsu.s35",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "35条書面に記名しなければならないのは？",
+      "choices": [
+        "買主",
+        "記名は不要",
+        "宅建士",
+        "宅建業者の代表者だけ"
+      ],
+      "answerIndex": 2,
+      "explanation": "35条書面には宅建士が記名する（2022年から押印は不要）。"
+    },
+    {
+      "id": "tkn08_015",
+      "unit": "shikaku.takken.gyouhou.juusetsu.s35",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "既存の建物の売買で、重要事項として説明するものは？",
+      "choices": [
+        "前の所有者の氏名の由来",
+        "建物の固定資産税評価額",
+        "近隣の家賃相場",
+        "建物状況調査（インスペクション）を実施しているかどうか"
+      ],
+      "answerIndex": 3,
+      "explanation": "既存建物では、建物状況調査の実施の有無や結果の概要などを説明する（宅建業法35条1項6号の2）。"
+    }
+  ]
+}

@@ -18,7 +18,7 @@ Iterable<File> questionFiles() => Directory('assets/questions')
 
 void main() {
   group('学習体系（教科→科目→分野→単元→小単元）', () {
-    test('7教科・各階層が親より1段深い', () {
+    test('8教科（番外編の資格をふくむ）・各階層が親より1段深い', () {
       expect(
         Curriculum.subjects.map((s) => s.id),
         [
@@ -28,7 +28,8 @@ void main() {
           'japanese',
           'math',
           'information',
-          'music'
+          'music',
+          'shikaku'
         ],
       );
       for (final n in Curriculum.all) {
@@ -75,6 +76,11 @@ void main() {
           expect(Curriculum.contains(p), isTrue, reason: '${n.id} → $p');
         }
         final (source, url) = Curriculum.sourceOf(n.id);
+        // 資格の塔は学習指導要領の外。出典は各試験の実施機関
+        if (n.id.startsWith('shikaku')) {
+          expect(url, startsWith('https://'), reason: n.id);
+          continue;
+        }
         expect(source, contains('学習指導要領'));
         expect(url, startsWith('https://'));
       }

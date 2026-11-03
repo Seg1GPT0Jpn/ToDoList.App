@@ -159,6 +159,7 @@ class TsuzuriLink {
     'social': '社会',
     'information': '情報',
     'music': '音楽',
+    'shikaku': '資格',
   };
 
   static String subjectLabel(String worldId) => subjectLabels[worldId] ?? 'その他';
@@ -168,6 +169,7 @@ class TsuzuriLink {
     const rules = <(String, List<String>)>[
       ('information', ['情報']),
       ('music', ['音楽']),
+      ('shikaku', ['資格', '宅建', '英検', '司法試験', '医師国家試験', '公認会計士']),
       ('math', ['数学', '数Ⅰ', '数Ⅱ', '数A', '数B', '数C', '数Ⅲ']),
       (
         'english',

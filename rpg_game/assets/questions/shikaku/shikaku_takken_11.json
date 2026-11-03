@@ -1,0 +1,233 @@
+{
+  "setId": "shikaku_takken_11",
+  "worldId": "shikaku",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "tkn11_001",
+      "unit": "shikaku.takken.seigen.toshi.keikaku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "市街化区域とは、どんな区域？",
+      "choices": [
+        "市街化を抑制すべき区域",
+        "自然環境を守るため建築を禁止する区域",
+        "農業を振興する区域",
+        "すでに市街地を形成している区域と、おおむね10年以内に優先的かつ計画的に市街化を図るべき区域"
+      ],
+      "answerIndex": 3,
+      "explanation": "都市計画法7条2項。市街化を抑制するのは市街化調整区域。"
+    },
+    {
+      "id": "tkn11_002",
+      "unit": "shikaku.takken.seigen.toshi.keikaku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "市街化区域で必ず定める都市計画は？",
+      "choices": [
+        "用途地域",
+        "防火地域",
+        "高度地区",
+        "特別用途地区"
+      ],
+      "answerIndex": 0,
+      "explanation": "市街化区域では少なくとも用途地域を定める（都市計画法13条1項7号）。"
+    },
+    {
+      "id": "tkn11_003",
+      "unit": "shikaku.takken.seigen.toshi.keikaku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "市街化調整区域の用途地域は？",
+      "choices": [
+        "必ず定める",
+        "原則として定めない",
+        "定めてはならない（例外もない）",
+        "第一種低層住居専用地域だけ定める"
+      ],
+      "answerIndex": 1,
+      "explanation": "市街化調整区域には原則として用途地域を定めない。"
+    },
+    {
+      "id": "tkn11_004",
+      "unit": "shikaku.takken.seigen.toshi.keikaku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "用途地域は全部でいくつ？",
+      "choices": [
+        "12種類",
+        "10種類",
+        "13種類",
+        "15種類"
+      ],
+      "answerIndex": 2,
+      "explanation": "2018年に田園住居地域が加わって13種類。"
+    },
+    {
+      "id": "tkn11_005",
+      "unit": "shikaku.takken.seigen.toshi.keikaku",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "特別用途地区を定めることができるのは？",
+      "choices": [
+        "市街化調整区域だけ",
+        "用途地域外だけ",
+        "どこでも",
+        "用途地域内"
+      ],
+      "answerIndex": 3,
+      "explanation": "特別用途地区は、用途地域内で用途地域の制限を補う地区。"
+    },
+    {
+      "id": "tkn11_006",
+      "unit": "shikaku.takken.seigen.toshi.keikaku",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "準都市計画区域で定めることができないものは？",
+      "choices": [
+        "区域区分（市街化区域と市街化調整区域）",
+        "高度地区",
+        "特別用途地区",
+        "用途地域"
+      ],
+      "answerIndex": 0,
+      "explanation": "準都市計画区域では区域区分や市街地開発事業などは定められない。"
+    },
+    {
+      "id": "tkn11_007",
+      "unit": "shikaku.takken.seigen.toshi.kaihatsu",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "都市計画法の「開発行為」とは？",
+      "choices": [
+        "建物を建てること",
+        "主に建築物の建築などのために行う土地の区画形質の変更",
+        "土地を売買すること",
+        "建物を取り壊すこと"
+      ],
+      "answerIndex": 1,
+      "explanation": "都市計画法4条12項。"
+    },
+    {
+      "id": "tkn11_008",
+      "unit": "shikaku.takken.seigen.toshi.kaihatsu",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "市街化区域で開発許可が原則不要になる規模は？（三大都市圏などの例外を除く）",
+      "choices": [
+        "500㎡未満",
+        "3,000㎡未満",
+        "1,000㎡未満",
+        "1ha未満"
+      ],
+      "answerIndex": 2,
+      "explanation": "市街化区域では1,000㎡未満は許可不要（都市計画法施行令19条）。"
+    },
+    {
+      "id": "tkn11_009",
+      "unit": "shikaku.takken.seigen.toshi.kaihatsu",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "都市計画区域と準都市計画区域の外で、開発許可が必要になる規模は？",
+      "choices": [
+        "1,000㎡以上",
+        "どんな規模でも不要",
+        "3,000㎡以上",
+        "1ha以上"
+      ],
+      "answerIndex": 3,
+      "explanation": "区域外では1ha（10,000㎡）以上で許可が必要。"
+    },
+    {
+      "id": "tkn11_010",
+      "unit": "shikaku.takken.seigen.toshi.kaihatsu",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "市街化調整区域で、農業を営む者の住宅を建てるための開発行為は？",
+      "choices": [
+        "開発許可は不要",
+        "禁止されている",
+        "1,000㎡以上なら許可が必要",
+        "必ず許可が必要"
+      ],
+      "answerIndex": 0,
+      "explanation": "市街化区域以外での農林漁業用建築物や農林漁業者の住宅のための開発は許可不要（都市計画法29条1項2号）。"
+    },
+    {
+      "id": "tkn11_011",
+      "unit": "shikaku.takken.seigen.toshi.kaihatsu",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "駅舎や図書館など、公益上必要な建築物のための開発行為は？",
+      "choices": [
+        "必ず許可が必要",
+        "開発許可は不要",
+        "3,000㎡以上なら許可が必要",
+        "市街化調整区域では禁止"
+      ],
+      "answerIndex": 1,
+      "explanation": "公益上必要な建築物の開発は区域や規模にかかわらず許可不要（都市計画法29条1項3号）。"
+    },
+    {
+      "id": "tkn11_012",
+      "unit": "shikaku.takken.seigen.toshi.kaihatsu",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "開発許可を申請する前に、必要な手続は？",
+      "choices": [
+        "近隣住民全員の同意を得る",
+        "建築確認を受ける",
+        "関係のある公共施設の管理者の同意を得る",
+        "市町村議会の議決を得る"
+      ],
+      "answerIndex": 2,
+      "explanation": "開発行為に関係がある公共施設の管理者の同意が必要（都市計画法32条）。"
+    },
+    {
+      "id": "tkn11_013",
+      "unit": "shikaku.takken.seigen.toshi.kaihatsu",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "開発許可を受けた区域で、工事完了の公告前に建築物を建てることは？",
+      "choices": [
+        "建築確認があればできる",
+        "自由にできる",
+        "必ずできない（例外もない）",
+        "原則としてできない（工事用の仮設建築物などは例外）"
+      ],
+      "answerIndex": 3,
+      "explanation": "工事完了公告前は原則建築不可（都市計画法37条）。"
+    },
+    {
+      "id": "tkn11_014",
+      "unit": "shikaku.takken.seigen.toshi.kaihatsu",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "開発許可や不許可の処分に不服があるときの審査請求先は？",
+      "choices": [
+        "開発審査会",
+        "国土交通大臣",
+        "家庭裁判所",
+        "都道府県議会"
+      ],
+      "answerIndex": 0,
+      "explanation": "開発許可などの処分への審査請求は開発審査会に行う（都市計画法50条）。"
+    },
+    {
+      "id": "tkn11_015",
+      "unit": "shikaku.takken.seigen.toshi.kaihatsu",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "市街化調整区域のうち、開発許可を受けた区域以外で建築物を新築するには？",
+      "choices": [
+        "市町村への届出だけでよい",
+        "原則として都道府県知事の許可が必要",
+        "何の手続もいらない",
+        "新築は一切できない"
+      ],
+      "answerIndex": 1,
+      "explanation": "都市計画法43条の建築許可が必要。"
+    }
+  ]
+}

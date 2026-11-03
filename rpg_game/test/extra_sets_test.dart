@@ -36,6 +36,32 @@ void main() {
     }
   });
 
+  test('番外編・資格の塔：宅建の道は4分野・16エリア、各エリア15問。正解の位置がかたよらない', () {
+    final w = RpgCatalog.world('shikaku');
+    expect(w.isFree, isTrue);
+    final takken = w.stages.where((s) => s.branch == 'takken').toList();
+    expect(takken, hasLength(16));
+    expect({for (final s in takken) s.region},
+        {'権利関係', '宅建業法', '法令上の制限', '税・その他'});
+    final pos = List.filled(4, 0);
+    final prompts = <String>{};
+    for (final s in takken) {
+      final f = File('assets/questions/shikaku/${s.questionSetIds.last}.json');
+      final set = JsonQuestionSource.parse(f.readAsStringSync());
+      expect(set.questions.length, 15, reason: s.id);
+      for (final q in set.questions) {
+        expect(q.unit, startsWith('shikaku.takken.'), reason: q.id);
+        expect(Curriculum.contains(q.unit!), isTrue, reason: q.id);
+        expect(q.choices.toSet(), hasLength(4), reason: q.id);
+        expect(prompts.add(q.prompt), isTrue, reason: '同じ問題文: ${q.id}');
+        pos[q.answerIndex]++;
+      }
+    }
+    for (final n in pos) {
+      expect(n, inInclusiveRange(55, 65));
+    }
+  });
+
   test('入力の答えは全角・半角・大文字小文字・空白の違いを無視する', () {
     final q = QuizQuestion(
       id: 'x',

@@ -21,6 +21,7 @@ class QuestionLibraryScreen extends StatelessWidget {
     ('sea', '英文法', Icons.sailing_outlined),
     ('information', '情報', Icons.computer),
     ('music', '音楽', Icons.music_note_outlined),
+    ('shikaku', '資格', Icons.workspace_premium_outlined),
   ];
 
   @override
