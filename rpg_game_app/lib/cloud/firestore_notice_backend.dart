@@ -7,6 +7,7 @@ import '../notice/notice_backend.dart';
 ///
 /// - `app_notice/main`：お知らせ。だれでも読めて、書けるのは管理者だけ
 /// - `tester_signups/{uid}`：Gmail・名前・日時。本人が自分の分だけ書けて、読めるのは本人と管理者
+/// - `feedback/{自動のID}`：高校名・クラス・ニックネーム・内容。だれでも送れて、読めるのは管理者だけ
 ///
 /// ルールは firestore.rules。
 class FirestoreNoticeBackend extends NoticeBackend {
@@ -70,6 +71,38 @@ class FirestoreNoticeBackend extends NoticeBackend {
       'name': name,
       'at': FieldValue.serverTimestamp(),
     });
+  }
+
+  @override
+  Future<void> sendFeedback(AppFeedback f) => _db.collection('feedback').add({
+    ...f.toMap(),
+    'uid': userId ?? '',
+    'at': FieldValue.serverTimestamp(),
+  });
+
+  @override
+  Future<List<AppFeedback>> feedbacks() async {
+    final q = await _db
+        .collection('feedback')
+        .orderBy('at', descending: true)
+        .limit(200)
+        .get();
+    String str(Map<String, dynamic> d, String k) =>
+        d[k] is String ? d[k] as String : '';
+    return [
+      for (final doc in q.docs)
+        AppFeedback(
+          school: str(doc.data(), 'school'),
+          className: str(doc.data(), 'class'),
+          nickname: str(doc.data(), 'nickname'),
+          body: str(doc.data(), 'body'),
+          uid: str(doc.data(), 'uid'),
+          platform: str(doc.data(), 'platform'),
+          at: doc.data()['at'] is Timestamp
+              ? (doc.data()['at'] as Timestamp).toDate()
+              : null,
+        ),
+    ];
   }
 
   @override

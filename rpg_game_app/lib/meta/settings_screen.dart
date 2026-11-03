@@ -10,6 +10,7 @@ import '../art/paper.dart';
 import 'design.dart';
 import 'reminder.dart';
 import 'reset_data_screen.dart';
+import '../notice/feedback_screen.dart';
 import '../notice/notice_admin_screen.dart';
 
 /// 設定（音・文字の大きさ・動き）
@@ -254,6 +255,32 @@ class SettingsScreen extends StatelessWidget {
                   onTap: () => Navigator.of(context).push(
                     MaterialPageRoute<void>(
                       builder: (_) => NoticeAdminScreen(backend: n),
+                    ),
+                  ),
+                ),
+                ListTile(
+                  key: const ValueKey('feedback-admin-open'),
+                  leading: const Icon(Icons.forum_outlined),
+                  title: const Text('届いたフィードバック'),
+                  trailing: const Icon(Icons.chevron_right),
+                  onTap: () => Navigator.of(context).push(
+                    MaterialPageRoute<void>(
+                      builder: (_) => FeedbackListScreen(backend: n),
+                    ),
+                  ),
+                ),
+              ],
+              if (services.notices != null) ...[
+                const SectionTitle('フィードバック'),
+                ListTile(
+                  key: const ValueKey('feedback-open'),
+                  leading: const Icon(Icons.rate_review_outlined),
+                  title: const Text('フィードバックを送る'),
+                  subtitle: const Text('感想・ほしい機能・まちがいの報告など'),
+                  trailing: const Icon(Icons.chevron_right),
+                  onTap: () => Navigator.of(context).push(
+                    MaterialPageRoute<void>(
+                      builder: (_) => const FeedbackScreen(),
                     ),
                   ),
                 ),

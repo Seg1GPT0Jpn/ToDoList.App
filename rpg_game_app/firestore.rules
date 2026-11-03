@@ -296,6 +296,23 @@ service cloud.firestore {
       allow delete: if request.auth != null && request.auth.uid == uid;
     }
 
+    // アプリへのフィードバック（高校名・クラス・ニックネーム・内容）。だれでも送れて、読めるのは管理者だけ。
+    // 送ったあとは書きかえ・削除できない。
+    match /feedback/{id} {
+      allow read: if request.auth != null
+        && request.auth.token.email == 'kzmsegawa@gmail.com'
+        && request.auth.token.email_verified == true;
+      allow create: if request.resource.data.keys().hasOnly(['school', 'class', 'nickname', 'body', 'uid', 'platform', 'at'])
+        && request.resource.data.school is string && request.resource.data.school.size() >= 1 && request.resource.data.school.size() <= 40
+        && request.resource.data['class'] is string && request.resource.data['class'].size() >= 1 && request.resource.data['class'].size() <= 20
+        && request.resource.data.nickname is string && request.resource.data.nickname.size() <= 20
+        && request.resource.data.body is string && request.resource.data.body.size() >= 1 && request.resource.data.body.size() <= 1000
+        && request.resource.data.platform is string && request.resource.data.platform.size() <= 20
+        && request.resource.data.uid is string
+        && (request.resource.data.uid == '' || (request.auth != null && request.resource.data.uid == request.auth.uid))
+        && request.resource.data.at == request.time;
+    }
+
     // 週替わり単語バトルの参加記録（回の ID は「leap-2026-11-01」＝バトルの日）。
     // 置くのはニックネーム・正解数・点数だけ。ログインした人が読める（順位表）。
     // 4種類（フラッシュカード・日→英・英→日・例文）は、受付のあいだ（日程の設定の open〜close。

@@ -110,6 +110,53 @@ class TesterSignup {
           .hasMatch(s.trim());
 }
 
+/// アプリへのフィードバック（意見・不具合の報告）
+class AppFeedback {
+  const AppFeedback({
+    required this.school,
+    required this.className,
+    required this.nickname,
+    required this.body,
+    this.uid = '',
+    this.platform = '',
+    this.at,
+  });
+
+  /// 高校名（「湘南」か、その他で入れた名前）
+  final String school;
+
+  /// クラス（「1-1」〜「1-9」か、その他で入れたもの）
+  final String className;
+  final String nickname;
+  final String body;
+
+  /// 送った人（ログインしていなければ空）
+  final String uid;
+
+  /// web・android など
+  final String platform;
+  final DateTime? at;
+
+  /// 選べる高校（小中学生版は「その他」だけ）
+  static List<String> get schools => juniorEdition ? const [] : const ['湘南'];
+  static const classes = [
+    '1-1', '1-2', '1-3', '1-4', '1-5', '1-6', '1-7', '1-8', '1-9', //
+  ];
+  static const maxSchool = 40;
+  static const maxClass = 20;
+  static const maxNickname = 20;
+  static const maxBody = 1000;
+
+  Map<String, Object> toMap() => {
+    'school': school,
+    'class': className,
+    'nickname': nickname,
+    'body': body,
+    'uid': uid,
+    'platform': platform,
+  };
+}
+
 /// お知らせとテスターの申しこみの保存先。
 ///
 /// お知らせはだれでも読めて、書けるのは管理者だけ。
@@ -134,6 +181,12 @@ abstract class NoticeBackend {
 
   /// 申しこみの一覧（管理者だけ。新しい順）
   Future<List<TesterSignup>> signups();
+
+  /// フィードバックを送る（ログインしていなくても送れる）
+  Future<void> sendFeedback(AppFeedback feedback);
+
+  /// フィードバックの一覧（管理者だけ。新しい順）
+  Future<List<AppFeedback>> feedbacks();
 }
 
 /// テストとサーバーのない版の、端末の中だけの保存先
@@ -170,6 +223,27 @@ class MemoryNoticeBackend extends NoticeBackend {
       name: name,
       at: DateTime.now(),
     );
+  }
+
+  final List<AppFeedback> sent = [];
+
+  @override
+  Future<void> sendFeedback(AppFeedback f) async => sent.add(
+    AppFeedback(
+      school: f.school,
+      className: f.className,
+      nickname: f.nickname,
+      body: f.body,
+      uid: userId ?? '',
+      platform: f.platform,
+      at: DateTime.now(),
+    ),
+  );
+
+  @override
+  Future<List<AppFeedback>> feedbacks() async {
+    if (!isAdmin) throw StateError('一覧を見られるのは管理者だけです');
+    return sent.reversed.toList();
   }
 
   @override

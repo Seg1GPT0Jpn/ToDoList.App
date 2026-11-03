@@ -9,6 +9,7 @@ import '../account/tsuzuri_link_card.dart';
 import '../app/pwa.dart';
 import '../meta/study_boost_card.dart';
 import '../meta/today_plan.dart';
+import '../notice/feedback_screen.dart';
 import '../notice/notice_card.dart';
 import '../account/account_screen.dart';
 import '../app/services.dart';
@@ -135,6 +136,14 @@ class WorldMapScreen extends StatelessWidget {
                   );
                   return;
                 }
+                if (v == 'feedback') {
+                  Navigator.of(context).push(
+                    MaterialPageRoute<void>(
+                      builder: (_) => const FeedbackScreen(),
+                    ),
+                  );
+                  return;
+                }
                 if (v == 'promo') {
                   await showPromoCodeDialog(context);
                   return;
@@ -169,6 +178,11 @@ class WorldMapScreen extends StatelessWidget {
                   child: Text('アカウント（名前・Google）'),
                 ),
                 const PopupMenuItem(value: 'promo', child: Text('プロモーションコード')),
+                if (services.notices != null)
+                  const PopupMenuItem(
+                    value: 'feedback',
+                    child: Text('フィードバックを送る'),
+                  ),
                 if (services.purchaseService?.isAvailable == true)
                   const PopupMenuItem(
                     value: 'restore',
