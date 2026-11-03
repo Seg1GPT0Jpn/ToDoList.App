@@ -152,7 +152,7 @@ class _SpeciesTile extends StatelessWidget {
     // この種族が出てくる単元のうち、いちばん苦手なもの
     final units =
         [
-            for (final w in RpgCatalog.worlds)
+            for (final w in RpgCatalog.allWorlds)
               for (final st in w.stages)
                 if (st.enemy.look == species.look)
                   (st, Proficiency.ofStage(record, st)),

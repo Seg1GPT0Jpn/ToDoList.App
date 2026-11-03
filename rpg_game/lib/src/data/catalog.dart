@@ -693,7 +693,12 @@ class RpgCatalog {
           '右は和音の道、下は音楽用語の道。それぞれの道の最後に玉座のボスが待っている。',
       description: '番外編（無料）。楽典と音楽用語の4つの道・42エリア。',
     ),
-    // 番外編：資格試験の対策（宅建から。英検・三大国家試験の道を順に足す）
+  ];
+
+  /// 追加コンテンツ（ノートの世界の地図には出さず、ホームの「異世界の門」から行く）。
+  /// 「全教科」の機能（総合演習・対戦・デイリーなど）にはふくめない
+  static final extraWorlds = <WorldDef>[
+    // 資格の門：資格試験の対策（宅建から。英検・三大国家試験の道を順に足す）
     WorldDef(
       id: ShikakuCatalog.worldId,
       name: '資格の塔',
@@ -703,13 +708,19 @@ class RpgCatalog {
       stages: ShikakuCatalog.stages,
       routes: [for (final r in ShikakuCatalog.routes) r.info],
       hubName: '資格の塔の入口',
-      hubSign: 'ここは番外編・資格の塔。上へ進むと宅建の道。'
+      hubSign: 'ここは異世界の門の向こう、資格の塔。上へ進むと宅建の道。'
           '権利関係・宅建業法・法令上の制限・税その他の16エリアで、本番の4分野をひと通りたどれる。',
-      description: '番外編（無料）。宅建士試験の4分野・16エリア。',
+      description: '追加コンテンツ（無料）。宅建士試験の4分野・16エリア。',
     ),
   ];
 
-  static WorldDef world(String id) => worlds.firstWhere(
+  /// 地図のワールドと追加コンテンツのすべて（ID で探すとき）
+  static final allWorlds = <WorldDef>[...worlds, ...extraWorlds];
+
+  static bool isExtra(String worldId) =>
+      extraWorlds.any((w) => w.id == worldId);
+
+  static WorldDef world(String id) => allWorlds.firstWhere(
         (w) => w.id == id,
         orElse: () => throw ArgumentError('不明なワールドです: $id'),
       );
@@ -725,6 +736,6 @@ class RpgCatalog {
       : '単元：${s.grammarTheme}（${s.vocabLevel}）';
 
   static StageDef stage(String id) =>
-      worlds.expand((w) => w.stages).firstWhere((s) => s.id == id,
+      allWorlds.expand((w) => w.stages).firstWhere((s) => s.id == id,
           orElse: () => throw ArgumentError('不明なステージです: $id'));
 }

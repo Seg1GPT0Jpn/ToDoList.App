@@ -26,6 +26,7 @@ import '../meta/adventure_card.dart';
 import '../study/realm_style.dart';
 import '../study/sea_home_screen.dart';
 import '../study/sky_home_screen.dart';
+import 'gate_screen.dart';
 import 'promo_code_dialog.dart';
 import 'world_atlas.dart';
 
@@ -330,6 +331,8 @@ class WorldMapScreen extends StatelessWidget {
             ),
           ),
         ],
+        // 追加コンテンツ：ノートの世界とは別の場所（資格試験）
+        if (!juniorEdition) ...[const SizedBox(height: 10), const GateBanner()],
         const SizedBox(height: 16),
         Text('ノートの世界', style: serif(16)),
         Text(

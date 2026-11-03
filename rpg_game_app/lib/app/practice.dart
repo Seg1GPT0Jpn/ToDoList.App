@@ -31,7 +31,7 @@ Future<void> startPractice(BuildContext context, StageDef stage) async {
 Future<String?> startUnitPractice(BuildContext context, String unitId) async {
   final services = RpgServices.of(context);
   final node = Curriculum.node(unitId);
-  final world = RpgCatalog.worlds
+  final world = RpgCatalog.allWorlds
       .where((w) => w.id == node.subjectId)
       .firstOrNull;
   if (world == null) return 'この教科の冒険はまだありません';

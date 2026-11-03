@@ -302,7 +302,7 @@ class _SubjectLevels extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final chips = <Widget>[];
-    for (final w in RpgCatalog.worlds) {
+    for (final w in RpgCatalog.allWorlds) {
       if (record.answeredCount(w.id) == 0) continue;
       final m = record.masteredCount(w.id);
       final lv = LearningRecord.levelFor(m);

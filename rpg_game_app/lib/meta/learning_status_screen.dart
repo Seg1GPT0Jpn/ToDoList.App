@@ -163,7 +163,7 @@ class LearningStatusScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 14),
-                for (final w in RpgCatalog.worlds)
+                for (final w in RpgCatalog.allWorlds)
                   _SubjectCard(
                     world: w,
                     level: Proficiency.subjectLevel(record, w.id),

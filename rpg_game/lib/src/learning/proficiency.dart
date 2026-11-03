@@ -53,7 +53,7 @@ class Proficiency {
   static const minAnswered = 5;
 
   static final Map<String, StageDef> _stageOfSet = {
-    for (final w in RpgCatalog.worlds)
+    for (final w in RpgCatalog.allWorlds)
       for (final s in w.stages) s.questionSetId: s,
   };
 
@@ -129,7 +129,7 @@ class Proficiency {
       groups.putIfAbsent(f.$1, () => {}).putIfAbsent(f.$2, () => []).add(s);
     }
     return {
-      for (final w in RpgCatalog.worlds)
+      for (final w in RpgCatalog.allWorlds)
         w.id: [
           for (final field in fieldsOf(w.id))
             _score(w.id, field, groups[w.id]?[field] ?? const []),

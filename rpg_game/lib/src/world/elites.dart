@@ -118,7 +118,7 @@ class BossRules {
   const BossRules._();
 
   static final Map<String, StageDef> _lastOfRoute = {
-    for (final w in RpgCatalog.worlds)
+    for (final w in RpgCatalog.allWorlds)
       for (final s in w.stages) '${w.id}/${s.branch}': s,
   };
 

@@ -21,9 +21,9 @@ Future<void> startItemsBattle(
   if (questions.isEmpty) return;
   final progress = await services.repository.load();
   final worldId = LearningRecord.subjectOf(items.first.setId);
-  final world = RpgCatalog.worlds.firstWhere(
+  final world = RpgCatalog.allWorlds.firstWhere(
     (w) => w.id == worldId,
-    orElse: () => RpgCatalog.worlds.first,
+    orElse: () => RpgCatalog.allWorlds.first,
   );
   await nav.push(
     MaterialPageRoute<void>(
@@ -123,7 +123,7 @@ class StudyBoostCard extends StatelessWidget {
                   ),
                   if (week.bestSubject case final s?)
                     Text(
-                      'いちばんがんばった教科：${RpgCatalog.worlds.where((w) => w.id == s).firstOrNull?.subject ?? s}',
+                      'いちばんがんばった教科：${RpgCatalog.allWorlds.where((w) => w.id == s).firstOrNull?.subject ?? s}',
                       style: small,
                     ),
                   if (next.isNotEmpty)
@@ -155,7 +155,7 @@ class StudyBoostCard extends StatelessWidget {
                     ListTile(
                       key: ValueKey('mix-$s'),
                       title: Text(
-                        RpgCatalog.worlds
+                        RpgCatalog.allWorlds
                                 .where((w) => w.id == s)
                                 .firstOrNull
                                 ?.subject ??

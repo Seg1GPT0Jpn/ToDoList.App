@@ -118,7 +118,7 @@ abstract final class Mastery {
   static RpgProgress migrate(RpgProgress progress) {
     if (progress.masteryVersion >= version) return progress;
     final exp = <String, int>{...progress.masteryExp};
-    for (final w in RpgCatalog.worlds) {
+    for (final w in RpgCatalog.allWorlds) {
       for (final s in w.stages) {
         if (!progress.clearedStageIds.contains(s.id)) continue;
         final course = courseOfStage(s);

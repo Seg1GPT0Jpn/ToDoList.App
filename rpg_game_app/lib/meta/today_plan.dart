@@ -120,7 +120,7 @@ class _TodayPlanCardState extends State<TodayPlanCard> {
     final progress = await services.repository.load();
     if (!mounted || questions.isEmpty) return;
     final worldId = LearningRecord.subjectOf(items.first.setId);
-    final world = RpgCatalog.worlds.firstWhere(
+    final world = RpgCatalog.allWorlds.firstWhere(
       (w) => w.id == worldId,
       orElse: () => RpgCatalog.worlds.first,
     );

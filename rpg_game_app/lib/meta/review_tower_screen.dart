@@ -230,7 +230,7 @@ class _ReviewTowerScreenState extends State<ReviewTowerScreen> {
   }
 
   static String _subjectName(String id) {
-    for (final w in RpgCatalog.worlds) {
+    for (final w in RpgCatalog.allWorlds) {
       if (w.id == id) return w.subject;
     }
     return id;
@@ -245,7 +245,7 @@ class _ReviewTowerScreenState extends State<ReviewTowerScreen> {
     final services = RpgServices.of(context);
     final progress = await services.repository.load();
     final worldId = LearningRecord.subjectOf(firstSetId);
-    final world = RpgCatalog.worlds.firstWhere(
+    final world = RpgCatalog.allWorlds.firstWhere(
       (w) => w.id == worldId,
       orElse: () => RpgCatalog.worlds.first,
     );
