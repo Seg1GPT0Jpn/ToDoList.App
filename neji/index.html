@@ -1,4 +1,4 @@
-<title>ネジほどき</title>
+<title>ネジほどき 3D</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -6,14 +6,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=M+PLUS+Rounded+1c:wght@500;800&display=swap">
 <style>
-/* Layout: one-screen workbench — header strip, canvas board in the middle, tool tray at the bottom. Single dark "workshop" look by choice. */
+/* Layout: one-screen workbench — header, tray (color boxes + spare slots), 3D turntable, tool row. Single dark "workshop" look by choice. */
 :root {
-  --steel: #1d2a35;      /* page / bench */
-  --steel-2: #263744;    /* raised strips */
-  --rail: #3a4f5f;       /* edges */
-  --chalk: #eef2f4;      /* text */
-  --chalk-dim: #9fb1bd;  /* secondary text */
-  --brass: #f2b33d;      /* accent: brass screw */
+  --steel: #1d2a35;
+  --steel-2: #263744;
+  --rail: #3a4f5f;
+  --chalk: #eef2f4;
+  --chalk-dim: #9fb1bd;
+  --brass: #f2b33d;
   --brass-ink: #2b1d05;
   --danger: #ff6b5e;
   --font-display: "Dela Gothic One", "Hiragino Sans", "Yu Gothic", sans-serif;
@@ -25,13 +25,13 @@ html, body { height: 100%; }
 body {
   margin: 0; background: var(--steel); color: var(--chalk);
   font-family: var(--font-body); -webkit-user-select: none; user-select: none;
-  -webkit-tap-highlight-color: transparent; overflow: hidden; touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent; overflow: hidden; touch-action: none;
 }
 #app {
   height: 100%; display: flex; flex-direction: column; box-sizing: border-box;
   padding-left: max(16px, env(safe-area-inset-left, 0px));
   padding-right: max(16px, env(safe-area-inset-right, 0px));
-  padding-block: 8px; gap: 8px; max-width: 560px; margin: 0 auto;
+  padding-block: 8px; gap: 6px; max-width: 560px; margin: 0 auto;
 }
 header { display: flex; align-items: center; gap: 10px; }
 .logo { font-family: var(--font-display); font-size: 22px; letter-spacing: .04em; line-height: 1; }
@@ -39,18 +39,28 @@ header { display: flex; align-items: center; gap: 10px; }
 .lv {
   margin-left: auto; font-family: var(--font-display); font-size: 14px; letter-spacing: .08em;
   background: var(--steel-2); border: 1px solid var(--rail); border-radius: 999px; padding: 5px 12px;
-  font-variant-numeric: tabular-nums;
+  font-variant-numeric: tabular-nums; white-space: nowrap;
 }
 .icon-btn {
   width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--rail); background: var(--steel-2);
-  color: var(--chalk); font: 800 15px var(--font-body); cursor: pointer; display: grid; place-items: center; padding: 0;
+  color: var(--chalk); font: 800 15px var(--font-body); cursor: pointer; display: grid; place-items: center; padding: 0; flex: none;
 }
-#stage { flex: 1; min-height: 0; position: relative; }
-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; }
-.tools { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+#tray { height: 150px; flex: none; }
+#stage {
+  flex: 1; min-height: 0; position: relative; border-radius: 22px; overflow: hidden;
+  background: radial-gradient(120% 90% at 50% 35%, #34495a 0%, #22313d 60%, #1a2630 100%);
+  border: 1px solid var(--rail);
+}
+#gl { position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; cursor: grab; }
+#fx { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 5; }
+.hint-line {
+  position: absolute; left: 0; right: 0; bottom: 8px; text-align: center; font-size: 11px; color: var(--chalk-dim);
+  pointer-events: none;
+}
+.tools { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; flex: none; }
 .tool {
   border: 1px solid var(--rail); background: var(--steel-2); color: var(--chalk); border-radius: 14px;
-  padding: 9px 4px 8px; font: 800 14px var(--font-body); cursor: pointer; display: flex; flex-direction: column;
+  padding: 8px 4px 7px; font: 800 14px var(--font-body); cursor: pointer; display: flex; flex-direction: column;
   align-items: center; gap: 2px;
 }
 .tool small { font-weight: 500; font-size: 11px; color: var(--chalk-dim); font-variant-numeric: tabular-nums; }
@@ -58,9 +68,9 @@ canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block
 .tool:active:not(:disabled), .icon-btn:active { transform: translateY(1px); }
 button:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
 .toast {
-  position: absolute; left: 50%; top: 24%; transform: translateX(-50%); background: var(--danger); color: #fff;
-  font-weight: 800; font-size: 14px; padding: 6px 14px; border-radius: 999px; pointer-events: none;
-  opacity: 0; transition: opacity .2s; white-space: nowrap;
+  position: absolute; left: 50%; top: 14px; transform: translateX(-50%); background: var(--danger); color: #fff;
+  font-weight: 800; font-size: 13px; padding: 6px 14px; border-radius: 999px; pointer-events: none;
+  opacity: 0; transition: opacity .2s; white-space: nowrap; z-index: 2;
 }
 .toast.show { opacity: 1; }
 .overlay {
@@ -71,9 +81,9 @@ button:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
   background: var(--steel-2); border: 1px solid var(--rail); border-radius: 20px; padding: 22px 20px 18px;
   width: min(340px, 100%); box-sizing: border-box; text-align: center; display: flex; flex-direction: column; gap: 12px;
 }
-.card h2 { margin: 0; font-family: var(--font-display); font-weight: 400; font-size: 28px; letter-spacing: .04em; text-wrap: balance; }
+.card h2 { margin: 0; font-family: var(--font-display); font-weight: 400; font-size: 26px; letter-spacing: .04em; text-wrap: balance; }
 .card p { margin: 0; color: var(--chalk-dim); line-height: 1.7; font-size: 14px; }
-.card ol { margin: 0; padding-left: 1.3em; text-align: left; line-height: 1.75; font-size: 14px; color: var(--chalk); }
+.card ol { margin: 0; padding-left: 1.3em; text-align: left; line-height: 1.7; font-size: 14px; color: var(--chalk); }
 .card ol b { color: var(--brass); }
 .btn {
   border: 0; border-radius: 14px; padding: 12px; font: 800 16px var(--font-body); cursor: pointer;
@@ -81,6 +91,10 @@ button:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
 }
 .btn.ghost { background: transparent; color: var(--chalk); border: 1px solid var(--rail); }
 .note { font-size: 12px; color: var(--chalk-dim); }
+#loading {
+  position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--font-display);
+  color: var(--chalk-dim); font-size: 15px; letter-spacing: .1em; pointer-events: none;
+}
 </style>
 
 <div id="app">
@@ -90,26 +104,30 @@ button:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
     <button class="icon-btn" id="soundBtn" aria-label="サウンド切り替え">♪</button>
     <button class="icon-btn" id="helpBtn" aria-label="遊び方">?</button>
   </header>
+  <div id="tray"></div>
   <div id="stage">
-    <canvas id="cv"></canvas>
+    <canvas id="gl"></canvas>
+    <div id="loading">組み立て中…</div>
     <div class="toast" id="toast">予備スロットがいっぱい</div>
+    <div class="hint-line">ドラッグで回転 ・ ピンチ / ホイールで拡大</div>
   </div>
   <div class="tools">
-    <button class="tool" id="hintBtn">ヒント<small id="hintLeft">のこり 3</small></button>
+    <button class="tool" id="hintBtn">ヒント<small id="hintLeft">のこり 2</small></button>
     <button class="tool" id="slotBtn">＋スロット<small id="slotLeft">のこり 1</small></button>
-    <button class="tool" id="retryBtn">やり直す<small>同じ盤面</small></button>
+    <button class="tool" id="retryBtn">やり直す<small>同じ組み立て</small></button>
   </div>
 </div>
+<canvas id="fx"></canvas>
 
 <div class="overlay" id="ovHelp" hidden>
   <div class="card">
     <h2>遊び方</h2>
     <ol>
-      <li>上に何も重なっていない<b>ネジ</b>をタップして外す</li>
-      <li>外したネジは<b>同じ色の箱</b>へ。箱がなければ<b>予備スロット</b>へ</li>
-      <li>箱は3本で満杯。次の箱が来ると予備のネジも自動で入る</li>
-      <li>ネジが全部外れた板は落ちる。1本だけ残ると<b>ぶら下がって回る</b></li>
-      <li>予備スロットが埋まって動けなくなったら失敗</li>
+      <li>立体を<b>ドラッグで回して</b>、裏側のネジも探す</li>
+      <li>ネジの頭の先に<b>他の部品があると抜けない</b>。先に手前の部品を外す</li>
+      <li>外したネジは<b>同じ色の箱</b>へ。合う箱がなければ<b>予備スロット</b>へ</li>
+      <li>箱は3本で出荷。次の箱が来ると予備のネジも自動で入る</li>
+      <li>ネジが全部抜けた部品は落ちる。予備が埋まって動けなくなったら失敗</li>
     </ol>
     <p class="note">広告なし・課金なし・通信なし。</p>
     <button class="btn" id="helpClose">はじめる</button>
@@ -118,161 +136,475 @@ button:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
 <div class="overlay" id="ovWin" hidden>
   <div class="card">
     <h2 id="winTitle">クリア！</h2>
-    <p id="winText">すべての板を外しました。</p>
+    <p id="winText">すべての部品を外しました。</p>
     <button class="btn" id="nextBtn">次のレベルへ</button>
   </div>
 </div>
 <div class="overlay" id="ovLose" hidden>
   <div class="card">
     <h2>詰まった…</h2>
-    <p>予備スロットがいっぱいで、入れられる箱がありません。</p>
+    <p>予備スロットがいっぱいで、どの箱にも入れられるネジがありません。</p>
     <button class="btn" id="loseSlot">＋スロットで続ける</button>
     <button class="btn ghost" id="loseRetry">やり直す</button>
   </div>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
 (() => {
 'use strict';
-const W = 400, H = 660, G = 1500, SR = 13;
 const COLORS = ['#e5484d', '#3e8ef7', '#f5c518', '#30a46c', '#8e4ec6', '#f76b15', '#e93d82', '#12b5a5'];
-const TINTS = ['#d4a373', '#8fb3cf', '#a9c98d', '#d9a3bf', '#b8a6e3', '#e6cf8e', '#93d1c6', '#e8a88a'];
-const BOX_W = 158, BOX_H = 70, BOX_Y = 12, BOX_X = [31, 211], HOLE_X = [32, 79, 126];
-const BUF_Y = 128, BOARD = { x: 14, y: 168, w: 372, h: 482 };
+const BUF0 = 5;
+const V = (x, y, z) => new THREE.Vector3(x, y, z);
 
 const store = {
-  get(k, d) { try { const v = localStorage.getItem('nejihodoki.' + k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } },
-  set(k, v) { try { localStorage.setItem('nejihodoki.' + k, JSON.stringify(v)); } catch (e) {} }
+  get(k, d) { try { const v = localStorage.getItem('nejihodoki3d.' + k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } },
+  set(k, v) { try { localStorage.setItem('nejihodoki3d.' + k, JSON.stringify(v)); } catch (e) {} }
 };
-
 function mulberry32(a) {
   return function () { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; };
 }
-function segDist(px, py, ax, ay, bx, by) {
-  const dx = bx - ax, dy = by - ay, l2 = dx * dx + dy * dy;
-  let t = l2 ? ((px - ax) * dx + (py - ay) * dy) / l2 : 0; t = Math.max(0, Math.min(1, t));
-  return Math.hypot(px - (ax + t * dx), py - (ay + t * dy));
+function shuffle(a, rnd) { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+
+/* =========================================================
+   Three.js scene
+   ========================================================= */
+const glCanvas = document.getElementById('gl');
+const renderer = new THREE.WebGLRenderer({ canvas: glCanvas, antialias: true, alpha: true });
+renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+renderer.outputEncoding = THREE.sRGBEncoding;
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(38, 1, 0.1, 100);
+scene.add(new THREE.HemisphereLight(0xfff3e0, 0x334455, 0.85));
+const sun = new THREE.DirectionalLight(0xffffff, 0.85);
+sun.position.set(5, 11, 7); sun.castShadow = true;
+sun.shadow.mapSize.set(1024, 1024);
+Object.assign(sun.shadow.camera, { left: -6, right: 6, top: 8, bottom: -4, near: 1, far: 30 });
+scene.add(sun);
+const fill = new THREE.DirectionalLight(0x9fc4ff, 0.3); fill.position.set(-6, 4, -5); scene.add(fill);
+
+const table = new THREE.Group(); scene.add(table);
+{
+  const top = new THREE.Mesh(new THREE.CylinderGeometry(3.7, 3.7, 0.3, 64), new THREE.MeshStandardMaterial({ color: 0xd9cfbf, roughness: .8 }));
+  top.position.y = -0.15; top.receiveShadow = true; table.add(top);
+  const rim = new THREE.Mesh(new THREE.CylinderGeometry(3.85, 3.9, 0.35, 64), new THREE.MeshStandardMaterial({ color: 0x6b5a48, roughness: .7 }));
+  rim.position.y = -0.33; table.add(rim);
 }
-function plateEnds(p) { const c = Math.cos(p.a) * p.L / 2, s = Math.sin(p.a) * p.L / 2; return [p.x - c, p.y - s, p.x + c, p.y + s]; }
-function screwPos(s) { const p = s.plate; return { x: p.x + Math.cos(p.a) * s.lx, y: p.y + Math.sin(p.a) * s.lx }; }
+let model = new THREE.Group(); scene.add(model);
 
-/* ---------- level generation (always solvable in the static layout) ---------- */
-function genLevel(level) {
-  for (let attempt = 0; attempt < 400; attempt++) {
-    const rnd = mulberry32(level * 7919 + attempt * 104729 + 17);
-    const nPlates = Math.min(3 + level, 16);
-    const nColors = Math.min(2 + Math.floor(level / 2), COLORS.length);
-    const plates = [], screws = [];
-    for (let k = 0; k < nPlates; k++) {
-      for (let tries = 0; tries < 80; tries++) {
-        const angs = [0, Math.PI / 2, Math.PI / 4, -Math.PI / 4, (rnd() - .5) * Math.PI];
-        const a = angs[Math.floor(rnd() * angs.length)];
-        const L = 60 + rnd() * 180, r = 19 + rnd() * 7;
-        const x = 200 + (rnd() + rnd() - 1) * 160, y = 410 + (rnd() + rnd() - 1) * 210;
-        const p = { id: k, x, y, a, L, r, tint: TINTS[Math.floor(rnd() * TINTS.length)], holes: [], mode: 'fixed' };
-        const [ax, ay, bx, by] = plateEnds(p);
-        if (Math.min(ax, bx) < 40 || Math.max(ax, bx) > 360 || Math.min(ay, by) < 198 || Math.max(ay, by) > 622) continue;
-        const locals = [-L / 2, L / 2]; if (L > 165 && rnd() < .6) locals.push(0);
-        const pts = locals.map(lx => ({ lx, x: x + Math.cos(a) * lx, y: y + Math.sin(a) * lx }));
-        if (pts.some(q => screws.some(s => Math.hypot(s.x - q.x, s.y - q.y) < 38))) continue;
-        // a new (higher) plate must clearly cover or clearly miss every existing screw
-        if (screws.some(s => { const d = segDist(s.x, s.y, ax, ay, bx, by); return d > r - 5 && d < r + 15; })) continue;
-        p.holes = locals.slice();
-        plates.push(p);
-        pts.forEach(q => screws.push({ plate: p, lx: q.lx, x: q.x, y: q.y }));
-        break;
+const headGeo = new THREE.CylinderGeometry(0.18, 0.18, 0.09, 24);
+const slotGeo = new THREE.BoxGeometry(0.25, 0.035, 0.05);
+const proxyGeo = new THREE.SphereGeometry(0.34, 8, 6);
+const proxyMat = new THREE.MeshBasicMaterial({ visible: false });
+const screwMats = COLORS.map(c => new THREE.MeshStandardMaterial({ color: c, metalness: .35, roughness: .35 }));
+const slotMats = COLORS.map(c => new THREE.MeshStandardMaterial({ color: new THREE.Color(c).multiplyScalar(.35), roughness: .6 }));
+const edgeMat = new THREE.LineBasicMaterial({ color: 0x10181f, transparent: true, opacity: .28 });
+
+/* =========================================================
+   Models — original designs built from boxes, prisms and cylinders.
+   Each screw candidate: part-local point on a surface + outward normal.
+   ========================================================= */
+function Builder() {
+  const parts = [];
+  const mk = (geo, color, pos, rot, opts = {}) => {
+    const mat = new THREE.MeshStandardMaterial({ color, roughness: opts.rough ?? .65, metalness: opts.metal ?? 0, transparent: true, opacity: opts.opacity ?? 1 });
+    const mesh = new THREE.Mesh(geo, mat);
+    mesh.position.set(...pos); if (rot) mesh.rotation.set(...rot);
+    mesh.castShadow = true; mesh.receiveShadow = true;
+    mesh.add(new THREE.LineSegments(new THREE.EdgesGeometry(geo, 25), edgeMat));
+    const part = { id: parts.length, mesh, mat, cands: [], baseOpacity: opts.opacity ?? 1 };
+    mesh.userData.part = part; parts.push(part); return part;
+  };
+  const FACES = { '+x': [V(1,0,0), 'z', 'y'], '-x': [V(-1,0,0), 'z', 'y'], '+y': [V(0,1,0), 'x', 'z'], '-y': [V(0,-1,0), 'x', 'z'], '+z': [V(0,0,1), 'x', 'y'], '-z': [V(0,0,-1), 'x', 'y'] };
+  return {
+    parts,
+    box(size, pos, color, rot, opts) { const p = mk(new THREE.BoxGeometry(...size), color, pos, rot, opts); p.size = size; return p; },
+    cyl(r, h, pos, color, rot, opts) { const p = mk(new THREE.CylinderGeometry(r, r, h, 32), color, pos, rot, opts); p.r = r; p.h = h; return p; },
+    prism(w, h, d, pos, color, rot, opts) {
+      const s = new THREE.Shape(); s.moveTo(-w / 2, 0); s.lineTo(w / 2, 0); s.lineTo(0, h); s.closePath();
+      const g = new THREE.ExtrudeGeometry(s, { depth: d, bevelEnabled: false }); g.translate(0, 0, -d / 2);
+      const p = mk(g, color, pos, rot, opts); p.d = d; return p;
+    },
+    sc(p, face, uvs) {
+      const [n, ua, va] = FACES[face], half = { x: p.size[0] / 2, y: p.size[1] / 2, z: p.size[2] / 2 };
+      for (const [u, v] of uvs) {
+        const pt = n.clone().multiply(V(half.x, half.y, half.z));
+        pt[ua] += u * half[ua]; pt[va] += v * half[va];
+        p.cands.push({ p: pt, n: n.clone() });
       }
+    },
+    cap(p, sign, pols) { for (const [rf, a] of pols) p.cands.push({ p: V(Math.cos(a) * rf * p.r, sign * p.h / 2, Math.sin(a) * rf * p.r), n: V(0, sign, 0) }); },
+    raw(p, pt, n) { p.cands.push({ p: pt, n: n.normalize() }); },
+    deco(p, geo, color, pos, rot) {
+      const m = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ color, roughness: .5, transparent: true }));
+      m.position.set(...pos); if (rot) m.rotation.set(...rot); m.castShadow = true; p.mesh.add(m); p.decos = (p.decos || []).concat(m);
     }
-    if (plates.length < Math.max(3, nPlates - 2)) continue;
-    let rem = screws.length % 3;
-    while (rem > 0) {
-      const i = screws.findIndex(s => s.lx === 0);
-      if (i < 0) break;
-      const p = screws[i].plate; p.holes = p.holes.filter(v => v !== 0); screws.splice(i, 1); rem--;
-    }
-    if (screws.length % 3) continue;
+  };
+}
 
-    // greedy removal order with static coverage
-    const gone = new Set(), left = new Map(plates.map(p => [p, p.holes.length])), order = [];
-    const covered = s => plates.some(q => q.id > s.plate.id && left.get(q) > 0 &&
-      segDist(s.x, s.y, ...plateEnds(q)) < q.r + 6);
-    while (order.length < screws.length) {
-      const ex = screws.filter(s => !gone.has(s) && !covered(s));
-      const s = ex[Math.floor(rnd() * ex.length)];
-      gone.add(s); order.push(s); left.set(s.plate, left.get(s.plate) - 1);
+const MODELS = [
+  { name: '山小屋', build(b) {
+    const floor = b.box([4.6, 0.3, 3.8], [0, 0.15, 0], 0x8a5a3b);
+    b.sc(floor, '+y', [[-.9, -.92], [.9, -.92], [-.9, .92], [.9, .92], [0, .92], [0, -.92]]);
+    const front = b.box([4.0, 2.2, 0.2], [0, 1.4, 1.4], 0xe9c891);
+    b.sc(front, '+z', [[-.85, .75], [.85, .75], [-.85, -.75], [.85, -.75], [0, -.2], [-.5, .35], [.5, .35]]);
+    b.sc(front, '+y', [[-.6, 0], [.6, 0]]);
+    const back = b.box([4.0, 2.2, 0.2], [0, 1.4, -1.4], 0xe9c891);
+    b.sc(back, '-z', [[-.85, .75], [.85, .75], [-.85, -.75], [.85, -.75], [-.45, 0], [.45, 0]]);
+    b.sc(back, '+y', [[-.6, 0], [.6, 0]]);
+    for (const s of [-1, 1]) {
+      const w = b.box([0.2, 2.2, 2.6], [s * 1.9, 1.4, 0], 0xdcb77f);
+      b.sc(w, s > 0 ? '+x' : '-x', [[-.8, .75], [.8, .75], [-.8, -.75], [.8, -.75], [0, .1]]);
+      const g = b.prism(3.0, 1.2, 0.2, [s * 1.9, 2.5, 0], 0xc99a62, [0, s * Math.PI / 2, 0]);
+      b.raw(g, V(-0.8, 0.28, 0.1), V(0, 0, 1)); b.raw(g, V(0.8, 0.28, 0.1), V(0, 0, 1)); b.raw(g, V(0, 0.75, 0.1), V(0, 0, 1));
+      const win = b.box([0.12, 0.9, 1.0], [s * 2.06, 1.5, 0], 0x9fd3e6, null, { rough: .2, metal: .1 });
+      b.sc(win, s > 0 ? '+x' : '-x', [[-.75, .75], [.75, -.75], [.75, .75]]);
     }
-    const boxes = []; let prev = -1;
+    const th = Math.asin(.625);
+    for (const s of [-1, 1]) {
+      const roof = b.box([4.6, 0.16, 2.4], [0, 3.012, s * 0.987], 0x3f6f7d, [s * th, 0, 0]);
+      const list = [[-.8, -.35], [.8, -.35], [-.8, .55], [.8, .55], [0, .55], [-.35, -.6], [.35, -.6]];
+      if (s < 0) list.push([.52, -.05]);
+      b.sc(roof, '+y', list.map(([u, v]) => [u, s * v]));
+    }
+    const ridge = b.box([4.7, 0.2, 1.0], [0, 3.78, 0], 0x2c4f5a);
+    b.sc(ridge, '+y', [[-.85, 0], [0, 0], [.85, 0]]);
+    const door = b.box([0.8, 1.4, 0.12], [0, 1.0, 1.56], 0x7a4a2e);
+    b.sc(door, '+z', [[0, .75], [0, -.7], [.6, 0]]);
+    b.deco(door, new THREE.SphereGeometry(0.06, 10, 8), 0xf2b33d, [-0.25, 0, 0.08]);
+    const chim = b.box([0.5, 1.1, 0.5], [1.2, 3.6, -0.6], 0xb65e44);
+    b.sc(chim, '+x', [[0, .1]]); b.sc(chim, '-x', [[0, .1]]); b.sc(chim, '-z', [[0, .1]]); b.sc(chim, '+y', [[0, 0]]);
+    const box = b.box([1.2, 0.35, 0.3], [0, 1.95, 1.75], 0x6c8f3a);
+    b.sc(box, '+z', [[-.7, 0], [.7, 0]]);
+  } },
+  { name: 'ロボット', build(b) {
+    const body = 0xe07a3f, limb = 0x5b8fb9, dark = 0x2f3e46, cream = 0xf0e3c2;
+    for (const s of [-1, 1]) {
+      const foot = b.box([0.9, 0.35, 1.3], [s * 0.55, 0.175, 0.15], dark);
+      b.sc(foot, '+y', [[0, .75], [s * .6, -.6]]); b.sc(foot, s > 0 ? '+x' : '-x', [[0, 0]]);
+      const leg = b.box([0.6, 1.5, 0.6], [s * 0.55, 1.1, 0], limb);
+      b.sc(leg, '+z', [[0, 0], [0, .7]]); b.sc(leg, s > 0 ? '+x' : '-x', [[0, 0], [0, .6]]); b.sc(leg, '-z', [[0, .3]]);
+      const knee = b.box([0.7, 0.4, 0.15], [s * 0.55, 1.1, 0.37], cream);
+      b.sc(knee, '+z', [[-.6, 0], [.6, 0]]);
+    }
+    const pelvis = b.box([1.7, 0.5, 1.0], [0, 2.1, 0], dark);
+    b.sc(pelvis, '+z', [[-.8, 0], [.8, 0]]); b.sc(pelvis, '-z', [[-.8, 0], [.8, 0]]); b.sc(pelvis, '+y', [[-.85, 0], [.85, 0]]);
+    const torso = b.box([2.0, 1.8, 1.3], [0, 3.25, 0], body);
+    b.sc(torso, '+z', [[-.8, .8], [.8, .8], [-.8, -.8], [.8, -.8], [0, 0]]);
+    b.sc(torso, '-z', [[-.7, .7], [.7, .7], [0, -.5], [-.85, -.85], [.85, -.85]]);
+    b.sc(torso, '+x', [[0, .5]]); b.sc(torso, '-x', [[0, .5]]);
+    b.sc(torso, '+y', [[-.6, .5], [.6, .5], [0, -.6], [-.88, -.6]]);
+    const chest = b.box([1.2, 0.9, 0.14], [0, 3.3, 0.72], cream);
+    b.sc(chest, '+z', [[-.8, .75], [.8, .75], [-.8, -.75], [.8, -.75]]);
+    const dial = b.cyl(0.24, 0.12, [0.25, 3.35, 0.85], 0xf2b33d, [Math.PI / 2, 0, 0], { metal: .4, rough: .3 });
+    b.cap(dial, 1, [[0, 0]]);
+    const pack = b.box([1.4, 1.2, 0.4], [0, 3.3, -0.85], limb);
+    b.sc(pack, '-z', [[-.8, .8], [.8, .8], [0, -.8], [0, 0]]); b.sc(pack, '+y', [[0, 0]]);
+    for (const s of [-1, 1]) {
+      const arm = b.box([0.5, 1.7, 0.55], [s * 1.32, 2.95, 0], limb, [0, 0, s * 0.08]);
+      b.sc(arm, s > 0 ? '+x' : '-x', [[0, .55], [0, -.3]]); b.sc(arm, '+z', [[0, -.6], [0, .2]]); b.sc(arm, '-z', [[0, -.2]]);
+      const cap = b.box([0.8, 0.45, 0.8], [s * 1.32, 3.95, 0], body);
+      b.sc(cap, '+y', [[0, 0], [s * .55, .55]]); b.sc(cap, s > 0 ? '+x' : '-x', [[0, 0]]);
+      const hand = b.box([0.6, 0.45, 0.6], [s * 1.42, 1.9, 0], dark);
+      b.sc(hand, s > 0 ? '+x' : '-x', [[0, 0]]); b.sc(hand, '+z', [[0, 0]]);
+    }
+    const neck = b.box([0.6, 0.3, 0.6], [0, 4.3, 0], dark);
+    b.sc(neck, '+z', [[0, 0]]);
+    const head = b.box([1.5, 1.1, 1.2], [0, 5.0, 0], cream);
+    b.sc(head, '+x', [[0, 0], [.6, .6]]); b.sc(head, '-x', [[0, 0], [-.6, .6]]);
+    b.sc(head, '+y', [[-.6, -.6], [.53, 0], [-.6, .6]]); b.sc(head, '-z', [[-.6, .5], [.6, .5], [0, -.5]]);
+    b.sc(head, '+z', [[-.75, .75], [.75, .75], [0, 0]]);
+    const visor = b.box([1.2, 0.35, 0.12], [0, 5.0, 0.66], 0x7fd6ff, null, { rough: .15, metal: .2 });
+    b.sc(visor, '+z', [[-.85, 0], [.85, 0]]);
+    for (const s of [-1, 1]) {
+      const ear = b.cyl(0.26, 0.2, [s * 0.85, 5.0, 0], 0xe07a3f, [0, 0, -s * Math.PI / 2]);
+      b.cap(ear, 1, [[0, 0]]);
+    }
+    const ant = b.box([0.35, 0.15, 0.35], [0.4, 5.62, 0], dark);
+    b.sc(ant, '+z', [[0, 0]]); b.sc(ant, '-z', [[0, 0]]);
+    b.deco(ant, new THREE.CylinderGeometry(0.05, 0.05, 0.6, 8), 0x9aa5ad, [0, 0.35, 0]);
+    b.deco(ant, new THREE.SphereGeometry(0.12, 12, 10), 0xe5484d, [0, 0.7, 0]);
+  } },
+  { name: 'トラック', build(b) {
+    const chassis = b.box([4.6, 0.4, 1.7], [0, 0.95, 0], 0x3b3f45);
+    b.sc(chassis, '+z', [[-.63, 0], [.63, 0], [-.1, 0]]); b.sc(chassis, '-z', [[-.63, 0], [.63, 0], [.1, 0]]);
+    b.sc(chassis, '-x', [[-.6, 0], [.6, 0]]);
+    for (const x of [-1.45, 1.45]) for (const s of [-1, 1]) {
+      const wh = b.cyl(0.6, 0.4, [x, 0.6, s * 1.05], 0x26292d, [s * Math.PI / 2, 0, 0]);
+      b.cap(wh, 1, [[0, 0], [.6, 0], [.6, Math.PI]]);
+      b.deco(wh, new THREE.CylinderGeometry(0.3, 0.3, 0.42, 20), 0xcfd4d8, [0, 0, 0]);
+    }
+    const cab = b.box([1.5, 1.5, 1.7], [1.45, 1.9, 0], 0x3f8f6b);
+    b.sc(cab, '+x', [[-.7, -.7], [.7, -.7], [0, -.7]]);
+    b.sc(cab, '+z', [[-.7, .7], [.7, .7], [0, -.6]]); b.sc(cab, '-z', [[-.7, .7], [.7, .7], [0, -.6]]);
+    b.sc(cab, '+y', [[0, -.6], [0, .6], [-.8, -.8], [.8, .8]]);
+    const glass = b.box([0.1, 0.6, 1.4], [2.24, 2.25, 0], 0x9fd3e6, null, { rough: .15, metal: .1 });
+    b.sc(glass, '+x', [[-.85, .7], [.85, .7], [-.85, -.7], [.85, -.7]]);
+    for (const s of [-1, 1]) {
+      const door = b.box([0.9, 0.9, 0.1], [1.45, 1.8, s * 0.9], 0x52a983);
+      b.sc(door, s > 0 ? '+z' : '-z', [[-.7, .7], [.7, -.7], [.7, .7]]);
+      const hl = b.box([0.1, 0.25, 0.35], [2.26, 1.38, s * 0.6], 0xfff2b0, null, { rough: .2 });
+      b.sc(hl, '+x', [[0, 0]]);
+      const panel = b.box([2.0, 0.8, 0.08], [-0.75, 1.9, s * 0.94], 0xf2b33d);
+      b.sc(panel, s > 0 ? '+z' : '-z', [[-.85, 0], [.85, 0], [0, .6]]);
+    }
+    const bar = b.box([0.5, 0.15, 1.2], [1.45, 2.72, 0], 0xf76b15);
+    b.sc(bar, '+y', [[-.6, -.7], [.6, .7], [0, 0]]);
+    const cargo = b.box([2.9, 1.7, 1.8], [-0.75, 2.0, 0], 0xe8e2d6);
+    b.sc(cargo, '+y', [[-.8, -.8], [.8, .8], [-.8, .8], [.8, -.8], [0, 0], [-.3, 0]]);
+    b.sc(cargo, '-x', [[-.8, .8], [.8, .8], [0, -.6], [-.8, -.8]]);
+    b.sc(cargo, '+z', [[-.85, .8], [.85, .8], [0, 0], [-.85, -.8]]); b.sc(cargo, '-z', [[-.85, .8], [.85, .8], [0, 0], [.85, -.8]]);
+    const backDoor = b.box([0.08, 1.2, 1.4], [-2.24, 1.9, 0], 0xc9c2b4);
+    b.sc(backDoor, '-x', [[-.8, .8], [.8, .8], [0, -.8], [0, 0]]);
+    const rack = b.box([2.4, 0.12, 1.2], [-0.75, 2.92, 0], 0x5c6670, null, { metal: .4, rough: .4 });
+    b.sc(rack, '+y', [[-.85, -.7], [.85, .7], [0, 0], [-.85, .7]]);
+    const rb = b.box([0.2, 0.3, 1.8], [-2.4, 0.85, 0], 0x5c6670);
+    b.sc(rb, '-x', [[-.7, 0], [.7, 0]]);
+    const fb = b.box([0.2, 0.35, 1.9], [2.35, 0.9, 0], 0x5c6670);
+    b.sc(fb, '+x', [[-.75, 0], [.75, 0], [0, 0]]);
+  } },
+  { name: '風車', build(b) {
+    const base = b.box([3.0, 0.5, 3.0], [0, 0.25, 0], 0x8c8173);
+    b.sc(base, '+y', [[-.88, -.88], [.88, .88], [-.88, .88], [.88, -.88]]);
+    b.sc(base, '+z', [[-.6, 0], [.6, 0]]); b.sc(base, '-z', [[0, 0]]);
+    const tower = b.box([2.0, 3.0, 2.0], [0, 2.0, 0], 0xf0e6d2);
+    b.sc(tower, '+z', [[-.75, -.8], [.75, -.8], [0, .55], [-.75, .8], [.75, .8], [0, -.3]]);
+    b.sc(tower, '-z', [[-.7, .7], [.7, -.7], [0, 0]]);
+    b.sc(tower, '+x', [[-.7, .7], [.7, -.7], [0, 0]]); b.sc(tower, '-x', [[-.7, -.7], [.7, .7], [0, 0]]);
+    const th = Math.atan2(1.0, 1.1);
+    for (const s of [-1, 1]) {
+      const r = b.box([2.6, 0.14, 1.65], [0, 4.0, s * 0.62], 0xb3452f, [s * th, 0, 0]);
+      b.sc(r, '+y', [[-.8, s * .5], [.8, s * .5], [0, s * -.4], [-.8, s * -.4]]);
+      const gb = b.prism(2.2, 1.0, 0.16, [s * 1.0, 3.5, 0], 0xd98a5a, [0, s * Math.PI / 2, 0]);
+      b.raw(gb, V(0, 0.4, 0.08), V(0, 0, 1)); b.raw(gb, V(-0.7, 0.18, 0.08), V(0, 0, 1));
+    }
+    const door = b.box([0.7, 1.1, 0.1], [0, 1.05, 1.05], 0x6d4529);
+    b.sc(door, '+z', [[0, .7], [0, -.7]]);
+    const balc = b.box([2.6, 0.12, 0.6], [0, 2.4, 1.3], 0x6d4529);
+    b.sc(balc, '+y', [[-.85, .5], [.85, .5], [0, .5], [-.85, -.6], [.85, -.6]]);
+    const hub = b.cyl(0.35, 0.4, [0, 3.2, 1.4], 0x444b52, [Math.PI / 2, 0, 0], { metal: .5, rough: .35 });
+    b.cap(hub, 1, [[0, 0], [.6, Math.PI / 2]]);
+    for (let i = 0; i < 4; i++) {
+      const a = i * Math.PI / 2 + Math.PI / 4;
+      const bl = b.box([0.45, 2.0, 0.08], [Math.cos(a) * 1.15, 3.2 + Math.sin(a) * 1.15, 1.3], 0xeae2cf, [0, 0, a - Math.PI / 2]);
+      b.sc(bl, '+z', [[0, -.85], [0, .1], [0, .8]]);
+    }
+  } }
+];
+
+/* =========================================================
+   Level generation + solver
+   ========================================================= */
+function computeBlockers(parts, screws) {
+  model.updateMatrixWorld(true);
+  const ray = new THREE.Raycaster();
+  const meshes = parts.map(p => p.mesh);
+  for (const s of screws) {
+    const m = s.part.mesh;
+    const o = m.localToWorld(s.p.clone().add(s.n.clone().multiplyScalar(0.12)));
+    const d = s.n.clone().transformDirection(m.matrixWorld);
+    ray.set(o, d);
+    const set = new Set();
+    for (const mesh of meshes) {
+      if (mesh === m) continue;
+      if (ray.intersectObject(mesh, false).length) set.add(mesh.userData.part.id);
+    }
+    s.blockers = [...set];
+  }
+}
+
+function solve(L, B, limit) {
+  const N = L.n, seen = new Set(); let nodes = 0;
+  function rec(removed, partLeft, buf, qi, act) {
+    removed = removed.slice(); partLeft = partLeft.slice(); buf = buf.slice(); act = act.map(a => a && { c: a.c, n: a.n });
+    const exposed = i => !removed[i] && L.blockers[i].every(p => partLeft[p] === 0);
+    const refill = k => {
+      while (act[k] && act[k].n === 3) {
+        act[k] = qi < L.queue.length ? { c: L.queue[qi++], n: 0 } : null;
+        if (act[k]) for (let j = buf.length - 1; j >= 0 && act[k].n < 3; j--) if (buf[j] === act[k].c) { buf.splice(j, 1); act[k].n++; }
+      }
+    };
+    let moved = true;
+    while (moved) {
+      moved = false; let best = -1, bk = -1, bs = 1e9;
+      for (let i = 0; i < N; i++) if (exposed(i)) {
+        const k = act.findIndex(a => a && a.c === L.color[i] && a.n < 3);
+        if (k >= 0 && partLeft[L.part[i]] < bs) { best = i; bk = k; bs = partLeft[L.part[i]]; }
+      }
+      if (best >= 0) { removed[best] = 1; partLeft[L.part[best]]--; act[bk].n++; refill(bk); moved = true; }
+    }
+    if (removed.every(Boolean)) return true;
+    if (++nodes > limit || buf.length >= B) return false;
+    const key = removed.join('') + '|' + buf.slice().sort().join('');
+    if (seen.has(key)) return false; seen.add(key);
+    const upcoming = act.filter(Boolean).map(a => a.c).concat(L.queue.slice(qi));
+    const cands = [];
+    for (let i = 0; i < N; i++) if (exposed(i)) cands.push(i);
+    const rank = i => { const u = upcoming.indexOf(L.color[i]); return (u < 0 ? 99 : u) * 10 + partLeft[L.part[i]]; };
+    cands.sort((a, b) => rank(a) - rank(b));
+    const tried = new Set();
+    for (const i of cands) {
+      const sig = L.color[i] + ':' + L.part[i]; if (tried.has(sig)) continue; tried.add(sig);
+      const r = removed.slice(); r[i] = 1; const pl = partLeft.slice(); pl[L.part[i]]--;
+      if (rec(r, pl, buf.concat(L.color[i]), qi, act)) return true;
+      if (tried.size >= 7) break;
+    }
+    return false;
+  }
+  const act = [{ c: L.queue[0], n: 0 }, L.queue.length > 1 ? { c: L.queue[1], n: 0 } : null];
+  return rec(new Array(N).fill(0), L.partSize.slice(), [], 2, act);
+}
+
+function buildLevel(level) {
+  const rnd = mulberry32(level * 92821 + 7);
+  const mdef = MODELS[(level - 1) % MODELS.length];
+  scene.remove(model); disposeModel(model);
+  model = new THREE.Group(); scene.add(model);
+  const b = Builder(); mdef.build(b);
+  const parts = b.parts; parts.forEach(p => model.add(p.mesh));
+  model.updateMatrixWorld(true);
+
+  const all = []; parts.forEach(p => p.cands.forEach(c => all.push({ part: p, p: c.p, n: c.n })));
+  computeBlockers(parts, all);
+  const keep = Math.min(.5 + .045 * (level - 1), .92);
+  const chosen = [];
+  for (const p of parts) {
+    const mine = shuffle(all.filter(s => s.part === p), rnd).sort((a, c) => (c.blockers.length > 0) - (a.blockers.length > 0));
+    const k = Math.max(Math.min(2, mine.length), Math.round(mine.length * keep));
+    chosen.push(...mine.slice(0, k));
+  }
+  while (chosen.length % 3) {
+    const counts = new Map(); chosen.forEach(s => counts.set(s.part, (counts.get(s.part) || 0) + 1));
+    const i = chosen.findIndex(s => counts.get(s.part) > 1 && !s.blockers.length);
+    chosen.splice(i >= 0 ? i : chosen.findIndex(s => counts.get(s.part) > 1), 1);
+  }
+  const screws = chosen;
+
+  const L = { n: screws.length, part: screws.map(s => s.part.id), blockers: screws.map(s => s.blockers),
+    partSize: parts.map(p => screws.filter(s => s.part === p).length), color: [], queue: [] };
+
+  const nColors = Math.min(3 + Math.floor((level - 1) / 2), COLORS.length);
+  const target = Math.min(2 + Math.floor((level - 1) / 2), 4);
+  let best = null;
+  for (let attempt = 0; attempt < 70; attempt++) {
+    const removed = new Array(L.n).fill(0), left = L.partSize.slice(), order = [];
+    while (order.length < L.n) {
+      const ex = []; for (let i = 0; i < L.n; i++) if (!removed[i] && L.blockers[i].every(p => left[p] === 0)) ex.push(i);
+      if (!ex.length) break;
+      const i = ex[Math.floor(rnd() * ex.length)]; removed[i] = 1; left[L.part[i]]--; order.push(i);
+    }
+    if (order.length < L.n) { console.warn('model deadlock', mdef.name); break; }
+    const queue = []; let prev = -1;
     for (let i = 0; i < order.length; i += 3) {
       let c; do { c = Math.floor(rnd() * nColors); } while (nColors > 1 && c === prev);
-      prev = c; boxes.push(c);
-      for (let j = 0; j < 3; j++) order[i + j].color = c;
+      prev = c; queue.push(c); for (let j = 0; j < 3; j++) L.color[order[i + j]] = c;
     }
-    screws.forEach(s => { delete s.x; delete s.y; });
-    return { plates, screws, boxes };
+    const win = 4 + Math.min(level, 10) + (attempt % 6);
+    const swaps = Math.floor(order.length * (0.6 + Math.min(level, 12) * .08));
+    for (let k = 0; k < swaps; k++) {
+      const a = Math.floor(rnd() * order.length), c = Math.max(0, Math.min(order.length - 1, a + Math.floor((rnd() * 2 - 1) * win)));
+      const t = L.color[order[a]]; L.color[order[a]] = L.color[order[c]]; L.color[order[c]] = t;
+    }
+    L.queue = queue;
+    if (!solve(L, BUF0, 4000)) continue;
+    const easier = target > 1 && solve(L, target - 1, 2500);
+    const cand = { color: L.color.slice(), queue: queue.slice(), hard: !easier };
+    if (!best || (cand.hard && !best.hard)) best = cand;
+    if (cand.hard) break;
   }
-  return genLevel(level + 1000);
+  if (!best) {
+    const removed = new Array(L.n).fill(0), left = L.partSize.slice(), order = [];
+    while (order.length < L.n) {
+      const i = [...Array(L.n).keys()].find(i => !removed[i] && L.blockers[i].every(p => left[p] === 0));
+      if (i === undefined) break;
+      removed[i] = 1; left[L.part[i]]--; order.push(i);
+    }
+    const q = []; for (let i = 0; i < order.length; i += 3) { const c = (i / 3) % nColors; q.push(c); for (let j = 0; j < 3; j++) L.color[order[i + j]] = c; }
+    best = { color: L.color.slice(), queue: q };
+  }
+
+  screws.forEach((s, i) => {
+    s.color = best.color[i];
+    const g = new THREE.Group();
+    const head = new THREE.Mesh(headGeo, screwMats[s.color]); head.castShadow = true; g.add(head);
+    const s1 = new THREE.Mesh(slotGeo, slotMats[s.color]); s1.position.y = 0.045; g.add(s1);
+    const s2 = s1.clone(); s2.rotation.y = Math.PI / 2; g.add(s2);
+    const proxy = new THREE.Mesh(proxyGeo, proxyMat); proxy.userData.screw = s; g.add(proxy);
+    g.quaternion.setFromUnitVectors(V(0, 1, 0), s.n);
+    g.position.copy(s.p).add(s.n.clone().multiplyScalar(0.045));
+    g.rotateY(rnd() * Math.PI);
+    s.part.mesh.add(g);
+    s.g = g; s.proxy = proxy; s.removed = false; s.anim = 0;
+  });
+  parts.forEach(p => { p.left = screws.filter(s => s.part === p).length; p.state = 'on'; p.flash = 0; });
+  parts.filter(p => p.left === 0).forEach(p => { model.remove(p.mesh); p.state = 'gone'; });
+
+  const box3 = new THREE.Box3().setFromObject(model);
+  return { name: mdef.name, parts, screws, queue: best.queue, bounds: box3, hard: !!best.hard };
+}
+function disposeModel(g) {
+  g.traverse(o => {
+    if (o.geometry && o.geometry !== headGeo && o.geometry !== slotGeo && o.geometry !== proxyGeo) o.geometry.dispose();
+    if (o.material && !screwMats.includes(o.material) && !slotMats.includes(o.material) && o.material !== proxyMat && o.material !== edgeMat) o.material.dispose();
+  });
 }
 
-/* ---------- state ---------- */
+/* =========================================================
+   Game state
+   ========================================================= */
 let S = null;
 let level = Math.max(1, store.get('level', 1) | 0);
 let soundOn = store.get('sound', true);
+const cam = { yaw: 0.65, pitch: 0.42, dist: 11, distBase: 11, radius: 4, target: V(0, 2, 0), yawTo: null };
 
 function newBox() { return S.queue.length ? { color: S.queue.shift(), reserved: 0, filled: 0, state: 'in', t: 0 } : null; }
 function startLevel(n) {
   level = n; store.set('level', n);
-  const lv = genLevel(n);
-  S = { plates: lv.plates, screws: lv.screws, queue: lv.boxes.slice(), active: [null, null], buffer: [null, null, null, null, null],
-    flyers: [], hints: 3, slotUsed: false, over: false, won: false, winT: 0, hint: null, bufShake: 0, time: 0 };
-  S.active = [newBox(), newBox()];
-  ui();
-  hide('ovWin'); hide('ovLose');
+  $('loading').hidden = false; hide('ovWin'); hide('ovLose');
+  setTimeout(() => {
+    const lv = buildLevel(n);
+    S = { ...lv, active: [null, null], buffer: new Array(BUF0).fill(null), flyers: [], hints: 2, slotUsed: false,
+      over: false, won: false, winT: 0, hint: null, bufShake: 0, time: 0 };
+    S.active = [newBox(), newBox()];
+    const size = lv.bounds.getSize(V(0, 0, 0)), center = lv.bounds.getCenter(V(0, 0, 0));
+    cam.target.set(0, center.y, 0);
+    cam.radius = Math.max(size.x, size.z, size.y) * 0.62 + 0.6;
+    fitCamera();
+    cam.dist = cam.distBase; cam.yaw = 0.65; cam.pitch = 0.42;
+    $('loading').hidden = true;
+    ui();
+  }, 30);
 }
-
-/* ---------- geometry of UI slots ---------- */
-function boxOffset(b) {
-  if (!b) return 0;
-  if (b.state === 'in') return -100 * Math.pow(1 - Math.min(1, b.t / .3), 3);
-  if (b.state === 'out') return -100 * Math.pow(Math.min(1, b.t / .35), 2);
-  return 0;
-}
-function boxSlotPos(i, slot) { const b = S.active[i]; return { x: BOX_X[i] + HOLE_X[slot], y: BOX_Y + 44 + boxOffset(b) }; }
-function bufSlotPos(k) { const n = S.buffer.length, sp = n > 5 ? 50 : 54; return { x: 200 - (n - 1) * sp / 2 + k * sp, y: BUF_Y }; }
-
-/* ---------- rules ---------- */
-function isCovered(s) {
-  const w = screwPos(s);
-  for (const q of S.plates) {
-    if (q.id <= s.plate.id || (q.mode !== 'fixed' && q.mode !== 'swing')) continue;
-    if (segDist(w.x, w.y, ...plateEnds(q)) < q.r + 6) return true;
-  }
-  return false;
+function fitCamera() {
+  const r = glCanvas.getBoundingClientRect(), aspect = Math.max(.3, r.width / Math.max(1, r.height));
+  const vh = THREE.MathUtils.degToRad(camera.fov / 2), hh = Math.atan(Math.tan(vh) * aspect);
+  cam.distBase = cam.radius / Math.sin(Math.min(vh, hh)) * 0.9;
 }
 function liveScrews() { return S.screws.filter(s => !s.removed); }
+function isExposed(s) { return s.blockers.every(id => S.parts[id].state !== 'on'); }
 function boxFor(color) {
   for (let i = 0; i < 2; i++) { const b = S.active[i]; if (b && b.state !== 'out' && b.color === color && b.reserved < 3) return i; }
   return -1;
 }
+function screenOf(obj) {
+  const v = obj.getWorldPosition(V(0, 0, 0)).project(camera), r = glCanvas.getBoundingClientRect();
+  return { x: r.left + (v.x + 1) / 2 * r.width, y: r.top + (1 - v.y) / 2 * r.height };
+}
 function takeScrew(s) {
-  let target, i = boxFor(s.color);
+  let target; const i = boxFor(s.color);
   if (i >= 0) { const b = S.active[i]; target = { kind: 'box', i, slot: b.reserved, box: b }; b.reserved++; }
   else {
     const k = S.buffer.indexOf(null);
-    if (k < 0) { S.bufShake = .4; toast(); beep(140, .12, 'square'); buzz(40); return; }
+    if (k < 0) { S.bufShake = .4; toast('予備スロットがいっぱい'); beep(140, .12, 'square'); buzz(40); return; }
     S.buffer[k] = { color: s.color, arrived: false }; target = { kind: 'buf', k };
   }
-  const w = screwPos(s);
-  s.removed = true;
-  if (S.hint && S.hint.s === s) S.hint = null;
-  S.flyers.push({ color: s.color, x0: w.x, y0: w.y, t: 0, up: .2, dur: .36, target });
-  beep(880, .05, 'triangle'); setTimeout(() => beep(1180, .05, 'triangle'), 60); buzz(12);
-  const p = s.plate, rest = S.screws.filter(o => o.plate === p && !o.removed);
-  if (rest.length === 0) {
-    p.vx = (Math.random() - .5) * 120; p.vy = -60; p.va = (p.mode === 'swing' ? p.w : 0) + (Math.random() - .5) * 3;
-    p.mode = 'fall'; setTimeout(() => beep(220, .18, 'sine'), 120);
-  } else if (rest.length === 1) {
-    const q = screwPos(rest[0]); p.mode = 'swing'; p.piv = rest[0].lx; p.P = q; p.w = p.w || 0;
-  }
+  s.removed = true; s.anim = 0.001; s.target = target;
+  if (S.hint && S.hint.s === s) { s.g.scale.setScalar(1); S.hint = null; }
+  beep(880, .05, 'triangle'); setTimeout(() => beep(1180, .05, 'triangle'), 70); buzz(12);
+  const p = s.part; p.left--;
+  if (p.left === 0) { p.state = 'loose'; p.fallDelay = .28; }
 }
 function arrive(f) {
   const t = f.target;
@@ -287,233 +619,264 @@ function pullFromBuffer() {
     if (!v || !v.arrived) return;
     const i = boxFor(v.color); if (i < 0) return;
     const b = S.active[i], p = bufSlotPos(k);
-    S.flyers.push({ color: v.color, x0: p.x, y0: p.y, t: 0, up: 0, dur: .32, target: { kind: 'box', i, slot: b.reserved, box: b } });
+    S.flyers.push({ color: v.color, x0: p.x, y0: p.y, t: 0, dur: .32, target: { kind: 'box', i, slot: b.reserved, box: b } });
     b.reserved++; S.buffer[k] = null;
   });
 }
-function exposedMatches() {
-  return liveScrews().filter(s => s.plate.mode !== 'fall' && boxFor(s.color) >= 0 && !isCovered(s));
-}
+function exposedMatches() { return liveScrews().filter(s => boxFor(s.color) >= 0 && isExposed(s)); }
 
-/* ---------- update ---------- */
+/* =========================================================
+   Update
+   ========================================================= */
 function update(dt) {
+  if (!S) return;
   S.time += dt;
-  for (const p of S.plates) {
-    if (p.mode === 'swing') {
-      const k = (p.L * p.L + 4 * p.r * p.r) / 12 + p.piv * p.piv;
-      const dx = p.x - p.P.x;
-      p.w += dx * G / k * dt; p.w *= Math.pow(.45, dt); p.a += p.w * dt;
-      p.x = p.P.x - Math.cos(p.a) * p.piv; p.y = p.P.y - Math.sin(p.a) * p.piv;
-    } else if (p.mode === 'fall') {
-      p.vy += G * dt; p.x += p.vx * dt; p.y += p.vy * dt; p.a += p.va * dt;
-      if (p.y > H + 400) p.mode = 'gone';
+  for (const s of S.screws) {
+    if (s.anim > 0 && s.anim < 1) {
+      s.anim = Math.min(1, s.anim + dt / .26);
+      s.g.translateY(dt * 1.6); s.g.rotateY(dt * 26);
+      if (s.anim >= 1) {
+        const p = screenOf(s.g); s.g.visible = false;
+        S.flyers.push({ color: s.color, x0: p.x, y0: p.y, t: 0, dur: .38, target: s.target, big: true });
+      }
+    }
+    if (s.shake > 0) { s.shake -= dt; s.g.rotateY(Math.sin(s.shake * 60) * .15); }
+  }
+  for (const p of S.parts) {
+    if (p.flash > 0) { p.flash -= dt; p.mat.emissive.setRGB(Math.max(0, p.flash) * 1.4, 0, 0); }
+    if (p.state === 'loose') {
+      p.fallDelay -= dt;
+      if (p.fallDelay <= 0) {
+        p.state = 'fall'; p.t = 0;
+        const c = p.mesh.getWorldPosition(V(0, 0, 0)), out = V(c.x, 0, c.z);
+        if (out.lengthSq() < .01) out.set(Math.random() - .5, 0, Math.random() - .5);
+        out.normalize();
+        p.vel = out.multiplyScalar(2.2 + Math.random()).add(V(0, 2.5, 0));
+        p.spin = V((Math.random() - .5) * 5, (Math.random() - .5) * 5, (Math.random() - .5) * 5);
+        beep(240, .16, 'sine');
+      }
+    } else if (p.state === 'fall') {
+      p.t += dt; p.vel.y -= 16 * dt;
+      p.mesh.position.addScaledVector(p.vel, dt);
+      p.mesh.rotation.x += p.spin.x * dt; p.mesh.rotation.y += p.spin.y * dt; p.mesh.rotation.z += p.spin.z * dt;
+      const o = Math.max(0, 1 - Math.max(0, p.t - .5) / .5) * p.baseOpacity;
+      p.mat.opacity = o; (p.decos || []).forEach(d => d.material.opacity = o);
+      if (p.t > 1.05) { p.state = 'gone'; p.mesh.visible = false; }
     }
   }
   for (let j = S.flyers.length - 1; j >= 0; j--) {
     const f = S.flyers[j]; f.t += dt;
-    if (f.t >= f.up + f.dur) { S.flyers.splice(j, 1); arrive(f); }
+    if (f.t >= f.dur) { S.flyers.splice(j, 1); arrive(f); }
   }
   for (let i = 0; i < 2; i++) {
     const b = S.active[i]; if (!b) continue;
     b.t += dt;
-    if (b.state === 'in' && b.t >= .3) { b.state = 'idle'; }
-    else if (b.state === 'out' && b.t >= .35) { S.active[i] = newBox(); pullFromBuffer(); }
+    if (b.state === 'in' && b.t >= .3) b.state = 'idle';
+    else if (b.state === 'out' && b.t >= .38) { S.active[i] = newBox(); pullFromBuffer(); }
   }
   if (S.bufShake > 0) S.bufShake -= dt;
-  if (S.hint) { S.hint.t -= dt; if (S.hint.t <= 0 || S.hint.s.removed) S.hint = null; }
+  if (S.hint) {
+    S.hint.t -= dt;
+    if (S.hint.t <= 0 || S.hint.s.removed) { S.hint.s.g.scale.setScalar(1); S.hint = null; }
+    else S.hint.s.g.scale.setScalar(1 + .45 * (.5 + .5 * Math.sin(S.time * 12)));
+  }
 
   if (S.won || S.over) return;
-  const idle = S.flyers.length === 0 && S.active.every(b => !b || b.state === 'idle');
+  const animating = S.screws.some(s => s.anim > 0 && s.anim < 1);
+  const idle = !animating && S.flyers.length === 0 && S.active.every(b => !b || b.state === 'idle');
   if (liveScrews().length === 0 && idle && S.active.every(b => !b) && !S.queue.length) {
-    S.winT += dt;
-    if (S.winT > .6) win();
+    S.winT += dt; if (S.winT > .9) win();
   } else if (idle && S.buffer.every(v => v) && exposedMatches().length === 0) {
-    S.over = true; setTimeout(lose, 350);
+    S.over = true; setTimeout(lose, 400);
   }
 }
 
-/* ---------- drawing ---------- */
-const cv = document.getElementById('cv'), ctx = cv.getContext('2d');
-let scale = 1, offX = 0, offY = 0, dpr = 1;
-function resize() {
-  const r = cv.getBoundingClientRect(); dpr = Math.min(window.devicePixelRatio || 1, 3);
-  cv.width = Math.round(r.width * dpr); cv.height = Math.round(r.height * dpr);
-  scale = Math.min(r.width / W, r.height / H); offX = (r.width - W * scale) / 2; offY = (r.height - H * scale) / 2;
+/* =========================================================
+   2D tray + flyers (fx canvas over the page)
+   ========================================================= */
+const fx = document.getElementById('fx'), ctx = fx.getContext('2d'), trayEl = document.getElementById('tray');
+let dpr = 1;
+function resizeFx() { dpr = Math.min(window.devicePixelRatio || 1, 3); fx.width = innerWidth * dpr; fx.height = innerHeight * dpr; }
+function trayGeom() {
+  const r = trayEl.getBoundingClientRect();
+  const bw = Math.min(170, (r.width - 12) / 2), bh = 66;
+  return { r, bw, bh, bx: [r.left + r.width / 2 - 6 - bw, r.left + r.width / 2 + 6], by: r.top + 4 };
 }
+function boxOffset(b) {
+  if (!b) return 0;
+  if (b.state === 'in') return -90 * Math.pow(1 - Math.min(1, b.t / .3), 3);
+  if (b.state === 'out') return -90 * Math.pow(Math.min(1, b.t / .38), 2);
+  return 0;
+}
+function boxSlotPos(i, slot) { const g = trayGeom(); return { x: g.bx[i] + g.bw * [.2, .5, .8][slot], y: g.by + 40 + boxOffset(S.active[i]) }; }
+function bufSlotPos(k) { const g = trayGeom(), n = S.buffer.length, sp = Math.min(52, (g.r.width - 30) / n); return { x: g.r.left + g.r.width / 2 - (n - 1) * sp / 2 + k * sp, y: g.r.top + 112 }; }
 function shade(hex, amt) {
-  const n = parseInt(hex.slice(1), 16); let r = n >> 16, g = n >> 8 & 255, b = n & 255;
-  const f = v => Math.max(0, Math.min(255, Math.round(amt >= 0 ? v + (255 - v) * amt : v * (1 + amt))));
-  return `rgb(${f(r)},${f(g)},${f(b)})`;
+  const n = parseInt(hex.slice(1), 16), f = v => Math.max(0, Math.min(255, Math.round(amt >= 0 ? v + (255 - v) * amt : v * (1 + amt))));
+  return `rgb(${f(n >> 16)},${f(n >> 8 & 255)},${f(n & 255)})`;
 }
 function rrect(x, y, w, h, r) { ctx.beginPath(); ctx.roundRect ? ctx.roundRect(x, y, w, h, r) : ctx.rect(x, y, w, h); }
-function capsule(L, r) { ctx.beginPath(); ctx.arc(-L / 2, 0, r, Math.PI / 2, Math.PI * 1.5); ctx.arc(L / 2, 0, r, -Math.PI / 2, Math.PI / 2); ctx.closePath(); }
-
-function drawHole(x, y, r) {
-  ctx.fillStyle = 'rgba(8,14,20,.55)'; ctx.beginPath(); ctx.arc(x, y, r, 0, 7); ctx.fill();
-  ctx.strokeStyle = 'rgba(255,255,255,.12)'; ctx.lineWidth = 1; ctx.beginPath(); ctx.arc(x, y + .5, r, .2, Math.PI - .2); ctx.stroke();
-}
-function drawScrew(x, y, color, sc = 1, rot = 0, lift = 0, alpha = 1) {
-  const r = SR * sc;
-  ctx.save(); ctx.globalAlpha = alpha;
-  ctx.fillStyle = 'rgba(0,0,0,.35)'; ctx.beginPath(); ctx.arc(x + 1.5 + lift, y + 2.5 + lift * 1.6, r, 0, 7); ctx.fill();
+function hole(x, y, r) { ctx.fillStyle = 'rgba(8,14,20,.55)'; ctx.beginPath(); ctx.arc(x, y, r, 0, 7); ctx.fill(); }
+function screw2d(x, y, color, sc = 1, rot = 0) {
+  const r = 12 * sc;
+  ctx.save();
+  ctx.fillStyle = 'rgba(0,0,0,.35)'; ctx.beginPath(); ctx.arc(x + 1.5, y + 2.5, r, 0, 7); ctx.fill();
   const g = ctx.createRadialGradient(x - r * .35, y - r * .4, r * .1, x, y, r);
   g.addColorStop(0, shade(color, .55)); g.addColorStop(.55, color); g.addColorStop(1, shade(color, -.35));
   ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, r, 0, 7); ctx.fill();
   ctx.strokeStyle = shade(color, -.5); ctx.lineWidth = 1.2; ctx.stroke();
-  ctx.translate(x, y); ctx.rotate(rot);
-  ctx.fillStyle = shade(color, -.6);
-  const a = r * .62, b = r * .17;
-  rrect(-a, -b, a * 2, b * 2, b); ctx.fill(); rrect(-b, -a, b * 2, a * 2, b); ctx.fill();
+  ctx.translate(x, y); ctx.rotate(rot); ctx.fillStyle = shade(color, -.6);
+  const a = r * .62, b = r * .17; rrect(-a, -b, a * 2, b * 2, b); ctx.fill(); rrect(-b, -a, b * 2, a * 2, b); ctx.fill();
   ctx.restore();
 }
-function drawPlate(p) {
-  ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.a);
-  capsule(p.L, p.r);
-  ctx.fillStyle = 'rgba(0,0,0,.25)'; ctx.save(); ctx.translate(3, 5); ctx.fill(); ctx.restore();
-  capsule(p.L, p.r);
-  ctx.globalAlpha = .84; ctx.fillStyle = p.tint; ctx.fill(); ctx.globalAlpha = 1;
-  ctx.strokeStyle = shade(p.tint, -.45); ctx.lineWidth = 1.6; ctx.stroke();
-  ctx.strokeStyle = 'rgba(255,255,255,.35)'; ctx.lineWidth = 2;
-  ctx.beginPath(); ctx.moveTo(-p.L / 2, -p.r + 4); ctx.lineTo(p.L / 2, -p.r + 4); ctx.stroke();
-  for (const lx of p.holes) drawHole(lx, 0, SR + 2);
-  ctx.restore();
-}
-function drawBoard() {
-  ctx.fillStyle = '#2b3d4b'; rrect(BOARD.x, BOARD.y, BOARD.w, BOARD.h, 22); ctx.fill();
-  ctx.strokeStyle = '#3e5566'; ctx.lineWidth = 2; ctx.stroke();
-  ctx.fillStyle = 'rgba(10,18,26,.45)';
-  for (let y = BOARD.y + 22; y < BOARD.y + BOARD.h - 10; y += 26)
-    for (let x = BOARD.x + 20; x < BOARD.x + BOARD.w - 10; x += 26) { ctx.beginPath(); ctx.arc(x, y, 2.2, 0, 7); ctx.fill(); }
-}
-function drawBoxes() {
+function drawTray() {
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, innerWidth, innerHeight);
+  if (!S) return;
+  const g = trayGeom();
   for (let i = 0; i < 2; i++) {
-    const b = S.active[i], x = BOX_X[i];
-    if (!b) {
-      ctx.strokeStyle = 'rgba(159,177,189,.25)'; ctx.setLineDash([6, 6]); ctx.lineWidth = 2;
-      rrect(x, BOX_Y, BOX_W, BOX_H, 16); ctx.stroke(); ctx.setLineDash([]); continue;
-    }
+    const b = S.active[i], x = g.bx[i];
+    if (!b) { ctx.strokeStyle = 'rgba(159,177,189,.25)'; ctx.setLineDash([6, 6]); ctx.lineWidth = 2; rrect(x, g.by, g.bw, g.bh, 16); ctx.stroke(); ctx.setLineDash([]); continue; }
     const oy = boxOffset(b), col = COLORS[b.color];
-    ctx.save(); ctx.globalAlpha = b.state === 'out' ? Math.max(0, 1 - b.t / .35) : 1;
-    ctx.fillStyle = 'rgba(0,0,0,.3)'; rrect(x + 2, BOX_Y + oy + 5, BOX_W, BOX_H, 16); ctx.fill();
-    const g = ctx.createLinearGradient(0, BOX_Y + oy, 0, BOX_Y + oy + BOX_H);
-    g.addColorStop(0, shade(col, .25)); g.addColorStop(1, shade(col, -.2));
-    ctx.fillStyle = g; rrect(x, BOX_Y + oy, BOX_W, BOX_H, 16); ctx.fill();
+    ctx.save(); ctx.globalAlpha = b.state === 'out' ? Math.max(0, 1 - b.t / .38) : 1;
+    ctx.beginPath(); ctx.rect(g.r.left - 20, g.r.top - 4, g.r.width + 40, 200); ctx.clip();
+    ctx.fillStyle = 'rgba(0,0,0,.3)'; rrect(x + 2, g.by + oy + 5, g.bw, g.bh, 16); ctx.fill();
+    const gr = ctx.createLinearGradient(0, g.by + oy, 0, g.by + oy + g.bh);
+    gr.addColorStop(0, shade(col, .25)); gr.addColorStop(1, shade(col, -.2));
+    ctx.fillStyle = gr; rrect(x, g.by + oy, g.bw, g.bh, 16); ctx.fill();
     ctx.strokeStyle = shade(col, -.45); ctx.lineWidth = 2; ctx.stroke();
-    ctx.fillStyle = 'rgba(255,255,255,.22)'; rrect(x + 10, BOX_Y + oy + 7, BOX_W - 20, 7, 4); ctx.fill();
+    ctx.fillStyle = 'rgba(255,255,255,.22)'; rrect(x + 10, g.by + oy + 7, g.bw - 20, 6, 3); ctx.fill();
     for (let s = 0; s < 3; s++) {
-      const p = { x: x + HOLE_X[s], y: BOX_Y + 44 + oy };
-      drawHole(p.x, p.y, SR + 3);
-      if (s < b.filled) drawScrew(p.x, p.y, col);
+      const p = { x: x + g.bw * [.2, .5, .8][s], y: g.by + 40 + oy };
+      hole(p.x, p.y, 15); if (s < b.filled) screw2d(p.x, p.y, col);
     }
-    if (b.state === 'out') {
-      const k = Math.min(1, b.t / .15);
-      ctx.fillStyle = shade(col, -.1); rrect(x, BOX_Y + oy, BOX_W, BOX_H * k, 16); ctx.fill();
-    }
+    if (b.state === 'out') { ctx.fillStyle = shade(col, -.1); rrect(x, g.by + oy, g.bw, g.bh * Math.min(1, b.t / .15), 16); ctx.fill(); }
     ctx.restore();
   }
-}
-function drawBuffer() {
   const n = S.buffer.length, a = bufSlotPos(0), z = bufSlotPos(n - 1);
   const sx = S.bufShake > 0 ? Math.sin(S.bufShake * 60) * 5 * S.bufShake / .4 : 0;
   ctx.save(); ctx.translate(sx, 0);
-  ctx.fillStyle = '#152029'; rrect(a.x - 30, BUF_Y - 25, z.x - a.x + 60, 50, 25); ctx.fill();
+  ctx.fillStyle = '#152029'; rrect(a.x - 27, a.y - 22, z.x - a.x + 54, 44, 22); ctx.fill();
   ctx.strokeStyle = S.bufShake > 0 ? '#ff6b5e' : '#3e5566'; ctx.lineWidth = 2; ctx.stroke();
-  S.buffer.forEach((v, k) => {
-    const p = bufSlotPos(k); drawHole(p.x, p.y, SR + 3);
-    if (v && v.arrived) drawScrew(p.x, p.y, COLORS[v.color]);
-  });
+  S.buffer.forEach((v, k) => { const p = bufSlotPos(k); hole(p.x, p.y, 15); if (v && v.arrived) screw2d(p.x, p.y, COLORS[v.color]); });
   ctx.restore();
   const used = S.buffer.filter(Boolean).length;
+  ctx.font = '800 11px "M PLUS Rounded 1c", sans-serif'; ctx.textAlign = 'left';
   ctx.fillStyle = used >= n - 1 ? '#ff6b5e' : '#9fb1bd';
-  ctx.font = '800 11px "M PLUS Rounded 1c", sans-serif'; ctx.textAlign = 'center';
-  ctx.fillText(`予備 ${used} / ${n}`, 200, BUF_Y + 38);
-}
-function draw() {
-  ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, cv.width, cv.height);
-  ctx.setTransform(dpr * scale, 0, 0, dpr * scale, dpr * offX, dpr * offY);
-  drawBoard(); drawBoxes(); drawBuffer();
-  ctx.save(); rrect(BOARD.x, BOARD.y, BOARD.w, BOARD.h, 22); ctx.clip();
-  for (const p of S.plates) {
-    if (p.mode === 'gone' || p.mode === 'fall') continue;
-    drawPlate(p);
-    for (const s of S.screws) if (s.plate === p && !s.removed) {
-      const w = screwPos(s); let x = w.x;
-      if (s.shake > 0) x += Math.sin(s.shake * 70) * 3;
-      drawScrew(x, w.y, COLORS[s.color], 1, p.a + .5);
-    }
-  }
-  ctx.restore();
-  for (const p of S.plates) if (p.mode === 'fall') drawPlate(p);
-  if (S.hint) {
-    const w = screwPos(S.hint.s), k = .5 + .5 * Math.sin(S.time * 10);
-    ctx.strokeStyle = `rgba(242,179,61,${.5 + .5 * k})`; ctx.lineWidth = 3;
-    ctx.beginPath(); ctx.arc(w.x, w.y, SR + 6 + k * 4, 0, 7); ctx.stroke();
-  }
+  ctx.fillText(`予備 ${used}/${n}`, g.r.left + 2, g.r.top + 146);
+  ctx.textAlign = 'right'; ctx.fillStyle = '#9fb1bd';
+  ctx.fillText(`${S.name} ・ のこり ${liveScrews().length} 本 ・ 箱 ${S.queue.length + S.active.filter(Boolean).length}`, g.r.right - 2, g.r.top + 146);
   for (const f of S.flyers) {
-    let x, y, sc = 1, rot = 0, lift = 0;
-    if (f.t < f.up) { const k = f.t / f.up; x = f.x0; y = f.y0; sc = 1 + .25 * k; rot = -k * 9; lift = k * 4; }
-    else {
-      const k = Math.min(1, (f.t - f.up) / f.dur), e = k < .5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
-      const t = f.target.kind === 'box' ? boxSlotPos(f.target.i, f.target.slot) : bufSlotPos(f.target.k);
-      x = f.x0 + (t.x - f.x0) * e; y = f.y0 + (t.y - f.y0) * e - Math.sin(Math.PI * k) * 40;
-      sc = (f.up ? 1.25 : 1) - (f.up ? .25 : 0) * e; lift = 4 * (1 - e); rot = -9 - k * 6;
-    }
-    drawScrew(x, y, COLORS[f.color], sc, rot, lift);
+    const t = f.target.kind === 'box' ? boxSlotPos(f.target.i, f.target.slot) : bufSlotPos(f.target.k);
+    const k = Math.min(1, f.t / f.dur), e = k < .5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+    const x = f.x0 + (t.x - f.x0) * e, y = f.y0 + (t.y - f.y0) * e - Math.sin(Math.PI * k) * 50;
+    screw2d(x, y, COLORS[f.color], (f.big ? 1.25 - .25 * e : 1), -k * 8);
   }
 }
 
-/* ---------- input ---------- */
-cv.addEventListener('pointerdown', e => {
-  initAudio();
-  if (!S || S.over || S.won) return;
-  const r = cv.getBoundingClientRect();
-  const x = (e.clientX - r.left - offX) / scale, y = (e.clientY - r.top - offY) / scale;
-  const cands = liveScrews().filter(s => s.plate.mode === 'fixed' || s.plate.mode === 'swing')
-    .map(s => { const w = screwPos(s); return { s, d: Math.hypot(w.x - x, w.y - y) }; })
-    .filter(o => o.d < 26).sort((a, b) => b.s.plate.id - a.s.plate.id || a.d - b.d);
-  if (!cands.length) return;
-  const hit = cands.find(o => !isCovered(o.s));
-  // only accept if no plate above the tap point hides the chosen screw's area
-  if (hit) takeScrew(hit.s);
-  else { const s = cands[0].s; s.shake = .3; beep(160, .06, 'square'); }
+/* =========================================================
+   Camera + input
+   ========================================================= */
+function placeCamera() {
+  const d = cam.dist, cp = Math.cos(cam.pitch);
+  camera.position.set(cam.target.x + Math.sin(cam.yaw) * cp * d, cam.target.y + Math.sin(cam.pitch) * d, cam.target.z + Math.cos(cam.yaw) * cp * d);
+  camera.lookAt(cam.target);
+}
+function resize3d() {
+  const r = glCanvas.getBoundingClientRect();
+  renderer.setSize(r.width, r.height, false); camera.aspect = r.width / Math.max(1, r.height); camera.updateProjectionMatrix();
+  const ratio = cam.dist / (cam.distBase || 1); fitCamera(); cam.dist = cam.distBase * ratio;
+}
+const pointers = new Map(); let drag = null, pinch = null;
+glCanvas.addEventListener('pointerdown', e => {
+  initAudio(); try { glCanvas.setPointerCapture(e.pointerId); } catch (err) {}
+  pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+  if (pointers.size === 1) drag = { x: e.clientX, y: e.clientY, t: performance.now(), moved: 0 };
+  else if (pointers.size === 2) { const [a, b] = [...pointers.values()]; pinch = { d: Math.hypot(a.x - b.x, a.y - b.y), dist: cam.dist }; drag = null; }
 });
+glCanvas.addEventListener('pointermove', e => {
+  if (!pointers.has(e.pointerId)) return;
+  pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+  if (pinch && pointers.size === 2) {
+    const [a, b] = [...pointers.values()]; const d = Math.hypot(a.x - b.x, a.y - b.y);
+    cam.dist = Math.max(cam.distBase * .55, Math.min(cam.distBase * 1.6, pinch.dist * pinch.d / Math.max(1, d)));
+  } else if (drag) {
+    const dx = e.clientX - drag.x, dy = e.clientY - drag.y; drag.x = e.clientX; drag.y = e.clientY;
+    drag.moved += Math.abs(dx) + Math.abs(dy);
+    cam.yawTo = null;
+    cam.yaw -= dx * 0.0085; cam.pitch = Math.max(-0.25, Math.min(1.35, cam.pitch + dy * 0.0065));
+  }
+});
+const endPtr = e => {
+  if (!pointers.has(e.pointerId)) return;
+  pointers.delete(e.pointerId);
+  if (drag && pointers.size === 0 && drag.moved < 10 && performance.now() - drag.t < 450) tap(e.clientX, e.clientY);
+  if (pointers.size < 2) pinch = null;
+  if (pointers.size === 0) drag = null;
+};
+glCanvas.addEventListener('pointerup', endPtr);
+glCanvas.addEventListener('pointercancel', endPtr);
+glCanvas.addEventListener('wheel', e => { e.preventDefault(); cam.dist = Math.max(cam.distBase * .55, Math.min(cam.distBase * 1.6, cam.dist * (1 + e.deltaY * .001))); }, { passive: false });
 
-/* ---------- UI ---------- */
-const $ = id => document.getElementById(id);
+const ray = new THREE.Raycaster();
+function tap(cx, cy) {
+  if (!S || S.over || S.won) return;
+  const r = glCanvas.getBoundingClientRect();
+  ray.setFromCamera({ x: (cx - r.left) / r.width * 2 - 1, y: -((cy - r.top) / r.height) * 2 + 1 }, camera);
+  const proxies = liveScrews().filter(s => s.anim === 0).map(s => s.proxy);
+  const partMeshes = S.parts.filter(p => p.state === 'on').map(p => p.mesh);
+  const ph = ray.intersectObjects(proxies, false);
+  const front = ray.intersectObjects(partMeshes, false)[0];
+  const hit = ph.find(h => !front || h.distance < front.distance + 0.12 ||
+    (front.object === h.object.userData.screw.part.mesh && h.distance < front.distance + 0.4));
+  if (!hit) return;
+  const s = hit.object.userData.screw;
+  if (isExposed(s)) takeScrew(s);
+  else {
+    s.shake = .35; beep(160, .07, 'square'); buzz(25);
+    s.blockers.forEach(id => { const p = S.parts[id]; if (p.state === 'on') p.flash = .5; });
+    toast('手前の部品がじゃまで抜けない');
+  }
+}
+
+/* =========================================================
+   UI
+   ========================================================= */
+function $(id) { return document.getElementById(id); }
 function show(id) { $(id).hidden = false; } function hide(id) { $(id).hidden = true; }
 function ui() {
   $('lvLabel').textContent = 'LEVEL ' + level;
+  $('soundBtn').style.opacity = soundOn ? 1 : .4;
+  if (!S) return;
   $('hintLeft').textContent = 'のこり ' + S.hints; $('hintBtn').disabled = S.hints <= 0;
   $('slotLeft').textContent = S.slotUsed ? 'のこり 0' : 'のこり 1'; $('slotBtn').disabled = S.slotUsed;
   $('loseSlot').hidden = S.slotUsed;
-  $('soundBtn').style.opacity = soundOn ? 1 : .4;
 }
 let toastT;
-function toast() { const t = $('toast'); t.classList.add('show'); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('show'), 1200); }
+function toast(msg) { const t = $('toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('show'), 1300); }
 function win() {
   S.won = true;
   $('winTitle').textContent = 'LEVEL ' + level + ' クリア！';
-  $('winText').textContent = 'ネジ ' + S.screws.length + ' 本、板 ' + S.plates.length + ' 枚をすべて外しました。';
+  $('winText').textContent = S.name + 'を分解しました。ネジ ' + S.screws.length + ' 本、部品 ' + S.parts.length + ' 個。';
   store.set('level', level + 1);
   [523, 659, 784, 1046].forEach((f, i) => setTimeout(() => beep(f, .12, 'triangle'), i * 90));
   show('ovWin');
 }
 function lose() { ui(); show('ovLose'); beep(200, .25, 'sawtooth'); buzz([60, 40, 60]); }
 function addSlot() {
-  if (S.slotUsed) return;
+  if (!S || S.slotUsed) return;
   S.slotUsed = true; S.buffer.push(null); ui();
   if (S.over) { S.over = false; hide('ovLose'); }
 }
 $('hintBtn').onclick = () => {
-  if (S.hints <= 0 || S.over || S.won) return;
+  if (!S || S.hints <= 0 || S.over || S.won) return;
   let list = exposedMatches();
   if (!list.length) {
     const next = S.active.filter(Boolean).map(b => b.color).concat(S.queue);
-    list = liveScrews().filter(s => s.plate.mode !== 'fall' && !isCovered(s))
-      .sort((a, b) => (next.indexOf(a.color) + 99) % 99 - (next.indexOf(b.color) + 99) % 99);
+    const rank = c => { const i = next.indexOf(c); return i < 0 ? 99 : i; };
+    list = liveScrews().filter(isExposed).sort((a, b) => rank(a.color) - rank(b.color));
   }
   if (!list.length) return;
   S.hint = { s: list[0], t: 3 }; S.hints--; ui();
+  const w = list[0].g.getWorldPosition(V(0, 0, 0)); cam.yawTo = Math.atan2(w.x, w.z);
 };
 $('slotBtn').onclick = addSlot;
 $('loseSlot').onclick = addSlot;
@@ -524,7 +887,6 @@ $('helpBtn').onclick = () => show('ovHelp');
 $('helpClose').onclick = () => { hide('ovHelp'); store.set('seenHelp', true); initAudio(); };
 $('soundBtn').onclick = () => { soundOn = !soundOn; store.set('sound', soundOn); ui(); initAudio(); };
 
-/* ---------- sound ---------- */
 let ac = null;
 function initAudio() { if (ac || !soundOn) return; try { ac = new (window.AudioContext || window.webkitAudioContext)(); } catch (e) {} }
 function beep(freq, dur, type) {
@@ -537,16 +899,22 @@ function beep(freq, dur, type) {
 }
 function buzz(p) { try { if (soundOn && navigator.vibrate) navigator.vibrate(p); } catch (e) {} }
 
-/* ---------- loop ---------- */
+/* =========================================================
+   Loop
+   ========================================================= */
 let last = performance.now();
 function frame(now) {
   const dt = Math.min(.033, (now - last) / 1000); last = now;
-  for (const s of S.screws) if (s.shake > 0) s.shake -= dt;
-  update(dt); draw();
+  if (cam.yawTo != null) {
+    let d = cam.yawTo - cam.yaw; d = Math.atan2(Math.sin(d), Math.cos(d));
+    cam.yaw += d * Math.min(1, dt * 6); if (Math.abs(d) < .01) cam.yawTo = null;
+  }
+  update(dt); placeCamera(); renderer.render(scene, camera); drawTray();
   requestAnimationFrame(frame);
 }
-window.addEventListener('resize', resize);
-resize();
+function onResize() { resizeFx(); resize3d(); }
+window.addEventListener('resize', onResize);
+onResize(); ui();
 const boot = data => {
   startLevel(data && data.level ? data.level : level);
   if (!store.get('seenHelp', false)) show('ovHelp');
