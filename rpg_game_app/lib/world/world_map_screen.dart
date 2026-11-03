@@ -10,6 +10,7 @@ import '../app/pwa.dart';
 import '../meta/study_boost_card.dart';
 import '../meta/today_plan.dart';
 import '../notice/feedback_screen.dart';
+import '../notice/home_news.dart';
 import '../notice/notice_card.dart';
 import '../account/account_screen.dart';
 import '../app/services.dart';
@@ -199,6 +200,7 @@ class WorldMapScreen extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 10),
+        const HomeNews(),
         const JourneyBanner(),
         const SizedBox(height: 10),
         const NoticeCard(),
