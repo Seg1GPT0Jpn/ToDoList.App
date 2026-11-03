@@ -131,9 +131,55 @@ void main() {
     expect(b.spent(t0.add(const Duration(hours: 1))).inMinutes, 5);
   });
 
+  test('選択問題：選ぶ数の大問だけ、点の高いほうから数える', () {
+    Map<String, Object?> sec(String id, int p, [String? member]) => {
+          'title': id,
+          if (member != null) ...{
+            'pick': 'g',
+            'pickCount': 1,
+            'pickMember': member,
+          },
+          'items': [
+            {
+              'id': id,
+              't': 'text',
+              'p': p,
+              'a': ['ok']
+            },
+            {
+              'id': '$id-w',
+              't': 'self',
+              'p': 2,
+              'a': ['例']
+            },
+          ],
+        };
+    final sheet = MockSheet.fromJson(jsonEncode({
+      'sections': [
+        sec('a', 6),
+        sec('b', 8, 'b'),
+        sec('c1', 3, 'c'),
+        sec('c2', 3, 'c')
+      ],
+    }));
+    expect(sheet.total, 6 + 2 + 3 + 2 + 3 + 2,
+        reason: 'c（両方で10点）のほうが b（10点）以上');
+    final a = MockAttempt(examId: 'e', startedAt: DateTime(2026))
+      ..answers.addAll({'a': 'ok', 'c1': 'ok'});
+    expect(a.score(sheet), 6 + 3);
+    expect(sheet.answeredMembers(a.answers), {'g/c'});
+    expect([for (final i in a.unscored(sheet)) i.id], ['a-w', 'c1-w', 'c2-w'],
+        reason: '手をつけなかった b は自己採点しなくてよい');
+    a.answers['b'] = 'ok';
+    expect(a.score(sheet), 6 + 8, reason: 'b のほうが高いので b を数える');
+    expect(a.unscored(sheet), hasLength(4));
+  });
+
   test('予想問題の一覧', () {
     expect(YosouExams.all, isNotEmpty);
-    for (final e in YosouExams.all) {
+    expect(YosouExams.shinken.map((e) => e.id),
+        ['shinken_ja', 'shinken_math', 'shinken_en']);
+    for (final e in [...YosouExams.all, ...YosouExams.shinken]) {
       expect(YosouExams.byId(e.id), same(e));
       expect(e.asset(1), 'assets/mock_exams/${e.id}/01.bin');
       expect(e.pages, e.questionPages + e.answerPages);
@@ -151,7 +197,7 @@ final _password = Platform.environment['SCHOOL_PASSWORD'];
 void _bundled() {
   test('同梱の予想問題は学校のパスワードで開け、ページがそろい、100点満点', () {
     final key = SchoolMaterials.keyFor(_password!);
-    for (final e in YosouExams.all) {
+    for (final e in [...YosouExams.all, ...YosouExams.shinken]) {
       final dir = '../rpg_game_app/';
       final sheet = MockSheet.fromJson(
         utf8.decode(
@@ -185,6 +231,17 @@ void _bundled() {
       }
       expect(File(dir + e.asset(e.pages + 1)).existsSync(), isFalse,
           reason: e.id);
+    }
+    // 英語のリスニング音声
+    for (final name in ['l1_1', 'l1_2', 'l1_3', 'l1_4', 'l1_5', 'l2', 'l3']) {
+      final mp3 = SchoolMaterials.open(
+        File('../rpg_game_app/${YosouExams.byId('shinken_en')!.audioAsset(name)}')
+            .readAsBytesSync(),
+        key: key,
+      )!;
+      expect(mp3.length, greaterThan(50000), reason: name);
+      // MP3（ID3 タグか、フレームの先頭）
+      expect(mp3[0] == 0x49 || mp3[0] == 0xFF, isTrue, reason: name);
     }
   }, skip: _password == null ? 'SCHOOL_PASSWORD がないので中身は確かめない' : false);
 }

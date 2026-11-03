@@ -106,6 +106,7 @@ class QuizQuestion {
     this.figure,
     this.accepted,
     this.listen = false,
+    this.audio,
     this.unit,
     this.unitLocked = false,
     this.thinkingLevel,
@@ -211,6 +212,10 @@ class QuizQuestion {
 
   /// リスニング問題：本文（sentence）を文字で見せず、読み上げて聞かせる
   final bool listen;
+
+  /// リスニング問題の音声（「<予想問題の同梱フォルダ>:<名前>」。暗号化した音声ファイル）。
+  /// あれば読み上げのかわりにこれを流す
+  final String? audio;
 
   // ---- 学習体系での位置と、学習上の属性（すべて省略できる） ----
 
@@ -361,6 +366,7 @@ class QuizQuestion {
         figure: json['figure'] as Map<String, dynamic>?,
         accepted: (json['accepted'] as List?)?.cast<String>(),
         listen: json['listen'] as bool? ?? false,
+        audio: json['audio'] as String?,
         unit: json['unit'] as String?,
         unitLocked: json['unitLocked'] as bool? ?? false,
         thinkingLevel: ThinkingLevel.tryParse(json['thinkingLevel']),
@@ -411,6 +417,7 @@ class QuizQuestion {
         if (figure != null) 'figure': figure,
         if (accepted != null) 'accepted': accepted,
         if (listen) 'listen': true,
+        if (audio != null) 'audio': audio,
         if (thinkingLevel != null) 'thinkingLevel': thinkingLevel!.number,
         if (axes != null) 'axes': axes!.toJson(),
         if (sourceKind != QuestionSourceKind.original)

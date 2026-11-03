@@ -16,10 +16,21 @@ class YosouExam {
     required this.answerPages,
     this.minutes = 60,
     this.smallQuestions = false,
-  });
+    String? folder,
+    this.label = '',
+  }) : _folder = folder;
 
-  /// 同梱フォルダの名前（assets/mock_exams/<id>/）
+  /// 予想問題の id（記録・ランキングで使う）
   final String id;
+
+  final String? _folder;
+
+  /// 同梱フォルダの名前（assets/mock_exams/<folder>/）。ふつうは [id] と同じ。
+  /// 選択問題のある試験は、選び方ごとに id を分け、ページ画像は同じフォルダを使う
+  String get folder => _folder ?? id;
+
+  /// 一覧に出す教科名（空なら学校の科目名）
+  final String label;
   final String title;
 
   /// 学校の科目（ShonanSubjects の id）
@@ -36,10 +47,13 @@ class YosouExam {
 
   /// [page] ページ目（1から。問題冊子→解答・解説の順）の同梱ファイル
   String asset(int page) =>
-      'assets/mock_exams/$id/${page.toString().padLeft(2, '0')}.bin';
+      'assets/mock_exams/$folder/${page.toString().padLeft(2, '0')}.bin';
 
   /// 解答用紙（答え・配点）の同梱ファイル
   String get sheetAsset => 'assets/mock_exams/$id/sheet.bin';
+
+  /// 音声（リスニング）の同梱ファイル
+  String audioAsset(String name) => 'assets/mock_exams/$folder/$name.bin';
 
   /// 小問ごとの問題データ（QuestionSet の JSON）を同梱しているか
   final bool smallQuestions;
@@ -132,8 +146,42 @@ abstract final class YosouExams {
     ),
   ];
 
+  /// 11月の進研模試の予想問題（英語の 1・2、数学の 4〜7 は選択問題）
+  static const shinken = <YosouExam>[
+    YosouExam(
+      id: 'shinken_ja',
+      title: '国語 進研模試 予想問題（11月）',
+      subjectId: '',
+      label: '国語',
+      questionPages: 24,
+      answerPages: 9,
+      minutes: 80,
+      smallQuestions: true,
+    ),
+    YosouExam(
+      id: 'shinken_math',
+      title: '数学 進研模試 予想問題（11月）',
+      subjectId: '',
+      label: '数学',
+      questionPages: 10,
+      answerPages: 6,
+      minutes: 100,
+      smallQuestions: true,
+    ),
+    YosouExam(
+      id: 'shinken_en',
+      title: '英語 進研模試 予想問題（11月）',
+      subjectId: '',
+      label: '英語',
+      questionPages: 21,
+      answerPages: 11,
+      minutes: 80,
+      smallQuestions: true,
+    ),
+  ];
+
   static YosouExam? byId(String id) {
-    for (final e in all) {
+    for (final e in [...all, ...shinken]) {
       if (e.id == id) return e;
     }
     return null;
@@ -238,10 +286,21 @@ class MockSection {
     required this.items,
     this.speech = const [],
     this.plays = 1,
+    this.pick = '',
+    this.pickCount = 1,
+    this.pickMember = '',
   });
 
   final String title;
   final List<MockItem> items;
+
+  /// 選択問題のまとまりの名前（空なら必答）。同じまとまりの中から、
+  /// [pickCount] 個の大問（[pickMember] ごと）を選んで解き、点の高いものから数える
+  final String pick;
+  final int pickCount;
+
+  /// 選択問題の中の大問の名前（1つの大問が複数のまとまりに分かれていてもよい）
+  final String pickMember;
 
   /// リスニングの原稿（読み上げる。段落ごと）
   final List<String> speech;
@@ -257,6 +316,9 @@ class MockSection {
         ],
         speech: [for (final s in m['speech'] as List? ?? const []) '$s'],
         plays: (m['plays'] as num?)?.toInt() ?? 1,
+        pick: m['pick'] as String? ?? '',
+        pickCount: (m['pickCount'] as num?)?.toInt() ?? 1,
+        pickMember: m['pickMember'] as String? ?? '',
       );
 }
 
@@ -270,7 +332,39 @@ class MockSheet {
   final String note;
 
   Iterable<MockItem> get items => sections.expand((s) => s.items);
-  int get total => items.fold(0, (a, i) => a + i.points);
+
+  /// 満点（選択問題は、選ぶ数の大問ぶん）
+  int get total => combine((s) => s.items.fold(0, (a, i) => a + i.points));
+
+  /// 大問ごとの点 [of] を合計する。選択問題は、まとまりごとに点の高い大問から選ぶ数だけ数える
+  int combine(int Function(MockSection s) of) {
+    var sum = 0;
+    final groups = <String, Map<String, int>>{};
+    final counts = <String, int>{};
+    for (final s in sections) {
+      if (s.pick.isEmpty) {
+        sum += of(s);
+      } else {
+        final g = groups.putIfAbsent(s.pick, () => {});
+        g[s.pickMember] = (g[s.pickMember] ?? 0) + of(s);
+        counts[s.pick] = s.pickCount;
+      }
+    }
+    for (final MapEntry(key: name, value: members) in groups.entries) {
+      final best = members.values.toList()..sort((a, b) => b.compareTo(a));
+      sum += best.take(counts[name]!).fold(0, (a, b) => a + b);
+    }
+    return sum;
+  }
+
+  /// 選択問題の大問のうち、どれか1つでも答えた大問（「<まとまり>/<大問>」）
+  Set<String> answeredMembers(Map<String, String> answers) => {
+        for (final s in sections)
+          if (s.pick.isNotEmpty &&
+              s.items.any((i) => [i, ...i.parts]
+                  .any((x) => (answers[x.id] ?? '').trim().isNotEmpty)))
+            '${s.pick}/${s.pickMember}',
+      };
 
   MockItem? item(String id) {
     for (final i in items) {
@@ -396,13 +490,18 @@ class MockAttempt {
   }
 
   int score(MockSheet sheet) =>
-      sheet.items.fold(0, (a, i) => a + (scoreOf(i) ?? 0));
+      sheet.combine((s) => s.items.fold(0, (a, i) => a + (scoreOf(i) ?? 0)));
 
-  /// まだ自分で点をつけていない欄
-  List<MockItem> unscored(MockSheet sheet) => [
-        for (final i in sheet.items)
-          if (scoreOf(i) == null) i,
-      ];
+  /// まだ自分で点をつけていない欄（選択問題で手をつけなかった大問の欄はのぞく）
+  List<MockItem> unscored(MockSheet sheet) {
+    final answered = sheet.answeredMembers(answers);
+    return [
+      for (final s in sheet.sections)
+        if (s.pick.isEmpty || answered.contains('${s.pick}/${s.pickMember}'))
+          for (final i in s.items)
+            if (scoreOf(i) == null) i,
+    ];
+  }
 
   Map<String, Object?> toMap() => {
         'exam': examId,

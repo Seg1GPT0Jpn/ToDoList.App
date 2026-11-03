@@ -100,9 +100,28 @@ void main() {
     expect(a.unscored(sheet), [items[3]]);
   });
 
+  test('選択問題のタグ（pick:まとまり:選ぶ数:大問）から解答用紙の選択を作る', () {
+    final sheet = YosouSheet.of([
+      _q('a1', passage: 'A', tags: const ['yosou', 'pt:10']),
+      _q('b1', passage: 'B', tags: const ['yosou', 'pt:5', 'pick:g:1:4']),
+      _q('b2', passage: 'B', tags: const ['yosou', 'pt:5', 'pick:g:1:4']),
+      _q('c1', passage: 'C', tags: const ['yosou', 'pt:10', 'pick:g:1:5']),
+    ]);
+    final [a, b, c] = sheet.sections;
+    expect(a.pick, '');
+    expect([b.pick, b.pickCount, b.pickMember], ['g', 1, '4']);
+    expect([c.pick, c.pickCount, c.pickMember], ['g', 1, '5']);
+    expect(sheet.total, 20);
+    final at = MockAttempt(examId: 'e', startedAt: DateTime(2026))
+      ..answers.addAll({'a1': 'a1-0', 'b1': 'b1-0', 'c1': 'c1-1'});
+    expect(at.score(sheet), 15);
+  });
+
   test('同梱の小問データは学校のパスワードで開け、すべて読める', () {
     final key = SchoolMaterials.keyFor(_password!);
-    final withSmall = YosouExams.all.where((e) => e.smallQuestions).toList();
+    final withSmall = [...YosouExams.all, ...YosouExams.shinken]
+        .where((e) => e.smallQuestions)
+        .toList();
     expect(withSmall, isNotEmpty);
     for (final e in withSmall) {
       final raw = File('../rpg_game_app/${e.questionsAsset}').readAsBytesSync();
@@ -119,6 +138,13 @@ void main() {
             reason: q.id);
         if (q.figure != null) {
           expect(FigureSpec.problems(q.figure!), isEmpty, reason: q.id);
+        }
+        if (q.audio != null) {
+          final [folder, name] = q.audio!.split(':');
+          expect(folder, e.folder, reason: q.id);
+          expect(File('../rpg_game_app/${e.audioAsset(name)}').existsSync(),
+              isTrue,
+              reason: q.id);
         }
         for (final p in q.passage!.paragraphs) {
           if (p.startsWith(YosouCrop.paragraphPrefix)) {

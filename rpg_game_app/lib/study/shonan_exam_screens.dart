@@ -135,6 +135,34 @@ class ShonanExamListScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+                const SizedBox(height: 8),
+                Text('11月 進研模試', style: serif(15)),
+                Card(
+                  child: ListTile(
+                    key: const ValueKey('shonan-shinken'),
+                    leading: const Icon(Icons.edit_note),
+                    title: const Text('予想問題を解く（進研模試）'),
+                    subtitle: const Text(
+                      '国語80分・数学100分・英語80分。本番と同じ時間で解いて、その場で採点',
+                    ),
+                    trailing: const Icon(Icons.chevron_right),
+                    onTap: () => Navigator.of(context).push(
+                      MaterialPageRoute<void>(
+                        builder: (_) => const YosouExamListScreen(
+                          exams: YosouExams.shinken,
+                          title: '予想問題（進研模試・11月）',
+                          intro:
+                              '11月の進研模試（高1）の形式の予想問題です。実際の試験問題ではありません。'
+                              '国語80分・数学100分・英語80分で、1問ごとの時間制限はありません。'
+                              '選択問題（国語は 四・五 から1題、数学は 4〜7 から2題、英語は 1 リスニングと 2 会話表現のどちらか）は、'
+                              '点の高いほうから数えます。'
+                              '途中で閉じても、答えと残り時間は保存されます。',
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 8),
                 Card(
                   child: ListTile(
                     key: const ValueKey('shonan-drive'),

@@ -240,6 +240,32 @@ void main() {
     expect(t.takeException(), isNull);
   });
 
+  testWidgets('進研模試の一覧：国語・数学・英語が、本番の時間で並ぶ', (t) async {
+    await useFiles(t);
+    await openScreen(
+      t,
+      const YosouExamListScreen(
+        exams: YosouExams.shinken,
+        title: '予想問題（進研模試・11月）',
+      ),
+      prefs: {SchoolExamStore.gateKey: true},
+      frames: 3,
+    );
+    expect(find.text('予想問題（進研模試・11月）'), findsOneWidget);
+    await t.enterText(find.byKey(const ValueKey('yosou-password')), 'TEST-PW');
+    await t.tap(find.byKey(const ValueKey('yosou-unlock')));
+    await _frames(t, 10);
+    for (final e in YosouExams.shinken) {
+      expect(find.byKey(ValueKey('yosou-exam-${e.id}')), findsOneWidget);
+    }
+    expect(
+      find.byKey(ValueKey('yosou-exam-${YosouExams.all.first.id}')),
+      findsNothing,
+    );
+    expect(find.textContaining('100分'), findsWidgets);
+    expect(t.takeException(), isNull);
+  });
+
   testWidgets('一覧：教科ごと・すべての答えと結果をリセットできる', (t) async {
     await useFiles(t);
     final ids = [for (final e in YosouExams.all.take(2)) e.id];

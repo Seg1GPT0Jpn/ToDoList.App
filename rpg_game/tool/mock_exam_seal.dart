@@ -4,6 +4,7 @@
 //
 // questions.json は小問ごとの問題データ（QuestionSet の JSON）。
 // ページ画像のフォルダには 01.webp, 02.webp … を問題冊子→解答・解説の順に置く。
+// 同じフォルダの <名前>.mp3 は、リスニングの音声として <名前>.bin にする。
 // パスワードも、暗号化する前のファイルも、リポジトリには入れないこと。
 import 'dart:convert';
 import 'dart:io';
@@ -39,14 +40,26 @@ void main(List<String> args) {
       SchoolMaterials.seal(pages[i].readAsBytesSync(), nonce(), key: key),
     );
   }
-  var small = '';
+  // 音声（リスニング）：画像のフォルダにある <名前>.mp3 を <名前>.bin にする
+  final audio = Directory(args[2])
+      .listSync()
+      .whereType<File>()
+      .where((f) => f.path.endsWith('.mp3'))
+      .toList();
+  for (final f in audio) {
+    final name = f.uri.pathSegments.last.replaceAll('.mp3', '');
+    File('${out.path}/$name.bin').writeAsBytesSync(
+      SchoolMaterials.seal(f.readAsBytesSync(), nonce(), key: key),
+    );
+  }
+  var small = audio.isEmpty ? '' : '・音声 ${audio.length} 個';
   if (args.length == 5) {
     final q = File(args[4]).readAsStringSync();
     final set = QuestionSet.fromJson(jsonDecode(q) as Map<String, dynamic>);
     File('${out.path}/questions.bin').writeAsBytesSync(
       SchoolMaterials.seal(utf8.encode(q), nonce(), key: key),
     );
-    small = '・小問 ${set.questions.length} 問';
+    small += '・小問 ${set.questions.length} 問';
   }
   stdout.writeln(
     '${pages.length} ページ・${sheet.items.length} 欄（${sheet.total} 点）$small',

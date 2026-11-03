@@ -43,6 +43,7 @@ class YosouGroup {
 /// 小問ごとの問題データから、60分で解いて最後にまとめて採点する解答用紙を作る。
 ///
 /// 配点は tags の `pt:N`（なければ1点）。`set:<id>` が同じ小問は完答で1つの欄にまとめる。
+/// `pick:<まとまり>:<選ぶ数>:<大問>` がついた本文のまとまりは選択問題（[MockSection.pick]）。
 abstract final class YosouSheet {
   static MockSheet of(List<QuizQuestion> questions) {
     final number = {
@@ -64,8 +65,13 @@ abstract final class YosouSheet {
               id: 'set:$set', label: '', type: MockItemType.text, points: 0));
         }
       }
+      // 選択問題：tags の `pick:<まとまり>:<選ぶ数>:<大問>`
+      final pick = _tag(g.questions.first, 'pick:')?.split(':');
       sections.add(MockSection(
         title: g.title,
+        pick: pick == null ? '' : pick[0],
+        pickCount: pick == null ? 1 : int.parse(pick[1]),
+        pickMember: pick == null ? '' : pick[2],
         items: [
           for (final i in items)
             if (sets[i.id] case final qs?) _set(qs, number) else i,

@@ -5,6 +5,7 @@ import '../app/theme.dart';
 import '../art/paper.dart';
 import '../quiz/figure_view.dart';
 import '../vocab/speech.dart';
+import 'yosou_audio.dart';
 import 'yosou_crop_view.dart';
 
 /// 予想問題の小問1問（本文・同じ大問の問題・リスニングつき）。
@@ -132,9 +133,19 @@ class _YosouQuestionViewState extends State<YosouQuestionView> {
                   key: const ValueKey('yosou-listen'),
                   onPressed: widget.heard >= YosouQuestionView.plays
                       ? null
-                      : () {
+                      : () async {
                           widget.onListen?.call();
-                          speaker.speak(q.sentence!, lang: 'en-US', rate: 0.5);
+                          final audio = q.audio;
+                          if (audio == null) {
+                            speaker.speak(
+                              q.sentence!,
+                              lang: 'en-US',
+                              rate: 0.5,
+                            );
+                          } else if (!await YosouAudio.play(audio) && mounted) {
+                            // 流せなければ、文字で読めるようにする
+                            setState(() => _showText = true);
+                          }
                         },
                   icon: const Icon(Icons.volume_up),
                   label: Text(

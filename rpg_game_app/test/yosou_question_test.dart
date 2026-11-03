@@ -6,6 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:rpg_game/rpg_game.dart';
 import 'package:rpg_game_app/study/school_exam_store.dart';
 import 'package:rpg_game_app/study/yosou_crop_view.dart';
+import 'package:rpg_game_app/study/yosou_audio.dart';
 import 'package:rpg_game_app/study/yosou_exam_screens.dart';
 import 'package:rpg_game_app/study/yosou_exam_store.dart';
 import 'package:rpg_game_app/vocab/speech.dart';
@@ -308,12 +309,19 @@ void main() {
       speaker = SilentSpeaker();
       final key = SchoolMaterials.keyFor(_password!);
       YosouImages.key = key;
-      for (final e in YosouExams.all.where((e) => e.smallQuestions)) {
+      YosouAudio.play = (_) async => true;
+      for (final e in [
+        ...YosouExams.all,
+        ...YosouExams.shinken,
+      ].where((e) => e.smallQuestions)) {
         final qs = (await t.runAsync(YosouExamFiles(e, key).questions))!;
         final sheet = YosouSheet.of(qs);
-        final selfPoints = sheet.items
-            .where((i) => i.type == MockItemType.self)
-            .fold(0, (a, i) => a + i.points);
+        // 自動で採点できる点（選択問題は、点の高い大問から数える）
+        final autoPoints = sheet.combine(
+          (s) => s.items
+              .where((i) => i.type != MockItemType.self)
+              .fold(0, (a, i) => a + i.points),
+        );
         final now = DateTime(2026, 10, 28, 9);
         await openScreen(
           t,
@@ -350,11 +358,7 @@ void main() {
         }
         await t.tap(find.byKey(const ValueKey('yosou-submit-ok')));
         await _frames(t, 4);
-        expect(
-          find.text('${100 - selfPoints} / 100 点'),
-          findsOneWidget,
-          reason: e.id,
-        );
+        expect(find.text('$autoPoints / 100 点'), findsOneWidget, reason: e.id);
         for (var i = 0; i < 60; i++) {
           await t.drag(
             find.byKey(const ValueKey('yosou-result')),

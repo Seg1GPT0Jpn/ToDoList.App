@@ -17,7 +17,20 @@ import 'yosou_ranking.dart';
 
 /// 予想問題の一覧（60分で解く）
 class YosouExamListScreen extends StatefulWidget {
-  const YosouExamListScreen({super.key});
+  const YosouExamListScreen({
+    super.key,
+    this.exams = YosouExams.all,
+    this.title = '予想問題（60分）',
+    this.intro =
+        '本番と同じく全体で60分。1問ごとの時間制限はありません。'
+        '小問が1問ずつ出て、最後に提出してまとめて採点します。'
+        '途中で閉じても、答えと残り時間は保存されます（右の ↺ でリセットできます）。',
+  });
+
+  /// 並べる予想問題（定期テスト・進研模試）
+  final List<YosouExam> exams;
+  final String title;
+  final String intro;
 
   @override
   State<YosouExamListScreen> createState() => _YosouExamListScreenState();
@@ -52,7 +65,7 @@ class _YosouExamListScreenState extends State<YosouExamListScreen> {
 
   /// パスワードで1つ目の解答用紙が開けるか確かめ、開ければ鍵として使う
   Future<void> _try(String password, {required bool remember}) async {
-    if (password.trim().isEmpty || YosouExams.all.isEmpty) return;
+    if (password.trim().isEmpty || widget.exams.isEmpty) return;
     setState(() {
       _checking = true;
       _error = null;
@@ -60,7 +73,7 @@ class _YosouExamListScreenState extends State<YosouExamListScreen> {
     final gate = _gate;
     await Future<void>.delayed(const Duration(milliseconds: 30));
     final key = SchoolMaterials.keyFor(password);
-    final sheet = await YosouExamFiles(YosouExams.all.first, key).sheet();
+    final sheet = await YosouExamFiles(widget.exams.first, key).sheet();
     if (sheet != null && remember) await gate.saveSecret(password);
     if (!mounted) return;
     setState(() {
@@ -164,7 +177,7 @@ class _YosouExamListScreenState extends State<YosouExamListScreen> {
       ),
       title: Text(e.title),
       subtitle: Text(
-        '${ShonanSubjects.byId(e.subjectId)?.displayName ?? ''}・${e.minutes}分\n$status',
+        '${e.label.isNotEmpty ? e.label : ShonanSubjects.byId(e.subjectId)?.displayName ?? ''}・${e.minutes}分\n$status',
       ),
       isThreeLine: true,
       trailing: _store.hasData(e.id)
@@ -194,15 +207,13 @@ class _YosouExamListScreenState extends State<YosouExamListScreen> {
   Widget build(BuildContext context) {
     final key = _key;
     return Scaffold(
-      appBar: AppBar(title: Text('予想問題（60分）', style: serif(17))),
+      appBar: AppBar(title: Text(widget.title, style: serif(17))),
       body: NotebookPaper(
         child: ListView(
           padding: const EdgeInsets.fromLTRB(16, 12, 16, 32),
           children: [
             Text(
-              '本番と同じく全体で60分。1問ごとの時間制限はありません。'
-              '小問が1問ずつ出て、最後に提出してまとめて採点します。'
-              '途中で閉じても、答えと残り時間は保存されます（右の ↺ でリセットできます）。',
+              widget.intro,
               style: TextStyle(fontSize: 12, color: TsuzuriColors.inkSoft),
             ),
             const SizedBox(height: 12),
@@ -213,8 +224,8 @@ class _YosouExamListScreenState extends State<YosouExamListScreen> {
             else ...[
               // 予想問題を開いた人は、みんなランキングの名簿に入る
               const YosouMemberCard(),
-              for (final e in YosouExams.all) _examCard(e, key),
-              if (YosouExams.all.any((e) => _store.hasData(e.id)))
+              for (final e in widget.exams) _examCard(e, key),
+              if (widget.exams.any((e) => _store.hasData(e.id)))
                 Padding(
                   padding: const EdgeInsets.only(top: 12),
                   child: Center(
@@ -224,7 +235,9 @@ class _YosouExamListScreenState extends State<YosouExamListScreen> {
                         if (!await confirmYosouReset(context, 'すべての予想問題')) {
                           return;
                         }
-                        await _store.resetAll();
+                        for (final e in widget.exams) {
+                          await _store.reset(e.id);
+                        }
                         if (mounted) setState(() {});
                       },
                       icon: const Icon(Icons.restart_alt),
@@ -1226,7 +1239,7 @@ class _YosouExamScreenState extends State<YosouExamScreen> {
               final ok = await showDialog<bool>(
                 context: context,
                 builder: (c) => AlertDialog(
-                  title: const Text('もう一度、60分で解きますか？'),
+                  title: Text('もう一度、${_e.minutes}分で解きますか？'),
                   content: const Text('今回の結果は「これまでの結果」に残ります。'),
                   actions: [
                     TextButton(

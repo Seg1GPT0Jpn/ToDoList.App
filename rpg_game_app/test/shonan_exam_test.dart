@@ -13,6 +13,7 @@ import 'package:rpg_game_app/study/school_material_screen.dart';
 import 'package:rpg_game_app/study/sea_home_screen.dart';
 import 'package:rpg_game_app/study/shonan_exam_screens.dart';
 import 'package:rpg_game_app/study/shonan_question_list.dart';
+import 'package:rpg_game_app/study/yosou_exam_screens.dart';
 import 'package:rpg_game_app/vocab/vocab_book_screen.dart';
 import 'package:rpg_game_app/vocab/vocab_store.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -94,6 +95,20 @@ void main() {
     await SchoolExamStore.migrate(fresh);
     expect(SchoolExamStore(fresh).unlocked, isFalse);
     expect(await SchoolExamStore(fresh).unlock('どこか高校', 'abc'), isFalse);
+  });
+
+  testWidgets('11月 進研模試：予想問題を解く（進研模試）から、進研模試だけの一覧に入る', (t) async {
+    await openScreen(t, const ShonanExamListScreen(), frames: 10);
+    expect(find.text('11月 進研模試'), findsOneWidget);
+    await t.ensureVisible(find.byKey(const ValueKey('shonan-shinken')));
+    await t.tap(find.byKey(const ValueKey('shonan-shinken')));
+    await _frames(t);
+    final list = t.widget<YosouExamListScreen>(
+      find.byType(YosouExamListScreen),
+    );
+    expect(list.exams, same(YosouExams.shinken));
+    expect(find.text('予想問題（進研模試・11月）'), findsOneWidget);
+    expect(t.takeException(), isNull);
   });
 
   testWidgets('範囲表から後期中間を作ると、11科目の範囲と教材が見える', (t) async {
