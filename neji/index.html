@@ -189,6 +189,12 @@ input[type="text"] {
     <p class="note" id="dailyNote"></p>
     <h3>レベルを選ぶ</h3>
     <div class="levels" id="levelGrid"></div>
+    <h3>アカウント（進み具合をクラウドに保存）</h3>
+    <div id="acctBox" class="row" style="align-items:center">
+      <p class="note" id="acctMsg" style="text-align:left">確認中…</p>
+      <button class="btn small" id="loginBtn" style="flex:0 0 auto" hidden>Googleでログイン</button>
+      <button class="btn small ghost" id="logoutBtn" style="flex:0 0 auto" hidden>ログアウト</button>
+    </div>
     <h3>引き継ぎコード（別の端末で続きから遊ぶ）</h3>
     <div class="code" id="codeOut">—</div>
     <button class="btn small ghost" id="copyBtn">コードをコピー</button>
@@ -203,6 +209,7 @@ input[type="text"] {
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="firebase-config.js" onerror="window.NEJI_FIREBASE = null"></script>
 <script>
 (() => {
 'use strict';
@@ -1407,10 +1414,11 @@ function win() {
   $('winNote').textContent += '　難易度：' + RANK_JA[S.rank] + '（' + RANKS[S.rank] + '）';
   if (daily) {
     const d = store.get('daily', {}); if (!d[daily.key] || d[daily.key] < stars) { d[daily.key] = stars; store.set('daily', d); }
+    setTimeout(() => cloud.push(), 0);
     $('nextBtn').textContent = 'いつものレベルに戻る';
   } else {
     const best = store.get('stars', {}); if (!best[level] || best[level] < stars) { best[level] = stars; store.set('stars', best); }
-    store.set('level', level + 1);
+    store.set('level', level + 1); setTimeout(() => cloud.push(), 0);
     if (level + 1 > maxLevel) { maxLevel = level + 1; store.set('maxLevel', maxLevel); }
     $('nextBtn').textContent = '次のレベルへ';
   }
@@ -1435,6 +1443,70 @@ function readCode(raw) {
   const lv = dec(m[1]); if (lv < 1) return 0;
   return dec(m[2]) === (lv * 7919 + 4099) % 1021 ? lv : 0;
 }
+/* ---- Google login + Firestore sync (only when firebase-config.js has a config) ---- */
+const cloud = (() => {
+  const V = '10.12.2', base = 'https://cdn.jsdelivr.net/npm/firebase@' + V + '/';
+  let auth = null, db = null, user = null, ready = null;
+  const cfg = () => window.NEJI_FIREBASE;
+  const load = src => new Promise((res, rej) => { const el = document.createElement('script'); el.src = src; el.onload = res; el.onerror = rej; document.head.appendChild(el); });
+  function init() {
+    if (ready) return ready;
+    if (!cfg()) return (ready = Promise.resolve(false));
+    ready = load(base + 'firebase-app-compat.js')
+      .then(() => Promise.all([load(base + 'firebase-auth-compat.js'), load(base + 'firebase-firestore-compat.js')]))
+      .then(() => {
+        firebase.initializeApp(cfg()); auth = firebase.auth(); db = firebase.firestore();
+        auth.onAuthStateChanged(u => { user = u; render(); if (u) pull(); });
+        return true;
+      }).catch(e => { console.warn('firebase', e); return false; });
+    return ready;
+  }
+  const local = () => ({ level: store.get('level', 1), maxLevel: maxLevel, stars: store.get('stars', {}), daily: store.get('daily', {}) });
+  function mergeInto(r) {
+    const st = store.get('stars', {}), dl = store.get('daily', {});
+    for (const [k, v] of Object.entries(r.stars || {})) if (!st[k] || st[k] < v) st[k] = v;
+    for (const [k, v] of Object.entries(r.daily || {})) if (!dl[k] || dl[k] < v) dl[k] = v;
+    store.set('stars', st); store.set('daily', dl);
+    const mx = Math.max(maxLevel, r.maxLevel | 0);
+    if (mx > maxLevel) { maxLevel = mx; store.set('maxLevel', mx); }
+  }
+  async function pull() {
+    try {
+      const snap = await db.collection('nejiUsers').doc(user.uid).get();
+      if (snap.exists) mergeInto(snap.data());
+      await push();
+      if (!$('ovMenu').hidden) openMenu();
+      toast('クラウドと同期しました（LEVEL ' + maxLevel + ' まで）', true);
+    } catch (e) { console.warn(e); setMsg('同期できませんでした。通信状態を確認してください。'); }
+  }
+  async function push() {
+    if (!user || !db) return;
+    try { await db.collection('nejiUsers').doc(user.uid).set({ ...local(), name: user.displayName || '', updatedAt: Date.now() }); }
+    catch (e) { console.warn(e); }
+  }
+  function setMsg(t) { const m = $('acctMsg'); if (m) m.textContent = t; }
+  function render() {
+    const li = $('loginBtn'), lo = $('logoutBtn');
+    if (!cfg()) { li.hidden = lo.hidden = true; setMsg('Googleログインは準備中です（管理者の設定待ち）。今は引き継ぎコードを使ってください。'); return; }
+    if (!auth) { li.hidden = lo.hidden = true; setMsg('ログイン機能を読み込めませんでした。通信状態を確認してください。'); return; }
+    if (user) { li.hidden = true; lo.hidden = false; setMsg((user.displayName || 'ログイン中') + ' さん：進み具合はクラウドに自動保存されます。'); }
+    else { li.hidden = false; lo.hidden = true; setMsg('ログインすると、どの端末でも続きから遊べます。'); }
+  }
+  async function login() {
+    if (!(await init()) || !auth) return render();
+    try { await auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()); }
+    catch (e) {
+      if (e && (e.code === 'auth/popup-blocked' || e.code === 'auth/operation-not-supported-in-this-environment')) auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider());
+      else if (e && e.code === 'auth/unauthorized-domain') setMsg('このサイトのドメインがFirebaseで許可されていません（管理者の設定待ち）。');
+      else if (e && e.code !== 'auth/popup-closed-by-user') setMsg('ログインできませんでした：' + (e.code || e.message));
+    }
+  }
+  return { init: () => init().then(render), login, logout: () => auth && auth.signOut(), push, render };
+})();
+$('loginBtn').onclick = () => cloud.login();
+$('logoutBtn').onclick = () => cloud.logout();
+cloud.init();
+
 function openMenu() {
   const grid = $('levelGrid'); grid.innerHTML = '';
   const stars = store.get('stars', {});
@@ -1453,6 +1525,7 @@ function openMenu() {
   }
   const dd = store.get('daily', {})[todayKey()];
   $('dailyNote').textContent = dd ? '今日はクリア済み（星 ' + dd + '）。何度でも挑戦できます。' : '毎日1問。日付ごとに同じ盤面で、難易度は高めです。';
+  cloud.render();
   $('codeOut').textContent = makeCode(maxLevel);
   $('codeMsg').textContent = 'このコードを別の端末で入力すると、LEVEL ' + maxLevel + ' まで遊べる状態になります。';
   show('ovMenu');
