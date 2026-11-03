@@ -157,6 +157,7 @@ input[type="text"] {
       <li>箱は3本で出荷。次の箱が来ると予備のネジも自動で入る</li>
       <li>ネジは<b>部屋の中・床下・足の裏</b>などにも隠れている。下からものぞける</li>
       <li><b>のぞく</b>を押している間は、いちばん外側の部品が透けて一段奥が見える</li>
+      <li>黒い輪の<b>鍵つきネジ</b>は、金の印のネジを抜くまで抜けない</li>
       <li>あと1本で外れる部品はゆらゆら揺れる。予備が埋まって動けなくなったら失敗（<b>戻す</b>で1手ずつ戻せる）</li>
     </ol>
     <p class="note">広告なし・課金なし・個人情報の送信なし。</p>
@@ -184,6 +185,8 @@ input[type="text"] {
 <div class="overlay" id="ovMenu" hidden>
   <div class="card">
     <h2>メニュー</h2>
+    <button class="btn" id="dailyBtn">今日のチャレンジ</button>
+    <p class="note" id="dailyNote"></p>
     <h3>レベルを選ぶ</h3>
     <div class="levels" id="levelGrid"></div>
     <h3>引き継ぎコード（別の端末で続きから遊ぶ）</h3>
@@ -255,6 +258,10 @@ const headGeo = new THREE.CylinderGeometry(SCREW_R, SCREW_R * .92, 0.1, 24);
 const slotGeo = new THREE.BoxGeometry(SCREW_R * 1.4, 0.035, 0.055);
 const proxyGeo = new THREE.SphereGeometry(0.42, 8, 6);
 const proxyMat = new THREE.MeshBasicMaterial({ visible: false });
+const lockGeo = new THREE.TorusGeometry(SCREW_R * 1.05, 0.045, 8, 24);
+const lockMat = new THREE.MeshStandardMaterial({ color: 0x3a4148, metalness: .7, roughness: .35 });
+const keyGeo = new THREE.OctahedronGeometry(0.09);
+const keyMat = new THREE.MeshStandardMaterial({ color: 0xf2b33d, metalness: .7, roughness: .25, emissive: 0x442200 });
 const screwMats = COLORS.map(c => new THREE.MeshStandardMaterial({ color: c, metalness: .3, roughness: .32 }));
 const slotMats = COLORS.map(c => new THREE.MeshStandardMaterial({ color: new THREE.Color(c).multiplyScalar(.35), roughness: .6 }));
 
@@ -625,7 +632,69 @@ const MODELS = [
     b.deco(lamp, new THREE.ConeGeometry(0.5, 0.5, 24, 1, true), 0xf0e3c2, [0, 0.5, 0]);
     const book = b.box([0.9, 0.25, 0.6], [-0.8, 3.48, 0.1], 0x30a46c);
     b.sc(book, '+y', [[-.7, 0], [.7, 0]]);
+  } },
+  { name: '置き時計', build(b) {
+    const wood = 0x8a5a3b, dark = 0x5e3b22;
+    const base = b.box([2.6, 0.3, 1.5], [0, 0.15, 0], dark);
+    b.sc(base, '+y', [[-.9, -.85], [.9, .85], [-.9, .85], [.9, -.85]]); b.sc(base, '-y', [[-.6, 0], [.6, 0], [0, .5]]);
+    const back = b.box([2.2, 3.0, 0.12], [0, 1.8, -0.55], wood);
+    b.sc(back, '-z', [[-.8, .85], [.8, .85], [-.8, -.85], [.8, -.85], [0, 0]]); b.sc(back, '+z', [[-.5, .4], [.5, -.3]]);
+    for (const s of [-1, 1]) {
+      const side = b.box([0.12, 3.0, 1.0], [s * 1.04, 1.8, -0.05], wood);
+      b.sc(side, s > 0 ? '+x' : '-x', [[-.7, .8], [.7, -.8], [0, 0], [.7, .8]]);
+    }
+    const top = b.box([2.4, 0.15, 1.3], [0, 3.37, -0.05], dark);
+    b.sc(top, '+y', [[-.85, -.7], [.85, .7], [0, 0], [-.85, .7]]);
+    const crown = b.box([0.9, 0.4, 0.5], [0, 3.65, -0.05], 0xc9a46a, null, { metal: .4, rough: .35 });
+    b.sc(crown, '+z', [[0, 0]]); b.sc(crown, '+y', [[-.6, 0], [.6, 0]]);
+    // movement behind the dial: two gears
+    const g1 = b.cyl(0.5, 0.1, [-0.3, 2.35, -0.25], 0xc9a46a, [PI / 2, 0, 0], { metal: .7, rough: .3 });
+    b.cap(g1, 1, [[0, 0], [.6, 1]]);
+    const g2 = b.cyl(0.35, 0.1, [0.45, 2.0, -0.35], 0xb08a4e, [PI / 2, 0, 0], { metal: .7, rough: .3 });
+    b.cap(g2, 1, [[0, 0]]);
+    for (const [g, r] of [[g1, .5], [g2, .35]]) for (const a of RING(12)) b.deco(g, new THREE.BoxGeometry(0.08, 0.1, 0.08), 0xc9a46a, [Math.cos(a) * (r + .03), 0, Math.sin(a) * (r + .03)]);
+    const dial = b.cyl(0.85, 0.08, [0, 2.4, 0.3], 0xf4f2ec, [PI / 2, 0, 0]);
+    b.cap(dial, 1, [[.8, PI / 4], [.8, 3 * PI / 4], [.8, -PI / 4], [.8, -3 * PI / 4], [.45, PI / 2]]);
+    for (const a of RING(12)) b.deco(dial, new THREE.BoxGeometry(0.04, 0.02, 0.12), 0x2f3e46, [Math.cos(a) * .7, 0.05, Math.sin(a) * .7]);
+    const hand = b.box([0.08, 0.6, 0.04], [0.1, 2.6, 0.37], 0x2f3e46, [0, 0, -0.5]);
+    b.sc(hand, '+z', [[0, -.8], [0, .5]]);
+    const glass = b.cyl(0.95, 0.06, [0, 2.4, 0.45], 0xcfe8f5, [PI / 2, 0, 0], { rough: .05, opacity: .35 });
+    b.cap(glass, 1, RING(4).map(a => [.9, a]));
+    const pend = b.box([0.08, 0.8, 0.05], [0, 1.05, 0.05], 0xc9a46a, null, { metal: .6 });
+    b.sc(pend, '+z', [[0, .8], [0, -.5]]);
+    b.deco(pend, new THREE.CylinderGeometry(0.2, 0.2, 0.05, 24), 0xc9a46a, [0, -0.45, 0], [PI / 2, 0, 0]);
+    const door = b.box([1.6, 1.1, 0.08], [0, 1.0, 0.5], 0xcfe8f5, null, { rough: .05, opacity: .4 });
+    b.sc(door, '+z', [[-.85, .85], [.85, -.85], [.85, .85], [-.85, -.85]]);
+  } },
+  { name: '飛行機', build(b) {
+    const body = 0xf4f2ec, accent = 0x3e8ef7;
+    const stand = b.cyl(0.25, 1.2, [0, 0.6, 0], 0x5c6670, null, { metal: .4 });
+    b.side(stand, [[0, .3], [PI, -.3], [PI / 2, 0]]); b.cap(stand, -1, [[0, 0]]);
+    b.deco(stand, new THREE.CylinderGeometry(0.9, 0.9, 0.08, 32), 0x3b3f45, [0, -0.56, 0]);
+    const front = b.cyl(0.55, 2.0, [1.0, 1.75, 0], body, [0, 0, PI / 2]);
+    b.side(front, [[0, .5], [PI, -.5], [PI / 2, 0], [-PI / 2, .3], [PI / 4, -.6], [3 * PI / 4, .6], [-PI / 2 - .4, -.6]]);
+    const rear = b.cyl(0.5, 2.0, [-1.0, 1.75, 0], body, [0, 0, PI / 2]);
+    b.side(rear, [[0, .4], [PI, -.4], [PI / 2, .2], [-PI / 2, -.2], [PI / 4, .6], [-3 * PI / 4, -.6]]);
+    const belly = b.box([1.4, 0.1, 0.6], [0, 1.15, 0], 0x5c6670);
+    b.sc(belly, '-y', [[-.8, -.6], [.8, .6], [0, 0], [-.8, .6], [.8, -.6]]); b.sc(belly, '+z', [[0, 0]]);
+    const wing = b.box([1.2, 0.12, 4.4], [0.3, 1.62, 0], accent);
+    b.sc(wing, '+y', [[-.6, -.85], [.6, .85], [0, -.5], [0, .5], [-.6, .3], [.6, -.3], [.6, -.65], [-.6, .65], [0, -.25], [0, .25]]);
+    b.sc(wing, '-y', [[0, -.85], [0, .85], [.5, -.4], [-.5, .4]]);
+    for (const z of [-1.4, 1.4]) {
+      const eng = b.cyl(0.22, 0.7, [0.45, 1.38, z], 0x9aa5ad, [0, 0, PI / 2], { metal: .5, rough: .3 });
+      b.side(eng, [[PI / 2, 0], [-PI / 2, 0], [PI, .5]]);
+    }
+    const fin = b.box([0.8, 0.9, 0.1], [-1.75, 2.35, 0], accent);
+    b.sc(fin, '+z', [[-.6, -.6], [.5, .4]]); b.sc(fin, '-z', [[0, 0]]);
+    const tail = b.box([0.6, 0.08, 1.6], [-1.8, 1.8, 0], accent);
+    b.sc(tail, '+y', [[0, -.8], [0, .8]]); b.sc(tail, '-y', [[0, .6], [0, -.6]]);
+    const canopy = b.box([0.6, 0.3, 0.5], [1.4, 2.25, 0], 0x9fd3e6, null, { rough: .1, opacity: .8 });
+    b.sc(canopy, '+x', [[0, 0]]); b.sc(canopy, '+y', [[-.6, 0]]);
+    const nose = b.cyl(0.3, 0.3, [2.15, 1.75, 0], 0xe5484d, [0, 0, -PI / 2]);
+    b.cap(nose, 1, [[0, 0], [.6, 1]]);
+    for (const a of [0, PI / 2]) b.deco(nose, new THREE.BoxGeometry(0.12, 0.06, 1.3), 0x2f3e46, [0, 0.2, 0], [0, a, 0]);
   } }
+
 ];
 
 /* =========================================================
@@ -651,13 +720,17 @@ function computeBlockers(parts, screws) {
   parts.forEach((p, i) => p.mat.side = sides[i]);
 }
 
-// Heuristic search: always takes a screw that fits an open box (never harmful), and branches only on
-// which screw to park in a spare slot. `true` means a real solution exists for that many spare slots.
+// Search used both to build levels and for hints. It always first drops screws into open boxes
+// (never harmful), and branches only on which reachable screw to park in a spare slot.
+// Returns the full move list of a solution (screw indices in play order), or null.
+// The state key covers everything that decides the future: pulled screws, spare slots, open boxes, queue position.
 function solve(L, B, limit) {
   const N = L.n, seen = new Set(); let nodes = 0;
+  const locks = L.locks || [];
   function rec(removed, partLeft, buf, qi, act) {
     removed = removed.slice(); partLeft = partLeft.slice(); buf = buf.slice(); act = act.map(a => a && { c: a.c, n: a.n });
-    const exposed = i => !removed[i] && L.blockers[i].every(p => partLeft[p] === 0);
+    const moves = [];
+    const exposed = i => !removed[i] && L.blockers[i].every(p => partLeft[p] === 0) && (!locks[i] || locks[i].every(j => removed[j]));
     const refill = k => {
       while (act[k] && act[k].n === 3) {
         act[k] = qi < L.queue.length ? { c: L.queue[qi++], n: 0 } : null;
@@ -672,12 +745,12 @@ function solve(L, B, limit) {
         const k = act.findIndex(a => a && a.c === L.color[i] && a.n < 3);
         if (k >= 0 && partLeft[L.part[i]] < bs) { best = i; bk = k; bs = partLeft[L.part[i]]; }
       }
-      if (best >= 0) { removed[best] = 1; partLeft[L.part[best]]--; act[bk].n++; refill(bk); moved = true; }
+      if (best >= 0) { removed[best] = 1; partLeft[L.part[best]]--; act[bk].n++; moves.push(best); refill(bk); moved = true; }
     }
-    if (removed.every(Boolean)) return true;
-    if (++nodes > limit || buf.length >= B) return false;
-    const key = removed.join('') + '|' + buf.slice().sort().join('');
-    if (seen.has(key)) return false; seen.add(key);
+    if (removed.every(Boolean)) return moves;
+    if (++nodes > limit || buf.length >= B) return null;
+    const key = removed.join('') + '|' + buf.slice().sort().join('') + '|' + qi + '|' + act.map(a => a ? a.c + ':' + a.n : '-').join(',');
+    if (seen.has(key)) return null; seen.add(key);
     const upcoming = act.filter(Boolean).map(a => a.c).concat(L.queue.slice(qi));
     const cands = [];
     for (let i = 0; i < N; i++) if (exposed(i)) cands.push(i);
@@ -685,12 +758,13 @@ function solve(L, B, limit) {
     cands.sort((a, b) => rank(a) - rank(b));
     const tried = new Set();
     for (const i of cands) {
-      const sig = L.color[i] + ':' + L.part[i]; if (tried.has(sig)) continue; tried.add(sig);
+      const sig = L.color[i] + ':' + L.part[i] + ':' + (locks.some(l => l && l.includes(i)) ? i : ''); if (tried.has(sig)) continue; tried.add(sig);
       const r = removed.slice(); r[i] = 1; const pl = partLeft.slice(); pl[L.part[i]]--;
-      if (rec(r, pl, buf.concat(L.color[i]), qi, act)) return true;
-      if (tried.size >= 7) break;
+      const sub = rec(r, pl, buf.concat(L.color[i]), qi, act);
+      if (sub) return moves.concat(i, sub);
+      if (tried.size >= 8) break;
     }
-    return false;
+    return null;
   }
   return rec(L.removed || new Array(N).fill(0), L.partLeft || L.partSize.slice(), L.buf || [], L.qi ?? 2,
     L.act || [{ c: L.queue[0], n: 0 }, L.queue.length > 1 ? { c: L.queue[1], n: 0 } : null]);
@@ -698,11 +772,20 @@ function solve(L, B, limit) {
 
 // gentle start, then steadily harder. fail = how often careless players must lose
 // (rand: pulls any visible screw; greedy: fills open boxes first, otherwise parks a random screw)
+// slots = spare slots in play; the same number is used when the level is built and checked
 function difficulty(level) {
-  if (level === 1) return { keep: .3, colors: 3, minPer: 1, rand: .5, greedy: .1, open: .6 };
-  if (level === 2) return { keep: .45, colors: 3, minPer: 1, rand: .8, greedy: .35, open: .5 };
-  if (level <= 5) return { keep: .6 + .04 * (level - 3), colors: Math.min(4 + Math.floor((level - 3) / 2), 8), minPer: 1, rand: .92, greedy: .6, open: .4 };
-  return { keep: Math.min(.7 + .03 * (level - 6), .95), colors: Math.min(5 + Math.floor((level - 6) / 3), 8), minPer: 1, rand: .97, greedy: .8, open: .35 };
+  if (level === 1) return { keep: .3, colors: 3, minPer: 1, rand: .5, greedy: .1, open: .6, slots: 5, locks: 0 };
+  if (level === 2) return { keep: .45, colors: 3, minPer: 1, rand: .8, greedy: .35, open: .5, slots: 5, locks: 0 };
+  if (level <= 5) return { keep: .6 + .04 * (level - 3), colors: Math.min(4 + Math.floor((level - 3) / 2), 8), minPer: 1, rand: .92, greedy: .6, open: .4, slots: level <= 3 ? 5 : 4, locks: level >= 5 ? 1 : 0 };
+  return { keep: Math.min(.7 + .03 * (level - 6), .95), colors: Math.min(5 + Math.floor((level - 6) / 3), 8), minPer: 1, rand: .97, greedy: .85, open: .35,
+    slots: level >= 20 ? 3 : 4, locks: Math.min(1 + Math.floor((level - 5) / 4), 4) };
+}
+const RANKS = ['Beginner', 'Easy', 'Normal', 'Hard', 'Expert', 'Master', 'Insane'];
+const RANK_JA = ['入門', '初級', '中級', '上級', '熟練', '超上級', '最高難度'];
+// measured, not assumed: how often careless play fails and how many spare slots a solution needs
+function rankOf(m, slots) {
+  if (m.fg < .3) return 0; if (m.fg < .5) return 1; if (m.fg < .7) return 2; if (m.fg < .85) return 3;
+  if (m.fg < .95) return 4; if (m.minBuf >= slots && m.locks > 0 && m.fr >= .99) return 6; return 5;
 }
 
 // one careless playthrough on the abstract level; true = cleared
@@ -717,7 +800,7 @@ function playout(L, B, rnd, pureRandom) {
   };
   for (let step = 0; step < N; step++) {
     const ex = [], match = [];
-    for (let i = 0; i < N; i++) if (!removed[i] && L.blockers[i].every(p => partLeft[p] === 0)) {
+    for (let i = 0; i < N; i++) if (!removed[i] && L.blockers[i].every(p => partLeft[p] === 0) && (!L.locks[i] || L.locks[i].every(j => removed[j]))) {
       ex.push(i); if (act.some(a => a && a.c === L.color[i] && a.n < 3)) match.push(i);
     }
     if (!ex.length) return false;
@@ -735,9 +818,10 @@ function failRate(L, B, rnd, pureRandom, trials) {
   return f / trials;
 }
 
-function buildLevel(level) {
-  const rnd = mulberry32(level * 92821 + 7);
-  const mdef = MODELS[(level - 1) % MODELS.length];
+function buildLevel(level, opt = {}) {
+  const seed = opt.seed ?? level;
+  const rnd = mulberry32(seed * 92821 + 7);
+  const mdef = MODELS[opt.model ?? (level - 1) % MODELS.length];
   const D = difficulty(level);
   scene.remove(model); disposeModel(model);
   model = new THREE.Group(); scene.add(model);
@@ -801,18 +885,34 @@ function buildLevel(level) {
   const screws = chosen;
 
   const L = { n: screws.length, part: screws.map(s => s.part.id), blockers: screws.map(s => s.blockers),
-    partSize: parts.map(p => screws.filter(s => s.part === p).length), color: [], queue: [] };
+    partSize: parts.map(p => screws.filter(s => s.part === p).length), color: [], queue: [], locks: [] };
+  const topoOrder = () => {
+    const removed = new Array(L.n).fill(0), left = L.partSize.slice(), order = [];
+    while (order.length < L.n) {
+      const ex = []; for (let i = 0; i < L.n; i++) if (!removed[i] && L.blockers[i].every(p => left[p] === 0) && (!L.locks[i] || L.locks[i].every(j => removed[j]))) ex.push(i);
+      if (!ex.length) return null;
+      const i = ex[Math.floor(rnd() * ex.length)]; removed[i] = 1; left[L.part[i]]--; order.push(i);
+    }
+    return order;
+  };
+  // locked screws: each opens only after its key screw is out (key comes earlier in a valid order, so no loops)
+  {
+    const order = topoOrder();
+    for (let k = 0; order && k < D.locks; k++) {
+      for (let t = 0; t < 40; t++) {
+        const a = 3 + Math.floor(rnd() * (order.length - 3)), bIdx = Math.floor(rnd() * a);
+        const A = order[a], K = order[bIdx];
+        if (L.locks[A] || L.part[A] === L.part[K] || L.locks.some(l => l && l.includes(K))) continue;
+        L.locks[A] = [K]; break;
+      }
+    }
+  }
 
   let best = null, bestScore = -1;
   const t0 = performance.now();
-  for (let attempt = 0; attempt < 220 && performance.now() - t0 < 2500; attempt++) {
-    const removed = new Array(L.n).fill(0), left = L.partSize.slice(), order = [];
-    while (order.length < L.n) {
-      const ex = []; for (let i = 0; i < L.n; i++) if (!removed[i] && L.blockers[i].every(p => left[p] === 0)) ex.push(i);
-      if (!ex.length) break;
-      const i = ex[Math.floor(rnd() * ex.length)]; removed[i] = 1; left[L.part[i]]--; order.push(i);
-    }
-    if (order.length < L.n) { console.warn('model deadlock', mdef.name); break; }
+  for (let attempt = 0; attempt < 400 && performance.now() - t0 < 4000; attempt++) {
+    const order = topoOrder();
+    if (!order) { console.warn('model deadlock', mdef.name); break; }
     const queue = []; let prev = -1;
     for (let i = 0; i < order.length; i += 3) {
       let c; do { c = Math.floor(rnd() * D.colors); } while (D.colors > 1 && c === prev);
@@ -826,23 +926,29 @@ function buildLevel(level) {
       const t = L.color[order[a]]; L.color[order[a]] = L.color[order[c]]; L.color[order[c]] = t;
     }
     L.queue = queue;
-    const fr = failRate(L, BUF0, rnd, true, 30), fg = failRate(L, BUF0, rnd, false, 30);
+    const fr = failRate(L, D.slots, rnd, true, 30), fg = failRate(L, D.slots, rnd, false, 30);
     const score = Math.min(fr / D.rand, 1) + Math.min(fg / D.greedy, 1) + (fr + fg) * .01;
     if (score <= bestScore) continue;
-    if (!solve(L, BUF0, 6000)) continue;
-    best = { color: L.color.slice(), queue: queue.slice(), hard: fr >= D.rand && fg >= D.greedy, fr, fg }; bestScore = score;
+    const sol = solve(L, D.slots, 8000);
+    if (!sol) continue;
+    best = { color: L.color.slice(), queue: queue.slice(), hard: fr >= D.rand && fg >= D.greedy, fr, fg, solution: sol }; bestScore = score;
     if (best.hard) break;
   }
+  let fallback = false;
   if (!best) {
-    const removed = new Array(L.n).fill(0), left = L.partSize.slice(), order = [];
-    while (order.length < L.n) {
-      const i = [...Array(L.n).keys()].find(i => !removed[i] && L.blockers[i].every(p => left[p] === 0));
-      if (i === undefined) break;
-      removed[i] = 1; left[L.part[i]]--; order.push(i);
-    }
+    fallback = true;
+    // no scrambled coloring passed: use the plain removal order (always solvable) and say so in the rank
+    const order = topoOrder();
     const q = []; for (let i = 0; i < order.length; i += 3) { const c = (i / 3) % D.colors; q.push(c); for (let j = 0; j < 3; j++) L.color[order[i + j]] = c; }
-    best = { color: L.color.slice(), queue: q, hard: false };
+    L.queue = q;
+    best = { color: L.color.slice(), queue: q, hard: false, fr: failRate(L, D.slots, rnd, true, 30), fg: failRate(L, D.slots, rnd, false, 30), solution: solve(L, D.slots, 20000) || order };
   }
+  // fewest spare slots a solution needs
+  L.color = best.color; L.queue = best.queue;
+  let minBuf = D.slots;
+  for (let bb = 0; bb < D.slots; bb++) if (solve(L, bb, 3000)) { minBuf = bb; break; }
+  const metrics = { fallback, fr: best.fr, fg: best.fg, minBuf, locks: L.locks.filter(Boolean).length, screws: L.n, colors: D.colors };
+  const rank = rankOf(metrics, D.slots);
 
   screws.forEach((s, i) => {
     s.i = i; s.color = best.color[i];
@@ -856,6 +962,11 @@ function buildLevel(level) {
     g.rotateY(rnd() * PI);
     s.part.mesh.add(g);
     s.g = g; s.proxy = proxy; s.removed = false; s.anim = 0;
+    s.lockedBy = L.locks[i] ? L.locks[i][0] : -1;
+    if (s.lockedBy >= 0) {
+      const ring = new THREE.Mesh(lockGeo, lockMat); ring.position.y = 0.06; ring.rotation.x = PI / 2; g.add(ring); s.lockRing = ring;
+    }
+    if (L.locks.some(l => l && l.includes(i))) { const k = new THREE.Mesh(keyGeo, keyMat); k.position.y = 0.11; g.add(k); }
     s.pos0 = g.position.clone(); s.quat0 = g.quaternion.clone();
   });
   parts.forEach(p => {
@@ -865,12 +976,14 @@ function buildLevel(level) {
   parts.filter(p => p.left === 0).forEach(p => { p.mesh.visible = false; p.state = 'gone'; });
 
   const box3 = new THREE.Box3().setFromObject(model);
-  return { name: mdef.name, parts, screws, queue: best.queue, bounds: box3, hard: !!best.hard, fr: best.fr, fg: best.fg };
+  screws.forEach(s => { s.lockKey = s.lockedBy >= 0 ? screws[s.lockedBy] : null; });
+  return { name: mdef.name, parts, screws, queue: best.queue, bounds: box3, hard: !!best.hard, fr: best.fr, fg: best.fg,
+    solution: best.solution, metrics, rank, slots: D.slots };
 }
 function disposeModel(g) {
   g.traverse(o => {
-    if (o.geometry && o.geometry !== headGeo && o.geometry !== slotGeo && o.geometry !== proxyGeo) o.geometry.dispose();
-    if (o.material && !screwMats.includes(o.material) && !slotMats.includes(o.material) && o.material !== proxyMat) o.material.dispose();
+    if (o.geometry && ![headGeo, slotGeo, proxyGeo, lockGeo, keyGeo].includes(o.geometry)) o.geometry.dispose();
+    if (o.material && !screwMats.includes(o.material) && !slotMats.includes(o.material) && ![proxyMat, lockMat, keyMat].includes(o.material)) o.material.dispose();
   });
 }
 
@@ -885,16 +998,22 @@ const cam = { yaw: 0.65, pitch: 0.42, dist: 11, distBase: 11, radius: 4, target:
 
 function makeBox(color) { return { color, reserved: 0, filled: 0, state: 'in', t: 0 }; }
 function newBox() { return S.queue.length ? makeBox(S.queue.shift()) : null; }
-function startLevel(n) {
-  level = n; store.set('level', n);
-  if (n > maxLevel) { maxLevel = n; store.set('maxLevel', n); }
+let daily = null; // { key, label } while playing today's challenge
+function todayKey() { const d = new Date(); return d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate(); }
+function startDaily() {
+  const key = todayKey();
+  daily = { key, label: 'DAILY ' + String(key).slice(4, 6) + '/' + String(key).slice(6) };
+  startLevel(12 + key % 7, { seed: key, model: key % MODELS.length });
+}
+function startLevel(n, opt) {
+  if (!opt) { daily = null; level = n; store.set('level', n); if (n > maxLevel) { maxLevel = n; store.set('maxLevel', n); } }
   $('loading').hidden = false; hide('ovWin'); hide('ovLose'); confetti = [];
   setTimeout(() => {
-    const lv = buildLevel(n);
-    S = { ...lv, active: [null, null], buffer: new Array(BUF0).fill(null), flyers: [], hints: HINTS, undos: UNDOS,
+    const lv = buildLevel(n, opt || {});
+    S = { ...lv, active: [null, null], buffer: new Array(lv.slots).fill(null), flyers: [], hints: HINTS, undos: UNDOS,
       slotUsed: false, hintUsed: false, undoUsed: false, history: [],
       over: false, won: false, winT: 0, hint: null, bufShake: 0, time: 0 };
-    S.active = [newBox(), newBox()];
+    S.active = [newBox(), newBox()]; S.levelNo = n; S.opt = opt || null;
     const size = lv.bounds.getSize(V(0, 0, 0)), center = lv.bounds.getCenter(V(0, 0, 0));
     cam.target.set(0, center.y, 0);
     cam.radius = Math.max(size.x, size.z, size.y) * 0.62 + 0.6;
@@ -910,7 +1029,8 @@ function fitCamera() {
   cam.distBase = cam.radius / Math.sin(Math.min(vh, hh)) * 0.9;
 }
 function liveScrews() { return S.screws.filter(s => !s.removed); }
-function isExposed(s) { return s.blockers.every(id => S.parts[id].state !== 'on'); }
+function isUnlocked(s) { return !s.lockKey || s.lockKey.removed; }
+function isExposed(s) { return s.blockers.every(id => S.parts[id].state !== 'on') && isUnlocked(s); }
 function boxFor(color) {
   for (let i = 0; i < 2; i++) { const b = S.active[i]; if (b && b.state !== 'out' && b.color === color && b.reserved < 3) return i; }
   return -1;
@@ -932,6 +1052,7 @@ function restore(snap) {
     s.removed = snap.removed[i]; s.anim = 0; s.shake = 0;
     s.g.visible = !s.removed; s.g.position.copy(s.pos0); s.g.quaternion.copy(s.quat0); s.g.scale.setScalar(1);
   });
+  S.screws.forEach(s => { if (s.lockRing) s.lockRing.visible = !s.lockKey.removed; });
   for (const p of S.parts) {
     if (p.size0 === 0) continue;
     p.left = S.screws.filter(s => s.part === p && !s.removed).length;
@@ -975,6 +1096,7 @@ function takeScrew(s) {
   beep(880, .05, 'triangle'); setTimeout(() => beep(1180, .05, 'triangle'), 70); buzz(12);
   const p = s.part; p.left--;
   if (p.left === 0) { p.state = 'loose'; p.fallDelay = .28; }
+  S.screws.forEach(o => { if (o.lockKey === s && o.lockRing) { o.lockRing.visible = false; setTimeout(() => beep(1320, .08, 'triangle'), 120); } });
   if (peeking) setPeek(true);
   ui();
 }
@@ -1162,6 +1284,8 @@ function drawTray() {
   ctx.font = '800 11px "M PLUS Rounded 1c", sans-serif'; ctx.textAlign = 'left';
   ctx.fillStyle = used >= n - 1 ? '#ff6b5e' : '#9fb1bd';
   ctx.fillText(`予備 ${used}/${n}`, g.r.left + 2, g.r.top + 146);
+  ctx.fillStyle = ['#7fd6a0', '#7fd6a0', '#9fc4ff', '#f2b33d', '#f76b15', '#ff6b5e', '#e93d82'][S.rank];
+  ctx.fillText(RANK_JA[S.rank], g.r.left + 62, g.r.top + 146);
   ctx.textAlign = 'right'; ctx.fillStyle = '#9fb1bd';
   ctx.fillText(`${S.name} ・ のこり ${liveScrews().length} 本 ・ 箱 ${S.queue.length + S.active.filter(Boolean).length}`, g.r.right - 2, g.r.top + 146);
   for (const f of S.flyers) {
@@ -1240,7 +1364,12 @@ function tap(cx, cy) {
   }
   const s = best;
   if (isExposed(s)) takeScrew(s);
-  else {
+  else if (!isUnlocked(s) && s.blockers.every(id => S.parts[id].state !== 'on')) {
+    s.shake = .35; beep(160, .07, 'square'); buzz(25);
+    if (S.hint) S.hint.s.g.scale.setScalar(1);
+    S.hint = { s: s.lockKey, t: 1.6 };
+    toast('鍵つきネジ。金の印のネジを先に抜こう');
+  } else {
     s.shake = .35; beep(160, .07, 'square'); buzz(25);
     s.blockers.forEach(id => { const p = S.parts[id]; if (p.state === 'on') p.flash = .5; });
     toast('赤く光った部品がじゃまで抜けない');
@@ -1253,7 +1382,7 @@ function tap(cx, cy) {
 function $(id) { return document.getElementById(id); }
 function show(id) { $(id).hidden = false; } function hide(id) { $(id).hidden = true; }
 function ui() {
-  $('lvLabel').textContent = 'LEVEL ' + level;
+  $('lvLabel').textContent = daily ? daily.label : 'LEVEL ' + level;
   $('soundBtn').style.opacity = soundOn ? 1 : .4;
   if (!S) return;
   $('hintLeft').textContent = 'のこり ' + S.hints; $('hintBtn').disabled = S.hints <= 0;
@@ -1270,14 +1399,21 @@ function toast(msg, ok) {
 function win() {
   S.won = true;
   const stars = Math.max(1, 3 - (S.hintUsed ? 1 : 0) - (S.undoUsed ? 1 : 0) - (S.slotUsed ? 1 : 0));
-  $('winTitle').textContent = 'LEVEL ' + level + ' クリア！';
+  $('winTitle').textContent = (daily ? daily.label : 'LEVEL ' + level) + ' クリア！';
   $('winStars').innerHTML = '★'.repeat(stars) + '<span class="off">' + '★'.repeat(3 - stars) + '</span>';
   $('winStars').setAttribute('aria-label', '星 ' + stars + ' / 3');
   $('winText').textContent = S.name + 'を分解しました。ネジ ' + S.screws.length + ' 本、部品 ' + S.parts.filter(p => p.size0).length + ' 個。';
   $('winNote').textContent = stars === 3 ? 'ヒント・戻す・＋スロットなしで完璧です。' : 'ヒント・戻す・＋スロットを使わずに解くと星3つ。';
-  const best = store.get('stars', {}); if (!best[level] || best[level] < stars) { best[level] = stars; store.set('stars', best); }
-  store.set('level', level + 1);
-  if (level + 1 > maxLevel) { maxLevel = level + 1; store.set('maxLevel', maxLevel); }
+  $('winNote').textContent += '　難易度：' + RANK_JA[S.rank] + '（' + RANKS[S.rank] + '）';
+  if (daily) {
+    const d = store.get('daily', {}); if (!d[daily.key] || d[daily.key] < stars) { d[daily.key] = stars; store.set('daily', d); }
+    $('nextBtn').textContent = 'いつものレベルに戻る';
+  } else {
+    const best = store.get('stars', {}); if (!best[level] || best[level] < stars) { best[level] = stars; store.set('stars', best); }
+    store.set('level', level + 1);
+    if (level + 1 > maxLevel) { maxLevel = level + 1; store.set('maxLevel', maxLevel); }
+    $('nextBtn').textContent = '次のレベルへ';
+  }
   [523, 659, 784, 1046].forEach((f, i) => setTimeout(() => beep(f, .12, 'triangle'), i * 90));
   burst(); show('ovWin');
 }
@@ -1302,13 +1438,21 @@ function readCode(raw) {
 function openMenu() {
   const grid = $('levelGrid'); grid.innerHTML = '';
   const stars = store.get('stars', {});
+  const WORLDS = ['はじめての工房', 'からくり横丁', '職人の試練', '達人の工場', '究極の工房'];
   for (let i = 1; i <= maxLevel; i++) {
+    if ((i - 1) % 8 === 0) {
+      const w = Math.floor((i - 1) / 8), h = document.createElement('div');
+      h.style.cssText = 'grid-column:1/-1;text-align:left;font-size:12px;color:var(--brass);font-weight:800;margin-top:4px';
+      h.textContent = 'WORLD ' + (w + 1) + '　' + (WORLDS[w] || '無限工房'); grid.appendChild(h);
+    }
     const bt = document.createElement('button'); bt.id = 'lvl-' + i;
     bt.textContent = i; if (i === level) bt.className = 'cur';
     if (stars[i]) bt.title = '星 ' + stars[i];
     bt.onclick = () => { hide('ovMenu'); startLevel(i); };
     grid.appendChild(bt);
   }
+  const dd = store.get('daily', {})[todayKey()];
+  $('dailyNote').textContent = dd ? '今日はクリア済み（星 ' + dd + '）。何度でも挑戦できます。' : '毎日1問。日付ごとに同じ盤面で、難易度は高めです。';
   $('codeOut').textContent = makeCode(maxLevel);
   $('codeMsg').textContent = 'このコードを別の端末で入力すると、LEVEL ' + maxLevel + ' まで遊べる状態になります。';
   show('ovMenu');
@@ -1327,27 +1471,20 @@ $('loadBtn').onclick = () => {
 
 $('hintBtn').onclick = () => {
   if (!S || S.hints <= 0 || S.over || S.won) return;
-  let list = exposedMatches();
-  if (!list.length) {
-    // ask the solver which spare-slot move keeps the level solvable
-    const L = solverState();
-    const next = S.active.filter(Boolean).map(b => b.color).concat(S.queue);
-    const rank = c => { const i = next.indexOf(c); return i < 0 ? 99 : i; };
-    const cands = liveScrews().filter(isExposed).sort((a, b) => rank(a.color) - rank(b.color));
-    list = cands.filter(s => { const T = { ...L, removed: L.removed.slice(), partLeft: L.partLeft.slice(), buf: L.buf.concat(s.color) };
-      T.removed[s.i] = 1; T.partLeft[s.part.id]--; return T.buf.length <= S.buffer.length && solve(T, S.buffer.length, 3000); });
-    if (!list.length) list = cands;
-  }
-  if (!list.length) return;
-  S.hint = { s: list[0], t: 3.5 }; S.hints--; S.hintUsed = true; ui();
-  const w = list[0].g.getWorldPosition(V(0, 0, 0)); cam.yawTo = Math.atan2(w.x, w.z);
+  const plan = solve(solverState(), S.buffer.length, 12000);
+  if (!plan || !plan.length) { toast('この状態からは解けないかも。「戻す」がおすすめ'); return; }
+  const s = S.screws[plan[0]];
+  S.hint = { s, t: 3.5 }; S.hints--; S.hintUsed = true; ui();
+  const w = s.g.getWorldPosition(V(0, 0, 0)); cam.yawTo = Math.atan2(w.x, w.z);
+  cam.pitch = w.y < .4 ? -0.9 : Math.max(cam.pitch, 0.2);
 };
 function solverState() {
   return { n: S.screws.length, part: S.screws.map(s => s.part.id), blockers: S.screws.map(s => s.blockers), color: S.screws.map(s => s.color),
     queue: S.active.filter(Boolean).map(b => b.color).concat(S.queue), qi: S.active.filter(Boolean).length,
     removed: S.screws.map(s => s.removed ? 1 : 0), partLeft: S.parts.map(p => p.state === 'on' ? p.left : 0),
     buf: S.buffer.filter(Boolean).map(v => v.color),
-    act: S.active.filter(Boolean).map(b => ({ c: b.color, n: b.reserved })).concat([null, null]).slice(0, 2) };
+    act: S.active.filter(Boolean).map(b => ({ c: b.color, n: b.reserved })).concat([null, null]).slice(0, 2),
+    locks: S.screws.map(s => s.lockKey ? [s.lockKey.i] : null) };
 }
 $('undoBtn').onclick = () => { if (!undo()) toast('これ以上戻せません'); };
 // peek: the outermost layer (parts with a reachable screw that cover other screws) turns see-through
@@ -1373,12 +1510,13 @@ peekBtn.addEventListener('contextmenu', e => e.preventDefault());
 $('loseUndo').onclick = () => undo();
 $('slotBtn').onclick = addSlot;
 $('loseSlot').onclick = addSlot;
-$('retryBtn').onclick = () => { hide('ovMenu'); startLevel(level); };
-$('loseRetry').onclick = () => startLevel(level);
-$('nextBtn').onclick = () => startLevel(level + 1);
+$('retryBtn').onclick = () => { hide('ovMenu'); S && S.opt ? startLevel(S.levelNo, S.opt) : startLevel(level); };
+$('loseRetry').onclick = () => S && S.opt ? startLevel(S.levelNo, S.opt) : startLevel(level);
+$('nextBtn').onclick = () => daily ? startLevel(level) : startLevel(level + 1);
 $('helpBtn').onclick = () => show('ovHelp');
 $('helpClose').onclick = () => { hide('ovHelp'); store.set('seenHelp', true); initAudio(); };
 $('menuBtn').onclick = openMenu;
+$('dailyBtn').onclick = () => { hide('ovMenu'); startDaily(); };
 $('menuClose').onclick = () => hide('ovMenu');
 $('soundBtn').onclick = () => { soundOn = !soundOn; store.set('sound', soundOn); ui(); initAudio(); };
 
