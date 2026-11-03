@@ -7,6 +7,7 @@ import '../app/services.dart';
 import '../app/theme.dart';
 import '../audio/music_scope.dart';
 import '../field/field_screen.dart';
+import 'eiken_door_screen.dart';
 
 /// 異世界の門の色
 abstract final class GateColors {
@@ -47,7 +48,8 @@ class GateDoor {
     GateDoor(
       id: 'eiken',
       title: '英検の扉',
-      subtitle: '英検 準2級・2級・準1級・1級の単語と対策（準備中）',
+      subtitle: '英検 準2級・2級・準1級・1級の単語帳と、単語のバトル',
+      worldId: Eiken.worldId,
     ),
     GateDoor(
       id: 'national',
@@ -139,10 +141,12 @@ class _GateScreenState extends State<GateScreen> {
     RpgServices.of(context).music.se('se_magic');
     await Navigator.of(context).push(
       MaterialPageRoute<void>(
-        builder: (_) => MusicScope(
-          music: 'field_information',
-          child: FieldScreen(world: world, progress: progress),
-        ),
+        builder: (_) => door.id == 'eiken'
+            ? const EikenDoorScreen()
+            : MusicScope(
+                music: 'field_information',
+                child: FieldScreen(world: world, progress: progress),
+              ),
       ),
     );
     if (mounted) setState(() {});
@@ -212,7 +216,7 @@ class _DoorCard extends StatelessWidget {
     String? count;
     if (ready && progress != null) {
       final stages = RpgCatalog.world(door.worldId!).stages
-          .where((s) => s.branch == door.routeId)
+          .where((s) => door.routeId == null || s.branch == door.routeId)
           .toList();
       final cleared = stages
           .where((s) => progress!.clearedStageIds.contains(s.id))

@@ -10,6 +10,7 @@ import 'math_catalog.dart';
 import 'social_catalog.dart';
 import 'route_world.dart';
 import 'shikaku_catalog.dart';
+import '../vocab/eiken.dart';
 import 'science_catalog.dart';
 
 /// ワールド・ステージのマスターデータ。
@@ -711,6 +712,20 @@ class RpgCatalog {
       hubSign: 'ここは異世界の門の向こう、資格の塔。上へ進むと宅建の道。'
           '権利関係・宅建業法・法令上の制限・税その他の16エリアで、本番の4分野をひと通りたどれる。',
       description: '追加コンテンツ（無料）。宅建士試験の4分野・16エリア。',
+    ),
+    // 英検の扉：準2級・2級・準1級・1級の単語（単語帳とバトル）
+    WorldDef(
+      id: Eiken.worldId,
+      name: '英検の世界',
+      subject: '英検',
+      status: WorldStatus.available,
+      isFree: true,
+      stages: Eiken.stages,
+      routes: [for (final r in Eiken.routes) r.info],
+      hubName: '英検の世界の入口',
+      hubSign: 'ここは異世界の門の向こう、英検の世界。上は準2級、左は2級、右は準1級、下は1級の道。'
+          'どの道も、単語帳1冊が1つのエリアになっている。',
+      description: '追加コンテンツ（無料）。英検準2級〜1級の単語。',
     ),
   ];
 

@@ -1485,6 +1485,27 @@ const curriculumQuestionCounts = <String, int>{
   'shikaku.takken.zei.menjo.kikou': 3,
   'shikaku.takken.zei.menjo.keihyou': 5,
   'shikaku.takken.zei.menjo.tochi': 7,
+  'eiken': 5247,
+  'eiken.p2': 1497,
+  'eiken.p2.vocab': 1497,
+  'eiken.p2.vocab.words': 1497,
+  'eiken.p2.vocab.words.a': 861,
+  'eiken.p2.vocab.words.n': 636,
+  'eiken.g2': 1923,
+  'eiken.g2.vocab': 1923,
+  'eiken.g2.vocab.words': 1923,
+  'eiken.g2.vocab.words.a': 1100,
+  'eiken.g2.vocab.words.n': 823,
+  'eiken.p1': 1349,
+  'eiken.p1.vocab': 1349,
+  'eiken.p1.vocab.words': 1349,
+  'eiken.p1.vocab.words.a': 770,
+  'eiken.p1.vocab.words.n': 579,
+  'eiken.g1': 478,
+  'eiken.g1.vocab': 478,
+  'eiken.g1.vocab.words': 478,
+  'eiken.g1.vocab.words.a': 279,
+  'eiken.g1.vocab.words.n': 199,
 };
 
 /// 単元・小単元に直接属する問題が入っている問題セット
@@ -4408,4 +4429,33 @@ const curriculumUnitSets = <String, List<String>>{
   'shikaku.takken.zei.menjo.kikou': ['shikaku_takken_16'],
   'shikaku.takken.zei.menjo.keihyou': ['shikaku_takken_16'],
   'shikaku.takken.zei.menjo.tochi': ['shikaku_takken_16'],
+  'eiken.p2.vocab.words.a': [
+    'eiken_p2_01',
+    'eiken_p2_02',
+    'eiken_p2_03',
+    'eiken_p2_04'
+  ],
+  'eiken.p2.vocab.words.n': ['eiken_p2_04', 'eiken_p2_05', 'eiken_p2_06'],
+  'eiken.g2.vocab.words.a': [
+    'eiken_g2_01',
+    'eiken_g2_02',
+    'eiken_g2_03',
+    'eiken_g2_04',
+    'eiken_g2_05'
+  ],
+  'eiken.g2.vocab.words.n': [
+    'eiken_g2_05',
+    'eiken_g2_06',
+    'eiken_g2_07',
+    'eiken_g2_08'
+  ],
+  'eiken.p1.vocab.words.a': [
+    'eiken_p1_01',
+    'eiken_p1_02',
+    'eiken_p1_03',
+    'eiken_p1_04'
+  ],
+  'eiken.p1.vocab.words.n': ['eiken_p1_04', 'eiken_p1_05'],
+  'eiken.g1.vocab.words.a': ['eiken_g1_01', 'eiken_g1_02'],
+  'eiken.g1.vocab.words.n': ['eiken_g1_02'],
 };

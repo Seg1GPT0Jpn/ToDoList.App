@@ -9,6 +9,7 @@ import 'curriculum_math.dart';
 import 'curriculum_information.dart';
 import 'curriculum_music.dart';
 import 'curriculum_shikaku.dart';
+import 'curriculum_eiken.dart';
 
 /// すべての教科の学習体系（画面に出す順）
 const allCurricula = <CurriculumNode>[
@@ -20,4 +21,5 @@ const allCurricula = <CurriculumNode>[
   informationCurriculum,
   musicCurriculum,
   shikakuCurriculum,
+  eikenCurriculum,
 ];
