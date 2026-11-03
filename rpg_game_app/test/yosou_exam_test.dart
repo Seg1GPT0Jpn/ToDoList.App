@@ -263,6 +263,7 @@ void main() {
       findsNothing,
     );
     expect(find.textContaining('100分'), findsWidgets);
+    expect(find.byKey(const ValueKey('yosou-total-ranking')), findsOneWidget);
     expect(t.takeException(), isNull);
   });
 

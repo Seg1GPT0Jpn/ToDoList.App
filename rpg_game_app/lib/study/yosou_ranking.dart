@@ -656,3 +656,235 @@ class _YosouMemberCardState extends State<YosouMemberCard> {
     );
   }
 }
+
+/// 総合ランキングの1人分（いくつかの予想問題の点数の合計）
+class YosouTotalRow {
+  const YosouTotalRow({
+    required this.uid,
+    required this.name,
+    required this.scores,
+    required this.spent,
+    required this.unscored,
+  });
+
+  final String uid;
+  final String name;
+
+  /// 予想問題の ID → 点数（解いた教科だけ）
+  final Map<String, int> scores;
+
+  /// かかった時間の合計（秒）
+  final int spent;
+  final int unscored;
+
+  int get total => scores.values.fold(0, (a, b) => a + b);
+  int get done => scores.length;
+
+  /// 教科ごとのランキングから、総合の順位を作る。
+  /// 合計点の高い順（同点は、解いた教科が多い順 → かかった時間の短い順）。
+  /// 解いていない教科は0点として数える
+  static List<YosouTotalRow> combine(
+    Map<String, List<YosouRankEntry>> boards, {
+    Map<String, String> roster = const {},
+  }) {
+    final scores = <String, Map<String, int>>{};
+    final names = <String, String>{};
+    final spent = <String, int>{};
+    final unscored = <String, int>{};
+    for (final MapEntry(key: exam, value: rows) in boards.entries) {
+      for (final e in rows) {
+        (scores[e.uid] ??= {})[exam] = e.score;
+        names[e.uid] ??= e.name;
+        spent[e.uid] = (spent[e.uid] ?? 0) + e.spent;
+        unscored[e.uid] = (unscored[e.uid] ?? 0) + e.unscored;
+      }
+    }
+    return [
+      for (final uid in scores.keys)
+        YosouTotalRow(
+          uid: uid,
+          name: roster[uid] ?? names[uid]!,
+          scores: scores[uid]!,
+          spent: spent[uid]!,
+          unscored: unscored[uid]!,
+        ),
+    ]..sort((a, b) {
+      var c = b.total.compareTo(a.total);
+      if (c == 0) c = b.done.compareTo(a.done);
+      if (c == 0) c = a.spent.compareTo(b.spent);
+      return c;
+    });
+  }
+
+  /// 順位（合計点が自分より高い人の数 + 1）
+  static int rankOf(List<YosouTotalRow> rows, YosouTotalRow r) =>
+      1 + rows.where((o) => o.total > r.total).length;
+
+  /// 教科の短い名前
+  static String labelOf(YosouExam e) => e.label.isNotEmpty
+      ? e.label
+      : ShonanSubjects.byId(e.subjectId)?.displayName ?? e.title;
+}
+
+/// 総合ランキング（いくつかの予想問題の合計点）
+class YosouTotalRankingScreen extends StatefulWidget {
+  const YosouTotalRankingScreen({
+    super.key,
+    required this.exams,
+    required this.title,
+    this.backend,
+  });
+
+  final List<YosouExam> exams;
+  final String title;
+  final YosouRankBackend? backend;
+
+  static const rule =
+      '各教科のランキング（1回目に解いた結果）の点数を合計した順位です。'
+      'まだ解いていない教科は0点として数えます。'
+      '同点のときは、解いた教科が多い人、かかった時間の短い人が上になります。';
+
+  @override
+  State<YosouTotalRankingScreen> createState() =>
+      _YosouTotalRankingScreenState();
+}
+
+class _YosouTotalRankingScreenState extends State<YosouTotalRankingScreen> {
+  Future<(List<YosouTotalRow>, Map<String, String>)>? _load;
+
+  YosouRankBackend? get _backend =>
+      widget.backend ?? RpgServices.of(context).yosouRanking;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _load ??= _fetch();
+  }
+
+  Future<(List<YosouTotalRow>, Map<String, String>)> _fetch() async {
+    final b = _backend;
+    if (b == null || b.userId == null) {
+      return (const <YosouTotalRow>[], const <String, String>{});
+    }
+    final lists = await Future.wait([
+      for (final e in widget.exams)
+        b.ranking(YosouRankBackend.boardId(e.id), limit: 500),
+    ]);
+    final roster = await b.members();
+    final boards = {for (final (i, e) in widget.exams.indexed) e.id: lists[i]};
+    return (YosouTotalRow.combine(boards, roster: roster), roster);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final b = _backend;
+    final me = b?.userId;
+    final small = TextStyle(fontSize: 12, color: TsuzuriColors.inkSoft);
+    final max = widget.exams.length * 100;
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('総合ランキング', style: serif(17)),
+        actions: [
+          IconButton(
+            tooltip: '最新にする',
+            onPressed: () => setState(() => _load = _fetch()),
+            icon: const Icon(Icons.refresh),
+          ),
+        ],
+      ),
+      body: NotebookPaper(
+        child: b == null || me == null
+            ? const Padding(
+                padding: EdgeInsets.fromLTRB(40, 16, 16, 24),
+                child: Text(YosouRankText.needLogin),
+              )
+            : FutureBuilder(
+                future: _load,
+                builder: (context, snap) {
+                  if (snap.hasError) {
+                    return Padding(
+                      padding: const EdgeInsets.fromLTRB(40, 16, 16, 24),
+                      child: Text('読みこめませんでした：${snap.error}'),
+                    );
+                  }
+                  final data = snap.data;
+                  if (data == null) {
+                    return const Center(child: CircularProgressIndicator());
+                  }
+                  final (rows, roster) = data;
+                  final mine = rows.where((r) => r.uid == me).firstOrNull;
+                  final answered = {for (final r in rows) r.uid};
+                  final waiting = [
+                    for (final e in roster.entries)
+                      if (!answered.contains(e.key)) e,
+                  ]..sort((a, b) => a.value.compareTo(b.value));
+                  String breakdown(YosouTotalRow r) => [
+                    for (final e in widget.exams)
+                      '${YosouTotalRow.labelOf(e)} ${r.scores[e.id] ?? '−'}',
+                  ].join('・');
+                  return ListView(
+                    padding: const EdgeInsets.fromLTRB(40, 16, 16, 24),
+                    children: [
+                      Text(widget.title, style: serif(18)),
+                      const SizedBox(height: 4),
+                      Text(YosouTotalRankingScreen.rule, style: small),
+                      const SizedBox(height: 8),
+                      if (mine != null)
+                        Text(
+                          'あなたは ${YosouTotalRow.rankOf(rows, mine)}位 / ${rows.length}人'
+                          '（合計 ${mine.total}/$max 点・${mine.done}教科）',
+                          key: const ValueKey('yosou-total-mine'),
+                          style: serif(17),
+                        )
+                      else
+                        const Text('まだ1教科も解いていません。解くと総合の順位に入ります'),
+                      Text(
+                        '回答 ${rows.length}人・未回答 ${waiting.length}人',
+                        key: const ValueKey('yosou-total-count'),
+                      ),
+                      const SizedBox(height: 8),
+                      if (rows.isEmpty)
+                        const Text('まだだれも解いていません')
+                      else
+                        for (final (i, r) in rows.indexed)
+                          Padding(
+                            key: ValueKey('yosou-total-row-$i'),
+                            padding: const EdgeInsets.symmetric(vertical: 4),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  '${YosouTotalRow.rankOf(rows, r)}位　${r.name}${r.uid == me ? '（あなた）' : ''}　'
+                                  '合計 ${r.total}/$max 点'
+                                  '（${r.done}/${widget.exams.length}教科）'
+                                  '${r.unscored > 0 ? '　未採点${r.unscored}' : ''}',
+                                  style: TextStyle(
+                                    fontWeight: r.uid == me
+                                        ? FontWeight.bold
+                                        : FontWeight.normal,
+                                  ),
+                                ),
+                                Text(breakdown(r), style: small),
+                              ],
+                            ),
+                          ),
+                      if (waiting.isNotEmpty) ...[
+                        const SizedBox(height: 12),
+                        Text('未回答', style: serif(15)),
+                        for (final w in waiting)
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 2),
+                            child: Text(
+                              '−　${w.value}${w.key == me ? '（あなた）' : ''}　未回答',
+                              style: TextStyle(color: TsuzuriColors.inkSoft),
+                            ),
+                          ),
+                      ],
+                    ],
+                  );
+                },
+              ),
+      ),
+    );
+  }
+}

@@ -224,6 +224,23 @@ class _YosouExamListScreenState extends State<YosouExamListScreen> {
             else ...[
               // 予想問題を開いた人は、みんなランキングの名簿に入る
               const YosouMemberCard(),
+              if (widget.exams.length > 1)
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: FilledButton.tonalIcon(
+                    key: const ValueKey('yosou-total-ranking'),
+                    onPressed: () => Navigator.of(context).push(
+                      MaterialPageRoute<void>(
+                        builder: (_) => YosouTotalRankingScreen(
+                          exams: widget.exams,
+                          title: widget.title,
+                        ),
+                      ),
+                    ),
+                    icon: const Icon(Icons.leaderboard_outlined, size: 18),
+                    label: const Text('総合ランキング'),
+                  ),
+                ),
               for (final e in widget.exams) _examCard(e, key),
               if (widget.exams.any((e) => _store.hasData(e.id)))
                 Padding(
