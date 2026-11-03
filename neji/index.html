@@ -1,0 +1,558 @@
+<title>ネジほどき</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=M+PLUS+Rounded+1c:wght@500;800&display=swap">
+<style>
+/* Layout: one-screen workbench — header strip, canvas board in the middle, tool tray at the bottom. Single dark "workshop" look by choice. */
+:root {
+  --steel: #1d2a35;      /* page / bench */
+  --steel-2: #263744;    /* raised strips */
+  --rail: #3a4f5f;       /* edges */
+  --chalk: #eef2f4;      /* text */
+  --chalk-dim: #9fb1bd;  /* secondary text */
+  --brass: #f2b33d;      /* accent: brass screw */
+  --brass-ink: #2b1d05;
+  --danger: #ff6b5e;
+  --font-display: "Dela Gothic One", "Hiragino Sans", "Yu Gothic", sans-serif;
+  --font-body: "M PLUS Rounded 1c", "Hiragino Maru Gothic ProN", "Hiragino Sans", "Yu Gothic", sans-serif;
+  color-scheme: dark;
+}
+html, body { height: 100%; }
+[hidden] { display: none !important; }
+body {
+  margin: 0; background: var(--steel); color: var(--chalk);
+  font-family: var(--font-body); -webkit-user-select: none; user-select: none;
+  -webkit-tap-highlight-color: transparent; overflow: hidden; touch-action: manipulation;
+}
+#app {
+  height: 100%; display: flex; flex-direction: column; box-sizing: border-box;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 8px; gap: 8px; max-width: 560px; margin: 0 auto;
+}
+header { display: flex; align-items: center; gap: 10px; }
+.logo { font-family: var(--font-display); font-size: 22px; letter-spacing: .04em; line-height: 1; }
+.logo span { color: var(--brass); }
+.lv {
+  margin-left: auto; font-family: var(--font-display); font-size: 14px; letter-spacing: .08em;
+  background: var(--steel-2); border: 1px solid var(--rail); border-radius: 999px; padding: 5px 12px;
+  font-variant-numeric: tabular-nums;
+}
+.icon-btn {
+  width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--rail); background: var(--steel-2);
+  color: var(--chalk); font: 800 15px var(--font-body); cursor: pointer; display: grid; place-items: center; padding: 0;
+}
+#stage { flex: 1; min-height: 0; position: relative; }
+canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; }
+.tools { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.tool {
+  border: 1px solid var(--rail); background: var(--steel-2); color: var(--chalk); border-radius: 14px;
+  padding: 9px 4px 8px; font: 800 14px var(--font-body); cursor: pointer; display: flex; flex-direction: column;
+  align-items: center; gap: 2px;
+}
+.tool small { font-weight: 500; font-size: 11px; color: var(--chalk-dim); font-variant-numeric: tabular-nums; }
+.tool:disabled { opacity: .4; cursor: default; }
+.tool:active:not(:disabled), .icon-btn:active { transform: translateY(1px); }
+button:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
+.toast {
+  position: absolute; left: 50%; top: 24%; transform: translateX(-50%); background: var(--danger); color: #fff;
+  font-weight: 800; font-size: 14px; padding: 6px 14px; border-radius: 999px; pointer-events: none;
+  opacity: 0; transition: opacity .2s; white-space: nowrap;
+}
+.toast.show { opacity: 1; }
+.overlay {
+  position: fixed; inset: 0; background: rgba(10, 16, 22, .72); display: grid; place-items: center; z-index: 20;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.card {
+  background: var(--steel-2); border: 1px solid var(--rail); border-radius: 20px; padding: 22px 20px 18px;
+  width: min(340px, 100%); box-sizing: border-box; text-align: center; display: flex; flex-direction: column; gap: 12px;
+}
+.card h2 { margin: 0; font-family: var(--font-display); font-weight: 400; font-size: 28px; letter-spacing: .04em; text-wrap: balance; }
+.card p { margin: 0; color: var(--chalk-dim); line-height: 1.7; font-size: 14px; }
+.card ol { margin: 0; padding-left: 1.3em; text-align: left; line-height: 1.75; font-size: 14px; color: var(--chalk); }
+.card ol b { color: var(--brass); }
+.btn {
+  border: 0; border-radius: 14px; padding: 12px; font: 800 16px var(--font-body); cursor: pointer;
+  background: var(--brass); color: var(--brass-ink);
+}
+.btn.ghost { background: transparent; color: var(--chalk); border: 1px solid var(--rail); }
+.note { font-size: 12px; color: var(--chalk-dim); }
+</style>
+
+<div id="app">
+  <header>
+    <div class="logo">ネジ<span>ほどき</span></div>
+    <div class="lv" id="lvLabel">LEVEL 1</div>
+    <button class="icon-btn" id="soundBtn" aria-label="サウンド切り替え">♪</button>
+    <button class="icon-btn" id="helpBtn" aria-label="遊び方">?</button>
+  </header>
+  <div id="stage">
+    <canvas id="cv"></canvas>
+    <div class="toast" id="toast">予備スロットがいっぱい</div>
+  </div>
+  <div class="tools">
+    <button class="tool" id="hintBtn">ヒント<small id="hintLeft">のこり 3</small></button>
+    <button class="tool" id="slotBtn">＋スロット<small id="slotLeft">のこり 1</small></button>
+    <button class="tool" id="retryBtn">やり直す<small>同じ盤面</small></button>
+  </div>
+</div>
+
+<div class="overlay" id="ovHelp" hidden>
+  <div class="card">
+    <h2>遊び方</h2>
+    <ol>
+      <li>上に何も重なっていない<b>ネジ</b>をタップして外す</li>
+      <li>外したネジは<b>同じ色の箱</b>へ。箱がなければ<b>予備スロット</b>へ</li>
+      <li>箱は3本で満杯。次の箱が来ると予備のネジも自動で入る</li>
+      <li>ネジが全部外れた板は落ちる。1本だけ残ると<b>ぶら下がって回る</b></li>
+      <li>予備スロットが埋まって動けなくなったら失敗</li>
+    </ol>
+    <p class="note">広告なし・課金なし・通信なし。</p>
+    <button class="btn" id="helpClose">はじめる</button>
+  </div>
+</div>
+<div class="overlay" id="ovWin" hidden>
+  <div class="card">
+    <h2 id="winTitle">クリア！</h2>
+    <p id="winText">すべての板を外しました。</p>
+    <button class="btn" id="nextBtn">次のレベルへ</button>
+  </div>
+</div>
+<div class="overlay" id="ovLose" hidden>
+  <div class="card">
+    <h2>詰まった…</h2>
+    <p>予備スロットがいっぱいで、入れられる箱がありません。</p>
+    <button class="btn" id="loseSlot">＋スロットで続ける</button>
+    <button class="btn ghost" id="loseRetry">やり直す</button>
+  </div>
+</div>
+
+<script>
+(() => {
+'use strict';
+const W = 400, H = 660, G = 1500, SR = 13;
+const COLORS = ['#e5484d', '#3e8ef7', '#f5c518', '#30a46c', '#8e4ec6', '#f76b15', '#e93d82', '#12b5a5'];
+const TINTS = ['#d4a373', '#8fb3cf', '#a9c98d', '#d9a3bf', '#b8a6e3', '#e6cf8e', '#93d1c6', '#e8a88a'];
+const BOX_W = 158, BOX_H = 70, BOX_Y = 12, BOX_X = [31, 211], HOLE_X = [32, 79, 126];
+const BUF_Y = 128, BOARD = { x: 14, y: 168, w: 372, h: 482 };
+
+const store = {
+  get(k, d) { try { const v = localStorage.getItem('nejihodoki.' + k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } },
+  set(k, v) { try { localStorage.setItem('nejihodoki.' + k, JSON.stringify(v)); } catch (e) {} }
+};
+
+function mulberry32(a) {
+  return function () { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; };
+}
+function segDist(px, py, ax, ay, bx, by) {
+  const dx = bx - ax, dy = by - ay, l2 = dx * dx + dy * dy;
+  let t = l2 ? ((px - ax) * dx + (py - ay) * dy) / l2 : 0; t = Math.max(0, Math.min(1, t));
+  return Math.hypot(px - (ax + t * dx), py - (ay + t * dy));
+}
+function plateEnds(p) { const c = Math.cos(p.a) * p.L / 2, s = Math.sin(p.a) * p.L / 2; return [p.x - c, p.y - s, p.x + c, p.y + s]; }
+function screwPos(s) { const p = s.plate; return { x: p.x + Math.cos(p.a) * s.lx, y: p.y + Math.sin(p.a) * s.lx }; }
+
+/* ---------- level generation (always solvable in the static layout) ---------- */
+function genLevel(level) {
+  for (let attempt = 0; attempt < 400; attempt++) {
+    const rnd = mulberry32(level * 7919 + attempt * 104729 + 17);
+    const nPlates = Math.min(3 + level, 16);
+    const nColors = Math.min(2 + Math.floor(level / 2), COLORS.length);
+    const plates = [], screws = [];
+    for (let k = 0; k < nPlates; k++) {
+      for (let tries = 0; tries < 80; tries++) {
+        const angs = [0, Math.PI / 2, Math.PI / 4, -Math.PI / 4, (rnd() - .5) * Math.PI];
+        const a = angs[Math.floor(rnd() * angs.length)];
+        const L = 60 + rnd() * 180, r = 19 + rnd() * 7;
+        const x = 200 + (rnd() + rnd() - 1) * 160, y = 410 + (rnd() + rnd() - 1) * 210;
+        const p = { id: k, x, y, a, L, r, tint: TINTS[Math.floor(rnd() * TINTS.length)], holes: [], mode: 'fixed' };
+        const [ax, ay, bx, by] = plateEnds(p);
+        if (Math.min(ax, bx) < 40 || Math.max(ax, bx) > 360 || Math.min(ay, by) < 198 || Math.max(ay, by) > 622) continue;
+        const locals = [-L / 2, L / 2]; if (L > 165 && rnd() < .6) locals.push(0);
+        const pts = locals.map(lx => ({ lx, x: x + Math.cos(a) * lx, y: y + Math.sin(a) * lx }));
+        if (pts.some(q => screws.some(s => Math.hypot(s.x - q.x, s.y - q.y) < 38))) continue;
+        // a new (higher) plate must clearly cover or clearly miss every existing screw
+        if (screws.some(s => { const d = segDist(s.x, s.y, ax, ay, bx, by); return d > r - 5 && d < r + 15; })) continue;
+        p.holes = locals.slice();
+        plates.push(p);
+        pts.forEach(q => screws.push({ plate: p, lx: q.lx, x: q.x, y: q.y }));
+        break;
+      }
+    }
+    if (plates.length < Math.max(3, nPlates - 2)) continue;
+    let rem = screws.length % 3;
+    while (rem > 0) {
+      const i = screws.findIndex(s => s.lx === 0);
+      if (i < 0) break;
+      const p = screws[i].plate; p.holes = p.holes.filter(v => v !== 0); screws.splice(i, 1); rem--;
+    }
+    if (screws.length % 3) continue;
+
+    // greedy removal order with static coverage
+    const gone = new Set(), left = new Map(plates.map(p => [p, p.holes.length])), order = [];
+    const covered = s => plates.some(q => q.id > s.plate.id && left.get(q) > 0 &&
+      segDist(s.x, s.y, ...plateEnds(q)) < q.r + 6);
+    while (order.length < screws.length) {
+      const ex = screws.filter(s => !gone.has(s) && !covered(s));
+      const s = ex[Math.floor(rnd() * ex.length)];
+      gone.add(s); order.push(s); left.set(s.plate, left.get(s.plate) - 1);
+    }
+    const boxes = []; let prev = -1;
+    for (let i = 0; i < order.length; i += 3) {
+      let c; do { c = Math.floor(rnd() * nColors); } while (nColors > 1 && c === prev);
+      prev = c; boxes.push(c);
+      for (let j = 0; j < 3; j++) order[i + j].color = c;
+    }
+    screws.forEach(s => { delete s.x; delete s.y; });
+    return { plates, screws, boxes };
+  }
+  return genLevel(level + 1000);
+}
+
+/* ---------- state ---------- */
+let S = null;
+let level = Math.max(1, store.get('level', 1) | 0);
+let soundOn = store.get('sound', true);
+
+function newBox() { return S.queue.length ? { color: S.queue.shift(), reserved: 0, filled: 0, state: 'in', t: 0 } : null; }
+function startLevel(n) {
+  level = n; store.set('level', n);
+  const lv = genLevel(n);
+  S = { plates: lv.plates, screws: lv.screws, queue: lv.boxes.slice(), active: [null, null], buffer: [null, null, null, null, null],
+    flyers: [], hints: 3, slotUsed: false, over: false, won: false, winT: 0, hint: null, bufShake: 0, time: 0 };
+  S.active = [newBox(), newBox()];
+  ui();
+  hide('ovWin'); hide('ovLose');
+}
+
+/* ---------- geometry of UI slots ---------- */
+function boxOffset(b) {
+  if (!b) return 0;
+  if (b.state === 'in') return -100 * Math.pow(1 - Math.min(1, b.t / .3), 3);
+  if (b.state === 'out') return -100 * Math.pow(Math.min(1, b.t / .35), 2);
+  return 0;
+}
+function boxSlotPos(i, slot) { const b = S.active[i]; return { x: BOX_X[i] + HOLE_X[slot], y: BOX_Y + 44 + boxOffset(b) }; }
+function bufSlotPos(k) { const n = S.buffer.length, sp = n > 5 ? 50 : 54; return { x: 200 - (n - 1) * sp / 2 + k * sp, y: BUF_Y }; }
+
+/* ---------- rules ---------- */
+function isCovered(s) {
+  const w = screwPos(s);
+  for (const q of S.plates) {
+    if (q.id <= s.plate.id || (q.mode !== 'fixed' && q.mode !== 'swing')) continue;
+    if (segDist(w.x, w.y, ...plateEnds(q)) < q.r + 6) return true;
+  }
+  return false;
+}
+function liveScrews() { return S.screws.filter(s => !s.removed); }
+function boxFor(color) {
+  for (let i = 0; i < 2; i++) { const b = S.active[i]; if (b && b.state !== 'out' && b.color === color && b.reserved < 3) return i; }
+  return -1;
+}
+function takeScrew(s) {
+  let target, i = boxFor(s.color);
+  if (i >= 0) { const b = S.active[i]; target = { kind: 'box', i, slot: b.reserved, box: b }; b.reserved++; }
+  else {
+    const k = S.buffer.indexOf(null);
+    if (k < 0) { S.bufShake = .4; toast(); beep(140, .12, 'square'); buzz(40); return; }
+    S.buffer[k] = { color: s.color, arrived: false }; target = { kind: 'buf', k };
+  }
+  const w = screwPos(s);
+  s.removed = true;
+  if (S.hint && S.hint.s === s) S.hint = null;
+  S.flyers.push({ color: s.color, x0: w.x, y0: w.y, t: 0, up: .2, dur: .36, target });
+  beep(880, .05, 'triangle'); setTimeout(() => beep(1180, .05, 'triangle'), 60); buzz(12);
+  const p = s.plate, rest = S.screws.filter(o => o.plate === p && !o.removed);
+  if (rest.length === 0) {
+    p.vx = (Math.random() - .5) * 120; p.vy = -60; p.va = (p.mode === 'swing' ? p.w : 0) + (Math.random() - .5) * 3;
+    p.mode = 'fall'; setTimeout(() => beep(220, .18, 'sine'), 120);
+  } else if (rest.length === 1) {
+    const q = screwPos(rest[0]); p.mode = 'swing'; p.piv = rest[0].lx; p.P = q; p.w = p.w || 0;
+  }
+}
+function arrive(f) {
+  const t = f.target;
+  if (t.kind === 'box') {
+    t.box.filled++;
+    if (t.box.filled === 3) { t.box.state = 'out'; t.box.t = 0; beep(660, .08, 'sine'); setTimeout(() => beep(990, .12, 'sine'), 80); }
+    else beep(520, .04, 'sine');
+  } else { S.buffer[t.k].arrived = true; beep(400, .04, 'sine'); pullFromBuffer(); }
+}
+function pullFromBuffer() {
+  S.buffer.forEach((v, k) => {
+    if (!v || !v.arrived) return;
+    const i = boxFor(v.color); if (i < 0) return;
+    const b = S.active[i], p = bufSlotPos(k);
+    S.flyers.push({ color: v.color, x0: p.x, y0: p.y, t: 0, up: 0, dur: .32, target: { kind: 'box', i, slot: b.reserved, box: b } });
+    b.reserved++; S.buffer[k] = null;
+  });
+}
+function exposedMatches() {
+  return liveScrews().filter(s => s.plate.mode !== 'fall' && boxFor(s.color) >= 0 && !isCovered(s));
+}
+
+/* ---------- update ---------- */
+function update(dt) {
+  S.time += dt;
+  for (const p of S.plates) {
+    if (p.mode === 'swing') {
+      const k = (p.L * p.L + 4 * p.r * p.r) / 12 + p.piv * p.piv;
+      const dx = p.x - p.P.x;
+      p.w += dx * G / k * dt; p.w *= Math.pow(.45, dt); p.a += p.w * dt;
+      p.x = p.P.x - Math.cos(p.a) * p.piv; p.y = p.P.y - Math.sin(p.a) * p.piv;
+    } else if (p.mode === 'fall') {
+      p.vy += G * dt; p.x += p.vx * dt; p.y += p.vy * dt; p.a += p.va * dt;
+      if (p.y > H + 400) p.mode = 'gone';
+    }
+  }
+  for (let j = S.flyers.length - 1; j >= 0; j--) {
+    const f = S.flyers[j]; f.t += dt;
+    if (f.t >= f.up + f.dur) { S.flyers.splice(j, 1); arrive(f); }
+  }
+  for (let i = 0; i < 2; i++) {
+    const b = S.active[i]; if (!b) continue;
+    b.t += dt;
+    if (b.state === 'in' && b.t >= .3) { b.state = 'idle'; }
+    else if (b.state === 'out' && b.t >= .35) { S.active[i] = newBox(); pullFromBuffer(); }
+  }
+  if (S.bufShake > 0) S.bufShake -= dt;
+  if (S.hint) { S.hint.t -= dt; if (S.hint.t <= 0 || S.hint.s.removed) S.hint = null; }
+
+  if (S.won || S.over) return;
+  const idle = S.flyers.length === 0 && S.active.every(b => !b || b.state === 'idle');
+  if (liveScrews().length === 0 && idle && S.active.every(b => !b) && !S.queue.length) {
+    S.winT += dt;
+    if (S.winT > .6) win();
+  } else if (idle && S.buffer.every(v => v) && exposedMatches().length === 0) {
+    S.over = true; setTimeout(lose, 350);
+  }
+}
+
+/* ---------- drawing ---------- */
+const cv = document.getElementById('cv'), ctx = cv.getContext('2d');
+let scale = 1, offX = 0, offY = 0, dpr = 1;
+function resize() {
+  const r = cv.getBoundingClientRect(); dpr = Math.min(window.devicePixelRatio || 1, 3);
+  cv.width = Math.round(r.width * dpr); cv.height = Math.round(r.height * dpr);
+  scale = Math.min(r.width / W, r.height / H); offX = (r.width - W * scale) / 2; offY = (r.height - H * scale) / 2;
+}
+function shade(hex, amt) {
+  const n = parseInt(hex.slice(1), 16); let r = n >> 16, g = n >> 8 & 255, b = n & 255;
+  const f = v => Math.max(0, Math.min(255, Math.round(amt >= 0 ? v + (255 - v) * amt : v * (1 + amt))));
+  return `rgb(${f(r)},${f(g)},${f(b)})`;
+}
+function rrect(x, y, w, h, r) { ctx.beginPath(); ctx.roundRect ? ctx.roundRect(x, y, w, h, r) : ctx.rect(x, y, w, h); }
+function capsule(L, r) { ctx.beginPath(); ctx.arc(-L / 2, 0, r, Math.PI / 2, Math.PI * 1.5); ctx.arc(L / 2, 0, r, -Math.PI / 2, Math.PI / 2); ctx.closePath(); }
+
+function drawHole(x, y, r) {
+  ctx.fillStyle = 'rgba(8,14,20,.55)'; ctx.beginPath(); ctx.arc(x, y, r, 0, 7); ctx.fill();
+  ctx.strokeStyle = 'rgba(255,255,255,.12)'; ctx.lineWidth = 1; ctx.beginPath(); ctx.arc(x, y + .5, r, .2, Math.PI - .2); ctx.stroke();
+}
+function drawScrew(x, y, color, sc = 1, rot = 0, lift = 0, alpha = 1) {
+  const r = SR * sc;
+  ctx.save(); ctx.globalAlpha = alpha;
+  ctx.fillStyle = 'rgba(0,0,0,.35)'; ctx.beginPath(); ctx.arc(x + 1.5 + lift, y + 2.5 + lift * 1.6, r, 0, 7); ctx.fill();
+  const g = ctx.createRadialGradient(x - r * .35, y - r * .4, r * .1, x, y, r);
+  g.addColorStop(0, shade(color, .55)); g.addColorStop(.55, color); g.addColorStop(1, shade(color, -.35));
+  ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, r, 0, 7); ctx.fill();
+  ctx.strokeStyle = shade(color, -.5); ctx.lineWidth = 1.2; ctx.stroke();
+  ctx.translate(x, y); ctx.rotate(rot);
+  ctx.fillStyle = shade(color, -.6);
+  const a = r * .62, b = r * .17;
+  rrect(-a, -b, a * 2, b * 2, b); ctx.fill(); rrect(-b, -a, b * 2, a * 2, b); ctx.fill();
+  ctx.restore();
+}
+function drawPlate(p) {
+  ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.a);
+  capsule(p.L, p.r);
+  ctx.fillStyle = 'rgba(0,0,0,.25)'; ctx.save(); ctx.translate(3, 5); ctx.fill(); ctx.restore();
+  capsule(p.L, p.r);
+  ctx.globalAlpha = .84; ctx.fillStyle = p.tint; ctx.fill(); ctx.globalAlpha = 1;
+  ctx.strokeStyle = shade(p.tint, -.45); ctx.lineWidth = 1.6; ctx.stroke();
+  ctx.strokeStyle = 'rgba(255,255,255,.35)'; ctx.lineWidth = 2;
+  ctx.beginPath(); ctx.moveTo(-p.L / 2, -p.r + 4); ctx.lineTo(p.L / 2, -p.r + 4); ctx.stroke();
+  for (const lx of p.holes) drawHole(lx, 0, SR + 2);
+  ctx.restore();
+}
+function drawBoard() {
+  ctx.fillStyle = '#2b3d4b'; rrect(BOARD.x, BOARD.y, BOARD.w, BOARD.h, 22); ctx.fill();
+  ctx.strokeStyle = '#3e5566'; ctx.lineWidth = 2; ctx.stroke();
+  ctx.fillStyle = 'rgba(10,18,26,.45)';
+  for (let y = BOARD.y + 22; y < BOARD.y + BOARD.h - 10; y += 26)
+    for (let x = BOARD.x + 20; x < BOARD.x + BOARD.w - 10; x += 26) { ctx.beginPath(); ctx.arc(x, y, 2.2, 0, 7); ctx.fill(); }
+}
+function drawBoxes() {
+  for (let i = 0; i < 2; i++) {
+    const b = S.active[i], x = BOX_X[i];
+    if (!b) {
+      ctx.strokeStyle = 'rgba(159,177,189,.25)'; ctx.setLineDash([6, 6]); ctx.lineWidth = 2;
+      rrect(x, BOX_Y, BOX_W, BOX_H, 16); ctx.stroke(); ctx.setLineDash([]); continue;
+    }
+    const oy = boxOffset(b), col = COLORS[b.color];
+    ctx.save(); ctx.globalAlpha = b.state === 'out' ? Math.max(0, 1 - b.t / .35) : 1;
+    ctx.fillStyle = 'rgba(0,0,0,.3)'; rrect(x + 2, BOX_Y + oy + 5, BOX_W, BOX_H, 16); ctx.fill();
+    const g = ctx.createLinearGradient(0, BOX_Y + oy, 0, BOX_Y + oy + BOX_H);
+    g.addColorStop(0, shade(col, .25)); g.addColorStop(1, shade(col, -.2));
+    ctx.fillStyle = g; rrect(x, BOX_Y + oy, BOX_W, BOX_H, 16); ctx.fill();
+    ctx.strokeStyle = shade(col, -.45); ctx.lineWidth = 2; ctx.stroke();
+    ctx.fillStyle = 'rgba(255,255,255,.22)'; rrect(x + 10, BOX_Y + oy + 7, BOX_W - 20, 7, 4); ctx.fill();
+    for (let s = 0; s < 3; s++) {
+      const p = { x: x + HOLE_X[s], y: BOX_Y + 44 + oy };
+      drawHole(p.x, p.y, SR + 3);
+      if (s < b.filled) drawScrew(p.x, p.y, col);
+    }
+    if (b.state === 'out') {
+      const k = Math.min(1, b.t / .15);
+      ctx.fillStyle = shade(col, -.1); rrect(x, BOX_Y + oy, BOX_W, BOX_H * k, 16); ctx.fill();
+    }
+    ctx.restore();
+  }
+}
+function drawBuffer() {
+  const n = S.buffer.length, a = bufSlotPos(0), z = bufSlotPos(n - 1);
+  const sx = S.bufShake > 0 ? Math.sin(S.bufShake * 60) * 5 * S.bufShake / .4 : 0;
+  ctx.save(); ctx.translate(sx, 0);
+  ctx.fillStyle = '#152029'; rrect(a.x - 30, BUF_Y - 25, z.x - a.x + 60, 50, 25); ctx.fill();
+  ctx.strokeStyle = S.bufShake > 0 ? '#ff6b5e' : '#3e5566'; ctx.lineWidth = 2; ctx.stroke();
+  S.buffer.forEach((v, k) => {
+    const p = bufSlotPos(k); drawHole(p.x, p.y, SR + 3);
+    if (v && v.arrived) drawScrew(p.x, p.y, COLORS[v.color]);
+  });
+  ctx.restore();
+  const used = S.buffer.filter(Boolean).length;
+  ctx.fillStyle = used >= n - 1 ? '#ff6b5e' : '#9fb1bd';
+  ctx.font = '800 11px "M PLUS Rounded 1c", sans-serif'; ctx.textAlign = 'center';
+  ctx.fillText(`予備 ${used} / ${n}`, 200, BUF_Y + 38);
+}
+function draw() {
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, cv.width, cv.height);
+  ctx.setTransform(dpr * scale, 0, 0, dpr * scale, dpr * offX, dpr * offY);
+  drawBoard(); drawBoxes(); drawBuffer();
+  ctx.save(); rrect(BOARD.x, BOARD.y, BOARD.w, BOARD.h, 22); ctx.clip();
+  for (const p of S.plates) {
+    if (p.mode === 'gone' || p.mode === 'fall') continue;
+    drawPlate(p);
+    for (const s of S.screws) if (s.plate === p && !s.removed) {
+      const w = screwPos(s); let x = w.x;
+      if (s.shake > 0) x += Math.sin(s.shake * 70) * 3;
+      drawScrew(x, w.y, COLORS[s.color], 1, p.a + .5);
+    }
+  }
+  ctx.restore();
+  for (const p of S.plates) if (p.mode === 'fall') drawPlate(p);
+  if (S.hint) {
+    const w = screwPos(S.hint.s), k = .5 + .5 * Math.sin(S.time * 10);
+    ctx.strokeStyle = `rgba(242,179,61,${.5 + .5 * k})`; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.arc(w.x, w.y, SR + 6 + k * 4, 0, 7); ctx.stroke();
+  }
+  for (const f of S.flyers) {
+    let x, y, sc = 1, rot = 0, lift = 0;
+    if (f.t < f.up) { const k = f.t / f.up; x = f.x0; y = f.y0; sc = 1 + .25 * k; rot = -k * 9; lift = k * 4; }
+    else {
+      const k = Math.min(1, (f.t - f.up) / f.dur), e = k < .5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+      const t = f.target.kind === 'box' ? boxSlotPos(f.target.i, f.target.slot) : bufSlotPos(f.target.k);
+      x = f.x0 + (t.x - f.x0) * e; y = f.y0 + (t.y - f.y0) * e - Math.sin(Math.PI * k) * 40;
+      sc = (f.up ? 1.25 : 1) - (f.up ? .25 : 0) * e; lift = 4 * (1 - e); rot = -9 - k * 6;
+    }
+    drawScrew(x, y, COLORS[f.color], sc, rot, lift);
+  }
+}
+
+/* ---------- input ---------- */
+cv.addEventListener('pointerdown', e => {
+  initAudio();
+  if (!S || S.over || S.won) return;
+  const r = cv.getBoundingClientRect();
+  const x = (e.clientX - r.left - offX) / scale, y = (e.clientY - r.top - offY) / scale;
+  const cands = liveScrews().filter(s => s.plate.mode === 'fixed' || s.plate.mode === 'swing')
+    .map(s => { const w = screwPos(s); return { s, d: Math.hypot(w.x - x, w.y - y) }; })
+    .filter(o => o.d < 26).sort((a, b) => b.s.plate.id - a.s.plate.id || a.d - b.d);
+  if (!cands.length) return;
+  const hit = cands.find(o => !isCovered(o.s));
+  // only accept if no plate above the tap point hides the chosen screw's area
+  if (hit) takeScrew(hit.s);
+  else { const s = cands[0].s; s.shake = .3; beep(160, .06, 'square'); }
+});
+
+/* ---------- UI ---------- */
+const $ = id => document.getElementById(id);
+function show(id) { $(id).hidden = false; } function hide(id) { $(id).hidden = true; }
+function ui() {
+  $('lvLabel').textContent = 'LEVEL ' + level;
+  $('hintLeft').textContent = 'のこり ' + S.hints; $('hintBtn').disabled = S.hints <= 0;
+  $('slotLeft').textContent = S.slotUsed ? 'のこり 0' : 'のこり 1'; $('slotBtn').disabled = S.slotUsed;
+  $('loseSlot').hidden = S.slotUsed;
+  $('soundBtn').style.opacity = soundOn ? 1 : .4;
+}
+let toastT;
+function toast() { const t = $('toast'); t.classList.add('show'); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('show'), 1200); }
+function win() {
+  S.won = true;
+  $('winTitle').textContent = 'LEVEL ' + level + ' クリア！';
+  $('winText').textContent = 'ネジ ' + S.screws.length + ' 本、板 ' + S.plates.length + ' 枚をすべて外しました。';
+  store.set('level', level + 1);
+  [523, 659, 784, 1046].forEach((f, i) => setTimeout(() => beep(f, .12, 'triangle'), i * 90));
+  show('ovWin');
+}
+function lose() { ui(); show('ovLose'); beep(200, .25, 'sawtooth'); buzz([60, 40, 60]); }
+function addSlot() {
+  if (S.slotUsed) return;
+  S.slotUsed = true; S.buffer.push(null); ui();
+  if (S.over) { S.over = false; hide('ovLose'); }
+}
+$('hintBtn').onclick = () => {
+  if (S.hints <= 0 || S.over || S.won) return;
+  let list = exposedMatches();
+  if (!list.length) {
+    const next = S.active.filter(Boolean).map(b => b.color).concat(S.queue);
+    list = liveScrews().filter(s => s.plate.mode !== 'fall' && !isCovered(s))
+      .sort((a, b) => (next.indexOf(a.color) + 99) % 99 - (next.indexOf(b.color) + 99) % 99);
+  }
+  if (!list.length) return;
+  S.hint = { s: list[0], t: 3 }; S.hints--; ui();
+};
+$('slotBtn').onclick = addSlot;
+$('loseSlot').onclick = addSlot;
+$('retryBtn').onclick = () => startLevel(level);
+$('loseRetry').onclick = () => startLevel(level);
+$('nextBtn').onclick = () => startLevel(level + 1);
+$('helpBtn').onclick = () => show('ovHelp');
+$('helpClose').onclick = () => { hide('ovHelp'); store.set('seenHelp', true); initAudio(); };
+$('soundBtn').onclick = () => { soundOn = !soundOn; store.set('sound', soundOn); ui(); initAudio(); };
+
+/* ---------- sound ---------- */
+let ac = null;
+function initAudio() { if (ac || !soundOn) return; try { ac = new (window.AudioContext || window.webkitAudioContext)(); } catch (e) {} }
+function beep(freq, dur, type) {
+  if (!soundOn || !ac) return;
+  try {
+    const o = ac.createOscillator(), g = ac.createGain(), t = ac.currentTime;
+    o.type = type; o.frequency.value = freq; g.gain.setValueAtTime(.12, t); g.gain.exponentialRampToValueAtTime(.001, t + dur);
+    o.connect(g).connect(ac.destination); o.start(t); o.stop(t + dur + .02);
+  } catch (e) {}
+}
+function buzz(p) { try { if (soundOn && navigator.vibrate) navigator.vibrate(p); } catch (e) {} }
+
+/* ---------- loop ---------- */
+let last = performance.now();
+function frame(now) {
+  const dt = Math.min(.033, (now - last) / 1000); last = now;
+  for (const s of S.screws) if (s.shake > 0) s.shake -= dt;
+  update(dt); draw();
+  requestAnimationFrame(frame);
+}
+window.addEventListener('resize', resize);
+resize();
+const boot = data => {
+  startLevel(data && data.level ? data.level : level);
+  if (!store.get('seenHelp', false)) show('ovHelp');
+  requestAnimationFrame(frame);
+};
+window.claude?.hot?.snapshot?.(() => ({ level }));
+window.claude?.hot?.ready ? window.claude.hot.ready(boot) : boot(window.claude?.hot?.data ?? {});
+})();
+</script>
