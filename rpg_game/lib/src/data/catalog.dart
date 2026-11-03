@@ -9,6 +9,7 @@ import 'japanese_catalog.dart';
 import 'math_catalog.dart';
 import 'social_catalog.dart';
 import 'route_world.dart';
+import 'kokka_catalog.dart';
 import 'shikaku_catalog.dart';
 import '../vocab/eiken.dart';
 import 'science_catalog.dart';
@@ -699,7 +700,7 @@ class RpgCatalog {
   /// 追加コンテンツ（ノートの世界の地図には出さず、ホームの「異世界の門」から行く）。
   /// 「全教科」の機能（総合演習・対戦・デイリーなど）にはふくめない
   static final extraWorlds = <WorldDef>[
-    // 資格の門：資格試験の対策（宅建から。英検・三大国家試験の道を順に足す）
+    // 資格の塔：宅建士試験の対策
     WorldDef(
       id: ShikakuCatalog.worldId,
       name: '資格の塔',
@@ -726,6 +727,20 @@ class RpgCatalog {
       hubSign: 'ここは異世界の門の向こう、英検の世界。上は準2級、左は2級、右は準1級、下は1級の道。'
           'どの道も、単語帳1冊が1つのエリアになっている。',
       description: '追加コンテンツ（無料）。英検準2級〜1級の単語。',
+    ),
+    // 三大国家試験の扉：司法試験・医師国家試験・公認会計士試験の基礎
+    WorldDef(
+      id: KokkaCatalog.worldId,
+      name: '三大国家試験の世界',
+      subject: '三大国家試験',
+      status: WorldStatus.available,
+      isFree: true,
+      stages: KokkaCatalog.stages,
+      routes: [for (final r in KokkaCatalog.routes) r.info],
+      hubName: '三大国家試験の世界の入口',
+      hubSign: 'ここは異世界の門の向こう、三大国家試験の世界。上は司法試験、左は医師国家試験、'
+          '右は公認会計士試験の道。どの道も8エリアで、4つめと8つめに玉座のボスが待っている。',
+      description: '追加コンテンツ（無料）。司法試験・医師国家試験・公認会計士試験の基礎・24エリア。',
     ),
   ];
 

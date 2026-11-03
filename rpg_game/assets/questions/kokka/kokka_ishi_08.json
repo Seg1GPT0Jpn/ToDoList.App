@@ -1,0 +1,188 @@
+{
+  "setId": "kokka_ishi_08",
+  "worldId": "kokka",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "ish08_001",
+      "unit": "kokka.ishi.rinshou.kyuukyuu.kyuukyuu",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "成人の心肺蘇生で、胸骨圧迫のテンポと深さの目安は？",
+      "choices": [
+        "1分間に200回、深さ10cm",
+        "1分間に100〜120回、深さ約5cm（6cmを超えない）",
+        "1分間に60回、深さ1cm",
+        "1分間に30回、深さ3cm"
+      ],
+      "answerIndex": 1,
+      "explanation": "中断をできるだけ少なくすることが大切。"
+    },
+    {
+      "id": "ish08_002",
+      "unit": "kokka.ishi.rinshou.kyuukyuu.kyuukyuu",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "AEDが電気ショックの対象とする心臓のリズムは？",
+      "choices": [
+        "洞調律",
+        "洞性徐脈",
+        "心室細動（無脈性心室頻拍）",
+        "心静止"
+      ],
+      "answerIndex": 2,
+      "explanation": "心静止は電気ショックの対象ではない。"
+    },
+    {
+      "id": "ish08_003",
+      "unit": "kokka.ishi.rinshou.kyuukyuu.kyuukyuu",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "意識レベルを表すJCSで、刺激しても覚醒しない状態は何桁で表す？",
+      "choices": [
+        "1桁",
+        "2桁",
+        "0",
+        "3桁（100〜300）"
+      ],
+      "answerIndex": 3,
+      "explanation": "1桁は覚醒している、2桁は刺激で覚醒する状態。"
+    },
+    {
+      "id": "ish08_004",
+      "unit": "kokka.ishi.rinshou.kyuukyuu.kyuukyuu",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "GCS（グラスゴー・コーマ・スケール）の満点と最低点は？",
+      "choices": [
+        "満点15点・最低3点",
+        "満点10点・最低0点",
+        "満点5点・最低1点",
+        "満点100点・最低0点"
+      ],
+      "answerIndex": 0,
+      "explanation": "開眼・言語・運動の合計で評価する。"
+    },
+    {
+      "id": "ish08_005",
+      "unit": "kokka.ishi.rinshou.kyuukyuu.kyuukyuu",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "アナフィラキシーショックの第一選択の薬は？",
+      "choices": [
+        "睡眠薬",
+        "アドレナリンの筋肉注射",
+        "抗菌薬の点滴",
+        "解熱鎮痛薬"
+      ],
+      "answerIndex": 1,
+      "explanation": "太ももの外側に筋肉注射する。"
+    },
+    {
+      "id": "ish08_006",
+      "unit": "kokka.ishi.rinshou.kyuukyuu.kyuukyuu",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "一酸化炭素中毒の治療で使うのは？",
+      "choices": [
+        "抗菌薬",
+        "利尿薬",
+        "高濃度の酸素（高気圧酸素療法を含む）",
+        "二酸化炭素の吸入"
+      ],
+      "answerIndex": 2,
+      "explanation": "一酸化炭素はヘモグロビンと強く結びつき、酸素を運べなくする。"
+    },
+    {
+      "id": "ish08_007",
+      "unit": "kokka.ishi.rinshou.kyuukyuu.kyuukyuu",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "脳梗塞の急性期に血栓を溶かす薬（t-PA）を静脈注射できるのは、原則として発症から何時間以内？",
+      "choices": [
+        "1週間以内",
+        "24時間以内",
+        "30分以内",
+        "4.5時間以内"
+      ],
+      "answerIndex": 3,
+      "explanation": "早く治療を始めるほど効果が高い。"
+    },
+    {
+      "id": "ish08_008",
+      "unit": "kokka.ishi.rinshou.kyuukyuu.kyuukyuu",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "くも膜下出血の典型的な症状は？",
+      "choices": [
+        "突然の、これまでで最悪の頭痛",
+        "数日続く微熱",
+        "ゆっくり強くなる腹痛",
+        "手のしびれだけ"
+      ],
+      "answerIndex": 0,
+      "explanation": "脳動脈瘤の破裂によるものが多い。"
+    },
+    {
+      "id": "ish08_009",
+      "unit": "kokka.ishi.rinshou.kyuukyuu.kyuukyuu",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "災害時のトリアージで、赤のタグがつく人は？",
+      "choices": [
+        "歩ける軽症者",
+        "ただちに処置が必要な重症者",
+        "死亡または救命の見込みがない人",
+        "処置を少し待てる人"
+      ],
+      "answerIndex": 1,
+      "explanation": "赤→黄→緑→黒の順に優先度が下がる。"
+    },
+    {
+      "id": "ish08_010",
+      "unit": "kokka.ishi.rinshou.kyuukyuu.kyuukyuu",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "大量に出血したショックの初期にみられやすいのは？",
+      "choices": [
+        "高血圧",
+        "高熱",
+        "頻脈と冷や汗",
+        "徐脈と顔のほてり"
+      ],
+      "answerIndex": 2,
+      "explanation": "心拍数を上げて血圧を保とうとする反応。"
+    },
+    {
+      "id": "ish08_011",
+      "unit": "kokka.ishi.rinshou.kyuukyuu.kyuukyuu",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "意識のある成人が食べ物で窒息したときの対処は？",
+      "choices": [
+        "寝かせて様子を見る",
+        "指で奥に押しこむ",
+        "水をたくさん飲ませる",
+        "背部叩打や腹部突き上げ法を行う"
+      ],
+      "answerIndex": 3,
+      "explanation": "意識がなくなったら心肺蘇生を始める。"
+    },
+    {
+      "id": "ish08_012",
+      "unit": "kokka.ishi.rinshou.kyuukyuu.kyuukyuu",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "重い熱中症（熱射病）で特に危険なサインは？",
+      "choices": [
+        "意識障害と高い体温",
+        "のどの渇きだけ",
+        "手足の軽いしびれだけ",
+        "汗をかいていること"
+      ],
+      "answerIndex": 0,
+      "explanation": "体を冷やしながら救急搬送する。"
+    }
+  ]
+}

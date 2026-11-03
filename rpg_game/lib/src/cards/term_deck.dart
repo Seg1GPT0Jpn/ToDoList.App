@@ -152,6 +152,10 @@ class TermDecks {
     TermDeckInfo('kotowaza', 'japanese', 'ことわざ・慣用句・四字熟語'),
     TermDeckInfo('bungakushi', 'japanese', '文学史'),
     TermDeckInfo('info1', 'information', '情報Ⅰ'),
+    // 追加コンテンツ（三大国家試験の世界）
+    TermDeckInfo('kokka_shiho', 'kokka', '司法試験'),
+    TermDeckInfo('kokka_ishi', 'kokka', '医師国家試験'),
+    TermDeckInfo('kokka_kaikei', 'kokka', '公認会計士試験'),
   ];
 
   static List<TermDeckInfo> of(String worldId) => [

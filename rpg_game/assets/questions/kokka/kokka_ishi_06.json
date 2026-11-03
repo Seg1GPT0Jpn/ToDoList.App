@@ -1,0 +1,188 @@
+{
+  "setId": "kokka_ishi_06",
+  "worldId": "kokka",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "ish06_001",
+      "unit": "kokka.ishi.rinshou.shouka.shouka",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "B型・C型肝炎が長く続くと進むおそれがあるのは？",
+      "choices": [
+        "胃潰瘍",
+        "虫垂炎",
+        "胆石",
+        "肝硬変や肝細胞がん"
+      ],
+      "answerIndex": 3,
+      "explanation": "C型肝炎は抗ウイルス薬で高い確率で治せるようになった。"
+    },
+    {
+      "id": "ish06_002",
+      "unit": "kokka.ishi.rinshou.shouka.shouka",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "黄疸で皮膚や白目が黄色くなる原因の物質は？",
+      "choices": [
+        "ビリルビン",
+        "クレアチニン",
+        "アルブミン",
+        "ヘモグロビン"
+      ],
+      "answerIndex": 0,
+      "explanation": "赤血球が壊れてできるヘモグロビンの分解産物。"
+    },
+    {
+      "id": "ish06_003",
+      "unit": "kokka.ishi.rinshou.shouka.shouka",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "急性膵炎で血液中に増える酵素は？",
+      "choices": [
+        "PSA",
+        "アミラーゼやリパーゼ",
+        "BNP",
+        "CK"
+      ],
+      "answerIndex": 1,
+      "explanation": "アルコールと胆石が二大原因。"
+    },
+    {
+      "id": "ish06_004",
+      "unit": "kokka.ishi.rinshou.shouka.shouka",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "みぞおちの痛みが右下腹部に移っていくのが典型的な急性疾患は？",
+      "choices": [
+        "胆石症",
+        "尿路結石",
+        "急性虫垂炎",
+        "胃潰瘍"
+      ],
+      "answerIndex": 2,
+      "explanation": "右下腹部のマックバーニー点の圧痛が知られる。"
+    },
+    {
+      "id": "ish06_005",
+      "unit": "kokka.ishi.rinshou.shouka.shouka",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "胃の内容物が食道に逆流して胸やけを起こす病気は？",
+      "choices": [
+        "食道静脈瘤",
+        "十二指腸潰瘍",
+        "アカラシア",
+        "逆流性食道炎"
+      ],
+      "answerIndex": 3,
+      "explanation": "胃酸を抑える薬で治療する。"
+    },
+    {
+      "id": "ish06_006",
+      "unit": "kokka.ishi.rinshou.shouka.naibunpi",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "1型糖尿病の主な原因は？",
+      "choices": [
+        "膵臓のβ細胞が壊れ、インスリンがほとんど出なくなる",
+        "食べすぎと運動不足",
+        "腎臓の障害",
+        "甲状腺ホルモンの不足"
+      ],
+      "answerIndex": 0,
+      "explanation": "治療にはインスリン注射が欠かせない。2型は生活習慣などがかかわる。"
+    },
+    {
+      "id": "ish06_007",
+      "unit": "kokka.ishi.rinshou.shouka.naibunpi",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "過去1〜2か月の平均的な血糖の状態を表す検査値は？",
+      "choices": [
+        "eGFR",
+        "HbA1c",
+        "CRP",
+        "空腹時血糖"
+      ],
+      "answerIndex": 1,
+      "explanation": "糖尿病の診断や血糖コントロールの目安に使う。"
+    },
+    {
+      "id": "ish06_008",
+      "unit": "kokka.ishi.rinshou.shouka.naibunpi",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "甲状腺ホルモンが出すぎる代表的な病気は？",
+      "choices": [
+        "橋本病",
+        "アジソン病",
+        "バセドウ病",
+        "クッシング症候群"
+      ],
+      "answerIndex": 2,
+      "explanation": "動悸・体重減少・眼球突出などが起こる。橋本病は機能低下が多い。"
+    },
+    {
+      "id": "ish06_009",
+      "unit": "kokka.ishi.rinshou.shouka.naibunpi",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "副腎皮質ホルモン（コルチゾール）が出すぎる病気は？",
+      "choices": [
+        "アジソン病",
+        "バセドウ病",
+        "尿崩症",
+        "クッシング症候群"
+      ],
+      "answerIndex": 3,
+      "explanation": "満月様顔貌や中心性肥満がみられる。アジソン病は副腎皮質の機能低下。"
+    },
+    {
+      "id": "ish06_010",
+      "unit": "kokka.ishi.rinshou.shouka.jinzou",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "腎臓のはたらきの目安として使う、推算糸球体ろ過量の略称は？",
+      "choices": [
+        "eGFR",
+        "BNP",
+        "HbA1c",
+        "AST"
+      ],
+      "answerIndex": 0,
+      "explanation": "血清クレアチニンと年齢・性別から計算する。"
+    },
+    {
+      "id": "ish06_011",
+      "unit": "kokka.ishi.rinshou.shouka.jinzou",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "末期腎不全になったときの主な治療は？",
+      "choices": [
+        "抗菌薬の投与",
+        "透析または腎移植",
+        "安静だけ",
+        "手術で腎臓を取り除く"
+      ],
+      "answerIndex": 1,
+      "explanation": "日本では血液透析を受けている人が多い。"
+    },
+    {
+      "id": "ish06_012",
+      "unit": "kokka.ishi.rinshou.shouka.jinzou",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "尿路結石の典型的な症状は？",
+      "choices": [
+        "発疹とかゆみ",
+        "慢性のせき",
+        "突然の激しい脇腹や背中の痛みと血尿",
+        "ゆっくり進む視力低下"
+      ],
+      "answerIndex": 2,
+      "explanation": "結石が尿管を通るときに強い痛みが出る。"
+    }
+  ]
+}

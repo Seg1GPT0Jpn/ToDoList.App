@@ -2,7 +2,7 @@ import '../models/question.dart';
 import '../models/stage.dart';
 import 'route_world.dart';
 
-/// 番外編「資格の塔」：資格試験の対策（宅建・英検・三大国家試験）。
+/// 追加コンテンツ「資格の塔」：宅建士試験の対策。
 /// 問題は assets/questions/shikaku/shikaku_<ルート>_NN.json（tool/shikaku/ で作る）。
 class ShikakuCatalog {
   const ShikakuCatalog._();

@@ -1,0 +1,188 @@
+{
+  "setId": "kokka_shiho_08",
+  "worldId": "kokka",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sih08_001",
+      "unit": "kokka.shiho.keiji.keiji.keiho",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「法律なければ犯罪なく、法律なければ刑罰なし」と表される原則は？",
+      "choices": [
+        "疑わしきは被告人の利益に",
+        "責任主義",
+        "一事不再理",
+        "罪刑法定主義"
+      ],
+      "answerIndex": 3,
+      "explanation": "憲法31条・39条などが根拠とされる。"
+    },
+    {
+      "id": "sih08_002",
+      "unit": "kokka.shiho.keiji.keiji.keiho",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "刑法で罰せられない、刑事責任年齢に満たない年齢は？",
+      "choices": [
+        "14歳未満",
+        "18歳未満",
+        "12歳未満",
+        "16歳未満"
+      ],
+      "answerIndex": 0,
+      "explanation": "刑法41条。"
+    },
+    {
+      "id": "sih08_003",
+      "unit": "kokka.shiho.keiji.keiji.keiho",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "正当防衛（刑法36条）の要件に含まれるのは？",
+      "choices": [
+        "現在の危難",
+        "急迫不正の侵害",
+        "生じた害が避けようとした害を超えないこと",
+        "ほかに方法がないこと（補充性）"
+      ],
+      "answerIndex": 1,
+      "explanation": "補充性と害の均衡は緊急避難（刑法37条）の要件。"
+    },
+    {
+      "id": "sih08_004",
+      "unit": "kokka.shiho.keiji.keiji.keiho",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "2025年6月から、懲役と禁錮を一本化して新しく設けられた刑は？",
+      "choices": [
+        "拘留",
+        "罰金刑",
+        "拘禁刑",
+        "科料"
+      ],
+      "answerIndex": 2,
+      "explanation": "改正刑法の施行により、受刑者の特性に応じた作業や指導が行えるようになった。"
+    },
+    {
+      "id": "sih08_005",
+      "unit": "kokka.shiho.keiji.keiji.keiho",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "窃盗罪と強盗罪を分けるのは何か？",
+      "choices": [
+        "夜間かどうか",
+        "共犯者がいるかどうか",
+        "盗んだ物の金額",
+        "相手の反抗を抑えるほどの暴行・脅迫を手段にしたか"
+      ],
+      "answerIndex": 3,
+      "explanation": "強盗罪（刑法236条）は暴行・脅迫を用いて財物を奪う罪。"
+    },
+    {
+      "id": "sih08_006",
+      "unit": "kokka.shiho.keiji.keiji.keiho",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "人をだまして財物を交付させる罪は？",
+      "choices": [
+        "詐欺罪",
+        "背任罪",
+        "恐喝罪",
+        "横領罪"
+      ],
+      "answerIndex": 0,
+      "explanation": "刑法246条。"
+    },
+    {
+      "id": "sih08_007",
+      "unit": "kokka.shiho.keiji.keiji.keiho",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "自分が預かっている他人の物を、自分の物のように処分する罪は？",
+      "choices": [
+        "詐欺罪",
+        "横領罪",
+        "強盗罪",
+        "窃盗罪"
+      ],
+      "answerIndex": 1,
+      "explanation": "刑法252条。業務上の場合は業務上横領罪（253条）。"
+    },
+    {
+      "id": "sih08_008",
+      "unit": "kokka.shiho.keiji.keiji.keiso",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "逮捕状などの令状を発するのは原則としてだれ？",
+      "choices": [
+        "法務大臣",
+        "警察官",
+        "裁判官",
+        "検察官"
+      ],
+      "answerIndex": 2,
+      "explanation": "令状主義（憲法33条・35条）。現行犯逮捕は令状不要。"
+    },
+    {
+      "id": "sih08_009",
+      "unit": "kokka.shiho.keiji.keiji.keiso",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "被疑者の勾留期間は？",
+      "choices": [
+        "原則3日で延長できない",
+        "最長30日まで延長できる",
+        "期限はない",
+        "原則10日、やむを得ない場合はさらに10日まで延長できる"
+      ],
+      "answerIndex": 3,
+      "explanation": "刑事訴訟法208条。内乱罪などは例外的にさらに延長できる。"
+    },
+    {
+      "id": "sih08_010",
+      "unit": "kokka.shiho.keiji.keiji.keiso",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "起訴するかどうかを決める権限は原則としてだれにある？",
+      "choices": [
+        "検察官",
+        "警察官",
+        "被害者",
+        "裁判所"
+      ],
+      "answerIndex": 0,
+      "explanation": "国家訴追主義（刑事訴訟法247条）。起訴便宜主義により起訴猶予もできる。"
+    },
+    {
+      "id": "sih08_011",
+      "unit": "kokka.shiho.keiji.keiji.keiso",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "有罪が確定した行為や無罪とされた行為について、重ねて刑事責任を問われないという原則は？",
+      "choices": [
+        "自白法則",
+        "一事不再理",
+        "証拠裁判主義",
+        "罪刑法定主義"
+      ],
+      "answerIndex": 1,
+      "explanation": "憲法39条。"
+    },
+    {
+      "id": "sih08_012",
+      "unit": "kokka.shiho.keiji.keiji.keiso",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "刑事裁判で「事実の認定は、証拠による」と定める原則は？",
+      "choices": [
+        "起訴状一本主義",
+        "伝聞法則",
+        "証拠裁判主義",
+        "自由心証主義"
+      ],
+      "answerIndex": 2,
+      "explanation": "刑事訴訟法317条。"
+    }
+  ]
+}

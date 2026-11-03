@@ -1,0 +1,188 @@
+{
+  "setId": "kokka_shiho_06",
+  "worldId": "kokka",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sih06_001",
+      "unit": "kokka.shiho.minji.minpo2.saiken",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "契約は原則としていつ成立する？",
+      "choices": [
+        "契約書に署名したとき",
+        "申込みに対して相手方が承諾したとき",
+        "代金を支払ったとき",
+        "目的物を引き渡したとき"
+      ],
+      "answerIndex": 1,
+      "explanation": "民法522条1項。法令に特別の定めがある場合を除き、書面は不要。"
+    },
+    {
+      "id": "sih06_002",
+      "unit": "kokka.shiho.minji.minpo2.saiken",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "金銭債務の不履行について正しいのは？",
+      "choices": [
+        "遅延損害金は生じない",
+        "債権者は損害を証明しなければならない",
+        "不可抗力をもって抗弁とすることができない",
+        "不可抗力なら責任を免れる"
+      ],
+      "answerIndex": 2,
+      "explanation": "民法419条。損害の証明も不要。"
+    },
+    {
+      "id": "sih06_003",
+      "unit": "kokka.shiho.minji.minpo2.saiken",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "2020年4月施行の改正民法で、法定利率は年何％とされた（3年ごとに見直す変動制）？",
+      "choices": [
+        "1％",
+        "5％",
+        "6％",
+        "3％"
+      ],
+      "answerIndex": 3,
+      "explanation": "民法404条。"
+    },
+    {
+      "id": "sih06_004",
+      "unit": "kokka.shiho.minji.minpo2.saiken",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "保証契約が効力を生じるための要件は？",
+      "choices": [
+        "書面（または電磁的記録）でしなければならない",
+        "口頭でも有効",
+        "必ず公正証書で作る",
+        "登記しなければならない"
+      ],
+      "answerIndex": 0,
+      "explanation": "民法446条2項・3項。"
+    },
+    {
+      "id": "sih06_005",
+      "unit": "kokka.shiho.minji.minpo2.saiken",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "不法行為による損害賠償請求権（人の生命・身体の侵害以外）は、損害と加害者を知った時から何年で時効により消滅する？",
+      "choices": [
+        "1年",
+        "3年",
+        "10年",
+        "5年"
+      ],
+      "answerIndex": 1,
+      "explanation": "民法724条1号。人の生命・身体の侵害は5年（724条の2）。"
+    },
+    {
+      "id": "sih06_006",
+      "unit": "kokka.shiho.minji.minpo2.saiken",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "法律上の原因なく他人の財産や労務によって利益を受けた人が負う返還義務は？",
+      "choices": [
+        "債務不履行",
+        "事務管理",
+        "不当利得",
+        "不法行為"
+      ],
+      "answerIndex": 2,
+      "explanation": "民法703条・704条。"
+    },
+    {
+      "id": "sih06_007",
+      "unit": "kokka.shiho.minji.minpo2.kazoku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "現在の民法で婚姻できる年齢は？",
+      "choices": [
+        "男18歳・女16歳",
+        "男女とも16歳",
+        "男女とも20歳",
+        "男女とも18歳"
+      ],
+      "answerIndex": 3,
+      "explanation": "2022年4月施行の改正で男女とも18歳になった（民法731条）。"
+    },
+    {
+      "id": "sih06_008",
+      "unit": "kokka.shiho.minji.minpo2.kazoku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "配偶者と子が相続人のとき、配偶者の法定相続分は？",
+      "choices": [
+        "2分の1",
+        "3分の1",
+        "3分の2",
+        "4分の3"
+      ],
+      "answerIndex": 0,
+      "explanation": "民法900条1号。"
+    },
+    {
+      "id": "sih06_009",
+      "unit": "kokka.shiho.minji.minpo2.kazoku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "配偶者と直系尊属（親など）が相続人のとき、配偶者の法定相続分は？",
+      "choices": [
+        "4分の3",
+        "3分の2",
+        "2分の1",
+        "3分の1"
+      ],
+      "answerIndex": 1,
+      "explanation": "民法900条2号。兄弟姉妹とのときは4分の3。"
+    },
+    {
+      "id": "sih06_010",
+      "unit": "kokka.shiho.minji.minpo2.kazoku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "相続の放棄は、自己のために相続の開始があったことを知った時から何か月以内に家庭裁判所に申述する？",
+      "choices": [
+        "1か月",
+        "1年",
+        "3か月",
+        "6か月"
+      ],
+      "answerIndex": 2,
+      "explanation": "熟慮期間（民法915条1項）。"
+    },
+    {
+      "id": "sih06_011",
+      "unit": "kokka.shiho.minji.minpo2.kazoku",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "自筆証書遺言に添付する財産目録について、現在の民法では？",
+      "choices": [
+        "全文を自書しなければならない",
+        "ワープロで作ると遺言全体が無効",
+        "公証人が作らなければならない",
+        "自書でなくてもよいが、各ページに署名・押印が必要"
+      ],
+      "answerIndex": 3,
+      "explanation": "2019年1月施行の改正（民法968条2項）。"
+    },
+    {
+      "id": "sih06_012",
+      "unit": "kokka.shiho.minji.minpo2.kazoku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "兄弟姉妹の遺留分は？",
+      "choices": [
+        "ない",
+        "3分の1",
+        "2分の1",
+        "4分の1"
+      ],
+      "answerIndex": 0,
+      "explanation": "遺留分は兄弟姉妹以外の相続人にだけ認められる（民法1042条）。"
+    }
+  ]
+}

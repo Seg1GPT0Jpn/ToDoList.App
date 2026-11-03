@@ -1,0 +1,188 @@
+{
+  "setId": "kokka_kaikei_05",
+  "worldId": "kokka",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "kai05_001",
+      "unit": "kokka.kaikei.kanri.genka.genka",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "製品ごとに直接結びつけて把握できる原価は？",
+      "choices": [
+        "期間原価",
+        "固定費",
+        "間接費",
+        "直接費"
+      ],
+      "answerIndex": 3,
+      "explanation": "直接材料費・直接労務費・直接経費。"
+    },
+    {
+      "id": "kai05_002",
+      "unit": "kokka.kaikei.kanri.genka.genka",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "製造原価の3つの要素は？",
+      "choices": [
+        "材料費・労務費・経費",
+        "直接費・間接費・期間原価",
+        "固定費・変動費・準固定費",
+        "売上原価・販売費・管理費"
+      ],
+      "answerIndex": 0,
+      "explanation": "原価計算基準による形態別の分類。"
+    },
+    {
+      "id": "kai05_003",
+      "unit": "kokka.kaikei.kanri.genka.genka",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "受注した製品ごとに原価を集計する方法は？",
+      "choices": [
+        "総合原価計算",
+        "個別原価計算",
+        "直接原価計算",
+        "標準原価計算"
+      ],
+      "answerIndex": 1,
+      "explanation": "同じ製品を大量に作るときは総合原価計算を使う。"
+    },
+    {
+      "id": "kai05_004",
+      "unit": "kokka.kaikei.kanri.genka.genka",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "標準原価と実際原価の差額を何という？",
+      "choices": [
+        "限界利益",
+        "機会原価",
+        "原価差異",
+        "埋没原価"
+      ],
+      "answerIndex": 2,
+      "explanation": "価格差異・数量差異などに分けて分析する。"
+    },
+    {
+      "id": "kai05_005",
+      "unit": "kokka.kaikei.kanri.genka.cvp",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "操業度（生産量など）に比例して増減する原価は？",
+      "choices": [
+        "期間原価",
+        "埋没原価",
+        "固定費",
+        "変動費"
+      ],
+      "answerIndex": 3,
+      "explanation": "材料費などが典型。操業度に関係なく一定なのが固定費。"
+    },
+    {
+      "id": "kai05_006",
+      "unit": "kokka.kaikei.kanri.genka.cvp",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "損益分岐点売上高を求める式は？",
+      "choices": [
+        "固定費÷限界利益率",
+        "変動費÷売上高",
+        "固定費×限界利益率",
+        "売上高－固定費"
+      ],
+      "answerIndex": 0,
+      "explanation": "限界利益率＝限界利益÷売上高。"
+    },
+    {
+      "id": "kai05_007",
+      "unit": "kokka.kaikei.kanri.genka.cvp",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "固定費が300万円、限界利益率が40％のとき、損益分岐点売上高は？",
+      "choices": [
+        "1,200万円",
+        "750万円",
+        "120万円",
+        "500万円"
+      ],
+      "answerIndex": 1,
+      "explanation": "300万円÷0.4＝750万円。"
+    },
+    {
+      "id": "kai05_008",
+      "unit": "kokka.kaikei.kanri.genka.cvp",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "安全余裕率を求める式は？",
+      "choices": [
+        "損益分岐点売上高÷売上高",
+        "限界利益÷固定費",
+        "（売上高－損益分岐点売上高）÷売上高",
+        "固定費÷売上高"
+      ],
+      "answerIndex": 2,
+      "explanation": "売上がどれだけ減っても赤字にならないかを表す。"
+    },
+    {
+      "id": "kai05_009",
+      "unit": "kokka.kaikei.kanri.genka.cvp",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "直接原価計算で、固定製造間接費はどう扱う？",
+      "choices": [
+        "計算に含めない",
+        "資産に計上する",
+        "製品原価に含めて在庫に配分する",
+        "発生した期の費用（期間原価）として全額処理する"
+      ],
+      "answerIndex": 3,
+      "explanation": "全部原価計算と違い、在庫の増減で利益が動かない。"
+    },
+    {
+      "id": "kai05_010",
+      "unit": "kokka.kaikei.kanri.genka.ishikettei",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "意思決定で、どの案を選んでも変わらない過去の支出を何という？",
+      "choices": [
+        "埋没原価",
+        "変動費",
+        "機会原価",
+        "差額原価"
+      ],
+      "answerIndex": 0,
+      "explanation": "意思決定では考慮しない。"
+    },
+    {
+      "id": "kai05_011",
+      "unit": "kokka.kaikei.kanri.genka.ishikettei",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ある案を選んだために、選ばなかった案から得られたはずの最大の利益を何という？",
+      "choices": [
+        "標準原価",
+        "機会原価",
+        "実際原価",
+        "埋没原価"
+      ],
+      "answerIndex": 1,
+      "explanation": "意思決定の比較で考慮する。"
+    },
+    {
+      "id": "kai05_012",
+      "unit": "kokka.kaikei.kanri.genka.ishikettei",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "正味現在価値法（NPV法）で投資を採用する基準は？",
+      "choices": [
+        "回収期間が10年以上",
+        "正味現在価値がマイナス",
+        "正味現在価値がプラス",
+        "会計上の利益が出る"
+      ],
+      "answerIndex": 2,
+      "explanation": "将来キャッシュ・フローの現在価値が投資額を上回るなら採用。"
+    }
+  ]
+}

@@ -154,7 +154,7 @@ def split_list(v):
 
 # 画面に出す教科の順（ゲームの国の順）
 ORDER = ['english', 'science', 'social', 'japanese', 'math', 'information',
-         'music', 'shikaku', 'eiken']
+         'music', 'shikaku', 'eiken', 'kokka']
 
 
 def dart_str(s):

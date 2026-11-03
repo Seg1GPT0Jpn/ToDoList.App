@@ -5,9 +5,10 @@ ROOT = pathlib.Path(__file__).resolve().parents[2]
 OUT = ROOT / 'assets' / 'questions' / 'shikaku'
 
 
-def write_set(set_id, prefix, qs):
+def write_set(set_id, prefix, qs, world='shikaku'):
     """qs: [(unit, prompt, correct, [wrong×3], explanation, category)]"""
-    OUT.mkdir(parents=True, exist_ok=True)
+    out_dir = ROOT / 'assets' / 'questions' / world
+    out_dir.mkdir(parents=True, exist_ok=True)
     out = []
     for i, (unit, prompt, correct, wrongs, ex, cat) in enumerate(qs, 1):
         qid = f'{prefix}_{i:03d}'
@@ -25,6 +26,6 @@ def write_set(set_id, prefix, qs):
             'prompt': prompt, 'choices': opts, 'answerIndex': opts.index(correct),
             'explanation': ex,
         })
-    data = {'setId': set_id, 'worldId': 'shikaku', 'origin': 'original', 'version': 1, 'questions': out}
-    (OUT / f'{set_id}.json').write_text(json.dumps(data, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
+    data = {'setId': set_id, 'worldId': world, 'origin': 'original', 'version': 1, 'questions': out}
+    (out_dir / f'{set_id}.json').write_text(json.dumps(data, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
     return len(out)

@@ -8,6 +8,7 @@ import '../app/theme.dart';
 import '../audio/music_scope.dart';
 import '../field/field_screen.dart';
 import 'eiken_door_screen.dart';
+import 'kokka_door_screen.dart';
 
 /// 異世界の門の色
 abstract final class GateColors {
@@ -19,7 +20,7 @@ abstract final class GateColors {
   static const soft = Color(0xFFC9BEE8);
 }
 
-/// 異世界の門の向こうにある扉（資格ごと）。ルートのない扉は準備中
+/// 異世界の門の向こうにある扉（資格ごと）。ワールドのない扉は準備中
 class GateDoor {
   const GateDoor({
     required this.id,
@@ -54,7 +55,8 @@ class GateDoor {
     GateDoor(
       id: 'national',
       title: '三大国家試験の扉',
-      subtitle: '司法試験・医師国家試験・公認会計士試験（準備中）',
+      subtitle: '司法試験・医師国家試験・公認会計士試験の基礎。3つの道・24エリアのバトルと用語帳',
+      worldId: KokkaCatalog.worldId,
     ),
   ];
 }
@@ -107,7 +109,7 @@ class GateBanner extends StatelessWidget {
                     ),
                     Text('異世界の門', style: serif(18, color: GateColors.text)),
                     const Text(
-                      'ノートの世界とは別の場所へ。資格試験（宅建など）の世界につながっている',
+                      'ノートの世界とは別の場所へ。宅建・英検・三大国家試験の世界につながっている',
                       style: TextStyle(fontSize: 12, color: GateColors.soft),
                     ),
                   ],
@@ -143,6 +145,8 @@ class _GateScreenState extends State<GateScreen> {
       MaterialPageRoute<void>(
         builder: (_) => door.id == 'eiken'
             ? const EikenDoorScreen()
+            : door.id == 'national'
+            ? const KokkaDoorScreen()
             : MusicScope(
                 music: 'field_information',
                 child: FieldScreen(world: world, progress: progress),

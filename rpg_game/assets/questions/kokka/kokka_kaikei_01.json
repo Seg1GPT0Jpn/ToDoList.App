@@ -1,0 +1,188 @@
+{
+  "setId": "kokka_kaikei_01",
+  "worldId": "kokka",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "kai01_001",
+      "unit": "kokka.kaikei.zaimu.boki.shiwake",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "資産が増えたとき、仕訳では借方・貸方のどちらに書く？",
+      "choices": [
+        "どちらにも書かない",
+        "貸方",
+        "両方",
+        "借方"
+      ],
+      "answerIndex": 3,
+      "explanation": "資産の増加は借方、減少は貸方。"
+    },
+    {
+      "id": "kai01_002",
+      "unit": "kokka.kaikei.zaimu.boki.shiwake",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "負債が増えたとき、仕訳では借方・貸方のどちらに書く？",
+      "choices": [
+        "貸方",
+        "両方",
+        "借方",
+        "どちらにも書かない"
+      ],
+      "answerIndex": 0,
+      "explanation": "負債・純資産の増加と収益の発生は貸方。"
+    },
+    {
+      "id": "kai01_003",
+      "unit": "kokka.kaikei.zaimu.boki.shiwake",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "費用が発生したとき、仕訳では借方・貸方のどちらに書く？",
+      "choices": [
+        "両方",
+        "借方",
+        "どちらにも書かない",
+        "貸方"
+      ],
+      "answerIndex": 1,
+      "explanation": "費用の発生は借方、収益の発生は貸方。"
+    },
+    {
+      "id": "kai01_004",
+      "unit": "kokka.kaikei.zaimu.boki.shiwake",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "貸借対照表の基本的な等式は？",
+      "choices": [
+        "負債＝資産＋純資産",
+        "資産＝収益－費用",
+        "資産＝負債＋純資産",
+        "純資産＝資産＋負債"
+      ],
+      "answerIndex": 2,
+      "explanation": "貸借対照表は一定時点の財政状態を表す。"
+    },
+    {
+      "id": "kai01_005",
+      "unit": "kokka.kaikei.zaimu.boki.shiwake",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "損益計算書が表すものは？",
+      "choices": [
+        "株主の一覧",
+        "現金の出入り",
+        "一定時点の財政状態",
+        "一定期間の経営成績"
+      ],
+      "answerIndex": 3,
+      "explanation": "収益から費用を差し引いて利益を求める。"
+    },
+    {
+      "id": "kai01_006",
+      "unit": "kokka.kaikei.zaimu.boki.kessan",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "固定資産の取得原価を、使う期間にわたって費用に配分する手続は？",
+      "choices": [
+        "減価償却",
+        "棚卸",
+        "貸倒引当",
+        "繰延"
+      ],
+      "answerIndex": 0,
+      "explanation": "定額法・定率法などの方法がある。"
+    },
+    {
+      "id": "kai01_007",
+      "unit": "kokka.kaikei.zaimu.boki.kessan",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "取得原価100万円、残存価額0円、耐用年数5年の備品を定額法で償却すると、1年分の減価償却費は？",
+      "choices": [
+        "25万円",
+        "20万円",
+        "50万円",
+        "10万円"
+      ],
+      "answerIndex": 1,
+      "explanation": "100万円÷5年＝20万円。"
+    },
+    {
+      "id": "kai01_008",
+      "unit": "kokka.kaikei.zaimu.boki.kessan",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "売掛金などが回収できなくなるのに備えて設ける勘定は？",
+      "choices": [
+        "減価償却累計額",
+        "退職給付引当金",
+        "貸倒引当金",
+        "修繕引当金"
+      ],
+      "answerIndex": 2,
+      "explanation": "債権から控除する形で表示する（評価勘定）。"
+    },
+    {
+      "id": "kai01_009",
+      "unit": "kokka.kaikei.zaimu.boki.kessan",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "当期分の家賃をまだ払っていないとき、決算で計上する勘定は？",
+      "choices": [
+        "未収収益",
+        "前払費用",
+        "前受収益",
+        "未払費用"
+      ],
+      "answerIndex": 3,
+      "explanation": "経過勘定の一つ。すでに受けたサービスの対価が未払い。"
+    },
+    {
+      "id": "kai01_010",
+      "unit": "kokka.kaikei.zaimu.boki.kessan",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "次期分の家賃を当期に受け取っていたとき、決算で計上する勘定は？",
+      "choices": [
+        "前受収益",
+        "前払費用",
+        "未収収益",
+        "未払費用"
+      ],
+      "answerIndex": 0,
+      "explanation": "まだ提供していないサービスの対価を受け取っている。"
+    },
+    {
+      "id": "kai01_011",
+      "unit": "kokka.kaikei.zaimu.boki.kessan",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "三分法での売上原価の求め方は？",
+      "choices": [
+        "売上高－当期商品仕入高",
+        "期首商品棚卸高＋当期商品仕入高－期末商品棚卸高",
+        "期末商品棚卸高－期首商品棚卸高",
+        "当期商品仕入高＋期末商品棚卸高"
+      ],
+      "answerIndex": 1,
+      "explanation": "「しーくり・くりしー」の決算整理仕訳で求める。"
+    },
+    {
+      "id": "kai01_012",
+      "unit": "kokka.kaikei.zaimu.boki.kessan",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "売上高1,000万円、売上原価600万円のとき、売上総利益は？",
+      "choices": [
+        "600万円",
+        "1,600万円",
+        "400万円",
+        "60％"
+      ],
+      "answerIndex": 2,
+      "explanation": "売上総利益＝売上高－売上原価。"
+    }
+  ]
+}

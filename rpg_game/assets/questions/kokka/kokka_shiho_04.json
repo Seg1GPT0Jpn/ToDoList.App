@@ -1,0 +1,188 @@
+{
+  "setId": "kokka_shiho_04",
+  "worldId": "kokka",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sih04_001",
+      "unit": "kokka.shiho.kouhou.jinken.jiyu",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "学問の自由を保障する条文は？",
+      "choices": [
+        "21条",
+        "19条",
+        "26条",
+        "23条"
+      ],
+      "answerIndex": 3,
+      "explanation": "大学の自治も23条で保障されると解されている。"
+    },
+    {
+      "id": "sih04_002",
+      "unit": "kokka.shiho.kouhou.jinken.keizai",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「すべて国民は、勤労の権利を有し、義務を負ふ」と定める条文は？",
+      "choices": [
+        "27条",
+        "25条",
+        "28条",
+        "26条"
+      ],
+      "answerIndex": 0,
+      "explanation": "28条は労働基本権（団結権・団体交渉権・団体行動権）。"
+    },
+    {
+      "id": "sih04_003",
+      "unit": "kokka.shiho.kouhou.jinken.jiyu",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "刑事被告人の権利として憲法37条が保障するのは？",
+      "choices": [
+        "非公開の裁判を受ける権利",
+        "公平な裁判所の迅速な公開裁判を受ける権利",
+        "必ず陪審による裁判を受ける権利",
+        "裁判官を自分で選ぶ権利"
+      ],
+      "answerIndex": 1,
+      "explanation": "証人審問権や弁護人依頼権も37条で保障される。"
+    },
+    {
+      "id": "sih04_004",
+      "unit": "kokka.shiho.kouhou.jinken.jiyu",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "自分に不利益な唯一の証拠が本人の自白であるとき、憲法はどう定める？",
+      "choices": [
+        "裁判官の判断で有罪にできる",
+        "自白は証拠にならない",
+        "有罪とされ、または刑罰を科せられない",
+        "自白だけで有罪にできる"
+      ],
+      "answerIndex": 2,
+      "explanation": "憲法38条3項（補強法則）。"
+    },
+    {
+      "id": "sih04_005",
+      "unit": "kokka.shiho.kouhou.touchi.naikaku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "天皇の国事に関するすべての行為に必要なのは？",
+      "choices": [
+        "最高裁判所の許可",
+        "国民投票",
+        "国会の承認",
+        "内閣の助言と承認"
+      ],
+      "answerIndex": 3,
+      "explanation": "憲法3条。責任は内閣が負う。"
+    },
+    {
+      "id": "sih04_006",
+      "unit": "kokka.shiho.kouhou.touchi.naikaku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "内閣が条約を締結するときに必要なのは？",
+      "choices": [
+        "事前に、時宜によっては事後に国会の承認を経ること",
+        "国民投票",
+        "承認はいらない",
+        "最高裁判所の承認"
+      ],
+      "answerIndex": 0,
+      "explanation": "憲法73条3号。"
+    },
+    {
+      "id": "sih04_007",
+      "unit": "kokka.shiho.kouhou.touchi.kokkai",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "裁判官を罷免するかどうかを判断する弾劾裁判所を設けるのは？",
+      "choices": [
+        "内閣",
+        "国会",
+        "法務省",
+        "最高裁判所"
+      ],
+      "answerIndex": 1,
+      "explanation": "両議院の議員で組織する（憲法64条）。"
+    },
+    {
+      "id": "sih04_008",
+      "unit": "kokka.shiho.kouhou.touchi.chiho",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "地方自治の本旨を構成する2つの要素は？",
+      "choices": [
+        "国民主権と平和主義",
+        "議院内閣制と二院制",
+        "住民自治と団体自治",
+        "三権分立と法の支配"
+      ],
+      "answerIndex": 2,
+      "explanation": "憲法92条の「地方自治の本旨」の内容とされる。"
+    },
+    {
+      "id": "sih04_009",
+      "unit": "kokka.shiho.kouhou.touchi.chiho",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "地方公共団体が条例を制定できる根拠となる条文と範囲は？",
+      "choices": [
+        "41条・法律に反しても",
+        "73条・内閣の許す範囲で",
+        "92条・制限なく",
+        "94条・法律の範囲内で"
+      ],
+      "answerIndex": 3,
+      "explanation": "憲法94条。"
+    },
+    {
+      "id": "sih04_010",
+      "unit": "kokka.shiho.kouhou.gyosei.kyusai",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "行政事件訴訟法が定める訴訟の類型に含まれないのは？",
+      "choices": [
+        "刑事訴訟",
+        "抗告訴訟",
+        "民衆訴訟",
+        "当事者訴訟"
+      ],
+      "answerIndex": 0,
+      "explanation": "行政事件訴訟は抗告訴訟・当事者訴訟・民衆訴訟・機関訴訟の4つ（行政事件訴訟法2条）。"
+    },
+    {
+      "id": "sih04_011",
+      "unit": "kokka.shiho.kouhou.gyosei.kyusai",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "申請したのに行政庁が何の処分もしないとき、その違法を確認するために起こせる訴えは？",
+      "choices": [
+        "無効等確認の訴え",
+        "不作為の違法確認の訴え",
+        "民衆訴訟",
+        "差止めの訴え"
+      ],
+      "answerIndex": 1,
+      "explanation": "行政事件訴訟法3条5項。義務付けの訴えと併合することもできる。"
+    },
+    {
+      "id": "sih04_012",
+      "unit": "kokka.shiho.kouhou.gyosei.koui",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "行政行為の附款のうち、行政行為の効果を一定の事実の発生にかからせるものは？",
+      "choices": [
+        "期限",
+        "撤回権の留保",
+        "条件",
+        "負担"
+      ],
+      "answerIndex": 2,
+      "explanation": "発生が不確実な事実にかからせるのが条件、確実な事実が期限。"
+    }
+  ]
+}

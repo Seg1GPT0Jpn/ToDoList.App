@@ -1,0 +1,188 @@
+{
+  "setId": "kokka_ishi_01",
+  "worldId": "kokka",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "ish01_001",
+      "unit": "kokka.ishi.kiso.kaibou.kaibou",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "成人の骨の数はおよそいくつ？",
+      "choices": [
+        "約300個",
+        "約100個",
+        "約206個",
+        "約500個"
+      ],
+      "answerIndex": 2,
+      "explanation": "新生児は300個ほどあり、成長とともに癒合して約206個になる。"
+    },
+    {
+      "id": "ish01_002",
+      "unit": "kokka.ishi.kiso.kaibou.kaibou",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "心臓の4つの部屋のうち、全身に血液を送り出すのは？",
+      "choices": [
+        "左心房",
+        "右心室",
+        "右心房",
+        "左心室"
+      ],
+      "answerIndex": 3,
+      "explanation": "左心室から大動脈へ送られる。壁がいちばん厚い。"
+    },
+    {
+      "id": "ish01_003",
+      "unit": "kokka.ishi.kiso.kaibou.kaibou",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "肺から心臓へ、酸素を多く含む血液を運ぶ血管は？",
+      "choices": [
+        "肺静脈",
+        "肺動脈",
+        "大動脈",
+        "上大静脈"
+      ],
+      "answerIndex": 0,
+      "explanation": "肺静脈は「静脈」だが動脈血が流れる。肺動脈には静脈血が流れる。"
+    },
+    {
+      "id": "ish01_004",
+      "unit": "kokka.ishi.kiso.kaibou.kaibou",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "心臓の拍動のリズムをつくるペースメーカーの部位は？",
+      "choices": [
+        "房室結節",
+        "洞房結節",
+        "プルキンエ線維",
+        "ヒス束"
+      ],
+      "answerIndex": 1,
+      "explanation": "右心房にあり、刺激伝導系の起点となる。"
+    },
+    {
+      "id": "ish01_005",
+      "unit": "kokka.ishi.kiso.kaibou.kaibou",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "肺でガス交換が行われる部位は？",
+      "choices": [
+        "気管",
+        "胸膜",
+        "肺胞",
+        "気管支"
+      ],
+      "answerIndex": 2,
+      "explanation": "肺胞の壁を通して酸素と二酸化炭素が交換される。"
+    },
+    {
+      "id": "ish01_006",
+      "unit": "kokka.ishi.kiso.kaibou.kaibou",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "腎臓で血液をろ過して原尿をつくる構造は？",
+      "choices": [
+        "腎盂",
+        "尿管",
+        "集合管",
+        "糸球体"
+      ],
+      "answerIndex": 3,
+      "explanation": "糸球体とボーマン嚢をあわせて腎小体という。"
+    },
+    {
+      "id": "ish01_007",
+      "unit": "kokka.ishi.kiso.kaibou.seiri",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "血糖値を下げるホルモンは？",
+      "choices": [
+        "インスリン",
+        "グルカゴン",
+        "アドレナリン",
+        "コルチゾール"
+      ],
+      "answerIndex": 0,
+      "explanation": "血糖値を下げるホルモンはインスリンだけ。"
+    },
+    {
+      "id": "ish01_008",
+      "unit": "kokka.ishi.kiso.kaibou.seiri",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "インスリンを分泌する細胞は？",
+      "choices": [
+        "肝細胞",
+        "膵臓のランゲルハンス島のB（β）細胞",
+        "膵臓のランゲルハンス島のA（α）細胞",
+        "副腎皮質の細胞"
+      ],
+      "answerIndex": 1,
+      "explanation": "A（α）細胞はグルカゴンを分泌する。"
+    },
+    {
+      "id": "ish01_009",
+      "unit": "kokka.ishi.kiso.kaibou.kaibou",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "脳神経は何対ある？",
+      "choices": [
+        "8対",
+        "10対",
+        "12対",
+        "31対"
+      ],
+      "answerIndex": 2,
+      "explanation": "嗅神経・視神経から舌下神経まで。脊髄神経は31対。"
+    },
+    {
+      "id": "ish01_010",
+      "unit": "kokka.ishi.kiso.kaibou.seiri",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "体温調節の中枢があるのは？",
+      "choices": [
+        "小脳",
+        "大脳の運動野",
+        "脊髄",
+        "視床下部"
+      ],
+      "answerIndex": 3,
+      "explanation": "視床下部は自律神経と内分泌の中枢でもある。"
+    },
+    {
+      "id": "ish01_011",
+      "unit": "kokka.ishi.kiso.kaibou.seiri",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "赤血球の寿命はおよそ？",
+      "choices": [
+        "120日",
+        "30日",
+        "1年",
+        "7日"
+      ],
+      "answerIndex": 0,
+      "explanation": "古くなった赤血球は主に脾臓で壊される。"
+    },
+    {
+      "id": "ish01_012",
+      "unit": "kokka.ishi.kiso.kaibou.seiri",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "運動の調節や平衡感覚に関わり、障害されるとふらつきが起こる部位は？",
+      "choices": [
+        "視床",
+        "小脳",
+        "海馬",
+        "延髄"
+      ],
+      "answerIndex": 1,
+      "explanation": "小脳失調では歩行のふらつきや指鼻試験の拙劣がみられる。"
+    }
+  ]
+}
