@@ -64,11 +64,11 @@ function facadeMat(){if(FACMAT)return FACMAT;const t=facadeAtlas();
 function facadeStyle(use,h,area,r,kind){
   if(use===411||use===413||(use===0&&h<9&&area<260)){return r<0.6?FAC.HOUSE_A:FAC.HOUSE_B;}
   if(use===412||use===414){return r<0.65?FAC.MANSION:FAC.MANSION_B;}
-  if(use===402||use===404||use===403){return h>25&&r<0.5?FAC.OFFICE_GLASS:FAC.SHOP;}
+  if(use===402||use===404||use===403){if(h<=9)return FAC.SHOP;if(use===404&&r<0.45)return FAC.MANSION;return h>25&&r<0.6?FAC.OFFICE_GLASS:r<0.25?FAC.SHOP:FAC.OFFICE;}
   if(use===431||use===441||use===453||kind===3)return FAC.WAREHOUSE;
   if(use===401){return h>20||r<0.4?FAC.OFFICE_GLASS:FAC.OFFICE;}
   if(use===421||use===422||kind===4||kind===10)return FAC.OFFICE;
-  if(h>=10.5)return r<0.45?FAC.MANSION:r<0.7?FAC.OFFICE:r<0.85?FAC.OFFICE_GLASS:FAC.SHOP;
+  if(h>=10.5)return r<0.5?FAC.MANSION:r<0.75?FAC.OFFICE:r<0.9?FAC.OFFICE_GLASS:FAC.SHOP;
   return r<0.5?FAC.HOUSE_A:FAC.HOUSE_B;}
 /* extrude a footprint with facade uvs */
 function facadeWalls(gb,f,y0,y1,col,style,storeyH){const n=f.length/2;let per=0;const bay=FAC_BAY[style];const off=style*1000;

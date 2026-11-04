@@ -129,11 +129,17 @@ function poolFor(spec){const key=JSON.stringify(spec);let p=CARPOOL.get(key);if(
   const w=spec.w,h=spec.h,len=spec.len;const body=[],win=[];
   const add=(c,sx,sy,sz,y,x=0,isWin=false)=>{const g=new THREE.BoxGeometry(sx,sy,sz).translate(x,y+sy/2,0).toNonIndexed();if(isWin){win.push(g);return;}const cc=new THREE.Color(c);const n=g.attributes.position.count;const a=new Float32Array(n*3);for(let i=0;i<n;i++){a[i*3]=cc.r;a[i*3+1]=cc.g;a[i*3+2]=cc.b;}g.setAttribute('color',new THREE.BufferAttribute(a,3));body.push(g);};
   add('#2c2f33',len*0.86,0.75,w*0.8,0.2);
+  for(const k of [-1,1])add('#24272b',2.4,0.55,w*0.86,0.25,k*len*0.34); // bogies
+  for(let k=-2;k<=2;k++)add('#3a3e44',1.6,0.5,w*0.7,0.55,k*len*0.15); // under-floor equipment
   if(spec.two){add(spec.two[0],len,h*0.45,w,0.95);add(spec.two[1],len,h*0.55,w,0.95+h*0.45);}else add(spec.body,len,h,w,0.95);
   add(null,len*0.9,h*0.3,w+0.04,0.95+h*0.42,0,true);
-  for(let k=-1;k<=1;k+=2)add('#8a949c',1.3,h*0.62,w+0.05,0.95+h*0.1,k*len*0.3);
+  // window pillars over the glass band
+  for(let k=-4;k<=4;k++)add(spec.two?spec.two[1]:spec.body,0.28,h*0.3,w+0.06,0.95+h*0.42,k*len*0.1);
+  const nd=spec.len>=19?4:spec.len>=15?3:2;for(let k=0;k<nd;k++){const x=(k-(nd-1)/2)*len/nd;add('#9aa3aa',1.3,h*0.72,w+0.07,0.95+h*0.04,x);add('#2a3a48',0.5,h*0.28,w+0.08,0.95+h*0.42,x-0.32);add('#2a3a48',0.5,h*0.28,w+0.08,0.95+h*0.42,x+0.32);}
   for(const st of spec.stripes||[])add(st[0],len+0.04,st[2],w+0.06,0.95+st[1]);
   add(spec.roof||'#a7adb3',len*0.97,0.25,w*0.88,0.95+h);
+  if(!spec.mono){for(const k of [-1,1])add('#c9ced3',2.6,0.32,w*0.6,0.95+h+0.25,k*len*0.22); // roof air conditioners
+    add('#5a6168',1.4,0.08,1.6,0.95+h+0.5,len*0.36);add('#5a6168',0.08,0.5,1.0,0.95+h+0.25,len*0.36);}
   if(spec.mono)add('#8a949c',1.2,1.9,0.8,h+0.95);
   const mg=(list,colr)=>{let tot=0;for(const g of list)tot+=g.attributes.position.count;const P=new Float32Array(tot*3),N=new Float32Array(tot*3),C=colr?new Float32Array(tot*3):null;let o=0;for(const g of list){P.set(g.attributes.position.array,o);N.set(g.attributes.normal.array,o);if(C)C.set(g.attributes.color.array,o);o+=g.attributes.position.array.length;}const r=new THREE.BufferGeometry();r.setAttribute('position',new THREE.BufferAttribute(P,3));r.setAttribute('normal',new THREE.BufferAttribute(N,3));if(C)r.setAttribute('color',new THREE.BufferAttribute(C,3));return r;};
   const cap=500;const mb=new THREE.InstancedMesh(mg(body,true),CARMAT,cap),mw=new THREE.InstancedMesh(mg(win,false),winTrainMat,cap);
