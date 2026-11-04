@@ -3213,17 +3213,19 @@ function resolveWorldConflicts(){
   const firstClash=(Y,ta,tb)=>{for(let t=Math.ceil(ta/WSTEP)*WSTEP;t<=tb;t+=WSTEP)if(clashAt(Y,t))return t;return null;};
   const order=RUNS.slice().sort((a,b)=>a.tStart-b.tStart);
   for(const Y of order){Y.wHalf=(Y.spec.n*Y.spec.len+(Y.spec.n-1)*0.8)/2;
-    for(let i=0;i<Y.tl.length;i++){const e=Y.tl[i];if(e.k!=='move')continue;const pd=i>0&&Y.tl[i-1].k==='dwell'?Y.tl[i-1]:null;const nd=Y.tl[i+1]&&Y.tl[i+1].k==='dwell'?Y.tl[i+1]:null;
-      for(let g=0;g<100;g++){const ta=pd?pd.t0:e.t0,tb=e.t0+e.T+(nd?nd.T:0);const tc=firstClash(Y,ta,tb);if(tc===null)break;
-        if(nd&&nd.pass===undefined&&tc>=nd.t0-2&&!nd.tried&&!nd.l.single&&!nd.last){const po=passOff(nd.l,nd.s,-nd.d);if(po!==null){nd.tried=1;nd.pass=po;if(firstClash(Y,nd.t0-30,nd.t0+nd.T)===null){retrack++;continue;}delete nd.pass;}}
-        if(nd&&nd.pass!==undefined&&tc>=nd.t0-2&&!nd.tried){nd.tried=1;const tr=stationTracks(nd.l,nd.s);const keep=nd.pass;let ok=false;
-          for(const o of tr){if(Math.abs(o-keep)<1)continue;nd.pass=o;if(firstClash(Y,nd.t0-30,nd.t0+nd.T)===null){ok=true;break;}}if(ok){retrack++;continue;}nd.pass=keep;}
+    let restart=false;
+    for(let i=0;i<Y.tl.length;i++){if(restart){restart=false;i=-1;continue;}const e=Y.tl[i];if(e.k!=='move')continue;const pd=i>0&&Y.tl[i-1].k==='dwell'?Y.tl[i-1]:null;const nd=Y.tl[i+1]&&Y.tl[i+1].k==='dwell'?Y.tl[i+1]:null;
+      let g=0;for(;g<100;g++){const ta=pd?pd.t0:e.t0,tb=e.t0+e.T+(nd?nd.T:0);const tc=firstClash(Y,ta,tb);if(tc===null)break;
+        if(nd&&nd.pass===undefined&&tc>=nd.t0-2&&!nd.tried&&!nd.l.single&&!nd.last){const po=passOff(nd.l,nd.s,-nd.d);if(po!==null){nd.tried=1;nd.pass=po;nd.passProf=passProfile(nd.l,nd.s,po);if(firstClash(Y,nd.t0-30,nd.t0+nd.T)===null){retrack++;continue;}delete nd.pass;delete nd.passProf;}}
+        if(nd&&nd.pass!==undefined&&tc>=nd.t0-2&&!nd.tried){nd.tried=1;const tr=stationTracks(nd.l,nd.s);const keep=nd.pass,keepP=nd.passProf;let ok=false;
+          for(const o of tr){if(Math.abs(o-keep)<1)continue;nd.pass=o;nd.passProf=passProfile(nd.l,nd.s,o);if(firstClash(Y,nd.t0-30,nd.t0+nd.T)===null){ok=true;break;}}if(ok){retrack++;continue;}nd.pass=keep;nd.passProf=keepP;}
         if(tc<e.t0-1){ // hit while standing at the station
           if(pd.origin){shiftRun(Y,0,10);holds++;continue;}
-          if(pd.pass===undefined&&!pd.tried&&!pd.l.single){const po=passOff(pd.l,pd.s,-pd.d);if(po!==null){pd.tried=1;pd.pass=po;if(firstClash(Y,pd.t0-30,e.t0+2)===null){retrack++;continue;}delete pd.pass;}}
-          if(pd.pass!==undefined&&!pd.tried){pd.tried=1;const tr=stationTracks(pd.l,pd.s);const keep=pd.pass;let ok=false;for(const o of tr){if(Math.abs(o-keep)<1)continue;pd.pass=o;if(firstClash(Y,pd.t0-30,e.t0+e.T)===null){ok=true;break;}}if(ok){retrack++;continue;}pd.pass=keep;}
-          stuck++;break;}
-        if(pd){pd.T+=10;shiftRun(Y,i,10);}else shiftRun(Y,0,10);holds++;}}
+          if(pd.pass===undefined&&!pd.tried&&!pd.l.single){const po=passOff(pd.l,pd.s,-pd.d);if(po!==null){pd.tried=1;pd.pass=po;pd.passProf=passProfile(pd.l,pd.s,po);if(firstClash(Y,pd.t0-30,e.t0+2)===null){retrack++;continue;}delete pd.pass;delete pd.passProf;}}
+          if(pd.pass!==undefined&&!pd.tried){pd.tried=1;const tr=stationTracks(pd.l,pd.s);const keep=pd.pass,keepP=pd.passProf;let ok=false;for(const o of tr){if(Math.abs(o-keep)<1)continue;pd.pass=o;pd.passProf=passProfile(pd.l,pd.s,o);if(firstClash(Y,pd.t0-30,e.t0+e.T)===null){ok=true;break;}}if(ok){retrack++;continue;}pd.pass=keep;pd.passProf=keepP;}
+          if((Y.restarts||0)<24){Y.restarts=(Y.restarts||0)+1;shiftRun(Y,0,15);holds++;restart=true;break;}stuck++;break;}
+        if(pd){pd.T+=10;shiftRun(Y,i,10);}else shiftRun(Y,0,10);holds++;}
+      if(g>=100&&(Y.restarts||0)<24){Y.restarts=(Y.restarts||0)+1;for(const q of Y.tl)if(q.k==='dwell')q.tried=0;shiftRun(Y,0,30);restart=true;}}
     addIdx(Y);}
   RUNS.sort((a,b)=>a.tStart-b.tStart);
   console.log('LOG dispatcher: holds',holds,'retracked',retrack,'stuck',stuck,'ms',Math.round(performance.now()-T0));
