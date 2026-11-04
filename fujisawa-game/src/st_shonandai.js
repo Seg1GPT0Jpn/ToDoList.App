@@ -20,6 +20,9 @@ const ENTS=[ // top of the stairs at street level (OSM railway=subway_entrance),
 const H_A0=-145,H_A1=140,H_B0=-10,H_B1=22; // B1 hall
 function build(){
   const F=stFrame(O[0],O[1],ANG);const odn=LINES.odn,izm=LINES.izm,blu=LINES.blu;
+  // east of the station the two tunnels run side by side for ~800 m: keep at least 8.2 m between the double tracks
+  {const o=blu.path.offs;for(let i=0;i<o.length;i++){const ss=i*10;if(ss<170||ss>1000)continue;const p=blu.path.at(ss);const q=izm.path.near(p.x,p.z);const zp=izm.path.at(q.s);
+    const sg=(zp.x-p.x)*(-p.tz)+(zp.z-p.z)*p.tx;const need=Math.max(0,8.2+Math.min(0,sg))*smooth(170,230,ss);if(sg<0&&need>0)o[i]=[o[i][0]+need,o[i][1]+need];}}
   const g0=demH(O[0],O[1]);const B1=g0-6.6,B1c=B1+3.9;const B2t=blu.path.py(58)+1.1,B3t=izm.path.py(166.7)+1.1;
   const gb=new GB(),colls=[],inn=new GB(),out=new GB();inn.glass=new GB();
   const TILE=C_('#d9d4c9'),TILE2=C_('#c9c3b6'),WALL=C_('#eeebe4'),CEIL=C_('#f2f1ec'),DARK=C_('#3a3f45'),PAID=C_('#e3e8ec'),ODA=C_('#1a5fb4'),SOT=C_('#1d3c8f'),BLU=C_('#0072bc');
