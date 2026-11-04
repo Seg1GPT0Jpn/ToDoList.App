@@ -28,7 +28,7 @@ function lineAtPlat(cx,cz){
 function platTop(l,s){if(l.mono){return l.beamY(s)-1.6-l.car.h-0.95-0.3+0.95+0.2;}return l.path.py(s)+1.1;}
 function buildRealPlatforms(){
   const gb=new GB();const col=new THREE.Color('#d6d0c2'),edge=new THREE.Color('#bdb6a8');
-  for(const p of PLATS){const n=p.length/2;let cx=0,cz=0;for(let i=0;i<n;i++){cx+=p[i*2];cz+=p[i*2+1];}cx/=n;cz/=n;
+  for(const p of PLATS){const n=p.length/2;let cx=0,cz=0;for(let i=0;i<n;i++){cx+=p[i*2];cz+=p[i*2+1];}cx/=n;cz/=n;if(inClear(cx,cz,PLAT_CLEAR))continue;
     const b0=lineAtPlat(cx,cz);if(!b0)continue;const line=b0.l;if(line.mono){let bs=null;for(const st of line.st){if(Math.abs(st.s-b0.s)<90&&(!bs||Math.abs(st.s-b0.s)<Math.abs(bs-b0.s)))bs=st.s;}if(bs!==null)b0.s=clamp(bs,line.halfT+2,line.path.L-line.halfT-2);}const top=platTop(line,b0.s);
     let gmin=1e9;for(let i=0;i<n;i++)gmin=Math.min(gmin,demH(p[i*2],p[i*2+1]));const under=top<gmin-3;const y0=under?top-1.2:Math.min(gmin-0.3,top-1.2);
     for(let i=0;i<n;i++){const j=(i+1)%n;const ax=p[i*2],az=p[i*2+1],bx=p[j*2],bz=p[j*2+1];const dx=bx-ax,dz=bz-az,len=Math.hypot(dx,dz);if(len<0.05)continue;const nx=dz/len,nz=-dx/len;
@@ -65,10 +65,12 @@ function buildStations(){
         const nm=(l.mono?'湘南モノレール ':'')+st[0]+'駅';if(!LM.find(m=>m.name===nm&&Math.hypot(m.x-p.x,m.z-p.z)<400))LM.push({name:nm,en:st[1]+' Sta.',x:p.x,z:p.z,r:60,noLabel:true,station:true,travel:true,line:l.short,mono:l.mono,under});
       }
       STATIONS.push({l,st,s,under,p});
+      if(ST_CUSTOM[st[0]]&&ST_CUSTOM[st[0]].lines.has(k))continue;
       if(under){buildUnderground(l,st,s,hasReal);continue;}
       if(hasReal||dup)continue;
       generatedPlatforms(l,st,s);
     }}
+  for(const n in ST_CUSTOM){try{ST_CUSTOM[n].build();}catch(e){console.error('station',n,e);}}
   // simple gate lines at the street end of ground-level platforms that are not under a concourse
   if(!sgb.empty){const m=new THREE.Mesh(sgb.geo(),MAT.top);scene.add(m);}
 }
@@ -193,13 +195,13 @@ function buildChunk(ci,cj){
     const hr=H[i+(ix<n?1:-1)],hd=H[i+(iz<n?n+1:-(n+1))];const slope=Math.max(Math.abs(hr-h),Math.abs(hd-h))/step;
     const k=ci2*N1*N1+Math.round((z-cz0)/GS)*N1+Math.round((x-cx0)/GS);const c=groundColorAt(k,x,z,h,slope);col[i*3]=c.r;col[i*3+1]=c.g;col[i*3+2]=c.b;}
   geo.setAttribute('color',new THREE.BufferAttribute(col,3));geo.computeVertexNormals();
-  const tm=new THREE.Mesh(geo,TERRAINMAT);tm.receiveShadow=true;grp.add(tm);
+  const pls=placesNearRect(cx0,cz0,cx0+CH,cz0+CH);const tm=new THREE.Mesh(geo,pls.length?photoMat(pls,'ground'):TERRAINMAT);tm.receiveShadow=true;grp.add(tm);
   {const wb=new GB();const base=ci2*N1*N1;
     for(let j=0;j<N1-1;j++)for(let i=0;i<N1-1;i++){const k=base+j*N1+i;if(!(LCC8[k]===1&&DEMC[k]>0))continue;const y=DEMC[k]*0.2;const x=cx0+i*GS-GS/2,z=cz0+j*GS-GS/2;wb.quad([x,y,z],[x+GS,y,z],[x+GS,y,z+GS],[x,y,z+GS],0,1,0,_col.set('#ffffff'));}
     if(!wb.empty){const wm=new THREE.Mesh(wb.geo(),MAT.water);wm.receiveShadow=true;grp.add(wm);}}
   {const rb=new GB();const rl=ROADCH.get(cj*CNX+ci)||[];
     for(const ri of rl){const r=ROADS[ri];if(r.fl&2)continue;const P=r.path;const cc=_col2.set(RCOL[r.c]);const yoff=0.22-r.c*0.015;const hw=r.w/2;const segs=P.segs;
-      for(let si=0;si<segs.length;si++){const g=segs[si];const mx=g.x+g.dx/2,mz=g.z+g.dz/2;if(mx<cx0||mx>=cx0+CH||mz<cz0||mz>=cz0+CH)continue;
+      for(let si=0;si<segs.length;si++){const g=segs[si];const mx=g.x+g.dx/2,mz=g.z+g.dz/2;if(mx<cx0||mx>=cx0+CH||mz<cz0||mz>=cz0+CH)continue;if(HOLES.length&&inHole(mx,mz,1))continue;
         const nseg=Math.max(1,Math.ceil(g.len/5));const prev=segs[si-1],next=segs[si+1];
         const nrm=(a,b)=>{if(!a)return[-b.tz,b.tx];if(!b)return[-a.tz,a.tx];let nx=-(a.tz+b.tz),nz=a.tx+b.tx;const l=Math.hypot(nx,nz)||1;nx/=l;nz/=l;const dot=nx*(-b.tz)+nz*b.tx;const k=1/Math.max(0.5,dot);return[nx*k,nz*k];};
         const n0=nrm(prev,g),n1=nrm(g,next);let lastL=null,lastR=null;
@@ -213,21 +215,24 @@ function buildChunk(ci,cj){
             rb.quad([ax,ya-0.9,az],[bx,yb-0.9,bz],[bx,yb+1.0,bz],[ax,ya+1.0,az],-g.tz*sd,0,g.tx*sd,rc);rb.quad([ax,ya-0.9,az],[ax,ya+1.0,az],[bx,yb+1.0,bz],[bx,yb-0.9,bz],g.tz*sd,0,-g.tx*sd,rc);}}}}
     buildTracksInto(rb,ci,cj);
     if(!rb.empty){const m=new THREE.Mesh(rb.geo(),MAT.road);m.receiveShadow=true;grp.add(m);}}
-  const wH=new GB(),wO=new GB(),tops=new GB(),gh=new GB(),inn=new GB();const desks=[];
+  const wH=new GB(),wO=new GB(),tops=new GB(),gh=new GB(),inn=new GB(),proof=new GB(),fac=new GB();const desks=[];
   {const v=new DataView(BLDS.buffer,BLDS.byteOffset,BLDS.byteLength);let o=BOFFS[ci2];const end=BOFFS[ci2+1];let bi=0;
     while(o<end){const nn=v.getUint8(o),fl=v.getUint8(o+1),h=v.getUint16(o+2,true)/10,minh=v.getUint8(o+4);let x=v.getInt16(o+5,true),z=v.getInt16(o+7,true);const sk=v.getInt16(o+9,true),kind=v.getUint8(o+11);o+=12;
       const pts=new Float32Array(nn*2);pts[0]=cx0+x/4;pts[1]=cz0+z/4;for(let i=1;i<nn;i++){x+=v.getInt8(o);z+=v.getInt8(o+1);o+=2;pts[i*2]=cx0+x/4;pts[i*2+1]=cz0+z/4;}
-      bi++;addBuilding(pts,h,minh,fl&3,kind,hashf(ci2*100003+bi),sk,{wH,wO,tops,gh,inn,desks,colls,indoor});}}
+      bi++;addBuilding(pts,h,minh,fl&3,kind,hashf(ci2*100003+bi),sk,{wH,wO,tops,gh,inn,desks,colls,indoor,fac});}
+    for(const b of PLB.get(cj*CNX+ci)||[])addPlateau(b,{wH,wO,tops,gh,inn,desks,colls,indoor,proof,fac});}
   if(!wH.empty){const m=new THREE.Mesh(wH.geo(),MAT.wallH);m.castShadow=true;m.receiveShadow=true;grp.add(m);}
   if(!wO.empty){const m=new THREE.Mesh(wO.geo(),MAT.wallO);m.castShadow=true;m.receiveShadow=true;grp.add(m);}
   if(!tops.empty){const m=new THREE.Mesh(tops.geo(),MAT.top);m.castShadow=true;m.receiveShadow=true;grp.add(m);}
+  if(!fac.empty){const m=new THREE.Mesh(fac.geo(),facadeMat());m.castShadow=true;m.receiveShadow=true;grp.add(m);}
+  if(!proof.empty){const m=new THREE.Mesh(proof.geo(),pls.length?photoMat(pls,'roof'):MAT.top);m.castShadow=true;m.receiveShadow=true;grp.add(m);}
   if(!gh.empty){const m=new THREE.Mesh(gh.geo(),MAT.green);grp.add(m);}
   if(!inn.empty){const m=new THREE.Mesh(inn.geo(),INMAT);m.receiveShadow=true;grp.add(m);}
   if(desks.length){const dm=new THREE.Object3D();const im=new THREE.InstancedMesh(DESKG,M('#c49a6c'),desks.length);desks.forEach((d,i)=>{dm.position.set(d[0],d[1],d[2]);dm.rotation.set(0,-d[3],0);dm.updateMatrix();im.setMatrixAt(i,dm.matrix);});im.computeBoundingSphere();grp.add(im);}
   const L2={round:[],autumn:[],pine:[],palm:[]};
   for(let z=cz0+3;z<cz0+CH;z+=8)for(let x=cx0+3;x<cx0+CH;x+=8){const px=x+rr(-3,3),pz=z+rr(-3,3);const c=lcAt(px,pz);let p=0;
     if(c===2)p=0.8;else if(c===3)p=0.12;else if(c===10)p=0.3;else if(c===11)p=0.06;else if(c===0)p=0.035;else if(c===7)p=0.04;
-    if(rand()>=p)continue;const h=heightAt(px,pz);if(h<0.4)continue;
+    if(pls.length&&photoAt(px,pz)>0.5)p*=0.5;if(HOLES.length&&inHole(px,pz,2))continue;if(rand()>=p)continue;const h=heightAt(px,pz);if(h<0.4)continue;
     let blocked=false;for(const b of collNear(px,pz)){if(insideColl(b,px,pz,1.2)){blocked=true;break;}}if(blocked)continue;
     const fn=FIDX.nearest(px,pz);if(fn){let nr=false;for(const v of fn.values())if(Math.sqrt(v.d2)<v.data.half+2)nr=true;if(nr)continue;}
     const coastD=coastZ(px)-pz;const kind=(c===2&&coastD<900&&coastD>0)?'pine':(rand()<0.1?'autumn':'round');L2[kind].push({x:px,y:h,z:pz,s:rr(0.8,1.3)*(c===0?0.8:1)});}
@@ -244,7 +249,7 @@ function rectOf(pts){const n=pts.length/2;let bi=0,bl=0;for(let i=0;i<n;i++){con
   const mx=(a0+a1)/2,mb=(b0+b1)/2;return{cx:cx+ux*mx-uz*mb,cz:cz+uz*mx+ux*mb,ux,uz,hu:(a1-a0)/2,hv:(b1-b0)/2};}
 function addBuilding(pts,h,minh,roofT,kind,r,sk,G){
   const n=pts.length/2;let cx=0,cz=0;for(let i=0;i<n;i++){cx+=pts[i*2];cz+=pts[i*2+1];}cx/=n;cz/=n;
-  for(const e of EXCL){if(e[2]>0&&Math.hypot(cx-e[0],cz-e[1])<e[2])return;}
+  for(const e of EXCL){if(e[2]>0&&Math.hypot(cx-e[0],cz-e[1])<e[2])return;}if(BLD_CLEAR.length&&inClear(cx,cz))return;
   let gmin=1e9,gmax=-1e9;for(let i=0;i<n;i++){const g=demH(pts[i*2],pts[i*2+1]);gmin=Math.min(gmin,g);gmax=Math.max(gmax,g);}
   if(gmin<-0.5)return;
   let y0=gmin-0.3,y1=gmin+h;
@@ -255,12 +260,12 @@ function addBuilding(pts,h,minh,roofT,kind,r,sk,G){
   if(roofT===2||kind===7){y0=Math.max(y0,y1-0.6);}
   if(sk>=0&&(kind===4||kind===11)){const R=rectOf(pts);if(R.hv>=4&&R.hu>=8&&R.hu*R.hv*4<6000){if(kind===11||(R.hu<26&&R.hv>11&&h<16&&R.hu/R.hv<2.2&&r<0.35)){buildGym(R,gmin,h,G);return;}buildSchool(R,gmin,h,G,sk);return;}}
   const office=h>=10.5||kind===2||kind===3||kind===4||kind===10;
-  const wall=_col.set(KIND_WALL[kind]||(office?WALLO[Math.floor(r*WALLO.length)]:WALLH[Math.floor(r*WALLH.length)]));
-  const wb=kind===8?G.gh:(office?G.wO:G.wH);const cw=office?CELLO:CELLH;const U=cw.w*cw.cols,V=cw.h*cw.rows;
-  let per=0;
+  if(kind!==8){const area=Math.abs(polyArea(pts));const sty=facadeStyle(0,y1-y0,area,r,kind);const sh0=office?3.4:2.9;const nst=Math.max(1,Math.round((y1-y0)/sh0));
+    const pal=office?WALLO:WALLH;const wc=_col.set(KIND_WALL[kind]||pal[Math.floor(r*pal.length)]).lerp(_col2.set('#ffffff'),0.45).clone();facadeWalls(G.fac,pts,y0,y1,wc,sty,(y1-y0)/nst);}
+  else{const wall=_col.set('#eef4f2');const U=CELLH.w*CELLH.cols,V=CELLH.h*CELLH.rows;let per=0;
   for(let i=0;i<n;i++){const j=(i+1)%n;const ax=pts[i*2],az=pts[i*2+1],bx=pts[j*2],bz=pts[j*2+1];const dx=bx-ax,dz=bz-az;const len=Math.hypot(dx,dz);if(len<0.05)continue;
     const nx=dz/len,nz=-dx/len;const u0=per/U,u1=(per+len)/U;const v1=(y1-y0)/V;per+=len;
-    wb.tri([ax,y0,az],[bx,y0,bz],[bx,y1,bz],nx,0,nz,wall,[u0,0],[u1,0],[u1,v1]);wb.tri([ax,y0,az],[bx,y1,bz],[ax,y1,az],nx,0,nz,wall,[u0,0],[u1,v1],[u0,v1]);}
+    G.gh.tri([ax,y0,az],[bx,y0,bz],[bx,y1,bz],nx,0,nz,wall,[u0,0],[u1,0],[u1,v1]);G.gh.tri([ax,y0,az],[bx,y1,bz],[ax,y1,az],nx,0,nz,wall,[u0,0],[u1,v1],[u0,v1]);}}
   if(roofT===1){roofOn(pts,cx,cz,y1,kind,r,G.tops);}
   else{const tris=tri2(pts);const tc=_col2.set(kind===8?'#eef4f2':ROOFF[Math.floor(r*991)%ROOFF.length]);
     for(const t of tris){const a=t[0],b=t[1],c=t[2];(kind===8?G.gh:G.tops).tri([pts[a*2],y1,pts[a*2+1]],[pts[b*2],y1,pts[b*2+1]],[pts[c*2],y1,pts[c*2+1]],0,1,0,tc);}

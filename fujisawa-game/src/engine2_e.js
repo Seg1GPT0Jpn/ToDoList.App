@@ -323,7 +323,7 @@ function frame(now){
   for(const f of DYN)f(elapsed,dt);
   updateChunks(P.x,P.z,1);
   sun.position.set(P.x+_sd.x*300,P.y+Math.max(_sd.y,0.12)*300,P.z+_sd.z*300);sun.target.position.set(P.x,P.y,P.z);
-  for(const Lb of LABELS){const dd=camera.position.distanceTo(Lb.sp.position);const vis=dd<Lb.maxD;Lb.sp.visible=vis;if(vis){const s=clamp(dd*0.05,1.4,220)*Lb.size;Lb.sp.scale.set(s*Lb.sp.userData.ar,s,1);Lb.sp.material.opacity=1-smooth(Lb.maxD*0.75,Lb.maxD,dd);}}
+  for(const Lb of LABELS){const dd=camera.position.distanceTo(Lb.sp.position);const near=Lb.maxD>=500?smooth(35,90,dd):1;const vis=dd<Lb.maxD&&near>0.01;Lb.sp.visible=vis;if(vis){const s=clamp(dd*0.05,1.4,220)*Lb.size;Lb.sp.scale.set(s*Lb.sp.userData.ar,s,1);Lb.sp.material.opacity=(1-smooth(Lb.maxD*0.75,Lb.maxD,dd))*near;}} // big area/station names step aside when you are right there
   updateStationBoard(dt);
   updateArea(dt);miniT-=dt;if(miniT<=0){miniT=0.12;drawMini();}
   if(toastT>0){toastT-=dt;if(toastT<=0)$('toast').style.opacity=0;}
@@ -334,7 +334,7 @@ function frame(now){
 addEventListener('resize',()=>{renderer.setSize(innerWidth,innerHeight);for(const c of [camera,farCam]){c.aspect=innerWidth/innerHeight;c.updateProjectionMatrix();}if(!$('mapOv').hidden)drawBigMap();});
 
 (async()=>{
-  setLoad('地図データを受信中…');await loadData();
+  setLoad('地図データを受信中…');const plP=loadPlaces.bind(null);await loadData();await plP();
   try{await Promise.race([document.fonts.load('800 52px "M PLUS Rounded 1c"'),new Promise(r=>setTimeout(r,2500))]);}catch(e){}
   await build();buildLabels();
   {const [sx,sz]=LMP('katase_st',35.3091,139.4829);const [tx,tz]=LMP('torii',35.3020,139.4822);let gx=sx+(tx-sx)*0.12,gz=sz+(tz-sz)*0.12;let best=null;

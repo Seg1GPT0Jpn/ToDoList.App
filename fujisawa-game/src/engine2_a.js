@@ -93,10 +93,11 @@ const LINES={
 };
 const ROMANCE={len:20,n:7,body:'#c2463d',stripes:[['#e9e2d6',1.0,0.18],['#3a3a3a',0.2,0.15]],w:2.9,h:3.1,roof:'#c2463d'};
 function initLines(){
-  for(const k in LINES){const l=LINES[k];const D=META.lines[k];l.key=k;l.path=new Path(D.pts);l.path.flags=D.flags;l.path.offs=D.offs;l.cgap=l.mono?0.6:0.8;l.halfT=(l.car.n*l.car.len+(l.car.n-1)*l.cgap)/2;
+  for(const k in LINES){const l=LINES[k];const D=extendLineData(k,META.lines[k]);l.key=k;l.path=new Path(D.pts);l.path.flags=D.flags;l.path.offs=D.offs;l.cgap=l.mono?0.6:0.8;l.halfT=(l.car.n*l.car.len+(l.car.n-1)*l.cgap)/2;
     l.st=META.stations[k].map(s=>{const a=[s[0],s[1]];a.x=s[2];a.z=s[3];return a;});
     if(k==='eno'){for(const [n,e,x,z] of [['稲村ヶ崎','Inamuragasaki',3132.8,3831.5],['極楽寺','Gokurakuji',3747.8,3293.6],['長谷','Hase',4401.1,3062.8]]){if(l.st.some(q=>q[0]===n))continue;const q=l.path.near(x,z);if(q.d<40&&q.s<l.path.L-40){const a=[n,e];a.x=x;a.z=z;l.st.push(a);}}}
-    for(const st of l.st){st.s=l.path.near(st.x,st.z).s;}
+    for(const st of l.st){st.s=ST_S[k+'|'+st[0]]??l.path.near(st.x,st.z).s;}
+    applyLaneAdj(l);
     l.stByName=new Map(l.st.map(s=>[s[0],s]));}
 }
 
@@ -128,7 +129,7 @@ function railProfile(l){
       if(F[i]===1&&!l.mono)y=Math.max(y,sm[k]+(runL>=100?6.5:1.2));
       if(F[i]===2&&!l.mono){if(runL>=150)y=Math.min(y,big[k]-11);}
       out[k]=y;}i=j-1;}
-  if(l.key==='blu'){for(let i=0;i<n;i++){const d=i*step;out[i]-=8*(1-smooth(250,600,d));}} // ブルーラインは相鉄より一層深い
+  applyProfAdj(l,out,step);
   const o2=new Float32Array(n);for(let i=0;i<n;i++){let a=0,c=0;for(let k=-4;k<=4;k++){a+=out[clamp(i+k,0,n-1)];c++;}o2[i]=a/c;}
   p.prof=o2;p.pstep=step;
 }
