@@ -151,7 +151,7 @@ const ACTIVE=[];const _dm=new THREE.Object3D();
 function carPose(r,st,i){const sp=r.spec;const l=st.l;const gap=l.mono?0.6:0.8;const n=sp.n;const sc=st.s+st.d*((n-1)/2-i)*(sp.len+gap);
   const sf=sc+st.d*(sp.len/2-1),sb=sc-st.d*(sp.len/2-1);const side=-st.d;
   let pe=null;const tl=r.tl,ix=st.idx;for(const k of [ix,ix+1,ix-1]){const e=tl[k];if(e&&e.k==='dwell'&&e.pass!==undefined&&e.l===l){pe=e;break;}}
-  const lo=(ss)=>{const m=l.single?loopOff(l,ss,side):l.path.laneOff(ss,side);if(!pe)return m;const hp=Math.min(l.plat/2,110);const w=1-smooth(hp+4,hp+130,Math.abs(ss-pe.s));return lerp(m,pe.pass,w);};
+  const lo=(ss)=>{const m=l.single?loopOff(l,ss,side):l.path.laneOff(ss,side);if(!pe)return m;const hp=Math.min(l.plat/2,110);const w=1-smooth(hp+4,hp+130,Math.abs(ss-pe.s));return lerp(m,pe.passProf?pe.passProf(ss):pe.pass,w);};
   const f=l.path.at(sf,lo(sf)),b=l.path.at(sb,lo(sb));
   const x=(f.x+b.x)/2,z=(f.z+b.z)/2;const y=l.mono?l.beamY(sc)-1.6-sp.h-0.95-0.3:l.path.py(sc)+0.2;return{x,y,z,ry:Math.atan2(-(f.z-b.z),f.x-b.x),sc,lane:lo(sc)};}
 function updateTrains(){
@@ -177,7 +177,7 @@ const LANEID=new Map();
 function sampleRun(r){const t0=Math.ceil(r.tStart/10)*10;const n=Math.max(1,Math.floor((r.tEnd-t0)/10)+1);r.sT0=t0;r.sN=n;r.sL=new Int16Array(n);r.sS=new Float32Array(n);r.sI=new Int16Array(n);
   for(let i=0;i<n;i++){const st=runState(r,t0+i*10);let id=LANEID.get(st.l.key+st.d);if(id===undefined){id=LANEID.size;LANEID.set(st.l.key+st.d,id);}r.sL[i]=(st.l.single||(st.dwell&&st.e.pass!==undefined))?-1:id;r.sS[i]=st.s;r.sI[i]=st.idx;}r.half=(r.spec.n*r.spec.len)/2;}
 function shiftRun(r,from,delta){for(let i=from;i<r.tl.length;i++)r.tl[i].t0+=delta;r.tEnd+=delta;if(from===0)r.tStart+=delta;}
-function stationTracks(l,s){const p=l.path.at(s);const vx=-p.tz,vz=p.tx;const half=Math.min(l.plat/2,90);const offs=[];
+function stationTracks(l,s){const fx=ST_TRACKS[l.key+'|'+(l.st.find(q=>Math.abs(q.s-s)<120)||[''])[0]];if(fx)return fx.slice();const p=l.path.at(s);const vx=-p.tz,vz=p.tx;const half=Math.min(l.plat/2,90);const offs=[];
   for(const t of TRACKS){const a=t.pts;let near=false;for(let i=0;i<a.length;i+=2){if(Math.abs(a[i]-p.x)<half+40&&Math.abs(a[i+1]-p.z)<half+40){near=true;break;}}if(!near)continue;
     for(let i=0;i+3<a.length;i+=2){const ax=a[i],az=a[i+1],bx=a[i+2],bz=a[i+3];const dx=bx-ax,dz=bz-az,L0=Math.hypot(dx,dz);if(L0<0.5)continue;if(Math.abs((dx*p.tx+dz*p.tz)/L0)<0.97)continue;
       for(let k=0;k<=L0;k+=4){const x=ax+dx*k/L0,z=az+dz*k/L0;const al=(x-p.x)*p.tx+(z-p.z)*p.tz;if(Math.abs(al)>half*0.5)continue;const o=(x-p.x)*vx+(z-p.z)*vz;if(Math.abs(o)<16)offs.push(o);}}}
@@ -200,10 +200,20 @@ function assignTerminalTracks(){
     for(const it of list){let best=-1;for(let k=0;k<tr.length;k++){if(busy[k]<it.t0-20&&(best<0||busy[k]<busy[best]))best=k;}if(best<0){best=0;for(let k=1;k<tr.length;k++)if(busy[k]<busy[best])best=k;}
       const p=it.e.l.path.at(it.e.s);const flip=p.tx*ref.tx+p.tz*ref.tz<0?-1:1;
       // offset of the chosen track measured in this run's own line frame
-      const wx=ref.x-ref.tz*tr[best],wz=ref.z+ref.tx*tr[best];it.e.pass=(wx-p.x)*(-p.tz)+(wz-p.z)*p.tx;busy[best]=it.t1;n++;}}
+      const wx=ref.x-ref.tz*tr[best],wz=ref.z+ref.tx*tr[best];it.e.pass=(wx-p.x)*(-p.tz)+(wz-p.z)*p.tx;it.e.passProf=passProfile(it.e.l,it.e.s,it.e.pass);busy[best]=it.t1;n++;}}
   console.log('LOG terminal tracks',n);
 }
 /* single-track lines: trains keep to the line centre, but step onto the passing loop at stations */
+/* a terminal/passing track followed along the real OSM rails (tracks converge and bend towards the throat) */
+const PPC=new Map();
+function passProfile(l,sC,o0,half=160){const key=l.key+'|'+Math.round(sC)+'|'+o0.toFixed(1)+'|'+half;if(PPC.has(key))return PPC.get(key);if(ST_TRACKS[l.key+'|'+(l.st.find(q=>Math.abs(q.s-sC)<120)||[''])[0]+'|fixed']){PPC.set(key,null);return null;}
+  const step=5,N=Math.round(half*2/step),s0=sC-N/2*step;const out=new Float32Array(N+1);const near=[];const c=l.path.at(sC);
+  for(const t of TRACKS){const a=t.pts;for(let i=0;i<a.length;i+=2)if(Math.abs(a[i]-c.x)<200&&Math.abs(a[i+1]-c.z)<200){near.push(t);break;}}
+  const at=(s,prev)=>{const p=l.path.at(s);let best=null;for(const t of near){const a=t.pts;for(let i=0;i+3<a.length;i+=2){const ax=a[i],az=a[i+1],dx=a[i+2]-ax,dz=a[i+3]-az,L0=dx*dx+dz*dz;if(L0<0.1)continue;
+      const u=((p.x-ax)*dx+(p.z-az)*dz)/L0;if(u<-0.05||u>1.05)continue;if(Math.abs((dx*p.tx+dz*p.tz)/Math.sqrt(L0))<0.9)continue;
+      const k=clamp(u,0,1);const o=(ax+dx*k-p.x)*(-p.tz)+(az+dz*k-p.z)*p.tx;const along=(ax+dx*k-p.x)*p.tx+(az+dz*k-p.z)*p.tz;if(Math.abs(along)>3)continue;if(Math.abs(o-prev)<1.6&&(!best||Math.abs(o-prev)<Math.abs(best-prev)))best=o;}}return best;};
+  const mid=N/2;out[mid]=o0;for(let i=mid+1;i<=N;i++){const v=at(s0+i*step,out[i-1]);out[i]=v===null?out[i-1]:v;}for(let i=mid-1;i>=0;i--){const v=at(s0+i*step,out[i+1]);out[i]=v===null?out[i+1]:v;}
+  const f=s=>{const x=clamp((s-s0)/step,0,N-0.001),i=x|0;return lerp(out[i],out[i+1],x-i);};PPC.set(key,f);return f;}
 const LOOPC=new Map();
 function loopOff(l,s,side){let a=LOOPC.get(l);if(!a){a=new Float32Array(Math.ceil(l.path.L/5)+2);for(const st of l.st){if(NO_LOOP.has(l.key+'|'+st[0]))continue;const r=l.plat/2+20;for(let i=Math.max(0,Math.floor((st.s-r-60)/5));i<a.length&&i*5<st.s+r+60;i++){const d=Math.abs(i*5-st.s);a[i]=Math.max(a[i],1-smooth(r,r+55,d));}}LOOPC.set(l,a);}
   const f=clamp(s/5,0,a.length-1.001),i=f|0;return lerp(a[i],a[i+1],f-i)*side*1.7;}
@@ -295,10 +305,12 @@ function resolveWorldConflicts(){
   for(const Y of order){Y.wHalf=(Y.spec.n*Y.spec.len+(Y.spec.n-1)*0.8)/2;
     for(let i=0;i<Y.tl.length;i++){const e=Y.tl[i];if(e.k!=='move')continue;const pd=i>0&&Y.tl[i-1].k==='dwell'?Y.tl[i-1]:null;const nd=Y.tl[i+1]&&Y.tl[i+1].k==='dwell'?Y.tl[i+1]:null;
       for(let g=0;g<100;g++){const ta=pd?pd.t0:e.t0,tb=e.t0+e.T+(nd?nd.T:0);const tc=firstClash(Y,ta,tb);if(tc===null)break;
+        if(nd&&nd.pass===undefined&&tc>=nd.t0-2&&!nd.tried&&!nd.l.single&&!nd.last){const po=passOff(nd.l,nd.s,-nd.d);if(po!==null){nd.tried=1;nd.pass=po;if(firstClash(Y,nd.t0-30,nd.t0+nd.T)===null){retrack++;continue;}delete nd.pass;}}
         if(nd&&nd.pass!==undefined&&tc>=nd.t0-2&&!nd.tried){nd.tried=1;const tr=stationTracks(nd.l,nd.s);const keep=nd.pass;let ok=false;
           for(const o of tr){if(Math.abs(o-keep)<1)continue;nd.pass=o;if(firstClash(Y,nd.t0-30,nd.t0+nd.T)===null){ok=true;break;}}if(ok){retrack++;continue;}nd.pass=keep;}
         if(tc<e.t0-1){ // hit while standing at the station
           if(pd.origin){shiftRun(Y,0,10);holds++;continue;}
+          if(pd.pass===undefined&&!pd.tried&&!pd.l.single){const po=passOff(pd.l,pd.s,-pd.d);if(po!==null){pd.tried=1;pd.pass=po;if(firstClash(Y,pd.t0-30,e.t0+2)===null){retrack++;continue;}delete pd.pass;}}
           if(pd.pass!==undefined&&!pd.tried){pd.tried=1;const tr=stationTracks(pd.l,pd.s);const keep=pd.pass;let ok=false;for(const o of tr){if(Math.abs(o-keep)<1)continue;pd.pass=o;if(firstClash(Y,pd.t0-30,e.t0+e.T)===null){ok=true;break;}}if(ok){retrack++;continue;}pd.pass=keep;}
           stuck++;break;}
         if(pd){pd.T+=10;shiftRun(Y,i,10);}else shiftRun(Y,0,10);holds++;}}

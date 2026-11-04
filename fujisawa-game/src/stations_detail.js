@@ -8,7 +8,7 @@
    - BLD_CLEAR.push([cx,cz,ang,hu,hv]) : no city building may stand here
    - HOLES (via terrainHole)   : the ground is cut open (stair wells to the street)
    The builders use the same GB / collider / zone machinery as the generic stations. */
-const NO_LOOP=new Set(),BLD_SPLIT=[];const ST_CUSTOM={},LINE_EXT={},PROF_ADJ=[],LANE_ADJ=[],ST_S={},BLD_CLEAR=[],PLAT_CLEAR=[],HOLES=[];
+const NO_LOOP=new Set(),BLD_SPLIT=[],ST_TRACKS={};const ST_CUSTOM={},LINE_EXT={},PROF_ADJ=[],LANE_ADJ=[],ST_S={},BLD_CLEAR=[],PLAT_CLEAR=[],HOLES=[];
 const HOLE_U={value:Array.from({length:80},()=>new THREE.Vector4())},HOLE_N={value:0};
 function terrainHole(cx,cz,ang,hu,hv){const i=HOLES.length;if(i>=40)return;HOLES.push([cx,cz,ang,hu,hv]);HOLE_U.value[i*2].set(cx,cz,Math.cos(ang),Math.sin(ang));HOLE_U.value[i*2+1].set(hu,hv,0,0);HOLE_N.value=HOLES.length;}
 function inHole(x,z,m=0){for(const h of HOLES){const dx=x-h[0],dz=z-h[1],c=Math.cos(h[2]),s=Math.sin(h[2]);if(Math.abs(dx*c+dz*s)<h[3]+m&&Math.abs(-dx*s+dz*c)<h[4]+m)return true;}return false;}
@@ -26,6 +26,7 @@ function extendLineData(k,D){const e=LINE_EXT[k];if(!e)return D;const p=D.pts;co
   for(const q of ST_SHIFT)if(q.key===k)q.by=ext;return {...D,pts,flags,offs};}
 const ST_SHIFT=[];
 function applyLaneAdj(l){for(const a of LANE_ADJ){if(a.key!==l.key)continue;const o=l.path.offs;if(!o)continue;
+    if(a.follow){const sc=(a.s0+a.s1)/2,h=(a.s1-a.s0)/2+a.blend;const fl=passProfile(l,sc,a.lo,h),fh=passProfile(l,sc,a.hi,h);for(let i=0;i<o.length;i++){const s=i*10;if(s<sc-h||s>sc+h)continue;const w=1-smooth(h-40,h,Math.abs(s-sc));o[i]=[lerp(o[i][0],fl(s),w),lerp(o[i][1],fh(s),w)];}continue;}
   for(let i=0;i<o.length;i++){const s=i*10;let w=0;if(s>=a.s0&&s<=a.s1)w=1;else if(s<a.s0)w=1-smooth(0,a.blend,a.s0-s);else w=1-smooth(0,a.blend,s-a.s1);if(w<=0)continue;o[i]=[lerp(o[i][0],a.lo,w),lerp(o[i][1],a.hi,w)];}}}
 function applyProfAdj(l,out,step){for(const a of PROF_ADJ){if(a.key!==l.key)continue;for(let i=0;i<out.length;i++){const s=i*step;let w=0;if(s>=a.s0&&s<=a.s1)w=1;else if(s<a.s0)w=1-smooth(0,a.blend,a.s0-s);else w=1-smooth(0,a.blend,s-a.s1);if(w>0)out[i]=lerp(out[i],a.y,w);}}}
 /* ---------- builder helpers ---------- */

@@ -12,7 +12,8 @@
 const NAME='藤沢';
 LINE_EXT.odn=50;LINE_EXT.ods=50;LINE_EXT.eno=30;              // tracks run on to the buffer stops
 ST_S['odn|藤沢']=0;ST_S['ods|藤沢']=0;ST_S['eno|藤沢']=28.5;     // trains pull up to the buffers
-NO_LOOP.add('eno|藤沢');                                       // one track between the two platforms
+NO_LOOP.add('eno|藤沢');
+ST_TRACKS['odn|藤沢']=[8.7,0,-5.5];ST_TRACKS['ods|藤沢']=[8.7,0,-5.5]; // 1・2・3 tracks measured on the OSM rails at the platform middle; followed from there                                       // one track between the two platforms
 BLD_CLEAR.push([-7,21,0,4,4],[-100,27,0,4,4]);              // the PLATEAU station blocks are rebuilt by hand
 BLD_SPLIT.push({x:25,z:150,lo:17.6,hi:26.6},{x:-27,z:223,lo:17.6,hi:23.6});
 const FL=20.2,ROOF=25.8;
@@ -121,5 +122,5 @@ function build(){
   addLabel('藤沢駅','JR・小田急・江ノ電',...(()=>{const c=F.W(0,18);return [c[0],ROOF+6,c[1]];})(),'st','#2e8b3d',600,0.8);
 }
 ST_CUSTOM[NAME]={lines:new Set(['jr','odn','ods','eno']),build};
-LANE_ADJ.push({key:'jr',s0:7140,s1:7460,lo:0.1,hi:13.6,blend:170});
+LANE_ADJ.push({key:'jr',s0:7140,s1:7460,lo:0.1,hi:13.6,blend:140,follow:true}); // follow the real 3・4番線 rails out to where they rejoin
 })();

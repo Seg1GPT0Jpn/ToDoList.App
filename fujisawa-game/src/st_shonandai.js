@@ -10,6 +10,7 @@ const NAME='湘南台';const O=[-1895.2,-6385.1],ANG=Math.atan2(-0.261,0.965);
 LINE_EXT.izm=170;                       // tunnel tail west of the 相鉄 terminal
 ST_S['izm|湘南台']=166.7;ST_S['blu|湘南台']=58;
 PROF_ADJ.push({key:'izm',s0:0,s1:290,y:11.9,blend:420},{key:'blu',s0:0,s1:175,y:18.3,blend:320});
+ST_TRACKS['izm|湘南台']=[-5.8,5.8];ST_TRACKS['blu|湘南台']=[-5.4,5.4];ST_TRACKS['izm|湘南台|fixed']=1;ST_TRACKS['blu|湘南台|fixed']=1;
 LANE_ADJ.push({key:'izm',s0:0,s1:285,lo:-5.8,hi:5.8,blend:140},{key:'blu',s0:0,s1:172,lo:-5.4,hi:5.4,blend:120});
 {const F=stFrame(O[0],O[1],ANG);BLD_CLEAR.push([O[0],O[1],ANG,11.5,104]);const c=F.W(-6,7);PLAT_CLEAR.push([c[0],c[1],ANG,135,16],[O[0],O[1],ANG,12,110]);
   for(const [x,z,r] of [[-1623.2,-6585.0,19],[-1609.2,-6547.5,13]])BLD_CLEAR.push([x,z,0,r,r]);}
