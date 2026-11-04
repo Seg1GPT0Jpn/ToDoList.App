@@ -3,8 +3,10 @@
 藤沢市と、その周りの鉄道沿線（小田急江ノ島線・相鉄・ブルーライン・東海道線）を実寸で再現した3D散歩ゲームです。
 電車は時刻表どおりに走っていて、乗ることもできます。Three.js r160 を使い、HTML 1枚とデータ1つで動きます。
 
-- 公開版: https://claude.ai/artifact/JmH5PFSdiL7qG2wHiVuAxv
+- 公開版（Firebase Hosting）: https://fujisawa-3d.web.app/
 - 地図データ © OpenStreetMap contributors (ODbL)
+- 建物: 3D都市モデル（Project PLATEAU）藤沢市・横浜市（国土交通省、CC BY 4.0 互換）
+- 航空写真: 国土地理院 シームレス空中写真
 - 標高・建物種別: 国土地理院（基盤地図情報 DEM5A/5B/10B、ベクトルタイル）
 
 ## 動かし方
@@ -23,11 +25,29 @@ python3 -m http.server 8000
 
 データの中身は gzip で圧縮したバイナリです。拡張子が `.wasm` なのは、Artifact で配信できるファイル形式に合わせるためで、WebAssembly ではありません。
 
+## 公開（Firebase Hosting）
+`main` に push すると GitHub Actions（`.github/workflows/firebase-hosting.yml`）が Firebase プロジェクト `fujisawa-3d` に公開します。
+最初の1回だけ、リポジトリの Secrets に `FIREBASE_SERVICE_ACCOUNT_FUJISAWA_3D` を登録してください。いちばん簡単なのは、手元で次を実行する方法です（Secret の登録まで自動でやってくれます）。
+
+```bash
+npx firebase-tools login
+```
+
+```bash
+npx firebase-tools init hosting:github
+```
+
+手動で公開する場合は `npx firebase-tools deploy --only hosting` です。
+
 ## ファイル構成
 | パス | 内容 |
 |---|---|
 | `index.html` | 完成版（`src/build.sh` で作られたもの） |
 | `fujisawa-data2.wasm` | 地形・建物・道路・ホーム・線路・路線・駅のデータ（約13MB） |
+| `fujisawa-places.wasm` | 15カ所の詳細エリアの建物（PLATEAU） |
+| `places/*.jpg` | 15カ所の航空写真（国土地理院 シームレス空中写真） |
+| `src/places.js` `src/facade.js` | 詳細エリアの描画、外壁テクスチャ |
+| `src/stations_detail.js` `src/st_*.js` | 作り込んだ駅（湘南台など） |
 | `src/head.html` | HTML・CSS・HUD（先頭119行だけを使う） |
 | `src/engine2_a.js` | ユーティリティ、Path（線路の向きと上下線オフセット）、データ読み込み、高さ関数、路線の定義 `LINES` |
 | `src/blk_setup.js` | Three.js の初期化、マテリアル、当たり判定（OBB と多角形、20m グリッド） |
@@ -78,5 +98,4 @@ node tests/tt.js tests/q2.js
 
 ## 既知の制限
 - 時刻表は毎時パターンで作った近似です。
-- ロマンスカーが各停に追いつく区間で、たまに電車が重なって見えます。
 - 相鉄横浜駅など一部の駅では、OSM の線路位置とホームの位置がずれています。
