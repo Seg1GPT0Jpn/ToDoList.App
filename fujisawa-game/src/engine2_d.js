@@ -199,7 +199,7 @@ function assignTerminalTracks(){
 }
 /* single-track lines: trains keep to the line centre, but step onto the passing loop at stations */
 const LOOPC=new Map();
-function loopOff(l,s,side){let a=LOOPC.get(l);if(!a){a=new Float32Array(Math.ceil(l.path.L/5)+2);for(const st of l.st){const r=l.plat/2+20;for(let i=Math.max(0,Math.floor((st.s-r-60)/5));i<a.length&&i*5<st.s+r+60;i++){const d=Math.abs(i*5-st.s);a[i]=Math.max(a[i],1-smooth(r,r+55,d));}}LOOPC.set(l,a);}
+function loopOff(l,s,side){let a=LOOPC.get(l);if(!a){a=new Float32Array(Math.ceil(l.path.L/5)+2);for(const st of l.st){if(NO_LOOP.has(l.key+'|'+st[0]))continue;const r=l.plat/2+20;for(let i=Math.max(0,Math.floor((st.s-r-60)/5));i<a.length&&i*5<st.s+r+60;i++){const d=Math.abs(i*5-st.s);a[i]=Math.max(a[i],1-smooth(r,r+55,d));}}LOOPC.set(l,a);}
   const f=clamp(s/5,0,a.length-1.001),i=f|0;return lerp(a[i],a[i+1],f-i)*side*1.7;}
 /* single-track lines (江ノ電・モノレール): every section between two stations is a block.
    Trains are taken in departure order; a train only leaves a station when the next section is clear of

@@ -48,11 +48,20 @@ const USE_WALL={401:['#d9dde0','#c9d0d6','#e6e2da','#b9c3cb'],402:['#ece6da','#d
 const OFFICE_USE=new Set([401,402,403,404,421,422,431,441,453]);
 function addPlateau(b,G){
   const f=b.foot,n=f.length/2;if(n<3)return;if(BLD_CLEAR.length&&inClear(b.cx,b.cz))return;
+  for(const q of PLATBUILT){if(q.b&&q.b.pts&&Math.abs(q.x-b.cx)<160&&Math.abs(q.z-b.cz)<160&&inPolyF(b.cx,b.cz,q.b.pts))return;} // kiosks and stair housings on a platform are drawn by the station
   let gmin=1e9;for(let i=0;i<n;i++)gmin=Math.min(gmin,demH(f[i*2],f[i*2+1]));if(gmin<-0.5)return;
   let H=b.h>0.5?b.h:(b.st?b.st*3:6);const base=gmin-0.15;const r=hashf(Math.round(b.cx*7+b.cz*13));
   const office=OFFICE_USE.has(b.use)||H>=12;const pal=USE_WALL[b.use]||(office?WALLO:WALLH);const wall=_col.set(pal[Math.floor(r*pal.length)]).clone();
   const area=Math.abs(polyArea(f));const sty=facadeStyle(b.use,H,area,r,0);const nst=b.st>0?b.st:Math.max(1,Math.round(H/(office?3.4:2.9)));const storeyH=clamp(H/nst,2.5,6);const bay=FAC_BAY[sty];
   const wallT=wall.clone().lerp(_col2.set('#ffffff'),0.45);
+  // a building with a station floor inside (江ノ電藤沢 in ODAKYU 湘南 GATE): solid below and above, a glazed band for the station level
+  const sp=BLD_SPLIT.find(q=>Math.hypot(q.x-b.cx,q.z-b.cz)<5);
+  if(sp){const y1=base+H;facadeWalls(G.fac,f,base,sp.lo,wallT,sty,clamp((sp.lo-base)/Math.max(1,Math.round((sp.lo-base)/4)),2.8,5));facadeWalls(G.fac,f,sp.hi,y1,wallT,sty,storeyH);
+    if(G.glass){for(let i=0;i<n;i++){const j=(i+1)%n;const ax=f[i*2],az=f[i*2+1],bx=f[j*2],bz=f[j*2+1];const dx=bx-ax,dz=bz-az,len=Math.hypot(dx,dz);if(len<0.05)continue;G.glass.quad([ax,sp.lo,az],[bx,sp.lo,bz],[bx,sp.hi,bz],[ax,sp.hi,az],dz/len,0,-dx/len,_col.set('#9fc0d2'));}}
+    if(b.roof.length){const R=b.roof;const P3=(a,i)=>[a[i]/10+b.P.cx,a[i+1]/10+base,a[i+2]/10+b.P.cz];for(let i=0;i<R.length;i+=9){const A=P3(R,i),B=P3(R,i+3),C=P3(R,i+6);G.proof.tri(A,B,C,0,1,0,_col.set('#ffffff'));}}
+    else{const tris=tri2(f);for(const t of tris)G.proof.tri([f[t[0]*2],y1,f[t[0]*2+1]],[f[t[1]*2],y1,f[t[1]*2+1]],[f[t[2]*2],y1,f[t[2]*2+1]],0,1,0,_col.set('#ffffff'));}
+    {const tris=tri2(f);const cc=_col2.set('#e9e6df');for(const t of tris){for(const y of [sp.lo,sp.hi])(y===sp.hi?G.inn:G.tops).tri([f[t[0]*2],y,f[t[0]*2+1]],[f[t[1]*2],y,f[t[1]*2+1]],[f[t[2]*2],y,f[t[2]*2+1]],0,y===sp.lo?1:-1,0,cc);}}
+    G.colls.push(addPoly(f,base-0.3,sp.lo));G.colls.push(addPoly(f,sp.hi,y1));return;}
   // structures standing over a railway at track level (platform roofs, station buildings straddling the line) become canopies
   let ly=null;for(let i=0;i<n&&ly===null;i++){const q=lineYAt(f[i*2],f[i*2+1],5);if(q&&q.fl!==2)ly=q.y;}
   if(ly===null){const q=lineYAt(b.cx,b.cz,5);if(q&&q.fl!==2)ly=q.y;}

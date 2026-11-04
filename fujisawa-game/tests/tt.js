@@ -13,5 +13,5 @@ try{await pg.waitForFunction(()=>window.__dbg,{timeout:900000});}catch(e){consol
 console.log('loaded in',(Date.now()-t0)/1000,'s');
 const scr=fs.readFileSync(process.argv[2],'utf8');
 const r=await pg.evaluate(scr);console.log(typeof r==='string'?r:JSON.stringify(r,null,0));
-if(process.argv[3]){await pg.screenshot({path:process.argv[3]});}
+if(process.argv[3]){await pg.screenshot({path:process.argv[3],timeout:180000});}
 await b.close();})();

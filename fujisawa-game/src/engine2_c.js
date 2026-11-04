@@ -184,6 +184,7 @@ const SHARED=new Set([TRUNK,CROWN,PINEC,PALMC,DESKG]);
 function nearLineY(x,z,r){const b=lineYAt(x,z,r);return b?b.y:null;}
 const TERRAINMAT=new THREE.MeshLambertMaterial({vertexColors:true});
 const INMAT=new THREE.MeshLambertMaterial({vertexColors:true,side:THREE.DoubleSide});
+INMAT.onBeforeCompile=sh=>{sh.fragmentShader=sh.fragmentShader.replace('#include <emissivemap_fragment>','#include <emissivemap_fragment>\n totalEmissiveRadiance+=diffuseColor.rgb*0.45;');};INMAT.customProgramCacheKey=()=>'inmat';
 function buildChunk(ci,cj){
   const cx0=X0+ci*CH,cz0=Z0+cj*CH;const grp=new THREE.Group();const colls=[];const indoor=[];const ci2=CIDX[cj*CNX+ci];
   rand=mulberry32(ci*7919+cj*104729+11);
@@ -215,15 +216,16 @@ function buildChunk(ci,cj){
             rb.quad([ax,ya-0.9,az],[bx,yb-0.9,bz],[bx,yb+1.0,bz],[ax,ya+1.0,az],-g.tz*sd,0,g.tx*sd,rc);rb.quad([ax,ya-0.9,az],[ax,ya+1.0,az],[bx,yb+1.0,bz],[bx,yb-0.9,bz],g.tz*sd,0,-g.tx*sd,rc);}}}}
     buildTracksInto(rb,ci,cj);
     if(!rb.empty){const m=new THREE.Mesh(rb.geo(),MAT.road);m.receiveShadow=true;grp.add(m);}}
-  const wH=new GB(),wO=new GB(),tops=new GB(),gh=new GB(),inn=new GB(),proof=new GB(),fac=new GB();const desks=[];
+  const wH=new GB(),wO=new GB(),tops=new GB(),gh=new GB(),inn=new GB(),proof=new GB(),fac=new GB(),glass=new GB();const desks=[];
   {const v=new DataView(BLDS.buffer,BLDS.byteOffset,BLDS.byteLength);let o=BOFFS[ci2];const end=BOFFS[ci2+1];let bi=0;
     while(o<end){const nn=v.getUint8(o),fl=v.getUint8(o+1),h=v.getUint16(o+2,true)/10,minh=v.getUint8(o+4);let x=v.getInt16(o+5,true),z=v.getInt16(o+7,true);const sk=v.getInt16(o+9,true),kind=v.getUint8(o+11);o+=12;
       const pts=new Float32Array(nn*2);pts[0]=cx0+x/4;pts[1]=cz0+z/4;for(let i=1;i<nn;i++){x+=v.getInt8(o);z+=v.getInt8(o+1);o+=2;pts[i*2]=cx0+x/4;pts[i*2+1]=cz0+z/4;}
       bi++;addBuilding(pts,h,minh,fl&3,kind,hashf(ci2*100003+bi),sk,{wH,wO,tops,gh,inn,desks,colls,indoor,fac});}
-    for(const b of PLB.get(cj*CNX+ci)||[])addPlateau(b,{wH,wO,tops,gh,inn,desks,colls,indoor,proof,fac});}
+    for(const b of PLB.get(cj*CNX+ci)||[])addPlateau(b,{wH,wO,tops,gh,inn,desks,colls,indoor,proof,fac,glass});}
   if(!wH.empty){const m=new THREE.Mesh(wH.geo(),MAT.wallH);m.castShadow=true;m.receiveShadow=true;grp.add(m);}
   if(!wO.empty){const m=new THREE.Mesh(wO.geo(),MAT.wallO);m.castShadow=true;m.receiveShadow=true;grp.add(m);}
   if(!tops.empty){const m=new THREE.Mesh(tops.geo(),MAT.top);m.castShadow=true;m.receiveShadow=true;grp.add(m);}
+  if(!glass.empty){const m=new THREE.Mesh(glass.geo(),GLASSMAT);m.renderOrder=3;grp.add(m);}
   if(!fac.empty){const m=new THREE.Mesh(fac.geo(),facadeMat());m.castShadow=true;m.receiveShadow=true;grp.add(m);}
   if(!proof.empty){const m=new THREE.Mesh(proof.geo(),pls.length?photoMat(pls,'roof'):MAT.top);m.castShadow=true;m.receiveShadow=true;grp.add(m);}
   if(!gh.empty){const m=new THREE.Mesh(gh.geo(),MAT.green);grp.add(m);}

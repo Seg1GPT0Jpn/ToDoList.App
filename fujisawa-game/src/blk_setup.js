@@ -9,7 +9,7 @@ const scene=new THREE.Scene(),farScene=new THREE.Scene();
 const camera=new THREE.PerspectiveCamera(55,innerWidth/innerHeight,0.3,9000);
 const farCam=new THREE.PerspectiveCamera(55,innerWidth/innerHeight,60,400000);
 scene.fog=new THREE.Fog(0xcfe4f2,700,7000);farScene.fog=new THREE.Fog(0xcfe4f2,4000,120000);
-const hemi=new THREE.HemisphereLight(0xcfe8ff,0x8a9a6a,1.1);scene.add(hemi);
+const hemi=new THREE.HemisphereLight(0xcfe8ff,0x9a958a,1.1);scene.add(hemi);
 const sun=new THREE.DirectionalLight(0xfff4e0,2.6);sun.castShadow=true;
 sun.shadow.mapSize.set(isTouch?1024:2048,isTouch?1024:2048);
 const SC=sun.shadow.camera;SC.left=-75;SC.right=75;SC.top=75;SC.bottom=-75;SC.near=1;SC.far=700;sun.shadow.bias=-0.0005;sun.shadow.normalBias=0.08;
