@@ -15,7 +15,7 @@ const limbs={};
   const sh=add(new THREE.CircleGeometry(0.4,16).rotateX(-Math.PI/2),new THREE.MeshBasicMaterial({color:0x000000,transparent:true,opacity:0.18,depthWrite:false}),0,0.04,0);sh.castShadow=false;
 })();
 const P={x:0,y:5,z:0,vy:0,face:-0.1,onGround:false,fly:false,walk:0,swim:false,ride:null,view:0};
-const cam={yaw:Math.PI-0.1,pitch:0.2,dist:7,tx:0,ty:0,tz:0};
+const cam={yaw:Math.PI-0.1,pitch:0.12,dist:4.6,tx:0,ty:0,tz:0};
 let ff=1;
 
 /* ================= input ================= */
@@ -49,7 +49,7 @@ $('act').addEventListener('click',doAct);$('bView').addEventListener('click',tog
 $('bHelp').addEventListener('click',()=>{$('help').hidden=!$('help').hidden;if(isTouch&&!$('help').hidden)toast('左側ドラッグで移動<small>右側ドラッグで視点・2本指でズーム</small>',3);});
 if(isTouch){document.body.classList.add('touch');$('touchBtns').hidden=false;$('help').hidden=true;}
 
-function toggleFly(){if(P.ride)return;P.fly=!P.fly;$('bFly').classList.toggle('on',P.fly);$('tDown').hidden=!P.fly;$('tJump').textContent=P.fly?'上昇':'ジャンプ';toast(P.fly?'飛行モード<small>SPACE 上昇 / C 下降 / SHIFT 高速</small>':'歩きモード',1.6);if(P.fly){P.vy=0;P.y+=3;cam.dist=Math.max(cam.dist,30);}else cam.dist=Math.min(cam.dist,12);}
+function toggleFly(){if(P.ride)return;P.fly=!P.fly;$('bFly').classList.toggle('on',P.fly);$('tDown').hidden=!P.fly;$('tJump').textContent=P.fly?'上昇':'ジャンプ';toast(P.fly?'飛行モード<small>SPACE 上昇 / C 下降 / SHIFT 高速</small>':'歩きモード',1.6);if(P.fly){P.vy=0;P.y+=3;cam.dist=Math.max(cam.dist,30);}else cam.dist=Math.min(cam.dist,6);}
 let toastT=0;function toast(html,sec=2){const t=$('toast');t.innerHTML=html;t.style.opacity=1;toastT=sec;}
 function toggleView(){if(!P.ride)return;P.view=(P.view+1)%2;$('bView').classList.toggle('on',P.view===1);}
 function toggleFF(){if(!P.ride)return;ff=ff===1?6:1;$('bFF').classList.toggle('on',ff>1);}
@@ -93,7 +93,7 @@ function alight(){const r=P.ride.r,ps=r.poses[P.ride.i];const c=Math.cos(-ps.ry)
   for(const sd of [-1,1])for(let d=1.8;d<=8;d+=0.4){const x=ps.x-s*sd*d,z=ps.z+c*sd*d;const g=standY(x,z,ps.y+3);const ok=g>ps.y+0.5&&g<ps.y+2.2;const sc=(ok?100:0)-Math.abs(g-(ps.y+1.1))*8-d*0.3;if(!best||sc>best.sc)best={x,z,g,sc,ok};}
   if(!best.ok){const np=nearestPlatPoint(ps.x,ps.z,ps.y+1.2,30);if(np)best={x:np.x,z:np.z,g:np.y};}
   const name=r.st&&r.st.name;exitRide();P.x=best.x;P.z=best.z;P.y=best.g+0.05;P.vy=0;toast((name?name+'で':'')+'降車しました',1.4);return best;}
-function exitRide(){P.ride=null;ff=1;$('bFF').classList.remove('on');P.view=0;$('bView').classList.remove('on');player.visible=true;cam.dist=7;$('rideBar').hidden=true;$('trainBox').hidden=true;}
+function exitRide(){P.ride=null;ff=1;$('bFF').classList.remove('on');P.view=0;$('bView').classList.remove('on');player.visible=true;cam.dist=4.6;$('rideBar').hidden=true;$('trainBox').hidden=true;}
 function updateRideHUD(){
   const r=P.ride.r,st=r.st;const l=st.l;$('tBand').style.background=TYPECOL[r.type]||l.color;$('tLine').textContent=`${lineShort(r)}　${typeName(r)}`;$('tDest').textContent=r.dest+' 行';
   if(st.dwell){$('tLbl').textContent=st.last?'終点':'ただいま';$('tNext').textContent=st.name;$('tNextEn').textContent=enName(l,st.name);}
@@ -180,7 +180,7 @@ function update(dt){
   const il=Math.hypot(ix,iz);if(il>1){ix/=il;iz/=il;}
   const fx=-Math.sin(cam.yaw),fz=-Math.cos(cam.yaw),rx=Math.cos(cam.yaw),rz=-Math.sin(cam.yaw);
   const mx=fx*iz+rx*ix,mz=fz*iz+rz*ix;const dash=keys.ShiftLeft||keys.ShiftRight||touchDash;
-  let sp=P.fly?(dash?260:55):(dash?11:4.2);if(P.swim)sp*=0.4;
+  let sp=P.fly?(dash?260:55):(dash?6.5:2.0); // walk ≈ 7 km/h, run ≈ 23 km/h: the town at its real sizeif(P.swim)sp*=0.4;
   P.x+=mx*sp*dt;P.z+=mz*sp*dt;
   P.x=clamp(P.x,WORLD.x0+5,WORLD.x1-5);P.z=clamp(P.z,WORLD.z0+5,WORLD.z1-5);
   const moving=Math.hypot(mx,mz)>0.05;

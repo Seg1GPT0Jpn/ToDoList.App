@@ -6,7 +6,7 @@ renderer.setSize(innerWidth,innerHeight);renderer.autoClear=false;
 renderer.shadowMap.enabled=!LITE;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
 renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.05;
 const scene=new THREE.Scene(),farScene=new THREE.Scene();
-const camera=new THREE.PerspectiveCamera(55,innerWidth/innerHeight,0.3,9000);
+const camera=new THREE.PerspectiveCamera(60,innerWidth/innerHeight,0.3,9000);
 const farCam=new THREE.PerspectiveCamera(55,innerWidth/innerHeight,60,400000);
 scene.fog=new THREE.Fog(0xcfe4f2,700,7000);farScene.fog=new THREE.Fog(0xcfe4f2,4000,120000);
 const hemi=new THREE.HemisphereLight(0xcfe8ff,0x9a958a,1.1);scene.add(hemi);
