@@ -56,7 +56,8 @@ function facadeMat(){if(FACMAT)return FACMAT;const t=facadeAtlas();
       float fSty=floor(vMapUv.x/1000.0);vec2 fq=vec2(vMapUv.x-fSty*1000.0,vMapUv.y);float fFl=floor(fq.y+0.0001);vec2 ff=fract(fq);
       vec2 fCell=vec2(mod(fSty,4.0),floor(fSty/4.0)*2.0+(fFl<0.5?0.0:1.0));vec2 fAuv=(fCell+ff*0.996+0.002)/4.0;
       vec2 fdx=dFdx(fq)/4.0,fdy=dFdy(fq)/4.0;
-      diffuseColor*=textureGrad(map,fAuv,fdx,fdy);`)
+      diffuseColor*=textureGrad(map,fAuv,fdx,fdy);
+      diffuseColor.rgb*=mix(0.6,1.0,smoothstep(0.0,0.5,fq.y)); // darker where the wall meets the ground`)
     .replace('#include <emissivemap_fragment>',`{vec2 cid=floor(fq+0.0001)+vec2(fSty*13.0,0.0)+floor(vColor.rg*97.0);float hh=fract(sin(dot(cid,vec2(12.9898,78.233)))*43758.5453);
       totalEmissiveRadiance*=textureGrad(emissiveMap,fAuv,fdx,fdy).rgb*step(0.42,hh)*(0.7+0.6*fract(hh*7.0));}`);};
   m.customProgramCacheKey=()=>'facade';WINMATS.push(m);FACMAT=m;return m;}

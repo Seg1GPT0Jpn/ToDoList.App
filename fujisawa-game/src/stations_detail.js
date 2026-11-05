@@ -20,7 +20,21 @@ function holePatch(sh){sh.uniforms.uHoleTex=HOLE_U;sh.uniforms.uHoleN=HOLE_N;
   if(!sh.fragmentShader.includes('varying vec3 vPW'))sh.fragmentShader=sh.fragmentShader.replace('#include <common>','#include <common>\nvarying vec3 vPW;');
   sh.fragmentShader=sh.fragmentShader.replace('#include <common>','#include <common>\nuniform highp sampler2D uHoleTex;uniform int uHoleN;').replace('#include <clipping_planes_fragment>',`#include <clipping_planes_fragment>
     for(int i=0;i<64;i++){if(i>=uHoleN)break;vec4 a=texelFetch(uHoleTex,ivec2(i*2,0),0);vec4 b=texelFetch(uHoleTex,ivec2(i*2+1,0),0);vec2 d=vPW.xz-a.xy;if(abs(d.x*a.z+d.y*a.w)<b.x&&abs(-d.x*a.w+d.y*a.z)<b.y)discard;}`);}
-TERRAINMAT.onBeforeCompile=holePatch;TERRAINMAT.customProgramCacheKey=()=>'terrainHoles';
+/* fine ground detail (grain of asphalt, soil, grass) that fades in near the camera so close-up ground is not a smooth smear */
+const DETAILTEX=(()=>{const S=512,c=document.createElement('canvas');c.width=c.height=S;const x=c.getContext('2d');const img=x.createImageData(S,S);const R=mulberry32(5);
+  const oct=[[8,0.5],[32,0.3],[128,0.2]];const grids=oct.map(([n])=>{const g=new Float32Array(n*n);for(let i=0;i<g.length;i++)g[i]=R();return g;});
+  for(let y=0;y<S;y++)for(let X=0;X<S;X++){let v=0,w=0;oct.forEach(([n,a],k)=>{const fx=X/S*n,fy=y/S*n,i=Math.floor(fx),j=Math.floor(fy),tx=fx-i,ty=fy-j;const g=grids[k];const q=(a2,b2)=>g[((b2%n+n)%n)*n+((a2%n+n)%n)];
+      const sx=tx*tx*(3-2*tx),sy=ty*ty*(3-2*ty);v+=a*((q(i,j)*(1-sx)+q(i+1,j)*sx)*(1-sy)+(q(i,j+1)*(1-sx)+q(i+1,j+1)*sx)*sy);w+=a;});
+    const o=(y*S+X)*4;const fine=R();img.data[o]=Math.round(v/w*255);img.data[o+1]=Math.round(fine*255);img.data[o+2]=Math.round((v/w*0.6+fine*0.4)*255);img.data[o+3]=255;}
+  x.putImageData(img,0,0);const t=new THREE.CanvasTexture(c);t.wrapS=t.wrapT=THREE.RepeatWrapping;t.anisotropy=8;return t;})();
+function detailPatch(sh,big,fine,amt){sh.uniforms.uDet={value:DETAILTEX};
+  if(!sh.vertexShader.includes('varying vec3 vPW'))sh.vertexShader=sh.vertexShader.replace('#include <common>','#include <common>\nvarying vec3 vPW;').replace('#include <begin_vertex>','#include <begin_vertex>\nvPW=(modelMatrix*vec4(transformed,1.0)).xyz;');
+  if(!sh.fragmentShader.includes('varying vec3 vPW'))sh.fragmentShader=sh.fragmentShader.replace('#include <common>','#include <common>\nvarying vec3 vPW;');
+  sh.fragmentShader=sh.fragmentShader.replace('#include <common>','#include <common>\nuniform sampler2D uDet;').replace('#include <color_fragment>',`#include <color_fragment>
+    {float dist=distance(cameraPosition,vPW);float f=(1.0-smoothstep(30.0,260.0,dist))*${amt.toFixed(2)};
+     float a=texture2D(uDet,vPW.xz*${big.toFixed(4)}).r,b=texture2D(uDet,vPW.xz*${fine.toFixed(4)}).r,c=texture2D(uDet,vPW.xz*${(fine*4.3).toFixed(4)}).b;diffuseColor.rgb*=mix(1.0,0.62+0.3*a+0.28*b+0.2*c,f);}`);}
+TERRAINMAT.onBeforeCompile=sh=>{holePatch(sh);detailPatch(sh,0.03,0.21,1.0);};TERRAINMAT.customProgramCacheKey=()=>'terrainHolesDet';
+MAT.road&&0;
 function inClear(x,z,L=BLD_CLEAR){for(const b of L){const dx=x-b[0],dz=z-b[1],c=Math.cos(b[2]),s=Math.sin(b[2]);if(Math.abs(dx*c+dz*s)<b[3]&&Math.abs(-dx*s+dz*c)<b[4])return true;}return false;}
 /* apply line tweaks: called from initLines / railProfile */
 function extendLineData(k,D){const e=LINE_EXT[k];if(!e)return D;const p=D.pts;const a=p[0],b=p[1];const dx=a[0]-b[0],dz=a[1]-b[1],l=Math.hypot(dx,dz)||1;const n=Math.round(e/10);const ext=n*10;

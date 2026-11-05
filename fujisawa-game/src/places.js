@@ -40,7 +40,7 @@ function photoMat(list,kind){const key=kind+list.map(p=>p.key).join('+');let m=P
         float w=${full?'1.0-smoothstep(c.z+20.0,c.z+50.0,distance(vPW.xz,c.xy))':'1.0-smoothstep(c.z-25.0,c.z+45.0,distance(vPW.xz,c.xy))'};return vec4(texture2D(t,vec2(uv.x,1.0-uv.y)).rgb,w);}`)
       .replace('#include <color_fragment>',`#include <color_fragment>
       {vec4 a=photoS(ph0,pr0,pc0);vec4 b=photoS(ph1,pr1,pc1);vec4 p=a.w>=b.w?a:b;diffuseColor.rgb=mix(diffuseColor.rgb,p.rgb*${kind==='roof'?'0.92':'0.86'},p.w);}`);};
-  if(kind==='ground'){const ob=m.onBeforeCompile;m.onBeforeCompile=sh=>{ob(sh);holePatch(sh);};}
+  if(kind==='ground'){const ob=m.onBeforeCompile;m.onBeforeCompile=sh=>{ob(sh);holePatch(sh);detailPatch(sh,0.03,0.21,0.6);};}
   m.customProgramCacheKey=()=>'photo'+kind;PHOTOMATS.set(key,m);return m;}
 /* wall colours by PLATEAU usage code */
 const USE_WALL={401:['#d9dde0','#c9d0d6','#e6e2da','#b9c3cb'],402:['#ece6da','#d8d2c6','#f0ebe2','#c7c2b8'],403:['#e9e2d4','#d7d0c2'],404:['#e3ddd2','#d1d4d6','#ede8df'],

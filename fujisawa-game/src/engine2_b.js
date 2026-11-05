@@ -29,7 +29,9 @@ async function build(){
 const ROADCH=new Map();
 const RCOL={1:'#54585e',2:'#5a5e65',3:'#61656b',4:'#686b71',5:'#76797d',6:'#808386',7:'#b9b3a6',8:'#c4bba8'};
 const chKey=(x,z)=>Math.floor((z-Z0)/CH)*CNX+Math.floor((x-X0)/CH);
+const JUNC=new Map();const jkey=(x,z)=>Math.round(x/1.5)+','+Math.round(z/1.5);
 function prepareRoads(){
+  for(let ri=0;ri<ROADS.length;ri++){const r=ROADS[ri];if(r.c>6||(r.fl&3))continue;const p=r.pts,n=p.length/2;for(const e of [0,n-1]){const k=jkey(p[e*2],p[e*2+1]);let a=JUNC.get(k);if(!a)JUNC.set(k,a=[]);a.push(ri);}}
   for(let ri=0;ri<ROADS.length;ri++){const r=ROADS[ri];const p=r.pts;const n=p.length/2;
     const arr=[];for(let i=0;i<n;i++)arr.push([p[i*2],p[i*2+1]]);r.path=new Path(arr);
     if(r.fl&1){const a=demH(arr[0][0],arr[0][1]),b=demH(arr[n-1][0],arr[n-1][1]);r.path.prof=new Float32Array([a+0.25,b+0.25]);r.path.pstep=Math.max(r.path.L,0.01);BIDX.add(r.path,r.w,r);}

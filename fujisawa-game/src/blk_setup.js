@@ -12,8 +12,8 @@ const farCam=new THREE.PerspectiveCamera(55,innerWidth/innerHeight,60,400000);
 scene.fog=new THREE.Fog(0xcfe4f2,700,7000);farScene.fog=new THREE.Fog(0xcfe4f2,4000,120000);
 const hemi=new THREE.HemisphereLight(0xcfe8ff,0x9a958a,1.1);scene.add(hemi);
 const sun=new THREE.DirectionalLight(0xfff4e0,2.6);sun.castShadow=true;
-sun.shadow.mapSize.set(isTouch?1024:2048,isTouch?1024:2048);
-const SC=sun.shadow.camera;SC.left=-75;SC.right=75;SC.top=75;SC.bottom=-75;SC.near=1;SC.far=700;sun.shadow.bias=-0.0005;sun.shadow.normalBias=0.08;
+sun.shadow.mapSize.set(isTouch?1024:4096,isTouch?1024:4096);
+const SC=sun.shadow.camera;SC.left=SC.bottom=isTouch?-60:-130;SC.right=SC.top=isTouch?60:130;SC.near=1;SC.far=700;sun.shadow.bias=-0.0005;sun.shadow.normalBias=0.08;
 scene.add(sun);scene.add(sun.target);
 const farHemi=new THREE.HemisphereLight(0xcfe8ff,0x8a9a6a,1.2);farScene.add(farHemi);const farSun=new THREE.DirectionalLight(0xfff4e0,2.0);farScene.add(farSun);
 
@@ -100,8 +100,8 @@ function initMats(){
   MAT.top=new THREE.MeshLambertMaterial({color:0xffffff,vertexColors:true});
   MAT.wallH=wallMat(0.5,CELLH.cols,CELLH.rows);MAT.wallO=wallMat(0.5,CELLO.cols,CELLO.rows);
   MAT.green=new THREE.MeshLambertMaterial({color:0xeef4f2,transparent:true,opacity:0.8,side:THREE.DoubleSide});
-  MAT.crown=new THREE.MeshLambertMaterial({color:0xffffff,flatShading:true});MAT.trunk=M('#6b4f36');
-  MAT.road=new THREE.MeshLambertMaterial({vertexColors:true,polygonOffset:true,polygonOffsetFactor:-2,polygonOffsetUnits:-4});
+  MAT.crown=new THREE.MeshLambertMaterial({color:0xffffff,flatShading:true});MAT.crownV=new THREE.MeshLambertMaterial({color:0xffffff,vertexColors:true});MAT.trunk=M('#6b4f36');
+  MAT.road=new THREE.MeshLambertMaterial({vertexColors:true,polygonOffset:true,polygonOffsetFactor:-2,polygonOffsetUnits:-4});MAT.road.onBeforeCompile=sh=>detailPatch(sh,0.045,0.33,0.85);MAT.road.customProgramCacheKey=()=>'roadDet';
   MAT.water=new THREE.MeshStandardMaterial({color:'#4b97c4',roughness:0.25,metalness:0.05,transparent:true,opacity:0.88,polygonOffset:true,polygonOffsetFactor:-1,polygonOffsetUnits:-2});
   MAT.mid=boxWallMat(3.4,3.0,0.55);
 }

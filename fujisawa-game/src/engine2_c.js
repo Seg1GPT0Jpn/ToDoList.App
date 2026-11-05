@@ -177,6 +177,14 @@ const ROOFG=['#545c68','#6f4a3a','#3f5776','#848a94','#8f5641','#4b6658','#664a3
 const ROOFF=['#9aa1a8','#a7a49e','#8f969c','#b2b0aa','#959089'];
 const TRUNK=new THREE.CylinderGeometry(0.14,0.2,1,5).translate(0,0.5,0);
 const CROWN=new THREE.IcosahedronGeometry(1,0);
+/* tree crowns: clusters of leaf blobs, darker underneath and inside (cheap ambient occlusion in vertex colours) */
+function blobTree(blobs,seed){const R=mulberry32(seed);const P=[],N=[],C=[];let y0=1e9,y1=-1e9;const gs=[];
+  for(const [x,y,z,r] of blobs){const g=new THREE.IcosahedronGeometry(r,1).toNonIndexed();const p=g.attributes.position;for(let i=0;i<p.count;i++){const k=1+(R()-0.5)*0.16;p.setXYZ(i,p.getX(i)*k+x,p.getY(i)*k+y,p.getZ(i)*k+z);}g.computeVertexNormals();gs.push(g);for(let i=0;i<p.count;i++){y0=Math.min(y0,p.getY(i));y1=Math.max(y1,p.getY(i));}}
+  for(const g of gs){const p=g.attributes.position,n=g.attributes.normal;for(let i=0;i<p.count;i++){P.push(p.getX(i),p.getY(i),p.getZ(i));N.push(n.getX(i),n.getY(i),n.getZ(i));const h=(p.getY(i)-y0)/(y1-y0);const out=Math.max(0,n.getX(i)*p.getX(i)+n.getY(i)*p.getY(i)+n.getZ(i)*p.getZ(i))/1.2;const v=clamp(0.5+0.45*h+0.18*Math.min(1,out)+(R()-0.5)*0.08,0.4,1.15);C.push(v,v*1.02,v*0.95);}}
+  const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(P,3));g.setAttribute('normal',new THREE.Float32BufferAttribute(N,3));g.setAttribute('color',new THREE.Float32BufferAttribute(C,3));g.computeBoundingSphere();return g;}
+const BROADG=blobTree([[0,0,0,0.75],[0.55,0.15,0.2,0.55],[-0.5,0.1,-0.25,0.55],[0.1,0.45,-0.45,0.5],[-0.2,0.5,0.45,0.5],[0.05,0.75,0,0.42],[0.35,-0.25,-0.4,0.42]],11);
+const KEYAKIG=blobTree([[0,-0.3,0,0.45],[0.55,0.25,0,0.5],[-0.55,0.25,0.1,0.5],[0.1,0.3,0.6,0.48],[-0.1,0.3,-0.6,0.48],[0,0.65,0,0.55],[0.45,0.65,0.4,0.38],[-0.45,0.6,-0.35,0.38]],23);
+const CONIFERG=(()=>{const gs=[];for(let k=0;k<4;k++){const g=new THREE.ConeGeometry(0.95-k*0.2,0.9,9,1).translate(0,-0.6+k*0.5,0);gs.push(g);}const m=mergeGeos(gs);const p=m.attributes.position;const c=[];let y0=1e9,y1=-1e9;for(let i=0;i<p.count;i++){y0=Math.min(y0,p.getY(i));y1=Math.max(y1,p.getY(i));}for(let i=0;i<p.count;i++){const v=0.55+0.5*(p.getY(i)-y0)/(y1-y0);c.push(v,v,v);}m.setAttribute('color',new THREE.Float32BufferAttribute(c,3));return m;})();
 const PINEC=mergeGeos([new THREE.IcosahedronGeometry(1,0).scale(1.6,0.45,1.6),new THREE.IcosahedronGeometry(1,0).scale(1.1,0.4,1.1).translate(0.7,0.7,0.3),new THREE.IcosahedronGeometry(1,0).scale(0.9,0.35,0.9).translate(-0.6,1.1,-0.2)]);
 const PALMC=(()=>{const l=[];for(let k=0;k<9;k++){const g=new THREE.BoxGeometry(3.8,0.08,0.8).translate(1.9,0,0);g.rotateZ(-0.5);g.rotateY(k/9*Math.PI*2);l.push(g);}return mergeGeos(l);})();
 const DESKG=mergeGeos([new THREE.BoxGeometry(0.62,0.04,0.45).translate(0,0.72,0),new THREE.BoxGeometry(0.05,0.7,0.05).translate(-0.27,0.35,-0.19),new THREE.BoxGeometry(0.05,0.7,0.05).translate(0.27,0.35,-0.19),new THREE.BoxGeometry(0.05,0.7,0.05).translate(-0.27,0.35,0.19),new THREE.BoxGeometry(0.05,0.7,0.05).translate(0.27,0.35,0.19),new THREE.BoxGeometry(0.4,0.04,0.38).translate(0,0.44,0.5),new THREE.BoxGeometry(0.4,0.42,0.04).translate(0,0.65,0.7)]);
@@ -196,7 +204,7 @@ function buildProps(grp,PR){const dm=new THREE.Object3D();
   if(PR.light.length){const im=new THREE.InstancedMesh(LIGHTG,M('#8e979e'),PR.light.length),il=new THREE.InstancedMesh(LAMPG,LAMPMAT,PR.light.length);
     PR.light.forEach((p,i)=>{dm.position.set(p[0],p[1]-0.1,p[2]);dm.rotation.set(0,-p[3],0);dm.updateMatrix();im.setMatrixAt(i,dm.matrix);il.setMatrixAt(i,dm.matrix);});
     im.castShadow=true;im.computeBoundingSphere();il.computeBoundingSphere();grp.add(im);grp.add(il);}}
-const SHARED=new Set([TRUNK,CROWN,PINEC,PALMC,DESKG,POLEG,LIGHTG,LAMPG]);
+const SHARED=new Set([TRUNK,CROWN,PINEC,PALMC,DESKG,POLEG,LIGHTG,LAMPG,BROADG,KEYAKIG,CONIFERG]);
 function nearLineY(x,z,r){const b=lineYAt(x,z,r);return b?b.y:null;}
 const TERRAINMAT=new THREE.MeshLambertMaterial({vertexColors:true});
 const INMAT=new THREE.MeshLambertMaterial({vertexColors:true,side:THREE.DoubleSide});
@@ -236,6 +244,12 @@ function buildChunk(ci,cj){
           for(let s=Math.ceil((g.s+every*k0)/every)*every-every*k0;s<g.s+g.len;s+=every){if(s<g.s)continue;const q=P.at(s);
             if(r.c>=5){const sd=k0<0.5?1:-1;const x=q.x-q.tz*sd*(hw+0.5),z=q.z+q.tx*sd*(hw+0.5);if(HOLES.length&&inHole(x,z))continue;PROPS.pole.push([x,demH(x,z),z,Math.atan2(q.tz,q.tx),ri]);}
             else for(const sd of [1,-1]){const x=q.x-q.tz*sd*(hw+sw*0.8+0.3),z=q.z+q.tx*sd*(hw+sw*0.8+0.3);if(HOLES.length&&inHole(x,z))continue;PROPS.light.push([x,demH(x,z),z,Math.atan2(q.tz,q.tx)+(sd>0?Math.PI/2:-Math.PI/2)]);}}}
+        // zebra crossings and stop lines where this street meets two or more others
+        if(r.c<=5&&!(r.fl&3)&&(si===0||si===segs.length-1)){const n2=r.pts.length/2;for(const [e,pi] of [[0,0],[1,n2-1]]){if((e===0)!==(si===0))continue;if(segs.length===1&&e===1&&si!==0)continue;
+          const jk=JUNC.get(jkey(r.pts[pi*2],r.pts[pi*2+1]));if(!jk||jk.length<3)continue;let maxw=0;for(const o of jk)if(o!==ri)maxw=Math.max(maxw,ROADS[o].w);
+          const dir=e===0?[g.tx,g.tz]:[-g.tx,-g.tz];const ox=r.pts[pi*2],oz=r.pts[pi*2+1];const d0=maxw/2+1.2;if(g.len<d0+6)continue;const nx=-dir[1],nz=dir[0];const zc=_col.set('#f1eee6');
+          for(let k=-hw+0.3;k<hw-0.3;k+=0.9){const a0=k,a1=Math.min(k+0.45,hw-0.3);const P4=[[a0,d0],[a1,d0],[a1,d0+3],[a0,d0+3]].map(([u,v])=>{const x=ox+nx*u+dir[0]*v,z=oz+nz*u+dir[1]*v;return[x,demH(x,z)+yoff+0.03,z];});rb.quad(P4[0],P4[1],P4[2],P4[3],0,1,0,zc);}
+          const sl=[[0,d0+4.2],[hw-0.3,d0+4.2],[hw-0.3,d0+4.65],[0,d0+4.65]].map(([u,v])=>{const x=ox+nx*u*(e===0?-1:-1)+dir[0]*v,z=oz+nz*u*(e===0?-1:-1)+dir[1]*v;return[x,demH(x,z)+yoff+0.03,z];});rb.quad(sl[0],sl[1],sl[2],sl[3],0,1,0,zc);}}
         if(r.c<=3&&!(r.fl&1)){const wc=_col.set('#eeeadc');for(let s=g.s;s<g.s+g.len-3;s+=8){const p0=P.at(s),p1=P.at(Math.min(s+4,g.s+g.len));const nx=-g.tz*0.12,nz=g.tx*0.12;const y0=demH(p0.x,p0.z)+yoff+0.02,y1=demH(p1.x,p1.z)+yoff+0.02;
             rb.tri([p0.x+nx,y0,p0.z+nz],[p1.x+nx,y1,p1.z+nz],[p1.x-nx,y1,p1.z-nz],0,1,0,wc);rb.tri([p0.x+nx,y0,p0.z+nz],[p1.x-nx,y1,p1.z-nz],[p0.x-nx,y0,p0.z-nz],0,1,0,wc);}}
         if(r.fl&1&&r.c<=7){const rc=_col.set('#d8d4ca');for(const sd of [1,-1]){const ax=g.x+n0[0]*hw*sd,az=g.z+n0[1]*hw*sd,bx=g.x+g.dx+n1[0]*hw*sd,bz=g.z+g.dz+n1[1]*hw*sd;const ya=r.path.py(g.s),yb=r.path.py(g.s+g.len);
@@ -425,10 +439,12 @@ function buildTreesInto(grp,L2){
   const tot=rounds.length+pines.length+palms.length;if(!tot)return;
   const trunks=new THREE.InstancedMesh(TRUNK,MAT.trunk,tot);let ti=0;
   const greens=['#4f9a45','#5aa84c','#468c3f','#62b052','#3f8a4a'],aut=['#f2c230','#e8902f','#d9622b','#f0b13a'];
-  if(rounds.length){const rm=new THREE.InstancedMesh(CROWN,MAT.crown,rounds.length);
-    rounds.forEach((t,i)=>{const s=t.s;dm.rotation.set(0,rand()*3,0);dm.position.set(t.x,t.y-0.3,t.z);dm.scale.set(s*2,4*s,s*2);dm.updateMatrix();trunks.setMatrixAt(ti++,dm.matrix);
-      dm.position.set(t.x,t.y+4*s+2.4*s,t.z);dm.scale.set(3.6*s,3.4*s*rr(0.9,1.2),3.6*s);dm.updateMatrix();rm.setMatrixAt(i,dm.matrix);rm.setColorAt(i,cc.set(pick(t.k==='a'?aut:greens)));});
-    rm.castShadow=true;rm.receiveShadow=true;rm.computeBoundingSphere();grp.add(rm);}
+  if(rounds.length){const groups=[[],[],[]];for(const t of rounds){const h=hashf(Math.round(t.x*3+t.z*7));groups[t.k==='a'?0:h<0.45?0:h<0.85?1:2].push(t);}
+    [[BROADG,groups[0]],[KEYAKIG,groups[1]],[CONIFERG,groups[2]]].forEach(([geo,list],gi)=>{if(!list.length)return;const rm=new THREE.InstancedMesh(geo,MAT.crownV,list.length);
+      list.forEach((t,i)=>{const s=t.s*rr(0.85,1.2);dm.rotation.set(0,rand()*6.3,0);const th=gi===2?2.2:gi===1?4.6:3.6;dm.position.set(t.x,t.y-0.3,t.z);dm.scale.set(s*1.8,th*s,s*1.8);dm.updateMatrix();trunks.setMatrixAt(ti++,dm.matrix);
+        const w=gi===2?2.3:gi===1?4.4:3.8,hh=gi===2?5.5:gi===1?3.6:3.4;dm.position.set(t.x,t.y+th*s+hh*s*(gi===2?0.5:0.55),t.z);dm.scale.set(w*s,hh*s*rr(0.9,1.15),w*s);dm.updateMatrix();rm.setMatrixAt(i,dm.matrix);
+        rm.setColorAt(i,cc.set(pick(t.k==='a'?aut:gi===2?['#3b6e46','#2f6640','#40774a']:greens)));});
+      rm.castShadow=true;rm.receiveShadow=true;rm.computeBoundingSphere();grp.add(rm);});}
   if(pines.length){const pm=new THREE.InstancedMesh(PINEC,MAT.crown,pines.length);
     pines.forEach((t,i)=>{const s=t.s;dm.rotation.set(rr(-0.12,0.12),rand()*3,rr(-0.12,0.12));dm.position.set(t.x,t.y-0.3,t.z);dm.scale.set(s*2.2,10*s,s*2.2);dm.updateMatrix();trunks.setMatrixAt(ti++,dm.matrix);
       dm.rotation.set(0,rand()*3,0);dm.position.set(t.x,t.y+10*s,t.z);dm.scale.set(3*s,2.6*s,3*s);dm.updateMatrix();pm.setMatrixAt(i,dm.matrix);pm.setColorAt(i,cc.set(pick(['#2f6b3f','#356f43','#2a5f3a'])));});
