@@ -1,0 +1,37 @@
+# main に入った変更を Firebase Hosting に公開する（教材制作アプリ mondai/ をサイトのトップに置く）
+# 動かすには、GitHub のリポジトリ設定に次の2つを登録する（手順は mondai/docs/FIREBASE_HOSTING.md）
+#   Variables: FIREBASE_PROJECT_ID   … Firebase のプロジェクト ID
+#   Secrets:   FIREBASE_SERVICE_ACCOUNT … 公開用サービスアカウントの鍵（JSON）
+# 登録するまでは何もしない（失敗にもならない）
+name: Firebase Hosting に公開
+
+on:
+  push:
+    branches: [main]
+    paths: ['mondai/**', 'firebase.json', '.github/workflows/firebase-hosting.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    if: ${{ vars.FIREBASE_PROJECT_ID != '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: テスト（単体・データベースの権限）
+        working-directory: mondai
+        run: |
+          npm ci
+          npm test
+      - name: Firebase Hosting に公開
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          projectId: ${{ vars.FIREBASE_PROJECT_ID }}
+          channelId: live

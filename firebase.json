@@ -1,0 +1,23 @@
+{
+  "hosting": {
+    "public": "mondai",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      "tests/**",
+      "supabase/**",
+      "package.json",
+      "package-lock.json",
+      "jsconfig.json",
+      "vitest.config.js"
+    ],
+    "headers": [
+      {
+        "source": "**/*.@(html|js|css|json)",
+        "headers": [{ "key": "Cache-Control", "value": "no-cache" }]
+      }
+    ],
+    "cleanUrls": false
+  }
+}
