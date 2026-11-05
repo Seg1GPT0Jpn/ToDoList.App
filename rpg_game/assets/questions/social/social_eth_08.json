@@ -1,0 +1,344 @@
+{
+  "setId": "social_eth_08",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_eth08_001",
+      "unit": "social.eth.western.social.contract",
+      "category": "knowledge",
+      "prompt": "社会契約説の思想家のうち、主権は譲り渡すことも分割することもできないと説いたのは？",
+      "choices": [
+        "ロック",
+        "ホッブズ",
+        "モンテスキュー",
+        "ルソー"
+      ],
+      "answerIndex": 3,
+      "explanation": "一般意志にもとづく人民主権を説いた。"
+    },
+    {
+      "id": "soc_eth08_002",
+      "unit": "social.eth.western.social.contract",
+      "category": "knowledge",
+      "prompt": "ロックが、国家の権力の中で最高のものと考えた権力は？",
+      "choices": [
+        "軍事権",
+        "司法権",
+        "執行権（行政権）",
+        "立法権"
+      ],
+      "answerIndex": 3,
+      "explanation": "人民の信託を受けた議会の立法権を最高とし、執行権をその下に置いた。"
+    },
+    {
+      "id": "soc_eth08_003",
+      "unit": "social.eth.western.social.contract",
+      "category": "knowledge",
+      "prompt": "ルソーが、社会全体の利益をめざす人民の意志を何と呼んだ？",
+      "choices": [
+        "一般意志",
+        "全体意志",
+        "自由意志",
+        "特殊意志"
+      ],
+      "answerIndex": 0,
+      "explanation": "一般意志にもとづく直接民主制を理想とした。"
+    },
+    {
+      "id": "soc_eth08_004",
+      "unit": "social.eth.western.social.utility",
+      "category": "knowledge",
+      "prompt": "「最大多数の最大幸福」を唱えた功利主義者は？",
+      "choices": [
+        "アダム＝スミス",
+        "ベンサム",
+        "カント",
+        "J.S.ミル"
+      ],
+      "answerIndex": 1,
+      "explanation": "快楽を量的に計算できると考えた（量的功利主義）。"
+    },
+    {
+      "id": "soc_eth08_005",
+      "unit": "social.eth.western.social.utility",
+      "category": "knowledge",
+      "prompt": "「満足した豚であるより、不満足な人間であるほうがよい」と述べ、快楽の質を重視したのは？",
+      "choices": [
+        "J.S.ミル",
+        "ベンサム",
+        "ホッブズ",
+        "ロック"
+      ],
+      "answerIndex": 0,
+      "explanation": "質的功利主義。『自由論』で他者危害原則も示した。"
+    },
+    {
+      "id": "soc_eth08_006",
+      "unit": "social.eth.western.social.utility",
+      "category": "knowledge",
+      "prompt": "J.S.ミルが示した、他人に危害を加えない限り個人の自由は制限されないという原則は？",
+      "choices": [
+        "他者危害原則",
+        "最大多数の最大幸福",
+        "無知のヴェール",
+        "定言命法"
+      ],
+      "answerIndex": 0,
+      "explanation": "個人の自由を尊重する考え方。"
+    },
+    {
+      "id": "soc_eth08_007",
+      "unit": "social.eth.western.social.utility",
+      "category": "knowledge",
+      "prompt": "ベンサムが、行為を規制する力として挙げた、法による罰などを何という？",
+      "choices": [
+        "制裁（サンクション）",
+        "人格",
+        "良心",
+        "イドラ"
+      ],
+      "answerIndex": 0,
+      "explanation": "物理的・政治的・道徳的・宗教的制裁の 4 つ。"
+    },
+    {
+      "id": "soc_eth08_008",
+      "unit": "social.eth.western.social",
+      "category": "knowledge",
+      "prompt": "アメリカの哲学者ロールズが、公正としての正義を考えるために用いた思考実験は？",
+      "choices": [
+        "洞窟の比喩",
+        "方法的懐疑",
+        "無知のヴェール",
+        "イドラ"
+      ],
+      "answerIndex": 2,
+      "explanation": "自分の立場を知らない状態で、社会のルールを選ぶと考えた。"
+    },
+    {
+      "id": "soc_eth08_009",
+      "unit": "social.eth.western.social",
+      "category": "knowledge",
+      "prompt": "人間の生き方の豊かさを、何ができるかという「潜在能力（ケイパビリティ）」で考えたのは？",
+      "choices": [
+        "ベンサム",
+        "ロールズ",
+        "サンデル",
+        "アマルティア＝セン"
+      ],
+      "answerIndex": 3,
+      "explanation": "ノーベル経済学賞を受賞した。"
+    },
+    {
+      "id": "soc_eth08_010",
+      "unit": "social.eth.western.social.contract",
+      "category": "knowledge",
+      "prompt": "社会契約説に共通する考え方は？",
+      "choices": [
+        "国家は自然に生まれた",
+        "国家は神がつくった",
+        "国家は王の所有物である",
+        "国家は人々の合意（契約）によってつくられた"
+      ],
+      "answerIndex": 3,
+      "explanation": "王権神授説を批判する根拠になった。"
+    },
+    {
+      "id": "soc_eth08_011",
+      "unit": "social.eth.western.social.utility",
+      "category": "thinking",
+      "prompt": "功利主義の考え方に対する批判として適切なものは？",
+      "choices": [
+        "個人の幸福を考えない",
+        "結果をまったく考えない",
+        "幸福を重視しすぎない",
+        "全体の幸福のために、少数者の権利が犠牲にされるおそれがある"
+      ],
+      "answerIndex": 3,
+      "explanation": "ロールズは功利主義を批判し、最も不遇な人々の立場を改善することを重視した。"
+    },
+    {
+      "id": "soc_eth08_012",
+      "unit": "social.eth.western.social.contract",
+      "category": "thinking",
+      "prompt": "ロックの抵抗権の考え方が影響を与えた出来事は？",
+      "choices": [
+        "十字軍",
+        "王権神授説の成立",
+        "アメリカ独立宣言",
+        "ウィーン会議"
+      ],
+      "answerIndex": 2,
+      "explanation": "政府が人民の権利を侵害すれば、人民は政府をつくりかえる権利があるとした。"
+    },
+    {
+      "id": "soc_eth08_013",
+      "unit": "social.eth.western.social.contract",
+      "category": "knowledge",
+      "prompt": "ホッブズが社会契約で国家に何を譲りわたすと考えた？",
+      "choices": [
+        "財産の半分",
+        "選挙権",
+        "自然権（主権者にすべて）",
+        "何も譲らない"
+      ],
+      "answerIndex": 2,
+      "explanation": "強大な国家（リヴァイアサン）による平和。"
+    },
+    {
+      "id": "soc_eth08_014",
+      "unit": "social.eth.western.social.contract",
+      "category": "knowledge",
+      "prompt": "ロックが、政府が人民の信託に反したときに人民がもつと考えた権利は？",
+      "choices": [
+        "参政権",
+        "選挙権だけ",
+        "拒否権",
+        "抵抗権（革命権）"
+      ],
+      "answerIndex": 3,
+      "explanation": "アメリカ独立宣言に影響を与えた。"
+    },
+    {
+      "id": "soc_eth08_015",
+      "unit": "social.eth.western.social.contract",
+      "category": "knowledge",
+      "prompt": "ルソーが理想としたのは？",
+      "choices": [
+        "絶対王政",
+        "一般意志にもとづく直接民主制",
+        "貴族政治",
+        "代議制民主主義"
+      ],
+      "answerIndex": 1,
+      "explanation": "主権は譲りわたせないとした。"
+    },
+    {
+      "id": "soc_eth08_016",
+      "unit": "social.eth.western.social.utility",
+      "category": "knowledge",
+      "prompt": "ベンサムの功利主義が、快楽について重視したことは？",
+      "choices": [
+        "快楽の量を計算できるとした（量的功利主義）",
+        "快楽の質のちがい",
+        "快楽を否定すること",
+        "神の命令"
+      ],
+      "answerIndex": 0,
+      "explanation": "ミルは質的功利主義。"
+    },
+    {
+      "id": "soc_eth08_017",
+      "unit": "social.eth.western.social.utility",
+      "category": "knowledge",
+      "prompt": "ミルが『自由論』で重視したものは？",
+      "choices": [
+        "個人の自由（他者危害の原則）",
+        "身分の秩序",
+        "宗教の教え",
+        "国家の命令"
+      ],
+      "answerIndex": 0,
+      "explanation": "他人に危害を加えない限り自由であるべき。"
+    },
+    {
+      "id": "soc_eth08_018",
+      "unit": "social.eth.western.social",
+      "category": "knowledge",
+      "prompt": "ロールズの正義の原理で、最も不遇な人の利益を最大にする格差だけを認めるものは？",
+      "choices": [
+        "功利の原理",
+        "格差原理",
+        "平等な自由の原理",
+        "公正な機会均等"
+      ],
+      "answerIndex": 1,
+      "explanation": "「無知のヴェール」の下で選ばれる原理。"
+    },
+    {
+      "id": "soc_eth08_019",
+      "unit": "social.eth.western.social",
+      "category": "knowledge",
+      "prompt": "サンデルらが、共同体から切り離されたリベラリズムの人間像を批判して用いた言葉は？",
+      "choices": [
+        "一般意志",
+        "負荷なき自己",
+        "超人",
+        "間柄的存在"
+      ],
+      "answerIndex": 1,
+      "explanation": "人は共同体の伝統や関係の中で自己を形づくるとした（コミュニタリアニズム）。"
+    },
+    {
+      "id": "soc_eth08_020",
+      "unit": "social.eth.western.social",
+      "category": "knowledge",
+      "prompt": "国家の役割を最小限にし、個人の自由を最大限に重んじる立場は？",
+      "choices": [
+        "コミュニタリアニズム",
+        "社会主義",
+        "リバタリアニズム",
+        "功利主義"
+      ],
+      "answerIndex": 2,
+      "explanation": "ノージックらが代表。"
+    },
+    {
+      "id": "soc_eth08_021",
+      "unit": "social.eth.western.social",
+      "category": "knowledge",
+      "prompt": "共同体の価値や伝統を重視し、個人主義を批判する立場は？",
+      "choices": [
+        "リバタリアニズム",
+        "コミュニタリアニズム",
+        "実存主義",
+        "功利主義"
+      ],
+      "answerIndex": 1,
+      "explanation": "サンデルらが代表。"
+    },
+    {
+      "id": "soc_eth08_022",
+      "unit": "social.eth.western.social",
+      "category": "knowledge",
+      "prompt": "センが、豊かさを所得だけでなく何で考えるべきだとした？",
+      "choices": [
+        "軍事力",
+        "GDP",
+        "潜在能力（ケイパビリティ）",
+        "株価"
+      ],
+      "answerIndex": 2,
+      "explanation": "人が実際に何ができるかという自由。"
+    },
+    {
+      "id": "soc_eth08_023",
+      "unit": "social.eth.western.social",
+      "category": "knowledge",
+      "prompt": "ロールズの正義の原理のうち、すべての人に基本的な自由を平等に保障することを求めるものは？",
+      "choices": [
+        "他者危害原則",
+        "格差原理",
+        "功利の原理",
+        "平等な自由の原理"
+      ],
+      "answerIndex": 3,
+      "explanation": "第一原理。格差は、機会の均等と、最も不遇な人の利益になる場合に限って認められる（第二原理）。"
+    },
+    {
+      "id": "soc_eth08_024",
+      "unit": "social.eth.western.social.contract",
+      "category": "thinking",
+      "prompt": "ルソーの一般意志と、単なる多数決（全体意志）のちがいは？",
+      "choices": [
+        "一般意志は常に公共の利益をめざすが、全体意志は私的利益の総和にすぎない",
+        "同じものである",
+        "全体意志の方が正しい",
+        "一般意志は少数派の意見"
+      ],
+      "answerIndex": 0,
+      "explanation": "私的利益の寄せ集めとは区別される。"
+    }
+  ]
+}

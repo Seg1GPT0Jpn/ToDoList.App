@@ -1,0 +1,188 @@
+{
+  "setId": "kokka_kaikei_06",
+  "worldId": "kokka",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "kai06_001",
+      "unit": "kokka.kaikei.kansa.kansa.kihon",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "財務諸表監査の目的は？",
+      "choices": [
+        "財務諸表が適正に表示されているかについて、監査人が意見を表明すること",
+        "不正をすべて発見すること",
+        "会社の経営を代わりに行うこと",
+        "税金の額を決めること"
+      ],
+      "answerIndex": 0,
+      "explanation": "監査基準の監査の目的。"
+    },
+    {
+      "id": "kai06_002",
+      "unit": "kokka.kaikei.kansa.kansa.kihon",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "監査人が、監査対象の会社から独立していなければならないことを何という？",
+      "choices": [
+        "継続性",
+        "独立性",
+        "機密保持",
+        "専門能力"
+      ],
+      "answerIndex": 1,
+      "explanation": "精神的独立性と外観的独立性がある。"
+    },
+    {
+      "id": "kai06_003",
+      "unit": "kokka.kaikei.kansa.kansa.kihon",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "監査人が監査の全過程を通じて保持しなければならない、疑いをもつ姿勢は？",
+      "choices": [
+        "保守主義",
+        "楽観主義",
+        "職業的懐疑心",
+        "重要性"
+      ],
+      "answerIndex": 2,
+      "explanation": "監査基準の一般基準で求められる。"
+    },
+    {
+      "id": "kai06_004",
+      "unit": "kokka.kaikei.kansa.kansa.kihon",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "上場企業などを監査する公認会計士・監査法人を監督する行政機関は？",
+      "choices": [
+        "日本銀行",
+        "法務省",
+        "財務省",
+        "金融庁"
+      ],
+      "answerIndex": 3,
+      "explanation": "公認会計士・監査審査会がモニタリングを行う。"
+    },
+    {
+      "id": "kai06_005",
+      "unit": "kokka.kaikei.kansa.kansa.risk",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "監査リスクの構成要素の組み合わせは？",
+      "choices": [
+        "重要な虚偽表示リスクと発見リスク",
+        "固有リスクと事業リスク",
+        "発見リスクと経営リスク",
+        "統制リスクと信用リスク"
+      ],
+      "answerIndex": 0,
+      "explanation": "重要な虚偽表示リスクは固有リスクと統制リスクからなる。"
+    },
+    {
+      "id": "kai06_006",
+      "unit": "kokka.kaikei.kansa.kansa.risk",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "重要な虚偽表示リスクが高いと評価したとき、監査人は？",
+      "choices": [
+        "監査をやめる",
+        "発見リスクを低くするため、実証手続を増やす",
+        "監査手続を減らす",
+        "監査意見を出さない"
+      ],
+      "answerIndex": 1,
+      "explanation": "監査リスクを許容できる低い水準に抑えるため。"
+    },
+    {
+      "id": "kai06_007",
+      "unit": "kokka.kaikei.kansa.kansa.risk",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "会社の外部の第三者から、文書で直接回答を得る監査手続は？",
+      "choices": [
+        "質問",
+        "再計算",
+        "確認",
+        "観察"
+      ],
+      "answerIndex": 2,
+      "explanation": "売掛金や預金の残高確認など。"
+    },
+    {
+      "id": "kai06_008",
+      "unit": "kokka.kaikei.kansa.kansa.houkoku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "すべての重要な点で適正に表示していると認めたときの意見は？",
+      "choices": [
+        "限定付適正意見",
+        "不適正意見",
+        "意見不表明",
+        "無限定適正意見"
+      ],
+      "answerIndex": 3,
+      "explanation": "監査報告書で最も多い意見。"
+    },
+    {
+      "id": "kai06_009",
+      "unit": "kokka.kaikei.kansa.kansa.houkoku",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "重要な虚偽表示があり、その影響が財務諸表全体に及ぶ（広範な）ときの意見は？",
+      "choices": [
+        "不適正意見",
+        "意見不表明",
+        "無限定適正意見",
+        "限定付適正意見"
+      ],
+      "answerIndex": 0,
+      "explanation": "影響が広範でなければ限定付適正意見。"
+    },
+    {
+      "id": "kai06_010",
+      "unit": "kokka.kaikei.kansa.kansa.houkoku",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "重要な監査手続を実施できず、その影響が広範で意見の根拠が得られないときは？",
+      "choices": [
+        "無限定適正意見",
+        "意見不表明",
+        "不適正意見",
+        "限定付適正意見"
+      ],
+      "answerIndex": 1,
+      "explanation": "監査範囲の制約による。"
+    },
+    {
+      "id": "kai06_011",
+      "unit": "kokka.kaikei.kansa.kansa.houkoku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "上場企業などの監査報告書に記載する、監査で特に重要と判断した事項は？",
+      "choices": [
+        "強調事項だけ",
+        "経営者の報酬",
+        "監査上の主要な検討事項（KAM）",
+        "会社の株価"
+      ],
+      "answerIndex": 2,
+      "explanation": "2021年3月期から適用されている。"
+    },
+    {
+      "id": "kai06_012",
+      "unit": "kokka.kaikei.kansa.kansa.houkoku",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "継続企業の前提に重要な不確実性があり、適切に注記されているとき、監査報告書では？",
+      "choices": [
+        "意見不表明にする",
+        "何も書かない",
+        "必ず不適正意見を出す",
+        "継続企業の前提に関する重要な不確実性の区分を設けて記載する"
+      ],
+      "answerIndex": 3,
+      "explanation": "注記が適切でなければ除外事項となる。"
+    }
+  ]
+}

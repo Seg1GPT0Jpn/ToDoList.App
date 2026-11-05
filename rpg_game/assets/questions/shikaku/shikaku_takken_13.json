@@ -1,0 +1,233 @@
+{
+  "setId": "shikaku_takken_13",
+  "worldId": "shikaku",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "tkn13_001",
+      "unit": "shikaku.takken.seigen.sonota.kokudo",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "国土利用計画法の事後届出は、誰がいつまでにする？",
+      "choices": [
+        "双方が、契約前に",
+        "権利取得者（買主）が、契約締結日から2週間以内",
+        "買主が、登記をしてから2週間以内",
+        "売主が、契約締結日から1か月以内"
+      ],
+      "answerIndex": 1,
+      "explanation": "事後届出は権利取得者が2週間以内（国土利用計画法23条）。"
+    },
+    {
+      "id": "tkn13_002",
+      "unit": "shikaku.takken.seigen.sonota.kokudo",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "市街化区域で事後届出が必要になる面積は？",
+      "choices": [
+        "1,000㎡以上",
+        "10,000㎡以上",
+        "2,000㎡以上",
+        "5,000㎡以上"
+      ],
+      "answerIndex": 2,
+      "explanation": "市街化区域2,000㎡以上、その他の都市計画区域5,000㎡以上、区域外10,000㎡以上。"
+    },
+    {
+      "id": "tkn13_003",
+      "unit": "shikaku.takken.seigen.sonota.kokudo",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "国土利用計画法の事後届出が不要なものは？",
+      "choices": [
+        "土地を売買した",
+        "代物弁済で土地を取得した",
+        "土地を交換した",
+        "相続で土地を取得した"
+      ],
+      "answerIndex": 3,
+      "explanation": "相続は「契約」ではないので届出不要。対価のない贈与も不要。"
+    },
+    {
+      "id": "tkn13_004",
+      "unit": "shikaku.takken.seigen.sonota.kokudo",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "事後届出で、都道府県知事が勧告できる内容は？",
+      "choices": [
+        "土地の利用目的",
+        "契約の当事者",
+        "登記の時期",
+        "土地の価格"
+      ],
+      "answerIndex": 0,
+      "explanation": "事後届出の勧告は利用目的について（価格は勧告の対象外）。"
+    },
+    {
+      "id": "tkn13_005",
+      "unit": "shikaku.takken.seigen.sonota.nouchi",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "農地を農地のまま売る。必要な許可は？",
+      "choices": [
+        "都道府県知事の許可（農地法4条）",
+        "農業委員会の許可（農地法3条）",
+        "許可は不要",
+        "市町村長の許可"
+      ],
+      "answerIndex": 1,
+      "explanation": "権利移動は3条許可。許可がなければ効力を生じない。"
+    },
+    {
+      "id": "tkn13_006",
+      "unit": "shikaku.takken.seigen.sonota.nouchi",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "市街化区域内の自分の農地を宅地に転用する。必要な手続は？",
+      "choices": [
+        "都道府県知事の許可",
+        "何もいらない",
+        "あらかじめ農業委員会に届け出る",
+        "農林水産大臣の許可"
+      ],
+      "answerIndex": 2,
+      "explanation": "市街化区域内の転用は、事前の届出で許可が不要になる（農地法4条1項7号）。"
+    },
+    {
+      "id": "tkn13_007",
+      "unit": "shikaku.takken.seigen.sonota.nouchi",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "宅地にする目的で農地を買う。原則として必要な許可は？",
+      "choices": [
+        "開発許可だけ",
+        "農地法4条の許可",
+        "農地法3条の許可",
+        "農地法5条の許可"
+      ],
+      "answerIndex": 3,
+      "explanation": "転用目的の権利移動は5条許可（都道府県知事など）。"
+    },
+    {
+      "id": "tkn13_008",
+      "unit": "shikaku.takken.seigen.sonota.nouchi",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "相続で農地を取得した。農地法上の手続は？",
+      "choices": [
+        "許可は不要だが、農業委員会に届け出る",
+        "何もいらない",
+        "3条の許可が必要",
+        "5条の許可が必要"
+      ],
+      "answerIndex": 0,
+      "explanation": "相続は許可不要。遅滞なく農業委員会への届出が必要（農地法3条の3）。"
+    },
+    {
+      "id": "tkn13_009",
+      "unit": "shikaku.takken.seigen.sonota.nouchi",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "農地法3条の許可を受けずに農地を売買した。契約の効力は？",
+      "choices": [
+        "取り消すことができる",
+        "効力を生じない",
+        "有効",
+        "罰金を払えば有効"
+      ],
+      "answerIndex": 1,
+      "explanation": "許可を受けない3条の権利移動は効力を生じない（農地法3条6項）。"
+    },
+    {
+      "id": "tkn13_010",
+      "unit": "shikaku.takken.seigen.sonota.morido",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "宅地造成等工事規制区域で工事をするとき、必要なものは？",
+      "choices": [
+        "近隣住民の同意",
+        "工事後の届出",
+        "工事に着手する前の都道府県知事などの許可",
+        "市町村議会の議決"
+      ],
+      "answerIndex": 2,
+      "explanation": "盛土規制法（宅地造成及び特定盛土等規制法）12条。"
+    },
+    {
+      "id": "tkn13_011",
+      "unit": "shikaku.takken.seigen.sonota.morido",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "宅地造成等工事規制区域で、許可が必要になる盛土は？",
+      "choices": [
+        "どんな盛土でも不要",
+        "高さ50cmの崖ができる切土",
+        "高さ30cmの盛土",
+        "盛土で高さ1mを超える崖ができるもの"
+      ],
+      "answerIndex": 3,
+      "explanation": "盛土で1m超の崖、切土で2m超の崖、面積500㎡超などは許可が必要。"
+    },
+    {
+      "id": "tkn13_012",
+      "unit": "shikaku.takken.seigen.sonota.morido",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "土地区画整理事業で、換地処分の公告があった日の翌日から、換地はどうなる？",
+      "choices": [
+        "従前の宅地とみなされる",
+        "何も変わらない",
+        "国有地になる",
+        "新たに売買されたものとみなされる"
+      ],
+      "answerIndex": 0,
+      "explanation": "換地処分の公告の翌日から、換地は従前の宅地とみなされる（土地区画整理法104条）。"
+    },
+    {
+      "id": "tkn13_013",
+      "unit": "shikaku.takken.seigen.sonota.morido",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "仮換地が指定された。従前の宅地の所有者ができることは？",
+      "choices": [
+        "どちらも使えない",
+        "仮換地を使用・収益できる",
+        "両方とも使える",
+        "従前の宅地を使い続けられる"
+      ],
+      "answerIndex": 1,
+      "explanation": "仮換地の指定後は、従前の宅地は使えず、仮換地を使用収益する（土地区画整理法99条）。"
+    },
+    {
+      "id": "tkn13_014",
+      "unit": "shikaku.takken.seigen.sonota.morido",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "土地区画整理事業の施行地区で、事業の障害になるおそれのある建築をするには？",
+      "choices": [
+        "自由にできる",
+        "届出だけでよい",
+        "都道府県知事などの許可が必要",
+        "施行者の同意があれば許可は不要"
+      ],
+      "answerIndex": 2,
+      "explanation": "施行の障害となる建築などは許可制（土地区画整理法76条）。"
+    },
+    {
+      "id": "tkn13_015",
+      "unit": "shikaku.takken.seigen.sonota.kokudo",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "国土利用計画法で、個々の面積は小さくても届出が必要になる「一団の土地」の考え方は？",
+      "choices": [
+        "1筆ごとに判断する",
+        "売主ごとの面積で判断する",
+        "一団の土地という考えはない",
+        "買主が計画的に取得する土地の合計で判断する"
+      ],
+      "answerIndex": 3,
+      "explanation": "事後届出は権利取得者（買主）側の一団で判断する。"
+    }
+  ]
+}

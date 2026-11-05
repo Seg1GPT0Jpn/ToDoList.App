@@ -1,0 +1,288 @@
+{
+  "setId": "math_ma_02",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_ma02_001",
+      "unit": "math.ma.prob.count.circular",
+      "category": "calculation",
+      "prompt": "5人が円形に並ぶ方法は何通り？",
+      "choices": [
+        "12通り",
+        "120通り",
+        "24通り",
+        "60通り"
+      ],
+      "answerIndex": 2,
+      "explanation": "円順列：(5−1)!。"
+    },
+    {
+      "id": "mat_ma02_002",
+      "unit": "math.ma.prob.count",
+      "category": "calculation",
+      "prompt": "異なる5個の玉で首飾りを作る方法は何通り？",
+      "choices": [
+        "120通り",
+        "60通り",
+        "24通り",
+        "12通り"
+      ],
+      "answerIndex": 3,
+      "explanation": "裏返すと同じになるので (5−1)!÷2。"
+    },
+    {
+      "id": "mat_ma02_003",
+      "unit": "math.ma.prob.count.permutation",
+      "category": "calculation",
+      "prompt": "a, b, c の3種類の文字を使って（くり返し可）4文字の列を作る方法は何通り？",
+      "choices": [
+        "64通り",
+        "81通り",
+        "24通り",
+        "12通り"
+      ],
+      "answerIndex": 1,
+      "explanation": "重複順列：3⁴。"
+    },
+    {
+      "id": "mat_ma02_004",
+      "unit": "math.ma.prob.count.permutation",
+      "category": "calculation",
+      "prompt": "A, A, B, B, C の5文字を1列に並べる方法は何通り？",
+      "choices": [
+        "120通り",
+        "60通り",
+        "30通り",
+        "20通り"
+      ],
+      "answerIndex": 2,
+      "explanation": "5!/(2!2!)。"
+    },
+    {
+      "id": "mat_ma02_005",
+      "unit": "math.ma.prob.count",
+      "category": "calculation",
+      "prompt": "0, 1, 2, 3, 4 の数字から異なる3つを使ってできる3桁の整数は何個？",
+      "choices": [
+        "64個",
+        "36個",
+        "60個",
+        "48個"
+      ],
+      "answerIndex": 3,
+      "explanation": "百の位は0以外で4通り、残りは 4×3。"
+    },
+    {
+      "id": "mat_ma02_006",
+      "unit": "math.ma.prob.count.divide",
+      "category": "calculation",
+      "prompt": "6人を2人ずつ3組に分ける方法は何通り？（組に区別なし）",
+      "choices": [
+        "15通り",
+        "45通り",
+        "90通り",
+        "30通り"
+      ],
+      "answerIndex": 0,
+      "explanation": "₆C₂×₄C₂÷3!。"
+    },
+    {
+      "id": "mat_ma02_007",
+      "unit": "math.ma.prob.count.same",
+      "category": "calculation",
+      "prompt": "右に3区画、上に2区画進む最短経路は何通り？",
+      "choices": [
+        "20通り",
+        "10通り",
+        "6通り",
+        "5通り"
+      ],
+      "answerIndex": 1,
+      "explanation": "5回のうち上に進む2回を選ぶ：₅C₂。"
+    },
+    {
+      "id": "mat_ma02_008",
+      "unit": "math.ma.prob.count.combination",
+      "category": "calculation",
+      "prompt": "男子4人・女子3人から3人を選ぶとき、女子が少なくとも1人入る選び方は何通り？",
+      "choices": [
+        "30通り",
+        "35通り",
+        "31通り",
+        "18通り"
+      ],
+      "answerIndex": 2,
+      "explanation": "全体 ₇C₃=35 から男子だけ ₄C₃=4 を引く。"
+    },
+    {
+      "id": "mat_ma02_009",
+      "unit": "math.ma.prob.count.combination",
+      "category": "calculation",
+      "prompt": "正六角形の対角線の本数は？",
+      "choices": [
+        "15本",
+        "9本",
+        "12本",
+        "6本"
+      ],
+      "answerIndex": 1,
+      "explanation": "₆C₂−6（辺の数）。"
+    },
+    {
+      "id": "mat_ma02_010",
+      "unit": "math.ma.prob.count.permutation",
+      "category": "thinking",
+      "prompt": "円順列が (n−1)! になる理由は？",
+      "choices": [
+        "円は裏返せるから",
+        "1人が必ず休むから",
+        "回転して同じになる並びを同じとみなすため、1人を固定して残りを並べるから",
+        "円には端がないのでn人とも区別しないから"
+      ],
+      "answerIndex": 2,
+      "explanation": "固定した1人を基準に、残り n−1 人を並べる。"
+    },
+    {
+      "id": "mat_ma02_011",
+      "unit": "math.ma.prob.count.circular",
+      "category": "calculation",
+      "prompt": "6人が円形に並ぶ方法は何通り？",
+      "choices": [
+        "720通り",
+        "360通り",
+        "120通り",
+        "60通り"
+      ],
+      "answerIndex": 2,
+      "explanation": "(6−1)!。"
+    },
+    {
+      "id": "mat_ma02_012",
+      "unit": "math.ma.prob.count.circular",
+      "category": "calculation",
+      "prompt": "男子3人・女子3人が、男女交互に円形に並ぶ方法は何通り？",
+      "choices": [
+        "36通り",
+        "6通り",
+        "12通り",
+        "72通り"
+      ],
+      "answerIndex": 2,
+      "explanation": "男子を円形に並べて 2!、間に女子を 3!。"
+    },
+    {
+      "id": "mat_ma02_013",
+      "unit": "math.ma.prob.count",
+      "category": "calculation",
+      "prompt": "4種類の文字を使って（くり返し可）3文字の列を作る方法は何通り？",
+      "choices": [
+        "24通り",
+        "12通り",
+        "64通り",
+        "81通り"
+      ],
+      "answerIndex": 2,
+      "explanation": "4³。"
+    },
+    {
+      "id": "mat_ma02_014",
+      "unit": "math.ma.prob.count.permutation",
+      "category": "calculation",
+      "prompt": "B, A, N, A, N, A の6文字を1列に並べる方法は何通り？",
+      "choices": [
+        "120通り",
+        "720通り",
+        "30通り",
+        "60通り"
+      ],
+      "answerIndex": 3,
+      "explanation": "6!/(3!2!)。"
+    },
+    {
+      "id": "mat_ma02_015",
+      "unit": "math.ma.prob.count",
+      "category": "calculation",
+      "prompt": "0〜5 の6個の数字から異なる4個を使ってできる4けたの整数は何個？",
+      "choices": [
+        "1296個",
+        "240個",
+        "300個",
+        "360個"
+      ],
+      "answerIndex": 2,
+      "explanation": "千の位は0以外で5通り、残りは 5×4×3。"
+    },
+    {
+      "id": "mat_ma02_016",
+      "unit": "math.ma.prob.count.divide",
+      "category": "calculation",
+      "prompt": "9人を3人ずつ3組に分ける方法は何通り？（組に区別なし）",
+      "choices": [
+        "560通り",
+        "1680通り",
+        "84通り",
+        "280通り"
+      ],
+      "answerIndex": 3,
+      "explanation": "₉C₃×₆C₃÷3!。"
+    },
+    {
+      "id": "mat_ma02_017",
+      "unit": "math.ma.prob.count.same",
+      "category": "calculation",
+      "prompt": "右に4区画、上に3区画進む最短経路は何通り？",
+      "choices": [
+        "12通り",
+        "70通り",
+        "35通り",
+        "21通り"
+      ],
+      "answerIndex": 2,
+      "explanation": "₇C₃。"
+    },
+    {
+      "id": "mat_ma02_018",
+      "unit": "math.ma.prob.count.combination",
+      "category": "calculation",
+      "prompt": "男子6人・女子4人から男女2人ずつ選ぶ方法は何通り？",
+      "choices": [
+        "21通り",
+        "90通り",
+        "60通り",
+        "210通り"
+      ],
+      "answerIndex": 1,
+      "explanation": "₆C₂×₄C₂=15×6。"
+    },
+    {
+      "id": "mat_ma02_019",
+      "unit": "math.ma.prob.count.combination",
+      "category": "calculation",
+      "prompt": "正八角形の対角線の本数は？",
+      "choices": [
+        "20本",
+        "16本",
+        "28本",
+        "24本"
+      ],
+      "answerIndex": 0,
+      "explanation": "₈C₂−8。"
+    },
+    {
+      "id": "mat_ma02_020",
+      "unit": "math.ma.prob.count",
+      "category": "calculation",
+      "prompt": "A をふくむ5人が1列に並ぶとき、A が先頭にならない並び方は何通り？",
+      "choices": [
+        "100通り",
+        "24通り",
+        "96通り",
+        "120通り"
+      ],
+      "answerIndex": 2,
+      "explanation": "全体 5! から A が先頭の 4! を引く。"
+    }
+  ]
+}

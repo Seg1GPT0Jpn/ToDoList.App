@@ -1,0 +1,344 @@
+{
+  "setId": "japanese_gendai_05",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "jap_gendai05_001",
+      "unit": "japanese.gendai.language.grammar.keigo",
+      "category": "knowledge",
+      "prompt": "「言う」の尊敬語は？",
+      "choices": [
+        "申す",
+        "おっしゃる",
+        "言います",
+        "申し上げる"
+      ],
+      "answerIndex": 1,
+      "explanation": "謙譲語は「申す」「申し上げる」。"
+    },
+    {
+      "id": "jap_gendai05_002",
+      "unit": "japanese.gendai.language.grammar.keigo",
+      "category": "knowledge",
+      "prompt": "「食べる」の尊敬語は？",
+      "choices": [
+        "いただく",
+        "召し上がる",
+        "食べます",
+        "頂戴する"
+      ],
+      "answerIndex": 1,
+      "explanation": "「いただく」は謙譲語。"
+    },
+    {
+      "id": "jap_gendai05_003",
+      "unit": "japanese.gendai.language.grammar.keigo",
+      "category": "knowledge",
+      "prompt": "「行く」の謙譲語は？",
+      "choices": [
+        "おいでになる",
+        "参る・伺う",
+        "行かれる",
+        "いらっしゃる"
+      ],
+      "answerIndex": 1,
+      "explanation": "「いらっしゃる」は尊敬語。"
+    },
+    {
+      "id": "jap_gendai05_004",
+      "unit": "japanese.gendai.language.grammar",
+      "category": "knowledge",
+      "prompt": "「先生が申されました」が誤りである理由は？",
+      "choices": [
+        "丁寧語が多すぎるから",
+        "主語がないから",
+        "謙譲語「申す」を、目上の人の動作に使っているから",
+        "過去形だから"
+      ],
+      "answerIndex": 2,
+      "explanation": "正しくは「先生がおっしゃいました」。"
+    },
+    {
+      "id": "jap_gendai05_005",
+      "unit": "japanese.gendai.language.grammar.keigo",
+      "category": "knowledge",
+      "prompt": "「お客様がお見えになられました」のように、敬語を重ねすぎたものを何という？",
+      "choices": [
+        "丁重語",
+        "美化語",
+        "謙譲語Ⅱ",
+        "二重敬語"
+      ],
+      "answerIndex": 3,
+      "explanation": "「お見えになりました」で十分。"
+    },
+    {
+      "id": "jap_gendai05_006",
+      "unit": "japanese.gendai.language.grammar.keigo",
+      "category": "knowledge",
+      "prompt": "「です・ます」などの敬語を何という？",
+      "choices": [
+        "美化語",
+        "丁寧語",
+        "謙譲語",
+        "尊敬語"
+      ],
+      "answerIndex": 1,
+      "explanation": "聞き手に対して丁寧に述べる。"
+    },
+    {
+      "id": "jap_gendai05_007",
+      "unit": "japanese.gendai.language.grammar.keigo",
+      "category": "knowledge",
+      "prompt": "「お茶」「ご飯」のように、物事を美しく言う言葉は？",
+      "choices": [
+        "尊敬語",
+        "美化語",
+        "丁重語",
+        "謙譲語"
+      ],
+      "answerIndex": 1,
+      "explanation": "敬語の分類の一つ。"
+    },
+    {
+      "id": "jap_gendai05_008",
+      "unit": "japanese.gendai.language.grammar",
+      "category": "knowledge",
+      "prompt": "「見れる」「来れる」のように、可能の意味の「られる」から「ら」が抜けた言葉を何という？",
+      "choices": [
+        "重ね言葉",
+        "さ入れ言葉",
+        "ら抜き言葉",
+        "い抜き言葉"
+      ],
+      "answerIndex": 2,
+      "explanation": "話し言葉では広がっているが、改まった文章では「見られる」を使う。"
+    },
+    {
+      "id": "jap_gendai05_009",
+      "unit": "japanese.gendai.language.grammar",
+      "category": "knowledge",
+      "prompt": "文末を「だ・である」でそろえた文体は？",
+      "choices": [
+        "文語体",
+        "敬体",
+        "口語体",
+        "常体"
+      ],
+      "answerIndex": 3,
+      "explanation": "「です・ます」でそろえるのは敬体。一つの文章ではどちらかにそろえる。"
+    },
+    {
+      "id": "jap_gendai05_010",
+      "unit": "japanese.gendai.language.grammar",
+      "category": "knowledge",
+      "prompt": "書き言葉の特徴として適切なものは？",
+      "choices": [
+        "表情や場の状況で補えないので、正確で整った表現が求められる",
+        "省略が多くても必ず伝わる",
+        "相手の反応を見ながら言い直せる",
+        "文法を気にしなくてよい"
+      ],
+      "answerIndex": 0,
+      "explanation": "話し言葉は、表情や抑揚、その場の状況に支えられている。"
+    },
+    {
+      "id": "jap_gendai05_011",
+      "unit": "japanese.gendai.language.grammar",
+      "category": "thinking",
+      "prompt": "目上の人へのメールの書き出しとして最も適切なものは？",
+      "choices": [
+        "○○先生　いつもお世話になっております。",
+        "やっほー、先生！",
+        "先生さま、元気？",
+        "おつかれー"
+      ],
+      "answerIndex": 0,
+      "explanation": "宛名・あいさつ・名乗り・用件の順に、丁寧な言葉で書く。"
+    },
+    {
+      "id": "jap_gendai05_012",
+      "unit": "japanese.gendai.language.grammar.keigo",
+      "category": "thinking",
+      "prompt": "「社長がお越しになる」を謙譲語を使った言い方に変え、自分側の動作にすると？",
+      "choices": [
+        "社長がおいでになります",
+        "社長のところへ参ります（伺います）",
+        "社長がいらっしゃいます",
+        "社長が来られます"
+      ],
+      "answerIndex": 1,
+      "explanation": "自分の動作をへりくだって述べるのが謙譲語。"
+    },
+    {
+      "id": "jap_gendai05_013",
+      "unit": "japanese.gendai.language.grammar.keigo",
+      "category": "knowledge",
+      "prompt": "「見る」の尊敬語は？",
+      "choices": [
+        "見られる",
+        "お目にかかる",
+        "拝見する",
+        "ご覧になる"
+      ],
+      "answerIndex": 3,
+      "explanation": "「拝見する」は謙譲語。"
+    },
+    {
+      "id": "jap_gendai05_014",
+      "unit": "japanese.gendai.language.grammar.keigo",
+      "category": "knowledge",
+      "prompt": "「もらう」の謙譲語は？",
+      "choices": [
+        "いただく",
+        "くださる",
+        "おもらいになる",
+        "お受けになる"
+      ],
+      "answerIndex": 0,
+      "explanation": "「くださる」は「くれる」の尊敬語。"
+    },
+    {
+      "id": "jap_gendai05_015",
+      "unit": "japanese.gendai.language.grammar.keigo",
+      "category": "knowledge",
+      "prompt": "「会う」の謙譲語は？",
+      "choices": [
+        "会われる",
+        "お会いになる",
+        "ご覧になる",
+        "お目にかかる"
+      ],
+      "answerIndex": 3,
+      "explanation": "相手を高めるために自分の動作をへりくだる。"
+    },
+    {
+      "id": "jap_gendai05_016",
+      "unit": "japanese.gendai.language.grammar.keigo",
+      "category": "knowledge",
+      "prompt": "「知っている」の謙譲語は？",
+      "choices": [
+        "ご存じだ",
+        "知っておられる",
+        "存じている",
+        "お知りになる"
+      ],
+      "answerIndex": 2,
+      "explanation": "「ご存じだ」は尊敬語。"
+    },
+    {
+      "id": "jap_gendai05_017",
+      "unit": "japanese.gendai.language.grammar.keigo",
+      "category": "knowledge",
+      "prompt": "「する」の尊敬語は？",
+      "choices": [
+        "させていただく",
+        "いたす",
+        "なさる",
+        "される方"
+      ],
+      "answerIndex": 2,
+      "explanation": "「いたす」は謙譲語。"
+    },
+    {
+      "id": "jap_gendai05_018",
+      "unit": "japanese.gendai.language.grammar.keigo",
+      "category": "knowledge",
+      "prompt": "「いる」の尊敬語は？",
+      "choices": [
+        "まいる",
+        "いらっしゃる",
+        "うかがう",
+        "おる"
+      ],
+      "answerIndex": 1,
+      "explanation": "「おる」は謙譲語（丁重語）。"
+    },
+    {
+      "id": "jap_gendai05_019",
+      "unit": "japanese.gendai.language.grammar",
+      "category": "knowledge",
+      "prompt": "「ら抜き言葉」でない正しい形は？",
+      "choices": [
+        "食べれる",
+        "来られる",
+        "見れる",
+        "来れる"
+      ],
+      "answerIndex": 1,
+      "explanation": "上一段・下一段・カ変の可能は「られる」。"
+    },
+    {
+      "id": "jap_gendai05_020",
+      "unit": "japanese.gendai.language.grammar",
+      "category": "knowledge",
+      "prompt": "「さ入れ言葉」の例は？",
+      "choices": [
+        "読まさせていただく",
+        "読ませていただく",
+        "書かせていただく",
+        "行かせていただく"
+      ],
+      "answerIndex": 0,
+      "explanation": "五段動詞には「せる」をつける。"
+    },
+    {
+      "id": "jap_gendai05_021",
+      "unit": "japanese.gendai.language.grammar",
+      "category": "knowledge",
+      "prompt": "手紙の頭語「拝啓」に対応する結語は？",
+      "choices": [
+        "草々",
+        "敬具",
+        "早々",
+        "かしこ"
+      ],
+      "answerIndex": 1,
+      "explanation": "「前略」には「草々」。"
+    },
+    {
+      "id": "jap_gendai05_022",
+      "unit": "japanese.gendai.language.grammar",
+      "category": "knowledge",
+      "prompt": "ビジネス文書で、相手の会社を書き言葉で表すときの言い方は？",
+      "choices": [
+        "貴社",
+        "御社",
+        "当社",
+        "弊社"
+      ],
+      "answerIndex": 0,
+      "explanation": "話し言葉では「御社」。自分の会社は「弊社」。"
+    },
+    {
+      "id": "jap_gendai05_023",
+      "unit": "japanese.gendai.language.grammar",
+      "category": "thinking",
+      "prompt": "「先生がおっしゃられた」が不適切とされる理由は？",
+      "choices": [
+        "丁寧語が足りないから",
+        "主語がないから",
+        "謙譲語だから",
+        "「おっしゃる」に尊敬の「れる」を重ねた二重敬語だから"
+      ],
+      "answerIndex": 3,
+      "explanation": "「おっしゃった」で十分。"
+    },
+    {
+      "id": "jap_gendai05_024",
+      "unit": "japanese.gendai.language.grammar",
+      "category": "thinking",
+      "prompt": "目上の人に「ご苦労さまです」と言うのが避けられる理由として一般に言われることは？",
+      "choices": [
+        "失礼な単語をふくむから",
+        "目上から目下へのねぎらいの言葉とされるから",
+        "古い言い方だから",
+        "謙譲語だから"
+      ],
+      "answerIndex": 1,
+      "explanation": "「お疲れさまです」が無難とされる。"
+    }
+  ]
+}

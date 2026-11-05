@@ -1,0 +1,456 @@
+{
+  "setId": "science_biology_09",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_bio09_001",
+      "unit": "science.biology.evolution.origin",
+      "category": "knowledge",
+      "prompt": "原始の地球で、無機物から有機物ができ、生命の誕生につながった過程を何という？",
+      "choices": [
+        "自然選択",
+        "遺伝的浮動",
+        "化学進化",
+        "適応放散"
+      ],
+      "answerIndex": 2,
+      "explanation": "ミラーの実験では、原始大気を模した気体に放電してアミノ酸が生じた。"
+    },
+    {
+      "id": "sci_bio09_002",
+      "unit": "science.biology.evolution.origin.origin",
+      "category": "knowledge",
+      "prompt": "地球上に最初の生物が現れたのはおよそ何年前？",
+      "choices": [
+        "約 5 億年前",
+        "約 6600 万年前",
+        "約 40 億年前",
+        "約 1 万年前"
+      ],
+      "answerIndex": 2,
+      "explanation": "地球の誕生は約 46 億年前。最初の生物は原核生物と考えられている。"
+    },
+    {
+      "id": "sci_bio09_003",
+      "unit": "science.biology.evolution.origin.origin",
+      "category": "knowledge",
+      "prompt": "光合成で酸素を放出し、大気中の酸素を増やした原核生物は？",
+      "choices": [
+        "大腸菌",
+        "シアノバクテリア",
+        "アメーバ",
+        "酵母"
+      ],
+      "answerIndex": 1,
+      "explanation": "シアノバクテリアがつくった層状の岩石をストロマトライトという。"
+    },
+    {
+      "id": "sci_bio09_004",
+      "unit": "science.biology.evolution.origin",
+      "category": "knowledge",
+      "prompt": "約 5 億年前、多様な動物が一気に出現した出来事を何という？",
+      "choices": [
+        "化学進化",
+        "氷河時代",
+        "大量絶滅",
+        "カンブリア紀の大爆発"
+      ],
+      "answerIndex": 3,
+      "explanation": "バージェス動物群やチェンジャン動物群の化石から知られる。"
+    },
+    {
+      "id": "sci_bio09_005",
+      "unit": "science.biology.evolution.origin",
+      "category": "knowledge",
+      "prompt": "「生存に有利な形質をもつ個体がより多くの子を残し、その形質が集団に広まる」という考え方は？",
+      "choices": [
+        "用不用説",
+        "中立説",
+        "自然選択説",
+        "細胞説"
+      ],
+      "answerIndex": 2,
+      "explanation": "ダーウィンが提唱。進化の主な原動力の一つ。"
+    },
+    {
+      "id": "sci_bio09_006",
+      "unit": "science.biology.evolution.origin",
+      "category": "knowledge",
+      "prompt": "偶然によって、集団の中の遺伝子の割合が変化することを何という？",
+      "choices": [
+        "隔離",
+        "自然選択",
+        "突然変異",
+        "遺伝的浮動"
+      ],
+      "answerIndex": 3,
+      "explanation": "個体数の少ない集団ほど影響が大きい。"
+    },
+    {
+      "id": "sci_bio09_007",
+      "unit": "science.biology.evolution.origin.mechanism",
+      "category": "knowledge",
+      "prompt": "1つの種が、地理的に分断されるなどして2つの種に分かれることを何という？",
+      "choices": [
+        "種分化",
+        "遷移",
+        "分化",
+        "適応"
+      ],
+      "answerIndex": 0,
+      "explanation": "地理的隔離から生殖的隔離が生じると、別の種になる。"
+    },
+    {
+      "id": "sci_bio09_008",
+      "unit": "science.biology.evolution.origin.origin",
+      "category": "knowledge",
+      "prompt": "ヒトの腕、コウモリの翼、クジラの胸びれのように、起源が同じで形やはたらきがちがう器官を何という？",
+      "choices": [
+        "痕跡器官",
+        "感覚器官",
+        "相似器官",
+        "相同器官"
+      ],
+      "answerIndex": 3,
+      "explanation": "共通の祖先をもつ証拠。チョウのはねと鳥の翼のように起源がちがい、はたらきが似たものは相似器官。"
+    },
+    {
+      "id": "sci_bio09_009",
+      "unit": "science.biology.evolution.origin",
+      "category": "knowledge",
+      "prompt": "ヒトの尾骨や虫垂のように、はたらきを失って名残りだけがある器官を何という？",
+      "choices": [
+        "感覚器官",
+        "痕跡器官",
+        "相似器官",
+        "相同器官"
+      ],
+      "answerIndex": 1,
+      "explanation": "祖先ではたらいていた器官の名残りで、進化の証拠になる。"
+    },
+    {
+      "id": "sci_bio09_010",
+      "unit": "science.biology.evolution.origin",
+      "category": "knowledge",
+      "prompt": "共通の祖先から、さまざまな環境に適応して多くの種に分かれることを何という？",
+      "choices": [
+        "遺伝的浮動",
+        "収束進化（収れん）",
+        "適応放散",
+        "絶滅"
+      ],
+      "answerIndex": 2,
+      "explanation": "例：オーストラリアの有袋類、ガラパゴス諸島のフィンチ。"
+    },
+    {
+      "id": "sci_bio09_011",
+      "unit": "science.biology.evolution.origin",
+      "category": "knowledge",
+      "prompt": "植物が陸上に進出したのはおよそいつ？",
+      "choices": [
+        "古生代（約 4.7 億年前ごろ）",
+        "先カンブリア時代の初め",
+        "新生代",
+        "中生代の終わり"
+      ],
+      "answerIndex": 0,
+      "explanation": "オゾン層ができて紫外線が弱まり、陸上で生活できるようになった。"
+    },
+    {
+      "id": "sci_bio09_012",
+      "unit": "science.biology.evolution.origin.mechanism",
+      "category": "knowledge",
+      "prompt": "進化のもとになる、遺伝子（DNA の塩基配列）の変化を何という？",
+      "choices": [
+        "自然選択",
+        "突然変異",
+        "分化",
+        "隔離"
+      ],
+      "answerIndex": 1,
+      "explanation": "突然変異で生じた新しい形質に、自然選択や遺伝的浮動がはたらく。"
+    },
+    {
+      "id": "sci_bio09_013",
+      "unit": "science.biology.evolution.origin.mechanism",
+      "category": "calculation",
+      "prompt": "ある集団で遺伝子 a の頻度が 0.3 のとき、ハーディー・ワインベルグの法則が成り立つとすると、aa の個体の割合は？",
+      "choices": [
+        "0.42",
+        "0.49",
+        "0.09",
+        "0.3"
+      ],
+      "answerIndex": 2,
+      "explanation": "aa の頻度 ＝ q² ＝ 0.3² ＝ 0.09。"
+    },
+    {
+      "id": "sci_bio09_014",
+      "unit": "science.biology.evolution.origin",
+      "category": "calculation",
+      "prompt": "前問の集団で、Aa（ヘテロ接合体）の個体の割合は？",
+      "choices": [
+        "0.21",
+        "0.09",
+        "0.49",
+        "0.42"
+      ],
+      "answerIndex": 3,
+      "explanation": "A の頻度 p ＝ 0.7。Aa ＝ 2pq ＝ 2 × 0.7 × 0.3 ＝ 0.42。"
+    },
+    {
+      "id": "sci_bio09_015",
+      "unit": "science.biology.evolution.origin",
+      "category": "thinking",
+      "prompt": "工業地帯で、すすで黒くなった樹木の上で、暗色型のガが明色型より増えた。この変化を説明するものは？",
+      "choices": [
+        "偶然だけで起こったから",
+        "ガがすすを食べて黒くなったから",
+        "目立ちにくい暗色型が鳥に食べられにくく、自然選択されたから",
+        "明色型が暗色型に変身したから"
+      ],
+      "answerIndex": 2,
+      "explanation": "工業暗化。環境の変化にともない、生存に有利な形質が変わった例。"
+    },
+    {
+      "id": "sci_bio09_016",
+      "unit": "science.biology.evolution.origin",
+      "category": "thinking",
+      "prompt": "小さな島に少数の個体が移り住んだ。この集団で起こりやすいことは？",
+      "choices": [
+        "突然変異が起こらなくなる",
+        "必ず絶滅する",
+        "遺伝子の割合がまったく変わらない",
+        "遺伝的浮動によって遺伝子の割合が大きく変化する"
+      ],
+      "answerIndex": 3,
+      "explanation": "個体数が少ないと、偶然による変化の影響が大きい（びん首効果・創始者効果）。"
+    },
+    {
+      "id": "sci_bio09_017",
+      "unit": "science.biology.evolution.origin.origin",
+      "category": "knowledge",
+      "prompt": "原始の大気に似せた気体に放電して、アミノ酸などができることを示した実験は？",
+      "choices": [
+        "グリフィスの実験",
+        "ミラーの実験",
+        "パスツールの実験",
+        "メンデルの実験"
+      ],
+      "answerIndex": 1,
+      "explanation": "化学進化の可能性を示した。"
+    },
+    {
+      "id": "sci_bio09_018",
+      "unit": "science.biology.evolution.origin.origin",
+      "category": "knowledge",
+      "prompt": "真核細胞のミトコンドリアや葉緑体が、もとは別の原核生物だったとする説は？",
+      "choices": [
+        "自然発生説",
+        "中立説",
+        "細胞内共生説",
+        "用不用説"
+      ],
+      "answerIndex": 2,
+      "explanation": "それぞれ独自の DNA をもつことなどが根拠。"
+    },
+    {
+      "id": "sci_bio09_019",
+      "unit": "science.biology.evolution.origin.mechanism",
+      "category": "knowledge",
+      "prompt": "生物の進化で、自然選択によらない偶然の変化が中心だとする考えは？",
+      "choices": [
+        "用不用説",
+        "創造説",
+        "定向進化説",
+        "中立説"
+      ],
+      "answerIndex": 3,
+      "explanation": "木村資生がとなえた。分子レベルの変異の多くは生存に有利でも不利でもない。"
+    },
+    {
+      "id": "sci_bio09_020",
+      "unit": "science.biology.evolution.origin.mechanism",
+      "category": "knowledge",
+      "prompt": "同じ種の中で、異なる地域の集団がそれぞれの環境に適応してちがいが生じることを何という？",
+      "choices": [
+        "適応",
+        "変態",
+        "絶滅",
+        "退化"
+      ],
+      "answerIndex": 0,
+      "explanation": "自然選択によって進む。"
+    },
+    {
+      "id": "sci_bio09_021",
+      "unit": "science.biology.evolution.origin",
+      "category": "knowledge",
+      "prompt": "異なる種が似た環境に適応して、似た形になる現象は？",
+      "choices": [
+        "収れん（収束進化）",
+        "適応放散",
+        "共進化",
+        "遺伝的浮動"
+      ],
+      "answerIndex": 0,
+      "explanation": "サメ（魚類）とイルカ（哺乳類）の体形など。"
+    },
+    {
+      "id": "sci_bio09_022",
+      "unit": "science.biology.evolution.origin",
+      "category": "knowledge",
+      "prompt": "2 種の生物が互いに影響し合いながら進化することを何という？",
+      "choices": [
+        "遺伝的浮動",
+        "隔離",
+        "共進化",
+        "収れん"
+      ],
+      "answerIndex": 2,
+      "explanation": "花の形と送粉昆虫の口の形など。"
+    },
+    {
+      "id": "sci_bio09_023",
+      "unit": "science.biology.evolution.origin.mechanism",
+      "category": "knowledge",
+      "prompt": "生殖的隔離とは？",
+      "choices": [
+        "地理的に離れていること",
+        "交配できない、または子が生殖能力をもたなくなる状態",
+        "食べ物がちがうこと",
+        "同じ場所に住むこと"
+      ],
+      "answerIndex": 1,
+      "explanation": "種分化の決め手になる。"
+    },
+    {
+      "id": "sci_bio09_024",
+      "unit": "science.biology.evolution.origin",
+      "category": "knowledge",
+      "prompt": "始祖鳥の化石が進化の証拠とされる理由は？",
+      "choices": [
+        "は虫類と鳥類の両方の特徴をもつから",
+        "魚類の特徴をもつから",
+        "現在も生きているから",
+        "最古の生物だから"
+      ],
+      "answerIndex": 0,
+      "explanation": "歯や尾骨がある一方で、羽毛や翼をもつ。"
+    },
+    {
+      "id": "sci_bio09_025",
+      "unit": "science.biology.evolution.origin",
+      "category": "knowledge",
+      "prompt": "哺乳類が多様化した時代は？",
+      "choices": [
+        "中生代",
+        "先カンブリア時代",
+        "古生代",
+        "新生代"
+      ],
+      "answerIndex": 3,
+      "explanation": "恐竜の絶滅後、さまざまな環境に適応放散した。"
+    },
+    {
+      "id": "sci_bio09_026",
+      "unit": "science.biology.evolution.origin.mechanism",
+      "category": "calculation",
+      "prompt": "ある集団で遺伝子 A の頻度が 0.6 のとき、ハーディ・ワインベルグの法則が成り立つとすると、AA の割合は？",
+      "choices": [
+        "0.36",
+        "0.48",
+        "0.16",
+        "0.6"
+      ],
+      "answerIndex": 0,
+      "explanation": "p² ＝ 0.6²。"
+    },
+    {
+      "id": "sci_bio09_027",
+      "unit": "science.biology.evolution.origin",
+      "category": "calculation",
+      "prompt": "前問の集団で、aa の割合は？",
+      "choices": [
+        "0.4",
+        "0.16",
+        "0.24",
+        "0.36"
+      ],
+      "answerIndex": 1,
+      "explanation": "q ＝ 0.4、q² ＝ 0.16。"
+    },
+    {
+      "id": "sci_bio09_028",
+      "unit": "science.biology.evolution.origin",
+      "category": "calculation",
+      "prompt": "ある集団で劣性形質（aa）の個体が 1 % いた。a の遺伝子頻度は？",
+      "choices": [
+        "0.2",
+        "0.01",
+        "0.5",
+        "0.1"
+      ],
+      "answerIndex": 3,
+      "explanation": "q² ＝ 0.01 → q ＝ 0.1。"
+    },
+    {
+      "id": "sci_bio09_029",
+      "unit": "science.biology.evolution.origin",
+      "category": "calculation",
+      "prompt": "ある遺伝子で、2 種の塩基配列のちがいが 20 か所。1000 万年に 4 か所ずつ変化するとすると、2 種が分かれたのは約何年前？（両方の系統で変化するとする）",
+      "choices": [
+        "約 5000 万年前",
+        "約 500 万年前",
+        "約 1 億年前",
+        "約 2500 万年前"
+      ],
+      "answerIndex": 3,
+      "explanation": "1 系統あたり 10 か所。10 ÷ 4 × 1000 万年。"
+    },
+    {
+      "id": "sci_bio09_030",
+      "unit": "science.biology.evolution.origin",
+      "category": "calculation",
+      "prompt": "100 個体の集団で、遺伝子型が AA 40、Aa 40、aa 20 のとき、A の遺伝子頻度は？",
+      "choices": [
+        "0.5",
+        "0.8",
+        "0.6",
+        "0.4"
+      ],
+      "answerIndex": 2,
+      "explanation": "(40 × 2 + 40) ÷ 200。"
+    },
+    {
+      "id": "sci_bio09_031",
+      "unit": "science.biology.evolution.origin.mechanism",
+      "category": "thinking",
+      "prompt": "ハーディ・ワインベルグの法則が成り立つ条件にあてはまらないのは？",
+      "choices": [
+        "他の集団との移出入がない",
+        "集団が小さい",
+        "自然選択がはたらかない",
+        "突然変異が起こらない"
+      ],
+      "answerIndex": 1,
+      "explanation": "集団が十分に大きいことが条件。小さいと遺伝的浮動が起こる。"
+    },
+    {
+      "id": "sci_bio09_032",
+      "unit": "science.biology.evolution.origin.mechanism",
+      "category": "thinking",
+      "prompt": "抗生物質を使い続けると、効かない細菌（耐性菌）が増えていく理由は？",
+      "choices": [
+        "薬が細菌を強くするから",
+        "薬が古くなるから",
+        "細菌が薬を食べるから",
+        "もともと少しいた耐性をもつ菌が生き残り、増えるから"
+      ],
+      "answerIndex": 3,
+      "explanation": "自然選択の身近な例。"
+    }
+  ]
+}

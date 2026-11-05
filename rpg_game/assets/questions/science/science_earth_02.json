@@ -1,0 +1,456 @@
+{
+  "setId": "science_earth_02",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_ear02_001",
+      "unit": "science.earth.solid.plate.plate",
+      "category": "knowledge",
+      "prompt": "プレートが新しくつくられる、海底の大山脈を何という？",
+      "choices": [
+        "トラフ",
+        "海嶺",
+        "海溝",
+        "島弧"
+      ],
+      "answerIndex": 1,
+      "explanation": "マントル物質が上昇してマグマができ、海洋プレートが生まれて両側へ広がる。"
+    },
+    {
+      "id": "sci_ear02_002",
+      "unit": "science.earth.solid.plate.plate",
+      "category": "knowledge",
+      "prompt": "海洋プレートが別のプレートの下に沈みこむ深い溝は？",
+      "choices": [
+        "ホットスポット",
+        "海嶺",
+        "海溝",
+        "大陸棚"
+      ],
+      "answerIndex": 2,
+      "explanation": "日本海溝や南海トラフなど。沈みこみ帯では地震や火山活動がさかん。"
+    },
+    {
+      "id": "sci_ear02_003",
+      "unit": "science.earth.solid.plate.plate",
+      "category": "knowledge",
+      "prompt": "プレートがすれちがう境界にできる断層を何という？",
+      "choices": [
+        "正断層",
+        "活断層",
+        "逆断層",
+        "トランスフォーム断層"
+      ],
+      "answerIndex": 3,
+      "explanation": "例：北アメリカ西岸のサンアンドレアス断層。"
+    },
+    {
+      "id": "sci_ear02_004",
+      "unit": "science.earth.solid.plate.history",
+      "category": "knowledge",
+      "prompt": "「大陸はかつて一つにまとまっていて、分かれて移動した」という大陸移動説を唱えたのは？",
+      "choices": [
+        "ハッブル",
+        "ケプラー",
+        "ウェゲナー",
+        "ダーウィン"
+      ],
+      "answerIndex": 2,
+      "explanation": "1912 年に提唱。まとまっていた大陸をパンゲアと呼んだ。"
+    },
+    {
+      "id": "sci_ear02_005",
+      "unit": "science.earth.solid.plate.plate",
+      "category": "knowledge",
+      "prompt": "プレートが生まれる海嶺で見られる火山活動は？",
+      "choices": [
+        "マントル物質の上昇にともなう玄武岩質マグマの噴出",
+        "溶岩ドームの形成",
+        "花こう岩質マグマの爆発的な噴火",
+        "火山活動はまったくない"
+      ],
+      "answerIndex": 0,
+      "explanation": "海嶺ではマントルが上昇してマグマができ、新しい海洋地殻（玄武岩）がつくられる。"
+    },
+    {
+      "id": "sci_ear02_006",
+      "unit": "science.earth.solid.plate.plate",
+      "category": "knowledge",
+      "prompt": "ハワイ諸島のように、プレートの動きと関係なくマントル深部からマグマが上がってくる場所は？",
+      "choices": [
+        "トランスフォーム断層",
+        "海溝",
+        "ホットスポット",
+        "島弧"
+      ],
+      "answerIndex": 2,
+      "explanation": "ホットスポットの位置はほぼ動かないので、プレートが動くと火山島の列ができる。"
+    },
+    {
+      "id": "sci_ear02_007",
+      "unit": "science.earth.solid.plate.plate",
+      "category": "knowledge",
+      "prompt": "日本列島付近にあるプレートの数は？",
+      "choices": [
+        "1 枚",
+        "6 枚",
+        "4 枚",
+        "2 枚"
+      ],
+      "answerIndex": 2,
+      "explanation": "北アメリカ・ユーラシア・太平洋・フィリピン海プレート。"
+    },
+    {
+      "id": "sci_ear02_008",
+      "unit": "science.earth.solid.plate.plate",
+      "category": "knowledge",
+      "prompt": "大陸プレートどうしが衝突してできた大山脈の例は？",
+      "choices": [
+        "ヒマラヤ山脈",
+        "ハワイ諸島",
+        "大西洋中央海嶺",
+        "日本海溝"
+      ],
+      "answerIndex": 0,
+      "explanation": "インド亜大陸がユーラシア大陸に衝突して、ヒマラヤ山脈やチベット高原ができた。"
+    },
+    {
+      "id": "sci_ear02_009",
+      "unit": "science.earth.solid.plate.plate",
+      "category": "knowledge",
+      "prompt": "プレート全体の厚さはおよそ？",
+      "choices": [
+        "100 km 程度",
+        "1000 km 程度",
+        "6400 km",
+        "1 km 程度"
+      ],
+      "answerIndex": 0,
+      "explanation": "プレートは地殻とマントル最上部からなり、厚さは数十〜100 km 程度。"
+    },
+    {
+      "id": "sci_ear02_010",
+      "unit": "science.earth.solid.plate.plate",
+      "category": "knowledge",
+      "prompt": "プレートの運動によって、地震・火山・造山運動などを説明する考え方を何という？",
+      "choices": [
+        "プレートテクトニクス",
+        "アイソスタシー",
+        "地動説",
+        "ビッグバン理論"
+      ],
+      "answerIndex": 0,
+      "explanation": "1960 年代に、大陸移動説や海洋底拡大説をもとに確立された。"
+    },
+    {
+      "id": "sci_ear02_011",
+      "unit": "science.earth.solid.plate.plate",
+      "category": "knowledge",
+      "prompt": "海嶺の両側の海底で、岩石の磁気の向き（N・S）が縞模様になっていることから支持された説は？",
+      "choices": [
+        "海洋底拡大説",
+        "天動説",
+        "地向斜説",
+        "大陸固定説"
+      ],
+      "answerIndex": 0,
+      "explanation": "地磁気は過去に何度も逆転しており、海嶺でできた岩石がそのときの向きを記録して両側へ広がった。"
+    },
+    {
+      "id": "sci_ear02_012",
+      "unit": "science.earth.solid.plate.plate",
+      "category": "calculation",
+      "prompt": "プレートが 1 年に 5 cm 動くとすると、100 万年で何 km 移動する？",
+      "choices": [
+        "0.5 km",
+        "500 km",
+        "50 km",
+        "5 km"
+      ],
+      "answerIndex": 2,
+      "explanation": "5 cm × 10⁶ ＝ 5 × 10⁶ cm ＝ 50 km。"
+    },
+    {
+      "id": "sci_ear02_013",
+      "unit": "science.earth.solid.plate.plate",
+      "category": "calculation",
+      "prompt": "海嶺から 300 km 離れた海底の岩石の年代が 600 万年だった。海洋底が広がる速さ（片側）は？",
+      "choices": [
+        "2 cm/年",
+        "0.5 cm/年",
+        "50 cm/年",
+        "5 cm/年"
+      ],
+      "answerIndex": 3,
+      "explanation": "300 km ＝ 3 × 10⁷ cm。3 × 10⁷ ÷ 6 × 10⁶ ＝ 5 cm/年。"
+    },
+    {
+      "id": "sci_ear02_014",
+      "unit": "science.earth.solid.plate",
+      "category": "calculation",
+      "prompt": "南アメリカとアフリカの間の大西洋（幅約 5000 km）が 1 億年かけて広がったとすると、平均の速さは？",
+      "choices": [
+        "5 m/年",
+        "5 cm/年",
+        "50 cm/年",
+        "0.5 cm/年"
+      ],
+      "answerIndex": 1,
+      "explanation": "5000 km ＝ 5 × 10⁸ cm。÷ 10⁸ 年 ＝ 5 cm/年。"
+    },
+    {
+      "id": "sci_ear02_015",
+      "unit": "science.earth.solid.plate.plate",
+      "category": "thinking",
+      "prompt": "海嶺から離れるほど、海底の岩石の年代が古くなる。このことからわかることは？",
+      "choices": [
+        "海嶺で海底が沈みこんでいる",
+        "海嶺は最も古い場所である",
+        "海底は動いていない",
+        "海底が海嶺でつくられ、両側に広がっている"
+      ],
+      "answerIndex": 3,
+      "explanation": "海洋底拡大説の証拠の一つ。"
+    },
+    {
+      "id": "sci_ear02_016",
+      "unit": "science.earth.solid.plate.plate",
+      "category": "thinking",
+      "prompt": "ハワイ諸島とその先の海山の列は、北西にあるものほど古い。このことからわかることは？",
+      "choices": [
+        "ホットスポットが南東へ動いている",
+        "太平洋プレートが北西の方向へ動いている",
+        "太平洋プレートが南東へ動いている",
+        "プレートは動いていない"
+      ],
+      "answerIndex": 1,
+      "explanation": "ホットスポットの上でできた火山島が、プレートにのって北西へ運ばれていった。"
+    },
+    {
+      "id": "sci_ear02_017",
+      "unit": "science.earth.solid.plate.plate",
+      "category": "knowledge",
+      "prompt": "プレートが互いに離れていく境界で見られる地形は？",
+      "choices": [
+        "海嶺・地溝帯",
+        "島弧",
+        "大山脈",
+        "海溝"
+      ],
+      "answerIndex": 0,
+      "explanation": "発散境界。アイスランドやアフリカ大地溝帯など。"
+    },
+    {
+      "id": "sci_ear02_018",
+      "unit": "science.earth.solid.plate.plate",
+      "category": "knowledge",
+      "prompt": "プレートが近づく境界を何という？",
+      "choices": [
+        "発散境界",
+        "収束境界",
+        "すれちがう境界",
+        "中立境界"
+      ],
+      "answerIndex": 1,
+      "explanation": "沈みこみ帯や衝突帯。"
+    },
+    {
+      "id": "sci_ear02_019",
+      "unit": "science.earth.solid.plate.plate",
+      "category": "knowledge",
+      "prompt": "サンアンドレアス断層（アメリカ）は、どの種類のプレート境界？",
+      "choices": [
+        "トランスフォーム断層（すれちがう境界）",
+        "海嶺",
+        "海溝",
+        "衝突帯"
+      ],
+      "answerIndex": 0,
+      "explanation": "プレートが水平にずれる。"
+    },
+    {
+      "id": "sci_ear02_020",
+      "unit": "science.earth.solid.plate.plate",
+      "category": "knowledge",
+      "prompt": "日本列島付近で、ユーラシアプレートの下に沈みこんでいる海洋プレートは？",
+      "choices": [
+        "北アメリカプレート",
+        "インド・オーストラリアプレート",
+        "南極プレート",
+        "フィリピン海プレート"
+      ],
+      "answerIndex": 3,
+      "explanation": "西日本の太平洋側で沈みこみ、南海トラフをつくっている。"
+    },
+    {
+      "id": "sci_ear02_021",
+      "unit": "science.earth.solid.plate.plate",
+      "category": "knowledge",
+      "prompt": "プレートが動く原動力として有力な考えは？",
+      "choices": [
+        "風の力",
+        "沈みこむプレート自身の重さで引っぱられる力",
+        "地球の公転",
+        "月の引力"
+      ],
+      "answerIndex": 1,
+      "explanation": "スラブプルと呼ばれる。"
+    },
+    {
+      "id": "sci_ear02_022",
+      "unit": "science.earth.solid.plate.plate",
+      "category": "knowledge",
+      "prompt": "日本列島の東側で太平洋プレートが沈みこんでいる海溝は？",
+      "choices": [
+        "南海トラフ",
+        "相模トラフ",
+        "マリアナ海溝だけ",
+        "日本海溝"
+      ],
+      "answerIndex": 3,
+      "explanation": "東北地方の太平洋沖にある。"
+    },
+    {
+      "id": "sci_ear02_023",
+      "unit": "science.earth.solid.plate.plate",
+      "category": "knowledge",
+      "prompt": "フィリピン海プレートが沈みこむ、西日本の太平洋側の溝は？",
+      "choices": [
+        "南海トラフ",
+        "日本海溝",
+        "千島海溝",
+        "伊豆・小笠原海溝"
+      ],
+      "answerIndex": 0,
+      "explanation": "くり返し巨大地震を起こしてきた。"
+    },
+    {
+      "id": "sci_ear02_024",
+      "unit": "science.earth.solid.plate.plate",
+      "category": "knowledge",
+      "prompt": "海洋プレートが大陸プレートの下に沈みこむ理由は？",
+      "choices": [
+        "海洋プレートの方が厚いから",
+        "海水の重さのため",
+        "大陸プレートが重いから",
+        "海洋プレートの方が密度が大きいから"
+      ],
+      "answerIndex": 3,
+      "explanation": "玄武岩質の海洋地殻は密度が大きい。"
+    },
+    {
+      "id": "sci_ear02_025",
+      "unit": "science.earth.solid.plate.plate",
+      "category": "knowledge",
+      "prompt": "大西洋中央海嶺が陸上に現れている島は？",
+      "choices": [
+        "ハワイ島",
+        "アイスランド",
+        "日本列島",
+        "ニュージーランド"
+      ],
+      "answerIndex": 1,
+      "explanation": "島の中をプレート境界が通り、裂け目が見られる。"
+    },
+    {
+      "id": "sci_ear02_026",
+      "unit": "science.earth.solid.plate.plate",
+      "category": "calculation",
+      "prompt": "プレートが 1 年に 8 cm 動くとすると、1000 万年で何 km 動く？",
+      "choices": [
+        "800 km",
+        "80 km",
+        "8 km",
+        "8000 km"
+      ],
+      "answerIndex": 0,
+      "explanation": "8 cm × 10⁷ ＝ 8 × 10⁷ cm ＝ 800 km。"
+    },
+    {
+      "id": "sci_ear02_027",
+      "unit": "science.earth.solid.plate.plate",
+      "category": "calculation",
+      "prompt": "海嶺から 200 km 離れた海底の岩石が 400 万年前にできた。プレートの動く速さは 1 年に何 cm？",
+      "choices": [
+        "2 cm",
+        "5 cm",
+        "0.5 cm",
+        "50 cm"
+      ],
+      "answerIndex": 1,
+      "explanation": "2 × 10⁷ cm ÷ 4 × 10⁶ 年。"
+    },
+    {
+      "id": "sci_ear02_028",
+      "unit": "science.earth.solid.plate.plate",
+      "category": "calculation",
+      "prompt": "ハワイ島から約 600 km 離れた島が約 500 万年前にできた。太平洋プレートの速さはおよそ 1 年に何 cm？",
+      "choices": [
+        "約 5 cm",
+        "約 120 cm",
+        "約 1.2 cm",
+        "約 12 cm"
+      ],
+      "answerIndex": 3,
+      "explanation": "6 × 10⁷ cm ÷ 5 × 10⁶ 年。"
+    },
+    {
+      "id": "sci_ear02_029",
+      "unit": "science.earth.solid.plate.plate",
+      "category": "calculation",
+      "prompt": "海嶺の両側に年 3 cm ずつ離れていく（片側）とき、2 つの陸地の距離は 100 万年で何 km 広がる？",
+      "choices": [
+        "300 km",
+        "30 km",
+        "60 km",
+        "3 km"
+      ],
+      "answerIndex": 2,
+      "explanation": "両側で年 6 cm。6 cm × 10⁶。"
+    },
+    {
+      "id": "sci_ear02_030",
+      "unit": "science.earth.solid.plate.plate",
+      "category": "calculation",
+      "prompt": "海底の岩石の年代で、最も古いものはおよそ？",
+      "choices": [
+        "約 10 億年前",
+        "約 2 億年前",
+        "約 1 万年前",
+        "約 40 億年前"
+      ],
+      "answerIndex": 1,
+      "explanation": "古い海洋プレートは海溝で沈みこむため、大陸の岩石よりずっと若い。"
+    },
+    {
+      "id": "sci_ear02_031",
+      "unit": "science.earth.solid.plate.history",
+      "category": "thinking",
+      "prompt": "大陸移動説の証拠として正しくないものは？",
+      "choices": [
+        "大陸の上に高い山がある",
+        "大陸をまたいで氷河の跡がつながる",
+        "離れた大陸で同じ種類の化石が見つかる",
+        "南アメリカとアフリカの海岸線の形がよく合う"
+      ],
+      "answerIndex": 0,
+      "explanation": "山の高さは大陸移動の証拠ではない。"
+    },
+    {
+      "id": "sci_ear02_032",
+      "unit": "science.earth.solid.plate.plate",
+      "category": "thinking",
+      "prompt": "深発地震面（和達－ベニオフ帯）が海溝から大陸側へ深くなっていくことからわかることは？",
+      "choices": [
+        "大陸プレートが沈みこんでいる",
+        "海洋プレートが斜めに沈みこんでいる",
+        "マントルが上昇している",
+        "プレートは動いていない"
+      ],
+      "answerIndex": 1,
+      "explanation": "地震の震源が沈みこむプレートにそって並ぶ。"
+    }
+  ]
+}

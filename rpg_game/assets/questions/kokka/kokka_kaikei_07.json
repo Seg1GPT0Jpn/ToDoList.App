@@ -1,0 +1,188 @@
+{
+  "setId": "kokka_kaikei_07",
+  "worldId": "kokka",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "kai07_001",
+      "unit": "kokka.kaikei.kigyou.kaisha.setsuritsu",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "株式会社の設立の2つの方法は？",
+      "choices": [
+        "単独設立と共同設立",
+        "発起設立と募集設立",
+        "新設設立と吸収設立",
+        "公開設立と非公開設立"
+      ],
+      "answerIndex": 1,
+      "explanation": "発起設立は発起人が設立時の株式をすべて引き受ける。"
+    },
+    {
+      "id": "kai07_002",
+      "unit": "kokka.kaikei.kigyou.kaisha.setsuritsu",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "株式会社を設立するときの資本金の最低額は？",
+      "choices": [
+        "100万円",
+        "300万円",
+        "制限はない（1円でもよい）",
+        "1,000万円"
+      ],
+      "answerIndex": 2,
+      "explanation": "2006年施行の会社法で最低資本金制度が廃止された。"
+    },
+    {
+      "id": "kai07_003",
+      "unit": "kokka.kaikei.kigyou.kaisha.kikan",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "株主総会の普通決議の要件（原則）は？",
+      "choices": [
+        "出席株主の議決権の3分の2以上",
+        "株主全員の同意",
+        "総株主の議決権の4分の3以上",
+        "議決権の過半数をもつ株主が出席し、出席株主の議決権の過半数"
+      ],
+      "answerIndex": 3,
+      "explanation": "会社法309条1項。取締役の選任などに用いる。"
+    },
+    {
+      "id": "kai07_004",
+      "unit": "kokka.kaikei.kigyou.kaisha.kikan",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "取締役の任期（原則）は？",
+      "choices": [
+        "選任後2年以内に終わる事業年度のうち最後のものに関する定時株主総会の終結の時まで",
+        "選任後1年以内",
+        "任期はない",
+        "選任後4年以内"
+      ],
+      "answerIndex": 0,
+      "explanation": "会社法332条1項。非公開会社は定款で10年まで伸ばせる。"
+    },
+    {
+      "id": "kai07_005",
+      "unit": "kokka.kaikei.kigyou.kaisha.kikan",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "監査役の任期（原則）は？",
+      "choices": [
+        "2年",
+        "4年",
+        "10年",
+        "1年"
+      ],
+      "answerIndex": 1,
+      "explanation": "会社法336条1項。定款で短くすることはできない。"
+    },
+    {
+      "id": "kai07_006",
+      "unit": "kokka.kaikei.kigyou.kaisha.kikan",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "取締役が会社と取引をする（利益相反取引）ときに必要なのは？",
+      "choices": [
+        "代表取締役の承認だけ",
+        "承認はいらない",
+        "株主総会（取締役会設置会社では取締役会）の承認",
+        "監査役への報告だけ"
+      ],
+      "answerIndex": 2,
+      "explanation": "会社法356条・365条。"
+    },
+    {
+      "id": "kai07_007",
+      "unit": "kokka.kaikei.kigyou.kaisha.kikan",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "公開会社で、株主代表訴訟を起こすことができる株主は？",
+      "choices": [
+        "議決権の過半数をもつ株主",
+        "設立時からの株主だけ",
+        "取締役会が認めた株主",
+        "6か月前から引き続き株式をもつ株主"
+      ],
+      "answerIndex": 3,
+      "explanation": "会社法847条。まず会社に提訴を請求する。"
+    },
+    {
+      "id": "kai07_008",
+      "unit": "kokka.kaikei.kigyou.kaisha.keisan",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "純資産額がいくら未満のとき、剰余金の配当ができない？",
+      "choices": [
+        "300万円",
+        "100万円",
+        "1円",
+        "1,000万円"
+      ],
+      "answerIndex": 0,
+      "explanation": "会社法458条。"
+    },
+    {
+      "id": "kai07_009",
+      "unit": "kokka.kaikei.kigyou.kaisha.saihen",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "合併や会社分割などの組織再編の承認に、原則として必要な株主総会の決議は？",
+      "choices": [
+        "決議はいらない",
+        "特別決議",
+        "普通決議",
+        "特殊決議"
+      ],
+      "answerIndex": 1,
+      "explanation": "簡易・略式の手続では株主総会の決議を省ける場合がある。"
+    },
+    {
+      "id": "kai07_010",
+      "unit": "kokka.kaikei.kigyou.kaisha.kinsho",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "上場会社が事業年度ごとに提出する、金融商品取引法の開示書類は？",
+      "choices": [
+        "有価証券届出書",
+        "登記簿謄本",
+        "有価証券報告書",
+        "確定申告書"
+      ],
+      "answerIndex": 2,
+      "explanation": "事業年度経過後3か月以内に提出する。"
+    },
+    {
+      "id": "kai07_011",
+      "unit": "kokka.kaikei.kigyou.kaisha.kinsho",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "有価証券報告書の提出期限は、事業年度経過後どれだけ以内？",
+      "choices": [
+        "1か月以内",
+        "6か月以内",
+        "1年以内",
+        "3か月以内"
+      ],
+      "answerIndex": 3,
+      "explanation": "金融商品取引法24条1項。"
+    },
+    {
+      "id": "kai07_012",
+      "unit": "kokka.kaikei.kigyou.kaisha.kinsho",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "上場会社が提出する内部統制報告書の監査を行うのは？",
+      "choices": [
+        "公認会計士または監査法人",
+        "会社の監査役だけ",
+        "税務署",
+        "証券取引所"
+      ],
+      "answerIndex": 0,
+      "explanation": "内部統制監査（金融商品取引法193条の2第2項）。"
+    }
+  ]
+}

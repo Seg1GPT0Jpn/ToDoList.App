@@ -1,0 +1,215 @@
+# 算数・数学の学習体系（tool/junior/gen.py が生成。手で直さない）
+@subject math|算数・数学|数理の迷宮国|ref=小学校 算数・中学校 数学|source=文部科学省 小学校・中学校学習指導要領（平成29年告示）|url=https://www.mext.go.jp/a_menu/shotou/new-cs/1384661.htm
+course e1|小1|grade=小1|game=小1の道|desc=10までの数・たし算ひき算・大きい数・とけい・かたち
+  field s1|かずとけいさん
+    unit a01|10までのかず
+      sub main|10までのかず
+    unit a02|たしざん|pre=math.e1.s1.a01
+      sub main|たしざん
+    unit a03|ひきざん|pre=math.e1.s1.a02
+      sub main|ひきざん
+    unit a04|かずとけいさんの まとめ
+      sub main|かずとけいさんの まとめ
+  field s2|大きいかずと くりあがり・くりさがり
+    unit a05|大きいかず（100まで）
+      sub main|大きいかず（100まで）
+    unit a06|くりあがりの ある たしざん|pre=math.e1.s2.a05
+      sub main|くりあがりの ある たしざん
+    unit a07|くりさがりの ある ひきざん|pre=math.e1.s2.a06
+      sub main|くりさがりの ある ひきざん
+    unit a08|とけい|pre=math.e1.s2.a07
+      sub main|とけい
+    unit a09|かたちと ながさくらべ|pre=math.e1.s2.a08
+      sub main|かたちと ながさくらべ
+    unit a10|1ねんせいの まとめ
+      sub main|1ねんせいの まとめ
+course e2|小2|grade=小2|game=小2の道|desc=ひっ算・1000までの数・長さとかさ・時こく・九九・三角形と四角形
+  field s1|ひっ算と大きい数
+    unit a01|たし算のひっ算
+      sub main|たし算のひっ算
+    unit a02|ひき算のひっ算|pre=math.e2.s1.a01
+      sub main|ひき算のひっ算
+    unit a03|1000までの数|pre=math.e2.s1.a02
+      sub main|1000までの数
+    unit a04|ひっ算と大きい数のまとめ
+      sub main|ひっ算と大きい数のまとめ
+  field s2|はかり方とかけ算
+    unit a05|長さ（mm・cm・m）
+      sub main|長さ（mm・cm・m）
+    unit a06|かさ（L・dL・mL）|pre=math.e2.s2.a05
+      sub main|かさ（L・dL・mL）
+    unit a07|時こくと時間|pre=math.e2.s2.a06
+      sub main|時こくと時間
+    unit a08|かけ算九九（2・3・4・5のだん）|pre=math.e2.s2.a07
+      sub main|かけ算九九（2・3・4・5のだん）
+    unit a09|かけ算九九（6・7・8・9・1のだん）|pre=math.e2.s2.a08
+      sub main|かけ算九九（6・7・8・9・1のだん）
+    unit a10|三角形と四角形・はこの形|pre=math.e2.s2.a09
+      sub main|三角形と四角形・はこの形
+    unit a11|2年生のまとめ
+      sub main|2年生のまとめ
+course e3|小3|grade=小3|game=小3の道|desc=わり算・大きい数・筆算・小数・分数・円と球
+  field s1|わり算と大きい数
+    unit a01|かけ算のきまり
+      sub main|かけ算のきまり
+    unit a02|わり算|pre=math.e3.s1.a01
+      sub main|わり算
+    unit a03|大きい数（万の位）|pre=math.e3.s1.a02
+      sub main|大きい数（万の位）
+    unit a04|わり算と大きい数のまとめ
+      sub main|わり算と大きい数のまとめ
+  field s2|筆算・小数・分数・図形
+    unit a05|3けた・4けたのたし算とひき算
+      sub main|3けた・4けたのたし算とひき算
+    unit a06|かけ算の筆算|pre=math.e3.s2.a05
+      sub main|かけ算の筆算
+    unit a07|あまりのあるわり算|pre=math.e3.s2.a06
+      sub main|あまりのあるわり算
+    unit a08|小数|pre=math.e3.s2.a07
+      sub main|小数
+    unit a09|分数|pre=math.e3.s2.a08
+      sub main|分数
+    unit a10|円と球・重さ・三角形|pre=math.e3.s2.a09
+      sub main|円と球・重さ・三角形
+    unit a11|3年生のまとめ
+      sub main|3年生のまとめ
+course e4|小4|grade=小4|game=小4の道|desc=億と兆・わり算の筆算・角・小数・分数・面積・がい数
+  field s1|大きい数・わり算・角
+    unit a01|大きい数（億・兆）
+      sub main|大きい数（億・兆）
+    unit a02|わり算の筆算|pre=math.e4.s1.a01
+      sub main|わり算の筆算
+    unit a03|角の大きさ|pre=math.e4.s1.a02
+      sub main|角の大きさ
+    unit a04|大きい数・わり算・角のまとめ
+      sub main|大きい数・わり算・角のまとめ
+  field s2|小数・分数・面積
+    unit a05|小数のたし算とひき算
+      sub main|小数のたし算とひき算
+    unit a06|小数のかけ算とわり算|pre=math.e4.s2.a05
+      sub main|小数のかけ算とわり算
+    unit a07|分数（仮分数・帯分数）|pre=math.e4.s2.a06
+      sub main|分数（仮分数・帯分数）
+    unit a08|面積|pre=math.e4.s2.a07
+      sub main|面積
+    unit a09|垂直・平行と四角形・直方体|pre=math.e4.s2.a08
+      sub main|垂直・平行と四角形・直方体
+    unit a10|がい数|pre=math.e4.s2.a09
+      sub main|がい数
+    unit a11|4年生のまとめ
+      sub main|4年生のまとめ
+course e5|小5|grade=小5|game=小5の道|desc=小数のかけ算わり算・倍数と約数・分数・平均・速さ・割合・面積と体積
+  field s1|小数のかけ算わり算・倍数と約数
+    unit a01|整数と小数・体積
+      sub main|整数と小数・体積
+    unit a02|小数のかけ算|pre=math.e5.s1.a01
+      sub main|小数のかけ算
+    unit a03|小数のわり算|pre=math.e5.s1.a02
+      sub main|小数のわり算
+    unit a04|小数と体積のまとめ
+      sub main|小数と体積のまとめ
+  field s2|分数・平均・割合・図形
+    unit a05|倍数と約数
+      sub main|倍数と約数
+    unit a06|分数のたし算とひき算|pre=math.e5.s2.a05
+      sub main|分数のたし算とひき算
+    unit a07|平均|pre=math.e5.s2.a06
+      sub main|平均
+    unit a08|単位量あたりの大きさ・速さ|pre=math.e5.s2.a07
+      sub main|単位量あたりの大きさ・速さ
+    unit a09|割合と百分率|pre=math.e5.s2.a08
+      sub main|割合と百分率
+    unit a10|図形の角・面積・円周|pre=math.e5.s2.a09
+      sub main|図形の角・面積・円周
+    unit a11|5年生のまとめ
+      sub main|5年生のまとめ
+course e6|小6|grade=小6|game=小6の道|desc=文字と式・分数のかけ算わり算・比・比例と反比例・円の面積・体積・場合の数
+  field s1|文字と式・分数の計算
+    unit a01|文字と式
+      sub main|文字と式
+    unit a02|分数のかけ算|pre=math.e6.s1.a01
+      sub main|分数のかけ算
+    unit a03|分数のわり算|pre=math.e6.s1.a02
+      sub main|分数のわり算
+    unit a04|文字と式・分数のまとめ
+      sub main|文字と式・分数のまとめ
+  field s2|比・比例・図形・データ
+    unit a05|比
+      sub main|比
+    unit a06|比例と反比例|pre=math.e6.s2.a05
+      sub main|比例と反比例
+    unit a07|対称な図形・拡大図と縮図・円の面積|pre=math.e6.s2.a06
+      sub main|対称な図形・拡大図と縮図・円の面積
+    unit a08|立体の体積・場合の数・データ|pre=math.e6.s2.a07
+      sub main|立体の体積・場合の数・データ
+    unit a09|計算のきまり（総合）|pre=math.e6.s2.a08
+      sub main|計算のきまり（総合）
+    unit a10|6年生のまとめ
+      sub main|6年生のまとめ
+course j1|中1|grade=中1|game=中1の道|desc=正負の数・文字式・方程式・比例反比例・平面図形・空間図形・データ
+  field s1|数と式
+    unit a01|正負の数
+      sub main|正負の数
+    unit a02|正負の数の計算|pre=math.j1.s1.a01
+      sub main|正負の数の計算
+    unit a03|文字と式|pre=math.j1.s1.a02
+      sub main|文字と式
+    unit a04|数と式のまとめ
+      sub main|数と式のまとめ
+    unit a05|一次方程式|pre=math.j1.s1.a03
+      sub main|一次方程式
+  field s2|関数・図形・データ
+    unit a06|比例と反比例
+      sub main|比例と反比例
+    unit a07|平面図形|pre=math.j1.s2.a06
+      sub main|平面図形
+    unit a08|空間図形|pre=math.j1.s2.a07
+      sub main|空間図形
+    unit a09|データの活用|pre=math.j1.s2.a08
+      sub main|データの活用
+    unit a10|中1のまとめ
+      sub main|中1のまとめ
+course j2|中2|grade=中2|game=中2の道|desc=式の計算・連立方程式・一次関数・図形の性質と証明・確率・箱ひげ図
+  field s1|式と方程式・一次関数
+    unit a01|式の計算
+      sub main|式の計算
+    unit a02|連立方程式|pre=math.j2.s1.a01
+      sub main|連立方程式
+    unit a03|一次関数|pre=math.j2.s1.a02
+      sub main|一次関数
+    unit a04|式と関数のまとめ
+      sub main|式と関数のまとめ
+  field s2|図形・確率・データ
+    unit a05|平行と合同
+      sub main|平行と合同
+    unit a06|三角形と四角形|pre=math.j2.s2.a05
+      sub main|三角形と四角形
+    unit a07|確率|pre=math.j2.s2.a06
+      sub main|確率
+    unit a08|データの分布（箱ひげ図）|pre=math.j2.s2.a07
+      sub main|データの分布（箱ひげ図）
+    unit a09|中2のまとめ
+      sub main|中2のまとめ
+course j3|中3|grade=中3|game=中3の道|desc=展開と因数分解・平方根・二次方程式・関数y=ax²・相似・円・三平方・標本調査
+  field s1|式と方程式
+    unit a01|展開と因数分解
+      sub main|展開と因数分解
+    unit a02|平方根|pre=math.j3.s1.a01
+      sub main|平方根
+    unit a03|二次方程式|pre=math.j3.s1.a02
+      sub main|二次方程式
+    unit a04|式と方程式のまとめ
+      sub main|式と方程式のまとめ
+  field s2|関数と図形
+    unit a05|関数 y = ax²
+      sub main|関数 y = ax²
+    unit a06|相似な図形|pre=math.j3.s2.a05
+      sub main|相似な図形
+    unit a07|円周角|pre=math.j3.s2.a06
+      sub main|円周角
+    unit a08|三平方の定理|pre=math.j3.s2.a07
+      sub main|三平方の定理
+    unit a09|標本調査|pre=math.j3.s2.a08
+      sub main|標本調査
+    unit a10|中3のまとめ
+      sub main|中3のまとめ

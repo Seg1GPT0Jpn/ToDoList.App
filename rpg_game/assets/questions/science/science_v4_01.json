@@ -1,0 +1,586 @@
+{
+  "setId": "science_v4_01",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_v4_001",
+      "unit": "science.chemistry.organic.aromatic.benzene",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ベンゼンに濃硫酸と濃硝酸の混合物を加えて加熱すると何ができる？",
+      "choices": [
+        "フェノール",
+        "ニトロベンゼン",
+        "クロロベンゼン",
+        "ベンゼンスルホン酸"
+      ],
+      "answerIndex": 1,
+      "explanation": "ニトロ化（置換反応）。濃硫酸は触媒としてはたらく。濃硫酸だけを加えて加熱するとスルホン化でベンゼンスルホン酸。",
+      "difficulty": "basic",
+      "thinkingLevel": 1
+    },
+    {
+      "id": "sci_v4_002",
+      "unit": "science.chemistry.organic.aromatic.benzene",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ベンゼン環が起こしやすい反応の種類は？",
+      "choices": [
+        "付加反応",
+        "加水分解",
+        "置換反応",
+        "脱水縮合"
+      ],
+      "answerIndex": 2,
+      "explanation": "ベンゼン環は安定で、付加反応より置換反応（ニトロ化・スルホン化・ハロゲン化）を起こしやすい。付加は特別な条件（光と塩素、高温高圧の水素）でのみ起こる。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "sci_v4_003",
+      "unit": "science.chemistry.organic.aromatic.phenol",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "フェノールの水溶液に塩化鉄(Ⅲ)水溶液を加えるとどうなる？",
+      "choices": [
+        "変化しない",
+        "紫色になる",
+        "赤褐色になる",
+        "白色沈殿ができる"
+      ],
+      "answerIndex": 1,
+      "explanation": "フェノール類（ベンゼン環に直接 OH がつく）の検出反応。ベンジルアルコールは OH が環に直接ついていないので呈色しない。",
+      "difficulty": "basic",
+      "thinkingLevel": 1
+    },
+    {
+      "id": "sci_v4_004",
+      "unit": "science.chemistry.organic.aromatic.phenol",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "フェノールが水酸化ナトリウム水溶液に溶けるのに、炭酸水素ナトリウム水溶液には溶けない理由は？",
+      "choices": [
+        "フェノールは塩基だから",
+        "フェノールは水に溶けないから",
+        "フェノールは炭酸より弱い酸だから",
+        "炭酸水素ナトリウムが酸化剤だから"
+      ],
+      "answerIndex": 2,
+      "explanation": "酸の強さは 塩酸 > カルボン酸 > 炭酸 > フェノール。弱い酸の塩に強い酸を加えると弱い酸が遊離する。フェノールは炭酸より弱いので NaHCO₃ とは反応しない。",
+      "difficulty": "standard",
+      "thinkingLevel": 3,
+      "commonMistakes": [
+        "フェノールは酸性なので何の塩基とも反応すると考える"
+      ]
+    },
+    {
+      "id": "sci_v4_005",
+      "unit": "science.chemistry.organic.aromatic.amine",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ニトロベンゼンをスズと濃塩酸で還元し、その後 NaOH を加えて得られる物質は？",
+      "choices": [
+        "トルエン",
+        "フェノール",
+        "アニリン",
+        "安息香酸"
+      ],
+      "answerIndex": 2,
+      "explanation": "還元でアニリン塩酸塩ができ、強塩基 NaOH で弱塩基アニリンが遊離する。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "sci_v4_006",
+      "unit": "science.chemistry.organic.aromatic.amine",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "アニリンを検出する反応は？",
+      "choices": [
+        "塩化鉄(Ⅲ)で紫色になる",
+        "銀鏡反応",
+        "さらし粉水溶液で赤紫色になる",
+        "ヨードホルム反応"
+      ],
+      "answerIndex": 2,
+      "explanation": "アニリンはさらし粉で赤紫色。二クロム酸カリウムで酸化するとアニリンブラック（黒色）。",
+      "difficulty": "basic",
+      "thinkingLevel": 1
+    },
+    {
+      "id": "sci_v4_007",
+      "unit": "science.chemistry.organic.aromatic.amine",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "アニリンを 0〜5℃ で亜硝酸ナトリウムと塩酸と反応させ、そこにナトリウムフェノキシドを加えると何ができる？",
+      "choices": [
+        "ニトロベンゼン",
+        "p-ヒドロキシアゾベンゼン（橙赤色）",
+        "塩化ベンゼンジアゾニウム",
+        "アセトアニリド"
+      ],
+      "answerIndex": 1,
+      "explanation": "ジアゾ化で塩化ベンゼンジアゾニウム → カップリングでアゾ化合物（染料）。低温にするのは、ジアゾニウム塩が温まるとフェノールと窒素に分解するため。",
+      "difficulty": "advanced",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "sci_v4_008",
+      "unit": "science.chemistry.organic.aromatic.separation",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "アニリン・フェノール・安息香酸を含むエーテル溶液に塩酸を加えて振ると、水層に移るのは？",
+      "choices": [
+        "どれも移らない",
+        "安息香酸",
+        "アニリン",
+        "フェノール"
+      ],
+      "answerIndex": 2,
+      "explanation": "塩基性のアニリンだけが塩酸と反応して塩（アニリン塩酸塩）になり、水層へ移る。酸性の物質は塩酸とは反応しない。",
+      "difficulty": "standard",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "sci_v4_009",
+      "unit": "science.chemistry.organic.aromatic.separation",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "（前問の続き）残ったエーテル層に炭酸水素ナトリウム水溶液を加えて振ると、水層に移るのは？",
+      "choices": [
+        "アニリン",
+        "フェノール",
+        "安息香酸",
+        "どれも移らない"
+      ],
+      "answerIndex": 2,
+      "explanation": "炭酸より強い酸の安息香酸だけが NaHCO₃ と反応し、ナトリウム塩となって水層へ。フェノールは炭酸より弱いのでエーテル層に残り、次に NaOH で分ける。",
+      "difficulty": "advanced",
+      "thinkingLevel": 4,
+      "combines": [
+        "science.chemistry.organic.aromatic.phenol"
+      ]
+    },
+    {
+      "id": "sci_v4_010",
+      "unit": "science.chemistry.organic.aromatic.separation",
+      "unitLocked": true,
+      "category": "thinking",
+      "format": "order",
+      "prompt": "アニリン・フェノール・安息香酸・ニトロベンゼンを含むエーテル溶液から、4つを分離する手順に並べよ。",
+      "explanation": "塩基は酸で、強い酸は弱い塩基（NaHCO₃）で、弱い酸は強い塩基（NaOH）で、中性物質は最後まで残る。",
+      "difficulty": "advanced",
+      "thinkingLevel": 4,
+      "order": {
+        "items": [
+          "塩酸を加えて振り、アニリンを水層に移す",
+          "炭酸水素ナトリウム水溶液を加えて振り、安息香酸を水層に移す",
+          "水酸化ナトリウム水溶液を加えて振り、フェノールを水層に移す",
+          "エーテル層に残ったニトロベンゼンを取り出す"
+        ],
+        "joiner": " → "
+      }
+    },
+    {
+      "id": "sci_v4_011",
+      "unit": "science.chemistry.organic.basic.analysis",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "C・H・O からなる化合物 30 mg を完全燃焼させると、CO₂ 44 mg と H₂O 18 mg が生じた。組成式は？（H=1, C=12, O=16）",
+      "choices": [
+        "CHO",
+        "C₂H₄O",
+        "CH₄O",
+        "CH₂O"
+      ],
+      "answerIndex": 3,
+      "explanation": "C：44×12/44 = 12 mg、H：18×2/18 = 2 mg、O：30 − 12 − 2 = 16 mg。物質量比 C:H:O = 12/12 : 2/1 : 16/16 = 1:2:1。",
+      "difficulty": "standard",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "sci_v4_012",
+      "unit": "science.chemistry.organic.basic.analysis",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "前問の化合物の分子量が 60 のとき、分子式は？",
+      "choices": [
+        "C₃H₈O",
+        "C₂H₄O₂",
+        "C₂H₄O",
+        "CH₂O"
+      ],
+      "answerIndex": 1,
+      "explanation": "組成式 CH₂O の式量は 30。60 ÷ 30 = 2 なので分子式は C₂H₄O₂（酢酸など）。",
+      "difficulty": "standard",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "sci_v4_013",
+      "unit": "science.chemistry.organic.basic.isomer",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "分子式 C₄H₁₀O で表されるアルコールの構造異性体の数は？",
+      "choices": [
+        "4種類",
+        "2種類",
+        "7種類",
+        "3種類"
+      ],
+      "answerIndex": 0,
+      "explanation": "1-ブタノール・2-ブタノール・2-メチル-1-プロパノール・2-メチル-2-プロパノールの4種。エーテルまで数えると7種になる。",
+      "difficulty": "advanced",
+      "thinkingLevel": 4,
+      "commonMistakes": [
+        "エーテル（3種）も数えて7種と答える"
+      ]
+    },
+    {
+      "id": "sci_v4_014",
+      "unit": "science.chemistry.organic.basic.isomer",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "2-ブタノールに鏡像異性体（光学異性体）が存在する理由は？",
+      "choices": [
+        "OH を2つもつから",
+        "二重結合をもつから",
+        "環状構造だから",
+        "不斉炭素原子をもつから"
+      ],
+      "answerIndex": 3,
+      "explanation": "4つの異なる原子・原子団（H, OH, CH₃, C₂H₅）が結合した炭素（不斉炭素原子）があると、鏡に映した関係の異性体が生じる。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "sci_v4_015",
+      "unit": "science.chemistry.organic.basic.feature",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "有機化合物に共通する性質として正しいものは？",
+      "choices": [
+        "多くは燃えやすく、融点が比較的低い",
+        "すべて固体である",
+        "多くはイオン結合でできている",
+        "多くは水によく溶け電離する"
+      ],
+      "answerIndex": 0,
+      "explanation": "有機化合物は主に共有結合でできた分子で、融点・沸点が低く、可燃性のものが多い。水に溶けにくいものが多い。",
+      "difficulty": "basic",
+      "thinkingLevel": 1
+    },
+    {
+      "id": "sci_v4_016",
+      "unit": "science.physics.mechanics.rigid.moment",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "長さ 2.0 m の軽い棒の左端に 30 N、右端に 20 N のおもりをつるす。棒を水平につり合わせるには、左端から何 m の点で支えればよい？",
+      "choices": [
+        "1.0 m",
+        "0.80 m",
+        "0.60 m",
+        "1.2 m"
+      ],
+      "answerIndex": 1,
+      "explanation": "支点を左端から x とすると、30x = 20(2.0 − x) より 50x = 40、x = 0.80 m。重い方に近い位置で支える。",
+      "difficulty": "standard",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "sci_v4_017",
+      "unit": "science.physics.mechanics.rigid.moment",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "力のモーメントの大きさを表す式は？（F：力、L：回転軸から作用線までの距離）",
+      "choices": [
+        "F × L",
+        "F ÷ L",
+        "F × L²",
+        "F + L"
+      ],
+      "answerIndex": 0,
+      "explanation": "モーメント M = FL。作用線までの「垂直な距離（うでの長さ）」をかけるのがポイント。",
+      "difficulty": "basic",
+      "thinkingLevel": 1
+    },
+    {
+      "id": "sci_v4_018",
+      "unit": "science.physics.mechanics.rigid.moment",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "剛体がつり合うための条件として正しい組み合わせは？",
+      "choices": [
+        "力の和が0だけでよい",
+        "力のモーメントの和が0だけでよい",
+        "速度が0であればよい",
+        "力の和が0、かつ任意の点のまわりの力のモーメントの和が0"
+      ],
+      "answerIndex": 3,
+      "explanation": "質点のつり合いは力の和が0で十分だが、大きさのある剛体は回転もしないことが必要。2つの条件がそろってはじめてつり合う。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "sci_v4_019",
+      "unit": "science.physics.mechanics.rigid.center",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "質量 2.0 kg の小球を x = 0 m、3.0 kg の小球を x = 5.0 m に置く。2つの重心の位置は？",
+      "choices": [
+        "x = 3.5 m",
+        "x = 3.0 m",
+        "x = 2.5 m",
+        "x = 2.0 m"
+      ],
+      "answerIndex": 1,
+      "explanation": "x_G = (2.0×0 + 3.0×5.0)/(2.0 + 3.0) = 15/5 = 3.0 m。重い方に近づく。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "sci_v4_020",
+      "unit": "science.physics.mechanics.rigid.center",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "なめらかな壁に立てかけたはしごが、床との摩擦ですべらずにいる。はしごにはたらく力として正しくないものは？",
+      "choices": [
+        "壁からの垂直抗力",
+        "重力",
+        "壁からの鉛直上向きの摩擦力",
+        "床からの垂直抗力"
+      ],
+      "answerIndex": 2,
+      "explanation": "壁が「なめらか」なので壁からは垂直抗力（水平）だけで摩擦力ははたらかない。床からは垂直抗力と静止摩擦力がはたらく。",
+      "difficulty": "advanced",
+      "thinkingLevel": 4,
+      "combines": [
+        "science.physics.mechanics.force.friction"
+      ]
+    },
+    {
+      "id": "sci_v4_021",
+      "unit": "science.physics.mechanics.rigid.moment",
+      "unitLocked": true,
+      "category": "thinking",
+      "format": "written",
+      "prompt": "長さ L、質量 m の一様な棒を、なめらかな鉛直の壁と粗い水平な床の間に、床と角 θ をなして立てかけた。棒がすべらないための、床との静止摩擦係数 μ の条件を求めよ。",
+      "explanation": "力のつり合い（水平・鉛直）と、床との接点のまわりのモーメントのつり合いの3式を立てる。最後に「摩擦力 ≦ μ × 垂直抗力」。",
+      "difficulty": "challenge",
+      "thinkingLevel": 6,
+      "phase": "difficultUniv",
+      "axes": {
+        "thinking": 4,
+        "calculation": 3,
+        "writing": 3
+      },
+      "estimatedSeconds": 600,
+      "written": {
+        "kind": "descriptive",
+        "modelAnswer": "壁からの垂直抗力を N₁（水平）、床からの垂直抗力を N₂、静止摩擦力を f とする。水平：f = N₁、鉛直：N₂ = mg。床との接点のまわりのモーメント：mg·(L/2)cosθ = N₁·L sinθ より N₁ = mg/(2tanθ)。すべらない条件 f ≦ μN₂ から mg/(2tanθ) ≦ μmg。よって μ ≧ 1/(2tanθ)。",
+        "rubric": [
+          {
+            "point": "力を正しく図示し、水平・鉛直のつり合いの式を立てている",
+            "score": 2
+          },
+          {
+            "point": "床との接点のまわりのモーメントのつり合いを正しく立てている",
+            "score": 2
+          },
+          {
+            "point": "N₁ = mg/(2tanθ) を導いている",
+            "score": 1
+          },
+          {
+            "point": "f ≦ μN₂ から μ ≧ 1/(2tanθ) を結論している",
+            "score": 2
+          }
+        ],
+        "passScore": 5
+      }
+    },
+    {
+      "id": "sci_v4_022",
+      "unit": "science.physics.mechanics.circular.shm",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "ばね定数 k のばねにつるした質量 m のおもりの単振動の周期を T とする。質量を 4m にすると周期は？",
+      "choices": [
+        "T",
+        "T/2",
+        "4T",
+        "2T"
+      ],
+      "answerIndex": 3,
+      "explanation": "T = 2π√(m/k)。m を4倍にすると √4 = 2 倍。",
+      "difficulty": "standard",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "sci_v4_023",
+      "unit": "science.physics.thermo.gas.cycle",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "理想気体を断熱圧縮すると、温度はどうなる？その理由は？",
+      "choices": [
+        "下がる。体積が小さくなるから",
+        "下がる。圧力が上がるから",
+        "上がる。外からされた仕事がそのまま内部エネルギーの増加になるから",
+        "変わらない。熱の出入りがないから"
+      ],
+      "answerIndex": 2,
+      "explanation": "熱力学第一法則 ΔU = Q + W で、断熱なので Q = 0。圧縮で W > 0 なので ΔU > 0、温度が上がる。「熱の出入りがない＝温度一定」ではない。",
+      "difficulty": "advanced",
+      "thinkingLevel": 4,
+      "commonMistakes": [
+        "断熱と等温を混同する"
+      ]
+    },
+    {
+      "id": "sci_v4_024",
+      "unit": "science.physics.em.magnetism.induction",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "一様な磁場（磁束密度 B）中を、長さ L の導体棒が磁場と垂直に速さ v で動く。棒の両端に生じる誘導起電力の大きさは？",
+      "choices": [
+        "vBL",
+        "BL/v",
+        "vB/L",
+        "v²BL"
+      ],
+      "answerIndex": 0,
+      "explanation": "単位時間に棒が横切る面積は vL、磁束の変化は vBL。ファラデーの法則より起電力 V = vBL。",
+      "difficulty": "standard",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "sci_v4_025",
+      "unit": "science.chemistry.equilibrium.rate.shift",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "N₂ + 3H₂ ⇄ 2NH₃（発熱反応）の平衡で、温度を上げるとどうなる？",
+      "choices": [
+        "反応が止まる",
+        "平衡が右に移動し NH₃ が増える",
+        "平衡は移動しない",
+        "平衡が左に移動し NH₃ が減る"
+      ],
+      "answerIndex": 3,
+      "explanation": "ルシャトリエの原理：温度を上げるとその影響をやわらげる吸熱方向（左）へ移動。ただし反応速度は上がるので、工業的には適度な温度と触媒を使う。",
+      "difficulty": "standard",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "sci_v4_026",
+      "unit": "science.chemistry.equilibrium.rate.ionic",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "0.10 mol/L の酢酸の電離度を 0.010 とすると、pH は？",
+      "choices": [
+        "4",
+        "1",
+        "3",
+        "2"
+      ],
+      "answerIndex": 2,
+      "explanation": "[H⁺] = cα = 0.10 × 0.010 = 1.0×10⁻³ mol/L。pH = 3。",
+      "difficulty": "standard",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "sci_v4_027",
+      "unit": "science.biology.cell.dna.expression",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "ある遺伝子の DNA の鋳型鎖の塩基配列が 3′-TAC GGA-5′ のとき、転写される mRNA の配列は？",
+      "choices": [
+        "5′-AUG CCU-3′",
+        "5′-ATG CCT-3′",
+        "5′-UAC GGA-3′",
+        "3′-AUG CCU-5′"
+      ],
+      "answerIndex": 0,
+      "explanation": "鋳型鎖と相補的で、T の代わりに U を使う。向きは逆平行なので 5′-AUG CCU-3′（AUG は開始コドン）。",
+      "difficulty": "advanced",
+      "thinkingLevel": 4,
+      "commonMistakes": [
+        "RNA なのに T を使う",
+        "5′と3′の向きを逆にする"
+      ]
+    },
+    {
+      "id": "sci_v4_028",
+      "unit": "science.biology.body.homeostasis.glucose",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "食後に血糖値が上がったとき、すい臓のランゲルハンス島 B 細胞から分泌され、血糖値を下げるホルモンは？",
+      "choices": [
+        "インスリン",
+        "グルカゴン",
+        "チロキシン",
+        "アドレナリン"
+      ],
+      "answerIndex": 0,
+      "explanation": "インスリンは細胞へのグルコースの取りこみや、肝臓でのグリコーゲン合成を促す。グルカゴン（A 細胞）やアドレナリンは血糖値を上げる。",
+      "difficulty": "basic",
+      "thinkingLevel": 1
+    },
+    {
+      "id": "sci_v4_029",
+      "unit": "science.chemistry.state.gas.law",
+      "unitLocked": true,
+      "category": "thinking",
+      "format": "numeric",
+      "prompt": "容積一定の容器に 27℃ で 1.0×10⁵ Pa の気体が入っている。127℃ にしたときの圧力は何 ×10⁵ Pa か。小数第2位まで答えよ。",
+      "explanation": "体積一定ならボイル・シャルルの法則より p/T が一定。温度は必ず絶対温度にする。p = 1.0×10⁵ × 400/300 ≒ 1.33×10⁵ Pa。",
+      "difficulty": "standard",
+      "thinkingLevel": 3,
+      "numeric": {
+        "value": 1.33,
+        "tolerance": 0.01,
+        "unit": "×10⁵ Pa"
+      },
+      "commonMistakes": [
+        "セルシウス温度のまま 127/27 倍してしまう"
+      ]
+    },
+    {
+      "id": "sci_v4_030",
+      "unit": "science.physics.waves.light.interference",
+      "unitLocked": true,
+      "category": "thinking",
+      "format": "written",
+      "prompt": "ヤングの実験で、スリット間隔 d、スクリーンまでの距離 L（d ≪ L）、波長 λ のとき、明線の間隔 Δx を、理由とともに導け。",
+      "explanation": "スクリーン上の点 x での経路差は dx/L（近似）。経路差が波長の整数倍なら明線。",
+      "difficulty": "challenge",
+      "thinkingLevel": 6,
+      "phase": "difficultUniv",
+      "axes": {
+        "thinking": 4,
+        "calculation": 3,
+        "writing": 3
+      },
+      "estimatedSeconds": 600,
+      "written": {
+        "kind": "descriptive",
+        "modelAnswer": "スクリーン上で中心から x の点までの2つのスリットからの経路差は、d ≪ L のとき近似的に dx/L となる。明線の条件は経路差が波長の整数倍、dx/L = mλ（m は整数）なので x = mLλ/d。となりあう明線の間隔は Δx = Lλ/d。",
+        "rubric": [
+          {
+            "point": "経路差を dx/L と近似している",
+            "score": 2
+          },
+          {
+            "point": "明線の条件を経路差 = mλ と立てている",
+            "score": 2
+          },
+          {
+            "point": "Δx = Lλ/d を導いている",
+            "score": 2
+          }
+        ],
+        "passScore": 4
+      }
+    }
+  ]
+}

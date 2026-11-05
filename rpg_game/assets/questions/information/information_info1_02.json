@@ -1,0 +1,344 @@
+{
+  "setId": "information_info1_02",
+  "worldId": "information",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "inf_info102_001",
+      "unit": "information.info.society.moral.ip",
+      "category": "knowledge",
+      "prompt": "著作権はいつ発生する？",
+      "choices": [
+        "著作物を創作した時点で自動的に",
+        "出版したとき",
+        "役所に登録したとき",
+        "売れたとき"
+      ],
+      "answerIndex": 0,
+      "explanation": "日本の著作権は登録などの手続きがいらない（無方式主義）。"
+    },
+    {
+      "id": "inf_info102_002",
+      "unit": "information.info.society.moral.ip",
+      "category": "knowledge",
+      "prompt": "日本の著作権の保護期間は、原則としてどれだけ？",
+      "choices": [
+        "著作者の死後70年",
+        "公表後5年",
+        "著作者の死後10年",
+        "永久"
+      ],
+      "answerIndex": 0,
+      "explanation": "2018年に死後50年から70年に延長された。"
+    },
+    {
+      "id": "inf_info102_003",
+      "unit": "information.info.society.moral.ip",
+      "category": "knowledge",
+      "prompt": "会社のロゴマークや商品名を保護する権利は？",
+      "choices": [
+        "著作権",
+        "商標権",
+        "特許権",
+        "意匠権"
+      ],
+      "answerIndex": 1,
+      "explanation": "特許権は発明、実用新案権は考案、意匠権はデザインを保護する。"
+    },
+    {
+      "id": "inf_info102_004",
+      "unit": "information.info.society.moral.ip",
+      "category": "knowledge",
+      "prompt": "産業財産権にふくまれないものは？",
+      "choices": [
+        "意匠権",
+        "商標権",
+        "特許権",
+        "著作権"
+      ],
+      "answerIndex": 3,
+      "explanation": "産業財産権は特許権・実用新案権・意匠権・商標権。登録が必要。"
+    },
+    {
+      "id": "inf_info102_005",
+      "unit": "information.info.society.moral",
+      "category": "knowledge",
+      "prompt": "自分の顔や姿を無断で撮影・公開されない権利は？",
+      "choices": [
+        "著作権",
+        "特許権",
+        "肖像権",
+        "商標権"
+      ],
+      "answerIndex": 2,
+      "explanation": "誰にでもある権利。有名人の肖像の経済的価値を守るのはパブリシティ権。"
+    },
+    {
+      "id": "inf_info102_006",
+      "unit": "information.info.society.moral.ip",
+      "category": "knowledge",
+      "prompt": "他人の著作物を「引用」するときの条件として正しくないものは？",
+      "choices": [
+        "出典を明記する",
+        "引用部分を自分の文章より多くする",
+        "引用する必然性がある",
+        "引用部分をかぎかっこ等で区別する"
+      ],
+      "answerIndex": 1,
+      "explanation": "自分の文章が主、引用が従である必要がある。"
+    },
+    {
+      "id": "inf_info102_007",
+      "unit": "information.info.society.moral",
+      "category": "knowledge",
+      "prompt": "作品を「この条件なら自由に使ってよい」と示すライセンスは？",
+      "choices": [
+        "ファイアウォール",
+        "フィッシング",
+        "クッキー",
+        "クリエイティブ・コモンズ"
+      ],
+      "answerIndex": 3,
+      "explanation": "表示・非営利・改変禁止などの条件を組み合わせて示す。"
+    },
+    {
+      "id": "inf_info102_008",
+      "unit": "information.info.society.moral.privacy",
+      "category": "knowledge",
+      "prompt": "氏名や生年月日など、特定の個人を識別できる情報を何という？",
+      "choices": [
+        "ビッグデータ",
+        "オープンデータ",
+        "個人情報",
+        "メタデータ"
+      ],
+      "answerIndex": 2,
+      "explanation": "個人情報保護法で取り扱いのルールが定められている。"
+    },
+    {
+      "id": "inf_info102_009",
+      "unit": "information.info.society.moral",
+      "category": "knowledge",
+      "prompt": "新しい発明を保護する権利は？",
+      "choices": [
+        "意匠権",
+        "肖像権",
+        "特許権",
+        "商標権"
+      ],
+      "answerIndex": 2,
+      "explanation": "出願から原則20年保護される。"
+    },
+    {
+      "id": "inf_info102_010",
+      "unit": "information.info.society.moral.privacy",
+      "category": "thinking",
+      "prompt": "友達が写った写真を SNS に投稿する前にすべきことは？",
+      "choices": [
+        "何もしなくてよい",
+        "写っている本人の許可を得る",
+        "画質を上げる",
+        "位置情報を追加する"
+      ],
+      "answerIndex": 1,
+      "explanation": "肖像権やプライバシーの侵害を防ぐため、本人の同意を得る。"
+    },
+    {
+      "id": "inf_info102_011",
+      "unit": "information.info.society.moral",
+      "category": "thinking",
+      "prompt": "「フリー素材」と書かれた画像を使うときに確認すべきことは？",
+      "choices": [
+        "利用規約（ライセンス）の条件",
+        "画像の色",
+        "ファイルの名前",
+        "作者の年齢"
+      ],
+      "answerIndex": 0,
+      "explanation": "無料でも、商用利用不可・クレジット表記が必要などの条件がある。"
+    },
+    {
+      "id": "inf_info102_012",
+      "unit": "information.info.society.moral",
+      "category": "thinking",
+      "prompt": "匿名で悪口を投稿することについて正しいものは？",
+      "choices": [
+        "匿名なら絶対にばれない",
+        "削除すれば問題ない",
+        "発信者が特定され、責任を問われることがある",
+        "法律の対象外である"
+      ],
+      "answerIndex": 2,
+      "explanation": "発信者情報開示請求などで特定されることがある。"
+    },
+    {
+      "id": "inf_info102_013",
+      "unit": "information.info.society.moral.ip",
+      "category": "knowledge",
+      "prompt": "著作権のうち、作品を無断で改変されない権利など、著作者の人格を守る権利は？",
+      "choices": [
+        "著作者人格権",
+        "著作隣接権",
+        "著作財産権",
+        "産業財産権"
+      ],
+      "answerIndex": 0,
+      "explanation": "他人にゆずることができない。"
+    },
+    {
+      "id": "inf_info102_014",
+      "unit": "information.info.society.moral",
+      "category": "knowledge",
+      "prompt": "歌手や演奏家、放送事業者などに認められる権利は？",
+      "choices": [
+        "特許権",
+        "商標権",
+        "著作隣接権",
+        "意匠権"
+      ],
+      "answerIndex": 2,
+      "explanation": "作品を伝える人の権利。"
+    },
+    {
+      "id": "inf_info102_015",
+      "unit": "information.info.society.moral.ip",
+      "category": "knowledge",
+      "prompt": "製品の形やデザインを保護する権利は？",
+      "choices": [
+        "商標権",
+        "意匠権",
+        "特許権",
+        "実用新案権"
+      ],
+      "answerIndex": 1,
+      "explanation": "産業財産権の一つ。"
+    },
+    {
+      "id": "inf_info102_016",
+      "unit": "information.info.society.moral.ip",
+      "category": "knowledge",
+      "prompt": "物の形や構造についての小発明を保護する権利は？",
+      "choices": [
+        "特許権",
+        "著作権",
+        "実用新案権",
+        "意匠権"
+      ],
+      "answerIndex": 2,
+      "explanation": "特許より保護期間が短い（10 年）。"
+    },
+    {
+      "id": "inf_info102_017",
+      "unit": "information.info.society.moral.ip",
+      "category": "knowledge",
+      "prompt": "著作権者の許可なく著作物を利用できる例外にあてはまるものは？",
+      "choices": [
+        "販売",
+        "無断での改変",
+        "ネットでの公開",
+        "個人的に楽しむための私的な複製"
+      ],
+      "answerIndex": 3,
+      "explanation": "私的使用のための複製は認められている（例外あり）。"
+    },
+    {
+      "id": "inf_info102_018",
+      "unit": "information.info.society.moral.ip",
+      "category": "knowledge",
+      "prompt": "著作権を侵害して違法にアップロードされたとわかっている音楽や動画をダウンロードすることは？",
+      "choices": [
+        "料金を払えば合法",
+        "違法",
+        "私的使用なら常に合法",
+        "合法"
+      ],
+      "answerIndex": 1,
+      "explanation": "刑事罰の対象になる場合もある。"
+    },
+    {
+      "id": "inf_info102_019",
+      "unit": "information.info.society.moral.privacy",
+      "category": "knowledge",
+      "prompt": "個人情報を扱う事業者のルールを定めた法律は？",
+      "choices": [
+        "不正アクセス禁止法",
+        "個人情報保護法",
+        "特定商取引法",
+        "著作権法"
+      ],
+      "answerIndex": 1,
+      "explanation": "利用目的の明示などを定める。"
+    },
+    {
+      "id": "inf_info102_020",
+      "unit": "information.info.society.moral.ip",
+      "category": "knowledge",
+      "prompt": "クリエイティブ・コモンズの「BY」の条件の意味は？",
+      "choices": [
+        "同じ条件で公開する",
+        "営利目的で使わない",
+        "改変しない",
+        "作者の名前（クレジット）を表示する"
+      ],
+      "answerIndex": 3,
+      "explanation": "NC は非営利、ND は改変禁止、SA は継承。"
+    },
+    {
+      "id": "inf_info102_021",
+      "unit": "information.info.society.moral",
+      "category": "knowledge",
+      "prompt": "他人のパスワードを無断で使ってログインすることを禁止する法律は？",
+      "choices": [
+        "個人情報保護法",
+        "不正アクセス禁止法",
+        "著作権法",
+        "電波法"
+      ],
+      "answerIndex": 1,
+      "explanation": "他人の ID・パスワードを無断で他人に教えることも禁止されている。"
+    },
+    {
+      "id": "inf_info102_022",
+      "unit": "information.info.society.moral",
+      "category": "knowledge",
+      "prompt": "住所や顔写真を組み合わせると個人が特定されやすくなることに注意する理由は？",
+      "choices": [
+        "著作権が発生しないから",
+        "ストーカー被害や悪用のおそれがあるから",
+        "画像の容量が大きいから",
+        "通信速度が遅くなるから"
+      ],
+      "answerIndex": 1,
+      "explanation": "写真の位置情報（ジオタグ）にも注意。"
+    },
+    {
+      "id": "inf_info102_023",
+      "unit": "information.info.society.moral",
+      "category": "thinking",
+      "prompt": "学校の課題でインターネットの文章を使うとき、正しいやり方は？",
+      "choices": [
+        "文章を少し変えて自分の考えとして出す",
+        "出典は書かなくてよい",
+        "全文をコピーして自分の文章として出す",
+        "必要な部分だけをかぎかっこで引用し、出典を明記する"
+      ],
+      "answerIndex": 3,
+      "explanation": "主従関係（自分の文章が主）も必要。"
+    },
+    {
+      "id": "inf_info102_024",
+      "unit": "information.info.society.moral",
+      "category": "thinking",
+      "prompt": "有名なキャラクターの絵をまねて描き、SNS で販売することの問題点は？",
+      "choices": [
+        "自分で描けば常に自由",
+        "販売しなければ必ず自由",
+        "まったく問題はない",
+        "著作権や商標権を侵害するおそれがある"
+      ],
+      "answerIndex": 3,
+      "explanation": "権利者の許可が必要になる場合がある。"
+    }
+  ]
+}

@@ -1,0 +1,1504 @@
+{
+  "setId": "social_shonan_104_public_economy_06",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "social_shonan_104_public_economy_06_001",
+      "unit": "social.pol.economy.global.trade",
+      "category": "knowledge",
+      "prompt": "1930年代、本国と植民地で囲い込み、他のブロックとは保護貿易をした経済を何という？",
+      "choices": [
+        "自由貿易",
+        "ブロック経済",
+        "計画経済",
+        "混合経済"
+      ],
+      "answerIndex": 1,
+      "explanation": "第二次世界大戦の一因となった。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_002",
+      "unit": "social.pol.economy.global.trade",
+      "category": "knowledge",
+      "prompt": "戦前のブロック経済・保護貿易を反省して1947年に結ばれ、貿易自由化を進めた協定は？",
+      "choices": [
+        "世界貿易機関（WTO）",
+        "国連貿易開発会議（UNCTAD）",
+        "関税と貿易に関する一般協定（GATT）",
+        "ブレトン・ウッズ協定"
+      ],
+      "answerIndex": 2,
+      "explanation": "1995年にWTOへ発展した。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_003",
+      "unit": "social.pol.economy.global.system",
+      "category": "knowledge",
+      "prompt": "GATTの3原則にあたらないものは？",
+      "choices": [
+        "無差別",
+        "保護",
+        "多角主義",
+        "自由"
+      ],
+      "answerIndex": 1,
+      "explanation": "関税引き下げ・数量制限の撤廃などをめざした。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_004",
+      "unit": "social.pol.economy.global.system",
+      "category": "knowledge",
+      "prompt": "ある国に与えた有利な貿易条件をすべての加盟国に平等に適用する原則は？",
+      "choices": [
+        "セーフガード",
+        "最恵国待遇",
+        "一般特恵関税",
+        "内国民待遇"
+      ],
+      "answerIndex": 1,
+      "explanation": "GATTの無差別原則の中身。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_005",
+      "unit": "social.pol.economy.global.system",
+      "category": "knowledge",
+      "prompt": "1944年に結ばれ、IMFと世界銀行の設立を決めた協定は？",
+      "choices": [
+        "スミソニアン協定",
+        "ブレトン・ウッズ協定",
+        "プラザ合意",
+        "キングストン合意"
+      ],
+      "answerIndex": 1,
+      "explanation": "IMF・GATT体制の出発点。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_006",
+      "unit": "social.pol.economy.global.balance",
+      "category": "knowledge",
+      "prompt": "為替相場の安定と、国際収支が赤字の国への短期資金融資を行う機関は？",
+      "choices": [
+        "国際労働機関",
+        "国際通貨基金（IMF）",
+        "アジア開発銀行",
+        "国際復興開発銀行（IBRD）"
+      ],
+      "answerIndex": 1,
+      "explanation": "世界銀行は長期資金を融資する。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_007",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "戦災国の復興や途上国の開発に長期資金を融資する、通称「世界銀行」は？",
+      "choices": [
+        "アジアインフラ投資銀行",
+        "国際復興開発銀行（IBRD）",
+        "欧州中央銀行",
+        "国際通貨基金（IMF）"
+      ],
+      "answerIndex": 1,
+      "explanation": "1945年設立。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_008",
+      "unit": "social.pol.economy.global.system",
+      "category": "knowledge",
+      "prompt": "IMF体制で、金1オンスと交換できるとされたのは何ドル？",
+      "choices": [
+        "360ドル",
+        "35ドル",
+        "100ドル",
+        "38ドル"
+      ],
+      "answerIndex": 1,
+      "explanation": "ドルを基軸通貨とした金・ドル本位制。1ドル＝360円。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_009",
+      "unit": "social.pol.economy.global.system",
+      "category": "knowledge",
+      "prompt": "国際的な取引で中心的に使われる通貨を何という？",
+      "choices": [
+        "地域通貨",
+        "仮想通貨",
+        "SDR",
+        "基軸通貨（キーカレンシー）"
+      ],
+      "answerIndex": 3,
+      "explanation": "IMF体制では米ドルが基軸通貨となった。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_010",
+      "unit": "social.pol.economy.global.system",
+      "category": "knowledge",
+      "prompt": "1971年、アメリカのニクソン大統領が金とドルの交換停止を発表したことを何という？",
+      "choices": [
+        "プラザ合意",
+        "ニクソン・ショック（ドル・ショック）",
+        "オイル・ショック",
+        "リーマン・ショック"
+      ],
+      "answerIndex": 1,
+      "explanation": "IMF体制が崩れるきっかけとなった。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_011",
+      "unit": "social.pol.economy.global.exchange",
+      "category": "knowledge",
+      "prompt": "1971年、ドルを切り下げて金1オンス＝38ドル、1ドル＝308円とした合意は？",
+      "choices": [
+        "スミソニアン協定",
+        "ブレトン・ウッズ協定",
+        "キングストン合意",
+        "ルーブル合意"
+      ],
+      "answerIndex": 0,
+      "explanation": "固定相場制の調整をはかった。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_012",
+      "unit": "social.pol.economy.global.exchange",
+      "category": "knowledge",
+      "prompt": "1976年、変動相場制を追認し、金・ドル本位制から完全に離れた合意は？",
+      "choices": [
+        "ブレトン・ウッズ協定",
+        "スミソニアン協定",
+        "キングストン合意",
+        "プラザ合意"
+      ],
+      "answerIndex": 2,
+      "explanation": "ジャマイカの首都で結ばれた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_013",
+      "unit": "social.pol.economy.global.system",
+      "category": "knowledge",
+      "prompt": "IMFが作った、加盟国が外貨と引き換えられる国際準備資産を何という？",
+      "choices": [
+        "SDR（特別引き出し権）",
+        "ODA",
+        "ECU",
+        "ユーロ"
+      ],
+      "answerIndex": 0,
+      "explanation": "キングストン合意で通貨基準とされた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_014",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "地球の北側に多い先進国と南側に多い発展途上国の経済格差の問題を何という？",
+      "choices": [
+        "南北問題",
+        "東西問題",
+        "南南問題",
+        "累積債務問題"
+      ],
+      "answerIndex": 0,
+      "explanation": "1960年代に顕在化した。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_015",
+      "unit": "social.pol.economy.global.north",
+      "category": "knowledge",
+      "prompt": "特定の一次産品の生産・輸出に頼る植民地型の経済を何という？",
+      "choices": [
+        "モノカルチャー経済",
+        "計画経済",
+        "多角的貿易",
+        "ブロック経済"
+      ],
+      "answerIndex": 0,
+      "explanation": "南北問題の原因の一つ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_016",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "1964年に設立され、「援助より貿易を」をスローガンにした国連の会議は？",
+      "choices": [
+        "国連開発計画（UNDP）",
+        "国連貿易開発会議（UNCTAD）",
+        "開発援助委員会（DAC）",
+        "主要国首脳会議"
+      ],
+      "answerIndex": 1,
+      "explanation": "初代事務総長がプレビッシュ報告を出した。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_017",
+      "unit": "social.pol.economy.global.north",
+      "category": "knowledge",
+      "prompt": "先進国が途上国からの輸入品に、特別に低い関税や無関税を適用する制度は？",
+      "choices": [
+        "一般特恵関税",
+        "最恵国待遇",
+        "セーフガード",
+        "アンチダンピング関税"
+      ],
+      "answerIndex": 0,
+      "explanation": "UNCTADで求められた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_018",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "自国の資源の主権を確立し、資源を国益のために使おうとする動きを何という？",
+      "choices": [
+        "グローバリズム",
+        "資源ナショナリズム",
+        "リージョナリズム",
+        "ブロック経済"
+      ],
+      "answerIndex": 1,
+      "explanation": "1962年の国連総会で「天然資源の恒久主権」が採択された。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_019",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "1960年に設立され、第4次中東戦争で石油戦略をとった産油国の組織は？",
+      "choices": [
+        "石油輸出国機構（OPEC）",
+        "経済協力開発機構（OECD）",
+        "国際石油資本（メジャー）",
+        "アラブ石油輸出国機構（OAPEC）"
+      ],
+      "answerIndex": 0,
+      "explanation": "先進国では第一次石油危機が起きた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_020",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "1974年の国連資源特別総会で樹立宣言が出された、途上国に有利な国際経済の仕組みは？",
+      "choices": [
+        "新国際経済秩序（NIEO）",
+        "キングストン体制",
+        "WTO体制",
+        "ブレトン・ウッズ体制"
+      ],
+      "answerIndex": 0,
+      "explanation": "資源の恒久主権や一次産品の価格引き上げなどを求めた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_021",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "韓国・台湾・香港・シンガポールのように、輸出志向型の工業化に成功した国・地域を何という？",
+      "choices": [
+        "LDC",
+        "アジアNIEs（新興工業経済地域）",
+        "BRICS",
+        "ASEAN"
+      ],
+      "answerIndex": 1,
+      "explanation": "「アジア四小竜」とも呼ばれた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_022",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "発展途上国の間で、資源をもつ国や工業化に成功した国と、最貧国との格差が広がった問題を何という？",
+      "choices": [
+        "東西問題",
+        "南南問題",
+        "南北問題",
+        "累積債務問題"
+      ],
+      "answerIndex": 1,
+      "explanation": "後発発展途上国（LDC）はアフリカに多い。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_023",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "1975年にフランスの呼びかけでランブイエで初めて開かれた会議は？",
+      "choices": [
+        "G20",
+        "UNCTAD",
+        "APEC",
+        "主要国首脳会議（サミット）"
+      ],
+      "answerIndex": 3,
+      "explanation": "国際経済・政治問題を毎年話し合う。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_024",
+      "unit": "social.pol.economy.global.exchange",
+      "category": "knowledge",
+      "prompt": "1985年、ドル高是正のために先進5か国（G5）が協調介入を決めた合意は？",
+      "choices": [
+        "ルーブル合意",
+        "スミソニアン協定",
+        "キングストン合意",
+        "プラザ合意"
+      ],
+      "answerIndex": 3,
+      "explanation": "円高が急速に進み、日本は円高不況に陥った。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_025",
+      "unit": "social.pol.economy.global.exchange",
+      "category": "knowledge",
+      "prompt": "プラザ合意後の円高で、工場の海外移転が進み国内の産業がおとろえたことを何という？",
+      "choices": [
+        "デフレスパイラル",
+        "産業の空洞化",
+        "高度経済成長",
+        "バブル経済"
+      ],
+      "answerIndex": 1,
+      "explanation": "日本企業の海外での現地生産が増えた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_026",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "1997年にタイから始まり、インドネシア・韓国へ広がった通貨危機は？",
+      "choices": [
+        "ニクソン・ショック",
+        "リーマン・ショック",
+        "ユーロ危機",
+        "アジア通貨危機"
+      ],
+      "answerIndex": 3,
+      "explanation": "ヘッジファンドの大規模な投機がきっかけ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_027",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "2008年にアメリカの大手証券会社が倒産し、世界金融危機が起きたことを何という？",
+      "choices": [
+        "プラザ合意",
+        "リーマン・ショック",
+        "ニクソン・ショック",
+        "アジア通貨危機"
+      ],
+      "answerIndex": 1,
+      "explanation": "サブプライムローン問題が背景にある。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_028",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "1986〜94年に行われ、農産物の関税化やサービス貿易・知的財産権のルール、WTOの設立を合意したGATTの交渉は？",
+      "choices": [
+        "ドーハ・ラウンド",
+        "東京ラウンド",
+        "ウルグアイ・ラウンド",
+        "ケネディ・ラウンド"
+      ],
+      "answerIndex": 2,
+      "explanation": "米の例外なき関税化も決まった。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_029",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "1995年にGATTを発展させて設立された機関は？",
+      "choices": [
+        "経済協力開発機構",
+        "国際通貨基金（IMF）",
+        "国連貿易開発会議",
+        "世界貿易機関（WTO）"
+      ],
+      "answerIndex": 3,
+      "explanation": "紛争処理の機能が強化された。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_030",
+      "unit": "social.pol.economy.global.system",
+      "category": "knowledge",
+      "prompt": "WTOの紛争処理で、全加盟国が反対しない限り採択される方式は？",
+      "choices": [
+        "ネガティブ・コンセンサス方式",
+        "全会一致方式",
+        "多数決方式",
+        "拒否権方式"
+      ],
+      "answerIndex": 0,
+      "explanation": "GATTは全会一致方式だった。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_031",
+      "unit": "social.pol.economy.global.system",
+      "category": "knowledge",
+      "prompt": "特許権や著作権などをまとめて何という？",
+      "choices": [
+        "知的財産権（知的所有権）",
+        "著作隣接権",
+        "財産権",
+        "肖像権"
+      ],
+      "answerIndex": 0,
+      "explanation": "WTOでルールづくりが進められた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_032",
+      "unit": "social.pol.economy.global.system",
+      "category": "knowledge",
+      "prompt": "輸入が急増して国内産業に大きな損害が出るときに認められる緊急輸入制限は？",
+      "choices": [
+        "アンチダンピング措置",
+        "一般特恵関税",
+        "セーフガード",
+        "最恵国待遇"
+      ],
+      "answerIndex": 2,
+      "explanation": "WTOで認められた自由貿易原則の例外。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_033",
+      "unit": "social.pol.economy.global.exchange",
+      "category": "knowledge",
+      "prompt": "世界恐慌後、各国が自国の為替相場を切り下げて輸出を増やそうとした競争を何という？",
+      "choices": [
+        "関税戦争",
+        "為替ダンピング競争",
+        "軍拡競争",
+        "価格競争"
+      ],
+      "answerIndex": 1,
+      "explanation": "世界貿易が縮小した。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_034",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "ナチス・ドイツが築いた経済圏は？",
+      "choices": [
+        "円ブロック",
+        "スターリング・ブロック",
+        "マルク・ブロック",
+        "ドル・ブロック"
+      ],
+      "answerIndex": 2,
+      "explanation": "「持たざる国」はファシズム化した。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_035",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "イギリスが築いた経済圏は？",
+      "choices": [
+        "マルク・ブロック",
+        "円ブロック",
+        "スターリング（ポンド）・ブロック",
+        "フラン・ブロック"
+      ],
+      "answerIndex": 2,
+      "explanation": "「持てる国」の一つ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_036",
+      "unit": "social.pol.economy.global.system",
+      "category": "knowledge",
+      "prompt": "GATTで行われた、多国間で関税引き下げなどを交渉する場を何という？",
+      "choices": [
+        "ブロック",
+        "コンセンサス",
+        "サミット",
+        "ラウンド（多角的貿易交渉）"
+      ],
+      "answerIndex": 3,
+      "explanation": "計8回の交渉が行われた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_037",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "1964〜67年に行われ、工業製品の関税の一括引き下げを決めたラウンドは？",
+      "choices": [
+        "東京ラウンド",
+        "ウルグアイ・ラウンド",
+        "ケネディ・ラウンド",
+        "ドーハ・ラウンド"
+      ],
+      "answerIndex": 2,
+      "explanation": "東京ラウンドでは非関税障壁の軽減も。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_038",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "2001年にカタールで始まったが、南北の対立で2008年以降行き詰まった交渉は？",
+      "choices": [
+        "ウルグアイ・ラウンド",
+        "ケネディ・ラウンド",
+        "東京ラウンド",
+        "ドーハ・ラウンド"
+      ],
+      "answerIndex": 3,
+      "explanation": "ドーハ開発アジェンダとも呼ばれる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_039",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "2001年にWTOに加盟した国は？",
+      "choices": [
+        "ロシア",
+        "中国",
+        "インド",
+        "アメリカ"
+      ],
+      "answerIndex": 1,
+      "explanation": "ロシアは2012年に加盟。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_040",
+      "unit": "social.pol.economy.global.balance",
+      "category": "knowledge",
+      "prompt": "ドル危機の原因にあたらないものは？",
+      "choices": [
+        "同盟国への援助",
+        "ベトナム戦争などの軍事支出",
+        "アメリカの貿易黒字の拡大",
+        "多国籍企業の資本輸出"
+      ],
+      "answerIndex": 2,
+      "explanation": "アメリカの国際収支が大幅な赤字になった。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_041",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "南の国々が一次産品を輸出し、北の国々が工業製品を輸出する関係で、南の交易条件が悪化する理由は？",
+      "choices": [
+        "一次産品の値段が上がり続ける",
+        "工業製品の値段が下がり続ける",
+        "関税がない",
+        "一次産品は値段が安く不安定で、工業製品は高く値上がりする"
+      ],
+      "answerIndex": 3,
+      "explanation": "垂直的分業の問題。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_042",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "1960年代まで中東の石油を支配していた米国系中心の大企業は？",
+      "choices": [
+        "NIEs",
+        "OAPEC",
+        "OPEC",
+        "国際石油資本（メジャー）"
+      ],
+      "answerIndex": 3,
+      "explanation": "資源ナショナリズムで影響力が低下した。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_043",
+      "unit": "social.pol.economy.global.north",
+      "category": "knowledge",
+      "prompt": "第2回UNCTAD総会（1968年）で先進国に求めた援助目標は？",
+      "choices": [
+        "GNPの0.1％",
+        "GNPの1％",
+        "GNPの0.7％",
+        "GNPの10％"
+      ],
+      "answerIndex": 1,
+      "explanation": "第3回（1972年）はODAでGNPの0.7％。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_044",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "途上国援助の中心となる国連の機関で、1966年に設立されたのは？",
+      "choices": [
+        "UNCTAD",
+        "国連開発計画（UNDP）",
+        "DAC",
+        "IMF"
+      ],
+      "answerIndex": 1,
+      "explanation": "人間開発指数を導入した。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_045",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "対外債務の急増でメキシコ・ブラジル・アルゼンチンなどが抱えた問題は？",
+      "choices": [
+        "南南問題",
+        "産業の空洞化",
+        "ドル危機",
+        "累積債務問題"
+      ],
+      "answerIndex": 3,
+      "explanation": "債務不履行（デフォルト）の危機。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_046",
+      "unit": "social.pol.economy.global.system",
+      "category": "knowledge",
+      "prompt": "債務の返済を延ばすことを何という？",
+      "choices": [
+        "リスケジューリング",
+        "ダンピング",
+        "デフォルト",
+        "コンディショナリティ"
+      ],
+      "answerIndex": 0,
+      "explanation": "IMFは緊縮財政などの条件をつけて行う。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_047",
+      "unit": "social.pol.economy.global.system",
+      "category": "knowledge",
+      "prompt": "IMFが融資の際につける、緊縮財政などの条件を何という？",
+      "choices": [
+        "ネガティブ・コンセンサス",
+        "リスケジューリング",
+        "セーフガード",
+        "コンディショナリティ"
+      ],
+      "answerIndex": 3,
+      "explanation": "国民生活への影響が批判されることもある。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_048",
+      "unit": "social.pol.economy.global.system",
+      "category": "knowledge",
+      "prompt": "IMFや世界銀行が債務を減免している、アフリカなどの国を何という？",
+      "choices": [
+        "OPEC",
+        "BRICS",
+        "新興工業経済地域（NIEs）",
+        "重債務貧困国（HIPC）"
+      ],
+      "answerIndex": 3,
+      "explanation": "最も貧しい国々。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_049",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "1987年、急速なドル安を止めるためG7で合意したのは？",
+      "choices": [
+        "ルーブル合意",
+        "スミソニアン協定",
+        "キングストン合意",
+        "プラザ合意"
+      ],
+      "answerIndex": 0,
+      "explanation": "パリで結ばれた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_050",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "G7に含まれない国は？",
+      "choices": [
+        "中国",
+        "日本",
+        "カナダ",
+        "イタリア"
+      ],
+      "answerIndex": 0,
+      "explanation": "G7は米・英・独・仏・日・伊・加。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_051",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "ロシアがサミットの参加を停止したのはいつから？",
+      "choices": [
+        "1997年",
+        "2022年",
+        "2014年",
+        "2001年"
+      ],
+      "answerIndex": 2,
+      "explanation": "クリミア併合が理由。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_052",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "アメリカで、低所得者向けの住宅ローンが不良債権化した問題は？",
+      "choices": [
+        "ドル危機",
+        "累積債務問題",
+        "双子の赤字",
+        "サブプライムローン問題"
+      ],
+      "answerIndex": 3,
+      "explanation": "債権を証券化して世界に売り出していた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_053",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "ダンピング（不当廉売）の輸出に対して、WTOで認められている措置は？",
+      "choices": [
+        "セーフガード",
+        "一般特恵関税",
+        "最恵国待遇",
+        "アンチダンピング関税"
+      ],
+      "answerIndex": 3,
+      "explanation": "報復関税を認めるもの。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_054",
+      "unit": "social.pol.economy.global.trade",
+      "category": "thinking",
+      "prompt": "戦後、GATTやIMFが設立された背景として最も適切なものは？",
+      "choices": [
+        "1930年代のブロック経済・保護貿易が第二次世界大戦の一因となった反省",
+        "途上国の独立",
+        "石油危機",
+        "冷戦の終結"
+      ],
+      "answerIndex": 0,
+      "explanation": "自由貿易と通貨の安定で平和をめざした。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_055",
+      "unit": "social.pol.economy.global.system",
+      "category": "thinking",
+      "prompt": "IMF体制（固定相場制）が成り立った前提は？",
+      "choices": [
+        "アメリカの圧倒的な経済力とドルへの信頼",
+        "途上国の工業化",
+        "EUの統合",
+        "日本の経済力"
+      ],
+      "answerIndex": 0,
+      "explanation": "ドルを金と交換できることが信頼の基礎だった。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_056",
+      "unit": "social.pol.economy.global.system",
+      "category": "thinking",
+      "prompt": "ニクソン・ショックが起きた根本的な原因として最も適切なものは？",
+      "choices": [
+        "アメリカの国際収支の赤字で、ドルの信頼が低下し金との交換要求が増えた",
+        "IMFが解散した",
+        "日本が金を買いすぎた",
+        "アメリカの貿易黒字が大きすぎた"
+      ],
+      "answerIndex": 0,
+      "explanation": "ドル危機からIMF体制の崩壊へ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_057",
+      "unit": "social.pol.economy.global",
+      "category": "thinking",
+      "prompt": "ブレトン・ウッズ体制→スミソニアン体制→キングストン体制の流れとして正しいものは？",
+      "choices": [
+        "固定相場制→ドル切り下げによる固定相場制の調整→変動相場制の追認",
+        "金本位制→ブロック経済→変動相場制",
+        "変動相場制→固定相場制→金本位制",
+        "変動相場制→固定相場制→変動相場制"
+      ],
+      "answerIndex": 0,
+      "explanation": "1944年→1971年→1976年。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_058",
+      "unit": "social.pol.economy.global",
+      "category": "thinking",
+      "prompt": "1ドル＝360円から1ドル＝308円になったことの意味は？",
+      "choices": [
+        "円の価値が下がった",
+        "ドルの価値が上がった",
+        "ドルの価値が下がり、円の価値が上がった",
+        "変化はない"
+      ],
+      "answerIndex": 2,
+      "explanation": "スミソニアン協定でのドル切り下げ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_059",
+      "unit": "social.pol.economy.global.north",
+      "category": "thinking",
+      "prompt": "「援助より貿易を」というスローガンにこめられた途上国の主張として最も適切なものは？",
+      "choices": [
+        "一時的な援助より、一次産品の価格安定や関税の優遇で自立した成長を",
+        "貿易をすべてやめたい",
+        "先進国の工業製品をもっと買いたい",
+        "援助をもっと増やしてほしい"
+      ],
+      "answerIndex": 0,
+      "explanation": "UNCTADでのプレビッシュ報告。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_060",
+      "unit": "social.pol.economy.global",
+      "category": "thinking",
+      "prompt": "OPECの石油戦略が成功した結果として正しいものは？",
+      "choices": [
+        "産油国はオイルダラーを得、先進国は第一次石油危機に見舞われた",
+        "先進国の経済が急成長した",
+        "メジャーの支配が強まった",
+        "石油価格が大きく下がった"
+      ],
+      "answerIndex": 0,
+      "explanation": "1973年の第4次中東戦争がきっかけ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_061",
+      "unit": "social.pol.economy.global.north",
+      "category": "thinking",
+      "prompt": "南南問題が生じた理由として最も適切なものは？",
+      "choices": [
+        "先進国どうしの格差が広がったから",
+        "すべての途上国が豊かになったから",
+        "すべての途上国が貧しくなったから",
+        "途上国の中で、資源や工業化に成功した国と、そうでない国の差が広がったから"
+      ],
+      "answerIndex": 3,
+      "explanation": "産油国やNIEsと後発途上国の差。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_062",
+      "unit": "social.pol.economy.global",
+      "category": "thinking",
+      "prompt": "プラザ合意（1985年）後の日本経済の変化として正しいものは？",
+      "choices": [
+        "貿易黒字がなくなった",
+        "急激な円高で円高不況になり、企業の海外進出が進んだ",
+        "急激な円安で輸出が急増した",
+        "固定相場制に戻った"
+      ],
+      "answerIndex": 1,
+      "explanation": "その後、低金利政策がバブル経済につながった。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_063",
+      "unit": "social.pol.economy.global.system",
+      "category": "thinking",
+      "prompt": "GATTとWTOの紛争処理の比較として正しいものは？",
+      "choices": [
+        "WTOは全会一致方式になり、処理しにくくなった",
+        "WTOはネガティブ・コンセンサス方式で、紛争処理の実効性が高まった",
+        "GATTのほうが紛争処理の力が強かった",
+        "WTOには紛争処理の仕組みがない"
+      ],
+      "answerIndex": 1,
+      "explanation": "パネル・上級委員会は「貿易の裁判所」とも。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_064",
+      "unit": "social.pol.economy.global",
+      "category": "thinking",
+      "prompt": "ドーハ・ラウンドが行き詰まった理由として最も適切なものは？",
+      "choices": [
+        "農業や工業製品の関税などで先進国と途上国の対立が解けなかった",
+        "加盟国が少なすぎたから",
+        "中国が脱退したから",
+        "WTOが解散したから"
+      ],
+      "answerIndex": 0,
+      "explanation": "全会一致が必要で合意が難しい。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_065",
+      "unit": "social.pol.economy.global.system",
+      "category": "thinking",
+      "prompt": "WTOの交渉が難航したことの影響として最も適切なものは？",
+      "choices": [
+        "固定相場制に戻った",
+        "二国間や地域でのFTA・EPAの締結が増えた",
+        "世界の貿易がなくなった",
+        "GATTが復活した"
+      ],
+      "answerIndex": 1,
+      "explanation": "地域的経済統合が進んだ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_066",
+      "unit": "social.pol.economy.global",
+      "category": "thinking",
+      "prompt": "リーマン・ショックが世界中の金融危機に広がった理由として最も適切なものは？",
+      "choices": [
+        "サブプライムローンの債権が証券化され、世界中の金融機関が買っていたから",
+        "固定相場制だったから",
+        "アメリカだけの問題だったから",
+        "WTOが関税を上げたから"
+      ],
+      "answerIndex": 0,
+      "explanation": "リスク分散のつもりが、世界にリスクを広げた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_067",
+      "unit": "social.pol.economy.global",
+      "category": "thinking",
+      "prompt": "サミットよりG20が重視されるようになった理由として最も適切なものは？",
+      "choices": [
+        "新興国が経済的に弱くなったから",
+        "G7の国が減ったから",
+        "サミットが廃止されたから",
+        "中国・インドなど新興国の経済的な影響力が大きくなったから"
+      ],
+      "answerIndex": 3,
+      "explanation": "世界経済の課題に新興国の参加が欠かせない。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_06_068",
+      "unit": "social.pol.economy.global.system",
+      "category": "thinking",
+      "prompt": "セーフガード（緊急輸入制限）の発動が認められる場面として最も適切なものは？",
+      "choices": [
+        "相手国の通貨が安くなったとき",
+        "国内の物価が下がったとき",
+        "特定の品目の輸入が急増し、国内産業に大きな損害が出るとき",
+        "輸出が急増したとき"
+      ],
+      "answerIndex": 2,
+      "explanation": "WTOで認められた例外。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ]
+    }
+  ]
+}

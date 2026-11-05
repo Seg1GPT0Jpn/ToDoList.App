@@ -1,0 +1,456 @@
+{
+  "setId": "science_biology_03",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_bio03_001",
+      "unit": "science.biology.cell.dna.structure",
+      "category": "knowledge",
+      "prompt": "DNA の塩基として正しい組み合わせは？",
+      "choices": [
+        "A・U・G・C",
+        "T・U・G・C",
+        "A・T・G・C",
+        "A・T・G・U"
+      ],
+      "answerIndex": 2,
+      "explanation": "DNA はアデニン・チミン・グアニン・シトシン。RNA は T のかわりにウラシル（U）。"
+    },
+    {
+      "id": "sci_bio03_002",
+      "unit": "science.biology.cell.dna.structure",
+      "category": "knowledge",
+      "prompt": "DNA の二重らせんで、アデニン（A）と対になる塩基は？",
+      "choices": [
+        "グアニン（G）",
+        "シトシン（C）",
+        "ウラシル（U）",
+        "チミン（T）"
+      ],
+      "answerIndex": 3,
+      "explanation": "相補的な塩基対は A−T、G−C。"
+    },
+    {
+      "id": "sci_bio03_003",
+      "unit": "science.biology.cell.dna.structure",
+      "category": "knowledge",
+      "prompt": "DNA の二重らせん構造を提唱したのは？",
+      "choices": [
+        "パスツール",
+        "メンデル",
+        "ワトソンとクリック",
+        "ダーウィン"
+      ],
+      "answerIndex": 2,
+      "explanation": "1953年に発表。X線回折の写真（フランクリン）が手がかりになった。"
+    },
+    {
+      "id": "sci_bio03_004",
+      "unit": "science.biology.cell.dna.structure",
+      "category": "knowledge",
+      "prompt": "ヌクレオチドを構成するものは？",
+      "choices": [
+        "アミノ酸・糖・脂肪",
+        "糖・脂肪・塩基",
+        "リン酸・糖・塩基",
+        "リン酸・アミノ酸・塩基"
+      ],
+      "answerIndex": 2,
+      "explanation": "DNA の糖はデオキシリボース、RNA の糖はリボース。"
+    },
+    {
+      "id": "sci_bio03_005",
+      "unit": "science.biology.cell.dna.structure",
+      "category": "knowledge",
+      "prompt": "DNA の情報をもとに RNA をつくる過程を何という？",
+      "choices": [
+        "分化",
+        "複製",
+        "翻訳",
+        "転写"
+      ],
+      "answerIndex": 3,
+      "explanation": "DNA の塩基配列が mRNA に写しとられる。"
+    },
+    {
+      "id": "sci_bio03_006",
+      "unit": "science.biology.cell.dna.expression",
+      "category": "knowledge",
+      "prompt": "mRNA の情報をもとにタンパク質を合成する過程を何という？",
+      "choices": [
+        "翻訳",
+        "複製",
+        "転写",
+        "減数分裂"
+      ],
+      "answerIndex": 0,
+      "explanation": "リボソームで、mRNA の塩基配列にしたがってアミノ酸がつながる。"
+    },
+    {
+      "id": "sci_bio03_007",
+      "unit": "science.biology.cell.dna.structure",
+      "category": "knowledge",
+      "prompt": "1 つのアミノ酸を指定する mRNA の塩基の並びは何個ずつ？",
+      "choices": [
+        "3 個（コドン）",
+        "2 個",
+        "4 個",
+        "1 個"
+      ],
+      "answerIndex": 0,
+      "explanation": "連続する 3 塩基の組をコドンという。"
+    },
+    {
+      "id": "sci_bio03_008",
+      "unit": "science.biology.cell.dna.structure",
+      "category": "knowledge",
+      "prompt": "DNA の複製について正しいものは？",
+      "choices": [
+        "もとの2本鎖がほどけ、それぞれを鋳型に新しい鎖がつくられる（半保存的複製）",
+        "RNA から DNA がつくられる",
+        "もとの2本鎖をそのまま残し、新しい2本鎖をつくる",
+        "1本鎖だけが複製される"
+      ],
+      "answerIndex": 0,
+      "explanation": "新しい DNA の2本鎖のうち1本はもとの鎖。"
+    },
+    {
+      "id": "sci_bio03_009",
+      "unit": "science.biology.cell.dna.replication",
+      "category": "knowledge",
+      "prompt": "細胞周期のうち、DNA が複製される時期は？",
+      "choices": [
+        "分裂期の後期",
+        "間期の G₁ 期",
+        "間期の S 期",
+        "分裂期の前期"
+      ],
+      "answerIndex": 2,
+      "explanation": "G₁ 期 → S 期（DNA 合成）→ G₂ 期 → 分裂期（M 期）。"
+    },
+    {
+      "id": "sci_bio03_010",
+      "unit": "science.biology.cell.dna.structure",
+      "category": "knowledge",
+      "prompt": "ある生物がもつすべての遺伝情報を何という？",
+      "choices": [
+        "コドン",
+        "遺伝子",
+        "染色体",
+        "ゲノム"
+      ],
+      "answerIndex": 3,
+      "explanation": "ヒトのゲノムは約 30 億塩基対。そのうちタンパク質をつくる遺伝子の部分はごく一部。"
+    },
+    {
+      "id": "sci_bio03_011",
+      "unit": "science.biology.cell.dna",
+      "category": "knowledge",
+      "prompt": "多細胞生物の細胞が分化して、形やはたらきがちがう細胞になる理由は？",
+      "choices": [
+        "細胞ごとに発現する遺伝子がちがうから",
+        "ちがう親から受けついだから",
+        "細胞ごとに染色体の数がちがうから",
+        "細胞ごとに DNA がちがうから"
+      ],
+      "answerIndex": 0,
+      "explanation": "からだの細胞はどれも同じ遺伝情報をもつが、はたらく遺伝子が異なる。"
+    },
+    {
+      "id": "sci_bio03_012",
+      "unit": "science.biology.cell.dna.structure",
+      "category": "knowledge",
+      "prompt": "DNA からタンパク質へと遺伝情報が一方向に流れるという考え方を何という？",
+      "choices": [
+        "自然選択説",
+        "細胞説",
+        "セントラルドグマ",
+        "用不用説"
+      ],
+      "answerIndex": 2,
+      "explanation": "DNA →（転写）→ RNA →（翻訳）→ タンパク質。"
+    },
+    {
+      "id": "sci_bio03_013",
+      "unit": "science.biology.cell.dna.structure",
+      "category": "calculation",
+      "prompt": "ある二本鎖 DNA でアデニン（A）が全塩基の 30 % のとき、グアニン（G）は何 %？",
+      "choices": [
+        "70 %",
+        "40 %",
+        "30 %",
+        "20 %"
+      ],
+      "answerIndex": 3,
+      "explanation": "A ＝ T ＝ 30 % で合計 60 %。残り 40 % を G と C で等分して 20 %。"
+    },
+    {
+      "id": "sci_bio03_014",
+      "unit": "science.biology.cell.dna.structure",
+      "category": "calculation",
+      "prompt": "DNA の片方の鎖が「ATGC」のとき、もう片方の鎖の対応する配列は？",
+      "choices": [
+        "UACG",
+        "TACG",
+        "ATGC",
+        "GCAT"
+      ],
+      "answerIndex": 1,
+      "explanation": "A−T、T−A、G−C、C−G と対になる。"
+    },
+    {
+      "id": "sci_bio03_015",
+      "unit": "science.biology.cell.dna.structure",
+      "category": "calculation",
+      "prompt": "DNA の鋳型鎖が「TAC」のとき、転写された mRNA の配列は？",
+      "choices": [
+        "AUG",
+        "ATG",
+        "UAC",
+        "TAC"
+      ],
+      "answerIndex": 0,
+      "explanation": "T → A、A → U、C → G。RNA には T がないので U になる。"
+    },
+    {
+      "id": "sci_bio03_016",
+      "unit": "science.biology.cell.dna.structure",
+      "category": "calculation",
+      "prompt": "アミノ酸を指定する部分が 300 塩基の mRNA からつくられるタンパク質のアミノ酸の数は？",
+      "choices": [
+        "300 個",
+        "900 個",
+        "150 個",
+        "100 個"
+      ],
+      "answerIndex": 3,
+      "explanation": "3 塩基で 1 アミノ酸なので 300 ÷ 3 ＝ 100 個。"
+    },
+    {
+      "id": "sci_bio03_017",
+      "unit": "science.biology.cell.dna.structure",
+      "category": "knowledge",
+      "prompt": "RNA の塩基の組み合わせは？",
+      "choices": [
+        "T・U・G・C",
+        "A・T・G・C",
+        "A・T・U・G",
+        "A・U・G・C"
+      ],
+      "answerIndex": 3,
+      "explanation": "RNA ではチミン（T）の代わりにウラシル（U）が使われる。"
+    },
+    {
+      "id": "sci_bio03_018",
+      "unit": "science.biology.cell.dna.structure",
+      "category": "knowledge",
+      "prompt": "DNA を構成する糖は？",
+      "choices": [
+        "デオキシリボース",
+        "リボース",
+        "フルクトース",
+        "グルコース"
+      ],
+      "answerIndex": 0,
+      "explanation": "RNA の糖はリボース。"
+    },
+    {
+      "id": "sci_bio03_019",
+      "unit": "science.biology.cell.dna.structure",
+      "category": "knowledge",
+      "prompt": "DNA の二重らせんで、グアニン（G）と対になる塩基は？",
+      "choices": [
+        "チミン（T）",
+        "ウラシル（U）",
+        "シトシン（C）",
+        "アデニン（A）"
+      ],
+      "answerIndex": 2,
+      "explanation": "A と T、G と C が対をつくる（相補性）。"
+    },
+    {
+      "id": "sci_bio03_020",
+      "unit": "science.biology.cell.dna.structure",
+      "category": "knowledge",
+      "prompt": "遺伝子の本体である物質は？",
+      "choices": [
+        "タンパク質",
+        "DNA",
+        "ATP",
+        "脂質"
+      ],
+      "answerIndex": 1,
+      "explanation": "遺伝子は DNA の中の、タンパク質の情報をもつ部分。"
+    },
+    {
+      "id": "sci_bio03_021",
+      "unit": "science.biology.cell.dna.replication",
+      "category": "knowledge",
+      "prompt": "体細胞分裂の分裂期（M 期）に起こることは？",
+      "choices": [
+        "DNA が複製される",
+        "複製された染色体が、2つの細胞に分配される",
+        "細胞が休眠する",
+        "タンパク質だけが合成される"
+      ],
+      "answerIndex": 1,
+      "explanation": "DNA の複製は間期（S 期）に行われる。"
+    },
+    {
+      "id": "sci_bio03_022",
+      "unit": "science.biology.cell.dna.replication",
+      "category": "knowledge",
+      "prompt": "体細胞分裂で、1つの細胞あたりの DNA 量はどう変化する？",
+      "choices": [
+        "分裂のたびに2倍になる",
+        "ずっと変わらない",
+        "分裂のたびに半分になる",
+        "間期に2倍になり、分裂によってもとにもどる"
+      ],
+      "answerIndex": 3,
+      "explanation": "娘細胞は、もとの細胞と同じ遺伝情報を受けつぐ。"
+    },
+    {
+      "id": "sci_bio03_023",
+      "unit": "science.biology.cell.dna.structure",
+      "category": "knowledge",
+      "prompt": "肺炎球菌の形質転換の実験で、R 型菌を S 型菌に変えた物質は？",
+      "choices": [
+        "タンパク質",
+        "多糖類",
+        "DNA",
+        "脂質"
+      ],
+      "answerIndex": 2,
+      "explanation": "DNA が遺伝子の本体であることを示す実験の一つ。"
+    },
+    {
+      "id": "sci_bio03_024",
+      "unit": "science.biology.cell.dna.expression",
+      "category": "knowledge",
+      "prompt": "tRNA のはたらきは？",
+      "choices": [
+        "遺伝情報を核の外に運ぶ",
+        "DNA を複製する",
+        "アミノ酸をリボソームへ運ぶ",
+        "ATP を合成する"
+      ],
+      "answerIndex": 2,
+      "explanation": "mRNA のコドンに対応するアミノ酸を運んでくる。"
+    },
+    {
+      "id": "sci_bio03_025",
+      "unit": "science.biology.cell.dna.expression",
+      "category": "knowledge",
+      "prompt": "mRNA の「m」が表す意味は？",
+      "choices": [
+        "母（mother）",
+        "主要（main）",
+        "伝令（messenger）",
+        "膜（membrane）"
+      ],
+      "answerIndex": 2,
+      "explanation": "DNA の情報を伝える役割をもつ RNA。"
+    },
+    {
+      "id": "sci_bio03_026",
+      "unit": "science.biology.cell.dna.structure",
+      "category": "knowledge",
+      "prompt": "ヒトのゲノムの塩基対の数は、およそ？",
+      "choices": [
+        "約3兆",
+        "約3000",
+        "約30億",
+        "約300万"
+      ],
+      "answerIndex": 2,
+      "explanation": "ヒトゲノムは約30億塩基対。"
+    },
+    {
+      "id": "sci_bio03_027",
+      "unit": "science.biology.cell.dna.expression",
+      "category": "knowledge",
+      "prompt": "ヒトのゲノムにふくまれる、タンパク質の情報をもつ遺伝子の数は、およそ？",
+      "choices": [
+        "約200万個",
+        "約2万個",
+        "約200個",
+        "約20億個"
+      ],
+      "answerIndex": 1,
+      "explanation": "ゲノムのうち、遺伝子の部分はごく一部。"
+    },
+    {
+      "id": "sci_bio03_028",
+      "unit": "science.biology.cell.dna.structure",
+      "category": "knowledge",
+      "prompt": "DNA の複製が、もとの鎖を1本ずつ受けつぐしくみであることを何という？",
+      "choices": [
+        "全保存的複製",
+        "分散的複製",
+        "半保存的複製",
+        "逆転写"
+      ],
+      "answerIndex": 2,
+      "explanation": "メセルソンとスタールの実験で確かめられた。"
+    },
+    {
+      "id": "sci_bio03_029",
+      "unit": "science.biology.cell.dna.structure",
+      "category": "calculation",
+      "prompt": "ある二本鎖 DNA でグアニン（G）が全塩基の22%のとき、アデニン（A）は何%？",
+      "choices": [
+        "44%",
+        "56%",
+        "28%",
+        "22%"
+      ],
+      "answerIndex": 2,
+      "explanation": "G=C=22% より A+T=56%、A=T=28%。"
+    },
+    {
+      "id": "sci_bio03_030",
+      "unit": "science.biology.cell.dna.structure",
+      "category": "calculation",
+      "prompt": "DNA の鋳型鎖が「TACGGA」のとき、転写された mRNA の配列は？",
+      "choices": [
+        "UACGGA",
+        "ATGCCT",
+        "AUGCCA",
+        "AUGCCU"
+      ],
+      "answerIndex": 3,
+      "explanation": "T→A、A→U、C→G、G→C。"
+    },
+    {
+      "id": "sci_bio03_031",
+      "unit": "science.biology.cell.dna.replication",
+      "category": "calculation",
+      "prompt": "細胞周期が20時間の細胞を観察すると、分裂期（M 期）の細胞が全体の10%だった。M 期の長さは？",
+      "choices": [
+        "0.5時間",
+        "18時間",
+        "10時間",
+        "2時間"
+      ],
+      "answerIndex": 3,
+      "explanation": "各時期の細胞数の割合は、その時期の長さに比例する。20×0.1。"
+    },
+    {
+      "id": "sci_bio03_032",
+      "unit": "science.biology.cell.dna",
+      "category": "thinking",
+      "prompt": "ユスリカのだ腺染色体で「パフ」が見られる部分について言えることは？",
+      "choices": [
+        "DNA が複製されている",
+        "細胞分裂が起こっている",
+        "その部分の遺伝子がさかんに転写されている",
+        "遺伝子がこわれている"
+      ],
+      "answerIndex": 2,
+      "explanation": "パフの位置は発生の時期によって変わる。発現する遺伝子が変わるから。"
+    }
+  ]
+}

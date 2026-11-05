@@ -1,0 +1,456 @@
+{
+  "setId": "science_physics_rlc_01",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_phy_rlc_001",
+      "unit": "science.physics.em.magnetism.ac",
+      "category": "knowledge",
+      "prompt": "実効値 Ve と最大値 V₀ の関係として正しい式は（正弦波交流）？",
+      "choices": [
+        "Ve = √2 V₀",
+        "Ve = V₀/(√2)",
+        "Ve = V₀/2",
+        "Ve = 2 V₀"
+      ],
+      "answerIndex": 1,
+      "explanation": "正弦波交流電圧の実効値は最大値の 1/√2 倍（約0.707倍）です。"
+    },
+    {
+      "id": "sci_phy_rlc_002",
+      "unit": "science.physics.em.magnetism.ac",
+      "category": "calculation",
+      "prompt": "日本の家庭用交流電源の電圧 100 V（実効値）の最大値はおよそ何 V？",
+      "choices": [
+        "約 71 V",
+        "約 100 V",
+        "約 141 V",
+        "約 200 V"
+      ],
+      "answerIndex": 2,
+      "explanation": "V₀ = √2 × 100 ≒ 1.414 × 100 ≒ 141 V。"
+    },
+    {
+      "id": "sci_phy_rlc_003",
+      "unit": "science.physics.em.current.charge",
+      "category": "knowledge",
+      "prompt": "交流回路において、純粋な抵抗 R を流れる電流と電圧の位相差は？",
+      "choices": [
+        "電流が π/2 遅れる",
+        "電流が π/2 進む",
+        "同位相（位相差なし）",
+        "電流が π 遅れる"
+      ],
+      "answerIndex": 2,
+      "explanation": "抵抗では電圧と電流の山・谷のタイミングが完全に一致します。"
+    },
+    {
+      "id": "sci_phy_rlc_004",
+      "unit": "science.physics.em.magnetism.inductance",
+      "category": "knowledge",
+      "prompt": "自己インダクタンス L のコイルに交流電圧を加えたとき、流れる電流の位相は電圧に対してどうなる？",
+      "choices": [
+        "π/2 進む",
+        "π/2 遅れる",
+        "同位相",
+        "π 遅れる"
+      ],
+      "answerIndex": 1,
+      "explanation": "コイルの誘導起電力が電流の変化を妨げるため、電流は電圧より π/2（90°）遅れます。"
+    },
+    {
+      "id": "sci_phy_rlc_005",
+      "unit": "science.physics.em.current.charge",
+      "category": "knowledge",
+      "prompt": "電気容量 C のコンデンサーに交流電圧を加えたとき、流れる電流の位相は電圧に対してどうなる？",
+      "choices": [
+        "π/2 進む",
+        "π/2 遅れる",
+        "同位相",
+        "π 進む"
+      ],
+      "answerIndex": 0,
+      "explanation": "電荷が蓄積する前に最大の充電電流が流れるため、電流は電圧より π/2 進みます。"
+    },
+    {
+      "id": "sci_phy_rlc_006",
+      "unit": "science.physics.em.magnetism.inductance",
+      "category": "knowledge",
+      "prompt": "角周波数 ω、自己インダクタンス L のコイルの誘導リアクタンスは？",
+      "choices": [
+        "1/(ω L)",
+        "ω L",
+        "ω² L",
+        "(ω)/L"
+      ],
+      "answerIndex": 1,
+      "explanation": "コイルのリアクタンスは XL = ω L で、周波数が高いほど電流を通しにくくなります。"
+    },
+    {
+      "id": "sci_phy_rlc_007",
+      "unit": "science.physics.em.field.capacitor",
+      "category": "knowledge",
+      "prompt": "角周波数 ω、電気容量 C のコンデンサーの容量リアクタンスは？",
+      "choices": [
+        "ω C",
+        "1/(ω C)",
+        "(ω)/C",
+        "1/(ω² C)"
+      ],
+      "answerIndex": 1,
+      "explanation": "コンデンサーのリアクタンスは XC = 1/(ω C) で、周波数が高いほど電流を通しやすくなります。"
+    },
+    {
+      "id": "sci_phy_rlc_008",
+      "unit": "science.physics.em.magnetism.inductance",
+      "category": "thinking",
+      "prompt": "コイルに直流電流を流したとき、定常状態でのコイルの抵抗（インピーダンス）はどうみなせる？",
+      "choices": [
+        "無限大（絶縁）",
+        "0（導線と同じ）",
+        "自己インダクタンス L",
+        "電圧に比例する"
+      ],
+      "answerIndex": 1,
+      "explanation": "直流では ω = 0 なので、コイルのリアクタンスは 0（単なる導線）となります。"
+    },
+    {
+      "id": "sci_phy_rlc_009",
+      "unit": "science.physics.em.current.charge",
+      "category": "thinking",
+      "prompt": "コンデンサーに直流電圧をかけたとき、充電完了後の電流に対する振る舞いは？",
+      "choices": [
+        "電流を遮断する（断線と同じ）",
+        "抵抗なしで電流を通す",
+        "交流と同じ電流を通す",
+        "電流を増幅する"
+      ],
+      "answerIndex": 0,
+      "explanation": "直流では周波数が 0 なので容量リアクタンスが無限大となり、直流電流は流れません。"
+    },
+    {
+      "id": "sci_phy_rlc_010",
+      "unit": "science.physics.em.magnetism.ac",
+      "category": "knowledge",
+      "prompt": "RLC直列回路のインピーダンス Z を表す正しい式は？",
+      "choices": [
+        "R + ω L + 1/(ω C)",
+        "√(R² + (ω L)² + (1/(ω C))²)",
+        "√(R² + (ω L - 1/(ω C))²)",
+        "√(R² - (ω L - 1/(ω C))²)"
+      ],
+      "answerIndex": 2,
+      "explanation": "電圧のベクトル図（フェーザ表示）より、Z = √(R² + (XL - XC)²) となります。"
+    },
+    {
+      "id": "sci_phy_rlc_011",
+      "unit": "science.physics.em.magnetism.ac",
+      "category": "knowledge",
+      "prompt": "RLC直列回路で共振が起こる条件（固有角周波数 ω₀）は？",
+      "choices": [
+        "ω₀ = √LC",
+        "ω₀ = 1/(√LC)",
+        "ω₀ = L/C",
+        "ω₀ = 1/LC"
+      ],
+      "answerIndex": 1,
+      "explanation": "ω L = 1/(ω C) となる条件より、ω² = 1/LC ⇒ ω₀ = 1/(√LC)。"
+    },
+    {
+      "id": "sci_phy_rlc_012",
+      "unit": "science.physics.em.magnetism.ac",
+      "category": "thinking",
+      "prompt": "RLC直列共振回路において、共振時にインピーダンス Z の大きさはどうなる？",
+      "choices": [
+        "最大値になる",
+        "0 になる",
+        "最小値 R になる",
+        "無限大になる"
+      ],
+      "answerIndex": 2,
+      "explanation": "リアクタンス成分 ω L - 1/(ω C) = 0 となるため、インピーダンスは最小の R になります。"
+    },
+    {
+      "id": "sci_phy_rlc_013",
+      "unit": "science.physics.em.magnetism.ac",
+      "category": "thinking",
+      "prompt": "RLC直列共振回路において、交流電源の電圧一定のとき、共振時に流れる電流の強さは？",
+      "choices": [
+        "最大になる",
+        "最小になる",
+        "0 になる",
+        "変化しない"
+      ],
+      "answerIndex": 0,
+      "explanation": "インピーダンスが最小（Z = R）になるため、オームの法則より流れる電流は最大になります。"
+    },
+    {
+      "id": "sci_phy_rlc_014",
+      "unit": "science.physics.em.current.power",
+      "category": "thinking",
+      "prompt": "交流回路のコイルやコンデンサーで、1周期あたりに消費される平均電力は？",
+      "choices": [
+        "Ie Ve",
+        "1/2 Ie Ve",
+        "0",
+        "無限大"
+      ],
+      "answerIndex": 2,
+      "explanation": "電流と電圧の位相差が π/2 であるため、力率 cos(π/2) = 0 となり平均消費電力は 0 です。"
+    },
+    {
+      "id": "sci_phy_rlc_015",
+      "unit": "science.physics.em.current.power",
+      "category": "knowledge",
+      "prompt": "交流回路において、電圧の実効値 Ve、電流の実効値 Ie、位相差 φ のときの消費電力 P は？",
+      "choices": [
+        "Ve Ie",
+        "Ve Ie sin φ",
+        "Ve Ie cos φ",
+        "Ve² / Ie"
+      ],
+      "answerIndex": 2,
+      "explanation": "cos φ は力率と呼ばれ、有効電力は P = Ve Ie cos φ で計算されます。"
+    },
+    {
+      "id": "sci_phy_rlc_016",
+      "unit": "science.physics.em.current.ac",
+      "category": "knowledge",
+      "prompt": "コイルとコンデンサーを接続した閉回路で、電気エネルギーと磁気エネルギーが交互に移り変わる現象は？",
+      "choices": [
+        "電磁誘導",
+        "電気振動",
+        "相互誘導",
+        "表皮効果"
+      ],
+      "answerIndex": 1,
+      "explanation": "コンデンサーの静電エネルギーとコイルの磁気エネルギーが周期的に入れ替わります。"
+    },
+    {
+      "id": "sci_phy_rlc_017",
+      "unit": "science.physics.em.magnetism.ac",
+      "category": "calculation",
+      "prompt": "L = 0.10 H のコイルに f = 50 Hz の交流を流したときの誘導リアクタンスは約何 Ω（π ≒ 3.14）？",
+      "choices": [
+        "約 5.0 Ω",
+        "約 15.7 Ω",
+        "約 31.4 Ω",
+        "約 314 Ω"
+      ],
+      "answerIndex": 2,
+      "explanation": "XL = 2π f L = 2 × 3.14 × 50 × 0.10 = 31.4 Ω。"
+    },
+    {
+      "id": "sci_phy_rlc_018",
+      "unit": "science.physics.em.current.power",
+      "category": "knowledge",
+      "prompt": "磁束 Φ が時間変化するとき、起電力 V = -N (Δ Φ)/(Δ t) が生じる法則は？",
+      "choices": [
+        "アンペールの法則",
+        "クーロンの法則",
+        "ファラデーの電磁誘導の法則",
+        "フレミングの法則"
+      ],
+      "answerIndex": 2,
+      "explanation": "誘導起電力の大きさは磁束の時間変化率に比例し、マイナス符号はレンツの法則を表します。"
+    },
+    {
+      "id": "sci_phy_rlc_019",
+      "unit": "science.physics.em.magnetism.induction",
+      "category": "knowledge",
+      "prompt": "誘導起電力が、磁束の変化を妨げる向きに電流を流そうとすることを述べた法則は？",
+      "choices": [
+        "レンツの法則",
+        "ガウスの法則",
+        "ビオ・サバールの法則",
+        "ジュールの法則"
+      ],
+      "answerIndex": 0,
+      "explanation": "自然が変化を嫌う向きに起電力が発生するという電磁誘導の向きの法則です。"
+    },
+    {
+      "id": "sci_phy_rlc_020",
+      "unit": "science.physics.em.magnetism.inductance",
+      "category": "calculation",
+      "prompt": "コイルを貫く磁束が 0.2 秒間に 0.6 Wb 変化した。巻き数 100 のコイルの誘導起電力の大きさは？",
+      "choices": [
+        "30 V",
+        "120 V",
+        "300 V",
+        "600 V"
+      ],
+      "answerIndex": 2,
+      "explanation": "V = N (Δ Φ)/(Δ t) = 100 × 0.6/0.2 = 100 × 3 = 300 V。"
+    },
+    {
+      "id": "sci_phy_rlc_021",
+      "unit": "science.physics.em.magnetism.induction",
+      "category": "knowledge",
+      "prompt": "長さ l の導線が磁束密度 B の一様な磁場中を速さ v で垂直に横切るとき生じる誘導起電力は？",
+      "choices": [
+        "vBl",
+        "vB/l",
+        "Bl/v",
+        "v² Bl"
+      ],
+      "answerIndex": 0,
+      "explanation": "ローレンツ力と電場による力のつり合いより V = vBl と導かれます。"
+    },
+    {
+      "id": "sci_phy_rlc_022",
+      "unit": "science.physics.em.magnetism.inductance",
+      "category": "knowledge",
+      "prompt": "自己インダクタンス L のコイルを流れる電流 I が蓄える磁気エネルギーの式は？",
+      "choices": [
+        "L I²",
+        "1/2 L I²",
+        "1/2 L² I",
+        "1/(2 L) I"
+      ],
+      "answerIndex": 1,
+      "explanation": "コンデンサーの 1/2 C V² に対応して、コイルは 1/2 L I² のエネルギーを蓄えます。"
+    },
+    {
+      "id": "sci_phy_rlc_023",
+      "unit": "science.physics.em.magnetism.inductance",
+      "category": "knowledge",
+      "prompt": "2つの近接したコイルの一方に流れる電流を変化させると、他方に起電力が生じる現象は？",
+      "choices": [
+        "自己誘導",
+        "相互誘導",
+        "静電誘導",
+        "渦電流"
+      ],
+      "answerIndex": 1,
+      "explanation": "1次コイルの電流変化による磁束が2次コイルを貫くことで生じ、変圧器の原理になります。"
+    },
+    {
+      "id": "sci_phy_rlc_024",
+      "unit": "science.physics.em.magnetism.inductance",
+      "category": "thinking",
+      "prompt": "変圧器の1次コイルの巻き数 N₁、2次コイル N₂ のとき、電圧の比 V₁ : V₂ は？",
+      "choices": [
+        "N₁ : N₂",
+        "N₂ : N₁",
+        "N₁² : N₂²",
+        "1 : 1"
+      ],
+      "answerIndex": 0,
+      "explanation": "共有される磁束の時間変化率が等しいため、電圧比は巻き数比に等しくなります。"
+    },
+    {
+      "id": "sci_phy_rlc_025",
+      "unit": "science.physics.em.current.ac",
+      "category": "thinking",
+      "prompt": "発電所から変電所への送電で、高電圧で送電する主な目的は？",
+      "choices": [
+        "電流の速度を光速より速くするため",
+        "送電線でのジュール熱による電力損失を減らすため",
+        "変圧器を小型化するため",
+        "電圧降下をゼロにするため"
+      ],
+      "answerIndex": 1,
+      "explanation": "電力 P=VI より高電圧にすれば電流 I が小さくなり、損失 I² R が大幅に減少します。"
+    },
+    {
+      "id": "sci_phy_rlc_026",
+      "unit": "science.physics.em.magnetism.field",
+      "category": "knowledge",
+      "prompt": "導体板に変化する磁界を加えたとき、導体内に渦状に流れる誘導電流を何という？",
+      "choices": [
+        "変位電流",
+        "直流電流",
+        "渦電流",
+        "臨界電流"
+      ],
+      "answerIndex": 2,
+      "explanation": "IH調理器の加熱や電磁ブレーキに広く応用されています。"
+    },
+    {
+      "id": "sci_phy_rlc_027",
+      "unit": "science.physics.em.current.charge",
+      "category": "knowledge",
+      "prompt": "電流がつくる磁場の強さについて、電流の大きさと磁場を結ぶ法則は？",
+      "choices": [
+        "オームの法則",
+        "アンペールの法則",
+        "クーロンの法則",
+        "キルヒホッフの法則"
+      ],
+      "answerIndex": 1,
+      "explanation": "電流を囲む閉曲線の磁場の線積分が貫く電流に等しいという法則です。"
+    },
+    {
+      "id": "sci_phy_rlc_028",
+      "unit": "science.physics.em.current.charge",
+      "category": "calculation",
+      "prompt": "半径 r の円形電流 I がその中心につくる磁場の強さ H は？",
+      "choices": [
+        "I/(2π r)",
+        "I/2r",
+        "2I/r",
+        "(μ I)/2r"
+      ],
+      "answerIndex": 1,
+      "explanation": "円形電流の中心磁場は H = I/2r です（直線電流の場合は I/(2π r)）。"
+    },
+    {
+      "id": "sci_phy_rlc_029",
+      "unit": "science.physics.em.magnetism.field",
+      "category": "knowledge",
+      "prompt": "磁場中を運動する荷電粒子が受ける力（q(v × B)）を何という？",
+      "choices": [
+        "クーロン力",
+        "万有引力",
+        "ローレンツ力",
+        "慣性力"
+      ],
+      "answerIndex": 2,
+      "explanation": "磁場に垂直に運動する電荷はローレンツ力を向心力として等速円運動します。"
+    },
+    {
+      "id": "sci_phy_rlc_030",
+      "unit": "science.physics.em.magnetism.field",
+      "category": "thinking",
+      "prompt": "磁場に垂直に入射した荷電粒子が等速円運動するとき、その周期が速さ v に依存しない理由は？",
+      "choices": [
+        "磁場の強さが自動的に変化するから",
+        "速さが増すと軌道半径も比例して大きくなるから",
+        "粒子の質量が減少するから",
+        "ローレンツ力がゼロになるから"
+      ],
+      "answerIndex": 1,
+      "explanation": "r = mv/qB より、周期 T = (2π r)/v = (2π m)/qB となり速さに無関係です（サイクロトロンの原理）。"
+    },
+    {
+      "id": "sci_phy_rlc_031",
+      "unit": "science.physics.em.magnetism.ac",
+      "category": "knowledge",
+      "prompt": "電磁波の存在を理論的に予言した物理学者は？",
+      "choices": [
+        "ヘルツ",
+        "ファラデー",
+        "マクスウェル",
+        "アインシュタイン"
+      ],
+      "answerIndex": 2,
+      "explanation": "マクスウェルの方程式から電磁波の存在と光速を導き、後にヘルツが実験で検証しました。"
+    },
+    {
+      "id": "sci_phy_rlc_032",
+      "unit": "science.physics.em.magnetism.ac",
+      "category": "knowledge",
+      "prompt": "電磁波を波長が長い順に並べたとき、正しい順番は？",
+      "choices": [
+        "電波 → 赤外線 → 可視光線 → 紫外線 → X線",
+        "紫外線 → 可視光線 → 赤外線 → 電波",
+        "X線 → 紫外線 → 可視光線 → 赤外線",
+        "可視光線 → 赤外線 → 紫外線 → 電波"
+      ],
+      "answerIndex": 0,
+      "explanation": "波長が最も長いのが電波、次いで赤外線、可視光、紫外線、X線、ガンマ線となります。"
+    }
+  ]
+}

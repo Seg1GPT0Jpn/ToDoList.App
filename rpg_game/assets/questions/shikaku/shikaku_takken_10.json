@@ -1,0 +1,233 @@
+{
+  "setId": "shikaku_takken_10",
+  "worldId": "shikaku",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "tkn10_001",
+      "unit": "shikaku.takken.gyouhou.houshu.houshu",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "売買の媒介で、代金が400万円を超えるとき、依頼者の一方から受け取れる報酬の上限は？（消費税を除く）",
+      "choices": [
+        "代金の5％",
+        "代金の4％＋2万円",
+        "代金の3％＋6万円",
+        "代金の10％"
+      ],
+      "answerIndex": 2,
+      "explanation": "400万円超は3％＋6万円の速算式（報酬告示）。"
+    },
+    {
+      "id": "tkn10_002",
+      "unit": "shikaku.takken.gyouhou.houshu.houshu",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "売買の媒介で、代金が200万円以下のときの報酬の上限は？（一方から・消費税を除く）",
+      "choices": [
+        "代金の3％",
+        "一律10万円",
+        "代金の4％",
+        "代金の5％"
+      ],
+      "answerIndex": 3,
+      "explanation": "200万円以下の部分は5％（報酬告示）。"
+    },
+    {
+      "id": "tkn10_003",
+      "unit": "shikaku.takken.gyouhou.houshu.houshu",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "売買の代理で依頼者から受け取れる報酬の上限は？",
+      "choices": [
+        "媒介の場合の2倍",
+        "代金の10％",
+        "媒介の場合と同じ",
+        "媒介の場合の3倍"
+      ],
+      "answerIndex": 0,
+      "explanation": "代理は媒介の2倍以内。相手方からも受け取る場合でも、合計で2倍以内（報酬告示）。"
+    },
+    {
+      "id": "tkn10_004",
+      "unit": "shikaku.takken.gyouhou.houshu.houshu",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "居住用建物の貸借の媒介で、依頼者の承諾がないとき、一方から受け取れる報酬の上限は？（消費税を除く）",
+      "choices": [
+        "借賃の1か月分",
+        "借賃の0.5か月分",
+        "借賃の2か月分",
+        "借賃の0.25か月分"
+      ],
+      "answerIndex": 1,
+      "explanation": "居住用建物は、承諾がなければ一方から0.5か月分まで。合計は1か月分まで（報酬告示）。"
+    },
+    {
+      "id": "tkn10_005",
+      "unit": "shikaku.takken.gyouhou.houshu.houshu",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "貸借の媒介で、双方から受け取れる報酬の合計の上限は？（消費税を除く）",
+      "choices": [
+        "借賃の2か月分",
+        "借賃の0.5か月分",
+        "借賃の1か月分",
+        "上限はない"
+      ],
+      "answerIndex": 2,
+      "explanation": "貸借の媒介は、双方合計で借賃の1か月分まで（報酬告示）。"
+    },
+    {
+      "id": "tkn10_006",
+      "unit": "shikaku.takken.gyouhou.houshu.houshu",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "代金800万円以下の「低廉な空家等」の売買の媒介で、売主から受け取れる報酬の上限は？（消費税を除く）",
+      "choices": [
+        "18万円",
+        "50万円",
+        "上限はない",
+        "30万円"
+      ],
+      "answerIndex": 3,
+      "explanation": "2024年7月から、800万円以下の空家等は現地調査の費用などを含めて30万円まで受け取れる（報酬告示）。"
+    },
+    {
+      "id": "tkn10_007",
+      "unit": "shikaku.takken.gyouhou.houshu.houshu",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "報酬とは別に受け取れるものはどれ？",
+      "choices": [
+        "依頼者から頼まれてした特別な広告の料金",
+        "重要事項説明の手数料",
+        "通常の広告の料金",
+        "契約書を作った手数料"
+      ],
+      "answerIndex": 0,
+      "explanation": "依頼者の依頼による広告の料金は別に受け取れる（報酬告示）。"
+    },
+    {
+      "id": "tkn10_008",
+      "unit": "shikaku.takken.gyouhou.houshu.kantoku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "業務停止処分で命じることができる期間は？",
+      "choices": [
+        "2年以内",
+        "1年以内",
+        "5年以内",
+        "6か月以内"
+      ],
+      "answerIndex": 1,
+      "explanation": "1年以内の期間を定めて業務の全部または一部の停止を命じる（宅建業法65条2項）。"
+    },
+    {
+      "id": "tkn10_009",
+      "unit": "shikaku.takken.gyouhou.houshu.kantoku",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "甲県知事免許の業者が乙県で違反をした。乙県知事ができない処分は？",
+      "choices": [
+        "指示処分",
+        "業務停止処分",
+        "免許の取消し",
+        "必要な報告を求めること"
+      ],
+      "answerIndex": 2,
+      "explanation": "免許の取消しができるのは免許権者だけ。業務地の知事は指示と業務停止ができる。"
+    },
+    {
+      "id": "tkn10_010",
+      "unit": "shikaku.takken.gyouhou.houshu.kantoku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "不正の手段で免許を受けたことがわかった。免許権者は？",
+      "choices": [
+        "取り消すかどうか自由に決める",
+        "業務停止にする",
+        "指示処分をする",
+        "免許を取り消さなければならない"
+      ],
+      "answerIndex": 3,
+      "explanation": "不正手段による免許取得は必要的取消し（宅建業法66条1項8号）。"
+    },
+    {
+      "id": "tkn10_011",
+      "unit": "shikaku.takken.gyouhou.houshu.kantoku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "宅建士に対する事務禁止処分の期間は？",
+      "choices": [
+        "1年以内",
+        "3年以内",
+        "2年以内",
+        "6か月以内"
+      ],
+      "answerIndex": 0,
+      "explanation": "1年以内の期間を定めて事務を行うことを禁止できる（宅建業法68条2項）。"
+    },
+    {
+      "id": "tkn10_012",
+      "unit": "shikaku.takken.gyouhou.houshu.kantoku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "業務停止処分や免許取消処分をする前に、必要な手続は？",
+      "choices": [
+        "公示送達",
+        "聴聞",
+        "国会への報告",
+        "保証協会の同意"
+      ],
+      "answerIndex": 1,
+      "explanation": "監督処分をするときは聴聞を行う（宅建業法69条）。"
+    },
+    {
+      "id": "tkn10_013",
+      "unit": "shikaku.takken.gyouhou.houshu.kantoku",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "免許を受けずに宅建業を営んだ者への罰則として正しいものは？",
+      "choices": [
+        "罰則はない",
+        "1年以下の拘禁刑",
+        "3年以下の拘禁刑もしくは300万円以下の罰金、またはその両方",
+        "10万円以下の過料"
+      ],
+      "answerIndex": 2,
+      "explanation": "無免許営業は最も重い罰則の一つ（宅建業法79条）。"
+    },
+    {
+      "id": "tkn10_014",
+      "unit": "shikaku.takken.gyouhou.houshu.houshu",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "宅建業者が報酬の上限を超えて受け取ったが、依頼者が納得していた。違反になる？",
+      "choices": [
+        "依頼者が納得していれば違反でない",
+        "書面があれば違反でない",
+        "1割以内なら違反でない",
+        "違反になる"
+      ],
+      "answerIndex": 3,
+      "explanation": "報酬の上限は依頼者の承諾があっても超えられない（宅建業法46条）。"
+    },
+    {
+      "id": "tkn10_015",
+      "unit": "shikaku.takken.gyouhou.houshu.kantoku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "宅建業者が業務停止処分を受けた。免許権者がしなければならないことは？",
+      "choices": [
+        "公告する",
+        "免許証を回収する",
+        "新聞に謝罪広告を出させる",
+        "何もしなくてよい"
+      ],
+      "answerIndex": 0,
+      "explanation": "業務停止処分や免許取消処分は公告しなければならない（宅建業法70条1項）。"
+    }
+  ]
+}

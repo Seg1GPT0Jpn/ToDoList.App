@@ -1,0 +1,308 @@
+{
+  "setId": "sea_g1_12",
+  "worldId": "sea",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g1_12_01",
+      "unit": "english.eng.grammar.pronoun.pronoun",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This pen is not (   ). It's Ken's.",
+      "choices": [
+        "my",
+        "me",
+        "mine",
+        "I"
+      ],
+      "answerIndex": 2,
+      "explanation": "「私のもの」は所有代名詞 mine。"
+    },
+    {
+      "id": "sea_g1_12_02",
+      "unit": "english.eng.grammar.pronoun",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I lost my umbrella, so I have to buy (   ).",
+      "choices": [
+        "it",
+        "one",
+        "that",
+        "this"
+      ],
+      "answerIndex": 1,
+      "explanation": "同じ種類の不特定の物は one。it だと「なくしたその傘」になる。"
+    },
+    {
+      "id": "sea_g1_12_03",
+      "unit": "english.eng.grammar.pronoun.pronoun",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I have two sisters. One is a teacher, and (   ) is a nurse.",
+      "choices": [
+        "other",
+        "another",
+        "the other",
+        "others"
+      ],
+      "answerIndex": 2,
+      "explanation": "2つ（2人）のうち、もう一方は the other。"
+    },
+    {
+      "id": "sea_g1_12_04",
+      "unit": "english.eng.grammar.pronoun",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) of the students has a smartphone.",
+      "choices": [
+        "Every",
+        "Each",
+        "All",
+        "Both"
+      ],
+      "answerIndex": 1,
+      "explanation": "each of 〜 は単数扱い（has）。every は of を続けられない。"
+    },
+    {
+      "id": "sea_g1_12_05",
+      "unit": "english.eng.grammar.pronoun",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The climate of Japan is milder than (   ) of Canada.",
+      "choices": [
+        "it",
+        "this",
+        "that",
+        "those"
+      ],
+      "answerIndex": 2,
+      "explanation": "同じ名詞（the climate）のくり返しを避ける that。複数なら those。"
+    },
+    {
+      "id": "sea_g1_12_06",
+      "unit": "english.eng.grammar.pronoun",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I was born (   ) April 5.",
+      "choices": [
+        "in",
+        "on",
+        "at",
+        "by"
+      ],
+      "answerIndex": 1,
+      "explanation": "特定の日付・曜日の前は on。"
+    },
+    {
+      "id": "sea_g1_12_07",
+      "unit": "english.eng.grammar.adjadv.preposition",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Finish this work (   ) Friday.",
+      "choices": [
+        "until",
+        "by",
+        "for",
+        "since"
+      ],
+      "answerIndex": 1,
+      "explanation": "「〜までに（期限）」は by。until は「〜までずっと（継続）」。"
+    },
+    {
+      "id": "sea_g1_12_08",
+      "unit": "english.eng.grammar.pronoun",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Please help (   ) to the cake.",
+      "choices": [
+        "you",
+        "your",
+        "yourself",
+        "yours"
+      ],
+      "answerIndex": 2,
+      "explanation": "help oneself to 〜 で「〜を自由に取って食べる」。"
+    },
+    {
+      "id": "sea_g1_12_09",
+      "unit": "english.eng.grammar.pronoun.pronoun",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Some people like tea, and (   ) like coffee.",
+      "choices": [
+        "another",
+        "others",
+        "the other",
+        "other"
+      ],
+      "answerIndex": 1,
+      "explanation": "some 〜, others …「〜する人もいれば…する人もいる」。"
+    },
+    {
+      "id": "sea_g1_12_10",
+      "unit": "english.eng.grammar.pronoun",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This bag is too small. Show me a bigger (   ).",
+      "choices": [
+        "one",
+        "that",
+        "it",
+        "this"
+      ],
+      "answerIndex": 0,
+      "explanation": "同じ種類の不特定のものは one。"
+    },
+    {
+      "id": "sea_g1_12_11",
+      "unit": "english.eng.grammar.conj.coordinate",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) of my parents are teachers.",
+      "choices": [
+        "Either",
+        "Each",
+        "Every",
+        "Both"
+      ],
+      "answerIndex": 3,
+      "explanation": "both「両方とも」は複数あつかい。"
+    },
+    {
+      "id": "sea_g1_12_12",
+      "unit": "english.eng.grammar.pronoun.pronoun",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I don't like this one. Show me (   ).",
+      "choices": [
+        "other",
+        "another",
+        "the others",
+        "others"
+      ],
+      "answerIndex": 1,
+      "explanation": "another「別のもう1つ」。"
+    },
+    {
+      "id": "sea_g1_12_13",
+      "unit": "english.eng.grammar.pronoun.pronoun",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "She made the dress (   ).",
+      "choices": [
+        "she",
+        "herself",
+        "hers",
+        "her"
+      ],
+      "answerIndex": 1,
+      "explanation": "再帰代名詞で「自分で」。"
+    },
+    {
+      "id": "sea_g1_12_14",
+      "unit": "english.eng.grammar.pronoun",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I'll meet him (   ) three o'clock.",
+      "choices": [
+        "in",
+        "at",
+        "for",
+        "on"
+      ],
+      "answerIndex": 1,
+      "explanation": "時刻には at。"
+    },
+    {
+      "id": "sea_g1_12_15",
+      "unit": "english.eng.grammar.pronoun",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "We have lived here (   ) 2010.",
+      "choices": [
+        "since",
+        "for",
+        "at",
+        "from"
+      ],
+      "answerIndex": 0,
+      "explanation": "since ＋ 起点。"
+    },
+    {
+      "id": "sea_g1_12_16",
+      "unit": "english.eng.grammar.infinitive.subject",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I stayed there (   ) a week.",
+      "choices": [
+        "for",
+        "while",
+        "during",
+        "since"
+      ],
+      "answerIndex": 0,
+      "explanation": "for ＋ 期間の長さ。"
+    },
+    {
+      "id": "sea_g1_12_17",
+      "unit": "english.eng.grammar.pronoun",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He was absent (   ) school yesterday.",
+      "choices": [
+        "at",
+        "in",
+        "of",
+        "from"
+      ],
+      "answerIndex": 3,
+      "explanation": "be absent from 〜「〜を欠席する」。"
+    },
+    {
+      "id": "sea_g1_12_18",
+      "unit": "english.eng.grammar.pronoun",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The book is (   ) the desk.",
+      "choices": [
+        "by",
+        "on",
+        "to",
+        "at"
+      ],
+      "answerIndex": 1,
+      "explanation": "接触して上にあるときは on。"
+    },
+    {
+      "id": "sea_g1_12_19",
+      "unit": "english.eng.grammar.conj.coordinate",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Neither of them (   ) the answer.",
+      "choices": [
+        "are known",
+        "know",
+        "knowing",
+        "knows"
+      ],
+      "answerIndex": 3,
+      "explanation": "neither of 〜 は単数あつかいが原則。"
+    },
+    {
+      "id": "sea_g1_12_20",
+      "unit": "english.eng.grammar.adjadv.adjective",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "There is (   ) milk in the glass.",
+      "choices": [
+        "a few",
+        "few",
+        "a little",
+        "many"
+      ],
+      "answerIndex": 2,
+      "explanation": "数えられない名詞には a little。"
+    }
+  ]
+}

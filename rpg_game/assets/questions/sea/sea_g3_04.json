@@ -1,0 +1,248 @@
+{
+  "setId": "sea_g3_04",
+  "worldId": "sea",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g3_04_01",
+      "unit": "english.eng.structure.special.ellipsis",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "While (   ) in London, I visited the British Museum.",
+      "choices": [
+        "stayed",
+        "staying",
+        "stay",
+        "to stay"
+      ],
+      "answerIndex": 1,
+      "explanation": "While I was staying の I was が省略された形。"
+    },
+    {
+      "id": "sea_g3_04_02",
+      "unit": "english.eng.structure.special.ellipsis",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "If (   ), come with us.",
+      "choices": [
+        "possibly",
+        "possible",
+        "it possible",
+        "possibility"
+      ],
+      "answerIndex": 1,
+      "explanation": "if (it is) possible の it is が省略された形。"
+    },
+    {
+      "id": "sea_g3_04_03",
+      "unit": "english.eng.structure.special.ellipsis",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He is taller than I (   ).",
+      "choices": [
+        "do",
+        "am",
+        "is",
+        "have"
+      ],
+      "answerIndex": 1,
+      "explanation": "than I am (tall) の省略。be動詞の文なので am。"
+    },
+    {
+      "id": "sea_g3_04_04",
+      "unit": "english.eng.structure.special.ellipsis",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "You can go if you want (   ).",
+      "choices": [
+        "it",
+        "to",
+        "so",
+        "that"
+      ],
+      "answerIndex": 1,
+      "explanation": "want to (go) の go を省略した代不定詞。to は残す。"
+    },
+    {
+      "id": "sea_g3_04_05",
+      "unit": "english.eng.structure.special.ellipsis",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Though (   ), he kept working.",
+      "choices": [
+        "tiring",
+        "tired",
+        "to tire",
+        "tire"
+      ],
+      "answerIndex": 1,
+      "explanation": "Though (he was) tired の主語 + be動詞の省略。"
+    },
+    {
+      "id": "sea_g3_04_06",
+      "unit": "english.eng.structure.special.ellipsis",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I'll help you if (   ).",
+      "choices": [
+        "necessity",
+        "necessary",
+        "necessarily",
+        "need"
+      ],
+      "answerIndex": 1,
+      "explanation": "if (it is) necessary の省略。"
+    },
+    {
+      "id": "sea_g3_04_07",
+      "unit": "english.eng.structure.special.ellipsis",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "When (   ) young, he lived in Kyoto.",
+      "choices": [
+        "he is",
+        "did he",
+        "he was",
+        "being"
+      ],
+      "answerIndex": 2,
+      "explanation": "When he was young。主語と be 動詞は省略もできるが、選択肢では he was が最も適切。"
+    },
+    {
+      "id": "sea_g3_04_08",
+      "unit": "english.eng.structure.special.ellipsis",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "If (   ) necessary, I will help you.",
+      "choices": [
+        "it is",
+        "being it",
+        "is",
+        "it"
+      ],
+      "answerIndex": 0,
+      "explanation": "If (it is) necessary の形。ここでは省略しない形。"
+    },
+    {
+      "id": "sea_g3_04_09",
+      "unit": "english.eng.structure.special.ellipsis",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Fill in the blanks where (   ).",
+      "choices": [
+        "necessarily",
+        "necessity",
+        "necessary",
+        "needs"
+      ],
+      "answerIndex": 2,
+      "explanation": "where (it is) necessary の省略形。"
+    },
+    {
+      "id": "sea_g3_04_10",
+      "unit": "english.eng.structure.special.ellipsis",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I will come if I (   ).",
+      "choices": [
+        "will",
+        "can",
+        "do can",
+        "could have"
+      ],
+      "answerIndex": 1,
+      "explanation": "if I can (come) の省略。"
+    },
+    {
+      "id": "sea_g3_04_11",
+      "unit": "english.eng.structure.special.ellipsis",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Some like tea; others, (   ).",
+      "choices": [
+        "coffee",
+        "coffeeing",
+        "likes coffee",
+        "to coffee"
+      ],
+      "answerIndex": 0,
+      "explanation": "others (like) coffee。くり返しの動詞の省略。"
+    },
+    {
+      "id": "sea_g3_04_12",
+      "unit": "english.eng.structure.special.ellipsis",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Though (   ), she was cheerful.",
+      "choices": [
+        "tired",
+        "tire",
+        "to tire",
+        "tiring"
+      ],
+      "answerIndex": 0,
+      "explanation": "Though (she was) tired の省略。"
+    },
+    {
+      "id": "sea_g3_04_13",
+      "unit": "english.eng.structure.special",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "You can come with us if you (   ).",
+      "choices": [
+        "liking",
+        "like",
+        "like it to",
+        "will like"
+      ],
+      "answerIndex": 1,
+      "explanation": "if you like「よければ」。"
+    },
+    {
+      "id": "sea_g3_04_14",
+      "unit": "english.eng.structure.special",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He runs faster than I (   ).",
+      "choices": [
+        "am",
+        "do",
+        "does",
+        "did run it"
+      ],
+      "answerIndex": 1,
+      "explanation": "than I (run) の代わりの do。"
+    },
+    {
+      "id": "sea_g3_04_15",
+      "unit": "english.eng.structure.special",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I told him not to go, but he (   ).",
+      "choices": [
+        "does",
+        "did",
+        "had",
+        "was"
+      ],
+      "answerIndex": 1,
+      "explanation": "he did (go)。"
+    },
+    {
+      "id": "sea_g3_04_16",
+      "unit": "english.eng.structure.special",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "\"Will it rain tomorrow?\" \"I hope (   ).\"",
+      "choices": [
+        "don't",
+        "nothing",
+        "not",
+        "no"
+      ],
+      "answerIndex": 2,
+      "explanation": "I hope not ＝ I hope it will not rain。"
+    }
+  ]
+}

@@ -1,0 +1,288 @@
+{
+  "setId": "math_m3_12",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_m312_001",
+      "unit": "math.m3.integ.method.parts",
+      "category": "calculation",
+      "prompt": "∫₀^π x sin x dx の値は？",
+      "choices": [
+        "π",
+        "2",
+        "0",
+        "π/2"
+      ],
+      "answerIndex": 0,
+      "explanation": "部分積分：[−x cos x]₀^π+∫cos x dx。"
+    },
+    {
+      "id": "mat_m312_002",
+      "unit": "math.m3.integ.method",
+      "category": "calculation",
+      "prompt": "∫1/(x(x+1)) dx は？",
+      "choices": [
+        "log|x/(x+1)|+C",
+        "−1/(x(x+1))+C",
+        "1/x+1/(x+1)+C",
+        "log|x(x+1)|+C"
+      ],
+      "answerIndex": 0,
+      "explanation": "部分分数：1/x−1/(x+1)。"
+    },
+    {
+      "id": "mat_m312_003",
+      "unit": "math.m3.integ.method.limit",
+      "category": "calculation",
+      "prompt": "lim_{n→∞} (1/n)Σ_{k=1}^{n} (k/n)² の値は？",
+      "choices": [
+        "1/3",
+        "1",
+        "1/2",
+        "0"
+      ],
+      "answerIndex": 0,
+      "explanation": "区分求積法：∫₀¹ x² dx。"
+    },
+    {
+      "id": "mat_m312_004",
+      "unit": "math.m3.integ.method.limit",
+      "category": "calculation",
+      "prompt": "lim_{n→∞} Σ_{k=1}^{n} 1/(n+k) の値は？",
+      "choices": [
+        "log 2",
+        "1/2",
+        "e",
+        "1"
+      ],
+      "answerIndex": 0,
+      "explanation": "(1/n)Σ 1/(1+k/n)→∫₀¹ 1/(1+x) dx。"
+    },
+    {
+      "id": "mat_m312_005",
+      "unit": "math.m3.integ.method",
+      "category": "calculation",
+      "prompt": "∫₀^(π/2) sin x cos x dx の値は？",
+      "choices": [
+        "1/2",
+        "π/4",
+        "0",
+        "1"
+      ],
+      "answerIndex": 0,
+      "explanation": "sin x cos x=(sin 2x)/2。"
+    },
+    {
+      "id": "mat_m312_006",
+      "unit": "math.m3.integ.method.parts",
+      "category": "calculation",
+      "prompt": "∫₀¹ x²eˣ dx の値は？",
+      "choices": [
+        "e−2",
+        "e−1",
+        "e",
+        "2e−1"
+      ],
+      "answerIndex": 0,
+      "explanation": "部分積分を2回。"
+    },
+    {
+      "id": "mat_m312_007",
+      "unit": "math.m3.integ.method",
+      "category": "calculation",
+      "prompt": "d/dx ∫₀^(x²) sin t dt は？",
+      "choices": [
+        "2x sin x²",
+        "2x cos x²",
+        "sin x²",
+        "sin x"
+      ],
+      "answerIndex": 0,
+      "explanation": "合成関数の微分：sin(x²)·2x。"
+    },
+    {
+      "id": "mat_m312_008",
+      "unit": "math.m3.integ.method",
+      "category": "calculation",
+      "prompt": "奇関数 f(x) について ∫₋ₐᵃ f(x) dx の値は？",
+      "choices": [
+        "a",
+        "0",
+        "f(a)",
+        "2∫₀ᵃ f(x) dx"
+      ],
+      "answerIndex": 1,
+      "explanation": "正の部分と負の部分が打ち消し合う。"
+    },
+    {
+      "id": "mat_m312_009",
+      "unit": "math.m3.integ.method",
+      "category": "calculation",
+      "prompt": "∫₀^(π/4) 1/cos²x dx の値は？",
+      "choices": [
+        "1/2",
+        "√2",
+        "1",
+        "π/4"
+      ],
+      "answerIndex": 2,
+      "explanation": "[tan x]₀^(π/4)。"
+    },
+    {
+      "id": "mat_m312_010",
+      "unit": "math.m3.integ.method.limit",
+      "category": "thinking",
+      "prompt": "区分求積法で、和の極限が定積分になる理由は？",
+      "choices": [
+        "長方形の数が減るから",
+        "和がいつも0になるから",
+        "n が有限だから",
+        "区間を細かく分けた長方形の面積の和が、曲線の下の面積に近づくから"
+      ],
+      "answerIndex": 3,
+      "explanation": "(1/n)Σ f(k/n)→∫₀¹ f(x) dx。"
+    },
+    {
+      "id": "mat_m312_011",
+      "unit": "math.m3.integ.method",
+      "category": "calculation",
+      "prompt": "∫₀^(π/2) x cos x dx の値は？",
+      "choices": [
+        "π/2−1",
+        "π/2+1",
+        "1",
+        "π/2"
+      ],
+      "answerIndex": 0,
+      "explanation": "[x sin x+cos x]₀^(π/2)=π/2+0−1。"
+    },
+    {
+      "id": "mat_m312_012",
+      "unit": "math.m3.integ.method",
+      "category": "calculation",
+      "prompt": "∫1/((x+1)(x+3)) dx は？",
+      "choices": [
+        "log|x+1|+C",
+        "½log|(x+1)/(x+3)|+C",
+        "log|(x+1)(x+3)|+C",
+        "½log|(x+3)/(x+1)|+C"
+      ],
+      "answerIndex": 1,
+      "explanation": "½(1/(x+1)−1/(x+3)) に分ける。"
+    },
+    {
+      "id": "mat_m312_013",
+      "unit": "math.m3.integ.method.limit",
+      "category": "calculation",
+      "prompt": "lim_{n→∞} (1/n)Σ_{k=1}^{n} (k/n) の値は？",
+      "choices": [
+        "1",
+        "1/2",
+        "1/3",
+        "0"
+      ],
+      "answerIndex": 1,
+      "explanation": "∫₀¹ x dx。"
+    },
+    {
+      "id": "mat_m312_014",
+      "unit": "math.m3.integ.method.limit",
+      "category": "calculation",
+      "prompt": "lim_{n→∞} Σ_{k=1}^{n} n/(n²+k²) の値は？",
+      "choices": [
+        "π/2",
+        "log 2",
+        "1",
+        "π/4"
+      ],
+      "answerIndex": 3,
+      "explanation": "(1/n)Σ 1/(1+(k/n)²) → ∫₀¹ 1/(1+x²) dx。"
+    },
+    {
+      "id": "mat_m312_015",
+      "unit": "math.m3.integ.method",
+      "category": "calculation",
+      "prompt": "∫₀^π sin²x dx の値は？",
+      "choices": [
+        "1",
+        "0",
+        "π",
+        "π/2"
+      ],
+      "answerIndex": 3,
+      "explanation": "(1−cos 2x)/2 を積分。"
+    },
+    {
+      "id": "mat_m312_016",
+      "unit": "math.m3.integ.method",
+      "category": "calculation",
+      "prompt": "∫₁^e log x dx の値は？",
+      "choices": [
+        "0",
+        "1",
+        "e−1",
+        "e"
+      ],
+      "answerIndex": 1,
+      "explanation": "[x log x−x]₁^e=(e−e)−(0−1)。"
+    },
+    {
+      "id": "mat_m312_017",
+      "unit": "math.m3.integ.method",
+      "category": "calculation",
+      "prompt": "d/dx ∫₀^(2x) eᵗ dt は？",
+      "choices": [
+        "2eˣ",
+        "e^(2x)",
+        "2e^(2x)",
+        "e^(2x)−1"
+      ],
+      "answerIndex": 2,
+      "explanation": "上端が 2x なので、中身に 2x を代入して ×2。"
+    },
+    {
+      "id": "mat_m312_018",
+      "unit": "math.m3.integ.method",
+      "category": "calculation",
+      "prompt": "偶関数 f(x) について、∫₋ₐᵃ f(x) dx と等しいものは？",
+      "choices": [
+        "2∫₀ᵃ f(x) dx",
+        "0",
+        "−2∫₀ᵃ f(x) dx",
+        "∫₀ᵃ f(x) dx"
+      ],
+      "answerIndex": 0,
+      "explanation": "グラフが y 軸について対称。"
+    },
+    {
+      "id": "mat_m312_019",
+      "unit": "math.m3.integ.method",
+      "category": "calculation",
+      "prompt": "∫₀^(π/4) tan x dx の値は？",
+      "choices": [
+        "log 2",
+        "π/4",
+        "1",
+        "(1/2)log 2"
+      ],
+      "answerIndex": 3,
+      "explanation": "[−log cos x]₀^(π/4)=−log(1/√2)。"
+    },
+    {
+      "id": "mat_m312_020",
+      "unit": "math.m3.integ.method.limit",
+      "category": "knowledge",
+      "prompt": "区分求積法で lim_{n→∞} (1/n)Σ_{k=1}^{n} f(k/n) と等しい定積分は？",
+      "choices": [
+        "∫₀¹ x f(x) dx",
+        "∫₁ⁿ f(x) dx",
+        "∫₀ⁿ f(x) dx",
+        "∫₀¹ f(x) dx"
+      ],
+      "answerIndex": 3,
+      "explanation": "幅 1/n の長方形の面積の和が、面積に近づく。"
+    }
+  ]
+}

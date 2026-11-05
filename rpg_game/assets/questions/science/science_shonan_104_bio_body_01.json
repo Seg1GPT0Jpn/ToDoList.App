@@ -1,0 +1,675 @@
+{
+  "setId": "science_shonan_104_bio_body_01",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "science_shonan_104_bio_body_01_001",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "多細胞生物の体内で、細胞をとりまく体液がつくる環境を何という？",
+      "choices": [
+        "体内環境（内部環境）",
+        "生態系",
+        "細胞内環境",
+        "体外環境"
+      ],
+      "answerIndex": 0,
+      "explanation": "体液は血液・組織液・リンパ液に分けられる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_01_002",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ヒトの体液を3つに分けたときの組み合わせとして正しいものは？",
+      "choices": [
+        "細胞液・組織液・尿",
+        "血液・組織液・リンパ液",
+        "血液・胃液・だ液",
+        "血しょう・血清・血ぺい"
+      ],
+      "answerIndex": 1,
+      "explanation": "組織液は血しょうが毛細血管からしみ出したもの。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_01_003",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "血しょうが毛細血管の壁からしみ出して、細胞のまわりを満たしている液体は？",
+      "choices": [
+        "リンパ液",
+        "組織液",
+        "血清",
+        "細胞液"
+      ],
+      "answerIndex": 1,
+      "explanation": "組織液の多くは再び毛細血管にもどり、一部はリンパ管に入ってリンパ液になる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_01_004",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "組織液の一部がリンパ管に流れこんでできる体液は？",
+      "choices": [
+        "消化液",
+        "血清",
+        "リンパ液",
+        "血しょう"
+      ],
+      "answerIndex": 2,
+      "explanation": "リンパ液にはリンパ球がふくまれ、最後は静脈に合流する。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_01_005",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "血液の成分のうち、液体成分を何という？",
+      "choices": [
+        "血しょう",
+        "血清",
+        "組織液",
+        "血ぺい"
+      ],
+      "answerIndex": 0,
+      "explanation": "血液の体積の約55％を占め、その約90％は水。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_01_006",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "血液の有形成分（血球）の組み合わせとして正しいものは？",
+      "choices": [
+        "赤血球・白血球・血しょう",
+        "赤血球・血小板・血清",
+        "白血球・血小板・フィブリン",
+        "赤血球・白血球・血小板"
+      ],
+      "answerIndex": 3,
+      "explanation": "血しょうは液体成分。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_01_007",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ヒトの血球のうち、核をもつものは？",
+      "choices": [
+        "赤血球と血小板の両方",
+        "白血球",
+        "血小板",
+        "赤血球"
+      ],
+      "answerIndex": 1,
+      "explanation": "ヒトの赤血球と血小板は核をもたない。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_01_008",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ヒトの血球のうち、ふつう最も大きいものは？",
+      "choices": [
+        "白血球",
+        "赤血球",
+        "血小板",
+        "どれもほぼ同じ"
+      ],
+      "answerIndex": 0,
+      "explanation": "赤血球は直径7〜8μm、白血球は6〜20μmほど、血小板は2〜4μmほど。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_01_009",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ヒトの血球のうち、最も小さいものは？",
+      "choices": [
+        "白血球",
+        "赤血球",
+        "血小板",
+        "リンパ球"
+      ],
+      "answerIndex": 2,
+      "explanation": "血小板は核をもたない細胞の断片で、血液凝固にはたらく。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_01_010",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ヒトの血液1mm³あたりに最も多くふくまれる血球は？",
+      "choices": [
+        "白血球",
+        "赤血球",
+        "血小板",
+        "リンパ球"
+      ],
+      "answerIndex": 1,
+      "explanation": "赤血球は1mm³あたり約450万〜500万個。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_01_011",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "赤血球の主なはたらきは？",
+      "choices": [
+        "血液凝固",
+        "栄養分の分解",
+        "酸素の運搬",
+        "免疫"
+      ],
+      "answerIndex": 2,
+      "explanation": "ヘモグロビンが酸素と結合して運ぶ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_01_012",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "白血球の主なはたらきは？",
+      "choices": [
+        "酸素の運搬",
+        "血液凝固",
+        "ホルモンの合成",
+        "免疫（体を異物から守る）"
+      ],
+      "answerIndex": 3,
+      "explanation": "好中球・マクロファージ・リンパ球などがある。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_01_013",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "血小板の主なはたらきは？",
+      "choices": [
+        "抗体の産生",
+        "酸素の運搬",
+        "血液凝固",
+        "二酸化炭素の運搬"
+      ],
+      "answerIndex": 2,
+      "explanation": "傷口で血液を固めて出血を止める。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_01_014",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "血しょうのはたらきとして当てはまらないものは？",
+      "choices": [
+        "ホルモンを運ぶ",
+        "酸素をヘモグロビンと結合させて運ぶ",
+        "栄養分や老廃物を運ぶ",
+        "二酸化炭素の多くを運ぶ"
+      ],
+      "answerIndex": 1,
+      "explanation": "酸素を運ぶのは赤血球のヘモグロビン。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_01_015",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "赤血球にふくまれ、酸素と結合するタンパク質は？",
+      "choices": [
+        "アルブミン",
+        "ヘモグロビン",
+        "インスリン",
+        "フィブリン"
+      ],
+      "answerIndex": 1,
+      "explanation": "鉄をふくむ赤い色素タンパク質。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_01_016",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "ヘモグロビンの性質として正しいものは？",
+      "choices": [
+        "酸素濃度が低い所で酸素と結合し、高い所で離す",
+        "二酸化炭素濃度が高いほど酸素と結合しやすい",
+        "酸素濃度が高い所で酸素と結合し、低い所で酸素を離す",
+        "酸素濃度に関係なく一定の割合で結合する"
+      ],
+      "answerIndex": 2,
+      "explanation": "肺で酸素と結合し、組織で酸素を離す。CO₂濃度が高いと酸素を離しやすい。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_01_017",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "血球はどこでつくられる？",
+      "choices": [
+        "胸腺",
+        "ひ臓",
+        "骨髄",
+        "肝臓"
+      ],
+      "answerIndex": 2,
+      "explanation": "骨髄の造血幹細胞からすべての血球がつくられる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_01_018",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "古くなった赤血球が主に壊される場所は？",
+      "choices": [
+        "胸腺",
+        "骨髄",
+        "腎臓",
+        "ひ臓や肝臓"
+      ],
+      "answerIndex": 3,
+      "explanation": "ヒトの赤血球の寿命は約120日。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_01_019",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "血液が固まるとき、血球をからめとる繊維状のタンパク質は？",
+      "choices": [
+        "グリコーゲン",
+        "ヘモグロビン",
+        "フィブリン",
+        "ケラチン"
+      ],
+      "answerIndex": 2,
+      "explanation": "血球がフィブリンにからまってできるかたまりを血ぺいという。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_01_020",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "採血した血液を静置すると分かれる、血ぺい以外の淡黄色の液体は？",
+      "choices": [
+        "血清",
+        "リンパ液",
+        "組織液",
+        "血しょう"
+      ],
+      "answerIndex": 0,
+      "explanation": "血清は、血しょうからフィブリンのもとなどが除かれたもの。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_01_021",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "血液凝固でできたかたまりが、傷が治ったあとに溶かされるしくみを何という？",
+      "choices": [
+        "線溶（フィブリン溶解）",
+        "再吸収",
+        "食作用",
+        "抗原抗体反応"
+      ],
+      "answerIndex": 0,
+      "explanation": "血管の中で血ぺいが残ると血管がつまるため、溶かして取り除く。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_01_022",
+      "unit": "science.biology.body.homeostasis.organ",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "胎児の循環の説明として正しいものは？",
+      "choices": [
+        "胎盤で母体と物質交換し、肺にはほとんど血液が流れない",
+        "胎児の血液は母体の血液とそのまま混ざっている",
+        "胎児も自分の肺で呼吸している",
+        "胎児の心臓は1心房1心室である"
+      ],
+      "answerIndex": 0,
+      "explanation": "胎児の心臓には卵円孔（右心房→左心房の穴）、肺動脈と大動脈の間には動脈管があり、肺を通らない近道になっている。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_01_023",
+      "unit": "science.biology.body.homeostasis.organ",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "胎児の心臓で、右心房と左心房をつなぐ穴を何という？",
+      "choices": [
+        "洞房結節",
+        "卵円孔",
+        "動脈管",
+        "弁"
+      ],
+      "answerIndex": 1,
+      "explanation": "生まれて肺呼吸が始まると閉じる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_01_024",
+      "unit": "science.biology.body.homeostasis.organ",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "胎児のヘモグロビンの性質として正しいものは？",
+      "choices": [
+        "酸素とは結合しない",
+        "大人のヘモグロビンより酸素と結合しにくい",
+        "大人と全く同じ",
+        "大人のヘモグロビンより酸素と結合しやすい"
+      ],
+      "answerIndex": 3,
+      "explanation": "胎盤で母体の血液から酸素を受け取りやすくなっている。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_01_025",
+      "unit": "science.biology.body.homeostasis.organ",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ヒトの心臓の拍動のリズムをつくる、右心房にある部分は？",
+      "choices": [
+        "弁",
+        "心室中隔",
+        "卵円孔",
+        "ペースメーカー（洞房結節）"
+      ],
+      "answerIndex": 3,
+      "explanation": "自律神経はこのペースメーカーにはたらきかけて、拍動を速めたり遅くしたりする。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_01_026",
+      "unit": "science.biology.body.nerve.autonomic",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ヒトの中枢神経系にあたるものは？",
+      "choices": [
+        "脳と脊髄",
+        "交感神経と副交感神経",
+        "感覚神経と運動神経",
+        "脳と自律神経"
+      ],
+      "answerIndex": 0,
+      "explanation": "中枢神経系から出て全身に分布するのが末梢神経系。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_01_027",
+      "unit": "science.biology.body.nerve.autonomic",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "末梢神経系のうち、感覚神経と運動神経からなるものは？",
+      "choices": [
+        "自律神経系",
+        "中枢神経系",
+        "内分泌系",
+        "体性神経系"
+      ],
+      "answerIndex": 3,
+      "explanation": "自律神経系は交感神経と副交感神経からなる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_01_028",
+      "unit": "science.biology.body.nerve.autonomic",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "自律神経系の説明として正しいものは？",
+      "choices": [
+        "意思とは関係なく、内臓や血管などのはたらきを調節する",
+        "脳と脊髄からなる",
+        "意思によって骨格筋を動かす",
+        "皮膚の感覚を脳に伝える"
+      ],
+      "answerIndex": 0,
+      "explanation": "中枢は間脳の視床下部。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_body_01_029",
+      "unit": "science.biology.body.nerve.autonomic",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "大脳のはたらきとして正しいものは？",
+      "choices": [
+        "体の平衡を保つ中枢",
+        "体温や血糖量の調節の中枢",
+        "感覚・随意運動・記憶・思考などの中枢",
+        "呼吸や心臓の拍動の中枢"
+      ],
+      "answerIndex": 2,
+      "explanation": "大脳の表面（大脳皮質）に多くの中枢がある。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "body"
+      ]
+    }
+  ]
+}

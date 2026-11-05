@@ -1,0 +1,1871 @@
+{
+  "setId": "social_shonan_104_public_economy_13",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "social_shonan_104_public_economy_13_001",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "次のうち、最も古いできごとは？",
+      "choices": [
+        "チャーティスト運動",
+        "エリザベス救貧法",
+        "ラッダイト運動",
+        "工場法（英）"
+      ],
+      "answerIndex": 1,
+      "explanation": "救貧法1601年→ラッダイト運動1811〜17年→工場法1833年→チャーティスト運動1837〜48年。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_002",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "労働者保護のできごとを古い順に並べたとき、正しいものは？",
+      "choices": [
+        "ラッダイト運動→チャーティスト運動→工場法（英）",
+        "ラッダイト運動→工場法（英）→チャーティスト運動",
+        "チャーティスト運動→ラッダイト運動→工場法（英）",
+        "工場法（英）→ラッダイト運動→チャーティスト運動"
+      ],
+      "answerIndex": 1,
+      "explanation": "1811〜17年→1833年→1837〜48年。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_003",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "世界初の医療保険（疾病保険法）を作ったのはどこの国で何年？",
+      "choices": [
+        "イギリス・1942年",
+        "ドイツ・1883年",
+        "アメリカ・1935年",
+        "イギリス・1911年"
+      ],
+      "answerIndex": 1,
+      "explanation": "ビスマルクの「アメとムチ」政策の一つ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_004",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "世界初の失業保険を含む国民保険法をつくった国と年は？",
+      "choices": [
+        "日本・1922年",
+        "アメリカ・1935年",
+        "イギリス・1911年",
+        "ドイツ・1883年"
+      ],
+      "answerIndex": 2,
+      "explanation": "健康保険と失業保険を内容とした。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_005",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「社会保障」という語を初めて使った法律をつくった国と年は？",
+      "choices": [
+        "イギリス・1911年",
+        "イギリス・1942年",
+        "アメリカ・1935年",
+        "ドイツ・1919年"
+      ],
+      "answerIndex": 2,
+      "explanation": "ニューディール政策の一環の社会保障法。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_006",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "初めて生存権を保障した憲法と、その年は？",
+      "choices": [
+        "フィラデルフィア宣言・1944年",
+        "ワイマール憲法・1919年",
+        "ワイマール憲法・1946年",
+        "日本国憲法・1946年"
+      ],
+      "answerIndex": 1,
+      "explanation": "ドイツのワイマール憲法。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_007",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "「ゆりかごから墓場まで」を掲げたベバリッジ報告が出された年は？",
+      "choices": [
+        "1919年",
+        "1961年",
+        "1942年",
+        "1935年"
+      ],
+      "answerIndex": 2,
+      "explanation": "イギリスの戦後社会保障の青写真。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_008",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "日本で国民皆保険・国民皆年金が実現した年は？",
+      "choices": [
+        "1961年",
+        "1985年",
+        "1946年",
+        "1973年"
+      ],
+      "answerIndex": 0,
+      "explanation": "同じ1961年に割賦販売法もできた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_009",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "年金の物価スライド制と老人医療の無料化が始まった「福祉元年」は何年？",
+      "choices": [
+        "1973年",
+        "1985年",
+        "2000年",
+        "1961年"
+      ],
+      "answerIndex": 0,
+      "explanation": "同じ年に第一次石油危機が起きた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_010",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "基礎年金（国民年金）を導入した年金改正は何年？",
+      "choices": [
+        "1985年",
+        "1973年",
+        "2004年",
+        "1961年"
+      ],
+      "answerIndex": 0,
+      "explanation": "実施は1986年4月。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_011",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "介護保険制度が導入されたのは何年？",
+      "choices": [
+        "2000年",
+        "2008年",
+        "1997年",
+        "1985年"
+      ],
+      "answerIndex": 0,
+      "explanation": "介護保険法の成立は1997年。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_012",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "後期高齢者医療制度（75歳以上）が始まった年は？",
+      "choices": [
+        "2015年",
+        "1985年",
+        "2000年",
+        "2008年"
+      ],
+      "answerIndex": 3,
+      "explanation": "75歳以上を独立した制度にした。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_013",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "日本で治安維持法がつくられた年は？",
+      "choices": [
+        "1900年",
+        "1925年",
+        "1928年",
+        "1945年"
+      ],
+      "answerIndex": 1,
+      "explanation": "1928年の改正で死刑が導入された。1900年は治安警察法。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_014",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "労働組合法が制定された年は？",
+      "choices": [
+        "1945年",
+        "1946年",
+        "1947年",
+        "1919年"
+      ],
+      "answerIndex": 0,
+      "explanation": "労働三法は組合法1945・調整法1946・基準法1947。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_015",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "労働基準法が制定された年は？",
+      "choices": [
+        "1946年",
+        "1947年",
+        "1985年",
+        "1945年"
+      ],
+      "answerIndex": 1,
+      "explanation": "労働条件の最低基準を定めた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_016",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "森永ヒ素ミルク事件が起きた年は？",
+      "choices": [
+        "1955年",
+        "1970年",
+        "1968年",
+        "1962年"
+      ],
+      "answerIndex": 0,
+      "explanation": "1962年サリドマイド、1968年カネミ油症、1970年スモン病。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_017",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "ケネディが消費者の4つの権利を提唱した年は？",
+      "choices": [
+        "1962年",
+        "1976年",
+        "1955年",
+        "1968年"
+      ],
+      "answerIndex": 0,
+      "explanation": "安全・知らされる・選択できる・意見を反映させる権利。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_018",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "消費者保護基本法が制定された年は？",
+      "choices": [
+        "1968年",
+        "1962年",
+        "2004年",
+        "1994年"
+      ],
+      "answerIndex": 0,
+      "explanation": "2004年に消費者基本法へ改正。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_019",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "製造物責任法（PL法）が制定された年は？",
+      "choices": [
+        "2000年",
+        "1968年",
+        "1994年",
+        "2004年"
+      ],
+      "answerIndex": 2,
+      "explanation": "無過失責任を定めた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_020",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "消費者庁が発足した年は？",
+      "choices": [
+        "1970年",
+        "2009年",
+        "2000年",
+        "2004年"
+      ],
+      "answerIndex": 1,
+      "explanation": "消費者行政の一元化のため内閣府に設置。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_021",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "男女雇用機会均等法が制定された年は？",
+      "choices": [
+        "1985年",
+        "2015年",
+        "1997年",
+        "1995年"
+      ],
+      "answerIndex": 0,
+      "explanation": "1997年の改正でセクハラ防止を規定。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_022",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "育児・介護休業法が制定された年は？",
+      "choices": [
+        "2000年",
+        "2019年",
+        "1995年",
+        "1985年"
+      ],
+      "answerIndex": 2,
+      "explanation": "育児休業は最長1年、介護休業は最長3か月。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_023",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "働き方改革推進法の施行年は？",
+      "choices": [
+        "2008年",
+        "2019年",
+        "2015年",
+        "2024年"
+      ],
+      "answerIndex": 1,
+      "explanation": "同じ2019年に特定技能が創設された。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_024",
+      "unit": "social.pol.economy.global.system",
+      "category": "knowledge",
+      "prompt": "ブレトン・ウッズ協定が結ばれた年は？",
+      "choices": [
+        "1945年",
+        "1947年",
+        "1944年",
+        "1971年"
+      ],
+      "answerIndex": 2,
+      "explanation": "IMF・IBRDの設立は1945年。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_025",
+      "unit": "social.pol.economy.global.system",
+      "category": "knowledge",
+      "prompt": "GATTが結ばれた年は？",
+      "choices": [
+        "1947年",
+        "1995年",
+        "1964年",
+        "1944年"
+      ],
+      "answerIndex": 0,
+      "explanation": "1995年にWTOへ発展。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_026",
+      "unit": "social.pol.economy.global.system",
+      "category": "knowledge",
+      "prompt": "ニクソン・ショックが起きた年は？",
+      "choices": [
+        "1985年",
+        "1973年",
+        "1971年",
+        "1976年"
+      ],
+      "answerIndex": 2,
+      "explanation": "同じ年にスミソニアン協定。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_027",
+      "unit": "social.pol.economy.global.system",
+      "category": "knowledge",
+      "prompt": "主要国が変動為替相場制へ移行した年は？",
+      "choices": [
+        "1985年",
+        "1973年",
+        "1971年",
+        "1976年"
+      ],
+      "answerIndex": 1,
+      "explanation": "1976年のキングストン合意で追認。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_028",
+      "unit": "social.pol.economy.global.system",
+      "category": "knowledge",
+      "prompt": "国際通貨体制のできごとを古い順に並べたものとして正しいのは？",
+      "choices": [
+        "ニクソン・ショック→ブレトン・ウッズ協定→キングストン合意→変動為替相場制への移行",
+        "ブレトン・ウッズ協定→ニクソン・ショック→変動為替相場制への移行→キングストン合意",
+        "ブレトン・ウッズ協定→ニクソン・ショック→キングストン合意→変動為替相場制への移行",
+        "ブレトン・ウッズ協定→変動為替相場制への移行→ニクソン・ショック→キングストン合意"
+      ],
+      "answerIndex": 1,
+      "explanation": "1944→1971→1973→1976。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_029",
+      "unit": "social.pol.economy.global.system",
+      "category": "knowledge",
+      "prompt": "プラザ合意が結ばれた年は？",
+      "choices": [
+        "1985年",
+        "1995年",
+        "1971年",
+        "1987年"
+      ],
+      "answerIndex": 0,
+      "explanation": "1987年はルーブル合意。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_030",
+      "unit": "social.pol.economy.global.system",
+      "category": "knowledge",
+      "prompt": "UNCTADが設立された年は？",
+      "choices": [
+        "1974年",
+        "1964年",
+        "1960年",
+        "1966年"
+      ],
+      "answerIndex": 1,
+      "explanation": "1966年はUNDP。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_031",
+      "unit": "social.pol.economy.global.system",
+      "category": "knowledge",
+      "prompt": "第1回サミットが開かれた年は？",
+      "choices": [
+        "1964年",
+        "1985年",
+        "1973年",
+        "1975年"
+      ],
+      "answerIndex": 3,
+      "explanation": "フランスのランブイエで開かれた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_032",
+      "unit": "social.pol.economy.global.system",
+      "category": "knowledge",
+      "prompt": "NIEO（新国際経済秩序）樹立宣言が出された年は？",
+      "choices": [
+        "1962年",
+        "1974年",
+        "1986年",
+        "1964年"
+      ],
+      "answerIndex": 1,
+      "explanation": "1962年は天然資源の恒久主権。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_033",
+      "unit": "social.pol.economy.global.system",
+      "category": "knowledge",
+      "prompt": "ウルグアイ・ラウンドが行われた期間は？",
+      "choices": [
+        "2001年〜",
+        "1986〜94年",
+        "1973〜79年",
+        "1964〜67年"
+      ],
+      "answerIndex": 1,
+      "explanation": "ケネディ1964〜67、東京1973〜79、ドーハ2001〜。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_034",
+      "unit": "social.pol.economy.global.system",
+      "category": "knowledge",
+      "prompt": "WTOが発足した年は？",
+      "choices": [
+        "2001年",
+        "1986年",
+        "1995年",
+        "1947年"
+      ],
+      "answerIndex": 2,
+      "explanation": "2001年に中国が加盟。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_035",
+      "unit": "social.pol.economy.global.system",
+      "category": "knowledge",
+      "prompt": "リーマン・ショックが起きた年は？",
+      "choices": [
+        "2007年",
+        "2008年",
+        "1997年",
+        "2001年"
+      ],
+      "answerIndex": 1,
+      "explanation": "2007年はサブプライムローン問題。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_036",
+      "unit": "social.pol.economy.global.region",
+      "category": "knowledge",
+      "prompt": "ヨーロッパ統合の歩みを古い順に並べたものとして正しいのは？",
+      "choices": [
+        "ECSC→EC→EEC→EU",
+        "ECSC→EEC→EC→EU",
+        "EEC→ECSC→EC→EU",
+        "EC→ECSC→EEC→EU"
+      ],
+      "answerIndex": 1,
+      "explanation": "1952→1958→1967→1993。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_037",
+      "unit": "social.pol.economy.global.region",
+      "category": "knowledge",
+      "prompt": "ECSCが設立された年は？",
+      "choices": [
+        "1967年",
+        "1958年",
+        "1993年",
+        "1952年"
+      ],
+      "answerIndex": 3,
+      "explanation": "シューマン・プランを具体化した。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_038",
+      "unit": "social.pol.economy.global.region",
+      "category": "knowledge",
+      "prompt": "EECが発足した年は？",
+      "choices": [
+        "1960年",
+        "1967年",
+        "1952年",
+        "1958年"
+      ],
+      "answerIndex": 3,
+      "explanation": "ローマ条約で発足。同年EURATOMも。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_039",
+      "unit": "social.pol.economy.global.region",
+      "category": "knowledge",
+      "prompt": "ECが発足した年は？",
+      "choices": [
+        "1958年",
+        "1967年",
+        "1973年",
+        "1993年"
+      ],
+      "answerIndex": 1,
+      "explanation": "ECSC＋EEC＋EURATOM。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_040",
+      "unit": "social.pol.economy.global.region",
+      "category": "knowledge",
+      "prompt": "EUが発足した年は？",
+      "choices": [
+        "1993年",
+        "1992年",
+        "1999年",
+        "1967年"
+      ],
+      "answerIndex": 0,
+      "explanation": "マーストリヒト条約は1992年調印・1993年発効。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_041",
+      "unit": "social.pol.economy.global.region",
+      "category": "knowledge",
+      "prompt": "単一通貨ユーロが導入された年は？",
+      "choices": [
+        "1993年",
+        "2002年",
+        "1979年",
+        "1999年"
+      ],
+      "answerIndex": 3,
+      "explanation": "現金の流通は2002年から。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_042",
+      "unit": "social.pol.economy.global.region",
+      "category": "knowledge",
+      "prompt": "APECが発足した年は？",
+      "choices": [
+        "1967年",
+        "1993年",
+        "1989年",
+        "1995年"
+      ],
+      "answerIndex": 2,
+      "explanation": "オーストラリアの提唱。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_043",
+      "unit": "social.pol.economy.global.region",
+      "category": "knowledge",
+      "prompt": "NAFTAが発足した年は？",
+      "choices": [
+        "1989年",
+        "2020年",
+        "1994年",
+        "1995年"
+      ],
+      "answerIndex": 2,
+      "explanation": "2020年にUSMCAにかわった。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_044",
+      "unit": "social.pol.economy.global.region",
+      "category": "knowledge",
+      "prompt": "MERCOSURが発足した年は？",
+      "choices": [
+        "1989年",
+        "1994年",
+        "1995年",
+        "1993年"
+      ],
+      "answerIndex": 2,
+      "explanation": "途上国間の関税同盟。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_045",
+      "unit": "social.pol.economy.global.region",
+      "category": "knowledge",
+      "prompt": "日本が初めて結んだEPAの相手国と年は？",
+      "choices": [
+        "ASEAN・2008年",
+        "シンガポール・2002年",
+        "アメリカ・2020年",
+        "メキシコ・2005年"
+      ],
+      "answerIndex": 1,
+      "explanation": "日本最初のEPA。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_046",
+      "unit": "social.pol.economy.global.region",
+      "category": "knowledge",
+      "prompt": "中国が改革・開放政策を始めた年は？",
+      "choices": [
+        "1989年",
+        "1978年",
+        "1949年",
+        "2001年"
+      ],
+      "answerIndex": 1,
+      "explanation": "経済特区を中心に外国資本を導入。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_047",
+      "unit": "social.pol.economy.global.region",
+      "category": "knowledge",
+      "prompt": "AIIB設立・AEC発足が重なった年は？",
+      "choices": [
+        "2020年",
+        "2015年",
+        "2008年",
+        "2010年"
+      ],
+      "answerIndex": 1,
+      "explanation": "同じ年にSDGsも採択された。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_048",
+      "unit": "social.pol.economy.global.north",
+      "category": "knowledge",
+      "prompt": "MDGs（ミレニアム開発目標）が採択された年は？",
+      "choices": [
+        "2003年",
+        "2015年",
+        "2000年",
+        "1992年"
+      ],
+      "answerIndex": 2,
+      "explanation": "2015年までの目標。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_049",
+      "unit": "social.pol.economy.global.north",
+      "category": "knowledge",
+      "prompt": "SDGsが採択された年は？",
+      "choices": [
+        "2030年",
+        "2000年",
+        "2015年",
+        "2010年"
+      ],
+      "answerIndex": 2,
+      "explanation": "2030年までに達成をめざす17の目標。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_050",
+      "unit": "social.pol.economy.global.north",
+      "category": "knowledge",
+      "prompt": "OECDが設立された年は？",
+      "choices": [
+        "1945年",
+        "1964年",
+        "1961年",
+        "1975年"
+      ],
+      "answerIndex": 2,
+      "explanation": "日本の加盟は1964年。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_051",
+      "unit": "social.pol.economy.global.system",
+      "category": "knowledge",
+      "prompt": "OPECが設立された年は？",
+      "choices": [
+        "1973年",
+        "1960年",
+        "1968年",
+        "1945年"
+      ],
+      "answerIndex": 1,
+      "explanation": "1968年はOAPEC。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_052",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "訪問販売のクーリング・オフの期間は？",
+      "choices": [
+        "14日",
+        "20日",
+        "30日",
+        "8日"
+      ],
+      "answerIndex": 3,
+      "explanation": "マルチ商法は20日。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_053",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "マルチ商法（連鎖販売取引）のクーリング・オフの期間は？",
+      "choices": [
+        "1年",
+        "8日",
+        "20日",
+        "14日"
+      ],
+      "answerIndex": 2,
+      "explanation": "訪問販売・割賦販売は8日。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_054",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "クーリング・オフできない現金取引は、いくら未満？",
+      "choices": [
+        "3000円未満",
+        "1000円未満",
+        "5000円未満",
+        "1万円未満"
+      ],
+      "answerIndex": 0,
+      "explanation": "店頭購入や通信販売もクーリング・オフの対象外。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_055",
+      "unit": "social.pol.politics.law.consumer",
+      "category": "knowledge",
+      "prompt": "消費者契約法で、誤認・困惑による契約を取り消せる期間は？",
+      "choices": [
+        "気づいてから6か月・契約から3年",
+        "気づいてから8日・契約から1年",
+        "気づいてから1年・契約から5年",
+        "気づいてから3年・契約から10年"
+      ],
+      "answerIndex": 2,
+      "explanation": "不当な条項は無効になる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-4"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_056",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "緊急調整が行われると、争議行為が禁止される期間は？",
+      "choices": [
+        "30日",
+        "60日",
+        "50日",
+        "100日"
+      ],
+      "answerIndex": 2,
+      "explanation": "首相が行う。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_057",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "労働三権を保障しているのは憲法第何条？",
+      "choices": [
+        "27条",
+        "25条",
+        "29条",
+        "28条"
+      ],
+      "answerIndex": 3,
+      "explanation": "勤労権は27条。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5a"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_058",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "労働者派遣の上限は原則何年？",
+      "choices": [
+        "5年",
+        "10年",
+        "3年",
+        "1年"
+      ],
+      "answerIndex": 2,
+      "explanation": "労働者派遣法による。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_059",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "働き方改革で企業に義務づけられた年次有給休暇の取得日数は？",
+      "choices": [
+        "年5日",
+        "年3日",
+        "年20日",
+        "年10日"
+      ],
+      "answerIndex": 0,
+      "explanation": "2019年から。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_060",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "育児休業と介護休業の最長期間の組み合わせは？",
+      "choices": [
+        "育児2年・介護1年",
+        "育児3か月・介護1年",
+        "育児1年・介護3か月",
+        "育児6か月・介護6か月"
+      ],
+      "answerIndex": 2,
+      "explanation": "育児・介護休業法。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_061",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "医療保険の給付と自己負担の割合は（原則）？",
+      "choices": [
+        "給付8割・自己負担2割",
+        "給付5割・自己負担5割",
+        "給付7割・自己負担3割",
+        "給付9割・自己負担1割"
+      ],
+      "answerIndex": 2,
+      "explanation": "後期高齢者は原則1割。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_062",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "人口を維持するのに必要な合計特殊出生率は？",
+      "choices": [
+        "2.07",
+        "1.15",
+        "1.57",
+        "3.00"
+      ],
+      "answerIndex": 0,
+      "explanation": "2024年は1.15、2025年は1.14（概数）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_063",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "高齢化率による社会の区分で「高齢化社会」「高齢社会」「超高齢社会」の基準は？",
+      "choices": [
+        "7%・15%・25%",
+        "10%・20%・30%",
+        "5%・10%・15%",
+        "7%・14%・21%"
+      ],
+      "answerIndex": 3,
+      "explanation": "日本は1970・1994・2007年に到達。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_064",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "日本が超高齢社会（高齢化率21%以上）になった年は？",
+      "choices": [
+        "1970年",
+        "2015年",
+        "2007年",
+        "1994年"
+      ],
+      "answerIndex": 2,
+      "explanation": "1970年に高齢化社会、1994年に高齢社会。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_065",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "2026年7月からの法定雇用率（民間）は？",
+      "choices": [
+        "3.0%",
+        "2.7%",
+        "2.5%",
+        "2.3%"
+      ],
+      "answerIndex": 1,
+      "explanation": "国・地方公共団体等は3.0%。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_066",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "介護保険の保険料を負担するのは何歳以上？",
+      "choices": [
+        "20歳以上",
+        "60歳以上",
+        "65歳以上",
+        "40歳以上"
+      ],
+      "answerIndex": 3,
+      "explanation": "サービスの対象は主に65歳以上。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_067",
+      "unit": "social.pol.economy.welfare",
+      "category": "knowledge",
+      "prompt": "介護保険の認定で使われる区分は？",
+      "choices": [
+        "要支援1〜3と要介護1〜3",
+        "要介護1〜3だけ",
+        "要支援1〜5と要介護1・2",
+        "要支援1・2と要介護1〜5"
+      ],
+      "answerIndex": 3,
+      "explanation": "ケアマネジャーがプランを立てる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-6"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_068",
+      "unit": "social.pol.economy.global.system",
+      "category": "knowledge",
+      "prompt": "ブレトン・ウッズ体制での1ドルの円価格は？",
+      "choices": [
+        "120円",
+        "240円",
+        "308円",
+        "360円"
+      ],
+      "answerIndex": 3,
+      "explanation": "スミソニアン協定で308円になった。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_069",
+      "unit": "social.pol.economy.global.system",
+      "category": "knowledge",
+      "prompt": "スミソニアン協定での1ドルの円価格は？",
+      "choices": [
+        "100円",
+        "240円",
+        "308円",
+        "360円"
+      ],
+      "answerIndex": 2,
+      "explanation": "1971年。金1オンス=38ドル。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_070",
+      "unit": "social.pol.economy.global.system",
+      "category": "knowledge",
+      "prompt": "金1オンスのドル価格は、ブレトン・ウッズ体制とスミソニアン協定でどう変わった？",
+      "choices": [
+        "35ドル→38ドル",
+        "30ドル→35ドル",
+        "35ドル→42ドル",
+        "38ドル→35ドル"
+      ],
+      "answerIndex": 0,
+      "explanation": "ドルを金に対して切り下げた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-2"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_071",
+      "unit": "social.pol.economy.global.north",
+      "category": "knowledge",
+      "prompt": "先進国のODAのGNI比の目標は？",
+      "choices": [
+        "0.7%",
+        "3%",
+        "0.39%",
+        "1%"
+      ],
+      "answerIndex": 0,
+      "explanation": "日本は0.39%（2022年）で目標に届かない。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_072",
+      "unit": "social.pol.economy.global.north",
+      "category": "knowledge",
+      "prompt": "日本のODAの贈与比率とDAC平均の組み合わせは？",
+      "choices": [
+        "日本83.1%・DAC平均39.3%",
+        "日本0.7%・DAC平均0.39%",
+        "日本60%・DAC平均70%",
+        "日本39.3%・DAC平均83.1%"
+      ],
+      "answerIndex": 3,
+      "explanation": "日本の課題は贈与比率が低いこと。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_073",
+      "unit": "social.pol.economy.global.north",
+      "category": "knowledge",
+      "prompt": "2025年6月からの世界銀行の絶対的貧困の基準は？",
+      "choices": [
+        "1日2.15ドル",
+        "1日5.00ドル",
+        "1日1.00ドル",
+        "1日3.00ドル"
+      ],
+      "answerIndex": 3,
+      "explanation": "旧基準は1日2.15ドル。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-4"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_074",
+      "unit": "social.pol.economy.global.region",
+      "category": "knowledge",
+      "prompt": "EU加盟国数の変化として正しいものは？",
+      "choices": [
+        "12→15→25→28→27",
+        "6→9→12→15→27",
+        "15→25→27→28→27",
+        "12→15→27→28→25"
+      ],
+      "answerIndex": 0,
+      "explanation": "1993→1995→2004→2013→2020（英の離脱）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_075",
+      "unit": "social.pol.economy.global.region",
+      "category": "knowledge",
+      "prompt": "APECの参加国・地域の数は？",
+      "choices": [
+        "27",
+        "12",
+        "21",
+        "11"
+      ],
+      "answerIndex": 2,
+      "explanation": "1989年発足。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_076",
+      "unit": "social.pol.economy.global.region",
+      "category": "knowledge",
+      "prompt": "英国の加盟後のCPTPPの加盟国数は？",
+      "choices": [
+        "21",
+        "11",
+        "12",
+        "15"
+      ],
+      "answerIndex": 2,
+      "explanation": "発効時は11か国、2024年12月に英国が加わった。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_077",
+      "unit": "social.pol.economy.global.region",
+      "category": "knowledge",
+      "prompt": "2026年1月時点のユーロ導入国数は？",
+      "choices": [
+        "20",
+        "27",
+        "19",
+        "21"
+      ],
+      "answerIndex": 3,
+      "explanation": "2026年1月にブルガリアが導入。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_078",
+      "unit": "social.pol.economy.global.region",
+      "category": "knowledge",
+      "prompt": "2025年10月時点のASEANの加盟国数は？",
+      "choices": [
+        "12",
+        "10",
+        "21",
+        "11"
+      ],
+      "answerIndex": 3,
+      "explanation": "東ティモールが加盟した。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-3"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_079",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "非正規雇用の人数（2025年）として最も近いものは？",
+      "choices": [
+        "約4000万人（約70%）",
+        "約1000万人（約20%）",
+        "約500万人（約10%）",
+        "約2100万人（雇用者の約36%）"
+      ],
+      "answerIndex": 3,
+      "explanation": "2,128万人。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_080",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "労働組合の推定組織率（2025年）は？",
+      "choices": [
+        "16.0%",
+        "約5%",
+        "約50%",
+        "約30%"
+      ],
+      "answerIndex": 0,
+      "explanation": "過去最低を更新している。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ],
+      "unitLocked": true
+    },
+    {
+      "id": "social_shonan_104_public_economy_13_081",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "女性が労働力人口に占める割合として最も近いものは？",
+      "choices": [
+        "20%",
+        "60%",
+        "75%",
+        "44%"
+      ],
+      "answerIndex": 3,
+      "explanation": "M字型カーブは解消に向かっている。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-4-5b"
+      ],
+      "unitLocked": true
+    }
+  ]
+}

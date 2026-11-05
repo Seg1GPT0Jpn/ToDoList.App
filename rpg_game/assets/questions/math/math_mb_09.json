@@ -1,0 +1,288 @@
+{
+  "setId": "math_mb_09",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_mb09_001",
+      "unit": "math.mb.stat.random",
+      "category": "calculation",
+      "prompt": "コインを400回投げて表が220回出た。表の確率を1/2と仮定したとき、X=220 を標準化した値は？",
+      "choices": [
+        "0.2",
+        "1",
+        "2",
+        "20"
+      ],
+      "answerIndex": 2,
+      "explanation": "X は近似的に N(200, 10²)。(220−200)/10。"
+    },
+    {
+      "id": "mat_mb09_002",
+      "unit": "math.mb.stat.infer.test",
+      "category": "thinking",
+      "prompt": "上の結果で、有意水準5%（両側：|Z|>1.96 で棄却）の判断は？",
+      "choices": [
+        "仮説を棄却し、表が出やすいといえる",
+        "判断できない",
+        "必ずコインは公正だ",
+        "仮説は棄却されず、表が出やすいとはいえない"
+      ],
+      "answerIndex": 0,
+      "explanation": "|Z|=2>1.96 なので、「確率1/2」という仮説を棄却する。"
+    },
+    {
+      "id": "mat_mb09_003",
+      "unit": "math.mb.stat.infer.sample",
+      "category": "calculation",
+      "prompt": "400人を調べて240人が賛成だった。標本比率は？",
+      "choices": [
+        "240",
+        "0.4",
+        "0.6",
+        "0.24"
+      ],
+      "answerIndex": 2,
+      "explanation": "240/400。"
+    },
+    {
+      "id": "mat_mb09_004",
+      "unit": "math.mb.stat.infer.estimate",
+      "category": "calculation",
+      "prompt": "上の標本から、母比率 p の信頼度95%の信頼区間を小数第2位まで求めると、おおよそ？",
+      "choices": [
+        "0.59≦p≦0.61",
+        "0.40≦p≦0.80",
+        "0.50≦p≦0.70",
+        "0.55≦p≦0.65"
+      ],
+      "answerIndex": 3,
+      "explanation": "0.6±1.96√(0.6·0.4/400)≒0.6±0.048。"
+    },
+    {
+      "id": "mat_mb09_005",
+      "unit": "math.mb.stat.infer.sample",
+      "category": "calculation",
+      "prompt": "信頼区間の幅を半分にするには、標本の大きさを何倍にすればよい？",
+      "choices": [
+        "√2倍",
+        "2倍",
+        "1/2倍",
+        "4倍"
+      ],
+      "answerIndex": 3,
+      "explanation": "幅は 1/√n に比例する。"
+    },
+    {
+      "id": "mat_mb09_006",
+      "unit": "math.mb.stat.infer.test",
+      "category": "knowledge",
+      "prompt": "有意水準5%で検定するとは、どういうこと？",
+      "choices": [
+        "データの5%が外れ値",
+        "標本の5%を捨てる",
+        "仮説が95%正しい",
+        "帰無仮説が正しいのに棄却してしまう確率を5%以下に抑える"
+      ],
+      "answerIndex": 3,
+      "explanation": "「まれ」と判断する基準の確率。"
+    },
+    {
+      "id": "mat_mb09_007",
+      "unit": "math.mb.stat.infer.test",
+      "category": "knowledge",
+      "prompt": "仮説検定で、否定することを期待して立てる仮説を何という？",
+      "choices": [
+        "対立仮説",
+        "帰無仮説",
+        "定理",
+        "公理"
+      ],
+      "answerIndex": 1,
+      "explanation": "主張したいことは対立仮説。"
+    },
+    {
+      "id": "mat_mb09_008",
+      "unit": "math.mb.stat.random.variable",
+      "category": "calculation",
+      "prompt": "確率密度関数 f(x)=2x（0≦x≦1）の確率変数 X について、P(0≦X≦1/2) は？",
+      "choices": [
+        "1/8",
+        "1/4",
+        "1",
+        "1/2"
+      ],
+      "answerIndex": 1,
+      "explanation": "∫₀^(1/2) 2x dx=1/4。"
+    },
+    {
+      "id": "mat_mb09_009",
+      "unit": "math.mb.stat.random.variable",
+      "category": "calculation",
+      "prompt": "同じ確率変数 X の期待値は？",
+      "choices": [
+        "2/3",
+        "1",
+        "1/2",
+        "1/3"
+      ],
+      "answerIndex": 0,
+      "explanation": "∫₀¹ x·2x dx=2/3。"
+    },
+    {
+      "id": "mat_mb09_010",
+      "unit": "math.mb.stat.infer.test",
+      "category": "thinking",
+      "prompt": "「帰無仮説が棄却されなかった」ことの正しい解釈は？",
+      "choices": [
+        "データが間違っている",
+        "帰無仮説が正しいと証明された",
+        "帰無仮説が正しいと証明されたわけではなく、否定する根拠がなかっただけ",
+        "対立仮説が正しい"
+      ],
+      "answerIndex": 2,
+      "explanation": "検定は「否定できるか」を調べる方法。"
+    },
+    {
+      "id": "mat_mb09_011",
+      "unit": "math.mb.stat.random.variable",
+      "category": "calculation",
+      "prompt": "さいころを 180 回投げて1の目が 45 回出た。1の目の確率を 1/6 と仮定したとき、標準化した値 Z は？",
+      "choices": [
+        "1.5",
+        "2",
+        "0.3",
+        "3"
+      ],
+      "answerIndex": 3,
+      "explanation": "期待値30、標準偏差 √(180·1/6·5/6)=5。(45−30)/5。"
+    },
+    {
+      "id": "mat_mb09_012",
+      "unit": "math.mb.stat.infer.test",
+      "category": "calculation",
+      "prompt": "上の結果を有意水準5%（両側：|Z|>1.96 で棄却）で判断すると？",
+      "choices": [
+        "判断できない",
+        "1/6であると証明された",
+        "1の目が出る確率は1/6ではないと判断する",
+        "1/6より小さいと判断する"
+      ],
+      "answerIndex": 2,
+      "explanation": "Z=3>1.96 なので帰無仮説を棄却する。"
+    },
+    {
+      "id": "mat_mb09_013",
+      "unit": "math.mb.stat.infer.sample",
+      "category": "calculation",
+      "prompt": "100人を調べて30人が「はい」と答えた。標本比率は？",
+      "choices": [
+        "0.3",
+        "0.7",
+        "0.03",
+        "30"
+      ],
+      "answerIndex": 0,
+      "explanation": "30/100。"
+    },
+    {
+      "id": "mat_mb09_014",
+      "unit": "math.mb.stat.infer.sample",
+      "category": "calculation",
+      "prompt": "標本比率 R、標本の大きさ n のとき、母比率の信頼度95%の信頼区間の片側の幅は？",
+      "choices": [
+        "1.96√(R/n)",
+        "1.96√(R(1−R)/n)",
+        "1.96R/n",
+        "2.58√(R(1−R)/n)"
+      ],
+      "answerIndex": 1,
+      "explanation": "標本比率の標準偏差 √(R(1−R)/n) の1.96倍。"
+    },
+    {
+      "id": "mat_mb09_015",
+      "unit": "math.mb.stat.infer.sample",
+      "category": "calculation",
+      "prompt": "信頼区間の幅を1/3にするには、標本の大きさを何倍にすればよい？",
+      "choices": [
+        "9倍",
+        "1/9倍",
+        "3倍",
+        "6倍"
+      ],
+      "answerIndex": 0,
+      "explanation": "幅は 1/√n に比例する。"
+    },
+    {
+      "id": "mat_mb09_016",
+      "unit": "math.mb.stat.infer.test",
+      "category": "knowledge",
+      "prompt": "有意水準1%で棄却するときの基準は、5%のときと比べてどうなる？",
+      "choices": [
+        "必ず棄却する",
+        "変わらない",
+        "よりゆるくなる",
+        "より厳しくなる（棄却しにくい）"
+      ],
+      "answerIndex": 3,
+      "explanation": "|Z|>2.58 などとなり、よほど珍しくないと棄却しない。"
+    },
+    {
+      "id": "mat_mb09_017",
+      "unit": "math.mb.stat.infer.test",
+      "category": "knowledge",
+      "prompt": "仮説検定で、主張したいことと反対の仮説を何という？",
+      "choices": [
+        "背理仮説",
+        "帰無仮説",
+        "対立仮説",
+        "作業仮説"
+      ],
+      "answerIndex": 1,
+      "explanation": "帰無仮説を棄却することで、対立仮説（主張）を支持する。"
+    },
+    {
+      "id": "mat_mb09_018",
+      "unit": "math.mb.stat.random.variable",
+      "category": "calculation",
+      "prompt": "確率密度関数 f(x)=1/2（0≦x≦2）の確率変数 X について、P(0≦X≦1) は？",
+      "choices": [
+        "1",
+        "1/2",
+        "2",
+        "1/4"
+      ],
+      "answerIndex": 1,
+      "explanation": "∫₀¹ 1/2 dx。"
+    },
+    {
+      "id": "mat_mb09_019",
+      "unit": "math.mb.stat.random.variable",
+      "category": "calculation",
+      "prompt": "同じ X の期待値は？",
+      "choices": [
+        "1",
+        "2",
+        "1/2",
+        "4/3"
+      ],
+      "answerIndex": 0,
+      "explanation": "∫₀² x·1/2 dx=1。"
+    },
+    {
+      "id": "mat_mb09_020",
+      "unit": "math.mb.stat.infer.test",
+      "category": "thinking",
+      "prompt": "片側検定を使うのが適切なのはどんなとき？",
+      "choices": [
+        "標本が小さいとき",
+        "「増えた」「大きい」など、差の向きがはじめから決まっている主張を調べるとき",
+        "どちらに差があるか分からないとき",
+        "母集団が正規分布でないとき"
+      ],
+      "answerIndex": 1,
+      "explanation": "「新薬で効果が上がった」のように向きのある主張なら、片側だけを棄却域にする。"
+    }
+  ]
+}

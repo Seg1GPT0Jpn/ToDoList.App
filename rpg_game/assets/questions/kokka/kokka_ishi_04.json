@@ -1,0 +1,188 @@
+{
+  "setId": "kokka_ishi_04",
+  "worldId": "kokka",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "ish04_001",
+      "unit": "kokka.ishi.kiso.byouri.byouri",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "悪性腫瘍（がん）の特徴は？",
+      "choices": [
+        "大きくならない",
+        "周囲に浸潤し、転移する",
+        "被膜に包まれて転移しない",
+        "正常な細胞と見分けがつかない"
+      ],
+      "answerIndex": 1,
+      "explanation": "良性腫瘍は膨張性に発育し、転移しない。"
+    },
+    {
+      "id": "ish04_002",
+      "unit": "kokka.ishi.kiso.byouri.byouri",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "上皮組織から生じる悪性腫瘍を何という？",
+      "choices": [
+        "脂肪腫",
+        "腺腫",
+        "癌腫",
+        "肉腫"
+      ],
+      "answerIndex": 2,
+      "explanation": "胃がん・肺がんなど多くのがんは癌腫。"
+    },
+    {
+      "id": "ish04_003",
+      "unit": "kokka.ishi.kiso.byouri.byouri",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "骨や筋肉など非上皮組織から生じる悪性腫瘍を何という？",
+      "choices": [
+        "癌腫",
+        "乳頭腫",
+        "線維腫",
+        "肉腫"
+      ],
+      "answerIndex": 3,
+      "explanation": "骨肉腫・平滑筋肉腫など。"
+    },
+    {
+      "id": "ish04_004",
+      "unit": "kokka.ishi.kiso.byouri.byouri",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "血管の中で血液がかたまったものは？",
+      "choices": [
+        "血栓",
+        "塞栓",
+        "動脈瘤",
+        "梗塞"
+      ],
+      "answerIndex": 0,
+      "explanation": "血管壁の傷害・血流のよどみ・凝固しやすさが原因（ウィルヒョウの3徴）。"
+    },
+    {
+      "id": "ish04_005",
+      "unit": "kokka.ishi.kiso.byouri.byouri",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "血流によって運ばれた血栓などが、血管をふさぐことを何という？",
+      "choices": [
+        "浮腫",
+        "塞栓",
+        "血栓",
+        "充血"
+      ],
+      "answerIndex": 1,
+      "explanation": "足の静脈の血栓が肺の動脈をふさぐと肺塞栓症になる。"
+    },
+    {
+      "id": "ish04_006",
+      "unit": "kokka.ishi.kiso.byouri.byouri",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "動脈がふさがって血流が止まり、その先の組織が壊死することを何という？",
+      "choices": [
+        "萎縮",
+        "化生",
+        "梗塞",
+        "塞栓"
+      ],
+      "answerIndex": 2,
+      "explanation": "心筋梗塞・脳梗塞など。"
+    },
+    {
+      "id": "ish04_007",
+      "unit": "kokka.ishi.kiso.byouri.byouri",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "炎症の4徴候（ケルススの4徴）に含まれないのは？",
+      "choices": [
+        "発赤",
+        "熱感",
+        "腫脹",
+        "黄疸"
+      ],
+      "answerIndex": 3,
+      "explanation": "4徴は発赤・熱感・腫脹・疼痛。機能障害を加えて5徴ともいう。"
+    },
+    {
+      "id": "ish04_008",
+      "unit": "kokka.ishi.kiso.byouri.byouri",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "細胞の数が増えて臓器が大きくなることを何という？",
+      "choices": [
+        "過形成",
+        "化生",
+        "萎縮",
+        "肥大"
+      ],
+      "answerIndex": 0,
+      "explanation": "肥大は細胞一つ一つが大きくなること。"
+    },
+    {
+      "id": "ish04_009",
+      "unit": "kokka.ishi.kiso.byouri.byouri",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "分化した組織が、別の種類の組織に置きかわることを何という？",
+      "choices": [
+        "退形成",
+        "化生",
+        "異形成",
+        "過形成"
+      ],
+      "answerIndex": 1,
+      "explanation": "喫煙で気管支の上皮が扁平上皮に変わる扁平上皮化生など。"
+    },
+    {
+      "id": "ish04_010",
+      "unit": "kokka.ishi.kiso.byouri.byouri",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "遺伝子にプログラムされた細胞の死を何という？",
+      "choices": [
+        "ガングリオン",
+        "ネクローシス",
+        "アポトーシス",
+        "オートファジー"
+      ],
+      "answerIndex": 2,
+      "explanation": "ネクローシス（壊死）と違い、炎症を起こしにくい。"
+    },
+    {
+      "id": "ish04_011",
+      "unit": "kokka.ishi.kiso.byouri.byouri",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "大腸がんが血流にのって最初に転移しやすい臓器は？",
+      "choices": [
+        "脳",
+        "腎臓",
+        "骨",
+        "肝臓"
+      ],
+      "answerIndex": 3,
+      "explanation": "腸の血液は門脈を通って肝臓に集まるため。"
+    },
+    {
+      "id": "ish04_012",
+      "unit": "kokka.ishi.kiso.byouri.byouri",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "動脈硬化の危険因子として知られるのは？",
+      "choices": [
+        "喫煙",
+        "十分な睡眠",
+        "適度な有酸素運動",
+        "減塩"
+      ],
+      "answerIndex": 0,
+      "explanation": "高血圧・脂質異常症・糖尿病・喫煙が代表的な危険因子。"
+    }
+  ]
+}

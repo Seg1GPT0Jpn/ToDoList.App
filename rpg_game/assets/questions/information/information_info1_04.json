@@ -1,0 +1,344 @@
+{
+  "setId": "information_info1_04",
+  "worldId": "information",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "inf_info104_001",
+      "unit": "information.info.society.problem.process",
+      "category": "knowledge",
+      "prompt": "PDCA サイクルの順番として正しいものは？",
+      "choices": [
+        "評価 → 改善 → 計画 → 実行",
+        "計画 → 実行 → 評価 → 改善",
+        "実行 → 計画 → 改善 → 評価",
+        "改善 → 評価 → 実行 → 計画"
+      ],
+      "answerIndex": 1,
+      "explanation": "Plan・Do・Check・Action の頭文字。回すほど改善される。"
+    },
+    {
+      "id": "inf_info104_002",
+      "unit": "information.info.society.problem.process",
+      "category": "knowledge",
+      "prompt": "問題解決の最初の段階で行うことは？",
+      "choices": [
+        "報告書を書く",
+        "現状と理想のギャップ（問題）を見つける",
+        "結果を評価する",
+        "解決策を実行する"
+      ],
+      "answerIndex": 1,
+      "explanation": "問題の発見 → 分析・明確化 → 解決策の立案 → 実行 → 評価。"
+    },
+    {
+      "id": "inf_info104_003",
+      "unit": "information.info.society.problem",
+      "category": "knowledge",
+      "prompt": "物事の本質的な部分を取り出して単純化して表したものは？",
+      "choices": [
+        "シミュレーション",
+        "アルゴリズム",
+        "モデル",
+        "プロトコル"
+      ],
+      "answerIndex": 2,
+      "explanation": "模型・図・数式などで表す。"
+    },
+    {
+      "id": "inf_info104_004",
+      "unit": "information.info.society.problem.model",
+      "category": "knowledge",
+      "prompt": "モデルを使って、現実の現象を模擬的に再現してみることは？",
+      "choices": [
+        "モデル化",
+        "エンコード",
+        "シミュレーション",
+        "デバッグ"
+      ],
+      "answerIndex": 2,
+      "explanation": "実際に試すのが難しい・危険・お金がかかる場合に役立つ。"
+    },
+    {
+      "id": "inf_info104_005",
+      "unit": "information.info.society.problem.model",
+      "category": "knowledge",
+      "prompt": "「y ＝ 1000 ＋ 500x」のように数式で表したモデルを何という？",
+      "choices": [
+        "数式モデル",
+        "拡大モデル",
+        "実物モデル",
+        "図的モデル"
+      ],
+      "answerIndex": 0,
+      "explanation": "ほかに、図で表す図的モデル、模型などの実物モデルがある。"
+    },
+    {
+      "id": "inf_info104_006",
+      "unit": "information.info.society.problem.model",
+      "category": "knowledge",
+      "prompt": "サイコロのように偶然の要素をふくむモデルは？",
+      "choices": [
+        "実物モデル",
+        "確率的モデル",
+        "静的モデル",
+        "確定的モデル"
+      ],
+      "answerIndex": 1,
+      "explanation": "結果が一通りに決まるモデルは確定的モデル。"
+    },
+    {
+      "id": "inf_info104_007",
+      "unit": "information.info.society.problem",
+      "category": "knowledge",
+      "prompt": "批判せずに、質より量を重視してアイデアを出し合う方法は？",
+      "choices": [
+        "KJ法",
+        "PDCA",
+        "フローチャート",
+        "ブレーンストーミング"
+      ],
+      "answerIndex": 3,
+      "explanation": "出たアイデアを整理するのに KJ 法などを使う。"
+    },
+    {
+      "id": "inf_info104_008",
+      "unit": "information.info.society.problem",
+      "category": "knowledge",
+      "prompt": "カードに書いたアイデアをグループにまとめて整理する方法は？",
+      "choices": [
+        "KJ法",
+        "ブレーンストーミング",
+        "二分探索",
+        "クロス集計"
+      ],
+      "answerIndex": 0,
+      "explanation": "川喜田二郎が考案した。"
+    },
+    {
+      "id": "inf_info104_009",
+      "unit": "information.info.society.problem",
+      "category": "calculation",
+      "prompt": "最初 1000 円あり、毎月 500 円ずつ貯金する。6 か月後の貯金額は？（y ＝ 1000 ＋ 500x）",
+      "choices": [
+        "4000 円",
+        "3500 円",
+        "6500 円",
+        "3000 円"
+      ],
+      "answerIndex": 0,
+      "explanation": "y ＝ 1000 ＋ 500 × 6 ＝ 4000 円。"
+    },
+    {
+      "id": "inf_info104_010",
+      "unit": "information.info.society.problem",
+      "category": "calculation",
+      "prompt": "200 人にアンケートをとり、30 % が「はい」と答えた。「はい」は何人？",
+      "choices": [
+        "600 人",
+        "170 人",
+        "60 人",
+        "30 人"
+      ],
+      "answerIndex": 2,
+      "explanation": "200 × 0.30 ＝ 60 人。"
+    },
+    {
+      "id": "inf_info104_011",
+      "unit": "information.info.society.problem",
+      "category": "thinking",
+      "prompt": "アンケートの質問文で、回答のかたよりを減らすために気をつけることは？",
+      "choices": [
+        "答えやすいように答えを書いておく",
+        "できるだけ長い文章にする",
+        "特定の答えに誘導しない中立的な言い方にする",
+        "選択肢を1つだけにする"
+      ],
+      "answerIndex": 2,
+      "explanation": "「〜は良いと思いませんか」のような誘導的な質問は避ける。"
+    },
+    {
+      "id": "inf_info104_012",
+      "unit": "information.info.society.problem.model",
+      "category": "thinking",
+      "prompt": "シミュレーションの結果が現実と大きくずれた。PDCA ではまず何をする？",
+      "choices": [
+        "モデルの前提や数値を見直して改善する",
+        "結果をそのまま発表する",
+        "シミュレーションをやめる",
+        "現実のデータを消す"
+      ],
+      "answerIndex": 0,
+      "explanation": "評価（Check）して改善（Action）し、次の計画に生かす。"
+    },
+    {
+      "id": "inf_info104_013",
+      "unit": "information.info.society.problem.process",
+      "category": "knowledge",
+      "prompt": "問題解決の手順として一般的なものは？",
+      "choices": [
+        "解決案 → 評価だけ",
+        "実行 → 発見 → 評価",
+        "問題の発見 → 問題の明確化 → 解決案の検討 → 実行 → 評価",
+        "評価 → 実行 → 発見"
+      ],
+      "answerIndex": 2,
+      "explanation": "評価をもとに改善につなげる。"
+    },
+    {
+      "id": "inf_info104_014",
+      "unit": "information.info.society.problem.model",
+      "category": "knowledge",
+      "prompt": "モデルの分類で、地球儀や模型のように実物の形を表すモデルは？",
+      "choices": [
+        "論理モデル",
+        "図的モデル",
+        "数式モデル",
+        "物理モデル（実物モデル）"
+      ],
+      "answerIndex": 3,
+      "explanation": "数式で表すのは数式モデル。"
+    },
+    {
+      "id": "inf_info104_015",
+      "unit": "information.info.society.problem.model",
+      "category": "knowledge",
+      "prompt": "フローチャートや関係図のように、図で表すモデルは？",
+      "choices": [
+        "図的モデル",
+        "物理モデル",
+        "確率モデル",
+        "数式モデル"
+      ],
+      "answerIndex": 0,
+      "explanation": "要素のつながりが見やすい。"
+    },
+    {
+      "id": "inf_info104_016",
+      "unit": "information.info.society.problem.model",
+      "category": "knowledge",
+      "prompt": "時間とともに変化する現象を表すモデルを何という？",
+      "choices": [
+        "物理モデル",
+        "実物モデル",
+        "動的モデル",
+        "静的モデル"
+      ],
+      "answerIndex": 2,
+      "explanation": "人口の変化など。"
+    },
+    {
+      "id": "inf_info104_017",
+      "unit": "information.info.society.problem.model",
+      "category": "knowledge",
+      "prompt": "不確定な要素をふくまず、結果が一通りに決まるモデルは？",
+      "choices": [
+        "確定モデル",
+        "動的モデル",
+        "確率モデル",
+        "図的モデル"
+      ],
+      "answerIndex": 0,
+      "explanation": "サイコロをふくむようなモデルは確率モデル。"
+    },
+    {
+      "id": "inf_info104_018",
+      "unit": "information.info.society.problem",
+      "category": "knowledge",
+      "prompt": "アイデアを図で広げていく、中心から放射状に書く発想法は？",
+      "choices": [
+        "PDCA",
+        "マインドマップ",
+        "ブレーンストーミング",
+        "KJ 法"
+      ],
+      "answerIndex": 1,
+      "explanation": "キーワードをつなげていく。"
+    },
+    {
+      "id": "inf_info104_019",
+      "unit": "information.info.society.problem",
+      "category": "knowledge",
+      "prompt": "トレードオフとは？",
+      "choices": [
+        "交換すること",
+        "一方をよくすると他方が悪くなる関係",
+        "両方が同時によくなる関係",
+        "まったく関係がないこと"
+      ],
+      "answerIndex": 1,
+      "explanation": "価格と品質など。"
+    },
+    {
+      "id": "inf_info104_020",
+      "unit": "information.info.society.problem.model",
+      "category": "knowledge",
+      "prompt": "乱数を使って、偶然の要素をふくむ現象をくり返し試す手法は？",
+      "choices": [
+        "二分探索",
+        "モンテカルロ法",
+        "バブルソート",
+        "ランレングス法"
+      ],
+      "answerIndex": 1,
+      "explanation": "確率モデルのシミュレーションに使う。"
+    },
+    {
+      "id": "inf_info104_021",
+      "unit": "information.info.society.problem",
+      "category": "calculation",
+      "prompt": "毎日 5 % ずつ増える量が今 100 のとき、2 日後はいくつ？",
+      "choices": [
+        "110",
+        "125",
+        "110.25",
+        "105"
+      ],
+      "answerIndex": 2,
+      "explanation": "100 × 1.05²。"
+    },
+    {
+      "id": "inf_info104_022",
+      "unit": "information.info.society.problem",
+      "category": "calculation",
+      "prompt": "ある店は 1 時間に平均 12 人の客が来て、1 人の会計に 4 分かかる。レジ 1 台のとき、1 時間の会計にかかる時間の合計は？",
+      "choices": [
+        "4 分",
+        "48 分",
+        "12 分",
+        "60 分"
+      ],
+      "answerIndex": 1,
+      "explanation": "12 × 4。余裕は 12 分しかない。"
+    },
+    {
+      "id": "inf_info104_023",
+      "unit": "information.info.society.problem.model",
+      "category": "thinking",
+      "prompt": "シミュレーションの結果をそのまま信じず、条件を変えて何度も試す理由は？",
+      "choices": [
+        "モデルの仮定や条件によって結果が大きく変わることがあるから",
+        "グラフを増やすため",
+        "計算を速くするため",
+        "1 回で必ず正しい結果が出るから"
+      ],
+      "answerIndex": 0,
+      "explanation": "結果の信頼性を確かめる。"
+    },
+    {
+      "id": "inf_info104_024",
+      "unit": "information.info.society.problem.process",
+      "category": "thinking",
+      "prompt": "問題解決で、解決案を実行したあとに「評価」を行う理由は？",
+      "choices": [
+        "目的が達成できたかを確かめ、次の改善につなげるため",
+        "失敗を隠すため",
+        "記録を消すため",
+        "作業を終わらせるため"
+      ],
+      "answerIndex": 0,
+      "explanation": "PDCA の C（Check）と A（Action）。"
+    }
+  ]
+}

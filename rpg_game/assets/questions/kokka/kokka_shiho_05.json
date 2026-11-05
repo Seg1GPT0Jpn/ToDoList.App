@@ -1,0 +1,188 @@
+{
+  "setId": "kokka_shiho_05",
+  "worldId": "kokka",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sih05_001",
+      "unit": "kokka.shiho.minji.minpo1.souku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "人の権利能力はいつ始まる？",
+      "choices": [
+        "出生のとき",
+        "成年に達したとき",
+        "出生届を出したとき",
+        "受胎のとき"
+      ],
+      "answerIndex": 0,
+      "explanation": "民法3条1項。胎児は相続などで例外的に生まれたものとみなされる。"
+    },
+    {
+      "id": "sih05_002",
+      "unit": "kokka.shiho.minji.minpo1.souku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "現在の民法で成年とされる年齢は？",
+      "choices": [
+        "20歳",
+        "18歳",
+        "16歳",
+        "19歳"
+      ],
+      "answerIndex": 1,
+      "explanation": "2022年4月1日施行の改正で20歳から18歳に引き下げられた（民法4条）。"
+    },
+    {
+      "id": "sih05_003",
+      "unit": "kokka.shiho.minji.minpo1.souku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "公の秩序または善良の風俗に反する法律行為は？",
+      "choices": [
+        "有効",
+        "追認すれば有効になる",
+        "無効",
+        "取り消すことができる"
+      ],
+      "answerIndex": 2,
+      "explanation": "民法90条。"
+    },
+    {
+      "id": "sih05_004",
+      "unit": "kokka.shiho.minji.minpo1.souku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "不在者の生死が7年間明らかでないとき、家庭裁判所が利害関係人の請求でできるのは？",
+      "choices": [
+        "死亡届の受理",
+        "後見開始の審判",
+        "相続開始の決定",
+        "失踪の宣告"
+      ],
+      "answerIndex": 3,
+      "explanation": "民法30条1項。宣告されると7年の期間満了時に死亡したとみなされる。"
+    },
+    {
+      "id": "sih05_005",
+      "unit": "kokka.shiho.minji.minpo1.souku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "隔地者に対する意思表示は、原則としていつ効力を生じる？",
+      "choices": [
+        "相手方に到達した時",
+        "相手方が内容を読んだ時",
+        "契約書を作った時",
+        "発信した時"
+      ],
+      "answerIndex": 0,
+      "explanation": "到達主義（民法97条1項）。"
+    },
+    {
+      "id": "sih05_006",
+      "unit": "kokka.shiho.minji.minpo1.souku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "成就すると法律行為の効力が生じる条件は？",
+      "choices": [
+        "期限",
+        "停止条件",
+        "負担",
+        "解除条件"
+      ],
+      "answerIndex": 1,
+      "explanation": "民法127条1項。成就すると効力を失うのが解除条件。"
+    },
+    {
+      "id": "sih05_007",
+      "unit": "kokka.shiho.minji.minpo1.bukken",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "不動産の物権の取得を第三者に対抗するために必要なのは？",
+      "choices": [
+        "公正証書",
+        "引渡し",
+        "登記",
+        "契約書"
+      ],
+      "answerIndex": 2,
+      "explanation": "民法177条。"
+    },
+    {
+      "id": "sih05_008",
+      "unit": "kokka.shiho.minji.minpo1.bukken",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "動産の譲渡を第三者に対抗するために必要なのは？",
+      "choices": [
+        "契約書",
+        "登記",
+        "公告",
+        "引渡し"
+      ],
+      "answerIndex": 3,
+      "explanation": "民法178条。"
+    },
+    {
+      "id": "sih05_009",
+      "unit": "kokka.shiho.minji.minpo1.bukken",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "取引で、相手の物だと善意無過失で信じて平穏・公然と占有を始めると権利を取得できる制度（即時取得）の対象は？",
+      "choices": [
+        "動産",
+        "不動産",
+        "著作権",
+        "債権"
+      ],
+      "answerIndex": 0,
+      "explanation": "民法192条。"
+    },
+    {
+      "id": "sih05_010",
+      "unit": "kokka.shiho.minji.minpo1.bukken",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "他人の物の占有者が、その物について生じた債権の弁済を受けるまで物を手元にとどめておける権利は？",
+      "choices": [
+        "質権",
+        "留置権",
+        "先取特権",
+        "抵当権"
+      ],
+      "answerIndex": 1,
+      "explanation": "民法295条。当事者の約束がなくても法律上当然に生じる。"
+    },
+    {
+      "id": "sih05_011",
+      "unit": "kokka.shiho.minji.minpo1.bukken",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "抵当権の特徴として正しいのは？",
+      "choices": [
+        "目的物を債権者に引き渡さなければならない",
+        "動産にしか設定できない",
+        "設定した人が目的物を引き続き使用・収益できる",
+        "登記することはできない"
+      ],
+      "answerIndex": 2,
+      "explanation": "非占有担保である点が質権との違い。"
+    },
+    {
+      "id": "sih05_012",
+      "unit": "kokka.shiho.minji.minpo1.bukken",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "共有物に変更（形状または効用の著しい変更を伴わないものを除く）を加えるには？",
+      "choices": [
+        "持分の3分の2",
+        "共有者のだれか一人の判断",
+        "持分の価格の過半数",
+        "共有者全員の同意"
+      ],
+      "answerIndex": 3,
+      "explanation": "民法251条1項。管理は持分の価格の過半数で決める（252条）。"
+    }
+  ]
+}

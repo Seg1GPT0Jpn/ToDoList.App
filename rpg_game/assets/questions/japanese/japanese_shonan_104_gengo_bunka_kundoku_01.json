@@ -1,0 +1,882 @@
+{
+  "setId": "japanese_shonan_104_gengo_bunka_kundoku_01",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_01_001",
+      "unit": "japanese.kanbun.kundoku.basic.kaeriten",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "句読点や返り点などがついていない、もとの中国語のままの漢文を何という？",
+      "choices": [
+        "白文",
+        "書き下し文",
+        "訓読文",
+        "変体漢文"
+      ],
+      "answerIndex": 0,
+      "explanation": "返り点・送り仮名・句読点をつけたものが訓読文。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_01_002",
+      "unit": "japanese.kanbun.kundoku.basic.kaeriten",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "漢文を日本語の文（古文）として読むことを何という？",
+      "choices": [
+        "音読",
+        "訓読",
+        "直読",
+        "素読"
+      ],
+      "answerIndex": 1,
+      "explanation": "訓読のために付ける記号や仮名をまとめて訓点という。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_01_003",
+      "unit": "japanese.kanbun.kundoku.basic.kaeriten",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "返り点・送り仮名・句読点をまとめて何という？",
+      "choices": [
+        "訓点",
+        "再読文字",
+        "置き字",
+        "句法"
+      ],
+      "answerIndex": 0,
+      "explanation": "訓点をつけた漢文を訓読文という。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_01_004",
+      "unit": "japanese.kanbun.kundoku.basic.kaeriten",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "返り点は、漢字のどこにつける？",
+      "choices": [
+        "右上",
+        "左上",
+        "左下",
+        "右下"
+      ],
+      "answerIndex": 2,
+      "explanation": "送り仮名は右下にカタカナで書く。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_01_005",
+      "unit": "japanese.kanbun.kundoku.basic.kaeriten",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "送り仮名は、漢字のどこに、どの文字で書く？",
+      "choices": [
+        "左下にひらがなで",
+        "左下にカタカナで",
+        "右下にカタカナで",
+        "右上にひらがなで"
+      ],
+      "answerIndex": 2,
+      "explanation": "歴史的仮名遣い・文語文法にしたがって書く。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_01_006",
+      "unit": "japanese.kanbun.kundoku.basic.kaeriten",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "送り仮名を書くときのきまりとして正しいものは？",
+      "choices": [
+        "現代仮名遣いで、文語文法にしたがう",
+        "現代仮名遣いで、口語文法にしたがう",
+        "歴史的仮名遣いで、口語文法にしたがう",
+        "歴史的仮名遣いで、文語文法にしたがう"
+      ],
+      "answerIndex": 3,
+      "explanation": "例：思ふ・言ふ・食らはば。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_01_007",
+      "unit": "japanese.kanbun.kundoku.basic.kaeriten",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "下の一字から、すぐ上の一字に返って読むときに使う返り点は？",
+      "choices": [
+        "一・二点",
+        "レ点",
+        "上・下点",
+        "甲・乙点"
+      ],
+      "answerIndex": 1,
+      "explanation": "レ点は二回以上続けて使うこともできる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_01_008",
+      "unit": "japanese.kanbun.kundoku.basic.kaeriten",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "二字以上へだてた上の字に返って読むときに使う返り点は？",
+      "choices": [
+        "レ点",
+        "甲・乙点",
+        "上・下点",
+        "一・二点"
+      ],
+      "answerIndex": 3,
+      "explanation": "三・四…と続けることもある。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_01_009",
+      "unit": "japanese.kanbun.kundoku.basic.kaeriten",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "一・二点をはさんで、さらに上の字に返って読むときに使う返り点は？",
+      "choices": [
+        "レ点",
+        "一・二点",
+        "一レ点",
+        "上・（中）・下点"
+      ],
+      "answerIndex": 3,
+      "explanation": "上・下点の中に一・二点が入る形になる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_01_010",
+      "unit": "japanese.kanbun.kundoku.basic.kaeriten",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "レ点と一点を一つの字に組み合わせた返り点を何という？",
+      "choices": [
+        "下レ点",
+        "一レ点",
+        "二レ点",
+        "上レ点"
+      ],
+      "answerIndex": 1,
+      "explanation": "まずレ点に従って読み、次に一点の字から二点の字へ返る。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_01_011",
+      "unit": "japanese.kanbun.kundoku.basic.kaeriten",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "返り点の組み合わせとして、存在しないものは？",
+      "choices": [
+        "二レ点",
+        "上レ点",
+        "一レ点",
+        "レ点のくり返し"
+      ],
+      "answerIndex": 0,
+      "explanation": "レ点と組み合わせるのは一点・上点だけ。二レ点・下レ点は使わない。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_01_012",
+      "unit": "japanese.kanbun.kundoku.basic.kaeriten",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「空山不見人。」を「空山人を見ず。」と読むとき、返り点はどうつく？",
+      "choices": [
+        "「空」に上点、「人」に下点がつく",
+        "「見」と「不」にレ点がつく（不レ見レ人）",
+        "「見」に一点、「不」に二点がつく",
+        "「人」に一点、「不」に二点がつく"
+      ],
+      "answerIndex": 1,
+      "explanation": "人→見→不 と、一字ずつ上に返る。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_01_013",
+      "unit": "japanese.kanbun.kundoku.basic.kaeriten",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「黄河入海流。」を「黄河海に入りて流る。」と読むとき、レ点がつく字は？",
+      "choices": [
+        "流",
+        "入",
+        "黄",
+        "海"
+      ],
+      "answerIndex": 1,
+      "explanation": "「海」から「入」へ一字返る。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_01_014",
+      "unit": "japanese.kanbun.kundoku.basic.kaeriten",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「低頭思故郷。」の書き下し文として正しいものは？",
+      "choices": [
+        "頭低く故郷を思ふ。",
+        "故郷を思ひて頭を低る。",
+        "低き頭は故郷を思ふ。",
+        "頭を低れて故郷を思ふ。"
+      ],
+      "answerIndex": 3,
+      "explanation": "「頭」→「低」、「故郷」→「思」と返る。李白「静夜思」の一句。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_01_015",
+      "unit": "japanese.kanbun.kundoku.basic.kaeriten",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「悠然見南山。」の書き下し文として正しいものは？",
+      "choices": [
+        "悠然たる南山を見る。",
+        "悠然として南山を見る。",
+        "南山を見て悠然たり。",
+        "悠然として南山見ゆ。"
+      ],
+      "answerIndex": 1,
+      "explanation": "陶淵明「飲酒」の一句。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_01_016",
+      "unit": "japanese.kanbun.kundoku.basic.kaeriten",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「毎逢佳節倍思親。」の書き下し文として正しいものは？",
+      "choices": [
+        "親を思ふ毎に佳節に逢ふ。",
+        "佳節に逢ふ毎に倍親を思ふ。",
+        "毎に佳節に逢ひて倍親を思ふ。",
+        "佳節に逢ふ毎に親を倍思ふ。"
+      ],
+      "answerIndex": 1,
+      "explanation": "「佳節」→「逢」→「毎」と返り、「親」→「思」と返る。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_01_017",
+      "unit": "japanese.kanbun.kundoku.basic.kaeriten",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「不為児孫買美田。」の書き下し文として正しいものは？",
+      "choices": [
+        "児孫と為りて美田を買はず。",
+        "児孫の為に美田を買ふ。",
+        "児孫の為に美田を買はず。",
+        "美田を買ふは児孫の為ならず。"
+      ],
+      "answerIndex": 2,
+      "explanation": "「為」は「ために」。否定の「不」は最後に「ず」と読む。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_01_018",
+      "unit": "japanese.kanbun.kundoku.basic.kaeriten",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「有執長竿入城門者。」の書き下し文として正しいものは？",
+      "choices": [
+        "長竿を執る者有りて城門に入る。",
+        "者有り長竿を執りて城門に入る。",
+        "城門に入りて長竿を執る者有り。",
+        "長竿を執りて城門に入る者有り。"
+      ],
+      "answerIndex": 3,
+      "explanation": "「有」は最後に読み、「〜者有り」となる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_01_019",
+      "unit": "japanese.kanbun.kundoku.basic.kaeriten",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「別有天地非人間。」の書き下し文として正しいものは？",
+      "choices": [
+        "別に人間に非ざる天地有り。",
+        "別に天地の人間に非ざる有り。",
+        "別に天地有りて人間に非ず。",
+        "天地に別有りて人間に非ず。"
+      ],
+      "answerIndex": 1,
+      "explanation": "李白「山中問答」の一句。「人間」は俗世間の意味。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_01_020",
+      "unit": "japanese.kanbun.kundoku.basic.kaeriten",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「知欺大王之罪当誅。」の書き下し文として正しいものは？",
+      "choices": [
+        "大王を欺きて罪の誅に当たるを知る。",
+        "誅に当たる大王を欺くの罪を知る。",
+        "大王の罪を欺きて誅に当たるを知る。",
+        "大王を欺くの罪の誅に当たるを知る。"
+      ],
+      "answerIndex": 3,
+      "explanation": "「知」は最後に読む。「当」はここでは「あたる」と読む動詞。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_01_021",
+      "unit": "japanese.kanbun.kundoku.basic.kakikudashi",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "訓点をつけた漢文を、日本語（古文）の語順に書き直したものを何という？",
+      "choices": [
+        "現代語訳",
+        "訓読文",
+        "書き下し文",
+        "白文"
+      ],
+      "answerIndex": 2,
+      "explanation": "漢字かな交じり文で書く。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_01_022",
+      "unit": "japanese.kanbun.kundoku.basic.kakikudashi",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "書き下し文のきまりとして正しくないものは？",
+      "choices": [
+        "置き字も漢字のまま書く",
+        "歴史的仮名遣いで書く",
+        "送り仮名はひらがなにする",
+        "助詞・助動詞にあたる漢字はひらがなにする"
+      ],
+      "answerIndex": 0,
+      "explanation": "置き字（而・於・矣など）は訓読しないので書かない。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_01_023",
+      "unit": "japanese.kanbun.kundoku.basic.kakikudashi",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "書き下し文で、ひらがなに直して書く漢字の組み合わせとして正しいものは？",
+      "choices": [
+        "「人（ひと）」「山（やま）」",
+        "「見（みる）」「思（おもふ）」",
+        "「不（ず）」「也（なり）」",
+        "「天（てん）」「地（ち）」"
+      ],
+      "answerIndex": 2,
+      "explanation": "助動詞にあたる不・也・可・使などはひらがなにする。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_01_024",
+      "unit": "japanese.kanbun.kundoku.basic.kakikudashi",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "訓読するときに読まない字を何という？",
+      "choices": [
+        "助字",
+        "置き字",
+        "再読文字",
+        "返読文字"
+      ],
+      "answerIndex": 1,
+      "explanation": "而・於・于・乎・焉・矣など。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_01_025",
+      "unit": "japanese.kanbun.kundoku.basic.kakikudashi",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "次のうち、置き字として使われることが多い字の組み合わせは？",
+      "choices": [
+        "未・将・当",
+        "而・於・矣",
+        "不・無・非",
+        "使・令・教"
+      ],
+      "answerIndex": 1,
+      "explanation": "「於」「于」「乎」は補語の前に置かれることが多い。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_01_026",
+      "unit": "japanese.kanbun.kundoku.basic.kakikudashi",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "文頭や文中の「而」が置き字になるとき、どんなはたらきをする？",
+      "choices": [
+        "否定を表す",
+        "疑問を表す",
+        "前後をつなぐ（順接・逆接）",
+        "使役を表す"
+      ],
+      "answerIndex": 2,
+      "explanation": "前の語の送り仮名「テ」「ドモ」などで意味を表す。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_01_027",
+      "unit": "japanese.kanbun.kundoku.basic.kakikudashi",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "中国語（漢文）のように、語形変化や付属語によらず、語順で文法的なはたらきが決まる言語を何という？",
+      "choices": [
+        "抱合語",
+        "孤立語",
+        "屈折語",
+        "膠着語"
+      ],
+      "answerIndex": 1,
+      "explanation": "日本語は助詞・助動詞をつけて意味を表す膠着語。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_01_028",
+      "unit": "japanese.kanbun.kundoku.basic.kakikudashi",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "日本語は、言語の型としては何と呼ばれる？",
+      "choices": [
+        "屈折語",
+        "孤立語",
+        "抱合語",
+        "膠着語"
+      ],
+      "answerIndex": 3,
+      "explanation": "「て・に・を・は」などの付属語で文法的な関係を表す。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_01_029",
+      "unit": "japanese.kanbun.kundoku.basic.kakikudashi",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "漢文の語順について正しいものは？",
+      "choices": [
+        "日本語と同じく、述語が最後に来る",
+        "目的語が必ず文頭に来る",
+        "「主語＋述語＋目的語」の順で、英語の語順に近い",
+        "語順は自由で、意味は変わらない"
+      ],
+      "answerIndex": 2,
+      "explanation": "「読書」は「書を読む」、「登山」は「山に登る」と、返って読む。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_01_030",
+      "unit": "japanese.kanbun.kundoku.basic.kakikudashi",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「読書」「登山」のように、下の字から返って読む熟語を漢文の構造でいうと？",
+      "choices": [
+        "主語＋述語",
+        "述語＋目的語・補語",
+        "修飾語＋被修飾語",
+        "並列の関係"
+      ],
+      "answerIndex": 1,
+      "explanation": "「書を」は目的語、「山に」は補語。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_01_031",
+      "unit": "japanese.kanbun.kundoku.basic.kakikudashi",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "漢文で、目的語にはふつうどんな送り仮名がつく？",
+      "choices": [
+        "ヲ",
+        "ハ",
+        "ノ",
+        "ニ"
+      ],
+      "answerIndex": 0,
+      "explanation": "補語には「ニ」「ト」「ヨリ」などがつく。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_01_032",
+      "unit": "japanese.kanbun.kundoku.basic.kakikudashi",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "漢文で、補語につく送り仮名として当てはまらないものは？",
+      "choices": [
+        "ヨリ",
+        "ト",
+        "ニ",
+        "ヲ"
+      ],
+      "answerIndex": 3,
+      "explanation": "「ヲ」は目的語につく。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_01_033",
+      "unit": "japanese.kanbun.kundoku.basic.kakikudashi",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「日暮。」（日暮る。）の構造は？",
+      "choices": [
+        "述語＋補語",
+        "主語＋述語＋目的語",
+        "主語＋述語",
+        "述語＋目的語"
+      ],
+      "answerIndex": 2,
+      "explanation": "名詞＋動詞の形。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_01_034",
+      "unit": "japanese.kanbun.kundoku.basic.kakikudashi",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「浮雲蔽白日。」（浮雲白日を蔽ふ。）の構造は？",
+      "choices": [
+        "主語＋述語＋補語",
+        "主語＋述語＋補語＋目的語",
+        "主語＋述語＋目的語",
+        "主語＋述語"
+      ],
+      "answerIndex": 2,
+      "explanation": "「白日を」が目的語。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_01_035",
+      "unit": "japanese.kanbun.kundoku.basic.kakikudashi",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「良薬苦於口。」（良薬は口に苦し。）の構造は？",
+      "choices": [
+        "主語＋述語",
+        "主語＋述語＋（於）＋補語",
+        "主語＋述語＋目的語＋（於）＋補語",
+        "主語＋述語＋目的語"
+      ],
+      "answerIndex": 1,
+      "explanation": "「於」は補語の前の置き字。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_01_036",
+      "unit": "japanese.kanbun.kundoku.basic.kakikudashi",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「季康子問政於孔子。」（季康子政を孔子に問ふ。）の構造は？",
+      "choices": [
+        "主語＋述語＋補語＋目的語",
+        "主語＋述語＋目的語",
+        "主語＋述語＋（於）＋補語",
+        "主語＋述語＋目的語＋（於）＋補語"
+      ],
+      "answerIndex": 3,
+      "explanation": "「政を」が目的語、「孔子に」が補語。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_01_037",
+      "unit": "japanese.kanbun.kundoku.basic.kakikudashi",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "「項梁教籍兵法。」（項梁籍に兵法を教ふ。）の構造は？",
+      "choices": [
+        "主語＋述語＋目的語",
+        "主語＋述語＋補語＋目的語",
+        "主語＋述語＋目的語＋補語",
+        "述語＋補語"
+      ],
+      "answerIndex": 1,
+      "explanation": "「籍に」が補語、「兵法を」が目的語。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_kundoku_01_038",
+      "unit": "japanese.kanbun.kundoku.basic.kakikudashi",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "漢文を白文で読むとき、まずさがすとよいとされるものは？",
+      "choices": [
+        "述語（ほぼ動詞）",
+        "目的語",
+        "主語",
+        "置き字"
+      ],
+      "answerIndex": 0,
+      "explanation": "主語は省略されることがよくあるが、述語はほとんど省略されない。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "kundoku"
+      ]
+    }
+  ]
+}

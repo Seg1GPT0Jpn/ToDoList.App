@@ -1,0 +1,954 @@
+{
+  "setId": "math_shonan_104_m1_complex_03",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "math_shonan_104_m1_complex_03_001",
+      "unit": "math.m2.expr.complex",
+      "category": "calculation",
+      "prompt": "(−1−5i)² を計算すると？",
+      "choices": [
+        "−24−10i",
+        "−24+10i",
+        "1+25i",
+        "26+10i"
+      ],
+      "answerIndex": 1,
+      "explanation": "(a＋bi)²＝a²−b²＋2abi より 実部 (−1)²−(−5)²＝−24、虚部 2×(−1)×(−5)＝10。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-complex"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_complex_03_002",
+      "unit": "math.m2.expr.complex.vieta",
+      "category": "calculation",
+      "prompt": "2次方程式 2x² + 7x − 7 ＝ 0 の2つの解を α, β とするとき、(α−β)² の値は？",
+      "choices": [
+        "105/4",
+        "−7/4",
+        "−105/4",
+        "77/4"
+      ],
+      "answerIndex": 0,
+      "explanation": "α＋β＝−7/2、αβ＝−7/2。(α−β)²＝(α＋β)²−4αβ＝(−7/2)²−4×(−7/2)＝105/4。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-complex"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_complex_03_003",
+      "unit": "math.m2.expr.complex",
+      "category": "calculation",
+      "prompt": "(3+4i) − (3+3i) を計算すると？",
+      "choices": [
+        "6+7i",
+        "6+i",
+        "7i",
+        "i"
+      ],
+      "answerIndex": 3,
+      "explanation": "実部 3−(3)＝0、虚部 4−(3)＝1。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-complex"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_complex_03_004",
+      "unit": "math.m2.expr.complex",
+      "category": "calculation",
+      "prompt": "(−3+3i) − (3+2i) を計算すると？",
+      "choices": [
+        "−6+5i",
+        "−6+i",
+        "5i",
+        "i"
+      ],
+      "answerIndex": 1,
+      "explanation": "実部 −3−(3)＝−6、虚部 3−(2)＝1。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-complex"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_complex_03_005",
+      "unit": "math.m2.expr.complex.complex",
+      "category": "calculation",
+      "prompt": "i²¹ を計算すると？",
+      "choices": [
+        "i",
+        "−i",
+        "−1",
+        "1"
+      ],
+      "answerIndex": 0,
+      "explanation": "i⁴＝1。21＝4×5＋1。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-complex"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_complex_03_006",
+      "unit": "math.m2.expr.complex.remainder",
+      "category": "calculation",
+      "prompt": "整式 P(x) を x + 3 で割ると余り −5、x + 1 で割ると余り 1 である。P(x) を (x + 3)(x + 1) で割った余りは？",
+      "choices": [
+        "3x + 5",
+        "3x + 4",
+        "4x + 3",
+        "3x − 4"
+      ],
+      "answerIndex": 1,
+      "explanation": "余りを px＋q とおくと、剰余の定理より −3p＋q＝−5、−p＋q＝1。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-complex"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_complex_03_007",
+      "unit": "math.m2.expr.complex.remainder",
+      "category": "calculation",
+      "prompt": "P(x) ＝ −2x³ − 2x² + 4 を x ＋ 3 で割ったときの余りは？",
+      "choices": [
+        "4",
+        "40",
+        "−40",
+        "−68"
+      ],
+      "answerIndex": 1,
+      "explanation": "剰余の定理：余りは P(−3)＝40。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-complex"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_complex_03_008",
+      "unit": "math.m2.expr.complex.remainder",
+      "category": "calculation",
+      "prompt": "P(x) ＝ 2x³ − 4x² + 3x − 5 を x ＋ 3 で割ったときの余りは？",
+      "choices": [
+        "22",
+        "−104",
+        "104",
+        "−5"
+      ],
+      "answerIndex": 1,
+      "explanation": "剰余の定理：余りは P(−3)＝−104。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-complex"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_complex_03_009",
+      "unit": "math.m2.expr.complex.discriminant",
+      "category": "calculation",
+      "prompt": "2次方程式 x² − 7x + 9 ＝ 0 の解の種類は？",
+      "choices": [
+        "重解",
+        "異なる2つの虚数解",
+        "解なし",
+        "異なる2つの実数解"
+      ],
+      "answerIndex": 3,
+      "explanation": "判別式 D＝(−7)²−4×1×(9)＝13。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-complex"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_complex_03_010",
+      "unit": "math.m2.expr.complex.complex",
+      "category": "calculation",
+      "prompt": "(1−4i)(1−4i) を計算すると？",
+      "choices": [
+        "1+16i",
+        "17−8i",
+        "−15−8i",
+        "−15+8i"
+      ],
+      "answerIndex": 2,
+      "explanation": "展開すると 1＋(−4)i＋(−4)i＋(16)i²。i²＝−1 より 実部 1−(16)＝−15、虚部 −8。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-complex"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_complex_03_011",
+      "unit": "math.m2.expr.complex.complex",
+      "category": "calculation",
+      "prompt": "(2−5i)(4−2i) を計算すると？",
+      "choices": [
+        "−2−24i",
+        "18−24i",
+        "−2+24i",
+        "8+10i"
+      ],
+      "answerIndex": 0,
+      "explanation": "展開すると 8＋(−4)i＋(−20)i＋(10)i²。i²＝−1 より 実部 8−(10)＝−2、虚部 −24。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-complex"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_complex_03_012",
+      "unit": "math.m2.expr.complex.vieta",
+      "category": "calculation",
+      "prompt": "2次方程式 x² − 4x − 9 ＝ 0 の2つの解を α, β とするとき、α²＋β² の値は？",
+      "choices": [
+        "34",
+        "16",
+        "−2",
+        "25"
+      ],
+      "answerIndex": 0,
+      "explanation": "α²＋β²＝(α＋β)²−2αβ＝4²−2×(−9)。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-complex"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_complex_03_013",
+      "unit": "math.m2.expr.complex.remainder",
+      "category": "calculation",
+      "prompt": "P(x) ＝ 2x³ + 4x² + 2x + 2 を x ＋ 3 で割ったときの余りは？",
+      "choices": [
+        "22",
+        "−22",
+        "2",
+        "98"
+      ],
+      "answerIndex": 1,
+      "explanation": "剰余の定理：余りは P(−3)＝−22。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-complex"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_complex_03_014",
+      "unit": "math.m2.expr.complex.complex",
+      "category": "calculation",
+      "prompt": "(−1+3i) ÷ (2+i) を計算すると？",
+      "choices": [
+        "7/5+(1/5)i",
+        "1/5−(7/5)i",
+        "−1+i",
+        "1/5+(7/5)i"
+      ],
+      "answerIndex": 3,
+      "explanation": "分母と分子に共役な複素数 2−i をかける。分母は 2²＋(1)²＝5、分子は (−1+3i)(2−i)＝1+7i。これを 5 で割る。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-complex"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_complex_03_015",
+      "unit": "math.m2.expr.complex.complex",
+      "category": "calculation",
+      "prompt": "(5+4i)(−2−3i) を計算すると？",
+      "choices": [
+        "2−23i",
+        "2+23i",
+        "−10−12i",
+        "−22−23i"
+      ],
+      "answerIndex": 0,
+      "explanation": "展開すると −10＋(−15)i＋(−8)i＋(−12)i²。i²＝−1 より 実部 −10−(−12)＝2、虚部 −23。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-complex"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_complex_03_016",
+      "unit": "math.m2.expr.complex.higher",
+      "category": "calculation",
+      "prompt": "3次方程式 x³ − 6x² ＋ 11x − 6 ＝ 0 の解は？",
+      "choices": [
+        "x＝1, 2, 3",
+        "x＝2, 3, 6",
+        "x＝−1, −2, −3",
+        "x＝1, −2, 3"
+      ],
+      "answerIndex": 0,
+      "explanation": "x＝1 を代入すると0。(x−1)(x−2)(x−3)＝0。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-complex"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_complex_03_017",
+      "unit": "math.m2.expr.complex",
+      "category": "calculation",
+      "prompt": "(x＋y) ＋ (x−y)i ＝ 7−3i を満たす実数 x, y は？",
+      "choices": [
+        "x＝2, y＝5",
+        "x＝5, y＝2",
+        "x＝2, y＝−5",
+        "x＝−2, y＝5"
+      ],
+      "answerIndex": 0,
+      "explanation": "実部・虚部を比べて x＋y＝7、x−y＝−3。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-complex"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_complex_03_018",
+      "unit": "math.m2.expr.complex.discriminant",
+      "category": "calculation",
+      "prompt": "2次方程式 2x² + x − 3 ＝ 0 の解の種類は？",
+      "choices": [
+        "異なる2つの虚数解",
+        "異なる2つの実数解",
+        "解なし",
+        "重解"
+      ],
+      "answerIndex": 1,
+      "explanation": "判別式 D＝(1)²−4×2×(−3)＝25。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-complex"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_complex_03_019",
+      "unit": "math.m2.expr.complex",
+      "category": "calculation",
+      "prompt": "(−4+2i) − (4+i) を計算すると？",
+      "choices": [
+        "3i",
+        "−8+i",
+        "i",
+        "−8+3i"
+      ],
+      "answerIndex": 1,
+      "explanation": "実部 −4−(4)＝−8、虚部 2−(1)＝1。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-complex"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_complex_03_020",
+      "unit": "math.m2.expr.complex",
+      "category": "calculation",
+      "prompt": "(−3−5i)² を計算すると？",
+      "choices": [
+        "34+30i",
+        "−16+30i",
+        "−16−30i",
+        "9+25i"
+      ],
+      "answerIndex": 1,
+      "explanation": "(a＋bi)²＝a²−b²＋2abi より 実部 (−3)²−(−5)²＝−16、虚部 2×(−3)×(−5)＝30。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-complex"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_complex_03_021",
+      "unit": "math.m2.expr.complex.remainder",
+      "category": "calculation",
+      "prompt": "x³ + 2x ＋ k が x − 1 で割り切れるとき、k の値は？",
+      "choices": [
+        "−3",
+        "4",
+        "−2",
+        "3"
+      ],
+      "answerIndex": 0,
+      "explanation": "因数定理：P(1)＝(1)³＋0×(1)²＋2×(1)＋k＝3＋k＝0 より k＝−3。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-complex"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_complex_03_022",
+      "unit": "math.m2.expr.complex",
+      "category": "calculation",
+      "prompt": "(1+2i)² を計算すると？",
+      "choices": [
+        "5+4i",
+        "−3−4i",
+        "−3+4i",
+        "1+4i"
+      ],
+      "answerIndex": 2,
+      "explanation": "(a＋bi)²＝a²−b²＋2abi より 実部 (1)²−(2)²＝−3、虚部 2×(1)×(2)＝4。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-complex"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_complex_03_023",
+      "unit": "math.m2.expr.complex.vieta",
+      "category": "calculation",
+      "prompt": "2次方程式 3x² − 7x − 4 ＝ 0 の2つの解を α, β とするとき、(α−β)² の値は？",
+      "choices": [
+        "97/9",
+        "1/9",
+        "73/9",
+        "−97/9"
+      ],
+      "answerIndex": 0,
+      "explanation": "α＋β＝7/3、αβ＝−4/3。(α−β)²＝(α＋β)²−4αβ＝(7/3)²−4×(−4/3)＝97/9。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-complex"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_complex_03_024",
+      "unit": "math.m2.expr.complex.discriminant",
+      "category": "calculation",
+      "prompt": "2次方程式 3x² − 6x − 1 ＝ 0 の解の種類は？",
+      "choices": [
+        "異なる2つの虚数解",
+        "解なし",
+        "重解",
+        "異なる2つの実数解"
+      ],
+      "answerIndex": 3,
+      "explanation": "判別式 D＝(−6)²−4×3×(−1)＝48。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-complex"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_complex_03_025",
+      "unit": "math.m2.expr.complex.remainder",
+      "category": "calculation",
+      "prompt": "P(x) ＝ 2x³ + 4x² − 5x + 1 を x − 1 で割ったときの余りは？",
+      "choices": [
+        "8",
+        "−2",
+        "2",
+        "1"
+      ],
+      "answerIndex": 2,
+      "explanation": "剰余の定理：余りは P(1)＝2。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-complex"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_complex_03_026",
+      "unit": "math.m2.expr.complex.remainder",
+      "category": "calculation",
+      "prompt": "整式 P(x) を x − 1 で割ると余り 6、x + 2 で割ると余り 6 である。P(x) を (x − 1)(x + 2) で割った余りは？",
+      "choices": [
+        "6",
+        "−6",
+        "6x",
+        "7"
+      ],
+      "answerIndex": 0,
+      "explanation": "余りを px＋q とおくと、剰余の定理より p＋q＝6、−2p＋q＝6。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-complex"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_complex_03_027",
+      "unit": "math.m2.expr.complex.higher",
+      "category": "thinking",
+      "prompt": "実数係数の3次方程式が 1＋2i を解にもつとき、必ず解になるものは？",
+      "choices": [
+        "−1＋2i",
+        "−1−2i",
+        "2＋i",
+        "1−2i"
+      ],
+      "answerIndex": 3,
+      "explanation": "実数係数なら共役な複素数も解。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-complex"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_complex_03_028",
+      "unit": "math.m2.expr.complex.complex",
+      "category": "calculation",
+      "prompt": "(5+2i) ÷ (1+2i) を計算すると？",
+      "choices": [
+        "9/5−(8/5)i",
+        "9/5+(8/5)i",
+        "−8/5+(9/5)i",
+        "1/5+(12/5)i"
+      ],
+      "answerIndex": 0,
+      "explanation": "分母と分子に共役な複素数 1−2i をかける。分母は 1²＋(2)²＝5、分子は (5+2i)(1−2i)＝9−8i。これを 5 で割る。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-complex"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_complex_03_029",
+      "unit": "math.m2.expr.complex.discriminant",
+      "category": "calculation",
+      "prompt": "2次方程式 x² − 6 ＝ 0 の解の種類は？",
+      "choices": [
+        "重解",
+        "異なる2つの実数解",
+        "解なし",
+        "異なる2つの虚数解"
+      ],
+      "answerIndex": 1,
+      "explanation": "判別式 D＝(0)²−4×1×(−6)＝24。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-complex"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_complex_03_030",
+      "unit": "math.m2.expr.complex.higher",
+      "category": "calculation",
+      "prompt": "ω を1の虚数の3乗根とするとき、ω³ の値は？",
+      "choices": [
+        "ω",
+        "0",
+        "−1",
+        "1"
+      ],
+      "answerIndex": 3,
+      "explanation": "ω は x³＝1 の解。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-complex"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_complex_03_031",
+      "unit": "math.m2.expr.complex",
+      "category": "calculation",
+      "prompt": "(−3+2i) − (3−2i) を計算すると？",
+      "choices": [
+        "0",
+        "−6",
+        "4i",
+        "−6+4i"
+      ],
+      "answerIndex": 3,
+      "explanation": "実部 −3−(3)＝−6、虚部 2−(−2)＝4。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-complex"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_complex_03_032",
+      "unit": "math.m2.expr.complex",
+      "category": "calculation",
+      "prompt": "(5+4i)² を計算すると？",
+      "choices": [
+        "9+40i",
+        "25+16i",
+        "9−40i",
+        "41+40i"
+      ],
+      "answerIndex": 0,
+      "explanation": "(a＋bi)²＝a²−b²＋2abi より 実部 (5)²−(4)²＝9、虚部 2×(5)×(4)＝40。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-complex"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_complex_03_033",
+      "unit": "math.m2.expr.complex.remainder",
+      "category": "calculation",
+      "prompt": "P(x) ＝ −x³ − x² + 3x − 1 を x − 2 で割ったときの余りは？",
+      "choices": [
+        "−3",
+        "−1",
+        "−7",
+        "7"
+      ],
+      "answerIndex": 2,
+      "explanation": "剰余の定理：余りは P(2)＝−7。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-complex"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_complex_03_034",
+      "unit": "math.m2.expr.complex",
+      "category": "calculation",
+      "prompt": "(3+2i) − (4+i) を計算すると？",
+      "choices": [
+        "−1+i",
+        "7+i",
+        "7+3i",
+        "−1+3i"
+      ],
+      "answerIndex": 0,
+      "explanation": "実部 3−(4)＝−1、虚部 2−(1)＝1。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-complex"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_complex_03_035",
+      "unit": "math.m2.expr.complex.complex",
+      "category": "calculation",
+      "prompt": "(−5−i) ÷ (1+i) を計算すると？",
+      "choices": [
+        "−3+2i",
+        "2−3i",
+        "−2−3i",
+        "−3−2i"
+      ],
+      "answerIndex": 0,
+      "explanation": "分母と分子に共役な複素数 1−i をかける。分母は 1²＋(1)²＝2、分子は (−5−i)(1−i)＝−6+4i。これを 2 で割る。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-complex"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_complex_03_036",
+      "unit": "math.m2.expr.complex",
+      "category": "calculation",
+      "prompt": "(−4−2i) − (−2+3i) を計算すると？",
+      "choices": [
+        "−2−5i",
+        "−6+i",
+        "−2+i",
+        "−6−5i"
+      ],
+      "answerIndex": 0,
+      "explanation": "実部 −4−(−2)＝−2、虚部 −2−(3)＝−5。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-complex"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_complex_03_037",
+      "unit": "math.m2.expr.complex.complex",
+      "category": "calculation",
+      "prompt": "方程式 x³ ＝ 8 の実数解は？",
+      "choices": [
+        "x＝8/3",
+        "x＝−2",
+        "x＝±2",
+        "x＝2"
+      ],
+      "answerIndex": 3,
+      "explanation": "x³−8＝(x−2)(x²＋2x＋4)＝0。残りは虚数解。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-complex"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_complex_03_038",
+      "unit": "math.m2.expr.complex.complex",
+      "category": "calculation",
+      "prompt": "(−2−5i) ÷ (3−i) を計算すると？",
+      "choices": [
+        "−1/10+(17/10)i",
+        "−1/10−(17/10)i",
+        "−17/10−(1/10)i",
+        "−11/10−(13/10)i"
+      ],
+      "answerIndex": 1,
+      "explanation": "分母と分子に共役な複素数 3+i をかける。分母は 3²＋(−1)²＝10、分子は (−2−5i)(3+i)＝−1−17i。これを 10 で割る。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-complex"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_complex_03_039",
+      "unit": "math.m2.expr.complex.discriminant",
+      "category": "calculation",
+      "prompt": "2次方程式 x² + 5x + 9 ＝ 0 の解の種類は？",
+      "choices": [
+        "異なる2つの虚数解",
+        "解なし",
+        "異なる2つの実数解",
+        "重解"
+      ],
+      "answerIndex": 0,
+      "explanation": "判別式 D＝(5)²−4×1×(9)＝−11。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-complex"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_complex_03_040",
+      "unit": "math.m2.expr.complex.discriminant",
+      "category": "calculation",
+      "prompt": "2次方程式 3x² + 8 ＝ 0 の解の種類は？",
+      "choices": [
+        "異なる2つの虚数解",
+        "異なる2つの実数解",
+        "解なし",
+        "重解"
+      ],
+      "answerIndex": 0,
+      "explanation": "判別式 D＝(0)²−4×3×(8)＝−96。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-complex"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_complex_03_041",
+      "unit": "math.m2.expr.complex",
+      "category": "calculation",
+      "prompt": "(2+4i)² を計算すると？",
+      "choices": [
+        "−12−16i",
+        "4+16i",
+        "20+16i",
+        "−12+16i"
+      ],
+      "answerIndex": 3,
+      "explanation": "(a＋bi)²＝a²−b²＋2abi より 実部 (2)²−(4)²＝−12、虚部 2×(2)×(4)＝16。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-complex"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_complex_03_042",
+      "unit": "math.m2.expr.complex",
+      "category": "calculation",
+      "prompt": "(−4−5i) − (4+2i) を計算すると？",
+      "choices": [
+        "−8−3i",
+        "−7i",
+        "−3i",
+        "−8−7i"
+      ],
+      "answerIndex": 3,
+      "explanation": "実部 −4−(4)＝−8、虚部 −5−(2)＝−7。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-complex"
+      ]
+    },
+    {
+      "id": "math_shonan_104_m1_complex_03_043",
+      "unit": "math.m2.expr.complex.complex",
+      "category": "calculation",
+      "prompt": "(−4−4i)(−1−3i) を計算すると？",
+      "choices": [
+        "4+12i",
+        "16+16i",
+        "−8−16i",
+        "−8+16i"
+      ],
+      "answerIndex": 3,
+      "explanation": "展開すると 4＋(12)i＋(4)i＋(12)i²。i²＝−1 より 実部 4−(12)＝−8、虚部 16。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "math1",
+        "m2-complex"
+      ]
+    }
+  ]
+}

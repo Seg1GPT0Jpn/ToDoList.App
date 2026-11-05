@@ -1,0 +1,744 @@
+{
+  "setId": "science_shonan_104_bio_veg_01",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "science_shonan_104_bio_veg_01_001",
+      "unit": "science.biology.ecology.vegetation.vegetation",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ある場所に生育している植物の集まりを何という？",
+      "choices": [
+        "相観",
+        "植生",
+        "生態系",
+        "バイオーム"
+      ],
+      "answerIndex": 1,
+      "explanation": "森林・草原・荒原に大きく分けられる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_01_002",
+      "unit": "science.biology.ecology.vegetation.vegetation",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "植生を大きく3つに分けたときの組み合わせは？",
+      "choices": [
+        "草原・砂漠・ツンドラ",
+        "陽樹林・陰樹林・混交林",
+        "森林・草原・荒原",
+        "森林・湖沼・海洋"
+      ],
+      "answerIndex": 2,
+      "explanation": "主に気温と降水量で決まる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_01_003",
+      "unit": "science.biology.ecology.vegetation.vegetation",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "植生を分ける主な要因の組み合わせは？",
+      "choices": [
+        "動物の数と昆虫の種類",
+        "気温と降水量",
+        "土壌の色と標高",
+        "日照時間と風速"
+      ],
+      "answerIndex": 1,
+      "explanation": "降水量が多いと森林、少ないと草原、極端に少ないか低温だと荒原。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_01_004",
+      "unit": "science.biology.ecology.vegetation.vegetation",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "植生の外観上の様子を何という？",
+      "choices": [
+        "相観",
+        "遷移",
+        "林冠",
+        "優占種"
+      ],
+      "answerIndex": 0,
+      "explanation": "相観は優占種によって決まることが多い。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_01_005",
+      "unit": "science.biology.ecology.vegetation.vegetation",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "植生の中で、最も多く、地表を広くおおっている種を何という？",
+      "choices": [
+        "外来種",
+        "極相種",
+        "先駆植物",
+        "優占種"
+      ],
+      "answerIndex": 3,
+      "explanation": "植生の相観を決める。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_01_006",
+      "unit": "science.biology.ecology.vegetation.vegetation",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "森林で、高木の葉が茂って森林の上部をおおっている部分は？",
+      "choices": [
+        "林床",
+        "地表層",
+        "草本層",
+        "林冠"
+      ],
+      "answerIndex": 3,
+      "explanation": "林冠で多くの光が吸収されるので、林床は暗い。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_01_007",
+      "unit": "science.biology.ecology.vegetation.vegetation",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "森林の地面に近い部分を何という？",
+      "choices": [
+        "林床",
+        "林冠",
+        "高木層",
+        "亜高木層"
+      ],
+      "answerIndex": 0,
+      "explanation": "林冠で光がさえぎられ、暗い。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_01_008",
+      "unit": "science.biology.ecology.vegetation.vegetation",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "発達した森林の階層構造を上から順に並べたものは？",
+      "choices": [
+        "地表層→草本層→低木層→亜高木層→高木層",
+        "高木層→亜高木層→低木層→草本層→地表層",
+        "草本層→低木層→高木層→地表層→亜高木層",
+        "高木層→低木層→亜高木層→地表層→草本層"
+      ],
+      "answerIndex": 1,
+      "explanation": "地表層にはコケ植物などが生える。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_01_009",
+      "unit": "science.biology.ecology.vegetation.vegetation",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "光の強さを変えたとき、光合成速度と呼吸速度が等しくなり、見かけの光合成速度が0になる光の強さを何という？",
+      "choices": [
+        "光飽和点",
+        "光補償点",
+        "限定要因",
+        "極相"
+      ],
+      "answerIndex": 1,
+      "explanation": "これより弱い光では、植物は成長できない。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_01_010",
+      "unit": "science.biology.ecology.vegetation.vegetation",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "光を強くしても光合成速度がそれ以上大きくならなくなる光の強さを何という？",
+      "choices": [
+        "最適温度",
+        "光飽和点",
+        "光補償点",
+        "温度補償点"
+      ],
+      "answerIndex": 1,
+      "explanation": "光以外の要因（二酸化炭素濃度や温度）が光合成を制限するようになる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_01_011",
+      "unit": "science.biology.ecology.vegetation.vegetation",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "見かけの光合成速度を表す式として正しいものは？",
+      "choices": [
+        "光合成速度＋呼吸速度",
+        "光合成速度－呼吸速度",
+        "光合成速度×呼吸速度",
+        "呼吸速度－光合成速度"
+      ],
+      "answerIndex": 1,
+      "explanation": "二酸化炭素の吸収速度として測定することが多い。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_01_012",
+      "unit": "science.biology.ecology.vegetation.vegetation",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "光を強くしても光合成速度が比例して増え続けない理由は？",
+      "choices": [
+        "二酸化炭素濃度や温度など、光以外の条件が光合成を制限するようになるから",
+        "葉緑体が光を全く吸収しなくなるから",
+        "光合成は光の強さに関係しないから",
+        "光が強すぎると呼吸が止まるから"
+      ],
+      "answerIndex": 0,
+      "explanation": "光合成速度を制限している要因を限定要因という。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_01_013",
+      "unit": "science.biology.ecology.vegetation.vegetation",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "光補償点と光飽和点がともに高く、強い光の下でよく成長する植物を何という？",
+      "choices": [
+        "先駆植物",
+        "極相種",
+        "陰生植物",
+        "陽生植物"
+      ],
+      "answerIndex": 3,
+      "explanation": "呼吸速度が大きいので、弱い光の下では成長できない。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_01_014",
+      "unit": "science.biology.ecology.vegetation.vegetation",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "光補償点が低く、弱い光の下でも生育できる植物を何という？",
+      "choices": [
+        "地衣類",
+        "陰生植物",
+        "先駆植物",
+        "陽生植物"
+      ],
+      "answerIndex": 1,
+      "explanation": "林床などの暗い場所に生える。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_01_015",
+      "unit": "science.biology.ecology.vegetation.vegetation",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "光補償点の低い植物が適している環境は？",
+      "choices": [
+        "森林の林床のような暗い場所",
+        "砂漠",
+        "日当たりのよい裸地",
+        "高山の岩場"
+      ],
+      "answerIndex": 0,
+      "explanation": "呼吸速度が小さく、弱い光でも光合成量が呼吸量を上回る。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_01_016",
+      "unit": "science.biology.ecology.vegetation.vegetation",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "1本の木の中で、日当たりのよい所につく厚い葉を何という？",
+      "choices": [
+        "陰葉",
+        "がく",
+        "陽葉",
+        "子葉"
+      ],
+      "answerIndex": 2,
+      "explanation": "さく状組織が発達していて厚い。陰葉は薄く広い。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_01_017",
+      "unit": "science.biology.ecology.vegetation.vegetation",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "陰葉の特徴として正しいものは？",
+      "choices": [
+        "厚くて小さく、光補償点が高い",
+        "葉緑体を全くもたない",
+        "薄くて面積が広く、光補償点が低い",
+        "強い光の下でだけ光合成をする"
+      ],
+      "answerIndex": 2,
+      "explanation": "弱い光を効率よく受け取れる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_01_018",
+      "unit": "science.biology.ecology.vegetation.succession",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "植生が時間とともに移り変わっていくことを何という？",
+      "choices": [
+        "分布",
+        "遷移（植生遷移）",
+        "進化",
+        "相観"
+      ],
+      "answerIndex": 1,
+      "explanation": "最終的に安定した状態を極相（クライマックス）という。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_01_019",
+      "unit": "science.biology.ecology.vegetation.succession",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "火山の溶岩跡など、土壌のない裸地から始まる遷移を何という？",
+      "choices": [
+        "一次遷移",
+        "湿性遷移の後半",
+        "極相",
+        "二次遷移"
+      ],
+      "answerIndex": 0,
+      "explanation": "そのうち陸上から始まるものを乾性遷移という。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_01_020",
+      "unit": "science.biology.ecology.vegetation.succession",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "陸上の乾いた裸地から始まる一次遷移を何という？",
+      "choices": [
+        "ギャップ更新",
+        "乾性遷移",
+        "二次遷移",
+        "湿性遷移"
+      ],
+      "answerIndex": 1,
+      "explanation": "湖沼から始まるものは湿性遷移。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_01_021",
+      "unit": "science.biology.ecology.vegetation.succession",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "湖沼に土砂や枯れた植物が積もるところから始まる遷移を何という？",
+      "choices": [
+        "乾性遷移",
+        "極相",
+        "二次遷移",
+        "湿性遷移"
+      ],
+      "answerIndex": 3,
+      "explanation": "土砂や枯れた植物が積もって湿原→草原へと移り変わる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_01_022",
+      "unit": "science.biology.ecology.vegetation.succession",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "山火事や森林の伐採のあとなど、土壌や種子・根が残っている所から始まる遷移を何という？",
+      "choices": [
+        "湿性遷移",
+        "二次遷移",
+        "一次遷移",
+        "乾性遷移"
+      ],
+      "answerIndex": 1,
+      "explanation": "土壌があるので、一次遷移より速く進む。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_01_023",
+      "unit": "science.biology.ecology.vegetation.succession",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "二次遷移が一次遷移より速く進む理由は？",
+      "choices": [
+        "先駆植物が生えないから",
+        "気温が高いから",
+        "土壌や、種子・地下茎などがすでに残っているから",
+        "動物がいないから"
+      ],
+      "answerIndex": 2,
+      "explanation": "一次遷移では、まず土壌ができるのに長い時間がかかる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_01_024",
+      "unit": "science.biology.ecology.vegetation.succession",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "乾性遷移の順序として正しいものは？",
+      "choices": [
+        "裸地→陽樹林→草原→地衣類→陰樹林",
+        "裸地→陰樹林→陽樹林→草原→低木林",
+        "裸地→地衣類・コケ植物→草原→低木林→陽樹林→混交林→陰樹林",
+        "草原→裸地→陰樹林→陽樹林→低木林"
+      ],
+      "answerIndex": 2,
+      "explanation": "暖温帯では、陰樹林（スダジイ・タブノキなど）が極相になる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_01_025",
+      "unit": "science.biology.ecology.vegetation.succession",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "遷移の初期に裸地に最初に侵入する植物を何という？",
+      "choices": [
+        "先駆植物（パイオニア植物）",
+        "優占種",
+        "極相種",
+        "陰生植物"
+      ],
+      "answerIndex": 0,
+      "explanation": "地衣類・コケ植物、ススキやイタドリなど。乾燥や貧栄養に強い。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_01_026",
+      "unit": "science.biology.ecology.vegetation.succession",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "遷移の初期に侵入する樹木を何という？",
+      "choices": [
+        "先駆樹種",
+        "先駆植物",
+        "陰樹",
+        "極相樹種"
+      ],
+      "answerIndex": 0,
+      "explanation": "多くは陽樹（アカマツ・ヤシャブシなど）で、種子が風で運ばれやすい。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_01_027",
+      "unit": "science.biology.ecology.vegetation.succession",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "先駆植物と先駆樹種のちがいとして正しいものは？",
+      "choices": [
+        "両方とも陰樹のこと",
+        "先駆植物は樹木だけ、先駆樹種は草本だけを指す",
+        "先駆植物は裸地に最初に侵入する植物全般、先駆樹種は遷移の初期に侵入する樹木のこと",
+        "先駆植物は極相林に生え、先駆樹種は裸地に生える"
+      ],
+      "answerIndex": 2,
+      "explanation": "先駆植物には地衣類・コケ・草本が多く、先駆樹種には陽樹が多い。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_01_028",
+      "unit": "science.biology.ecology.vegetation.succession",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "日当たりのよい場所でよく成長する樹木を何という？",
+      "choices": [
+        "極相樹種",
+        "陰樹",
+        "地衣類",
+        "陽樹"
+      ],
+      "answerIndex": 3,
+      "explanation": "アカマツ・コナラ・クヌギ・シラカンバなど。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_01_029",
+      "unit": "science.biology.ecology.vegetation.succession",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "芽生えや幼木が暗い林床でも育つことのできる樹木を何という？",
+      "choices": [
+        "陰樹",
+        "先駆植物",
+        "陽樹",
+        "先駆樹種"
+      ],
+      "answerIndex": 0,
+      "explanation": "スダジイ・アラカシ・タブノキ・ブナなど。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_01_030",
+      "unit": "science.biology.ecology.vegetation.succession",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "陽樹の例として正しいものは？",
+      "choices": [
+        "スダジイ",
+        "タブノキ",
+        "アラカシ",
+        "アカマツ"
+      ],
+      "answerIndex": 3,
+      "explanation": "ほかにコナラ・クヌギ・シラカンバなど。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_01_031",
+      "unit": "science.biology.ecology.vegetation.succession",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "陰樹の例として正しいものは？",
+      "choices": [
+        "スダジイ",
+        "アカマツ",
+        "シラカンバ",
+        "コナラ"
+      ],
+      "answerIndex": 0,
+      "explanation": "ほかにアラカシ・タブノキ・ブナなど。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_01_032",
+      "unit": "science.biology.ecology.vegetation.succession",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "遷移の初期に陽樹が優勢になる理由は？",
+      "choices": [
+        "光が十分にある場所では、光合成速度の大きい陽樹の方が速く成長するから",
+        "陽樹は暗い場所でしか育たないから",
+        "陰樹の方が成長が速いから",
+        "陽樹は光合成をしないから"
+      ],
+      "answerIndex": 0,
+      "explanation": "陽樹は光飽和点が高く、強い光の下で成長が速い。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    }
+  ]
+}

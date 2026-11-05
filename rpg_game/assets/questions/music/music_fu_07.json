@@ -1,0 +1,260 @@
+{
+  "setId": "music_fu_07",
+  "worldId": "music",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mus_fu07_001",
+      "unit": "music.theory.notation.interval.basic",
+      "category": "knowledge",
+      "prompt": "完全に調和して響き合う音程を何という？",
+      "choices": [
+        "不完全協和音程",
+        "絶対音程",
+        "完全協和音程",
+        "不協和音程"
+      ],
+      "answerIndex": 2,
+      "explanation": "完全1・4・5・8度が完全協和音程。"
+    },
+    {
+      "id": "mus_fu07_002",
+      "unit": "music.theory.notation.interval.basic",
+      "category": "knowledge",
+      "prompt": "完全協和音程より柔らかく甘い響きの音程を何という？",
+      "choices": [
+        "増音程",
+        "不協和音程",
+        "不完全協和音程",
+        "完全協和音程"
+      ],
+      "answerIndex": 2,
+      "explanation": "長・短3度、長・短6度が不完全協和音程。"
+    },
+    {
+      "id": "mus_fu07_003",
+      "unit": "music.theory.notation.interval.basic",
+      "category": "knowledge",
+      "prompt": "完全協和音程と不完全協和音程をあわせて何という？",
+      "choices": [
+        "協和音程",
+        "不協和音程",
+        "単音程",
+        "完全音程"
+      ],
+      "answerIndex": 0,
+      "explanation": "両方をあわせて協和音程。"
+    },
+    {
+      "id": "mus_fu07_004",
+      "unit": "music.theory.notation.interval.basic",
+      "category": "knowledge",
+      "prompt": "協和音程以外のすべての音程を何という？",
+      "choices": [
+        "減音程",
+        "不協和音程",
+        "完全協和音程",
+        "複音程"
+      ],
+      "answerIndex": 1,
+      "explanation": "2度・7度や増・減音程などが不協和音程。"
+    },
+    {
+      "id": "mus_fu07_005",
+      "unit": "music.theory.notation.interval.basic",
+      "category": "knowledge",
+      "prompt": "完全協和音程の中でも、完全1度や完全8度を特に何という？",
+      "choices": [
+        "純正音程",
+        "単音程",
+        "絶対協和音程",
+        "完全一致音程"
+      ],
+      "answerIndex": 2,
+      "explanation": "C と C、F と1オクターブ上の F などは絶対協和音程。"
+    },
+    {
+      "id": "mus_fu07_006",
+      "unit": "music.theory.notation.interval.basic",
+      "category": "knowledge",
+      "prompt": "不完全協和音程にあてはまる音程の組み合わせは？",
+      "choices": [
+        "完全4度・完全5度",
+        "長2度・短7度",
+        "増4度・減5度",
+        "長3度・短3度・長6度・短6度"
+      ],
+      "answerIndex": 3,
+      "explanation": "3度と6度（長・短）が不完全協和音程。"
+    },
+    {
+      "id": "mus_fu07_007",
+      "unit": "music.theory.notation.interval.basic",
+      "category": "thinking",
+      "prompt": "C と、その上の F の音程は、どれにあたる？",
+      "choices": [
+        "完全協和音程",
+        "複音程",
+        "不完全協和音程",
+        "不協和音程"
+      ],
+      "answerIndex": 0,
+      "explanation": "C→F は完全4度なので完全協和音程。"
+    },
+    {
+      "id": "mus_fu07_008",
+      "unit": "music.theory.notation.interval.basic",
+      "category": "thinking",
+      "prompt": "C と、その上の A の音程は、どれにあたる？",
+      "choices": [
+        "不完全協和音程",
+        "不協和音程",
+        "複音程",
+        "完全協和音程"
+      ],
+      "answerIndex": 0,
+      "explanation": "C→A は長6度なので不完全協和音程。"
+    },
+    {
+      "id": "mus_fu07_009",
+      "unit": "music.theory.notation.interval.basic",
+      "category": "thinking",
+      "prompt": "E と、その上の C の音程は、どれにあたる？",
+      "choices": [
+        "不協和音程",
+        "複音程",
+        "不完全協和音程",
+        "完全協和音程"
+      ],
+      "answerIndex": 2,
+      "explanation": "E→C は短6度なので不完全協和音程。"
+    },
+    {
+      "id": "mus_fu07_010",
+      "unit": "music.theory.notation.interval.basic",
+      "category": "thinking",
+      "prompt": "C と、その上の H の音程は、どれにあたる？",
+      "choices": [
+        "複音程",
+        "不協和音程",
+        "完全協和音程",
+        "不完全協和音程"
+      ],
+      "answerIndex": 1,
+      "explanation": "C→H は長7度なので不協和音程。"
+    },
+    {
+      "id": "mus_fu07_011",
+      "unit": "music.theory.notation.interval.basic",
+      "category": "thinking",
+      "prompt": "F と、その上の H の音程は、どれにあたる？",
+      "choices": [
+        "完全協和音程",
+        "複音程",
+        "不完全協和音程",
+        "不協和音程"
+      ],
+      "answerIndex": 3,
+      "explanation": "F→H は増4度なので不協和音程。"
+    },
+    {
+      "id": "mus_fu07_012",
+      "unit": "music.theory.notation.interval.basic",
+      "category": "thinking",
+      "prompt": "C と、その上の G の音程は、どれにあたる？",
+      "choices": [
+        "不協和音程",
+        "完全協和音程",
+        "複音程",
+        "不完全協和音程"
+      ],
+      "answerIndex": 1,
+      "explanation": "C→G は完全5度なので完全協和音程。"
+    },
+    {
+      "id": "mus_fu07_013",
+      "unit": "music.theory.notation.interval.basic",
+      "category": "thinking",
+      "prompt": "E と、その上の G の音程は、どれにあたる？",
+      "choices": [
+        "複音程",
+        "不協和音程",
+        "完全協和音程",
+        "不完全協和音程"
+      ],
+      "answerIndex": 3,
+      "explanation": "E→G は短3度なので不完全協和音程。"
+    },
+    {
+      "id": "mus_fu07_014",
+      "unit": "music.theory.notation.interval.basic",
+      "category": "thinking",
+      "prompt": "D と、その上の C の音程は、どれにあたる？",
+      "choices": [
+        "完全協和音程",
+        "不協和音程",
+        "複音程",
+        "不完全協和音程"
+      ],
+      "answerIndex": 1,
+      "explanation": "D→C は短7度なので不協和音程。"
+    },
+    {
+      "id": "mus_fu07_015",
+      "unit": "music.theory.notation.interval.basic",
+      "category": "thinking",
+      "prompt": "F と、その上の D の音程は、どれにあたる？",
+      "choices": [
+        "完全協和音程",
+        "複音程",
+        "不完全協和音程",
+        "不協和音程"
+      ],
+      "answerIndex": 2,
+      "explanation": "F→D は長6度なので不完全協和音程。"
+    },
+    {
+      "id": "mus_fu07_016",
+      "unit": "music.theory.notation.interval.basic",
+      "category": "thinking",
+      "prompt": "F と、その上の E の音程は、どれにあたる？",
+      "choices": [
+        "完全協和音程",
+        "不協和音程",
+        "不完全協和音程",
+        "複音程"
+      ],
+      "answerIndex": 1,
+      "explanation": "F→E は長7度なので不協和音程。"
+    },
+    {
+      "id": "mus_fu07_017",
+      "unit": "music.theory.notation.interval.basic",
+      "category": "thinking",
+      "prompt": "G と、その上の D の音程は、どれにあたる？",
+      "choices": [
+        "不完全協和音程",
+        "複音程",
+        "不協和音程",
+        "完全協和音程"
+      ],
+      "answerIndex": 3,
+      "explanation": "G→D は完全5度なので完全協和音程。"
+    },
+    {
+      "id": "mus_fu07_018",
+      "unit": "music.theory.notation.interval.basic",
+      "category": "thinking",
+      "prompt": "A と、その上の F の音程は、どれにあたる？",
+      "choices": [
+        "不完全協和音程",
+        "複音程",
+        "完全協和音程",
+        "不協和音程"
+      ],
+      "answerIndex": 0,
+      "explanation": "A→F は短6度なので不完全協和音程。"
+    }
+  ]
+}

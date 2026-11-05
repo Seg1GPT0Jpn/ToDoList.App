@@ -1,0 +1,951 @@
+{
+  "setId": "science_shonan_104_chem_neutral_02",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "science_shonan_104_chem_neutral_02_001",
+      "unit": "science.chemistry.change.acid.salt",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "CH₃COONa の水溶液の液性は？",
+      "choices": [
+        "両性",
+        "中性",
+        "塩基性",
+        "酸性"
+      ],
+      "answerIndex": 2,
+      "explanation": "弱酸＋強塩基の塩。CH₃COO⁻ が水と反応して OH⁻ を生じる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "neutral"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_neutral_02_002",
+      "unit": "science.chemistry.change.acid.salt",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "H₂SO₄ はオキソ酸（分子中に酸素原子を含む酸）か？",
+      "choices": [
+        "塩である",
+        "オキソ酸ではない",
+        "塩基である",
+        "オキソ酸である"
+      ],
+      "answerIndex": 3,
+      "explanation": "オキソ酸は酸性酸化物と水の反応などで生じる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "neutral"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_neutral_02_003",
+      "unit": "science.chemistry.change.acid.neutral",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "弱酸と強塩基の中和点の水溶液の液性は？",
+      "choices": [
+        "塩基性",
+        "中性",
+        "酸性",
+        "両性"
+      ],
+      "answerIndex": 0,
+      "explanation": "生じた塩の加水分解による。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "neutral"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_neutral_02_004",
+      "unit": "science.chemistry.change.acid.neutral",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "HCl と Ba(OH)₂ の中和でできる塩は？",
+      "choices": [
+        "KNO₃",
+        "BaCl₂",
+        "NaHSO₄",
+        "CaSO₄"
+      ],
+      "answerIndex": 1,
+      "explanation": "2HCl ＋ Ba(OH)₂ → BaCl₂ ＋ 2H₂O",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "neutral"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_neutral_02_005",
+      "unit": "science.chemistry.change.acid.salt",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "HCl はオキソ酸（分子中に酸素原子を含む酸）か？",
+      "choices": [
+        "塩基である",
+        "オキソ酸ではない",
+        "オキソ酸である",
+        "塩である"
+      ],
+      "answerIndex": 1,
+      "explanation": "オキソ酸は酸性酸化物と水の反応などで生じる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "neutral"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_neutral_02_006",
+      "unit": "science.chemistry.change.acid.neutral",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "0.3 mol/L の塩酸 10 mL を中和するのに必要な 0.1 mol/L のアンモニア水は何 mL？",
+      "choices": [
+        "15 mL",
+        "35 mL",
+        "60 mL",
+        "30 mL"
+      ],
+      "answerIndex": 3,
+      "explanation": "(酸の価数)×c×V＝(塩基の価数)×c'×V' より 1×0.3×10＝1×0.1×V'",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "neutral"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_neutral_02_007",
+      "unit": "science.chemistry.change.acid.salt",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "炭酸カルシウムに塩酸を加えると発生する気体は？",
+      "choices": [
+        "塩素 Cl₂",
+        "水素 H₂",
+        "酸素 O₂",
+        "二酸化炭素 CO₂"
+      ],
+      "answerIndex": 3,
+      "explanation": "CaCO₃ ＋ 2HCl → CaCl₂ ＋ H₂O ＋ CO₂（弱酸の遊離）",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "neutral"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_neutral_02_008",
+      "unit": "science.chemistry.change.acid.neutral",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "中和の本質を表すイオン反応式は？",
+      "choices": [
+        "Na⁺ ＋ Cl⁻ → NaCl",
+        "H₂ ＋ O₂ → H₂O₂",
+        "H⁺ ＋ OH⁻ → H₂O",
+        "2H⁺ ＋ O²⁻ → H₂O"
+      ],
+      "answerIndex": 2,
+      "explanation": "答え：H⁺ ＋ OH⁻ → H₂O",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "neutral"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_neutral_02_009",
+      "unit": "science.chemistry.change.acid.salt",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "Na₂CO₃ は、化学式の形からどの塩に分類される？",
+      "choices": [
+        "正塩",
+        "複塩",
+        "酸性塩",
+        "塩基性塩"
+      ],
+      "answerIndex": 0,
+      "explanation": "酸の H が残る→酸性塩、塩基の OH が残る→塩基性塩、どちらも残らない→正塩。水溶液の性質（液性）とは別。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "neutral"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_neutral_02_010",
+      "unit": "science.chemistry.change.acid.salt",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "NaHSO₄ は、化学式の形からどの塩に分類される？",
+      "choices": [
+        "複塩",
+        "正塩",
+        "酸性塩",
+        "塩基性塩"
+      ],
+      "answerIndex": 2,
+      "explanation": "酸の H が残る→酸性塩、塩基の OH が残る→塩基性塩、どちらも残らない→正塩。水溶液の性質（液性）とは別。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "neutral"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_neutral_02_011",
+      "unit": "science.chemistry.change.acid.neutral",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "炭酸ナトリウム水溶液を塩酸で滴定すると、中和点が2回あらわれる。1回目（フェノールフタレインの変色）までに起こる反応は？",
+      "choices": [
+        "Na₂CO₃ ＋ 2HCl → 2NaCl ＋ H₂O ＋ CO₂",
+        "NaHCO₃ ＋ HCl → NaCl ＋ H₂O ＋ CO₂",
+        "NaCl ＋ H₂O → NaOH ＋ HCl",
+        "Na₂CO₃ ＋ HCl → NaHCO₃ ＋ NaCl"
+      ],
+      "answerIndex": 3,
+      "explanation": "2回目（メチルオレンジの変色）までに NaHCO₃ ＋ HCl → NaCl ＋ H₂O ＋ CO₂",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "neutral"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_neutral_02_012",
+      "unit": "science.chemistry.change.acid.salt",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "Na₂O はどの酸化物に分類される？",
+      "choices": [
+        "過酸化物",
+        "塩基性酸化物",
+        "両性酸化物",
+        "酸性酸化物"
+      ],
+      "answerIndex": 1,
+      "explanation": "非金属元素の酸化物は多くが酸性酸化物、金属元素の酸化物は多くが塩基性酸化物。Al・Zn などは両性。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "neutral"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_neutral_02_013",
+      "unit": "science.chemistry.change.acid.neutral",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "アンモニアを 0.050 mol/L の硫酸 20 mL にすべて吸収させ、残った硫酸を 0.10 mol/L の NaOH で中和したら 10 mL 必要だった。アンモニアは何 mol？",
+      "choices": [
+        "1.5 × 10⁻³ mol",
+        "2.0 × 10⁻³ mol",
+        "1.0 × 10⁻³ mol",
+        "5.0 × 10⁻⁴ mol"
+      ],
+      "answerIndex": 2,
+      "explanation": "H⁺ の量＝2×0.050×0.020＝2.0×10⁻³ mol、OH⁻＝NH₃＋NaOH より NH₃＝2.0×10⁻³−0.10×0.010＝1.0×10⁻³ mol",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "neutral"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_neutral_02_014",
+      "unit": "science.chemistry.change.acid.salt",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "P₄O₁₀ はどの酸化物に分類される？",
+      "choices": [
+        "両性酸化物",
+        "酸性酸化物",
+        "塩基性酸化物",
+        "過酸化物"
+      ],
+      "answerIndex": 1,
+      "explanation": "非金属元素の酸化物は多くが酸性酸化物、金属元素の酸化物は多くが塩基性酸化物。Al・Zn などは両性。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "neutral"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_neutral_02_015",
+      "unit": "science.chemistry.change.acid.neutral",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "中和滴定で、内部が水でぬれたまま使ってよい器具の組み合わせは？",
+      "choices": [
+        "ビュレットとメスフラスコ",
+        "ホールピペットとビュレット",
+        "ホールピペットとコニカルビーカー",
+        "メスフラスコとコニカルビーカー"
+      ],
+      "answerIndex": 3,
+      "explanation": "中の物質量が変わらないので水でぬれていてよい。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "neutral"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_neutral_02_016",
+      "unit": "science.chemistry.change.acid.neutral",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "強酸と強塩基の中和点の水溶液の液性は？",
+      "choices": [
+        "両性",
+        "塩基性",
+        "酸性",
+        "中性"
+      ],
+      "answerIndex": 3,
+      "explanation": "生じた塩の加水分解による。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "neutral"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_neutral_02_017",
+      "unit": "science.chemistry.change.acid.salt",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "Na₂CO₃ の水溶液の液性は？",
+      "choices": [
+        "中性",
+        "酸性",
+        "両性",
+        "塩基性"
+      ],
+      "answerIndex": 3,
+      "explanation": "弱酸＋強塩基の塩。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "neutral"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_neutral_02_018",
+      "unit": "science.chemistry.change.acid.neutral",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "0.1 mol/L の硝酸 25 mL を中和するのに必要な 0.05 mol/L の水酸化カルシウム水溶液は何 mL？",
+      "choices": [
+        "12.5 mL",
+        "30 mL",
+        "25 mL",
+        "50 mL"
+      ],
+      "answerIndex": 2,
+      "explanation": "(酸の価数)×c×V＝(塩基の価数)×c'×V' より 1×0.1×25＝2×0.05×V'",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "neutral"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_neutral_02_019",
+      "unit": "science.chemistry.change.acid.neutral",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "アンモニア水を塩酸で滴定するとき、指示薬として適切なものは？",
+      "choices": [
+        "メチルオレンジ",
+        "フェノールフタレイン",
+        "フェノールフタレイン・メチルオレンジのどちらでもよい",
+        "どちらも使えない"
+      ],
+      "answerIndex": 0,
+      "explanation": "中和点が酸性側（強酸＋弱塩基）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "neutral"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_neutral_02_020",
+      "unit": "science.chemistry.change.acid.neutral",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "0.05 mol/L のシュウ酸水溶液 10 mL を中和するのに必要な 0.1 mol/L の水酸化ナトリウム水溶液は何 mL？",
+      "choices": [
+        "10 mL",
+        "5 mL",
+        "15 mL",
+        "20 mL"
+      ],
+      "answerIndex": 0,
+      "explanation": "(酸の価数)×c×V＝(塩基の価数)×c'×V' より 2×0.05×10＝1×0.1×V'",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "neutral"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_neutral_02_021",
+      "unit": "science.chemistry.change.acid.salt",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "弱酸と強塩基からできた塩の水溶液が塩基性を示すのは、何という反応のため？",
+      "choices": [
+        "電気分解",
+        "酸化",
+        "中和",
+        "塩の加水分解"
+      ],
+      "answerIndex": 3,
+      "explanation": "弱酸の陰イオンが水と反応して OH⁻ を生じる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "neutral"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_neutral_02_022",
+      "unit": "science.chemistry.change.acid.neutral",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "逆滴定とは？",
+      "choices": [
+        "指示薬を2種類使う滴定",
+        "滴定をはじめからやり直すこと",
+        "塩基を酸で滴定すること",
+        "過剰の酸（塩基）と反応させ、残った酸（塩基）を別の塩基（酸）で滴定して、もとの量を求める方法"
+      ],
+      "answerIndex": 3,
+      "explanation": "例：気体のアンモニアを過剰の硫酸に吸収させ、残った硫酸を NaOH で滴定する。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "neutral"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_neutral_02_023",
+      "unit": "science.chemistry.change.acid.neutral",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "H₂SO₄ と NaOH の中和でできる塩は？",
+      "choices": [
+        "NaCl",
+        "NaHSO₄",
+        "Na₂SO₄",
+        "CaSO₄"
+      ],
+      "answerIndex": 2,
+      "explanation": "H₂SO₄ ＋ 2NaOH → Na₂SO₄ ＋ 2H₂O",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "neutral"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_neutral_02_024",
+      "unit": "science.chemistry.change.acid.neutral",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "塩酸を水酸化ナトリウム水溶液で滴定するとき、指示薬として適切なものは？",
+      "choices": [
+        "どちらも使えない",
+        "フェノールフタレイン",
+        "メチルオレンジ",
+        "フェノールフタレイン・メチルオレンジのどちらでもよい"
+      ],
+      "answerIndex": 3,
+      "explanation": "pH が大きく変化する範囲が広い（強酸＋強塩基）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "neutral"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_neutral_02_025",
+      "unit": "science.chemistry.change.acid.salt",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "NO₂ はどの酸化物に分類される？",
+      "choices": [
+        "過酸化物",
+        "塩基性酸化物",
+        "両性酸化物",
+        "酸性酸化物"
+      ],
+      "answerIndex": 3,
+      "explanation": "非金属元素の酸化物は多くが酸性酸化物、金属元素の酸化物は多くが塩基性酸化物。Al・Zn などは両性。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "neutral"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_neutral_02_026",
+      "unit": "science.chemistry.change.acid.neutral",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "濃度のわからない硫酸 20 mL を 0.2 mol/L の水酸化ナトリウム水溶液で滴定したら 10 mL で中和した。硫酸の濃度は？",
+      "choices": [
+        "0.05 mol/L",
+        "0.3 mol/L",
+        "0.1 mol/L",
+        "0.025 mol/L"
+      ],
+      "answerIndex": 0,
+      "explanation": "2×c×20＝1×0.2×10",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "neutral"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_neutral_02_027",
+      "unit": "science.chemistry.change.acid.neutral",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "0.2 mol/L の塩酸 15 mL を中和するのに必要な 0.1 mol/L の水酸化バリウム水溶液は何 mL？",
+      "choices": [
+        "15 mL",
+        "7.5 mL",
+        "20 mL",
+        "30 mL"
+      ],
+      "answerIndex": 0,
+      "explanation": "(酸の価数)×c×V＝(塩基の価数)×c'×V' より 1×0.2×15＝2×0.1×V'",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "neutral"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_neutral_02_028",
+      "unit": "science.chemistry.change.acid.salt",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "H₂CO₃ はオキソ酸（分子中に酸素原子を含む酸）か？",
+      "choices": [
+        "オキソ酸である",
+        "オキソ酸ではない",
+        "塩基である",
+        "塩である"
+      ],
+      "answerIndex": 0,
+      "explanation": "オキソ酸は酸性酸化物と水の反応などで生じる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "neutral"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_neutral_02_029",
+      "unit": "science.chemistry.change.acid.neutral",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "一定体積の溶液を正確にはかり取る器具は？",
+      "choices": [
+        "ホールピペット",
+        "メスシリンダー",
+        "ビュレット",
+        "コニカルビーカー"
+      ],
+      "answerIndex": 0,
+      "explanation": "中和滴定で酸（塩基）を正確にはかり取るのに使う。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "neutral"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_neutral_02_030",
+      "unit": "science.chemistry.change.acid.salt",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "酢酸ナトリウムに塩酸を加えると何が起こる？",
+      "choices": [
+        "強酸の塩酸が遊離する",
+        "水素が発生する",
+        "弱酸の酢酸が遊離する（CH₃COONa ＋ HCl → CH₃COOH ＋ NaCl）",
+        "何も起こらない"
+      ],
+      "answerIndex": 2,
+      "explanation": "弱酸の塩＋強酸 → 強酸の塩＋弱酸",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "neutral"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_neutral_02_031",
+      "unit": "science.chemistry.change.acid.neutral",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "0.1 mol/L の硫酸 20 mL を中和するのに必要な 0.2 mol/L の水酸化ナトリウム水溶液は何 mL？",
+      "choices": [
+        "20 mL",
+        "40 mL",
+        "10 mL",
+        "25 mL"
+      ],
+      "answerIndex": 0,
+      "explanation": "(酸の価数)×c×V＝(塩基の価数)×c'×V' より 2×0.1×20＝1×0.2×V'",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "neutral"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_neutral_02_032",
+      "unit": "science.chemistry.change.acid.salt",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "NaCl の水溶液の液性は？",
+      "choices": [
+        "酸性",
+        "中性",
+        "塩基性",
+        "両性"
+      ],
+      "answerIndex": 1,
+      "explanation": "強酸＋強塩基の塩。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "neutral"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_neutral_02_033",
+      "unit": "science.chemistry.change.acid.neutral",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "HNO₃ と KOH の中和でできる塩は？",
+      "choices": [
+        "BaCl₂",
+        "NH₄Cl",
+        "CH₃COONa",
+        "KNO₃"
+      ],
+      "answerIndex": 3,
+      "explanation": "HNO₃ ＋ KOH → KNO₃ ＋ H₂O",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "neutral"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_neutral_02_034",
+      "unit": "science.chemistry.change.acid.salt",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "NaHSO₄ の水溶液の液性は？",
+      "choices": [
+        "両性",
+        "酸性",
+        "塩基性",
+        "中性"
+      ],
+      "answerIndex": 1,
+      "explanation": "HSO₄⁻ が電離して H⁺ を生じる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "neutral"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_neutral_02_035",
+      "unit": "science.chemistry.change.acid.salt",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "SO₃ はどの酸化物に分類される？",
+      "choices": [
+        "塩基性酸化物",
+        "両性酸化物",
+        "酸性酸化物",
+        "過酸化物"
+      ],
+      "answerIndex": 2,
+      "explanation": "非金属元素の酸化物は多くが酸性酸化物、金属元素の酸化物は多くが塩基性酸化物。Al・Zn などは両性。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "neutral"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_neutral_02_036",
+      "unit": "science.chemistry.change.acid.salt",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "Al₂O₃ はどの酸化物に分類される？",
+      "choices": [
+        "塩基性酸化物",
+        "酸性酸化物",
+        "過酸化物",
+        "両性酸化物"
+      ],
+      "answerIndex": 3,
+      "explanation": "非金属元素の酸化物は多くが酸性酸化物、金属元素の酸化物は多くが塩基性酸化物。Al・Zn などは両性。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "neutral"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_neutral_02_037",
+      "unit": "science.chemistry.change.acid.salt",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "Na₂SO₄ の水溶液の液性は？",
+      "choices": [
+        "塩基性",
+        "酸性",
+        "中性",
+        "両性"
+      ],
+      "answerIndex": 2,
+      "explanation": "強酸＋強塩基の塩。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "neutral"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_neutral_02_038",
+      "unit": "science.chemistry.change.acid.salt",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "H₃PO₄ はオキソ酸（分子中に酸素原子を含む酸）か？",
+      "choices": [
+        "塩基である",
+        "オキソ酸ではない",
+        "オキソ酸である",
+        "塩である"
+      ],
+      "answerIndex": 2,
+      "explanation": "オキソ酸は酸性酸化物と水の反応などで生じる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "neutral"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_neutral_02_039",
+      "unit": "science.chemistry.change.acid.salt",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "NaCl は、化学式の形からどの塩に分類される？",
+      "choices": [
+        "塩基性塩",
+        "酸性塩",
+        "複塩",
+        "正塩"
+      ],
+      "answerIndex": 3,
+      "explanation": "酸の H が残る→酸性塩、塩基の OH が残る→塩基性塩、どちらも残らない→正塩。水溶液の性質（液性）とは別。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "neutral"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_neutral_02_040",
+      "unit": "science.chemistry.change.acid.salt",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "Na₂SO₄ は、化学式の形からどの塩に分類される？",
+      "choices": [
+        "塩基性塩",
+        "複塩",
+        "酸性塩",
+        "正塩"
+      ],
+      "answerIndex": 3,
+      "explanation": "酸の H が残る→酸性塩、塩基の OH が残る→塩基性塩、どちらも残らない→正塩。水溶液の性質（液性）とは別。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "neutral"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_neutral_02_041",
+      "unit": "science.chemistry.change.acid.neutral",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "H₂SO₄ と Ca(OH)₂ の中和でできる塩は？",
+      "choices": [
+        "NH₄Cl",
+        "KNO₃",
+        "CaSO₄",
+        "NaCl"
+      ],
+      "answerIndex": 2,
+      "explanation": "H₂SO₄ ＋ Ca(OH)₂ → CaSO₄ ＋ 2H₂O",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "neutral"
+      ]
+    }
+  ]
+}

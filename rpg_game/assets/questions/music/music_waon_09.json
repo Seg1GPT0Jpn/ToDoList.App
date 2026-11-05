@@ -1,0 +1,232 @@
+{
+  "setId": "music_waon_09",
+  "worldId": "music",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mus_waon09_001",
+      "unit": "music.theory.harmony.function.cadence",
+      "category": "knowledge",
+      "prompt": "カデンツの3つの型にあてはまらないものは？",
+      "choices": [
+        "T→S→D→T",
+        "D→S→T",
+        "T→D→T",
+        "T→S→T"
+      ],
+      "answerIndex": 1,
+      "explanation": "3つの型は T→D→T、T→S→D→T、T→S→T。"
+    },
+    {
+      "id": "mus_waon09_002",
+      "unit": "music.theory.harmony.function.cadence",
+      "category": "knowledge",
+      "prompt": "3つのカデンツのうち、もっとも強いものは？",
+      "choices": [
+        "T→S→T",
+        "T→S→D→T",
+        "すべて同じ",
+        "T→D→T"
+      ],
+      "answerIndex": 1,
+      "explanation": "3つの強進行からなる、きわめて強いカデンツ。"
+    },
+    {
+      "id": "mus_waon09_003",
+      "unit": "music.theory.harmony.function.cadence",
+      "category": "knowledge",
+      "prompt": "3つのカデンツのうち、比較的弱いものは？",
+      "choices": [
+        "T→S→T",
+        "T→S→D→T",
+        "D→T",
+        "T→D→T"
+      ],
+      "answerIndex": 0,
+      "explanation": "S→T の弱進行で T に解決するので弱い。"
+    },
+    {
+      "id": "mus_waon09_004",
+      "unit": "music.theory.harmony.function.cadence",
+      "category": "knowledge",
+      "prompt": "T→D→T のカデンツにふくまれる進行は？",
+      "choices": [
+        "弱進行2つ",
+        "強進行2つ",
+        "弱進行1つと強進行1つ",
+        "強進行3つ"
+      ],
+      "answerIndex": 2,
+      "explanation": "D→T と解決する強進行を T の直前にもつので比較的強い。"
+    },
+    {
+      "id": "mus_waon09_005",
+      "unit": "music.theory.harmony.function.cadence",
+      "category": "knowledge",
+      "prompt": "その調のすべての音をふくみ、何調かをはっきり示せるカデンツは？",
+      "choices": [
+        "T→S→D→T",
+        "T→D→T",
+        "T→S→T",
+        "D→T"
+      ],
+      "answerIndex": 0,
+      "explanation": "すべての S 和音が使われ、調の音がすべてふくまれる。"
+    },
+    {
+      "id": "mus_waon09_006",
+      "unit": "music.theory.harmony.function.cadence",
+      "category": "knowledge",
+      "prompt": "T→S→T のカデンツが比較的弱い理由は？",
+      "choices": [
+        "S→T の弱進行で T に解決するから",
+        "和音が多すぎるから",
+        "強進行を3つふくむから",
+        "D をふくむから"
+      ],
+      "answerIndex": 0,
+      "explanation": "D→T の強進行がない。"
+    },
+    {
+      "id": "mus_waon09_007",
+      "unit": "music.theory.harmony.function.function",
+      "category": "knowledge",
+      "prompt": "カデンツの記号で「D」が表す機能は？",
+      "choices": [
+        "ダイナミクス",
+        "トニック",
+        "サブドミナント",
+        "ドミナント"
+      ],
+      "answerIndex": 3,
+      "explanation": "T＝トニック、D＝ドミナント、S＝サブドミナント。"
+    },
+    {
+      "id": "mus_waon09_008",
+      "unit": "music.theory.harmony.function.cadence",
+      "category": "thinking",
+      "prompt": "和音の進行 Ⅰ→Ⅴ→Ⅰ は、どのカデンツの型？",
+      "choices": [
+        "T→D→T",
+        "T→S→T",
+        "D→S→T",
+        "T→S→D→T"
+      ],
+      "answerIndex": 0,
+      "explanation": "機能におきかえると T→D→T。"
+    },
+    {
+      "id": "mus_waon09_009",
+      "unit": "music.theory.harmony.function.cadence",
+      "category": "thinking",
+      "prompt": "和音の進行 Ⅰ→Ⅳ→Ⅴ→Ⅰ は、どのカデンツの型？",
+      "choices": [
+        "T→S→T",
+        "T→S→D→T",
+        "D→S→T",
+        "T→D→T"
+      ],
+      "answerIndex": 1,
+      "explanation": "機能におきかえると T→S→D→T。"
+    },
+    {
+      "id": "mus_waon09_010",
+      "unit": "music.theory.harmony.function.cadence",
+      "category": "thinking",
+      "prompt": "和音の進行 Ⅰ→Ⅳ→Ⅰ は、どのカデンツの型？",
+      "choices": [
+        "T→S→T",
+        "T→D→T",
+        "D→S→T",
+        "T→S→D→T"
+      ],
+      "answerIndex": 0,
+      "explanation": "機能におきかえると T→S→T。"
+    },
+    {
+      "id": "mus_waon09_011",
+      "unit": "music.theory.harmony.function.cadence",
+      "category": "thinking",
+      "prompt": "和音の進行 Ⅰ→Ⅱ→Ⅴ→Ⅰ は、どのカデンツの型？",
+      "choices": [
+        "T→D→T",
+        "D→S→T",
+        "T→S→T",
+        "T→S→D→T"
+      ],
+      "answerIndex": 3,
+      "explanation": "機能におきかえると T→S→D→T。"
+    },
+    {
+      "id": "mus_waon09_012",
+      "unit": "music.theory.harmony.function.cadence",
+      "category": "thinking",
+      "prompt": "和音の進行 Ⅰ→Ⅴ７→Ⅰ は、どのカデンツの型？",
+      "choices": [
+        "T→D→T",
+        "D→S→T",
+        "T→S→T",
+        "T→S→D→T"
+      ],
+      "answerIndex": 0,
+      "explanation": "機能におきかえると T→D→T。"
+    },
+    {
+      "id": "mus_waon09_013",
+      "unit": "music.theory.harmony.function.cadence",
+      "category": "thinking",
+      "prompt": "和音の進行 Ⅰ→Ⅳ→Ⅴ７→Ⅰ は、どのカデンツの型？",
+      "choices": [
+        "T→S→T",
+        "T→D→T",
+        "T→S→D→T",
+        "D→S→T"
+      ],
+      "answerIndex": 2,
+      "explanation": "機能におきかえると T→S→D→T。"
+    },
+    {
+      "id": "mus_waon09_014",
+      "unit": "music.theory.harmony.function.cadence",
+      "category": "thinking",
+      "prompt": "和音の進行 Ⅰ→Ⅱ→Ⅰ は、どのカデンツの型？",
+      "choices": [
+        "T→S→D→T",
+        "T→S→T",
+        "T→D→T",
+        "D→S→T"
+      ],
+      "answerIndex": 1,
+      "explanation": "機能におきかえると T→S→T。"
+    },
+    {
+      "id": "mus_waon09_015",
+      "unit": "music.theory.harmony.function.cadence",
+      "category": "thinking",
+      "prompt": "和音の進行 Ⅰ→Ⅶ→Ⅰ は、どのカデンツの型？",
+      "choices": [
+        "T→S→D→T",
+        "D→S→T",
+        "T→S→T",
+        "T→D→T"
+      ],
+      "answerIndex": 3,
+      "explanation": "機能におきかえると T→D→T。"
+    },
+    {
+      "id": "mus_waon09_016",
+      "unit": "music.theory.harmony.function.cadence",
+      "category": "thinking",
+      "prompt": "和音の進行 Ⅵ→Ⅱ→Ⅴ→Ⅰ は、どのカデンツの型？",
+      "choices": [
+        "T→S→T",
+        "T→D→T",
+        "D→S→T",
+        "T→S→D→T"
+      ],
+      "answerIndex": 3,
+      "explanation": "機能におきかえると T→S→D→T。"
+    }
+  ]
+}

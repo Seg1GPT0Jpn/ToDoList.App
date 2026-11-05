@@ -1,0 +1,232 @@
+{
+  "setId": "music_chou_02",
+  "worldId": "music",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mus_chou02_001",
+      "unit": "music.theory.key.signature.sharp",
+      "category": "thinking",
+      "prompt": "調号が♯1個の長調は？",
+      "choices": [
+        "ハ長調",
+        "ヘ長調",
+        "ト長調",
+        "ニ長調"
+      ],
+      "answerIndex": 2,
+      "explanation": "♯1個はト長調（G dur）。"
+    },
+    {
+      "id": "mus_chou02_002",
+      "unit": "music.theory.key.signature.sharp",
+      "category": "thinking",
+      "prompt": "調号が♯2個の長調は？",
+      "choices": [
+        "イ長調",
+        "変ロ長調",
+        "ト長調",
+        "ニ長調"
+      ],
+      "answerIndex": 3,
+      "explanation": "♯2個はニ長調（D dur）。"
+    },
+    {
+      "id": "mus_chou02_003",
+      "unit": "music.theory.key.signature.sharp",
+      "category": "thinking",
+      "prompt": "調号が♯3個の長調は？",
+      "choices": [
+        "イ長調",
+        "変ホ長調",
+        "ホ長調",
+        "ニ長調"
+      ],
+      "answerIndex": 0,
+      "explanation": "♯3個はイ長調（A dur）。"
+    },
+    {
+      "id": "mus_chou02_004",
+      "unit": "music.theory.key.signature.sharp",
+      "category": "thinking",
+      "prompt": "調号が♯4個の長調は？",
+      "choices": [
+        "ホ長調",
+        "変イ長調",
+        "ロ長調",
+        "イ長調"
+      ],
+      "answerIndex": 0,
+      "explanation": "♯4個はホ長調（E dur）。"
+    },
+    {
+      "id": "mus_chou02_005",
+      "unit": "music.theory.key.signature.sharp",
+      "category": "thinking",
+      "prompt": "調号が♯5個の長調は？",
+      "choices": [
+        "嬰ヘ長調",
+        "ホ長調",
+        "変ニ長調",
+        "ロ長調"
+      ],
+      "answerIndex": 3,
+      "explanation": "♯5個はロ長調（H dur）。"
+    },
+    {
+      "id": "mus_chou02_006",
+      "unit": "music.theory.key.signature.sharp",
+      "category": "thinking",
+      "prompt": "調号が♯6個の長調は？",
+      "choices": [
+        "ロ長調",
+        "嬰ヘ長調",
+        "変ト長調",
+        "嬰ハ長調"
+      ],
+      "answerIndex": 1,
+      "explanation": "♯6個は嬰ヘ長調（Fis dur）。"
+    },
+    {
+      "id": "mus_chou02_007",
+      "unit": "music.theory.key.signature.sharp",
+      "category": "thinking",
+      "prompt": "調号が♯7個の長調は？",
+      "choices": [
+        "嬰ヘ長調",
+        "嬰ハ短調",
+        "嬰ハ長調",
+        "変ハ長調"
+      ],
+      "answerIndex": 2,
+      "explanation": "♯7個は嬰ハ長調（Cis dur）。"
+    },
+    {
+      "id": "mus_chou02_008",
+      "unit": "music.theory.key.signature.mechanism",
+      "category": "thinking",
+      "prompt": "ト長調の調号は？",
+      "choices": [
+        "♯2個",
+        "♭1個",
+        "調号なし",
+        "♯1個"
+      ],
+      "answerIndex": 3,
+      "explanation": "ト長調（G dur）は♯1個。"
+    },
+    {
+      "id": "mus_chou02_009",
+      "unit": "music.theory.key.signature.mechanism",
+      "category": "thinking",
+      "prompt": "ニ長調の調号は？",
+      "choices": [
+        "♯3個",
+        "♯1個",
+        "♯2個",
+        "♭2個"
+      ],
+      "answerIndex": 2,
+      "explanation": "ニ長調（D dur）は♯2個。"
+    },
+    {
+      "id": "mus_chou02_010",
+      "unit": "music.theory.key.signature.mechanism",
+      "category": "thinking",
+      "prompt": "イ長調の調号は？",
+      "choices": [
+        "♯2個",
+        "♭3個",
+        "♯3個",
+        "♯4個"
+      ],
+      "answerIndex": 2,
+      "explanation": "イ長調（A dur）は♯3個。"
+    },
+    {
+      "id": "mus_chou02_011",
+      "unit": "music.theory.key.signature.mechanism",
+      "category": "thinking",
+      "prompt": "ホ長調の調号は？",
+      "choices": [
+        "♭4個",
+        "♯4個",
+        "♯3個",
+        "♯5個"
+      ],
+      "answerIndex": 1,
+      "explanation": "ホ長調（E dur）は♯4個。"
+    },
+    {
+      "id": "mus_chou02_012",
+      "unit": "music.theory.key.signature.mechanism",
+      "category": "thinking",
+      "prompt": "ロ長調の調号は？",
+      "choices": [
+        "♯4個",
+        "♯6個",
+        "♭5個",
+        "♯5個"
+      ],
+      "answerIndex": 3,
+      "explanation": "ロ長調（H dur）は♯5個。"
+    },
+    {
+      "id": "mus_chou02_013",
+      "unit": "music.theory.key.signature.mechanism",
+      "category": "thinking",
+      "prompt": "嬰ヘ長調の調号は？",
+      "choices": [
+        "♯7個",
+        "♯5個",
+        "♯6個",
+        "♭6個"
+      ],
+      "answerIndex": 2,
+      "explanation": "嬰ヘ長調（Fis dur）は♯6個。"
+    },
+    {
+      "id": "mus_chou02_014",
+      "unit": "music.theory.key.signature.mechanism",
+      "category": "thinking",
+      "prompt": "嬰ハ長調の調号は？",
+      "choices": [
+        "♭7個",
+        "♯7個",
+        "♯6個",
+        "♯5個"
+      ],
+      "answerIndex": 1,
+      "explanation": "嬰ハ長調（Cis dur）は♯7個。"
+    },
+    {
+      "id": "mus_chou02_015",
+      "unit": "music.theory.key.signature.sharp",
+      "category": "thinking",
+      "prompt": "ニ長調の調号で♯がつく音は？",
+      "choices": [
+        "Fis と Cis",
+        "Fis と B",
+        "Fis と Gis",
+        "Cis と Gis"
+      ],
+      "answerIndex": 0,
+      "explanation": "♯2個は Fis・Cis。"
+    },
+    {
+      "id": "mus_chou02_016",
+      "unit": "music.theory.key.signature.sharp",
+      "category": "thinking",
+      "prompt": "イ長調の調号で♯がつく音は？",
+      "choices": [
+        "Fis と Cis と Gis",
+        "Cis と Gis と Dis",
+        "Fis と Cis と Dis",
+        "Fis と Gis と Ais"
+      ],
+      "answerIndex": 0,
+      "explanation": "♯3個は Fis・Cis・Gis。"
+    }
+  ]
+}

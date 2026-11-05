@@ -1,0 +1,188 @@
+{
+  "setId": "kokka_kaikei_04",
+  "worldId": "kokka",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "kai04_001",
+      "unit": "kokka.kaikei.zaimu.kijun.zeikouka",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "税効果会計の目的は？",
+      "choices": [
+        "納める税金を減らすこと",
+        "税務申告を不要にすること",
+        "税引前当期純利益と法人税等を合理的に対応させること",
+        "現金の出入りを記録すること"
+      ],
+      "answerIndex": 2,
+      "explanation": "会計と税務の差異（一時差異）を調整する。"
+    },
+    {
+      "id": "kai04_002",
+      "unit": "kokka.kaikei.zaimu.kijun.zeikouka",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "将来減算一時差異に係る税効果として計上するのは？",
+      "choices": [
+        "未払法人税等",
+        "繰延税金負債",
+        "法人税等調整額だけ",
+        "繰延税金資産"
+      ],
+      "answerIndex": 3,
+      "explanation": "回収可能性がある範囲で計上する。"
+    },
+    {
+      "id": "kai04_003",
+      "unit": "kokka.kaikei.zaimu.kijun.zeikouka",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "将来加算一時差異に係る税効果として計上するのは？",
+      "choices": [
+        "繰延税金負債",
+        "繰延税金資産",
+        "貸倒引当金",
+        "未収還付法人税等"
+      ],
+      "answerIndex": 0,
+      "explanation": "その他有価証券の評価差益などで生じる。"
+    },
+    {
+      "id": "kai04_004",
+      "unit": "kokka.kaikei.zaimu.kijun.cf",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "キャッシュ・フロー計算書の3つの区分に含まれないのは？",
+      "choices": [
+        "財務活動",
+        "損益活動",
+        "投資活動",
+        "営業活動"
+      ],
+      "answerIndex": 1,
+      "explanation": "営業活動・投資活動・財務活動の3区分で表示する。"
+    },
+    {
+      "id": "kai04_005",
+      "unit": "kokka.kaikei.zaimu.kijun.cf",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "固定資産を取得したときの支出は、どの区分に入る？",
+      "choices": [
+        "財務活動によるキャッシュ・フロー",
+        "現金及び現金同等物の期首残高",
+        "投資活動によるキャッシュ・フロー",
+        "営業活動によるキャッシュ・フロー"
+      ],
+      "answerIndex": 2,
+      "explanation": "有価証券の取得や貸付けによる支出も投資活動。"
+    },
+    {
+      "id": "kai04_006",
+      "unit": "kokka.kaikei.zaimu.kijun.cf",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "銀行から借入れをしたときの収入は、どの区分に入る？",
+      "choices": [
+        "投資活動によるキャッシュ・フロー",
+        "営業活動によるキャッシュ・フロー",
+        "区分しない",
+        "財務活動によるキャッシュ・フロー"
+      ],
+      "answerIndex": 3,
+      "explanation": "株式の発行による収入や配当金の支払いも財務活動。"
+    },
+    {
+      "id": "kai04_007",
+      "unit": "kokka.kaikei.zaimu.kijun.cf",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "間接法で営業活動によるキャッシュ・フローを求めるとき、減価償却費はどう調整する？",
+      "choices": [
+        "税引前当期純利益に加算する",
+        "減算する",
+        "調整しない",
+        "投資活動に移す"
+      ],
+      "answerIndex": 0,
+      "explanation": "減価償却費は現金の支出を伴わない費用だから。"
+    },
+    {
+      "id": "kai04_008",
+      "unit": "kokka.kaikei.zaimu.kijun.cf",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "間接法で、売上債権が増加したときはどう調整する？",
+      "choices": [
+        "調整しない",
+        "減算する",
+        "財務活動に移す",
+        "加算する"
+      ],
+      "answerIndex": 1,
+      "explanation": "売上は計上したが現金はまだ入っていないため。"
+    },
+    {
+      "id": "kai04_009",
+      "unit": "kokka.kaikei.zaimu.renketsu.ketsugou",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "企業結合の会計処理で原則として用いられる方法は？",
+      "choices": [
+        "持分プーリング法",
+        "原価法",
+        "パーチェス法（取得法）",
+        "比例連結"
+      ],
+      "answerIndex": 2,
+      "explanation": "日本の基準では、2008年の改正で持分プーリング法が廃止された。"
+    },
+    {
+      "id": "kai04_010",
+      "unit": "kokka.kaikei.zaimu.kijun.kabushiki",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "1株当たり当期純利益の計算は？",
+      "choices": [
+        "配当金÷株価",
+        "当期純利益÷期末の株主数",
+        "純資産÷発行済株式数",
+        "普通株式に係る当期純利益÷普通株式の期中平均株式数"
+      ],
+      "answerIndex": 3,
+      "explanation": "1株当たり当期純利益に関する会計基準。"
+    },
+    {
+      "id": "kai04_011",
+      "unit": "kokka.kaikei.zaimu.kijun.kabushiki",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "ストック・オプションの費用計上の基礎となる金額は？",
+      "choices": [
+        "付与日の公正な評価額",
+        "額面金額",
+        "権利行使日の株価",
+        "取締役会の決議額"
+      ],
+      "answerIndex": 0,
+      "explanation": "対象勤務期間にわたって費用として計上する。"
+    },
+    {
+      "id": "kai04_012",
+      "unit": "kokka.kaikei.zaimu.kijun.fusai",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "資産除去債務として負債に計上する額は？",
+      "choices": [
+        "除去にかかる支出の総額（割り引かない）",
+        "将来の除去にかかる支出の割引現在価値",
+        "資産の取得原価",
+        "0円（注記だけ）"
+      ],
+      "answerIndex": 1,
+      "explanation": "同額を関連する有形固定資産の帳簿価額に加える。"
+    }
+  ]
+}

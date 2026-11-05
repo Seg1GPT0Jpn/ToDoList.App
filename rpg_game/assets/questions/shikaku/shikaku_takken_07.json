@@ -1,0 +1,233 @@
+{
+  "setId": "shikaku_takken_07",
+  "worldId": "shikaku",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "tkn07_001",
+      "unit": "shikaku.takken.gyouhou.takkenshi.shi",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "宅地建物取引士証の有効期間は？",
+      "choices": [
+        "5年",
+        "10年",
+        "3年",
+        "6年"
+      ],
+      "answerIndex": 0,
+      "explanation": "取引士証の有効期間は5年（宅建業法22条の2第3項）。"
+    },
+    {
+      "id": "tkn07_002",
+      "unit": "shikaku.takken.gyouhou.takkenshi.shi",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "宅建試験の合格者が登録を受けるには、原則として何年以上の実務経験が必要？",
+      "choices": [
+        "1年以上",
+        "2年以上",
+        "3年以上",
+        "5年以上"
+      ],
+      "answerIndex": 1,
+      "explanation": "2年以上の実務経験か、国土交通大臣の登録を受けた講習の修了などが必要（宅建業法18条1項）。"
+    },
+    {
+      "id": "tkn07_003",
+      "unit": "shikaku.takken.gyouhou.takkenshi.shi",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "重要事項の説明をするとき、宅建士証はどうする？",
+      "choices": [
+        "事務所に掲示すればよい",
+        "提示しなくてよい",
+        "相手方から請求がなくても提示する",
+        "請求があったときだけ提示する"
+      ],
+      "answerIndex": 2,
+      "explanation": "重要事項の説明時は、請求がなくても取引士証を提示しなければならない（宅建業法35条4項）。"
+    },
+    {
+      "id": "tkn07_004",
+      "unit": "shikaku.takken.gyouhou.takkenshi.shi",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "取引士証の交付を申請するとき、原則として受けなければならない講習は？",
+      "choices": [
+        "登録実務講習",
+        "申請前1年以内の講習",
+        "講習は不要",
+        "申請前6か月以内に行われる法定講習"
+      ],
+      "answerIndex": 3,
+      "explanation": "交付申請前6か月以内の法定講習が必要。試験合格から1年以内なら不要（宅建業法22条の2第2項）。"
+    },
+    {
+      "id": "tkn07_005",
+      "unit": "shikaku.takken.gyouhou.takkenshi.shi",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "甲県で登録した宅建士が、乙県の事務所で働くことになった。登録の移転は？",
+      "choices": [
+        "してもよい（義務ではない）",
+        "乙県で試験を受け直す",
+        "できない",
+        "必ずしなければならない"
+      ],
+      "answerIndex": 0,
+      "explanation": "登録の移転は任意（宅建業法19条の2）。"
+    },
+    {
+      "id": "tkn07_006",
+      "unit": "shikaku.takken.gyouhou.takkenshi.hoshou",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "営業保証金の額として正しい組み合わせは？",
+      "choices": [
+        "事務所の数に関係なく1,000万円",
+        "主たる事務所1,000万円・その他の事務所1か所ごとに500万円",
+        "主たる事務所60万円・その他30万円",
+        "主たる事務所500万円・その他300万円"
+      ],
+      "answerIndex": 1,
+      "explanation": "営業保証金は本店1,000万円、支店1か所500万円（施行令2条の4）。"
+    },
+    {
+      "id": "tkn07_007",
+      "unit": "shikaku.takken.gyouhou.takkenshi.hoshou",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "営業保証金を供託する場所は？",
+      "choices": [
+        "各事務所の最寄りの供託所",
+        "法務局ならどこでもよい",
+        "主たる事務所の最寄りの供託所",
+        "免許権者の指定する銀行"
+      ],
+      "answerIndex": 2,
+      "explanation": "主たる事務所の最寄りの供託所にまとめて供託する（宅建業法25条1項）。"
+    },
+    {
+      "id": "tkn07_008",
+      "unit": "shikaku.takken.gyouhou.takkenshi.hoshou",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "営業保証金を供託した宅建業者が事業を開始できるのは？",
+      "choices": [
+        "免許を受けた直後",
+        "供託した直後",
+        "届出から1か月後",
+        "供託した旨を免許権者に届け出た後"
+      ],
+      "answerIndex": 3,
+      "explanation": "供託した旨の届出をした後でなければ、事業を開始できない（宅建業法25条5項）。"
+    },
+    {
+      "id": "tkn07_009",
+      "unit": "shikaku.takken.gyouhou.takkenshi.hoshou",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "営業保証金に国債を使うとき、評価額は額面の何％？",
+      "choices": [
+        "100％",
+        "90％",
+        "80％",
+        "50％"
+      ],
+      "answerIndex": 0,
+      "explanation": "国債は額面の100％、地方債・政府保証債は90％、その他の有価証券は80％（施行規則15条）。"
+    },
+    {
+      "id": "tkn07_010",
+      "unit": "shikaku.takken.gyouhou.takkenshi.hoshou",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "保証協会に納める弁済業務保証金分担金の額は？",
+      "choices": [
+        "主たる事務所30万円・その他10万円",
+        "主たる事務所60万円・その他の事務所1か所ごとに30万円",
+        "一律100万円",
+        "主たる事務所1,000万円・その他500万円"
+      ],
+      "answerIndex": 1,
+      "explanation": "分担金は本店60万円・支店1か所30万円（施行令7条）。"
+    },
+    {
+      "id": "tkn07_011",
+      "unit": "shikaku.takken.gyouhou.takkenshi.hoshou",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "保証協会に加入しようとする宅建業者は、分担金をいつまでに納付する？",
+      "choices": [
+        "加入後1か月以内",
+        "加入後2週間以内",
+        "加入しようとする日まで",
+        "最初の取引の前まで"
+      ],
+      "answerIndex": 2,
+      "explanation": "加入しようとする日までに納付しなければならない（宅建業法64条の9第1項）。"
+    },
+    {
+      "id": "tkn07_012",
+      "unit": "shikaku.takken.gyouhou.takkenshi.hoshou",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "営業保証金や弁済業務保証金から弁済を受けられないのは誰？",
+      "choices": [
+        "一般の借主",
+        "一般の買主",
+        "媒介を依頼した一般の売主",
+        "宅建業者"
+      ],
+      "answerIndex": 3,
+      "explanation": "2017年の改正で、宅建業者は還付を受けられる者から除かれた（宅建業法27条1項）。"
+    },
+    {
+      "id": "tkn07_013",
+      "unit": "shikaku.takken.gyouhou.takkenshi.hoshou",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "保証協会の社員でなくなった宅建業者が営業を続けるには、いつまでに営業保証金を供託する？",
+      "choices": [
+        "社員の地位を失った日から1週間以内",
+        "2週間以内",
+        "3か月以内",
+        "1か月以内"
+      ],
+      "answerIndex": 0,
+      "explanation": "1週間以内に営業保証金を供託しなければならない（宅建業法64条の15）。"
+    },
+    {
+      "id": "tkn07_014",
+      "unit": "shikaku.takken.gyouhou.takkenshi.hoshou",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "還付で営業保証金が足りなくなった。免許権者から通知を受けた業者は、いつまでに不足額を供託する？",
+      "choices": [
+        "3か月以内",
+        "通知を受けた日から2週間以内",
+        "1か月以内",
+        "1週間以内"
+      ],
+      "answerIndex": 1,
+      "explanation": "不足額は通知を受けた日から2週間以内に供託する（宅建業法28条1項）。"
+    },
+    {
+      "id": "tkn07_015",
+      "unit": "shikaku.takken.gyouhou.takkenshi.shi",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "宅建士が勤め先の宅建業者を変えた。資格登録簿の手続は？",
+      "choices": [
+        "取引士証を返す",
+        "何もしなくてよい",
+        "遅滞なく変更の登録を申請する",
+        "30日以内に登録の移転をする"
+      ],
+      "answerIndex": 2,
+      "explanation": "業務に従事する宅建業者の名称や免許証番号は登録事項で、変更の登録が必要（宅建業法20条）。"
+    }
+  ]
+}

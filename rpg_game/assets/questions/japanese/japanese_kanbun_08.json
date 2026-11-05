@@ -1,0 +1,344 @@
+{
+  "setId": "japanese_kanbun_08",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "jap_kanbun08_001",
+      "unit": "japanese.kanbun.text.history.shiden",
+      "category": "knowledge",
+      "prompt": "『史記』の作者は？",
+      "choices": [
+        "司馬光",
+        "班固",
+        "孔子",
+        "司馬遷"
+      ],
+      "answerIndex": 3,
+      "explanation": "前漢の歴史家。紀伝体で書かれた。"
+    },
+    {
+      "id": "jap_kanbun08_002",
+      "unit": "japanese.kanbun.text.history",
+      "category": "knowledge",
+      "prompt": "「本紀」「列伝」など、人物を中心に歴史を記す形式は？",
+      "choices": [
+        "紀事本末体",
+        "編年体",
+        "紀伝体",
+        "随筆"
+      ],
+      "answerIndex": 2,
+      "explanation": "年代順に書くのは編年体。"
+    },
+    {
+      "id": "jap_kanbun08_003",
+      "unit": "japanese.kanbun.text.history.shiden",
+      "category": "knowledge",
+      "prompt": "「四面楚歌」の意味は？",
+      "choices": [
+        "四人で歌う",
+        "周りが敵ばかりで、助けがない",
+        "故郷を思う",
+        "四方から歌が聞こえて楽しい"
+      ],
+      "answerIndex": 1,
+      "explanation": "項羽が漢軍に囲まれ、四方から楚の歌が聞こえた故事。（史記）"
+    },
+    {
+      "id": "jap_kanbun08_004",
+      "unit": "japanese.kanbun.text.history.shiden",
+      "category": "knowledge",
+      "prompt": "「背水の陣」の意味は？",
+      "choices": [
+        "水を背負って運ぶ",
+        "退路を断って、決死の覚悟で臨む",
+        "有利な場所に陣を置く",
+        "川で戦うのは危険だ"
+      ],
+      "answerIndex": 1,
+      "explanation": "韓信の故事。（史記）"
+    },
+    {
+      "id": "jap_kanbun08_005",
+      "unit": "japanese.kanbun.text.history.shiden",
+      "category": "knowledge",
+      "prompt": "「完璧」の由来として正しいものは？",
+      "choices": [
+        "壁を守った兵士の故事",
+        "玉を磨いた職人の故事",
+        "完全な壁を作った故事",
+        "藺相如が「璧（宝玉）」を無事に持ち帰った故事"
+      ],
+      "answerIndex": 3,
+      "explanation": "「璧を完うして帰る」。「壁」と書くのは誤り。（史記）"
+    },
+    {
+      "id": "jap_kanbun08_006",
+      "unit": "japanese.kanbun.text.history.koji",
+      "category": "knowledge",
+      "prompt": "「推敲」の由来となった故事の内容は？",
+      "choices": [
+        "門を押し開けて敵を追い払った",
+        "文章を何度も書き写して覚えた",
+        "師の文章を推し量って直した",
+        "詩の一字を「推す」にするか「敲く」にするかで迷った"
+      ],
+      "answerIndex": 3,
+      "explanation": "唐の詩人賈島が韓愈の助言で「敲く」に決めた故事。"
+    },
+    {
+      "id": "jap_kanbun08_007",
+      "unit": "japanese.kanbun.text.history.koji",
+      "category": "knowledge",
+      "prompt": "「蛍雪の功」の意味は？",
+      "choices": [
+        "夏も冬も休まず遊ぶこと",
+        "苦労して学問にはげんだ成果",
+        "明かりを節約すること",
+        "自然の美しさを楽しむこと"
+      ],
+      "answerIndex": 1,
+      "explanation": "蛍の光や雪明かりで書物を読んだ故事から。"
+    },
+    {
+      "id": "jap_kanbun08_008",
+      "unit": "japanese.kanbun.text.history.koji",
+      "category": "knowledge",
+      "prompt": "「推敲」の由来となった詩人は？",
+      "choices": [
+        "白居易",
+        "杜甫",
+        "賈島",
+        "李白"
+      ],
+      "answerIndex": 2,
+      "explanation": "「推す」か「敲く」かで迷った故事。文章を練り直す意味。"
+    },
+    {
+      "id": "jap_kanbun08_009",
+      "unit": "japanese.kanbun.text.history",
+      "category": "thinking",
+      "prompt": "「不レ入二虎穴一、不レ得二虎子一」の書き下し文は？",
+      "choices": [
+        "虎子を得ずして虎穴に入らず",
+        "虎穴に入らずんば、虎子を得ず",
+        "虎穴に入らず、虎子を得ず",
+        "虎穴に入りて虎子を得"
+      ],
+      "answerIndex": 1,
+      "explanation": "危険をおかさなければ大きな成果は得られない。（後漢書）"
+    },
+    {
+      "id": "jap_kanbun08_010",
+      "unit": "japanese.kanbun.text.history.koji",
+      "category": "thinking",
+      "prompt": "「臥薪嘗胆」の意味は？",
+      "choices": [
+        "薪の上で寝ると体によい",
+        "目的を果たすために、長い間苦労に耐える",
+        "すぐにあきらめる",
+        "苦い物を食べる健康法"
+      ],
+      "answerIndex": 1,
+      "explanation": "呉王夫差と越王勾践の復讐の故事。"
+    },
+    {
+      "id": "jap_kanbun08_011",
+      "unit": "japanese.kanbun.text.history",
+      "category": "thinking",
+      "prompt": "「蛇足」の話で、最初に描き終えた者が酒を飲めなかった理由は？",
+      "choices": [
+        "酒がなかったから",
+        "描き加えた足のせいで、蛇の絵ではなくなったから",
+        "描くのが遅かったから",
+        "蛇が逃げたから"
+      ],
+      "answerIndex": 1,
+      "explanation": "「蛇固より足無し」と言われ、酒を奪われた。余計なことをして失敗するたとえ。"
+    },
+    {
+      "id": "jap_kanbun08_012",
+      "unit": "japanese.kanbun.text.history.synthesis",
+      "category": "thinking",
+      "prompt": "漢文を読むときの力として、最も総合的に必要なものは？",
+      "choices": [
+        "返り点と句法をおさえ、故事や思想の背景と結びつけて読む力",
+        "漢字の画数を覚える力",
+        "現代語訳を暗記する力",
+        "中国語の発音"
+      ],
+      "answerIndex": 0,
+      "explanation": "句法の知識と、内容を読み取る力の両方が大切。"
+    },
+    {
+      "id": "jap_kanbun08_013",
+      "unit": "japanese.kanbun.text.history.shiden",
+      "category": "knowledge",
+      "prompt": "『十八史略』とは、どんな書物？",
+      "choices": [
+        "孔子の言行録",
+        "中国の歴史を簡潔にまとめた入門書",
+        "唐の詩集",
+        "日本の歴史書"
+      ],
+      "answerIndex": 1,
+      "explanation": "元の曽先之が編んだとされる。"
+    },
+    {
+      "id": "jap_kanbun08_014",
+      "unit": "japanese.kanbun.text.history.shiden",
+      "category": "knowledge",
+      "prompt": "「鴻門の会」で対面した二人は？",
+      "choices": [
+        "韓信と張良",
+        "項羽と劉邦",
+        "李白と杜甫",
+        "孔子と孟子"
+      ],
+      "answerIndex": 1,
+      "explanation": "『史記』の有名な場面。"
+    },
+    {
+      "id": "jap_kanbun08_015",
+      "unit": "japanese.kanbun.text.history",
+      "category": "knowledge",
+      "prompt": "劉邦がのちに建てた王朝は？",
+      "choices": [
+        "秦",
+        "漢",
+        "楚",
+        "唐"
+      ],
+      "answerIndex": 1,
+      "explanation": "劉邦は漢の高祖。"
+    },
+    {
+      "id": "jap_kanbun08_016",
+      "unit": "japanese.kanbun.text.history",
+      "category": "knowledge",
+      "prompt": "「覆水盆に返らず」の意味は？",
+      "choices": [
+        "失敗してもやり直せる",
+        "水は大切にせよ",
+        "一度してしまったことは、取り返しがつかない",
+        "こぼした水はすぐ拭け"
+      ],
+      "answerIndex": 2,
+      "explanation": "一度別れた夫婦はもとにもどれないというたとえから。"
+    },
+    {
+      "id": "jap_kanbun08_017",
+      "unit": "japanese.kanbun.text.history",
+      "category": "knowledge",
+      "prompt": "「呉越同舟」の意味は？",
+      "choices": [
+        "船旅を楽しむこと",
+        "仲の悪い者どうしが同じ場所に居合わせたり、協力したりすること",
+        "国どうしが戦うこと",
+        "仲の良い友人"
+      ],
+      "answerIndex": 1,
+      "explanation": "呉と越は敵対していた国。（孫子）"
+    },
+    {
+      "id": "jap_kanbun08_018",
+      "unit": "japanese.kanbun.text.history",
+      "category": "knowledge",
+      "prompt": "「塞翁が馬」の意味は？",
+      "choices": [
+        "努力すれば報われる",
+        "老人の知恵",
+        "馬は大切にせよ",
+        "人生の幸不幸は予測できない"
+      ],
+      "answerIndex": 3,
+      "explanation": "（淮南子）"
+    },
+    {
+      "id": "jap_kanbun08_019",
+      "unit": "japanese.kanbun.text.history.koji",
+      "category": "knowledge",
+      "prompt": "「助長」の本来の意味は？",
+      "choices": [
+        "長所を伸ばすこと",
+        "目上の人を助けること",
+        "成長を正しく助けること",
+        "よけいな手助けをして、かえって害を与えること"
+      ],
+      "answerIndex": 3,
+      "explanation": "苗を早く伸ばそうと引っ張って枯らしてしまった故事。（孟子）"
+    },
+    {
+      "id": "jap_kanbun08_020",
+      "unit": "japanese.kanbun.text.history",
+      "category": "knowledge",
+      "prompt": "「管鮑の交わり」の意味は？",
+      "choices": [
+        "師弟の関係",
+        "商売上の付き合い",
+        "敵どうしの関係",
+        "利害をこえた、深い信頼にもとづく友情"
+      ],
+      "answerIndex": 3,
+      "explanation": "管仲と鮑叔の友情から。"
+    },
+    {
+      "id": "jap_kanbun08_021",
+      "unit": "japanese.kanbun.text.history.shiden",
+      "category": "knowledge",
+      "prompt": "「刎頸の交わり」の意味は？",
+      "choices": [
+        "一時的な協力",
+        "敵対する関係",
+        "首をかけた戦い",
+        "首を切られても悔いがないほどの固い友情"
+      ],
+      "answerIndex": 3,
+      "explanation": "藺相如と廉頗の友情から。（史記）"
+    },
+    {
+      "id": "jap_kanbun08_022",
+      "unit": "japanese.kanbun.text.history",
+      "category": "thinking",
+      "prompt": "「鶏鳴狗盗」の意味として適切なものは？",
+      "choices": [
+        "つまらない技能でも役に立つことがある",
+        "朝早く起きるのがよい",
+        "泥棒は必ずつかまる",
+        "鶏と犬は仲が悪い"
+      ],
+      "answerIndex": 0,
+      "explanation": "孟嘗君が、鶏の鳴きまねや盗みの得意な食客に救われた話。"
+    },
+    {
+      "id": "jap_kanbun08_023",
+      "unit": "japanese.kanbun.text.history.shiden",
+      "category": "thinking",
+      "prompt": "「国士無双」の意味は？",
+      "choices": [
+        "国中に並ぶ者がいないほどすぐれた人物",
+        "二つとない国",
+        "国に兵士がいない",
+        "国を守る兵士"
+      ],
+      "answerIndex": 0,
+      "explanation": "蕭何が韓信を評した言葉。（史記）"
+    },
+    {
+      "id": "jap_kanbun08_024",
+      "unit": "japanese.kanbun.text.history.shiden",
+      "category": "thinking",
+      "prompt": "「先んずれば人を制す」の意味は？",
+      "choices": [
+        "人より先に行動すれば、有利な立場に立てる",
+        "先に行く人を止めよ",
+        "先生は生徒を制する",
+        "先輩は後輩を支配する"
+      ],
+      "answerIndex": 0,
+      "explanation": "（史記）"
+    }
+  ]
+}

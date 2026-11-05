@@ -1,0 +1,356 @@
+{
+  "setId": "english_stage_06",
+  "worldId": "english",
+  "origin": "original",
+  "version": 3,
+  "questions": [
+    {
+      "id": "en06_001",
+      "unit": "english.eng.vocab.basic.meaning",
+      "category": "meaning",
+      "prompt": "「avoid」の意味は？",
+      "choices": [
+        "知識",
+        "見てそれとわかる",
+        "避ける",
+        "消える"
+      ],
+      "answerIndex": 2,
+      "explanation": "avoid は「避ける」。"
+    },
+    {
+      "id": "en06_002",
+      "unit": "english.eng.vocab.basic.meaning",
+      "category": "meaning",
+      "prompt": "「allow」の意味は？",
+      "choices": [
+        "明らかな",
+        "拒否する",
+        "許す",
+        "効率のよい"
+      ],
+      "answerIndex": 2,
+      "explanation": "allow は「許す」。"
+    },
+    {
+      "id": "en06_003",
+      "unit": "english.eng.vocab.synonym.usage",
+      "category": "meaning",
+      "prompt": "「suggest」の意味は？",
+      "choices": [
+        "解決策",
+        "描写する",
+        "提案する",
+        "達成する"
+      ],
+      "answerIndex": 2,
+      "explanation": "suggest は「提案する」。"
+    },
+    {
+      "id": "en06_004",
+      "unit": "english.eng.vocab.basic.meaning",
+      "category": "meaning",
+      "prompt": "「realize」の意味は？",
+      "choices": [
+        "含む",
+        "辛抱強い",
+        "意見",
+        "気づく"
+      ],
+      "answerIndex": 3,
+      "explanation": "realize は「気づく」。"
+    },
+    {
+      "id": "en06_005",
+      "unit": "english.eng.vocab.basic.meaning",
+      "category": "meaning",
+      "prompt": "「consider」の意味は？",
+      "choices": [
+        "辛抱強い",
+        "描写する",
+        "避ける",
+        "よく考える"
+      ],
+      "answerIndex": 3,
+      "explanation": "consider は「よく考える」。"
+    },
+    {
+      "id": "en06_006",
+      "unit": "english.eng.vocab.basic.meaning",
+      "category": "meaning",
+      "prompt": "「recognize」の意味は？",
+      "choices": [
+        "十分な",
+        "見てそれとわかる",
+        "比べる",
+        "利用できる"
+      ],
+      "answerIndex": 1,
+      "explanation": "recognize は「見てそれとわかる」。"
+    },
+    {
+      "id": "en06_007",
+      "unit": "english.eng.vocab.basic.meaning",
+      "category": "meaning",
+      "prompt": "「predict」の意味は？",
+      "choices": [
+        "十分な",
+        "予測する",
+        "なじみのある",
+        "雇う"
+      ],
+      "answerIndex": 1,
+      "explanation": "predict は「予測する」。"
+    },
+    {
+      "id": "en06_008",
+      "unit": "english.eng.vocab.basic.meaning",
+      "category": "meaning",
+      "prompt": "「employ」の意味は？",
+      "choices": [
+        "なじみのある",
+        "努力",
+        "利用できる",
+        "雇う"
+      ],
+      "answerIndex": 3,
+      "explanation": "employ は「雇う」。"
+    },
+    {
+      "id": "en06_009",
+      "unit": "english.eng.vocab.idiom.idiom",
+      "category": "meaning",
+      "prompt": "「run out of ～」の意味は？",
+      "choices": [
+        "～を使い果たす",
+        "～を欠席する",
+        "～を見下す",
+        "～することに慣れている"
+      ],
+      "answerIndex": 0,
+      "explanation": "run out of ～ は「～を使い果たす」。"
+    },
+    {
+      "id": "en06_010",
+      "unit": "english.eng.vocab.idiom.idiom",
+      "category": "meaning",
+      "prompt": "「come up with ～」の意味は？",
+      "choices": [
+        "決心する",
+        "～を思いつく",
+        "～に追いつく",
+        "～に注意を払う"
+      ],
+      "answerIndex": 1,
+      "explanation": "come up with ～ は「～を思いつく」。"
+    },
+    {
+      "id": "en06_011",
+      "unit": "english.eng.vocab.basic.pos",
+      "category": "partOfSpeech",
+      "prompt": "次のうち「動詞」はどれ？",
+      "choices": [
+        "sympathy",
+        "sympathetic",
+        "sympathize",
+        "sympathetically"
+      ],
+      "answerIndex": 2,
+      "explanation": "-ize は動詞を作る語尾。sympathize with 〜 で「〜に同情する」。"
+    },
+    {
+      "id": "en06_012",
+      "unit": "english.eng.vocab.basic.pos",
+      "category": "partOfSpeech",
+      "prompt": "次のうち「形容詞」はどれ？",
+      "choices": [
+        "consider",
+        "considerate",
+        "considerably",
+        "consideration"
+      ],
+      "answerIndex": 1,
+      "explanation": "considerate = 思いやりのある。considerable（かなりの）とは意味が違うので注意。"
+    },
+    {
+      "id": "en06_013",
+      "unit": "english.eng.grammar.participle.modifier",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The girl (   ) under the tree is my sister.",
+      "choices": [
+        "sat",
+        "sitting",
+        "sits",
+        "to sit"
+      ],
+      "answerIndex": 1,
+      "explanation": "「木の下に座っている少女」。2語以上で名詞を説明するときは後ろから修飾し、「〜している」は現在分詞。"
+    },
+    {
+      "id": "en06_014",
+      "unit": "english.eng.grammar.participle.modifier",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I read a letter (   ) in English.",
+      "choices": [
+        "writing",
+        "write",
+        "written",
+        "to write"
+      ],
+      "answerIndex": 2,
+      "explanation": "手紙は「書かれた」側なので過去分詞 written が後ろから修飾する。"
+    },
+    {
+      "id": "en06_015",
+      "unit": "english.eng.grammar.participle.modifier",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The window (   ) by Tom is still open.",
+      "choices": [
+        "broken",
+        "breaking",
+        "broke",
+        "break"
+      ],
+      "answerIndex": 0,
+      "explanation": "窓は「割られた」側なので過去分詞 broken。by Tom と合わせて後ろから修飾。"
+    },
+    {
+      "id": "en06_016",
+      "unit": "english.eng.grammar.participle.modifier",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I heard my name (   ).",
+      "choices": [
+        "calling",
+        "call",
+        "to call",
+        "called"
+      ],
+      "answerIndex": 3,
+      "explanation": "名前は「呼ばれる」側なので、hear + O + 過去分詞。"
+    },
+    {
+      "id": "en06_017",
+      "unit": "english.eng.grammar.participle.modifier",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I had my hair (   ) yesterday.",
+      "choices": [
+        "cutting",
+        "to cut",
+        "cuts",
+        "cut"
+      ],
+      "answerIndex": 3,
+      "explanation": "have + 物 + 過去分詞 で「物を〜してもらう」。髪は「切られる」側なので過去分詞 cut。"
+    },
+    {
+      "id": "en06_018",
+      "unit": "english.eng.grammar.participle.modifier",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Look at the (   ) baby.",
+      "choices": [
+        "sleep",
+        "sleeping",
+        "slept",
+        "to sleep"
+      ],
+      "answerIndex": 1,
+      "explanation": "「眠っている赤ちゃん」。1語で名詞を修飾するときは名詞の前に置く。"
+    },
+    {
+      "id": "en06_019",
+      "unit": "english.eng.grammar.participle.modifier",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I bought a (   ) car.",
+      "choices": [
+        "use",
+        "using",
+        "used",
+        "to use"
+      ],
+      "answerIndex": 2,
+      "explanation": "「使われた車」＝中古車。車は使われる側なので過去分詞。"
+    },
+    {
+      "id": "en06_020",
+      "unit": "english.eng.grammar.participle.modifier",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The man (   ) with Ken is my uncle.",
+      "choices": [
+        "talk",
+        "talking",
+        "talked",
+        "to talk"
+      ],
+      "answerIndex": 1,
+      "explanation": "「ケンと話している男性」。2語以上のまとまりは名詞の後ろから修飾する。"
+    },
+    {
+      "id": "en06_021",
+      "unit": "english.eng.grammar.participle.modifier",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This is a picture (   ) by my brother.",
+      "choices": [
+        "paint",
+        "painting",
+        "painted",
+        "to paint"
+      ],
+      "answerIndex": 2,
+      "explanation": "絵は「描かれた」側なので過去分詞。"
+    },
+    {
+      "id": "en06_022",
+      "unit": "english.eng.grammar.participle",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The movie was very (   ).",
+      "choices": [
+        "excited",
+        "exciting",
+        "excite",
+        "to excite"
+      ],
+      "answerIndex": 1,
+      "explanation": "映画は人を「わくわくさせる」側なので -ing 形。"
+    },
+    {
+      "id": "en06_023",
+      "unit": "english.eng.grammar.participle.modifier",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I was (   ) at the news.",
+      "choices": [
+        "surprise",
+        "surprising",
+        "surprised",
+        "to surprise"
+      ],
+      "answerIndex": 2,
+      "explanation": "人は「驚かされる」側なので過去分詞 surprised。"
+    },
+    {
+      "id": "en06_024",
+      "unit": "english.eng.grammar.participle.modifier",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Please keep the door (   ).",
+      "choices": [
+        "close",
+        "closing",
+        "closed",
+        "to close"
+      ],
+      "answerIndex": 2,
+      "explanation": "keep + O + 過去分詞 で「O を〜された状態にしておく」。"
+    }
+  ]
+}

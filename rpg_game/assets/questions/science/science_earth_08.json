@@ -1,0 +1,456 @@
+{
+  "setId": "science_earth_08",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_ear08_001",
+      "unit": "science.earth.space.universe.expansion",
+      "category": "knowledge",
+      "prompt": "宇宙が誕生したのはおよそ何年前と考えられている？",
+      "choices": [
+        "約 138 億年前",
+        "約 46 億年前",
+        "約 1 兆年前",
+        "約 6600 万年前"
+      ],
+      "answerIndex": 0,
+      "explanation": "高温・高密度の状態から膨張を始めた（ビッグバン）。"
+    },
+    {
+      "id": "sci_ear08_002",
+      "unit": "science.earth.space.solar.sun",
+      "category": "knowledge",
+      "prompt": "太陽のエネルギー源は？",
+      "choices": [
+        "重力による収縮だけ",
+        "放射性元素の崩壊だけ",
+        "中心部での水素の核融合",
+        "石炭の燃焼"
+      ],
+      "answerIndex": 2,
+      "explanation": "水素の原子核が融合してヘリウムになり、莫大なエネルギーを出す。"
+    },
+    {
+      "id": "sci_ear08_003",
+      "unit": "science.earth.space.solar.sun",
+      "category": "knowledge",
+      "prompt": "太陽の表面（光球）の温度はおよそ？",
+      "choices": [
+        "約 600 K",
+        "約 100 万 K",
+        "約 6000 K",
+        "約 1500 万 K"
+      ],
+      "answerIndex": 2,
+      "explanation": "中心は約 1600 万 K、コロナは約 100 万 K。"
+    },
+    {
+      "id": "sci_ear08_004",
+      "unit": "science.earth.space.solar.sun",
+      "category": "knowledge",
+      "prompt": "太陽の黒点が黒く見える理由は？",
+      "choices": [
+        "穴があいているから",
+        "まわりより温度が高いから",
+        "まわりより温度が低いから",
+        "惑星の影だから"
+      ],
+      "answerIndex": 2,
+      "explanation": "黒点は約 4000 K で、光球（約 6000 K）より低温。"
+    },
+    {
+      "id": "sci_ear08_005",
+      "unit": "science.earth.space.solar.sun",
+      "category": "knowledge",
+      "prompt": "太陽系が誕生したのはおよそ何年前？",
+      "choices": [
+        "約 5 億年前",
+        "約 100 億年前",
+        "約 138 億年前",
+        "約 46 億年前"
+      ],
+      "answerIndex": 3,
+      "explanation": "星間雲が収縮して原始太陽ができ、まわりの円盤から惑星ができた。"
+    },
+    {
+      "id": "sci_ear08_006",
+      "unit": "science.earth.space.solar.planet",
+      "category": "knowledge",
+      "prompt": "地球型惑星の特徴は？",
+      "choices": [
+        "おもにガスでできていて、大きい",
+        "衛星が多い",
+        "おもに岩石と金属でできていて、密度が大きい",
+        "環をもつ"
+      ],
+      "answerIndex": 2,
+      "explanation": "水星・金星・地球・火星。木星型惑星（木星・土星・天王星・海王星）は大きく、密度が小さい。"
+    },
+    {
+      "id": "sci_ear08_007",
+      "unit": "science.earth.space.solar.planet",
+      "category": "knowledge",
+      "prompt": "小惑星が多く集まっている場所は？",
+      "choices": [
+        "火星と木星の軌道の間",
+        "地球と金星の間",
+        "海王星の外側だけ",
+        "太陽の表面"
+      ],
+      "answerIndex": 0,
+      "explanation": "小惑星帯（メインベルト）という。"
+    },
+    {
+      "id": "sci_ear08_008",
+      "unit": "science.earth.space.solar.planet",
+      "category": "knowledge",
+      "prompt": "恒星のまわりで、惑星の表面に液体の水が存在できる範囲を何という？",
+      "choices": [
+        "オールトの雲",
+        "ハビタブルゾーン",
+        "光球",
+        "小惑星帯"
+      ],
+      "answerIndex": 1,
+      "explanation": "地球は太陽からちょうどよい距離にあり、液体の水が存在できる。"
+    },
+    {
+      "id": "sci_ear08_009",
+      "unit": "science.earth.space.star.brightness",
+      "category": "knowledge",
+      "prompt": "1 光年とは？",
+      "choices": [
+        "1 年間の長さ",
+        "地球と太陽の距離",
+        "光が 1 秒間に進む距離",
+        "光が 1 年間に進む距離"
+      ],
+      "answerIndex": 3,
+      "explanation": "約 9.5 × 10¹² km。"
+    },
+    {
+      "id": "sci_ear08_010",
+      "unit": "science.earth.space.solar.sun",
+      "category": "knowledge",
+      "prompt": "太陽の外側に広がる、非常に高温でうすいガスの層は？",
+      "choices": [
+        "黒点",
+        "コロナ",
+        "対流層",
+        "光球"
+      ],
+      "answerIndex": 1,
+      "explanation": "皆既日食のときに見える。約 100 万 K。"
+    },
+    {
+      "id": "sci_ear08_011",
+      "unit": "science.earth.space.solar.sun",
+      "category": "knowledge",
+      "prompt": "太陽系で最も大きい惑星は？",
+      "choices": [
+        "土星",
+        "地球",
+        "木星",
+        "海王星"
+      ],
+      "answerIndex": 2,
+      "explanation": "直径は地球の約 11 倍。おもに水素とヘリウムからなる。"
+    },
+    {
+      "id": "sci_ear08_012",
+      "unit": "science.earth.space.solar.sun",
+      "category": "knowledge",
+      "prompt": "太陽の表面で起こる爆発現象で、地球の通信障害やオーロラの原因になるものは？",
+      "choices": [
+        "粒状斑",
+        "日食",
+        "フレア",
+        "黒点"
+      ],
+      "answerIndex": 2,
+      "explanation": "フレアで放出された電気を帯びた粒子が地球に届くと、磁気嵐やオーロラが起こる。"
+    },
+    {
+      "id": "sci_ear08_013",
+      "unit": "science.earth.space.solar.sun",
+      "category": "calculation",
+      "prompt": "地球と太陽の距離を 1.5 × 10⁸ km、光の速さを 3.0 × 10⁵ km/s とすると、太陽の光が地球に届くまでの時間は？",
+      "choices": [
+        "5000 秒",
+        "0.5 秒",
+        "500 秒（約 8 分）",
+        "50 秒"
+      ],
+      "answerIndex": 2,
+      "explanation": "1.5 × 10⁸ ÷ 3.0 × 10⁵ ＝ 500 秒。"
+    },
+    {
+      "id": "sci_ear08_014",
+      "unit": "science.earth.space.star.brightness",
+      "category": "calculation",
+      "prompt": "光の速さ 3.0 × 10⁵ km/s、1 年を 3.2 × 10⁷ 秒とすると、1 光年はおよそ？",
+      "choices": [
+        "9.6 × 10⁵ km",
+        "1.5 × 10⁸ km",
+        "9.6 × 10¹² km",
+        "3.0 × 10⁵ km"
+      ],
+      "answerIndex": 2,
+      "explanation": "3.0 × 10⁵ × 3.2 × 10⁷ ≒ 9.6 × 10¹² km（正確には約 9.5 × 10¹² km）。"
+    },
+    {
+      "id": "sci_ear08_015",
+      "unit": "science.earth.space.solar.sun",
+      "category": "thinking",
+      "prompt": "黒点を毎日観察すると、少しずつ東から西へ移動していた。わかることは？",
+      "choices": [
+        "太陽が自転している",
+        "黒点が太陽から飛び出している",
+        "太陽が膨張している",
+        "地球が公転している"
+      ],
+      "answerIndex": 0,
+      "explanation": "周辺部では黒点が細長く見えることから、太陽が球形であることもわかる。"
+    },
+    {
+      "id": "sci_ear08_016",
+      "unit": "science.earth.space.solar.sun",
+      "category": "thinking",
+      "prompt": "地球に液体の水が豊富に存在できる理由として最も重要なものは？",
+      "choices": [
+        "月があるから",
+        "太陽からの距離がちょうどよく、温度が適当だから",
+        "地球が最も大きい惑星だから",
+        "自転していないから"
+      ],
+      "answerIndex": 1,
+      "explanation": "太陽に近すぎると水は蒸発し、遠すぎると凍ってしまう。"
+    },
+    {
+      "id": "sci_ear08_017",
+      "unit": "science.earth.space.solar.sun",
+      "category": "knowledge",
+      "prompt": "太陽に最も近い惑星は？",
+      "choices": [
+        "火星",
+        "金星",
+        "水星",
+        "地球"
+      ],
+      "answerIndex": 2,
+      "explanation": "水・金・地・火・木・土・天・海の順。"
+    },
+    {
+      "id": "sci_ear08_018",
+      "unit": "science.earth.space.solar.planet",
+      "category": "knowledge",
+      "prompt": "木星型惑星の特徴は？",
+      "choices": [
+        "小さく、密度が大きい",
+        "衛星をもたない",
+        "大きく、密度が小さく、主に気体でできている",
+        "岩石だけでできている"
+      ],
+      "answerIndex": 2,
+      "explanation": "木星・土星・天王星・海王星。"
+    },
+    {
+      "id": "sci_ear08_019",
+      "unit": "science.earth.space.solar.sun",
+      "category": "knowledge",
+      "prompt": "太陽の表面に見られる、周囲より温度が低い部分は？",
+      "choices": [
+        "白斑",
+        "黒点",
+        "コロナ",
+        "プロミネンス"
+      ],
+      "answerIndex": 1,
+      "explanation": "約 4000 K で、周囲より暗く見える。"
+    },
+    {
+      "id": "sci_ear08_020",
+      "unit": "science.earth.space.solar.sun",
+      "category": "knowledge",
+      "prompt": "太陽の表面から吹き出す炎のようなガスは？",
+      "choices": [
+        "粒状斑",
+        "コロナ",
+        "プロミネンス（紅炎）",
+        "黒点"
+      ],
+      "answerIndex": 2,
+      "explanation": "皆既日食のときによく見える。"
+    },
+    {
+      "id": "sci_ear08_021",
+      "unit": "science.earth.space.solar",
+      "category": "knowledge",
+      "prompt": "天文単位（au）とは？",
+      "choices": [
+        "光が 1 年で進む距離",
+        "地球と太陽の平均距離",
+        "太陽の直径",
+        "月と地球の距離"
+      ],
+      "answerIndex": 1,
+      "explanation": "約 1.5 億 km。"
+    },
+    {
+      "id": "sci_ear08_022",
+      "unit": "science.earth.space.solar.sun",
+      "category": "knowledge",
+      "prompt": "すい星の尾ができる理由は？",
+      "choices": [
+        "地球の大気とぶつかるから",
+        "太陽に近づくと、氷やちりが蒸発・放出されるから",
+        "自分で光っているから",
+        "燃えているから"
+      ],
+      "answerIndex": 1,
+      "explanation": "尾は太陽と反対方向に伸びる。"
+    },
+    {
+      "id": "sci_ear08_023",
+      "unit": "science.earth.space.solar",
+      "category": "knowledge",
+      "prompt": "宇宙で最初にできた元素は？",
+      "choices": [
+        "水素とヘリウム",
+        "鉄",
+        "ウラン",
+        "炭素と酸素"
+      ],
+      "answerIndex": 0,
+      "explanation": "より重い元素は恒星の内部などで合成された。"
+    },
+    {
+      "id": "sci_ear08_024",
+      "unit": "science.earth.space.solar.planet",
+      "category": "knowledge",
+      "prompt": "惑星が自分で光らないのに明るく見える理由は？",
+      "choices": [
+        "核融合しているから",
+        "地球の光を反射しているから",
+        "太陽の光を反射しているから",
+        "燃えているから"
+      ],
+      "answerIndex": 2,
+      "explanation": "恒星は自ら光る。"
+    },
+    {
+      "id": "sci_ear08_025",
+      "unit": "science.earth.space.solar.motion",
+      "category": "knowledge",
+      "prompt": "月について正しいものは？",
+      "choices": [
+        "大気が豊富にある",
+        "惑星の一つである",
+        "地球の衛星で、いつも同じ面を地球に向けている",
+        "自分で光っている"
+      ],
+      "answerIndex": 2,
+      "explanation": "自転周期と公転周期が等しい。"
+    },
+    {
+      "id": "sci_ear08_026",
+      "unit": "science.earth.space.solar.sun",
+      "category": "calculation",
+      "prompt": "太陽から約 7.8 億 km はなれた木星まで、太陽の光が届くのにかかる時間はおよそ？（光速 3.0 × 10⁵ km/s）",
+      "choices": [
+        "約 43 分",
+        "約 8 分",
+        "約 26 秒",
+        "約 4 時間"
+      ],
+      "answerIndex": 0,
+      "explanation": "7.8 × 10⁸ ÷ 3.0 × 10⁵ ＝ 2600 秒 ≒ 43 分。"
+    },
+    {
+      "id": "sci_ear08_027",
+      "unit": "science.earth.space.solar",
+      "category": "calculation",
+      "prompt": "月までの距離 3.8 × 10⁵ km を光が進む時間は？（光速 3.0 × 10⁵ km/s）",
+      "choices": [
+        "約 8 分",
+        "約 13 秒",
+        "約 0.13 秒",
+        "約 1.3 秒"
+      ],
+      "answerIndex": 3,
+      "explanation": "3.8 ÷ 3.0。"
+    },
+    {
+      "id": "sci_ear08_028",
+      "unit": "science.earth.space.solar.sun",
+      "category": "calculation",
+      "prompt": "太陽の直径は地球の約 109 倍。体積は地球のおよそ何倍？",
+      "choices": [
+        "約 1 万倍",
+        "約 130 万倍",
+        "約 1 億倍",
+        "約 109 倍"
+      ],
+      "answerIndex": 1,
+      "explanation": "109³ ≒ 1.3 × 10⁶。"
+    },
+    {
+      "id": "sci_ear08_029",
+      "unit": "science.earth.space.solar.sun",
+      "category": "calculation",
+      "prompt": "火星は太陽から約 1.5 au。火星と太陽の距離は約何 km？（1 au ＝ 1.5 × 10⁸ km）",
+      "choices": [
+        "約 1.5 × 10⁸ km",
+        "約 3.0 × 10⁸ km",
+        "約 2.3 × 10⁸ km",
+        "約 1.0 × 10⁸ km"
+      ],
+      "answerIndex": 2,
+      "explanation": "1.5 × 1.5 × 10⁸。"
+    },
+    {
+      "id": "sci_ear08_030",
+      "unit": "science.earth.space.solar.sun",
+      "category": "calculation",
+      "prompt": "黒点が 27 日で太陽を 1 周する（見かけ）。1 日に何度動いて見える？",
+      "choices": [
+        "約 1°",
+        "約 360°",
+        "約 27°",
+        "約 13°"
+      ],
+      "answerIndex": 3,
+      "explanation": "360 ÷ 27。"
+    },
+    {
+      "id": "sci_ear08_031",
+      "unit": "science.earth.space.solar.sun",
+      "category": "thinking",
+      "prompt": "金星の表面温度が水星より高い理由は？",
+      "choices": [
+        "太陽に最も近いから",
+        "厚い二酸化炭素の大気による強い温室効果があるから",
+        "内部に大きな熱源があるから",
+        "自転が速いから"
+      ],
+      "answerIndex": 1,
+      "explanation": "水星の方が太陽に近いが、大気がほとんどない。"
+    },
+    {
+      "id": "sci_ear08_032",
+      "unit": "science.earth.space.solar",
+      "category": "thinking",
+      "prompt": "地球に生命が生まれ育つことができた条件として重要でないものは？",
+      "choices": [
+        "地球に環があること",
+        "液体の水が存在できる距離にある",
+        "大気を保てる大きさ（重力）がある",
+        "磁場が有害な粒子を防いでいる"
+      ],
+      "answerIndex": 0,
+      "explanation": "地球には環（リング）はない。"
+    }
+  ]
+}

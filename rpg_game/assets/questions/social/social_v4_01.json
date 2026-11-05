@@ -1,0 +1,453 @@
+{
+  "setId": "social_v4_01",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_v4_001",
+      "unit": "social.whist.ancient.other.america",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "メキシコ高原で14世紀ごろから栄え、首都テノチティトランを築いた文明は？",
+      "choices": [
+        "マヤ文明",
+        "アステカ文明",
+        "インカ文明",
+        "オルメカ文明"
+      ],
+      "answerIndex": 1,
+      "explanation": "アステカ王国は16世紀にスペインのコルテスに征服された。インカはアンデス山中（首都クスコ）でピサロが征服。",
+      "difficulty": "basic",
+      "thinkingLevel": 1
+    },
+    {
+      "id": "soc_v4_002",
+      "unit": "social.whist.ancient.other.america",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "アンデス地方のインカ帝国について正しいものは？",
+      "choices": [
+        "文字はもたず、キープ（結縄）で数量を記録した",
+        "ピラミッド型神殿で太陽暦を使ったマヤの後継国家である",
+        "鉄器と車輪を広く使った",
+        "首都はテノチティトランだった"
+      ],
+      "answerIndex": 0,
+      "explanation": "インカは文字をもたず、縄の結び目（キープ）で記録した。駅伝制の道路網が整っていた。鉄器・車輪・馬は南北アメリカの古代文明には見られない。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "soc_v4_003",
+      "unit": "social.whist.ancient.other.america",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ユカタン半島を中心に栄え、二十進法や精密な暦をもった文明は？",
+      "choices": [
+        "マヤ文明",
+        "アステカ文明",
+        "インカ文明",
+        "チャビン文化"
+      ],
+      "answerIndex": 0,
+      "explanation": "マヤ文明はゼロの概念をふくむ二十進法、マヤ文字、ピラミッド型神殿をもつ。",
+      "difficulty": "basic",
+      "thinkingLevel": 1
+    },
+    {
+      "id": "soc_v4_004",
+      "unit": "social.whist.ancient.other.africa",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ナイル川上流で栄え、製鉄で知られるメロエを都とした王国は？",
+      "choices": [
+        "アクスム王国",
+        "クシュ王国",
+        "マリ王国",
+        "ガーナ王国"
+      ],
+      "answerIndex": 1,
+      "explanation": "クシュ王国は一時エジプトを支配し、のちメロエに遷都して製鉄と商業で栄えた。4世紀にアクスム王国に滅ぼされた。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "soc_v4_005",
+      "unit": "social.whist.ancient.other.africa",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "西アフリカのガーナ王国・マリ王国が栄えた主な理由は？",
+      "choices": [
+        "大河の灌漑で小麦を大量に輸出したから",
+        "サハラ縦断交易で金と岩塩を交換したから",
+        "大西洋奴隷貿易の拠点だったから",
+        "インド洋交易で香辛料を独占したから"
+      ],
+      "answerIndex": 1,
+      "explanation": "北のムスリム商人がもたらす岩塩と、南の金を交換する「塩金交易」で繁栄した。マリのマンサ・ムーサのメッカ巡礼は金の豊かさで有名。",
+      "difficulty": "standard",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "soc_v4_006",
+      "unit": "social.whist.ancient.other.southeast",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "カンボジアで12世紀に造営された、ヒンドゥー教寺院（のち仏教寺院）は？",
+      "choices": [
+        "ワット・プラケオ",
+        "ボロブドゥール",
+        "アンコール・ワット",
+        "パガン"
+      ],
+      "answerIndex": 2,
+      "explanation": "アンコール朝（クメール人）のスールヤヴァルマン2世が造営。ボロブドゥールはジャワ島のシャイレンドラ朝の仏教遺跡。",
+      "difficulty": "basic",
+      "thinkingLevel": 1
+    },
+    {
+      "id": "soc_v4_007",
+      "unit": "social.whist.ancient.other.southeast",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "東南アジアにインド文化（ヒンドゥー教・仏教・サンスクリット語）が広まった主な理由は？",
+      "choices": [
+        "海上交易の中継地としてインド商人が往来したから",
+        "中国が仏教を東南アジアに強制したから",
+        "インドの王朝が東南アジア全域を征服したから",
+        "ヨーロッパの宣教師が伝えたから"
+      ],
+      "answerIndex": 0,
+      "explanation": "季節風を利用したインド洋〜南シナ海の交易で、港市国家がインドの文化・制度を取り入れた（インド化）。武力征服ではない点が重要。",
+      "difficulty": "advanced",
+      "thinkingLevel": 4
+    },
+    {
+      "id": "soc_v4_008",
+      "unit": "social.pol.economy.japan.history",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "第二次世界大戦後の日本で行われた経済の民主化として正しくないものは？",
+      "choices": [
+        "財閥解体",
+        "労働組合の育成（労働の民主化）",
+        "農地改革",
+        "所得倍増計画"
+      ],
+      "answerIndex": 3,
+      "explanation": "GHQ の三大改革は財閥解体・農地改革・労働の民主化。所得倍増計画は1960年の池田内閣の政策。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "soc_v4_009",
+      "unit": "social.pol.economy.japan.history",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "1950年代半ばから1970年代初めまで、日本の実質経済成長率が年平均約10％に達した時期を何という？",
+      "choices": [
+        "高度経済成長期",
+        "失われた10年",
+        "バブル経済期",
+        "安定成長期"
+      ],
+      "answerIndex": 0,
+      "explanation": "1973年の第一次石油危機で高度経済成長は終わり、安定成長期に入った。",
+      "difficulty": "basic",
+      "thinkingLevel": 1
+    },
+    {
+      "id": "soc_v4_010",
+      "unit": "social.pol.economy.japan.history",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "1985年のプラザ合意の後、日本で起きたこととして正しいものは？",
+      "choices": [
+        "固定相場制に戻り、為替が安定した",
+        "急激な円安で輸出が急増し、物価が下がった",
+        "石油価格が急騰し、狂乱物価が起きた",
+        "急激な円高で不況となり、低金利政策がバブル経済につながった"
+      ],
+      "answerIndex": 3,
+      "explanation": "ドル高是正の協調介入で円高が進み「円高不況」に。日本銀行の金融緩和（低金利）で資金が株・土地に流れ、バブルが発生した。",
+      "difficulty": "advanced",
+      "thinkingLevel": 4,
+      "combines": [
+        "social.pol.economy.global.exchange"
+      ]
+    },
+    {
+      "id": "soc_v4_011",
+      "unit": "social.pol.economy.japan.issues",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "バブル崩壊後に金融機関が抱えた、回収が難しくなった貸付金を何という？",
+      "choices": [
+        "外貨準備",
+        "不良債権",
+        "赤字国債",
+        "国債"
+      ],
+      "answerIndex": 1,
+      "explanation": "地価・株価の下落で担保価値が下がり、不良債権が積み上がった。1990年代後半には大手金融機関の破綻も起きた。",
+      "difficulty": "basic",
+      "thinkingLevel": 1
+    },
+    {
+      "id": "soc_v4_012",
+      "unit": "social.pol.economy.japan.issues",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "物価が持続的に下がるデフレーションが経済に悪影響を与える理由として最も適切なものは？",
+      "choices": [
+        "貯金の実質的な価値が下がるから",
+        "企業の売上と賃金が下がり、消費がさらに減る悪循環が起きやすいから",
+        "政府の借金が実質的に減るから",
+        "輸入品がすべて値上がりするから"
+      ],
+      "answerIndex": 1,
+      "explanation": "デフレスパイラル：物価下落 → 企業収益減 → 賃金減 → 消費減 → さらに物価下落。借金の実質的な負担はむしろ重くなる。",
+      "difficulty": "standard",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "soc_v4_013",
+      "unit": "social.pol.economy.japan.issues",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "日本の雇用で、非正規雇用の割合が高まったことにより問題とされるのは？",
+      "choices": [
+        "失業率の大幅な上昇だけ",
+        "終身雇用の拡大",
+        "正規雇用との賃金格差や雇用の不安定さ",
+        "労働組合の組織率の上昇"
+      ],
+      "answerIndex": 2,
+      "explanation": "パート・派遣・契約社員などの非正規雇用は、賃金・社会保険・雇用の安定性で格差がある。「同一労働同一賃金」が課題となった。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "soc_v4_014",
+      "unit": "social.jhist.contemporary.growth.growth",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "1964年の東京オリンピックにあわせて開業した高速鉄道は？",
+      "choices": [
+        "東北新幹線",
+        "青函トンネル",
+        "山陽新幹線",
+        "東海道新幹線"
+      ],
+      "answerIndex": 3,
+      "explanation": "東京〜新大阪間。高度経済成長の象徴とされる。",
+      "difficulty": "basic",
+      "thinkingLevel": 1
+    },
+    {
+      "id": "soc_v4_015",
+      "unit": "social.jhist.contemporary.growth.growth",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "高度経済成長期に深刻化した四大公害病に含まれないものは？",
+      "choices": [
+        "イタイイタイ病",
+        "足尾銅山鉱毒事件",
+        "四日市ぜんそく",
+        "水俣病"
+      ],
+      "answerIndex": 1,
+      "explanation": "四大公害病は水俣病・新潟水俣病・イタイイタイ病・四日市ぜんそく。足尾銅山鉱毒事件は明治時代（田中正造）。1967年に公害対策基本法、1971年に環境庁が設置された。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "soc_v4_016",
+      "unit": "social.jhist.contemporary.growth.diplomacy",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "1972年に田中角栄内閣が発表し、中華人民共和国と国交を正常化した文書は？",
+      "choices": [
+        "日ソ共同宣言",
+        "日韓基本条約",
+        "日中平和友好条約",
+        "日中共同声明"
+      ],
+      "answerIndex": 3,
+      "explanation": "1972年日中共同声明で国交正常化、1978年に日中平和友好条約。日韓基本条約は1965年、日ソ共同宣言は1956年。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "soc_v4_017",
+      "unit": "social.jhist.contemporary.growth.diplomacy",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "1972年、アメリカから日本に施政権が返還された地域は？",
+      "choices": [
+        "奄美群島",
+        "北方領土",
+        "小笠原諸島",
+        "沖縄"
+      ],
+      "answerIndex": 3,
+      "explanation": "佐藤栄作内閣のとき。小笠原諸島は1968年、奄美群島は1953年に返還された。",
+      "difficulty": "basic",
+      "thinkingLevel": 1
+    },
+    {
+      "id": "soc_v4_018",
+      "unit": "social.jhist.contemporary.growth.bubble",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "次の出来事を古い順に並べたとき、3番目は？\nア 第一次石油危機　イ プラザ合意　ウ バブル崩壊　エ 東京オリンピック（1964）",
+      "choices": [
+        "ウ",
+        "エ",
+        "ア",
+        "イ"
+      ],
+      "answerIndex": 3,
+      "explanation": "エ（1964）→ ア（1973）→ イ（1985）→ ウ（1991ごろ）。",
+      "difficulty": "standard",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "soc_v4_019",
+      "unit": "social.geo.industry.population.transition",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "人口転換モデルで「多産少死」の段階にある国で起こりやすいことは？",
+      "choices": [
+        "高齢化が急速に進む",
+        "人口が急増する",
+        "人口が減少する",
+        "出生率と死亡率がともに低い"
+      ],
+      "answerIndex": 1,
+      "explanation": "医療・衛生の改善で死亡率が先に下がり、出生率は高いままなので人口爆発が起こる。その後、少産少死へ移る。",
+      "difficulty": "standard",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "soc_v4_020",
+      "unit": "social.geo.nature.climate.koppen",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "ある都市の雨温図：最暖月 22℃、最寒月 −8℃、年中降水がある。ケッペンの気候区分では？",
+      "choices": [
+        "Cfa（温暖湿潤気候）",
+        "ET（ツンドラ気候）",
+        "Dw（亜寒帯冬季少雨気候）",
+        "Df（亜寒帯湿潤気候）"
+      ],
+      "answerIndex": 3,
+      "explanation": "最寒月 −3℃ 未満かつ最暖月 10℃ 以上なら D。年中降水があるので f。",
+      "difficulty": "standard",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "soc_v4_021",
+      "unit": "social.pol.economy.market.failure",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "公害のように、市場を通さずに第三者に不利益を与えることを何という？また政府の対策として適切なものは？",
+      "choices": [
+        "独占。企業を分割する",
+        "外部経済。補助金を出す",
+        "外部不経済。課税や規制で費用を負担させる",
+        "情報の非対称性。情報公開を義務づける"
+      ],
+      "answerIndex": 2,
+      "explanation": "外部不経済では社会全体の費用が価格に反映されず、過剰に生産される。環境税・排出規制などで内部化する。",
+      "difficulty": "advanced",
+      "thinkingLevel": 4
+    },
+    {
+      "id": "soc_v4_022",
+      "unit": "social.jhist.modern.meiji.tax",
+      "unitLocked": true,
+      "category": "thinking",
+      "format": "written",
+      "prompt": "明治政府が地租改正を行った目的と、その内容を説明せよ（100字程度）。",
+      "explanation": "「目的（安定した財源）」と「内容（地価・3%・金納・土地所有者）」の両方を書く。",
+      "difficulty": "advanced",
+      "thinkingLevel": 5,
+      "phase": "standardUniv",
+      "axes": {
+        "knowledge": 3,
+        "writing": 4,
+        "thinking": 2
+      },
+      "estimatedSeconds": 480,
+      "written": {
+        "kind": "essay",
+        "modelAnswer": "目的は、豊凶に左右される年貢に代わり、毎年一定額の税収を確保して財政を安定させることである。土地の所有者に地券を交付し、地価の3%を地租として土地所有者に現金で納めさせた。",
+        "rubric": [
+          {
+            "point": "財政（税収）を安定させる目的を述べている",
+            "score": 2
+          },
+          {
+            "point": "地価を基準に地価の3%と述べている",
+            "score": 2
+          },
+          {
+            "point": "現金で納める（金納）と述べている",
+            "score": 1
+          },
+          {
+            "point": "土地所有者が納税者になった（地券）と述べている",
+            "score": 1
+          }
+        ],
+        "passScore": 4
+      }
+    },
+    {
+      "id": "soc_v4_023",
+      "unit": "social.geo.industry.manufacturing.location",
+      "unitLocked": true,
+      "category": "thinking",
+      "format": "written",
+      "prompt": "1980年代以降、日本の製造業が東南アジアや中国に工場を移した理由を、為替と労働の2つの観点から説明せよ。",
+      "explanation": "円高で国内生産のコストが上がった点と、安い労働力が得られる点を書く。結果としての「産業の空洞化」にもふれられるとよい。",
+      "difficulty": "advanced",
+      "thinkingLevel": 6,
+      "phase": "difficultUniv",
+      "axes": {
+        "thinking": 4,
+        "writing": 4,
+        "knowledge": 2
+      },
+      "estimatedSeconds": 600,
+      "combines": [
+        "social.pol.economy.japan.history"
+      ],
+      "written": {
+        "kind": "essay",
+        "modelAnswer": "プラザ合意以降の円高で、日本で生産して輸出すると価格競争力が下がった。一方、東南アジアや中国は賃金が安く豊富な労働力が得られたため、生産費を下げるために工場を海外へ移した。その結果、国内では産業の空洞化が問題となった。",
+        "rubric": [
+          {
+            "point": "円高により輸出の採算が悪化したことを述べている",
+            "score": 2
+          },
+          {
+            "point": "海外の安価で豊富な労働力にふれている",
+            "score": 2
+          },
+          {
+            "point": "生産費を下げる目的を明示している",
+            "score": 1
+          },
+          {
+            "point": "産業の空洞化など国内への影響にふれている",
+            "score": 1
+          }
+        ],
+        "passScore": 4
+      }
+    }
+  ]
+}

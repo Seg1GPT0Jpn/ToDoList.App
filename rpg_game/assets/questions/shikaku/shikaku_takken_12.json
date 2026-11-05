@@ -1,0 +1,233 @@
+{
+  "setId": "shikaku_takken_12",
+  "worldId": "shikaku",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "tkn12_001",
+      "unit": "shikaku.takken.seigen.kenchiku.youto",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "建築基準法上の道路の幅員は、原則として何m以上？",
+      "choices": [
+        "4m",
+        "6m",
+        "2m",
+        "3m"
+      ],
+      "answerIndex": 0,
+      "explanation": "原則4m以上（特定行政庁が指定する区域では6m以上）。"
+    },
+    {
+      "id": "tkn12_002",
+      "unit": "shikaku.takken.seigen.kenchiku.youto",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "建築物の敷地は、道路に何m以上接しなければならない？",
+      "choices": [
+        "1m",
+        "2m",
+        "6m",
+        "4m"
+      ],
+      "answerIndex": 1,
+      "explanation": "接道義務（建築基準法43条1項）。"
+    },
+    {
+      "id": "tkn12_003",
+      "unit": "shikaku.takken.seigen.kenchiku.youto",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "幅員4m未満の「2項道路」に接する敷地。道路との境界線とみなされるのは？",
+      "choices": [
+        "道路の中心線から4m後退した線",
+        "道路の中心線",
+        "道路の中心線から2m後退した線",
+        "道路の端"
+      ],
+      "answerIndex": 2,
+      "explanation": "セットバック（建築基準法42条2項）。"
+    },
+    {
+      "id": "tkn12_004",
+      "unit": "shikaku.takken.seigen.kenchiku.youto",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "第一種低層住居専用地域に建てられるものは？",
+      "choices": [
+        "病院",
+        "大学",
+        "ボウリング場",
+        "小学校"
+      ],
+      "answerIndex": 3,
+      "explanation": "小中高校や診療所は建てられるが、病院・大学は建てられない。"
+    },
+    {
+      "id": "tkn12_005",
+      "unit": "shikaku.takken.seigen.kenchiku.youto",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "敷地が2つの用途地域にまたがるとき、用途制限はどうなる？",
+      "choices": [
+        "敷地の過半が属する地域の制限による",
+        "厳しいほうの制限による",
+        "それぞれの部分ごとに制限される",
+        "緩いほうの制限による"
+      ],
+      "answerIndex": 0,
+      "explanation": "用途制限は敷地の過半の属する地域の規定による（建築基準法91条）。"
+    },
+    {
+      "id": "tkn12_006",
+      "unit": "shikaku.takken.seigen.kenchiku.menseki",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "建蔽率が80％の地域で、防火地域内に耐火建築物を建てる。建蔽率の制限は？",
+      "choices": [
+        "80％のまま",
+        "適用されない",
+        "10％上乗せされる",
+        "20％上乗せされる"
+      ],
+      "answerIndex": 1,
+      "explanation": "建蔽率80％の地域の防火地域内の耐火建築物等は制限なし（建築基準法53条6項）。"
+    },
+    {
+      "id": "tkn12_007",
+      "unit": "shikaku.takken.seigen.kenchiku.menseki",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "特定行政庁が指定する角地の敷地では、建蔽率はどうなる？",
+      "choices": [
+        "20％上乗せされる",
+        "変わらない",
+        "10％上乗せされる",
+        "制限がなくなる"
+      ],
+      "answerIndex": 2,
+      "explanation": "角地の緩和は10％（建築基準法53条3項2号）。"
+    },
+    {
+      "id": "tkn12_008",
+      "unit": "shikaku.takken.seigen.kenchiku.menseki",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "前面道路の幅員が12m未満のとき、容積率はどうなる？",
+      "choices": [
+        "都市計画の容積率だけで決まる",
+        "道路幅員×法定の数値の大きいほう",
+        "道路幅員とは関係ない",
+        "道路幅員×法定の数値と、都市計画の容積率の小さいほう"
+      ],
+      "answerIndex": 3,
+      "explanation": "前面道路による容積率の制限（建築基準法52条2項）。住居系は幅員×4/10が原則。"
+    },
+    {
+      "id": "tkn12_009",
+      "unit": "shikaku.takken.seigen.kenchiku.menseki",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "敷地が容積率の異なる地域にまたがる。容積率は？",
+      "choices": [
+        "それぞれの面積の割合で加重平均する",
+        "敷地の過半の地域の容積率を使う",
+        "厳しいほうを使う",
+        "緩いほうを使う"
+      ],
+      "answerIndex": 0,
+      "explanation": "容積率・建蔽率は面積按分の加重平均（建築基準法52条7項）。"
+    },
+    {
+      "id": "tkn12_010",
+      "unit": "shikaku.takken.seigen.kenchiku.menseki",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "日影規制の対象区域に指定できない地域は？",
+      "choices": [
+        "第一種住居地域",
+        "商業地域",
+        "第一種低層住居専用地域",
+        "近隣商業地域"
+      ],
+      "answerIndex": 1,
+      "explanation": "商業地域・工業地域・工業専用地域は日影規制の対象にできない。"
+    },
+    {
+      "id": "tkn12_011",
+      "unit": "shikaku.takken.seigen.kenchiku.menseki",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "第一種低層住居専用地域の建築物の高さの限度は？",
+      "choices": [
+        "20m",
+        "15m",
+        "10mまたは12m",
+        "制限はない"
+      ],
+      "answerIndex": 2,
+      "explanation": "低層住居専用地域と田園住居地域は、都市計画で10mか12mの絶対高さ制限（建築基準法55条）。"
+    },
+    {
+      "id": "tkn12_012",
+      "unit": "shikaku.takken.seigen.kenchiku.youto",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "都市計画区域内で住宅を新築する。建築確認は？",
+      "choices": [
+        "不要",
+        "2階建て以上のときだけ必要",
+        "100㎡を超えるときだけ必要",
+        "規模にかかわらず必要"
+      ],
+      "answerIndex": 3,
+      "explanation": "都市計画区域内の新築は、規模にかかわらず建築確認が必要（建築基準法6条1項）。"
+    },
+    {
+      "id": "tkn12_013",
+      "unit": "shikaku.takken.seigen.kenchiku.menseki",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "防火地域内で耐火建築物などにしなければならないのは？",
+      "choices": [
+        "階数3以上、または延べ面積100㎡を超える建築物",
+        "すべての建築物",
+        "階数5以上の建築物だけ",
+        "延べ面積500㎡を超える建築物だけ"
+      ],
+      "answerIndex": 0,
+      "explanation": "防火地域の建築制限（建築基準法61条・施行令136条の2）。"
+    },
+    {
+      "id": "tkn12_014",
+      "unit": "shikaku.takken.seigen.kenchiku.youto",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "建物の用途を特殊建築物に変更するとき、建築確認が必要になるのは？",
+      "choices": [
+        "500㎡を超えるとき",
+        "その用途の床面積が200㎡を超えるとき",
+        "100㎡を超えるとき",
+        "常に不要"
+      ],
+      "answerIndex": 1,
+      "explanation": "2019年に100㎡から200㎡に改められた（建築基準法87条）。"
+    },
+    {
+      "id": "tkn12_015",
+      "unit": "shikaku.takken.seigen.kenchiku.youto",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "準住居地域に建てられないものは？",
+      "choices": [
+        "住宅",
+        "事務所",
+        "工場（作業場の床面積が大きいもの）",
+        "自動車教習所"
+      ],
+      "answerIndex": 2,
+      "explanation": "準住居地域は道路沿いの住居の環境を守る地域。大きな工場は建てられない。"
+    }
+  ]
+}

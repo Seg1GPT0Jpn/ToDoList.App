@@ -1,0 +1,288 @@
+{
+  "setId": "math_ma_11",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_ma11_001",
+      "unit": "math.ma.integer.divisor.divisor",
+      "category": "calculation",
+      "prompt": "ユークリッドの互除法で、391 と 299 の最大公約数を求めると？",
+      "choices": [
+        "17",
+        "23",
+        "1",
+        "13"
+      ],
+      "answerIndex": 1,
+      "explanation": "391=299+92、299=92×3+23、92=23×4。"
+    },
+    {
+      "id": "mat_ma11_002",
+      "unit": "math.ma.integer.divisor",
+      "category": "calculation",
+      "prompt": "3x+5y=1 を満たす整数の組の1つは？",
+      "choices": [
+        "x=2, y=−1",
+        "x=1, y=1",
+        "x=0, y=1",
+        "x=−2, y=1"
+      ],
+      "answerIndex": 0,
+      "explanation": "6−5=1。"
+    },
+    {
+      "id": "mat_ma11_003",
+      "unit": "math.ma.integer.euclid.diophantine",
+      "category": "calculation",
+      "prompt": "3x+5y=1 のすべての整数解は？（k は整数）",
+      "choices": [
+        "x=5k, y=3k",
+        "x=2+3k, y=−1−5k",
+        "x=2k, y=−k",
+        "x=2+5k, y=−1−3k"
+      ],
+      "answerIndex": 3,
+      "explanation": "3(x−2)=−5(y+1) で、3と5は互いに素。"
+    },
+    {
+      "id": "mat_ma11_004",
+      "unit": "math.ma.integer.divisor.remainder",
+      "category": "calculation",
+      "prompt": "2¹⁰ を 3 で割った余りは？",
+      "choices": [
+        "0",
+        "2",
+        "1",
+        "4"
+      ],
+      "answerIndex": 2,
+      "explanation": "2≡−1 (mod 3) より (−1)¹⁰=1。"
+    },
+    {
+      "id": "mat_ma11_005",
+      "unit": "math.ma.integer.divisor.divisor",
+      "category": "calculation",
+      "prompt": "7¹⁰⁰ の一の位の数は？",
+      "choices": [
+        "9",
+        "3",
+        "7",
+        "1"
+      ],
+      "answerIndex": 3,
+      "explanation": "一の位は 7, 9, 3, 1 の周期4。100 は4の倍数。"
+    },
+    {
+      "id": "mat_ma11_006",
+      "unit": "math.ma.integer.base.nary",
+      "category": "calculation",
+      "prompt": "5進法の 234₍₅₎ を10進法で表すと？",
+      "choices": [
+        "69",
+        "234",
+        "64",
+        "59"
+      ],
+      "answerIndex": 0,
+      "explanation": "2·25+3·5+4。"
+    },
+    {
+      "id": "mat_ma11_007",
+      "unit": "math.ma.integer.base.nary",
+      "category": "calculation",
+      "prompt": "2進法の小数 0.1₍₂₎ を10進法で表すと？",
+      "choices": [
+        "0.5",
+        "0.1",
+        "0.2",
+        "0.25"
+      ],
+      "answerIndex": 0,
+      "explanation": "1/2。"
+    },
+    {
+      "id": "mat_ma11_008",
+      "unit": "math.ma.integer.divisor.divisor",
+      "category": "calculation",
+      "prompt": "12 の正の約数の総和は？",
+      "choices": [
+        "28",
+        "24",
+        "16",
+        "12"
+      ],
+      "answerIndex": 0,
+      "explanation": "1+2+3+4+6+12。"
+    },
+    {
+      "id": "mat_ma11_009",
+      "unit": "math.ma.integer.divisor",
+      "category": "thinking",
+      "prompt": "連続する2つの整数の積 n(n+1) がいつも偶数である理由は？",
+      "choices": [
+        "n+1 がいつも奇数だから",
+        "n がいつも偶数だから",
+        "積はいつも偶数だから",
+        "連続する2つの整数のどちらかは必ず偶数だから"
+      ],
+      "answerIndex": 3,
+      "explanation": "偶数と奇数が交互に並ぶ。"
+    },
+    {
+      "id": "mat_ma11_010",
+      "unit": "math.ma.integer.divisor.divisor",
+      "category": "thinking",
+      "prompt": "互除法で最大公約数が求められる理由は？",
+      "choices": [
+        "余りがいつも1だから",
+        "a=bq+r のとき、a と b の最大公約数は b と r の最大公約数に等しいから",
+        "割り算はいつも割り切れるから",
+        "大きい数ほど約数が多いから"
+      ],
+      "answerIndex": 1,
+      "explanation": "数を小さくしながら同じ最大公約数を保てる。"
+    },
+    {
+      "id": "mat_ma11_011",
+      "unit": "math.ma.integer.divisor.divisor",
+      "category": "calculation",
+      "prompt": "ユークリッドの互除法で、221 と 169 の最大公約数を求めると？",
+      "choices": [
+        "13",
+        "52",
+        "17",
+        "1"
+      ],
+      "answerIndex": 0,
+      "explanation": "221=169+52、169=52×3+13、52=13×4。"
+    },
+    {
+      "id": "mat_ma11_012",
+      "unit": "math.ma.integer.divisor",
+      "category": "calculation",
+      "prompt": "5x+3y=1 を満たす整数の組の1つは？",
+      "choices": [
+        "x=2, y=−3",
+        "x=−1, y=2",
+        "x=1, y=−1",
+        "x=2, y=3"
+      ],
+      "answerIndex": 0,
+      "explanation": "10−9=1。"
+    },
+    {
+      "id": "mat_ma11_013",
+      "unit": "math.ma.integer.euclid.diophantine",
+      "category": "calculation",
+      "prompt": "5x+3y=1 のすべての整数解は？（k は整数）",
+      "choices": [
+        "x=3k, y=−5k",
+        "x=2+5k, y=−3−3k",
+        "x=2+3k, y=−3−5k",
+        "x=2k, y=−3k"
+      ],
+      "answerIndex": 2,
+      "explanation": "5(x−2)=−3(y+3) で、5と3は互いに素。"
+    },
+    {
+      "id": "mat_ma11_014",
+      "unit": "math.ma.integer.divisor.remainder",
+      "category": "calculation",
+      "prompt": "3¹⁰ を 4 で割った余りは？",
+      "choices": [
+        "2",
+        "3",
+        "0",
+        "1"
+      ],
+      "answerIndex": 3,
+      "explanation": "3≡−1 (mod 4) より (−1)¹⁰=1。"
+    },
+    {
+      "id": "mat_ma11_015",
+      "unit": "math.ma.integer.divisor",
+      "category": "calculation",
+      "prompt": "2¹⁰⁰ の一の位の数は？",
+      "choices": [
+        "2",
+        "6",
+        "4",
+        "8"
+      ],
+      "answerIndex": 1,
+      "explanation": "一の位は 2, 4, 8, 6 の周期4。"
+    },
+    {
+      "id": "mat_ma11_016",
+      "unit": "math.ma.integer.base.nary",
+      "category": "calculation",
+      "prompt": "3進法の 212₍₃₎ を10進法で表すと？",
+      "choices": [
+        "212",
+        "23",
+        "21",
+        "17"
+      ],
+      "answerIndex": 1,
+      "explanation": "2·9+1·3+2。"
+    },
+    {
+      "id": "mat_ma11_017",
+      "unit": "math.ma.integer.base.nary",
+      "category": "calculation",
+      "prompt": "10進法の 50 を5進法で表すと？",
+      "choices": [
+        "100₍₅₎",
+        "200₍₅₎",
+        "50₍₅₎",
+        "2000₍₅₎"
+      ],
+      "answerIndex": 1,
+      "explanation": "50=2×25。"
+    },
+    {
+      "id": "mat_ma11_018",
+      "unit": "math.ma.integer.divisor.divisor",
+      "category": "calculation",
+      "prompt": "36 の正の約数の総和は？",
+      "choices": [
+        "91",
+        "78",
+        "55",
+        "36"
+      ],
+      "answerIndex": 0,
+      "explanation": "(1+2+4)(1+3+9)。"
+    },
+    {
+      "id": "mat_ma11_019",
+      "unit": "math.ma.integer.divisor.divisor",
+      "category": "calculation",
+      "prompt": "2つの自然数の最大公約数が12、最小公倍数が180。一方が36のとき、もう一方は？",
+      "choices": [
+        "60",
+        "90",
+        "48",
+        "72"
+      ],
+      "answerIndex": 0,
+      "explanation": "2数の積＝最大公約数×最小公倍数。12×180÷36。"
+    },
+    {
+      "id": "mat_ma11_020",
+      "unit": "math.ma.integer.divisor.divisor",
+      "category": "thinking",
+      "prompt": "連続する3つの整数の和が、いつも3の倍数になる理由は？",
+      "choices": [
+        "奇数が2つあるから",
+        "真ん中の数が3だから",
+        "(n−1)+n+(n+1)=3n と表せるから",
+        "3つの数がすべて3の倍数だから"
+      ],
+      "answerIndex": 2,
+      "explanation": "文字を使って表すと一般的に示せる。"
+    }
+  ]
+}

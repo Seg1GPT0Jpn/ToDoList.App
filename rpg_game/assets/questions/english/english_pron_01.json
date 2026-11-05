@@ -1,0 +1,428 @@
+{
+  "setId": "english_pron_01",
+  "worldId": "english",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "english_pron_01_001",
+      "unit": "english.eng.speaking.pron.sound",
+      "category": "usage",
+      "prompt": "大文字の部分の発音がほかと異なるものは？",
+      "choices": [
+        "hEAd",
+        "mEAt",
+        "brEAd",
+        "swEAt"
+      ],
+      "answerIndex": 1,
+      "explanation": "meat は /iː/。ほかは /e/。"
+    },
+    {
+      "id": "english_pron_01_002",
+      "unit": "english.eng.speaking.pron.sound",
+      "category": "usage",
+      "prompt": "大文字の部分の発音がほかと異なるものは？",
+      "choices": [
+        "mOOn",
+        "fOOd",
+        "bOOk",
+        "sOOn"
+      ],
+      "answerIndex": 2,
+      "explanation": "book は短い /ʊ/。ほかは長い /uː/。"
+    },
+    {
+      "id": "english_pron_01_003",
+      "unit": "english.eng.speaking.pron.sound",
+      "category": "usage",
+      "prompt": "大文字の部分の発音がほかと異なるものは？",
+      "choices": [
+        "lOve",
+        "hOme",
+        "mOney",
+        "cOme"
+      ],
+      "answerIndex": 1,
+      "explanation": "home は /oʊ/。ほかは /ʌ/。"
+    },
+    {
+      "id": "english_pron_01_004",
+      "unit": "english.eng.speaking.pron.sound",
+      "category": "usage",
+      "prompt": "語尾 -ed の発音がほかと異なるものは？",
+      "choices": [
+        "wantED",
+        "needED",
+        "playED",
+        "visitED"
+      ],
+      "answerIndex": 2,
+      "explanation": "played は /d/。t・d で終わる語の -ed は /ɪd/。"
+    },
+    {
+      "id": "english_pron_01_005",
+      "unit": "english.eng.speaking.pron.sound",
+      "category": "usage",
+      "prompt": "語尾 -ed の発音がほかと異なるものは？",
+      "choices": [
+        "livED",
+        "lookED",
+        "laughED",
+        "stoppED"
+      ],
+      "answerIndex": 0,
+      "explanation": "lived は /d/。p・f・k など無声音のあとの -ed は /t/。"
+    },
+    {
+      "id": "english_pron_01_006",
+      "unit": "english.eng.speaking.pron.sound",
+      "category": "usage",
+      "prompt": "語尾 -s の発音がほかと異なるものは？",
+      "choices": [
+        "bookS",
+        "dogS",
+        "cupS",
+        "hatS"
+      ],
+      "answerIndex": 1,
+      "explanation": "dogs は /z/。k・p・t など無声音のあとは /s/。"
+    },
+    {
+      "id": "english_pron_01_007",
+      "unit": "english.eng.speaking.pron.sound",
+      "category": "usage",
+      "prompt": "大文字の部分の発音がほかと異なるものは？",
+      "choices": [
+        "THank",
+        "THink",
+        "THis",
+        "THree"
+      ],
+      "answerIndex": 2,
+      "explanation": "this は有声の /ð/。ほかは無声の /θ/。"
+    },
+    {
+      "id": "english_pron_01_008",
+      "unit": "english.eng.speaking.pron.sound",
+      "category": "usage",
+      "prompt": "大文字の部分の発音がほかと異なるものは？",
+      "choices": [
+        "CHeese",
+        "CHair",
+        "CHurch",
+        "maCHine"
+      ],
+      "answerIndex": 3,
+      "explanation": "machine の ch は /ʃ/（フランス語から来た語）。ほかは /tʃ/。"
+    },
+    {
+      "id": "english_pron_01_009",
+      "unit": "english.eng.speaking.pron.sound",
+      "category": "usage",
+      "prompt": "大文字の部分の発音がほかと異なるものは？",
+      "choices": [
+        "cOUntry",
+        "hOUse",
+        "lOUd",
+        "mOUth"
+      ],
+      "answerIndex": 0,
+      "explanation": "country は /ʌ/。ほかは /aʊ/。"
+    },
+    {
+      "id": "english_pron_01_010",
+      "unit": "english.eng.speaking.pron.sound",
+      "category": "usage",
+      "prompt": "大文字の部分の発音がほかと異なるものは？",
+      "choices": [
+        "mAke",
+        "nAme",
+        "fAther",
+        "tAble"
+      ],
+      "answerIndex": 2,
+      "explanation": "father は /ɑː/。ほかは /eɪ/。"
+    },
+    {
+      "id": "english_pron_01_011",
+      "unit": "english.eng.speaking.pron.sound",
+      "category": "usage",
+      "prompt": "大文字の部分の発音がほかと異なるものは？",
+      "choices": [
+        "hEARt",
+        "clEAR",
+        "nEAR",
+        "hEAR"
+      ],
+      "answerIndex": 0,
+      "explanation": "heart は /ɑːr/。ほかは /ɪər/。"
+    },
+    {
+      "id": "english_pron_01_012",
+      "unit": "english.eng.speaking.pron.sound",
+      "category": "usage",
+      "prompt": "k を発音しない語は？",
+      "choices": [
+        "knife",
+        "kind",
+        "kitchen",
+        "keep"
+      ],
+      "answerIndex": 0,
+      "explanation": "kn- で始まる語の k は発音しない（know, knee など）。"
+    },
+    {
+      "id": "english_pron_01_013",
+      "unit": "english.eng.speaking.pron.sound",
+      "category": "usage",
+      "prompt": "b を発音しない語は？",
+      "choices": [
+        "bread",
+        "table",
+        "number",
+        "climb"
+      ],
+      "answerIndex": 3,
+      "explanation": "-mb で終わる語の b は発音しない（comb, bomb など）。"
+    },
+    {
+      "id": "english_pron_01_014",
+      "unit": "english.eng.speaking.pron.sound",
+      "category": "usage",
+      "prompt": "大文字の部分の発音がほかと異なるものは？",
+      "choices": [
+        "snOW",
+        "knOW",
+        "shOW",
+        "nOW"
+      ],
+      "answerIndex": 3,
+      "explanation": "now は /aʊ/。ほかは /oʊ/。"
+    },
+    {
+      "id": "english_pron_01_015",
+      "unit": "english.eng.speaking.pron.sound",
+      "category": "usage",
+      "prompt": "大文字の部分の発音がほかと異なるものは？",
+      "choices": [
+        "pUt",
+        "pUsh",
+        "fUll",
+        "bUs"
+      ],
+      "answerIndex": 3,
+      "explanation": "bus は /ʌ/。ほかは /ʊ/。"
+    },
+    {
+      "id": "english_pron_01_016",
+      "unit": "english.eng.speaking.pron.accent",
+      "category": "usage",
+      "prompt": "第2音節を最も強く読む語は？",
+      "choices": [
+        "hotel",
+        "table",
+        "picture",
+        "window"
+      ],
+      "answerIndex": 0,
+      "explanation": "ho-TEL。ほかは第1音節が強い。"
+    },
+    {
+      "id": "english_pron_01_017",
+      "unit": "english.eng.speaking.pron.accent",
+      "category": "usage",
+      "prompt": "第1音節を最も強く読む語は？",
+      "choices": [
+        "piano",
+        "guitar",
+        "Japan",
+        "camera"
+      ],
+      "answerIndex": 3,
+      "explanation": "CAM-er-a。guitar・Japan・piano は第2音節が強い。"
+    },
+    {
+      "id": "english_pron_01_018",
+      "unit": "english.eng.speaking.pron.accent",
+      "category": "usage",
+      "prompt": "最も強く読む位置がほかと異なる語は？",
+      "choices": [
+        "tomato",
+        "banana",
+        "potato",
+        "energy"
+      ],
+      "answerIndex": 3,
+      "explanation": "EN-er-gy は第1音節。ほかは第2音節（ba-NA-na など）。"
+    },
+    {
+      "id": "english_pron_01_019",
+      "unit": "english.eng.speaking.pron.accent",
+      "category": "usage",
+      "prompt": "第3音節を最も強く読む語は？",
+      "choices": [
+        "volunteer",
+        "character",
+        "museum",
+        "important"
+      ],
+      "answerIndex": 0,
+      "explanation": "vol-un-TEER。-eer で終わる語は語尾が強い。"
+    },
+    {
+      "id": "english_pron_01_020",
+      "unit": "english.eng.speaking.pron.accent",
+      "category": "usage",
+      "prompt": "第2音節を最も強く読む語は？",
+      "choices": [
+        "idea",
+        "water",
+        "over",
+        "music"
+      ],
+      "answerIndex": 0,
+      "explanation": "i-DE-a。ほかは第1音節が強い。"
+    },
+    {
+      "id": "english_pron_01_021",
+      "unit": "english.eng.speaking.pron.accent",
+      "category": "usage",
+      "prompt": "第2音節を最も強く読む語は？",
+      "choices": [
+        "photographic",
+        "photographer",
+        "photo",
+        "photograph"
+      ],
+      "answerIndex": 1,
+      "explanation": "pho-TOG-ra-pher。photograph は第1、photographic は第3音節。"
+    },
+    {
+      "id": "english_pron_01_022",
+      "unit": "english.eng.speaking.pron.accent",
+      "category": "usage",
+      "prompt": "第3音節を最も強く読む語は？",
+      "choices": [
+        "economy",
+        "ecology",
+        "economic",
+        "economist"
+      ],
+      "answerIndex": 2,
+      "explanation": "ec-o-NOM-ic。-ic の直前の音節が強い。"
+    },
+    {
+      "id": "english_pron_01_023",
+      "unit": "english.eng.speaking.pron.accent",
+      "category": "usage",
+      "prompt": "動詞の record（記録する）で最も強く読むのは？",
+      "choices": [
+        "第2音節（re-CORD）",
+        "第1音節（RE-cord）",
+        "文によって自由に変わる",
+        "どちらも同じ強さ"
+      ],
+      "answerIndex": 0,
+      "explanation": "名詞は RE-cord、動詞は re-CORD。名前動後の原則。"
+    },
+    {
+      "id": "english_pron_01_024",
+      "unit": "english.eng.speaking.pron.accent",
+      "category": "usage",
+      "prompt": "最も強く読む位置がほかと異なる語は？",
+      "choices": [
+        "tomorrow",
+        "delicious",
+        "beautiful",
+        "important"
+      ],
+      "answerIndex": 2,
+      "explanation": "BEAU-ti-ful は第1音節。ほかは第2音節。"
+    },
+    {
+      "id": "english_pron_01_025",
+      "unit": "english.eng.speaking.pron.accent",
+      "category": "usage",
+      "prompt": "最も強く読む位置がほかと異なる語は？",
+      "choices": [
+        "eleven",
+        "vanilla",
+        "computer",
+        "internet"
+      ],
+      "answerIndex": 3,
+      "explanation": "IN-ter-net は第1音節。ほかは第2音節。"
+    },
+    {
+      "id": "english_pron_01_026",
+      "unit": "english.eng.speaking.pron.accent",
+      "category": "usage",
+      "prompt": "education で最も強く読むのは第何音節？",
+      "choices": [
+        "第2音節",
+        "第1音節",
+        "第3音節",
+        "第4音節"
+      ],
+      "answerIndex": 2,
+      "explanation": "ed-u-CA-tion。-tion の直前の音節が強い。"
+    },
+    {
+      "id": "english_pron_01_027",
+      "unit": "english.eng.speaking.pron.accent",
+      "category": "usage",
+      "prompt": "scientific で最も強く読むのは第何音節？",
+      "choices": [
+        "第3音節",
+        "第1音節",
+        "第4音節",
+        "第2音節"
+      ],
+      "answerIndex": 0,
+      "explanation": "sci-en-TIF-ic。-ic の直前が強い。"
+    },
+    {
+      "id": "english_pron_01_028",
+      "unit": "english.eng.speaking.pron.accent",
+      "category": "usage",
+      "prompt": "最も強く読む位置がほかと異なる語は？",
+      "choices": [
+        "December",
+        "calendar",
+        "November",
+        "tomorrow"
+      ],
+      "answerIndex": 1,
+      "explanation": "CAL-en-dar は第1音節。ほかは第2音節。"
+    },
+    {
+      "id": "english_pron_01_029",
+      "unit": "english.eng.speaking.pron.accent",
+      "category": "usage",
+      "prompt": "最も強く読む位置がほかと異なる語は？",
+      "choices": [
+        "chocolate",
+        "experience",
+        "computer",
+        "adventure"
+      ],
+      "answerIndex": 0,
+      "explanation": "CHOC-o-late は第1音節。ほかは第2音節。"
+    },
+    {
+      "id": "english_pron_01_030",
+      "unit": "english.eng.speaking.pron.accent",
+      "category": "usage",
+      "prompt": "第3音節を最も強く読む語は？",
+      "choices": [
+        "violin",
+        "animal",
+        "camera",
+        "piano"
+      ],
+      "answerIndex": 0,
+      "explanation": "vi-o-LIN。日本語の「バイオリン」とは強さの位置がちがう。"
+    }
+  ]
+}

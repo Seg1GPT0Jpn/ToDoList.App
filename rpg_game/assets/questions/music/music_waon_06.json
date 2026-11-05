@@ -1,0 +1,232 @@
+{
+  "setId": "music_waon_06",
+  "worldId": "music",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mus_waon06_001",
+      "unit": "music.theory.harmony.triad.basic",
+      "category": "knowledge",
+      "prompt": "属音の上につくった七の和音を何という？",
+      "choices": [
+        "属七の和音",
+        "減七の和音",
+        "長七の和音",
+        "主七の和音"
+      ],
+      "answerIndex": 0,
+      "explanation": "Ⅴ７。調を決める力がとても強い。"
+    },
+    {
+      "id": "mus_waon06_002",
+      "unit": "music.theory.harmony.triad.seventh",
+      "category": "knowledge",
+      "prompt": "属七の和音が属和音より強い性格は？",
+      "choices": [
+        "音量を大きくする性格",
+        "終わった感じを出す性格",
+        "調を決める性格・はたらき",
+        "曲を遅くする性格"
+      ],
+      "answerIndex": 2,
+      "explanation": "属七の和音だけでも調が決まるほど、はたらきが強い。"
+    },
+    {
+      "id": "mus_waon06_003",
+      "unit": "music.theory.harmony.triad.basic",
+      "category": "knowledge",
+      "prompt": "同主調どうし（例：C dur と c moll）で共通する和音は？",
+      "choices": [
+        "主和音",
+        "Ⅵの和音",
+        "下属和音",
+        "属七の和音"
+      ],
+      "answerIndex": 3,
+      "explanation": "和声短音階の導音を使うので、属七の和音は同じ音になる。"
+    },
+    {
+      "id": "mus_waon06_004",
+      "unit": "music.theory.harmony.triad.basic",
+      "category": "knowledge",
+      "prompt": "短調のⅦ７のように、減三和音の上に短3度を積んだ和音を何という？",
+      "choices": [
+        "減七の和音",
+        "増七の和音",
+        "半減七の和音",
+        "属七の和音"
+      ],
+      "answerIndex": 0,
+      "explanation": "根音と第七音が減7度になる。"
+    },
+    {
+      "id": "mus_waon06_005",
+      "unit": "music.theory.harmony.triad.seventh",
+      "category": "knowledge",
+      "prompt": "減七の和音で、根音と第七音の音程は？",
+      "choices": [
+        "長7度",
+        "短7度",
+        "減7度",
+        "増6度"
+      ],
+      "answerIndex": 2,
+      "explanation": "減三和音＋短3度で、根音と第七音は減7度。"
+    },
+    {
+      "id": "mus_waon06_006",
+      "unit": "music.theory.harmony.triad.seventh",
+      "category": "knowledge",
+      "prompt": "属七の和音の種類として正しいものは？",
+      "choices": [
+        "長三和音＋短7度",
+        "短三和音＋短7度",
+        "減三和音＋減7度",
+        "長三和音＋長7度"
+      ],
+      "answerIndex": 0,
+      "explanation": "例：G・H・D・F。"
+    },
+    {
+      "id": "mus_waon06_007",
+      "unit": "music.theory.harmony.triad.seventh",
+      "category": "calculation",
+      "prompt": "C dur の属七の和音（Ⅴ７）の構成音は？",
+      "choices": [
+        "G・H・D・F",
+        "G・H・D・Fis",
+        "G・B・D・F",
+        "F・A・C・Es"
+      ],
+      "answerIndex": 0,
+      "explanation": "属音 G の上に G・H・D・F。"
+    },
+    {
+      "id": "mus_waon06_008",
+      "unit": "music.theory.harmony.triad.seventh",
+      "category": "calculation",
+      "prompt": "G dur の属七の和音（Ⅴ７）の構成音は？",
+      "choices": [
+        "D・Fis・A・Cis",
+        "D・Fis・A・C",
+        "D・F・A・C",
+        "C・E・G・B"
+      ],
+      "answerIndex": 1,
+      "explanation": "属音 D の上に D・Fis・A・C。"
+    },
+    {
+      "id": "mus_waon06_009",
+      "unit": "music.theory.harmony.triad.seventh",
+      "category": "calculation",
+      "prompt": "F dur の属七の和音（Ⅴ７）の構成音は？",
+      "choices": [
+        "B・D・F・As",
+        "C・E・G・H",
+        "C・E・G・B",
+        "C・Es・G・B"
+      ],
+      "answerIndex": 2,
+      "explanation": "属音 C の上に C・E・G・B。"
+    },
+    {
+      "id": "mus_waon06_010",
+      "unit": "music.theory.harmony.triad.seventh",
+      "category": "calculation",
+      "prompt": "D dur の属七の和音（Ⅴ７）の構成音は？",
+      "choices": [
+        "A・C・E・G",
+        "A・Cis・E・Gis",
+        "A・Cis・E・G",
+        "G・H・D・F"
+      ],
+      "answerIndex": 2,
+      "explanation": "属音 A の上に A・Cis・E・G。"
+    },
+    {
+      "id": "mus_waon06_011",
+      "unit": "music.theory.harmony.triad.seventh",
+      "category": "calculation",
+      "prompt": "B dur の属七の和音（Ⅴ７）の構成音は？",
+      "choices": [
+        "Es・G・B・Des",
+        "F・A・C・Es",
+        "F・As・C・Es",
+        "F・A・C・E"
+      ],
+      "answerIndex": 1,
+      "explanation": "属音 F の上に F・A・C・Es。"
+    },
+    {
+      "id": "mus_waon06_012",
+      "unit": "music.theory.harmony.triad.seventh",
+      "category": "calculation",
+      "prompt": "a moll の属七の和音（Ⅴ７）の構成音は？",
+      "choices": [
+        "E・Gis・H・Dis",
+        "E・Gis・H・D",
+        "D・Fis・A・C",
+        "E・G・H・D"
+      ],
+      "answerIndex": 1,
+      "explanation": "属音 E の上に E・Gis・H・D。"
+    },
+    {
+      "id": "mus_waon06_013",
+      "unit": "music.theory.harmony.triad.seventh",
+      "category": "calculation",
+      "prompt": "e moll の属七の和音（Ⅴ７）の構成音は？",
+      "choices": [
+        "H・D・Fis・A",
+        "H・Dis・Fis・A",
+        "A・Cis・E・G",
+        "H・Dis・Fis・Ais"
+      ],
+      "answerIndex": 1,
+      "explanation": "属音 H の上に H・Dis・Fis・A。"
+    },
+    {
+      "id": "mus_waon06_014",
+      "unit": "music.theory.harmony.triad.seventh",
+      "category": "calculation",
+      "prompt": "d moll の属七の和音（Ⅴ７）の構成音は？",
+      "choices": [
+        "A・Cis・E・Gis",
+        "A・Cis・E・G",
+        "G・H・D・F",
+        "A・C・E・G"
+      ],
+      "answerIndex": 1,
+      "explanation": "属音 A の上に A・Cis・E・G。"
+    },
+    {
+      "id": "mus_waon06_015",
+      "unit": "music.theory.harmony.triad.seventh",
+      "category": "calculation",
+      "prompt": "a moll の減七の和音（Ⅶ７）の構成音は？",
+      "choices": [
+        "Gis・H・D・F",
+        "E・Gis・H・D",
+        "G・H・D・F",
+        "Gis・H・D・Fis"
+      ],
+      "answerIndex": 0,
+      "explanation": "和声短音階の導音 Gis の上に3度ずつ積む。"
+    },
+    {
+      "id": "mus_waon06_016",
+      "unit": "music.theory.harmony.triad.seventh",
+      "category": "calculation",
+      "prompt": "c moll の減七の和音（Ⅶ７）の構成音は？",
+      "choices": [
+        "H・D・F・As",
+        "G・H・D・F",
+        "B・D・F・As",
+        "H・D・F・A"
+      ],
+      "answerIndex": 0,
+      "explanation": "和声短音階の導音 H の上に3度ずつ積む。"
+    }
+  ]
+}

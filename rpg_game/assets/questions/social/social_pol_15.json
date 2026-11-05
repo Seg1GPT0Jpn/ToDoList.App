@@ -1,0 +1,344 @@
+{
+  "setId": "social_pol_15",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_pol15_001",
+      "unit": "social.pol.economy.global.trade",
+      "category": "knowledge",
+      "prompt": "各国が得意な財の生産に特化して貿易すると、互いに利益を得られるという考え方は？",
+      "choices": [
+        "比較生産費説（比較優位）",
+        "保護貿易論",
+        "絶対王政",
+        "重商主義"
+      ],
+      "answerIndex": 0,
+      "explanation": "リカードが唱えた。"
+    },
+    {
+      "id": "soc_pol15_002",
+      "unit": "social.pol.economy.global.trade",
+      "category": "knowledge",
+      "prompt": "自国の産業を守るために、関税などで輸入を制限する貿易は？",
+      "choices": [
+        "保護貿易",
+        "自由貿易",
+        "加工貿易",
+        "中継貿易"
+      ],
+      "answerIndex": 0,
+      "explanation": "リストは発展途上の産業を守るために保護貿易を主張した。"
+    },
+    {
+      "id": "soc_pol15_003",
+      "unit": "social.pol.economy.global.balance",
+      "category": "knowledge",
+      "prompt": "一国の、一定期間の外国とのお金の受け取りと支払いをまとめたものは？",
+      "choices": [
+        "貿易額だけ",
+        "財政収支",
+        "国家予算",
+        "国際収支"
+      ],
+      "answerIndex": 3,
+      "explanation": "経常収支・資本移転等収支・金融収支などからなる。"
+    },
+    {
+      "id": "soc_pol15_004",
+      "unit": "social.pol.economy.global.balance",
+      "category": "knowledge",
+      "prompt": "為替相場の安定や、国際収支が赤字の国への融資を行う国際機関は？",
+      "choices": [
+        "IMF（国際通貨基金）",
+        "WTO",
+        "IBRD（世界銀行）",
+        "UNCTAD"
+      ],
+      "answerIndex": 0,
+      "explanation": "世界銀行は発展途上国の開発のための融資を行う。"
+    },
+    {
+      "id": "soc_pol15_005",
+      "unit": "social.pol.economy.global.trade",
+      "category": "knowledge",
+      "prompt": "自由貿易を推進し、貿易をめぐる紛争を処理する国際機関は？",
+      "choices": [
+        "WTO（世界貿易機関）",
+        "OPEC",
+        "IMF",
+        "GATT だけ"
+      ],
+      "answerIndex": 0,
+      "explanation": "1995 年に GATT を発展させて発足した。"
+    },
+    {
+      "id": "soc_pol15_006",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "先進国の政府が発展途上国に行う資金や技術の援助は？",
+      "choices": [
+        "FTA",
+        "ODA（政府開発援助）",
+        "NGO",
+        "PKO"
+      ],
+      "answerIndex": 1,
+      "explanation": "日本は援助額の大きい国の一つ。"
+    },
+    {
+      "id": "soc_pol15_007",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "発展途上国の生産者の生活を支えるため、農産物などを適正な価格で取引することは？",
+      "choices": [
+        "フェアトレード",
+        "ブロック経済",
+        "セーフガード",
+        "ダンピング"
+      ],
+      "answerIndex": 0,
+      "explanation": "コーヒーやチョコレートなどで行われている。"
+    },
+    {
+      "id": "soc_pol15_008",
+      "unit": "social.pol.economy.global.system",
+      "category": "knowledge",
+      "prompt": "急な輸入増加から国内産業を守るため、一時的に輸入を制限する措置は？",
+      "choices": [
+        "フェアトレード",
+        "ODA",
+        "セーフガード（緊急輸入制限）",
+        "ダンピング"
+      ],
+      "answerIndex": 2,
+      "explanation": "WTO で認められている。"
+    },
+    {
+      "id": "soc_pol15_009",
+      "unit": "social.pol.economy.global",
+      "category": "calculation",
+      "prompt": "A 国は布 1 単位に 2 人、ワイン 1 単位に 4 人必要。B 国は布 1 単位に 6 人、ワイン 1 単位に 6 人必要。A 国が比較優位をもつのは？",
+      "choices": [
+        "布",
+        "両方",
+        "ワイン",
+        "どちらもない"
+      ],
+      "answerIndex": 0,
+      "explanation": "A 国の布とワインの比は 2：4、B 国は 6：6。A 国は布を相対的に安く（ワイン 0.5 単位分で）つくれる。"
+    },
+    {
+      "id": "soc_pol15_010",
+      "unit": "social.pol.economy.global.balance",
+      "category": "calculation",
+      "prompt": "ある国の輸出額が 80 兆円、輸入額が 90 兆円。貿易収支は？",
+      "choices": [
+        "0",
+        "10 兆円の赤字",
+        "10 兆円の黒字",
+        "170 兆円の黒字"
+      ],
+      "answerIndex": 1,
+      "explanation": "輸出 − 輸入 ＝ 80 − 90 ＝ −10 兆円。"
+    },
+    {
+      "id": "soc_pol15_011",
+      "unit": "social.pol.economy.global.trade",
+      "category": "thinking",
+      "prompt": "自由貿易を進めることの課題として適切なものは？",
+      "choices": [
+        "輸入品が高くなる",
+        "すべての産業が必ず成長する",
+        "外国との交流がなくなる",
+        "国際競争力の弱い国内の産業が打撃を受けることがある"
+      ],
+      "answerIndex": 3,
+      "explanation": "農業などで影響が大きいことがあり、国内の支援策が議論される。"
+    },
+    {
+      "id": "soc_pol15_012",
+      "unit": "social.pol.economy.global.north",
+      "category": "thinking",
+      "prompt": "発展途上国の中で経済格差が広がる「南南問題」の例として適切なものは？",
+      "choices": [
+        "東西冷戦",
+        "先進国どうしの対立",
+        "先進国と発展途上国の格差",
+        "資源をもつ国や工業化に成功した国と、そうでない後発の国との格差"
+      ],
+      "answerIndex": 3,
+      "explanation": "後発発展途上国（LDC）への支援が課題。"
+    },
+    {
+      "id": "soc_pol15_013",
+      "unit": "social.pol.economy.global.trade",
+      "category": "knowledge",
+      "prompt": "比較生産費説（比較優位）を唱えた経済学者は？",
+      "choices": [
+        "リカード",
+        "ケインズ",
+        "アダム＝スミス",
+        "リスト"
+      ],
+      "answerIndex": 0,
+      "explanation": "国際分業と自由貿易の利益を説いた。"
+    },
+    {
+      "id": "soc_pol15_014",
+      "unit": "social.pol.economy.global.trade",
+      "category": "knowledge",
+      "prompt": "保護貿易を主張したドイツの経済学者は？",
+      "choices": [
+        "リスト",
+        "リカード",
+        "フリードマン",
+        "マルクス"
+      ],
+      "answerIndex": 0,
+      "explanation": "発展途上の産業を守る必要を説いた。"
+    },
+    {
+      "id": "soc_pol15_015",
+      "unit": "social.pol.economy.global.balance",
+      "category": "knowledge",
+      "prompt": "国際収支のうち、貿易やサービス、所得のやりとりをまとめたものは？",
+      "choices": [
+        "金融収支",
+        "経常収支",
+        "資本移転等収支",
+        "外貨準備"
+      ],
+      "answerIndex": 1,
+      "explanation": "日本は第一次所得収支の黒字が大きい。"
+    },
+    {
+      "id": "soc_pol15_016",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "海外への投資から得た利子や配当などの収支は？",
+      "choices": [
+        "貿易収支",
+        "サービス収支",
+        "第一次所得収支",
+        "第二次所得収支"
+      ],
+      "answerIndex": 2,
+      "explanation": "日本の経常黒字の中心となっている。"
+    },
+    {
+      "id": "soc_pol15_017",
+      "unit": "social.pol.economy.global.exchange",
+      "category": "knowledge",
+      "prompt": "第二次世界大戦後の国際経済体制で、固定相場制を支えたものは？",
+      "choices": [
+        "冷戦体制",
+        "ベルサイユ体制",
+        "ウィーン体制",
+        "ブレトン＝ウッズ体制（IMF・世界銀行）"
+      ],
+      "answerIndex": 3,
+      "explanation": "ドルを基軸通貨とした。"
+    },
+    {
+      "id": "soc_pol15_018",
+      "unit": "social.pol.economy.global.trade",
+      "category": "knowledge",
+      "prompt": "関税の撤廃に加えて、投資や人の移動、知的財産などもふくめた幅広い経済協定は？",
+      "choices": [
+        "PKO",
+        "EPA（経済連携協定）",
+        "WTO",
+        "ODA"
+      ],
+      "answerIndex": 1,
+      "explanation": "関税などの撤廃が中心の協定は FTA（自由貿易協定）。"
+    },
+    {
+      "id": "soc_pol15_019",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "環太平洋の国々による経済連携協定は？",
+      "choices": [
+        "NAFTA",
+        "ASEAN",
+        "EU",
+        "TPP（CPTPP）"
+      ],
+      "answerIndex": 3,
+      "explanation": "日本も参加している。"
+    },
+    {
+      "id": "soc_pol15_020",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "発展途上国の中でも、特に開発が遅れている国々を何という？",
+      "choices": [
+        "OECD 加盟国",
+        "後発開発途上国（LDC）",
+        "新興工業経済地域（NIES）",
+        "BRICS"
+      ],
+      "answerIndex": 1,
+      "explanation": "アフリカのサハラ砂漠以南などに多く、国際的な支援の対象になっている。"
+    },
+    {
+      "id": "soc_pol15_021",
+      "unit": "social.pol.economy.global",
+      "category": "calculation",
+      "prompt": "A 国は機械 1 単位に 10 人、農産物 1 単位に 20 人、B 国は機械 1 単位に 40 人、農産物 1 単位に 30 人が必要。比較優位の考え方で B 国が特化すべきものは？",
+      "choices": [
+        "どちらも生産しない",
+        "機械",
+        "農産物",
+        "両方"
+      ],
+      "answerIndex": 2,
+      "explanation": "B 国内の比較で、農産物の方が機会費用が小さい（30/40 ＜ 20/10）。"
+    },
+    {
+      "id": "soc_pol15_022",
+      "unit": "social.pol.economy.global.balance",
+      "category": "calculation",
+      "prompt": "輸出額 100 兆円、輸入額 95 兆円のとき、貿易収支は？",
+      "choices": [
+        "5 兆円の黒字",
+        "195 兆円の黒字",
+        "0",
+        "5 兆円の赤字"
+      ],
+      "answerIndex": 0,
+      "explanation": "100 − 95。"
+    },
+    {
+      "id": "soc_pol15_023",
+      "unit": "social.pol.economy.global",
+      "category": "thinking",
+      "prompt": "途上国が特定の一次産品の輸出に頼る「モノカルチャー経済」の問題点は？",
+      "choices": [
+        "食料が余る",
+        "国際価格の変動で経済が大きく左右されやすい",
+        "工業が発展する",
+        "輸出が安定する"
+      ],
+      "answerIndex": 1,
+      "explanation": "植民地時代の影響が残る例が多い。"
+    },
+    {
+      "id": "soc_pol15_024",
+      "unit": "social.pol.economy.global.system",
+      "category": "knowledge",
+      "prompt": "輸出品を国内価格より不当に安く売って、他国の産業に打撃を与えることを何という？",
+      "choices": [
+        "フェアトレード",
+        "ダンピング",
+        "セーフガード",
+        "ブロック経済"
+      ],
+      "answerIndex": 1,
+      "explanation": "不当廉売ともいう。WTO では対抗措置として反ダンピング関税が認められている。"
+    }
+  ]
+}

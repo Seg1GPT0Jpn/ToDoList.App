@@ -1,0 +1,721 @@
+{
+  "setId": "science_shonan_104_chem_acid_01",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "science_shonan_104_chem_acid_01_001",
+      "unit": "science.chemistry.change.acid.ph",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "1.0 × 10⁻³ mol/L の水酸化ナトリウム水溶液の pH は？",
+      "choices": [
+        "3",
+        "11",
+        "10",
+        "12"
+      ],
+      "answerIndex": 1,
+      "explanation": "[OH⁻]＝1.0 × 10⁻³、[H⁺]＝Kw/[OH⁻]＝1.0 × 10⁻¹¹ mol/L なので pH＝11",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "acid"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_acid_01_002",
+      "unit": "science.chemistry.change.acid.define",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "反応 HCl ＋ H₂O → H₃O⁺ ＋ Cl⁻ で、H₂O はブレンステッド・ローリーの定義で酸・塩基のどちら？",
+      "choices": [
+        "両方",
+        "塩基",
+        "どちらでもない",
+        "酸"
+      ],
+      "answerIndex": 1,
+      "explanation": "H₂O が HCl から H⁺ を受け取っている。 水は相手によって酸にも塩基にもなる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "acid"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_acid_01_003",
+      "unit": "science.chemistry.change.acid.define",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "水溶液中で H⁺ が水分子と結びついてできるイオン H₃O⁺ を何という？",
+      "choices": [
+        "アンモニウムイオン",
+        "ヒドロキシドイオン",
+        "水酸化物イオン",
+        "オキソニウムイオン"
+      ],
+      "answerIndex": 3,
+      "explanation": "H⁺ と H₂O は配位結合でつながる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "acid"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_acid_01_004",
+      "unit": "science.chemistry.change.acid.define",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "臭化水素 HBr は何価の酸？",
+      "choices": [
+        "1価",
+        "2価",
+        "3価",
+        "4価"
+      ],
+      "answerIndex": 0,
+      "explanation": "化学式の中で H⁺ になれる H の数が価数。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "acid"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_acid_01_005",
+      "unit": "science.chemistry.change.acid.ph",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "0.10 mol/L のアンモニア水（電離度 0.010）の pH は？",
+      "choices": [
+        "11",
+        "12",
+        "3",
+        "13"
+      ],
+      "answerIndex": 0,
+      "explanation": "[OH⁻]＝cα＝1.0×10⁻³、[H⁺]＝1.0×10⁻¹¹ mol/L",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "acid"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_acid_01_006",
+      "unit": "science.chemistry.change.acid.define",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "弱酸の水溶液をうすめる（希釈する）と、電離度はふつうどうなる？",
+      "choices": [
+        "変わらない",
+        "0になる",
+        "小さくなる",
+        "大きくなる"
+      ],
+      "answerIndex": 3,
+      "explanation": "濃度が小さいほど電離しやすくなる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "acid"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_acid_01_007",
+      "unit": "science.chemistry.change.acid.ph",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "0.1 mol/L の酢酸水溶液（電離度 0.016）の [H⁺] は？",
+      "choices": [
+        "0.10 mol/L",
+        "1.6 × 10⁻³ mol/L",
+        "1.6 × 10⁻⁴ mol/L",
+        "1.6 × 10⁻² mol/L"
+      ],
+      "answerIndex": 1,
+      "explanation": "[H⁺]＝cα＝0.10×0.016＝1.6×10⁻³ mol/L",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "acid"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_acid_01_008",
+      "unit": "science.chemistry.change.acid.define",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "酢酸 CH₃COOH が1価の酸である理由は？",
+      "choices": [
+        "酸素を2個もつから",
+        "CH₃ の部分の H は電離しにくく、COOH の H だけが H⁺ になるから",
+        "分子に H が1個しかないから",
+        "水に溶けにくいから"
+      ],
+      "answerIndex": 1,
+      "explanation": "H の数＝価数とは限らない。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "acid"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_acid_01_009",
+      "unit": "science.chemistry.change.acid.define",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "反応 NH₃ ＋ H₂O ⇄ NH₄⁺ ＋ OH⁻ で、H₂O はブレンステッド・ローリーの定義で酸・塩基のどちら？",
+      "choices": [
+        "酸",
+        "どちらでもない",
+        "塩基",
+        "両方"
+      ],
+      "answerIndex": 0,
+      "explanation": "H₂O が NH₃ に H⁺ を与えている。 水は相手によって酸にも塩基にもなる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "acid"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_acid_01_010",
+      "unit": "science.chemistry.change.acid.define",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "アンモニア NH₃ は何価の塩基？",
+      "choices": [
+        "3価",
+        "1価",
+        "2価",
+        "4価"
+      ],
+      "answerIndex": 1,
+      "explanation": "NH₃ は水と反応して OH⁻ を1個生じるので1価。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "acid"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_acid_01_011",
+      "unit": "science.chemistry.change.acid.ph",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "25℃で中性の水溶液の [H⁺] と pH の組み合わせは？",
+      "choices": [
+        "[H⁺]＝1.0 × 10⁻⁷ mol/L、pH＝0",
+        "[H⁺]＝1.0 × 10⁻⁷ mol/L、pH＝7",
+        "[H⁺]＝1.0 × 10⁻¹⁴ mol/L、pH＝14",
+        "[H⁺]＝1.0 mol/L、pH＝0"
+      ],
+      "answerIndex": 1,
+      "explanation": "[H⁺]＝[OH⁻]＝1.0×10⁻⁷ mol/L",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "acid"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_acid_01_012",
+      "unit": "science.chemistry.change.acid.define",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "水酸化アルミニウム Al(OH)₃ は何価の塩基？",
+      "choices": [
+        "4価",
+        "3価",
+        "2価",
+        "1価"
+      ],
+      "answerIndex": 1,
+      "explanation": "化学式の中で OH⁻ になれる OH の数が価数。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "acid"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_acid_01_013",
+      "unit": "science.chemistry.change.acid.define",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "Ca(OH)₂ の電離を表す式として正しいものは？",
+      "choices": [
+        "Ca(OH)₂ → Ca²⁺ ＋ 2O²⁻ ＋ 2H⁺",
+        "Ca(OH)₂ → CaO ＋ H₂O",
+        "Ca(OH)₂ → Ca²⁺ ＋ 2OH⁻",
+        "Ca(OH)₂ → Ca⁺ ＋ OH⁻"
+      ],
+      "answerIndex": 2,
+      "explanation": "弱酸・弱塩基は ⇄ で表す。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "acid"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_acid_01_014",
+      "unit": "science.chemistry.change.acid.define",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ヨウ化水素 HI は何価の酸？",
+      "choices": [
+        "2価",
+        "4価",
+        "3価",
+        "1価"
+      ],
+      "answerIndex": 3,
+      "explanation": "化学式の中で H⁺ になれる H の数が価数。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "acid"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_acid_01_015",
+      "unit": "science.chemistry.change.acid.define",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "次のうち、強塩基はどれ？",
+      "choices": [
+        "Al(OH)₃",
+        "Mg(OH)₂",
+        "Cu(OH)₂",
+        "Ba(OH)₂"
+      ],
+      "answerIndex": 3,
+      "explanation": "強塩基：NaOH・KOH・Ca(OH)₂・Ba(OH)₂",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "acid"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_acid_01_016",
+      "unit": "science.chemistry.change.acid.ph",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "0.05 mol/L の酢酸水溶液（電離度 0.02）の pH は？",
+      "choices": [
+        "4",
+        "1",
+        "2",
+        "3"
+      ],
+      "answerIndex": 3,
+      "explanation": "[H⁺]＝cα＝0.05×0.02＝1.0 × 10⁻³ mol/L なので pH＝3",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "acid"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_acid_01_017",
+      "unit": "science.chemistry.change.acid.define",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "NH₃（水との反応） の電離を表す式として正しいものは？",
+      "choices": [
+        "NH₃ → N³⁻ ＋ 3H⁺",
+        "NH₃ ⇄ NH₂ ＋ H",
+        "NH₃ ＋ H₂O ⇄ NH₄⁺ ＋ OH⁻",
+        "NH₃ ＋ H₂O → NH₂⁻ ＋ H₃O⁺"
+      ],
+      "answerIndex": 2,
+      "explanation": "弱酸・弱塩基は ⇄ で表す。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "acid"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_acid_01_018",
+      "unit": "science.chemistry.change.acid.define",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "リン酸 H₃PO₄ は3価の酸だが、強酸ではない。このことから言えるのは？",
+      "choices": [
+        "酸素を含む酸は弱酸である",
+        "酸の強弱は価数ではなく、電離度の大小で決まる",
+        "価数が大きいほど強い酸である",
+        "3価の酸はすべて弱酸である"
+      ],
+      "answerIndex": 1,
+      "explanation": "強酸は電離度がほぼ1。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "acid"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_acid_01_019",
+      "unit": "science.chemistry.change.acid.define",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "塩基のうち、水によく溶けるものを何という？",
+      "choices": [
+        "塩",
+        "酸化物",
+        "アルカリ",
+        "オキソ酸"
+      ],
+      "answerIndex": 2,
+      "explanation": "NaOH・KOH・Ca(OH)₂ など。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "acid"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_acid_01_020",
+      "unit": "science.chemistry.change.acid.ph",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "1.0 × 10⁻¹ mol/L の水酸化ナトリウム水溶液の pH は？",
+      "choices": [
+        "13",
+        "7",
+        "12",
+        "1"
+      ],
+      "answerIndex": 0,
+      "explanation": "[OH⁻]＝1.0 × 10⁻¹、[H⁺]＝Kw/[OH⁻]＝1.0 × 10⁻¹³ mol/L なので pH＝13",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "acid"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_acid_01_021",
+      "unit": "science.chemistry.change.acid.define",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "次のうち、強酸はどれ？",
+      "choices": [
+        "HCl",
+        "(COOH)₂",
+        "CH₃COOH",
+        "H₂S"
+      ],
+      "answerIndex": 0,
+      "explanation": "強酸：HCl・HBr・HI・HNO₃・H₂SO₄",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "acid"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_acid_01_022",
+      "unit": "science.chemistry.change.acid.define",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "次のうち、弱塩基はどれ？",
+      "choices": [
+        "Ca(OH)₂",
+        "NH₃",
+        "NaOH",
+        "Ba(OH)₂"
+      ],
+      "answerIndex": 1,
+      "explanation": "弱塩基：NH₃・Mg(OH)₂・Cu(OH)₂・Al(OH)₃",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "acid"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_acid_01_023",
+      "unit": "science.chemistry.change.acid.ph",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "pH＝2 の塩酸を水で 100 倍にうすめた。pH は？",
+      "choices": [
+        "6",
+        "5",
+        "2",
+        "4"
+      ],
+      "answerIndex": 3,
+      "explanation": "[H⁺] が 1/100 になるので pH は 2 大きくなる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "acid"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_acid_01_024",
+      "unit": "science.chemistry.change.acid.ph",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "pH＝2 の塩酸を水で 10 倍にうすめた。pH は？",
+      "choices": [
+        "1",
+        "3",
+        "2",
+        "4"
+      ],
+      "answerIndex": 1,
+      "explanation": "[H⁺] が 1/10 になるので pH は 1 大きくなる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "acid"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_acid_01_025",
+      "unit": "science.chemistry.change.acid.define",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "次のうち、弱酸はどれ？",
+      "choices": [
+        "HBr",
+        "HCl",
+        "HF",
+        "HI"
+      ],
+      "answerIndex": 2,
+      "explanation": "弱酸：HF・CH₃COOH・H₂S・(COOH)₂ など",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "acid"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_acid_01_026",
+      "unit": "science.chemistry.change.acid.ph",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "pH＝9 の水溶液の [H⁺] は？",
+      "choices": [
+        "1.0 × 10⁻⁹ mol/L",
+        "1.0 × 10⁻¹⁰ mol/L",
+        "1.0 × 10⁹ mol/L",
+        "1.0 × 10⁻⁵ mol/L"
+      ],
+      "answerIndex": 0,
+      "explanation": "[H⁺]＝1.0×10⁻9 mol/L（pH の数字が指数になる）",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "acid"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_acid_01_027",
+      "unit": "science.chemistry.change.acid.define",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "水酸化ナトリウム NaOH は何価の塩基？",
+      "choices": [
+        "2価",
+        "3価",
+        "4価",
+        "1価"
+      ],
+      "answerIndex": 3,
+      "explanation": "化学式の中で OH⁻ になれる OH の数が価数。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "acid"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_acid_01_028",
+      "unit": "science.chemistry.change.acid.define",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "反応 CO₃²⁻ ＋ H₂O ⇄ HCO₃⁻ ＋ OH⁻ で、CO₃²⁻ はブレンステッド・ローリーの定義で酸・塩基のどちら？",
+      "choices": [
+        "酸",
+        "どちらでもない",
+        "塩基",
+        "両方"
+      ],
+      "answerIndex": 2,
+      "explanation": "CO₃²⁻ が H₂O から H⁺ を受け取っている。 水は相手によって酸にも塩基にもなる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "acid"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_acid_01_029",
+      "unit": "science.chemistry.change.acid.define",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "HNO₃ の電離を表す式として正しいものは？",
+      "choices": [
+        "HNO₃ → H⁺ ＋ NO₃⁻",
+        "HNO₃ → 3H⁺ ＋ NO₃³⁻",
+        "HNO₃ → H₂O ＋ NO₂",
+        "HNO₃ → H⁺ ＋ NO₂⁻ ＋ O"
+      ],
+      "answerIndex": 0,
+      "explanation": "弱酸・弱塩基は ⇄ で表す。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "acid"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_acid_01_030",
+      "unit": "science.chemistry.change.acid.ph",
+      "unitLocked": true,
+      "category": "calculation",
+      "prompt": "5.0 × 10⁻³ mol/L の水酸化バリウム水溶液の pH は？（完全に電離する）",
+      "choices": [
+        "12",
+        "13",
+        "11",
+        "2"
+      ],
+      "answerIndex": 0,
+      "explanation": "2価なので [OH⁻]＝1.0×10⁻²、[H⁺]＝1.0×10⁻¹² mol/L",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "acid"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_acid_01_031",
+      "unit": "science.chemistry.change.acid.ph",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "pH が1小さくなると、[H⁺] は何倍になる？",
+      "choices": [
+        "100倍",
+        "10倍",
+        "1/10倍",
+        "2倍"
+      ],
+      "answerIndex": 1,
+      "explanation": "pH が1ちがうと [H⁺] は10倍ちがう。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-kimatsu",
+        "chemistry_basic",
+        "acid"
+      ]
+    }
+  ]
+}

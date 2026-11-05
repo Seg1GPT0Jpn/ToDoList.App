@@ -1,0 +1,188 @@
+{
+  "setId": "kokka_ishi_05",
+  "worldId": "kokka",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "ish05_001",
+      "unit": "kokka.ishi.rinshou.junkan.junkan",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "日本の高血圧の診断基準（診察室血圧）は？",
+      "choices": [
+        "160/100mmHg以上",
+        "130/70mmHg以上",
+        "140/90mmHg以上",
+        "120/80mmHg以上"
+      ],
+      "answerIndex": 2,
+      "explanation": "家庭血圧では135/85mmHg以上。"
+    },
+    {
+      "id": "ish05_002",
+      "unit": "kokka.ishi.rinshou.junkan.junkan",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "急性心筋梗塞の主な原因は？",
+      "choices": [
+        "心臓の弁が開きすぎること",
+        "肺の動脈が広がること",
+        "心臓の外の膜に水がたまること",
+        "冠動脈が血栓などでふさがること"
+      ],
+      "answerIndex": 3,
+      "explanation": "冠動脈のプラークが破れて血栓ができることが多い。"
+    },
+    {
+      "id": "ish05_003",
+      "unit": "kokka.ishi.rinshou.junkan.junkan",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "心電図でST上昇が見られる代表的な疾患は？",
+      "choices": [
+        "急性心筋梗塞",
+        "心房細動",
+        "低カリウム血症",
+        "肺炎"
+      ],
+      "answerIndex": 0,
+      "explanation": "急性心膜炎でも広い範囲でST上昇がみられる。"
+    },
+    {
+      "id": "ish05_004",
+      "unit": "kokka.ishi.rinshou.junkan.junkan",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "心房細動で特に注意すべき合併症は？",
+      "choices": [
+        "白内障",
+        "心原性の脳梗塞",
+        "骨折",
+        "胃潰瘍"
+      ],
+      "answerIndex": 1,
+      "explanation": "心房内にできた血栓が脳に飛ぶ。抗凝固薬で予防する。"
+    },
+    {
+      "id": "ish05_005",
+      "unit": "kokka.ishi.rinshou.junkan.junkan",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "心不全で上昇し、診断の目安になる血液検査の値は？",
+      "choices": [
+        "アミラーゼ",
+        "HbA1c",
+        "BNP",
+        "PSA"
+      ],
+      "answerIndex": 2,
+      "explanation": "心室に負担がかかると分泌される。"
+    },
+    {
+      "id": "ish05_006",
+      "unit": "kokka.ishi.rinshou.junkan.junkan",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "足の深部静脈血栓症から起こる、命にかかわる合併症は？",
+      "choices": [
+        "腎結石",
+        "虫垂炎",
+        "脳出血",
+        "肺塞栓症"
+      ],
+      "answerIndex": 3,
+      "explanation": "長時間同じ姿勢でいることが原因になることもある（いわゆるエコノミークラス症候群）。"
+    },
+    {
+      "id": "ish05_007",
+      "unit": "kokka.ishi.rinshou.junkan.kokyuu",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "気管支喘息の気道について正しいのは？",
+      "choices": [
+        "慢性の炎症で狭くなり、その狭さは治療などで元に戻りうる",
+        "炎症とは関係がない",
+        "一度狭くなると元に戻らない",
+        "肺胞が壊れる病気である"
+      ],
+      "answerIndex": 0,
+      "explanation": "可逆性の気道狭窄が特徴。吸入ステロイドが治療の中心。"
+    },
+    {
+      "id": "ish05_008",
+      "unit": "kokka.ishi.rinshou.junkan.kokyuu",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "慢性閉塞性肺疾患（COPD）の最大の原因は？",
+      "choices": [
+        "花粉",
+        "喫煙",
+        "高血圧",
+        "肥満"
+      ],
+      "answerIndex": 1,
+      "explanation": "禁煙が最も効果的な治療・予防。"
+    },
+    {
+      "id": "ish05_009",
+      "unit": "kokka.ishi.rinshou.junkan.kokyuu",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "気胸とはどんな状態？",
+      "choices": [
+        "肺の血管がつまる",
+        "気管に異物がつまる",
+        "胸腔に空気がたまり、肺がしぼむ",
+        "肺に水がたまる"
+      ],
+      "answerIndex": 2,
+      "explanation": "やせ型の若い男性に起こる自然気胸が多い。"
+    },
+    {
+      "id": "ish05_010",
+      "unit": "kokka.ishi.rinshou.junkan.kokyuu",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "市中肺炎の原因菌として最も多いのは？",
+      "choices": [
+        "結核菌",
+        "大腸菌",
+        "破傷風菌",
+        "肺炎球菌"
+      ],
+      "answerIndex": 3,
+      "explanation": "高齢者には肺炎球菌ワクチンが推奨される。"
+    },
+    {
+      "id": "ish05_011",
+      "unit": "kokka.ishi.rinshou.junkan.kokyuu",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "日本の肺がんで最も多い組織型は？",
+      "choices": [
+        "腺がん",
+        "大細胞がん",
+        "小細胞がん",
+        "扁平上皮がん"
+      ],
+      "answerIndex": 0,
+      "explanation": "非喫煙者にも多い。"
+    },
+    {
+      "id": "ish05_012",
+      "unit": "kokka.ishi.rinshou.junkan.kokyuu",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "指先にはさんで血液中の酸素飽和度（SpO2）を測る機器は？",
+      "choices": [
+        "聴診器",
+        "パルスオキシメーター",
+        "スパイロメーター",
+        "心電計"
+      ],
+      "answerIndex": 1,
+      "explanation": "健康な人ではおよそ96〜99％。"
+    }
+  ]
+}

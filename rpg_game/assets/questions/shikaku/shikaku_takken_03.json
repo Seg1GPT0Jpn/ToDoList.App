@@ -1,0 +1,233 @@
+{
+  "setId": "shikaku_takken_03",
+  "worldId": "shikaku",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "tkn03_001",
+      "unit": "shikaku.takken.kenri.bukken.henndou",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "AがBとCに同じ土地を二重に売った。所有権を確定的に主張できるのは？",
+      "choices": [
+        "先に所有権移転登記をした者",
+        "先に引渡しを受けた者",
+        "先に契約した者",
+        "先に代金を払った者"
+      ],
+      "answerIndex": 0,
+      "explanation": "不動産の物権変動は、登記をしなければ第三者に対抗できない（民法177条）。"
+    },
+    {
+      "id": "tkn03_002",
+      "unit": "shikaku.takken.kenri.bukken.henndou",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "登記がなくても所有権を主張できる相手はどれ？",
+      "choices": [
+        "差押えをした債権者",
+        "背信的悪意者",
+        "単なる悪意の第三者",
+        "二重に買った善意の第三者"
+      ],
+      "answerIndex": 1,
+      "explanation": "背信的悪意者は登記の欠缺を主張する正当な利益がない（判例）。単なる悪意者には登記が必要。"
+    },
+    {
+      "id": "tkn03_003",
+      "unit": "shikaku.takken.kenri.bukken.henndou",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "売買契約を詐欺で取り消した後、買主が第三者に転売した。売主と第三者の関係は？",
+      "choices": [
+        "売主が常に優先する",
+        "代金を多く払ったほうが優先する",
+        "先に登記をしたほうが優先する",
+        "第三者が常に優先する"
+      ],
+      "answerIndex": 2,
+      "explanation": "取消し後の第三者とは、二重譲渡と同じく登記の先後で決まる（判例）。"
+    },
+    {
+      "id": "tkn03_004",
+      "unit": "shikaku.takken.kenri.bukken.henndou",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "自分の土地を不法に占拠している者に明渡しを求める。登記は必要？",
+      "choices": [
+        "占拠が1年以上なら必要",
+        "必要",
+        "裁判をするなら必要",
+        "不要"
+      ],
+      "answerIndex": 3,
+      "explanation": "不法占拠者は「第三者」に当たらず、登記なしで対抗できる（判例）。"
+    },
+    {
+      "id": "tkn03_005",
+      "unit": "shikaku.takken.kenri.bukken.henndou",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "相続で法定相続分を超える持分を取得した相続人は、その超える部分を登記なしで第三者に対抗できる？",
+      "choices": [
+        "対抗できない",
+        "対抗できる",
+        "相続放棄した者にだけ対抗できる",
+        "遺言があれば常に対抗できる"
+      ],
+      "answerIndex": 0,
+      "explanation": "法定相続分を超える部分は、登記などの対抗要件がなければ第三者に対抗できない（民法899条の2）。"
+    },
+    {
+      "id": "tkn03_006",
+      "unit": "shikaku.takken.kenri.bukken.teitou",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "民法上、抵当権を設定できないものはどれ？",
+      "choices": [
+        "土地",
+        "賃借権",
+        "建物",
+        "地上権"
+      ],
+      "answerIndex": 1,
+      "explanation": "抵当権の目的は不動産・地上権・永小作権（民法369条）。賃借権には設定できない。"
+    },
+    {
+      "id": "tkn03_007",
+      "unit": "shikaku.takken.kenri.bukken.teitou",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "抵当権者が優先弁済を受けられる利息は、原則として満期となった最後の何年分？",
+      "choices": [
+        "3年分",
+        "1年分",
+        "2年分",
+        "全額"
+      ],
+      "answerIndex": 2,
+      "explanation": "利息などは満期となった最後の2年分に限られる（民法375条）。"
+    },
+    {
+      "id": "tkn03_008",
+      "unit": "shikaku.takken.kenri.bukken.teitou",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "抵当権に基づき、建物の火災保険金に物上代位するには何が必要？",
+      "choices": [
+        "保険会社の承諾",
+        "抵当権の登記の更新",
+        "債務者への通知だけ",
+        "払渡し前の差押え"
+      ],
+      "answerIndex": 3,
+      "explanation": "物上代位は、払渡しまたは引渡しの前に差し押さえなければならない（民法372条・304条）。"
+    },
+    {
+      "id": "tkn03_009",
+      "unit": "shikaku.takken.kenri.bukken.teitou",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "抵当権設定登記の後に建物を借りた賃借人は、競売の買受人に対して、どれだけ明渡しを猶予される？",
+      "choices": [
+        "買受けの時から6か月",
+        "猶予されない",
+        "1か月",
+        "1年"
+      ],
+      "answerIndex": 0,
+      "explanation": "建物明渡猶予制度。競売手続開始前から使用していた賃借人は6か月猶予される（民法395条）。"
+    },
+    {
+      "id": "tkn03_010",
+      "unit": "shikaku.takken.kenri.bukken.teitou",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "法定地上権が成立する条件として正しいものは？",
+      "choices": [
+        "建物が登記されていない場合だけ",
+        "抵当権設定時に土地の上に建物があり、土地と建物が同じ所有者",
+        "抵当権設定後に建物を新築した",
+        "土地と建物の所有者が別々"
+      ],
+      "answerIndex": 1,
+      "explanation": "抵当権設定当時に建物が存在し、同一所有者であることが要件（民法388条）。"
+    },
+    {
+      "id": "tkn03_011",
+      "unit": "shikaku.takken.kenri.bukken.teitou",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "更地に抵当権を設定した後、建物が建てられた。抵当権者ができることは？",
+      "choices": [
+        "建物の代価からも優先弁済を受けられる",
+        "建物だけを競売できる",
+        "土地と建物を一括して競売できる（優先弁済は土地の代価だけ）",
+        "何もできない"
+      ],
+      "answerIndex": 2,
+      "explanation": "一括競売（民法389条）。優先弁済は土地の代価についてだけ。"
+    },
+    {
+      "id": "tkn03_012",
+      "unit": "shikaku.takken.kenri.bukken.teitou",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "根抵当権の元本確定前に、被担保債権の範囲を変更する。後順位抵当権者の承諾は？",
+      "choices": [
+        "登記をしたときだけ必要",
+        "必要",
+        "債務者が変わるときだけ必要",
+        "不要"
+      ],
+      "answerIndex": 3,
+      "explanation": "元本確定前の範囲の変更に、後順位抵当権者などの承諾はいらない（民法398条の4）。"
+    },
+    {
+      "id": "tkn03_013",
+      "unit": "shikaku.takken.kenri.bukken.teitou",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "根抵当権者が優先弁済を受けられるのは、どの範囲まで？",
+      "choices": [
+        "極度額まで",
+        "元本の半分まで",
+        "被担保債権の全額",
+        "満期となった最後の2年分の利息まで"
+      ],
+      "answerIndex": 0,
+      "explanation": "根抵当権は極度額を限度に優先弁済を受ける（民法398条の3）。2年分の制限はない。"
+    },
+    {
+      "id": "tkn03_014",
+      "unit": "shikaku.takken.kenri.bukken.teitou",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "抵当権の順位の変更が効力を生じるのはいつ？",
+      "choices": [
+        "裁判所が許可した時",
+        "登記をした時",
+        "各抵当権者が合意した時",
+        "債務者に通知した時"
+      ],
+      "answerIndex": 1,
+      "explanation": "順位の変更は登記をしなければ効力を生じない（民法374条2項）。"
+    },
+    {
+      "id": "tkn03_015",
+      "unit": "shikaku.takken.kenri.bukken.teitou",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "抵当権消滅請求をすることができるのは誰？",
+      "choices": [
+        "保証人",
+        "主たる債務者",
+        "抵当不動産の第三取得者",
+        "後順位抵当権者"
+      ],
+      "answerIndex": 2,
+      "explanation": "主たる債務者・保証人とその承継人はできない（民法379条・380条）。"
+    }
+  ]
+}

@@ -1,0 +1,456 @@
+{
+  "setId": "science_earth_10",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_ear10_001",
+      "unit": "science.earth.solid.deform",
+      "category": "knowledge",
+      "prompt": "地層が波のように曲がった構造を何という？",
+      "choices": [
+        "級化層理",
+        "断層",
+        "褶曲",
+        "不整合"
+      ],
+      "answerIndex": 2,
+      "explanation": "山のように盛り上がった部分が背斜、谷のように下がった部分が向斜。"
+    },
+    {
+      "id": "sci_ear10_002",
+      "unit": "science.earth.solid.deform",
+      "category": "knowledge",
+      "prompt": "地層を引っ張る力でできる断層は？",
+      "choices": [
+        "正断層",
+        "トランスフォーム断層",
+        "横ずれ断層",
+        "逆断層"
+      ],
+      "answerIndex": 0,
+      "explanation": "上盤がずり下がる。"
+    },
+    {
+      "id": "sci_ear10_003",
+      "unit": "science.earth.solid.deform.orogeny",
+      "category": "knowledge",
+      "prompt": "海洋プレート上の堆積物などがはぎとられて、陸側に押しつけられてできた地質体を何という？",
+      "choices": [
+        "付加体",
+        "カルデラ",
+        "扇状地",
+        "溶岩台地"
+      ],
+      "answerIndex": 0,
+      "explanation": "日本列島の土台の多くは付加体でできている。"
+    },
+    {
+      "id": "sci_ear10_004",
+      "unit": "science.earth.solid.deform.metamorphic",
+      "category": "knowledge",
+      "prompt": "高い温度や圧力のもとで、岩石の組織や鉱物が変化してできた岩石は？",
+      "choices": [
+        "火成岩",
+        "変成岩",
+        "堆積岩",
+        "化石"
+      ],
+      "answerIndex": 1,
+      "explanation": "広範囲の広域変成作用では片岩・片麻岩、マグマの熱による接触変成作用ではホルンフェルスや結晶質石灰岩ができる。"
+    },
+    {
+      "id": "sci_ear10_005",
+      "unit": "science.earth.solid.deform.metamorphic",
+      "category": "knowledge",
+      "prompt": "石灰岩がマグマの熱で変成してできる岩石は？",
+      "choices": [
+        "花こう岩",
+        "ホルンフェルス",
+        "チャート",
+        "結晶質石灰岩（大理石）"
+      ],
+      "answerIndex": 3,
+      "explanation": "方解石の結晶が大きく成長する。泥岩や砂岩はホルンフェルスになる。"
+    },
+    {
+      "id": "sci_ear10_006",
+      "unit": "science.earth.solid.deform.orogeny",
+      "category": "knowledge",
+      "prompt": "ヒマラヤ山脈やアルプス山脈のように、造山運動が起きている（起きた）帯状の地域を何という？",
+      "choices": [
+        "造山帯",
+        "安定陸塊",
+        "海嶺",
+        "大陸棚"
+      ],
+      "answerIndex": 0,
+      "explanation": "プレートの収束境界に沿って分布する。"
+    },
+    {
+      "id": "sci_ear10_007",
+      "unit": "science.earth.solid.deform",
+      "category": "knowledge",
+      "prompt": "日本列島のように、海溝に沿って弓なりに並んだ列島を何という？",
+      "choices": [
+        "大陸",
+        "海嶺",
+        "島弧",
+        "ホットスポット"
+      ],
+      "answerIndex": 2,
+      "explanation": "海洋プレートの沈みこみによってできる。"
+    },
+    {
+      "id": "sci_ear10_008",
+      "unit": "science.earth.solid.deform.orogeny",
+      "category": "knowledge",
+      "prompt": "海岸付近で、土地の隆起と波の侵食によって階段状になった地形を何という？",
+      "choices": [
+        "扇状地",
+        "海岸段丘",
+        "リアス海岸",
+        "三角州"
+      ],
+      "answerIndex": 1,
+      "explanation": "地震などで何度も隆起した証拠。例：室戸岬。"
+    },
+    {
+      "id": "sci_ear10_009",
+      "unit": "science.earth.solid.deform",
+      "category": "knowledge",
+      "prompt": "山地が沈んで谷に海水が入りこみ、入り組んだ海岸線になった地形を何という？",
+      "choices": [
+        "海岸段丘",
+        "三角州",
+        "砂州",
+        "リアス海岸"
+      ],
+      "answerIndex": 3,
+      "explanation": "例：三陸海岸南部、志摩半島。"
+    },
+    {
+      "id": "sci_ear10_010",
+      "unit": "science.earth.solid.deform",
+      "category": "knowledge",
+      "prompt": "人工衛星からの電波を使って、地面の動きを精密に観測するシステムは？",
+      "choices": [
+        "電子顕微鏡",
+        "GNSS（GPS など）",
+        "地震計だけ",
+        "気象レーダー"
+      ],
+      "answerIndex": 1,
+      "explanation": "日本列島が年に数 cm ずつゆがんでいる様子などが観測されている。"
+    },
+    {
+      "id": "sci_ear10_011",
+      "unit": "science.earth.solid.deform",
+      "category": "knowledge",
+      "prompt": "地層の水平方向のずれが主な断層を何という？",
+      "choices": [
+        "褶曲",
+        "正断層",
+        "逆断層",
+        "横ずれ断層"
+      ],
+      "answerIndex": 3,
+      "explanation": "向かって右側が手前に来るのが右横ずれ、左側が手前に来るのが左横ずれ。"
+    },
+    {
+      "id": "sci_ear10_012",
+      "unit": "science.earth.solid.deform.orogeny",
+      "category": "knowledge",
+      "prompt": "川の両側に見られる、階段状の平らな地形を何という？",
+      "choices": [
+        "海岸段丘",
+        "河岸段丘",
+        "カルデラ",
+        "扇状地"
+      ],
+      "answerIndex": 1,
+      "explanation": "土地の隆起などで川が下方へ侵食をくり返してできる。"
+    },
+    {
+      "id": "sci_ear10_013",
+      "unit": "science.earth.solid.deform",
+      "category": "knowledge",
+      "prompt": "日本列島を大きく西南日本の内帯と外帯に分ける大断層は？",
+      "choices": [
+        "日本海溝",
+        "フォッサマグナ",
+        "中央構造線",
+        "南海トラフ"
+      ],
+      "answerIndex": 2,
+      "explanation": "九州から関東までのびる。フォッサマグナは本州中部の大きな溝状の地帯。"
+    },
+    {
+      "id": "sci_ear10_014",
+      "unit": "science.earth.solid.deform.orogeny",
+      "category": "calculation",
+      "prompt": "12 万年前にできた海岸段丘の面が、現在は海抜 120 m にある。平均の隆起速度は？",
+      "choices": [
+        "1 cm/年",
+        "1 mm/年",
+        "0.1 mm/年",
+        "10 cm/年"
+      ],
+      "answerIndex": 1,
+      "explanation": "120 m ＝ 120000 mm。÷ 120000 年 ＝ 1 mm/年。"
+    },
+    {
+      "id": "sci_ear10_015",
+      "unit": "science.earth.solid.deform.orogeny",
+      "category": "thinking",
+      "prompt": "海岸段丘の段が何段もある。わかることは？",
+      "choices": [
+        "土地の隆起が何回もくり返された",
+        "一度だけ急に沈んだ",
+        "海面が上がり続けた",
+        "火山の噴火があった"
+      ],
+      "answerIndex": 0,
+      "explanation": "平らな面（波食棚）が隆起するたびに、新しい段ができる。"
+    },
+    {
+      "id": "sci_ear10_016",
+      "unit": "science.earth.solid.deform.orogeny",
+      "category": "thinking",
+      "prompt": "日本の付加体の岩石の年代は、ふつう海溝から離れる（陸側に行く）ほど古い。その理由は？",
+      "choices": [
+        "陸側の岩石が風化するから",
+        "新しい堆積物が、海溝側から古い付加体の下に次々と押しこまれていくから",
+        "陸側で新しい岩石ができるから",
+        "偶然である"
+      ],
+      "answerIndex": 1,
+      "explanation": "付加体は海溝側に成長していくので、陸側ほど古い。"
+    },
+    {
+      "id": "sci_ear10_017",
+      "unit": "science.earth.solid.deform",
+      "category": "knowledge",
+      "prompt": "地層が山のように上に曲がった部分を何という？",
+      "choices": [
+        "背斜",
+        "断層",
+        "向斜",
+        "不整合"
+      ],
+      "answerIndex": 0,
+      "explanation": "下に曲がった部分は向斜。"
+    },
+    {
+      "id": "sci_ear10_018",
+      "unit": "science.earth.solid.deform.orogeny",
+      "category": "knowledge",
+      "prompt": "付加体をつくる岩石として見られるものは？",
+      "choices": [
+        "海洋プレート上のチャートや玄武岩と、陸から来た砂岩・泥岩",
+        "火山灰だけ",
+        "石灰岩だけ",
+        "花こう岩だけ"
+      ],
+      "answerIndex": 0,
+      "explanation": "海底の堆積物がはぎとられ、陸側に押しつけられる。"
+    },
+    {
+      "id": "sci_ear10_019",
+      "unit": "science.earth.solid.deform.metamorphic",
+      "category": "knowledge",
+      "prompt": "マグマの熱で周囲の岩石が変化する変成作用を何という？",
+      "choices": [
+        "接触変成作用",
+        "続成作用",
+        "風化",
+        "広域変成作用"
+      ],
+      "answerIndex": 0,
+      "explanation": "ホルンフェルスや大理石ができる。"
+    },
+    {
+      "id": "sci_ear10_020",
+      "unit": "science.earth.solid.deform.metamorphic",
+      "category": "knowledge",
+      "prompt": "プレートの沈みこみ帯など広い範囲で、高い温度・圧力でできる変成岩は？",
+      "choices": [
+        "片麻岩・結晶片岩",
+        "チャート",
+        "大理石",
+        "ホルンフェルス"
+      ],
+      "answerIndex": 0,
+      "explanation": "広域変成作用によってできる。"
+    },
+    {
+      "id": "sci_ear10_021",
+      "unit": "science.earth.solid.deform.metamorphic",
+      "category": "knowledge",
+      "prompt": "泥岩がマグマの熱で変成してできる、かたく緻密な岩石は？",
+      "choices": [
+        "片麻岩",
+        "ホルンフェルス",
+        "大理石",
+        "凝灰岩"
+      ],
+      "answerIndex": 1,
+      "explanation": "接触変成岩。"
+    },
+    {
+      "id": "sci_ear10_022",
+      "unit": "science.earth.solid.deform",
+      "category": "knowledge",
+      "prompt": "扇状地ができやすい場所は？",
+      "choices": [
+        "海岸",
+        "山頂",
+        "川が山地から平地に出るところ",
+        "河口"
+      ],
+      "answerIndex": 2,
+      "explanation": "流れが急にゆるやかになり、土砂が扇形にたまる。"
+    },
+    {
+      "id": "sci_ear10_023",
+      "unit": "science.earth.solid.deform",
+      "category": "knowledge",
+      "prompt": "河口付近で運ばれた土砂が堆積してできる地形は？",
+      "choices": [
+        "V 字谷",
+        "三角州",
+        "扇状地",
+        "河岸段丘"
+      ],
+      "answerIndex": 1,
+      "explanation": "流れが遅くなり、細かい土砂がたまる。"
+    },
+    {
+      "id": "sci_ear10_024",
+      "unit": "science.earth.solid.deform.orogeny",
+      "category": "knowledge",
+      "prompt": "日本列島の骨格をつくっている主な構造として正しいものは？",
+      "choices": [
+        "火山だけ",
+        "一枚の大陸",
+        "古い時代から次々に付加した付加体",
+        "深海の堆積物だけ"
+      ],
+      "answerIndex": 2,
+      "explanation": "日本列島の多くは付加体からできている。"
+    },
+    {
+      "id": "sci_ear10_025",
+      "unit": "science.earth.solid.deform.orogeny",
+      "category": "calculation",
+      "prompt": "海岸段丘の面が 10 万年で 50 m 隆起した。平均の隆起速度は 1000 年に何 m？",
+      "choices": [
+        "5 m",
+        "0.05 m",
+        "50 m",
+        "0.5 m"
+      ],
+      "answerIndex": 3,
+      "explanation": "50 ÷ 100（千年単位）。"
+    },
+    {
+      "id": "sci_ear10_026",
+      "unit": "science.earth.solid.deform.orogeny",
+      "category": "calculation",
+      "prompt": "年 2 mm ずつ隆起する土地は、1 万年で何 m 高くなる？",
+      "choices": [
+        "200 m",
+        "2 m",
+        "20 m",
+        "0.2 m"
+      ],
+      "answerIndex": 2,
+      "explanation": "2 mm × 10000 ＝ 20000 mm。"
+    },
+    {
+      "id": "sci_ear10_027",
+      "unit": "science.earth.solid.deform.orogeny",
+      "category": "calculation",
+      "prompt": "河岸段丘が 3 段ある。できた回数から考えて、土地の隆起（または侵食の活発化）は少なくとも何回あった？",
+      "choices": [
+        "6 回",
+        "0 回",
+        "1 回",
+        "3 回"
+      ],
+      "answerIndex": 3,
+      "explanation": "段が1つできるごとに1回。"
+    },
+    {
+      "id": "sci_ear10_028",
+      "unit": "science.earth.solid.deform",
+      "category": "calculation",
+      "prompt": "GNSS 観測で、ある地点が 1 年に 4 cm 西へ動いていた。10 年で何 cm？",
+      "choices": [
+        "400 cm",
+        "4 cm",
+        "14 cm",
+        "40 cm"
+      ],
+      "answerIndex": 3,
+      "explanation": "4 × 10。"
+    },
+    {
+      "id": "sci_ear10_029",
+      "unit": "science.earth.solid.deform.orogeny",
+      "category": "thinking",
+      "prompt": "海岸段丘の最も高い段と最も低い段で、できた時代が古いのは？",
+      "choices": [
+        "最も高い段",
+        "最も低い段",
+        "判断できない",
+        "同じ"
+      ],
+      "answerIndex": 0,
+      "explanation": "隆起をくり返すので、高い段ほど古い。"
+    },
+    {
+      "id": "sci_ear10_030",
+      "unit": "science.earth.solid.deform",
+      "category": "thinking",
+      "prompt": "リアス海岸が港として利用されやすい理由は？",
+      "choices": [
+        "平野が広いから",
+        "湾が深く入り組み、波がおだやかだから",
+        "川が多いから",
+        "砂浜が広いから"
+      ],
+      "answerIndex": 1,
+      "explanation": "一方で津波が湾の奥で高くなりやすい。"
+    },
+    {
+      "id": "sci_ear10_031",
+      "unit": "science.earth.solid.deform",
+      "category": "thinking",
+      "prompt": "大理石が石灰岩からできたことを確かめる方法は？",
+      "choices": [
+        "磁石を近づける",
+        "うすい塩酸をかけて二酸化炭素が出るか調べる",
+        "火であぶる",
+        "水に入れて浮くか調べる"
+      ],
+      "answerIndex": 1,
+      "explanation": "どちらも炭酸カルシウムが主成分。"
+    },
+    {
+      "id": "sci_ear10_032",
+      "unit": "science.earth.solid.deform",
+      "category": "thinking",
+      "prompt": "山地で V 字谷ができる理由は？",
+      "choices": [
+        "風がけずるから",
+        "氷河がけずるから",
+        "流れの速い川が谷底を深くけずるから",
+        "断層で割れるから"
+      ],
+      "answerIndex": 2,
+      "explanation": "氷河がけずると U 字谷になる。"
+    }
+  ]
+}

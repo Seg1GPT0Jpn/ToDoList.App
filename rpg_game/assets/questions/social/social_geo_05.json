@@ -1,0 +1,344 @@
+{
+  "setId": "social_geo_05",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_geo05_001",
+      "unit": "social.geo.nature.landform",
+      "category": "knowledge",
+      "prompt": "川が山地から平地に出るところに、土砂が堆積してできる扇形の地形は？",
+      "choices": [
+        "三角州",
+        "三日月湖",
+        "カルスト台地",
+        "扇状地"
+      ],
+      "answerIndex": 3,
+      "explanation": "水はけがよく、果樹園に利用されることが多い。"
+    },
+    {
+      "id": "soc_geo05_002",
+      "unit": "social.geo.nature.landform",
+      "category": "knowledge",
+      "prompt": "河口付近に細かい土砂が堆積してできる低く平らな地形は？",
+      "choices": [
+        "三角州",
+        "モレーン",
+        "V 字谷",
+        "扇状地"
+      ],
+      "answerIndex": 0,
+      "explanation": "水田や都市に利用される。ナイル川などが有名。"
+    },
+    {
+      "id": "soc_geo05_003",
+      "unit": "social.geo.nature.landform",
+      "category": "knowledge",
+      "prompt": "蛇行していた川の一部が取り残されてできた湖は？",
+      "choices": [
+        "潟湖",
+        "カルデラ湖",
+        "三日月湖（河跡湖）",
+        "氷河湖"
+      ],
+      "answerIndex": 2,
+      "explanation": "石狩川などで見られる。"
+    },
+    {
+      "id": "soc_geo05_004",
+      "unit": "social.geo.nature.landform.coast",
+      "category": "knowledge",
+      "prompt": "沈水した谷に海水が入りこんでできた、入り組んだ海岸は？",
+      "choices": [
+        "サンゴ礁",
+        "海岸段丘",
+        "リアス海岸",
+        "砂浜海岸"
+      ],
+      "answerIndex": 2,
+      "explanation": "三陸海岸南部など。良港が多いが津波の被害が大きくなりやすい。"
+    },
+    {
+      "id": "soc_geo05_005",
+      "unit": "social.geo.nature.landform.other",
+      "category": "knowledge",
+      "prompt": "氷河が削ってできた谷に海水が入りこんだ細長い湾は？",
+      "choices": [
+        "エスチュアリー",
+        "リアス海岸",
+        "フィヨルド",
+        "ラグーン"
+      ],
+      "answerIndex": 2,
+      "explanation": "ノルウェーやチリ南部などに見られる。"
+    },
+    {
+      "id": "soc_geo05_006",
+      "unit": "social.geo.nature.landform.coast",
+      "category": "knowledge",
+      "prompt": "河口が沈水してラッパ状に広がった地形は？",
+      "choices": [
+        "砂州",
+        "エスチュアリー（三角江）",
+        "フィヨルド",
+        "三角州"
+      ],
+      "answerIndex": 1,
+      "explanation": "テムズ川やラプラタ川など。大きな港ができやすい。"
+    },
+    {
+      "id": "soc_geo05_007",
+      "unit": "social.geo.nature.landform.other",
+      "category": "knowledge",
+      "prompt": "氷河が削ってできた、断面が U 字形の谷は？",
+      "choices": [
+        "天井川",
+        "河岸段丘",
+        "V 字谷",
+        "U 字谷"
+      ],
+      "answerIndex": 3,
+      "explanation": "川が削った谷は V 字形になる。"
+    },
+    {
+      "id": "soc_geo05_008",
+      "unit": "social.geo.nature.landform.other",
+      "category": "knowledge",
+      "prompt": "石灰岩が雨水に溶かされてできる地形は？",
+      "choices": [
+        "氷河地形",
+        "砂丘",
+        "カルスト地形",
+        "火山地形"
+      ],
+      "answerIndex": 2,
+      "explanation": "鍾乳洞やドリーネが見られる。山口県の秋吉台など。"
+    },
+    {
+      "id": "soc_geo05_009",
+      "unit": "social.geo.nature.landform",
+      "category": "knowledge",
+      "prompt": "熱帯の浅くきれいな海で、サンゴの骨格が積み重なってできる地形は？",
+      "choices": [
+        "リアス海岸",
+        "サンゴ礁",
+        "砂嘴",
+        "フィヨルド"
+      ],
+      "answerIndex": 1,
+      "explanation": "裾礁・堡礁・環礁がある。"
+    },
+    {
+      "id": "soc_geo05_010",
+      "unit": "social.geo.nature.landform.river",
+      "category": "thinking",
+      "prompt": "扇状地の中央部（扇央）が畑や果樹園に使われることが多い理由は？",
+      "choices": [
+        "水はけがよく、水田に向かないから",
+        "土が粘土質だから",
+        "洪水が起きやすいから",
+        "標高が低いから"
+      ],
+      "answerIndex": 0,
+      "explanation": "川の水が地下にしみこみやすい。扇端では地下水がわき出し集落ができやすい。"
+    },
+    {
+      "id": "soc_geo05_011",
+      "unit": "social.geo.nature.landform.coast",
+      "category": "thinking",
+      "prompt": "リアス海岸で津波の被害が大きくなりやすい理由は？",
+      "choices": [
+        "川がないから",
+        "海が浅くならないから",
+        "砂浜が広いから",
+        "湾の奥にいくほど狭くなり、波が高くなるから"
+      ],
+      "answerIndex": 3,
+      "explanation": "一方で、波の穏やかな入り江は養殖や漁港に利用される。"
+    },
+    {
+      "id": "soc_geo05_012",
+      "unit": "social.geo.nature.landform",
+      "category": "thinking",
+      "prompt": "天井川ができる理由として正しいものは？",
+      "choices": [
+        "土砂が堆積して川底が上がり、堤防を高くすることをくり返したから",
+        "氷河が削ったから",
+        "川が地下を流れているから",
+        "石灰岩が溶けたから"
+      ],
+      "answerIndex": 0,
+      "explanation": "川底が周囲の土地より高くなり、下をトンネルが通ることもある。"
+    },
+    {
+      "id": "soc_geo05_013",
+      "unit": "social.geo.nature.landform.river",
+      "category": "knowledge",
+      "prompt": "扇状地の末端（扇端）に集落や水田が多い理由は？",
+      "choices": [
+        "海に近いから",
+        "地下を流れていた水がわき出るから",
+        "土地が高いから",
+        "水はけがよいから"
+      ],
+      "answerIndex": 1,
+      "explanation": "扇央では水が地下にしみこむ。"
+    },
+    {
+      "id": "soc_geo05_014",
+      "unit": "social.geo.nature.landform",
+      "category": "knowledge",
+      "prompt": "洪水のとき、川沿いに土砂が積もってできた、周りより少し高い土地は？",
+      "choices": [
+        "後背湿地",
+        "自然堤防",
+        "砂州",
+        "河岸段丘"
+      ],
+      "answerIndex": 1,
+      "explanation": "古くから集落や畑に利用されてきた。"
+    },
+    {
+      "id": "soc_geo05_015",
+      "unit": "social.geo.nature.landform.river",
+      "category": "knowledge",
+      "prompt": "自然堤防の背後にある、水はけの悪い低い土地は？",
+      "choices": [
+        "扇央",
+        "台地",
+        "後背湿地",
+        "砂丘"
+      ],
+      "answerIndex": 2,
+      "explanation": "水田に利用されることが多い。"
+    },
+    {
+      "id": "soc_geo05_016",
+      "unit": "social.geo.nature.landform",
+      "category": "knowledge",
+      "prompt": "川沿いに見られる、階段状の地形は？",
+      "choices": [
+        "カルスト",
+        "U 字谷",
+        "海岸段丘",
+        "河岸段丘"
+      ],
+      "answerIndex": 3,
+      "explanation": "土地の隆起と川の侵食がくり返されてできる。"
+    },
+    {
+      "id": "soc_geo05_017",
+      "unit": "social.geo.nature.landform",
+      "category": "knowledge",
+      "prompt": "海岸沿いに見られる、階段状の地形は？",
+      "choices": [
+        "海岸段丘",
+        "河岸段丘",
+        "リアス海岸",
+        "三角州"
+      ],
+      "answerIndex": 0,
+      "explanation": "土地の隆起によって、昔の海底や波食台が持ち上がった。"
+    },
+    {
+      "id": "soc_geo05_018",
+      "unit": "social.geo.nature.landform",
+      "category": "knowledge",
+      "prompt": "天橋立（京都府）のように、砂が細長く積もって湾の入口をふさぐように伸びた地形は？",
+      "choices": [
+        "砂嘴",
+        "三角州",
+        "砂州",
+        "陸繋島"
+      ],
+      "answerIndex": 2,
+      "explanation": "湾の中は潟湖（ラグーン）になることがある。"
+    },
+    {
+      "id": "soc_geo05_019",
+      "unit": "social.geo.nature.landform.coast",
+      "category": "knowledge",
+      "prompt": "函館山のように、砂州で陸地とつながった島を何という？",
+      "choices": [
+        "陸繋島",
+        "サンゴ礁",
+        "火山島",
+        "潟湖"
+      ],
+      "answerIndex": 0,
+      "explanation": "つないでいる砂州をトンボロという。"
+    },
+    {
+      "id": "soc_geo05_020",
+      "unit": "social.geo.nature.landform",
+      "category": "knowledge",
+      "prompt": "三保松原や野付半島のように、砂が鳥のくちばしのように曲がって伸びた地形は？",
+      "choices": [
+        "砂嘴",
+        "海岸段丘",
+        "扇状地",
+        "砂州"
+      ],
+      "answerIndex": 0,
+      "explanation": "沿岸流で運ばれた砂が積もってできる。"
+    },
+    {
+      "id": "soc_geo05_021",
+      "unit": "social.geo.nature.landform.other",
+      "category": "knowledge",
+      "prompt": "氷河が運んできた土砂が積もってできた丘を何という？",
+      "choices": [
+        "カール",
+        "ドリーネ",
+        "デルタ",
+        "モレーン"
+      ],
+      "answerIndex": 3,
+      "explanation": "カールは氷河が削ったおわん形のくぼ地。"
+    },
+    {
+      "id": "soc_geo05_022",
+      "unit": "social.geo.nature.landform.other",
+      "category": "knowledge",
+      "prompt": "石灰岩が地下水に溶かされてできた洞窟を何という？",
+      "choices": [
+        "防空壕",
+        "海食洞",
+        "溶岩洞",
+        "鍾乳洞"
+      ],
+      "answerIndex": 3,
+      "explanation": "カルスト地形の一つ。秋吉台の秋芳洞など。"
+    },
+    {
+      "id": "soc_geo05_023",
+      "unit": "social.geo.nature.landform",
+      "category": "knowledge",
+      "prompt": "台地が、畑や住宅地に使われることが多い理由は？",
+      "choices": [
+        "土地がやわらかいから",
+        "海に面しているから",
+        "低くて水が多いから",
+        "周りより高く、水が得にくいから"
+      ],
+      "answerIndex": 3,
+      "explanation": "水の得やすい谷底は水田に使われた。"
+    },
+    {
+      "id": "soc_geo05_024",
+      "unit": "social.geo.nature.landform.river",
+      "category": "thinking",
+      "prompt": "三角州に大都市が発達しやすい理由として適切なものは？",
+      "choices": [
+        "平らで広く、水運にも便利だから",
+        "森林が多いから",
+        "標高が高く安全だから",
+        "地震が起きないから"
+      ],
+      "answerIndex": 0,
+      "explanation": "一方で、洪水や高潮の危険も大きい。"
+    }
+  ]
+}

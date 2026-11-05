@@ -1,0 +1,456 @@
+{
+  "setId": "science_earth_05",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_ear05_001",
+      "unit": "science.earth.history.strata.stratum",
+      "category": "knowledge",
+      "prompt": "「地層が逆転していなければ、下の地層ほど古い」という法則は？",
+      "choices": [
+        "ケプラーの法則",
+        "地層累重の法則",
+        "大森公式",
+        "分離の法則"
+      ],
+      "answerIndex": 1,
+      "explanation": "ステノが提唱。"
+    },
+    {
+      "id": "sci_ear05_002",
+      "unit": "science.earth.history.strata.stratum",
+      "category": "knowledge",
+      "prompt": "地層が堆積したあと、いったん陸上に出て侵食され、再び沈んで堆積した上下の地層の関係は？",
+      "choices": [
+        "断層",
+        "褶曲",
+        "整合",
+        "不整合"
+      ],
+      "answerIndex": 3,
+      "explanation": "不整合面の上には、下の地層の岩石のれきをふくむ基底れき岩が見られることがある。"
+    },
+    {
+      "id": "sci_ear05_003",
+      "unit": "science.earth.history.strata.fossil",
+      "category": "knowledge",
+      "prompt": "地層ができた時代を知る手がかりになる化石を何という？",
+      "choices": [
+        "示準化石",
+        "生痕化石",
+        "示相化石",
+        "微化石だけ"
+      ],
+      "answerIndex": 0,
+      "explanation": "短い期間に広い範囲で栄えた生物の化石が適している。"
+    },
+    {
+      "id": "sci_ear05_004",
+      "unit": "science.earth.history.strata.stratum",
+      "category": "knowledge",
+      "prompt": "その地層ができた当時の環境を知る手がかりになる化石を何という？",
+      "choices": [
+        "示準化石",
+        "鍵層",
+        "示相化石",
+        "標準化石"
+      ],
+      "answerIndex": 2,
+      "explanation": "例：サンゴ（暖かくきれいな浅い海）、シジミ（河口や湖）。"
+    },
+    {
+      "id": "sci_ear05_005",
+      "unit": "science.earth.history.strata.age",
+      "category": "knowledge",
+      "prompt": "三葉虫が栄えた地質時代は？",
+      "choices": [
+        "先カンブリア時代",
+        "古生代",
+        "新生代",
+        "中生代"
+      ],
+      "answerIndex": 1,
+      "explanation": "古生代：三葉虫・フズリナ、中生代：アンモナイト・恐竜、新生代：ビカリア・マンモス。"
+    },
+    {
+      "id": "sci_ear05_006",
+      "unit": "science.earth.history.strata.age",
+      "category": "knowledge",
+      "prompt": "アンモナイトや恐竜が栄えた地質時代は？",
+      "choices": [
+        "中生代",
+        "第四紀だけ",
+        "古生代",
+        "新生代"
+      ],
+      "answerIndex": 0,
+      "explanation": "中生代の終わり（約 6600 万年前）に大量絶滅した。"
+    },
+    {
+      "id": "sci_ear05_007",
+      "unit": "science.earth.history.strata.stratum",
+      "category": "knowledge",
+      "prompt": "遠く離れた地層どうしを対比するのに役立つ、広い範囲に同時に堆積した特徴的な層を何という？",
+      "choices": [
+        "鍵層",
+        "褶曲",
+        "級化層理",
+        "不整合面"
+      ],
+      "answerIndex": 0,
+      "explanation": "火山灰層（凝灰岩）がよく使われる。"
+    },
+    {
+      "id": "sci_ear05_008",
+      "unit": "science.earth.history.strata.sediment",
+      "category": "knowledge",
+      "prompt": "粒の大きさが 2 mm 以上のれきが固まってできた堆積岩は？",
+      "choices": [
+        "れき岩",
+        "砂岩",
+        "チャート",
+        "泥岩"
+      ],
+      "answerIndex": 0,
+      "explanation": "れき（2 mm 以上）、砂（1/16〜2 mm）、泥（1/16 mm 未満）。"
+    },
+    {
+      "id": "sci_ear05_009",
+      "unit": "science.earth.history.strata.sediment",
+      "category": "knowledge",
+      "prompt": "塩酸をかけると二酸化炭素の泡が出る堆積岩は？",
+      "choices": [
+        "チャート",
+        "砂岩",
+        "石灰岩",
+        "凝灰岩"
+      ],
+      "answerIndex": 2,
+      "explanation": "主成分は炭酸カルシウム。サンゴやフズリナなどの遺骸が集まってできる。"
+    },
+    {
+      "id": "sci_ear05_010",
+      "unit": "science.earth.history.strata.sediment",
+      "category": "knowledge",
+      "prompt": "放散虫の殻などが集まってできた、非常にかたい堆積岩は？",
+      "choices": [
+        "石灰岩",
+        "チャート",
+        "凝灰岩",
+        "泥岩"
+      ],
+      "answerIndex": 1,
+      "explanation": "主成分は SiO₂。塩酸をかけても泡は出ない。"
+    },
+    {
+      "id": "sci_ear05_011",
+      "unit": "science.earth.history.strata",
+      "category": "knowledge",
+      "prompt": "火山灰などが堆積してできた岩石は？",
+      "choices": [
+        "石灰岩",
+        "凝灰岩",
+        "花こう岩",
+        "れき岩"
+      ],
+      "answerIndex": 1,
+      "explanation": "火山の噴火があったことを示す。"
+    },
+    {
+      "id": "sci_ear05_012",
+      "unit": "science.earth.history.strata",
+      "category": "knowledge",
+      "prompt": "恐竜などが大量絶滅したのはいつ？",
+      "choices": [
+        "約 6600 万年前（中生代末）",
+        "約 1 万年前",
+        "約 5 億年前",
+        "約 2 億 5000 万年前"
+      ],
+      "answerIndex": 0,
+      "explanation": "巨大隕石の衝突が主な原因と考えられている。"
+    },
+    {
+      "id": "sci_ear05_013",
+      "unit": "science.earth.history.strata",
+      "category": "calculation",
+      "prompt": "放射性元素がもとの 1/4 に減っていた。半減期が 7 億年なら、岩石ができてから何年たった？",
+      "choices": [
+        "3.5 億年",
+        "14 億年",
+        "28 億年",
+        "7 億年"
+      ],
+      "answerIndex": 1,
+      "explanation": "1/4 は半減期 2 回分。7 億 × 2 ＝ 14 億年。"
+    },
+    {
+      "id": "sci_ear05_014",
+      "unit": "science.earth.history.strata.stratum",
+      "category": "calculation",
+      "prompt": "1 年に 0.5 mm ずつ泥がたまる湖で、厚さ 1 m の地層ができるのにかかる年数は？",
+      "choices": [
+        "500 年",
+        "5000 年",
+        "200 年",
+        "2000 年"
+      ],
+      "answerIndex": 3,
+      "explanation": "1000 mm ÷ 0.5 mm ＝ 2000 年。"
+    },
+    {
+      "id": "sci_ear05_015",
+      "unit": "science.earth.history.strata.stratum",
+      "category": "thinking",
+      "prompt": "1 つの地層の中で、下から上へ粒が細かくなっている（級化層理）。わかることは？",
+      "choices": [
+        "地層の上下（細かい方が上）",
+        "地層ができた時代",
+        "当時の気温",
+        "断層の向き"
+      ],
+      "answerIndex": 0,
+      "explanation": "大きく重い粒ほど先に沈むので、下が粗く上が細かくなる。上下の判定に使える。"
+    },
+    {
+      "id": "sci_ear05_016",
+      "unit": "science.earth.history.strata.stratum",
+      "category": "thinking",
+      "prompt": "地層 A の上に不整合面があり、その上に地層 B がある。起こった順として正しいものは？",
+      "choices": [
+        "A の堆積 → 隆起・侵食 → 沈降 → B の堆積",
+        "A と B が同時に堆積 → 侵食",
+        "B の堆積 → A の堆積 → 侵食",
+        "侵食 → A の堆積 → B の堆積"
+      ],
+      "answerIndex": 0,
+      "explanation": "不整合は、陸上に出て侵食された時期があったことを示す。"
+    },
+    {
+      "id": "sci_ear05_017",
+      "unit": "science.earth.history.strata.sediment",
+      "category": "knowledge",
+      "prompt": "流水のはたらきのうち、土地をけずるはたらきは？",
+      "choices": [
+        "運搬",
+        "侵食",
+        "風化",
+        "堆積"
+      ],
+      "answerIndex": 1,
+      "explanation": "侵食・運搬・堆積が流水の三作用。"
+    },
+    {
+      "id": "sci_ear05_018",
+      "unit": "science.earth.history.strata.sediment",
+      "category": "knowledge",
+      "prompt": "岩石が温度変化や水のはたらきで、もろくくずれていく現象は？",
+      "choices": [
+        "変成",
+        "風化",
+        "侵食",
+        "堆積"
+      ],
+      "answerIndex": 1,
+      "explanation": "物理的風化と化学的風化がある。"
+    },
+    {
+      "id": "sci_ear05_019",
+      "unit": "science.earth.history.strata",
+      "category": "knowledge",
+      "prompt": "粒の大きさで分けたとき、砂の大きさは？",
+      "choices": [
+        "1 cm 以上",
+        "1/16 mm 以下",
+        "2 mm 以上",
+        "1/16 mm〜2 mm"
+      ],
+      "answerIndex": 3,
+      "explanation": "れき＞砂＞泥の順。"
+    },
+    {
+      "id": "sci_ear05_020",
+      "unit": "science.earth.history.strata",
+      "category": "knowledge",
+      "prompt": "河口から沖へ向かって堆積する粒の大きさの変化は？",
+      "choices": [
+        "変わらない",
+        "不規則",
+        "しだいに細かくなる",
+        "しだいに大きくなる"
+      ],
+      "answerIndex": 2,
+      "explanation": "大きく重い粒ほど早く沈む。"
+    },
+    {
+      "id": "sci_ear05_021",
+      "unit": "science.earth.history.strata.fossil",
+      "category": "knowledge",
+      "prompt": "サンゴの化石が見つかった地層は、どんな環境でできた？",
+      "choices": [
+        "寒い深海",
+        "砂漠",
+        "あたたかく浅いきれいな海",
+        "湖"
+      ],
+      "answerIndex": 2,
+      "explanation": "サンゴは代表的な示相化石。"
+    },
+    {
+      "id": "sci_ear05_022",
+      "unit": "science.earth.history.strata.age",
+      "category": "knowledge",
+      "prompt": "ビカリアやマンモスが示す地質時代は？",
+      "choices": [
+        "新生代",
+        "古生代",
+        "先カンブリア時代",
+        "中生代"
+      ],
+      "answerIndex": 0,
+      "explanation": "どちらも新生代の示準化石。"
+    },
+    {
+      "id": "sci_ear05_023",
+      "unit": "science.earth.history.strata.fossil",
+      "category": "knowledge",
+      "prompt": "示準化石に適した生物の条件は？",
+      "choices": [
+        "数が少ない",
+        "生存期間が長い",
+        "生存期間が短く、広い範囲に多く分布した",
+        "限られた場所にだけいた"
+      ],
+      "answerIndex": 2,
+      "explanation": "時代を細かく特定できる。"
+    },
+    {
+      "id": "sci_ear05_024",
+      "unit": "science.earth.history.strata.sediment",
+      "category": "knowledge",
+      "prompt": "泥が固まってできた堆積岩は？",
+      "choices": [
+        "泥岩",
+        "れき岩",
+        "砂岩",
+        "凝灰岩"
+      ],
+      "answerIndex": 0,
+      "explanation": "粒が 1/16 mm 以下。"
+    },
+    {
+      "id": "sci_ear05_025",
+      "unit": "science.earth.history.strata.stratum",
+      "category": "knowledge",
+      "prompt": "地層が曲がったり切れたりしていない場合、上下の関係について正しいのは？",
+      "choices": [
+        "上の地層ほど新しい",
+        "下の地層ほど新しい",
+        "色の濃い地層ほど新しい",
+        "厚い地層ほど新しい"
+      ],
+      "answerIndex": 0,
+      "explanation": "地層累重の法則。"
+    },
+    {
+      "id": "sci_ear05_026",
+      "unit": "science.earth.history.strata.stratum",
+      "category": "calculation",
+      "prompt": "1000 年に 5 cm ずつ堆積する海底で、厚さ 1 m の地層ができるのにかかる時間は？",
+      "choices": [
+        "5000 年",
+        "20 万年",
+        "2 万年",
+        "2000 年"
+      ],
+      "answerIndex": 2,
+      "explanation": "100 cm ÷ 5 cm × 1000 年。"
+    },
+    {
+      "id": "sci_ear05_027",
+      "unit": "science.earth.history.strata",
+      "category": "calculation",
+      "prompt": "半減期 5730 年の ¹⁴C が、もとの 1/2 に減っていた。およそ何年前のもの？",
+      "choices": [
+        "約 11500 年前",
+        "約 2900 年前",
+        "約 5700 年前",
+        "約 17000 年前"
+      ],
+      "answerIndex": 2,
+      "explanation": "半減期 1 回分。"
+    },
+    {
+      "id": "sci_ear05_028",
+      "unit": "science.earth.history.strata",
+      "category": "calculation",
+      "prompt": "半減期 5730 年の ¹⁴C が、もとの 1/8 に減っていた。およそ何年前のもの？",
+      "choices": [
+        "約 17000 年前",
+        "約 46000 年前",
+        "約 5700 年前",
+        "約 11500 年前"
+      ],
+      "answerIndex": 0,
+      "explanation": "半減期 3 回分：5730 × 3。"
+    },
+    {
+      "id": "sci_ear05_029",
+      "unit": "science.earth.history.strata.stratum",
+      "category": "calculation",
+      "prompt": "地層 A（下）、B、C（上）が重なり、C の上面が侵食され、その上に D が不整合に重なる。最も古いのは？",
+      "choices": [
+        "C",
+        "D",
+        "A",
+        "B"
+      ],
+      "answerIndex": 2,
+      "explanation": "下の地層ほど古い。"
+    },
+    {
+      "id": "sci_ear05_030",
+      "unit": "science.earth.history.strata.stratum",
+      "category": "calculation",
+      "prompt": "厚さ 30 m の地層が 60 万年かけてできた。平均の堆積速度は 1000 年に何 cm？",
+      "choices": [
+        "0.5 cm",
+        "20 cm",
+        "5 cm",
+        "50 cm"
+      ],
+      "answerIndex": 2,
+      "explanation": "3000 cm ÷ 600（千年）。"
+    },
+    {
+      "id": "sci_ear05_031",
+      "unit": "science.earth.history.strata.stratum",
+      "category": "thinking",
+      "prompt": "地層の中に火山灰の層があると、遠く離れた地層の比較に役立つ理由は？",
+      "choices": [
+        "短い期間に広い範囲に降り積もるので、同じ時期の目印になるから",
+        "火山灰はいつも同じ色だから",
+        "化石をふくむから",
+        "侵食されないから"
+      ],
+      "answerIndex": 0,
+      "explanation": "鍵層と呼ばれる。"
+    },
+    {
+      "id": "sci_ear05_032",
+      "unit": "science.earth.history.strata.stratum",
+      "category": "thinking",
+      "prompt": "断層が地層 A、B を切り、その上の地層 C は切っていない。断層ができた時期は？",
+      "choices": [
+        "A、B が堆積したあと、C が堆積する前",
+        "A が堆積する前",
+        "判断できない",
+        "C が堆積したあと"
+      ],
+      "answerIndex": 0,
+      "explanation": "切られている地層はそれより古い。"
+    }
+  ]
+}

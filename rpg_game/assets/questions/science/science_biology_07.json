@@ -1,0 +1,456 @@
+{
+  "setId": "science_biology_07",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_bio07_001",
+      "unit": "science.biology.ecology.vegetation.vegetation",
+      "category": "knowledge",
+      "prompt": "植生の外観（相観）を決めているのは？",
+      "choices": [
+        "いちばん小さい植物",
+        "最も多く、背の高い優占種",
+        "動物の種類",
+        "土の色"
+      ],
+      "answerIndex": 1,
+      "explanation": "優占種によって「草原」「照葉樹林」などの相観が決まる。"
+    },
+    {
+      "id": "sci_bio07_002",
+      "unit": "science.biology.ecology.vegetation.biome",
+      "category": "knowledge",
+      "prompt": "森林の内部で、高さによって層に分かれている構造を何という？",
+      "choices": [
+        "階層構造",
+        "極相",
+        "食物網",
+        "生態ピラミッド"
+      ],
+      "answerIndex": 0,
+      "explanation": "高木層・亜高木層・低木層・草本層・地表層。下の層ほど光が少ない。"
+    },
+    {
+      "id": "sci_bio07_003",
+      "unit": "science.biology.ecology.vegetation.vegetation",
+      "category": "knowledge",
+      "prompt": "光が強い環境でよく育ち、光補償点・光飽和点が高い植物を何という？",
+      "choices": [
+        "地衣類",
+        "先駆種",
+        "陽生植物",
+        "陰生植物"
+      ],
+      "answerIndex": 2,
+      "explanation": "陰生植物は光補償点が低く、弱い光でも生育できる。"
+    },
+    {
+      "id": "sci_bio07_004",
+      "unit": "science.biology.ecology.vegetation.succession",
+      "category": "knowledge",
+      "prompt": "溶岩流の跡など、土壌のない裸地から始まる遷移を何という？",
+      "choices": [
+        "一次遷移",
+        "極相",
+        "湿性遷移だけ",
+        "二次遷移"
+      ],
+      "answerIndex": 0,
+      "explanation": "土壌の形成から始まるので長い時間がかかる。"
+    },
+    {
+      "id": "sci_bio07_005",
+      "unit": "science.biology.ecology.vegetation.succession",
+      "category": "knowledge",
+      "prompt": "山火事や伐採の跡から始まる遷移を何という？",
+      "choices": [
+        "二次遷移",
+        "垂直分布",
+        "一次遷移",
+        "水平分布"
+      ],
+      "answerIndex": 0,
+      "explanation": "土壌や種子・根が残っているので、一次遷移より速く進む。"
+    },
+    {
+      "id": "sci_bio07_006",
+      "unit": "science.biology.ecology.vegetation.succession",
+      "category": "knowledge",
+      "prompt": "一次遷移の初期に裸地に侵入する生物（先駆種）の例は？",
+      "choices": [
+        "地衣類やコケ植物",
+        "ブナ",
+        "シイ・カシ",
+        "エゾマツ"
+      ],
+      "answerIndex": 0,
+      "explanation": "乾燥や貧栄養に強い。岩石の風化と土壌の形成を進める。"
+    },
+    {
+      "id": "sci_bio07_007",
+      "unit": "science.biology.ecology.vegetation.succession",
+      "category": "knowledge",
+      "prompt": "遷移が進んで、構成する種がほとんど変化しなくなった状態を何という？",
+      "choices": [
+        "極相（クライマックス）",
+        "先駆",
+        "富栄養化",
+        "ギャップ"
+      ],
+      "answerIndex": 0,
+      "explanation": "日本の多くの地域では、陰樹が優占する極相林になる。"
+    },
+    {
+      "id": "sci_bio07_008",
+      "unit": "science.biology.ecology.vegetation.biome",
+      "category": "knowledge",
+      "prompt": "日本の暖温帯に分布し、シイやカシが優占するバイオームは？",
+      "choices": [
+        "亜熱帯多雨林",
+        "夏緑樹林",
+        "針葉樹林",
+        "照葉樹林"
+      ],
+      "answerIndex": 3,
+      "explanation": "葉が厚く光沢のある常緑広葉樹の森。関東から九州の低地に多い。"
+    },
+    {
+      "id": "sci_bio07_009",
+      "unit": "science.biology.ecology.vegetation.biome",
+      "category": "knowledge",
+      "prompt": "ブナやミズナラが優占し、冬に落葉するバイオームは？",
+      "choices": [
+        "針葉樹林",
+        "照葉樹林",
+        "夏緑樹林",
+        "硬葉樹林"
+      ],
+      "answerIndex": 2,
+      "explanation": "冷温帯（東北地方や本州の山地）に分布する。"
+    },
+    {
+      "id": "sci_bio07_010",
+      "unit": "science.biology.ecology.vegetation.biome",
+      "category": "knowledge",
+      "prompt": "バイオームの種類を決める主な要因は？",
+      "choices": [
+        "土の色",
+        "標高だけ",
+        "年平均気温と年降水量",
+        "動物の数"
+      ],
+      "answerIndex": 2,
+      "explanation": "降水量が十分なら森林、少ないと草原・荒原になる。気温で森林の種類が変わる。"
+    },
+    {
+      "id": "sci_bio07_011",
+      "unit": "science.biology.ecology.vegetation.biome",
+      "category": "knowledge",
+      "prompt": "高山で、高木の森林が見られなくなる境界を何という？",
+      "choices": [
+        "階層構造",
+        "垂直分布",
+        "極相",
+        "森林限界"
+      ],
+      "answerIndex": 3,
+      "explanation": "本州中部では標高約 2500 m。その上は高山帯でハイマツや高山草原が見られる。"
+    },
+    {
+      "id": "sci_bio07_012",
+      "unit": "science.biology.ecology.vegetation.biome",
+      "category": "knowledge",
+      "prompt": "一年中高温多雨の地域に見られ、最も種類が豊富なバイオームは？",
+      "choices": [
+        "ツンドラ",
+        "熱帯多雨林",
+        "ステップ",
+        "サバンナ"
+      ],
+      "answerIndex": 1,
+      "explanation": "高木が何層にも重なり、つる植物や着生植物も多い。"
+    },
+    {
+      "id": "sci_bio07_013",
+      "unit": "science.biology.ecology.vegetation.succession",
+      "category": "knowledge",
+      "prompt": "極相林の中で、大きな木が倒れてできる明るい空間を何という？",
+      "choices": [
+        "ニッチ",
+        "林床",
+        "森林限界",
+        "ギャップ"
+      ],
+      "answerIndex": 3,
+      "explanation": "ギャップでは陽樹の芽ばえも成長でき、森林の多様性が保たれる（ギャップ更新）。"
+    },
+    {
+      "id": "sci_bio07_014",
+      "unit": "science.biology.ecology.vegetation.biome",
+      "category": "knowledge",
+      "prompt": "年降水量が少なく、イネのなかまの草本が優占する温帯の草原は？",
+      "choices": [
+        "ツンドラ",
+        "照葉樹林",
+        "サバンナ",
+        "ステップ"
+      ],
+      "answerIndex": 3,
+      "explanation": "ステップは温帯、サバンナは熱帯の草原（樹木が点在する）。"
+    },
+    {
+      "id": "sci_bio07_015",
+      "unit": "science.biology.ecology.vegetation.succession",
+      "category": "thinking",
+      "prompt": "陽樹林の林床で、陽樹の芽ばえは育たず陰樹の芽ばえが育つ理由は？",
+      "choices": [
+        "陰樹は水をあまり使わないから",
+        "林床は暗く、弱い光でも育つ陰樹の方が有利だから",
+        "陽樹は寒さに弱いから",
+        "陰樹の方が大きな種子をつくるから"
+      ],
+      "answerIndex": 1,
+      "explanation": "このため陽樹林はやがて陰樹をまじえた混交林、陰樹林へと遷移する。"
+    },
+    {
+      "id": "sci_bio07_016",
+      "unit": "science.biology.ecology.vegetation.succession",
+      "category": "thinking",
+      "prompt": "一次遷移の順序として正しいものは？",
+      "choices": [
+        "草原 → 裸地 → 低木林 → 陽樹林",
+        "裸地 → 陰樹林 → 陽樹林 → 草原",
+        "裸地 → 草原 → 低木林 → 陽樹林 → 混交林 → 陰樹林",
+        "陰樹林 → 陽樹林 → 低木林 → 草原"
+      ],
+      "answerIndex": 2,
+      "explanation": "土壌の発達と、林床の光の弱まりにともなって、優占する植物が入れかわる。"
+    },
+    {
+      "id": "sci_bio07_017",
+      "unit": "science.biology.ecology.vegetation.vegetation",
+      "category": "knowledge",
+      "prompt": "陰生植物の特徴は？",
+      "choices": [
+        "光補償点が低く、弱い光でも生育できる",
+        "光補償点が高い",
+        "光合成をしない",
+        "強い光でないと生育できない"
+      ],
+      "answerIndex": 0,
+      "explanation": "林床など暗い場所で生育できる。"
+    },
+    {
+      "id": "sci_bio07_018",
+      "unit": "science.biology.ecology.vegetation.vegetation",
+      "category": "knowledge",
+      "prompt": "光補償点とは？",
+      "choices": [
+        "光合成速度と呼吸速度が等しくなる光の強さ",
+        "光合成速度が最大になる光の強さ",
+        "光合成が始まる温度",
+        "呼吸が止まる光の強さ"
+      ],
+      "answerIndex": 0,
+      "explanation": "これより弱い光では、有機物が減っていく。"
+    },
+    {
+      "id": "sci_bio07_019",
+      "unit": "science.biology.ecology.vegetation.vegetation",
+      "category": "knowledge",
+      "prompt": "光飽和点とは？",
+      "choices": [
+        "それ以上光を強くしても、光合成速度が増えなくなる光の強さ",
+        "葉が枯れる光の強さ",
+        "呼吸速度が最大になる光の強さ",
+        "光合成速度が0になる光の強さ"
+      ],
+      "answerIndex": 0,
+      "explanation": "陽生植物は光飽和点が高い。"
+    },
+    {
+      "id": "sci_bio07_020",
+      "unit": "science.biology.ecology.vegetation",
+      "category": "knowledge",
+      "prompt": "陽樹の例は？",
+      "choices": [
+        "アカマツ",
+        "ブナ",
+        "タブノキ",
+        "スダジイ"
+      ],
+      "answerIndex": 0,
+      "explanation": "陽樹は明るい場所で速く成長する。"
+    },
+    {
+      "id": "sci_bio07_021",
+      "unit": "science.biology.ecology.vegetation",
+      "category": "knowledge",
+      "prompt": "陰樹の例は？",
+      "choices": [
+        "アカマツ",
+        "シラカンバ",
+        "コナラ",
+        "スダジイ"
+      ],
+      "answerIndex": 3,
+      "explanation": "陰樹の芽ばえは暗い林床でも育つ。"
+    },
+    {
+      "id": "sci_bio07_022",
+      "unit": "science.biology.ecology.vegetation.succession",
+      "category": "knowledge",
+      "prompt": "湖や沼から始まる遷移を何という？",
+      "choices": [
+        "極相",
+        "湿性遷移",
+        "二次遷移",
+        "乾性遷移"
+      ],
+      "answerIndex": 1,
+      "explanation": "土砂がたまって湿原、草原、森林へと移り変わる。"
+    },
+    {
+      "id": "sci_bio07_023",
+      "unit": "science.biology.ecology.vegetation.biome",
+      "category": "knowledge",
+      "prompt": "エゾマツやトドマツが優占する、亜寒帯のバイオームは？",
+      "choices": [
+        "硬葉樹林",
+        "照葉樹林",
+        "針葉樹林",
+        "夏緑樹林"
+      ],
+      "answerIndex": 2,
+      "explanation": "北海道の東北部などに見られる。"
+    },
+    {
+      "id": "sci_bio07_024",
+      "unit": "science.biology.ecology.vegetation.biome",
+      "category": "knowledge",
+      "prompt": "本州中部の垂直分布で、山地帯（標高およそ700〜1700 m）のバイオームは？",
+      "choices": [
+        "高山草原",
+        "夏緑樹林",
+        "針葉樹林",
+        "照葉樹林"
+      ],
+      "answerIndex": 1,
+      "explanation": "ブナなどが優占する。"
+    },
+    {
+      "id": "sci_bio07_025",
+      "unit": "science.biology.ecology.vegetation.biome",
+      "category": "knowledge",
+      "prompt": "沖縄や小笠原などに見られるバイオームは？",
+      "choices": [
+        "亜熱帯多雨林",
+        "ステップ",
+        "夏緑樹林",
+        "ツンドラ"
+      ],
+      "answerIndex": 0,
+      "explanation": "ガジュマルやヘゴなどが見られる。"
+    },
+    {
+      "id": "sci_bio07_026",
+      "unit": "science.biology.ecology.vegetation.biome",
+      "category": "knowledge",
+      "prompt": "年降水量がきわめて少なく、植物がまばらなバイオームは？",
+      "choices": [
+        "砂漠",
+        "照葉樹林",
+        "サバンナ",
+        "熱帯多雨林"
+      ],
+      "answerIndex": 0,
+      "explanation": "サボテンなど乾燥に強い植物が見られる。"
+    },
+    {
+      "id": "sci_bio07_027",
+      "unit": "science.biology.ecology.vegetation.biome",
+      "category": "knowledge",
+      "prompt": "雨季と乾季がある熱帯で、乾季に落葉する森林は？",
+      "choices": [
+        "夏緑樹林",
+        "照葉樹林",
+        "針葉樹林",
+        "雨緑樹林"
+      ],
+      "answerIndex": 3,
+      "explanation": "チークなどが代表例。"
+    },
+    {
+      "id": "sci_bio07_028",
+      "unit": "science.biology.ecology.vegetation.biome",
+      "category": "knowledge",
+      "prompt": "夏に乾燥し、冬に雨が多い地域に見られ、オリーブなどが優占する森林は？",
+      "choices": [
+        "硬葉樹林",
+        "照葉樹林",
+        "針葉樹林",
+        "雨緑樹林"
+      ],
+      "answerIndex": 0,
+      "explanation": "地中海沿岸などに見られる。"
+    },
+    {
+      "id": "sci_bio07_029",
+      "unit": "science.biology.ecology.vegetation.biome",
+      "category": "knowledge",
+      "prompt": "熱帯の草原に樹木がまばらに生えるバイオームは？",
+      "choices": [
+        "ステップ",
+        "ツンドラ",
+        "砂漠",
+        "サバンナ"
+      ],
+      "answerIndex": 3,
+      "explanation": "温帯の草原はステップ。"
+    },
+    {
+      "id": "sci_bio07_030",
+      "unit": "science.biology.ecology.vegetation.biome",
+      "category": "knowledge",
+      "prompt": "寒帯で、低温のためコケ植物や地衣類が中心となるバイオームは？",
+      "choices": [
+        "ツンドラ",
+        "サバンナ",
+        "針葉樹林",
+        "ステップ"
+      ],
+      "answerIndex": 0,
+      "explanation": "地下に永久凍土がある。"
+    },
+    {
+      "id": "sci_bio07_031",
+      "unit": "science.biology.ecology.vegetation",
+      "category": "calculation",
+      "prompt": "ある光の強さで、見かけの光合成速度が8、呼吸速度が2だった。光合成速度は？",
+      "choices": [
+        "16",
+        "6",
+        "10",
+        "4"
+      ],
+      "answerIndex": 2,
+      "explanation": "光合成速度＝見かけの光合成速度＋呼吸速度。"
+    },
+    {
+      "id": "sci_bio07_032",
+      "unit": "science.biology.ecology.vegetation.biome",
+      "category": "thinking",
+      "prompt": "日本の大部分で、極相のバイオームが森林になる理由は？",
+      "choices": [
+        "年降水量が十分に多いから",
+        "土壌がないから",
+        "年平均気温が低いから",
+        "風が強いから"
+      ],
+      "answerIndex": 0,
+      "explanation": "降水量が少ない地域では草原や砂漠になる。"
+    }
+  ]
+}

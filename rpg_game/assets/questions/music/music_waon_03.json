@@ -1,0 +1,232 @@
+{
+  "setId": "music_waon_03",
+  "worldId": "music",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mus_waon03_001",
+      "unit": "music.theory.harmony.degree.major",
+      "category": "knowledge",
+      "prompt": "長調で、長三和音になる音階の度は？",
+      "choices": [
+        "Ⅳ・Ⅵ・Ⅶ",
+        "Ⅰ・Ⅳ・Ⅴ",
+        "Ⅱ・Ⅲ・Ⅵ",
+        "Ⅰ・Ⅲ・Ⅴ"
+      ],
+      "answerIndex": 1,
+      "explanation": "長調の主要三和音は長三和音。"
+    },
+    {
+      "id": "mus_waon03_002",
+      "unit": "music.theory.harmony.degree.major",
+      "category": "knowledge",
+      "prompt": "長調で、短三和音になる音階の度は？",
+      "choices": [
+        "Ⅰ・Ⅳ・Ⅴ",
+        "Ⅲ・Ⅴ・Ⅶ",
+        "Ⅱ・Ⅳ・Ⅶ",
+        "Ⅱ・Ⅲ・Ⅵ"
+      ],
+      "answerIndex": 3,
+      "explanation": "ハ長調なら D・F・A、E・G・H、A・C・E。"
+    },
+    {
+      "id": "mus_waon03_003",
+      "unit": "music.theory.harmony.degree.major",
+      "category": "knowledge",
+      "prompt": "長調で、減三和音になるのは何度の和音？",
+      "choices": [
+        "Ⅱ",
+        "Ⅲ",
+        "Ⅶ",
+        "Ⅴ"
+      ],
+      "answerIndex": 2,
+      "explanation": "ハ長調の Ⅶ は H・D・F で減三和音。"
+    },
+    {
+      "id": "mus_waon03_004",
+      "unit": "music.theory.harmony.degree",
+      "category": "knowledge",
+      "prompt": "Ⅰ・Ⅳ・Ⅴの和音を、それぞれ何とよぶ？",
+      "choices": [
+        "属和音・主和音・下属和音",
+        "主和音・属和音・下属和音",
+        "主和音・下属和音・属和音",
+        "下属和音・属和音・主和音"
+      ],
+      "answerIndex": 2,
+      "explanation": "Ⅰ＝主和音、Ⅳ＝下属和音、Ⅴ＝属和音。"
+    },
+    {
+      "id": "mus_waon03_005",
+      "unit": "music.theory.harmony.degree",
+      "category": "calculation",
+      "prompt": "C dur のⅠの和音の種類は？",
+      "choices": [
+        "短三和音",
+        "減三和音",
+        "増三和音",
+        "長三和音"
+      ],
+      "answerIndex": 3,
+      "explanation": "C dur のⅠは C・E・G で長三和音。"
+    },
+    {
+      "id": "mus_waon03_006",
+      "unit": "music.theory.harmony.degree",
+      "category": "calculation",
+      "prompt": "G dur のⅣの和音の構成音は？",
+      "choices": [
+        "D・Fis・A",
+        "H・D・Fis",
+        "C・Es・G",
+        "C・E・G"
+      ],
+      "answerIndex": 3,
+      "explanation": "第Ⅳ音の上に、音階の音で3度ずつ積む。"
+    },
+    {
+      "id": "mus_waon03_007",
+      "unit": "music.theory.harmony.degree",
+      "category": "calculation",
+      "prompt": "D dur のⅥの和音の種類は？",
+      "choices": [
+        "長三和音",
+        "短三和音",
+        "増三和音",
+        "減三和音"
+      ],
+      "answerIndex": 1,
+      "explanation": "D dur のⅥは H・D・Fis で短三和音。"
+    },
+    {
+      "id": "mus_waon03_008",
+      "unit": "music.theory.harmony.degree",
+      "category": "calculation",
+      "prompt": "F dur のⅡの和音の構成音は？",
+      "choices": [
+        "G・B・D",
+        "F・A・C",
+        "A・C・E",
+        "G・H・D"
+      ],
+      "answerIndex": 0,
+      "explanation": "第Ⅱ音の上に、音階の音で3度ずつ積む。"
+    },
+    {
+      "id": "mus_waon03_009",
+      "unit": "music.theory.harmony.degree",
+      "category": "calculation",
+      "prompt": "B dur のⅦの和音の種類は？",
+      "choices": [
+        "増三和音",
+        "減三和音",
+        "長三和音",
+        "短三和音"
+      ],
+      "answerIndex": 1,
+      "explanation": "B dur のⅦは A・C・Es で減三和音。"
+    },
+    {
+      "id": "mus_waon03_010",
+      "unit": "music.theory.harmony.degree",
+      "category": "calculation",
+      "prompt": "A dur のⅢの和音の構成音は？",
+      "choices": [
+        "D・Fis・A",
+        "Cis・E・Gis",
+        "Cis・Eis・Gis",
+        "H・D・Fis"
+      ],
+      "answerIndex": 1,
+      "explanation": "第Ⅲ音の上に、音階の音で3度ずつ積む。"
+    },
+    {
+      "id": "mus_waon03_011",
+      "unit": "music.theory.harmony.degree",
+      "category": "calculation",
+      "prompt": "Es dur のⅤの和音の種類は？",
+      "choices": [
+        "減三和音",
+        "短三和音",
+        "長三和音",
+        "増三和音"
+      ],
+      "answerIndex": 2,
+      "explanation": "Es dur のⅤは B・D・F で長三和音。"
+    },
+    {
+      "id": "mus_waon03_012",
+      "unit": "music.theory.harmony.degree",
+      "category": "calculation",
+      "prompt": "E dur のⅥの和音の構成音は？",
+      "choices": [
+        "Cis・E・Gis",
+        "Cis・Eis・Gis",
+        "Dis・Fis・A",
+        "H・Dis・Fis"
+      ],
+      "answerIndex": 0,
+      "explanation": "第Ⅵ音の上に、音階の音で3度ずつ積む。"
+    },
+    {
+      "id": "mus_waon03_013",
+      "unit": "music.theory.harmony.degree",
+      "category": "calculation",
+      "prompt": "C dur のⅢの和音の種類は？",
+      "choices": [
+        "短三和音",
+        "減三和音",
+        "増三和音",
+        "長三和音"
+      ],
+      "answerIndex": 0,
+      "explanation": "C dur のⅢは E・G・H で短三和音。"
+    },
+    {
+      "id": "mus_waon03_014",
+      "unit": "music.theory.harmony.degree",
+      "category": "calculation",
+      "prompt": "G dur のⅡの和音の構成音は？",
+      "choices": [
+        "G・H・D",
+        "A・Cis・E",
+        "H・D・Fis",
+        "A・C・E"
+      ],
+      "answerIndex": 3,
+      "explanation": "第Ⅱ音の上に、音階の音で3度ずつ積む。"
+    },
+    {
+      "id": "mus_waon03_015",
+      "unit": "music.theory.harmony.degree",
+      "category": "calculation",
+      "prompt": "F dur のⅦの和音の種類は？",
+      "choices": [
+        "増三和音",
+        "長三和音",
+        "短三和音",
+        "減三和音"
+      ],
+      "answerIndex": 3,
+      "explanation": "F dur のⅦは E・G・B で減三和音。"
+    },
+    {
+      "id": "mus_waon03_016",
+      "unit": "music.theory.harmony.degree",
+      "category": "calculation",
+      "prompt": "D dur のⅤの和音の構成音は？",
+      "choices": [
+        "H・D・Fis",
+        "G・H・D",
+        "A・Cis・E",
+        "A・C・E"
+      ],
+      "answerIndex": 2,
+      "explanation": "第Ⅴ音の上に、音階の音で3度ずつ積む。"
+    }
+  ]
+}

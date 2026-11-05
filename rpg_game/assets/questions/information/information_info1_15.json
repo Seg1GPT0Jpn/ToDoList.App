@@ -1,0 +1,351 @@
+{
+  "setId": "information_info1_15",
+  "worldId": "information",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "inf_info115_001",
+      "unit": "information.info.programming.algorithm.basic",
+      "category": "knowledge",
+      "prompt": "問題を解決するための手順を何という？",
+      "choices": [
+        "ハードウェア",
+        "アルゴリズム",
+        "インタフェース",
+        "プロトコル"
+      ],
+      "answerIndex": 1,
+      "explanation": "プログラムは、アルゴリズムをコンピュータが実行できる形に書いたもの。"
+    },
+    {
+      "id": "inf_info115_002",
+      "unit": "information.info.programming.algorithm.basic",
+      "category": "knowledge",
+      "prompt": "アルゴリズムの3つの基本構造は？",
+      "choices": [
+        "送信・受信・中継",
+        "順次・分岐・反復",
+        "暗号・復号・認証",
+        "入力・出力・記憶"
+      ],
+      "answerIndex": 1,
+      "explanation": "どんなアルゴリズムも、この3つの組み合わせで表せる。"
+    },
+    {
+      "id": "inf_info115_003",
+      "unit": "information.info.programming.algorithm.basic",
+      "category": "knowledge",
+      "prompt": "フローチャートで、条件によって処理を分ける記号の形は？",
+      "choices": [
+        "ひし形",
+        "長方形",
+        "角の丸い長方形",
+        "円"
+      ],
+      "answerIndex": 0,
+      "explanation": "長方形は処理、角の丸い長方形（端子）は開始・終了。"
+    },
+    {
+      "id": "inf_info115_004",
+      "unit": "information.info.programming.program.variable",
+      "category": "knowledge",
+      "prompt": "プログラムで、値を入れておく名前のついた箱を何という？",
+      "choices": [
+        "変数",
+        "関数",
+        "配列だけ",
+        "定数だけ"
+      ],
+      "answerIndex": 0,
+      "explanation": "値を入れることを代入という。"
+    },
+    {
+      "id": "inf_info115_005",
+      "unit": "information.info.programming.program.function",
+      "category": "knowledge",
+      "prompt": "関数を呼び出すときに渡す値を何という？",
+      "choices": [
+        "添字",
+        "戻り値",
+        "引数",
+        "変数名"
+      ],
+      "answerIndex": 2,
+      "explanation": "関数が処理の結果として返す値が戻り値。"
+    },
+    {
+      "id": "inf_info115_006",
+      "unit": "information.info.programming.program",
+      "category": "knowledge",
+      "prompt": "複数の値をまとめて、番号（添字）で取り出せるようにしたものは？",
+      "choices": [
+        "変数",
+        "関数",
+        "配列（リスト）",
+        "条件分岐"
+      ],
+      "answerIndex": 2,
+      "explanation": "多くの言語で、添字は 0 から始まる。"
+    },
+    {
+      "id": "inf_info115_007",
+      "unit": "information.info.programming.program",
+      "category": "knowledge",
+      "prompt": "プログラムの誤りを見つけて直す作業を何という？",
+      "choices": [
+        "バックアップ",
+        "エンコード",
+        "コンパイル",
+        "デバッグ"
+      ],
+      "answerIndex": 3,
+      "explanation": "誤りのことをバグという。"
+    },
+    {
+      "id": "inf_info115_008",
+      "unit": "information.info.programming.algorithm.basic",
+      "category": "calculation",
+      "prompt": "次のプログラムを実行した後の x の値は？",
+      "sentence": "x = 3\nx = x + 4\nx = x * 2",
+      "choices": [
+        "7",
+        "14",
+        "10",
+        "11"
+      ],
+      "answerIndex": 1,
+      "explanation": "x ＝ 3 → 3 ＋ 4 ＝ 7 → 7 × 2 ＝ 14。上から順に実行する（順次）。"
+    },
+    {
+      "id": "inf_info115_009",
+      "unit": "information.info.programming.program",
+      "category": "calculation",
+      "prompt": "次のプログラムを実行した後の s の値は？",
+      "sentence": "s = 0\nfor i in range(1, 6):\n    s = s + i",
+      "choices": [
+        "21",
+        "5",
+        "10",
+        "15"
+      ],
+      "answerIndex": 3,
+      "explanation": "i が 1〜5 の間くり返し、1 ＋ 2 ＋ 3 ＋ 4 ＋ 5 ＝ 15。range(1, 6) は 6 をふくまない。"
+    },
+    {
+      "id": "inf_info115_010",
+      "unit": "information.info.programming.program",
+      "category": "calculation",
+      "prompt": "a = [5, 8, 2] のとき、a[1] の値は？",
+      "choices": [
+        "エラーになる",
+        "2",
+        "5",
+        "8"
+      ],
+      "answerIndex": 3,
+      "explanation": "添字は 0 から始まるので、a[0] ＝ 5、a[1] ＝ 8、a[2] ＝ 2。"
+    },
+    {
+      "id": "inf_info115_011",
+      "unit": "information.info.programming.program.trace",
+      "category": "calculation",
+      "prompt": "次のプログラムで表示されるのは？",
+      "sentence": "x = 7\nif x % 2 == 0:\n    print(\"even\")\nelse:\n    print(\"odd\")",
+      "choices": [
+        "何も表示されない",
+        "even",
+        "odd",
+        "7"
+      ],
+      "answerIndex": 2,
+      "explanation": "7 % 2 は 7 を 2 で割った余りで 1。0 ではないので else が実行される。"
+    },
+    {
+      "id": "inf_info115_012",
+      "unit": "information.info.programming.algorithm.basic",
+      "category": "thinking",
+      "prompt": "同じ処理を 100 回書くかわりに、くり返し（反復）を使う利点は？",
+      "choices": [
+        "バグが必ず 0 になる",
+        "プログラムが短く分かりやすくなり、直すときも 1 か所ですむ",
+        "変数が使えなくなる",
+        "必ず実行が遅くなる"
+      ],
+      "answerIndex": 1,
+      "explanation": "回数を変えたいときも、条件を 1 か所変えるだけですむ。"
+    },
+    {
+      "id": "inf_info115_013",
+      "unit": "information.info.programming.algorithm.basic",
+      "category": "knowledge",
+      "prompt": "アルゴリズムの基本構造のうち、上から順に処理を行うものは？",
+      "choices": [
+        "順次構造",
+        "反復構造",
+        "再帰構造",
+        "分岐構造"
+      ],
+      "answerIndex": 0,
+      "explanation": "順次・分岐（選択）・反復（繰り返し）。"
+    },
+    {
+      "id": "inf_info115_014",
+      "unit": "information.info.programming.algorithm.basic",
+      "category": "knowledge",
+      "prompt": "条件によって処理を分けるときに使う命令は？",
+      "choices": [
+        "import 文",
+        "print 文",
+        "if 文",
+        "for 文"
+      ],
+      "answerIndex": 2,
+      "explanation": "分岐構造。"
+    },
+    {
+      "id": "inf_info115_015",
+      "unit": "information.info.programming.algorithm.basic",
+      "category": "knowledge",
+      "prompt": "決められた回数や条件の間、処理をくり返すときに使う命令は？",
+      "choices": [
+        "for 文・while 文",
+        "return 文",
+        "def 文",
+        "if 文"
+      ],
+      "answerIndex": 0,
+      "explanation": "反復構造。"
+    },
+    {
+      "id": "inf_info115_016",
+      "unit": "information.info.programming.program",
+      "category": "knowledge",
+      "prompt": "まとまった処理に名前をつけて、何度も呼び出せるようにしたものは？",
+      "choices": [
+        "演算子",
+        "変数",
+        "配列",
+        "関数"
+      ],
+      "answerIndex": 3,
+      "explanation": "プログラムを読みやすく、再利用しやすくする。"
+    },
+    {
+      "id": "inf_info115_017",
+      "unit": "information.info.programming.program.function",
+      "category": "knowledge",
+      "prompt": "関数が処理の結果として呼び出し元に返す値は？",
+      "choices": [
+        "添字",
+        "定数",
+        "戻り値（返り値）",
+        "引数"
+      ],
+      "answerIndex": 2,
+      "explanation": "return で返す。"
+    },
+    {
+      "id": "inf_info115_018",
+      "unit": "information.info.programming.program",
+      "category": "knowledge",
+      "prompt": "プログラムの誤り（バグ）のうち、文法のまちがいで実行できないものは？",
+      "choices": [
+        "文法エラー（構文エラー）",
+        "実行時エラーだけ",
+        "デバッグ",
+        "論理エラー"
+      ],
+      "answerIndex": 0,
+      "explanation": "論理エラーは、動くが結果がまちがっている。"
+    },
+    {
+      "id": "inf_info115_019",
+      "unit": "information.info.programming.program",
+      "category": "calculation",
+      "prompt": "次のプログラムを実行した後の x の値は？",
+      "sentence": "x = 3\nx = x + 5\nx = x + 3",
+      "choices": [
+        "15",
+        "5",
+        "11",
+        "8"
+      ],
+      "answerIndex": 2,
+      "explanation": "3 に 5 を足して 8、さらに 3 を足して 11。"
+    },
+    {
+      "id": "inf_info115_020",
+      "unit": "information.info.programming.program",
+      "category": "calculation",
+      "prompt": "次のプログラムを実行した後の s の値は？",
+      "sentence": "s = 0\nfor i in range(5):\n    s = s + i",
+      "choices": [
+        "10",
+        "4",
+        "15",
+        "6"
+      ],
+      "answerIndex": 0,
+      "explanation": "0+1+2+3+4。range(5) は 0〜4。"
+    },
+    {
+      "id": "inf_info115_021",
+      "unit": "information.info.programming.program.trace",
+      "category": "calculation",
+      "prompt": "次のプログラムで表示されるのは？",
+      "sentence": "x = 10\nif x % 2 == 0:\n    print(\"偶数\")\nelse:\n    print(\"奇数\")",
+      "choices": [
+        "偶数",
+        "奇数",
+        "10",
+        "エラー"
+      ],
+      "answerIndex": 0,
+      "explanation": "10 を 2 で割った余りは 0。"
+    },
+    {
+      "id": "inf_info115_022",
+      "unit": "information.info.programming.program",
+      "category": "calculation",
+      "prompt": "a = [3, 6, 9, 12] のとき、a[2] の値は？（添字は 0 から）",
+      "choices": [
+        "12",
+        "6",
+        "3",
+        "9"
+      ],
+      "answerIndex": 3,
+      "explanation": "a[0] が 3、a[1] が 6、a[2] が 9。"
+    },
+    {
+      "id": "inf_info115_023",
+      "unit": "information.info.programming.program",
+      "category": "calculation",
+      "prompt": "次のプログラムを実行した後の n の値は？",
+      "sentence": "x = 1\nn = 0\nwhile x < 16:\n    x = x * 2\n    n = n + 1",
+      "choices": [
+        "4",
+        "16",
+        "3",
+        "5"
+      ],
+      "answerIndex": 0,
+      "explanation": "1, 2, 4, 8, 16 と 2 倍にし、16 以上になるまでくり返す回数。"
+    },
+    {
+      "id": "inf_info115_024",
+      "unit": "information.info.programming.program.variable",
+      "category": "thinking",
+      "prompt": "プログラムで、同じ値を何度も書くかわりに変数を使う利点は？",
+      "choices": [
+        "実行が必ず遅くなるから",
+        "変数は使ってはいけないから",
+        "値を変えたいとき 1 か所の変更ですみ、まちがいも減るから",
+        "プログラムが長くなるから"
+      ],
+      "answerIndex": 2,
+      "explanation": "保守しやすいプログラムになる。"
+    }
+  ]
+}

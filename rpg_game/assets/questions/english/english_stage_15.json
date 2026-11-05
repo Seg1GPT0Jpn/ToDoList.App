@@ -1,0 +1,356 @@
+{
+  "setId": "english_stage_15",
+  "worldId": "english",
+  "origin": "original",
+  "version": 3,
+  "questions": [
+    {
+      "id": "en15_001",
+      "unit": "english.eng.vocab.advanced.meaning",
+      "category": "meaning",
+      "prompt": "「prevail」の意味は？",
+      "choices": [
+        "妨げる",
+        "悪化する",
+        "広く行き渡る",
+        "身につける"
+      ],
+      "answerIndex": 2,
+      "explanation": "prevail は「広く行き渡る」。"
+    },
+    {
+      "id": "en15_002",
+      "unit": "english.eng.vocab.advanced.meaning",
+      "category": "meaning",
+      "prompt": "「diminish」の意味は？",
+      "choices": [
+        "適切な",
+        "避けられない",
+        "減少する",
+        "埋め合わせる"
+      ],
+      "answerIndex": 2,
+      "explanation": "diminish は「減少する」。"
+    },
+    {
+      "id": "en15_003",
+      "unit": "english.eng.vocab.advanced.meaning",
+      "category": "meaning",
+      "prompt": "「fluctuate」の意味は？",
+      "choices": [
+        "結局は",
+        "重要な",
+        "変動する",
+        "現代の"
+      ],
+      "answerIndex": 2,
+      "explanation": "fluctuate は「変動する」。"
+    },
+    {
+      "id": "en15_004",
+      "unit": "english.eng.vocab.advanced.meaning",
+      "category": "meaning",
+      "prompt": "「arbitrary」の意味は？",
+      "choices": [
+        "深い",
+        "恣意的な",
+        "見捨てる",
+        "手の込んだ"
+      ],
+      "answerIndex": 1,
+      "explanation": "arbitrary は「恣意的な」。"
+    },
+    {
+      "id": "en15_005",
+      "unit": "english.eng.vocab.advanced.meaning",
+      "category": "meaning",
+      "prompt": "「tangible」の意味は？",
+      "choices": [
+        "具体的な",
+        "細心の注意を払った",
+        "深い",
+        "変動する"
+      ],
+      "answerIndex": 0,
+      "explanation": "tangible は「具体的な」。"
+    },
+    {
+      "id": "en15_006",
+      "unit": "english.eng.vocab.advanced.meaning",
+      "category": "meaning",
+      "prompt": "「coherent」の意味は？",
+      "choices": [
+        "有害な",
+        "綿密に調べる",
+        "手の込んだ",
+        "首尾一貫した"
+      ],
+      "answerIndex": 3,
+      "explanation": "coherent は「首尾一貫した」。"
+    },
+    {
+      "id": "en15_007",
+      "unit": "english.eng.vocab.advanced.meaning",
+      "category": "meaning",
+      "prompt": "「feasible」の意味は？",
+      "choices": [
+        "本来備わっている",
+        "予想する",
+        "手の込んだ",
+        "実行可能な"
+      ],
+      "answerIndex": 3,
+      "explanation": "feasible は「実行可能な」。"
+    },
+    {
+      "id": "en15_008",
+      "unit": "english.eng.vocab.advanced.meaning",
+      "category": "meaning",
+      "prompt": "「detrimental」の意味は？",
+      "choices": [
+        "現代の",
+        "有害な",
+        "ためらう",
+        "実行可能な"
+      ],
+      "answerIndex": 1,
+      "explanation": "detrimental は「有害な」。"
+    },
+    {
+      "id": "en15_009",
+      "unit": "english.eng.vocab.idiom.idiom",
+      "category": "meaning",
+      "prompt": "「instead of ～」の意味は？",
+      "choices": [
+        "～の代わりに",
+        "～をあきらめる",
+        "～で有名だ",
+        "～にもかかわらず"
+      ],
+      "answerIndex": 0,
+      "explanation": "instead of ～ は「～の代わりに」。"
+    },
+    {
+      "id": "en15_010",
+      "unit": "english.eng.vocab.advanced.meaning",
+      "category": "meaning",
+      "prompt": "「at least」の意味は？",
+      "choices": [
+        "間に合って",
+        "偶然に",
+        "すぐに",
+        "少なくとも"
+      ],
+      "answerIndex": 3,
+      "explanation": "at least は「少なくとも」。"
+    },
+    {
+      "id": "en15_011",
+      "unit": "english.eng.vocab.basic.pos",
+      "category": "partOfSpeech",
+      "prompt": "次のうち「名詞」はどれ？",
+      "choices": [
+        "true",
+        "truly",
+        "truth",
+        "untrue"
+      ],
+      "answerIndex": 2,
+      "explanation": "true の名詞形は truth（真実）。"
+    },
+    {
+      "id": "en15_012",
+      "unit": "english.eng.vocab.basic.pos",
+      "category": "partOfSpeech",
+      "prompt": "次のうち「形容詞」はどれ？",
+      "choices": [
+        "silence",
+        "silent",
+        "silently",
+        "silencer"
+      ],
+      "answerIndex": 1,
+      "explanation": "-ent は形容詞を作る語尾。silent = 静かな。"
+    },
+    {
+      "id": "en15_013",
+      "unit": "english.eng.structure.complex",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I don't know (   ) he will come tomorrow.",
+      "choices": [
+        "whether",
+        "that",
+        "what",
+        "which"
+      ],
+      "answerIndex": 0,
+      "explanation": "「来るかどうか」は whether（= if）。what は後ろに欠けている要素が必要。"
+    },
+    {
+      "id": "en15_014",
+      "unit": "english.eng.structure.complex",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Do you know where (   )?",
+      "choices": [
+        "does he live",
+        "he lives",
+        "lives he",
+        "he living"
+      ],
+      "answerIndex": 1,
+      "explanation": "文の中に入った疑問文（間接疑問）は、疑問詞の後ろが「主語 + 動詞」の語順になる。"
+    },
+    {
+      "id": "en15_015",
+      "unit": "english.eng.structure.complex",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "There is no evidence (   ) he stole the money.",
+      "choices": [
+        "which",
+        "what",
+        "whether",
+        "that"
+      ],
+      "answerIndex": 3,
+      "explanation": "evidence の内容を説明する同格の that。後ろは完全な文になっている。"
+    },
+    {
+      "id": "en15_016",
+      "unit": "english.eng.structure.complex.nested",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "It is essential that every student (   ) the rules.",
+      "choices": [
+        "follow",
+        "follows",
+        "followed",
+        "following"
+      ],
+      "answerIndex": 0,
+      "explanation": "essential や necessary の後の that 節では、動詞は原形（should の省略）になる。"
+    },
+    {
+      "id": "en15_017",
+      "unit": "english.eng.structure.complex.subject",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "(   ) is known to everyone that smoking is bad.",
+      "choices": [
+        "That",
+        "It",
+        "What",
+        "This"
+      ],
+      "answerIndex": 1,
+      "explanation": "It は形式主語。本当の主語は that 以下。"
+    },
+    {
+      "id": "en15_018",
+      "unit": "english.eng.structure.complex",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The reason he was absent is (   ) he was sick.",
+      "choices": [
+        "because",
+        "that",
+        "why",
+        "what"
+      ],
+      "answerIndex": 1,
+      "explanation": "The reason is that 〜 で「理由は〜ということだ」。"
+    },
+    {
+      "id": "en15_019",
+      "unit": "english.eng.structure.complex",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "No matter (   ) hard it is, I'll finish it.",
+      "choices": [
+        "what",
+        "how",
+        "which",
+        "when"
+      ],
+      "answerIndex": 1,
+      "explanation": "no matter how + 形容詞 で「どんなに〜でも」（= however）。"
+    },
+    {
+      "id": "en15_020",
+      "unit": "english.eng.structure.complex",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Whether you like it (   ) not, you must go.",
+      "choices": [
+        "and",
+        "or",
+        "nor",
+        "but"
+      ],
+      "answerIndex": 1,
+      "explanation": "whether A or not で「A であろうとなかろうと」。"
+    },
+    {
+      "id": "en15_021",
+      "unit": "english.eng.structure.complex",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "It is not what you say (   ) what you do that matters.",
+      "choices": [
+        "and",
+        "but",
+        "or",
+        "than"
+      ],
+      "answerIndex": 1,
+      "explanation": "It is not A but B that … で「…なのは A ではなく B だ」（強調構文）。"
+    },
+    {
+      "id": "en15_022",
+      "unit": "english.eng.structure.complex",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This is the same watch (   ) I lost.",
+      "choices": [
+        "than",
+        "as",
+        "like",
+        "so"
+      ],
+      "answerIndex": 1,
+      "explanation": "the same 〜 as … で「…と同じ（種類の）〜」。"
+    },
+    {
+      "id": "en15_023",
+      "unit": "english.eng.structure.complex",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I heard the news (   ) our team had won.",
+      "choices": [
+        "which",
+        "that",
+        "what",
+        "whether"
+      ],
+      "answerIndex": 1,
+      "explanation": "news の内容を説明する同格の that。後ろは完全な文。"
+    },
+    {
+      "id": "en15_024",
+      "unit": "english.eng.structure.complex",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This is, (   ) I know, the best restaurant in town.",
+      "choices": [
+        "as long as",
+        "as far as",
+        "as soon as",
+        "as well as"
+      ],
+      "answerIndex": 1,
+      "explanation": "as far as I know（私の知る限り）は挿入句。"
+    }
+  ]
+}

@@ -1,0 +1,288 @@
+{
+  "setId": "math_m3_04",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_m304_001",
+      "unit": "math.m3.diff.derivative",
+      "category": "calculation",
+      "prompt": "(x⁵)′ は？",
+      "choices": [
+        "x⁴",
+        "x⁶/6",
+        "5x⁵",
+        "5x⁴"
+      ],
+      "answerIndex": 3,
+      "explanation": "(xⁿ)′=nxⁿ⁻¹。"
+    },
+    {
+      "id": "mat_m304_002",
+      "unit": "math.m3.diff.derivative",
+      "category": "calculation",
+      "prompt": "(sin x)′ は？",
+      "choices": [
+        "cos x",
+        "sin x",
+        "−sin x",
+        "−cos x"
+      ],
+      "answerIndex": 0,
+      "explanation": "三角関数の導関数。"
+    },
+    {
+      "id": "mat_m304_003",
+      "unit": "math.m3.diff.derivative",
+      "category": "calculation",
+      "prompt": "(cos x)′ は？",
+      "choices": [
+        "cos x",
+        "−cos x",
+        "sin x",
+        "−sin x"
+      ],
+      "answerIndex": 3,
+      "explanation": "符号に注意。"
+    },
+    {
+      "id": "mat_m304_004",
+      "unit": "math.m3.diff.derivative",
+      "category": "calculation",
+      "prompt": "(eˣ)′ は？",
+      "choices": [
+        "eˣ⁺¹",
+        "xeˣ⁻¹",
+        "e",
+        "eˣ"
+      ],
+      "answerIndex": 3,
+      "explanation": "微分しても変わらない。"
+    },
+    {
+      "id": "mat_m304_005",
+      "unit": "math.m3.diff.derivative",
+      "category": "calculation",
+      "prompt": "(log x)′ は？（自然対数、x>0）",
+      "choices": [
+        "e/x",
+        "1/x",
+        "log x",
+        "x"
+      ],
+      "answerIndex": 1,
+      "explanation": "対数関数の導関数。"
+    },
+    {
+      "id": "mat_m304_006",
+      "unit": "math.m3.diff.derivative",
+      "category": "calculation",
+      "prompt": "(√x)′ は？",
+      "choices": [
+        "√x/2",
+        "1/√x",
+        "1/(2√x)",
+        "2√x"
+      ],
+      "answerIndex": 2,
+      "explanation": "x^(1/2) を微分する。"
+    },
+    {
+      "id": "mat_m304_007",
+      "unit": "math.m3.diff.derivative",
+      "category": "calculation",
+      "prompt": "(1/x)′ は？",
+      "choices": [
+        "−1/x²",
+        "1/x²",
+        "log x",
+        "−1/x"
+      ],
+      "answerIndex": 0,
+      "explanation": "x⁻¹ を微分する。"
+    },
+    {
+      "id": "mat_m304_008",
+      "unit": "math.m3.diff.derivative.chain",
+      "category": "calculation",
+      "prompt": "{(x²+1)³}′ は？",
+      "choices": [
+        "6x(x²+1)³",
+        "3(x²+1)²",
+        "2x(x²+1)²",
+        "6x(x²+1)²"
+      ],
+      "answerIndex": 3,
+      "explanation": "合成関数の微分：3(x²+1)²·2x。"
+    },
+    {
+      "id": "mat_m304_009",
+      "unit": "math.m3.diff.derivative.rule",
+      "category": "calculation",
+      "prompt": "(xeˣ)′ は？",
+      "choices": [
+        "(x+1)eˣ",
+        "eˣ",
+        "(x−1)eˣ",
+        "xeˣ"
+      ],
+      "answerIndex": 0,
+      "explanation": "積の微分：eˣ+xeˣ。"
+    },
+    {
+      "id": "mat_m304_010",
+      "unit": "math.m3.diff.derivative.chain",
+      "category": "thinking",
+      "prompt": "合成関数の微分で「外側の微分×内側の微分」になる理由は？",
+      "choices": [
+        "足し算で計算するから",
+        "外側だけが変化するから",
+        "内側は微分しなくてよいから",
+        "dy/dx=(dy/du)·(du/dx) と、変化の割合がかけ合わさるから"
+      ],
+      "answerIndex": 3,
+      "explanation": "u が変わると y が変わり、x が変わると u が変わる。"
+    },
+    {
+      "id": "mat_m304_011",
+      "unit": "math.m3.diff.derivative",
+      "category": "calculation",
+      "prompt": "(x⁷)′ は？",
+      "choices": [
+        "7x⁷",
+        "7x⁶",
+        "x⁶",
+        "6x⁷"
+      ],
+      "answerIndex": 1,
+      "explanation": "(xⁿ)′=nxⁿ⁻¹。"
+    },
+    {
+      "id": "mat_m304_012",
+      "unit": "math.m3.diff.derivative",
+      "category": "calculation",
+      "prompt": "(sin x+cos x)′ は？",
+      "choices": [
+        "−cos x−sin x",
+        "sin x−cos x",
+        "cos x−sin x",
+        "cos x+sin x"
+      ],
+      "answerIndex": 2,
+      "explanation": "(sin x)′=cos x、(cos x)′=−sin x。"
+    },
+    {
+      "id": "mat_m304_013",
+      "unit": "math.m3.diff.derivative",
+      "category": "calculation",
+      "prompt": "(3eˣ)′ は？",
+      "choices": [
+        "3eˣ⁻¹",
+        "3eˣ",
+        "eˣ",
+        "3xeˣ"
+      ],
+      "answerIndex": 1,
+      "explanation": "eˣ は微分しても eˣ。"
+    },
+    {
+      "id": "mat_m304_014",
+      "unit": "math.m3.diff.derivative.explog",
+      "category": "calculation",
+      "prompt": "(log 3x)′ は？（x>0）",
+      "choices": [
+        "1/(3x)",
+        "3/x",
+        "log 3",
+        "1/x"
+      ],
+      "answerIndex": 3,
+      "explanation": "log 3x=log 3+log x。"
+    },
+    {
+      "id": "mat_m304_015",
+      "unit": "math.m3.diff.derivative",
+      "category": "calculation",
+      "prompt": "(x√x)′ は？",
+      "choices": [
+        "(1/2)√x",
+        "√x",
+        "3√x",
+        "(3/2)√x"
+      ],
+      "answerIndex": 3,
+      "explanation": "x^(3/2) の微分：(3/2)x^(1/2)。"
+    },
+    {
+      "id": "mat_m304_016",
+      "unit": "math.m3.diff.derivative",
+      "category": "calculation",
+      "prompt": "(1/x²)′ は？",
+      "choices": [
+        "2/x³",
+        "−1/x³",
+        "−2/x",
+        "−2/x³"
+      ],
+      "answerIndex": 3,
+      "explanation": "x⁻² の微分：−2x⁻³。"
+    },
+    {
+      "id": "mat_m304_017",
+      "unit": "math.m3.diff.derivative",
+      "category": "calculation",
+      "prompt": "{(2x+1)⁴}′ は？",
+      "choices": [
+        "8(2x+1)³",
+        "2(2x+1)⁴",
+        "8(2x+1)⁴",
+        "4(2x+1)³"
+      ],
+      "answerIndex": 0,
+      "explanation": "4(2x+1)³×2。"
+    },
+    {
+      "id": "mat_m304_018",
+      "unit": "math.m3.diff.derivative.rule",
+      "category": "calculation",
+      "prompt": "(x² sin x)′ は？",
+      "choices": [
+        "2x sin x+x² cos x",
+        "x² cos x",
+        "2x sin x−x² cos x",
+        "2x cos x"
+      ],
+      "answerIndex": 0,
+      "explanation": "積の微分。"
+    },
+    {
+      "id": "mat_m304_019",
+      "unit": "math.m3.diff.derivative.chain",
+      "category": "calculation",
+      "prompt": "(e^(3x))′ は？",
+      "choices": [
+        "e^(3x)",
+        "3e^(3x)",
+        "e^(3x)/3",
+        "3xe^(3x)"
+      ],
+      "answerIndex": 1,
+      "explanation": "合成関数の微分。"
+    },
+    {
+      "id": "mat_m304_020",
+      "unit": "math.m3.diff.derivative.rule",
+      "category": "knowledge",
+      "prompt": "商の微分 (f/g)′ の式は？",
+      "choices": [
+        "(f′g−fg′)/g²",
+        "f′/g′",
+        "(fg′−f′g)/g²",
+        "(f′g+fg′)/g²"
+      ],
+      "answerIndex": 0,
+      "explanation": "分子は「上の微分×下 − 上×下の微分」。"
+    }
+  ]
+}

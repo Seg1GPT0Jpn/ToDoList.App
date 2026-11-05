@@ -1,0 +1,125 @@
+[
+ {
+  "setId": "social_mock_existing_01",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+   {
+    "id": "mock_e_1",
+    "category": "knowledge",
+    "prompt": "既存1",
+    "choices": [
+     "正解",
+     "誤り1",
+     "誤り2",
+     "誤り3"
+    ],
+    "answerIndex": 0,
+    "explanation": "テスト用"
+   },
+   {
+    "id": "mock_e_2",
+    "category": "knowledge",
+    "prompt": "既存2",
+    "choices": [
+     "正解",
+     "誤り1",
+     "誤り2",
+     "誤り3"
+    ],
+    "answerIndex": 0,
+    "explanation": "テスト用"
+   },
+   {
+    "id": "mock_shared_1",
+    "category": "knowledge",
+    "prompt": "共通",
+    "choices": [
+     "正解",
+     "誤り1",
+     "誤り2",
+     "誤り3"
+    ],
+    "answerIndex": 0,
+    "explanation": "テスト用"
+   }
+  ]
+ },
+ {
+  "setId": "social_shonan_104_mock_01",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+   {
+    "id": "mock_c_1",
+    "category": "knowledge",
+    "prompt": "新作1",
+    "choices": [
+     "正解",
+     "誤り1",
+     "誤り2",
+     "誤り3"
+    ],
+    "answerIndex": 0,
+    "explanation": "テスト用"
+   },
+   {
+    "id": "mock_shared_1",
+    "category": "knowledge",
+    "prompt": "共通",
+    "choices": [
+     "正解",
+     "誤り1",
+     "誤り2",
+     "誤り3"
+    ],
+    "answerIndex": 0,
+    "explanation": "テスト用"
+   }
+  ]
+ },
+ {
+  "setId": "science_mock_01",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+   {
+    "id": "mock_s_1",
+    "category": "knowledge",
+    "prompt": "理科",
+    "choices": [
+     "正解",
+     "誤り1",
+     "誤り2",
+     "誤り3"
+    ],
+    "answerIndex": 0,
+    "explanation": "テスト用"
+   }
+  ]
+ },
+ {
+  "setId": "social_mock_user_01",
+  "worldId": "social",
+  "origin": "userCreated",
+  "version": 1,
+  "questions": [
+   {
+    "id": "mock_u_1",
+    "category": "knowledge",
+    "prompt": "自作",
+    "choices": [
+     "正解",
+     "誤り1",
+     "誤り2",
+     "誤り3"
+    ],
+    "answerIndex": 0,
+    "explanation": "テスト用"
+   }
+  ]
+ }
+]

@@ -1,0 +1,606 @@
+{
+  "setId": "english_shonan_104_ec1_grammar_01",
+  "worldId": "english",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "english_shonan_104_ec1_grammar_01_001",
+      "unit": "english.eng.grammar.tense.perfect",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "When I got to the station, the train ( ) already left.",
+      "choices": [
+        "have",
+        "was",
+        "has",
+        "had"
+      ],
+      "answerIndex": 3,
+      "explanation": "「駅に着いた」という過去の時点より前に出発していたので過去完了 had left。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "ec1",
+        "grammar"
+      ]
+    },
+    {
+      "id": "english_shonan_104_ec1_grammar_01_002",
+      "unit": "english.eng.grammar.tense.perfect",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "She ( ) in Osaka for five years before she moved to Tokyo.",
+      "choices": [
+        "has lived",
+        "lives",
+        "had lived",
+        "is living"
+      ],
+      "answerIndex": 2,
+      "explanation": "東京に引っ越した（過去）時点までの継続なので過去完了。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "ec1",
+        "grammar"
+      ]
+    },
+    {
+      "id": "english_shonan_104_ec1_grammar_01_003",
+      "unit": "english.eng.grammar.tense.perfect",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "I ( ) never seen such a beautiful sunset until I visited the island.",
+      "choices": [
+        "did",
+        "was",
+        "had",
+        "have"
+      ],
+      "answerIndex": 2,
+      "explanation": "島を訪れた（過去）時点までの経験なので過去完了 had seen。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "ec1",
+        "grammar"
+      ]
+    },
+    {
+      "id": "english_shonan_104_ec1_grammar_01_004",
+      "unit": "english.eng.grammar.tense.perfect",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "By last year, the number of visitors ( ) to two million.",
+      "choices": [
+        "will increase",
+        "increases",
+        "had increased",
+        "has increased"
+      ],
+      "answerIndex": 2,
+      "explanation": "「去年までに」という過去の時点までの変化なので過去完了。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "ec1",
+        "grammar"
+      ]
+    },
+    {
+      "id": "english_shonan_104_ec1_grammar_01_005",
+      "unit": "english.eng.grammar.tense.perfect",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "I ( ) my homework yet, so I can’t go out now.",
+      "choices": [
+        "hadn’t finished",
+        "didn’t finish",
+        "don’t finish",
+        "haven’t finished"
+      ],
+      "answerIndex": 3,
+      "explanation": "「今」の時点でまだ終わっていない（現在完了）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "ec1",
+        "grammar"
+      ]
+    },
+    {
+      "id": "english_shonan_104_ec1_grammar_01_006",
+      "unit": "english.eng.grammar.tense.perfect",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "I lost the watch that my grandfather ( ) me.",
+      "choices": [
+        "had given",
+        "has given",
+        "gives",
+        "is giving"
+      ],
+      "answerIndex": 0,
+      "explanation": "もらった（先）→なくした（後）。先の出来事を過去完了で表す（大過去）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "ec1",
+        "grammar"
+      ]
+    },
+    {
+      "id": "english_shonan_104_ec1_grammar_01_007",
+      "unit": "english.eng.grammar.tense.simple",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "I ( ) Kyoto two years ago.",
+      "choices": [
+        "have been visiting",
+        "visited",
+        "had visited",
+        "have visited"
+      ],
+      "answerIndex": 1,
+      "explanation": "〜ago は過去の一時点を表すので過去形。現在完了は使えない。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "ec1",
+        "grammar"
+      ]
+    },
+    {
+      "id": "english_shonan_104_ec1_grammar_01_008",
+      "unit": "english.eng.grammar.tense.simple",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "When ( ) you buy that bike?",
+      "choices": [
+        "had",
+        "have",
+        "do",
+        "did"
+      ],
+      "answerIndex": 3,
+      "explanation": "When で過去の時点をたずねるときは過去形（When have you ～? とは言わない）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "ec1",
+        "grammar"
+      ]
+    },
+    {
+      "id": "english_shonan_104_ec1_grammar_01_009",
+      "unit": "english.eng.grammar.tense.perfect",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "過去完了 had＋過去分詞 を使うのに必要なものは？",
+      "choices": [
+        "未来の時点",
+        "助動詞",
+        "基準になる過去の時点",
+        "受動態"
+      ],
+      "answerIndex": 2,
+      "explanation": "その時点より前、またはその時点までのことを表す。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "ec1",
+        "grammar"
+      ]
+    },
+    {
+      "id": "english_shonan_104_ec1_grammar_01_010",
+      "unit": "english.eng.grammar.tense.perfect",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「The concert had already started when we arrived.」の意味は？",
+      "choices": [
+        "私たちが着いたときには、コンサートはもう始まっていた",
+        "コンサートが始まったので、私たちは着いた",
+        "私たちが着いてから、コンサートが始まった",
+        "私たちが着く前に、コンサートは終わった"
+      ],
+      "answerIndex": 0,
+      "explanation": "着いた時点で「始まる」は完了していた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "ec1",
+        "grammar"
+      ]
+    },
+    {
+      "id": "english_shonan_104_ec1_grammar_01_011",
+      "unit": "english.eng.grammar.conj.coordinate",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "Not only Mika but also her brothers ( ) interested in birds.",
+      "choices": [
+        "be",
+        "am",
+        "are",
+        "is"
+      ],
+      "answerIndex": 2,
+      "explanation": "not only A but also B では、動詞は B（her brothers：複数）に合わせる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "ec1",
+        "grammar"
+      ]
+    },
+    {
+      "id": "english_shonan_104_ec1_grammar_01_012",
+      "unit": "english.eng.grammar.conj.coordinate",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「He speaks not only English but also Chinese.」の意味は？",
+      "choices": [
+        "彼は英語ではなく中国語を話す",
+        "彼は英語だけでなく中国語も話す",
+        "彼は英語も中国語も話さない",
+        "彼は英語より中国語を多く話す"
+      ],
+      "answerIndex": 1,
+      "explanation": "not only A but also B＝AだけでなくBも。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "ec1",
+        "grammar"
+      ]
+    },
+    {
+      "id": "english_shonan_104_ec1_grammar_01_013",
+      "unit": "english.eng.grammar.conj.coordinate",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「not only A but also B」とほぼ同じ意味を表すのは？",
+      "choices": [
+        "neither A nor B",
+        "either A or B",
+        "A rather than B",
+        "B as well as A"
+      ],
+      "answerIndex": 3,
+      "explanation": "どちらもBに重点がある。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "ec1",
+        "grammar"
+      ]
+    },
+    {
+      "id": "english_shonan_104_ec1_grammar_01_014",
+      "unit": "english.eng.grammar.conj.subordinate",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「As we went up the mountain, the air became colder.」の As の意味は？",
+      "choices": [
+        "〜として",
+        "〜のように",
+        "〜するにつれて",
+        "〜なので"
+      ],
+      "answerIndex": 2,
+      "explanation": "登ることと寒くなることが同時に進んでいる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "ec1",
+        "grammar"
+      ]
+    },
+    {
+      "id": "english_shonan_104_ec1_grammar_01_015",
+      "unit": "english.eng.grammar.conj.subordinate",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「As it was raining, the game was put off.」の As の意味は？",
+      "choices": [
+        "〜するにつれて",
+        "〜のように",
+        "〜なので",
+        "〜だけれども"
+      ],
+      "answerIndex": 2,
+      "explanation": "雨が降っていたので（理由）延期された。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "ec1",
+        "grammar"
+      ]
+    },
+    {
+      "id": "english_shonan_104_ec1_grammar_01_016",
+      "unit": "english.eng.grammar.conj.subordinate",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「Once you get used to it, it will be easy.」の意味は？",
+      "choices": [
+        "一度だけ慣れれば、簡単だった",
+        "いったん慣れてしまえば、簡単になるだろう",
+        "かつて慣れたので、簡単だ",
+        "慣れるとすぐに難しくなる"
+      ],
+      "answerIndex": 1,
+      "explanation": "接続詞 once＝いったん〜すると。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "ec1",
+        "grammar"
+      ]
+    },
+    {
+      "id": "english_shonan_104_ec1_grammar_01_017",
+      "unit": "english.eng.grammar.conj.subordinate",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「Even if you fail, you will learn something.」の意味は？",
+      "choices": [
+        "たとえ失敗しても、何かを学ぶだろう",
+        "失敗しなければ、何も学ばない",
+        "失敗するまで、学び続ける",
+        "失敗したので、何かを学んだ"
+      ],
+      "answerIndex": 0,
+      "explanation": "even if＝たとえ〜でも（仮定）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "ec1",
+        "grammar"
+      ]
+    },
+    {
+      "id": "english_shonan_104_ec1_grammar_01_018",
+      "unit": "english.eng.grammar.conj.subordinate",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「〜だけれども（実際にそうである）」という事実を表すのは？",
+      "choices": [
+        "as if",
+        "even though",
+        "unless",
+        "even if"
+      ],
+      "answerIndex": 1,
+      "explanation": "even if は仮定、even though は事実。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "ec1",
+        "grammar"
+      ]
+    },
+    {
+      "id": "english_shonan_104_ec1_grammar_01_019",
+      "unit": "english.eng.grammar.conj.subordinate",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "( ) far as I know, she has never been late.",
+      "choices": [
+        "Even",
+        "So",
+        "As",
+        "Once"
+      ],
+      "answerIndex": 2,
+      "explanation": "as far as I know＝私の知る限り。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "ec1",
+        "grammar"
+      ]
+    },
+    {
+      "id": "english_shonan_104_ec1_grammar_01_020",
+      "unit": "english.eng.grammar.pronoun.pronoun",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "We enjoyed ( ) very much at the festival.",
+      "choices": [
+        "ourselves",
+        "we",
+        "us",
+        "our"
+      ],
+      "answerIndex": 0,
+      "explanation": "enjoy oneself＝楽しむ。主語 We に合わせて ourselves。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "ec1",
+        "grammar"
+      ]
+    },
+    {
+      "id": "english_shonan_104_ec1_grammar_01_021",
+      "unit": "english.eng.grammar.pronoun.pronoun",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「Please help yourself to the cake.」の意味は？",
+      "choices": [
+        "ケーキを自由に取って食べてください",
+        "ケーキを自分で作ってください",
+        "ケーキ作りを手伝ってください",
+        "ケーキを持ち帰ってください"
+      ],
+      "answerIndex": 0,
+      "explanation": "help oneself to ～＝〜を自由に取って食べる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "ec1",
+        "grammar"
+      ]
+    },
+    {
+      "id": "english_shonan_104_ec1_grammar_01_022",
+      "unit": "english.eng.grammar.pronoun.pronoun",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "The children amused ( ) by playing cards.",
+      "choices": [
+        "they",
+        "themselves",
+        "their",
+        "them"
+      ],
+      "answerIndex": 1,
+      "explanation": "amuse oneself＝楽しむ・気をまぎらす。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "ec1",
+        "grammar"
+      ]
+    },
+    {
+      "id": "english_shonan_104_ec1_grammar_01_023",
+      "unit": "english.eng.grammar.pronoun.pronoun",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「It is said that the tree is 500 years old.」の It は？",
+      "choices": [
+        "時間を表す it",
+        "前に出た木を指す代名詞",
+        "that 以下を指す形式主語",
+        "天気を表す it"
+      ],
+      "answerIndex": 2,
+      "explanation": "It is said that ～＝〜と言われている。it は「それ」と訳さない。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "ec1",
+        "grammar"
+      ]
+    },
+    {
+      "id": "english_shonan_104_ec1_grammar_01_024",
+      "unit": "english.eng.grammar.pronoun.pronoun",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「It is important to get enough sleep.」の本当の主語は？",
+      "choices": [
+        "It",
+        "important",
+        "enough sleep だけ",
+        "to get enough sleep"
+      ],
+      "answerIndex": 3,
+      "explanation": "It は形式主語で、to 不定詞が本当の主語。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "ec1",
+        "grammar"
+      ]
+    },
+    {
+      "id": "english_shonan_104_ec1_grammar_01_025",
+      "unit": "english.eng.grammar.pronoun.pronoun",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「It seems that she knows the answer.」の意味は？",
+      "choices": [
+        "彼女は答えを見つけた",
+        "それは彼女が答えを知っていると見える",
+        "彼女は答えを知らないようだ",
+        "彼女は答えを知っているようだ"
+      ],
+      "answerIndex": 3,
+      "explanation": "It seems that ～＝〜のようだ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "ec1",
+        "grammar"
+      ]
+    },
+    {
+      "id": "english_shonan_104_ec1_grammar_01_026",
+      "unit": "english.eng.grammar.pronoun.pronoun",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "I made the decision by ( ).",
+      "choices": [
+        "mine",
+        "me",
+        "my",
+        "myself"
+      ],
+      "answerIndex": 3,
+      "explanation": "by oneself＝ひとりで、自分で。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "ec1",
+        "grammar"
+      ]
+    }
+  ]
+}

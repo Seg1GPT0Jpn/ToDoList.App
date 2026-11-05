@@ -1,0 +1,288 @@
+{
+  "setId": "math_m2_04",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_m204_001",
+      "unit": "math.m2.expr.complex.complex",
+      "category": "knowledge",
+      "prompt": "虚数単位 i について、i² の値は？",
+      "choices": [
+        "1",
+        "0",
+        "i",
+        "−1"
+      ],
+      "answerIndex": 3,
+      "explanation": "i は 2乗すると −1 になる数。"
+    },
+    {
+      "id": "mat_m204_002",
+      "unit": "math.m2.expr.complex",
+      "category": "calculation",
+      "prompt": "(2+3i)+(1−i) を計算すると？",
+      "choices": [
+        "1+4i",
+        "3+4i",
+        "3+2i",
+        "3−2i"
+      ],
+      "answerIndex": 2,
+      "explanation": "実部どうし、虚部どうしを足す。"
+    },
+    {
+      "id": "mat_m204_003",
+      "unit": "math.m2.expr.complex.complex",
+      "category": "calculation",
+      "prompt": "(1+i)(1−i) を計算すると？",
+      "choices": [
+        "0",
+        "2",
+        "1−i²",
+        "2i"
+      ],
+      "answerIndex": 1,
+      "explanation": "1−i²=1−(−1)。"
+    },
+    {
+      "id": "mat_m204_004",
+      "unit": "math.m2.expr.complex.complex",
+      "category": "calculation",
+      "prompt": "(1+2i)(3−i) を計算すると？",
+      "choices": [
+        "5+5i",
+        "5+7i",
+        "3−2i",
+        "1+5i"
+      ],
+      "answerIndex": 0,
+      "explanation": "3−i+6i−2i²=3+5i+2。"
+    },
+    {
+      "id": "mat_m204_005",
+      "unit": "math.m2.expr.complex",
+      "category": "calculation",
+      "prompt": "√(−4) を i を使って表すと？",
+      "choices": [
+        "−2",
+        "±2",
+        "2i",
+        "4i"
+      ],
+      "answerIndex": 2,
+      "explanation": "√(−4)=√4·i。"
+    },
+    {
+      "id": "mat_m204_006",
+      "unit": "math.m2.expr.complex",
+      "category": "calculation",
+      "prompt": "方程式 x²=−9 を解くと？",
+      "choices": [
+        "x=3i",
+        "解なし",
+        "x=±3",
+        "x=±3i"
+      ],
+      "answerIndex": 3,
+      "explanation": "x=±√9·i。"
+    },
+    {
+      "id": "mat_m204_007",
+      "unit": "math.m2.expr.complex",
+      "category": "calculation",
+      "prompt": "方程式 x²+2x+5=0 を解くと？",
+      "choices": [
+        "x=−1±2i",
+        "x=−2±i",
+        "x=−1±4i",
+        "x=1±2i"
+      ],
+      "answerIndex": 0,
+      "explanation": "解の公式：(−2±√(4−20))/2。"
+    },
+    {
+      "id": "mat_m204_008",
+      "unit": "math.m2.expr.complex.vieta",
+      "category": "calculation",
+      "prompt": "2次方程式 x²−5x+3=0 の2つの解の和は？",
+      "choices": [
+        "−3",
+        "3",
+        "5",
+        "−5"
+      ],
+      "answerIndex": 2,
+      "explanation": "解と係数の関係：α+β=−b/a。"
+    },
+    {
+      "id": "mat_m204_009",
+      "unit": "math.m2.expr.complex.vieta",
+      "category": "calculation",
+      "prompt": "2次方程式 x²−5x+3=0 の2つの解の積は？",
+      "choices": [
+        "3",
+        "−5",
+        "5",
+        "−3"
+      ],
+      "answerIndex": 0,
+      "explanation": "αβ=c/a。"
+    },
+    {
+      "id": "mat_m204_010",
+      "unit": "math.m2.expr.complex.complex",
+      "category": "thinking",
+      "prompt": "数の範囲を複素数まで広げる意味は？",
+      "choices": [
+        "整数が使えなくなるから",
+        "実数がなくなるから",
+        "計算を難しくするため",
+        "判別式が負の2次方程式も、解をもつものとして同じように扱えるから"
+      ],
+      "answerIndex": 3,
+      "explanation": "複素数の範囲では、n 次方程式は重解も数えて n 個の解をもつ。"
+    },
+    {
+      "id": "mat_m204_011",
+      "unit": "math.m2.expr.complex",
+      "category": "calculation",
+      "prompt": "(3+2i)−(1−4i) を計算すると？",
+      "choices": [
+        "2−2i",
+        "2+6i",
+        "4+6i",
+        "2+2i"
+      ],
+      "answerIndex": 1,
+      "explanation": "実部どうし・虚部どうしを計算する。"
+    },
+    {
+      "id": "mat_m204_012",
+      "unit": "math.m2.expr.complex.complex",
+      "category": "calculation",
+      "prompt": "(2+i)² を計算すると？",
+      "choices": [
+        "3+2i",
+        "3+4i",
+        "4+4i",
+        "5+4i"
+      ],
+      "answerIndex": 1,
+      "explanation": "4+4i+i²=3+4i。"
+    },
+    {
+      "id": "mat_m204_013",
+      "unit": "math.m2.expr.complex.complex",
+      "category": "calculation",
+      "prompt": "i⁴ の値は？",
+      "choices": [
+        "1",
+        "−i",
+        "−1",
+        "i"
+      ],
+      "answerIndex": 0,
+      "explanation": "i²=−1 なので i⁴=(i²)²=1。"
+    },
+    {
+      "id": "mat_m204_014",
+      "unit": "math.m2.expr.complex.complex",
+      "category": "calculation",
+      "prompt": "3+4i と共役な複素数は？",
+      "choices": [
+        "−3−4i",
+        "4+3i",
+        "−3+4i",
+        "3−4i"
+      ],
+      "answerIndex": 3,
+      "explanation": "虚部の符号を変える。"
+    },
+    {
+      "id": "mat_m204_015",
+      "unit": "math.m2.expr.complex.complex",
+      "category": "calculation",
+      "prompt": "√(−2)×√(−8) の値は？",
+      "choices": [
+        "−4i",
+        "4i",
+        "4",
+        "−4"
+      ],
+      "answerIndex": 3,
+      "explanation": "√2 i×√8 i=4i²=−4。√(16) としないよう注意。"
+    },
+    {
+      "id": "mat_m204_016",
+      "unit": "math.m2.expr.complex",
+      "category": "calculation",
+      "prompt": "方程式 x²+4=0 を解くと？",
+      "choices": [
+        "x=±4i",
+        "x=2i",
+        "x=±2i",
+        "x=±2"
+      ],
+      "answerIndex": 2,
+      "explanation": "x²=−4。"
+    },
+    {
+      "id": "mat_m204_017",
+      "unit": "math.m2.expr.complex.discriminant",
+      "category": "calculation",
+      "prompt": "2次方程式 x²−2x+3=0 の判別式 D の値は？",
+      "choices": [
+        "−8",
+        "8",
+        "16",
+        "−4"
+      ],
+      "answerIndex": 0,
+      "explanation": "D=(−2)²−4·1·3=4−12。"
+    },
+    {
+      "id": "mat_m204_018",
+      "unit": "math.m2.expr.complex.vieta",
+      "category": "calculation",
+      "prompt": "2次方程式 2x²+6x−5=0 の2つの解の和は？",
+      "choices": [
+        "−5/2",
+        "3",
+        "−3",
+        "6"
+      ],
+      "answerIndex": 2,
+      "explanation": "解と係数の関係：−b/a=−6/2。"
+    },
+    {
+      "id": "mat_m204_019",
+      "unit": "math.m2.expr.complex",
+      "category": "calculation",
+      "prompt": "2次方程式 2x²+6x−5=0 の2つの解の積は？",
+      "choices": [
+        "−5",
+        "−3",
+        "−5/2",
+        "5/2"
+      ],
+      "answerIndex": 2,
+      "explanation": "c/a=−5/2。"
+    },
+    {
+      "id": "mat_m204_020",
+      "unit": "math.m2.expr.complex.complex",
+      "category": "knowledge",
+      "prompt": "2次方程式 ax²+bx+c=0（a、b、c は実数）が異なる2つの虚数解をもつ条件は？",
+      "choices": [
+        "a<0",
+        "b²−4ac=0",
+        "b²−4ac>0",
+        "b²−4ac<0"
+      ],
+      "answerIndex": 3,
+      "explanation": "判別式が負のとき、解は互いに共役な虚数になる。"
+    }
+  ]
+}

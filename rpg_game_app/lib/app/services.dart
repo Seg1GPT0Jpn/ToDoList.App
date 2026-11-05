@@ -1,0 +1,350 @@
+import 'dart:async';
+import 'dart:convert';
+
+import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
+import 'package:rpg_game/rpg_game.dart';
+
+import '../account/account_service.dart';
+import '../account/profile_repository.dart';
+import '../audio/music_director.dart';
+import '../classroom/classroom_backend.dart';
+import '../classroom/classroom_store.dart';
+import '../cloud/tsuzuri_link.dart';
+import '../data/meta_store.dart';
+import '../data/prefs_progress_repository.dart';
+import '../data/mistake_log_store.dart';
+import '../data/study_log_store.dart';
+import '../meta/home_feature_store.dart';
+import '../meta/streak_store.dart';
+import '../purchase/google_play_purchase_service.dart';
+import '../study/exam_world_store.dart';
+import '../study/personal_books.dart';
+import '../study/yosou_ranking.dart';
+import '../notice/notice_backend.dart';
+import '../versus/contest_backend.dart';
+import '../versus/duel_backend.dart';
+import '../versus/matchmaking.dart';
+import '../versus/online_room.dart';
+import 'haptics.dart';
+import 'settings.dart';
+import 'usage_meter.dart';
+
+/// 画面から使うサービスの入れ物。
+class RpgServices extends InheritedWidget {
+  RpgServices({
+    super.key,
+    required this.repository,
+    required this.personalBooks,
+    required this.profiles,
+    required this.account,
+    required this.examWorlds,
+    required this.meta,
+    required this.settings,
+    required this.music,
+    this.versusRooms,
+    this.classrooms,
+    this.duels,
+    this.contests,
+    this.notices,
+    this.yosouRanking,
+    this.matchmaking,
+    this.usageSink,
+    this.purchaseService,
+    this.tsuzuriBackend,
+    required super.child,
+  }) : unlock = WorldUnlockService(
+         repository: repository,
+         // 本物の Google Play Billing がある Android 版だけ購入ボタンを有効にする。
+         allowComingSoonPurchase: false,
+         allowPurchase: purchaseService?.isAvailable == true,
+         purchase: purchaseService?.purchaseWorld,
+         purchaseSource: purchaseService != null ? 'google_play' : 'mock',
+       );
+
+  final PrefsProgressRepository repository;
+
+  /// ユーザー名と Google アカウント
+  final ProfileRepository profiles;
+  final AccountService account;
+
+  /// 作った試験対策ワールド（端末の中に保存）
+  final ExamWorldStore examWorlds;
+
+  /// 学習記録と冒険の記録（図鑑・実績・クエスト）
+  final MetaStore meta;
+
+  /// 遊びやすさの設定（音・文字の大きさなど）
+  final SettingsStore settings;
+
+  /// BGM・効果音
+  final MusicDirector music;
+
+  /// オンライン対戦の部屋（Firebase の設定がなければ null）
+  final VersusRoomBackend? versusRooms;
+
+  /// クラスルーム（Firebase の設定がなければ null）
+  final ClassroomBackend? classrooms;
+
+  /// 単語チャレンジ（リンクで遊ぶ早押し。Firebase の設定がなければ null）
+  final DuelBackend? duels;
+
+  /// 週替わり単語バトル（LEAP・EEVI。Firebase の設定がなければ null）
+  final ContestBackend? contests;
+
+  /// 管理者からのお知らせとテスターの申しこみ（Firebase の設定がなければ null）
+  final NoticeBackend? notices;
+
+  /// 予想問題のランキング（Firebase の設定がなければ null）
+  final YosouRankBackend? yosouRanking;
+
+  /// ランダム対戦の待ち合わせとゴースト（Firebase の設定がなければ null）
+  final MatchmakingBackend? matchmaking;
+
+  /// 使った機能の回数の送り先（Firebase の設定がなければ null）
+  final UsageSink? usageSink;
+
+  /// つづり（学校生活アプリ）の Firebase（Firebase の設定がなければ null）
+  final TsuzuriBackend? tsuzuriBackend;
+
+  /// 日ごと・教科ごとの勉強時間と問題数
+  late final StudyLogStore studyLog = _keep(
+    () => StudyLogStore(personalBooks.prefs),
+  );
+
+  /// まちがいの種類（うっかり・知らなかった など）
+  late final MistakeLogStore mistakes = _keep(
+    () => MistakeLogStore(personalBooks.prefs),
+  );
+
+  /// つづりとの連携（使えない版では null）。はじめて使うときに前回の接続を確かめる
+  late final TsuzuriLinkController? tsuzuri = () {
+    final backend = tsuzuriBackend;
+    if (backend == null) return null;
+    return _keep(() {
+      final c = TsuzuriLinkController(
+        backend,
+        personalBooks.prefs,
+        log: () => studyLog.log,
+        record: () => meta.record,
+      );
+      studyLog.onSaved = c.scheduleSync;
+      unawaited(c.start());
+      return c;
+    });
+  }();
+
+  /// 使った機能を数える（名前・ID は送らない。設定で止められる）
+  late final UsageMeter usage = () {
+    final u = _keep(
+      () => UsageMeter(
+        personalBooks.prefs,
+        usageSink,
+        () => settings.value.shareUsage,
+      ),
+    );
+    if (usageSink != null) u.sink = usageSink;
+    return u;
+  }();
+
+  /// この端末で入っているクラスルーム
+  late final ClassroomStore classroomStore = _keep(
+    () => ClassroomStore(personalBooks.prefs),
+  );
+
+  /// ゆるい連続記録とお休み券
+  late final StreakStore streak = _keep(() => StreakStore(personalBooks.prefs));
+
+  /// 振動
+  late final Haptics haptics = _keep(() => Haptics(settings));
+
+  /// ホームの機能の「NEW」
+  late final HomeFeatureStore homeFeatures = _keep(
+    () => HomeFeatureStore(personalBooks.prefs),
+  );
+
+  /// クラウドにつながったあとなどで RpgServices を作りなおしても、同じ部品を使う。
+  /// 作りなおすたびに新しく作ると、記録や「NEW」の状態が古いものと新しいものに分かれてしまう
+  static final _kept = Expando<Map<Type, Object>>();
+
+  T _keep<T extends Object>(T Function() make) {
+    final m = _kept[personalBooks] ??= {};
+    return (m[T] ??= make()) as T;
+  }
+
+  /// Google Play Billing。Web 版や Firebase 未設定版では null。
+  final GooglePlayPurchaseService? purchaseService;
+
+  /// パスワード保護の個人用単語帳（LEAP など）
+  final PersonalBooks personalBooks;
+
+  /// 問題（読んだ問題セットを覚えている。作りなおしても同じものを使う）
+  late final JsonQuestionSource questions = _keep(
+    () => JsonQuestionSource(loadQuestionAsset),
+  );
+  final WorldUnlockService unlock;
+
+  /// ステージの出題範囲をまとめて読み込む（エリア16以降は複数セット）。
+  /// 1つも読めなければ null。
+  Future<QuestionSet?> loadStagePool(StageDef stage) async {
+    final sets = <QuestionSet>[];
+    for (final id in stage.questionSetIds) {
+      final s = await questions.load(id);
+      if (s != null) sets.add(s);
+    }
+    if (sets.isEmpty) return null;
+    // 英語のバトルには、エリアの語彙レベルに合ったつづ単の単語問題も混ぜる
+    if (stage.worldId == RpgCatalog.englishWorldId) {
+      final vocab = await _tsuzutanSets(stage);
+      for (final v in vocab) {
+        questions.adopt(v);
+      }
+      sets.addAll(vocab);
+    }
+    return sets.length == 1 ? sets.first : QuestionSet.merge(stage.id, sets);
+  }
+
+  /// つづ単（公開版）から、エリアに合うレベルの単語問題を少しだけ作る
+  Future<List<QuestionSet>> _tsuzutanSets(StageDef stage) async {
+    final levels = Tsuzutan.levelsForStage(stage.vocabLevel);
+    final candidates = [
+      for (final l in Tsuzutan.lists)
+        if (levels.contains(l.level)) l.id,
+    ]..shuffle();
+    final lists = <WordList>[];
+    for (final id in candidates.take(2)) {
+      try {
+        final raw = utf8.decode(
+          (await rootBundle.load('packages/rpg_game/assets/words/$id.json'))
+              .buffer
+              .asUint8List(),
+        );
+        lists.add(WordList.fromJson(jsonDecode(raw) as Map<String, dynamic>));
+      } catch (_) {
+        // 読めなければ単語問題なしで続ける
+      }
+    }
+    return Tsuzutan.battleSets(lists, count: 10);
+  }
+
+  /// デイリークエストで選ぶ教科（持っている、遊べるワールド）
+  ///
+  /// 遊べるワールドのうち、もう冒険をはじめた教科から選ぶ（はじめは英語だけ）
+  Map<String, String> questSubjects(RpgProgress progress) {
+    final playable = [
+      for (final w in RpgCatalog.worlds)
+        if (unlock.availabilityOf(progress, w) == WorldAvailability.playable) w,
+    ];
+    bool started(WorldDef w) => w.stages.any(
+      (s) =>
+          progress.clearedStageIds.contains(s.id) ||
+          progress.stageRecords.containsKey(s.id),
+    );
+    final picked = playable.where(started).toList();
+    if (picked.isEmpty) {
+      picked.addAll(playable.where((w) => w.id == RpgCatalog.englishWorldId));
+    }
+    return {
+      for (final w in picked.isEmpty ? playable : picked) w.id: w.subject,
+    };
+  }
+
+  /// 今日（学習記録の日付の数え方）
+  static int today() => dayNumber(DateTime.now());
+
+  /// サービスの外（テストの部品など）では null
+  static RpgServices? maybeOf(BuildContext context) =>
+      context.getInheritedWidgetOfExactType<RpgServices>();
+
+  static RpgServices of(BuildContext context) =>
+      context.dependOnInheritedWidgetOfExactType<RpgServices>()!;
+
+  /// 同梱の問題を読む。問題は教科ごとに1つのファイル
+  /// （packages/rpg_game/assets/question_bundles/<教科>.json）にまとめてあり、
+  /// 読んだ教科は覚えておく（最近使った [bundleLimit] 教科まで）。
+  static Future<String?> loadQuestionAsset(String setId) async {
+    final world = setId.split('_').first;
+    final bundle = await _bundle(world);
+    final set = bundle?[setId];
+    return set == null ? null : jsonEncode(set);
+  }
+
+  /// 覚えておく教科のまとめファイルの数。全教科を覚えると読みこんだ中身だけで 25MB ほどになり、
+  /// 長く使うほどメモリが増えるので、最近使った教科だけにする（ほかは使うときに読みなおす）
+  static const bundleLimit = 4;
+
+  /// 教科 → 読みこんだまとめファイル（後ろほど最近使った）
+  static final Map<String, Future<Map<String, dynamic>?>> _bundles = {};
+
+  /// 教科 → 問題セットの一覧（setId → 問題数）。小さいので、すべて覚えておく
+  static final Map<String, Map<String, int>> _setCounts = {};
+
+  static Future<Map<String, dynamic>?> _bundle(String world) async {
+    final loading = _bundles.remove(world) ?? _loadBundle(world);
+    _bundles[world] = loading;
+    while (_bundles.length > bundleLimit) {
+      _bundles.remove(_bundles.keys.first);
+    }
+    final bundle = await loading;
+    // 読めなかったときは覚えず、次にもう一度読みにいく（通信の一時的な失敗など）
+    if (bundle == null && identical(_bundles[world], loading)) {
+      _bundles.remove(world);
+    }
+    return bundle;
+  }
+
+  /// 今覚えている教科（テスト用）
+  @visibleForTesting
+  static List<String> get cachedBundles => _bundles.keys.toList();
+
+  /// 教科（worldId）に収録されている問題セットの一覧（setId → 問題数）。
+  /// 学校の定期テスト対策で、問題セットを選ぶのに使う。
+  static Future<Map<String, int>> questionSetsOf(String world) async {
+    final known = _setCounts[world];
+    if (known != null) return known;
+    final bundle = await _bundle(world);
+    if (bundle == null) return const {};
+    return _setCounts[world] = {
+      for (final e in bundle.entries)
+        e.key: ((e.value as Map)['questions'] as List?)?.length ?? 0,
+    };
+  }
+
+  static Future<Map<String, dynamic>?> _loadBundle(String world) async {
+    try {
+      // loadString は大きなファイルを別の isolate で文字に直すので、
+      // ここではバイト列を読んでその場で直す（1MB 未満なので一瞬）
+      final data = await rootBundle.load(
+        'packages/rpg_game/assets/question_bundles/$world.json',
+      );
+      final raw = utf8.decode(
+        data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes),
+      );
+      return jsonDecode(raw) as Map<String, dynamic>;
+    } on FlutterError {
+      return null;
+    }
+  }
+
+  /// 読み込んだ教科のまとめファイルを忘れる（テスト用）
+  @visibleForTesting
+  static void clearQuestionBundles() {
+    _bundles.clear();
+    _setCounts.clear();
+  }
+
+  @override
+  bool updateShouldNotify(RpgServices oldWidget) =>
+      repository != oldWidget.repository ||
+      purchaseService != oldWidget.purchaseService ||
+      // クラウドの準備ができたあとで、ログイン・クラスルームなどを差しこむ
+      account != oldWidget.account ||
+      classrooms != oldWidget.classrooms ||
+      versusRooms != oldWidget.versusRooms ||
+      duels != oldWidget.duels ||
+      contests != oldWidget.contests ||
+      notices != oldWidget.notices ||
+      yosouRanking != oldWidget.yosouRanking ||
+      matchmaking != oldWidget.matchmaking ||
+      tsuzuriBackend != oldWidget.tsuzuriBackend;
+}

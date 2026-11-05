@@ -1,0 +1,744 @@
+{
+  "setId": "science_shonan_104_bio_veg_02",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "science_shonan_104_bio_veg_02_001",
+      "unit": "science.biology.ecology.vegetation.succession",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "陽樹林がやがて陰樹林に移り変わる理由は？",
+      "choices": [
+        "陰樹の方が光飽和点が高いから",
+        "陽樹林の林床は暗く、陽樹の芽生えは育たないが、陰樹の芽生えは育つから",
+        "陽樹が陰樹に変化するから",
+        "陽樹は寿命がないから"
+      ],
+      "answerIndex": 1,
+      "explanation": "陽樹が枯れるにつれて、育っていた陰樹に置き換わる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_02_002",
+      "unit": "science.biology.ecology.vegetation.succession",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "遷移が進んで、構成する種があまり変化しなくなった安定した状態を何という？",
+      "choices": [
+        "極相（クライマックス）",
+        "光補償点",
+        "先駆",
+        "ギャップ"
+      ],
+      "answerIndex": 0,
+      "explanation": "極相に達した森林を極相林という。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_02_003",
+      "unit": "science.biology.ecology.vegetation.succession",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "極相林を構成する主な樹種を何という？",
+      "choices": [
+        "先駆植物",
+        "先駆樹種",
+        "極相樹種",
+        "陽生植物"
+      ],
+      "answerIndex": 2,
+      "explanation": "暖温帯ではスダジイ・タブノキなどの陰樹。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_02_004",
+      "unit": "science.biology.ecology.vegetation.succession",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "台風などで高木が倒れ、林冠にできたすき間を何という？",
+      "choices": [
+        "林床",
+        "湿原",
+        "裸地",
+        "ギャップ"
+      ],
+      "answerIndex": 3,
+      "explanation": "大きなギャップでは陽樹が、小さなギャップでは陰樹の幼木が育つ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_02_005",
+      "unit": "science.biology.ecology.vegetation.succession",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "ギャップができると、森林にどんな影響があるか？",
+      "choices": [
+        "森林が二度と回復しなくなる",
+        "林床に光が届き、陽樹などが育つことで森林の中に多様な植物が生える",
+        "遷移が逆向きに進んで裸地になる",
+        "陰樹だけが一斉に枯れる"
+      ],
+      "answerIndex": 1,
+      "explanation": "ギャップでの樹木の入れかわりをギャップ更新という。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_02_006",
+      "unit": "science.biology.ecology.vegetation.succession",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "実際の森林の多くが極相に達しない理由として考えられるものは？",
+      "choices": [
+        "台風・山火事・伐採などのかく乱がくり返し起こるから",
+        "遷移は100年で必ず止まるから",
+        "極相林は存在しないから",
+        "陰樹は日本に生えないから"
+      ],
+      "answerIndex": 0,
+      "explanation": "かく乱で遷移がやり直されたり、ギャップができたりする。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_02_007",
+      "unit": "science.biology.ecology.vegetation.succession",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "砂漠化した土地を回復させるとき、まず草を植える方がよいと考えられる理由は？",
+      "choices": [
+        "草が土壌をつくって保水力を高め、そのあと木が育つ環境ができるから",
+        "木を植えるとすぐに極相林になるから",
+        "木は砂漠に絶対に生えないから",
+        "草の方が光補償点が高いから"
+      ],
+      "answerIndex": 0,
+      "explanation": "遷移の順序（草原→低木林→森林）を参考にする。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_02_008",
+      "unit": "science.biology.ecology.vegetation.biome",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ある地域の植生と、そこに生活する動物などをふくめた生物のまとまりを何という？",
+      "choices": [
+        "バイオーム（生物群系）",
+        "植生",
+        "個体群",
+        "相観"
+      ],
+      "answerIndex": 0,
+      "explanation": "主に気温と降水量によって決まる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_02_009",
+      "unit": "science.biology.ecology.vegetation.biome",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "バイオームの分布を決める主な要因の組み合わせは？",
+      "choices": [
+        "日照時間と標高",
+        "年平均気温と年降水量",
+        "風速と湿度",
+        "土壌の色と動物の数"
+      ],
+      "answerIndex": 1,
+      "explanation": "降水量が十分なら気温によって森林のバイオームが変わる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_02_010",
+      "unit": "science.biology.ecology.vegetation.biome",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "降水量の少ない砂漠は、遷移によっていずれ森林になるか？",
+      "choices": [
+        "気温が高いので熱帯多雨林になる",
+        "時間がたてば必ず森林になる",
+        "降水量が少ないため、森林にはならない",
+        "必ず草原を経て照葉樹林になる"
+      ],
+      "answerIndex": 2,
+      "explanation": "遷移の行き着く先（極相）は、その地域の気候で決まる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_02_011",
+      "unit": "science.biology.ecology.vegetation.biome",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "サバンナとステップを分けている要因は？",
+      "choices": [
+        "年降水量",
+        "標高",
+        "年平均気温",
+        "日照時間"
+      ],
+      "answerIndex": 2,
+      "explanation": "どちらも降水量の少ない草原。熱帯にあるのがサバンナ、温帯にあるのがステップ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_02_012",
+      "unit": "science.biology.ecology.vegetation.biome",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "熱帯の草原で、イネのなかまの草本に低木が点在するバイオームは？",
+      "choices": [
+        "硬葉樹林",
+        "ツンドラ",
+        "サバンナ",
+        "ステップ"
+      ],
+      "answerIndex": 2,
+      "explanation": "アフリカなどに広がる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_02_013",
+      "unit": "science.biology.ecology.vegetation.biome",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "温帯の草原で、樹木がほとんど見られないバイオームは？",
+      "choices": [
+        "サバンナ",
+        "雨緑樹林",
+        "ステップ",
+        "照葉樹林"
+      ],
+      "answerIndex": 2,
+      "explanation": "イネのなかまの草本が中心。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_02_014",
+      "unit": "science.biology.ecology.vegetation.biome",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "寒帯にあり、地衣類やコケ植物が中心で、地下に永久凍土があるバイオームは？",
+      "choices": [
+        "砂漠",
+        "ステップ",
+        "針葉樹林",
+        "ツンドラ"
+      ],
+      "answerIndex": 3,
+      "explanation": "低温のため樹木が育たない荒原。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_02_015",
+      "unit": "science.biology.ecology.vegetation.biome",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "高温多湿の地域に見られ、多くの種類の常緑広葉樹からなり、階層構造が発達したバイオームは？",
+      "choices": [
+        "夏緑樹林",
+        "針葉樹林",
+        "ステップ",
+        "熱帯多雨林"
+      ],
+      "answerIndex": 3,
+      "explanation": "樹高50mをこえる高木もある。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_02_016",
+      "unit": "science.biology.ecology.vegetation.biome",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "雨季と乾季のある熱帯・亜熱帯で、乾季に葉を落とす落葉広葉樹からなるバイオームは？",
+      "choices": [
+        "照葉樹林",
+        "夏緑樹林",
+        "雨緑樹林",
+        "硬葉樹林"
+      ],
+      "answerIndex": 2,
+      "explanation": "チークなど。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_02_017",
+      "unit": "science.biology.ecology.vegetation.biome",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "暖温帯に分布し、クチクラ層が発達した光沢のある葉をもつ常緑広葉樹からなるバイオームは？",
+      "choices": [
+        "針葉樹林",
+        "照葉樹林",
+        "夏緑樹林",
+        "硬葉樹林"
+      ],
+      "answerIndex": 1,
+      "explanation": "スダジイ・アラカシ・タブノキ・クスノキなど。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_02_018",
+      "unit": "science.biology.ecology.vegetation.biome",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "冬に雨が多く夏に乾燥する地域（地中海沿岸など）に見られ、小さくてかたい葉をもつ常緑広葉樹のバイオームは？",
+      "choices": [
+        "夏緑樹林",
+        "雨緑樹林",
+        "硬葉樹林",
+        "照葉樹林"
+      ],
+      "answerIndex": 2,
+      "explanation": "オリーブ・コルクガシなど。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_02_019",
+      "unit": "science.biology.ecology.vegetation.biome",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "冷温帯に分布し、冬に葉を落とす落葉広葉樹からなるバイオームは？",
+      "choices": [
+        "針葉樹林",
+        "照葉樹林",
+        "雨緑樹林",
+        "夏緑樹林"
+      ],
+      "answerIndex": 3,
+      "explanation": "ブナ・ミズナラなど。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_02_020",
+      "unit": "science.biology.ecology.vegetation.biome",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "亜寒帯に分布し、常緑の針葉樹が中心のバイオームは？",
+      "choices": [
+        "針葉樹林",
+        "ツンドラ",
+        "夏緑樹林",
+        "照葉樹林"
+      ],
+      "answerIndex": 0,
+      "explanation": "エゾマツ・トドマツ（北海道）、シラビソ・コメツガ（本州の亜高山帯）など。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_02_021",
+      "unit": "science.biology.ecology.vegetation.biome",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "日本の植生がほぼすべて森林になる理由は？",
+      "choices": [
+        "日本はどこでも降水量が十分に多いから",
+        "日本は気温が一定だから",
+        "日本には草原の植物がいないから",
+        "日本は標高が高いから"
+      ],
+      "answerIndex": 0,
+      "explanation": "そのため、日本のバイオームは主に気温で決まる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_02_022",
+      "unit": "science.biology.ecology.vegetation.biome",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "日本で、緯度に応じてバイオームが南北に変化する分布を何という？",
+      "choices": [
+        "垂直分布",
+        "水平分布",
+        "個体群",
+        "遷移"
+      ],
+      "answerIndex": 1,
+      "explanation": "南から亜熱帯多雨林→照葉樹林→夏緑樹林→針葉樹林。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_02_023",
+      "unit": "science.biology.ecology.vegetation.biome",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "標高に応じてバイオームが変化する分布を何という？",
+      "choices": [
+        "水平分布",
+        "階層構造",
+        "垂直分布",
+        "極相"
+      ],
+      "answerIndex": 2,
+      "explanation": "標高が100m上がると気温が約0.5〜0.6℃下がる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_02_024",
+      "unit": "science.biology.ecology.vegetation.biome",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "日本の水平分布を南から順に並べたものは？",
+      "choices": [
+        "夏緑樹林→照葉樹林→亜熱帯多雨林→針葉樹林",
+        "針葉樹林→夏緑樹林→照葉樹林→亜熱帯多雨林",
+        "亜熱帯多雨林→照葉樹林→夏緑樹林→針葉樹林",
+        "照葉樹林→亜熱帯多雨林→針葉樹林→夏緑樹林"
+      ],
+      "answerIndex": 2,
+      "explanation": "沖縄・九州〜関東・東北・北海道東部のように変わる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_02_025",
+      "unit": "science.biology.ecology.vegetation.biome",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "沖縄など南西諸島に分布する亜熱帯多雨林の植物の例は？",
+      "choices": [
+        "ガジュマル・アコウ・ヘゴ",
+        "エゾマツ・トドマツ",
+        "ブナ・ミズナラ",
+        "スダジイ・アラカシ"
+      ],
+      "answerIndex": 0,
+      "explanation": "海岸にはマングローブも見られる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_02_026",
+      "unit": "science.biology.ecology.vegetation.biome",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "九州から関東の低地に広がる照葉樹林の代表的な樹木は？",
+      "choices": [
+        "シラビソ・コメツガ",
+        "スダジイ・アラカシ・タブノキ",
+        "ガジュマル・ヘゴ",
+        "ブナ・ミズナラ"
+      ],
+      "answerIndex": 1,
+      "explanation": "神社の森（鎮守の森）などにも残っている。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_02_027",
+      "unit": "science.biology.ecology.vegetation.biome",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "東北地方などの夏緑樹林の代表的な樹木は？",
+      "choices": [
+        "エゾマツ・トドマツ",
+        "オリーブ・コルクガシ",
+        "ブナ・ミズナラ",
+        "スダジイ・タブノキ"
+      ],
+      "answerIndex": 2,
+      "explanation": "白神山地のブナ林は世界自然遺産。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_02_028",
+      "unit": "science.biology.ecology.vegetation.biome",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "北海道東北部の針葉樹林の代表的な樹木は？",
+      "choices": [
+        "エゾマツ・トドマツ",
+        "スダジイ・タブノキ",
+        "ガジュマル・アコウ",
+        "ブナ・ミズナラ"
+      ],
+      "answerIndex": 0,
+      "explanation": "本州中部の亜高山帯ではシラビソ・コメツガなど。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_02_029",
+      "unit": "science.biology.ecology.vegetation.biome",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "本州中部の垂直分布で、亜高山帯に見られるバイオームは？",
+      "choices": [
+        "照葉樹林",
+        "夏緑樹林",
+        "熱帯多雨林",
+        "針葉樹林"
+      ],
+      "answerIndex": 3,
+      "explanation": "丘陵帯は照葉樹林、山地帯は夏緑樹林、高山帯はハイマツや高山植物。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_02_030",
+      "unit": "science.biology.ecology.vegetation.biome",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "本州中部では標高約2500mにある、高木の森林が成立しなくなる高さの限界を何という？",
+      "choices": [
+        "森林限界",
+        "光補償点",
+        "林冠",
+        "極相"
+      ],
+      "answerIndex": 0,
+      "explanation": "本州中部では標高約2500m。それより上の高山帯にはハイマツやお花畑が見られる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_02_031",
+      "unit": "science.biology.ecology.vegetation.biome",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "同じ熱帯多雨林でも、アマゾンと東南アジアで生育する植物の種類が異なる理由として考えられるものは？",
+      "choices": [
+        "植物は進化しないから",
+        "大陸が離れていて、それぞれの地域で別々に進化した生物が生育しているから",
+        "気温と降水量が全くちがうから",
+        "どちらかは熱帯多雨林ではないから"
+      ],
+      "answerIndex": 1,
+      "explanation": "バイオームの相観は気候で似ていても、構成する種は地域の歴史によって異なる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_veg_02_032",
+      "unit": "science.biology.ecology.vegetation.biome",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "地球温暖化が進んだとき、日本のバイオームの分布はどう変わると考えられるか？",
+      "choices": [
+        "すべて砂漠になる",
+        "南や標高の低い方へずれていく",
+        "全く変わらない",
+        "それぞれのバイオームが北や標高の高い方へずれていく"
+      ],
+      "answerIndex": 3,
+      "explanation": "寒い地域のバイオーム（高山植物など）は分布が狭くなるおそれがある。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "vegetation"
+      ]
+    }
+  ]
+}

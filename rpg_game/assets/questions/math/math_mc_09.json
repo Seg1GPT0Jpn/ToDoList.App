@@ -1,0 +1,288 @@
+{
+  "setId": "math_mc_09",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_mc09_001",
+      "unit": "math.mc.curve.param.polar",
+      "category": "calculation",
+      "prompt": "極方程式 r=2cos θ が表す図形は？",
+      "choices": [
+        "中心 (1, 0)、半径1の円",
+        "中心 (2, 0)、半径2の円",
+        "直線 x=2",
+        "中心 (0, 1)、半径1の円"
+      ],
+      "answerIndex": 0,
+      "explanation": "r²=2r cos θ → x²+y²=2x。"
+    },
+    {
+      "id": "mat_mc09_002",
+      "unit": "math.mc.curve.conic.ellipse",
+      "category": "calculation",
+      "prompt": "x²+4y²−2x−3=0 が表す楕円の中心は？",
+      "choices": [
+        "(0, 1)",
+        "(1, 0)",
+        "(2, 0)",
+        "(−1, 0)"
+      ],
+      "answerIndex": 1,
+      "explanation": "(x−1)²/4+y²=1。"
+    },
+    {
+      "id": "mat_mc09_003",
+      "unit": "math.mc.curve.conic.ellipse",
+      "category": "calculation",
+      "prompt": "楕円 x²/4+y²/3=1 上の点 (1, 3/2) における接線の方程式は？",
+      "choices": [
+        "x/2+y/4=1",
+        "x+y=5/2",
+        "x/4+y/3=1",
+        "x/4+y/2=1"
+      ],
+      "answerIndex": 3,
+      "explanation": "x₁x/a²+y₁y/b²=1。"
+    },
+    {
+      "id": "mat_mc09_004",
+      "unit": "math.mc.curve.conic.ellipse",
+      "category": "calculation",
+      "prompt": "楕円 x²/25+y²/16=1 の離心率は？",
+      "choices": [
+        "5/3",
+        "4/5",
+        "1",
+        "3/5"
+      ],
+      "answerIndex": 3,
+      "explanation": "c=3、e=c/a。"
+    },
+    {
+      "id": "mat_mc09_005",
+      "unit": "math.mc.curve.conic.parabola",
+      "category": "calculation",
+      "prompt": "焦点 (0, 1)、準線 y=−1 の放物線の方程式は？",
+      "choices": [
+        "x²=4y",
+        "y=x²",
+        "y²=4x",
+        "x²=2y"
+      ],
+      "answerIndex": 0,
+      "explanation": "焦点からの距離＝準線からの距離。"
+    },
+    {
+      "id": "mat_mc09_006",
+      "unit": "math.mc.curve.conic",
+      "category": "calculation",
+      "prompt": "点 (3, 0) までの距離と直線 x=25/3 までの距離の比が 3:5 である点の軌跡は？",
+      "choices": [
+        "楕円 x²/25+y²/16=1",
+        "放物線 y²=12x",
+        "円 x²+y²=9",
+        "双曲線 x²/9−y²/16=1"
+      ],
+      "answerIndex": 0,
+      "explanation": "離心率3/5の2次曲線。"
+    },
+    {
+      "id": "mat_mc09_007",
+      "unit": "math.mc.curve.conic.hyperbola",
+      "category": "calculation",
+      "prompt": "双曲線 xy=1 の漸近線は？",
+      "choices": [
+        "y=x と y=−x",
+        "なし",
+        "x 軸と y 軸",
+        "x=1 と y=1"
+      ],
+      "answerIndex": 2,
+      "explanation": "x→∞ で y→0。"
+    },
+    {
+      "id": "mat_mc09_008",
+      "unit": "math.mc.curve.param.polar",
+      "category": "calculation",
+      "prompt": "極方程式 r=1/(1−cos θ) が表す曲線は？",
+      "choices": [
+        "双曲線",
+        "円",
+        "楕円",
+        "放物線"
+      ],
+      "answerIndex": 3,
+      "explanation": "離心率 e=1 の2次曲線。"
+    },
+    {
+      "id": "mat_mc09_009",
+      "unit": "math.mc.curve.conic",
+      "category": "calculation",
+      "prompt": "x=t+1/t、y=t−1/t が表す曲線は？",
+      "choices": [
+        "xy=1",
+        "x²−y²=4",
+        "x²−y²=1",
+        "x²+y²=4"
+      ],
+      "answerIndex": 1,
+      "explanation": "(x+y)(x−y)=2t·2/t。"
+    },
+    {
+      "id": "mat_mc09_010",
+      "unit": "math.mc.curve.complex.figure",
+      "category": "thinking",
+      "prompt": "楕円・放物線・双曲線をまとめて「2次曲線」と呼ぶ理由は？",
+      "choices": [
+        "2つの焦点をもつから",
+        "どれも2本あるから",
+        "どれも円だから",
+        "どれも x、y の2次方程式で表され、円錐を平面で切った切り口として現れるから"
+      ],
+      "answerIndex": 3,
+      "explanation": "円錐曲線ともいう。"
+    },
+    {
+      "id": "mat_mc09_011",
+      "unit": "math.mc.curve.param.polar",
+      "category": "calculation",
+      "prompt": "極方程式 r=4sin θ が表す図形は？",
+      "choices": [
+        "中心 (2, 0)、半径2の円",
+        "中心 (0, 4)、半径4の円",
+        "直線 y=4",
+        "中心 (0, 2)、半径2の円"
+      ],
+      "answerIndex": 3,
+      "explanation": "r²=4r sin θ → x²+y²=4y。"
+    },
+    {
+      "id": "mat_mc09_012",
+      "unit": "math.mc.curve.conic.ellipse",
+      "category": "calculation",
+      "prompt": "4x²+9y²−8x−32=0 が表す楕円の中心は？",
+      "choices": [
+        "(1, 0)",
+        "(−1, 0)",
+        "(2, 0)",
+        "(0, 1)"
+      ],
+      "answerIndex": 0,
+      "explanation": "4(x−1)²+9y²=36。"
+    },
+    {
+      "id": "mat_mc09_013",
+      "unit": "math.mc.curve.conic.ellipse",
+      "category": "calculation",
+      "prompt": "楕円 x²/8+y²/2=1 上の点 (2, 1) における接線の方程式は？",
+      "choices": [
+        "x/4+y/2=1",
+        "2x+y=1",
+        "x/8+y/2=1",
+        "x+2y=8"
+      ],
+      "answerIndex": 0,
+      "explanation": "x₀x/a²+y₀y/b²=1：2x/8+y/2=1。"
+    },
+    {
+      "id": "mat_mc09_014",
+      "unit": "math.mc.curve.conic.ellipse",
+      "category": "calculation",
+      "prompt": "楕円 x²/9+y²/5=1 の離心率は？",
+      "choices": [
+        "2/3",
+        "3/2",
+        "4/9",
+        "√5/3"
+      ],
+      "answerIndex": 0,
+      "explanation": "c=√(9−5)=2、e=c/a=2/3。"
+    },
+    {
+      "id": "mat_mc09_015",
+      "unit": "math.mc.curve.conic.parabola",
+      "category": "calculation",
+      "prompt": "焦点 (2, 0)、準線 x=−2 の放物線の方程式は？",
+      "choices": [
+        "y²=4x",
+        "x²=8y",
+        "y²=8x",
+        "y²=2x"
+      ],
+      "answerIndex": 2,
+      "explanation": "y²=4px で p=2。"
+    },
+    {
+      "id": "mat_mc09_016",
+      "unit": "math.mc.curve.conic.parabola",
+      "category": "calculation",
+      "prompt": "離心率 e が 1 より大きい2次曲線は？",
+      "choices": [
+        "放物線",
+        "楕円",
+        "円",
+        "双曲線"
+      ],
+      "answerIndex": 3,
+      "explanation": "e<1 楕円、e=1 放物線、e>1 双曲線。"
+    },
+    {
+      "id": "mat_mc09_017",
+      "unit": "math.mc.curve.conic.hyperbola",
+      "category": "calculation",
+      "prompt": "双曲線 x²−y²=1 の漸近線は？",
+      "choices": [
+        "y=0",
+        "y=±x",
+        "x=±1",
+        "y=±2x"
+      ],
+      "answerIndex": 1,
+      "explanation": "a=b=1 の直角双曲線。"
+    },
+    {
+      "id": "mat_mc09_018",
+      "unit": "math.mc.curve.param.polar",
+      "category": "calculation",
+      "prompt": "極方程式 r=2/(1+cos θ) が表す曲線は？",
+      "choices": [
+        "放物線",
+        "楕円",
+        "円",
+        "双曲線"
+      ],
+      "answerIndex": 0,
+      "explanation": "r=ed/(1+e cos θ) で e=1。"
+    },
+    {
+      "id": "mat_mc09_019",
+      "unit": "math.mc.curve.conic",
+      "category": "calculation",
+      "prompt": "x=1/cos θ、y=tan θ が表す曲線は？",
+      "choices": [
+        "楕円 x²+y²/2=1",
+        "双曲線 x²−y²=1",
+        "放物線 y=x²",
+        "円 x²+y²=1"
+      ],
+      "answerIndex": 1,
+      "explanation": "1+tan²θ=1/cos²θ。"
+    },
+    {
+      "id": "mat_mc09_020",
+      "unit": "math.mc.curve.conic",
+      "category": "thinking",
+      "prompt": "2次曲線を平行移動したとき、変わらないものは？",
+      "choices": [
+        "中心の座標",
+        "形（焦点間の距離や離心率）",
+        "焦点の座標",
+        "方程式の定数項"
+      ],
+      "answerIndex": 1,
+      "explanation": "平行移動は位置だけを変え、形は変えない。"
+    }
+  ]
+}

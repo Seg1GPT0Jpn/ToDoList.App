@@ -1,0 +1,288 @@
+{
+  "setId": "math_m1_14",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_m114_001",
+      "unit": "math.m1.quad.eqineq.discriminant",
+      "category": "calculation",
+      "prompt": "x²+2x+k=0 が異なる2つの実数解をもつ k の範囲は？",
+      "choices": [
+        "k<−1",
+        "k>1",
+        "k<1",
+        "k≦1"
+      ],
+      "answerIndex": 2,
+      "explanation": "D=4−4k>0。"
+    },
+    {
+      "id": "mat_m114_002",
+      "unit": "math.m1.quad.eqineq.intersect",
+      "category": "calculation",
+      "prompt": "y=x²−kx+4 のグラフが x 軸に接するとき、k の値は？",
+      "choices": [
+        "k=4",
+        "k=±2",
+        "k=16",
+        "k=±4"
+      ],
+      "answerIndex": 3,
+      "explanation": "D=k²−16=0。"
+    },
+    {
+      "id": "mat_m114_003",
+      "unit": "math.m1.quad.eqineq.inequality",
+      "category": "calculation",
+      "prompt": "不等式 x²+2x+3>0 の解は？",
+      "choices": [
+        "解なし",
+        "すべての実数",
+        "x<−3",
+        "x>−1"
+      ],
+      "answerIndex": 1,
+      "explanation": "D=4−12<0 で、グラフはつねに x 軸より上。"
+    },
+    {
+      "id": "mat_m114_004",
+      "unit": "math.m1.quad.eqineq.inequality",
+      "category": "calculation",
+      "prompt": "不等式 x²−4x+4≦0 の解は？",
+      "choices": [
+        "x≦2",
+        "解なし",
+        "x=2",
+        "すべての実数"
+      ],
+      "answerIndex": 2,
+      "explanation": "(x−2)²≦0 を満たすのは x=2 のみ。"
+    },
+    {
+      "id": "mat_m114_005",
+      "unit": "math.m1.quad.eqineq.inequality",
+      "category": "calculation",
+      "prompt": "連立不等式 x²−3x−4<0、x²−4>0 を解くと？",
+      "choices": [
+        "−1<x<4",
+        "2<x<4",
+        "x<−2, 2<x",
+        "−2<x<−1"
+      ],
+      "answerIndex": 1,
+      "explanation": "−1<x<4 と、x<−2 または x>2 の共通部分。"
+    },
+    {
+      "id": "mat_m114_006",
+      "unit": "math.m1.quad.eqineq.always",
+      "category": "calculation",
+      "prompt": "すべての実数 x で x²−mx+m>0 となる m の範囲は？",
+      "choices": [
+        "m<0, 4<m",
+        "0≦m≦4",
+        "0<m<4",
+        "m>4"
+      ],
+      "answerIndex": 2,
+      "explanation": "D=m²−4m<0。"
+    },
+    {
+      "id": "mat_m114_007",
+      "unit": "math.m1.quad.eqineq.intersect",
+      "category": "calculation",
+      "prompt": "放物線 y=x²−2x+2 と直線 y=x+2 の共有点は？",
+      "choices": [
+        "(0, 2), (3, 5)",
+        "(3, 5)",
+        "(0, 2)",
+        "(1, 3), (2, 4)"
+      ],
+      "answerIndex": 0,
+      "explanation": "x²−2x+2=x+2 → x(x−3)=0。"
+    },
+    {
+      "id": "mat_m114_008",
+      "unit": "math.m1.quad.eqineq.inequality",
+      "category": "calculation",
+      "prompt": "不等式 −x²+x+6≧0 を解くと？",
+      "choices": [
+        "−2≦x≦3",
+        "2≦x≦3",
+        "−3≦x≦2",
+        "x≦−2, 3≦x"
+      ],
+      "answerIndex": 0,
+      "explanation": "x²−x−6≦0 → (x+2)(x−3)≦0。"
+    },
+    {
+      "id": "mat_m114_009",
+      "unit": "math.m1.quad.eqineq.equation",
+      "category": "calculation",
+      "prompt": "2次方程式 x²−6x+k=0 の1つの解が2のとき、もう1つの解は？",
+      "choices": [
+        "8",
+        "2",
+        "4",
+        "−4"
+      ],
+      "answerIndex": 2,
+      "explanation": "k=8 で (x−2)(x−4)=0。"
+    },
+    {
+      "id": "mat_m114_010",
+      "unit": "math.m1.quad.eqineq.discriminant",
+      "category": "thinking",
+      "prompt": "判別式 D<0 のとき、2次関数のグラフと x 軸の関係は？",
+      "choices": [
+        "1点で接する",
+        "共有点をもたない",
+        "x 軸と重なる",
+        "2点で交わる"
+      ],
+      "answerIndex": 1,
+      "explanation": "実数解がないので共有点もない。"
+    },
+    {
+      "id": "mat_m114_011",
+      "unit": "math.m1.quad.eqineq.discriminant",
+      "category": "calculation",
+      "prompt": "x²−4x+k=0 が重解をもつとき、k の値は？",
+      "choices": [
+        "16",
+        "4",
+        "2",
+        "−4"
+      ],
+      "answerIndex": 1,
+      "explanation": "D/4=4−k=0。"
+    },
+    {
+      "id": "mat_m114_012",
+      "unit": "math.m1.quad.eqineq.discriminant",
+      "category": "calculation",
+      "prompt": "x²+kx+9=0 が実数解をもたない k の範囲は？",
+      "choices": [
+        "k<6",
+        "−6<k<6",
+        "k<−6, 6<k",
+        "−3<k<3"
+      ],
+      "answerIndex": 1,
+      "explanation": "D=k²−36<0。"
+    },
+    {
+      "id": "mat_m114_013",
+      "unit": "math.m1.quad.eqineq.inequality",
+      "category": "calculation",
+      "prompt": "不等式 x²−2x+3<0 の解は？",
+      "choices": [
+        "すべての実数",
+        "x<1",
+        "1<x<3",
+        "解なし"
+      ],
+      "answerIndex": 3,
+      "explanation": "(x−1)²+2>0 がつねに成り立つ。"
+    },
+    {
+      "id": "mat_m114_014",
+      "unit": "math.m1.quad.eqineq.inequality",
+      "category": "calculation",
+      "prompt": "不等式 x²+6x+9>0 の解は？",
+      "choices": [
+        "x>−3",
+        "解なし",
+        "すべての実数",
+        "−3 以外のすべての実数"
+      ],
+      "answerIndex": 3,
+      "explanation": "(x+3)²>0。x=−3 のときだけ0。"
+    },
+    {
+      "id": "mat_m114_015",
+      "unit": "math.m1.quad.eqineq.inequality",
+      "category": "calculation",
+      "prompt": "連立不等式 x²−x−6≦0、x²−1>0 を解くと？",
+      "choices": [
+        "x<−1, 1<x",
+        "−2≦x<−1, 1<x≦3",
+        "−1<x<1",
+        "−2≦x≦3"
+      ],
+      "answerIndex": 1,
+      "explanation": "−2≦x≦3 と、x<−1 または x>1 の共通部分。"
+    },
+    {
+      "id": "mat_m114_016",
+      "unit": "math.m1.quad.eqineq.intersect",
+      "category": "calculation",
+      "prompt": "y=x²+2mx+4 のグラフが x 軸と共有点をもたない m の範囲は？",
+      "choices": [
+        "−4<m<4",
+        "m<2",
+        "−2<m<2",
+        "m<−2, 2<m"
+      ],
+      "answerIndex": 2,
+      "explanation": "D/4=m²−4<0。"
+    },
+    {
+      "id": "mat_m114_017",
+      "unit": "math.m1.quad.eqineq.intersect",
+      "category": "calculation",
+      "prompt": "放物線 y=x² と直線 y=−x+6 の共有点の x 座標は？",
+      "choices": [
+        "1, 6",
+        "−2, 3",
+        "2, −3",
+        "2, 3"
+      ],
+      "answerIndex": 2,
+      "explanation": "x²+x−6=0。"
+    },
+    {
+      "id": "mat_m114_018",
+      "unit": "math.m1.quad.eqineq.inequality",
+      "category": "calculation",
+      "prompt": "不等式 2x²−5x+2≧0 を解くと？",
+      "choices": [
+        "1/2≦x≦2",
+        "x≧2",
+        "x≦−2, −1/2≦x",
+        "x≦1/2, 2≦x"
+      ],
+      "answerIndex": 3,
+      "explanation": "(2x−1)(x−2)≧0。"
+    },
+    {
+      "id": "mat_m114_019",
+      "unit": "math.m1.quad.eqineq",
+      "category": "calculation",
+      "prompt": "x²−5x+k=0 の1つの解が3のとき、もう1つの解は？",
+      "choices": [
+        "−2",
+        "3",
+        "6",
+        "2"
+      ],
+      "answerIndex": 3,
+      "explanation": "k=6 で (x−2)(x−3)=0。解の和が5からも分かる。"
+    },
+    {
+      "id": "mat_m114_020",
+      "unit": "math.m1.quad.eqineq.always",
+      "category": "calculation",
+      "prompt": "すべての実数 x で ax²+4x+a>0 となる a の範囲は？",
+      "choices": [
+        "−2<a<2",
+        "a>2",
+        "a>0",
+        "a<−2"
+      ],
+      "answerIndex": 1,
+      "explanation": "a>0 かつ D/4=4−a²<0。"
+    }
+  ]
+}

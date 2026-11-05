@@ -1,0 +1,188 @@
+{
+  "setId": "kokka_kaikei_03",
+  "worldId": "kokka",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "kai03_001",
+      "unit": "kokka.kaikei.zaimu.renketsu.renketsu",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "連結の範囲に含める子会社かどうかを判定する基準は？",
+      "choices": [
+        "持株基準だけ",
+        "支配力基準",
+        "所在地基準",
+        "売上高基準"
+      ],
+      "answerIndex": 1,
+      "explanation": "他の会社の意思決定機関を支配しているかで判定する。"
+    },
+    {
+      "id": "kai03_002",
+      "unit": "kokka.kaikei.zaimu.renketsu.renketsu",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "他の会社の議決権の過半数を自己の計算で所有しているときは？",
+      "choices": [
+        "必ず関連会社",
+        "持分法で処理する",
+        "原則としてその会社は子会社",
+        "連結の対象外"
+      ],
+      "answerIndex": 2,
+      "explanation": "過半数に満たなくても、実質的に支配していれば子会社となる場合がある。"
+    },
+    {
+      "id": "kai03_003",
+      "unit": "kokka.kaikei.zaimu.renketsu.renketsu",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "投資と資本の相殺消去で、親会社の投資額が子会社の資本の親会社持分を上回るとき、その差額は？",
+      "choices": [
+        "非支配株主持分",
+        "負ののれん",
+        "利益剰余金",
+        "のれん"
+      ],
+      "answerIndex": 3,
+      "explanation": "無形固定資産として計上し、償却する。"
+    },
+    {
+      "id": "kai03_004",
+      "unit": "kokka.kaikei.zaimu.renketsu.renketsu",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "日本の会計基準で、のれんの償却期間は？",
+      "choices": [
+        "20年以内のその効果の及ぶ期間",
+        "5年以内",
+        "50年",
+        "償却しない"
+      ],
+      "answerIndex": 0,
+      "explanation": "定額法その他の合理的な方法で規則的に償却する。IFRSでは償却せず減損テストを行う。"
+    },
+    {
+      "id": "kai03_005",
+      "unit": "kokka.kaikei.zaimu.renketsu.renketsu",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "日本の会計基準で、負ののれんが生じたときの処理は？",
+      "choices": [
+        "資産に計上して償却する",
+        "生じた事業年度の利益として処理する",
+        "負債に計上する",
+        "純資産から控除する"
+      ],
+      "answerIndex": 1,
+      "explanation": "企業結合に関する会計基準。"
+    },
+    {
+      "id": "kai03_006",
+      "unit": "kokka.kaikei.zaimu.renketsu.renketsu",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "子会社の資本のうち、親会社に帰属しない部分は？",
+      "choices": [
+        "資本剰余金",
+        "のれん",
+        "非支配株主持分",
+        "自己株式"
+      ],
+      "answerIndex": 2,
+      "explanation": "連結貸借対照表の純資産の部に表示する。"
+    },
+    {
+      "id": "kai03_007",
+      "unit": "kokka.kaikei.zaimu.renketsu.renketsu",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "支配獲得日に、子会社の資産と負債はどう評価する？",
+      "choices": [
+        "親会社の持分だけ時価で評価する",
+        "税務上の価額で評価する",
+        "すべて取得原価のまま",
+        "すべて時価で評価する（全面時価評価法）"
+      ],
+      "answerIndex": 3,
+      "explanation": "評価差額は子会社の資本とする。"
+    },
+    {
+      "id": "kai03_008",
+      "unit": "kokka.kaikei.zaimu.renketsu.mochibun",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "関連会社への投資に適用する方法は？",
+      "choices": [
+        "持分法",
+        "原価法だけ",
+        "比例連結",
+        "全部連結"
+      ],
+      "answerIndex": 0,
+      "explanation": "投資先の純資産と損益のうち、持分に見合う額を投資勘定に反映させる。"
+    },
+    {
+      "id": "kai03_009",
+      "unit": "kokka.kaikei.zaimu.renketsu.mochibun",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "議決権の何％以上を所有すると、原則として関連会社とされる？",
+      "choices": [
+        "50％超",
+        "20％以上",
+        "10％以上",
+        "33％以上"
+      ],
+      "answerIndex": 1,
+      "explanation": "15％以上20％未満でも重要な影響を与えていれば関連会社となる場合がある。"
+    },
+    {
+      "id": "kai03_010",
+      "unit": "kokka.kaikei.zaimu.renketsu.renketsu",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "親会社と子会社の間の売上高と仕入高は、連結ではどうする？",
+      "choices": [
+        "売上高だけを残す",
+        "そのまま合算する",
+        "相殺消去する",
+        "注記だけ行う"
+      ],
+      "answerIndex": 2,
+      "explanation": "企業集団の内部取引は外部との取引ではないため。"
+    },
+    {
+      "id": "kai03_011",
+      "unit": "kokka.kaikei.zaimu.renketsu.renketsu",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "親会社が利益を加えて子会社に売った商品が、期末に子会社の在庫に残っているときは？",
+      "choices": [
+        "子会社の利益に振り替える",
+        "在庫を時価で評価し直す",
+        "そのまま利益にする",
+        "未実現利益を消去する"
+      ],
+      "answerIndex": 3,
+      "explanation": "企業集団の外部に売られていない利益は実現していない。"
+    },
+    {
+      "id": "kai03_012",
+      "unit": "kokka.kaikei.zaimu.renketsu.renketsu",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "在外子会社の財務諸表の換算で、資産・負債に使う為替相場は？",
+      "choices": [
+        "決算時の為替相場",
+        "設立時の為替相場",
+        "期中平均相場",
+        "取得時の為替相場"
+      ],
+      "answerIndex": 0,
+      "explanation": "資本は株式取得時の相場、収益・費用は原則として期中平均相場。"
+    }
+  ]
+}

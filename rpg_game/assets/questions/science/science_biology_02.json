@@ -1,0 +1,456 @@
+{
+  "setId": "science_biology_02",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_bio02_001",
+      "unit": "science.biology.cell.energy.atp",
+      "category": "knowledge",
+      "prompt": "生体内で起こる化学反応全体を何という？",
+      "choices": [
+        "消化",
+        "呼吸",
+        "代謝",
+        "排出"
+      ],
+      "answerIndex": 2,
+      "explanation": "代謝は、物質を合成する同化と、分解する異化に分けられる。"
+    },
+    {
+      "id": "sci_bio02_002",
+      "unit": "science.biology.cell.energy.atp",
+      "category": "knowledge",
+      "prompt": "簡単な物質から複雑な物質を合成し、エネルギーを取りこむ反応は？",
+      "choices": [
+        "異化",
+        "同化",
+        "分解",
+        "発酵"
+      ],
+      "answerIndex": 1,
+      "explanation": "光合成は同化の代表例。呼吸は異化の代表例。"
+    },
+    {
+      "id": "sci_bio02_003",
+      "unit": "science.biology.cell.energy.atp",
+      "category": "knowledge",
+      "prompt": "ATP の正式名称は？",
+      "choices": [
+        "デオキシリボ核酸",
+        "リボ核酸",
+        "アデノシン二リン酸",
+        "アデノシン三リン酸"
+      ],
+      "answerIndex": 3,
+      "explanation": "アデニン ＋ リボース ＋ リン酸3個。ADP はアデノシン二リン酸。"
+    },
+    {
+      "id": "sci_bio02_004",
+      "unit": "science.biology.cell.energy.atp",
+      "category": "knowledge",
+      "prompt": "ATP がエネルギーを放出するときの変化は？",
+      "choices": [
+        "グルコースになる",
+        "ADP とリン酸に分解される",
+        "DNA に変わる",
+        "酸素と結びつく"
+      ],
+      "answerIndex": 1,
+      "explanation": "リン酸どうしの結合（高エネルギーリン酸結合）が切れるときにエネルギーが出る。"
+    },
+    {
+      "id": "sci_bio02_005",
+      "unit": "science.biology.cell.energy.enzyme",
+      "category": "knowledge",
+      "prompt": "酵素の主成分は？",
+      "choices": [
+        "脂肪",
+        "核酸",
+        "炭水化物",
+        "タンパク質"
+      ],
+      "answerIndex": 3,
+      "explanation": "酵素はタンパク質でできた生体触媒。"
+    },
+    {
+      "id": "sci_bio02_006",
+      "unit": "science.biology.cell.energy.enzyme",
+      "category": "knowledge",
+      "prompt": "酵素が特定の物質（基質）にしかはたらかない性質を何という？",
+      "choices": [
+        "基質特異性",
+        "恒常性",
+        "最適温度",
+        "失活"
+      ],
+      "answerIndex": 0,
+      "explanation": "酵素の活性部位の形に合う基質だけと結合する。"
+    },
+    {
+      "id": "sci_bio02_007",
+      "unit": "science.biology.cell.energy",
+      "category": "knowledge",
+      "prompt": "植物のように、無機物から有機物をつくって生活する生物を何という？",
+      "choices": [
+        "消費者",
+        "独立栄養生物",
+        "分解者",
+        "従属栄養生物"
+      ],
+      "answerIndex": 1,
+      "explanation": "動物のように他の生物がつくった有機物を取りこむ生物は従属栄養生物。"
+    },
+    {
+      "id": "sci_bio02_008",
+      "unit": "science.biology.cell.energy.overview",
+      "category": "knowledge",
+      "prompt": "呼吸で使われる物質と生じる物質の組み合わせは？",
+      "choices": [
+        "酸素だけを使い、水ができる",
+        "有機物と酸素を使い、二酸化炭素と水ができる",
+        "有機物だけを使い、酸素ができる",
+        "二酸化炭素と水を使い、有機物と酸素ができる"
+      ],
+      "answerIndex": 1,
+      "explanation": "C₆H₁₂O₆ ＋ 6O₂ ＋ 6H₂O → 6CO₂ ＋ 12H₂O。取り出したエネルギーで ATP をつくる。"
+    },
+    {
+      "id": "sci_bio02_009",
+      "unit": "science.biology.cell.energy.overview",
+      "category": "knowledge",
+      "prompt": "光合成の材料となる物質は？",
+      "choices": [
+        "二酸化炭素と水",
+        "有機物と酸素",
+        "酸素と水",
+        "窒素と水"
+      ],
+      "answerIndex": 0,
+      "explanation": "光エネルギーを使って CO₂ と H₂O から有機物をつくり、O₂ を放出する。"
+    },
+    {
+      "id": "sci_bio02_010",
+      "unit": "science.biology.cell.energy.enzyme",
+      "category": "knowledge",
+      "prompt": "酵素について正しいものは？",
+      "choices": [
+        "どんな温度でも同じようにはたらく",
+        "1回はたらくとなくなる",
+        "細胞の外ではたらけない",
+        "反応の前後で変化せず、くり返しはたらく"
+      ],
+      "answerIndex": 3,
+      "explanation": "触媒なので反応の前後で変化しない。消化酵素のように細胞外ではたらくものもある。"
+    },
+    {
+      "id": "sci_bio02_011",
+      "unit": "science.biology.cell.energy.atp",
+      "category": "knowledge",
+      "prompt": "ATP は何の「通貨」にたとえられる？",
+      "choices": [
+        "エネルギー",
+        "酸素",
+        "遺伝情報",
+        "水"
+      ],
+      "answerIndex": 0,
+      "explanation": "生物はエネルギーのやりとりを ATP を介して行う。すべての生物に共通。"
+    },
+    {
+      "id": "sci_bio02_012",
+      "unit": "science.biology.cell.energy.enzyme",
+      "category": "knowledge",
+      "prompt": "生物のからだで触媒としてはたらき、化学反応を進みやすくするものは？",
+      "choices": [
+        "DNA",
+        "酵素",
+        "ATP",
+        "ホルモン"
+      ],
+      "answerIndex": 1,
+      "explanation": "酵素は反応に必要な活性化エネルギーを下げる。"
+    },
+    {
+      "id": "sci_bio02_013",
+      "unit": "science.biology.cell.energy.overview",
+      "category": "calculation",
+      "prompt": "呼吸でグルコース 1 mol が完全に分解されると、二酸化炭素は何 mol できる？",
+      "choices": [
+        "6 mol",
+        "2 mol",
+        "12 mol",
+        "1 mol"
+      ],
+      "answerIndex": 0,
+      "explanation": "C₆H₁₂O₆ にふくまれる炭素 6 個が CO₂ 6 分子になる。"
+    },
+    {
+      "id": "sci_bio02_014",
+      "unit": "science.biology.cell.energy.overview",
+      "category": "calculation",
+      "prompt": "呼吸で酸素 3 mol を使ったとき、分解されたグルコースは何 mol？",
+      "choices": [
+        "3 mol",
+        "18 mol",
+        "6 mol",
+        "0.5 mol"
+      ],
+      "answerIndex": 3,
+      "explanation": "グルコース 1 mol につき O₂ 6 mol。3 ÷ 6 ＝ 0.5 mol。"
+    },
+    {
+      "id": "sci_bio02_015",
+      "unit": "science.biology.cell.energy.enzyme",
+      "category": "thinking",
+      "prompt": "酵素の反応速度と温度の関係のグラフで、ある温度を超えると速度が急に下がる理由は？",
+      "choices": [
+        "酵素が増えすぎるから",
+        "基質がなくなるから",
+        "高温で酵素のタンパク質の立体構造がこわれる（失活）から",
+        "反応が速すぎるから"
+      ],
+      "answerIndex": 2,
+      "explanation": "酵素には最適温度があり、高温では変性して活性を失う。"
+    },
+    {
+      "id": "sci_bio02_016",
+      "unit": "science.biology.cell.energy.enzyme",
+      "category": "thinking",
+      "prompt": "過酸化水素水に生の肝臓片を入れると泡が出るが、煮た肝臓片では出ない。理由は？",
+      "choices": [
+        "肝臓の酵素（カタラーゼ）が加熱で失活したから",
+        "過酸化水素が分解したから",
+        "生の肝臓が酸素を出しているから",
+        "煮た肝臓には水がないから"
+      ],
+      "answerIndex": 0,
+      "explanation": "カタラーゼは 2H₂O₂ → 2H₂O ＋ O₂ を進める酵素。加熱すると変性してはたらかない。"
+    },
+    {
+      "id": "sci_bio02_017",
+      "unit": "science.biology.cell.energy.atp",
+      "category": "knowledge",
+      "prompt": "異化の例は？",
+      "choices": [
+        "光合成",
+        "呼吸",
+        "タンパク質の合成",
+        "DNA の複製"
+      ],
+      "answerIndex": 1,
+      "explanation": "異化は複雑な物質を分解してエネルギーを取り出す反応。"
+    },
+    {
+      "id": "sci_bio02_018",
+      "unit": "science.biology.cell.energy.overview",
+      "category": "knowledge",
+      "prompt": "光合成で発生する気体は？",
+      "choices": [
+        "窒素",
+        "酸素",
+        "二酸化炭素",
+        "水素"
+      ],
+      "answerIndex": 1,
+      "explanation": "水が分解されて酸素が生じる。"
+    },
+    {
+      "id": "sci_bio02_019",
+      "unit": "science.biology.cell.energy.atp",
+      "category": "knowledge",
+      "prompt": "ATP にふくまれる、高エネルギーリン酸結合の数は？",
+      "choices": [
+        "1つ",
+        "4つ",
+        "2つ",
+        "3つ"
+      ],
+      "answerIndex": 2,
+      "explanation": "リン酸3つの間の2か所の結合。"
+    },
+    {
+      "id": "sci_bio02_020",
+      "unit": "science.biology.cell.energy.atp",
+      "category": "knowledge",
+      "prompt": "ATP を構成する糖は？",
+      "choices": [
+        "リボース",
+        "スクロース",
+        "デオキシリボース",
+        "グルコース"
+      ],
+      "answerIndex": 0,
+      "explanation": "アデニン＋リボース（アデノシン）＋リン酸3つ。"
+    },
+    {
+      "id": "sci_bio02_021",
+      "unit": "science.biology.cell.energy.atp",
+      "category": "knowledge",
+      "prompt": "ATP を構成する塩基は？",
+      "choices": [
+        "チミン",
+        "シトシン",
+        "アデニン",
+        "グアニン"
+      ],
+      "answerIndex": 2,
+      "explanation": "ATP の A はアデノシン（アデニン＋リボース）。"
+    },
+    {
+      "id": "sci_bio02_022",
+      "unit": "science.biology.cell.energy.overview",
+      "category": "knowledge",
+      "prompt": "光合成の反応全体を表したものとして正しいものは？",
+      "choices": [
+        "有機物＋酸素 → 二酸化炭素＋水",
+        "酸素＋水 → 二酸化炭素",
+        "有機物 → 二酸化炭素＋光",
+        "二酸化炭素＋水＋光エネルギー → 有機物＋酸素"
+      ],
+      "answerIndex": 3,
+      "explanation": "光エネルギーを使って有機物を合成する同化の反応。"
+    },
+    {
+      "id": "sci_bio02_023",
+      "unit": "science.biology.cell.energy",
+      "category": "knowledge",
+      "prompt": "動物のように、ほかの生物がつくった有機物を取りこんで生活する生物を何という？",
+      "choices": [
+        "生産者",
+        "独立栄養生物",
+        "従属栄養生物",
+        "化学合成細菌"
+      ],
+      "answerIndex": 2,
+      "explanation": "独立栄養生物は無機物から有機物をつくる。"
+    },
+    {
+      "id": "sci_bio02_024",
+      "unit": "science.biology.cell.energy.enzyme",
+      "category": "knowledge",
+      "prompt": "酵素が作用する相手の物質を何という？",
+      "choices": [
+        "生成物",
+        "補酵素",
+        "基質",
+        "触媒"
+      ],
+      "answerIndex": 2,
+      "explanation": "酵素と基質が結合して、酵素−基質複合体をつくる。"
+    },
+    {
+      "id": "sci_bio02_025",
+      "unit": "science.biology.cell.energy.enzyme",
+      "category": "knowledge",
+      "prompt": "だ液にふくまれるアミラーゼの基質は？",
+      "choices": [
+        "DNA",
+        "タンパク質",
+        "脂肪",
+        "デンプン"
+      ],
+      "answerIndex": 3,
+      "explanation": "デンプンを麦芽糖（マルトース）に分解する。"
+    },
+    {
+      "id": "sci_bio02_026",
+      "unit": "science.biology.cell.energy.enzyme",
+      "category": "knowledge",
+      "prompt": "胃液にふくまれるペプシンの基質は？",
+      "choices": [
+        "脂肪",
+        "デンプン",
+        "セルロース",
+        "タンパク質"
+      ],
+      "answerIndex": 3,
+      "explanation": "ペプシンは強い酸性の胃の中でよくはたらく。"
+    },
+    {
+      "id": "sci_bio02_027",
+      "unit": "science.biology.cell.energy.enzyme",
+      "category": "knowledge",
+      "prompt": "ヒトの体内ではたらく多くの酵素の最適温度は、およそ？",
+      "choices": [
+        "60〜70℃",
+        "0〜5℃",
+        "35〜40℃",
+        "90〜100℃"
+      ],
+      "answerIndex": 2,
+      "explanation": "体温に近い温度でよくはたらく。"
+    },
+    {
+      "id": "sci_bio02_028",
+      "unit": "science.biology.cell.energy.enzyme",
+      "category": "knowledge",
+      "prompt": "酵素が失活する原因として適切なものは？",
+      "choices": [
+        "基質が多すぎること",
+        "高温や強い酸・アルカリで、タンパク質の立体構造が変わること",
+        "反応が終わること",
+        "温度が低いこと"
+      ],
+      "answerIndex": 1,
+      "explanation": "低温では活性が下がるだけで、温度をもどすと回復する。"
+    },
+    {
+      "id": "sci_bio02_029",
+      "unit": "science.biology.cell.energy.atp",
+      "category": "calculation",
+      "prompt": "ATP 1 mol の分解で約30 kJ のエネルギーが出るとすると、ATP 10 mol ではおよそ何 kJ？",
+      "choices": [
+        "約3 kJ",
+        "約30 kJ",
+        "約3000 kJ",
+        "約300 kJ"
+      ],
+      "answerIndex": 3,
+      "explanation": "30×10。"
+    },
+    {
+      "id": "sci_bio02_030",
+      "unit": "science.biology.cell.energy.overview",
+      "category": "calculation",
+      "prompt": "光合成で二酸化炭素 6 mol が使われたとき、つくられるグルコースは何 mol？",
+      "choices": [
+        "12 mol",
+        "1 mol",
+        "6 mol",
+        "1/6 mol"
+      ],
+      "answerIndex": 1,
+      "explanation": "6CO₂＋12H₂O → C₆H₁₂O₆＋6O₂＋6H₂O。"
+    },
+    {
+      "id": "sci_bio02_031",
+      "unit": "science.biology.cell.energy.overview",
+      "category": "calculation",
+      "prompt": "呼吸でグルコース 2 mol を完全に分解するのに必要な酸素は何 mol？",
+      "choices": [
+        "2 mol",
+        "6 mol",
+        "12 mol",
+        "3 mol"
+      ],
+      "answerIndex": 2,
+      "explanation": "グルコース 1 mol に酸素 6 mol。"
+    },
+    {
+      "id": "sci_bio02_032",
+      "unit": "science.biology.cell.energy.enzyme",
+      "category": "thinking",
+      "prompt": "酵素の量が一定のとき、基質の濃度を上げ続けても反応速度がある値以上に上がらない理由は？",
+      "choices": [
+        "温度が下がるから",
+        "酵素が増えるから",
+        "基質が分解されるから",
+        "すべての酵素が基質と結合してはたらいている状態になるから"
+      ],
+      "answerIndex": 3,
+      "explanation": "酵素が「満員」の状態になると、それ以上は速くならない。"
+    }
+  ]
+}

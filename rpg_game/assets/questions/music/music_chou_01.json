@@ -1,0 +1,232 @@
+{
+  "setId": "music_chou_01",
+  "worldId": "music",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mus_chou01_001",
+      "unit": "music.theory.key.signature.mechanism",
+      "category": "knowledge",
+      "prompt": "幹音だけでできている長調は？",
+      "choices": [
+        "ト長調",
+        "ニ長調",
+        "ハ長調",
+        "ヘ長調"
+      ],
+      "answerIndex": 2,
+      "explanation": "調号のない長調はハ長調だけ。"
+    },
+    {
+      "id": "mus_chou01_002",
+      "unit": "music.theory.key.signature.minor",
+      "category": "knowledge",
+      "prompt": "幹音だけでできている短調は？",
+      "choices": [
+        "ニ短調",
+        "ホ短調",
+        "イ短調",
+        "ハ短調"
+      ],
+      "answerIndex": 2,
+      "explanation": "調号のない短調はイ短調だけ。"
+    },
+    {
+      "id": "mus_chou01_003",
+      "unit": "music.theory.key.signature.mechanism",
+      "category": "knowledge",
+      "prompt": "ある調の音階にふくまれる派生音を、まとめて示すものを何という？",
+      "choices": [
+        "臨時記号",
+        "拍子記号",
+        "調号",
+        "音部記号"
+      ],
+      "answerIndex": 2,
+      "explanation": "臨時記号をそのつど書く不便をなくすために調号を使う。"
+    },
+    {
+      "id": "mus_chou01_004",
+      "unit": "music.theory.key.signature.mechanism",
+      "category": "knowledge",
+      "prompt": "調号によって決まる、その調の音階の各音を何という？",
+      "choices": [
+        "臨時記号の音",
+        "派生音",
+        "倍音",
+        "音階固有の音"
+      ],
+      "answerIndex": 3,
+      "explanation": "調号で規定される長・短調の音階各音を音階固有の音という。"
+    },
+    {
+      "id": "mus_chou01_005",
+      "unit": "music.theory.key.signature.mechanism",
+      "category": "knowledge",
+      "prompt": "調号は、五線のどこに書く？",
+      "choices": [
+        "拍子記号の右どなり",
+        "音部記号の右どなり",
+        "小節線の右どなり",
+        "曲のいちばん最後"
+      ],
+      "answerIndex": 1,
+      "explanation": "音部記号のすぐ右に書く。"
+    },
+    {
+      "id": "mus_chou01_006",
+      "unit": "music.theory.key.signature.minor",
+      "category": "calculation",
+      "prompt": "調号のつき方で単純にできる調の数は、長調と短調をあわせていくつ？",
+      "choices": [
+        "12",
+        "15",
+        "24",
+        "30"
+      ],
+      "answerIndex": 3,
+      "explanation": "長調15・短調15で計30。"
+    },
+    {
+      "id": "mus_chou01_007",
+      "unit": "music.theory.key.signature.minor",
+      "category": "calculation",
+      "prompt": "実際に高さのちがう調は、長調と短調をあわせていくつ？",
+      "choices": [
+        "12",
+        "15",
+        "24",
+        "30"
+      ],
+      "answerIndex": 2,
+      "explanation": "長・短それぞれ3つずつ異名同音の調があるので、30−6＝24。"
+    },
+    {
+      "id": "mus_chou01_008",
+      "unit": "music.theory.key.signature.minor",
+      "category": "knowledge",
+      "prompt": "長調・短調それぞれにある、異名同音の調の数は？",
+      "choices": [
+        "6個",
+        "1個",
+        "2個",
+        "3個"
+      ],
+      "answerIndex": 3,
+      "explanation": "例：ロ長調と変ハ長調など。"
+    },
+    {
+      "id": "mus_chou01_009",
+      "unit": "music.theory.key.signature.mechanism",
+      "category": "knowledge",
+      "prompt": "調号の♯が1個増えるごとに、主音はどう移る？",
+      "choices": [
+        "完全5度上（完全4度下）",
+        "短3度下",
+        "完全5度下（完全4度上）",
+        "長2度上"
+      ],
+      "answerIndex": 0,
+      "explanation": "ハ→ト→ニ→イ…と完全5度ずつ上がる。"
+    },
+    {
+      "id": "mus_chou01_010",
+      "unit": "music.theory.key.signature.mechanism",
+      "category": "knowledge",
+      "prompt": "調号の♭が1個増えるごとに、主音はどう移る？",
+      "choices": [
+        "完全5度下（完全4度上）",
+        "完全5度上（完全4度下）",
+        "短3度上",
+        "長2度下"
+      ],
+      "answerIndex": 0,
+      "explanation": "ハ→ヘ→変ロ→変ホ…と完全5度ずつ下がる。"
+    },
+    {
+      "id": "mus_chou01_011",
+      "unit": "music.theory.key.signature.sharp",
+      "category": "knowledge",
+      "prompt": "調号の♯で、1番目につく音は？",
+      "choices": [
+        "B",
+        "Cis",
+        "Fis",
+        "Gis"
+      ],
+      "answerIndex": 2,
+      "explanation": "♯は Fis・Cis・Gis・Dis・Ais・Eis・His の順につく。"
+    },
+    {
+      "id": "mus_chou01_012",
+      "unit": "music.theory.key.signature.flat",
+      "category": "knowledge",
+      "prompt": "調号の♭で、1番目につく音は？",
+      "choices": [
+        "Es",
+        "Fis",
+        "B",
+        "As"
+      ],
+      "answerIndex": 2,
+      "explanation": "♭は B・Es・As・Des・Ges・Ces・Fes の順につく。"
+    },
+    {
+      "id": "mus_chou01_013",
+      "unit": "music.theory.key.signature.mechanism",
+      "category": "knowledge",
+      "prompt": "調号の♯で、3番目につく音は？",
+      "choices": [
+        "Gis",
+        "Cis",
+        "Ais",
+        "Dis"
+      ],
+      "answerIndex": 0,
+      "explanation": "Fis → Cis → Gis。"
+    },
+    {
+      "id": "mus_chou01_014",
+      "unit": "music.theory.key.signature.mechanism",
+      "category": "knowledge",
+      "prompt": "調号の♭で、3番目につく音は？",
+      "choices": [
+        "Des",
+        "As",
+        "Es",
+        "Ges"
+      ],
+      "answerIndex": 1,
+      "explanation": "B → Es → As。"
+    },
+    {
+      "id": "mus_chou01_015",
+      "unit": "music.theory.key.signature.minor",
+      "category": "knowledge",
+      "prompt": "ある長調と同じ調号をもつ短調の主音は、長調の主音からどれだけはなれている？",
+      "choices": [
+        "短3度下（長6度上）",
+        "完全5度上",
+        "長3度下",
+        "短2度下"
+      ],
+      "answerIndex": 0,
+      "explanation": "ハ長調とイ短調のように、短3度下の音が短調の主音になる。"
+    },
+    {
+      "id": "mus_chou01_016",
+      "unit": "music.theory.key.signature.mechanism",
+      "category": "knowledge",
+      "prompt": "調号をもつ調で、同じ音名の音はオクターブがちがってもどうなる？",
+      "choices": [
+        "すべて同じ派生音になる",
+        "1オクターブ上だけ変わる",
+        "調号のある位置の音だけ変わる",
+        "臨時記号が必要になる"
+      ],
+      "answerIndex": 0,
+      "explanation": "オクターブの高低にかかわりなく、すべて同じ派生音。"
+    }
+  ]
+}

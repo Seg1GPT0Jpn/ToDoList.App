@@ -1,0 +1,188 @@
+{
+  "setId": "kokka_kaikei_08",
+  "worldId": "kokka",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "kai08_001",
+      "unit": "kokka.kaikei.sozei.sozei.houjin",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "法人税の課税所得の計算は？",
+      "choices": [
+        "収益－費用（会計上の利益そのもの）",
+        "売上高－売上原価",
+        "益金の額－損金の額",
+        "資本金×税率"
+      ],
+      "answerIndex": 2,
+      "explanation": "会計上の利益に申告調整（加算・減算）をして求める。"
+    },
+    {
+      "id": "kai08_002",
+      "unit": "kokka.kaikei.sozei.sozei.houjin",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "他の会社から受け取った配当の一定額を益金に算入しない制度は？",
+      "choices": [
+        "寄附金の損金算入",
+        "交際費の損金不算入",
+        "欠損金の繰越控除",
+        "受取配当等の益金不算入"
+      ],
+      "answerIndex": 3,
+      "explanation": "法人税と配当課税の二重課税を調整する。"
+    },
+    {
+      "id": "kai08_003",
+      "unit": "kokka.kaikei.sozei.sozei.houjin",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "法人税法上、交際費等は原則としてどう扱われる？",
+      "choices": [
+        "損金に算入されない（中小法人の定額控除などの特例がある）",
+        "益金に算入される",
+        "全額損金に算入される",
+        "資産に計上する"
+      ],
+      "answerIndex": 0,
+      "explanation": "租税特別措置法による。"
+    },
+    {
+      "id": "kai08_004",
+      "unit": "kokka.kaikei.sozei.sozei.houjin",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "法人税の確定申告書の提出期限は、原則として事業年度終了の日の翌日から？",
+      "choices": [
+        "6か月以内",
+        "2か月以内",
+        "3か月以内",
+        "1か月以内"
+      ],
+      "answerIndex": 1,
+      "explanation": "申告期限の延長の特例がある。"
+    },
+    {
+      "id": "kai08_005",
+      "unit": "kokka.kaikei.sozei.sozei.houjin",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "青色申告の法人が受けられる主な特典の例は？",
+      "choices": [
+        "法人税が免除される",
+        "申告が不要になる",
+        "欠損金の繰越控除（10年）",
+        "消費税が免除される"
+      ],
+      "answerIndex": 2,
+      "explanation": "2018年4月1日以後に開始した事業年度の欠損金は10年。"
+    },
+    {
+      "id": "kai08_006",
+      "unit": "kokka.kaikei.sozei.sozei.shotoku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "所得税法で定める所得の種類はいくつ？",
+      "choices": [
+        "7種類",
+        "5種類",
+        "12種類",
+        "10種類"
+      ],
+      "answerIndex": 3,
+      "explanation": "利子・配当・不動産・事業・給与・退職・山林・譲渡・一時・雑所得。"
+    },
+    {
+      "id": "kai08_007",
+      "unit": "kokka.kaikei.sozei.sozei.shotoku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "所得税の税率の仕組みは？",
+      "choices": [
+        "超過累進税率",
+        "逆進税率",
+        "定額税",
+        "一律の比例税率"
+      ],
+      "answerIndex": 0,
+      "explanation": "所得が多くなるほど高い税率が適用される（5％〜45％）。"
+    },
+    {
+      "id": "kai08_008",
+      "unit": "kokka.kaikei.sozei.sozei.shotoku",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "給与所得の金額を計算するとき、収入金額から差し引くのは？",
+      "choices": [
+        "医療費控除額",
+        "給与所得控除額",
+        "基礎控除額",
+        "必要経費の実額だけ"
+      ],
+      "answerIndex": 1,
+      "explanation": "特定支出控除の特例もある。"
+    },
+    {
+      "id": "kai08_009",
+      "unit": "kokka.kaikei.sozei.sozei.shouhi",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "消費税の標準税率（国と地方の合計）は？",
+      "choices": [
+        "5％",
+        "8％",
+        "10％",
+        "15％"
+      ],
+      "answerIndex": 2,
+      "explanation": "国の消費税7.8％と地方消費税2.2％の合計。"
+    },
+    {
+      "id": "kai08_010",
+      "unit": "kokka.kaikei.sozei.sozei.shouhi",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "消費税の軽減税率（8％）の対象は？",
+      "choices": [
+        "電気・ガス",
+        "外食",
+        "すべての食品と酒類",
+        "酒類・外食を除く飲食料品と、定期購読の新聞"
+      ],
+      "answerIndex": 3,
+      "explanation": "2019年10月から導入された。"
+    },
+    {
+      "id": "kai08_011",
+      "unit": "kokka.kaikei.sozei.sozei.shouhi",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "消費税の納付税額の基本的な計算は？",
+      "choices": [
+        "売上に係る消費税額－仕入に係る消費税額",
+        "売上高×10％",
+        "仕入高×10％",
+        "利益×10％"
+      ],
+      "answerIndex": 0,
+      "explanation": "仕入税額控除により、取引の各段階で二重に課税されないようにしている。"
+    },
+    {
+      "id": "kai08_012",
+      "unit": "kokka.kaikei.sozei.sozei.shouhi",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "2023年10月から始まった、仕入税額控除の要件にかかわる制度は？",
+      "choices": [
+        "軽減税率制度",
+        "インボイス制度（適格請求書等保存方式）",
+        "マイナンバー制度",
+        "ふるさと納税"
+      ],
+      "answerIndex": 1,
+      "explanation": "原則として適格請求書の保存が仕入税額控除の要件になった。"
+    }
+  ]
+}

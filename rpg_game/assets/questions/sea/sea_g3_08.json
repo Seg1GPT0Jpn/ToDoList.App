@@ -1,0 +1,248 @@
+{
+  "setId": "sea_g3_08",
+  "worldId": "sea",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sea_g3_08_01",
+      "unit": "english.eng.grammar.tense.progressive",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The bridge (   ) built when I visited the town.",
+      "choices": [
+        "is being",
+        "was being",
+        "has been",
+        "had being"
+      ],
+      "answerIndex": 1,
+      "explanation": "過去のある時点で「建てられている最中だった」。過去進行形の受動態。"
+    },
+    {
+      "id": "sea_g3_08_02",
+      "unit": "english.eng.grammar.tense.simple",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The letter (   ) sent by the time you get home.",
+      "choices": [
+        "has been",
+        "will have been",
+        "will be being",
+        "is"
+      ],
+      "answerIndex": 1,
+      "explanation": "未来のある時点までに「送られてしまっている」。未来完了の受動態。"
+    },
+    {
+      "id": "sea_g3_08_03",
+      "unit": "english.eng.grammar.auxiliary.basic",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He (   ) have left; his coat is still here.",
+      "choices": [
+        "must",
+        "can't",
+        "should",
+        "may"
+      ],
+      "answerIndex": 1,
+      "explanation": "コートがまだあるので「出て行ったはずがない」。can't have done。"
+    },
+    {
+      "id": "sea_g3_08_04",
+      "unit": "english.eng.grammar.tense.simple",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I (   ) in this company for 20 years next April.",
+      "choices": [
+        "will work",
+        "will have worked",
+        "have worked",
+        "work"
+      ],
+      "answerIndex": 1,
+      "explanation": "来年4月の時点での継続なので未来完了。"
+    },
+    {
+      "id": "sea_g3_08_05",
+      "unit": "english.eng.grammar.tense.perfect",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "She said she (   ) the book the week before.",
+      "choices": [
+        "has read",
+        "had read",
+        "reads",
+        "will read"
+      ],
+      "answerIndex": 1,
+      "explanation": "「言った」より前のことなので過去完了（時制の一致）。"
+    },
+    {
+      "id": "sea_g3_08_06",
+      "unit": "english.eng.grammar.tense.perfect",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The room (   ) cleaned yet.",
+      "choices": [
+        "wasn't",
+        "hasn't been",
+        "didn't be",
+        "isn't been"
+      ],
+      "answerIndex": 1,
+      "explanation": "yet（まだ）とともに「まだ掃除されていない」。現在完了の受動態。"
+    },
+    {
+      "id": "sea_g3_08_07",
+      "unit": "english.eng.grammar.tense.perfect",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The meeting (   ) by the time we arrived.",
+      "choices": [
+        "had already started",
+        "already starts",
+        "has already started",
+        "will have started"
+      ],
+      "answerIndex": 0,
+      "explanation": "過去のある時点（arrived）までに完了していたことは過去完了。"
+    },
+    {
+      "id": "sea_g3_08_08",
+      "unit": "english.eng.grammar.tense.perfect",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I (   ) for two hours when she called.",
+      "choices": [
+        "am studying",
+        "had been studying",
+        "study",
+        "have been studying"
+      ],
+      "answerIndex": 1,
+      "explanation": "過去のある時点まで続いていた動作は過去完了進行形。"
+    },
+    {
+      "id": "sea_g3_08_09",
+      "unit": "english.eng.grammar.tense.perfect",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The letter (   ) by the time I got home.",
+      "choices": [
+        "had delivered",
+        "had been delivered",
+        "was delivering",
+        "has been delivered"
+      ],
+      "answerIndex": 1,
+      "explanation": "過去完了の受動態 had been ＋ 過去分詞。手紙は「配達される」側。"
+    },
+    {
+      "id": "sea_g3_08_10",
+      "unit": "english.eng.grammar.participle.modifier",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The work must (   ) by noon.",
+      "choices": [
+        "be finished",
+        "have finish",
+        "finishing",
+        "finish"
+      ],
+      "answerIndex": 0,
+      "explanation": "助動詞 ＋ be ＋ 過去分詞。"
+    },
+    {
+      "id": "sea_g3_08_11",
+      "unit": "english.eng.grammar.passive.basic",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The baby was taken care (   ) by her aunt.",
+      "choices": [
+        "for",
+        "to",
+        "with",
+        "of"
+      ],
+      "answerIndex": 3,
+      "explanation": "take care of の受動態。of を落とさない。"
+    },
+    {
+      "id": "sea_g3_08_12",
+      "unit": "english.eng.grammar.tense.perfect",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "It is said (   ) he was a spy.",
+      "choices": [
+        "what",
+        "if",
+        "that",
+        "which"
+      ],
+      "answerIndex": 2,
+      "explanation": "It is said that 〜「〜と言われている」。He is said to have been a spy. とも言える。"
+    },
+    {
+      "id": "sea_g3_08_13",
+      "unit": "english.eng.grammar.tense.perfect",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "She told me that she (   ) Kyoto the year before.",
+      "choices": [
+        "visits",
+        "has visited",
+        "had visited",
+        "visited"
+      ],
+      "answerIndex": 2,
+      "explanation": "時制の一致：伝えた時点より前は過去完了。"
+    },
+    {
+      "id": "sea_g3_08_14",
+      "unit": "english.eng.grammar.tense",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This letter (   ) in English.",
+      "choices": [
+        "is writing",
+        "writes",
+        "is written",
+        "wrote"
+      ],
+      "answerIndex": 2,
+      "explanation": "手紙は「書かれている」。"
+    },
+    {
+      "id": "sea_g3_08_15",
+      "unit": "english.eng.grammar.tense.simple",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This time tomorrow, I (   ) over the Pacific.",
+      "choices": [
+        "fly",
+        "have flown",
+        "flew",
+        "will be flying"
+      ],
+      "answerIndex": 3,
+      "explanation": "未来のある時点で進行中の動作は未来進行形。"
+    },
+    {
+      "id": "sea_g3_08_16",
+      "unit": "english.eng.grammar.infinitive.causative",
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He was seen (   ) the building.",
+      "choices": [
+        "entered",
+        "enters",
+        "to enter",
+        "enter"
+      ],
+      "answerIndex": 2,
+      "explanation": "知覚動詞の受動態では原形が to 不定詞になる。"
+    }
+  ]
+}

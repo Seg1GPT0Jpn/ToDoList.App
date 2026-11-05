@@ -1,0 +1,260 @@
+{
+  "setId": "music_waon_02",
+  "worldId": "music",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mus_waon02_001",
+      "unit": "music.theory.harmony.triad.basic",
+      "category": "thinking",
+      "prompt": "G・H・D の三和音の種類は？",
+      "choices": [
+        "増三和音",
+        "短三和音",
+        "減三和音",
+        "長三和音"
+      ],
+      "answerIndex": 3,
+      "explanation": "根音と第三音が長3度、第三音と第五音が短3度なので長三和音。"
+    },
+    {
+      "id": "mus_waon02_002",
+      "unit": "music.theory.harmony.triad.basic",
+      "category": "thinking",
+      "prompt": "A・C・E の三和音の種類は？",
+      "choices": [
+        "長三和音",
+        "増三和音",
+        "短三和音",
+        "減三和音"
+      ],
+      "answerIndex": 2,
+      "explanation": "根音と第三音が短3度、第三音と第五音が長3度なので短三和音。"
+    },
+    {
+      "id": "mus_waon02_003",
+      "unit": "music.theory.harmony.triad.basic",
+      "category": "thinking",
+      "prompt": "B・Des・Fes の三和音の種類は？",
+      "choices": [
+        "長三和音",
+        "短三和音",
+        "増三和音",
+        "減三和音"
+      ],
+      "answerIndex": 3,
+      "explanation": "根音と第三音が短3度、第三音と第五音が短3度なので減三和音。"
+    },
+    {
+      "id": "mus_waon02_004",
+      "unit": "music.theory.harmony.triad.basic",
+      "category": "thinking",
+      "prompt": "As・C・E の三和音の種類は？",
+      "choices": [
+        "長三和音",
+        "増三和音",
+        "短三和音",
+        "減三和音"
+      ],
+      "answerIndex": 1,
+      "explanation": "根音と第三音が長3度、第三音と第五音が長3度なので増三和音。"
+    },
+    {
+      "id": "mus_waon02_005",
+      "unit": "music.theory.harmony.triad.basic",
+      "category": "thinking",
+      "prompt": "Des・F・As の三和音の種類は？",
+      "choices": [
+        "減三和音",
+        "短三和音",
+        "増三和音",
+        "長三和音"
+      ],
+      "answerIndex": 3,
+      "explanation": "根音と第三音が長3度、第三音と第五音が短3度なので長三和音。"
+    },
+    {
+      "id": "mus_waon02_006",
+      "unit": "music.theory.harmony.triad.basic",
+      "category": "thinking",
+      "prompt": "Eis・Gis・His の三和音の種類は？",
+      "choices": [
+        "短三和音",
+        "減三和音",
+        "増三和音",
+        "長三和音"
+      ],
+      "answerIndex": 0,
+      "explanation": "根音と第三音が短3度、第三音と第五音が長3度なので短三和音。"
+    },
+    {
+      "id": "mus_waon02_007",
+      "unit": "music.theory.harmony.triad.basic",
+      "category": "thinking",
+      "prompt": "H・D・F の三和音の種類は？",
+      "choices": [
+        "減三和音",
+        "短三和音",
+        "長三和音",
+        "増三和音"
+      ],
+      "answerIndex": 0,
+      "explanation": "根音と第三音が短3度、第三音と第五音が短3度なので減三和音。"
+    },
+    {
+      "id": "mus_waon02_008",
+      "unit": "music.theory.harmony.triad.basic",
+      "category": "thinking",
+      "prompt": "Fes・As・C の三和音の種類は？",
+      "choices": [
+        "減三和音",
+        "長三和音",
+        "短三和音",
+        "増三和音"
+      ],
+      "answerIndex": 3,
+      "explanation": "根音と第三音が長3度、第三音と第五音が長3度なので増三和音。"
+    },
+    {
+      "id": "mus_waon02_009",
+      "unit": "music.theory.harmony.triad.basic",
+      "category": "thinking",
+      "prompt": "C・E・G の三和音の種類は？",
+      "choices": [
+        "短三和音",
+        "減三和音",
+        "長三和音",
+        "増三和音"
+      ],
+      "answerIndex": 2,
+      "explanation": "根音と第三音が長3度、第三音と第五音が短3度なので長三和音。"
+    },
+    {
+      "id": "mus_waon02_010",
+      "unit": "music.theory.harmony.triad.basic",
+      "category": "thinking",
+      "prompt": "F・As・C の三和音の種類は？",
+      "choices": [
+        "減三和音",
+        "短三和音",
+        "増三和音",
+        "長三和音"
+      ],
+      "answerIndex": 1,
+      "explanation": "根音と第三音が短3度、第三音と第五音が長3度なので短三和音。"
+    },
+    {
+      "id": "mus_waon02_011",
+      "unit": "music.theory.harmony.triad.basic",
+      "category": "thinking",
+      "prompt": "Dis・Fis・A の三和音の種類は？",
+      "choices": [
+        "短三和音",
+        "増三和音",
+        "長三和音",
+        "減三和音"
+      ],
+      "answerIndex": 3,
+      "explanation": "根音と第三音が短3度、第三音と第五音が短3度なので減三和音。"
+    },
+    {
+      "id": "mus_waon02_012",
+      "unit": "music.theory.harmony.triad.basic",
+      "category": "thinking",
+      "prompt": "Des・F・A の三和音の種類は？",
+      "choices": [
+        "長三和音",
+        "増三和音",
+        "短三和音",
+        "減三和音"
+      ],
+      "answerIndex": 1,
+      "explanation": "根音と第三音が長3度、第三音と第五音が長3度なので増三和音。"
+    },
+    {
+      "id": "mus_waon02_013",
+      "unit": "music.theory.harmony.triad.basic",
+      "category": "thinking",
+      "prompt": "D・Fis・A の三和音の種類は？",
+      "choices": [
+        "長三和音",
+        "減三和音",
+        "短三和音",
+        "増三和音"
+      ],
+      "answerIndex": 0,
+      "explanation": "根音と第三音が長3度、第三音と第五音が短3度なので長三和音。"
+    },
+    {
+      "id": "mus_waon02_014",
+      "unit": "music.theory.harmony.triad.basic",
+      "category": "thinking",
+      "prompt": "D・F・A の三和音の種類は？",
+      "choices": [
+        "増三和音",
+        "短三和音",
+        "長三和音",
+        "減三和音"
+      ],
+      "answerIndex": 1,
+      "explanation": "根音と第三音が短3度、第三音と第五音が長3度なので短三和音。"
+    },
+    {
+      "id": "mus_waon02_015",
+      "unit": "music.theory.harmony.triad.basic",
+      "category": "thinking",
+      "prompt": "D・F・As の三和音の種類は？",
+      "choices": [
+        "長三和音",
+        "減三和音",
+        "短三和音",
+        "増三和音"
+      ],
+      "answerIndex": 1,
+      "explanation": "根音と第三音が短3度、第三音と第五音が短3度なので減三和音。"
+    },
+    {
+      "id": "mus_waon02_016",
+      "unit": "music.theory.harmony.triad.basic",
+      "category": "thinking",
+      "prompt": "E・Gis・His の三和音の種類は？",
+      "choices": [
+        "長三和音",
+        "増三和音",
+        "短三和音",
+        "減三和音"
+      ],
+      "answerIndex": 1,
+      "explanation": "根音と第三音が長3度、第三音と第五音が長3度なので増三和音。"
+    },
+    {
+      "id": "mus_waon02_017",
+      "unit": "music.theory.harmony.triad.basic",
+      "category": "thinking",
+      "prompt": "F・A・C の三和音の種類は？",
+      "choices": [
+        "長三和音",
+        "減三和音",
+        "増三和音",
+        "短三和音"
+      ],
+      "answerIndex": 0,
+      "explanation": "根音と第三音が長3度、第三音と第五音が短3度なので長三和音。"
+    },
+    {
+      "id": "mus_waon02_018",
+      "unit": "music.theory.harmony.triad.basic",
+      "category": "thinking",
+      "prompt": "C・Es・G の三和音の種類は？",
+      "choices": [
+        "短三和音",
+        "長三和音",
+        "減三和音",
+        "増三和音"
+      ],
+      "answerIndex": 0,
+      "explanation": "根音と第三音が短3度、第三音と第五音が長3度なので短三和音。"
+    }
+  ]
+}

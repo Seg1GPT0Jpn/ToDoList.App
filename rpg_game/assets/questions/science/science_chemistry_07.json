@@ -1,0 +1,456 @@
+{
+  "setId": "science_chemistry_07",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_chm07_001",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "knowledge",
+      "prompt": "アレニウスの定義で「酸」とは？",
+      "choices": [
+        "水に溶けて H⁺ を出す物質",
+        "水に溶けない物質",
+        "水に溶けて OH⁻ を出す物質",
+        "H⁺ を受け取る物質"
+      ],
+      "answerIndex": 0,
+      "explanation": "塩基は水に溶けて OH⁻ を出す物質。"
+    },
+    {
+      "id": "sci_chm07_002",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "knowledge",
+      "prompt": "ブレンステッド・ローリーの定義で「塩基」とは？",
+      "choices": [
+        "OH⁻ だけを出す物質",
+        "電子を与える物質",
+        "H⁺ を与える物質",
+        "H⁺ を受け取る物質"
+      ],
+      "answerIndex": 3,
+      "explanation": "酸は H⁺ を与える物質、塩基は H⁺ を受け取る物質。水溶液でなくても使える定義。"
+    },
+    {
+      "id": "sci_chm07_003",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "knowledge",
+      "prompt": "強酸はどれ？",
+      "choices": [
+        "酢酸 CH₃COOH",
+        "硫化水素 H₂S",
+        "塩酸 HCl",
+        "炭酸 H₂CO₃"
+      ],
+      "answerIndex": 2,
+      "explanation": "HCl・H₂SO₄・HNO₃ が代表的な強酸。水溶液中でほぼ完全に電離する。"
+    },
+    {
+      "id": "sci_chm07_004",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "knowledge",
+      "prompt": "弱塩基はどれ？",
+      "choices": [
+        "アンモニア NH₃",
+        "水酸化カリウム KOH",
+        "水酸化カルシウム Ca(OH)₂",
+        "水酸化ナトリウム NaOH"
+      ],
+      "answerIndex": 0,
+      "explanation": "NH₃ は水溶液中でわずかしか電離しない弱塩基。"
+    },
+    {
+      "id": "sci_chm07_005",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "knowledge",
+      "prompt": "硫酸 H₂SO₄ の価数は？",
+      "choices": [
+        "3価",
+        "1価",
+        "2価",
+        "4価"
+      ],
+      "answerIndex": 2,
+      "explanation": "1 分子から H⁺ を 2 個出せるので 2 価の酸。"
+    },
+    {
+      "id": "sci_chm07_006",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "knowledge",
+      "prompt": "25 ℃ で中性の水溶液の pH は？",
+      "choices": [
+        "7",
+        "0",
+        "14",
+        "1"
+      ],
+      "answerIndex": 0,
+      "explanation": "pH < 7 で酸性、pH > 7 で塩基性。"
+    },
+    {
+      "id": "sci_chm07_007",
+      "unit": "science.chemistry.change.acid.neutral",
+      "category": "knowledge",
+      "prompt": "フェノールフタレインが赤色になるのは？",
+      "choices": [
+        "中性",
+        "酸性",
+        "塩基性（pH 約 8〜10 以上）",
+        "どんなときも無色"
+      ],
+      "answerIndex": 2,
+      "explanation": "変色域は pH 8.0〜9.8 付近で、塩基性で赤。メチルオレンジは酸性側（pH 3.1〜4.4）で変色。"
+    },
+    {
+      "id": "sci_chm07_008",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "knowledge",
+      "prompt": "酸と塩基が中和すると何ができる？",
+      "choices": [
+        "塩と水",
+        "酸素と水素",
+        "二酸化炭素だけ",
+        "金属"
+      ],
+      "answerIndex": 0,
+      "explanation": "例：HCl ＋ NaOH → NaCl ＋ H₂O。"
+    },
+    {
+      "id": "sci_chm07_009",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "calculation",
+      "prompt": "0.010 mol/L の塩酸（完全に電離）の pH は？",
+      "choices": [
+        "2",
+        "10",
+        "1",
+        "12"
+      ],
+      "answerIndex": 0,
+      "explanation": "[H⁺] ＝ 1.0 × 10⁻² mol/L なので pH ＝ 2。"
+    },
+    {
+      "id": "sci_chm07_010",
+      "unit": "science.chemistry.change.acid.ph",
+      "category": "calculation",
+      "prompt": "pH 3 の水溶液の [H⁺] は、pH 5 の水溶液の何倍？",
+      "choices": [
+        "10 倍",
+        "1/100 倍",
+        "2 倍",
+        "100 倍"
+      ],
+      "answerIndex": 3,
+      "explanation": "pH が 1 小さいと [H⁺] は 10 倍。2 ちがうので 10² ＝ 100 倍。"
+    },
+    {
+      "id": "sci_chm07_011",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "calculation",
+      "prompt": "0.10 mol/L の塩酸 10 mL を中和するのに必要な 0.10 mol/L の NaOH 水溶液は？",
+      "choices": [
+        "20 mL",
+        "5.0 mL",
+        "10 mL",
+        "100 mL"
+      ],
+      "answerIndex": 2,
+      "explanation": "1価どうしで濃度も同じなので、同じ体積 10 mL。"
+    },
+    {
+      "id": "sci_chm07_012",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "calculation",
+      "prompt": "0.10 mol/L の硫酸 10 mL を中和するのに必要な 0.20 mol/L の NaOH 水溶液は？",
+      "choices": [
+        "10 mL",
+        "40 mL",
+        "20 mL",
+        "5.0 mL"
+      ],
+      "answerIndex": 0,
+      "explanation": "酸の H⁺：2 × 0.10 × 10 ＝ 塩基の OH⁻：1 × 0.20 × V より V ＝ 10 mL。"
+    },
+    {
+      "id": "sci_chm07_013",
+      "unit": "science.chemistry.change.acid.ph",
+      "category": "calculation",
+      "prompt": "0.10 mol/L の NaOH 水溶液（完全に電離）の pH は？（25 ℃）",
+      "choices": [
+        "11",
+        "1",
+        "14",
+        "13"
+      ],
+      "answerIndex": 3,
+      "explanation": "[OH⁻] ＝ 1.0×10⁻¹ なので [H⁺] ＝ 1.0×10⁻¹⁴ ÷ 1.0×10⁻¹ ＝ 1.0 × 10⁻¹³、pH ＝ 13。"
+    },
+    {
+      "id": "sci_chm07_014",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "calculation",
+      "prompt": "0.10 mol/L の酢酸の電離度が 0.010 のとき、pH は？",
+      "choices": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "answerIndex": 2,
+      "explanation": "[H⁺] ＝ 0.10 × 0.010 ＝ 1.0 × 10⁻³ mol/L なので pH ＝ 3。"
+    },
+    {
+      "id": "sci_chm07_015",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "thinking",
+      "prompt": "酢酸を水酸化ナトリウム水溶液で中和滴定する。適した指示薬は？",
+      "choices": [
+        "どちらでもよい",
+        "メチルオレンジ",
+        "フェノールフタレイン",
+        "BTB は使えない"
+      ],
+      "answerIndex": 2,
+      "explanation": "弱酸と強塩基の中和点は塩基性側（酢酸ナトリウムが加水分解）なので、塩基性で変色する指示薬を使う。"
+    },
+    {
+      "id": "sci_chm07_016",
+      "unit": "science.chemistry.change.acid.ph",
+      "category": "thinking",
+      "prompt": "pH 2 の塩酸を水で 10 倍にうすめると pH はどうなる？",
+      "choices": [
+        "1 になる",
+        "3 になる",
+        "変わらない",
+        "20 になる"
+      ],
+      "answerIndex": 1,
+      "explanation": "[H⁺] が 1/10 になるので pH は 1 大きくなる。ただし何倍うすめても pH 7 を超えて塩基性にはならない。"
+    },
+    {
+      "id": "sci_chm07_017",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "knowledge",
+      "prompt": "強塩基はどれ？",
+      "choices": [
+        "水酸化アルミニウム Al(OH)₃",
+        "アンモニア NH₃",
+        "水酸化銅(Ⅱ) Cu(OH)₂",
+        "水酸化ナトリウム NaOH"
+      ],
+      "answerIndex": 3,
+      "explanation": "水に溶けてほぼ完全に電離する。"
+    },
+    {
+      "id": "sci_chm07_018",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "knowledge",
+      "prompt": "弱酸はどれ？",
+      "choices": [
+        "塩酸 HCl",
+        "硫酸 H₂SO₄",
+        "酢酸 CH₃COOH",
+        "硝酸 HNO₃"
+      ],
+      "answerIndex": 2,
+      "explanation": "水溶液中で一部しか電離しない。"
+    },
+    {
+      "id": "sci_chm07_019",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "knowledge",
+      "prompt": "1価の酸はどれ？",
+      "choices": [
+        "リン酸 H₃PO₄",
+        "シュウ酸 (COOH)₂",
+        "硫酸 H₂SO₄",
+        "硝酸 HNO₃"
+      ],
+      "answerIndex": 3,
+      "explanation": "1分子から出す H⁺ が1個。"
+    },
+    {
+      "id": "sci_chm07_020",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "knowledge",
+      "prompt": "水酸化カルシウム Ca(OH)₂ の価数は？",
+      "choices": [
+        "1価",
+        "3価",
+        "4価",
+        "2価"
+      ],
+      "answerIndex": 3,
+      "explanation": "OH⁻ を2個出す。"
+    },
+    {
+      "id": "sci_chm07_021",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "knowledge",
+      "prompt": "メチルオレンジは、酸性側（pH 約3.1 以下）で何色？",
+      "choices": [
+        "青色",
+        "無色",
+        "赤色",
+        "黄色"
+      ],
+      "answerIndex": 2,
+      "explanation": "塩基性側では黄色。"
+    },
+    {
+      "id": "sci_chm07_022",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "knowledge",
+      "prompt": "BTB 溶液は、中性で何色？",
+      "choices": [
+        "黄色",
+        "無色",
+        "緑色",
+        "青色"
+      ],
+      "answerIndex": 2,
+      "explanation": "酸性で黄色、塩基性で青色。"
+    },
+    {
+      "id": "sci_chm07_023",
+      "unit": "science.chemistry.change.acid.salt",
+      "category": "knowledge",
+      "prompt": "塩化ナトリウム NaCl の水溶液の性質は？",
+      "choices": [
+        "中性",
+        "場合による",
+        "酸性",
+        "塩基性"
+      ],
+      "answerIndex": 0,
+      "explanation": "強酸と強塩基からできた正塩。"
+    },
+    {
+      "id": "sci_chm07_024",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "knowledge",
+      "prompt": "酢酸ナトリウム CH₃COONa の水溶液の性質は？",
+      "choices": [
+        "塩基性",
+        "中性",
+        "場合による",
+        "酸性"
+      ],
+      "answerIndex": 0,
+      "explanation": "弱酸と強塩基からできた塩。"
+    },
+    {
+      "id": "sci_chm07_025",
+      "unit": "science.chemistry.change.acid.salt",
+      "category": "knowledge",
+      "prompt": "塩化アンモニウム NH₄Cl の水溶液の性質は？",
+      "choices": [
+        "塩基性",
+        "場合による",
+        "中性",
+        "酸性"
+      ],
+      "answerIndex": 3,
+      "explanation": "強酸と弱塩基からできた塩。"
+    },
+    {
+      "id": "sci_chm07_026",
+      "unit": "science.chemistry.change.acid.neutral",
+      "category": "knowledge",
+      "prompt": "中和滴定で、一定体積の溶液を正確にはかりとる器具は？",
+      "choices": [
+        "ホールピペット",
+        "ビュレット",
+        "メスシリンダー",
+        "ビーカー"
+      ],
+      "answerIndex": 0,
+      "explanation": "滴下した量をはかるのはビュレット。"
+    },
+    {
+      "id": "sci_chm07_027",
+      "unit": "science.chemistry.change.acid.neutral",
+      "category": "knowledge",
+      "prompt": "中和滴定で、滴下した溶液の体積をはかる器具は？",
+      "choices": [
+        "ホールピペット",
+        "試験管",
+        "ビュレット",
+        "メスフラスコ"
+      ],
+      "answerIndex": 2,
+      "explanation": "目盛りの読みは液面の底に合わせる。"
+    },
+    {
+      "id": "sci_chm07_028",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "calculation",
+      "prompt": "0.0010 mol/L の塩酸（完全に電離）の pH は？",
+      "choices": [
+        "3",
+        "2",
+        "1",
+        "4"
+      ],
+      "answerIndex": 0,
+      "explanation": "[H⁺]=1.0×10⁻³ mol/L。"
+    },
+    {
+      "id": "sci_chm07_029",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "calculation",
+      "prompt": "0.010 mol/L の水酸化ナトリウム水溶液（完全に電離）の pH は？（25℃）",
+      "choices": [
+        "2",
+        "12",
+        "13",
+        "10"
+      ],
+      "answerIndex": 1,
+      "explanation": "[OH⁻]=10⁻²、[H⁺]=10⁻¹²。"
+    },
+    {
+      "id": "sci_chm07_030",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "calculation",
+      "prompt": "0.20 mol/L の酢酸 20 mL を中和するのに必要な 0.10 mol/L の水酸化ナトリウム水溶液は？",
+      "choices": [
+        "80 mL",
+        "40 mL",
+        "10 mL",
+        "20 mL"
+      ],
+      "answerIndex": 1,
+      "explanation": "酸と塩基の価数×物質量が等しい：0.20×20=0.10×V。"
+    },
+    {
+      "id": "sci_chm07_031",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "calculation",
+      "prompt": "濃度のわからない塩酸 10 mL を、0.10 mol/L の NaOH 水溶液で中和すると 12 mL 必要だった。塩酸の濃度は？",
+      "choices": [
+        "1.2 mol/L",
+        "0.12 mol/L",
+        "0.083 mol/L",
+        "0.10 mol/L"
+      ],
+      "answerIndex": 1,
+      "explanation": "0.10×12=c×10。"
+    },
+    {
+      "id": "sci_chm07_032",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "thinking",
+      "prompt": "塩酸（強酸）とアンモニア水（弱塩基）の中和滴定に適した指示薬は？",
+      "choices": [
+        "フェノールフタレイン",
+        "BTB だけ",
+        "メチルオレンジ",
+        "どちらも適さない"
+      ],
+      "answerIndex": 2,
+      "explanation": "中和点が弱い酸性側にあるので、酸性側で色が変わる指示薬を使う。"
+    }
+  ]
+}

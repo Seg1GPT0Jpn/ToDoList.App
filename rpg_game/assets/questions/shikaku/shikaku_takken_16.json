@@ -1,0 +1,233 @@
+{
+  "setId": "shikaku_takken_16",
+  "worldId": "shikaku",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "tkn16_001",
+      "unit": "shikaku.takken.zei.menjo.kikou",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "住宅金融支援機構の証券化支援事業（買取型）とは？",
+      "choices": [
+        "民間金融機関の住宅ローン債権を買い取って証券化する",
+        "機構が一般の人に直接お金を貸す",
+        "住宅ローンの金利を法律で決める",
+        "住宅を建てて売る"
+      ],
+      "answerIndex": 0,
+      "explanation": "フラット35などの買取型（独立行政法人住宅金融支援機構法13条）。"
+    },
+    {
+      "id": "tkn16_002",
+      "unit": "shikaku.takken.zei.menjo.kikou",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "機構が直接融資する業務として正しいものは？",
+      "choices": [
+        "自動車ローン",
+        "災害復興建築物の建設などの資金の貸付け",
+        "すべての住宅の購入資金の貸付け",
+        "投資用マンションの貸付け"
+      ],
+      "answerIndex": 1,
+      "explanation": "直接融資は災害復興などに限られる。"
+    },
+    {
+      "id": "tkn16_003",
+      "unit": "shikaku.takken.zei.menjo.kikou",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "証券化支援事業（買取型）の対象になる住宅ローンは？",
+      "choices": [
+        "事業用ビルの建設資金",
+        "投資用マンションの購入資金",
+        "自ら住む住宅の建設・購入（中古住宅を含む）の資金",
+        "土地だけの購入資金"
+      ],
+      "answerIndex": 2,
+      "explanation": "本人や親族が住む住宅の建設・購入のための貸付債権が対象。"
+    },
+    {
+      "id": "tkn16_004",
+      "unit": "shikaku.takken.zei.menjo.keihyou",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "広告で、徒歩の所要時間は何mにつき1分として表示する？",
+      "choices": [
+        "60m",
+        "50m",
+        "100m",
+        "80m"
+      ],
+      "answerIndex": 3,
+      "explanation": "道路距離80mにつき1分。1分未満の端数は1分に切り上げる（不動産の表示に関する公正競争規約）。"
+    },
+    {
+      "id": "tkn16_005",
+      "unit": "shikaku.takken.zei.menjo.keihyou",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "広告で「新築」と表示できるのは？",
+      "choices": [
+        "建築後1年未満で、まだ人が住んだことがないもの",
+        "建築後3年未満のもの",
+        "リフォームしたばかりのもの",
+        "人が住んでいても建築後1年未満のもの"
+      ],
+      "answerIndex": 0,
+      "explanation": "新築は建築後1年未満かつ未使用（公正競争規約）。"
+    },
+    {
+      "id": "tkn16_006",
+      "unit": "shikaku.takken.zei.menjo.keihyou",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "実際には取引するつもりのない物件を広告して客を呼ぶことは？",
+      "choices": [
+        "小さく注意書きをすればよい",
+        "不当表示（おとり広告）として禁止される",
+        "値段が正しければよい",
+        "問題ない"
+      ],
+      "answerIndex": 1,
+      "explanation": "おとり広告は景品表示法・公正競争規約で禁止。"
+    },
+    {
+      "id": "tkn16_007",
+      "unit": "shikaku.takken.zei.menjo.tochi",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "一般に宅地に適していると言われる土地は？",
+      "choices": [
+        "旧河道",
+        "後背湿地",
+        "台地・段丘",
+        "埋立地"
+      ],
+      "answerIndex": 2,
+      "explanation": "台地・段丘は水はけがよく地盤も安定している。"
+    },
+    {
+      "id": "tkn16_008",
+      "unit": "shikaku.takken.zei.menjo.tochi",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "一般に地盤が弱く、宅地に適さないと言われる土地は？",
+      "choices": [
+        "段丘",
+        "台地",
+        "丘陵地の安定した尾根",
+        "旧河道"
+      ],
+      "answerIndex": 3,
+      "explanation": "旧河道（昔の川の跡）は地盤が軟弱で浸水しやすい。"
+    },
+    {
+      "id": "tkn16_009",
+      "unit": "shikaku.takken.zei.menjo.tochi",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "扇状地について正しいものは？",
+      "choices": [
+        "谷の出口では土石流の危険がある",
+        "海岸の近くにしかない",
+        "洪水の危険はまったくない",
+        "常に地盤が軟弱である"
+      ],
+      "answerIndex": 0,
+      "explanation": "扇状地は比較的宅地に適するが、谷の出口では土石流に注意。"
+    },
+    {
+      "id": "tkn16_010",
+      "unit": "shikaku.takken.zei.menjo.tochi",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "木材の強度について正しいものは？",
+      "choices": [
+        "含水率と強度は関係ない",
+        "乾燥しているほど強度が大きい",
+        "心材より辺材のほうが腐りにくい",
+        "湿っているほど強度が大きい"
+      ],
+      "answerIndex": 1,
+      "explanation": "木材は乾燥しているほど強い。心材のほうが腐りにくい。"
+    },
+    {
+      "id": "tkn16_011",
+      "unit": "shikaku.takken.zei.menjo.tochi",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "鉄筋コンクリート造で、コンクリートが鉄筋を守るしくみは？",
+      "choices": [
+        "関係はない",
+        "コンクリートが酸性で、鉄筋を溶かさない",
+        "コンクリートがアルカリ性で、鉄筋のさびを防ぐ",
+        "コンクリートが鉄筋を冷やす"
+      ],
+      "answerIndex": 2,
+      "explanation": "アルカリ性のコンクリートが鉄筋の腐食を防ぐ。中性化すると鉄筋がさびやすくなる。"
+    },
+    {
+      "id": "tkn16_012",
+      "unit": "shikaku.takken.zei.menjo.tochi",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "鉄骨造の弱点として正しいものは？",
+      "choices": [
+        "重くて地震に弱い",
+        "さびない",
+        "木造より燃えやすい",
+        "火に弱いので耐火被覆が必要"
+      ],
+      "answerIndex": 3,
+      "explanation": "鉄は高温で強度が落ちるので、耐火被覆をする。"
+    },
+    {
+      "id": "tkn16_013",
+      "unit": "shikaku.takken.zei.menjo.tochi",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "免震構造とは？",
+      "choices": [
+        "積層ゴムなどで地震の揺れを建物に伝えにくくする構造",
+        "基礎をなくした構造",
+        "壁を厚くして揺れに耐える構造",
+        "おもりを揺らして揺れを打ち消す構造"
+      ],
+      "answerIndex": 0,
+      "explanation": "耐震は耐える、制震は吸収する、免震は伝えにくくする。"
+    },
+    {
+      "id": "tkn16_014",
+      "unit": "shikaku.takken.zei.menjo.keihyou",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "広告で、物件の名称に公園や海などの名前を使えるのは？",
+      "choices": [
+        "地元の人の許可があれば使える",
+        "実際にその施設から一定の距離内にあるときなど、規約の条件を満たすとき",
+        "絶対に使えない",
+        "いつでも自由に使える"
+      ],
+      "answerIndex": 1,
+      "explanation": "公園・海などの名称は、物件から一定距離内にあるなど条件付きで使える（公正競争規約）。"
+    },
+    {
+      "id": "tkn16_015",
+      "unit": "shikaku.takken.zei.menjo.keihyou",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "広告の「価格」の表示で正しいものは？",
+      "choices": [
+        "税抜き価格だけ表示する",
+        "価格は表示しなくてよい",
+        "取引する全区画・全戸の価格を表示するのが原則",
+        "最も安い価格だけ表示すればよい"
+      ],
+      "answerIndex": 2,
+      "explanation": "原則として全部の価格を表示する（多数の場合は最低・最高価格と最多価格帯などでもよい）。"
+    }
+  ]
+}

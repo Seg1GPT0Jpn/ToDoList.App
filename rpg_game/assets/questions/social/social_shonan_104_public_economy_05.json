@@ -1,0 +1,1372 @@
+{
+  "setId": "social_shonan_104_public_economy_05",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "social_shonan_104_public_economy_05_001",
+      "unit": "social.pol.economy.global.trade",
+      "category": "knowledge",
+      "prompt": "『経済学及び課税の原理』を書き、比較生産費説で自由貿易を主張したイギリスの経済学者は？",
+      "choices": [
+        "ケインズ",
+        "リスト",
+        "アダム・スミス",
+        "リカード"
+      ],
+      "answerIndex": 3,
+      "explanation": "各国が得意なものに特化して交換すると両国の利益になると考えた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_002",
+      "unit": "social.pol.economy.global.trade",
+      "category": "knowledge",
+      "prompt": "各国が比較的得意な商品の生産に特化して交換すれば、両国の利益になるという理論は？",
+      "choices": [
+        "比較生産費説",
+        "依存効果",
+        "幼稚産業論",
+        "経済発展段階説"
+      ],
+      "answerIndex": 0,
+      "explanation": "リカードが唱えた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_003",
+      "unit": "social.pol.economy.global.trade",
+      "category": "knowledge",
+      "prompt": "A国は商品X1単位に4人・Y1単位に12人、B国はX1単位に3人・Y1単位に1人必要。比較生産費説で、A国が特化すべき商品は？",
+      "choices": [
+        "両方",
+        "どちらも生産しない",
+        "商品Y",
+        "商品X"
+      ],
+      "answerIndex": 3,
+      "explanation": "B国はXもYも絶対優位だが、A国はXの方が相対的に不利が小さい（4/3＜12/1）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_004",
+      "unit": "social.pol.economy.global.trade",
+      "category": "knowledge",
+      "prompt": "『経済学の国民的体系』を書き、保護貿易を主張したドイツの経済学者は？",
+      "choices": [
+        "リカード",
+        "ビスマルク",
+        "リスト",
+        "マルクス"
+      ],
+      "answerIndex": 2,
+      "explanation": "発展途上だったドイツの幼稚産業を守るため。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_005",
+      "unit": "social.pol.economy.global.trade",
+      "category": "knowledge",
+      "prompt": "保護貿易の手段のうち、輸入数量の制限や商慣行など、関税以外の障壁を何という？",
+      "choices": [
+        "セーフガード",
+        "非関税障壁",
+        "関税障壁",
+        "最恵国待遇"
+      ],
+      "answerIndex": 1,
+      "explanation": "輸出自主規制や系列取引も含まれる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_006",
+      "unit": "social.pol.economy.global.trade",
+      "category": "knowledge",
+      "prompt": "先進工業国どうしが工業製品を交換しあう国際分業は？",
+      "choices": [
+        "垂直的分業",
+        "水平的分業",
+        "工程間分業",
+        "企業内貿易"
+      ],
+      "answerIndex": 1,
+      "explanation": "先進国と途上国の間の分業は垂直的分業。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_007",
+      "unit": "social.pol.economy.global.trade",
+      "category": "knowledge",
+      "prompt": "先進国が工業製品、発展途上国が一次産品を輸出しあう国際分業は？",
+      "choices": [
+        "産業の空洞化",
+        "垂直的分業",
+        "水平的分業",
+        "国際分業の放棄"
+      ],
+      "answerIndex": 1,
+      "explanation": "南北問題の背景の一つ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_008",
+      "unit": "social.pol.economy.global.balance",
+      "category": "knowledge",
+      "prompt": "国際収支で、経常収支に含まれないものは？",
+      "choices": [
+        "第二次所得収支",
+        "資本移転等収支",
+        "第一次所得収支",
+        "貿易・サービス収支"
+      ],
+      "answerIndex": 1,
+      "explanation": "経常収支＝貿易・サービス収支＋第一次所得収支＋第二次所得収支。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_009",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "海外旅行・運輸・特許使用料などのやりとりが入る項目は？",
+      "choices": [
+        "金融収支",
+        "第一次所得収支",
+        "貿易収支",
+        "サービス収支"
+      ],
+      "answerIndex": 3,
+      "explanation": "貿易・サービス収支の一部。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_010",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "海外投資による利子・配当などの投資収益が入る項目は？",
+      "choices": [
+        "資本移転等収支",
+        "サービス収支",
+        "第二次所得収支",
+        "第一次所得収支"
+      ],
+      "answerIndex": 3,
+      "explanation": "日本は近年この黒字が大きい。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_011",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "国連分担金や外国への無償援助、労働者の送金などが入る項目は？",
+      "choices": [
+        "第二次所得収支",
+        "第一次所得収支",
+        "金融収支",
+        "資本移転等収支"
+      ],
+      "answerIndex": 0,
+      "explanation": "対価をともなわない移転。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_012",
+      "unit": "social.pol.economy.global.balance",
+      "category": "knowledge",
+      "prompt": "海外で会社や工場を建てる投資は、金融収支のどれ？",
+      "choices": [
+        "金融派生商品",
+        "外貨準備",
+        "証券投資",
+        "直接投資"
+      ],
+      "answerIndex": 3,
+      "explanation": "株式などを買うのは証券投資。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_013",
+      "unit": "social.pol.economy.global.balance",
+      "category": "knowledge",
+      "prompt": "国際収支の関係式として正しいものは？",
+      "choices": [
+        "経常収支－資本移転等収支＋金融収支＝0",
+        "経常収支＋資本移転等収支－金融収支＋誤差脱漏＝0",
+        "経常収支＋金融収支＝0",
+        "貿易収支－サービス収支＝0"
+      ],
+      "answerIndex": 1,
+      "explanation": "金融収支は資産－負債。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_014",
+      "unit": "social.pol.economy.global.exchange",
+      "category": "knowledge",
+      "prompt": "外国為替手形を使い、現金を送らずに国際間の決済を行うことを何という？",
+      "choices": [
+        "外貨準備",
+        "為替介入",
+        "直接投資",
+        "外国為替"
+      ],
+      "answerIndex": 3,
+      "explanation": "自国通貨と外貨の交換比率が為替相場。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_015",
+      "unit": "social.pol.economy.global.exchange",
+      "category": "knowledge",
+      "prompt": "外国為替市場での外貨の需給などによって相場が動く制度は？",
+      "choices": [
+        "管理通貨制",
+        "金本位制",
+        "固定相場制",
+        "変動相場制"
+      ],
+      "answerIndex": 3,
+      "explanation": "日本は1973年に移行した。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_016",
+      "unit": "social.pol.economy.global.balance",
+      "category": "knowledge",
+      "prompt": "経済成長率・物価上昇率・失業率・国際収支など、為替相場を決める基礎的条件を何という？",
+      "choices": [
+        "ヘッジファンド",
+        "デリバティブ",
+        "マネーストック",
+        "ファンダメンタルズ"
+      ],
+      "answerIndex": 3,
+      "explanation": "最近はこれと関係なく投機で相場が動くことも多い。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_017",
+      "unit": "social.pol.economy.global.exchange",
+      "category": "knowledge",
+      "prompt": "円高の原因にあたるものは？",
+      "choices": [
+        "日本から海外へ資金が流出する",
+        "日本の金利が下がる",
+        "日本の経常収支が黒字になる",
+        "日本の物価が上がる"
+      ],
+      "answerIndex": 2,
+      "explanation": "円を買う動きが強まると円高になる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_018",
+      "unit": "social.pol.economy.global.exchange",
+      "category": "knowledge",
+      "prompt": "円高が日本経済にもたらす影響として正しいものは？",
+      "choices": [
+        "外国人旅行客の日本での買い物が安くなる",
+        "輸出が増え、景気が良くなる",
+        "輸入品が安くなり、海外旅行の費用が下がる",
+        "輸入品の価格が上がる"
+      ],
+      "answerIndex": 2,
+      "explanation": "円高は輸出に不利・輸入に有利。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_019",
+      "unit": "social.pol.economy.global.exchange",
+      "category": "knowledge",
+      "prompt": "1ドル＝120円から1ドル＝100円になった。5ドルの大豆を輸入するときの円での価格は？",
+      "choices": [
+        "600円から500円に下がる",
+        "600円から700円に上がる",
+        "変わらない",
+        "500円から600円に上がる"
+      ],
+      "answerIndex": 0,
+      "explanation": "円高になったので輸入品が安くなる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_020",
+      "unit": "social.pol.economy.global.exchange",
+      "category": "knowledge",
+      "prompt": "1ドル＝100円から1ドル＝120円になった。100万円の自動車のアメリカでの価格は？",
+      "choices": [
+        "10000ドルから12000ドルに上がる",
+        "10000ドルから約8333ドルに下がる",
+        "8333ドルから10000ドルに上がる",
+        "変わらない"
+      ],
+      "answerIndex": 1,
+      "explanation": "円安は輸出に有利。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_021",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "国家が貿易を統制せず、市場の自由な取引に任せる貿易形態は？",
+      "choices": [
+        "保護貿易",
+        "管理貿易",
+        "自由貿易",
+        "ブロック経済"
+      ],
+      "answerIndex": 2,
+      "explanation": "輸出増を期待する先進工業国の立場。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_022",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "国家が貿易に介入し、輸入品の国内流入を抑える貿易形態は？",
+      "choices": [
+        "自由貿易",
+        "多角的貿易",
+        "水平的分業",
+        "保護貿易"
+      ],
+      "answerIndex": 3,
+      "explanation": "経済発展を期待する発展途上国の立場。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_023",
+      "unit": "social.pol.economy.global.trade",
+      "category": "knowledge",
+      "prompt": "輸入品に高率の関税を課して国内産業を守る方法は？",
+      "choices": [
+        "最恵国待遇",
+        "関税障壁",
+        "非関税障壁",
+        "比較生産費"
+      ],
+      "answerIndex": 1,
+      "explanation": "保護貿易の具体的方法。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_024",
+      "unit": "social.pol.economy.global.trade",
+      "category": "knowledge",
+      "prompt": "アダム・スミスが唱えた考えをリカードが理論づけたものは？",
+      "choices": [
+        "修正資本主義",
+        "国際分業の利益",
+        "依存効果",
+        "経済発展段階説"
+      ],
+      "answerIndex": 1,
+      "explanation": "比較生産費説で理論づけた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_025",
+      "unit": "social.pol.economy.global.trade",
+      "category": "knowledge",
+      "prompt": "リストが保護貿易を主張した理由は？",
+      "choices": [
+        "イギリスの農業を守るため",
+        "発展途上だったドイツの幼稚産業を、先進国イギリスの商品から守るため",
+        "植民地を増やすため",
+        "アメリカの工業を守るため"
+      ],
+      "answerIndex": 1,
+      "explanation": "経済発展段階説にもとづく。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_026",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "国境をまたいで部品などをやりとりし、製造工程を分け合う分業は？",
+      "choices": [
+        "工程間分業",
+        "垂直的分業",
+        "企業内分業",
+        "水平的分業"
+      ],
+      "answerIndex": 0,
+      "explanation": "多国籍企業の進出で増えている。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_027",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "多国籍企業の本社と他国の子会社の間の取引を何という？",
+      "choices": [
+        "中継貿易",
+        "加工貿易",
+        "企業内貿易",
+        "保護貿易"
+      ],
+      "answerIndex": 2,
+      "explanation": "近年増えている。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_028",
+      "unit": "social.pol.economy.global.balance",
+      "category": "knowledge",
+      "prompt": "政府・中央銀行が持つ外国の通貨や国債などの資産を何という？",
+      "choices": [
+        "直接投資",
+        "証券投資",
+        "外貨準備",
+        "金融派生商品"
+      ],
+      "answerIndex": 2,
+      "explanation": "金融収支の一項目。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_029",
+      "unit": "social.pol.economy.global.balance",
+      "category": "knowledge",
+      "prompt": "先物取引やオプション取引などを何という？",
+      "choices": [
+        "証券投資",
+        "直接投資",
+        "金融派生商品（デリバティブ）",
+        "外貨準備"
+      ],
+      "answerIndex": 2,
+      "explanation": "金融収支の一項目。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_030",
+      "unit": "social.pol.economy.global.balance",
+      "category": "knowledge",
+      "prompt": "戦後の復興期、日本の貿易収支が赤字だった理由は？",
+      "choices": [
+        "石油危機があった",
+        "朝鮮特需があった",
+        "輸出が多すぎた",
+        "復興のための輸入が多かった（輸入超過）"
+      ],
+      "answerIndex": 3,
+      "explanation": "サービス収支は朝鮮特需で黒字。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_031",
+      "unit": "social.pol.economy.global.balance",
+      "category": "knowledge",
+      "prompt": "近年、日本の貿易収支が赤字になった原因としてプリントで挙げられているものは？",
+      "choices": [
+        "バブル景気",
+        "リーマン・ショックや東日本大震災の影響",
+        "朝鮮特需",
+        "プラザ合意"
+      ],
+      "answerIndex": 1,
+      "explanation": "それまでは大幅な黒字が続いていた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_032",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "近年、日本の旅行収支が黒字になった理由は？",
+      "choices": [
+        "日本人の海外旅行の増加",
+        "特許使用料の増加",
+        "輸出の増加",
+        "インバウンド（訪日外国人旅行者）の増加"
+      ],
+      "answerIndex": 3,
+      "explanation": "デジタル関連は赤字が拡大。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_033",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "近年の日本の第一次所得収支が大きな黒字になっている理由は？",
+      "choices": [
+        "輸出が増えた",
+        "途上国への援助が増えた",
+        "海外への投資による収益（利子・配当）の受け取りが増えた",
+        "海外旅行者が増えた"
+      ],
+      "answerIndex": 2,
+      "explanation": "日本は世界有数の債権国。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_034",
+      "unit": "social.pol.economy.global.balance",
+      "category": "knowledge",
+      "prompt": "先進国の国際収支の一般的な特徴は？",
+      "choices": [
+        "どちらもゼロ",
+        "経常収支が黒字、金融収支も黒字（海外へ投資）",
+        "経常収支が黒字、金融収支が赤字",
+        "経常収支が赤字、金融収支も赤字"
+      ],
+      "answerIndex": 1,
+      "explanation": "稼いだお金を海外へ投資する。例外的に米・英は経常赤字。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_035",
+      "unit": "social.pol.economy.global",
+      "category": "knowledge",
+      "prompt": "1980年代と2000年代にアメリカが苦しんだ「双子の赤字」とは？",
+      "choices": [
+        "人口減少と失業",
+        "財政赤字と金融黒字",
+        "貿易赤字と経常黒字",
+        "貿易赤字と財政赤字"
+      ],
+      "answerIndex": 3,
+      "explanation": "現在アメリカは世界最大の債務国。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_036",
+      "unit": "social.pol.economy.global.exchange",
+      "category": "knowledge",
+      "prompt": "外国為替市場の参加者にあたらないものは？",
+      "choices": [
+        "銀行（ディーラー）",
+        "仲介業者（ブローカー）",
+        "政府や中央銀行（通貨当局）",
+        "消費者団体"
+      ],
+      "answerIndex": 3,
+      "explanation": "インターバンク市場が中心。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_037",
+      "unit": "social.pol.economy.global.exchange",
+      "category": "knowledge",
+      "prompt": "世界三大国際金融市場の組み合わせとして正しいものは？",
+      "choices": [
+        "パリ・ベルリン・東京",
+        "ロンドン・上海・シンガポール",
+        "ロンドン・ニューヨーク・東京",
+        "ニューヨーク・香港・パリ"
+      ],
+      "answerIndex": 2,
+      "explanation": "1日の外国為替取引は貿易額の約100倍。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_038",
+      "unit": "social.pol.economy.global.exchange",
+      "category": "knowledge",
+      "prompt": "ヘッジファンドなどによる投機的な資金移動が経済を左右する状態を何と呼ぶ？",
+      "choices": [
+        "カジノ資本主義",
+        "国家資本主義",
+        "福祉国家",
+        "修正資本主義"
+      ],
+      "answerIndex": 0,
+      "explanation": "為替がファンダメンタルズと無関係に動くことも多い。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_039",
+      "unit": "social.pol.economy.global.exchange",
+      "category": "thinking",
+      "prompt": "円高が進んだとき、最も困ると考えられるのは？",
+      "choices": [
+        "外国製品を買う消費者",
+        "海外から原料を輸入している食品会社",
+        "自動車を海外に輸出しているメーカー",
+        "海外旅行に行く日本人"
+      ],
+      "answerIndex": 2,
+      "explanation": "円高は輸出に不利・輸入に有利。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_040",
+      "unit": "social.pol.economy.global.exchange",
+      "category": "thinking",
+      "prompt": "円安が進んだとき、得をすると考えられるのは？",
+      "choices": [
+        "海外旅行に行く日本人",
+        "日本を訪れる外国人旅行者",
+        "小麦を輸入するパン屋",
+        "海外で工場を建てる日本企業"
+      ],
+      "answerIndex": 1,
+      "explanation": "外国人にとって日本の物価が安くなる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_041",
+      "unit": "social.pol.economy.global",
+      "category": "thinking",
+      "prompt": "日本の金利が上がると、円相場はどう動くと考えられるか？",
+      "choices": [
+        "円を買う動きが強まり円高になる",
+        "固定相場になる",
+        "円を売る動きが強まり円安になる",
+        "変わらない"
+      ],
+      "answerIndex": 0,
+      "explanation": "高い金利を求めて資金が日本に流入する。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_042",
+      "unit": "social.pol.economy.global.exchange",
+      "category": "thinking",
+      "prompt": "アメリカでインフレが進み、日本の物価が安定しているとき、円相場はどうなると考えられるか？",
+      "choices": [
+        "円安ドル高",
+        "変わらない",
+        "金本位制に戻る",
+        "円高ドル安"
+      ],
+      "answerIndex": 3,
+      "explanation": "相手国のインフレは円高の原因。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_043",
+      "unit": "social.pol.economy.global.exchange",
+      "category": "thinking",
+      "prompt": "円高が進むと、日本企業の海外への直接投資はどうなると考えられるか？",
+      "choices": [
+        "ゼロになる",
+        "変わらない",
+        "増える（海外での生産コストが下がるため）",
+        "減る"
+      ],
+      "answerIndex": 2,
+      "explanation": "産業の空洞化につながることもある。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_044",
+      "unit": "social.pol.economy.global",
+      "category": "thinking",
+      "prompt": "日本人の家族がハワイ旅行で1000ドル使う。1ドル＝150円と1ドル＝110円のどちらの時期に行くと安く済む？",
+      "choices": [
+        "1ドル＝150円の時期（円安）",
+        "旅行先による",
+        "1ドル＝110円の時期（円高）",
+        "どちらも同じ"
+      ],
+      "answerIndex": 2,
+      "explanation": "110円なら11万円、150円なら15万円。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_045",
+      "unit": "social.pol.economy.global.balance",
+      "category": "thinking",
+      "prompt": "日本の企業がアメリカに工場を建てた。国際収支のどの項目に記録される？",
+      "choices": [
+        "金融収支の直接投資",
+        "第一次所得収支",
+        "第二次所得収支",
+        "貿易収支"
+      ],
+      "answerIndex": 0,
+      "explanation": "海外で会社・工場を建てるのは直接投資。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_046",
+      "unit": "social.pol.economy.global.balance",
+      "category": "thinking",
+      "prompt": "アメリカの工場から日本の本社に配当が送られてきた。国際収支のどの項目に記録される？",
+      "choices": [
+        "第一次所得収支",
+        "貿易収支",
+        "資本移転等収支",
+        "第二次所得収支"
+      ],
+      "answerIndex": 0,
+      "explanation": "投資収益は第一次所得収支。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_047",
+      "unit": "social.pol.economy.global.balance",
+      "category": "thinking",
+      "prompt": "日本で働く外国人労働者が母国の家族に送金した。国際収支のどの項目に記録される？",
+      "choices": [
+        "第一次所得収支",
+        "第二次所得収支",
+        "サービス収支",
+        "金融収支"
+      ],
+      "answerIndex": 1,
+      "explanation": "対価をともなわない移転。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_048",
+      "unit": "social.pol.economy.global.balance",
+      "category": "thinking",
+      "prompt": "日本人が海外の映画配信サービスに料金を支払った。国際収支のどの項目に記録される？",
+      "choices": [
+        "サービス収支",
+        "貿易収支",
+        "金融収支",
+        "第一次所得収支"
+      ],
+      "answerIndex": 0,
+      "explanation": "デジタル関連のサービス収支の赤字が拡大している。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_049",
+      "unit": "social.pol.economy.global.balance",
+      "category": "thinking",
+      "prompt": "日本が外国の道路建設のために無償で資金援助した。国際収支のどの項目に記録される？",
+      "choices": [
+        "資本移転等収支",
+        "第二次所得収支",
+        "金融収支",
+        "サービス収支"
+      ],
+      "answerIndex": 0,
+      "explanation": "社会資本への無償援助は資本移転等収支。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_050",
+      "unit": "social.pol.economy.global.balance",
+      "category": "thinking",
+      "prompt": "日本の国際収支の特徴（2000年と2022年の比較）として正しいものは？",
+      "choices": [
+        "貿易収支は黒字から赤字になったが、第一次所得収支の黒字が大きく増えた",
+        "第一次所得収支が赤字になった",
+        "貿易収支の黒字が大きく増えた",
+        "経常収支が赤字になった"
+      ],
+      "answerIndex": 0,
+      "explanation": "「貿易で稼ぐ国」から「投資で稼ぐ国」へ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_051",
+      "unit": "social.pol.economy.global.trade",
+      "category": "thinking",
+      "prompt": "比較生産費説の考え方として最も適切なものは？",
+      "choices": [
+        "絶対的に得意な商品がない国は貿易すべきでない",
+        "すべての商品で劣っていても、相対的に得意な商品に特化すれば利益が生まれる",
+        "輸入には高い関税をかけるべき",
+        "すべての商品を自国で生産すべき"
+      ],
+      "answerIndex": 1,
+      "explanation": "絶対優位ではなく比較優位で考える。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_052",
+      "unit": "social.pol.economy.global.trade",
+      "category": "thinking",
+      "prompt": "保護貿易の問題点として考えられるものは？",
+      "choices": [
+        "国内産業が競争にさらされず、効率化が遅れたり消費者が高い商品を買ったりする",
+        "貿易相手国が喜ぶ",
+        "国内産業がすぐに成長する",
+        "消費者が安い輸入品を自由に買える"
+      ],
+      "answerIndex": 0,
+      "explanation": "自由貿易のメリットと比べて考える。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_053",
+      "unit": "social.pol.economy.global",
+      "category": "thinking",
+      "prompt": "水平的分業が進むと、先進国どうしではどんな貿易が増えるか？",
+      "choices": [
+        "一次産品どうしの貿易",
+        "自動車と電子機器など、工業製品どうしの相互貿易",
+        "工業製品と一次産品の貿易",
+        "貿易が全くなくなる"
+      ],
+      "answerIndex": 1,
+      "explanation": "近年は途上国も含めて水平貿易が進んでいる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_054",
+      "unit": "social.pol.economy.global.exchange",
+      "category": "thinking",
+      "prompt": "為替が「ファンダメンタルズと無関係に動く」ことが問題とされる理由は？",
+      "choices": [
+        "為替が全く動かなくなる",
+        "貿易が自動的に増える",
+        "実体経済と関係なく相場が乱高下し、貿易や企業経営が不安定になる",
+        "物価が必ず下がる"
+      ],
+      "answerIndex": 2,
+      "explanation": "ヘッジファンドなどの投機が原因。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_055",
+      "unit": "social.pol.economy.global",
+      "category": "calculation",
+      "prompt": "1ドル＝100円のとき、200万円の自動車をアメリカで売ると何ドル？",
+      "choices": [
+        "20万ドル",
+        "2万ドル",
+        "2000ドル",
+        "200ドル"
+      ],
+      "answerIndex": 1,
+      "explanation": "200万÷100＝2万。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_056",
+      "unit": "social.pol.economy.global.exchange",
+      "category": "calculation",
+      "prompt": "1ドル＝125円のとき、200万円の自動車をアメリカで売ると何ドル？",
+      "choices": [
+        "1万2500ドル",
+        "2万5000ドル",
+        "1万6000ドル",
+        "2万ドル"
+      ],
+      "answerIndex": 2,
+      "explanation": "200万÷125＝1万6000。円安でドル価格が下がる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_057",
+      "unit": "social.pol.economy.global",
+      "category": "calculation",
+      "prompt": "1ドル＝150円のとき、8ドルのアメリカ産牛肉は何円？",
+      "choices": [
+        "800円",
+        "1200円",
+        "1500円",
+        "150円"
+      ],
+      "answerIndex": 1,
+      "explanation": "8×150＝1200。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_058",
+      "unit": "social.pol.economy.global",
+      "category": "calculation",
+      "prompt": "1ドル＝100円から1ドル＝80円になった。この変化は？",
+      "choices": [
+        "円安（円の価値が下がった）",
+        "円高（円の価値が上がった）",
+        "デフレ",
+        "変化なし"
+      ],
+      "answerIndex": 1,
+      "explanation": "1ドルを少ない円で買えるようになった。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_059",
+      "unit": "social.pol.economy.global",
+      "category": "calculation",
+      "prompt": "特化前、A国は商品X・Yを1単位ずつ（Xに4人、Yに12人）、B国も1単位ずつ（Xに3人、Yに1人）生産している。A国がXに特化すると、X何単位を生産できる？",
+      "choices": [
+        "4単位",
+        "3単位",
+        "2単位",
+        "16単位"
+      ],
+      "answerIndex": 0,
+      "explanation": "A国の労働者は4＋12＝16人。16÷4＝4単位。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_060",
+      "unit": "social.pol.economy.global",
+      "category": "calculation",
+      "prompt": "上の例で、B国がYに特化すると、Y何単位を生産できる？",
+      "choices": [
+        "2単位",
+        "3単位",
+        "4単位",
+        "1単位"
+      ],
+      "answerIndex": 2,
+      "explanation": "B国の労働者は3＋1＝4人。4÷1＝4単位。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_061",
+      "unit": "social.pol.economy.global",
+      "category": "calculation",
+      "prompt": "上の例で、特化前の世界全体の生産量はX・Y各2単位。特化後はそれぞれ何単位になる？",
+      "choices": [
+        "X2単位・Y2単位",
+        "X16単位・Y4単位",
+        "X3単位・Y3単位",
+        "X4単位・Y4単位"
+      ],
+      "answerIndex": 3,
+      "explanation": "特化によって両方とも増える。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    },
+    {
+      "id": "social_shonan_104_public_economy_05_062",
+      "unit": "social.pol.economy.global.balance",
+      "category": "calculation",
+      "prompt": "経常収支が10兆円の黒字、資本移転等収支が−1兆円、誤差脱漏が0のとき、金融収支は？",
+      "choices": [
+        "9兆円",
+        "−9兆円",
+        "11兆円",
+        "10兆円"
+      ],
+      "answerIndex": 0,
+      "explanation": "10＋(−1)−金融収支＋0＝0 → 金融収支＝9兆円。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy",
+        "kokyo-6-1"
+      ]
+    }
+  ]
+}

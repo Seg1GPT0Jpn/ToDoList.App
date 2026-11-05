@@ -1,0 +1,87 @@
+# Android 版を Google Play のテスト（クローズドテストなど）に上げる。
+# GitHub の Actions 画面の「Android版を Google Play に上げる」→「Run workflow」で動く。
+#
+# 最初の1回は Play Console から手で App Bundle を上げること（Google の決まり）。
+# 必要な秘密鍵（Settings → Secrets and variables → Actions）。登録のしかたは docs/PLAY_RELEASE.md：
+#   ANDROID_KEYSTORE_BASE64   アップロード鍵（upload-keystore.jks）を Base64 にしたもの
+#   ANDROID_KEYSTORE_PASSWORD アップロード鍵のパスワード
+#   PLAY_SERVICE_ACCOUNT_JSON Google Play に上げる権限のあるサービスアカウントの JSON
+name: Android版を Google Play に上げる
+
+on:
+  workflow_dispatch:
+    inputs:
+      track:
+        description: 'トラック（クローズドテストは alpha、内部テストは internal）'
+        default: alpha
+        required: true
+      status:
+        description: 'completed（テスターに配る）か draft（下書きにする）'
+        default: completed
+        required: true
+      notes:
+        description: '変更点（テスターに見える）'
+        default: '改善と不具合の修正'
+        required: true
+
+concurrency:
+  group: release-android
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      HAS_KEYS: ${{ secrets.ANDROID_KEYSTORE_BASE64 != '' && secrets.ANDROID_KEYSTORE_PASSWORD != '' && secrets.PLAY_SERVICE_ACCOUNT_JSON != '' }}
+    steps:
+      - name: 秘密鍵の確認
+        if: env.HAS_KEYS != 'true'
+        run: |
+          echo "::error::ANDROID_KEYSTORE_BASE64・ANDROID_KEYSTORE_PASSWORD・PLAY_SERVICE_ACCOUNT_JSON を登録してください（docs/PLAY_RELEASE.md）"
+          exit 1
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 3.47.6
+          channel: stable
+          cache: true
+      - name: アップロード鍵を置く
+        working-directory: rpg_game_app/android
+        env:
+          KEYSTORE: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+        run: |
+          printf '%s' "$KEYSTORE" | base64 -d > "$RUNNER_TEMP/upload-keystore.jks"
+          {
+            echo "storePassword=$PASSWORD"
+            echo "keyPassword=$PASSWORD"
+            echo "keyAlias=upload"
+            echo "storeFile=$RUNNER_TEMP/upload-keystore.jks"
+          } > key.properties
+      # バージョンコードは実行の番号から決める（手で上げた 1〜100 とかぶらないように 100 を足す）
+      - name: App Bundle をビルド
+        working-directory: rpg_game_app
+        run: |
+          flutter pub get
+          flutter build appbundle --release --build-number=$((100 + GITHUB_RUN_NUMBER))
+      - name: 変更点
+        env:
+          NOTES: ${{ inputs.notes }}
+        run: |
+          mkdir -p whatsnew
+          printf '%s' "$NOTES" > whatsnew/whatsnew-ja-JP
+      - uses: r0adkll/upload-google-play@v1
+        with:
+          serviceAccountJsonPlainText: ${{ secrets.PLAY_SERVICE_ACCOUNT_JSON }}
+          packageName: com.kazu.rpg_game_app
+          releaseFiles: rpg_game_app/build/app/outputs/bundle/release/app-release.aab
+          track: ${{ inputs.track }}
+          status: ${{ inputs.status }}
+          whatsNewDirectory: whatsnew
+      - name: 鍵を消す
+        if: always()
+        run: rm -f "$RUNNER_TEMP/upload-keystore.jks" rpg_game_app/android/key.properties

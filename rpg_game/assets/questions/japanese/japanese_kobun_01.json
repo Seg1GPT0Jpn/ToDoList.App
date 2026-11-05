@@ -1,0 +1,344 @@
+{
+  "setId": "japanese_kobun_01",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "jap_kobun01_001",
+      "unit": "japanese.kobun.word.kana.kana",
+      "category": "knowledge",
+      "prompt": "「いふ」を現代仮名遣いに直すと？",
+      "choices": [
+        "いえ",
+        "いう",
+        "ゆう",
+        "いふ"
+      ],
+      "answerIndex": 1,
+      "explanation": "語中・語尾のハ行は、ワ行（わ・い・う・え・お）で読む。"
+    },
+    {
+      "id": "jap_kobun01_002",
+      "unit": "japanese.kobun.word.word.important",
+      "category": "knowledge",
+      "prompt": "「をかし」を現代仮名遣いに直すと？",
+      "choices": [
+        "をかし",
+        "うかし",
+        "おがし",
+        "おかし"
+      ],
+      "answerIndex": 3,
+      "explanation": "「を」は「お」と読む（助詞の「を」を除く）。"
+    },
+    {
+      "id": "jap_kobun01_003",
+      "unit": "japanese.kobun.word.kana.kana",
+      "category": "knowledge",
+      "prompt": "「けふ」を現代仮名遣いに直すと？",
+      "choices": [
+        "きょう",
+        "けう",
+        "きゅう",
+        "けふ"
+      ],
+      "answerIndex": 0,
+      "explanation": "「eu」の音は「ョー（yō）」になる。けふ→けう→きょう。"
+    },
+    {
+      "id": "jap_kobun01_004",
+      "unit": "japanese.kobun.word.kana.kana",
+      "category": "knowledge",
+      "prompt": "「てふてふ」を現代仮名遣いに直すと？",
+      "choices": [
+        "ちょうちょう",
+        "ちゅうちゅう",
+        "ておておう",
+        "てうてう"
+      ],
+      "answerIndex": 0,
+      "explanation": "てふ→てう→ちょう。「蝶々」のこと。"
+    },
+    {
+      "id": "jap_kobun01_005",
+      "unit": "japanese.kobun.word.kana.kana",
+      "category": "knowledge",
+      "prompt": "「ゐなか」を現代仮名遣いに直すと？",
+      "choices": [
+        "ゐなか",
+        "うぃなか",
+        "えなか",
+        "いなか"
+      ],
+      "answerIndex": 3,
+      "explanation": "「ゐ」は「い」、「ゑ」は「え」と読む。"
+    },
+    {
+      "id": "jap_kobun01_006",
+      "unit": "japanese.kobun.word.kana.kana",
+      "category": "knowledge",
+      "prompt": "「まうす」を現代仮名遣いに直すと？",
+      "choices": [
+        "まうす",
+        "みょうす",
+        "むうす",
+        "もうす"
+      ],
+      "answerIndex": 3,
+      "explanation": "「au」の音は「オー（ō）」になる。"
+    },
+    {
+      "id": "jap_kobun01_007",
+      "unit": "japanese.kobun.word.word.basic",
+      "category": "knowledge",
+      "prompt": "古文単語「をかし」の意味として最も適切なものは？",
+      "choices": [
+        "あやしい",
+        "趣がある・興味深い",
+        "悲しい",
+        "おかしくて笑える"
+      ],
+      "answerIndex": 1,
+      "explanation": "『枕草子』に多く見られる、明るく知的な感動を表す語。"
+    },
+    {
+      "id": "jap_kobun01_008",
+      "unit": "japanese.kobun.word.word.basic",
+      "category": "knowledge",
+      "prompt": "古文単語「あはれなり」の意味として最も適切なものは？",
+      "choices": [
+        "しみじみと心を動かされる",
+        "腹立たしい",
+        "おもしろくて笑える",
+        "かわいそうだ"
+      ],
+      "answerIndex": 0,
+      "explanation": "『源氏物語』に代表される、しみじみとした情趣を表す語。"
+    },
+    {
+      "id": "jap_kobun01_009",
+      "unit": "japanese.kobun.word.word.basic",
+      "category": "knowledge",
+      "prompt": "古文単語「いと」の意味は？",
+      "choices": [
+        "いつも",
+        "糸",
+        "とても・たいそう",
+        "すこし"
+      ],
+      "answerIndex": 2,
+      "explanation": "「いと〜ず」の形では「たいして〜ない」。"
+    },
+    {
+      "id": "jap_kobun01_010",
+      "unit": "japanese.kobun.word.word.basic",
+      "category": "knowledge",
+      "prompt": "古文単語「つとめて」の意味は？",
+      "choices": [
+        "すぐに",
+        "夜ふけ",
+        "早朝・翌朝",
+        "努力して"
+      ],
+      "answerIndex": 2,
+      "explanation": "「冬はつとめて」（枕草子）。"
+    },
+    {
+      "id": "jap_kobun01_011",
+      "unit": "japanese.kobun.word.word.basic",
+      "category": "knowledge",
+      "prompt": "古文単語「うつくし」の意味は？",
+      "choices": [
+        "りっぱだ",
+        "さびしい",
+        "かわいらしい",
+        "美しい（整っている）"
+      ],
+      "answerIndex": 2,
+      "explanation": "小さいものをいとしく思う気持ちを表す。"
+    },
+    {
+      "id": "jap_kobun01_012",
+      "unit": "japanese.kobun.word.word.basic",
+      "category": "knowledge",
+      "prompt": "古文単語「ありがたし」の意味は？",
+      "choices": [
+        "ありふれている",
+        "めったにない・珍しい",
+        "感謝している",
+        "当たり前だ"
+      ],
+      "answerIndex": 1,
+      "explanation": "「有り難し」＝存在することが難しい。"
+    },
+    {
+      "id": "jap_kobun01_013",
+      "unit": "japanese.kobun.word.kana.kana",
+      "category": "knowledge",
+      "prompt": "「かはづ」を現代仮名遣いに直すと？",
+      "choices": [
+        "かわづ",
+        "かわず",
+        "かはず",
+        "かえず"
+      ],
+      "answerIndex": 1,
+      "explanation": "ハ行はワ行に、「づ」は「ず」に直す。"
+    },
+    {
+      "id": "jap_kobun01_014",
+      "unit": "japanese.kobun.word.kana.kana",
+      "category": "knowledge",
+      "prompt": "「はぢ」を現代仮名遣いに直すと？",
+      "choices": [
+        "はじ",
+        "はち",
+        "はぢ",
+        "わじ"
+      ],
+      "answerIndex": 0,
+      "explanation": "「ぢ」は「じ」、「づ」は「ず」と書く。"
+    },
+    {
+      "id": "jap_kobun01_015",
+      "unit": "japanese.kobun.word.kana.kana",
+      "category": "knowledge",
+      "prompt": "「やうやう」を現代仮名遣いに直すと？",
+      "choices": [
+        "よおよお",
+        "やうやう",
+        "ようよう",
+        "ゆうゆう"
+      ],
+      "answerIndex": 2,
+      "explanation": "「au」の音は「オー」になる。"
+    },
+    {
+      "id": "jap_kobun01_016",
+      "unit": "japanese.kobun.word.kana.kana",
+      "category": "knowledge",
+      "prompt": "「くわんげん（管弦）」を現代仮名遣いに直すと？",
+      "choices": [
+        "かんげん",
+        "かんけん",
+        "くわんげん",
+        "くあんげん"
+      ],
+      "answerIndex": 0,
+      "explanation": "「くわ」は「か」、「ぐわ」は「が」と読む。"
+    },
+    {
+      "id": "jap_kobun01_017",
+      "unit": "japanese.kobun.word.kana.kana",
+      "category": "knowledge",
+      "prompt": "「行かむ」を現代仮名遣いに直すと？",
+      "choices": [
+        "いかむ",
+        "ゆかん",
+        "いかん",
+        "いこう"
+      ],
+      "answerIndex": 2,
+      "explanation": "助動詞の「む」は「ん」と読む。"
+    },
+    {
+      "id": "jap_kobun01_018",
+      "unit": "japanese.kobun.word.kana.kana",
+      "category": "knowledge",
+      "prompt": "「うつくしう」を現代仮名遣いに直すと？",
+      "choices": [
+        "うつくしゅ",
+        "うつくしう",
+        "うつくしゅう",
+        "うつくしょう"
+      ],
+      "answerIndex": 2,
+      "explanation": "「iu」の音は「ュー」になる。"
+    },
+    {
+      "id": "jap_kobun01_019",
+      "unit": "japanese.kobun.word.word.basic",
+      "category": "knowledge",
+      "prompt": "古文単語「わろし」の意味は？",
+      "choices": [
+        "よくない・見劣りがする",
+        "笑える",
+        "若い",
+        "悪人だ"
+      ],
+      "answerIndex": 0,
+      "explanation": "「わるし」よりは程度が軽い。"
+    },
+    {
+      "id": "jap_kobun01_020",
+      "unit": "japanese.kobun.word.word.basic",
+      "category": "knowledge",
+      "prompt": "古文単語「よし」の意味として最も適切なものは？",
+      "choices": [
+        "よい・すぐれている",
+        "寄せる",
+        "まあよい",
+        "夜"
+      ],
+      "answerIndex": 0,
+      "explanation": "「よし＞よろし＞わろし＞あし」の順に評価が下がる。"
+    },
+    {
+      "id": "jap_kobun01_021",
+      "unit": "japanese.kobun.word.word.basic",
+      "category": "knowledge",
+      "prompt": "古文単語「げに」の意味は？",
+      "choices": [
+        "本当に・なるほど",
+        "決して",
+        "下品に",
+        "まるで"
+      ],
+      "answerIndex": 0,
+      "explanation": "人の言葉などに納得したときに使う。"
+    },
+    {
+      "id": "jap_kobun01_022",
+      "unit": "japanese.kobun.word.word.basic",
+      "category": "knowledge",
+      "prompt": "古文単語「なかなか」の意味は？",
+      "choices": [
+        "すぐに",
+        "なかなかよい",
+        "かえって・中途半端に",
+        "まったく"
+      ],
+      "answerIndex": 2,
+      "explanation": "現代語の「なかなか」とは意味が違う。"
+    },
+    {
+      "id": "jap_kobun01_023",
+      "unit": "japanese.kobun.word.word.basic",
+      "category": "knowledge",
+      "prompt": "古文単語「ことわり」の意味は？",
+      "choices": [
+        "言葉",
+        "断ること",
+        "事件",
+        "道理・理由"
+      ],
+      "answerIndex": 3,
+      "explanation": "「ことわりなり」＝もっともだ。"
+    },
+    {
+      "id": "jap_kobun01_024",
+      "unit": "japanese.kobun.word.word.basic",
+      "category": "knowledge",
+      "prompt": "古文単語「さらなり」の意味は？",
+      "choices": [
+        "去っていく",
+        "新しい",
+        "言うまでもない",
+        "さらに多い"
+      ],
+      "answerIndex": 2,
+      "explanation": "「言ふもさらなり」の略。「夏は夜。月のころはさらなり」。"
+    }
+  ]
+}

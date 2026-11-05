@@ -1,0 +1,456 @@
+{
+  "setId": "science_chemistry_14",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_chm14_001",
+      "unit": "science.chemistry.inorganic.metal.alkali",
+      "category": "knowledge",
+      "prompt": "炭酸水素ナトリウム NaHCO₃ を加熱したときに発生する気体は？",
+      "choices": [
+        "水素",
+        "二酸化炭素",
+        "酸素",
+        "アンモニア"
+      ],
+      "answerIndex": 1,
+      "explanation": "2NaHCO₃ → Na₂CO₃ ＋ H₂O ＋ CO₂。ふくらし粉（ベーキングパウダー）に利用される。"
+    },
+    {
+      "id": "sci_chm14_002",
+      "unit": "science.chemistry.inorganic.metal.alkali",
+      "category": "knowledge",
+      "prompt": "炎色反応でカリウムが示す色は？",
+      "choices": [
+        "赤紫色",
+        "黄色",
+        "青緑色",
+        "橙赤色"
+      ],
+      "answerIndex": 0,
+      "explanation": "Li 赤、Na 黄、K 赤紫、Ca 橙赤、Sr 紅、Ba 黄緑、Cu 青緑。"
+    },
+    {
+      "id": "sci_chm14_003",
+      "unit": "science.chemistry.inorganic.metal.amphoteric",
+      "category": "knowledge",
+      "prompt": "酸にも強塩基にも溶ける金属（両性金属）はどれ？",
+      "choices": [
+        "金",
+        "銅",
+        "鉄",
+        "アルミニウム"
+      ],
+      "answerIndex": 3,
+      "explanation": "Al・Zn・Sn・Pb が両性金属。"
+    },
+    {
+      "id": "sci_chm14_004",
+      "unit": "science.chemistry.inorganic.metal.amphoteric",
+      "category": "knowledge",
+      "prompt": "アルミニウムや鉄を濃硝酸に入れても溶けない理由は？",
+      "choices": [
+        "濃硝酸は酸ではないから",
+        "表面にち密な酸化被膜ができる（不動態）から",
+        "イオン化傾向が小さいから",
+        "温度が低いから"
+      ],
+      "answerIndex": 1,
+      "explanation": "不動態。Al・Fe・Ni で見られる。"
+    },
+    {
+      "id": "sci_chm14_005",
+      "unit": "science.chemistry.inorganic.metal",
+      "category": "knowledge",
+      "prompt": "Fe³⁺ をふくむ水溶液の色は？",
+      "choices": [
+        "青色",
+        "淡緑色",
+        "黄褐色",
+        "無色"
+      ],
+      "answerIndex": 2,
+      "explanation": "Fe²⁺ は淡緑色、Fe³⁺ は黄褐色、Cu²⁺ は青色。"
+    },
+    {
+      "id": "sci_chm14_006",
+      "unit": "science.chemistry.inorganic.metal.separation",
+      "category": "knowledge",
+      "prompt": "Ag⁺ をふくむ水溶液に塩酸を加えると、何色の沈殿ができる？",
+      "choices": [
+        "青色",
+        "黒色",
+        "白色（AgCl）",
+        "赤色"
+      ],
+      "answerIndex": 2,
+      "explanation": "AgCl は光で分解して黒くなる（感光性）。"
+    },
+    {
+      "id": "sci_chm14_007",
+      "unit": "science.chemistry.inorganic.metal.transition",
+      "category": "knowledge",
+      "prompt": "遷移元素の特徴として正しいものは？",
+      "choices": [
+        "非金属である",
+        "すべて気体である",
+        "複数の酸化数をとり、色のついたイオンや化合物が多い",
+        "価電子がすべて 8 個"
+      ],
+      "answerIndex": 2,
+      "explanation": "例：Fe²⁺・Fe³⁺、Cu⁺・Cu²⁺。触媒として使われるものも多い。"
+    },
+    {
+      "id": "sci_chm14_008",
+      "unit": "science.chemistry.inorganic.metal.transition",
+      "category": "knowledge",
+      "prompt": "溶鉱炉で鉄鉱石（酸化鉄）を還元するのに使われるのは？",
+      "choices": [
+        "酸素",
+        "水素だけ",
+        "塩素",
+        "一酸化炭素（コークス由来）"
+      ],
+      "answerIndex": 3,
+      "explanation": "Fe₂O₃ ＋ 3CO → 2Fe ＋ 3CO₂。できた銑鉄から炭素を減らしたものが鋼。"
+    },
+    {
+      "id": "sci_chm14_009",
+      "unit": "science.chemistry.inorganic.metal",
+      "category": "knowledge",
+      "prompt": "セッコウの主成分は？",
+      "choices": [
+        "炭酸カルシウム",
+        "酸化アルミニウム",
+        "硫酸カルシウム",
+        "塩化ナトリウム"
+      ],
+      "answerIndex": 2,
+      "explanation": "CaSO₄·2H₂O。焼いた焼きセッコウは水を加えると固まるので、ギプスや建材に使う。"
+    },
+    {
+      "id": "sci_chm14_010",
+      "unit": "science.chemistry.inorganic.metal.transition",
+      "category": "knowledge",
+      "prompt": "銅を電解精錬するとき、純銅はどちらの極に析出する？",
+      "choices": [
+        "どちらにも出ない",
+        "陰極",
+        "陽極",
+        "両方"
+      ],
+      "answerIndex": 1,
+      "explanation": "粗銅を陽極、純銅を陰極にする。陽極の下には金・銀などが陽極泥としてたまる。"
+    },
+    {
+      "id": "sci_chm14_011",
+      "unit": "science.chemistry.inorganic.metal.transition",
+      "category": "calculation",
+      "prompt": "Fe₂O₃ 160 g を完全に還元すると、鉄は何 g 得られる？（Fe ＝ 56、O ＝ 16）",
+      "choices": [
+        "160 g",
+        "224 g",
+        "112 g",
+        "56 g"
+      ],
+      "answerIndex": 2,
+      "explanation": "Fe₂O₃ の式量 160 なので 1.0 mol。Fe は 2.0 mol ＝ 112 g。"
+    },
+    {
+      "id": "sci_chm14_012",
+      "unit": "science.chemistry.inorganic.metal.alkali",
+      "category": "calculation",
+      "prompt": "ナトリウム 2.3 g を水と反応させると、水素は何 mol 発生する？（Na ＝ 23、2Na ＋ 2H₂O → 2NaOH ＋ H₂）",
+      "choices": [
+        "1.0 mol",
+        "0.050 mol",
+        "0.10 mol",
+        "0.20 mol"
+      ],
+      "answerIndex": 1,
+      "explanation": "Na 0.10 mol → H₂ はその半分の 0.050 mol。"
+    },
+    {
+      "id": "sci_chm14_013",
+      "unit": "science.chemistry.inorganic.metal.separation",
+      "category": "calculation",
+      "prompt": "石灰水に CO₂ 0.10 mol を通したら、すべて CaCO₃ になった。沈殿は何 g？（CaCO₃ ＝ 100）",
+      "choices": [
+        "1.0 g",
+        "100 g",
+        "10 g",
+        "4.4 g"
+      ],
+      "answerIndex": 2,
+      "explanation": "Ca(OH)₂ ＋ CO₂ → CaCO₃ ＋ H₂O。CaCO₃ 0.10 mol ＝ 10 g。"
+    },
+    {
+      "id": "sci_chm14_014",
+      "unit": "science.chemistry.inorganic.metal.amphoteric",
+      "category": "calculation",
+      "prompt": "アルミニウム 27 g が酸素と完全に反応すると、Al₂O₃ は何 mol できる？（Al ＝ 27）",
+      "choices": [
+        "2.0 mol",
+        "1.0 mol",
+        "0.50 mol",
+        "0.25 mol"
+      ],
+      "answerIndex": 2,
+      "explanation": "4Al ＋ 3O₂ → 2Al₂O₃。Al 1.0 mol から Al₂O₃ 0.50 mol。"
+    },
+    {
+      "id": "sci_chm14_015",
+      "unit": "science.chemistry.inorganic.metal",
+      "category": "thinking",
+      "prompt": "石灰水に CO₂ を通し続けると、いったん白くにごった後、透明になる。その理由は？",
+      "choices": [
+        "CaCO₃ が蒸発するから",
+        "石灰水が中和されて水になるから",
+        "CO₂ が出ていくから",
+        "CaCO₃ が水に溶ける Ca(HCO₃)₂ に変わるから"
+      ],
+      "answerIndex": 3,
+      "explanation": "CaCO₃ ＋ CO₂ ＋ H₂O → Ca(HCO₃)₂。鍾乳洞ができるしくみと同じ反応。"
+    },
+    {
+      "id": "sci_chm14_016",
+      "unit": "science.chemistry.inorganic.metal.separation",
+      "category": "thinking",
+      "prompt": "Ag⁺ と Cu²⁺ をふくむ水溶液から Ag⁺ だけを沈殿させたい。加えるとよいものは？",
+      "choices": [
+        "希塩酸",
+        "硝酸",
+        "水",
+        "アンモニア水を少量"
+      ],
+      "answerIndex": 0,
+      "explanation": "AgCl は沈殿するが、CuCl₂ は水に溶ける。沈殿をろ過すれば分離できる。"
+    },
+    {
+      "id": "sci_chm14_017",
+      "unit": "science.chemistry.inorganic.metal",
+      "category": "knowledge",
+      "prompt": "アルカリ金属の単体が水と反応すると発生する気体は？",
+      "choices": [
+        "水素",
+        "二酸化炭素",
+        "塩素",
+        "酸素"
+      ],
+      "answerIndex": 0,
+      "explanation": "2Na ＋ 2H₂O → 2NaOH ＋ H₂。"
+    },
+    {
+      "id": "sci_chm14_018",
+      "unit": "science.chemistry.inorganic.metal.alkali",
+      "category": "knowledge",
+      "prompt": "炎色反応でナトリウムが示す色は？",
+      "choices": [
+        "青緑色",
+        "橙赤色",
+        "赤紫色",
+        "黄色"
+      ],
+      "answerIndex": 3,
+      "explanation": "K 赤紫、Cu 青緑、Ca 橙赤、Li 赤、Sr 紅、Ba 黄緑。"
+    },
+    {
+      "id": "sci_chm14_019",
+      "unit": "science.chemistry.inorganic.metal.alkali",
+      "category": "knowledge",
+      "prompt": "水酸化ナトリウムを空気中に放置すると表面がぬれてくる現象は？",
+      "choices": [
+        "凝析",
+        "昇華",
+        "潮解",
+        "風解"
+      ],
+      "answerIndex": 2,
+      "explanation": "空気中の水分を吸収して溶ける。"
+    },
+    {
+      "id": "sci_chm14_020",
+      "unit": "science.chemistry.inorganic.metal.alkali",
+      "category": "knowledge",
+      "prompt": "炭酸ナトリウムをつくる工業的方法は？",
+      "choices": [
+        "ハーバー・ボッシュ法",
+        "アンモニアソーダ法（ソルベー法）",
+        "接触法",
+        "オストワルト法"
+      ],
+      "answerIndex": 1,
+      "explanation": "NaCl、CaCO₃、NH₃ などを原料とする。"
+    },
+    {
+      "id": "sci_chm14_021",
+      "unit": "science.chemistry.inorganic.metal",
+      "category": "knowledge",
+      "prompt": "鍾乳洞ができる反応に関係する物質は？",
+      "choices": [
+        "塩化ナトリウム",
+        "アンモニア",
+        "硫酸",
+        "炭酸カルシウムと二酸化炭素をふくむ水"
+      ],
+      "answerIndex": 3,
+      "explanation": "CaCO₃ ＋ CO₂ ＋ H₂O ⇄ Ca(HCO₃)₂。"
+    },
+    {
+      "id": "sci_chm14_022",
+      "unit": "science.chemistry.inorganic.metal",
+      "category": "knowledge",
+      "prompt": "ステンレス鋼にふくまれ、さびにくくする金属は？",
+      "choices": [
+        "銅",
+        "ナトリウム",
+        "鉛",
+        "クロム・ニッケル"
+      ],
+      "answerIndex": 3,
+      "explanation": "表面に緻密な酸化被膜ができる。"
+    },
+    {
+      "id": "sci_chm14_023",
+      "unit": "science.chemistry.inorganic.metal.separation",
+      "category": "knowledge",
+      "prompt": "Cu²⁺ をふくむ水溶液に少量のアンモニア水を加えるとできる沈殿の色は？",
+      "choices": [
+        "赤褐色",
+        "青白色",
+        "白色",
+        "黒色"
+      ],
+      "answerIndex": 1,
+      "explanation": "Cu(OH)₂。過剰に加えると深青色の溶液になる。"
+    },
+    {
+      "id": "sci_chm14_024",
+      "unit": "science.chemistry.inorganic.metal",
+      "category": "knowledge",
+      "prompt": "Fe²⁺ をふくむ水溶液の色は？",
+      "choices": [
+        "淡緑色",
+        "無色",
+        "黄褐色",
+        "青色"
+      ],
+      "answerIndex": 0,
+      "explanation": "Fe³⁺ は黄褐色。"
+    },
+    {
+      "id": "sci_chm14_025",
+      "unit": "science.chemistry.inorganic.metal.transition",
+      "category": "thinking",
+      "prompt": "ブリキ（鉄にスズをめっきしたもの）に傷がつくと、かえって鉄がさびやすくなる理由は？",
+      "choices": [
+        "鉄の方がスズよりイオン化傾向が大きく、鉄が先に酸化されるから",
+        "鉄がスズに還元されるから",
+        "スズが空気中の水分を吸いこむから",
+        "スズが鉄を溶かすから"
+      ],
+      "answerIndex": 0,
+      "explanation": "傷がなければスズの被膜が鉄を守るが、傷がつくとイオン化傾向の大きい鉄が先に溶け出す。トタン（亜鉛めっき）とは逆。"
+    },
+    {
+      "id": "sci_chm14_026",
+      "unit": "science.chemistry.inorganic.metal",
+      "category": "calculation",
+      "prompt": "Fe₂O₃ ＋ 3CO → 2Fe ＋ 3CO₂ で、Fe 112 g を得るのに必要な Fe₂O₃ は？（Fe ＝ 56、O ＝ 16）",
+      "choices": [
+        "80 g",
+        "160 g",
+        "112 g",
+        "320 g"
+      ],
+      "answerIndex": 1,
+      "explanation": "Fe 2.0 mol ← Fe₂O₃ 1.0 mol。"
+    },
+    {
+      "id": "sci_chm14_027",
+      "unit": "science.chemistry.inorganic.metal.alkali",
+      "category": "calculation",
+      "prompt": "カルシウム 4.0 g を水と反応させると、発生する水素は何 mol？（Ca ＝ 40）",
+      "choices": [
+        "0.050 mol",
+        "0.10 mol",
+        "0.20 mol",
+        "1.0 mol"
+      ],
+      "answerIndex": 1,
+      "explanation": "Ca ＋ 2H₂O → Ca(OH)₂ ＋ H₂。"
+    },
+    {
+      "id": "sci_chm14_028",
+      "unit": "science.chemistry.inorganic.metal.alkali",
+      "category": "calculation",
+      "prompt": "炭酸カルシウム 10 g に十分な塩酸を加えると、CO₂ は何 mol 発生する？（CaCO₃ ＝ 100）",
+      "choices": [
+        "1.0 mol",
+        "0.050 mol",
+        "0.20 mol",
+        "0.10 mol"
+      ],
+      "answerIndex": 3,
+      "explanation": "CaCO₃ 1 mol から CO₂ 1 mol。"
+    },
+    {
+      "id": "sci_chm14_029",
+      "unit": "science.chemistry.inorganic.metal.amphoteric",
+      "category": "calculation",
+      "prompt": "アルミニウム 5.4 g を十分な塩酸と反応させると、発生する水素は何 mol？（Al ＝ 27）",
+      "choices": [
+        "0.60 mol",
+        "0.30 mol",
+        "0.20 mol",
+        "0.10 mol"
+      ],
+      "answerIndex": 1,
+      "explanation": "2Al ＋ 6HCl → 2AlCl₃ ＋ 3H₂。0.20 mol × 3/2。"
+    },
+    {
+      "id": "sci_chm14_030",
+      "unit": "science.chemistry.inorganic.metal.transition",
+      "category": "calculation",
+      "prompt": "銅 6.4 g が完全に酸化されて CuO になると、何 g になる？（Cu ＝ 64、O ＝ 16）",
+      "choices": [
+        "12.8 g",
+        "8.0 g",
+        "7.2 g",
+        "6.4 g"
+      ],
+      "answerIndex": 1,
+      "explanation": "Cu 6.4 g ＝ 0.10 mol → CuO 0.10 mol。CuO の式量 80 なので 8.0 g。"
+    },
+    {
+      "id": "sci_chm14_031",
+      "unit": "science.chemistry.inorganic.metal.separation",
+      "category": "thinking",
+      "prompt": "Ag⁺、Cu²⁺、Fe³⁺ をふくむ水溶液に、まず塩酸を加えて沈殿させられるイオンは？",
+      "choices": [
+        "Cu²⁺",
+        "すべて",
+        "Ag⁺",
+        "Fe³⁺"
+      ],
+      "answerIndex": 2,
+      "explanation": "AgCl の白色沈殿。Cu²⁺、Fe³⁺ は塩化物が水に溶ける。"
+    },
+    {
+      "id": "sci_chm14_032",
+      "unit": "science.chemistry.inorganic.metal",
+      "category": "thinking",
+      "prompt": "金や白金が装飾品に使われる理由の一つは？",
+      "choices": [
+        "イオン化傾向が非常に小さく、さびにくいから",
+        "軽いから",
+        "電気を通さないから",
+        "安いから"
+      ],
+      "answerIndex": 0,
+      "explanation": "王水にしか溶けない。"
+    }
+  ]
+}

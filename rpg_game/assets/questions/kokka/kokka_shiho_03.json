@@ -1,0 +1,188 @@
+{
+  "setId": "kokka_shiho_03",
+  "worldId": "kokka",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sih03_001",
+      "unit": "kokka.shiho.kouhou.gyosei.koui",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "行政行為に違法があっても、権限ある機関が取り消すまでは有効なものとして扱われる性質は？",
+      "choices": [
+        "確定力",
+        "不可変更力",
+        "公定力",
+        "執行力"
+      ],
+      "answerIndex": 2,
+      "explanation": "取消訴訟などで取り消されるまで、だれも効力を否定できない。"
+    },
+    {
+      "id": "sih03_002",
+      "unit": "kokka.shiho.kouhou.gyosei.koui",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "行政手続法で、許認可の取消しなど重い不利益処分の前に行う手続は？",
+      "choices": [
+        "公聴会",
+        "審査請求",
+        "弁明の機会の付与",
+        "聴聞"
+      ],
+      "answerIndex": 3,
+      "explanation": "行政手続法13条1項1号。それ以外の不利益処分は弁明の機会の付与。"
+    },
+    {
+      "id": "sih03_003",
+      "unit": "kokka.shiho.kouhou.gyosei.koui",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "行政手続法で、申請に対する処分の標準処理期間は？",
+      "choices": [
+        "定めるよう努め、定めたときは公にしておかなければならない",
+        "定めてはならない",
+        "必ず定めなければならない",
+        "法律で定めなければならない"
+      ],
+      "answerIndex": 0,
+      "explanation": "行政手続法6条。"
+    },
+    {
+      "id": "sih03_004",
+      "unit": "kokka.shiho.kouhou.gyosei.koui",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "行政指導に従わなかったことを理由に、不利益な取扱いをすることは？",
+      "choices": [
+        "内閣の承認があればできる",
+        "してはならない",
+        "条例があればできる",
+        "いつでもできる"
+      ],
+      "answerIndex": 1,
+      "explanation": "行政指導は任意の協力によってのみ実現される（行政手続法32条）。"
+    },
+    {
+      "id": "sih03_005",
+      "unit": "kokka.shiho.kouhou.gyosei.kyusai",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "取消訴訟の出訴期間は、処分があったことを知った日から何か月？",
+      "choices": [
+        "3か月",
+        "30日",
+        "6か月",
+        "1年"
+      ],
+      "answerIndex": 2,
+      "explanation": "行政事件訴訟法14条1項。正当な理由があれば例外がある。"
+    },
+    {
+      "id": "sih03_006",
+      "unit": "kokka.shiho.kouhou.gyosei.kyusai",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "行政不服審査法の審査請求の期間は、処分があったことを知った日の翌日から何か月？",
+      "choices": [
+        "1年",
+        "6か月",
+        "60日",
+        "3か月"
+      ],
+      "answerIndex": 3,
+      "explanation": "行政不服審査法18条1項。"
+    },
+    {
+      "id": "sih03_007",
+      "unit": "kokka.shiho.kouhou.gyosei.kyusai",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "取消訴訟を起こしたとき、処分の効力や執行は原則どうなる？",
+      "choices": [
+        "停止されない（執行不停止の原則）",
+        "自動的に停止される",
+        "処分は取り消される",
+        "裁判所の許可がなければ失効する"
+      ],
+      "answerIndex": 0,
+      "explanation": "行政事件訴訟法25条1項。必要があれば執行停止を申し立てる。"
+    },
+    {
+      "id": "sih03_008",
+      "unit": "kokka.shiho.kouhou.gyosei.kyusai",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "取消訴訟を起こすことができる人（原告適格）は？",
+      "choices": [
+        "処分の名あて人だけ",
+        "処分の取消しを求めるにつき「法律上の利益を有する者」",
+        "だれでも",
+        "地方公共団体だけ"
+      ],
+      "answerIndex": 1,
+      "explanation": "行政事件訴訟法9条1項。"
+    },
+    {
+      "id": "sih03_009",
+      "unit": "kokka.shiho.kouhou.gyosei.kyusai",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "2016年施行の行政不服審査法の改正で廃止された手続は？",
+      "choices": [
+        "再審査請求",
+        "再調査の請求",
+        "異議申立て",
+        "審査請求"
+      ],
+      "answerIndex": 2,
+      "explanation": "不服申立ては審査請求に一元化された。"
+    },
+    {
+      "id": "sih03_010",
+      "unit": "kokka.shiho.kouhou.gyosei.kyusai",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "公務員が職務として違法に人に損害を与えたとき、被害者が賠償を求める相手は？",
+      "choices": [
+        "求めることはできない",
+        "内閣総理大臣",
+        "公務員個人",
+        "国または公共団体"
+      ],
+      "answerIndex": 3,
+      "explanation": "国家賠償法1条1項。判例は公務員個人の責任を否定する。"
+    },
+    {
+      "id": "sih03_011",
+      "unit": "kokka.shiho.kouhou.gyosei.kyusai",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "国家賠償法1条で、公務員に故意または重大な過失があったとき、国は？",
+      "choices": [
+        "その公務員に求償できる",
+        "被害者に公務員へ請求させる",
+        "求償できない",
+        "その公務員を必ず罷免する"
+      ],
+      "answerIndex": 0,
+      "explanation": "国家賠償法1条2項。"
+    },
+    {
+      "id": "sih03_012",
+      "unit": "kokka.shiho.kouhou.gyosei.kyusai",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "道路や河川の設置・管理の不備（瑕疵）による損害の賠償を定めるのは？",
+      "choices": [
+        "国家賠償法1条",
+        "国家賠償法2条",
+        "民法709条だけ",
+        "行政事件訴訟法3条"
+      ],
+      "answerIndex": 1,
+      "explanation": "営造物責任は無過失責任と解されている。"
+    }
+  ]
+}

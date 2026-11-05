@@ -1,0 +1,344 @@
+{
+  "setId": "japanese_kanbun_02",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "jap_kanbun02_001",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "category": "knowledge",
+      "prompt": "再読文字「未」の読みと意味は？",
+      "choices": [
+        "いまだ〜ず（まだ〜ない）",
+        "まさに〜んとす（今にも〜しようとする）",
+        "まさに〜べし（当然〜すべきだ）",
+        "なほ〜ごとし（ちょうど〜のようだ）"
+      ],
+      "answerIndex": 0,
+      "explanation": "一字を二度読むので「再読文字」。"
+    },
+    {
+      "id": "jap_kanbun02_002",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "category": "knowledge",
+      "prompt": "再読文字「将」「且」の読みと意味は？",
+      "choices": [
+        "すべからく〜べし",
+        "いまだ〜ず",
+        "まさに〜んとす（今にも〜しようとする）",
+        "よろしく〜べし"
+      ],
+      "answerIndex": 2,
+      "explanation": "近い未来を表す。"
+    },
+    {
+      "id": "jap_kanbun02_003",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "category": "knowledge",
+      "prompt": "再読文字「当」の読みと意味は？",
+      "choices": [
+        "まさに〜んとす",
+        "いまだ〜ず",
+        "まさに〜べし（当然〜すべきだ）",
+        "なんぞ〜ざる"
+      ],
+      "answerIndex": 2,
+      "explanation": "「応」も「まさに〜べし」と読むが、意味は「きっと〜だろう」。"
+    },
+    {
+      "id": "jap_kanbun02_004",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "category": "knowledge",
+      "prompt": "再読文字「宜」の読みと意味は？",
+      "choices": [
+        "なほ〜ごとし",
+        "すべからく〜べし",
+        "まさに〜べし",
+        "よろしく〜べし（〜するのがよい）"
+      ],
+      "answerIndex": 3,
+      "explanation": "適当を表す。"
+    },
+    {
+      "id": "jap_kanbun02_005",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "category": "knowledge",
+      "prompt": "再読文字「須」の読みと意味は？",
+      "choices": [
+        "いまだ〜ず",
+        "すべからく〜べし（ぜひ〜する必要がある）",
+        "まさに〜んとす",
+        "よろしく〜べし"
+      ],
+      "answerIndex": 1,
+      "explanation": "必要を表す。"
+    },
+    {
+      "id": "jap_kanbun02_006",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "category": "knowledge",
+      "prompt": "再読文字「猶」「由」の読みと意味は？",
+      "choices": [
+        "なほ〜ごとし（ちょうど〜のようだ）",
+        "まさに〜べし",
+        "なんぞ〜ざる",
+        "いまだ〜ず"
+      ],
+      "answerIndex": 0,
+      "explanation": "比況を表す。"
+    },
+    {
+      "id": "jap_kanbun02_007",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "category": "knowledge",
+      "prompt": "再読文字「盍」の読みと意味は？",
+      "choices": [
+        "なんぞ〜ざる（どうして〜しないのか、〜したらどうか）",
+        "いまだ〜ず",
+        "まさに〜んとす",
+        "すべからく〜べし"
+      ],
+      "answerIndex": 0,
+      "explanation": "「何不」の二字を一字にしたもの。"
+    },
+    {
+      "id": "jap_kanbun02_008",
+      "unit": "japanese.kanbun.kundoku.saidoku",
+      "category": "knowledge",
+      "prompt": "置き字「而」のはたらきは？",
+      "choices": [
+        "断定",
+        "接続（順接・逆接）",
+        "場所・対象",
+        "疑問"
+      ],
+      "answerIndex": 1,
+      "explanation": "読まないが、前の語に「て」「ども」などの送り仮名をつける。"
+    },
+    {
+      "id": "jap_kanbun02_009",
+      "unit": "japanese.kanbun.kundoku.saidoku",
+      "category": "knowledge",
+      "prompt": "置き字「於」「于」「乎」のはたらきとして適切なものは？",
+      "choices": [
+        "接続",
+        "否定",
+        "使役",
+        "場所・対象・比較などを示す"
+      ],
+      "answerIndex": 3,
+      "explanation": "後の語に「に」「を」「より」などの送り仮名をつける。"
+    },
+    {
+      "id": "jap_kanbun02_010",
+      "unit": "japanese.kanbun.kundoku.saidoku.words",
+      "category": "knowledge",
+      "prompt": "「故」を「ゆゑに」と読むときの意味は？",
+      "choices": [
+        "だから",
+        "もし",
+        "しかし",
+        "たとえば"
+      ],
+      "answerIndex": 0,
+      "explanation": "重要語。「故人」の「故」は「古い・昔からの」。"
+    },
+    {
+      "id": "jap_kanbun02_011",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "category": "thinking",
+      "prompt": "「未レ知レ生」の書き下し文は？",
+      "choices": [
+        "未だ生を知らず",
+        "生を知らず未だ",
+        "未だ知らず生を",
+        "未だ生を知る"
+      ],
+      "answerIndex": 0,
+      "explanation": "「未」は最初「未だ」と読み、返って「ず」と読む。（論語）"
+    },
+    {
+      "id": "jap_kanbun02_012",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "category": "thinking",
+      "prompt": "「過猶レ不レ及」（論語）の意味として適切なものは？",
+      "choices": [
+        "足りないほうがよい",
+        "やりすぎは足りないより悪い",
+        "やりすぎるのは、足りないのと同じようによくない",
+        "やりすぎるのがよい"
+      ],
+      "answerIndex": 2,
+      "explanation": "過ぎたるは猶ほ及ばざるがごとし。"
+    },
+    {
+      "id": "jap_kanbun02_013",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "category": "thinking",
+      "prompt": "「将レ死」の書き下し文は？",
+      "choices": [
+        "将に死すべし",
+        "将に死せんとす",
+        "将た死す",
+        "将死す"
+      ],
+      "answerIndex": 1,
+      "explanation": "「将」は「まさに〜んとす」と読む再読文字。"
+    },
+    {
+      "id": "jap_kanbun02_014",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "category": "thinking",
+      "prompt": "「当レ学」の書き下し文は？",
+      "choices": [
+        "学ぶに当たる",
+        "当に学ぶべし",
+        "当に学ばんとす",
+        "当学す"
+      ],
+      "answerIndex": 1,
+      "explanation": "「当」は「まさに〜べし」（当然〜すべきだ）。"
+    },
+    {
+      "id": "jap_kanbun02_015",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "category": "thinking",
+      "prompt": "「宜レ慎」の書き下し文は？",
+      "choices": [
+        "宜に慎む",
+        "宜しく慎むべし",
+        "宜しく慎まんとす",
+        "慎むに宜し"
+      ],
+      "answerIndex": 1,
+      "explanation": "「宜」は「よろしく〜べし」（〜するのがよい）。"
+    },
+    {
+      "id": "jap_kanbun02_016",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "category": "thinking",
+      "prompt": "「須レ努」の書き下し文は？",
+      "choices": [
+        "努むべからず",
+        "須らく努めんとす",
+        "須に努む",
+        "須らく努むべし"
+      ],
+      "answerIndex": 3,
+      "explanation": "「須」は「すべからく〜べし」（ぜひ〜する必要がある）。"
+    },
+    {
+      "id": "jap_kanbun02_017",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "category": "thinking",
+      "prompt": "「盍レ帰」の書き下し文は？",
+      "choices": [
+        "帰るべからず",
+        "盍ぞ帰らざる",
+        "盍ぞ帰る",
+        "盍に帰らん"
+      ],
+      "answerIndex": 1,
+      "explanation": "「盍」は「なんぞ〜ざる」（〜したらどうか）。"
+    },
+    {
+      "id": "jap_kanbun02_018",
+      "unit": "japanese.kanbun.kundoku.saidoku.saidoku",
+      "category": "thinking",
+      "prompt": "「猶レ水」（水のように）の書き下し文は？",
+      "choices": [
+        "猶水たり",
+        "水猶し",
+        "水に猶る",
+        "猶ほ水のごとし"
+      ],
+      "answerIndex": 3,
+      "explanation": "「猶」は「なほ〜のごとし」と読む再読文字。"
+    },
+    {
+      "id": "jap_kanbun02_019",
+      "unit": "japanese.kanbun.kundoku.saidoku",
+      "category": "knowledge",
+      "prompt": "文末の置き字「矣」のはたらきは？",
+      "choices": [
+        "断定や詠嘆の気持ちを表す",
+        "否定を表す",
+        "疑問を表す",
+        "使役を表す"
+      ],
+      "answerIndex": 0,
+      "explanation": "読まずに、文末の語調を強める。"
+    },
+    {
+      "id": "jap_kanbun02_020",
+      "unit": "japanese.kanbun.kundoku.saidoku",
+      "category": "knowledge",
+      "prompt": "文末に置かれた「焉」のあつかいとして正しいものは？",
+      "choices": [
+        "必ず「いづくんぞ」と読む",
+        "置き字として読まないことが多い",
+        "「ず」と読む",
+        "「のみ」と読む"
+      ],
+      "answerIndex": 1,
+      "explanation": "文頭では「いづくんぞ」と読んで疑問・反語になる。"
+    },
+    {
+      "id": "jap_kanbun02_021",
+      "unit": "japanese.kanbun.kundoku.saidoku",
+      "category": "knowledge",
+      "prompt": "比較を表す「於」があるとき、送り仮名としてつけることが多いのは？",
+      "choices": [
+        "と",
+        "より",
+        "を",
+        "に"
+      ],
+      "answerIndex": 1,
+      "explanation": "例：霜葉紅於二月花（二月の花より紅なり）。"
+    },
+    {
+      "id": "jap_kanbun02_022",
+      "unit": "japanese.kanbun.kundoku.saidoku.words",
+      "category": "knowledge",
+      "prompt": "「嘗」の読みと意味は？",
+      "choices": [
+        "つねに",
+        "すでに",
+        "たちまち",
+        "かつて（以前に）"
+      ],
+      "answerIndex": 3,
+      "explanation": "「未だ嘗て〜ず」の形でもよく使われる。"
+    },
+    {
+      "id": "jap_kanbun02_023",
+      "unit": "japanese.kanbun.kundoku.saidoku.words",
+      "category": "knowledge",
+      "prompt": "「蓋」を文頭で「けだし」と読むときの意味は？",
+      "choices": [
+        "かならず",
+        "ふたをする",
+        "すべて",
+        "思うに・おそらく"
+      ],
+      "answerIndex": 3,
+      "explanation": "筆者の推測を述べるときに使う。"
+    },
+    {
+      "id": "jap_kanbun02_024",
+      "unit": "japanese.kanbun.kundoku.saidoku.words",
+      "category": "knowledge",
+      "prompt": "「与」を「と」と読むときの意味は？",
+      "choices": [
+        "〜か",
+        "〜に与える",
+        "〜と（並列・共同）",
+        "〜より"
+      ],
+      "answerIndex": 2,
+      "explanation": "「あたフ」「くみス」などの読みもある。"
+    }
+  ]
+}

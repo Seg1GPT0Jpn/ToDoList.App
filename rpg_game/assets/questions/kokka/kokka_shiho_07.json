@@ -1,0 +1,188 @@
+{
+  "setId": "kokka_shiho_07",
+  "worldId": "kokka",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sih07_001",
+      "unit": "kokka.shiho.minji.shomin.kaisha",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "株式会社の株主の責任は？",
+      "choices": [
+        "他の株主との連帯責任",
+        "責任を一切負わない",
+        "引き受けた株式の引受価額を限度とする有限責任",
+        "会社の債務すべてを負う無限責任"
+      ],
+      "answerIndex": 2,
+      "explanation": "会社法104条。"
+    },
+    {
+      "id": "sih07_002",
+      "unit": "kokka.shiho.minji.shomin.kaisha",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "どの株式会社にも必ず置かなければならない機関は？",
+      "choices": [
+        "取締役会",
+        "監査役",
+        "会計監査人",
+        "株主総会と取締役"
+      ],
+      "answerIndex": 3,
+      "explanation": "会社法295条・326条1項。"
+    },
+    {
+      "id": "sih07_003",
+      "unit": "kokka.shiho.minji.shomin.kaisha",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "公開会社が必ず置かなければならない機関は？",
+      "choices": [
+        "取締役会",
+        "指名委員会",
+        "監査等委員会",
+        "会計参与"
+      ],
+      "answerIndex": 0,
+      "explanation": "会社法327条1項1号。"
+    },
+    {
+      "id": "sih07_004",
+      "unit": "kokka.shiho.minji.shomin.kaisha",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "株主総会の特別決議の要件（原則）は？",
+      "choices": [
+        "総株主の議決権の4分の3以上",
+        "議決権の過半数をもつ株主が出席し、出席株主の議決権の3分の2以上",
+        "出席株主の議決権の過半数",
+        "株主全員の同意"
+      ],
+      "answerIndex": 1,
+      "explanation": "会社法309条2項。定款の変更や合併などに必要。"
+    },
+    {
+      "id": "sih07_005",
+      "unit": "kokka.shiho.minji.shomin.kaisha",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "商人間の売買で、買主が目的物を受け取ったときの義務は？",
+      "choices": [
+        "10年以内に通知すればよい",
+        "売主が検査する",
+        "遅滞なく検査し、不適合を見つけたら直ちに売主に通知する",
+        "検査の義務はない"
+      ],
+      "answerIndex": 2,
+      "explanation": "商法526条。"
+    },
+    {
+      "id": "sih07_006",
+      "unit": "kokka.shiho.minji.shomin.minso",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "当事者が主張していない事実を、裁判所が判決の基礎にしてはならないという原則は？",
+      "choices": [
+        "自由心証主義",
+        "職権探知主義",
+        "処分権主義",
+        "弁論主義"
+      ],
+      "answerIndex": 3,
+      "explanation": "民事訴訟の基本原則の一つ。"
+    },
+    {
+      "id": "sih07_007",
+      "unit": "kokka.shiho.minji.shomin.minso",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "訴えを起こすか、何について審判を求めるか、どう終わらせるかを当事者が決める原則は？",
+      "choices": [
+        "処分権主義",
+        "口頭主義",
+        "弁論主義",
+        "自由心証主義"
+      ],
+      "answerIndex": 0,
+      "explanation": "請求の放棄・認諾や和解ができるのも処分権主義による。"
+    },
+    {
+      "id": "sih07_008",
+      "unit": "kokka.shiho.minji.shomin.minso",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "証拠をどう評価するかを裁判官の自由な判断にゆだねる原則は？",
+      "choices": [
+        "直接主義",
+        "自由心証主義",
+        "弁論主義",
+        "法定証拠主義"
+      ],
+      "answerIndex": 1,
+      "explanation": "民事訴訟法247条。"
+    },
+    {
+      "id": "sih07_009",
+      "unit": "kokka.shiho.minji.shomin.minso",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "簡易裁判所が第一審として扱う民事事件の訴額は？",
+      "choices": [
+        "60万円以下",
+        "500万円以下",
+        "140万円以下",
+        "1,000万円以下"
+      ],
+      "answerIndex": 2,
+      "explanation": "裁判所法33条1項1号。"
+    },
+    {
+      "id": "sih07_010",
+      "unit": "kokka.shiho.minji.shomin.minso",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "少額訴訟を利用できるのは？",
+      "choices": [
+        "不動産の明渡しの訴え",
+        "140万円以下のすべての訴え",
+        "金額の制限のない金銭の訴え",
+        "60万円以下の金銭の支払いを求める訴え"
+      ],
+      "answerIndex": 3,
+      "explanation": "民事訴訟法368条1項。原則1回の期日で審理を終える。"
+    },
+    {
+      "id": "sih07_011",
+      "unit": "kokka.shiho.minji.shomin.minso",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "第一審判決に対する控訴の期間は、判決書の送達を受けた日から？",
+      "choices": [
+        "2週間",
+        "3か月",
+        "1か月",
+        "7日"
+      ],
+      "answerIndex": 0,
+      "explanation": "民事訴訟法285条。"
+    },
+    {
+      "id": "sih07_012",
+      "unit": "kokka.shiho.minji.shomin.minso",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "確定した判決のもつ、同じ事項について後の裁判で矛盾する主張や判断を許さない効力は？",
+      "choices": [
+        "公定力",
+        "既判力",
+        "執行力",
+        "形成力"
+      ],
+      "answerIndex": 1,
+      "explanation": "民事訴訟法114条。"
+    }
+  ]
+}

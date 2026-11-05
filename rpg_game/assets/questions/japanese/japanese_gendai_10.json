@@ -1,0 +1,354 @@
+{
+  "setId": "japanese_gendai_10",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "jap_gendai10_001",
+      "unit": "japanese.gendai.literary.rhetoric",
+      "category": "knowledge",
+      "prompt": "「ようだ」「みたいだ」などを使ってたとえる表現は？",
+      "choices": [
+        "直喩（明喩）",
+        "倒置法",
+        "隠喩（暗喩）",
+        "擬人法"
+      ],
+      "answerIndex": 0,
+      "explanation": "例：「りんごのような頬」。"
+    },
+    {
+      "id": "jap_gendai10_002",
+      "unit": "japanese.gendai.literary.rhetoric",
+      "category": "knowledge",
+      "prompt": "「ようだ」などを使わずにたとえる表現は？",
+      "choices": [
+        "隠喩（暗喩）",
+        "直喩",
+        "対句",
+        "反復法"
+      ],
+      "answerIndex": 0,
+      "explanation": "例：「人生は旅だ」。"
+    },
+    {
+      "id": "jap_gendai10_003",
+      "unit": "japanese.gendai.literary.rhetoric",
+      "category": "knowledge",
+      "prompt": "人間でないものを人間のように表す表現は？",
+      "choices": [
+        "直喩",
+        "体言止め",
+        "擬人法",
+        "誇張法"
+      ],
+      "answerIndex": 2,
+      "explanation": "例：「風がささやく」。"
+    },
+    {
+      "id": "jap_gendai10_004",
+      "unit": "japanese.gendai.literary.rhetoric",
+      "category": "knowledge",
+      "prompt": "文を名詞（体言）で終える表現は？",
+      "choices": [
+        "体言止め",
+        "倒置法",
+        "反復法",
+        "省略法"
+      ],
+      "answerIndex": 0,
+      "explanation": "余韻や印象を強める。"
+    },
+    {
+      "id": "jap_gendai10_005",
+      "unit": "japanese.gendai.literary.rhetoric",
+      "category": "knowledge",
+      "prompt": "ふつうの語順を入れかえて、意味を強める表現は？",
+      "choices": [
+        "倒置法",
+        "対句",
+        "反復法",
+        "直喩"
+      ],
+      "answerIndex": 0,
+      "explanation": "例：「行こう、あの山の向こうへ」。"
+    },
+    {
+      "id": "jap_gendai10_006",
+      "unit": "japanese.gendai.literary.rhetoric",
+      "category": "knowledge",
+      "prompt": "同じ言葉や表現をくり返して強調する表現は？",
+      "choices": [
+        "擬人法",
+        "反復法",
+        "倒置法",
+        "対句"
+      ],
+      "answerIndex": 1,
+      "explanation": "例：「遠い、遠い道のり」。"
+    },
+    {
+      "id": "jap_gendai10_007",
+      "unit": "japanese.gendai.literary.rhetoric",
+      "category": "knowledge",
+      "prompt": "似た組み立ての語句を並べて、リズムや対比を生む表現は？",
+      "choices": [
+        "体言止め",
+        "反復法",
+        "隠喩",
+        "対句"
+      ],
+      "answerIndex": 3,
+      "explanation": "例：「山は高く、海は深い」。"
+    },
+    {
+      "id": "jap_gendai10_008",
+      "unit": "japanese.gendai.literary.rhetoric",
+      "category": "knowledge",
+      "prompt": "「ざあざあ」「きらきら」のように、音や様子を表す言葉は？",
+      "choices": [
+        "隠喩",
+        "擬声語・擬態語（オノマトペ）",
+        "漢語",
+        "反語"
+      ],
+      "answerIndex": 1,
+      "explanation": "音を表すのが擬声語、様子を表すのが擬態語。"
+    },
+    {
+      "id": "jap_gendai10_009",
+      "unit": "japanese.gendai.literary.rhetoric",
+      "category": "thinking",
+      "prompt": "次の文に使われている表現技法は？",
+      "sentence": "春の野原で、たんぽぽが笑っている。",
+      "choices": [
+        "直喩",
+        "倒置法",
+        "体言止め",
+        "擬人法"
+      ],
+      "answerIndex": 3,
+      "explanation": "「笑う」は人間の動作。花を人のように表している。"
+    },
+    {
+      "id": "jap_gendai10_010",
+      "unit": "japanese.gendai.literary.rhetoric",
+      "category": "thinking",
+      "prompt": "次の文に使われている表現技法は？",
+      "sentence": "君は、ぼくたちのクラスの太陽だ。",
+      "choices": [
+        "直喩",
+        "反復法",
+        "隠喩（暗喩）",
+        "擬人法"
+      ],
+      "answerIndex": 2,
+      "explanation": "「ようだ」を使わずに、君を「太陽」にたとえている。"
+    },
+    {
+      "id": "jap_gendai10_011",
+      "unit": "japanese.gendai.literary.rhetoric",
+      "category": "thinking",
+      "prompt": "次の文に使われている表現技法は？",
+      "sentence": "忘れない、あの夏の日を。",
+      "choices": [
+        "体言止め",
+        "擬人法",
+        "倒置法",
+        "対句"
+      ],
+      "answerIndex": 2,
+      "explanation": "「ぼくは忘れない、あの夏の日を」の語順を入れかえて強調している。"
+    },
+    {
+      "id": "jap_gendai10_012",
+      "unit": "japanese.gendai.literary.rhetoric",
+      "category": "thinking",
+      "prompt": "「涙が滝のように流れた」の表現の効果は？",
+      "choices": [
+        "悲しくないことを表している",
+        "大げさにたとえて、悲しみや感動の大きさを強調している",
+        "滝の様子を説明している",
+        "涙の量を正確に伝えている"
+      ],
+      "answerIndex": 1,
+      "explanation": "直喩と誇張で、心情の強さを印象づけている。"
+    },
+    {
+      "id": "jap_gendai10_013",
+      "unit": "japanese.gendai.literary.rhetoric",
+      "category": "calculation",
+      "prompt": "次の文に使われている表現技法は？",
+      "sentence": "彼女の笑顔は、ひまわりのように明るかった。",
+      "choices": [
+        "隠喩",
+        "倒置法",
+        "擬人法",
+        "直喩"
+      ],
+      "answerIndex": 3,
+      "explanation": "「〜ように」でたとえている。"
+    },
+    {
+      "id": "jap_gendai10_014",
+      "unit": "japanese.gendai.literary.rhetoric",
+      "category": "calculation",
+      "prompt": "次の文に使われている表現技法は？",
+      "sentence": "人生は旅だ。",
+      "choices": [
+        "体言止め",
+        "直喩",
+        "隠喩",
+        "反復"
+      ],
+      "answerIndex": 2,
+      "explanation": "「ようだ」を使わずにたとえている。"
+    },
+    {
+      "id": "jap_gendai10_015",
+      "unit": "japanese.gendai.literary.rhetoric",
+      "category": "calculation",
+      "prompt": "次の文に使われている表現技法は？",
+      "sentence": "風が、そっと窓をたたいた。",
+      "choices": [
+        "対句",
+        "擬人法",
+        "倒置法",
+        "直喩"
+      ],
+      "answerIndex": 1,
+      "explanation": "風を人のように表している。"
+    },
+    {
+      "id": "jap_gendai10_016",
+      "unit": "japanese.gendai.literary.rhetoric",
+      "category": "calculation",
+      "prompt": "次の文に使われている表現技法は？",
+      "sentence": "夕焼けに染まる、ふるさとの山。",
+      "choices": [
+        "倒置法",
+        "擬人法",
+        "反復",
+        "体言止め"
+      ],
+      "answerIndex": 3,
+      "explanation": "名詞で文を終えている。"
+    },
+    {
+      "id": "jap_gendai10_017",
+      "unit": "japanese.gendai.literary.rhetoric",
+      "category": "calculation",
+      "prompt": "次の文に使われている表現技法は？",
+      "sentence": "山は高く、海は深い。",
+      "choices": [
+        "直喩",
+        "反復",
+        "倒置法",
+        "対句"
+      ],
+      "answerIndex": 3,
+      "explanation": "似た組み立ての語句を並べている。"
+    },
+    {
+      "id": "jap_gendai10_018",
+      "unit": "japanese.gendai.literary.rhetoric",
+      "category": "calculation",
+      "prompt": "次の文に使われている表現技法は？",
+      "sentence": "走れ、走れ、どこまでも走れ。",
+      "choices": [
+        "反復",
+        "対句",
+        "隠喩",
+        "体言止め"
+      ],
+      "answerIndex": 0,
+      "explanation": "同じ言葉をくり返している。"
+    },
+    {
+      "id": "jap_gendai10_019",
+      "unit": "japanese.gendai.literary.rhetoric",
+      "category": "calculation",
+      "prompt": "次の文に使われている表現技法は？",
+      "sentence": "行こう、あの丘の向こうへ。",
+      "choices": [
+        "倒置法",
+        "擬人法",
+        "直喩",
+        "体言止め"
+      ],
+      "answerIndex": 0,
+      "explanation": "ふつうの語順と入れかわっている。"
+    },
+    {
+      "id": "jap_gendai10_020",
+      "unit": "japanese.gendai.literary.rhetoric",
+      "category": "knowledge",
+      "prompt": "「にこにこ」「しーん」のように、ようすや状態を表す言葉は？",
+      "choices": [
+        "擬声語",
+        "外来語",
+        "擬態語",
+        "接続語"
+      ],
+      "answerIndex": 2,
+      "explanation": "音を表す擬声語（擬音語）と区別する。"
+    },
+    {
+      "id": "jap_gendai10_021",
+      "unit": "japanese.gendai.literary.rhetoric",
+      "category": "knowledge",
+      "prompt": "文の一部を省略して、余韻を残す表現技法は？",
+      "choices": [
+        "擬人法",
+        "対句法",
+        "省略法",
+        "反復法"
+      ],
+      "answerIndex": 2,
+      "explanation": "「……」などで表すことが多い。"
+    },
+    {
+      "id": "jap_gendai10_022",
+      "unit": "japanese.gendai.literary.rhetoric.poem",
+      "category": "knowledge",
+      "prompt": "詩で、同じ音の響きを行のはじめや終わりにそろえることを何という？",
+      "choices": [
+        "押韻（韻をふむ）",
+        "倒置",
+        "擬人法",
+        "体言止め"
+      ],
+      "answerIndex": 0,
+      "explanation": "リズムや心地よさを生む。"
+    },
+    {
+      "id": "jap_gendai10_023",
+      "unit": "japanese.gendai.literary.rhetoric.figure",
+      "category": "thinking",
+      "prompt": "「体言止め」を使う効果として適切なものは？",
+      "choices": [
+        "主語をはっきりさせる",
+        "余韻を残したり、印象を強めたりする",
+        "意味をあいまいにする",
+        "文を長くする"
+      ],
+      "answerIndex": 1,
+      "explanation": "俳句や広告の見出しでもよく使われる。"
+    },
+    {
+      "id": "jap_gendai10_024",
+      "unit": "japanese.gendai.literary.rhetoric.figure",
+      "category": "thinking",
+      "prompt": "擬人法を使うと表現はどうなる？",
+      "choices": [
+        "物事が生き生きと感じられ、親しみやすくなる",
+        "数値が正確になる",
+        "文が論理的になる",
+        "事実だけが伝わる"
+      ],
+      "answerIndex": 0,
+      "explanation": "人でないものに人の動作や感情をもたせる。"
+    }
+  ]
+}

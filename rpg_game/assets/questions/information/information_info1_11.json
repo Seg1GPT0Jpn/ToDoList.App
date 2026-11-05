@@ -1,0 +1,344 @@
+{
+  "setId": "information_info1_11",
+  "worldId": "information",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "inf_info111_001",
+      "unit": "information.info.network.protocol",
+      "category": "knowledge",
+      "prompt": "通信をするための約束事を何という？",
+      "choices": [
+        "プロトコル",
+        "アルゴリズム",
+        "ドメイン",
+        "インタフェース"
+      ],
+      "answerIndex": 0,
+      "explanation": "共通の約束事があるので、違う機器どうしでも通信できる。"
+    },
+    {
+      "id": "inf_info111_002",
+      "unit": "information.info.network.protocol.tcpip",
+      "category": "knowledge",
+      "prompt": "Web ページのデータをやりとりするプロトコルは？",
+      "choices": [
+        "FTP",
+        "SMTP",
+        "IMAP",
+        "HTTP"
+      ],
+      "answerIndex": 3,
+      "explanation": "HyperText Transfer Protocol。"
+    },
+    {
+      "id": "inf_info111_003",
+      "unit": "information.info.network.protocol.web",
+      "category": "knowledge",
+      "prompt": "HTTP の通信を暗号化したものは？",
+      "choices": [
+        "HTTPS",
+        "POP",
+        "FTP",
+        "DNS"
+      ],
+      "answerIndex": 0,
+      "explanation": "SSL/TLS で暗号化する。URL が https:// で始まる。"
+    },
+    {
+      "id": "inf_info111_004",
+      "unit": "information.info.network.protocol.web",
+      "category": "knowledge",
+      "prompt": "電子メールを送信するときのプロトコルは？",
+      "choices": [
+        "IMAP",
+        "POP",
+        "SMTP",
+        "HTTP"
+      ],
+      "answerIndex": 2,
+      "explanation": "受信には POP（端末にダウンロード）や IMAP（サーバで管理）を使う。"
+    },
+    {
+      "id": "inf_info111_005",
+      "unit": "information.info.network.protocol.web",
+      "category": "knowledge",
+      "prompt": "メールをサーバに残したまま、複数の端末で読めるようにする受信のプロトコルは？",
+      "choices": [
+        "FTP",
+        "SMTP",
+        "IMAP",
+        "POP"
+      ],
+      "answerIndex": 2,
+      "explanation": "POP は基本的に端末へダウンロードして読む。"
+    },
+    {
+      "id": "inf_info111_006",
+      "unit": "information.info.network.protocol.web",
+      "category": "knowledge",
+      "prompt": "URL「https://www.example.jp/index.html」のドメイン名は？",
+      "choices": [
+        "https",
+        "www.example.jp",
+        "example",
+        "index.html"
+      ],
+      "answerIndex": 1,
+      "explanation": "スキーム（https）・ドメイン名・パス（index.html）からなる。"
+    },
+    {
+      "id": "inf_info111_007",
+      "unit": "information.info.network.protocol.web",
+      "category": "knowledge",
+      "prompt": "Web ページの文章の構造（見出し・段落など）を表す言語は？",
+      "choices": [
+        "SQL",
+        "Python",
+        "CSS",
+        "HTML"
+      ],
+      "answerIndex": 3,
+      "explanation": "見た目（色・配置）は CSS で指定する。"
+    },
+    {
+      "id": "inf_info111_008",
+      "unit": "information.info.network.protocol.web",
+      "category": "knowledge",
+      "prompt": "Web ブラウザの中で動き、ページに動きをつけるプログラミング言語は？",
+      "choices": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "SMTP"
+      ],
+      "answerIndex": 2,
+      "explanation": "Java とは別の言語。"
+    },
+    {
+      "id": "inf_info111_009",
+      "unit": "information.info.network.protocol.web",
+      "category": "knowledge",
+      "prompt": "Web サイトがブラウザに保存させる小さなデータ（ログイン状態の記録など）は？",
+      "choices": [
+        "Cookie",
+        "パケット",
+        "ドメイン",
+        "キャッシュメモリ"
+      ],
+      "answerIndex": 0,
+      "explanation": "便利だが、共用パソコンではログアウトを忘れないようにする。"
+    },
+    {
+      "id": "inf_info111_010",
+      "unit": "information.info.network.protocol.web",
+      "category": "knowledge",
+      "prompt": "ソフトウェアやデータを、インターネット経由でサービスとして利用する形態は？",
+      "choices": [
+        "クラウド",
+        "オフライン",
+        "スタンドアロン",
+        "ハブ"
+      ],
+      "answerIndex": 0,
+      "explanation": "例：オンラインストレージ、Web メール。"
+    },
+    {
+      "id": "inf_info111_011",
+      "unit": "information.info.network.protocol.tcpip",
+      "category": "knowledge",
+      "prompt": "TCP/IP の階層モデルで、HTTP やメールのプロトコルがふくまれる層は？",
+      "choices": [
+        "ネットワークインタフェース層",
+        "トランスポート層",
+        "アプリケーション層",
+        "インターネット層"
+      ],
+      "answerIndex": 2,
+      "explanation": "TCP・UDP はトランスポート層、IP はインターネット層。"
+    },
+    {
+      "id": "inf_info111_012",
+      "unit": "information.info.network.protocol.web",
+      "category": "thinking",
+      "prompt": "Web ページの送受信に TCP が使われる主な理由は？",
+      "choices": [
+        "ドメイン名を調べるから",
+        "暗号化されるから",
+        "最も速いから",
+        "データが正しく順番どおり届いたかを確認し、届かなければ再送するから"
+      ],
+      "answerIndex": 3,
+      "explanation": "信頼性を重視する通信に向いている。"
+    },
+    {
+      "id": "inf_info111_013",
+      "unit": "information.info.network.protocol.tcpip",
+      "category": "knowledge",
+      "prompt": "インターネットで、データを確実に届けるために順番の管理や再送を行うプロトコルは？",
+      "choices": [
+        "TCP",
+        "HTML",
+        "DNS",
+        "UDP"
+      ],
+      "answerIndex": 0,
+      "explanation": "UDP は確認をしない分、速い。"
+    },
+    {
+      "id": "inf_info111_014",
+      "unit": "information.info.network.protocol.tcpip",
+      "category": "knowledge",
+      "prompt": "動画のライブ配信などで、多少の欠落より速さを重視するときに使われるプロトコルは？",
+      "choices": [
+        "SMTP",
+        "TCP",
+        "UDP",
+        "POP"
+      ],
+      "answerIndex": 2,
+      "explanation": "確認応答をしない。"
+    },
+    {
+      "id": "inf_info111_015",
+      "unit": "information.info.network.protocol.tcpip",
+      "category": "knowledge",
+      "prompt": "メールをサーバから受信して端末に保存するプロトコルは？",
+      "choices": [
+        "POP",
+        "SMTP",
+        "HTTP",
+        "FTP"
+      ],
+      "answerIndex": 0,
+      "explanation": "受信後にサーバから削除する設定が多い。"
+    },
+    {
+      "id": "inf_info111_016",
+      "unit": "information.info.network.protocol.web",
+      "category": "knowledge",
+      "prompt": "メールの宛先で、他の受信者にアドレスが見えないように送る欄は？",
+      "choices": [
+        "From",
+        "CC",
+        "BCC",
+        "To"
+      ],
+      "answerIndex": 2,
+      "explanation": "多数の人に一斉送信するときに使う。"
+    },
+    {
+      "id": "inf_info111_017",
+      "unit": "information.info.network.protocol.web",
+      "category": "knowledge",
+      "prompt": "Web ページの見た目（色やレイアウト）を指定する言語は？",
+      "choices": [
+        "CSS",
+        "SQL",
+        "HTML",
+        "JavaScript"
+      ],
+      "answerIndex": 0,
+      "explanation": "HTML は構造、CSS は見た目。"
+    },
+    {
+      "id": "inf_info111_018",
+      "unit": "information.info.network.protocol.web",
+      "category": "knowledge",
+      "prompt": "URL の「https」の部分が表すものは？",
+      "choices": [
+        "国名",
+        "ファイル名",
+        "通信のプロトコル（スキーム）",
+        "サーバ名"
+      ],
+      "answerIndex": 2,
+      "explanation": "「s」は暗号化された通信を示す。"
+    },
+    {
+      "id": "inf_info111_019",
+      "unit": "information.info.network.protocol.tcpip",
+      "category": "knowledge",
+      "prompt": "TCP/IP の 4 階層モデルのうち、IP が属する層は？",
+      "choices": [
+        "トランスポート層",
+        "インターネット層",
+        "ネットワークインタフェース層",
+        "アプリケーション層"
+      ],
+      "answerIndex": 1,
+      "explanation": "TCP・UDP はトランスポート層。"
+    },
+    {
+      "id": "inf_info111_020",
+      "unit": "information.info.network.protocol",
+      "category": "knowledge",
+      "prompt": "インターネット上で文書どうしをつなぎ、たどれるようにするしくみは？",
+      "choices": [
+        "ファイアウォール",
+        "パケット",
+        "ハイパーリンク（ハイパーテキスト）",
+        "バックアップ"
+      ],
+      "answerIndex": 2,
+      "explanation": "WWW の基本的なしくみ。"
+    },
+    {
+      "id": "inf_info111_021",
+      "unit": "information.info.network.protocol.web",
+      "category": "knowledge",
+      "prompt": "Web ページの場所を示す「https://www.example.jp/」のような文字列を何という？",
+      "choices": [
+        "URL",
+        "HTML",
+        "IP アドレス",
+        "MAC アドレス"
+      ],
+      "answerIndex": 0,
+      "explanation": "スキーム（https）、ドメイン名、パスなどからなる。"
+    },
+    {
+      "id": "inf_info111_022",
+      "unit": "information.info.network.protocol",
+      "category": "knowledge",
+      "prompt": "インターネット経由でソフトウェアの機能を提供するサービス形態は？",
+      "choices": [
+        "SaaS",
+        "OS",
+        "USB",
+        "LAN"
+      ],
+      "answerIndex": 0,
+      "explanation": "クラウドサービスの一種。"
+    },
+    {
+      "id": "inf_info111_023",
+      "unit": "information.info.network.protocol.web",
+      "category": "thinking",
+      "prompt": "メールで大勢に連絡するとき、全員のアドレスを To に入れるのが問題になる理由は？",
+      "choices": [
+        "全員のメールアドレスが互いに知られてしまうから",
+        "文字化けするから",
+        "送信できないから",
+        "メールが届かないから"
+      ],
+      "answerIndex": 0,
+      "explanation": "個人情報の漏えいにつながる。"
+    },
+    {
+      "id": "inf_info111_024",
+      "unit": "information.info.network.protocol.web",
+      "category": "thinking",
+      "prompt": "Web ブラウザが一度読みこんだ画像を保存しておく（キャッシュ）利点は？",
+      "choices": [
+        "セキュリティが強くなる",
+        "画像がきれいになる",
+        "同じページを再び表示するときに速くなる",
+        "通信量が増える"
+      ],
+      "answerIndex": 2,
+      "explanation": "通信量も減らせる。"
+    }
+  ]
+}

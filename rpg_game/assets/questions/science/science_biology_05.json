@@ -1,0 +1,456 @@
+{
+  "setId": "science_biology_05",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "sci_bio05_001",
+      "unit": "science.biology.body.homeostasis",
+      "category": "knowledge",
+      "prompt": "ヘモグロビンをふくみ、酸素を運ぶ血球は？",
+      "choices": [
+        "赤血球",
+        "白血球",
+        "血小板",
+        "リンパ球だけ"
+      ],
+      "answerIndex": 0,
+      "explanation": "ヘモグロビンは酸素の多い所で酸素と結びつき、少ない所で酸素を離す。"
+    },
+    {
+      "id": "sci_bio05_002",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "category": "knowledge",
+      "prompt": "血液凝固にかかわる血球は？",
+      "choices": [
+        "リンパ球",
+        "赤血球",
+        "血小板",
+        "白血球"
+      ],
+      "answerIndex": 2,
+      "explanation": "血小板などのはたらきでフィブリンができ、血球をからめて血ぺいをつくる。"
+    },
+    {
+      "id": "sci_bio05_003",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "category": "knowledge",
+      "prompt": "血液の液体成分で、栄養分や老廃物を運ぶのは？",
+      "choices": [
+        "血しょう",
+        "リンパ液",
+        "組織液",
+        "血清だけ"
+      ],
+      "answerIndex": 0,
+      "explanation": "血しょうは約 90 % が水で、タンパク質・グルコース・無機塩類などをふくむ。"
+    },
+    {
+      "id": "sci_bio05_004",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "category": "knowledge",
+      "prompt": "体内環境を一定に保とうとする性質を何という？",
+      "choices": [
+        "恒常性（ホメオスタシス）",
+        "免疫記憶",
+        "遺伝",
+        "進化"
+      ],
+      "answerIndex": 0,
+      "explanation": "体温・血糖値・体液の塩分濃度などが一定の範囲に保たれる。"
+    },
+    {
+      "id": "sci_bio05_005",
+      "unit": "science.biology.body.homeostasis.organ",
+      "category": "knowledge",
+      "prompt": "タンパク質の分解で生じた有害なアンモニアを、尿素に変える器官は？",
+      "choices": [
+        "肝臓",
+        "胃",
+        "すい臓",
+        "腎臓"
+      ],
+      "answerIndex": 0,
+      "explanation": "肝臓は解毒、尿素の合成、グリコーゲンの貯蔵、胆汁の生成などを行う。"
+    },
+    {
+      "id": "sci_bio05_006",
+      "unit": "science.biology.body.homeostasis.organ",
+      "category": "knowledge",
+      "prompt": "腎臓で、血しょうがろ過されて原尿ができる部分は？",
+      "choices": [
+        "ぼうこう",
+        "集合管",
+        "細尿管から毛細血管へ",
+        "糸球体からボーマンのうへ"
+      ],
+      "answerIndex": 3,
+      "explanation": "タンパク質や血球は大きくてろ過されない。原尿から必要な物質が細尿管で再吸収される。"
+    },
+    {
+      "id": "sci_bio05_007",
+      "unit": "science.biology.body.homeostasis.glucose",
+      "category": "knowledge",
+      "prompt": "血糖値を下げるはたらきをもつホルモンは？",
+      "choices": [
+        "インスリン",
+        "糖質コルチコイド",
+        "アドレナリン",
+        "グルカゴン"
+      ],
+      "answerIndex": 0,
+      "explanation": "すい臓のランゲルハンス島 B 細胞から分泌される。血糖値を下げるホルモンはインスリンだけ。"
+    },
+    {
+      "id": "sci_bio05_008",
+      "unit": "science.biology.body.homeostasis.glucose",
+      "category": "knowledge",
+      "prompt": "すい臓のランゲルハンス島 A 細胞から分泌され、血糖値を上げるホルモンは？",
+      "choices": [
+        "チロキシン",
+        "グルカゴン",
+        "バソプレシン",
+        "インスリン"
+      ],
+      "answerIndex": 1,
+      "explanation": "グルカゴンは肝臓のグリコーゲンの分解を促進する。"
+    },
+    {
+      "id": "sci_bio05_009",
+      "unit": "science.biology.body.homeostasis.organ",
+      "category": "knowledge",
+      "prompt": "腎臓の集合管で水の再吸収を促進するホルモンは？",
+      "choices": [
+        "アドレナリン",
+        "グルカゴン",
+        "インスリン",
+        "バソプレシン"
+      ],
+      "answerIndex": 3,
+      "explanation": "脳下垂体後葉から分泌される。体液の塩分濃度が高いときに多く出る。"
+    },
+    {
+      "id": "sci_bio05_010",
+      "unit": "science.biology.body.homeostasis.temperature",
+      "category": "knowledge",
+      "prompt": "寒いときに体温を保つしくみとして正しいものは？",
+      "choices": [
+        "皮膚の血管が拡張する",
+        "汗を多く出す",
+        "皮膚の血管が収縮して熱が逃げにくくなる",
+        "代謝を下げる"
+      ],
+      "answerIndex": 2,
+      "explanation": "交感神経がはたらいて皮膚の血管が収縮し、代謝も促進されて熱の産生が増える。"
+    },
+    {
+      "id": "sci_bio05_011",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "category": "knowledge",
+      "prompt": "血液・組織液・リンパ液をまとめて何という？",
+      "choices": [
+        "血清",
+        "体液",
+        "消化液",
+        "原尿"
+      ],
+      "answerIndex": 1,
+      "explanation": "体液は細胞をとりまく環境（体内環境）をつくっている。"
+    },
+    {
+      "id": "sci_bio05_012",
+      "unit": "science.biology.body.homeostasis.glucose",
+      "category": "knowledge",
+      "prompt": "インスリンのはたらきが不十分で、血糖値が高い状態が続く病気は？",
+      "choices": [
+        "糖尿病",
+        "高山病",
+        "アレルギー",
+        "貧血"
+      ],
+      "answerIndex": 0,
+      "explanation": "1型はインスリンを分泌する細胞が破壊され、2型はインスリンの分泌低下や効きにくさが原因。"
+    },
+    {
+      "id": "sci_bio05_013",
+      "unit": "science.biology.body.homeostasis.organ",
+      "category": "calculation",
+      "prompt": "イヌリン（ろ過されるが再吸収されない物質）の濃度が、血しょうで 0.10 mg/mL、尿で 12 mg/mL だった。濃縮率は？",
+      "choices": [
+        "120 倍",
+        "12 倍",
+        "1200 倍",
+        "1.2 倍"
+      ],
+      "answerIndex": 0,
+      "explanation": "濃縮率＝尿中濃度 ÷ 血しょう中濃度 ＝ 12 ÷ 0.10 ＝ 120 倍。"
+    },
+    {
+      "id": "sci_bio05_014",
+      "unit": "science.biology.body.homeostasis.organ",
+      "category": "calculation",
+      "prompt": "前問で尿が 1 分間に 1.0 mL つくられるとき、1 分間につくられる原尿の量は？",
+      "choices": [
+        "120 mL",
+        "1200 mL",
+        "12 mL",
+        "1.0 mL"
+      ],
+      "answerIndex": 0,
+      "explanation": "イヌリンは再吸収されないので、原尿量＝尿量 × 濃縮率 ＝ 1.0 × 120 ＝ 120 mL。"
+    },
+    {
+      "id": "sci_bio05_015",
+      "unit": "science.biology.body.homeostasis.glucose",
+      "category": "thinking",
+      "prompt": "食事をして血糖値が上がったとき、まず起こることは？",
+      "choices": [
+        "すい臓からインスリンの分泌が増える",
+        "グルカゴンの分泌が増える",
+        "アドレナリンの分泌が増える",
+        "体温が下がる"
+      ],
+      "answerIndex": 0,
+      "explanation": "インスリンが細胞へのグルコースの取りこみや、肝臓でのグリコーゲン合成を促進する。"
+    },
+    {
+      "id": "sci_bio05_016",
+      "unit": "science.biology.body.homeostasis",
+      "category": "thinking",
+      "prompt": "ヘモグロビンは、肺では酸素と結びつき、組織では酸素を離す。組織で離しやすい理由は？",
+      "choices": [
+        "組織にはヘモグロビンが届かないから",
+        "組織は酸素濃度が低く、二酸化炭素濃度が高いから",
+        "組織は酸素濃度が高いから",
+        "組織は温度が低いから"
+      ],
+      "answerIndex": 1,
+      "explanation": "酸素解離曲線：酸素が少なく CO₂ が多い所ほど、酸素ヘモグロビンの割合が下がる。"
+    },
+    {
+      "id": "sci_bio05_017",
+      "unit": "science.biology.body.homeostasis",
+      "category": "knowledge",
+      "prompt": "白血球の主なはたらきは？",
+      "choices": [
+        "栄養分を運ぶ",
+        "酸素を運ぶ",
+        "からだに入った異物を排除する（免疫）",
+        "血液を固める"
+      ],
+      "answerIndex": 2,
+      "explanation": "酸素は赤血球、凝固は血小板。"
+    },
+    {
+      "id": "sci_bio05_018",
+      "unit": "science.biology.body.homeostasis",
+      "category": "knowledge",
+      "prompt": "ヒトの成熟した赤血球について正しいものは？",
+      "choices": [
+        "核をもたない",
+        "酸素を運ばない",
+        "血小板より小さい",
+        "核を2つもつ"
+      ],
+      "answerIndex": 0,
+      "explanation": "核がないぶん、ヘモグロビンを多くふくむ。"
+    },
+    {
+      "id": "sci_bio05_019",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "category": "knowledge",
+      "prompt": "血液凝固のときにつくられる繊維状のタンパク質は？",
+      "choices": [
+        "インスリン",
+        "フィブリン",
+        "ヘモグロビン",
+        "アルブミン"
+      ],
+      "answerIndex": 1,
+      "explanation": "フィブリンが血球をからめて血ぺいになる。"
+    },
+    {
+      "id": "sci_bio05_020",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "category": "knowledge",
+      "prompt": "血液を試験管に入れて置いておくと、上澄みの液体と沈殿に分かれる。沈殿（血ぺい）の正体は？",
+      "choices": [
+        "血しょうだけ",
+        "フィブリンが血球をからめたかたまり",
+        "脂肪のかたまり",
+        "白血球だけ"
+      ],
+      "answerIndex": 1,
+      "explanation": "上澄みは血清。"
+    },
+    {
+      "id": "sci_bio05_021",
+      "unit": "science.biology.body.homeostasis.organ",
+      "category": "knowledge",
+      "prompt": "肝臓のはたらきとして誤っているものは？",
+      "choices": [
+        "解毒作用",
+        "グリコーゲンの貯蔵",
+        "胆汁の生成",
+        "インスリンの分泌"
+      ],
+      "answerIndex": 3,
+      "explanation": "インスリンはすい臓から分泌される。"
+    },
+    {
+      "id": "sci_bio05_022",
+      "unit": "science.biology.body.homeostasis.organ",
+      "category": "knowledge",
+      "prompt": "腎臓で尿をつくる構造上の単位を何という？",
+      "choices": [
+        "ネフロン（腎単位）",
+        "絨毛",
+        "ランゲルハンス島",
+        "肺胞"
+      ],
+      "answerIndex": 0,
+      "explanation": "腎小体（糸球体とボーマンのう）と細尿管からなる。"
+    },
+    {
+      "id": "sci_bio05_023",
+      "unit": "science.biology.body.homeostasis.organ",
+      "category": "knowledge",
+      "prompt": "原尿から、水やグルコースなどが再吸収される部分は？",
+      "choices": [
+        "糸球体",
+        "細尿管（腎細管）と集合管",
+        "ぼうこう",
+        "ボーマンのう"
+      ],
+      "answerIndex": 1,
+      "explanation": "グルコースはふつう全部再吸収される。"
+    },
+    {
+      "id": "sci_bio05_024",
+      "unit": "science.biology.body.homeostasis.organ",
+      "category": "knowledge",
+      "prompt": "健康なヒトの尿に、ほとんどふくまれないものは？",
+      "choices": [
+        "水",
+        "ナトリウムイオン",
+        "グルコース",
+        "尿素"
+      ],
+      "answerIndex": 2,
+      "explanation": "原尿にはふくまれるが、すべて再吸収される。"
+    },
+    {
+      "id": "sci_bio05_025",
+      "unit": "science.biology.body.homeostasis.temperature",
+      "category": "knowledge",
+      "prompt": "体温が上がりすぎたときに起こる調節は？",
+      "choices": [
+        "ふるえが起こる",
+        "汗をかき、皮膚の血管が拡張する",
+        "皮膚の血管が収縮する",
+        "チロキシンが増える"
+      ],
+      "answerIndex": 1,
+      "explanation": "熱を外に逃がす方向の調節。"
+    },
+    {
+      "id": "sci_bio05_026",
+      "unit": "science.biology.body.homeostasis.glucose",
+      "category": "knowledge",
+      "prompt": "ヒトの血糖値（空腹時）はおよそ？",
+      "choices": [
+        "約0.001%",
+        "約10%",
+        "約0.1%（100 mg/100 mL）",
+        "約1%"
+      ],
+      "answerIndex": 2,
+      "explanation": "食事で上がっても、ホルモンなどで一定の範囲に保たれる。"
+    },
+    {
+      "id": "sci_bio05_027",
+      "unit": "science.biology.body.homeostasis",
+      "category": "knowledge",
+      "prompt": "組織液の一部がリンパ管に入ったものを何という？",
+      "choices": [
+        "胆汁",
+        "血しょう",
+        "リンパ液",
+        "原尿"
+      ],
+      "answerIndex": 2,
+      "explanation": "リンパ液はやがて静脈に合流する。"
+    },
+    {
+      "id": "sci_bio05_028",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "category": "knowledge",
+      "prompt": "血しょうにふくまれ、からだを流れる主なタンパク質は？",
+      "choices": [
+        "コラーゲン",
+        "ケラチン",
+        "アルブミン",
+        "ヘモグロビン"
+      ],
+      "answerIndex": 2,
+      "explanation": "肝臓でつくられる。"
+    },
+    {
+      "id": "sci_bio05_029",
+      "unit": "science.biology.body.homeostasis.organ",
+      "category": "calculation",
+      "prompt": "1日につくられる原尿が180 L、尿が1.5 L のとき、原尿の水のうち再吸収された割合はおよそ？",
+      "choices": [
+        "約90%",
+        "約80%",
+        "約50%",
+        "約99%"
+      ],
+      "answerIndex": 3,
+      "explanation": "(180−1.5)/180≒0.992。"
+    },
+    {
+      "id": "sci_bio05_030",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "category": "calculation",
+      "prompt": "ある物質の濃度が、血しょうで 0.3 mg/mL、尿で 21 mg/mL だった。濃縮率は？",
+      "choices": [
+        "7倍",
+        "0.014倍",
+        "63倍",
+        "70倍"
+      ],
+      "answerIndex": 3,
+      "explanation": "21÷0.3。"
+    },
+    {
+      "id": "sci_bio05_031",
+      "unit": "science.biology.body.homeostasis.organ",
+      "category": "calculation",
+      "prompt": "原尿が 150 mL つくられ、尿が 1 mL できた。尿素の濃度は原尿で 0.3 mg/mL、尿で 20 mg/mL。再吸収された尿素は何 mg？",
+      "choices": [
+        "45 mg",
+        "20 mg",
+        "25 mg",
+        "65 mg"
+      ],
+      "answerIndex": 2,
+      "explanation": "ろ過された量 150×0.3=45 mg から、尿に出た 20 mg を引く。"
+    },
+    {
+      "id": "sci_bio05_032",
+      "unit": "science.biology.body.homeostasis.glucose",
+      "category": "thinking",
+      "prompt": "糖尿病の人の尿にグルコースが出る理由は？",
+      "choices": [
+        "糸球体でグルコースがろ過されないから",
+        "血糖値が高く、原尿中のグルコースを再吸収しきれないから",
+        "インスリンが多すぎるから",
+        "腎臓がグルコースをつくるから"
+      ],
+      "answerIndex": 1,
+      "explanation": "再吸収できる量には限りがある。"
+    }
+  ]
+}

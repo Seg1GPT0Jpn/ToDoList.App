@@ -1,0 +1,188 @@
+{
+  "setId": "kokka_ishi_02",
+  "worldId": "kokka",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "ish02_001",
+      "unit": "kokka.ishi.kiso.yakuri.seika",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "細胞の中で、ATPを最も多くつくる場所は？",
+      "choices": [
+        "リボソーム",
+        "リソソーム",
+        "ゴルジ体",
+        "ミトコンドリア"
+      ],
+      "answerIndex": 3,
+      "explanation": "電子伝達系と酸化的リン酸化がミトコンドリア内膜で行われる。"
+    },
+    {
+      "id": "ish02_002",
+      "unit": "kokka.ishi.kiso.yakuri.seika",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "DNAの塩基でアデニン（A）と対になるのは？",
+      "choices": [
+        "チミン（T）",
+        "シトシン（C）",
+        "グアニン（G）",
+        "ウラシル（U）"
+      ],
+      "answerIndex": 0,
+      "explanation": "RNAではアデニンとウラシルが対になる。"
+    },
+    {
+      "id": "ish02_003",
+      "unit": "kokka.ishi.kiso.yakuri.seika",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ヘモグロビンの中心にあり、酸素と結びつく金属は？",
+      "choices": [
+        "銅",
+        "鉄",
+        "亜鉛",
+        "マグネシウム"
+      ],
+      "answerIndex": 1,
+      "explanation": "鉄が不足すると鉄欠乏性貧血になる。"
+    },
+    {
+      "id": "ish02_004",
+      "unit": "kokka.ishi.kiso.yakuri.seika",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ビタミンB1の欠乏で起こる病気は？",
+      "choices": [
+        "夜盲症",
+        "くる病",
+        "脚気",
+        "壊血病"
+      ],
+      "answerIndex": 2,
+      "explanation": "ウェルニッケ脳症もビタミンB1欠乏で起こる。"
+    },
+    {
+      "id": "ish02_005",
+      "unit": "kokka.ishi.kiso.yakuri.seika",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ビタミンCの欠乏で起こる病気は？",
+      "choices": [
+        "夜盲症",
+        "ペラグラ",
+        "脚気",
+        "壊血病"
+      ],
+      "answerIndex": 3,
+      "explanation": "コラーゲンの合成が障害され、歯ぐきなどから出血する。"
+    },
+    {
+      "id": "ish02_006",
+      "unit": "kokka.ishi.kiso.yakuri.seika",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "血液の凝固に必要なビタミンは？",
+      "choices": [
+        "ビタミンK",
+        "ビタミンB12",
+        "ビタミンA",
+        "ビタミンD"
+      ],
+      "answerIndex": 0,
+      "explanation": "凝固因子（Ⅱ・Ⅶ・Ⅸ・Ⅹ）の合成に必要。"
+    },
+    {
+      "id": "ish02_007",
+      "unit": "kokka.ishi.kiso.yakuri.yakuri",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "薬の血中濃度が半分になるまでの時間を何という？",
+      "choices": [
+        "治療域",
+        "半減期",
+        "生物学的利用率",
+        "最高血中濃度到達時間"
+      ],
+      "answerIndex": 1,
+      "explanation": "投与間隔を決める目安になる。"
+    },
+    {
+      "id": "ish02_008",
+      "unit": "kokka.ishi.kiso.yakuri.yakuri",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "口から飲んだ薬が全身に回る前に肝臓で代謝され、効く量が減る現象は？",
+      "choices": [
+        "耐性",
+        "腸肝循環",
+        "初回通過効果",
+        "相互作用"
+      ],
+      "answerIndex": 2,
+      "explanation": "ニトログリセリンを舌下で使うのは初回通過効果を避けるため。"
+    },
+    {
+      "id": "ish02_009",
+      "unit": "kokka.ishi.kiso.yakuri.yakuri",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ペニシリン系の抗菌薬の作用のしくみは？",
+      "choices": [
+        "ウイルスの増殖を止める",
+        "細菌の細胞膜を溶かす",
+        "細菌のリボソームのはたらきを妨げる",
+        "細菌の細胞壁の合成を妨げる"
+      ],
+      "answerIndex": 3,
+      "explanation": "βラクタム系抗菌薬の共通のしくみ。"
+    },
+    {
+      "id": "ish02_010",
+      "unit": "kokka.ishi.kiso.yakuri.yakuri",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "ワルファリンの効果を打ち消すのに使うビタミンは？",
+      "choices": [
+        "ビタミンK",
+        "ビタミンC",
+        "ビタミンB1",
+        "ビタミンE"
+      ],
+      "answerIndex": 0,
+      "explanation": "ワルファリンはビタミンKのはたらきを妨げて血を固まりにくくする。"
+    },
+    {
+      "id": "ish02_011",
+      "unit": "kokka.ishi.kiso.yakuri.yakuri",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "モルヒネなどオピオイドの過量投与で呼吸が抑えられたときの拮抗薬は？",
+      "choices": [
+        "プロタミン",
+        "ナロキソン",
+        "フルマゼニル",
+        "アトロピン"
+      ],
+      "answerIndex": 1,
+      "explanation": "フルマゼニルはベンゾジアゼピン系、プロタミンはヘパリンの拮抗薬。"
+    },
+    {
+      "id": "ish02_012",
+      "unit": "kokka.ishi.kiso.yakuri.yakuri",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "アセトアミノフェンを大量に飲んだときに特に障害されやすい臓器は？",
+      "choices": [
+        "肺",
+        "膵臓",
+        "肝臓",
+        "甲状腺"
+      ],
+      "answerIndex": 2,
+      "explanation": "解毒にはN-アセチルシステインを使う。"
+    }
+  ]
+}

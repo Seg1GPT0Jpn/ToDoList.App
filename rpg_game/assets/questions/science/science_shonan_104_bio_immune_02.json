@@ -1,0 +1,560 @@
+{
+  "setId": "science_shonan_104_bio_immune_02",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "science_shonan_104_bio_immune_02_001",
+      "unit": "science.biology.body.immunity.disease",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "HIVに感染するとエイズを発症する理由は？",
+      "choices": [
+        "血小板が減って血が止まらなくなるから",
+        "すい臓のB細胞が破壊されるから",
+        "赤血球が破壊されて酸素を運べなくなるから",
+        "ヘルパーT細胞が破壊され、獲得免疫全体がはたらかなくなるから"
+      ],
+      "answerIndex": 3,
+      "explanation": "司令塔のヘルパーT細胞が減るので、体液性免疫も細胞性免疫も弱まる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_02_002",
+      "unit": "science.biology.body.immunity.disease",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "免疫が低下したときに、ふだんは問題にならない弱い病原体によって発症する感染症を何という？",
+      "choices": [
+        "自己免疫疾患",
+        "アレルギー",
+        "日和見感染症",
+        "拒絶反応"
+      ],
+      "answerIndex": 2,
+      "explanation": "エイズの患者などで起こる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_02_003",
+      "unit": "science.biology.body.immunity.disease",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "弱毒化した病原体や毒素などを接種し、あらかじめ記憶細胞をつくらせる方法は？",
+      "choices": [
+        "免疫抑制",
+        "予防接種",
+        "血清療法",
+        "輸血"
+      ],
+      "answerIndex": 1,
+      "explanation": "接種するものをワクチンという。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_02_004",
+      "unit": "science.biology.body.immunity.disease",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ヘビにかまれたときなどに、ウマなどにつくらせた抗体をふくむ血清を注射する治療法は？",
+      "choices": [
+        "人工透析",
+        "免疫療法",
+        "血清療法",
+        "予防接種"
+      ],
+      "answerIndex": 2,
+      "explanation": "ヘビ毒や破傷風の治療などに使われる。北里柴三郎が開発にかかわった。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_02_005",
+      "unit": "science.biology.body.immunity.disease",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "予防接種と血清療法のちがいとして正しいものは？",
+      "choices": [
+        "血清療法は病気にかかる前にだけ使う",
+        "予防接種は自分の体に抗体や記憶細胞をつくらせ、血清療法はできあがった抗体を入れる",
+        "両方とも記憶細胞が長く残る",
+        "予防接種はすぐに効くが、血清療法は効くまで時間がかかる"
+      ],
+      "answerIndex": 1,
+      "explanation": "血清療法は即効性があるが、効果は長く続かない。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_02_006",
+      "unit": "science.biology.body.immunity.disease",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "集団免疫とはどのような状態か？",
+      "choices": [
+        "全員が同じ抗体を一生もっている状態",
+        "多くの人が免疫をもつことで感染が広がりにくくなり、免疫をもたない人も守られる状態",
+        "集団の中で病気がはやっている状態",
+        "病原体が免疫をもつようになった状態"
+      ],
+      "answerIndex": 1,
+      "explanation": "予防接種の大切な意味の一つ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_02_007",
+      "unit": "science.biology.body.immunity.disease",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "花粉や食物など、ふつうは無害な物質に対して免疫が過敏に反応することを何という？",
+      "choices": [
+        "二次応答",
+        "自己免疫疾患",
+        "アレルギー",
+        "日和見感染症"
+      ],
+      "answerIndex": 2,
+      "explanation": "アレルギーを起こす抗原をアレルゲンという。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_02_008",
+      "unit": "science.biology.body.immunity.disease",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "アレルギーで、全身に急激な症状が出て血圧低下などが起こる危険な状態を何という？",
+      "choices": [
+        "日和見感染症",
+        "拒絶反応",
+        "アナフィラキシーショック",
+        "低血糖"
+      ],
+      "answerIndex": 2,
+      "explanation": "ハチ毒や食物などで起こることがある。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_02_009",
+      "unit": "science.biology.body.immunity.disease",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "自分の体の成分を抗原と認識して攻撃してしまう病気を何という？",
+      "choices": [
+        "エイズ",
+        "日和見感染症",
+        "アレルギー",
+        "自己免疫疾患"
+      ],
+      "answerIndex": 3,
+      "explanation": "関節リウマチや1型糖尿病など。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_02_010",
+      "unit": "science.biology.body.immunity.disease",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "自分の成分には免疫がはたらかない状態を何という？",
+      "choices": [
+        "免疫寛容",
+        "二次応答",
+        "アレルギー",
+        "免疫不全"
+      ],
+      "answerIndex": 0,
+      "explanation": "自分の成分に反応するリンパ球は、成熟の過程で取り除かれたりはたらかなくなったりする。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_02_011",
+      "unit": "science.biology.body.immunity.disease",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "免疫のしくみを利用してがんなどを治療する方法を何という？",
+      "choices": [
+        "化学的防御",
+        "予防接種",
+        "免疫療法",
+        "血清療法"
+      ],
+      "answerIndex": 2,
+      "explanation": "T細胞のブレーキを外す「免疫チェックポイント阻害剤」などがある。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_02_012",
+      "unit": "science.biology.body.immunity.adaptive",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "細胞の表面にあり、抗原の断片をのせてT細胞に提示する分子は？",
+      "choices": [
+        "ヘモグロビン",
+        "MHC分子（主要組織適合抗原）",
+        "BCR",
+        "TCR"
+      ],
+      "answerIndex": 1,
+      "explanation": "ヒトのMHCはHLAとよばれる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_02_013",
+      "unit": "science.biology.body.immunity.adaptive",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "ヒトのMHC分子は何とよばれる？",
+      "choices": [
+        "IgE",
+        "ABO式血液型",
+        "HLA（ヒト白血球抗原）",
+        "Rh因子"
+      ],
+      "answerIndex": 2,
+      "explanation": "型の組み合わせが非常に多く、他人と一致することはまれ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_02_014",
+      "unit": "science.biology.body.immunity.adaptive",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "T細胞が、MHC分子にのった抗原を受け取る受容体は？",
+      "choices": [
+        "MHC分子",
+        "インスリン受容体",
+        "TCR（T細胞受容体）",
+        "BCR（B細胞受容体）"
+      ],
+      "answerIndex": 2,
+      "explanation": "T細胞は抗原そのものではなく、MHCにのった抗原の断片を認識する。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_02_015",
+      "unit": "science.biology.body.immunity.adaptive",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "B細胞が抗原を直接認識するための受容体は？",
+      "choices": [
+        "BCR（B細胞受容体）",
+        "TCR（T細胞受容体）",
+        "HLA",
+        "MHC分子"
+      ],
+      "answerIndex": 0,
+      "explanation": "BCRは細胞の表面にある抗体と同じ形のもの。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_02_016",
+      "unit": "science.biology.body.immunity.adaptive",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "一つのT細胞やB細胞が認識できる抗原の種類は？",
+      "choices": [
+        "ふつう1種類だけ",
+        "数百種類",
+        "自分の細胞だけ",
+        "すべての抗原"
+      ],
+      "answerIndex": 0,
+      "explanation": "多様な受容体をもつ細胞がたくさん用意されていて、合うものが選ばれて増える。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_02_017",
+      "unit": "science.biology.body.immunity.adaptive",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "他人の臓器を移植すると拒絶反応が起こる主な理由は？",
+      "choices": [
+        "移植した臓器の細胞に核がないから",
+        "移植した臓器が抗体をつくって自分を攻撃するから",
+        "自分の血小板が臓器を固めてしまうから",
+        "移植した細胞のMHC分子が自分とちがうため、キラーT細胞などが異物として攻撃するから"
+      ],
+      "answerIndex": 3,
+      "explanation": "細胞性免疫による。MHCの型が近い人どうしの方が成功しやすい。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_02_018",
+      "unit": "science.biology.body.immunity.adaptive",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "移植のときに拒絶反応を抑えるために使う薬は？",
+      "choices": [
+        "免疫抑制剤",
+        "インスリン",
+        "抗生物質",
+        "ワクチン"
+      ],
+      "answerIndex": 0,
+      "explanation": "免疫全体が弱まるので、感染症に注意が必要になる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_02_019",
+      "unit": "science.biology.body.immunity.adaptive",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "MHCの不一致によるもの以外の拒絶反応の例として考えられるものは？",
+      "choices": [
+        "移植した臓器の細胞が分裂しない",
+        "ABO式血液型が合わない臓器に対して、もともとある抗体が反応する",
+        "移植した臓器から神経が伸びない",
+        "ヘモグロビンが酸素を運べない"
+      ],
+      "answerIndex": 1,
+      "explanation": "抗体による拒絶反応（体液性免疫）も起こりうる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_02_020",
+      "unit": "science.biology.body.immunity.disease",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "タスマニアデビルの「デビル顔面腫瘍病（DFTD）」で、がん細胞が他の個体に定着できる理由として考えられるものは？",
+      "choices": [
+        "がん細胞が赤血球に変化するから",
+        "がん細胞がすぐに死んでしまうから",
+        "がん細胞がMHC分子をほとんど表面に出さず、また集団の遺伝的多様性が低くMHCが似ているため、異物と認識されにくい",
+        "タスマニアデビルには免疫がまったくないから"
+      ],
+      "answerIndex": 2,
+      "explanation": "本来なら他個体の細胞はMHCのちがいで拒絶されるはず。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_02_021",
+      "unit": "science.biology.body.immunity.disease",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "がん細胞がキラーT細胞の攻撃を逃れるしくみとして考えられるものは？",
+      "choices": [
+        "表面のMHC分子を減らしたり、T細胞のはたらきを抑える分子を出したりする",
+        "がん細胞が赤血球に変わる",
+        "がん細胞は分裂しない",
+        "がん細胞が抗体をつくって自分を守る"
+      ],
+      "answerIndex": 0,
+      "explanation": "これを利用したのが、T細胞のブレーキを外す免疫チェックポイント阻害剤。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_02_022",
+      "unit": "science.biology.body.immunity.disease",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "チョウチンアンコウの一部に見られる「性的寄生」とは？",
+      "choices": [
+        "発光細菌が体内に寄生すること",
+        "オスとメスが毎年入れかわること",
+        "小さなオスがメスにかみついて体が融合し、血管もつながって一体化すること",
+        "メスがオスを食べること"
+      ],
+      "answerIndex": 2,
+      "explanation": "深海では相手に出会いにくいので、一度出会った相手から離れないことで確実に子孫を残せる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_02_023",
+      "unit": "science.biology.body.immunity.disease",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "チョウチンアンコウの性的寄生で障壁となるはずのものと、それを突破するしくみの組み合わせは？",
+      "choices": [
+        "光合成／葉緑体を失っている",
+        "拒絶反応／獲得免疫にかかわる遺伝子（MHCなど）の一部を失っている",
+        "体温調節／汗腺を発達させている",
+        "血液凝固／血小板を増やしている"
+      ],
+      "answerIndex": 1,
+      "explanation": "他個体の組織が融合しても拒絶されないよう、獲得免疫のしくみが弱まっていると考えられている。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_immune_02_024",
+      "unit": "science.biology.body.immunity.disease",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "コウモリが多くのウイルスを体内にもっていても発症しにくい理由として考えられているものは？",
+      "choices": [
+        "ウイルスに対する過剰な炎症反応を起こしにくいから",
+        "コウモリの体温が非常に低いから",
+        "コウモリはウイルスに一度も感染しないから",
+        "コウモリには血液がないから"
+      ],
+      "answerIndex": 0,
+      "explanation": "ウイルスと共存できる免疫のしくみをもつと考えられている。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic",
+        "immune"
+      ]
+    }
+  ]
+}

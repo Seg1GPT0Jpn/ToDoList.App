@@ -1,0 +1,188 @@
+{
+  "setId": "kokka_kaikei_02",
+  "worldId": "kokka",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "kai02_001",
+      "unit": "kokka.kaikei.zaimu.kijun.gensoku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "正当な理由なく会計処理の方法を毎期変えてはならないとする原則は？",
+      "choices": [
+        "継続性の原則",
+        "保守主義の原則",
+        "明瞭性の原則",
+        "単一性の原則"
+      ],
+      "answerIndex": 0,
+      "explanation": "企業会計原則の一般原則。期間比較を可能にし、利益操作を防ぐ。"
+    },
+    {
+      "id": "kai02_002",
+      "unit": "kokka.kaikei.zaimu.kijun.gensoku",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "予想される損失には備え、利益は慎重に計上するという原則は？",
+      "choices": [
+        "重要性の原則",
+        "保守主義の原則",
+        "真実性の原則",
+        "継続性の原則"
+      ],
+      "answerIndex": 1,
+      "explanation": "ただし過度な保守主義は認められない。"
+    },
+    {
+      "id": "kai02_003",
+      "unit": "kokka.kaikei.zaimu.kijun.gensoku",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "収益認識に関する会計基準の5つのステップの最初は？",
+      "choices": [
+        "履行義務を識別する",
+        "取引価格を算定する",
+        "顧客との契約を識別する",
+        "収益を認識する"
+      ],
+      "answerIndex": 2,
+      "explanation": "契約の識別→履行義務の識別→取引価格の算定→配分→履行義務の充足による収益認識。"
+    },
+    {
+      "id": "kai02_004",
+      "unit": "kokka.kaikei.zaimu.kijun.shisan",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "棚卸資産の期末の正味売却価額が取得原価を下回ったときは？",
+      "choices": [
+        "時価まで切り上げる",
+        "取得原価のままにする",
+        "全額を費用にする",
+        "正味売却価額まで帳簿価額を切り下げる"
+      ],
+      "answerIndex": 3,
+      "explanation": "棚卸資産の評価に関する会計基準。"
+    },
+    {
+      "id": "kai02_005",
+      "unit": "kokka.kaikei.zaimu.kijun.shisan",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "先に仕入れたものから先に払い出したとみなす払出単価の計算方法は？",
+      "choices": [
+        "先入先出法",
+        "移動平均法",
+        "総平均法",
+        "個別法"
+      ],
+      "answerIndex": 0,
+      "explanation": "期末の在庫は新しく仕入れた単価で評価されることになる。"
+    },
+    {
+      "id": "kai02_006",
+      "unit": "kokka.kaikei.zaimu.kijun.shisan",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "固定資産の減損で、減損損失を認識するかどうかの判定に使うのは？",
+      "choices": [
+        "固定資産税評価額",
+        "割引前将来キャッシュ・フローの総額",
+        "取得原価",
+        "割引後将来キャッシュ・フロー"
+      ],
+      "answerIndex": 1,
+      "explanation": "割引前将来CFの総額が帳簿価額を下回ると減損を認識し、回収可能価額まで減額する。"
+    },
+    {
+      "id": "kai02_007",
+      "unit": "kokka.kaikei.zaimu.kijun.shisan",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "ファイナンス・リース取引の借手の会計処理は？",
+      "choices": [
+        "注記だけを行う",
+        "何も記録しない",
+        "通常の売買取引に準じて資産と負債を計上する",
+        "支払リース料を費用にするだけ"
+      ],
+      "answerIndex": 2,
+      "explanation": "リース取引に関する会計基準。"
+    },
+    {
+      "id": "kai02_008",
+      "unit": "kokka.kaikei.zaimu.kijun.shisan",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "研究開発費の会計処理は？",
+      "choices": [
+        "純資産から控除する",
+        "資産に計上して償却する",
+        "負債に計上する",
+        "すべて発生時に費用として処理する"
+      ],
+      "answerIndex": 3,
+      "explanation": "研究開発費等に係る会計基準。"
+    },
+    {
+      "id": "kai02_009",
+      "unit": "kokka.kaikei.zaimu.kijun.fusai",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "将来の退職給付のうち、期末までに発生したと認められる額の割引現在価値は？",
+      "choices": [
+        "退職給付債務",
+        "年金資産",
+        "退職給付費用",
+        "勤務費用"
+      ],
+      "answerIndex": 0,
+      "explanation": "退職給付債務から年金資産を差し引いた額が負債の基礎になる。"
+    },
+    {
+      "id": "kai02_010",
+      "unit": "kokka.kaikei.zaimu.kijun.fusai",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "会社が取得した自己株式の表示方法は？",
+      "choices": [
+        "負債に計上する",
+        "純資産の部の株主資本から控除する",
+        "投資その他の資産に計上する",
+        "流動資産に計上する"
+      ],
+      "answerIndex": 1,
+      "explanation": "自己株式及び準備金の額の減少等に関する会計基準。"
+    },
+    {
+      "id": "kai02_011",
+      "unit": "kokka.kaikei.zaimu.kijun.fusai",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "借入金のうち、決算日の翌日から1年以内に返済期限が来るものの区分は？",
+      "choices": [
+        "固定負債",
+        "固定資産",
+        "流動負債",
+        "純資産"
+      ],
+      "answerIndex": 2,
+      "explanation": "1年基準（ワン・イヤー・ルール）。"
+    },
+    {
+      "id": "kai02_012",
+      "unit": "kokka.kaikei.zaimu.kijun.shisan",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "通常の営業の流れで生じる売掛金は、回収期限が1年を超えても何に区分される？",
+      "choices": [
+        "投資その他の資産",
+        "固定資産",
+        "繰延資産",
+        "流動資産"
+      ],
+      "answerIndex": 3,
+      "explanation": "正常営業循環基準が1年基準より優先される。"
+    }
+  ]
+}

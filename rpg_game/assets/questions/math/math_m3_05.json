@@ -1,0 +1,288 @@
+{
+  "setId": "math_m3_05",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_m305_001",
+      "unit": "math.m3.diff.derivative.rule",
+      "category": "calculation",
+      "prompt": "(tan x)′ は？",
+      "choices": [
+        "−1/cos²x",
+        "1/sin²x",
+        "tan²x",
+        "1/cos²x"
+      ],
+      "answerIndex": 3,
+      "explanation": "(sin x/cos x)′ を商の微分で。"
+    },
+    {
+      "id": "mat_m305_002",
+      "unit": "math.m3.diff.derivative.chain",
+      "category": "calculation",
+      "prompt": "(sin 2x)′ は？",
+      "choices": [
+        "2cos 2x",
+        "2sin x cos x",
+        "−2cos 2x",
+        "cos 2x"
+      ],
+      "answerIndex": 0,
+      "explanation": "合成関数の微分。"
+    },
+    {
+      "id": "mat_m305_003",
+      "unit": "math.m3.diff.derivative",
+      "category": "calculation",
+      "prompt": "{x/(x+1)}′ は？",
+      "choices": [
+        "1/(x+1)²",
+        "−1/(x+1)²",
+        "1",
+        "x/(x+1)²"
+      ],
+      "answerIndex": 0,
+      "explanation": "{(x+1)−x}/(x+1)²。"
+    },
+    {
+      "id": "mat_m305_004",
+      "unit": "math.m3.diff.derivative",
+      "category": "calculation",
+      "prompt": "{log(x²+1)}′ は？",
+      "choices": [
+        "2x",
+        "1/(x²+1)",
+        "log 2x",
+        "2x/(x²+1)"
+      ],
+      "answerIndex": 3,
+      "explanation": "(内側の微分)/(内側)。"
+    },
+    {
+      "id": "mat_m305_005",
+      "unit": "math.m3.diff.derivative.chain",
+      "category": "calculation",
+      "prompt": "(e^(−x²))′ は？",
+      "choices": [
+        "−e^(−x²)",
+        "e^(−x²)",
+        "−2xe^(−x²)",
+        "2xe^(−x²)"
+      ],
+      "answerIndex": 2,
+      "explanation": "合成関数の微分。"
+    },
+    {
+      "id": "mat_m305_006",
+      "unit": "math.m3.diff.derivative",
+      "category": "calculation",
+      "prompt": "(2ˣ)′ は？",
+      "choices": [
+        "2ˣ log 2",
+        "2ˣ/log 2",
+        "x·2ˣ⁻¹",
+        "2ˣ"
+      ],
+      "answerIndex": 0,
+      "explanation": "(aˣ)′=aˣ log a。"
+    },
+    {
+      "id": "mat_m305_007",
+      "unit": "math.m3.diff.derivative.rule",
+      "category": "calculation",
+      "prompt": "(x sin x)′ は？",
+      "choices": [
+        "x cos x",
+        "sin x−x cos x",
+        "cos x",
+        "sin x+x cos x"
+      ],
+      "answerIndex": 3,
+      "explanation": "積の微分。"
+    },
+    {
+      "id": "mat_m305_008",
+      "unit": "math.m3.diff.derivative",
+      "category": "calculation",
+      "prompt": "x=t²、y=t³ のとき、dy/dx は？",
+      "choices": [
+        "t",
+        "3t²",
+        "3t/2",
+        "2t/3"
+      ],
+      "answerIndex": 2,
+      "explanation": "(dy/dt)/(dx/dt)=3t²/2t。"
+    },
+    {
+      "id": "mat_m305_009",
+      "unit": "math.m3.diff.derivative.chain",
+      "category": "calculation",
+      "prompt": "(sin³x)′ は？",
+      "choices": [
+        "3cos²x",
+        "−3sin²x cos x",
+        "3sin²x cos x",
+        "3sin²x"
+      ],
+      "answerIndex": 2,
+      "explanation": "合成関数の微分。"
+    },
+    {
+      "id": "mat_m305_010",
+      "unit": "math.m3.diff.derivative.explog",
+      "category": "thinking",
+      "prompt": "対数微分法が便利な場面は？",
+      "choices": [
+        "1次関数を微分するとき",
+        "積・商・累乗が複雑にからんだ関数を微分するとき",
+        "積分するとき",
+        "定数を微分するとき"
+      ],
+      "answerIndex": 1,
+      "explanation": "対数をとると、積は和、累乗はかけ算になる。"
+    },
+    {
+      "id": "mat_m305_011",
+      "unit": "math.m3.diff.derivative",
+      "category": "calculation",
+      "prompt": "(1/tan x)′ は？",
+      "choices": [
+        "1/sin²x",
+        "1/cos²x",
+        "−1/sin²x",
+        "−1/cos²x"
+      ],
+      "answerIndex": 2,
+      "explanation": "(cos x/sin x)′=(−sin²x−cos²x)/sin²x。"
+    },
+    {
+      "id": "mat_m305_012",
+      "unit": "math.m3.diff.derivative",
+      "category": "calculation",
+      "prompt": "(cos 3x)′ は？",
+      "choices": [
+        "3 sin 3x",
+        "−3 sin 3x",
+        "−3 cos 3x",
+        "−sin 3x"
+      ],
+      "answerIndex": 1,
+      "explanation": "−sin 3x×3。"
+    },
+    {
+      "id": "mat_m305_013",
+      "unit": "math.m3.diff.derivative",
+      "category": "calculation",
+      "prompt": "{(x−1)/(x+1)}′ は？",
+      "choices": [
+        "1/(x+1)²",
+        "2x/(x+1)²",
+        "−2/(x+1)²",
+        "2/(x+1)²"
+      ],
+      "answerIndex": 3,
+      "explanation": "{(x+1)−(x−1)}/(x+1)²。"
+    },
+    {
+      "id": "mat_m305_014",
+      "unit": "math.m3.diff.derivative",
+      "category": "calculation",
+      "prompt": "{log(2x+1)}′ は？",
+      "choices": [
+        "log 2",
+        "1/(2x+1)",
+        "2x/(2x+1)",
+        "2/(2x+1)"
+      ],
+      "answerIndex": 3,
+      "explanation": "(2x+1)′/(2x+1)。"
+    },
+    {
+      "id": "mat_m305_015",
+      "unit": "math.m3.diff.derivative",
+      "category": "calculation",
+      "prompt": "(e^(x²))′ は？",
+      "choices": [
+        "2e^(x²)",
+        "2xe^(x²)",
+        "e^(x²)",
+        "x²e^(x²−1)"
+      ],
+      "answerIndex": 1,
+      "explanation": "内側 x² の微分 2x をかける。"
+    },
+    {
+      "id": "mat_m305_016",
+      "unit": "math.m3.diff.derivative",
+      "category": "calculation",
+      "prompt": "(3ˣ)′ は？",
+      "choices": [
+        "3ˣ",
+        "3ˣ/log 3",
+        "3ˣ log 3",
+        "x·3^(x−1)"
+      ],
+      "answerIndex": 2,
+      "explanation": "(aˣ)′=aˣ log a。"
+    },
+    {
+      "id": "mat_m305_017",
+      "unit": "math.m3.diff.derivative.rule",
+      "category": "calculation",
+      "prompt": "(eˣ cos x)′ は？",
+      "choices": [
+        "eˣ cos x",
+        "−eˣ sin x",
+        "eˣ(cos x+sin x)",
+        "eˣ(cos x−sin x)"
+      ],
+      "answerIndex": 3,
+      "explanation": "積の微分。"
+    },
+    {
+      "id": "mat_m305_018",
+      "unit": "math.m3.diff.derivative",
+      "category": "calculation",
+      "prompt": "x=2t+1、y=t² のとき、dy/dx は？",
+      "choices": [
+        "t",
+        "2t",
+        "2",
+        "t/2"
+      ],
+      "answerIndex": 0,
+      "explanation": "(dy/dt)/(dx/dt)=2t/2。"
+    },
+    {
+      "id": "mat_m305_019",
+      "unit": "math.m3.diff.derivative",
+      "category": "calculation",
+      "prompt": "(cos²x)′ は？",
+      "choices": [
+        "−sin²x",
+        "2cos x",
+        "2 sin x cos x",
+        "−2 sin x cos x"
+      ],
+      "answerIndex": 3,
+      "explanation": "2cos x×(−sin x)。"
+    },
+    {
+      "id": "mat_m305_020",
+      "unit": "math.m3.diff.derivative.chain",
+      "category": "thinking",
+      "prompt": "y=√(x²+1) を微分するとき、合成関数の微分を使う理由は？",
+      "choices": [
+        "商の形だから",
+        "定数だから",
+        "外側の関数 √u と内側の関数 u=x²+1 の組み合わせになっているから",
+        "積の形だから"
+      ],
+      "answerIndex": 2,
+      "explanation": "(√u)′=1/(2√u) に u′=2x をかけて x/√(x²+1)。"
+    }
+  ]
+}

@@ -1,0 +1,233 @@
+{
+  "setId": "shikaku_takken_09",
+  "worldId": "shikaku",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "tkn09_001",
+      "unit": "shikaku.takken.gyouhou.keiyaku.s37",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "37条書面を交付する時期は？",
+      "choices": [
+        "引渡しの時",
+        "代金を払い終えた時",
+        "契約が成立した後、遅滞なく",
+        "契約が成立する前"
+      ],
+      "answerIndex": 2,
+      "explanation": "37条書面は契約成立後遅滞なく交付する（宅建業法37条）。"
+    },
+    {
+      "id": "tkn09_002",
+      "unit": "shikaku.takken.gyouhou.keiyaku.s37",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "37条書面について正しいものは？",
+      "choices": [
+        "宅建士の記名は不要",
+        "買主の承諾がなければ交付しなくてよい",
+        "宅建士の説明が必要",
+        "宅建士の記名が必要だが、内容の説明は不要"
+      ],
+      "answerIndex": 3,
+      "explanation": "37条書面は宅建士が記名する。説明義務はない。"
+    },
+    {
+      "id": "tkn09_003",
+      "unit": "shikaku.takken.gyouhou.keiyaku.s37",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "37条書面で、定めがなければ記載しなくてよいものは？",
+      "choices": [
+        "損害賠償額の予定や違約金",
+        "代金の額",
+        "移転登記の申請の時期",
+        "引渡しの時期"
+      ],
+      "answerIndex": 0,
+      "explanation": "代金・引渡し時期・移転登記の時期などは必ず記載。損害賠償額の予定などは定めがあるときだけ。"
+    },
+    {
+      "id": "tkn09_004",
+      "unit": "shikaku.takken.gyouhou.keiyaku.hachi",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「自ら売主の8種制限」が適用されるのは、どんな取引？",
+      "choices": [
+        "売主が一般人で、買主が宅建業者",
+        "売主が宅建業者で、買主が宅建業者でない",
+        "売主も買主も宅建業者",
+        "すべての取引"
+      ],
+      "answerIndex": 1,
+      "explanation": "8種制限は、宅建業者が自ら売主で、宅建業者でない買主を保護するためのもの（宅建業法78条2項）。"
+    },
+    {
+      "id": "tkn09_005",
+      "unit": "shikaku.takken.gyouhou.keiyaku.hachi",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "自ら売主の宅建業者が、損害賠償額の予定と違約金を合わせて定められる上限は？",
+      "choices": [
+        "代金の10分の3",
+        "上限はない",
+        "代金の10分の2",
+        "代金の10分の1"
+      ],
+      "answerIndex": 2,
+      "explanation": "合計で代金の10分の2を超える部分は無効（宅建業法38条）。"
+    },
+    {
+      "id": "tkn09_006",
+      "unit": "shikaku.takken.gyouhou.keiyaku.hachi",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "自ら売主の宅建業者が受け取れる手付の上限は？",
+      "choices": [
+        "代金の10分の1",
+        "代金の5％",
+        "上限はない",
+        "代金の10分の2"
+      ],
+      "answerIndex": 3,
+      "explanation": "手付は代金の10分の2まで。手付は解約手付とみなされる（宅建業法39条）。"
+    },
+    {
+      "id": "tkn09_007",
+      "unit": "shikaku.takken.gyouhou.keiyaku.hachi",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "完成した物件を売るとき、手付金等の保全措置が不要になるのは？",
+      "choices": [
+        "代金の10％以下かつ1,000万円以下",
+        "代金の20％以下",
+        "代金の5％以下かつ1,000万円以下",
+        "常に不要"
+      ],
+      "answerIndex": 0,
+      "explanation": "完成物件は10％以下かつ1,000万円以下なら保全不要。未完成物件は5％以下かつ1,000万円以下（宅建業法41条の2）。"
+    },
+    {
+      "id": "tkn09_008",
+      "unit": "shikaku.takken.gyouhou.keiyaku.hachi",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "自ら売主の宅建業者が、契約不適合責任の通知期間を定める特約で有効なものは？",
+      "choices": [
+        "通知期間を6か月とする特約",
+        "引渡しの日から2年以上とする特約",
+        "引渡しの日から1年とする特約",
+        "責任を一切負わない特約"
+      ],
+      "answerIndex": 1,
+      "explanation": "民法より買主に不利な特約は無効。ただし通知期間を引渡しから2年以上とする特約は有効（宅建業法40条）。"
+    },
+    {
+      "id": "tkn09_009",
+      "unit": "shikaku.takken.gyouhou.keiyaku.hachi",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "宅建業者が他人の土地を自ら売主として売る契約を、原則として結べる？",
+      "choices": [
+        "買主の同意があれば結べる",
+        "手付を受け取らなければ結べる",
+        "結べない（取得する契約があるなどの例外を除く）",
+        "結べる"
+      ],
+      "answerIndex": 2,
+      "explanation": "自己の所有に属しない物件の売買契約は原則禁止（宅建業法33条の2）。"
+    },
+    {
+      "id": "tkn09_010",
+      "unit": "shikaku.takken.gyouhou.keiyaku.cooling",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "クーリング・オフができなくなるのは、書面で告げられた日から何日を経過したとき？",
+      "choices": [
+        "10日",
+        "7日",
+        "14日",
+        "8日"
+      ],
+      "answerIndex": 3,
+      "explanation": "書面で告げられた日から起算して8日を経過するとできない（宅建業法37条の2）。"
+    },
+    {
+      "id": "tkn09_011",
+      "unit": "shikaku.takken.gyouhou.keiyaku.cooling",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "クーリング・オフができない場合はどれ？",
+      "choices": [
+        "宅建業者の事務所で買受けの申込みをした",
+        "喫茶店で申込みをした",
+        "テント張りの案内所で申込みをした",
+        "宅建業者が申し出て買主の自宅で申込みをした"
+      ],
+      "answerIndex": 0,
+      "explanation": "事務所などで申し込んだ場合はできない。買主の自宅は、買主から申し出た場合に限りできない。"
+    },
+    {
+      "id": "tkn09_012",
+      "unit": "shikaku.takken.gyouhou.keiyaku.cooling",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "買主が引渡しを受け、代金を全部支払った。クーリング・オフは？",
+      "choices": [
+        "8日以内ならできる",
+        "できない",
+        "できる",
+        "業者の同意があればできる"
+      ],
+      "answerIndex": 1,
+      "explanation": "引渡しを受け、かつ代金全部を支払うと、クーリング・オフはできない。"
+    },
+    {
+      "id": "tkn09_013",
+      "unit": "shikaku.takken.gyouhou.keiyaku.cooling",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "クーリング・オフの効力が生じるのはいつ？",
+      "choices": [
+        "業者が承諾した時",
+        "8日を経過した時",
+        "撤回などの書面を発した時",
+        "書面が業者に届いた時"
+      ],
+      "answerIndex": 2,
+      "explanation": "書面を発した時に効力を生じる（発信主義。宅建業法37条の2第2項）。"
+    },
+    {
+      "id": "tkn09_014",
+      "unit": "shikaku.takken.gyouhou.keiyaku.cooling",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "クーリング・オフがされた。宅建業者がしなければならないことは？",
+      "choices": [
+        "違約金を請求する",
+        "手付を没収する",
+        "損害賠償を請求する",
+        "受け取った手付金などを速やかに返す"
+      ],
+      "answerIndex": 3,
+      "explanation": "業者は損害賠償や違約金を請求できず、受け取った金銭を速やかに返還する。"
+    },
+    {
+      "id": "tkn09_015",
+      "unit": "shikaku.takken.gyouhou.keiyaku.cooling",
+      "unitLocked": true,
+      "category": "thinking",
+      "prompt": "買主が自分から申し出て、自分の勤務先で買受けの申込みをした。クーリング・オフは？",
+      "choices": [
+        "できない",
+        "できる",
+        "業者が許可すればできる",
+        "勤務先なら常にできる"
+      ],
+      "answerIndex": 0,
+      "explanation": "買主から申し出た自宅・勤務先での申込みは、クーリング・オフができない。"
+    }
+  ]
+}

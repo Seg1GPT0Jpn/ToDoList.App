@@ -1,0 +1,813 @@
+{
+  "setId": "japanese_shonan_104_gengo_bunka_history_01",
+  "worldId": "japanese",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "japanese_shonan_104_gengo_bunka_history_01_001",
+      "unit": "japanese.kanbun.text.history.synthesis",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "中国の歴史書の記述形式のうち、出来事の起こった年月日の順に記述するものは？",
+      "choices": [
+        "列伝体",
+        "編年体",
+        "紀伝体",
+        "紀事本末体"
+      ],
+      "answerIndex": 1,
+      "explanation": "例：『春秋』『資治通鑑』。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "history"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_history_01_002",
+      "unit": "japanese.kanbun.text.history.synthesis",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "中国の歴史書の記述形式のうち、人物ごと（本紀・列伝など）に記述するものは？",
+      "choices": [
+        "日記体",
+        "紀伝体",
+        "紀事本末体",
+        "編年体"
+      ],
+      "answerIndex": 1,
+      "explanation": "『史記』以後の正史はすべて紀伝体。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "history"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_history_01_003",
+      "unit": "japanese.kanbun.text.history.synthesis",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "紀伝体で書かれ、のちの正史の手本となった司馬遷の歴史書は？",
+      "choices": [
+        "春秋",
+        "史記",
+        "戦国策",
+        "漢書"
+      ],
+      "answerIndex": 1,
+      "explanation": "前漢の武帝の時代に書かれた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "history"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_history_01_004",
+      "unit": "japanese.kanbun.text.history.synthesis",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "周の王朝を中心に、有力な諸侯（春秋五覇）が活躍した時代は？",
+      "choices": [
+        "殷の時代",
+        "三国時代",
+        "春秋時代",
+        "戦国時代"
+      ],
+      "answerIndex": 2,
+      "explanation": "最も有力だった晋が韓・魏・趙に分裂して、戦国時代に入る。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "history"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_history_01_005",
+      "unit": "japanese.kanbun.text.history.synthesis",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "戦国時代に勢力を争った七つの強国を何という？",
+      "choices": [
+        "五経博士",
+        "春秋五覇",
+        "戦国七雄",
+        "三国"
+      ],
+      "answerIndex": 2,
+      "explanation": "秦・楚・斉・燕・韓・魏・趙。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "history"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_history_01_006",
+      "unit": "japanese.kanbun.text.history.synthesis",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "春秋戦国時代に活躍し、さまざまな思想を説いた学者たちをまとめて何という？",
+      "choices": [
+        "竹林の七賢",
+        "諸子百家",
+        "戦国七雄",
+        "五経博士"
+      ],
+      "answerIndex": 1,
+      "explanation": "儒家・道家・法家・墨家など。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "history"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_history_01_007",
+      "unit": "japanese.kanbun.text.history.synthesis",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "儒家の書物と思想家の組み合わせとして正しいものは？",
+      "choices": [
+        "『老子』・『荘子』",
+        "『史記』（司馬遷）",
+        "『論語』（孔子）・『孟子』・『荀子』",
+        "『韓非子』"
+      ],
+      "answerIndex": 2,
+      "explanation": "老子・荘子は道家、韓非子は法家。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "history"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_history_01_008",
+      "unit": "japanese.kanbun.text.history.synthesis",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "道家の思想家の組み合わせとして正しいものは？",
+      "choices": [
+        "老子・荘子",
+        "荀子・墨子",
+        "孔子・孟子",
+        "韓非・李斯"
+      ],
+      "answerIndex": 0,
+      "explanation": "無為自然を説いた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "history"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_history_01_009",
+      "unit": "japanese.kanbun.text.history.synthesis",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "中国を初めて統一し、法家思想を採用して儒家を弾圧した皇帝は？",
+      "choices": [
+        "秦の始皇帝",
+        "光武帝",
+        "王莽",
+        "漢の武帝"
+      ],
+      "answerIndex": 0,
+      "explanation": "焚書坑儒を行った。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "history"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_history_01_010",
+      "unit": "japanese.kanbun.text.history.synthesis",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "秦の滅亡後、天下を争った「楚」と「漢」のそれぞれの中心人物は？",
+      "choices": [
+        "項羽（楚）と劉邦（漢）",
+        "曹操（楚）と劉備（漢）",
+        "孔子（楚）と孟子（漢）",
+        "劉邦（楚）と項羽（漢）"
+      ],
+      "answerIndex": 0,
+      "explanation": "鴻門の会は二人の対面の場面。勝った劉邦が漢を建てた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "history"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_history_01_011",
+      "unit": "japanese.kanbun.text.history.synthesis",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "儒教を国の教えとし、五経博士を置いた皇帝は？",
+      "choices": [
+        "前漢の武帝",
+        "新の王莽",
+        "秦の始皇帝",
+        "後漢の光武帝"
+      ],
+      "answerIndex": 0,
+      "explanation": "『史記』や『戦国策』がまとめられたのも前漢。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "history"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_history_01_012",
+      "unit": "japanese.kanbun.text.history.synthesis",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "前漢と後漢の間に、一代で滅んだ王朝「新」を建てた人物は？",
+      "choices": [
+        "劉邦",
+        "武帝",
+        "光武帝",
+        "王莽"
+      ],
+      "answerIndex": 3,
+      "explanation": "その後、光武帝が漢王朝を再建した（後漢）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "history"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_history_01_013",
+      "unit": "japanese.kanbun.text.history.synthesis",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "後漢の時代のできごととして正しいものは？",
+      "choices": [
+        "始皇帝が中国を統一した",
+        "仏教が伝来し、歴史書『漢書』が書かれた",
+        "春秋五覇が活躍した",
+        "五経博士が初めて置かれた"
+      ],
+      "answerIndex": 1,
+      "explanation": "光武帝が漢王朝を再建した。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "history"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_history_01_014",
+      "unit": "japanese.kanbun.text.history.synthesis",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "魏・呉・蜀が争った時代を何という？",
+      "choices": [
+        "三国時代",
+        "戦国時代",
+        "春秋時代",
+        "南北朝時代"
+      ],
+      "answerIndex": 0,
+      "explanation": "その歴史は西晋の時代に『三国志』としてまとめられた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "history"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_history_01_015",
+      "unit": "japanese.kanbun.text.history.synthesis",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "漢代に興り、新しいリズムの詩として作られた詩の形式は？",
+      "choices": [
+        "五言絶句",
+        "五言古詩",
+        "詞",
+        "七言律詩"
+      ],
+      "answerIndex": 1,
+      "explanation": "絶句・律詩などの近体詩は唐代に完成した。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "history"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_history_01_016",
+      "unit": "japanese.kanbun.text.history.synthesis",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "故事成語のもとになった話に多い展開は？",
+      "choices": [
+        "導入から、たとえ話（寓話）を通して結論へ進む",
+        "必ず詩で終わる",
+        "登場人物の会話がなく、地の文だけで進む",
+        "結論だけを短く述べる"
+      ],
+      "answerIndex": 0,
+      "explanation": "王に家来や思想家がたとえ話で意見を伝える形が多い。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "history"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_history_01_017",
+      "unit": "japanese.kanbun.text.history.synthesis",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "漢字の音や訓だけを使って、日本語を表音的に書き表した文字を何という？",
+      "choices": [
+        "万葉仮名",
+        "国字",
+        "片仮名",
+        "草仮名"
+      ],
+      "answerIndex": 0,
+      "explanation": "例：「波奈」で「はな（花）」。『万葉集』に多く使われた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "history"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_history_01_018",
+      "unit": "japanese.kanbun.text.history.synthesis",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「榊」「峠」のように、日本で独自に作られた漢字を何という？",
+      "choices": [
+        "国字",
+        "万葉仮名",
+        "常用漢字",
+        "仮借"
+      ],
+      "answerIndex": 0,
+      "explanation": "「榊」は神にささげる木。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "history"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_history_01_019",
+      "unit": "japanese.kanbun.text.history.synthesis",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "片仮名が生まれたきっかけとして正しいものは？",
+      "choices": [
+        "西洋語を翻訳するために",
+        "女性が和歌や日記を書くために",
+        "漢文で書かれた仏教の経典を日本語として読む際の補助として",
+        "法令をくずして早く書くために"
+      ],
+      "answerIndex": 2,
+      "explanation": "漢字の一部をとった。例：阿→ア、伊→イ、江→エ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "history"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_history_01_020",
+      "unit": "japanese.kanbun.text.history.synthesis",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "平仮名の成り立ちとして正しいものは？",
+      "choices": [
+        "片仮名をさらにくずしてできた",
+        "万葉仮名をくずした草仮名を、さらにくずしてできた",
+        "西洋のアルファベットをもとにできた",
+        "漢字の一部分を取り出してできた"
+      ],
+      "answerIndex": 1,
+      "explanation": "例：安→あ、以→い、宇→う。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "history"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_history_01_021",
+      "unit": "japanese.kanbun.text.history.synthesis",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "片仮名「ア」「イ」のもとになった漢字の組み合わせは？",
+      "choices": [
+        "阿・伊",
+        "愛・井",
+        "亜・意",
+        "安・以"
+      ],
+      "answerIndex": 0,
+      "explanation": "片仮名は漢字の一部をとってできた。「安・以」は平仮名「あ・い」のもと。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "history"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_history_01_022",
+      "unit": "japanese.kanbun.text.history.synthesis",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "平仮名「あ」「い」「う」のもとになった漢字の組み合わせは？",
+      "choices": [
+        "安・伊・有",
+        "亜・意・右",
+        "安・以・宇",
+        "阿・伊・宇"
+      ],
+      "answerIndex": 2,
+      "explanation": "漢字の全体をくずしてできた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "history"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_history_01_023",
+      "unit": "japanese.kanbun.text.history.synthesis",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "『古事記』『日本書紀』『万葉集』の表記の組み合わせとして正しいものは？",
+      "choices": [
+        "古事記＝万葉仮名、日本書紀＝平仮名、万葉集＝片仮名",
+        "古事記＝変体漢文、日本書紀＝正格漢文、万葉集＝万葉仮名",
+        "古事記＝正格漢文、日本書紀＝変体漢文、万葉集＝平仮名",
+        "すべて平仮名で書かれた"
+      ],
+      "answerIndex": 1,
+      "explanation": "日本書紀は中国の正式な漢文で書かれた正史。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "history"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_history_01_024",
+      "unit": "japanese.kanbun.text.history.synthesis",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "9世紀末、遣唐使の廃止のあと発達した、日本風の文化を何という？",
+      "choices": [
+        "飛鳥文化",
+        "天平文化",
+        "国風文化",
+        "元禄文化"
+      ],
+      "answerIndex": 2,
+      "explanation": "平仮名を用いた女流文学が栄えた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "history"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_history_01_025",
+      "unit": "japanese.kanbun.text.history.synthesis",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "平安時代の男性貴族が、公文書・日記に使った文字（文体）は？",
+      "choices": [
+        "漢字（漢文）",
+        "片仮名だけ",
+        "ローマ字",
+        "平仮名"
+      ],
+      "answerIndex": 0,
+      "explanation": "漢詩文も漢字で書き、和歌には平仮名を用いた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "history"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_history_01_026",
+      "unit": "japanese.kanbun.text.history.synthesis",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "鎌倉時代に広まった、漢文訓読の語や言い回しと和文がまじった文体は？",
+      "choices": [
+        "正格漢文",
+        "言文一致体",
+        "和漢混淆文",
+        "候文"
+      ],
+      "answerIndex": 2,
+      "explanation": "例：『平家物語』。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "history"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_history_01_027",
+      "unit": "japanese.kanbun.text.history.synthesis",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "活版印刷技術が日本に伝わったのはいつごろ？",
+      "choices": [
+        "明治時代",
+        "安土桃山時代",
+        "奈良時代",
+        "平安時代"
+      ],
+      "answerIndex": 1,
+      "explanation": "江戸時代には木活字による出版業が発達した。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "history"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_history_01_028",
+      "unit": "japanese.kanbun.text.history.synthesis",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "明治維新以後、西洋語の翻訳として大量に作られたものは？",
+      "choices": [
+        "万葉仮名",
+        "漢語（翻訳語）",
+        "草仮名",
+        "国字"
+      ],
+      "answerIndex": 1,
+      "explanation": "「社会」「哲学」など。学校教育では漢字教育も国が管理するようになった。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "history"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_history_01_029",
+      "unit": "japanese.kanbun.text.history.synthesis",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "明治時代に起こった、話しことばに近い文体で文章を書こうとする運動の文体を何という？",
+      "choices": [
+        "言文一致体",
+        "候文",
+        "漢文訓読体",
+        "和漢混淆文"
+      ],
+      "answerIndex": 0,
+      "explanation": "二葉亭四迷『浮雲』などが知られる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "history"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_history_01_030",
+      "unit": "japanese.kanbun.text.history.synthesis",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "5世紀の稲荷山古墳出土の鉄剣に刻まれた「獲加多支鹵」は、漢字をどのように使った例？",
+      "choices": [
+        "国字で書いた例",
+        "漢字の音で日本の人名を表した例",
+        "平仮名で書いた例",
+        "漢字の意味だけで書いた例"
+      ],
+      "answerIndex": 1,
+      "explanation": "ワカタケル（雄略天皇と考えられる）と読まれる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "history"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_history_01_031",
+      "unit": "japanese.kanbun.text.history.synthesis",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "元号「令和」の典拠（出典）は？",
+      "choices": [
+        "『書経』",
+        "『史記』",
+        "『論語』",
+        "『万葉集』の梅花の歌の序"
+      ],
+      "answerIndex": 3,
+      "explanation": "「初春令月、気淑風和」から。日本の古典から採られた初めての元号。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "history"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_history_01_032",
+      "unit": "japanese.kanbun.text.history.synthesis",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「初春令月、気淑風和。」の意味として正しいものは？",
+      "choices": [
+        "新しい月が出て、気持ちは晴れ、風が吹く",
+        "新春のよい月で、空気は澄み、風はやわらかい",
+        "春は短く、月日はすぐに過ぎる",
+        "春の初めの月は冷たく、風は強い"
+      ],
+      "answerIndex": 1,
+      "explanation": "「令月」は何をするにもよい月。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "history"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_history_01_033",
+      "unit": "japanese.kanbun.text.history.synthesis",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "夏目漱石の号「漱石」の由来となった故事は？",
+      "choices": [
+        "石の上で眠って修行した僧の話",
+        "「石に漱ぎ流れに枕す」と言い間違えて言い張った孫子荊の話",
+        "流れに石を投げて占った王の話",
+        "石で口をすすいで病気を治した医者の話"
+      ],
+      "answerIndex": 1,
+      "explanation": "負け惜しみの強いことのたとえ（漱石枕流）。出典は『世説新語』。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "history"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_history_01_034",
+      "unit": "japanese.kanbun.text.history.synthesis",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "「漱石枕流（石に漱ぎ流れに枕す）」の意味は？",
+      "choices": [
+        "自然とともに生きること",
+        "苦労して学問にはげむこと",
+        "負け惜しみが強いこと",
+        "風流な暮らしをすること"
+      ],
+      "answerIndex": 2,
+      "explanation": "本当は「石に枕し流れに漱ぐ」と言うべきところを言い間違えた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "history"
+      ]
+    },
+    {
+      "id": "japanese_shonan_104_gengo_bunka_history_01_035",
+      "unit": "japanese.kanbun.text.history.synthesis",
+      "unitLocked": true,
+      "category": "knowledge",
+      "prompt": "元号「平成」の典拠とされる「内平外成」「地平天成」の意味として正しいものは？",
+      "choices": [
+        "内側は平らで、外側は成長する",
+        "国の内外、天地ともに平和が達成される",
+        "土地を平らにして天を成す",
+        "平和は内からも外からも訪れない"
+      ],
+      "answerIndex": 1,
+      "explanation": "『史記』と『書経』から採られた。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "gengo_bunka",
+        "history"
+      ]
+    }
+  ]
+}

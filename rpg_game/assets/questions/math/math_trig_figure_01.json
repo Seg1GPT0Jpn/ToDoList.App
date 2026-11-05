@@ -1,0 +1,590 @@
+{
+  "setId": "math_trig_figure_01",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "math_trig_figure_01_001",
+      "unit": "math.m1.trig.ratio.define",
+      "category": "calculation",
+      "prompt": "図の直角三角形で sinθ は？",
+      "choices": [
+        "3/4",
+        "5/3",
+        "4/5",
+        "3/5"
+      ],
+      "answerIndex": 3,
+      "explanation": "sinθ = 対辺 ÷ 斜辺 = 3/5。",
+      "figure": {
+        "w": 200,
+        "h": 130,
+        "items": [
+          {
+            "poly": [
+              20,
+              110,
+              180,
+              110,
+              180,
+              20
+            ]
+          },
+          {
+            "poly": [
+              168,
+              110,
+              168,
+              98,
+              180,
+              98
+            ]
+          },
+          {
+            "text": "θ",
+            "at": [
+              48,
+              102
+            ]
+          },
+          {
+            "text": "4",
+            "at": [
+              100,
+              122
+            ]
+          },
+          {
+            "text": "3",
+            "at": [
+              192,
+              65
+            ]
+          },
+          {
+            "text": "5",
+            "at": [
+              92,
+              52
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "math_trig_figure_01_002",
+      "unit": "math.m1.trig.ratio.define",
+      "category": "calculation",
+      "prompt": "図の直角三角形で cosθ は？",
+      "choices": [
+        "4/5",
+        "5/4",
+        "3/5",
+        "3/4"
+      ],
+      "answerIndex": 0,
+      "explanation": "cosθ = 底辺 ÷ 斜辺 = 4/5。",
+      "figure": {
+        "w": 200,
+        "h": 130,
+        "items": [
+          {
+            "poly": [
+              20,
+              110,
+              180,
+              110,
+              180,
+              20
+            ]
+          },
+          {
+            "poly": [
+              168,
+              110,
+              168,
+              98,
+              180,
+              98
+            ]
+          },
+          {
+            "text": "θ",
+            "at": [
+              48,
+              102
+            ]
+          },
+          {
+            "text": "4",
+            "at": [
+              100,
+              122
+            ]
+          },
+          {
+            "text": "3",
+            "at": [
+              192,
+              65
+            ]
+          },
+          {
+            "text": "5",
+            "at": [
+              92,
+              52
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "math_trig_figure_01_003",
+      "unit": "math.m1.trig.ratio.define",
+      "category": "calculation",
+      "prompt": "図の直角三角形で tanθ は？",
+      "choices": [
+        "4/3",
+        "4/5",
+        "3/5",
+        "3/4"
+      ],
+      "answerIndex": 3,
+      "explanation": "tanθ = 対辺 ÷ 底辺 = 3/4。",
+      "figure": {
+        "w": 200,
+        "h": 130,
+        "items": [
+          {
+            "poly": [
+              20,
+              110,
+              180,
+              110,
+              180,
+              20
+            ]
+          },
+          {
+            "poly": [
+              168,
+              110,
+              168,
+              98,
+              180,
+              98
+            ]
+          },
+          {
+            "text": "θ",
+            "at": [
+              48,
+              102
+            ]
+          },
+          {
+            "text": "4",
+            "at": [
+              100,
+              122
+            ]
+          },
+          {
+            "text": "3",
+            "at": [
+              192,
+              65
+            ]
+          },
+          {
+            "text": "5",
+            "at": [
+              92,
+              52
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "math_trig_figure_01_004",
+      "unit": "math.m1.trig.ratio.define",
+      "category": "calculation",
+      "prompt": "sin 30° の値は？",
+      "choices": [
+        "√3/2",
+        "1/2",
+        "√2/2",
+        "1"
+      ],
+      "answerIndex": 1,
+      "explanation": "30°・60°・90° の三角形の辺の比は 1 : √3 : 2。"
+    },
+    {
+      "id": "math_trig_figure_01_005",
+      "unit": "math.m1.trig.ratio.define",
+      "category": "calculation",
+      "prompt": "cos 60° の値は？",
+      "choices": [
+        "0",
+        "√3/2",
+        "1/2",
+        "√2/2"
+      ],
+      "answerIndex": 2,
+      "explanation": "cos 60° = 1/2。"
+    },
+    {
+      "id": "math_trig_figure_01_006",
+      "unit": "math.m1.trig.ratio.define",
+      "category": "calculation",
+      "prompt": "tan 45° の値は？",
+      "choices": [
+        "1/√3",
+        "1",
+        "√3",
+        "0"
+      ],
+      "answerIndex": 1,
+      "explanation": "直角二等辺三角形なので、対辺 = 底辺。"
+    },
+    {
+      "id": "math_trig_figure_01_007",
+      "unit": "math.m1.trig.ratio.define",
+      "category": "calculation",
+      "prompt": "sin 60° の値は？",
+      "choices": [
+        "√3",
+        "√3/2",
+        "1/2",
+        "√2/2"
+      ],
+      "answerIndex": 1,
+      "explanation": "30°・60°・90° の三角形で、60° の対辺は √3、斜辺は 2。"
+    },
+    {
+      "id": "math_trig_figure_01_008",
+      "unit": "math.m1.trig.ratio.define",
+      "category": "calculation",
+      "prompt": "cos 45° の値は？",
+      "choices": [
+        "1",
+        "√3/2",
+        "√2/2",
+        "1/2"
+      ],
+      "answerIndex": 2,
+      "explanation": "1 : 1 : √2 の三角形。1/√2 = √2/2。"
+    },
+    {
+      "id": "math_trig_figure_01_009",
+      "unit": "math.m1.trig.ratio.relation",
+      "category": "calculation",
+      "prompt": "θ が鋭角で sinθ = 3/5 のとき、cosθ は？",
+      "choices": [
+        "2/5",
+        "3/4",
+        "4/5",
+        "5/4"
+      ],
+      "answerIndex": 2,
+      "explanation": "sin²θ + cos²θ = 1 より cos²θ = 16/25。鋭角なので正。"
+    },
+    {
+      "id": "math_trig_figure_01_010",
+      "unit": "math.m1.trig.ratio.define",
+      "category": "knowledge",
+      "prompt": "sin(90° − θ) と等しいものは？",
+      "choices": [
+        "−cosθ",
+        "cosθ",
+        "tanθ",
+        "sinθ"
+      ],
+      "answerIndex": 1,
+      "explanation": "余角の関係。"
+    },
+    {
+      "id": "math_trig_figure_01_011",
+      "unit": "math.m1.trig.ratio.define",
+      "category": "calculation",
+      "prompt": "sin 150° の値は？",
+      "choices": [
+        "−√3/2",
+        "√3/2",
+        "−1/2",
+        "1/2"
+      ],
+      "answerIndex": 3,
+      "explanation": "sin(180° − θ) = sinθ より sin 30° = 1/2。"
+    },
+    {
+      "id": "math_trig_figure_01_012",
+      "unit": "math.m1.trig.ratio.define",
+      "category": "calculation",
+      "prompt": "cos 120° の値は？",
+      "choices": [
+        "1/2",
+        "√3/2",
+        "−√3/2",
+        "−1/2"
+      ],
+      "answerIndex": 3,
+      "explanation": "cos(180° − θ) = −cosθ より −cos 60°。"
+    },
+    {
+      "id": "math_trig_figure_01_013",
+      "unit": "math.m1.trig.ratio.define",
+      "category": "calculation",
+      "prompt": "tan 135° の値は？",
+      "choices": [
+        "−1",
+        "1",
+        "−√3",
+        "√3"
+      ],
+      "answerIndex": 0,
+      "explanation": "tan(180° − θ) = −tanθ より −tan 45°。"
+    },
+    {
+      "id": "math_trig_figure_01_014",
+      "unit": "math.m1.trig.solve.sine",
+      "category": "calculation",
+      "prompt": "△ABC で a = 6、A = 30° のとき、外接円の半径 R は？",
+      "choices": [
+        "2√3",
+        "3",
+        "6",
+        "12"
+      ],
+      "answerIndex": 2,
+      "explanation": "正弦定理 a/sinA = 2R より 6 ÷ (1/2) = 12 = 2R。"
+    },
+    {
+      "id": "math_trig_figure_01_015",
+      "unit": "math.m1.trig.solve",
+      "category": "calculation",
+      "prompt": "△ABC で a = 2、A = 30°、B = 45° のとき b は？",
+      "choices": [
+        "4",
+        "2√3",
+        "2√2",
+        "√2"
+      ],
+      "answerIndex": 2,
+      "explanation": "b = a sinB / sinA = 2 × (√2/2) ÷ (1/2) = 2√2。"
+    },
+    {
+      "id": "math_trig_figure_01_016",
+      "unit": "math.m1.trig.solve.cosine",
+      "category": "calculation",
+      "prompt": "△ABC で b = 3、c = 5、A = 60° のとき a は？",
+      "choices": [
+        "√34",
+        "4",
+        "7",
+        "√19"
+      ],
+      "answerIndex": 3,
+      "explanation": "余弦定理 a² = 9 + 25 − 2·3·5·(1/2) = 19。"
+    },
+    {
+      "id": "math_trig_figure_01_017",
+      "unit": "math.m1.trig.ratio.define",
+      "category": "calculation",
+      "prompt": "△ABC で a = 7、b = 5、c = 3 のとき、角 A は？",
+      "choices": [
+        "60°",
+        "90°",
+        "120°",
+        "150°"
+      ],
+      "answerIndex": 2,
+      "explanation": "cosA = (25 + 9 − 49)/(2·5·3) = −1/2。"
+    },
+    {
+      "id": "math_trig_figure_01_018",
+      "unit": "math.m1.trig.solve.area",
+      "category": "calculation",
+      "prompt": "△ABC で b = 4、c = 5、A = 30° のときの面積は？",
+      "choices": [
+        "5",
+        "10",
+        "5√3",
+        "20"
+      ],
+      "answerIndex": 0,
+      "explanation": "S = ½bc sinA = ½ × 4 × 5 × ½ = 5。"
+    },
+    {
+      "id": "math_trig_figure_01_019",
+      "unit": "math.m1.trig.solve.area",
+      "category": "calculation",
+      "prompt": "△ABC で b = 6、c = 8、A = 60° のときの面積は？",
+      "choices": [
+        "24",
+        "24√3",
+        "12",
+        "12√3"
+      ],
+      "answerIndex": 3,
+      "explanation": "½ × 6 × 8 × (√3/2) = 12√3。"
+    },
+    {
+      "id": "math_trig_figure_01_020",
+      "unit": "math.m1.trig.solve.area",
+      "category": "calculation",
+      "prompt": "3 辺が 3、4、5 の三角形の面積は？",
+      "choices": [
+        "6",
+        "7.5",
+        "10",
+        "12"
+      ],
+      "answerIndex": 0,
+      "explanation": "直角三角形なので ½ × 3 × 4 = 6。"
+    },
+    {
+      "id": "math_trig_figure_01_021",
+      "unit": "math.m1.trig.solve.solid",
+      "category": "calculation",
+      "prompt": "木から 20 m はなれた地点で見上げた角（仰角）が 30° のとき、目の高さからの木の高さは？",
+      "choices": [
+        "20√3/3 m",
+        "20√3 m",
+        "40 m",
+        "10 m"
+      ],
+      "answerIndex": 0,
+      "explanation": "高さ = 20 × tan 30° = 20/√3 = 20√3/3 ≒ 11.5 m。"
+    },
+    {
+      "id": "math_trig_figure_01_022",
+      "unit": "math.m1.trig.solve.solid",
+      "category": "calculation",
+      "prompt": "建物から 15 m はなれた地点で見上げた角が 45° のとき、目の高さからの建物の高さは？",
+      "choices": [
+        "15 m",
+        "30 m",
+        "15√3 m",
+        "15√2 m"
+      ],
+      "answerIndex": 0,
+      "explanation": "tan 45° = 1 なので、高さ = 距離。"
+    },
+    {
+      "id": "math_trig_figure_01_023",
+      "unit": "math.m1.trig.ratio.obtuse",
+      "category": "thinking",
+      "prompt": "3 辺が 4、5、7 の三角形の形は？",
+      "choices": [
+        "直角三角形",
+        "二等辺三角形",
+        "鋭角三角形",
+        "鈍角三角形"
+      ],
+      "answerIndex": 3,
+      "explanation": "4² + 5² = 41 < 7² = 49 なので、最大の角は鈍角。"
+    },
+    {
+      "id": "math_trig_figure_01_024",
+      "unit": "math.m1.trig.ratio.define",
+      "category": "calculation",
+      "prompt": "sinA : sinB : sinC = 3 : 5 : 7 のとき、最も大きい角は？",
+      "choices": [
+        "60°",
+        "90°",
+        "120°",
+        "150°"
+      ],
+      "answerIndex": 2,
+      "explanation": "a : b : c = 3 : 5 : 7。cosC = (9 + 25 − 49)/30 = −1/2。"
+    },
+    {
+      "id": "math_trig_figure_01_025",
+      "unit": "math.m1.trig.solve.incircle",
+      "category": "calculation",
+      "prompt": "3 辺が 3、4、5 の三角形の内接円の半径は？",
+      "choices": [
+        "1",
+        "1.5",
+        "2",
+        "2.5"
+      ],
+      "answerIndex": 0,
+      "explanation": "S = r(a + b + c)/2 より 6 = r × 6。"
+    },
+    {
+      "id": "math_trig_figure_01_026",
+      "unit": "math.m1.trig.solve.sine",
+      "category": "calculation",
+      "prompt": "斜辺が 10 の直角三角形の外接円の半径は？",
+      "choices": [
+        "10",
+        "20",
+        "5",
+        "5√2"
+      ],
+      "answerIndex": 2,
+      "explanation": "斜辺が外接円の直径になる。"
+    },
+    {
+      "id": "math_trig_figure_01_027",
+      "unit": "math.m1.trig.ratio.obtuse",
+      "category": "calculation",
+      "prompt": "0° ≦ θ ≦ 180° で sinθ = 1/2 となる θ は？",
+      "choices": [
+        "150° だけ",
+        "30° だけ",
+        "60° と 120°",
+        "30° と 150°"
+      ],
+      "answerIndex": 3,
+      "explanation": "単位円で y 座標が 1/2 の点は 2 つある。"
+    },
+    {
+      "id": "math_trig_figure_01_028",
+      "unit": "math.m1.trig.ratio.define",
+      "category": "calculation",
+      "prompt": "0° ≦ θ ≦ 180° で cosθ = −√3/2 となる θ は？",
+      "choices": [
+        "30°",
+        "120°",
+        "135°",
+        "150°"
+      ],
+      "answerIndex": 3,
+      "explanation": "cos 150° = −cos 30° = −√3/2。"
+    },
+    {
+      "id": "math_trig_figure_01_029",
+      "unit": "math.m1.trig.ratio.define",
+      "category": "calculation",
+      "prompt": "0° ≦ θ ≦ 180° で tanθ = √3 となる θ は？",
+      "choices": [
+        "30°",
+        "45°",
+        "60°",
+        "120°"
+      ],
+      "answerIndex": 2,
+      "explanation": "tan 60° = √3。"
+    },
+    {
+      "id": "math_trig_figure_01_030",
+      "unit": "math.m1.trig.solve",
+      "category": "calculation",
+      "prompt": "AB = AC = 5、BC = 6 の二等辺三角形で cosB は？",
+      "choices": [
+        "6/5",
+        "3/5",
+        "1/2",
+        "4/5"
+      ],
+      "answerIndex": 1,
+      "explanation": "A から BC に垂線を下ろすと、BC の中点までの長さは 3。cosB = 3/5。"
+    }
+  ]
+}

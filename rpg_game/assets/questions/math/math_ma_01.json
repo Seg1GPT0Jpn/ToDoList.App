@@ -1,0 +1,288 @@
+{
+  "setId": "math_ma_01",
+  "worldId": "math",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mat_ma01_001",
+      "unit": "math.ma.prob.count",
+      "category": "calculation",
+      "prompt": "₅P₂ の値は？",
+      "choices": [
+        "25",
+        "10",
+        "60",
+        "20"
+      ],
+      "answerIndex": 3,
+      "explanation": "5×4=20。"
+    },
+    {
+      "id": "mat_ma01_002",
+      "unit": "math.ma.prob.count.permutation",
+      "category": "calculation",
+      "prompt": "₅C₂ の値は？",
+      "choices": [
+        "5",
+        "10",
+        "20",
+        "25"
+      ],
+      "answerIndex": 1,
+      "explanation": "₅P₂÷2!=10。"
+    },
+    {
+      "id": "mat_ma01_003",
+      "unit": "math.ma.prob.count",
+      "category": "calculation",
+      "prompt": "4! の値は？",
+      "choices": [
+        "16",
+        "12",
+        "24",
+        "4"
+      ],
+      "answerIndex": 2,
+      "explanation": "4×3×2×1。"
+    },
+    {
+      "id": "mat_ma01_004",
+      "unit": "math.ma.prob.count",
+      "category": "calculation",
+      "prompt": "大小2個のさいころを投げて、目の和が5になる場合は何通り？",
+      "choices": [
+        "6通り",
+        "5通り",
+        "4通り",
+        "3通り"
+      ],
+      "answerIndex": 2,
+      "explanation": "(1,4)(2,3)(3,2)(4,1)。"
+    },
+    {
+      "id": "mat_ma01_005",
+      "unit": "math.ma.prob.count.principle",
+      "category": "calculation",
+      "prompt": "n(A)=10、n(B)=8、n(A∩B)=3 のとき、n(A∪B) は？",
+      "choices": [
+        "18",
+        "15",
+        "21",
+        "13"
+      ],
+      "answerIndex": 1,
+      "explanation": "n(A)+n(B)−n(A∩B)。"
+    },
+    {
+      "id": "mat_ma01_006",
+      "unit": "math.ma.prob.count.combination",
+      "category": "calculation",
+      "prompt": "シャツ3枚とズボン4本から1つずつ選ぶ組み合わせは何通り？",
+      "choices": [
+        "24通り",
+        "81通り",
+        "12通り",
+        "7通り"
+      ],
+      "answerIndex": 2,
+      "explanation": "積の法則：3×4。"
+    },
+    {
+      "id": "mat_ma01_007",
+      "unit": "math.ma.prob.count",
+      "category": "calculation",
+      "prompt": "1から100までの整数のうち、3の倍数は何個？",
+      "choices": [
+        "32個",
+        "30個",
+        "34個",
+        "33個"
+      ],
+      "answerIndex": 3,
+      "explanation": "100÷3=33 余り1。"
+    },
+    {
+      "id": "mat_ma01_008",
+      "unit": "math.ma.prob.count.combination",
+      "category": "calculation",
+      "prompt": "6人から委員長と副委員長を1人ずつ選ぶ方法は何通り？",
+      "choices": [
+        "30通り",
+        "12通り",
+        "36通り",
+        "15通り"
+      ],
+      "answerIndex": 0,
+      "explanation": "役割が区別されるので ₆P₂。"
+    },
+    {
+      "id": "mat_ma01_009",
+      "unit": "math.ma.prob.count",
+      "category": "calculation",
+      "prompt": "₇C₃ の値は？",
+      "choices": [
+        "42",
+        "21",
+        "210",
+        "35"
+      ],
+      "answerIndex": 3,
+      "explanation": "(7×6×5)/(3×2×1)。"
+    },
+    {
+      "id": "mat_ma01_010",
+      "unit": "math.ma.prob.count.permutation",
+      "category": "thinking",
+      "prompt": "順列と組合せの違いは？",
+      "choices": [
+        "選んだものの順番を区別するかどうか",
+        "選ぶ個数が多いかどうか",
+        "数字を使うかどうか",
+        "同じものを何回でも選べるかどうか"
+      ],
+      "answerIndex": 0,
+      "explanation": "組合せは順番を区別しないので、順列を r! で割る。"
+    },
+    {
+      "id": "mat_ma01_011",
+      "unit": "math.ma.prob.count",
+      "category": "calculation",
+      "prompt": "₆P₃ の値は？",
+      "choices": [
+        "20",
+        "120",
+        "216",
+        "18"
+      ],
+      "answerIndex": 1,
+      "explanation": "6×5×4。"
+    },
+    {
+      "id": "mat_ma01_012",
+      "unit": "math.ma.prob.count.permutation",
+      "category": "calculation",
+      "prompt": "₆C₃ の値は？",
+      "choices": [
+        "36",
+        "120",
+        "18",
+        "20"
+      ],
+      "answerIndex": 3,
+      "explanation": "₆P₃÷3!=120÷6。"
+    },
+    {
+      "id": "mat_ma01_013",
+      "unit": "math.ma.prob.count.combination",
+      "category": "calculation",
+      "prompt": "₈C₆ の値は？",
+      "choices": [
+        "48",
+        "28",
+        "8",
+        "56"
+      ],
+      "answerIndex": 1,
+      "explanation": "₈C₆=₈C₂=(8×7)/2。"
+    },
+    {
+      "id": "mat_ma01_014",
+      "unit": "math.ma.prob.count",
+      "category": "calculation",
+      "prompt": "大小2個のさいころを投げて、目の和が10以上になる場合は何通り？",
+      "choices": [
+        "3通り",
+        "6通り",
+        "4通り",
+        "5通り"
+      ],
+      "answerIndex": 1,
+      "explanation": "和10：3通り、和11：2通り、和12：1通り。"
+    },
+    {
+      "id": "mat_ma01_015",
+      "unit": "math.ma.prob.count",
+      "category": "calculation",
+      "prompt": "1から50までの整数のうち、4の倍数は何個？",
+      "choices": [
+        "10個",
+        "13個",
+        "14個",
+        "12個"
+      ],
+      "answerIndex": 3,
+      "explanation": "50÷4=12 余り2。"
+    },
+    {
+      "id": "mat_ma01_016",
+      "unit": "math.ma.prob.count",
+      "category": "calculation",
+      "prompt": "1から100までの整数のうち、3または5の倍数は何個？",
+      "choices": [
+        "47個",
+        "39個",
+        "33個",
+        "53個"
+      ],
+      "answerIndex": 0,
+      "explanation": "33+20−（15の倍数6）。"
+    },
+    {
+      "id": "mat_ma01_017",
+      "unit": "math.ma.prob.count.combination",
+      "category": "calculation",
+      "prompt": "5人から3人を選ぶ方法は何通り？",
+      "choices": [
+        "20通り",
+        "60通り",
+        "15通り",
+        "10通り"
+      ],
+      "answerIndex": 3,
+      "explanation": "₅C₃。"
+    },
+    {
+      "id": "mat_ma01_018",
+      "unit": "math.ma.prob.count.combination",
+      "category": "calculation",
+      "prompt": "5人から班長・副班長・書記を1人ずつ選ぶ方法は何通り？",
+      "choices": [
+        "10通り",
+        "15通り",
+        "60通り",
+        "125通り"
+      ],
+      "answerIndex": 2,
+      "explanation": "役割が区別されるので ₅P₃。"
+    },
+    {
+      "id": "mat_ma01_019",
+      "unit": "math.ma.prob.count",
+      "category": "calculation",
+      "prompt": "1, 2, 3 の数字を1回ずつ使ってできる3けたの整数は何個？",
+      "choices": [
+        "6個",
+        "3個",
+        "9個",
+        "27個"
+      ],
+      "answerIndex": 0,
+      "explanation": "3!。"
+    },
+    {
+      "id": "mat_ma01_020",
+      "unit": "math.ma.prob.count",
+      "category": "calculation",
+      "prompt": "大・中・小3個のさいころを投げるとき、目の出方は全部で何通り？",
+      "choices": [
+        "56通り",
+        "18通り",
+        "36通り",
+        "216通り"
+      ],
+      "answerIndex": 3,
+      "explanation": "6³。"
+    }
+  ]
+}

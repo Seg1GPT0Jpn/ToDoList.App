@@ -1,0 +1,44 @@
+import 'package:flutter/widgets.dart';
+
+import '../app/theme.dart';
+
+/// ノートの紙（罫線＋赤い余白線）の背景。
+class NotebookPaper extends StatelessWidget {
+  const NotebookPaper({super.key, this.child, this.lineGap = 28});
+
+  final Widget? child;
+  final double lineGap;
+
+  @override
+  Widget build(BuildContext context) =>
+      CustomPaint(painter: _PaperPainter(lineGap), child: child);
+}
+
+class _PaperPainter extends CustomPainter {
+  _PaperPainter(this.gap) : dark = TsuzuriColors.dark;
+  final double gap;
+  final bool dark;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    canvas.drawRect(Offset.zero & size, Paint()..color = TsuzuriColors.paper);
+    // 白黒のとき（Light）は罫線を引かない無地の紙
+    if (TsuzuriColors.mono) return;
+    final line = Paint()
+      ..color = TsuzuriColors.gridLine
+      ..strokeWidth = 1;
+    for (var y = gap * 2; y < size.height; y += gap) {
+      canvas.drawLine(Offset(0, y), Offset(size.width, y), line);
+    }
+    canvas.drawLine(
+      const Offset(28, 0),
+      Offset(28, size.height),
+      Paint()
+        ..color = TsuzuriColors.marginLine
+        ..strokeWidth = 1.5,
+    );
+  }
+
+  @override
+  bool shouldRepaint(_PaperPainter old) => old.gap != gap || old.dark != dark;
+}

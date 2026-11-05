@@ -1,0 +1,951 @@
+{
+  "setId": "english_v4_01",
+  "worldId": "english",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "eng_v4_001",
+      "unit": "english.eng.vocab.synonym.synonym",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Can I (   ) your pen for a minute?",
+      "choices": [
+        "rent",
+        "lend",
+        "borrow",
+        "owe"
+      ],
+      "answerIndex": 2,
+      "explanation": "borrow は「（無料で）借りる」。lend は「貸す」、rent は「（お金を払って）借りる・貸す」、owe は「借りがある」。",
+      "difficulty": "basic",
+      "thinkingLevel": 2,
+      "commonMistakes": [
+        "lend（貸す）と取りちがえる"
+      ]
+    },
+    {
+      "id": "eng_v4_002",
+      "unit": "english.eng.vocab.synonym.synonym",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "What did she (   ) about the plan?",
+      "choices": [
+        "tell",
+        "talk",
+        "say",
+        "speak"
+      ],
+      "answerIndex": 2,
+      "explanation": "say は発言の内容を目的語にとる（say that 〜）。tell は「人に」話す（tell 人 that）。speak・talk は自動詞が基本。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "eng_v4_003",
+      "unit": "english.eng.vocab.synonym.synonym",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Please (   ) me about your trip.",
+      "choices": [
+        "tell",
+        "talk",
+        "say",
+        "speak"
+      ],
+      "answerIndex": 0,
+      "explanation": "tell + 人 + about 〜 で「人に〜について話す」。say は人を直接目的語にとらない（say to 人）。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "eng_v4_004",
+      "unit": "english.eng.vocab.synonym.synonym",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Prices continue to (   ) every year.",
+      "choices": [
+        "arouse",
+        "raise",
+        "arise",
+        "rise"
+      ],
+      "answerIndex": 3,
+      "explanation": "rise は自動詞「上がる」（rise-rose-risen）。raise は他動詞「上げる」で目的語が必要。",
+      "difficulty": "standard",
+      "thinkingLevel": 2,
+      "commonMistakes": [
+        "目的語がないのに他動詞 raise を選ぶ"
+      ]
+    },
+    {
+      "id": "eng_v4_005",
+      "unit": "english.eng.vocab.synonym.synonym",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "She will (   ) the baby on the bed.",
+      "choices": [
+        "laid",
+        "lay",
+        "lain",
+        "lie"
+      ],
+      "answerIndex": 1,
+      "explanation": "lay は他動詞「横たえる・置く」（lay-laid-laid）。目的語 the baby があるので lay。lie は自動詞「横たわる」。",
+      "difficulty": "advanced",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "eng_v4_006",
+      "unit": "english.eng.vocab.synonym.synonym",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "This song (   )s me of my childhood.",
+      "choices": [
+        "memorize",
+        "remind",
+        "recall",
+        "remember"
+      ],
+      "answerIndex": 1,
+      "explanation": "remind 人 of 〜 で「人に〜を思い出させる」。remember は自分が思い出す。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "eng_v4_007",
+      "unit": "english.eng.vocab.synonym.synonym",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "That color really (   ) you.",
+      "choices": [
+        "fits",
+        "suits",
+        "goes",
+        "matches"
+      ],
+      "answerIndex": 1,
+      "explanation": "suit は「（服・色などが）人に似合う」。fit はサイズが合う、match・go with は物どうしが合う。",
+      "difficulty": "advanced",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "eng_v4_008",
+      "unit": "english.eng.vocab.synonym.synonym",
+      "unitLocked": true,
+      "category": "meaning",
+      "prompt": "「economic」と「economical」の正しい組み合わせは？",
+      "choices": [
+        "economic＝経済の／economical＝節約になる",
+        "どちらも「節約になる」",
+        "どちらも「経済の」",
+        "economic＝節約になる／economical＝経済の"
+      ],
+      "answerIndex": 0,
+      "explanation": "-ic と -ical で意味が分かれる語。economic policy（経済政策）、an economical car（燃費のよい車）。historic（歴史的に重要な）／historical（歴史の）も同じ型。",
+      "difficulty": "advanced",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "eng_v4_009",
+      "unit": "english.eng.vocab.synonym.synonym",
+      "unitLocked": true,
+      "category": "meaning",
+      "prompt": "「increase」の反意語は？",
+      "choices": [
+        "include",
+        "decrease",
+        "raise",
+        "reduce"
+      ],
+      "answerIndex": 1,
+      "explanation": "increase（増える）⇔ decrease（減る）。reduce は他動詞「減らす」で近いが反意語の対は decrease。",
+      "difficulty": "basic",
+      "thinkingLevel": 1
+    },
+    {
+      "id": "eng_v4_010",
+      "unit": "english.eng.vocab.synonym.synonym",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He (   ) that we take a break.",
+      "choices": [
+        "told",
+        "advised",
+        "recommended to",
+        "suggested"
+      ],
+      "answerIndex": 3,
+      "explanation": "suggest は「人に〜するよう提案する」のとき suggest that S (should) do の形をとり、suggest 人 to do とは言えない。",
+      "difficulty": "advanced",
+      "thinkingLevel": 4
+    },
+    {
+      "id": "eng_v4_011",
+      "unit": "english.eng.grammar.adjadv.adjective",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He has (   ) friends, so he often feels lonely.",
+      "choices": [
+        "a little",
+        "little",
+        "few",
+        "much"
+      ],
+      "answerIndex": 2,
+      "explanation": "friends は数えられる名詞なので few（ほとんどない）。little は数えられない名詞に使う。",
+      "difficulty": "basic",
+      "thinkingLevel": 1
+    },
+    {
+      "id": "eng_v4_012",
+      "unit": "english.eng.grammar.adjadv.adjective",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "There is (   ) water left in the bottle.",
+      "choices": [
+        "a little",
+        "few",
+        "a few",
+        "many"
+      ],
+      "answerIndex": 0,
+      "explanation": "water は数えられない名詞。「少しある」は a little。",
+      "difficulty": "basic",
+      "thinkingLevel": 1
+    },
+    {
+      "id": "eng_v4_013",
+      "unit": "english.eng.grammar.adjadv.adverb",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I could (   ) hear him because of the noise.",
+      "choices": [
+        "hardly",
+        "harder",
+        "hardest",
+        "hard"
+      ],
+      "answerIndex": 0,
+      "explanation": "hardly は「ほとんど〜ない」という否定の副詞。hard は「熱心に・激しく」。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "eng_v4_014",
+      "unit": "english.eng.grammar.adjadv.adverb",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I haven't finished my homework (   ).",
+      "choices": [
+        "yet",
+        "still",
+        "already",
+        "ever"
+      ],
+      "answerIndex": 0,
+      "explanation": "否定文の「まだ〜していない」は yet。already は肯定文「もう〜した」。",
+      "difficulty": "basic",
+      "thinkingLevel": 1
+    },
+    {
+      "id": "eng_v4_015",
+      "unit": "english.eng.grammar.adjadv.adverb",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "It is (   ) raining outside.",
+      "choices": [
+        "yet",
+        "already",
+        "still",
+        "ago"
+      ],
+      "answerIndex": 2,
+      "explanation": "「まだ（ずっと）〜している」の継続は still。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "eng_v4_016",
+      "unit": "english.eng.grammar.adjadv.preposition",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "Please hand in the report (   ) Friday.",
+      "choices": [
+        "for",
+        "by",
+        "till",
+        "until"
+      ],
+      "answerIndex": 1,
+      "explanation": "by は「〜までに（期限）」、until / till は「〜まで（ずっと継続）」。提出は期限なので by。",
+      "difficulty": "standard",
+      "thinkingLevel": 2,
+      "commonMistakes": [
+        "until と by の区別（継続か期限か）"
+      ]
+    },
+    {
+      "id": "eng_v4_017",
+      "unit": "english.eng.grammar.adjadv.preposition",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "He left Tokyo (   ) the morning of May 5.",
+      "choices": [
+        "by",
+        "on",
+        "in",
+        "at"
+      ],
+      "answerIndex": 1,
+      "explanation": "特定の日の朝は on（on the morning of 〜）。in the morning は一般的な朝。",
+      "difficulty": "advanced",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "eng_v4_018",
+      "unit": "english.eng.grammar.adjadv.preposition",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "I fell asleep (   ) the movie.",
+      "choices": [
+        "during",
+        "for",
+        "since",
+        "while"
+      ],
+      "answerIndex": 0,
+      "explanation": "during の後ろは名詞（期間・できごと）。while の後ろは S＋V の節。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "eng_v4_019",
+      "unit": "english.eng.grammar.adjadv.adjective",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "(   ) に入る最も適切なものは？",
+      "sentence": "The fish is still (   ).",
+      "choices": [
+        "lively",
+        "living",
+        "alive",
+        "live"
+      ],
+      "answerIndex": 2,
+      "explanation": "alive は叙述用法（補語）だけで使う形容詞。名詞の前には living を使う。",
+      "difficulty": "advanced",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "eng_v4_020",
+      "unit": "english.eng.writing.sentence.translate",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「彼が来るかどうかわからない」に最も合う英文は？",
+      "choices": [
+        "I don't know whether he will come.",
+        "I don't know if he comes.",
+        "I don't know whether he comes or not will.",
+        "I don't know that he will come."
+      ],
+      "answerIndex": 0,
+      "explanation": "名詞節の whether / if の中は未来のことなら will を使う（時・条件の副詞節とちがう）。",
+      "difficulty": "standard",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "eng_v4_021",
+      "unit": "english.eng.writing.sentence.translate",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「私たちは彼に会うのを楽しみにしている」に最も合う英文は？",
+      "choices": [
+        "We look forward seeing him.",
+        "We are looking forward to seeing him.",
+        "We are looking forward for seeing him.",
+        "We are looking forward to see him."
+      ],
+      "answerIndex": 1,
+      "explanation": "look forward to 〜ing。to は前置詞なので動名詞。",
+      "difficulty": "basic",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "eng_v4_022",
+      "unit": "english.eng.writing.sentence.error",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "誤りをふくむ英文は？",
+      "choices": [
+        "She is used to getting up early.",
+        "She is used to get up early.",
+        "She got used to getting up early.",
+        "She used to get up early."
+      ],
+      "answerIndex": 1,
+      "explanation": "be used to 〜ing（〜に慣れている）。to の後ろは動名詞。used to do は「以前は〜した」。",
+      "difficulty": "standard",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "eng_v4_023",
+      "unit": "english.eng.writing.sentence.error",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "誤りをふくむ英文は？",
+      "choices": [
+        "Every student has a computer.",
+        "Each of the students have a computer.",
+        "Each of the students has a computer.",
+        "All of the students have a computer."
+      ],
+      "answerIndex": 1,
+      "explanation": "each of 〜 は単数扱いなので has。",
+      "difficulty": "standard",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "eng_v4_024",
+      "unit": "english.eng.writing.sentence.translate",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "「その本を読めば読むほど、おもしろくなった」に最も合う英文は？",
+      "choices": [
+        "The more I read the book, the most interesting it became.",
+        "The more I read the book, the more interesting it became.",
+        "More I read the book, more interesting it became.",
+        "The more I read the book, it became the more interesting."
+      ],
+      "answerIndex": 1,
+      "explanation": "「〜すればするほど…」は The 比較級 S V, the 比較級 S V。",
+      "difficulty": "advanced",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "eng_v4_025",
+      "unit": "english.eng.writing.sentence.translate",
+      "unitLocked": true,
+      "category": "usage",
+      "format": "written",
+      "prompt": "次の日本文を英語にせよ。",
+      "explanation": "模範解答は1例。主語と時制がそろっていれば、表現は多少ちがってもよい。",
+      "difficulty": "advanced",
+      "thinkingLevel": 4,
+      "sentence": "もし雨が降ったら、試合は延期されるだろう。",
+      "written": {
+        "kind": "composition",
+        "modelAnswer": "If it rains, the game will be put off.（the game will be postponed も可）",
+        "rubric": [
+          {
+            "point": "条件の副詞節を If it rains と現在形で書いている（will rain にしない）",
+            "score": 2
+          },
+          {
+            "point": "「延期される」を受動態（be put off / be postponed）で表している",
+            "score": 2
+          },
+          {
+            "point": "主節を will を使った未来で書いている",
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "eng_v4_026",
+      "unit": "english.eng.writing.essay.opinion",
+      "unitLocked": true,
+      "category": "usage",
+      "format": "written",
+      "prompt": "次の問いに対するあなたの意見を、理由を2つ挙げて英語で書け（50語程度）。",
+      "explanation": "意見文は「主張→理由1→理由2→まとめ」の順に書くと採点基準を満たしやすい。",
+      "difficulty": "advanced",
+      "thinkingLevel": 5,
+      "sentence": "Should high school students use smartphones in class?",
+      "written": {
+        "kind": "essay",
+        "modelAnswer": "I think high school students should be allowed to use smartphones in class. First, they can quickly look up information they do not understand. Second, they can use useful learning apps to review lessons. However, students should follow rules so that they are not distracted. (49 words)",
+        "rubric": [
+          {
+            "point": "最初に自分の立場（賛成・反対）をはっきり書いている",
+            "score": 2
+          },
+          {
+            "point": "理由を2つ、First / Second などで区別して書いている",
+            "score": 2
+          },
+          {
+            "point": "理由に具体的な内容（例・効果）がある",
+            "score": 2
+          },
+          {
+            "point": "時制・主語と動詞の一致・冠詞などに大きな誤りがない",
+            "score": 2
+          },
+          {
+            "point": "50語程度の分量になっている",
+            "score": 1
+          }
+        ],
+        "passScore": 6
+      },
+      "estimatedSeconds": 900,
+      "phase": "difficultUniv"
+    },
+    {
+      "id": "eng_v4_027",
+      "unit": "english.eng.writing.essay.opinion",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "意見文で、自分の意見と反対の考えにふれてから反論するときに使う表現は？",
+      "choices": [
+        "For example, ...",
+        "In conclusion, ...",
+        "In addition, ...",
+        "Some people may say ..., but ..."
+      ],
+      "answerIndex": 3,
+      "explanation": "「〜と言う人もいるかもしれないが…」で反対意見にふれ、but のあとで反論する（譲歩→反論）。説得力が増す。",
+      "difficulty": "standard",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "eng_v4_028",
+      "unit": "english.eng.writing.essay.opinion",
+      "unitLocked": true,
+      "category": "usage",
+      "prompt": "理由を追加するときの表現として最も適切なものは？",
+      "choices": [
+        "As a result,",
+        "In addition,",
+        "However,",
+        "On the other hand,"
+      ],
+      "answerIndex": 1,
+      "explanation": "In addition / Moreover / Besides で理由を追加。On the other hand は対比、As a result は結果、However は逆接。",
+      "difficulty": "basic",
+      "thinkingLevel": 1
+    },
+    {
+      "id": "eng_v4_029",
+      "unit": "english.eng.writing.essay.summary",
+      "unitLocked": true,
+      "category": "reading",
+      "prompt": "英文の要約として最も適切なものは？",
+      "sentence": "Several studies have compared reading on paper and on screens. When readers were asked about details and the order of events, those who read on paper tended to do better. Researchers think the physical feel of pages helps readers build a mental map of the text.",
+      "choices": [
+        "Reading on paper helps people remember details better than reading on screens.",
+        "People should stop using digital devices.",
+        "Paper books are more expensive than e-books.",
+        "Screens are always worse than paper for every purpose."
+      ],
+      "answerIndex": 0,
+      "explanation": "要約は本文の主張を一文でまとめ、具体例や言いすぎ（always・every）は入れない。",
+      "difficulty": "advanced",
+      "thinkingLevel": 4
+    },
+    {
+      "id": "eng_v4_030",
+      "unit": "english.eng.writing.essay.summary",
+      "unitLocked": true,
+      "category": "reading",
+      "format": "written",
+      "prompt": "次の英文の内容を、日本語40字以内で要約せよ。",
+      "explanation": "要約では、具体例や数字は省き、筆者の言いたいことを一文にまとめる。",
+      "difficulty": "advanced",
+      "thinkingLevel": 5,
+      "sentence": "Many people believe that talent decides success. However, research on experts shows that years of focused practice, with clear goals and feedback, matter much more. Talent may help at first, but practice is what makes the difference in the end.",
+      "written": {
+        "kind": "summary",
+        "modelAnswer": "成功を決めるのは才能よりも、目標とフィードバックのある長年の練習である。",
+        "rubric": [
+          {
+            "point": "「才能より練習」という対比をとらえている",
+            "score": 2
+          },
+          {
+            "point": "練習の条件（目標・フィードバック・集中）にふれている",
+            "score": 1
+          },
+          {
+            "point": "40字以内で、具体例を入れずにまとめている",
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "eng_v4_031",
+      "unit": "english.eng.reading.intensive.structure",
+      "unitLocked": true,
+      "category": "reading",
+      "prompt": "下の英文の主語（文の主部）は？",
+      "sentence": "What surprised me most was the fact that nobody noticed the mistake.",
+      "choices": [
+        "the fact",
+        "most",
+        "What surprised me most",
+        "me"
+      ],
+      "answerIndex": 2,
+      "explanation": "What surprised me most（私をいちばん驚かせたこと）が名詞節の主語で、動詞は was。",
+      "difficulty": "standard",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "eng_v4_032",
+      "unit": "english.eng.reading.intensive.structure",
+      "unitLocked": true,
+      "category": "reading",
+      "prompt": "下の英文の意味として最も適切なものは？",
+      "sentence": "What she said was not as simple as I had expected.",
+      "choices": [
+        "彼女が言ったことは、思っていたほど簡単ではなかった。",
+        "彼女は、それが思ったより簡単だと言った。",
+        "彼女は簡単なことしか言わなかった。",
+        "彼女が言ったので、それは簡単になった。"
+      ],
+      "answerIndex": 0,
+      "explanation": "not as 形容詞 as I had expected＝「思っていたほど〜ではない」。主語は What she said。",
+      "difficulty": "standard",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "eng_v4_033",
+      "unit": "english.eng.reading.intensive.reference",
+      "unitLocked": true,
+      "category": "reading",
+      "prompt": "下線の it が指すものは？",
+      "sentence": "I found it useful to keep a diary in English.",
+      "choices": [
+        "English",
+        "the habit",
+        "to keep a diary in English",
+        "a diary"
+      ],
+      "answerIndex": 2,
+      "explanation": "形式主語 it の真主語は to 以下（to keep a diary in English）。",
+      "difficulty": "standard",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "eng_v4_034",
+      "unit": "english.eng.reading.intensive.structure",
+      "unitLocked": true,
+      "category": "reading",
+      "prompt": "下の英文の意味として最も適切なものは？",
+      "sentence": "Not until he finished the book did he realize the truth.",
+      "choices": [
+        "その本を読まなかったので、彼は真実に気づかなかった。",
+        "その本を読み終えて初めて、彼は真実に気づいた。",
+        "彼は真実に気づいたので、本を読むのをやめた。",
+        "彼はその本を読み終えるまで、真実に気づいていた。"
+      ],
+      "answerIndex": 1,
+      "explanation": "Not until 〜 did S V（倒置）＝「〜して初めてSはVした」。It was not until 〜 that … と同じ意味。",
+      "difficulty": "advanced",
+      "thinkingLevel": 4
+    },
+    {
+      "id": "eng_v4_035",
+      "unit": "english.eng.reading.intensive.structure",
+      "unitLocked": true,
+      "category": "reading",
+      "prompt": "下の英文で、that 以下の節が修飾している語は？",
+      "sentence": "Many people find it difficult to accept the idea that failure is part of learning.",
+      "choices": [
+        "accept",
+        "the idea",
+        "people",
+        "difficult"
+      ],
+      "answerIndex": 1,
+      "explanation": "the idea that 〜 は同格の that 節で「〜という考え」。",
+      "difficulty": "advanced",
+      "thinkingLevel": 4
+    },
+    {
+      "id": "eng_v4_036",
+      "unit": "english.eng.reading.practical.notice",
+      "unitLocked": true,
+      "category": "reading",
+      "prompt": "このお知らせの内容と合うものは？",
+      "sentence": "City Library Summer Event\nDate: August 3 (Sat) 10:00–12:00\nPlace: Room B, 2nd floor\nFee: Free for members / 300 yen for non-members\nPlease sign up at the front desk by July 31.",
+      "choices": [
+        "会場は1階である。",
+        "申し込みは当日でもよい。",
+        "会員なら無料で参加できる。",
+        "イベントは午後に行われる。"
+      ],
+      "answerIndex": 2,
+      "explanation": "Fee の行に Free for members とある。時間は午前、締め切りは7月31日、会場は2階。",
+      "difficulty": "basic",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "eng_v4_037",
+      "unit": "english.eng.reading.practical.notice",
+      "unitLocked": true,
+      "category": "reading",
+      "prompt": "会員でない人が参加するには、いつまでに何をする必要がある？",
+      "sentence": "City Library Summer Event\nDate: August 3 (Sat) 10:00–12:00\nPlace: Room B, 2nd floor\nFee: Free for members / 300 yen for non-members\nPlease sign up at the front desk by July 31.",
+      "choices": [
+        "7月31日までにメールで申し込む。",
+        "7月31日までに受付で申し込み、300円はらう。",
+        "8月3日に受付で申し込む。",
+        "何もしなくてよい。"
+      ],
+      "answerIndex": 1,
+      "explanation": "sign up at the front desk by July 31、非会員の参加費は300円。",
+      "difficulty": "standard",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "eng_v4_038",
+      "unit": "english.eng.reading.practical.chart",
+      "unitLocked": true,
+      "category": "reading",
+      "prompt": "グラフから言えることとして最も適切なものは？",
+      "choices": [
+        "E-book users were more than paper book users in 2020.",
+        "Paper book users increased every year.",
+        "The number of e-book users more than doubled from 2020 to 2024.",
+        "Both groups decreased in 2024."
+      ],
+      "answerIndex": 2,
+      "explanation": "電子書籍は 20→45 で2倍以上。紙の本は減少している。",
+      "difficulty": "standard",
+      "thinkingLevel": 3,
+      "figure": {
+        "chart": "line",
+        "labels": [
+          "2020",
+          "2022",
+          "2024"
+        ],
+        "series": [
+          {
+            "name": "paper",
+            "values": [
+              60,
+              52,
+              40
+            ]
+          },
+          {
+            "name": "e-book",
+            "values": [
+              20,
+              33,
+              45
+            ]
+          }
+        ],
+        "unit": "%"
+      }
+    },
+    {
+      "id": "eng_v4_039",
+      "unit": "english.eng.reading.practical.multiple",
+      "unitLocked": true,
+      "category": "reading",
+      "prompt": "2つのメールから分かることは？",
+      "sentence": "Email 1: The team meeting will be held on Wednesday in Room 5.\nEmail 2: Sorry, the meeting has been moved to Tuesday. The room is the same.",
+      "choices": [
+        "会議は火曜日に変更された。",
+        "会議は中止になった。",
+        "会議の場所が変わった。",
+        "会議は水曜日のままである。"
+      ],
+      "answerIndex": 0,
+      "explanation": "1通目は水曜日の会議の案内、2通目で Tuesday に変更（Room 5 は同じ）。複数の資料は、あとの情報で前の情報が更新されていないかを確かめる。",
+      "difficulty": "standard",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "eng_v4_040",
+      "unit": "english.eng.exam.common.reading",
+      "unitLocked": true,
+      "category": "reading",
+      "prompt": "Kenta の条件に合う選択肢は？",
+      "sentence": "Kenta is planning a trip with his friends. Option A: a two-day camping trip by the lake (cost: 8,000 yen, bring your own tent). Option B: a one-day bus tour to the mountains (cost: 6,500 yen, lunch included). Option C: a two-day stay at a hot spring hotel (cost: 15,000 yen, all meals included). Kenta wants to stay overnight but spend less than 10,000 yen.",
+      "choices": [
+        "Option B",
+        "Option C",
+        "Option A",
+        "どれも合わない"
+      ],
+      "answerIndex": 2,
+      "explanation": "条件は「泊まる（2日）」かつ「1万円未満」。A は2日で8,000円。B は日帰り、C は15,000円。",
+      "difficulty": "standard",
+      "thinkingLevel": 3
+    },
+    {
+      "id": "eng_v4_041",
+      "unit": "english.eng.exam.common.reading",
+      "unitLocked": true,
+      "category": "reading",
+      "prompt": "Option A に参加するときに必要なことは？",
+      "sentence": "Kenta is planning a trip with his friends. Option A: a two-day camping trip by the lake (cost: 8,000 yen, bring your own tent). Option B: a one-day bus tour to the mountains (cost: 6,500 yen, lunch included). Option C: a two-day stay at a hot spring hotel (cost: 15,000 yen, all meals included). Kenta wants to stay overnight but spend less than 10,000 yen.",
+      "choices": [
+        "テントを自分で持っていく。",
+        "昼食代をはらう。",
+        "バスを予約する。",
+        "ホテルに泊まる。"
+      ],
+      "answerIndex": 0,
+      "explanation": "bring your own tent とある。",
+      "difficulty": "basic",
+      "thinkingLevel": 2
+    },
+    {
+      "id": "eng_v4_042",
+      "unit": "english.eng.exam.common.reading",
+      "unitLocked": true,
+      "category": "reading",
+      "prompt": "本文の内容から推測できることとして最も適切なものは？",
+      "sentence": "Kenta is planning a trip with his friends. Option A: a two-day camping trip by the lake (cost: 8,000 yen, bring your own tent). Option B: a one-day bus tour to the mountains (cost: 6,500 yen, lunch included). Option C: a two-day stay at a hot spring hotel (cost: 15,000 yen, all meals included). Kenta wants to stay overnight but spend less than 10,000 yen.",
+      "choices": [
+        "Option C がいちばん安い。",
+        "Kenta は温泉に行くことに決めた。",
+        "Option B の料金には昼食が含まれているので、食費をおさえたい人に向いている。",
+        "Option A は日帰りである。"
+      ],
+      "answerIndex": 2,
+      "explanation": "lunch included から推測できる。推測問題でも、本文に根拠がある選択肢を選ぶ。",
+      "difficulty": "standard",
+      "thinkingLevel": 4
+    },
+    {
+      "id": "eng_v4_043",
+      "unit": "english.eng.exam.advanced.synthesis",
+      "unitLocked": true,
+      "category": "reading",
+      "prompt": "筆者の主張として最も適切なものは？",
+      "sentence": "Some argue that technology makes us lonelier, because people spend more time looking at screens than talking face to face. Yet this view overlooks how technology also allows people who are isolated—by distance, illness, or shyness—to form communities they could never have joined before. The question, then, is not whether technology connects or isolates us, but how we choose to use it.",
+      "choices": [
+        "対面で話すことはもう必要ない。",
+        "技術は孤立した人だけを救う。",
+        "技術がつながりを生むか孤立を生むかは、使い方しだいである。",
+        "技術は人を孤独にする。"
+      ],
+      "answerIndex": 2,
+      "explanation": "Some argue… Yet… The question, then, is not A but B の流れ。筆者の主張は最後の not whether … but how we choose to use it。",
+      "difficulty": "advanced",
+      "thinkingLevel": 5,
+      "phase": "difficultUniv"
+    },
+    {
+      "id": "eng_v4_044",
+      "unit": "english.eng.exam.advanced.synthesis",
+      "unitLocked": true,
+      "category": "reading",
+      "prompt": "overlooks の意味に最も近いものは？",
+      "sentence": "Some argue that technology makes us lonelier, because people spend more time looking at screens than talking face to face. Yet this view overlooks how technology also allows people who are isolated—by distance, illness, or shyness—to form communities they could never have joined before. The question, then, is not whether technology connects or isolates us, but how we choose to use it.",
+      "choices": [
+        "looks down on",
+        "explains",
+        "fails to notice",
+        "supervises"
+      ],
+      "answerIndex": 2,
+      "explanation": "overlook は「見落とす」。文脈：技術が孤立した人をつなぐ面を見落としている。",
+      "difficulty": "advanced",
+      "thinkingLevel": 4
+    },
+    {
+      "id": "eng_v4_045",
+      "unit": "english.eng.exam.advanced.synthesis",
+      "unitLocked": true,
+      "category": "reading",
+      "prompt": "—by distance, illness, or shyness— が説明しているものは？",
+      "sentence": "Some argue that technology makes us lonelier, because people spend more time looking at screens than talking face to face. Yet this view overlooks how technology also allows people who are isolated—by distance, illness, or shyness—to form communities they could never have joined before. The question, then, is not whether technology connects or isolates us, but how we choose to use it.",
+      "choices": [
+        "会話の方法",
+        "技術の種類",
+        "人が孤立している理由",
+        "共同体の名前"
+      ],
+      "answerIndex": 2,
+      "explanation": "isolated（孤立した）の原因を具体的に挙げている挿入句。",
+      "difficulty": "advanced",
+      "thinkingLevel": 4
+    },
+    {
+      "id": "eng_v4_046",
+      "unit": "english.eng.exam.advanced.synthesis",
+      "unitLocked": true,
+      "category": "reading",
+      "prompt": "本文の論理展開として最も適切なものは？",
+      "sentence": "Some argue that technology makes us lonelier, because people spend more time looking at screens than talking face to face. Yet this view overlooks how technology also allows people who are isolated—by distance, illness, or shyness—to form communities they could never have joined before. The question, then, is not whether technology connects or isolates us, but how we choose to use it.",
+      "choices": [
+        "歴史的な経過を時系列で説明している。",
+        "具体例を並べたあと、結論を保留している。",
+        "2つの意見を比べて、多数派を支持している。",
+        "一般的な意見を紹介し、その見落としを指摘して、問いを立て直している。"
+      ],
+      "answerIndex": 3,
+      "explanation": "Some argue（一般論）→ Yet（反論・見落とし）→ The question, then, is not … but …（問いの立て直し）。",
+      "difficulty": "advanced",
+      "thinkingLevel": 6,
+      "phase": "topUniv",
+      "axes": {
+        "reading": 4,
+        "thinking": 4
+      }
+    },
+    {
+      "id": "eng_v4_047",
+      "unit": "english.eng.exam.advanced.synthesis",
+      "unitLocked": true,
+      "category": "reading",
+      "format": "written",
+      "prompt": "下の英文の下線部（The question, then, is not whether technology connects or isolates us, but how we choose to use it.）を和訳せよ。",
+      "explanation": "not A but B（AではなくB）と whether（〜かどうか）、how（どのように〜か）の名詞節を正しく訳す。",
+      "difficulty": "advanced",
+      "thinkingLevel": 6,
+      "phase": "topUniv",
+      "sentence": "Some argue that technology makes us lonelier, because people spend more time looking at screens than talking face to face. Yet this view overlooks how technology also allows people who are isolated—by distance, illness, or shyness—to form communities they could never have joined before. The question, then, is not whether technology connects or isolates us, but how we choose to use it.",
+      "written": {
+        "kind": "translation",
+        "modelAnswer": "したがって問題は、技術が私たちをつなぐのか孤立させるのかではなく、私たちがそれをどのように使うことを選ぶのかということである。",
+        "rubric": [
+          {
+            "point": "not A but B を「AではなくB」と訳している",
+            "score": 2
+          },
+          {
+            "point": "whether … or … を「…か…か」と訳している",
+            "score": 2
+          },
+          {
+            "point": "how we choose to use it を「どのように使うことを選ぶか」と訳している",
+            "score": 2
+          },
+          {
+            "point": "then を「したがって・それでは」として訳している",
+            "score": 1
+          }
+        ],
+        "passScore": 5
+      }
+    }
+  ]
+}

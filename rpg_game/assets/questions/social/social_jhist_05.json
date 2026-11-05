@@ -1,0 +1,344 @@
+{
+  "setId": "social_jhist_05",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "soc_jhist05_001",
+      "unit": "social.jhist.ancient.insei.insei",
+      "category": "knowledge",
+      "prompt": "天皇が位をゆずって上皇となったあとも、政治の実権をにぎる政治は？",
+      "choices": [
+        "院政",
+        "摂関政治",
+        "執権政治",
+        "親政"
+      ],
+      "answerIndex": 0,
+      "explanation": "1086 年に白河上皇が始めた。"
+    },
+    {
+      "id": "soc_jhist05_002",
+      "unit": "social.jhist.ancient.insei.insei",
+      "category": "knowledge",
+      "prompt": "院政を始めた上皇は？",
+      "choices": [
+        "後鳥羽上皇",
+        "白河上皇",
+        "鳥羽上皇",
+        "後白河上皇"
+      ],
+      "answerIndex": 1,
+      "explanation": "藤原氏と関係のうすい後三条天皇の子。"
+    },
+    {
+      "id": "soc_jhist05_003",
+      "unit": "social.jhist.ancient.insei",
+      "category": "knowledge",
+      "prompt": "1156 年、天皇家や藤原氏の争いに武士が動員された戦いは？",
+      "choices": [
+        "承久の乱",
+        "壇ノ浦の戦い",
+        "平治の乱",
+        "保元の乱"
+      ],
+      "answerIndex": 3,
+      "explanation": "武士の力が政治を動かすようになった。"
+    },
+    {
+      "id": "soc_jhist05_004",
+      "unit": "social.jhist.ancient.insei.taira",
+      "category": "knowledge",
+      "prompt": "1159 年、平清盛が源義朝を破った戦いは？",
+      "choices": [
+        "平治の乱",
+        "保元の乱",
+        "応仁の乱",
+        "承久の乱"
+      ],
+      "answerIndex": 0,
+      "explanation": "これで平氏が勢力を強めた。"
+    },
+    {
+      "id": "soc_jhist05_005",
+      "unit": "social.jhist.ancient.insei",
+      "category": "knowledge",
+      "prompt": "武士として初めて太政大臣になった人物は？",
+      "choices": [
+        "平清盛",
+        "豊臣秀吉",
+        "足利尊氏",
+        "源頼朝"
+      ],
+      "answerIndex": 0,
+      "explanation": "1167 年。娘を天皇のきさきにするなど、藤原氏と似た政治も行った。"
+    },
+    {
+      "id": "soc_jhist05_006",
+      "unit": "social.jhist.ancient.insei.taira",
+      "category": "knowledge",
+      "prompt": "平清盛が大輪田泊（今の神戸港）を整備して行った貿易は？",
+      "choices": [
+        "南蛮貿易",
+        "日宋貿易",
+        "朱印船貿易",
+        "日明貿易"
+      ],
+      "answerIndex": 1,
+      "explanation": "宋銭が大量に輸入された。"
+    },
+    {
+      "id": "soc_jhist05_007",
+      "unit": "social.jhist.ancient.insei",
+      "category": "knowledge",
+      "prompt": "平氏が信仰し、清盛が社殿を整えた広島県の神社は？",
+      "choices": [
+        "出雲大社",
+        "日光東照宮",
+        "厳島神社",
+        "伊勢神宮"
+      ],
+      "answerIndex": 2,
+      "explanation": "海の上に建つ社殿が有名。"
+    },
+    {
+      "id": "soc_jhist05_008",
+      "unit": "social.jhist.ancient.insei",
+      "category": "knowledge",
+      "prompt": "1185 年、源義経らが平氏をほろぼした戦いは？",
+      "choices": [
+        "壇ノ浦の戦い",
+        "屋島の戦い",
+        "一ノ谷の戦い",
+        "石橋山の戦い"
+      ],
+      "answerIndex": 0,
+      "explanation": "現在の山口県下関市。"
+    },
+    {
+      "id": "soc_jhist05_009",
+      "unit": "social.jhist.ancient.insei",
+      "category": "knowledge",
+      "prompt": "貴族や寺社の私有地で、税をまぬがれるなどの特権をもつものは？",
+      "choices": [
+        "班田",
+        "公領（国衙領）",
+        "荘園",
+        "口分田"
+      ],
+      "answerIndex": 2,
+      "explanation": "有力者に寄進して保護を受けた（寄進地系荘園）。"
+    },
+    {
+      "id": "soc_jhist05_010",
+      "unit": "social.jhist.ancient.insei",
+      "category": "knowledge",
+      "prompt": "東北地方で奥州藤原氏が拠点とし、中尊寺金色堂が建てられた地は？",
+      "choices": [
+        "大宰府",
+        "鎌倉",
+        "多賀城",
+        "平泉"
+      ],
+      "answerIndex": 3,
+      "explanation": "金や馬の産地で栄えた。"
+    },
+    {
+      "id": "soc_jhist05_011",
+      "unit": "social.jhist.ancient.insei",
+      "category": "thinking",
+      "prompt": "平安時代の後半に武士が力をつけた理由として適切なものは？",
+      "choices": [
+        "天皇が武士を禁止したから",
+        "都で農業がさかんになったから",
+        "外国が武士を送りこんだから",
+        "地方の治安が乱れ、土地を守るために武装した者たちが団結したから"
+      ],
+      "answerIndex": 3,
+      "explanation": "源氏・平氏などの武士団が成長した。"
+    },
+    {
+      "id": "soc_jhist05_012",
+      "unit": "social.jhist.ancient.insei",
+      "category": "thinking",
+      "prompt": "平氏政権が短期間で倒れた理由として適切なものは？",
+      "choices": [
+        "都を移さなかったから",
+        "武士を大切にしすぎたから",
+        "朝廷の高い官職を一族で独占し、貴族や他の武士の反発を受けたから",
+        "貿易をまったく行わなかったから"
+      ],
+      "answerIndex": 2,
+      "explanation": "「平家にあらずんば人にあらず」と言われるほどの独占が反感を招いた。"
+    },
+    {
+      "id": "soc_jhist05_013",
+      "unit": "social.jhist.ancient.insei.insei",
+      "category": "knowledge",
+      "prompt": "院政を行う上皇のもとで警備にあたった武士を何という？",
+      "choices": [
+        "防人",
+        "旗本",
+        "御家人",
+        "北面の武士"
+      ],
+      "answerIndex": 3,
+      "explanation": "白河上皇が置いた。"
+    },
+    {
+      "id": "soc_jhist05_014",
+      "unit": "social.jhist.ancient.insei.war",
+      "category": "knowledge",
+      "prompt": "平治の乱で敗れた源義朝の子で、伊豆に流されたのは？",
+      "choices": [
+        "源頼家",
+        "源義経",
+        "源頼朝",
+        "源実朝"
+      ],
+      "answerIndex": 2,
+      "explanation": "のちに挙兵して鎌倉幕府を開く。"
+    },
+    {
+      "id": "soc_jhist05_015",
+      "unit": "social.jhist.ancient.insei.taira",
+      "category": "knowledge",
+      "prompt": "1180 年、源頼朝が伊豆で挙兵したあとの一連の戦いを何という？",
+      "choices": [
+        "応仁の乱",
+        "承久の乱",
+        "戊辰戦争",
+        "治承・寿永の乱（源平の争乱）"
+      ],
+      "answerIndex": 3,
+      "explanation": "1185 年の壇ノ浦の戦いで終わる。"
+    },
+    {
+      "id": "soc_jhist05_016",
+      "unit": "social.jhist.ancient.insei",
+      "category": "knowledge",
+      "prompt": "源義経が平氏を破った戦いのうち、「鵯越の逆落とし」で知られるのは？",
+      "choices": [
+        "石橋山の戦い",
+        "屋島の戦い",
+        "壇ノ浦の戦い",
+        "一の谷の戦い"
+      ],
+      "answerIndex": 3,
+      "explanation": "1184 年、摂津国。"
+    },
+    {
+      "id": "soc_jhist05_017",
+      "unit": "social.jhist.ancient.insei.taira",
+      "category": "knowledge",
+      "prompt": "平清盛が交易のために整備した港は？",
+      "choices": [
+        "長崎",
+        "大輪田泊",
+        "博多",
+        "堺"
+      ],
+      "answerIndex": 1,
+      "explanation": "宋との貿易で宋銭を大量に輸入した。"
+    },
+    {
+      "id": "soc_jhist05_018",
+      "unit": "social.jhist.ancient.insei.taira",
+      "category": "knowledge",
+      "prompt": "日宋貿易で輸入され、国内で広く使われた貨幣は？",
+      "choices": [
+        "明銭",
+        "寛永通宝",
+        "宋銭",
+        "和同開珎"
+      ],
+      "answerIndex": 2,
+      "explanation": "貨幣経済の発達につながった。"
+    },
+    {
+      "id": "soc_jhist05_019",
+      "unit": "social.jhist.ancient.insei.taira",
+      "category": "knowledge",
+      "prompt": "平清盛が、娘の徳子を嫁がせた天皇は？",
+      "choices": [
+        "白河天皇",
+        "高倉天皇",
+        "後鳥羽天皇",
+        "後白河天皇"
+      ],
+      "answerIndex": 1,
+      "explanation": "生まれた皇子が安徳天皇として即位し、清盛は天皇の外戚として力をふるった。"
+    },
+    {
+      "id": "soc_jhist05_020",
+      "unit": "social.jhist.ancient.insei",
+      "category": "knowledge",
+      "prompt": "11 世紀後半、東北地方で起こり、源義家が活躍した戦いは？",
+      "choices": [
+        "保元の乱",
+        "前九年合戦・後三年合戦",
+        "承久の乱",
+        "壇ノ浦の戦い"
+      ],
+      "answerIndex": 1,
+      "explanation": "源氏が東国の武士の信頼を得るきっかけになった。"
+    },
+    {
+      "id": "soc_jhist05_021",
+      "unit": "social.jhist.ancient.insei.insei",
+      "category": "knowledge",
+      "prompt": "僧兵を率いて朝廷に強訴を行った大寺院の例は？",
+      "choices": [
+        "金閣・銀閣",
+        "平等院・中尊寺",
+        "延暦寺・興福寺",
+        "法隆寺・唐招提寺"
+      ],
+      "answerIndex": 2,
+      "explanation": "白河上皇が思いどおりにならないものとして挙げた。"
+    },
+    {
+      "id": "soc_jhist05_022",
+      "unit": "social.jhist.ancient.insei",
+      "category": "knowledge",
+      "prompt": "平氏一門が栄えたときの「平氏にあらずんば人にあらず」という言葉を残したとされる人物は？",
+      "choices": [
+        "平将門",
+        "平重盛",
+        "平時忠",
+        "平清盛"
+      ],
+      "answerIndex": 2,
+      "explanation": "『平家物語』に記される。"
+    },
+    {
+      "id": "soc_jhist05_023",
+      "unit": "social.jhist.ancient.insei.insei",
+      "category": "thinking",
+      "prompt": "院政が始まった理由として適切なものは？",
+      "choices": [
+        "天皇の父方の上皇が、摂関家をおさえて政治の実権をにぎろうとしたから",
+        "武士が政治を行ったから",
+        "天皇がいなくなったから",
+        "中国にならったから"
+      ],
+      "answerIndex": 0,
+      "explanation": "藤原氏と外戚関係のない後三条天皇のあとに始まった。"
+    },
+    {
+      "id": "soc_jhist05_024",
+      "unit": "social.jhist.ancient.insei.taira",
+      "category": "knowledge",
+      "prompt": "源平の争乱で、源義経らが平氏を破った戦いを起こった順に並べたものは？",
+      "choices": [
+        "一の谷 → 壇ノ浦 → 屋島",
+        "壇ノ浦 → 屋島 → 一の谷",
+        "屋島 → 一の谷 → 壇ノ浦",
+        "一の谷 → 屋島 → 壇ノ浦"
+      ],
+      "answerIndex": 3,
+      "explanation": "1184 年一の谷、1185 年屋島、同年壇ノ浦で平氏は滅んだ。"
+    }
+  ]
+}

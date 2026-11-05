@@ -1,0 +1,246 @@
+{
+  "setId": "music_chou_05",
+  "worldId": "music",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mus_chou05_001",
+      "unit": "music.theory.key.relation",
+      "category": "knowledge",
+      "prompt": "同じ音を主音とする長調と短調の関係を何という？",
+      "choices": [
+        "下属調",
+        "属調",
+        "同主調",
+        "平行調"
+      ],
+      "answerIndex": 2,
+      "explanation": "例：ハ長調とハ短調。"
+    },
+    {
+      "id": "mus_chou05_002",
+      "unit": "music.theory.key.relation",
+      "category": "knowledge",
+      "prompt": "同じ調号をもつ長調と短調の関係を何という？",
+      "choices": [
+        "平行調",
+        "遠隔調",
+        "属調",
+        "同主調"
+      ],
+      "answerIndex": 0,
+      "explanation": "例：ハ長調とイ短調。"
+    },
+    {
+      "id": "mus_chou05_003",
+      "unit": "music.theory.key.relation.parallel",
+      "category": "knowledge",
+      "prompt": "平行調の長調と短調で共通しているものは？",
+      "choices": [
+        "属音",
+        "導音",
+        "調号（音階固有の音）",
+        "主音"
+      ],
+      "answerIndex": 2,
+      "explanation": "平行調は音階にふくまれる音が共通。"
+    },
+    {
+      "id": "mus_chou05_004",
+      "unit": "music.theory.key.relation.parallel",
+      "category": "knowledge",
+      "prompt": "同主調で同じ音になるものとして正しい組み合わせは？",
+      "choices": [
+        "音階のすべての音",
+        "調号",
+        "主音・下属音・属音・導音",
+        "第Ⅲ音と第Ⅵ音"
+      ],
+      "answerIndex": 2,
+      "explanation": "同主調は調号は異なるが、Ⅰ・Ⅳ・Ⅴと導音は同じ。"
+    },
+    {
+      "id": "mus_chou05_005",
+      "unit": "music.theory.key.relation.parallel",
+      "category": "thinking",
+      "prompt": "h moll の平行調は？",
+      "choices": [
+        "E dur",
+        "H dur",
+        "fis moll",
+        "D dur"
+      ],
+      "answerIndex": 3,
+      "explanation": "h mollとD durは同じ調号（♯2個）。"
+    },
+    {
+      "id": "mus_chou05_006",
+      "unit": "music.theory.key.relation.parallel",
+      "category": "thinking",
+      "prompt": "Es dur の平行調は？",
+      "choices": [
+        "c moll",
+        "es moll",
+        "as moll",
+        "B dur"
+      ],
+      "answerIndex": 0,
+      "explanation": "Es durとc mollは同じ調号（♭3個）。"
+    },
+    {
+      "id": "mus_chou05_007",
+      "unit": "music.theory.key.relation.parallel",
+      "category": "thinking",
+      "prompt": "A dur の平行調は？",
+      "choices": [
+        "E dur",
+        "d moll",
+        "a moll",
+        "fis moll"
+      ],
+      "answerIndex": 3,
+      "explanation": "A durとfis mollは同じ調号（♯3個）。"
+    },
+    {
+      "id": "mus_chou05_008",
+      "unit": "music.theory.key.relation.parallel",
+      "category": "thinking",
+      "prompt": "d moll の平行調は？",
+      "choices": [
+        "D dur",
+        "F dur",
+        "G dur",
+        "a moll"
+      ],
+      "answerIndex": 1,
+      "explanation": "d mollとF durは同じ調号（♭1個）。"
+    },
+    {
+      "id": "mus_chou05_009",
+      "unit": "music.theory.key.relation.parallel",
+      "category": "thinking",
+      "prompt": "F dur の平行調は？",
+      "choices": [
+        "b moll",
+        "C dur",
+        "f moll",
+        "d moll"
+      ],
+      "answerIndex": 3,
+      "explanation": "F durとd mollは同じ調号（♭1個）。"
+    },
+    {
+      "id": "mus_chou05_010",
+      "unit": "music.theory.key.relation.parallel",
+      "category": "thinking",
+      "prompt": "g moll の平行調は？",
+      "choices": [
+        "C dur",
+        "d moll",
+        "G dur",
+        "B dur"
+      ],
+      "answerIndex": 3,
+      "explanation": "g mollとB durは同じ調号（♭2個）。"
+    },
+    {
+      "id": "mus_chou05_011",
+      "unit": "music.theory.key.relation.parallel",
+      "category": "thinking",
+      "prompt": "E dur の平行調は？",
+      "choices": [
+        "a moll",
+        "H dur",
+        "cis moll",
+        "e moll"
+      ],
+      "answerIndex": 2,
+      "explanation": "E durとcis mollは同じ調号（♯4個）。"
+    },
+    {
+      "id": "mus_chou05_012",
+      "unit": "music.theory.key.relation.parallel",
+      "category": "thinking",
+      "prompt": "cis moll の平行調は？",
+      "choices": [
+        "gis moll",
+        "Cis dur",
+        "Fis dur",
+        "E dur"
+      ],
+      "answerIndex": 3,
+      "explanation": "cis mollとE durは同じ調号（♯4個）。"
+    },
+    {
+      "id": "mus_chou05_013",
+      "unit": "music.theory.key.relation.parallel",
+      "category": "thinking",
+      "prompt": "B dur の平行調は？",
+      "choices": [
+        "es moll",
+        "g moll",
+        "b moll",
+        "F dur"
+      ],
+      "answerIndex": 1,
+      "explanation": "B durとg mollは同じ調号（♭2個）。"
+    },
+    {
+      "id": "mus_chou05_014",
+      "unit": "music.theory.key.relation.parallel",
+      "category": "thinking",
+      "prompt": "fis moll の平行調は？",
+      "choices": [
+        "H dur",
+        "cis moll",
+        "A dur",
+        "Fis dur"
+      ],
+      "answerIndex": 2,
+      "explanation": "fis mollとA durは同じ調号（♯3個）。"
+    },
+    {
+      "id": "mus_chou05_015",
+      "unit": "music.theory.key.relation.parallel",
+      "category": "thinking",
+      "prompt": "D dur の同主調は？",
+      "choices": [
+        "d moll",
+        "h moll",
+        "g moll",
+        "A dur"
+      ],
+      "answerIndex": 0,
+      "explanation": "主音が同じ D の短調。"
+    },
+    {
+      "id": "mus_chou05_016",
+      "unit": "music.theory.key.relation.parallel",
+      "category": "thinking",
+      "prompt": "f moll の同主調は？",
+      "choices": [
+        "As dur",
+        "c moll",
+        "F dur",
+        "B dur"
+      ],
+      "answerIndex": 2,
+      "explanation": "主音が同じ F の長調。"
+    },
+    {
+      "id": "mus_chou05_017",
+      "unit": "music.theory.key.relation.parallel",
+      "category": "thinking",
+      "prompt": "As dur の同主調は？",
+      "choices": [
+        "f moll",
+        "des moll",
+        "as moll",
+        "Es dur"
+      ],
+      "answerIndex": 2,
+      "explanation": "主音が同じ As の短調。"
+    }
+  ]
+}
