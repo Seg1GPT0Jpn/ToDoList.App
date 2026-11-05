@@ -82,16 +82,16 @@ const isDetail=(x,z)=>chunkIndex(x,z)>=0;
 
 /* ================= lines & trains ================= */
 const LINES={
-  jr:{name:'JR東海道線',short:'東海道線',color:'#f68b1e',plat:300,car:{len:20,n:10,body:'#e6e9ec',stripes:[['#f68b1e',0.95,0.38],['#1d8a4a',1.33,0.16]],w:2.95,h:3.0},vmax:33},
-  odn:{name:'小田急江ノ島線',short:'小田急線',color:'#1a5fb4',plat:200,car:{len:20,n:6,body:'#e6e9ec',stripes:[['#1a5fb4',1.0,0.42]],w:2.9,h:3.0},vmax:28},
-  ods:{name:'小田急江ノ島線',short:'小田急線',color:'#1a5fb4',plat:200,car:{len:20,n:6,body:'#e6e9ec',stripes:[['#1a5fb4',1.0,0.42]],w:2.9,h:3.0},vmax:20},
-  sot:{name:'相鉄本線',short:'相鉄線',color:'#1d3c8f',plat:200,car:{len:20,n:10,body:'#17295e',stripes:[['#e8742f',1.0,0.12],['#3d64b8',1.25,0.08]],w:2.95,h:3.0},vmax:28},
-  izm:{name:'相鉄いずみ野線',short:'相鉄線',color:'#1d3c8f',plat:200,car:{len:20,n:10,body:'#17295e',stripes:[['#e8742f',1.0,0.12],['#3d64b8',1.25,0.08]],w:2.95,h:3.0},vmax:28},
-  blu:{name:'横浜市営地下鉄ブルーライン',short:'ブルーライン',color:'#0072bc',plat:120,car:{len:18,n:6,body:'#dfe3e8',stripes:[['#0072bc',0.95,0.45]],w:2.76,h:3.0},vmax:22},
-  eno:{name:'江ノ島電鉄線',short:'江ノ電',color:'#2f8f4e',plat:56,car:{len:12.5,n:4,two:['#2f8f4e','#f2e6c4'],w:2.5,h:2.9,roof:'#6f7780'},vmax:11,single:true},
-  mono:{name:'湘南モノレール',short:'湘南モノレール',color:'#d6392f',plat:45,car:{len:15,n:3,body:'#f4f4f2',stripes:[['#d6392f',0.6,0.4]],w:2.6,h:3.1},vmax:16,mono:true,single:true},
+  jr:{name:'JR東海道線',short:'東海道線',color:'#f68b1e',plat:300,car:{len:20,n:10,body:'#e6e9ec',stripes:[['#f68b1e',0.95,0.38],['#1d8a4a',1.33,0.16]],w:2.95,h:3.0,cab:{face:'#23272c'}},vmax:33},
+  odn:{name:'小田急江ノ島線',short:'小田急線',color:'#1a5fb4',plat:200,car:{len:20,n:6,body:'#e6e9ec',stripes:[['#1a5fb4',1.0,0.42]],w:2.9,h:3.0,cab:{face:'#eef0f2',mask:'#2a2e33'}},vmax:28},
+  ods:{name:'小田急江ノ島線',short:'小田急線',color:'#1a5fb4',plat:200,car:{len:20,n:6,body:'#e6e9ec',stripes:[['#1a5fb4',1.0,0.42]],w:2.9,h:3.0,cab:{face:'#eef0f2',mask:'#2a2e33'}},vmax:20},
+  sot:{name:'相鉄本線',short:'相鉄線',color:'#1d3c8f',plat:200,car:{len:20,n:10,body:'#17295e',stripes:[['#e8742f',1.0,0.12],['#3d64b8',1.25,0.08]],w:2.95,h:3.0,cab:{face:'#13214a',mask:'#0b1022'}},vmax:28},
+  izm:{name:'相鉄いずみ野線',short:'相鉄線',color:'#1d3c8f',plat:200,car:{len:20,n:10,body:'#17295e',stripes:[['#e8742f',1.0,0.12],['#3d64b8',1.25,0.08]],w:2.95,h:3.0,cab:{face:'#13214a',mask:'#0b1022'}},vmax:28},
+  blu:{name:'横浜市営地下鉄ブルーライン',short:'ブルーライン',color:'#0072bc',plat:120,car:{len:18,n:6,body:'#dfe3e8',stripes:[['#0072bc',0.95,0.45]],w:2.76,h:3.0,cab:{face:'#cfd4d9',mask:'#2a2e33'}},vmax:22},
+  eno:{name:'江ノ島電鉄線',short:'江ノ電',color:'#2f8f4e',plat:56,car:{len:12.5,n:4,two:['#2f8f4e','#f2e6c4'],w:2.5,h:2.9,roof:'#6f7780',cab:{kind:'round',face:'#2f8f4e'}},vmax:11,single:true},
+  mono:{name:'湘南モノレール',short:'湘南モノレール',color:'#d6392f',plat:45,car:{len:15,n:3,body:'#f4f4f2',stripes:[['#d6392f',0.6,0.4]],w:2.6,h:3.1,cab:{kind:'round',face:'#f4f4f2'}},vmax:16,mono:true,single:true},
 };
-const ROMANCE={len:20,n:7,body:'#c2463d',stripes:[['#e9e2d6',1.0,0.18],['#3a3a3a',0.2,0.15]],w:2.9,h:3.1,roof:'#c2463d'};
+const ROMANCE={len:20,n:7,body:'#c2463d',stripes:[['#e9e2d6',1.0,0.18],['#3a3a3a',0.2,0.15]],w:2.9,h:3.1,roof:'#c2463d',cab:{kind:'nose',face:'#c2463d'}};
 function initLines(){
   for(const k in LINES){const l=LINES[k];const D=extendLineData(k,META.lines[k]);l.key=k;l.path=new Path(D.pts);l.path.flags=D.flags;l.path.offs=D.offs;l.cgap=l.mono?0.6:0.8;l.halfT=(l.car.n*l.car.len+(l.car.n-1)*l.cgap)/2;
     l.st=META.stations[k].map(s=>{const a=[s[0],s[1]];a.x=s[2];a.z=s[3];return a;});

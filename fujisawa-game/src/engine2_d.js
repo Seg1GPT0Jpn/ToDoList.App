@@ -1,6 +1,10 @@
 
 /* ================= road traffic (simple shuttles) ================= */
 const CARS=[];
+const WHEELG=new THREE.CylinderGeometry(1,1,0.24,12).rotateX(Math.PI/2);
+/* car cabin: a tapered block (windscreen and rear window raked) and its glass */
+const CABG=(()=>{const g=new THREE.BoxGeometry(2.5,0.62,1.62,1,1,1);const p=g.attributes.position;for(let i=0;i<p.count;i++){if(p.getY(i)>0){p.setX(i,p.getX(i)*0.74-(p.getX(i)>0?0.1:0));p.setZ(i,p.getZ(i)*0.9);}}g.translate(0,0.31,0);g.computeVertexNormals();return g;})();
+const CABWG=(()=>{const g=CABG.clone();g.scale(1.01,0.62,1.012);g.translate(0,0.1,0);return g;})();
 class Mover{
   constructor(path,o){Object.assign(this,{off:0,n:1,carLen:5,gap:0.6,vmax:16,acc:0.9,dec:1.0,dwellT:20},o);this.path=path;
     this.half=(this.n*this.carLen+(this.n-1)*this.gap)/2;const lo=this.half+2,hi=path.L-this.half-2;this.lo=lo;this.hi=Math.max(lo+1,hi);
@@ -19,8 +23,12 @@ function buildCars(){
       m.dir=rand()<0.5?1:-1;m.s=rr(m.lo,m.hi);m.yFn=(x,z)=>demH(x,z)+0.2;
       const g=new THREE.Group();const c=bus?'#f2efe6':pick(cols);
       const add=(mat,sx,sy,sz,x,y)=>{const b=new THREE.Mesh(BOX,mat);b.scale.set(sx,sy,sz);b.position.set(x,y,0);b.castShadow=true;g.add(b);};
-      if(bus){add(M(c),11,2.8,2.5,0,0.4);add(M('#d9622b'),11.05,0.5,2.55,0,1.1);add(winTrainMat,10.4,0.9,2.55,0,1.9);}
-      else{add(M(c),4.5,0.75,1.75,0,0.3);add(M(rand()<0.5?c:'#2a3a48'),2.4,0.65,1.6,-0.3,1.05);add(winTrainMat,2.5,0.4,1.62,-0.3,1.15);}
+      const wheels=(xs,r,zw)=>{for(const x of xs)for(const z of [-zw,zw]){const w=new THREE.Mesh(WHEELG,M('#1d1f22'));w.position.set(x,r,z);w.scale.set(r,r,1);g.add(w);}};
+      if(bus){add(M(c),11,2.6,2.5,0,0.45);add(M('#d9622b'),11.05,0.45,2.55,0,1.0);add(winTrainMat,9.6,1.0,2.56,-0.4,1.75);add(winTrainMat,0.05,1.3,2.2,5.51,1.45);add(M('#3a3e44'),11.05,0.25,2.52,0,0.2);
+        add(M('#fff6d8'),0.05,0.2,0.4,5.52,0.75);wheels([-3.3,3.2],0.5,1.1);}
+      else{const kind=rand();const L=kind<0.25?3.4:4.5;add(M(c),L,0.62,1.72,0,0.32);const cg=new THREE.Mesh(CABG,M(rand()<0.6?c:'#2a3a48'));cg.scale.set(L/4.5,1,1);cg.position.set(-0.2,0.94,0);cg.castShadow=true;g.add(cg);
+        const wg=new THREE.Mesh(CABWG,winTrainMat);wg.scale.set(L/4.5,1,1);wg.position.set(-0.2,0.94,0);g.add(wg);
+        add(M('#fff6d8'),0.04,0.12,0.35,L/2+0.01,0.68);add(M('#c92a2a'),0.04,0.12,0.35,-L/2-0.01,0.7);add(M('#3a3e44'),L+0.04,0.12,1.74,0,0.28);wheels([-L*0.32,L*0.32],0.33,0.8);}
       scene.add(g);m.cars.push(g);m.place();CARS.push(m);}}
 }
 
@@ -141,10 +149,23 @@ function poolFor(spec){const key=JSON.stringify(spec);let p=CARPOOL.get(key);if(
   if(!spec.mono){for(const k of [-1,1])add('#c9ced3',2.6,0.32,w*0.6,0.95+h+0.25,k*len*0.22); // roof air conditioners
     add('#5a6168',1.4,0.08,1.6,0.95+h+0.5,len*0.36);add('#5a6168',0.08,0.5,1.0,0.95+h+0.25,len*0.36);}
   if(spec.mono)add('#8a949c',1.2,1.9,0.8,h+0.95);
+  /* driving cab at the +x end of the car (the last car gets it turned around) */
+  const cab=[];const cadd=(c,sx,sy,sz,y,x,z=0)=>{const g=new THREE.BoxGeometry(sx,sy,sz).translate(x,y+sy/2,z).toNonIndexed();const cc=new THREE.Color(c);const a=new Float32Array(g.attributes.position.count*3);for(let i=0;i<a.length;i+=3){a[i]=cc.r;a[i+1]=cc.g;a[i+2]=cc.b;}g.setAttribute('color',new THREE.BufferAttribute(a,3));cab.push(g);};
+  const hexa=(pts,c)=>{const idx=[[0,1,2,3],[4,7,6,5],[0,4,5,1],[3,2,6,7],[0,3,7,4],[1,5,6,2]];const P=[];for(const q of idx){P.push(...pts[q[0]],...pts[q[1]],...pts[q[2]],...pts[q[0]],...pts[q[2]],...pts[q[3]]);}const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(P,3));g.computeVertexNormals();const cc=new THREE.Color(c);const a=new Float32Array(P.length);for(let i=0;i<a.length;i+=3){a[i]=cc.r;a[i+1]=cc.g;a[i+2]=cc.b;}g.setAttribute('color',new THREE.BufferAttribute(a,3));cab.push(g);};
+  const cb=spec.cab||{face:'#2b3036'};const X=len/2,y0=0.95;
+  if(cb.kind==='nose'){const L=3.4;// streamlined nose with a raked windscreen
+    hexa([[X,y0,-w/2],[X,y0,w/2],[X,y0+h,w/2],[X,y0+h,-w/2],[X+L,y0+0.15,-w*0.36],[X+L,y0+0.15,w*0.36],[X+L-0.4,y0+1.1,w*0.3],[X+L-0.4,y0+1.1,-w*0.3]],cb.face);
+    hexa([[X+0.05,y0+h*0.62,-w*0.46],[X+0.05,y0+h*0.62,w*0.46],[X+0.05,y0+h*1.005,w*0.44],[X+0.05,y0+h*1.005,-w*0.44],[X+L-0.5,y0+1.12,-w*0.28],[X+L-0.5,y0+1.12,w*0.28],[X+L-0.55,y0+1.2,w*0.26],[X+L-0.55,y0+1.2,-w*0.26]],'#1d242b');
+    for(const z of [-1,1])cadd('#fff6d8',0.4,0.14,0.5,y0+0.45,X+L-0.6,z*w*0.24);cadd('#e9e2d6',L*0.9,0.18,w*0.9,y0+0.75,X+L*0.42);}
+  else if(cb.kind==='round'){cadd(cb.face,0.45,h*0.98,w*0.94,y0,X+0.2);cadd('#1d242b',0.06,h*0.34,w*0.36,y0+h*0.44,X+0.45,-w*0.22);cadd('#1d242b',0.06,h*0.34,w*0.36,y0+h*0.44,X+0.45,w*0.22);
+    cadd('#fff6d8',0.06,0.22,0.22,y0+h*0.2,X+0.45,0);cadd(spec.roof||'#a7adb3',0.5,0.3,w*0.8,y0+h,X+0.15);if(spec.two)cadd(spec.two[1],0.47,h*0.55,w*0.95,y0+h*0.45,X+0.2);}
+  else{cadd(cb.face,0.3,h*0.97,w*0.985,y0,X+0.15);cadd(cb.mask||'#1d242b',0.06,h*0.42,w*0.92,y0+h*0.4,X+0.31);cadd('#1d242b',0.07,h*0.32,w*0.78,y0+h*0.45,X+0.33);
+    cadd('#f39a2b',0.07,0.26,w*0.46,y0+h*0.84,X+0.31);for(const z of [-1,1]){cadd('#fffbe8',0.07,0.16,0.36,y0+h*0.26,X+0.32,z*w*0.33);cadd('#d22b2b',0.07,0.1,0.2,y0+h*0.34,X+0.32,z*w*0.41);}
+    for(const st of spec.stripes||[])cadd(st[0],0.32,st[2],w*0.99,y0+st[1],X+0.16);cadd('#3a3e44',0.7,0.45,1.1,0.25,X+0.3);}
   const mg=(list,colr)=>{let tot=0;for(const g of list)tot+=g.attributes.position.count;const P=new Float32Array(tot*3),N=new Float32Array(tot*3),C=colr?new Float32Array(tot*3):null;let o=0;for(const g of list){P.set(g.attributes.position.array,o);N.set(g.attributes.normal.array,o);if(C)C.set(g.attributes.color.array,o);o+=g.attributes.position.array.length;}const r=new THREE.BufferGeometry();r.setAttribute('position',new THREE.BufferAttribute(P,3));r.setAttribute('normal',new THREE.BufferAttribute(N,3));if(C)r.setAttribute('color',new THREE.BufferAttribute(C,3));return r;};
-  const cap=500;const mb=new THREE.InstancedMesh(mg(body,true),CARMAT,cap),mw=new THREE.InstancedMesh(mg(win,false),winTrainMat,cap);
+  const cap=500;const mb=new THREE.InstancedMesh(mg(body,true),CARMAT,cap),mw=new THREE.InstancedMesh(mg(win,false),winTrainMat,cap);const mc=new THREE.InstancedMesh(mg(cab,true),CARMAT,200);mc.count=0;mc.frustumCulled=false;mc.castShadow=true;scene.add(mc);
   for(const m of [mb,mw]){m.count=0;m.frustumCulled=false;m.castShadow=m===mb;scene.add(m);}
-  p={mb,mw,n:0};CARPOOL.set(key,p);return p;}
+  p={mb,mw,mc,n:0,nc:0};CARPOOL.set(key,p);return p;}
 const CARMAT=new THREE.MeshLambertMaterial({vertexColors:true});
 function buildTrainMeshes(){for(const r of RUNS)r.pool=poolFor(r.spec);}
 const ACTIVE=[];const _dm=new THREE.Object3D();
@@ -155,13 +176,14 @@ function carPose(r,st,i){const sp=r.spec;const l=st.l;const gap=l.mono?0.6:0.8;c
   const f=l.path.at(sf,lo(sf)),b=l.path.at(sb,lo(sb));
   const x=(f.x+b.x)/2,z=(f.z+b.z)/2;const y=l.mono?l.beamY(sc)-1.6-sp.h-0.95-0.3:l.path.py(sc)+0.2;return{x,y,z,ry:Math.atan2(-(f.z-b.z),f.x-b.x),sc,lane:lo(sc)};}
 function updateTrains(){
-  for(const p of CARPOOL.values())p.n=0;ACTIVE.length=0;
+  for(const p of CARPOOL.values()){p.n=0;p.nc=0;}ACTIVE.length=0;
   const t=CLOCK<4*3600?CLOCK+86400:CLOCK;
   for(const r of RUNS){if(r.tStart>t)break;if(r.tEnd<t)continue;const st=runState(r,t);r.st=st;ACTIVE.push(r);
     const far=Math.abs(st.l.path.at(st.s).x-camera.position.x)+Math.abs(st.l.path.at(st.s).z-camera.position.z)>4500;r.poses=[];
     for(let i=0;i<r.spec.n;i++){const ps=carPose(r,st,i);r.poses.push(ps);if(far)continue;const p=r.pool;if(p.n>=500)continue;
-      _dm.position.set(ps.x,ps.y,ps.z);_dm.rotation.set(0,ps.ry,0);_dm.updateMatrix();p.mb.setMatrixAt(p.n,_dm.matrix);p.mw.setMatrixAt(p.n,_dm.matrix);p.n++;}}
-  for(const p of CARPOOL.values()){p.mb.count=p.mw.count=p.n;p.mb.instanceMatrix.needsUpdate=p.mw.instanceMatrix.needsUpdate=true;}
+      _dm.position.set(ps.x,ps.y,ps.z);_dm.rotation.set(0,ps.ry,0);_dm.updateMatrix();p.mb.setMatrixAt(p.n,_dm.matrix);p.mw.setMatrixAt(p.n,_dm.matrix);p.n++;
+      if((i===0||i===r.spec.n-1)&&p.nc<200){if(i!==0){_dm.rotation.set(0,ps.ry+Math.PI,0);_dm.updateMatrix();}p.mc.setMatrixAt(p.nc++,_dm.matrix);}}}
+  for(const p of CARPOOL.values()){p.mb.count=p.mw.count=p.n;p.mc.count=p.nc;p.mb.instanceMatrix.needsUpdate=p.mw.instanceMatrix.needsUpdate=p.mc.instanceMatrix.needsUpdate=true;}
 }
 
 /* ===== train separation: followers wait, slower trains step aside onto real passing tracks ===== */

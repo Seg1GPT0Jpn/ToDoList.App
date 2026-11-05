@@ -318,7 +318,7 @@ function frame(now){
   const dt=Math.min(0.05,(now-last)/1000);last=now;elapsed+=dt;
   CLOCK+=dt*ff;if(CLOCK>=86400+4*3600)CLOCK-=86400;
   applyTime(dt);
-  updateTrains();for(const c of CARS)c.update(dt*ff);
+  updateTrains();for(const c of CARS)c.update(dt*ff);if(started)PEOPLE.update(dt);
   update(dt);
   for(const f of DYN)f(elapsed,dt);
   updateChunks(P.x,P.z,1);

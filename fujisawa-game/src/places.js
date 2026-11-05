@@ -83,6 +83,7 @@ function addPlateau(b,G){
     if(house){const rh=Math.min(2.4,H*0.3);const y1=base+H-rh;facadeWalls(G.fac,f,base,y1,wallT,sty,clamp((H-rh)/Math.max(1,Math.round((H-rh)/2.8)),2.5,3.4));roofOn(f,b.cx,b.cz,y1,0,r,G.proof);G.colls.push(addPoly(f,base-0.3,base+H));return;}
     const y1=base+H;facadeWalls(G.fac,f,base,y1,wallT,sty,storeyH);
     const tris=tri2(f);for(const t of tris)G.proof.tri([f[t[0]*2],y1,f[t[0]*2+1]],[f[t[1]*2],y1,f[t[1]*2+1]],[f[t[2]*2],y1,f[t[2]*2+1]],0,1,0,_col.set('#ffffff'));
+    if(H>=9&&area>120)roofKit(G.tops,f,y1,r,H);
     // parapet on taller flat roofs
     if(H>=7){for(let i=0;i<n;i++){const j=(i+1)%n;const ax=f[i*2],az=f[i*2+1],bx=f[j*2],bz=f[j*2+1];const dx=bx-ax,dz=bz-az,len=Math.hypot(dx,dz);if(len<0.3)continue;const nx=dz/len,nz=-dx/len;
       G.tops.quad([ax,y1,az],[bx,y1,bz],[bx,y1+0.9,bz],[ax,y1+0.9,az],nx,0,nz,wall);G.tops.quad([ax-nx*0.2,y1+0.9,az-nz*0.2],[bx-nx*0.2,y1+0.9,bz-nz*0.2],[bx-nx*0.2,y1,bz-nz*0.2],[ax-nx*0.2,y1,az-nz*0.2],-nx,0,-nz,wall);
@@ -94,3 +95,10 @@ function extrudeWalls(f,y0,y1,wb,wall,U,V){const n=f.length/2;let per=0;
   for(let i=0;i<n;i++){const j=(i+1)%n;const ax=f[i*2],az=f[i*2+1],bx=f[j*2],bz=f[j*2+1];const dx=bx-ax,dz=bz-az,len=Math.hypot(dx,dz);if(len<0.05)continue;
     const nx=dz/len,nz=-dx/len;const u0=per/U,u1=(per+len)/U;const v1=(y1-y0)/V;per+=len;
     wb.tri([ax,y0,az],[bx,y0,bz],[bx,y1,bz],nx,0,nz,wall,[u0,0],[u1,0],[u1,v1]);wb.tri([ax,y0,az],[bx,y1,bz],[ax,y1,az],nx,0,nz,wall,[u0,0],[u1,v1],[u0,v1]);}}
+
+/* rooftop plant: lift machine room, air-conditioning condensers, a water tank — what makes a Japanese roof read as a roof */
+function roofKit(gb,f,y,r,H){const R=rectOf(f);if(R.hu<4||R.hv<3)return;const P=(a,b)=>[R.cx+R.ux*a-R.uz*b,R.cz+R.uz*a+R.ux*b];const rnd=mulberry32(Math.floor(r*1e6)+7);
+  const put=(a,b,hu,hv,h,c)=>{const p=P(a,b);if(!inPolyF(p[0],p[1],f))return;gb.obox(p[0],p[1],R.ux,R.uz,hu,hv,y,y+h,_col.set(c));};
+  if(H>15){const a=(rnd()-0.5)*R.hu,b=(rnd()-0.5)*R.hv*0.6;put(a,b,1.8,2.2,3.0,'#d9d6cf');put(a,b,1.9,2.3,0.25,'#bcb8b0');if(rnd()<0.6)put(a+2.8,b,0.9,0.9,1.9,'#a9b4bd');}
+  const n=Math.min(9,Math.floor(R.hu*R.hv/40));for(let i=0;i<n;i++){const a=(rnd()*2-1)*(R.hu-1.2),b=(rnd()*2-1)*(R.hv-1.0);put(a,b,0.45,0.35,0.75,rnd()<0.5?'#e6e6e2':'#cfd1cf');}
+  if(rnd()<0.35){const a=(rnd()*2-1)*(R.hu-2),b=(rnd()*2-1)*(R.hv-2);put(a,b,0.9,0.9,1.6,'#c9d2c8');}}
