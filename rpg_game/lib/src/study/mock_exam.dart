@@ -141,7 +141,7 @@ abstract final class YosouExams {
       title: '情報Ⅰ 後期中間 予想問題',
       subjectId: 'information1',
       questionPages: 6,
-      answerPages: 2,
+      answerPages: 4,
       smallQuestions: true,
     ),
   ];
