@@ -23,7 +23,8 @@ async function loadPlaces(){
 const placeW=(x,z,P,pad=25)=>1-smooth(P.r-pad,P.r+45,Math.hypot(x-P.cx,z-P.cz));
 function photoAt(x,z){let w=0;for(const P of PLACES){const d=Math.hypot(x-P.cx,z-P.cz);if(d<P.r+50)w=Math.max(w,placeW(x,z,P));}return w;}
 function placesNearRect(x0,z0,x1,z1){return PLACES.filter(P=>{const dx=Math.max(x0-P.cx,0,P.cx-x1),dz=Math.max(z0-P.cz,0,P.cz-z1);return Math.hypot(dx,dz)<P.r+50;}).slice(0,2);}
-function placeTex(P){if(!P.tex){P.tex=new THREE.TextureLoader().load(P.photo.file,t=>{P.texReady=1;for(const m of PHOTOMATS.values())m.userData.sync&&m.userData.sync();});P.tex.colorSpace=THREE.SRGBColorSpace;P.tex.anisotropy=8;P.tex.wrapS=P.tex.wrapT=THREE.ClampToEdgeWrapping;}return P.tex;}
+function placeTex(P){if(!P.tex){P.tex=new THREE.TextureLoader().load(P.photo.file,t=>{if(isTouch&&t.image&&t.image.width>1024){const c=document.createElement('canvas');c.width=c.height=1024;c.getContext('2d').drawImage(t.image,0,0,1024,1024);t.image=c;t.needsUpdate=true;} // phones: 1024² keeps the GPU memory down
+    P.texReady=1;for(const m of PHOTOMATS.values())m.userData.sync&&m.userData.sync();});P.tex.colorSpace=THREE.SRGBColorSpace;P.tex.anisotropy=8;P.tex.wrapS=P.tex.wrapT=THREE.ClampToEdgeWrapping;}return P.tex;}
 /* Lambert material whose diffuse colour is replaced by the aerial photo inside the place circles (world-xz projection) */
 const PHOTOMATS=new Map();
 function photoMat(list,kind){const key=kind+list.map(p=>p.key).join('+');let m=PHOTOMATS.get(key);if(m)return m;

@@ -3,6 +3,7 @@ const canvas=$('c');
 const renderer=new THREE.WebGLRenderer({canvas,antialias:!isTouch,powerPreference:'high-performance',logarithmicDepthBuffer:true});
 renderer.setPixelRatio(Math.min(devicePixelRatio,isTouch?1.5:1.75));
 renderer.setSize(innerWidth,innerHeight);renderer.autoClear=false;
+canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();const l=document.getElementById('loading');if(l){l.hidden=false;l.querySelector('.msg').textContent='画面の描画が止まりました（端末のメモリ不足）。ページを再読み込みしてください';}});
 renderer.shadowMap.enabled=!LITE;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
 renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.05;
 const scene=new THREE.Scene(),farScene=new THREE.Scene();
