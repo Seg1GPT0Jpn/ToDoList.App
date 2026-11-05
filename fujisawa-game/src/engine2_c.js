@@ -165,7 +165,7 @@ function buildLOD(){
   const cols=['#d9d6cc','#cfcbc0','#c7cbcf','#d6cfc4','#bdb7ae'];
   for(const [i,j,cv,hh] of items){const x=X0+(i+1)*LG0,z=Z0+(j+1)*LG0;const s=LG*cv*0.95;const h=Math.max(4,hh);
     dm.position.set(x,demH(x,z)-0.5,z);dm.scale.set(s,h,s);dm.updateMatrix();m.setMatrixAt(n,dm.matrix);m.setColorAt(n,cc.set(cols[(i*7+j*13)%cols.length]));n++;}
-  m.count=n;m.frustumCulled=false;scene.add(m);
+  m.count=n;m.frustumCulled=false;scene.add(m);LODINST.m=m;LODINST.items=items;
 }
 
 /* ================= detailed chunks ================= */
@@ -220,7 +220,8 @@ function buildChunk(ci,cj){
     const hr=H[i+(ix<n?1:-1)],hd=H[i+(iz<n?n+1:-(n+1))];const slope=Math.max(Math.abs(hr-h),Math.abs(hd-h))/step;
     const k=ci2*N1*N1+Math.round((z-cz0)/GS)*N1+Math.round((x-cx0)/GS);const c=groundColorAt(k,x,z,h,slope);col[i*3]=c.r;col[i*3+1]=c.g;col[i*3+2]=c.b;}
   geo.setAttribute('color',new THREE.BufferAttribute(col,3));geo.computeVertexNormals();
-  const pls=placesNearRect(cx0,cz0,cx0+CH,cz0+CH);const tm=new THREE.Mesh(geo,pls.length?photoMat(pls,'ground'):TERRAINMAT);tm.receiveShadow=true;grp.add(tm);
+  const pls=placesNearRect(cx0,cz0,cx0+CH,cz0+CH);const blk=cityBlock(ci,cj);const cityB=CITY_IDX.size?cityChunkBuildings(ci,cj):[];CUR_OCC=buildOcc(ci,cj,cityB);
+  const tm=new THREE.Mesh(geo,(pls.length||blk)?photoMat(pls,'ground',blk):TERRAINMAT);tm.receiveShadow=true;grp.add(tm);
   {const wb=new GB();const base=ci2*N1*N1;
     for(let j=0;j<N1-1;j++)for(let i=0;i<N1-1;i++){const k=base+j*N1+i;if(!(LCC8[k]===1&&DEMC[k]>0))continue;const y=DEMC[k]*0.2;const x=cx0+i*GS-GS/2,z=cz0+j*GS-GS/2;wb.quad([x,y,z],[x+GS,y,z],[x+GS,y,z+GS],[x,y,z+GS],0,1,0,_col.set('#ffffff'));}
     if(!wb.empty){const wm=new THREE.Mesh(wb.geo(),MAT.water);wm.receiveShadow=true;grp.add(wm);}}
@@ -262,23 +263,25 @@ function buildChunk(ci,cj){
     while(o<end){const nn=v.getUint8(o),fl=v.getUint8(o+1),h=v.getUint16(o+2,true)/10,minh=v.getUint8(o+4);let x=v.getInt16(o+5,true),z=v.getInt16(o+7,true);const sk=v.getInt16(o+9,true),kind=v.getUint8(o+11);o+=12;
       const pts=new Float32Array(nn*2);pts[0]=cx0+x/4;pts[1]=cz0+z/4;for(let i=1;i<nn;i++){x+=v.getInt8(o);z+=v.getInt8(o+1);o+=2;pts[i*2]=cx0+x/4;pts[i*2+1]=cz0+z/4;}
       bi++;addBuilding(pts,h,minh,fl&3,kind,hashf(ci2*100003+bi),sk,{wH,wO,tops,gh,inn,desks,colls,indoor,fac});}
-    for(const b of PLB.get(cj*CNX+ci)||[])addPlateau(b,{wH,wO,tops,gh,inn,desks,colls,indoor,proof,fac,glass});}
+    for(const b of PLB.get(cj*CNX+ci)||[])addPlateau(b,{wH,wO,tops,gh,inn,desks,colls,indoor,proof,fac,glass});
+    for(const b of cityB)addPlateau(b,{wH,wO,tops,gh,inn,desks,colls,indoor,proof,fac,glass});CUR_OCC=null;}
   if(!wH.empty){const m=new THREE.Mesh(wH.geo(),MAT.wallH);m.castShadow=true;m.receiveShadow=true;grp.add(m);}
   if(!wO.empty){const m=new THREE.Mesh(wO.geo(),MAT.wallO);m.castShadow=true;m.receiveShadow=true;grp.add(m);}
   if(!tops.empty){const m=new THREE.Mesh(tops.geo(),MAT.top);m.castShadow=true;m.receiveShadow=true;grp.add(m);}
   if(!glass.empty){const m=new THREE.Mesh(glass.geo(),GLASSMAT);m.renderOrder=3;grp.add(m);}
   if(!fac.empty){const m=new THREE.Mesh(fac.geo(),facadeMat());m.castShadow=true;m.receiveShadow=true;grp.add(m);}
-  if(!proof.empty){const m=new THREE.Mesh(proof.geo(),pls.length?photoMat(pls,'roof'):MAT.top);m.castShadow=true;m.receiveShadow=true;grp.add(m);}
+  if(!proof.empty){const m=new THREE.Mesh(proof.geo(),(pls.length||blk)?photoMat(pls,'roof',blk):MAT.top);m.castShadow=true;m.receiveShadow=true;grp.add(m);}
   if(!gh.empty){const m=new THREE.Mesh(gh.geo(),MAT.green);grp.add(m);}
   if(!inn.empty){const m=new THREE.Mesh(inn.geo(),INMAT);m.receiveShadow=true;grp.add(m);}
   if(desks.length){const dm=new THREE.Object3D();const im=new THREE.InstancedMesh(DESKG,M('#c49a6c'),desks.length);desks.forEach((d,i)=>{dm.position.set(d[0],d[1],d[2]);dm.rotation.set(0,-d[3],0);dm.updateMatrix();im.setMatrixAt(i,dm.matrix);});im.computeBoundingSphere();grp.add(im);}
   const L2={round:[],autumn:[],pine:[],palm:[]};
+  if(CITY_POI.size)buildCityFurniture(grp,ci,cj,cityB.concat(PLB.get(cj*CNX+ci)||[]),L2);
   for(let z=cz0+3;z<cz0+CH;z+=8)for(let x=cx0+3;x<cx0+CH;x+=8){const px=x+rr(-3,3),pz=z+rr(-3,3);const c=lcAt(px,pz);let p=0;
     if(c===2)p=0.8;else if(c===3)p=0.12;else if(c===10)p=0.3;else if(c===11)p=0.06;else if(c===0)p=0.035;else if(c===7)p=0.04;
     if(pls.length&&photoAt(px,pz)>0.5)p*=0.5;if(HOLES.length&&inHole(px,pz,2))continue;if(rand()>=p)continue;const h=heightAt(px,pz);if(h<0.4)continue;
     let blocked=false;for(const b of collNear(px,pz)){if(insideColl(b,px,pz,1.2)){blocked=true;break;}}if(blocked)continue;
     const fn=FIDX.nearest(px,pz);if(fn){let nr=false;for(const v of fn.values())if(Math.sqrt(v.d2)<v.data.half+2)nr=true;if(nr)continue;}
-    const coastD=coastZ(px)-pz;const kind=(c===2&&coastD<900&&coastD>0)?'pine':(rand()<0.1?'autumn':'round');L2[kind].push({x:px,y:h,z:pz,s:rr(0.8,1.3)*(c===0?0.8:1)});}
+    const coastD=coastZ(px)-pz;const kind=(c===2&&coastD<900&&coastD>0)?'pine':(rand()<0.02?'autumn':'round');L2[kind].push({x:px,y:h,z:pz,s:rr(0.8,1.3)*(c===0?0.8:1)});}
   for(const p of PALMS){if(p[0]>=cx0&&p[0]<cx0+CH&&p[2]>=cz0&&p[2]<cz0+CH)L2.palm.push({x:p[0],y:p[1],z:p[2],s:1});}
   buildTreesInto(grp,L2);
   for(const z of indoor)INDOOR.push(z);
@@ -298,6 +301,7 @@ function addBuilding(pts,h,minh,roofT,kind,r,sk,G){
   let y0=gmin-0.3,y1=gmin+h;
   let ly=null;for(let i=0;i<n&&ly===null;i++)ly=nearLineY(pts[i*2],pts[i*2+1],5);if(ly===null)ly=nearLineY(cx,cz,5);
   const lyB=lineYAt(cx,cz,40);if(ly!==null&&lyB&&lyB.fl===2)ly=null; // tracks underground: building stays on the street
+  if(CUR_OCC&&ly===null&&occAt(CUR_OCC,cx,cz))return; // PLATEAU has this building (station buildings over the tracks stay OSM: they carry the stairs)
   if(minh>0)y0=gmin+minh;
   if(ly!==null){if(kind===7||roofT===2){y0=ly+4.6;y1=y0+0.5;}else{const area=Math.abs(polyArea(pts));if(area>120){buildConcourse(pts,ly,gmin,h,r,G);return;}y0=Math.max(y0,ly+6.8);y1=Math.max(y1,y0+5);}}
   if(roofT===2||kind===7){y0=Math.max(y0,y1-0.6);}
@@ -454,7 +458,7 @@ function buildTreesInto(grp,L2){
     pa.castShadow=true;pa.computeBoundingSphere();grp.add(pa);}
   trunks.castShadow=true;trunks.computeBoundingSphere();grp.add(trunks);
 }
-function disposeChunk(ch){removeColl(ch.colls);for(const z of ch.indoor){const i=INDOOR.indexOf(z);if(i>=0)INDOOR.splice(i,1);}scene.remove(ch.grp);ch.grp.traverse(o=>{if(o.isMesh&&!SHARED.has(o.geometry))o.geometry.dispose();if(o.isInstancedMesh)o.dispose();});}
+function disposeChunk(ch){removeColl(ch.colls);for(const z of ch.indoor){const i=INDOOR.indexOf(z);if(i>=0)INDOOR.splice(i,1);}scene.remove(ch.grp);ch.grp.traverse(o=>{if(o.userData.ownTex)o.userData.ownTex.dispose();if(o.isMesh&&!SHARED.has(o.geometry))o.geometry.dispose();if(o.isInstancedMesh)o.dispose();});}
 function updateChunks(px,pz,budget=1){
   const ci0=Math.floor((px-X0)/CH),cj0=Math.floor((pz-Z0)/CH);const R=Math.ceil(NEAR_R/CH)+1;const want=[];
   for(let i=ci0-R;i<=ci0+R;i++)for(let j=cj0-R;j<=cj0+R;j++){if(i<0||j<0||i>=CNX||j>=CNZ)continue;if(CIDX[j*CNX+i]<0)continue;const cx=X0+(i+0.5)*CH,cz=Z0+(j+0.5)*CH;const d=Math.hypot(cx-px,cz-pz);if(d<NEAR_R&&!CHUNKS.has(chunkKey(i,j)))want.push([d,i,j]);}

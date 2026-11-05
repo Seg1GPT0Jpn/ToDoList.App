@@ -27,19 +27,23 @@ function placeTex(P){if(!P.tex){P.tex=new THREE.TextureLoader().load(P.photo.fil
     P.texReady=1;for(const m of PHOTOMATS.values())m.userData.sync&&m.userData.sync();});P.tex.colorSpace=THREE.SRGBColorSpace;P.tex.anisotropy=8;P.tex.wrapS=P.tex.wrapT=THREE.ClampToEdgeWrapping;}return P.tex;}
 /* Lambert material whose diffuse colour is replaced by the aerial photo inside the place circles (world-xz projection) */
 const PHOTOMATS=new Map();
-function photoMat(list,kind){const key=kind+list.map(p=>p.key).join('+');let m=PHOTOMATS.get(key);if(m)return m;
-  m=new THREE.MeshLambertMaterial({vertexColors:true,...(kind==='road'?{polygonOffset:true,polygonOffsetFactor:-2,polygonOffsetUnits:-4}:{})});
+function photoMat(list,kind,blk=null){const key=kind+list.map(p=>p.key).join('+')+(blk?'|'+blk.name:'');let m=PHOTOMATS.get(key);if(m)return m;
+  m=new THREE.MeshLambertMaterial({vertexColors:true});
   const U={};for(let i=0;i<2;i++){const P=list[i];U['ph'+i]={value:P?placeTex(P):null};U['pr'+i]={value:new THREE.Vector4(P?P.photo.x0:0,P?P.photo.z0:0,P?P.photo.size:1,0)};U['pc'+i]={value:new THREE.Vector3(P?P.cx:0,P?P.cz:0,P?P.r:0)};}
-  m.userData.sync=()=>{for(let i=0;i<2;i++){const P=list[i];U['pr'+i].value.w=P&&P.texReady?1:0;}};m.userData.sync();
+  U.ph2={value:blk?blockTex(blk):null};U.pr2={value:new THREE.Vector4(blk?blk.x0:0,blk?blk.z0:0,blk?blk.size:1,0)};
+  m.userData.sync=()=>{for(let i=0;i<2;i++){const P=list[i];U['pr'+i].value.w=P&&P.texReady?1:0;}U.pr2.value.w=blk&&blk.ready?1:0;};m.userData.sync();
   const full=kind==='roof'?1:0;
   m.onBeforeCompile=sh=>{Object.assign(sh.uniforms,U);
     sh.vertexShader=sh.vertexShader.replace('#include <common>','#include <common>\nvarying vec3 vPW;').replace('#include <begin_vertex>','#include <begin_vertex>\nvPW=(modelMatrix*vec4(transformed,1.0)).xyz;');
     sh.fragmentShader=sh.fragmentShader.replace('#include <common>',`#include <common>
-      varying vec3 vPW;uniform sampler2D ph0,ph1;uniform vec4 pr0,pr1;uniform vec3 pc0,pc1;
+      varying vec3 vPW;uniform sampler2D ph0,ph1,ph2;uniform vec4 pr0,pr1,pr2;uniform vec3 pc0,pc1;
       vec4 photoS(sampler2D t,vec4 r,vec3 c){if(r.w<0.5)return vec4(0.0);vec2 uv=(vPW.xz-r.xy)/r.z;if(uv.x<0.0||uv.y<0.0||uv.x>1.0||uv.y>1.0)return vec4(0.0);
-        float w=${full?'1.0-smoothstep(c.z+20.0,c.z+50.0,distance(vPW.xz,c.xy))':'1.0-smoothstep(c.z-25.0,c.z+45.0,distance(vPW.xz,c.xy))'};return vec4(texture2D(t,vec2(uv.x,1.0-uv.y)).rgb,w);}`)
+        float w=${full?'1.0-smoothstep(c.z+20.0,c.z+50.0,distance(vPW.xz,c.xy))':'1.0-smoothstep(c.z-25.0,c.z+45.0,distance(vPW.xz,c.xy))'};return vec4(texture2D(t,vec2(uv.x,1.0-uv.y)).rgb,w);}
+      vec4 blockS(){if(pr2.w<0.5)return vec4(0.0);vec2 uv=(vPW.xz-pr2.xy)/pr2.z;if(uv.x<0.0||uv.y<0.0||uv.x>1.0||uv.y>1.0)return vec4(0.0);vec3 c=texture2D(ph2,vec2(uv.x,1.0-uv.y)).rgb;
+        return vec4(c,smoothstep(0.015,0.05,c.r+c.g+c.b));}`)
       .replace('#include <color_fragment>',`#include <color_fragment>
-      {vec4 a=photoS(ph0,pr0,pc0);vec4 b=photoS(ph1,pr1,pc1);vec4 p=a.w>=b.w?a:b;diffuseColor.rgb=mix(diffuseColor.rgb,p.rgb*${kind==='roof'?'0.92':'0.86'},p.w);}`);};
+      {vec4 q=blockS();diffuseColor.rgb=mix(diffuseColor.rgb,q.rgb*${kind==='roof'?'0.92':'0.86'},q.w);
+       vec4 a=photoS(ph0,pr0,pc0);vec4 b=photoS(ph1,pr1,pc1);vec4 p=a.w>=b.w?a:b;diffuseColor.rgb=mix(diffuseColor.rgb,p.rgb*${kind==='roof'?'0.92':'0.86'},p.w);}`);};
   if(kind==='ground'){const ob=m.onBeforeCompile;m.onBeforeCompile=sh=>{ob(sh);holePatch(sh);detailPatch(sh,0.03,0.21,0.6);};}
   m.customProgramCacheKey=()=>'photo'+kind;PHOTOMATS.set(key,m);return m;}
 /* wall colours by PLATEAU usage code */
@@ -66,6 +70,7 @@ function addPlateau(b,G){
   // structures standing over a railway at track level (platform roofs, station buildings straddling the line) become canopies
   let ly=null;for(let i=0;i<n&&ly===null;i++){const q=lineYAt(f[i*2],f[i*2+1],5);if(q&&q.fl!==2)ly=q.y;}
   if(ly===null){const q=lineYAt(b.cx,b.cz,5);if(q&&q.fl!==2)ly=q.y;}
+  if(ly!==null&&b.P&&b.P.city&&!inClear(b.cx,b.cz,STATION_ZONE))return; // over the tracks outside the hand-built stations: the OSM station building does it
   if(ly!==null&&base+H>ly+3.5){const top=Math.max(base+H,ly+5.2);const y0=Math.max(top-0.6,ly+4.6);const tris=tri2(f);const tc=_col2.set('#b5b8bb');
     for(const t of tris){const A=[f[t[0]*2],top,f[t[0]*2+1]],B=[f[t[1]*2],top,f[t[1]*2+1]],C=[f[t[2]*2],top,f[t[2]*2+1]];G.proof.tri(A,B,C,0,1,0,_col.set('#ffffff'));G.tops.tri([A[0],y0,A[2]],[B[0],y0,B[2]],[C[0],y0,C[2]],0,-1,0,tc);}
     for(let i=0;i<n;i++){const j=(i+1)%n;const ax=f[i*2],az=f[i*2+1],bx=f[j*2],bz=f[j*2+1];const dx=bx-ax,dz=bz-az,len=Math.hypot(dx,dz);if(len<0.05)continue;G.tops.quad([ax,y0,az],[bx,y0,bz],[bx,top,bz],[ax,top,az],dz/len,0,-dx/len,tc);}

@@ -15,6 +15,8 @@ const smooth=(e0,e1,x)=>{const t=clamp((x-e0)/(e1-e0),0,1);return t*t*(3-2*t)};
 const hashf=(n)=>{let h=Math.imul(n|0,2654435761);h^=h>>>15;h=Math.imul(h,2246822519);h^=h>>>13;return(h>>>0)/4294967296;};
 const isTouch = matchMedia('(pointer:coarse)').matches || ('ontouchstart' in window && navigator.maxTouchPoints>0);
 const LITE=!!window.__LITE;
+/* 画質: phones start light (no shadows, shorter detail range); the button switches and remembers */
+const QHIGH=(()=>{try{const v=localStorage.getItem('fq');if(v)return v==='h';}catch(e){}return !isTouch;})();
 const LAT0=35.3389,LON0=139.4874,MX=90807,MZ=110940;
 const L=(lat,lon)=>[(lon-LON0)*MX,-(lat-LAT0)*MZ];
 const LL=a=>a.map(p=>L(p[0],p[1]));

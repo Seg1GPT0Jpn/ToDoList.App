@@ -2,7 +2,7 @@
 /* ================= world build ================= */
 const DYN=[];
 let maskTex=null,maskData=null;
-const NEAR_R=LITE?450:isTouch?650:900,FAR_KEEP=NEAR_R+380;
+const NEAR_R=LITE?450:QHIGH?(isTouch?650:900):500,FAR_KEEP=NEAR_R+380;
 const EXCL=[];
 const ZONES=[];   // underground station volumes (terrain ignored inside)
 const INDOOR=[];  // rooms where the camera is kept inside
@@ -116,9 +116,10 @@ function buildFarTerrain(){
   geo.setAttribute('color',new THREE.BufferAttribute(col,3));geo.computeVertexNormals();
   maskData=new Uint8Array(CNX*CNZ);maskTex=new THREE.DataTexture(maskData,CNX,CNZ,THREE.RedFormat,THREE.UnsignedByteType);maskTex.magFilter=maskTex.minFilter=THREE.NearestFilter;maskTex.needsUpdate=true;
   const mat=new THREE.MeshLambertMaterial({vertexColors:true});
-  mat.onBeforeCompile=sh=>{sh.uniforms.uMask={value:maskTex};
+  mat.onBeforeCompile=sh=>{sh.uniforms.uMask={value:maskTex};sh.uniforms.uOv=OVERVIEW.u;sh.uniforms.uOvR=OVERVIEW.r;
     sh.vertexShader=sh.vertexShader.replace('#include <common>','#include <common>\nvarying vec2 vWP;').replace('#include <begin_vertex>','#include <begin_vertex>\nvWP=(modelMatrix*vec4(transformed,1.0)).xz;');
-    sh.fragmentShader=sh.fragmentShader.replace('#include <common>','#include <common>\nvarying vec2 vWP;uniform sampler2D uMask;').replace('#include <clipping_planes_fragment>',`#include <clipping_planes_fragment>
+    sh.fragmentShader=sh.fragmentShader.replace('#include <common>','#include <common>\nvarying vec2 vWP;uniform sampler2D uMask,uOv;uniform vec4 uOvR;').replace('#include <color_fragment>',`#include <color_fragment>
+      if(uOvR.z>0.0){vec2 ou=(vWP-uOvR.xy)/uOvR.zw;if(ou.x>0.0&&ou.y>0.0&&ou.x<1.0&&ou.y<1.0){vec3 oc=texture2D(uOv,vec2(ou.x,1.0-ou.y)).rgb;diffuseColor.rgb=mix(diffuseColor.rgb,oc*0.86,smoothstep(0.015,0.05,oc.r+oc.g+oc.b));}}`).replace('#include <clipping_planes_fragment>',`#include <clipping_planes_fragment>
       vec2 mu=(vWP-vec2(${X0.toFixed(1)},${Z0.toFixed(1)}))/vec2(${(CNX*CH).toFixed(1)},${(CNZ*CH).toFixed(1)});
       if(texture2D(uMask,mu).r>0.5)discard;`);};
   farTerrain=new THREE.Mesh(geo,mat);scene.add(farTerrain);

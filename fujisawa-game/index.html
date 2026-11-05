@@ -100,6 +100,7 @@ body.touch #trainBox{top:auto;bottom:calc(196px + env(safe-area-inset-bottom,0px
 <div id="rideBar" hidden><button class="btn" id="bView" type="button">前面展望</button><button class="btn" id="bFF" type="button">早送り ×6</button></div>
 <div class="hud" id="bar">
   <button class="btn" id="bTime" type="button">☀ 昼</button>
+  <button class="btn" id="bQual" type="button">画質</button>
   <button class="btn" id="bFly" type="button">飛行</button>
   <button class="btn" id="bMap" type="button">地図・ワープ</button>
   <button class="btn" id="bHelp" type="button">操作</button>
@@ -134,6 +135,8 @@ const smooth=(e0,e1,x)=>{const t=clamp((x-e0)/(e1-e0),0,1);return t*t*(3-2*t)};
 const hashf=(n)=>{let h=Math.imul(n|0,2654435761);h^=h>>>15;h=Math.imul(h,2246822519);h^=h>>>13;return(h>>>0)/4294967296;};
 const isTouch = matchMedia('(pointer:coarse)').matches || ('ontouchstart' in window && navigator.maxTouchPoints>0);
 const LITE=!!window.__LITE;
+/* 画質: phones start light (no shadows, shorter detail range); the button switches and remembers */
+const QHIGH=(()=>{try{const v=localStorage.getItem('fq');if(v)return v==='h';}catch(e){}return !isTouch;})();
 const LAT0=35.3389,LON0=139.4874,MX=90807,MZ=110940;
 const L=(lat,lon)=>[(lon-LON0)*MX,-(lat-LAT0)*MZ];
 const LL=a=>a.map(p=>L(p[0],p[1]));
@@ -255,10 +258,10 @@ function railProfile(l){
 /* ================= three setup ================= */
 const canvas=$('c');
 const renderer=new THREE.WebGLRenderer({canvas,antialias:!isTouch,powerPreference:'high-performance',logarithmicDepthBuffer:true});
-renderer.setPixelRatio(Math.min(devicePixelRatio,isTouch?1.5:1.75));
+renderer.setPixelRatio(Math.min(devicePixelRatio,QHIGH?(isTouch?1.5:1.75):1.2));
 renderer.setSize(innerWidth,innerHeight);renderer.autoClear=false;
 canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();const l=document.getElementById('loading');if(l){l.hidden=false;l.querySelector('.msg').textContent='画面の描画が止まりました（端末のメモリ不足）。ページを再読み込みしてください';}});
-renderer.shadowMap.enabled=!LITE;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+renderer.shadowMap.enabled=!LITE&&QHIGH;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
 renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.05;
 const scene=new THREE.Scene(),farScene=new THREE.Scene();
 const camera=new THREE.PerspectiveCamera(60,innerWidth/innerHeight,0.3,9000);
@@ -455,7 +458,7 @@ function buildLandmarks(){
 /* ================= world build ================= */
 const DYN=[];
 let maskTex=null,maskData=null;
-const NEAR_R=LITE?450:isTouch?650:900,FAR_KEEP=NEAR_R+380;
+const NEAR_R=LITE?450:QHIGH?(isTouch?650:900):500,FAR_KEEP=NEAR_R+380;
 const EXCL=[];
 const ZONES=[];   // underground station volumes (terrain ignored inside)
 const INDOOR=[];  // rooms where the camera is kept inside
@@ -569,9 +572,10 @@ function buildFarTerrain(){
   geo.setAttribute('color',new THREE.BufferAttribute(col,3));geo.computeVertexNormals();
   maskData=new Uint8Array(CNX*CNZ);maskTex=new THREE.DataTexture(maskData,CNX,CNZ,THREE.RedFormat,THREE.UnsignedByteType);maskTex.magFilter=maskTex.minFilter=THREE.NearestFilter;maskTex.needsUpdate=true;
   const mat=new THREE.MeshLambertMaterial({vertexColors:true});
-  mat.onBeforeCompile=sh=>{sh.uniforms.uMask={value:maskTex};
+  mat.onBeforeCompile=sh=>{sh.uniforms.uMask={value:maskTex};sh.uniforms.uOv=OVERVIEW.u;sh.uniforms.uOvR=OVERVIEW.r;
     sh.vertexShader=sh.vertexShader.replace('#include <common>','#include <common>\nvarying vec2 vWP;').replace('#include <begin_vertex>','#include <begin_vertex>\nvWP=(modelMatrix*vec4(transformed,1.0)).xz;');
-    sh.fragmentShader=sh.fragmentShader.replace('#include <common>','#include <common>\nvarying vec2 vWP;uniform sampler2D uMask;').replace('#include <clipping_planes_fragment>',`#include <clipping_planes_fragment>
+    sh.fragmentShader=sh.fragmentShader.replace('#include <common>','#include <common>\nvarying vec2 vWP;uniform sampler2D uMask,uOv;uniform vec4 uOvR;').replace('#include <color_fragment>',`#include <color_fragment>
+      if(uOvR.z>0.0){vec2 ou=(vWP-uOvR.xy)/uOvR.zw;if(ou.x>0.0&&ou.y>0.0&&ou.x<1.0&&ou.y<1.0){vec3 oc=texture2D(uOv,vec2(ou.x,1.0-ou.y)).rgb;diffuseColor.rgb=mix(diffuseColor.rgb,oc*0.86,smoothstep(0.015,0.05,oc.r+oc.g+oc.b));}}`).replace('#include <clipping_planes_fragment>',`#include <clipping_planes_fragment>
       vec2 mu=(vWP-vec2(${X0.toFixed(1)},${Z0.toFixed(1)}))/vec2(${(CNX*CH).toFixed(1)},${(CNZ*CH).toFixed(1)});
       if(texture2D(uMask,mu).r>0.5)discard;`);};
   farTerrain=new THREE.Mesh(geo,mat);scene.add(farTerrain);
@@ -891,7 +895,7 @@ function buildLOD(){
   const cols=['#d9d6cc','#cfcbc0','#c7cbcf','#d6cfc4','#bdb7ae'];
   for(const [i,j,cv,hh] of items){const x=X0+(i+1)*LG0,z=Z0+(j+1)*LG0;const s=LG*cv*0.95;const h=Math.max(4,hh);
     dm.position.set(x,demH(x,z)-0.5,z);dm.scale.set(s,h,s);dm.updateMatrix();m.setMatrixAt(n,dm.matrix);m.setColorAt(n,cc.set(cols[(i*7+j*13)%cols.length]));n++;}
-  m.count=n;m.frustumCulled=false;scene.add(m);
+  m.count=n;m.frustumCulled=false;scene.add(m);LODINST.m=m;LODINST.items=items;
 }
 
 /* ================= detailed chunks ================= */
@@ -946,7 +950,8 @@ function buildChunk(ci,cj){
     const hr=H[i+(ix<n?1:-1)],hd=H[i+(iz<n?n+1:-(n+1))];const slope=Math.max(Math.abs(hr-h),Math.abs(hd-h))/step;
     const k=ci2*N1*N1+Math.round((z-cz0)/GS)*N1+Math.round((x-cx0)/GS);const c=groundColorAt(k,x,z,h,slope);col[i*3]=c.r;col[i*3+1]=c.g;col[i*3+2]=c.b;}
   geo.setAttribute('color',new THREE.BufferAttribute(col,3));geo.computeVertexNormals();
-  const pls=placesNearRect(cx0,cz0,cx0+CH,cz0+CH);const tm=new THREE.Mesh(geo,pls.length?photoMat(pls,'ground'):TERRAINMAT);tm.receiveShadow=true;grp.add(tm);
+  const pls=placesNearRect(cx0,cz0,cx0+CH,cz0+CH);const blk=cityBlock(ci,cj);const cityB=CITY_IDX.size?cityChunkBuildings(ci,cj):[];CUR_OCC=buildOcc(ci,cj,cityB);
+  const tm=new THREE.Mesh(geo,(pls.length||blk)?photoMat(pls,'ground',blk):TERRAINMAT);tm.receiveShadow=true;grp.add(tm);
   {const wb=new GB();const base=ci2*N1*N1;
     for(let j=0;j<N1-1;j++)for(let i=0;i<N1-1;i++){const k=base+j*N1+i;if(!(LCC8[k]===1&&DEMC[k]>0))continue;const y=DEMC[k]*0.2;const x=cx0+i*GS-GS/2,z=cz0+j*GS-GS/2;wb.quad([x,y,z],[x+GS,y,z],[x+GS,y,z+GS],[x,y,z+GS],0,1,0,_col.set('#ffffff'));}
     if(!wb.empty){const wm=new THREE.Mesh(wb.geo(),MAT.water);wm.receiveShadow=true;grp.add(wm);}}
@@ -988,23 +993,25 @@ function buildChunk(ci,cj){
     while(o<end){const nn=v.getUint8(o),fl=v.getUint8(o+1),h=v.getUint16(o+2,true)/10,minh=v.getUint8(o+4);let x=v.getInt16(o+5,true),z=v.getInt16(o+7,true);const sk=v.getInt16(o+9,true),kind=v.getUint8(o+11);o+=12;
       const pts=new Float32Array(nn*2);pts[0]=cx0+x/4;pts[1]=cz0+z/4;for(let i=1;i<nn;i++){x+=v.getInt8(o);z+=v.getInt8(o+1);o+=2;pts[i*2]=cx0+x/4;pts[i*2+1]=cz0+z/4;}
       bi++;addBuilding(pts,h,minh,fl&3,kind,hashf(ci2*100003+bi),sk,{wH,wO,tops,gh,inn,desks,colls,indoor,fac});}
-    for(const b of PLB.get(cj*CNX+ci)||[])addPlateau(b,{wH,wO,tops,gh,inn,desks,colls,indoor,proof,fac,glass});}
+    for(const b of PLB.get(cj*CNX+ci)||[])addPlateau(b,{wH,wO,tops,gh,inn,desks,colls,indoor,proof,fac,glass});
+    for(const b of cityB)addPlateau(b,{wH,wO,tops,gh,inn,desks,colls,indoor,proof,fac,glass});CUR_OCC=null;}
   if(!wH.empty){const m=new THREE.Mesh(wH.geo(),MAT.wallH);m.castShadow=true;m.receiveShadow=true;grp.add(m);}
   if(!wO.empty){const m=new THREE.Mesh(wO.geo(),MAT.wallO);m.castShadow=true;m.receiveShadow=true;grp.add(m);}
   if(!tops.empty){const m=new THREE.Mesh(tops.geo(),MAT.top);m.castShadow=true;m.receiveShadow=true;grp.add(m);}
   if(!glass.empty){const m=new THREE.Mesh(glass.geo(),GLASSMAT);m.renderOrder=3;grp.add(m);}
   if(!fac.empty){const m=new THREE.Mesh(fac.geo(),facadeMat());m.castShadow=true;m.receiveShadow=true;grp.add(m);}
-  if(!proof.empty){const m=new THREE.Mesh(proof.geo(),pls.length?photoMat(pls,'roof'):MAT.top);m.castShadow=true;m.receiveShadow=true;grp.add(m);}
+  if(!proof.empty){const m=new THREE.Mesh(proof.geo(),(pls.length||blk)?photoMat(pls,'roof',blk):MAT.top);m.castShadow=true;m.receiveShadow=true;grp.add(m);}
   if(!gh.empty){const m=new THREE.Mesh(gh.geo(),MAT.green);grp.add(m);}
   if(!inn.empty){const m=new THREE.Mesh(inn.geo(),INMAT);m.receiveShadow=true;grp.add(m);}
   if(desks.length){const dm=new THREE.Object3D();const im=new THREE.InstancedMesh(DESKG,M('#c49a6c'),desks.length);desks.forEach((d,i)=>{dm.position.set(d[0],d[1],d[2]);dm.rotation.set(0,-d[3],0);dm.updateMatrix();im.setMatrixAt(i,dm.matrix);});im.computeBoundingSphere();grp.add(im);}
   const L2={round:[],autumn:[],pine:[],palm:[]};
+  if(CITY_POI.size)buildCityFurniture(grp,ci,cj,cityB.concat(PLB.get(cj*CNX+ci)||[]),L2);
   for(let z=cz0+3;z<cz0+CH;z+=8)for(let x=cx0+3;x<cx0+CH;x+=8){const px=x+rr(-3,3),pz=z+rr(-3,3);const c=lcAt(px,pz);let p=0;
     if(c===2)p=0.8;else if(c===3)p=0.12;else if(c===10)p=0.3;else if(c===11)p=0.06;else if(c===0)p=0.035;else if(c===7)p=0.04;
     if(pls.length&&photoAt(px,pz)>0.5)p*=0.5;if(HOLES.length&&inHole(px,pz,2))continue;if(rand()>=p)continue;const h=heightAt(px,pz);if(h<0.4)continue;
     let blocked=false;for(const b of collNear(px,pz)){if(insideColl(b,px,pz,1.2)){blocked=true;break;}}if(blocked)continue;
     const fn=FIDX.nearest(px,pz);if(fn){let nr=false;for(const v of fn.values())if(Math.sqrt(v.d2)<v.data.half+2)nr=true;if(nr)continue;}
-    const coastD=coastZ(px)-pz;const kind=(c===2&&coastD<900&&coastD>0)?'pine':(rand()<0.1?'autumn':'round');L2[kind].push({x:px,y:h,z:pz,s:rr(0.8,1.3)*(c===0?0.8:1)});}
+    const coastD=coastZ(px)-pz;const kind=(c===2&&coastD<900&&coastD>0)?'pine':(rand()<0.02?'autumn':'round');L2[kind].push({x:px,y:h,z:pz,s:rr(0.8,1.3)*(c===0?0.8:1)});}
   for(const p of PALMS){if(p[0]>=cx0&&p[0]<cx0+CH&&p[2]>=cz0&&p[2]<cz0+CH)L2.palm.push({x:p[0],y:p[1],z:p[2],s:1});}
   buildTreesInto(grp,L2);
   for(const z of indoor)INDOOR.push(z);
@@ -1024,6 +1031,7 @@ function addBuilding(pts,h,minh,roofT,kind,r,sk,G){
   let y0=gmin-0.3,y1=gmin+h;
   let ly=null;for(let i=0;i<n&&ly===null;i++)ly=nearLineY(pts[i*2],pts[i*2+1],5);if(ly===null)ly=nearLineY(cx,cz,5);
   const lyB=lineYAt(cx,cz,40);if(ly!==null&&lyB&&lyB.fl===2)ly=null; // tracks underground: building stays on the street
+  if(CUR_OCC&&ly===null&&occAt(CUR_OCC,cx,cz))return; // PLATEAU has this building (station buildings over the tracks stay OSM: they carry the stairs)
   if(minh>0)y0=gmin+minh;
   if(ly!==null){if(kind===7||roofT===2){y0=ly+4.6;y1=y0+0.5;}else{const area=Math.abs(polyArea(pts));if(area>120){buildConcourse(pts,ly,gmin,h,r,G);return;}y0=Math.max(y0,ly+6.8);y1=Math.max(y1,y0+5);}}
   if(roofT===2||kind===7){y0=Math.max(y0,y1-0.6);}
@@ -1180,7 +1188,7 @@ function buildTreesInto(grp,L2){
     pa.castShadow=true;pa.computeBoundingSphere();grp.add(pa);}
   trunks.castShadow=true;trunks.computeBoundingSphere();grp.add(trunks);
 }
-function disposeChunk(ch){removeColl(ch.colls);for(const z of ch.indoor){const i=INDOOR.indexOf(z);if(i>=0)INDOOR.splice(i,1);}scene.remove(ch.grp);ch.grp.traverse(o=>{if(o.isMesh&&!SHARED.has(o.geometry))o.geometry.dispose();if(o.isInstancedMesh)o.dispose();});}
+function disposeChunk(ch){removeColl(ch.colls);for(const z of ch.indoor){const i=INDOOR.indexOf(z);if(i>=0)INDOOR.splice(i,1);}scene.remove(ch.grp);ch.grp.traverse(o=>{if(o.userData.ownTex)o.userData.ownTex.dispose();if(o.isMesh&&!SHARED.has(o.geometry))o.geometry.dispose();if(o.isInstancedMesh)o.dispose();});}
 function updateChunks(px,pz,budget=1){
   const ci0=Math.floor((px-X0)/CH),cj0=Math.floor((pz-Z0)/CH);const R=Math.ceil(NEAR_R/CH)+1;const want=[];
   for(let i=ci0-R;i<=ci0+R;i++)for(let j=cj0-R;j<=cj0+R;j++){if(i<0||j<0||i>=CNX||j>=CNZ)continue;if(CIDX[j*CNX+i]<0)continue;const cx=X0+(i+0.5)*CH,cz=Z0+(j+0.5)*CH;const d=Math.hypot(cx-px,cz-pz);if(d<NEAR_R&&!CHUNKS.has(chunkKey(i,j)))want.push([d,i,j]);}
@@ -1218,19 +1226,23 @@ function placeTex(P){if(!P.tex){P.tex=new THREE.TextureLoader().load(P.photo.fil
     P.texReady=1;for(const m of PHOTOMATS.values())m.userData.sync&&m.userData.sync();});P.tex.colorSpace=THREE.SRGBColorSpace;P.tex.anisotropy=8;P.tex.wrapS=P.tex.wrapT=THREE.ClampToEdgeWrapping;}return P.tex;}
 /* Lambert material whose diffuse colour is replaced by the aerial photo inside the place circles (world-xz projection) */
 const PHOTOMATS=new Map();
-function photoMat(list,kind){const key=kind+list.map(p=>p.key).join('+');let m=PHOTOMATS.get(key);if(m)return m;
-  m=new THREE.MeshLambertMaterial({vertexColors:true,...(kind==='road'?{polygonOffset:true,polygonOffsetFactor:-2,polygonOffsetUnits:-4}:{})});
+function photoMat(list,kind,blk=null){const key=kind+list.map(p=>p.key).join('+')+(blk?'|'+blk.name:'');let m=PHOTOMATS.get(key);if(m)return m;
+  m=new THREE.MeshLambertMaterial({vertexColors:true});
   const U={};for(let i=0;i<2;i++){const P=list[i];U['ph'+i]={value:P?placeTex(P):null};U['pr'+i]={value:new THREE.Vector4(P?P.photo.x0:0,P?P.photo.z0:0,P?P.photo.size:1,0)};U['pc'+i]={value:new THREE.Vector3(P?P.cx:0,P?P.cz:0,P?P.r:0)};}
-  m.userData.sync=()=>{for(let i=0;i<2;i++){const P=list[i];U['pr'+i].value.w=P&&P.texReady?1:0;}};m.userData.sync();
+  U.ph2={value:blk?blockTex(blk):null};U.pr2={value:new THREE.Vector4(blk?blk.x0:0,blk?blk.z0:0,blk?blk.size:1,0)};
+  m.userData.sync=()=>{for(let i=0;i<2;i++){const P=list[i];U['pr'+i].value.w=P&&P.texReady?1:0;}U.pr2.value.w=blk&&blk.ready?1:0;};m.userData.sync();
   const full=kind==='roof'?1:0;
   m.onBeforeCompile=sh=>{Object.assign(sh.uniforms,U);
     sh.vertexShader=sh.vertexShader.replace('#include <common>','#include <common>\nvarying vec3 vPW;').replace('#include <begin_vertex>','#include <begin_vertex>\nvPW=(modelMatrix*vec4(transformed,1.0)).xyz;');
     sh.fragmentShader=sh.fragmentShader.replace('#include <common>',`#include <common>
-      varying vec3 vPW;uniform sampler2D ph0,ph1;uniform vec4 pr0,pr1;uniform vec3 pc0,pc1;
+      varying vec3 vPW;uniform sampler2D ph0,ph1,ph2;uniform vec4 pr0,pr1,pr2;uniform vec3 pc0,pc1;
       vec4 photoS(sampler2D t,vec4 r,vec3 c){if(r.w<0.5)return vec4(0.0);vec2 uv=(vPW.xz-r.xy)/r.z;if(uv.x<0.0||uv.y<0.0||uv.x>1.0||uv.y>1.0)return vec4(0.0);
-        float w=${full?'1.0-smoothstep(c.z+20.0,c.z+50.0,distance(vPW.xz,c.xy))':'1.0-smoothstep(c.z-25.0,c.z+45.0,distance(vPW.xz,c.xy))'};return vec4(texture2D(t,vec2(uv.x,1.0-uv.y)).rgb,w);}`)
+        float w=${full?'1.0-smoothstep(c.z+20.0,c.z+50.0,distance(vPW.xz,c.xy))':'1.0-smoothstep(c.z-25.0,c.z+45.0,distance(vPW.xz,c.xy))'};return vec4(texture2D(t,vec2(uv.x,1.0-uv.y)).rgb,w);}
+      vec4 blockS(){if(pr2.w<0.5)return vec4(0.0);vec2 uv=(vPW.xz-pr2.xy)/pr2.z;if(uv.x<0.0||uv.y<0.0||uv.x>1.0||uv.y>1.0)return vec4(0.0);vec3 c=texture2D(ph2,vec2(uv.x,1.0-uv.y)).rgb;
+        return vec4(c,smoothstep(0.015,0.05,c.r+c.g+c.b));}`)
       .replace('#include <color_fragment>',`#include <color_fragment>
-      {vec4 a=photoS(ph0,pr0,pc0);vec4 b=photoS(ph1,pr1,pc1);vec4 p=a.w>=b.w?a:b;diffuseColor.rgb=mix(diffuseColor.rgb,p.rgb*${kind==='roof'?'0.92':'0.86'},p.w);}`);};
+      {vec4 q=blockS();diffuseColor.rgb=mix(diffuseColor.rgb,q.rgb*${kind==='roof'?'0.92':'0.86'},q.w);
+       vec4 a=photoS(ph0,pr0,pc0);vec4 b=photoS(ph1,pr1,pc1);vec4 p=a.w>=b.w?a:b;diffuseColor.rgb=mix(diffuseColor.rgb,p.rgb*${kind==='roof'?'0.92':'0.86'},p.w);}`);};
   if(kind==='ground'){const ob=m.onBeforeCompile;m.onBeforeCompile=sh=>{ob(sh);holePatch(sh);detailPatch(sh,0.03,0.21,0.6);};}
   m.customProgramCacheKey=()=>'photo'+kind;PHOTOMATS.set(key,m);return m;}
 /* wall colours by PLATEAU usage code */
@@ -1257,6 +1269,7 @@ function addPlateau(b,G){
   // structures standing over a railway at track level (platform roofs, station buildings straddling the line) become canopies
   let ly=null;for(let i=0;i<n&&ly===null;i++){const q=lineYAt(f[i*2],f[i*2+1],5);if(q&&q.fl!==2)ly=q.y;}
   if(ly===null){const q=lineYAt(b.cx,b.cz,5);if(q&&q.fl!==2)ly=q.y;}
+  if(ly!==null&&b.P&&b.P.city&&!inClear(b.cx,b.cz,STATION_ZONE))return; // over the tracks outside the hand-built stations: the OSM station building does it
   if(ly!==null&&base+H>ly+3.5){const top=Math.max(base+H,ly+5.2);const y0=Math.max(top-0.6,ly+4.6);const tris=tri2(f);const tc=_col2.set('#b5b8bb');
     for(const t of tris){const A=[f[t[0]*2],top,f[t[0]*2+1]],B=[f[t[1]*2],top,f[t[1]*2+1]],C=[f[t[2]*2],top,f[t[2]*2+1]];G.proof.tri(A,B,C,0,1,0,_col.set('#ffffff'));G.tops.tri([A[0],y0,A[2]],[B[0],y0,B[2]],[C[0],y0,C[2]],0,-1,0,tc);}
     for(let i=0;i<n;i++){const j=(i+1)%n;const ax=f[i*2],az=f[i*2+1],bx=f[j*2],bz=f[j*2+1];const dx=bx-ax,dz=bz-az,len=Math.hypot(dx,dz);if(len<0.05)continue;G.tops.quad([ax,y0,az],[bx,y0,bz],[bx,top,bz],[ax,top,az],dz/len,0,-dx/len,tc);}
@@ -1294,6 +1307,102 @@ function roofKit(gb,f,y,r,H){const R=rectOf(f);if(R.hu<4||R.hv<3)return;const P=
   const n=Math.min(9,Math.floor(R.hu*R.hv/40));for(let i=0;i<n;i++){const a=(rnd()*2-1)*(R.hu-1.2),b=(rnd()*2-1)*(R.hv-1.0);put(a,b,0.45,0.35,0.75,rnd()<0.5?'#e6e6e2':'#cfd1cf');}
   if(rnd()<0.35){const a=(rnd()*2-1)*(R.hu-2),b=(rnd()*2-1)*(R.hv-2);put(a,b,0.9,0.9,1.6,'#c9d2c8');}}
 
+/* ================= 藤沢市全域: PLATEAU buildings everywhere, aerial photo blocks, real street furniture =================
+   fujisawa-city.wasm: 'FCT1', meta {chunks:[[key,offset,bytes,n]], blocks:[[bi,bj,file]], pois:[[type,x,z,name,brand,kind]]}, building blob.
+   A chunk that has PLATEAU buildings drops the OSM buildings standing on them (2 m occupancy grid), so the rest of OSM stays. */
+const CITY_IDX=new Map(),CITY_BLK=new Map(),CITY_POI=new Map();let CITY_BUF=null,CITY_DV=null,CITY_OFF=0;
+async function loadCity(){
+  try{const res=await fetch('fujisawa-city.wasm');if(!res.ok)throw new Error(res.status);
+    const buf=await new Response(res.body.pipeThrough(new DecompressionStream('gzip'))).arrayBuffer();const dv=new DataView(buf);
+    const ml=dv.getUint32(4,true);const meta=JSON.parse(new TextDecoder().decode(new Uint8Array(buf,8,ml)));let o=8+ml;while(o%4)o++;
+    CITY_BUF=buf;CITY_DV=dv;CITY_OFF=o;for(const [k,off,len,n] of meta.chunks)CITY_IDX.set(k,[off,len,n]);
+    for(const [bi,bj,file] of meta.blocks)CITY_BLK.set(bj*1000+bi,{name:file,file,x0:X0+bi*4*CH,z0:Z0+bj*4*CH,size:4*CH,tex:null,ready:false});
+    for(const p of meta.pois){const k=chKey(p[1],p[2]);let a=CITY_POI.get(k);if(!a)CITY_POI.set(k,a=[]);a.push(p);}
+    console.log('LOG city chunks',CITY_IDX.size,'blocks',CITY_BLK.size,'pois',meta.pois.length);
+  }catch(e){console.warn('city data not loaded',e);}
+}
+function cityBlock(ci,cj){return CITY_BLK.get(Math.floor(cj/4)*1000+Math.floor(ci/4))||null;}
+function blockTex(b){if(!b.tex){b.tex=new THREE.TextureLoader().load(b.file,t=>{if(isTouch&&t.image&&t.image.width>1024){const c=document.createElement('canvas');c.width=c.height=1024;c.getContext('2d').drawImage(t.image,0,0,1024,1024);t.image=c;t.needsUpdate=true;}
+    b.ready=true;for(const m of PHOTOMATS.values())m.userData.sync&&m.userData.sync();});b.tex.colorSpace=THREE.SRGBColorSpace;b.tex.anisotropy=8;b.tex.wrapS=b.tex.wrapT=THREE.ClampToEdgeWrapping;}return b.tex;}
+/* decode one chunk's buildings (same record layout as the place file, coordinates relative to the chunk centre) */
+function cityChunkBuildings(ci,cj){const e=CITY_IDX.get(cj*CNX+ci);if(!e)return [];const dv=CITY_DV,buf=CITY_BUF;let o=CITY_OFF+e[0];const end=o+e[1];
+  const P={cx:X0+(ci+0.5)*CH,cz:Z0+(cj+0.5)*CH,city:true};const out=[];
+  while(o<end){const nf=dv.getUint16(o,true),st=dv.getUint8(o+2),use=dv.getUint16(o+3,true),h=dv.getUint16(o+5,true)/10,z0=dv.getInt16(o+7,true)/10;o+=9;
+    const foot=new Float32Array(nf*2);let cx=0,cz=0;for(let i=0;i<nf;i++){foot[i*2]=dv.getInt16(o,true)/10+P.cx;foot[i*2+1]=dv.getInt16(o+2,true)/10+P.cz;o+=4;cx+=foot[i*2];cz+=foot[i*2+1];}
+    const rd=()=>{const n=dv.getUint32(o,true);o+=4;const a=new Int16Array(buf.slice(o,o+n*18));o+=n*18;return a;};const roof=rd(),wall=rd();
+    out.push({foot,st,use,h,z0,roof,wall,cx:cx/nf,cz:cz/nf,P});}
+  return out;}
+/* 2 m occupancy of PLATEAU footprints in a chunk */
+let CUR_OCC=null;
+function buildOcc(ci,cj,list){if(!list.length)return null;const N=CH/2,g=new Uint8Array(N*N),x0=X0+ci*CH,z0=Z0+cj*CH;
+  for(const b of list){const f=b.foot;let a0=1e9,a1=-1e9,b0=1e9,b1=-1e9;for(let i=0;i<f.length;i+=2){a0=Math.min(a0,f[i]);a1=Math.max(a1,f[i]);b0=Math.min(b0,f[i+1]);b1=Math.max(b1,f[i+1]);}
+    for(let j=Math.max(0,Math.floor((b0-z0)/2));j<=Math.min(N-1,Math.floor((b1-z0)/2));j++)for(let i=Math.max(0,Math.floor((a0-x0)/2));i<=Math.min(N-1,Math.floor((a1-x0)/2));i++){if(inPolyF(x0+i*2+1,z0+j*2+1,f))g[j*N+i]=1;}}
+  return{g,x0,z0,N};}
+function occAt(o,x,z){const i=Math.floor((x-o.x0)/2),j=Math.floor((z-o.z0)/2);if(i<0||j<0||i>=o.N||j>=o.N)return false;
+  for(let dj=-1;dj<=1;dj++)for(let di=-1;di<=1;di++){const a=i+di,b=j+dj;if(a>=0&&b>=0&&a<o.N&&b<o.N&&o.g[b*o.N+a])return true;}return false;}
+/* ---------- signs: brand colours of the chains you actually see in Fujisawa ---------- */
+const BRANDS=[[/7-?ELEVEN|セブン/i,'#ffffff','#1b7a3f','7-ELEVEN','#f58220'],[/LAWSON|ローソン/i,'#0068b7','#ffffff','LAWSON'],[/Family ?Mart|ファミリーマート/i,'#ffffff','#00a23c','FamilyMart','#0d63ae'],
+  [/マクドナルド|McDonald/i,'#d52b1e','#ffc72c','M マクドナルド'],[/スターバックス|STARBUCKS/i,'#006241','#ffffff','STARBUCKS'],[/TULLY/i,'#1d2a44','#ffffff',"TULLY'S COFFEE"],[/ドトール|DOUTOR/i,'#ffe100','#1d2a44','DOUTOR'],
+  [/吉野家/,'#f39800','#4a2a00','吉野家'],[/松屋/,'#ffd900','#0a3c8c','松屋'],[/すき家/,'#d7000f','#ffffff','すき家'],[/ガスト/,'#e60012','#ffffff','ガスト'],[/ケンタッキー|KFC/i,'#c8102e','#ffffff','KFC'],
+  [/横浜銀行/,'#004098','#ffffff','横浜銀行'],[/三井住友/,'#004b37','#a5c63b','三井住友銀行'],[/みずほ/,'#001f87','#ffffff','みずほ銀行'],[/三菱UFJ/,'#e60012','#ffffff','三菱UFJ銀行'],[/スルガ/,'#00479d','#ffffff','スルガ銀行'],
+  [/ビックカメラ/,'#e60012','#ffffff','ビックカメラ'],[/ABC/,'#d7000f','#ffffff','ABC-MART'],[/マツモトキヨシ/,'#ffe600','#1a3c8f','マツモトキヨシ'],[/ツルハ/,'#e4007f','#ffffff','ツルハドラッグ'],[/HARD/,'#ffd700','#d7000f','HARD OFF'],
+  [/郵便局/,'#e60012','#ffffff','〒 郵便局'],[/ENEOS/,'#ff6600','#ffffff','ENEOS'],[/au/,'#eb5505','#ffffff','au'],[/docomo/i,'#cc0033','#ffffff','docomo'],[/ソフトバンク|SoftBank/i,'#bbbbbb','#111111','SoftBank']];
+const KIND_STYLE={convenience:['#ffffff','#2b2b2b'],restaurant:['#7a2e1f','#ffe8c8'],cafe:['#5a3b2a','#fff3dd'],fast_food:['#d7000f','#ffffff'],bank:['#0b3c7a','#ffffff'],pharmacy:['#1f8a5a','#ffffff'],clothes:['#222222','#ffffff'],books:['#2a4a7a','#ffffff'],supermarket:['#e86a12','#ffffff'],hairdresser:['#3a3a3a','#ffd6e0']};
+function signStyle(name,brand,kind){const s=(brand||'')+' '+(name||'');for(const b of BRANDS)if(b[0].test(s))return{bg:b[1],fg:b[2],text:b[3],band:b[4]};const k=KIND_STYLE[kind]||['#1d2a3a','#ffffff'];return{bg:k[0],fg:k[1],text:name||brand};}
+/* one sign atlas per chunk: 4 × 16 slots of 256 × 64 px */
+function signAtlas(){const cv=document.createElement('canvas');cv.width=1024;cv.height=1024;return{cv,x:cv.getContext('2d'),n:0};}
+function atlasSlot(A,st){if(A.n>=64)return null;const i=A.n++;const sx=(i%4)*256,sy=Math.floor(i/4)*64;const x=A.x;x.fillStyle=st.bg;x.fillRect(sx,sy,256,64);
+  if(st.band){x.fillStyle=st.band;x.fillRect(sx,sy+50,256,8);x.fillStyle='#e60012';x.fillRect(sx,sy+58,256,6);}
+  x.fillStyle=st.fg;x.textAlign='center';x.textBaseline='middle';let fs=36;x.font=`800 ${fs}px "M PLUS Rounded 1c",sans-serif`;while(x.measureText(st.text).width>236&&fs>14){fs-=2;x.font=`800 ${fs}px "M PLUS Rounded 1c",sans-serif`;}
+  x.fillText(st.text,sx+128,sy+(st.band?26:32));return[(sx+2)/1024,1-(sy+62)/1024,(sx+254)/1024,1-(sy+2)/1024];}
+/* ---------- street furniture of one chunk ---------- */
+function buildCityFurniture(grp,ci,cj,cityB,L2){
+  const list=CITY_POI.get(cj*CNX+ci);if(!list)return;const fur=new GB(),zb=new GB(),lit=new GB();const A=signAtlas();const sg=new GB();
+  const nearRoad=(x,z,lim=25)=>{let best=null;for(const ri of ROADCH.get(chKey(x,z))||[]){const r=ROADS[ri];if(r.fl&3||r.c>7)continue;const q=r.path.near(x,z);if(q.d<lim&&(!best||q.d<best.d))best={d:q.d,r,p:r.path.at(q.s),s:q.s};}return best;};
+  const g=(x,z)=>demH(x,z);
+  for(const [t,x,z,name,brand,kind] of list){
+    if(t==='tree'){L2.round.push({x,y:heightAt(x,z),z,s:rr(0.9,1.25),k:'r'});continue;}
+    if(t==='cross'){const n=nearRoad(x,z,8);if(!n||n.r.c>6)continue;const hw=n.r.w/2,tx=n.p.tx,tz=n.p.tz,nx=-tz,nz=tx;const zc=_col.set('#f1eee6');
+      for(let k=-hw+0.3;k<hw-0.3;k+=0.9){const a0=k,a1=Math.min(k+0.45,hw-0.3);const P4=[[a0,-1.6],[a1,-1.6],[a1,1.6],[a0,1.6]].map(([u,v])=>{const X=n.p.x+nx*u+tx*v,Z=n.p.z+nz*u+tz*v;return[X,g(X,Z)+0.25,Z];});zb.quad(P4[0],P4[1],P4[2],P4[3],0,1,0,zc);}continue;}
+    if(t==='sig'){const n=nearRoad(x,z,15);if(!n)continue;const tx=n.p.tx,tz=n.p.tz,nx=-tz,nz=tx;const hw=n.r.w/2+1.1;
+      for(const sd of [1,-1]){const px=x+nx*hw*sd+tx*sd*4,pz=z+nz*hw*sd+tz*sd*4;const y=g(px,pz);fur.obox(px,pz,1,0,0.12,0.12,y,y+5.6,_col.set('#8e979e'));
+        const ax=px-nx*sd*2.6,az=pz-nz*sd*2.6;fur.obox(ax,az,nx,nz,2.6,0.06,y+5.5,y+5.62,_col.set('#8e979e'));
+        const hx=px-nx*sd*4.6,hz=pz-nz*sd*4.6;fur.obox(hx,hz,nx,nz,0.62,0.18,y+5.2,y+5.65,_col.set('#3a3e44'));
+        for(const [k,c] of [[-0.4,'#2bd16a'],[0,'#3d3a30'],[0.4,'#3d2626']]){const lx=hx+nx*k,lz=hz+nz*k;lit.obox(lx+tx*sd*0.19,lz+tz*sd*0.19,nx,nz,0.14,0.02,y+5.3,y+5.56,_col.set(c));}
+        fur.obox(px+tx*sd*0.2,pz+tz*sd*0.2,tx,tz,0.15,0.2,y+2.4,y+3.1,_col.set('#3a3e44'));lit.obox(px+tx*sd*0.36,pz+tz*sd*0.36,tx,tz,0.01,0.12,y+2.5,y+2.75,_col.set('#2bd16a'));}continue;}
+    if(t==='bus'){const n=nearRoad(x,z,20);let px=x,pz=z,tx=1,tz=0;if(n){const nx=-n.p.tz,nz=n.p.tx;const side=((x-n.p.x)*nx+(z-n.p.z)*nz)>=0?1:-1;px=n.p.x+nx*side*(n.r.w/2+0.9);pz=n.p.z+nz*side*(n.r.w/2+0.9);tx=n.p.tx;tz=n.p.tz;}
+      const y=g(px,pz);fur.obox(px,pz,1,0,0.05,0.05,y,y+2.6,_col.set('#c9ced3'));fur.obox(px,pz,tx,tz,0.3,0.04,y+2.3,y+2.9,_col.set('#1f4fa0'));fur.obox(px,pz,1,0,0.25,0.25,y,y+0.15,_col.set('#7d858c'));
+      const uv=atlasSlot(A,{bg:'#ffffff',fg:'#1f2a44',text:(name||'バス停')});if(uv)addSign(sg,px+tz*0.05,y+1.95,pz-tx*0.05,tx,tz,1.1,0.28,uv,true);continue;}
+    if(t==='vend'){const y=g(x,z);const c=['#d52b1e','#1d5fb0','#f4f4f2','#2a8a4a'][Math.floor(hashf(x*13+z)*4)];fur.obox(x,z,1,0,0.5,0.38,y,y+1.83,_col.set(c));lit.obox(x+0.01,z-0.39,1,0,0.42,0.01,y+0.95,y+1.6,_col.set('#e9f1f7'));continue;}
+    if(t==='post'){const y=g(x,z);fur.obox(x,z,1,0,0.22,0.2,y,y+1.15,_col.set('#d52b1e'));fur.obox(x,z,1,0,0.24,0.22,y+1.15,y+1.3,_col.set('#b8241a'));continue;}
+    if(t==='tel'){const y=g(x,z);fur.obox(x,z,1,0,0.45,0.45,y,y+2.2,_col.set('#bfe0d0'));fur.obox(x,z,1,0,0.5,0.5,y+2.2,y+2.35,_col.set('#3a8a5a'));continue;}
+    if(t==='bike'){const y=g(x,z);for(let k=-2;k<=2;k++)fur.obox(x+k*0.7,z,1,0,0.03,0.5,y,y+0.8,_col.set('#8e979e'));continue;}
+    if(t==='shop'){const st=signStyle(name,brand,kind);if(!st.text)continue;
+      // the facade nearest to the shop point
+      let best=null;for(const b of cityB){if(Math.abs(b.cx-x)>40||Math.abs(b.cz-z)>40)continue;const f=b.foot,n=f.length/2;
+        for(let i=0;i<n;i++){const j=(i+1)%n;const ax=f[i*2],az=f[i*2+1],dx=f[j*2]-ax,dz=f[j*2+1]-az,l2=dx*dx+dz*dz;if(l2<4)continue;const u=clamp(((x-ax)*dx+(z-az)*dz)/l2,0.15,0.85);const qx=ax+dx*u,qz=az+dz*u;const d=Math.hypot(qx-x,qz-z);
+          if(d<18&&(!best||d<best.d)){const L=Math.sqrt(l2);let nx=dz/L,nz=-dx/L;if((qx-b.cx)*nx+(qz-b.cz)*nz<0){nx=-nx;nz=-nz;}best={d,qx,qz,nx,nz,len:L,b};}}}
+      const uv=atlasSlot(A,st);if(!uv)continue;
+      if(best){const y=demH(best.qx,best.qz)+3.3;const w=Math.min(4.2,best.len*0.8);addSign(sg,best.qx+best.nx*0.12,y,best.qz+best.nz*0.12,best.nz,-best.nx,w,w/4,uv,false);
+        if(st.band){fur.obox(best.qx+best.nx*0.25,best.qz+best.nz*0.25,-best.nz,best.nx,Math.min(6,best.len*0.45),0.22,y-0.95,y-0.62,_col.set(st.band));}}
+      else{const y=g(x,z);fur.obox(x,z,1,0,0.06,0.06,y,y+3,_col.set('#8e979e'));addSign(sg,x,y+3.4,z,1,0,2.2,0.55,uv,true);}}
+  }
+  if(!fur.empty){const m=new THREE.Mesh(fur.geo(),MAT.top);m.castShadow=true;m.receiveShadow=true;grp.add(m);}
+  if(!zb.empty){grp.add(new THREE.Mesh(zb.geo(),MAT.road));}
+  if(!lit.empty){grp.add(new THREE.Mesh(lit.geo(),new THREE.MeshBasicMaterial({vertexColors:true})));}
+  if(!sg.empty){const tex=new THREE.CanvasTexture(A.cv);tex.colorSpace=THREE.SRGBColorSpace;tex.anisotropy=4;const m=new THREE.Mesh(sg.geo(),new THREE.MeshLambertMaterial({map:tex,side:THREE.DoubleSide,emissive:0xffffff,emissiveMap:tex,emissiveIntensity:0.25}));m.userData.ownTex=tex;grp.add(m);}
+}
+/* a flat sign quad facing (−uz, ux) with atlas uv [u0,v0,u1,v1] */
+function addSign(gb,cx,cy,cz,ux,uz,w,h,uv,both){const nx=-uz,nz=ux;const A=[cx-ux*w/2,cy-h/2,cz-uz*w/2],B=[cx+ux*w/2,cy-h/2,cz+uz*w/2],C=[cx+ux*w/2,cy+h/2,cz+uz*w/2],D=[cx-ux*w/2,cy+h/2,cz-uz*w/2];
+  gb.tri(A,B,C,nx,0,nz,_col.set('#ffffff'),[uv[0],uv[1]],[uv[2],uv[1]],[uv[2],uv[3]]);gb.tri(A,C,D,nx,0,nz,_col.set('#ffffff'),[uv[0],uv[1]],[uv[2],uv[3]],[uv[0],uv[3]]);}
+
+/* whole-city overview photo (6 m/px) for the far terrain and the colours of the distant building blocks */
+const OVERVIEW={u:{value:null},r:{value:new THREE.Vector4(-10440,-10740,0,0)},W:14080,H:16640};const LODINST={m:null,items:null};
+function loadOverview(){new THREE.TextureLoader().load('city/overview.jpg',t=>{t.colorSpace=THREE.SRGBColorSpace;OVERVIEW.u.value=t;OVERVIEW.r.value.set(-10440,-10740,OVERVIEW.W,OVERVIEW.H);
+  try{const c=document.createElement('canvas');c.width=t.image.width;c.height=t.image.height;const x=c.getContext('2d');x.drawImage(t.image,0,0);const d=x.getImageData(0,0,c.width,c.height).data;
+    if(LODINST.m){const [LNX,LNZ,LG0]=META.lod;const cc=new THREE.Color(),c2=new THREE.Color();let n=0;for(const [i,j] of LODINST.items){const X=X0+(i+1)*LG0,Z=Z0+(j+1)*LG0;const u=Math.floor((X+10440)/OVERVIEW.W*c.width),v=Math.floor((Z+10740)/OVERVIEW.H*c.height);
+      if(u>=0&&v>=0&&u<c.width&&v<c.height){const k=(v*c.width+u)*4;if(d[k]+d[k+1]+d[k+2]>20){LODINST.m.getColorAt(n,cc);c2.setRGB(d[k]/255,d[k+1]/255,d[k+2]/255,THREE.SRGBColorSpace);cc.lerp(c2,0.55);LODINST.m.setColorAt(n,cc);}}n++;}LODINST.m.instanceColor.needsUpdate=true;}}catch(e){}});}
+
 /* ================= hand-built stations: shared toolkit =================
    A station file registers ST_CUSTOM[name] = {lines:Set(lineKeys), build()} and may ask for
    - LINE_EXT[key]=metres      : extend a line before its first point (tunnel tails beyond a terminal)
@@ -1303,7 +1412,7 @@ function roofKit(gb,f,y,r,H){const R=rectOf(f);if(R.hu<4||R.hv<3)return;const P=
    - BLD_CLEAR.push([cx,cz,ang,hu,hv]) : no city building may stand here
    - HOLES (via terrainHole)   : the ground is cut open (stair wells to the street)
    The builders use the same GB / collider / zone machinery as the generic stations. */
-const NO_LOOP=new Set(),BLD_SPLIT=[],ST_TRACKS={};const ST_CUSTOM={},LINE_EXT={},PROF_ADJ=[],LANE_ADJ=[],ST_S={},BLD_CLEAR=[],PLAT_CLEAR=[],HOLES=[];
+const NO_LOOP=new Set(),BLD_SPLIT=[],ST_TRACKS={},STATION_ZONE=[];const ST_CUSTOM={},LINE_EXT={},PROF_ADJ=[],LANE_ADJ=[],ST_S={},BLD_CLEAR=[],PLAT_CLEAR=[],HOLES=[];
 /* hole list lives in a small float texture, not in uniforms: phones only allow a few hundred uniform vectors per shader */
 const HOLE_MAX=64,HOLE_DATA=new Float32Array(HOLE_MAX*2*4);const HOLE_TEX=new THREE.DataTexture(HOLE_DATA,HOLE_MAX*2,1,THREE.RGBAFormat,THREE.FloatType);HOLE_TEX.magFilter=HOLE_TEX.minFilter=THREE.NearestFilter;HOLE_TEX.needsUpdate=true;
 const HOLE_U={value:HOLE_TEX},HOLE_N={value:0};
@@ -3685,6 +3794,7 @@ hold('tJump',v=>touchJump=v);hold('tDown',v=>touchDown=v);
 $('tDash').addEventListener('click',()=>{touchDash=!touchDash;$('tDash').classList.toggle('on',touchDash);});
 $('bFly').addEventListener('click',toggleFly);$('bTime').addEventListener('click',cycleTime);$('bMap').addEventListener('click',toggleMap);$('bClose').addEventListener('click',toggleMap);
 $('act').addEventListener('click',doAct);$('bView').addEventListener('click',toggleView);$('bFF').addEventListener('click',toggleFF);
+$('bQual').textContent=QHIGH?'画質: 高':'画質: 軽';$('bQual').addEventListener('click',()=>{try{localStorage.setItem('fq',QHIGH?'l':'h');}catch(e){}location.reload();});
 $('bHelp').addEventListener('click',()=>{$('help').hidden=!$('help').hidden;if(isTouch&&!$('help').hidden)toast('左側ドラッグで移動<small>右側ドラッグで視点・2本指でズーム</small>',3);});
 if(isTouch){document.body.classList.add('touch');$('touchBtns').hidden=false;$('help').hidden=true;}
 
@@ -3973,7 +4083,7 @@ function frame(now){
 addEventListener('resize',()=>{renderer.setSize(innerWidth,innerHeight);for(const c of [camera,farCam]){c.aspect=innerWidth/innerHeight;c.updateProjectionMatrix();}if(!$('mapOv').hidden)drawBigMap();});
 
 (async()=>{
-  setLoad('地図データを受信中…');const plP=loadPlaces.bind(null);await loadData();await plP();
+  setLoad('地図データを受信中…');const plP=loadPlaces.bind(null);await loadData();await plP();await loadCity();loadOverview();
   try{await Promise.race([document.fonts.load('800 52px "M PLUS Rounded 1c"'),new Promise(r=>setTimeout(r,2500))]);}catch(e){}
   await build();buildLabels();
   {const [sx,sz]=LMP('katase_st',35.3091,139.4829);const [tx,tz]=LMP('torii',35.3020,139.4822);let gx=sx+(tx-sx)*0.12,gz=sz+(tz-sz)*0.12;let best=null;

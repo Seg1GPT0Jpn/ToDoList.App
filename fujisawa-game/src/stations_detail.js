@@ -8,7 +8,7 @@
    - BLD_CLEAR.push([cx,cz,ang,hu,hv]) : no city building may stand here
    - HOLES (via terrainHole)   : the ground is cut open (stair wells to the street)
    The builders use the same GB / collider / zone machinery as the generic stations. */
-const NO_LOOP=new Set(),BLD_SPLIT=[],ST_TRACKS={};const ST_CUSTOM={},LINE_EXT={},PROF_ADJ=[],LANE_ADJ=[],ST_S={},BLD_CLEAR=[],PLAT_CLEAR=[],HOLES=[];
+const NO_LOOP=new Set(),BLD_SPLIT=[],ST_TRACKS={},STATION_ZONE=[];const ST_CUSTOM={},LINE_EXT={},PROF_ADJ=[],LANE_ADJ=[],ST_S={},BLD_CLEAR=[],PLAT_CLEAR=[],HOLES=[];
 /* hole list lives in a small float texture, not in uniforms: phones only allow a few hundred uniform vectors per shader */
 const HOLE_MAX=64,HOLE_DATA=new Float32Array(HOLE_MAX*2*4);const HOLE_TEX=new THREE.DataTexture(HOLE_DATA,HOLE_MAX*2,1,THREE.RGBAFormat,THREE.FloatType);HOLE_TEX.magFilter=HOLE_TEX.minFilter=THREE.NearestFilter;HOLE_TEX.needsUpdate=true;
 const HOLE_U={value:HOLE_TEX},HOLE_N={value:0};

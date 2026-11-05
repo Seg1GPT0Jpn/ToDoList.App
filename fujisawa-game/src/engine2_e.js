@@ -46,6 +46,7 @@ hold('tJump',v=>touchJump=v);hold('tDown',v=>touchDown=v);
 $('tDash').addEventListener('click',()=>{touchDash=!touchDash;$('tDash').classList.toggle('on',touchDash);});
 $('bFly').addEventListener('click',toggleFly);$('bTime').addEventListener('click',cycleTime);$('bMap').addEventListener('click',toggleMap);$('bClose').addEventListener('click',toggleMap);
 $('act').addEventListener('click',doAct);$('bView').addEventListener('click',toggleView);$('bFF').addEventListener('click',toggleFF);
+$('bQual').textContent=QHIGH?'画質: 高':'画質: 軽';$('bQual').addEventListener('click',()=>{try{localStorage.setItem('fq',QHIGH?'l':'h');}catch(e){}location.reload();});
 $('bHelp').addEventListener('click',()=>{$('help').hidden=!$('help').hidden;if(isTouch&&!$('help').hidden)toast('左側ドラッグで移動<small>右側ドラッグで視点・2本指でズーム</small>',3);});
 if(isTouch){document.body.classList.add('touch');$('touchBtns').hidden=false;$('help').hidden=true;}
 
@@ -334,7 +335,7 @@ function frame(now){
 addEventListener('resize',()=>{renderer.setSize(innerWidth,innerHeight);for(const c of [camera,farCam]){c.aspect=innerWidth/innerHeight;c.updateProjectionMatrix();}if(!$('mapOv').hidden)drawBigMap();});
 
 (async()=>{
-  setLoad('地図データを受信中…');const plP=loadPlaces.bind(null);await loadData();await plP();
+  setLoad('地図データを受信中…');const plP=loadPlaces.bind(null);await loadData();await plP();await loadCity();loadOverview();
   try{await Promise.race([document.fonts.load('800 52px "M PLUS Rounded 1c"'),new Promise(r=>setTimeout(r,2500))]);}catch(e){}
   await build();buildLabels();
   {const [sx,sz]=LMP('katase_st',35.3091,139.4829);const [tx,tz]=LMP('torii',35.3020,139.4822);let gx=sx+(tx-sx)*0.12,gz=sz+(tz-sz)*0.12;let best=null;
