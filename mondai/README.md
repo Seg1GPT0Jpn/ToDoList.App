@@ -4,6 +4,8 @@
 
 **公開ページ：https://seg1gpt0jpn.github.io/ToDoList.App/mondai/**
 
+Firebase Hosting でも公開できます（設定すると `main` に入るたびに自動で公開）。手順は [docs/FIREBASE_HOSTING.md](docs/FIREBASE_HOSTING.md)。
+
 ## できること
 | 画面 | できること |
 | --- | --- |
@@ -48,7 +50,7 @@ Supabase（無料枠）の設定が必要です。手順は [supabase/README.md]
 ## 開発者向け
 - 構成：ビルド不要の ES モジュール。`js/core`（保存・移行・バックアップ）、`js/domain`（ロジック）、`js/render`（印刷用 HTML）、`js/ui`（画面）、`js/ai`、`js/cloud`、`supabase/`（SQL・Edge Function）
 - 設計資料：[docs/](docs/)（現状調査・全体計画・進捗・機能一覧・システム構成・データベース・AI・画面・移行・テスト）
-- 公開：`main` ブランチに入れると GitHub Pages に反映されます（ビルド工程なし）
+- 公開：`main` ブランチに入れると GitHub Pages に反映されます（ビルド工程なし）。Firebase Hosting にはリポジトリ直下の `firebase.json` と `.github/workflows/firebase-hosting.yml` で公開します
 
 ```bash
 cd mondai
