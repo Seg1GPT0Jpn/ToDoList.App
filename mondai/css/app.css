@@ -66,6 +66,8 @@ a { color: var(--accent); }
 .app-nav .nav-badge { margin-left: auto; background: var(--accent); color: #fff; font-size: 11px; border-radius: 9px; padding: 0 7px; }
 .nav-foot { margin-top: auto; padding: 10px; font-size: 11px; }
 .nav-foot button { background: none; border: 1px solid rgba(255, 255, 255, .2); color: var(--nav-ink); border-radius: 6px; padding: 3px 8px; cursor: pointer; }
+.nav-foot #install-btn { display: block; width: 100%; margin-bottom: 8px; padding: 6px 8px; font-size: 12px; border-color: rgba(255, 255, 255, .45); }
+.nav-foot #install-btn[hidden] { display: none; }
 .app-main { min-width: 0; }
 .app-top { display: none; }
 .view { padding: 22px 26px 60px; max-width: 1500px; margin: 0 auto; }

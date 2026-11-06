@@ -3,6 +3,7 @@ import { loadAll, state, log } from './core/store.js';
 import { migrateLegacy } from './core/migrate.js';
 import { $, toast, on } from './core/util.js';
 import { currentMaterial } from './ui/common.js';
+import { setupPWA } from './pwa.js';
 
 const PAGES = {
   home: ['ホーム', () => import('./ui/home.js')],
@@ -83,6 +84,7 @@ function setupErrors() {
 async function init() {
   setupTheme();
   setupErrors();
+  setupPWA();
   $('nav-toggle').addEventListener('click', () => $('shell').classList.toggle('nav-open'));
   document.addEventListener('keydown', e => { if (e.key === 'Escape') $('shell').classList.remove('nav-open'); });
   try {

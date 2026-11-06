@@ -4,6 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>教材制作プラットフォーム</title>
+<meta name="description" content="問題バンク・プリント・テスト・解答解説をつくる教材制作アプリ">
+<meta name="theme-color" content="#2459d6">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="icon" href="icons/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="教材制作">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <script>
   // テーマは描画前に決めてちらつきを防ぐ
   try { const t = localStorage.getItem('mondai.theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) { /* 設定なし */ }
@@ -36,6 +46,7 @@
     <a href="#/analytics" data-page="analytics"><span class="ico">▥</span>分析</a>
     <a href="#/settings" data-page="settings"><span class="ico">⚙</span>設定・データ</a>
     <div class="nav-foot">
+      <button id="install-btn" hidden title="このアプリをホーム画面・デスクトップに追加">⤓ アプリとしてインストール</button>
       <button id="theme-btn" title="画面の明るさを切り替え">表示：自動</button>
     </div>
   </nav>

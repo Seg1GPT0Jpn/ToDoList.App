@@ -561,6 +561,34 @@ try {
     await m.context().close();
   });
 
+  // ---------- インストール・オフライン ----------
+  await test('インストール：manifest・アイコン・Service Worker がそろい、オフラインでも開ける', async () => {
+    const w = await newPage();
+    await w.goto(BASE, { waitUntil: 'networkidle' });
+    const info = await w.evaluate(async () => {
+      const link = document.querySelector('link[rel=manifest]');
+      const m = await (await fetch(link.href)).json();
+      const icons = await Promise.all(m.icons.map(async i => (await fetch(new URL(i.src, link.href))).ok));
+      const reg = await Promise.race([navigator.serviceWorker.ready, new Promise(r => setTimeout(() => r(null), 15000))]);
+      return { name: m.name, display: m.display, icons, sw: !!(reg && reg.active) };
+    });
+    assert(info.name === '教材制作プラットフォーム' && info.display === 'standalone', 'manifest');
+    assert(info.icons.every(Boolean), 'アイコンが読めない');
+    assert(info.sw, 'Service Worker が動いていない');
+    // 保存が終わるのを待ってから、ネットを切って開き直す
+    await w.waitForFunction(async () => (await (await caches.open('mondai-v1')).keys()).length >= 50, null, { timeout: 30000 });
+    await w.reload({ waitUntil: 'networkidle' });
+    await w.context().setOffline(true);
+    await w.reload({ waitUntil: 'load' });
+    await w.waitForTimeout(2500);
+    const n = await w.evaluate(() => /** @type {any} */ (window).__mondai && window.__mondai.state.questions.length);
+    assert(n === 7360, 'オフラインで内蔵問題が読めない ' + n);
+    await go(w, '#/settings');
+    assert((await w.textContent('#sec-install')).includes('インストール'), '設定のインストール案内');
+    await w.context().setOffline(false);
+    await w.context().close();
+  });
+
   await test('画面のエラーが出ていない', async () => {
     assert(!errors.length, errors.slice(0, 5).join(' / '));
   });
