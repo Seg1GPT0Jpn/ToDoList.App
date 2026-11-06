@@ -19,7 +19,8 @@ GitHub Pages（`https://seg1gpt0jpn.github.io/ToDoList.App/mondai/`）での公�
 ## 2. 公開用の鍵（サービスアカウント）を作る
 1. https://console.cloud.google.com/iam-admin/serviceaccounts を開き、上の欄で 1 のプロジェクトを選びます。
 2. 「サービスアカウントを作成」→ 名前に `github-deploy` などと入れて「作成して続行」。
-3. ロールに **「Firebase Hosting 管理者」** と **「API キー閲覧者」** を追加して「完了」。
+3. ロールに **「Firebase Hosting 管理者」**・**「API キー閲覧者」**・**「Service Usage ユーザー」**（英語表示では Service Usage Consumer）の3つを追加して「完了」。
+   - あとから足すときは https://console.cloud.google.com/iam-admin/iam で `github-deploy@…` の鉛筆マークから追加します。
 4. 作ったアカウントを開き、「鍵」→「鍵を追加」→「新しい鍵を作成」→「JSON」。JSON ファイルがダウンロードされます。
 
 この JSON はパスワードと同じです。**リポジトリ・チャット・メールには貼らないでください。** 次の手順で GitHub の Secrets にだけ登録し、登録したらパソコンからは削除してかまいません。
@@ -39,7 +40,8 @@ GitHub Pages（`https://seg1gpt0jpn.github.io/ToDoList.App/mondai/`）での公�
 | 症状 | 確認すること |
 | --- | --- |
 | Actions に何も起きない | Variables の `FIREBASE_PROJECT_ID` が登録されているか（未登録だと公開の処理を飛ばします） |
-| 「Permission denied」「403」 | サービスアカウントのロール（手順 2-3）。それでも出るときは「Cloud Run 閲覧者」も追加 |
+| 「Permission denied to get service [firebasehosting.googleapis.com]」 | 「Service Usage ユーザー」のロールがない（手順 2-3）。追加して1〜2分待ち、Actions で「Re-run all jobs」 |
+| そのほかの「Permission denied」「403」 | サービスアカウントのロール（手順 2-3）。それでも出るときは「Cloud Run 閲覧者」も追加 |
 | 「Failed to get Firebase project」 | プロジェクト ID のつづり、手順 1-4 で Hosting を始めたか |
 | 古い画面のまま | ブラウザを再読み込み（HTML・JS は毎回確認する設定なので、通常はすぐ新しくなります） |
 
