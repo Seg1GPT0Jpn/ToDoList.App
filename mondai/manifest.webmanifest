@@ -1,0 +1,25 @@
+{
+  "name": "教材制作プラットフォーム",
+  "short_name": "教材制作",
+  "description": "問題バンク・プリント・テスト・解答解説をつくる教材制作アプリ（中学・高校の内蔵問題つき）",
+  "lang": "ja",
+  "id": "./",
+  "start_url": "./#/home",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#ffffff",
+  "theme_color": "#2459d6",
+  "categories": ["education", "productivity"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ],
+  "shortcuts": [
+    { "name": "問題バンク", "url": "./#/bank", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "プリントを作る", "url": "./#/editor/new", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "テストを作る", "url": "./#/exam", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] }
+  ]
+}

@@ -4,6 +4,7 @@ import * as db from '../core/db.js';
 import { makeBackup, restoreBackup, validateBackup, summarize } from '../core/backup.js';
 import { esc, toast, download, pickFiles, fmtDate } from '../core/util.js';
 import { modal } from './common.js';
+import { isInstalled, isIOS, canPrompt, promptInstall, onInstallChange } from '../pwa.js';
 
 async function cloudModule() {
   try { return await import('../cloud/supabase.js'); } catch (e) { return null; }
@@ -41,6 +42,10 @@ export async function render(root) {
       </section>
     </div>
     <div>
+      <section class="card" id="sec-install">
+        <h2>アプリとしてインストール</h2>
+        <div id="install-state" class="small"></div>
+      </section>
       <section class="card">
         <h2>表示</h2>
         <label class="f">画面の明るさ<select class="input" id="theme">
@@ -242,6 +247,34 @@ export async function render(root) {
   renderHistory();
   $('only-err').addEventListener('change', renderHistory);
   $('hist-dl').addEventListener('click', async () => download('操作履歴.json', JSON.stringify(await db.all('history'), null, 1)));
+
+  // ---------- インストール ----------
+  const renderInstall = () => {
+    const el = $('install-state');
+    if (!el) return;
+    const offline = 'serviceWorker' in navigator && window.isSecureContext
+      ? 'インストールすると、ふつうのアプリのように専用の画面で開けます。一度開いた端末では、インターネットにつながっていなくても使えます（AI とチーム機能を除く）。'
+      : 'このページは https で開いていないため、インストールとオフラインでの利用はできません。';
+    if (isInstalled()) {
+      el.innerHTML = `<div class="notice ok">このアプリはインストールして開いています。</div><p class="muted">${offline}</p>`;
+    } else if (canPrompt()) {
+      el.innerHTML = `<p class="muted">${offline}</p><button class="btn primary" id="install-now">⤓ この端末にインストール</button>`;
+      $('install-now').addEventListener('click', async () => {
+        const r = await promptInstall();
+        if (r === 'accepted') toast('インストールしました。ホーム画面・アプリ一覧から開けます');
+      });
+    } else if (isIOS()) {
+      el.innerHTML = `<p class="muted">${offline}</p><ol><li>Safari でこのページを開く</li><li>画面下（iPad は上）の <b>共有ボタン</b>（四角から矢印が出ているマーク）を押す</li><li><b>「ホーム画面に追加」</b>を選び、「追加」を押す</li></ol>`;
+    } else {
+      el.innerHTML = `<p class="muted">${offline}</p><ul>
+        <li><b>パソコン（Chrome・Edge）</b>：アドレスバーの右にある <b>インストールのマーク</b>（画面に矢印）を押す。見つからないときはメニュー（︙）→「キャスト、保存、共有」→「ページをアプリとしてインストール」</li>
+        <li><b>Android（Chrome）</b>：メニュー（︙）→ <b>「ホーム画面に追加」</b> または「アプリをインストール」</li>
+        <li><b>iPhone・iPad</b>：Safari の共有ボタン →「ホーム画面に追加」</li></ul>`;
+    }
+  };
+  renderInstall();
+  const offInstall = onInstallChange(renderInstall);
+  return () => { offInstall(); };
 }
 
 function atobSafe(jwt) {
