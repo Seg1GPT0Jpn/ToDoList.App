@@ -55,7 +55,7 @@ body.touch #stBox{top:auto;bottom:calc(196px + env(safe-area-inset-bottom,0px))}
 @keyframes w{from{transform:translateX(-10%)}to{transform:translateX(160%)}}
 #mapOv{position:fixed;inset:0;z-index:10;background:rgba(10,30,45,.86);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:calc(12px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));box-sizing:border-box}
 #mapOv .head{color:#fff;font-weight:800;font-size:15px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;justify-content:center;text-align:center}
-#mapCv{border-radius:12px;border:3px solid #fff;cursor:crosshair;max-width:100%;touch-action:none}
+#mapCv{touch-action:none;cursor:grab;border-radius:12px;border:3px solid #fff;cursor:crosshair;max-width:100%;touch-action:none}
 #chips{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;max-width:980px;max-height:24vh;overflow:auto}
 #chips .btn{font-size:12px;padding:5px 11px}
 #chips .btn.st{background:#e4eff8}
@@ -112,7 +112,7 @@ body.touch #trainBox{top:auto;bottom:calc(196px + env(safe-area-inset-bottom,0px
 </div>
 <div id="joy" hidden><i></i></div>
 <div id="mapOv" hidden>
-  <div class="head"><span>藤沢市と沿線マップ — 地図をタップするとその場所へワープ</span><span style="font-size:11px;font-weight:500;opacity:.75">© OpenStreetMap contributors／国土地理院</span><button class="btn" id="bClose" type="button">閉じる</button></div>
+  <div class="head"><span>神奈川県マップ — ドラッグで移動・ホイール/ピンチで拡大・タップでワープ</span><span style="font-size:11px;font-weight:500;opacity:.75">© OpenStreetMap contributors／国土地理院</span><button class="btn" id="bClose" type="button">閉じる</button></div>
   <canvas id="mapCv"></canvas>
   <div id="chips"></div>
 </div>
@@ -4144,40 +4144,60 @@ function bakeMap(){
   mapImg=c;buildMapOverlay();
 }
 const miniCtx=$('miniCv').getContext('2d');
+/* ---------- map tiles from 地理院地図 (標準地図), drawn under the game's own overlays ---------- */
+const GTILE=new Map();let gtileDirty=0;
+function gtile(z,x,y){const k=z+'/'+x+'/'+y;let im=GTILE.get(k);if(!im){im=new Image();im.crossOrigin='anonymous';im.onload=()=>{im.ok=1;gtileDirty=1;};im.src=`${GSI}std/${z}/${x}/${y}.png`;GTILE.set(k,im);
+    if(GTILE.size>900){for(const kk of GTILE.keys()){GTILE.delete(kk);if(GTILE.size<700)break;}}}return im.ok?im:null;}
+/* draw the tiles covering the game rectangle [gx0,gx1]×[gz0,gz1] with toPx:(x,z)->[u,v] at a zoom suited to mpp (metres per pixel) */
+function drawGsi(c,gx0,gz0,gx1,gz1,toPx,mpp){const [la1,lo0]=g2ll(gx0,gz0),[la0,lo1]=g2ll(gx1,gz1);const z=clamp(Math.round(Math.log2(40075016*Math.cos(LAT0*Math.PI/180)/256/mpp)),6,17);
+  const tx0=Math.floor(lon2t(lo0,z)),tx1=Math.floor(lon2t(lo1,z)),ty0=Math.floor(lat2t(la1,z)),ty1=Math.floor(lat2t(la0,z));if((tx1-tx0+1)*(ty1-ty0+1)>160)return;
+  for(let y=ty0;y<=ty1;y++)for(let x=tx0;x<=tx1;x++){const im=gtile(z,x,y);const a=toPx((t2lon(x,z)-LON0)*MX,-(t2lat(y,z)-LAT0)*MZ),b=toPx((t2lon(x+1,z)-LON0)*MX,-(t2lat(y+1,z)-LAT0)*MZ);
+    if(im)c.drawImage(im,a[0],a[1],b[0]-a[0]+0.6,b[1]-a[1]+0.6);else{const p=z>6?gtile(z-1,x>>1,y>>1):null;if(p){const sx=(x&1)*128,sy=(y&1)*128;c.drawImage(p,sx,sy,128,128,a[0],a[1],b[0]-a[0]+0.6,b[1]-a[1]+0.6);}}}}
+function drawLinesOn(c,toPx,w){c.lineCap='round';c.lineJoin='round';for(const kk in LINES){const l=LINES[kk];c.beginPath();l.path.pts.forEach((p,i)=>{const q=toPx(p[0],p[1]);i?c.lineTo(q[0],q[1]):c.moveTo(q[0],q[1]);});c.lineWidth=w+2.5;c.strokeStyle='rgba(255,255,255,.9)';c.setLineDash([]);c.stroke();c.lineWidth=w;c.strokeStyle=l.color;c.setLineDash(l.mono?[6,4]:[]);c.stroke();c.setLineDash([]);}}
 function drawMini(){
-  if(!mapImg)return;const c=miniCtx,S=340,span=P.fly?4000:P.ride?2600:900;const k=S/(span*MS);
-  c.save();c.fillStyle='#3a8fc7';c.fillRect(0,0,S,S);c.imageSmoothingEnabled=true;
-  c.translate(S/2,S/2);c.scale(k,k);c.translate(-(P.x-WORLD.x0)*MS,-(P.z-WORLD.z0)*MS);c.drawImage(mapImg,0,0);c.restore();
-  if(span<=2600){c.save();c.translate(S/2,S/2);const sc=S/span;const half=span/2+50;
-    c.fillStyle='rgba(120,118,112,.75)';for(const ch of CHUNKS.values()){const cx=X0+(ch.ci+0.5)*CH,cz=Z0+(ch.cj+0.5)*CH;if(Math.abs(cx-P.x)>half+CH||Math.abs(cz-P.z)>half+CH)continue;
-      c.beginPath();for(const b of ch.colls){if(b.t!==1||b.plat)continue;if(Math.abs(b.x0-P.x)>half||Math.abs(b.z0-P.z)>half)continue;const p=b.pts;c.moveTo((p[0]-P.x)*sc,(p[1]-P.z)*sc);for(let i=2;i<p.length;i+=2)c.lineTo((p[i]-P.x)*sc,(p[i+1]-P.z)*sc);c.closePath();}c.fill();}
-    const ci0=Math.floor((P.x-X0)/CH),cj0=Math.floor((P.z-Z0)/CH),RR=Math.ceil(half/CH);const seen=new Set();c.lineCap='round';c.lineJoin='round';
-    for(let i=ci0-RR;i<=ci0+RR;i++)for(let j=cj0-RR;j<=cj0+RR;j++)for(const ri of ROADCH.get(j*CNX+i)||[]){if(seen.has(ri))continue;seen.add(ri);const r=ROADS[ri];if(r.fl&2)continue;const p=r.pts;
-      c.beginPath();c.moveTo((p[0]-P.x)*sc,(p[1]-P.z)*sc);for(let q=2;q<p.length;q+=2)c.lineTo((p[q]-P.x)*sc,(p[q+1]-P.z)*sc);c.lineWidth=Math.max(1.5,r.w*sc);c.strokeStyle=r.c>=7?'rgba(240,232,214,.9)':r.c<=2?'#ffe9a8':'#ffffff';c.stroke();}
-    for(const kk in LINES){const l=LINES[kk];c.beginPath();l.path.pts.forEach((p,i)=>i?c.lineTo((p[0]-P.x)*sc,(p[1]-P.z)*sc):c.moveTo((p[0]-P.x)*sc,(p[1]-P.z)*sc));c.lineWidth=Math.max(3,6*sc);c.strokeStyle=l.color;c.setLineDash(l.mono?[6,4]:[]);c.stroke();c.setLineDash([]);}
-    c.restore();}
-  for(const r of ACTIVE){if(!r.poses)continue;const ps=r.poses[(r.poses.length/2)|0];const dx=(ps.x-P.x)*MS*k,dz=(ps.z-P.z)*MS*k;if(Math.abs(dx)<S/2&&Math.abs(dz)<S/2){c.beginPath();c.arc(S/2+dx,S/2+dz,6,0,7);c.fillStyle=TYPECOL[r.type]&&r.type!=='各停'&&r.type!=='普通'?TYPECOL[r.type]:r.tl[0].l.color;c.fill();c.lineWidth=2;c.strokeStyle='#fff';c.stroke();}}
-  c.save();c.translate(S/2,S/2);c.rotate(-cam.yaw+Math.PI);c.beginPath();c.moveTo(0,0);c.arc(0,0,70,-Math.PI/2-0.45,-Math.PI/2+0.45);c.closePath();c.fillStyle='rgba(255,255,255,.18)';c.fill();c.restore();
+  const c=miniCtx,S=340,span=P.fly?Math.max(4000,(P.y-standY(P.x,P.z,P.y))*6):P.ride?2600:900;const sc=S/span;const toPx=(x,z)=>[S/2+(x-P.x)*sc,S/2+(z-P.z)*sc];
+  c.save();c.fillStyle='#bfe0f2';c.fillRect(0,0,S,S);c.imageSmoothingEnabled=true;
+  drawGsi(c,P.x-span*0.75,P.z-span*0.75,P.x+span*0.75,P.z+span*0.75,toPx,span/S);
+  drawLinesOn(c,toPx,Math.max(3,Math.min(7,6*sc*4)));
+  for(const r of ACTIVE){if(!r.poses)continue;const ps=r.poses[(r.poses.length/2)|0];const q=toPx(ps.x,ps.z);if(q[0]>0&&q[0]<S&&q[1]>0&&q[1]<S){c.beginPath();c.arc(q[0],q[1],6,0,7);c.fillStyle=TYPECOL[r.type]&&r.type!=='各停'&&r.type!=='普通'?TYPECOL[r.type]:r.tl[0].l.color;c.fill();c.lineWidth=2;c.strokeStyle='#fff';c.stroke();}}
+  c.restore();
+  c.save();c.translate(S/2,S/2);c.rotate(-cam.yaw+Math.PI);c.beginPath();c.moveTo(0,0);c.arc(0,0,70,-Math.PI/2-0.45,-Math.PI/2+0.45);c.closePath();c.fillStyle='rgba(255,154,60,.18)';c.fill();c.restore();
   c.save();c.translate(S/2,S/2);c.rotate(-P.face+Math.PI);c.beginPath();c.moveTo(0,-15);c.lineTo(10,11);c.lineTo(0,5);c.lineTo(-10,11);c.closePath();c.fillStyle='#ff9a3c';c.fill();c.lineWidth=3;c.strokeStyle='#fff';c.stroke();c.restore();
-  const sl=span>2000?1000:100;const ml=sl*MS*k;c.fillStyle='rgba(16,40,58,.8)';c.fillRect(S/2-ml/2,S-40,ml,7);c.font='800 20px sans-serif';c.textAlign='center';c.fillStyle='#fff';c.strokeStyle='rgba(16,40,58,.8)';c.lineWidth=4;c.strokeText(sl>=1000?'1 km':'100 m',S/2,S-48);c.fillText(sl>=1000?'1 km':'100 m',S/2,S-48);
+  const sl=span>8000?5000:span>2000?1000:100;const ml=sl*sc;c.fillStyle='rgba(16,40,58,.8)';c.fillRect(S/2-ml/2,S-40,ml,7);c.font='800 20px sans-serif';c.textAlign='center';c.fillStyle='#fff';c.strokeStyle='rgba(16,40,58,.8)';c.lineWidth=4;const tl=sl>=1000?sl/1000+' km':sl+' m';c.strokeText(tl,S/2,S-48);c.fillText(tl,S/2,S-48);
 }
+/* ---------- the big map: all of Kanagawa, drag to pan, wheel / pinch / buttons to zoom, tap to warp ---------- */
+const MAPV={cx:(KB.x0+KB.x1)/2,cz:(KB.z0+KB.z1)/2,span:KB.x1-KB.x0};
 function buildMapOverlay(){
   const chips=$('chips');chips.innerHTML='';
+  const view=(n,f)=>{const b=document.createElement('button');b.className='btn';b.type='button';b.textContent=n;b.addEventListener('click',()=>{f();drawBigMap();});chips.appendChild(b);};
+  view('神奈川県全体',()=>{MAPV.cx=(KB.x0+KB.x1)/2;MAPV.cz=(KB.z0+KB.z1)/2;MAPV.span=KB.x1-KB.x0;});view('藤沢市',()=>{MAPV.cx=-600;MAPV.cz=-3000;MAPV.span=16000;});view('現在地',()=>{MAPV.cx=P.x;MAPV.cz=P.z;MAPV.span=3000;});
+  view('＋',()=>{MAPV.span=Math.max(400,MAPV.span/1.6);});view('－',()=>{MAPV.span=Math.min(KB.x1-KB.x0,MAPV.span*1.6);});
   const list=[...LM.filter(m=>m.travel&&!m.station),...LM.filter(m=>m.travel&&m.station)];
   for(const d of list){const b=document.createElement('button');b.className='btn'+(d.station?' st':'');b.type='button';b.textContent=d.name;b.addEventListener('click',()=>{warp(d.x,d.z,d.station);toggleMap();});chips.appendChild(b);}
-  const cv=$('mapCv');cv.addEventListener('click',e=>{const r=cv.getBoundingClientRect();const wx=WORLD.x0+(e.clientX-r.left)/r.width*(WORLD.x1-WORLD.x0),wz=WORLD.z0+(e.clientY-r.top)/r.height*(WORLD.z1-WORLD.z0);warp(wx,wz);toggleMap();});
+  for(const t of KANA_TOWNS){if(t[0]==='藤沢市')continue;const b=document.createElement('button');b.className='btn';b.type='button';b.textContent=t[0];b.addEventListener('click',()=>{const p=L(t[2],t[3]);warp(p[0],p[1]);toggleMap();});chips.appendChild(b);}
+  const cv=$('mapCv');let drag=null,moved=0;const pts=new Map();let pinch=0,span0=0;
+  const toWorld=(e)=>{const r=cv.getBoundingClientRect();const k=MAPV.span/r.width;return[MAPV.cx+(e.clientX-r.left-r.width/2)*k,MAPV.cz+(e.clientY-r.top-r.height/2)*k];};
+  cv.addEventListener('pointerdown',e=>{cv.setPointerCapture(e.pointerId);pts.set(e.pointerId,[e.clientX,e.clientY]);if(pts.size===2){const a=[...pts.values()];pinch=Math.hypot(a[0][0]-a[1][0],a[0][1]-a[1][1]);span0=MAPV.span;drag=null;}else{drag=[e.clientX,e.clientY];moved=0;}});
+  cv.addEventListener('pointermove',e=>{if(!pts.has(e.pointerId))return;pts.set(e.pointerId,[e.clientX,e.clientY]);
+    if(pts.size===2&&pinch){const a=[...pts.values()];const d=Math.hypot(a[0][0]-a[1][0],a[0][1]-a[1][1]);MAPV.span=clamp(span0*pinch/Math.max(d,1),400,KB.x1-KB.x0);moved=99;drawBigMap();return;}
+    if(drag){const r=cv.getBoundingClientRect();const k=MAPV.span/r.width;const dx=e.clientX-drag[0],dy=e.clientY-drag[1];moved+=Math.abs(dx)+Math.abs(dy);MAPV.cx-=dx*k;MAPV.cz-=dy*k;drag=[e.clientX,e.clientY];drawBigMap();}});
+  const up=e=>{const was=pts.size;pts.delete(e.pointerId);if(pts.size<2)pinch=0;if(drag&&was===1&&moved<6){const [wx,wz]=toWorld(e);warp(wx,wz);toggleMap();}drag=null;};
+  cv.addEventListener('pointerup',up);cv.addEventListener('pointercancel',()=>{pts.clear();drag=null;});
+  cv.addEventListener('wheel',e=>{e.preventDefault();const [wx,wz]=toWorld(e);const f=e.deltaY>0?1.25:0.8;const ns=clamp(MAPV.span*f,400,KB.x1-KB.x0);MAPV.cx=wx+(MAPV.cx-wx)*ns/MAPV.span;MAPV.cz=wz+(MAPV.cz-wz)*ns/MAPV.span;MAPV.span=ns;drawBigMap();},{passive:false});
+  setInterval(()=>{if(gtileDirty&&!$('mapOv').hidden){gtileDirty=0;drawBigMap();}},400);
 }
 function drawBigMap(){
-  const cv=$('mapCv');const availW=Math.min(innerWidth-40,1100),availH=innerHeight*0.62;const ar=(WORLD.x1-WORLD.x0)/(WORLD.z1-WORLD.z0);
-  let w=availW,h=w/ar;if(h>availH){h=availH;w=h*ar;}const dpr=Math.min(devicePixelRatio,2);cv.width=w*dpr;cv.height=h*dpr;cv.style.width=w+'px';cv.style.height=h+'px';
-  const x=cv.getContext('2d');x.scale(dpr,dpr);x.drawImage(mapImg,0,0,w,h);const k=w/(WORLD.x1-WORLD.x0);
-  const T=(px,pz)=>[(px-WORLD.x0)*k,(pz-WORLD.z0)*k];
+  const cv=$('mapCv');const w=Math.min(innerWidth-40,1100),h=Math.min(innerHeight*0.62,w*0.75);const dpr=Math.min(devicePixelRatio,2);if(cv.width!==Math.round(w*dpr)||cv.height!==Math.round(h*dpr)){cv.width=w*dpr;cv.height=h*dpr;}cv.style.width=w+'px';cv.style.height=h+'px';
+  const x=cv.getContext('2d');x.setTransform(dpr,0,0,dpr,0,0);const k=w/MAPV.span;const T=(px,pz)=>[w/2+(px-MAPV.cx)*k,h/2+(pz-MAPV.cz)*k];
+  x.fillStyle='#bfe0f2';x.fillRect(0,0,w,h);const hw=MAPV.span/2,hh=hw*h/w;drawGsi(x,MAPV.cx-hw,MAPV.cz-hh,MAPV.cx+hw,MAPV.cz+hh,T,MAPV.span/w);
+  drawLinesOn(x,T,Math.max(2.5,Math.min(6,k*40)));
   x.textAlign='center';x.textBaseline='middle';
-  x.font=`500 ${Math.max(9,k*260)}px "M PLUS Rounded 1c",sans-serif`;
-  const seen=new Set();for(const S of STATIONS){const n=S.st[0];if(seen.has(n))continue;seen.add(n);const [u,v]=T(S.p.x,S.p.z);x.lineWidth=3;x.strokeStyle='rgba(255,255,255,.9)';x.strokeText(n,u+12,v+9);x.fillStyle='#10283a';x.fillText(n,u+12,v+9);}
-  for(const [n,lat,lon] of [['藤沢市',35.36,139.465],['茅ヶ崎市',35.345,139.40],['鎌倉市',35.325,139.535],['横浜市',35.44,139.56],['大和市',35.47,139.455],['海老名市',35.45,139.39],['綾瀬市',35.435,139.425],['相模原市',35.53,139.43],['相模湾',35.29,139.44]]){const p=L(lat,lon);const [u,v]=T(p[0],p[1]);x.font=`800 ${Math.max(11,k*380)}px "M PLUS Rounded 1c",sans-serif`;x.lineWidth=4;x.strokeStyle='rgba(16,40,58,.5)';x.strokeText(n,u,v);x.fillStyle='rgba(255,255,255,.95)';x.fillText(n,u,v);}
-  const km=1000*k;x.fillStyle='#fff';x.fillRect(12,h-18,km*5,5);x.font='800 11px sans-serif';x.textAlign='left';x.fillText('5 km',12,h-26);
-  const [u,v]=T(P.x,P.z);x.save();x.translate(u,v);x.rotate(-P.face+Math.PI);x.beginPath();x.moveTo(0,-10);x.lineTo(7,8);x.lineTo(0,4);x.lineTo(-7,8);x.closePath();x.fillStyle='#ff3c6a';x.fill();x.lineWidth=2;x.strokeStyle='#fff';x.stroke();x.restore();
+  if(k>0.02){x.font=`700 ${clamp(k*200,10,14)}px "M PLUS Rounded 1c",sans-serif`;const seen=new Set();for(const S of STATIONS){const n=S.st[0];if(seen.has(n))continue;seen.add(n);const [u,v]=T(S.p.x,S.p.z);if(u<-20||v<-20||u>w+20||v>h+20)continue;
+    x.beginPath();x.arc(u,v,4,0,7);x.fillStyle='#fff';x.fill();x.lineWidth=2;x.strokeStyle='#10283a';x.stroke();x.lineWidth=3;x.strokeStyle='rgba(255,255,255,.95)';x.strokeText(n,u,v-12);x.fillStyle='#10283a';x.fillText(n,u,v-12);}}
+  else{x.font='800 13px "M PLUS Rounded 1c",sans-serif';for(const t of KANA_TOWNS){const p=L(t[2],t[3]);const [u,v]=T(p[0],p[1]);x.lineWidth=4;x.strokeStyle='rgba(16,40,58,.55)';x.strokeText(t[0],u,v);x.fillStyle='#fff';x.fillText(t[0],u,v);}}
+  const sl=MAPV.span>40000?10000:MAPV.span>8000?2000:MAPV.span>2000?500:100;const km=sl*k;x.fillStyle='rgba(16,40,58,.85)';x.fillRect(12,h-18,km,5);x.font='800 11px sans-serif';x.textAlign='left';x.fillText(sl>=1000?sl/1000+' km':sl+' m',12,h-26);
+  x.font='500 10px sans-serif';x.textAlign='right';x.fillStyle='rgba(16,40,58,.8)';x.fillText('地理院地図（国土地理院）',w-8,h-8);
+  const [u,v]=T(P.x,P.z);x.save();x.translate(u,v);x.rotate(-P.face+Math.PI);x.beginPath();x.moveTo(0,-11);x.lineTo(8,9);x.lineTo(0,4);x.lineTo(-8,9);x.closePath();x.fillStyle='#ff3c6a';x.fill();x.lineWidth=2;x.strokeStyle='#fff';x.stroke();x.restore();
 }
 function toggleMap(){const o=$('mapOv');o.hidden=!o.hidden;if(!o.hidden)drawBigMap();else canvas.focus();}
 function warp(x,z,station){if(P.ride)exitRide();P.x=clamp(x,KB.x0,KB.x1);P.z=clamp(z,KB.z0,KB.z1);let y=null;
