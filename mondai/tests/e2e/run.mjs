@@ -561,6 +561,50 @@ try {
     await m.context().close();
   });
 
+  // ---------- 引っ越し（旧ページ → 新しいページ） ----------
+  // localhost を旧ページ（GitHub Pages）、127.0.0.1 を新しいページ（Firebase）に見立てる
+  const NEW_BASE = BASE.replace('localhost', '127.0.0.1');
+  const moveSetting = JSON.stringify({ oldOrigin: new URL(BASE).origin, newUrl: NEW_BASE });
+  await test('引っ越し：データのない旧ページは、同じ画面のまま新しいページへ移動する', async () => {
+    const w = await newPage();
+    await w.addInitScript((v) => localStorage.setItem('mondai.moveTest', v), moveSetting);
+    await w.goto(BASE + '#/bank', { waitUntil: 'networkidle' });
+    await w.waitForURL(u => u.href.startsWith(NEW_BASE), { timeout: 15000 });
+    assert(w.url() === NEW_BASE + '#/bank', '移動先 ' + w.url());
+    await w.waitForTimeout(800);
+    assert((await w.textContent('h1')).includes('問題バンク'), '新しいページで開けない');
+    await w.context().close();
+  });
+  await test('引っ越し：データのある旧ページは「データごと移す」で新しいページに取り込める', async () => {
+    const w = await newPage();
+    await w.goto(BASE, { waitUntil: 'networkidle' });
+    await w.waitForTimeout(1200);
+    // 旧ページで教材を1つ作っておく
+    await w.evaluate(async () => {
+      const { addToCurrentMaterial } = await import('./js/ui/common.js');
+      const s = /** @type {any} */ (window).__mondai.state;
+      const r = await addToCurrentMaterial([s.byId.get('BI-JH-MATH-G1-U01-B01')]);
+      r.material.title = '引っ越しテスト教材';
+      const { saveMaterial } = await import('./js/core/store.js');
+      await saveMaterial(r.material);
+    });
+    // 新しいページ（別のオリジン）でも同じ見立てを使う
+    await w.context().addInitScript((v) => localStorage.setItem('mondai.moveTest', v), moveSetting);
+    await w.reload({ waitUntil: 'networkidle' });
+    await w.waitForSelector('#mv-go');
+    assert((await w.textContent('h1')).includes('新しいページに移りました'), '案内が出ない');
+    const [nw] = await Promise.all([w.context().waitForEvent('page'), w.click('#mv-go')]);
+    nw.on('dialog', d => d.accept());
+    await nw.waitForFunction(() => /** @type {any} */ (window).__mondai && window.__mondai.state.materials.some(m => m.title === '引っ越しテスト教材'), null, { timeout: 30000 });
+    assert(nw.url().startsWith(NEW_BASE), '新しいページ ' + nw.url());
+    await w.waitForFunction(() => document.querySelector('#mv-status').textContent.includes('移し終わりました'), null, { timeout: 15000 });
+    // 移したあとは旧ページを開いても自動で移動する
+    await w.goto(BASE + '#/library', { waitUntil: 'networkidle' });
+    await w.reload();
+    await w.waitForURL(u => u.href.startsWith(NEW_BASE), { timeout: 15000 });
+    await w.context().close();
+  });
+
   // ---------- インストール・オフライン ----------
   await test('インストール：manifest・アイコン・Service Worker がそろい、オフラインでも開ける', async () => {
     const w = await newPage();

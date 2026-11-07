@@ -2,7 +2,7 @@
 
 教材制作アプリ（`mondai/`）を Firebase Hosting に公開する手順です。設定が済むと、`main` ブランチに変更が入るたびに GitHub Actions が自動で公開します。公開先は `https://<プロジェクトID>.web.app/` です（アプリはサイトのトップに置かれます）。
 
-GitHub Pages（`https://seg1gpt0jpn.github.io/ToDoList.App/mondai/`）での公開はそのまま続きます。両方とも同じ内容です。
+GitHub Pages（`https://seg1gpt0jpn.github.io/ToDoList.App/mondai/`）は前の公開場所です。開くと Firebase のページへ自動で移動します（`js/core/move.js`）。前のページにデータがある端末では「データごと新しいページへ移す」案内を出し、新しいページを開いて、利用者が確認してからデータを取り込みます。Firebase のプロジェクト ID を変えたときは `js/core/move.js` の `NEW_URL` も変えてください。
 
 用意してあるもの：
 - `firebase.json`（リポジトリのいちばん上）：`mondai/` を公開します。テスト・Supabase の設定・開発用のファイルは公開しません。HTML・JS・CSS・JSON は毎回新しいかを確かめるので、更新がすぐ届きます。
@@ -45,4 +45,4 @@ GitHub Pages（`https://seg1gpt0jpn.github.io/ToDoList.App/mondai/`）での公�
 | 「Failed to get Firebase project」 | プロジェクト ID のつづり、手順 1-4 で Hosting を始めたか |
 | 古い画面のまま | ブラウザを再読み込み（HTML・JS は毎回確認する設定なので、通常はすぐ新しくなります） |
 
-データ（作った教材・問題）は端末のブラウザに保存されるため、GitHub Pages と Firebase では別々になります。移すときは「設定・データ → バックアップを保存」して、もう一方で「バックアップから復元」してください。
+データ（作った教材・問題）は端末のブラウザに、ページ（URL）ごとに保存されます。GitHub Pages のページで作ったデータは、前のページを開いたときに出る「データごと新しいページへ移す」で移せます。うまくいかないときは、前のページの案内にある「バックアップを保存」で保存し、新しいページの「設定・データ → バックアップから復元」で読み込んでください。

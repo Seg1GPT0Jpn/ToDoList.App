@@ -54,10 +54,10 @@ Supabase と Anthropic では、いくつかの「鍵（キー）」が出てき
 1. 左メニューの **Authentication** → **Sign In / Providers**（または「Providers」）を開き、**Email** が有効（Enabled）になっていることを確認します。
    - ログインはメールに届くリンクを押す方式（マジックリンク）です。パスワードは使いません。
 2. **Authentication** → **URL Configuration** を開きます。
-   - **Site URL**：`https://seg1gpt0jpn.github.io/ToDoList.App/mondai/`
+   - **Site URL**：`https://mondai-1a2b3.web.app/`
    - **Redirect URLs** に「Add URL」で次を追加します：
-     - `https://seg1gpt0jpn.github.io/ToDoList.App/mondai/`
-     - `https://seg1gpt0jpn.github.io/ToDoList.App/mondai/**`
+     - `https://mondai-1a2b3.web.app/`
+     - `https://mondai-1a2b3.web.app/**`
    - 「Save」を押します。
 3. （任意）無料プランでは送れるメールの数に上限があります（1 時間に数通程度）。
    先生が多い学校で使う場合は **Authentication** → **Emails** → **SMTP Settings** で学校や会社のメールサーバーを設定してください。
@@ -100,7 +100,7 @@ AI 機能を使わない場合、この手順は飛ばしてかまいません�
    ```
    - `AI_MODEL`：使うモデル。省略すると `claude-opus-5-5`
    - `AI_DAILY_TOKEN_LIMIT`：1 人が 1 日（日本時間の午前 9 時に切り替わります）に使えるトークン数の上限。省略すると 200,000
-   - 任意：`AI_EFFORT`（`low`/`medium`/`high`/`xhigh`/`max`、既定 `high`。低いほど安く速い）、`ALLOWED_ORIGIN`（呼び出しを許すサイト。例 `https://seg1gpt0jpn.github.io`。既定はすべて許可）、`AI_FALLBACKS=off`（安全判定で断られたときに別モデルへ自動で切り替える機能を止める）
+   - 任意：`AI_EFFORT`（`low`/`medium`/`high`/`xhigh`/`max`、既定 `high`。低いほど安く速い）、`ALLOWED_ORIGIN`（呼び出しを許すサイト。例 `https://mondai-1a2b3.web.app`。既定はすべて許可）、`AI_FALLBACKS=off`（安全判定で断られたときに別モデルへ自動で切り替える機能を止める）
    - `SUPABASE_URL` `SUPABASE_ANON_KEY` `SUPABASE_SERVICE_ROLE_KEY` は Supabase が自動で関数に渡すので、登録は不要です。
 
 > CLI を使わずに、Supabase の画面（Edge Functions → 「Deploy a new function」→「Via Editor」）から作ることもできます。
@@ -114,7 +114,7 @@ AI 機能を使わない場合、この手順は飛ばしてかまいません�
    - **Project URL**（`https://xxxx.supabase.co`）
    - **anon public** key（`eyJ...` で始まる長い文字列、または `sb_publishable_...`）
    - ※ `service_role` / `secret` と書かれた鍵は**コピーしないでください**。
-3. アプリ <https://seg1gpt0jpn.github.io/ToDoList.App/mondai/> を開き、**設定** 画面の「クラウド（Supabase）」に貼り付けて保存します。
+3. アプリ <https://mondai-1a2b3.web.app/> を開き、**設定** 画面の「クラウド（Supabase）」に貼り付けて保存します。
 4. メールアドレスを入れて「ログイン」を押し、届いたメールのリンクを開くとログインできます。
    初回ログイン時に、自分だけが使える「個人」ワークスペースが自動で作られます。
 

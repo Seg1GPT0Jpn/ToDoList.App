@@ -25,6 +25,7 @@ const PRECACHE = [
   "js/core/backup.js",
   "js/core/db.js",
   "js/core/migrate.js",
+  "js/core/move.js",
   "js/core/store.js",
   "js/core/util.js",
   "js/data/units.js",
