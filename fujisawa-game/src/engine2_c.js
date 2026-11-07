@@ -154,9 +154,9 @@ function PLATS_EXTRA(p,l,s,top){const n=p.length/2;const gb=new GB();const col=n
 function zoneAt(x,z,y){for(const Z of ZONES){const dx=x-Z.cx,dz=z-Z.cz;const lx=dx*Z.c+dz*Z.s,lz=-dx*Z.s+dz*Z.c;if(Math.abs(lx)<Z.hl&&Math.abs(lz)<Z.hw&&y>Z.y0-0.5&&y<Z.y1)return Z;}return null;}
 
 /* ================= LOD ================= */
-function maskPatch(mat){mat.onBeforeCompile=sh=>{sh.uniforms.uMask={value:maskTex};sh.vertexShader=sh.vertexShader.replace('#include <common>','#include <common>\nuniform sampler2D uMask;').replace('#include <project_vertex>',`#include <project_vertex>
+function maskPatch(mat){mat.onBeforeCompile=sh=>{sh.uniforms.uMask={value:maskTex};sh.uniforms.uRegOn=REGON;sh.vertexShader=sh.vertexShader.replace('#include <common>','#include <common>\nuniform sampler2D uMask;uniform float uRegOn;').replace('#include <project_vertex>',`#include <project_vertex>
   {vec4 ic=modelMatrix*instanceMatrix*vec4(0.0,0.0,0.0,1.0);vec2 mu=(ic.xz-vec2(${X0.toFixed(1)},${Z0.toFixed(1)}))/vec2(${(CNX*CH).toFixed(1)},${(CNZ*CH).toFixed(1)});
-  if(texture2D(uMask,mu).r>0.5)gl_Position=vec4(2.0,2.0,2.0,1.0);}`);};mat.customProgramCacheKey=()=>'lodmask';return mat;}
+  if(texture2D(uMask,mu).r>0.5||(uRegOn>0.5&&distance(cameraPosition.xz,ic.xz)>6500.0))gl_Position=vec4(2.0,2.0,2.0,1.0);}`);};mat.customProgramCacheKey=()=>'lodmask';return mat;}
 function buildLOD(){
   const [LNX,LNZ,LG0]=META.lod;const LG=LG0*2;const items=[];
   for(let j=0;j<LNZ-1;j+=2)for(let i=0;i<LNX-1;i+=2){let a=0,ah=0;for(const [di,dj] of [[0,0],[1,0],[0,1],[1,1]]){const k=(j+dj)*LNX+i+di;const c=(LODC[k]/255)**2;a+=c;ah+=c*LODH[k];}

@@ -67,7 +67,8 @@ function buildFarScenery(){
   fg.setAttribute('color',new THREE.Float32BufferAttribute(fc,3));fg.computeVertexNormals();
   const fuji=new THREE.Mesh(fg,farMat());fuji.position.set(fp[0],-20,fp[1]);farScene.add(fuji);
   const R2=[[35.233,139.021,1438,9000],[35.20,139.05,1200,8000],[35.30,139.06,1100,7000],[35.475,139.14,1673,12000],[35.441,139.231,1252,8000],[35.50,139.05,1500,12000],[34.86,138.95,1405,16000],[35.05,139.05,900,12000],[34.73,139.39,758,6500],[35.25,139.62,240,6000],[35.20,139.65,200,6000],[35.10,139.85,350,9000],[35.47,138.90,1700,14000]];
-  for(const h of R2){const p=L(h[0],h[1]);const g=new THREE.SphereGeometry(1,32,10,0,Math.PI*2,0,Math.PI/2);const c=[];const d=Math.hypot(p[0],p[1]);for(let i=0;i<g.attributes.position.count;i++){const cc=new THREE.Color(d>30000?'#8696b8':'#87a08a');c.push(cc.r,cc.g,cc.b);}g.setAttribute('color',new THREE.Float32BufferAttribute(c,3));
+  for(const h of R2){if(h[0]>=KANA.lat0-0.02&&h[0]<=KANA.lat1+0.02&&h[1]>=KANA.lon0-0.02&&h[1]<=KANA.lon1+0.02)continue; // real relief from the GSI tiles there
+    const p=L(h[0],h[1]);const g=new THREE.SphereGeometry(1,32,10,0,Math.PI*2,0,Math.PI/2);const c=[];const d=Math.hypot(p[0],p[1]);for(let i=0;i<g.attributes.position.count;i++){const cc=new THREE.Color(d>30000?'#8696b8':'#87a08a');c.push(cc.r,cc.g,cc.b);}g.setAttribute('color',new THREE.Float32BufferAttribute(c,3));
     const m=new THREE.Mesh(g,farMat());m.scale.set(h[3],h[2],h[3]*0.75);m.position.set(p[0],-15,p[1]);farScene.add(m);}
   const shp=(pts)=>{const sh=new THREE.Shape();pts.forEach((p,i)=>i?sh.lineTo(p[0],-p[1]):sh.moveTo(p[0],-p[1]));return sh;};
   const cW=coastZ(WORLD.x0),cE=coastZ(WORLD.x1);
@@ -75,7 +76,7 @@ function buildFarScenery(){
   for(let x=WORLD.x0;x<=WORLD.x1;x+=200)land.push([x,coastZ(x)]);
   land.push([WORLD.x1,cE],[WORLD.x1+3000,cE+9000],[WORLD.x1+6000,24000],[WORLD.x1+9000,6000],[WORLD.x1+12000,-2000],[120000,-2000],[120000,-120000]);
   const og=new THREE.ShapeGeometry(shp(land),1);og.rotateX(-Math.PI/2);
-  const outer=new THREE.Mesh(og,new THREE.MeshLambertMaterial({color:'#93b07a',side:THREE.DoubleSide}));outer.position.y=-2;farScene.add(outer);
+  const outer=new THREE.Mesh(og,new THREE.MeshLambertMaterial({color:'#93b07a',side:THREE.DoubleSide}));outer.position.y=-5;farScene.add(outer);
   const fsea=new THREE.Mesh(new THREE.PlaneGeometry(800000,800000).rotateX(-Math.PI/2),new THREE.MeshLambertMaterial({color:'#3a9ad3'}));fsea.position.y=-6;farScene.add(fsea);FARMATS.sea=fsea.material;
   const cg=[];for(let k=0;k<6;k++){const g=new THREE.IcosahedronGeometry(1,1);g.scale(rr(1,1.6),rr(0.5,0.8),rr(1,1.4));g.translate(rr(-1.6,1.6),rr(-0.2,0.3),rr(-1,1));cg.push(g);}
   const cm=new THREE.MeshLambertMaterial({color:'#ffffff',emissive:'#ffffff',emissiveIntensity:0.3,flatShading:true});
@@ -116,10 +117,11 @@ function buildFarTerrain(){
   geo.setAttribute('color',new THREE.BufferAttribute(col,3));geo.computeVertexNormals();
   maskData=new Uint8Array(CNX*CNZ);maskTex=new THREE.DataTexture(maskData,CNX,CNZ,THREE.RedFormat,THREE.UnsignedByteType);maskTex.magFilter=maskTex.minFilter=THREE.NearestFilter;maskTex.needsUpdate=true;
   const mat=new THREE.MeshLambertMaterial({vertexColors:true});
-  mat.onBeforeCompile=sh=>{sh.uniforms.uMask={value:maskTex};sh.uniforms.uOv=OVERVIEW.u;sh.uniforms.uOvR=OVERVIEW.r;
+  mat.onBeforeCompile=sh=>{sh.uniforms.uMask={value:maskTex};sh.uniforms.uOv=OVERVIEW.u;sh.uniforms.uOvR=OVERVIEW.r;sh.uniforms.uRegOn=REGON;
     sh.vertexShader=sh.vertexShader.replace('#include <common>','#include <common>\nvarying vec2 vWP;').replace('#include <begin_vertex>','#include <begin_vertex>\nvWP=(modelMatrix*vec4(transformed,1.0)).xz;');
-    sh.fragmentShader=sh.fragmentShader.replace('#include <common>','#include <common>\nvarying vec2 vWP;uniform sampler2D uMask,uOv;uniform vec4 uOvR;').replace('#include <color_fragment>',`#include <color_fragment>
-      if(uOvR.z>0.0){vec2 ou=(vWP-uOvR.xy)/uOvR.zw;if(ou.x>0.0&&ou.y>0.0&&ou.x<1.0&&ou.y<1.0){vec3 oc=texture2D(uOv,vec2(ou.x,1.0-ou.y)).rgb;diffuseColor.rgb=mix(diffuseColor.rgb,oc*0.86,smoothstep(0.015,0.05,oc.r+oc.g+oc.b));}}`).replace('#include <clipping_planes_fragment>',`#include <clipping_planes_fragment>
+    sh.fragmentShader=sh.fragmentShader.replace('#include <common>','#include <common>\nvarying vec2 vWP;uniform sampler2D uMask,uOv;uniform vec4 uOvR;uniform float uRegOn;').replace('#include <color_fragment>',`#include <color_fragment>
+      {float cov=0.0;if(uOvR.z>0.0){vec2 ou=(vWP-uOvR.xy)/uOvR.zw;if(ou.x>0.0&&ou.y>0.0&&ou.x<1.0&&ou.y<1.0){vec3 oc=texture2D(uOv,vec2(ou.x,1.0-ou.y)).rgb;cov=smoothstep(0.015,0.05,oc.r+oc.g+oc.b);diffuseColor.rgb=mix(diffuseColor.rgb,oc*0.86,cov);}}
+       if(uRegOn>0.5&&(cov<0.5||distance(cameraPosition.xz,vWP)>6500.0))discard;}`).replace('#include <clipping_planes_fragment>',`#include <clipping_planes_fragment>
       vec2 mu=(vWP-vec2(${X0.toFixed(1)},${Z0.toFixed(1)}))/vec2(${(CNX*CH).toFixed(1)},${(CNZ*CH).toFixed(1)});
       if(texture2D(uMask,mu).r>0.5)discard;`);};
   farTerrain=new THREE.Mesh(geo,mat);scene.add(farTerrain);
@@ -134,6 +136,11 @@ function ribbonGeo(path,width,yFn,step=5,off=0,s0=0,s1=null){
 let seaMat,foam;
 function buildWater(){
   seaMat=new THREE.MeshStandardMaterial({color:'#3a9ad3',roughness:0.25,metalness:0.1,transparent:true,opacity:0.86});
+  /* land mask from the coarse DEM: the sea plane is only drawn over water inside the hand-made world; outside it the GSI tiles show the real coast */
+  {const N=CNXg*CNZg,md=new Uint8Array(N);for(let k=0;k<N;k++)md[k]=COARSE[k]*0.2>1.5?255:0;const mt=new THREE.DataTexture(md,CNXg,CNZg,THREE.RedFormat,THREE.UnsignedByteType);mt.magFilter=mt.minFilter=THREE.LinearFilter;mt.needsUpdate=true;
+    seaMat.onBeforeCompile=sh=>{sh.uniforms.uLand={value:mt};sh.uniforms.uRegOn=REGON;sh.vertexShader=sh.vertexShader.replace('#include <common>','#include <common>\nvarying vec2 vSW;').replace('#include <begin_vertex>','#include <begin_vertex>\nvSW=(modelMatrix*vec4(transformed,1.0)).xz;');
+      sh.fragmentShader=sh.fragmentShader.replace('#include <common>','#include <common>\nvarying vec2 vSW;uniform sampler2D uLand;uniform float uRegOn;').replace('#include <clipping_planes_fragment>',`#include <clipping_planes_fragment>
+        if(uRegOn>0.5){vec2 lu=(vSW-vec2(${X0.toFixed(1)},${Z0.toFixed(1)}))/vec2(${(CNXg*CG).toFixed(1)},${(CNZg*CG).toFixed(1)});if(lu.x<0.0||lu.x>1.0||lu.y<0.0)discard;if(lu.y<1.0&&texture2D(uLand,lu).r>0.5)discard;}`);};seaMat.customProgramCacheKey=()=>'seamask';}
   const sea=new THREE.Mesh(new THREE.PlaneGeometry(26000,26000).rotateX(-Math.PI/2),seaMat);sea.position.y=SEA;sea.receiveShadow=true;scene.add(sea);
   DYN.push(()=>{sea.position.x=Math.round(camera.position.x/100)*100;sea.position.z=Math.round(camera.position.z/100)*100;});
   const fp=[];for(let x=WORLD.x0;x<=WORLD.x1;x+=10){const z=coastZ(x);if(z<WORLD.z1-50)fp.push([x,z+3]);}

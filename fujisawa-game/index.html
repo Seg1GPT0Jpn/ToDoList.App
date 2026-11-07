@@ -93,7 +93,7 @@ body.touch #trainBox{top:auto;bottom:calc(196px + env(safe-area-inset-bottom,0px
   <div><b>F</b>飛行モード（Space 上昇 / C 下降）</div>
   <div><b>T</b>昼・夕・夜　<b style="min-width:0">M</b> 地図とワープ</div>
   <div><b>H</b>この案内を閉じる</div>
-  <div style="margin-top:6px;font-size:11px;opacity:.7">地図データ © OpenStreetMap contributors (ODbL)／標高・航空写真 国土地理院／建物 PLATEAU（国土交通省）</div>
+  <div style="margin-top:6px;font-size:11px;opacity:.7">地図データ © OpenStreetMap contributors (ODbL)／標高・航空写真・建物（県内）地理院タイル（国土地理院）／建物（藤沢・横浜）PLATEAU（国土交通省）</div>
 </div>
 <div class="hud" id="toast"></div>
 <button class="btn" id="act" type="button" hidden>E 乗る</button>
@@ -188,7 +188,7 @@ async function loadData(){
 }
 const SEA=0;
 function chunkIndex(x,z){const ci=Math.floor((x-X0)/CH),cj=Math.floor((z-Z0)/CH);if(ci<0||cj<0||ci>=CNX||cj>=CNZ)return -1;return CIDX[cj*CNX+ci];}
-function coarseH(x,z){let fx=(x-X0)/CG,fz=(z-Z0)/CG;fx=clamp(fx,0,CNXg-1.001);fz=clamp(fz,0,CNZg-1.001);const i=fx|0,j=fz|0,ax=fx-i,az=fz-j,k=j*CNXg+i;
+function coarseH(x,z){if(REG.started&&(x<X0||x>X1||z<Z0||z>Z1))return regionH(x,z);let fx=(x-X0)/CG,fz=(z-Z0)/CG;fx=clamp(fx,0,CNXg-1.001);fz=clamp(fz,0,CNZg-1.001);const i=fx|0,j=fz|0,ax=fx-i,az=fz-j,k=j*CNXg+i;
   return ((COARSE[k]*(1-ax)+COARSE[k+1]*ax)*(1-az)+(COARSE[k+CNXg]*(1-ax)+COARSE[k+CNXg+1]*ax)*az)*0.2;}
 function cornerH(b,k){const h=DEMC[b+k]*0.2;return LCC8[b+k]===1&&h>0?h-2.2:h;}
 function demH(x,z){
@@ -523,7 +523,8 @@ function buildFarScenery(){
   fg.setAttribute('color',new THREE.Float32BufferAttribute(fc,3));fg.computeVertexNormals();
   const fuji=new THREE.Mesh(fg,farMat());fuji.position.set(fp[0],-20,fp[1]);farScene.add(fuji);
   const R2=[[35.233,139.021,1438,9000],[35.20,139.05,1200,8000],[35.30,139.06,1100,7000],[35.475,139.14,1673,12000],[35.441,139.231,1252,8000],[35.50,139.05,1500,12000],[34.86,138.95,1405,16000],[35.05,139.05,900,12000],[34.73,139.39,758,6500],[35.25,139.62,240,6000],[35.20,139.65,200,6000],[35.10,139.85,350,9000],[35.47,138.90,1700,14000]];
-  for(const h of R2){const p=L(h[0],h[1]);const g=new THREE.SphereGeometry(1,32,10,0,Math.PI*2,0,Math.PI/2);const c=[];const d=Math.hypot(p[0],p[1]);for(let i=0;i<g.attributes.position.count;i++){const cc=new THREE.Color(d>30000?'#8696b8':'#87a08a');c.push(cc.r,cc.g,cc.b);}g.setAttribute('color',new THREE.Float32BufferAttribute(c,3));
+  for(const h of R2){if(h[0]>=KANA.lat0-0.02&&h[0]<=KANA.lat1+0.02&&h[1]>=KANA.lon0-0.02&&h[1]<=KANA.lon1+0.02)continue; // real relief from the GSI tiles there
+    const p=L(h[0],h[1]);const g=new THREE.SphereGeometry(1,32,10,0,Math.PI*2,0,Math.PI/2);const c=[];const d=Math.hypot(p[0],p[1]);for(let i=0;i<g.attributes.position.count;i++){const cc=new THREE.Color(d>30000?'#8696b8':'#87a08a');c.push(cc.r,cc.g,cc.b);}g.setAttribute('color',new THREE.Float32BufferAttribute(c,3));
     const m=new THREE.Mesh(g,farMat());m.scale.set(h[3],h[2],h[3]*0.75);m.position.set(p[0],-15,p[1]);farScene.add(m);}
   const shp=(pts)=>{const sh=new THREE.Shape();pts.forEach((p,i)=>i?sh.lineTo(p[0],-p[1]):sh.moveTo(p[0],-p[1]));return sh;};
   const cW=coastZ(WORLD.x0),cE=coastZ(WORLD.x1);
@@ -531,7 +532,7 @@ function buildFarScenery(){
   for(let x=WORLD.x0;x<=WORLD.x1;x+=200)land.push([x,coastZ(x)]);
   land.push([WORLD.x1,cE],[WORLD.x1+3000,cE+9000],[WORLD.x1+6000,24000],[WORLD.x1+9000,6000],[WORLD.x1+12000,-2000],[120000,-2000],[120000,-120000]);
   const og=new THREE.ShapeGeometry(shp(land),1);og.rotateX(-Math.PI/2);
-  const outer=new THREE.Mesh(og,new THREE.MeshLambertMaterial({color:'#93b07a',side:THREE.DoubleSide}));outer.position.y=-2;farScene.add(outer);
+  const outer=new THREE.Mesh(og,new THREE.MeshLambertMaterial({color:'#93b07a',side:THREE.DoubleSide}));outer.position.y=-5;farScene.add(outer);
   const fsea=new THREE.Mesh(new THREE.PlaneGeometry(800000,800000).rotateX(-Math.PI/2),new THREE.MeshLambertMaterial({color:'#3a9ad3'}));fsea.position.y=-6;farScene.add(fsea);FARMATS.sea=fsea.material;
   const cg=[];for(let k=0;k<6;k++){const g=new THREE.IcosahedronGeometry(1,1);g.scale(rr(1,1.6),rr(0.5,0.8),rr(1,1.4));g.translate(rr(-1.6,1.6),rr(-0.2,0.3),rr(-1,1));cg.push(g);}
   const cm=new THREE.MeshLambertMaterial({color:'#ffffff',emissive:'#ffffff',emissiveIntensity:0.3,flatShading:true});
@@ -572,10 +573,11 @@ function buildFarTerrain(){
   geo.setAttribute('color',new THREE.BufferAttribute(col,3));geo.computeVertexNormals();
   maskData=new Uint8Array(CNX*CNZ);maskTex=new THREE.DataTexture(maskData,CNX,CNZ,THREE.RedFormat,THREE.UnsignedByteType);maskTex.magFilter=maskTex.minFilter=THREE.NearestFilter;maskTex.needsUpdate=true;
   const mat=new THREE.MeshLambertMaterial({vertexColors:true});
-  mat.onBeforeCompile=sh=>{sh.uniforms.uMask={value:maskTex};sh.uniforms.uOv=OVERVIEW.u;sh.uniforms.uOvR=OVERVIEW.r;
+  mat.onBeforeCompile=sh=>{sh.uniforms.uMask={value:maskTex};sh.uniforms.uOv=OVERVIEW.u;sh.uniforms.uOvR=OVERVIEW.r;sh.uniforms.uRegOn=REGON;
     sh.vertexShader=sh.vertexShader.replace('#include <common>','#include <common>\nvarying vec2 vWP;').replace('#include <begin_vertex>','#include <begin_vertex>\nvWP=(modelMatrix*vec4(transformed,1.0)).xz;');
-    sh.fragmentShader=sh.fragmentShader.replace('#include <common>','#include <common>\nvarying vec2 vWP;uniform sampler2D uMask,uOv;uniform vec4 uOvR;').replace('#include <color_fragment>',`#include <color_fragment>
-      if(uOvR.z>0.0){vec2 ou=(vWP-uOvR.xy)/uOvR.zw;if(ou.x>0.0&&ou.y>0.0&&ou.x<1.0&&ou.y<1.0){vec3 oc=texture2D(uOv,vec2(ou.x,1.0-ou.y)).rgb;diffuseColor.rgb=mix(diffuseColor.rgb,oc*0.86,smoothstep(0.015,0.05,oc.r+oc.g+oc.b));}}`).replace('#include <clipping_planes_fragment>',`#include <clipping_planes_fragment>
+    sh.fragmentShader=sh.fragmentShader.replace('#include <common>','#include <common>\nvarying vec2 vWP;uniform sampler2D uMask,uOv;uniform vec4 uOvR;uniform float uRegOn;').replace('#include <color_fragment>',`#include <color_fragment>
+      {float cov=0.0;if(uOvR.z>0.0){vec2 ou=(vWP-uOvR.xy)/uOvR.zw;if(ou.x>0.0&&ou.y>0.0&&ou.x<1.0&&ou.y<1.0){vec3 oc=texture2D(uOv,vec2(ou.x,1.0-ou.y)).rgb;cov=smoothstep(0.015,0.05,oc.r+oc.g+oc.b);diffuseColor.rgb=mix(diffuseColor.rgb,oc*0.86,cov);}}
+       if(uRegOn>0.5&&(cov<0.5||distance(cameraPosition.xz,vWP)>6500.0))discard;}`).replace('#include <clipping_planes_fragment>',`#include <clipping_planes_fragment>
       vec2 mu=(vWP-vec2(${X0.toFixed(1)},${Z0.toFixed(1)}))/vec2(${(CNX*CH).toFixed(1)},${(CNZ*CH).toFixed(1)});
       if(texture2D(uMask,mu).r>0.5)discard;`);};
   farTerrain=new THREE.Mesh(geo,mat);scene.add(farTerrain);
@@ -590,6 +592,11 @@ function ribbonGeo(path,width,yFn,step=5,off=0,s0=0,s1=null){
 let seaMat,foam;
 function buildWater(){
   seaMat=new THREE.MeshStandardMaterial({color:'#3a9ad3',roughness:0.25,metalness:0.1,transparent:true,opacity:0.86});
+  /* land mask from the coarse DEM: the sea plane is only drawn over water inside the hand-made world; outside it the GSI tiles show the real coast */
+  {const N=CNXg*CNZg,md=new Uint8Array(N);for(let k=0;k<N;k++)md[k]=COARSE[k]*0.2>1.5?255:0;const mt=new THREE.DataTexture(md,CNXg,CNZg,THREE.RedFormat,THREE.UnsignedByteType);mt.magFilter=mt.minFilter=THREE.LinearFilter;mt.needsUpdate=true;
+    seaMat.onBeforeCompile=sh=>{sh.uniforms.uLand={value:mt};sh.uniforms.uRegOn=REGON;sh.vertexShader=sh.vertexShader.replace('#include <common>','#include <common>\nvarying vec2 vSW;').replace('#include <begin_vertex>','#include <begin_vertex>\nvSW=(modelMatrix*vec4(transformed,1.0)).xz;');
+      sh.fragmentShader=sh.fragmentShader.replace('#include <common>','#include <common>\nvarying vec2 vSW;uniform sampler2D uLand;uniform float uRegOn;').replace('#include <clipping_planes_fragment>',`#include <clipping_planes_fragment>
+        if(uRegOn>0.5){vec2 lu=(vSW-vec2(${X0.toFixed(1)},${Z0.toFixed(1)}))/vec2(${(CNXg*CG).toFixed(1)},${(CNZg*CG).toFixed(1)});if(lu.x<0.0||lu.x>1.0||lu.y<0.0)discard;if(lu.y<1.0&&texture2D(uLand,lu).r>0.5)discard;}`);};seaMat.customProgramCacheKey=()=>'seamask';}
   const sea=new THREE.Mesh(new THREE.PlaneGeometry(26000,26000).rotateX(-Math.PI/2),seaMat);sea.position.y=SEA;sea.receiveShadow=true;scene.add(sea);
   DYN.push(()=>{sea.position.x=Math.round(camera.position.x/100)*100;sea.position.z=Math.round(camera.position.z/100)*100;});
   const fp=[];for(let x=WORLD.x0;x<=WORLD.x1;x+=10){const z=coastZ(x);if(z<WORLD.z1-50)fp.push([x,z+3]);}
@@ -884,9 +891,9 @@ function PLATS_EXTRA(p,l,s,top){const n=p.length/2;const gb=new GB();const col=n
 function zoneAt(x,z,y){for(const Z of ZONES){const dx=x-Z.cx,dz=z-Z.cz;const lx=dx*Z.c+dz*Z.s,lz=-dx*Z.s+dz*Z.c;if(Math.abs(lx)<Z.hl&&Math.abs(lz)<Z.hw&&y>Z.y0-0.5&&y<Z.y1)return Z;}return null;}
 
 /* ================= LOD ================= */
-function maskPatch(mat){mat.onBeforeCompile=sh=>{sh.uniforms.uMask={value:maskTex};sh.vertexShader=sh.vertexShader.replace('#include <common>','#include <common>\nuniform sampler2D uMask;').replace('#include <project_vertex>',`#include <project_vertex>
+function maskPatch(mat){mat.onBeforeCompile=sh=>{sh.uniforms.uMask={value:maskTex};sh.uniforms.uRegOn=REGON;sh.vertexShader=sh.vertexShader.replace('#include <common>','#include <common>\nuniform sampler2D uMask;uniform float uRegOn;').replace('#include <project_vertex>',`#include <project_vertex>
   {vec4 ic=modelMatrix*instanceMatrix*vec4(0.0,0.0,0.0,1.0);vec2 mu=(ic.xz-vec2(${X0.toFixed(1)},${Z0.toFixed(1)}))/vec2(${(CNX*CH).toFixed(1)},${(CNZ*CH).toFixed(1)});
-  if(texture2D(uMask,mu).r>0.5)gl_Position=vec4(2.0,2.0,2.0,1.0);}`);};mat.customProgramCacheKey=()=>'lodmask';return mat;}
+  if(texture2D(uMask,mu).r>0.5||(uRegOn>0.5&&distance(cameraPosition.xz,ic.xz)>6500.0))gl_Position=vec4(2.0,2.0,2.0,1.0);}`);};mat.customProgramCacheKey=()=>'lodmask';return mat;}
 function buildLOD(){
   const [LNX,LNZ,LG0]=META.lod;const LG=LG0*2;const items=[];
   for(let j=0;j<LNZ-1;j+=2)for(let i=0;i<LNX-1;i+=2){let a=0,ah=0;for(const [di,dj] of [[0,0],[1,0],[0,1],[1,1]]){const k=(j+dj)*LNX+i+di;const c=(LODC[k]/255)**2;a+=c;ah+=c*LODH[k];}
@@ -1402,6 +1409,122 @@ function loadOverview(){new THREE.TextureLoader().load('city/overview.jpg',t=>{t
   try{const c=document.createElement('canvas');c.width=t.image.width;c.height=t.image.height;const x=c.getContext('2d');x.drawImage(t.image,0,0);const d=x.getImageData(0,0,c.width,c.height).data;
     if(LODINST.m){const [LNX,LNZ,LG0]=META.lod;const cc=new THREE.Color(),c2=new THREE.Color();let n=0;for(const [i,j] of LODINST.items){const X=X0+(i+1)*LG0,Z=Z0+(j+1)*LG0;const u=Math.floor((X+10440)/OVERVIEW.W*c.width),v=Math.floor((Z+10740)/OVERVIEW.H*c.height);
       if(u>=0&&v>=0&&u<c.width&&v<c.height){const k=(v*c.width+u)*4;if(d[k]+d[k+1]+d[k+2]>20){LODINST.m.getColorAt(n,cc);c2.setRGB(d[k]/255,d[k+1]/255,d[k+2]/255,THREE.SRGBColorSpace);cc.lerp(c2,0.55);LODINST.m.setColorAt(n,cc);}}n++;}LODINST.m.instanceColor.needsUpdate=true;}}catch(e){}});}
+
+/* ================= 神奈川県全域: streamed straight from the GSI tile servers (CORS-enabled) =================
+   Outside the hand-made Fujisawa world the ground is built on the fly:
+   - far layer : zoom-11 tiles over all of Kanagawa, relief from dem_png z11, aerial photo from z13 (≈15 m/px) — loaded once
+   - near layer: zoom-14 tiles (≈2 km) around the player, relief from dem_png z14, photo from z16 (≈2 m/px),
+                 and the buildings of the 電子国土基本図 vector tiles (z16) extruded by kind (普通 / 堅ろう / 高層)
+   Data: 地理院タイル（国土地理院） — 標高タイル, シームレス空中写真, 地理院地図Vector. */
+const KANA={lat0:35.12,lat1:35.69,lon0:138.90,lon1:139.82};
+const KB={x0:(KANA.lon0-LON0)*MX,x1:(KANA.lon1-LON0)*MX,z0:-(KANA.lat1-LAT0)*MZ,z1:-(KANA.lat0-LAT0)*MZ};
+const GSI='https://cyberjapandata.gsi.go.jp/xyz/';
+const t2lon=(x,z)=>x/2**z*360-180,t2lat=(y,z)=>{const n=Math.PI-2*Math.PI*y/2**z;return 180/Math.PI*Math.atan(0.5*(Math.exp(n)-Math.exp(-n)));};
+const lon2t=(lon,z)=>(lon+180)/360*2**z,lat2t=(lat,z)=>{const r=lat*Math.PI/180;return(1-Math.log(Math.tan(r)+1/Math.cos(r))/Math.PI)/2*2**z;};
+const g2ll=(x,z)=>[LAT0-z/MZ,LON0+x/MX];
+function loadImg(url){return new Promise(res=>{const im=new Image();im.crossOrigin='anonymous';im.onload=()=>res(im);im.onerror=()=>res(null);im.src=url;});}
+async function demTile(z,x,y){const im=await loadImg(`${GSI}dem_png/${z}/${x}/${y}.png`);const H=new Float32Array(256*256);if(!im)return H;
+  const c=document.createElement('canvas');c.width=c.height=256;const g=c.getContext('2d');g.drawImage(im,0,0);const d=g.getImageData(0,0,256,256).data;
+  for(let i=0;i<65536;i++){const r=d[i*4],gg=d[i*4+1],b=d[i*4+2];if(r===128&&gg===0&&b===0){H[i]=-2;continue;}let v=r*65536+gg*256+b;if(v>=8388608)v-=16777216;H[i]=v*0.01;}return H;}
+async function photoMosaic(z,x0,y0,n,px=256){const c=document.createElement('canvas');c.width=c.height=n*px;const g=c.getContext('2d');g.fillStyle='#2c5a74';g.fillRect(0,0,c.width,c.height); // open sea has no photo tiles
+  await Promise.all([...Array(n*n)].map(async(_,k)=>{const i=k%n,j=Math.floor(k/n);const im=await loadImg(`${GSI}seamlessphoto/${z}/${x0+i}/${y0+j}.jpg`);if(im)g.drawImage(im,i*px,j*px,px,px);}));
+  const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;t.anisotropy=8;return t;}
+/* material: the photo is laid on by the tile's own (lon,lat) → uv; the hand-made world rectangle is cut out */
+function regionMat(tex,far){const m=new THREE.MeshLambertMaterial({map:tex,fog:true});
+  m.onBeforeCompile=sh=>{sh.uniforms.uW={value:new THREE.Vector4(WORLD.x0+60,WORLD.z0+60,WORLD.x1-60,WORLD.z1-60)};
+    sh.vertexShader=sh.vertexShader.replace('#include <common>','#include <common>\nvarying vec2 vRW;').replace('#include <begin_vertex>','#include <begin_vertex>\nvRW=(modelMatrix*vec4(transformed,1.0)).xz;');
+    sh.fragmentShader=sh.fragmentShader.replace('#include <common>','#include <common>\nvarying vec2 vRW;uniform vec4 uW;').replace('#include <clipping_planes_fragment>',far?'#include <clipping_planes_fragment>':'#include <clipping_planes_fragment>\nif(vRW.x>uW.x&&vRW.x<uW.z&&vRW.y>uW.y&&vRW.y<uW.w)discard;')
+      .replace('#include <map_fragment>','#include <map_fragment>\ndiffuseColor.rgb*=0.88;');};
+  m.customProgramCacheKey=()=>'region'+(far?'f':'n');return m;}
+/* grid mesh of one slippy tile: vertices at exact lat/lon, heights from the DEM, uv = position in the tile */
+function tileMesh(z,x,y,H,N,tex,far){const P=[],U=[],I=[];
+  for(let j=0;j<=N;j++)for(let i=0;i<=N;i++){const lon=t2lon(x+i/N,z),lat=t2lat(y+j/N,z);const gx=(lon-LON0)*MX,gz=-(lat-LAT0)*MZ;
+    const hi=Math.min(255,Math.round(i/N*255)),hj=Math.min(255,Math.round(j/N*255));const h=H[hj*256+hi];P.push(gx,(h<-1?-3:h)-(far?6:0.6),gz);U.push(i/N,1-j/N);}
+  for(let j=0;j<N;j++)for(let i=0;i<N;i++){const a=j*(N+1)+i;I.push(a,a+N+1,a+1,a+1,a+N+1,a+N+2);}
+  const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(P,3));g.setAttribute('uv',new THREE.Float32BufferAttribute(U,2));g.setIndex(I);g.computeVertexNormals();
+  const m=new THREE.Mesh(g,regionMat(tex,far));m.receiveShadow=!far;return m;}
+/* ---------- minimal Mapbox Vector Tile reader (only what the building layer needs) ---------- */
+function mvtBuildings(buf){const u8=new Uint8Array(buf);let p=0;const out=[];
+  const varint=()=>{let r=0,s=0,b;do{b=u8[p++];r+=(b&0x7f)*2**s;s+=7;}while(b&0x80);return r;};
+  const skip=w=>{if(w===0)varint();else if(w===1)p+=8;else if(w===2){const l=varint();p+=l;}else if(w===5)p+=4;};
+  while(p<u8.length){const tag=varint();const f=tag>>>3,w=tag&7;if(f!==3||w!==2){skip(w);continue;}const len=varint();const end=p+len;
+    let name='',extent=4096;const keys=[],vals=[],feats=[];
+    while(p<end){const t2=varint();const f2=t2>>>3,w2=t2&7;
+      if(f2===1&&w2===2){const l=varint();name=new TextDecoder().decode(u8.subarray(p,p+l));p+=l;}
+      else if(f2===3&&w2===2){const l=varint();keys.push(new TextDecoder().decode(u8.subarray(p,p+l)));p+=l;}
+      else if(f2===4&&w2===2){const l=varint();const e2=p+l;let v=null;while(p<e2){const t3=varint();const f3=t3>>>3,w3=t3&7;if(f3===1&&w3===2){const l3=varint();v=new TextDecoder().decode(u8.subarray(p,p+l3));p+=l3;}else if((f3===4||f3===5||f3===6)&&w3===0){v=varint();}else skip(w3);}vals.push(v);}
+      else if(f2===5&&w2===0)extent=varint();
+      else if(f2===2&&w2===2){const l=varint();feats.push([p,p+l]);p+=l;}
+      else skip(w2);}
+    p=end;if(name!=='building')continue;
+    for(const [a,b] of feats){let q=p;p=a;let type=0,tags=[],geom=[];
+      while(p<b){const t3=varint();const f3=t3>>>3,w3=t3&7;
+        if(f3===2&&w3===2){const l=varint();const e=p+l;while(p<e)tags.push(varint());}
+        else if(f3===3&&w3===0)type=varint();
+        else if(f3===4&&w3===2){const l=varint();const e=p+l;while(p<e)geom.push(varint());}
+        else skip(w3);}
+      p=q;if(type!==3)continue;let code=0;for(let i=0;i<tags.length;i+=2)if(keys[tags[i]]==='ftCode')code=+vals[tags[i+1]];
+      const rings=[];let cx=0,cy=0,ring=null;for(let i=0;i<geom.length;){const cmd=geom[i]&7,cnt=geom[i]>>3;i++;
+        if(cmd===7){if(ring&&ring.length>2)rings.push(ring);ring=null;continue;}
+        for(let k=0;k<cnt;k++){const dx=geom[i++],dy=geom[i++];cx+=(dx>>>1)^-(dx&1);cy+=(dy>>>1)^-(dy&1);if(cmd===1){ring=[[cx,cy]];}else ring.push([cx,cy]);}}
+      let got=false;for(const r of rings){let s2=0;for(let i=0;i<r.length;i++){const j=(i+1)%r.length;s2+=r[i][0]*r[j][1]-r[j][0]*r[i][1];}if(s2>0){out.push({code,ring:r,extent});got=true;}}  // exterior rings (clockwise on screen)
+      if(!got&&rings.length)out.push({code,ring:rings[0],extent});}
+    break;}
+  return out;}
+/* ---------- the two layers ---------- */
+const REGON={value:0};const REG={far:new Map(),near:new Map(),dem:new Map(),busy:0,started:false};
+function regionH(x,z){const [lat,lon]=g2ll(x,z);
+  for(const zz of [14,11]){const fx=lon2t(lon,zz),fy=lat2t(lat,zz);const key=zz+'/'+Math.floor(fx)+'/'+Math.floor(fy);const H=REG.dem.get(key);if(!H)continue;
+    const u=(fx-Math.floor(fx))*255,v=(fy-Math.floor(fy))*255;const i=Math.min(254,u|0),j=Math.min(254,v|0),a=u-i,b=v-j;
+    const h=(H[j*256+i]*(1-a)+H[j*256+i+1]*a)*(1-b)+(H[(j+1)*256+i]*(1-a)+H[(j+1)*256+i+1]*a)*b;return h<-1?-3:h;}
+  return -3;}
+const inWorld=(x,z,m=0)=>x>WORLD.x0+m&&x<WORLD.x1-m&&z>WORLD.z0+m&&z<WORLD.z1-m;
+async function loadFarTile(x,y){const key=x+'/'+y;if(REG.far.has(key))return;REG.far.set(key,null);
+  const H=await demTile(11,x,y);REG.dem.set('11/'+key,H);const tex=await photoMosaic(13,x*4,y*4,4);const m=tileMesh(11,x,y,H,48,tex,true);m.position.y=5.5;m.renderOrder=-5;farScene.add(m);REG.far.set(key,m);}
+function startRegion(){if(REG.started)return;REG.started=true;
+  const x0=Math.floor(lon2t(KANA.lon0,11)),x1=Math.floor(lon2t(KANA.lon1,11)),y0=Math.floor(lat2t(KANA.lat1,11)),y1=Math.floor(lat2t(KANA.lat0,11));
+  (async()=>{const jobs=[];for(let y=y0;y<=y1;y++)for(let x=x0;x<=x1;x++)jobs.push([x,y]);const px=P.x,pz=P.z;jobs.sort((a,b)=>{const c=t=>{const lo=t2lon(t[0]+0.5,11),la=t2lat(t[1]+0.5,11);return Math.hypot((lo-LON0)*MX-px,-(la-LAT0)*MZ-pz);};return c(a)-c(b);});
+    let n=0;for(const [x,y] of jobs){await loadFarTile(x,y);if(++n===6)REGON.value=1;}REGON.value=1;console.log('LOG region far tiles',REG.far.size);})();}
+const BLD_H={3101:[5.5,8],3102:[9,22],3103:[30,60],3111:[3,4.5],3112:[4,7]};
+async function loadNearTile(x,y,withB){const key=x+'/'+y;const ex=REG.near.get(key);if(ex&&(ex.b||!withB))return;if(ex&&ex.loading)return;
+  const rec=ex||{loading:true,grp:null,b:false};REG.near.set(key,rec);rec.loading=true;
+  if(!rec.grp){const H=await demTile(14,x,y);REG.dem.set('14/'+key,H);const tex=await photoMosaic(16,x*4,y*4,4);rec.tex=tex;rec.grp=new THREE.Group();rec.grp.add(tileMesh(14,x,y,H,isTouch?40:64,tex,false));scene.add(rec.grp);}
+  if(withB&&!rec.b){rec.b=true;const fac=new GB(),roof=new GB(),cols=[];
+    await Promise.all([...Array(16)].map(async(_,k)=>{const bx=x*4+k%4,by=y*4+Math.floor(k/4);let buf=null;try{const r=await fetch(`${GSI}experimental_bvmap/16/${bx}/${by}.pbf`);if(r.ok)buf=await r.arrayBuffer();}catch(e){}
+      if(!buf)return;for(const b of mvtBuildings(buf)){const f=new Float32Array(b.ring.length*2);let cx=0,cz=0;
+        for(let i=0;i<b.ring.length;i++){const lon=t2lon(bx+b.ring[i][0]/b.extent,16),lat=t2lat(by+b.ring[i][1]/b.extent,16);f[i*2]=(lon-LON0)*MX;f[i*2+1]=-(lat-LAT0)*MZ;cx+=f[i*2];cz+=f[i*2+1];}
+        cx/=b.ring.length;cz/=b.ring.length;if(inWorld(cx,cz,40))continue;const hr=BLD_H[b.code]||[5,8];const r0=hashf(Math.round(cx*3+cz*7));const area=Math.abs(polyArea(f));
+        let Hh=hr[0]+(hr[1]-hr[0])*r0;if(b.code===3102&&area>1500)Hh*=1.4;let gmin=1e9;for(let i=0;i<f.length;i+=2)gmin=Math.min(gmin,regionH(f[i],f[i+1]));if(gmin<-1)continue;
+        const sty=b.code===3101?(r0<0.6?FAC.HOUSE_A:FAC.HOUSE_B):b.code===3103?FAC.OFFICE_GLASS:b.code===3102?(r0<0.5?FAC.MANSION:r0<0.8?FAC.OFFICE:FAC.SHOP):FAC.WAREHOUSE;
+        const y0=gmin-0.3,y1=gmin+Hh;const wc=_col.set(b.code===3101?WALLH[Math.floor(r0*WALLH.length)]:WALLO[Math.floor(r0*WALLO.length)]).lerp(_col2.set('#ffffff'),0.45).clone();
+        if(b.code===3101&&area<300){const rh=Math.min(2.4,Hh*0.3);facadeWalls(fac,f,y0,y1-rh,wc,sty,2.8);roofOn(f,cx,cz,y1-rh,0,r0,roof);}
+        else{facadeWalls(fac,f,y0,y1,wc,sty,Hh/Math.max(1,Math.round(Hh/3.2)));const tris=tri2(f);for(const t of tris)roof.tri([f[t[0]*2],y1,f[t[0]*2+1]],[f[t[1]*2],y1,f[t[1]*2+1]],[f[t[2]*2],y1,f[t[2]*2+1]],0,1,0,_col.set('#ffffff'));}
+        cols.push(addPoly(f,y0,y1));}}));
+    if(!fac.empty){const m=new THREE.Mesh(fac.geo(),facadeMat());m.castShadow=true;m.receiveShadow=true;rec.grp.add(m);}
+    if(!roof.empty){const m=new THREE.Mesh(roof.geo(),regionRoofMat(rec.tex,x,y));m.castShadow=true;rec.grp.add(m);}
+    rec.cols=cols;}
+  rec.loading=false;}
+/* roof photo: same tile texture, projected from (lon,lat) of each fragment */
+function regionRoofMat(tex,x,y){const lon0=t2lon(x,14),lon1=t2lon(x+1,14),lat0=t2lat(y,14),lat1=t2lat(y+1,14);
+  const m=new THREE.MeshLambertMaterial({map:tex});m.onBeforeCompile=sh=>{sh.uniforms.uR={value:new THREE.Vector4((lon0-LON0)*MX,-(lat0-LAT0)*MZ,(lon1-LON0)*MX,-(lat1-LAT0)*MZ)};
+    sh.vertexShader=sh.vertexShader.replace('#include <common>','#include <common>\nvarying vec2 vRW2;').replace('#include <begin_vertex>','#include <begin_vertex>\nvRW2=(modelMatrix*vec4(transformed,1.0)).xz;');
+    sh.fragmentShader=sh.fragmentShader.replace('#include <common>','#include <common>\nvarying vec2 vRW2;uniform vec4 uR;').replace('#include <map_fragment>','vec2 ruv=vec2((vRW2.x-uR.x)/(uR.z-uR.x),1.0-(vRW2.y-uR.y)/(uR.w-uR.y));diffuseColor*=texture2D(map,ruv);diffuseColor.rgb*=0.9;');};
+  m.customProgramCacheKey=()=>'regionroof';return m;}
+let regT=0;
+function updateRegion(dt,px,pz){if(!REG.started)return;regT-=dt;if(regT>0)return;regT=0.6;
+  const [lat,lon]=g2ll(px,pz);const fx=lon2t(lon,14),fy=lat2t(lat,14);const cx=Math.floor(fx),cy=Math.floor(fy);const R=1;const want=new Set();
+  for(let j=-R;j<=R;j++)for(let i=-R;i<=R;i++){const x=cx+i,y=cy+j;const lo0=t2lon(x,14),lo1=t2lon(x+1,14),la0=t2lat(y+1,14),la1=t2lat(y,14);
+    const gx0=(lo0-LON0)*MX,gx1=(lo1-LON0)*MX,gz0=-(la1-LAT0)*MZ,gz1=-(la0-LAT0)*MZ;if(gx0>WORLD.x0+60&&gx1<WORLD.x1-60&&gz0>WORLD.z0+60&&gz1<WORLD.z1-60)continue;
+    if(lo1<KANA.lon0||lo0>KANA.lon1||la1<KANA.lat0||la0>KANA.lat1)continue;
+    const d=Math.hypot(clamp(px,gx0,gx1)-px,clamp(pz,gz0,gz1)-pz);want.add(x+'/'+y);loadNearTile(x,y,d<(isTouch?700:1300));}
+  for(const [k,rec] of REG.near){if(want.has(k)||rec.loading)continue;if(rec.grp){scene.remove(rec.grp);rec.grp.traverse(o=>{if(o.isMesh){o.geometry.dispose();}});}if(rec.tex)rec.tex.dispose();if(rec.cols)removeColl(rec.cols);REG.near.delete(k);REG.dem.delete('14/'+k);}}
+/* place names outside the hand-made world */
+const KANA_TOWNS=[['横浜市','Yokohama',35.4437,139.6380],['川崎市','Kawasaki',35.5308,139.7030],['相模原市','Sagamihara',35.5713,139.3732],['横須賀市','Yokosuka',35.2813,139.6722],['平塚市','Hiratsuka',35.3354,139.3496],['鎌倉市','Kamakura',35.3192,139.5467],
+  ['藤沢市','Fujisawa',35.3389,139.4874],['小田原市','Odawara',35.2645,139.1522],['茅ヶ崎市','Chigasaki',35.3341,139.4040],['逗子市','Zushi',35.2955,139.5806],['三浦市','Miura',35.1440,139.6206],['秦野市','Hadano',35.3747,139.2203],['厚木市','Atsugi',35.4430,139.3619],
+  ['大和市','Yamato',35.4876,139.4580],['伊勢原市','Isehara',35.4027,139.3147],['海老名市','Ebina',35.4466,139.3909],['座間市','Zama',35.4884,139.4078],['南足柄市','Minamiashigara',35.3209,139.0995],['綾瀬市','Ayase',35.4370,139.4269],
+  ['葉山町','Hayama',35.2723,139.5862],['寒川町','Samukawa',35.3727,139.3846],['大磯町','Ōiso',35.3066,139.3110],['二宮町','Ninomiya',35.2992,139.2556],['箱根町','Hakone',35.2325,139.1069],['真鶴町','Manazuru',35.1586,139.1381],['湯河原町','Yugawara',35.1478,139.1084],
+  ['愛川町','Aikawa',35.5289,139.3236],['清川村','Kiyokawa',35.4825,139.2753],['山北町','Yamakita',35.3602,139.0839],['開成町','Kaisei',35.3348,139.1236],['松田町','Matsuda',35.3434,139.1394],['大井町','Ōi',35.3263,139.1567],['中井町','Nakai',35.3311,139.2189]];
+function kanaArea(x,z){const [lat,lon]=g2ll(x,z);let best=null;for(const t of KANA_TOWNS){const d=Math.hypot((t[2]-lat)*111,(t[3]-lon)*90.8);if(!best||d<best.d)best={d,t};}return best&&best.d<12?{city:'神奈川県',name:best.t[0],en:best.t[1]}:{city:'',name:'神奈川県',en:'Kanagawa'};}
 
 /* ================= hand-built stations: shared toolkit =================
    A station file registers ST_CUSTOM[name] = {lines:Set(lineKeys), build()} and may ask for
@@ -3874,9 +3997,9 @@ $('bWait').addEventListener('click',()=>{const ns=nearbyStation();if(!ns)return;
 
 /* ================= time of day ================= */
 const TIMES=[
-  {label:'☀ 昼',top:'#3f93e0',hor:'#d4ebf7',bot:'#9cc7e0',fog:'#cfe4f2',sun:'#fff4e0',si:3.1,hs:'#cfe3ff',hg:'#a39a8a',hi:0.95,dir:[0.5,0.62,0.6],glow:0.6,win:0,beam:0,stars:0,far:'#ffffff',sea:'#3a9ad3',exp:1.05,cloud:0.3,fogN:700,fogF:7000},
-  {label:'🌇 夕',top:'#3d4f8f',hor:'#ffb069',bot:'#d98a60',fog:'#eaa57a',sun:'#ffb070',si:1.9,hs:'#ffc89a',hg:'#5a4a5a',hi:0.65,dir:[-0.99,0.06,-0.03],glow:1.6,win:0.55,beam:0.05,stars:0.1,far:'#d8a0a8',sea:'#5a7fb0',exp:1.0,cloud:0.5,fogN:500,fogF:6000},
-  {label:'🌙 夜',top:'#050a1c',hor:'#18264a',bot:'#0c1630',fog:'#121d38',sun:'#9fb4ff',si:0.32,hs:'#3a4a85',hg:'#10141f',hi:0.32,dir:[0.4,0.7,0.4],glow:0.1,win:1.3,beam:0.16,stars:1,far:'#3a4060',sea:'#16304f',exp:1.15,cloud:0.05,fogN:300,fogF:4500},
+  {label:'☀ 昼',top:'#3f93e0',hor:'#d4ebf7',bot:'#9cc7e0',fog:'#cfe4f2',sun:'#fff4e0',si:3.1,hs:'#cfe3ff',hg:'#a39a8a',hi:0.95,dir:[0.5,0.62,0.6],glow:0.6,win:0,beam:0,stars:0,far:'#ffffff',sea:'#3a9ad3',exp:1.05,cloud:0.3,fogN:3500,fogF:80000},
+  {label:'🌇 夕',top:'#3d4f8f',hor:'#ffb069',bot:'#d98a60',fog:'#eaa57a',sun:'#ffb070',si:1.9,hs:'#ffc89a',hg:'#5a4a5a',hi:0.65,dir:[-0.99,0.06,-0.03],glow:1.6,win:0.55,beam:0.05,stars:0.1,far:'#d8a0a8',sea:'#5a7fb0',exp:1.0,cloud:0.5,fogN:2500,fogF:60000},
+  {label:'🌙 夜',top:'#050a1c',hor:'#18264a',bot:'#0c1630',fog:'#121d38',sun:'#9fb4ff',si:0.32,hs:'#3a4a85',hg:'#10141f',hi:0.32,dir:[0.4,0.7,0.4],glow:0.1,win:1.3,beam:0.16,stars:1,far:'#3a4060',sea:'#16304f',exp:1.15,cloud:0.05,fogN:1500,fogF:40000},
 ];
 let timeIdx=0,timeT=1,fromT=null;const curT={};
 {const h=CLOCK/3600;timeIdx=h>=6&&h<16.5?0:h>=16.5&&h<18?1:2;}
@@ -3889,7 +4012,7 @@ function applyTime(dt){
   for(const n of ['si','hi','glow','win','beam','stars','exp','cloud','fogN','fogF'])curT[n]=N(n);
   curT.dir=[0,1,2].map(i=>lerp(f.dir[i],to.dir[i],k));if(timeT>=1)fromT=null;
   skyMat.uniforms.top.value.set(curT.top);skyMat.uniforms.hor.value.set(curT.hor);skyMat.uniforms.bot.value.set(curT.bot);skyMat.uniforms.sunCol.value.set(curT.sun);skyMat.uniforms.glow.value=curT.glow;
-  scene.fog.color.set(curT.fog);scene.fog.near=curT.fogN;scene.fog.far=curT.fogF;farScene.fog.color.set(curT.fog);
+  scene.fog.color.set(curT.fog);scene.fog.near=curT.fogN;scene.fog.far=curT.fogF;farScene.fog.color.set(curT.fog);farScene.fog.near=curT.fogN*1.2;farScene.fog.far=curT.fogF*1.5;
   sun.color.set(curT.sun);sun.intensity=curT.si;hemi.color.set(curT.hs);hemi.groundColor.set(curT.hg);hemi.intensity=curT.hi;farSun.color.set(curT.sun);farSun.intensity=curT.si*0.8;farHemi.color.set(curT.hs);farHemi.groundColor.set(curT.hg);farHemi.intensity=curT.hi;
   _sd.set(...curT.dir).normalize();skyMat.uniforms.sunDir.value.copy(_sd);sunGlow.position.copy(camera.position).addScaledVector(_sd,250000);sunGlow.material.color.set(curT.sun);sunGlow.visible=timeIdx!==2||timeT<1;farSun.position.copy(_sd).multiplyScalar(1000);
   for(const m of WINMATS)m.emissiveIntensity=curT.win;winTrainMat.emissiveIntensity=curT.win*0.9;
@@ -3931,7 +4054,7 @@ function update(dt){
   const mx=fx*iz+rx*ix,mz=fz*iz+rz*ix;const dash=keys.ShiftLeft||keys.ShiftRight||touchDash;
   let sp=P.fly?(dash?260:55):(dash?6.5:2.0); // walk ≈ 7 km/h, run ≈ 23 km/h: the town at its real sizeif(P.swim)sp*=0.4;
   P.x+=mx*sp*dt;P.z+=mz*sp*dt;
-  P.x=clamp(P.x,WORLD.x0+5,WORLD.x1-5);P.z=clamp(P.z,WORLD.z0+5,WORLD.z1-5);
+  P.x=clamp(P.x,KB.x0,KB.x1);P.z=clamp(P.z,KB.z0,KB.z1); // the whole prefecture is walkable
   const moving=Math.hypot(mx,mz)>0.05;
   if(moving){const target=Math.atan2(mx,mz);let d=target-P.face;d=Math.atan2(Math.sin(d),Math.cos(d));P.face+=d*Math.min(1,dt*12);}
   if(!P.fly)collide();
@@ -3986,6 +4109,7 @@ for(const n of ['大和','鶴間','南林間','中央林間','相模大塚','高
 for(const n of ['東林間','相模大野'])STCITY[n]='相模原市';for(const n of ['さがみ野','かしわ台','海老名'])STCITY[n]='海老名市';
 for(const n of ['大船','西鎌倉','湘南深沢','湘南町屋','富士見町','腰越','鎌倉高校前','七里ヶ浜','片瀬山'])STCITY[n]='鎌倉市';STCITY['茅ヶ崎']='茅ヶ崎市';
 function areaAt2(x,z){
+  if(!inWorld(x,z))return kanaArea(x,z);
   if(inPoly(x,z,CITY)||(z>coastZ(x)-50&&x>-6000&&x<3000&&z>-2000))return areaAt(x,z);
   let best=null;for(const S of STATIONS){const d=Math.hypot(x-S.p.x,z-S.p.z);if(!best||d<best.d)best={d,S};}
   if(best&&best.d<2500){const n=best.S.st[0];return{city:STCITY[n]||'',name:n+(best.d<400?'駅前':'駅周辺'),en:best.S.st[1]};}
@@ -4056,7 +4180,7 @@ function drawBigMap(){
   const [u,v]=T(P.x,P.z);x.save();x.translate(u,v);x.rotate(-P.face+Math.PI);x.beginPath();x.moveTo(0,-10);x.lineTo(7,8);x.lineTo(0,4);x.lineTo(-7,8);x.closePath();x.fillStyle='#ff3c6a';x.fill();x.lineWidth=2;x.strokeStyle='#fff';x.stroke();x.restore();
 }
 function toggleMap(){const o=$('mapOv');o.hidden=!o.hidden;if(!o.hidden)drawBigMap();else canvas.focus();}
-function warp(x,z,station){if(P.ride)exitRide();P.x=clamp(x,WORLD.x0+6,WORLD.x1-6);P.z=clamp(z,WORLD.z0+6,WORLD.z1-6);let y=null;
+function warp(x,z,station){if(P.ride)exitRide();P.x=clamp(x,KB.x0,KB.x1);P.z=clamp(z,KB.z0,KB.z1);let y=null;
   if(station){let best=null;for(const q of PLATBUILT){const d=Math.hypot(q.x-P.x,q.z-P.z);if(d<350&&(!best||d<best.d))best={d,q};}
     if(best){const q=best.q;P.x=q.x;P.z=q.z;y=q.top+0.05;cam.yaw=Math.atan2(q.uz,-q.ux)+Math.PI/2;}}
   for(let k=0;k<4;k++)updateChunks(P.x,P.z,1);P.y=y??(standY(P.x,P.z,999)+(P.fly?30:0.1));for(let k=0;k<6;k++)collide();P.vy=0;cam.tx=P.x;cam.ty=P.y;cam.tz=P.z;}
@@ -4070,7 +4194,7 @@ function frame(now){
   updateTrains();for(const c of CARS)c.update(dt*ff);if(started)PEOPLE.update(dt);
   update(dt);
   for(const f of DYN)f(elapsed,dt);
-  updateChunks(P.x,P.z,1);
+  updateChunks(P.x,P.z,1);updateRegion(dt,P.x,P.z);
   sun.position.set(P.x+_sd.x*300,P.y+Math.max(_sd.y,0.12)*300,P.z+_sd.z*300);sun.target.position.set(P.x,P.y,P.z);
   for(const Lb of LABELS){const dd=camera.position.distanceTo(Lb.sp.position);const near=Lb.maxD>=500?smooth(35,90,dd):1;const vis=dd<Lb.maxD&&near>0.01;Lb.sp.visible=vis;if(vis){const s=clamp(dd*0.05,1.4,220)*Lb.size;Lb.sp.scale.set(s*Lb.sp.userData.ar,s,1);Lb.sp.material.opacity=(1-smooth(Lb.maxD*0.75,Lb.maxD,dd))*near;}} // big area/station names step aside when you are right there
   updateStationBoard(dt);
@@ -4092,7 +4216,7 @@ addEventListener('resize',()=>{renderer.setSize(innerWidth,innerHeight);for(cons
   setLoad('街を建てています…');await tick();
   while(updateChunks(P.x,P.z,4)>0){await tick();}
   warp(P.x,P.z);applyTime(1);$('bTime').textContent=TIMES[timeIdx].label;
-  $('loading').hidden=true;started=true;lastArea='';canvas.focus();
+  $('loading').hidden=true;started=true;startRegion();lastArea='';canvas.focus();
   toast('ようこそ藤沢市へ<small>電車は時刻表どおりに走っています（現在 '+fmt(CLOCK)+'）</small>',3.2);
   requestAnimationFrame(t=>{last=t;frame(t);});
 })().catch(err=>{console.error(err);setLoad('読み込みに失敗しました: '+err.message);});

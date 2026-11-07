@@ -68,7 +68,7 @@ async function loadData(){
 }
 const SEA=0;
 function chunkIndex(x,z){const ci=Math.floor((x-X0)/CH),cj=Math.floor((z-Z0)/CH);if(ci<0||cj<0||ci>=CNX||cj>=CNZ)return -1;return CIDX[cj*CNX+ci];}
-function coarseH(x,z){let fx=(x-X0)/CG,fz=(z-Z0)/CG;fx=clamp(fx,0,CNXg-1.001);fz=clamp(fz,0,CNZg-1.001);const i=fx|0,j=fz|0,ax=fx-i,az=fz-j,k=j*CNXg+i;
+function coarseH(x,z){if(REG.started&&(x<X0||x>X1||z<Z0||z>Z1))return regionH(x,z);let fx=(x-X0)/CG,fz=(z-Z0)/CG;fx=clamp(fx,0,CNXg-1.001);fz=clamp(fz,0,CNZg-1.001);const i=fx|0,j=fz|0,ax=fx-i,az=fz-j,k=j*CNXg+i;
   return ((COARSE[k]*(1-ax)+COARSE[k+1]*ax)*(1-az)+(COARSE[k+CNXg]*(1-ax)+COARSE[k+CNXg+1]*ax)*az)*0.2;}
 function cornerH(b,k){const h=DEMC[b+k]*0.2;return LCC8[b+k]===1&&h>0?h-2.2:h;}
 function demH(x,z){

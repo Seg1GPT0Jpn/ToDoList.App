@@ -126,9 +126,9 @@ $('bWait').addEventListener('click',()=>{const ns=nearbyStation();if(!ns)return;
 
 /* ================= time of day ================= */
 const TIMES=[
-  {label:'☀ 昼',top:'#3f93e0',hor:'#d4ebf7',bot:'#9cc7e0',fog:'#cfe4f2',sun:'#fff4e0',si:3.1,hs:'#cfe3ff',hg:'#a39a8a',hi:0.95,dir:[0.5,0.62,0.6],glow:0.6,win:0,beam:0,stars:0,far:'#ffffff',sea:'#3a9ad3',exp:1.05,cloud:0.3,fogN:700,fogF:7000},
-  {label:'🌇 夕',top:'#3d4f8f',hor:'#ffb069',bot:'#d98a60',fog:'#eaa57a',sun:'#ffb070',si:1.9,hs:'#ffc89a',hg:'#5a4a5a',hi:0.65,dir:[-0.99,0.06,-0.03],glow:1.6,win:0.55,beam:0.05,stars:0.1,far:'#d8a0a8',sea:'#5a7fb0',exp:1.0,cloud:0.5,fogN:500,fogF:6000},
-  {label:'🌙 夜',top:'#050a1c',hor:'#18264a',bot:'#0c1630',fog:'#121d38',sun:'#9fb4ff',si:0.32,hs:'#3a4a85',hg:'#10141f',hi:0.32,dir:[0.4,0.7,0.4],glow:0.1,win:1.3,beam:0.16,stars:1,far:'#3a4060',sea:'#16304f',exp:1.15,cloud:0.05,fogN:300,fogF:4500},
+  {label:'☀ 昼',top:'#3f93e0',hor:'#d4ebf7',bot:'#9cc7e0',fog:'#cfe4f2',sun:'#fff4e0',si:3.1,hs:'#cfe3ff',hg:'#a39a8a',hi:0.95,dir:[0.5,0.62,0.6],glow:0.6,win:0,beam:0,stars:0,far:'#ffffff',sea:'#3a9ad3',exp:1.05,cloud:0.3,fogN:3500,fogF:80000},
+  {label:'🌇 夕',top:'#3d4f8f',hor:'#ffb069',bot:'#d98a60',fog:'#eaa57a',sun:'#ffb070',si:1.9,hs:'#ffc89a',hg:'#5a4a5a',hi:0.65,dir:[-0.99,0.06,-0.03],glow:1.6,win:0.55,beam:0.05,stars:0.1,far:'#d8a0a8',sea:'#5a7fb0',exp:1.0,cloud:0.5,fogN:2500,fogF:60000},
+  {label:'🌙 夜',top:'#050a1c',hor:'#18264a',bot:'#0c1630',fog:'#121d38',sun:'#9fb4ff',si:0.32,hs:'#3a4a85',hg:'#10141f',hi:0.32,dir:[0.4,0.7,0.4],glow:0.1,win:1.3,beam:0.16,stars:1,far:'#3a4060',sea:'#16304f',exp:1.15,cloud:0.05,fogN:1500,fogF:40000},
 ];
 let timeIdx=0,timeT=1,fromT=null;const curT={};
 {const h=CLOCK/3600;timeIdx=h>=6&&h<16.5?0:h>=16.5&&h<18?1:2;}
@@ -141,7 +141,7 @@ function applyTime(dt){
   for(const n of ['si','hi','glow','win','beam','stars','exp','cloud','fogN','fogF'])curT[n]=N(n);
   curT.dir=[0,1,2].map(i=>lerp(f.dir[i],to.dir[i],k));if(timeT>=1)fromT=null;
   skyMat.uniforms.top.value.set(curT.top);skyMat.uniforms.hor.value.set(curT.hor);skyMat.uniforms.bot.value.set(curT.bot);skyMat.uniforms.sunCol.value.set(curT.sun);skyMat.uniforms.glow.value=curT.glow;
-  scene.fog.color.set(curT.fog);scene.fog.near=curT.fogN;scene.fog.far=curT.fogF;farScene.fog.color.set(curT.fog);
+  scene.fog.color.set(curT.fog);scene.fog.near=curT.fogN;scene.fog.far=curT.fogF;farScene.fog.color.set(curT.fog);farScene.fog.near=curT.fogN*1.2;farScene.fog.far=curT.fogF*1.5;
   sun.color.set(curT.sun);sun.intensity=curT.si;hemi.color.set(curT.hs);hemi.groundColor.set(curT.hg);hemi.intensity=curT.hi;farSun.color.set(curT.sun);farSun.intensity=curT.si*0.8;farHemi.color.set(curT.hs);farHemi.groundColor.set(curT.hg);farHemi.intensity=curT.hi;
   _sd.set(...curT.dir).normalize();skyMat.uniforms.sunDir.value.copy(_sd);sunGlow.position.copy(camera.position).addScaledVector(_sd,250000);sunGlow.material.color.set(curT.sun);sunGlow.visible=timeIdx!==2||timeT<1;farSun.position.copy(_sd).multiplyScalar(1000);
   for(const m of WINMATS)m.emissiveIntensity=curT.win;winTrainMat.emissiveIntensity=curT.win*0.9;
@@ -183,7 +183,7 @@ function update(dt){
   const mx=fx*iz+rx*ix,mz=fz*iz+rz*ix;const dash=keys.ShiftLeft||keys.ShiftRight||touchDash;
   let sp=P.fly?(dash?260:55):(dash?6.5:2.0); // walk ≈ 7 km/h, run ≈ 23 km/h: the town at its real sizeif(P.swim)sp*=0.4;
   P.x+=mx*sp*dt;P.z+=mz*sp*dt;
-  P.x=clamp(P.x,WORLD.x0+5,WORLD.x1-5);P.z=clamp(P.z,WORLD.z0+5,WORLD.z1-5);
+  P.x=clamp(P.x,KB.x0,KB.x1);P.z=clamp(P.z,KB.z0,KB.z1); // the whole prefecture is walkable
   const moving=Math.hypot(mx,mz)>0.05;
   if(moving){const target=Math.atan2(mx,mz);let d=target-P.face;d=Math.atan2(Math.sin(d),Math.cos(d));P.face+=d*Math.min(1,dt*12);}
   if(!P.fly)collide();
@@ -238,6 +238,7 @@ for(const n of ['大和','鶴間','南林間','中央林間','相模大塚','高
 for(const n of ['東林間','相模大野'])STCITY[n]='相模原市';for(const n of ['さがみ野','かしわ台','海老名'])STCITY[n]='海老名市';
 for(const n of ['大船','西鎌倉','湘南深沢','湘南町屋','富士見町','腰越','鎌倉高校前','七里ヶ浜','片瀬山'])STCITY[n]='鎌倉市';STCITY['茅ヶ崎']='茅ヶ崎市';
 function areaAt2(x,z){
+  if(!inWorld(x,z))return kanaArea(x,z);
   if(inPoly(x,z,CITY)||(z>coastZ(x)-50&&x>-6000&&x<3000&&z>-2000))return areaAt(x,z);
   let best=null;for(const S of STATIONS){const d=Math.hypot(x-S.p.x,z-S.p.z);if(!best||d<best.d)best={d,S};}
   if(best&&best.d<2500){const n=best.S.st[0];return{city:STCITY[n]||'',name:n+(best.d<400?'駅前':'駅周辺'),en:best.S.st[1]};}
@@ -308,7 +309,7 @@ function drawBigMap(){
   const [u,v]=T(P.x,P.z);x.save();x.translate(u,v);x.rotate(-P.face+Math.PI);x.beginPath();x.moveTo(0,-10);x.lineTo(7,8);x.lineTo(0,4);x.lineTo(-7,8);x.closePath();x.fillStyle='#ff3c6a';x.fill();x.lineWidth=2;x.strokeStyle='#fff';x.stroke();x.restore();
 }
 function toggleMap(){const o=$('mapOv');o.hidden=!o.hidden;if(!o.hidden)drawBigMap();else canvas.focus();}
-function warp(x,z,station){if(P.ride)exitRide();P.x=clamp(x,WORLD.x0+6,WORLD.x1-6);P.z=clamp(z,WORLD.z0+6,WORLD.z1-6);let y=null;
+function warp(x,z,station){if(P.ride)exitRide();P.x=clamp(x,KB.x0,KB.x1);P.z=clamp(z,KB.z0,KB.z1);let y=null;
   if(station){let best=null;for(const q of PLATBUILT){const d=Math.hypot(q.x-P.x,q.z-P.z);if(d<350&&(!best||d<best.d))best={d,q};}
     if(best){const q=best.q;P.x=q.x;P.z=q.z;y=q.top+0.05;cam.yaw=Math.atan2(q.uz,-q.ux)+Math.PI/2;}}
   for(let k=0;k<4;k++)updateChunks(P.x,P.z,1);P.y=y??(standY(P.x,P.z,999)+(P.fly?30:0.1));for(let k=0;k<6;k++)collide();P.vy=0;cam.tx=P.x;cam.ty=P.y;cam.tz=P.z;}
@@ -322,7 +323,7 @@ function frame(now){
   updateTrains();for(const c of CARS)c.update(dt*ff);if(started)PEOPLE.update(dt);
   update(dt);
   for(const f of DYN)f(elapsed,dt);
-  updateChunks(P.x,P.z,1);
+  updateChunks(P.x,P.z,1);updateRegion(dt,P.x,P.z);
   sun.position.set(P.x+_sd.x*300,P.y+Math.max(_sd.y,0.12)*300,P.z+_sd.z*300);sun.target.position.set(P.x,P.y,P.z);
   for(const Lb of LABELS){const dd=camera.position.distanceTo(Lb.sp.position);const near=Lb.maxD>=500?smooth(35,90,dd):1;const vis=dd<Lb.maxD&&near>0.01;Lb.sp.visible=vis;if(vis){const s=clamp(dd*0.05,1.4,220)*Lb.size;Lb.sp.scale.set(s*Lb.sp.userData.ar,s,1);Lb.sp.material.opacity=(1-smooth(Lb.maxD*0.75,Lb.maxD,dd))*near;}} // big area/station names step aside when you are right there
   updateStationBoard(dt);
@@ -344,7 +345,7 @@ addEventListener('resize',()=>{renderer.setSize(innerWidth,innerHeight);for(cons
   setLoad('街を建てています…');await tick();
   while(updateChunks(P.x,P.z,4)>0){await tick();}
   warp(P.x,P.z);applyTime(1);$('bTime').textContent=TIMES[timeIdx].label;
-  $('loading').hidden=true;started=true;lastArea='';canvas.focus();
+  $('loading').hidden=true;started=true;startRegion();lastArea='';canvas.focus();
   toast('ようこそ藤沢市へ<small>電車は時刻表どおりに走っています（現在 '+fmt(CLOCK)+'）</small>',3.2);
   requestAnimationFrame(t=>{last=t;frame(t);});
 })().catch(err=>{console.error(err);setLoad('読み込みに失敗しました: '+err.message);});
