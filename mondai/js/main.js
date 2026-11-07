@@ -4,6 +4,7 @@ import { migrateLegacy } from './core/migrate.js';
 import { $, toast, on } from './core/util.js';
 import { currentMaterial } from './ui/common.js';
 import { setupPWA } from './pwa.js';
+import { handleOldSite, receiveMove } from './core/move.js';
 
 const PAGES = {
   home: ['ホーム', () => import('./ui/home.js')],
@@ -84,6 +85,8 @@ function setupErrors() {
 async function init() {
   setupTheme();
   setupErrors();
+  // 旧ページ（GitHub Pages）で開かれたら新しいページへ移る
+  if (await handleOldSite((html) => { document.body.innerHTML = `<main class="view">${html}</main>`; return document.body; })) return;
   setupPWA();
   $('nav-toggle').addEventListener('click', () => $('shell').classList.toggle('nav-open'));
   document.addEventListener('keydown', e => { if (e.key === 'Escape') $('shell').classList.remove('nav-open'); });
@@ -91,6 +94,9 @@ async function init() {
     await loadAll();
     const n = await migrateLegacy();
     if (n) toast(`前の版で保存したプリント ${n} 件を「ライブラリ」に移しました`);
+    // 旧ページから「データごと移す」で開かれたとき
+    const moved = await receiveMove(async (c) => window.confirm(`前のページのデータを取り込みますか？\n\n教材 ${c.materials} 件・自作／編集した問題 ${c.questions} 問・学習結果 ${c.results} 件・取り込んだデータ ${c.datasets} 件\n\n今このページにあるデータは消えません（同じものは上書きされます）。`));
+    if (moved) { await loadAll(); toast('前のページのデータを取り込みました'); }
   } catch (e) {
     console.error(e);
     $('view').innerHTML = `<div class="notice error">データを読み込めませんでした：${String(e && e.message || e)}<br>このブラウザのプライベートモードでは保存機能が使えないことがあります。</div>`;

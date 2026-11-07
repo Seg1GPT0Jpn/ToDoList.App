@@ -2,9 +2,9 @@
 
 問題バンク・教材制作・テスト制作・解答解説・AI・チーム・分析をそなえた、ブラウザで動く教材づくりのアプリです。インストール不要で、開くだけで使えます。
 
-**公開ページ：https://seg1gpt0jpn.github.io/ToDoList.App/mondai/**
+**公開ページ：https://mondai-1a2b3.web.app/** （Firebase Hosting。`main` に入るたびに自動で公開。設定は [docs/FIREBASE_HOSTING.md](docs/FIREBASE_HOSTING.md)）
 
-Firebase Hosting でも公開できます（設定すると `main` に入るたびに自動で公開）。手順は [docs/FIREBASE_HOSTING.md](docs/FIREBASE_HOSTING.md)。
+前の公開場所（GitHub Pages：`https://seg1gpt0jpn.github.io/ToDoList.App/mondai/`）を開くと、新しいページへ自動で移動します。前のページで作ったデータがある端末では「データごと新しいページへ移す」案内が出て、ボタン1つでデータを移せます。
 
 ## できること
 | 画面 | できること |
