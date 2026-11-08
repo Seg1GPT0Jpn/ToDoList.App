@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>[hidden]{display:none!important}body{margin:0}img{max-width:100%}</style>
+<title>TOEIC 990 最終週</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap">
+<style>
+/* Layout: test-booklet column (black serif on paper) inside a slim app shell; answer bubbles styled like an OMR mark sheet. */
+:root{
+  --paper:#fbfbf8; --ink:#141414; --muted:#5d5e58; --rule:#cfcfc8; --panel:#f0f0ea;
+  --accent:#1f3c88; --accent-soft:#e3e8f6; --ok:#1d7a3e; --ok-soft:#e2f2e7; --ng:#b3261e; --ng-soft:#f8e3e1;
+  --photo:#e6e6e2; --photo-ink:#3a3a3a;
+  --serif:"Source Serif 4","Times New Roman",Times,serif;
+  --sans:"Noto Sans JP","Hiragino Sans","Yu Gothic",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#17181b; --ink:#ecebe6; --muted:#a3a39b; --rule:#3a3b40; --panel:#202126;
+  --accent:#8fa8ee; --accent-soft:#25304f; --ok:#6fcf8f; --ok-soft:#1b3324; --ng:#f08c84; --ng-soft:#3d2120;
+  --photo:#d9d9d4; --photo-ink:#333; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#17181b; --ink:#ecebe6; --muted:#a3a39b; --rule:#3a3b40; --panel:#202126;
+  --accent:#8fa8ee; --accent-soft:#25304f; --ok:#6fcf8f; --ok-soft:#1b3324; --ng:#f08c84; --ng-soft:#3d2120;
+  --photo:#d9d9d4; --photo-ink:#333; color-scheme:dark}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.7;font-size:15px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+.wrap{max-width:860px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 80px}
+header.top{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 16px;border-bottom:2px solid var(--ink);padding-bottom:10px}
+header.top h1{font-family:var(--serif);font-size:1.6rem;margin:0;letter-spacing:.01em;text-wrap:balance}
+header.top .sub{color:var(--muted);font-size:.85rem}
+.count{font-variant-numeric:tabular-nums;font-weight:700}
+nav.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);display:flex;gap:4px;border-bottom:1px solid var(--rule);margin-top:12px;overflow-x:auto}
+nav.tabs button{font:inherit;font-weight:500;background:none;border:0;border-bottom:3px solid transparent;padding:10px 12px;color:var(--muted);cursor:pointer;white-space:nowrap}
+nav.tabs button[aria-selected="true"]{color:var(--ink);border-color:var(--accent)}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+section.view{padding-top:18px}
+h2{font-family:var(--serif);font-size:1.35rem;margin:1.6em 0 .4em;text-wrap:balance}
+h3{font-size:1.02rem;margin:1.3em 0 .3em}
+p{margin:.5em 0;max-width:68ch}
+.note{background:var(--panel);border-left:3px solid var(--muted);padding:10px 14px;font-size:.9rem;color:var(--ink)}
+.tbl{overflow-x:auto;margin:.6em 0}
+table{border-collapse:collapse;width:100%;font-size:.9rem;font-variant-numeric:tabular-nums}
+th,td{border:1px solid var(--rule);padding:6px 9px;text-align:left;vertical-align:top}
+th{background:var(--panel);font-weight:700}
+ul{padding-left:1.2em;margin:.4em 0}
+li{margin:.2em 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.06em;border:1px solid var(--ink);padding:0 6px;border-radius:2px;margin-right:6px;vertical-align:1px}
+
+/* booklet */
+.controls{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;background:var(--panel);padding:10px 14px;font-size:.88rem}
+.controls label{display:flex;gap:6px;align-items:center}
+.btn{font:inherit;font-weight:700;border:1.5px solid var(--ink);background:var(--paper);color:var(--ink);padding:6px 14px;cursor:pointer;border-radius:3px}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--paper)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.booklet{font-family:var(--serif);font-size:1.02rem}
+.part-head{margin-top:2.2em;border-top:3px double var(--ink);padding-top:.6em}
+.part-head h3{font-family:var(--serif);font-size:1.25rem;margin:0;letter-spacing:.04em}
+.dir{font-weight:600;margin:.5em 0 1em;max-width:none}
+.dir b{font-weight:700}
+.sect{font-family:var(--serif);font-size:1.6rem;font-weight:700;text-align:center;letter-spacing:.2em;margin:1.6em 0 .2em}
+.q{display:grid;grid-template-columns:2.6em 1fr;gap:4px 8px;margin:1.1em 0;padding:4px 0}
+.q .num{font-weight:700;text-align:right}
+.q .body{min-width:0}
+.opts{display:grid;gap:2px;margin-top:.3em}
+.opts.cols2{grid-template-columns:1fr 1fr}
+@media (max-width:560px){.opts.cols2{grid-template-columns:1fr}}
+.opt{display:flex;gap:.5em;align-items:flex-start}
+.sheet{display:flex;gap:8px;margin-top:.5em;align-items:center;font-family:var(--sans)}
+.bub{width:30px;height:30px;border-radius:50%;border:1.5px solid var(--ink);background:var(--paper);color:var(--ink);font:700 .8rem var(--sans);cursor:pointer;display:grid;place-items:center;padding:0}
+.bub[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.bub.right{box-shadow:0 0 0 3px var(--ok)}
+.q.graded.correct{background:var(--ok-soft)}
+.q.graded.wrong{background:var(--ng-soft)}
+.verdict{font:700 .8rem var(--sans);margin-left:6px}
+.correct .verdict{color:var(--ok)} .wrong .verdict{color:var(--ng)}
+.exp{grid-column:2;font-family:var(--sans);font-size:.88rem;background:var(--paper);border:1px solid var(--rule);padding:8px 12px;margin-top:4px}
+.set{border-top:1px solid var(--rule);margin-top:1.4em;padding-top:.6em}
+.set-title{font-weight:700;font-style:italic}
+.play{display:inline-flex;gap:6px;align-items:center;font:700 .82rem var(--sans);border:1.5px solid var(--accent);color:var(--accent);background:var(--paper);border-radius:20px;padding:4px 12px;cursor:pointer;margin:.3em 0}
+.play.playing{background:var(--accent);color:var(--paper)}
+.script{font-family:var(--serif);font-size:.95rem;background:var(--panel);padding:10px 14px;margin:.5em 0;white-space:normal}
+.script p{margin:.2em 0;max-width:none}
+.script .sp{font-weight:700;font-family:var(--sans);font-size:.8rem}
+.photo{background:var(--photo);color:var(--photo-ink);border:1px solid var(--rule);max-width:420px;width:100%;margin:.4em 0}
+.photo svg{display:block;width:100%;height:auto}
+.passage{border:1.5px solid var(--ink);padding:12px 16px;margin:.8em 0;font-size:.97rem;background:var(--paper)}
+.passage p{max-width:none}
+.passage .hdr{font-family:var(--sans);font-size:.85rem;border-bottom:1px solid var(--rule);padding-bottom:6px;margin-bottom:8px}
+.chat p{margin:.35em 0}
+.chat .who{font-weight:700}
+.chat .t{color:var(--muted);font-size:.85em}
+.blank{display:inline-block;min-width:4.5em;border-bottom:1.5px solid var(--ink);text-align:center;font-weight:700}
+.passage table{font-size:.88rem}
+.gfx{max-width:420px}
+.timer{position:fixed;right:max(12px,env(safe-area-inset-right,0px));bottom:calc(12px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--paper);font:700 .95rem var(--sans);padding:8px 14px;border-radius:24px;font-variant-numeric:tabular-nums;z-index:6}
+.result{border:2px solid var(--ink);padding:14px 18px;margin:1.2em 0;background:var(--paper)}
+.result .big{font-family:var(--serif);font-size:2rem;font-weight:700;font-variant-numeric:tabular-nums}
+.score-row{display:flex;flex-wrap:wrap;gap:12px 28px}
+.score-row>div{min-width:0}
+.lbl{font-size:.75rem;letter-spacing:.08em;color:var(--muted);font-weight:700}
+
+/* plan */
+.day{border:1px solid var(--rule);margin:12px 0;padding:12px 16px}
+.day.today{border:2px solid var(--accent)}
+.day-head{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline}
+.day-head .d{font-family:var(--serif);font-size:1.2rem;font-weight:700}
+.day-head .theme{font-weight:700}
+.pages{font-variant-numeric:tabular-nums;color:var(--muted);font-size:.85rem}
+.check{display:flex;gap:8px;align-items:flex-start;margin:4px 0}
+.check input{margin-top:.35em;width:18px;height:18px;flex:none}
+.bar{height:8px;background:var(--panel);border:1px solid var(--rule);margin:6px 0 2px}
+.bar>i{display:block;height:100%;background:var(--accent);width:0}
+@media (prefers-reduced-motion:no-preference){.bar>i{transition:width .3s}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <h1>TOEIC® L&amp;R 990 最終週</h1>
+    <div class="sub">本番 11月15日（日）まで あと <span class="count" id="daysLeft">7</span> 日</div>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="セクション">
+    <button role="tab" id="tab-analysis" aria-selected="true" data-view="analysis">① 出題傾向の分析</button>
+    <button role="tab" id="tab-mock" aria-selected="false" data-view="mock">② 激ムズ予想問題</button>
+    <button role="tab" id="tab-plan" aria-selected="false" data-view="plan">③ 7日間プラン</button>
+  </nav>
+
+  <!-- ================= ANALYSIS ================= -->
+  <section class="view" id="view-analysis">
+    <div class="note">公開テストの問題は持ち帰りができず、本物の過去問は公開されていません。この分析は、公式問題集と近年の公開テストで確認されている出題形式・傾向をもとにまとめています。予想問題はすべてオリジナルです（ETSとは無関係）。</div>
+
+    <h2>テストの全体像と 990 の目安</h2>
+    <div class="tbl"><table>
+      <tr><th>Part</th><th>問題数</th><th>内容</th><th>990 狙いの到達目標</th></tr>
+      <tr><td>1</td><td>6</td><td>写真描写</td><td>全問正解。人物なし写真の受動態に注意</td></tr>
+      <tr><td>2</td><td>25</td><td>応答問題（3択）</td><td>ミス1問以内。間接応答を即判断</td></tr>
+      <tr><td>3</td><td>39（13会話）</td><td>会話問題。3人会話・図表・意図問題を含む</td><td>先読みを最後まで崩さない</td></tr>
+      <tr><td>4</td><td>30（10トーク）</td><td>説明文問題。図表・意図問題を含む</td><td>言い換えに反応できること</td></tr>
+      <tr><td>5</td><td>30</td><td>短文穴埋め</td><td>10分以内・ミス1問以内</td></tr>
+      <tr><td>6</td><td>16（4文書）</td><td>長文穴埋め。各文書に文挿入1問</td><td>8分以内</td></tr>
+      <tr><td>7</td><td>54</td><td>読解。シングル29・ダブル10・トリプル15</td><td>55分で全問解き、見直し時間を残す</td></tr>
+    </table></div>
+    <p>スコアは素点ではなく統計処理で換算されるため回ごとに差がありますが、一般に <b>Listening は数問、Reading は2〜3問程度のミスまでなら 495 が出る</b>ことがあります。つまり990は「全問正解」ではなく「ミスをほぼゼロに抑えたうえで、時間内に最後まで解き切る」試験です。</p>
+
+    <h2>パート別：近年の傾向と高得点者が落とすポイント</h2>
+    <h3><span class="tag">PART 1</span>人物のいない写真が鬼門</h3>
+    <ul>
+      <li>人がいない写真で <i>is being stacked</i>（今まさに積まれている）を選ばせるひっかけが定番。人がいなければ進行形の受動態はほぼ不正解、<i>has been placed / is leaning</i> などの状態表現が正解になる。</li>
+      <li>高得点者が落とすのは語彙。<i>propped against, stacked, lined up, overlooking, unoccupied, be suspended from</i> は確実に。</li>
+    </ul>
+    <h3><span class="tag">PART 2</span>半分前後が「間接応答」</h3>
+    <ul>
+      <li>質問に直接答えない応答（逆質問、「〜が担当です」「まだ決まっていない」など）が正解になる問題が多い。<b>消去法で「明らかにズレている2つ」を落とす</b>のが最速。</li>
+      <li>質問中の単語をそのまま、または似た音で繰り返す選択肢（<i>new hires → I'm new here</i>）はほぼ不正解。</li>
+      <li>冒頭の疑問詞を聞き逃すと立て直せない。1問ごとに頭を切り替える集中力が必要。</li>
+    </ul>
+    <h3><span class="tag">PART 3・4</span>先読みのリズムと「意図問題」</h3>
+    <ul>
+      <li>毎回、意図問題（<i>What does the man mean when he says …?</i>）が Part 3 で2〜3問、Part 4 で2〜3問。発言そのものではなく<b>その前後の流れ</b>で決まる。</li>
+      <li>図表問題は Part 3・4 の最後のほうに各2〜3問。図表の中で<b>音声に出てこない側の情報</b>が答えになるのが基本パターン。</li>
+      <li>3人会話は Part 3 に2〜3セット。名前が出たら誰の発言かをメモする意識を。</li>
+      <li>正解は本文の言い換え（<i>courier → delivery company</i>）。本文と同じ単語の選択肢はむしろ疑う。</li>
+    </ul>
+    <h3><span class="tag">PART 5</span>990層の失点は「語彙・語法」</h3>
+    <ul>
+      <li>約半分が語彙、約3割が品詞、残りが前置詞と接続詞の区別・動詞の形・関係詞・代名詞。</li>
+      <li>文法は空所の前後だけで即答（5秒）、語彙は文全体の意味とコロケーション（<i>prior to, on a first-come, first-served basis</i>）で判断。</li>
+      <li>仮定法の倒置（<i>Had the shipment arrived …</i>）や <i>neither A nor B</i> の一致など、出題頻度は低いが高得点者を落とす問題が時々出る。</li>
+    </ul>
+    <h3><span class="tag">PART 6</span>文挿入は「直後の文」との接続で決める</h3>
+    <ul><li>4文書すべてに文挿入が1問ずつ。時制・接続副詞も「前の段落」を読まないと解けない問題が増えている。</li></ul>
+    <h3><span class="tag">PART 7</span>最大の敵は時間</h3>
+    <ul>
+      <li>テキストメッセージやチャットの意図問題、位置を選ぶ文挿入（各回2問）、同義語問題、NOT問題、そしてダブル・トリプルの<b>複数文書を照らし合わせる問題</b>（各セット1〜2問）。</li>
+      <li>トリプルパッセージでは「日付・人数・金額の条件」を組み合わせる問題が頻出。今回の予想問題にも入れています。</li>
+      <li>読解特急はまさに Part 7 対策。この1週間で「1問1分」のペース感を体に入れるのに最適です。</li>
+    </ul>
+
+    <h2>Reading 75分の時間配分（990 ペース）</h2>
+    <div class="tbl"><table>
+      <tr><th>Part</th><th>目標時間</th><th>1問あたり</th><th>終了時刻の目安（開始を 0:00 として）</th></tr>
+      <tr><td>5</td><td>10分</td><td>20秒</td><td>0:10</td></tr>
+      <tr><td>6</td><td>8分</td><td>30秒</td><td>0:18</td></tr>
+      <tr><td>7 シングル</td><td>25分</td><td>約50秒</td><td>0:43</td></tr>
+      <tr><td>7 ダブル・トリプル</td><td>27分</td><td>約65秒</td><td>1:10</td></tr>
+      <tr><td>見直し・マークの確認</td><td>5分</td><td>—</td><td>1:15</td></tr>
+    </table></div>
+
+    <h2>残り1週間で一番伸びるところ</h2>
+    <ul>
+      <li><b>Part 7 の処理速度</b>：読解特急を毎日解き、1題ごとに時間を計る。</li>
+      <li><b>Part 5 の語彙</b>：間違えた語は例文ごと覚える。新しい単語帳には手を出さない。</li>
+      <li><b>先読みのリズム</b>：Part 3・4 は設問を読む→聞く→即マーク→次の設問を読む、の流れを毎日10セット。</li>
+      <li><b>本番と同じ時刻に解く練習</b>：11/14（土）に受験票の開始時刻と同じ時間帯で通し練習をする。</li>
+    </ul>
+  </section>
+
+  <!-- ================= MOCK TEST ================= -->
+  <section class="view" id="view-mock" hidden>
+    <p>本番の形式・指示文・誌面の作りに合わせた<b>オリジナルの予想問題（全62問：Listening 27問／Reading 35問）</b>です。難易度は本番の最難関レベルに寄せています。各問題の下の <b>A B C D</b> を押してマークし、最後に「採点する」を押すと正解・解説・スクリプトが表示されます。</p>
+    <div class="controls">
+      <label for="rate">音声の速さ
+        <select id="rate"><option value="0.9">やや遅い</option><option value="1" selected>本番相当</option><option value="1.1">やや速い</option></select>
+      </label>
+      <label><input type="checkbox" id="strict" checked> 本番モード（音声は1回だけ）</label>
+      <button class="btn" id="startTimer" type="button">Reading タイマー開始（28分）</button>
+      <button class="btn" id="resetAll" type="button">解答をリセット</button>
+    </div>
+    <p class="note" id="voiceNote">リスニング音声はお使いの端末の英語読み上げ機能で再生します（アメリカ・イギリス・オーストラリア英語を自動で割り当て）。パソコンかスマホの音量を上げて、▶ ボタンを押してください。</p>
+
+    <div class="booklet" id="booklet"></div>
+
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px">
+      <button class="btn primary" id="grade" type="button">採点する</button>
+      <span id="answeredCount" style="align-self:center;color:var(--muted)"></span>
+    </div>
+    <div id="result"></div>
+  </section>
+
+  <!-- ================= PLAN ================= -->
+  <section class="view" id="view-plan" hidden>
+    <p>読解特急の残り<b>170ページ</b>を 11/9〜11/14 の6日間で終わらせ、11/15 は軽い確認だけにする計画です。チェックを入れると進み具合がこの端末に保存されます。</p>
+    <div class="bar" aria-hidden="true"><i id="progBar"></i></div>
+    <div class="pages" id="progText"></div>
+
+    <h2>読解特急の使い方（毎日共通）</h2>
+    <ul>
+      <li><b>1題ずつ時間を計って解く</b>。目標は「設問数 × 1分」。超えた題は付箋を貼る。</li>
+      <li><b>答え合わせは「根拠の行」を本文で指さす</b>。根拠を言えない正解は、まぐれ当たりとして×扱いにする。</li>
+      <li><b>本文を1回音読する</b>。これが Part 7 の速度を上げる一番の近道です。</li>
+      <li>知らない単語は本の余白に書き出し、翌朝に5分だけ見直す。</li>
+    </ul>
+
+    <div id="days"></div>
+
+    <h2>試験前日・当日の注意</h2>
+    <ul>
+      <li>持ち物：受験票（証明写真を貼る）、本人確認書類、HB鉛筆またはシャープペンシル、消しゴム、腕時計（スマートウォッチは不可）。</li>
+      <li>前日は新しい問題を解かず、復習と睡眠を優先。リスニングは寝不足の影響を一番受けます。</li>
+      <li>当日の朝、Part 2 の音声を10問だけ聞いて耳を英語に慣らしておく。</li>
+      <li>Part 7 で1問に2分以上かかったら、いったん適当にマークして先へ。最後まで解き切るのが990の前提です。</li>
+    </ul>
+  </section>
+</div>
+<div class="timer" id="timer" hidden></div>
+
+<script>
+/* ---------------- DATA ---------------- */
+const PHOTO = {
+cafe:`<svg viewBox="0 0 400 250" role="img" aria-label="写真：誰もいないカフェ。テーブルの上に椅子が逆さまに載せられている">
+<rect width="400" height="250" fill="#dcdcd7"/><rect y="175" width="400" height="75" fill="#bdbdb7"/>
+<rect x="250" y="20" width="120" height="90" fill="#efefea" stroke="#555" stroke-width="3"/><line x1="310" y1="20" x2="310" y2="110" stroke="#555" stroke-width="3"/>
+<g id="t"><rect x="20" y="140" width="100" height="7" fill="#4a4a4a"/><line x1="70" y1="147" x2="70" y2="205" stroke="#4a4a4a" stroke-width="5"/><rect x="50" y="203" width="40" height="5" fill="#4a4a4a"/>
+<rect x="28" y="133" width="36" height="7" fill="#6a6a6a"/><line x1="31" y1="133" x2="31" y2="95" stroke="#6a6a6a" stroke-width="3"/><line x1="61" y1="133" x2="61" y2="95" stroke="#6a6a6a" stroke-width="3"/><rect x="28" y="140" width="4" height="34" fill="#6a6a6a"/>
+<rect x="76" y="133" width="36" height="7" fill="#6a6a6a"/><line x1="79" y1="133" x2="79" y2="95" stroke="#6a6a6a" stroke-width="3"/><line x1="109" y1="133" x2="109" y2="95" stroke="#6a6a6a" stroke-width="3"/><rect x="108" y="140" width="4" height="34" fill="#6a6a6a"/></g>
+<use href="#t" x="130" y="8"/><use href="#t" x="255" y="22"/></svg>`,
+ladder:`<svg viewBox="0 0 400 250" role="img" aria-label="写真：倉庫の棚。はしごが棚に立てかけられ、床に段ボール箱が一つある">
+<rect width="400" height="250" fill="#dcdcd7"/><rect y="215" width="400" height="35" fill="#bdbdb7"/>
+<rect x="170" y="25" width="190" height="195" fill="none" stroke="#444" stroke-width="5"/>
+<line x1="170" y1="80" x2="360" y2="80" stroke="#444" stroke-width="5"/><line x1="170" y1="135" x2="360" y2="135" stroke="#444" stroke-width="5"/><line x1="170" y1="180" x2="360" y2="180" stroke="#444" stroke-width="5"/>
+<rect x="185" y="45" width="50" height="35" fill="#9a9a94" stroke="#555"/><rect x="245" y="52" width="45" height="28" fill="#a8a8a2" stroke="#555"/><rect x="300" y="100" width="48" height="35" fill="#9a9a94" stroke="#555"/><rect x="190" y="148" width="60" height="32" fill="#a8a8a2" stroke="#555"/>
+<line x1="95" y1="232" x2="190" y2="30" stroke="#2e2e2e" stroke-width="5"/><line x1="128" y1="232" x2="220" y2="35" stroke="#2e2e2e" stroke-width="5"/>
+<g stroke="#2e2e2e" stroke-width="4"><line x1="104" y1="212" x2="137" y2="212"/><line x1="113" y1="190" x2="147" y2="190"/><line x1="123" y1="168" x2="157" y2="168"/><line x1="133" y1="146" x2="167" y2="146"/><line x1="143" y1="124" x2="176" y2="124"/><line x1="152" y1="102" x2="185" y2="102"/><line x1="162" y1="80" x2="194" y2="80"/><line x1="171" y1="58" x2="204" y2="58"/></g>
+<rect x="25" y="185" width="55" height="40" fill="#9a9a94" stroke="#555"/><line x1="25" y1="198" x2="80" y2="198" stroke="#666"/></svg>`
+};
+
+// Listening
+const P1 = [
+ {n:1,photo:"cafe",opts:["Some chairs are being stacked on the tables.","A café is crowded with customers.","Some seating has been placed on top of tables.","A floor is being mopped."],ans:"C",
+  exp:"人物のいない写真。(A) are being stacked は「今まさに積まれている最中」で、動作をする人が必要なので不正解。(C) has been placed は「置かれた状態」を表すので正解。seating（座席類）は chairs の言い換え。"},
+ {n:2,photo:"ladder",opts:["Boxes are being unloaded from a shelf.","A ladder is leaning against some shelving.","Some cartons are being sealed with tape.","Shelves are being assembled."],ans:"B",
+  exp:"(B) lean against「〜に立てかけてある」が正解。is leaning は進行形でも「状態」を表す例外的な動詞なので、人がいなくても正解になる。(A)(C)(D) はどれも人の動作が必要。shelving＝棚（不可算）。"}
+];
+const P2 = [
+ {n:3,q:["UK_W","Who's going to lead the training session for the new hires?"],o:["It starts at nine.","Hasn't the schedule been posted yet?","Yes, I'm new here."],ans:"B",exp:"Who の質問に「スケジュールはまだ出ていないの？（出ていれば書いてある）」と逆質問で返す間接応答。(C) は new の繰り返しひっかけで、Who に Yes では答えられない。"},
+ {n:4,q:["US_M","Why don't we move the client dinner to Thursday?"],o:["Ms. Patel is flying out Wednesday night.","Because it was delicious.","On the second floor."],ans:"A",exp:"Why don't we 〜? は提案。「パテルさんは水曜の夜に出発する（木曜はいない）」と、提案に遠回しに反対している。(B) は Why に対する Because のひっかけ。"},
+ {n:5,q:["AU_W","The printer on the third floor is out of toner again."],o:["Three copies, please.","I'll print it out for you.","There's a box in the supply closet."],ans:"C",exp:"平叙文で問題を伝えている。「備品庫に（トナーの）箱があるよ」と解決策を示す (C) が正解。(A) third→three、(B) printer→print の音のひっかけ。"},
+ {n:6,q:["US_W","Should I send the revised contract now, or wait for legal to sign off?"],o:["They're usually quick to respond.","A signed copy of the contract.","Yes, I sent it."],ans:"A",exp:"選択疑問文。「法務はたいてい返事が早い」＝待てばいい、と後者を選んでいる。選択疑問文に Yes/No で答える (C) は不自然。(B) は sign の繰り返し。"},
+ {n:7,q:["UK_M","Haven't the quarterly figures been finalized?"],o:["Finally, a day off.","Gerald is still double-checking the Asia numbers.","In the fourth quarter."],ans:"B",exp:"否定疑問文は「〜ではないの？」と普通の疑問文と同じように考える。「ジェラルドがまだアジアの数字を確認中」＝まだ確定していない、の間接応答。(A) finalized→Finally、(C) quarterly→quarter は音のひっかけ。"},
+ {n:8,q:["US_W","Isn't this the same supplier we used for the spring catalog?"],o:["Spring is my favorite season.","About forty pages.","We switched after last year's delivery delays."],ans:"C",exp:"「去年の配送遅延のあと業者を変えた」＝同じ業者ではない、という間接応答。(A) は spring の別の意味（季節）、(B) は catalog から連想させるひっかけ。"},
+ {n:9,q:["AU_M","How much longer will the lobby renovation take?"],o:["The contractor's coming in at three to give us an update.","It's much longer than that.","Through the side entrance."],ans:"A",exp:"期間を聞かれて「3時に業者が来て最新の状況を教えてくれる」＝今はわからない、と答える典型的な間接応答。(B) は longer の繰り返し。"},
+ {n:10,q:["UK_W","I can't seem to log in to the expense-reporting system."],o:["About two hundred dollars.","IT sent a password-reset notice this morning.","The report is on my desk."],ans:"B",exp:"ログインできないという問題に「今朝IT部門からパスワード再設定のお知らせが来ていた」と原因と解決の手がかりを示している。(A) は expense（経費）からの連想、(C) は report の繰り返し。"},
+ {n:11,q:["US_M","Would you mind reviewing my slides before the board meeting?"],o:["The board approved it.","They slid off the shelf.","I have a call until four, if that's not too late."],ans:"C",exp:"依頼に対して「4時まで電話があるけど、それで遅くなければ」と条件付きで引き受けている。(A) board の繰り返し、(B) slides→slid の音のひっかけ。"},
+ {n:12,q:["AU_W","Where should we hold the year-end party?"],o:["Last year's venue has closed down, unfortunately.","At the end of December.","Yes, I'll hold it."],ans:"A",exp:"Where の質問に場所で答えず「去年の会場は閉店してしまった」＝去年と同じ場所は使えない、と答えている。(B) は When の答え、(C) は疑問詞疑問文に Yes で答えているので不正解。"}
+];
+const P3 = [
+ {title:"Questions 13-15 refer to the following conversation with three speakers.",
+  conv:[["US_W","Hi Daniel, Kenji. I just got off the phone with Bramwell Packaging. They say the redesigned boxes for the Aero blender won't ship until the twenty-second."],["UK_M","The twenty-second? That's three days after our launch event."],["AU_M","Well, we do still have about five hundred units in the old packaging at the Leeds warehouse."],["US_W","Those boxes still show the previous model number, though. Retailers might reject them."],["UK_M","Not if we add a corrective sticker. Our print shop can turn those around overnight."],["US_W","That's a thought. Kenji, could you find out exactly how many units are in Leeds and send me the count by noon?"],["AU_M","Sure. I'll call the warehouse manager right now."]],
+  names:{US_W:"Woman",UK_M:"Man 1 (Daniel)",AU_M:"Man 2 (Kenji)"},
+  qs:[
+   {n:13,t:"What problem are the speakers discussing?",o:["A product has a design flaw.","A shipment will arrive later than needed.","A launch event venue is unavailable.","A retailer has canceled an order."],ans:"B",exp:"冒頭で「新しい箱は22日まで出荷されない」→「発売イベントの3日後だ」。必要な時期より届くのが遅い (B)。"},
+   {n:14,t:"Why does Kenji say, “we do still have about five hundred units in the old packaging”?",o:["To suggest a possible solution","To complain about excess inventory","To correct a colleague's figure","To request additional storage space"],ans:"A",exp:"箱が間に合わないという問題のあとに「旧パッケージの在庫が500個ある」＝それを使えばいい、という解決策の提案。直後にシールを貼る案へ話が進むことからも確定。"},
+   {n:15,t:"What will Kenji most likely do next?",o:["Visit a print shop","Email some retailers","Revise a model number","Contact a warehouse employee"],ans:"D",exp:"最後に「倉庫の責任者にすぐ電話する」。warehouse manager → warehouse employee、call → contact の言い換え。"}]},
+ {title:"Questions 16-18 refer to the following conversation and room list.",
+  graphic:`<div class="tbl gfx"><table><tr><th>Room</th><th>Capacity</th><th>Projector</th></tr><tr><td>Maple</td><td>8</td><td>No</td></tr><tr><td>Cedar</td><td>12</td><td>Yes</td></tr><tr><td>Birch</td><td>20</td><td>Yes</td></tr><tr><td>Willow</td><td>30</td><td>No</td></tr></table></div>`,
+  conv:[["UK_M","Hi, I'm calling about reserving a meeting room for Friday afternoon. We'll have a group of about fifteen people from our Osaka office."],["US_W","Let me check. Our largest room is free, but its projector's been sent out for repair."],["UK_M","Oh, we definitely need to show slides. What else is available?"],["US_W","The next one down would work for your group size, and it has everything you need. I'll put you down for that."],["UK_M","Great. Also, could you arrange lunch for the group? Something light. Sandwiches would be fine."],["US_W","Of course. I'll e-mail you a catering menu so you can pick the options."]],
+  names:{UK_M:"Man",US_W:"Woman"},
+  qs:[
+   {n:16,t:"What is the purpose of the call?",o:["To report broken equipment","To reschedule a visit","To inquire about a fee","To book a space"],ans:"D",exp:"冒頭の reserving a meeting room → book a space。(A) は「プロジェクターが修理中」から作ったひっかけ。電話をかけた男性は壊れた機器を報告していない。"},
+   {n:17,t:"Look at the graphic. Which room will the man most likely use?",o:["Maple","Cedar","Birch","Willow"],ans:"C",exp:"15人・プロジェクター必須。最も大きい部屋（Willow）はプロジェクターが修理中なので×。「その次に大きい部屋」は Birch（20人・あり）。Cedar は12人で足りない。音声では部屋名が一度も出ないのがポイント。"},
+   {n:18,t:"What will the woman send the man?",o:["A floor plan","A menu","An invoice","A parking permit"],ans:"B",exp:"最後に「ケータリングのメニューをメールで送る」。"}]},
+ {title:"Questions 19-21 refer to the following conversation.",
+  conv:[["US_W","Marcus, the hiring committee meets tomorrow to choose between the two finalists for the senior designer position. Have you had a chance to look at their materials?"],["AU_M","I have. Ms. Okafor's interview went really well, but Mr. Lindqvist has more experience with hospital projects, which is where most of our new contracts are."],["US_W","True, but Ms. Okafor has done a lot of work with sustainable materials. The Brennan Medical Center client specifically asked about that."],["AU_M","Hmm, I didn't realize that. Then maybe we should ask both of them to submit a short design proposal for that project before we decide."],["US_W","That would delay things by at least a week."],["AU_M","Well, the Brennan contract alone is worth more than our other three projects combined."]],
+  names:{US_W:"Woman",AU_M:"Man (Marcus)"},
+  qs:[
+   {n:19,t:"What are the speakers mainly discussing?",o:["A hiring decision","A building inspection","A client complaint","A budget proposal"],ans:"A",exp:"最終候補2人のどちらを採用するかの話。"},
+   {n:20,t:"What does the woman say about the Brennan Medical Center client?",o:["It has requested a meeting.","It is interested in sustainable materials.","It has extended a deadline.","It recommended a candidate."],ans:"B",exp:"「ブレナン医療センターの顧客は環境に配慮した素材について特に尋ねてきた」→ 関心がある。"},
+   {n:21,t:"What does the man imply when he says, “the Brennan contract alone is worth more than our other three projects combined”?",o:["The firm should hire both candidates.","The firm's other projects should be canceled.","A short delay is acceptable.","The budget must be revised."],ans:"C",exp:"女性の「1週間以上遅れる」への返答。「その契約はほかの3件の合計より大きい」＝それだけ重要なので、少し遅れても慎重に決める価値がある、という意味。"}]}
+];
+const P4 = [
+ {title:"Questions 22-24 refer to the following telephone message.",
+  conv:[["UK_M","Hello, this message is for Ms. Ferreira. This is Tom Hadley from Northgate Property Management, returning your call about the leak in your office's kitchenette. I spoke with our maintenance contractor, and the problem seems to be a worn valve under the sink rather than the pipe itself, so it should be a quick fix. The earliest they can come is Wednesday morning, between eight and ten. Now, I know you mentioned your staff doesn't usually arrive until nine-thirty. But our building superintendent has a master key. If Wednesday doesn't work for some other reason, please let me know by the end of the day Tuesday so I can rebook. Otherwise, there's nothing you need to do."]],
+  names:{UK_M:"Speaker"},
+  qs:[
+   {n:22,t:"Why is the speaker calling?",o:["To respond to a repair request","To announce a rent increase","To schedule a building inspection","To request a security deposit"],ans:"A",exp:"returning your call about the leak＝水漏れの件の折り返し電話。修理依頼への対応。"},
+   {n:23,t:"Why does the speaker say, “our building superintendent has a master key”?",o:["To explain that a lock will be changed","To reassure the listener that no one needs to be present","To ask the listener to return a key","To recommend contacting the superintendent directly"],ans:"B",exp:"直前の「スタッフは9時半まで来ない」を受けて、「管理人が合鍵を持っている」＝誰かが立ち会う必要はない、と安心させている。"},
+   {n:24,t:"What should the listener do if Wednesday is inconvenient?",o:["Visit a management office","Call the contractor directly","Contact the speaker by Tuesday","Submit an online form"],ans:"C",exp:"「水曜が都合悪ければ火曜の終業までに私に知らせて」。let me know → contact the speaker。"}]},
+ {title:"Questions 25-27 refer to the following excerpt from a meeting and chart.",
+  graphic:`<div class="gfx"><div style="font-weight:700;text-align:center;font-family:var(--sans);font-size:.9rem">Customer Survey: Top Complaints (September)</div>
+  <svg viewBox="0 0 400 170" role="img" aria-label="棒グラフ：配送時間38%、ウェブサイトの使いやすさ27%、顧客対応23%、製品の品質12%" style="width:100%;height:auto;font-family:var(--sans)">
+  <g font-size="12" fill="currentColor"><text x="0" y="30">Delivery time</text><text x="0" y="70">Website usability</text><text x="0" y="110">Customer service</text><text x="0" y="150">Product quality</text></g>
+  <g fill="currentColor" opacity=".8"><rect x="125" y="16" width="${38*6}" height="20"/><rect x="125" y="56" width="${27*6}" height="20"/><rect x="125" y="96" width="${23*6}" height="20"/><rect x="125" y="136" width="${12*6}" height="20"/></g>
+  <g font-size="12" fill="currentColor" font-weight="700"><text x="${125+38*6+5}" y="31">38%</text><text x="${125+27*6+5}" y="71">27%</text><text x="${125+23*6+5}" y="111">23%</text><text x="${125+12*6+5}" y="151">12%</text></g></svg></div>`,
+  conv:[["AU_W","Good morning, everyone. Before we get into the sales numbers, I want to share the results of the customer survey we ran in September. As you can see on the screen, the most frequent complaint was about delivery times. But since we switched to a new courier service at the start of October, we're expecting that number to come down quite a bit on its own. So today, I'd like us to focus on the second most common issue. Our development team has put together a few proposed changes, and Priya is going to walk us through them in a moment. After her presentation, I'll ask each department head to fill out a brief feedback form. They're in the folders on your table."]],
+  names:{AU_W:"Speaker"},
+  qs:[
+   {n:25,t:"What did the company do in October?",o:["It launched a new product line.","It hired additional customer-service staff.","It redesigned its logo.","It began using a different courier."],ans:"D",exp:"switched to a new courier service at the start of October → began using a different courier。"},
+   {n:26,t:"Look at the graphic. Which issue will the listeners discuss?",o:["Delivery time","Product quality","Website usability","Customer service"],ans:"C",exp:"「2番目に多い問題に集中したい」→ グラフで2番目は Website usability（27%）。開発チームが改善案を出すという内容とも合う。"},
+   {n:27,t:"What will department heads be asked to do?",o:["Complete a form","Contact customers","Submit a budget","Attend a training session"],ans:"A",exp:"fill out a brief feedback form → complete a form。"}]}
+];
+
+// Reading
+const P5 = [
+ {n:28,t:"The board approved the merger ------- strong opposition from several minority shareholders.",o:["despite","although","whereas","nevertheless"],ans:"A",exp:"空所の後ろは名詞句（strong opposition）なので前置詞の despite。although / whereas は接続詞で後ろに主語＋動詞が必要。nevertheless は副詞。"},
+ {n:29,t:"Had the shipment ------- on schedule, the assembly line would not have been halted for two days.",o:["arrive","arrived","arriving","been arriving"],ans:"B",exp:"仮定法過去完了の倒置。If the shipment had arrived → Had the shipment arrived。主節の would not have been halted がヒント。"},
+ {n:30,t:"The new procurement policy is intended to make the approval process more ------- for department managers.",o:["streamline","streamlined","streamlining","streamlines"],ans:"B",exp:"make O C の C に入る形容詞。more の後ろなので形容詞 streamlined（簡素化された）。"},
+ {n:31,t:"Ms. Arai's proposal was so ------- argued that even the most skeptical committee members endorsed it.",o:["persuasive","persuasively","persuasion","persuade"],ans:"B",exp:"過去分詞 argued を修飾するのは副詞。so 〜 that 構文に目を取られて形容詞 persuasive を選ばないこと。"},
+ {n:32,t:"The warranty does not cover damage ------- from improper installation or unauthorized modifications.",o:["resulting","resulted","results","to result"],ans:"A",exp:"result from は自動詞なので受動態（過去分詞）にできない。damage を後ろから修飾する現在分詞 resulting from が正解。resulted を選ぶ人が多い難問。"},
+ {n:33,t:"Of the two finalists, Mr. Duarte is clearly the ------- suited to lead the Asia-Pacific division.",o:["good","better","best","well"],ans:"B",exp:"2人を比べるときは the＋比較級（Of the two, … the better）。best は3つ以上の場合。suited を修飾するので well の比較級 better。"},
+ {n:34,t:"The orientation materials should be distributed to all new employees ------- to their first day of work.",o:["prior","before","ahead","earlier"],ans:"A",exp:"prior to 〜「〜より前に」。before なら to は不要。ahead of と組むのは of。"},
+ {n:35,t:"Attendance at the quarterly safety briefing is ------- for all warehouse staff, regardless of seniority.",o:["eligible","compulsory","attentive","indicative"],ans:"B",exp:"「勤続年数に関係なく全倉庫スタッフに出席が義務」→ compulsory（義務的な）。eligible は「（人が）資格がある」で主語が人のときに使う。"},
+ {n:36,t:"The consultant's report offered several ------- recommendations, most of which can be implemented without additional funding.",o:["accountable","acquainted","accumulated","actionable"],ans:"D",exp:"「追加資金なしで実行できる」→ actionable（すぐに実行できる）。似た形の語が並ぶ語彙問題。"},
+ {n:37,t:"Neither the regional managers nor the CEO ------- aware of the accounting discrepancy until the external audit.",o:["was","were","being","have been"],ans:"A",exp:"neither A nor B は動詞に近い B（the CEO＝単数）に一致させる。until the external audit で過去の話とわかるので was。"},
+ {n:38,t:"The library's rare manuscript collection is accessible to researchers ------- by appointment.",o:["exclusive","exclusively","exclusion","excluding"],ans:"B",exp:"by appointment という前置詞句を修飾するので副詞。exclusively by appointment「予約した場合のみ」。"},
+ {n:39,t:"Mr. Hendricks will ------- the project team in Ms. Tan's absence, so please direct all inquiries to him.",o:["overlook","overtake","oversee","overcome"],ans:"C",exp:"oversee＝監督する。overlook は「見落とす／見渡す」で、正解と取り違えやすい。"},
+ {n:40,t:"Staff members ------- wish to participate in the mentoring program should register through the HR portal by Friday.",o:["whose","whom","who","whoever"],ans:"C",exp:"先行詞 Staff members（人）＋空所の後ろに動詞 wish → 主格の関係代名詞 who。whoever は先行詞を取らない。"},
+ {n:41,t:"Sales of the new tablet have ------- exceeded projections, prompting the manufacturer to increase production.",o:["considerately","considerably","considerable","consideration"],ans:"B",exp:"considerably（かなり）。considerately は「思いやりをもって」なので意味が合わない。品詞だけでなく意味まで確認する問題。"},
+ {n:42,t:"------- receiving your request, our customer-support team will contact you within one business day.",o:["Upon","Once","As soon as","Whereupon"],ans:"A",exp:"Upon＋動名詞「〜するとすぐに」。once / as soon as は接続詞で、後ろに主語＋動詞が必要。"}
+];
+const P6 = {title:"Questions 43-46 refer to the following e-mail.",
+ html:`<div class="hdr"><b>To:</b> All Staff<br><b>From:</b> Facilities Department<br><b>Date:</b> November 9<br><b>Subject:</b> North garage resurfacing</div>
+ <p>Please be advised that the north parking garage will be closed from Monday, November 23, through Friday, November 27, for resurfacing. During this period, employees who normally park there <span class="blank">43</span> to use the overflow lot on Carver Street. A shuttle will run between the lot and the main entrance every ten minutes from 7:00 A.M. to 7:00 P.M. <span class="blank">44</span>.</p>
+ <p>We recognize that this may cause some inconvenience, and we have taken steps to reduce its impact. <span class="blank">45</span>, we have arranged for a limited number of reserved spaces in the south garage for employees with mobility needs. To request one, please contact the facilities office no later than November 18. Spaces will be allocated on a first-come, first-served <span class="blank">46</span>.</p>
+ <p>Facilities Department</p>`,
+ qs:[
+  {n:43,o:["encourage","are encouraged","encouraging","had encouraged"],ans:"B",exp:"主語 employees（who normally park there は修飾部分）に対する述語動詞が必要。「勧められている」なので受動態 are encouraged。"},
+  {n:44,o:["The garage was originally built in 1998.","Employees working later than that should plan to walk or arrange other transportation.","Thank you for attending last week's safety training.","Parking permits will increase in price next year."],ans:"B",exp:"直前の「シャトルは午後7時まで」を受けて「それより遅くまで働く人は歩くか別の手段を」と続ける (B)。than that が 7:00 P.M. を指している。"},
+  {n:45,o:["For instance","Otherwise","In contrast","Even so"],ans:"A",exp:"前の文「影響を減らすための対策をとった」の具体例として「南側車庫に予約スペースを用意した」が続く → For instance。"},
+  {n:46,o:["basis","base","based","basic"],ans:"A",exp:"on a first-come, first-served basis「先着順で」は決まった言い方。"}
+ ]};
+const P7 = [
+ {title:"Questions 47-48 refer to the following text-message chain.",
+  html:`<div class="chat">
+  <p><span class="who">Lena Hoffmann</span> <span class="t">[9:12 A.M.]</span><br>The van just broke down on Route 9. I'm about 20 minutes from the Grandview Hotel.</p>
+  <p><span class="who">Raj Mehta</span> <span class="t">[9:13 A.M.]</span><br>Are the centerpieces OK?</p>
+  <p><span class="who">Lena Hoffmann</span> <span class="t">[9:14 A.M.]</span><br>All fine. But setup starts at 10.</p>
+  <p><span class="who">Raj Mehta</span> <span class="t">[9:16 A.M.]</span><br>Carla's out on the Lakeside delivery. She's ten minutes from you.</p>
+  <p><span class="who">Lena Hoffmann</span> <span class="t">[9:16 A.M.]</span><br>Say no more.</p>
+  <p><span class="who">Raj Mehta</span> <span class="t">[9:18 A.M.]</span><br>I'll text her your location. And I'll let the hotel know we might be a few minutes late.</p></div>`,
+  qs:[
+   {n:47,t:"At 9:16 A.M., what does Ms. Hoffmann most likely mean when she writes, “Say no more”?",o:["She does not want to discuss the problem.","She understands what Mr. Mehta is proposing.","She thinks the hotel should be informed.","She would prefer to cancel the event."],ans:"B",exp:"「カーラが10分の距離にいる」＝カーラに荷物を運んでもらえばいい、という意図を全部言わなくても理解した、という意味。直後にラージがカーラに位置を送ると書いていることから確定。"},
+   {n:48,t:"What will Mr. Mehta most likely do next?",o:["Contact a coworker","Drive to Route 9","Repair a vehicle","Postpone a delivery"],ans:"A",exp:"I'll text her (Carla) your location → 同僚に連絡する。Lakeside の配達を延期するとはどこにも書いていない。"}]},
+ {title:"Questions 49-52 refer to the following article.",
+  html:`<p style="font-weight:700;font-size:1.1em">Harlow Textiles to Open Innovation Center</p>
+  <p>MANCHESTER (14 October) — Harlow Textiles, a 120-year-old manufacturer of upholstery fabrics, announced on Tuesday that it will open a research and development center in the city's Ancoats district next spring. — [1] —. The facility will focus on developing fabrics made from recycled plastics and plant-based fibres.</p>
+  <p>The decision comes after several years of declining sales in the company's traditional product lines. — [2] —. “Our customers, particularly hotel chains and airlines, are increasingly asking for materials that meet strict environmental standards,” said CEO Margaret Ellison. “This center will allow us to meet that demand.”</p>
+  <p>The center will initially employ about 40 researchers and technicians, many of whom will be recruited from nearby universities. — [3] —. Harlow also plans to partner with the University of Manchester on a three-year study of fibre durability.</p>
+  <p>Not everyone has welcomed the news. Some local residents have expressed concern about increased lorry traffic in Ancoats, a largely residential area. — [4] —. A public meeting to address these concerns will be held on 2 November at the Ancoats Community Hall.</p>`,
+  qs:[
+   {n:49,t:"What is the purpose of the article?",o:["To report on a company's expansion plans","To profile a company's new chief executive","To announce the results of a study","To review a new line of fabrics"],ans:"A",exp:"研究開発センターを新設するという発表についての記事。(C) の調査はこれから始まる3年計画で、結果はまだ出ていない。"},
+   {n:50,t:"According to the article, why is Harlow Textiles opening the center?",o:["To reduce manufacturing costs","To respond to changing customer requirements","To relocate its headquarters","To comply with new city regulations"],ans:"B",exp:"CEO の発言「顧客がますます厳しい環境基準を満たす素材を求めている」→ 顧客の要求の変化に応えるため。"},
+   {n:51,t:"The word “address” in paragraph 4, line 3, is closest in meaning to",o:["deliver","locate","deal with","label"],ans:"C",exp:"address concerns＝懸念に対処する → deal with。address には「演説する」「宛名を書く」の意味もあるので文脈で判断する。"},
+   {n:52,t:"In which of the positions marked [1], [2], [3], and [4] does the following sentence best belong?<br>“However, a company spokesperson noted that most deliveries will be scheduled outside peak hours.”",o:["[1]","[2]","[3]","[4]"],ans:"D",exp:"However で直前の「トラックの交通量が増えるという住民の懸念」に反論している。deliveries と lorry traffic がつながる。"}]},
+ {title:"Questions 53-57 refer to the following Web page and e-mail.",
+  html:`<div class="hdr"><b>Pinecrest Conference Center</b> — Meeting Packages</div>
+  <div class="tbl"><table><tr><th>Package</th><th>Includes</th><th>Price per person</th></tr>
+  <tr><td>Essential</td><td>Meeting room, projector, coffee service</td><td>$45</td></tr>
+  <tr><td>Standard</td><td>Essential + buffet lunch</td><td>$68</td></tr>
+  <tr><td>Premium</td><td>Standard + afternoon refreshments, dedicated event coordinator</td><td>$89</td></tr>
+  <tr><td>Executive</td><td>Premium + evening reception</td><td>$120</td></tr></table></div>
+  <p style="font-size:.9em">Groups of 50 or more receive a 10% discount. Bookings made less than 14 days in advance are subject to a $200 rush fee. All rooms are equipped with wireless Internet access.</p>`,
+  html2:`<div class="hdr"><b>To:</b> events@pinecrest.example<br><b>From:</b> Hiroshi Tanaka<br><b>Date:</b> March 3<br><b>Subject:</b> Booking request</div>
+  <p>Hello,</p>
+  <p>I'd like to book a meeting room for our sales team on Thursday, March 12. There will be 42 attendees. We'll need lunch, and since the session runs until 5:00 P.M., something to keep everyone going in the afternoon would be appreciated. We won't need anything in the evening, as most attendees will be catching flights.</p>
+  <p>Also, one of our presenters, Ms. Ivanova, will need a microphone that connects to her laptop. Could you confirm that this is available? Finally, please send the invoice to Ms. Delgado in our accounts department rather than to me.</p>
+  <p>Best regards,<br>Hiroshi Tanaka</p>`,
+  qs:[
+   {n:53,t:"Which package will Mr. Tanaka most likely choose?",o:["Essential","Standard","Premium","Executive"],ans:"C",exp:"昼食あり＋午後の軽食（keep everyone going → afternoon refreshments）＋夜は不要 → Premium。2つの文書を照らし合わせる問題。"},
+   {n:54,t:"What is indicated about Mr. Tanaka's booking?",o:["It qualifies for a group discount.","It will be subject to an additional fee.","It includes an evening reception.","It has been confirmed by a coordinator."],ans:"B",exp:"メールは3月3日、会議は3月12日で9日前の予約 → 14日未満なので $200 の割増料金がかかる。42人なので割引（50人以上）は対象外。日付の計算が必要な難問。"},
+   {n:55,t:"What does Mr. Tanaka ask about?",o:["Parking availability","Dietary options","Internet access","Audio equipment"],ans:"D",exp:"ノートパソコンにつなげるマイク → audio equipment。Internet access はウェブページに書いてあるが、田中さんは質問していない。"},
+   {n:56,t:"Who will receive the invoice?",o:["Mr. Tanaka","Ms. Ivanova","Ms. Delgado","An event coordinator"],ans:"C",exp:"「請求書は私ではなく経理部のデルガドさんへ」。"},
+   {n:57,t:"In the e-mail, the phrase “keep everyone going” in paragraph 2, line 2, is closest in meaning to",o:["maintain everyone's energy","make everyone leave","move everyone along","keep everyone informed"],ans:"A",exp:"午後5時まで続く会議で「皆の元気を保つもの」＝軽食。"}]},
+ {title:"Questions 58-62 refer to the following advertisement and e-mails.",
+  html:`<p style="font-weight:700">Brightwell Logistics — Regional Operations Analyst (Rotterdam)</p>
+  <p>Brightwell Logistics, a leading provider of cross-border freight services, is seeking a Regional Operations Analyst for its Rotterdam office.</p>
+  <p><b>Requirements:</b> a degree in supply chain management or a related field; a minimum of three years of relevant experience; proficiency in Dutch and English. Knowledge of German is an advantage.</p>
+  <p>Submit your CV and a cover letter to careers@brightwell.example by 30 April. Shortlisted candidates will be invited to a two-stage selection process: a video interview with Human Resources, followed by an in-person case-study assessment at our Rotterdam office.</p>`,
+  html2:`<div class="hdr"><b>To:</b> careers@brightwell.example<br><b>From:</b> Sofia Brandt<br><b>Date:</b> 28 April<br><b>Subject:</b> Regional Operations Analyst</div>
+  <p>Dear Hiring Team,</p>
+  <p>I am writing to apply for the Regional Operations Analyst position. I hold a master's degree in supply chain management from Erasmus University Rotterdam and have spent the past four years at Kessler Freight in Hamburg, where I managed cross-border routes between Germany and the Benelux countries.</p>
+  <p>I am a native speaker of German, fluent in English, and have passed the advanced-level state examination in Dutch. Please note that I will be travelling in Asia from 18 May to 29 May, but I will be reachable by e-mail throughout.</p>
+  <p>Kind regards,<br>Sofia Brandt</p>`,
+  html3:`<div class="hdr"><b>To:</b> Sofia Brandt<br><b>From:</b> Annelies de Vries, Human Resources<br><b>Date:</b> 12 May<br><b>Subject:</b> Next steps</div>
+  <p>Dear Ms. Brandt,</p>
+  <p>Thank you for your application. Given the strength of your experience, the hiring committee has decided to waive the initial stage of our process. Please reply with your preferred slot for the case-study assessment from the options below.</p>
+  <div class="tbl"><table><tr><th>Date</th><th>Time</th></tr><tr><td>Tuesday, 19 May</td><td>10:00</td></tr><tr><td>Friday, 22 May</td><td>14:00</td></tr><tr><td>Wednesday, 27 May</td><td>09:30</td></tr><tr><td>Wednesday, 3 June</td><td>15:00</td></tr></table></div>
+  <p>Best regards,<br>Annelies de Vries</p>`,
+  qs:[
+   {n:58,t:"What is NOT mentioned as a requirement for the position?",o:["A relevant degree","Several years of experience","Knowledge of German","The ability to speak Dutch"],ans:"C",exp:"ドイツ語は an advantage（あれば有利）で、必須条件ではない。NOT 問題は選択肢を1つずつ本文と照合する。"},
+   {n:59,t:"What is suggested about Ms. Brandt?",o:["She currently lives in Rotterdam.","She exceeds the experience requirement.","She studied in Hamburg.","She has worked for Brightwell before."],ans:"B",exp:"必要な経験は最低3年、ブラントさんは4年 → 条件を上回っている。ロッテルダムは大学のある場所、ハンブルクは勤務地なので (A)(C) はひっかけ。"},
+   {n:60,t:"Which part of the selection process will Ms. Brandt skip?",o:["A video interview","A case-study assessment","A language test","A reference check"],ans:"A",exp:"3通目「最初の段階を免除する」＋1通目「1段階目はHRとのビデオ面接」の2文書を組み合わせる。"},
+   {n:61,t:"When will Ms. Brandt most likely attend the assessment?",o:["On 19 May","On 22 May","On 27 May","On 3 June"],ans:"D",exp:"評価は対面（in-person、ロッテルダム）。5月18日〜29日はアジア旅行中なので、選べるのは6月3日だけ。3つの文書をすべて使う問題。"},
+   {n:62,t:"In the second e-mail, the word “waive” in paragraph 1, line 2, is closest in meaning to",o:["postpone","dispense with","wave","shorten"],ans:"B",exp:"waive＝（権利・要件などを）免除する、なしで済ませる → dispense with。(C) wave は同じ発音のひっかけ。"}]}
+];
+
+/* ---------------- RENDER ---------------- */
+const L = ["A","B","C","D"];
+const KEY = {}; const EXP = {}; const PART = {};
+const $ = s => document.querySelector(s);
+let answers = {};
+try{answers = JSON.parse(localStorage.getItem("toeic-mock-ans")||"{}")}catch(e){answers={}}
+function save(){try{localStorage.setItem("toeic-mock-ans",JSON.stringify(answers))}catch(e){}}
+
+function sheet(n,count){
+  let h=`<div class="sheet" role="group" aria-label="Question ${n} answer">`;
+  for(let i=0;i<count;i++) h+=`<button type="button" class="bub" id="b${n}${L[i]}" data-q="${n}" data-a="${L[i]}" aria-pressed="${answers[n]===L[i]}">${L[i]}</button>`;
+  return h+`<span class="verdict" id="v${n}"></span></div>`;
+}
+function qBlock(n,stem,opts,cnt,cols){
+  let h=`<div class="q" id="q${n}"><div class="num">${n}.</div><div class="body">`;
+  if(stem) h+=`<div>${stem}</div>`;
+  if(opts){h+=`<div class="opts${cols?" cols2":""}">`+opts.map((o,i)=>`<div class="opt"><span>(${L[i]})</span><span>${o}</span></div>`).join("")+`</div>`;}
+  h+=sheet(n,cnt)+`</div><div class="exp" id="e${n}" hidden></div></div>`;
+  return h;
+}
+function convHTML(set){
+  return `<div class="script" id="scr-${set.qs[0].n}" hidden>`+set.conv.map(([v,t])=>`<p><span class="sp">${set.names[v]}:</span> ${t}</p>`).join("")+`</div>`;
+}
+function reg(part,q){KEY[q.n]=q.ans;EXP[q.n]=q.exp;PART[q.n]=part}
+
+function render(){
+  let h=`<div class="sect">LISTENING TEST</div>
+  <p class="dir">In this section, you will demonstrate how well you understand spoken English. There are four parts, and each part begins with its own directions. Mark your answer for each question by selecting (A), (B), (C), or (D).</p>`;
+  // Part 1
+  h+=`<div class="part-head"><h3>PART 1</h3></div><p class="dir"><b>Directions:</b> For each question, you will hear four statements about a picture. The statements will not be printed in your test book and will be spoken only once. Choose the statement that best describes the picture and mark your answer.</p>`;
+  P1.forEach(q=>{reg(1,q);h+=`<div class="q" id="q${q.n}"><div class="num">${q.n}.</div><div class="body"><div class="photo">${PHOTO[q.photo]}</div>
+   <button class="play" type="button" data-play="p1-${q.n}">▶ 音声を再生</button>
+   <div class="script" id="scr-${q.n}" hidden>${q.opts.map((o,i)=>`<p>(${L[i]}) ${o}</p>`).join("")}</div>
+   ${sheet(q.n,4)}</div><div class="exp" id="e${q.n}" hidden></div></div>`});
+  // Part 2
+  h+=`<div class="part-head"><h3>PART 2</h3></div><p class="dir"><b>Directions:</b> You will hear a question or statement followed by three responses. None of them will be printed in your test book, and they will be spoken only once. Choose the best response and mark (A), (B), or (C).</p>`;
+  P2.forEach(q=>{reg(2,q);h+=`<div class="q" id="q${q.n}"><div class="num">${q.n}.</div><div class="body">Mark your answer.
+   <div><button class="play" type="button" data-play="p2-${q.n}">▶ 音声を再生</button></div>
+   <div class="script" id="scr-${q.n}" hidden><p>${q.q[1]}</p>${q.o.map((o,i)=>`<p>(${L[i]}) ${o}</p>`).join("")}</div>
+   ${sheet(q.n,3)}</div><div class="exp" id="e${q.n}" hidden></div></div>`});
+  // Part 3 & 4
+  const setsHTML=(arr,part,label)=>arr.map((s,si)=>{let x=`<div class="set"><p class="set-title">${s.title}</p>`;
+    if(s.graphic) x+=s.graphic;
+    x+=`<button class="play" type="button" data-play="p${part}-${si}">▶ 音声を再生</button>`+convHTML(s);
+    s.qs.forEach(q=>{reg(part,q);x+=qBlock(q.n,q.t,q.o,4)});return x+`</div>`}).join("");
+  h+=`<div class="part-head"><h3>PART 3</h3></div><p class="dir"><b>Directions:</b> You will hear conversations between two or more people. Answer three questions about what the speakers say in each conversation. Select the best response to each question and mark your answer. The conversations will be spoken only once and will not be printed in your test book.</p>`+setsHTML(P3,3);
+  h+=`<div class="part-head"><h3>PART 4</h3></div><p class="dir"><b>Directions:</b> You will hear talks given by a single speaker. Answer three questions about what the speaker says in each talk. Select the best response to each question and mark your answer. The talks will be spoken only once and will not be printed in your test book.</p>`+setsHTML(P4,4);
+
+  h+=`<div class="sect" style="margin-top:2.4em">READING TEST</div><p class="dir">In this section, you will read a variety of texts and answer several types of reading comprehension questions. You are encouraged to answer as many questions as possible within the time allowed. Mark your answer for each question by selecting (A), (B), (C), or (D).</p>`;
+  h+=`<div class="part-head"><h3>PART 5</h3></div><p class="dir"><b>Directions:</b> A word or phrase is missing in each of the sentences below. Four answer choices are given below each sentence. Select the best answer to complete the sentence. Then mark (A), (B), (C), or (D).</p>`;
+  P5.forEach(q=>{reg(5,q);h+=qBlock(q.n,q.t,q.o,4,true)});
+  h+=`<div class="part-head"><h3>PART 6</h3></div><p class="dir"><b>Directions:</b> Read the texts that follow. A word, phrase, or sentence is missing in parts of each text. Four answer choices for each question are given below the text. Select the best answer to complete the text. Then mark (A), (B), (C), or (D).</p>`;
+  h+=`<div class="set"><p class="set-title">${P6.title}</p><div class="passage">${P6.html}</div>`;
+  P6.qs.forEach(q=>{reg(6,q);h+=qBlock(q.n,"",q.o,4,q.n!==44)});h+=`</div>`;
+  h+=`<div class="part-head"><h3>PART 7</h3></div><p class="dir"><b>Directions:</b> In this part, you will read a selection of texts, such as magazine and newspaper articles, e-mails, and instant messages. Each text or set of texts is followed by several questions. Select the best answer for each question and mark (A), (B), (C), or (D).</p>`;
+  P7.forEach(s=>{h+=`<div class="set"><p class="set-title">${s.title}</p><div class="passage">${s.html}</div>`;
+    if(s.html2) h+=`<div class="passage">${s.html2}</div>`; if(s.html3) h+=`<div class="passage">${s.html3}</div>`;
+    s.qs.forEach(q=>{reg(7,q);h+=qBlock(q.n,q.t,q.o,4)});h+=`</div>`});
+  $("#booklet").innerHTML=h;
+  updateCount();
+}
+
+/* ---------------- AUDIO ---------------- */
+const synth = window.speechSynthesis;
+let voices=[];
+function loadVoices(){ if(!synth) return; voices=synth.getVoices().filter(v=>/^en/i.test(v.lang)); }
+if(synth){loadVoices(); synth.onvoiceschanged=loadVoices;} else {$("#voiceNote").textContent="この端末のブラウザは英語の読み上げに対応していません。音声なしで解く場合は、採点後にスクリプトを読んで復習してください。";}
+function pickVoice(key){
+  const want={US:["en-US","en_US"],UK:["en-GB","en_GB"],AU:["en-AU","en_AU"]}[key.split("_")[0]];
+  const female=key.endsWith("_W");
+  let cand=voices.filter(v=>want.some(w=>v.lang.replace("_","-").toLowerCase()===w.replace("_","-").toLowerCase()));
+  if(!cand.length) cand=voices.filter(v=>/en-US/i.test(v.lang.replace("_","-")));
+  if(!cand.length) cand=voices;
+  const fem=/female|samantha|karen|serena|kate|moira|tessa|victoria|zira|susan|catherine|libby|sonia|natasha|aria|jenny|google uk english female/i;
+  const mal=/male|daniel|alex|fred|oliver|arthur|gordon|lee|david|mark|george|ryan|william|guy|google uk english male/i;
+  let pick=cand.find(v=>female?fem.test(v.name)&&!/\bmale/i.test(v.name.replace(/female/i,"")):mal.test(v.name)&&!/female/i.test(v.name));
+  return pick||cand[0]||null;
+}
+function split(t){return t.match(/[^.?!]+[.?!]+["”]?|\S[^.?!]*$/g)||[t]}
+let playingBtn=null;
+function speakSeq(items,btn){
+  if(!synth) return;
+  synth.cancel();
+  if(playingBtn){playingBtn.classList.remove("playing");}
+  playingBtn=btn; btn.classList.add("playing"); btn.textContent="■ 再生中（押すと停止）";
+  const rate=parseFloat($("#rate").value);
+  let i=0, stopped=false;
+  btn._stop=()=>{stopped=true;synth.cancel();done()};
+  function done(){btn.classList.remove("playing");btn.textContent="▶ 音声を再生";if($("#strict").checked) {btn.disabled=true;btn.textContent="再生済み";} playingBtn=null; btn._stop=null;}
+  function next(){
+    if(stopped) return;
+    if(i>=items.length){done();return}
+    const it=items[i++];
+    if(it.pause){setTimeout(next,it.pause);return}
+    const u=new SpeechSynthesisUtterance(it.t);
+    const v=pickVoice(it.v); if(v){u.voice=v;u.lang=v.lang} else u.lang="en-US";
+    u.rate=rate*(it.v.startsWith("NARR")?0.95:1); u.pitch=it.v.endsWith("_W")?1.12:0.88;
+    u.onend=()=>setTimeout(next,it.gap||120); u.onerror=()=>setTimeout(next,50);
+    synth.speak(u);
+  }
+  next();
+}
+function segs(v,text,gap){return split(text).map((s,k,a)=>({v,t:s.trim(),gap:k===a.length-1?(gap||350):120}))}
+function buildAudio(id){
+  const [p,x]=id.split("-"); const N="UK_M";
+  if(p==="p1"){const q=P1.find(z=>z.n==x); const vs=["US_M","US_W","US_M","US_W"]; const arr=[{v:"NARR_US_W",t:"Number "+q.n+". Look at the picture marked number "+q.n+" in your test book.",gap:700}];
+    q.opts.forEach((o,i)=>{arr.push({v:vs[i].replace("US",q.n===1?"AU":"US"),t:L[i]+". "+o,gap:900})});return arr;}
+  if(p==="p2"){const q=P2.find(z=>z.n==x); const rv=q.q[0].endsWith("_W")?q.q[0].replace("_W","_M").replace(/^AU/,"US"):q.q[0].replace("_M","_W").replace(/^UK/,"AU");
+    const arr=[{v:"NARR_US_W",t:"Number "+q.n+".",gap:500},...segs(q.q[0],q.q[1],800)];
+    q.o.forEach((o,i)=>arr.push(...segs(rv,L[i]+". "+o,900)));return arr;}
+  const set=(p==="p3"?P3:P4)[x];
+  let arr=[{v:"NARR_US_W",t:set.title,gap:900}];
+  set.conv.forEach(([v,t])=>arr.push(...segs(v,t,450)));
+  arr.push({pause:600});
+  set.qs.forEach(q=>{arr.push({v:"NARR_US_W",t:q.n+". "+q.t.replace(/<br>.*/,""),gap:2500})});
+  return arr;
+}
+document.addEventListener("click",e=>{
+  const pb=e.target.closest("[data-play]");
+  if(pb){ if(pb._stop){pb._stop();return} speakSeq(buildAudio(pb.dataset.play),pb); return;}
+  const b=e.target.closest(".bub");
+  if(b && !graded){const n=b.dataset.q; answers[n]=b.dataset.a; save();
+    document.querySelectorAll(`.bub[data-q="${n}"]`).forEach(x=>x.setAttribute("aria-pressed",x===b));updateCount();}
+});
+// "NARR_*" voices map to the base accent
+const _pv=pickVoice; pickVoice=function(k){return _pv(k.replace(/^NARR_/,""))};
+
+/* ---------------- GRADING ---------------- */
+let graded=false;
+function updateCount(){const tot=Object.keys(KEY).length;const a=Object.keys(answers).filter(k=>KEY[k]).length;$("#answeredCount").textContent=`${a} / ${tot} 問マーク済み`}
+function scaled(c,t){const pct=c/t;let s=Math.round((5+pct*490)/5)*5;return Math.max(5,Math.min(495,s))}
+function grade(){
+  graded=true; if(synth) synth.cancel();
+  const per={1:[0,0],2:[0,0],3:[0,0],4:[0,0],5:[0,0],6:[0,0],7:[0,0]};
+  Object.keys(KEY).forEach(n=>{
+    const ok=answers[n]===KEY[n]; per[PART[n]][1]++; if(ok) per[PART[n]][0]++;
+    const q=$("#q"+n); q.classList.add("graded",ok?"correct":"wrong");
+    $("#v"+n).textContent=ok?"○ 正解":`× 正解は ${KEY[n]}`+(answers[n]?"":"（未回答）");
+    $("#b"+n+KEY[n]).classList.add("right");
+    const e=$("#e"+n); e.hidden=false; e.innerHTML=`<b>正解 (${KEY[n]})</b>　${EXP[n]}`;
+  });
+  document.querySelectorAll(".script").forEach(s=>s.hidden=false);
+  let lc=0,lt=0,rc=0,rt=0;[1,2,3,4].forEach(p=>{lc+=per[p][0];lt+=per[p][1]});[5,6,7].forEach(p=>{rc+=per[p][0];rt+=per[p][1]});
+  const names={1:"写真描写",2:"応答",3:"会話",4:"説明文",5:"短文穴埋め",6:"長文穴埋め",7:"読解"};
+  const weak=Object.keys(per).filter(p=>per[p][0]<per[p][1]).sort((a,b)=>per[a][0]/per[a][1]-per[b][0]/per[b][1]).slice(0,2);
+  $("#result").innerHTML=`<div class="result"><div class="score-row">
+   <div><div class="lbl">LISTENING</div><div class="big">${lc}/${lt}</div><div>参考換算 ${scaled(lc,lt)}</div></div>
+   <div><div class="lbl">READING</div><div class="big">${rc}/${rt}</div><div>参考換算 ${scaled(rc,rt)}</div></div>
+   <div><div class="lbl">TOTAL（参考）</div><div class="big">${scaled(lc,lt)+scaled(rc,rt)}</div></div></div>
+   <div class="tbl"><table><tr>${[1,2,3,4,5,6,7].map(p=>`<th>Part ${p}<br><span style="font-weight:400">${names[p]}</span></th>`).join("")}</tr><tr>${[1,2,3,4,5,6,7].map(p=>`<td>${per[p][0]} / ${per[p][1]}</td>`).join("")}</tr></table></div>
+   <p>${weak.length?`特に見直したいのは <b>${weak.map(p=>"Part "+p).join("・")}</b> です。間違えた問題の解説を読み、スクリプトを見ながらもう一度音声を聞いてください。`:"全問正解です。本番でもこの精度を維持できれば 990 圏内です。"}</p>
+   <p style="font-size:.85rem;color:var(--muted)">換算スコアは問題数が少ないため、ごく大まかな目安です。本番は難易度に応じて統計的に換算されます。</p></div>`;
+  $("#result").scrollIntoView({behavior:"smooth",block:"start"});
+  document.querySelectorAll("[data-play]").forEach(b=>{b.disabled=false;b.textContent="▶ 音声を再生"});
+}
+$("#grade").addEventListener("click",grade);
+$("#resetAll").addEventListener("click",()=>{answers={};save();graded=false;$("#result").innerHTML="";render();});
+
+/* ---------------- TIMER ---------------- */
+let tInt=null;
+$("#startTimer").addEventListener("click",()=>{
+  clearInterval(tInt); let left=28*60; const el=$("#timer"); el.hidden=false;
+  const tick=()=>{const m=Math.floor(left/60),s=left%60;el.textContent=`Reading 残り ${m}:${String(s).padStart(2,"0")}`; if(left<=0){clearInterval(tInt);el.textContent="Reading 終了";} left--;};
+  tick(); tInt=setInterval(tick,1000); $("#q28").scrollIntoView({behavior:"smooth"});
+});
+
+/* ---------------- PLAN ---------------- */
+const DAYS=[
+ {d:"11/9（月）",date:"2026-11-09",theme:"Part 5 語彙の総点検",pg:30,tasks:["読解特急 30ページ（1題ごとに時間を計る）","予想問題の Part 5 の間違い直し＋解説の語をノートへ","Claude に「11/9 の追加ドリル：Part 5 難語彙30問」を頼む","Part 2 の音声を20問（スクリプトを見ずに）"]},
+ {d:"11/10（火）",date:"2026-11-10",theme:"Part 2 間接応答に慣れる",pg:30,tasks:["読解特急 30ページ","Claude に「11/10 の追加ドリル：Part 2 間接応答30問（音声つき）」を頼む","予想問題のリスニングをスクリプトを見ながら聞き直し、1回音読"]},
+ {d:"11/11（水）",date:"2026-11-11",theme:"Part 3・4 の先読みと意図問題",pg:30,tasks:["読解特急 30ページ","Claude に「11/11 の追加ドリル：Part 3・4 意図問題と図表問題 8セット」を頼む","先読みの練習：設問を読む→聞く→即マーク、を10セット"]},
+ {d:"11/12（木）",date:"2026-11-12",theme:"Part 6 文挿入と文脈",pg:30,tasks:["読解特急 30ページ","Claude に「11/12 の追加ドリル：Part 6 4セット（文挿入つき）」を頼む","付箋を貼った読解特急の問題を解き直す"]},
+ {d:"11/13（金）",date:"2026-11-13",theme:"Part 7 トリプルパッセージ",pg:25,tasks:["読解特急 25ページ","Claude に「11/13 の追加ドリル：Part 7 ダブル2セット＋トリプル2セット」を頼む","1題ごとに「設問数 × 1分」を守れたか記録する"]},
+ {d:"11/14（土）",date:"2026-11-14",theme:"本番と同じ時刻に通し練習",pg:25,tasks:["読解特急 残り25ページ（これで読了）","受験票の開始時刻に合わせて、Claude に「11/14 ミニ模試2（リスニング＋リーディング）」を頼んで通しで解く","間違えた問題だけ復習し、早めに寝る"]},
+ {d:"11/15（日）",date:"2026-11-15",theme:"本番当日",pg:0,tasks:["朝：Part 2 の音声を10問だけ聞いて耳を慣らす","読解特急で一度解いた1題を音読してウォームアップ","持ち物の確認（受験票・写真・身分証・鉛筆・消しゴム・腕時計）"]}
+];
+let plan={}; try{plan=JSON.parse(localStorage.getItem("toeic-plan")||"{}")}catch(e){plan={}}
+function renderPlan(){
+  const today=new Date(); const iso=today.getFullYear()+"-"+String(today.getMonth()+1).padStart(2,"0")+"-"+String(today.getDate()).padStart(2,"0");
+  let cum=0;
+  $("#days").innerHTML=DAYS.map((d,di)=>{cum+=d.pg;return `<div class="day${d.date===iso?" today":""}"><div class="day-head"><span class="d">${d.d}</span><span class="theme">${d.theme}</span>${d.pg?`<span class="pages">読解特急 ${d.pg}p（累計 ${cum}/170p）</span>`:""}${d.date===iso?`<span class="tag">TODAY</span>`:""}</div>
+   ${d.tasks.map((t,ti)=>{const id=`c${di}-${ti}`;return `<label class="check" for="${id}"><input type="checkbox" id="${id}" ${plan[id]?"checked":""}><span>${t}</span></label>`}).join("")}</div>`}).join("");
+  updProg();
+}
+function updProg(){let p=0;DAYS.forEach((d,di)=>{if(plan[`c${di}-0`]) p+=d.pg});$("#progBar").style.width=(p/170*100)+"%";$("#progText").textContent=`読解特急：${p} / 170 ページ完了`;}
+document.addEventListener("change",e=>{if(e.target.matches(".check input")){plan[e.target.id]=e.target.checked;try{localStorage.setItem("toeic-plan",JSON.stringify(plan))}catch(_){}updProg();}});
+
+/* ---------------- TABS ---------------- */
+function show(v){document.querySelectorAll(".view").forEach(s=>s.hidden=s.id!=="view-"+v);document.querySelectorAll("nav.tabs button").forEach(b=>b.setAttribute("aria-selected",b.dataset.view===v));}
+document.querySelectorAll("nav.tabs button").forEach(b=>b.addEventListener("click",()=>{show(b.dataset.view);try{history.replaceState(null,"","#"+b.dataset.view)}catch(_){location.hash=b.dataset.view}}));
+window.addEventListener("hashchange",()=>{const h=location.hash.slice(1);if(["analysis","mock","plan"].includes(h))show(h)});
+(function(){const h=location.hash.slice(1);if(["analysis","mock","plan"].includes(h))show(h)})();
+
+const exam=new Date(2026,10,15); const now=new Date(); now.setHours(0,0,0,0);
+$("#daysLeft").textContent=Math.max(0,Math.round((exam-now)/86400000));
+render(); renderPlan();
+</script>
+
+</html>
