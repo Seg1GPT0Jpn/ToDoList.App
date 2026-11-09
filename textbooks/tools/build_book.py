@@ -46,16 +46,23 @@ def css_for(theme: str) -> str:
 
 
 def head_links(theme: str) -> str:
-    links = font_links()
+    # 本では、文字の範囲ごとに分かれた Web フォント（fontsource）を使わず、システムの Noto CJK を使う。
+    # （分かれたフォントだと PDF に何百個も埋めこまれて、ファイルが非常に大きくなるため）
+    links = "\n".join(line for line in font_links().splitlines() if "fontsource" not in line)
     if theme != "math":  # 数式（KaTeX）は算数・数学だけ
         links = "\n".join(line for line in links.splitlines() if "katex" not in line.lower() and "renderMath" not in line)
     return links
 
 
+def use_system_fonts(text: str) -> str:
+    return text.replace("Noto Sans JP", "Noto Sans CJK JP").replace("Noto Serif JP", "Noto Serif CJK JP")
+
+
 def page(theme: str, body_class: str, inner: str, title: str) -> str:
+    inner = use_system_fonts(inner)
     return (
         f'<!doctype html><html lang="ja"><head><meta charset="utf-8"><title>{html.escape(title)}</title>'
-        f"{head_links(theme)}<style>{css_for(theme)}</style></head>"
+        f"{head_links(theme)}<style>{use_system_fonts(css_for(theme))}</style></head>"
         f'<body class="{body_class}">{inner}</body></html>'
     )
 
@@ -236,8 +243,23 @@ def stamp(pdf_in: str, pdf_out: str, skip_first: int = 1, start: int = 1):
             buf.seek(0)
             pg.merge_page(PdfReader(buf).pages[0])
         writer.add_page(pg)
-    with open(pdf_out, "wb") as fh:
+    raw = pdf_out + ".raw.pdf"
+    with open(raw, "wb") as fh:
         writer.write(fh)
+    compress(raw, pdf_out)
+
+
+def compress(src: str, dst: str):
+    """ghostscript があれば、フォントをまとめ直して PDF を小さくする（なければそのまま）。"""
+    import os
+    import shutil
+    if shutil.which("gs"):
+        r = subprocess.run(["gs", "-q", "-dNOPAUSE", "-dBATCH", "-dSAFER", "-sDEVICE=pdfwrite",
+                            "-dCompatibilityLevel=1.6", "-dPDFSETTINGS=/printer", f"-sOutputFile={dst}", src])
+        if r.returncode == 0:
+            os.remove(src)
+            return
+    os.replace(src, dst)
 
 
 def merge(parts, out):

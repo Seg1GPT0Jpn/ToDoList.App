@@ -249,7 +249,7 @@ can には「できる」のほかに、**人にお願いする**・**許可を�
 
 <div class="ex" markdown="1">
 
-This is Lucas. He is from Brazil. He is in our class now. He can speak Portuguese, English, and a little Japanese. He can't read kanji, but he can read hiragana. He is good at sports. He can play soccer very well, and he can run fast, too. But he can't swim. So I sometimes teach him swimming in the school pool. He teaches me Portuguese words. Lucas is a good friend.
+This is Lucas. He is from Brazil. He is in our class now. He can speak Portuguese, English, and a little Japanese. He can't read kanji, but he can read hiragana. He is good at sports. He can play soccer very well, and he can run fast, too. But he can't swim. So I sometimes help him in the school pool. He helps me with Portuguese words. Lucas is a good friend.
 
 </div>
 
@@ -257,8 +257,8 @@ This is Lucas. He is from Brazil. He is in our class now. He can speak Portugues
 (2) Can Lucas read kanji? に英語で答えなさい。
 (3) 本文の内容に合うものとして最も適するものを、1〜4の中から1つ選びなさい。
 　1．Lucas can swim well.
-　2．Lucas teaches Saki soccer.
-　3．Saki teaches Lucas swimming.
+　2．Lucas helps Saki with soccer.
+　3．Saki helps Lucas in the school pool.
 　4．Saki can speak Portuguese very well.
 (4) Lucas ができないことを2つ、日本語で答えなさい。
 
@@ -343,7 +343,7 @@ This is Lucas. He is from Brazil. He is in our class now. He can speak Portugues
 (2) No, he can't (cannot).
 (3) 3
 (4) 漢字を読むこと／泳ぐこと
-**解説**　(1) Portuguese・English・Japanese の3つ。a little でも「話せる」に入る。(3) I sometimes teach him swimming の I はサキ。2 はルーカスがサキに教えるのは**ポルトガル語の単語**なので×。
+**解説**　(1) Portuguese・English・Japanese の3つ。a little でも「話せる」に入る。(3) I sometimes help him in the school pool の I はサキ。2 はルーカスがサキを手伝うのは**ポルトガル語の単語**なので×。
 
 #### <span class="no">13</span>
 （解答例）I can play the piano well. ／ I can't speak Chinese.
