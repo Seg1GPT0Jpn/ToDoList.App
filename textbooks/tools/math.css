@@ -244,3 +244,7 @@ table th { background: var(--light); }
   padding: 8px 2px;
   letter-spacing: 0.15em;
 }
+
+/* 小問を2列に並べる（英語などと同じ部品） */
+.cols2 { columns: 2; column-gap: 18px; }
+.cols2 p { margin-top: 0; }
