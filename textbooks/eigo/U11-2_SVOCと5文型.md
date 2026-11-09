@@ -92,15 +92,17 @@ Keep **your room clean**.　→　Your room **is** clean.　○
 
 英語の文は、動詞のあとに何が来るかで、次の **5つの型**のどれかになります（高校では「第1文型〜第5文型」と呼びます）。
 
-| 文型 | 形 | 意味の中心 | よく使う動詞 | 例文 |
-|---|---|---|---|---|
-| 第1文型 | **S V** | S は〜する／いる・ある | go, come, live, run, arrive, be（いる） | Birds **fly**.　I **live** in Zushi. |
-| 第2文型 | **S V C**（S＝C） | S は C だ・C になる・C に見える | be, become, look, get, feel, sound, taste | He **looks** happy. |
-| 第3文型 | **S V O** | S は O を〜する | like, have, play, want, enjoy, know | I **like** music. |
-| 第4文型 | **S V O O**（O≠O） | S は 人に 物を〜する | give, show, tell, teach, send, buy, make | She **gave** me a pen. |
-| 第5文型 | **S V O C**（O＝C） | S は O を C と呼ぶ・にする | call, name, make, keep, find, leave | We **call** him Ken. |
+| 文型 | 意味の中心 | よく使う動詞 | 例文 |
+|---|---|---|---|
+| 第1文型 **S V** | S は〜する／いる・ある | go, come, live, run, arrive, be（いる） | Birds **fly**.／I **live** in Zushi. |
+| 第2文型 **S V C**（S＝C） | S は C だ・C になる・C に見える | be, become, look, get, feel, sound, taste | He **looks** happy. |
+| 第3文型 **S V O** | S は O を〜する | like, have, play, want, enjoy, know | I **like** music. |
+| 第4文型 **S V O O**（O≠O） | S は 人に 物を〜する | give, show, tell, teach, send, buy, make | She **gave** me a pen. |
+| 第5文型 **S V O C**（O＝C） | S は O を C と呼ぶ・C にする | call, name, make, keep, find, leave | We **call** him Ken. |
 
-**文の要素（S・V・O・C）になれる品詞**
+</div>
+
+### 文の要素（S・V・O・C・M）になれる品詞
 
 | 要素 | なれるもの | 例 |
 |---|---|---|
@@ -108,9 +110,7 @@ Keep **your room clean**.　→　Your room **is** clean.　○
 | C（補語） | **名詞・形容詞** | He became **a doctor**.／She is **kind**. |
 | M（修飾語） | **副詞**、**前置詞＋名詞**、when / if / because のかたまり など | in the park, every day, very, fast |
 
-**M（修飾語）は文型に数えない。** I live **in Zushi**. の in Zushi は M なので、この文は SV です。
-
-</div>
+**M（修飾語）は文型に数えない。** I live **in Zushi**. の in Zushi は M なので、この文は SV です。「前置詞のついた名詞は O にも C にもならない」と覚えておこう。
 
 <div class="point" markdown="1">
 
@@ -297,7 +297,7 @@ The sound of the rain **kept** me awake (all night).　→ 残り2個、me ＝ a
 (1) My name is Christopher, but please call (　　) Chris.
 　1. I　　2. my　　3. me　　4. mine
 (2) It's very hot today. Let's keep the windows (　　).
-　1. open　　2. opens　　3. to open　　4. opened by
+　1. open　　2. opens　　3. to open　　4. opening
 (3) The sad ending of the movie made (　　).
 　1. cry everyone　　2. everyone sadly　　3. sad everyone　　4. everyone sad
 (4) 次の英文と**同じ文型**のものを一つ選びなさい。　We named our cat Tama.
