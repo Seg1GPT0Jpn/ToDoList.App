@@ -95,3 +95,6 @@ body.math .ans-unit { border-color: var(--main); }
 /* 本文は単元ごとに新しいページから始める（解答・解説は詰めたまま） */
 .unit { break-before: page; }
 .unit h1 { margin-top: 0; }
+/* 表もページをまたいでよい（行の途中では切らない） */
+table { break-inside: auto; }
+tr { break-inside: avoid; }
