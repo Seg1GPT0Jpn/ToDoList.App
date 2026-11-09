@@ -58,7 +58,8 @@ def font_links() -> str:
     return "\n".join(tags)
 
 
-def to_html(md_text: str, title: str, css: str, body_class: str, extra: str) -> str:
+def md_fragment(md_text: str) -> str:
+    """Markdown を HTML の断片に変換する（数式の保護・絵文字の包み・解答見出しの印つけ）。"""
     # 数式 $...$ を markdown が崩さないように一時的に退避する
     maths = []
 
@@ -71,7 +72,11 @@ def to_html(md_text: str, title: str, css: str, body_class: str, extra: str) -> 
     body = re.sub(r"\x00M(\d+)\x00", lambda m: html.escape(maths[int(m.group(1))], quote=False), body)
     body = EMOJI.sub(lambda m: f'<span class="emoji">{m.group(0)}</span>', body)
     # 「解答」を含む大見出しから改ページして、切り離せるようにする
-    body = re.sub(r"<h2>(?=[^<]*(?:<span class=\"emoji\">[^<]*</span>)?[^<]*解答)", '<h2 class="answers">', body)
+    return re.sub(r"<h2>(?=[^<]*(?:<span class=\"emoji\">[^<]*</span>)?[^<]*解答)", '<h2 class="answers">', body)
+
+
+def to_html(md_text: str, title: str, css: str, body_class: str, extra: str) -> str:
+    body = md_fragment(md_text)
     return (
         f'<!doctype html><html lang="ja"><head><meta charset="utf-8">'
         f"<title>{html.escape(title)}</title>{font_links()}<style>{css}</style></head>"

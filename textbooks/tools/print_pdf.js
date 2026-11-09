@@ -18,8 +18,17 @@ const small = 'font-size:9px;color:#444;font-family:sans-serif;';
   const browser = await chromium.launch();
   const page = await browser.newPage();
   for (const job of jobs) {
-    await page.goto('file://' + job.html, { waitUntil: 'load' });
+    await page.goto('file://' + job.html, { waitUntil: 'load', timeout: 0 });
     await page.evaluate(() => document.fonts.ready);
+    if (job.style === 'book') {
+      // 本（build_book.py）：余白を小さくし、ページ番号はあとで入れる
+      await page.pdf({
+        path: job.pdf, format: 'A4', printBackground: true, timeout: 0,
+        margin: { top: '12mm', bottom: '14mm', left: '13mm', right: '13mm' },
+      });
+      console.log('PDF:', job.pdf);
+      continue;
+    }
     const math = job.style === 'math';
     await page.pdf({
       path: job.pdf,
