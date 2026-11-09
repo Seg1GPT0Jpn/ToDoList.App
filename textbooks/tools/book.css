@@ -98,3 +98,5 @@ body.math .ans-unit { border-color: var(--main); }
 /* 表もページをまたいでよい（行の途中では切らない） */
 table { break-inside: auto; }
 tr { break-inside: avoid; }
+/* 表の1列目（見出しの列）が細くなりすぎて途中で改行されないように */
+th:first-child, td:first-child { min-width: 4.5em; }
