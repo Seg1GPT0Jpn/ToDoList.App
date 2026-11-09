@@ -92,3 +92,6 @@ body.math .ans-unit { border-color: var(--main); }
 /* 余白を減らす：大きな枠はページをまたいでよい（見出しのタブだけは枠の頭に残る） */
 .point, .koushiki, .mokuhyo, .rei, .renshu, .memo { break-inside: auto; }
 .point > p:first-child, .rei::before, .renshu::before { break-after: avoid; }
+/* 本文は単元ごとに新しいページから始める（解答・解説は詰めたまま） */
+.unit { break-before: page; }
+.unit h1 { margin-top: 0; }
