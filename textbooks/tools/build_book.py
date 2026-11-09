@@ -55,6 +55,8 @@ def head_links(theme: str) -> str:
 
 
 def use_system_fonts(text: str) -> str:
+    # 本では絵文字を外す（カラー絵文字は1文字ずつ画像フォントとして埋めこまれ、PDF が非常に大きくなるため）
+    text = re.sub(r'<span class="emoji">[^<]*</span>\s*', "", text)
     return text.replace("Noto Sans JP", "Noto Sans CJK JP").replace("Noto Serif JP", "Noto Serif CJK JP")
 
 
