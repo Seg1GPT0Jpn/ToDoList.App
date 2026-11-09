@@ -1,0 +1,61 @@
+/* モノクロ印刷用（塾テキスト風） */
+@page { size: A4; }
+* { box-sizing: border-box; }
+body {
+  font-family: "IPAPGothic", "IPAGothic", "Noto Sans CJK JP", sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.75;
+  color: #000;
+  background: #fff;
+  margin: 0;
+}
+.emoji { filter: grayscale(100%); font-family: "Noto Color Emoji", sans-serif; }
+
+h1 {
+  font-size: 19pt;
+  border: 2.5px solid #000;
+  padding: 6px 12px;
+  margin: 0 0 6px;
+  letter-spacing: 0.05em;
+}
+h2 {
+  font-size: 13.5pt;
+  background: #000;
+  color: #fff;
+  padding: 3px 10px;
+  margin: 22px 0 10px;
+  break-after: avoid;
+}
+h2 .emoji { filter: grayscale(100%) brightness(1.6); }
+h2.answers { break-before: page; }
+h3 {
+  font-size: 11.5pt;
+  border-bottom: 1.5px solid #000;
+  padding-bottom: 2px;
+  margin: 16px 0 6px;
+  break-after: avoid;
+}
+h4 { font-size: 10.5pt; margin: 12px 0 4px; break-after: avoid; }
+p { margin: 5px 0; }
+strong { font-weight: bold; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+h1 strong, h2 strong, h3 strong, h4 strong, th strong { text-decoration: none; }
+blockquote {
+  border: 1.5px dashed #000;
+  border-radius: 6px;
+  margin: 10px 0;
+  padding: 4px 12px;
+  background: #f4f4f4;
+}
+table { border-collapse: collapse; margin: 8px 0; break-inside: avoid; }
+th, td { border: 1px solid #000; padding: 3px 9px; vertical-align: top; }
+th { background: #e6e6e6; }
+code { font-family: inherit; background: #eee; padding: 0 3px; }
+pre { background: #f4f4f4; border: 1px solid #999; padding: 6px 10px; white-space: pre-wrap; }
+hr { border: none; border-top: 1px dashed #000; margin: 18px 0; }
+ul, ol { margin: 4px 0; padding-left: 1.6em; }
+li { margin: 2px 0; }
+figure, svg { break-inside: avoid; }
+figure { margin: 8px 0; text-align: center; }
+figcaption { font-size: 9pt; }
+.box { border: 1.5px solid #000; padding: 6px 12px; margin: 8px 0; break-inside: avoid; }
+.answer-space { border-bottom: 1px solid #000; height: 2.2em; }

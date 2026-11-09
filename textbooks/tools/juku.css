@@ -1,0 +1,165 @@
+/* 英語・理科・社会・国語用：塾テキスト風デザイン（モノクロ・ゴシック）
+   print.css の上に重ねて使う。
+
+   Markdown で使う部品
+   ─────────────────────────────
+   # 中1 Unit 1-1「単元名」           … 単元タイトル（1ページ目の上）
+   <p class="lead">…</p>               … タイトル下の一言（任意）
+   ## 文法のポイント / 要点まとめ / 練習問題 / まとめの問題 / 解答・解説
+                                        … 大きな区切り（黒帯）。「解答」を含む見出しから改ページ
+   ### …                                … 中見出し（左に黒い四角、下線）
+   <div class="point" markdown="1">     … 要点の枠（□）。最初の行の **太字** がタブになる
+   <div class="ex" markdown="1">        … 例文リスト（英文と和訳を2列で）
+   <div class="memo" markdown="1">      … 注意・ワンポイントの点線枠
+   <span class="deru">入試</span>        … 「入試によく出る」のマーク
+   #### <span class="no">1</span> 指示文 … 大問（番号を黒い四角で）
+   <div class="cols2" markdown="1">     … 小問を2列に並べる
+   <div class="kaito" markdown="1">     … 解答・解説を2段組にする
+   <div class="pagebreak"></div>        … ここで改ページ
+*/
+body {
+  font-family: "Noto Sans JP", "IPAPGothic", sans-serif;
+  font-size: 10pt;
+  line-height: 1.7;
+}
+strong { text-decoration: none; font-weight: 700; }
+
+/* 単元タイトル */
+h1 {
+  border: none;
+  border-left: 12px solid #000;
+  border-bottom: 3px double #000;
+  padding: 4px 12px 6px;
+  font-size: 18pt;
+  margin: 0 0 8px;
+}
+.lead { font-size: 9pt; margin: 0 0 10px; }
+
+/* 大きな区切り（黒帯） */
+h2 {
+  background: #000;
+  color: #fff;
+  font-size: 12.5pt;
+  padding: 3px 12px;
+  margin: 16px 0 10px;
+  letter-spacing: 0.1em;
+}
+h2.answers { break-before: page; }
+
+/* 中見出し */
+h3 {
+  border-bottom: 1.5px solid #000;
+  font-size: 11.5pt;
+  margin: 14px 0 6px;
+  padding: 0 0 1px;
+}
+h3::before {
+  content: "";
+  display: inline-block;
+  width: 0.75em;
+  height: 0.75em;
+  background: #000;
+  margin-right: 6px;
+  vertical-align: 0;
+}
+
+/* 大問 */
+h4 {
+  font-size: 10.5pt;
+  font-weight: 700;
+  margin: 14px 0 4px;
+  break-after: avoid;
+}
+.no {
+  display: inline-block;
+  min-width: 1.6em;
+  text-align: center;
+  background: #000;
+  color: #fff;
+  margin-right: 6px;
+  padding: 0 3px;
+}
+h4 + p, h4 + ol, h4 + .cols2 { margin-top: 2px; }
+
+/* 要点の枠（□） */
+.point {
+  border: 2px solid #000;
+  padding: 0 14px 6px;
+  margin: 12px 0 10px;
+  break-inside: avoid;
+}
+/* 枠の左上の内側にぴったり付くタブ（枠からはみ出さないので、改ページで切れない） */
+.point > p:first-child {
+  display: inline-block;
+  margin: 0 0 6px -14px;
+  background: #000;
+  color: #fff;
+  padding: 0 10px;
+  font-size: 10pt;
+}
+.point > p:first-child strong { color: #fff; }
+.point table { margin: 6px 0; }
+
+/* 例文 */
+.ex {
+  border-left: 3px solid #000;
+  background: #f2f2f2;
+  padding: 3px 10px;
+  margin: 6px 0;
+  font-size: 10pt;
+}
+.ex p { margin: 2px 0; }
+.ex .en { font-family: "Noto Serif JP", serif; }
+
+/* 注意 */
+.memo {
+  border: 1.2px dashed #000;
+  border-radius: 6px;
+  padding: 4px 12px;
+  margin: 8px 0;
+  font-size: 9.5pt;
+  break-inside: avoid;
+}
+.memo > p:first-child { margin-top: 2px; }
+
+.deru {
+  display: inline-block;
+  border: 1.2px solid #000;
+  border-radius: 3px;
+  font-size: 8pt;
+  font-weight: 700;
+  padding: 0 4px;
+  line-height: 1.4;
+  margin: 0 4px;
+  vertical-align: 1px;
+}
+
+/* 小問を2列に */
+.cols2 { columns: 2; column-gap: 18px; }
+.cols2 li { break-inside: avoid; }
+.cols2 p { margin-top: 0; }
+
+/* 解答・解説を2段組に */
+.kaito {
+  columns: 2;
+  column-gap: 20px;
+  column-rule: 1px solid #999;
+  font-size: 9pt;
+  line-height: 1.6;
+}
+.kaito h4 { font-size: 9.5pt; margin: 8px 0 2px; }
+.kaito h4 .no { font-size: 9pt; }
+.kaito p { margin: 2px 0; }
+
+blockquote {
+  border: 1.2px dashed #000;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 9.5pt;
+}
+
+table { font-size: 9.5pt; }
+th, td { padding: 2px 8px; }
+
+.pagebreak { break-after: page; height: 0; }
+.line { border-bottom: 1px solid #000; height: 1.9em; margin: 0 0 2px; }

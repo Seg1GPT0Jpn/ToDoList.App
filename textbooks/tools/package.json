@@ -1,0 +1,10 @@
+{
+  "name": "textbooks-tools",
+  "private": true,
+  "description": "テキストPDF作成用のフォントと数式ライブラリ",
+  "dependencies": {
+    "@fontsource/noto-sans-jp": "^5.3.1",
+    "@fontsource/noto-serif-jp": "^5.3.1",
+    "katex": "^0.19.1"
+  }
+}

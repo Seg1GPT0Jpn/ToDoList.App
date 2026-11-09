@@ -1,0 +1,246 @@
+/* 算数・数学テキスト用デザイン（高校数学の教科書風）
+   print.css の上に重ねて使う。body.mono のときはモノクロ印刷用の色になる。 */
+:root {
+  --main: #0b7fc4;        /* 章の帯・例・公式の見出し（青） */
+  --light: #dcebf7;       /* 公式の箱・節見出しの帯（薄い青） */
+  --accent: #c8326b;      /* 小見出しA・B、練習（赤） */
+  --accent-light: #f7e3eb;
+  --teal: #16848a;        /* 問 */
+  --panel: #ebebe8;       /* 目標の箱（グレー） */
+}
+body.mono {
+  --main: #1a1a1a;
+  --light: #e9e9e9;
+  --accent: #4a4a4a;
+  --accent-light: #efefef;
+  --teal: #333;
+  --panel: #eeeeee;
+}
+
+body {
+  padding-right: 11mm;   /* 右端のツメの場所 */
+  font-family: "Noto Serif JP", "IPAMincho", serif;
+  font-size: 10.5pt;
+  line-height: 1.85;
+}
+h1, h2, h3, h4, th, strong, .rei::before, .renshu::before, .koushiki::before, .toi,
+.mokuhyo::before, .tsume, figcaption, blockquote strong {
+  font-family: "Noto Sans JP", "IPAPGothic", sans-serif;
+}
+h1 .emoji, h2 .emoji { display: none; }
+strong { text-decoration: none; font-weight: 700; }
+
+/* ── 章の扉：青い帯 ───────────────────── */
+h1 {
+  border: none;
+  background: var(--main);
+  color: #fff;
+  font-size: 21pt;
+  font-weight: 700;
+  padding: 14px 18px 14px 18px;
+  margin: 0 0 10px;
+  letter-spacing: 0.08em;
+}
+h1 + p { font-size: 9.5pt; color: #333; }
+h1 + p strong { font-weight: 400; }
+
+/* ── 節の見出し：番号の四角＋薄い帯 ───────── */
+body { counter-reset: sec; }
+h2 {
+  counter-increment: sec;
+  counter-reset: sub;
+  background: var(--light);
+  color: #000;
+  font-size: 13pt;
+  font-weight: 700;
+  padding: 0 10px 0 0;
+  margin: 26px 0 12px;
+  display: flex;
+  align-items: stretch;
+}
+h2::before {
+  content: counter(sec);
+  background: var(--main);
+  color: #fff;
+  min-width: 30px;
+  text-align: center;
+  margin-right: 10px;
+  padding: 2px 0;
+}
+h2.answers { counter-increment: none; }
+h2.answers::before { content: "解"; }
+
+/* ── 小見出し：赤い四角のA・B・C ─────────── */
+h3 {
+  counter-increment: sub;
+  border-bottom: 1.2px solid var(--accent);
+  font-size: 11.5pt;
+  font-weight: 700;
+  padding-bottom: 1px;
+  margin: 18px 0 8px;
+}
+h3::before {
+  content: counter(sub, upper-alpha);
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  width: 1.45em;
+  text-align: center;
+  margin-right: 8px;
+  font-size: 10.5pt;
+}
+h2.answers ~ h3 { border-bottom: 1px solid #000; }
+h2.answers ~ h3::before { content: none; }
+
+/* ── 目標の箱 ─────────────────────── */
+.mokuhyo {
+  background: var(--panel);
+  border-radius: 8px;
+  padding: 12px 16px 8px;
+  margin: 14px 0 10px;
+  position: relative;
+  font-size: 9.8pt;
+  break-inside: avoid;
+}
+.mokuhyo::before {
+  content: "目標";
+  position: absolute;
+  top: -10px;
+  right: 18px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  padding: 1px 10px;
+  border-radius: 12px 12px 12px 2px;
+  font-size: 9.5pt;
+}
+.mokuhyo ol { margin: 2px 0; }
+
+/* ── history コラム ─────────────────── */
+.history {
+  border-left: 4px solid var(--main);
+  padding: 2px 0 2px 14px;
+  margin: 10px 0;
+  position: relative;
+}
+.history::before {
+  content: "history";
+  display: block;
+  text-align: right;
+  font-style: italic;
+  font-family: "Noto Serif JP", serif;
+  font-size: 9pt;
+  color: #444;
+}
+
+/* ── 公式の箱 ─────────────────────── */
+.koushiki {
+  background: var(--light);
+  padding: 8px 18px 10px;
+  margin: 12px 0;
+  position: relative;
+  break-inside: avoid;
+}
+.koushiki::before {
+  content: attr(data-title);
+  display: block;
+  color: var(--main);
+  font-weight: 700;
+  font-size: 10pt;
+  border-bottom: 2.5px dotted var(--main);
+  margin: 0 30px 6px 0;
+  padding-bottom: 1px;
+}
+.koushiki::after {
+  content: "✳";
+  position: absolute;
+  top: 3px;
+  right: 10px;
+  color: var(--main);
+  font-size: 18pt;
+  line-height: 1;
+  opacity: 0.6;
+}
+.koushiki p { margin: 3px 0; }
+.koushiki ul { list-style: none; padding-left: 0.5em; }
+
+/* ── 例・練習のラベル（左の縦帯） ─────────── */
+.rei, .renshu {
+  position: relative;
+  padding: 2px 0 4px 64px;
+  margin: 12px 0;
+  min-height: 3.6em;
+  break-inside: avoid;
+}
+.rei::before, .renshu::before {
+  content: attr(data-label) "\A" attr(data-num);
+  white-space: pre;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 48px;
+  padding: 2px 0 0 6px;
+  font-weight: 700;
+  font-size: 10pt;
+  line-height: 1.25;
+}
+.rei::before {
+  color: var(--main);
+  border-left: 2.5px solid var(--main);
+  background: linear-gradient(to right, var(--light), rgba(255,255,255,0));
+}
+.renshu::before {
+  color: var(--accent);
+  border-left: 2.5px solid var(--accent);
+  background:
+    radial-gradient(var(--accent) 0.9px, transparent 1.1px) 30px 4px / 5px 5px no-repeat,
+    linear-gradient(to right, var(--accent-light), rgba(255,255,255,0));
+}
+.rei::after {
+  content: "終";
+  display: block;
+  width: fit-content;
+  margin: 2px 0 0 auto;
+  border: 1px solid var(--main);
+  color: var(--main);
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 8pt;
+  line-height: 1.4;
+  padding: 0 3px;
+}
+.rei > p:first-child, .renshu > p:first-child { margin-top: 0; }
+.rei blockquote, .renshu blockquote { margin: 4px 0; }
+
+/* 問（本文中の小さな確認問題） */
+.toi {
+  display: inline-block;
+  background: var(--teal);
+  color: #fff;
+  font-weight: 700;
+  padding: 0 8px;
+  margin-right: 10px;
+}
+
+/* 語りかけ・例え話の箱 */
+blockquote {
+  border: 1.2px dashed var(--main);
+  background: #fff;
+  border-radius: 4px;
+}
+
+table th { background: var(--light); }
+
+/* 右端のツメ（全ページにくり返し表示） */
+.tsume {
+  position: fixed;
+  right: 0;
+  top: 22mm;
+  writing-mode: vertical-rl;
+  background: var(--main);
+  color: #fff;
+  font-size: 8.5pt;
+  font-weight: 700;
+  padding: 8px 2px;
+  letter-spacing: 0.15em;
+}
