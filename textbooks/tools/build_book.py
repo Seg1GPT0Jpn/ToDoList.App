@@ -57,7 +57,10 @@ def head_links(theme: str) -> str:
 def use_system_fonts(text: str) -> str:
     # 本では絵文字を外す（カラー絵文字は1文字ずつ画像フォントとして埋めこまれ、PDF が非常に大きくなるため）
     text = re.sub(r'<span class="emoji">[^<]*</span>\s*', "", text)
-    return text.replace("Noto Sans JP", "Noto Sans CJK JP").replace("Noto Serif JP", "Noto Serif CJK JP")
+    # 日本語フォントは TrueType の IPAex（Noto CJK は OpenType/CFF のため、Chromium が1文字ずつ図形として
+    # 埋めこみ、PDF がとても大きくなる）。IPAex がなければ Noto CJK を使う。
+    text = text.replace('"Noto Sans JP"', '"IPAexGothic", "Noto Sans CJK JP"').replace("Noto Sans JP,", "IPAexGothic, Noto Sans CJK JP,")
+    return text.replace('"Noto Serif JP"', '"IPAexMincho", "Noto Serif CJK JP"').replace("Noto Serif JP,", "IPAexMincho, Noto Serif CJK JP,")
 
 
 def page(theme: str, body_class: str, inner: str, title: str) -> str:
