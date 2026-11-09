@@ -89,3 +89,6 @@ body.math .ans-unit { border-color: var(--main); }
 .ans h3 { border-bottom: 1px solid #000; font-size: 10pt; margin: 8px 0 3px; }
 .ans { font-size: 9.5pt; }
 .toc h2::before { content: none; } .toc h2 { counter-increment: none; }
+/* 余白を減らす：大きな枠はページをまたいでよい（見出しのタブだけは枠の頭に残る） */
+.point, .koushiki, .mokuhyo, .rei, .renshu, .memo { break-inside: auto; }
+.point > p:first-child, .rei::before, .renshu::before { break-after: avoid; }
