@@ -130,9 +130,9 @@ Keep **your room clean**.　→　Your room **is** clean.　○
 | look | SV | Look **at** the board. | 見る（at＋名詞は M） |
 | | SVC | You **look** tired. | 〜に見える |
 
-逆に、動詞によっては**とれない文型**もあります。say・explain は SVOO をとれない（Unit 11-1）、look は O を直接とれない（× look the board）、などです。
-
 </div>
+
+逆に、動詞によっては**とれない文型**もあります。say・explain は SVOO をとれない（Unit 11-1）、look は O を直接とれない（× look the board）、などです。
 
 <div class="point" markdown="1">
 
@@ -153,9 +153,9 @@ The sound of the rain **kept** me awake (all night).　→ 残り2個、me ＝ a
 
 </div>
 
-※ 最後の文の主語は The sound of the rain（雨の音）。of the rain は主語の名詞を説明する M で、V は kept です。
-
 </div>
+
+※ 最後の文の主語は The sound of the rain（雨の音）。of the rain は主語の名詞を説明する M で、V は kept です。
 
 <div class="memo" markdown="1">
 
@@ -336,11 +336,11 @@ I have one more name. My classmates call me "Mr. Music" because I play the guita
 (4) O：your hands　C：clean　→ Your hands are clean.
 (5) O：the question　C：difficult　→ The question is (was) difficult.
 (6) O：the window　C：open　→ The window is open.
-**解説**　O が代名詞の目的格（me / her）のときは、be動詞の文にすると主格（I / she）にもどる。(6) の open は「開いている」という**形容詞**。
+**解説**　目的格（me / her）は、be動詞の文では主格（I / she）にもどる。(6) open は形容詞「開いている」。
 
 #### <span class="no">2</span>
 (1) call, Tama　(2) named, Tom　(3) made me　(4) keep, clean　(5) found, interesting　(6) call me　(7) What　(8) makes me
-**解説**　(5) find O C は「（やってみて）O が C だとわかる」。(7) 「何と」＝ C の部分が what になって文頭へ出た形。(8) 主語 my homework は3人称単数 → makes。
+**解説**　(7) C の部分が what になって文頭へ出た形。(8) 主語は3人称単数 → makes。
 
 #### <span class="no">3</span>
 (1) me　(2) excited　(3) neat　(4) easy　(5) call　(6) us
@@ -369,7 +369,7 @@ I have one more name. My classmates call me "Mr. Music" because I play the guita
 (6) SV：私は8時に学校に着いた。
 (7) SVO：クミはベッドの下でかぎを見つけた。
 (8) SVOC：クミはその本が役に立つとわかった。
-**解説**　(4) from Emi、(6) to school、(7) under the bed はすべて M。同じ動詞でも、**後ろの形で意味が決まる**。
+**解説**　from Emi、to school、under the bed は M。**後ろの形で意味が決まる**。
 
 #### <span class="no">7</span>
 (1) We call the mountain "the Green Cap".
