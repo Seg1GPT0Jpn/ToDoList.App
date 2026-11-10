@@ -180,6 +180,17 @@ MATH = {
     ],
 }
 
+# 中3の発展単元（あとから追加）。連番を変えないよう「A」をつけて、関係する単元のすぐ後に入れる。
+_EXTRA = {
+    "中3-08": U("中3-08A_内分点と座標.md", "📚 中3-08A　関数 y＝ax²③（発展）内分点と座標"),
+    "中3-11": U("中3-11A_メネラウスとチェバ.md", "📚 中3-11A　相似な図形④（発展）角の二等分線の定理・メネラウスの定理・チェバの定理・てんびん法"),
+    "中3-12": U("中3-12A_円の発展.md", "📚 中3-12A　円②（発展）接弦定理・円に内接する四角形・方べきの定理"),
+}
+_g3 = MATH["parts"][-1]["units"]
+for _key, _extra in _EXTRA.items():
+    _i = next(i for i, u in enumerate(_g3) if u["file"].startswith(_key + "_"))
+    _g3.insert(_i + 1, _extra)
+
 
 def sci(field, n, grade, name, title=None):
     return U(f"{field}{n}_{name}.md", f"中{grade}理科 {field}{n}「{title or name}」")
