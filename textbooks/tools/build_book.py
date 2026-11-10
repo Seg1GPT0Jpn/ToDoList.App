@@ -42,7 +42,27 @@ LEVEL_NAMES = {"eigo": "小5〜中3", "sansu-sugaku": "小5〜中3", "rika": "�
 def css_for(theme: str) -> str:
     css = (TOOLS / "print.css").read_text(encoding="utf-8")
     css += (TOOLS / ("math.css" if theme == "math" else "juku.css")).read_text(encoding="utf-8")
-    return css + (TOOLS / "book.css").read_text(encoding="utf-8")
+    css += (TOOLS / "book.css").read_text(encoding="utf-8")
+    # 英語の本だけのデザイン（body.eigo のときだけ効く）
+    return css + (TOOLS / "eigo.css").read_text(encoding="utf-8")
+
+
+EIGO_H1 = re.compile(r'<h1>(?:中(\d)|発展)英語 Unit ([0-9A-Z]+(?:-[0-9A-Z]+)?)「(.+?)」(まとめの問題)?\s*(<span class="mk">[^<]*</span>)</h1>')
+
+
+def eigo_transform(text: str) -> str:
+    """英語の本：単元タイトルを「Part タブ＋番号の箱＋網かけの帯」に、小問番号 (1) を 01. にする。"""
+    def h1(m):
+        grade, no, title, matome, mk = m.groups()
+        part = f"中学{grade}年　英語" if grade else "発展編　英語"
+        if matome:
+            title, label = f"{title}　まとめの問題", f"Unit {no}"
+        else:
+            label = no
+        return (f'<div class="e-part">{part}</div><h1 class="e-unit"><span class="e-no">{html.escape(label)}</span>'
+                f'<span class="e-title">{title}</span>{mk}</h1>')
+    text = EIGO_H1.sub(h1, text)
+    return re.sub(r'(<p>|<br />\s*)\((\d{1,2})\)\s*', lambda m: f'{m.group(1)}<span class="q-no">{int(m.group(2)):02d}.</span> ', text)
 
 
 def head_links(theme: str) -> str:
@@ -233,8 +253,21 @@ def find_markers(pdf: str, markers):
     return found
 
 
-def stamp(pdf_in: str, pdf_out: str, skip_first: int = 1, start: int = 1):
-    """通しのページ番号を下中央に入れる（最初の skip_first ページ＝表紙には入れない）。"""
+def _footer_font():
+    """柱の日本語フォント（IPAex 明朝があれば使う）。"""
+    from reportlab.pdfbase import pdfmetrics
+    from reportlab.pdfbase.ttfonts import TTFont
+    for path in ("/usr/share/fonts/opentype/ipaexfont-mincho/ipaexm.ttf", "/usr/share/fonts/truetype/fonts-japanese-mincho.ttf"):
+        if pathlib.Path(path).exists():
+            if "IPAexMincho" not in pdfmetrics.getRegisteredFontNames():
+                pdfmetrics.registerFont(TTFont("IPAexMincho", path))
+            return "IPAexMincho"
+    return None
+
+
+def stamp(pdf_in: str, pdf_out: str, skip_first: int = 1, start: int = 1, label: str = ""):
+    """通しのページ番号（柱）を下中央に入れる（最初の skip_first ページ＝表紙には入れない）。"""
+    jp = _footer_font() if label else None
     reader = PdfReader(pdf_in)
     writer = PdfWriter()
     for i, pg in enumerate(reader.pages):
@@ -242,8 +275,12 @@ def stamp(pdf_in: str, pdf_out: str, skip_first: int = 1, start: int = 1):
             w, h = float(pg.mediabox.width), float(pg.mediabox.height)
             buf = io.BytesIO()
             c = canvas.Canvas(buf, pagesize=(w, h))
-            c.setFont("Helvetica", 8.5)
-            c.drawCentredString(w / 2, 18, f"- {start + i} -")
+            if jp:
+                c.setFont(jp, 8.5)
+                c.drawCentredString(w / 2, 18, f"{label}　—{start + i}—")
+            else:
+                c.setFont("Helvetica", 8.5)
+                c.drawCentredString(w / 2, 18, f"- {start + i} -")
             c.save()
             buf.seek(0)
             pg.merge_page(PdfReader(buf).pages[0])
@@ -277,7 +314,7 @@ def build_subject(subject):
     name = subject["name"].replace("・", "")
     OUT.mkdir(exist_ok=True)
     separate = subject["answers"] == "separate"
-    variants = [("math", name), ("math mono", f"{name}_モノクロ")] if theme == "math" else [("", name)]
+    variants = [("math", name), ("math mono", f"{name}_モノクロ")] if theme == "math" else [(subject["key"], name)]
 
     with tempfile.TemporaryDirectory() as tmp:
         t = pathlib.Path(tmp)
@@ -285,6 +322,8 @@ def build_subject(subject):
         ans = answers_html(subject, units, separate)
         if not separate:
             main_html += '\n<div class="mk">@@ANS@@</div>\n' + ans
+        if subject["key"] == "eigo":
+            main_html = eigo_transform(main_html)
 
         for body_class, outname in variants:
             content_pdf = str(t / f"{outname}_content.pdf")
@@ -303,14 +342,14 @@ def build_subject(subject):
                 render([{"html": page(theme, body_class, front_html(subject, units, pages), subject["name"]), "pdf": front_pdf}])
             merged = str(t / f"{outname}_merged.pdf")
             merge([front_pdf, content_pdf], merged)
-            stamp(merged, str(OUT / f"{outname}.pdf"))
+            stamp(merged, str(OUT / f"{outname}.pdf"), label=f"五教科テキスト　{subject['name']}")
             print(f"本: books/{outname}.pdf（{len(PdfReader(str(OUT / f'{outname}.pdf')).pages)}ページ）")
 
         if separate:
             ans_pdf = str(t / "answers.pdf")
             render([{"html": page(theme, "math", ans, subject["name"] + " 解答"), "pdf": ans_pdf}])
             out = OUT / f"{name}_解答解説_別冊.pdf"
-            stamp(ans_pdf, str(out))
+            stamp(ans_pdf, str(out), label=f"五教科テキスト　{subject['name']}　解答・解説")
             print(f"別冊: books/{out.name}（{len(PdfReader(str(out)).pages)}ページ）")
 
     done = sum(u["exists"] for u in units)

@@ -1,0 +1,116 @@
+/* 英語の本のデザイン（市販の英文法テキスト風）。body.eigo のときだけ効く。
+   ・単元タイトル：上に「中学1年　英語」のタブ、番号の箱＋網かけの帯
+   ・要点：二重線の枠、見出しは ●
+   ・大問番号：白抜きの四角、小問番号：01. 02. …
+   ・英文・本文は明朝（Times 系＋IPAex 明朝）、見出しはゴシック */
+
+body.eigo {
+  font-family: "Liberation Serif", "Times New Roman", "IPAexMincho", "Noto Serif JP", serif;
+  font-size: 10.5pt;
+  line-height: 1.8;
+}
+body.eigo h1, body.eigo h2, body.eigo h3, body.eigo h4, body.eigo th, body.eigo .e-part,
+body.eigo .point > p:first-child, body.eigo .memo > p:first-child strong {
+  font-family: "IPAexGothic", "Noto Sans JP", sans-serif;
+}
+
+/* ── 単元タイトル ── */
+body.eigo .e-part {
+  display: inline-block;
+  border: 1.5px solid #000;
+  border-bottom: none;
+  padding: 1px 16px 0;
+  font-size: 10pt;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  margin-top: 0;
+}
+body.eigo h1.e-unit {
+  display: flex;
+  align-items: center;
+  border: 2px solid #000;
+  border-left: 2px solid #000;
+  padding: 7px 10px;
+  margin: 0 0 12px;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6'%3E%3Cpath d='M-1,1 l2,-2 M0,6 l6,-6 M5,7 l2,-2' stroke='%23999' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 6px 6px;
+  font-size: 18pt;
+  break-after: avoid;
+}
+body.eigo .e-no {
+  flex: none;
+  background: #fff;
+  border: 2px solid #000;
+  padding: 0 10px;
+  margin-right: 12px;
+  font-size: 17pt;
+  line-height: 1.3;
+}
+body.eigo .e-title {
+  background: #fff;
+  padding: 0 12px;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+}
+body.eigo .lead { font-size: 9.5pt; }
+
+/* 大きな区切り（文法のポイント・練習問題など）：黒帯をやめて、二重線の見出しに */
+body.eigo h2 {
+  background: none;
+  color: #000;
+  border-bottom: 3px double #000;
+  padding: 0 2px 1px;
+  font-size: 12pt;
+  letter-spacing: 0.1em;
+}
+body.eigo h2.answers, body.eigo .ans-part { background: #000; color: #fff; border: none; padding: 3px 12px; }
+
+/* 中見出し（基本・標準・入試にチャレンジ） */
+body.eigo h3 { border-bottom: 1px solid #000; font-size: 11pt; }
+body.eigo h3::before { content: "◆"; background: none; width: auto; height: auto; margin-right: 6px; }
+
+/* ── 要点の枠：二重線、見出しは ● ── */
+body.eigo .point {
+  border: 4px double #000;
+  padding: 8px 16px 8px;
+  margin: 12px 0;
+}
+body.eigo .point > p:first-child {
+  display: block;
+  background: none;
+  color: #000;
+  margin: 2px 0 4px;
+  padding: 0;
+  font-size: 10.5pt;
+}
+body.eigo .point > p:first-child strong { color: #000; }
+body.eigo .point > p:first-child::before { content: "●"; margin-right: 4px; }
+
+/* 例文：グレーの帯をやめ、字下げして英文を目立たせる */
+body.eigo .ex {
+  background: none;
+  border-left: none;
+  padding: 2px 0 2px 1.4em;
+  margin: 4px 0;
+}
+body.eigo .ex strong { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+
+/* 公式・注意：点線の枠 */
+body.eigo .memo { border: 1.2px dashed #000; border-radius: 0; }
+
+/* ── 大問：白抜きの四角の番号＋太字の指示文 ── */
+body.eigo h4 { font-size: 10.5pt; margin: 16px 0 6px; }
+body.eigo .no {
+  background: #fff;
+  color: #000;
+  border: 1.5px solid #000;
+  min-width: 1.5em;
+  padding: 0 4px;
+  margin-right: 8px;
+  font-family: "IPAexGothic", sans-serif;
+}
+body.eigo .q-no { font-family: "Liberation Serif", serif; margin-right: 0.15em; }
+
+/* 解答（巻末）：番号の四角も白抜き */
+body.eigo .kaito .no { font-size: 9pt; }
