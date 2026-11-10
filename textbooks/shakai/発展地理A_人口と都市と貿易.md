@@ -4,7 +4,7 @@
 
 <div class="memo" markdown="1">
 
-**先生のひとこと**　中学では「日本は富士山型 → つりがね型 → つぼ型」「日本は加工貿易」と**結果**を覚えた。高校の地理では、それを**1本の筋道（モデル）**で説明し、初めて見る国の資料にも当てはめる。この単元の道具は4つ：①**人口転換モデル**、②**都市化のしくみ**、③**貿易の型**、④**GIS（地図を重ねて考える）**。最後に、資料から地域の課題を説明する**記述の型**を練習する。難関私立・国立高校の「初めて見る統計から理由を書く」問題は、この4つで解ける。
+**先生のひとこと**　中学では「富士山型 → つりがね型 → つぼ型」「日本は加工貿易」と**結果**を覚えた。高校の地理では、それを**1本の筋道（モデル）**で説明し、初めて見る国の資料に当てはめる。道具は①**人口転換モデル**、②**都市化のしくみ**、③**貿易の型**、④**GIS**の4つ。難関私立・国立高校の「初めて見る統計から理由を書く」問題は、この4つと**記述の型**で解ける。
 
 </div>
 
@@ -16,7 +16,7 @@
 - **自然増加率 ＝ 出生率 − 死亡率**。これに、ほかの地域との出入り（**社会増加** ＝ 転入 − 転出）を加えたものが人口の増減。
 - 多くの国は、豊かになるにつれて、次の順に変わっていく。これを**人口転換**という。
 
-<figure><svg width="640" height="262" viewBox="0 0 640 262" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans JP, sans-serif" font-size="12"><rect x="60" y="30" width="520" height="170" fill="#fff" stroke="none"/><polygon points="60,48.8 190,48.8 260,56.4 320,86.6 390,132 450,150.9 496.7,161 450,162.2 320,147.1 250,116.8 190,63.9 60,60.1" fill="#d0d0d0"/><g stroke="#000" stroke-width="0.8" stroke-dasharray="3 3"><line x1="190" y1="30" x2="190" y2="200"/><line x1="320" y1="30" x2="320" y2="200"/><line x1="450" y1="30" x2="450" y2="200"/></g><polyline points="60,48.8 190,48.8 260,56.4 320,86.6 390,132 450,150.9 520,166 580,169.8" fill="none" stroke="#000" stroke-width="2.6"/><polyline points="60,60.1 120,56 160,64 190,63.9 250,116.8 320,147.1 450,162.2 520,160.3 580,158.4" fill="none" stroke="#000" stroke-width="2" stroke-dasharray="7 4"/><line x1="60" y1="200" x2="580" y2="200" stroke="#000" stroke-width="1.2"/><line x1="60" y1="200" x2="60" y2="30" stroke="#000" stroke-width="1.2"/><g font-size="10" text-anchor="end"><text x="55" y="203">0</text><text x="55" y="165">10</text><text x="55" y="128">20</text><text x="55" y="90">30</text><text x="55" y="52">40</text></g><text x="4" y="22" font-size="10">（人口1000人あたり）</text><g text-anchor="middle" font-weight="700"><text x="125" y="44">第1段階</text><text x="255" y="44">第2段階</text><text x="385" y="44">第3段階</text><text x="515" y="44">第4段階</text></g><text x="255" y="92" text-anchor="middle" font-weight="700">人口爆発</text><text x="255" y="106" text-anchor="middle" font-size="10">（自然増加が最大）</text><text x="150" y="40" font-size="10">出生率（実線）</text><text x="75" y="78" font-size="10">死亡率（点線）</text><text x="400" y="122" font-size="10">灰色＝自然増加</text><text x="520" y="186" font-size="10" text-anchor="middle">自然減少</text><g text-anchor="middle" font-size="11.5"><text x="125" y="218">多産多死</text><text x="255" y="218">多産少死</text><text x="385" y="218">少産少死</text><text x="515" y="218">少産少死〜人口減少</text></g><g text-anchor="middle" font-size="10.5"><text x="125" y="234">富士山型</text><text x="255" y="234">富士山型（すそが広い）</text><text x="385" y="234">つりがね型</text><text x="515" y="234">つぼ型</text></g><g text-anchor="middle" font-size="10"><text x="125" y="252">産業革命前の欧州・江戸の日本</text><text x="255" y="252">現在のアフリカの多くの国</text><text x="385" y="252">日本の1960〜70年代</text><text x="515" y="252">現在の日本・韓国など</text></g></svg><figcaption>図1　人口転換モデル（<b>模式図</b>。数値は目安）。死亡率が先に下がり、出生率があとから下がる。その「時間のずれ」が人口爆発を生む。</figcaption></figure>
+<figure><svg width="640" height="262" viewBox="0 0 640 262" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans JP, sans-serif" font-size="12"><rect x="60" y="30" width="520" height="170" fill="#fff" stroke="none"/><polygon points="60,48.8 190,48.8 260,56.4 320,86.6 390,132 450,150.9 496.7,161 450,162.2 320,147.1 250,116.8 190,63.9 60,60.1" fill="#d0d0d0"/><g stroke="#000" stroke-width="0.8" stroke-dasharray="3 3"><line x1="190" y1="30" x2="190" y2="200"/><line x1="320" y1="30" x2="320" y2="200"/><line x1="450" y1="30" x2="450" y2="200"/></g><polyline points="60,48.8 190,48.8 260,56.4 320,86.6 390,132 450,150.9 520,166 580,169.8" fill="none" stroke="#000" stroke-width="2.6"/><polyline points="60,60.1 120,56 160,64 190,63.9 250,116.8 320,147.1 450,162.2 520,160.3 580,158.4" fill="none" stroke="#000" stroke-width="2" stroke-dasharray="7 4"/><line x1="60" y1="200" x2="580" y2="200" stroke="#000" stroke-width="1.2"/><line x1="60" y1="200" x2="60" y2="30" stroke="#000" stroke-width="1.2"/><g font-size="10" text-anchor="end"><text x="55" y="203">0</text><text x="55" y="165">10</text><text x="55" y="128">20</text><text x="55" y="90">30</text><text x="55" y="52">40</text></g><text x="4" y="12" font-size="10">（人口1000人あたり）</text><g text-anchor="middle" font-weight="700"><text x="125" y="24">第1段階</text><text x="255" y="24">第2段階</text><text x="385" y="24">第3段階</text><text x="515" y="24">第4段階</text></g><text x="262" y="88" text-anchor="middle" font-weight="700">人口爆発</text><text x="70" y="43" font-size="10">出生率（実線）</text><text x="75" y="78" font-size="10">死亡率（点線）</text><text x="400" y="122" font-size="10">灰色＝自然増加</text><text x="520" y="186" font-size="10" text-anchor="middle">自然減少</text><g text-anchor="middle" font-size="11.5"><text x="125" y="218">多産多死</text><text x="255" y="218">多産少死</text><text x="385" y="218">少産少死</text><text x="515" y="218">少産少死〜人口減少</text></g><g text-anchor="middle" font-size="10.5"><text x="125" y="234">富士山型</text><text x="255" y="234">富士山型（すそが広い）</text><text x="385" y="234">つりがね型</text><text x="515" y="234">つぼ型</text></g><g text-anchor="middle" font-size="10"><text x="125" y="252">江戸時代の日本など</text><text x="255" y="252">アフリカの多くの国</text><text x="385" y="252">日本の1960〜70年代</text><text x="515" y="252">現在の日本・韓国など</text></g></svg><figcaption>図1　人口転換モデル（<b>模式図</b>。数値は目安）。死亡率が先に下がり、出生率があとから下がる。その「時間のずれ」で自然増加が最大になる（人口爆発）。</figcaption></figure>
 
 <div class="point" markdown="1">
 
@@ -77,10 +77,7 @@
 
 </div>
 
-| | 発展途上国の大都市 | 先進国の大都市 |
-|---|---|---|
-| おもな問題 | スラム・交通渋滞・大気汚染・上下水道の不足 | 都心部の古い住宅地の荒廃（インナーシティ問題）・郊外の無秩序な開発（スプロール現象） |
-| 日本では | ― | 高度経済成長期の**過密**、**ドーナツ化現象**→**都心回帰**、**東京一極集中**（地理10） |
+- 先進国の大都市の問題：都心部の古い住宅地の荒廃（**インナーシティ問題**）、郊外の無秩序な開発（**スプロール現象**）。日本では**過密・ドーナツ化現象→都心回帰・東京一極集中**（地理10）。
 
 <div class="memo" markdown="1">
 
@@ -126,7 +123,7 @@
 
 - **GIS（地理情報システム）**：位置の情報をもつデータを、コンピュータ上で**層（レイヤー）ごとに重ねて**表示・分析するしくみ（地理08）。国土地理院の「地理院地図」、国土交通省の「重ねるハザードマップ」などで使える。
 
-<figure><svg width="600" height="170" viewBox="0 0 600 170" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans JP, sans-serif" font-size="12"><defs><marker id="gA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#000"/></marker></defs><g stroke="#000" stroke-width="1.2"><polygon points="20,10 260,10 300,48 60,48" fill="#f2f2f2"/><polygon points="20,62 260,62 300,100 60,100" fill="#e0e0e0"/><polygon points="20,114 260,114 300,152 60,152" fill="#cfcfcf"/></g><g text-anchor="middle" font-size="11.5"><text x="160" y="34">レイヤー1：地形・浸水が想定される区域</text><text x="160" y="86">レイヤー2：65歳以上の人の割合（地区別）</text><text x="160" y="138">レイヤー3：避難場所・道路</text></g><line x1="310" y1="81" x2="370" y2="81" stroke="#000" stroke-width="1.5" marker-end="url(#gA)"/><text x="340" y="73" text-anchor="middle" font-size="11">重ねる</text><rect x="378" y="40" width="210" height="82" fill="#fff" stroke="#000" stroke-width="1.2"/><g font-size="11.5"><text x="388" y="62">「浸水が深い」かつ</text><text x="388" y="80">「高齢者が多い」かつ</text><text x="388" y="98">「避難場所が遠い」地区</text><text x="388" y="116" font-weight="700">→ 優先して支援すべき地区</text></g></svg><figcaption>図2　GIS の考え方（<b>模式図</b>）。1枚では見えない課題が、重ねると見えてくる。</figcaption></figure>
+<figure><svg width="480" height="136" viewBox="0 0 600 170" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans JP, sans-serif" font-size="12"><defs><marker id="gA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#000"/></marker></defs><g stroke="#000" stroke-width="1.2"><polygon points="20,10 260,10 300,48 60,48" fill="#f2f2f2"/><polygon points="20,62 260,62 300,100 60,100" fill="#e0e0e0"/><polygon points="20,114 260,114 300,152 60,152" fill="#cfcfcf"/></g><g text-anchor="middle" font-size="11.5"><text x="160" y="34">レイヤー1：地形・浸水が想定される区域</text><text x="160" y="86">レイヤー2：65歳以上の人の割合（地区別）</text><text x="160" y="138">レイヤー3：避難場所・道路</text></g><line x1="310" y1="81" x2="370" y2="81" stroke="#000" stroke-width="1.5" marker-end="url(#gA)"/><text x="340" y="73" text-anchor="middle" font-size="11">重ねる</text><rect x="378" y="40" width="210" height="82" fill="#fff" stroke="#000" stroke-width="1.2"/><g font-size="11.5"><text x="388" y="62">「浸水が深い」かつ</text><text x="388" y="80">「高齢者が多い」かつ</text><text x="388" y="98">「避難場所が遠い」地区</text><text x="388" y="116" font-weight="700">→ 優先して支援すべき地区</text></g></svg><figcaption>図2　GIS の考え方（<b>模式図</b>）。1枚では見えない課題が、重ねると見えてくる。</figcaption></figure>
 
 <div class="point" markdown="1">
 
@@ -144,12 +141,9 @@
 
 **ハザードマップの読み方の手順**（地理09の続き）
 
-1. **何の災害の地図か**：洪水・内水（下水があふれる）・土砂災害・津波・高潮。災害ごとに別の地図。
-2. **どんな想定か**：多くの洪水ハザードマップは「**想定し得る最大規模の降雨**」を前提にしている。
-3. **自分のいる場所の色**：浸水の深さ（0.5mで大人のひざ、3mで2階の床まで）。
-4. **避難場所がその災害で使えるか**：**指定緊急避難場所**は災害の種類ごとに指定され、洪水では使えない場所もある。**指定避難所**は、家にもどれない人がしばらく生活する場所。
-5. **避難の経路**：低い土地・川ぞい・がけの下を通らないか。
-6. **色がない ＝ 安全とは言えない**：想定をこえる災害や、調べていない場所もある。
+① **何の災害か**（洪水・内水・土砂災害・津波・高潮で地図は別）　② **どんな想定か**（洪水は多くが「想定し得る最大規模の降雨」）
+③ **自分の場所の色**（0.5mで大人のひざ、3mで2階の床まで）　④ **避難場所がその災害で使えるか**（**指定緊急避難場所**は災害の種類ごとに指定。**指定避難所**は家にもどれない人が生活する場所）
+⑤ **避難の経路**（低い土地・川ぞい・がけの下を通らないか）　⑥ **色がない ＝ 安全ではない**（想定外・未調査の場所もある）
 
 <div class="memo" markdown="1">
 
@@ -199,6 +193,8 @@
 
 #### <span class="no">2</span> 次の表は、架空の国ア〜エの出生率と死亡率（人口1000人あたり）である。あとの各問いに答えなさい。
 
+<div class="cols2" markdown="1">
+
 | 国 | 出生率 | 死亡率 |
 |---|---|---|
 | ア | 38 | 36 |
@@ -211,6 +207,8 @@
 (3) 人口転換の「多産少死」の段階にあたる国を、ア〜エから一つ選びなさい。
 (4) 国アの人口ピラミッドの型として最も適するものを、次の1〜3の中から一つ選び、その番号を答えなさい。
 　1．富士山型　　2．つりがね型　　3．つぼ型
+
+</div>
 
 #### <span class="no">3</span> 次の図は、日本国内の3つの地域A〜Cの人口ピラミッドを模式的に表したものである。あとの各問いに答えなさい。
 
@@ -240,7 +238,9 @@
 
 #### <span class="no">5</span> 次の表は、架空の国P・Qの人口の多い都市（上位3都市）を示したものである。あとの各問いに答えなさい。
 
-| 順位 | 国Pの都市（人口） | 国Qの都市（人口） |
+<div class="cols2" markdown="1">
+
+| 順位 | 国P（人口） | 国Q（人口） |
 |---|---|---|
 | 1位 | P1市（1200万人） | Q1市（360万人） |
 | 2位 | P2市（100万人） | Q2市（300万人） |
@@ -248,6 +248,9 @@
 
 (1) 国Pと国Qについて、1位の都市の人口は2位の都市の何倍か、それぞれ答えなさい。
 (2) 首位都市が見られるのは、国P・国Qのどちらか。
+
+</div>
+
 (3) 首位都市ができる理由として**適切でないもの**を、次の1〜4の中から一つ選び、その番号を答えなさい。
 　1．植民地時代に、港や役所が1つの都市に集められたから。
 　2．政府の限られた投資が、首都に集中して行われたから。
@@ -284,7 +287,7 @@
 
 #### <span class="no">8</span> 次の図は、ある町の洪水ハザードマップを模式的に表したものである。あとの各問いに答えなさい。
 
-<figure><svg width="640" height="270" viewBox="0 0 640 270" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans JP, sans-serif" font-size="12"><defs><pattern id="hz" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" stroke="#000" stroke-width="1.6"/></pattern></defs><rect x="0" y="0" width="520" height="270" fill="#fff" stroke="#000"/><rect x="0" y="34" width="520" height="34" fill="#fff" stroke="#000"/><text x="260" y="56" text-anchor="middle" font-weight="700">〜〜〜　○○川　〜〜〜</text><line x1="0" y1="71" x2="520" y2="71" stroke="#000" stroke-width="3"/><text x="8" y="26" font-size="10">北↑</text><polygon points="0,232 380,232 380,72 330,72 330,190 0,190" fill="#ececec"/><polygon points="0,190 330,190 330,72 280,72 280,130 0,130" fill="#c8c8c8"/><rect x="0" y="72" width="280" height="58" fill="#9c9c9c"/><rect x="380" y="72" width="22" height="160" fill="url(#hz)"/><g fill="none" stroke="#000" stroke-width="0.7"><path d="M410,80 C440,120 470,140 515,150"/><path d="M425,80 C455,108 485,118 515,122"/><path d="M445,80 C470,96 495,100 515,100"/></g><text x="455" y="200" font-weight="700">高台（台地）</text><g stroke="#000" stroke-width="3" fill="none"><polyline points="150,160 100,104"/><polyline points="150,160 470,160"/><polyline points="150,160 150,250 230,250"/></g><g font-weight="700"><polygon points="150,150 153,157 160,157 154,162 156,169 150,165 144,169 146,162 140,157 147,157" fill="#000"/><text x="160" y="180">自宅</text><rect x="88" y="92" width="22" height="16" fill="#fff" stroke="#000"/><text x="99" y="105" text-anchor="middle">ア</text><text x="40" y="96" font-size="11">小学校</text><rect x="462" y="152" width="22" height="16" fill="#fff" stroke="#000"/><text x="473" y="165" text-anchor="middle">イ</text><text x="438" y="185" font-size="11">公民館</text><rect x="230" y="242" width="22" height="16" fill="#fff" stroke="#000"/><text x="241" y="255" text-anchor="middle">ウ</text><text x="260" y="255" font-size="11">中学校</text></g><g font-size="11"><rect x="530" y="40" width="18" height="14" fill="#9c9c9c" stroke="#000"/><text x="552" y="51">3m以上</text><rect x="530" y="62" width="18" height="14" fill="#c8c8c8" stroke="#000"/><text x="552" y="73">0.5〜3m</text><rect x="530" y="84" width="18" height="14" fill="#ececec" stroke="#000"/><text x="552" y="95">0.5m未満</text><rect x="530" y="106" width="18" height="14" fill="#fff" stroke="#000"/><text x="552" y="117">想定なし</text><rect x="530" y="128" width="18" height="14" fill="url(#hz)" stroke="#000"/><text x="552" y="139">土砂災害</text><text x="552" y="152">警戒区域</text><line x1="530" y1="168" x2="548" y2="168" stroke="#000" stroke-width="3"/><text x="552" y="172">道路</text><text x="530" y="196">□ 避難場所</text><text x="530" y="212" font-size="10">（ア〜ウとも</text><text x="530" y="226" font-size="10">　建物は2階建て）</text></g><text x="530" y="20" font-size="11" font-weight="700">浸水の深さ</text></svg><figcaption>洪水ハザードマップの<b>模式図</b>（実在の町ではない）</figcaption></figure>
+<figure><svg width="640" height="270" viewBox="0 0 640 270" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans JP, sans-serif" font-size="12"><defs><pattern id="hz" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" stroke="#000" stroke-width="1.6"/></pattern></defs><rect x="0" y="0" width="520" height="270" fill="#fff" stroke="#000"/><rect x="0" y="34" width="520" height="34" fill="#fff" stroke="#000"/><text x="260" y="56" text-anchor="middle" font-weight="700">〜〜〜　○○川　〜〜〜</text><line x1="0" y1="71" x2="520" y2="71" stroke="#000" stroke-width="3"/><text x="8" y="26" font-size="10">北↑</text><polygon points="0,232 380,232 380,72 330,72 330,190 0,190" fill="#ececec"/><polygon points="0,190 330,190 330,72 280,72 280,130 0,130" fill="#c8c8c8"/><rect x="0" y="72" width="280" height="58" fill="#9c9c9c"/><rect x="380" y="72" width="22" height="160" fill="url(#hz)"/><g fill="none" stroke="#000" stroke-width="0.7"><path d="M410,80 C440,120 470,140 515,150"/><path d="M425,80 C455,108 485,118 515,122"/><path d="M445,80 C470,96 495,100 515,100"/></g><text x="420" y="245" font-weight="700">高台（台地）</text><g stroke="#000" stroke-width="3" fill="none"><polyline points="150,160 100,104"/><polyline points="150,160 470,160"/><polyline points="150,160 150,250 230,250"/></g><g font-weight="700"><polygon points="150,150 153,157 160,157 154,162 156,169 150,165 144,169 146,162 140,157 147,157" fill="#000"/><text x="160" y="180">自宅</text><rect x="88" y="92" width="22" height="16" fill="#fff" stroke="#000"/><text x="99" y="105" text-anchor="middle">ア</text><text x="40" y="96" font-size="11">小学校</text><rect x="462" y="152" width="22" height="16" fill="#fff" stroke="#000"/><text x="473" y="165" text-anchor="middle">イ</text><text x="438" y="185" font-size="11">公民館</text><rect x="230" y="242" width="22" height="16" fill="#fff" stroke="#000"/><text x="241" y="255" text-anchor="middle">ウ</text><text x="260" y="255" font-size="11">中学校</text></g><g font-size="11"><rect x="530" y="40" width="18" height="14" fill="#9c9c9c" stroke="#000"/><text x="552" y="51">3m以上</text><rect x="530" y="62" width="18" height="14" fill="#c8c8c8" stroke="#000"/><text x="552" y="73">0.5〜3m</text><rect x="530" y="84" width="18" height="14" fill="#ececec" stroke="#000"/><text x="552" y="95">0.5m未満</text><rect x="530" y="106" width="18" height="14" fill="#fff" stroke="#000"/><text x="552" y="117">想定なし</text><rect x="530" y="128" width="18" height="14" fill="url(#hz)" stroke="#000"/><text x="552" y="139">土砂災害</text><text x="552" y="152">警戒区域</text><line x1="530" y1="168" x2="548" y2="168" stroke="#000" stroke-width="3"/><text x="552" y="172">道路</text><text x="530" y="196">□ 避難場所</text><text x="530" y="212" font-size="10">（ア〜ウとも</text><text x="530" y="226" font-size="10">　建物は2階建て）</text></g><text x="530" y="20" font-size="11" font-weight="700">浸水の深さ</text></svg><figcaption>洪水ハザードマップの<b>模式図</b>（実在の町ではない）</figcaption></figure>
 
 (1) 自宅で想定されている浸水の深さを、凡例の言葉で答えなさい。
 (2) 大雨で川があふれるおそれがあるとき、避難場所アに向かうのは適切ではない。その理由を、図から読み取れることをもとに簡単に書きなさい。
@@ -358,13 +361,7 @@
 #### <span class="no">12</span> 自分で問題を作ってみよう
 
 問題9〜11のどれかを選び、**条件を1つ変えて**新しい問題を作り、自分で解きなさい。（例：問題10で「想定される災害」を洪水から津波に変える、問題11で輸出品を原油に変える、など）
-作った問題：
-
-<div class="line"></div>
-
-自分の解答：
-
-<div class="line"></div>
+（作った問題と自分の解答は、ノートに書こう）
 
 ## 解答・解説
 
