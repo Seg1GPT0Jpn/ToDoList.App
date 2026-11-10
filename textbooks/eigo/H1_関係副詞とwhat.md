@@ -321,7 +321,7 @@ He said nothing**, which** made me angry.　（彼は何も言わず、**その�
 (3) 彼女がそう言った理由がわかりません。
 　I don't understand ( said / why / she / what / the reason ) so.
 (4) あなたが話していた女の子はだれですか。
-　Who is the girl ( whom / that / about / talking / were / you )?
+　Who is the girl ( whom / which / about / talking / were / you )?
 
 #### <span class="no">10</span> 次の対話の（　）に入る最も適するものを、それぞれ1〜4の中から1つずつ選び、その番号を答えなさい。
 
@@ -431,8 +431,8 @@ Last year, the city said that it would close the library because few people used
 (1) 使わない語：**which**　What is important is to practice every day.
 (2) 使わない語：**which**　This is the place where we first met.
 (3) 使わない語：**what**　I don't understand the reason why she said so.
-(4) 使わない語：**that**　Who is the girl about whom you were talking?
-**解説**　(1) 先行詞がないので what。What is important（大切なこと）が S、is が V、to practice 〜 が C の **SVC**。(2) we met は完全な文なので where。(4) 前置詞 about の直後に that は置けない。
+(4) 使わない語：**which**　Who is the girl about whom you were talking?（whom you were talking about も可）
+**解説**　(1) 先行詞がないので what。What is important（大切なこと）が S、is が V、to practice 〜 が C の **SVC**。(2) we met は完全な文なので where。(4) 先行詞 the girl は人なので which は使えない。前置詞 about の直後に置けるのは whom（that は不可）。
 
 #### <span class="no">10</span>
 (1) 2　(2) 3　(3) 2　(4) 1
