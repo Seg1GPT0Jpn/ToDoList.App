@@ -54,7 +54,7 @@ def eigo_transform(text: str) -> str:
     """英語の本：単元タイトルを「Part タブ＋番号の箱＋網かけの帯」に、小問番号 (1) を 01. にする。"""
     def h1(m):
         grade, no, title, matome, mk = m.groups()
-        part = f"中学{grade}年　英語" if grade else "発展編　英語"
+        part = f"中学{grade}年　英語" if grade else "中学3年　英語　発展"
         if matome:
             title, label = f"{title}　まとめの問題", f"Unit {no}"
         else:
