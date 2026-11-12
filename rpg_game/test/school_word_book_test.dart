@@ -68,10 +68,10 @@ void main() {
     final scramble = open('scramble');
     expect(scramble.isTerms, isFalse);
     final sn = scramble.cards.map((c) => c.number!).toList();
-    expect([sn.length, sn.first, sn.last], [98, 1046, 1143]);
+    expect([sn.length, sn.first, sn.last], [131, 1046, 1176]);
     expect(scramble.cards.every((c) => c.example.isNotEmpty), isTrue);
     expect(scramble.cards.where((c) => c.hasExample).length,
-        greaterThanOrEqualTo(96));
+        greaterThanOrEqualTo(126));
     for (final c in [...kanji.cards, ...kw.cards]) {
       expect(c.term.trim(), isNotEmpty);
       expect(c.meaning, isNot(contains('読み取れず')));

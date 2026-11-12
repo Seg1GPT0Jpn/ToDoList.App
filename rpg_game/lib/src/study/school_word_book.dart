@@ -70,7 +70,7 @@ abstract final class SchoolWordBooks {
     ),
     SchoolWordBook(
       id: 'scramble',
-      title: 'Scramble イディオム（1046〜1143）',
+      title: 'Scramble イディオム（1046〜1176）',
       subjectId: 'ronhyo1',
       vault: 'school-word-5',
     ),
