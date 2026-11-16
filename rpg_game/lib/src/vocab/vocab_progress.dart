@@ -3,6 +3,7 @@ import 'dart:math';
 
 import 'fsrs.dart';
 import 'meaning_text.dart';
+import 'similar_choices.dart';
 import 'vocab_book.dart';
 
 /// 単語の「力」。1つの単語でも、意味は分かるのに書けない…を分けて記録する。
@@ -732,16 +733,9 @@ class VocabChoices {
           wrong.add(label(c));
       }
     }
-    // 意味がまったく同じ別の単語（同じ意味のことわざなど）は、まちがいの選択肢にしない
-    final others = [
-      for (final c in book.cards)
-        if (c.id != card.id && c.meaning != card.meaning) c,
-    ]..shuffle(rnd);
-    // 同じ章・同じ品詞を先に（まぎらわしいほうが練習になる）
-    int rank(VocabCard c) =>
-        (c.group == card.group ? 0 : 2) +
-        (c.partOfSpeech == card.partOfSpeech ? 0 : 1);
-    others.sort((a, b) => rank(a) - rank(b));
+    // 意味の近い単語（同じ品詞・近い番号・同じ漢字）を先に。まぎらわしいほうが練習になる。
+    // 正解と同じ意味をもつ単語は、答えが2つになるので入れない
+    final others = SimilarChoices.rank(card, book.cards, random: rnd);
     for (final c in others) {
       if (wrong.length >= 3) break;
       final l = label(c);

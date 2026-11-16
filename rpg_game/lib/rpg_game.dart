@@ -104,6 +104,7 @@ export 'src/vocab/tsuzutan.dart';
 export 'src/vocab/vocab_book.dart';
 export 'src/vocab/vocab_progress.dart';
 export 'src/vocab/vocab_vault.dart';
+export 'src/vocab/similar_choices.dart';
 export 'src/vocab/vocab_quiz.dart';
 export 'src/vocab/word_battle.dart';
 export 'src/classroom/classroom.dart';

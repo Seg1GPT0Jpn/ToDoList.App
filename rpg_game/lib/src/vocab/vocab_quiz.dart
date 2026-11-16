@@ -2,6 +2,7 @@ import 'dart:math';
 
 import '../models/question.dart';
 import 'meaning_text.dart';
+import 'similar_choices.dart';
 import 'vocab_book.dart';
 
 /// 単語帳（LEAP・EEVI など）から4択問題を作る。
@@ -30,20 +31,13 @@ class VocabQuizBuilder {
     for (final c in targets) {
       if (out.length >= count) break;
       final answer = label(c);
-      final others = [
-        for (final e in all)
-          if (!identical(e, c) && label(e) != answer) e,
-      ]..shuffle(_random);
-      // 同じ品詞を先に（まぎらわしいほうが練習になる）
-      others.sort(
-        (a, b) =>
-            (a.partOfSpeech == c.partOfSpeech ? 0 : 1) -
-            (b.partOfSpeech == c.partOfSpeech ? 0 : 1),
-      );
+      // 意味の近い単語（同じ品詞・近い番号・同じ漢字）から選ぶ。まぎらわしいほうが練習になる。
+      // 正解と同じ意味をもつ単語は、答えが2つになるので入れない
+      final others = SimilarChoices.rank(c, all, random: _random);
       final wrong = <String>[];
       for (final e in others) {
         final l = label(e);
-        if (!wrong.contains(l)) wrong.add(l);
+        if (l != answer && !wrong.contains(l)) wrong.add(l);
         if (wrong.length == 3) break;
       }
       if (wrong.length < 3) continue;
