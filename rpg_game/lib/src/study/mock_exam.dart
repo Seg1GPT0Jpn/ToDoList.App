@@ -68,8 +68,8 @@ abstract final class YosouExams {
       id: 'gendai',
       title: '現代の国語 後期中間 予想問題',
       subjectId: 'gendai_kokugo',
-      questionPages: 19,
-      answerPages: 4,
+      questionPages: 23,
+      answerPages: 9,
       smallQuestions: true,
     ),
     YosouExam(
@@ -77,7 +77,7 @@ abstract final class YosouExams {
       title: '言語文化 後期中間 予想問題',
       subjectId: 'gengo_bunka',
       questionPages: 8,
-      answerPages: 4,
+      answerPages: 6,
       smallQuestions: true,
     ),
     YosouExam(
