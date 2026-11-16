@@ -2,6 +2,7 @@ import 'dart:math';
 
 import '../models/rpg_progress.dart';
 import '../vocab/meaning_text.dart';
+import '../vocab/similar_choices.dart';
 import '../vocab/vocab_book.dart';
 
 /// 週替わり単語バトル：LEAP・EEVI を開いている人みんなで、決まった日に同じ範囲・同じ問題で点数を競う。
@@ -625,14 +626,13 @@ abstract final class ContestQuestions {
     String sub = '',
   }) {
     final right = answer ?? label(c);
+    // 意味の近い単語（同じ品詞・近い番号・同じ漢字）から選ぶ。正解と同じ意味の単語は入れない。
+    // 乱数は全員共通の [r] なので、みんな同じ選択肢になる
     final wrong = <String>{};
-    final others = [
-      for (final e in all)
-        if (!identical(e, c) && label(e) != right) e,
-    ];
-    var guard = 0;
-    while (wrong.length < 3 && others.isNotEmpty && guard++ < 60) {
-      wrong.add(label(others[r.nextInt(others.length)]));
+    for (final e in SimilarChoices.rank(c, all, random: r)) {
+      final l = label(e);
+      if (l != right && usableChoiceText(l)) wrong.add(l);
+      if (wrong.length == 3) break;
     }
     if (wrong.length < 3) return null;
     final choices = [right, ...wrong]..shuffle(r);

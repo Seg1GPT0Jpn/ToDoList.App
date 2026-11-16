@@ -9,6 +9,7 @@ import '../models/question.dart';
 import '../models/stage.dart';
 import '../study/word_list.dart';
 import 'meaning_text.dart';
+import 'similar_choices.dart';
 
 /// 単語の問い方。同じ単語を、いくつもの形で出す。
 enum WordFormat {
@@ -95,13 +96,14 @@ abstract final class WordBattle {
   }) {
     final r = random ?? Random();
     final unit = Curriculum.unitForGeneratedSet(list.listId);
-    // 意味がまったく同じ別の語は、まちがいの選択肢にしない
-    final others = [
-      ...list.words.where((o) => o.term != w.term && o.meaning != w.meaning),
-    ]..shuffle(r);
-    others.sort((a, b) =>
-        (a.partOfSpeech == w.partOfSpeech ? 0 : 1) -
-        (b.partOfSpeech == w.partOfSpeech ? 0 : 1));
+    // 意味の近い単語（同じ品詞・同じ漢字）を先に。正解と同じ意味をもつ単語は入れない
+    final others = SimilarChoices.rankBy<WordEntry>(
+      w,
+      list.words,
+      term: (o) => o.term,
+      meaning: (o) => o.meaning,
+      random: r,
+    );
     List<String> pick(String Function(WordEntry) label, String answer) {
       final wrong = <String>[];
       for (final o in others) {

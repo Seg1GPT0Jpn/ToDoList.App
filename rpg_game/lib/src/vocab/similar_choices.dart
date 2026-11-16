@@ -19,41 +19,62 @@ abstract final class SimilarChoices {
     VocabCard card,
     Iterable<VocabCard> pool, {
     Random? random,
+  }) =>
+      rankBy(
+        card,
+        pool,
+        term: (c) => c.term,
+        meaning: (c) => c.meaning,
+        number: (c) => c.number,
+        group: (c) => c.group,
+        random: random,
+      );
+
+  /// [rank] の、どんな単語の形にも使える版。
+  /// [number] は、番号が近いほど意味も近い単語帳（LEAP など）でだけ渡す
+  /// （アルファベット順の単語帳では、番号の近さは意味の近さにならない）。
+  static List<T> rankBy<T extends Object>(
+    T item,
+    Iterable<T> pool, {
+    required String Function(T) term,
+    required String Function(T) meaning,
+    int? Function(T)? number,
+    String Function(T)? group,
+    Random? random,
   }) {
     final rnd = random ?? Random();
-    final mine = _info(card);
-    final scored = <(VocabCard, double)>[];
+    final mine = _info(item, meaning(item));
+    final scored = <(T, double)>[];
     for (final o in pool) {
-      if (identical(o, card) || o.id == card.id) continue;
-      if (o.meaning == card.meaning || o.term == card.term) continue;
-      final other = _info(o);
+      if (identical(o, item)) continue;
+      if (meaning(o) == meaning(item) || term(o) == term(item)) continue;
+      final other = _info(o, meaning(o));
       if (_overlaps(mine.senses, other.senses)) continue;
+      var s = 0.0;
+      if (mine.pos.isNotEmpty && mine.pos == other.pos) s += 2;
+      if (group != null) {
+        final ga = group(item);
+        if (ga.isNotEmpty && ga == group(o)) s += 1;
+      }
+      final na = number?.call(item), nb = number?.call(o);
+      if (na != null && nb != null) {
+        s += max(0.0, 1.6 - (na - nb).abs() / 8);
+      }
+      if (mine.kanji.isNotEmpty && other.kanji.isNotEmpty) {
+        final common = mine.kanji.intersection(other.kanji).length;
+        final all = mine.kanji.union(other.kanji).length;
+        s += 2.2 * common / all;
+      }
       // 少しだけゆらぎを入れて、毎回同じ3つにならないようにする
-      scored.add((o, _score(card, mine, o, other) + rnd.nextDouble() * 0.35));
+      scored.add((o, s + rnd.nextDouble() * 0.35));
     }
     scored.sort((a, b) => b.$2.compareTo(a.$2));
-    return [for (final s in scored) s.$1];
+    return [for (final x in scored) x.$1];
   }
 
   /// [a] と [b] は同じ意味をもつか（どちらかを正解にすると、もう一方も正解になってしまう）
   static bool sameMeaning(VocabCard a, VocabCard b) =>
-      _overlaps(_info(a).senses, _info(b).senses);
-
-  static double _score(VocabCard a, _Info ia, VocabCard b, _Info ib) {
-    var s = 0.0;
-    if (ia.pos.isNotEmpty && ia.pos == ib.pos) s += 2;
-    if (a.group.isNotEmpty && a.group == b.group) s += 1;
-    final na = a.number, nb = b.number;
-    if (na != null && nb != null) {
-      s += max(0.0, 1.6 - (na - nb).abs() / 8);
-    }
-    if (ia.kanji.isNotEmpty && ib.kanji.isNotEmpty) {
-      final common = ia.kanji.intersection(ib.kanji).length;
-      final all = ia.kanji.union(ib.kanji).length;
-      s += 2.2 * common / all;
-    }
-    return s;
-  }
+      _overlaps(_info(a, a.meaning).senses, _info(b, b.meaning).senses);
 
   static bool _overlaps(Set<String> a, Set<String> b) {
     for (final x in a) {
@@ -66,7 +87,8 @@ abstract final class SimilarChoices {
 
   static final _cache = Expando<_Info>();
 
-  static _Info _info(VocabCard c) => _cache[c] ??= _Info.of(c);
+  static _Info _info(Object c, String meaning) =>
+      _cache[c] ??= _Info.of(meaning);
 }
 
 class _Info {
@@ -87,8 +109,8 @@ class _Info {
   static final _lead = RegExp(r'^(を|に|が|の|と|で|から|より|は)+');
   static final _kanji = RegExp(r'[一-鿿]');
 
-  static _Info of(VocabCard c) {
-    final raw = partOfSpeechOf(c.meaning);
+  static _Info of(String meaning) {
+    final raw = partOfSpeechOf(meaning);
     final pos = raw.contains('名')
         ? '名'
         : raw.contains('形')
@@ -102,7 +124,7 @@ class _Info {
                             raw.contains('動'))
                         ? '動'
                         : raw;
-    final body = c.meaning.replaceAll(_tag, '');
+    final body = meaning.replaceAll(_tag, '');
     final senses = <String>{};
     for (final part in body.split(_split)) {
       var p = part.replaceAll(_paren, '').trim();

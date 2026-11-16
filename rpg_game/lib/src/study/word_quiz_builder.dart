@@ -2,6 +2,7 @@ import 'dart:math';
 
 import '../curriculum/curriculum.dart';
 import '../models/question.dart';
+import '../vocab/similar_choices.dart';
 import 'word_list.dart';
 
 enum WordQuizDirection {
@@ -34,20 +35,19 @@ class WordQuizBuilder {
           direction == WordQuizDirection.enToJa ? w.shortMeaning : w.term;
       String label(WordEntry e) =>
           direction == WordQuizDirection.enToJa ? e.shortMeaning : e.term;
-      // 同じ品詞を優先して、紛らわしくない（表記が違う）選択肢を3つ選ぶ
-      final candidates = pool
-          .where((e) => !identical(e, w) && label(e) != answer)
-          .toList()
-        ..shuffle(_random);
-      candidates.sort((a, b) {
-        final pa = a.partOfSpeech == w.partOfSpeech ? 0 : 1;
-        final pb = b.partOfSpeech == w.partOfSpeech ? 0 : 1;
-        return pa - pb;
-      });
+      // 意味の近い単語（同じ品詞・同じ漢字）から、まちがいの選択肢を3つ選ぶ。
+      // 正解と同じ意味をもつ単語は、答えが2つになるので入れない
+      final candidates = SimilarChoices.rankBy<WordEntry>(
+        w,
+        pool,
+        term: (e) => e.term,
+        meaning: (e) => e.meaning,
+        random: _random,
+      );
       final wrong = <String>[];
       for (final c in candidates) {
         final l = label(c);
-        if (!wrong.contains(l)) wrong.add(l);
+        if (l != answer && !wrong.contains(l)) wrong.add(l);
         if (wrong.length == 3) break;
       }
       if (wrong.length < 3) continue;

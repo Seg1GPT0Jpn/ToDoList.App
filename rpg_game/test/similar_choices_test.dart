@@ -67,4 +67,31 @@ void main() {
       expect(q.choices.toSet(), hasLength(4));
     }
   });
+
+  test('つづ単（アルファベット順の単語帳）でも、意味の近い単語から選ぶ', () {
+    WordEntry w(int n, String t, String m) =>
+        WordEntry(number: n, term: t, meaning: m);
+    final list = WordList(
+      listId: 'tsuzutan_test',
+      title: 'test',
+      origin: QuestionOrigin.original,
+      words: [
+        w(1, 'decrease', '[動] 減少する'),
+        w(2, 'decline', '[動] ①減少する ②～を断る'),
+        w(3, 'diminish', '[動] 減る、小さくなる'),
+        w(4, 'dairy', '[形] 乳製品の'),
+        w(5, 'damp', '[形] 湿った'),
+        w(6, 'deal', '[名] 取引'),
+        w(7, 'debt', '[名] 借金'),
+        w(8, 'delay', '[動] ～を遅らせる'),
+      ],
+    );
+    final qs = WordQuizBuilder(random: Random(1))
+        .build(list, direction: WordQuizDirection.jaToEn);
+    final q = qs.questions.firstWhere((q) => q.prompt.contains('「減少する」'));
+    // decline も「減少する」なので、入れると答えが2つになる
+    expect(q.choices.where((c) => c == 'decrease' || c == 'decline'),
+        hasLength(1));
+    expect(q.choices, contains('diminish'));
+  });
 }
