@@ -124,8 +124,8 @@ abstract final class YosouExams {
       id: 'bio',
       title: '生物基礎 後期中間 予想問題',
       subjectId: 'biology_basic',
-      questionPages: 7,
-      answerPages: 4,
+      questionPages: 22,
+      answerPages: 9,
       smallQuestions: true,
     ),
     YosouExam(
@@ -134,6 +134,22 @@ abstract final class YosouExams {
       subjectId: 'public_economy',
       questionPages: 9,
       answerPages: 4,
+      smallQuestions: true,
+    ),
+    YosouExam(
+      id: 'kokyo2',
+      title: '公共 後期中間 予想問題その2',
+      subjectId: 'public_economy',
+      questionPages: 11,
+      answerPages: 6,
+      smallQuestions: true,
+    ),
+    YosouExam(
+      id: 'chiri',
+      title: '地理総合 後期中間 予想問題',
+      subjectId: 'geography_general',
+      questionPages: 34,
+      answerPages: 8,
       smallQuestions: true,
     ),
     YosouExam(
