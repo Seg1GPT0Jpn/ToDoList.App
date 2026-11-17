@@ -42,11 +42,42 @@
       navigator.serviceWorker.addEventListener('controllerchange', function () {
         if (switching) location.reload();
       });
-      navigator.serviceWorker.register('sw.js').then(function (reg) {
-        if (reg.waiting && navigator.serviceWorker.controller) {
+      var startedAt = Date.now();
+      // 新しい版が入ったら切りかえる。開いてすぐ（まだ何もしていない）ならそのまま読みなおし、
+      // 使っている途中なら「新しい版があります」の帯を出して、タップしたときに読みなおす
+      var offer = function (worker) {
+        if (!worker || !navigator.serviceWorker.controller) return;
+        if (Date.now() - startedAt < 8000) {
           switching = true;
-          reg.waiting.postMessage('skipWaiting');
+          worker.postMessage('skipWaiting');
+          return;
         }
+        if (document.getElementById('light-update')) return;
+        var bar = document.createElement('div');
+        bar.id = 'light-update';
+        bar.textContent = '新しい版があります（タップで更新）';
+        bar.style.cssText = 'position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:9999;'
+          + 'background:#1F8A85;color:#fff;padding:10px 16px;border-radius:20px;font:14px sans-serif;'
+          + 'box-shadow:0 2px 8px rgba(0,0,0,.25);cursor:pointer';
+        bar.onclick = function () {
+          switching = true;
+          worker.postMessage('skipWaiting');
+        };
+        document.body.appendChild(bar);
+      };
+      navigator.serviceWorker.register('sw.js').then(function (reg) {
+        if (reg.waiting) offer(reg.waiting);
+        reg.addEventListener('updatefound', function () {
+          var w = reg.installing;
+          if (!w) return;
+          w.addEventListener('statechange', function () {
+            if (w.state === 'installed') offer(w);
+          });
+        });
+        // アプリを開いたまま（ホーム画面から何日も）でも、前に出てきたときに新しい版を確かめる
+        document.addEventListener('visibilitychange', function () {
+          if (document.visibilityState === 'visible') reg.update().catch(function () {});
+        });
       }).catch(function () {});
     }
   </script>

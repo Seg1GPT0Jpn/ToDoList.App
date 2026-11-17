@@ -4,7 +4,9 @@
 //   公開するたびに VERSION が変わる（deploy-web.yml がビルドの中身から決めて書きかえる）。
 //   新しい版は裏で入り、次に開いたときに切りかわる（index.html）。
 // - 単語帳・問題などのファイル（assets/packages/）は、版をまたいで残す入れ物に入れる。
-//   まず手元のものを出し、ネットにつながっていれば裏で新しいかを確かめる（変わっていなければほとんど通信しない）。
+//   ネットにつながっていれば、いつも新しいかを確かめてから出す（変わっていなければ 304 でほとんど通信しない）。
+//   つながっていない・返事が遅いときは、手元のものを出す。
+//   （前は手元のものを先に出していたので、予想問題や単語帳を差しかえても、1回目は古いままだった）
 // - ほかのサイト（Firebase など）には手を出さない。
 const VERSION = '__TSUZURI_LIGHT_VERSION__';
 const SHELL = 'light-shell-' + VERSION;
@@ -102,18 +104,24 @@ async function shell(req) {
   return res;
 }
 
-// 単語帳・問題：手元のものをすぐ出し、裏で新しいかを確かめる
+// 単語帳・問題：ネットから新しいものを出す（変わっていなければ 304）。
+// つながらない・[DATA_TIMEOUT] 秒たっても返事がないときは手元のものを出し、届いたら入れかえておく
+const DATA_TIMEOUT = 4000;
+
 async function data(req, event) {
   const cache = await caches.open(DATA);
   const key = req.url.split('#')[0];
-  const hit = await cache.match(key);
-  const update = fetch(req).then(async (res) => {
+  const update = fetch(req, { cache: 'no-cache' }).then(async (res) => {
     if (res.ok && res.type === 'basic') await cache.put(key, res.clone());
     return res;
   });
-  if (hit) {
-    event.waitUntil(update.catch(() => {}));
-    return hit;
-  }
-  return update;
+  const hit = await cache.match(key);
+  if (!hit) return update;
+  event.waitUntil(update.catch(() => {}));
+  const late = new Promise((resolve) => setTimeout(() => resolve(null), DATA_TIMEOUT));
+  try {
+    const res = await Promise.race([update, late]);
+    if (res && res.ok) return res;
+  } catch (_) {}
+  return hit;
 }

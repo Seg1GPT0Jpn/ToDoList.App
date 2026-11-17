@@ -41,8 +41,9 @@ class RemoteAssets {
     return bytes;
   }
 
-  /// 新しいかを確かめる間隔（資料・予想問題はめったに変わらないので、通信を減らす）
-  static const checkEvery = Duration(days: 7);
+  /// 新しいかを確かめる間隔（予想問題は試験前に何度も差しかわるので、短くする。
+  /// 変わっていなければ 304 でほとんど通信しない）
+  static const checkEvery = Duration(hours: 1);
 
   /// 前に確かめてから [checkEvery] たったか（確かめた時刻は .etag の更新時刻）
   Future<bool> _due(File f) async {
