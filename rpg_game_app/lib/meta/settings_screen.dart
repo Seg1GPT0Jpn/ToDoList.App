@@ -36,7 +36,7 @@ class SettingsScreen extends StatelessWidget {
             children: [
               // Light のむずかしさは、1回に解く問題の量（定期テストの海・復習など）
               if (lightEdition) ...[
-                const SectionTitle('むずかしさ（1回の問題の量）'),
+                const SectionTitle('はじめに選んでおく問題の量'),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
                   child: SegmentedButton<String>(
@@ -62,7 +62,7 @@ class SettingsScreen extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
                   child: Text(
-                    '定期テストの海・復習などで、1回に解く問題の数です（まちがえた問題はもう一度出ます）',
+                    '定期テストの海・復習などで、はじめに選ばれている問題の数です。解く前の画面で、範囲・問題数・順番を自由に変えられます',
                     style: TextStyle(
                       fontSize: 12,
                       color: TsuzuriColors.inkSoft,

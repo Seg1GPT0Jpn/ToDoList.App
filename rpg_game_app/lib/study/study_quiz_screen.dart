@@ -25,7 +25,11 @@ class StudyQuizScreen extends StatefulWidget {
     this.limit,
     this.onFinished,
     this.random,
+    this.setup = false,
   });
+
+  /// はじめに、単語帳の練習と同じように範囲・問題数・順番を選ぶ画面を出す（つづりクエストLight）
+  final bool setup;
 
   final String title;
 
@@ -50,7 +54,17 @@ class StudyQuizScreen extends StatefulWidget {
 class _StudyQuizScreenState extends State<StudyQuizScreen> {
   late final RpgServices _services = RpgServices.of(context);
   late final Random _random = widget.random ?? Random();
-  late final List<PresentedQuestion> _queue = _pick();
+  late List<PresentedQuestion> _queue = _pick(
+    widget.questions,
+    widget.limit ?? _services.settings.value.quizCount,
+    _Order.adaptive,
+  );
+
+  /// 問題を解きはじめたか（[StudyQuizScreen.setup] のときは、選ぶ画面のあと）
+  late bool _started = !_asksSetup;
+
+  /// 範囲・問題数を選ぶ画面を出すか（数問しかないときは、すぐ解きはじめる）
+  bool get _asksSetup => widget.setup && widget.questions.length > 5;
   final _events = <AnswerEvent>[];
   final _requeued = <String>{};
   final _missed = <String, QuizQuestion>{};
@@ -69,19 +83,251 @@ class _StudyQuizScreenState extends State<StudyQuizScreen> {
   String? _typed;
   bool _done = false;
 
-  /// 苦手な問題・復習の日が来た問題ほど先に出す
-  List<PresentedQuestion> _pick() {
+  /// [pool] から [count] 問（null なら全部）を、[order] の順で出す。
+  /// おすすめは、苦手な問題・復習の日が来た問題ほど先に出す
+  List<PresentedQuestion> _pick(
+    List<QuizQuestion> pool,
+    int? count,
+    _Order order,
+  ) {
+    final n = min(count ?? pool.length, pool.length);
+    if (order == _Order.inOrder) {
+      return [for (final q in pool.take(n)) _present(q)];
+    }
     final deck = QuestionDeck(
-      widget.questions,
+      pool,
       random: _random,
-      weight: AdaptiveWeights.forRecord(
-        _services.meta.record,
-        RpgServices.today(),
+      weight: order == _Order.adaptive
+          ? AdaptiveWeights.forRecord(
+              _services.meta.record,
+              RpgServices.today(),
+            )
+          : null,
+    );
+    return [for (var i = 0; i < n; i++) deck.draw()];
+  }
+
+  /// 選択肢の順番だけ入れかえて出す
+  PresentedQuestion _present(QuizQuestion q) {
+    final order = List<int>.generate(q.choices.length, (i) => i)
+      ..shuffle(_random);
+    return PresentedQuestion(
+      source: q,
+      choices: [for (final i in order) q.choices[i]],
+      correctIndex: order.indexOf(q.answerIndex),
+    );
+  }
+
+  // ---------------- 範囲・問題数を選ぶ ----------------
+
+  /// 前に選んだ範囲・問題数・順番（同じ単元を開いたときに使う。アプリを閉じるまで）
+  static final _remembered = <String, _Setup>{};
+
+  String get _memoryKey => '${widget.title}#${widget.questions.length}';
+
+  late final _Setup _setup =
+      _remembered[_memoryKey] ??
+      _Setup(
+        from: 1,
+        to: widget.questions.length,
+        count: widget.limit ?? _services.settings.value.quizCount,
+        order: _Order.adaptive,
+        units: null,
+      );
+  late final _from = TextEditingController(text: '${_setup.from}');
+  late final _to = TextEditingController(text: '${_setup.to}');
+
+  /// 問題についている単元（2つ以上あるときだけ、単元でもしぼれる）
+  late final List<String> _unitList = [
+    ...{
+      for (final q in widget.questions)
+        if ((q.unit ?? '').isNotEmpty) q.unit!,
+    },
+  ];
+
+  /// 選んだ範囲の問題（番号は、この単元の問題の並び順で1から）
+  List<QuizQuestion> _pool({bool mistakesOnly = false}) {
+    final all = widget.questions;
+    var a = int.tryParse(_from.text.trim()) ?? 1;
+    var b = int.tryParse(_to.text.trim()) ?? all.length;
+    if (a > b) (a, b) = (b, a);
+    a = a.clamp(1, all.length);
+    b = b.clamp(1, all.length);
+    final units = _setup.units;
+    final stats = _services.meta.record.stats;
+    return [
+      for (var i = a - 1; i < b; i++)
+        if (units == null || units.contains(all[i].unit ?? ''))
+          if (!mistakesOnly || _missedBefore(stats[all[i].id])) all[i],
+    ];
+  }
+
+  static bool _missedBefore(QuestionStat? s) =>
+      s != null && s.attempts > s.correct;
+
+  void _begin({bool mistakesOnly = false}) {
+    final pool = _pool(mistakesOnly: mistakesOnly);
+    if (pool.isEmpty) return;
+    _setup
+      ..from = int.tryParse(_from.text.trim()) ?? 1
+      ..to = int.tryParse(_to.text.trim()) ?? widget.questions.length;
+    _remembered[_memoryKey] = _setup;
+    _watch
+      ..reset()
+      ..start();
+    setState(() {
+      _queue = _pick(pool, _setup.count, _setup.order);
+      _started = true;
+    });
+  }
+
+  /// 範囲を選ぶ画面を出したか（入力欄を片づけるため）
+  bool _setupShown = false;
+
+  Widget _setupPane() {
+    _setupShown = true;
+    final all = widget.questions.length;
+    final pool = _pool();
+    final missed = _pool(mistakesOnly: true).length;
+    final counts = [
+      for (final n in const [5, 10, 20, 30, 50])
+        if (n < all) n,
+    ];
+    Widget field(TextEditingController c, String key) => SizedBox(
+      width: 72,
+      child: TextField(
+        key: ValueKey(key),
+        controller: c,
+        keyboardType: TextInputType.number,
+        textAlign: TextAlign.center,
+        decoration: const InputDecoration(isDense: true),
+        onChanged: (_) => setState(() {}),
       ),
     );
-    final limit = widget.limit ?? _services.settings.value.quizCount;
-    final n = min(limit, widget.questions.length);
-    return [for (var i = 0; i < n; i++) deck.draw()];
+    final small = TextStyle(fontSize: 12, color: TsuzuriColors.inkSoft);
+    return ListView(
+      key: const ValueKey('study-setup'),
+      padding: const EdgeInsets.fromLTRB(40, 12, 14, 24),
+      children: [
+        Text('全$all問', style: serif(16)),
+        const SizedBox(height: 8),
+        Card(
+          child: Padding(
+            padding: const EdgeInsets.all(12),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('範囲', style: serif(15)),
+                const SizedBox(height: 4),
+                Wrap(
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  spacing: 6,
+                  children: [
+                    const Text('番号'),
+                    field(_from, 'study-range-from'),
+                    const Text('〜'),
+                    field(_to, 'study-range-to'),
+                    Text(
+                      '${pool.length}問（この単元は 1〜$all）',
+                      key: const ValueKey('study-range-count'),
+                      style: small,
+                    ),
+                  ],
+                ),
+                if (_unitList.length > 1) ...[
+                  const SizedBox(height: 8),
+                  Text('単元でしぼる', style: small),
+                  const SizedBox(height: 4),
+                  Wrap(
+                    spacing: 6,
+                    runSpacing: 4,
+                    children: [
+                      for (final u in _unitList)
+                        FilterChip(
+                          label: Text(u),
+                          visualDensity: VisualDensity.compact,
+                          selected: _setup.units?.contains(u) ?? true,
+                          onSelected: (on) => setState(() {
+                            final now = {..._setup.units ?? _unitList};
+                            on ? now.add(u) : now.remove(u);
+                            _setup.units = now.length == _unitList.length
+                                ? null
+                                : now;
+                          }),
+                        ),
+                    ],
+                  ),
+                ],
+                const SizedBox(height: 10),
+                Wrap(
+                  spacing: 6,
+                  runSpacing: 4,
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  children: [
+                    const Text('問題数', style: TextStyle(fontSize: 12)),
+                    for (final n in [...counts, null])
+                      ChoiceChip(
+                        key: ValueKey('study-count-${n ?? 'all'}'),
+                        label: Text(n == null ? '全部' : '$n問'),
+                        selected:
+                            _setup.count == n ||
+                            (n == null && (_setup.count ?? all) >= all),
+                        visualDensity: VisualDensity.compact,
+                        onSelected: (_) => setState(() => _setup.count = n),
+                      ),
+                  ],
+                ),
+                Wrap(
+                  spacing: 6,
+                  runSpacing: 4,
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  children: [
+                    const Text('順番', style: TextStyle(fontSize: 12)),
+                    for (final (o, label) in const [
+                      (_Order.adaptive, '苦手から'),
+                      (_Order.random, 'ランダム'),
+                      (_Order.inOrder, '番号順'),
+                    ])
+                      ChoiceChip(
+                        key: ValueKey('study-order-${o.name}'),
+                        label: Text(label),
+                        selected: _setup.order == o,
+                        visualDensity: VisualDensity.compact,
+                        onSelected: (_) => setState(() => _setup.order = o),
+                      ),
+                  ],
+                ),
+                const SizedBox(height: 10),
+                Wrap(
+                  spacing: 8,
+                  runSpacing: 6,
+                  children: [
+                    FilledButton.icon(
+                      key: const ValueKey('study-setup-start'),
+                      onPressed: pool.isEmpty ? null : _begin,
+                      icon: const Icon(Icons.play_arrow),
+                      label: Text(
+                        'はじめる（${min(_setup.count ?? pool.length, pool.length)}問）',
+                      ),
+                    ),
+                    OutlinedButton.icon(
+                      key: const ValueKey('study-setup-mistakes'),
+                      onPressed: missed == 0
+                          ? null
+                          : () => _begin(mistakesOnly: true),
+                      icon: const Icon(Icons.error_outline),
+                      label: Text('この範囲の間違いだけ（$missed問）'),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+        const SizedBox(height: 6),
+        Text('まちがえた問題は、少しあとでもう一度出ます（その分は問題数に入りません）', style: small),
+      ],
+    );
   }
 
   PresentedQuestion get _q => _queue[_index];
@@ -89,6 +335,10 @@ class _StudyQuizScreenState extends State<StudyQuizScreen> {
   @override
   void dispose() {
     _input.dispose();
+    if (_setupShown) {
+      _from.dispose();
+      _to.dispose();
+    }
     super.dispose();
   }
 
@@ -175,11 +425,19 @@ class _StudyQuizScreenState extends State<StudyQuizScreen> {
   Widget build(BuildContext context) => PopScope(
     onPopInvokedWithResult: (didPop, _) {
       // 途中でやめても、答えた分は残す
-      if (didPop && !_done) _finish();
+      if (didPop && !_done && _started) _finish();
     },
     child: Scaffold(
       appBar: AppBar(title: Text(widget.title, style: serif(17))),
-      body: NotebookPaper(child: SafeArea(child: _done ? _summary() : _body())),
+      body: NotebookPaper(
+        child: SafeArea(
+          child: _done
+              ? _summary()
+              : _started
+              ? _body()
+              : _setupPane(),
+        ),
+      ),
     ),
   );
 
@@ -471,4 +729,28 @@ class _StudyQuizScreenState extends State<StudyQuizScreen> {
       ],
     );
   }
+}
+
+/// 出す順番：苦手な問題から・ランダム・番号順
+enum _Order { adaptive, random, inOrder }
+
+/// 選んだ範囲・問題数・順番
+class _Setup {
+  _Setup({
+    required this.from,
+    required this.to,
+    required this.count,
+    required this.order,
+    required this.units,
+  });
+
+  int from;
+  int to;
+
+  /// null なら全部
+  int? count;
+  _Order order;
+
+  /// しぼった単元（null ならすべて）
+  Set<String>? units;
 }

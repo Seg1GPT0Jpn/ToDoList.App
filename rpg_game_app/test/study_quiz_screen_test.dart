@@ -142,4 +142,84 @@ void main() {
     expect(find.text('1 / 5'), findsOneWidget);
     expect(t.takeException(), isNull);
   });
+
+  testWidgets('Light では、はじめに範囲・問題数・順番を選んでから解く', (t) async {
+    final services = await openScreen(
+      t,
+      const SizedBox(),
+      size: const Size(420, 1400),
+    );
+    late List<QuizQuestion> questions;
+    await t.runAsync(() async {
+      questions = [];
+      for (final setId in (await RpgServices.questionSetsOf('english')).keys) {
+        final set = (await services.questions.load(setId))!;
+        final qs = set.questions
+            .where((q) => q.isChoice && q.passage == null)
+            .toList();
+        if (qs.length >= 12) {
+          questions = qs.take(12).toList();
+          break;
+        }
+      }
+    });
+    expect(questions, hasLength(12));
+    t
+        .state<NavigatorState>(find.byType(Navigator))
+        .push(
+          MaterialPageRoute<void>(
+            builder: (_) => StudyQuizScreen(
+              title: '範囲の練習',
+              subject: 'english',
+              questions: questions,
+              setup: true,
+            ),
+          ),
+        );
+    await _frames(t);
+    expect(find.byKey(const ValueKey('study-setup')), findsOneWidget);
+    expect(find.text('12問（この単元は 1〜12）'), findsOneWidget);
+
+    // 番号 3〜9 の 7問のうち 5問を、番号順に
+    await t.enterText(find.byKey(const ValueKey('study-range-from')), '3');
+    await t.enterText(find.byKey(const ValueKey('study-range-to')), '9');
+    await _frames(t, 2);
+    expect(find.text('7問（この単元は 1〜12）'), findsOneWidget);
+    await t.tap(find.byKey(const ValueKey('study-count-5')));
+    await t.tap(find.byKey(const ValueKey('study-order-inOrder')));
+    await _frames(t, 2);
+    await t.tap(find.byKey(const ValueKey('study-setup-start')));
+    await _frames(t);
+    expect(find.byKey(const ValueKey('study-quiz')), findsOneWidget);
+    expect(find.text('1 / 5'), findsOneWidget);
+    // 番号順なので、3番目の問題から
+    final third = questions[2];
+    expect(find.text(third.sentence ?? third.prompt), findsWidgets);
+    expect(t.takeException(), isNull);
+  });
+
+  testWidgets('数問しかないときは、範囲を選ばずにすぐ解く', (t) async {
+    final services = await openScreen(t, const SizedBox());
+    late List<QuizQuestion> questions;
+    await t.runAsync(() async {
+      final setId = (await RpgServices.questionSetsOf('english')).keys.first;
+      final set = (await services.questions.load(setId))!;
+      questions = set.questions.where((q) => q.isChoice).take(3).toList();
+    });
+    t
+        .state<NavigatorState>(find.byType(Navigator))
+        .push(
+          MaterialPageRoute<void>(
+            builder: (_) => StudyQuizScreen(
+              title: '少しだけ',
+              subject: 'english',
+              questions: questions,
+              setup: true,
+            ),
+          ),
+        );
+    await _frames(t);
+    expect(find.byKey(const ValueKey('study-setup')), findsNothing);
+    expect(find.byKey(const ValueKey('study-quiz')), findsOneWidget);
+  });
 }

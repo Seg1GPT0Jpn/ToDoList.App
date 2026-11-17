@@ -26,6 +26,8 @@ Widget quizScreen({
       questions: questions,
       // 確認用（その場で作った問題など）は学習記録に残さない（バトルと同じ）
       record: mode != BattleMode.trial,
+      // 単語帳と同じように、はじめに範囲・問題数を選ぶ
+      setup: true,
       onFinished: onFinished == null
           ? null
           : (correct, answered) =>
