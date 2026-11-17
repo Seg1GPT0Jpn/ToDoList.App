@@ -116,8 +116,8 @@ abstract final class YosouExams {
       id: 'chem',
       title: '化学基礎 後期中間 予想問題',
       subjectId: 'chemistry_basic',
-      questionPages: 9,
-      answerPages: 7,
+      questionPages: 4,
+      answerPages: 3,
       smallQuestions: true,
     ),
     YosouExam(
