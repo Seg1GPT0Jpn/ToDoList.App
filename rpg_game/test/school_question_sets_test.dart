@@ -74,7 +74,7 @@ void main() {
     expect(count, greaterThan(0));
   });
 
-  test('後期中間の公共は、委員会の新作14セット（1033問）と既存の経済6セットで演習できる', () async {
+  test('後期中間の公共は、委員会の新作14セット（1033問）・用語の9セット（836問）と既存の経済6セットで演習できる', () async {
     final plan = ShonanRangeTable.plan('後期中間試験', id: 'x', now: DateTime(2026));
     final r = await SchoolPractice.build(
       ShonanSubjects.byId('public_economy')!,
@@ -87,8 +87,8 @@ void main() {
       },
     );
     expect(r.issues, isEmpty);
-    expect(r.usedSetIds, hasLength(20));
-    expect(r.pool!.questions, hasLength(1033 + 6 * 24));
+    expect(r.usedSetIds, hasLength(29));
+    expect(r.pool!.questions, hasLength(1033 + 836 + 6 * 24));
   });
 
   test('範囲が未定の後期期末の化学基礎も、単元ごと（小単元ごと）に分けて対策できる', () async {

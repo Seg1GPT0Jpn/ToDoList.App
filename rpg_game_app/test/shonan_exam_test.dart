@@ -131,7 +131,7 @@ void main() {
       find.byKey(const ValueKey('shonan-practice-public_economy')),
     );
     expect(pub.onPressed, isNotNull);
-    expect(find.textContaining('委員会の新作問題セット：14'), findsOneWidget);
+    expect(find.textContaining('委員会の新作問題セット：23'), findsOneWidget);
     // 生物基礎も、授業プリントの新作セットが登録済みなので演習できる
     final bio = t.widget<ButtonStyleButton>(
       find.byKey(const ValueKey('shonan-practice-biology_basic')),

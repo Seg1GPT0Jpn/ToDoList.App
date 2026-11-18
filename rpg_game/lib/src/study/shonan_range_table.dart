@@ -467,7 +467,10 @@ class ShonanRangeTable {
               'science_shonan_104_chem_reaction_02',
               'science_shonan_104_chem_reaction_03',
               'science_shonan_104_chem_reaction_04',
-              'science_shonan_104_chem_reaction_05'
+              'science_shonan_104_chem_reaction_05',
+              'science_shonan_104_chem_terms_01',
+              'science_shonan_104_chem_terms_02',
+              'science_shonan_104_chem_terms_03'
             ],
             status: RangeStatus.entered,
             materials: const [
@@ -500,7 +503,11 @@ class ShonanRangeTable {
               'science_shonan_104_bio_immune_01',
               'science_shonan_104_bio_immune_02',
               'science_shonan_104_bio_veg_01',
-              'science_shonan_104_bio_veg_02'
+              'science_shonan_104_bio_veg_02',
+              'science_shonan_104_bio_terms_01',
+              'science_shonan_104_bio_terms_02',
+              'science_shonan_104_bio_terms_03',
+              'science_shonan_104_bio_terms_04'
             ],
             status: RangeStatus.entered,
             materials: const [
@@ -526,7 +533,8 @@ class ShonanRangeTable {
             committeeSetIds: const [
               'social_shonan_104_geo_01',
               'social_shonan_104_geo_02',
-              'social_shonan_104_geo_03'
+              'social_shonan_104_geo_03',
+              'social_shonan_104_geo_04'
             ],
             status: RangeStatus.entered,
             materials: const [
@@ -576,7 +584,16 @@ class ShonanRangeTable {
               'social_shonan_104_public_economy_11',
               'social_shonan_104_public_economy_12',
               'social_shonan_104_public_economy_13',
-              'social_shonan_104_public_economy_14'
+              'social_shonan_104_public_economy_14',
+              'social_shonan_104_kokyo_terms_01',
+              'social_shonan_104_kokyo_terms_02',
+              'social_shonan_104_kokyo_terms_03',
+              'social_shonan_104_kokyo_terms_04',
+              'social_shonan_104_kokyo_terms_05',
+              'social_shonan_104_kokyo_terms_06',
+              'social_shonan_104_kokyo_terms_07',
+              'social_shonan_104_kokyo_terms_08',
+              'social_shonan_104_kokyo_terms_09'
             ],
             status: RangeStatus.entered,
             materials: const [

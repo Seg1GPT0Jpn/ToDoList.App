@@ -1,0 +1,596 @@
+{
+  "setId": "science_shonan_104_chem_terms_02",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "science_shonan_104_chem_terms_02_001",
+      "unit": "science.chemistry.change.equation",
+      "category": "knowledge",
+      "prompt": "物質の種類そのものが変わる変化。これを何という？",
+      "choices": [
+        "物理変化",
+        "化学反応式",
+        "分子説",
+        "化学変化"
+      ],
+      "answerIndex": 3,
+      "explanation": "化学変化：物質の種類そのものが変わる変化。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_02_002",
+      "unit": "science.chemistry.change.equation",
+      "category": "thinking",
+      "prompt": "「化学変化」の説明として正しいものは？",
+      "choices": [
+        "気体は、いくつかの原子が結びついた粒子からできているという考え（アボガドロ）",
+        "状態や形は変わるが、物質の種類は変わらない変化",
+        "物質の種類そのものが変わる変化",
+        "反応物と生成物を化学式で表し、矢印で結んだ式"
+      ],
+      "answerIndex": 2,
+      "explanation": "化学変化：物質の種類そのものが変わる変化。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_02_003",
+      "unit": "science.chemistry.change.equation",
+      "category": "knowledge",
+      "prompt": "状態や形は変わるが、物質の種類は変わらない変化。これを何という？",
+      "choices": [
+        "イオン反応式",
+        "物理変化",
+        "原子説",
+        "反応物"
+      ],
+      "answerIndex": 1,
+      "explanation": "物理変化：状態や形は変わるが、物質の種類は変わらない変化。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_02_004",
+      "unit": "science.chemistry.change.equation",
+      "category": "thinking",
+      "prompt": "「物理変化」の説明として正しいものは？",
+      "choices": [
+        "反応に関係するイオンだけを使って表した反応式",
+        "すべての物質はそれ以上分割できない粒子からできているという考え（ドルトン）",
+        "化学反応式の左辺に書く、反応する物質",
+        "状態や形は変わるが、物質の種類は変わらない変化"
+      ],
+      "answerIndex": 3,
+      "explanation": "物理変化：状態や形は変わるが、物質の種類は変わらない変化。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_02_005",
+      "unit": "science.chemistry.change.equation.write",
+      "category": "knowledge",
+      "prompt": "反応物と生成物を化学式で表し、矢印で結んだ式。これを何という？",
+      "choices": [
+        "化学反応式",
+        "係数",
+        "過不足",
+        "気体反応の法則"
+      ],
+      "answerIndex": 0,
+      "explanation": "化学反応式：反応物と生成物を化学式で表し、矢印で結んだ式。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_02_006",
+      "unit": "science.chemistry.change.equation.write",
+      "category": "thinking",
+      "prompt": "「化学反応式」の説明として正しいものは？",
+      "choices": [
+        "反応物と生成物を化学式で表し、矢印で結んだ式",
+        "化学反応式で、両辺の原子の数がそろうように化学式の前につける数",
+        "気体どうしの反応で、反応・生成する気体の体積は同温・同圧で簡単な整数比になるという法則（ゲーリュサック）",
+        "反応物の一方が使い切られ、もう一方が余ること。少ないほうの量で生成物の量が決まる"
+      ],
+      "answerIndex": 0,
+      "explanation": "化学反応式：反応物と生成物を化学式で表し、矢印で結んだ式。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_02_007",
+      "unit": "science.chemistry.change.equation.write",
+      "category": "knowledge",
+      "prompt": "化学反応式の左辺に書く、反応する物質。これを何という？",
+      "choices": [
+        "生成物",
+        "化学変化",
+        "反応物",
+        "気体反応の法則"
+      ],
+      "answerIndex": 2,
+      "explanation": "反応物：化学反応式の左辺に書く、反応する物質。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_02_008",
+      "unit": "science.chemistry.change.equation.write",
+      "category": "thinking",
+      "prompt": "「反応物」の説明として正しいものは？",
+      "choices": [
+        "化学反応式の左辺に書く、反応する物質",
+        "物質の種類そのものが変わる変化",
+        "化学反応式の右辺に書く、反応によってできる物質",
+        "気体どうしの反応で、反応・生成する気体の体積は同温・同圧で簡単な整数比になるという法則（ゲーリュサック）"
+      ],
+      "answerIndex": 0,
+      "explanation": "反応物：化学反応式の左辺に書く、反応する物質。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_02_009",
+      "unit": "science.chemistry.change.equation.write",
+      "category": "knowledge",
+      "prompt": "化学反応式の右辺に書く、反応によってできる物質。これを何という？",
+      "choices": [
+        "原子説",
+        "生成物",
+        "気体反応の法則",
+        "化学反応式"
+      ],
+      "answerIndex": 1,
+      "explanation": "生成物：化学反応式の右辺に書く、反応によってできる物質。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_02_010",
+      "unit": "science.chemistry.change.equation.write",
+      "category": "thinking",
+      "prompt": "「生成物」の説明として正しいものは？",
+      "choices": [
+        "反応物と生成物を化学式で表し、矢印で結んだ式",
+        "すべての物質はそれ以上分割できない粒子からできているという考え（ドルトン）",
+        "化学反応式の右辺に書く、反応によってできる物質",
+        "気体どうしの反応で、反応・生成する気体の体積は同温・同圧で簡単な整数比になるという法則（ゲーリュサック）"
+      ],
+      "answerIndex": 2,
+      "explanation": "生成物：化学反応式の右辺に書く、反応によってできる物質。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_02_011",
+      "unit": "science.chemistry.change.equation.write",
+      "category": "knowledge",
+      "prompt": "化学反応式で、両辺の原子の数がそろうように化学式の前につける数。これを何という？",
+      "choices": [
+        "原子説",
+        "質量保存の法則",
+        "過不足",
+        "係数"
+      ],
+      "answerIndex": 3,
+      "explanation": "係数：化学反応式で、両辺の原子の数がそろうように化学式の前につける数。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_02_012",
+      "unit": "science.chemistry.change.equation.write",
+      "category": "thinking",
+      "prompt": "「係数」の説明として正しいものは？",
+      "choices": [
+        "すべての物質はそれ以上分割できない粒子からできているという考え（ドルトン）",
+        "反応物の一方が使い切られ、もう一方が余ること。少ないほうの量で生成物の量が決まる",
+        "化学反応式で、両辺の原子の数がそろうように化学式の前につける数",
+        "化学変化の前後で、物質全体の質量の総和は変わらないという法則（ラボアジエ）"
+      ],
+      "answerIndex": 2,
+      "explanation": "係数：化学反応式で、両辺の原子の数がそろうように化学式の前につける数。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_02_013",
+      "unit": "science.chemistry.change.equation",
+      "category": "knowledge",
+      "prompt": "反応に関係するイオンだけを使って表した反応式。これを何という？",
+      "choices": [
+        "イオン反応式",
+        "分子説",
+        "倍数比例の法則",
+        "過不足"
+      ],
+      "answerIndex": 0,
+      "explanation": "イオン反応式：反応に関係するイオンだけを使って表した反応式。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_02_014",
+      "unit": "science.chemistry.change.equation",
+      "category": "thinking",
+      "prompt": "「イオン反応式」の説明として正しいものは？",
+      "choices": [
+        "反応に関係するイオンだけを使って表した反応式",
+        "反応物の一方が使い切られ、もう一方が余ること。少ないほうの量で生成物の量が決まる",
+        "2種類の元素から複数の化合物ができるとき、一方の一定質量と結びつく他方の質量は簡単な整数比になるという法則（ドルトン）",
+        "気体は、いくつかの原子が結びついた粒子からできているという考え（アボガドロ）"
+      ],
+      "answerIndex": 0,
+      "explanation": "イオン反応式：反応に関係するイオンだけを使って表した反応式。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_02_015",
+      "unit": "science.chemistry.change.equation",
+      "category": "knowledge",
+      "prompt": "化学変化の前後で、物質全体の質量の総和は変わらないという法則（ラボアジエ）。これを何という？",
+      "choices": [
+        "定比例の法則",
+        "質量保存の法則",
+        "係数",
+        "倍数比例の法則"
+      ],
+      "answerIndex": 1,
+      "explanation": "質量保存の法則：化学変化の前後で、物質全体の質量の総和は変わらないという法則（ラボアジエ）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_02_016",
+      "unit": "science.chemistry.change.equation",
+      "category": "thinking",
+      "prompt": "「質量保存の法則」の説明として正しいものは？",
+      "choices": [
+        "化学変化の前後で、物質全体の質量の総和は変わらないという法則（ラボアジエ）",
+        "化学反応式で、両辺の原子の数がそろうように化学式の前につける数",
+        "2種類の元素から複数の化合物ができるとき、一方の一定質量と結びつく他方の質量は簡単な整数比になるという法則（ドルトン）",
+        "1つの化合物を構成する成分元素の質量の比はつねに一定であるという法則（プルースト）"
+      ],
+      "answerIndex": 0,
+      "explanation": "質量保存の法則：化学変化の前後で、物質全体の質量の総和は変わらないという法則（ラボアジエ）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_02_017",
+      "unit": "science.chemistry.change.equation",
+      "category": "knowledge",
+      "prompt": "1つの化合物を構成する成分元素の質量の比はつねに一定であるという法則（プルースト）。これを何という？",
+      "choices": [
+        "定比例の法則",
+        "生成物",
+        "化学変化",
+        "倍数比例の法則"
+      ],
+      "answerIndex": 0,
+      "explanation": "定比例の法則：1つの化合物を構成する成分元素の質量の比はつねに一定であるという法則（プルースト）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_02_018",
+      "unit": "science.chemistry.change.equation",
+      "category": "thinking",
+      "prompt": "「定比例の法則」の説明として正しいものは？",
+      "choices": [
+        "1つの化合物を構成する成分元素の質量の比はつねに一定であるという法則（プルースト）",
+        "2種類の元素から複数の化合物ができるとき、一方の一定質量と結びつく他方の質量は簡単な整数比になるという法則（ドルトン）",
+        "化学反応式の右辺に書く、反応によってできる物質",
+        "物質の種類そのものが変わる変化"
+      ],
+      "answerIndex": 0,
+      "explanation": "定比例の法則：1つの化合物を構成する成分元素の質量の比はつねに一定であるという法則（プルースト）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_02_019",
+      "unit": "science.chemistry.change.equation",
+      "category": "knowledge",
+      "prompt": "2種類の元素から複数の化合物ができるとき、一方の一定質量と結びつく他方の質量は簡単な整数比になるという法則（ドルトン）。これを何という？",
+      "choices": [
+        "倍数比例の法則",
+        "係数",
+        "化学変化",
+        "質量保存の法則"
+      ],
+      "answerIndex": 0,
+      "explanation": "倍数比例の法則：2種類の元素から複数の化合物ができるとき、一方の一定質量と結びつく他方の質量は簡単な整数比になるという法則（ドルトン）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_02_020",
+      "unit": "science.chemistry.change.equation",
+      "category": "thinking",
+      "prompt": "「倍数比例の法則」の説明として正しいものは？",
+      "choices": [
+        "化学反応式で、両辺の原子の数がそろうように化学式の前につける数",
+        "2種類の元素から複数の化合物ができるとき、一方の一定質量と結びつく他方の質量は簡単な整数比になるという法則（ドルトン）",
+        "物質の種類そのものが変わる変化",
+        "化学変化の前後で、物質全体の質量の総和は変わらないという法則（ラボアジエ）"
+      ],
+      "answerIndex": 1,
+      "explanation": "倍数比例の法則：2種類の元素から複数の化合物ができるとき、一方の一定質量と結びつく他方の質量は簡単な整数比になるという法則（ドルトン）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_02_021",
+      "unit": "science.chemistry.change.equation",
+      "category": "knowledge",
+      "prompt": "気体どうしの反応で、反応・生成する気体の体積は同温・同圧で簡単な整数比になるという法則（ゲーリュサック）。これを何という？",
+      "choices": [
+        "係数",
+        "気体反応の法則",
+        "分子説",
+        "イオン反応式"
+      ],
+      "answerIndex": 1,
+      "explanation": "気体反応の法則：気体どうしの反応で、反応・生成する気体の体積は同温・同圧で簡単な整数比になるという法則（ゲーリュサック）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_02_022",
+      "unit": "science.chemistry.change.equation",
+      "category": "thinking",
+      "prompt": "「気体反応の法則」の説明として正しいものは？",
+      "choices": [
+        "気体どうしの反応で、反応・生成する気体の体積は同温・同圧で簡単な整数比になるという法則（ゲーリュサック）",
+        "気体は、いくつかの原子が結びついた粒子からできているという考え（アボガドロ）",
+        "化学反応式で、両辺の原子の数がそろうように化学式の前につける数",
+        "反応に関係するイオンだけを使って表した反応式"
+      ],
+      "answerIndex": 0,
+      "explanation": "気体反応の法則：気体どうしの反応で、反応・生成する気体の体積は同温・同圧で簡単な整数比になるという法則（ゲーリュサック）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_02_023",
+      "unit": "science.chemistry.change.equation",
+      "category": "knowledge",
+      "prompt": "すべての物質はそれ以上分割できない粒子からできているという考え（ドルトン）。これを何という？",
+      "choices": [
+        "原子説",
+        "定比例の法則",
+        "過不足",
+        "化学反応式"
+      ],
+      "answerIndex": 0,
+      "explanation": "原子説：すべての物質はそれ以上分割できない粒子からできているという考え（ドルトン）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_02_024",
+      "unit": "science.chemistry.change.equation",
+      "category": "thinking",
+      "prompt": "「原子説」の説明として正しいものは？",
+      "choices": [
+        "1つの化合物を構成する成分元素の質量の比はつねに一定であるという法則（プルースト）",
+        "すべての物質はそれ以上分割できない粒子からできているという考え（ドルトン）",
+        "反応物の一方が使い切られ、もう一方が余ること。少ないほうの量で生成物の量が決まる",
+        "反応物と生成物を化学式で表し、矢印で結んだ式"
+      ],
+      "answerIndex": 1,
+      "explanation": "原子説：すべての物質はそれ以上分割できない粒子からできているという考え（ドルトン）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_02_025",
+      "unit": "science.chemistry.change.equation",
+      "category": "knowledge",
+      "prompt": "気体は、いくつかの原子が結びついた粒子からできているという考え（アボガドロ）。これを何という？",
+      "choices": [
+        "分子説",
+        "化学反応式",
+        "反応物",
+        "原子説"
+      ],
+      "answerIndex": 0,
+      "explanation": "分子説：気体は、いくつかの原子が結びついた粒子からできているという考え（アボガドロ）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_02_026",
+      "unit": "science.chemistry.change.equation",
+      "category": "thinking",
+      "prompt": "「分子説」の説明として正しいものは？",
+      "choices": [
+        "化学反応式の左辺に書く、反応する物質",
+        "すべての物質はそれ以上分割できない粒子からできているという考え（ドルトン）",
+        "反応物と生成物を化学式で表し、矢印で結んだ式",
+        "気体は、いくつかの原子が結びついた粒子からできているという考え（アボガドロ）"
+      ],
+      "answerIndex": 3,
+      "explanation": "分子説：気体は、いくつかの原子が結びついた粒子からできているという考え（アボガドロ）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_02_027",
+      "unit": "science.chemistry.change.equation.quantity",
+      "category": "knowledge",
+      "prompt": "反応物の一方が使い切られ、もう一方が余ること。少ないほうの量で生成物の量が決まる。これを何という？",
+      "choices": [
+        "係数",
+        "過不足",
+        "化学反応式",
+        "化学変化"
+      ],
+      "answerIndex": 1,
+      "explanation": "過不足：反応物の一方が使い切られ、もう一方が余ること。少ないほうの量で生成物の量が決まる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_02_028",
+      "unit": "science.chemistry.change.equation.quantity",
+      "category": "thinking",
+      "prompt": "「過不足」の説明として正しいものは？",
+      "choices": [
+        "物質の種類そのものが変わる変化",
+        "化学反応式で、両辺の原子の数がそろうように化学式の前につける数",
+        "反応物と生成物を化学式で表し、矢印で結んだ式",
+        "反応物の一方が使い切られ、もう一方が余ること。少ないほうの量で生成物の量が決まる"
+      ],
+      "answerIndex": 3,
+      "explanation": "過不足：反応物の一方が使い切られ、もう一方が余ること。少ないほうの量で生成物の量が決まる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    }
+  ]
+}

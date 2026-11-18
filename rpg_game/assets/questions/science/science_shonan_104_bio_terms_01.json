@@ -1,0 +1,1310 @@
+{
+  "setId": "science_shonan_104_bio_terms_01",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "science_shonan_104_bio_terms_01_001",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "category": "knowledge",
+      "prompt": "体液がつくる、体の細胞をとりまく環境。これを何という？",
+      "choices": [
+        "開放血管系",
+        "体内環境",
+        "リンパ液",
+        "赤血球"
+      ],
+      "answerIndex": 1,
+      "explanation": "体内環境：体液がつくる、体の細胞をとりまく環境。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_002",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "category": "thinking",
+      "prompt": "「体内環境」の説明として正しいものは？",
+      "choices": [
+        "毛細血管がなく、血液が組織の間に流れ出る循環系（昆虫など）",
+        "核をもたず、ヘモグロビンを含み酸素を運ぶ血球",
+        "体液がつくる、体の細胞をとりまく環境",
+        "リンパ管の中を流れる体液"
+      ],
+      "answerIndex": 2,
+      "explanation": "体内環境：体液がつくる、体の細胞をとりまく環境。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_003",
+      "unit": "science.biology.body.homeostasis",
+      "category": "knowledge",
+      "prompt": "体内環境を一定の範囲に保とうとするはたらき（ホメオスタシス）。これを何という？",
+      "choices": [
+        "恒常性",
+        "動脈血",
+        "血しょう",
+        "線溶"
+      ],
+      "answerIndex": 0,
+      "explanation": "恒常性：体内環境を一定の範囲に保とうとするはたらき（ホメオスタシス）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_004",
+      "unit": "science.biology.body.homeostasis",
+      "category": "thinking",
+      "prompt": "「恒常性」の説明として正しいものは？",
+      "choices": [
+        "酸素を多く含む血液（肺静脈や大動脈を流れる）",
+        "血管が修復されたあと、血ぺいを溶かして取り除くしくみ（フィブリン溶解）",
+        "体内環境を一定の範囲に保とうとするはたらき（ホメオスタシス）",
+        "血液の液体成分。約90％が水で、グルコース・タンパク質・無機塩類などを含む"
+      ],
+      "answerIndex": 2,
+      "explanation": "恒常性：体内環境を一定の範囲に保とうとするはたらき（ホメオスタシス）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_005",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "category": "knowledge",
+      "prompt": "血しょうが毛細血管からしみ出して、組織の細胞の間を満たしている液体。これを何という？",
+      "choices": [
+        "フィブリン",
+        "動脈血",
+        "体循環",
+        "組織液"
+      ],
+      "answerIndex": 3,
+      "explanation": "組織液：血しょうが毛細血管からしみ出して、組織の細胞の間を満たしている液体。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_006",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "category": "thinking",
+      "prompt": "「組織液」の説明として正しいものは？",
+      "choices": [
+        "血液凝固のときにできる繊維状のタンパク質",
+        "左心室から全身を通って右心房に戻る血液の流れ",
+        "酸素を多く含む血液（肺静脈や大動脈を流れる）",
+        "血しょうが毛細血管からしみ出して、組織の細胞の間を満たしている液体"
+      ],
+      "answerIndex": 3,
+      "explanation": "組織液：血しょうが毛細血管からしみ出して、組織の細胞の間を満たしている液体。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_007",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "category": "knowledge",
+      "prompt": "リンパ管の中を流れる体液。これを何という？",
+      "choices": [
+        "線溶",
+        "リンパ液",
+        "恒常性",
+        "血小板"
+      ],
+      "answerIndex": 1,
+      "explanation": "リンパ液：リンパ管の中を流れる体液。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_008",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "category": "thinking",
+      "prompt": "「リンパ液」の説明として正しいものは？",
+      "choices": [
+        "核をもたない細胞の断片で、血液凝固にはたらく",
+        "体内環境を一定の範囲に保とうとするはたらき（ホメオスタシス）",
+        "血管が修復されたあと、血ぺいを溶かして取り除くしくみ（フィブリン溶解）",
+        "リンパ管の中を流れる体液"
+      ],
+      "answerIndex": 3,
+      "explanation": "リンパ液：リンパ管の中を流れる体液。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_009",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "category": "knowledge",
+      "prompt": "血液の液体成分。約90％が水で、グルコース・タンパク質・無機塩類などを含む。これを何という？",
+      "choices": [
+        "動脈血",
+        "体内環境",
+        "体循環",
+        "血しょう"
+      ],
+      "answerIndex": 3,
+      "explanation": "血しょう：血液の液体成分。約90％が水で、グルコース・タンパク質・無機塩類などを含む。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_010",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "category": "thinking",
+      "prompt": "「血しょう」の説明として正しいものは？",
+      "choices": [
+        "酸素を多く含む血液（肺静脈や大動脈を流れる）",
+        "血液の液体成分。約90％が水で、グルコース・タンパク質・無機塩類などを含む",
+        "体液がつくる、体の細胞をとりまく環境",
+        "左心室から全身を通って右心房に戻る血液の流れ"
+      ],
+      "answerIndex": 1,
+      "explanation": "血しょう：血液の液体成分。約90％が水で、グルコース・タンパク質・無機塩類などを含む。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_011",
+      "unit": "science.biology.body.homeostasis",
+      "category": "knowledge",
+      "prompt": "核をもたず、ヘモグロビンを含み酸素を運ぶ血球。これを何という？",
+      "choices": [
+        "線溶",
+        "赤血球",
+        "肺循環",
+        "血液凝固"
+      ],
+      "answerIndex": 1,
+      "explanation": "赤血球：核をもたず、ヘモグロビンを含み酸素を運ぶ血球。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_012",
+      "unit": "science.biology.body.homeostasis",
+      "category": "thinking",
+      "prompt": "「赤血球」の説明として正しいものは？",
+      "choices": [
+        "核をもたず、ヘモグロビンを含み酸素を運ぶ血球",
+        "右心室から肺を通って左心房に戻る血液の流れ",
+        "血管が傷ついたとき、フィブリンが血球をからめて血ぺいをつくり出血を止めるしくみ",
+        "血管が修復されたあと、血ぺいを溶かして取り除くしくみ（フィブリン溶解）"
+      ],
+      "answerIndex": 0,
+      "explanation": "赤血球：核をもたず、ヘモグロビンを含み酸素を運ぶ血球。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_013",
+      "unit": "science.biology.body.homeostasis",
+      "category": "knowledge",
+      "prompt": "核をもち、免疫にはたらく血球。これを何という？",
+      "choices": [
+        "体循環",
+        "白血球",
+        "血しょう",
+        "体内環境"
+      ],
+      "answerIndex": 1,
+      "explanation": "白血球：核をもち、免疫にはたらく血球。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_014",
+      "unit": "science.biology.body.homeostasis",
+      "category": "thinking",
+      "prompt": "「白血球」の説明として正しいものは？",
+      "choices": [
+        "核をもち、免疫にはたらく血球",
+        "左心室から全身を通って右心房に戻る血液の流れ",
+        "血液の液体成分。約90％が水で、グルコース・タンパク質・無機塩類などを含む",
+        "体液がつくる、体の細胞をとりまく環境"
+      ],
+      "answerIndex": 0,
+      "explanation": "白血球：核をもち、免疫にはたらく血球。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_015",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "category": "knowledge",
+      "prompt": "核をもたない細胞の断片で、血液凝固にはたらく。これを何という？",
+      "choices": [
+        "リンパ液",
+        "体循環",
+        "ヘモグロビン",
+        "血小板"
+      ],
+      "answerIndex": 3,
+      "explanation": "血小板：核をもたない細胞の断片で、血液凝固にはたらく。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_016",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "category": "thinking",
+      "prompt": "「血小板」の説明として正しいものは？",
+      "choices": [
+        "核をもたない細胞の断片で、血液凝固にはたらく",
+        "左心室から全身を通って右心房に戻る血液の流れ",
+        "リンパ管の中を流れる体液",
+        "赤血球に含まれ、酸素濃度が高い所で酸素と結合し、低い所で酸素を離すタンパク質"
+      ],
+      "answerIndex": 0,
+      "explanation": "血小板：核をもたない細胞の断片で、血液凝固にはたらく。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_017",
+      "unit": "science.biology.body.homeostasis",
+      "category": "knowledge",
+      "prompt": "赤血球に含まれ、酸素濃度が高い所で酸素と結合し、低い所で酸素を離すタンパク質。これを何という？",
+      "choices": [
+        "動脈血",
+        "フィブリン",
+        "体内環境",
+        "ヘモグロビン"
+      ],
+      "answerIndex": 3,
+      "explanation": "ヘモグロビン：赤血球に含まれ、酸素濃度が高い所で酸素と結合し、低い所で酸素を離すタンパク質。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_018",
+      "unit": "science.biology.body.homeostasis",
+      "category": "thinking",
+      "prompt": "「ヘモグロビン」の説明として正しいものは？",
+      "choices": [
+        "血液凝固のときにできる繊維状のタンパク質",
+        "赤血球に含まれ、酸素濃度が高い所で酸素と結合し、低い所で酸素を離すタンパク質",
+        "体液がつくる、体の細胞をとりまく環境",
+        "酸素を多く含む血液（肺静脈や大動脈を流れる）"
+      ],
+      "answerIndex": 1,
+      "explanation": "ヘモグロビン：赤血球に含まれ、酸素濃度が高い所で酸素と結合し、低い所で酸素を離すタンパク質。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_019",
+      "unit": "science.biology.body.homeostasis",
+      "category": "knowledge",
+      "prompt": "酸素濃度と、酸素と結合したヘモグロビンの割合との関係を表すグラフ。これを何という？",
+      "choices": [
+        "酸素解離曲線",
+        "体循環",
+        "体内環境",
+        "開放血管系"
+      ],
+      "answerIndex": 0,
+      "explanation": "酸素解離曲線：酸素濃度と、酸素と結合したヘモグロビンの割合との関係を表すグラフ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_020",
+      "unit": "science.biology.body.homeostasis",
+      "category": "thinking",
+      "prompt": "「酸素解離曲線」の説明として正しいものは？",
+      "choices": [
+        "体液がつくる、体の細胞をとりまく環境",
+        "酸素濃度と、酸素と結合したヘモグロビンの割合との関係を表すグラフ",
+        "毛細血管がなく、血液が組織の間に流れ出る循環系（昆虫など）",
+        "左心室から全身を通って右心房に戻る血液の流れ"
+      ],
+      "answerIndex": 1,
+      "explanation": "酸素解離曲線：酸素濃度と、酸素と結合したヘモグロビンの割合との関係を表すグラフ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_021",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "category": "knowledge",
+      "prompt": "血管が傷ついたとき、フィブリンが血球をからめて血ぺいをつくり出血を止めるしくみ。これを何という？",
+      "choices": [
+        "白血球",
+        "線溶",
+        "血液凝固",
+        "動脈血"
+      ],
+      "answerIndex": 2,
+      "explanation": "血液凝固：血管が傷ついたとき、フィブリンが血球をからめて血ぺいをつくり出血を止めるしくみ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_022",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "category": "thinking",
+      "prompt": "「血液凝固」の説明として正しいものは？",
+      "choices": [
+        "血管が修復されたあと、血ぺいを溶かして取り除くしくみ（フィブリン溶解）",
+        "血管が傷ついたとき、フィブリンが血球をからめて血ぺいをつくり出血を止めるしくみ",
+        "核をもち、免疫にはたらく血球",
+        "酸素を多く含む血液（肺静脈や大動脈を流れる）"
+      ],
+      "answerIndex": 1,
+      "explanation": "血液凝固：血管が傷ついたとき、フィブリンが血球をからめて血ぺいをつくり出血を止めるしくみ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_023",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "category": "knowledge",
+      "prompt": "血液凝固のときにできる繊維状のタンパク質。これを何という？",
+      "choices": [
+        "フィブリン",
+        "体内環境",
+        "線溶",
+        "血小板"
+      ],
+      "answerIndex": 0,
+      "explanation": "フィブリン：血液凝固のときにできる繊維状のタンパク質。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_024",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "category": "thinking",
+      "prompt": "「フィブリン」の説明として正しいものは？",
+      "choices": [
+        "核をもたない細胞の断片で、血液凝固にはたらく",
+        "血管が修復されたあと、血ぺいを溶かして取り除くしくみ（フィブリン溶解）",
+        "体液がつくる、体の細胞をとりまく環境",
+        "血液凝固のときにできる繊維状のタンパク質"
+      ],
+      "answerIndex": 3,
+      "explanation": "フィブリン：血液凝固のときにできる繊維状のタンパク質。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_025",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "category": "knowledge",
+      "prompt": "血液を放置したときに血ぺいの上にできる、うすい黄色の液体。これを何という？",
+      "choices": [
+        "血清",
+        "ヘモグロビン",
+        "動脈血",
+        "体循環"
+      ],
+      "answerIndex": 0,
+      "explanation": "血清：血液を放置したときに血ぺいの上にできる、うすい黄色の液体。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_026",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "category": "thinking",
+      "prompt": "「血清」の説明として正しいものは？",
+      "choices": [
+        "赤血球に含まれ、酸素濃度が高い所で酸素と結合し、低い所で酸素を離すタンパク質",
+        "血液を放置したときに血ぺいの上にできる、うすい黄色の液体",
+        "左心室から全身を通って右心房に戻る血液の流れ",
+        "酸素を多く含む血液（肺静脈や大動脈を流れる）"
+      ],
+      "answerIndex": 1,
+      "explanation": "血清：血液を放置したときに血ぺいの上にできる、うすい黄色の液体。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_027",
+      "unit": "science.biology.body.homeostasis",
+      "category": "knowledge",
+      "prompt": "血管が修復されたあと、血ぺいを溶かして取り除くしくみ（フィブリン溶解）。これを何という？",
+      "choices": [
+        "フィブリン",
+        "血小板",
+        "線溶",
+        "リンパ液"
+      ],
+      "answerIndex": 2,
+      "explanation": "線溶：血管が修復されたあと、血ぺいを溶かして取り除くしくみ（フィブリン溶解）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_028",
+      "unit": "science.biology.body.homeostasis",
+      "category": "thinking",
+      "prompt": "「線溶」の説明として正しいものは？",
+      "choices": [
+        "核をもたない細胞の断片で、血液凝固にはたらく",
+        "血管が修復されたあと、血ぺいを溶かして取り除くしくみ（フィブリン溶解）",
+        "血液凝固のときにできる繊維状のタンパク質",
+        "リンパ管の中を流れる体液"
+      ],
+      "answerIndex": 1,
+      "explanation": "線溶：血管が修復されたあと、血ぺいを溶かして取り除くしくみ（フィブリン溶解）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_029",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "category": "knowledge",
+      "prompt": "右心室から肺を通って左心房に戻る血液の流れ。これを何という？",
+      "choices": [
+        "血しょう",
+        "肺循環",
+        "体循環",
+        "血小板"
+      ],
+      "answerIndex": 1,
+      "explanation": "肺循環：右心室から肺を通って左心房に戻る血液の流れ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_030",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "category": "thinking",
+      "prompt": "「肺循環」の説明として正しいものは？",
+      "choices": [
+        "核をもたない細胞の断片で、血液凝固にはたらく",
+        "左心室から全身を通って右心房に戻る血液の流れ",
+        "血液の液体成分。約90％が水で、グルコース・タンパク質・無機塩類などを含む",
+        "右心室から肺を通って左心房に戻る血液の流れ"
+      ],
+      "answerIndex": 3,
+      "explanation": "肺循環：右心室から肺を通って左心房に戻る血液の流れ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_031",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "category": "knowledge",
+      "prompt": "左心室から全身を通って右心房に戻る血液の流れ。これを何という？",
+      "choices": [
+        "体循環",
+        "体内環境",
+        "線溶",
+        "動脈血"
+      ],
+      "answerIndex": 0,
+      "explanation": "体循環：左心室から全身を通って右心房に戻る血液の流れ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_032",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "category": "thinking",
+      "prompt": "「体循環」の説明として正しいものは？",
+      "choices": [
+        "左心室から全身を通って右心房に戻る血液の流れ",
+        "酸素を多く含む血液（肺静脈や大動脈を流れる）",
+        "体液がつくる、体の細胞をとりまく環境",
+        "血管が修復されたあと、血ぺいを溶かして取り除くしくみ（フィブリン溶解）"
+      ],
+      "answerIndex": 0,
+      "explanation": "体循環：左心室から全身を通って右心房に戻る血液の流れ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_033",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "category": "knowledge",
+      "prompt": "酸素を多く含む血液（肺静脈や大動脈を流れる）。これを何という？",
+      "choices": [
+        "赤血球",
+        "血液凝固",
+        "リンパ液",
+        "動脈血"
+      ],
+      "answerIndex": 3,
+      "explanation": "動脈血：酸素を多く含む血液（肺静脈や大動脈を流れる）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_034",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "category": "thinking",
+      "prompt": "「動脈血」の説明として正しいものは？",
+      "choices": [
+        "核をもたず、ヘモグロビンを含み酸素を運ぶ血球",
+        "酸素を多く含む血液（肺静脈や大動脈を流れる）",
+        "血管が傷ついたとき、フィブリンが血球をからめて血ぺいをつくり出血を止めるしくみ",
+        "リンパ管の中を流れる体液"
+      ],
+      "answerIndex": 1,
+      "explanation": "動脈血：酸素を多く含む血液（肺静脈や大動脈を流れる）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_035",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "category": "knowledge",
+      "prompt": "毛細血管がなく、血液が組織の間に流れ出る循環系（昆虫など）。これを何という？",
+      "choices": [
+        "リンパ液",
+        "開放血管系",
+        "酸素解離曲線",
+        "フィブリン"
+      ],
+      "answerIndex": 1,
+      "explanation": "開放血管系：毛細血管がなく、血液が組織の間に流れ出る循環系（昆虫など）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_036",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "category": "thinking",
+      "prompt": "「開放血管系」の説明として正しいものは？",
+      "choices": [
+        "毛細血管がなく、血液が組織の間に流れ出る循環系（昆虫など）",
+        "リンパ管の中を流れる体液",
+        "酸素濃度と、酸素と結合したヘモグロビンの割合との関係を表すグラフ",
+        "血液凝固のときにできる繊維状のタンパク質"
+      ],
+      "answerIndex": 0,
+      "explanation": "開放血管系：毛細血管がなく、血液が組織の間に流れ出る循環系（昆虫など）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_037",
+      "unit": "science.biology.body.homeostasis.organ",
+      "category": "knowledge",
+      "prompt": "腎小体と細尿管からなる、腎臓の構造と機能の単位（ネフロン）。これを何という？",
+      "choices": [
+        "尿崩症",
+        "腎単位",
+        "集合管",
+        "イヌリン"
+      ],
+      "answerIndex": 1,
+      "explanation": "腎単位：腎小体と細尿管からなる、腎臓の構造と機能の単位（ネフロン）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_038",
+      "unit": "science.biology.body.homeostasis.organ",
+      "category": "thinking",
+      "prompt": "「腎単位」の説明として正しいものは？",
+      "choices": [
+        "ろ過されるが再吸収も分泌もされないので、原尿量を求めるのに使う物質",
+        "腎小体と細尿管からなる、腎臓の構造と機能の単位（ネフロン）",
+        "細尿管から続く管で、バソプレシンのはたらきで水を再吸収する",
+        "バソプレシンが分泌されず、薄い尿が大量に出る病気"
+      ],
+      "answerIndex": 1,
+      "explanation": "腎単位：腎小体と細尿管からなる、腎臓の構造と機能の単位（ネフロン）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_039",
+      "unit": "science.biology.body.homeostasis",
+      "category": "knowledge",
+      "prompt": "腎小体にある、毛細血管が球状に集まった部分。これを何という？",
+      "choices": [
+        "原尿",
+        "糸球体",
+        "尿素",
+        "尿崩症"
+      ],
+      "answerIndex": 1,
+      "explanation": "糸球体：腎小体にある、毛細血管が球状に集まった部分。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_040",
+      "unit": "science.biology.body.homeostasis",
+      "category": "thinking",
+      "prompt": "「糸球体」の説明として正しいものは？",
+      "choices": [
+        "アンモニアから肝臓でつくられる、毒性の低い物質",
+        "血液が糸球体からボーマンのうへろ過されてできた液体",
+        "腎小体にある、毛細血管が球状に集まった部分",
+        "バソプレシンが分泌されず、薄い尿が大量に出る病気"
+      ],
+      "answerIndex": 2,
+      "explanation": "糸球体：腎小体にある、毛細血管が球状に集まった部分。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_041",
+      "unit": "science.biology.body.homeostasis",
+      "category": "knowledge",
+      "prompt": "糸球体を包む袋。これを何という？",
+      "choices": [
+        "再吸収",
+        "肝臓",
+        "胆汁",
+        "ボーマンのう"
+      ],
+      "answerIndex": 3,
+      "explanation": "ボーマンのう：糸球体を包む袋。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_042",
+      "unit": "science.biology.body.homeostasis",
+      "category": "thinking",
+      "prompt": "「ボーマンのう」の説明として正しいものは？",
+      "choices": [
+        "肝臓でつくられ、脂肪の消化を助ける液体",
+        "原尿から、グルコースや水・Na⁺など必要な物質を血液中にもどすこと",
+        "グリコーゲンの貯蔵、解毒、尿素の合成、胆汁の生成などを行う器官",
+        "糸球体を包む袋"
+      ],
+      "answerIndex": 3,
+      "explanation": "ボーマンのう：糸球体を包む袋。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_043",
+      "unit": "science.biology.body.homeostasis.organ",
+      "category": "knowledge",
+      "prompt": "腎小体から続く管で、必要な物質を再吸収する（腎細管）。これを何という？",
+      "choices": [
+        "尿崩症",
+        "イヌリン",
+        "濃縮率",
+        "細尿管"
+      ],
+      "answerIndex": 3,
+      "explanation": "細尿管：腎小体から続く管で、必要な物質を再吸収する（腎細管）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_044",
+      "unit": "science.biology.body.homeostasis.organ",
+      "category": "thinking",
+      "prompt": "「細尿管」の説明として正しいものは？",
+      "choices": [
+        "尿中の濃度が血しょう中の濃度の何倍かを表す値",
+        "ろ過されるが再吸収も分泌もされないので、原尿量を求めるのに使う物質",
+        "腎小体から続く管で、必要な物質を再吸収する（腎細管）",
+        "バソプレシンが分泌されず、薄い尿が大量に出る病気"
+      ],
+      "answerIndex": 2,
+      "explanation": "細尿管：腎小体から続く管で、必要な物質を再吸収する（腎細管）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_045",
+      "unit": "science.biology.body.homeostasis.organ",
+      "category": "knowledge",
+      "prompt": "血液が糸球体からボーマンのうへろ過されてできた液体。これを何という？",
+      "choices": [
+        "濃縮率",
+        "原尿",
+        "肝臓",
+        "腎単位"
+      ],
+      "answerIndex": 1,
+      "explanation": "原尿：血液が糸球体からボーマンのうへろ過されてできた液体。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_046",
+      "unit": "science.biology.body.homeostasis.organ",
+      "category": "thinking",
+      "prompt": "「原尿」の説明として正しいものは？",
+      "choices": [
+        "腎小体と細尿管からなる、腎臓の構造と機能の単位（ネフロン）",
+        "尿中の濃度が血しょう中の濃度の何倍かを表す値",
+        "血液が糸球体からボーマンのうへろ過されてできた液体",
+        "グリコーゲンの貯蔵、解毒、尿素の合成、胆汁の生成などを行う器官"
+      ],
+      "answerIndex": 2,
+      "explanation": "原尿：血液が糸球体からボーマンのうへろ過されてできた液体。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_047",
+      "unit": "science.biology.body.homeostasis.organ",
+      "category": "knowledge",
+      "prompt": "原尿から、グルコースや水・Na⁺など必要な物質を血液中にもどすこと。これを何という？",
+      "choices": [
+        "再吸収",
+        "尿素",
+        "イヌリン",
+        "細尿管"
+      ],
+      "answerIndex": 0,
+      "explanation": "再吸収：原尿から、グルコースや水・Na⁺など必要な物質を血液中にもどすこと。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_048",
+      "unit": "science.biology.body.homeostasis.organ",
+      "category": "thinking",
+      "prompt": "「再吸収」の説明として正しいものは？",
+      "choices": [
+        "原尿から、グルコースや水・Na⁺など必要な物質を血液中にもどすこと",
+        "アンモニアから肝臓でつくられる、毒性の低い物質",
+        "腎小体から続く管で、必要な物質を再吸収する（腎細管）",
+        "ろ過されるが再吸収も分泌もされないので、原尿量を求めるのに使う物質"
+      ],
+      "answerIndex": 0,
+      "explanation": "再吸収：原尿から、グルコースや水・Na⁺など必要な物質を血液中にもどすこと。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_049",
+      "unit": "science.biology.body.homeostasis.temperature",
+      "category": "knowledge",
+      "prompt": "細尿管から続く管で、バソプレシンのはたらきで水を再吸収する。これを何という？",
+      "choices": [
+        "ボーマンのう",
+        "集合管",
+        "尿素",
+        "再吸収"
+      ],
+      "answerIndex": 1,
+      "explanation": "集合管：細尿管から続く管で、バソプレシンのはたらきで水を再吸収する。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_050",
+      "unit": "science.biology.body.homeostasis.temperature",
+      "category": "thinking",
+      "prompt": "「集合管」の説明として正しいものは？",
+      "choices": [
+        "原尿から、グルコースや水・Na⁺など必要な物質を血液中にもどすこと",
+        "糸球体を包む袋",
+        "アンモニアから肝臓でつくられる、毒性の低い物質",
+        "細尿管から続く管で、バソプレシンのはたらきで水を再吸収する"
+      ],
+      "answerIndex": 3,
+      "explanation": "集合管：細尿管から続く管で、バソプレシンのはたらきで水を再吸収する。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_051",
+      "unit": "science.biology.body.homeostasis.organ",
+      "category": "knowledge",
+      "prompt": "ろ過されるが再吸収も分泌もされないので、原尿量を求めるのに使う物質。これを何という？",
+      "choices": [
+        "再吸収",
+        "イヌリン",
+        "尿崩症",
+        "尿素"
+      ],
+      "answerIndex": 1,
+      "explanation": "イヌリン：ろ過されるが再吸収も分泌もされないので、原尿量を求めるのに使う物質。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_052",
+      "unit": "science.biology.body.homeostasis.organ",
+      "category": "thinking",
+      "prompt": "「イヌリン」の説明として正しいものは？",
+      "choices": [
+        "原尿から、グルコースや水・Na⁺など必要な物質を血液中にもどすこと",
+        "バソプレシンが分泌されず、薄い尿が大量に出る病気",
+        "ろ過されるが再吸収も分泌もされないので、原尿量を求めるのに使う物質",
+        "アンモニアから肝臓でつくられる、毒性の低い物質"
+      ],
+      "answerIndex": 2,
+      "explanation": "イヌリン：ろ過されるが再吸収も分泌もされないので、原尿量を求めるのに使う物質。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_053",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "category": "knowledge",
+      "prompt": "尿中の濃度が血しょう中の濃度の何倍かを表す値。これを何という？",
+      "choices": [
+        "濃縮率",
+        "尿崩症",
+        "イヌリン",
+        "糸球体"
+      ],
+      "answerIndex": 0,
+      "explanation": "濃縮率：尿中の濃度が血しょう中の濃度の何倍かを表す値。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_054",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "category": "thinking",
+      "prompt": "「濃縮率」の説明として正しいものは？",
+      "choices": [
+        "腎小体にある、毛細血管が球状に集まった部分",
+        "ろ過されるが再吸収も分泌もされないので、原尿量を求めるのに使う物質",
+        "バソプレシンが分泌されず、薄い尿が大量に出る病気",
+        "尿中の濃度が血しょう中の濃度の何倍かを表す値"
+      ],
+      "answerIndex": 3,
+      "explanation": "濃縮率：尿中の濃度が血しょう中の濃度の何倍かを表す値。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_055",
+      "unit": "science.biology.body.homeostasis.temperature",
+      "category": "knowledge",
+      "prompt": "バソプレシンが分泌されず、薄い尿が大量に出る病気。これを何という？",
+      "choices": [
+        "糸球体",
+        "ボーマンのう",
+        "尿崩症",
+        "濃縮率"
+      ],
+      "answerIndex": 2,
+      "explanation": "尿崩症：バソプレシンが分泌されず、薄い尿が大量に出る病気。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_056",
+      "unit": "science.biology.body.homeostasis.temperature",
+      "category": "thinking",
+      "prompt": "「尿崩症」の説明として正しいものは？",
+      "choices": [
+        "バソプレシンが分泌されず、薄い尿が大量に出る病気",
+        "糸球体を包む袋",
+        "尿中の濃度が血しょう中の濃度の何倍かを表す値",
+        "腎小体にある、毛細血管が球状に集まった部分"
+      ],
+      "answerIndex": 0,
+      "explanation": "尿崩症：バソプレシンが分泌されず、薄い尿が大量に出る病気。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_057",
+      "unit": "science.biology.body.homeostasis.organ",
+      "category": "knowledge",
+      "prompt": "グリコーゲンの貯蔵、解毒、尿素の合成、胆汁の生成などを行う器官。これを何という？",
+      "choices": [
+        "肝臓",
+        "イヌリン",
+        "再吸収",
+        "集合管"
+      ],
+      "answerIndex": 0,
+      "explanation": "肝臓：グリコーゲンの貯蔵、解毒、尿素の合成、胆汁の生成などを行う器官。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_058",
+      "unit": "science.biology.body.homeostasis.organ",
+      "category": "thinking",
+      "prompt": "「肝臓」の説明として正しいものは？",
+      "choices": [
+        "ろ過されるが再吸収も分泌もされないので、原尿量を求めるのに使う物質",
+        "グリコーゲンの貯蔵、解毒、尿素の合成、胆汁の生成などを行う器官",
+        "原尿から、グルコースや水・Na⁺など必要な物質を血液中にもどすこと",
+        "細尿管から続く管で、バソプレシンのはたらきで水を再吸収する"
+      ],
+      "answerIndex": 1,
+      "explanation": "肝臓：グリコーゲンの貯蔵、解毒、尿素の合成、胆汁の生成などを行う器官。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_059",
+      "unit": "science.biology.body.homeostasis.organ",
+      "category": "knowledge",
+      "prompt": "アンモニアから肝臓でつくられる、毒性の低い物質。これを何という？",
+      "choices": [
+        "尿素",
+        "胆汁",
+        "腎単位",
+        "イヌリン"
+      ],
+      "answerIndex": 0,
+      "explanation": "尿素：アンモニアから肝臓でつくられる、毒性の低い物質。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_060",
+      "unit": "science.biology.body.homeostasis.organ",
+      "category": "thinking",
+      "prompt": "「尿素」の説明として正しいものは？",
+      "choices": [
+        "腎小体と細尿管からなる、腎臓の構造と機能の単位（ネフロン）",
+        "肝臓でつくられ、脂肪の消化を助ける液体",
+        "アンモニアから肝臓でつくられる、毒性の低い物質",
+        "ろ過されるが再吸収も分泌もされないので、原尿量を求めるのに使う物質"
+      ],
+      "answerIndex": 2,
+      "explanation": "尿素：アンモニアから肝臓でつくられる、毒性の低い物質。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_061",
+      "unit": "science.biology.body.homeostasis.organ",
+      "category": "knowledge",
+      "prompt": "肝臓でつくられ、脂肪の消化を助ける液体。これを何という？",
+      "choices": [
+        "尿崩症",
+        "原尿",
+        "胆汁",
+        "腎単位"
+      ],
+      "answerIndex": 2,
+      "explanation": "胆汁：肝臓でつくられ、脂肪の消化を助ける液体。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_01_062",
+      "unit": "science.biology.body.homeostasis.organ",
+      "category": "thinking",
+      "prompt": "「胆汁」の説明として正しいものは？",
+      "choices": [
+        "腎小体と細尿管からなる、腎臓の構造と機能の単位（ネフロン）",
+        "バソプレシンが分泌されず、薄い尿が大量に出る病気",
+        "肝臓でつくられ、脂肪の消化を助ける液体",
+        "血液が糸球体からボーマンのうへろ過されてできた液体"
+      ],
+      "answerIndex": 2,
+      "explanation": "胆汁：肝臓でつくられ、脂肪の消化を助ける液体。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    }
+  ]
+}

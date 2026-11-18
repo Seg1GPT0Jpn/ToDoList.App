@@ -1,0 +1,1982 @@
+{
+  "setId": "social_shonan_104_kokyo_terms_02",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "social_shonan_104_kokyo_terms_02_001",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "憲法28条が保障する、団結権・団体交渉権・団体行動権（争議権）。これを何という？",
+      "choices": [
+        "不当労働行為",
+        "サボタージュ",
+        "ストライキ",
+        "労働三権"
+      ],
+      "answerIndex": 3,
+      "explanation": "労働三権：憲法28条が保障する、団結権・団体交渉権・団体行動権（争議権）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_002",
+      "unit": "social.pol.politics.law.labor",
+      "category": "thinking",
+      "prompt": "「労働三権」の説明として正しいものは？",
+      "choices": [
+        "労働者が団結して仕事をしない争議行為（同盟罷業）",
+        "使用者が労働組合の活動を妨げる行為（不利益取扱い・団体交渉拒否・支配介入・経費援助など）",
+        "憲法28条が保障する、団結権・団体交渉権・団体行動権（争議権）",
+        "労働者が仕事の能率を意図的に下げる争議行為（怠業）"
+      ],
+      "answerIndex": 2,
+      "explanation": "労働三権：憲法28条が保障する、団結権・団体交渉権・団体行動権（争議権）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_003",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "労働基準法・労働組合法・労働関係調整法の3つ。これを何という？",
+      "choices": [
+        "技能実習制度",
+        "労働三法",
+        "労働基本権",
+        "人事院勧告"
+      ],
+      "answerIndex": 1,
+      "explanation": "労働三法：労働基準法・労働組合法・労働関係調整法の3つ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_004",
+      "unit": "social.pol.politics.law.labor",
+      "category": "thinking",
+      "prompt": "「労働三法」の説明として正しいものは？",
+      "choices": [
+        "技能の習得を目的に外国人が働く制度。人権問題も多発",
+        "勤労権(憲法27条)＋労働三権(28条)",
+        "争議権が認められない国家公務員の、労働基本権の制約の代償として給与などを勧告する制度",
+        "労働基準法・労働組合法・労働関係調整法の3つ"
+      ],
+      "answerIndex": 3,
+      "explanation": "労働三法：労働基準法・労働組合法・労働関係調整法の3つ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_005",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "労働時間・賃金・休日など、労働条件の最低基準を定めた法律。これを何という？",
+      "choices": [
+        "労働基準法",
+        "労働組合期成会",
+        "男女雇用機会均等法",
+        "ブラック企業"
+      ],
+      "answerIndex": 0,
+      "explanation": "労働基準法：労働時間・賃金・休日など、労働条件の最低基準を定めた法律。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_006",
+      "unit": "social.pol.politics.law.labor",
+      "category": "thinking",
+      "prompt": "「労働基準法」の説明として正しいものは？",
+      "choices": [
+        "労働時間・賃金・休日など、労働条件の最低基準を定めた法律",
+        "1897年に結成され、鉄工組合などの組合づくりを進めた日本の団体",
+        "過重労働や違法労働を強いる企業",
+        "1985年に制定された、雇用での男女差別をなくすための法律（1997年改正で差別を禁止規定に）"
+      ],
+      "answerIndex": 0,
+      "explanation": "労働基準法：労働時間・賃金・休日など、労働条件の最低基準を定めた法律。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_007",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "休憩時間を除き、1日8時間・1週40時間とされる労働時間の上限。これを何という？",
+      "choices": [
+        "同一労働同一賃金",
+        "三六協定",
+        "法定労働時間",
+        "ブラック企業"
+      ],
+      "answerIndex": 2,
+      "explanation": "法定労働時間：休憩時間を除き、1日8時間・1週40時間とされる労働時間の上限。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_008",
+      "unit": "social.pol.politics.law",
+      "category": "thinking",
+      "prompt": "「法定労働時間」の説明として正しいものは？",
+      "choices": [
+        "休憩時間を除き、1日8時間・1週40時間とされる労働時間の上限",
+        "労働者の代表と使用者が結ぶ、時間外・休日労働についての協定（労働基準法36条）",
+        "同じ仕事をしていれば、雇用形態にかかわらず同じ賃金を支払うという考え方",
+        "過重労働や違法労働を強いる企業"
+      ],
+      "answerIndex": 0,
+      "explanation": "法定労働時間：休憩時間を除き、1日8時間・1週40時間とされる労働時間の上限。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_009",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "時間外・休日・深夜の労働に対して支払う、通常より多い賃金（時間外は25％以上）。これを何という？",
+      "choices": [
+        "労働契約",
+        "割増賃金",
+        "特定技能",
+        "緊急調整"
+      ],
+      "answerIndex": 1,
+      "explanation": "割増賃金：時間外・休日・深夜の労働に対して支払う、通常より多い賃金（時間外は25％以上）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_010",
+      "unit": "social.pol.politics.law",
+      "category": "thinking",
+      "prompt": "「割増賃金」の説明として正しいものは？",
+      "choices": [
+        "公益事業などの大規模な争議に対し、内閣総理大臣が決定して50日間争議行為を禁止すること",
+        "労働者が使用者に労働の提供を約束する契約",
+        "時間外・休日・深夜の労働に対して支払う、通常より多い賃金（時間外は25％以上）",
+        "2019年創設。農業・建設など特定の分野で外国人を受け入れ"
+      ],
+      "answerIndex": 2,
+      "explanation": "割増賃金：時間外・休日・深夜の労働に対して支払う、通常より多い賃金（時間外は25％以上）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_011",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "労働者の代表と使用者が結ぶ、時間外・休日労働についての協定（労働基準法36条）。これを何という？",
+      "choices": [
+        "免責(争議行為の)",
+        "就業規則",
+        "高度プロフェッショナル制度",
+        "三六協定"
+      ],
+      "answerIndex": 3,
+      "explanation": "三六協定：労働者の代表と使用者が結ぶ、時間外・休日労働についての協定（労働基準法36条）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_012",
+      "unit": "social.pol.politics.law.labor",
+      "category": "thinking",
+      "prompt": "「三六協定」の説明として正しいものは？",
+      "choices": [
+        "ストなどで組合が負う刑事・民事の責任が免除されること",
+        "高度な専門業務を労働時間の規制対象から外す制度",
+        "労働者の代表と使用者が結ぶ、時間外・休日労働についての協定（労働基準法36条）",
+        "使用者が作成する、職場の規則・労働条件のきまり"
+      ],
+      "answerIndex": 2,
+      "explanation": "三六協定：労働者の代表と使用者が結ぶ、時間外・休日労働についての協定（労働基準法36条）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_013",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "労働基準法が守られているかを監督する、国の機関。これを何という？",
+      "choices": [
+        "労働基準監督署",
+        "第一インターナショナル",
+        "勤労権",
+        "ワーキングプア"
+      ],
+      "answerIndex": 0,
+      "explanation": "労働基準監督署：労働基準法が守られているかを監督する、国の機関。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_014",
+      "unit": "social.pol.politics.law.labor",
+      "category": "thinking",
+      "prompt": "「労働基準監督署」の説明として正しいものは？",
+      "choices": [
+        "労働基準法が守られているかを監督する、国の機関",
+        "フルタイムで働いても最低生活水準を維持できない人々",
+        "憲法第27条。働く権利",
+        "1864年。社会主義政党の国際的組織(国際労働者協会)"
+      ],
+      "answerIndex": 0,
+      "explanation": "労働基準監督署：労働基準法が守られているかを監督する、国の機関。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_015",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "労働組合の結成・団体交渉・争議行為を保障し、不当労働行為を禁止する法律。これを何という？",
+      "choices": [
+        "総評",
+        "労働組合法",
+        "治安維持法",
+        "春闘"
+      ],
+      "answerIndex": 1,
+      "explanation": "労働組合法：労働組合の結成・団体交渉・争議行為を保障し、不当労働行為を禁止する法律。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_016",
+      "unit": "social.pol.politics.law.labor",
+      "category": "thinking",
+      "prompt": "「労働組合法」の説明として正しいものは？",
+      "choices": [
+        "労働組合の結成・団体交渉・争議行為を保障し、不当労働行為を禁止する法律",
+        "1925年。反体制運動・社会主義運動の抑圧が目的。1928年の改正で刑罰に死刑を導入",
+        "毎年春に行う賃上げ闘争",
+        "日本労働組合＿＿議会。毎年春に賃上げ闘争(春闘)を行った"
+      ],
+      "answerIndex": 0,
+      "explanation": "労働組合法：労働組合の結成・団体交渉・争議行為を保障し、不当労働行為を禁止する法律。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_017",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "使用者が労働組合の活動を妨げる行為（不利益取扱い・団体交渉拒否・支配介入・経費援助など）。これを何という？",
+      "choices": [
+        "不当労働行為",
+        "割増賃金",
+        "法定労働時間",
+        "M字型カーブ"
+      ],
+      "answerIndex": 0,
+      "explanation": "不当労働行為：使用者が労働組合の活動を妨げる行為（不利益取扱い・団体交渉拒否・支配介入・経費援助など）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_018",
+      "unit": "social.pol.politics.law.labor",
+      "category": "thinking",
+      "prompt": "「不当労働行為」の説明として正しいものは？",
+      "choices": [
+        "使用者が労働組合の活動を妨げる行為（不利益取扱い・団体交渉拒否・支配介入・経費援助など）",
+        "日本の女性の年齢別労働力率が、出産・育児期に下がってM字の形になること",
+        "時間外・休日・深夜の労働に対して支払う、通常より多い賃金（時間外は25％以上）",
+        "休憩時間を除き、1日8時間・1週40時間とされる労働時間の上限"
+      ],
+      "answerIndex": 0,
+      "explanation": "不当労働行為：使用者が労働組合の活動を妨げる行為（不利益取扱い・団体交渉拒否・支配介入・経費援助など）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_019",
+      "unit": "social.pol.politics.law.contract",
+      "category": "knowledge",
+      "prompt": "労働組合に加入しないことや脱退することを、雇用の条件とする契約。これを何という？",
+      "choices": [
+        "黄犬契約",
+        "ジョブ型雇用",
+        "技能実習制度",
+        "治安警察法"
+      ],
+      "answerIndex": 0,
+      "explanation": "黄犬契約：労働組合に加入しないことや脱退することを、雇用の条件とする契約。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_020",
+      "unit": "social.pol.politics.law.contract",
+      "category": "thinking",
+      "prompt": "「黄犬契約」の説明として正しいものは？",
+      "choices": [
+        "各業務に人を割り当てる欧米型の雇用",
+        "労働組合に加入しないことや脱退することを、雇用の条件とする契約",
+        "技能の習得を目的に外国人が働く制度。人権問題も多発",
+        "1900年に制定され、労働運動をおさえつけた法律（1925年の治安維持法とは別）"
+      ],
+      "answerIndex": 1,
+      "explanation": "黄犬契約：労働組合に加入しないことや脱退することを、雇用の条件とする契約。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_021",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "労働組合と使用者が団体交渉で結ぶ、労働条件などについての取り決め。これを何という？",
+      "choices": [
+        "経費援助",
+        "労働協約",
+        "団体交渉拒否",
+        "資本家(ブルジョワジー)"
+      ],
+      "answerIndex": 1,
+      "explanation": "労働協約：労働組合と使用者が団体交渉で結ぶ、労働条件などについての取り決め。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_022",
+      "unit": "social.pol.politics.law.labor",
+      "category": "thinking",
+      "prompt": "「労働協約」の説明として正しいものは？",
+      "choices": [
+        "労働組合と使用者が団体交渉で結ぶ、労働条件などについての取り決め",
+        "正当な理由なく団体交渉を拒むこと",
+        "労働組合の運営費用を使用者が援助すること",
+        "利潤を増やすために労働者を搾取する階級"
+      ],
+      "answerIndex": 0,
+      "explanation": "労働協約：労働組合と使用者が団体交渉で結ぶ、労働条件などについての取り決め。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_023",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "労働者が団結して仕事をしない争議行為（同盟罷業）。これを何という？",
+      "choices": [
+        "ストライキ",
+        "人事院勧告",
+        "終身雇用",
+        "長時間労働"
+      ],
+      "answerIndex": 0,
+      "explanation": "ストライキ：労働者が団結して仕事をしない争議行為（同盟罷業）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_024",
+      "unit": "social.pol.politics.law.labor",
+      "category": "thinking",
+      "prompt": "「ストライキ」の説明として正しいものは？",
+      "choices": [
+        "争議権が認められない国家公務員の、労働基本権の制約の代償として給与などを勧告する制度",
+        "労働者が団結して仕事をしない争議行為（同盟罷業）",
+        "新卒で採用した社員を、定年まで雇い続ける日本的雇用慣行",
+        "所定外労働が多く、サービス残業も多い。過労死・過労自殺につながる"
+      ],
+      "answerIndex": 1,
+      "explanation": "ストライキ：労働者が団結して仕事をしない争議行為（同盟罷業）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_025",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "労働者が仕事の能率を意図的に下げる争議行為（怠業）。これを何という？",
+      "choices": [
+        "サボタージュ",
+        "労働力率",
+        "推定組織率",
+        "法定労働時間"
+      ],
+      "answerIndex": 0,
+      "explanation": "サボタージュ：労働者が仕事の能率を意図的に下げる争議行為（怠業）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_026",
+      "unit": "social.pol.politics.law.labor",
+      "category": "thinking",
+      "prompt": "「サボタージュ」の説明として正しいものは？",
+      "choices": [
+        "雇用者のうち労働組合に加入している人の割合",
+        "休憩時間を除き、1日8時間・1週40時間とされる労働時間の上限",
+        "15歳以上の人口のうち、労働力人口（就業者＋完全失業者）の割合",
+        "労働者が仕事の能率を意図的に下げる争議行為（怠業）"
+      ],
+      "answerIndex": 3,
+      "explanation": "サボタージュ：労働者が仕事の能率を意図的に下げる争議行為（怠業）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_027",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "ストライキ中に職場の入口などで見張りをして、スト破りを防ぐ争議行為。これを何という？",
+      "choices": [
+        "斡旋",
+        "ピケッティング",
+        "団体行動権",
+        "終身雇用"
+      ],
+      "answerIndex": 1,
+      "explanation": "ピケッティング：ストライキ中に職場の入口などで見張りをして、スト破りを防ぐ争議行為。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_028",
+      "unit": "social.pol.politics.law.labor",
+      "category": "thinking",
+      "prompt": "「ピケッティング」の説明として正しいものは？",
+      "choices": [
+        "新卒で採用した社員を、定年まで雇い続ける日本的雇用慣行",
+        "労働委員会が指名した者が、当事者の話し合いによる解決を手助けすること",
+        "労働三権の一つで、ストライキなどの争議行為を行う権利（争議権）",
+        "ストライキ中に職場の入口などで見張りをして、スト破りを防ぐ争議行為"
+      ],
+      "answerIndex": 3,
+      "explanation": "ピケッティング：ストライキ中に職場の入口などで見張りをして、スト破りを防ぐ争議行為。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_029",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "使用者が作業所を閉鎖し、労働者の就労を拒む争議行為（作業所閉鎖）。これを何という？",
+      "choices": [
+        "第一インターナショナル",
+        "ロックアウト",
+        "労働組合(ユニオン)",
+        "技能実習制度"
+      ],
+      "answerIndex": 1,
+      "explanation": "ロックアウト：使用者が作業所を閉鎖し、労働者の就労を拒む争議行為（作業所閉鎖）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_030",
+      "unit": "social.pol.politics.law.labor",
+      "category": "thinking",
+      "prompt": "「ロックアウト」の説明として正しいものは？",
+      "choices": [
+        "1864年。社会主義政党の国際的組織(国際労働者協会)",
+        "労働者が団結して作る組織",
+        "技能の習得を目的に外国人が働く制度。人権問題も多発",
+        "使用者が作業所を閉鎖し、労働者の就労を拒む争議行為（作業所閉鎖）"
+      ],
+      "answerIndex": 3,
+      "explanation": "ロックアウト：使用者が作業所を閉鎖し、労働者の就労を拒む争議行為（作業所閉鎖）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_031",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "正当な争議行為について、刑事上の罰や損害賠償の責任を問われないこと。これを何という？",
+      "choices": [
+        "長時間労働",
+        "女性活躍推進法",
+        "刑事免責・民事免責",
+        "年功序列型賃金"
+      ],
+      "answerIndex": 2,
+      "explanation": "刑事免責・民事免責：正当な争議行為について、刑事上の罰や損害賠償の責任を問われないこと。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_032",
+      "unit": "social.pol.politics.law.labor",
+      "category": "thinking",
+      "prompt": "「刑事免責・民事免責」の説明として正しいものは？",
+      "choices": [
+        "勤続年数や年齢に応じて賃金が上がっていく日本的雇用慣行",
+        "2015年。働きやすい環境の整備を企業に義務付け",
+        "所定外労働が多く、サービス残業も多い。過労死・過労自殺につながる",
+        "正当な争議行為について、刑事上の罰や損害賠償の責任を問われないこと"
+      ],
+      "answerIndex": 3,
+      "explanation": "刑事免責・民事免責：正当な争議行為について、刑事上の罰や損害賠償の責任を問われないこと。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_033",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "労働争議を予防・解決するための手続き（斡旋・調停・仲裁など）を定めた法律。これを何という？",
+      "choices": [
+        "技能実習制度",
+        "団体交渉拒否",
+        "支配介入",
+        "労働関係調整法"
+      ],
+      "answerIndex": 3,
+      "explanation": "労働関係調整法：労働争議を予防・解決するための手続き（斡旋・調停・仲裁など）を定めた法律。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_034",
+      "unit": "social.pol.politics.law.labor",
+      "category": "thinking",
+      "prompt": "「労働関係調整法」の説明として正しいものは？",
+      "choices": [
+        "技能の習得を目的に外国人が働く制度。人権問題も多発",
+        "正当な理由なく団体交渉を拒むこと",
+        "労働争議を予防・解決するための手続き（斡旋・調停・仲裁など）を定めた法律",
+        "労働組合の結成・運営を支配・干渉すること"
+      ],
+      "answerIndex": 2,
+      "explanation": "労働関係調整法：労働争議を予防・解決するための手続き（斡旋・調停・仲裁など）を定めた法律。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_035",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "使用者委員・労働者委員・公益委員の三者でつくる、労働争議を調整する機関。これを何という？",
+      "choices": [
+        "働き方改革推進法",
+        "外国人労働者",
+        "技能実習制度",
+        "労働委員会"
+      ],
+      "answerIndex": 3,
+      "explanation": "労働委員会：使用者委員・労働者委員・公益委員の三者でつくる、労働争議を調整する機関。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_036",
+      "unit": "social.pol.politics.law.labor",
+      "category": "thinking",
+      "prompt": "「労働委員会」の説明として正しいものは？",
+      "choices": [
+        "2019年。待遇格差の改善・残業規制・年5日の有給取得義務",
+        "アジア・南米出身が多い。単純労働は禁止",
+        "技能の習得を目的に外国人が働く制度。人権問題も多発",
+        "使用者委員・労働者委員・公益委員の三者でつくる、労働争議を調整する機関"
+      ],
+      "answerIndex": 3,
+      "explanation": "労働委員会：使用者委員・労働者委員・公益委員の三者でつくる、労働争議を調整する機関。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_037",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "労働委員会が指名した者が、当事者の話し合いによる解決を手助けすること。これを何という？",
+      "choices": [
+        "公務員の労働三権の制限",
+        "斡旋",
+        "女性活躍推進法",
+        "緊急調整"
+      ],
+      "answerIndex": 1,
+      "explanation": "斡旋：労働委員会が指名した者が、当事者の話し合いによる解決を手助けすること。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_038",
+      "unit": "social.pol.politics.law",
+      "category": "thinking",
+      "prompt": "「斡旋」の説明として正しいものは？",
+      "choices": [
+        "一般職員は争議権なし。警察・消防・自衛隊は三権とも不可",
+        "労働委員会が指名した者が、当事者の話し合いによる解決を手助けすること",
+        "公益事業などの大規模な争議に対し、内閣総理大臣が決定して50日間争議行為を禁止すること",
+        "2015年。働きやすい環境の整備を企業に義務付け"
+      ],
+      "answerIndex": 1,
+      "explanation": "斡旋：労働委員会が指名した者が、当事者の話し合いによる解決を手助けすること。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_039",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "三者構成の委員会が解決案を示して受け入れを勧告すること（当事者は拒否できる）。これを何という？",
+      "choices": [
+        "ジョブ型雇用",
+        "ラッダイト運動",
+        "労働争議(争議行為)",
+        "調停"
+      ],
+      "answerIndex": 3,
+      "explanation": "調停：三者構成の委員会が解決案を示して受け入れを勧告すること（当事者は拒否できる）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_040",
+      "unit": "social.pol.politics.law",
+      "category": "thinking",
+      "prompt": "「調停」の説明として正しいものは？",
+      "choices": [
+        "1811〜17年。産業革命で職を失った職人たちの機械打ちこわし運動",
+        "各業務に人を割り当てる欧米型の雇用",
+        "三者構成の委員会が解決案を示して受け入れを勧告すること（当事者は拒否できる）",
+        "労使の対立による紛争・行為"
+      ],
+      "answerIndex": 2,
+      "explanation": "調停：三者構成の委員会が解決案を示して受け入れを勧告すること（当事者は拒否できる）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_041",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "公益委員でつくる委員会が判断を下し、労働協約と同じ効力をもつこと。これを何という？",
+      "choices": [
+        "完全失業率",
+        "セクシュアルハラスメント",
+        "団体交渉拒否",
+        "仲裁"
+      ],
+      "answerIndex": 3,
+      "explanation": "仲裁：公益委員でつくる委員会が判断を下し、労働協約と同じ効力をもつこと。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_042",
+      "unit": "social.pol.politics.law",
+      "category": "thinking",
+      "prompt": "「仲裁」の説明として正しいものは？",
+      "choices": [
+        "公益委員でつくる委員会が判断を下し、労働協約と同じ効力をもつこと",
+        "性的な嫌がらせ。1997年の均等法改正で防止の規定",
+        "正当な理由なく団体交渉を拒むこと",
+        "労働力人口のうち、完全失業者の割合"
+      ],
+      "answerIndex": 0,
+      "explanation": "仲裁：公益委員でつくる委員会が判断を下し、労働協約と同じ効力をもつこと。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_043",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "公益事業などの大規模な争議に対し、内閣総理大臣が決定して50日間争議行為を禁止すること。これを何という？",
+      "choices": [
+        "総評",
+        "全労連",
+        "ワークシェアリング",
+        "緊急調整"
+      ],
+      "answerIndex": 3,
+      "explanation": "緊急調整：公益事業などの大規模な争議に対し、内閣総理大臣が決定して50日間争議行為を禁止すること。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_044",
+      "unit": "social.pol.politics.law.labor",
+      "category": "thinking",
+      "prompt": "「緊急調整」の説明として正しいものは？",
+      "choices": [
+        "日本労働組合＿＿議会。毎年春に賃上げ闘争(春闘)を行った",
+        "全国労働組合総連合。反連合として結成",
+        "1人あたりの労働時間を短くして仕事を分け合い、雇用を維持・創出する取り組み",
+        "公益事業などの大規模な争議に対し、内閣総理大臣が決定して50日間争議行為を禁止すること"
+      ],
+      "answerIndex": 3,
+      "explanation": "緊急調整：公益事業などの大規模な争議に対し、内閣総理大臣が決定して50日間争議行為を禁止すること。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_045",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "争議権が認められない国家公務員の、労働基本権の制約の代償として給与などを勧告する制度。これを何という？",
+      "choices": [
+        "外国人労働者",
+        "人事院勧告",
+        "連合",
+        "第一インターナショナル"
+      ],
+      "answerIndex": 1,
+      "explanation": "人事院勧告：争議権が認められない国家公務員の、労働基本権の制約の代償として給与などを勧告する制度。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_046",
+      "unit": "social.pol.politics.law.labor",
+      "category": "thinking",
+      "prompt": "「人事院勧告」の説明として正しいものは？",
+      "choices": [
+        "日本労働組合総＿＿会。1980年代に再編成",
+        "1864年。社会主義政党の国際的組織(国際労働者協会)",
+        "アジア・南米出身が多い。単純労働は禁止",
+        "争議権が認められない国家公務員の、労働基本権の制約の代償として給与などを勧告する制度"
+      ],
+      "answerIndex": 3,
+      "explanation": "人事院勧告：争議権が認められない国家公務員の、労働基本権の制約の代償として給与などを勧告する制度。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_047",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "新卒で採用した社員を、定年まで雇い続ける日本的雇用慣行。これを何という？",
+      "choices": [
+        "ジョブ型雇用",
+        "女性差別撤廃条約",
+        "育成就労制度",
+        "終身雇用"
+      ],
+      "answerIndex": 3,
+      "explanation": "終身雇用：新卒で採用した社員を、定年まで雇い続ける日本的雇用慣行。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_048",
+      "unit": "social.pol.politics.law",
+      "category": "thinking",
+      "prompt": "「終身雇用」の説明として正しいものは？",
+      "choices": [
+        "新卒で採用した社員を、定年まで雇い続ける日本的雇用慣行",
+        "2024年成立。技能実習制度にかわる制度で、2027年4月施行予定",
+        "各業務に人を割り当てる欧米型の雇用",
+        "国連で採択。均等法制定のきっかけ"
+      ],
+      "answerIndex": 0,
+      "explanation": "終身雇用：新卒で採用した社員を、定年まで雇い続ける日本的雇用慣行。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_049",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "勤続年数や年齢に応じて賃金が上がっていく日本的雇用慣行。これを何という？",
+      "choices": [
+        "年功序列型賃金",
+        "テレワーク(在宅勤務)",
+        "ワーキングプア",
+        "長時間労働"
+      ],
+      "answerIndex": 0,
+      "explanation": "年功序列型賃金：勤続年数や年齢に応じて賃金が上がっていく日本的雇用慣行。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_050",
+      "unit": "social.pol.politics.law",
+      "category": "thinking",
+      "prompt": "「年功序列型賃金」の説明として正しいものは？",
+      "choices": [
+        "勤続年数や年齢に応じて賃金が上がっていく日本的雇用慣行",
+        "フルタイムで働いても最低生活水準を維持できない人々",
+        "所定外労働が多く、サービス残業も多い。過労死・過労自殺につながる",
+        "インターネットを使って自宅などで働く"
+      ],
+      "answerIndex": 0,
+      "explanation": "年功序列型賃金：勤続年数や年齢に応じて賃金が上がっていく日本的雇用慣行。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_051",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "企業ごとに正社員を中心につくられる、日本に多い労働組合の形。これを何という？",
+      "choices": [
+        "企業別労働組合",
+        "ワーキングプア",
+        "セクシュアルハラスメント",
+        "女性差別撤廃条約"
+      ],
+      "answerIndex": 0,
+      "explanation": "企業別労働組合：企業ごとに正社員を中心につくられる、日本に多い労働組合の形。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_052",
+      "unit": "social.pol.politics.law.labor",
+      "category": "thinking",
+      "prompt": "「企業別労働組合」の説明として正しいものは？",
+      "choices": [
+        "フルタイムで働いても最低生活水準を維持できない人々",
+        "性的な嫌がらせ。1997年の均等法改正で防止の規定",
+        "国連で採択。均等法制定のきっかけ",
+        "企業ごとに正社員を中心につくられる、日本に多い労働組合の形"
+      ],
+      "answerIndex": 3,
+      "explanation": "企業別労働組合：企業ごとに正社員を中心につくられる、日本に多い労働組合の形。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_053",
+      "unit": "social.pol.politics.law.contract",
+      "category": "knowledge",
+      "prompt": "パート・アルバイト・派遣・契約社員など、期間の定めのある雇用や正社員以外の雇用。これを何という？",
+      "choices": [
+        "働き方改革関連法",
+        "団体行動権",
+        "連合",
+        "非正規雇用"
+      ],
+      "answerIndex": 3,
+      "explanation": "非正規雇用：パート・アルバイト・派遣・契約社員など、期間の定めのある雇用や正社員以外の雇用。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_054",
+      "unit": "social.pol.politics.law.work",
+      "category": "thinking",
+      "prompt": "「非正規雇用」の説明として正しいものは？",
+      "choices": [
+        "労働三権の一つで、ストライキなどの争議行為を行う権利（争議権）",
+        "2018年に成立した、時間外労働の上限規制や同一労働同一賃金などを定めた法律",
+        "パート・アルバイト・派遣・契約社員など、期間の定めのある雇用や正社員以外の雇用",
+        "日本労働組合総＿＿会。1980年代に再編成"
+      ],
+      "answerIndex": 2,
+      "explanation": "非正規雇用：パート・アルバイト・派遣・契約社員など、期間の定めのある雇用や正社員以外の雇用。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_055",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "派遣会社が雇った労働者を、ほかの企業に派遣して働かせるルールを定めた法律。これを何という？",
+      "choices": [
+        "緊急調整",
+        "不利益取扱い",
+        "労働者(プロレタリアート)",
+        "労働者派遣法"
+      ],
+      "answerIndex": 3,
+      "explanation": "労働者派遣法：派遣会社が雇った労働者を、ほかの企業に派遣して働かせるルールを定めた法律。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_056",
+      "unit": "social.pol.politics.law",
+      "category": "thinking",
+      "prompt": "「労働者派遣法」の説明として正しいものは？",
+      "choices": [
+        "労働条件の改善を求めて団結する階級",
+        "公益事業などの大規模な争議に対し、内閣総理大臣が決定して50日間争議行為を禁止すること",
+        "組合員であることなどを理由に不利益な扱いをすること",
+        "派遣会社が雇った労働者を、ほかの企業に派遣して働かせるルールを定めた法律"
+      ],
+      "answerIndex": 3,
+      "explanation": "労働者派遣法：派遣会社が雇った労働者を、ほかの企業に派遣して働かせるルールを定めた法律。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_057",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "同じ仕事をしていれば、雇用形態にかかわらず同じ賃金を支払うという考え方。これを何という？",
+      "choices": [
+        "制限選挙",
+        "M字型カーブ",
+        "同一労働同一賃金",
+        "労働組合期成会"
+      ],
+      "answerIndex": 2,
+      "explanation": "同一労働同一賃金：同じ仕事をしていれば、雇用形態にかかわらず同じ賃金を支払うという考え方。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_058",
+      "unit": "social.pol.politics.law",
+      "category": "thinking",
+      "prompt": "「同一労働同一賃金」の説明として正しいものは？",
+      "choices": [
+        "日本の女性の年齢別労働力率が、出産・育児期に下がってM字の形になること",
+        "1897年に結成され、鉄工組合などの組合づくりを進めた日本の団体",
+        "財産のある者に参政権を限った選挙",
+        "同じ仕事をしていれば、雇用形態にかかわらず同じ賃金を支払うという考え方"
+      ],
+      "answerIndex": 3,
+      "explanation": "同一労働同一賃金：同じ仕事をしていれば、雇用形態にかかわらず同じ賃金を支払うという考え方。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_059",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "2018年に成立した、時間外労働の上限規制や同一労働同一賃金などを定めた法律。これを何という？",
+      "choices": [
+        "働き方改革関連法",
+        "総評",
+        "外国人技能実習制度",
+        "労働審判制度"
+      ],
+      "answerIndex": 0,
+      "explanation": "働き方改革関連法：2018年に成立した、時間外労働の上限規制や同一労働同一賃金などを定めた法律。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_060",
+      "unit": "social.pol.politics.law",
+      "category": "thinking",
+      "prompt": "「働き方改革関連法」の説明として正しいものは？",
+      "choices": [
+        "途上国の人が日本で働きながら技能を学ぶ制度（育成就労制度に移行予定）",
+        "2018年に成立した、時間外労働の上限規制や同一労働同一賃金などを定めた法律",
+        "日本労働組合＿＿議会。毎年春に賃上げ闘争(春闘)を行った",
+        "労働トラブルを解決する裁判所の制度"
+      ],
+      "answerIndex": 1,
+      "explanation": "働き方改革関連法：2018年に成立した、時間外労働の上限規制や同一労働同一賃金などを定めた法律。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_061",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "雇用者のうち労働組合に加入している人の割合。これを何という？",
+      "choices": [
+        "団結権",
+        "総評",
+        "推定組織率",
+        "長時間労働"
+      ],
+      "answerIndex": 2,
+      "explanation": "推定組織率：雇用者のうち労働組合に加入している人の割合。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_062",
+      "unit": "social.pol.politics.law.labor",
+      "category": "thinking",
+      "prompt": "「推定組織率」の説明として正しいものは？",
+      "choices": [
+        "所定外労働が多く、サービス残業も多い。過労死・過労自殺につながる",
+        "労働者が労働組合を作る権利",
+        "雇用者のうち労働組合に加入している人の割合",
+        "日本労働組合＿＿議会。毎年春に賃上げ闘争(春闘)を行った"
+      ],
+      "answerIndex": 2,
+      "explanation": "推定組織率：雇用者のうち労働組合に加入している人の割合。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_063",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "15歳以上の人口のうち、労働力人口（就業者＋完全失業者）の割合。これを何という？",
+      "choices": [
+        "ラッダイト運動",
+        "不利益取扱い",
+        "働き方改革推進法",
+        "労働力率"
+      ],
+      "answerIndex": 3,
+      "explanation": "労働力率：15歳以上の人口のうち、労働力人口（就業者＋完全失業者）の割合。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_064",
+      "unit": "social.pol.politics.law",
+      "category": "thinking",
+      "prompt": "「労働力率」の説明として正しいものは？",
+      "choices": [
+        "1811〜17年。産業革命で職を失った職人たちの機械打ちこわし運動",
+        "組合員であることなどを理由に不利益な扱いをすること",
+        "2019年。待遇格差の改善・残業規制・年5日の有給取得義務",
+        "15歳以上の人口のうち、労働力人口（就業者＋完全失業者）の割合"
+      ],
+      "answerIndex": 3,
+      "explanation": "労働力率：15歳以上の人口のうち、労働力人口（就業者＋完全失業者）の割合。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_065",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "労働力人口のうち、完全失業者の割合。これを何という？",
+      "choices": [
+        "非正規雇用",
+        "労働組合期成会",
+        "完全失業率",
+        "産業革命"
+      ],
+      "answerIndex": 2,
+      "explanation": "完全失業率：労働力人口のうち、完全失業者の割合。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_066",
+      "unit": "social.pol.politics.law",
+      "category": "thinking",
+      "prompt": "「完全失業率」の説明として正しいものは？",
+      "choices": [
+        "パート・アルバイト・派遣・契約社員など、期間の定めのある雇用や正社員以外の雇用",
+        "資本主義の成立をもたらし、資本家と労働者の対立を生んだ",
+        "1897年に結成され、鉄工組合などの組合づくりを進めた日本の団体",
+        "労働力人口のうち、完全失業者の割合"
+      ],
+      "answerIndex": 3,
+      "explanation": "完全失業率：労働力人口のうち、完全失業者の割合。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_067",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "1985年に制定された、雇用での男女差別をなくすための法律（1997年改正で差別を禁止規定に）。これを何という？",
+      "choices": [
+        "男女雇用機会均等法",
+        "第一インターナショナル",
+        "セクシュアルハラスメント",
+        "技能実習制度"
+      ],
+      "answerIndex": 0,
+      "explanation": "男女雇用機会均等法：1985年に制定された、雇用での男女差別をなくすための法律（1997年改正で差別を禁止規定に）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_068",
+      "unit": "social.pol.politics.law.work",
+      "category": "thinking",
+      "prompt": "「男女雇用機会均等法」の説明として正しいものは？",
+      "choices": [
+        "技能の習得を目的に外国人が働く制度。人権問題も多発",
+        "1985年に制定された、雇用での男女差別をなくすための法律（1997年改正で差別を禁止規定に）",
+        "1864年。社会主義政党の国際的組織(国際労働者協会)",
+        "性的な嫌がらせ。1997年の均等法改正で防止の規定"
+      ],
+      "answerIndex": 1,
+      "explanation": "男女雇用機会均等法：1985年に制定された、雇用での男女差別をなくすための法律（1997年改正で差別を禁止規定に）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_069",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "男女とも、育児や介護のために休業できることを定めた法律。これを何という？",
+      "choices": [
+        "フリーランス",
+        "育児・介護休業法",
+        "労働契約",
+        "黄犬契約"
+      ],
+      "answerIndex": 1,
+      "explanation": "育児・介護休業法：男女とも、育児や介護のために休業できることを定めた法律。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_070",
+      "unit": "social.pol.politics.law",
+      "category": "thinking",
+      "prompt": "「育児・介護休業法」の説明として正しいものは？",
+      "choices": [
+        "会社に所属せず、都度契約を結ぶ個人事業主",
+        "労働組合に加入しないことや脱退することを、雇用の条件とする契約",
+        "労働者が使用者に労働の提供を約束する契約",
+        "男女とも、育児や介護のために休業できることを定めた法律"
+      ],
+      "answerIndex": 3,
+      "explanation": "育児・介護休業法：男女とも、育児や介護のために休業できることを定めた法律。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_071",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "日本の女性の年齢別労働力率が、出産・育児期に下がってM字の形になること。これを何という？",
+      "choices": [
+        "労働三法",
+        "ILO(国際労働機関)",
+        "ワーキングプア",
+        "M字型カーブ"
+      ],
+      "answerIndex": 3,
+      "explanation": "M字型カーブ：日本の女性の年齢別労働力率が、出産・育児期に下がってM字の形になること。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_072",
+      "unit": "social.pol.politics.law",
+      "category": "thinking",
+      "prompt": "「M字型カーブ」の説明として正しいものは？",
+      "choices": [
+        "1919年設立。国連の専門機関として労働者の権利を保障",
+        "労働基準法・労働組合法・労働関係調整法の3つ",
+        "日本の女性の年齢別労働力率が、出産・育児期に下がってM字の形になること",
+        "フルタイムで働いても最低生活水準を維持できない人々"
+      ],
+      "answerIndex": 2,
+      "explanation": "M字型カーブ：日本の女性の年齢別労働力率が、出産・育児期に下がってM字の形になること。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_073",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "1人あたりの労働時間を短くして仕事を分け合い、雇用を維持・創出する取り組み。これを何という？",
+      "choices": [
+        "ワークシェアリング",
+        "労働組合法",
+        "年功序列型賃金",
+        "ピケッティング"
+      ],
+      "answerIndex": 0,
+      "explanation": "ワークシェアリング：1人あたりの労働時間を短くして仕事を分け合い、雇用を維持・創出する取り組み。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_074",
+      "unit": "social.pol.politics.law",
+      "category": "thinking",
+      "prompt": "「ワークシェアリング」の説明として正しいものは？",
+      "choices": [
+        "労働組合の結成・団体交渉・争議行為を保障し、不当労働行為を禁止する法律",
+        "勤続年数や年齢に応じて賃金が上がっていく日本的雇用慣行",
+        "1人あたりの労働時間を短くして仕事を分け合い、雇用を維持・創出する取り組み",
+        "ストライキ中に職場の入口などで見張りをして、スト破りを防ぐ争議行為"
+      ],
+      "answerIndex": 2,
+      "explanation": "ワークシェアリング：1人あたりの労働時間を短くして仕事を分け合い、雇用を維持・創出する取り組み。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_075",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "仕事と生活の調和。これを何という？",
+      "choices": [
+        "ラッダイト運動",
+        "同盟",
+        "労働基準監督署",
+        "ワーク・ライフ・バランス"
+      ],
+      "answerIndex": 3,
+      "explanation": "ワーク・ライフ・バランス：仕事と生活の調和。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_076",
+      "unit": "social.pol.politics.law.work",
+      "category": "thinking",
+      "prompt": "「ワーク・ライフ・バランス」の説明として正しいものは？",
+      "choices": [
+        "労働基準法が守られているかを監督する、国の機関",
+        "仕事と生活の調和",
+        "1811〜17年。産業革命で職を失った職人たちの機械打ちこわし運動",
+        "全日本労働総＿＿。総評と並ぶ二大勢力"
+      ],
+      "answerIndex": 1,
+      "explanation": "ワーク・ライフ・バランス：仕事と生活の調和。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_077",
+      "unit": "social.pol.politics.law.work",
+      "category": "knowledge",
+      "prompt": "長時間労働などによる過労が原因で亡くなること。これを何という？",
+      "choices": [
+        "働き方改革推進法",
+        "育児・介護休業法",
+        "過労死",
+        "働き方改革関連法"
+      ],
+      "answerIndex": 2,
+      "explanation": "過労死：長時間労働などによる過労が原因で亡くなること。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_078",
+      "unit": "social.pol.politics.law.work",
+      "category": "thinking",
+      "prompt": "「過労死」の説明として正しいものは？",
+      "choices": [
+        "2019年。待遇格差の改善・残業規制・年5日の有給取得義務",
+        "長時間労働などによる過労が原因で亡くなること",
+        "男女とも、育児や介護のために休業できることを定めた法律",
+        "2018年に成立した、時間外労働の上限規制や同一労働同一賃金などを定めた法律"
+      ],
+      "answerIndex": 1,
+      "explanation": "過労死：長時間労働などによる過労が原因で亡くなること。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_079",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "途上国の人が日本で働きながら技能を学ぶ制度（育成就労制度に移行予定）。これを何という？",
+      "choices": [
+        "ピケッティング",
+        "労働契約",
+        "団結権",
+        "外国人技能実習制度"
+      ],
+      "answerIndex": 3,
+      "explanation": "外国人技能実習制度：途上国の人が日本で働きながら技能を学ぶ制度（育成就労制度に移行予定）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_080",
+      "unit": "social.pol.politics.law",
+      "category": "thinking",
+      "prompt": "「外国人技能実習制度」の説明として正しいものは？",
+      "choices": [
+        "労働者が労働組合を作る権利",
+        "ストライキ中に職場の入口などで見張りをして、スト破りを防ぐ争議行為",
+        "労働者が使用者に労働の提供を約束する契約",
+        "途上国の人が日本で働きながら技能を学ぶ制度（育成就労制度に移行予定）"
+      ],
+      "answerIndex": 3,
+      "explanation": "外国人技能実習制度：途上国の人が日本で働きながら技能を学ぶ制度（育成就労制度に移行予定）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_081",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "1897年に結成され、鉄工組合などの組合づくりを進めた日本の団体。これを何という？",
+      "choices": [
+        "育児・介護休業法",
+        "労働委員会",
+        "労働力率",
+        "労働組合期成会"
+      ],
+      "answerIndex": 3,
+      "explanation": "労働組合期成会：1897年に結成され、鉄工組合などの組合づくりを進めた日本の団体。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_082",
+      "unit": "social.pol.politics.law.labor",
+      "category": "thinking",
+      "prompt": "「労働組合期成会」の説明として正しいものは？",
+      "choices": [
+        "男女とも、育児や介護のために休業できることを定めた法律",
+        "15歳以上の人口のうち、労働力人口（就業者＋完全失業者）の割合",
+        "1897年に結成され、鉄工組合などの組合づくりを進めた日本の団体",
+        "使用者委員・労働者委員・公益委員の三者でつくる、労働争議を調整する機関"
+      ],
+      "answerIndex": 2,
+      "explanation": "労働組合期成会：1897年に結成され、鉄工組合などの組合づくりを進めた日本の団体。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_083",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "1900年に制定され、労働運動をおさえつけた法律（1925年の治安維持法とは別）。これを何という？",
+      "choices": [
+        "治安警察法",
+        "非正規雇用",
+        "労働組合法",
+        "資本家(ブルジョワジー)"
+      ],
+      "answerIndex": 0,
+      "explanation": "治安警察法：1900年に制定され、労働運動をおさえつけた法律（1925年の治安維持法とは別）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_084",
+      "unit": "social.pol.politics.law",
+      "category": "thinking",
+      "prompt": "「治安警察法」の説明として正しいものは？",
+      "choices": [
+        "1900年に制定され、労働運動をおさえつけた法律（1925年の治安維持法とは別）",
+        "労働組合の結成・団体交渉・争議行為を保障し、不当労働行為を禁止する法律",
+        "利潤を増やすために労働者を搾取する階級",
+        "パート・アルバイト・派遣・契約社員など、期間の定めのある雇用や正社員以外の雇用"
+      ],
+      "answerIndex": 0,
+      "explanation": "治安警察法：1900年に制定され、労働運動をおさえつけた法律（1925年の治安維持法とは別）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_085",
+      "unit": "social.pol.politics.law.labor",
+      "category": "knowledge",
+      "prompt": "労働三権の一つで、ストライキなどの争議行為を行う権利（争議権）。これを何という？",
+      "choices": [
+        "割増賃金",
+        "労働組合法",
+        "労働争議(争議行為)",
+        "団体行動権"
+      ],
+      "answerIndex": 3,
+      "explanation": "団体行動権：労働三権の一つで、ストライキなどの争議行為を行う権利（争議権）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_086",
+      "unit": "social.pol.politics.law.labor",
+      "category": "thinking",
+      "prompt": "「団体行動権」の説明として正しいものは？",
+      "choices": [
+        "時間外・休日・深夜の労働に対して支払う、通常より多い賃金（時間外は25％以上）",
+        "労使の対立による紛争・行為",
+        "労働組合の結成・団体交渉・争議行為を保障し、不当労働行為を禁止する法律",
+        "労働三権の一つで、ストライキなどの争議行為を行う権利（争議権）"
+      ],
+      "answerIndex": 3,
+      "explanation": "団体行動権：労働三権の一つで、ストライキなどの争議行為を行う権利（争議権）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_087",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "日本的雇用慣行の一つで、定年まで同じ企業で働き続けるしくみ。これを何という？",
+      "choices": [
+        "技能実習制度",
+        "人事院勧告",
+        "終身雇用制",
+        "労働力率"
+      ],
+      "answerIndex": 2,
+      "explanation": "終身雇用制：日本的雇用慣行の一つで、定年まで同じ企業で働き続けるしくみ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_088",
+      "unit": "social.pol.politics.law",
+      "category": "thinking",
+      "prompt": "「終身雇用制」の説明として正しいものは？",
+      "choices": [
+        "15歳以上の人口のうち、労働力人口（就業者＋完全失業者）の割合",
+        "技能の習得を目的に外国人が働く制度。人権問題も多発",
+        "争議権が認められない国家公務員の、労働基本権の制約の代償として給与などを勧告する制度",
+        "日本的雇用慣行の一つで、定年まで同じ企業で働き続けるしくみ"
+      ],
+      "answerIndex": 3,
+      "explanation": "終身雇用制：日本的雇用慣行の一つで、定年まで同じ企業で働き続けるしくみ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_089",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "1919年設立。国連の専門機関として労働者の権利を保障。これを何という？",
+      "choices": [
+        "労働協約",
+        "労働組合(ユニオン)",
+        "法定労働時間",
+        "ILO(国際労働機関)"
+      ],
+      "answerIndex": 3,
+      "explanation": "ILO(国際労働機関)：1919年設立。国連の専門機関として労働者の権利を保障。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_090",
+      "unit": "social.pol.politics.law",
+      "category": "thinking",
+      "prompt": "「ILO(国際労働機関)」の説明として正しいものは？",
+      "choices": [
+        "1919年設立。国連の専門機関として労働者の権利を保障",
+        "労働組合と使用者が団体交渉で結ぶ、労働条件などについての取り決め",
+        "労働者が団結して作る組織",
+        "休憩時間を除き、1日8時間・1週40時間とされる労働時間の上限"
+      ],
+      "answerIndex": 0,
+      "explanation": "ILO(国際労働機関)：1919年設立。国連の専門機関として労働者の権利を保障。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_091",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "2024年成立。技能実習制度にかわる制度で、2027年4月施行予定。これを何という？",
+      "choices": [
+        "育成就労制度",
+        "不当労働行為",
+        "法定労働時間",
+        "ロックアウト"
+      ],
+      "answerIndex": 0,
+      "explanation": "育成就労制度：2024年成立。技能実習制度にかわる制度で、2027年4月施行予定。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_092",
+      "unit": "social.pol.politics.law",
+      "category": "thinking",
+      "prompt": "「育成就労制度」の説明として正しいものは？",
+      "choices": [
+        "2024年成立。技能実習制度にかわる制度で、2027年4月施行予定",
+        "使用者が作業所を閉鎖し、労働者の就労を拒む争議行為（作業所閉鎖）",
+        "使用者が労働組合の活動を妨げる行為（不利益取扱い・団体交渉拒否・支配介入・経費援助など）",
+        "休憩時間を除き、1日8時間・1週40時間とされる労働時間の上限"
+      ],
+      "answerIndex": 0,
+      "explanation": "育成就労制度：2024年成立。技能実習制度にかわる制度で、2027年4月施行予定。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_093",
+      "unit": "social.pol.politics.law",
+      "category": "knowledge",
+      "prompt": "アジア・南米出身が多い。単純労働は禁止。これを何という？",
+      "choices": [
+        "外国人労働者",
+        "労働基準法",
+        "三六協定",
+        "勤労権"
+      ],
+      "answerIndex": 0,
+      "explanation": "外国人労働者：アジア・南米出身が多い。単純労働は禁止。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    },
+    {
+      "id": "social_shonan_104_kokyo_terms_02_094",
+      "unit": "social.pol.politics.law",
+      "category": "thinking",
+      "prompt": "「外国人労働者」の説明として正しいものは？",
+      "choices": [
+        "労働者の代表と使用者が結ぶ、時間外・休日労働についての協定（労働基準法36条）",
+        "労働時間・賃金・休日など、労働条件の最低基準を定めた法律",
+        "アジア・南米出身が多い。単純労働は禁止",
+        "憲法第27条。働く権利"
+      ],
+      "answerIndex": 2,
+      "explanation": "外国人労働者：アジア・南米出身が多い。単純労働は禁止。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "public_economy"
+      ]
+    }
+  ]
+}

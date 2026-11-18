@@ -1,0 +1,596 @@
+{
+  "setId": "science_shonan_104_chem_terms_03",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "science_shonan_104_chem_terms_03_001",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "knowledge",
+      "prompt": "水に溶けて水素イオンH⁺を生じる物質。ブレンステッドの定義ではH⁺を与える分子・イオン。これを何という？",
+      "choices": [
+        "電離度",
+        "酸",
+        "強酸",
+        "オキソニウムイオン"
+      ],
+      "answerIndex": 1,
+      "explanation": "酸：水に溶けて水素イオンH⁺を生じる物質。ブレンステッドの定義ではH⁺を与える分子・イオン。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_03_002",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "thinking",
+      "prompt": "「酸」の説明として正しいものは？",
+      "choices": [
+        "水に溶けて水素イオンH⁺を生じる物質。ブレンステッドの定義ではH⁺を与える分子・イオン",
+        "水素イオンが水分子と結びついてできるイオン H₃O⁺",
+        "溶かした酸や塩基のうち、電離したものの割合",
+        "電離度が1に近い酸。塩酸・硝酸・硫酸など"
+      ],
+      "answerIndex": 0,
+      "explanation": "酸：水に溶けて水素イオンH⁺を生じる物質。ブレンステッドの定義ではH⁺を与える分子・イオン。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_03_003",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "knowledge",
+      "prompt": "水に溶けて水酸化物イオンOH⁻を生じる物質。ブレンステッドの定義ではH⁺を受け取る分子・イオン。これを何という？",
+      "choices": [
+        "ブレンステッド・ローリーの定義",
+        "強酸",
+        "塩基性",
+        "塩基"
+      ],
+      "answerIndex": 3,
+      "explanation": "塩基：水に溶けて水酸化物イオンOH⁻を生じる物質。ブレンステッドの定義ではH⁺を受け取る分子・イオン。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_03_004",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "thinking",
+      "prompt": "「塩基」の説明として正しいものは？",
+      "choices": [
+        "塩基の水溶液が示す性質。赤色リトマス紙を青くする（アルカリ性ともいう）",
+        "水に溶けて水酸化物イオンOH⁻を生じる物質。ブレンステッドの定義ではH⁺を受け取る分子・イオン",
+        "H⁺を与えるものを酸、H⁺を受け取るものを塩基とする定義。水溶液でない反応にも使える",
+        "電離度が1に近い酸。塩酸・硝酸・硫酸など"
+      ],
+      "answerIndex": 1,
+      "explanation": "塩基：水に溶けて水酸化物イオンOH⁻を生じる物質。ブレンステッドの定義ではH⁺を受け取る分子・イオン。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_03_005",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "knowledge",
+      "prompt": "水溶液中でH⁺を生じるものを酸、OH⁻を生じるものを塩基とする定義。これを何という？",
+      "choices": [
+        "アレニウスの定義",
+        "強酸",
+        "弱酸",
+        "電離"
+      ],
+      "answerIndex": 0,
+      "explanation": "アレニウスの定義：水溶液中でH⁺を生じるものを酸、OH⁻を生じるものを塩基とする定義。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_03_006",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "thinking",
+      "prompt": "「アレニウスの定義」の説明として正しいものは？",
+      "choices": [
+        "電離度が小さい酸。酢酸・炭酸など",
+        "水溶液中でH⁺を生じるものを酸、OH⁻を生じるものを塩基とする定義",
+        "物質が水に溶けて陽イオンと陰イオンに分かれること",
+        "電離度が1に近い酸。塩酸・硝酸・硫酸など"
+      ],
+      "answerIndex": 1,
+      "explanation": "アレニウスの定義：水溶液中でH⁺を生じるものを酸、OH⁻を生じるものを塩基とする定義。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_03_007",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "knowledge",
+      "prompt": "H⁺を与えるものを酸、H⁺を受け取るものを塩基とする定義。水溶液でない反応にも使える。これを何という？",
+      "choices": [
+        "酸",
+        "ブレンステッド・ローリーの定義",
+        "強酸",
+        "塩基"
+      ],
+      "answerIndex": 1,
+      "explanation": "ブレンステッド・ローリーの定義：H⁺を与えるものを酸、H⁺を受け取るものを塩基とする定義。水溶液でない反応にも使える。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_03_008",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "thinking",
+      "prompt": "「ブレンステッド・ローリーの定義」の説明として正しいものは？",
+      "choices": [
+        "水に溶けて水酸化物イオンOH⁻を生じる物質。ブレンステッドの定義ではH⁺を受け取る分子・イオン",
+        "H⁺を与えるものを酸、H⁺を受け取るものを塩基とする定義。水溶液でない反応にも使える",
+        "電離度が1に近い酸。塩酸・硝酸・硫酸など",
+        "水に溶けて水素イオンH⁺を生じる物質。ブレンステッドの定義ではH⁺を与える分子・イオン"
+      ],
+      "answerIndex": 1,
+      "explanation": "ブレンステッド・ローリーの定義：H⁺を与えるものを酸、H⁺を受け取るものを塩基とする定義。水溶液でない反応にも使える。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_03_009",
+      "unit": "science.chemistry.change.acid",
+      "category": "knowledge",
+      "prompt": "水素イオンが水分子と結びついてできるイオン H₃O⁺。これを何という？",
+      "choices": [
+        "電離",
+        "酸性",
+        "電離度",
+        "オキソニウムイオン"
+      ],
+      "answerIndex": 3,
+      "explanation": "オキソニウムイオン：水素イオンが水分子と結びついてできるイオン H₃O⁺。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_03_010",
+      "unit": "science.chemistry.change.acid",
+      "category": "thinking",
+      "prompt": "「オキソニウムイオン」の説明として正しいものは？",
+      "choices": [
+        "溶かした酸や塩基のうち、電離したものの割合",
+        "物質が水に溶けて陽イオンと陰イオンに分かれること",
+        "水素イオンが水分子と結びついてできるイオン H₃O⁺",
+        "酸の水溶液が示す性質。青色リトマス紙を赤くする"
+      ],
+      "answerIndex": 2,
+      "explanation": "オキソニウムイオン：水素イオンが水分子と結びついてできるイオン H₃O⁺。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_03_011",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "knowledge",
+      "prompt": "酸の水溶液が示す性質。青色リトマス紙を赤くする。これを何という？",
+      "choices": [
+        "酸性",
+        "ブレンステッド・ローリーの定義",
+        "弱塩基",
+        "電離"
+      ],
+      "answerIndex": 0,
+      "explanation": "酸性：酸の水溶液が示す性質。青色リトマス紙を赤くする。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_03_012",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "thinking",
+      "prompt": "「酸性」の説明として正しいものは？",
+      "choices": [
+        "酸の水溶液が示す性質。青色リトマス紙を赤くする",
+        "電離度が小さい塩基。アンモニアなど",
+        "H⁺を与えるものを酸、H⁺を受け取るものを塩基とする定義。水溶液でない反応にも使える",
+        "物質が水に溶けて陽イオンと陰イオンに分かれること"
+      ],
+      "answerIndex": 0,
+      "explanation": "酸性：酸の水溶液が示す性質。青色リトマス紙を赤くする。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_03_013",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "knowledge",
+      "prompt": "塩基の水溶液が示す性質。赤色リトマス紙を青くする（アルカリ性ともいう）。これを何という？",
+      "choices": [
+        "弱塩基",
+        "塩基性",
+        "電離",
+        "電離度"
+      ],
+      "answerIndex": 1,
+      "explanation": "塩基性：塩基の水溶液が示す性質。赤色リトマス紙を青くする（アルカリ性ともいう）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_03_014",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "thinking",
+      "prompt": "「塩基性」の説明として正しいものは？",
+      "choices": [
+        "電離度が小さい塩基。アンモニアなど",
+        "溶かした酸や塩基のうち、電離したものの割合",
+        "物質が水に溶けて陽イオンと陰イオンに分かれること",
+        "塩基の水溶液が示す性質。赤色リトマス紙を青くする（アルカリ性ともいう）"
+      ],
+      "answerIndex": 3,
+      "explanation": "塩基性：塩基の水溶液が示す性質。赤色リトマス紙を青くする（アルカリ性ともいう）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_03_015",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "knowledge",
+      "prompt": "酸1分子が出せるH⁺の数、または塩基1つが受け取れるH⁺（出せるOH⁻）の数。これを何という？",
+      "choices": [
+        "価数",
+        "弱酸",
+        "アレニウスの定義",
+        "塩基性"
+      ],
+      "answerIndex": 0,
+      "explanation": "価数：酸1分子が出せるH⁺の数、または塩基1つが受け取れるH⁺（出せるOH⁻）の数。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_03_016",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "thinking",
+      "prompt": "「価数」の説明として正しいものは？",
+      "choices": [
+        "酸1分子が出せるH⁺の数、または塩基1つが受け取れるH⁺（出せるOH⁻）の数",
+        "水溶液中でH⁺を生じるものを酸、OH⁻を生じるものを塩基とする定義",
+        "塩基の水溶液が示す性質。赤色リトマス紙を青くする（アルカリ性ともいう）",
+        "電離度が小さい酸。酢酸・炭酸など"
+      ],
+      "answerIndex": 0,
+      "explanation": "価数：酸1分子が出せるH⁺の数、または塩基1つが受け取れるH⁺（出せるOH⁻）の数。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_03_017",
+      "unit": "science.chemistry.change.acid",
+      "category": "knowledge",
+      "prompt": "物質が水に溶けて陽イオンと陰イオンに分かれること。これを何という？",
+      "choices": [
+        "電離",
+        "ブレンステッド・ローリーの定義",
+        "アレニウスの定義",
+        "弱酸"
+      ],
+      "answerIndex": 0,
+      "explanation": "電離：物質が水に溶けて陽イオンと陰イオンに分かれること。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_03_018",
+      "unit": "science.chemistry.change.acid",
+      "category": "thinking",
+      "prompt": "「電離」の説明として正しいものは？",
+      "choices": [
+        "電離度が小さい酸。酢酸・炭酸など",
+        "物質が水に溶けて陽イオンと陰イオンに分かれること",
+        "水溶液中でH⁺を生じるものを酸、OH⁻を生じるものを塩基とする定義",
+        "H⁺を与えるものを酸、H⁺を受け取るものを塩基とする定義。水溶液でない反応にも使える"
+      ],
+      "answerIndex": 1,
+      "explanation": "電離：物質が水に溶けて陽イオンと陰イオンに分かれること。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_03_019",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "knowledge",
+      "prompt": "溶かした酸や塩基のうち、電離したものの割合。これを何という？",
+      "choices": [
+        "電離",
+        "電離度",
+        "酸",
+        "塩基性"
+      ],
+      "answerIndex": 1,
+      "explanation": "電離度：溶かした酸や塩基のうち、電離したものの割合。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_03_020",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "thinking",
+      "prompt": "「電離度」の説明として正しいものは？",
+      "choices": [
+        "物質が水に溶けて陽イオンと陰イオンに分かれること",
+        "溶かした酸や塩基のうち、電離したものの割合",
+        "水に溶けて水素イオンH⁺を生じる物質。ブレンステッドの定義ではH⁺を与える分子・イオン",
+        "塩基の水溶液が示す性質。赤色リトマス紙を青くする（アルカリ性ともいう）"
+      ],
+      "answerIndex": 1,
+      "explanation": "電離度：溶かした酸や塩基のうち、電離したものの割合。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_03_021",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "knowledge",
+      "prompt": "電離度が1に近い酸。塩酸・硝酸・硫酸など。これを何という？",
+      "choices": [
+        "強酸",
+        "アレニウスの定義",
+        "塩基",
+        "弱酸"
+      ],
+      "answerIndex": 0,
+      "explanation": "強酸：電離度が1に近い酸。塩酸・硝酸・硫酸など。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_03_022",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "thinking",
+      "prompt": "「強酸」の説明として正しいものは？",
+      "choices": [
+        "電離度が小さい酸。酢酸・炭酸など",
+        "水溶液中でH⁺を生じるものを酸、OH⁻を生じるものを塩基とする定義",
+        "電離度が1に近い酸。塩酸・硝酸・硫酸など",
+        "水に溶けて水酸化物イオンOH⁻を生じる物質。ブレンステッドの定義ではH⁺を受け取る分子・イオン"
+      ],
+      "answerIndex": 2,
+      "explanation": "強酸：電離度が1に近い酸。塩酸・硝酸・硫酸など。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_03_023",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "knowledge",
+      "prompt": "電離度が小さい酸。酢酸・炭酸など。これを何という？",
+      "choices": [
+        "弱酸",
+        "弱塩基",
+        "電離度",
+        "酸"
+      ],
+      "answerIndex": 0,
+      "explanation": "弱酸：電離度が小さい酸。酢酸・炭酸など。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_03_024",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "thinking",
+      "prompt": "「弱酸」の説明として正しいものは？",
+      "choices": [
+        "溶かした酸や塩基のうち、電離したものの割合",
+        "水に溶けて水素イオンH⁺を生じる物質。ブレンステッドの定義ではH⁺を与える分子・イオン",
+        "電離度が小さい塩基。アンモニアなど",
+        "電離度が小さい酸。酢酸・炭酸など"
+      ],
+      "answerIndex": 3,
+      "explanation": "弱酸：電離度が小さい酸。酢酸・炭酸など。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_03_025",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "knowledge",
+      "prompt": "電離度が1に近い塩基。水酸化ナトリウム・水酸化カリウム・水酸化カルシウム・水酸化バリウムなど。これを何という？",
+      "choices": [
+        "オキソニウムイオン",
+        "酸",
+        "強塩基",
+        "弱塩基"
+      ],
+      "answerIndex": 2,
+      "explanation": "強塩基：電離度が1に近い塩基。水酸化ナトリウム・水酸化カリウム・水酸化カルシウム・水酸化バリウムなど。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_03_026",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "thinking",
+      "prompt": "「強塩基」の説明として正しいものは？",
+      "choices": [
+        "電離度が1に近い塩基。水酸化ナトリウム・水酸化カリウム・水酸化カルシウム・水酸化バリウムなど",
+        "電離度が小さい塩基。アンモニアなど",
+        "水素イオンが水分子と結びついてできるイオン H₃O⁺",
+        "水に溶けて水素イオンH⁺を生じる物質。ブレンステッドの定義ではH⁺を与える分子・イオン"
+      ],
+      "answerIndex": 0,
+      "explanation": "強塩基：電離度が1に近い塩基。水酸化ナトリウム・水酸化カリウム・水酸化カルシウム・水酸化バリウムなど。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_03_027",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "knowledge",
+      "prompt": "電離度が小さい塩基。アンモニアなど。これを何という？",
+      "choices": [
+        "価数",
+        "電離度",
+        "塩基性",
+        "弱塩基"
+      ],
+      "answerIndex": 3,
+      "explanation": "弱塩基：電離度が小さい塩基。アンモニアなど。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_03_028",
+      "unit": "science.chemistry.change.acid.define",
+      "category": "thinking",
+      "prompt": "「弱塩基」の説明として正しいものは？",
+      "choices": [
+        "電離度が小さい塩基。アンモニアなど",
+        "酸1分子が出せるH⁺の数、または塩基1つが受け取れるH⁺（出せるOH⁻）の数",
+        "溶かした酸や塩基のうち、電離したものの割合",
+        "塩基の水溶液が示す性質。赤色リトマス紙を青くする（アルカリ性ともいう）"
+      ],
+      "answerIndex": 0,
+      "explanation": "弱塩基：電離度が小さい塩基。アンモニアなど。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    }
+  ]
+}

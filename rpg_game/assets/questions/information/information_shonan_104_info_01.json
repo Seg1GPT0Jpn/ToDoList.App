@@ -10,10 +10,10 @@
       "category": "knowledge",
       "prompt": "情報を、受け手に分かりやすく伝わるように整理・表現すること。これを何という？",
       "choices": [
-        "ユーザエクスペリエンス",
+        "ユニバーサルデザイン",
         "情報デザイン",
-        "抽象化",
-        "ユニバーサルデザイン"
+        "LATCH",
+        "ユーザビリティ"
       ],
       "answerIndex": 1,
       "explanation": "情報デザイン：情報を、受け手に分かりやすく伝わるように整理・表現すること。",
@@ -31,10 +31,10 @@
       "category": "thinking",
       "prompt": "「情報デザイン」の説明として正しいものは？",
       "choices": [
-        "製品やサービスを使うことで得られる体験（UX）",
         "年齢・障害・国籍などにかかわらず、誰にとっても使いやすいように設計すること",
+        "特定の利用者が、目的を効果的・効率的・満足して達成できるかという使いやすさ",
         "情報を、受け手に分かりやすく伝わるように整理・表現すること",
-        "情報の要素を取り出し、不要な部分を省いて表すこと"
+        "情報を整理する5つの基準（位置・アルファベット・時間・カテゴリ・階層）の頭文字をとった呼び名"
       ],
       "answerIndex": 2,
       "explanation": "情報デザイン：情報を、受け手に分かりやすく伝わるように整理・表現すること。",
@@ -53,9 +53,9 @@
       "prompt": "人とコンピュータなどの機器が情報をやりとりする部分（UI）。これを何という？",
       "choices": [
         "ユーザインタフェース",
-        "ユーザエクスペリエンス",
-        "ユーザビリティ",
-        "フィードバック"
+        "アクセシビリティ",
+        "ピクトグラム",
+        "NUI"
       ],
       "answerIndex": 0,
       "explanation": "ユーザインタフェース：人とコンピュータなどの機器が情報をやりとりする部分（UI）。",
@@ -73,10 +73,10 @@
       "category": "thinking",
       "prompt": "「ユーザインタフェース」の説明として正しいものは？",
       "choices": [
-        "製品やサービスを使うことで得られる体験（UX）",
-        "操作に対して、システムが結果や状態を利用者に返すこと",
+        "誰もが情報やサービスを利用できるかどうかの度合い",
+        "画面にふれる・話しかける・身ぶりをするなど、人の自然な動作で操作するユーザインタフェース",
         "人とコンピュータなどの機器が情報をやりとりする部分（UI）",
-        "特定の利用者が、目的を効果的・効率的・満足して達成できるかという使いやすさ"
+        "言葉を使わずに、意味を図で伝える記号"
       ],
       "answerIndex": 2,
       "explanation": "ユーザインタフェース：人とコンピュータなどの機器が情報をやりとりする部分（UI）。",
@@ -94,9 +94,9 @@
       "category": "knowledge",
       "prompt": "製品やサービスを使うことで得られる体験（UX）。これを何という？",
       "choices": [
-        "構造化",
-        "フィードバック",
         "カラーユニバーサルデザイン",
+        "NUI",
+        "GUI",
         "ユーザエクスペリエンス"
       ],
       "answerIndex": 3,
@@ -115,9 +115,9 @@
       "category": "thinking",
       "prompt": "「ユーザエクスペリエンス」の説明として正しいものは？",
       "choices": [
-        "情報を、順序・階層・分類などで整理すること",
         "色の見え方が異なる人にも情報が正しく伝わるように、色を使うこと",
-        "操作に対して、システムが結果や状態を利用者に返すこと",
+        "アイコンやウィンドウなどの画面上の図を、マウスなどで操作するユーザインタフェース",
+        "画面にふれる・話しかける・身ぶりをするなど、人の自然な動作で操作するユーザインタフェース",
         "製品やサービスを使うことで得られる体験（UX）"
       ],
       "answerIndex": 3,
@@ -136,10 +136,10 @@
       "category": "knowledge",
       "prompt": "年齢・障害・国籍などにかかわらず、誰にとっても使いやすいように設計すること。これを何という？",
       "choices": [
-        "可視化",
+        "アフォーダンス",
         "ユニバーサルデザイン",
-        "アクセシビリティ",
-        "アフォーダンス"
+        "NUI",
+        "アクセシビリティ"
       ],
       "answerIndex": 1,
       "explanation": "ユニバーサルデザイン：年齢・障害・国籍などにかかわらず、誰にとっても使いやすいように設計すること。",
@@ -157,9 +157,9 @@
       "category": "thinking",
       "prompt": "「ユニバーサルデザイン」の説明として正しいものは？",
       "choices": [
-        "ものの形などが、人にある行動をうながすこと",
         "誰もが情報やサービスを利用できるかどうかの度合い",
-        "数量や関係などを、図やグラフで見えるようにすること",
+        "画面にふれる・話しかける・身ぶりをするなど、人の自然な動作で操作するユーザインタフェース",
+        "ものの形などが、人にある行動をうながすこと",
         "年齢・障害・国籍などにかかわらず、誰にとっても使いやすいように設計すること"
       ],
       "answerIndex": 3,
@@ -178,9 +178,9 @@
       "category": "knowledge",
       "prompt": "誰もが情報やサービスを利用できるかどうかの度合い。これを何という？",
       "choices": [
-        "ユーザインタフェース",
-        "フィードバック",
         "情報デザイン",
+        "カラーユニバーサルデザイン",
+        "CUI",
         "アクセシビリティ"
       ],
       "answerIndex": 3,
@@ -199,10 +199,10 @@
       "category": "thinking",
       "prompt": "「アクセシビリティ」の説明として正しいものは？",
       "choices": [
-        "人とコンピュータなどの機器が情報をやりとりする部分（UI）",
+        "情報を、受け手に分かりやすく伝わるように整理・表現すること",
         "誰もが情報やサービスを利用できるかどうかの度合い",
-        "操作に対して、システムが結果や状態を利用者に返すこと",
-        "情報を、受け手に分かりやすく伝わるように整理・表現すること"
+        "色の見え方が異なる人にも情報が正しく伝わるように、色を使うこと",
+        "キーボードから文字で命令（コマンド）を打ちこんで操作するユーザインタフェース"
       ],
       "answerIndex": 1,
       "explanation": "アクセシビリティ：誰もが情報やサービスを利用できるかどうかの度合い。",
@@ -220,10 +220,10 @@
       "category": "knowledge",
       "prompt": "特定の利用者が、目的を効果的・効率的・満足して達成できるかという使いやすさ。これを何という？",
       "choices": [
-        "アフォーダンス",
+        "マルチウィンドウ",
         "ユーザビリティ",
-        "カラーユニバーサルデザイン",
-        "抽象化"
+        "情報デザイン",
+        "GUI"
       ],
       "answerIndex": 1,
       "explanation": "ユーザビリティ：特定の利用者が、目的を効果的・効率的・満足して達成できるかという使いやすさ。",
@@ -242,9 +242,9 @@
       "prompt": "「ユーザビリティ」の説明として正しいものは？",
       "choices": [
         "特定の利用者が、目的を効果的・効率的・満足して達成できるかという使いやすさ",
-        "色の見え方が異なる人にも情報が正しく伝わるように、色を使うこと",
-        "情報の要素を取り出し、不要な部分を省いて表すこと",
-        "ものの形などが、人にある行動をうながすこと"
+        "情報を、受け手に分かりやすく伝わるように整理・表現すること",
+        "アイコンやウィンドウなどの画面上の図を、マウスなどで操作するユーザインタフェース",
+        "複数のウィンドウを同時に開いて作業できるユーザインタフェース"
       ],
       "answerIndex": 0,
       "explanation": "ユーザビリティ：特定の利用者が、目的を効果的・効率的・満足して達成できるかという使いやすさ。",
@@ -262,10 +262,10 @@
       "category": "knowledge",
       "prompt": "「ここを押せばよい」などの使い方を、利用者に示す手がかり。これを何という？",
       "choices": [
-        "情報デザイン",
-        "シグニファイア",
         "フィードバック",
-        "カラーユニバーサルデザイン"
+        "シグニファイア",
+        "LATCH",
+        "ピクトグラム"
       ],
       "answerIndex": 1,
       "explanation": "シグニファイア：「ここを押せばよい」などの使い方を、利用者に示す手がかり。",
@@ -284,9 +284,9 @@
       "prompt": "「シグニファイア」の説明として正しいものは？",
       "choices": [
         "「ここを押せばよい」などの使い方を、利用者に示す手がかり",
-        "情報を、受け手に分かりやすく伝わるように整理・表現すること",
         "操作に対して、システムが結果や状態を利用者に返すこと",
-        "色の見え方が異なる人にも情報が正しく伝わるように、色を使うこと"
+        "情報を整理する5つの基準（位置・アルファベット・時間・カテゴリ・階層）の頭文字をとった呼び名",
+        "言葉を使わずに、意味を図で伝える記号"
       ],
       "answerIndex": 0,
       "explanation": "シグニファイア：「ここを押せばよい」などの使い方を、利用者に示す手がかり。",
@@ -304,9 +304,9 @@
       "category": "knowledge",
       "prompt": "ものの形などが、人にある行動をうながすこと。これを何という？",
       "choices": [
-        "構造化",
+        "可視化",
+        "情報デザイン",
         "ユニバーサルデザイン",
-        "アクセシビリティ",
         "アフォーダンス"
       ],
       "answerIndex": 3,
@@ -326,9 +326,9 @@
       "prompt": "「アフォーダンス」の説明として正しいものは？",
       "choices": [
         "ものの形などが、人にある行動をうながすこと",
-        "年齢・障害・国籍などにかかわらず、誰にとっても使いやすいように設計すること",
-        "情報を、順序・階層・分類などで整理すること",
-        "誰もが情報やサービスを利用できるかどうかの度合い"
+        "情報を、受け手に分かりやすく伝わるように整理・表現すること",
+        "数量や関係などを、図やグラフで見えるようにすること",
+        "年齢・障害・国籍などにかかわらず、誰にとっても使いやすいように設計すること"
       ],
       "answerIndex": 0,
       "explanation": "アフォーダンス：ものの形などが、人にある行動をうながすこと。",
@@ -346,9 +346,9 @@
       "category": "knowledge",
       "prompt": "操作に対して、システムが結果や状態を利用者に返すこと。これを何という？",
       "choices": [
-        "ユーザビリティ",
-        "抽象化",
-        "ユーザインタフェース",
+        "アイコン",
+        "情報デザイン",
+        "構造化（並列・因果）",
         "フィードバック"
       ],
       "answerIndex": 3,
@@ -367,10 +367,10 @@
       "category": "thinking",
       "prompt": "「フィードバック」の説明として正しいものは？",
       "choices": [
-        "情報の要素を取り出し、不要な部分を省いて表すこと",
+        "情報を、受け手に分かりやすく伝わるように整理・表現すること",
         "操作に対して、システムが結果や状態を利用者に返すこと",
-        "人とコンピュータなどの機器が情報をやりとりする部分（UI）",
-        "特定の利用者が、目的を効果的・効率的・満足して達成できるかという使いやすさ"
+        "情報どうしの関係（並べる・原因と結果・分かれる など）を整理して、わかりやすく示すこと",
+        "機能や内容を小さな絵で表し、クリックなどで操作できるようにしたもの"
       ],
       "answerIndex": 1,
       "explanation": "フィードバック：操作に対して、システムが結果や状態を利用者に返すこと。",
@@ -389,7 +389,7 @@
       "prompt": "言葉を使わずに、意味を図で伝える記号。これを何という？",
       "choices": [
         "ピクトグラム",
-        "構造化",
+        "シグニファイア",
         "情報デザイン",
         "カラーユニバーサルデザイン"
       ],
@@ -412,7 +412,7 @@
         "情報を、受け手に分かりやすく伝わるように整理・表現すること",
         "言葉を使わずに、意味を図で伝える記号",
         "色の見え方が異なる人にも情報が正しく伝わるように、色を使うこと",
-        "情報を、順序・階層・分類などで整理すること"
+        "「ここを押せばよい」などの使い方を、利用者に示す手がかり"
       ],
       "answerIndex": 1,
       "explanation": "ピクトグラム：言葉を使わずに、意味を図で伝える記号。",
@@ -430,10 +430,10 @@
       "category": "knowledge",
       "prompt": "情報の要素を取り出し、不要な部分を省いて表すこと。これを何という？",
       "choices": [
-        "フィードバック",
-        "可視化",
+        "情報デザイン",
+        "CUI",
         "抽象化",
-        "情報デザイン"
+        "バリアフリー"
       ],
       "answerIndex": 2,
       "explanation": "抽象化：情報の要素を取り出し、不要な部分を省いて表すこと。",
@@ -451,10 +451,10 @@
       "category": "thinking",
       "prompt": "「抽象化」の説明として正しいものは？",
       "choices": [
-        "数量や関係などを、図やグラフで見えるようにすること",
+        "キーボードから文字で命令（コマンド）を打ちこんで操作するユーザインタフェース",
         "情報の要素を取り出し、不要な部分を省いて表すこと",
-        "操作に対して、システムが結果や状態を利用者に返すこと",
-        "情報を、受け手に分かりやすく伝わるように整理・表現すること"
+        "情報を、受け手に分かりやすく伝わるように整理・表現すること",
+        "高齢者や障害のある人の生活の妨げになる障壁を、あとから取り除こうという考え方"
       ],
       "answerIndex": 1,
       "explanation": "抽象化：情報の要素を取り出し、不要な部分を省いて表すこと。",
@@ -473,9 +473,9 @@
       "prompt": "数量や関係などを、図やグラフで見えるようにすること。これを何という？",
       "choices": [
         "可視化",
-        "シグニファイア",
-        "ユニバーサルデザイン",
-        "抽象化"
+        "アフォーダンス",
+        "NUI",
+        "GUI"
       ],
       "answerIndex": 0,
       "explanation": "可視化：数量や関係などを、図やグラフで見えるようにすること。",
@@ -493,9 +493,9 @@
       "category": "thinking",
       "prompt": "「可視化」の説明として正しいものは？",
       "choices": [
-        "情報の要素を取り出し、不要な部分を省いて表すこと",
-        "年齢・障害・国籍などにかかわらず、誰にとっても使いやすいように設計すること",
-        "「ここを押せばよい」などの使い方を、利用者に示す手がかり",
+        "アイコンやウィンドウなどの画面上の図を、マウスなどで操作するユーザインタフェース",
+        "画面にふれる・話しかける・身ぶりをするなど、人の自然な動作で操作するユーザインタフェース",
+        "ものの形などが、人にある行動をうながすこと",
         "数量や関係などを、図やグラフで見えるようにすること"
       ],
       "answerIndex": 3,
@@ -515,9 +515,9 @@
       "prompt": "情報を、順序・階層・分類などで整理すること。これを何という？",
       "choices": [
         "構造化",
-        "情報デザイン",
         "可視化",
-        "シグニファイア"
+        "アフォーダンス",
+        "アイコン"
       ],
       "answerIndex": 0,
       "explanation": "構造化：情報を、順序・階層・分類などで整理すること。",
@@ -535,10 +535,10 @@
       "category": "thinking",
       "prompt": "「構造化」の説明として正しいものは？",
       "choices": [
-        "情報を、受け手に分かりやすく伝わるように整理・表現すること",
+        "数量や関係などを、図やグラフで見えるようにすること",
         "情報を、順序・階層・分類などで整理すること",
-        "「ここを押せばよい」などの使い方を、利用者に示す手がかり",
-        "数量や関係などを、図やグラフで見えるようにすること"
+        "機能や内容を小さな絵で表し、クリックなどで操作できるようにしたもの",
+        "ものの形などが、人にある行動をうながすこと"
       ],
       "answerIndex": 1,
       "explanation": "構造化：情報を、順序・階層・分類などで整理すること。",
@@ -556,10 +556,10 @@
       "category": "knowledge",
       "prompt": "色の見え方が異なる人にも情報が正しく伝わるように、色を使うこと。これを何という？",
       "choices": [
-        "ユニバーサルデザイン",
-        "フィードバック",
+        "構造化（並列・因果）",
+        "アフォーダンス",
         "カラーユニバーサルデザイン",
-        "アフォーダンス"
+        "GUI"
       ],
       "answerIndex": 2,
       "explanation": "カラーユニバーサルデザイン：色の見え方が異なる人にも情報が正しく伝わるように、色を使うこと。",
@@ -577,10 +577,10 @@
       "category": "thinking",
       "prompt": "「カラーユニバーサルデザイン」の説明として正しいものは？",
       "choices": [
-        "操作に対して、システムが結果や状態を利用者に返すこと",
+        "ものの形などが、人にある行動をうながすこと",
         "色の見え方が異なる人にも情報が正しく伝わるように、色を使うこと",
-        "年齢・障害・国籍などにかかわらず、誰にとっても使いやすいように設計すること",
-        "ものの形などが、人にある行動をうながすこと"
+        "情報どうしの関係（並べる・原因と結果・分かれる など）を整理して、わかりやすく示すこと",
+        "アイコンやウィンドウなどの画面上の図を、マウスなどで操作するユーザインタフェース"
       ],
       "answerIndex": 1,
       "explanation": "カラーユニバーサルデザイン：色の見え方が異なる人にも情報が正しく伝わるように、色を使うこと。",
@@ -594,17 +594,17 @@
     },
     {
       "id": "information_shonan_104_info_01_029",
-      "unit": "information.info.design.design",
+      "unit": "information.info.design.design.ui",
       "category": "knowledge",
-      "prompt": "コンピュータを構成する、装置そのもの。これを何という？",
+      "prompt": "キーボードから文字で命令（コマンド）を打ちこんで操作するユーザインタフェース。これを何という？",
       "choices": [
-        "主記憶装置",
-        "ハードウェア",
-        "オペレーティングシステム",
-        "クロック周波数"
+        "カラーユニバーサルデザイン",
+        "CUI",
+        "情報デザイン",
+        "ピクトグラム"
       ],
       "answerIndex": 1,
-      "explanation": "ハードウェア：コンピュータを構成する、装置そのもの。",
+      "explanation": "CUI：キーボードから文字で命令（コマンド）を打ちこんで操作するユーザインタフェース。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -615,17 +615,17 @@
     },
     {
       "id": "information_shonan_104_info_01_030",
-      "unit": "information.info.design.design",
+      "unit": "information.info.design.design.ui",
       "category": "thinking",
-      "prompt": "「ハードウェア」の説明として正しいものは？",
+      "prompt": "「CUI」の説明として正しいものは？",
       "choices": [
-        "CPUが動作のタイミングをとるための信号が、1秒間に何回出るかを表す値",
-        "ハードウェアを管理し、アプリケーションソフトウェアが動く土台となる基本ソフトウェア（OS）",
-        "CPUが直接読み書きする記憶装置（メモリ）。電源を切ると内容が消える",
-        "コンピュータを構成する、装置そのもの"
+        "言葉を使わずに、意味を図で伝える記号",
+        "情報を、受け手に分かりやすく伝わるように整理・表現すること",
+        "色の見え方が異なる人にも情報が正しく伝わるように、色を使うこと",
+        "キーボードから文字で命令（コマンド）を打ちこんで操作するユーザインタフェース"
       ],
       "answerIndex": 3,
-      "explanation": "ハードウェア：コンピュータを構成する、装置そのもの。",
+      "explanation": "CUI：キーボードから文字で命令（コマンド）を打ちこんで操作するユーザインタフェース。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -636,17 +636,17 @@
     },
     {
       "id": "information_shonan_104_info_01_031",
-      "unit": "information.info.computer.hardware.software",
+      "unit": "information.info.design.design.ui",
       "category": "knowledge",
-      "prompt": "コンピュータを動かすプログラムなど。これを何という？",
+      "prompt": "アイコンやウィンドウなどの画面上の図を、マウスなどで操作するユーザインタフェース。これを何という？",
       "choices": [
-        "ソフトウェア",
-        "レジスタ",
-        "主記憶装置",
-        "デバイスドライバ"
+        "GUI",
+        "アイコン",
+        "ユニバーサルデザイン",
+        "ユーザビリティ"
       ],
       "answerIndex": 0,
-      "explanation": "ソフトウェア：コンピュータを動かすプログラムなど。",
+      "explanation": "GUI：アイコンやウィンドウなどの画面上の図を、マウスなどで操作するユーザインタフェース。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -657,17 +657,17 @@
     },
     {
       "id": "information_shonan_104_info_01_032",
-      "unit": "information.info.computer.hardware.software",
+      "unit": "information.info.design.design.ui",
       "category": "thinking",
-      "prompt": "「ソフトウェア」の説明として正しいものは？",
+      "prompt": "「GUI」の説明として正しいものは？",
       "choices": [
-        "コンピュータを動かすプログラムなど",
-        "周辺機器をOSから使えるようにするためのソフトウェア",
-        "CPUの中にある、演算に使う小さく高速な記憶装置",
-        "CPUが直接読み書きする記憶装置（メモリ）。電源を切ると内容が消える"
+        "アイコンやウィンドウなどの画面上の図を、マウスなどで操作するユーザインタフェース",
+        "特定の利用者が、目的を効果的・効率的・満足して達成できるかという使いやすさ",
+        "機能や内容を小さな絵で表し、クリックなどで操作できるようにしたもの",
+        "年齢・障害・国籍などにかかわらず、誰にとっても使いやすいように設計すること"
       ],
       "answerIndex": 0,
-      "explanation": "ソフトウェア：コンピュータを動かすプログラムなど。",
+      "explanation": "GUI：アイコンやウィンドウなどの画面上の図を、マウスなどで操作するユーザインタフェース。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -678,17 +678,17 @@
     },
     {
       "id": "information_shonan_104_info_01_033",
-      "unit": "information.info.programming.program.trace",
+      "unit": "information.info.design.design.ui",
       "category": "knowledge",
-      "prompt": "入力・出力・記憶・演算・制御の5つの装置。これを何という？",
+      "prompt": "画面にふれる・話しかける・身ぶりをするなど、人の自然な動作で操作するユーザインタフェース。これを何という？",
       "choices": [
-        "コンパイラ",
-        "クロック周波数",
-        "主記憶装置",
-        "五大装置"
+        "ピクトグラム",
+        "ユニバーサルデザイン",
+        "構造化（並列・因果）",
+        "NUI"
       ],
       "answerIndex": 3,
-      "explanation": "五大装置：入力・出力・記憶・演算・制御の5つの装置。",
+      "explanation": "NUI：画面にふれる・話しかける・身ぶりをするなど、人の自然な動作で操作するユーザインタフェース。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -699,17 +699,17 @@
     },
     {
       "id": "information_shonan_104_info_01_034",
-      "unit": "information.info.computer.hardware.components",
+      "unit": "information.info.design.design.ui",
       "category": "thinking",
-      "prompt": "「五大装置」の説明として正しいものは？",
+      "prompt": "「NUI」の説明として正しいものは？",
       "choices": [
-        "プログラム全体をまとめて機械語に翻訳するしくみ",
-        "入力・出力・記憶・演算・制御の5つの装置",
-        "CPUが動作のタイミングをとるための信号が、1秒間に何回出るかを表す値",
-        "CPUが直接読み書きする記憶装置（メモリ）。電源を切ると内容が消える"
+        "言葉を使わずに、意味を図で伝える記号",
+        "画面にふれる・話しかける・身ぶりをするなど、人の自然な動作で操作するユーザインタフェース",
+        "年齢・障害・国籍などにかかわらず、誰にとっても使いやすいように設計すること",
+        "情報どうしの関係（並べる・原因と結果・分かれる など）を整理して、わかりやすく示すこと"
       ],
       "answerIndex": 1,
-      "explanation": "五大装置：入力・出力・記憶・演算・制御の5つの装置。",
+      "explanation": "NUI：画面にふれる・話しかける・身ぶりをするなど、人の自然な動作で操作するユーザインタフェース。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -720,17 +720,17 @@
     },
     {
       "id": "information_shonan_104_info_01_035",
-      "unit": "information.info.computer.hardware.components",
+      "unit": "information.info.design.design",
       "category": "knowledge",
-      "prompt": "演算装置と制御装置をまとめたもの（中央処理装置）。これを何という？",
+      "prompt": "高齢者や障害のある人の生活の妨げになる障壁を、あとから取り除こうという考え方。これを何という？",
       "choices": [
-        "ハードウェア",
-        "CPU",
-        "補助記憶装置",
-        "プログラム内蔵方式"
+        "NUI",
+        "バリアフリー",
+        "抽象化",
+        "カラーユニバーサルデザイン"
       ],
       "answerIndex": 1,
-      "explanation": "CPU：演算装置と制御装置をまとめたもの（中央処理装置）。",
+      "explanation": "バリアフリー：高齢者や障害のある人の生活の妨げになる障壁を、あとから取り除こうという考え方。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -741,17 +741,17 @@
     },
     {
       "id": "information_shonan_104_info_01_036",
-      "unit": "information.info.computer.hardware.components",
+      "unit": "information.info.design.design",
       "category": "thinking",
-      "prompt": "「CPU」の説明として正しいものは？",
+      "prompt": "「バリアフリー」の説明として正しいものは？",
       "choices": [
-        "演算装置と制御装置をまとめたもの（中央処理装置）",
-        "コンピュータを構成する、装置そのもの",
-        "SSDやHDDなど、電源を切ってもデータが残る記憶装置",
-        "プログラムをデータと同じように主記憶装置に記憶させて実行する方式（ノイマン型）"
+        "高齢者や障害のある人の生活の妨げになる障壁を、あとから取り除こうという考え方",
+        "画面にふれる・話しかける・身ぶりをするなど、人の自然な動作で操作するユーザインタフェース",
+        "情報の要素を取り出し、不要な部分を省いて表すこと",
+        "色の見え方が異なる人にも情報が正しく伝わるように、色を使うこと"
       ],
       "answerIndex": 0,
-      "explanation": "CPU：演算装置と制御装置をまとめたもの（中央処理装置）。",
+      "explanation": "バリアフリー：高齢者や障害のある人の生活の妨げになる障壁を、あとから取り除こうという考え方。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -762,17 +762,17 @@
     },
     {
       "id": "information_shonan_104_info_01_037",
-      "unit": "information.info.computer.hardware.components",
+      "unit": "information.info.data.manage.database",
       "category": "knowledge",
-      "prompt": "CPUが直接読み書きする記憶装置（メモリ）。電源を切ると内容が消える。これを何という？",
+      "prompt": "機能や内容を小さな絵で表し、クリックなどで操作できるようにしたもの。これを何という？",
       "choices": [
-        "オペレーティングシステム",
-        "主記憶装置",
-        "演算誤差",
-        "デバイスドライバ"
+        "シグニファイア",
+        "アイコン",
+        "NUI",
+        "ピクトグラム"
       ],
       "answerIndex": 1,
-      "explanation": "主記憶装置：CPUが直接読み書きする記憶装置（メモリ）。電源を切ると内容が消える。",
+      "explanation": "アイコン：機能や内容を小さな絵で表し、クリックなどで操作できるようにしたもの。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -783,17 +783,17 @@
     },
     {
       "id": "information_shonan_104_info_01_038",
-      "unit": "information.info.computer.hardware.components",
+      "unit": "information.info.data.manage.database",
       "category": "thinking",
-      "prompt": "「主記憶装置」の説明として正しいものは？",
+      "prompt": "「アイコン」の説明として正しいものは？",
       "choices": [
-        "周辺機器をOSから使えるようにするためのソフトウェア",
-        "CPUが直接読み書きする記憶装置（メモリ）。電源を切ると内容が消える",
-        "コンピュータで計算するとき、有限の桁数で表すために生じる誤差",
-        "ハードウェアを管理し、アプリケーションソフトウェアが動く土台となる基本ソフトウェア（OS）"
+        "言葉を使わずに、意味を図で伝える記号",
+        "機能や内容を小さな絵で表し、クリックなどで操作できるようにしたもの",
+        "画面にふれる・話しかける・身ぶりをするなど、人の自然な動作で操作するユーザインタフェース",
+        "「ここを押せばよい」などの使い方を、利用者に示す手がかり"
       ],
       "answerIndex": 1,
-      "explanation": "主記憶装置：CPUが直接読み書きする記憶装置（メモリ）。電源を切ると内容が消える。",
+      "explanation": "アイコン：機能や内容を小さな絵で表し、クリックなどで操作できるようにしたもの。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -804,17 +804,17 @@
     },
     {
       "id": "information_shonan_104_info_01_039",
-      "unit": "information.info.computer.hardware.components",
+      "unit": "information.info.network.protocol.tcpip",
       "category": "knowledge",
-      "prompt": "SSDやHDDなど、電源を切ってもデータが残る記憶装置。これを何という？",
+      "prompt": "情報を整理する5つの基準（位置・アルファベット・時間・カテゴリ・階層）の頭文字をとった呼び名。これを何という？",
       "choices": [
-        "デバイスドライバ",
-        "補助記憶装置",
-        "五大装置",
-        "ソフトウェア"
+        "GUI",
+        "LATCH",
+        "アイコン",
+        "ピクトグラム"
       ],
       "answerIndex": 1,
-      "explanation": "補助記憶装置：SSDやHDDなど、電源を切ってもデータが残る記憶装置。",
+      "explanation": "LATCH：情報を整理する5つの基準（位置・アルファベット・時間・カテゴリ・階層）の頭文字をとった呼び名。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -825,17 +825,17 @@
     },
     {
       "id": "information_shonan_104_info_01_040",
-      "unit": "information.info.computer.hardware.components",
+      "unit": "information.info.network.protocol.tcpip",
       "category": "thinking",
-      "prompt": "「補助記憶装置」の説明として正しいものは？",
+      "prompt": "「LATCH」の説明として正しいものは？",
       "choices": [
-        "入力・出力・記憶・演算・制御の5つの装置",
-        "周辺機器をOSから使えるようにするためのソフトウェア",
-        "SSDやHDDなど、電源を切ってもデータが残る記憶装置",
-        "コンピュータを動かすプログラムなど"
+        "機能や内容を小さな絵で表し、クリックなどで操作できるようにしたもの",
+        "アイコンやウィンドウなどの画面上の図を、マウスなどで操作するユーザインタフェース",
+        "情報を整理する5つの基準（位置・アルファベット・時間・カテゴリ・階層）の頭文字をとった呼び名",
+        "言葉を使わずに、意味を図で伝える記号"
       ],
       "answerIndex": 2,
-      "explanation": "補助記憶装置：SSDやHDDなど、電源を切ってもデータが残る記憶装置。",
+      "explanation": "LATCH：情報を整理する5つの基準（位置・アルファベット・時間・カテゴリ・階層）の頭文字をとった呼び名。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -846,17 +846,17 @@
     },
     {
       "id": "information_shonan_104_info_01_041",
-      "unit": "information.info.computer.hardware.components",
+      "unit": "information.info.design.design.ui",
       "category": "knowledge",
-      "prompt": "CPUの中にある、演算に使う小さく高速な記憶装置。これを何という？",
+      "prompt": "複数のウィンドウを同時に開いて作業できるユーザインタフェース。これを何という？",
       "choices": [
-        "インタプリタ",
-        "ソフトウェア",
-        "主記憶装置",
-        "レジスタ"
+        "NUI",
+        "アイコン",
+        "構造化",
+        "マルチウィンドウ"
       ],
       "answerIndex": 3,
-      "explanation": "レジスタ：CPUの中にある、演算に使う小さく高速な記憶装置。",
+      "explanation": "マルチウィンドウ：複数のウィンドウを同時に開いて作業できるユーザインタフェース。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -867,17 +867,17 @@
     },
     {
       "id": "information_shonan_104_info_01_042",
-      "unit": "information.info.computer.hardware.cpu",
+      "unit": "information.info.design.design.ui",
       "category": "thinking",
-      "prompt": "「レジスタ」の説明として正しいものは？",
+      "prompt": "「マルチウィンドウ」の説明として正しいものは？",
       "choices": [
-        "CPUが直接読み書きする記憶装置（メモリ）。電源を切ると内容が消える",
-        "プログラムを1命令ずつ機械語に翻訳しながら実行するしくみ",
-        "コンピュータを動かすプログラムなど",
-        "CPUの中にある、演算に使う小さく高速な記憶装置"
+        "情報を、順序・階層・分類などで整理すること",
+        "画面にふれる・話しかける・身ぶりをするなど、人の自然な動作で操作するユーザインタフェース",
+        "機能や内容を小さな絵で表し、クリックなどで操作できるようにしたもの",
+        "複数のウィンドウを同時に開いて作業できるユーザインタフェース"
       ],
       "answerIndex": 3,
-      "explanation": "レジスタ：CPUの中にある、演算に使う小さく高速な記憶装置。",
+      "explanation": "マルチウィンドウ：複数のウィンドウを同時に開いて作業できるユーザインタフェース。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -888,17 +888,17 @@
     },
     {
       "id": "information_shonan_104_info_01_043",
-      "unit": "information.info.computer.hardware.components",
+      "unit": "information.info.design.design.principle",
       "category": "knowledge",
-      "prompt": "プログラムをデータと同じように主記憶装置に記憶させて実行する方式（ノイマン型）。これを何という？",
+      "prompt": "情報どうしの関係（並べる・原因と結果・分かれる など）を整理して、わかりやすく示すこと。これを何という？",
       "choices": [
-        "補助記憶装置",
-        "演算誤差",
-        "インタプリタ",
-        "プログラム内蔵方式"
+        "GUI",
+        "アフォーダンス",
+        "ユーザインタフェース",
+        "構造化（並列・因果）"
       ],
       "answerIndex": 3,
-      "explanation": "プログラム内蔵方式：プログラムをデータと同じように主記憶装置に記憶させて実行する方式（ノイマン型）。",
+      "explanation": "構造化（並列・因果）：情報どうしの関係（並べる・原因と結果・分かれる など）を整理して、わかりやすく示すこと。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -909,17 +909,17 @@
     },
     {
       "id": "information_shonan_104_info_01_044",
-      "unit": "information.info.computer.hardware.components",
+      "unit": "information.info.design.design.principle",
       "category": "thinking",
-      "prompt": "「プログラム内蔵方式」の説明として正しいものは？",
+      "prompt": "「構造化（並列・因果）」の説明として正しいものは？",
       "choices": [
-        "プログラムを1命令ずつ機械語に翻訳しながら実行するしくみ",
-        "コンピュータで計算するとき、有限の桁数で表すために生じる誤差",
-        "プログラムをデータと同じように主記憶装置に記憶させて実行する方式（ノイマン型）",
-        "SSDやHDDなど、電源を切ってもデータが残る記憶装置"
+        "人とコンピュータなどの機器が情報をやりとりする部分（UI）",
+        "ものの形などが、人にある行動をうながすこと",
+        "情報どうしの関係（並べる・原因と結果・分かれる など）を整理して、わかりやすく示すこと",
+        "アイコンやウィンドウなどの画面上の図を、マウスなどで操作するユーザインタフェース"
       ],
       "answerIndex": 2,
-      "explanation": "プログラム内蔵方式：プログラムをデータと同じように主記憶装置に記憶させて実行する方式（ノイマン型）。",
+      "explanation": "構造化（並列・因果）：情報どうしの関係（並べる・原因と結果・分かれる など）を整理して、わかりやすく示すこと。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -930,17 +930,17 @@
     },
     {
       "id": "information_shonan_104_info_01_045",
-      "unit": "information.info.computer.hardware.components",
+      "unit": "information.info.design.design",
       "category": "knowledge",
-      "prompt": "CPUが動作のタイミングをとるための信号が、1秒間に何回出るかを表す値。これを何という？",
+      "prompt": "コンピュータを構成する、装置そのもの。これを何という？",
       "choices": [
-        "レジスタ",
-        "クロック周波数",
-        "インタプリタ",
-        "オペレーティングシステム"
+        "コンパイラ",
+        "ハードウェア",
+        "ファイル",
+        "フリーズ"
       ],
       "answerIndex": 1,
-      "explanation": "クロック周波数：CPUが動作のタイミングをとるための信号が、1秒間に何回出るかを表す値。",
+      "explanation": "ハードウェア：コンピュータを構成する、装置そのもの。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -951,17 +951,17 @@
     },
     {
       "id": "information_shonan_104_info_01_046",
-      "unit": "information.info.computer.media.sound",
+      "unit": "information.info.design.design",
       "category": "thinking",
-      "prompt": "「クロック周波数」の説明として正しいものは？",
+      "prompt": "「ハードウェア」の説明として正しいものは？",
       "choices": [
-        "ハードウェアを管理し、アプリケーションソフトウェアが動く土台となる基本ソフトウェア（OS）",
-        "CPUの中にある、演算に使う小さく高速な記憶装置",
-        "CPUが動作のタイミングをとるための信号が、1秒間に何回出るかを表す値",
-        "プログラムを1命令ずつ機械語に翻訳しながら実行するしくみ"
+        "処理できる量をこえた命令が与えられるなどして、コンピュータが応答しなくなること",
+        "プログラム全体をまとめて機械語に翻訳するしくみ",
+        "コンピュータを構成する、装置そのもの",
+        "コンピュータにデータを記録するときの、ひとまとまりの単位"
       ],
       "answerIndex": 2,
-      "explanation": "クロック周波数：CPUが動作のタイミングをとるための信号が、1秒間に何回出るかを表す値。",
+      "explanation": "ハードウェア：コンピュータを構成する、装置そのもの。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -974,15 +974,15 @@
       "id": "information_shonan_104_info_01_047",
       "unit": "information.info.computer.hardware.software",
       "category": "knowledge",
-      "prompt": "ハードウェアを管理し、アプリケーションソフトウェアが動く土台となる基本ソフトウェア（OS）。これを何という？",
+      "prompt": "コンピュータを動かすプログラムなど。これを何という？",
       "choices": [
-        "オペレーティングシステム",
-        "CPU",
-        "デバイスドライバ",
-        "クロック周波数"
+        "ソフトウェア",
+        "レジスタ",
+        "出力装置",
+        "演算誤差"
       ],
       "answerIndex": 0,
-      "explanation": "オペレーティングシステム：ハードウェアを管理し、アプリケーションソフトウェアが動く土台となる基本ソフトウェア（OS）。",
+      "explanation": "ソフトウェア：コンピュータを動かすプログラムなど。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [
@@ -995,12 +995,348 @@
       "id": "information_shonan_104_info_01_048",
       "unit": "information.info.computer.hardware.software",
       "category": "thinking",
+      "prompt": "「ソフトウェア」の説明として正しいものは？",
+      "choices": [
+        "コンピュータを動かすプログラムなど",
+        "CPUの中にある、演算に使う小さく高速な記憶装置",
+        "コンピュータで計算するとき、有限の桁数で表すために生じる誤差",
+        "ディスプレイやプリンタのように、処理した結果を外に出す装置"
+      ],
+      "answerIndex": 0,
+      "explanation": "ソフトウェア：コンピュータを動かすプログラムなど。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_049",
+      "unit": "information.info.programming.program.trace",
+      "category": "knowledge",
+      "prompt": "入力・出力・記憶・演算・制御の5つの装置。これを何という？",
+      "choices": [
+        "フォルダ",
+        "五大装置",
+        "インタプリタ",
+        "ハードディスク"
+      ],
+      "answerIndex": 1,
+      "explanation": "五大装置：入力・出力・記憶・演算・制御の5つの装置。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_050",
+      "unit": "information.info.computer.hardware.components",
+      "category": "thinking",
+      "prompt": "「五大装置」の説明として正しいものは？",
+      "choices": [
+        "磁気ディスクにデータを記録する補助記憶装置（HDD）",
+        "ファイルを分類して入れておく入れ物。中に入れ子にして階層構造（木構造）をつくれる",
+        "プログラムを1命令ずつ機械語に翻訳しながら実行するしくみ",
+        "入力・出力・記憶・演算・制御の5つの装置"
+      ],
+      "answerIndex": 3,
+      "explanation": "五大装置：入力・出力・記憶・演算・制御の5つの装置。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_051",
+      "unit": "information.info.computer.hardware.components",
+      "category": "knowledge",
+      "prompt": "演算装置と制御装置をまとめたもの（中央処理装置）。これを何という？",
+      "choices": [
+        "ファイル",
+        "CPU",
+        "基本ソフトウェア",
+        "出力装置"
+      ],
+      "answerIndex": 1,
+      "explanation": "CPU：演算装置と制御装置をまとめたもの（中央処理装置）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_052",
+      "unit": "information.info.computer.hardware.components",
+      "category": "thinking",
+      "prompt": "「CPU」の説明として正しいものは？",
+      "choices": [
+        "コンピュータにデータを記録するときの、ひとまとまりの単位",
+        "OSのように、ハードウェアの違いを吸収し、応用ソフトウェアが動く土台となるソフトウェア",
+        "演算装置と制御装置をまとめたもの（中央処理装置）",
+        "ディスプレイやプリンタのように、処理した結果を外に出す装置"
+      ],
+      "answerIndex": 2,
+      "explanation": "CPU：演算装置と制御装置をまとめたもの（中央処理装置）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_053",
+      "unit": "information.info.computer.hardware.components",
+      "category": "knowledge",
+      "prompt": "CPUが直接読み書きする記憶装置（メモリ）。電源を切ると内容が消える。これを何という？",
+      "choices": [
+        "主記憶装置",
+        "アクセス速度",
+        "五大装置",
+        "インタプリタ"
+      ],
+      "answerIndex": 0,
+      "explanation": "主記憶装置：CPUが直接読み書きする記憶装置（メモリ）。電源を切ると内容が消える。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_054",
+      "unit": "information.info.computer.hardware.components",
+      "category": "thinking",
+      "prompt": "「主記憶装置」の説明として正しいものは？",
+      "choices": [
+        "プログラムを1命令ずつ機械語に翻訳しながら実行するしくみ",
+        "入力・出力・記憶・演算・制御の5つの装置",
+        "記憶装置にデータを読み書きする速さ。主記憶装置は補助記憶装置よりずっと速い",
+        "CPUが直接読み書きする記憶装置（メモリ）。電源を切ると内容が消える"
+      ],
+      "answerIndex": 3,
+      "explanation": "主記憶装置：CPUが直接読み書きする記憶装置（メモリ）。電源を切ると内容が消える。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_055",
+      "unit": "information.info.computer.hardware.components",
+      "category": "knowledge",
+      "prompt": "SSDやHDDなど、電源を切ってもデータが残る記憶装置。これを何という？",
+      "choices": [
+        "出力装置",
+        "応用ソフトウェア",
+        "補助記憶装置",
+        "CPU"
+      ],
+      "answerIndex": 2,
+      "explanation": "補助記憶装置：SSDやHDDなど、電源を切ってもデータが残る記憶装置。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_056",
+      "unit": "information.info.computer.hardware.components",
+      "category": "thinking",
+      "prompt": "「補助記憶装置」の説明として正しいものは？",
+      "choices": [
+        "SSDやHDDなど、電源を切ってもデータが残る記憶装置",
+        "OSの上で、文書作成や表計算など具体的な作業をするためのソフトウェア（アプリケーション）",
+        "演算装置と制御装置をまとめたもの（中央処理装置）",
+        "ディスプレイやプリンタのように、処理した結果を外に出す装置"
+      ],
+      "answerIndex": 0,
+      "explanation": "補助記憶装置：SSDやHDDなど、電源を切ってもデータが残る記憶装置。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_057",
+      "unit": "information.info.computer.hardware.components",
+      "category": "knowledge",
+      "prompt": "CPUの中にある、演算に使う小さく高速な記憶装置。これを何という？",
+      "choices": [
+        "レジスタ",
+        "応用ソフトウェア",
+        "補助記憶装置",
+        "基本ソフトウェア"
+      ],
+      "answerIndex": 0,
+      "explanation": "レジスタ：CPUの中にある、演算に使う小さく高速な記憶装置。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_058",
+      "unit": "information.info.computer.hardware.cpu",
+      "category": "thinking",
+      "prompt": "「レジスタ」の説明として正しいものは？",
+      "choices": [
+        "OSの上で、文書作成や表計算など具体的な作業をするためのソフトウェア（アプリケーション）",
+        "CPUの中にある、演算に使う小さく高速な記憶装置",
+        "SSDやHDDなど、電源を切ってもデータが残る記憶装置",
+        "OSのように、ハードウェアの違いを吸収し、応用ソフトウェアが動く土台となるソフトウェア"
+      ],
+      "answerIndex": 1,
+      "explanation": "レジスタ：CPUの中にある、演算に使う小さく高速な記憶装置。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_059",
+      "unit": "information.info.computer.hardware.components",
+      "category": "knowledge",
+      "prompt": "プログラムをデータと同じように主記憶装置に記憶させて実行する方式（ノイマン型）。これを何という？",
+      "choices": [
+        "プログラム内蔵方式",
+        "コンパイラ",
+        "インタプリタ",
+        "フラッシュメモリ"
+      ],
+      "answerIndex": 0,
+      "explanation": "プログラム内蔵方式：プログラムをデータと同じように主記憶装置に記憶させて実行する方式（ノイマン型）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_060",
+      "unit": "information.info.computer.hardware.components",
+      "category": "thinking",
+      "prompt": "「プログラム内蔵方式」の説明として正しいものは？",
+      "choices": [
+        "プログラムを1命令ずつ機械語に翻訳しながら実行するしくみ",
+        "プログラム全体をまとめて機械語に翻訳するしくみ",
+        "プログラムをデータと同じように主記憶装置に記憶させて実行する方式（ノイマン型）",
+        "電源を切ってもデータが消えない半導体メモリ。USBメモリやSSD、SDカードに使われる"
+      ],
+      "answerIndex": 2,
+      "explanation": "プログラム内蔵方式：プログラムをデータと同じように主記憶装置に記憶させて実行する方式（ノイマン型）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_061",
+      "unit": "information.info.computer.hardware.components",
+      "category": "knowledge",
+      "prompt": "CPUが動作のタイミングをとるための信号が、1秒間に何回出るかを表す値。これを何という？",
+      "choices": [
+        "フラッシュメモリ",
+        "ハードウェア",
+        "クロック周波数",
+        "ファイル"
+      ],
+      "answerIndex": 2,
+      "explanation": "クロック周波数：CPUが動作のタイミングをとるための信号が、1秒間に何回出るかを表す値。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_062",
+      "unit": "information.info.computer.media.sound",
+      "category": "thinking",
+      "prompt": "「クロック周波数」の説明として正しいものは？",
+      "choices": [
+        "コンピュータにデータを記録するときの、ひとまとまりの単位",
+        "電源を切ってもデータが消えない半導体メモリ。USBメモリやSSD、SDカードに使われる",
+        "CPUが動作のタイミングをとるための信号が、1秒間に何回出るかを表す値",
+        "コンピュータを構成する、装置そのもの"
+      ],
+      "answerIndex": 2,
+      "explanation": "クロック周波数：CPUが動作のタイミングをとるための信号が、1秒間に何回出るかを表す値。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_063",
+      "unit": "information.info.computer.hardware.software",
+      "category": "knowledge",
+      "prompt": "ハードウェアを管理し、アプリケーションソフトウェアが動く土台となる基本ソフトウェア（OS）。これを何という？",
+      "choices": [
+        "ハードディスク",
+        "オペレーティングシステム",
+        "ソフトウェア",
+        "アプリケーションソフトウェア"
+      ],
+      "answerIndex": 1,
+      "explanation": "オペレーティングシステム：ハードウェアを管理し、アプリケーションソフトウェアが動く土台となる基本ソフトウェア（OS）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_064",
+      "unit": "information.info.computer.hardware.software",
+      "category": "thinking",
       "prompt": "「オペレーティングシステム」の説明として正しいものは？",
       "choices": [
         "ハードウェアを管理し、アプリケーションソフトウェアが動く土台となる基本ソフトウェア（OS）",
-        "演算装置と制御装置をまとめたもの（中央処理装置）",
-        "CPUが動作のタイミングをとるための信号が、1秒間に何回出るかを表す値",
-        "周辺機器をOSから使えるようにするためのソフトウェア"
+        "コンピュータを動かすプログラムなど",
+        "文書作成・表計算など、特定の目的のためのソフトウェア",
+        "磁気ディスクにデータを記録する補助記憶装置（HDD）"
       ],
       "answerIndex": 0,
       "explanation": "オペレーティングシステム：ハードウェアを管理し、アプリケーションソフトウェアが動く土台となる基本ソフトウェア（OS）。",
@@ -1013,17 +1349,17 @@
       ]
     },
     {
-      "id": "information_shonan_104_info_01_049",
+      "id": "information_shonan_104_info_01_065",
       "unit": "information.info.computer.hardware.software",
       "category": "knowledge",
       "prompt": "文書作成・表計算など、特定の目的のためのソフトウェア。これを何という？",
       "choices": [
-        "演算誤差",
+        "コンパイラ",
+        "アクセス権",
         "アプリケーションソフトウェア",
-        "主記憶装置",
-        "オペレーティングシステム"
+        "中央処理装置"
       ],
-      "answerIndex": 1,
+      "answerIndex": 2,
       "explanation": "アプリケーションソフトウェア：文書作成・表計算など、特定の目的のためのソフトウェア。",
       "targetGrade": "1",
       "phase": "teikiTest",
@@ -1034,17 +1370,17 @@
       ]
     },
     {
-      "id": "information_shonan_104_info_01_050",
+      "id": "information_shonan_104_info_01_066",
       "unit": "information.info.computer.hardware.software",
       "category": "thinking",
       "prompt": "「アプリケーションソフトウェア」の説明として正しいものは？",
       "choices": [
-        "ハードウェアを管理し、アプリケーションソフトウェアが動く土台となる基本ソフトウェア（OS）",
-        "コンピュータで計算するとき、有限の桁数で表すために生じる誤差",
-        "CPUが直接読み書きする記憶装置（メモリ）。電源を切ると内容が消える",
-        "文書作成・表計算など、特定の目的のためのソフトウェア"
+        "文書作成・表計算など、特定の目的のためのソフトウェア",
+        "プログラム全体をまとめて機械語に翻訳するしくみ",
+        "ファイルやフォルダごとに、読み取り・書きこみなどの操作をだれに許すかを決める設定",
+        "コンピュータの各装置を制御し、演算を行う装置。CPUのこと"
       ],
-      "answerIndex": 3,
+      "answerIndex": 0,
       "explanation": "アプリケーションソフトウェア：文書作成・表計算など、特定の目的のためのソフトウェア。",
       "targetGrade": "1",
       "phase": "teikiTest",
@@ -1055,15 +1391,15 @@
       ]
     },
     {
-      "id": "information_shonan_104_info_01_051",
+      "id": "information_shonan_104_info_01_067",
       "unit": "information.info.computer.hardware.software",
       "category": "knowledge",
       "prompt": "周辺機器をOSから使えるようにするためのソフトウェア。これを何という？",
       "choices": [
-        "レジスタ",
+        "応用ソフトウェア",
         "デバイスドライバ",
-        "プログラム内蔵方式",
-        "クロック周波数"
+        "補助記憶装置",
+        "入力装置"
       ],
       "answerIndex": 1,
       "explanation": "デバイスドライバ：周辺機器をOSから使えるようにするためのソフトウェア。",
@@ -1076,15 +1412,15 @@
       ]
     },
     {
-      "id": "information_shonan_104_info_01_052",
+      "id": "information_shonan_104_info_01_068",
       "unit": "information.info.computer.hardware.software",
       "category": "thinking",
       "prompt": "「デバイスドライバ」の説明として正しいものは？",
       "choices": [
-        "CPUの中にある、演算に使う小さく高速な記憶装置",
-        "プログラムをデータと同じように主記憶装置に記憶させて実行する方式（ノイマン型）",
+        "SSDやHDDなど、電源を切ってもデータが残る記憶装置",
+        "キーボードやマウスのように、コンピュータにデータを入れる装置",
         "周辺機器をOSから使えるようにするためのソフトウェア",
-        "CPUが動作のタイミングをとるための信号が、1秒間に何回出るかを表す値"
+        "OSの上で、文書作成や表計算など具体的な作業をするためのソフトウェア（アプリケーション）"
       ],
       "answerIndex": 2,
       "explanation": "デバイスドライバ：周辺機器をOSから使えるようにするためのソフトウェア。",
@@ -1097,36 +1433,15 @@
       ]
     },
     {
-      "id": "information_shonan_104_info_01_053",
+      "id": "information_shonan_104_info_01_069",
       "unit": "information.info.computer.hardware.cpu",
       "category": "knowledge",
       "prompt": "プログラムを1命令ずつ機械語に翻訳しながら実行するしくみ。これを何という？",
       "choices": [
-        "インタプリタ",
-        "プログラム内蔵方式",
         "ハードウェア",
-        "オペレーティングシステム"
-      ],
-      "answerIndex": 0,
-      "explanation": "インタプリタ：プログラムを1命令ずつ機械語に翻訳しながら実行するしくみ。",
-      "targetGrade": "1",
-      "phase": "teikiTest",
-      "tags": [
-        "shonan-hs-104",
-        "kouki-chukan",
-        "information1"
-      ]
-    },
-    {
-      "id": "information_shonan_104_info_01_054",
-      "unit": "information.info.computer.hardware.cpu",
-      "category": "thinking",
-      "prompt": "「インタプリタ」の説明として正しいものは？",
-      "choices": [
-        "ハードウェアを管理し、アプリケーションソフトウェアが動く土台となる基本ソフトウェア（OS）",
-        "コンピュータを構成する、装置そのもの",
-        "プログラムをデータと同じように主記憶装置に記憶させて実行する方式（ノイマン型）",
-        "プログラムを1命令ずつ機械語に翻訳しながら実行するしくみ"
+        "プログラム内蔵方式",
+        "基本ソフトウェア",
+        "インタプリタ"
       ],
       "answerIndex": 3,
       "explanation": "インタプリタ：プログラムを1命令ずつ機械語に翻訳しながら実行するしくみ。",
@@ -1139,17 +1454,38 @@
       ]
     },
     {
-      "id": "information_shonan_104_info_01_055",
+      "id": "information_shonan_104_info_01_070",
+      "unit": "information.info.computer.hardware.cpu",
+      "category": "thinking",
+      "prompt": "「インタプリタ」の説明として正しいものは？",
+      "choices": [
+        "コンピュータを構成する、装置そのもの",
+        "プログラムを1命令ずつ機械語に翻訳しながら実行するしくみ",
+        "OSのように、ハードウェアの違いを吸収し、応用ソフトウェアが動く土台となるソフトウェア",
+        "プログラムをデータと同じように主記憶装置に記憶させて実行する方式（ノイマン型）"
+      ],
+      "answerIndex": 1,
+      "explanation": "インタプリタ：プログラムを1命令ずつ機械語に翻訳しながら実行するしくみ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_071",
       "unit": "information.info.computer.hardware.cpu",
       "category": "knowledge",
       "prompt": "プログラム全体をまとめて機械語に翻訳するしくみ。これを何という？",
       "choices": [
-        "CPU",
-        "デバイスドライバ",
         "コンパイラ",
-        "レジスタ"
+        "フォルダ",
+        "レジスタ",
+        "プログラム内蔵方式"
       ],
-      "answerIndex": 2,
+      "answerIndex": 0,
       "explanation": "コンパイラ：プログラム全体をまとめて機械語に翻訳するしくみ。",
       "targetGrade": "1",
       "phase": "teikiTest",
@@ -1160,17 +1496,17 @@
       ]
     },
     {
-      "id": "information_shonan_104_info_01_056",
+      "id": "information_shonan_104_info_01_072",
       "unit": "information.info.computer.hardware.cpu",
       "category": "thinking",
       "prompt": "「コンパイラ」の説明として正しいものは？",
       "choices": [
-        "プログラム全体をまとめて機械語に翻訳するしくみ",
-        "周辺機器をOSから使えるようにするためのソフトウェア",
+        "プログラムをデータと同じように主記憶装置に記憶させて実行する方式（ノイマン型）",
+        "ファイルを分類して入れておく入れ物。中に入れ子にして階層構造（木構造）をつくれる",
         "CPUの中にある、演算に使う小さく高速な記憶装置",
-        "演算装置と制御装置をまとめたもの（中央処理装置）"
+        "プログラム全体をまとめて機械語に翻訳するしくみ"
       ],
-      "answerIndex": 0,
+      "answerIndex": 3,
       "explanation": "コンパイラ：プログラム全体をまとめて機械語に翻訳するしくみ。",
       "targetGrade": "1",
       "phase": "teikiTest",
@@ -1181,17 +1517,17 @@
       ]
     },
     {
-      "id": "information_shonan_104_info_01_057",
+      "id": "information_shonan_104_info_01_073",
       "unit": "information.info.data.manage.database",
       "category": "knowledge",
       "prompt": "コンピュータで計算するとき、有限の桁数で表すために生じる誤差。これを何という？",
       "choices": [
+        "インタプリタ",
+        "デバイスドライバ",
         "演算誤差",
-        "五大装置",
-        "アプリケーションソフトウェア",
-        "レジスタ"
+        "応用ソフトウェア"
       ],
-      "answerIndex": 0,
+      "answerIndex": 2,
       "explanation": "演算誤差：コンピュータで計算するとき、有限の桁数で表すために生じる誤差。",
       "targetGrade": "1",
       "phase": "teikiTest",
@@ -1202,18 +1538,522 @@
       ]
     },
     {
-      "id": "information_shonan_104_info_01_058",
+      "id": "information_shonan_104_info_01_074",
       "unit": "information.info.data.manage.database",
       "category": "thinking",
       "prompt": "「演算誤差」の説明として正しいものは？",
       "choices": [
-        "入力・出力・記憶・演算・制御の5つの装置",
+        "OSの上で、文書作成や表計算など具体的な作業をするためのソフトウェア（アプリケーション）",
         "コンピュータで計算するとき、有限の桁数で表すために生じる誤差",
-        "文書作成・表計算など、特定の目的のためのソフトウェア",
-        "CPUの中にある、演算に使う小さく高速な記憶装置"
+        "周辺機器をOSから使えるようにするためのソフトウェア",
+        "プログラムを1命令ずつ機械語に翻訳しながら実行するしくみ"
       ],
       "answerIndex": 1,
       "explanation": "演算誤差：コンピュータで計算するとき、有限の桁数で表すために生じる誤差。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_075",
+      "unit": "information.info.computer.hardware.components",
+      "category": "knowledge",
+      "prompt": "記憶装置にデータを読み書きする速さ。主記憶装置は補助記憶装置よりずっと速い。これを何という？",
+      "choices": [
+        "演算誤差",
+        "アクセス速度",
+        "アクセス権",
+        "デバイスドライバ"
+      ],
+      "answerIndex": 1,
+      "explanation": "アクセス速度：記憶装置にデータを読み書きする速さ。主記憶装置は補助記憶装置よりずっと速い。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_076",
+      "unit": "information.info.computer.hardware.components",
+      "category": "thinking",
+      "prompt": "「アクセス速度」の説明として正しいものは？",
+      "choices": [
+        "ファイルやフォルダごとに、読み取り・書きこみなどの操作をだれに許すかを決める設定",
+        "記憶装置にデータを読み書きする速さ。主記憶装置は補助記憶装置よりずっと速い",
+        "コンピュータで計算するとき、有限の桁数で表すために生じる誤差",
+        "周辺機器をOSから使えるようにするためのソフトウェア"
+      ],
+      "answerIndex": 1,
+      "explanation": "アクセス速度：記憶装置にデータを読み書きする速さ。主記憶装置は補助記憶装置よりずっと速い。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_077",
+      "unit": "information.info.computer.hardware.components",
+      "category": "knowledge",
+      "prompt": "電源を切ってもデータが消えない半導体メモリ。USBメモリやSSD、SDカードに使われる。これを何という？",
+      "choices": [
+        "フラッシュメモリ",
+        "クロック周波数",
+        "出力装置",
+        "フォルダ"
+      ],
+      "answerIndex": 0,
+      "explanation": "フラッシュメモリ：電源を切ってもデータが消えない半導体メモリ。USBメモリやSSD、SDカードに使われる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_078",
+      "unit": "information.info.computer.hardware.components",
+      "category": "thinking",
+      "prompt": "「フラッシュメモリ」の説明として正しいものは？",
+      "choices": [
+        "CPUが動作のタイミングをとるための信号が、1秒間に何回出るかを表す値",
+        "電源を切ってもデータが消えない半導体メモリ。USBメモリやSSD、SDカードに使われる",
+        "ディスプレイやプリンタのように、処理した結果を外に出す装置",
+        "ファイルを分類して入れておく入れ物。中に入れ子にして階層構造（木構造）をつくれる"
+      ],
+      "answerIndex": 1,
+      "explanation": "フラッシュメモリ：電源を切ってもデータが消えない半導体メモリ。USBメモリやSSD、SDカードに使われる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_079",
+      "unit": "information.info.computer.hardware.software",
+      "category": "knowledge",
+      "prompt": "OSの上で、文書作成や表計算など具体的な作業をするためのソフトウェア（アプリケーション）。これを何という？",
+      "choices": [
+        "中央処理装置",
+        "ハードウェア",
+        "ファイル",
+        "応用ソフトウェア"
+      ],
+      "answerIndex": 3,
+      "explanation": "応用ソフトウェア：OSの上で、文書作成や表計算など具体的な作業をするためのソフトウェア（アプリケーション）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_080",
+      "unit": "information.info.computer.hardware.software",
+      "category": "thinking",
+      "prompt": "「応用ソフトウェア」の説明として正しいものは？",
+      "choices": [
+        "コンピュータの各装置を制御し、演算を行う装置。CPUのこと",
+        "コンピュータにデータを記録するときの、ひとまとまりの単位",
+        "コンピュータを構成する、装置そのもの",
+        "OSの上で、文書作成や表計算など具体的な作業をするためのソフトウェア（アプリケーション）"
+      ],
+      "answerIndex": 3,
+      "explanation": "応用ソフトウェア：OSの上で、文書作成や表計算など具体的な作業をするためのソフトウェア（アプリケーション）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_081",
+      "unit": "information.info.programming.algorithm.structure",
+      "category": "knowledge",
+      "prompt": "ファイルを分類して入れておく入れ物。中に入れ子にして階層構造（木構造）をつくれる。これを何という？",
+      "choices": [
+        "ファイル",
+        "フォルダ",
+        "フリーズ",
+        "インタプリタ"
+      ],
+      "answerIndex": 1,
+      "explanation": "フォルダ：ファイルを分類して入れておく入れ物。中に入れ子にして階層構造（木構造）をつくれる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_082",
+      "unit": "information.info.programming.algorithm.structure",
+      "category": "thinking",
+      "prompt": "「フォルダ」の説明として正しいものは？",
+      "choices": [
+        "ファイルを分類して入れておく入れ物。中に入れ子にして階層構造（木構造）をつくれる",
+        "コンピュータにデータを記録するときの、ひとまとまりの単位",
+        "プログラムを1命令ずつ機械語に翻訳しながら実行するしくみ",
+        "処理できる量をこえた命令が与えられるなどして、コンピュータが応答しなくなること"
+      ],
+      "answerIndex": 0,
+      "explanation": "フォルダ：ファイルを分類して入れておく入れ物。中に入れ子にして階層構造（木構造）をつくれる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_083",
+      "unit": "information.info.design.design",
+      "category": "knowledge",
+      "prompt": "ファイルやフォルダごとに、読み取り・書きこみなどの操作をだれに許すかを決める設定。これを何という？",
+      "choices": [
+        "アクセス権",
+        "主記憶装置",
+        "フラッシュメモリ",
+        "フリーズ"
+      ],
+      "answerIndex": 0,
+      "explanation": "アクセス権：ファイルやフォルダごとに、読み取り・書きこみなどの操作をだれに許すかを決める設定。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_084",
+      "unit": "information.info.design.design",
+      "category": "thinking",
+      "prompt": "「アクセス権」の説明として正しいものは？",
+      "choices": [
+        "処理できる量をこえた命令が与えられるなどして、コンピュータが応答しなくなること",
+        "CPUが直接読み書きする記憶装置（メモリ）。電源を切ると内容が消える",
+        "電源を切ってもデータが消えない半導体メモリ。USBメモリやSSD、SDカードに使われる",
+        "ファイルやフォルダごとに、読み取り・書きこみなどの操作をだれに許すかを決める設定"
+      ],
+      "answerIndex": 3,
+      "explanation": "アクセス権：ファイルやフォルダごとに、読み取り・書きこみなどの操作をだれに許すかを決める設定。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_085",
+      "unit": "information.info.computer.hardware.components",
+      "category": "knowledge",
+      "prompt": "コンピュータの各装置を制御し、演算を行う装置。CPUのこと。これを何という？",
+      "choices": [
+        "フラッシュメモリ",
+        "基本ソフトウェア",
+        "中央処理装置",
+        "応用ソフトウェア"
+      ],
+      "answerIndex": 2,
+      "explanation": "中央処理装置：コンピュータの各装置を制御し、演算を行う装置。CPUのこと。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_086",
+      "unit": "information.info.computer.hardware.components",
+      "category": "thinking",
+      "prompt": "「中央処理装置」の説明として正しいものは？",
+      "choices": [
+        "OSの上で、文書作成や表計算など具体的な作業をするためのソフトウェア（アプリケーション）",
+        "電源を切ってもデータが消えない半導体メモリ。USBメモリやSSD、SDカードに使われる",
+        "コンピュータの各装置を制御し、演算を行う装置。CPUのこと",
+        "OSのように、ハードウェアの違いを吸収し、応用ソフトウェアが動く土台となるソフトウェア"
+      ],
+      "answerIndex": 2,
+      "explanation": "中央処理装置：コンピュータの各装置を制御し、演算を行う装置。CPUのこと。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_087",
+      "unit": "information.info.computer.hardware.components",
+      "category": "knowledge",
+      "prompt": "キーボードやマウスのように、コンピュータにデータを入れる装置。これを何という？",
+      "choices": [
+        "コンパイラ",
+        "ソフトウェア",
+        "レジスタ",
+        "入力装置"
+      ],
+      "answerIndex": 3,
+      "explanation": "入力装置：キーボードやマウスのように、コンピュータにデータを入れる装置。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_088",
+      "unit": "information.info.computer.hardware.components",
+      "category": "thinking",
+      "prompt": "「入力装置」の説明として正しいものは？",
+      "choices": [
+        "プログラム全体をまとめて機械語に翻訳するしくみ",
+        "キーボードやマウスのように、コンピュータにデータを入れる装置",
+        "コンピュータを動かすプログラムなど",
+        "CPUの中にある、演算に使う小さく高速な記憶装置"
+      ],
+      "answerIndex": 1,
+      "explanation": "入力装置：キーボードやマウスのように、コンピュータにデータを入れる装置。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_089",
+      "unit": "information.info.computer.hardware.components",
+      "category": "knowledge",
+      "prompt": "ディスプレイやプリンタのように、処理した結果を外に出す装置。これを何という？",
+      "choices": [
+        "アクセス速度",
+        "デバイスドライバ",
+        "出力装置",
+        "フォルダ"
+      ],
+      "answerIndex": 2,
+      "explanation": "出力装置：ディスプレイやプリンタのように、処理した結果を外に出す装置。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_090",
+      "unit": "information.info.computer.hardware.components",
+      "category": "thinking",
+      "prompt": "「出力装置」の説明として正しいものは？",
+      "choices": [
+        "ファイルを分類して入れておく入れ物。中に入れ子にして階層構造（木構造）をつくれる",
+        "周辺機器をOSから使えるようにするためのソフトウェア",
+        "記憶装置にデータを読み書きする速さ。主記憶装置は補助記憶装置よりずっと速い",
+        "ディスプレイやプリンタのように、処理した結果を外に出す装置"
+      ],
+      "answerIndex": 3,
+      "explanation": "出力装置：ディスプレイやプリンタのように、処理した結果を外に出す装置。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_091",
+      "unit": "information.info.computer.hardware.components",
+      "category": "knowledge",
+      "prompt": "磁気ディスクにデータを記録する補助記憶装置（HDD）。これを何という？",
+      "choices": [
+        "応用ソフトウェア",
+        "ハードディスク",
+        "フラッシュメモリ",
+        "レジスタ"
+      ],
+      "answerIndex": 1,
+      "explanation": "ハードディスク：磁気ディスクにデータを記録する補助記憶装置（HDD）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_092",
+      "unit": "information.info.computer.hardware.components",
+      "category": "thinking",
+      "prompt": "「ハードディスク」の説明として正しいものは？",
+      "choices": [
+        "CPUの中にある、演算に使う小さく高速な記憶装置",
+        "磁気ディスクにデータを記録する補助記憶装置（HDD）",
+        "OSの上で、文書作成や表計算など具体的な作業をするためのソフトウェア（アプリケーション）",
+        "電源を切ってもデータが消えない半導体メモリ。USBメモリやSSD、SDカードに使われる"
+      ],
+      "answerIndex": 1,
+      "explanation": "ハードディスク：磁気ディスクにデータを記録する補助記憶装置（HDD）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_093",
+      "unit": "information.info.design.design",
+      "category": "knowledge",
+      "prompt": "コンピュータにデータを記録するときの、ひとまとまりの単位。これを何という？",
+      "choices": [
+        "アクセス速度",
+        "デバイスドライバ",
+        "コンパイラ",
+        "ファイル"
+      ],
+      "answerIndex": 3,
+      "explanation": "ファイル：コンピュータにデータを記録するときの、ひとまとまりの単位。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_094",
+      "unit": "information.info.design.design",
+      "category": "thinking",
+      "prompt": "「ファイル」の説明として正しいものは？",
+      "choices": [
+        "記憶装置にデータを読み書きする速さ。主記憶装置は補助記憶装置よりずっと速い",
+        "プログラム全体をまとめて機械語に翻訳するしくみ",
+        "周辺機器をOSから使えるようにするためのソフトウェア",
+        "コンピュータにデータを記録するときの、ひとまとまりの単位"
+      ],
+      "answerIndex": 3,
+      "explanation": "ファイル：コンピュータにデータを記録するときの、ひとまとまりの単位。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_095",
+      "unit": "information.info.computer.hardware.software",
+      "category": "knowledge",
+      "prompt": "OSのように、ハードウェアの違いを吸収し、応用ソフトウェアが動く土台となるソフトウェア。これを何という？",
+      "choices": [
+        "コンパイラ",
+        "デバイスドライバ",
+        "ハードウェア",
+        "基本ソフトウェア"
+      ],
+      "answerIndex": 3,
+      "explanation": "基本ソフトウェア：OSのように、ハードウェアの違いを吸収し、応用ソフトウェアが動く土台となるソフトウェア。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_096",
+      "unit": "information.info.computer.hardware.software",
+      "category": "thinking",
+      "prompt": "「基本ソフトウェア」の説明として正しいものは？",
+      "choices": [
+        "OSのように、ハードウェアの違いを吸収し、応用ソフトウェアが動く土台となるソフトウェア",
+        "コンピュータを構成する、装置そのもの",
+        "周辺機器をOSから使えるようにするためのソフトウェア",
+        "プログラム全体をまとめて機械語に翻訳するしくみ"
+      ],
+      "answerIndex": 0,
+      "explanation": "基本ソフトウェア：OSのように、ハードウェアの違いを吸収し、応用ソフトウェアが動く土台となるソフトウェア。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_097",
+      "unit": "information.info.computer.hardware.cpu",
+      "category": "knowledge",
+      "prompt": "処理できる量をこえた命令が与えられるなどして、コンピュータが応答しなくなること。これを何という？",
+      "choices": [
+        "アクセス権",
+        "基本ソフトウェア",
+        "フリーズ",
+        "応用ソフトウェア"
+      ],
+      "answerIndex": 2,
+      "explanation": "フリーズ：処理できる量をこえた命令が与えられるなどして、コンピュータが応答しなくなること。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_098",
+      "unit": "information.info.computer.hardware.cpu",
+      "category": "thinking",
+      "prompt": "「フリーズ」の説明として正しいものは？",
+      "choices": [
+        "OSのように、ハードウェアの違いを吸収し、応用ソフトウェアが動く土台となるソフトウェア",
+        "処理できる量をこえた命令が与えられるなどして、コンピュータが応答しなくなること",
+        "ファイルやフォルダごとに、読み取り・書きこみなどの操作をだれに許すかを決める設定",
+        "OSの上で、文書作成や表計算など具体的な作業をするためのソフトウェア（アプリケーション）"
+      ],
+      "answerIndex": 1,
+      "explanation": "フリーズ：処理できる量をこえた命令が与えられるなどして、コンピュータが応答しなくなること。",
       "targetGrade": "1",
       "phase": "teikiTest",
       "tags": [

@@ -131,7 +131,7 @@ const curriculumQuestionCounts = <String, int>{
   'english.eng.exam.common.reading': 3,
   'english.eng.exam.advanced': 10,
   'english.eng.exam.advanced.synthesis': 5,
-  'science': 3230,
+  'science': 3680,
   'science.physics': 623,
   'science.physics.mechanics': 304,
   'science.physics.mechanics.kinematics': 95,
@@ -225,7 +225,7 @@ const curriculumQuestionCounts = <String, int>{
   'science.physics.atom.nucleus.decay': 9,
   'science.physics.atom.nucleus.reaction': 3,
   'science.physics.atom.nucleus.particle': 2,
-  'science.chemistry': 1290,
+  'science.chemistry': 1398,
   'science.chemistry.structure': 139,
   'science.chemistry.structure.life': 35,
   'science.chemistry.structure.life.separation': 8,
@@ -245,16 +245,16 @@ const curriculumQuestionCounts = <String, int>{
   'science.chemistry.structure.bond.polarity': 2,
   'science.chemistry.structure.bond.intermolecular': 1,
   'science.chemistry.structure.bond.metal': 9,
-  'science.chemistry.change': 866,
-  'science.chemistry.change.mole': 408,
-  'science.chemistry.change.mole.mass': 131,
-  'science.chemistry.change.mole.mole': 116,
-  'science.chemistry.change.mole.concentration': 140,
-  'science.chemistry.change.equation': 206,
-  'science.chemistry.change.equation.write': 117,
-  'science.chemistry.change.equation.quantity': 2,
-  'science.chemistry.change.acid': 215,
-  'science.chemistry.change.acid.define': 85,
+  'science.chemistry.change': 974,
+  'science.chemistry.change.mole': 460,
+  'science.chemistry.change.mole.mass': 140,
+  'science.chemistry.change.mole.mole': 129,
+  'science.chemistry.change.mole.concentration': 144,
+  'science.chemistry.change.equation': 234,
+  'science.chemistry.change.equation.write': 125,
+  'science.chemistry.change.equation.quantity': 4,
+  'science.chemistry.change.acid': 243,
+  'science.chemistry.change.acid.define': 109,
   'science.chemistry.change.acid.ph': 38,
   'science.chemistry.change.acid.neutral': 46,
   'science.chemistry.change.acid.salt': 46,
@@ -320,7 +320,7 @@ const curriculumQuestionCounts = <String, int>{
   'science.chemistry.organic.polymer.protein': 10,
   'science.chemistry.organic.polymer.nucleic': 1,
   'science.chemistry.organic.polymer.role': 2,
-  'science.biology': 766,
+  'science.biology': 1108,
   'science.biology.cell': 112,
   'science.biology.cell.common': 37,
   'science.biology.cell.common.common': 1,
@@ -335,25 +335,25 @@ const curriculumQuestionCounts = <String, int>{
   'science.biology.cell.dna.structure': 26,
   'science.biology.cell.dna.replication': 6,
   'science.biology.cell.dna.expression': 5,
-  'science.biology.body': 257,
-  'science.biology.body.nerve': 95,
-  'science.biology.body.nerve.autonomic': 46,
-  'science.biology.body.nerve.hormone': 37,
-  'science.biology.body.nerve.feedback': 6,
-  'science.biology.body.homeostasis': 79,
-  'science.biology.body.homeostasis.fluid': 32,
-  'science.biology.body.homeostasis.glucose': 22,
-  'science.biology.body.homeostasis.temperature': 5,
-  'science.biology.body.homeostasis.organ': 15,
-  'science.biology.body.immunity': 83,
-  'science.biology.body.immunity.innate': 14,
-  'science.biology.body.immunity.adaptive': 36,
-  'science.biology.body.immunity.disease': 22,
-  'science.biology.ecology': 166,
-  'science.biology.ecology.vegetation': 99,
-  'science.biology.ecology.vegetation.vegetation': 22,
-  'science.biology.ecology.vegetation.succession': 31,
-  'science.biology.ecology.vegetation.biome': 43,
+  'science.biology.body': 505,
+  'science.biology.body.nerve': 178,
+  'science.biology.body.nerve.autonomic': 64,
+  'science.biology.body.nerve.hormone': 101,
+  'science.biology.body.nerve.feedback': 7,
+  'science.biology.body.homeostasis': 162,
+  'science.biology.body.homeostasis.fluid': 64,
+  'science.biology.body.homeostasis.glucose': 32,
+  'science.biology.body.homeostasis.temperature': 14,
+  'science.biology.body.homeostasis.organ': 31,
+  'science.biology.body.immunity': 165,
+  'science.biology.body.immunity.innate': 23,
+  'science.biology.body.immunity.adaptive': 77,
+  'science.biology.body.immunity.disease': 32,
+  'science.biology.ecology': 260,
+  'science.biology.ecology.vegetation': 193,
+  'science.biology.ecology.vegetation.vegetation': 57,
+  'science.biology.ecology.vegetation.succession': 49,
+  'science.biology.ecology.vegetation.biome': 74,
   'science.biology.ecology.ecosystem': 41,
   'science.biology.ecology.ecosystem.structure': 19,
   'science.biology.ecology.ecosystem.cycle': 2,
@@ -467,8 +467,8 @@ const curriculumQuestionCounts = <String, int>{
   'science.earth.space.universe': 34,
   'science.earth.space.universe.galaxy': 24,
   'science.earth.space.universe.expansion': 8,
-  'social': 3502,
-  'social.geo': 773,
+  'social': 4430,
+  'social.geo': 865,
   'social.geo.map': 83,
   'social.geo.map.position': 31,
   'social.geo.map.position.latlon': 15,
@@ -481,29 +481,29 @@ const curriculumQuestionCounts = <String, int>{
   'social.geo.map.gis': 24,
   'social.geo.map.gis.gis': 6,
   'social.geo.map.gis.remote': 7,
-  'social.geo.nature': 268,
-  'social.geo.nature.landform': 49,
+  'social.geo.nature': 320,
+  'social.geo.nature.landform': 50,
   'social.geo.nature.landform.large': 21,
-  'social.geo.nature.landform.river': 4,
+  'social.geo.nature.landform.river': 5,
   'social.geo.nature.landform.coast': 4,
   'social.geo.nature.landform.other': 6,
-  'social.geo.nature.climate': 129,
-  'social.geo.nature.climate.element': 44,
-  'social.geo.nature.climate.koppen': 53,
+  'social.geo.nature.climate': 157,
+  'social.geo.nature.climate.element': 58,
+  'social.geo.nature.climate.koppen': 61,
   'social.geo.nature.climate.graph': 4,
-  'social.geo.nature.soil': 71,
-  'social.geo.nature.soil.vegetation': 11,
-  'social.geo.nature.soil.soil': 23,
-  'social.geo.nature.soil.life': 7,
-  'social.geo.nature.hazard': 19,
-  'social.geo.nature.hazard.disaster': 15,
+  'social.geo.nature.soil': 93,
+  'social.geo.nature.soil.vegetation': 15,
+  'social.geo.nature.soil.soil': 29,
+  'social.geo.nature.soil.life': 9,
+  'social.geo.nature.hazard': 20,
+  'social.geo.nature.hazard.disaster': 16,
   'social.geo.nature.hazard.prevention': 4,
-  'social.geo.culture': 138,
-  'social.geo.culture.religion': 90,
-  'social.geo.culture.religion.world': 55,
+  'social.geo.culture': 178,
+  'social.geo.culture.religion': 120,
+  'social.geo.culture.religion.world': 65,
   'social.geo.culture.religion.life': 4,
-  'social.geo.culture.ethnic': 48,
-  'social.geo.culture.ethnic.language': 38,
+  'social.geo.culture.ethnic': 58,
+  'social.geo.culture.ethnic.language': 48,
   'social.geo.culture.ethnic.conflict': 4,
   'social.geo.industry': 107,
   'social.geo.industry.population': 27,
@@ -763,8 +763,8 @@ const curriculumQuestionCounts = <String, int>{
   'social.whist.contemporary.global.cold': 1,
   'social.whist.contemporary.global.end': 2,
   'social.whist.contemporary.global.today': 1,
-  'social.pol': 1446,
-  'social.pol.politics': 548,
+  'social.pol': 2282,
+  'social.pol.politics': 850,
   'social.pol.politics.principle': 32,
   'social.pol.politics.principle.democracy': 1,
   'social.pol.politics.principle.systems': 1,
@@ -796,18 +796,18 @@ const curriculumQuestionCounts = <String, int>{
   'social.pol.politics.election.system': 17,
   'social.pol.politics.election.party': 5,
   'social.pol.politics.election.opinion': 1,
-  'social.pol.politics.law': 362,
-  'social.pol.politics.law.contract': 17,
-  'social.pol.politics.law.consumer': 130,
-  'social.pol.politics.law.labor': 110,
-  'social.pol.politics.law.work': 53,
+  'social.pol.politics.law': 664,
+  'social.pol.politics.law.contract': 36,
+  'social.pol.politics.law.consumer': 182,
+  'social.pol.politics.law.labor': 178,
+  'social.pol.politics.law.work': 62,
   'social.pol.world': 27,
   'social.pol.world.intl': 27,
   'social.pol.world.intl.society': 2,
   'social.pol.world.intl.un': 10,
   'social.pol.world.intl.peace': 3,
   'social.pol.world.intl.issues': 5,
-  'social.pol.economy': 871,
+  'social.pol.economy': 1405,
   'social.pol.economy.market': 30,
   'social.pol.economy.market.system': 2,
   'social.pol.economy.market.mechanism': 15,
@@ -825,20 +825,20 @@ const curriculumQuestionCounts = <String, int>{
   'social.pol.economy.fiscal.function': 6,
   'social.pol.economy.fiscal.tax': 6,
   'social.pol.economy.fiscal.debt': 6,
-  'social.pol.economy.welfare': 189,
-  'social.pol.economy.welfare.system': 28,
-  'social.pol.economy.welfare.pension': 33,
-  'social.pol.economy.welfare.aging': 8,
+  'social.pol.economy.welfare': 309,
+  'social.pol.economy.welfare.system': 64,
+  'social.pol.economy.welfare.pension': 63,
+  'social.pol.economy.welfare.aging': 16,
   'social.pol.economy.japan': 7,
   'social.pol.economy.japan.history': 4,
   'social.pol.economy.japan.issues': 3,
-  'social.pol.economy.global': 566,
-  'social.pol.economy.global.trade': 92,
-  'social.pol.economy.global.balance': 23,
-  'social.pol.economy.global.exchange': 22,
-  'social.pol.economy.global.system': 138,
-  'social.pol.economy.global.region': 100,
-  'social.pol.economy.global.north': 92,
+  'social.pol.economy.global': 980,
+  'social.pol.economy.global.trade': 118,
+  'social.pol.economy.global.balance': 40,
+  'social.pol.economy.global.exchange': 60,
+  'social.pol.economy.global.system': 159,
+  'social.pol.economy.global.region': 133,
+  'social.pol.economy.global.north': 108,
   'social.eth': 247,
   'social.eth.self': 25,
   'social.eth.self.adolescence': 25,
@@ -1290,8 +1290,8 @@ const curriculumQuestionCounts = <String, int>{
   'math.m3.integ.apply.volume': 20,
   'math.m3.integ.apply.length': 8,
   'math.m3.integ.apply.distance': 5,
-  'information': 753,
-  'information.info': 753,
+  'information': 799,
+  'information.info': 799,
   'information.info.society': 110,
   'information.info.society.nature': 26,
   'information.info.society.nature.nature': 4,
@@ -1308,14 +1308,14 @@ const curriculumQuestionCounts = <String, int>{
   'information.info.society.problem': 26,
   'information.info.society.problem.process': 4,
   'information.info.society.problem.model': 12,
-  'information.info.design': 86,
+  'information.info.design': 102,
   'information.info.design.communication': 5,
   'information.info.design.communication.form': 5,
-  'information.info.design.design': 81,
-  'information.info.design.design.principle': 10,
-  'information.info.design.design.ui': 10,
+  'information.info.design.design': 97,
+  'information.info.design.design.principle': 12,
+  'information.info.design.design.ui': 18,
   'information.info.design.design.layout': 22,
-  'information.info.computer': 163,
+  'information.info.computer': 183,
   'information.info.computer.digital': 30,
   'information.info.computer.digital.binary': 10,
   'information.info.computer.digital.calc': 3,
@@ -1325,45 +1325,45 @@ const curriculumQuestionCounts = <String, int>{
   'information.info.computer.media.image': 12,
   'information.info.computer.media.sound': 9,
   'information.info.computer.media.compress': 10,
-  'information.info.computer.hardware': 49,
-  'information.info.computer.hardware.components': 23,
-  'information.info.computer.hardware.cpu': 8,
-  'information.info.computer.hardware.software': 13,
+  'information.info.computer.hardware': 67,
+  'information.info.computer.hardware.components': 35,
+  'information.info.computer.hardware.cpu': 10,
+  'information.info.computer.hardware.software': 17,
   'information.info.computer.system': 13,
   'information.info.computer.system.reliability': 7,
   'information.info.computer.system.cloud': 2,
   'information.info.computer.system.develop': 4,
-  'information.info.computer.logic': 33,
-  'information.info.computer.logic.gate': 19,
+  'information.info.computer.logic': 35,
+  'information.info.computer.logic.gate': 21,
   'information.info.computer.logic.adder': 4,
-  'information.info.programming': 187,
-  'information.info.programming.algorithm': 81,
+  'information.info.programming': 193,
+  'information.info.programming.algorithm': 83,
   'information.info.programming.algorithm.basic': 29,
   'information.info.programming.algorithm.search': 21,
   'information.info.programming.algorithm.sort': 20,
   'information.info.programming.algorithm.complexity': 5,
-  'information.info.programming.algorithm.structure': 5,
-  'information.info.programming.program': 106,
+  'information.info.programming.algorithm.structure': 7,
+  'information.info.programming.program': 110,
   'information.info.programming.program.variable': 21,
   'information.info.programming.program.control': 6,
   'information.info.programming.program.function': 11,
-  'information.info.programming.program.trace': 47,
-  'information.info.network': 107,
+  'information.info.programming.program.trace': 51,
+  'information.info.network': 109,
   'information.info.network.basic': 42,
   'information.info.network.basic.structure': 3,
   'information.info.network.basic.address': 14,
-  'information.info.network.protocol': 31,
-  'information.info.network.protocol.tcpip': 10,
+  'information.info.network.protocol': 33,
+  'information.info.network.protocol.tcpip': 12,
   'information.info.network.protocol.web': 17,
   'information.info.network.protocol.error': 1,
   'information.info.network.crypto': 34,
   'information.info.network.crypto.cipher': 25,
   'information.info.network.crypto.signature': 6,
   'information.info.network.crypto.tls': 1,
-  'information.info.data': 100,
-  'information.info.data.manage': 49,
+  'information.info.data': 102,
+  'information.info.data.manage': 51,
   'information.info.data.manage.scale': 6,
-  'information.info.data.manage.database': 32,
+  'information.info.data.manage.database': 34,
   'information.info.data.manage.open': 1,
   'information.info.data.analysis': 51,
   'information.info.data.analysis.stat': 15,
@@ -2234,7 +2234,8 @@ const curriculumUnitSets = <String, List<String>>{
     'science_shonan_104_chem_mole_03',
     'science_shonan_104_chem_mole_04',
     'science_shonan_104_chem_mole_05',
-    'science_shonan_104_chem_mole_06'
+    'science_shonan_104_chem_mole_06',
+    'science_shonan_104_chem_terms_01'
   ],
   'science.chemistry.change.mole.mass': [
     'science_chem_basic_01',
@@ -2244,7 +2245,8 @@ const curriculumUnitSets = <String, List<String>>{
     'science_shonan_104_chem_mole_03',
     'science_shonan_104_chem_mole_04',
     'science_shonan_104_chem_mole_05',
-    'science_shonan_104_chem_mole_06'
+    'science_shonan_104_chem_mole_06',
+    'science_shonan_104_chem_terms_01'
   ],
   'science.chemistry.change.mole.mole': [
     'science_chem_basic_01',
@@ -2254,7 +2256,8 @@ const curriculumUnitSets = <String, List<String>>{
     'science_shonan_104_chem_mole_03',
     'science_shonan_104_chem_mole_04',
     'science_shonan_104_chem_mole_05',
-    'science_shonan_104_chem_mole_06'
+    'science_shonan_104_chem_mole_06',
+    'science_shonan_104_chem_terms_01'
   ],
   'science.chemistry.change.mole.concentration': [
     'science_chem_basic_01',
@@ -2262,7 +2265,8 @@ const curriculumUnitSets = <String, List<String>>{
     'science_shonan_104_chem_solution_01',
     'science_shonan_104_chem_solution_02',
     'science_shonan_104_chem_solution_03',
-    'science_shonan_104_chem_solution_04'
+    'science_shonan_104_chem_solution_04',
+    'science_shonan_104_chem_terms_01'
   ],
   'science.chemistry.change.equation': [
     'science_chemistry_06',
@@ -2270,7 +2274,8 @@ const curriculumUnitSets = <String, List<String>>{
     'science_shonan_104_chem_reaction_02',
     'science_shonan_104_chem_reaction_03',
     'science_shonan_104_chem_reaction_04',
-    'science_shonan_104_chem_reaction_05'
+    'science_shonan_104_chem_reaction_05',
+    'science_shonan_104_chem_terms_02'
   ],
   'science.chemistry.change.equation.write': [
     'science_chem_basic_01',
@@ -2281,15 +2286,21 @@ const curriculumUnitSets = <String, List<String>>{
     'science_shonan_104_chem_reaction_02',
     'science_shonan_104_chem_reaction_03',
     'science_shonan_104_chem_reaction_04',
-    'science_shonan_104_chem_reaction_05'
+    'science_shonan_104_chem_reaction_05',
+    'science_shonan_104_chem_terms_02'
   ],
-  'science.chemistry.change.equation.quantity': ['science_v4_02'],
+  'science.chemistry.change.equation.quantity': [
+    'science_shonan_104_chem_terms_02',
+    'science_v4_02'
+  ],
+  'science.chemistry.change.acid': ['science_shonan_104_chem_terms_03'],
   'science.chemistry.change.acid.define': [
     'science_chem_basic_01',
     'science_chemistry_07',
     'science_shonan_104_chem_acid_01',
     'science_shonan_104_chem_acid_02',
-    'science_shonan_104_chem_acid_03'
+    'science_shonan_104_chem_acid_03',
+    'science_shonan_104_chem_terms_03'
   ],
   'science.chemistry.change.acid.ph': [
     'science_chem_basic_01',
@@ -2448,64 +2459,85 @@ const curriculumUnitSets = <String, List<String>>{
     'science_bio_basic_01',
     'science_biology_04',
     'science_shonan_104_bio_body_01',
-    'science_shonan_104_bio_body_02'
+    'science_shonan_104_bio_body_02',
+    'science_shonan_104_bio_terms_02'
   ],
   'science.biology.body.nerve.hormone': [
     'science_bio_basic_01',
     'science_biology_04',
-    'science_shonan_104_bio_hormone_01'
+    'science_shonan_104_bio_hormone_01',
+    'science_shonan_104_bio_terms_02'
   ],
   'science.biology.body.nerve.feedback': [
     'science_shonan_104_bio_hormone_01',
+    'science_shonan_104_bio_terms_02',
     'science_v4_02'
   ],
-  'science.biology.body.homeostasis': ['science_biology_05'],
+  'science.biology.body.homeostasis': [
+    'science_biology_05',
+    'science_shonan_104_bio_terms_01'
+  ],
   'science.biology.body.homeostasis.fluid': [
     'science_bio_basic_01',
     'science_biology_05',
-    'science_shonan_104_bio_body_01'
+    'science_shonan_104_bio_body_01',
+    'science_shonan_104_bio_terms_01',
+    'science_shonan_104_bio_terms_02'
   ],
   'science.biology.body.homeostasis.glucose': [
     'science_biology_05',
     'science_shonan_104_bio_hormone_01',
+    'science_shonan_104_bio_terms_02',
     'science_v4_01'
   ],
   'science.biology.body.homeostasis.temperature': [
     'science_biology_05',
-    'science_shonan_104_bio_hormone_01'
+    'science_shonan_104_bio_hormone_01',
+    'science_shonan_104_bio_terms_01',
+    'science_shonan_104_bio_terms_02'
   ],
   'science.biology.body.homeostasis.organ': [
     'science_biology_05',
-    'science_shonan_104_bio_body_01'
+    'science_shonan_104_bio_body_01',
+    'science_shonan_104_bio_terms_01'
   ],
   'science.biology.body.immunity': [
     'science_bio_basic_01',
-    'science_biology_06'
+    'science_biology_06',
+    'science_shonan_104_bio_terms_03'
   ],
   'science.biology.body.immunity.innate': [
     'science_bio_basic_01',
     'science_biology_06',
-    'science_shonan_104_bio_immune_01'
+    'science_shonan_104_bio_immune_01',
+    'science_shonan_104_bio_terms_03'
   ],
   'science.biology.body.immunity.adaptive': [
     'science_biology_06',
     'science_shonan_104_bio_immune_01',
-    'science_shonan_104_bio_immune_02'
+    'science_shonan_104_bio_immune_02',
+    'science_shonan_104_bio_terms_03'
   ],
   'science.biology.body.immunity.disease': [
     'science_bio_basic_01',
     'science_biology_06',
     'science_shonan_104_bio_immune_01',
-    'science_shonan_104_bio_immune_02'
+    'science_shonan_104_bio_immune_02',
+    'science_shonan_104_bio_terms_03'
   ],
-  'science.biology.ecology.vegetation': ['science_biology_07'],
+  'science.biology.ecology.vegetation': [
+    'science_biology_07',
+    'science_shonan_104_bio_terms_04'
+  ],
   'science.biology.ecology.vegetation.vegetation': [
     'science_biology_07',
+    'science_shonan_104_bio_terms_04',
     'science_shonan_104_bio_veg_01'
   ],
   'science.biology.ecology.vegetation.succession': [
     'science_bio_basic_01',
     'science_biology_07',
+    'science_shonan_104_bio_terms_04',
     'science_shonan_104_bio_veg_01',
     'science_shonan_104_bio_veg_02'
   ],
@@ -2513,6 +2545,7 @@ const curriculumUnitSets = <String, List<String>>{
     'science_bio_basic_01',
     'science_biology_07',
     'science_biology_16',
+    'science_shonan_104_bio_terms_04',
     'science_shonan_104_bio_veg_02'
   ],
   'science.biology.ecology.ecosystem': ['science_biology_08'],
@@ -2744,7 +2777,10 @@ const curriculumUnitSets = <String, List<String>>{
     'social_geo_05'
   ],
   'social.geo.nature.landform.large': ['social_chirisogo_01', 'social_geo_04'],
-  'social.geo.nature.landform.river': ['social_geo_05'],
+  'social.geo.nature.landform.river': [
+    'social_geo_05',
+    'social_shonan_104_geo_02'
+  ],
   'social.geo.nature.landform.coast': ['social_geo_05'],
   'social.geo.nature.landform.other': ['social_chirisogo_01', 'social_geo_05'],
   'social.geo.nature.climate': [
@@ -2777,33 +2813,40 @@ const curriculumUnitSets = <String, List<String>>{
     'social_shonan_104_geo_02'
   ],
   'social.geo.nature.soil.soil': ['social_geo_07', 'social_shonan_104_geo_02'],
-  'social.geo.nature.soil.life': ['social_geo_07'],
+  'social.geo.nature.soil.life': ['social_geo_07', 'social_shonan_104_geo_02'],
   'social.geo.nature.hazard.disaster': [
     'social_chirisogo_01',
     'social_current_2426_01',
     'social_geo_04',
-    'social_geo_19'
+    'social_geo_19',
+    'social_shonan_104_geo_02'
   ],
   'social.geo.nature.hazard.prevention': [
     'social_chirisogo_01',
     'social_geo_19'
   ],
-  'social.geo.culture.religion': ['social_geo_08', 'social_shonan_104_geo_03'],
+  'social.geo.culture.religion': [
+    'social_geo_08',
+    'social_shonan_104_geo_03',
+    'social_shonan_104_geo_04'
+  ],
   'social.geo.culture.religion.world': [
     'social_geo_08',
-    'social_shonan_104_geo_03'
+    'social_shonan_104_geo_03',
+    'social_shonan_104_geo_04'
   ],
   'social.geo.culture.religion.life': [
     'social_geo_08',
-    'social_shonan_104_geo_03'
+    'social_shonan_104_geo_04'
   ],
   'social.geo.culture.ethnic': ['social_geo_09'],
   'social.geo.culture.ethnic.language': [
     'social_geo_09',
-    'social_shonan_104_geo_03'
+    'social_shonan_104_geo_03',
+    'social_shonan_104_geo_04'
   ],
   'social.geo.culture.ethnic.conflict': [
-    'social_shonan_104_geo_03',
+    'social_shonan_104_geo_04',
     'social_v4_02'
   ],
   'social.geo.industry.population': ['social_geo_10'],
@@ -3210,18 +3253,25 @@ const curriculumUnitSets = <String, List<String>>{
   'social.pol.politics.election.opinion': ['social_pol_07'],
   'social.pol.politics.law': [
     'social_pol_08',
+    'social_shonan_104_kokyo_terms_01',
+    'social_shonan_104_kokyo_terms_02',
+    'social_shonan_104_kokyo_terms_03',
     'social_shonan_104_public_economy_02',
     'social_shonan_104_public_economy_03'
   ],
   'social.pol.politics.law.contract': [
     'social_kokyo_01',
     'social_pol_08',
+    'social_shonan_104_kokyo_terms_01',
+    'social_shonan_104_kokyo_terms_02',
+    'social_shonan_104_kokyo_terms_03',
     'social_shonan_104_public_economy_02',
     'social_shonan_104_public_economy_03'
   ],
   'social.pol.politics.law.consumer': [
     'social_kokyo_01',
     'social_pol_08',
+    'social_shonan_104_kokyo_terms_01',
     'social_shonan_104_public_economy_01',
     'social_shonan_104_public_economy_09',
     'social_shonan_104_public_economy_13',
@@ -3230,6 +3280,8 @@ const curriculumUnitSets = <String, List<String>>{
   'social.pol.politics.law.labor': [
     'social_kokyo_01',
     'social_pol_08',
+    'social_shonan_104_kokyo_terms_02',
+    'social_shonan_104_kokyo_terms_03',
     'social_shonan_104_public_economy_02',
     'social_shonan_104_public_economy_03',
     'social_shonan_104_public_economy_09',
@@ -3238,6 +3290,8 @@ const curriculumUnitSets = <String, List<String>>{
     'social_shonan_104_public_economy_14'
   ],
   'social.pol.politics.law.work': [
+    'social_shonan_104_kokyo_terms_02',
+    'social_shonan_104_kokyo_terms_03',
     'social_shonan_104_public_economy_03',
     'social_shonan_104_public_economy_10',
     'social_shonan_104_public_economy_13',
@@ -3272,6 +3326,7 @@ const curriculumUnitSets = <String, List<String>>{
   'social.pol.economy.fiscal.debt': ['social_pol_13'],
   'social.pol.economy.welfare': [
     'social_pol_14',
+    'social_shonan_104_kokyo_terms_04',
     'social_shonan_104_public_economy_04',
     'social_shonan_104_public_economy_10',
     'social_shonan_104_public_economy_13',
@@ -3280,27 +3335,39 @@ const curriculumUnitSets = <String, List<String>>{
   'social.pol.economy.welfare.system': [
     'social_current_2426_01',
     'social_pol_14',
+    'social_shonan_104_kokyo_terms_04',
     'social_shonan_104_public_economy_04'
   ],
   'social.pol.economy.welfare.pension': [
     'social_current_2426_01',
     'social_pol_14',
+    'social_shonan_104_kokyo_terms_04',
     'social_shonan_104_public_economy_04'
   ],
   'social.pol.economy.welfare.aging': [
     'social_pol_14',
+    'social_shonan_104_kokyo_terms_04',
     'social_shonan_104_public_economy_04'
   ],
   'social.pol.economy.japan.history': ['social_rekishisogo_01', 'social_v4_01'],
   'social.pol.economy.japan.issues': ['social_v4_01'],
   'social.pol.economy.global': [
     'social_pol_15',
+    'social_shonan_104_kokyo_terms_05',
+    'social_shonan_104_kokyo_terms_06',
+    'social_shonan_104_kokyo_terms_07',
+    'social_shonan_104_kokyo_terms_08',
+    'social_shonan_104_kokyo_terms_09',
     'social_shonan_104_public_economy_05',
     'social_shonan_104_public_economy_06',
     'social_shonan_104_public_economy_07'
   ],
   'social.pol.economy.global.trade': [
     'social_pol_15',
+    'social_shonan_104_kokyo_terms_05',
+    'social_shonan_104_kokyo_terms_06',
+    'social_shonan_104_kokyo_terms_07',
+    'social_shonan_104_kokyo_terms_09',
     'social_shonan_104_public_economy_05',
     'social_shonan_104_public_economy_06',
     'social_shonan_104_public_economy_07',
@@ -3309,17 +3376,29 @@ const curriculumUnitSets = <String, List<String>>{
   ],
   'social.pol.economy.global.balance': [
     'social_pol_15',
+    'social_shonan_104_kokyo_terms_05',
+    'social_shonan_104_kokyo_terms_06',
+    'social_shonan_104_kokyo_terms_07',
+    'social_shonan_104_kokyo_terms_09',
     'social_shonan_104_public_economy_05',
     'social_shonan_104_public_economy_06'
   ],
   'social.pol.economy.global.exchange': [
     'social_current_2426_01',
     'social_pol_15',
+    'social_shonan_104_kokyo_terms_05',
+    'social_shonan_104_kokyo_terms_06',
+    'social_shonan_104_kokyo_terms_07',
+    'social_shonan_104_kokyo_terms_08',
+    'social_shonan_104_kokyo_terms_09',
     'social_shonan_104_public_economy_05',
     'social_shonan_104_public_economy_06'
   ],
   'social.pol.economy.global.system': [
     'social_pol_15',
+    'social_shonan_104_kokyo_terms_07',
+    'social_shonan_104_kokyo_terms_08',
+    'social_shonan_104_kokyo_terms_09',
     'social_shonan_104_public_economy_06',
     'social_shonan_104_public_economy_11',
     'social_shonan_104_public_economy_12',
@@ -3327,6 +3406,9 @@ const curriculumUnitSets = <String, List<String>>{
     'social_shonan_104_public_economy_14'
   ],
   'social.pol.economy.global.region': [
+    'social_shonan_104_kokyo_terms_07',
+    'social_shonan_104_kokyo_terms_08',
+    'social_shonan_104_kokyo_terms_09',
     'social_shonan_104_public_economy_07',
     'social_shonan_104_public_economy_12',
     'social_shonan_104_public_economy_13',
@@ -3335,6 +3417,8 @@ const curriculumUnitSets = <String, List<String>>{
   ],
   'social.pol.economy.global.north': [
     'social_pol_15',
+    'social_shonan_104_kokyo_terms_07',
+    'social_shonan_104_kokyo_terms_08',
     'social_shonan_104_public_economy_06',
     'social_shonan_104_public_economy_08',
     'social_shonan_104_public_economy_12',
@@ -4346,7 +4430,8 @@ const curriculumUnitSets = <String, List<String>>{
     'information_v4_01'
   ],
   'information.info.programming.algorithm.structure': [
-    'information_prog_algo_01'
+    'information_prog_algo_01',
+    'information_shonan_104_info_01'
   ],
   'information.info.programming.program': [
     'information_dncl_01',

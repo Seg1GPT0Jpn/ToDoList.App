@@ -1,0 +1,2192 @@
+{
+  "setId": "science_shonan_104_bio_terms_02",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "science_shonan_104_bio_terms_02_001",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "脳と脊髄。これを何という？",
+      "choices": [
+        "脳幹",
+        "大脳",
+        "交感神経",
+        "中枢神経系"
+      ],
+      "answerIndex": 3,
+      "explanation": "中枢神経系：脳と脊髄。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_002",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "thinking",
+      "prompt": "「中枢神経系」の説明として正しいものは？",
+      "choices": [
+        "興奮・緊張したときにはたらく自律神経。末端からおもにノルアドレナリンを分泌",
+        "間脳・中脳・橋・延髄をまとめた部分。生命の維持にかかわる",
+        "脳と脊髄",
+        "感覚・随意運動・記憶・思考などの中枢"
+      ],
+      "answerIndex": 2,
+      "explanation": "中枢神経系：脳と脊髄。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_003",
+      "unit": "science.biology.body.nerve.autonomic",
+      "category": "knowledge",
+      "prompt": "中枢神経系から出る、体性神経系と自律神経系。これを何という？",
+      "choices": [
+        "中脳",
+        "末梢神経系",
+        "植物状態",
+        "拮抗的なはたらき"
+      ],
+      "answerIndex": 1,
+      "explanation": "末梢神経系：中枢神経系から出る、体性神経系と自律神経系。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_004",
+      "unit": "science.biology.body.nerve.autonomic",
+      "category": "thinking",
+      "prompt": "「末梢神経系」の説明として正しいものは？",
+      "choices": [
+        "眼球の運動や瞳孔の大きさの調節（瞳孔反射）の中枢",
+        "大脳の機能は失われているが、脳幹の機能は残っている状態",
+        "交感神経と副交感神経のように、たがいに反対の作用をおよぼし合うはたらき方",
+        "中枢神経系から出る、体性神経系と自律神経系"
+      ],
+      "answerIndex": 3,
+      "explanation": "末梢神経系：中枢神経系から出る、体性神経系と自律神経系。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_005",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "間脳・中脳・橋・延髄をまとめた部分。生命の維持にかかわる。これを何という？",
+      "choices": [
+        "脳幹",
+        "脳死",
+        "桿体細胞",
+        "小脳"
+      ],
+      "answerIndex": 0,
+      "explanation": "脳幹：間脳・中脳・橋・延髄をまとめた部分。生命の維持にかかわる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_006",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "thinking",
+      "prompt": "「脳幹」の説明として正しいものは？",
+      "choices": [
+        "間脳・中脳・橋・延髄をまとめた部分。生命の維持にかかわる",
+        "脳幹を含む脳全体の機能が失われ、回復しない状態",
+        "体の平衡を保ち、運動を調節する中枢",
+        "弱い光でもはたらくが、色の区別はしない視細胞"
+      ],
+      "answerIndex": 0,
+      "explanation": "脳幹：間脳・中脳・橋・延髄をまとめた部分。生命の維持にかかわる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_007",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "感覚・随意運動・記憶・思考などの中枢。これを何という？",
+      "choices": [
+        "桿体細胞",
+        "錐体細胞",
+        "大脳",
+        "末梢神経系"
+      ],
+      "answerIndex": 2,
+      "explanation": "大脳：感覚・随意運動・記憶・思考などの中枢。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_008",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "thinking",
+      "prompt": "「大脳」の説明として正しいものは？",
+      "choices": [
+        "感覚・随意運動・記憶・思考などの中枢",
+        "明るい所ではたらき、色を見分ける視細胞",
+        "弱い光でもはたらくが、色の区別はしない視細胞",
+        "中枢神経系から出る、体性神経系と自律神経系"
+      ],
+      "answerIndex": 0,
+      "explanation": "大脳：感覚・随意運動・記憶・思考などの中枢。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_009",
+      "unit": "science.biology.body.homeostasis.temperature",
+      "category": "knowledge",
+      "prompt": "視床と視床下部からなり、体温・水分・血糖などを調節する自律神経系の中枢。これを何という？",
+      "choices": [
+        "中脳",
+        "間脳",
+        "拮抗的なはたらき",
+        "拮抗作用"
+      ],
+      "answerIndex": 1,
+      "explanation": "間脳：視床と視床下部からなり、体温・水分・血糖などを調節する自律神経系の中枢。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_010",
+      "unit": "science.biology.body.homeostasis.temperature",
+      "category": "thinking",
+      "prompt": "「間脳」の説明として正しいものは？",
+      "choices": [
+        "交感神経と副交感神経のように、同じ器官に反対の作用をおよぼすこと",
+        "眼球の運動や瞳孔の大きさの調節（瞳孔反射）の中枢",
+        "視床と視床下部からなり、体温・水分・血糖などを調節する自律神経系の中枢",
+        "交感神経と副交感神経のように、たがいに反対の作用をおよぼし合うはたらき方"
+      ],
+      "answerIndex": 2,
+      "explanation": "間脳：視床と視床下部からなり、体温・水分・血糖などを調節する自律神経系の中枢。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_011",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "間脳にあり、自律神経系と内分泌系の中枢となる部分。これを何という？",
+      "choices": [
+        "副交感神経",
+        "二重支配",
+        "ペースメーカー",
+        "視床下部"
+      ],
+      "answerIndex": 3,
+      "explanation": "視床下部：間脳にあり、自律神経系と内分泌系の中枢となる部分。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_012",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "thinking",
+      "prompt": "「視床下部」の説明として正しいものは？",
+      "choices": [
+        "休息・リラックスしたときにはたらく自律神経。末端からアセチルコリンを分泌",
+        "心臓の右心房にあり、自動的に拍動のリズムをつくる部分（洞房結節）",
+        "間脳にあり、自律神経系と内分泌系の中枢となる部分",
+        "多くの器官が、交感神経と副交感神経の両方から調節を受けていること"
+      ],
+      "answerIndex": 2,
+      "explanation": "視床下部：間脳にあり、自律神経系と内分泌系の中枢となる部分。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_013",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "眼球の運動や瞳孔の大きさの調節（瞳孔反射）の中枢。これを何という？",
+      "choices": [
+        "中脳",
+        "盲斑",
+        "ノルアドレナリン",
+        "交感神経"
+      ],
+      "answerIndex": 0,
+      "explanation": "中脳：眼球の運動や瞳孔の大きさの調節（瞳孔反射）の中枢。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_014",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "thinking",
+      "prompt": "「中脳」の説明として正しいものは？",
+      "choices": [
+        "眼球の運動や瞳孔の大きさの調節（瞳孔反射）の中枢",
+        "興奮・緊張したときにはたらく自律神経。末端からおもにノルアドレナリンを分泌",
+        "交感神経の末端から分泌される神経伝達物質",
+        "視神経の繊維が束になって網膜を貫く部分で、視細胞がない"
+      ],
+      "answerIndex": 0,
+      "explanation": "中脳：眼球の運動や瞳孔の大きさの調節（瞳孔反射）の中枢。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_015",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "体の平衡を保ち、運動を調節する中枢。これを何という？",
+      "choices": [
+        "末梢神経系",
+        "小脳",
+        "ペースメーカー",
+        "脳死"
+      ],
+      "answerIndex": 1,
+      "explanation": "小脳：体の平衡を保ち、運動を調節する中枢。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_016",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "thinking",
+      "prompt": "「小脳」の説明として正しいものは？",
+      "choices": [
+        "体の平衡を保ち、運動を調節する中枢",
+        "心臓の右心房にあり、自動的に拍動のリズムをつくる部分（洞房結節）",
+        "脳幹を含む脳全体の機能が失われ、回復しない状態",
+        "中枢神経系から出る、体性神経系と自律神経系"
+      ],
+      "answerIndex": 0,
+      "explanation": "小脳：体の平衡を保ち、運動を調節する中枢。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_017",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "category": "knowledge",
+      "prompt": "呼吸運動や心臓の拍動を調節する中枢。これを何という？",
+      "choices": [
+        "延髄",
+        "交感神経",
+        "ノルアドレナリン",
+        "中枢神経系"
+      ],
+      "answerIndex": 0,
+      "explanation": "延髄：呼吸運動や心臓の拍動を調節する中枢。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_018",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "category": "thinking",
+      "prompt": "「延髄」の説明として正しいものは？",
+      "choices": [
+        "呼吸運動や心臓の拍動を調節する中枢",
+        "脳と脊髄",
+        "興奮・緊張したときにはたらく自律神経。末端からおもにノルアドレナリンを分泌",
+        "交感神経の末端から分泌される神経伝達物質"
+      ],
+      "answerIndex": 0,
+      "explanation": "延髄：呼吸運動や心臓の拍動を調節する中枢。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_019",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "脳幹を含む脳全体の機能が失われ、回復しない状態。これを何という？",
+      "choices": [
+        "脳死",
+        "副交感神経",
+        "自律神経系",
+        "拮抗作用"
+      ],
+      "answerIndex": 0,
+      "explanation": "脳死：脳幹を含む脳全体の機能が失われ、回復しない状態。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_020",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "thinking",
+      "prompt": "「脳死」の説明として正しいものは？",
+      "choices": [
+        "休息・リラックスしたときにはたらく自律神経。末端からアセチルコリンを分泌",
+        "脳幹を含む脳全体の機能が失われ、回復しない状態",
+        "内臓や血管のはたらきを、意識とは無関係に調節する神経系",
+        "交感神経と副交感神経のように、同じ器官に反対の作用をおよぼすこと"
+      ],
+      "answerIndex": 1,
+      "explanation": "脳死：脳幹を含む脳全体の機能が失われ、回復しない状態。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_021",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "大脳の機能は失われているが、脳幹の機能は残っている状態。これを何という？",
+      "choices": [
+        "ペースメーカー",
+        "植物状態",
+        "盲斑",
+        "視床下部"
+      ],
+      "answerIndex": 1,
+      "explanation": "植物状態：大脳の機能は失われているが、脳幹の機能は残っている状態。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_022",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "thinking",
+      "prompt": "「植物状態」の説明として正しいものは？",
+      "choices": [
+        "大脳の機能は失われているが、脳幹の機能は残っている状態",
+        "視神経の繊維が束になって網膜を貫く部分で、視細胞がない",
+        "心臓の右心房にあり、自動的に拍動のリズムをつくる部分（洞房結節）",
+        "間脳にあり、自律神経系と内分泌系の中枢となる部分"
+      ],
+      "answerIndex": 0,
+      "explanation": "植物状態：大脳の機能は失われているが、脳幹の機能は残っている状態。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_023",
+      "unit": "science.biology.body.nerve.autonomic",
+      "category": "knowledge",
+      "prompt": "内臓や血管のはたらきを、意識とは無関係に調節する神経系。これを何という？",
+      "choices": [
+        "自律神経系",
+        "視床下部",
+        "中枢神経系",
+        "小脳"
+      ],
+      "answerIndex": 0,
+      "explanation": "自律神経系：内臓や血管のはたらきを、意識とは無関係に調節する神経系。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_024",
+      "unit": "science.biology.body.nerve.autonomic",
+      "category": "thinking",
+      "prompt": "「自律神経系」の説明として正しいものは？",
+      "choices": [
+        "間脳にあり、自律神経系と内分泌系の中枢となる部分",
+        "内臓や血管のはたらきを、意識とは無関係に調節する神経系",
+        "脳と脊髄",
+        "体の平衡を保ち、運動を調節する中枢"
+      ],
+      "answerIndex": 1,
+      "explanation": "自律神経系：内臓や血管のはたらきを、意識とは無関係に調節する神経系。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_025",
+      "unit": "science.biology.body.nerve.autonomic",
+      "category": "knowledge",
+      "prompt": "興奮・緊張したときにはたらく自律神経。末端からおもにノルアドレナリンを分泌。これを何という？",
+      "choices": [
+        "交感神経",
+        "視床下部",
+        "植物状態",
+        "間脳"
+      ],
+      "answerIndex": 0,
+      "explanation": "交感神経：興奮・緊張したときにはたらく自律神経。末端からおもにノルアドレナリンを分泌。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_026",
+      "unit": "science.biology.body.nerve.autonomic",
+      "category": "thinking",
+      "prompt": "「交感神経」の説明として正しいものは？",
+      "choices": [
+        "大脳の機能は失われているが、脳幹の機能は残っている状態",
+        "視床と視床下部からなり、体温・水分・血糖などを調節する自律神経系の中枢",
+        "間脳にあり、自律神経系と内分泌系の中枢となる部分",
+        "興奮・緊張したときにはたらく自律神経。末端からおもにノルアドレナリンを分泌"
+      ],
+      "answerIndex": 3,
+      "explanation": "交感神経：興奮・緊張したときにはたらく自律神経。末端からおもにノルアドレナリンを分泌。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_027",
+      "unit": "science.biology.body.nerve.autonomic",
+      "category": "knowledge",
+      "prompt": "休息・リラックスしたときにはたらく自律神経。末端からアセチルコリンを分泌。これを何という？",
+      "choices": [
+        "拮抗的なはたらき",
+        "副交感神経",
+        "自律神経系",
+        "ペースメーカー"
+      ],
+      "answerIndex": 1,
+      "explanation": "副交感神経：休息・リラックスしたときにはたらく自律神経。末端からアセチルコリンを分泌。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_028",
+      "unit": "science.biology.body.nerve.autonomic",
+      "category": "thinking",
+      "prompt": "「副交感神経」の説明として正しいものは？",
+      "choices": [
+        "心臓の右心房にあり、自動的に拍動のリズムをつくる部分（洞房結節）",
+        "交感神経と副交感神経のように、たがいに反対の作用をおよぼし合うはたらき方",
+        "内臓や血管のはたらきを、意識とは無関係に調節する神経系",
+        "休息・リラックスしたときにはたらく自律神経。末端からアセチルコリンを分泌"
+      ],
+      "answerIndex": 3,
+      "explanation": "副交感神経：休息・リラックスしたときにはたらく自律神経。末端からアセチルコリンを分泌。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_029",
+      "unit": "science.biology.body.nerve.autonomic",
+      "category": "knowledge",
+      "prompt": "交感神経と副交感神経のように、同じ器官に反対の作用をおよぼすこと。これを何という？",
+      "choices": [
+        "盲斑",
+        "拮抗作用",
+        "ノルアドレナリン",
+        "視床下部"
+      ],
+      "answerIndex": 1,
+      "explanation": "拮抗作用：交感神経と副交感神経のように、同じ器官に反対の作用をおよぼすこと。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_030",
+      "unit": "science.biology.body.nerve.autonomic",
+      "category": "thinking",
+      "prompt": "「拮抗作用」の説明として正しいものは？",
+      "choices": [
+        "視神経の繊維が束になって網膜を貫く部分で、視細胞がない",
+        "交感神経の末端から分泌される神経伝達物質",
+        "間脳にあり、自律神経系と内分泌系の中枢となる部分",
+        "交感神経と副交感神経のように、同じ器官に反対の作用をおよぼすこと"
+      ],
+      "answerIndex": 3,
+      "explanation": "拮抗作用：交感神経と副交感神経のように、同じ器官に反対の作用をおよぼすこと。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_031",
+      "unit": "science.biology.body.nerve.autonomic",
+      "category": "knowledge",
+      "prompt": "交感神経の末端から分泌される神経伝達物質。これを何という？",
+      "choices": [
+        "副交感神経",
+        "自律神経系",
+        "ノルアドレナリン",
+        "ペースメーカー"
+      ],
+      "answerIndex": 2,
+      "explanation": "ノルアドレナリン：交感神経の末端から分泌される神経伝達物質。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_032",
+      "unit": "science.biology.body.nerve.autonomic",
+      "category": "thinking",
+      "prompt": "「ノルアドレナリン」の説明として正しいものは？",
+      "choices": [
+        "心臓の右心房にあり、自動的に拍動のリズムをつくる部分（洞房結節）",
+        "内臓や血管のはたらきを、意識とは無関係に調節する神経系",
+        "休息・リラックスしたときにはたらく自律神経。末端からアセチルコリンを分泌",
+        "交感神経の末端から分泌される神経伝達物質"
+      ],
+      "answerIndex": 3,
+      "explanation": "ノルアドレナリン：交感神経の末端から分泌される神経伝達物質。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_033",
+      "unit": "science.biology.body.nerve.autonomic",
+      "category": "knowledge",
+      "prompt": "副交感神経の末端から分泌される神経伝達物質。これを何という？",
+      "choices": [
+        "拮抗作用",
+        "自律神経系",
+        "錐体細胞",
+        "アセチルコリン"
+      ],
+      "answerIndex": 3,
+      "explanation": "アセチルコリン：副交感神経の末端から分泌される神経伝達物質。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_034",
+      "unit": "science.biology.body.nerve.autonomic",
+      "category": "thinking",
+      "prompt": "「アセチルコリン」の説明として正しいものは？",
+      "choices": [
+        "交感神経と副交感神経のように、同じ器官に反対の作用をおよぼすこと",
+        "内臓や血管のはたらきを、意識とは無関係に調節する神経系",
+        "副交感神経の末端から分泌される神経伝達物質",
+        "明るい所ではたらき、色を見分ける視細胞"
+      ],
+      "answerIndex": 2,
+      "explanation": "アセチルコリン：副交感神経の末端から分泌される神経伝達物質。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_035",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "category": "knowledge",
+      "prompt": "心臓の右心房にあり、自動的に拍動のリズムをつくる部分（洞房結節）。これを何という？",
+      "choices": [
+        "視床下部",
+        "交感神経",
+        "拮抗作用",
+        "ペースメーカー"
+      ],
+      "answerIndex": 3,
+      "explanation": "ペースメーカー：心臓の右心房にあり、自動的に拍動のリズムをつくる部分（洞房結節）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_036",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "category": "thinking",
+      "prompt": "「ペースメーカー」の説明として正しいものは？",
+      "choices": [
+        "間脳にあり、自律神経系と内分泌系の中枢となる部分",
+        "興奮・緊張したときにはたらく自律神経。末端からおもにノルアドレナリンを分泌",
+        "交感神経と副交感神経のように、同じ器官に反対の作用をおよぼすこと",
+        "心臓の右心房にあり、自動的に拍動のリズムをつくる部分（洞房結節）"
+      ],
+      "answerIndex": 3,
+      "explanation": "ペースメーカー：心臓の右心房にあり、自動的に拍動のリズムをつくる部分（洞房結節）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_037",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "視神経の繊維が束になって網膜を貫く部分で、視細胞がない。これを何という？",
+      "choices": [
+        "小脳",
+        "盲斑",
+        "二重支配",
+        "アセチルコリン"
+      ],
+      "answerIndex": 1,
+      "explanation": "盲斑：視神経の繊維が束になって網膜を貫く部分で、視細胞がない。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_038",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "thinking",
+      "prompt": "「盲斑」の説明として正しいものは？",
+      "choices": [
+        "体の平衡を保ち、運動を調節する中枢",
+        "視神経の繊維が束になって網膜を貫く部分で、視細胞がない",
+        "副交感神経の末端から分泌される神経伝達物質",
+        "多くの器官が、交感神経と副交感神経の両方から調節を受けていること"
+      ],
+      "answerIndex": 1,
+      "explanation": "盲斑：視神経の繊維が束になって網膜を貫く部分で、視細胞がない。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_039",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "明るい所ではたらき、色を見分ける視細胞。これを何という？",
+      "choices": [
+        "延髄",
+        "アセチルコリン",
+        "ノルアドレナリン",
+        "錐体細胞"
+      ],
+      "answerIndex": 3,
+      "explanation": "錐体細胞：明るい所ではたらき、色を見分ける視細胞。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_040",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "thinking",
+      "prompt": "「錐体細胞」の説明として正しいものは？",
+      "choices": [
+        "副交感神経の末端から分泌される神経伝達物質",
+        "呼吸運動や心臓の拍動を調節する中枢",
+        "明るい所ではたらき、色を見分ける視細胞",
+        "交感神経の末端から分泌される神経伝達物質"
+      ],
+      "answerIndex": 2,
+      "explanation": "錐体細胞：明るい所ではたらき、色を見分ける視細胞。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_041",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "弱い光でもはたらくが、色の区別はしない視細胞。これを何という？",
+      "choices": [
+        "自律神経系",
+        "拮抗的なはたらき",
+        "アセチルコリン",
+        "桿体細胞"
+      ],
+      "answerIndex": 3,
+      "explanation": "桿体細胞：弱い光でもはたらくが、色の区別はしない視細胞。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_042",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "thinking",
+      "prompt": "「桿体細胞」の説明として正しいものは？",
+      "choices": [
+        "弱い光でもはたらくが、色の区別はしない視細胞",
+        "交感神経と副交感神経のように、たがいに反対の作用をおよぼし合うはたらき方",
+        "副交感神経の末端から分泌される神経伝達物質",
+        "内臓や血管のはたらきを、意識とは無関係に調節する神経系"
+      ],
+      "answerIndex": 0,
+      "explanation": "桿体細胞：弱い光でもはたらくが、色の区別はしない視細胞。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_043",
+      "unit": "science.biology.body.nerve.autonomic",
+      "category": "knowledge",
+      "prompt": "多くの器官が、交感神経と副交感神経の両方から調節を受けていること。これを何という？",
+      "choices": [
+        "盲斑",
+        "自律神経系",
+        "拮抗作用",
+        "二重支配"
+      ],
+      "answerIndex": 3,
+      "explanation": "二重支配：多くの器官が、交感神経と副交感神経の両方から調節を受けていること。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_044",
+      "unit": "science.biology.body.nerve.autonomic",
+      "category": "thinking",
+      "prompt": "「二重支配」の説明として正しいものは？",
+      "choices": [
+        "視神経の繊維が束になって網膜を貫く部分で、視細胞がない",
+        "内臓や血管のはたらきを、意識とは無関係に調節する神経系",
+        "交感神経と副交感神経のように、同じ器官に反対の作用をおよぼすこと",
+        "多くの器官が、交感神経と副交感神経の両方から調節を受けていること"
+      ],
+      "answerIndex": 3,
+      "explanation": "二重支配：多くの器官が、交感神経と副交感神経の両方から調節を受けていること。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_045",
+      "unit": "science.biology.body.nerve.autonomic",
+      "category": "knowledge",
+      "prompt": "交感神経と副交感神経のように、たがいに反対の作用をおよぼし合うはたらき方。これを何という？",
+      "choices": [
+        "拮抗作用",
+        "拮抗的なはたらき",
+        "ノルアドレナリン",
+        "ペースメーカー"
+      ],
+      "answerIndex": 1,
+      "explanation": "拮抗的なはたらき：交感神経と副交感神経のように、たがいに反対の作用をおよぼし合うはたらき方。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_046",
+      "unit": "science.biology.body.nerve.autonomic",
+      "category": "thinking",
+      "prompt": "「拮抗的なはたらき」の説明として正しいものは？",
+      "choices": [
+        "交感神経の末端から分泌される神経伝達物質",
+        "心臓の右心房にあり、自動的に拍動のリズムをつくる部分（洞房結節）",
+        "交感神経と副交感神経のように、同じ器官に反対の作用をおよぼすこと",
+        "交感神経と副交感神経のように、たがいに反対の作用をおよぼし合うはたらき方"
+      ],
+      "answerIndex": 3,
+      "explanation": "拮抗的なはたらき：交感神経と副交感神経のように、たがいに反対の作用をおよぼし合うはたらき方。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_047",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "排出管をもたず、ホルモンを直接血液中に分泌する器官。これを何という？",
+      "choices": [
+        "チロキシン",
+        "ランゲルハンス島A細胞",
+        "バソプレシン",
+        "内分泌腺"
+      ],
+      "answerIndex": 3,
+      "explanation": "内分泌腺：排出管をもたず、ホルモンを直接血液中に分泌する器官。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_048",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "thinking",
+      "prompt": "「内分泌腺」の説明として正しいものは？",
+      "choices": [
+        "排出管をもたず、ホルモンを直接血液中に分泌する器官",
+        "集合管での水の再吸収を促進し、体液の濃度を下げるホルモン",
+        "甲状腺から分泌され、代謝（化学反応）を促進するホルモン",
+        "すい臓にあり、血糖濃度を上げるグルカゴンを分泌する細胞"
+      ],
+      "answerIndex": 0,
+      "explanation": "内分泌腺：排出管をもたず、ホルモンを直接血液中に分泌する器官。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_049",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "汗腺・消化腺など、排出管を通して体外や消化管に物質を出す器官。これを何という？",
+      "choices": [
+        "外分泌腺",
+        "標的器官",
+        "副腎皮質",
+        "脳下垂体前葉"
+      ],
+      "answerIndex": 0,
+      "explanation": "外分泌腺：汗腺・消化腺など、排出管を通して体外や消化管に物質を出す器官。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_050",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "thinking",
+      "prompt": "「外分泌腺」の説明として正しいものは？",
+      "choices": [
+        "汗腺・消化腺など、排出管を通して体外や消化管に物質を出す器官",
+        "糖質コルチコイドを分泌する内分泌腺",
+        "成長ホルモン・甲状腺刺激ホルモン・副腎皮質刺激ホルモンなどを分泌する内分泌腺",
+        "特定のホルモンを受け取る受容体をもつ細胞（標的細胞）がある器官"
+      ],
+      "answerIndex": 0,
+      "explanation": "外分泌腺：汗腺・消化腺など、排出管を通して体外や消化管に物質を出す器官。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_051",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "内分泌腺から血液中に分泌され、特定の器官のはたらきを調節する物質。これを何という？",
+      "choices": [
+        "ホルモン",
+        "バセドウ病",
+        "セクレチン",
+        "甲状腺刺激ホルモン"
+      ],
+      "answerIndex": 0,
+      "explanation": "ホルモン：内分泌腺から血液中に分泌され、特定の器官のはたらきを調節する物質。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_052",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "thinking",
+      "prompt": "「ホルモン」の説明として正しいものは？",
+      "choices": [
+        "甲状腺の受容体を刺激する抗体ができ、チロキシンが過剰になる自己免疫疾患",
+        "ベイリスとスターリングの実験で見つかった、十二指腸から出てすい液の分泌をうながすホルモン",
+        "脳下垂体前葉から分泌され、甲状腺のチロキシンの分泌を促すホルモン（TSH）",
+        "内分泌腺から血液中に分泌され、特定の器官のはたらきを調節する物質"
+      ],
+      "answerIndex": 3,
+      "explanation": "ホルモン：内分泌腺から血液中に分泌され、特定の器官のはたらきを調節する物質。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_053",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "そのホルモンの受容体をもち、ホルモンに反応する細胞。これを何という？",
+      "choices": [
+        "フィードバック",
+        "内分泌系",
+        "インスリン",
+        "標的細胞"
+      ],
+      "answerIndex": 3,
+      "explanation": "標的細胞：そのホルモンの受容体をもち、ホルモンに反応する細胞。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_054",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "thinking",
+      "prompt": "「標的細胞」の説明として正しいものは？",
+      "choices": [
+        "ホルモンを血液中に分泌して、からだのはたらきを調節するしくみ",
+        "結果が原因にもどってはたらくしくみ。チロキシンが多いとTRH・TSHの分泌が抑えられる（負の〜）",
+        "そのホルモンの受容体をもち、ホルモンに反応する細胞",
+        "すい臓ランゲルハンス島B細胞から分泌され、血糖濃度を下げる唯一のホルモン"
+      ],
+      "answerIndex": 2,
+      "explanation": "標的細胞：そのホルモンの受容体をもち、ホルモンに反応する細胞。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_055",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "細胞にあり、特定のホルモンや神経伝達物質と結合するタンパク質。これを何という？",
+      "choices": [
+        "標的器官",
+        "血糖",
+        "副腎皮質",
+        "受容体"
+      ],
+      "answerIndex": 3,
+      "explanation": "受容体：細胞にあり、特定のホルモンや神経伝達物質と結合するタンパク質。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_056",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "thinking",
+      "prompt": "「受容体」の説明として正しいものは？",
+      "choices": [
+        "糖質コルチコイドを分泌する内分泌腺",
+        "特定のホルモンを受け取る受容体をもつ細胞（標的細胞）がある器官",
+        "血液中のグルコース。健康なヒトの空腹時は約0.1％（約100mg/100mL）",
+        "細胞にあり、特定のホルモンや神経伝達物質と結合するタンパク質"
+      ],
+      "answerIndex": 3,
+      "explanation": "受容体：細胞にあり、特定のホルモンや神経伝達物質と結合するタンパク質。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_057",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "ホルモンを分泌する神経細胞（視床下部にある）。これを何という？",
+      "choices": [
+        "血糖",
+        "Ⅰ型糖尿病",
+        "神経分泌細胞",
+        "体温調節中枢"
+      ],
+      "answerIndex": 2,
+      "explanation": "神経分泌細胞：ホルモンを分泌する神経細胞（視床下部にある）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_058",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "thinking",
+      "prompt": "「神経分泌細胞」の説明として正しいものは？",
+      "choices": [
+        "ランゲルハンス島B細胞が破壊され、インスリンがほとんど分泌されない糖尿病",
+        "間脳の視床下部にある、体温を一定に保つ中枢",
+        "血液中のグルコース。健康なヒトの空腹時は約0.1％（約100mg/100mL）",
+        "ホルモンを分泌する神経細胞（視床下部にある）"
+      ],
+      "answerIndex": 3,
+      "explanation": "神経分泌細胞：ホルモンを分泌する神経細胞（視床下部にある）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_059",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "成長ホルモン・甲状腺刺激ホルモン・副腎皮質刺激ホルモンなどを分泌する内分泌腺。これを何という？",
+      "choices": [
+        "脳下垂体前葉",
+        "アドレナリン",
+        "バセドウ病",
+        "Ⅱ型糖尿病"
+      ],
+      "answerIndex": 0,
+      "explanation": "脳下垂体前葉：成長ホルモン・甲状腺刺激ホルモン・副腎皮質刺激ホルモンなどを分泌する内分泌腺。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_060",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "thinking",
+      "prompt": "「脳下垂体前葉」の説明として正しいものは？",
+      "choices": [
+        "甲状腺の受容体を刺激する抗体ができ、チロキシンが過剰になる自己免疫疾患",
+        "成長ホルモン・甲状腺刺激ホルモン・副腎皮質刺激ホルモンなどを分泌する内分泌腺",
+        "副腎髄質から分泌され、グリコーゲンの分解を促進して血糖濃度を上げるホルモン",
+        "インスリンの分泌量の低下や、標的細胞の反応性の低下で起こる糖尿病"
+      ],
+      "answerIndex": 1,
+      "explanation": "脳下垂体前葉：成長ホルモン・甲状腺刺激ホルモン・副腎皮質刺激ホルモンなどを分泌する内分泌腺。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_061",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "category": "knowledge",
+      "prompt": "視床下部の神経分泌細胞がつくったバソプレシンを血液中に放出する部分。これを何という？",
+      "choices": [
+        "副腎髄質",
+        "脳下垂体前葉",
+        "脳下垂体後葉",
+        "フィードバック"
+      ],
+      "answerIndex": 2,
+      "explanation": "脳下垂体後葉：視床下部の神経分泌細胞がつくったバソプレシンを血液中に放出する部分。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_062",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "thinking",
+      "prompt": "「脳下垂体後葉」の説明として正しいものは？",
+      "choices": [
+        "結果が原因にもどってはたらくしくみ。チロキシンが多いとTRH・TSHの分泌が抑えられる（負の〜）",
+        "アドレナリンを分泌する内分泌腺",
+        "視床下部の神経分泌細胞がつくったバソプレシンを血液中に放出する部分",
+        "成長ホルモン・甲状腺刺激ホルモン・副腎皮質刺激ホルモンなどを分泌する内分泌腺"
+      ],
+      "answerIndex": 2,
+      "explanation": "脳下垂体後葉：視床下部の神経分泌細胞がつくったバソプレシンを血液中に放出する部分。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_063",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "甲状腺から分泌され、代謝（化学反応）を促進するホルモン。これを何という？",
+      "choices": [
+        "インスリン",
+        "血糖",
+        "鉱質コルチコイド",
+        "チロキシン"
+      ],
+      "answerIndex": 3,
+      "explanation": "チロキシン：甲状腺から分泌され、代謝（化学反応）を促進するホルモン。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_064",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "thinking",
+      "prompt": "「チロキシン」の説明として正しいものは？",
+      "choices": [
+        "すい臓ランゲルハンス島B細胞から分泌され、血糖濃度を下げる唯一のホルモン",
+        "血液中のグルコース。健康なヒトの空腹時は約0.1％（約100mg/100mL）",
+        "副腎皮質から分泌され、細尿管でのNa⁺の再吸収を促進するホルモン",
+        "甲状腺から分泌され、代謝（化学反応）を促進するホルモン"
+      ],
+      "answerIndex": 3,
+      "explanation": "チロキシン：甲状腺から分泌され、代謝（化学反応）を促進するホルモン。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_065",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "脳下垂体前葉から分泌され、甲状腺のチロキシンの分泌を促すホルモン（TSH）。これを何という？",
+      "choices": [
+        "ホルモン",
+        "バセドウ病",
+        "甲状腺刺激ホルモン",
+        "ランゲルハンス島A細胞"
+      ],
+      "answerIndex": 2,
+      "explanation": "甲状腺刺激ホルモン：脳下垂体前葉から分泌され、甲状腺のチロキシンの分泌を促すホルモン（TSH）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_066",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "thinking",
+      "prompt": "「甲状腺刺激ホルモン」の説明として正しいものは？",
+      "choices": [
+        "内分泌腺から血液中に分泌され、特定の器官のはたらきを調節する物質",
+        "すい臓にあり、血糖濃度を上げるグルカゴンを分泌する細胞",
+        "甲状腺の受容体を刺激する抗体ができ、チロキシンが過剰になる自己免疫疾患",
+        "脳下垂体前葉から分泌され、甲状腺のチロキシンの分泌を促すホルモン（TSH）"
+      ],
+      "answerIndex": 3,
+      "explanation": "甲状腺刺激ホルモン：脳下垂体前葉から分泌され、甲状腺のチロキシンの分泌を促すホルモン（TSH）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_067",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "結果が原因にもどってはたらくしくみ。チロキシンが多いとTRH・TSHの分泌が抑えられる（負の〜）。これを何という？",
+      "choices": [
+        "フィードバック",
+        "標的器官",
+        "内分泌系",
+        "バソプレシン"
+      ],
+      "answerIndex": 0,
+      "explanation": "フィードバック：結果が原因にもどってはたらくしくみ。チロキシンが多いとTRH・TSHの分泌が抑えられる（負の〜）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_068",
+      "unit": "science.biology.body.nerve.feedback",
+      "category": "thinking",
+      "prompt": "「フィードバック」の説明として正しいものは？",
+      "choices": [
+        "集合管での水の再吸収を促進し、体液の濃度を下げるホルモン",
+        "結果が原因にもどってはたらくしくみ。チロキシンが多いとTRH・TSHの分泌が抑えられる（負の〜）",
+        "特定のホルモンを受け取る受容体をもつ細胞（標的細胞）がある器官",
+        "ホルモンを血液中に分泌して、からだのはたらきを調節するしくみ"
+      ],
+      "answerIndex": 1,
+      "explanation": "フィードバック：結果が原因にもどってはたらくしくみ。チロキシンが多いとTRH・TSHの分泌が抑えられる（負の〜）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_069",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "集合管での水の再吸収を促進し、体液の濃度を下げるホルモン。これを何という？",
+      "choices": [
+        "内分泌腺",
+        "バソプレシン",
+        "副腎髄質",
+        "標的器官"
+      ],
+      "answerIndex": 1,
+      "explanation": "バソプレシン：集合管での水の再吸収を促進し、体液の濃度を下げるホルモン。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_070",
+      "unit": "science.biology.body.homeostasis.temperature",
+      "category": "thinking",
+      "prompt": "「バソプレシン」の説明として正しいものは？",
+      "choices": [
+        "排出管をもたず、ホルモンを直接血液中に分泌する器官",
+        "特定のホルモンを受け取る受容体をもつ細胞（標的細胞）がある器官",
+        "アドレナリンを分泌する内分泌腺",
+        "集合管での水の再吸収を促進し、体液の濃度を下げるホルモン"
+      ],
+      "answerIndex": 3,
+      "explanation": "バソプレシン：集合管での水の再吸収を促進し、体液の濃度を下げるホルモン。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_071",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "副腎皮質から分泌され、細尿管でのNa⁺の再吸収を促進するホルモン。これを何という？",
+      "choices": [
+        "標的細胞",
+        "脳下垂体前葉",
+        "副腎髄質",
+        "鉱質コルチコイド"
+      ],
+      "answerIndex": 3,
+      "explanation": "鉱質コルチコイド：副腎皮質から分泌され、細尿管でのNa⁺の再吸収を促進するホルモン。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_072",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "thinking",
+      "prompt": "「鉱質コルチコイド」の説明として正しいものは？",
+      "choices": [
+        "成長ホルモン・甲状腺刺激ホルモン・副腎皮質刺激ホルモンなどを分泌する内分泌腺",
+        "そのホルモンの受容体をもち、ホルモンに反応する細胞",
+        "副腎皮質から分泌され、細尿管でのNa⁺の再吸収を促進するホルモン",
+        "アドレナリンを分泌する内分泌腺"
+      ],
+      "answerIndex": 2,
+      "explanation": "鉱質コルチコイド：副腎皮質から分泌され、細尿管でのNa⁺の再吸収を促進するホルモン。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_073",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "副腎皮質から分泌され、タンパク質からグルコースをつくる反応を促進するホルモン。これを何という？",
+      "choices": [
+        "糖質コルチコイド",
+        "体温調節中枢",
+        "外分泌腺",
+        "Ⅱ型糖尿病"
+      ],
+      "answerIndex": 0,
+      "explanation": "糖質コルチコイド：副腎皮質から分泌され、タンパク質からグルコースをつくる反応を促進するホルモン。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_074",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "thinking",
+      "prompt": "「糖質コルチコイド」の説明として正しいものは？",
+      "choices": [
+        "間脳の視床下部にある、体温を一定に保つ中枢",
+        "汗腺・消化腺など、排出管を通して体外や消化管に物質を出す器官",
+        "副腎皮質から分泌され、タンパク質からグルコースをつくる反応を促進するホルモン",
+        "インスリンの分泌量の低下や、標的細胞の反応性の低下で起こる糖尿病"
+      ],
+      "answerIndex": 2,
+      "explanation": "糖質コルチコイド：副腎皮質から分泌され、タンパク質からグルコースをつくる反応を促進するホルモン。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_075",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "副腎髄質から分泌され、グリコーゲンの分解を促進して血糖濃度を上げるホルモン。これを何という？",
+      "choices": [
+        "チロキシン",
+        "外分泌腺",
+        "Ⅱ型糖尿病",
+        "アドレナリン"
+      ],
+      "answerIndex": 3,
+      "explanation": "アドレナリン：副腎髄質から分泌され、グリコーゲンの分解を促進して血糖濃度を上げるホルモン。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_076",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "thinking",
+      "prompt": "「アドレナリン」の説明として正しいものは？",
+      "choices": [
+        "インスリンの分泌量の低下や、標的細胞の反応性の低下で起こる糖尿病",
+        "副腎髄質から分泌され、グリコーゲンの分解を促進して血糖濃度を上げるホルモン",
+        "甲状腺から分泌され、代謝（化学反応）を促進するホルモン",
+        "汗腺・消化腺など、排出管を通して体外や消化管に物質を出す器官"
+      ],
+      "answerIndex": 1,
+      "explanation": "アドレナリン：副腎髄質から分泌され、グリコーゲンの分解を促進して血糖濃度を上げるホルモン。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_077",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "すい臓ランゲルハンス島A細胞から分泌され、肝臓のグリコーゲンの分解を促進するホルモン。これを何という？",
+      "choices": [
+        "ランゲルハンス島A細胞",
+        "脳下垂体後葉",
+        "グルカゴン",
+        "標的細胞"
+      ],
+      "answerIndex": 2,
+      "explanation": "グルカゴン：すい臓ランゲルハンス島A細胞から分泌され、肝臓のグリコーゲンの分解を促進するホルモン。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_078",
+      "unit": "science.biology.body.homeostasis.glucose",
+      "category": "thinking",
+      "prompt": "「グルカゴン」の説明として正しいものは？",
+      "choices": [
+        "すい臓にあり、血糖濃度を上げるグルカゴンを分泌する細胞",
+        "すい臓ランゲルハンス島A細胞から分泌され、肝臓のグリコーゲンの分解を促進するホルモン",
+        "視床下部の神経分泌細胞がつくったバソプレシンを血液中に放出する部分",
+        "そのホルモンの受容体をもち、ホルモンに反応する細胞"
+      ],
+      "answerIndex": 1,
+      "explanation": "グルカゴン：すい臓ランゲルハンス島A細胞から分泌され、肝臓のグリコーゲンの分解を促進するホルモン。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_079",
+      "unit": "science.biology.body.homeostasis.glucose",
+      "category": "knowledge",
+      "prompt": "すい臓ランゲルハンス島B細胞から分泌され、血糖濃度を下げる唯一のホルモン。これを何という？",
+      "choices": [
+        "血糖",
+        "セクレチン",
+        "受容体",
+        "インスリン"
+      ],
+      "answerIndex": 3,
+      "explanation": "インスリン：すい臓ランゲルハンス島B細胞から分泌され、血糖濃度を下げる唯一のホルモン。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_080",
+      "unit": "science.biology.body.homeostasis.glucose",
+      "category": "thinking",
+      "prompt": "「インスリン」の説明として正しいものは？",
+      "choices": [
+        "細胞にあり、特定のホルモンや神経伝達物質と結合するタンパク質",
+        "血液中のグルコース。健康なヒトの空腹時は約0.1％（約100mg/100mL）",
+        "ベイリスとスターリングの実験で見つかった、十二指腸から出てすい液の分泌をうながすホルモン",
+        "すい臓ランゲルハンス島B細胞から分泌され、血糖濃度を下げる唯一のホルモン"
+      ],
+      "answerIndex": 3,
+      "explanation": "インスリン：すい臓ランゲルハンス島B細胞から分泌され、血糖濃度を下げる唯一のホルモン。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_081",
+      "unit": "science.biology.body.homeostasis.fluid",
+      "category": "knowledge",
+      "prompt": "血液中のグルコース。健康なヒトの空腹時は約0.1％（約100mg/100mL）。これを何という？",
+      "choices": [
+        "チロキシン",
+        "副腎",
+        "脳下垂体後葉",
+        "血糖"
+      ],
+      "answerIndex": 3,
+      "explanation": "血糖：血液中のグルコース。健康なヒトの空腹時は約0.1％（約100mg/100mL）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_082",
+      "unit": "science.biology.body.homeostasis.glucose",
+      "category": "thinking",
+      "prompt": "「血糖」の説明として正しいものは？",
+      "choices": [
+        "甲状腺から分泌され、代謝（化学反応）を促進するホルモン",
+        "視床下部の神経分泌細胞がつくったバソプレシンを血液中に放出する部分",
+        "血液中のグルコース。健康なヒトの空腹時は約0.1％（約100mg/100mL）",
+        "腎臓の上にあり、皮質から糖質コルチコイド、髄質からアドレナリンを出す内分泌腺"
+      ],
+      "answerIndex": 2,
+      "explanation": "血糖：血液中のグルコース。健康なヒトの空腹時は約0.1％（約100mg/100mL）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_083",
+      "unit": "science.biology.body.homeostasis.glucose",
+      "category": "knowledge",
+      "prompt": "ランゲルハンス島B細胞が破壊され、インスリンがほとんど分泌されない糖尿病。これを何という？",
+      "choices": [
+        "Ⅰ型糖尿病",
+        "標的器官",
+        "脳下垂体前葉",
+        "外分泌腺"
+      ],
+      "answerIndex": 0,
+      "explanation": "Ⅰ型糖尿病：ランゲルハンス島B細胞が破壊され、インスリンがほとんど分泌されない糖尿病。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_084",
+      "unit": "science.biology.body.homeostasis.glucose",
+      "category": "thinking",
+      "prompt": "「Ⅰ型糖尿病」の説明として正しいものは？",
+      "choices": [
+        "ランゲルハンス島B細胞が破壊され、インスリンがほとんど分泌されない糖尿病",
+        "成長ホルモン・甲状腺刺激ホルモン・副腎皮質刺激ホルモンなどを分泌する内分泌腺",
+        "汗腺・消化腺など、排出管を通して体外や消化管に物質を出す器官",
+        "特定のホルモンを受け取る受容体をもつ細胞（標的細胞）がある器官"
+      ],
+      "answerIndex": 0,
+      "explanation": "Ⅰ型糖尿病：ランゲルハンス島B細胞が破壊され、インスリンがほとんど分泌されない糖尿病。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_085",
+      "unit": "science.biology.body.homeostasis.glucose",
+      "category": "knowledge",
+      "prompt": "インスリンの分泌量の低下や、標的細胞の反応性の低下で起こる糖尿病。これを何という？",
+      "choices": [
+        "副腎皮質",
+        "セクレチン",
+        "糖質コルチコイド",
+        "Ⅱ型糖尿病"
+      ],
+      "answerIndex": 3,
+      "explanation": "Ⅱ型糖尿病：インスリンの分泌量の低下や、標的細胞の反応性の低下で起こる糖尿病。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_086",
+      "unit": "science.biology.body.homeostasis.glucose",
+      "category": "thinking",
+      "prompt": "「Ⅱ型糖尿病」の説明として正しいものは？",
+      "choices": [
+        "糖質コルチコイドを分泌する内分泌腺",
+        "副腎皮質から分泌され、タンパク質からグルコースをつくる反応を促進するホルモン",
+        "ベイリスとスターリングの実験で見つかった、十二指腸から出てすい液の分泌をうながすホルモン",
+        "インスリンの分泌量の低下や、標的細胞の反応性の低下で起こる糖尿病"
+      ],
+      "answerIndex": 3,
+      "explanation": "Ⅱ型糖尿病：インスリンの分泌量の低下や、標的細胞の反応性の低下で起こる糖尿病。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_087",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "甲状腺の受容体を刺激する抗体ができ、チロキシンが過剰になる自己免疫疾患。これを何という？",
+      "choices": [
+        "外分泌腺",
+        "バソプレシン",
+        "バセドウ病",
+        "神経分泌細胞"
+      ],
+      "answerIndex": 2,
+      "explanation": "バセドウ病：甲状腺の受容体を刺激する抗体ができ、チロキシンが過剰になる自己免疫疾患。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_088",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "thinking",
+      "prompt": "「バセドウ病」の説明として正しいものは？",
+      "choices": [
+        "ホルモンを分泌する神経細胞（視床下部にある）",
+        "汗腺・消化腺など、排出管を通して体外や消化管に物質を出す器官",
+        "集合管での水の再吸収を促進し、体液の濃度を下げるホルモン",
+        "甲状腺の受容体を刺激する抗体ができ、チロキシンが過剰になる自己免疫疾患"
+      ],
+      "answerIndex": 3,
+      "explanation": "バセドウ病：甲状腺の受容体を刺激する抗体ができ、チロキシンが過剰になる自己免疫疾患。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_089",
+      "unit": "science.biology.body.homeostasis.temperature",
+      "category": "knowledge",
+      "prompt": "間脳の視床下部にある、体温を一定に保つ中枢。これを何という？",
+      "choices": [
+        "内分泌腺",
+        "脳下垂体後葉",
+        "ランゲルハンス島A細胞",
+        "体温調節中枢"
+      ],
+      "answerIndex": 3,
+      "explanation": "体温調節中枢：間脳の視床下部にある、体温を一定に保つ中枢。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_090",
+      "unit": "science.biology.body.homeostasis.temperature",
+      "category": "thinking",
+      "prompt": "「体温調節中枢」の説明として正しいものは？",
+      "choices": [
+        "間脳の視床下部にある、体温を一定に保つ中枢",
+        "排出管をもたず、ホルモンを直接血液中に分泌する器官",
+        "視床下部の神経分泌細胞がつくったバソプレシンを血液中に放出する部分",
+        "すい臓にあり、血糖濃度を上げるグルカゴンを分泌する細胞"
+      ],
+      "answerIndex": 0,
+      "explanation": "体温調節中枢：間脳の視床下部にある、体温を一定に保つ中枢。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_091",
+      "unit": "science.biology.body.homeostasis.glucose",
+      "category": "knowledge",
+      "prompt": "すい臓にあり、血糖濃度を上げるグルカゴンを分泌する細胞。これを何という？",
+      "choices": [
+        "ランゲルハンス島A細胞",
+        "標的細胞",
+        "内分泌腺",
+        "ホルモン"
+      ],
+      "answerIndex": 0,
+      "explanation": "ランゲルハンス島A細胞：すい臓にあり、血糖濃度を上げるグルカゴンを分泌する細胞。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_092",
+      "unit": "science.biology.body.homeostasis.glucose",
+      "category": "thinking",
+      "prompt": "「ランゲルハンス島A細胞」の説明として正しいものは？",
+      "choices": [
+        "すい臓にあり、血糖濃度を上げるグルカゴンを分泌する細胞",
+        "内分泌腺から血液中に分泌され、特定の器官のはたらきを調節する物質",
+        "そのホルモンの受容体をもち、ホルモンに反応する細胞",
+        "排出管をもたず、ホルモンを直接血液中に分泌する器官"
+      ],
+      "answerIndex": 0,
+      "explanation": "ランゲルハンス島A細胞：すい臓にあり、血糖濃度を上げるグルカゴンを分泌する細胞。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_093",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "糖質コルチコイドを分泌する内分泌腺。これを何という？",
+      "choices": [
+        "副腎皮質",
+        "副腎髄質",
+        "外分泌腺",
+        "内分泌腺"
+      ],
+      "answerIndex": 0,
+      "explanation": "副腎皮質：糖質コルチコイドを分泌する内分泌腺。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_094",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "thinking",
+      "prompt": "「副腎皮質」の説明として正しいものは？",
+      "choices": [
+        "汗腺・消化腺など、排出管を通して体外や消化管に物質を出す器官",
+        "アドレナリンを分泌する内分泌腺",
+        "糖質コルチコイドを分泌する内分泌腺",
+        "排出管をもたず、ホルモンを直接血液中に分泌する器官"
+      ],
+      "answerIndex": 2,
+      "explanation": "副腎皮質：糖質コルチコイドを分泌する内分泌腺。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_095",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "アドレナリンを分泌する内分泌腺。これを何という？",
+      "choices": [
+        "副腎髄質",
+        "バソプレシン",
+        "チロキシン",
+        "受容体"
+      ],
+      "answerIndex": 0,
+      "explanation": "副腎髄質：アドレナリンを分泌する内分泌腺。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_096",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "thinking",
+      "prompt": "「副腎髄質」の説明として正しいものは？",
+      "choices": [
+        "集合管での水の再吸収を促進し、体液の濃度を下げるホルモン",
+        "アドレナリンを分泌する内分泌腺",
+        "甲状腺から分泌され、代謝（化学反応）を促進するホルモン",
+        "細胞にあり、特定のホルモンや神経伝達物質と結合するタンパク質"
+      ],
+      "answerIndex": 1,
+      "explanation": "副腎髄質：アドレナリンを分泌する内分泌腺。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_097",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "ベイリスとスターリングの実験で見つかった、十二指腸から出てすい液の分泌をうながすホルモン。これを何という？",
+      "choices": [
+        "神経分泌細胞",
+        "標的器官",
+        "副腎皮質",
+        "セクレチン"
+      ],
+      "answerIndex": 3,
+      "explanation": "セクレチン：ベイリスとスターリングの実験で見つかった、十二指腸から出てすい液の分泌をうながすホルモン。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_098",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "thinking",
+      "prompt": "「セクレチン」の説明として正しいものは？",
+      "choices": [
+        "糖質コルチコイドを分泌する内分泌腺",
+        "ベイリスとスターリングの実験で見つかった、十二指腸から出てすい液の分泌をうながすホルモン",
+        "ホルモンを分泌する神経細胞（視床下部にある）",
+        "特定のホルモンを受け取る受容体をもつ細胞（標的細胞）がある器官"
+      ],
+      "answerIndex": 1,
+      "explanation": "セクレチン：ベイリスとスターリングの実験で見つかった、十二指腸から出てすい液の分泌をうながすホルモン。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_099",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "ホルモンを血液中に分泌して、からだのはたらきを調節するしくみ。これを何という？",
+      "choices": [
+        "神経分泌細胞",
+        "インスリン",
+        "内分泌系",
+        "ランゲルハンス島A細胞"
+      ],
+      "answerIndex": 2,
+      "explanation": "内分泌系：ホルモンを血液中に分泌して、からだのはたらきを調節するしくみ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_100",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "thinking",
+      "prompt": "「内分泌系」の説明として正しいものは？",
+      "choices": [
+        "すい臓ランゲルハンス島B細胞から分泌され、血糖濃度を下げる唯一のホルモン",
+        "ホルモンを分泌する神経細胞（視床下部にある）",
+        "すい臓にあり、血糖濃度を上げるグルカゴンを分泌する細胞",
+        "ホルモンを血液中に分泌して、からだのはたらきを調節するしくみ"
+      ],
+      "answerIndex": 3,
+      "explanation": "内分泌系：ホルモンを血液中に分泌して、からだのはたらきを調節するしくみ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_101",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "特定のホルモンを受け取る受容体をもつ細胞（標的細胞）がある器官。これを何という？",
+      "choices": [
+        "鉱質コルチコイド",
+        "内分泌腺",
+        "標的器官",
+        "Ⅰ型糖尿病"
+      ],
+      "answerIndex": 2,
+      "explanation": "標的器官：特定のホルモンを受け取る受容体をもつ細胞（標的細胞）がある器官。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_102",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "thinking",
+      "prompt": "「標的器官」の説明として正しいものは？",
+      "choices": [
+        "副腎皮質から分泌され、細尿管でのNa⁺の再吸収を促進するホルモン",
+        "排出管をもたず、ホルモンを直接血液中に分泌する器官",
+        "特定のホルモンを受け取る受容体をもつ細胞（標的細胞）がある器官",
+        "ランゲルハンス島B細胞が破壊され、インスリンがほとんど分泌されない糖尿病"
+      ],
+      "answerIndex": 2,
+      "explanation": "標的器官：特定のホルモンを受け取る受容体をもつ細胞（標的細胞）がある器官。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_103",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "knowledge",
+      "prompt": "腎臓の上にあり、皮質から糖質コルチコイド、髄質からアドレナリンを出す内分泌腺。これを何という？",
+      "choices": [
+        "セクレチン",
+        "外分泌腺",
+        "脳下垂体後葉",
+        "副腎"
+      ],
+      "answerIndex": 3,
+      "explanation": "副腎：腎臓の上にあり、皮質から糖質コルチコイド、髄質からアドレナリンを出す内分泌腺。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_bio_terms_02_104",
+      "unit": "science.biology.body.nerve.hormone",
+      "category": "thinking",
+      "prompt": "「副腎」の説明として正しいものは？",
+      "choices": [
+        "ベイリスとスターリングの実験で見つかった、十二指腸から出てすい液の分泌をうながすホルモン",
+        "視床下部の神経分泌細胞がつくったバソプレシンを血液中に放出する部分",
+        "汗腺・消化腺など、排出管を通して体外や消化管に物質を出す器官",
+        "腎臓の上にあり、皮質から糖質コルチコイド、髄質からアドレナリンを出す内分泌腺"
+      ],
+      "answerIndex": 3,
+      "explanation": "副腎：腎臓の上にあり、皮質から糖質コルチコイド、髄質からアドレナリンを出す内分泌腺。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "biology_basic"
+      ]
+    }
+  ]
+}

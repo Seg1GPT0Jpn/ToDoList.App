@@ -1,0 +1,1100 @@
+{
+  "setId": "science_shonan_104_chem_terms_01",
+  "worldId": "science",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "science_shonan_104_chem_terms_01_001",
+      "unit": "science.chemistry.change.mole.mass",
+      "category": "knowledge",
+      "prompt": "各元素の同位体の相対質量を、存在比を考えて平均した値。これを何という？",
+      "choices": [
+        "分子量",
+        "原子量",
+        "モル体積",
+        "式量"
+      ],
+      "answerIndex": 1,
+      "explanation": "原子量：各元素の同位体の相対質量を、存在比を考えて平均した値。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_002",
+      "unit": "science.chemistry.change.mole.mass",
+      "category": "thinking",
+      "prompt": "「原子量」の説明として正しいものは？",
+      "choices": [
+        "分子を構成する原子の原子量の総和",
+        "イオンや組成式で表す物質について、構成する原子の原子量の総和",
+        "各元素の同位体の相対質量を、存在比を考えて平均した値",
+        "気体1 mol が占める体積。0℃・1.013×10⁵ Pa では気体の種類によらず22.4 L"
+      ],
+      "answerIndex": 2,
+      "explanation": "原子量：各元素の同位体の相対質量を、存在比を考えて平均した値。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_003",
+      "unit": "science.chemistry.change.mole",
+      "category": "knowledge",
+      "prompt": "質量数12の炭素原子の質量を12とし、それを基準に表した原子の質量。これを何という？",
+      "choices": [
+        "相対質量",
+        "分子量",
+        "存在比",
+        "アボガドロ定数"
+      ],
+      "answerIndex": 0,
+      "explanation": "相対質量：質量数12の炭素原子の質量を12とし、それを基準に表した原子の質量。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_004",
+      "unit": "science.chemistry.change.mole",
+      "category": "thinking",
+      "prompt": "「相対質量」の説明として正しいものは？",
+      "choices": [
+        "分子を構成する原子の原子量の総和",
+        "1 mol あたりの粒子の数を表す定数。6.02×10²³/mol",
+        "質量数12の炭素原子の質量を12とし、それを基準に表した原子の質量",
+        "自然界での、ある元素の各同位体の割合"
+      ],
+      "answerIndex": 2,
+      "explanation": "相対質量：質量数12の炭素原子の質量を12とし、それを基準に表した原子の質量。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_005",
+      "unit": "science.chemistry.change.mole.mass",
+      "category": "knowledge",
+      "prompt": "分子を構成する原子の原子量の総和。これを何という？",
+      "choices": [
+        "平均分子量",
+        "アボガドロ定数",
+        "気体の密度",
+        "分子量"
+      ],
+      "answerIndex": 3,
+      "explanation": "分子量：分子を構成する原子の原子量の総和。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_006",
+      "unit": "science.chemistry.change.mole.mass",
+      "category": "thinking",
+      "prompt": "「分子量」の説明として正しいものは？",
+      "choices": [
+        "混合気体を1種類の分子とみなしたときの分子量。成分の分子量を物質量の割合で平均した値",
+        "気体1 L あたりの質量。標準状態ではモル質量÷22.4で求められる",
+        "1 mol あたりの粒子の数を表す定数。6.02×10²³/mol",
+        "分子を構成する原子の原子量の総和"
+      ],
+      "answerIndex": 3,
+      "explanation": "分子量：分子を構成する原子の原子量の総和。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_007",
+      "unit": "science.chemistry.change.mole.mass",
+      "category": "knowledge",
+      "prompt": "イオンや組成式で表す物質について、構成する原子の原子量の総和。これを何という？",
+      "choices": [
+        "標準状態",
+        "式量",
+        "同位体",
+        "モル"
+      ],
+      "answerIndex": 1,
+      "explanation": "式量：イオンや組成式で表す物質について、構成する原子の原子量の総和。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_008",
+      "unit": "science.chemistry.change.mole.mass",
+      "category": "thinking",
+      "prompt": "「式量」の説明として正しいものは？",
+      "choices": [
+        "物質量の単位。6.02×10²³個の粒子の集団を1とする（記号 mol）",
+        "原子番号が同じで、質量数（中性子の数）が異なる原子どうし",
+        "0℃、1.013×10⁵ Pa の状態",
+        "イオンや組成式で表す物質について、構成する原子の原子量の総和"
+      ],
+      "answerIndex": 3,
+      "explanation": "式量：イオンや組成式で表す物質について、構成する原子の原子量の総和。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_009",
+      "unit": "science.chemistry.change.mole",
+      "category": "knowledge",
+      "prompt": "原子番号が同じで、質量数（中性子の数）が異なる原子どうし。これを何という？",
+      "choices": [
+        "相対質量",
+        "アボガドロ定数",
+        "原子量",
+        "同位体"
+      ],
+      "answerIndex": 3,
+      "explanation": "同位体：原子番号が同じで、質量数（中性子の数）が異なる原子どうし。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_010",
+      "unit": "science.chemistry.change.mole",
+      "category": "thinking",
+      "prompt": "「同位体」の説明として正しいものは？",
+      "choices": [
+        "質量数12の炭素原子の質量を12とし、それを基準に表した原子の質量",
+        "原子番号が同じで、質量数（中性子の数）が異なる原子どうし",
+        "1 mol あたりの粒子の数を表す定数。6.02×10²³/mol",
+        "各元素の同位体の相対質量を、存在比を考えて平均した値"
+      ],
+      "answerIndex": 1,
+      "explanation": "同位体：原子番号が同じで、質量数（中性子の数）が異なる原子どうし。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_011",
+      "unit": "science.chemistry.change.mole",
+      "category": "knowledge",
+      "prompt": "自然界での、ある元素の各同位体の割合。これを何という？",
+      "choices": [
+        "平均分子量",
+        "存在比",
+        "モル",
+        "気体の密度"
+      ],
+      "answerIndex": 1,
+      "explanation": "存在比：自然界での、ある元素の各同位体の割合。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_012",
+      "unit": "science.chemistry.change.mole",
+      "category": "thinking",
+      "prompt": "「存在比」の説明として正しいものは？",
+      "choices": [
+        "自然界での、ある元素の各同位体の割合",
+        "物質量の単位。6.02×10²³個の粒子の集団を1とする（記号 mol）",
+        "気体1 L あたりの質量。標準状態ではモル質量÷22.4で求められる",
+        "混合気体を1種類の分子とみなしたときの分子量。成分の分子量を物質量の割合で平均した値"
+      ],
+      "answerIndex": 0,
+      "explanation": "存在比：自然界での、ある元素の各同位体の割合。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_013",
+      "unit": "science.chemistry.change.mole.mole",
+      "category": "knowledge",
+      "prompt": "粒子の数に着目して表した物質の量。単位は mol。これを何という？",
+      "choices": [
+        "気体の密度",
+        "物質量",
+        "原子量",
+        "モル体積"
+      ],
+      "answerIndex": 1,
+      "explanation": "物質量：粒子の数に着目して表した物質の量。単位は mol。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_014",
+      "unit": "science.chemistry.change.mole.mole",
+      "category": "thinking",
+      "prompt": "「物質量」の説明として正しいものは？",
+      "choices": [
+        "粒子の数に着目して表した物質の量。単位は mol",
+        "気体1 L あたりの質量。標準状態ではモル質量÷22.4で求められる",
+        "各元素の同位体の相対質量を、存在比を考えて平均した値",
+        "気体1 mol が占める体積。0℃・1.013×10⁵ Pa では気体の種類によらず22.4 L"
+      ],
+      "answerIndex": 0,
+      "explanation": "物質量：粒子の数に着目して表した物質の量。単位は mol。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_015",
+      "unit": "science.chemistry.change.mole.mole",
+      "category": "knowledge",
+      "prompt": "物質量の単位。6.02×10²³個の粒子の集団を1とする（記号 mol）。これを何という？",
+      "choices": [
+        "アボガドロ定数",
+        "同位体",
+        "アボガドロの法則",
+        "モル"
+      ],
+      "answerIndex": 3,
+      "explanation": "モル：物質量の単位。6.02×10²³個の粒子の集団を1とする（記号 mol）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_016",
+      "unit": "science.chemistry.change.mole.mole",
+      "category": "thinking",
+      "prompt": "「モル」の説明として正しいものは？",
+      "choices": [
+        "物質量の単位。6.02×10²³個の粒子の集団を1とする（記号 mol）",
+        "原子番号が同じで、質量数（中性子の数）が異なる原子どうし",
+        "1 mol あたりの粒子の数を表す定数。6.02×10²³/mol",
+        "同温・同圧・同体積の気体は、種類によらず同じ数の分子を含むという法則"
+      ],
+      "answerIndex": 0,
+      "explanation": "モル：物質量の単位。6.02×10²³個の粒子の集団を1とする（記号 mol）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_017",
+      "unit": "science.chemistry.change.mole.mole",
+      "category": "knowledge",
+      "prompt": "1 mol あたりの粒子の数を表す定数。6.02×10²³/mol。これを何という？",
+      "choices": [
+        "式量",
+        "アボガドロの法則",
+        "気体の密度",
+        "アボガドロ定数"
+      ],
+      "answerIndex": 3,
+      "explanation": "アボガドロ定数：1 mol あたりの粒子の数を表す定数。6.02×10²³/mol。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_018",
+      "unit": "science.chemistry.change.mole.mole",
+      "category": "thinking",
+      "prompt": "「アボガドロ定数」の説明として正しいものは？",
+      "choices": [
+        "同温・同圧・同体積の気体は、種類によらず同じ数の分子を含むという法則",
+        "1 mol あたりの粒子の数を表す定数。6.02×10²³/mol",
+        "気体1 L あたりの質量。標準状態ではモル質量÷22.4で求められる",
+        "イオンや組成式で表す物質について、構成する原子の原子量の総和"
+      ],
+      "answerIndex": 1,
+      "explanation": "アボガドロ定数：1 mol あたりの粒子の数を表す定数。6.02×10²³/mol。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_019",
+      "unit": "science.chemistry.change.mole.mass",
+      "category": "knowledge",
+      "prompt": "物質1 mol あたりの質量。g/mol で表すと数値は原子量・分子量・式量に等しい。これを何という？",
+      "choices": [
+        "モル質量",
+        "存在比",
+        "モル体積",
+        "相対質量"
+      ],
+      "answerIndex": 0,
+      "explanation": "モル質量：物質1 mol あたりの質量。g/mol で表すと数値は原子量・分子量・式量に等しい。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_020",
+      "unit": "science.chemistry.change.mole.mole",
+      "category": "thinking",
+      "prompt": "「モル質量」の説明として正しいものは？",
+      "choices": [
+        "気体1 mol が占める体積。0℃・1.013×10⁵ Pa では気体の種類によらず22.4 L",
+        "物質1 mol あたりの質量。g/mol で表すと数値は原子量・分子量・式量に等しい",
+        "質量数12の炭素原子の質量を12とし、それを基準に表した原子の質量",
+        "自然界での、ある元素の各同位体の割合"
+      ],
+      "answerIndex": 1,
+      "explanation": "モル質量：物質1 mol あたりの質量。g/mol で表すと数値は原子量・分子量・式量に等しい。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_021",
+      "unit": "science.chemistry.change.mole.mole",
+      "category": "knowledge",
+      "prompt": "気体1 mol が占める体積。0℃・1.013×10⁵ Pa では気体の種類によらず22.4 L。これを何という？",
+      "choices": [
+        "平均分子量",
+        "原子量",
+        "モル体積",
+        "気体の密度"
+      ],
+      "answerIndex": 2,
+      "explanation": "モル体積：気体1 mol が占める体積。0℃・1.013×10⁵ Pa では気体の種類によらず22.4 L。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_022",
+      "unit": "science.chemistry.change.mole.mole",
+      "category": "thinking",
+      "prompt": "「モル体積」の説明として正しいものは？",
+      "choices": [
+        "各元素の同位体の相対質量を、存在比を考えて平均した値",
+        "気体1 mol が占める体積。0℃・1.013×10⁵ Pa では気体の種類によらず22.4 L",
+        "混合気体を1種類の分子とみなしたときの分子量。成分の分子量を物質量の割合で平均した値",
+        "気体1 L あたりの質量。標準状態ではモル質量÷22.4で求められる"
+      ],
+      "answerIndex": 1,
+      "explanation": "モル体積：気体1 mol が占める体積。0℃・1.013×10⁵ Pa では気体の種類によらず22.4 L。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_023",
+      "unit": "science.chemistry.change.mole",
+      "category": "knowledge",
+      "prompt": "0℃、1.013×10⁵ Pa の状態。これを何という？",
+      "choices": [
+        "標準状態",
+        "モル体積",
+        "原子量",
+        "アボガドロ定数"
+      ],
+      "answerIndex": 0,
+      "explanation": "標準状態：0℃、1.013×10⁵ Pa の状態。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_024",
+      "unit": "science.chemistry.change.mole",
+      "category": "thinking",
+      "prompt": "「標準状態」の説明として正しいものは？",
+      "choices": [
+        "1 mol あたりの粒子の数を表す定数。6.02×10²³/mol",
+        "各元素の同位体の相対質量を、存在比を考えて平均した値",
+        "気体1 mol が占める体積。0℃・1.013×10⁵ Pa では気体の種類によらず22.4 L",
+        "0℃、1.013×10⁵ Pa の状態"
+      ],
+      "answerIndex": 3,
+      "explanation": "標準状態：0℃、1.013×10⁵ Pa の状態。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_025",
+      "unit": "science.chemistry.change.mole.mole",
+      "category": "knowledge",
+      "prompt": "同温・同圧・同体積の気体は、種類によらず同じ数の分子を含むという法則。これを何という？",
+      "choices": [
+        "アボガドロの法則",
+        "式量",
+        "モル体積",
+        "物質量"
+      ],
+      "answerIndex": 0,
+      "explanation": "アボガドロの法則：同温・同圧・同体積の気体は、種類によらず同じ数の分子を含むという法則。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_026",
+      "unit": "science.chemistry.change.mole.mole",
+      "category": "thinking",
+      "prompt": "「アボガドロの法則」の説明として正しいものは？",
+      "choices": [
+        "イオンや組成式で表す物質について、構成する原子の原子量の総和",
+        "同温・同圧・同体積の気体は、種類によらず同じ数の分子を含むという法則",
+        "粒子の数に着目して表した物質の量。単位は mol",
+        "気体1 mol が占める体積。0℃・1.013×10⁵ Pa では気体の種類によらず22.4 L"
+      ],
+      "answerIndex": 1,
+      "explanation": "アボガドロの法則：同温・同圧・同体積の気体は、種類によらず同じ数の分子を含むという法則。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_027",
+      "unit": "science.chemistry.change.mole.mole",
+      "category": "knowledge",
+      "prompt": "気体1 L あたりの質量。標準状態ではモル質量÷22.4で求められる。これを何という？",
+      "choices": [
+        "標準状態",
+        "物質量",
+        "気体の密度",
+        "原子量"
+      ],
+      "answerIndex": 2,
+      "explanation": "気体の密度：気体1 L あたりの質量。標準状態ではモル質量÷22.4で求められる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_028",
+      "unit": "science.chemistry.change.mole.mole",
+      "category": "thinking",
+      "prompt": "「気体の密度」の説明として正しいものは？",
+      "choices": [
+        "粒子の数に着目して表した物質の量。単位は mol",
+        "気体1 L あたりの質量。標準状態ではモル質量÷22.4で求められる",
+        "0℃、1.013×10⁵ Pa の状態",
+        "各元素の同位体の相対質量を、存在比を考えて平均した値"
+      ],
+      "answerIndex": 1,
+      "explanation": "気体の密度：気体1 L あたりの質量。標準状態ではモル質量÷22.4で求められる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_029",
+      "unit": "science.chemistry.change.mole.mass",
+      "category": "knowledge",
+      "prompt": "混合気体を1種類の分子とみなしたときの分子量。成分の分子量を物質量の割合で平均した値。これを何という？",
+      "choices": [
+        "モル",
+        "平均分子量",
+        "式量",
+        "アボガドロ定数"
+      ],
+      "answerIndex": 1,
+      "explanation": "平均分子量：混合気体を1種類の分子とみなしたときの分子量。成分の分子量を物質量の割合で平均した値。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_030",
+      "unit": "science.chemistry.change.mole.mass",
+      "category": "thinking",
+      "prompt": "「平均分子量」の説明として正しいものは？",
+      "choices": [
+        "1 mol あたりの粒子の数を表す定数。6.02×10²³/mol",
+        "イオンや組成式で表す物質について、構成する原子の原子量の総和",
+        "物質量の単位。6.02×10²³個の粒子の集団を1とする（記号 mol）",
+        "混合気体を1種類の分子とみなしたときの分子量。成分の分子量を物質量の割合で平均した値"
+      ],
+      "answerIndex": 3,
+      "explanation": "平均分子量：混合気体を1種類の分子とみなしたときの分子量。成分の分子量を物質量の割合で平均した値。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_031",
+      "unit": "science.chemistry.change.mole",
+      "category": "knowledge",
+      "prompt": "溶液に溶けている物質。これを何という？",
+      "choices": [
+        "溶質",
+        "溶解度曲線",
+        "再結晶",
+        "モル濃度"
+      ],
+      "answerIndex": 0,
+      "explanation": "溶質：溶液に溶けている物質。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_032",
+      "unit": "science.chemistry.change.mole",
+      "category": "thinking",
+      "prompt": "「溶質」の説明として正しいものは？",
+      "choices": [
+        "溶液に溶けている物質",
+        "溶液1 L 中に溶けている溶質の物質量で表した濃度。単位は mol/L",
+        "溶解度と温度の関係を表したグラフ",
+        "温度による溶解度の差を利用して、固体の物質を純粋な結晶として取り出す操作"
+      ],
+      "answerIndex": 0,
+      "explanation": "溶質：溶液に溶けている物質。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_033",
+      "unit": "science.chemistry.change.mole",
+      "category": "knowledge",
+      "prompt": "溶質を溶かしている液体。これを何という？",
+      "choices": [
+        "モル濃度",
+        "再結晶",
+        "溶解度",
+        "溶媒"
+      ],
+      "answerIndex": 3,
+      "explanation": "溶媒：溶質を溶かしている液体。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_034",
+      "unit": "science.chemistry.change.mole",
+      "category": "thinking",
+      "prompt": "「溶媒」の説明として正しいものは？",
+      "choices": [
+        "溶液1 L 中に溶けている溶質の物質量で表した濃度。単位は mol/L",
+        "溶質を溶かしている液体",
+        "温度による溶解度の差を利用して、固体の物質を純粋な結晶として取り出す操作",
+        "一定量の溶媒（ふつう水100 g）に溶ける溶質の最大の質量"
+      ],
+      "answerIndex": 1,
+      "explanation": "溶媒：溶質を溶かしている液体。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_035",
+      "unit": "science.chemistry.change.mole",
+      "category": "knowledge",
+      "prompt": "溶質が溶媒に均一に溶けた混合物。これを何という？",
+      "choices": [
+        "メスフラスコ",
+        "溶液",
+        "溶解度曲線",
+        "溶質"
+      ],
+      "answerIndex": 1,
+      "explanation": "溶液：溶質が溶媒に均一に溶けた混合物。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_036",
+      "unit": "science.chemistry.change.mole",
+      "category": "thinking",
+      "prompt": "「溶液」の説明として正しいものは？",
+      "choices": [
+        "溶質が溶媒に均一に溶けた混合物",
+        "決まった体積の溶液を正確につくるための、首に標線のある器具",
+        "溶解度と温度の関係を表したグラフ",
+        "溶液に溶けている物質"
+      ],
+      "answerIndex": 0,
+      "explanation": "溶液：溶質が溶媒に均一に溶けた混合物。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_037",
+      "unit": "science.chemistry.change.mole.concentration",
+      "category": "knowledge",
+      "prompt": "溶液の質量に対する溶質の質量の割合を百分率で表した濃度。これを何という？",
+      "choices": [
+        "再結晶",
+        "質量パーセント濃度",
+        "飽和溶液",
+        "溶媒"
+      ],
+      "answerIndex": 1,
+      "explanation": "質量パーセント濃度：溶液の質量に対する溶質の質量の割合を百分率で表した濃度。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_038",
+      "unit": "science.chemistry.change.mole.concentration",
+      "category": "thinking",
+      "prompt": "「質量パーセント濃度」の説明として正しいものは？",
+      "choices": [
+        "溶質を溶かしている液体",
+        "溶液の質量に対する溶質の質量の割合を百分率で表した濃度",
+        "溶質がそれ以上溶けきれないところまで溶けている溶液",
+        "温度による溶解度の差を利用して、固体の物質を純粋な結晶として取り出す操作"
+      ],
+      "answerIndex": 1,
+      "explanation": "質量パーセント濃度：溶液の質量に対する溶質の質量の割合を百分率で表した濃度。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_039",
+      "unit": "science.chemistry.change.mole.concentration",
+      "category": "knowledge",
+      "prompt": "溶液1 L 中に溶けている溶質の物質量で表した濃度。単位は mol/L。これを何という？",
+      "choices": [
+        "溶媒",
+        "モル濃度",
+        "メスフラスコ",
+        "溶液"
+      ],
+      "answerIndex": 1,
+      "explanation": "モル濃度：溶液1 L 中に溶けている溶質の物質量で表した濃度。単位は mol/L。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_040",
+      "unit": "science.chemistry.change.mole.concentration",
+      "category": "thinking",
+      "prompt": "「モル濃度」の説明として正しいものは？",
+      "choices": [
+        "決まった体積の溶液を正確につくるための、首に標線のある器具",
+        "溶質を溶かしている液体",
+        "溶液1 L 中に溶けている溶質の物質量で表した濃度。単位は mol/L",
+        "溶質が溶媒に均一に溶けた混合物"
+      ],
+      "answerIndex": 2,
+      "explanation": "モル濃度：溶液1 L 中に溶けている溶質の物質量で表した濃度。単位は mol/L。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_041",
+      "unit": "science.chemistry.change.mole",
+      "category": "knowledge",
+      "prompt": "決まった体積の溶液を正確につくるための、首に標線のある器具。これを何という？",
+      "choices": [
+        "溶解度",
+        "飽和溶液",
+        "再結晶",
+        "メスフラスコ"
+      ],
+      "answerIndex": 3,
+      "explanation": "メスフラスコ：決まった体積の溶液を正確につくるための、首に標線のある器具。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_042",
+      "unit": "science.chemistry.change.mole",
+      "category": "thinking",
+      "prompt": "「メスフラスコ」の説明として正しいものは？",
+      "choices": [
+        "温度による溶解度の差を利用して、固体の物質を純粋な結晶として取り出す操作",
+        "一定量の溶媒（ふつう水100 g）に溶ける溶質の最大の質量",
+        "溶質がそれ以上溶けきれないところまで溶けている溶液",
+        "決まった体積の溶液を正確につくるための、首に標線のある器具"
+      ],
+      "answerIndex": 3,
+      "explanation": "メスフラスコ：決まった体積の溶液を正確につくるための、首に標線のある器具。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_043",
+      "unit": "science.chemistry.change.mole",
+      "category": "knowledge",
+      "prompt": "一定量の溶媒（ふつう水100 g）に溶ける溶質の最大の質量。これを何という？",
+      "choices": [
+        "質量パーセント濃度",
+        "モル濃度",
+        "再結晶",
+        "溶解度"
+      ],
+      "answerIndex": 3,
+      "explanation": "溶解度：一定量の溶媒（ふつう水100 g）に溶ける溶質の最大の質量。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_044",
+      "unit": "science.chemistry.change.mole",
+      "category": "thinking",
+      "prompt": "「溶解度」の説明として正しいものは？",
+      "choices": [
+        "温度による溶解度の差を利用して、固体の物質を純粋な結晶として取り出す操作",
+        "溶液1 L 中に溶けている溶質の物質量で表した濃度。単位は mol/L",
+        "一定量の溶媒（ふつう水100 g）に溶ける溶質の最大の質量",
+        "溶液の質量に対する溶質の質量の割合を百分率で表した濃度"
+      ],
+      "answerIndex": 2,
+      "explanation": "溶解度：一定量の溶媒（ふつう水100 g）に溶ける溶質の最大の質量。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_045",
+      "unit": "science.chemistry.change.mole",
+      "category": "knowledge",
+      "prompt": "溶質がそれ以上溶けきれないところまで溶けている溶液。これを何という？",
+      "choices": [
+        "溶解度",
+        "飽和溶液",
+        "モル濃度",
+        "溶解度曲線"
+      ],
+      "answerIndex": 1,
+      "explanation": "飽和溶液：溶質がそれ以上溶けきれないところまで溶けている溶液。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_046",
+      "unit": "science.chemistry.change.mole",
+      "category": "thinking",
+      "prompt": "「飽和溶液」の説明として正しいものは？",
+      "choices": [
+        "溶解度と温度の関係を表したグラフ",
+        "一定量の溶媒（ふつう水100 g）に溶ける溶質の最大の質量",
+        "溶質がそれ以上溶けきれないところまで溶けている溶液",
+        "溶液1 L 中に溶けている溶質の物質量で表した濃度。単位は mol/L"
+      ],
+      "answerIndex": 2,
+      "explanation": "飽和溶液：溶質がそれ以上溶けきれないところまで溶けている溶液。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_047",
+      "unit": "science.chemistry.change.mole",
+      "category": "knowledge",
+      "prompt": "溶解度と温度の関係を表したグラフ。これを何という？",
+      "choices": [
+        "溶解度曲線",
+        "飽和溶液",
+        "溶質",
+        "水和水"
+      ],
+      "answerIndex": 0,
+      "explanation": "溶解度曲線：溶解度と温度の関係を表したグラフ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_048",
+      "unit": "science.chemistry.change.mole",
+      "category": "thinking",
+      "prompt": "「溶解度曲線」の説明として正しいものは？",
+      "choices": [
+        "溶解度と温度の関係を表したグラフ",
+        "溶質がそれ以上溶けきれないところまで溶けている溶液",
+        "硫酸銅(Ⅱ)五水和物の結晶のように、結晶の中に一定の割合で含まれている水",
+        "溶液に溶けている物質"
+      ],
+      "answerIndex": 0,
+      "explanation": "溶解度曲線：溶解度と温度の関係を表したグラフ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_049",
+      "unit": "science.chemistry.change.mole",
+      "category": "knowledge",
+      "prompt": "温度による溶解度の差を利用して、固体の物質を純粋な結晶として取り出す操作。これを何という？",
+      "choices": [
+        "溶解度",
+        "再結晶",
+        "質量パーセント濃度",
+        "溶解度曲線"
+      ],
+      "answerIndex": 1,
+      "explanation": "再結晶：温度による溶解度の差を利用して、固体の物質を純粋な結晶として取り出す操作。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_050",
+      "unit": "science.chemistry.change.mole",
+      "category": "thinking",
+      "prompt": "「再結晶」の説明として正しいものは？",
+      "choices": [
+        "溶解度と温度の関係を表したグラフ",
+        "一定量の溶媒（ふつう水100 g）に溶ける溶質の最大の質量",
+        "溶液の質量に対する溶質の質量の割合を百分率で表した濃度",
+        "温度による溶解度の差を利用して、固体の物質を純粋な結晶として取り出す操作"
+      ],
+      "answerIndex": 3,
+      "explanation": "再結晶：温度による溶解度の差を利用して、固体の物質を純粋な結晶として取り出す操作。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_051",
+      "unit": "science.chemistry.change.mole",
+      "category": "knowledge",
+      "prompt": "硫酸銅(Ⅱ)五水和物の結晶のように、結晶の中に一定の割合で含まれている水。これを何という？",
+      "choices": [
+        "溶解度曲線",
+        "水和水",
+        "溶液",
+        "メスフラスコ"
+      ],
+      "answerIndex": 1,
+      "explanation": "水和水：硫酸銅(Ⅱ)五水和物の結晶のように、結晶の中に一定の割合で含まれている水。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    },
+    {
+      "id": "science_shonan_104_chem_terms_01_052",
+      "unit": "science.chemistry.change.mole",
+      "category": "thinking",
+      "prompt": "「水和水」の説明として正しいものは？",
+      "choices": [
+        "溶解度と温度の関係を表したグラフ",
+        "溶質が溶媒に均一に溶けた混合物",
+        "硫酸銅(Ⅱ)五水和物の結晶のように、結晶の中に一定の割合で含まれている水",
+        "決まった体積の溶液を正確につくるための、首に標線のある器具"
+      ],
+      "answerIndex": 2,
+      "explanation": "水和水：硫酸銅(Ⅱ)五水和物の結晶のように、結晶の中に一定の割合で含まれている水。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "chemistry_basic"
+      ]
+    }
+  ]
+}
