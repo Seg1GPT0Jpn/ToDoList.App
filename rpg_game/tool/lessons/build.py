@@ -14,7 +14,7 @@ import os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, '..', '..', 'assets', 'lessons')
-SUBJECTS = ['gendai_kokugo', 'gengo_bunka', 'math1', 'math_a', 'ec1', 'chemistry_basic', 'biology_basic', 'public_economy']
+SUBJECTS = ['gendai_kokugo', 'gengo_bunka', 'math1', 'math_a', 'ec1', 'chemistry_basic', 'biology_basic', 'public_economy', 'geography_general', 'information1']
 
 
 def check_q(q, where):
