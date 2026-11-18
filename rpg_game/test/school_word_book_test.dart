@@ -19,7 +19,7 @@ void main() {
     }
     expect(SchoolWordBooks.of('gengo_bunka').single.id, 'kobun');
     expect(SchoolWordBooks.of('ronhyo1').single.id, 'scramble');
-    expect({for (final b in SchoolWordBooks.all) b.file}.length, 9);
+    expect({for (final b in SchoolWordBooks.all) b.file}.length, 11);
     expect(SchoolWordBooks.of('information1').single.id, 'joho-terms');
   });
 
@@ -75,10 +75,11 @@ void main() {
         greaterThanOrEqualTo(126));
     // 公共・生物基礎・情報Ⅰ・地理総合の用語帳（説明に答えの語を入れていない）
     for (final (id, n) in [
-      ('kokyo-terms', 157),
-      ('bio-terms', 165),
-      ('joho-terms', 61),
+      ('kokyo-terms', 166),
+      ('bio-terms', 174),
+      ('joho-terms', 74),
       ('chiri-terms', 115),
+      ('chem-terms', 54),
     ]) {
       final b = open(id);
       expect(b.isTerms, isTrue, reason: id);
@@ -88,6 +89,10 @@ void main() {
         expect(c.group, isNotEmpty);
       }
     }
+    final eci = open('eci-words');
+    expect(eci.isTerms, isFalse);
+    expect(eci.cards.length, 125);
+    expect({for (final c in eci.cards) c.group}.length, 8);
     for (final c in [...kanji.cards, ...kw.cards]) {
       expect(c.term.trim(), isNotEmpty);
       expect(c.meaning, isNot(contains('読み取れず')));

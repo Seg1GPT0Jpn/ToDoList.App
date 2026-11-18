@@ -98,6 +98,18 @@ abstract final class SchoolWordBooks {
       subjectId: 'geography_general',
       vault: 'school-word-9',
     ),
+    SchoolWordBook(
+      id: 'chem-terms',
+      title: '化学基礎 用語（物質量・濃度・化学変化・酸と塩基）',
+      subjectId: 'chemistry_basic',
+      vault: 'school-word-10',
+    ),
+    SchoolWordBook(
+      id: 'eci-words',
+      title: 'ECⅠ Lesson5・6 新出語句',
+      subjectId: 'ec1',
+      vault: 'school-word-11',
+    ),
   ];
 
   static List<SchoolWordBook> of(String subjectId) => [
