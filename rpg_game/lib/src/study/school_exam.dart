@@ -370,6 +370,11 @@ class SchoolPractice {
 
   bool get canPlay => pool != null;
 
+  /// 科目の教科で使える問題セットか。英語の科目は、定期テストの海（sea）の文法の単元も使える
+  static bool worldFits(String subjectWorld, String setWorld) =>
+      setWorld == subjectWorld ||
+      (subjectWorld == 'english' && setWorld == 'sea');
+
   /// 科目に登録したセットを読み、検証してまとめる。
   ///
   /// [load] は setId から問題セットを返す（なければ null、壊れていれば例外）。
@@ -394,7 +399,7 @@ class SchoolPractice {
       }
       if (set == null) {
         issues.add(SetIssue(id, SetIssueReason.notFound));
-      } else if (set.worldId != subject.worldId) {
+      } else if (!SchoolPractice.worldFits(subject.worldId, set.worldId)) {
         issues.add(SetIssue(id, SetIssueReason.wrongWorld, set.worldId));
       } else if (!set.origin.usableInRpg) {
         issues.add(SetIssue(id, SetIssueReason.notUsable, set.origin.name));

@@ -349,7 +349,7 @@ class ShonanExamDetailScreen extends StatelessWidget {
                         ShonanTableSets.addTo(plan, now: DateTime.now()),
                       ),
                       icon: const Icon(Icons.playlist_add),
-                      label: Text('範囲表に合う問題セットを足す（$n個）'),
+                      label: Text('新しい範囲表に合わせて、問題セット・範囲を足す（$n件）'),
                     ),
                   ),
                 const SizedBox(height: 8),

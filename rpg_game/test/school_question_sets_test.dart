@@ -61,7 +61,12 @@ void main() {
         final subject = ShonanSubjects.byId(sp.subjectId)!;
         for (final id in [...sp.existingSetIds, ...sp.committeeSetIds]) {
           count++;
-          expect(bundle(subject.worldId).containsKey(id), isTrue,
+          // 英語の科目は、定期テストの海（sea）の文法の単元も使える
+          expect(
+              bundle(subject.worldId).containsKey(id) ||
+                  (subject.worldId == 'english' &&
+                      bundle('sea').containsKey(id)),
+              isTrue,
               reason: '$sheet ${sp.subjectId} $id');
         }
       }

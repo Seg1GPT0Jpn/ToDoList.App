@@ -300,7 +300,11 @@ void main() {
     final geo = ShonanSubjects.byId('geography_general')!;
     await openScreen(
       t,
-      SchoolCourseScreen(plan: plan, subject: geo, sp: plan.subject(geo.id)),
+      SchoolCourseScreen(
+        plan: plan,
+        subject: geo,
+        sp: SubjectExamPlan(subjectId: geo.id),
+      ),
       prefs: {SchoolExamStore.gateKey: true},
       frames: 5,
     );

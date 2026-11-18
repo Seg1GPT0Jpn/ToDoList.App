@@ -430,8 +430,21 @@ class ShonanRangeTable {
         subjects['ronhyo1'] = SubjectExamPlan(
             subjectId: 'ronhyo1',
             rangeText: '',
-            status: RangeStatus.empty,
-            materials: const []);
+            existingSetIds: const ['sea_g1_04', 'sea_g1_05', 'sea_g1_06'],
+            status: RangeStatus.entered,
+            materials: const [
+              StudyMaterial(
+                  kind: 'ワーク', name: 'チャート', range: 'P.132~211', note: ''),
+              StudyMaterial(
+                  kind: 'ワーク', name: 'be EG 46', range: 'P.38~55', note: ''),
+              StudyMaterial(
+                  kind: 'ワーク', name: 'beワーク', range: 'P.32~49', note: ''),
+              StudyMaterial(
+                  kind: 'ワーク',
+                  name: 'Scramble',
+                  range: 'P.76~97,364~387',
+                  note: '')
+            ]);
         subjects['chemistry_basic'] = SubjectExamPlan(
             subjectId: 'chemistry_basic',
             rangeText: '',
@@ -459,9 +472,17 @@ class ShonanRangeTable {
             status: RangeStatus.entered,
             materials: const [
               StudyMaterial(
-                  kind: '授業プリント', name: 'プリント', range: 'P.42~72', note: ''),
+                  kind: '授業プリント',
+                  name: 'プリント',
+                  range: 'P.42~83',
+                  note: '物質量、濃度、化学変化'),
               StudyMaterial(
-                  kind: '教科書', name: '教科書', range: 'P.82~119', note: '')
+                  kind: '教科書', name: '教科書', range: 'P.82~139', note: '酸と塩基'),
+              StudyMaterial(
+                  kind: 'ワーク',
+                  name: 'セミナー',
+                  range: 'P.48~67,68~69',
+                  note: '第2章4,5,6の1')
             ]);
         subjects['biology_basic'] = SubjectExamPlan(
             subjectId: 'biology_basic',
@@ -481,13 +502,55 @@ class ShonanRangeTable {
               'science_shonan_104_bio_veg_01',
               'science_shonan_104_bio_veg_02'
             ],
-            status: RangeStatus.empty,
-            materials: const []);
+            status: RangeStatus.entered,
+            materials: const [
+              StudyMaterial(
+                  kind: '教科書', name: '教科書', range: 'P.98~211', note: '第3編、4編'),
+              StudyMaterial(
+                  kind: 'ワーク',
+                  name: 'セミナー',
+                  range: 'P.50~109,428,429',
+                  note: ''),
+              StudyMaterial(
+                  kind: '授業プリント', name: 'プリント', range: 'No.10~15', note: '')
+            ]);
         subjects['geography_general'] = SubjectExamPlan(
             subjectId: 'geography_general',
             rangeText: '',
-            status: RangeStatus.empty,
-            materials: const []);
+            existingSetIds: const [
+              'social_geo_06',
+              'social_geo_07',
+              'social_geo_08',
+              'social_geo_09'
+            ],
+            committeeSetIds: const [
+              'social_shonan_104_geo_01',
+              'social_shonan_104_geo_02',
+              'social_shonan_104_geo_03'
+            ],
+            status: RangeStatus.entered,
+            materials: const [
+              StudyMaterial(
+                  kind: '教科書',
+                  name: '教科書',
+                  range: 'P.44~45,58~75,84~87',
+                  note: ''),
+              StudyMaterial(
+                  kind: '配布資料',
+                  name: '資料集',
+                  range: 'P.42~68,190~199',
+                  note: ''),
+              StudyMaterial(
+                  kind: 'ワーク',
+                  name: '問題集',
+                  range: '28~30の4,32~39,96~97',
+                  note: ''),
+              StudyMaterial(
+                  kind: '授業プリント',
+                  name: 'プリント',
+                  range: '14~25',
+                  note: 'いわちりプリント')
+            ]);
         subjects['public_economy'] = SubjectExamPlan(
             subjectId: 'public_economy',
             rangeText: '',
@@ -527,9 +590,35 @@ class ShonanRangeTable {
         subjects['information1'] = SubjectExamPlan(
             subjectId: 'information1',
             rangeText: '',
+            existingSetIds: const [
+              'information_info1_05',
+              'information_info1_06',
+              'information_info1_07',
+              'information_info1_17',
+              'information_info1_15',
+              'information_info1_16',
+              'information_dncl_01',
+              'information_prog_algo_01',
+              'information_prog_algo_02'
+            ],
+            committeeSetIds: const [
+              'information_shonan_104_info_01',
+              'information_shonan_104_info_02'
+            ],
             status: RangeStatus.entered,
             materials: const [
-              StudyMaterial(kind: 'その他', name: '授業ノート', range: '25~', note: '')
+              StudyMaterial(
+                  kind: '教科書',
+                  name: '教科書',
+                  range: 'P.56~60,68,70,72~83',
+                  note: ''),
+              StudyMaterial(
+                  kind: 'その他', name: '授業ノート', range: '23~32', note: '提出'),
+              StudyMaterial(
+                  kind: 'ワーク',
+                  name: 'プログラミングのエッセンス',
+                  range: 'P.2~13',
+                  note: 'DNCL言語で出題')
             ]);
         break;
       case '後期期末試験':

@@ -467,8 +467,8 @@ const curriculumQuestionCounts = <String, int>{
   'science.earth.space.universe': 34,
   'science.earth.space.universe.galaxy': 24,
   'science.earth.space.universe.expansion': 8,
-  'social': 3272,
-  'social.geo': 543,
+  'social': 3502,
+  'social.geo': 773,
   'social.geo.map': 83,
   'social.geo.map.position': 31,
   'social.geo.map.position.latlon': 15,
@@ -481,30 +481,30 @@ const curriculumQuestionCounts = <String, int>{
   'social.geo.map.gis': 24,
   'social.geo.map.gis.gis': 6,
   'social.geo.map.gis.remote': 7,
-  'social.geo.nature': 126,
+  'social.geo.nature': 268,
   'social.geo.nature.landform': 49,
   'social.geo.nature.landform.large': 21,
   'social.geo.nature.landform.river': 4,
   'social.geo.nature.landform.coast': 4,
   'social.geo.nature.landform.other': 6,
-  'social.geo.nature.climate': 34,
-  'social.geo.nature.climate.element': 13,
-  'social.geo.nature.climate.koppen': 13,
-  'social.geo.nature.climate.graph': 2,
-  'social.geo.nature.soil': 24,
-  'social.geo.nature.soil.vegetation': 5,
-  'social.geo.nature.soil.soil': 4,
+  'social.geo.nature.climate': 129,
+  'social.geo.nature.climate.element': 44,
+  'social.geo.nature.climate.koppen': 53,
+  'social.geo.nature.climate.graph': 4,
+  'social.geo.nature.soil': 71,
+  'social.geo.nature.soil.vegetation': 11,
+  'social.geo.nature.soil.soil': 23,
   'social.geo.nature.soil.life': 7,
   'social.geo.nature.hazard': 19,
   'social.geo.nature.hazard.disaster': 15,
   'social.geo.nature.hazard.prevention': 4,
-  'social.geo.culture': 50,
-  'social.geo.culture.religion': 24,
-  'social.geo.culture.religion.world': 22,
-  'social.geo.culture.religion.life': 1,
-  'social.geo.culture.ethnic': 26,
-  'social.geo.culture.ethnic.language': 18,
-  'social.geo.culture.ethnic.conflict': 2,
+  'social.geo.culture': 138,
+  'social.geo.culture.religion': 90,
+  'social.geo.culture.religion.world': 55,
+  'social.geo.culture.religion.life': 4,
+  'social.geo.culture.ethnic': 48,
+  'social.geo.culture.ethnic.language': 38,
+  'social.geo.culture.ethnic.conflict': 4,
   'social.geo.industry': 107,
   'social.geo.industry.population': 27,
   'social.geo.industry.population.distribution': 1,
@@ -1290,9 +1290,9 @@ const curriculumQuestionCounts = <String, int>{
   'math.m3.integ.apply.volume': 20,
   'math.m3.integ.apply.length': 8,
   'math.m3.integ.apply.distance': 5,
-  'information': 631,
-  'information.info': 631,
-  'information.info.society': 108,
+  'information': 753,
+  'information.info': 753,
+  'information.info.society': 110,
   'information.info.society.nature': 26,
   'information.info.society.nature.nature': 4,
   'information.info.society.nature.media': 2,
@@ -1305,70 +1305,70 @@ const curriculumQuestionCounts = <String, int>{
   'information.info.society.security.threat': 5,
   'information.info.society.security.measure': 10,
   'information.info.society.security.law': 3,
-  'information.info.society.problem': 24,
+  'information.info.society.problem': 26,
   'information.info.society.problem.process': 4,
-  'information.info.society.problem.model': 10,
-  'information.info.design': 62,
+  'information.info.society.problem.model': 12,
+  'information.info.design': 86,
   'information.info.design.communication': 5,
   'information.info.design.communication.form': 5,
-  'information.info.design.design': 57,
-  'information.info.design.design.principle': 5,
-  'information.info.design.design.ui': 2,
-  'information.info.design.design.layout': 21,
-  'information.info.computer': 126,
-  'information.info.computer.digital': 26,
-  'information.info.computer.digital.binary': 8,
-  'information.info.computer.digital.calc': 1,
+  'information.info.design.design': 81,
+  'information.info.design.design.principle': 10,
+  'information.info.design.design.ui': 10,
+  'information.info.design.design.layout': 22,
+  'information.info.computer': 163,
+  'information.info.computer.digital': 30,
+  'information.info.computer.digital.binary': 10,
+  'information.info.computer.digital.calc': 3,
   'information.info.computer.digital.amount': 1,
-  'information.info.computer.media': 37,
+  'information.info.computer.media': 38,
   'information.info.computer.media.text': 3,
   'information.info.computer.media.image': 12,
-  'information.info.computer.media.sound': 8,
+  'information.info.computer.media.sound': 9,
   'information.info.computer.media.compress': 10,
-  'information.info.computer.hardware': 25,
-  'information.info.computer.hardware.components': 12,
-  'information.info.computer.hardware.cpu': 3,
-  'information.info.computer.hardware.software': 5,
+  'information.info.computer.hardware': 49,
+  'information.info.computer.hardware.components': 23,
+  'information.info.computer.hardware.cpu': 8,
+  'information.info.computer.hardware.software': 13,
   'information.info.computer.system': 13,
   'information.info.computer.system.reliability': 7,
   'information.info.computer.system.cloud': 2,
   'information.info.computer.system.develop': 4,
-  'information.info.computer.logic': 25,
-  'information.info.computer.logic.gate': 11,
+  'information.info.computer.logic': 33,
+  'information.info.computer.logic.gate': 19,
   'information.info.computer.logic.adder': 4,
-  'information.info.programming': 141,
-  'information.info.programming.algorithm': 62,
-  'information.info.programming.algorithm.basic': 19,
-  'information.info.programming.algorithm.search': 17,
-  'information.info.programming.algorithm.sort': 16,
-  'information.info.programming.algorithm.complexity': 4,
+  'information.info.programming': 187,
+  'information.info.programming.algorithm': 81,
+  'information.info.programming.algorithm.basic': 29,
+  'information.info.programming.algorithm.search': 21,
+  'information.info.programming.algorithm.sort': 20,
+  'information.info.programming.algorithm.complexity': 5,
   'information.info.programming.algorithm.structure': 5,
-  'information.info.programming.program': 79,
-  'information.info.programming.program.variable': 12,
+  'information.info.programming.program': 106,
+  'information.info.programming.program.variable': 21,
   'information.info.programming.program.control': 6,
-  'information.info.programming.program.function': 5,
-  'information.info.programming.program.trace': 39,
-  'information.info.network': 106,
+  'information.info.programming.program.function': 11,
+  'information.info.programming.program.trace': 47,
+  'information.info.network': 107,
   'information.info.network.basic': 42,
   'information.info.network.basic.structure': 3,
   'information.info.network.basic.address': 14,
-  'information.info.network.protocol': 30,
-  'information.info.network.protocol.tcpip': 9,
+  'information.info.network.protocol': 31,
+  'information.info.network.protocol.tcpip': 10,
   'information.info.network.protocol.web': 17,
   'information.info.network.protocol.error': 1,
   'information.info.network.crypto': 34,
   'information.info.network.crypto.cipher': 25,
   'information.info.network.crypto.signature': 6,
   'information.info.network.crypto.tls': 1,
-  'information.info.data': 88,
-  'information.info.data.manage': 39,
+  'information.info.data': 100,
+  'information.info.data.manage': 49,
   'information.info.data.manage.scale': 6,
-  'information.info.data.manage.database': 22,
+  'information.info.data.manage.database': 32,
   'information.info.data.manage.open': 1,
-  'information.info.data.analysis': 49,
+  'information.info.data.analysis': 51,
   'information.info.data.analysis.stat': 15,
   'information.info.data.analysis.correlation': 14,
-  'information.info.data.analysis.visualize': 4,
+  'information.info.data.analysis.visualize': 6,
   'information.info.data.analysis.ml': 5,
   'music': 701,
   'music.theory': 701,
@@ -2747,18 +2747,36 @@ const curriculumUnitSets = <String, List<String>>{
   'social.geo.nature.landform.river': ['social_geo_05'],
   'social.geo.nature.landform.coast': ['social_geo_05'],
   'social.geo.nature.landform.other': ['social_chirisogo_01', 'social_geo_05'],
-  'social.geo.nature.climate': ['social_chirisogo_01', 'social_geo_06'],
-  'social.geo.nature.climate.element': ['social_chirisogo_01', 'social_geo_06'],
+  'social.geo.nature.climate': [
+    'social_chirisogo_01',
+    'social_geo_06',
+    'social_shonan_104_geo_01',
+    'social_shonan_104_geo_02'
+  ],
+  'social.geo.nature.climate.element': [
+    'social_chirisogo_01',
+    'social_geo_06',
+    'social_shonan_104_geo_01',
+    'social_shonan_104_geo_02'
+  ],
   'social.geo.nature.climate.koppen': [
     'social_chirisogo_01',
     'social_formats_01',
     'social_geo_06',
+    'social_shonan_104_geo_01',
+    'social_shonan_104_geo_02',
     'social_v4_01'
   ],
-  'social.geo.nature.climate.graph': ['social_v4_02'],
-  'social.geo.nature.soil': ['social_geo_07'],
-  'social.geo.nature.soil.vegetation': ['social_geo_07'],
-  'social.geo.nature.soil.soil': ['social_geo_07'],
+  'social.geo.nature.climate.graph': [
+    'social_shonan_104_geo_01',
+    'social_v4_02'
+  ],
+  'social.geo.nature.soil': ['social_geo_07', 'social_shonan_104_geo_02'],
+  'social.geo.nature.soil.vegetation': [
+    'social_geo_07',
+    'social_shonan_104_geo_02'
+  ],
+  'social.geo.nature.soil.soil': ['social_geo_07', 'social_shonan_104_geo_02'],
   'social.geo.nature.soil.life': ['social_geo_07'],
   'social.geo.nature.hazard.disaster': [
     'social_chirisogo_01',
@@ -2770,12 +2788,24 @@ const curriculumUnitSets = <String, List<String>>{
     'social_chirisogo_01',
     'social_geo_19'
   ],
-  'social.geo.culture.religion': ['social_geo_08'],
-  'social.geo.culture.religion.world': ['social_geo_08'],
-  'social.geo.culture.religion.life': ['social_geo_08'],
+  'social.geo.culture.religion': ['social_geo_08', 'social_shonan_104_geo_03'],
+  'social.geo.culture.religion.world': [
+    'social_geo_08',
+    'social_shonan_104_geo_03'
+  ],
+  'social.geo.culture.religion.life': [
+    'social_geo_08',
+    'social_shonan_104_geo_03'
+  ],
   'social.geo.culture.ethnic': ['social_geo_09'],
-  'social.geo.culture.ethnic.language': ['social_geo_09'],
-  'social.geo.culture.ethnic.conflict': ['social_v4_02'],
+  'social.geo.culture.ethnic.language': [
+    'social_geo_09',
+    'social_shonan_104_geo_03'
+  ],
+  'social.geo.culture.ethnic.conflict': [
+    'social_shonan_104_geo_03',
+    'social_v4_02'
+  ],
   'social.geo.industry.population': ['social_geo_10'],
   'social.geo.industry.population.distribution': ['social_geo_10'],
   'social.geo.industry.population.transition': [
@@ -4195,32 +4225,45 @@ const curriculumUnitSets = <String, List<String>>{
   'information.info.society.security.law': ['information_v4_02'],
   'information.info.society.problem': ['information_info1_04'],
   'information.info.society.problem.process': ['information_info1_04'],
-  'information.info.society.problem.model': ['information_info1_04'],
+  'information.info.society.problem.model': [
+    'information_info1_04',
+    'information_shonan_104_info_02'
+  ],
   'information.info.design.communication.form': ['information_v4_01'],
   'information.info.design.design': [
     'information_design_01',
     'information_info1_05',
-    'information_info1_06'
+    'information_info1_06',
+    'information_shonan_104_info_01'
   ],
   'information.info.design.design.principle': [
     'information_info1_05',
-    'information_info1_06'
+    'information_info1_06',
+    'information_shonan_104_info_01'
   ],
-  'information.info.design.design.ui': ['information_info1_05'],
+  'information.info.design.design.ui': [
+    'information_info1_05',
+    'information_shonan_104_info_01'
+  ],
   'information.info.design.design.layout': [
     'information_design_01',
     'information_info1_05',
     'information_info1_06',
     'information_info2_01',
-    'information_prog_algo_02'
+    'information_prog_algo_02',
+    'information_shonan_104_info_01'
   ],
   'information.info.computer.digital': ['information_info1_08'],
   'information.info.computer.digital.binary': [
     'information_design_01',
     'information_formats_01',
-    'information_info1_08'
+    'information_info1_08',
+    'information_shonan_104_info_02'
   ],
-  'information.info.computer.digital.calc': ['information_info1_08'],
+  'information.info.computer.digital.calc': [
+    'information_info1_08',
+    'information_shonan_104_info_02'
+  ],
   'information.info.computer.digital.amount': ['information_info1_08'],
   'information.info.computer.media': [
     'information_design_01',
@@ -4234,18 +4277,26 @@ const curriculumUnitSets = <String, List<String>>{
   ],
   'information.info.computer.media.sound': [
     'information_design_01',
-    'information_info1_09'
+    'information_info1_09',
+    'information_shonan_104_info_01'
   ],
   'information.info.computer.media.compress': [
     'information_design_01',
     'information_info1_09'
   ],
   'information.info.computer.hardware': ['information_info1_07'],
-  'information.info.computer.hardware.components': ['information_info1_07'],
-  'information.info.computer.hardware.cpu': ['information_info1_07'],
+  'information.info.computer.hardware.components': [
+    'information_info1_07',
+    'information_shonan_104_info_01'
+  ],
+  'information.info.computer.hardware.cpu': [
+    'information_info1_07',
+    'information_shonan_104_info_01'
+  ],
   'information.info.computer.hardware.software': [
     'information_info1_07',
-    'information_info2_01'
+    'information_info2_01',
+    'information_shonan_104_info_01'
   ],
   'information.info.computer.system.reliability': [
     'information_info2_01',
@@ -4262,31 +4313,36 @@ const curriculumUnitSets = <String, List<String>>{
   'information.info.computer.logic': ['information_info1_17'],
   'information.info.computer.logic.gate': [
     'information_formats_01',
-    'information_info1_17'
+    'information_info1_17',
+    'information_shonan_104_info_02'
   ],
   'information.info.computer.logic.adder': ['information_info1_17'],
   'information.info.programming.algorithm': ['information_info1_16'],
   'information.info.programming.algorithm.basic': [
     'information_info1_15',
     'information_info1_16',
-    'information_prog_algo_01'
+    'information_prog_algo_01',
+    'information_shonan_104_info_02'
   ],
   'information.info.programming.algorithm.search': [
     'information_formats_01',
     'information_info1_16',
     'information_prog_algo_01',
     'information_prog_algo_02',
+    'information_shonan_104_info_02',
     'information_v4_01'
   ],
   'information.info.programming.algorithm.sort': [
     'information_info1_16',
     'information_prog_algo_01',
     'information_prog_algo_02',
+    'information_shonan_104_info_02',
     'information_v4_01'
   ],
   'information.info.programming.algorithm.complexity': [
     'information_design_01',
     'information_prog_algo_01',
+    'information_shonan_104_info_01',
     'information_v4_01'
   ],
   'information.info.programming.algorithm.structure': [
@@ -4296,13 +4352,15 @@ const curriculumUnitSets = <String, List<String>>{
     'information_dncl_01',
     'information_info1_15',
     'information_prog_algo_01',
-    'information_prog_algo_02'
+    'information_prog_algo_02',
+    'information_shonan_104_info_02'
   ],
   'information.info.programming.program.variable': [
     'information_dncl_01',
     'information_info1_15',
     'information_prog_algo_01',
-    'information_prog_algo_02'
+    'information_prog_algo_02',
+    'information_shonan_104_info_02'
   ],
   'information.info.programming.program.control': [
     'information_info2_01',
@@ -4312,7 +4370,8 @@ const curriculumUnitSets = <String, List<String>>{
   'information.info.programming.program.function': [
     'information_info1_15',
     'information_prog_algo_01',
-    'information_prog_algo_02'
+    'information_prog_algo_02',
+    'information_shonan_104_info_02'
   ],
   'information.info.programming.program.trace': [
     'information_dncl_01',
@@ -4320,6 +4379,8 @@ const curriculumUnitSets = <String, List<String>>{
     'information_info1_15',
     'information_prog_algo_01',
     'information_prog_algo_02',
+    'information_shonan_104_info_01',
+    'information_shonan_104_info_02',
     'information_v4_01'
   ],
   'information.info.network.basic': [
@@ -4339,7 +4400,8 @@ const curriculumUnitSets = <String, List<String>>{
   'information.info.network.protocol.tcpip': [
     'information_design_01',
     'information_info1_11',
-    'information_network_01'
+    'information_network_01',
+    'information_shonan_104_info_01'
   ],
   'information.info.network.protocol.web': [
     'information_info1_11',
@@ -4368,7 +4430,9 @@ const curriculumUnitSets = <String, List<String>>{
     'information_design_01',
     'information_info1_13',
     'information_info2_01',
-    'information_prog_algo_02'
+    'information_prog_algo_02',
+    'information_shonan_104_info_01',
+    'information_shonan_104_info_02'
   ],
   'information.info.data.manage.open': ['information_prog_algo_02'],
   'information.info.data.analysis': [
@@ -4387,7 +4451,8 @@ const curriculumUnitSets = <String, List<String>>{
   ],
   'information.info.data.analysis.visualize': [
     'information_design_01',
-    'information_prog_algo_02'
+    'information_prog_algo_02',
+    'information_shonan_104_info_01'
   ],
   'information.info.data.analysis.ml': [
     'information_data_db_01',

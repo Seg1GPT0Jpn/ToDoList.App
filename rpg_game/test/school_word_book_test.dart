@@ -19,7 +19,8 @@ void main() {
     }
     expect(SchoolWordBooks.of('gengo_bunka').single.id, 'kobun');
     expect(SchoolWordBooks.of('ronhyo1').single.id, 'scramble');
-    expect({for (final b in SchoolWordBooks.all) b.file}.length, 5);
+    expect({for (final b in SchoolWordBooks.all) b.file}.length, 9);
+    expect(SchoolWordBooks.of('information1').single.id, 'joho-terms');
   });
 
   test('学校のパスワードで開いた単語帳を、ふつうの単語帳として使える', () {
@@ -72,6 +73,21 @@ void main() {
     expect(scramble.cards.every((c) => c.example.isNotEmpty), isTrue);
     expect(scramble.cards.where((c) => c.hasExample).length,
         greaterThanOrEqualTo(126));
+    // 公共・生物基礎・情報Ⅰ・地理総合の用語帳（説明に答えの語を入れていない）
+    for (final (id, n) in [
+      ('kokyo-terms', 157),
+      ('bio-terms', 165),
+      ('joho-terms', 61),
+      ('chiri-terms', 115),
+    ]) {
+      final b = open(id);
+      expect(b.isTerms, isTrue, reason: id);
+      expect(b.cards.length, n, reason: id);
+      for (final c in b.cards) {
+        expect(c.meaning, isNot(contains(c.term)), reason: c.term);
+        expect(c.group, isNotEmpty);
+      }
+    }
     for (final c in [...kanji.cards, ...kw.cards]) {
       expect(c.term.trim(), isNotEmpty);
       expect(c.meaning, isNot(contains('読み取れず')));

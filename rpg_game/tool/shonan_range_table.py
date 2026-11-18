@@ -23,6 +23,8 @@ COMMITTEE = {
     ('後期中間試験', 'math1'): _sets('math_shonan_104_m1_data', 4) + _sets('math_shonan_104_m1_proof', 3) + _sets('math_shonan_104_m1_complex', 4),
     ('後期中間試験', 'math_a'): _sets('math_shonan_104_ma_integer', 5),
     ('後期中間試験', 'ec1'): _sets('english_shonan_104_ec1', 3) + ['english_shonan_104_ec1_grammar_01'],
+    ('後期中間試験', 'geography_general'): _sets('social_shonan_104_geo', 3),
+    ('後期中間試験', 'information1'): _sets('information_shonan_104_info', 2),
     ('後期中間試験', 'chemistry_basic'): _sets('science_shonan_104_chem_mole', 6) + _sets('science_shonan_104_chem_solution', 4) + _sets('science_shonan_104_chem_reaction', 5),
 }
 # 範囲表の試験・科目に最初から登録しておく、アプリに入っている問題セット。
@@ -44,6 +46,9 @@ EXISTING = {
     ('後期中間試験', 'chemistry_basic'): ['science_chemistry_05', 'science_chemistry_06'],
     ('後期中間試験', 'biology_basic'): ['science_biology_04', 'science_biology_05', 'science_biology_06', 'science_biology_07'],
     ('後期中間試験', 'public_economy'): [f'social_pol_{i}' for i in range(10, 16)],
+    ('後期中間試験', 'ronhyo1'): ['sea_g1_04', 'sea_g1_05', 'sea_g1_06'],
+    ('後期中間試験', 'geography_general'): ['social_geo_06', 'social_geo_07', 'social_geo_08', 'social_geo_09'],
+    ('後期中間試験', 'information1'): ['information_info1_05', 'information_info1_06', 'information_info1_07', 'information_info1_17', 'information_info1_15', 'information_info1_16', 'information_dncl_01', 'information_prog_algo_01', 'information_prog_algo_02'],
     ('後期期末試験', 'chemistry_basic'): ['science_chemistry_05', 'science_chemistry_06', 'science_chemistry_07'],
     ('後期期末試験', 'gendai_kokugo'): _KANJI + ['japanese_gendai_03', 'japanese_gendai_04', 'japanese_bungakushi_01'],
     ('後期期末試験', 'gengo_bunka'): _KOGO,

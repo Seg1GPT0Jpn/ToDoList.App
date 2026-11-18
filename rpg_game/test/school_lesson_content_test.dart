@@ -68,6 +68,8 @@ void main() {
       final plan = ShonanRangeTable.plan(sheet, id: sheet, now: DateTime(2026));
       for (final sp in plan.subjects.values) {
         if (!sp.hasSets) continue;
+        // 授業をまだ作っていない科目（地理総合・情報Ⅰ・論表Ⅰ）は、範囲演習だけ。授業を作った科目は全単元そろえる
+        if (!lessons.containsKey(sp.subjectId)) continue;
         final subject = ShonanSubjects.byId(sp.subjectId)!;
         final questions = [
           for (final id in [...sp.existingSetIds, ...sp.committeeSetIds])

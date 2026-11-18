@@ -137,11 +137,11 @@ void main() {
       find.byKey(const ValueKey('shonan-practice-biology_basic')),
     );
     expect(bio.onPressed, isNotNull);
-    // 地理総合は範囲も問題セットもないので押せない
+    // 地理総合も、11/18 版の範囲表で問題セットが入ったので演習できる
     final geo = t.widget<ButtonStyleButton>(
       find.byKey(const ValueKey('shonan-practice-geography_general')),
     );
-    expect(geo.onPressed, isNull);
+    expect(geo.onPressed, isNotNull);
     expect(t.takeException(), isNull);
   });
 

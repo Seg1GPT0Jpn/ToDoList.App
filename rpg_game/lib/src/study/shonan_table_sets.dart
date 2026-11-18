@@ -1,7 +1,7 @@
 import 'school_exam.dart';
 import 'shonan_range_table.dart';
 
-/// 範囲表から作ったテストに、あとから範囲表に足された問題セットを入れる。
+/// 範囲表から作ったテストに、あとから範囲表に足された問題セット（と、空のままの科目の範囲）を入れる。
 ///
 /// 前に「範囲表から作る」で作ったテストは端末に保存されているので、
 /// 範囲表の問題セットが増えても自動では変わらない。足すだけで、消さない。
@@ -25,6 +25,8 @@ abstract final class ShonanTableSets {
       n += t.existingSetIds.where((x) => !s.existingSetIds.contains(x)).length;
       n +=
           t.committeeSetIds.where((x) => !s.committeeSetIds.contains(x)).length;
+      // 範囲が空のままの科目に、範囲表の範囲が入った
+      if (!s.hasRange && t.hasRange) n++;
     }
     return n;
   }
@@ -45,11 +47,21 @@ abstract final class ShonanTableSets {
         ...s.committeeSetIds,
         ...t.committeeSetIds.where((x) => !s.committeeSetIds.contains(x)),
       ];
-      if (ex.length == s.existingSetIds.length &&
+      // 範囲が空のままの科目には、範囲表の範囲も入れる（自分で書いた範囲は変えない）
+      final fill = !s.hasRange && t.hasRange;
+      if (!fill &&
+          ex.length == s.existingSetIds.length &&
           cm.length == s.committeeSetIds.length) {
         continue;
       }
-      out = out.withSubject(s.copyWith(existingSetIds: ex, committeeSetIds: cm),
+      out = out.withSubject(
+          s.copyWith(
+            existingSetIds: ex,
+            committeeSetIds: cm,
+            rangeText: fill ? t.rangeText : null,
+            materials: fill ? t.materials : null,
+            status: fill ? t.status : null,
+          ),
           now: now);
     }
     return out;

@@ -1,0 +1,1226 @@
+{
+  "setId": "information_shonan_104_info_01",
+  "worldId": "information",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "information_shonan_104_info_01_001",
+      "unit": "information.info.data.manage.database",
+      "category": "knowledge",
+      "prompt": "情報を、受け手に分かりやすく伝わるように整理・表現すること。これを何という？",
+      "choices": [
+        "ユーザエクスペリエンス",
+        "情報デザイン",
+        "抽象化",
+        "ユニバーサルデザイン"
+      ],
+      "answerIndex": 1,
+      "explanation": "情報デザイン：情報を、受け手に分かりやすく伝わるように整理・表現すること。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_002",
+      "unit": "information.info.design.design.principle",
+      "category": "thinking",
+      "prompt": "「情報デザイン」の説明として正しいものは？",
+      "choices": [
+        "製品やサービスを使うことで得られる体験（UX）",
+        "年齢・障害・国籍などにかかわらず、誰にとっても使いやすいように設計すること",
+        "情報を、受け手に分かりやすく伝わるように整理・表現すること",
+        "情報の要素を取り出し、不要な部分を省いて表すこと"
+      ],
+      "answerIndex": 2,
+      "explanation": "情報デザイン：情報を、受け手に分かりやすく伝わるように整理・表現すること。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_003",
+      "unit": "information.info.design.design.ui",
+      "category": "knowledge",
+      "prompt": "人とコンピュータなどの機器が情報をやりとりする部分（UI）。これを何という？",
+      "choices": [
+        "ユーザインタフェース",
+        "ユーザエクスペリエンス",
+        "ユーザビリティ",
+        "フィードバック"
+      ],
+      "answerIndex": 0,
+      "explanation": "ユーザインタフェース：人とコンピュータなどの機器が情報をやりとりする部分（UI）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_004",
+      "unit": "information.info.design.design.ui",
+      "category": "thinking",
+      "prompt": "「ユーザインタフェース」の説明として正しいものは？",
+      "choices": [
+        "製品やサービスを使うことで得られる体験（UX）",
+        "操作に対して、システムが結果や状態を利用者に返すこと",
+        "人とコンピュータなどの機器が情報をやりとりする部分（UI）",
+        "特定の利用者が、目的を効果的・効率的・満足して達成できるかという使いやすさ"
+      ],
+      "answerIndex": 2,
+      "explanation": "ユーザインタフェース：人とコンピュータなどの機器が情報をやりとりする部分（UI）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_005",
+      "unit": "information.info.design.design",
+      "category": "knowledge",
+      "prompt": "製品やサービスを使うことで得られる体験（UX）。これを何という？",
+      "choices": [
+        "構造化",
+        "フィードバック",
+        "カラーユニバーサルデザイン",
+        "ユーザエクスペリエンス"
+      ],
+      "answerIndex": 3,
+      "explanation": "ユーザエクスペリエンス：製品やサービスを使うことで得られる体験（UX）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_006",
+      "unit": "information.info.design.design",
+      "category": "thinking",
+      "prompt": "「ユーザエクスペリエンス」の説明として正しいものは？",
+      "choices": [
+        "情報を、順序・階層・分類などで整理すること",
+        "色の見え方が異なる人にも情報が正しく伝わるように、色を使うこと",
+        "操作に対して、システムが結果や状態を利用者に返すこと",
+        "製品やサービスを使うことで得られる体験（UX）"
+      ],
+      "answerIndex": 3,
+      "explanation": "ユーザエクスペリエンス：製品やサービスを使うことで得られる体験（UX）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_007",
+      "unit": "information.info.design.design.ui",
+      "category": "knowledge",
+      "prompt": "年齢・障害・国籍などにかかわらず、誰にとっても使いやすいように設計すること。これを何という？",
+      "choices": [
+        "可視化",
+        "ユニバーサルデザイン",
+        "アクセシビリティ",
+        "アフォーダンス"
+      ],
+      "answerIndex": 1,
+      "explanation": "ユニバーサルデザイン：年齢・障害・国籍などにかかわらず、誰にとっても使いやすいように設計すること。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_008",
+      "unit": "information.info.design.design.ui",
+      "category": "thinking",
+      "prompt": "「ユニバーサルデザイン」の説明として正しいものは？",
+      "choices": [
+        "ものの形などが、人にある行動をうながすこと",
+        "誰もが情報やサービスを利用できるかどうかの度合い",
+        "数量や関係などを、図やグラフで見えるようにすること",
+        "年齢・障害・国籍などにかかわらず、誰にとっても使いやすいように設計すること"
+      ],
+      "answerIndex": 3,
+      "explanation": "ユニバーサルデザイン：年齢・障害・国籍などにかかわらず、誰にとっても使いやすいように設計すること。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_009",
+      "unit": "information.info.design.design.ui",
+      "category": "knowledge",
+      "prompt": "誰もが情報やサービスを利用できるかどうかの度合い。これを何という？",
+      "choices": [
+        "ユーザインタフェース",
+        "フィードバック",
+        "情報デザイン",
+        "アクセシビリティ"
+      ],
+      "answerIndex": 3,
+      "explanation": "アクセシビリティ：誰もが情報やサービスを利用できるかどうかの度合い。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_010",
+      "unit": "information.info.design.design.ui",
+      "category": "thinking",
+      "prompt": "「アクセシビリティ」の説明として正しいものは？",
+      "choices": [
+        "人とコンピュータなどの機器が情報をやりとりする部分（UI）",
+        "誰もが情報やサービスを利用できるかどうかの度合い",
+        "操作に対して、システムが結果や状態を利用者に返すこと",
+        "情報を、受け手に分かりやすく伝わるように整理・表現すること"
+      ],
+      "answerIndex": 1,
+      "explanation": "アクセシビリティ：誰もが情報やサービスを利用できるかどうかの度合い。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_011",
+      "unit": "information.info.programming.algorithm.complexity",
+      "category": "knowledge",
+      "prompt": "特定の利用者が、目的を効果的・効率的・満足して達成できるかという使いやすさ。これを何という？",
+      "choices": [
+        "アフォーダンス",
+        "ユーザビリティ",
+        "カラーユニバーサルデザイン",
+        "抽象化"
+      ],
+      "answerIndex": 1,
+      "explanation": "ユーザビリティ：特定の利用者が、目的を効果的・効率的・満足して達成できるかという使いやすさ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_012",
+      "unit": "information.info.design.design.ui",
+      "category": "thinking",
+      "prompt": "「ユーザビリティ」の説明として正しいものは？",
+      "choices": [
+        "特定の利用者が、目的を効果的・効率的・満足して達成できるかという使いやすさ",
+        "色の見え方が異なる人にも情報が正しく伝わるように、色を使うこと",
+        "情報の要素を取り出し、不要な部分を省いて表すこと",
+        "ものの形などが、人にある行動をうながすこと"
+      ],
+      "answerIndex": 0,
+      "explanation": "ユーザビリティ：特定の利用者が、目的を効果的・効率的・満足して達成できるかという使いやすさ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_013",
+      "unit": "information.info.design.design",
+      "category": "knowledge",
+      "prompt": "「ここを押せばよい」などの使い方を、利用者に示す手がかり。これを何という？",
+      "choices": [
+        "情報デザイン",
+        "シグニファイア",
+        "フィードバック",
+        "カラーユニバーサルデザイン"
+      ],
+      "answerIndex": 1,
+      "explanation": "シグニファイア：「ここを押せばよい」などの使い方を、利用者に示す手がかり。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_014",
+      "unit": "information.info.design.design",
+      "category": "thinking",
+      "prompt": "「シグニファイア」の説明として正しいものは？",
+      "choices": [
+        "「ここを押せばよい」などの使い方を、利用者に示す手がかり",
+        "情報を、受け手に分かりやすく伝わるように整理・表現すること",
+        "操作に対して、システムが結果や状態を利用者に返すこと",
+        "色の見え方が異なる人にも情報が正しく伝わるように、色を使うこと"
+      ],
+      "answerIndex": 0,
+      "explanation": "シグニファイア：「ここを押せばよい」などの使い方を、利用者に示す手がかり。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_015",
+      "unit": "information.info.design.design",
+      "category": "knowledge",
+      "prompt": "ものの形などが、人にある行動をうながすこと。これを何という？",
+      "choices": [
+        "構造化",
+        "ユニバーサルデザイン",
+        "アクセシビリティ",
+        "アフォーダンス"
+      ],
+      "answerIndex": 3,
+      "explanation": "アフォーダンス：ものの形などが、人にある行動をうながすこと。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_016",
+      "unit": "information.info.design.design",
+      "category": "thinking",
+      "prompt": "「アフォーダンス」の説明として正しいものは？",
+      "choices": [
+        "ものの形などが、人にある行動をうながすこと",
+        "年齢・障害・国籍などにかかわらず、誰にとっても使いやすいように設計すること",
+        "情報を、順序・階層・分類などで整理すること",
+        "誰もが情報やサービスを利用できるかどうかの度合い"
+      ],
+      "answerIndex": 0,
+      "explanation": "アフォーダンス：ものの形などが、人にある行動をうながすこと。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_017",
+      "unit": "information.info.design.design",
+      "category": "knowledge",
+      "prompt": "操作に対して、システムが結果や状態を利用者に返すこと。これを何という？",
+      "choices": [
+        "ユーザビリティ",
+        "抽象化",
+        "ユーザインタフェース",
+        "フィードバック"
+      ],
+      "answerIndex": 3,
+      "explanation": "フィードバック：操作に対して、システムが結果や状態を利用者に返すこと。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_018",
+      "unit": "information.info.design.design",
+      "category": "thinking",
+      "prompt": "「フィードバック」の説明として正しいものは？",
+      "choices": [
+        "情報の要素を取り出し、不要な部分を省いて表すこと",
+        "操作に対して、システムが結果や状態を利用者に返すこと",
+        "人とコンピュータなどの機器が情報をやりとりする部分（UI）",
+        "特定の利用者が、目的を効果的・効率的・満足して達成できるかという使いやすさ"
+      ],
+      "answerIndex": 1,
+      "explanation": "フィードバック：操作に対して、システムが結果や状態を利用者に返すこと。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_019",
+      "unit": "information.info.design.design.principle",
+      "category": "knowledge",
+      "prompt": "言葉を使わずに、意味を図で伝える記号。これを何という？",
+      "choices": [
+        "ピクトグラム",
+        "構造化",
+        "情報デザイン",
+        "カラーユニバーサルデザイン"
+      ],
+      "answerIndex": 0,
+      "explanation": "ピクトグラム：言葉を使わずに、意味を図で伝える記号。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_020",
+      "unit": "information.info.design.design.principle",
+      "category": "thinking",
+      "prompt": "「ピクトグラム」の説明として正しいものは？",
+      "choices": [
+        "情報を、受け手に分かりやすく伝わるように整理・表現すること",
+        "言葉を使わずに、意味を図で伝える記号",
+        "色の見え方が異なる人にも情報が正しく伝わるように、色を使うこと",
+        "情報を、順序・階層・分類などで整理すること"
+      ],
+      "answerIndex": 1,
+      "explanation": "ピクトグラム：言葉を使わずに、意味を図で伝える記号。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_021",
+      "unit": "information.info.data.manage.database",
+      "category": "knowledge",
+      "prompt": "情報の要素を取り出し、不要な部分を省いて表すこと。これを何という？",
+      "choices": [
+        "フィードバック",
+        "可視化",
+        "抽象化",
+        "情報デザイン"
+      ],
+      "answerIndex": 2,
+      "explanation": "抽象化：情報の要素を取り出し、不要な部分を省いて表すこと。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_022",
+      "unit": "information.info.design.design.principle",
+      "category": "thinking",
+      "prompt": "「抽象化」の説明として正しいものは？",
+      "choices": [
+        "数量や関係などを、図やグラフで見えるようにすること",
+        "情報の要素を取り出し、不要な部分を省いて表すこと",
+        "操作に対して、システムが結果や状態を利用者に返すこと",
+        "情報を、受け手に分かりやすく伝わるように整理・表現すること"
+      ],
+      "answerIndex": 1,
+      "explanation": "抽象化：情報の要素を取り出し、不要な部分を省いて表すこと。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_023",
+      "unit": "information.info.data.analysis.visualize",
+      "category": "knowledge",
+      "prompt": "数量や関係などを、図やグラフで見えるようにすること。これを何という？",
+      "choices": [
+        "可視化",
+        "シグニファイア",
+        "ユニバーサルデザイン",
+        "抽象化"
+      ],
+      "answerIndex": 0,
+      "explanation": "可視化：数量や関係などを、図やグラフで見えるようにすること。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_024",
+      "unit": "information.info.data.analysis.visualize",
+      "category": "thinking",
+      "prompt": "「可視化」の説明として正しいものは？",
+      "choices": [
+        "情報の要素を取り出し、不要な部分を省いて表すこと",
+        "年齢・障害・国籍などにかかわらず、誰にとっても使いやすいように設計すること",
+        "「ここを押せばよい」などの使い方を、利用者に示す手がかり",
+        "数量や関係などを、図やグラフで見えるようにすること"
+      ],
+      "answerIndex": 3,
+      "explanation": "可視化：数量や関係などを、図やグラフで見えるようにすること。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_025",
+      "unit": "information.info.network.protocol.tcpip",
+      "category": "knowledge",
+      "prompt": "情報を、順序・階層・分類などで整理すること。これを何という？",
+      "choices": [
+        "構造化",
+        "情報デザイン",
+        "可視化",
+        "シグニファイア"
+      ],
+      "answerIndex": 0,
+      "explanation": "構造化：情報を、順序・階層・分類などで整理すること。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_026",
+      "unit": "information.info.design.design.principle",
+      "category": "thinking",
+      "prompt": "「構造化」の説明として正しいものは？",
+      "choices": [
+        "情報を、受け手に分かりやすく伝わるように整理・表現すること",
+        "情報を、順序・階層・分類などで整理すること",
+        "「ここを押せばよい」などの使い方を、利用者に示す手がかり",
+        "数量や関係などを、図やグラフで見えるようにすること"
+      ],
+      "answerIndex": 1,
+      "explanation": "構造化：情報を、順序・階層・分類などで整理すること。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_027",
+      "unit": "information.info.design.design.layout",
+      "category": "knowledge",
+      "prompt": "色の見え方が異なる人にも情報が正しく伝わるように、色を使うこと。これを何という？",
+      "choices": [
+        "ユニバーサルデザイン",
+        "フィードバック",
+        "カラーユニバーサルデザイン",
+        "アフォーダンス"
+      ],
+      "answerIndex": 2,
+      "explanation": "カラーユニバーサルデザイン：色の見え方が異なる人にも情報が正しく伝わるように、色を使うこと。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_028",
+      "unit": "information.info.design.design.ui",
+      "category": "thinking",
+      "prompt": "「カラーユニバーサルデザイン」の説明として正しいものは？",
+      "choices": [
+        "操作に対して、システムが結果や状態を利用者に返すこと",
+        "色の見え方が異なる人にも情報が正しく伝わるように、色を使うこと",
+        "年齢・障害・国籍などにかかわらず、誰にとっても使いやすいように設計すること",
+        "ものの形などが、人にある行動をうながすこと"
+      ],
+      "answerIndex": 1,
+      "explanation": "カラーユニバーサルデザイン：色の見え方が異なる人にも情報が正しく伝わるように、色を使うこと。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_029",
+      "unit": "information.info.design.design",
+      "category": "knowledge",
+      "prompt": "コンピュータを構成する、装置そのもの。これを何という？",
+      "choices": [
+        "主記憶装置",
+        "ハードウェア",
+        "オペレーティングシステム",
+        "クロック周波数"
+      ],
+      "answerIndex": 1,
+      "explanation": "ハードウェア：コンピュータを構成する、装置そのもの。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_030",
+      "unit": "information.info.design.design",
+      "category": "thinking",
+      "prompt": "「ハードウェア」の説明として正しいものは？",
+      "choices": [
+        "CPUが動作のタイミングをとるための信号が、1秒間に何回出るかを表す値",
+        "ハードウェアを管理し、アプリケーションソフトウェアが動く土台となる基本ソフトウェア（OS）",
+        "CPUが直接読み書きする記憶装置（メモリ）。電源を切ると内容が消える",
+        "コンピュータを構成する、装置そのもの"
+      ],
+      "answerIndex": 3,
+      "explanation": "ハードウェア：コンピュータを構成する、装置そのもの。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_031",
+      "unit": "information.info.computer.hardware.software",
+      "category": "knowledge",
+      "prompt": "コンピュータを動かすプログラムなど。これを何という？",
+      "choices": [
+        "ソフトウェア",
+        "レジスタ",
+        "主記憶装置",
+        "デバイスドライバ"
+      ],
+      "answerIndex": 0,
+      "explanation": "ソフトウェア：コンピュータを動かすプログラムなど。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_032",
+      "unit": "information.info.computer.hardware.software",
+      "category": "thinking",
+      "prompt": "「ソフトウェア」の説明として正しいものは？",
+      "choices": [
+        "コンピュータを動かすプログラムなど",
+        "周辺機器をOSから使えるようにするためのソフトウェア",
+        "CPUの中にある、演算に使う小さく高速な記憶装置",
+        "CPUが直接読み書きする記憶装置（メモリ）。電源を切ると内容が消える"
+      ],
+      "answerIndex": 0,
+      "explanation": "ソフトウェア：コンピュータを動かすプログラムなど。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_033",
+      "unit": "information.info.programming.program.trace",
+      "category": "knowledge",
+      "prompt": "入力・出力・記憶・演算・制御の5つの装置。これを何という？",
+      "choices": [
+        "コンパイラ",
+        "クロック周波数",
+        "主記憶装置",
+        "五大装置"
+      ],
+      "answerIndex": 3,
+      "explanation": "五大装置：入力・出力・記憶・演算・制御の5つの装置。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_034",
+      "unit": "information.info.computer.hardware.components",
+      "category": "thinking",
+      "prompt": "「五大装置」の説明として正しいものは？",
+      "choices": [
+        "プログラム全体をまとめて機械語に翻訳するしくみ",
+        "入力・出力・記憶・演算・制御の5つの装置",
+        "CPUが動作のタイミングをとるための信号が、1秒間に何回出るかを表す値",
+        "CPUが直接読み書きする記憶装置（メモリ）。電源を切ると内容が消える"
+      ],
+      "answerIndex": 1,
+      "explanation": "五大装置：入力・出力・記憶・演算・制御の5つの装置。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_035",
+      "unit": "information.info.computer.hardware.components",
+      "category": "knowledge",
+      "prompt": "演算装置と制御装置をまとめたもの（中央処理装置）。これを何という？",
+      "choices": [
+        "ハードウェア",
+        "CPU",
+        "補助記憶装置",
+        "プログラム内蔵方式"
+      ],
+      "answerIndex": 1,
+      "explanation": "CPU：演算装置と制御装置をまとめたもの（中央処理装置）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_036",
+      "unit": "information.info.computer.hardware.components",
+      "category": "thinking",
+      "prompt": "「CPU」の説明として正しいものは？",
+      "choices": [
+        "演算装置と制御装置をまとめたもの（中央処理装置）",
+        "コンピュータを構成する、装置そのもの",
+        "SSDやHDDなど、電源を切ってもデータが残る記憶装置",
+        "プログラムをデータと同じように主記憶装置に記憶させて実行する方式（ノイマン型）"
+      ],
+      "answerIndex": 0,
+      "explanation": "CPU：演算装置と制御装置をまとめたもの（中央処理装置）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_037",
+      "unit": "information.info.computer.hardware.components",
+      "category": "knowledge",
+      "prompt": "CPUが直接読み書きする記憶装置（メモリ）。電源を切ると内容が消える。これを何という？",
+      "choices": [
+        "オペレーティングシステム",
+        "主記憶装置",
+        "演算誤差",
+        "デバイスドライバ"
+      ],
+      "answerIndex": 1,
+      "explanation": "主記憶装置：CPUが直接読み書きする記憶装置（メモリ）。電源を切ると内容が消える。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_038",
+      "unit": "information.info.computer.hardware.components",
+      "category": "thinking",
+      "prompt": "「主記憶装置」の説明として正しいものは？",
+      "choices": [
+        "周辺機器をOSから使えるようにするためのソフトウェア",
+        "CPUが直接読み書きする記憶装置（メモリ）。電源を切ると内容が消える",
+        "コンピュータで計算するとき、有限の桁数で表すために生じる誤差",
+        "ハードウェアを管理し、アプリケーションソフトウェアが動く土台となる基本ソフトウェア（OS）"
+      ],
+      "answerIndex": 1,
+      "explanation": "主記憶装置：CPUが直接読み書きする記憶装置（メモリ）。電源を切ると内容が消える。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_039",
+      "unit": "information.info.computer.hardware.components",
+      "category": "knowledge",
+      "prompt": "SSDやHDDなど、電源を切ってもデータが残る記憶装置。これを何という？",
+      "choices": [
+        "デバイスドライバ",
+        "補助記憶装置",
+        "五大装置",
+        "ソフトウェア"
+      ],
+      "answerIndex": 1,
+      "explanation": "補助記憶装置：SSDやHDDなど、電源を切ってもデータが残る記憶装置。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_040",
+      "unit": "information.info.computer.hardware.components",
+      "category": "thinking",
+      "prompt": "「補助記憶装置」の説明として正しいものは？",
+      "choices": [
+        "入力・出力・記憶・演算・制御の5つの装置",
+        "周辺機器をOSから使えるようにするためのソフトウェア",
+        "SSDやHDDなど、電源を切ってもデータが残る記憶装置",
+        "コンピュータを動かすプログラムなど"
+      ],
+      "answerIndex": 2,
+      "explanation": "補助記憶装置：SSDやHDDなど、電源を切ってもデータが残る記憶装置。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_041",
+      "unit": "information.info.computer.hardware.components",
+      "category": "knowledge",
+      "prompt": "CPUの中にある、演算に使う小さく高速な記憶装置。これを何という？",
+      "choices": [
+        "インタプリタ",
+        "ソフトウェア",
+        "主記憶装置",
+        "レジスタ"
+      ],
+      "answerIndex": 3,
+      "explanation": "レジスタ：CPUの中にある、演算に使う小さく高速な記憶装置。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_042",
+      "unit": "information.info.computer.hardware.cpu",
+      "category": "thinking",
+      "prompt": "「レジスタ」の説明として正しいものは？",
+      "choices": [
+        "CPUが直接読み書きする記憶装置（メモリ）。電源を切ると内容が消える",
+        "プログラムを1命令ずつ機械語に翻訳しながら実行するしくみ",
+        "コンピュータを動かすプログラムなど",
+        "CPUの中にある、演算に使う小さく高速な記憶装置"
+      ],
+      "answerIndex": 3,
+      "explanation": "レジスタ：CPUの中にある、演算に使う小さく高速な記憶装置。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_043",
+      "unit": "information.info.computer.hardware.components",
+      "category": "knowledge",
+      "prompt": "プログラムをデータと同じように主記憶装置に記憶させて実行する方式（ノイマン型）。これを何という？",
+      "choices": [
+        "補助記憶装置",
+        "演算誤差",
+        "インタプリタ",
+        "プログラム内蔵方式"
+      ],
+      "answerIndex": 3,
+      "explanation": "プログラム内蔵方式：プログラムをデータと同じように主記憶装置に記憶させて実行する方式（ノイマン型）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_044",
+      "unit": "information.info.computer.hardware.components",
+      "category": "thinking",
+      "prompt": "「プログラム内蔵方式」の説明として正しいものは？",
+      "choices": [
+        "プログラムを1命令ずつ機械語に翻訳しながら実行するしくみ",
+        "コンピュータで計算するとき、有限の桁数で表すために生じる誤差",
+        "プログラムをデータと同じように主記憶装置に記憶させて実行する方式（ノイマン型）",
+        "SSDやHDDなど、電源を切ってもデータが残る記憶装置"
+      ],
+      "answerIndex": 2,
+      "explanation": "プログラム内蔵方式：プログラムをデータと同じように主記憶装置に記憶させて実行する方式（ノイマン型）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_045",
+      "unit": "information.info.computer.hardware.components",
+      "category": "knowledge",
+      "prompt": "CPUが動作のタイミングをとるための信号が、1秒間に何回出るかを表す値。これを何という？",
+      "choices": [
+        "レジスタ",
+        "クロック周波数",
+        "インタプリタ",
+        "オペレーティングシステム"
+      ],
+      "answerIndex": 1,
+      "explanation": "クロック周波数：CPUが動作のタイミングをとるための信号が、1秒間に何回出るかを表す値。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_046",
+      "unit": "information.info.computer.media.sound",
+      "category": "thinking",
+      "prompt": "「クロック周波数」の説明として正しいものは？",
+      "choices": [
+        "ハードウェアを管理し、アプリケーションソフトウェアが動く土台となる基本ソフトウェア（OS）",
+        "CPUの中にある、演算に使う小さく高速な記憶装置",
+        "CPUが動作のタイミングをとるための信号が、1秒間に何回出るかを表す値",
+        "プログラムを1命令ずつ機械語に翻訳しながら実行するしくみ"
+      ],
+      "answerIndex": 2,
+      "explanation": "クロック周波数：CPUが動作のタイミングをとるための信号が、1秒間に何回出るかを表す値。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_047",
+      "unit": "information.info.computer.hardware.software",
+      "category": "knowledge",
+      "prompt": "ハードウェアを管理し、アプリケーションソフトウェアが動く土台となる基本ソフトウェア（OS）。これを何という？",
+      "choices": [
+        "オペレーティングシステム",
+        "CPU",
+        "デバイスドライバ",
+        "クロック周波数"
+      ],
+      "answerIndex": 0,
+      "explanation": "オペレーティングシステム：ハードウェアを管理し、アプリケーションソフトウェアが動く土台となる基本ソフトウェア（OS）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_048",
+      "unit": "information.info.computer.hardware.software",
+      "category": "thinking",
+      "prompt": "「オペレーティングシステム」の説明として正しいものは？",
+      "choices": [
+        "ハードウェアを管理し、アプリケーションソフトウェアが動く土台となる基本ソフトウェア（OS）",
+        "演算装置と制御装置をまとめたもの（中央処理装置）",
+        "CPUが動作のタイミングをとるための信号が、1秒間に何回出るかを表す値",
+        "周辺機器をOSから使えるようにするためのソフトウェア"
+      ],
+      "answerIndex": 0,
+      "explanation": "オペレーティングシステム：ハードウェアを管理し、アプリケーションソフトウェアが動く土台となる基本ソフトウェア（OS）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_049",
+      "unit": "information.info.computer.hardware.software",
+      "category": "knowledge",
+      "prompt": "文書作成・表計算など、特定の目的のためのソフトウェア。これを何という？",
+      "choices": [
+        "演算誤差",
+        "アプリケーションソフトウェア",
+        "主記憶装置",
+        "オペレーティングシステム"
+      ],
+      "answerIndex": 1,
+      "explanation": "アプリケーションソフトウェア：文書作成・表計算など、特定の目的のためのソフトウェア。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_050",
+      "unit": "information.info.computer.hardware.software",
+      "category": "thinking",
+      "prompt": "「アプリケーションソフトウェア」の説明として正しいものは？",
+      "choices": [
+        "ハードウェアを管理し、アプリケーションソフトウェアが動く土台となる基本ソフトウェア（OS）",
+        "コンピュータで計算するとき、有限の桁数で表すために生じる誤差",
+        "CPUが直接読み書きする記憶装置（メモリ）。電源を切ると内容が消える",
+        "文書作成・表計算など、特定の目的のためのソフトウェア"
+      ],
+      "answerIndex": 3,
+      "explanation": "アプリケーションソフトウェア：文書作成・表計算など、特定の目的のためのソフトウェア。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_051",
+      "unit": "information.info.computer.hardware.software",
+      "category": "knowledge",
+      "prompt": "周辺機器をOSから使えるようにするためのソフトウェア。これを何という？",
+      "choices": [
+        "レジスタ",
+        "デバイスドライバ",
+        "プログラム内蔵方式",
+        "クロック周波数"
+      ],
+      "answerIndex": 1,
+      "explanation": "デバイスドライバ：周辺機器をOSから使えるようにするためのソフトウェア。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_052",
+      "unit": "information.info.computer.hardware.software",
+      "category": "thinking",
+      "prompt": "「デバイスドライバ」の説明として正しいものは？",
+      "choices": [
+        "CPUの中にある、演算に使う小さく高速な記憶装置",
+        "プログラムをデータと同じように主記憶装置に記憶させて実行する方式（ノイマン型）",
+        "周辺機器をOSから使えるようにするためのソフトウェア",
+        "CPUが動作のタイミングをとるための信号が、1秒間に何回出るかを表す値"
+      ],
+      "answerIndex": 2,
+      "explanation": "デバイスドライバ：周辺機器をOSから使えるようにするためのソフトウェア。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_053",
+      "unit": "information.info.computer.hardware.cpu",
+      "category": "knowledge",
+      "prompt": "プログラムを1命令ずつ機械語に翻訳しながら実行するしくみ。これを何という？",
+      "choices": [
+        "インタプリタ",
+        "プログラム内蔵方式",
+        "ハードウェア",
+        "オペレーティングシステム"
+      ],
+      "answerIndex": 0,
+      "explanation": "インタプリタ：プログラムを1命令ずつ機械語に翻訳しながら実行するしくみ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_054",
+      "unit": "information.info.computer.hardware.cpu",
+      "category": "thinking",
+      "prompt": "「インタプリタ」の説明として正しいものは？",
+      "choices": [
+        "ハードウェアを管理し、アプリケーションソフトウェアが動く土台となる基本ソフトウェア（OS）",
+        "コンピュータを構成する、装置そのもの",
+        "プログラムをデータと同じように主記憶装置に記憶させて実行する方式（ノイマン型）",
+        "プログラムを1命令ずつ機械語に翻訳しながら実行するしくみ"
+      ],
+      "answerIndex": 3,
+      "explanation": "インタプリタ：プログラムを1命令ずつ機械語に翻訳しながら実行するしくみ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_055",
+      "unit": "information.info.computer.hardware.cpu",
+      "category": "knowledge",
+      "prompt": "プログラム全体をまとめて機械語に翻訳するしくみ。これを何という？",
+      "choices": [
+        "CPU",
+        "デバイスドライバ",
+        "コンパイラ",
+        "レジスタ"
+      ],
+      "answerIndex": 2,
+      "explanation": "コンパイラ：プログラム全体をまとめて機械語に翻訳するしくみ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_056",
+      "unit": "information.info.computer.hardware.cpu",
+      "category": "thinking",
+      "prompt": "「コンパイラ」の説明として正しいものは？",
+      "choices": [
+        "プログラム全体をまとめて機械語に翻訳するしくみ",
+        "周辺機器をOSから使えるようにするためのソフトウェア",
+        "CPUの中にある、演算に使う小さく高速な記憶装置",
+        "演算装置と制御装置をまとめたもの（中央処理装置）"
+      ],
+      "answerIndex": 0,
+      "explanation": "コンパイラ：プログラム全体をまとめて機械語に翻訳するしくみ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_057",
+      "unit": "information.info.data.manage.database",
+      "category": "knowledge",
+      "prompt": "コンピュータで計算するとき、有限の桁数で表すために生じる誤差。これを何という？",
+      "choices": [
+        "演算誤差",
+        "五大装置",
+        "アプリケーションソフトウェア",
+        "レジスタ"
+      ],
+      "answerIndex": 0,
+      "explanation": "演算誤差：コンピュータで計算するとき、有限の桁数で表すために生じる誤差。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_01_058",
+      "unit": "information.info.data.manage.database",
+      "category": "thinking",
+      "prompt": "「演算誤差」の説明として正しいものは？",
+      "choices": [
+        "入力・出力・記憶・演算・制御の5つの装置",
+        "コンピュータで計算するとき、有限の桁数で表すために生じる誤差",
+        "文書作成・表計算など、特定の目的のためのソフトウェア",
+        "CPUの中にある、演算に使う小さく高速な記憶装置"
+      ],
+      "answerIndex": 1,
+      "explanation": "演算誤差：コンピュータで計算するとき、有限の桁数で表すために生じる誤差。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    }
+  ]
+}

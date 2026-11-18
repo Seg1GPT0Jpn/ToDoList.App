@@ -1,0 +1,1562 @@
+{
+  "setId": "social_shonan_104_geo_01",
+  "worldId": "social",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "social_shonan_104_geo_01_001",
+      "unit": "social.geo.nature.climate.element",
+      "category": "knowledge",
+      "prompt": "気温・降水量・風・湿度など、気候を構成する要素。これを何という？",
+      "choices": [
+        "中緯度高圧帯",
+        "気候要素",
+        "日較差",
+        "隔海度"
+      ],
+      "answerIndex": 1,
+      "explanation": "気候要素：気温・降水量・風・湿度など、気候を構成する要素。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_002",
+      "unit": "social.geo.nature.climate.element",
+      "category": "thinking",
+      "prompt": "「気候要素」の説明として正しいものは？",
+      "choices": [
+        "緯度30度付近で空気が下降し、雨が少ない気圧帯（亜熱帯高圧帯）",
+        "海からの距離。大きいほど年較差が大きくなる",
+        "気温・降水量・風・湿度など、気候を構成する要素",
+        "1日の最高気温と最低気温の差"
+      ],
+      "answerIndex": 2,
+      "explanation": "気候要素：気温・降水量・風・湿度など、気候を構成する要素。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_003",
+      "unit": "social.geo.nature.climate",
+      "category": "knowledge",
+      "prompt": "緯度・標高・隔海度・海流・地形など、気候に地域差を生み出す要因。これを何という？",
+      "choices": [
+        "気候因子",
+        "季節風",
+        "気温の逓減率",
+        "コリオリの力"
+      ],
+      "answerIndex": 0,
+      "explanation": "気候因子：緯度・標高・隔海度・海流・地形など、気候に地域差を生み出す要因。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_004",
+      "unit": "social.geo.nature.climate",
+      "category": "thinking",
+      "prompt": "「気候因子」の説明として正しいものは？",
+      "choices": [
+        "夏と冬で風向きが逆になる風（モンスーン）",
+        "地球の自転のため、北半球では進行方向の右、南半球では左に風がそれる力（転向力）",
+        "緯度・標高・隔海度・海流・地形など、気候に地域差を生み出す要因",
+        "標高が100m上がるごとに気温が約0.65℃下がること"
+      ],
+      "answerIndex": 2,
+      "explanation": "気候因子：緯度・標高・隔海度・海流・地形など、気候に地域差を生み出す要因。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_005",
+      "unit": "social.geo.nature.climate.element",
+      "category": "knowledge",
+      "prompt": "最暖月と最寒月の平均気温の差。これを何という？",
+      "choices": [
+        "海洋性気候",
+        "偏西風",
+        "季節風",
+        "年較差"
+      ],
+      "answerIndex": 3,
+      "explanation": "年較差：最暖月と最寒月の平均気温の差。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_006",
+      "unit": "social.geo.nature.climate.element",
+      "category": "thinking",
+      "prompt": "「年較差」の説明として正しいものは？",
+      "choices": [
+        "海の影響を強く受け、年較差が小さい気候",
+        "夏と冬で風向きが逆になる風（モンスーン）",
+        "中緯度高圧帯から亜寒帯低圧帯に向かって吹く西よりの恒常風",
+        "最暖月と最寒月の平均気温の差"
+      ],
+      "answerIndex": 3,
+      "explanation": "年較差：最暖月と最寒月の平均気温の差。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_007",
+      "unit": "social.geo.nature.climate.element",
+      "category": "knowledge",
+      "prompt": "1日の最高気温と最低気温の差。これを何という？",
+      "choices": [
+        "気温の逓減率",
+        "日較差",
+        "気候要素",
+        "季節風"
+      ],
+      "answerIndex": 1,
+      "explanation": "日較差：1日の最高気温と最低気温の差。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_008",
+      "unit": "social.geo.nature.climate.element",
+      "category": "thinking",
+      "prompt": "「日較差」の説明として正しいものは？",
+      "choices": [
+        "夏と冬で風向きが逆になる風（モンスーン）",
+        "気温・降水量・風・湿度など、気候を構成する要素",
+        "標高が100m上がるごとに気温が約0.65℃下がること",
+        "1日の最高気温と最低気温の差"
+      ],
+      "answerIndex": 3,
+      "explanation": "日較差：1日の最高気温と最低気温の差。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_009",
+      "unit": "social.geo.nature.climate.element",
+      "category": "knowledge",
+      "prompt": "標高が100m上がるごとに気温が約0.65℃下がること。これを何という？",
+      "choices": [
+        "偏西風",
+        "極東風",
+        "気候要素",
+        "気温の逓減率"
+      ],
+      "answerIndex": 3,
+      "explanation": "気温の逓減率：標高が100m上がるごとに気温が約0.65℃下がること。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_010",
+      "unit": "social.geo.nature.climate.element",
+      "category": "thinking",
+      "prompt": "「気温の逓減率」の説明として正しいものは？",
+      "choices": [
+        "中緯度高圧帯から亜寒帯低圧帯に向かって吹く西よりの恒常風",
+        "標高が100m上がるごとに気温が約0.65℃下がること",
+        "極高圧帯から吹き出す東よりの恒常風",
+        "気温・降水量・風・湿度など、気候を構成する要素"
+      ],
+      "answerIndex": 1,
+      "explanation": "気温の逓減率：標高が100m上がるごとに気温が約0.65℃下がること。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_011",
+      "unit": "social.geo.nature.climate",
+      "category": "knowledge",
+      "prompt": "海からの距離。大きいほど年較差が大きくなる。これを何という？",
+      "choices": [
+        "コリオリの力",
+        "隔海度",
+        "中緯度高圧帯",
+        "赤道低圧帯"
+      ],
+      "answerIndex": 1,
+      "explanation": "隔海度：海からの距離。大きいほど年較差が大きくなる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_012",
+      "unit": "social.geo.nature.climate",
+      "category": "thinking",
+      "prompt": "「隔海度」の説明として正しいものは？",
+      "choices": [
+        "海からの距離。大きいほど年較差が大きくなる",
+        "緯度30度付近で空気が下降し、雨が少ない気圧帯（亜熱帯高圧帯）",
+        "赤道付近で空気が暖められて上昇し、雨が多い気圧帯（熱帯収束帯）",
+        "地球の自転のため、北半球では進行方向の右、南半球では左に風がそれる力（転向力）"
+      ],
+      "answerIndex": 0,
+      "explanation": "隔海度：海からの距離。大きいほど年較差が大きくなる。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_013",
+      "unit": "social.geo.nature.climate.element",
+      "category": "knowledge",
+      "prompt": "内陸部に見られる、年較差・日較差が大きく降水量が少ない気候。これを何という？",
+      "choices": [
+        "日較差",
+        "大陸性気候",
+        "極高圧帯",
+        "南回帰線"
+      ],
+      "answerIndex": 1,
+      "explanation": "大陸性気候：内陸部に見られる、年較差・日較差が大きく降水量が少ない気候。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_014",
+      "unit": "social.geo.nature.climate.element",
+      "category": "thinking",
+      "prompt": "「大陸性気候」の説明として正しいものは？",
+      "choices": [
+        "内陸部に見られる、年較差・日較差が大きく降水量が少ない気候",
+        "1日の最高気温と最低気温の差",
+        "極付近の冷たく重い空気が下降してできる気圧帯",
+        "南緯23.4度の緯線。北半球の冬至に太陽光を真上から受ける"
+      ],
+      "answerIndex": 0,
+      "explanation": "大陸性気候：内陸部に見られる、年較差・日較差が大きく降水量が少ない気候。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_015",
+      "unit": "social.geo.nature.climate",
+      "category": "knowledge",
+      "prompt": "海の影響を強く受け、年較差が小さい気候。これを何という？",
+      "choices": [
+        "南回帰線",
+        "極夜",
+        "気候要素",
+        "海洋性気候"
+      ],
+      "answerIndex": 3,
+      "explanation": "海洋性気候：海の影響を強く受け、年較差が小さい気候。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_016",
+      "unit": "social.geo.nature.climate",
+      "category": "thinking",
+      "prompt": "「海洋性気候」の説明として正しいものは？",
+      "choices": [
+        "海の影響を強く受け、年較差が小さい気候",
+        "高緯度地方で、冬に太陽が昇らない現象",
+        "南緯23.4度の緯線。北半球の冬至に太陽光を真上から受ける",
+        "気温・降水量・風・湿度など、気候を構成する要素"
+      ],
+      "answerIndex": 0,
+      "explanation": "海洋性気候：海の影響を強く受け、年較差が小さい気候。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_017",
+      "unit": "social.geo.nature.climate.element",
+      "category": "knowledge",
+      "prompt": "赤道付近で空気が暖められて上昇し、雨が多い気圧帯（熱帯収束帯）。これを何という？",
+      "choices": [
+        "偏西風",
+        "極夜",
+        "気候要素",
+        "赤道低圧帯"
+      ],
+      "answerIndex": 3,
+      "explanation": "赤道低圧帯：赤道付近で空気が暖められて上昇し、雨が多い気圧帯（熱帯収束帯）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_018",
+      "unit": "social.geo.nature.climate.element",
+      "category": "thinking",
+      "prompt": "「赤道低圧帯」の説明として正しいものは？",
+      "choices": [
+        "高緯度地方で、冬に太陽が昇らない現象",
+        "赤道付近で空気が暖められて上昇し、雨が多い気圧帯（熱帯収束帯）",
+        "気温・降水量・風・湿度など、気候を構成する要素",
+        "中緯度高圧帯から亜寒帯低圧帯に向かって吹く西よりの恒常風"
+      ],
+      "answerIndex": 1,
+      "explanation": "赤道低圧帯：赤道付近で空気が暖められて上昇し、雨が多い気圧帯（熱帯収束帯）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_019",
+      "unit": "social.geo.nature.climate.element",
+      "category": "knowledge",
+      "prompt": "緯度30度付近で空気が下降し、雨が少ない気圧帯（亜熱帯高圧帯）。これを何という？",
+      "choices": [
+        "中緯度高圧帯",
+        "気候要素",
+        "大陸性気候",
+        "極東風"
+      ],
+      "answerIndex": 0,
+      "explanation": "中緯度高圧帯：緯度30度付近で空気が下降し、雨が少ない気圧帯（亜熱帯高圧帯）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_020",
+      "unit": "social.geo.nature.climate.element",
+      "category": "thinking",
+      "prompt": "「中緯度高圧帯」の説明として正しいものは？",
+      "choices": [
+        "内陸部に見られる、年較差・日較差が大きく降水量が少ない気候",
+        "緯度30度付近で空気が下降し、雨が少ない気圧帯（亜熱帯高圧帯）",
+        "極高圧帯から吹き出す東よりの恒常風",
+        "気温・降水量・風・湿度など、気候を構成する要素"
+      ],
+      "answerIndex": 1,
+      "explanation": "中緯度高圧帯：緯度30度付近で空気が下降し、雨が少ない気圧帯（亜熱帯高圧帯）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_021",
+      "unit": "social.geo.nature.climate.element",
+      "category": "knowledge",
+      "prompt": "緯度60度付近で暖かい空気と冷たい空気がぶつかって上昇する気圧帯。これを何という？",
+      "choices": [
+        "海洋性気候",
+        "白夜",
+        "亜寒帯低圧帯",
+        "コリオリの力"
+      ],
+      "answerIndex": 2,
+      "explanation": "亜寒帯低圧帯：緯度60度付近で暖かい空気と冷たい空気がぶつかって上昇する気圧帯。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_022",
+      "unit": "social.geo.nature.climate.koppen",
+      "category": "thinking",
+      "prompt": "「亜寒帯低圧帯」の説明として正しいものは？",
+      "choices": [
+        "高緯度地方で、夏に太陽が沈まない、または沈んでも暗くならない現象",
+        "緯度60度付近で暖かい空気と冷たい空気がぶつかって上昇する気圧帯",
+        "海の影響を強く受け、年較差が小さい気候",
+        "地球の自転のため、北半球では進行方向の右、南半球では左に風がそれる力（転向力）"
+      ],
+      "answerIndex": 1,
+      "explanation": "亜寒帯低圧帯：緯度60度付近で暖かい空気と冷たい空気がぶつかって上昇する気圧帯。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_023",
+      "unit": "social.geo.nature.climate.element",
+      "category": "knowledge",
+      "prompt": "極付近の冷たく重い空気が下降してできる気圧帯。これを何という？",
+      "choices": [
+        "極高圧帯",
+        "季節風",
+        "海洋性気候",
+        "極夜"
+      ],
+      "answerIndex": 0,
+      "explanation": "極高圧帯：極付近の冷たく重い空気が下降してできる気圧帯。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_024",
+      "unit": "social.geo.nature.climate.element",
+      "category": "thinking",
+      "prompt": "「極高圧帯」の説明として正しいものは？",
+      "choices": [
+        "高緯度地方で、冬に太陽が昇らない現象",
+        "海の影響を強く受け、年較差が小さい気候",
+        "夏と冬で風向きが逆になる風（モンスーン）",
+        "極付近の冷たく重い空気が下降してできる気圧帯"
+      ],
+      "answerIndex": 3,
+      "explanation": "極高圧帯：極付近の冷たく重い空気が下降してできる気圧帯。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_025",
+      "unit": "social.geo.nature.climate.element",
+      "category": "knowledge",
+      "prompt": "中緯度高圧帯から赤道低圧帯に向かって吹く東よりの恒常風。これを何という？",
+      "choices": [
+        "貿易風",
+        "極夜",
+        "海洋性気候",
+        "極高圧帯"
+      ],
+      "answerIndex": 0,
+      "explanation": "貿易風：中緯度高圧帯から赤道低圧帯に向かって吹く東よりの恒常風。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_026",
+      "unit": "social.geo.nature.climate.element",
+      "category": "thinking",
+      "prompt": "「貿易風」の説明として正しいものは？",
+      "choices": [
+        "高緯度地方で、冬に太陽が昇らない現象",
+        "中緯度高圧帯から赤道低圧帯に向かって吹く東よりの恒常風",
+        "極付近の冷たく重い空気が下降してできる気圧帯",
+        "海の影響を強く受け、年較差が小さい気候"
+      ],
+      "answerIndex": 1,
+      "explanation": "貿易風：中緯度高圧帯から赤道低圧帯に向かって吹く東よりの恒常風。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_027",
+      "unit": "social.geo.nature.climate.koppen",
+      "category": "knowledge",
+      "prompt": "中緯度高圧帯から亜寒帯低圧帯に向かって吹く西よりの恒常風。これを何という？",
+      "choices": [
+        "中緯度高圧帯",
+        "コリオリの力",
+        "偏西風",
+        "気候要素"
+      ],
+      "answerIndex": 2,
+      "explanation": "偏西風：中緯度高圧帯から亜寒帯低圧帯に向かって吹く西よりの恒常風。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_028",
+      "unit": "social.geo.nature.climate.element",
+      "category": "thinking",
+      "prompt": "「偏西風」の説明として正しいものは？",
+      "choices": [
+        "地球の自転のため、北半球では進行方向の右、南半球では左に風がそれる力（転向力）",
+        "中緯度高圧帯から亜寒帯低圧帯に向かって吹く西よりの恒常風",
+        "緯度30度付近で空気が下降し、雨が少ない気圧帯（亜熱帯高圧帯）",
+        "気温・降水量・風・湿度など、気候を構成する要素"
+      ],
+      "answerIndex": 1,
+      "explanation": "偏西風：中緯度高圧帯から亜寒帯低圧帯に向かって吹く西よりの恒常風。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_029",
+      "unit": "social.geo.nature.climate",
+      "category": "knowledge",
+      "prompt": "極高圧帯から吹き出す東よりの恒常風。これを何という？",
+      "choices": [
+        "日較差",
+        "極東風",
+        "極夜",
+        "偏西風"
+      ],
+      "answerIndex": 1,
+      "explanation": "極東風：極高圧帯から吹き出す東よりの恒常風。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_030",
+      "unit": "social.geo.nature.climate",
+      "category": "thinking",
+      "prompt": "「極東風」の説明として正しいものは？",
+      "choices": [
+        "中緯度高圧帯から亜寒帯低圧帯に向かって吹く西よりの恒常風",
+        "高緯度地方で、冬に太陽が昇らない現象",
+        "1日の最高気温と最低気温の差",
+        "極高圧帯から吹き出す東よりの恒常風"
+      ],
+      "answerIndex": 3,
+      "explanation": "極東風：極高圧帯から吹き出す東よりの恒常風。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_031",
+      "unit": "social.geo.nature.climate",
+      "category": "knowledge",
+      "prompt": "地球の自転のため、北半球では進行方向の右、南半球では左に風がそれる力（転向力）。これを何という？",
+      "choices": [
+        "コリオリの力",
+        "隔海度",
+        "中緯度高圧帯",
+        "日較差"
+      ],
+      "answerIndex": 0,
+      "explanation": "コリオリの力：地球の自転のため、北半球では進行方向の右、南半球では左に風がそれる力（転向力）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_032",
+      "unit": "social.geo.nature.climate",
+      "category": "thinking",
+      "prompt": "「コリオリの力」の説明として正しいものは？",
+      "choices": [
+        "地球の自転のため、北半球では進行方向の右、南半球では左に風がそれる力（転向力）",
+        "1日の最高気温と最低気温の差",
+        "海からの距離。大きいほど年較差が大きくなる",
+        "緯度30度付近で空気が下降し、雨が少ない気圧帯（亜熱帯高圧帯）"
+      ],
+      "answerIndex": 0,
+      "explanation": "コリオリの力：地球の自転のため、北半球では進行方向の右、南半球では左に風がそれる力（転向力）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_033",
+      "unit": "social.geo.nature.climate.element",
+      "category": "knowledge",
+      "prompt": "夏と冬で風向きが逆になる風（モンスーン）。これを何という？",
+      "choices": [
+        "白夜",
+        "偏西風",
+        "亜寒帯低圧帯",
+        "季節風"
+      ],
+      "answerIndex": 3,
+      "explanation": "季節風：夏と冬で風向きが逆になる風（モンスーン）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_034",
+      "unit": "social.geo.nature.climate.element",
+      "category": "thinking",
+      "prompt": "「季節風」の説明として正しいものは？",
+      "choices": [
+        "高緯度地方で、夏に太陽が沈まない、または沈んでも暗くならない現象",
+        "夏と冬で風向きが逆になる風（モンスーン）",
+        "中緯度高圧帯から亜寒帯低圧帯に向かって吹く西よりの恒常風",
+        "緯度60度付近で暖かい空気と冷たい空気がぶつかって上昇する気圧帯"
+      ],
+      "answerIndex": 1,
+      "explanation": "季節風：夏と冬で風向きが逆になる風（モンスーン）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_035",
+      "unit": "social.geo.nature.climate",
+      "category": "knowledge",
+      "prompt": "高緯度地方で、夏に太陽が沈まない、または沈んでも暗くならない現象。これを何という？",
+      "choices": [
+        "大陸性気候",
+        "白夜",
+        "季節風",
+        "中緯度高圧帯"
+      ],
+      "answerIndex": 1,
+      "explanation": "白夜：高緯度地方で、夏に太陽が沈まない、または沈んでも暗くならない現象。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_036",
+      "unit": "social.geo.nature.climate",
+      "category": "thinking",
+      "prompt": "「白夜」の説明として正しいものは？",
+      "choices": [
+        "高緯度地方で、夏に太陽が沈まない、または沈んでも暗くならない現象",
+        "内陸部に見られる、年較差・日較差が大きく降水量が少ない気候",
+        "夏と冬で風向きが逆になる風（モンスーン）",
+        "緯度30度付近で空気が下降し、雨が少ない気圧帯（亜熱帯高圧帯）"
+      ],
+      "answerIndex": 0,
+      "explanation": "白夜：高緯度地方で、夏に太陽が沈まない、または沈んでも暗くならない現象。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_037",
+      "unit": "social.geo.nature.climate",
+      "category": "knowledge",
+      "prompt": "高緯度地方で、冬に太陽が昇らない現象。これを何という？",
+      "choices": [
+        "コリオリの力",
+        "極夜",
+        "中緯度高圧帯",
+        "季節風"
+      ],
+      "answerIndex": 1,
+      "explanation": "極夜：高緯度地方で、冬に太陽が昇らない現象。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_038",
+      "unit": "social.geo.nature.climate",
+      "category": "thinking",
+      "prompt": "「極夜」の説明として正しいものは？",
+      "choices": [
+        "夏と冬で風向きが逆になる風（モンスーン）",
+        "高緯度地方で、冬に太陽が昇らない現象",
+        "緯度30度付近で空気が下降し、雨が少ない気圧帯（亜熱帯高圧帯）",
+        "地球の自転のため、北半球では進行方向の右、南半球では左に風がそれる力（転向力）"
+      ],
+      "answerIndex": 1,
+      "explanation": "極夜：高緯度地方で、冬に太陽が昇らない現象。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_039",
+      "unit": "social.geo.nature.climate",
+      "category": "knowledge",
+      "prompt": "南緯23.4度の緯線。北半球の冬至に太陽光を真上から受ける。これを何という？",
+      "choices": [
+        "コリオリの力",
+        "南回帰線",
+        "気候因子",
+        "貿易風"
+      ],
+      "answerIndex": 1,
+      "explanation": "南回帰線：南緯23.4度の緯線。北半球の冬至に太陽光を真上から受ける。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_040",
+      "unit": "social.geo.nature.climate",
+      "category": "thinking",
+      "prompt": "「南回帰線」の説明として正しいものは？",
+      "choices": [
+        "緯度・標高・隔海度・海流・地形など、気候に地域差を生み出す要因",
+        "地球の自転のため、北半球では進行方向の右、南半球では左に風がそれる力（転向力）",
+        "南緯23.4度の緯線。北半球の冬至に太陽光を真上から受ける",
+        "中緯度高圧帯から赤道低圧帯に向かって吹く東よりの恒常風"
+      ],
+      "answerIndex": 2,
+      "explanation": "南回帰線：南緯23.4度の緯線。北半球の冬至に太陽光を真上から受ける。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_041",
+      "unit": "social.geo.nature.climate.element",
+      "category": "knowledge",
+      "prompt": "植生の分布をもとに、気温と降水量で世界の気候を区分したドイツの気候学者。これを何という？",
+      "choices": [
+        "西岸海洋性気候",
+        "高山気候",
+        "氷雪気候",
+        "ケッペン"
+      ],
+      "answerIndex": 3,
+      "explanation": "ケッペン：植生の分布をもとに、気温と降水量で世界の気候を区分したドイツの気候学者。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_042",
+      "unit": "social.geo.nature.climate.koppen",
+      "category": "thinking",
+      "prompt": "「ケッペン」の説明として正しいものは？",
+      "choices": [
+        "最暖月の平均気温が0℃未満の寒帯の気候（EF）",
+        "年中降水があり、夏が比較的涼しく冬も温和な温帯の気候（Cfb）",
+        "標高が高く、低緯度でも年中冷涼な気候（H）",
+        "植生の分布をもとに、気温と降水量で世界の気候を区分したドイツの気候学者"
+      ],
+      "answerIndex": 3,
+      "explanation": "ケッペン：植生の分布をもとに、気温と降水量で世界の気候を区分したドイツの気候学者。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_043",
+      "unit": "social.geo.nature.climate.koppen",
+      "category": "knowledge",
+      "prompt": "年中高温で、毎月雨が多い気候（Af）。これを何という？",
+      "choices": [
+        "温暖湿潤気候",
+        "ツンドラ気候",
+        "高山気候",
+        "熱帯雨林気候"
+      ],
+      "answerIndex": 3,
+      "explanation": "熱帯雨林気候：年中高温で、毎月雨が多い気候（Af）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_044",
+      "unit": "social.geo.nature.climate.koppen",
+      "category": "thinking",
+      "prompt": "「熱帯雨林気候」の説明として正しいものは？",
+      "choices": [
+        "標高が高く、低緯度でも年中冷涼な気候（H）",
+        "最暖月の平均気温が0℃以上10℃未満の寒帯の気候（ET）",
+        "年中高温で、毎月雨が多い気候（Af）",
+        "年中降水があり、夏が暑い温帯の気候（Cfa）"
+      ],
+      "answerIndex": 2,
+      "explanation": "熱帯雨林気候：年中高温で、毎月雨が多い気候（Af）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_045",
+      "unit": "social.geo.nature.climate.koppen",
+      "category": "knowledge",
+      "prompt": "年中高温で、雨季と乾季がはっきりしている気候（Aw）。これを何という？",
+      "choices": [
+        "亜寒帯湿潤気候",
+        "サバナ気候",
+        "温暖冬季少雨気候",
+        "雨温図"
+      ],
+      "answerIndex": 1,
+      "explanation": "サバナ気候：年中高温で、雨季と乾季がはっきりしている気候（Aw）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_046",
+      "unit": "social.geo.nature.climate.koppen",
+      "category": "thinking",
+      "prompt": "「サバナ気候」の説明として正しいものは？",
+      "choices": [
+        "月ごとの気温を折れ線、降水量を棒で表したグラフ",
+        "年中降水がある亜寒帯の気候（Df）",
+        "年中高温で、雨季と乾季がはっきりしている気候（Aw）",
+        "夏に雨が多く、冬に乾燥する温帯の気候（Cw）"
+      ],
+      "answerIndex": 2,
+      "explanation": "サバナ気候：年中高温で、雨季と乾季がはっきりしている気候（Aw）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_047",
+      "unit": "social.geo.nature.climate.koppen",
+      "category": "knowledge",
+      "prompt": "乾燥帯のうち、短い雨季があり短い草が生える気候（BS）。これを何という？",
+      "choices": [
+        "ステップ気候",
+        "西岸海洋性気候",
+        "熱帯雨林気候",
+        "氷雪気候"
+      ],
+      "answerIndex": 0,
+      "explanation": "ステップ気候：乾燥帯のうち、短い雨季があり短い草が生える気候（BS）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_048",
+      "unit": "social.geo.nature.climate.koppen",
+      "category": "thinking",
+      "prompt": "「ステップ気候」の説明として正しいものは？",
+      "choices": [
+        "乾燥帯のうち、短い雨季があり短い草が生える気候（BS）",
+        "年中降水があり、夏が比較的涼しく冬も温和な温帯の気候（Cfb）",
+        "最暖月の平均気温が0℃未満の寒帯の気候（EF）",
+        "年中高温で、毎月雨が多い気候（Af）"
+      ],
+      "answerIndex": 0,
+      "explanation": "ステップ気候：乾燥帯のうち、短い雨季があり短い草が生える気候（BS）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_049",
+      "unit": "social.geo.nature.climate.koppen",
+      "category": "knowledge",
+      "prompt": "乾燥帯のうち、雨がほとんど降らない気候（BW）。これを何という？",
+      "choices": [
+        "高山気候",
+        "砂漠気候",
+        "ステップ気候",
+        "サバナ気候"
+      ],
+      "answerIndex": 1,
+      "explanation": "砂漠気候：乾燥帯のうち、雨がほとんど降らない気候（BW）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_050",
+      "unit": "social.geo.nature.climate.koppen",
+      "category": "thinking",
+      "prompt": "「砂漠気候」の説明として正しいものは？",
+      "choices": [
+        "年中高温で、雨季と乾季がはっきりしている気候（Aw）",
+        "標高が高く、低緯度でも年中冷涼な気候（H）",
+        "乾燥帯のうち、短い雨季があり短い草が生える気候（BS）",
+        "乾燥帯のうち、雨がほとんど降らない気候（BW）"
+      ],
+      "answerIndex": 3,
+      "explanation": "砂漠気候：乾燥帯のうち、雨がほとんど降らない気候（BW）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_051",
+      "unit": "social.geo.nature.climate.koppen",
+      "category": "knowledge",
+      "prompt": "夏に乾燥し、冬に雨が多い温帯の気候（Cs）。これを何という？",
+      "choices": [
+        "西岸海洋性気候",
+        "地中海性気候",
+        "高山気候",
+        "温暖冬季少雨気候"
+      ],
+      "answerIndex": 1,
+      "explanation": "地中海性気候：夏に乾燥し、冬に雨が多い温帯の気候（Cs）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_052",
+      "unit": "social.geo.nature.climate.koppen",
+      "category": "thinking",
+      "prompt": "「地中海性気候」の説明として正しいものは？",
+      "choices": [
+        "年中降水があり、夏が比較的涼しく冬も温和な温帯の気候（Cfb）",
+        "標高が高く、低緯度でも年中冷涼な気候（H）",
+        "夏に乾燥し、冬に雨が多い温帯の気候（Cs）",
+        "夏に雨が多く、冬に乾燥する温帯の気候（Cw）"
+      ],
+      "answerIndex": 2,
+      "explanation": "地中海性気候：夏に乾燥し、冬に雨が多い温帯の気候（Cs）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_053",
+      "unit": "social.geo.nature.climate.koppen",
+      "category": "knowledge",
+      "prompt": "夏に雨が多く、冬に乾燥する温帯の気候（Cw）。これを何という？",
+      "choices": [
+        "温暖冬季少雨気候",
+        "雨温図",
+        "西岸海洋性気候",
+        "ケッペン"
+      ],
+      "answerIndex": 0,
+      "explanation": "温暖冬季少雨気候：夏に雨が多く、冬に乾燥する温帯の気候（Cw）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_054",
+      "unit": "social.geo.nature.climate.koppen",
+      "category": "thinking",
+      "prompt": "「温暖冬季少雨気候」の説明として正しいものは？",
+      "choices": [
+        "植生の分布をもとに、気温と降水量で世界の気候を区分したドイツの気候学者",
+        "年中降水があり、夏が比較的涼しく冬も温和な温帯の気候（Cfb）",
+        "月ごとの気温を折れ線、降水量を棒で表したグラフ",
+        "夏に雨が多く、冬に乾燥する温帯の気候（Cw）"
+      ],
+      "answerIndex": 3,
+      "explanation": "温暖冬季少雨気候：夏に雨が多く、冬に乾燥する温帯の気候（Cw）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_055",
+      "unit": "social.geo.nature.climate.koppen",
+      "category": "knowledge",
+      "prompt": "年中降水があり、夏が暑い温帯の気候（Cfa）。これを何という？",
+      "choices": [
+        "亜寒帯冬季少雨気候",
+        "氷雪気候",
+        "温暖湿潤気候",
+        "乾燥限界"
+      ],
+      "answerIndex": 2,
+      "explanation": "温暖湿潤気候：年中降水があり、夏が暑い温帯の気候（Cfa）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_056",
+      "unit": "social.geo.nature.climate.koppen",
+      "category": "thinking",
+      "prompt": "「温暖湿潤気候」の説明として正しいものは？",
+      "choices": [
+        "年中降水があり、夏が暑い温帯の気候（Cfa）",
+        "最暖月の平均気温が0℃未満の寒帯の気候（EF）",
+        "年降水量がこの値より少ないと乾燥帯（B）とする境目の値",
+        "冬に乾燥する亜寒帯の気候。シベリア東部などに見られる（Dw）"
+      ],
+      "answerIndex": 0,
+      "explanation": "温暖湿潤気候：年中降水があり、夏が暑い温帯の気候（Cfa）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_057",
+      "unit": "social.geo.nature.climate.koppen",
+      "category": "knowledge",
+      "prompt": "年中降水があり、夏が比較的涼しく冬も温和な温帯の気候（Cfb）。これを何という？",
+      "choices": [
+        "西岸海洋性気候",
+        "サバナ気候",
+        "ツンドラ気候",
+        "高山気候"
+      ],
+      "answerIndex": 0,
+      "explanation": "西岸海洋性気候：年中降水があり、夏が比較的涼しく冬も温和な温帯の気候（Cfb）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_058",
+      "unit": "social.geo.nature.climate.koppen",
+      "category": "thinking",
+      "prompt": "「西岸海洋性気候」の説明として正しいものは？",
+      "choices": [
+        "年中高温で、雨季と乾季がはっきりしている気候（Aw）",
+        "年中降水があり、夏が比較的涼しく冬も温和な温帯の気候（Cfb）",
+        "最暖月の平均気温が0℃以上10℃未満の寒帯の気候（ET）",
+        "標高が高く、低緯度でも年中冷涼な気候（H）"
+      ],
+      "answerIndex": 1,
+      "explanation": "西岸海洋性気候：年中降水があり、夏が比較的涼しく冬も温和な温帯の気候（Cfb）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_059",
+      "unit": "social.geo.nature.climate.koppen",
+      "category": "knowledge",
+      "prompt": "年中降水がある亜寒帯の気候（Df）。これを何という？",
+      "choices": [
+        "亜寒帯湿潤気候",
+        "地中海性気候",
+        "西岸海洋性気候",
+        "ステップ気候"
+      ],
+      "answerIndex": 0,
+      "explanation": "亜寒帯湿潤気候：年中降水がある亜寒帯の気候（Df）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_060",
+      "unit": "social.geo.nature.climate.koppen",
+      "category": "thinking",
+      "prompt": "「亜寒帯湿潤気候」の説明として正しいものは？",
+      "choices": [
+        "年中降水があり、夏が比較的涼しく冬も温和な温帯の気候（Cfb）",
+        "夏に乾燥し、冬に雨が多い温帯の気候（Cs）",
+        "年中降水がある亜寒帯の気候（Df）",
+        "乾燥帯のうち、短い雨季があり短い草が生える気候（BS）"
+      ],
+      "answerIndex": 2,
+      "explanation": "亜寒帯湿潤気候：年中降水がある亜寒帯の気候（Df）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_061",
+      "unit": "social.geo.nature.climate.koppen",
+      "category": "knowledge",
+      "prompt": "冬に乾燥する亜寒帯の気候。シベリア東部などに見られる（Dw）。これを何という？",
+      "choices": [
+        "ステップ気候",
+        "高山気候",
+        "亜寒帯冬季少雨気候",
+        "ケッペン"
+      ],
+      "answerIndex": 2,
+      "explanation": "亜寒帯冬季少雨気候：冬に乾燥する亜寒帯の気候。シベリア東部などに見られる（Dw）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_062",
+      "unit": "social.geo.nature.climate.koppen",
+      "category": "thinking",
+      "prompt": "「亜寒帯冬季少雨気候」の説明として正しいものは？",
+      "choices": [
+        "植生の分布をもとに、気温と降水量で世界の気候を区分したドイツの気候学者",
+        "乾燥帯のうち、短い雨季があり短い草が生える気候（BS）",
+        "冬に乾燥する亜寒帯の気候。シベリア東部などに見られる（Dw）",
+        "標高が高く、低緯度でも年中冷涼な気候（H）"
+      ],
+      "answerIndex": 2,
+      "explanation": "亜寒帯冬季少雨気候：冬に乾燥する亜寒帯の気候。シベリア東部などに見られる（Dw）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_063",
+      "unit": "social.geo.nature.climate.koppen",
+      "category": "knowledge",
+      "prompt": "最暖月の平均気温が0℃以上10℃未満の寒帯の気候（ET）。これを何という？",
+      "choices": [
+        "西岸海洋性気候",
+        "ツンドラ気候",
+        "温暖湿潤気候",
+        "温暖冬季少雨気候"
+      ],
+      "answerIndex": 1,
+      "explanation": "ツンドラ気候：最暖月の平均気温が0℃以上10℃未満の寒帯の気候（ET）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_064",
+      "unit": "social.geo.nature.climate.koppen",
+      "category": "thinking",
+      "prompt": "「ツンドラ気候」の説明として正しいものは？",
+      "choices": [
+        "最暖月の平均気温が0℃以上10℃未満の寒帯の気候（ET）",
+        "年中降水があり、夏が暑い温帯の気候（Cfa）",
+        "夏に雨が多く、冬に乾燥する温帯の気候（Cw）",
+        "年中降水があり、夏が比較的涼しく冬も温和な温帯の気候（Cfb）"
+      ],
+      "answerIndex": 0,
+      "explanation": "ツンドラ気候：最暖月の平均気温が0℃以上10℃未満の寒帯の気候（ET）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_065",
+      "unit": "social.geo.nature.climate.koppen",
+      "category": "knowledge",
+      "prompt": "最暖月の平均気温が0℃未満の寒帯の気候（EF）。これを何という？",
+      "choices": [
+        "亜寒帯湿潤気候",
+        "乾燥限界",
+        "氷雪気候",
+        "ツンドラ気候"
+      ],
+      "answerIndex": 2,
+      "explanation": "氷雪気候：最暖月の平均気温が0℃未満の寒帯の気候（EF）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_066",
+      "unit": "social.geo.nature.climate.koppen",
+      "category": "thinking",
+      "prompt": "「氷雪気候」の説明として正しいものは？",
+      "choices": [
+        "最暖月の平均気温が0℃未満の寒帯の気候（EF）",
+        "年中降水がある亜寒帯の気候（Df）",
+        "年降水量がこの値より少ないと乾燥帯（B）とする境目の値",
+        "最暖月の平均気温が0℃以上10℃未満の寒帯の気候（ET）"
+      ],
+      "answerIndex": 0,
+      "explanation": "氷雪気候：最暖月の平均気温が0℃未満の寒帯の気候（EF）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_067",
+      "unit": "social.geo.nature.climate",
+      "category": "knowledge",
+      "prompt": "標高が高く、低緯度でも年中冷涼な気候（H）。これを何という？",
+      "choices": [
+        "砂漠気候",
+        "高山気候",
+        "温暖湿潤気候",
+        "ツンドラ気候"
+      ],
+      "answerIndex": 1,
+      "explanation": "高山気候：標高が高く、低緯度でも年中冷涼な気候（H）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_068",
+      "unit": "social.geo.nature.climate",
+      "category": "thinking",
+      "prompt": "「高山気候」の説明として正しいものは？",
+      "choices": [
+        "年中降水があり、夏が暑い温帯の気候（Cfa）",
+        "最暖月の平均気温が0℃以上10℃未満の寒帯の気候（ET）",
+        "標高が高く、低緯度でも年中冷涼な気候（H）",
+        "乾燥帯のうち、雨がほとんど降らない気候（BW）"
+      ],
+      "answerIndex": 2,
+      "explanation": "高山気候：標高が高く、低緯度でも年中冷涼な気候（H）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_069",
+      "unit": "social.geo.nature.climate.element",
+      "category": "knowledge",
+      "prompt": "年降水量がこの値より少ないと乾燥帯（B）とする境目の値。これを何という？",
+      "choices": [
+        "温暖冬季少雨気候",
+        "ケッペン",
+        "氷雪気候",
+        "乾燥限界"
+      ],
+      "answerIndex": 3,
+      "explanation": "乾燥限界：年降水量がこの値より少ないと乾燥帯（B）とする境目の値。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_070",
+      "unit": "social.geo.nature.climate.element",
+      "category": "thinking",
+      "prompt": "「乾燥限界」の説明として正しいものは？",
+      "choices": [
+        "夏に雨が多く、冬に乾燥する温帯の気候（Cw）",
+        "年降水量がこの値より少ないと乾燥帯（B）とする境目の値",
+        "最暖月の平均気温が0℃未満の寒帯の気候（EF）",
+        "植生の分布をもとに、気温と降水量で世界の気候を区分したドイツの気候学者"
+      ],
+      "answerIndex": 1,
+      "explanation": "乾燥限界：年降水量がこの値より少ないと乾燥帯（B）とする境目の値。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_071",
+      "unit": "social.geo.nature.climate.element",
+      "category": "knowledge",
+      "prompt": "縦軸に気温、横軸に降水量をとり、各月の値を結んだグラフ。これを何という？",
+      "choices": [
+        "ハイサーグラフ",
+        "西岸海洋性気候",
+        "砂漠気候",
+        "氷雪気候"
+      ],
+      "answerIndex": 0,
+      "explanation": "ハイサーグラフ：縦軸に気温、横軸に降水量をとり、各月の値を結んだグラフ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_072",
+      "unit": "social.geo.nature.climate.graph",
+      "category": "thinking",
+      "prompt": "「ハイサーグラフ」の説明として正しいものは？",
+      "choices": [
+        "最暖月の平均気温が0℃未満の寒帯の気候（EF）",
+        "年中降水があり、夏が比較的涼しく冬も温和な温帯の気候（Cfb）",
+        "乾燥帯のうち、雨がほとんど降らない気候（BW）",
+        "縦軸に気温、横軸に降水量をとり、各月の値を結んだグラフ"
+      ],
+      "answerIndex": 3,
+      "explanation": "ハイサーグラフ：縦軸に気温、横軸に降水量をとり、各月の値を結んだグラフ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_073",
+      "unit": "social.geo.nature.climate.element",
+      "category": "knowledge",
+      "prompt": "月ごとの気温を折れ線、降水量を棒で表したグラフ。これを何という？",
+      "choices": [
+        "温暖冬季少雨気候",
+        "ケッペン",
+        "雨温図",
+        "ハイサーグラフ"
+      ],
+      "answerIndex": 2,
+      "explanation": "雨温図：月ごとの気温を折れ線、降水量を棒で表したグラフ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    },
+    {
+      "id": "social_shonan_104_geo_01_074",
+      "unit": "social.geo.nature.climate.graph",
+      "category": "thinking",
+      "prompt": "「雨温図」の説明として正しいものは？",
+      "choices": [
+        "縦軸に気温、横軸に降水量をとり、各月の値を結んだグラフ",
+        "月ごとの気温を折れ線、降水量を棒で表したグラフ",
+        "植生の分布をもとに、気温と降水量で世界の気候を区分したドイツの気候学者",
+        "夏に雨が多く、冬に乾燥する温帯の気候（Cw）"
+      ],
+      "answerIndex": 1,
+      "explanation": "雨温図：月ごとの気温を折れ線、降水量を棒で表したグラフ。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "geography_general"
+      ]
+    }
+  ]
+}

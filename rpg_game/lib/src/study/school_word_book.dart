@@ -74,6 +74,30 @@ abstract final class SchoolWordBooks {
       subjectId: 'ronhyo1',
       vault: 'school-word-5',
     ),
+    SchoolWordBook(
+      id: 'kokyo-terms',
+      title: '公共 用語（消費者・労働・社会保障・国際経済）',
+      subjectId: 'public_economy',
+      vault: 'school-word-6',
+    ),
+    SchoolWordBook(
+      id: 'bio-terms',
+      title: '生物基礎 用語（体内環境・免疫・植生・生態系）',
+      subjectId: 'biology_basic',
+      vault: 'school-word-7',
+    ),
+    SchoolWordBook(
+      id: 'joho-terms',
+      title: '情報Ⅰ 用語（情報デザイン・コンピュータ・プログラム）',
+      subjectId: 'information1',
+      vault: 'school-word-8',
+    ),
+    SchoolWordBook(
+      id: 'chiri-terms',
+      title: '地理総合 用語（気候・植生と土壌・衣食住・宗教・言語）',
+      subjectId: 'geography_general',
+      vault: 'school-word-9',
+    ),
   ];
 
   static List<SchoolWordBook> of(String subjectId) => [

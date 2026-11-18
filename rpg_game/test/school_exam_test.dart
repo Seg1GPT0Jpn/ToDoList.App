@@ -97,9 +97,11 @@ void main() {
       expect(s.status, RangeStatus.entered);
       expect(s.materials.map((m) => m.range),
           containsAll(['P.203~289', 'P.250~332', '冊子No.3すべて']));
-      // 範囲表で空欄の科目は未入力のまま（推測で埋めない）
-      expect(p.subject('biology_basic').status, RangeStatus.empty);
-      expect(p.subject('biology_basic').hasRange, isFalse);
+      // 11/18 版の範囲表で入った科目
+      expect(p.subject('biology_basic').materials.map((m) => m.range),
+          contains('P.98~211'));
+      expect(p.subject('information1').materials.map((m) => m.name),
+          contains('プログラミングのエッセンス'));
     });
 
     test('前に作ったテストに、範囲表の問題セットを足せる（消さない・二度足さない）', () {

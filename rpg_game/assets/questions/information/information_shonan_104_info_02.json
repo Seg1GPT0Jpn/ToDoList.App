@@ -1,0 +1,1352 @@
+{
+  "setId": "information_shonan_104_info_02",
+  "worldId": "information",
+  "origin": "original",
+  "version": 1,
+  "questions": [
+    {
+      "id": "information_shonan_104_info_02_001",
+      "unit": "information.info.computer.logic.gate",
+      "category": "knowledge",
+      "prompt": "AND・OR・NOTなどを組み合わせて、論理演算を行う回路。これを何という？",
+      "choices": [
+        "AND回路",
+        "全加算器",
+        "半加算器",
+        "論理回路"
+      ],
+      "answerIndex": 3,
+      "explanation": "論理回路：AND・OR・NOTなどを組み合わせて、論理演算を行う回路。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_002",
+      "unit": "information.info.computer.logic.gate",
+      "category": "thinking",
+      "prompt": "「論理回路」の説明として正しいものは？",
+      "choices": [
+        "2つの1桁の2進数を足して、和と桁上がりを出す回路",
+        "入力がすべて1のときだけ1を出力する回路（論理積）",
+        "AND・OR・NOTなどを組み合わせて、論理演算を行う回路",
+        "下の桁からの桁上がりも含めて、1桁の2進数を足す回路"
+      ],
+      "answerIndex": 2,
+      "explanation": "論理回路：AND・OR・NOTなどを組み合わせて、論理演算を行う回路。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_003",
+      "unit": "information.info.programming.program.trace",
+      "category": "knowledge",
+      "prompt": "入力がすべて1のときだけ1を出力する回路（論理積）。これを何という？",
+      "choices": [
+        "真理値表",
+        "AND回路",
+        "OR回路",
+        "半加算器"
+      ],
+      "answerIndex": 1,
+      "explanation": "AND回路：入力がすべて1のときだけ1を出力する回路（論理積）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_004",
+      "unit": "information.info.computer.logic.gate",
+      "category": "thinking",
+      "prompt": "「AND回路」の説明として正しいものは？",
+      "choices": [
+        "論理回路の入力と出力のすべての組み合わせを表にしたもの",
+        "入力のどれか1つでも1なら1を出力する回路（論理和）",
+        "2つの1桁の2進数を足して、和と桁上がりを出す回路",
+        "入力がすべて1のときだけ1を出力する回路（論理積）"
+      ],
+      "answerIndex": 3,
+      "explanation": "AND回路：入力がすべて1のときだけ1を出力する回路（論理積）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_005",
+      "unit": "information.info.programming.program.trace",
+      "category": "knowledge",
+      "prompt": "入力のどれか1つでも1なら1を出力する回路（論理和）。これを何という？",
+      "choices": [
+        "OR回路",
+        "XOR回路",
+        "NOT回路",
+        "全加算器"
+      ],
+      "answerIndex": 0,
+      "explanation": "OR回路：入力のどれか1つでも1なら1を出力する回路（論理和）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_006",
+      "unit": "information.info.computer.logic.gate",
+      "category": "thinking",
+      "prompt": "「OR回路」の説明として正しいものは？",
+      "choices": [
+        "入力のどれか1つでも1なら1を出力する回路（論理和）",
+        "2つの入力が異なるときだけ1を出力する回路（排他的論理和）",
+        "下の桁からの桁上がりも含めて、1桁の2進数を足す回路",
+        "入力が1なら0、0なら1を出力する回路（否定）"
+      ],
+      "answerIndex": 0,
+      "explanation": "OR回路：入力のどれか1つでも1なら1を出力する回路（論理和）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_007",
+      "unit": "information.info.programming.program.trace",
+      "category": "knowledge",
+      "prompt": "入力が1なら0、0なら1を出力する回路（否定）。これを何という？",
+      "choices": [
+        "NAND回路",
+        "論理回路",
+        "NOT回路",
+        "XOR回路"
+      ],
+      "answerIndex": 2,
+      "explanation": "NOT回路：入力が1なら0、0なら1を出力する回路（否定）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_008",
+      "unit": "information.info.computer.logic.gate",
+      "category": "thinking",
+      "prompt": "「NOT回路」の説明として正しいものは？",
+      "choices": [
+        "入力が1なら0、0なら1を出力する回路（否定）",
+        "AND・OR・NOTなどを組み合わせて、論理演算を行う回路",
+        "AND回路の出力を反転した回路",
+        "2つの入力が異なるときだけ1を出力する回路（排他的論理和）"
+      ],
+      "answerIndex": 0,
+      "explanation": "NOT回路：入力が1なら0、0なら1を出力する回路（否定）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_009",
+      "unit": "information.info.programming.program.trace",
+      "category": "knowledge",
+      "prompt": "AND回路の出力を反転した回路。これを何という？",
+      "choices": [
+        "NOT回路",
+        "NAND回路",
+        "OR回路",
+        "真理値表"
+      ],
+      "answerIndex": 1,
+      "explanation": "NAND回路：AND回路の出力を反転した回路。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_010",
+      "unit": "information.info.programming.program.trace",
+      "category": "thinking",
+      "prompt": "「NAND回路」の説明として正しいものは？",
+      "choices": [
+        "論理回路の入力と出力のすべての組み合わせを表にしたもの",
+        "入力が1なら0、0なら1を出力する回路（否定）",
+        "AND回路の出力を反転した回路",
+        "入力のどれか1つでも1なら1を出力する回路（論理和）"
+      ],
+      "answerIndex": 2,
+      "explanation": "NAND回路：AND回路の出力を反転した回路。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_011",
+      "unit": "information.info.programming.program.trace",
+      "category": "knowledge",
+      "prompt": "2つの入力が異なるときだけ1を出力する回路（排他的論理和）。これを何という？",
+      "choices": [
+        "全加算器",
+        "半加算器",
+        "真理値表",
+        "XOR回路"
+      ],
+      "answerIndex": 3,
+      "explanation": "XOR回路：2つの入力が異なるときだけ1を出力する回路（排他的論理和）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_012",
+      "unit": "information.info.computer.logic.gate",
+      "category": "thinking",
+      "prompt": "「XOR回路」の説明として正しいものは？",
+      "choices": [
+        "下の桁からの桁上がりも含めて、1桁の2進数を足す回路",
+        "論理回路の入力と出力のすべての組み合わせを表にしたもの",
+        "2つの入力が異なるときだけ1を出力する回路（排他的論理和）",
+        "2つの1桁の2進数を足して、和と桁上がりを出す回路"
+      ],
+      "answerIndex": 2,
+      "explanation": "XOR回路：2つの入力が異なるときだけ1を出力する回路（排他的論理和）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_013",
+      "unit": "information.info.computer.logic.gate",
+      "category": "knowledge",
+      "prompt": "論理回路の入力と出力のすべての組み合わせを表にしたもの。これを何という？",
+      "choices": [
+        "真理値表",
+        "NAND回路",
+        "NOT回路",
+        "XOR回路"
+      ],
+      "answerIndex": 0,
+      "explanation": "真理値表：論理回路の入力と出力のすべての組み合わせを表にしたもの。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_014",
+      "unit": "information.info.computer.logic.gate",
+      "category": "thinking",
+      "prompt": "「真理値表」の説明として正しいものは？",
+      "choices": [
+        "論理回路の入力と出力のすべての組み合わせを表にしたもの",
+        "2つの入力が異なるときだけ1を出力する回路（排他的論理和）",
+        "入力が1なら0、0なら1を出力する回路（否定）",
+        "AND回路の出力を反転した回路"
+      ],
+      "answerIndex": 0,
+      "explanation": "真理値表：論理回路の入力と出力のすべての組み合わせを表にしたもの。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_015",
+      "unit": "information.info.computer.digital.binary",
+      "category": "knowledge",
+      "prompt": "2つの1桁の2進数を足して、和と桁上がりを出す回路。これを何という？",
+      "choices": [
+        "真理値表",
+        "半加算器",
+        "NAND回路",
+        "論理回路"
+      ],
+      "answerIndex": 1,
+      "explanation": "半加算器：2つの1桁の2進数を足して、和と桁上がりを出す回路。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_016",
+      "unit": "information.info.computer.digital.calc",
+      "category": "thinking",
+      "prompt": "「半加算器」の説明として正しいものは？",
+      "choices": [
+        "2つの1桁の2進数を足して、和と桁上がりを出す回路",
+        "AND回路の出力を反転した回路",
+        "AND・OR・NOTなどを組み合わせて、論理演算を行う回路",
+        "論理回路の入力と出力のすべての組み合わせを表にしたもの"
+      ],
+      "answerIndex": 0,
+      "explanation": "半加算器：2つの1桁の2進数を足して、和と桁上がりを出す回路。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_017",
+      "unit": "information.info.computer.digital.binary",
+      "category": "knowledge",
+      "prompt": "下の桁からの桁上がりも含めて、1桁の2進数を足す回路。これを何という？",
+      "choices": [
+        "全加算器",
+        "NOT回路",
+        "OR回路",
+        "XOR回路"
+      ],
+      "answerIndex": 0,
+      "explanation": "全加算器：下の桁からの桁上がりも含めて、1桁の2進数を足す回路。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_018",
+      "unit": "information.info.computer.digital.calc",
+      "category": "thinking",
+      "prompt": "「全加算器」の説明として正しいものは？",
+      "choices": [
+        "下の桁からの桁上がりも含めて、1桁の2進数を足す回路",
+        "2つの入力が異なるときだけ1を出力する回路（排他的論理和）",
+        "入力が1なら0、0なら1を出力する回路（否定）",
+        "入力のどれか1つでも1なら1を出力する回路（論理和）"
+      ],
+      "answerIndex": 0,
+      "explanation": "全加算器：下の桁からの桁上がりも含めて、1桁の2進数を足す回路。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_019",
+      "unit": "information.info.programming.algorithm.basic",
+      "category": "knowledge",
+      "prompt": "問題を解決するための、手順を明確にしたもの。これを何という？",
+      "choices": [
+        "アルゴリズム",
+        "線形探索",
+        "戻り値",
+        "選択ソート"
+      ],
+      "answerIndex": 0,
+      "explanation": "アルゴリズム：問題を解決するための、手順を明確にしたもの。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_020",
+      "unit": "information.info.programming.algorithm.basic",
+      "category": "thinking",
+      "prompt": "「アルゴリズム」の説明として正しいものは？",
+      "choices": [
+        "データを先頭から順番に調べて、目的の値をさがす方法",
+        "問題を解決するための、手順を明確にしたもの",
+        "関数が処理の結果として返す値",
+        "最小（最大）の値を選んで先頭と入れかえることをくり返して、データを並べかえる方法"
+      ],
+      "answerIndex": 1,
+      "explanation": "アルゴリズム：問題を解決するための、手順を明確にしたもの。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_021",
+      "unit": "information.info.programming.algorithm.basic",
+      "category": "knowledge",
+      "prompt": "アルゴリズムを、決まった記号を使って表した図（流れ図）。これを何という？",
+      "choices": [
+        "反復構造",
+        "フローチャート",
+        "代入",
+        "バグ"
+      ],
+      "answerIndex": 1,
+      "explanation": "フローチャート：アルゴリズムを、決まった記号を使って表した図（流れ図）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_022",
+      "unit": "information.info.programming.algorithm.basic",
+      "category": "thinking",
+      "prompt": "「フローチャート」の説明として正しいものは？",
+      "choices": [
+        "アルゴリズムを、決まった記号を使って表した図（流れ図）",
+        "変数に値を入れること",
+        "条件を満たす間、処理をくり返す、プログラムの基本構造",
+        "プログラムの誤り"
+      ],
+      "answerIndex": 0,
+      "explanation": "フローチャート：アルゴリズムを、決まった記号を使って表した図（流れ図）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_023",
+      "unit": "information.info.data.manage.database",
+      "category": "knowledge",
+      "prompt": "処理の流れを表すUMLの図。これを何という？",
+      "choices": [
+        "アクティビティ図",
+        "代入",
+        "反復構造",
+        "アルゴリズム"
+      ],
+      "answerIndex": 0,
+      "explanation": "アクティビティ図：処理の流れを表すUMLの図。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_024",
+      "unit": "information.info.data.manage.database",
+      "category": "thinking",
+      "prompt": "「アクティビティ図」の説明として正しいものは？",
+      "choices": [
+        "変数に値を入れること",
+        "処理の流れを表すUMLの図",
+        "条件を満たす間、処理をくり返す、プログラムの基本構造",
+        "問題を解決するための、手順を明確にしたもの"
+      ],
+      "answerIndex": 1,
+      "explanation": "アクティビティ図：処理の流れを表すUMLの図。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_025",
+      "unit": "information.info.data.manage.database",
+      "category": "knowledge",
+      "prompt": "ものの状態が、どんなできごとでどう移り変わるかを表した図。これを何という？",
+      "choices": [
+        "状態遷移図",
+        "関数",
+        "反復構造",
+        "分岐構造"
+      ],
+      "answerIndex": 0,
+      "explanation": "状態遷移図：ものの状態が、どんなできごとでどう移り変わるかを表した図。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_026",
+      "unit": "information.info.data.manage.database",
+      "category": "thinking",
+      "prompt": "「状態遷移図」の説明として正しいものは？",
+      "choices": [
+        "条件を満たす間、処理をくり返す、プログラムの基本構造",
+        "条件によって実行する処理を変える、プログラムの基本構造（選択構造）",
+        "決まった処理をまとめ、名前をつけて呼び出せるようにしたもの",
+        "ものの状態が、どんなできごとでどう移り変わるかを表した図"
+      ],
+      "answerIndex": 3,
+      "explanation": "状態遷移図：ものの状態が、どんなできごとでどう移り変わるかを表した図。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_027",
+      "unit": "information.info.programming.algorithm.basic",
+      "category": "knowledge",
+      "prompt": "処理を上から順番に実行する、プログラムの基本構造。これを何という？",
+      "choices": [
+        "乱数",
+        "順次構造",
+        "引数",
+        "選択ソート"
+      ],
+      "answerIndex": 1,
+      "explanation": "順次構造：処理を上から順番に実行する、プログラムの基本構造。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_028",
+      "unit": "information.info.programming.algorithm.basic",
+      "category": "thinking",
+      "prompt": "「順次構造」の説明として正しいものは？",
+      "choices": [
+        "最小（最大）の値を選んで先頭と入れかえることをくり返して、データを並べかえる方法",
+        "規則性がなく、予測できない数",
+        "関数に渡す値",
+        "処理を上から順番に実行する、プログラムの基本構造"
+      ],
+      "answerIndex": 3,
+      "explanation": "順次構造：処理を上から順番に実行する、プログラムの基本構造。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_029",
+      "unit": "information.info.programming.algorithm.basic",
+      "category": "knowledge",
+      "prompt": "条件によって実行する処理を変える、プログラムの基本構造（選択構造）。これを何という？",
+      "choices": [
+        "バグ",
+        "分岐構造",
+        "二分探索",
+        "反復構造"
+      ],
+      "answerIndex": 1,
+      "explanation": "分岐構造：条件によって実行する処理を変える、プログラムの基本構造（選択構造）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_030",
+      "unit": "information.info.programming.algorithm.basic",
+      "category": "thinking",
+      "prompt": "「分岐構造」の説明として正しいものは？",
+      "choices": [
+        "プログラムの誤り",
+        "並べかえたデータの中央の値と比べ、さがす範囲を半分ずつにしぼっていく方法",
+        "条件を満たす間、処理をくり返す、プログラムの基本構造",
+        "条件によって実行する処理を変える、プログラムの基本構造（選択構造）"
+      ],
+      "answerIndex": 3,
+      "explanation": "分岐構造：条件によって実行する処理を変える、プログラムの基本構造（選択構造）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_031",
+      "unit": "information.info.programming.algorithm.basic",
+      "category": "knowledge",
+      "prompt": "条件を満たす間、処理をくり返す、プログラムの基本構造。これを何という？",
+      "choices": [
+        "線形探索",
+        "引数",
+        "反復構造",
+        "選択ソート"
+      ],
+      "answerIndex": 2,
+      "explanation": "反復構造：条件を満たす間、処理をくり返す、プログラムの基本構造。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_032",
+      "unit": "information.info.programming.algorithm.basic",
+      "category": "thinking",
+      "prompt": "「反復構造」の説明として正しいものは？",
+      "choices": [
+        "最小（最大）の値を選んで先頭と入れかえることをくり返して、データを並べかえる方法",
+        "関数に渡す値",
+        "データを先頭から順番に調べて、目的の値をさがす方法",
+        "条件を満たす間、処理をくり返す、プログラムの基本構造"
+      ],
+      "answerIndex": 3,
+      "explanation": "反復構造：条件を満たす間、処理をくり返す、プログラムの基本構造。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_033",
+      "unit": "information.info.programming.program.variable",
+      "category": "knowledge",
+      "prompt": "プログラムで、値を入れておく名前のついた入れ物。これを何という？",
+      "choices": [
+        "二分探索",
+        "引数",
+        "デバッグ",
+        "変数"
+      ],
+      "answerIndex": 3,
+      "explanation": "変数：プログラムで、値を入れておく名前のついた入れ物。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_034",
+      "unit": "information.info.programming.program.variable",
+      "category": "thinking",
+      "prompt": "「変数」の説明として正しいものは？",
+      "choices": [
+        "並べかえたデータの中央の値と比べ、さがす範囲を半分ずつにしぼっていく方法",
+        "関数に渡す値",
+        "プログラムで、値を入れておく名前のついた入れ物",
+        "プログラムの誤りをさがして直すこと"
+      ],
+      "answerIndex": 2,
+      "explanation": "変数：プログラムで、値を入れておく名前のついた入れ物。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_035",
+      "unit": "information.info.programming.program.variable",
+      "category": "knowledge",
+      "prompt": "変数に値を入れること。これを何という？",
+      "choices": [
+        "分岐構造",
+        "戻り値",
+        "二分探索",
+        "代入"
+      ],
+      "answerIndex": 3,
+      "explanation": "代入：変数に値を入れること。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_036",
+      "unit": "information.info.programming.program.variable",
+      "category": "thinking",
+      "prompt": "「代入」の説明として正しいものは？",
+      "choices": [
+        "条件によって実行する処理を変える、プログラムの基本構造（選択構造）",
+        "関数が処理の結果として返す値",
+        "並べかえたデータの中央の値と比べ、さがす範囲を半分ずつにしぼっていく方法",
+        "変数に値を入れること"
+      ],
+      "answerIndex": 3,
+      "explanation": "代入：変数に値を入れること。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_037",
+      "unit": "information.info.programming.program.variable",
+      "category": "knowledge",
+      "prompt": "同じ種類の複数の値を、番号（添字）をつけてまとめて扱うもの。これを何という？",
+      "choices": [
+        "変数",
+        "配列",
+        "疑似言語",
+        "選択ソート"
+      ],
+      "answerIndex": 1,
+      "explanation": "配列：同じ種類の複数の値を、番号（添字）をつけてまとめて扱うもの。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_038",
+      "unit": "information.info.programming.program.variable",
+      "category": "thinking",
+      "prompt": "「配列」の説明として正しいものは？",
+      "choices": [
+        "プログラムで、値を入れておく名前のついた入れ物",
+        "同じ種類の複数の値を、番号（添字）をつけてまとめて扱うもの",
+        "最小（最大）の値を選んで先頭と入れかえることをくり返して、データを並べかえる方法",
+        "特定のプログラミング言語に依存せず、アルゴリズムを表すための言語（共通テスト用プログラム表記など）"
+      ],
+      "answerIndex": 1,
+      "explanation": "配列：同じ種類の複数の値を、番号（添字）をつけてまとめて扱うもの。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_039",
+      "unit": "information.info.programming.program.variable",
+      "category": "knowledge",
+      "prompt": "配列の要素を指定するための番号（インデックス）。これを何という？",
+      "choices": [
+        "代入",
+        "選択ソート",
+        "バブルソート",
+        "添字"
+      ],
+      "answerIndex": 3,
+      "explanation": "添字：配列の要素を指定するための番号（インデックス）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_040",
+      "unit": "information.info.programming.program.variable",
+      "category": "thinking",
+      "prompt": "「添字」の説明として正しいものは？",
+      "choices": [
+        "最小（最大）の値を選んで先頭と入れかえることをくり返して、データを並べかえる方法",
+        "変数に値を入れること",
+        "配列の要素を指定するための番号（インデックス）",
+        "隣どうしの値を比べて入れかえることをくり返して、データを並べかえる方法"
+      ],
+      "answerIndex": 2,
+      "explanation": "添字：配列の要素を指定するための番号（インデックス）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_041",
+      "unit": "information.info.programming.program.function",
+      "category": "knowledge",
+      "prompt": "決まった処理をまとめ、名前をつけて呼び出せるようにしたもの。これを何という？",
+      "choices": [
+        "引数",
+        "乱数",
+        "選択ソート",
+        "関数"
+      ],
+      "answerIndex": 3,
+      "explanation": "関数：決まった処理をまとめ、名前をつけて呼び出せるようにしたもの。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_042",
+      "unit": "information.info.programming.program.function",
+      "category": "thinking",
+      "prompt": "「関数」の説明として正しいものは？",
+      "choices": [
+        "決まった処理をまとめ、名前をつけて呼び出せるようにしたもの",
+        "規則性がなく、予測できない数",
+        "最小（最大）の値を選んで先頭と入れかえることをくり返して、データを並べかえる方法",
+        "関数に渡す値"
+      ],
+      "answerIndex": 0,
+      "explanation": "関数：決まった処理をまとめ、名前をつけて呼び出せるようにしたもの。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_043",
+      "unit": "information.info.programming.program.function",
+      "category": "knowledge",
+      "prompt": "関数に渡す値。これを何という？",
+      "choices": [
+        "デバッグ",
+        "関数",
+        "二分探索",
+        "引数"
+      ],
+      "answerIndex": 3,
+      "explanation": "引数：関数に渡す値。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_044",
+      "unit": "information.info.programming.program.function",
+      "category": "thinking",
+      "prompt": "「引数」の説明として正しいものは？",
+      "choices": [
+        "プログラムの誤りをさがして直すこと",
+        "決まった処理をまとめ、名前をつけて呼び出せるようにしたもの",
+        "並べかえたデータの中央の値と比べ、さがす範囲を半分ずつにしぼっていく方法",
+        "関数に渡す値"
+      ],
+      "answerIndex": 3,
+      "explanation": "引数：関数に渡す値。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_045",
+      "unit": "information.info.programming.program.function",
+      "category": "knowledge",
+      "prompt": "関数が処理の結果として返す値。これを何という？",
+      "choices": [
+        "二分探索",
+        "戻り値",
+        "バブルソート",
+        "バグ"
+      ],
+      "answerIndex": 1,
+      "explanation": "戻り値：関数が処理の結果として返す値。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_046",
+      "unit": "information.info.programming.program.function",
+      "category": "thinking",
+      "prompt": "「戻り値」の説明として正しいものは？",
+      "choices": [
+        "隣どうしの値を比べて入れかえることをくり返して、データを並べかえる方法",
+        "プログラムの誤り",
+        "並べかえたデータの中央の値と比べ、さがす範囲を半分ずつにしぼっていく方法",
+        "関数が処理の結果として返す値"
+      ],
+      "answerIndex": 3,
+      "explanation": "戻り値：関数が処理の結果として返す値。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_047",
+      "unit": "information.info.programming.algorithm.search",
+      "category": "knowledge",
+      "prompt": "データを先頭から順番に調べて、目的の値をさがす方法。これを何という？",
+      "choices": [
+        "変数",
+        "乱数",
+        "添字",
+        "線形探索"
+      ],
+      "answerIndex": 3,
+      "explanation": "線形探索：データを先頭から順番に調べて、目的の値をさがす方法。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_048",
+      "unit": "information.info.programming.algorithm.search",
+      "category": "thinking",
+      "prompt": "「線形探索」の説明として正しいものは？",
+      "choices": [
+        "データを先頭から順番に調べて、目的の値をさがす方法",
+        "配列の要素を指定するための番号（インデックス）",
+        "プログラムで、値を入れておく名前のついた入れ物",
+        "規則性がなく、予測できない数"
+      ],
+      "answerIndex": 0,
+      "explanation": "線形探索：データを先頭から順番に調べて、目的の値をさがす方法。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_049",
+      "unit": "information.info.programming.algorithm.search",
+      "category": "knowledge",
+      "prompt": "並べかえたデータの中央の値と比べ、さがす範囲を半分ずつにしぼっていく方法。これを何という？",
+      "choices": [
+        "二分探索",
+        "分岐構造",
+        "トレース",
+        "代入"
+      ],
+      "answerIndex": 0,
+      "explanation": "二分探索：並べかえたデータの中央の値と比べ、さがす範囲を半分ずつにしぼっていく方法。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_050",
+      "unit": "information.info.programming.algorithm.search",
+      "category": "thinking",
+      "prompt": "「二分探索」の説明として正しいものは？",
+      "choices": [
+        "並べかえたデータの中央の値と比べ、さがす範囲を半分ずつにしぼっていく方法",
+        "プログラムを1行ずつたどり、変数の値の変化を確かめること",
+        "変数に値を入れること",
+        "条件によって実行する処理を変える、プログラムの基本構造（選択構造）"
+      ],
+      "answerIndex": 0,
+      "explanation": "二分探索：並べかえたデータの中央の値と比べ、さがす範囲を半分ずつにしぼっていく方法。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_051",
+      "unit": "information.info.programming.algorithm.sort",
+      "category": "knowledge",
+      "prompt": "隣どうしの値を比べて入れかえることをくり返して、データを並べかえる方法。これを何という？",
+      "choices": [
+        "バブルソート",
+        "二分探索",
+        "選択ソート",
+        "配列"
+      ],
+      "answerIndex": 0,
+      "explanation": "バブルソート：隣どうしの値を比べて入れかえることをくり返して、データを並べかえる方法。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_052",
+      "unit": "information.info.programming.algorithm.sort",
+      "category": "thinking",
+      "prompt": "「バブルソート」の説明として正しいものは？",
+      "choices": [
+        "並べかえたデータの中央の値と比べ、さがす範囲を半分ずつにしぼっていく方法",
+        "最小（最大）の値を選んで先頭と入れかえることをくり返して、データを並べかえる方法",
+        "同じ種類の複数の値を、番号（添字）をつけてまとめて扱うもの",
+        "隣どうしの値を比べて入れかえることをくり返して、データを並べかえる方法"
+      ],
+      "answerIndex": 3,
+      "explanation": "バブルソート：隣どうしの値を比べて入れかえることをくり返して、データを並べかえる方法。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_053",
+      "unit": "information.info.programming.algorithm.sort",
+      "category": "knowledge",
+      "prompt": "最小（最大）の値を選んで先頭と入れかえることをくり返して、データを並べかえる方法。これを何という？",
+      "choices": [
+        "バブルソート",
+        "疑似言語",
+        "バグ",
+        "選択ソート"
+      ],
+      "answerIndex": 3,
+      "explanation": "選択ソート：最小（最大）の値を選んで先頭と入れかえることをくり返して、データを並べかえる方法。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_054",
+      "unit": "information.info.programming.algorithm.sort",
+      "category": "thinking",
+      "prompt": "「選択ソート」の説明として正しいものは？",
+      "choices": [
+        "特定のプログラミング言語に依存せず、アルゴリズムを表すための言語（共通テスト用プログラム表記など）",
+        "隣どうしの値を比べて入れかえることをくり返して、データを並べかえる方法",
+        "最小（最大）の値を選んで先頭と入れかえることをくり返して、データを並べかえる方法",
+        "プログラムの誤り"
+      ],
+      "answerIndex": 2,
+      "explanation": "選択ソート：最小（最大）の値を選んで先頭と入れかえることをくり返して、データを並べかえる方法。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_055",
+      "unit": "information.info.programming.program",
+      "category": "knowledge",
+      "prompt": "プログラムの誤り。これを何という？",
+      "choices": [
+        "デバッグ",
+        "戻り値",
+        "トレース",
+        "バグ"
+      ],
+      "answerIndex": 3,
+      "explanation": "バグ：プログラムの誤り。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_056",
+      "unit": "information.info.programming.program",
+      "category": "thinking",
+      "prompt": "「バグ」の説明として正しいものは？",
+      "choices": [
+        "プログラムを1行ずつたどり、変数の値の変化を確かめること",
+        "プログラムの誤りをさがして直すこと",
+        "関数が処理の結果として返す値",
+        "プログラムの誤り"
+      ],
+      "answerIndex": 3,
+      "explanation": "バグ：プログラムの誤り。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_057",
+      "unit": "information.info.programming.program",
+      "category": "knowledge",
+      "prompt": "プログラムの誤りをさがして直すこと。これを何という？",
+      "choices": [
+        "反復構造",
+        "配列",
+        "デバッグ",
+        "二分探索"
+      ],
+      "answerIndex": 2,
+      "explanation": "デバッグ：プログラムの誤りをさがして直すこと。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_058",
+      "unit": "information.info.programming.program",
+      "category": "thinking",
+      "prompt": "「デバッグ」の説明として正しいものは？",
+      "choices": [
+        "同じ種類の複数の値を、番号（添字）をつけてまとめて扱うもの",
+        "並べかえたデータの中央の値と比べ、さがす範囲を半分ずつにしぼっていく方法",
+        "条件を満たす間、処理をくり返す、プログラムの基本構造",
+        "プログラムの誤りをさがして直すこと"
+      ],
+      "answerIndex": 3,
+      "explanation": "デバッグ：プログラムの誤りをさがして直すこと。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_059",
+      "unit": "information.info.programming.program.variable",
+      "category": "knowledge",
+      "prompt": "プログラムを1行ずつたどり、変数の値の変化を確かめること。これを何という？",
+      "choices": [
+        "トレース",
+        "乱数",
+        "バブルソート",
+        "関数"
+      ],
+      "answerIndex": 0,
+      "explanation": "トレース：プログラムを1行ずつたどり、変数の値の変化を確かめること。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_060",
+      "unit": "information.info.programming.program.trace",
+      "category": "thinking",
+      "prompt": "「トレース」の説明として正しいものは？",
+      "choices": [
+        "隣どうしの値を比べて入れかえることをくり返して、データを並べかえる方法",
+        "プログラムを1行ずつたどり、変数の値の変化を確かめること",
+        "規則性がなく、予測できない数",
+        "決まった処理をまとめ、名前をつけて呼び出せるようにしたもの"
+      ],
+      "answerIndex": 1,
+      "explanation": "トレース：プログラムを1行ずつたどり、変数の値の変化を確かめること。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_061",
+      "unit": "information.info.data.manage.database",
+      "category": "knowledge",
+      "prompt": "特定のプログラミング言語に依存せず、アルゴリズムを表すための言語（共通テスト用プログラム表記など）。これを何という？",
+      "choices": [
+        "アクティビティ図",
+        "添字",
+        "疑似言語",
+        "デバッグ"
+      ],
+      "answerIndex": 2,
+      "explanation": "疑似言語：特定のプログラミング言語に依存せず、アルゴリズムを表すための言語（共通テスト用プログラム表記など）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_062",
+      "unit": "information.info.data.manage.database",
+      "category": "thinking",
+      "prompt": "「疑似言語」の説明として正しいものは？",
+      "choices": [
+        "プログラムの誤りをさがして直すこと",
+        "処理の流れを表すUMLの図",
+        "特定のプログラミング言語に依存せず、アルゴリズムを表すための言語（共通テスト用プログラム表記など）",
+        "配列の要素を指定するための番号（インデックス）"
+      ],
+      "answerIndex": 2,
+      "explanation": "疑似言語：特定のプログラミング言語に依存せず、アルゴリズムを表すための言語（共通テスト用プログラム表記など）。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_063",
+      "unit": "information.info.society.problem.model",
+      "category": "knowledge",
+      "prompt": "規則性がなく、予測できない数。これを何という？",
+      "choices": [
+        "アルゴリズム",
+        "反復構造",
+        "状態遷移図",
+        "乱数"
+      ],
+      "answerIndex": 3,
+      "explanation": "乱数：規則性がなく、予測できない数。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    },
+    {
+      "id": "information_shonan_104_info_02_064",
+      "unit": "information.info.society.problem.model",
+      "category": "thinking",
+      "prompt": "「乱数」の説明として正しいものは？",
+      "choices": [
+        "問題を解決するための、手順を明確にしたもの",
+        "条件を満たす間、処理をくり返す、プログラムの基本構造",
+        "ものの状態が、どんなできごとでどう移り変わるかを表した図",
+        "規則性がなく、予測できない数"
+      ],
+      "answerIndex": 3,
+      "explanation": "乱数：規則性がなく、予測できない数。",
+      "targetGrade": "1",
+      "phase": "teikiTest",
+      "tags": [
+        "shonan-hs-104",
+        "kouki-chukan",
+        "information1"
+      ]
+    }
+  ]
+}
