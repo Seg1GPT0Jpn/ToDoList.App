@@ -607,7 +607,11 @@ void main() {
       frames: 10,
     );
     final tile = find.byKey(const ValueKey('shonan-wordbook-kanji'));
-    await t.ensureVisible(tile);
+    await t.scrollUntilVisible(
+      tile,
+      300,
+      scrollable: find.byType(Scrollable).first,
+    );
     await _frames(t, 3);
     await t.tap(tile);
     await _settle(t);

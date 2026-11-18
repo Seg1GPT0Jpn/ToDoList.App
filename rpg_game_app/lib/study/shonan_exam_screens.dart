@@ -6,6 +6,7 @@ import '../app/theme.dart';
 import '../art/paper.dart';
 import '../app/quiz_screen.dart';
 import 'ec_text.dart';
+import 'range_race.dart';
 import 'school_drive_screen.dart';
 import 'school_exam_store.dart';
 import 'school_lesson_screens.dart';
@@ -131,6 +132,20 @@ class ShonanExamListScreen extends StatelessWidget {
                     onTap: () => Navigator.of(context).push(
                       MaterialPageRoute<void>(
                         builder: (_) => const YosouExamListScreen(),
+                      ),
+                    ),
+                  ),
+                ),
+                Card(
+                  child: ListTile(
+                    key: const ValueKey('shonan-race'),
+                    leading: const Icon(Icons.emoji_events_outlined),
+                    title: const Text(RangeRaceText.title),
+                    subtitle: const Text('試験範囲の問題をどこまで終えたか、みんなと競う'),
+                    trailing: const Icon(Icons.chevron_right),
+                    onTap: () => Navigator.of(context).push(
+                      MaterialPageRoute<void>(
+                        builder: (_) => const RangeRaceScreen(),
                       ),
                     ),
                   ),

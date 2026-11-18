@@ -27,6 +27,7 @@ import 'cloud/firestore_classroom_backend.dart';
 import 'cloud/firestore_notice_backend.dart';
 import 'cloud/firestore_contest_backend.dart';
 import 'cloud/firestore_duel_backend.dart';
+import 'cloud/firestore_range_race.dart';
 import 'cloud/firestore_yosou_ranking.dart';
 import 'cloud/firestore_matchmaking.dart';
 import 'cloud/firestore_usage_sink.dart';
@@ -128,6 +129,7 @@ Future<void> main() async {
         contests: c.contests,
         notices: c.notices,
         yosouRanking: c.yosouRanking,
+        rangeRace: c.rangeRace,
         tsuzuriBackend: c.tsuzuriBackend,
         child: TsuzuriQuestApp(
           onUserGesture: () {
@@ -155,6 +157,7 @@ class _Cloud {
       contests = null,
       notices = null,
       yosouRanking = null,
+      rangeRace = null,
       tsuzuriBackend = null;
 
   _Cloud.online(CloudSync cloud, this.account, this.purchase)
@@ -181,6 +184,10 @@ class _Cloud {
         cloud.auth,
         FirebaseFirestore.instance,
       ),
+      rangeRace = FirestoreRangeRaceBackend(
+        cloud.auth,
+        FirebaseFirestore.instance,
+      ),
       tsuzuriBackend = FirebaseTsuzuriBackend.supported
           ? FirebaseTsuzuriBackend()
           : null;
@@ -195,6 +202,7 @@ class _Cloud {
       contests = o.contests,
       notices = o.notices,
       yosouRanking = o.yosouRanking,
+      rangeRace = o.rangeRace,
       tsuzuriBackend = o.tsuzuriBackend;
 
   _Cloud withPurchase(GooglePlayPurchaseService? p) => _Cloud._copy(this, p);
@@ -209,6 +217,7 @@ class _Cloud {
   final FirestoreContestBackend? contests;
   final FirestoreNoticeBackend? notices;
   final FirestoreYosouRankBackend? yosouRanking;
+  final FirestoreRangeRaceBackend? rangeRace;
   final FirebaseTsuzuriBackend? tsuzuriBackend;
 }
 
