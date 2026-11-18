@@ -75,10 +75,10 @@ void main() {
         greaterThanOrEqualTo(126));
     // 公共・生物基礎・情報Ⅰ・地理総合の用語帳（説明に答えの語を入れていない）
     for (final (id, n) in [
-      ('kokyo-terms', 166),
-      ('bio-terms', 174),
-      ('joho-terms', 74),
-      ('chiri-terms', 115),
+      ('kokyo-terms', 418),
+      ('bio-terms', 191),
+      ('joho-terms', 84),
+      ('chiri-terms', 161),
       ('chem-terms', 54),
     ]) {
       final b = open(id);
@@ -91,7 +91,9 @@ void main() {
     }
     final eci = open('eci-words');
     expect(eci.isTerms, isFalse);
-    expect(eci.cards.length, 125);
+    expect(eci.cards.length, 127);
+    expect(
+        eci.cards.where((c) => c.hasExample).length, greaterThanOrEqualTo(100));
     expect({for (final c in eci.cards) c.group}.length, 8);
     for (final c in [...kanji.cards, ...kw.cards]) {
       expect(c.term.trim(), isNotEmpty);
