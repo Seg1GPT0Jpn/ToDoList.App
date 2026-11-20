@@ -177,7 +177,7 @@ class _VocabBookScreenState extends State<VocabBookScreen> {
     final news = plan.where((t) => t.isNew).length;
     final weeks = book.isTerms
         ? VocabCourse.sections(book)
-        : VocabCourse.weeks(book, size: _limit ?? 100);
+        : VocabCourse.weeks(book, size: _weekSize);
     return ListView(
       padding: const EdgeInsets.fromLTRB(40, 12, 16, 24),
       children: [
@@ -252,7 +252,7 @@ class _VocabBookScreenState extends State<VocabBookScreen> {
         Text(
           book.isTerms
               ? '章を開くと、その章の用語を上の問題数・順番で練習できます'
-              : 'Week を開くと、その${_limit ?? 100}語を上の問題数・順番で練習できます',
+              : 'Week を開くと、その$_weekSize語を上の問題数・順番で練習できます',
           style: TextStyle(fontSize: 11, color: TsuzuriColors.inkSoft),
         ),
         const SizedBox(height: 6),
@@ -376,8 +376,11 @@ class _VocabBookScreenState extends State<VocabBookScreen> {
   /// 形式を選んで練習するときの問題数（null なら全部）と順番
   int? _drillCount = 20;
 
-  /// 1回に出せる最大の問題数（EEVI は50問まで）
-  int? get _limit => book.id == 'eevi' ? 50 : null;
+  /// 1回に出せる最大の問題数（EEVI は100問まで）
+  int? get _limit => book.id == 'eevi' ? 100 : null;
+
+  /// コースの1 Week の語数（EEVI は毎週のテストに合わせて50語）
+  int get _weekSize => book.id == 'eevi' ? 50 : 100;
   bool _shuffle = true;
 
   Widget _drillOptions() => Column(
@@ -392,7 +395,7 @@ class _VocabBookScreenState extends State<VocabBookScreen> {
           for (final n
               in _limit == null
                   ? const <int?>[20, 50, 100, null]
-                  : const <int?>[20, 50])
+                  : const <int?>[20, 50, 100])
             ChoiceChip(
               key: ValueKey('drill-count-${n ?? 'all'}'),
               label: Text(n == null ? '全部' : '$n問'),

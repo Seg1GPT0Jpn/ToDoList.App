@@ -223,4 +223,39 @@ void main() {
     }
     expect(t.takeException(), isNull);
   });
+
+  testWidgets('EEVI は1回に100問まで選べ、コースは50語ずつの Week', (t) async {
+    await openScreen(t, const SizedBox());
+    final store = VocabStore.of(RpgServicesHolder.last!.personalBooks);
+    final book = VocabBook(
+      id: 'eevi',
+      title: 'EEVI',
+      kind: VocabBookKind.protectedImport,
+      cards: [
+        for (var i = 1; i <= 200; i++)
+          VocabCard(id: '$i', number: i, term: 'word$i', meaning: '意味$i'),
+      ],
+    );
+    final nav = t.state<NavigatorState>(find.byType(Navigator));
+    nav.push(
+      MaterialPageRoute<void>(
+        builder: (_) => VocabBookScreen(store: store, book: book),
+      ),
+    );
+    await t.pumpAndSettle();
+    await t.dragUntilVisible(
+      find.byKey(const ValueKey('drill-count-100')),
+      find.byType(ListView).first,
+      const Offset(0, -200),
+    );
+    expect(find.byKey(const ValueKey('drill-count-100')), findsOneWidget);
+    expect(find.byKey(const ValueKey('drill-count-all')), findsNothing);
+    await t.dragUntilVisible(
+      find.textContaining('その50語を'),
+      find.byType(ListView).first,
+      const Offset(0, -300),
+    );
+    expect(find.textContaining('その50語を'), findsOneWidget);
+    expect(t.takeException(), isNull);
+  });
 }
