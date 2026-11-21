@@ -188,14 +188,14 @@ h2.answers ~ h3::before { content: none; }
 .rei::before {
   color: var(--main);
   border-left: 2.5px solid var(--main);
-  background: linear-gradient(to right, var(--light), rgba(255,255,255,0));
+  background: linear-gradient(to right, var(--light), #fff);
 }
 .renshu::before {
   color: var(--accent);
   border-left: 2.5px solid var(--accent);
   background:
     radial-gradient(var(--accent) 0.9px, transparent 1.1px) 30px 4px / 5px 5px no-repeat,
-    linear-gradient(to right, var(--accent-light), rgba(255,255,255,0));
+    linear-gradient(to right, var(--accent-light), #fff);
 }
 .rei::after {
   content: "終";
