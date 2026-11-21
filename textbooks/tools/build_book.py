@@ -50,6 +50,12 @@ def css_for(theme: str) -> str:
 EIGO_H1 = re.compile(r'<h1>(?:中(\d)|発展)英語 Unit ([0-9A-Z]+(?:-[0-9A-Z]+)?)「(.+?)」(まとめの問題)?\s*(<span class="mk">[^<]*</span>)</h1>')
 
 
+# 単元タイトルの網かけ（ベクターの SVG で描く。CSS の背景画像にすると画像として埋め込まれて重くなる）
+HATCH = ('<svg class="e-hatch" aria-hidden="true"><defs><pattern id="e-hp" width="6" height="6" patternUnits="userSpaceOnUse">'
+         '<path d="M-1,1 l2,-2 M0,6 l6,-6 M5,7 l2,-2" stroke="#999" stroke-width="1"/></pattern></defs>'
+         '<rect width="100%" height="100%" fill="url(#e-hp)"/></svg>')
+
+
 def eigo_transform(text: str) -> str:
     """英語の本：単元タイトルを「Part タブ＋番号の箱＋網かけの帯」に、小問番号 (1) を 01. にする。"""
     def h1(m):
@@ -59,7 +65,7 @@ def eigo_transform(text: str) -> str:
             title, label = f"{title}　まとめの問題", f"Unit {no}"
         else:
             label = no
-        return (f'<div class="e-part">{part}</div><h1 class="e-unit"><span class="e-no">{html.escape(label)}</span>'
+        return (f'<div class="e-part">{part}</div><h1 class="e-unit">{HATCH}<span class="e-no">{html.escape(label)}</span>'
                 f'<span class="e-title">{title}</span>{mk}</h1>')
     text = EIGO_H1.sub(h1, text)
     return re.sub(r'(<p>|<br />\s*)\((\d{1,2})\)\s*', lambda m: f'{m.group(1)}<span class="q-no">{int(m.group(2)):02d}.</span> ', text)
@@ -269,21 +275,30 @@ def stamp(pdf_in: str, pdf_out: str, skip_first: int = 1, start: int = 1, label:
     """通しのページ番号（柱）を下中央に入れる（最初の skip_first ページ＝表紙には入れない）。"""
     jp = _footer_font() if label else None
     reader = PdfReader(pdf_in)
-    writer = PdfWriter()
+    # 柱は1つの PDF にまとめて描く（ページごとに別の PDF にすると、フォントがページの数だけ埋め込まれて重くなる）
+    buf = io.BytesIO()
+    c = canvas.Canvas(buf)
+    targets = []
     for i, pg in enumerate(reader.pages):
-        if i >= skip_first:
-            w, h = float(pg.mediabox.width), float(pg.mediabox.height)
-            buf = io.BytesIO()
-            c = canvas.Canvas(buf, pagesize=(w, h))
-            if jp:
-                c.setFont(jp, 8.5)
-                c.drawCentredString(w / 2, 18, f"{label}　—{start + i}—")
-            else:
-                c.setFont("Helvetica", 8.5)
-                c.drawCentredString(w / 2, 18, f"- {start + i} -")
-            c.save()
-            buf.seek(0)
-            pg.merge_page(PdfReader(buf).pages[0])
+        if i < skip_first:
+            continue
+        w, h = float(pg.mediabox.width), float(pg.mediabox.height)
+        c.setPageSize((w, h))
+        if jp:
+            c.setFont(jp, 8.5)
+            c.drawCentredString(w / 2, 18, f"{label}　—{start + i}—")
+        else:
+            c.setFont("Helvetica", 8.5)
+            c.drawCentredString(w / 2, 18, f"- {start + i} -")
+        c.showPage()
+        targets.append(i)
+    c.save()
+    buf.seek(0)
+    overlay = PdfReader(buf)
+    for k, i in enumerate(targets):
+        reader.pages[i].merge_page(overlay.pages[k])
+    writer = PdfWriter()
+    for pg in reader.pages:
         writer.add_page(pg)
     raw = pdf_out + ".raw.pdf"
     with open(raw, "wb") as fh:
