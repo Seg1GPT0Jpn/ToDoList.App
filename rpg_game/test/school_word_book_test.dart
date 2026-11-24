@@ -69,10 +69,10 @@ void main() {
     final scramble = open('scramble');
     expect(scramble.isTerms, isFalse);
     final sn = scramble.cards.map((c) => c.number!).toList();
-    expect([sn.length, sn.first, sn.last], [131, 1046, 1176]);
+    expect([sn.length, sn.first, sn.last], [76, 1046, 1121]);
     expect(scramble.cards.every((c) => c.example.isNotEmpty), isTrue);
     expect(scramble.cards.where((c) => c.hasExample).length,
-        greaterThanOrEqualTo(126));
+        greaterThanOrEqualTo(72));
     // 公共・生物基礎・情報Ⅰ・地理総合の用語帳（説明に答えの語を入れていない）
     for (final (id, n) in [
       ('kokyo-terms', 418),

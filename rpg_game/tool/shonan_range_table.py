@@ -53,6 +53,10 @@ EXISTING = {
     ('後期期末試験', 'gendai_kokugo'): _KANJI + ['japanese_gendai_03', 'japanese_gendai_04', 'japanese_bungakushi_01'],
     ('後期期末試験', 'gengo_bunka'): _KOGO,
 }
+# 範囲表のあとで変わった範囲（シート, 科目, 教材名）→ 新しい範囲
+RANGE_FIX = {
+    ('後期中間試験', 'ronhyo1', 'Scramble'): 'P.76~97,364~377',  # 11/24 範囲変更（Theme 225〜231／No.1046〜1121）
+}
 def kind(name):
     if name == '教科書': return '教科書'
     if 'プリント' in name: return '授業プリント'
@@ -77,6 +81,7 @@ for ws in wb:
         if isinstance(dt, (int, float)) and dt > 40000:
             sp['date'] = (datetime.date(1899,12,30)+datetime.timedelta(days=int(dt))).isoformat()
         if mat == '教科書' and note: sp['note'] = note
+        rng = RANGE_FIX.get((sheet, cur, mat), rng)
         if mat and (rng or note):
             sp['materials'].append({'kind': kind(mat), 'name': mat, 'range': rng, 'note': note})
     out.append((sheet, title, plan))

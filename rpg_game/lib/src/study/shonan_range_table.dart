@@ -442,7 +442,7 @@ class ShonanRangeTable {
               StudyMaterial(
                   kind: 'ワーク',
                   name: 'Scramble',
-                  range: 'P.76~97,364~387',
+                  range: 'P.76~97,364~377',
                   note: '')
             ]);
         subjects['chemistry_basic'] = SubjectExamPlan(
