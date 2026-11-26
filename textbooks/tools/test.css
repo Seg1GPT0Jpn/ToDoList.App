@@ -159,3 +159,10 @@ body.shakai td, body.shakai th { text-align: center; padding: 0 6px; }
 body.shakai .cap { text-align: center; font-size: 8.5pt; }
 body.shakai h2.answers { break-before: page; background: none; color: #000; font-size: 12pt; padding: 0; margin: 0 0 4px; }
 body.shakai .ichiran td { font-size: 8pt; padding: 0 3px; }
+
+/* 国語の縦書き文書（html.tate-root）：文書全体を縦書きにして、ページいっぱいに右から左へ流す */
+html.tate-root { writing-mode: vertical-rl; }
+html.tate-root .tate { height: auto; break-after: auto; }
+html.tate-root .tate + .tate { margin-right: 0; }
+html.tate-root .k-cover { height: 100%; width: 268mm; break-after: page; overflow: visible; }
+html.tate-root .k-sheet { height: 100%; break-before: page; }

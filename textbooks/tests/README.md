@@ -72,7 +72,7 @@ HTML のブロック（div・table）の中で Markdown を使うときは `mark
 | 表紙（1ページまるごと） | `<div class="t-cover" markdown="1"> … </div>` |
 | 解答用紙（新しいページ） | `<div class="sheet" markdown="1"><div class="sheet-title">記述式解答用紙</div> …表… </div>` |
 | 原稿用紙のマス | `<div class="genko" data-cols="20" data-rows="4"></div>`（20字×4行＝80字、行末に字数の目印） |
-| 縦書き（国語、A4横） | `<section class="tate" markdown="1"> … </section>`（中は縦書き。2けたの数字は `<span class="tcy">12</span>`） |
+| 縦書き（国語、A4横） | `<section class="tate" markdown="1"> … </section>`（中は縦書き。2けたの数字は `<span class="tcy">12</span>`）。国語は「## …解答」より前が文書ごと縦書きになり、ページいっぱいに右から左へ自動で流れる（大問ごとにページを分けなくてよい） |
 | 選択肢を横に並べる | `<div class="choices"><span>ア　…</span><span>イ　…</span></div>` |
 
 配点は丸数字で（各③）、（①）のように書いてよい（数学の形式）。ラベル（tag）は、中学入試／難関私立／湘南型（湘南高校の入試や授業でよく出る型）／思考力／架空のデータ など、問題の性格を示すのに使う。

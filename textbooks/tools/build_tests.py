@@ -54,17 +54,31 @@ def main():
                 # ★ や ○ などの記号は残す（本では絵文字を消すが、テストでは記号として使う）
                 body = re.sub(r'<span class="emoji">([^<]*)</span>', r"\1", body)
                 body = re.sub(r'<div class="genko" data-cols="(\d+)" data-rows="(\d+)"></div>', genko, body)
-                page = (f'<!doctype html><html lang="ja"><head><meta charset="utf-8"><title>{d.name} {f.stem}</title>'
-                        f"{links}<style>{use_system_fonts(css)}</style></head><body class=\"{kind}\">{use_system_fonts(body)}</body></html>")
-                h = tmp / f"{d.name}_{f.stem}.html"
-                h.write_text(page, encoding="utf-8")
-                raw = tmp / f"{d.name}_{f.stem}.pdf"
-                jobs.append({"html": str(h), "pdf": str(raw), "title": label(d.name, f.stem), "style": "test", "kind": kind})
-                outs.append((raw, OUT / f"{d.name}_{f.stem}.pdf"))
+                # 国語は「表紙・問題・解答用紙」を縦書きの文書（ページいっぱいに右から左へ流れる）、
+                # 「解答・解説」を横書きの文書として別々に印刷し、あとでつなぐ
+                parts = [(body, kind)]
+                if kind == "kokugo" and '<h2 class="answers">' in body:
+                    i = body.index('<h2 class="answers">')
+                    parts = [(body[:i], "kokugo tate-doc"), (body[i:], "kokugo")]
+                raws = []
+                for n, (part, cls) in enumerate(parts):
+                    root = ' class="tate-root"' if "tate-doc" in cls else ""
+                    page = (f'<!doctype html><html lang="ja"{root}><head><meta charset="utf-8"><title>{d.name} {f.stem}</title>'
+                            f"{links}<style>{use_system_fonts(css)}</style></head><body class=\"{cls}\">{use_system_fonts(part)}</body></html>")
+                    h = tmp / f"{d.name}_{f.stem}_{n}.html"
+                    h.write_text(page, encoding="utf-8")
+                    raw = tmp / f"{d.name}_{f.stem}_{n}.pdf"
+                    jobs.append({"html": str(h), "pdf": str(raw), "title": label(d.name, f.stem), "style": "test", "kind": kind})
+                    raws.append(raw)
+                outs.append((raws, OUT / f"{d.name}_{f.stem}.pdf"))
         job_file = tmp / "jobs.json"
         job_file.write_text(json.dumps(jobs, ensure_ascii=False), encoding="utf-8")
         subprocess.run(["node", str(TOOLS / "print_pdf.js"), str(job_file)], check=True)
-        for raw, out in outs:
+        for raws, out in outs:
+            raw = raws[0]
+            if len(raws) > 1:
+                raw = raws[0].with_suffix(".all.pdf")
+                subprocess.run(["pdfunite", *map(str, raws), str(raw)], check=True)
             compress(str(raw), str(out))
             print("テスト:", out.relative_to(ROOT))
 
