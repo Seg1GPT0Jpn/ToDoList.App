@@ -166,3 +166,6 @@ html.tate-root .tate { height: auto; break-after: auto; }
 html.tate-root .tate + .tate { margin-right: 0; }
 html.tate-root .k-cover { height: 100%; width: 268mm; break-after: page; overflow: visible; }
 html.tate-root .k-sheet { height: 100%; break-before: page; }
+
+/* 冊子づくり用の見えない印（booklet.py が読む） */
+.pmk { font-size: 1px; color: #fff; letter-spacing: 0; line-height: 1px; }

@@ -13,6 +13,7 @@ import tempfile
 
 from build_pdf import md_fragment, font_links
 from build_book import use_system_fonts, compress
+import booklet
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 TOOLS = ROOT / "tools"
@@ -54,6 +55,9 @@ def main():
                 # ★ や ○ などの記号は残す（本では絵文字を消すが、テストでは記号として使う）
                 body = re.sub(r'<span class="emoji">([^<]*)</span>', r"\1", body)
                 body = re.sub(r'<div class="genko" data-cols="(\d+)" data-rows="(\d+)"></div>', genko, body)
+                # 冊子づくり（booklet.py）のための見えない印：解答用紙・解答解説のはじまり
+                body = re.sub(r'(<div class="(?:sheet|k-sheet)"[^>]*>)', r'\1<span class="pmk">@@SHEET@@</span>', body)
+                body = body.replace('<h2 class="answers">', '<h2 class="answers"><span class="pmk">@@ANS@@</span>', 1)
                 # 国語は「表紙・問題・解答用紙」を縦書きの文書（ページいっぱいに右から左へ流れる）、
                 # 「解答・解説」を横書きの文書として別々に印刷し、あとでつなぐ
                 parts = [(body, kind)]
@@ -81,6 +85,8 @@ def main():
                 subprocess.run(["pdfunite", *map(str, raws), str(raw)], check=True)
             compress(str(raw), str(out))
             print("テスト:", out.relative_to(ROOT))
+            for m in booklet.make(str(out), OUT / "冊子", out.stem):
+                print("　冊子:", m.relative_to(ROOT))
 
 
 if __name__ == "__main__":
