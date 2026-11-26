@@ -1,0 +1,25 @@
+/* 定期テスト（tests/ 以下）用のデザイン。print.css ＋ juku.css の上に重ねる。 */
+body { font-size: 10.5pt; line-height: 1.75; }
+.t-head { border: 2px solid #000; margin: 0 0 8px; }
+.t-head .t-title { font-family: "IPAexGothic", sans-serif; font-weight: 700; font-size: 16pt; text-align: center;
+  border-bottom: 1.5px solid #000; padding: 4px 0; letter-spacing: 0.1em; }
+.t-head .t-row { display: flex; font-size: 10.5pt; }
+.t-head .t-row > div { padding: 6px 10px; border-right: 1.5px solid #000; }
+.t-head .t-row > div:last-child { border-right: none; }
+.t-head .t-info { flex: none; width: 11em; }
+.t-head .t-name { flex: 1; }
+.t-head .t-score { flex: none; width: 9em; text-align: right; font-size: 12pt; }
+.t-range { font-size: 9.5pt; margin: 0 0 6px; }
+h4 { border-bottom: 1px solid #000; padding-bottom: 1px; margin-top: 14px; }
+.haiten { float: right; font-weight: 400; font-size: 9pt; }
+.ans-box { display: inline-block; min-width: 7em; border-bottom: 1px solid #000; height: 1.3em; vertical-align: bottom; }
+.ans-box.w2 { min-width: 14em; }
+.ans-box.w3 { min-width: 24em; }
+.kaku { border: 1px solid #000; height: 3.2em; margin: 4px 0 8px; }
+.kaku.tall { height: 6.4em; }
+.shiki { border: 1px dashed #777; height: 5em; margin: 4px 0; position: relative; }
+.shiki::before { content: "式"; position: absolute; left: 4px; top: 0; font-size: 8.5pt; color: #555; }
+.shiki.short { height: 3em; }
+figure { margin: 6px 0; text-align: center; }
+.honbun { border: 1px solid #000; padding: 6px 12px; margin: 6px 0; }
+.kaito { font-size: 9.5pt; }
