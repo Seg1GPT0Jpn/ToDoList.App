@@ -29,6 +29,28 @@ const small = 'font-size:9px;color:#444;font-family:sans-serif;';
       console.log('PDF:', job.pdf);
       continue;
     }
+    if (job.style === 'test') {
+      // 定期テスト（build_tests.py）：用紙は CSS の @page（算数 A3・国語 A4横・社会 B5 など）。柱は教科ごとに実物に合わせる
+      const k = job.kind || '';
+      const num = '<span class="pageNumber"></span>';
+      const foot = k === 'rika'
+        ? `${job.title}　${num} / <span class="totalPages"></span>`
+        : (k === 'sansu' ? '' : num);
+      const head = k === 'shakai'
+        ? `<div style="width:100%;text-align:right;padding-right:10mm;${small}"><span style="border:1px solid #000;padding:0 3px">${job.title.replace(/^.*?　/, '')}</span></div>`
+        : '<span></span>';
+      await page.pdf({
+        path: job.pdf, printBackground: true, timeout: 0, preferCSSPageSize: true,
+        margin: k === 'sansu' ? { top: '14mm', bottom: '12mm', left: '16mm', right: '16mm' }
+          : k === 'shakai' ? { top: '12mm', bottom: '11mm', left: '10mm', right: '10mm' }
+          : { top: '12mm', bottom: '13mm', left: '14mm', right: '14mm' },
+        displayHeaderFooter: true,
+        headerTemplate: head,
+        footerTemplate: `<div style="width:100%;text-align:center;${small}">${foot}</div>`,
+      });
+      console.log('PDF:', job.pdf);
+      continue;
+    }
     const math = job.style === 'math';
     await page.pdf({
       path: job.pdf,

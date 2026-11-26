@@ -1,25 +1,161 @@
-/* 定期テスト（tests/ 以下）用のデザイン。print.css ＋ juku.css の上に重ねる。 */
-body { font-size: 10.5pt; line-height: 1.75; }
-.t-head { border: 2px solid #000; margin: 0 0 8px; }
-.t-head .t-title { font-family: "IPAexGothic", sans-serif; font-weight: 700; font-size: 16pt; text-align: center;
-  border-bottom: 1.5px solid #000; padding: 4px 0; letter-spacing: 0.1em; }
-.t-head .t-row { display: flex; font-size: 10.5pt; }
-.t-head .t-row > div { padding: 6px 10px; border-right: 1.5px solid #000; }
-.t-head .t-row > div:last-child { border-right: none; }
-.t-head .t-info { flex: none; width: 11em; }
-.t-head .t-name { flex: 1; }
-.t-head .t-score { flex: none; width: 9em; text-align: right; font-size: 12pt; }
-.t-range { font-size: 9.5pt; margin: 0 0 6px; }
-h4 { border-bottom: 1px solid #000; padding-bottom: 1px; margin-top: 14px; }
-.haiten { float: right; font-weight: 400; font-size: 9pt; }
+/* 定期テスト（tests/ 以下）用のデザイン。print.css の上に重ねる（juku.css は使わない）。
+   湘南高校の定期テスト予想問題（数学Ⅰ・現代の国語・English Communication I・生物基礎・地理総合）の見た目をまねる。
+   教科は body のクラスで切りかえる：sansu（A3縦・明朝・2段組）／kokugo（A4横・縦書き・明朝）／
+   eigo（A4・Times 系）／rika（A4・ゴシック）／shakai（B5・ゴシック）。 */
+
+body { font-size: 10pt; line-height: 1.75; }
+strong { text-decoration: none; }
+p { margin: 3px 0; }
+th { background: none; font-weight: 400; }
+th, td { padding: 1px 8px; }
+table { margin: 6px auto; }
+figure { margin: 6px 0; }
+
+/* ── 共通の部品 ── */
+.tag { display: inline-block; background: #333; color: #fff; font-family: "IPAexGothic", sans-serif; font-size: 0.72em;
+  padding: 0 5px; line-height: 1.45; border-radius: 3px; vertical-align: 1px; margin: 0 3px; letter-spacing: 0.02em; }
+.tag.w { background: #fff; color: #000; border: 1px solid #000; border-radius: 0; }
+.tag.d { background: #fff; color: #000; border: 1px dashed #000; border-radius: 0; }
+.chu { border: 1px solid #000; padding: 4px 10px; margin: 4px 0 10px; line-height: 1.65; }
+.chu p { margin: 0; }
+.bn { display: inline-block; border: 1px solid #000; min-width: 1.35em; text-align: center; line-height: 1.25; margin-right: 4px; padding: 0 2px; }
+.mon { display: inline-block; border: 1px solid #000; font-family: "IPAexGothic", sans-serif; font-weight: 700; padding: 0 3px; line-height: 1.3; margin-right: 4px; }
+.kuuran { display: inline-block; border: 1px solid #000; min-width: 2.2em; text-align: center; line-height: 1.3; padding: 0 3px; margin: 0 2px; }
+.choices { display: flex; flex-wrap: wrap; gap: 0 2.2em; margin: 1px 0 4px 1.2em; }
+.indent { padding-left: 1.2em; }
+.q { padding-left: 2.6em; text-indent: -2.6em; margin: 4px 0; }
 .ans-box { display: inline-block; min-width: 7em; border-bottom: 1px solid #000; height: 1.3em; vertical-align: bottom; }
-.ans-box.w2 { min-width: 14em; }
-.ans-box.w3 { min-width: 24em; }
-.kaku { border: 1px solid #000; height: 3.2em; margin: 4px 0 8px; }
+.ans-box.w2 { min-width: 14em; } .ans-box.w3 { min-width: 24em; }
+.kaku { border: 1px solid #000; height: 3.2em; margin: 3px 0 8px; }
 .kaku.tall { height: 6.4em; }
-.shiki { border: 1px dashed #777; height: 5em; margin: 4px 0; position: relative; }
-.shiki::before { content: "式"; position: absolute; left: 4px; top: 0; font-size: 8.5pt; color: #555; }
-.shiki.short { height: 3em; }
-figure { margin: 6px 0; text-align: center; }
-.honbun { border: 1px solid #000; padding: 6px 12px; margin: 6px 0; }
-.kaito { font-size: 9.5pt; }
+.shiki { border: 1px solid #000; height: 6em; margin: 3px 0 8px; }
+.t-cover { break-after: page; }
+.sheet { break-before: page; }
+.sheet-title { text-align: center; font-family: "IPAexGothic", sans-serif; font-weight: 700; font-size: 14pt; margin: 0 0 4px; }
+.sheet-name { display: flex; justify-content: space-between; margin: 0 0 6px; }
+.sheet table { width: 100%; margin: 4px 0; }
+.sheet td, .sheet th { height: 2.3em; vertical-align: middle; }
+table.genko { border-collapse: collapse; margin: 2px 0 8px; table-layout: fixed; }
+table.genko td { width: 6.6mm; height: 6.6mm; border: 0.5px solid #999; padding: 0; }
+table.genko tr:first-child td, table.genko td:first-child { border-color: #000; }
+table.genko td.mk { border: none !important; width: 6mm; font-size: 6.5pt; color: #444; vertical-align: bottom; padding-left: 2px; }
+.band { border-top: 1.5px solid #000; border-bottom: 1px solid #000; background: #e8e8e8; font-family: "IPAexGothic", sans-serif; font-weight: 700; padding: 1px 8px; margin: 10px 0 4px; break-after: avoid; }
+.kotae { font-weight: 700; background: #fff2a8; padding: 0 2px; }
+.kaito { font-size: 0.95em; }
+.kaito .midashi { font-family: "IPAexGothic", sans-serif; font-weight: 700; margin-top: 6px; }
+.waku { border: 1px solid #000; padding: 4px 10px; margin: 4px 0 8px; }
+
+/* ── 算数（数学Ⅰ予想問題：A3縦・明朝・2段組・罫線） ── */
+@page sansu { size: A3; }
+body.sansu { page: sansu; font-family: "Liberation Serif", "IPAexMincho", serif; font-size: 11.5pt; line-height: 1.8; }
+body.sansu .t-band { display: flex; justify-content: space-between; align-items: baseline; font-size: 16pt; border-bottom: 1px solid #000; padding: 0 0 4px; margin: 0 0 8px; letter-spacing: 0.02em; }
+body.sansu .t-band .tag.w { font-size: 0.68em; vertical-align: 3px; }
+body.sansu .two-col { columns: 2; column-gap: 9mm; column-rule: 1px solid #000; }
+body.sansu .dai { margin: 10px 0 2px; break-after: avoid; }
+body.sansu .q { padding-left: 2.8em; text-indent: -2.8em; margin: 3px 0 3px 0.4em; }
+body.sansu .chu { border: none; padding: 0; margin: 0 0 8px; }
+body.sansu table { break-inside: avoid; }
+body.sansu .sheet { column-span: all; }
+body.sansu .kaito .two-col { column-rule: none; }
+body.sansu h2.answers { break-before: page; font-family: "IPAexGothic", sans-serif; background: none; color: #000; font-size: 15pt;
+  border-bottom: 2px solid #000; padding: 0 0 2px; margin: 0 0 8px; }
+
+/* ── 国語（現代の国語予想問題：A4横・縦書き・明朝） ── */
+@page kokugo { size: A4 landscape; }
+body.kokugo { page: kokugo; font-family: "IPAexMincho", serif; font-size: 10.5pt; }
+.tate { writing-mode: vertical-rl; text-orientation: mixed; height: 168mm; line-height: 2; break-after: page; }
+.tate p { margin: 0 0 0 0.2em; }
+.tate .t-sec { font-weight: 400; margin: 0 0 0 0.4em; }
+.tate .q { padding-left: 0; text-indent: 0; padding-top: 2.2em; text-indent: -2.2em; margin: 0; }
+.tate .honbun { padding: 0 0.6em; margin: 0 0.6em; }
+.tate .honbun p { text-indent: 1em; margin: 0; }
+.tate .tcy { text-combine-upright: all; }
+.tate u, .tate .bousen { text-decoration: none; border-left: 1px solid #000; padding-left: 1px; }
+.tate .kuuran { min-width: 0; min-height: 2.2em; padding: 3px 0; }
+/* 表紙 */
+.k-cover { writing-mode: vertical-rl; height: 172mm; overflow: hidden; display: flex; flex-direction: column; break-after: page; }
+.k-cover .k-date { font-size: 11pt; margin-left: 9mm; }
+.k-cover .k-title { font-size: 21pt; letter-spacing: 0.35em; margin-left: 10mm; display: flex; align-items: flex-start; }
+.k-cover .k-title .tag.w { font-size: 8pt; letter-spacing: 0; padding: 4px 1px; margin-top: 8mm; font-family: "IPAexGothic", sans-serif; }
+.k-cover .k-note { border: 1px solid #000; padding: 6mm 4mm; margin-left: 9mm; font-size: 10pt; line-height: 1.85; height: 150mm; margin-top: 8mm; }
+.k-cover .k-note p { margin: 0 0 0 0.2em; padding-top: 1em; text-indent: -1em; }
+.k-cover .k-note p:first-child { padding-top: 0; text-indent: 0; margin-left: 0.8em; }
+.k-cover .k-haiten { writing-mode: horizontal-tb; margin: 0 6mm 0 10mm; align-self: flex-start; }
+.k-cover .k-haiten table { margin: 0; font-size: 9pt; }
+.k-cover .k-haiten td { padding: 0 6px; text-align: center; height: 1.55em; }
+.k-cover .k-haiten th { padding: 2px 4px; writing-mode: vertical-rl; }
+.k-cover .k-name { margin: 22mm 18mm 0 0; font-size: 11pt; letter-spacing: 0.1em; }
+/* 縦書きの解答用紙：ラベルつきの縦長の枠（<span class="kb" data-l="問1(1)" style="--h:5"></span>）と原稿用紙 */
+.k-sheet { writing-mode: vertical-rl; height: 168mm; break-before: page; display: flex; flex-direction: column; }
+.k-sheet .k-head { border-left: 1px solid #000; padding-left: 3mm; margin-left: 4mm; height: 100%; }
+.k-sheet .k-dai { display: flex; flex-direction: column; flex-wrap: wrap; align-content: flex-start; border-left: 1px solid #000; padding-left: 3mm; margin-left: 4mm; height: 100%; }
+.k-sheet .k-dai > b { font-weight: 400; margin-bottom: 2mm; }
+.kb { display: inline-flex; flex-direction: column; align-items: center; margin: 0 0 0 1.6mm; writing-mode: vertical-rl; }
+.kb::before { content: attr(data-l); writing-mode: horizontal-tb; font-family: "IPAexGothic", sans-serif; font-size: 7pt; white-space: pre; text-align: center; min-height: 2.4em; line-height: 1.15; display: flex; align-items: flex-end; }
+.kb::after { content: ""; display: block; width: 8mm; height: calc(var(--h, 3) * 9mm); border: 1px solid #000; }
+.k-sheet .kg { display: flex; flex-direction: column; margin-left: 3mm; }
+.k-sheet .kg > span { font-size: 9pt; }
+.k-sheet table.genko { writing-mode: vertical-rl; }
+.k-sheet table.genko td { width: 6mm; height: 6mm; }
+.k-sheet table.genko td.mk { display: none; }
+/* 国語の解答・解説（横書き） */
+body.kokugo .kaito-h { writing-mode: horizontal-tb; }
+body.kokugo h2.answers { break-before: page; font-family: "IPAexGothic", sans-serif; background: none; color: #000; font-size: 13pt; border-bottom: 2px solid #000; padding: 0; margin: 0 0 6px; }
+body.kokugo .kaito table { width: 100%; margin: 2px 0 8px; font-size: 9.5pt; }
+body.kokugo .kaito table td:first-child { width: 3.5em; text-align: center; white-space: nowrap; }
+body.kokugo .kaito .dai-h { font-family: "IPAexGothic", sans-serif; font-weight: 700; border: 1px solid #000; border-bottom: none; padding: 1px 8px; margin-top: 8px; background: #eee; }
+body.kokugo .kaito .two-col { columns: 2; column-gap: 8mm; }
+
+/* ── 英語（English Communication I 予想問題：A4・Times 系） ── */
+body.eigo { font-family: "Liberation Serif", "Times New Roman", "IPAexMincho", serif; font-size: 10.5pt; line-height: 1.6; }
+.e-cover { break-after: page; height: 255mm; text-align: center; display: flex; flex-direction: column; font-family: "Patrick Hand", "Liberation Sans", sans-serif; }
+.e-cover .y { font-size: 20pt; margin-top: 30mm; }
+.e-cover .s { font-size: 34pt; margin: 6mm 0 0; }
+.e-cover .x { font-size: 24pt; line-height: 1.75; margin-top: 55mm; }
+.e-cover .tag.w { font-family: "IPAexGothic", sans-serif; font-size: 9pt; align-self: center; padding: 2px 18px; margin-top: 14mm; }
+.e-date { text-align: right; }
+.e-title { text-align: center; text-decoration: underline; margin: 0; }
+.e-note { text-align: center; margin: 0 0 4px; }
+.as { display: inline-block; border: 1px solid #000; padding: 0 3px; line-height: 1.25; }
+body.eigo .t-sec { font-weight: 700; margin: 10px 0 2px; }
+body.eigo .t-sec .pt { float: right; font-weight: 400; }
+body.eigo .ja { font-family: "IPAexMincho", serif; font-size: 8.5pt; color: #333; margin: 0 0 3px; }
+body.eigo .ex { padding-left: 1.2em; }
+body.eigo u { text-underline-offset: 2px; }
+body.eigo table { break-inside: avoid; }
+body.eigo h2.answers { break-before: page; background: none; color: #000; text-align: center; font-size: 13pt; border-bottom: 1px solid #000; margin: 0 0 6px; padding: 0; }
+
+/* ── 理科（生物基礎予想問題：A4・ゴシック） ── */
+body.rika { font-family: "IPAexGothic", "Liberation Sans", sans-serif; font-size: 9.8pt; line-height: 1.8; }
+body.rika .r-date { text-align: right; margin: 0 0 6px; }
+body.rika .r-title { font-size: 12pt; margin: 0 0 8px; }
+body.rika .chu { font-size: 9pt; padding: 4px 8px; }
+body.rika .t-sec { font-weight: 700; font-size: 10.5pt; border-bottom: 1px solid #000; padding: 0 0 1px; margin: 14px 0 6px; break-after: avoid; }
+body.rika .lead { text-indent: 1em; margin: 0 0 6px 1em; }
+body.rika .q { padding-left: 2.4em; text-indent: -2.4em; margin: 5px 0; }
+body.rika figcaption, body.rika .cap { text-align: center; font-size: 9pt; margin: 2px 0; }
+body.rika table { font-size: 9.3pt; }
+body.rika td, body.rika th { text-align: center; padding: 1px 7px; }
+body.rika h2.answers { break-before: page; background: none; color: #000; font-size: 12pt; border-bottom: 1.5px solid #000; padding: 0; margin: 0 0 6px; }
+
+/* ── 社会（地理総合予想問題：B5・ゴシック） ── */
+@page shakai { size: 182mm 257mm; }
+body.shakai { page: shakai; font-family: "IPAexGothic", sans-serif; font-size: 9pt; line-height: 1.75; }
+.s-cover { break-after: page; height: 228mm; display: flex; flex-direction: column; }
+.s-cover .h1 { text-align: center; font-weight: 700; font-size: 17pt; line-height: 1.45; margin-top: 10mm; }
+.s-cover .tag.w { align-self: center; font-size: 8pt; padding: 1px 12px; margin-top: 4mm; }
+.s-cover .icon { align-self: center; margin: 12mm 0 10mm; }
+.s-cover .day { font-size: 12pt; margin: 0 0 6mm 6mm; }
+.s-cover .rule { text-align: center; font-size: 8.5pt; margin-bottom: 3mm; }
+.s-cover .notes { font-size: 8.5pt; line-height: 1.85; margin-left: 6mm; }
+.s-cover .notes p { margin: 0; }
+body.shakai .t-sec { font-weight: 700; font-size: 10.5pt; margin: 4px 0 6px; break-after: avoid; }
+body.shakai .t-sec .kanten { font-weight: 400; font-size: 8.5pt; }
+body.shakai .q { padding-left: 0; text-indent: 0; margin: 6px 0 3px; }
+body.shakai .mon { background: #000; color: #fff; border-color: #000; font-size: 8.5pt; }
+body.shakai .lead { margin: 4px 0; }
+body.shakai table { font-size: 8.5pt; }
+body.shakai td, body.shakai th { text-align: center; padding: 0 6px; }
+body.shakai .cap { text-align: center; font-size: 8.5pt; }
+body.shakai h2.answers { break-before: page; background: none; color: #000; font-size: 12pt; padding: 0; margin: 0 0 4px; }
+body.shakai .ichiran td { font-size: 8pt; padding: 0 3px; }

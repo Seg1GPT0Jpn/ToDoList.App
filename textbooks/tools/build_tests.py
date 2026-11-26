@@ -5,6 +5,7 @@
 出力:   textbooks/books/テスト/<テスト名>_<教科>.pdf
 各ファイルの「解答」を含む ## 見出しから後ろは、新しいページから始まる（先生用の解答・解説）。"""
 import json
+import re
 import pathlib
 import subprocess
 import sys
@@ -18,10 +19,28 @@ TOOLS = ROOT / "tools"
 OUT = ROOT / "books" / "テスト"
 
 
+def genko(m):
+    """<div class="genko" data-cols="20" data-rows="4"></div> を原稿用紙のマス目（20字ごとに字数の目印）にする。"""
+    cols, rows = int(m.group(1)), int(m.group(2))
+    trs = "".join("<tr>" + "<td></td>" * cols + f'<td class="mk">{(r + 1) * cols}</td></tr>' for r in range(rows))
+    return f'<table class="genko">{trs}</table>'
+
+
+# 教科 → body のクラス（test.css で用紙・書体・形式を切りかえる）
+KIND = {"国語": "kokugo", "算数": "sansu", "理科": "rika", "社会": "shakai", "英語": "eigo"}
+
+
+def label(test: str, stem: str) -> str:
+    """ページ下の柱：「小5 2学期期末テスト　算数」"""
+    return f"{stem.split('_', 1)[-1]}　{test.split('_', 1)[-1]}試験"
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     want = sys.argv[1:]
-    css = "".join((TOOLS / n).read_text(encoding="utf-8") for n in ("print.css", "juku.css", "test.css"))
+    css = "".join((TOOLS / n).read_text(encoding="utf-8") for n in ("print.css", "test.css"))
+    hand = TOOLS / "node_modules/@fontsource/patrick-hand/400.css"
+    links = font_links() + (f'<link rel="stylesheet" href="{hand.as_uri()}">' if hand.exists() else "")
     with tempfile.TemporaryDirectory() as tmpdir:
         tmp = pathlib.Path(tmpdir)
         jobs, outs = [], []
@@ -29,13 +48,18 @@ def main():
             if want and d.name not in want:
                 continue
             for f in sorted(d.glob("*.md")):
+                subject = f.stem.split("_", 1)[-1]
+                kind = KIND.get(subject, "")
                 body = md_fragment(f.read_text(encoding="utf-8"))
+                # ★ や ○ などの記号は残す（本では絵文字を消すが、テストでは記号として使う）
+                body = re.sub(r'<span class="emoji">([^<]*)</span>', r"\1", body)
+                body = re.sub(r'<div class="genko" data-cols="(\d+)" data-rows="(\d+)"></div>', genko, body)
                 page = (f'<!doctype html><html lang="ja"><head><meta charset="utf-8"><title>{d.name} {f.stem}</title>'
-                        f"{font_links()}<style>{use_system_fonts(css)}</style></head><body>{use_system_fonts(body)}</body></html>")
+                        f"{links}<style>{use_system_fonts(css)}</style></head><body class=\"{kind}\">{use_system_fonts(body)}</body></html>")
                 h = tmp / f"{d.name}_{f.stem}.html"
                 h.write_text(page, encoding="utf-8")
                 raw = tmp / f"{d.name}_{f.stem}.pdf"
-                jobs.append({"html": str(h), "pdf": str(raw), "title": f"{d.name} {f.stem}", "style": "book"})
+                jobs.append({"html": str(h), "pdf": str(raw), "title": label(d.name, f.stem), "style": "test", "kind": kind})
                 outs.append((raw, OUT / f"{d.name}_{f.stem}.pdf"))
         job_file = tmp / "jobs.json"
         job_file.write_text(json.dumps(jobs, ensure_ascii=False), encoding="utf-8")
